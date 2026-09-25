@@ -1,10 +1,10 @@
 import { getOutline, getTopic, getVideoManifest, flattenSteps } from "@/lib/fullCourse";
 import { LearnHome } from "@/components/learn/LearnHome";
 
-export const metadata = { title: "Psychometry Course — All topics" };
+export const metadata = { title: "Psychometry — the complete course" };
 export const dynamic = "force-dynamic";
 
-export default function LearnPage() {
+export default function HomePage() {
   const outline = getOutline();
   const manifest = getVideoManifest();
   const stepIds: Record<number, string[]> = {};
@@ -17,15 +17,19 @@ export default function LearnPage() {
       stepIds[t.id] = steps.map((x) => x.id);
       recorded[t.id] = steps.filter((x) => x.kind === "video" && manifest[x.id]).length;
     }
+  const all = outline.subjects.flatMap((s) => s.topics);
+  const totals = {
+    videos: all.reduce((n, t) => n + t.videos, 0),
+    lessons: all.reduce((n, t) => n + t.lessons, 0),
+    questions: all.reduce((n, t) => n + t.questions, 0),
+    topics: all.length,
+    // scripts are timed at a reading pace; recorded lessons run ~40% longer
+    hours: Math.round((all.reduce((n, t) => n + t.minutes, 0) * 1.4) / 60),
+  };
 
   return (
-    <main className="mx-auto max-w-5xl px-5 py-10">
-      <h1 className="text-4xl font-bold sm:text-5xl">The Full Course</h1>
-      <p className="mt-2 max-w-2xl text-sm text-muted dark:text-neutral-400">
-        Every topic of the Quantitative and Verbal Reasoning sections, in order: video lessons, guided
-        questions with worked-solution videos, rules to know by heart, and practice.
-      </p>
-      <LearnHome outline={outline} stepIds={stepIds} recorded={recorded} />
+    <main>
+      <LearnHome outline={outline} stepIds={stepIds} recorded={recorded} totals={totals} />
     </main>
   );
 }

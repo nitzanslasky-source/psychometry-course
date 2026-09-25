@@ -8,6 +8,7 @@
      "id": 1,
      "title": "Algebraic Fundamentals",
      "videos": 5,
+     "lessons": 5,
      "questions": 54,
      "minutes": 32,
      "steps": 63
@@ -16,6 +17,7 @@
      "id": 2,
      "title": "Fractions — Fundamentals",
      "videos": 4,
+     "lessons": 4,
      "questions": 47,
      "minutes": 22,
      "steps": 53
@@ -24,6 +26,7 @@
      "id": 3,
      "title": "Fractions",
      "videos": 11,
+     "lessons": 1,
      "questions": 27,
      "minutes": 19,
      "steps": 39
@@ -32,6 +35,7 @@
      "id": 4,
      "title": "Expressions — Fundamentals",
      "videos": 3,
+     "lessons": 1,
      "questions": 29,
      "minutes": 10,
      "steps": 33
@@ -40,6 +44,7 @@
      "id": 5,
      "title": "Expressions",
      "videos": 15,
+     "lessons": 1,
      "questions": 51,
      "minutes": 26,
      "steps": 66
@@ -48,6 +53,7 @@
      "id": 6,
      "title": "Equations — Fundamentals",
      "videos": 5,
+     "lessons": 2,
      "questions": 54,
      "minutes": 12,
      "steps": 59
@@ -56,6 +62,7 @@
      "id": 7,
      "title": "Equations",
      "videos": 21,
+     "lessons": 1,
      "questions": 60,
      "minutes": 25,
      "steps": 81
@@ -64,6 +71,7 @@
      "id": 8,
      "title": "Exponent Laws — Fundamentals",
      "videos": 1,
+     "lessons": 1,
      "questions": 22,
      "minutes": 6,
      "steps": 24
@@ -72,6 +80,7 @@
      "id": 9,
      "title": "Roots — Fundamentals",
      "videos": 1,
+     "lessons": 1,
      "questions": 22,
      "minutes": 4,
      "steps": 24
@@ -80,6 +89,7 @@
      "id": 10,
      "title": "Laws of Exponents & Roots — Fundamentals",
      "videos": 6,
+     "lessons": 1,
      "questions": 54,
      "minutes": 13,
      "steps": 60
@@ -88,6 +98,7 @@
      "id": 11,
      "title": "Laws of Exponents & Roots — Advanced",
      "videos": 15,
+     "lessons": 1,
      "questions": 41,
      "minutes": 22,
      "steps": 56
@@ -96,6 +107,7 @@
      "id": 12,
      "title": "Inequalities",
      "videos": 18,
+     "lessons": 2,
      "questions": 43,
      "minutes": 26,
      "steps": 62
@@ -104,6 +116,7 @@
      "id": 13,
      "title": "Absolute Value",
      "videos": 14,
+     "lessons": 1,
      "questions": 35,
      "minutes": 27,
      "steps": 50
@@ -112,6 +125,7 @@
      "id": 14,
      "title": "Prime Numbers",
      "videos": 19,
+     "lessons": 2,
      "questions": 44,
      "minutes": 27,
      "steps": 65
@@ -120,6 +134,7 @@
      "id": 15,
      "title": "Division & Remainder",
      "videos": 15,
+     "lessons": 1,
      "questions": 41,
      "minutes": 23,
      "steps": 57
@@ -128,6 +143,7 @@
      "id": 16,
      "title": "Integers",
      "videos": 20,
+     "lessons": 4,
      "questions": 43,
      "minutes": 37,
      "steps": 67
@@ -136,6 +152,7 @@
      "id": 17,
      "title": "The Number Line",
      "videos": 11,
+     "lessons": 2,
      "questions": 26,
      "minutes": 27,
      "steps": 38
@@ -144,6 +161,7 @@
      "id": 18,
      "title": "Exercises with Letters",
      "videos": 10,
+     "lessons": 1,
      "questions": 36,
      "minutes": 17,
      "steps": 47
@@ -152,6 +170,7 @@
      "id": 19,
      "title": "Defining a New Operation",
      "videos": 18,
+     "lessons": 2,
      "questions": 43,
      "minutes": 26,
      "steps": 62
@@ -160,6 +179,7 @@
      "id": 20,
      "title": "Algebraic Understanding",
      "videos": 5,
+     "lessons": 1,
      "questions": 21,
      "minutes": 11,
      "steps": 27
@@ -174,6 +194,7 @@
      "id": 21,
      "title": "Trial, limits and patterns",
      "videos": 23,
+     "lessons": 7,
      "questions": 43,
      "minutes": 34,
      "steps": 68
@@ -182,6 +203,7 @@
      "id": 22,
      "title": "General word problems and ratios",
      "videos": 24,
+     "lessons": 6,
      "questions": 55,
      "minutes": 37,
      "steps": 82
@@ -190,6 +212,7 @@
      "id": 23,
      "title": "Percentages",
      "videos": 12,
+     "lessons": 2,
      "questions": 37,
      "minutes": 21,
      "steps": 50
@@ -198,6 +221,7 @@
      "id": 24,
      "title": "Overlapping groups",
      "videos": 11,
+     "lessons": 3,
      "questions": 25,
      "minutes": 19,
      "steps": 37
@@ -206,6 +230,7 @@
      "id": 25,
      "title": "Averages",
      "videos": 11,
+     "lessons": 3,
      "questions": 35,
      "minutes": 14,
      "steps": 47
@@ -214,6 +239,7 @@
      "id": 26,
      "title": "Work and rates",
      "videos": 15,
+     "lessons": 4,
      "questions": 38,
      "minutes": 21,
      "steps": 54
@@ -222,6 +248,7 @@
      "id": 27,
      "title": "Motion",
      "videos": 17,
+     "lessons": 4,
      "questions": 40,
      "minutes": 21,
      "steps": 58
@@ -230,6 +257,7 @@
      "id": 28,
      "title": "Counting possibilities",
      "videos": 25,
+     "lessons": 8,
      "questions": 44,
      "minutes": 34,
      "steps": 71
@@ -238,6 +266,7 @@
      "id": 29,
      "title": "Probability",
      "videos": 21,
+     "lessons": 4,
      "questions": 44,
      "minutes": 22,
      "steps": 66
@@ -252,6 +281,7 @@
      "id": 30,
      "title": "Lines and angles",
      "videos": 6,
+     "lessons": 2,
      "questions": 38,
      "minutes": 24,
      "steps": 45
@@ -260,6 +290,7 @@
      "id": 31,
      "title": "Triangles",
      "videos": 33,
+     "lessons": 10,
      "questions": 77,
      "minutes": 86,
      "steps": 116
@@ -268,6 +299,7 @@
      "id": 32,
      "title": "Quadrilaterals",
      "videos": 31,
+     "lessons": 10,
      "questions": 75,
      "minutes": 71,
      "steps": 109
@@ -276,6 +308,7 @@
      "id": 33,
      "title": "Circles",
      "videos": 30,
+     "lessons": 8,
      "questions": 76,
      "minutes": 72,
      "steps": 109
@@ -284,6 +317,7 @@
      "id": 34,
      "title": "Polygons",
      "videos": 16,
+     "lessons": 4,
      "questions": 39,
      "minutes": 43,
      "steps": 58
@@ -292,6 +326,7 @@
      "id": 35,
      "title": "Three-dimensional geometry",
      "videos": 14,
+     "lessons": 2,
      "questions": 39,
      "minutes": 37,
      "steps": 55
@@ -300,6 +335,7 @@
      "id": 36,
      "title": "Similarity and scale",
      "videos": 18,
+     "lessons": 5,
      "questions": 40,
      "minutes": 56,
      "steps": 61
@@ -308,6 +344,7 @@
      "id": 37,
      "title": "The coordinate system",
      "videos": 16,
+     "lessons": 5,
      "questions": 38,
      "minutes": 44,
      "steps": 55
@@ -316,6 +353,7 @@
      "id": 38,
      "title": "Geometric reasoning",
      "videos": 16,
+     "lessons": 3,
      "questions": 40,
      "minutes": 44,
      "steps": 57
@@ -330,6 +368,7 @@
      "id": 39,
      "title": "Active reading",
      "videos": 3,
+     "lessons": 1,
      "questions": 19,
      "minutes": 8,
      "steps": 23
@@ -338,6 +377,7 @@
      "id": 40,
      "title": "Analogies",
      "videos": 15,
+     "lessons": 4,
      "questions": 145,
      "minutes": 25,
      "steps": 161
@@ -346,6 +386,7 @@
      "id": 41,
      "title": "Sentence completion",
      "videos": 6,
+     "lessons": 2,
      "questions": 263,
      "minutes": 18,
      "steps": 270
@@ -354,6 +395,7 @@
      "id": 42,
      "title": "Formal logic and deductions",
      "videos": 10,
+     "lessons": 1,
      "questions": 36,
      "minutes": 16,
      "steps": 47
@@ -362,6 +404,7 @@
      "id": 43,
      "title": "Understanding sentences",
      "videos": 6,
+     "lessons": 1,
      "questions": 34,
      "minutes": 7,
      "steps": 41
@@ -370,6 +413,7 @@
      "id": 44,
      "title": "Understanding paragraphs",
      "videos": 6,
+     "lessons": 1,
      "questions": 245,
      "minutes": 10,
      "steps": 252
@@ -378,6 +422,7 @@
      "id": 45,
      "title": "Parables and comparisons",
      "videos": 7,
+     "lessons": 1,
      "questions": 57,
      "minutes": 9,
      "steps": 65
@@ -386,6 +431,7 @@
      "id": 46,
      "title": "Strengthening and weakening arguments",
      "videos": 7,
+     "lessons": 1,
      "questions": 43,
      "minutes": 12,
      "steps": 51
@@ -394,6 +440,7 @@
      "id": 47,
      "title": "Scientific reasoning",
      "videos": 6,
+     "lessons": 1,
      "questions": 45,
      "minutes": 12,
      "steps": 52
@@ -402,6 +449,7 @@
      "id": 48,
      "title": "Rules and arrangements",
      "videos": 9,
+     "lessons": 2,
      "questions": 46,
      "minutes": 17,
      "steps": 56
@@ -410,6 +458,7 @@
      "id": 49,
      "title": "Reading comprehension",
      "videos": 8,
+     "lessons": 2,
      "questions": 88,
      "minutes": 20,
      "steps": 97

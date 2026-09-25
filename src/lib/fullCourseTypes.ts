@@ -62,6 +62,8 @@ export interface OutlineTopic {
   id: number;
   title: string;
   videos: number;
+  /** Lesson videos (not worked solutions). */
+  lessons: number;
   questions: number;
   minutes: number;
   steps: number;

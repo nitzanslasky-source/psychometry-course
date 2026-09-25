@@ -40,7 +40,7 @@ def main():
     outline = {'subjects': [dict(key=k, title=t, topics=[]) for k, t, _ in SUBJECTS]}
     stats = dict(videos=0, questions=0, cards=0)
     for top in D['topics']:
-        t = int(top['id']); sections = []; passages = {}; minutes = 0; nv = nq = 0
+        t = int(top['id']); sections = []; passages = {}; minutes = 0; nv = nq = nl = 0
         for sid in top['sections']:
             sec = next(x for x in D['sections'] if x['id'] == sid)
             steps = []
@@ -53,7 +53,7 @@ def main():
                         n = qnum.get(v['questionId']); st.update(solution=True, questionId=v['questionId'], title='Worked solution' + (' · Question %d' % n if n else ''))
                     else:
                         st['title'] = v.get('navLabel') or v['title']
-                    steps.append(st); minutes += v.get('minutes') or 0; nv += 1
+                    steps.append(st); minutes += v.get('minutes') or 0; nv += 1; nl += 0 if v.get('questionId') else 1
                 elif f['type'] == 'question':
                     q = D['questions'][f['ref']]
                     st = dict(kind='question', id=q['id'], stem=tex(q['stemRich']), choices=[tex(c) for c in q['choicesRich']],
@@ -78,7 +78,7 @@ def main():
         doc = dict(id=t, title=top['title'], subject=subject_of(t), sections=sections, passages=passages)
         json.dump(doc, open(os.path.join(OUT, 'topics', 't%d.json' % t), 'w'), ensure_ascii=False, separators=(',', ':'))
         subj = next(s for s in outline['subjects'] if s['key'] == subject_of(t))
-        subj['topics'].append(dict(id=t, title=top['title'], videos=nv, questions=nq, minutes=round(minutes),
+        subj['topics'].append(dict(id=t, title=top['title'], videos=nv, lessons=nl, questions=nq, minutes=round(minutes),
                                    steps=sum(len(s['steps']) for s in sections)))
         stats['videos'] += nv; stats['questions'] += nq
     json.dump(outline, open(os.path.join(OUT, 'outline.json'), 'w'), ensure_ascii=False, indent=1)

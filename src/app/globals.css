@@ -2,16 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/* ------------------------------------------------------------------ foundations
-   Motion tokens. One curve family everywhere, so everything feels like one material:
-   --ease-out ≈ a critically-damped spring (no overshoot) for UI that just appears;
-   --ease-spring has a touch of overshoot, reserved for feedback that "lands" (a correct answer). */
+/* ------------------------------------------------------------------ foundations */
 :root {
-  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --ease-spring: cubic-bezier(0.34, 1.36, 0.64, 1);
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1); /* ≈ critically-damped spring */
+  --ease-spring: cubic-bezier(0.34, 1.36, 0.64, 1); /* a touch of overshoot: only for feedback that "lands" */
   --press: 100ms;
   --settle: 380ms;
-  font-size: 100%;
 }
 
 html {
@@ -20,45 +16,30 @@ html {
 }
 
 body {
-  @apply bg-canvas text-ink antialiased dark:bg-canvas-dark dark:text-neutral-100;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  line-height: 1.5;
-  letter-spacing: 0;
-  transition: background-color 400ms ease, color 400ms ease; /* ease theme changes, no brightness jump */
+  @apply bg-paper font-sans text-ink antialiased;
+  line-height: 1.55;
 }
 
-/* Typography: tracking and leading change with size. Large text tighter, body text untouched. */
+/* Type scale: tracking and leading tighten as size grows; body untouched. */
+.display {
+  @apply font-serif;
+  font-weight: 400;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
 h1,
 h2,
 h3 {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-optical-sizing: auto;
-}
-h1 {
-  line-height: 1.08;
-  letter-spacing: -0.025em;
-}
-h2 {
+  letter-spacing: -0.015em;
   line-height: 1.15;
-  letter-spacing: -0.018em;
-}
-h3 {
-  line-height: 1.25;
-  letter-spacing: -0.01em;
 }
 
 ::selection {
-  @apply bg-brand-200 text-brand-950;
+  background: #f3ead3;
+  color: #101826;
 }
 
-/* Keep MathJax inline math from inflating line height inside stems. */
-mjx-container[display="false"] {
-  vertical-align: -0.1ex;
-}
-mjx-container {
-  @apply dark:text-neutral-100;
-}
-/* Tailwind's preflight makes every <svg> a block — MathJax SVG output must stay inline. */
+/* MathJax (SVG output) — Tailwind makes every <svg> a block; math must stay inline. */
 mjx-container[jax="SVG"] > svg {
   display: inline;
 }
@@ -66,225 +47,139 @@ mjx-container[jax="SVG"][display="true"] > svg {
   display: block;
   margin: 0 auto;
 }
+mjx-container[display="false"] {
+  vertical-align: -0.1ex;
+}
 
 @layer components {
-  /* Surfaces */
-  .surface-card {
-    @apply rounded-2xl border border-hair bg-surface shadow-soft dark:border-white/10 dark:bg-surface-dark;
-    transition:
-      transform var(--settle) var(--ease-out),
-      box-shadow var(--settle) var(--ease-out),
-      border-color 200ms ease;
-  }
-  .surface-card-hover {
-    @apply hover:border-neutral-300 hover:shadow-card dark:hover:border-white/20;
-  }
-  .surface-card-hover:hover {
-    transform: translateY(-2px);
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase text-muted;
+    letter-spacing: 0.14em;
   }
 
-  /* Anything pressable: feedback on pointer-DOWN, instantly (not on release). */
-  .pressable,
-  .btn-primary,
-  .btn-secondary,
-  .surface-card-hover {
-    touch-action: manipulation; /* no 300ms tap delay */
-  }
-  .pressable:active,
-  .btn-primary:active:not(:disabled),
-  .btn-secondary:active:not(:disabled),
-  .surface-card-hover:active {
-    transform: scale(0.97);
-    transition: transform var(--press) ease-out;
+  .card {
+    @apply rounded-2xl border border-line bg-white;
   }
 
-  .btn-primary {
-    @apply inline-flex select-none items-center justify-center gap-1.5 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white shadow-soft hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-40;
+  /* Buttons — feedback on pointer-down, instantly. */
+  .btn {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-full bg-ink px-5 py-2.5 text-sm font-medium text-white disabled:cursor-not-allowed disabled:opacity-35;
     transition:
       transform var(--settle) var(--ease-out),
       background-color 150ms ease,
       opacity 150ms ease;
+    touch-action: manipulation;
   }
-  .btn-secondary {
-    @apply inline-flex select-none items-center justify-center gap-1.5 rounded-xl border border-hair bg-surface px-4 py-2.5 text-sm font-medium text-ink hover:border-neutral-400 dark:border-white/15 dark:bg-white/5 dark:text-neutral-100 dark:hover:border-white/30;
+  .btn:hover:not(:disabled) {
+    background: #2b3445;
+  }
+  .btn-ghost {
+    @apply inline-flex select-none items-center justify-center gap-2 rounded-full border border-line bg-white px-5 py-2.5 text-sm font-medium text-ink;
     transition:
       transform var(--settle) var(--ease-out),
       border-color 150ms ease;
+    touch-action: manipulation;
   }
-  .link-subtle {
-    @apply text-brand-700 transition-colors hover:text-brand-800 hover:underline dark:text-brand-300 dark:hover:text-brand-200;
+  .btn-ghost:hover {
+    border-color: #c9c3b6;
   }
-  .kicker {
-    @apply text-xs font-semibold uppercase text-muted dark:text-neutral-400;
-    letter-spacing: 0.06em; /* small caps text: positive tracking for legibility */
+  .pressable {
+    touch-action: manipulation;
+    transition: transform var(--settle) var(--ease-out);
+  }
+  .pressable:active,
+  .btn:active:not(:disabled),
+  .btn-ghost:active {
+    transform: scale(0.97);
+    transition: transform var(--press) ease-out;
   }
 
-  /* Translucent material: the header floats over content that scrolls beneath it. */
-  .material-bar {
-    background: rgb(255 253 250 / 0.72);
+  .link {
+    @apply text-ink underline decoration-line decoration-1 underline-offset-4 transition-colors hover:decoration-ink;
+  }
+
+  /* Translucent material: bars float over content that scrolls beneath them. */
+  .material {
+    background: rgb(251 250 247 / 0.78);
     -webkit-backdrop-filter: blur(20px) saturate(180%);
     backdrop-filter: blur(20px) saturate(180%);
   }
-  .dark .material-bar {
-    background: rgb(28 24 17 / 0.72);
-  }
-  /* Scroll-edge effect instead of a hard divider: a soft fade under the bar. */
-  .material-bar::after {
+  .edge-bottom::after {
     content: "";
     position: absolute;
     left: 0;
     right: 0;
     top: 100%;
-    height: 14px;
+    height: 12px;
     pointer-events: none;
-    background: linear-gradient(to bottom, rgb(0 0 0 / 0.05), transparent);
+    background: linear-gradient(to bottom, rgb(16 24 38 / 0.045), transparent);
   }
-  .material-panel {
-    background: rgb(255 253 250 / 0.8);
-    -webkit-backdrop-filter: blur(16px) saturate(160%);
-    backdrop-filter: blur(16px) saturate(160%);
-  }
-  .dark .material-panel {
-    background: rgb(28 24 17 / 0.8);
+  .edge-top::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 100%;
+    height: 12px;
+    pointer-events: none;
+    background: linear-gradient(to top, rgb(16 24 38 / 0.045), transparent);
   }
 }
 
-/* ------------------------------------------------------------------ motion
-   Steps enter along the direction you travel (Next → from the right, Previous → from the left),
-   so a step leaves and returns along the same path. Only transform + opacity: compositor-friendly. */
+/* ------------------------------------------------------------------ motion */
 @keyframes step-in-next {
-  from {
-    opacity: 0;
-    transform: translateX(28px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+  from { opacity: 0; transform: translateX(24px); }
+  to { opacity: 1; transform: none; }
 }
 @keyframes step-in-prev {
-  from {
-    opacity: 0;
-    transform: translateX(-28px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+  from { opacity: 0; transform: translateX(-24px); }
+  to { opacity: 1; transform: none; }
 }
 @keyframes rise-in {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  to {
-    opacity: 1;
-    transform: none;
-  }
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
 }
-.step-in-next {
-  animation: step-in-next var(--settle) var(--ease-out) both;
+@keyframes drawer-in {
+  from { transform: translateX(100%); }
+  to { transform: none; }
 }
-.step-in-prev {
-  animation: step-in-prev var(--settle) var(--ease-out) both;
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
-.rise-in {
-  animation: rise-in var(--settle) var(--ease-out) both;
-}
+.step-in-next { animation: step-in-next var(--settle) var(--ease-out) both; }
+.step-in-prev { animation: step-in-prev var(--settle) var(--ease-out) both; }
+.rise-in { animation: rise-in var(--settle) var(--ease-out) both; }
+.drawer-in { animation: drawer-in 340ms var(--ease-out) both; }
+.fade-in { animation: fade-in 240ms ease both; }
 
-/* Answer feedback — causal and immediate: the right answer "lands", a wrong pick gives a short no-shake. */
 @keyframes land {
-  0% {
-    transform: scale(0.98);
-  }
-  60% {
-    transform: scale(1.015);
-  }
-  100% {
-    transform: scale(1);
-  }
+  0% { transform: scale(0.985); }
+  60% { transform: scale(1.012); }
+  100% { transform: scale(1); }
 }
 @keyframes nope {
-  0%,
-  100% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-5px);
-  }
-  50% {
-    transform: translateX(4px);
-  }
-  75% {
-    transform: translateX(-2px);
-  }
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  50% { transform: translateX(4px); }
+  75% { transform: translateX(-2px); }
 }
-.anim-land {
-  animation: land 420ms var(--ease-spring) both;
-}
-.anim-nope {
-  animation: nope 320ms ease-out both;
-}
+.anim-land { animation: land 420ms var(--ease-spring) both; }
+.anim-nope { animation: nope 320ms ease-out both; }
+.progress-fill { transition: width 700ms var(--ease-out), stroke-dashoffset 700ms var(--ease-out); }
 
-/* Progress fills grow from where they were. */
-.progress-fill {
-  transition: width 700ms var(--ease-out);
-}
-
-/* ------------------------------------------------------------------ accessibility
-   Reduced motion = gentler, not none: slides and bounces become short cross-fades. */
+/* ------------------------------------------------------------------ accessibility */
 @media (prefers-reduced-motion: reduce) {
-  html {
-    scroll-behavior: auto;
-  }
-  .step-in-next,
-  .step-in-prev,
-  .rise-in {
-    animation: fade-only 180ms ease both;
-  }
-  .anim-land,
-  .anim-nope {
-    animation: none;
-  }
-  .surface-card-hover:hover,
-  .pressable:active,
-  .btn-primary:active:not(:disabled),
-  .btn-secondary:active:not(:disabled),
-  .surface-card-hover:active {
-    transform: none;
-  }
-  .progress-fill {
-    transition: none;
-  }
-}
-@keyframes fade-only {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+  html { scroll-behavior: auto; }
+  .step-in-next, .step-in-prev, .rise-in, .drawer-in { animation: fade-in 180ms ease both; }
+  .anim-land, .anim-nope { animation: none; }
+  .pressable:active, .btn:active:not(:disabled), .btn-ghost:active { transform: none; }
+  .progress-fill { transition: none; }
 }
 @media (prefers-reduced-transparency: reduce) {
-  .material-bar,
-  .material-panel {
-    background: rgb(255 253 250);
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-  }
-  .dark .material-bar,
-  .dark .material-panel {
-    background: rgb(28 24 17);
-  }
+  .material { background: #fbfaf7; -webkit-backdrop-filter: none; backdrop-filter: none; }
 }
 @media (prefers-contrast: more) {
-  .material-bar,
-  .material-panel {
-    background: rgb(255 253 250);
-    backdrop-filter: none;
-    border-bottom: 1px solid #211c15;
-  }
-  .surface-card {
-    border-color: #6b6255;
-  }
+  .material { background: #fbfaf7; backdrop-filter: none; border-bottom: 1px solid #101826; }
+  .card { border-color: #6e7481; }
 }
