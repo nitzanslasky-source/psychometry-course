@@ -16,8 +16,12 @@ REPL = [
     # save the take to the recordings folder (or auto-download)
     ("try{await putMedia({key,lesson:v.id,blob,name,date:new Date().toISOString()});state.media[v.id]={type:'stored',key,name};save();$('#record-message').textContent='Take saved in this browser. Download it to keep a separate copy.';toast('Take saved. The student view now plays this recording on this device.');previewTake()}catch{downloadBlob(name,blob);$('#record-message').textContent='Browser storage was unavailable. The recording has been offered as a download.';toast('Download this take now; it could not be stored in the browser.')}",
      "const where=await saveTakeFile(v,name,blob);state.media[v.id]={type:'file',name,path:where||'Downloads/'+name};save();"
+     "if(where&&r.chapters?.length){const ch=r.chapters.filter((c,i,a)=>i===0||c.title!==a[i-1].title);await saveTakeFile(v,name.replace(/\\.(webm|mp4)$/,'.chapters.json'),new Blob([JSON.stringify({videoId:v.id,chapters:ch},null,1)],{type:'application/json'}))}"
      "$('#record-message').textContent=where?'Saved: '+where:'Saved to your Downloads folder: '+name+'  (choose a Recordings folder to file takes automatically)';"
      "toast(where?'Take saved to '+where:'Take downloaded: '+name)"),
+    # chapters: note the moment of every slide change while recording (pauses excluded)
+    ("function draw(){if(!record)return;", "function draw(){if(!record)return;noteChapter();"),
+    ("recTimer=setInterval(()=>{if(record){", "recTimer=setInterval(()=>{if(record){noteChapter();"),
     # file-type takes have no in-browser copy
     ("if(m.type==='url')return m.url;", "if(m.type==='url')return m.url;if(m.type==='file')return null;"),
     # UI: folder button next to Rehearse
@@ -31,6 +35,8 @@ REPL = [
 ]
 
 FUNCS = r"""
+/* ---- chapters: the moment of every slide change during a recording (pauses excluded) ---- */
+function noteChapter(){if(!record||record.lastBeat===state.beat)return;record.lastBeat=state.beat;const now=Date.now(),t=(now-record.started-record.pausedMs-(record.pausedAt?now-record.pausedAt:0))/1000,bt=record.v.beats[state.beat]||{};(record.chapters=record.chapters||[]).push({start:Math.max(0,Math.round(t*10)/10),title:bt.bigTitle||bt.title||('Slide '+(state.beat+1))})}
 /* ---- recordings folder (File System Access API, desktop Chrome/Edge) ---- */
 const RF={db:null,handle:null};
 function rfDB(){return RF.db||(RF.db=new Promise((ok,no)=>{const r=indexedDB.open('studio-rec-folder',1);r.onupgradeneeded=()=>r.result.createObjectStore('h');r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)}))}

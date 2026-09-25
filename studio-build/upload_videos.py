@@ -1,7 +1,8 @@
 """Upload recorded lessons to Bunny Stream and connect each one to its lesson on the website.
 
 The Teacher Studio saves every take as  <videoId>-<YYYY-MM-DDTHH-MM-SS-mmmZ>.webm  (inside Subject/Topic folders).
-This script finds the newest take of every video, uploads the ones that are new or changed, and records them in
+This script finds the newest take of every video, uploads the ones that are new or changed (with the chapter list the
+studio saved beside each take, so students can jump to any slide), and records them in
 content/full-course/video-manifest.json — the website shows a lesson's video as soon as it's in the manifest.
 
     python3 studio-build/upload_videos.py "/path/to/Course Recordings"            # upload
@@ -79,6 +80,16 @@ def main():
                 api('PUT', '/library/%s/videos/%s' % (lib, guid), key, body_file=fh, size=size)
         except urllib.error.HTTPError as e:
             print('   failed:', e.code, e.read().decode()[:200]); continue
+        chap = re.sub(r'\.(webm|mp4|mov)$', '.chapters.json', path)
+        if os.path.exists(chap):
+            try:
+                cs = json.load(open(chap, encoding='utf-8'))['chapters']
+                chapters = [{'title': c['title'][:80], 'start': int(c['start']), 'end': int(cs[k + 1]['start']) if k + 1 < len(cs) else int(c['start']) + 7200}
+                            for k, c in enumerate(cs)]
+                api('POST', '/library/%s/videos/%s' % (lib, guid), key, data={'chapters': chapters})
+                print('   + %d chapters' % len(chapters))
+            except Exception as e:  # chapters are a bonus — never fail the upload for them
+                print('   (chapters not added: %s)' % e)
         old = man.get(vid, {}).get('videoGuid')
         man[vid] = {'provider': 'bunny', 'libraryId': lib, 'videoGuid': guid, 'file': os.path.basename(path),
                     'uploaded': time.strftime('%Y-%m-%d %H:%M')}
