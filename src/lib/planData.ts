@@ -44,7 +44,7 @@ export function getPlanData() {
       const practice = topic.sections[sectionIndex].kind === "practice";
       const k: PlanStep["k"] = step.kind === "video" ? (step.solution ? "q" : "v") : step.kind === "card" ? "c" : practice ? "p" : "q";
       const m =
-        step.kind === "video" ? Math.max(2, Math.round((step.minutes || 3) * 1.4) + 1) : step.kind === "card" ? 3 : practice ? 1.5 : 2;
+        step.kind === "video" ? Math.max(2, Math.round((step.minutes || 3) * 1.4) + 1) : step.kind === "card" ? 3 : practice ? 3 : 2; // practice: solving + checking the answer + reviewing the explanation
       steps.push({ id: step.id, t: t.id, n: i + 1, k, m });
     });
   }
