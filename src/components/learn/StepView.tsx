@@ -13,6 +13,7 @@ import type {
 } from "@/lib/fullCourseTypes";
 import { StepList, type StepListSection } from "./StepList";
 import { MemoryCard } from "./MemoryCard";
+import { AddToReview } from "@/components/extras/AddToReview";
 
 interface Nav {
   topic: number;
@@ -115,7 +116,18 @@ export function StepView({
         <div key={step.id} className={dir === "prev" ? "step-in-prev mt-4" : "step-in-next mt-4"}>
           {step.kind === "video" && <VideoStep step={step} video={video} onEnded={complete} />}
           {step.kind === "question" && <QuestionStep key={step.id} step={step} topic={nav.topic} passage={passage} accent={nav.accent} />}
-          {step.kind === "card" && <MemoryCard step={step} accent={nav.accent} />}
+          {step.kind === "card" && (
+            <MemoryCard
+              step={step}
+              accent={nav.accent}
+              heading={
+                <div className="flex flex-wrap items-center justify-between gap-3">
+                  <h1 className="display text-[40px] sm:text-[48px]">{step.title}</h1>
+                  <AddToReview srsKey={`c:${step.id}`} />
+                </div>
+              }
+            />
+          )}
         </div>
       </div>
 
@@ -232,7 +244,7 @@ function QuestionStep({
 
   const check = () => {
     if (picked === null) return;
-    recordAnswer(topic, step.id, picked);
+    recordAnswer(topic, step.id, picked, step.correct);
     setChecked(true);
   };
   const retry = () => {

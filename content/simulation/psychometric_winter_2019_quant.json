@@ -1,0 +1,1145 @@
+{
+  "source_exam": "psychometric_winter_2019",
+  "source_exam_label": "Winter 2019",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_winter_2019_acc_1-1.pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 60 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2019_winter_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/w2019_s1_graph.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\nThe graph presents data on the final exams of five students in a certain course.  All the exams were administered in the same month.\nEach of the students was entitled to be tested more than once.  The final grade in the course is the grade that the student received on his last exam.\nEach symbol in the graph indicates an exam of a student (see key).  The position of each of the symbols indicates the day in the month on which the exam was administered (the horizontal axis) and the student's grade on that exam (the vertical axis).  Next to each symbol is written the number of hours that the student studied for the exam.\n\nFor example: On the 10th of the month Boaz was tested for the second time.  He studied 10 hours for this exam, and his grade on the exam was 70."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    },
+    {
+      "section_id": "2019_winter_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/w2019_s2_graph.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\nThe graph describes data regarding the height of men in a certain city.\nThe height of all the men in the city is in the range between 150 cm and 210 cm.  This range is divided into 8 height groups, and each height group is marked in the graph by a rectangle.  The position of the rectangle on the horizontal axis represents the range of heights of the members of the group.  The number of small squares that the rectangle contains (including parts of squares) represents the <b>percentage</b> of the men, out of all the men in the city, who belong to this group.  Each whole small square represents 1% of the men in the city.\n\nFor example: In the 170-175 cm height group there are 10 whole squares, 10 half squares, \\(\\frac{2}{3}\\) of a square and \\(\\frac{1}{3}\\) of a square.  This means that the height of 16% of the men in the city is between 170 and 175 cm."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2019_winter_q1_01",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 1,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "AB is a diameter in a circle whose center is O.\nBased on this information and the information in the figure,\n\nα + β = ?",
+      "options": [
+        "60°",
+        "75°",
+        "90°",
+        "120°"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/w2019_s1_q01.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2019_winter_q1_02",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 2,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "easy",
+      "stem": "(a+b)(b−a) = ?",
+      "options": [
+        "\\(b^2 - a^2\\)",
+        "\\(a^2 + b^2\\)",
+        "\\((a-b)^2\\)",
+        "\\((b-a)^2\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\((a+b)(b-a)\\) is the difference of squares with the terms in the other order: it equals \\(b^2-a^2\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(a=1, b=3\\): the product is \\(4 \\times 2 = 8\\), and \\(b^2-a^2 = 8\\). The squared options give 4 and 4, and the sum gives 10."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q1_03",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 3,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "medium",
+      "stem": "In a certain raffle a monetary prize is raffled off, and it is divided equally among the winners.  If two participants win, each one of them will receive a sum that is greater by 150,000 shekels than the sum that each one of them would receive if they were to divide the prize with a third winner.\n\nWhat is the size of the total prize (in shekels)?",
+      "options": [
+        "900,000",
+        "1,050,000",
+        "1,200,000",
+        "1,550,000"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2019_winter_q1_04",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 4,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Given: a is equal to 20% of b.\n     b is equal to x% of a.\n\nx = ?",
+      "options": [
+        "80",
+        "125",
+        "500",
+        "400"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "plug-in",
+          "text": "Set \\(b = 100\\), so \\(a = 20\\). Then \\(b\\) as a percentage of \\(a\\) is \\(\\frac{100}{20} = 500\\%\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The reverse of &ldquo;20% of&rdquo; is &ldquo;500% of&rdquo;, the reciprocal. Option (1) subtracts from 100 and option (4) is \\(\\frac{1}{0.25}\\) &mdash; both are the wrong operation."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q1_05",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 5,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "medium",
+      "stem": "The angles of a triangle satisfy the ratio 3:1:1 between them.\n\nWhich of the following statements is necessarily true?",
+      "options": [
+        "All the angles of the triangle are acute",
+        "The triangle has a right angle",
+        "The triangle has an obtuse angle",
+        "None of the above statements is necessarily true"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2019_winter_q1_06",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 6,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure the point O is the center of the base of the cone.  AO is the height of the cone.\n\nBased on this information and the information in the figure,\nwhat is the volume of the cone (in cm³)?",
+      "options": [
+        "\\(18\\sqrt{2}\\,\\pi\\)",
+        "\\(3\\sqrt{2}\\,\\pi\\)",
+        "\\(6\\pi\\)",
+        "\\(9\\pi\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2019_s1_q06.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2019_winter_q1_07",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 7,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "medium",
+      "stem": "In a classroom there are 4 rows of chairs, and in each row there are 3 chairs.\nDaniella and Maya enter the classroom and want to sit in two chairs that are adjacent to each other in the same row.\n\nIn how many ways can they do this?",
+      "options": [
+        "12",
+        "16",
+        "18",
+        "24"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2019_winter_q1_08",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 8,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Rafi, Naomi and Yoav each prepared a cup of coffee:\nRafi used \\(\\frac{1}{2}\\) a teaspoon of coffee and 1 teaspoon of sugar,\nNaomi used \\(1\\frac{1}{2}\\) teaspoons of coffee and \\(1\\frac{1}{2}\\) teaspoons of sugar,\nand Yoav used 1 teaspoon of coffee only.\n\nWhat is the ratio between the number of all the teaspoons of coffee and the number of all the teaspoons of sugar that they used to prepare the cups of coffee?",
+      "options": [
+        "3 : 2",
+        "5 : 3",
+        "5 : 4",
+        "6 : 5"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Total coffee is \\(\\frac12 + 1\\frac12 + 1 = 3\\); total sugar is \\(1 + 1\\frac12 = 2\\frac12\\). The ratio is \\(3 : 2.5 = 6:5\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Yoav used no sugar at all, so he contributes to one total only. Reading each person's contribution to each total separately is the whole task."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q1_09",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 9,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "graph_comprehension",
+      "stem": "Which of the following students was tested on two consecutive exams with a difference of more than 12 days?",
+      "options": [
+        "Ohad",
+        "Boaz",
+        "Dani",
+        "Hila"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/w2019_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_winter_q1_10",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 10,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "graph_comprehension",
+      "stem": "The teacher decided to change the method of calculating the final grade in the course.  She determined that the final grade would be the highest grade that the student received on the final exams of the course.\n\nThe final grade of which of the following students would change as a result of the teacher's decision?",
+      "options": [
+        "Ohad",
+        "Boaz",
+        "Galia",
+        "Dani"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2019_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_winter_q1_11",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 11,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "graph_comprehension",
+      "stem": "Due to technical problems it became clear that all the exams that were administered on Fridays in this month must be checked again.\nThe 1st of the month described in the graph fell on a Friday.\n\nHow many exams were checked again in this month?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2019_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_winter_q1_12",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 12,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "graph_comprehension",
+      "stem": "A student begins to study for the second exam on the same day on which the first exam was administered, and continues until the day before the second exam (including the day before the exam).\n\nWhich of the following students studied an average of two hours a day for his second exam?",
+      "options": [
+        "Ohad",
+        "Boaz",
+        "Dani",
+        "Hila"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2019_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_winter_q1_13",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 13,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "\\(\\sqrt{a} = x^2\\)\n\n\\((a)^{1\\frac{1}{2}} = ?\\)",
+      "options": [
+        "\\(x^{2\\frac{1}{2}}\\)",
+        "\\(x^{3\\frac{1}{2}}\\)",
+        "\\(x^3\\)",
+        "\\(x^6\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\sqrt a = x^2\\) gives \\(a = x^4\\), so \\(a^{3/2} = \\left(x^4\\right)^{3/2} = x^6\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(x=2\\): \\(a = 16\\) and \\(16^{1.5} = 64 = 2^6\\)."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q1_14",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 14,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "hard",
+      "stem": "In a television quiz show n participants won a free trip abroad (2 < n).\nEach of the participants who won chose at random a destination country from a list of (n – 1) countries.\n\nWhich of the following statements is <b>necessarily</b> true regarding the countries on the list?",
+      "options": [
+        "At least one participant travelled to every country",
+        "At most 2 participants travelled to every country",
+        "There is at least one country to which no participant travelled",
+        "There is at least one country to which at least 2 participants travelled"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2019_winter_q1_15",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 15,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "hard",
+      "stem": "Given: \\(3(x + y) = \\frac{1}{z}\\) ,  y, z ≠ 0\n\n\\(\\frac{1}{y} = ?\\)",
+      "options": [
+        "\\(\\dfrac{3}{x - z}\\)",
+        "\\(\\dfrac{3z}{1 - 3zx}\\)",
+        "\\(z - \\dfrac{1}{3x}\\)",
+        "\\(\\dfrac{3x}{1 - 3z}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(x + y = \\frac{1}{3z}\\), so \\(y = \\frac{1-3zx}{3z}\\) and, taking the reciprocal, \\(\\frac1y = \\frac{3z}{1-3zx}\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The question asks for \\(\\frac1y\\), not \\(y\\) &mdash; so isolate \\(y\\) as a single fraction first and flip once at the end, rather than trying to invert term by term."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q1_16",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 16,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "a, b and c are integers.\nGiven: b = a+2\n     c = b+2\n\nWhich of the following statements is necessarily true?",
+      "options": [
+        "a · b · c is divisible by 4 without a remainder",
+        "b · (a+c) is divisible by 3 without a remainder",
+        "c · (a+b) is divisible by 3 without a remainder",
+        "a+b+c is divisible by 3 without a remainder"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "With \\(b = a+2\\) and \\(c = a+4\\), the sum is \\(3a + 6 = 3(a+2)\\) &mdash; always a multiple of 3."
+        },
+        {
+          "kind": "check-answers",
+          "text": "The other options fail on \\(a=1\\): \\(a \\cdot b \\cdot c = 15\\) is not divisible by 4, and \\(b(a+c) = 3 \\times 6 = 18\\) is divisible by 3 but \\(c(a+b) = 5 \\times 4 = 20\\) is not."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q1_17",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 17,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "hard",
+      "stem": "n is a two-digit number.  If we subtract from it the sum of its digits, we will get the sum of its digits.\n\nWhat is the tens digit of n ?",
+      "options": [
+        "1",
+        "2",
+        "6",
+        "9"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(n = 10t + u\\) and the condition is \\(10t + u - (t+u) = t + u\\), that is \\(9t = t + u\\), so \\(8t = u\\). The only digit solution is \\(t = 1,\\ u = 8\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Subtracting the digit sum from a two-digit number always leaves \\(9t\\) &mdash; a multiple of 9. So the question is really asking when \\(9t\\) equals the digit sum, and \\(9t\\) grows far too fast for more than one answer."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q1_18",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 18,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure ABCD is a square.  E is the midpoint of side AD .\n\nWhich of the following numbers <b>cannot</b> be the number of points of intersection between a circle whose center is the point E and the square ABCD?",
+      "options": [
+        "1",
+        "2",
+        "0",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2019_s1_q18.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2019_winter_q1_19",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 19,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure ABCD is a square whose side length is a cm.\nGiven: The segments AE and BF are equal in length.\n     The area of triangle ABG is 16 times as much as the area of triangle EFG.\n\nWhat is the area of triangle ABG (in cm²)?",
+      "options": [
+        "\\(\\frac{1}{3}a^2\\)",
+        "\\(\\frac{2}{5}a^2\\)",
+        "\\(\\frac{3}{10}a^2\\)",
+        "\\(\\frac{5}{16}a^2\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2019_s1_q19.png"
+      ],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2019_winter_q1_20",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 20,
+      "section_id": "2019_winter_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "hard",
+      "stem": "A bus driver travels back and forth between stations A and B.  The trip lasts 30 minutes in each direction.\nEvery time that the driver arrives at A or at B he rests for 10 minutes, and then continues travelling.\nIt is known that at 9:00 the driver was on his way from A to B.\n\nIt is <b>not possible</b> that at 10:00 the driver was -",
+      "options": [
+        "at A",
+        "at B",
+        "on his way from A to B",
+        "on his way from B to A"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2019_winter_q2_01",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 1,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "In a certain toy store, for every purchase of two toys a discount of 40% is given on the cheaper toy of them.\nMenachem bought two toys in the store whose prices, before the discount, were 40 shekels and 50 shekels.\n\nHow much did Menachem pay for the toys (in shekels)?",
+      "options": [
+        "60",
+        "64",
+        "70",
+        "74"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "The discount applies to the <b>cheaper</b> toy, so 40% comes off the 40-shekel toy: \\(40 \\times 0.6 = 24\\), plus 50 for the other. Total 74."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Applying the discount to the 50 toy instead gives 70, which is option (3) &mdash; the error the question is built to catch."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q2_02",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 2,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Given: 3x – 5 = 6 + 2y\n     3x + 5 = 6 – 2y\n\nx = ?",
+      "options": [
+        "\\(\\frac{1}{3}\\)",
+        "2",
+        "3",
+        "\\(\\frac{11}{3}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Add the two equations: the \\(2y\\) and \\(-2y\\) cancel and the constants give \\(6x = 12\\), so \\(x = 2\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The two equations are identical apart from the sign on 5 and on \\(2y\\), which is the signal that adding them will eliminate \\(y\\) outright."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q2_03",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 3,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "medium",
+      "stem": "In the accompanying coordinate system the points A and B are given.\n\nBased on the information in the figure, what is the size of the area of the trapezoid (the total of all the dark area)?",
+      "options": [
+        "10",
+        "12",
+        "15",
+        "20"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/w2019_s2_q03.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2019_winter_q2_04",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 4,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Lines & Angles",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure straight line a is parallel to straight line b.\nBased on this information and the information in the figure,\n\nα + β + γ = ?",
+      "options": [
+        "140°",
+        "180°",
+        "220°",
+        "It is impossible to know from the information given"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/w2019_s2_q04.png"
+      ],
+      "sub_category_id": "lines_angles"
+    },
+    {
+      "id": "2019_winter_q2_05",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 5,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "medium",
+      "stem": "In an office-supplies store a pencil costs 3 shekels, an eraser costs 6 shekels and a pen costs 12 shekels.\nYoel bought pencils, erasers and pens in the store (at least one item of each kind).\n\nWhich of the following numbers <b>cannot</b> be the price that Yoel paid for all the items that he bought (in shekels)?",
+      "options": [
+        "48",
+        "52",
+        "57",
+        "63"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2019_winter_q2_06",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 6,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "hard",
+      "stem": "Tap <b>A</b> pours water at a rate of 6 liters per minute, and tap <b>B</b> pours water at a rate of \\(\\frac{1}{2}\\) a liter per minute.\nThey begin to pour water into a bucket whose volume is 15 liters from tap <b>A</b> only.\nAfter 20 seconds they open tap <b>B</b> and now water flows into the bucket from both taps.\n\nAfter how much time from the moment of <b>the beginning of the flow of the water</b> will the bucket fill up?",
+      "options": [
+        "1 minute and 30 seconds",
+        "1 minute and 50 seconds",
+        "two minutes and 20 seconds",
+        "two minutes and 40 seconds"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Multi-phase accounting. Tap A alone for 20 seconds delivers 2 litres, leaving 13."
+        },
+        {
+          "kind": "algebra",
+          "text": "Both taps give \\(6.5\\) litres a minute, so 13 litres takes exactly 2 minutes &mdash; total 2 minutes 20 seconds. Convert the 20 seconds to \\(\\frac13\\) minute before using it."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q2_07",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 7,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "Given: \\(y = \\frac{2x^3}{3x^2}\\) ,  2 < x < 3\n\nWhat is the exact range of y ?",
+      "options": [
+        "\\(\\frac{1}{3} < y < \\frac{2}{3}\\)",
+        "\\(\\frac{4}{3} < y < 2\\)",
+        "2 < y < 3",
+        "4 < y < 9"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(y = \\dfrac{2x^3}{3x^2} = \\dfrac{2x}{3}\\). On \\(2<x<3\\) that runs from \\(\\frac43\\) to 2."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(x = 2.5\\), which lies in the given range: \\(y = \\frac{2(15.625)}{3(6.25)} = \\frac{5}{3}\\). That value falls inside \\(\\frac43 < y < 2\\) and outside all three other ranges, so one substitution settles it."
+        },
+        {
+          "kind": "check-answers",
+          "text": "The endpoints alone settle it: substituting \\(x=2\\) and \\(x=3\\) gives \\(\\frac43\\) and 2, and only option (2) has those two bounds."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q2_08",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 8,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure is an equilateral triangle and two circles: one circumscribes the triangle and the other is inscribed in the triangle.  The point O is the center of both circles.\n\nGiven: The radius of the circle inscribed in the triangle is 1 cm.\n\nWhat is the area of the ring (the total of all the dark areas)?",
+      "options": [
+        "\\(\\pi\\) cm²",
+        "\\(2\\pi\\) cm²",
+        "\\(3\\pi\\) cm²",
+        "\\(4\\pi\\) cm²"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/w2019_s2_q08.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2019_winter_q2_09",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 9,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "graph_comprehension",
+      "stem": "In which of the following height groups is the number of men the greatest?",
+      "options": [
+        "160-170 cm",
+        "175-180 cm",
+        "180-185 cm",
+        "190-200 cm"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2019_s2_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_winter_q2_10",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 10,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "graph_comprehension",
+      "stem": "It is known that the number of men in the city is 3,000 in total.\n\nThe height of how many men in the city is between 185 and 190 cm?",
+      "options": [
+        "120",
+        "180",
+        "240",
+        "300"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2019_s2_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_winter_q2_11",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 11,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "graph_comprehension",
+      "stem": "It is known that there is a man in the city whose number of men taller than him is equal to the number of men shorter than him.\n\nTo which height group does this man belong?",
+      "options": [
+        "170-175 cm",
+        "175-180 cm",
+        "180-185 cm",
+        "185-190 cm"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2019_s2_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_winter_q2_12",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 12,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "graph_comprehension",
+      "stem": "The men belonging to the two groups whose members' height is between 180 cm and 190 cm were divided into three new groups:\n180 - \\(183\\frac{1}{3}\\) cm ,  \\(183\\frac{1}{3}\\) - \\(186\\frac{2}{3}\\) cm ,  \\(186\\frac{2}{3}\\) - 190 cm.\n\nWhich of the following parts of graphs could describe these three new groups?",
+      "options": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "option_figure_paths": [
+        "figures/w2019_s2_q12_opt1.png",
+        "figures/w2019_s2_q12_opt2.png",
+        "figures/w2019_s2_q12_opt3.png",
+        "figures/w2019_s2_q12_opt4.png"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/w2019_s2_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_winter_q2_13",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 13,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure ABCD is a rhombus.\nGiven: AC = 1 cm\n     BD = 2 cm\n\nBased on this information, what is the perimeter of rhombus ABCD (in cm)?",
+      "options": [
+        "\\(2\\sqrt{10}\\)",
+        "\\(4\\sqrt{10}\\)",
+        "\\(2\\sqrt{5}\\)",
+        "\\(4\\sqrt{5}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/w2019_s2_q13.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2019_winter_q2_14",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 14,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "hard",
+      "stem": "In the accompanying table all the letters represent positive numbers.  The letters x, y and z represent the numbers obtained from multiplying the values of the column and the corresponding row.\nFor example: x = b · b\n\nz = ?",
+      "options": [
+        "\\(\\dfrac{x + y}{2}\\)",
+        "\\(\\sqrt{x \\cdot y}\\)",
+        "y – x",
+        "It is impossible to express z with the help of x and y alone"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2019_s2_q14.png"
+      ],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Each cell is the product of its row and column heading, so \\(x = b^2\\), \\(y = c^2\\) and \\(z = bc\\). Then \\(xy = b^2c^2 = (bc)^2 = z^2\\), so \\(z = \\sqrt{xy}\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Give the headings values: \\(b=2\\) and \\(c=3\\) make \\(x = 4\\), \\(y = 9\\) and \\(z = 6\\). Then \\(\\sqrt{xy} = \\sqrt{36} = 6\\) matches, while \\(\\frac{x+y}{2} = 6.5\\) and \\(y-x = 5\\) do not."
+        },
+        {
+          "kind": "understanding",
+          "text": "\\(z\\) is the geometric mean of \\(x\\) and \\(y\\), not the arithmetic one &mdash; which is what option (1) offers and what makes it the natural wrong answer."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q2_15",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 15,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "hard",
+      "stem": "It is <b>not possible</b> that two <b>positive</b> numbers, s and t, satisfy the equation -",
+      "options": [
+        "s – t = s · t",
+        "\\(\\frac{s}{t} = s - t\\)",
+        "s + t = s – t",
+        "s · t = s + t"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(s + t = s - t\\) forces \\(2t = 0\\), so \\(t = 0\\) &mdash; impossible for a positive number. The other three all have positive solutions."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Witnesses for the rest: \\(s=t=2\\) satisfies \\(st = s+t\\); \\(s=4, t=2\\) satisfies \\(\\frac st = s-t\\); \\(s=2, t=\\frac23\\) satisfies \\(s-t = st\\). Three examples close the question."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q2_16",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 16,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Factorials",
+      "difficulty": "medium",
+      "stem": "Given: \\(2^7 \\cdot 3^2 \\cdot x = 8!\\)\n\nx = ?",
+      "options": [
+        "35",
+        "42",
+        "50",
+        "70"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "factorials",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Prime-factorise \\(8!\\) rather than computing it. \\(8!=8\\cdot7\\cdot6\\cdot5\\cdot4\\cdot3\\cdot2\\), which contributes \\(2^{3+1+2+1}=2^7\\), \\(3^{1+1}=3^2\\), one 5 and one 7. So \\(8!=2^7\\cdot3^2\\cdot5\\cdot7\\), and dividing by \\(2^7\\cdot3^2\\) leaves \\(5\\cdot7=35\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The given hands you most of \\(8!\\)'s prime factorisation and asks what is left over. Whatever primes appear in \\(8!\\) but not on the left must be in \\(x\\) &mdash; and the only primes up to 8 not already listed are 5 and 7."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q2_17",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 17,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "hard",
+      "stem": "Given: a + b + c = 0\n\nWhich of the following equations is necessarily true?",
+      "options": [
+        "| a | = | b + c |",
+        "| a | = | b – c |",
+        "| a | = | b | + | c |",
+        "| a | = | b | – | c |"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(a+b+c=0\\) rearranges to \\(a=-(b+c)\\). A number and its negative have the same absolute value, so \\(|a|=|b+c|\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The other three would need the signs of \\(b\\) and \\(c\\), which the given never supplies. Only the identity that follows from rearranging survives."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(a=1,\\ b=2,\\ c=-3\\): \\(|a|=1\\) and \\(|b+c|=1\\) ✓, while \\(|b-c|=5\\), \\(|b|+|c|=5\\) and \\(|b|-|c|=-1\\) — all three wrong on a single test set."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q2_18",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 18,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Dani divided 33 liters of water into two containers in such a way that \\(\\frac{3}{4}\\) of the quantity of the water in the first container is equal to \\(\\frac{5}{8}\\) of the quantity of the water in the second container.\n\nHow many liters of water are there in the first container?",
+      "options": [
+        "10",
+        "14",
+        "15",
+        "20"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\frac34 a = \\frac58(33-a)\\). Multiplying by 8: \\(6a = 5(33-a)\\), so \\(11a = 165\\) and \\(a = 15\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(a=15\\) leaves 18: \\(\\frac34\\) of 15 is 11.25, and \\(\\frac58\\) of 18 is 11.25 ✓."
+        }
+      ]
+    },
+    {
+      "id": "2019_winter_q2_19",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 19,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "hard",
+      "stem": "Hana tosses a fair dice 6 times.\n\nWhat is the probability that the result of <b>each one</b> of the tosses (except for the first one) will be greater than the result of the toss before it?",
+      "options": [
+        "\\(\\dfrac{1}{6^6}\\)",
+        "\\(\\dfrac{1}{6!}\\)",
+        "\\(\\dfrac{5}{6^6}\\)",
+        "\\(\\dfrac{1}{5!}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2019_winter_q2_20",
+      "source_exam": "psychometric_winter_2019",
+      "source_question_number": 20,
+      "section_id": "2019_winter_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "Three identical cubes were placed one on top of the other in such a way that a box was formed as in the figure.\nThe surface area of the box is 28 cm².\n\nWhat is the volume of the box (in cm³)?",
+      "options": [
+        "\\(6\\sqrt{2}\\)",
+        "\\(2\\sqrt{3}\\)",
+        "8",
+        "12"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2019_s2_q20.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    }
+  ]
+}

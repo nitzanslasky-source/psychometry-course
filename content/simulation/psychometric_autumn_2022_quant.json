@@ -1,0 +1,1113 @@
+{
+  "source_exam": "psychometric_autumn_2022",
+  "source_exam_label": "Autumn 2022",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_autumn_2022_acc.pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 59 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "table_comprehension_lead": "Study the table below, then answer the four questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2022_autumn_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/a2022_s1_graph.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\nGideon bought shares in four companies: a clothing company, a hi-tech company, a food company and a pharmaceuticals company.  He bought all the shares on the same day.\nThe table above the graph describes the symbol of each company and the value of Gideon's shares in each company on the day of purchase.\nThe graph describes the changes that occurred in the value of Gideon's shares over the course of nine months.  The position of the symbol of each company in the graph indicates the change (in percentages) that occurred in the value of the company's shares relative to their value <b>on the day of purchase</b>, at the end of each one of the nine months following the purchase.\n\nFor example, at the end of the 6th month from the day of purchase the value of Gideon's shares in the pharmaceuticals company was 3% higher than their value on the day of purchase, that is to say their value was 206 shekels."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    },
+    {
+      "section_id": "2022_autumn_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-15)",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "type": "table_comprehension",
+          "header": "Table Comprehension (Questions 16-20)",
+          "from": 16,
+          "to": 20,
+          "figure_path": "figures/a2022_s2_table.png",
+          "intro": "Study the table below, then answer the five questions that follow.\n\nIn the children's book \"The Ice Rose\" there are three chapters: I, II and III.\nThe table indicates for each one of the letters <b>A-J</b> how many times it appears in each one of the chapters.\nTwo columns in the table correspond to each chapter: in the right-hand column (the light one) is indicated how many times each one of the letters <b>A-E</b> appears in the chapter, and in the left-hand column (the dark one) is indicated how many times each one of the letters <b>F-J</b> appears in the chapter.\n\nFor example: in Chapter II the letter <b>D</b> appears 9 times, and the letter <b>I</b> appears 3 times.",
+          "translator_note": "The original letters are the first ten letters of the Hebrew alphabet.  They, and the letter strings quoted in the questions, are rendered here position-for-position as A-J, which preserves every count and comparison in the table."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2022_autumn_q1_01",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 1,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "easy",
+      "stem": "In a building with 4 floors there are 12 offices.\nThe number of offices on the first floor is 3 times as much as the number of offices on each one of the other floors.\n\nHow many offices are there on the first floor?",
+      "options": [
+        "6",
+        "8",
+        "3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "If the other three floors have \\(n\\) each, the first has \\(3n\\), and \\(3n + 3n = 12\\), so \\(n = 2\\) and the first floor has 6."
+        },
+        {
+          "kind": "check-answers",
+          "text": "6 on the first and 2 on each of the other three: \\(6 + 6 = 12\\) ✓."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q1_02",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 2,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "ABCD is a rectangle whose area is 60 cm².  E is a point on side BC, such that the area of triangle ECD is 10 cm².\n\nWhat is the area of triangle ABE (in cm²)?",
+      "options": [
+        "18",
+        "20",
+        "22",
+        "25"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/a2022_s1_q02.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2022_autumn_q1_03",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 3,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "medium",
+      "stem": "Based on the information in the figure,\n\n\\(\\beta = ?\\)",
+      "options": [
+        "72°",
+        "78°",
+        "80°",
+        "84°"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/a2022_s1_q03.png"
+      ],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2022_autumn_q1_04",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 4,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "easy",
+      "stem": "\\(\\dfrac{6^3 \\cdot 4^2}{3^3 \\cdot 2^2} = ?\\)",
+      "options": [
+        "\\(2^5\\)",
+        "\\(2^6\\)",
+        "\\(3^3 \\cdot 2^2\\)",
+        "\\(3 \\cdot 2^3\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Split each base into primes: \\(6^3 = 2^3 3^3\\) and \\(4^2 = 2^4\\), so the top is \\(2^7 3^3\\) and the bottom is \\(3^3 2^2\\). The \\(3^3\\) cancels, leaving \\(2^5\\)."
+        },
+        {
+          "kind": "structure",
+          "text": "Pair the bases instead: \\(\\frac{6^3}{3^3} = 2^3\\) and \\(\\frac{4^2}{2^2} = 2^2\\), so the product is \\(2^5\\). Same-exponent division is the shortcut the numbers were chosen for."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q1_05",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 5,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "Iris works at a constant rate, and she needs 10 hours in order to paint a room by herself.\nRuth works at a constant rate, and she needs 8 hours in order to paint the same room by herself.\n\nAfter the two of them worked <b>together</b> for 4 hours, what part of the room remained for them to paint?",
+      "options": [
+        "\\(\\frac{1}{10}\\)",
+        "\\(\\frac{1}{8}\\)",
+        "\\(\\frac{1}{6}\\)",
+        "\\(\\frac{1}{5}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Combined rate \\(\\frac1{10} + \\frac18 = \\frac{9}{40}\\). Four hours completes \\(\\frac{36}{40} = \\frac9{10}\\), leaving \\(\\frac1{10}\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The question asks what is <b>left</b>, not what is done &mdash; option (4) is \\(\\frac15\\), and option (2) is Ruth's hourly rate. Read the target before computing."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q1_06",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 6,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "Given:  \\(a < b\\)\nThe average of a and b is greater than c.\n\nWhich of the following statements is necessarily true?",
+      "options": [
+        "\\(c < b\\)",
+        "\\(c > b\\)",
+        "\\(c = b\\)",
+        "None of the above three statements is necessarily true."
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "An average always lies strictly between the two numbers it averages, so it is below \\(b\\). And \\(c\\) is below the average. Chain the two and \\(c<b\\)."
+        },
+        {
+          "kind": "algebra",
+          "text": "\\(c<\\dfrac{a+b}2\\), and \\(a<b\\) gives \\(\\dfrac{a+b}2<b\\). Together, \\(c<b\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Nothing pins \\(c\\) against \\(a\\) — the average can sit anywhere between them, so \\(c\\) may be above or below \\(a\\). Only a comparison with the <i>larger</i> of the two is safe."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q1_07",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 7,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure AC is a diameter of the circle and B is a point on the circumference of the circle.\nGiven:  AC = 8 cm\n\nBased on this information and the information in the figure, what is the length of the bold arc BC (in cm)?",
+      "options": [
+        "\\(\\frac{\\pi}{2}\\)",
+        "\\(\\frac{2\\pi}{3}\\)",
+        "\\(\\frac{4\\pi}{3}\\)",
+        "\\(\\frac{\\pi}{4}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/a2022_s1_q07.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2022_autumn_q1_08",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 8,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "Given:  \\(0 < a < \\frac{1}{4}\\)\n\nThe value of which of the following expressions is the <b>smallest</b>?",
+      "options": [
+        "\\(-\\frac{1}{a}\\)",
+        "\\(-a\\)",
+        "\\(-\\sqrt{a}\\)",
+        "\\(-\\frac{a}{4}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "With \\(0<a<\\frac14\\), the reciprocal \\(\\frac1a\\) exceeds 4, so \\(-\\frac1a\\) is below \\(-4\\). The other three options are all negatives of numbers under 1, so they all lie above \\(-1\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(a = 0.1\\): the options are \\(-10\\), \\(-0.1\\), about \\(-0.32\\) and \\(-0.025\\). The first is smallest by a wide margin."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q1_09",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 9,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "A certain company is a \"safe company\" if at the end of each month the value of Gideon's shares in it is <b>not lower</b> than their value at the end of the previous month.\n\nWhich of the companies is a safe company?",
+      "options": [
+        "The clothing company",
+        "The hi-tech company",
+        "The food company",
+        "The pharmaceuticals company"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_autumn_q1_10",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 10,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "At the end of each month Gideon calculated the difference between the value of his shares in the clothing company and the value of his shares in the hi-tech company.\n\nAt the end of which of the following months did Gideon find the largest difference (in absolute value)?",
+      "options": [
+        "The 1st month",
+        "The 2nd month",
+        "The 7th month",
+        "The 8th month"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_autumn_q1_11",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 11,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "According to what is described in the graph, what is the lowest value that Gideon's shares in one of the companies had?",
+      "options": [
+        "94 shekels",
+        "95 shekels",
+        "97 shekels",
+        "100 shekels"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_autumn_q1_12",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 12,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "A \"profit-yielding company\" is a company for which, at some point in time in the period described in the graph, the value of Gideon's shares in it was greater by at least 6 <b>shekels</b> than their value on the day of purchase.\n\nHow many of the companies are profit-yielding companies?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_autumn_q1_13",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 13,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Given:  \\(\\dfrac{x}{x + 1} + \\dfrac{x}{x + 2} = 2\\)\n\nx = ?",
+      "options": [
+        "\\(-\\frac{4}{3}\\)",
+        "\\(\\frac{1}{2}\\)",
+        "-3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Multiply through by \\((x+1)(x+2)\\): \\(x(x+2) + x(x+1) = 2(x+1)(x+2)\\). The \\(x^2\\) terms cancel, leaving \\(3x = 6x+4\\), so \\(x = -\\frac43\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "With four numeric options, substituting is safe and fast &mdash; and \\(x=-3\\) and \\(x=4\\) can be rejected almost at sight, since both make the two fractions clearly unequal to 2."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q1_14",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 14,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "The product of the ages of Nechama and Shula in another 3 years will be greater by 69 than the product of their ages now.\n\nWhat is the <b>sum</b> of the ages of Nechama and Shula now?",
+      "options": [
+        "10",
+        "20",
+        "30",
+        "40"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\((n+3)(s+3) - ns = 69\\) expands to \\(3n + 3s + 9 = 69\\), so \\(n + s = 20\\). The product terms cancel."
+        },
+        {
+          "kind": "understanding",
+          "text": "The individual ages are never determined and never needed &mdash; only their sum, which is exactly what the question asks for."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q1_15",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 15,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "hard",
+      "stem": "The letters A, B, C, D and E represent digits between 1 and 9.\nGiven:  AAA × 3 = EDCB\n\nWhich of the following equations is <b>necessarily</b> true?",
+      "options": [
+        "E = 1",
+        "C = D",
+        "C = B + 1",
+        "B = E + 1"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(\\overline{AAA} = 111A\\), and \\(111 \\times 3 = 333\\), so the product is \\(333A\\) &mdash; always three identical digits times \\(A\\). Running \\(A\\) from 4 upward (so the answer has four digits): \\(A=4\\) gives 1332, \\(A=5\\) gives 1665, \\(A=6\\) gives 1998."
+        },
+        {
+          "kind": "check-answers",
+          "text": "In every case the thousands digit is 1, but the question wants what is <i>necessarily</i> true. Compare \\(C\\) and \\(B\\) across the cases: 1332 has \\(C=3,\\ B=2\\); 1665 has \\(C=6,\\ B=5\\); 1998 has \\(C=9,\\ B=8\\). Each time \\(C = B+1\\)."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q1_16",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 16,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "medium",
+      "stem": "Yoel wrote the numbers 1 to 5 on a page.\nHe is interested in choosing 4 numbers of them such that the sum of the four numbers will be an even number.\n\nHow many different combinations of numbers can Yoel choose?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2022_autumn_q1_17",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 17,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Factorials",
+      "difficulty": "medium",
+      "stem": "a and b are positive integers smaller than 10.\nGiven:  \\(b! = 42 \\cdot a!\\)\n\na = ?",
+      "options": [
+        "7",
+        "6",
+        "5",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "factorials",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(\\dfrac{b!}{a!}=42\\), and a ratio of factorials is the run of integers from \\(a+1\\) up to \\(b\\). So you need consecutive integers multiplying to 42: \\(6\\times7\\). That gives \\(a=5\\) and \\(b=7\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Try each option as \\(a\\) and see whether \\(42\\cdot a!\\) is a factorial. \\(a=5\\): \\(42\\cdot120=5040=7!\\) ✓. \\(a=4\\): \\(42\\cdot24=1008\\), not a factorial. Knowing \\(7!=5040\\) makes this immediate."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q1_18",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 18,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "hard",
+      "stem": "Orna had 50 notebooks.  She divided them into four piles.\nThe difference in the number of notebooks between any two of the piles is smaller than 3.\n\nWhich of the following <b>cannot</b> be the number of notebooks in one of the piles?",
+      "options": [
+        "12",
+        "13",
+        "14",
+        "15"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2022_autumn_q1_19",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 19,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "hard",
+      "stem": "The distance between A and B is 30 km.\nThe distance between B and C is 40 km.\nThe distance between C and D is 11 km.\n\nWhat is the <b>minimum</b> distance between A and D (in km)?",
+      "options": [
+        "0",
+        "9",
+        "21",
+        "27"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Nothing in the question says the four points lie on a line. \\(A\\) and \\(D\\) can be the same point, provided the three legs close back to the start — and three lengths close into a triangle whenever the largest is below the sum of the other two."
+        },
+        {
+          "kind": "structure",
+          "text": "Check the closing condition on the largest leg: \\(40\\) against \\(30+11=41\\). It fits, so a closed path exists and the minimum distance is 0. Had the numbers been \\(30, 45, 11\\) the answer would have been \\(45-41=4\\) instead."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q1_20",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 20,
+      "section_id": "2022_autumn_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "Given a cube whose side length is 1 cm.\n\nWhat is the length of a straight line that connects one of the vertices of the cube to the centre of the cube (the point whose distances from all the vertices of the cube are equal)?",
+      "options": [
+        "\\(\\sqrt{\\frac{2}{3}}\\) cm",
+        "\\(\\sqrt{\\frac{1}{2}}\\) cm",
+        "\\(\\sqrt{\\frac{1}{3}}\\) cm",
+        "\\(\\sqrt{\\frac{3}{4}}\\) cm"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/a2022_s1_q20.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2022_autumn_q2_01",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 1,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "easy",
+      "stem": "\\(7x + y = 26\\)\n\\(x + y = 2\\)\n\nx = ?",
+      "options": [
+        "1",
+        "7",
+        "3",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Subtract the second equation from the first: \\(6x = 24\\), so \\(x = 4\\). The \\(y\\) cancels in one step."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Substituting the options is equally quick: \\(x=4\\) gives \\(y=-2\\), and \\(28 + (-2) = 26\\) ✓."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q2_02",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 2,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "The accompanying figure shows a circle whose centre is O.  AB and DE are diameters of the circle.\nOD bisects angle AOC.\n\nBased on this information and the information in the figure,\n\\(\\alpha = ?\\)",
+      "options": [
+        "110°",
+        "125°",
+        "140°",
+        "145°"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/a2022_s2_q02.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2022_autumn_q2_03",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 3,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "easy",
+      "stem": "In an office building there are 8 floors.  On Sunday the total number of employees in the building was 290, on Monday it was 200, and on Tuesday - 230.\n\nOn Sunday through Tuesday, what was the average number of employees per day <b>on each floor</b>?",
+      "options": [
+        "20",
+        "26",
+        "30",
+        "32"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2022_autumn_q2_04",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 4,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Aviva, Ruti, Shiri and Tami divided 20 marbles between them.\nAviva received a certain number of marbles.\nRuti, Shiri and Tami received respectively 25%, 50% and 75% of the number of marbles that Aviva received.\n\nHow many marbles did Aviva receive?",
+      "options": [
+        "8",
+        "10",
+        "12",
+        "15"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "The four shares are \\(A\\), \\(0.25A\\), \\(0.5A\\) and \\(0.75A\\), totalling \\(2.5A = 20\\), so \\(A = 8\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(A = 8\\) gives 2, 4 and 6, and \\(8+2+4+6 = 20\\) ✓."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q2_05",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 5,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "a, b and c are positive integers.\nGiven:  a is divisible by c without a remainder.\nb is divisible by c without a remainder.\n\nWhich of the following expressions is necessarily an <b>integer</b>?",
+      "options": [
+        "\\(\\dfrac{a \\cdot b}{c^2}\\)",
+        "\\(\\dfrac{b \\cdot c}{a}\\)",
+        "\\(\\dfrac{a^2}{b^2}\\)",
+        "\\(\\dfrac{c}{a \\cdot b}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(a = c \\cdot m\\) and \\(b = c \\cdot n\\) for whole \\(m, n\\). Then \\(\\dfrac{ab}{c^2} = \\dfrac{c m \\cdot c n}{c^2} = mn\\), which is whole."
+        },
+        {
+          "kind": "check-answers",
+          "text": "The others reverse the direction of divisibility: \\(a\\) divides <i>into</i> nothing here, so \\(\\frac{bc}a\\) and \\(\\frac{a^2}{b^2}\\) need not be whole. Test \\(a=4,\\ b=2,\\ c=2\\) and all three fail."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q2_06",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 6,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "medium",
+      "stem": "How many of the three altitudes in an obtuse triangle are located outside the triangle?",
+      "options": [
+        "Exactly one",
+        "Exactly two",
+        "All three",
+        "The number of the above altitudes depends on the size of the obtuse angle"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2022_autumn_q2_07",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 7,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "\\(\\sqrt[m]{a} = 4\\)\n\n\\(a^{\\frac{2}{m}} = ?\\)",
+      "options": [
+        "16",
+        "2",
+        "8",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\sqrt[m]a = a^{1/m} = 4\\), and \\(a^{2/m} = \\left(a^{1/m}\\right)^2 = 16\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Neither \\(a\\) nor \\(m\\) can be found separately, and neither is needed &mdash; the question only ever asks for a power of the quantity you were given."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q2_08",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 8,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "The accompanying figure shows two squares.  The dark area is equal to the hatched area.\n\nBased on this information and the information in the figure, what is the length of the side of the larger square?",
+      "options": [
+        "\\(\\sqrt{2} \\cdot a\\)",
+        "\\(\\sqrt{2a}\\)",
+        "\\(2 \\cdot a\\)",
+        "\\(2 \\cdot \\sqrt{a}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/a2022_s2_q08.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2022_autumn_q2_09",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 9,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Motion & Speed",
+      "difficulty": "medium",
+      "stem": "A motorcycle travels at a constant speed.  It travels x km in t hours.\n\nIn how many hours will the motorcycle travel y km?",
+      "options": [
+        "\\(\\dfrac{x \\cdot t}{y}\\)",
+        "\\(\\dfrac{x \\cdot y}{t}\\)",
+        "\\(\\dfrac{y \\cdot t}{x}\\)",
+        "\\(\\dfrac{y}{x \\cdot t}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "motion_speed",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "The speed is \\(\\frac xt\\), so \\(y\\) km takes \\(\\frac{y}{x/t} = \\frac{yt}{x}\\) hours."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Let \\(x = 10\\), \\(t = 2\\), \\(y = 20\\): 5 km/h, so 20 km takes 4 hours. Only \\(\\frac{yt}{x} = \\frac{40}{10} = 4\\) matches. One substitution kills all three distractors."
+        },
+        {
+          "kind": "understanding",
+          "text": "A units check settles it too: the answer must be a time, so \\(y\\) (a distance) has to be multiplied by \\(\\frac tx\\), which is time-per-distance."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q2_10",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 10,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "hard",
+      "stem": "A certain academic event lasted 5 hours.  At the event a lecturer spoke in French, and immediately after each sentence his words were translated from French into English and afterwards from English into Hebrew.  Immediately after the translation into Hebrew the lecturer continued to the next sentence.\nThe translation of each sentence into another language took twice as long as the time in which the things were said in French.\n\nHow many <b>minutes</b> did the lecturer speak?",
+      "options": [
+        "100",
+        "90",
+        "60",
+        "50"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2022_autumn_q2_11",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 11,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "medium",
+      "stem": "The accompanying figure shows a pyramid whose volume is 20 cm³ and whose height is 3 cm.\n\nWhat is the area of hexagon ABCDEF (in cm²)?",
+      "options": [
+        "\\(\\frac{10}{3}\\)",
+        "20",
+        "\\(\\frac{20}{3}\\)",
+        "40"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/a2022_s2_q11.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2022_autumn_q2_12",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 12,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "easy",
+      "stem": "Given:  \\(2.25x < 2x + 3.5\\)\n\nWhich of the following inequalities describes the exact range in which x can be found?",
+      "options": [
+        "\\(0 < x\\)",
+        "\\(x < 1.75\\)",
+        "\\(7 < x\\)",
+        "\\(x < 14\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Subtract \\(2x\\) from both sides: \\(0.25x<3.5\\), so \\(x<14\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "The two sides are equal where \\(0.25x=3.5\\), that is \\(x=14\\), and the left side grows faster — so the inequality holds below 14 and fails above it. Only one option breaks at that value and in that direction."
+        }
+      ]
+    },
+    {
+      "id": "2022_autumn_q2_13",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 13,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Geometric Comprehension",
+      "difficulty": "hard",
+      "stem": "In the coordinate system in the figure there is a circle whose centre is at the origin.\nGiven:  EF is a diameter of the circle.\n\nWhich of the following expressions is <b>not</b> necessarily equal to 0?",
+      "options": [
+        "\\(a + b + c + d\\)",
+        "\\((a^2 + b^2) - (c^2 + d^2)\\)",
+        "\\(a \\cdot b - c \\cdot d\\)",
+        "\\((a - b) - (c - d)\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/a2022_s2_q13.png"
+      ],
+      "sub_category_id": "geometric_comprehension"
+    },
+    {
+      "id": "2022_autumn_q2_14",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 14,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Defined Operations",
+      "difficulty": "medium",
+      "stem": "The operation $ is defined for every positive integer x.\nIt is known that for every integer x greater than 1 it holds that:  $(x + 1) = 2 ∙ $(x)\n\nWhich of the following definitions can be the definition of the operation $?",
+      "options": [
+        "$(x) = 2x",
+        "$(x) = x + 2",
+        "$(x) = \\(x^2\\)",
+        "$(x) = \\(2^x\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "defined_operations"
+    },
+    {
+      "id": "2022_autumn_q2_15",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 15,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "hard",
+      "stem": "Miriam has three email accounts - two private and one for work.\nAt every round hour (at 7:00, at 8:00 and so on) Miriam checks mail in one of the three accounts at random.\n\nWhat is the probability that between 8:30 and 10:30 Miriam will check mail in the <b>work</b> account exactly once?",
+      "options": [
+        "\\(\\frac{4}{9}\\)",
+        "\\(\\frac{2}{3}\\)",
+        "\\(\\frac{1}{3}\\)",
+        "\\(\\frac{8}{9}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2022_autumn_q2_16",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 16,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "easy",
+      "cluster": "Table Comprehension (Questions 16-20)",
+      "stem": "Which of the four letters in the word \"HCJCE\" appears in Chapter III the <b>fewest</b> times?",
+      "options": [
+        "H",
+        "C",
+        "J",
+        "E"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_autumn_q2_17",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 17,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Table Comprehension (Questions 16-20)",
+      "stem": "The editor of the book decided to add to Chapter II a word in which there are two letters (not necessarily different).  Following this, the data in the table changed: each letter in the added word now appears in each chapter an equal number of times.\n\nWhich of the following words could be the word that the editor added?",
+      "options": [
+        "CB",
+        "FF",
+        "GG",
+        "HC"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_autumn_q2_18",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 18,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 16-20)",
+      "stem": "The editor of the book decided to introduce a change in Chapter I: in every place in the chapter where the word \"ABFD\" is written, to write the word \"BFDD\" in its place.\n\nBy how much will the sum of all the numbers in the table change as a result of this change?",
+      "options": [
+        "It is impossible to know by how much the sum of all the numbers will change",
+        "The sum will not change",
+        "The sum will increase by 8",
+        "The sum will decrease by 4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_autumn_q2_19",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 19,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Table Comprehension (Questions 16-20)",
+      "stem": "The relative frequency of a letter in a chapter is defined thus:\n\n\\(\\text{relative frequency} = \\dfrac{\\text{number of times the letter appears in the chapter}}{\\text{number of times the letter appears in the book}}\\)\n\nChapter II was examined, and the relative frequency of each one of the letters in it was found.\n\nWhich of the following letters was found to be the one having the <b>highest</b> relative frequency in the chapter?",
+      "options": [
+        "G",
+        "H",
+        "I",
+        "J"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_autumn_q2_20",
+      "source_exam": "psychometric_autumn_2022",
+      "source_question_number": 20,
+      "section_id": "2022_autumn_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Table Comprehension (Questions 16-20)",
+      "stem": "The name of the hero of the book is \"DFDJ\".\n\nHow many times, at most, does the name \"DFDJ\" appear in the three chapters of the book together?",
+      "options": [
+        "12",
+        "14",
+        "26",
+        "36"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    }
+  ]
+}

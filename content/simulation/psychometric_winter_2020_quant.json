@@ -1,0 +1,1117 @@
+{
+  "source_exam": "psychometric_winter_2020",
+  "source_exam_label": "Winter 2020",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_winter_2020_acc-1.pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 60 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "table_comprehension_lead": "Study the table below, then answer the four questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2020_winter_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "table_comprehension",
+          "header": "Table Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/w2020_s1_table.png",
+          "intro": "Study the table below, then answer the four questions that follow.\n\nIn the month of July in the year 2000, presidential elections were held in a certain country.  Four candidates ran in the elections: Ahuva, Yael, Ruth and Shlomit.  In each of the six months that preceded the elections (January-June) a survey was conducted, in which the participants were asked which of the candidates they intended to vote for in the elections.\nThe table presents the results of the surveys and the results of the elections:\nIn the survey columns the support percentages of each candidate are detailed.  The <b>support percentage</b> of a candidate is the percentage of the participants in the survey who declared that they would vote for that candidate.\nIn the elections column the percentages of the votes each candidate received are detailed.  The <b>vote percentage</b> a candidate received is the percentage of the participants in the elections who voted for that candidate.\nAlso, the table shows the number of participants in each of the surveys and the number of participants in the elections.\n\nFor example: In the survey conducted in January, 3,000 people participated.  The support percentage of Ahuva in this survey was 23%."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    },
+    {
+      "section_id": "2020_winter_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/w2020_s2_graph.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\nThe graph presents data on 15 products that are sold in a certain store.  The products are divided into three categories: to category A belong the products A1-A5, to category B belong the products B1-B5, and to category C belong the products C1-C5.\nThe horizontal axis in the graph describes the prices of the products (in shekels), and the vertical axis in the graph describes the numbers of items in the store's stock.\nEvery product has a range of possible prices.  This range depends on the number of items of the product that are in the store's stock (a number that changes from time to time).  For example, when there are 30 units of product A1 in the store's stock, its price is 9 shekels at the least and 15 shekels at the most.\n\nNote: The price ranges and the quantity ranges <b>include</b> the points located on the perimeter of the shapes.  For example, the price of product C4 may be 56 shekels when there is a stock of 15 items of it."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2020_winter_q1_01",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 1,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Defined Operations",
+      "difficulty": "medium",
+      "stem": "For every positive number x and for every integer n the operation $ is defined as follows:\n\nx $ n = \\(\\frac{1}{x^n}\\)\n\n3 $ (2 $ 0) = ?",
+      "options": [
+        "\\(\\frac{1}{8}\\)",
+        "\\(\\frac{1}{6}\\)",
+        "\\(\\frac{1}{3}\\)",
+        "\\(\\frac{1}{9}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "defined_operations"
+    },
+    {
+      "id": "2020_winter_q1_02",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 2,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "medium",
+      "stem": "Given:  a and b are two consecutive numbers, and both of them are prime numbers.\n     a < b\n\nHow many possible values are there for a?",
+      "options": [
+        "1",
+        "0",
+        "3",
+        "Infinity"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Consecutive numbers are one even and one odd. The only even prime is 2, so the pair must be \\(2\\) and \\(3\\) &mdash; there is exactly one such pair, and \\(a = 2\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "That the answer is 1 and not 0 turns on remembering that 2 is prime. Anyone who assumes primes are odd answers 0, which is the distractor."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q1_03",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 3,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Yoav has 4 apples more than Dani.\nDani has \\(\\frac{1}{4}\\) of the number of apples that Michal has.\nMichal has the same number of apples that Dani and Yoav have together.\n\nHow many apples does Yoav have?",
+      "options": [
+        "6",
+        "16",
+        "24",
+        "48"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Let \\(D\\) be Dani's apples. Yoav has \\(D+4\\) and Michal has \\(D + (D+4) = 2D+4\\). But Dani has a quarter of Michal's, so Michal has \\(4D\\). Then \\(4D = 2D+4\\), giving \\(D=2\\) and Yoav \\(=6\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Test Yoav \\(=6\\): Dani has 2, Michal has 8, and \\(2 = \\frac84\\) ✓. The larger options fail the quarter condition immediately."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q1_04",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 4,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "medium",
+      "stem": "Based on the information in the figure,\n\nα = ?",
+      "options": [
+        "180° – β",
+        "\\(90° + \\frac{β}{2}\\)",
+        "\\(135° - \\frac{β}{2}\\)",
+        "180° – 2β"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2020_s1_q04.png"
+      ],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2020_winter_q1_05",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 5,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "ABCD is a parallelogram.\n\nBased on this information and the information in the figure,\n\n\\(\\dfrac{\\text{size of the light area}}{\\text{size of the dark area}}\\) = ?",
+      "options": [
+        "8",
+        "5",
+        "3",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2020_s1_q05.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2020_winter_q1_06",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 6,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "a and b are positive integers.\n\nGiven:  \\(\\sqrt{a^2 \\cdot b} = a \\cdot b\\)\n\nWhich of the following statements necessarily follows from this?",
+      "options": [
+        "a = 1",
+        "b = 1",
+        "a \\(\\cdot\\) b = 1",
+        "There are no a and b that satisfy the given equation"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\sqrt{a^2b} = a\\sqrt b\\), so \\(a\\sqrt b = ab\\) and, dividing by \\(a\\), \\(\\sqrt b = b\\). For a positive integer that forces \\(b = 1\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Test \\(b=1\\) with any \\(a\\): \\(\\sqrt{a^2} = a\\) ✓. Test \\(b=4, a=1\\): \\(\\sqrt4 = 2\\) but \\(ab = 4\\) ✗. \\(a\\) is never constrained, which rules out option (1)."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q1_07",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 7,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "In a certain class there is a two-digit number of students.  The students of the class wanted to divide themselves into groups of 4 students each, but their number did not make this possible.\nAfter all the students of the parallel class joined them, they managed to do this.\n\nWhat <b>cannot</b> be the number of students in the parallel class?",
+      "options": [
+        "25",
+        "26",
+        "27",
+        "28"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Read the given carefully: their own number did <b>not</b> allow groups of 4. So the class size is <i>not</i> divisible by 4 &mdash; and any option that is divisible by 4 is immediately impossible."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(28 = 4 \\times 7\\), so it cannot be the class size. The other three leave remainders 1, 2 and 3, all of which can be completed to a multiple of 4 by a suitable parallel class."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q1_08",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 8,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "AB is a diameter of a circle.\nShmulik and Doron set out at the same moment from point A toward point B.  Shmulik ran along the diameter AB, and Doron ran along the arc AB (see figure).  Each of them ran at his own constant speed, and both of them arrived at point B at the same moment.\n\n\\(\\dfrac{\\text{Shmulik's running speed}}{\\text{Doron's running speed}}\\) = ?",
+      "options": [
+        "\\(\\frac{2}{π}\\)",
+        "2",
+        "\\(\\frac{1}{2π}\\)",
+        "\\(\\frac{1}{2}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2020_s1_q08.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2020_winter_q1_09",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 9,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 9-12)",
+      "stem": "A \"surprising candidate\" is a candidate for whom, between the percentage of the votes she received in the elections and the support percentage she was awarded in <b>each one</b> of the surveys, there is a difference (in absolute value) of 3% or more.\n\nWhich of the candidates is a surprising candidate?",
+      "options": [
+        "Ahuva",
+        "Yael",
+        "Ruth",
+        "Shlomit"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_winter_q1_10",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 10,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 9-12)",
+      "stem": "A \"close survey\" is a survey in which the <b>difference</b> between the support percentage of the candidate who reached first place in the survey and the support percentage of the candidate who reached second place in the survey is smaller than 15%.\n\nHow many of the surveys described in the table are close surveys?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_winter_q1_11",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 11,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Table Comprehension (Questions 9-12)",
+      "stem": "The support percentage of a certain candidate in each one of the surveys in which there were more than 6,000 participants was <b>lower</b> than the support percentage she had in each one of the surveys in which there were fewer than 6,000 participants.\n\nWho is this candidate?",
+      "options": [
+        "Ahuva",
+        "Yael",
+        "Ruth",
+        "Shlomit"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_winter_q1_12",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 12,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 9-12)",
+      "stem": "The <b>number</b> of participants who declared in the survey of the month of May that they would vote for Yael ______ the <b>number</b> of participants who declared in the survey of the month of March that they would vote for Ahuva.",
+      "options": [
+        "is 1.5 times as much as",
+        "is 2 times as much as",
+        "is 3 times as much as",
+        "is equal to"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_winter_q1_13",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 13,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "easy",
+      "stem": "A box is given, the sum of whose length, width and height is 8 cm.\n\nWhat is the sum of the lengths of <b>all</b> the edges of the box (in cm)?",
+      "options": [
+        "32",
+        "24",
+        "16",
+        "It cannot be determined from the information given"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2020_winter_q1_14",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 14,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Overlapping Sets",
+      "difficulty": "medium",
+      "stem": "Lamp <b>A</b> is lit 11 hours a day.  Lamp <b>B</b> is lit 15 hours a day.\n\nHow many hours a day are the two lamps lit simultaneously?",
+      "options": [
+        "At most 11 hours, and at least 4 hours",
+        "At most 11 hours, and at least 2 hours",
+        "At most 15 hours, and at least 2 hours",
+        "At most 15 hours, and at least 4 hours"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "overlapping_sets"
+    },
+    {
+      "id": "2020_winter_q1_15",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 15,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "Given:  q + r = s\n     s + r = t\n\nWhich of the following expressions is equal to \\((s^2 - r^2)\\)?",
+      "options": [
+        "q \\(\\cdot\\) t",
+        "t – q",
+        "\\(q^2\\)",
+        "\\(q^2 + t^2\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(s^2-r^2 = (s-r)(s+r)\\). The first given rearranges to \\(s-r = q\\) and the second says \\(s+r = t\\), so the product is \\(q \\cdot t\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(q=2, r=3\\), so \\(s=5\\) and \\(t=8\\): \\(s^2-r^2 = 16\\), and \\(qt = 16\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The two givens are written in exactly the shapes the factorisation produces, which is the signal that factoring is the intended route."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q1_16",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 16,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "A coats cost B shekels altogether.\n\nHow many coats (at most) is it possible to buy for C shekels?",
+      "options": [
+        "\\(\\frac{BC}{A}\\)",
+        "\\(\\frac{AB}{C}\\)",
+        "\\(\\frac{C}{AB}\\)",
+        "\\(\\frac{AC}{B}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "One coat costs \\(\\frac BA\\), so \\(C\\) shekels buys \\(C \\div \\frac BA = \\frac{AC}{B}\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(A=2\\) coats for \\(B=10\\) shekels means 5 each; \\(C=20\\) buys 4. Only \\(\\frac{AC}{B}\\) gives 4."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q1_17",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 17,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "a and b are positive numbers.\nGiven:  a is 40% greater than the average of a and b.\n\nBy <b>what</b> percentage is b smaller than the average of a and b?",
+      "options": [
+        "20%",
+        "40%",
+        "60%",
+        "80%"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "plug-in",
+          "text": "Pick numbers fitting the given: \\(a = 7\\), \\(b = 3\\) makes the average 5, and \\(7\\) is indeed 40% above 5. Then \\(b\\) is 2 below the average, which is \\(\\frac25 = 40\\%\\) of it."
+        },
+        {
+          "kind": "understanding",
+          "text": "The two answers coincide here at 40%, which is a coincidence of this particular ratio and not a rule &mdash; worth saying aloud so students do not generalise it."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q1_18",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 18,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "medium",
+      "stem": "A dice that is <b>not</b> fair, on whose faces the numbers 1 to 6 are marked, is tossed.\nThe chance of getting the number 1 is x, the chance of getting the number 2 is 2x, and so on until 6x.\n\nx = ?",
+      "options": [
+        "\\(\\frac{1}{6}\\)",
+        "\\(\\frac{1}{9}\\)",
+        "\\(\\frac{1}{21}\\)",
+        "\\(\\frac{1}{36}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2020_winter_q1_19",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 19,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Factorials",
+      "difficulty": "medium",
+      "stem": "\\(\\dfrac{17!}{15! + 16!}\\) = ?",
+      "options": [
+        "17",
+        "16",
+        "\\(\\frac{1}{15}\\)",
+        "\\(\\frac{1}{14}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "factorials",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Factor the smaller factorial out of the denominator: \\(15!+16!=15!(1+16)=15!\\cdot17\\). The numerator is \\(17!=17\\cdot16\\cdot15!\\), so everything cancels except 16."
+        },
+        {
+          "kind": "understanding",
+          "text": "Whenever factorials are <i>added</i>, factor the smaller one out &mdash; that is the only way a sum of factorials ever simplifies. You can never cancel across a plus sign as it stands."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q1_20",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 20,
+      "section_id": "2020_winter_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure is a circle in a coordinate system.\nThree of the points of intersection of the circle with the axes are marked in the figure.\nThe centre of the circle is located at point (x , y).\n\nWhich of the following statements is <b>necessarily not</b> true?",
+      "options": [
+        "\\(x < \\frac{b}{2}\\)",
+        "\\(y < \\frac{b}{2}\\)",
+        "\\(x = \\frac{a}{2}\\)",
+        "\\(y = \\frac{a}{2}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/w2020_s1_q20.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2020_winter_q2_01",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 1,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "easy",
+      "stem": "Ohad has 6 cards numbered consecutively from 3 to 8.\nHe divided the cards into three pairs such that the sum of the numbers appearing on each pair of cards would be identical.\n\nWhat is this sum?",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2020_winter_q2_02",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 2,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows ABCD and EFGH, which are squares.\nGiven:  the size of the hatched area is \\(3\\frac{1}{4}\\) cm².\n\nBased on this information and the information in the figure,\nwhat is the size of the dark area (in cm²)?",
+      "options": [
+        "1",
+        "\\(\\frac{1}{2}\\)",
+        "\\(\\frac{3}{4}\\)",
+        "\\(\\frac{1}{4}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/w2020_s2_q02.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2020_winter_q2_03",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 3,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "easy",
+      "stem": "\\(\\dfrac{2^{y+1} \\cdot 3^{x}}{2^{y-1} \\cdot 3^{x-1}}\\) = ?",
+      "options": [
+        "12",
+        "24",
+        "\\(2^{x-y}\\)",
+        "\\(\\left(\\frac{3}{2}\\right)^{x+y-1}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Subtract exponents base by base: \\(2^{(y+1)-(y-1)} = 2^2\\) and \\(3^{x-(x-1)} = 3\\). The product is 12."
+        },
+        {
+          "kind": "understanding",
+          "text": "Both \\(x\\) and \\(y\\) cancel completely, which is why the answer is a bare number. Options (3) and (4) are there for anyone who subtracts the exponents in the wrong direction."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q2_04",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 4,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Polygons",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows ABCDE, which is a regular pentagon.\n\nGiven:  HG \\(\\perp\\) AE ,  AF \\(\\perp\\) CD\n\nα = ?",
+      "options": [
+        "30°",
+        "36°",
+        "72°",
+        "It cannot be determined from the information given"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2020_s2_q04.png"
+      ],
+      "sub_category_id": "polygons"
+    },
+    {
+      "id": "2020_winter_q2_05",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 5,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "medium",
+      "stem": "x is a two-digit number.  The units digit of the number 7 \\(\\cdot\\) x is <b>smaller</b> than the units digit of x.\n\nWhich of the following digits can be the units digit of x?",
+      "options": [
+        "5",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Multiplying by 7 sends the units digit through the cycle \\(1\\to7,\\ 2\\to4,\\ 3\\to1,\\ 4\\to8,\\ 5\\to5,\\ 6\\to2,\\ 7\\to9,\\ 8\\to6,\\ 9\\to3\\). Only the units digit of \\(x\\) matters."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Now compare each with itself: \\(5 \\to 5\\) (not smaller), \\(2 \\to 4\\) (bigger), \\(3 \\to 1\\) ✓ smaller, \\(4 \\to 8\\) (bigger). Only 3 works."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q2_06",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 6,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "easy",
+      "stem": "A certain baker knows how to bake bread of 4 types.  He was asked to bring to an event two loaves of bread that he baked, each one of a different type.\n\nHow many different possibilities does the baker have?",
+      "options": [
+        "16",
+        "8",
+        "6",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2020_winter_q2_07",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 7,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "medium",
+      "stem": "Two cones of equal heights are given.  The <b>diameter</b> of the base of the small cone equals the <b>radius</b> of the base of the large cone.\n\n\\(\\dfrac{\\text{volume of the large cone}}{\\text{volume of the small cone}}\\) = ?",
+      "options": [
+        "1.5",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2020_winter_q2_08",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 8,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Given:  \\(4a^2 + b^2 = 16\\)\n\nWhich of the following values <b>cannot</b> be the value of a?",
+      "options": [
+        "0",
+        "\\(\\frac{1}{2}\\)",
+        "-2",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(b^2 \\ge 0\\), so \\(4a^2 \\le 16\\) and \\(|a| \\le 2\\). Only \\(a=4\\) breaks that bound."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(a=4\\) gives \\(64 + b^2 = 16\\), so \\(b^2 = -48\\) &mdash; impossible. The other three all leave a non-negative value for \\(b^2\\), including \\(a = \\frac12\\), where \\(b = \\sqrt{15}\\) is perfectly legitimate even though it is not a whole number."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q2_09",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 9,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "Which of the following prices is <b>not</b> a possible price of any product in the store?",
+      "options": [
+        "57 shekels",
+        "40 shekels",
+        "25 shekels",
+        "13 shekels"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_winter_q2_10",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 10,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "For which of the following products does a change in the number of items of the product in the store's stock <b>not</b> change its price range?",
+      "options": [
+        "C1",
+        "A2",
+        "C5",
+        "B1"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_winter_q2_11",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 11,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "It is known that a certain product currently costs 38 shekels.  Based on this given information and the data in the graph it is possible to determine what the exact number of items of this product in the store's stock is.\n\nWhich product is being referred to?",
+      "options": [
+        "A4",
+        "B3",
+        "A1",
+        "C3"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_winter_q2_12",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 12,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "On some day the number of items of a certain product in the store's stock was 2 times greater than on the day that preceded it.\n\nWhich of the following statements is true?",
+      "options": [
+        "It is possible to know with certainty which product is being referred to",
+        "It is not possible to know with certainty which product is being referred to, but it is possible to know with certainty to which category it belongs",
+        "It is not possible to know with certainty to which category the product belongs",
+        "The described situation is not possible"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_winter_q2_13",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 13,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "Given:  0 < x , y\n\n\\(\\dfrac{x + y}{\\frac{1}{x} + \\frac{1}{y}}\\) = ?",
+      "options": [
+        "1",
+        "\\((x + y)^2\\)",
+        "\\(\\frac{x^2 + y^2}{2}\\)",
+        "xy"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "The denominator is \\(\\frac1x+\\frac1y = \\frac{x+y}{xy}\\), so dividing by it multiplies by \\(\\frac{xy}{x+y}\\), and the \\((x+y)\\) cancels, leaving \\(xy\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(x=1, y=2\\): the expression is \\(3 \\div 1.5 = 2\\), and \\(xy = 2\\)."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q2_14",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 14,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "Given:  10 < b ,   a < -1\n\nWhich of the following inequalities is necessarily true?",
+      "options": [
+        "a + b < 11",
+        "9 < a + b",
+        "a – b < -11",
+        "-9 < a – b"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Flip \\(10<b\\) into \\(-b<-10\\), then add \\(a<-1\\): \\(a-b<-11\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "\\(a-b\\) is largest when \\(a\\) is as large as possible and \\(b\\) as small as possible — \\(a\\) just below \\(-1\\) and \\(b\\) just above 10, which puts \\(a-b\\) just below \\(-11\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Options (1) and (2) concern \\(a+b\\), which has no bound in either direction: \\(a=-1000\\) or \\(b=1000\\) both stay legal. Only a statement about the difference can be forced."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q2_15",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 15,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "A robot of type A paints 6 tables in two hours, and a robot of type B paints 8 tables in three hours.\n\nHow many tables do two robots of type A and one robot of type B paint in a day (24 hours)?",
+      "options": [
+        "168",
+        "184",
+        "208",
+        "224"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Robot A makes 3 tables an hour, robot B makes \\(\\frac83\\). Two A's plus one B is \\(6 + \\frac83 = \\frac{26}{3}\\) an hour."
+        },
+        {
+          "kind": "structure",
+          "text": "Over 24 hours that is 208. Scaling to two A-robots before adding keeps the fraction to one term."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q2_16",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 16,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Ariella bought in a store a book at a discount of 20% and a watch at a discount of 10%.\nThe total of the discounts (in shekels) that she received was equal to the price of the book <b>before</b> the discount.\n\n\\(\\dfrac{\\text{price of the watch before the discount}}{\\text{price of the book before the discount}}\\) = ?",
+      "options": [
+        "10",
+        "8",
+        "6",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "With book \\(B\\) and watch \\(W\\): \\(0.2B + 0.1W = B\\), so \\(0.1W = 0.8B\\) and \\(\\frac WB = 8\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The discounts are being compared against a <i>price</i>, not against each other. Writing both discounts as amounts rather than percentages is what makes the equation appear."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q2_17",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 17,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure point M is the intersection of the diagonals of square ABCD, and point N is the intersection of the diagonals of square DEFG.\nPoint E is located on side CD.\n\nBased on this information and the information in the figure,\nwhat is the length of segment MN (in cm)?",
+      "options": [
+        "\\(\\sqrt{6}\\)",
+        "\\(\\sqrt{8}\\)",
+        "\\(\\sqrt{10}\\)",
+        "\\(\\sqrt{12}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/w2020_s2_q17.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2020_winter_q2_18",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 18,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows deltoid ABCD (AB = AD) and a circle whose radius is r.  Points B, C and D are located on the circumference of the circle.\n\nBased on this information and the information in the figure,\nwhich of the following equations is correct?",
+      "options": [
+        "x = r",
+        "\\(x = \\sqrt{2}\\,r\\)",
+        "\\(x = \\sqrt{3}\\,r\\)",
+        "None of the above equations is correct"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2020_s2_q18.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2020_winter_q2_19",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 19,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Given:  a is an integer.\n     6% of a is an integer.\n\na is necessarily divisible by ______",
+      "options": [
+        "20",
+        "25",
+        "30",
+        "35"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(6\\%\\) of \\(a\\) is \\(\\frac{6a}{100} = \\frac{3a}{50}\\), which is whole when 50 divides \\(3a\\). Since 3 and 50 are coprime, \\(50 \\mid a\\) &mdash; and any multiple of 50 is a multiple of 25."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Test a multiple of each option: \\(a = 25\\) gives \\(1.5\\), not whole; \\(a = 50\\) gives 3 ✓. Among the options, 25 is the one that every valid \\(a\\) is divisible by."
+        }
+      ]
+    },
+    {
+      "id": "2020_winter_q2_20",
+      "source_exam": "psychometric_winter_2020",
+      "source_question_number": 20,
+      "section_id": "2020_winter_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "medium",
+      "stem": "The average monthly income of the employees of a certain company is 1,800 dollars.  The average income of all the employees <b>excluding the manager</b> is 1,700 dollars.  The manager's income is 8,000 dollars.\n\nHow many employees, <b>including the manager</b>, are there in the company?",
+      "options": [
+        "18",
+        "31",
+        "52",
+        "63"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    }
+  ]
+}

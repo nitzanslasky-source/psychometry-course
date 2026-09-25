@@ -4,6 +4,8 @@
  */
 "use client";
 
+import { srsAdd } from "./srs";
+
 const KEY = "fullCourseProgress.v1";
 
 export interface CourseProgress {
@@ -38,7 +40,12 @@ export function markDone(topic: number, stepId: string) {
   save(p);
 }
 
-export function recordAnswer(topic: number, stepId: string, choice: number) {
+/** Save a course answer. A wrong answer goes into spaced review (and "My mistakes"). */
+export function recordAnswer(topic: number, stepId: string, choice: number, correct?: number) {
+  if (correct !== undefined) {
+    const key = `q:${topic}:${stepId}`;
+    if (choice !== correct) srsAdd(key, { again: true });
+  }
   const p = loadProgress();
   p.answers[stepKey(topic, stepId)] = choice;
   p.done[stepKey(topic, stepId)] = true;

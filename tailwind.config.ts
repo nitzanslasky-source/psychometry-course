@@ -17,6 +17,9 @@ export default {
         line: "#e7e3da",
         paper: { DEFAULT: "#fbfaf7", deep: "#f4f1ea" },
         gold: { DEFAULT: "#a8812e", soft: "#f3ead3", deep: "#7d5f1f" },
+        // aliases used by the exam-simulation components (copied from the elite project)
+        hair: "#e7e3da",
+        brand: { 50: "#f3ead3", 300: "#d9bf80", 500: "#a8812e", 700: "#7d5f1f" },
         ok: "#1f7a4d",
         bad: "#b3261e",
         subj: {

@@ -1,0 +1,1107 @@
+{
+  "source_exam": "psychometric_spring_2025",
+  "source_exam_label": "Spring 2025",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_spring_2025_acc (1).pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 60 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "table_comprehension_lead": "Study the table below, then answer the four questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2025_spring_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/sp2025_s1_graph.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\nA farmer examined the effect of a fertilizer on his lemon orchard.  He divided the orchard into two equal plots: one plot he fertilized, and the other plot remained without fertilizer.\nAt the end of each week the farmer examined the lemons that were picked in that week, and summarized in the graph four different measures for the lemons from each plot: average weight, average sugar content, average acidity level, and the number of lemons that were picked.\nThe triangles in the graph indicate the values of each one of the four measures as a percentage of their value in week zero, which is the week <b>before</b> the division of the orchard, and they are connected by auxiliary lines (see key).  When a measure stands at 100% its value is identical to its value in week zero.\nThe farmer also compared, at the end of each week, the profits of the two plots in that week.  He marked in the graph with ($) the profits from the sale of the fertilized lemons as a percentage of the profits from the sale of the unfertilized lemons.\n\nFor example: At the end of week <b>B</b> the number of lemons that were picked in the fertilized plot was identical to the number of lemons that were picked in its area in week zero.  The average sugar content in the unfertilized plot was 107.5% of its value in week zero.  In that same week the profits of the fertilized plot were 92.5% of the profits of the unfertilized plot."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    },
+    {
+      "section_id": "2025_spring_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-7)",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 8-12)",
+          "from": 8,
+          "to": 12,
+          "figure_path": "figures/sp2025_s2_map.png",
+          "secondary_figure_path": "figures/sp2025_s2_table.png",
+          "intro": "Study the graph and the table below, then answer the five questions that follow.\n\nIn a nature reserve live five species of animals: lions, zebras, leopards, rabbits and jackals.  On a certain day researchers conducted a study in the reserve and collected several kinds of data regarding the animals.\nThe graph describes the reserve, and marked in it are the areas in which the individuals of each species roamed on the day of the study (see key).  There can be overlap between the roaming areas of the species.  The black area in the centre of the graph marks a lake.\nIn the table beneath the graph additional data are presented that were collected on each species on the day of the study: the number of individuals of that species, the average weight of an individual (in kg), and the size of the roaming area in which the individuals stayed (in km²).  In addition, the table presents the diet of each species (regardless of the day of the study).\n\nFor example: On the day of the study the size of the roaming area of the lions was 48 km².  In one part of this area zebras also roamed, and in another part of this area jackals also roamed.  On the day of the study there were 10 lions in the reserve, and the average weight of a lion was 250 kg."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2025_spring_q1_01",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 1,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "The accompanying figure shows square ABCD and inside it point E.\n\nGiven:  ∡BEC = 90°\n     BE = 3 cm\n     EC = 5 cm\n\nWhat is the area of square ABCD (in cm²)?",
+      "options": [
+        "8",
+        "34",
+        "45",
+        "64"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2025_s1_q01.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2025_spring_q1_02",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 2,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Number Line",
+      "difficulty": "easy",
+      "stem": "Points A, B, C and D are located on the number line as in the figure.\nThe distances between every two adjacent points are equal.\n\nBased on this information and the information in the figure,\nwhat is the value of point B ?",
+      "options": [
+        "\\(\\frac{3}{4}\\)",
+        "\\(\\frac{1}{2}\\)",
+        "\\(\\frac{1}{3}\\)",
+        "\\(\\frac{2}{3}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2025_s1_q02.png"
+      ],
+      "sub_category_id": "number_line"
+    },
+    {
+      "id": "2025_spring_q1_03",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 3,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "medium",
+      "stem": "In a shop, packs of balloons of two types are sold:\n- A small pack, which contains 10 balloons, and its price is 7 shekels.\n- A large pack, which contains 30 balloons, and its price is 14 shekels.\n\nOver the course of a certain week Alon bought packs of balloons in the shop and paid 28 shekels for them altogether.\n\nWhich of the following <b>cannot</b> be the total number of balloons that Alon bought in that same week?",
+      "options": [
+        "70",
+        "60",
+        "50",
+        "40"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2025_spring_q1_04",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 4,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Lines & Angles",
+      "difficulty": "medium",
+      "stem": "The three straight lines in the figure meet at one point.\n\nGiven:  z = x + y\n     y = 3x\n\nx = ?",
+      "options": [
+        "12.5°",
+        "22.5°",
+        "45°",
+        "It is impossible to know from the data"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2025_s1_q04.png"
+      ],
+      "sub_category_id": "lines_angles"
+    },
+    {
+      "id": "2025_spring_q1_05",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 5,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "medium",
+      "stem": "Over the course of the seven days of a certain week Gili made 29 telephone calls altogether.\nIt is known that on Monday Gili made more telephone calls than on any other day in that same week.\n\nTherefore, on Monday Gili made <b>at least</b> ______ telephone calls.",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2025_spring_q1_06",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 6,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "Three of the following expressions are equal to one another.\n\nWhich expression is <b>different</b> from the other expressions in its value?",
+      "options": [
+        "\\(\\sqrt{12} \\cdot \\sqrt{15}\\)",
+        "\\(2\\sqrt{45}\\)",
+        "\\(3\\sqrt{30}\\)",
+        "\\(\\sqrt{10} \\cdot \\sqrt{18}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Put each under one root: \\(\\sqrt{12}\\sqrt{15} = \\sqrt{180}\\), \\(2\\sqrt{45} = \\sqrt{180}\\), \\(3\\sqrt{30} = \\sqrt{270}\\), \\(\\sqrt{10}\\sqrt{18} = \\sqrt{180}\\). The odd one is \\(3\\sqrt{30}\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Moving a coefficient inside a root squares it. Three of the options were built to land on the same number, so converting to a single root is the only comparison needed."
+        }
+      ]
+    },
+    {
+      "id": "2025_spring_q1_07",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 7,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "easy",
+      "stem": "\\((8x + 2y) \\cdot (16x - 4y) = ?\\)",
+      "options": [
+        "\\(2(8x^2 - y^2)\\)",
+        "\\(2(16x^2 - y^2)\\)",
+        "\\(8(2x^2 - y^2)\\)",
+        "\\(8(16x^2 - y^2)\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Factor each bracket first: \\(8x+2y = 2(4x+y)\\) and \\(16x-4y = 4(4x-y)\\). The product is \\(8(4x+y)(4x-y) = 8\\left(16x^2-y^2\\right)\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(x=1, y=1\\): the product is \\(10 \\times 12 = 120\\), and option (4) gives \\(8 \\times 15 = 120\\)."
+        }
+      ]
+    },
+    {
+      "id": "2025_spring_q1_08",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 8,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "hard",
+      "stem": "Sarit has a keychain in the shape of a cube with a chain dangling from one of its vertices.\nShe wants to colour each one of the 8 vertices of the cube red or yellow, such that there will not be two vertices located on the same edge that are coloured in the same colour.\n\nIn how many different ways can she do this?",
+      "options": [
+        "0",
+        "2",
+        "8",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2025_s1_q08.png"
+      ],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2025_spring_q1_09",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 9,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "easy",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "In which measure, in week <b>B</b>, was the largest gap (in absolute value) between the percentages that were measured in the fertilized plot and the percentages that were measured in the unfertilized plot?",
+      "options": [
+        "Average weight",
+        "Average sugar content",
+        "Average acidity level",
+        "Number of lemons"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_spring_q1_10",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 10,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "In which week was the average acidity level in the lemons of the <b>entire orchard</b> the highest?\n(Assume that in week zero the acidity level in the two plots was identical, and that each plot has an equal weight when calculating the acidity level in the lemons of the orchard)",
+      "options": [
+        "A",
+        "B",
+        "E",
+        "D"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_spring_q1_11",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 11,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "What is the <b>first</b> week in which the fertilized plot was responsible for more than half of the profits of the entire orchard?",
+      "options": [
+        "E",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_spring_q1_12",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 12,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "Given that in week zero the same number of lemons was picked in the two plots.\nIn week <b>A</b> 1,800 lemons were picked in the fertilized plot of the orchard.\n\nHow many lemons were picked in week <b>A</b> in the unfertilized plot?",
+      "options": [
+        "1,900",
+        "1,950",
+        "2,050",
+        "2,100"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_spring_q1_13",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 13,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "medium",
+      "stem": "A and B are digits between 1 and 9.\n\nGiven:\n  AB\n– BA\n  ――\n  27\n\nA – B = ?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(\\overline{AB} - \\overline{BA} = (10A+B) - (10B+A) = 9(A-B)\\). Setting that equal to 27 gives \\(A - B = 3\\) directly."
+        },
+        {
+          "kind": "understanding",
+          "text": "Reversing a two-digit number and subtracting always gives 9 times the digit difference. So any such question is answered by dividing by 9 &mdash; no search needed."
+        }
+      ]
+    },
+    {
+      "id": "2025_spring_q1_14",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 14,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Factorials",
+      "difficulty": "medium",
+      "stem": "\\(\\dfrac{120 \\cdot 5!}{(6!)^2} = ?\\)",
+      "options": [
+        "\\(\\frac{1}{6}\\)",
+        "\\(\\frac{1}{6!}\\)",
+        "\\(\\frac{1}{30}\\)",
+        "\\(\\frac{1}{36}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "factorials",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Recognise \\(120\\) as \\(5!\\). Then the expression is \\(\\dfrac{5!\\cdot5!}{(6!)^2}=\\left(\\dfrac{5!}{6!}\\right)^2\\), and \\(\\dfrac{5!}{6!}=\\dfrac16\\), so the answer is \\(\\dfrac1{36}\\)."
+        },
+        {
+          "kind": "algebra",
+          "text": "Or expand downward: \\(6!=6\\cdot5!\\), so \\((6!)^2=36(5!)^2\\). The numerator is \\(120\\cdot5!=5!\\cdot5!\\), so everything cancels except \\(\\dfrac1{36}\\). Never multiply \\(720\\times720\\)."
+        }
+      ]
+    },
+    {
+      "id": "2025_spring_q1_15",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 15,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "The accompanying figure shows a parallelogram whose side lengths are x and y.\n\nGiven:  0° < α < 90°\n\nIf S is the area of the parallelogram, which of the following statements is necessarily <b>true</b>?",
+      "options": [
+        "S < x · y",
+        "\\(S = \\frac{\\alpha}{90} \\cdot (x + y)\\)",
+        "\\(S < \\frac{x \\cdot y}{2}\\)",
+        "\\(S = x^2 + y^2\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2025_s1_q15.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2025_spring_q1_16",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 16,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Motion & Speed",
+      "difficulty": "medium",
+      "stem": "On her way to work in the morning Liat drove for 20 minutes at a speed of x kph and afterwards drove for another 20 minutes at a speed of \\(\\frac{x}{2}\\) kph.  In the evening Liat returned along the same road at a constant speed of y kph, and her drive lasted exactly one hour.\n\n\\(\\frac{x}{y} = ?\\)",
+      "options": [
+        "1",
+        "2",
+        "\\(1\\frac{1}{2}\\)",
+        "\\(2\\frac{1}{2}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "motion_speed",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Morning distance: \\(\\frac{x}{3} + \\frac{x}{6} = \\frac x2\\) km, since 20 minutes is a third of an hour."
+        },
+        {
+          "kind": "structure",
+          "text": "The evening drive covers the same road in one hour at \\(y\\), so \\(y = \\frac x2\\) and \\(\\frac xy = 2\\). Both journeys are the same distance &mdash; that is the equation."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Set \\(x = 60\\): 20 km then 10 km, so 30 km total, done in an hour means \\(y = 30\\), and \\(\\frac{60}{30} = 2\\) ✓."
+        }
+      ]
+    },
+    {
+      "id": "2025_spring_q1_17",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 17,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows a quarter circle whose centre is O and inside it a certain point C.\n\nGiven: - The length of arc AB is x.\n- The length of the path from point A to point B through point C, which is emphasized in the figure, is y.\n\nBased on this information and the information in the figure,\n\\(\\frac{x}{y} = ?\\)",
+      "options": [
+        "1",
+        "\\(\\frac{3\\pi}{2}\\)",
+        "\\(\\frac{\\pi}{4}\\)",
+        "It is impossible to know from the data"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/sp2025_s1_q17.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2025_spring_q1_18",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 18,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Polygons",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows a regular hexagon inscribed in a rectangle whose short side length is x.\n\nWhat is the perimeter of the hexagon?",
+      "options": [
+        "\\(\\frac{6x}{\\sqrt{2}}\\)",
+        "\\(12\\sqrt{x}\\)",
+        "\\(18\\sqrt{x}\\)",
+        "\\(\\frac{6x}{\\sqrt{3}}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/sp2025_s1_q18.png"
+      ],
+      "sub_category_id": "polygons"
+    },
+    {
+      "id": "2025_spring_q1_19",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 19,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "hard",
+      "stem": "Given:  |a + b| < a\n\nWhich of the following statements is necessarily true?",
+      "options": [
+        "|b| < 2a",
+        "2a < |b|",
+        "|a| < |b|",
+        "|b| < |a|"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "An absolute value is never negative, so \\(a>0\\). Unfolding gives \\(-a<a+b<a\\), and subtracting \\(a\\) throughout leaves \\(-2a<b<0\\). So \\(|b|<2a\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The given says \\(a+b\\) sits within \\(a\\) of zero. Slide that band down by \\(a\\) and \\(b\\) runs from \\(-2a\\) to 0 — a band of width \\(2a\\), which is exactly what option (1) states."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(a=2,\\ b=-1\\) satisfies the given and makes \\(|a|>|b|\\), killing (3). \\(a=2,\\ b=-3\\) satisfies it too and makes \\(|b|>|a|\\), killing (4) — and between them they kill (2) as well."
+        }
+      ]
+    },
+    {
+      "id": "2025_spring_q1_20",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 20,
+      "section_id": "2025_spring_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "medium",
+      "stem": "The average of Yonatan's scores on three exams – language, literature and history – is 77.\nOn the exams in language and in literature Yonatan received the same score, and on the exam in history he received a score \\(1\\frac{1}{2}\\) times as high as this score.\n\nWhat is the score that Yonatan received on the history exam?",
+      "options": [
+        "99",
+        "90",
+        "87",
+        "84"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2025_spring_q2_01",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 1,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "Given:  \\(2x(y + x) + y(y - 2x) - 2x^2 = 16\\)  ,  0 < y\n\ny = ?",
+      "options": [
+        "x",
+        "-2x",
+        "8",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Expanding: \\(2xy+2x^2 + y^2-2xy - 2x^2 = y^2\\). Everything in \\(x\\) cancels, so \\(y^2 = 16\\) and, \\(y\\) being positive, \\(y = 4\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "That \\(x\\) vanishes entirely is the point of the question &mdash; which is why options (1) and (2), both written in terms of \\(x\\), cannot be right whatever the arithmetic."
+        }
+      ]
+    },
+    {
+      "id": "2025_spring_q2_02",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 2,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "Rivka has 101 identical coins.  She divided them equally among her 4 children, and the remainder she added to the share of the firstborn son Chaim.  Chaim divided the coins that he received equally among his 3 children, and the remainder he added to the share of his firstborn daughter Yael.\n\nHow many coins did Yael receive?",
+      "options": [
+        "8",
+        "10",
+        "14",
+        "15"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Two rounds of division with remainder. \\(101 = 4 \\times 25 + 1\\), so each child gets 25 and Chaim keeps the extra 1 &mdash; he holds 26."
+        },
+        {
+          "kind": "understanding",
+          "text": "Then \\(26 = 3 \\times 8 + 2\\), so each grandchild gets 8 and Yael keeps the extra 2 &mdash; she holds 10. The pattern is: quotient to everyone, remainder to the firstborn, twice."
+        }
+      ]
+    },
+    {
+      "id": "2025_spring_q2_03",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 3,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "hard",
+      "stem": "ABCD is a rectangle.\n\nGiven:  BF = FG = GE = EC  (see figure).\n\nWhich of the following equations is necessarily true?",
+      "options": [
+        "α = β",
+        "α + β = 90°",
+        "2α + β = 180°",
+        "2β – α = 90°"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/sp2025_s2_q03.png"
+      ],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2025_spring_q2_04",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 4,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "hard",
+      "stem": "Given n right triangles whose angles measure 30° , 60° and 90°.\nIn each one of the triangles there is a side whose length is 5 cm.\nAmong the n triangles there is no pair of congruent triangles.\n\nWhat, at most, is the value of n ?",
+      "options": [
+        "6",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2025_spring_q2_05",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 5,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Defined Operations",
+      "difficulty": "hard",
+      "stem": "The operation $ is defined as follows:  \\(a \\$ b = -\\left[\\left(\\frac{a}{b}\\right)^{-a}\\right]\\)\n\n2 $ -6 = ?",
+      "options": [
+        "-9",
+        "\\(\\frac{1}{9}\\)",
+        "3",
+        "\\(-\\frac{1}{3}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "defined_operations"
+    },
+    {
+      "id": "2025_spring_q2_06",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 6,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "Given:  a < 10\n5 < b\nD = a – b\n\nWhich of the following inequalities describes <b>exactly</b> the range in which D can be found?",
+      "options": [
+        "-2 < D",
+        "-15 < D",
+        "D < 2",
+        "D < 5"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Never subtract one inequality from another. Flip \\(5<b\\) into \\(-b<-5\\), then add \\(a<10\\): \\(D=a-b<5\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "\\(D\\) is largest when \\(a\\) is as large as possible and \\(b\\) as small as possible — just under 10 and just over 5, giving just under 5. And there is no lower bound at all, since \\(a\\) can be as negative as you like."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Options (1) and (2) give lower bounds, which the data cannot support. Between the two upper bounds, \\(D=4\\) is reachable (take \\(a=9.9,\\ b=5.9\\)) so 2 is too tight."
+        }
+      ]
+    },
+    {
+      "id": "2025_spring_q2_07",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 7,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "Two quarter circles are placed on segment AB, whose length is 1 cm.\n\nBased on this information and the information in the figure,\nwhat is the sum of the dark areas (in cm²)?",
+      "options": [
+        "\\(\\frac{4}{\\pi} - \\sqrt{2}\\)",
+        "\\(\\frac{\\pi}{2} - 1\\)",
+        "\\(\\frac{\\pi}{\\sqrt{2}}\\)",
+        "\\(\\frac{\\pi}{4}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2025_s2_q07.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2025_spring_q2_08",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 8,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 8-12)",
+      "stem": "\"A competing pair of species\" is a pair of species that meets two conditions:\n- The two species have a common food source.\n- There is overlap between the roaming areas of the two species on the day of the study.\n\nHow many competing pairs of species are there in the reserve?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_spring_q2_09",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 9,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 8-12)",
+      "stem": "The researchers marked one of the leopards in the reserve for the purpose of tracking.\n\nHow many individuals (from all the species in the reserve), <b>at most</b>, did this leopard meet in its roamings on the day of the study?",
+      "options": [
+        "14",
+        "17",
+        "55",
+        "69"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_spring_q2_10",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 10,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 8-12)",
+      "stem": "Given:  The roaming area shared by the zebras and the rabbits is equal to \\(\\frac{1}{4}\\) of the total roaming area of the <b>rabbits</b>.\nThe size of the roaming area shared by the zebras and the lions is 6 km².\n\nWhat is the size of the area in which <b>only zebras</b> roamed (in km²)?",
+      "options": [
+        "10",
+        "12",
+        "16",
+        "18"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_spring_q2_11",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 11,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 8-12)",
+      "stem": "On the day of the study a leopard was observed preying on a zebra.  Following this the researchers understood that a mistake had occurred in the graph and that the roaming areas of two species in the graph were interchanged with one another.\n\nWhich of the following pairs of species could be the pair of species that were interchanged in the graph?",
+      "options": [
+        "Zebra ; Leopard",
+        "Zebra ; Jackal",
+        "Leopard ; Jackal",
+        "Lion ; Zebra"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_spring_q2_12",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 12,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 8-12)",
+      "stem": "The researchers are interested in adding rabbits of the <b>average weight</b> to the reserve until the sum of their weights of all the rabbits in the reserve exceeds the average weight of one lion.\n\nHow many rabbits, at least, must the researchers add to the reserve?",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_spring_q2_13",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 13,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "4 machines of type <b>A</b> finish a job in 9 hours.\n9 machines of type <b>B</b> finish the same job in 4 hours.\n\n\\(\\dfrac{\\text{the time required for a machine of type A to finish the job alone}}{\\text{the time required for a machine of type B to finish the job alone}} = ?\\)",
+      "options": [
+        "1",
+        "\\(\\frac{4}{13}\\)",
+        "\\(\\frac{9}{4}\\)",
+        "\\(\\frac{16}{81}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Four A-machines take 9 hours, so one takes 36. Nine B-machines take 4 hours, so one takes 36 as well."
+        },
+        {
+          "kind": "understanding",
+          "text": "The ratio is 1. The numbers are swapped deliberately: \\(4 \\times 9 = 9 \\times 4\\), so the two jobs cost identical machine-hours and the individual machines are identical."
+        }
+      ]
+    },
+    {
+      "id": "2025_spring_q2_14",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 14,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "Given two pyramids, A and B, whose bases are rectangles that differ from one another.  The two pyramids have the same height and the same volume.\n\nGiven:  In pyramid A the lengths of the sides of the base are 1 cm and 6 cm.\nIn pyramid B the length of one of the sides of the base is 2 cm.\n\nIn which of the pyramids is the <b>perimeter</b> of the base greater?",
+      "options": [
+        "A",
+        "B",
+        "The bases of the two pyramids are equal in their perimeter",
+        "It is impossible to know from the data"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2025_spring_q2_15",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 15,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "In a pack of pencils there are 12 new pencils.  The length of a new pencil is 20 cm.\nIn each hour of writing Matan sharpens his pencil and shortens it by one centimetre.\nMatan stops using a pencil when its length reaches 4 cm.\n\nAssuming that Matan writes with a pencil 6 hours every day,\nfor how many days will a pack of pencils last him?",
+      "options": [
+        "12",
+        "16",
+        "24",
+        "32"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Each pencil gives \\(20 - 4 = 16\\) usable centimetres, and one centimetre is one hour, so 16 hours a pencil and 192 hours for the pack."
+        },
+        {
+          "kind": "algebra",
+          "text": "Divide by the daily writing time to get the number of days."
+        }
+      ]
+    },
+    {
+      "id": "2025_spring_q2_16",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 16,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "medium",
+      "stem": "Dvir tosses 3 fair dice.\n\nWhat is the chance that the sum of the results will be 17 <b>at least</b>?",
+      "options": [
+        "\\(\\frac{1}{9}\\)",
+        "\\(\\frac{1}{18}\\)",
+        "\\(\\frac{1}{27}\\)",
+        "\\(\\frac{1}{54}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2025_spring_q2_17",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 17,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "hard",
+      "stem": "x is an integer greater than 1.\n\nWhich of the following statements is true regarding the expression \\(\\sqrt{x^2 - x}\\) ?",
+      "options": [
+        "It can be an integer, but not an even number",
+        "It can be an integer, but not an odd number",
+        "It can be an even integer and it can be an odd integer",
+        "It cannot be an integer"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(x^2 - x = x(x-1)\\), the product of two consecutive integers. For \\(x > 1\\) that sits strictly between \\((x-1)^2\\) and \\(x^2\\), so it can never be a perfect square."
+        },
+        {
+          "kind": "understanding",
+          "text": "Two consecutive integers are coprime, so for their product to be a square each would have to be a square itself &mdash; and no two consecutive positive integers above 1 are both squares. Either argument closes it."
+        }
+      ]
+    },
+    {
+      "id": "2025_spring_q2_18",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 18,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "In shop <b>A</b> the price of a short shirt is 20 shekels, and the price of a long shirt is 40 shekels.\nIn shop <b>B</b> the price of every shirt is x shekels.\nOn a certain day the two shops received an identical sum of money from the sale of shirts.  On that same day an identical number of shirts was sold in both of them.  On this day 30% of the shirts that were sold in shop <b>A</b> were long.\n\nx = ?",
+      "options": [
+        "24",
+        "26",
+        "30",
+        "36"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Equal numbers of shirts and equal takings: if \\(n\\) short and \\(n\\) long sold in A, takings are \\(60n\\) from \\(2n\\) shirts, so B's price is \\(\\frac{60n}{2n} = 30\\). Adjust for the actual split given in the stem."
+        },
+        {
+          "kind": "check-answers",
+          "text": "With four numeric options, substituting each into both conditions is the reliable route; the arithmetic is one multiplication per option."
+        }
+      ]
+    },
+    {
+      "id": "2025_spring_q2_19",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 19,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "medium",
+      "stem": "In the accompanying system of axes is rectangle ABCD whose sides are parallel to the axes.\n\nGiven:  AD = 2 · AB\n\nBased on this information and the information in the figure,\nwhich of the following possibilities could indicate the values of point C ?",
+      "options": [
+        "(3 , 1)",
+        "(3 , 2)",
+        "(4 , 1)",
+        "(4 , 2)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2025_s2_q19.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2025_spring_q2_20",
+      "source_exam": "psychometric_spring_2025",
+      "source_question_number": 20,
+      "section_id": "2025_spring_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "x is divisible by 2 without a remainder.\ny is divisible by 4 without a remainder.\n\nWhich of the following numbers is the largest number by which the sum (x + y) is <b>necessarily</b> divisible?",
+      "options": [
+        "6",
+        "2",
+        "8",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(y\\) divisible by 4 is also divisible by 2, and \\(x\\) is divisible by 2 &mdash; so the sum is divisible by 2. Nothing stronger: the two 2s do not combine."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(x = 2,\\ y = 4\\) gives 6, which is not divisible by 4 or 8, killing those options; and \\(x=2,\\ y=8\\) gives 10, not divisible by 6. Only 2 survives."
+        }
+      ]
+    }
+  ]
+}

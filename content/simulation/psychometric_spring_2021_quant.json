@@ -1,0 +1,1119 @@
+{
+  "source_exam": "psychometric_spring_2021",
+  "source_exam_label": "Spring 2021",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_spring_2021_acc 2.pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 60 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "table_comprehension_lead": "Study the table below, then answer the four questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2021_spring_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-16)",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 17-20)",
+          "from": 17,
+          "to": 20,
+          "figure_path": "figures/sp2021_s1_wheels.png",
+          "secondary_figure_path": "figures/sp2021_s1_graph.png",
+          "intro": "Study the graphs below, then answer the four questions that follow.\n\nIn a certain game three roulettes are spun - <b>A</b>, <b>B</b> and <b>C</b>.  Each roulette is a wheel with 12 slots, and in each slot a number is written: in the slots of roulettes <b>A</b> and <b>B</b> the numbers 1, 2 or 3 are written, whereas in the slots of roulette <b>C</b> only the numbers 1 or 2 are written (see upper graph).\nIn each roulette there is a ball, and after it is spun the ball stops at random in one of the slots (that is, there is a \\(\\frac{1}{12}\\) chance that it will stop in each slot).\nNote: The result of the spin of one roulette does not affect the result of another roulette.\nThe lower graph summarizes for your convenience the probabilities of obtaining each of the possible combinations of the results of the spins of the three roulettes.  In each column the upper number is the result of roulette <b>A</b>, the middle one - of roulette <b>B</b>, and the lower one - of roulette <b>C</b> (see key).\n\nFor example: The probability that in the spin of roulette <b>C</b> the result 2 will be obtained and in the spin of roulettes <b>A</b> and <b>B</b> the result 1 will be obtained is \\(\\frac{1}{18}\\)."
+        }
+      ]
+    },
+    {
+      "section_id": "2021_spring_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 1-4)",
+          "from": 1,
+          "to": 4,
+          "figure_path": "figures/sp2021_s2_graph.png",
+          "secondary_figure_path": "figures/sp2021_s2_key.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\nIn a certain city three bus lines operate: line 1, line 2 and line 3.  The city is divided into 5 zones: the city center and four surrounding neighborhoods - Ramot neighborhood, Kidma neighborhood, Ma'alot neighborhood and Amidar neighborhood.\nThe graph presents a schematic description of the city, marking on it the boundaries between the zones.  Also marked on it are the travel routes of the three bus lines, the termini of the lines and their stations (see key).\nOn line 1 and on line 2 every bus departs from one of the termini of its line, stops at each one of the stations on its travel route, and arrives at the other terminus.\nOn line 3 the travel route is circular: every bus departs from the single terminus of the line, travels <b>counter</b>clockwise only (as marked in the graph) and arrives back at the terminus.\nOn every line, a bus departs from every terminus of the line exactly every 10 minutes.\nThe travel time from station to station is always 5 minutes (including the time of stopping at the station).\nTwo of the stations are marked in the graph with the letters A and B."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 5-20)",
+          "from": 5,
+          "to": 20
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2021_spring_q1_01",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 1,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure is a square that has a side in common with a right triangle.\nThe area of the square is 16 cm².\n\nBased on this information and the information in the figure,\nx = ?",
+      "options": [
+        "6",
+        "2",
+        "\\(\\sqrt{7}\\)",
+        "\\(\\sqrt{13}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/sp2021_s1_q01.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2021_spring_q1_02",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 2,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "easy",
+      "stem": "Roni reads one book in three days.  Neta reads two books in nine days.\n\nRoni's reading rate is ______ times as much as Neta's reading rate.",
+      "options": [
+        "\\(\\frac{3}{2}\\)",
+        "2",
+        "3",
+        "\\(\\frac{1}{3}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Roni reads \\(\\frac13\\) a book a day; Neta reads \\(\\frac29\\). The ratio is \\(\\frac13 \\div \\frac29 = \\frac32\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Convert both to books per day before comparing. Comparing 3 days against 9 days directly gives 3, which is option (3)."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q1_03",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 3,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Given:  \\(\\frac{a + c}{b} = 2\\)   \\((b \\neq 0)\\)\n\nFrom this it follows <b>necessarily</b> that -",
+      "options": [
+        "\\(\\frac{a}{b} = \\frac{c}{b}\\)",
+        "b is the average of a and c",
+        "\\(\\frac{a}{2} + \\frac{c}{2} = 0\\)",
+        "the difference between a and c is 2"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\frac{a+c}{b} = 2\\) means \\(a+c = 2b\\), so \\(b = \\frac{a+c}{2}\\) &mdash; which is the definition of the average of \\(a\\) and \\(c\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(a=2, c=6\\) forces \\(b=4\\). Option (1) would need \\(2 = 6\\), option (3) would need \\(a+c=0\\), and option (4) would need \\(a-c=2\\). One triple kills all three."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q1_04",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 4,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Trial & Error",
+      "difficulty": "medium",
+      "stem": "In the accompanying table are presented the prices of bottles of mineral water of different sizes, according to the volume of the bottle.\n\nBased on the data in the table, what is the smallest sum (in shekels) for which it is possible to buy exactly 3 litres of mineral water?",
+      "options": [
+        "11",
+        "12",
+        "13",
+        "14"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2021_s1_q04.png"
+      ],
+      "sub_category_id": "trial_and_error"
+    },
+    {
+      "id": "2021_spring_q1_05",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 5,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Factorials",
+      "difficulty": "medium",
+      "stem": "Given:  n is an integer.\n\\(100 < n\\)\n\nWhich of the following expressions is the largest?",
+      "options": [
+        "\\(n^2\\)",
+        "\\(\\dfrac{n!}{(n - 1)!}\\)",
+        "\\(\\dfrac{n!}{(n - 2)!}\\)",
+        "It cannot be determined from the information given."
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "factorials",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Collapse both quotients first. \\(\\dfrac{n!}{(n-1)!}=n\\) and \\(\\dfrac{n!}{(n-2)!}=n(n-1)=n^2-n\\). Now you are comparing \\(n^2\\), \\(n\\), and \\(n^2-n\\) &mdash; and \\(n^2\\) beats both."
+        },
+        {
+          "kind": "understanding",
+          "text": "A ratio of factorials is never as frightening as it looks: it is just the run of integers between them. Two factorials one apart give one factor; two apart give two factors."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q1_06",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 6,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "Given a quadrilateral all of whose angles are equal to each other.\n\nWhich of the following statements is <b>not</b> necessarily true?",
+      "options": [
+        "It has two pairs of parallel sides",
+        "All of its sides are equal in length",
+        "Its diagonals are equal in length",
+        "Its diagonals bisect each other"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2021_spring_q1_07",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 7,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Given:  \\(2 \\cdot a \\cdot b = c \\cdot d \\cdot e\\)\n\n\\(\\frac{a}{d} = 3\\)  ,  \\(\\frac{b}{e} = 6\\)  ,  \\((d, e \\neq 0)\\)\n\nc = ?",
+      "options": [
+        "1",
+        "9",
+        "18",
+        "36"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(a = 3d\\) and \\(b = 6e\\), so \\(2ab = 2(3d)(6e) = 36de\\). Setting that equal to \\(cde\\) and dividing by \\(de\\), which is non-zero, gives \\(c = 36\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "\\(a\\), \\(b\\), \\(d\\) and \\(e\\) are never determined individually &mdash; only the ratios were given, and only the ratios are needed."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q1_08",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 8,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Defined Operations",
+      "difficulty": "hard",
+      "stem": "$(x) and #(x) are operations defined for every number x.\nIt is known that there is no x that satisfies the equation #(x) = $(x).\n\nWhich of the following pairs of definitions of the operations can be the pair $(x) and #(x)?",
+      "options": [
+        "$(x) = x²  ;  #(x) = 7x",
+        "$(x) = 3x + 2  ;  #(x) = 12 – x",
+        "$(x) = 2x + 5  ;  #(x) = 2x + 7",
+        "$(x) = 15 – 2x  ;  #(x) = 2x² + 3"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "defined_operations"
+    },
+    {
+      "id": "2021_spring_q1_09",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 9,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "medium",
+      "stem": "a is a positive integer.\nGiven:  b = a + 17\n\nWhich of the following numbers can be the difference between the units digit of a and the units digit of b?",
+      "options": [
+        "9",
+        "2",
+        "3",
+        "6"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Adding 17 adds 7 to the units digit, then carries if it passes 9. So the units digit either rises by 7 or drops by 3 &mdash; those are the only two possibilities."
+        },
+        {
+          "kind": "check-answers",
+          "text": "The difference between the units digits is therefore \\(7\\) or \\(-3\\), so in absolute terms 7 or 3. Only 3 is on the list."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q1_10",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 10,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "medium",
+      "stem": "Menachem has two boxes that are identical to each other, the volume of each of which is 4 cm³.\nHe joined them to each other and received a cube.\n\nWhat is the length of the edge of the cube (in cm)?",
+      "options": [
+        "1",
+        "2",
+        "\\(\\sqrt{2}\\)",
+        "\\(2\\sqrt{2}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2021_spring_q1_11",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 11,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "medium",
+      "stem": "The weight of 7 cans of preserves is equal to the weight of 3 sacks of rice.\nThe weight of 3 cans of preserves is equal to the weight of 12 packages of butter.\n\nIf the weight of every package of butter is 75 grams, what is the weight of a sack of rice (in grams)?",
+      "options": [
+        "700",
+        "900",
+        "300",
+        "450"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2021_spring_q1_12",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 12,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "medium",
+      "stem": "In which of the following figures do all the points \\((x , y)\\) that are located in the dark area satisfy \\(y < x\\)?",
+      "options": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "option_figure_paths": [
+        "figures/sp2021_s1_q12_opt1.png",
+        "figures/sp2021_s1_q12_opt2.png",
+        "figures/sp2021_s1_q12_opt3.png",
+        "figures/sp2021_s1_q12_opt4.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2021_spring_q1_13",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 13,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "On a \"good\" day the value of Noam's shares rises by 5%.\nOn a \"bad\" day the value of Noam's shares falls by 10%.\nToday the value of Noam's shares is a shekels.\n\nWhat will be the value of his shares (in shekels) at the end of 3 days, if the next two days will be good and the day after them bad?",
+      "options": [
+        "a",
+        "\\(\\left(\\frac{90}{100}\\right)\\left(\\frac{105}{100}\\right)^2 \\cdot a\\)",
+        "\\(\\frac{101}{100} \\cdot a\\)",
+        "\\(\\frac{2 \\cdot 90 + 105}{300} \\cdot a\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Two good days and one bad multiply: \\(\\left(\\frac{105}{100}\\right)^2\\left(\\frac{90}{100}\\right)a\\). Order does not matter."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Option (4) averages the three days, which is never how successive percentages combine; option (1) assumes they cancel."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q1_14",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 14,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "hard",
+      "stem": "At a dancing party all the participants were divided into groups of 7 dancers in each group (at the party there were at least 2 groups of dancers).\nThe participants at the party could <b>not</b> be divided into groups equal in size in which the number of dancers in each one of them is <b>different</b> from 7.\n\nHow many participants were there at the party?",
+      "options": [
+        "21",
+        "28",
+        "35",
+        "49"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "The number is a multiple of 7 with at least two groups, and it cannot be split into equal groups of any <i>other</i> size. So apart from 1, 7 and itself, it has no divisors &mdash; which points at \\(7 \\times 7\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(49\\) has divisors 1, 7, 49 only. \\(21 = 3 \\times 7\\), \\(28 = 4 \\times 7\\) and \\(35 = 5 \\times 7\\) all admit other equal groupings, so all three fail the condition."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q1_15",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 15,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "hard",
+      "stem": "Given:  \\(A – B < C\\)\n\nWhich of the following statements is <b>not</b> necessarily true?",
+      "options": [
+        "\\(C < 0\\)  and also  \\(A < B\\)",
+        "\\(B < 0\\)  and also  \\(C < A\\)",
+        "\\(0 < A\\)  and also  \\(B < C\\)",
+        "\\(B < 0\\)  and also  \\(B < C\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Take option (2). \\(B<0\\) makes \\(-B\\) positive, so \\(A-B\\) is larger than \\(A\\). The given then says \\(A<A-B<C\\), so \\(A<C\\) — which directly contradicts the second half of (2), \\(C<A\\). The pair can never hold."
+        },
+        {
+          "kind": "understanding",
+          "text": "Subtracting a negative moves you up the line, so the given quietly places \\(C\\) above \\(A\\) whenever \\(B\\) is negative. Option (4) pairs \\(B<0\\) with \\(B<C\\), which is consistent; option (2) pairs it with the one thing that cannot follow."
+        },
+        {
+          "kind": "plug-in",
+          "text": "The other three are all reachable. \\(A=1,B=2,C=-0.5\\) fits (1); \\(A=1,B=0,C=2\\) fits (3); \\(A=1,B=-1,C=3\\) fits (4). Only (2) resists every attempt."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q1_16",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 16,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "From a circle whose radius is \\(\\sqrt{2}\\) cm a piece was cut off so that the shape in the figure was created.\n\nBased on this information and the information in the figure, what is the area of the shape that was created (in cm²)?",
+      "options": [
+        "\\(\\frac{5}{3}\\pi + \\frac{\\sqrt{3}}{2}\\)",
+        "\\(\\frac{5}{3}\\pi + \\frac{\\sqrt{2}}{2}\\)",
+        "\\(2\\pi - \\frac{\\sqrt{3}}{2}\\pi\\)",
+        "\\(2\\pi - \\frac{\\sqrt{2}}{2}\\pi\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2021_s1_q16.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2021_spring_q1_17",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 17,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 17-20)",
+      "stem": "x is the probability that the result on roulette <b>A</b> will be 1.\ny is the probability that the result on roulette <b>A</b> will be different from 1.\n\n\\(\\frac{x}{y}\\) = ?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_spring_q1_18",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 18,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 17-20)",
+      "stem": "Gilia spun the three roulettes, and the combination of numbers that was obtained is one of the combinations whose probability of obtaining them is the lowest.\n\nIt is possible to know with certainty that the ball on roulette ______ stopped on the number ______ .",
+      "options": [
+        "<b>B</b> ; 1",
+        "<b>B</b> ; 2",
+        "<b>C</b> ; 1",
+        "<b>C</b> ; 2"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_spring_q1_19",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 19,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 17-20)",
+      "stem": "What is the probability that in a certain spin of the three roulettes the combination 1,1,1 will be obtained and in the spin immediately after it - the combination 2,2,2?",
+      "options": [
+        "\\(\\frac{1}{432}\\)",
+        "\\(\\frac{1}{72}\\)",
+        "\\(\\frac{5}{144}\\)",
+        "\\(\\frac{13}{72}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_spring_q1_20",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 20,
+      "section_id": "2021_spring_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 17-20)",
+      "stem": "What is the probability that <b>exactly</b> two of the three results will be 1?",
+      "options": [
+        "\\(\\frac{1}{6}\\)",
+        "\\(\\frac{11}{36}\\)",
+        "\\(\\frac{17}{36}\\)",
+        "\\(\\frac{5}{9}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_spring_q2_01",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 1,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 1-4)",
+      "stem": "A bus on line 3 departed at 14:00 from the terminus that is in Ramot neighborhood.\n\nAt what time, at the latest, did the bus return to the terminus?",
+      "options": [
+        "14:35",
+        "14:50",
+        "15:10",
+        "15:30"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_spring_q2_02",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 2,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 1-4)",
+      "stem": "As a result of infrastructure works, the stations of line 3 that are not shared with the other lines were shut down.\n\nIn which neighborhood was the number of stations that were shut down the largest?",
+      "options": [
+        "Kidma neighborhood",
+        "Ma'alot neighborhood",
+        "Amidar neighborhood",
+        "Ramot neighborhood"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_spring_q2_03",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 3,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 1-4)",
+      "stem": "In order to get from the terminus in neighborhood X to the terminus in neighborhood Y it is possible to travel by two different ways, in each of which 10 stations are passed: travel on line 1 and after that on line 2 ;  <b>or</b>\ntravel on line 1, after that on line 3 and after that on line 2.\n\nNeighborhood X is ______ and neighborhood Y is ______ .",
+      "options": [
+        "Ma'alot ; Amidar",
+        "Kidma ; Ma'alot",
+        "Amidar ; Ramot",
+        "Ramot ; Kidma"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_spring_q2_04",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 4,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 1-4)",
+      "stem": "Dani wants to get from station A that is in Kidma neighborhood to station B that is in Ramot neighborhood.\n\nThrough how many stations and termini does he have to pass <b>at the least</b> (not including A and B)?",
+      "options": [
+        "6",
+        "2",
+        "8",
+        "7"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_spring_q2_05",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 5,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "The accompanying figure shows that ABCD and ABED are trapezoids \\((AD \\parallel BC)\\).\nThe area of trapezoid ABED is 21 cm².\n\nBased on this information and the information in the figure,\nwhat is the area of the dark triangle DEC (in cm²)?",
+      "options": [
+        "1",
+        "2",
+        "1.5",
+        "2.5"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/sp2021_s2_q05.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2021_spring_q2_06",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 6,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "\\(\\frac{x}{3} = 8\\frac{1}{2} + \\frac{y}{6}\\)\n\n2x – y = ?",
+      "options": [
+        "24",
+        "\\(26\\frac{1}{2}\\)",
+        "\\(48\\frac{1}{2}\\)",
+        "51"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Multiply through by 6: \\(2x = 51 + y\\), so \\(2x - y = 51\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Clearing the fractions is the entire question, and the awkward \\(8\\frac12\\) becomes 51 the moment you do. The target was written in the shape the cleared equation produces."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q2_07",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 7,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "medium",
+      "stem": "a is a positive integer.  \\(a^a\\) is a two-digit number.\n\na = ?",
+      "options": [
+        "5",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "check-answers",
+          "text": "Just walk the options: \\(2^2 = 4\\) (one digit), \\(3^3 = 27\\) ✓ (two digits), \\(4^4 = 256\\) (three), \\(5^5 = 3125\\) (four). Only \\(a=3\\) lands in range."
+        },
+        {
+          "kind": "understanding",
+          "text": "\\(a^a\\) grows explosively, so at most one value can satisfy any digit-length condition. That is why these questions are always answerable by testing four options."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q2_08",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 8,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "For the show \"The Wonders of India\" tickets of two kinds were sold: an expensive ticket whose price is 30 shekels, and a cheap ticket whose price is 20 shekels.\nIt is known that for the show 80 tickets were sold for a sum of 1,800 shekels altogether.\n\nHow many <b>expensive</b> tickets were sold for the show?",
+      "options": [
+        "50",
+        "20",
+        "30",
+        "40"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(30E + 20C = 1800\\) with \\(E + C = 80\\). Substituting \\(C = 80-E\\): \\(30E + 1600 - 20E = 1800\\), so \\(10E = 200\\) and \\(E = 20\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Test the options: 20 expensive and 60 cheap gives \\(600 + 1200 = 1800\\) ✓. With four numeric options this is a single multiplication each."
+        },
+        {
+          "kind": "structure",
+          "text": "Or reason from the average: 1,800 over 80 tickets is 22.5 each, a quarter of the way from 20 to 30 &mdash; so a quarter of the 80 tickets are expensive, which is 20."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q2_09",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 9,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "easy",
+      "stem": "In 40% of the matchboxes there are 60 matches in the box,\nand in 60% of the matchboxes there are 40 matches in the box.\n\nWhat is the average number of matches in a matchbox?",
+      "options": [
+        "46",
+        "48",
+        "50",
+        "54"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2021_spring_q2_10",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 10,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "medium",
+      "stem": "100 children are divided into 50 pairs, and each pair plays one game.\nEvery game ends in a victory for one of the sides or in a tie.\nA child who wins receives 4 points,\na child who ends in a tie receives one point,\nand a child who loses does not receive any points at all.\n\nThe sum of the points that all the children together will receive is at the least ______ and at the most ______ .",
+      "options": [
+        "0 ; 200",
+        "0 ; 400",
+        "100 ; 200",
+        "100 ; 400"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2021_spring_q2_11",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 11,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "hard",
+      "stem": "Given the expression:  | -7 + 14 + 3 – 12 – 9 – 6 |\nIn this expression it is possible to replace every plus sign with a minus sign, and every minus sign with a plus sign.\n\nHow many signs must be replaced <b>at the least</b> in order for the value of the expression to be maximal?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "The size is largest when every term pushes the same way, giving \\(7+14+3+12+9+6=51\\). So the question is not about arithmetic at all — it is: how many signs currently disagree with the majority?"
+        },
+        {
+          "kind": "understanding",
+          "text": "As written, the plus signs sit on 14 and 3, and the minus signs on 7, 12, 9 and 6. Making all six negative takes 2 flips; making all six positive takes 4. Since the outer bars discard the sign, the cheaper route wins — 2."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q2_12",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 12,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "A circle whose radius is r cm is a common base of two cones whose sizes are different from each other.\nThe small cone, whose height is \\(h_1\\) cm, is located inside the large cone, whose height is \\(h_2\\) cm  \\((h_1 < h_2)\\).\n\nWhat is the volume (in cm³) of the body that is part of the large cone but is not part of the small cone?",
+      "options": [
+        "\\(\\frac{\\pi r^2}{3}(h_2 - h_1)\\)",
+        "\\((h_2 - h_1)^2 \\pi r\\)",
+        "\\(\\frac{\\pi r^2 h_2}{3} - \\pi r^2 h_1\\)",
+        "\\(\\frac{2}{3}\\pi r (h_2 - h_1)\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2021_spring_q2_13",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 13,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Motion & Speed",
+      "difficulty": "medium",
+      "stem": "Ilana rides a bicycle on a circular route whose radius is 1 km at a constant speed of \\(\\pi\\) kph.\n\nHow much time will Ilana need in order to go around the route <b>twice</b>?",
+      "options": [
+        "an hour",
+        "two hours",
+        "\\(\\frac{1}{2}\\) an hour",
+        "4 hours"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "motion_speed",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "One lap is \\(2\\pi(1) = 2\\pi\\) km, so two laps is \\(4\\pi\\) km."
+        },
+        {
+          "kind": "algebra",
+          "text": "At \\(\\pi\\) km/h that is \\(\\frac{4\\pi}{\\pi} = 4\\) hours. The \\(\\pi\\) in the speed is there precisely so it cancels &mdash; a signal not to approximate it."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q2_14",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 14,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows that ABC and DEF are isosceles triangles that are congruent to each other  (AB = AC = DE = DF).\n\nGiven:  \\(BC \\parallel EF\\)\nDG = GE\nBG = HC\n\nBased on this information and the information in the figure,\nwhat is the length of segment AD ?",
+      "options": [
+        "1 cm",
+        "2 cm",
+        "\\(\\sqrt{3}\\) cm",
+        "2.5 cm"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2021_s2_q14.png"
+      ],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2021_spring_q2_15",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 15,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "Given:  \\(2^a \\cdot 6^b = 9 \\cdot 2^b \\cdot 6^a\\)\n\nb – a = ?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "\\(\\frac{3}{2}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Collect the two bases: \\(\\dfrac{2^a 6^b}{2^b 6^a} = \\left(\\dfrac26\\right)^{a-b} = 3^{b-a}\\). Setting that equal to 9 gives \\(b-a = 2\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Only the difference \\(b-a\\) is determined, which matches what the question asks for &mdash; a reliable sign that you should stop once you have it."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q2_16",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 16,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "medium",
+      "stem": "Tom has 7 shirts that are different from each other.  2 of them are red, and 5 of them are green.\nHe also has 7 pairs of trousers that are different from each other.  4 of them are red, 2 of them are green, and one of them is white.\nTom is interested in wearing a shirt and trousers that are <b>not</b> of the same color.\n\nHow many pairs of a shirt and trousers that are different from each other will he be able to wear?",
+      "options": [
+        "31",
+        "35",
+        "45",
+        "49"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2021_spring_q2_17",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 17,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "easy",
+      "stem": "\\(17.5^2 – 7.5^2 = ?\\)",
+      "options": [
+        "100",
+        "150",
+        "225",
+        "250"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Difference of squares: \\((17.5-7.5)(17.5+7.5) = 10 \\times 25 = 250\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The decimals are chosen so the difference is exactly 10 and the sum exactly 25. Squaring each number separately reaches the same place far more slowly."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q2_18",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 18,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "A can of a soft drink contains 0.006 grams of an artificial sweetener.\nDoctors recommend not consuming more than 0.03 grams of artificial sweetener a week for every 1 kg of the weight of the body.\n\nAccording to the doctors' recommendation, how many cans of a soft drink a week, at the most, can a person whose weight is 50 kg drink?",
+      "options": [
+        "60",
+        "120",
+        "150",
+        "250"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "The weekly allowance scales with body weight, so multiply the limit by the weight and divide by the sweetener per can."
+        },
+        {
+          "kind": "algebra",
+          "text": "The arithmetic reduces to \\(\\frac{\\text{allowance}}{0.006}\\), and the decimals are chosen so the division is exact."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q2_19",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 19,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "a is an integer that is divisible by 17.\n\n\\(a \\cdot (a + 1)\\) is necessarily divisible by -",
+      "options": [
+        "6",
+        "9",
+        "34",
+        "35"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(a\\) is a multiple of 17, and \\(a(a+1)\\) is a product of two consecutive integers, so one of them is even. That gives a factor of 17 and a factor of 2 &mdash; hence 34."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Nothing guarantees 6, 9 or 35: take \\(a = 17\\), giving \\(17 \\times 18 = 306\\), which is not divisible by 35 and gives no second factor of 5."
+        }
+      ]
+    },
+    {
+      "id": "2021_spring_q2_20",
+      "source_exam": "psychometric_spring_2021",
+      "source_question_number": 20,
+      "section_id": "2021_spring_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Lines & Angles",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure, the straight lines b and c cross the straight line a.\n\nBased on the information about the angles in the figure, on which side will b and c cross each other?",
+      "options": [
+        "right",
+        "left",
+        "right and left",
+        "They will not cross each other"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2021_s2_q20.png"
+      ],
+      "sub_category_id": "lines_angles"
+    }
+  ]
+}

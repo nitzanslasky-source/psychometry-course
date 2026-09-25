@@ -3,6 +3,7 @@
 import { useDeferredValue, useEffect, useMemo, useState } from "react";
 import type { DictEntry, DictLabel } from "@/lib/extras";
 import { canSpeak, speak, stopSpeaking } from "@/lib/speech";
+import { AddToReview } from "./AddToReview";
 
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const first = (w: string) => (w.replace(/^[^a-z]+/i, "")[0] || "#").toUpperCase();
@@ -21,8 +22,8 @@ const FILTERS: { id: string; label: string; test: (e: DictEntry) => boolean }[] 
   { id: "core", label: "Core list", test: (e) => !!e.core },
 ];
 
-export function Dictionary({ entries }: { entries: DictEntry[] }) {
-  const [q, setQ] = useState("");
+export function Dictionary({ entries, initialQuery = "" }: { entries: DictEntry[]; initialQuery?: string }) {
+  const [q, setQ] = useState(initialQuery);
   const [filter, setFilter] = useState("all");
   const [speakOk, setSpeakOk] = useState(false);
   useEffect(() => setSpeakOk(canSpeak()), []);
@@ -115,7 +116,12 @@ export function Dictionary({ entries }: { entries: DictEntry[] }) {
                         </button>
                       )}
                     </div>
-                    <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-gold">{LABEL_TEXT[e.label]}</div>
+                    <div className="mt-1 flex items-center gap-2">
+                      <span className="text-[10px] font-semibold uppercase tracking-[0.12em] text-gold">{LABEL_TEXT[e.label]}</span>
+                    </div>
+                    <div className="mt-2">
+                      <AddToReview srsKey={`w:${e.w}`} compact />
+                    </div>
                   </div>
                   <div className="max-w-2xl">
                     <p className="text-[16px] leading-relaxed text-ink">{e.def}</p>

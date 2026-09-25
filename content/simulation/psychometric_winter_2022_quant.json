@@ -1,0 +1,1107 @@
+{
+  "source_exam": "psychometric_winter_2022",
+  "source_exam_label": "Winter 2022",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_winter_2022_acc.pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 59 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "table_comprehension_lead": "Study the table below, then answer the four questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2022_winter_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/w2022_s1_graph.png",
+          "intro": "Study the graphs below, then answer the four questions that follow.\n\nThe graphs present data on the production and recycling of waste in a certain city in the years 2001-2004.\nFor each year data are presented on four types of waste: paper, plastic, glass and metal (see key).\nFor each type of waste, the height of the entire bar represents the quantity of waste that was created, and the height of the dark part of the bar represents the quantity of waste that was recycled (out of the waste that was created in that same year).\n\nFor example: In the year 2001, 25 tons of glass waste were created in the city.  Of them 10 tons were recycled."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    },
+    {
+      "section_id": "2022_winter_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 1-4)",
+          "from": 1,
+          "to": 4,
+          "figure_path": "figures/w2022_s2_graph.png",
+          "intro": "Study the graphs below, then answer the four questions that follow.\n\nA certain country, which is divided into 8 districts according to the directions of the compass (north, north-east, east and so on), set for itself a <b>desired target</b> of a visit of 800 tourists at the least in every season, in each one of the districts.\nThe graphs describe the number of tourists who visited in each district, in each one of the four seasons of a certain year.  The distance of every point from the centre of the circle indicates the number of tourists who visited in the district in that same season.  The bold circle in each graph represents the desired target.\nNote: The lines connecting the points in each graph are auxiliary lines only.\n\nFor example: In the autumn season the number of tourists who visited in the south-east district was 700, that is to say 100 lower than the desired target."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 5-20)",
+          "from": 5,
+          "to": 20
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2022_winter_q1_01",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 1,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Similarity",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows ABCD, which is a parallelogram.  AE is the continuation of side BA, and CF is the continuation of side DC.\n\nBased on this information and the information in the figure,\nwhich of the following triangles is <b>not</b> necessarily similar to the dark triangle EAG?",
+      "options": [
+        "Triangle EBH",
+        "Triangle FCH",
+        "Triangle FDG",
+        "All the above triangles are necessarily similar to triangle EAG"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/w2022_s1_q01.png"
+      ],
+      "sub_category_id": "similarity"
+    },
+    {
+      "id": "2022_winter_q1_02",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 2,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "easy",
+      "stem": "Three cannons fire at a fixed rate:\nThe first fires every 2 seconds, the second – every 3 seconds, and the third – every 5 seconds.\nAt a certain moment all three cannons fired together.\n\nAfter how many seconds will all three cannons fire together again?",
+      "options": [
+        "10",
+        "15",
+        "30",
+        "45"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "They coincide at common multiples of 2, 3 and 5. Since those are pairwise coprime, the LCM is simply \\(2 \\times 3 \\times 5 = 30\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The trap is adding or picking the largest. Coincidence questions are always LCM &mdash; and when the numbers are coprime, the LCM happens to equal the product."
+        }
+      ]
+    },
+    {
+      "id": "2022_winter_q1_03",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 3,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "easy",
+      "stem": "\\(\\dfrac{\\sqrt{4^4}}{4}\\) = ?",
+      "options": [
+        "16",
+        "2",
+        "\\(\\sqrt{2}\\)",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\sqrt{4^4} = 4^2 = 16\\), and \\(16/4 = 4\\)."
+        },
+        {
+          "kind": "structure",
+          "text": "A square root halves the exponent: \\(\\sqrt{4^4} = 4^{2}\\), then dividing by \\(4^1\\) leaves \\(4^1\\)."
+        }
+      ]
+    },
+    {
+      "id": "2022_winter_q1_04",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 4,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "In a bunch of grapes there were 48 grapes.  Yossi ate \\(\\frac{2}{3}\\) of the grapes, and Shula ate \\(\\frac{3}{4}\\) of the grapes that he left over.\n\nHow many grapes were left in the bunch after Shula too ate from it?",
+      "options": [
+        "24",
+        "16",
+        "8",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Yossi ate two thirds, leaving one third: \\(48 \\div 3 = 16\\). Shula ate three quarters of those 16, leaving one quarter: \\(16 \\div 4 = 4\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Track what is <i>left</i> rather than what is eaten &mdash; a third of a quarter is one twelfth, and \\(48/12 = 4\\) in one step."
+        }
+      ]
+    },
+    {
+      "id": "2022_winter_q1_05",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 5,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows a rectangle ABCD.\nE and F are points on sides AD and BC respectively, and by means of them four triangles were created, the area of three of them being given in the figure.\n\nWhat is the area of the fourth triangle, DFC (in cm²)?",
+      "options": [
+        "3.5",
+        "2.5",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/w2022_s1_q05.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2022_winter_q1_06",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 6,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure the lines represent paths.\nYael sets out from point A and walks along the paths without going back.\nAt every branching of the paths she chooses at random which path to continue along.\nWhen she reaches point <b>X</b>, <b>Y</b> or <b>Z</b> she stops.\n\n\\(\\dfrac{\\text{the chance that she will reach point } \\mathbf{Y}}{\\text{the chance that she will reach point } \\mathbf{X}}\\) = ?",
+      "options": [
+        "1",
+        "2",
+        "\\(\\frac{2}{3}\\)",
+        "\\(\\frac{3}{2}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2022_s1_q06.png"
+      ],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2022_winter_q1_07",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 7,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "hard",
+      "stem": "A and B are the letters representing different digits from among the digits 1 to 9.\nGiven:  A + B = 9\n     \\(\\frac{2}{9} \\cdot\\) AB = BA\n\nA = ?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\frac29 \\overline{AB} = \\overline{BA}\\) gives \\(2(10A + B) = 9(10B + A)\\), so \\(20A + 2B = 90B + 9A\\) and \\(11A = 88B\\), that is \\(A = 8B\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "With \\(A + B = 9\\) and \\(A = 8B\\): \\(9B = 9\\), so \\(B = 1\\) and \\(A = 8\\). Both conditions were needed &mdash; the first alone leaves nine possibilities."
+        }
+      ]
+    },
+    {
+      "id": "2022_winter_q1_08",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 8,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "hard",
+      "stem": "Which of the following expressions is <b>not</b> necessarily equal to the average of a, b, c and d?",
+      "options": [
+        "\\(\\dfrac{a + b}{4} - \\dfrac{-c - d}{4}\\)",
+        "\\(\\dfrac{\\frac{a + b}{2} + \\frac{c + d}{2}}{2}\\)",
+        "\\(\\dfrac{3}{4}\\left(\\dfrac{a + b + c}{3}\\right) + \\dfrac{d}{4}\\)",
+        "\\(\\dfrac{a + b + c}{2} - \\dfrac{d}{2}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2022_winter_q1_09",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 9,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "In each one of the years 2002-2004, the quantity of ______ waste that was created was greater or remained fixed relative to the year that preceded it.",
+      "options": [
+        "paper",
+        "plastic",
+        "glass",
+        "metal"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_winter_q1_10",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 10,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "For every year let us define:\nA = the percentage of the glass waste that was recycled out of the glass waste that was created\n\nWhat was the <b>smallest</b> value of A in the years described in the graphs?",
+      "options": [
+        "10%",
+        "20%",
+        "25%",
+        "40%"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_winter_q1_11",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 11,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "An \"improved year\" is a year in which, with regard to at least 3 types of waste, the <b>quantity</b> of waste that was recycled was greater than the quantities that were recycled in the preceding year.\n\nOut of the years 2002-2004, how many years were improved years?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_winter_q1_12",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 12,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "The municipality earns 200 shekels on every ton of paper waste that is recycled, and loses 100 shekels on every ton of paper waste that is not recycled.\n\nHad all the paper waste that was created in 2001 been recycled, the municipality would have had ______ shekels more than it actually had.",
+      "options": [
+        "9,000",
+        "8,000",
+        "3,000",
+        "6,000"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_winter_q1_13",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 13,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Given:  \\(a = \\frac{1}{3}x\\)\n     \\(b = \\frac{1}{4}(x - a)\\)\n     a + b = 210\n\nx = ?",
+      "options": [
+        "204",
+        "315",
+        "360",
+        "420"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(a = \\frac x3\\), so \\(x - a = \\frac{2x}{3}\\) and \\(b = \\frac x6\\). Then \\(a + b = \\frac x3 + \\frac x6 = \\frac x2 = 210\\), giving \\(x = 420\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The definitions chain, so express everything in \\(x\\) before touching the third equation. Substituting in the given order keeps it to two lines."
+        }
+      ]
+    },
+    {
+      "id": "2022_winter_q1_14",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 14,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "Nufar has an ice-cream cup in the shape of a cone.  The radius of the base of the cone is 2 cm, and its height is \\(\\frac{30}{\\pi}\\) cm (the thickness of the cup is negligible).\nNufar placed on the cup two balls of ice cream, the volume of each of which is equal to 75% of the volume of the cup, and in the end she ate all the ice cream.\n\nHow many cm³ of ice cream did Nufar eat?",
+      "options": [
+        "45",
+        "60",
+        "75",
+        "90"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2022_winter_q1_15",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 15,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Given:  \\(A = -(x^2) + 7\\)\n\nWhat is the exact range in which A is found?",
+      "options": [
+        "\\(A \\geq 7\\)",
+        "\\(A \\geq -7\\)",
+        "\\(A \\geq 0\\)",
+        "\\(A \\leq 7\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(x^2 \\ge 0\\), so \\(-x^2 \\le 0\\) and \\(A \\le 7\\), with equality only at \\(x = 0\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(x=0\\) gives \\(A=7\\) and \\(x=3\\) gives \\(A=-2\\), so \\(A\\) reaches 7 and goes well below it. That pair eliminates every other option."
+        }
+      ]
+    },
+    {
+      "id": "2022_winter_q1_16",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 16,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "medium",
+      "stem": "In the accompanying coordinate system ABC is an equilateral triangle.\n\nm = ?",
+      "options": [
+        "\\(2\\sqrt{3}\\)",
+        "2",
+        "\\(4\\sqrt{3}\\)",
+        "It cannot be determined from the information given"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2022_s1_q16.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2022_winter_q1_17",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 17,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "hard",
+      "stem": "In a certain store pens are sold at 9 different prices and in 7 different colours.\nIn the store 30 types of pens are sold altogether.\n\nWhat, <b>at most</b>, is the number of types of pens in the store whose price is 10 shekels and whose colour is red?",
+      "options": [
+        "14",
+        "16",
+        "22",
+        "24"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2022_winter_q1_18",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 18,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "A wheel rolls on the ground at a fixed speed along a straight line.  The wheel completes 10 full rolls in exactly 90 seconds.  The radius of the wheel is 3 metres.\n\nWhat was the speed of the wheel, <b>approximately</b>?",
+      "options": [
+        "1 metre per second",
+        "2 metres per second",
+        "3 metres per second",
+        "4 metres per second"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2022_s1_q18.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2022_winter_q1_19",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 19,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "hard",
+      "stem": "The price of a ticket to a film is a shekels.\nn friends went to a film, but k of them forgot their wallet at home (\\(n \\neq k\\)).\nThe other friends decided to divide among themselves equally the payment for the tickets for the k friends.\n\nHow many shekels did each one of the other friends <b>add</b> to the price of the ticket that he bought for himself?",
+      "options": [
+        "\\(\\dfrac{k}{n - k} \\cdot a\\)",
+        "\\(\\dfrac{n}{n - k} \\cdot a\\)",
+        "\\(\\dfrac{k}{n} \\cdot a\\)",
+        "\\(\\dfrac{n - k}{n} \\cdot a\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2022_winter_q1_20",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 20,
+      "section_id": "2022_winter_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "hard",
+      "stem": "n and m are positive integers that differ from each other.\nGiven:  \\((n^2 - m^2)\\) is an even number.\n\nWhich of the following statements does <b>not</b> follow from the information given?",
+      "options": [
+        "n and m are even",
+        "(n + m) is even",
+        "(n – m) is even",
+        "\\((n^2 - m^2)\\) is divisible by 4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(n^2 - m^2 = (n-m)(n+m)\\), and \\(n-m\\) and \\(n+m\\) always share a parity. Their product is even exactly when both are even, which happens exactly when \\(n\\) and \\(m\\) share a parity &mdash; both even <i>or</i> both odd."
+        },
+        {
+          "kind": "check-answers",
+          "text": "So (2), (3) and (4) all follow, but (1) claims specifically that both are even, and both odd works just as well: \\(n=3,\\ m=1\\) gives \\(9-1 = 8\\), even. One pair kills it."
+        }
+      ]
+    },
+    {
+      "id": "2022_winter_q2_01",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 1,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 1-4)",
+      "stem": "The total number of tourists who visited in the country was the smallest in the ______ season and was the greatest in the ______ season.",
+      "options": [
+        "autumn ; spring",
+        "autumn ; summer",
+        "winter ; spring",
+        "winter ; summer"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_winter_q2_02",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 2,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 1-4)",
+      "stem": "Four <b>regions</b> were defined in the country: the <b>eastern</b> region is made up of the north-east, east and south-east districts; the <b>southern</b> region is made up of the south-east, south and south-west districts; and so on (there is overlap between the regions).\n\nIn the spring season, in which of the four regions did more tourists visit?",
+      "options": [
+        "The eastern region",
+        "The southern region",
+        "The western region",
+        "The northern region"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_winter_q2_03",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 3,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 1-4)",
+      "stem": "In one of the seasons in a <b>different</b> year (which is not presented in the graphs), the number of tourists who visited in each district, except for the north-west district, was <b>lower</b> than the desired target.\n\nWhich of the following graphs could represent this season?",
+      "options": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "option_figure_paths": [
+        "figures/w2022_s2_q03_opt1.png",
+        "figures/w2022_s2_q03_opt2.png",
+        "figures/w2022_s2_q03_opt3.png",
+        "figures/w2022_s2_q03_opt4.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_winter_q2_04",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 4,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 1-4)",
+      "stem": "The country decided to change the desired target to 900 tourists at the least (in every season, in every district).\nIn the spring season, how many of the districts that met the desired target before the change did <b>not</b> meet the new target?\n(Clarification: a point located on a circle represents a round number of hundreds of visitors.  Thus, for example, in the south district exactly 700 visitors visited in the spring)",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2022_winter_q2_05",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 5,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "medium",
+      "stem": "Every day Eran listens to music for an hour.\nOn Sundays to Thursdays Eran listens only to classical music.\nOn Fridays and Saturdays Eran listens only to rock music.\n\nOn average, every day of the week Eran listens to classical music for ______ and to rock music for ______.",
+      "options": [
+        "\\(\\frac{5}{7}\\) of an hour ; \\(\\frac{2}{7}\\) of an hour",
+        "\\(\\frac{5}{7}\\) of an hour ; \\(\\frac{1}{2}\\) of an hour",
+        "\\(\\frac{1}{5}\\) of an hour ; \\(\\frac{1}{2}\\) of an hour",
+        "\\(\\frac{1}{5}\\) of an hour ; \\(\\frac{2}{7}\\) of an hour"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2022_winter_q2_06",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 6,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "The accompanying figure shows trapezoid ABCD (AD \\(\\parallel\\) BC).\nGiven:  BA = BC\n\nBased on this information and the information in the figure,\n\nα = ?",
+      "options": [
+        "70°",
+        "75°",
+        "80°",
+        "85°"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2022_s2_q06.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2022_winter_q2_07",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 7,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Factorials",
+      "difficulty": "medium",
+      "stem": "x is an integer greater than 1.\n\n\\(y = \\dfrac{x!}{(x - 1)!}\\)\n\ny is necessarily –",
+      "options": [
+        "greater than x",
+        "divisible by 2",
+        "divisible by 3",
+        "equal to x"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "factorials",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(x!=x\\cdot(x-1)!\\), so the quotient is simply \\(x\\). Nothing else is knowable: \\(x\\) could be even or odd, divisible by 3 or not."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Once \\(y=x\\), test the other three against a single value. \\(x=5\\) gives \\(y=5\\), which is not greater than \\(x\\), not divisible by 2, and not divisible by 3 &mdash; killing (1), (2) and (3) at once."
+        }
+      ]
+    },
+    {
+      "id": "2022_winter_q2_08",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 8,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows a polygon ABCDE.\nGiven:  ABCF is a deltoid (\\(\\sphericalangle\\)ABC = \\(\\sphericalangle\\)AFC).\n\nWhich of the following statements about the ratio\n\\(\\dfrac{\\text{the } \\mathbf{perimeter} \\text{ of polygon ABCDE}}{\\text{the } \\mathbf{perimeter} \\text{ of the bold polygon}}\\) is necessarily true?",
+      "options": [
+        "It is smaller than 1",
+        "It is equal to 1",
+        "It is greater than 1",
+        "None of the above statements is necessarily true"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2022_s2_q08.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2022_winter_q2_09",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 9,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Itai earns 7,000 shekels a month.  Boaz earns 4,000 shekels a month.\n\nIn which of the following cases will the ratio between their salaries change?",
+      "options": [
+        "If we subtract \\(\\frac{1}{3}\\) of his salary from each one of them",
+        "If we add to the salary of each one of them 3,000 shekels",
+        "If we multiply the salary of each one of them by 3",
+        "If we divide the salary of each one of them by 30"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "A ratio survives multiplying or dividing both quantities by the same number, and survives taking the same <i>fraction</i> off each. It does <b>not</b> survive adding the same <i>amount</i> to each."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Adding 3,000 gives \\(10{,}000 : 7{,}000 = 10:7\\), not \\(7:4\\). The other three all preserve \\(7:4\\) exactly."
+        }
+      ]
+    },
+    {
+      "id": "2022_winter_q2_10",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 10,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Defined Operations",
+      "difficulty": "medium",
+      "stem": "For every x the operation $(x) is defined as follows:  $(x) = \\(\\dfrac{x + |x|}{2}\\)\n\n$(-|x|) = ?",
+      "options": [
+        "0",
+        "2 \\(\\cdot\\) |x|",
+        "-x",
+        "|x|"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "defined_operations"
+    },
+    {
+      "id": "2022_winter_q2_11",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 11,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "The accompanying figure shows a circle whose area is A cm² and inside it a square is inscribed.\n\nWhat is the area of the square (in cm²)?",
+      "options": [
+        "\\(\\dfrac{3A}{4\\pi}\\)",
+        "\\(\\dfrac{\\sqrt{2}\\,A}{2\\pi}\\)",
+        "\\(\\dfrac{2A}{\\pi}\\)",
+        "\\(\\dfrac{3A}{2\\pi}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/w2022_s2_q11.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2022_winter_q2_12",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 12,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "medium",
+      "stem": "Which of the following numbers is it possible to present as a product of <b>two</b> prime numbers?",
+      "options": [
+        "66",
+        "78",
+        "85",
+        "105"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Factor each option and count the primes. \\(66 = 2 \\cdot 3 \\cdot 11\\) (three), \\(78 = 2 \\cdot 3 \\cdot 13\\) (three), \\(85 = 5 \\cdot 17\\) (two ✓), \\(105 = 3 \\cdot 5 \\cdot 7\\) (three)."
+        },
+        {
+          "kind": "understanding",
+          "text": "A number is a product of exactly two primes when it is either \\(p \\cdot q\\) or \\(p^2\\). Since 85 ends in 5 it has a factor of 5, and \\(85 \\div 5 = 17\\), which is prime &mdash; one division settles it."
+        }
+      ]
+    },
+    {
+      "id": "2022_winter_q2_13",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 13,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "x is an integer, positive and odd.  The remainder of the division of x by 3 is 2.\n\nWhat is the remainder of the division of x by 6?",
+      "options": [
+        "1",
+        "2",
+        "5",
+        "0"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(x \\equiv 2 \\pmod 3\\) gives \\(x \\in \\{2, 5, 8, 11, 14, \\ldots\\}\\), and \\(x\\) odd removes the even ones, leaving \\(5, 11, 17, \\ldots\\) &mdash; all \\(\\equiv 5 \\pmod 6\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Combining a condition mod 3 with a condition mod 2 gives a condition mod 6, because 2 and 3 are coprime. The remainder is 5."
+        }
+      ]
+    },
+    {
+      "id": "2022_winter_q2_14",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 14,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows ABCD, which is a square whose side length is 15 cm, and inside it are drawn 5 dark squares of equal areas.\n\nWhat is the length of segment OP (in cm)?",
+      "options": [
+        "\\(15\\sqrt{2}\\)",
+        "9",
+        "\\(6\\sqrt{2}\\)",
+        "\\(9\\sqrt{2}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/w2022_s2_q14.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2022_winter_q2_15",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 15,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "A popcorn-production machine is operated 4 hours every day.  Because of a malfunction, the machine did not work for 10 days.\nAfter it was repaired the machine was operated without a break for x days, until the total quantity of popcorn that it would produce would be equal to the total quantity that it would have produced up to that same time had there been no malfunction.\n\nx = ?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Ten missed days cost \\(10 \\times 4 = 40\\) hours of output. Running without a break gains \\(24 - 4 = 20\\) extra hours a day."
+        },
+        {
+          "kind": "algebra",
+          "text": "\\(\\frac{40}{20} = 2\\) days. The catch-up rate is the <i>difference</i> between the two schedules, not the full 24."
+        }
+      ]
+    },
+    {
+      "id": "2022_winter_q2_16",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 16,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "hard",
+      "stem": "a and b are positive integers.\n\nGiven:  \\(\\frac{2}{3} \\cdot \\frac{15}{4} \\cdot \\frac{a}{b} = 1\\)\n\nFrom here it <b>necessarily</b> follows that –",
+      "options": [
+        "b = 10",
+        "a = 2",
+        "\\(3 \\leq b - a\\)",
+        "\\(b - a \\leq 5\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\frac23 \\cdot \\frac{15}{4} = \\frac52\\), so \\(\\frac ab = \\frac25\\). With \\(a, b\\) positive integers, \\(a = 2k\\) and \\(b = 5k\\), so \\(b - a = 3k\\), which is at least 3."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(k=1\\) gives \\(a=2, b=5\\), which satisfies options (2) and (4) &mdash; but \\(k=2\\) gives \\(a=4, b=10\\), breaking (2), and \\(k=3\\) gives \\(b-a = 9\\), breaking (4). Only (3) survives every case."
+        },
+        {
+          "kind": "understanding",
+          "text": "&ldquo;Necessarily follows&rdquo; means it must hold for every valid pair, so one witness is never enough here &mdash; you have to vary \\(k\\)."
+        }
+      ]
+    },
+    {
+      "id": "2022_winter_q2_17",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 17,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Researchers checked the weight of a chick over three weeks.\nIn the first week of the study the weight of the chick rose by 100%.\nIn the second week its weight rose by 100% relative to its weight at the beginning of the week.\nIn the third week its weight rose by 100% relative to its weight at the beginning of the week.\n\nBy what percentage did the weight of the chick rise from the beginning of the study until the end of the third week?",
+      "options": [
+        "200%",
+        "400%",
+        "600%",
+        "700%"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Three doublings is \\(\\times 2^3 = 8\\), so the weight is 8 times the start &mdash; a rise of 700%."
+        },
+        {
+          "kind": "understanding",
+          "text": "Eight times as heavy is 700% <i>more</i>, not 800%. The same multiplier-versus-increase distinction as the dress question."
+        }
+      ]
+    },
+    {
+      "id": "2022_winter_q2_18",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 18,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "medium",
+      "stem": "Galit needs to choose an entry password for a computer that will be made up of the characters 1 and 2 only.  She can choose a password of 3 characters or a password of 6 characters.\n\nHow many different passwords can Galit compose?",
+      "options": [
+        "24",
+        "32",
+        "64",
+        "72"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2022_winter_q2_19",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 19,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "The value of the expression \\(\\left(\\sqrt{55} + 1\\right)^2\\) is greater than ______ and smaller than ______.",
+      "options": [
+        "55 ; 59",
+        "64 ; 67",
+        "70 ; 72",
+        "78 ; 81"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\left(\\sqrt{55}+1\\right)^2 = 56 + 2\\sqrt{55}\\). Since \\(7^2 = 49\\) and \\(8^2 = 64\\), \\(\\sqrt{55}\\) is between 7 and 8, so \\(2\\sqrt{55}\\) is between 14 and 16 and the total lies between 70 and 72."
+        },
+        {
+          "kind": "understanding",
+          "text": "Trapping the root between two integers is enough &mdash; the question asks for a range, not a value, so exactness is never needed."
+        }
+      ]
+    },
+    {
+      "id": "2022_winter_q2_20",
+      "source_exam": "psychometric_winter_2022",
+      "source_question_number": 20,
+      "section_id": "2022_winter_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure is a cube.\nThree of the vertices of the cube were connected, and triangle DEG was created.\n\n\\(\\sphericalangle\\)EDG = ?",
+      "options": [
+        "22.5°",
+        "30°",
+        "45°",
+        "60°"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/w2022_s2_q20.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    }
+  ]
+}

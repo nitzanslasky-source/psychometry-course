@@ -1,0 +1,1133 @@
+{
+  "source_exam": "psychometric_autumn_2020",
+  "source_exam_label": "Autumn 2020",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_autumn_2020_acc.pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 60 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "table_comprehension_lead": "Study the table below, then answer the four questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2020_autumn_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-16)",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "type": "table_comprehension",
+          "header": "Table Comprehension (Questions 17-20)",
+          "from": 17,
+          "to": 20,
+          "figure_path": "figures/a2020_s1_table.png",
+          "secondary_figure_path": "figures/a2020_s1_fuel.png",
+          "intro": "Study the table below, then answer the four questions that follow.\n\nThe table presents data on 5 models of small motorboats that are used on the Tonga Islands.  The models are marked with the letters A-E.\nNext to each model several data are indicated: the engine volume of the boat (in cc); the number of kilometres that it travels when it needs one litre of fuel; the type of fuel that the boat needs; the price of a new boat (in pananga, the local currency on the Tonga Islands); and the annual drop in value (in pananga).\nThe fuel prices on the Tonga Islands appear in a separate small table.\n\nFor example: A new boat of model B costs 6,000 pananga, and after a year its value will be 5,700 pananga.  When such a boat sails a distance of 25 km it needs one litre of petrol, and when it sails a distance of 50 km it needs 2 litres, and so on."
+        }
+      ]
+    },
+    {
+      "section_id": "2020_autumn_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/a2020_s2_graph.png",
+          "secondary_figure_path": "figures/a2020_s2_pies.png",
+          "intro": "Study the graphs below, then answer the four questions that follow.\n\nThe graphs present data on the water consumption of two families, <b>A</b> and <b>B</b>, over the course of a certain year.\nThe upper graph indicates the quantity of water (in m³) that each of the two families needed in each of the months of the year (see key).  The lines connecting the points in the graph are auxiliary lines only.\nThe lower graphs present the distribution of the water consumption of each of the families according to five uses: cooking, laundry, washing, cleaning the house and flushing the toilets.\nThe distribution of the water consumption of each of the families is fixed throughout all the months of the year.\n\nFor example: In September family <b>B</b> needed 400 m³ of water altogether.  15% of this quantity was used for laundry."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2020_autumn_q1_01",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 1,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "easy",
+      "stem": "Given:  2x + 2y = 340\n\n3x + 3y = ?",
+      "options": [
+        "480",
+        "510",
+        "540",
+        "680"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(2x+2y = 340\\) means \\(x+y = 170\\), so \\(3x+3y = 3 \\times 170 = 510\\). The target is a multiple of the given, so no solving is needed."
+        },
+        {
+          "kind": "understanding",
+          "text": "Neither \\(x\\) nor \\(y\\) can be found &mdash; one equation, two unknowns. The question asks only for the combination that is determined."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q1_02",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 2,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "easy",
+      "stem": "In a certain hotel there are F floors, and on each floor there are x large rooms and y small rooms.\n\nWhich of the following expressions expresses the difference between the number of large rooms and the number of small rooms in the entire hotel?",
+      "options": [
+        "F",
+        "\\(F(x - y)\\)",
+        "\\((x - y)^F\\)",
+        "\\(\\dfrac{x - y}{F}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Each floor holds \\(x-y\\) more large rooms than small, and there are \\(F\\) floors, so the difference across the hotel is \\(F(x-y)\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(F=2, x=5, y=3\\): 10 large rooms against 6 small, a difference of 4. Only \\(F(x-y) = 2 \\times 2\\) gives 4."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q1_03",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 3,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure is triangle ABC.\n\nGiven:  AD = DC = DB\n     ∡BCA = 40°\n\n∡BAC = ?",
+      "options": [
+        "50°",
+        "60°",
+        "30°",
+        "40°"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/a2020_s1_q03.png"
+      ],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2020_autumn_q1_04",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 4,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Factorials",
+      "difficulty": "easy",
+      "stem": "Given:  \\(a! = 24 \\cdot 30\\)\n\na = ?",
+      "options": [
+        "5",
+        "6",
+        "8",
+        "12"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "factorials",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(24\\cdot30=720\\), and 720 is a factorial you should know by sight: \\(6!\\). The small factorials &mdash; \\(1,2,6,24,120,720,5040\\) &mdash; are worth memorising, because questions hide them inside ordinary-looking products."
+        },
+        {
+          "kind": "structure",
+          "text": "You can also read it without multiplying. \\(24=4!\\), and \\(30=5\\cdot6\\), so \\(24\\cdot30=4!\\cdot5\\cdot6=6!\\) by definition. Building up from a smaller factorial beats computing."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q1_05",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 5,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "medium",
+      "stem": "What is the area of the dark quadrilateral in the system of axes in the figure?",
+      "options": [
+        "12",
+        "13",
+        "14",
+        "15"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/a2020_s1_q05.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2020_autumn_q1_06",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 6,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "20% of the number of Shira's marbles is equal to 30% of the number of Rachel's marbles.\n\nIf Shira has 5 marbles more than Rachel, how many marbles does <b>Rachel</b> have?",
+      "options": [
+        "6",
+        "8",
+        "10",
+        "12"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(0.2(R+5) = 0.3R\\), so \\(0.2R + 1 = 0.3R\\) and \\(R = 10\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(R = 10\\) gives Shira 15: \\(20\\%\\) of 15 is 3, and \\(30\\%\\) of 10 is 3 ✓."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q1_07",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 7,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure is a box whose edge lengths are 3 cm, 4 cm and 6 cm.\n\nWhat is the area of triangle ABC (in cm²)?",
+      "options": [
+        "\\(6\\sqrt{5}\\)",
+        "\\(12\\sqrt{2}\\)",
+        "9",
+        "10"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/a2020_s1_q07.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2020_autumn_q1_08",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 8,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure is parallelogram EBFD, which is located inside rectangle ABCD.\n\nGiven:  The area of the parallelogram is \\(\\frac{2}{3}\\) the area of the rectangle.\n\n\\(\\dfrac{BF}{FC} = ?\\)",
+      "options": [
+        "\\(\\sqrt{2}\\)",
+        "2",
+        "\\(\\frac{4}{3}\\)",
+        "\\(\\sqrt{3}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/a2020_s1_q08.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2020_autumn_q1_09",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 9,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Defined Operations",
+      "difficulty": "medium",
+      "stem": "The operation $ is defined.\nIt is known that for every  x > 0  it holds that  $($(x)) = x .\n\nWhich of the following operations can be the operation $(x)?",
+      "options": [
+        "Raising x to the power of 2",
+        "Multiplying x by (–1)",
+        "Multiplying x by 0",
+        "Taking the square root of x"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "defined_operations"
+    },
+    {
+      "id": "2020_autumn_q1_10",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 10,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "Gilad solved 200 arithmetic exercises in \\(3\\frac{2}{3}\\) hours.\n\nHow many arithmetic exercises will Gilad solve in one hour and fifty minutes if he works at a speed that is 2 times <b>slower</b> than his usual speed?",
+      "options": [
+        "100",
+        "200",
+        "50",
+        "40"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "His usual rate is \\(200 \\div \\frac{11}{3} = \\frac{600}{11}\\) an hour; half that is \\(\\frac{300}{11}\\). In \\(\\frac{11}{6}\\) hours that is 50."
+        },
+        {
+          "kind": "understanding",
+          "text": "&ldquo;Two times slower&rdquo; halves the rate and doubles the time. The awkward fractions cancel exactly, which is the sign the numbers were chosen deliberately."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q1_11",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 11,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Overlapping Sets",
+      "difficulty": "hard",
+      "stem": "A sports club has 300 members: 200 adults and 100 children.\n120 members of the club are registered for a soccer class.\n60 members of the club are registered for a swimming class.\n\nHow many of the members of the club, <b>at most</b>, are adults who are not registered for a soccer class and not for a swimming class?",
+      "options": [
+        "100",
+        "140",
+        "160",
+        "180"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "overlapping_sets"
+    },
+    {
+      "id": "2020_autumn_q1_12",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 12,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "easy",
+      "stem": "How many numbers between 1 and 100 are divisible by both 4 and 6 without a remainder?",
+      "options": [
+        "10",
+        "8",
+        "7",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Divisible by both 4 and 6 means divisible by their <b>lowest common multiple</b>, which is 12 &mdash; not by their product, 24. That distinction is the whole question."
+        },
+        {
+          "kind": "structure",
+          "text": "Multiples of 12 up to 100 run \\(12, 24, \\ldots, 96\\), which is \\(\\lfloor 100/12 \\rfloor = 8\\) of them."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q1_13",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 13,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "\\(0 < a\\) ,   \\(0 < \\dfrac{a + b}{a} < 1\\)\n\nWhich of the following inequalities is <b>necessarily</b> true?",
+      "options": [
+        "–a < b < 0",
+        "0 < a < b",
+        "b < a < –b",
+        "0 < b < a"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(a\\) is positive, so multiplying through by it does not flip anything: \\(0<a+b<a\\). Subtracting \\(a\\) from all three parts leaves \\(-a<b<0\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "A fraction strictly between 0 and 1 means the numerator is positive and smaller than the denominator. Positive gives \\(b>-a\\); smaller than \\(a\\) gives \\(b<0\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(a=2,\\ b=-1\\) satisfies the given, since \\(\\frac12\\) lies between 0 and 1. It has \\(b\\) negative and \\(|b|<a\\), which is exactly option (1) and kills the other three."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q1_14",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 14,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure ABCD is the square that is inscribed in a circle whose radius is 1 cm.\n\nGiven:  AE = ED\n\nWhat is the area of triangle AED (in cm²)?",
+      "options": [
+        "\\(\\dfrac{\\sqrt{2} - 1}{2}\\)",
+        "\\(\\dfrac{2 - \\sqrt{3}}{2}\\)",
+        "\\(\\dfrac{\\sqrt{3} - 1}{2}\\)",
+        "\\(\\dfrac{3 - \\sqrt{2}}{2}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/a2020_s1_q14.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2020_autumn_q1_15",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 15,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "The letters A, B, C, D and E represent digits between 1 and 9.\n\nWhich of the following expressions is equal to the decimal fraction AB.CDE ?",
+      "options": [
+        "\\(\\dfrac{ABC.DE}{100}\\)",
+        "\\(AB + \\dfrac{CDE}{100}\\)",
+        "\\(\\dfrac{A + B}{10} + \\dfrac{C + D}{100} + \\dfrac{E}{1{,}000}\\)",
+        "\\(10 \\cdot A + B + \\dfrac{C}{10} + \\dfrac{D}{100} + \\dfrac{E}{1{,}000}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Read the number by place value: \\(A\\) is in the tens place, \\(B\\) the units, then \\(C\\), \\(D\\), \\(E\\) in the tenths, hundredths and thousandths. That is \\(10A + B + \\frac{C}{10} + \\frac{D}{100} + \\frac{E}{1000}\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(A{=}1, B{=}2, C{=}3, D{=}4, E{=}5\\), so the number is \\(12.345\\). Only option (4) evaluates to \\(12.345\\)."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q1_16",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 16,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "hard",
+      "stem": "Roni has a page on which 16 squares are drawn, as in the figure.  He wants to colour 4 of the squares such that each one of them will have exactly two sides that are shared with coloured squares.\n\nHow many different possibilities does Roni have to choose the 4 squares that he will colour?",
+      "options": [
+        "9",
+        "8",
+        "6",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/a2020_s1_q16.png"
+      ],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2020_autumn_q1_17",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 17,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "easy",
+      "cluster": "Table Comprehension (Questions 17-20)",
+      "stem": "A model is considered more efficient the greater the value of the expression  <b>engine volume × number of km per litre of fuel</b>  is.\n\nWhich of the following models is the most efficient?",
+      "options": [
+        "B",
+        "C",
+        "D",
+        "E"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_autumn_q1_18",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 18,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 17-20)",
+      "stem": "Boats of which model lost <b>the smallest percentage</b> of their original value one year after they were purchased?",
+      "options": [
+        "A",
+        "B",
+        "D",
+        "E"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_autumn_q1_19",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 19,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 17-20)",
+      "stem": "For one of the models the cost of the fuel for sailing a distance of 100 km is 3.2 pananga.\n\nWhat is the <b>engine volume</b> of this model?",
+      "options": [
+        "200 cc",
+        "250 cc",
+        "500 cc",
+        "1,000 cc"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_autumn_q1_20",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 20,
+      "section_id": "2020_autumn_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 17-20)",
+      "stem": "A group of 4 boats of model E sailed a distance of 3 km.\n\nHow many litres of fuel did all these boats need altogether?",
+      "options": [
+        "\\(\\frac{4}{15}\\)",
+        "\\(\\frac{8}{15}\\)",
+        "\\(\\frac{2}{5}\\)",
+        "\\(\\frac{4}{5}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_autumn_q2_01",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 1,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "In a class there are 8 girls and x boys.  \\(\\frac{1}{3}\\) of the number of boys is equal to \\(\\frac{1}{4}\\) of all the students in the class.\n\nx = ?",
+      "options": [
+        "12",
+        "16",
+        "24",
+        "28"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\frac x3 = \\frac{8+x}{4}\\). Cross-multiplying gives \\(4x = 24+3x\\), so \\(x = 24\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "With \\(x=24\\) there are 32 students: a third of the boys is 8, and a quarter of 32 is 8. The other options fail this in one line each."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q2_02",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 2,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure is trapezoid ABCD (AD∥BC).\nSegment EF divides the trapezoid into two small trapezoids.\n\nBased on this information and the information in the figure,\nwhat is the ratio between the areas of trapezoids ABFE and EFCD ?",
+      "options": [
+        "1 : 2",
+        "2 : 3",
+        "2 : 5",
+        "3 : 7"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/a2020_s2_q02.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2020_autumn_q2_03",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 3,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "The number x was multiplied by itself, and afterwards the result was multiplied by 4.\nIf 64 is subtracted from the number that was obtained, we will get the number 0.\n\nWhich of the following statements is correct?",
+      "options": [
+        "x can only be the number 0",
+        "x can only be the number 4",
+        "x can be two numbers only, among them the number 0",
+        "x can be two numbers only, among them the number –4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "The description is \\(4x^2 - 64 = 0\\), so \\(x^2 = 16\\) and \\(x = \\pm4\\). Two values, one of which is \\(-4\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Translating the words is the whole task: &ldquo;multiplied by itself&rdquo; is the square, and it happens before the multiplication by 4. Option (3) is there for anyone who solves \\(4x^2 - 64x = 0\\) instead and picks up a root of 0."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q2_04",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 4,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Lines & Angles",
+      "difficulty": "easy",
+      "stem": "In the accompanying figure are three straight lines that intersect at a common point.\n\nα = ?",
+      "options": [
+        "25°",
+        "20°",
+        "30°",
+        "50°"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/a2020_s2_q04.png"
+      ],
+      "sub_category_id": "lines_angles"
+    },
+    {
+      "id": "2020_autumn_q2_05",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 5,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "x and a are positive numbers.\n\nGiven:  5% of 20% of a is equal to x percent of a.\n\nx = ?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(5\\%\\) of \\(20\\%\\) is \\(0.05 \\times 0.2 = 0.01\\), which is \\(1\\%\\). So \\(x = 1\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Nested percentages multiply. \\(a\\) cancels entirely, which is why the answer is a bare number."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q2_06",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 6,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "hard",
+      "stem": "Given:  \\(x = 2 \\cdot \\left(\\dfrac{x}{2}\\right)^{7}\\) ,   \\(0 < x\\)\n\nx = ?",
+      "options": [
+        "1",
+        "2",
+        "\\(\\frac{1}{2}\\)",
+        "\\(2^6\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Clear the bracket: \\(x = \\dfrac{2x^7}{2^7} = \\dfrac{x^7}{2^6}\\), so \\(x^7 = 64x\\) and, dividing by \\(x\\) since \\(x>0\\), \\(x^6 = 64\\). Hence \\(x = 2\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Four options and one substitution each: \\(x=2\\) gives \\(2 \\cdot 1^7 = 2\\) immediately. Faster than solving when the options are plain numbers."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q2_07",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 7,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "hard",
+      "stem": "The water level of a certain lake is now 1 metre lower than the height of the dam that is at the end of the lake.  When the water reaches the height of the dam it overflows from the dam.\nEach day the water level of the lake rises by 3 cm.\nThe day that is beginning now and ending 24 hours from now is called \"day 1\".\n\nThe water will begin to overflow from the dam during day –",
+      "options": [
+        "31",
+        "32",
+        "33",
+        "34"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "The gap is 100 cm closing at 3 cm a day, so \\(\\frac{100}{3} = 33\\frac13\\) days. The level passes the dam during the 34th day."
+        },
+        {
+          "kind": "understanding",
+          "text": "A fractional answer to a &ldquo;which day&rdquo; question always rounds <b>up</b> &mdash; the event happens inside the next whole day, not at the end of the previous one."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q2_08",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 8,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "medium",
+      "stem": "Which of the following changes made to a cone will increase its volume by the <b>greatest</b> amount?",
+      "options": [
+        "Multiplying its height by 2",
+        "Multiplying the <b>radius</b> of its base by 2",
+        "Multiplying the <b>area</b> of its base by 2",
+        "All the above changes will increase the volume of the cone by the same amount"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2020_autumn_q2_09",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 9,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "easy",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "In the month of February family <b>B</b> used exactly 60 m³ of water for ______ .",
+      "options": [
+        "washing",
+        "laundry",
+        "flushing the toilets",
+        "cleaning the house"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_autumn_q2_10",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 10,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "An economical month for a family is a month in which the family used a smaller amount of water than the amount of water it used in the month that preceded it.\n\nHow many of the months from February to December were economical both for family <b>A</b> and for family <b>B</b> ?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_autumn_q2_11",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 11,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "Which of the following graphs describes the <b>combined</b> water consumption of the two families <b>A</b> and <b>B</b> in the year presented in the graphs?",
+      "options": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "option_figure_paths": [
+        "figures/a2020_s2_q11_opt1.png",
+        "figures/a2020_s2_q11_opt2.png",
+        "figures/a2020_s2_q11_opt3.png",
+        "figures/a2020_s2_q11_opt4.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_autumn_q2_12",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 12,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "In how many of the months was the amount of water that family <b>B</b> needed for cleaning the house exactly half the amount of water that family <b>A</b> needed for cleaning the house?",
+      "options": [
+        "5",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_autumn_q2_13",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 13,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "\\(|x| = 13\\) ,  \\(|y| = 4\\)\n\nHow many different values can the expression \\(|x - y|\\) have?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "Infinite"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Flipping the signs of both \\(x\\) and \\(y\\) negates \\(x-y\\) and leaves \\(|x-y|\\) untouched, so the four sign combinations collapse into two mirror pairs. Fix \\(x=13\\) and only two cases remain."
+        },
+        {
+          "kind": "plug-in",
+          "text": "With \\(x=13\\): \\(|13-4|=9\\) and \\(|13+4|=17\\). Two distinct values."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q2_14",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 14,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure AB is a diameter in the large circle.\nThe two small circles that are inside it are tangent to each other.\nAlso, they are tangent to the large circle at points A and B.\nThe circumference of the large circle is equal to x cm.\n\nWhat is the sum of the circumferences of the small circles (in cm)?",
+      "options": [
+        "x",
+        "2x",
+        "\\(\\frac{x}{2}\\)",
+        "4x"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/a2020_s2_q14.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2020_autumn_q2_15",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 15,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "medium",
+      "stem": "The average of the ages of Asaf and David is greater than <b>half</b> of David's age.\n\nWhich of the following statements is <b>necessarily</b> true?",
+      "options": [
+        "Asaf's age is greater than David's age",
+        "Asaf's age is less than David's age",
+        "Asaf's age is equal to David's age",
+        "It is impossible to know based on the data which of the above statements is correct"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2020_autumn_q2_16",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 16,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "hard",
+      "stem": "\\(\\dfrac{a^2 + b^2}{ab - b^2} - \\dfrac{2a}{a - b} = ?\\)  (\\(a \\neq b\\) ,  \\(b \\neq 0\\))",
+      "options": [
+        "\\(\\dfrac{a + b}{a - b}\\)",
+        "\\(\\dfrac{a - b}{b}\\)",
+        "\\((a - b)^2\\)",
+        "\\(\\dfrac{2a^2}{b}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(ab-b^2 = b(a-b)\\), so over the common denominator \\(b(a-b)\\) the expression is \\(\\dfrac{a^2+b^2-2ab}{b(a-b)} = \\dfrac{(a-b)^2}{b(a-b)} = \\dfrac{a-b}{b}\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(a=3, b=1\\): the expression is \\(\\frac{10}{2} - 3 = 2\\), and \\(\\frac{a-b}{b} = 2\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The numerator turning into \\((a-b)^2\\) is the square identity read backwards &mdash; the same move that decides most questions in this subcategory."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q2_17",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 17,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "hard",
+      "stem": "A basketball player is shooting at a basket.\nIf she scores a basket on a certain shot, the probability that she will score a basket on the next shot is \\(\\frac{1}{2}\\).\nIf she does not score a basket on a certain shot, the probability that she will score a basket on the next shot is \\(\\frac{1}{4}\\).\nIt is known that the player scored a basket on the first shot.\n\nWhat is the probability that she will score a basket on the <b>third</b> shot?",
+      "options": [
+        "\\(\\frac{1}{8}\\)",
+        "\\(\\frac{1}{4}\\)",
+        "\\(\\frac{3}{8}\\)",
+        "\\(\\frac{3}{4}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2020_autumn_q2_18",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 18,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Motion & Speed",
+      "difficulty": "hard",
+      "stem": "A tortoise and a hare competed in a race that was 100 metres long.\nThe tortoise began to run at the beginning of the race, and advanced at a constant speed of 0.5 metres per second.\nThe hare began to run T seconds after the beginning of the race, and advanced at a speed that was <b>20 times</b> greater than the tortoise's speed.\nThe two of them reached the finish line together.\n\nT = ?",
+      "options": [
+        "160",
+        "180",
+        "190",
+        "200"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "motion_speed",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Tortoise: \\(\\frac{100}{0.5} = 200\\) seconds for the whole race. Hare: 20 times the speed is 10 m/s, so \\(\\frac{100}{10} = 10\\) seconds."
+        },
+        {
+          "kind": "understanding",
+          "text": "They finish together, so the hare's late start is the difference in the two running times: \\(200 - 10 = 190\\). Computing each animal's own time separately, then subtracting, avoids any relative-speed setup."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q2_19",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 19,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "Given:  a < 1 , b < 1\n     \\(a \\cdot b = M\\)\n\nWhich of the following statements is correct with regard to the number M ?",
+      "options": [
+        "It is necessarily negative",
+        "It is necessarily positive and less than 1",
+        "It can be any number except 1",
+        "It can be any number, including 1"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "plug-in",
+          "text": "\\(a=b=-1\\) satisfies both givens and gives \\(M=1\\). That single pair kills options (1), (2) and (3), since all three deny that \\(M\\) can be 1."
+        },
+        {
+          "kind": "understanding",
+          "text": "&ldquo;Less than 1&rdquo; leaves the whole negative half-line open, so both factors can be large negatives and the product can be made as large as you like — or as negative, by taking one factor negative and the other a small positive. Nothing is out of reach."
+        }
+      ]
+    },
+    {
+      "id": "2020_autumn_q2_20",
+      "source_exam": "psychometric_autumn_2020",
+      "source_question_number": 20,
+      "section_id": "2020_autumn_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "medium",
+      "stem": "ABC is a right-angled triangle.\n\nBased on this information and the information in the figure,\nwhat is the length of AD (in cm)?",
+      "options": [
+        "\\(\\sqrt{5}\\)",
+        "\\(2\\sqrt{2}\\)",
+        "\\(\\sqrt{3}\\)",
+        "\\(\\sqrt{6}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/a2020_s2_q20.png"
+      ],
+      "sub_category_id": "triangles"
+    }
+  ]
+}

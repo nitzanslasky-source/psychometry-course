@@ -1,0 +1,1141 @@
+{
+  "source_exam": "psychometric_winter_2025",
+  "source_exam_label": "Winter 2025",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_winter_2025_acc.pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 60 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "table_comprehension_lead": "Study the table below, then answer the four questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2025_winter_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/w2025_s1_matrix.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\nIn a certain office a project was carried out in which 9 employees took part: 3 architects, 3 planners and 3 graphic artists.  In the course of the work on the project the employees met with one another, and two employees took part in every meeting.  The employees are marked in the graph by the letters <b>A–I</b>.\nEach cell in the graph describes the joint work of a pair of employees: the bold number indicates the total of all the meetings that took place between them, and the number in parentheses indicates the number of meetings between them that were defined as “effective”.  A bold frame around a cell indicates that the pair of employees wrote a joint report (see key).\nNote: no pair wrote more than one joint report.\n\nFor example, the bottom-left cell describes the joint work of employee <b>A</b> (who is an architect) and employee <b>I</b> (who is a graphic artist).  Between employee <b>A</b> and employee <b>I</b> 3 meetings took place, and three of them were effective.  The two employees did not write a joint report in the framework of the project."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    },
+    {
+      "section_id": "2025_winter_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-16)",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 17-20)",
+          "from": 17,
+          "to": 20,
+          "figure_path": "figures/w2025_s2_graph.png",
+          "intro": "Study the graphs below, then answer the four questions that follow.\n\nThe graphs describe the effects of an experimental preparation for encouraging hair growth on a group of patients over the course of nine months.  The data of each month represent the state of the group of patients <b>at the end</b> of that month (relative to the day on which the trial began).\nThe upper part of the graphs describes the proportion of patients who experienced an improvement in the state of hair loss, the proportion of patients who experienced a worsening in the state of hair loss, and the proportion of patients who experienced the side effect of scales.  A patient may be included in both of the groups of patients who experienced an improvement or a worsening and also in the group of those suffering from scales (but cannot be included in both the “improvement” group and the “worsening” group).\nThe lower part of the graphs presents, of all those patients, the proportion of those on whom the effect was of a degree defined as “great”.  The rest of the patients experienced that same effect to a degree defined as “slight”.\n\nRemarks: – The lines connecting the data of the months are aid lines only.\n– The number of patients in the trial remained fixed throughout.\n\nFor example, after one month of using the preparation 5% of the patients experienced some degree of improvement.  35% of those 5% experienced an improvement to a great degree, and hence 65% of them experienced an improvement to a slight degree."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2025_winter_q1_01",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 1,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "easy",
+      "stem": "Given:  \\(x - y < y - x\\)\n\nWhich of the following inequalities is <b>necessarily</b> true?",
+      "options": [
+        "\\(0 < x\\)",
+        "\\(0 < x + y\\)",
+        "\\(y < x\\)",
+        "\\(x < y\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Add \\(x\\) to both sides and add \\(y\\) to neither: \\(x-y<y-x\\) gives \\(2x<2y\\), so \\(x<y\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The two sides are the same gap measured in opposite directions. Saying one is smaller than the other is just saying which of \\(x\\) and \\(y\\) is further right."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(x=1,\\ y=2\\) satisfies the given and makes both \\(x\\) and \\(x+y\\) positive, so (1) and (2) are not forced; \\(x=-2,\\ y=-1\\) satisfies it with both negative, confirming it."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q1_02",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 2,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "easy",
+      "stem": "5 people met, and each of them shook hands once (and only once) with every one of the others.\n\nHow many handshakes were exchanged?",
+      "options": [
+        "6",
+        "10",
+        "14",
+        "18"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2025_winter_q1_03",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 3,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Polygons",
+      "difficulty": "medium",
+      "stem": "The figure before you is a pentagon.\n\nAccording to the data in the figure, what is <b>necessarily</b> the size of \\(\\beta\\)?",
+      "options": [
+        "\\(\\alpha\\)",
+        "\\(45^\\circ + \\alpha\\)",
+        "\\(225^\\circ - \\alpha\\)",
+        "\\(270^\\circ - \\alpha\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/w2025_s1_q03.png"
+      ],
+      "sub_category_id": "polygons"
+    },
+    {
+      "id": "2025_winter_q1_04",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 4,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "On every day of the month whose date is even, Dani buys products for a total of 18 shekels.\nOn every day of the month whose date is odd, Dani buys products for a total of 12 shekels.\n\nA certain month has 30 days.  For how many shekels in total does Dani buy products in that month?",
+      "options": [
+        "350",
+        "450",
+        "300",
+        "400"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "A 30-day month has 15 even and 15 odd dates: \\(15 \\times 18 + 15 \\times 12 = 450\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Equal counts only because the month has an even number of days. A 31-day month would give 16 odd dates and a different answer."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q1_05",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 5,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "Squares were built on the sides of an isosceles trapezoid.  The sum of the areas of the squares built on the bases equals the sum of the areas of the squares built on the legs.\n\nAccording to these data and the data in the figure,\n\n\\(\\dfrac{a}{b} = ?\\)",
+      "options": [
+        "\\(\\sqrt{\\dfrac{1}{3}}\\)",
+        "\\(\\sqrt{\\dfrac{2}{5}}\\)",
+        "\\(\\sqrt{\\dfrac{2}{3}}\\)",
+        "\\(\\sqrt{\\dfrac{3}{4}}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2025_s1_q05.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2025_winter_q1_06",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 6,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "hard",
+      "stem": "\\(A\\), \\(B\\), \\(C\\) and \\(D\\) are the letters representing <b>different</b> digits, all between 1 and 9.\n\nGiven:\n\n\\(\\begin{array}{r}AB\\\\+\\ AB\\\\\\hline CDA\\end{array}\\)\n\nWhich of the following claims is necessarily true?",
+      "options": [
+        "\\(A\\) is even",
+        "\\(B\\) is odd",
+        "\\(C\\) is even",
+        "\\(D\\) is odd"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(\\overline{AB} + \\overline{AB} = 2\\overline{AB}\\), which is even &mdash; so its units digit \\(A\\) must be even. That settles it in one line."
+        },
+        {
+          "kind": "understanding",
+          "text": "The result \\(\\overline{CDA}\\) is three digits, so \\(2\\overline{AB} \\ge 100\\) and \\(\\overline{AB} \\ge 50\\), which pins \\(A\\) to 6 or 8. Either way \\(A\\) is even, and nothing is forced about \\(B\\), \\(C\\) or \\(D\\)."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q1_07",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 7,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Factorials",
+      "difficulty": "medium",
+      "stem": "\\(x\\) is a positive number.\n\nGiven:  \\(120!\\cdot 121! = (120!)^2\\cdot x^2\\)\n\n\\(x = ?\\)",
+      "options": [
+        "1",
+        "11",
+        "12",
+        "120"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "factorials",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(121!=121\\cdot120!\\), so the left side is \\(121\\cdot(120!)^2\\). Setting that equal to \\((120!)^2x^2\\) cancels the squares outright, leaving \\(x^2=121\\) and \\(x=11\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The enormous numbers are decoration. The only thing that matters is that \\(121!\\) and \\(120!\\) are neighbours, so their ratio is the single factor 121 &mdash; and 121 is a perfect square."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q1_08",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 8,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "Given:  \\(|a| \\ne |b|\\)\n\n\\(\\dfrac{a}{a-b} - \\dfrac{b}{a+b} = ?\\)",
+      "options": [
+        "\\(\\dfrac{a^2+b^2}{a^2-b^2}\\)",
+        "\\(\\dfrac{a\\cdot b}{a^2-b^2}\\)",
+        "\\(a + b\\)",
+        "\\(a^2 - b^2\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Over the common denominator \\((a-b)(a+b) = a^2-b^2\\), the numerator is \\(a(a+b) - b(a-b) = a^2+ab-ab+b^2 = a^2+b^2\\). So the value is \\(\\dfrac{a^2+b^2}{a^2-b^2}\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(a=3, b=1\\): the expression is \\(\\frac32 - \\frac14 = \\frac54\\), and \\(\\frac{9+1}{9-1} = \\frac{10}{8} = \\frac54\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The condition \\(|a| \\neq |b|\\) is there to keep \\(a^2-b^2\\) non-zero &mdash; the denominator the factorisation is about to produce."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q1_09",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 9,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "easy",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "Out of all the meetings that employee <b>D</b> held, the largest number of meetings was with employee –",
+      "options": [
+        "<b>C</b>",
+        "<b>F</b>",
+        "<b>G</b>",
+        "<b>H</b>"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_winter_q1_10",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 10,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "Of the pairs of employees in which <b>exactly</b> one employee is an architect, how many pairs wrote a joint report?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_winter_q1_11",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 11,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "A “successful pair” is a pair of employees who had at least four effective meetings.\n\nOf the pairs in which at least one employee is a graphic artist, how many pairs are successful pairs?",
+      "options": [
+        "5",
+        "6",
+        "3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_winter_q1_12",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 12,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "One of the pairs of employees wrote a joint report after having exactly 3 meetings that were <b>not</b> effective.\n\nWhat is necessarily true regarding the two employees in this pair?",
+      "options": [
+        "They have the same profession",
+        "They do not have the same profession",
+        "At least one of them is a graphic artist",
+        "At least one of them is a planner"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_winter_q1_13",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 13,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "medium",
+      "stem": "Which of the two following triangles has the larger area?",
+      "options": [
+        "<b>A</b>",
+        "<b>B</b>",
+        "Their areas are equal",
+        "It cannot be determined from the data"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/w2025_s1_q13.png"
+      ],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2025_winter_q1_14",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 14,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "hard",
+      "stem": "\\(M\\) is a whole number.\n\nGiven: the value of the expression \\((M-1)(M-2)\\) is divisible by 3.\n\nWhich of the three following numbers is <b>certainly not</b> divisible by 3?",
+      "options": [
+        "\\(M\\)",
+        "\\(M+1\\)",
+        "\\(M+2\\)",
+        "It cannot be determined which of the above numbers is not divisible by 3"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Among any three consecutive integers, exactly one is divisible by 3. Here \\(M-2\\), \\(M-1\\) and \\(M\\) are three in a row, and the given says one of the first two carries the factor of 3."
+        },
+        {
+          "kind": "structure",
+          "text": "So \\(M\\) itself cannot be the one &mdash; the multiple of 3 has already been used up. \\(M+1\\) and \\(M+2\\) are not pinned either way, which is why only \\(M\\) is certain."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q1_15",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 15,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "hard",
+      "stem": "In a class there are 40 pupils.\n50% of the pupils have black hair.\n40% of the pupils have ginger hair.\n25% of the pupils have blue eyes.\nIt is known that 10% of the pupils whose hair colour is black have blue eyes.\n\nOf the pupils whose hair is ginger, how many <b>at least</b> have blue eyes?",
+      "options": [
+        "6",
+        "5",
+        "3",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Of 40 pupils: 20 black-haired, 16 ginger, 10 blue-eyed, and 2 of the black-haired have blue eyes. That leaves 8 blue-eyed pupils among the other 20, of whom 16 are ginger and 4 are neither. <br><br>At worst all 4 non-ginger take a blue-eyed slot, leaving \\(8 - 4 = 4\\) for the gingers."
+        },
+        {
+          "kind": "understanding",
+          "text": "&ldquo;At least&rdquo; means assume the worst distribution, exactly as with the air-conditioned cars. These minimum-overlap questions are a recurring shape."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q1_16",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 16,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Motion & Speed",
+      "difficulty": "easy",
+      "stem": "A vehicle covers one kilometre in 72 seconds.\n\nWhat is the speed of the vehicle in kph?",
+      "options": [
+        "50",
+        "48",
+        "42",
+        "36"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "motion_speed",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\frac{3600}{72} = 50\\) kilometres an hour, since there are 3600 seconds in an hour and each kilometre costs 72 of them."
+        },
+        {
+          "kind": "understanding",
+          "text": "Scaling up instead: 72 seconds is \\(1.2\\) minutes, and \\(\\frac{60}{1.2} = 50\\). Either route, the move is to ask how many of these trips fit in an hour."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q1_17",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 17,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "In the figure before you, point \\(O\\) is the centre of the circle.\n\\(A\\), \\(B\\) and \\(C\\) are points on the circumference of the circle.\n\\(ABOC\\) is a parallelogram.\n\nHow many different sizes can the angle \\(\\sphericalangle BOC\\) have?",
+      "options": [
+        "1",
+        "2",
+        "Infinitely many",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2025_s1_q17.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2025_winter_q1_18",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 18,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "hard",
+      "stem": "Given:  \\(x^{2n} = x^{-n}\\) ,  \\(x \\ne 0\\) ,  \\(n \\ne 0\\)\n\nWhich of the following claims is correct?",
+      "options": [
+        "If \\(n\\) is even, then necessarily \\(x = 1\\)",
+        "If \\(n\\) is even, then necessarily \\(x = -1\\)",
+        "If \\(n\\) is odd, then necessarily \\(x = 1\\)",
+        "If \\(n\\) is odd, then necessarily \\(x = -1\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Same base, so \\(2n = -n\\) would need \\(3n = 0\\), impossible. The equality therefore comes from the base: \\(x^{3n} = 1\\), which for odd \\(n\\) forces \\(x = 1\\), and for even \\(n\\) allows \\(x = \\pm1\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(x=-1, n=2\\) satisfies the given and breaks options (1) and (2) at once, leaving the odd-\\(n\\) pair. Then \\(x=-1\\) with odd \\(n\\) fails the equation, which rules out option (4)."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q1_19",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 19,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "In the figure before you is a cylinder inside which are two cones.\n\\(AB\\) is a diameter of the bottom base of the cylinder, and \\(O\\) is the centre of this base.\nThe radius of the base of the cylinder is \\(r\\), and the height of the cylinder is \\(h\\).\n\\(AO\\) and \\(BO\\) are radii of the bases of the two cones, and the height of the cones is \\(h\\).\n\n\\(\\dfrac{\\text{the sum of the volumes of the cones}}{\\text{the volume of the cylinder}} = ?\\)",
+      "options": [
+        "\\(\\dfrac{1}{6}\\)",
+        "\\(\\dfrac{2}{3}\\)",
+        "\\(\\dfrac{1}{3}\\)",
+        "\\(\\dfrac{1}{4}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2025_s1_q19.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2025_winter_q1_20",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 20,
+      "section_id": "2025_winter_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "hard",
+      "stem": "At a certain bank there is a commission of 0.25 shekels for every shekel that is converted into foreign currency.\nLeah has 1,000 shekels.  She wants to buy bolivianos at this bank, the currency of the state of Bolivia, whose exchange rate for one unit is 0.5 shekels.\n\nHow many bolivianos will Leah be able to buy with the sum she has, if this sum must also serve her to pay the commission?",
+      "options": [
+        "1,600",
+        "1,350",
+        "1,200",
+        "750"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "The commission is 0.25 per shekel <i>converted</i>, so each shekel of foreign currency costs 1.25 shekels. Her 1,000 shekels therefore convert 800 shekels' worth."
+        },
+        {
+          "kind": "algebra",
+          "text": "At 0.5 shekels per boliviano, 800 shekels buys \\(\\frac{800}{0.5} = 1{,}600\\) bolivianos. <br><br>Option (3) comes from taking 25% off the <i>result</i> rather than off the amount converted."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q2_01",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 1,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "easy",
+      "stem": "An adult cat eats 1 kg of food in two weeks.  A kitten eats half the amount of food that an adult cat eats.\n\nHow many kg of food does a kitten eat <b>in a week</b>?",
+      "options": [
+        "1",
+        "\\(\\dfrac{1}{2}\\)",
+        "\\(\\dfrac{1}{8}\\)",
+        "\\(\\dfrac{1}{4}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "An adult eats \\(\\frac12\\) kg a week, so a kitten eats \\(\\frac14\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Two conversions in one step &mdash; halve for the week, halve again for the kitten. Doing only one gives \\(\\frac12\\), which is option (2)."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q2_02",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 2,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "In the figure before you, \\(ABC\\) is a right-angled isosceles triangle.\n\\(ADEF\\) is a square.\nThe length of the segment \\(DB\\) equals the perimeter of the square \\(ADEF\\).\n\n\\(\\dfrac{\\text{the area of the square }ADEF}{\\text{the area of the triangle }ABC} = ?\\)",
+      "options": [
+        "\\(\\dfrac{1}{10}\\)",
+        "\\(\\dfrac{2}{25}\\)",
+        "\\(\\dfrac{3}{32}\\)",
+        "\\(\\dfrac{4}{49}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2025_s2_q02.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2025_winter_q2_03",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 3,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "easy",
+      "stem": "Given:  \\((x+3)^2 = x^2 - 3\\)\n\n\\(x = ?\\)",
+      "options": [
+        "1",
+        "\\(-2\\)",
+        "\\(\\sqrt{3}\\)",
+        "6"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Expand the left: \\(x^2 + 6x + 9 = x^2 - 3\\). The \\(x^2\\) cancels, leaving \\(6x = -12\\) and \\(x = -2\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "It looks quadratic and is not &mdash; the squared terms cancel. Recognising that before reaching for the quadratic formula is the whole point."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q2_04",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 4,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Lines & Angles",
+      "difficulty": "medium",
+      "stem": "In the figure before you, \\(a\\) and \\(b\\) are two straight lines that intersect each other.\n\nGiven:  \\(\\gamma = \\beta\\)\n\n\\(\\dfrac{\\alpha}{\\beta} + \\dfrac{\\gamma}{\\alpha} = ?\\)",
+      "options": [
+        "1",
+        "2",
+        "1.5",
+        "2.5"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/w2025_s2_q04.png"
+      ],
+      "sub_category_id": "lines_angles"
+    },
+    {
+      "id": "2025_winter_q2_05",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 5,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Given:\n\n\\(x + y = -2\\)\n\\(|x - y| = 2\\)\n\n\\(x \\cdot y = ?\\)",
+      "options": [
+        "1",
+        "\\(-2\\)",
+        "0",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(xy = \\dfrac{(x+y)^2 - (x-y)^2}{4} = \\dfrac{4-4}{4} = 0\\). The pivot from the algebraic expressions lesson, with both ingredients supplied."
+        },
+        {
+          "kind": "plug-in",
+          "text": "The two numbers are \\(0\\) and \\(-2\\): they sum to \\(-2\\) and differ by 2 in size. Their product is 0."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q2_06",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 6,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "hard",
+      "stem": "In the system of axes before you is an octagon whose vertices' coordinates are whole numbers.\n\nWhat is the area of the octagon?",
+      "options": [
+        "5",
+        "6",
+        "7",
+        "8"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/w2025_s2_q06.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2025_winter_q2_07",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 7,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "A pool is filled with water up to \\(\\dfrac{3}{5}\\) of its volume.\nAfter 21 cubic metres of water were drawn from it, the remaining water filled only \\(\\dfrac{1}{4}\\) of the volume of the pool.\n\nWhat is the volume of the pool (in cubic metres)?",
+      "options": [
+        "60",
+        "56",
+        "48",
+        "42"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\frac35 V - 21 = \\frac14 V\\), so \\(\\frac{7}{20}V = 21\\) and \\(V = 60\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The 21 m³ corresponds to the <i>difference</i> between the two fractions, not to either one. Subtracting the fractions first is the whole question."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q2_08",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 8,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Defined Operations",
+      "difficulty": "hard",
+      "stem": "The operation \\(\\$\\) is defined for every two whole numbers \\(x\\) and \\(y\\) thus:  \\(\\$(x,y) = 2(x-y)\\)\n\\(a\\), \\(b\\) and \\(c\\) are three consecutive whole numbers, \\(a < b < c\\).\n\n\\(\\$(\\,\\$(a,b)\\,,\\,\\$(b,c)\\,) = ?\\)",
+      "options": [
+        "1",
+        "\\(-2\\)",
+        "0",
+        "\\(-4\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "defined_operations"
+    },
+    {
+      "id": "2025_winter_q2_09",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 9,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "Given:  \\(\\sqrt{x} = 2\\sqrt{y}\\) ,  \\(0 < x\\) ,  \\(0 < y\\)\n\n\\(x^2 = ?\\)",
+      "options": [
+        "\\(y^2\\)",
+        "\\(2y^2\\)",
+        "\\(8y^2\\)",
+        "\\(16y^2\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Square the given: \\(x = 4y\\). Then \\(x^2 = 16y^2\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(y=1\\): \\(\\sqrt x = 2\\), so \\(x = 4\\) and \\(x^2 = 16 = 16y^2\\). The other options give 1, 2 and 8."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q2_10",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 10,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "Given:  \\(x\\) is divisible by 10 and by 15.\n\nBy which of the following numbers is \\(x\\) necessarily divisible?",
+      "options": [
+        "6",
+        "20",
+        "25",
+        "50"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Divisible by 10 and by 15 means divisible by their LCM. \\(10 = 2 \\cdot 5\\) and \\(15 = 3 \\cdot 5\\), so the LCM is \\(2 \\cdot 3 \\cdot 5 = 30\\) &mdash; not 150."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(6\\) divides 30 ✓. \\(20\\) needs two factors of 2, \\(25\\) needs two 5s, and \\(50\\) needs both &mdash; none is guaranteed. Take \\(x = 30\\) and all three fail at once."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q2_11",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 11,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "hard",
+      "stem": "Alon, Baruch, Gilya and Dana prepared paper aeroplanes.\nThe number of aeroplanes Baruch made equals the number of aeroplanes Gilya and Dana made together.\nIf we subtract from the number of aeroplanes Alon made the number of aeroplanes Gilya made, Alon will still have more aeroplanes than Dana.\n\nWhich of the following claims is necessarily correct?",
+      "options": [
+        "Alon has more aeroplanes than Baruch",
+        "Baruch has more aeroplanes than Alon",
+        "Gilya has more aeroplanes than Dana",
+        "Dana has more aeroplanes than Gilya"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Translate each sentence into an equation and compare the totals; the question asks only which of two people has more, so a full solution is not needed."
+        },
+        {
+          "kind": "understanding",
+          "text": "Comparisons are often decidable from the relationships alone, without finding any individual count."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q2_12",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 12,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Geometric Comprehension",
+      "difficulty": "hard",
+      "stem": "A box of matches in the shape of a box is placed on a table.\nElisheva rolls the box on the table in several stages: at each stage she turns the box so that its position remains in place.\nThe figure describes the five positions the box passed through, from a side view.\n\\(A\\) is the point that was at the bottom-left corner of the box in the initial position.\n\nIn the same side view, where was point \\(A\\) located in the final position?",
+      "options": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2025_s2_q12.png"
+      ],
+      "option_figure_paths": [
+        "figures/w2025_s2_q12_opt1.png",
+        "figures/w2025_s2_q12_opt2.png",
+        "figures/w2025_s2_q12_opt3.png",
+        "figures/w2025_s2_q12_opt4.png"
+      ],
+      "sub_category_id": "geometric_comprehension"
+    },
+    {
+      "id": "2025_winter_q2_13",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 13,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "hard",
+      "stem": "Every morning the height of the snow that fell at a certain ski resort is measured.\nOn the morning of the first day of a certain week the height of the snow was 100 cm.  Every day that week the height of the snow decreased by \\(\\dfrac{1}{3}\\) of its height in the previous measurement.\n\nOn the morning of which day was a height of snow smaller than 5 cm measured for the first time?",
+      "options": [
+        "That week no height of snow smaller than 5 cm was measured",
+        "Thursday",
+        "Friday",
+        "Wednesday"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Each day multiplies the height by \\(\\frac23\\): 100, 66.7, 44.4, 29.6, 19.8, 13.2, 8.8."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Read off the first day the height falls below the stated threshold. Repeated multiplication, not repeated subtraction &mdash; the fraction is of the <i>current</i> height."
+        }
+      ]
+    },
+    {
+      "id": "2025_winter_q2_14",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 14,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "medium",
+      "stem": "In a sack there are 9 balls: 8 silver balls and one gold ball.  Yaron draws 2 balls from the sack at random, one after the other, and places them on the table.\n\nWhat is the chance that one of the two balls on the table will be the gold ball?",
+      "options": [
+        "\\(\\dfrac{2}{9}\\)",
+        "\\(\\dfrac{1}{2}\\)",
+        "\\(\\dfrac{1}{18}\\)",
+        "\\(\\left(\\dfrac{1}{9}\\right)^2\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2025_winter_q2_15",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 15,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Polygons",
+      "difficulty": "hard",
+      "stem": "A regular hexagon circumscribes a circle whose radius is \\(r\\) (see figure).\n\nWhat is the length of the side of the hexagon?",
+      "options": [
+        "\\(3\\sqrt{3}\\,r\\)",
+        "\\(\\dfrac{2r}{\\sqrt{3}}\\)",
+        "\\(3\\sqrt{2}\\,r\\)",
+        "\\(\\dfrac{\\sqrt{2}\\,r}{2}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2025_s2_q15.png"
+      ],
+      "sub_category_id": "polygons"
+    },
+    {
+      "id": "2025_winter_q2_16",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 16,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "hard",
+      "stem": "The sum of \\(n\\) numbers (\\(3 \\le n\\)) is larger by \\(x\\) than their average.\n\nWhat is the sum of the numbers?",
+      "options": [
+        "\\(\\dfrac{nx}{n-1}\\)",
+        "\\((n+1)x\\)",
+        "\\(\\dfrac{(n-1)x}{n+1}\\)",
+        "\\(n(n-x)\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2025_winter_q2_17",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 17,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 17-20)",
+      "stem": "Given: at the end of month 2 of the trial, 1,200 of the patients experienced the side effect of scales.\n\nHow many patients took part in the trial altogether?",
+      "options": [
+        "3,600",
+        "4,000",
+        "4,800",
+        "6,000"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_winter_q2_18",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 18,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 17-20)",
+      "stem": "In how many months was the number of patients who experienced a great improvement equal to the number of patients who experienced a slight improvement?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_winter_q2_19",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 19,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 17-20)",
+      "stem": "<b>Out of all the participants</b>, what is the proportion of patients who experienced a great improvement in hair loss at the end of month 3?",
+      "options": [
+        "10%",
+        "2%",
+        "3%",
+        "6%"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_winter_q2_20",
+      "source_exam": "psychometric_winter_2025",
+      "source_question_number": 20,
+      "section_id": "2025_winter_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 17-20)",
+      "stem": "Which of the following situations is possible?",
+      "options": [
+        "There is a participant who experienced a great worsening in hair loss at the end of each one of the months of the trial",
+        "There is a participant who suffered from scales to a slight degree at the end of month 5 of the trial",
+        "There is a participant who experienced a slight worsening in hair loss at the end of month 1 of the trial",
+        "There is a participant who experienced a great improvement in hair loss at the end of each one of the months of the trial"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    }
+  ]
+}

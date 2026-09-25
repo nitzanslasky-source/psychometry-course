@@ -1,0 +1,1082 @@
+{
+  "source_exam": "psychometric_spring_2023",
+  "source_exam_label": "Spring 2023",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_spring_2023_acc.pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 60 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "table_comprehension_lead": "Study the table below, then answer the four questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2023_spring_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/sp2023_s1_graph.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\nA certain farmer has a square field in which vegetables are grown.  The field is divided into 11 rectangular plots, as described in the graph.\nEach rectangle in the graph describes a plot, and written in it are the name of the vegetable and the price (in shekels) at which the farmer sells one kg of this vegetable.  The fill of the rectangle represents the ripening season of the vegetable (see key).  Empty rectangles represent empty plots, in which the farmer has not planted anything.\nMarking posts are located along the entire perimeter of the field.  The distance between every two adjacent posts is 5 metres.\n\nFor example: In one of the plots the farmer grows tomatoes, which he sells at 6 shekels per kg.  The width of this plot is 15 metres, and the tomatoes in it ripen in the summer."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    },
+    {
+      "section_id": "2023_spring_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-15)",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 16-20)",
+          "from": 16,
+          "to": 20,
+          "figure_path": "figures/sp2023_s2_graph.png",
+          "intro": "Study the graph below, then answer the five questions that follow.\n\nThe graph describes the apartment market in a certain country in the years 2000-2009.  The graph presents the number of apartments that were sold in each year and three measures relating to their prices:\n– The average price of <b>all</b> the apartments that were sold in that year.\n– The average price of the cheap apartments that were sold.  The cheap apartments (25% of all the apartments that were sold) are those that were sold at the lowest prices in that year.\n– The average price of the expensive apartments that were sold.  The expensive apartments (25% of all the apartments that were sold) are those that were sold at the highest prices in that year.\nThe number of apartments that were sold in each year is marked in the graph by bold points connected by a dotted line (in relation to the right-hand axis).  The three price measures are marked on the vertical segments (in relation to the left-hand axis, see key).\nNote: Assume that no apartment was sold more than once during the period described in the graph.\n\nFor example: In 2000, 40,000 apartments were sold.  Their average price was $175,000.  Of these, the 10,000 cheapest apartments were sold at an average price of $125,000 and the 10,000 most expensive apartments were sold at an average price of $250,000."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2023_spring_q1_01",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 1,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Lines & Angles",
+      "difficulty": "easy",
+      "stem": "The accompanying figure shows two rays emanating from one point.\n\nGiven:  β = 5α\n\nα = ?",
+      "options": [
+        "60°",
+        "72°",
+        "75°",
+        "80°"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2023_s1_q01.png"
+      ],
+      "sub_category_id": "lines_angles"
+    },
+    {
+      "id": "2023_spring_q1_02",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 2,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "easy",
+      "stem": "What is the difference between the largest two-digit number whose tens digit is 2 times as much as its units digit, and the smallest two-digit number that satisfies this condition?",
+      "options": [
+        "57",
+        "63",
+        "72",
+        "74"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Tens \\(= 2 \\times\\) units, so the number is \\(\\overline{(2u)u}\\) with \\(2u \\le 9\\). That gives \\(u \\in \\{1,2,3,4\\}\\) and the numbers 21, 42, 63, 84."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Largest minus smallest is \\(84 - 21 = 63\\). The constraint caps \\(u\\) at 4, which is what makes the list so short."
+        }
+      ]
+    },
+    {
+      "id": "2023_spring_q1_03",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 3,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "easy",
+      "stem": "Moti and Smadar are picking grapefruits in an orchard.\nMoti picks at a rate of 3 grapefruits in 10 minutes.\nSmadar picks at a rate of 5 grapefruits in 15 minutes.\n\nHow many grapefruits do they pick together in two hours?",
+      "options": [
+        "64",
+        "76",
+        "84",
+        "96"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Moti picks \\(\\frac{3}{10}\\) a minute and Smadar \\(\\frac13\\), so \\(\\frac{19}{30}\\) together. Over 120 minutes that is 76."
+        },
+        {
+          "kind": "understanding",
+          "text": "Both rates are given per different windows, so convert both to per-minute before adding &mdash; the ground rule of the whole topic."
+        }
+      ]
+    },
+    {
+      "id": "2023_spring_q1_04",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 4,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "easy",
+      "stem": "Given:  x + 2y = 5\n2x + y = 13\n\nx + y = ?",
+      "options": [
+        "9",
+        "8",
+        "7",
+        "6"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Add the two equations: \\(3x + 3y = 18\\), so \\(x + y = 6\\). Neither letter needs to be found."
+        },
+        {
+          "kind": "algebra",
+          "text": "Solving properly gives \\(x = 7\\) and \\(y = -1\\), whose sum is 6 &mdash; the same answer through more work."
+        }
+      ]
+    },
+    {
+      "id": "2023_spring_q1_05",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 5,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "medium",
+      "stem": "Tal wore on each one of the 7 days of the week a different combination of a sweater with a scarf.\nTal has three different sweaters.\n\nHow many scarves does Tal have <b>at least</b>?",
+      "options": [
+        "6",
+        "7",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2023_spring_q1_06",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 6,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure ABCD is a square.\n\nGiven:  AC = 20 cm\nAE = BH = 5 cm\n\nWhat is the size of the dark area (in cm²)?",
+      "options": [
+        "100",
+        "\\(100\\sqrt{2}\\)",
+        "125",
+        "150"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/sp2023_s1_q06.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2023_spring_q1_07",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 7,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "Five card players are sitting in a circle (see figure).\nPlayer <b>A</b> divides among them a deck of 104 cards in the following manner:\nHe gives the first pair of cards to himself, the next pair of cards he gives to player <b>B</b>, and so he continues clockwise.\n\nWhich player will receive the last pair of cards?",
+      "options": [
+        "<b>A</b>",
+        "<b>B</b>",
+        "<b>E</b>",
+        "<b>D</b>"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2023_s1_q07.png"
+      ],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "104 cards dealt in pairs is 52 deals, cycling through 5 players. So the question is \\(52 \\bmod 5\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "\\(52 = 10 \\times 5 + 2\\), so after ten full cycles two more deals happen: A then B. The last pair goes to B."
+        }
+      ]
+    },
+    {
+      "id": "2023_spring_q1_08",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 8,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "hard",
+      "stem": "Given:  x·y < |x·y| < y\n\nAccording to this information, which of the following statements is necessarily true?",
+      "options": [
+        "-1 < x < 0",
+        "-1 < y < 0",
+        "x < -1",
+        "y < -1"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Each link does one job. \\(xy<|xy|\\) can only happen when \\(xy\\) is negative. \\(|xy|<y\\) needs \\(y\\) positive, since an absolute value is never negative. Negative product with positive \\(y\\) makes \\(x\\) negative. Finally \\(|x|\\,y<y\\), and dividing by the positive \\(y\\) gives \\(|x|<1\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Read the chain as three separate facts rather than one object: the first fixes the sign of the product, the second the sign of \\(y\\), the third the <i>size</i> of \\(x\\). Together they place \\(x\\) between \\(-1\\) and 0."
+        }
+      ]
+    },
+    {
+      "id": "2023_spring_q1_09",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 9,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "The farmer wants to grow potatoes in an empty plot whose area is over 200 m².\n\nThe potato plot <b>cannot</b> have a border segment in common with the plot of –",
+      "options": [
+        "the carrot",
+        "the tomatoes",
+        "the peppers",
+        "the radishes"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_spring_q1_10",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 10,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "Each day the tomatoes require irrigation in an amount that is double per unit of area compared with the corn.\n\nThe amount of water required to irrigate the tomato plot each day is ______ times greater than that required to irrigate the corn plot.",
+      "options": [
+        "3.5",
+        "2.5",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_spring_q1_11",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 11,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "A plot is considered more \"expensive\" the higher the ratio  \\(\\frac{\\text{price per kg (in shekels)}}{\\text{plot area (in m²)}}\\)  is.\n\nWhich of the following plots is the most expensive?",
+      "options": [
+        "the carrot plot",
+        "the radish plot",
+        "the zucchini plot",
+        "the corn plot"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_spring_q1_12",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 12,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "The farmer has a rectangular plastic sheet that protects the vegetables that ripen in winter from hail.\nThe dimensions of the sheet are (40 metres) × (30 metres), and it is impossible to divide it.\nThe farmer covered with this sheet the maximum possible area of the plots of vegetables that ripen in winter.\n\nWhat is the area of the plots of vegetables that ripen in winter (in m²) that is <b>not</b> covered by the sheet?",
+      "options": [
+        "225",
+        "300",
+        "350",
+        "425"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_spring_q1_13",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 13,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "\\(a \\cdot \\left(\\frac{a}{4} + b + \\frac{b^2}{a}\\right) = ?\\)  ,  \\((a \\neq 0)\\)",
+      "options": [
+        "\\(\\left(\\frac{a}{2} + b\\right)^2\\)",
+        "\\(\\left(a + \\frac{b}{2}\\right)^2\\)",
+        "\\(\\frac{a^2 + b^2}{4a}\\)",
+        "\\(\\frac{a + b + b^2}{4}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Multiplying through gives \\(\\frac{a^2}{4} + ab + b^2\\). The outer terms are \\(\\left(\\frac a2\\right)^2\\) and \\(b^2\\), and twice their product is \\(ab\\) &mdash; so it is \\(\\left(\\frac a2 + b\\right)^2\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(a=2, b=1\\): the expression is \\(2\\left(\\frac12+1+\\frac12\\right) = 4\\), and option (1) gives \\((1+1)^2 = 4\\)."
+        }
+      ]
+    },
+    {
+      "id": "2023_spring_q1_14",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 14,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "medium",
+      "stem": "Given:  a < -10\nb < 10\nc > 10\nx is the average of a, b and c.\n\nWhat is the exact range of x?",
+      "options": [
+        "-10 < x < 10",
+        "-10 < x",
+        "x < 10",
+        "x can be any number"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2023_spring_q1_15",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 15,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "In a coordinate system a circle is given.  The centre of the circle is at point O, whose coordinates are \\((O_x , O_y)\\).\nOn the circumference of the circle are 2 points, A and B, whose coordinates are \\((A_x , A_y)\\) and \\((B_x , B_y)\\) respectively.\n\nGiven:  \\(O_x = B_x\\)\n\\(O_y = A_y\\)\n\nWhich of the following statements is true regarding points O, A and B?",
+      "options": [
+        "They form a right triangle",
+        "They form an obtuse triangle",
+        "They form an equilateral triangle",
+        "They are located on one straight line"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2023_spring_q1_16",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 16,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "hard",
+      "stem": "During a certain week the price of 1 kg of cherries underwent the following changes:\nOn the second day the price of 1 kg of cherries was 75% of its price on the first day.\nFrom the third day onwards the price rose each day by 20% in relation to the price on the previous day.\n\nOn which day was the price of 1 kg of cherries for the first time <b>more than 10%</b> higher than its price on the first day?",
+      "options": [
+        "Thursday",
+        "Friday",
+        "Tuesday",
+        "Wednesday"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Track the multiplier from day one: 1, then 0.75, then 0.9, then 1.08, then 1.296. The first value above \\(1.10\\) is the fifth day &mdash; Thursday."
+        },
+        {
+          "kind": "understanding",
+          "text": "Wednesday is up 8%, which clears the first day's price but not the <b>10%</b> the question demands. Reading the threshold precisely is what separates the two middle options."
+        }
+      ]
+    },
+    {
+      "id": "2023_spring_q1_17",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 17,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "medium",
+      "stem": "A triangular pyramid is given, all of whose faces are equilateral triangles.  The faces of the pyramid are numbered with consecutive whole numbers, from 1 onwards.\nThe pyramid is tossed twice.  The result of a toss is the number appearing on the face that rests on the ground.\nIt is known that the chance of the pyramid falling on each one of the faces is equal.\n\nWhat is the probability that the <b>sum</b> of the two tosses will be 4?",
+      "options": [
+        "\\(\\frac{3}{25}\\)",
+        "\\(\\frac{3}{16}\\)",
+        "\\(\\frac{1}{3}\\)",
+        "\\(\\frac{1}{4}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2023_spring_q1_18",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 18,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "The length and the width of a certain rectangle are <b>whole</b> numbers in cm (the length is greater than the width).  The area of the rectangle is 91 cm².\n\nIf it is known that the width of the rectangle is greater than 1 cm, what is the length (in cm)?",
+      "options": [
+        "9",
+        "11",
+        "13",
+        "It cannot be determined from the information given"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2023_spring_q1_19",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 19,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Geometric Comprehension",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows that ABCD is a square whose side length is 2 cm.  Point O is the midpoint of side BC.\nA point on the perimeter of the square is chosen,\nand a circle is drawn whose centre is O and whose chosen point is located on its circumference.\n\nWhat is the largest possible radius of such a circle (in cm)?",
+      "options": [
+        "\\(\\sqrt{5}\\)",
+        "2",
+        "3",
+        "\\(\\sqrt{3}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2023_s1_q19.png"
+      ],
+      "sub_category_id": "geometric_comprehension"
+    },
+    {
+      "id": "2023_spring_q1_20",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 20,
+      "section_id": "2023_spring_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Defined Operations",
+      "difficulty": "hard",
+      "stem": "The operation \\(\\$(x)\\) is called \"doubled\" if for every positive x the following holds:  \\(\\$(\\$(x)) = x\\).\n\nWhich of the following operations is \"doubled\"?",
+      "options": [
+        "\\(\\$(x) = x^{-1}\\)",
+        "\\(\\$(x) = x^{-\\frac{1}{2}}\\)",
+        "\\(\\$(x) = \\frac{x-1}{x+1}\\)",
+        "\\(\\$(x) = \\frac{1}{2}x^2\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "defined_operations"
+    },
+    {
+      "id": "2023_spring_q2_01",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 1,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "easy",
+      "stem": "The accompanying figure shows a circle whose centre is O and whose radius is 1 cm.\n\nBased on this information and the information in the figure, what is the area of triangle ABC (in cm²)?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2023_s2_q01.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2023_spring_q2_02",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 2,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "medium",
+      "stem": "Asaf, Mali and Nicole together ate a <b>whole</b> cake.\nAsaf ate \\(\\frac{1}{x}\\) of the cake (x > 1).  Mali ate \\(\\frac{1}{2}\\) of the amount that Asaf ate, and Nicole ate the same amount that Mali ate.\n\nx = ?",
+      "options": [
+        "\\(\\frac{3}{2}\\)",
+        "2",
+        "3",
+        "\\(\\frac{4}{3}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2023_spring_q2_03",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 3,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Polygons",
+      "difficulty": "medium",
+      "stem": "The accompanying figure shows a regular pentagon ABCDE and two of its diagonals.\n\nα = ?",
+      "options": [
+        "108°",
+        "120°",
+        "135°",
+        "144°"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2023_s2_q03.png"
+      ],
+      "sub_category_id": "polygons"
+    },
+    {
+      "id": "2023_spring_q2_04",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 4,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "easy",
+      "stem": "\\(\\sqrt[4]{2^8} = ?\\)",
+      "options": [
+        "16",
+        "\\(\\sqrt{2}\\)",
+        "\\(\\sqrt{8}\\)",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "A fourth root divides the exponent by 4: \\(\\left(2^8\\right)^{1/4} = 2^2 = 4\\)."
+        }
+      ]
+    },
+    {
+      "id": "2023_spring_q2_05",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 5,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Motion & Speed",
+      "difficulty": "medium",
+      "stem": "Tamar travels a certain distance in a certain time.  Oded travels a distance that is 2 times shorter in a time that is 3 times longer.  Each of them has a fixed speed.\n\nOded's speed is ______ Tamar's speed.",
+      "options": [
+        "\\(\\frac{3}{2}\\) times smaller than",
+        "\\(\\frac{3}{2}\\) times greater than",
+        "6 times smaller than",
+        "6 times greater than"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "motion_speed",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Oded's speed is \\(\\frac{d/2}{3t} = \\frac{d}{6t}\\), which is one sixth of Tamar's \\(\\frac dt\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Tamar: 6 km in 1 hour, so 6 km/h. Oded: 3 km in 3 hours, so 1 km/h. Six times smaller. Picking numbers that make both halvings and thirdings whole takes three seconds."
+        },
+        {
+          "kind": "understanding",
+          "text": "Half the distance <i>and</i> triple the time both slow him down, so the factors multiply rather than partly cancel &mdash; which is why \\(\\frac32\\) is offered as a trap."
+        }
+      ]
+    },
+    {
+      "id": "2023_spring_q2_06",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 6,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "easy",
+      "stem": "The positive whole number x is called a \"common divisor\" of the positive whole numbers a and b if both a and also b are divisible by x without a remainder.\n\nWhich of the following numbers is <b>not</b> a common divisor of 84 and 210?",
+      "options": [
+        "7",
+        "6",
+        "3",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "A common divisor of both must divide their \\(\\gcd\\). \\(84 = 2^2 \\cdot 3 \\cdot 7\\) and \\(210 = 2 \\cdot 3 \\cdot 5 \\cdot 7\\), so \\(\\gcd = 2 \\cdot 3 \\cdot 7 = 42\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(7\\), \\(6\\) and \\(3\\) all divide 42; \\(4\\) does not, because 210 has only one factor of 2. Checking against 210 alone is the fastest route &mdash; it is odd-ish in its 2s."
+        }
+      ]
+    },
+    {
+      "id": "2023_spring_q2_07",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 7,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "hard",
+      "stem": "A certain flower had 10 milligrams (mg) of nectar.  At a certain moment a bee arrived at the flower, a minute after it a second bee joined it, a minute later a third bee joined them, and so on.  Each bee sucks nectar from the flower at a fixed rate of 1 mg per minute, until the nectar in the flower ran out.\n\nHow many mg of nectar altogether did the first bee that arrived at the flower suck?",
+      "options": [
+        "5",
+        "6",
+        "3",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Bees accumulate: minute 1 has one bee taking 1 mg, minute 2 has two taking 2, and so on. The running total is \\(1, 3, 6, 10\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The 10 mg is gone during the <b>fourth</b> minute. Triangular numbers rather than a constant rate &mdash; the workforce grows every minute."
+        }
+      ]
+    },
+    {
+      "id": "2023_spring_q2_08",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 8,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "medium",
+      "stem": "a and b are consecutive whole numbers, 1 < a < b.\n\n(2a–b) is <b>necessarily</b> –",
+      "options": [
+        "even",
+        "odd",
+        "greater than a",
+        "smaller than a"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Consecutive with \\(a < b\\) means \\(b = a+1\\), so \\(2a - b = 2a - a - 1 = a - 1\\). That is one less than \\(a\\), so it is necessarily smaller than \\(a\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Its parity is not fixed &mdash; \\(a=2\\) gives 1, odd; \\(a=3\\) gives 2, even &mdash; which kills both parity options at once."
+        }
+      ]
+    },
+    {
+      "id": "2023_spring_q2_09",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 9,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "hard",
+      "stem": "A, B, C and D are <b>consecutive</b> digits among the digits 1 to 9, with A < B < C < D.\nThe sum of the two two-digit numbers AB and CD is a two-digit number.\n\nHow many possible values does A have?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Consecutive digits mean \\(B = A+1\\), \\(C = A+2\\), \\(D = A+3\\). Then \\(\\overline{AB} + \\overline{CD} = (10A + A + 1) + (10A + 20 + A + 3) = 22A + 24\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "For that to stay a two-digit number, \\(22A + 24 \\le 99\\), so \\(A \\le 3\\). And \\(A \\ge 1\\), with \\(D = A+3 \\le 9\\) allowing up to 6. So \\(A \\in \\{1,2,3\\}\\) &mdash; three values."
+        }
+      ]
+    },
+    {
+      "id": "2023_spring_q2_10",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 10,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "hard",
+      "stem": "In a certain game, on each turn a player can lose one point or gain a fixed whole number of points P (at the start of the game the score is 0, and a negative score during the game is also possible).\nDanny played eight turns in the game, and at the end he had 28 points.\nIt is known that he gained in <b>more</b> than half of the turns.\n\nP = ?",
+      "options": [
+        "5",
+        "2",
+        "3",
+        "7"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2023_spring_q2_11",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 11,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "medium",
+      "stem": "A cylinder is given whose height is 3 cm and whose <b>lateral surface area</b> is 6 cm².\n\nWhat is the <b>volume</b> of the cylinder (in cm³)?",
+      "options": [
+        "9",
+        "18",
+        "\\(\\frac{3}{\\pi}\\)",
+        "6π"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2023_spring_q2_12",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 12,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "x is greater than y by 20%.\n\ny equals ______ percent of x.",
+      "options": [
+        "\\(73\\frac{2}{3}\\)",
+        "78",
+        "\\(83\\frac{1}{3}\\)",
+        "84"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "plug-in",
+          "text": "Set \\(y = 100\\), so \\(x = 120\\). Then \\(y\\) as a percentage of \\(x\\) is \\(\\frac{100}{120} = 83\\frac13\\%\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Not \\(80\\%\\). Reversing a percentage relationship means taking a reciprocal, not subtracting from 100 &mdash; the single most common percentage error there is."
+        }
+      ]
+    },
+    {
+      "id": "2023_spring_q2_13",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 13,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure it is given that:\nABCD is a parallelogram whose perimeter is 28 cm.\nAB = 5 cm\nEFGH is a square whose perimeter is 12 cm.\n\nWhat is the area of trapezoid ABFE,\nassuming that it is congruent to trapezoid CDHG?",
+      "options": [
+        "9 cm²",
+        "15 cm²",
+        "18 cm²",
+        "30 cm²"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2023_s2_q13.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2023_spring_q2_14",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 14,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Similarity",
+      "difficulty": "hard",
+      "stem": "The lengths of the sides of triangle <b>A</b> are 27 cm, 18 cm and 12 cm.\nIn triangle <b>B</b> the three angles are respectively equal to the angles of triangle <b>A</b>, and two of its sides are of length 18 cm and 12 cm.\n\nIf the two triangles are <b>not</b> congruent, what is the length of the third side of triangle <b>B</b> (in cm)?",
+      "options": [
+        "6",
+        "8",
+        "9",
+        "15"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "similarity"
+    },
+    {
+      "id": "2023_spring_q2_15",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 15,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "hard",
+      "stem": "4 notes are placed on the four corners of a table.  On each one of the notes one number only is written, and this number is the average of the numbers written on the two notes at the corners adjacent to it.\n\nHow many different numbers are written on the notes, at most?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2023_spring_q2_16",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 16,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "easy",
+      "cluster": "Graph Comprehension (Questions 16-20)",
+      "stem": "In how many of the years 2001-2009 were more apartments sold than in the year that preceded them?",
+      "options": [
+        "5",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_spring_q2_17",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 17,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 16-20)",
+      "stem": "Yonit bought an apartment in a year in which the average price of all the apartments was higher than $300,000 and lower than $450,000.\n\nWhat was the average price of the <b>expensive</b> apartments that were sold in that year (in dollars)?",
+      "options": [
+        "500,000",
+        "550,000",
+        "575,000",
+        "600,000"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_spring_q2_18",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 18,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 16-20)",
+      "stem": "The \"price dispersion\" in a certain year is the difference between the average price of the expensive apartments and the average price of the cheap apartments in that year.  Michal calculated the price dispersion in each one of the years described in the graphs.\n\n\\(\\frac{\\text{the largest price dispersion obtained}}{\\text{the smallest price dispersion obtained}} = ?\\)",
+      "options": [
+        "1.5",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_spring_q2_19",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 19,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 16-20)",
+      "stem": "It is known that in one of the years described in the graphs the price of the cheapest apartment that was sold was higher than the price of <b>each one</b> of the apartments that were sold in the year that preceded it.\n\nHow many apartments were sold in that year?",
+      "options": [
+        "29,000",
+        "33,000",
+        "38,000",
+        "42,000"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_spring_q2_20",
+      "source_exam": "psychometric_spring_2023",
+      "source_question_number": 20,
+      "section_id": "2023_spring_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 16-20)",
+      "stem": "During the years 2007-2009, how many of the apartments that were sold were neither expensive apartments nor cheap apartments?",
+      "options": [
+        "72,000",
+        "26,500",
+        "34,000",
+        "53,000"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    }
+  ]
+}

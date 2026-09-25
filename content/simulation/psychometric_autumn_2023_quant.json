@@ -1,0 +1,1068 @@
+{
+  "source_exam": "psychometric_autumn_2023",
+  "source_exam_label": "Autumn 2023",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_autumn_2023_acc.pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 59 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "table_comprehension_lead": "Study the table below, then answer the four questions that follow.",
+    "table_comprehension_lead_five": "Study the table below, then answer the five questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2023_autumn_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-15)",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "type": "table_comprehension",
+          "header": "Table Comprehension (Questions 16-20)",
+          "from": 16,
+          "to": 20,
+          "figure_path": "figures/a2023_s1_table.png",
+          "intro": "Study the table below, then answer the five questions that follow.\n\nAt the beginning of every year a ranking of the hundred tallest buildings in the world is published.\nThe table below presents data concerning ten tall buildings, marked with the letters A-J.  For each building the table records the city in which it is located, its height, and its place in the ranking in each of the years 2001, 2002, 2003 and 2004.\nBetween the publication dates of every two rankings, new buildings that were built are added to the ranking (and do not appear in the table), but existing buildings are not demolished.\n\nNote: Assume that no two buildings have the same height."
+        }
+      ]
+    },
+    {
+      "section_id": "2023_autumn_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 9-13)",
+          "from": 9,
+          "to": 13,
+          "figure_path": "figures/a2023_s2_wheel.png",
+          "intro": "Study the graph below, then answer the five questions that follow.\n\nThe security team at a certain museum numbers 24 guards.  After they discovered that exactly two guards were born in every month of the year, they decided to divide the work among themselves by means of a lottery based on their birth months.\n\nThe lottery wheel, presented in the graph, is divided into twelve identical-sized sectors and is mounted on a wall.  On the wall, around the wheel, the names of the twelve months are written.  Before every week the wheel is spun so that at the end of the spin each sector stops opposite one of the months.\nA sector determines for the two guards born in that month their duties in the coming week: how many day shifts and how many night shifts each of them will work, whether they will be members of the alert squad, whether they will be scouts and whether they will be the weekly duty officers (see key).\n\nFor example, if the wheel stopped in the position in which it now appears in the graph, the two weekly duty officers are the guards born in the month of August, and the two guards born in September worked 3 day shifts and 2 night shifts each.  Had the wheel stopped so that the guards born in the month of September were the weekly duty officers, then the guards born in the month of August would each work 4 day shifts and would also be members of the alert squad."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 14-20)",
+          "from": 14,
+          "to": 20
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2023_autumn_q1_01",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 1,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "Given:  0 < a\nc < b < 0\n\nWhich of the following expressions is <b>necessarily</b> positive?",
+      "options": [
+        "\\(a \\cdot b \\cdot c\\)",
+        "\\(a \\cdot b^2 \\cdot c\\)",
+        "\\((c + 1) \\cdot b\\)",
+        "\\((a - 1) \\cdot c\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Mark the signs: \\(a\\) is positive, and \\(c<b<0\\) makes both \\(b\\) and \\(c\\) negative. Two negative factors is an even count, so \\(a\\cdot b\\cdot c\\) is positive."
+        },
+        {
+          "kind": "understanding",
+          "text": "Options (3) and (4) fail for a different reason worth naming: \\(b+1\\) and \\(a-1\\) have <i>no determined sign at all</i>. An unknown-sign factor anywhere in a product kills the option outright, before any counting."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Option (2) has \\(b^2\\), which erases one minus and leaves an odd count — so it is negative. That leaves only (1)."
+        }
+      ]
+    },
+    {
+      "id": "2023_autumn_q1_02",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 2,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "easy",
+      "stem": "\\(\\frac{1}{10} + \\frac{1}{5} + \\frac{1}{3} + \\frac{1}{2} - 1 = ?\\)",
+      "options": [
+        "\\(\\frac{1}{5}\\)",
+        "\\(\\frac{3}{20}\\)",
+        "\\(\\frac{1}{30}\\)",
+        "\\(\\frac{2}{15}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Over the common denominator 30: \\(\\frac{3+6+10+15}{30} - 1 = \\frac{34}{30} - 1 = \\frac{4}{30} = \\frac{2}{15}\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The four fractions sum to slightly more than 1, so the answer must be small and positive &mdash; which alone rules out nothing here, but does confirm the sign before any arithmetic."
+        }
+      ]
+    },
+    {
+      "id": "2023_autumn_q1_03",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 3,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "medium",
+      "stem": "The sum of the ages of Avi, Beni and Gadi is 3 times as much as Gadi's age.\n\nThe average of the ages of Avi and Beni is necessarily –",
+      "options": [
+        "equal to the average of the ages of Avi and Gadi",
+        "equal to the average of the ages of Beni and Gadi",
+        "equal to Gadi's age",
+        "equal to Beni's age"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2023_autumn_q1_04",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 4,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "medium",
+      "stem": "Efrat and Gili played 10 chess games against each other.  Each of the games ended in a win for one of them or in a draw.  The number of games that Efrat won is 2 times as much as the number of games that Gili won.\n\nWhich of the following numbers <b>can be</b> the number of games that ended in a draw?",
+      "options": [
+        "5",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2023_autumn_q1_05",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 5,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure there is a semicircle whose centre is O.\n\nBased on this information and the information in the figure,\nα = ?",
+      "options": [
+        "75°",
+        "60°",
+        "30°",
+        "45°"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/a2023_s1_q05.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2023_autumn_q1_06",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 6,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "What is the area of the deltoid described in the figure (in cm²)?",
+      "options": [
+        "10",
+        "15",
+        "\\(\\sqrt{29}\\)",
+        "\\(2\\sqrt{29}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/a2023_s1_q06.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2023_autumn_q1_07",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 7,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "easy",
+      "stem": "Given:  3 < x < 4\n\nWhich of the following values can be the value of x?",
+      "options": [
+        "\\(\\sqrt{8}\\)",
+        "\\(\\sqrt{14}\\)",
+        "\\(\\sqrt{18}\\)",
+        "\\(\\sqrt{22}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Square the given range instead of the options: \\(9<x^2<16\\). Now the question is simply which radicand lands strictly inside, and only 14 does."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(\\sqrt8\\) is below 3 and both \\(\\sqrt{18}\\) and \\(\\sqrt{22}\\) are above 4, so all three fall outside the band. Moving the given to meet the options is faster than estimating four square roots."
+        }
+      ]
+    },
+    {
+      "id": "2023_autumn_q1_08",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 8,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "The regular price of a kg of peanuts is 5 shekels.  Two shops are selling peanuts on sale:\nShop <b>A</b> sells every 1.2 kg of peanuts for 5 shekels.\nShop <b>B</b> sells peanuts at a discount of 20% off the regular price.\n\nUriel wants to buy 6 kg of peanuts in one of the shops.\nWhat is the difference (in shekels) between the amount he would pay in shop <b>A</b> and the amount he would pay in shop <b>B</b>?",
+      "options": [
+        "1",
+        "2",
+        "1.2",
+        "0"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Shop A: 6 kg at 1.2 kg per 5 shekels is 5 lots, costing 25. Shop B: 6 kg at \\(5 \\times 0.8 = 4\\) each, costing 24. The difference is 1."
+        },
+        {
+          "kind": "understanding",
+          "text": "A's offer is really a discount of \\(\\frac{1}{6}\\) (about 16.7%), which is less than B's 20% &mdash; so B is cheaper, and by a single shekel."
+        }
+      ]
+    },
+    {
+      "id": "2023_autumn_q1_09",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 9,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "Given a cube whose edge length is n cm.\nGiven a box whose length is (n + 1) cm, whose width is n cm, and whose height is (n – 1) cm.\nGiven:  1 < n\n\nThe volume of the box is ______ cm³ than the volume of the cube.",
+      "options": [
+        "smaller by 1",
+        "greater by 1",
+        "smaller by n",
+        "greater by n"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2023_autumn_q1_10",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 10,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Lines & Angles",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure there are two parallel straight lines, a and b.\nStraight line c cuts straight lines a and b.\n\nWhich of the following statements is <b>not</b> necessarily true?",
+      "options": [
+        "180° < α + β + γ",
+        "α + β = α + γ",
+        "360° = γ + β + 2α",
+        "2α < β + γ"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/a2023_s1_q10.png"
+      ],
+      "sub_category_id": "lines_angles"
+    },
+    {
+      "id": "2023_autumn_q1_11",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 11,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "Factory <b>A</b> produces 6a cars in 2 hours.  Factory <b>B</b> produces 4a cars in 6 hours.\n\nHow many cars are produced in factory <b>A</b> and in factory <b>B</b> together in <b>18a</b> hours?",
+      "options": [
+        "66",
+        "36a",
+        "\\(66a^2\\)",
+        "\\(36a^4\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "A makes \\(3a\\) cars an hour, B makes \\(\\frac{2a}{3}\\), so together \\(\\frac{11a}{3}\\). Over \\(18a\\) hours that is \\(66a^2\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The \\(a\\) appears in both the rate and the time, so the answer is quadratic in \\(a\\). Options (1) and (2) cannot be right on the power of \\(a\\) alone."
+        }
+      ]
+    },
+    {
+      "id": "2023_autumn_q1_12",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 12,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Defined Operations",
+      "difficulty": "medium",
+      "stem": "For every positive number x the operation $ is defined thus:  \\($(x) = \\sqrt{\\frac{1}{x}}\\)\n0 < a\n\n\\($\\left(\\frac{1}{a^2}\\right) \\cdot $(a) = ?\\)",
+      "options": [
+        "a",
+        "\\(\\frac{1}{a}\\)",
+        "\\(\\sqrt{a}\\)",
+        "\\(\\frac{1}{\\sqrt{a}}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "defined_operations"
+    },
+    {
+      "id": "2023_autumn_q1_13",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 13,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "Ilana has three identical paper rectangles.  The length of the long side of each rectangle is 30 cm.\nIlana glued the three rectangles to one another along their short sides, so that a rectangle whose long side is x cm was created (see figure).\nThe size of the area common to each pair of rectangles that were glued to one another is equal to 20% of the area of each one of the three rectangles.\n\nx = ?",
+      "options": [
+        "69",
+        "72",
+        "75",
+        "78"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/a2023_s1_q13.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2023_autumn_q1_14",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 14,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "hard",
+      "stem": "Anat has 6 boxes containing red candies and green candies only.\nIn the first box there is 1 red candy and 1 green candy,\nin the second box there is 1 red candy and 2 green candies,\nin the third box there is 1 red candy and 3 green candies, and so on, up to the sixth box.\n\nIf Anat takes out at random one candy from each box, what is the probability that she will get 6 <b>green</b> candies?",
+      "options": [
+        "\\(\\left(\\frac{1}{2}\\right)^6\\)",
+        "\\(\\frac{1}{6!}\\)",
+        "\\(1 - \\frac{1}{7!}\\)",
+        "\\(\\frac{1}{7}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2023_autumn_q1_15",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 15,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Number Line",
+      "difficulty": "medium",
+      "stem": "Tamar draws points on a number axis above the whole range in which |x| ≤ 5.\nIn addition, she draws a gray strip above the whole range in which  4 ≤ |x| ≤ 6.\n\nWhich of the following possibilities could describe the drawing that was obtained?",
+      "options": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "option_figure_paths": [
+        "figures/a2023_s1_q15_opt1.png",
+        "figures/a2023_s1_q15_opt2.png",
+        "figures/a2023_s1_q15_opt3.png",
+        "figures/a2023_s1_q15_opt4.png"
+      ],
+      "sub_category_id": "number_line"
+    },
+    {
+      "id": "2023_autumn_q1_16",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 16,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "easy",
+      "cluster": "Table Comprehension (Questions 16-20)",
+      "stem": "What is the greatest difference (in metres) between the heights of two buildings in the table that are <b>not</b> in the same city?",
+      "options": [
+        "298",
+        "262",
+        "247",
+        "221"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_autumn_q1_17",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 17,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 16-20)",
+      "stem": "In the 2001 ranking a certain building in Tokyo was in 20th place.\n\nThe place of this building in the 2003 ranking is –",
+      "options": [
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_autumn_q1_18",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 18,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Table Comprehension (Questions 16-20)",
+      "stem": "It <b>is possible</b> that a building of height ______ metres was ranked as one of the ______ tallest buildings in the world in <b>all</b> the years described in the table.",
+      "options": [
+        "640 ; 10",
+        "600 ; 20",
+        "570 ; 30",
+        "500 ; 40"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_autumn_q1_19",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 19,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Table Comprehension (Questions 16-20)",
+      "stem": "Between the 2001 ranking and the 2004 ranking, at least ______ new buildings were added to the ranking of the hundred tallest buildings in the world.",
+      "options": [
+        "8",
+        "2",
+        "51",
+        "23"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_autumn_q1_20",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 20,
+      "section_id": "2023_autumn_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Table Comprehension (Questions 16-20)",
+      "stem": "It <b>is possible</b> that at the beginning of the year ______ the five tallest buildings in the world were in the same city.",
+      "options": [
+        "2001",
+        "2002",
+        "2003",
+        "2004"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_autumn_q2_01",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 1,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "medium",
+      "stem": "At a meeting of the neighbourhood residents' committee, a certain proposal came up for a vote.  10 of those present at the meeting voted in favour of the proposal, 3 of those present abstained, and the rest of those present voted against the proposal.\nThe proposal was accepted by a vote of the majority, that is, more voters were \"in favour\" than \"against\".\n\nHow many residents were present at the meeting <b>at most</b>?",
+      "options": [
+        "19",
+        "20",
+        "22",
+        "23"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2023_autumn_q2_02",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 2,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Polygons",
+      "difficulty": "medium",
+      "stem": "ABCDEF is a regular hexagon whose perimeter is 6a (see figure).\n\nWhat is the perimeter of trapezoid ABCF?",
+      "options": [
+        "\\(3a + a\\sqrt{2}\\)",
+        "5a",
+        "\\(3a + 5\\sqrt{2}\\)",
+        "4.5a"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/a2023_s2_q02.png"
+      ],
+      "sub_category_id": "polygons"
+    },
+    {
+      "id": "2023_autumn_q2_03",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 3,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Given:  \\(x , y \\neq 0\\)\n\\(4x - xy = x^2\\)\n3x = y\n\ny = ?",
+      "options": [
+        "6",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Substitute \\(y = 3x\\): \\(4x - 3x^2 = x^2\\), so \\(4x = 4x^2\\). Since \\(x \\neq 0\\), \\(x = 1\\) and \\(y = 3\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Dividing by \\(x\\) is only legal because the stem says \\(x \\neq 0\\); otherwise \\(x=0\\) would be a second solution. The restriction is doing real work."
+        }
+      ]
+    },
+    {
+      "id": "2023_autumn_q2_04",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 4,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "m is an integer greater than 1.\nGiven:  \\(m^{2x} = m \\cdot m^{(x^2)}\\)\n\nx = ?",
+      "options": [
+        "1",
+        "2",
+        "0",
+        "m"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Same base with \\(m>1\\), so the exponents match: \\(2x = 1+x^2\\), which is \\((x-1)^2 = 0\\), giving \\(x=1\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Substituting \\(x=1\\) gives \\(m^2 = m \\cdot m\\) at once. With four numeric options, testing beats solving."
+        }
+      ]
+    },
+    {
+      "id": "2023_autumn_q2_05",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 5,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "medium",
+      "stem": "Based on the data in the accompanying coordinate system,\n\nthe length of segment AB is certainly ______ than 30, ______ enough data to compute it.",
+      "options": [
+        "greater ; and there is",
+        "greater ; but there is not",
+        "smaller ; and there is",
+        "smaller ; but there is not"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/a2023_s2_q05.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2023_autumn_q2_06",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 6,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Elisheva donated all of her library to three schools.  The ratio of the division was 5:9:11.  She donated 575 books in total.\n\nHow many books did the school to which Elisheva donated the largest number of books receive?",
+      "options": [
+        "191",
+        "217",
+        "220",
+        "253"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "The parts total \\(5+9+11 = 25\\), so one part is \\(\\frac{575}{25} = 23\\). The largest share is \\(11 \\times 23 = 253\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Ratio questions are division into equal parts. Finding the size of one part first makes every share a single multiplication."
+        }
+      ]
+    },
+    {
+      "id": "2023_autumn_q2_07",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 7,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "medium",
+      "stem": "Oren, Batya, Galit and Daniel are competing in a singing contest.\n3 of them will advance to the final stage.\n\nHow many different threesomes can advance to the final stage?",
+      "options": [
+        "5",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2023_autumn_q2_08",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 8,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure there is a circle and a sector of a circle whose areas are equal to each other.\n\nBased on this information and the information in the figure,\nx = ?",
+      "options": [
+        "10°",
+        "20°",
+        "30°",
+        "40°"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/a2023_s2_q08.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2023_autumn_q2_09",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 9,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-13)",
+      "stem": "In a certain week one of the guards received 2 night shifts.\n\nTherefore, it is <b>not</b> possible that in that same week that guard received ______ day shifts.",
+      "options": [
+        "5",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_autumn_q2_10",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 10,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-13)",
+      "stem": "Dan and Shir celebrate their birthdays within an interval of one week from each other.\nIn a certain week Dan was a weekly duty officer.\n\nTherefore, in that same week Shir certainly was <b>not</b> –",
+      "options": [
+        "a weekly duty officer",
+        "a member of the alert squad",
+        "a scout",
+        "working a night shift"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_autumn_q2_11",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 11,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-13)",
+      "stem": "Noa is one of the museum's guards.\n\nIn a certain week, what is the probability that Noa will <b>not</b> be a member of the alert squad <b>and also not</b> be a scout?",
+      "options": [
+        "\\(\\frac{5}{12}\\)",
+        "\\(\\frac{5}{6}\\)",
+        "\\(\\frac{2}{3}\\)",
+        "\\(\\frac{3}{4}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_autumn_q2_12",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 12,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-13)",
+      "stem": "One of the guards received 7 night shifts <b>in total</b> over two weeks.\n\nTherefore, it is possible to know for certain that at least once in those two weeks –",
+      "options": [
+        "the guard was a member of the alert squad",
+        "the guard was a scout",
+        "the guard was a weekly duty officer",
+        "in the lottery the guard received exactly two day shifts"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_autumn_q2_13",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 13,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-13)",
+      "stem": "Ido was born in March, and in a certain week he was a member of the alert squad.\n\nHence the weekly duty officers in that same week were born in –",
+      "options": [
+        "April or November",
+        "June or November",
+        "April or September",
+        "June or September"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_autumn_q2_14",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 14,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Given:  \\(\\frac{x}{7} = b\\)  ,  \\(x , b \\neq 0\\)\n\nx is equal to ______ percent of b.",
+      "options": [
+        "7",
+        "70",
+        "170",
+        "700"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(x = 7b\\), so \\(x\\) is \\(700\\%\\) of \\(b\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "&ldquo;\\(x\\) is 7 times \\(b\\)&rdquo; and &ldquo;\\(x\\) is 700% of \\(b\\)&rdquo; are the same statement. Option (1) confuses the multiplier with the percentage."
+        }
+      ]
+    },
+    {
+      "id": "2023_autumn_q2_15",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 15,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "hard",
+      "stem": "Given:  x is a number greater than 1.\n\\(x \\cdot y = 1\\)\nM is the average of x and y.\n\nWhich of the following statements is necessarily true with regard to M?",
+      "options": [
+        "M > 1",
+        "M < 1",
+        "M = 1",
+        "None of the above three statements is necessarily true."
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2023_autumn_q2_16",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 16,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "hard",
+      "stem": "Given:  \\(y = \\frac{a \\cdot b}{x}\\)\n\na and b are prime numbers, greater than 10 and different from each other.\nx and y are two integers greater than 1.\n\nWhich of the following statements is true with regard to x and to y?",
+      "options": [
+        "Both of them are necessarily prime.",
+        "One of them is necessarily prime, and the other one – not necessarily.",
+        "It is possible that x = y.",
+        "It is possible that x = 2y."
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(xy = ab\\) with \\(a\\) and \\(b\\) distinct primes above 10. The only ways to split \\(ab\\) into two factors above 1 are \\(a \\times b\\) &mdash; there is nothing else, because \\(a\\) and \\(b\\) are prime."
+        },
+        {
+          "kind": "check-answers",
+          "text": "So \\(\\{x,y\\} = \\{a,b\\}\\) and both are prime. They cannot be equal, since \\(a \\ne b\\), and \\(x = 2y\\) would need one to be twice the other, impossible for two primes above 10."
+        }
+      ]
+    },
+    {
+      "id": "2023_autumn_q2_17",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 17,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "Ilana has a sheet of paper in the shape of a triangle as in the figure, and stickers in the shape of a square each one of which has an area of 1 cm².\nShe is interested in sticking the stickers on the triangular sheet so that they do not cover one another and do not exceed the boundaries of the sheet, and without cutting any sticker (she sticks all of them on the same side of the sheet).\n\nHow many whole stickers, at most, will Ilana be able to stick in this way?",
+      "options": [
+        "10",
+        "8",
+        "6",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/a2023_s2_q17.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2023_autumn_q2_18",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 18,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Motion & Speed",
+      "difficulty": "medium",
+      "stem": "A spacecraft flew from Earth to the moon in a straight line at a constant speed of 100 kph.\nThe distance between Earth and the moon is about 380,000 km.\n\nWhich of the following lengths of time is closest to the length of time that the spacecraft would need in order to reach the moon?\n(there are 24 hours in a day and 365 days in a year)",
+      "options": [
+        "half a year",
+        "two years",
+        "30 days",
+        "a week"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "motion_speed",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\frac{380{,}000}{100} = 3800\\) hours. Dividing by 24 gives about 158 days."
+        },
+        {
+          "kind": "understanding",
+          "text": "158 days is roughly five months, so 'half a year' is the nearest option &mdash; the others are 30 days, a week and two years, all off by a factor of five or more. Convert to days and stop; there is no need for a precise fraction of a year."
+        }
+      ]
+    },
+    {
+      "id": "2023_autumn_q2_19",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 19,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "A cylinder whose base radius is r and whose height is h, was cut into 4 identical parts as in the figure.\n\nWhat is the <b>surface area</b> of each one of the 4 parts?",
+      "options": [
+        "\\(\\frac{\\pi(r + h)}{2}\\)",
+        "\\(\\frac{\\pi r(r + h)}{2} + 2rh\\)",
+        "\\(\\frac{\\pi r(r + h)}{4}\\)",
+        "\\(\\frac{\\pi(r + h)}{4} + 2rh\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/a2023_s2_q19.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2023_autumn_q2_20",
+      "source_exam": "psychometric_autumn_2023",
+      "source_question_number": 20,
+      "section_id": "2023_autumn_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Overlapping Sets",
+      "difficulty": "hard",
+      "stem": "Ruti, Shlomit and Tamar want to hold a party.\nGiven:  Each one of them has 30 friends.\nEvery two of them have 10 friends in common.\nThey decided to invite to the party all the people who are friends <b>common to all three of them</b>, and only them.\n\nWhat is the exact range of the number of people invited to the party?",
+      "options": [
+        "between 0 and 10",
+        "between 5 and 10",
+        "between 0 and 20",
+        "between 10 and 20"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "overlapping_sets"
+    }
+  ]
+}

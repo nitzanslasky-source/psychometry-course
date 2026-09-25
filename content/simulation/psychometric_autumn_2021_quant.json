@@ -1,0 +1,1161 @@
+{
+  "source_exam": "psychometric_autumn_2021",
+  "source_exam_label": "Autumn 2021",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_autumn_2021_acc.pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 59 (מפתח תשובות נכונות)",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2021_autumn_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-7)",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 8-12)",
+          "from": 8,
+          "to": 12,
+          "figure_path": "figures/2021_s1_graph.png",
+          "intro": "Study the graph below, then answer the five questions that follow.\n\nThe graph describes the absences of the eight employees at a certain factory (marked with the letters A-H) during the six months January-June.  Each absence lasted a whole number of weeks.  The absences were classified according to the reason for the absence: course, illness, vacation or business trip (see key).\n\nNote: For the sake of convenience, the number of weeks in each month was rounded, such that some of the months have 4 weeks and some of the months have 5 weeks.\n\nFor example, in the third week of March employee C was absent from work because he was on a business trip."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    },
+    {
+      "section_id": "2021_autumn_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-16)",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 17-20)",
+          "from": 17,
+          "to": 20,
+          "figure_path": "figures/2021_s2_graph.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\nThe graph describes the results of a study that examined the effectiveness of four methods for teaching reading in the first grade (A, B, C and D).\n\nThe teaching methods were examined in four first-grade classes, each of which has 30 students.  Each class studied with one of the methods from the beginning of the school year (September 1) until its end (June 30).  At the end of each month the students took a test that examines reading ability.  A student who received a grade of \"pass\" on the test was considered a student who knows how to read, and was not tested again thereafter.\n\nEach teaching method is marked on the graph by means of a different shape (see key).  The position of the shape relative to the horizontal axis represents the month in the school year, and its position relative to the vertical axis represents the cumulative number of students who received a grade of \"pass\" from the beginning of the year until the test at the end of this month (inclusive).\n\nNotes:\n- All the students who participated in the study did not know how to read at the beginning of the school year.\n- The lines connecting the shapes are auxiliary lines only.\n\nFor example, in the class that studied with method A there were 6 students at the end of the month of October who know how to read.  Of them, 2 students received a grade of \"pass\" already on the test administered at the end of the month of September, and were not tested any more thereafter."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2021_autumn_q1_01",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 1,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure, ABCD is a rectangle whose side lengths are 2 cm and 4 cm.\nPoints E, F, G and H are the midpoints of the sides of the rectangle.\n\nWhat is the area of the dark quadrilateral (in cm²)?",
+      "options": [
+        "6",
+        "\\(4\\sqrt{2}\\)",
+        "\\(2\\sqrt{3}\\)",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/2021_s1_q01.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2021_autumn_q1_02",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 2,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "easy",
+      "stem": "2% of W is 10.\n\nW = ?",
+      "options": [
+        "20",
+        "50",
+        "200",
+        "500"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(0.02W = 10\\), so \\(W = 500\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "2% is a fiftieth, so the whole is fifty times 10. Reading small percentages as fractions is faster than dividing by a decimal."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q1_03",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 3,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "easy",
+      "stem": "On one side of a fair coin the number 1 is written and on its other side the number 0 is written.\nThe coin is tossed three times, and the <b>sum</b> of the numbers obtained is calculated.\n\nHow many different sums is it possible to obtain?",
+      "options": [
+        "Five",
+        "Two",
+        "Three",
+        "Four"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2021_autumn_q1_04",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 4,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "Hagai travelled on a trip to the USA.  The price of the flight ticket was \\(\\frac{1}{3}\\) of the expenses of the trip.  The price that he paid for renting a car was \\(\\frac{1}{6}\\) of the expenses of the trip.  The rest of the expenses of the trip were 1,500 dollars.\n\nWhat was the price of the flight ticket?",
+      "options": [
+        "1,000 dollars",
+        "1,500 dollars",
+        "1,750 dollars",
+        "2,250 dollars"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "The flight and the car account for \\(\\frac13 + \\frac16 = \\frac12\\) of the expenses, so the remaining \\(\\frac12\\) is 1,500 dollars and the total is 3,000. The ticket is \\(\\frac13\\) of that: 1,000 dollars."
+        },
+        {
+          "kind": "understanding",
+          "text": "The fractions are of the same whole, so they add directly &mdash; and the leftover being exactly half is what makes the total immediate."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q1_05",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 5,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Lines & Angles",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure, m || n, and ABC is an isosceles triangle (AB = AC).\n\nBased on this information and the information in the figure,\n∡ABC = ?",
+      "options": [
+        "65°",
+        "70°",
+        "80°",
+        "85°"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/2021_s1_q05.png"
+      ],
+      "sub_category_id": "lines_angles"
+    },
+    {
+      "id": "2021_autumn_q1_06",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 6,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "Revital and Beni are preparing a quiche.  Revital peels 8 onions in 7 minutes, and Beni slices 6 onions in 9 minutes.\n\nHow many onions will Revital manage to peel in the time that Beni slices 14 onions?",
+      "options": [
+        "24",
+        "21",
+        "19",
+        "16"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Beni slices \\(\\frac69 = \\frac23\\) an onion a minute, so 14 onions take 21 minutes."
+        },
+        {
+          "kind": "algebra",
+          "text": "Revital peels \\(\\frac87\\) a minute, so in 21 minutes she does 24. Find the shared time first, then apply the other rate to it."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q1_07",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 7,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "x is any number between 1 and 2  (1 < x < 2).\n\nWhich of the following expressions has the greatest value?",
+      "options": [
+        "2x",
+        "\\(\\frac{2}{x}\\)",
+        "\\(x^2\\)",
+        "\\(x^x\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "On \\(1<x<2\\): \\(2x > x^2\\) because \\(x<2\\); \\(2x > \\frac2x\\) because \\(x^2>1\\); and \\(x^x < x^2\\) because the exponent is below 2 with a base above 1. So \\(2x\\) is largest throughout."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(x=1.5\\): the four values are 3, 1.33, 2.25 and about 1.84. Testing a second value near 2, say 1.9, keeps \\(2x\\) ahead at 3.8 against 3.61 and 3.39."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q1_08",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 8,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "easy",
+      "cluster": "graph_comprehension",
+      "stem": "In how many of the months described in the graph was there at least one week in which an employee was absent because he was on a course?",
+      "options": [
+        "5",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/2021_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_autumn_q1_09",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 9,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "graph_comprehension",
+      "stem": "Two employees were each absent for 3 separate periods of absence.\n\nOne of the two employees was absent for a total of  ______  weeks more than the other.",
+      "options": [
+        "5",
+        "6",
+        "3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/2021_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_autumn_q1_10",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 10,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "graph_comprehension",
+      "stem": "Which of the following graphs describes the number of employees who were <b>not</b> absent from work in each of the weeks of the month of <b>June</b>?",
+      "options": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "option_figure_paths": [
+        "figures/2021_s1_q10_opt1.png",
+        "figures/2021_s1_q10_opt2.png",
+        "figures/2021_s1_q10_opt3.png",
+        "figures/2021_s1_q10_opt4.png"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/2021_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_autumn_q1_11",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 11,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "graph_comprehension",
+      "stem": "Two employees who were never absent from work at the same time are called \"coordinated employees\".\n\nIn the period of time described in the graph, how many of the employees were coordinated with employee H ?",
+      "options": [
+        "1",
+        "2",
+        "0",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/2021_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_autumn_q1_12",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 12,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "graph_comprehension",
+      "stem": "It is known that in the period of time described in the graph only men were absent due to illness.  It is also known that in the period of time described in the graph an equal number of men and women went on a course.\n\nHow many <b>men</b> work at the factory, at the very least?",
+      "options": [
+        "5",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/2021_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_autumn_q1_13",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 13,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Given the equation \\((x + 1)^2 - (x - 1)^2 = 0\\)\n\nHow many different values of x satisfy the equation?",
+      "options": [
+        "One",
+        "Two",
+        "Three",
+        "There is no value of x that satisfies the equation"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Difference of squares: \\((x+1)^2-(x-1)^2 = [2][2x] = 4x\\). Setting \\(4x = 0\\) gives the single value \\(x = 0\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Expanding is just as quick here: the \\(x^2\\) terms cancel and \\(4x\\) is left. Either route avoids treating it as a quadratic, which is the trap behind option (2)."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q1_14",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 14,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "medium",
+      "stem": "In the accompanying coordinate system there are three points: O (the origin), A and B.\nGiven: The point A is located at the midpoint of segment OB.\n     z + w = 36\n\ns + t = ?",
+      "options": [
+        "18",
+        "12",
+        "9",
+        "It is impossible to know from the information given"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/2021_s1_q14.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2021_autumn_q1_15",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 15,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "hard",
+      "stem": "x, y and z are numbers that are different from zero.\n\nWhich of the following expressions is <b>not</b> equal to the expression \\(\\frac{1}{x} + \\frac{1}{y} + \\frac{1}{z}\\) ?",
+      "options": [
+        "\\(\\dfrac{x \\cdot y + y \\cdot z + x \\cdot z}{x \\cdot y \\cdot z}\\)",
+        "\\(\\dfrac{x}{x^2} + \\dfrac{z + y}{z \\cdot y}\\)",
+        "\\(\\dfrac{\\left(\\dfrac{x}{x \\cdot y} + \\dfrac{x}{y^2} + \\dfrac{x}{z \\cdot y}\\right)}{\\dfrac{x}{y}}\\)",
+        "\\(\\dfrac{x + y + z}{x \\cdot y \\cdot z}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "plug-in",
+          "text": "Take \\(x=1, y=2, z=3\\): the original is \\(1+\\frac12+\\frac13 = \\frac{11}{6}\\). Options (1), (2) and (3) all give \\(\\frac{11}{6}\\); option (4) gives \\(\\frac{6}{6} = 1\\)."
+        },
+        {
+          "kind": "algebra",
+          "text": "Over a common denominator the sum is \\(\\dfrac{yz+xz+xy}{xyz}\\), which is option (1). Option (4) has the letters themselves on top rather than their pairwise products."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q1_16",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 16,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "Given: \\(a^2 - 2 < a(a + 2)\\)\n\nWhich of the following statements is necessarily true?",
+      "options": [
+        "2a > a",
+        "2a < a",
+        "2a = a",
+        "None of the above statements is necessarily true"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Expand the right side: \\(a^2-2<a^2+2a\\). The \\(a^2\\) terms cancel, leaving \\(-2<2a\\), so \\(a>-1\\). That is all the given says."
+        },
+        {
+          "kind": "understanding",
+          "text": "Every option compares \\(2a\\) with \\(a\\), and that comparison is decided entirely by the sign of \\(a\\): \\(2a>a\\) when \\(a\\) is positive, \\(2a<a\\) when negative, equal at zero. Since \\(a>-1\\) permits all three, nothing is necessary."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(a=1\\) satisfies the given and makes \\(2a>a\\); \\(a=-\\frac12\\) satisfies it too and makes \\(2a<a\\). Two legal values, two opposite conclusions."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q1_17",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 17,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "In a sack there are green balls and yellow balls only.\nThe number of green balls is 25% greater than the number of yellow balls.\n\nThe total number of balls in the sack is <b>necessarily</b> -",
+      "options": [
+        "odd",
+        "divisible by 4",
+        "divisible by 9",
+        "divisible by 25"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Let the yellow count be \\(y\\). Green is \\(1.25y = \\frac54 y\\), so \\(y\\) must be a multiple of 4 for the count to be whole. The total is \\(y + \\frac54 y = \\frac94 y\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "With \\(y = 4k\\), the total is \\(9k\\) &mdash; always a multiple of 9. Nothing forces it to be odd, or a multiple of 4 or 25; the 9 comes from the \\(\\frac94\\) and nowhere else."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q1_18",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 18,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "Daniel had a cylinder of dough whose length is h cm and the radius of its base is \\(\\pi\\) cm.\nDaniel removed from the cylinder a slice of dough whose volume is \\(\\pi h\\) cm³ and made from the dough that <b>remained</b> a new cylinder whose length is also h cm.\n\nWhat is the radius of the base of the new cylinder (in cm)?",
+      "options": [
+        "\\(\\sqrt{\\pi^2 - 1}\\)",
+        "\\(\\frac{\\pi}{2}\\)",
+        "\\(\\pi - 1\\)",
+        "\\(\\sqrt{\\pi}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2021_autumn_q1_19",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 19,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "hard",
+      "stem": "The accompanying figure describes a system of roads composed of ten straight roads.\nEvery straight segment is a one-way road, and the direction of travel on it is marked in the figure with an arrow.\n\nWhat is the smallest number of roads that need to be cancelled in order to disconnect A from B (that is, so that it will not be possible to get from A to B)?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/2021_s1_q19.png"
+      ],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2021_autumn_q1_20",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 20,
+      "section_id": "2021_autumn_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "Ra'anan set out on a trip of 8 hours.  From the moment that he set out on his way (not including the moment of setting out), every 25 minutes he drank water, and every hour he passed by another hiker.\n\nHow many times during the trip did Ra'anan pass by another hiker at the time that he drank water?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Both events coincide at common multiples of 25 and 60 minutes. \\(\\text{LCM}(25,60) = 300\\) minutes, which is 5 hours."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Within an 8-hour trip that happens once, at the 5-hour mark &mdash; 10 hours would be the next. Note the question excludes the starting moment, which is what makes 0 the wrong answer rather than the right one."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q2_01",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 1,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Motion & Speed",
+      "difficulty": "medium",
+      "stem": "Gilad ran at a constant speed.  He ran 32 km in total.  The length of time (in hours) in which he ran is equal to half of his speed (in kph).\n\nAt what <b>speed</b> did Gilad run (in kph)?",
+      "options": [
+        "10",
+        "12",
+        "8",
+        "\\(\\sqrt{32}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "motion_speed",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Time \\(= \\frac v2\\) and distance \\(= v \\times t\\), so \\(v \\cdot \\frac v2 = 32\\), giving \\(v^2 = 64\\) and \\(v = 8\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Four numeric options, one multiplication each: at 8 km/h he runs for 4 hours, and 4 is half of 8 ✓. Faster than solving, and immune to a sign or square-root slip."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q2_02",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 2,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "medium",
+      "stem": "ABC and BDC are isosceles triangles (AB = AC , DB = DC),\n∡ACD = 90°.\n\nBased on this information and the information in the figure,\nα = ?",
+      "options": [
+        "30°",
+        "35°",
+        "40°",
+        "45°"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/2021_s2_q02.png"
+      ],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2021_autumn_q2_03",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 3,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "easy",
+      "stem": "Given: a(b – c) = 3a , a,b,c ≠ 0\n\nb = ?",
+      "options": [
+        "c + 2",
+        "c + 3",
+        "c + 2a",
+        "c + 3a"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(a \\neq 0\\), so divide both sides by \\(a\\): \\(b - c = 3\\), giving \\(b = c+3\\). The \\(a\\) disappears entirely."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Options (3) and (4) keep \\(a\\) in the answer, which cannot be right once \\(a\\) has been divided out. Two options fall without any algebra."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q2_04",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 4,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "hard",
+      "stem": "Efraim read 5 articles one after the other without breaks.  It is known that every article that Efraim read has a number of pages that is double that in the article that he read before it.  Efraim reads a page in an article in a constant length of time.\nEfraim read the first article in \\(\\frac{1}{2}\\) an hour.\n\nWithin how much time from the beginning of the reading did Efraim finish reading the five articles?",
+      "options": [
+        "\\(15\\frac{1}{2}\\) hours",
+        "\\(12\\frac{1}{2}\\) hours",
+        "\\(13\\frac{1}{2}\\) hours",
+        "\\(14\\frac{1}{2}\\) hours"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2021_autumn_q2_05",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 5,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Factorials",
+      "difficulty": "medium",
+      "stem": "Given: 1 < x  (x and y are integers)\n    1 < y\n    \\(\\frac{x!}{y!} = x\\)\n\nx – y = ?",
+      "options": [
+        "1",
+        "x",
+        "y",
+        "0"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "factorials",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Expand the top down to the bottom: \\(x!=x\\cdot(x-1)!\\). The given says \\(\\frac{x!}{y!}=x\\), so \\(y!=(x-1)!\\) and \\(y=x-1\\). The difference is 1."
+        },
+        {
+          "kind": "understanding",
+          "text": "Dividing one factorial by another leaves the run of integers between them. For the result to be a <i>single</i> factor \\(x\\), that run must be one term long &mdash; so the two factorials are neighbours."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q2_06",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 6,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Defined Operations",
+      "difficulty": "hard",
+      "stem": "For every two numbers a and b that are different from zero, the operation $(a , b) was defined thus:\n\\($(a,b) = \\frac{b^2}{a} + \\frac{a^2}{b}\\)\n\n\\(\\dfrac{\\$(-2\\,,\\ 3)}{\\$(3\\,,-2)} = ?\\)",
+      "options": [
+        "1",
+        "\\(\\frac{1}{2}\\)",
+        "\\(\\frac{13}{20}\\)",
+        "\\(\\frac{7}{20}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "defined_operations"
+    },
+    {
+      "id": "2021_autumn_q2_07",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 7,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "Given: \\(\\sqrt{x} = \\frac{1}{2}\\)\n\n\\(x^2 = ?\\)",
+      "options": [
+        "\\(\\frac{1}{\\sqrt{2}}\\)",
+        "\\(\\frac{1}{16}\\)",
+        "\\(\\frac{1}{8}\\)",
+        "\\(\\frac{1}{4\\sqrt{2}}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\sqrt x = \\frac12\\) gives \\(x = \\frac14\\), so \\(x^2 = \\frac{1}{16}\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Square twice in total, not once: the given is already a square root, so reaching \\(x^2\\) means squaring the given and then squaring again."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q2_08",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 8,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "In right-angled and isosceles triangle ABC (AB = BC) a semicircle is inscribed of which DE is its diameter.\nD and E are the midpoints of sides AB and BC respectively.\nGiven: The area of the semicircle (the dark area) is \\(\\pi\\) cm².\n\nWhat is the area of triangle ABC (in cm²)?",
+      "options": [
+        "15",
+        "12",
+        "10",
+        "8"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/2021_s2_q08.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2021_autumn_q2_09",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 9,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "Elad multiplied the average of two numbers by the difference between them and obtained 8.\n\nWhat is the difference (in absolute value) between the <b>squares</b> of the numbers?",
+      "options": [
+        "20",
+        "16",
+        "12",
+        "8"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "The average times the difference is \\(\\dfrac{a+b}{2}(a-b) = \\dfrac{a^2-b^2}{2}\\). That equals 8, so the difference of the squares is 16."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Build a pair that fits: \\(a=5, b=3\\) has average 4 and difference 2, whose product is 8 as required. Then \\(a^2-b^2 = 25-9 = 16\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The question is the difference-of-squares identity stated in words. Recognising \\(\\frac{a+b}{2}\\) and \\(a-b\\) as half the two factors is the whole problem."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q2_10",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 10,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure is a cube whose edge length is 2 cm.\nGiven: AB = BC , DE = EF\n\nWhat is the volume of the dark prism (in cm³)?",
+      "options": [
+        "\\(2\\sqrt{5}\\)",
+        "2",
+        "\\(3\\sqrt{2}\\)",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/2021_s2_q10.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2021_autumn_q2_11",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 11,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "hard",
+      "stem": "On a certain stretch of road there are 20 cars.\nIn 90% of the cars there is an air conditioner.\nIn 60% of the cars exactly 3 people are sitting, and in the rest of the cars only one person is sitting.\n\nHow many people, <b>at the very least</b>, are sitting in the cars in which there is an air conditioner?",
+      "options": [
+        "38",
+        "39",
+        "40",
+        "42"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "18 cars have air conditioning and 12 cars hold 3 people, so 8 hold 1. To make the total as small as possible, put as many of the 1-person cars inside the air-conditioned set as you can &mdash; all 8. <br><br>That leaves 10 air-conditioned cars holding 3 each: \\(30 + 8 = 38\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "&ldquo;At the very least&rdquo; means you choose the overlap, subject to the counts. The question is an optimisation, not a calculation."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q2_12",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 12,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Geometric Comprehension",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure is pentagon ABCDE and two of its diagonals.\nInbar found all the quadrilaterals in the figure.\n\nHow many quadrilaterals did Inbar find?\n(by \"quadrilateral\" what is meant is a simple quadrilateral, that is, whose sides do <b>not</b> intersect one another)",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/2021_s2_q12.png"
+      ],
+      "sub_category_id": "geometric_comprehension"
+    },
+    {
+      "id": "2021_autumn_q2_13",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 13,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Geometric Comprehension",
+      "difficulty": "hard",
+      "stem": "What is the smallest number of <b>whole</b> rectangles whose side lengths are 1 cm and 10 cm, that are needed in order to completely hide the isosceles trapezoid in the figure?",
+      "options": [
+        "8",
+        "7",
+        "5",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/2021_s2_q13.png"
+      ],
+      "sub_category_id": "geometric_comprehension"
+    },
+    {
+      "id": "2021_autumn_q2_14",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 14,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "\\(M = N^2 \\cdot K\\)\nGiven: N is divisible by 3 without a remainder, and K is even.\n\nWhat is the <b>greatest</b> number by which M is divisible with certainty without a remainder?",
+      "options": [
+        "9",
+        "12",
+        "18",
+        "36"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Track the prime factors. \\(N\\) divisible by 3 makes \\(N^2\\) divisible by \\(3^2 = 9\\); \\(K\\) even contributes a 2. So \\(M = N^2 K\\) is guaranteed \\(9 \\times 2 = 18\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Not 36: that would need two factors of 2, and \\(K\\) is only guaranteed one. Take \\(N=3,\\ K=2\\), giving \\(M=18\\) exactly &mdash; which also proves 18 is the most you can claim."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q2_15",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 15,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "hard",
+      "stem": "Given: | x + y | < | x – y |\n\nWhich of the following expressions is <b>necessarily</b> negative?",
+      "options": [
+        "y",
+        "x · y",
+        "x + y",
+        "x – y"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(|x+y|<|x-y|\\) says the sum cancels more than the difference does, and cancellation on adding happens exactly when the two numbers have opposite signs. Opposite signs means the product is negative."
+        },
+        {
+          "kind": "algebra",
+          "text": "Both sides are non-negative, so squaring is safe: \\(x^2+2xy+y^2<x^2-2xy+y^2\\) reduces to \\(4xy<0\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(x=3,\\ y=-1\\) satisfies the given and makes \\(y\\), \\(x+y\\) and \\(x-y\\) come out negative, positive and positive. Swapping to \\(x=-3,\\ y=1\\) flips all three but leaves \\(xy\\) negative — which is why only (2) survives."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q2_16",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 16,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "In the 7th grade there are 16 girls and 15 boys, in the 8th grade there are 17 girls and 16 boys, and in the 9th grade there are 18 girls and 17 boys.\n\nIn which grade is the relative proportion of the girls in the grade (out of all the boys and girls in the grade together) the greatest?",
+      "options": [
+        "in the 7th grade",
+        "in the 8th grade",
+        "in the 9th grade",
+        "in all three grades there is the same relative proportion of girls"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "check-answers",
+          "text": "Compare \\(\\frac{16}{31}\\), \\(\\frac{17}{33}\\), \\(\\frac{18}{35}\\). Each is just over a half; the smallest denominator relative to its numerator wins."
+        },
+        {
+          "kind": "understanding",
+          "text": "Each grade has one more girl than boy, so each ratio is \\(\\frac{n}{2n-1}\\) &mdash; and that <b>decreases</b> as \\(n\\) grows. The 7th grade, with the fewest pupils, has the highest proportion."
+        }
+      ]
+    },
+    {
+      "id": "2021_autumn_q2_17",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 17,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "graph_comprehension",
+      "stem": "The students of which of the classes required the most months until at least half of them knew how to read?",
+      "options": [
+        "The class that studied with method A",
+        "The class that studied with method B",
+        "The class that studied with method C",
+        "The class that studied with method D"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/2021_s2_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_autumn_q2_18",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 18,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "graph_comprehension",
+      "stem": "In retrospect it became clear to the conductors of the study that at the end of one of the months a test examining knowledge of history was given by mistake to the students of one of the classes instead of a test examining reading ability, and therefore no student in this class received a grade of \"pass\" on this test.\n\nOf the following months, it is not possible that this test was given at the end of the month of -",
+      "options": [
+        "September",
+        "October",
+        "February",
+        "June"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/2021_s2_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_autumn_q2_19",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 19,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "graph_comprehension",
+      "stem": "In which of the classes did the most students receive a grade of \"pass\" on a single test?",
+      "options": [
+        "in the class that studied with method A",
+        "in the class that studied with method B",
+        "in the class that studied with method C",
+        "in the class that studied with method D"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/2021_s2_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2021_autumn_q2_20",
+      "source_exam": "psychometric_autumn_2021",
+      "source_question_number": 20,
+      "section_id": "2021_autumn_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "graph_comprehension",
+      "stem": "How many students in the class that studied with method B were tested on all ten tests during the year?",
+      "options": [
+        "10",
+        "2",
+        "6",
+        "22"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/2021_s2_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    }
+  ]
+}

@@ -1,0 +1,1125 @@
+{
+  "source_exam": "psychometric_autumn_2025",
+  "source_exam_label": "Autumn 2025",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_autumn_2025_acc (1).pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 59 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "table_comprehension_lead": "Study the table below, then answer the four questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2025_autumn_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/a2025_s1_graph.png",
+          "secondary_figure_path": "figures/a2025_s1_table.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\nThe graph below describes a circular hiking trail in the mountains.  The letters A through I indicate points along the trail.  Each point on the trail is marked with a circle next to which its elevation (above sea level) in meters appears.  Some of the points are overnight points (see key).  The length of the section of the trail connecting each two points is indicated in the graph (in km).\nThe table below the graph presents the estimated walking times (in hours) between each two adjacent points.  The upper row presents the estimated walking times when walking <b>clockwise</b>, and the lower row – when walking <b>counterclockwise</b>.\n\nFor example: Point B, which is at an elevation of 1,500 meters, is an overnight point.  The length of the section of the trail connecting it to point A is 7 km.  The estimated walking time from point B to point A, <b>counterclockwise</b>, is 2.5 hours."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    },
+    {
+      "section_id": "2025_autumn_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-7)",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "type": "table_comprehension",
+          "header": "Table Comprehension (Questions 8-12)",
+          "from": 8,
+          "to": 12,
+          "figure_path": "figures/a2025_s2_table.png",
+          "intro": "Study the table below, then answer the five questions that follow.\n\nThe table presents data on the 8 printing jobs that were done at a print shop on a certain day between 5:00 and 15:40.  The jobs are marked with the letters A-H.  In each printing job an item of a certain type was printed in some number of copies.\nFor each printing job the table presents: the type of item that was printed (book, journal, poster or booklet), the total number of pages that was printed, the start time of the job, the end time of the job and the number of breaks during the printing (the printing presses do not necessarily print continuously and there may be breaks in their operation).  In addition, the last column of the table records the degree of urgency of the job (low, medium, high or very high).\nDuring the period of time that elapsed from the start time of the job until the end time of the job (including the breaks), the job is in “printing processes”."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2025_autumn_q1_01",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 1,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "easy",
+      "stem": "a and b are consecutive numbers  (a < b).\n\nGiven:  4a = 3b\n\nb = ?",
+      "options": [
+        "9",
+        "8",
+        "6",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Consecutive with \\(a<b\\) means \\(b = a+1\\), so \\(4a = 3a+3\\) and \\(a = 3\\), giving \\(b = 4\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Test each option as \\(b\\): \\(b=4\\) needs \\(a=3\\), and \\(4 \\times 3 = 3 \\times 4\\) ✓. The others fail immediately."
+        }
+      ]
+    },
+    {
+      "id": "2025_autumn_q1_02",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 2,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Geometric Comprehension",
+      "difficulty": "medium",
+      "stem": "Which of the following polygons is a polygon whose perimeter can be calculated, if only its area is given?",
+      "options": [
+        "A rectangle",
+        "An isosceles trapezoid",
+        "A right triangle",
+        "An equilateral triangle"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "geometric_comprehension"
+    },
+    {
+      "id": "2025_autumn_q1_03",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 3,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "medium",
+      "stem": "Efrat wants to enter her room.  She is outside the building, and therefore she needs to open the door of the building, the door of her apartment and the door of the room.  All the doors are locked, and each door has a different key.  Efrat tries to open the doors with the help of the three keys, but she does not remember which of them opens which door.  Efrat does not try to open any door with a key that she already knows does not fit it.\n\nHow many attempts to open a door with a key will Efrat make, <b>at most</b>, until she enters her room (an attempt that succeeds – in which the door opens – is also counted as an attempt)?",
+      "options": [
+        "9",
+        "7",
+        "6",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2025_autumn_q1_04",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 4,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "Dvir and Harel are eating ice cream, each at his own fixed rate.  Dvir's rate of eating is 2 times as much as Harel's rate of eating.\nTogether they finish eating \\(\\frac{1}{4}\\) of a box of ice cream in 10 minutes.\n\nIn how many minutes would Harel finish eating a whole box of ice cream, if he were eating on his own?",
+      "options": [
+        "90",
+        "105",
+        "120",
+        "135"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Together they do \\(\\frac14\\) of a box in 10 minutes, so \\(\\frac{1}{40}\\) a minute. Dvir is twice Harel, so Harel is a third of that: \\(\\frac{1}{120}\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "A full box therefore takes Harel 120 minutes. Splitting a combined rate in the given ratio &mdash; not in half &mdash; is the step the options are built around."
+        }
+      ]
+    },
+    {
+      "id": "2025_autumn_q1_05",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 5,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "medium",
+      "stem": "How many two-digit positive numbers satisfy the following two conditions?\na. The sum of the digits of the number equals 5\nb. The number is prime",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Digit sum 5 gives only 14, 23, 32, 41 and 50. Five candidates, and now test each for primality."
+        },
+        {
+          "kind": "check-answers",
+          "text": "14 and 32 are even, 50 ends in 0, so all three are composite immediately. That leaves 23 ✓ and 41 ✓ &mdash; both prime. Two numbers."
+        }
+      ]
+    },
+    {
+      "id": "2025_autumn_q1_06",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 6,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "medium",
+      "stem": "The letters A, B, C and D represent digits between 1 and 9 (not necessarily different from one another), such that AB, BA and CD are two-digit numbers.\n\nGiven:  AB + BA = CD\n\nC – D = ?",
+      "options": [
+        "1",
+        "0",
+        "-1",
+        "It cannot be determined from the information given"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(\\overline{AB} + \\overline{BA} = (10A+B) + (10B+A) = 11(A+B)\\). So \\(\\overline{CD}\\) is a multiple of 11, and a two-digit multiple of 11 always has equal digits."
+        },
+        {
+          "kind": "understanding",
+          "text": "\\(C = D\\), so \\(C - D = 0\\) &mdash; and it never mattered what \\(A\\) and \\(B\\) actually were. Reversing a two-digit number and adding always gives a multiple of 11; subtracting always gives a multiple of 9."
+        }
+      ]
+    },
+    {
+      "id": "2025_autumn_q1_07",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 7,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "medium",
+      "stem": "For every point (x,y) in a coordinate system, the operation $ is defined as:  $((x,y)) = (y,x)\nA triangle is drawn in the coordinate system before you.\n\nWhat will be obtained if we apply the operation $ to the points in its area?",
+      "options": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/a2025_s1_q07.png"
+      ],
+      "option_figure_paths": [
+        "figures/a2025_s1_q07_opt1.png",
+        "figures/a2025_s1_q07_opt2.png",
+        "figures/a2025_s1_q07_opt3.png",
+        "figures/a2025_s1_q07_opt4.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2025_autumn_q1_08",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 8,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Lines & Angles",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure there are three straight lines, each two of which intersect at a different point.\nGiven:  β = 2α\n\nBased on this information, what can be known with certainty about the relation between angle γ and angle α?",
+      "options": [
+        "γ < α",
+        "γ > α",
+        "γ = α",
+        "It is impossible to know which of the above relations is the relation between the two angles"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/a2025_s1_q08.png"
+      ],
+      "sub_category_id": "lines_angles"
+    },
+    {
+      "id": "2025_autumn_q1_09",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 9,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "easy",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "Michal is at one of the points marked in the graph and sees that she has 3.5 estimated walking hours left until one of the nearby overnight points.\n\nAt which point is she?",
+      "options": [
+        "A",
+        "F",
+        "H",
+        "I"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_autumn_q1_10",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 10,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "Guy plans to walk for 8 <b>hours</b> at most (according to the estimated walking times presented in the graph) and to remain the whole time below an elevation of 2,000 meters.\n\nWhich of the following routes could suit Guy's plan?",
+      "options": [
+        "From A to C <b>clockwise</b>",
+        "From B to D <b>clockwise</b>",
+        "From A to H <b>counterclockwise</b>",
+        "From B to I <b>counterclockwise</b>"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_autumn_q1_11",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 11,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "Yaela plans a hike from the marked point that is the highest on the trail to the marked point that is the lowest on it.  She chooses to walk in the direction in which the length of the way in kilometers is shorter.\n\nWhat is the estimated walking time (in hours) on the way that Yaela chose?",
+      "options": [
+        "8",
+        "10",
+        "10.75",
+        "11.25"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_autumn_q1_12",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 12,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "Lilach walked on the trail for 4 days from point H to point B, <b>counterclockwise</b>.  At night she slept at the overnight points that were along her way.\n\nWhich of the following graphs is the most suitable for presenting the number of kilometers that she walked each day?",
+      "options": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "option_figure_paths": [
+        "figures/a2025_s1_q12_opt1.png",
+        "figures/a2025_s1_q12_opt2.png",
+        "figures/a2025_s1_q12_opt3.png",
+        "figures/a2025_s1_q12_opt4.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_autumn_q1_13",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 13,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure ABCD is a trapezoid (AD||BC).\n\nBased on this information and the information in the figure,\nwhat is the ratio between the area of triangle ABD and the area of triangle DBC?",
+      "options": [
+        "a : b",
+        "\\(a : b^2\\)",
+        "\\(a^2 : b^2\\)",
+        "It cannot be determined from the information given"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/a2025_s1_q13.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2025_autumn_q1_14",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 14,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "Roi registered for 6 courses, in each of which there are 5 meetings.\nRoi failed every course in which he participated in 2 meetings or fewer,\nand passed every course in which he participated in 3 meetings or more.\nIt is known that Roi failed 3 courses and passed 3 courses.\n\nRoi participated in at least ______ meetings and at most ______ meetings.",
+      "options": [
+        "9 ; 21",
+        "18 ; 21",
+        "9 ; 30",
+        "18 ; 30"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "The three failed courses contribute between 0 and 2 meetings each; the three passed contribute between 3 and 5. So the minimum is \\(0+9 = 9\\) and the maximum is \\(6+15 = 21\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Every wrong option gets one end right and one wrong, so both ends have to be computed &mdash; the minimum is not \\(3 \\times 3 + 3 \\times 3\\), because a failed course can have zero meetings."
+        }
+      ]
+    },
+    {
+      "id": "2025_autumn_q1_15",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 15,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Keren, Shlomit and Tamara divided a pile of coins among themselves.\n\nGiven:  \\(\\dfrac{\\text{the number of coins that Keren received}}{\\text{the number of coins that Tamara received}} = \\dfrac{5}{9}\\)\n\n\\(\\dfrac{\\text{the number of coins that Shlomit received}}{\\text{the number of coins that Tamara received}} = \\dfrac{5}{12}\\)\n\n\\(\\dfrac{\\text{the number of coins that Keren and Shlomit received together}}{\\text{the number of coins that Tamara received}} = ?\\)",
+      "options": [
+        "\\(\\frac{2}{3}\\)",
+        "\\(\\frac{10}{17}\\)",
+        "\\(\\frac{25}{108}\\)",
+        "\\(\\frac{35}{36}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Chain the ratios so the shared name cancels, exactly as with \\(p:q:r\\) chains. The product of the two given ratios is \\(\\frac{35}{36}\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Build one consistent set of counts from the two ratios and read the answer off directly &mdash; slower, but it works when the chaining direction is hard to see."
+        }
+      ]
+    },
+    {
+      "id": "2025_autumn_q1_16",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 16,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "Given:  0 < a  ,  \\(\\frac{21-3a}{2a+1} < 0\\)\n\nWhich of the following inequalities is necessarily true?",
+      "options": [
+        "\\(0 < a < \\frac{1}{2}\\)",
+        "\\(\\frac{1}{2} < a < 4\\)",
+        "4 < a < 7",
+        "7 < a"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(a\\) is positive, so \\(2a+1\\) is positive and the sign of the quotient is the sign of the numerator alone. \\(21-3a<0\\) gives \\(a>7\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "One known sign collapses the whole sign analysis into a single inequality. Without the given \\(0<a\\) this would need a two-case split; with it there is only one case."
+        },
+        {
+          "kind": "check-answers",
+          "text": "The only place the quotient can change sign, given \\(a>0\\), is where the numerator vanishes — at \\(a=7\\). Only one option starts exactly there."
+        }
+      ]
+    },
+    {
+      "id": "2025_autumn_q1_17",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 17,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Factorials",
+      "difficulty": "medium",
+      "stem": "For every positive integer k,\nthe expression  \\((k!) \\cdot 2^k\\)  is equal to the product of all the –",
+      "options": [
+        "integers from 1 to 2k",
+        "even numbers from 2 to 2k",
+        "integers from 1 to k!",
+        "even numbers from 2 to k!"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "factorials",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Write \\(k!\\cdot2^k\\) as \\((1\\cdot2\\cdot3\\cdots k)\\) with one factor of 2 handed to each term: \\((1\\cdot2)(2\\cdot2)(3\\cdot2)\\cdots(k\\cdot2)\\), which is \\(2\\cdot4\\cdot6\\cdots2k\\) &mdash; every even number up to \\(2k\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(k=3\\): \\(3!\\cdot2^3=6\\cdot8=48\\). Now check the options. Integers 1 to 6 give 720 ✗. Even numbers 2 to 6 give \\(2\\cdot4\\cdot6=48\\) ✓. One small value settles it."
+        }
+      ]
+    },
+    {
+      "id": "2025_autumn_q1_18",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 18,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "medium",
+      "stem": "The average height of Orit, Batya and Gili is 4 cm lower than the average height of all the children in their class.  Orit's height is 6 cm lower than the average height in the class.\n\nThe average height of Batya and Gili is ______ the average height in the class.",
+      "options": [
+        "higher by 1 cm than",
+        "lower by 2 cm than",
+        "lower by 3 cm than",
+        "no different from"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2025_autumn_q1_19",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 19,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure there is a circle whose center is O and whose radius is r, and a rectangle ABCD.\nSide BC is tangent to the circle at point E.\nStraight line OD intersects side BC at point F.\n\nGiven:  EC = CD = 2r\n\nBased on this information,\nEF = ?",
+      "options": [
+        "\\(\\frac{r}{\\sqrt{2}}\\)",
+        "\\(\\frac{r}{2}\\)",
+        "\\(\\frac{2r}{3}\\)",
+        "\\(\\frac{r}{\\sqrt{3}}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/a2025_s1_q19.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2025_autumn_q1_20",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 20,
+      "section_id": "2025_autumn_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "\\(\\frac{3-\\sqrt{3}}{3+\\sqrt{3}} + \\frac{3+\\sqrt{3}}{3-\\sqrt{3}} = ?\\)",
+      "options": [
+        "1",
+        "\\(\\sqrt{2}\\)",
+        "\\(\\sqrt{3}\\)",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Over the common denominator \\((3+\\sqrt3)(3-\\sqrt3) = 6\\), the numerator is \\((3-\\sqrt3)^2+(3+\\sqrt3)^2 = 24\\), since the cross terms cancel. So the value is 4."
+        },
+        {
+          "kind": "understanding",
+          "text": "A fraction plus its own reciprocal: the surds are arranged to disappear, which is why the answer is a plain integer."
+        }
+      ]
+    },
+    {
+      "id": "2025_autumn_q2_01",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 1,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "easy",
+      "stem": "a is any negative number.\n\na + | a | = ?",
+      "options": [
+        "a",
+        "2a",
+        "-2a",
+        "0"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "For a negative number, \\(|a|=-a\\). So \\(a+|a|\\) is \\(a-a\\), which is 0."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(a=-5\\): \\(-5+5=0\\). Any negative value gives the same thing."
+        }
+      ]
+    },
+    {
+      "id": "2025_autumn_q2_02",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 2,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "In a soccer game the two teams scored 20 goals altogether.\nGiven:  – Aviad himself scored half of the number of goals that his team scored.\n– The number of goals that Aviad scored is smaller by 2 than the number of goals that the opposing team scored.\n\nHow many goals did Aviad's team score in the game?",
+      "options": [
+        "10",
+        "12",
+        "14",
+        "16"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Let \\(T\\) be Aviad's team's goals. Aviad scored \\(\\frac T2\\), and the opposing team scored \\(20 - T\\). The second condition gives \\(\\frac T2 = (20-T) - 2\\), so \\(\\frac{3T}{2} = 18\\) and \\(T = 12\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(T=12\\): Aviad scored 6, the opposition scored 8, and \\(6 = 8-2\\) ✓. Each option takes one line to check."
+        }
+      ]
+    },
+    {
+      "id": "2025_autumn_q2_03",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 3,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Nivi has a box with 200 cubes in it.  70% of the cubes are purple, and 30% are yellow.\nNivi received another 40 purple cubes and added them to the box.\n\nWhat is the percentage of the <b>yellow</b> cubes in the box now?",
+      "options": [
+        "\\(17\\frac{1}{2}\\)%",
+        "20%",
+        "25%",
+        "\\(33\\frac{1}{3}\\)%"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "The yellow count never changes: \\(30\\%\\) of 200 is 60. Only the total moves, from 200 to 240. So yellow is \\(\\frac{60}{240} = 25\\%\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Adding purple cubes cannot change how many yellow there are &mdash; it changes the base. Watching which of the two numbers moves is the whole question."
+        }
+      ]
+    },
+    {
+      "id": "2025_autumn_q2_04",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 4,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "medium",
+      "stem": "The average of the <b>heights</b> of the four triangles in the figure is 5 cm.\n\nBased on this information and the information in the figure,\nwhat is the sum of the areas of the <b>four</b> triangles (in cm²)?",
+      "options": [
+        "10a",
+        "12a",
+        "16a",
+        "It cannot be determined from the information given"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/a2025_s2_q04.png"
+      ],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2025_autumn_q2_05",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 5,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure ABCD is a rhombus.\n\nBased on this information and the information in the figure, what is the size of the dark area (in cm²)?",
+      "options": [
+        "1",
+        "\\(2\\sqrt{2}\\)",
+        "\\(2 - \\sqrt{2}\\)",
+        "\\(\\sqrt{2} - 1\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/a2025_s2_q05.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2025_autumn_q2_06",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 6,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Polygons",
+      "difficulty": "easy",
+      "stem": "What is the difference between the sum of the interior angles in a polygon with 21 sides and the sum of the interior angles in a polygon with 17 sides (in degrees)?",
+      "options": [
+        "180",
+        "360",
+        "720",
+        "1,440"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "polygons"
+    },
+    {
+      "id": "2025_autumn_q2_07",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 7,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "15 empty jars that are numbered from 1 to 15 are arranged in a row according to the order of their numbers.\nRomi placed one coin in each jar, then she placed a coin in each jar whose number is divisible by 2, then – in each jar whose number is divisible by 3, and so on up to 15.\n\nThe number of coins in jar 14 ______ in jar 2.",
+      "options": [
+        "is the same as their number",
+        "is twice as much as their number",
+        "is three times as much as their number",
+        "is four times as much as their number"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Jar \\(n\\) receives one coin for every number that divides \\(n\\) &mdash; so the coins in jar \\(n\\) equal its <b>number of divisors</b>."
+        },
+        {
+          "kind": "structure",
+          "text": "Summing divisor counts from 1 to 15 gives 1, 2, 2, 3, 2, 4, 2, 4, 3, 4, 2, 6, 2, 4, 4 &mdash; a total of 45, which is three times the 15 jars."
+        }
+      ]
+    },
+    {
+      "id": "2025_autumn_q2_08",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 8,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "easy",
+      "cluster": "Table Comprehension (Questions 8-12)",
+      "stem": "In which of the following pairs of jobs did the job whose degree of urgency is higher begin before the other?",
+      "options": [
+        "B and C",
+        "D and E",
+        "E and F",
+        "G and H"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_autumn_q2_09",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 9,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 8-12)",
+      "stem": "At which of the following times was the number of jobs that were in printing processes the largest?",
+      "options": [
+        "8:30",
+        "10:35",
+        "11:25",
+        "12:20"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_autumn_q2_10",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 10,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 8-12)",
+      "stem": "In the booklet that was printed in job G there are exactly 12 pages.\nThe number of copies of the booklet that was printed in job G equals the number of copies of the book that was printed in job A.\n\nHow many pages are there in the book that was printed in job A?",
+      "options": [
+        "90",
+        "150",
+        "180",
+        "300"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_autumn_q2_11",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 11,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 8-12)",
+      "stem": "It is known that for every <b>type</b> of item that is printed at the print shop the printing rate is fixed (not including the breaks).\n\nFor which type of item is it <b>not</b> possible to know, according to the table, its exact printing rate?",
+      "options": [
+        "Book",
+        "Journal",
+        "Poster",
+        "Booklet"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_autumn_q2_12",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 12,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 8-12)",
+      "stem": "For ______ of the hours described in the table some journal was in printing processes.",
+      "options": [
+        "5",
+        "\\(4\\frac{3}{4}\\)",
+        "\\(4\\frac{1}{2}\\)",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2025_autumn_q2_13",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 13,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Defined Operations",
+      "difficulty": "medium",
+      "stem": "For every positive number x the operation $ is defined as:  \\(\\$(x) = 2x^{-2}\\)\n\n\\(\\$\\big(\\$(\\sqrt{2})\\big) = ?\\)",
+      "options": [
+        "\\(\\frac{1}{\\sqrt{2}}\\)",
+        "2",
+        "\\(\\sqrt{2}\\)",
+        "\\(\\frac{1}{2}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "defined_operations"
+    },
+    {
+      "id": "2025_autumn_q2_14",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 14,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "medium",
+      "stem": "ABCDEFGH is a cube (see figure).\n\n∡ABG = ?",
+      "options": [
+        "60°",
+        "72°",
+        "90°",
+        "120°"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/a2025_s2_q14.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2025_autumn_q2_15",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 15,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "medium",
+      "stem": "a and b are any two numbers.\n\nWhich of the following expressions is <b>not</b> necessarily equal to the average of a and b?",
+      "options": [
+        "the average of (a + 1) and (b – 1)",
+        "half of the average of 2a and 2b",
+        "the average of a, b and (a + b)",
+        "the average of (-a), (-b), 3a and 3b"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2025_autumn_q2_16",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 16,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "medium",
+      "stem": "Alona and Shira are playing a game.  In each round each of them tosses a dice.\nIf the numbers that were obtained are different from one another, they play another round.  Otherwise, the game ends.\n\nWhat is the probability that the game will end after exactly two rounds?",
+      "options": [
+        "\\(\\frac{1}{36}\\)",
+        "\\(\\frac{5}{36}\\)",
+        "\\(\\frac{2}{36^2}\\)",
+        "\\(\\frac{6}{36^2}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2025_autumn_q2_17",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 17,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Given:  4x – 2xy + 3y = 74\n\n\\(\\frac{x}{2} + \\frac{xy}{3} - \\frac{y}{2} = -\\frac{2}{3}\\)\n\nx = ?",
+      "options": [
+        "11",
+        "10",
+        "9",
+        "8"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Multiply the second equation by 6: \\(3x + 2xy - 3y = -4\\). Adding it to the first, the \\(xy\\) and \\(y\\) terms cancel and \\(7x = 70\\), so \\(x = 10\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Two equations containing an \\(xy\\) term look nonlinear and frightening. Clearing the fractions first makes the cross terms opposites, and addition removes them &mdash; scaling to make terms cancel is the move."
+        }
+      ]
+    },
+    {
+      "id": "2025_autumn_q2_18",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 18,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "x and y are positive integers that are divisible by 3.\n\nWhat is the largest number that the sum (x+y) is certainly divisible by?",
+      "options": [
+        "6",
+        "12",
+        "3",
+        "9"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(x = 3a\\) and \\(y = 3b\\), so \\(x + y = 3(a+b)\\) &mdash; always a multiple of 3, and that is all that is forced."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Two cases kill the rest. \\(x=y=3\\) gives 6, which is not divisible by 9 or 12; \\(x=3,\\ y=6\\) gives 9, which is not divisible by 6. Only 3 survives both."
+        }
+      ]
+    },
+    {
+      "id": "2025_autumn_q2_19",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 19,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "How many circles different from one another whose circumference (in cm) is a positive integer and whose area (in cm²) is also a positive integer exist?",
+      "options": [
+        "1",
+        "2",
+        "Infinity",
+        "0"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2025_autumn_q2_20",
+      "source_exam": "psychometric_autumn_2025",
+      "source_question_number": 20,
+      "section_id": "2025_autumn_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Motion & Speed",
+      "difficulty": "medium",
+      "stem": "Itzhak travels at a fixed speed of 70 kph.\nRut travels at a fixed speed of 105 kph.\nRut travels y km in a third of the time in which Itzhak travels x km.\n\nWhich of the following statements is true?",
+      "options": [
+        "2y = x",
+        "y = 2x",
+        "3y = x",
+        "y = 3x"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "motion_speed",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Itzhak's time for \\(x\\) km is \\(\\frac x{70}\\). Rut travels for \\(\\frac{x}{210}\\) hours at 105, covering \\(y = \\frac{105x}{210} = \\frac x2\\), so \\(2y = x\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(x = 210\\): Itzhak needs 3 hours, so Rut travels for 1 hour and covers 105. \\(2(105) = 210\\) ✓. Choosing \\(x\\) as a multiple of both 70 and 3 makes every number whole."
+        }
+      ]
+    }
+  ]
+}

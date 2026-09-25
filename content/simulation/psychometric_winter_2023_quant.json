@@ -1,0 +1,1114 @@
+{
+  "source_exam": "psychometric_winter_2023",
+  "source_exam_label": "Winter 2023",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_winter_2023_acc 2.pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 60 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "table_comprehension_lead": "Study the table below, then answer the four questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2023_winter_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/w2023_s1_graph.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\n8 players competed in a chess tournament, marked with the letters A-H.  The tournament had three stages, each of which is represented in the graph by a circle.\nThe sequence of games of each player in the tournament is presented by means of squares that are connected by arrows.  The filling of each square indicates the duration of the game (see key).  The first game of each player is represented by the square adjacent to the player's letter.  From this square an arrow comes out that points to the next game, and so on.  If a game in the tournament ended in a draw, the two players played another game against each other at the same stage.  If a game ended in a decision, the winner advanced to the next stage in the tournament, and the loser left the tournament.\n\nFor example, in the first stage of the tournament player <b>G</b> played one game, and this game lasted more than three hours.  It can be deduced that at this stage he played against player <b>D</b>, since player <b>D</b> is the only one who also played only one game in the first stage that lasted more than 3 hours."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    },
+    {
+      "section_id": "2023_winter_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-15)",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "type": "table_comprehension",
+          "header": "Table Comprehension (Questions 16-20)",
+          "from": 16,
+          "to": 20,
+          "figure_path": "figures/w2023_s2_table.png",
+          "intro": "Study the table below, then answer the five questions that follow.\n\nThe table presents data that were recorded at the end of the year 2020, on the fruits that are infested with pests in a certain orchard of plum trees.\nThe plum trees in the orchard are planted in 7 plots, which are marked in the table with the letters A to G.  Inside the plots the trees are planted in rows.\nThe number of rows in each plot is indicated in the table beneath the name of the plot.\nIn each row in the orchard 4 trees are planted, one tree from each of four plum varieties: <b>A</b>, <b>B</b>, <b>C</b> and <b>D</b>.\nFor each variety of plums, the <b>percentage of the fruits</b> that are infested with pests in each plot is written in the table.\nThe plum trees in each of the plots were planted at the end of the year of planting indicated at the bottom of the table.\n\nNote:  In all the questions assume that each one of the trees in the orchard has an equal number of plums.\n\nFor example: The trees in plot <b>D</b> were planted at the end of the year 2005.  In this plot there are 4 rows of trees (in each row 4 plum trees, one from each variety, and altogether there are 16 plum trees in the plot).  25% of the plums of variety <b>B</b> in this plot are infested with pests."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2023_winter_q1_01",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 1,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "If y candies are divided equally among 2 children, one candy is left over.\nIf y candies are divided equally among 3 children, one candy is left over.\nIf y candies are divided equally among 4 children, one candy is left over.\n\ny can be equal to –",
+      "options": [
+        "7",
+        "11",
+        "13",
+        "17"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Remainder 1 on division by 2, 3 and 4 means \\(y-1\\) is divisible by all three &mdash; that is, by their LCM, 12. So \\(y = 12k + 1\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "The candidates are 13, 25, 37, and only 13 is on the list. Note that checking all three conditions separately works too, but the LCM step turns three tests into one."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q1_02",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 2,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "easy",
+      "stem": "Given:  x = 2y\n\n\\((x - y)^2 = ?\\)",
+      "options": [
+        "1",
+        "\\(y^2\\)",
+        "\\(4y^2\\)",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(x = 2y\\) gives \\(x - y = y\\), so \\((x-y)^2 = y^2\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(y=3\\), so \\(x=6\\): \\((6-3)^2 = 9\\), which is \\(y^2\\) and not \\(4y^2 = 36\\)."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q1_03",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 3,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "medium",
+      "stem": "Liat built a tower of cubes in the following way: she placed a first cube with a volume of 125 cm³, above the first cube she placed a second cube <b>whose edge</b> is 1 cm smaller than one edge of the first cube, above the second cube she placed a third cube whose edge is 1 cm smaller than one edge of the second cube, and so on.\n\nWhat is the volume of the <b>fourth</b> cube that Liat placed (in cm³)?",
+      "options": [
+        "8",
+        "27",
+        "64",
+        "81"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2023_winter_q1_04",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 4,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "medium",
+      "stem": "w, x, y and z are four positive numbers that are different from each other.\n\nGiven:  m is the average of w and x .\n     5m is the average of y and z .\n\nWhat is the average of w, x, y and z ?",
+      "options": [
+        "\\(\\frac{3}{2}m\\)",
+        "\\(\\frac{5}{2}m\\)",
+        "3m",
+        "6m"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2023_winter_q1_05",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 5,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "Given:  \\(a^{2x} = 8\\)  ,  0 < a\n\n\\(a^x = ?\\)",
+      "options": [
+        "\\(\\sqrt{2}\\)",
+        "2",
+        "\\(2\\sqrt{2}\\)",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(a^{2x} = \\left(a^x\\right)^2 = 8\\), so \\(a^x = \\sqrt8 = 2\\sqrt2\\), taking the positive root since \\(a>0\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Square each option: \\(2^2=4\\), \\(\\left(2\\sqrt2\\right)^2 = 8\\) ✓. Squaring four options is faster than manipulating the given."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q1_06",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 6,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "medium",
+      "stem": "x, y and z are integers that are different from zero:  x and y are odd, and z is even.\n\nWhich of the following numbers is necessarily <b>not</b> an integer?",
+      "options": [
+        "\\(\\frac{x + z}{y}\\)",
+        "\\(\\frac{x + y + z}{z}\\)",
+        "\\(\\frac{zx}{y}\\)",
+        "\\(\\frac{xy + z}{z}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Track parity through each option. \\(xy\\) is odd times odd, so odd; \\(xy + z\\) is odd plus even, so odd. An odd number divided by an even number can never be an integer, because the numerator has no factor of 2 to give."
+        },
+        {
+          "kind": "check-answers",
+          "text": "The others can all come out whole: \\(\\frac{x+z}y\\) at \\(x=1,z=2,y=3\\) is 1 ✓; \\(\\frac{x+y+z}{z}\\) at \\(x=y=1,z=2\\) is 2 ✓; \\(\\frac{zx}y\\) at \\(z=2,x=3,y=1\\) is 6 ✓."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q1_07",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 7,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows parallelogram ABCD.\nGiven:  Triangle FED coincides with triangle CED .\nThe area of parallelogram ABCD is 8 cm².\n\nBased on this information and the information in the figure,\nwhat is the area of the dark triangle FAD (in cm²)?",
+      "options": [
+        "6",
+        "\\(2\\sqrt{2}\\)",
+        "\\(4\\sqrt{2}\\)",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/w2023_s1_q07.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2023_winter_q1_08",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 8,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "A car travels at a constant speed of 60 kph on a circular course whose circumference is 80 km.\n\nWhat is the size of the central angle that subtends the arc that the car passes on a drive of 10 minutes?",
+      "options": [
+        "36°",
+        "45°",
+        "60°",
+        "72°"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2023_winter_q1_09",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 9,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "Which of the following players finished the largest number of games in a draw?",
+      "options": [
+        "A",
+        "E",
+        "F",
+        "H"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_winter_q1_10",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 10,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "How long did the game last in which player E lost?",
+      "options": [
+        "Less than an hour",
+        "More than an hour and less than two hours",
+        "More than two hours and less than three hours",
+        "More than three hours"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_winter_q1_11",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 11,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "One of the players who was eliminated in the first stage of the tournament won a consolation prize from the organizers of the competition.\nIt is known that the winner of the consolation prize played in the first stage against a player who advanced to the third stage of the tournament.\n\nWhich of the following players can be the winner of the consolation prize?",
+      "options": [
+        "C",
+        "D",
+        "F",
+        "G"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_winter_q1_12",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 12,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "It is known that in the first stage of the tournament all the players began to play at the same moment, and every pair of competing players continued to play consecutively until one of them won.\n\nWhich of the following players finished playing <b>the earliest</b> in the first stage of the tournament?",
+      "options": [
+        "D",
+        "E",
+        "F",
+        "It is impossible to know from the data"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_winter_q1_13",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 13,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "In a jar there are balls in different colours.\n50% of the balls are green, and 25% of the balls are red.\n20% of the balls that are <b>not</b> green are yellow.\n\nWhat percentage of the balls in the jar, at most, are blue?",
+      "options": [
+        "5%",
+        "15%",
+        "20%",
+        "25%"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Green is 50%, so non-green is 50%. Yellow is 20% of that, which is 10% of the jar. With red at 25%, the accounted total is \\(50+25+10 = 85\\%\\), leaving at most 15% blue."
+        },
+        {
+          "kind": "understanding",
+          "text": "The 20% is of the <b>non-green</b> balls, not of the jar. Applying it to the jar gives 5% and option (1)."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q1_14",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 14,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "Around rectangle ABCD whose perimeter is 16 cm, rectangle EFGH was built, in such a way that each one of the sides of rectangle EFGH is 1 cm away from the corresponding side of rectangle ABCD (see figure).\n\nWhat is the perimeter of rectangle EFGH (in cm)?",
+      "options": [
+        "\\(16 + 8\\sqrt{2}\\)",
+        "22",
+        "24",
+        "It cannot be determined from the information given"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/w2023_s1_q14.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2023_winter_q1_15",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 15,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "medium",
+      "stem": "A and B are digits between 1 and 9.\n\nGiven: the two-digit number AB is 9 times as much as the sum of its digits.\n\nHow many values can the number AB have?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\overline{AB} = 9(A+B)\\) gives \\(10A + B = 9A + 9B\\), so \\(A = 8B\\). Only \\(B = 1\\) keeps \\(A\\) a digit, giving \\(A = 8\\) and the number 81."
+        },
+        {
+          "kind": "check-answers",
+          "text": "One value. The relation \\(A = 8B\\) collapses immediately because \\(B = 2\\) would already need \\(A = 16\\)."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q1_16",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 16,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Dror works 100 hours a month, earns 10 dollars an hour, and pays taxes in the amount of 4% of his wages.\nIn a certain month Dror's wage rose to 20 dollars an hour, and likewise the percentage of taxes that he pays rose to 20%.\n\nHow many hours will Dror have to work from now on each month so that his wages, after the payment of taxes, will not change?",
+      "options": [
+        "100",
+        "80",
+        "60",
+        "420"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Now: \\(100 \\times 10 \\times 0.96 = 960\\) after tax. Then: \\(h \\times 20 \\times 0.8 = 16h\\). Setting \\(16h = 960\\) gives \\(h = 60\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Both the wage and the tax rate changed, so the take-home per hour must be recomputed from scratch rather than scaled."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q1_17",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 17,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "hard",
+      "stem": "Eran stood on some stair on a staircase.  Every minute he climbed 10 stairs <b>or</b> descended one stair.  After A minutes Eran stood on a stair adjacent to the stair from which he began to walk on the stairs.\n\nWhich of the following numbers can be equal to A?",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "With \\(u\\) climbs and \\(d\\) descents, \\(u + d = A\\) and \\(10u - d = \\pm1\\). Adding gives \\(11u = A \\pm 1\\), so \\(A\\) must be one away from a multiple of 11."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Of 8, 9, 10 and 11, only \\(A = 10\\) satisfies it: \\(u = 1\\), \\(d = 9\\), net \\(+1\\). <br><br>A divisibility condition hidden inside a rate question."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q1_18",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 18,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "hard",
+      "stem": "In the accompanying coordinate system is a circle whose centre is O and whose radius is \\(\\sqrt{2}\\) , that passes through the origin of the axes.\n\nBased on this information and the information in the figure,\nwhat is the sum of the two dark areas?",
+      "options": [
+        "\\(\\pi - 1\\)",
+        "\\(\\pi - 2\\)",
+        "\\(\\frac{\\pi}{2} - 1\\)",
+        "\\(\\frac{\\pi}{2} - \\sqrt{2}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2023_s1_q18.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2023_winter_q1_19",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 19,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "hard",
+      "stem": "100 boys and 101 girls are standing in a circle and holding hands.\n\nHow many girls, at most, are holding hands with two boys?",
+      "options": [
+        "98",
+        "99",
+        "100",
+        "101"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2023_winter_q1_20",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 20,
+      "section_id": "2023_winter_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "How many numbers between 10 and 12 (not including 10 and 12) have a product with 3 that is an integer?",
+      "options": [
+        "5",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "The question is asking which numbers strictly between 10 and 12 give a whole number when multiplied by 3 &mdash; that is, numbers whose thirds are whole."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Those are the numbers of the form \\(\\frac k3\\) in that range: \\(\\frac{31}3, \\frac{32}3, 11, \\frac{34}3, \\frac{35}3\\) &mdash; five of them, since \\(k\\) runs from 31 to 35."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q2_01",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 1,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "easy",
+      "stem": "\\(\\frac{1}{4} \\cdot \\frac{3}{5} + \\frac{7}{10} + \\frac{1}{2} - \\frac{7}{20} = ?\\)",
+      "options": [
+        "1",
+        "2",
+        "\\(\\frac{3}{20}\\)",
+        "\\(\\frac{4}{5}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Over the common denominator 20: \\(\\frac{3}{20} + \\frac{14}{20} + \\frac{10}{20} - \\frac{7}{20} = \\frac{20}{20} = 1\\). The multiplication is done first."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q2_02",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 2,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "medium",
+      "stem": "A dice is tossed n times.\n\nWhat is the probability that on each one of the tosses a number that is <b>smaller than or equal to</b> 3 will be obtained?",
+      "options": [
+        "\\(\\left(\\frac{1}{6}\\right)^n\\)",
+        "\\(\\left(\\frac{1}{2}\\right)^n\\)",
+        "\\(\\frac{1}{6n}\\)",
+        "\\(\\frac{1}{2n}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2023_winter_q2_03",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 3,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Lines & Angles",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure the straight lines a and b are parallel.\n\nBased on this information and the information in the figure,\nβ = ?",
+      "options": [
+        "α + 35°",
+        "α + 55°",
+        "145° – α",
+        "145° – 2α"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2023_s2_q03.png"
+      ],
+      "sub_category_id": "lines_angles"
+    },
+    {
+      "id": "2023_winter_q2_04",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 4,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "In the last 7 years the population of city <b>A</b> grew by 7,015 people on average per year, whereas the population of city <b>B</b> grew in this period by 6,985 people on average per year.\n7 years ago the populations of the two cities were equal in size.\n\nBy how many people is the population of city <b>A</b> larger than the population of city <b>B</b> today?",
+      "options": [
+        "105",
+        "210",
+        "1,000",
+        "3,500"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Only the <b>difference</b> in growth matters: \\(7015 - 6985 = 30\\) people a year."
+        },
+        {
+          "kind": "algebra",
+          "text": "Over 7 years that is 210. The populations themselves are never needed and are not given."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q2_05",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 5,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Polygons",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows that ABCDEF is a regular hexagon.\nGiven:  CE ⊥ DG\n\n\\(\\dfrac{DG}{\\text{the perimeter of the hexagon}} = ?\\)",
+      "options": [
+        "\\(\\frac{1}{12}\\)",
+        "\\(\\frac{1}{4\\sqrt{3}}\\)",
+        "\\(\\frac{1}{6\\sqrt{2}}\\)",
+        "\\(\\frac{1}{6\\sqrt{3}}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2023_s2_q05.png"
+      ],
+      "sub_category_id": "polygons"
+    },
+    {
+      "id": "2023_winter_q2_06",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 6,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "Given:  \\(|x| \\neq 1\\)\n\n\\(\\frac{x + 1}{x - 1} + \\frac{x - 1}{x + 1} = ?\\)",
+      "options": [
+        "1",
+        "-2",
+        "\\(\\frac{2x^2 + 2}{x^2 - 1}\\)",
+        "\\(\\frac{2x + 1}{x^2 - 1}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Over the common denominator \\((x-1)(x+1) = x^2-1\\), the numerator is \\((x+1)^2 + (x-1)^2 = 2x^2+2\\), so the sum is \\(\\dfrac{2x^2+2}{x^2-1}\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(x=2\\): the expression is \\(3 + \\frac13 = \\frac{10}{3}\\). Option (3) gives \\(\\frac{10}{3}\\); the others give 1, \\(-2\\) and \\(\\frac53\\)."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q2_07",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 7,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "easy",
+      "stem": "A television series is divided into a number of seasons, and in each season there are 13 episodes.\n\nTo which season does the 120th episode in the series belong?",
+      "options": [
+        "9",
+        "10",
+        "11",
+        "12"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Each season holds 13 episodes, so episode 120 sits in season \\(\\lceil 120/13 \\rceil\\). Since \\(13 \\times 9 = 117\\) and \\(13 \\times 10 = 130\\), episode 120 is in season 10."
+        },
+        {
+          "kind": "understanding",
+          "text": "The rounding direction is the whole question: \\(120 \\div 13\\) is about 9.2, and a fraction of a season still counts as that season, so round <i>up</i>, not down."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q2_08",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 8,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "easy",
+      "stem": "How many <b>even</b> divisors does the number 40 have (not including 40 itself)?",
+      "options": [
+        "5",
+        "8",
+        "3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(40 = 2^3 \\cdot 5\\). Its even divisors are exactly the divisors that keep at least one factor of 2: \\(2, 4, 8, 10, 20, 40\\) &mdash; six of them."
+        },
+        {
+          "kind": "understanding",
+          "text": "Excluding 40 itself leaves five. A quicker route: even divisors of \\(N\\) are \\(2 \\times\\) the divisors of \\(N/2\\), and \\(20 = 2^2 \\cdot 5\\) has \\(3 \\times 2 = 6\\) divisors."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q2_09",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 9,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "Avi washes the staircase in 3 hours.\nGuy washes the staircase at a rate that is equal to that of Avi.\nOne day Avi and Guy began to wash the staircase <b>together</b>.  After an hour Avi continued on his own until he finished the washing.\n\nHow many hours did Avi work <b>on his own</b>?",
+      "options": [
+        "1",
+        "2",
+        "\\(\\frac{1}{2}\\)",
+        "\\(1\\frac{1}{2}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Equal rates, so together they work at \\(\\frac23\\) of a staircase an hour. One hour leaves \\(\\frac13\\)."
+        },
+        {
+          "kind": "algebra",
+          "text": "Avi alone does \\(\\frac13\\) an hour, so exactly 1 more hour. Multi-phase accounting with the tidiest possible numbers."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q2_10",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 10,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "Given:  \\(|x| \\cdot (x - 2) \\leq 0\\)\n\nThe exact range in which x is found is –",
+      "options": [
+        "\\(4 \\leq x\\)",
+        "\\(x \\leq 2\\)",
+        "\\(-2 \\leq x \\leq 0\\)",
+        "\\(2 \\leq x \\leq 4\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(|x|\\) is never negative, so it can never supply a minus. The product is at most 0 when \\(x-2\\le0\\), that is \\(x\\le2\\) — and also at \\(x=0\\), where \\(|x|\\) is 0, which is already inside that range."
+        },
+        {
+          "kind": "understanding",
+          "text": "One factor has a fixed sign and the other carries the whole question. Once you see that \\(|x|\\ge0\\) always, the inequality reduces to \\(x-2\\le0\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(x=3\\) gives \\(3\\cdot1>0\\) ✗, and \\(x=-3\\) gives \\(3\\cdot(-5)<0\\) ✓. So negatives are in and values above 2 are out — which only option (2) manages."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q2_11",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 11,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows a cone whose base radius is 1 cm.\nO is the centre of the base of the cone, and AO is the height of the cone.\nThe length of segment AB is equal to the circumference of the base of the cone.\n\nAO = ?",
+      "options": [
+        "\\(\\frac{1}{\\sqrt{4\\pi^2 + 2}}\\) cm",
+        "\\(\\frac{1}{\\sqrt{2\\pi^2 - 4}}\\) cm",
+        "\\(\\sqrt{2\\pi^2 + 2}\\) cm",
+        "\\(\\sqrt{4\\pi^2 - 1}\\) cm"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/w2023_s2_q11.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2023_winter_q2_12",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 12,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Similarity",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure AB || DE.\nThe area of triangle DEC is x cm².\n\nGiven:  \\(DC = \\frac{1}{3}AC\\)\n\nWhat is the size of the <b>dark</b> area (in cm²)?",
+      "options": [
+        "2x",
+        "\\(4x^2\\)",
+        "8x",
+        "\\(9x^2\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/w2023_s2_q12.png"
+      ],
+      "sub_category_id": "similarity"
+    },
+    {
+      "id": "2023_winter_q2_13",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 13,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure ABC is a right isosceles triangle (AB = BC).\nP is a point on side AC.\n\nGiven: the area of triangle PBC is equal to \\(\\frac{2}{3}\\) of the area of triangle ABC.\n\nBased on this information and the information in the figure,\nwhat is the length of segment PC (in cm)?",
+      "options": [
+        "\\(\\frac{2}{3}\\)",
+        "\\(\\frac{3}{\\sqrt{2}}\\)",
+        "\\(\\frac{\\sqrt{3}}{2\\sqrt{2}}\\)",
+        "\\(\\frac{2\\sqrt{2}}{3}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/w2023_s2_q13.png"
+      ],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2023_winter_q2_14",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 14,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Defined Operations",
+      "difficulty": "medium",
+      "stem": "For every number x the operation $(x) is defined thus:  \\($(x) = \\underbrace{16x + 16x + 16x + \\ldots + 16x}_{x \\text{ times}}\\)\n\n$(a) = ?",
+      "options": [
+        "\\(16a^a\\)",
+        "\\(16a^2\\)",
+        "\\(16^a a^a\\)",
+        "\\(16^2 a^2\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "defined_operations"
+    },
+    {
+      "id": "2023_winter_q2_15",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 15,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "The price of bread, milk and cottage cheese is k shekels.\nThe price of bread and cottage cheese is m shekels.\nThe price of bread and milk is n shekels.\n\nWhat is the price of the bread (in shekels)?",
+      "options": [
+        "k + n – m",
+        "m – (k + n)",
+        "k – (m + n)",
+        "m + n – k"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Add the last two: \\((B+C) + (B+M) = m+n\\), which is \\(B + (B+M+C) = B + k\\). So \\(B = m+n-k\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Give the three items values &mdash; bread 3, milk 4, cheese 5 &mdash; so \\(k=12\\), \\(m=8\\), \\(n=7\\). Then \\(m+n-k = 3\\), the price of bread ✓. One set of values separates all four options."
+        }
+      ]
+    },
+    {
+      "id": "2023_winter_q2_16",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 16,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 16-20)",
+      "stem": "In a random choice, the highest chance of finding a plum that is <b>not</b> infested is in a choice from among the plums of variety ______ in plot ______ .",
+      "options": [
+        "A ; G",
+        "B ; D",
+        "C ; E",
+        "D ; F"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_winter_q2_17",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 17,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 16-20)",
+      "stem": "At the end of the year 2020, the plum trees in plot <b>E</b> yielded a total of 600 plums of a certain variety.  400 of them were infested.\n\nWhich variety of plums is being referred to?",
+      "options": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_winter_q2_18",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 18,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Table Comprehension (Questions 16-20)",
+      "stem": "Na'ama worked in the orchard for seven consecutive years, during which she participated in the planting of the trees of 3 of the plots.\n\nIn which of the following years is it possible that Na'ama began to work in the orchard?",
+      "options": [
+        "1992",
+        "1994",
+        "1997",
+        "2003"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_winter_q2_19",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 19,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 16-20)",
+      "stem": "With regard to the plums of variety <b>C</b> in plot <b>C</b>, what is the ratio between the number of infested fruits and the number of fruits that are not infested?",
+      "options": [
+        "1 : 4",
+        "1 : 2",
+        "2 : 3",
+        "3 : 4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2023_winter_q2_20",
+      "source_exam": "psychometric_winter_2023",
+      "source_question_number": 20,
+      "section_id": "2023_winter_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Table Comprehension (Questions 16-20)",
+      "stem": "At the end of the year 2020, exactly ______ of the plum trees in the orchard were more than 20 years old.",
+      "options": [
+        "\\(\\frac{1}{5}\\)",
+        "\\(\\frac{1}{2}\\)",
+        "\\(\\frac{1}{3}\\)",
+        "\\(\\frac{1}{6}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    }
+  ]
+}

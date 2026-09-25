@@ -1,0 +1,1103 @@
+{
+  "source_exam": "psychometric_winter_2024",
+  "source_exam_label": "Winter 2024",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_winter_2024_acc (1) 2.pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 59 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "table_comprehension_lead": "Study the table below, then answer the four questions that follow.",
+    "table_comprehension_lead_five": "Study the table below, then answer the five questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2024_winter_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-9)",
+          "from": 1,
+          "to": 9
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 10-13)",
+          "from": 10,
+          "to": 13,
+          "figure_path": "figures/w2024_s1_graph.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\nThe graph describes a training programme lasting 10 weeks.  The participants in the programme do fitness trainings on four of the days of the week (Sunday, Monday, Tuesday and Wednesday).  There are four types of trainings: balance, strength, flexibility and cardiovascular endurance (see key).\nEvery week the participants have to do all the “regular” trainings in the programme.  They may replace a regular training with any “alternative training” of <b>the same type</b> that is held in that same week (it does not matter what the length of the alternative training is).  The regular trainings are represented in the graph by means of shapes without fill, and the alternative trainings – by means of shapes with striped fill.\nFrom the second week onward, some of the trainings become longer by a number of minutes from week to week.  The minutes accumulate and are always added at the end of the training.  The number of minutes that are added to a training appears inside the shape representing it.\n\nFor example, in the first training week the trainees have to do an endurance training on Wednesday from 8:00 until 10:00.  In the third training week that same training will end at 10:10.  In place of this training the trainees may do an alternative endurance training (for example, the training that is held on Sunday between 16:30 and 17:30)."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 14-20)",
+          "from": 14,
+          "to": 20
+        }
+      ]
+    },
+    {
+      "section_id": "2024_winter_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-7)",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "type": "table_comprehension",
+          "header": "Table Comprehension (Questions 8-12)",
+          "from": 8,
+          "to": 12,
+          "figure_path": "figures/w2024_s2_table.png",
+          "intro": "Study the table below, then answer the five questions that follow.\n\nThe table presents data regarding the number of motor vehicles that were in Tel Aviv in the years 2015-2020 according to types of vehicles.\n\nFor example: In 2017 there were in Tel Aviv 209,500 motor vehicles altogether, and 50,600 of them were trucks."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2024_winter_q1_01",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 1,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "easy",
+      "stem": "Ehud picked apples.  In the first hour of the workday he picked 1,000 apples.\nIn each additional hour over the course of the day he picked a number of apples smaller by 10% than the number of apples he picked in the hour that preceded it.\n\nHow many apples altogether did Ehud pick in the first 3 hours of the workday?",
+      "options": [
+        "2,400",
+        "2,430",
+        "2,700",
+        "2,710"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(1000 + 900 + 810 = 2710\\). Each hour is \\(0.9\\) times the last, so the terms are \\(1000\\), \\(1000(0.9)\\), \\(1000(0.9)^2\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Option (3) is \\(3 \\times 900\\) and option (2) is \\(1000+900+530\\)-ish &mdash; both come from applying the 10% to the wrong base."
+        }
+      ]
+    },
+    {
+      "id": "2024_winter_q1_02",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 2,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure ABCD is a square and EFGH is a rectangle inscribed in it.\n\nBased on this information and the information in the figure,\nwhat is the perimeter of rectangle EFGH (in cm)?",
+      "options": [
+        "\\(6\\sqrt{2}\\)",
+        "6",
+        "\\(4\\sqrt{2}\\)",
+        "8"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2024_s1_q02.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2024_winter_q1_03",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 3,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Similarity",
+      "difficulty": "medium",
+      "stem": "Given: the area of triangle DEF is 9 times greater than the area of triangle ABC.\n\nBased on this information and the information in the figure, what is the length of side DF (in cm)?",
+      "options": [
+        "It cannot be determined from the information given",
+        "9",
+        "6",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/w2024_s1_q03.png"
+      ],
+      "sub_category_id": "similarity"
+    },
+    {
+      "id": "2024_winter_q1_04",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 4,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "easy",
+      "stem": "n is an integer that is divisible by \\(3^6\\) without a remainder.\n\nWhich of the following numbers is <b>not</b> necessarily a divisor of n?",
+      "options": [
+        "6",
+        "27",
+        "81",
+        "243"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(n\\) divisible by \\(3^6\\) guarantees six factors of 3 and nothing else. So any divisor built only from 3s is safe; anything needing another prime is not."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(27 = 3^3\\) ✓, \\(81 = 3^4\\) ✓, \\(243 = 3^5\\) ✓ &mdash; all within the six 3s available. But \\(6 = 2 \\times 3\\) needs a factor of 2, which \\(3^6\\) never supplies."
+        }
+      ]
+    },
+    {
+      "id": "2024_winter_q1_05",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 5,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "easy",
+      "stem": "Given:  x ≠ 0\n\nWhat is necessarily true regarding the value of the expression \\(\\frac{|x|}{x}\\)?",
+      "options": [
+        "It is equal to 1",
+        "It is equal to x",
+        "It is positive when 0 < x and negative when x < 0",
+        "None of the above possibilities is necessarily true"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(\\dfrac{|x|}x\\) divides a distance by the number itself, so it strips the size and leaves the sign: \\(+1\\) when \\(x\\) is positive, \\(-1\\) when negative. It is never equal to \\(x\\) except at \\(\\pm1\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(x=2\\) gives \\(1\\) and \\(x=-2\\) gives \\(-1\\). The first kills (2), the second kills (1), and together they confirm (3)."
+        }
+      ]
+    },
+    {
+      "id": "2024_winter_q1_06",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 6,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows two semicircles whose radius is r.\nThe points C, D and E lie on one straight line.\nStraight line k is tangent to the semicircles at points A and B.\n\nWhat is the size of the dark area?",
+      "options": [
+        "\\(r^2\\left(2 - \\frac{\\pi}{2}\\right)\\)",
+        "\\(\\frac{\\pi r^2}{2}\\)",
+        "\\(r^2\\left(2 - \\frac{\\pi}{4}\\right)\\)",
+        "\\(\\frac{\\pi r^2}{4}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2024_s1_q06.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2024_winter_q1_07",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 7,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "0 < x\n\n\\(\\frac{\\sqrt{x}}{x^{-2}} = ?\\)",
+      "options": [
+        "\\(x^{1.5}\\)",
+        "\\(x^{\\sqrt{2}}\\)",
+        "\\(x^{2.5}\\)",
+        "\\(x^{-1}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "A negative exponent in the denominator becomes positive on top: \\(\\dfrac{x^{1/2}}{x^{-2}} = x^{1/2+2} = x^{2.5}\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(x=4\\): the stem is \\(2/\\frac{1}{16} = 32\\), and \\(4^{2.5} = 32\\)."
+        }
+      ]
+    },
+    {
+      "id": "2024_winter_q1_08",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 8,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "Given:  \\(a^2 + b = (a - b)(a + b) + 13\\)\n\nWhich of the following statements regarding a is <b>true</b>?",
+      "options": [
+        "a is necessarily positive",
+        "a is necessarily odd",
+        "a is necessarily equal to 0",
+        "a can be any number"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "The right side is \\(a^2-b^2+13\\). The \\(a^2\\) cancels from both sides, leaving \\(b = -b^2+13\\), an equation in \\(b\\) alone. \\(a\\) is unconstrained, so it can be any number."
+        },
+        {
+          "kind": "plug-in",
+          "text": "The equation reduces to a condition on \\(b\\) alone, so fix \\(b\\) at the value satisfying \\(b^2+b = 13\\) and try several \\(a\\): \\(a=0\\), \\(a=7\\) and \\(a=-1.5\\) all satisfy it. One \\(b\\) working for every \\(a\\) is exactly what option (4) claims."
+        },
+        {
+          "kind": "understanding",
+          "text": "The whole question is noticing that \\(a\\) disappears. Once it does, no statement about \\(a\\) can be forced &mdash; which eliminates the first three options at a stroke."
+        }
+      ]
+    },
+    {
+      "id": "2024_winter_q1_09",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 9,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "medium",
+      "stem": "Yaniv opened a box of olives.  He saw that if he divides the olives among his children equally, each child will receive 7 olives.  Afterwards he remembered that one of his children was not at home.  He ate 2 olives and divided all the remaining olives among the children who were at home so that each child received 8 olives.\n\nHow many children does Yaniv have (including the child who was not at home)?",
+      "options": [
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2024_winter_q1_10",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 10,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "easy",
+      "cluster": "Graph Comprehension (Questions 10-13)",
+      "stem": "On which day of the week are <b>regular</b> strength trainings not included in the programme?",
+      "options": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_winter_q1_11",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 11,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 10-13)",
+      "stem": "What is the longest time between two regular trainings that are held on the same day in the first training week?",
+      "options": [
+        "\\(7\\frac{1}{2}\\) hours",
+        "6 hours",
+        "\\(5\\frac{1}{2}\\) hours",
+        "4 hours"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_winter_q1_12",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 12,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 10-13)",
+      "stem": "In the course of the third training week Alon gave up the training that is held on Sunday at 10:00 in the morning, and in its place he chose an alternative training.\n\nWhich of the following durations of time <b>cannot</b> be the duration of the training that Alon chose?",
+      "options": [
+        "60 minutes",
+        "80 minutes",
+        "90 minutes",
+        "100 minutes"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_winter_q1_13",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 13,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 10-13)",
+      "stem": "In which training week will there be in the programme a balance training that ends exactly when an endurance training begins?",
+      "options": [
+        "7",
+        "2",
+        "3",
+        "8"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_winter_q1_14",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 14,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Motion & Speed",
+      "difficulty": "easy",
+      "stem": "A man is standing on a platform in a railway station.  A train passes along the platform at a fixed speed of 120 kph.\nThe train passes by the man over the course of half a minute.\n\nWhat is the length of the train?",
+      "options": [
+        "1 km",
+        "\\(\\frac{1}{2}\\) km",
+        "\\(\\frac{1}{4}\\) km",
+        "4 km"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "motion_speed",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Passing a stationary man, the distance travelled is exactly the train's own length."
+        },
+        {
+          "kind": "algebra",
+          "text": "Half a minute is \\(\\frac1{120}\\) hour, and \\(120 \\times \\frac1{120} = 1\\) km. Recognising that the length <i>is</i> the distance is the whole question; the arithmetic is one line."
+        }
+      ]
+    },
+    {
+      "id": "2024_winter_q1_15",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 15,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Which of the following expressions is equal to the expression \\(\\frac{x^2}{50}\\)?",
+      "options": [
+        "\\(\\frac{x}{50}\\)% of x",
+        "\\(x^2\\)% of \\(\\frac{x}{2}\\)",
+        "50% of \\(x^2\\)",
+        "x% of 2x"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "plug-in",
+          "text": "Take \\(x = 10\\): the target is \\(\\frac{100}{50} = 2\\). Option (4) is \\(10\\%\\) of 20, which is 2 ✓; the others give \\(0.02\\), 500 and 50."
+        },
+        {
+          "kind": "algebra",
+          "text": "\\(x\\%\\) of \\(2x\\) is \\(\\frac{x}{100} \\cdot 2x = \\frac{2x^2}{100} = \\frac{x^2}{50}\\)."
+        }
+      ]
+    },
+    {
+      "id": "2024_winter_q1_16",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 16,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "easy",
+      "stem": "Nava, Tamar and Ella are playing a game: they hold a draw among the three of them, and whoever comes up in the draw leaves the game.  The two who remain hold an additional draw: whoever comes up in the draw leaves the game, and the other one is the winner.\n\nWhat is the probability that Nava will be the winner?",
+      "options": [
+        "\\(\\frac{1}{3}\\)",
+        "\\(\\frac{2}{3}\\)",
+        "\\(\\frac{1}{6}\\)",
+        "\\(\\frac{1}{9}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2024_winter_q1_17",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 17,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "hard",
+      "stem": "The average number of viewers of every episode of a certain television series is 10 million.  It is known that each one of the first x episodes of the series was watched by 8 million people  (1 < x).\n\nWhich of the following expressions represents the <b>smallest possible</b> number of episodes in the television series?",
+      "options": [
+        "x + 1",
+        "2x",
+        "x + 2",
+        "2x – 2"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2024_winter_q1_18",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 18,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Polygons",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure ABCDEF is a regular hexagon and FGHE is a square.\n\nBased on this information and the information in the figure,\nα = ?",
+      "options": [
+        "75°",
+        "70°",
+        "65°",
+        "60°"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2024_s1_q18.png"
+      ],
+      "sub_category_id": "polygons"
+    },
+    {
+      "id": "2024_winter_q1_19",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 19,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "hard",
+      "stem": "A and B represent digits that are different from one another, between 1 and 9.\n\nGiven:  \\(\\begin{array}{r} AAB \\\\ -\\,BAA \\\\ \\hline 99 \\end{array}\\)\n\nHow many numbers different from one another can the combination AAB represent?",
+      "options": [
+        "1",
+        "2",
+        "0",
+        "8"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(\\overline{AAB} - \\overline{BAA} = (110A + B) - (100B + 11A) = 99A - 99B = 99(A-B)\\). Setting that to 99 gives \\(A - B = 1\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "So any digits one apart work: \\(A-B=1\\) with both between 1 and 9 and different gives \\(B = 1..8\\) &mdash; eight combinations. The middle digit never entered, which is why so many survive."
+        }
+      ]
+    },
+    {
+      "id": "2024_winter_q1_20",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 20,
+      "section_id": "2024_winter_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "hard",
+      "stem": "Triangle ABC is drawn on a page.  Yair marks on the page the point D, whose distance from vertex A equals its distance from vertex B.  The distance of point D from vertex C is double the distance of point D from each one of the vertices A and B.\n\nWhich of the following statements is true?",
+      "options": [
+        "Point D is necessarily located <b>inside the area</b> of triangle ABC",
+        "Point D is necessarily located <b>on the perimeter</b> of triangle ABC",
+        "Point D is necessarily located <b>outside the area</b> of triangle ABC",
+        "Point D may be located inside the area of triangle ABC, on its perimeter or outside its area"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2024_winter_q2_01",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 1,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "easy",
+      "stem": "In the accompanying figure ABCD is a parallelogram.\n\nBased on this information and the information in the figure,\nwhat is the area of the parallelogram (in cm²)?",
+      "options": [
+        "6",
+        "12",
+        "15",
+        "20"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2024_s2_q01.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2024_winter_q2_02",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 2,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Overlapping Sets",
+      "difficulty": "easy",
+      "stem": "In a group of 40 students, 10 wear glasses and 20 have long hair.\nIt is known that exactly half of those who wear glasses have long hair.\n\nHow many students in the group <b>do not</b> wear glasses <b>and do not</b> have long hair?",
+      "options": [
+        "5",
+        "10",
+        "15",
+        "20"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "overlapping_sets"
+    },
+    {
+      "id": "2024_winter_q2_03",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 3,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "medium",
+      "stem": "What are the coordinates of the point located on the perimeter of the dark square whose distance (in a straight line) from point A is the greatest?",
+      "options": [
+        "(1 , 0)",
+        "(0 , 0)",
+        "(5 , 0)",
+        "(5 , 5)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/w2024_s2_q03.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2024_winter_q2_04",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 4,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "Two pipes are connected to a certain pool – pipe <b>A</b> which conveys water into the pool, and pipe <b>B</b> which conveys water out of the pool.\n\nGiven: if the pool is empty and pipe <b>A</b> alone is opened, it will fill up after 4 hours.\n     if the pool is full and pipe <b>B</b> alone is opened, it will empty out after 8 hours.\n\nIf the pool is empty and both pipes are opened simultaneously, after how much time will it fill up?",
+      "options": [
+        "12 hours",
+        "8 hours",
+        "6 hours",
+        "4 hours"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Net rate. Pipe A fills at \\(\\frac14\\) of the pool an hour; pipe B drains at its own rate, and the net rate governs the fill."
+        },
+        {
+          "kind": "understanding",
+          "text": "Confirm the net is positive before computing a time &mdash; if the drain were faster, the pool would never fill and no answer would exist."
+        }
+      ]
+    },
+    {
+      "id": "2024_winter_q2_05",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 5,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "Given:  \\(2x + 4y < -5\\)\n\nWhich of the following equations is possible?",
+      "options": [
+        "x = -2y – 1",
+        "x = -2y + 2",
+        "x = -2y – 3",
+        "x = -2y + 4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Every option has the shape \\(x=-2y+k\\). Substituting gives \\(2(-2y+k)+4y=2k\\) — the \\(y\\) terms cancel every time, so the given reduces to \\(2k<-5\\), that is \\(k<-2.5\\). Only \\(k=-3\\) qualifies."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Substitute the four options one at a time: they give \\(2k\\) values of \\(-2\\), \\(4\\), \\(-6\\) and \\(8\\). Only \\(-6\\) is below \\(-5\\)."
+        }
+      ]
+    },
+    {
+      "id": "2024_winter_q2_06",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 6,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Given the equation:  \\(2a \\cdot b - 10b = 2a - 10\\)\n\\(b \\neq 1\\)\n\na = ?",
+      "options": [
+        "1",
+        "2",
+        "5",
+        "10"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Factor both sides: \\(2b(a-5) = 2(a-5)\\), so \\((a-5)(2b-2) = 0\\). Since \\(b \\neq 1\\), the second bracket is non-zero, forcing \\(a = 5\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "The stated condition \\(b \\neq 1\\) exists to close off the other branch. Without it \\(b=1\\) would satisfy the equation for every \\(a\\), and the question would have no single answer."
+        }
+      ]
+    },
+    {
+      "id": "2024_winter_q2_07",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 7,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "hard",
+      "stem": "A certain family consists of a father, a mother and four children.  It is known that the children were born at equal time intervals.  The eldest child is 15, and the youngest child is 9.  The <b>average</b> of the parents' ages equals the <b>sum</b> of the children's ages.  The father is two years younger than the mother.\n\nWhat is the father's age?",
+      "options": [
+        "44",
+        "47",
+        "52",
+        "53"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2024_winter_q2_08",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 8,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 8-12)",
+      "stem": "In which of the following years was the ratio  \\(\\frac{\\text{number of private cars}}{\\text{number of regular buses}}\\)  the greatest?",
+      "options": [
+        "2017",
+        "2018",
+        "2019",
+        "2020"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_winter_q2_09",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 9,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 8-12)",
+      "stem": "Which of the following graphs can represent the changes in the number of trucks and in the number of private cars in Tel Aviv in the years 2015-2020?",
+      "options": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "option_figure_paths": [
+        "figures/w2024_s2_q09_opt1.png",
+        "figures/w2024_s2_q09_opt2.png",
+        "figures/w2024_s2_q09_opt3.png",
+        "figures/w2024_s2_q09_opt4.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_winter_q2_10",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 10,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "easy",
+      "cluster": "Table Comprehension (Questions 8-12)",
+      "stem": "In 2015, what was <b>approximately</b> the percentage of motorcycles out of all the vehicles in Tel Aviv?",
+      "options": [
+        "5%",
+        "7.5%",
+        "10%",
+        "12.5%"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_winter_q2_11",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 11,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 8-12)",
+      "stem": "In 2019, 52 million passengers travelled in <b>minibuses</b> in Tel Aviv.\n\nHow many passengers on average travelled in a week in each minibus in that year (there are 52 weeks in a year)?",
+      "options": [
+        "100",
+        "700",
+        "500",
+        "400"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_winter_q2_12",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 12,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Table Comprehension (Questions 8-12)",
+      "stem": "\\(\\frac{1}{8}\\) of all the motor vehicles in Tel Aviv in 2016 were red.\nLet us mark the number of red <b>private cars</b> in Tel Aviv in that year with y.\n\nWhich of the following ranges is the range in which all the possible values of y are found?",
+      "options": [
+        "10,000 ≤ y ≤ 26,000",
+        "16,000 ≤ y ≤ 26,000",
+        "0 ≤ y ≤ 16,000",
+        "0 ≤ y ≤ 26,000"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_winter_q2_13",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 13,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "The radius of the circle in the figure is r.\n\nBased on this information and the information in the figure,\n\\(AB^2 + BD^2 + AC^2 + CD^2 = ?\\)",
+      "options": [
+        "\\(12r^2\\)",
+        "\\(16r^2\\)",
+        "\\(6r^2\\)",
+        "\\(8r^2\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/w2024_s2_q13.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2024_winter_q2_14",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 14,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Lines & Angles",
+      "difficulty": "medium",
+      "stem": "The accompanying figure shows three straight lines – a, b and c – and a fourth straight line m that intersects them.\n\nBased on the information in the figure,\nwhich of the following statements is true?",
+      "options": [
+        "a is parallel to b",
+        "a is parallel to c",
+        "b is parallel to c",
+        "Among the straight lines a, b and c there is no pair of parallel straight lines"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/w2024_s2_q14.png"
+      ],
+      "sub_category_id": "lines_angles"
+    },
+    {
+      "id": "2024_winter_q2_15",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 15,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "hard",
+      "stem": "In a certain farm the wheat is stored in three barns: <b>A, B and C</b>.\nThe capacity of barn <b>A</b> is 2 times greater than that of barn <b>B</b>, and the capacity of barn <b>C</b> equals the capacity of barns <b>A</b> and <b>B</b> together.\nOn a certain day barns <b>A</b> and <b>B</b> were full, while barn <b>C</b> was empty.  They transferred \\(\\frac{1}{2}\\) of the quantity of wheat that was in barn <b>A</b> and \\(\\frac{1}{3}\\) of the quantity of wheat that was in barn <b>B</b> into barn <b>C</b>.\n\nWhich part of barn <b>C</b> was filled?",
+      "options": [
+        "\\(\\frac{5}{6}\\)",
+        "\\(\\frac{1}{2}\\)",
+        "\\(\\frac{1}{3}\\)",
+        "\\(\\frac{4}{9}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "plug-in",
+          "text": "Let barn B hold 1 unit. Then A holds 2 and C holds 3. Transferred: \\(\\frac12\\) of A is 1, and \\(\\frac13\\) of B is \\(\\frac13\\), giving \\(\\frac43\\) into a barn of capacity 3 &mdash; that is \\(\\frac49\\) of it."
+        },
+        {
+          "kind": "understanding",
+          "text": "Only ratios are given, so a convenient value may be chosen for the smallest barn. The answer cannot depend on that choice, which is what makes the substitution legitimate."
+        }
+      ]
+    },
+    {
+      "id": "2024_winter_q2_16",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 16,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "hard",
+      "stem": "In a kiosk sweets of three types are sold: chewing gums, candies and chocolate bars.\nThe price of a chewing gum is one shekel.\nThe price of a candy is 2 shekels.\nThe price of a chocolate bar is 11 shekels.\nDaniel is interested in putting together a “surprise package” whose price is 21 shekels and in which there is at least one sweet of each type.\n\nIn how many ways can Daniel put together the surprise package?",
+      "options": [
+        "7",
+        "2",
+        "5",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2024_winter_q2_17",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 17,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Factorials",
+      "difficulty": "medium",
+      "stem": "The average of 8! and 10! is –",
+      "options": [
+        "\\(4! + 5!\\)",
+        "\\(9!\\)",
+        "\\(\\frac{8! \\cdot 80}{2}\\)",
+        "\\(\\frac{8! \\cdot 91}{2}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "factorials",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Factor \\(8!\\) out of the sum: \\(10!=10\\cdot9\\cdot8!=90\\cdot8!\\), so \\(8!+10!=8!(1+90)=8!\\cdot91\\). The average is that over 2."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Options (3) and (4) differ only in the number, so the whole question is what \\(10!/8!\\) equals. It is \\(10\\times9=90\\), and adding the original \\(8!\\) gives 91, not 80."
+        }
+      ]
+    },
+    {
+      "id": "2024_winter_q2_18",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 18,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "Given:  x is a number that is divisible by 6,   x ≠ 6.\n\nWhich of the following statements is <b>necessarily</b> true?",
+      "options": [
+        "(x + 1) is divisible by 2",
+        "\\((x^2 - 9)\\) is divisible by 5",
+        "(x – 4) is divisible by 4",
+        "\\(x^2\\) is divisible by 4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(x\\) divisible by 6 means \\(x = 6k\\), so \\(x^2 = 36k^2\\). Since 36 is divisible by 4, \\(x^2\\) always is &mdash; and that holds for every \\(k\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "One value kills the rest. \\(x = 18\\): \\(x+1 = 19\\) is odd; \\(x^2 - 9 = 315\\) is not divisible by 5; and \\(x - 4 = 14\\) is not divisible by 4."
+        }
+      ]
+    },
+    {
+      "id": "2024_winter_q2_19",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 19,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "Given a pyramid whose base is a square and whose faces are equilateral triangles (see figure).\nThe surface area of the pyramid is \\(1 + \\sqrt{3}\\) cm².\n\nWhat is the length of an edge of the pyramid (in cm)?",
+      "options": [
+        "1",
+        "2",
+        "\\(1 + \\sqrt{3}\\)",
+        "\\(\\frac{1 + \\sqrt{3}}{4}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/w2024_s2_q19.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2024_winter_q2_20",
+      "source_exam": "psychometric_winter_2024",
+      "source_question_number": 20,
+      "section_id": "2024_winter_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Defined Operations",
+      "difficulty": "hard",
+      "stem": "For every positive x the operation $ is defined thus:  \\($(x) = (x + 1)^2\\)\nThe operation # is the inverse operation, and for every $(x) it satisfies the equality  #($(x)) = x.\n\nWhat is the operation #?",
+      "options": [
+        "#(y) = \\(\\frac{1}{\\sqrt{y - 1}}\\)",
+        "#(y) = \\(\\frac{1}{\\sqrt{y} - 1}\\)",
+        "#(y) = \\(\\sqrt{y - 1}\\)",
+        "#(y) = \\(\\sqrt{y} - 1\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "defined_operations"
+    }
+  ]
+}

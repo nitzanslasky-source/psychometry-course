@@ -1,0 +1,1105 @@
+{
+  "source_exam": "psychometric_spring_2019",
+  "source_exam_label": "Spring 2019",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_spring_2019_acc_1.pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 60 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2019_spring_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-15)",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 16-20)",
+          "from": 16,
+          "to": 20,
+          "figure_path": "figures/sp2019_s1_graph.png",
+          "intro": "Study the graph below, then answer the five questions that follow.\n\n13 runners participated in a running competition on a course whose length was 3,000 meters.\nThe graphs detail the running data of two of the runners: Amnon and Boaz.\nOn the horizontal axes nine time periods are marked: the first eight are time periods of one minute each, and the ninth time period is the last seconds of the run.  For each time period, on the lower horizontal axis is given the distance that the runner passed from the beginning of the course until the end of the time period.\nFor each time period a rectangle corresponds: the ends of the rectangle indicate the runner's relative position among all the runners at the beginning of the time period and at its end (see key).  A light rectangle indicates that the runner improved his position and a dark rectangle indicates that the runner worsened his position.\nNote: The relative position of a runner during some time period is any position between his position at the beginning of the time period and his position at the end of the time period, and he does not deviate from these positions.\n\nFor example: The sixth time period began 5 minutes after the beginning of the run.  At the beginning of this time period Boaz's relative position was 7, and at its end his relative position was 6.  In total Boaz passed 370 meters in this minute (370 = 1,710 – 2,080)."
+        }
+      ]
+    },
+    {
+      "section_id": "2019_spring_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-7)",
+          "from": 1,
+          "to": 7
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 8-11)",
+          "from": 8,
+          "to": 11,
+          "figure_path": "figures/sp2019_s2_graph.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\nThe graph relates to the forces of the American army that arrived in France in the First World War from June 1917 until October 1918.\nThe forces are composed of divisions, and each division has a different identifying number.  The graph indicates the identifying numbers of all the divisions that were in France in each month.  Each row in the graph presents a different division.\n\nNote: In the entire period described in the graph no division left France.\n\nFor example, in the month of September 1917 there were three American divisions in France: division 1, division 2 and division 26.  This was the first month in which division 26 was in France."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 12-20)",
+          "from": 12,
+          "to": 20
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2019_spring_q1_01",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 1,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure O is the center of the circle.\nABC is a triangle inscribed in the circle.\n\nBased on this information and the information in the figure,\nα = ?",
+      "options": [
+        "10°",
+        "20°",
+        "30°",
+        "40°"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2019_s1_q01.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2019_spring_q1_02",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 2,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "medium",
+      "stem": "The sum of three consecutive numbers is 33.\n\nThe product of the two greatest numbers among them is:",
+      "options": [
+        "110",
+        "120",
+        "121",
+        "132"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Three consecutive numbers are symmetric about the middle one, so their sum is three times the middle: the middle is 11, and the numbers are 10, 11, 12."
+        },
+        {
+          "kind": "check-answers",
+          "text": "The two greatest are 11 and 12, whose product is 132. The trap is multiplying 10 and 11 instead, which gives 110 &mdash; also on the option list."
+        }
+      ]
+    },
+    {
+      "id": "2019_spring_q1_03",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 3,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "In a certain kibbutz there are 9 volunteers who work in agriculture:\n\n- 5 volunteers who work in collecting eggs and in vegetable picking only\n- 3 volunteers who work in milking and in vegetable picking only\n- 1 volunteer who works in collecting eggs and in milking only\n\nWhat is the ratio between the number of volunteers who work in milking and the number of volunteers who work in vegetable picking?",
+      "options": [
+        "1 : 2",
+        "2 : 3",
+        "3 : 5",
+        "3 : 8"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Count each task: milking has \\(3+1 = 4\\) volunteers, vegetable picking has \\(5+3 = 8\\). The ratio is \\(1:2\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Each volunteer is counted in two tasks, so the task totals exceed 9. That is expected, not an error."
+        }
+      ]
+    },
+    {
+      "id": "2019_spring_q1_04",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 4,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "medium",
+      "stem": "The total number of letters that a mailman distributed is equal to the number of letters that he distributed on average to each house  ______  the number of houses in which he distributed letters.",
+      "options": [
+        "less",
+        "and more",
+        "partial",
+        "multiplied by"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2019_spring_q1_05",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 5,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Geometric Comprehension",
+      "difficulty": "medium",
+      "stem": "From 9 overlapping parallelograms a large parallelogram was formed, as described in the figure.\nThe perimeter of each one of the small parallelograms is a cm.\n\nWhat is the perimeter of the large parallelogram (in cm)?",
+      "options": [
+        "27a",
+        "9a",
+        "3a",
+        "6a"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/sp2019_s1_q05.png"
+      ],
+      "sub_category_id": "geometric_comprehension"
+    },
+    {
+      "id": "2019_spring_q1_06",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 6,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "Given: x + y = 3\n     y ≤ -2\n\nWhat is the exact range of x ?",
+      "options": [
+        "x ≥ 1",
+        "x ≤ 1",
+        "x ≥ 5",
+        "x ≤ 5"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Substitute \\(x=3-y\\). Since \\(y\\le-2\\), \\(-y\\ge2\\), so \\(x=3+(-y)\\ge5\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "\\(x\\) is 3 minus \\(y\\), so \\(x\\) is smallest when \\(y\\) is largest. The largest \\(y\\) is allowed to be is \\(-2\\), which puts \\(x\\) at 5 — and \\(y\\) has no lower bound, so \\(x\\) has no upper one."
+        }
+      ]
+    },
+    {
+      "id": "2019_spring_q1_07",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 7,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Geometric Comprehension",
+      "difficulty": "hard",
+      "stem": "A square whose side length is 2 meters is drawn on a playground.  Anat is standing on one of the corners of the square and begins to walk along its perimeter.  At each step she can continue in the same direction or go back.  The length of each step of Anat is one meter.\n\nWhich of the following distances <b>cannot</b> be the distance of Anat (in a straight line)\nfrom her starting point after 4 steps?",
+      "options": [
+        "0 meters",
+        "2 meters",
+        "\\(\\sqrt{5}\\) meters",
+        "\\(\\sqrt{8}\\) meters"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/sp2019_s1_q07.png"
+      ],
+      "sub_category_id": "geometric_comprehension"
+    },
+    {
+      "id": "2019_spring_q1_08",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 8,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "hard",
+      "stem": "Two workers work in fields, each one at his own constant rate:\nWorker <b>A</b> plows a field whose area is 1 dunam in 15 hours.\nWorker <b>B</b> plows a field whose area is 1 dunam in 10 hours.\nThe two workers required 30 hours in order to plow a certain field together.\n\nWhat is the area of this field (in dunams)?",
+      "options": [
+        "2.4",
+        "3.6",
+        "5",
+        "6"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Combined rate \\(\\frac1{15} + \\frac1{10} = \\frac16\\) dunam an hour. In 30 hours that is 5 dunams."
+        },
+        {
+          "kind": "structure",
+          "text": "Rates in dunams per hour add directly, so no conversion is needed &mdash; the two given times share a unit by design."
+        }
+      ]
+    },
+    {
+      "id": "2019_spring_q1_09",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 9,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Lines & Angles",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure n and m are parallel straight lines.\n\nBased on this information and the information in the figure,\nx = ?",
+      "options": [
+        "50°",
+        "66°",
+        "30°",
+        "44°"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2019_s1_q09.png"
+      ],
+      "sub_category_id": "lines_angles"
+    },
+    {
+      "id": "2019_spring_q1_10",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 10,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "hard",
+      "stem": "Given: x , y , z , w > 1\n\nThe expression \\(\\dfrac{\\dfrac{x}{y}}{\\dfrac{z}{w}}\\) is -",
+      "options": [
+        "smaller the greater x is",
+        "greater the smaller w is",
+        "smaller the greater y is",
+        "smaller the smaller z is"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "The expression is \\(\\dfrac{x/y}{z/w} = \\dfrac{xw}{yz}\\). \\(x\\) and \\(w\\) are on top, \\(y\\) and \\(z\\) underneath, so increasing \\(y\\) decreases the value &mdash; option (3)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Start from \\(x=y=z=w=2\\), value 1, and change one letter at a time. Raising \\(y\\) to 4 halves it; raising \\(x\\) or lowering \\(w\\) or \\(z\\) moves it the other way from what the other options claim."
+        }
+      ]
+    },
+    {
+      "id": "2019_spring_q1_11",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 11,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "hard",
+      "stem": "Given: a > 1\n\n\\(\\dfrac{1-a}{1+\\sqrt{a}} = ?\\)",
+      "options": [
+        "\\(1 - \\sqrt{a}\\)",
+        "\\(-a - \\sqrt{a}\\)",
+        "\\(a - \\sqrt{a}\\)",
+        "\\(-\\sqrt{a}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(1-a\\) is a difference of squares in the roots: \\(1-a = (1-\\sqrt a)(1+\\sqrt a)\\). The second bracket is the denominator, so it cancels and \\(1-\\sqrt a\\) is left."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(a=9\\): the stem is \\(\\frac{-8}{4} = -2\\), and \\(1-\\sqrt9 = -2\\). The others give \\(-12\\), 6 and \\(-3\\)."
+        }
+      ]
+    },
+    {
+      "id": "2019_spring_q1_12",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 12,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "a and b are positive integers.\nGiven: a = 3b\n\nWhich of the following numbers can a + b be ?",
+      "options": [
+        "126",
+        "262",
+        "321",
+        "484"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(a = 3b\\), so \\(a + b = 4b\\) &mdash; always a multiple of 4."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Test each option for divisibility by 4 using the last two digits: \\(26\\), \\(62\\), \\(21\\), \\(84\\). Only \\(84\\) is divisible by 4, so only 484 qualifies."
+        }
+      ]
+    },
+    {
+      "id": "2019_spring_q1_13",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 13,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure the four dark triangles overlap one another.\nThe area of the hatched triangle is equal to the sum of the areas of the dark triangles.\n\nBased on this information and the information in the figure,\n\n\\(\\frac{x}{y} = ?\\)",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2019_s1_q13.png"
+      ],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2019_spring_q1_14",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 14,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "Three overlapping and adjacent boxes form a cube whose <b>surface area</b> is 54 cm² (see figure).\n\nWhat is the <b>surface area</b> of each one of the three boxes (in cm²)?",
+      "options": [
+        "18",
+        "20",
+        "28",
+        "30"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/sp2019_s1_q14.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2019_spring_q1_15",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 15,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "hard",
+      "stem": "Grandmother divided a candies equally among 20 grandchildren.\n\nIf grandmother had had x more grandchildren, how many <b>fewer</b> candies would each grandchild have received?",
+      "options": [
+        "\\(\\dfrac{a}{20 + ax}\\)",
+        "\\(\\dfrac{a}{400 + 20x}\\)",
+        "\\(\\dfrac{ax}{400 + 20x}\\)",
+        "\\(\\dfrac{ax - a}{20 + x}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2019_spring_q1_16",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 16,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "graph_comprehension",
+      "stem": "At the time that Amnon completed 60% of the running course, Boaz completed  ______  of the course.",
+      "options": [
+        "51%",
+        "55%",
+        "57%",
+        "60%"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/sp2019_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_spring_q1_17",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 17,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "graph_comprehension",
+      "stem": "In how many time periods was Amnon's relative position 4 during the time period but <b>worse</b> at the end of the time period?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2019_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_spring_q1_18",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 18,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "graph_comprehension",
+      "stem": "In how many time periods was Amnon's relative position during the entire time period <b>with certainty</b> better than Boaz's relative position?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/sp2019_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_spring_q1_19",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 19,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "graph_comprehension",
+      "stem": "The running coach presented Amnon's relative position at the beginning of the run and at its end\n(a light rectangle indicates improvement and a dark rectangle indicates worsening).\n\nWhich of the following graphs did the coach present?",
+      "options": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "option_figure_paths": [
+        "figures/sp2019_s1_q19_opt1.png",
+        "figures/sp2019_s1_q19_opt2.png",
+        "figures/sp2019_s1_q19_opt3.png",
+        "figures/sp2019_s1_q19_opt4.png"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2019_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_spring_q1_20",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 20,
+      "section_id": "2019_spring_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "graph_comprehension",
+      "stem": "At the end of how many whole minutes from the beginning of the run was the distance between Amnon and Boaz the greatest?",
+      "options": [
+        "7 minutes",
+        "6 minutes",
+        "5 minutes",
+        "4 minutes"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2019_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_spring_q2_01",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 1,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "\\(\\dfrac{a^8 \\cdot c^3}{a^4 \\cdot c^6} = ?\\)  ,  (a , c ≠ 0)",
+      "options": [
+        "\\(a^2 \\cdot c^{\\frac{1}{2}}\\)",
+        "\\(a^2 \\cdot c^{-3}\\)",
+        "\\(a^4 \\cdot c^{\\frac{1}{2}}\\)",
+        "\\(a^4 \\cdot c^{-3}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Subtract exponents base by base: \\(a^{8-4} = a^4\\) and \\(c^{3-6} = c^{-3}\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(a=2, c=2\\): the stem is \\(\\frac{256 \\cdot 8}{16 \\cdot 64} = 2\\), and \\(a^4c^{-3} = 16/8 = 2\\)."
+        }
+      ]
+    },
+    {
+      "id": "2019_spring_q2_02",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 2,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure is triangle ABC.  D and E are points on the sides of the triangle.\n\nGiven: ED || BC\n\nBased on this information and the information in the figure,\nwhat is the area of trapezoid BCDE (in cm²)?",
+      "options": [
+        "21",
+        "24",
+        "30",
+        "33"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2019_s2_q02.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2019_spring_q2_03",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 3,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "medium",
+      "stem": "In rectangle ABCD quadrilateral EFGH is inscribed (see figure).\n\nWhat is the sum of the angles marked in gray?",
+      "options": [
+        "180°",
+        "270°",
+        "360°",
+        "540°"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/sp2019_s2_q03.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2019_spring_q2_04",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 4,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Overlapping Sets",
+      "difficulty": "hard",
+      "stem": "In a certain library there are 100 books.\n\nGiven: 45 of the books are poetry books.\n     60 of the books are translated books.\n\nFrom here that the number of translated poetry books in the library is at least  ______  and at most  ______  .",
+      "options": [
+        "5 ; 40",
+        "5 ; 45",
+        "15 ; 40",
+        "15 ; 45"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "overlapping_sets"
+    },
+    {
+      "id": "2019_spring_q2_05",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 5,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "The radius of the base of a cylinder is r cm.\nThe height of the cylinder is equal to the diameter of the base of the cylinder.\n\n\\(\\dfrac{\\text{the volume of the cylinder (in cm}^3)}{\\text{the circumference of the base of the cylinder (in cm)}} = ?\\)",
+      "options": [
+        "\\(r^2\\)",
+        "\\(\\frac{2}{r}\\)",
+        "\\(\\pi r\\)",
+        "It is impossible to know from the information given"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2019_spring_q2_06",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 6,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "medium",
+      "stem": "In the store \"Hamalbish\" the price of trousers is 75 shekels and the price of a shirt is 45 shekels.  On a certain day the number of shirts that were sold was 3 times as much as the number of trousers that were sold.  The total of all the money that was received from selling shirts and trousers on that day was 840 shekels.\n\nHow many <b>trousers</b> were sold in the store on that day?",
+      "options": [
+        "12",
+        "9",
+        "6",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2019_spring_q2_07",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 7,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "An elevator in a certain building goes up at a rate of 5 floors per minute and goes down at a rate of 10 floors per minute.\n\nHow much time will be required for the elevator to go up from floor 5 to floor 25, after that to go down to floor 15, and at the end to go up to floor 40 (without stops)?",
+      "options": [
+        "8 minutes",
+        "9 minutes",
+        "10 minutes",
+        "11 minutes"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Multi-phase accounting, one leg at a time: 20 floors up at 5 a minute is 4 minutes; 10 down at 10 a minute is 1; then the final leg."
+        },
+        {
+          "kind": "understanding",
+          "text": "Up and down have different rates, so the legs cannot be combined into a single distance. Counting floors travelled, not floors numbered, is the other half of it."
+        }
+      ]
+    },
+    {
+      "id": "2019_spring_q2_08",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 8,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "graph_comprehension",
+      "stem": "In the period described in the graph, which of the following divisions was in France the most time?",
+      "options": [
+        "8",
+        "32",
+        "77",
+        "80"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2019_s2_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_spring_q2_09",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 9,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "graph_comprehension",
+      "stem": "After the war (from the month of November 1918 onwards) they began to evacuate the American divisions from France at a rate of 3 divisions per month.  The order of the evacuation was determined according to the seniority of the divisions in France: at first the first 3 divisions that arrived in France were evacuated, in the following month the 3 divisions that arrived after them were evacuated, and so on.\n\nAfter 8 months of evacuation, it is possible that the most veteran division that was on French soil was division -",
+      "options": [
+        "8",
+        "29",
+        "41",
+        "77"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2019_s2_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_spring_q2_10",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 10,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "graph_comprehension",
+      "stem": "Which of the following statements is true regarding the months described in the graph?",
+      "options": [
+        "There is a month in which no division arrived in France",
+        "There is a month in which more than 10 divisions arrived in France",
+        "In every month at least 2 divisions arrived in France",
+        "In every month more divisions arrived in France than in the month before it"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2019_s2_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_spring_q2_11",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 11,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "graph_comprehension",
+      "stem": "A history teacher calculated how many divisions on average were added to the forces in France in each month during the period described in the graph (assuming that the first division arrived in June 1917).  The average that the teacher received is a number -",
+      "options": [
+        "between 1 and 2",
+        "between 2 and 3",
+        "between 3 and 4",
+        "between 4 and 5"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2019_s2_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2019_spring_q2_12",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 12,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Given: a is equal to 50% of b.\n     c is equal to 125% of b.\n\nTherefore, c is equal to  ______  of a.",
+      "options": [
+        "75%",
+        "125%",
+        "175%",
+        "250%"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "plug-in",
+          "text": "Set \\(b = 100\\): \\(a = 50\\) and \\(c = 125\\). Then \\(c\\) as a percentage of \\(a\\) is \\(\\frac{125}{50} = 250\\%\\)."
+        },
+        {
+          "kind": "structure",
+          "text": "Or divide the two multipliers: \\(\\frac{1.25}{0.5} = 2.5\\). Routing both through \\(b\\) is what makes a direct comparison possible."
+        }
+      ]
+    },
+    {
+      "id": "2019_spring_q2_13",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 13,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "medium",
+      "stem": "Two fair game dice are tossed.\n\n\\(\\dfrac{\\text{the probability that the sum of the results of the toss will be 12}}{\\text{the probability that the sum of the results of the toss will be 11}} = ?\\)",
+      "options": [
+        "1",
+        "\\(\\frac{1}{2}\\)",
+        "\\(\\frac{1}{3}\\)",
+        "\\(\\frac{2}{3}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2019_spring_q2_14",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 14,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "hard",
+      "stem": "a, b and c are three numbers that are different from 0.\n\nGiven: | a | + b + | c | = c\n\nWhich of the following statements is necessarily true?",
+      "options": [
+        "b is a positive number",
+        "b is a negative number",
+        "c is a positive number",
+        "c is a negative number"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Rearrange for \\(b\\): \\(b=c-|c|-|a|\\). The part \\(c-|c|\\) is 0 when \\(c\\) is positive and \\(2c\\) when negative — never positive. And \\(-|a|\\) is strictly negative, since \\(a\\ne0\\). So \\(b<0\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "\\(|c|\\) is at least \\(c\\) and \\(|a|\\) is strictly above 0, so moving both to the other side can only push \\(b\\) below zero. Nothing about the individual sign of \\(c\\) is ever pinned."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(a=1,\\ c=5\\) gives \\(b=-1\\) ✓, and \\(a=1,\\ c=-5\\) gives \\(b=-11\\) ✓. Since \\(c\\) works out both positive and negative, options (3) and (4) are both dead."
+        }
+      ]
+    },
+    {
+      "id": "2019_spring_q2_15",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 15,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "hard",
+      "stem": "The following one hundred numbers are given:  \\(\\frac{1}{2^0}\\) ,  \\(\\frac{1}{2^1}\\) ,  \\(\\frac{1}{2^2}\\) ,  \\(\\frac{1}{2^3}\\) ,  ...  ,  \\(\\frac{1}{2^{99}}\\)\n\nThe sum of the numbers is -",
+      "options": [
+        "1",
+        "between 0 and 1",
+        "between 1 and 2",
+        "between 2 and 3"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2019_spring_q2_16",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 16,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "hard",
+      "stem": "A, B and C are letters representing digits between 1 and 9.\n\nGiven:  35A × 4B = 15CC5\n\nWhich of the following statements is necessarily true?",
+      "options": [
+        "A + B > 10",
+        "A + B is an odd number",
+        "A + B is an even number",
+        "A + B is divisible by 5"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Work on the units digit alone. The product ends in 5, and \\(A \\times B\\) must therefore end in 5 &mdash; which needs one of them to be 5 and the other odd."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Test the possibilities against the size of the product: \\(355 \\times 45 = 15975\\) ✓ fits the pattern \\(15CC5\\) with \\(C=9\\). So \\(A=5,\\ B=5\\) and \\(A+B=10\\), which is even."
+        }
+      ]
+    },
+    {
+      "id": "2019_spring_q2_17",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 17,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "hard",
+      "stem": "x, y and z are positive integers.\n\nGiven: x > y\n     x and y are divisible by z without a remainder.\n\nWhich of the following statements <b>necessarily</b> holds?",
+      "options": [
+        "z ≠ y",
+        "x = 2y",
+        "2z ≤ x",
+        "y ≤ z ≤ x"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(y\\) is a positive multiple of \\(z\\), so \\(y \\ge z\\). And \\(x\\) is a multiple of \\(z\\) strictly greater than \\(y\\), so it is at least the <i>next</i> multiple up: \\(x \\ge 2z\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "The others fall to one case each. \\(z=3,\\ y=3,\\ x=9\\) has \\(z = y\\), killing (1), and \\(x \\ne 2y\\), killing (2). And \\(z=3,\\ y=6,\\ x=9\\) has \\(y > z\\), killing (4)."
+        }
+      ]
+    },
+    {
+      "id": "2019_spring_q2_18",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 18,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "medium",
+      "stem": "In the accompanying coordinate system are three segments whose lengths are a, b and c (see figure).\n\nWhich of the following statements is true?",
+      "options": [
+        "a = b ≠ c",
+        "a ≠ b = c",
+        "a = b = c",
+        "a ≠ b ≠ c"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2019_s2_q18.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2019_spring_q2_19",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 19,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "hard",
+      "stem": "Olga travelled from A to B.  In the first part of the way she travelled at a constant speed of 60 kph, and in the second part she travelled at a constant speed of 40 kph.  She arrived at B at the same time as the time of a trip from A to B at a constant speed of 50 kph.\n\n\\(\\dfrac{\\text{the time that Olga travelled at a speed of 60 kph}}{\\text{the time that Olga travelled at a speed of 40 kph}} = ?\\)",
+      "options": [
+        "1",
+        "\\(\\frac{2}{5}\\)",
+        "\\(\\frac{2}{3}\\)",
+        "\\(\\frac{4}{5}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2019_spring_q2_20",
+      "source_exam": "psychometric_spring_2019",
+      "source_question_number": 20,
+      "section_id": "2019_spring_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "In the figure are six circles whose radius is 1 cm.\nEach one of the three straight lines is tangent to four of the circles (see figure).\n\nWhat is the size of the dark area (in cm²)?",
+      "options": [
+        "\\(6\\sqrt{2} - \\pi\\)",
+        "\\(6\\sqrt{2} - 2\\pi\\)",
+        "\\(6\\sqrt{3} - \\pi\\)",
+        "\\(6\\sqrt{3} - 2\\pi\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/sp2019_s2_q20.png"
+      ],
+      "sub_category_id": "circles"
+    }
+  ]
+}

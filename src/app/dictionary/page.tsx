@@ -3,7 +3,8 @@ import { Dictionary } from "@/components/extras/Dictionary";
 
 export const metadata = { title: "Dictionary — Psychometry" };
 
-export default function DictionaryPage() {
+export default async function DictionaryPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
+  const { q } = await searchParams;
   const entries = getDictionary();
   return (
     <main className="mx-auto max-w-5xl px-6">
@@ -16,7 +17,7 @@ export default function DictionaryPage() {
           listen to them all in <a href="/listen" className="link">Listen</a>.
         </p>
       </header>
-      <Dictionary entries={entries} />
+      <Dictionary entries={entries} initialQuery={q ?? ""} />
     </main>
   );
 }

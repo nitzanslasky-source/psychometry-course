@@ -5,6 +5,7 @@ import { useMemo, useState } from "react";
 import type { CourseCardStep, SubjectKey } from "@/lib/fullCourseTypes";
 import { SUBJECT } from "@/lib/subjects";
 import { MemoryCard } from "@/components/learn/MemoryCard";
+import { AddToReview } from "./AddToReview";
 
 interface Item {
   card: CourseCardStep;
@@ -63,7 +64,10 @@ export function RulesBook({ items }: { items: Item[] }) {
                     <Link href={`/topic/${i.topicId}/${i.step}`} className="eyebrow hover:text-ink" style={{ color: accent }}>
                       {i.topicTitle} →
                     </Link>
-                    <h2 className="display mt-2 text-[36px]">{i.card.title}</h2>
+                    <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
+                      <h2 className="display text-[36px]">{i.card.title}</h2>
+                      <AddToReview srsKey={`c:${i.card.id}`} />
+                    </div>
                   </div>
                 }
               />

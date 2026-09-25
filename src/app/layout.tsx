@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Inter, Instrument_Serif } from "next/font/google";
 import { MathJaxProvider } from "@/components/MathJaxProvider";
 import { NavLinks } from "@/components/NavLinks";
+import { Search } from "@/components/Search";
 import "./globals.css";
 
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
@@ -29,9 +30,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-6">
               <Link href="/" className="pressable flex items-baseline gap-2">
                 <span className="font-serif text-[26px] leading-none tracking-tight">Psychometry</span>
-                <span className="eyebrow hidden lg:inline">The complete course</span>
+                <span className="eyebrow hidden xl:inline">The complete course</span>
               </Link>
-              <NavLinks />
+              <div className="flex min-w-0 items-center gap-3">
+                <NavLinks />
+                <Search />
+              </div>
             </div>
           </header>
           {children}

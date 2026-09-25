@@ -1,0 +1,1105 @@
+{
+  "source_exam": "psychometric_autumn_2024",
+  "source_exam_label": "Autumn 2024",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_autumn_2024_acc (1).pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 60 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "table_comprehension_lead": "Study the table below, then answer the four questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2024_autumn_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "table_comprehension",
+          "header": "Table Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/a2024_s1_table.png",
+          "intro": "Study the table below, then answer the four questions that follow.\n\nNine players, <b>A</b> through <b>I</b>, held a tournament of board games, consisting of games of four types.  Two players took part in each game in the tournament, and every game ended in a win for one of them.\nThe games were arranged according to the order of the players: first player <b>A</b> played against all the players in order, then player <b>B</b> played against all the players except <b>A</b>, whom he had already played against, and so on, until each player had played once against every other player.\nEach game in the tournament is represented in the table by a cell.  The row and the column indicate the players taking part in the game, the shape indicates the type of game, and the arrow indicates the winner – \"→\" indicates that the player appearing at the beginning of the row won; \"↑\" indicates that the player appearing at the head of the column won.  Finally, the number in the cell is the number of points with which the winner won the game (see key).\n\nFor example: Player <b>B</b> played against player <b>E</b> at \"Dangerous Spin\".  Player <b>E</b> won, and won with 4 points."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    },
+    {
+      "section_id": "2024_autumn_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-15)",
+          "from": 1,
+          "to": 15
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 16-20)",
+          "from": 16,
+          "to": 20,
+          "figure_path": "figures/a2024_s2_graph.png",
+          "secondary_figure_path": "figures/a2024_s2_graph_key.png",
+          "intro": "Study the graph below, then answer the five questions that follow.\n\nThe graph presents data on the grades of 50 students who were tested in two exams – one at the beginning of the year and one in the middle of the year.\nThe vertical axis shows the grades received in the exams (from 1 to 10).\nOne of the grades is written in each black rectangle (according to the position of the rectangle in relation to the vertical axis).  The black rectangle and the arrows going out from it represent all the students who received <b>at the beginning of the year</b> the grade written in the rectangle.\nAn upward arrow (grey) represents the students whose grade in the middle of the year was higher than at the beginning of the year.  A number is written in a circle inside the arrow, and the tip of the arrow represents the highest grade received among these students.\nA downward arrow (white) represents the students whose grade in the middle of the year was lower than at the beginning of the year.  A number is written in a circle inside the arrow, and the tip of the arrow represents the lowest grade received among these students.\n\nNote: No student received the same grade in both exams.\n\nFor example, out of the students who received the grade 7 at the beginning of the year, there are 3 students who received a higher grade in the middle of the year.  The highest grade received among these students is 9."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2024_autumn_q1_01",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 1,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure the point O is the origin.\nOABC is a rectangle two of whose sides are tangent to the circle at the points D and E.\n\nBased on this information and the information in the figure,\nCE = ?",
+      "options": [
+        "\\(4\\frac{1}{2}\\)",
+        "\\(4\\frac{5}{6}\\)",
+        "3",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/a2024_s1_q01.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2024_autumn_q1_02",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 2,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "easy",
+      "stem": "| x – y | – | y – x | = ?",
+      "options": [
+        "2x + 2y",
+        "-2y",
+        "2x",
+        "0"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(|x-y|\\) and \\(|y-x|\\) are the same distance measured in opposite directions, and distance has no direction. The two terms are identical, so the difference is 0."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(x=5,\\ y=2\\): \\(|3|-|-3|=3-3=0\\). Any pair gives the same thing, which is the clue that this is an identity rather than a calculation."
+        }
+      ]
+    },
+    {
+      "id": "2024_autumn_q1_03",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 3,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "The price of a dress on the second day rose by 100% compared with the price on the first day, on the third day it rose by 50% compared with the price on the second day, and on the fourth day it rose by 25% compared with the price on the third day.\n\nBy what percentage did the price of the dress rise on the fourth day compared with the first day?",
+      "options": [
+        "175%",
+        "200%",
+        "250%",
+        "275%"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "The factors multiply: \\(2 \\times 1.5 \\times 1.25 = 3.75\\). A price of 3.75 times the original is a rise of 275%."
+        },
+        {
+          "kind": "understanding",
+          "text": "The rise is \\(3.75 - 1 = 2.75\\), which is 275% &mdash; not 375%. Converting a <i>multiplier</i> into a <i>percentage increase</i> means subtracting 1 first."
+        }
+      ]
+    },
+    {
+      "id": "2024_autumn_q1_04",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 4,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "medium",
+      "stem": "The chair in the accompanying figure is made up of the following parts:\n- 4 wooden legs whose dimensions are 1 cm × 1 cm × 50 cm\n- 2 wooden boards whose dimensions are 1 cm × 50 cm × 50 cm\n\nWhat is the volume of the wood in the chair (in cm³)?",
+      "options": [
+        "5,200",
+        "2,550",
+        "600",
+        "400"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/a2024_s1_q04.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2024_autumn_q1_05",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 5,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "easy",
+      "stem": "3 pumps operating at the same fixed rate pump 5 litres of water per hour together.\n\nIn how many hours will 2 pumps pump 20 litres of water together?",
+      "options": [
+        "6",
+        "2",
+        "8",
+        "10"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Three pumps make 5 litres an hour, so one makes \\(\\frac53\\) and two make \\(\\frac{10}{3}\\)."
+        },
+        {
+          "kind": "algebra",
+          "text": "\\(20 \\div \\frac{10}{3} = 6\\) hours. Reduce to a single pump before scaling up."
+        }
+      ]
+    },
+    {
+      "id": "2024_autumn_q1_06",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 6,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "Given:  \\((a - 1)(a^2 + a + 1) = b^3 - 1\\)   0 < a,b\n\na = ?",
+      "options": [
+        "b",
+        "\\(b^2 + 1\\)",
+        "\\(b^3\\)",
+        "\\(b^3 - 1\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\((a-1)\\left(a^2+a+1\\right)\\) is the difference-of-cubes identity read backwards: it equals \\(a^3-1\\). So \\(a^3-1 = b^3-1\\), giving \\(a^3 = b^3\\) and, both being positive, \\(a = b\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(a=2\\): the left side is \\(1 \\times 7 = 7\\), so \\(b^3 = 8\\) and \\(b = 2\\). The two are equal, which only option (1) allows."
+        }
+      ]
+    },
+    {
+      "id": "2024_autumn_q1_07",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 7,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "medium",
+      "stem": "In how many possibilities is it possible to arrange the days of the week anew, so that Sunday will <b>not</b> fall in its regular place?",
+      "options": [
+        "\\(6^7\\)",
+        "\\(6 \\cdot 6!\\)",
+        "7!",
+        "\\(6^6\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2024_autumn_q1_08",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 8,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "hard",
+      "stem": "The average of two positive numbers x and y is equal to the difference (x > y).\nThe average of \\(x^2\\) and \\(y^2\\) is 500.\n\nx = ?",
+      "options": [
+        "15",
+        "60",
+        "30",
+        "40"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2024_autumn_q1_09",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 9,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 9-12)",
+      "stem": "At which type of game was only one game played in the last 10 games of the tournament?",
+      "options": [
+        "“Wonder Stars”",
+        "“Hearts and Swords”",
+        "“Castles in the Air”",
+        "“Dangerous Spin”"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_autumn_q1_10",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 10,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 9-12)",
+      "stem": "Had another player taken part in the tournament – player J – how many games would have been added to the tournament?",
+      "options": [
+        "8",
+        "9",
+        "16",
+        "18"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_autumn_q1_11",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 11,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Table Comprehension (Questions 9-12)",
+      "stem": "One of the players played twice in a row at “Wonder Stars”.\n\nWhat was the next game that he played?",
+      "options": [
+        "“Wonder Stars”",
+        "“Hearts and Swords”",
+        "“Castles in the Air”",
+        "“Dangerous Spin”"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_autumn_q1_12",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 12,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Table Comprehension (Questions 9-12)",
+      "stem": "Given: The losing player loses a number of points equal to that with which the winner won the game (and a player's score can be negative).\n\nHow many points did player C accumulate altogether?",
+      "options": [
+        "-5",
+        "0",
+        "5",
+        "10"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_autumn_q1_13",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 13,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "It is <b>not possible</b> that one of the diagonals of the ______ inscribed in the circle is a diameter of the circle.",
+      "options": [
+        "isosceles trapezoid",
+        "rectangle",
+        "regular hexagon",
+        "regular octagon"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2024_autumn_q1_14",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 14,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Ruti had a snake and a lizard.  A year ago the length of the snake was exactly 2 times the length of the lizard.\nIn the course of the year each of them grew longer by the same number of cm.\nNow the snake is longer than the lizard by 36 cm.\n\nWhat was the sum of the lengths of the snake and of the lizard a year ago (in cm)?",
+      "options": [
+        "72",
+        "108",
+        "120",
+        "It cannot be determined from the information given"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Both grew by the <b>same</b> amount, so the gap between them never changed &mdash; it was 36 cm a year ago too. With the snake then twice the lizard, the gap equalled the lizard's length, so the lizard was 36 and the snake 72. Sum: 108."
+        },
+        {
+          "kind": "algebra",
+          "text": "Writing it out: \\((2L+g) - (L+g) = L = 36\\). The growth \\(g\\) cancels, which is why option (4) is wrong &mdash; the answer does not depend on the unknown growth at all."
+        }
+      ]
+    },
+    {
+      "id": "2024_autumn_q1_15",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 15,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "medium",
+      "stem": "The letters A and B represent digits between 1 and 9.\nAB is a two-digit number <b>smaller</b> than twice the sum of its digits.\n\n\\(\\dfrac{B}{A}\\) = ?",
+      "options": [
+        "7",
+        "\\(\\frac{3}{2}\\)",
+        "\\(\\frac{8}{3}\\)",
+        "9"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\overline{AB} < 2(A+B)\\) means \\(10A + B < 2A + 2B\\), so \\(8A < B\\). Since \\(B\\) is at most 9, the only possibility is \\(A = 1\\) and \\(B = 9\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Place value makes the tens digit ten times as heavy in the number as in the digit sum, so the inequality is extremely tight &mdash; it can only survive with the smallest possible tens digit and the largest possible units digit."
+        }
+      ]
+    },
+    {
+      "id": "2024_autumn_q1_16",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 16,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "Three of the four following expressions are equal in value.\n\nWhich is the remaining expression?",
+      "options": [
+        "\\(\\left(\\frac{1}{4}\\right)^{-5} \\cdot \\frac{1}{2}\\)",
+        "\\(\\left(\\frac{1}{2}\\right)^{-3} \\cdot 2^6\\)",
+        "\\(8^3\\)",
+        "\\(4^6\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Reduce each to a power of 2: \\(\\left(\\frac14\\right)^{-5}\\cdot\\frac12 = \\frac{2^{10}}{2} = 2^9\\); \\(\\left(\\frac12\\right)^{-3}\\cdot2^6 = 2^9\\); \\(8^3 = 2^9\\); \\(4^6 = 2^{12}\\). The odd one out is \\(4^6\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Three of four being equal is the instruction to convert everything to one base. Once they are all powers of 2 the comparison is a glance."
+        }
+      ]
+    },
+    {
+      "id": "2024_autumn_q1_17",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 17,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "hard",
+      "stem": "Naomi has matches each one of which is x cm long.\nNaomi used the matches (without breaking them) in order to create the perimeter of an equilateral triangle whose area is \\(x^2\\sqrt{3}\\) cm².\n\nHow many matches did Naomi use?",
+      "options": [
+        "9",
+        "12",
+        "3",
+        "6"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2024_autumn_q1_18",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 18,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Defined Operations",
+      "difficulty": "hard",
+      "stem": "For every positive integer n, $(n) is defined thus:\n$(n) = a number of n digits all of which are 1\nFor example:  $(2) = 11\n\n$(n + 1) = ?",
+      "options": [
+        "\\(10 \\cdot\\)$(n)\\( + 1\\)",
+        "\\(10^{n+1}\\)",
+        "$(n)\\( + 1\\)",
+        "\\(10^{\\$(n)}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "defined_operations"
+    },
+    {
+      "id": "2024_autumn_q1_19",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 19,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Overlapping Sets",
+      "difficulty": "medium",
+      "stem": "At a certain conference 4 lectures were given.\nOri was present at 3 of the lectures, Shir was present at 3 of the lectures and Daniel was present at 2 of the lectures.\n\nAt how many lectures <b>at the least</b> were the three of them present together?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "overlapping_sets"
+    },
+    {
+      "id": "2024_autumn_q1_20",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 20,
+      "section_id": "2024_autumn_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "ABCD and EFGH are squares the lengths of whose sides are x cm and y cm (see figure).\nThe perimeter of the square EFGH equals the length of the emphasized line.\n\n\\(\\dfrac{y}{x}\\) = ?",
+      "options": [
+        "\\(\\frac{2}{3}\\)",
+        "\\(\\frac{3}{5}\\)",
+        "\\(\\frac{5}{6}\\)",
+        "\\(\\frac{4}{5}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/a2024_s1_q20.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2024_autumn_q2_01",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 1,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "medium",
+      "stem": "In a class there are 30 children, 12 of whom are girls.  The average height of the girls in the class is x cm, and the average height of the boys in the class is y cm.\n\nWhat is the average height of all the children of the class (boys and girls) in cm?",
+      "options": [
+        "\\(\\dfrac{x + y}{2}\\)",
+        "\\(\\dfrac{18y}{12x}\\)",
+        "\\(\\dfrac{30x - 12y}{18}\\)",
+        "\\(\\dfrac{12x + 18y}{30}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2024_autumn_q2_02",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 2,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "medium",
+      "stem": "Based on the information in the figure,\n\nAC = ?",
+      "options": [
+        "15 cm",
+        "16 cm",
+        "17 cm",
+        "18 cm"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/a2024_s2_q02.png"
+      ],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2024_autumn_q2_03",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 3,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "hard",
+      "stem": "Given:  x is a prime number greater than 2.\n\nThe value of the expression  \\(\\dfrac{x^{(x+1)}}{2^x}\\)  is necessarily –",
+      "options": [
+        "an even number",
+        "an odd number",
+        "a non-integer greater than 1",
+        "a non-integer smaller than 1"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "A prime above 2 is odd, so \\(x\\) is odd and \\(x+1\\) is even. The numerator \\(x^{x+1}\\) is a power of an odd number, so it is odd &mdash; and it contains no factor of 2 at all."
+        },
+        {
+          "kind": "structure",
+          "text": "The denominator \\(2^x\\) is therefore never cancelled, so the quotient is not an integer. And since \\(2^x\\) grows far faster than needed &mdash; at \\(x=3\\) it is \\(\\frac{81}{8}\\), which is above 1 &mdash; check the size: for \\(x=3\\) the value exceeds 1, so it is a non-integer greater than 1."
+        }
+      ]
+    },
+    {
+      "id": "2024_autumn_q2_04",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 4,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure is a circle whose centre is O.\nThe area of the grey sector is \\(\\pi\\) cm².\n\nWhat is the length of the radius of the circle (in cm)?",
+      "options": [
+        "1",
+        "2",
+        "\\(\\frac{\\sqrt{2}}{2}\\)",
+        "\\(4\\sqrt{\\pi}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/a2024_s2_q04.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2024_autumn_q2_05",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 5,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "Given:  x ≤ y\n        y ≤ z\n        z ≤ x\n\nWhich of the following statements is <b>necessarily</b> true?",
+      "options": [
+        "x · y ≤ z",
+        "x + z ≤ y",
+        "x = y = z",
+        "x – y = z"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "The three conditions close into a loop: \\(x\\) to \\(y\\) to \\(z\\) and back to \\(x\\). The chain gives \\(x\\le z\\), and the third condition gives \\(z\\le x\\). Both can hold only if \\(x=z\\), and that collapses everything between them."
+        },
+        {
+          "kind": "understanding",
+          "text": "It looks like too little information and is actually too much. A student who does not spot the loop will hunt counterexamples for a full minute and find none, because there are none."
+        }
+      ]
+    },
+    {
+      "id": "2024_autumn_q2_06",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 6,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "hard",
+      "stem": "Hadas wrote in a row all the two-digit numbers.\nBeneath it, in a second row, she wrote the sum of the digits of each number (see the illustration in the figure).\n\nWhich of the following numbers appeared <b>the fewest</b> times in the second row?",
+      "options": [
+        "17",
+        "15",
+        "6",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/a2024_s2_q06.png"
+      ],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "For two-digit numbers the digit sum runs from 1 to 18. Sums in the middle have many ways to be made; sums at the extremes have few. So the rarest is whichever listed sum is furthest from the middle."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Count them: sum 17 comes only from 89 and 98 &mdash; two ways. Sum 15 has four, sum 6 has six, sum 4 has four. So 17 is the fewest."
+        }
+      ]
+    },
+    {
+      "id": "2024_autumn_q2_07",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 7,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "hard",
+      "stem": "Given:  ABC is an isosceles triangle (AB = AC).\n\nBased on this information and the information in the figure,\nx = ?",
+      "options": [
+        "2β – α",
+        "180° – α",
+        "180° – 2β",
+        "α – β"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/a2024_s2_q07.png"
+      ],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2024_autumn_q2_08",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 8,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "60% of x are 12% of y.\n\nTherefore, x is ______ of y.",
+      "options": [
+        "72%",
+        "20%",
+        "12%",
+        "5%"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(0.6x = 0.12y\\), so \\(x = 0.2y\\) &mdash; 20%."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Set \\(y = 100\\): \\(12\\%\\) of it is 12, so \\(0.6x = 12\\) and \\(x = 20\\), which is 20% of \\(y\\) ✓."
+        }
+      ]
+    },
+    {
+      "id": "2024_autumn_q2_09",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 9,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Geometric Comprehension",
+      "difficulty": "hard",
+      "stem": "The shape in the accompanying figure is made up of identical squares the length of whose sides is 2 cm.\n\nWhat is the area of the grey area (in cm²)?",
+      "options": [
+        "15",
+        "16",
+        "13",
+        "14"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/a2024_s2_q09.png"
+      ],
+      "sub_category_id": "geometric_comprehension"
+    },
+    {
+      "id": "2024_autumn_q2_10",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 10,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Motion & Speed",
+      "difficulty": "hard",
+      "stem": "A car race was held on a track on which there are 4 numbered marking points (see figure).  The routes between every two adjacent marking points are equal in length.  In the race they go around the track a number of times.\nCar <b>A</b> and car <b>B</b> set out at the same moment from marking point 1 and began to travel on the track in a clockwise direction (see figures).\nCar <b>A</b> travels at a speed of v kph, and car <b>B</b> travels at a speed of 2v kph.\n\nAt which marking point did the two cars meet for the first time (after the beginning of the race)?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/a2024_s2_q10.png"
+      ],
+      "sub_category_id": "motion_speed",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Same direction on a closed track, so B gains on A at \\(2v - v = v\\). They meet when B has gained one full lap."
+        },
+        {
+          "kind": "understanding",
+          "text": "Gaining a lap means B has covered two laps while A covered one &mdash; and A is then back at the start. The first meeting is at marking point 1, whatever the track's shape or the number of marks."
+        }
+      ]
+    },
+    {
+      "id": "2024_autumn_q2_11",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 11,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "Given:  a and b are numbers different from 0.\n\n\\(\\left(\\dfrac{b}{a} + \\dfrac{a}{b}\\right)^2\\) = ?",
+      "options": [
+        "\\(\\dfrac{4a^2}{b^2}\\)",
+        "\\(\\dfrac{b^2}{a^2} + \\dfrac{a^2}{b^2}\\)",
+        "\\(\\dfrac{b^2}{a^2} + 2 + \\dfrac{a^2}{b^2}\\)",
+        "\\(\\dfrac{b^2}{a^2} + \\dfrac{2a}{b} + \\dfrac{a^2}{b^2}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Squaring a sum: \\(\\left(\\frac ba + \\frac ab\\right)^2 = \\frac{b^2}{a^2} + 2\\cdot\\frac ba\\cdot\\frac ab + \\frac{a^2}{b^2}\\), and the middle term is \\(2\\) because the two fractions are reciprocals."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(a=1, b=2\\): the expression is \\(\\left(2+\\frac12\\right)^2 = 6.25\\). Option (3) gives \\(4+2+0.25 = 6.25\\); the others give 4, 4.25 and 8.25."
+        }
+      ]
+    },
+    {
+      "id": "2024_autumn_q2_12",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 12,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "The number of elementary schools in Nes Tziona is greater by 2 than the number of elementary schools in Yavne.\nThe number of elementary schools in Yavne is greater by 9 than the number of elementary schools in Kiryat Shmona.\n\nWhich of the following numbers can be the total number of elementary schools in the three cities?",
+      "options": [
+        "40",
+        "41",
+        "42",
+        "43"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Let Yavne have \\(Y\\). Then Nes Tziona has \\(Y+2\\) and Kiryat Shmona has \\(Y-9\\). The total is \\(3Y - 7\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "So the total is 7 less than a multiple of 3, that is \\(\\equiv 2 \\pmod 3\\). Checking digit sums: 41 gives 5, and \\(41+7 = 48\\) is divisible by 3 ✓. The others fail."
+        }
+      ]
+    },
+    {
+      "id": "2024_autumn_q2_13",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 13,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "hard",
+      "stem": "a and b are two integers, greater than 1, and different from each other.\nc is an integer greater than \\(a \\cdot b\\), and it is divisible both by a and by b without a remainder.\nNir claimed: “From this it necessarily follows that c is divisible by \\(a \\cdot b\\) too without a remainder.”\n\nWhich of the following triplets of numbers shows that Nir's claim is <b>wrong</b>?",
+      "options": [
+        "a = 2  ,  b = 3  ,  c = 18",
+        "a = 3  ,  b = 13  ,  c = 29",
+        "a = 6  ,  b = 4  ,  c = 36",
+        "a = 4  ,  b = 5  ,  c = 40"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Nir's claim fails exactly when \\(a\\) and \\(b\\) share a factor, because then \\(\\text{LCM}(a,b)\\) is smaller than \\(ab\\). So you are hunting an option where \\(a\\) and \\(b\\) are <i>not</i> coprime."
+        },
+        {
+          "kind": "check-answers",
+          "text": "\\(a=6,\\ b=4\\) share a factor of 2, and \\(c=36\\) is divisible by both while \\(ab = 24\\) does not divide 36. Also check \\(c > ab\\): \\(36 > 24\\) ✓. The other options have coprime pairs, where the claim holds."
+        }
+      ]
+    },
+    {
+      "id": "2024_autumn_q2_14",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 14,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "medium",
+      "stem": "In a bag there are 2 red balls and 2 yellow balls.\nYou choose at random two balls one after the other (without returning).\n\nWhat is the probability that the two balls chosen are different in colour from each other?",
+      "options": [
+        "\\(\\frac{2}{3}\\)",
+        "\\(\\frac{5}{6}\\)",
+        "\\(\\frac{1}{3}\\)",
+        "\\(\\frac{1}{4}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2024_autumn_q2_15",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 15,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "Given a cylinder whose height is 10 cm and the radius of whose base is 3 cm.\nA is any point on the circumference of the upper base.\nB is any point on the circumference of the lower base.\n\nIt is known that the length of the segment AB (in cm) is a <b>whole</b> number.\n\nBased on this information and the information in the figure,\nwhat is the maximal length of AB (in cm)?",
+      "options": [
+        "10",
+        "11",
+        "12",
+        "13"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/a2024_s2_q15.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2024_autumn_q2_16",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 16,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 16-20)",
+      "stem": "How many students received in the middle of the year a grade lower than the grade they received at the beginning of the year?",
+      "options": [
+        "18",
+        "21",
+        "23",
+        "26"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_autumn_q2_17",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 17,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 16-20)",
+      "stem": "Among the students who received a grade <b>higher</b> than 5 at the beginning of the year,\n\nwhat is the lowest grade received in the middle of the year?",
+      "options": [
+        "1",
+        "5",
+        "3",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_autumn_q2_18",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 18,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 16-20)",
+      "stem": "Of the grades received at the beginning of the year, the grade ______ was received by the greatest number of students.",
+      "options": [
+        "10",
+        "8",
+        "6",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_autumn_q2_19",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 19,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 16-20)",
+      "stem": "In the middle of the year <b>at the least</b> ______ students received a grade higher by exactly 2 than the grade they received at the beginning of the year.",
+      "options": [
+        "12",
+        "7",
+        "0",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_autumn_q2_20",
+      "source_exam": "psychometric_autumn_2024",
+      "source_question_number": 20,
+      "section_id": "2024_autumn_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 16-20)",
+      "stem": "At the beginning of the year Lior received the grade 6.\nIt turned out that the class teacher made a mistake in recording the grades, and the grade that was recorded for Lior <b>in the middle of the year</b> was in fact higher by 2 than his true grade.\n\nAfter the mistake is corrected, which of the following could describe the information relating to grade 6?",
+      "options": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "option_figure_paths": [
+        "figures/a2024_s2_q20_opt1.png",
+        "figures/a2024_s2_q20_opt2.png",
+        "figures/a2024_s2_q20_opt3.png",
+        "figures/a2024_s2_q20_opt4.png"
+      ],
+      "sub_category_id": "charts_tables"
+    }
+  ]
+}

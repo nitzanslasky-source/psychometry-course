@@ -75,8 +75,10 @@ export function LearnHome({ outline, stepIds, recorded, totals }: Props) {
       {/* ---------------------------------------------------------------- tools */}
       <section className="mx-auto max-w-6xl px-6 pb-16">
         <div className="eyebrow">Beyond the lessons</div>
-        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
+            { href: "/review", t: "Review", d: "Your mistakes, words and rules — back at the right moment." },
+            { href: "/simulations", t: "Simulations", d: "Real exam sections: 20 questions, 20 minutes." },
             { href: "/rules", t: "Rules to know", d: "Every formula and rule from the course, on one page." },
             { href: "/dictionary", t: "Dictionary", d: "Exam vocabulary with meanings and examples — tap to hear it." },
             { href: "/listen", t: "Listen", d: "Vocabulary episodes for the bus, the gym or a walk." },

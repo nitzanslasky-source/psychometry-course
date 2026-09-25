@@ -1,0 +1,1076 @@
+{
+  "source_exam": "psychometric_spring_2024",
+  "source_exam_label": "Spring 2024",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_spring_2024_acc.pdf)",
+  "answer_key_source": "Official NITE answer key, PDF page 59 (מפתח תשובות נכונות), extracted by work/extract_keys.py",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "table_comprehension_lead": "Study the table below, then answer the four questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2024_spring_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/sp2024_s1_graph.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\nA certain radio station publishes every week a chart in which the 20 most-loved songs of that week are ranked (in first place is the most-loved song, and so forth).  The graph presents the rankings of all the songs of four singers – Orly, Bat-Chen, Galit and Dorin – starting from week 1 of a certain year and up to week 20 of it.  Songs of additional singers were ranked in the chart, but these are not presented in the graph.\nEvery line in the graph represents one song of one singer (see key).  The emphasized points on the line represent the ranking of this song in the weeks in which it participated in the chart.  In the week in which a song entered the chart, a circle appears around its point indicating the style of the song: pop, rock, Mediterranean or hip hop (see key).\n\nFor example: In week 6 a pop song of Galit entered the chart and was ranked in 2nd place.  Week 14 was the last week in which this song was ranked in the chart."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    },
+    {
+      "section_id": "2024_spring_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/sp2024_s2_graph.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\nThe graph describes flight routes between five countries: England, Belgium, Germany, Denmark and Holland.\nEvery arrow describes a direct flight between two countries.  The arrow leaves the country from which the plane takes off and points to the country in which the plane lands.\nIt is possible to get from one country to another not necessarily on one direct flight, but also if there is a route of several flights connecting the two countries.\n\nFor example: there is no direct flight from Holland to Germany, but it is possible to get from Holland to Germany on a route on which there are two direct flights: a direct flight from Holland to Denmark and a direct flight from Denmark to Germany."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2024_spring_q1_01",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 1,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "medium",
+      "stem": "In the coordinate system in the accompanying figure there are two congruent triangles.  The sides AB and CD are parallel to the x-axis.\n\nBased on this information and the information in the figure, what are the values of point A?",
+      "options": [
+        "(-4 , -2)",
+        "(-6 , -2)",
+        "(-4 , -1)",
+        "(-6 , -1)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/sp2024_s1_q01.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2024_spring_q1_02",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 2,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "easy",
+      "stem": "Which of the following expressions is equal to \\(27^3\\)?",
+      "options": [
+        "\\(3^{27}\\)",
+        "\\(3^{18}\\)",
+        "\\(3^{9}\\)",
+        "\\(3^{6}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(27 = 3^3\\), so \\(27^3 = \\left(3^3\\right)^3 = 3^9\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "A power of a power multiplies the exponents. Option (1) is what adding them would give in spirit, and it is the standard wrong answer."
+        }
+      ]
+    },
+    {
+      "id": "2024_spring_q1_03",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 3,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "Given:  a < 2b\nb < 5\n\nWhich of the following inequalities is <b>necessarily</b> true?",
+      "options": [
+        "a < 10",
+        "a < b",
+        "a < 5",
+        "a < 3"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(b<5\\) gives \\(2b<10\\), and \\(a<2b\\), so \\(a<10\\) by chaining."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Nothing else is forced. \\(a\\) can exceed \\(b\\), exceed 5 and exceed 3 all at once — take \\(b=4.9\\) and \\(a=9\\), which satisfies both givens and kills (2), (3) and (4) together."
+        }
+      ]
+    },
+    {
+      "id": "2024_spring_q1_04",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 4,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "medium",
+      "stem": "Based on the information in the figure,\nby how much is the area of the light triangle greater than the area of the dark triangle?",
+      "options": [
+        "5",
+        "12.5",
+        "20",
+        "25"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/sp2024_s1_q04.png"
+      ],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2024_spring_q1_05",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 5,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "medium",
+      "stem": "How many different five-digit numbers is it possible to create from the digits 2, 5, 5, 7, 7 so that the first digit in the number and the last digit in the number will be the same digits?",
+      "options": [
+        "9",
+        "6",
+        "3",
+        "4"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2024_spring_q1_06",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 6,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "medium",
+      "stem": "Shmuel had a stamp collection.  He wanted to divide the stamps in the collection equally between his two sons.  Afterwards he changed his mind and thought to divide the stamps equally between his five grandchildren.  In the end he decided to divide the stamps equally between all his sons and grandchildren.  Each one of the above divisions is possible to carry out without a remainder.\n\nWhat is the smallest possible number of stamps in Shmuel's collection?",
+      "options": [
+        "14",
+        "35",
+        "70",
+        "140"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "The total must be divisible by 2, by 5 and by 7 (two sons, five grandchildren, then all seven). So it is divisible by their LCM."
+        },
+        {
+          "kind": "structure",
+          "text": "\\(2\\), \\(5\\) and \\(7\\) are pairwise coprime, so the LCM is simply their product, 70. That is the smallest total that works."
+        }
+      ]
+    },
+    {
+      "id": "2024_spring_q1_07",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 7,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Averages",
+      "difficulty": "medium",
+      "stem": "In the zoo there are three gorillas.  Their average weight is 135 kg.\n\nWhat does the weight of a fourth gorilla need to be so that the average weight of the four of them will be 120 kg?",
+      "options": [
+        "60 kg",
+        "75 kg",
+        "85 kg",
+        "105 kg"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "averages"
+    },
+    {
+      "id": "2024_spring_q1_08",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 8,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "hard",
+      "stem": "In a certain nature reserve there are 25 species of flowers.\n\\(\\frac{4}{5}\\) of the species of flowers are protected species.  \\(\\frac{3}{5}\\) of the species of flowers are species whose colour is purple.\n\nIt is possible that in the nature reserve there are ______ protected species of flowers whose colour is purple.",
+      "options": [
+        "8",
+        "13",
+        "17",
+        "20"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2024_spring_q1_09",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 9,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "In which weeks did Bat-Chen have 3 songs in the chart at the same time?",
+      "options": [
+        "1-4",
+        "5-9",
+        "10-14",
+        "15-19"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_spring_q1_10",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 10,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "A \"strong singer\" is a singer each of whose songs was ranked in one of the three first places in the week in which it entered the chart.\n\nWhich of the four singers is a strong singer?",
+      "options": [
+        "Orly",
+        "Bat-Chen",
+        "Galit",
+        "Dorin"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_spring_q1_11",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 11,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "How many of the rock songs appearing in the graph rose in ranking in the chart at some stage, and at a later stage fell in ranking?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_spring_q1_12",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 12,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "It is known that in one of the first 10 weeks a song that does not appear in the graph was ranked in first place.  A week later this song was ranked in place x, and one more week later it was ranked again in first place.\n\nWhich of the following numbers can be equal to x?",
+      "options": [
+        "5",
+        "8",
+        "11",
+        "13"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_spring_q1_13",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 13,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "Shimon rolls a wheel whose radius is \\(\\frac{1}{4}\\) meter at a constant speed.\nThe wheel rolls 4 complete rotations in 12 seconds.\n\nHow many meters did the wheel travel in one second?",
+      "options": [
+        "\\(\\frac{\\pi}{6}\\)",
+        "\\(\\frac{3\\pi}{8}\\)",
+        "\\(\\frac{2\\pi}{3}\\)",
+        "\\(\\frac{\\pi}{4}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2024_spring_q1_14",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 14,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "medium",
+      "stem": "In the first year of its life a tree sprouted and grew to a height of one meter.  In every remaining year of its life the height of the tree grew by half of the height that was added to it in the preceding year.\n\nWhat was the height of the tree (in meters) at the end of the fourth year of its life?",
+      "options": [
+        "\\(3\\frac{3}{4}\\)",
+        "\\(2\\frac{5}{8}\\)",
+        "\\(2\\frac{1}{4}\\)",
+        "\\(1\\frac{7}{8}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2024_spring_q1_15",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 15,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "A certain calculator is able to perform two calculation operations only: raising a number to the power of two, and calculating a square root.  Let us enter into the calculator a certain positive integer, and the calculator performs on it one of the calculation operations.  On the result that was obtained it performs the other calculation operation.\n\nWhich of the following numbers <b>cannot</b> be the final result obtained in the calculator?",
+      "options": [
+        "6",
+        "24",
+        "36",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots"
+    },
+    {
+      "id": "2024_spring_q1_16",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 16,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "Given:  a is 75% of b.\nb is x% of c.\n\nWhich of the following expressions is equal to a?",
+      "options": [
+        "\\(\\frac{3x}{100}\\)c",
+        "\\(\\frac{75x}{200}\\)c",
+        "\\(\\frac{75x}{300}\\)c",
+        "\\(\\frac{3x}{400}\\)c"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(a = 0.75b\\) and \\(b = \\frac{x}{100}c\\), so \\(a = 0.75 \\cdot \\frac{x}{100}c = \\frac{3x}{400}c\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(c = 400\\), \\(x = 50\\): \\(b = 200\\) and \\(a = 150\\). Option (4) gives \\(\\frac{150}{400}\\times400 = 150\\) ✓."
+        }
+      ]
+    },
+    {
+      "id": "2024_spring_q1_17",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 17,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "medium",
+      "stem": "Given:  y is a certain integer.\n\\(x = y + \\sqrt{2}\\)\n\nWhich of the following statements is necessarily true?",
+      "options": [
+        "\\((x + y)^2\\) is an integer",
+        "\\((x - y)^2\\) is not an integer",
+        "\\(x \\cdot y\\) is an integer",
+        "\\(x^2\\) is not an integer"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "cancelled": true,
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2024_spring_q1_18",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 18,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Given:  2x + y = 60\nx + 2y = 30\n\nWhich of the following equations is <b>not</b> true?",
+      "options": [
+        "x – y = 30",
+        "x + y = 30",
+        "2x + 4y = 60",
+        "4x + 2y = 60"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Adding gives \\(3x+3y = 90\\), so \\(x+y = 30\\); subtracting gives \\(x - y = 30\\). Together \\(x = 30\\) and \\(y = 0\\). Then \\(4x + 2y = 120\\), not 60."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Once \\(x=30, y=0\\) is known, each option is one substitution. Options (1), (2) and (3) all come out true, and (4) does not."
+        }
+      ]
+    },
+    {
+      "id": "2024_spring_q1_19",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 19,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows a circle whose center is O, in which are inscribed the square ABCD and the regular hexagon EBFGDH.\n\n\\(\\alpha\\) = ?",
+      "options": [
+        "120°",
+        "135°",
+        "150°",
+        "165°"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/sp2024_s1_q19.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2024_spring_q1_20",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 20,
+      "section_id": "2024_spring_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "The accompanying figure shows a triangular prism.  Its lateral faces are squares the area of each one of which is \\(\\sqrt{3}\\) cm².\n\nThe area of the base of the prism (the dark triangle) is ______ cm².",
+      "options": [
+        "\\(\\sqrt{\\frac{3}{2}}\\)",
+        "\\(\\frac{\\sqrt{3}}{2}\\)",
+        "\\(\\frac{\\sqrt{3}}{4}\\)",
+        "\\(\\frac{3}{4}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/sp2024_s1_q20.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2024_spring_q2_01",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 1,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "easy",
+      "stem": "Sachar and Roni are standing on the perimeter of the square drawn on the lot.  The length of the side of the square is 5 meters.\n\nWhat is the greatest distance that can be between Sachar and Roni (in a straight line)?",
+      "options": [
+        "5 meters",
+        "\\(5\\sqrt{2}\\) meters",
+        "\\(3\\sqrt{5}\\) meters",
+        "7.5 meters"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2024_spring_q2_02",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 2,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "hard",
+      "stem": "Ohad and Ronena are parking inspectors.  On the first day Ohad inspected x cars per hour, whereas Ronena inspected y cars per hour  (0 < x , y).  On the second day Ohad increased his work rate by a factor of 2 and Ronena increased her work rate by a factor of 3.\nThe number of daily work hours of Ohad is fixed and is identical to the number of daily work hours of Ronena.\n\nBy how much is the total number of cars that they inspected on the second day greater than the total number of cars that they inspected on the first day?",
+      "options": [
+        "\\(\\frac{5}{x+y}\\)",
+        "\\(\\frac{5(x+y)}{2}\\)",
+        "\\(\\frac{2x+3y}{x+y}\\)",
+        "\\(\\frac{2x+3y}{5}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Day one they do \\(x + y\\) an hour; day two \\(2x + 3y\\). The ratio of the two days' output is \\(\\frac{2x+3y}{x+y}\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "Different multipliers on the two workers means the combined rate does not scale by any single factor &mdash; which is why the answer has to stay as a fraction."
+        }
+      ]
+    },
+    {
+      "id": "2024_spring_q2_03",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 3,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "medium",
+      "stem": "Eli had 4 candies more than Shlomit.\n\nWhich of the following statements is necessarily true?",
+      "options": [
+        "After Eli gave Shlomit 4 candies, the numbers of candies of the two of them were equal",
+        "After Eli gave Shlomit 3 candies, the difference between the numbers of candies of the two of them grew",
+        "After Shlomit gave Eli 2 candies, the difference between the numbers of candies of the two of them decreased",
+        "After Eli gave Shlomit one candy, the difference between the numbers of candies of the two of them decreased"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2024_spring_q2_04",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 4,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "Given:  \\(t^2 = w^2\\)\n\\(t \\neq w\\)\nM is the average of t and w.\n\nWhich of the following statements is necessarily true regarding M?",
+      "options": [
+        "It is greater than 0",
+        "It is equal to 0",
+        "It is greater than the difference between t and w",
+        "It is equal to the difference between t and w"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(t^2=w^2\\) means the two have the same size, and \\(t\\ne w\\) rules out their being identical — so they are opposites. The average of a number and its opposite is 0."
+        },
+        {
+          "kind": "algebra",
+          "text": "\\(t^2-w^2=0\\) factors as \\((t-w)(t+w)=0\\). Since \\(t\\ne w\\) the first factor is non-zero, so \\(t+w=0\\) and \\(M=\\frac{t+w}2=0\\)."
+        }
+      ]
+    },
+    {
+      "id": "2024_spring_q2_05",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 5,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Defined Operations",
+      "difficulty": "medium",
+      "stem": "For every positive integer x the operation $ is defined so that:\n$(x) = {the remainder of the division of x by 50}\n\n$(5,000) ∙ $(4,999) + $(5,001) = ?",
+      "options": [
+        "1",
+        "0",
+        "49",
+        "48"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "defined_operations"
+    },
+    {
+      "id": "2024_spring_q2_06",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 6,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "A is a point on the perimeter of a circle whose center is O.\nGiven:  OAB is a right-angled triangle, and its area is \\(\\frac{\\sqrt{3}}{2}\\) cm².\n\nBased on this information and the information in the figure,\nwhat is the area of the dark sector (in cm²)?",
+      "options": [
+        "\\(\\frac{\\pi}{4}\\)",
+        "\\(\\frac{\\pi}{6}\\)",
+        "\\(\\frac{\\pi}{8}\\)",
+        "\\(\\frac{\\pi}{12}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2024_s2_q06.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2024_spring_q2_07",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 7,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Divisibility & Remainders",
+      "difficulty": "hard",
+      "stem": "x is an integer that is divisible by 3.\n\nIf it is known that \\(\\sqrt{x}\\) is an integer, how many possible values are there for x between 1 and 100?",
+      "options": [
+        "5",
+        "10",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "divisibility_remainders",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "\\(\\sqrt x\\) whole means \\(x\\) is a perfect square; divisible by 3 then forces \\(x\\) to be divisible by \\(3^2 = 9\\), since a prime in a square appears an even number of times."
+        },
+        {
+          "kind": "check-answers",
+          "text": "So \\(x\\) is a square multiple of 9 below 100: \\(9, 36, 81\\) &mdash; three of them. The trap is counting multiples of 3 that are squares without realising 9 is forced."
+        }
+      ]
+    },
+    {
+      "id": "2024_spring_q2_08",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 8,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "medium",
+      "stem": "Given:  x and y are negative integers.\nz is an even number.\n\n\\((y \\cdot x^2 \\cdot z)\\) is <b>necessarily</b> –",
+      "options": [
+        "negative",
+        "positive",
+        "odd",
+        "even"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(z\\) is even, and anything multiplied by an even number is even. The signs of \\(x\\) and \\(y\\) are irrelevant to parity, so the product is necessarily even."
+        },
+        {
+          "kind": "check-answers",
+          "text": "The sign is <i>not</i> fixed, which kills (1) and (2): \\(z\\) is only said to be even, so it may be positive or negative, and \\(y \\cdot x^2\\) is negative. Take \\(z = 2\\) and \\(z = -2\\) to get opposite signs."
+        }
+      ]
+    },
+    {
+      "id": "2024_spring_q2_09",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 9,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "Two countries are a \"mutually connected pair\" if it is possible to get from each one of them to the other on one direct flight.\n\nHow many mutually connected pairs are there in the graph?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "6"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_spring_q2_10",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 10,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "A country is called \"central\" if it is possible to get from it (not necessarily on a direct flight) to every other country.\n\nHow many central countries are there?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_spring_q2_11",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 11,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "What is the greatest number of direct flights that it is possible to fly one after the other without passing twice through the same country?",
+      "options": [
+        "5",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_spring_q2_12",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 12,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "Graph Comprehension (Questions 9-12)",
+      "stem": "Adna spent time in Holland and planned to fly on a direct flight to another country but mistakenly boarded the wrong flight.\nIn order to correct her mistake and get to the country to which she had planned to fly, Adna needed <b>two</b> additional flights.\n\nTo which country did Adna plan to fly?",
+      "options": [
+        "England",
+        "Belgium",
+        "Germany",
+        "Denmark"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2024_spring_q2_13",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 13,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "medium",
+      "stem": "In a certain orchestra the number of violin players is one third of the number of players of string instruments and one fifth of the number of players of the whole orchestra.\n\nTherefore, the number of players of string instruments is ______ of the number of players of the whole orchestra.",
+      "options": [
+        "60%",
+        "\\(66\\frac{2}{3}\\)%",
+        "\\(33\\frac{1}{3}\\)%",
+        "40%"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Violins are \\(\\frac13\\) of strings and \\(\\frac15\\) of the orchestra, so strings are \\(3 \\times \\frac15 = \\frac35\\) of the orchestra &mdash; 60%."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take 15 players: 3 violins, so 9 strings, and \\(\\frac{9}{15} = 60\\%\\) ✓."
+        }
+      ]
+    },
+    {
+      "id": "2024_spring_q2_14",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 14,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "medium",
+      "stem": "The accompanying figure shows triangle ABC.\nE is a certain point on AC that is different from A and from C.\nD is a certain point on BE that is different from B and from E.\n\nBased on this information and the information in the figure,\nwhich of the following statements is necessarily true?",
+      "options": [
+        "\\(\\alpha < \\beta\\)",
+        "\\(\\alpha > \\beta\\)",
+        "\\(\\alpha = \\beta\\)",
+        "None of the above statements is necessarily true"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2024_s2_q14.png"
+      ],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2024_spring_q2_15",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 15,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "Given:  ABCD is a rectangle\nAF = AC\nAE = \\(\\frac{3}{2}\\) cm\n\nBased on this information and the information in the figure,\nwhat is the size of the dotted area (in cm²)?",
+      "options": [
+        "\\(1\\frac{3}{4}\\)",
+        "\\(2\\frac{1}{4}\\)",
+        "\\(2\\frac{3}{4}\\)",
+        "\\(3\\frac{1}{4}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2024_s2_q15.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2024_spring_q2_16",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 16,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "hard",
+      "stem": "a and b are positive numbers.\n\n\\(\\sqrt{\\left(\\dfrac{b}{a} + \\dfrac{a}{b} + 2\\right) \\cdot \\dfrac{1}{ab}}\\) = ?",
+      "options": [
+        "\\(\\frac{1}{ab}\\)",
+        "\\(a^2 - b^2\\)",
+        "\\(\\frac{1}{a} + \\frac{1}{b}\\)",
+        "a + b"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "The bracket is \\(\\dfrac{a^2+b^2+2ab}{ab} = \\dfrac{(a+b)^2}{ab}\\). Multiplying by \\(\\frac{1}{ab}\\) gives \\(\\dfrac{(a+b)^2}{a^2b^2}\\), whose square root is \\(\\dfrac{a+b}{ab} = \\dfrac1a + \\dfrac1b\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(a=1, b=1\\): the stem is \\(\\sqrt{4} = 2\\), and \\(\\frac11+\\frac11 = 2\\). Option (4) also gives 2, so test \\(a=1, b=2\\): the stem is \\(\\sqrt{4.5/2} = 1.5\\), matching \\(1+0.5\\) and not 3."
+        },
+        {
+          "kind": "understanding",
+          "text": "The \\(+2\\) inside the bracket is the giveaway &mdash; it is the \\(2ab\\) that completes the square."
+        }
+      ]
+    },
+    {
+      "id": "2024_spring_q2_17",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 17,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "hard",
+      "stem": "During the screening of a film more than \\(\\frac{1}{5}\\) of the viewers left the cinema hall, and no viewer entered.\nAt the end of the film there were 22 viewers in the hall.\n\nAt the start of the screening the number of viewers in the hall was at least –",
+      "options": [
+        "26",
+        "28",
+        "29",
+        "30"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2024_spring_q2_18",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 18,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "hard",
+      "stem": "x and y are numbers different from 0.\nGiven:  \\(|x + y| = |x| - |y|\\)\n\nWhich of the following inequalities is <b>necessarily</b> true?",
+      "options": [
+        "\\(x \\cdot y < 0\\)",
+        "x + y < 0",
+        "x < y",
+        "y < x"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(|x|-|y|\\) is smaller than \\(|x|+|y|\\), so the given says the sum cancels rather than accumulates — which happens exactly when \\(x\\) and \\(y\\) have opposite signs. That makes the product negative."
+        },
+        {
+          "kind": "algebra",
+          "text": "The right side must be non-negative, so \\(|x|\\ge|y|\\). Squaring gives \\(x^2+2xy+y^2=x^2-2|xy|+y^2\\), so \\(2xy=-2|xy|\\), which forces \\(xy\\le0\\) — and \\(xy\\ne0\\) since neither is zero."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(x=5,\\ y=-2\\) satisfies the given (\\(3=5-2\\)) with a positive sum; \\(x=-5,\\ y=2\\) satisfies it with a negative sum. So (2) fails, and swapping the sizes kills (3) and (4)."
+        }
+      ]
+    },
+    {
+      "id": "2024_spring_q2_19",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 19,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "medium",
+      "stem": "The volume of a cylinder whose base radius is r and whose height is h is equal to the volume of a cylinder whose base radius is R and whose height is H.\n\n\\(\\frac{h}{H}\\) = ?",
+      "options": [
+        "\\(\\frac{r}{R}\\)",
+        "\\(\\frac{r^2}{R^2}\\)",
+        "\\(\\frac{R}{r}\\)",
+        "\\(\\frac{R^2}{r^2}\\)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2024_spring_q2_20",
+      "source_exam": "psychometric_spring_2024",
+      "source_question_number": 20,
+      "section_id": "2024_spring_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "medium",
+      "stem": "In the Shimoni family there are 7 children.  Every child has one doll, one ball and one whistle.\nGali came to visit the family and chose at random from among the toys one doll, one ball and one whistle.\n\nWhat is the probability that all the toys that Gali chose are those of the same child?",
+      "options": [
+        "\\(\\frac{1}{7}\\)",
+        "\\(\\frac{1}{7 \\cdot 3}\\)",
+        "\\(\\frac{1}{7^2}\\)",
+        "\\(\\frac{1}{7^3}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    }
+  ]
+}

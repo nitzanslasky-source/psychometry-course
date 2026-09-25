@@ -1,0 +1,1113 @@
+{
+  "source_exam": "psychometric_spring_2020",
+  "source_exam_label": "Spring 2020",
+  "language": "en",
+  "translated_from": "Hebrew (psychometric_spring_2020_acc.pdf, pages 21-34)",
+  "answer_key_source": "Official NITE answer key (מפתח תשובות נכונות), verified against the exam PDF",
+  "boilerplate": {
+    "section_intro": "This section consists of questions and problems involving quantitative reasoning.  Each question is followed by four possible responses.  Choose the correct answer and mark its number in the appropriate place on the answer sheet.",
+    "section_meta": "This section contains 20 questions.\nThe time allotted is 20 minutes.",
+    "gray_note": "Note:  The words appearing against a gray background are translated into several languages at the bottom of each page.",
+    "general_comments_title": "General Comments about the Quantitative Reasoning Section",
+    "general_comments": [
+      "The figures accompanying some of the problems are provided to help solve the problems, but are not necessarily drawn to scale.  Therefore, do not rely on the figures alone to deduce line length, angle size, and so forth.",
+      "If a line in a figure appears to be straight, you may assume that it is in fact a straight line.",
+      "When a geometric term (side, radius, area, volume, etc.) appears in a problem, it refers to a term whose value is greater than 0, unless stated otherwise.",
+      "When \\(\\sqrt{a}\\) (a > 0) appears in a problem, it refers to the positive root of a.",
+      "\"0\" is neither a positive nor a negative number.",
+      "\"0\" is an even number.",
+      "\"1\" is not a prime number."
+    ],
+    "graph_comprehension_lead": "Study the graph below, then answer the four questions that follow.",
+    "graph_comprehension_lead_five": "Study the graph below, then answer the five questions that follow.",
+    "table_comprehension_lead": "Study the table below, then answer the four questions that follow.",
+    "graph_disregard_note": "Note: In answering each question, disregard the information appearing in the other questions.",
+    "questions_heading": "Questions"
+  },
+  "sections": [
+    {
+      "section_id": "2020_spring_quant_1",
+      "title": "Quantitative Reasoning – First Section",
+      "position": 1,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-8)",
+          "from": 1,
+          "to": 8
+        },
+        {
+          "type": "graph_comprehension",
+          "header": "Graph Comprehension (Questions 9-12)",
+          "from": 9,
+          "to": 12,
+          "figure_path": "figures/sp2020_s1_graph.png",
+          "intro": "Study the graph below, then answer the four questions that follow.\n\nIn a certain locality local elections were held.  The residents of the locality who are eligible to vote are divided into two age groups: young people and adults.\nThe results of the voting are presented in the two graphs below.  The right-hand graph (the darker one) presents the results of the voting among the adults, and the left-hand graph (the lighter one) presents the results of the voting among the young people.\nFive lists of candidates ran in the elections: A, B, C, D and E.  In each of the two age groups 200 residents voted, and each of them voted for exactly one list.\nEach sector in a graph represents the part of the votes, out of all the votes of the members of the age group, that a certain list received (see key).\n\nFor example: 50 young residents and 50 adult residents voted for list B."
+        },
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 13-20)",
+          "from": 13,
+          "to": 20
+        }
+      ]
+    },
+    {
+      "section_id": "2020_spring_quant_2",
+      "title": "Quantitative Reasoning – Second Section",
+      "position": 2,
+      "clusters": [
+        {
+          "type": "questions_and_problems",
+          "header": "Questions and Problems (Questions 1-16)",
+          "from": 1,
+          "to": 16
+        },
+        {
+          "type": "table_comprehension",
+          "header": "Table Comprehension (Questions 17-20)",
+          "from": 17,
+          "to": 20,
+          "figure_path": "figures/sp2020_s2_table.png",
+          "intro": "Study the table below, then answer the four questions that follow.\n\nOver the course of 20 weeks Tali worked in four jobs: A, B, C and D.\nThe table below presents data on the hours, the days and the number of weeks in which Tali worked in each one of the jobs.\nThe background of each cell indicates the job (see key), and the number written in it is the number of weeks in which Tali worked in this job at this time.\nA cell that is divided into a number of backgrounds indicates that Tali worked in each one of the jobs the number of weeks written in the part of the cell whose background matches that job, and in the remaining weeks she worked in the other jobs.\nAn empty cell indicates that Tali did not work at all at this time.\n\nNotes:  Tali began working only at exactly 9:00, 10:00, and so forth.\n     Tali never worked in more than one job at the same time.\n\nFor example: On day B, between 14:00 and 15:00, Tali worked 17 weeks: 2 weeks in job A and 15 weeks in job B.  In jobs C and D Tali did not work at all at this time."
+        }
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "2020_spring_q1_01",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 1,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "medium",
+      "stem": "Nineteen delegates from 12 different countries participated in a conference.  At least one delegate came from each one of the countries.\n\nAt most, how many delegates came from one country?",
+      "options": [
+        "8",
+        "9",
+        "10",
+        "11"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2020_spring_q1_02",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 2,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "easy",
+      "stem": "Given: | x | – x = 6\n\nx = ?",
+      "options": [
+        "–6",
+        "–3",
+        "3",
+        "12"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "For any non-negative \\(x\\), \\(|x|-x\\) is 0 — so \\(x\\) has to be negative before you compute anything. Then \\(|x|=-x\\) and the equation is \\(-2x=6\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Substitute each option. \\(-3\\) gives \\(3-(-3)=6\\) ✓. \\(3\\) and \\(12\\) both give 0, and \\(-6\\) gives 12."
+        }
+      ]
+    },
+    {
+      "id": "2020_spring_q1_03",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 3,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure are two circles that are tangent to each other, the radius of each of which is 2 cm.  The points B and D are the centers of the circles, and the points E and F are on the circumference of the upper circle.\nGiven: AE = FC = 1 cm\n\nBased on this information and the information in the figure, what is the perimeter of triangle ADC (in cm)?",
+      "options": [
+        "13",
+        "15",
+        "16",
+        "18"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/sp2020_s1_q03.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2020_spring_q1_04",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 4,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Primes, Consecutive & Even/Odd Numbers",
+      "difficulty": "medium",
+      "stem": "a, b and c are integers that are different from 0.\nGiven: \\(a^b + 1 = 2c\\)\n\nWhich of the following statements is necessarily true?",
+      "options": [
+        "a is an even number",
+        "b is an even number",
+        "a is an odd number",
+        "b is an odd number"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "number_properties",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "\\(2c\\) is even, so \\(a^b + 1\\) is even, which makes \\(a^b\\) odd. A power is odd only when its base is odd, so \\(a\\) is odd."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Nothing at all is fixed about \\(b\\): \\(3^2 + 1 = 10 = 2 \\times 5\\) ✓ with \\(b\\) even, and \\(3^1 + 1 = 4\\) ✓ with \\(b\\) odd. That kills both options about \\(b\\)."
+        }
+      ]
+    },
+    {
+      "id": "2020_spring_q1_05",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 5,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Work & Rate Problems",
+      "difficulty": "medium",
+      "stem": "A certain car consumes 1 liter of fuel for every 13 kilometers of travel.  The price of one liter of fuel is 6.5 shekels.\nFive friends travelled together in this car a distance of 80 kilometers, and divided the cost of the fuel equally among themselves.\n\nHow much did each one of them pay (in shekels)?",
+      "options": [
+        "8",
+        "10",
+        "13",
+        "15"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "work_rate",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "80 km needs \\(\\frac{80}{13}\\) litres, costing \\(\\frac{80}{13} \\times 6.5 = 40\\) shekels. Split five ways that is 8 each."
+        },
+        {
+          "kind": "structure",
+          "text": "The 13 cancels against the 6.5 exactly &mdash; a sign to leave the division until last rather than computing the litres as a decimal."
+        }
+      ]
+    },
+    {
+      "id": "2020_spring_q1_06",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 6,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure straight line a is parallel to straight line b.\nGiven: AE = ED\n\nBased on this information and the information in the figure,\n\n\\(\\dfrac{\\text{the area of trapezoid } ABCE}{\\text{the area of trapezoid } EBCD} = ?\\)",
+      "options": [
+        "1",
+        "2",
+        "\\(\\frac{2}{3}\\)",
+        "It is impossible to know from the information given"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2020_s1_q06.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2020_spring_q1_07",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 7,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Combinatorics",
+      "difficulty": "medium",
+      "stem": "How many of the integers between 1 and 30 (inclusive) are divisible by 2 or by 7 (or by both of them)?",
+      "options": [
+        "13",
+        "15",
+        "17",
+        "19"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "combinatorics"
+    },
+    {
+      "id": "2020_spring_q1_08",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 8,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "medium",
+      "stem": "With the money that he has, Yaron can buy one book and one pencil.\nThe price of one book is equal to the price of b pencils.\n\nHow many pencils can Yaron buy with the money that he has?",
+      "options": [
+        "b",
+        "b + 1",
+        "2b",
+        "\\(b^2\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "His money buys one book plus one pencil, and the book is worth \\(b\\) pencils. So the money is worth \\(b+1\\) pencils."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Take \\(b=3\\): a book costs 3 pencils, so his money equals 4 pencils. Only \\(b+1\\) gives 4."
+        }
+      ]
+    },
+    {
+      "id": "2020_spring_q1_09",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 9,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "graph_comprehension",
+      "stem": "What is the average number of votes that a list received among the young people?",
+      "options": [
+        "50",
+        "25",
+        "35",
+        "40"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/sp2020_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_spring_q1_10",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 10,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "graph_comprehension",
+      "stem": "Let us define a \"possible coalition\" as a combination of lists that together received at least half of all the votes in the elections.\n\nWhich of the following combinations of lists is <b>not</b> a possible coalition?",
+      "options": [
+        "A, B",
+        "B, C",
+        "A, C, D",
+        "A, D, E"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2020_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_spring_q1_11",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 11,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "graph_comprehension",
+      "stem": "In the elections 80% of the adults who are eligible to vote voted, and 50% of the young people who are eligible to vote voted.\n\nHow many residents in the locality are eligible to vote in total?",
+      "options": [
+        "740",
+        "680",
+        "650",
+        "600"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/sp2020_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_spring_q1_12",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 12,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "graph_comprehension",
+      "stem": "With regard to lists C, D and E it is known that the percentage of Italian speakers among the adults who voted for each one of these lists was the same.\n\nWhich of the following graphs could describe the <b>number</b> of the adult Italian speakers who voted for lists C, D and E?",
+      "options": [
+        "",
+        "",
+        "",
+        ""
+      ],
+      "option_figure_paths": [
+        "figures/sp2020_s1_q12_opt1.png",
+        "figures/sp2020_s1_q12_opt2.png",
+        "figures/sp2020_s1_q12_opt3.png",
+        "figures/sp2020_s1_q12_opt4.png"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/sp2020_s1_graph.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_spring_q1_13",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 13,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure is a regular polygon that is drawn in a coordinate system in such a way that its center is at the point of origin of the axes, O.  A circle is circumscribed about the polygon.\n\nWhich of the points on the polygon are the farthest from the point of origin of the axes?",
+      "options": [
+        "The vertices of the polygon",
+        "The points of intersection of the sides of the polygon with the axes",
+        "The midpoints of the sides that do not intersect the axes",
+        "All the points on the polygon are equidistant from O"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2020_s1_q13.png"
+      ],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2020_spring_q1_14",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 14,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "hard",
+      "stem": "In a box there are 3 balls and 2 dice.\nNurit draws at random, one after the other and without returning, 3 of the items in the box.\n\nWhat is the probability that the 2 items that remain in the box are the dice?",
+      "options": [
+        "\\(\\frac{1}{10}\\)",
+        "\\(\\frac{2}{5}\\)",
+        "\\(\\frac{1}{3}\\)",
+        "\\(\\frac{6}{125}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2020_spring_q1_15",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 15,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "Given: x ≠ 0\n     \\(x^{\\frac{1}{2}} = 2 \\cdot x^{\\frac{1}{4}}\\)\n\nx = ?",
+      "options": [
+        "16",
+        "2",
+        "8",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Write both sides in \\(x^{1/4}\\): \\(x^{1/2} = \\left(x^{1/4}\\right)^2\\), so \\(t^2 = 2t\\) with \\(t = x^{1/4}\\). Since \\(x \\neq 0\\), \\(t = 2\\) and \\(x = 16\\)."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Test the options: \\(x=16\\) gives \\(4 = 2 \\cdot 2\\). One substitution, no algebra."
+        }
+      ]
+    },
+    {
+      "id": "2020_spring_q1_16",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 16,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "hard",
+      "stem": "Given: x(x – y) = 1\n     \\(x^2 + y = 2\\)\n\ny(x + 1) = ?",
+      "options": [
+        "1",
+        "x",
+        "3",
+        "\\(x^2 + 1\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "The target expands to \\(xy + y\\). The first given says \\(xy = x^2 - 1\\); the second says \\(y = 2 - x^2\\). Adding them, the \\(x^2\\) terms cancel and 1 is left."
+        },
+        {
+          "kind": "understanding",
+          "text": "Neither \\(x\\) nor \\(y\\) is obtainable, and neither is needed. Expanding the target first, so you know which combinations to hunt for, is what makes it work."
+        }
+      ]
+    },
+    {
+      "id": "2020_spring_q1_17",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 17,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Polygons",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure are 5 pentagons that overlap each other and have a common vertex.\n\nBased on the information in the figure,\n\nα = ?",
+      "options": [
+        "108°",
+        "124°",
+        "136°",
+        "144°"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/sp2020_s1_q17.png"
+      ],
+      "sub_category_id": "polygons"
+    },
+    {
+      "id": "2020_spring_q1_18",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 18,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "medium",
+      "stem": "Given: 2x + 1 ≤ 0\n\nWhich of the following numbers <b>cannot</b> be the value of \\(x^2\\)?",
+      "options": [
+        "\\(\\frac{1}{8}\\)",
+        "2",
+        "\\(\\frac{1}{4}\\)",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(2x+1\\le0\\) gives \\(x\\le-\\frac12\\), so \\(|x|\\ge\\frac12\\) and \\(x^2\\ge\\frac14\\). Any value below \\(\\frac14\\) is unreachable."
+        },
+        {
+          "kind": "check-answers",
+          "text": "Three of the four options are at least \\(\\frac14\\); only \\(\\frac18\\) falls below the floor. Notice that \\(\\frac14\\) itself is reachable, at \\(x=-\\frac12\\), so it is not the answer."
+        }
+      ]
+    },
+    {
+      "id": "2020_spring_q1_19",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 19,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "medium",
+      "stem": "The base of a prism is a polygon with n sides.\n\nWhat is the ratio between the number of vertices of the prism and the number of its edges?",
+      "options": [
+        "2 : 3",
+        "2 : n",
+        "3 : n",
+        "3 : 4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2020_spring_q1_20",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 20,
+      "section_id": "2020_spring_quant_1",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "hard",
+      "stem": "A certain cow produces 4 liters of milk in 8 hours, when no music is played to it.\nIn the hours in which classical music is played to it, the quantity of milk that it produces decreases by 50%, and in the hours in which pop music is played to it, the quantity of milk that it produces increases by 25%.\n\nHow many liters of milk will this cow produce in 8 hours, if during half of the time classical music is played to it, and during \\(\\frac{1}{4}\\) of the remaining time pop music is played to it?",
+      "options": [
+        "\\(3\\frac{1}{8}\\)",
+        "\\(3\\frac{1}{4}\\)",
+        "3",
+        "\\(3\\frac{3}{4}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "The cow's baseline rate is \\(\\frac48 = 0.5\\) litres per hour. Classical hours give half that, pop hours give more; total the hours at their individual rates."
+        },
+        {
+          "kind": "understanding",
+          "text": "Percentages here modify a <i>rate</i>, not a total, so each hour must be costed separately before adding."
+        }
+      ]
+    },
+    {
+      "id": "2020_spring_q2_01",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 1,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 1,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Algebraic Expressions",
+      "difficulty": "easy",
+      "stem": "Given: a + 1 = b\n     c + 2 = d\n\na – b + c – d = ?",
+      "options": [
+        "2a + 2c + 1",
+        "–2",
+        "–3",
+        "2b – 2d – 1"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "algebraic_expressions",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "The givens rearrange to \\(a-b = -1\\) and \\(c-d = -2\\). The expression is \\((a-b)+(c-d) = -3\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Pick any values obeying the givens: \\(a=1, b=2, c=1, d=3\\) gives \\(1-2+1-3 = -3\\); \\(a=5, b=6, c=0, d=2\\) gives \\(5-6+0-2 = -3\\). The answer does not move, because only the two differences matter."
+        },
+        {
+          "kind": "structure",
+          "text": "Grouping the four letters into the two given differences avoids ever finding a value for any of them."
+        }
+      ]
+    },
+    {
+      "id": "2020_spring_q2_02",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 2,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 2,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Exponents & Roots",
+      "difficulty": "medium",
+      "stem": "\\(\\dfrac{\\left(\\left(\\sqrt{2}\\right)^{\\frac{1}{2}}\\right)^{4}}{2} = ?\\)",
+      "options": [
+        "1",
+        "2",
+        "\\(\\sqrt{2}\\)",
+        "4"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "exponents_roots",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "Work outwards: \\(\\left(\\sqrt2\\right)^{1/2} = 2^{1/4}\\), and raising to the fourth gives \\(2\\). Dividing by 2 leaves 1."
+        },
+        {
+          "kind": "understanding",
+          "text": "Every root is a fractional exponent, and the stacked operations just multiply the fractions: \\(\\frac12 \\cdot \\frac12 \\cdot 4 = 1\\)."
+        }
+      ]
+    },
+    {
+      "id": "2020_spring_q2_03",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 3,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 3,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Coordinate System",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure O is the point of origin of the axes.  The points B, C and D divide segment AO into 4 equal parts.\nGiven: the coordinates of point A are (16,8)\n\nBased on this information and the information in the figure, what are the coordinates of point D?",
+      "options": [
+        "(2,1)",
+        "(2,4)",
+        "(4,1)",
+        "(4,2)"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/sp2020_s2_q03.png"
+      ],
+      "sub_category_id": "coordinate_system"
+    },
+    {
+      "id": "2020_spring_q2_04",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 4,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 4,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "3D Geometry",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure is a cube the length of whose edge is 1 cm.  On three of its faces diagonals are drawn.\n\nBased on this information and the information in the figure, what is the sum of the areas of the hatched shapes (in cm²)?",
+      "options": [
+        "1",
+        "\\(\\frac{3}{2}\\)",
+        "\\(3\\sqrt{2}\\)",
+        "\\(3\\sqrt{3}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [
+        "figures/sp2020_s2_q04.png"
+      ],
+      "sub_category_id": "3d_geometry"
+    },
+    {
+      "id": "2020_spring_q2_05",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 5,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 5,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "medium",
+      "stem": "In a certain class there are n children, and the average height of the children in the class is x cm.\nA child whose height is y cm joins the class.\n\nWhat is the average height of the children in the class now (in cm)?",
+      "options": [
+        "\\(\\dfrac{nx + ny}{n + 1}\\)",
+        "\\(\\dfrac{nx + y}{n + 1}\\)",
+        "\\(x + \\dfrac{y}{n}\\)",
+        "\\(x + \\dfrac{y}{n + 1}\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2020_spring_q2_06",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 6,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 6,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "hard",
+      "stem": "In a certain hospital the ratio between the number of nurses and the number of head nurses is 3 : 2, and the ratio between the number of head nurses and the number of secretaries is 7 : 4.\n\nWhat is the ratio between the number of secretaries and the number of nurses?",
+      "options": [
+        "3 : 14",
+        "7 : 6",
+        "8 : 21",
+        "6 : 5"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "structure",
+          "text": "Make the shared quantity match: nurses:head = \\(3:2\\) and head:sec = \\(7:4\\). Scaling the first by 7 and the second by 2 gives \\(21:14\\) and \\(14:8\\), so nurses:sec = \\(21:8\\) and sec:nurses = \\(8:21\\)."
+        },
+        {
+          "kind": "plug-in",
+          "text": "Concretely: 21 nurses, 14 head nurses, 8 secretaries satisfies both givens, and the answer reads straight off."
+        }
+      ]
+    },
+    {
+      "id": "2020_spring_q2_07",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 7,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 7,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Generality",
+      "difficulty": "medium",
+      "stem": "Rona had 5 bracelets more than Gila had.\nRona gave Gila 7 bracelets, and Gila gave Rona 3 bracelets.\n\nWhat is the difference (in absolute value) between the number of bracelets that Rona has now and the number of bracelets that Gila has now?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "4"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "generality"
+    },
+    {
+      "id": "2020_spring_q2_08",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 8,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 8,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Equations",
+      "difficulty": "medium",
+      "stem": "Given: x ≠ y\n     x and y are integers\n\nWhich of the following equations is <b>not</b> possible?",
+      "options": [
+        "| x | = | y |",
+        "\\(x^2 = y^2\\)",
+        "\\(x^3 = y^3\\)",
+        "All of the above equations are possible"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "equations",
+      "methods": [
+        {
+          "kind": "understanding",
+          "text": "Cubing preserves sign as well as size, so \\(x^3 = y^3\\) forces \\(x = y\\) over the reals &mdash; impossible when \\(x \\neq y\\). Squares and absolute values lose the sign, so \\(x = -y\\) satisfies both of those."
+        },
+        {
+          "kind": "plug-in",
+          "text": "\\(x=2, y=-2\\) satisfies options (1) and (2) at once, which eliminates both and leaves only (3) to check."
+        }
+      ]
+    },
+    {
+      "id": "2020_spring_q2_09",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 9,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 9,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Triangles",
+      "difficulty": "hard",
+      "stem": "Two medians divide a triangle into 4 shapes that have no common area.\n\nThe 4 shapes are –",
+      "options": [
+        "a triangle and 3 quadrilaterals",
+        "2 triangles and 2 quadrilaterals",
+        "3 triangles and 1 quadrilateral",
+        "4 triangles"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "triangles"
+    },
+    {
+      "id": "2020_spring_q2_10",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 10,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 10,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Percentages",
+      "difficulty": "hard",
+      "stem": "x, y and z are positive numbers.\nGiven: x% of (y · z) is equal to y% of \\(\\dfrac{x}{z}\\)\n\nz = ?",
+      "options": [
+        "1",
+        "10",
+        "\\(\\frac{1}{100}\\)",
+        "\\(\\frac{1}{10}\\)"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [],
+      "sub_category_id": "percentages",
+      "methods": [
+        {
+          "kind": "algebra",
+          "text": "\\(\\frac{x}{100}(yz) = \\frac{y}{100}\\cdot\\frac xz\\). Both sides carry \\(\\frac{xy}{100}\\), so it reduces to \\(z = \\frac1z\\), giving \\(z = 1\\) for positive \\(z\\)."
+        },
+        {
+          "kind": "understanding",
+          "text": "\\(x\\) and \\(y\\) cancel completely, which is the signal that the answer is a bare number and that neither letter can be found."
+        }
+      ]
+    },
+    {
+      "id": "2020_spring_q2_11",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 11,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 11,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Trial & Error",
+      "difficulty": "easy",
+      "stem": "Which of the following numbers is the closest to 304 × 329 ?",
+      "options": [
+        "90,000",
+        "100,000",
+        "900,000",
+        "1,000,000"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "trial_and_error"
+    },
+    {
+      "id": "2020_spring_q2_12",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 12,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 12,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Quadrilaterals",
+      "difficulty": "hard",
+      "stem": "In the accompanying figure ABCD is a square.\nTwo cars set out from point C.  Car A travelled along diagonal CA, and car B travelled from C to D and from there to A (as in the figure).\nThe speed of car B is 2 times as much as the speed of car A.\n\n\\(\\dfrac{\\text{the travel time of car A}}{\\text{the travel time of car B}} = ?\\)",
+      "options": [
+        "\\(\\frac{1}{2}\\)",
+        "2",
+        "\\(\\sqrt{2}\\)",
+        "\\(2\\sqrt{2}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/sp2020_s2_q12.png"
+      ],
+      "sub_category_id": "quadrilaterals"
+    },
+    {
+      "id": "2020_spring_q2_13",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 13,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 13,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Circles",
+      "difficulty": "medium",
+      "stem": "Given: the area of a circle is 9 cm²\n\nWhat is the circumference of the circle (in cm)?",
+      "options": [
+        "6",
+        "\\(6\\sqrt{\\pi}\\)",
+        "\\(6\\pi\\)",
+        "\\(6\\pi^2\\)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "circles"
+    },
+    {
+      "id": "2020_spring_q2_14",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 14,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 14,
+      "pool": "simulation",
+      "topic": "Algebra & Number Properties",
+      "subtopic": "Inequalities & Absolute Value",
+      "difficulty": "hard",
+      "stem": "Given: b < 2a\n     3a < 2b\n\na <b>can</b> be equal to –",
+      "options": [
+        "\\(\\frac{4b}{9}\\)",
+        "\\(\\frac{7b}{8}\\)",
+        "\\(\\frac{4b}{7}\\)",
+        "\\(\\frac{3b}{4}\\)"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [],
+      "sub_category_id": "inequalities_absolute",
+      "methods": [
+        {
+          "kind": "check-answers",
+          "text": "Every option is a multiple of \\(b\\), so substitute each into both givens. \\(a=\\frac{4b}7\\): the first needs \\(b<\\frac{8b}7\\) ✓ and the second needs \\(\\frac{12b}7<2b=\\frac{14b}7\\) ✓, both true once \\(b\\) is positive."
+        },
+        {
+          "kind": "algebra",
+          "text": "Turn the givens into bounds on \\(a\\): \\(b<2a\\) gives \\(a>\\frac b2\\), and \\(3a<2b\\) gives \\(a<\\frac{2b}3\\). So \\(\\frac b2<a<\\frac{2b}3\\), and in sevenths that is between \\(\\frac{3.5b}7\\) and \\(\\frac{4\\frac23 b}7\\) — only \\(\\frac{4b}7\\) lands inside."
+        },
+        {
+          "kind": "understanding",
+          "text": "Worth noticing first: \\(b\\) must be positive, or the range is empty. Chaining the givens gives \\(b<2a\\) and \\(3a<2b\\), so \\(3b<6a<4b\\), which forces \\(b>0\\)."
+        }
+      ]
+    },
+    {
+      "id": "2020_spring_q2_15",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 15,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 15,
+      "pool": "simulation",
+      "topic": "Geometry",
+      "subtopic": "Lines & Angles",
+      "difficulty": "medium",
+      "stem": "In the accompanying figure AB is parallel to EF.\n\nBased on this information and the information in the figure,\n\n∡DEF = ?",
+      "options": [
+        "100°",
+        "110°",
+        "120°",
+        "140°"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/sp2020_s2_q15.png"
+      ],
+      "sub_category_id": "lines_angles"
+    },
+    {
+      "id": "2020_spring_q2_16",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 16,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 16,
+      "pool": "simulation",
+      "topic": "Word Problems",
+      "subtopic": "Probability",
+      "difficulty": "hard",
+      "stem": "In a certain closet there are 10 scarves: 1 red, 1 green and all the rest purple.\nIn the same closet there are also 10 shirts: n red, k green and all the rest purple.\n\nHow many different combinations of a scarf and a shirt can be made from the items in the closet, in which both of the items are of the same color?",
+      "options": [
+        "n + k + 8",
+        "80 – 7(n + k)",
+        "8(n + k) + 20",
+        "100 – 8(n + k)"
+      ],
+      "correct_answer": 2,
+      "figure_paths": [],
+      "sub_category_id": "probability"
+    },
+    {
+      "id": "2020_spring_q2_17",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 17,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 17,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "medium",
+      "cluster": "table_comprehension",
+      "stem": "Out of the 20 weeks, in how many weeks did Tali <b>not</b> work at all on day A between 16:00 and 17:00?",
+      "options": [
+        "10",
+        "8",
+        "6",
+        "4"
+      ],
+      "correct_answer": 4,
+      "figure_paths": [
+        "figures/sp2020_s2_table.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_spring_q2_18",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 18,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 18,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "table_comprehension",
+      "stem": "Tali said: \"On a certain day I worked in one job 3 consecutive hours, immediately after that I worked in another job 2 consecutive hours, and immediately after that I worked in yet another job exactly one hour.\"\n\nWith regard to which day of the week did Tali speak?",
+      "options": [
+        "day A",
+        "day B",
+        "day C",
+        "day D"
+      ],
+      "correct_answer": 3,
+      "figure_paths": [
+        "figures/sp2020_s2_table.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_spring_q2_19",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 19,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 19,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "table_comprehension",
+      "stem": "Let us define a \"specialization week\" as a week in which Tali worked in job A between 14:00 and 15:00 on <b>every one</b> of the days A-F.\n\nOut of the 20 weeks, in how many weeks did Tali specialize?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "0"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2020_s2_table.png"
+      ],
+      "sub_category_id": "charts_tables"
+    },
+    {
+      "id": "2020_spring_q2_20",
+      "source_exam": "psychometric_spring_2020",
+      "source_question_number": 20,
+      "section_id": "2020_spring_quant_2",
+      "position_in_section": 20,
+      "pool": "simulation",
+      "topic": "Data Interpretation",
+      "subtopic": "Charts & Tables",
+      "difficulty": "hard",
+      "cluster": "table_comprehension",
+      "stem": "In a certain week Tali worked on day E and on day F a total of 6 hours.\n\nHow many hours, at the very least, did Tali work on day F in this week?",
+      "options": [
+        "1",
+        "2",
+        "3",
+        "5"
+      ],
+      "correct_answer": 1,
+      "figure_paths": [
+        "figures/sp2020_s2_table.png"
+      ],
+      "sub_category_id": "charts_tables"
+    }
+  ]
+}
