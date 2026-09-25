@@ -4,6 +4,8 @@ import { Inter, Instrument_Serif } from "next/font/google";
 import { MathJaxProvider } from "@/components/MathJaxProvider";
 import { NavLinks } from "@/components/NavLinks";
 import { Search } from "@/components/Search";
+import { AccountButton } from "@/components/AccountButton";
+import { SyncProvider } from "@/components/SyncProvider";
 import "./globals.css";
 
 const sans = Inter({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
@@ -35,9 +37,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="order-last -mx-6 w-[calc(100%+3rem)] min-w-0 px-4 py-2 md:order-none md:mx-0 md:w-auto md:flex-1 md:px-0 md:py-0">
                 <NavLinks />
               </div>
-              <Search />
+              <div className="flex items-center gap-2">
+                <Search />
+                <AccountButton />
+              </div>
             </div>
           </header>
+          <SyncProvider />
           {children}
           <footer className="mt-24 border-t border-line">
             <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 px-6 py-8 text-xs text-muted">

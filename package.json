@@ -10,6 +10,8 @@
     "export-course": "python3 studio-build/export_student.py"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.12.7",
+    "@supabase/supabase-js": "^2.117.2",
     "next": "15.5.23",
     "react": "19.1.1",
     "react-dom": "19.1.1",

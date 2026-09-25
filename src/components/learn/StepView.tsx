@@ -9,8 +9,8 @@ import type {
   CourseQuestionStep,
   CourseStep,
   CourseVideoStep,
-  VideoSource,
 } from "@/lib/fullCourseTypes";
+import type { VideoEmbed } from "@/lib/video";
 import { StepList, type StepListSection } from "./StepList";
 import { MemoryCard } from "./MemoryCard";
 import { AddToReview } from "@/components/extras/AddToReview";
@@ -38,7 +38,7 @@ export function StepView({
 }: {
   step: CourseStep;
   nav: Nav;
-  video?: VideoSource | null;
+  video?: VideoEmbed | null;
   passage?: { title: string; paragraphs: string[] } | null;
   label: string;
   sections: StepListSection[];
@@ -186,7 +186,7 @@ export function StepView({
 
 /* ---------------------------------------------------------------- video */
 
-function VideoStep({ step, video, onEnded }: { step: CourseVideoStep; video?: VideoSource | null; onEnded: () => void }) {
+function VideoStep({ step, video, onEnded }: { step: CourseVideoStep; video?: VideoEmbed | null; onEnded: () => void }) {
   return (
     <div>
       <h1 className="display text-[40px] sm:text-[48px]">{step.title}</h1>
@@ -199,18 +199,18 @@ function VideoStep({ step, video, onEnded }: { step: CourseVideoStep; video?: Vi
               <div className="max-w-sm text-sm text-white/60">This lesson is being recorded. You can continue with the rest of the topic meanwhile.</div>
             </div>
           )}
-          {video?.provider === "bunny" && (
+          {video?.kind === "iframe" && (
             <iframe
               className="absolute inset-0 h-full w-full"
-              src={`https://iframe.mediadelivery.net/embed/${video.libraryId}/${video.videoGuid}?autoplay=false&preload=true&responsive=true`}
+              src={video.src}
               allow="accelerometer; gyroscope; encrypted-media; picture-in-picture; fullscreen"
               allowFullScreen
               title={step.title}
             />
           )}
-          {video?.provider === "url" && (
+          {video?.kind === "file" && (
             // eslint-disable-next-line jsx-a11y/media-has-caption
-            <video className="absolute inset-0 h-full w-full" src={video.url} controls onEnded={onEnded} />
+            <video className="absolute inset-0 h-full w-full" src={video.src} controls onEnded={onEnded} />
           )}
         </div>
       </div>

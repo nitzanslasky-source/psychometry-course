@@ -3,6 +3,7 @@ import { flattenSteps, getTopic, getVideoManifest } from "@/lib/fullCourse";
 import { buildStepList } from "@/lib/fullCourseNav";
 import { StepView } from "@/components/learn/StepView";
 import { SUBJECT } from "@/lib/subjects";
+import { videoEmbed } from "@/lib/video";
 
 export const dynamic = "force-dynamic";
 
@@ -41,7 +42,7 @@ export default async function StepPage({ params }: { params: Promise<{ topic: st
         step={step}
         label={label}
         sections={sections}
-        video={step.kind === "video" ? (manifest[step.id] ?? null) : null}
+        video={step.kind === "video" ? videoEmbed(manifest[step.id]) : null}
         passage={step.kind === "question" && step.passageId ? topic.passages[step.passageId] : null}
         nav={{
           topic: topic.id,

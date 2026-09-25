@@ -27,6 +27,7 @@ export function loadProgress(): CourseProgress {
 function save(p: CourseProgress) {
   try {
     window.localStorage.setItem(KEY, JSON.stringify(p));
+    window.dispatchEvent(new Event("progress-change"));
   } catch {
     /* storage full or blocked — progress just isn't kept */
   }

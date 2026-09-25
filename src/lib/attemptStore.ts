@@ -44,6 +44,7 @@ function saveAttempts(attempts: QuestionAttempt[]): void {
   if (typeof window === "undefined") return;
   try {
     window.localStorage.setItem(ATTEMPTS_KEY, JSON.stringify(attempts));
+    window.dispatchEvent(new Event("attempts-change"));
   } catch {
     // Full or unavailable storage (private browsing, quota) — degrade silently.
   }
