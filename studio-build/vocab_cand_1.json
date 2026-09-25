@@ -1,0 +1,2449 @@
+[
+{
+"w": "absolute",
+"src": [
+"exam"
+]
+},
+{
+"w": "absolute value",
+"src": [
+"exam"
+]
+},
+{
+"w": "absorb",
+"src": [
+"exam"
+]
+},
+{
+"w": "absorbing",
+"src": [
+"exam"
+]
+},
+{
+"w": "abstract",
+"src": [
+"exam"
+]
+},
+{
+"w": "accelerated",
+"src": [
+"reading"
+],
+"readingDef": "made faster"
+},
+{
+"w": "accelerates",
+"src": [
+"exam"
+]
+},
+{
+"w": "accepting",
+"src": [
+"exam"
+]
+},
+{
+"w": "accompanied",
+"src": [
+"exam"
+]
+},
+{
+"w": "accord with",
+"src": [
+"reading"
+],
+"readingDef": "agree with"
+},
+{
+"w": "account",
+"src": [
+"analogy"
+]
+},
+{
+"w": "accumulate",
+"src": [
+"exam"
+]
+},
+{
+"w": "accumulated",
+"src": [
+"reading"
+],
+"readingDef": "built up gradually"
+},
+{
+"w": "accurate",
+"src": [
+"analogy"
+]
+},
+{
+"w": "acquired",
+"src": [
+"exam"
+]
+},
+{
+"w": "acrobat",
+"src": [
+"exam"
+]
+},
+{
+"w": "actor",
+"src": [
+"analogy"
+]
+},
+{
+"w": "acute",
+"src": [
+"exam"
+]
+},
+{
+"w": "acute angles",
+"src": [
+"exam"
+]
+},
+{
+"w": "adapt",
+"src": [
+"exam"
+]
+},
+{
+"w": "adapt to",
+"src": [
+"exam"
+]
+},
+{
+"w": "adhere",
+"src": [
+"reading"
+],
+"readingDef": "stick"
+},
+{
+"w": "adherence",
+"src": [
+"exam"
+]
+},
+{
+"w": "admits of",
+"src": [
+"reading"
+],
+"readingDef": "allows for"
+},
+{
+"w": "adopt",
+"src": [
+"exam"
+]
+},
+{
+"w": "adrenal gland",
+"src": [
+"exam"
+]
+},
+{
+"w": "afraid",
+"src": [
+"analogy"
+]
+},
+{
+"w": "aged",
+"src": [
+"analogy"
+]
+},
+{
+"w": "air pressure",
+"src": [
+"analogy"
+]
+},
+{
+"w": "aircraft",
+"src": [
+"analogy"
+]
+},
+{
+"w": "alimp",
+"src": [
+"exam"
+]
+},
+{
+"w": "allotted",
+"src": [
+"exam"
+]
+},
+{
+"w": "ally",
+"src": [
+"analogy"
+]
+},
+{
+"w": "altitudes",
+"src": [
+"exam"
+]
+},
+{
+"w": "ambiguous",
+"src": [
+"exam"
+]
+},
+{
+"w": "ammeter",
+"src": [
+"analogy"
+]
+},
+{
+"w": "angle",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "angles",
+"src": [
+"exam"
+]
+},
+{
+"w": "angry",
+"src": [
+"analogy"
+]
+},
+{
+"w": "animal",
+"src": [
+"analogy"
+]
+},
+{
+"w": "animals",
+"src": [
+"analogy"
+]
+},
+{
+"w": "annoyed",
+"src": [
+"analogy"
+]
+},
+{
+"w": "annual",
+"src": [
+"exam"
+]
+},
+{
+"w": "answer",
+"src": [
+"analogy"
+]
+},
+{
+"w": "anticipated",
+"src": [
+"reading"
+],
+"readingDef": "expected"
+},
+{
+"w": "antidote",
+"src": [
+"analogy"
+]
+},
+{
+"w": "antithesis",
+"src": [
+"exam"
+]
+},
+{
+"w": "anxiety",
+"src": [
+"exam"
+]
+},
+{
+"w": "apology",
+"src": [
+"analogy"
+]
+},
+{
+"w": "apparatus",
+"src": [
+"reading"
+],
+"readingDef": "system of procedures"
+},
+{
+"w": "applauded",
+"src": [
+"exam"
+]
+},
+{
+"w": "apple",
+"src": [
+"analogy"
+]
+},
+{
+"w": "apply",
+"src": [
+"exam"
+]
+},
+{
+"w": "appropriated",
+"src": [
+"exam"
+]
+},
+{
+"w": "approximate",
+"src": [
+"exam"
+]
+},
+{
+"w": "apt",
+"src": [
+"analogy"
+]
+},
+{
+"w": "arc",
+"src": [
+"exam"
+]
+},
+{
+"w": "area",
+"src": [
+"exam"
+]
+},
+{
+"w": "areas, regions",
+"src": [
+"exam"
+]
+},
+{
+"w": "argument",
+"src": [
+"analogy"
+]
+},
+{
+"w": "argumentative person",
+"src": [
+"exam"
+]
+},
+{
+"w": "arguments",
+"src": [
+"exam"
+]
+},
+{
+"w": "aria",
+"src": [
+"analogy"
+]
+},
+{
+"w": "armory",
+"src": [
+"analogy"
+]
+},
+{
+"w": "arrived",
+"src": [
+"analogy"
+]
+},
+{
+"w": "artifacts",
+"src": [
+"exam"
+]
+},
+{
+"w": "artillery",
+"src": [
+"exam"
+]
+},
+{
+"w": "artisans",
+"src": [
+"exam"
+]
+},
+{
+"w": "artist",
+"src": [
+"analogy"
+]
+},
+{
+"w": "ash",
+"src": [
+"analogy"
+]
+},
+{
+"w": "aspects",
+"src": [
+"exam"
+]
+},
+{
+"w": "assemble",
+"src": [
+"exam"
+]
+},
+{
+"w": "astronomer",
+"src": [
+"analogy"
+]
+},
+{
+"w": "astronomical observation",
+"src": [
+"analogy"
+]
+},
+{
+"w": "at random",
+"src": [
+"exam"
+]
+},
+{
+"w": "at the latest",
+"src": [
+"exam"
+]
+},
+{
+"w": "at the same time",
+"src": [
+"exam"
+]
+},
+{
+"w": "atrocious",
+"src": [
+"analogy"
+]
+},
+{
+"w": "attacks",
+"src": [
+"exam"
+]
+},
+{
+"w": "attended",
+"src": [
+"exam"
+]
+},
+{
+"w": "attributed",
+"src": [
+"exam"
+]
+},
+{
+"w": "attributes",
+"src": [
+"exam"
+]
+},
+{
+"w": "attributing",
+"src": [
+"exam"
+]
+},
+{
+"w": "audacious",
+"src": [
+"reading"
+],
+"readingDef": "bold, daring"
+},
+{
+"w": "auditor",
+"src": [
+"analogy"
+]
+},
+{
+"w": "authority",
+"src": [
+"exam"
+]
+},
+{
+"w": "average",
+"src": [
+"exam"
+]
+},
+{
+"w": "avoided",
+"src": [
+"exam"
+]
+},
+{
+"w": "aware",
+"src": [
+"exam"
+]
+},
+{
+"w": "axes",
+"src": [
+"exam"
+]
+},
+{
+"w": "axis",
+"src": [
+"exam"
+]
+},
+{
+"w": "backgrounds",
+"src": [
+"exam"
+]
+},
+{
+"w": "bacteria",
+"src": [
+"exam"
+]
+},
+{
+"w": "bad",
+"src": [
+"analogy"
+]
+},
+{
+"w": "baker",
+"src": [
+"analogy"
+]
+},
+{
+"w": "balance",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "baldness",
+"src": [
+"exam"
+]
+},
+{
+"w": "ballet",
+"src": [
+"analogy"
+]
+},
+{
+"w": "banal",
+"src": [
+"exam"
+]
+},
+{
+"w": "bandage",
+"src": [
+"analogy"
+]
+},
+{
+"w": "bankruptcy",
+"src": [
+"exam"
+]
+},
+{
+"w": "barefoot",
+"src": [
+"exam"
+]
+},
+{
+"w": "bark",
+"src": [
+"analogy"
+]
+},
+{
+"w": "barometer",
+"src": [
+"analogy"
+]
+},
+{
+"w": "barrier",
+"src": [
+"exam"
+]
+},
+{
+"w": "barriers",
+"src": [
+"exam"
+]
+},
+{
+"w": "base",
+"src": [
+"exam"
+]
+},
+{
+"w": "base circumference",
+"src": [
+"exam"
+]
+},
+{
+"w": "based",
+"src": [
+"exam"
+]
+},
+{
+"w": "be better off",
+"src": [
+"exam"
+]
+},
+{
+"w": "be interpreted, interpreting",
+"src": [
+"exam"
+]
+},
+{
+"w": "be undetected",
+"src": [
+"exam"
+]
+},
+{
+"w": "became dirty",
+"src": [
+"analogy"
+]
+},
+{
+"w": "became old",
+"src": [
+"analogy"
+]
+},
+{
+"w": "became reconciled",
+"src": [
+"exam"
+]
+},
+{
+"w": "became refreshed",
+"src": [
+"exam"
+]
+},
+{
+"w": "became silent",
+"src": [
+"analogy"
+]
+},
+{
+"w": "became tangled",
+"src": [
+"analogy"
+]
+},
+{
+"w": "became tired",
+"src": [
+"analogy"
+]
+},
+{
+"w": "become entrenched",
+"src": [
+"exam"
+]
+},
+{
+"w": "becoming thinner",
+"src": [
+"exam"
+]
+},
+{
+"w": "bee",
+"src": [
+"analogy"
+]
+},
+{
+"w": "beginner",
+"src": [
+"analogy"
+]
+},
+{
+"w": "bell",
+"src": [
+"analogy"
+]
+},
+{
+"w": "belt",
+"src": [
+"analogy"
+]
+},
+{
+"w": "bending",
+"src": [
+"analogy"
+]
+},
+{
+"w": "benefit",
+"src": [
+"exam"
+]
+},
+{
+"w": "bent",
+"src": [
+"analogy"
+]
+},
+{
+"w": "berries",
+"src": [
+"analogy"
+]
+},
+{
+"w": "bilingual",
+"src": [
+"exam"
+]
+},
+{
+"w": "binding",
+"src": [
+"exam"
+]
+},
+{
+"w": "birds",
+"src": [
+"analogy"
+]
+},
+{
+"w": "bisects",
+"src": [
+"exam"
+]
+},
+{
+"w": "bite",
+"src": [
+"analogy"
+]
+},
+{
+"w": "bites",
+"src": [
+"exam"
+]
+},
+{
+"w": "blade",
+"src": [
+"analogy"
+]
+},
+{
+"w": "bland",
+"src": [
+"exam"
+]
+},
+{
+"w": "bleeding",
+"src": [
+"analogy"
+]
+},
+{
+"w": "blind",
+"src": [
+"exam"
+]
+},
+{
+"w": "blistering criticism",
+"src": [
+"exam"
+]
+},
+{
+"w": "blunts",
+"src": [
+"exam"
+]
+},
+{
+"w": "blurred vision",
+"src": [
+"analogy"
+]
+},
+{
+"w": "boat",
+"src": [
+"analogy"
+]
+},
+{
+"w": "body",
+"src": [
+"exam"
+]
+},
+{
+"w": "bolded",
+"src": [
+"exam"
+]
+},
+{
+"w": "book",
+"src": [
+"analogy"
+]
+},
+{
+"w": "books",
+"src": [
+"analogy"
+]
+},
+{
+"w": "botanist",
+"src": [
+"analogy"
+]
+},
+{
+"w": "bottle",
+"src": [
+"analogy"
+]
+},
+{
+"w": "bound by",
+"src": [
+"exam"
+]
+},
+{
+"w": "box",
+"src": [
+"exam"
+]
+},
+{
+"w": "braked",
+"src": [
+"exam"
+]
+},
+{
+"w": "breached",
+"src": [
+"exam"
+]
+},
+{
+"w": "bread",
+"src": [
+"analogy"
+]
+},
+{
+"w": "breakthroughs",
+"src": [
+"exam"
+]
+},
+{
+"w": "breathing",
+"src": [
+"analogy"
+]
+},
+{
+"w": "breeze",
+"src": [
+"analogy"
+]
+},
+{
+"w": "brief",
+"src": [
+"analogy"
+]
+},
+{
+"w": "brief shower",
+"src": [
+"analogy"
+]
+},
+{
+"w": "bright",
+"src": [
+"analogy"
+]
+},
+{
+"w": "brittle",
+"src": [
+"analogy"
+]
+},
+{
+"w": "broad-minded",
+"src": [
+"exam"
+]
+},
+{
+"w": "broom",
+"src": [
+"analogy"
+]
+},
+{
+"w": "brush",
+"src": [
+"analogy"
+]
+},
+{
+"w": "bubbled up",
+"src": [
+"exam"
+]
+},
+{
+"w": "bustling",
+"src": [
+"exam"
+]
+},
+{
+"w": "bylaws",
+"src": [
+"exam"
+]
+},
+{
+"w": "calculate",
+"src": [
+"exam"
+]
+},
+{
+"w": "calf",
+"src": [
+"analogy"
+]
+},
+{
+"w": "candid",
+"src": [
+"analogy"
+]
+},
+{
+"w": "candidates",
+"src": [
+"exam"
+]
+},
+{
+"w": "candle",
+"src": [
+"analogy"
+]
+},
+{
+"w": "capabilities",
+"src": [
+"exam"
+]
+},
+{
+"w": "carbon",
+"src": [
+"exam"
+]
+},
+{
+"w": "cargo",
+"src": [
+"exam"
+]
+},
+{
+"w": "carpenters",
+"src": [
+"exam"
+]
+},
+{
+"w": "carriers",
+"src": [
+"exam"
+]
+},
+{
+"w": "cartographer",
+"src": [
+"analogy"
+]
+},
+{
+"w": "cartography",
+"src": [
+"reading"
+],
+"readingDef": "map-making"
+},
+{
+"w": "carton",
+"src": [
+"exam"
+]
+},
+{
+"w": "casts doubt",
+"src": [
+"exam"
+]
+},
+{
+"w": "cat",
+"src": [
+"analogy"
+]
+},
+{
+"w": "caterpillar",
+"src": [
+"exam"
+]
+},
+{
+"w": "cause",
+"src": [
+"exam"
+]
+},
+{
+"w": "cause his downfall",
+"src": [
+"exam"
+]
+},
+{
+"w": "cave",
+"src": [
+"analogy"
+]
+},
+{
+"w": "celestial bodies",
+"src": [
+"analogy"
+]
+},
+{
+"w": "celestial body",
+"src": [
+"exam"
+]
+},
+{
+"w": "cellar",
+"src": [
+"analogy"
+]
+},
+{
+"w": "central angle",
+"src": [
+"exam"
+]
+},
+{
+"w": "certainty",
+"src": [
+"exam"
+]
+},
+{
+"w": "chain",
+"src": [
+"analogy"
+]
+},
+{
+"w": "challenges",
+"src": [
+"exam"
+]
+},
+{
+"w": "channels",
+"src": [
+"exam"
+]
+},
+{
+"w": "chapter",
+"src": [
+"analogy"
+]
+},
+{
+"w": "characteristics",
+"src": [
+"exam"
+]
+},
+{
+"w": "chased",
+"src": [
+"exam"
+]
+},
+{
+"w": "cheaper",
+"src": [
+"exam"
+]
+},
+{
+"w": "checkouts",
+"src": [
+"exam"
+]
+},
+{
+"w": "cheetah",
+"src": [
+"exam"
+]
+},
+{
+"w": "choir",
+"src": [
+"analogy"
+]
+},
+{
+"w": "circle",
+"src": [
+"exam"
+]
+},
+{
+"w": "circle'soutline",
+"src": [
+"exam"
+]
+},
+{
+"w": "circular",
+"src": [
+"exam"
+]
+},
+{
+"w": "circulatory system",
+"src": [
+"exam"
+]
+},
+{
+"w": "circumference",
+"src": [
+"exam"
+]
+},
+{
+"w": "classroom",
+"src": [
+"analogy"
+]
+},
+{
+"w": "clay",
+"src": [
+"analogy"
+]
+},
+{
+"w": "cleaned",
+"src": [
+"analogy"
+]
+},
+{
+"w": "clear",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "clearing",
+"src": [
+"exam"
+]
+},
+{
+"w": "clock",
+"src": [
+"analogy"
+]
+},
+{
+"w": "cloth",
+"src": [
+"analogy"
+]
+},
+{
+"w": "cloud",
+"src": [
+"analogy"
+]
+},
+{
+"w": "coat",
+"src": [
+"analogy"
+]
+},
+{
+"w": "cobbler",
+"src": [
+"analogy"
+]
+},
+{
+"w": "code",
+"src": [
+"exam"
+]
+},
+{
+"w": "coin",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "collapse",
+"src": [
+"exam"
+]
+},
+{
+"w": "colleagues",
+"src": [
+"exam"
+]
+},
+{
+"w": "collision",
+"src": [
+"analogy"
+]
+},
+{
+"w": "column",
+"src": [
+"exam"
+]
+},
+{
+"w": "comb",
+"src": [
+"analogy"
+]
+},
+{
+"w": "combination",
+"src": [
+"exam"
+]
+},
+{
+"w": "combine",
+"src": [
+"exam"
+]
+},
+{
+"w": "combines",
+"src": [
+"exam"
+]
+},
+{
+"w": "comedian",
+"src": [
+"analogy"
+]
+},
+{
+"w": "commanded",
+"src": [
+"exam"
+]
+},
+{
+"w": "commands (a price)",
+"src": [
+"reading"
+],
+"readingDef": "obtains"
+},
+{
+"w": "commemorate",
+"src": [
+"reading"
+],
+"readingDef": "record in honor of"
+},
+{
+"w": "commonly portrayed",
+"src": [
+"exam"
+]
+},
+{
+"w": "commonplace",
+"src": [
+"exam"
+]
+},
+{
+"w": "compared",
+"src": [
+"exam"
+]
+},
+{
+"w": "comparison",
+"src": [
+"analogy"
+]
+},
+{
+"w": "compass",
+"src": [
+"exam"
+]
+},
+{
+"w": "compensates",
+"src": [
+"exam"
+]
+},
+{
+"w": "compensation",
+"src": [
+"analogy"
+]
+},
+{
+"w": "competent",
+"src": [
+"reading"
+],
+"readingDef": "properly qualified"
+},
+{
+"w": "competition",
+"src": [
+"exam"
+]
+},
+{
+"w": "complained",
+"src": [
+"exam"
+]
+},
+{
+"w": "complete answer",
+"src": [
+"analogy"
+]
+},
+{
+"w": "complied",
+"src": [
+"exam"
+]
+},
+{
+"w": "compressed",
+"src": [
+"exam"
+]
+},
+{
+"w": "comprising",
+"src": [
+"exam"
+]
+},
+{
+"w": "concentrating",
+"src": [
+"analogy"
+]
+},
+{
+"w": "concentration",
+"src": [
+"exam"
+]
+},
+{
+"w": "concise",
+"src": [
+"analogy"
+]
+},
+{
+"w": "conclude",
+"src": [
+"exam"
+]
+},
+{
+"w": "conclusions",
+"src": [
+"exam"
+]
+},
+{
+"w": "condemn",
+"src": [
+"exam"
+]
+},
+{
+"w": "condemnation",
+"src": [
+"exam"
+]
+},
+{
+"w": "conditional on",
+"src": [
+"exam"
+]
+},
+{
+"w": "conduction",
+"src": [
+"exam"
+]
+},
+{
+"w": "cone",
+"src": [
+"exam"
+]
+},
+{
+"w": "conformists",
+"src": [
+"exam"
+]
+},
+{
+"w": "congenital",
+"src": [
+"exam"
+]
+},
+{
+"w": "congestion",
+"src": [
+"analogy"
+]
+},
+{
+"w": "congregate",
+"src": [
+"reading"
+],
+"readingDef": "gather"
+},
+{
+"w": "congruent",
+"src": [
+"exam"
+]
+},
+{
+"w": "congruent triangles",
+"src": [
+"exam"
+]
+},
+{
+"w": "conscience",
+"src": [
+"exam"
+]
+},
+{
+"w": "consecutive",
+"src": [
+"exam"
+]
+},
+{
+"w": "consecutive positive numbers",
+"src": [
+"exam"
+]
+},
+{
+"w": "consensus",
+"src": [
+"exam"
+]
+},
+{
+"w": "considerations",
+"src": [
+"exam"
+]
+},
+{
+"w": "consistent",
+"src": [
+"exam"
+]
+},
+{
+"w": "constant",
+"src": [
+"exam"
+]
+},
+{
+"w": "constant rate",
+"src": [
+"exam"
+]
+},
+{
+"w": "constant speed",
+"src": [
+"exam"
+]
+},
+{
+"w": "constructive",
+"src": [
+"exam"
+]
+},
+{
+"w": "continuity",
+"src": [
+"exam"
+]
+},
+{
+"w": "contract",
+"src": [
+"exam"
+]
+},
+{
+"w": "contradicts",
+"src": [
+"exam"
+]
+},
+{
+"w": "contrasting",
+"src": [
+"exam"
+]
+},
+{
+"w": "conveys",
+"src": [
+"reading"
+],
+"readingDef": "communicates"
+},
+{
+"w": "convincing",
+"src": [
+"analogy"
+]
+},
+{
+"w": "cooking",
+"src": [
+"analogy"
+]
+},
+{
+"w": "coordinate system",
+"src": [
+"exam"
+]
+},
+{
+"w": "cope",
+"src": [
+"exam"
+]
+},
+{
+"w": "cornerstone",
+"src": [
+"exam"
+]
+},
+{
+"w": "correct",
+"src": [
+"analogy"
+]
+},
+{
+"w": "correction",
+"src": [
+"analogy"
+]
+},
+{
+"w": "corridors",
+"src": [
+"exam"
+]
+},
+{
+"w": "counseling",
+"src": [
+"exam"
+]
+},
+{
+"w": "courtroom",
+"src": [
+"analogy"
+]
+},
+{
+"w": "cover",
+"src": [
+"analogy"
+]
+},
+{
+"w": "cow",
+"src": [
+"analogy"
+]
+},
+{
+"w": "crate",
+"src": [
+"exam"
+]
+},
+{
+"w": "crater",
+"src": [
+"exam"
+]
+},
+{
+"w": "creativity",
+"src": [
+"exam"
+]
+},
+{
+"w": "credible",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "crest",
+"src": [
+"analogy"
+]
+},
+{
+"w": "crew",
+"src": [
+"analogy"
+]
+},
+{
+"w": "crimes",
+"src": [
+"exam"
+]
+},
+{
+"w": "criticism",
+"src": [
+"exam"
+]
+},
+{
+"w": "crops",
+"src": [
+"analogy"
+]
+},
+{
+"w": "crude",
+"src": [
+"exam"
+]
+},
+{
+"w": "crust",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "cube",
+"src": [
+"exam"
+]
+},
+{
+"w": "cubes",
+"src": [
+"exam"
+]
+},
+{
+"w": "cumbersome",
+"src": [
+"exam"
+]
+},
+{
+"w": "cupboards",
+"src": [
+"exam"
+]
+},
+{
+"w": "curator",
+"src": [
+"analogy"
+]
+},
+{
+"w": "curve",
+"src": [
+"exam"
+]
+},
+{
+"w": "customarily",
+"src": [
+"reading"
+],
+"readingDef": "usually"
+},
+{
+"w": "cygnet",
+"src": [
+"analogy"
+]
+},
+{
+"w": "cylinder",
+"src": [
+"exam"
+]
+},
+{
+"w": "damage",
+"src": [
+"analogy"
+]
+},
+{
+"w": "dancer",
+"src": [
+"analogy"
+]
+},
+{
+"w": "dark",
+"src": [
+"analogy"
+]
+},
+{
+"w": "deadly plague",
+"src": [
+"exam"
+]
+},
+{
+"w": "debate",
+"src": [
+"exam"
+]
+},
+{
+"w": "decomposed",
+"src": [
+"reading"
+],
+"readingDef": "broken down, rotted"
+},
+{
+"w": "decrease in prestige",
+"src": [
+"exam"
+]
+},
+{
+"w": "decreased",
+"src": [
+"exam"
+]
+},
+{
+"w": "defeat",
+"src": [
+"exam"
+]
+},
+{
+"w": "defect",
+"src": [
+"analogy"
+]
+},
+{
+"w": "defective",
+"src": [
+"reading"
+],
+"readingDef": "faulty"
+},
+{
+"w": "defense",
+"src": [
+"exam"
+]
+},
+{
+"w": "defensive",
+"src": [
+"exam"
+]
+},
+{
+"w": "deficient in",
+"src": [
+"reading"
+],
+"readingDef": "lacking"
+},
+{
+"w": "defining",
+"src": [
+"exam"
+]
+},
+{
+"w": "defortification",
+"src": [
+"exam"
+]
+},
+{
+"w": "degree",
+"src": [
+"exam"
+]
+},
+{
+"w": "delicate",
+"src": [
+"exam"
+]
+},
+{
+"w": "delighted",
+"src": [
+"analogy"
+]
+},
+{
+"w": "deltoid",
+"src": [
+"exam"
+]
+},
+{
+"w": "denied",
+"src": [
+"exam"
+]
+},
+{
+"w": "denounced",
+"src": [
+"exam"
+]
+},
+{
+"w": "density",
+"src": [
+"exam"
+]
+},
+{
+"w": "dent",
+"src": [
+"analogy"
+]
+},
+{
+"w": "departure",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "depleted",
+"src": [
+"exam"
+]
+},
+{
+"w": "derive, gain",
+"src": [
+"exam"
+]
+},
+{
+"w": "descendants",
+"src": [
+"exam"
+]
+},
+{
+"w": "descended",
+"src": [
+"analogy"
+]
+},
+{
+"w": "desire",
+"src": [
+"exam"
+]
+},
+{
+"w": "despotic",
+"src": [
+"exam"
+]
+},
+{
+"w": "destination",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "detailed",
+"src": [
+"analogy"
+]
+},
+{
+"w": "deterioration",
+"src": [
+"exam"
+]
+},
+{
+"w": "determine",
+"src": [
+"exam"
+]
+},
+{
+"w": "devastating",
+"src": [
+"exam"
+]
+},
+{
+"w": "deviating",
+"src": [
+"exam"
+]
+},
+{
+"w": "devised",
+"src": [
+"exam"
+]
+},
+{
+"w": "devoid",
+"src": [
+"exam"
+]
+},
+{
+"w": "devoid of",
+"src": [
+"reading"
+],
+"readingDef": "completely without"
+},
+{
+"w": "diagonals",
+"src": [
+"exam"
+]
+},
+{
+"w": "diameter",
+"src": [
+"exam"
+]
+},
+{
+"w": "dice",
+"src": [
+"exam"
+]
+},
+{
+"w": "dictated",
+"src": [
+"exam"
+]
+},
+{
+"w": "dictates",
+"src": [
+"exam"
+]
+},
+{
+"w": "differ",
+"src": [
+"exam"
+]
+},
+{
+"w": "difference",
+"src": [
+"exam"
+]
+},
+{
+"w": "dig up",
+"src": [
+"exam"
+]
+},
+{
+"w": "diligence",
+"src": [
+"exam"
+]
+},
+{
+"w": "diligent",
+"src": [
+"analogy"
+]
+},
+{
+"w": "diner",
+"src": [
+"exam"
+]
+},
+{
+"w": "dirty",
+"src": [
+"analogy"
+]
+},
+{
+"w": "disabilities",
+"src": [
+"exam"
+]
+},
+{
+"w": "disadvantaged",
+"src": [
+"exam"
+]
+},
+{
+"w": "disadvantaged circumstances",
+"src": [
+"exam"
+]
+},
+{
+"w": "disagree",
+"src": [
+"exam"
+]
+},
+{
+"w": "disagreements",
+"src": [
+"exam"
+]
+},
+{
+"w": "discerning",
+"src": [
+"exam"
+]
+},
+{
+"w": "discharge",
+"src": [
+"reading"
+],
+"readingDef": "release"
+},
+{
+"w": "disciplinary rules",
+"src": [
+"exam"
+]
+},
+{
+"w": "discount",
+"src": [
+"exam"
+]
+},
+{
+"w": "discovery",
+"src": [
+"exam"
+]
+},
+{
+"w": "discredit",
+"src": [
+"reading"
+],
+"readingDef": "damage the reputation of"
+},
+{
+"w": "disentangled",
+"src": [
+"analogy"
+]
+},
+{
+"w": "disguised",
+"src": [
+"exam"
+]
+},
+{
+"w": "dismantle",
+"src": [
+"exam"
+]
+},
+{
+"w": "displeasure",
+"src": [
+"exam"
+]
+},
+{
+"w": "disproved",
+"src": [
+"exam"
+]
+},
+{
+"w": "disrupted",
+"src": [
+"exam"
+]
+},
+{
+"w": "distance",
+"src": [
+"exam"
+]
+},
+{
+"w": "distances",
+"src": [
+"exam"
+]
+},
+{
+"w": "distinct",
+"src": [
+"exam"
+]
+},
+{
+"w": "distorted",
+"src": [
+"exam"
+]
+},
+{
+"w": "divided",
+"src": [
+"exam"
+]
+},
+{
+"w": "dividing",
+"src": [
+"exam"
+]
+},
+{
+"w": "divisible",
+"src": [
+"exam"
+]
+},
+{
+"w": "division",
+"src": [
+"exam"
+]
+},
+{
+"w": "divisor",
+"src": [
+"exam"
+]
+},
+{
+"w": "divisors",
+"src": [
+"exam"
+]
+},
+{
+"w": "does not hold up",
+"src": [
+"exam"
+]
+},
+{
+"w": "dog",
+"src": [
+"analogy"
+]
+},
+{
+"w": "doodled",
+"src": [
+"exam"
+]
+},
+{
+"w": "doubled",
+"src": [
+"exam"
+]
+},
+{
+"w": "doubt",
+"src": [
+"exam"
+]
+},
+{
+"w": "dream",
+"src": [
+"analogy"
+]
+},
+{
+"w": "drenched",
+"src": [
+"analogy"
+]
+},
+{
+"w": "drives",
+"src": [
+"exam"
+]
+},
+{
+"w": "drizzle",
+"src": [
+"analogy"
+]
+},
+{
+"w": "drop",
+"src": [
+"analogy"
+]
+},
+{
+"w": "drop out",
+"src": [
+"exam"
+]
+},
+{
+"w": "drowning",
+"src": [
+"analogy"
+]
+},
+{
+"w": "drug lords",
+"src": [
+"exam"
+]
+},
+{
+"w": "dubious",
+"src": [
+"exam"
+]
+},
+{
+"w": "duck",
+"src": [
+"analogy"
+]
+},
+{
+"w": "duckling",
+"src": [
+"analogy"
+]
+},
+{
+"w": "dug",
+"src": [
+"exam"
+]
+}
+]

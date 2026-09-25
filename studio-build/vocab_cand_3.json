@@ -1,0 +1,1403 @@
+[
+{
+"w": "oar",
+"src": [
+"analogy"
+]
+},
+{
+"w": "obeyed",
+"src": [
+"analogy"
+]
+},
+{
+"w": "objected",
+"src": [
+"exam"
+]
+},
+{
+"w": "objects",
+"src": [
+"exam"
+]
+},
+{
+"w": "obligation",
+"src": [
+"exam"
+]
+},
+{
+"w": "obliged",
+"src": [
+"reading"
+],
+"readingDef": "forced"
+},
+{
+"w": "observatory",
+"src": [
+"analogy"
+]
+},
+{
+"w": "obtuse angle",
+"src": [
+"exam"
+]
+},
+{
+"w": "obtuse triangle",
+"src": [
+"exam"
+]
+},
+{
+"w": "odd",
+"src": [
+"exam"
+]
+},
+{
+"w": "odd number",
+"src": [
+"exam"
+]
+},
+{
+"w": "odor",
+"src": [
+"exam"
+]
+},
+{
+"w": "odorless",
+"src": [
+"analogy"
+]
+},
+{
+"w": "off-key notes",
+"src": [
+"exam"
+]
+},
+{
+"w": "offense",
+"src": [
+"analogy"
+]
+},
+{
+"w": "often",
+"src": [
+"exam"
+]
+},
+{
+"w": "omitted",
+"src": [
+"exam"
+]
+},
+{
+"w": "on its own",
+"src": [
+"exam"
+]
+},
+{
+"w": "open-minded",
+"src": [
+"exam"
+]
+},
+{
+"w": "operations",
+"src": [
+"exam"
+]
+},
+{
+"w": "opposite",
+"src": [
+"exam"
+]
+},
+{
+"w": "orange",
+"src": [
+"analogy"
+]
+},
+{
+"w": "orchard",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "orchestra",
+"src": [
+"analogy"
+]
+},
+{
+"w": "order of events",
+"src": [
+"exam"
+]
+},
+{
+"w": "organ",
+"src": [
+"exam"
+]
+},
+{
+"w": "original",
+"src": [
+"exam"
+]
+},
+{
+"w": "ornithologist",
+"src": [
+"analogy"
+]
+},
+{
+"w": "outcome",
+"src": [
+"exam"
+]
+},
+{
+"w": "outdated",
+"src": [
+"analogy"
+]
+},
+{
+"w": "outlined",
+"src": [
+"exam"
+]
+},
+{
+"w": "output",
+"src": [
+"exam"
+]
+},
+{
+"w": "oven",
+"src": [
+"analogy"
+]
+},
+{
+"w": "overconsumption",
+"src": [
+"exam"
+]
+},
+{
+"w": "overthrow",
+"src": [
+"exam"
+]
+},
+{
+"w": "ownership",
+"src": [
+"exam"
+]
+},
+{
+"w": "oyster",
+"src": [
+"analogy"
+]
+},
+{
+"w": "page",
+"src": [
+"analogy"
+]
+},
+{
+"w": "pairs",
+"src": [
+"exam"
+]
+},
+{
+"w": "panel",
+"src": [
+"analogy"
+]
+},
+{
+"w": "parachutist",
+"src": [
+"exam"
+]
+},
+{
+"w": "parallel",
+"src": [
+"exam"
+]
+},
+{
+"w": "parallel straight lines",
+"src": [
+"exam"
+]
+},
+{
+"w": "parallelogram",
+"src": [
+"exam"
+]
+},
+{
+"w": "paralysis",
+"src": [
+"exam"
+]
+},
+{
+"w": "parasite",
+"src": [
+"exam"
+]
+},
+{
+"w": "parses",
+"src": [
+"reading"
+],
+"readingDef": "analyses the grammar of"
+},
+{
+"w": "particular",
+"src": [
+"exam"
+]
+},
+{
+"w": "pastime",
+"src": [
+"exam"
+]
+},
+{
+"w": "patron",
+"src": [
+"analogy"
+]
+},
+{
+"w": "paved the way",
+"src": [
+"exam"
+]
+},
+{
+"w": "peak",
+"src": [
+"exam"
+]
+},
+{
+"w": "pearl",
+"src": [
+"analogy"
+]
+},
+{
+"w": "peculiar",
+"src": [
+"reading"
+],
+"readingDef": "strange"
+},
+{
+"w": "pedaled",
+"src": [
+"exam"
+]
+},
+{
+"w": "peel",
+"src": [
+"analogy"
+]
+},
+{
+"w": "penalty",
+"src": [
+"exam"
+]
+},
+{
+"w": "perceived",
+"src": [
+"exam"
+]
+},
+{
+"w": "percentage",
+"src": [
+"exam"
+]
+},
+{
+"w": "perception of reality",
+"src": [
+"exam"
+]
+},
+{
+"w": "performance",
+"src": [
+"analogy"
+]
+},
+{
+"w": "perimeter",
+"src": [
+"exam"
+]
+},
+{
+"w": "periods",
+"src": [
+"exam"
+]
+},
+{
+"w": "perishable",
+"src": [
+"analogy"
+]
+},
+{
+"w": "permissible",
+"src": [
+"exam"
+]
+},
+{
+"w": "permitted",
+"src": [
+"exam"
+]
+},
+{
+"w": "persists",
+"src": [
+"exam"
+]
+},
+{
+"w": "petal",
+"src": [
+"analogy"
+]
+},
+{
+"w": "philologist",
+"src": [
+"reading"
+],
+"readingDef": "scholar of languages and texts"
+},
+{
+"w": "phonetic",
+"src": [
+"reading"
+],
+"readingDef": "relating to speech sounds"
+},
+{
+"w": "pianist",
+"src": [
+"analogy"
+]
+},
+{
+"w": "pig",
+"src": [
+"analogy"
+]
+},
+{
+"w": "piglet",
+"src": [
+"analogy"
+]
+},
+{
+"w": "placed",
+"src": [
+"exam"
+]
+},
+{
+"w": "plan",
+"src": [
+"analogy"
+]
+},
+{
+"w": "plants",
+"src": [
+"analogy"
+]
+},
+{
+"w": "play",
+"src": [
+"analogy"
+]
+},
+{
+"w": "player",
+"src": [
+"analogy"
+]
+},
+{
+"w": "plea",
+"src": [
+"exam"
+]
+},
+{
+"w": "pleased",
+"src": [
+"analogy"
+]
+},
+{
+"w": "poem",
+"src": [
+"analogy"
+]
+},
+{
+"w": "point of departure",
+"src": [
+"reading"
+],
+"readingDef": "starting point"
+},
+{
+"w": "pointless",
+"src": [
+"exam"
+]
+},
+{
+"w": "poisoning",
+"src": [
+"analogy"
+]
+},
+{
+"w": "polar",
+"src": [
+"exam"
+]
+},
+{
+"w": "political party",
+"src": [
+"exam"
+]
+},
+{
+"w": "poll",
+"src": [
+"exam"
+]
+},
+{
+"w": "polling station",
+"src": [
+"exam"
+]
+},
+{
+"w": "pollution",
+"src": [
+"exam"
+]
+},
+{
+"w": "positions",
+"src": [
+"exam"
+]
+},
+{
+"w": "positive",
+"src": [
+"exam"
+]
+},
+{
+"w": "positive integer",
+"src": [
+"exam"
+]
+},
+{
+"w": "positive integers",
+"src": [
+"exam"
+]
+},
+{
+"w": "positive number",
+"src": [
+"exam"
+]
+},
+{
+"w": "positive numbers",
+"src": [
+"exam"
+]
+},
+{
+"w": "pot",
+"src": [
+"analogy"
+]
+},
+{
+"w": "potter",
+"src": [
+"analogy"
+]
+},
+{
+"w": "pottery workshop",
+"src": [
+"analogy"
+]
+},
+{
+"w": "practical",
+"src": [
+"exam"
+]
+},
+{
+"w": "pre-determined",
+"src": [
+"exam"
+]
+},
+{
+"w": "precipitation",
+"src": [
+"exam"
+]
+},
+{
+"w": "predator",
+"src": [
+"exam"
+]
+},
+{
+"w": "predators",
+"src": [
+"exam"
+]
+},
+{
+"w": "predicament",
+"src": [
+"reading"
+],
+"readingDef": "difficult situation"
+},
+{
+"w": "predict",
+"src": [
+"exam"
+]
+},
+{
+"w": "prediction",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "preference",
+"src": [
+"exam"
+]
+},
+{
+"w": "prerequisite",
+"src": [
+"exam"
+]
+},
+{
+"w": "presuming",
+"src": [
+"exam"
+]
+},
+{
+"w": "presuppose",
+"src": [
+"reading"
+],
+"readingDef": "assume in advance"
+},
+{
+"w": "pretext",
+"src": [
+"exam"
+]
+},
+{
+"w": "prevents",
+"src": [
+"exam"
+]
+},
+{
+"w": "pricking",
+"src": [
+"analogy"
+]
+},
+{
+"w": "priest",
+"src": [
+"exam"
+]
+},
+{
+"w": "prime",
+"src": [
+"exam"
+]
+},
+{
+"w": "prime number",
+"src": [
+"exam"
+]
+},
+{
+"w": "prime numbers",
+"src": [
+"exam"
+]
+},
+{
+"w": "prior",
+"src": [
+"exam"
+]
+},
+{
+"w": "privileges",
+"src": [
+"exam"
+]
+},
+{
+"w": "probability",
+"src": [
+"exam"
+]
+},
+{
+"w": "produce",
+"src": [
+"exam"
+]
+},
+{
+"w": "profits",
+"src": [
+"exam"
+]
+},
+{
+"w": "profound",
+"src": [
+"exam"
+]
+},
+{
+"w": "prohibition",
+"src": [
+"exam"
+]
+},
+{
+"w": "projector",
+"src": [
+"exam"
+]
+},
+{
+"w": "proliferate",
+"src": [
+"exam"
+]
+},
+{
+"w": "prolonged",
+"src": [
+"reading"
+],
+"readingDef": "lasting a long time"
+},
+{
+"w": "promote",
+"src": [
+"exam"
+]
+},
+{
+"w": "promoted",
+"src": [
+"exam"
+]
+},
+{
+"w": "promotes",
+"src": [
+"exam"
+]
+},
+{
+"w": "promotion",
+"src": [
+"exam"
+]
+},
+{
+"w": "propaganda",
+"src": [
+"exam"
+]
+},
+{
+"w": "propagate",
+"src": [
+"reading"
+],
+"readingDef": "spread"
+},
+{
+"w": "properly",
+"src": [
+"exam"
+]
+},
+{
+"w": "prosecution",
+"src": [
+"exam"
+]
+},
+{
+"w": "protection",
+"src": [
+"exam"
+]
+},
+{
+"w": "protractor",
+"src": [
+"analogy"
+]
+},
+{
+"w": "provisions",
+"src": [
+"exam"
+]
+},
+{
+"w": "puppy",
+"src": [
+"analogy"
+]
+},
+{
+"w": "purpose",
+"src": [
+"exam"
+]
+},
+{
+"w": "put their faith",
+"src": [
+"exam"
+]
+},
+{
+"w": "puts off",
+"src": [
+"exam"
+]
+},
+{
+"w": "puzzling",
+"src": [
+"exam"
+]
+},
+{
+"w": "quadrilateral",
+"src": [
+"exam"
+]
+},
+{
+"w": "qualified",
+"src": [
+"exam"
+]
+},
+{
+"w": "question",
+"src": [
+"analogy"
+]
+},
+{
+"w": "quiet",
+"src": [
+"analogy"
+]
+},
+{
+"w": "quietened",
+"src": [
+"analogy"
+]
+},
+{
+"w": "radar",
+"src": [
+"analogy"
+]
+},
+{
+"w": "radius",
+"src": [
+"exam"
+]
+},
+{
+"w": "rain",
+"src": [
+"analogy"
+]
+},
+{
+"w": "random",
+"src": [
+"exam"
+]
+},
+{
+"w": "range",
+"src": [
+"exam"
+]
+},
+{
+"w": "rankings",
+"src": [
+"exam"
+]
+},
+{
+"w": "rare",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "rate",
+"src": [
+"exam"
+]
+},
+{
+"w": "ratio",
+"src": [
+"exam"
+]
+},
+{
+"w": "reach the same conclusion",
+"src": [
+"exam"
+]
+},
+{
+"w": "reading",
+"src": [
+"analogy"
+]
+},
+{
+"w": "realm",
+"src": [
+"exam"
+]
+},
+{
+"w": "rebel",
+"src": [
+"exam"
+]
+},
+{
+"w": "reciprocal",
+"src": [
+"exam"
+]
+},
+{
+"w": "reciter",
+"src": [
+"analogy"
+]
+},
+{
+"w": "records",
+"src": [
+"analogy"
+]
+},
+{
+"w": "recovery",
+"src": [
+"exam"
+]
+},
+{
+"w": "rectangle",
+"src": [
+"exam"
+]
+},
+{
+"w": "recycled",
+"src": [
+"exam"
+]
+},
+{
+"w": "reduction",
+"src": [
+"exam"
+]
+},
+{
+"w": "referee",
+"src": [
+"analogy"
+]
+},
+{
+"w": "reference",
+"src": [
+"exam"
+]
+},
+{
+"w": "referendum",
+"src": [
+"exam"
+]
+},
+{
+"w": "refrained",
+"src": [
+"exam"
+]
+},
+{
+"w": "refrains",
+"src": [
+"exam"
+]
+},
+{
+"w": "refused",
+"src": [
+"exam"
+]
+},
+{
+"w": "refuted",
+"src": [
+"exam"
+]
+},
+{
+"w": "regime",
+"src": [
+"exam"
+]
+},
+{
+"w": "regiment",
+"src": [
+"analogy"
+]
+},
+{
+"w": "regions",
+"src": [
+"exam"
+]
+},
+{
+"w": "registering",
+"src": [
+"exam"
+]
+},
+{
+"w": "regular hexagon",
+"src": [
+"exam"
+]
+},
+{
+"w": "regular octagon",
+"src": [
+"exam"
+]
+},
+{
+"w": "regulate",
+"src": [
+"exam"
+]
+},
+{
+"w": "regulations",
+"src": [
+"exam"
+]
+},
+{
+"w": "reinforced",
+"src": [
+"exam"
+]
+},
+{
+"w": "reinforcing",
+"src": [
+"exam"
+]
+},
+{
+"w": "reinterprets",
+"src": [
+"reading"
+],
+"readingDef": "explains in a new way"
+},
+{
+"w": "rejected",
+"src": [
+"exam"
+]
+},
+{
+"w": "rejection",
+"src": [
+"exam"
+]
+},
+{
+"w": "relative",
+"src": [
+"exam"
+]
+},
+{
+"w": "reliable",
+"src": [
+"exam"
+]
+},
+{
+"w": "relief",
+"src": [
+"reading"
+],
+"readingDef": "the raised and hollowed shape of a surface"
+},
+{
+"w": "reluctance",
+"src": [
+"reading"
+],
+"readingDef": "unwillingness"
+},
+{
+"w": "remainder",
+"src": [
+"exam"
+]
+},
+{
+"w": "remnants",
+"src": [
+"analogy"
+]
+},
+{
+"w": "renouncing",
+"src": [
+"exam"
+]
+},
+{
+"w": "repair",
+"src": [
+"analogy"
+]
+},
+{
+"w": "replica",
+"src": [
+"exam"
+]
+},
+{
+"w": "reports",
+"src": [
+"exam"
+]
+},
+{
+"w": "repression",
+"src": [
+"exam"
+]
+},
+{
+"w": "reptiles",
+"src": [
+"exam"
+]
+},
+{
+"w": "require",
+"src": [
+"exam"
+]
+},
+{
+"w": "residue",
+"src": [
+"reading"
+],
+"readingDef": "what remains after the rest has gone"
+},
+{
+"w": "resistant",
+"src": [
+"exam"
+]
+},
+{
+"w": "resources",
+"src": [
+"exam"
+]
+},
+{
+"w": "rest",
+"src": [
+"analogy"
+]
+},
+{
+"w": "restrictions",
+"src": [
+"exam"
+]
+},
+{
+"w": "retains",
+"src": [
+"reading"
+],
+"readingDef": "keeps"
+},
+{
+"w": "retrospectively",
+"src": [
+"reading"
+],
+"readingDef": "after the event"
+},
+{
+"w": "revenue from sales",
+"src": [
+"exam"
+]
+},
+{
+"w": "revival",
+"src": [
+"exam"
+]
+},
+{
+"w": "revolved",
+"src": [
+"exam"
+]
+},
+{
+"w": "reward",
+"src": [
+"exam"
+]
+},
+{
+"w": "rhombus",
+"src": [
+"exam"
+]
+},
+{
+"w": "riddles",
+"src": [
+"exam"
+]
+},
+{
+"w": "right isosceles triangle",
+"src": [
+"exam"
+]
+},
+{
+"w": "right trapezoid",
+"src": [
+"exam"
+]
+},
+{
+"w": "right triangle",
+"src": [
+"exam"
+]
+},
+{
+"w": "rigid",
+"src": [
+"reading"
+],
+"readingDef": "strict, unbending"
+},
+{
+"w": "rival",
+"src": [
+"analogy"
+]
+},
+{
+"w": "rivalry",
+"src": [
+"exam"
+]
+},
+{
+"w": "rocks",
+"src": [
+"analogy"
+]
+},
+{
+"w": "role model",
+"src": [
+"exam"
+]
+},
+{
+"w": "roll out",
+"src": [
+"exam"
+]
+},
+{
+"w": "route",
+"src": [
+"exam"
+]
+},
+{
+"w": "routine",
+"src": [
+"analogy"
+]
+},
+{
+"w": "row",
+"src": [
+"exam"
+]
+},
+{
+"w": "ruler",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "rumors",
+"src": [
+"exam"
+]
+},
+{
+"w": "rung",
+"src": [
+"analogy"
+]
+},
+{
+"w": "rushed",
+"src": [
+"exam"
+]
+}
+]

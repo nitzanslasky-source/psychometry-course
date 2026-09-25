@@ -1,0 +1,3442 @@
+[
+{
+"w": "abolish",
+"label": "EXAM VOCABULARY",
+"def_": "To formally put an end to a law, practice, or institution.",
+"ex": "The council voted to abolish the fee.",
+"note": "Abolition differs from a temporary suspension.",
+"seen": "E03 p. 31."
+},
+{
+"w": "abyss",
+"label": "EXAM ANALOGY",
+"def_": "A very deep gap or pit.",
+"ex": "The bridge crossed a narrow abyss.",
+"note": "An obstacle a bridge may span.",
+"seen": "E08 p. 31."
+},
+{
+"w": "accessible",
+"label": "EXAM ANALOGY",
+"def_": "Able to be reached, entered, used, or understood.",
+"ex": "The museum is accessible by bus.",
+"note": "Something accessible can be reached; an accessible explanation is understandable.",
+"seen": "E02 p. 29; E11 p. 27."
+},
+{
+"w": "acclimate",
+"label": "EXAM ANALOGY",
+"def_": "To become used to a new environment or conditions.",
+"ex": "It took a week to acclimate to the heat.",
+"note": "Also spelled acclimatize in some varieties of English.",
+"seen": "E03 p. 5."
+},
+{
+"w": "accuse",
+"label": "EXAM ANALOGY",
+"def_": "To say that someone did something wrong.",
+"ex": "They accused him of breaking the agreement.",
+"note": "An accusation is not a finding of guilt.",
+"seen": "E03 p. 7; E10 p. 37; more occurrences listed online."
+},
+{
+"w": "acquit",
+"label": "EXAM ANALOGY",
+"def_": "To find someone not guilty in a court.",
+"ex": "The jury acquitted the defendant.",
+"note": "Acquittal is a legal verdict, not proof of factual innocence.",
+"seen": "E04 p. 6."
+},
+{
+"w": "adjacent",
+"label": "EXAM ANALOGY",
+"def_": "Next to or directly beside.",
+"ex": "The two rooms are adjacent.",
+"note": "Adjacent need not mean identical or overlapping.",
+"seen": "E05 p. 6."
+},
+{
+"w": "adverse",
+"label": "EXAM VOCABULARY",
+"def_": "Harmful or unfavorable.",
+"ex": "Adverse weather delayed the departure.",
+"note": "Different from averse, meaning strongly opposed.",
+"seen": "E02 p. 21; E02 p. 25; more occurrences listed online."
+},
+{
+"w": "affection",
+"label": "EXAM ANALOGY",
+"def_": "Warm feelings of liking or care.",
+"ex": "She spoke of her teacher with affection.",
+"note": "Different from affectation, a pretended manner.",
+"seen": "E06 p. 7."
+},
+{
+"w": "agility",
+"label": "EXAM ANALOGY",
+"def_": "The ability to move or think quickly and easily.",
+"ex": "The dancer showed remarkable agility.",
+"note": "A positive ability, not merely speed.",
+"seen": "E11 p. 7."
+},
+{
+"w": "agitated",
+"label": "EXAM ANALOGY",
+"def_": "Upset, restless, or disturbed.",
+"ex": "The waiting crowd grew agitated.",
+"note": "Contrast with serene or calm.",
+"seen": "E05 p. 28."
+},
+{
+"w": "albeit",
+"label": "ADDITIONAL WORD",
+"def_": "Although; even though.",
+"ex": "The solution was effective, albeit expensive.",
+"note": "Introduces a qualification or contrast.",
+"seen": ""
+},
+{
+"w": "alienation",
+"label": "EXAM ANALOGY",
+"def_": "A feeling or state of separation from others.",
+"ex": "The move increased his sense of alienation.",
+"note": "Related to being estranged, not necessarily physical distance.",
+"seen": "E06 p. 7."
+},
+{
+"w": "alleviate",
+"label": "EXAM VOCABULARY",
+"def_": "To make pain, difficulty, or severity less.",
+"ex": "The treatment alleviated the symptoms.",
+"note": "Relief is not necessarily a cure.",
+"seen": "E01 p. 11."
+},
+{
+"w": "altruism",
+"label": "EXAM VOCABULARY",
+"def_": "Concern for others' welfare without seeking personal benefit.",
+"ex": "The act was praised as an example of altruism.",
+"note": "Contrast with purely self-interested behavior.",
+"seen": "E01 p. 21; E01 p. 23; more occurrences listed online."
+},
+{
+"w": "amateur",
+"label": "EXAM VOCABULARY",
+"def_": "Someone who does an activity without being a professional.",
+"ex": "An amateur astronomer noticed the object.",
+"note": "Amateur does not necessarily mean unskilled.",
+"seen": "E05 p. 20; E05 p. 22; more occurrences listed online."
+},
+{
+"w": "ambiguity",
+"label": "EXAM ANALOGY",
+"def_": "The possibility of more than one meaning or interpretation.",
+"ex": "The phrase's ambiguity confused readers.",
+"note": "Clarification can reduce ambiguity.",
+"seen": "E11 p. 7."
+},
+{
+"w": "ambition",
+"label": "EXAM ANALOGY",
+"def_": "A strong wish for success or achievement.",
+"ex": "Her ambition drove her to study harder.",
+"note": "A desire and its object are different roles.",
+"seen": "E03 p. 43; E03 p. 45; more occurrences listed online."
+},
+{
+"w": "ambitious",
+"label": "EXAM ANALOGY",
+"def_": "Strongly wanting success or achievement.",
+"ex": "The ambitious athlete trained daily.",
+"note": "Desire for success does not guarantee success.",
+"seen": "E01 p. 31; E08 p. 51."
+},
+{
+"w": "anchor",
+"label": "EXAM ANALOGY",
+"def_": "A device that holds a vessel in place; also, to secure firmly.",
+"ex": "The boat dropped its anchor.",
+"note": "Tool and stabilizing purpose.",
+"seen": "E08 p. 7; E08 p. 49; more occurrences listed online."
+},
+{
+"w": "anesthesia",
+"label": "EXAM ANALOGY",
+"def_": "Loss of sensation, often produced for a medical procedure.",
+"ex": "The patient received anesthesia before surgery.",
+"note": "Prevents or reduces sensation; not the same as healing.",
+"seen": "E05 p. 8."
+},
+{
+"w": "anonymous",
+"label": "EXAM VOCABULARY",
+"def_": "Not identified by name.",
+"ex": "The paper received an anonymous review.",
+"note": "An unknown identity, not necessarily an unknown opinion.",
+"seen": "E05 p. 20; E05 p. 42."
+},
+{
+"w": "anticipate",
+"label": "EXAM VOCABULARY",
+"def_": "To expect or prepare for something before it happens.",
+"ex": "They anticipated a rise in demand.",
+"note": "Expectation may turn out to be mistaken.",
+"seen": "E03 p. 31; E04 p. 20."
+},
+{
+"w": "apathetic",
+"label": "EXAM ANALOGY",
+"def_": "Showing little interest, feeling, or concern.",
+"ex": "The audience seemed apathetic.",
+"note": "Apathetically means with indifference.",
+"seen": "E03 p. 27."
+},
+{
+"w": "aperture",
+"label": "EXAM ANALOGY",
+"def_": "An opening or hole.",
+"ex": "Light entered through a small aperture.",
+"note": "A formal synonym for opening.",
+"seen": "E07 p. 7."
+},
+{
+"w": "arbitrary",
+"label": "EXAM VOCABULARY",
+"def_": "Chosen without a clear principle or reason.",
+"ex": "The cutoff seemed arbitrary.",
+"note": "Do not confuse arbitrary with random in every context.",
+"seen": "E09 p. 21; E09 p. 23; more occurrences listed online."
+},
+{
+"w": "archive",
+"label": "EXAM ANALOGY",
+"def_": "A collection of records, or the place that preserves them.",
+"ex": "The letters are kept in the town archive.",
+"note": "Preservation of records, not merely containing objects.",
+"seen": "E03 p. 7."
+},
+{
+"w": "arouse",
+"label": "EXAM VOCABULARY",
+"def_": "To bring about a feeling or response.",
+"ex": "The discovery aroused curiosity.",
+"note": "Cause and resulting feeling.",
+"seen": "E04 p. 44; E06 p. 49; more occurrences listed online."
+},
+{
+"w": "arrogance",
+"label": "EXAM VOCABULARY",
+"def_": "An exaggerated sense of one's importance or superiority.",
+"ex": "His arrogance made collaboration difficult.",
+"note": "Contrast with humility.",
+"seen": "E02 p. 35; E03 p. 33."
+},
+{
+"w": "ascend",
+"label": "EXAM ANALOGY",
+"def_": "To go or move upward.",
+"ex": "The hikers ascended the hill.",
+"note": "Opposite: descend.",
+"seen": "E01 p. 29; E10 p. 5."
+},
+{
+"w": "asceticism",
+"label": "EXAM ANALOGY",
+"def_": "A way of life involving strict self-denial, especially of pleasure.",
+"ex": "His asceticism led him to reject many comforts.",
+"note": "Contrast with seeking or indulging in pleasure.",
+"seen": "E10 p. 7."
+},
+{
+"w": "assertion",
+"label": "EXAM VOCABULARY",
+"def_": "A statement presented as true.",
+"ex": "The author offered no evidence for the assertion.",
+"note": "A claim is not its supporting evidence.",
+"seen": "E03 p. 37; E05 p. 10."
+},
+{
+"w": "assumption",
+"label": "EXAM VOCABULARY",
+"def_": "Something accepted as true for the purposes of an argument.",
+"ex": "The plan rests on an untested assumption.",
+"note": "Often an unstated bridge between evidence and conclusion.",
+"seen": "E01 p. 21; E02 p. 23; more occurrences listed online."
+},
+{
+"w": "at least",
+"label": "EXAM VOCABULARY",
+"def_": "No fewer than.",
+"ex": "At least three applicants will be chosen.",
+"note": "Includes the stated lower limit.",
+"seen": "E04 p. 14; E05 p. 14; more occurrences listed online."
+},
+{
+"w": "at most",
+"label": "EXAM VOCABULARY",
+"def_": "No more than.",
+"ex": "At most three applicants will be chosen.",
+"note": "Includes the stated upper limit.",
+"seen": "E04 p. 22."
+},
+{
+"w": "attain",
+"label": "EXAM VOCABULARY",
+"def_": "To reach or achieve.",
+"ex": "She finally attained her goal.",
+"note": "An achieved result, rather than merely an attempt.",
+"seen": "E01 p. 11; E01 p. 45; more occurrences listed online."
+},
+{
+"w": "attentive",
+"label": "EXAM ANALOGY",
+"def_": "Paying close attention.",
+"ex": "The students were attentive throughout the talk.",
+"note": "Attention describes the listener's state.",
+"seen": "E04 p. 6; E08 p. 33."
+},
+{
+"w": "attribute",
+"label": "EXAM VOCABULARY",
+"def_": "To say something is caused by or belongs to someone; also, a quality.",
+"ex": "They attributed the improvement to better training.",
+"note": "As a noun, an attribute is a characteristic.",
+"seen": "E01 p. 17; E01 p. 37; more occurrences listed online."
+},
+{
+"w": "authoritative",
+"label": "ADDITIONAL WORD",
+"def_": "Trusted as knowledgeable, or showing confident authority.",
+"ex": "They consulted an authoritative account.",
+"note": "Different from authoritarian, which demands obedience.",
+"seen": ""
+},
+{
+"w": "autobiographical",
+"label": "EXAM VOCABULARY",
+"def_": "Based on the writer's own life.",
+"ex": "The novel contains autobiographical details.",
+"note": "Contrast with a biography written by someone else.",
+"seen": "E01 p. 13; E11 p. 15."
+},
+{
+"w": "bargain",
+"label": "EXAM ANALOGY",
+"def_": "To negotiate over a price or terms.",
+"ex": "They bargained over the cost of the repair.",
+"note": "Bargaining aims at a better deal but may fail.",
+"seen": "E03 p. 29."
+},
+{
+"w": "behind closed doors",
+"label": "EXAM ANALOGY",
+"def_": "In private, without public access.",
+"ex": "The committee met behind closed doors.",
+"note": "Contrasts with publicity or an open meeting.",
+"seen": "E03 p. 27."
+},
+{
+"w": "beneficiary",
+"label": "ADDITIONAL WORD",
+"def_": "A person who receives a benefit.",
+"ex": "Students were the main beneficiaries of the grant.",
+"note": "The receiving role.",
+"seen": ""
+},
+{
+"w": "bequeath",
+"label": "EXAM ANALOGY",
+"def_": "To leave something to someone in a will.",
+"ex": "She bequeathed her library to the school.",
+"note": "The giver bequeaths; the recipient inherits.",
+"seen": "E06 p. 33."
+},
+{
+"w": "betray",
+"label": "EXAM ANALOGY",
+"def_": "To be disloyal; also, to unintentionally reveal.",
+"ex": "His expression betrayed his surprise.",
+"note": "Both disloyalty and revealing are useful senses.",
+"seen": "E06 p. 5."
+},
+{
+"w": "bias",
+"label": "EXAM VOCABULARY",
+"def_": "A tendency favoring one side or producing a systematic distortion.",
+"ex": "The sampling method introduced bias.",
+"note": "Bias can be unintentional.",
+"seen": "E02 p. 21; E02 p. 23; more occurrences listed online."
+},
+{
+"w": "biography",
+"label": "EXAM ANALOGY",
+"def_": "An account of a person's life written by someone else.",
+"ex": "She read a biography of the scientist.",
+"note": "A biography is one kind of book or written account.",
+"seen": "E02 p. 31."
+},
+{
+"w": "boast",
+"label": "EXAM ANALOGY",
+"def_": "To speak proudly about one's own achievements or possessions.",
+"ex": "He boasted about his latest victory.",
+"note": "Self-directed praise.",
+"seen": "E01 p. 9; E06 p. 33; more occurrences listed online."
+},
+{
+"w": "botany",
+"label": "EXAM ANALOGY",
+"def_": "The study of plants.",
+"ex": "Her interest in trees led her to botany.",
+"note": "Field of study and its subject.",
+"seen": "E10 p. 31."
+},
+{
+"w": "bulldozer",
+"label": "EXAM ANALOGY",
+"def_": "A powerful vehicle used to push earth or rubble.",
+"ex": "A bulldozer cleared the site.",
+"note": "Compare tools by function and scale.",
+"seen": "E02 p. 29."
+},
+{
+"w": "buoy",
+"label": "EXAM ANALOGY",
+"def_": "A floating marker or support in water.",
+"ex": "A buoy marked the entrance to the harbor.",
+"note": "The noun is a floating object; the verb can mean support or lift.",
+"seen": "E05 p. 8."
+},
+{
+"w": "candlestick",
+"label": "EXAM ANALOGY",
+"def_": "A holder for a candle.",
+"ex": "She placed the candle in a brass candlestick.",
+"note": "The holder is not itself the source of light.",
+"seen": "E02 p. 31; E03 p. 27."
+},
+{
+"w": "cannon",
+"label": "EXAM ANALOGY",
+"def_": "A large heavy gun.",
+"ex": "The old cannon stood beside the fort.",
+"note": "A more powerful projectile-launching device.",
+"seen": "E02 p. 29."
+},
+{
+"w": "canopy",
+"label": "EXAM ANALOGY",
+"def_": "An overhead covering or a layer formed by treetops.",
+"ex": "The canopy sheltered the audience from the sun.",
+"note": "A structure can provide shade.",
+"seen": "E11 p. 5."
+},
+{
+"w": "canvas",
+"label": "EXAM ANALOGY",
+"def_": "Strong cloth used for painting surfaces and other purposes.",
+"ex": "The painter stretched a fresh canvas.",
+"note": "A working surface, rather than the finished picture.",
+"seen": "E06 p. 7."
+},
+{
+"w": "capsule",
+"label": "EXAM ANALOGY",
+"def_": "A small container, especially for medicine.",
+"ex": "The medicine came in a capsule.",
+"note": "A medicine-delivery form, not necessarily the medicine itself.",
+"seen": "E07 p. 7."
+},
+{
+"w": "captive",
+"label": "EXAM ANALOGY",
+"def_": "A person or animal held and unable to leave.",
+"ex": "The captive was set free.",
+"note": "Releasing removes the state of captivity.",
+"seen": "E01 p. 29."
+},
+{
+"w": "carriage",
+"label": "EXAM ANALOGY",
+"def_": "A vehicle, often horse-drawn; also, a railway passenger car.",
+"ex": "The carriage stopped outside the house.",
+"note": "Choose the vehicle sense suited to the context.",
+"seen": "E06 p. 7."
+},
+{
+"w": "cavalryman",
+"label": "EXAM ANALOGY",
+"def_": "A soldier who fights on horseback.",
+"ex": "The cavalryman rode ahead of the unit.",
+"note": "Person and means of carrying out a role.",
+"seen": "E05 p. 28."
+},
+{
+"w": "chaotic",
+"label": "EXAM ANALOGY",
+"def_": "Lacking order or organization.",
+"ex": "The evacuation began in a chaotic way.",
+"note": "Opposite tendency: orderly.",
+"seen": "E03 p. 49; E04 p. 22; more occurrences listed online."
+},
+{
+"w": "charlatan",
+"label": "EXAM ANALOGY",
+"def_": "Someone who falsely claims special knowledge or skill.",
+"ex": "The supposed expert was a charlatan.",
+"note": "A false claim to expertise.",
+"seen": "E02 p. 7."
+},
+{
+"w": "chatterbox",
+"label": "EXAM ANALOGY",
+"def_": "A person who talks a great deal.",
+"ex": "Their quiet neighbor turned out to be a chatterbox.",
+"note": "A person characterized by a habit.",
+"seen": "E01 p. 31."
+},
+{
+"w": "chisel",
+"label": "EXAM ANALOGY",
+"def_": "A cutting tool for shaping hard material; also, to shape with that tool.",
+"ex": "The sculptor used a chisel on the stone.",
+"note": "Tool and action share the same word.",
+"seen": "E06 p. 31."
+},
+{
+"w": "chord",
+"label": "EXAM ANALOGY",
+"def_": "Several musical notes sounded together.",
+"ex": "The pianist played a soft chord.",
+"note": "Different from cord, a rope or string.",
+"seen": "E02 p. 31."
+},
+{
+"w": "chronicle",
+"label": "EXAM VOCABULARY",
+"def_": "A record of events in time order; also, to record events.",
+"ex": "The diary chronicles the expedition.",
+"note": "A type of account organized through time.",
+"seen": "E04 p. 40."
+},
+{
+"w": "citrus",
+"label": "EXAM ANALOGY",
+"def_": "The fruit group that includes oranges, lemons, and related fruits.",
+"ex": "Lemons are citrus fruits.",
+"note": "A category used in inclusion relationships.",
+"seen": "E06 p. 7."
+},
+{
+"w": "clapper",
+"label": "EXAM ANALOGY",
+"def_": "The moving piece inside a bell that strikes it.",
+"ex": "The bell's clapper hit its metal side.",
+"note": "Part and whole, with a particular function.",
+"seen": "E03 p. 27."
+},
+{
+"w": "clumsy",
+"label": "EXAM ANALOGY",
+"def_": "Awkward in movement or lacking skill.",
+"ex": "His clumsy attempt broke the handle.",
+"note": "Contrast with agility or skillful handling.",
+"seen": "E04 p. 24; E11 p. 7."
+},
+{
+"w": "coachman",
+"label": "EXAM ANALOGY",
+"def_": "A person who drives a horse-drawn carriage.",
+"ex": "The coachman guided the horses.",
+"note": "Different from a sports coach.",
+"seen": "E05 p. 28."
+},
+{
+"w": "cognitive",
+"label": "EXAM VOCABULARY",
+"def_": "Relating to thinking, learning, or understanding.",
+"ex": "The task measures cognitive abilities.",
+"note": "A broad mental-process term.",
+"seen": "E11 p. 19."
+},
+{
+"w": "coherent",
+"label": "EXAM VOCABULARY",
+"def_": "Clear and logically connected.",
+"ex": "Her explanation formed a coherent account.",
+"note": "The parts fit together without contradiction.",
+"seen": "E06 p. 15."
+},
+{
+"w": "collaborate",
+"label": "EXAM VOCABULARY",
+"def_": "To work together toward a shared aim.",
+"ex": "The researchers collaborated on the study.",
+"note": "Shared work, not necessarily agreement on every issue.",
+"seen": "E05 p. 18; E05 p. 20; more occurrences listed online."
+},
+{
+"w": "communal",
+"label": "ADDITIONAL WORD",
+"def_": "Shared by a group or community.",
+"ex": "Residents used a communal garden.",
+"note": "Different from individually owned or used.",
+"seen": ""
+},
+{
+"w": "compatible",
+"label": "EXAM VOCABULARY",
+"def_": "Able to exist or work together without conflict.",
+"ex": "The two accounts are compatible.",
+"note": "Compatible claims can both be true.",
+"seen": "E08 p. 17; E11 p. 47."
+},
+{
+"w": "complacent",
+"label": "ADDITIONAL WORD",
+"def_": "Too satisfied to notice possible danger or need for improvement.",
+"ex": "Early success made the team complacent.",
+"note": "A negative sense of self-satisfaction.",
+"seen": ""
+},
+{
+"w": "comply",
+"label": "EXAM ANALOGY",
+"def_": "To do what a request, order, or rule requires.",
+"ex": "The company complied with the new rule.",
+"note": "Complying is action; agreeing may be only verbal.",
+"seen": "E03 p. 29; E10 p. 31."
+},
+{
+"w": "composer",
+"label": "EXAM ANALOGY",
+"def_": "A person who writes music.",
+"ex": "The composer finished a new symphony.",
+"note": "The creator is different from the performer.",
+"seen": "E02 p. 5; E06 p. 7; more occurrences listed online."
+},
+{
+"w": "composition",
+"label": "EXAM ANALOGY",
+"def_": "Something made by combining parts; also, a piece of music or writing.",
+"ex": "The concert featured a new composition.",
+"note": "Can mean a work or the makeup of something.",
+"seen": "E04 p. 36; E06 p. 7; more occurrences listed online."
+},
+{
+"w": "comprehensive",
+"label": "EXAM VOCABULARY",
+"def_": "Covering all or nearly all relevant parts.",
+"ex": "The report gives a comprehensive overview.",
+"note": "Different from comprehensible, which means understandable.",
+"seen": "E03 p. 49; E03 p. 51."
+},
+{
+"w": "compress",
+"label": "EXAM ANALOGY",
+"def_": "To press or squeeze into a smaller space.",
+"ex": "The machine compressed the air.",
+"note": "Pressure is a means of compression.",
+"seen": "E04 p. 8."
+},
+{
+"w": "compromise",
+"label": "EXAM ANALOGY",
+"def_": "An agreement in which each side gives up something.",
+"ex": "Both sides accepted a compromise.",
+"note": "A way of resolving a dispute.",
+"seen": "E01 p. 7; E03 p. 5; more occurrences listed online."
+},
+{
+"w": "conceal",
+"label": "EXAM ANALOGY",
+"def_": "To hide something from view or knowledge.",
+"ex": "The curtain concealed the doorway.",
+"note": "Opposite action: reveal.",
+"seen": "E04 p. 40; E09 p. 31; more occurrences listed online."
+},
+{
+"w": "concede",
+"label": "ADDITIONAL WORD",
+"def_": "To admit a point or give something up, often reluctantly.",
+"ex": "She conceded that the sample was small.",
+"note": "A concession can leave the wider disagreement intact.",
+"seen": ""
+},
+{
+"w": "concession",
+"label": "ADDITIONAL WORD",
+"def_": "An admission or something given up during disagreement.",
+"ex": "He made one concession before defending his position.",
+"note": "A limited admission need not abandon the main claim.",
+"seen": ""
+},
+{
+"w": "conciliatory",
+"label": "EXAM ANALOGY",
+"def_": "Intended to reduce anger or restore agreement.",
+"ex": "His conciliatory tone calmed the dispute.",
+"note": "A tendency toward reconciliation, not guaranteed agreement.",
+"seen": "E09 p. 29."
+},
+{
+"w": "conclusive",
+"label": "ADDITIONAL WORD",
+"def_": "Strong enough to settle a question.",
+"ex": "The evidence was suggestive but not conclusive.",
+"note": "Stronger than supportive or plausible.",
+"seen": ""
+},
+{
+"w": "conditional",
+"label": "ADDITIONAL WORD",
+"def_": "Depending on a stated condition.",
+"ex": "Approval was conditional on further checks.",
+"note": "A conditional promise is not an unconditional promise.",
+"seen": ""
+},
+{
+"w": "confession",
+"label": "EXAM ANALOGY",
+"def_": "An admission of wrongdoing or of something previously hidden.",
+"ex": "The investigation ended with a confession.",
+"note": "An accusation and a confession come from different roles.",
+"seen": "E03 p. 7."
+},
+{
+"w": "conform",
+"label": "EXAM VOCABULARY",
+"def_": "To follow a rule, standard, or usual pattern.",
+"ex": "The new results did not conform to expectations.",
+"note": "Conformity is agreement with a standard.",
+"seen": "E08 p. 23."
+},
+{
+"w": "confrontation",
+"label": "EXAM ANALOGY",
+"def_": "A direct and often hostile encounter.",
+"ex": "Both sides wanted to avoid a confrontation.",
+"note": "An encounter, not necessarily a physical fight.",
+"seen": "E03 p. 27."
+},
+{
+"w": "congeal",
+"label": "EXAM ANALOGY",
+"def_": "To become thick or partly solid, especially on cooling.",
+"ex": "The melted fat began to congeal.",
+"note": "A change from a more liquid state.",
+"seen": "E01 p. 29."
+},
+{
+"w": "conscientious",
+"label": "ADDITIONAL WORD",
+"def_": "Careful and responsible about doing one's work or duty.",
+"ex": "The conscientious editor checked every quotation.",
+"note": "Different from conscious, meaning aware.",
+"seen": ""
+},
+{
+"w": "conservation",
+"label": "EXAM VOCABULARY",
+"def_": "Protection from loss, damage, or waste.",
+"ex": "The project supports forest conservation.",
+"note": "Preservation, not necessarily opposition to all change.",
+"seen": "E05 p. 34."
+},
+{
+"w": "conservative",
+"label": "EXAM VOCABULARY",
+"def_": "Favoring established practices or cautious estimates.",
+"ex": "They used a conservative estimate of the costs.",
+"note": "The political, cautious, and preservation-related senses differ.",
+"seen": "E06 p. 13."
+},
+{
+"w": "consistency",
+"label": "EXAM VOCABULARY",
+"def_": "Agreement among parts or stability over time.",
+"ex": "The results showed consistency across trials.",
+"note": "Consistency does not guarantee accuracy.",
+"seen": "E06 p. 21; E07 p. 21; more occurrences listed online."
+},
+{
+"w": "console",
+"label": "EXAM ANALOGY",
+"def_": "To comfort someone who is upset.",
+"ex": "She tried to console her disappointed friend.",
+"note": "As a verb, comfort; as a noun, a control unit.",
+"seen": "E05 p. 28."
+},
+{
+"w": "conspicuous",
+"label": "ADDITIONAL WORD",
+"def_": "Easy to notice.",
+"ex": "The error was conspicuous in the short paragraph.",
+"note": "Contrast with inconspicuous.",
+"seen": ""
+},
+{
+"w": "consult",
+"label": "EXAM ANALOGY",
+"def_": "To seek advice or information.",
+"ex": "They consulted an engineer about the bridge.",
+"note": "Consultation involves obtaining advice, not automatically following it.",
+"seen": "E05 p. 16; E07 p. 7."
+},
+{
+"w": "contempt",
+"label": "EXAM VOCABULARY",
+"def_": "A strong feeling that someone or something deserves little respect.",
+"ex": "He spoke with contempt for the proposal.",
+"note": "Stronger than simple disagreement.",
+"seen": "E01 p. 15."
+},
+{
+"w": "contented",
+"label": "EXAM ANALOGY",
+"def_": "Satisfied with what one has or with a situation.",
+"ex": "She felt contented with her quiet life.",
+"note": "Related noun: contentment.",
+"seen": "E07 p. 5."
+},
+{
+"w": "contentment",
+"label": "EXAM ANALOGY",
+"def_": "A feeling of satisfaction with one's situation.",
+"ex": "He found contentment in ordinary routines.",
+"note": "Related adjective: contented.",
+"seen": "E07 p. 31."
+},
+{
+"w": "contingent",
+"label": "ADDITIONAL WORD",
+"def_": "Depending on something else.",
+"ex": "The offer is contingent on approval.",
+"note": "A dependent condition, not a certainty.",
+"seen": ""
+},
+{
+"w": "contradiction",
+"label": "EXAM VOCABULARY",
+"def_": "A conflict between claims that cannot both be true in the same sense.",
+"ex": "The two statements contain a contradiction.",
+"note": "A difference alone is not necessarily a contradiction.",
+"seen": "E02 p. 13; E04 p. 12; more occurrences listed online."
+},
+{
+"w": "controversy",
+"label": "ADDITIONAL WORD",
+"def_": "Public disagreement over an issue.",
+"ex": "The finding sparked controversy.",
+"note": "Disagreement does not by itself settle the facts.",
+"seen": ""
+},
+{
+"w": "conventional",
+"label": "EXAM VOCABULARY",
+"def_": "Following what is usual or generally accepted.",
+"ex": "She challenged the conventional explanation.",
+"note": "Commonly accepted does not mean necessarily correct.",
+"seen": "E04 p. 22; E10 p. 11; more occurrences listed online."
+},
+{
+"w": "convict",
+"label": "EXAM ANALOGY",
+"def_": "To find someone guilty in a court.",
+"ex": "The court convicted the defendant.",
+"note": "Contrast with acquit; a convict is also a person found guilty.",
+"seen": "E06 p. 33."
+},
+{
+"w": "correlation",
+"label": "EXAM VOCABULARY",
+"def_": "A pattern in which two things vary together.",
+"ex": "The study found a correlation between the two measures.",
+"note": "Correlation alone does not establish causation.",
+"seen": "E06 p. 45; E09 p. 45; more occurrences listed online."
+},
+{
+"w": "correspondence",
+"label": "EXAM ANALOGY",
+"def_": "An exchange of letters or messages; also, a match between things.",
+"ex": "Their correspondence lasted many years.",
+"note": "A letter can be one part of a correspondence.",
+"seen": "E01 p. 5."
+},
+{
+"w": "counterfactual",
+"label": "EXAM VOCABULARY",
+"def_": "Concerning what would happen if the facts were different.",
+"ex": "The argument uses a counterfactual example.",
+"note": "An imagined alternative to the actual situation.",
+"seen": "E06 p. 49; E06 p. 51; more occurrences listed online."
+},
+{
+"w": "covenant",
+"label": "EXAM VOCABULARY",
+"def_": "A serious or formal agreement.",
+"ex": "The groups entered into a covenant.",
+"note": "A binding agreement or promise.",
+"seen": "E03 p. 11."
+},
+{
+"w": "coward",
+"label": "EXAM ANALOGY",
+"def_": "A person who lacks courage when facing danger.",
+"ex": "The story's coward fled at the first warning.",
+"note": "Contrast with a brave person.",
+"seen": "E02 p. 7."
+},
+{
+"w": "craving",
+"label": "EXAM VOCABULARY",
+"def_": "A strong desire for something.",
+"ex": "She felt a craving for sweet food.",
+"note": "Stronger than a mild preference.",
+"seen": "E04 p. 46; E04 p. 48."
+},
+{
+"w": "credibility",
+"label": "EXAM ANALOGY",
+"def_": "The quality of being believable or worthy of trust.",
+"ex": "The contradiction damaged his credibility.",
+"note": "Different from actual truth: a false claim can seem credible.",
+"seen": "E08 p. 33; E11 p. 35."
+},
+{
+"w": "dally",
+"label": "EXAM ANALOGY",
+"def_": "To waste time or delay unnecessarily.",
+"ex": "Do not dally if you want to catch the train.",
+"note": "Contrast with haste.",
+"seen": "E03 p. 5."
+},
+{
+"w": "dampen",
+"label": "EXAM ANALOGY",
+"def_": "To make slightly wet; also, to reduce enthusiasm or intensity.",
+"ex": "The setback did not dampen her enthusiasm.",
+"note": "A weaker degree than making completely wet.",
+"seen": "E06 p. 31."
+},
+{
+"w": "deceive",
+"label": "EXAM ANALOGY",
+"def_": "To make someone believe something false.",
+"ex": "The forged letter deceived the reader.",
+"note": "An attempted deception need not succeed.",
+"seen": "E01 p. 31; E04 p. 6; more occurrences listed online."
+},
+{
+"w": "decisive",
+"label": "EXAM VOCABULARY",
+"def_": "Settling an issue or showing firm decision-making.",
+"ex": "The final piece of evidence was decisive.",
+"note": "Context distinguishes evidence from a person's manner.",
+"seen": "E06 p. 51; E06 p. 53."
+},
+{
+"w": "decisiveness",
+"label": "EXAM ANALOGY",
+"def_": "The ability to choose firmly and without much hesitation.",
+"ex": "Her decisiveness helped the team act quickly.",
+"note": "Opposite tendency: hesitation.",
+"seen": "E03 p. 27."
+},
+{
+"w": "deduce",
+"label": "EXAM VOCABULARY",
+"def_": "To reach a conclusion from given information or rules.",
+"ex": "We can deduce that one box is empty.",
+"note": "A deduction must follow the stated conditions.",
+"seen": "E07 p. 23; E10 p. 39."
+},
+{
+"w": "defer",
+"label": "ADDITIONAL WORD",
+"def_": "To postpone; also, to yield to another person's judgment.",
+"ex": "They deferred the decision until Monday.",
+"note": "Defer to someone means accept that person's judgment.",
+"seen": ""
+},
+{
+"w": "deficiency",
+"label": "ADDITIONAL WORD",
+"def_": "A lack or shortage of something needed.",
+"ex": "The report identified a deficiency in training.",
+"note": "Insufficient amount, not always total absence.",
+"seen": ""
+},
+{
+"w": "deforest",
+"label": "EXAM ANALOGY",
+"def_": "To remove the trees from an area.",
+"ex": "Large areas were deforested for farming.",
+"note": "A tool may perform part of this removal.",
+"seen": "E08 p. 31."
+},
+{
+"w": "deliberately",
+"label": "EXAM ANALOGY",
+"def_": "On purpose, rather than by accident.",
+"ex": "He deliberately left the door open.",
+"note": "Describes intention, not necessarily careful planning.",
+"seen": "E05 p. 6; E05 p. 20; more occurrences listed online."
+},
+{
+"w": "deliberation",
+"label": "EXAM ANALOGY",
+"def_": "Careful thought or discussion before a decision.",
+"ex": "The panel reached its decision after lengthy deliberation.",
+"note": "Thinking before choosing, rather than the decision itself.",
+"seen": "E03 p. 41; E04 p. 28."
+},
+{
+"w": "delouse",
+"label": "EXAM ANALOGY",
+"def_": "To remove lice from a person, animal, or clothing.",
+"ex": "They deloused the rescued animals.",
+"note": "Removing an unwanted thing from its host.",
+"seen": "E01 p. 31."
+},
+{
+"w": "delude",
+"label": "EXAM ANALOGY",
+"def_": "To cause someone to believe something false.",
+"ex": "She refused to delude herself about the result.",
+"note": "Delusion is the resulting false belief.",
+"seen": "E03 p. 5."
+},
+{
+"w": "denounce",
+"label": "EXAM VOCABULARY",
+"def_": "To publicly condemn something strongly.",
+"ex": "The group denounced the policy.",
+"note": "Stronger than neutrally describing disagreement.",
+"seen": "E09 p. 43; E10 p. 39."
+},
+{
+"w": "dependable",
+"label": "EXAM ANALOGY",
+"def_": "Able to be relied on.",
+"ex": "He is a dependable teammate.",
+"note": "Close in meaning to reliable.",
+"seen": "E02 p. 29."
+},
+{
+"w": "derive",
+"label": "EXAM VOCABULARY",
+"def_": "To obtain something from a source or reasoning process.",
+"ex": "The conclusion is derived from the evidence.",
+"note": "A source-to-result relationship.",
+"seen": "E01 p. 21; E01 p. 47; more occurrences listed online."
+},
+{
+"w": "despair",
+"label": "EXAM ANALOGY",
+"def_": "A complete loss of hope.",
+"ex": "She refused to despair after the setback.",
+"note": "Stronger than disappointment.",
+"seen": "E05 p. 8."
+},
+{
+"w": "deter",
+"label": "EXAM ANALOGY",
+"def_": "To discourage or prevent an action through fear of consequences.",
+"ex": "The warning deterred visitors from entering.",
+"note": "A threat can fail to deter.",
+"seen": "E06 p. 35; E08 p. 5."
+},
+{
+"w": "deteriorate",
+"label": "EXAM VOCABULARY",
+"def_": "To become worse.",
+"ex": "The condition of the building deteriorated.",
+"note": "Opposite tendency: improve.",
+"seen": "E03 p. 13; E10 p. 9."
+},
+{
+"w": "deviant",
+"label": "EXAM ANALOGY",
+"def_": "Departing from an accepted rule, standard, or pattern.",
+"ex": "The researcher identified a deviant result.",
+"note": "The relevant sense is departure from a norm.",
+"seen": "E09 p. 29."
+},
+{
+"w": "deviation",
+"label": "EXAM VOCABULARY",
+"def_": "A departure from a standard, path, or usual pattern.",
+"ex": "The deviation from the usual pattern was small.",
+"note": "A deviation need not be an error.",
+"seen": "E04 p. 22; E04 p. 26; more occurrences listed online."
+},
+{
+"w": "digit",
+"label": "EXAM ANALOGY",
+"def_": "One of the symbols used to write numbers; also, a finger or toe.",
+"ex": "The number has three digits.",
+"note": "In a number analogy, use the number-symbol sense.",
+"seen": "E07 p. 7."
+},
+{
+"w": "diplomacy",
+"label": "EXAM VOCABULARY",
+"def_": "The management of relations through negotiation and tact.",
+"ex": "Careful diplomacy prevented a public dispute.",
+"note": "Can describe international relations or skillful handling of people.",
+"seen": "E01 p. 35."
+},
+{
+"w": "disclosure",
+"label": "ADDITIONAL WORD",
+"def_": "The act of making previously hidden information known.",
+"ex": "The disclosure changed public opinion.",
+"note": "Opposite tendency: concealment.",
+"seen": ""
+},
+{
+"w": "discrepancy",
+"label": "ADDITIONAL WORD",
+"def_": "A difference or mismatch where agreement is expected.",
+"ex": "There was a discrepancy between the two totals.",
+"note": "May call for explanation without proving deception.",
+"seen": ""
+},
+{
+"w": "disinfect",
+"label": "EXAM ANALOGY",
+"def_": "To kill many harmful microorganisms on a surface.",
+"ex": "They disinfected the table.",
+"note": "Disinfecting and sterilizing are not identical degrees of removal.",
+"seen": "E07 p. 31."
+},
+{
+"w": "dispossess",
+"label": "EXAM ANALOGY",
+"def_": "To deprive someone of property or land.",
+"ex": "The new decree dispossessed many landowners.",
+"note": "Action and what is taken away.",
+"seen": "E04 p. 8."
+},
+{
+"w": "dispute",
+"label": "EXAM ANALOGY",
+"def_": "A disagreement; as a verb, to challenge a claim.",
+"ex": "The neighbors settled their dispute.",
+"note": "To dispute a claim is not to prove it false.",
+"seen": "E01 p. 7; E03 p. 5; more occurrences listed online."
+},
+{
+"w": "disregard",
+"label": "EXAM VOCABULARY",
+"def_": "To pay no attention to.",
+"ex": "The analyst disregarded the irrelevant detail.",
+"note": "Ignoring evidence is different from disproving it.",
+"seen": "E02 p. 15; E02 p. 23; more occurrences listed online."
+},
+{
+"w": "distinctive",
+"label": "EXAM VOCABULARY",
+"def_": "Having a feature that sets something apart.",
+"ex": "The bird has a distinctive call.",
+"note": "Different from distinct, which can mean separate or clear.",
+"seen": "E07 p. 39; E09 p. 17."
+},
+{
+"w": "distortion",
+"label": "EXAM ANALOGY",
+"def_": "A misleading change in shape, facts, or meaning.",
+"ex": "The quotation was a distortion of what she said.",
+"note": "A result that can arise from misrepresentation.",
+"seen": "E07 p. 49; E07 p. 51; more occurrences listed online."
+},
+{
+"w": "diverge",
+"label": "ADDITIONAL WORD",
+"def_": "To move apart or develop in different directions.",
+"ex": "The two accounts diverge after that point.",
+"note": "Contrast with converge.",
+"seen": ""
+},
+{
+"w": "doctrine",
+"label": "EXAM VOCABULARY",
+"def_": "A set of beliefs or principles taught or accepted by a group.",
+"ex": "The doctrine influenced later thinkers.",
+"note": "A belief system, not proof of the beliefs.",
+"seen": "E05 p. 10."
+},
+{
+"w": "dominant",
+"label": "EXAM VOCABULARY",
+"def_": "Most powerful, influential, or noticeable.",
+"ex": "One explanation became dominant.",
+"note": "Dominant does not mean exclusive.",
+"seen": "E03 p. 31; E11 p. 43."
+},
+{
+"w": "dramatize",
+"label": "EXAM ANALOGY",
+"def_": "To turn material into a drama; also, to make it seem more dramatic.",
+"ex": "The writer dramatized the historical event.",
+"note": "Context decides whether this means adaptation or exaggeration.",
+"seen": "E04 p. 6."
+},
+{
+"w": "drought",
+"label": "EXAM ANALOGY",
+"def_": "A prolonged period with very little rain.",
+"ex": "The drought damaged the crops.",
+"note": "Lack of rainfall, not simply hot weather.",
+"seen": "E08 p. 31; E08 p. 49; more occurrences listed online."
+},
+{
+"w": "dumbstruck",
+"label": "EXAM ANALOGY",
+"def_": "So surprised that one cannot speak.",
+"ex": "The unexpected announcement left her dumbstruck.",
+"note": "Cause of speechlessness, not an inability to hear.",
+"seen": "E05 p. 28."
+},
+{
+"w": "eavesdrop",
+"label": "EXAM ANALOGY",
+"def_": "To secretly listen to someone else's conversation.",
+"ex": "She caught him eavesdropping at the door.",
+"note": "A specific kind of listening.",
+"seen": "E08 p. 5."
+},
+{
+"w": "eligible",
+"label": "EXAM VOCABULARY",
+"def_": "Meeting the conditions to take part or receive something.",
+"ex": "Only graduates are eligible for the award.",
+"note": "Eligibility does not guarantee selection.",
+"seen": "E06 p. 11; E07 p. 17."
+},
+{
+"w": "emigrate",
+"label": "EXAM ANALOGY",
+"def_": "To leave one's country to live in another.",
+"ex": "Her grandparents emigrated after the war.",
+"note": "Immigrate means enter another country to live there.",
+"seen": "E01 p. 31; E03 p. 7."
+},
+{
+"w": "enable",
+"label": "EXAM ANALOGY",
+"def_": "To make an action possible.",
+"ex": "The grant enabled the research to continue.",
+"note": "Making possible does not guarantee occurrence.",
+"seen": "E01 p. 49; E02 p. 39; more occurrences listed online."
+},
+{
+"w": "endorse",
+"label": "ADDITIONAL WORD",
+"def_": "To publicly support or approve.",
+"ex": "The committee endorsed the proposal.",
+"note": "Support need not be unanimous unless stated.",
+"seen": ""
+},
+{
+"w": "endow",
+"label": "EXAM VOCABULARY",
+"def_": "To provide with a quality, ability, or resource.",
+"ex": "The grant endowed the center with new facilities.",
+"note": "The recipient is given something.",
+"seen": "E01 p. 17; E02 p. 35; more occurrences listed online."
+},
+{
+"w": "entourage",
+"label": "EXAM ANALOGY",
+"def_": "A group of people accompanying an important person.",
+"ex": "The actor arrived with a small entourage.",
+"note": "An entourage accompanies someone.",
+"seen": "E03 p. 5."
+},
+{
+"w": "entrenched",
+"label": "EXAM VOCABULARY",
+"def_": "Firmly established and difficult to change.",
+"ex": "The custom was deeply entrenched.",
+"note": "A strong degree of being established.",
+"seen": "E05 p. 16; E07 p. 13."
+},
+{
+"w": "envious",
+"label": "EXAM ANALOGY",
+"def_": "Wanting something that another person has.",
+"ex": "He was envious of her success.",
+"note": "Envy concerns another person's advantage.",
+"seen": "E08 p. 33."
+},
+{
+"w": "equivalent",
+"label": "EXAM VOCABULARY",
+"def_": "Equal in value, meaning, or effect in the relevant respect.",
+"ex": "The two descriptions are equivalent.",
+"note": "Specify the respect in which they are equal.",
+"seen": "E08 p. 29."
+},
+{
+"w": "estimate",
+"label": "EXAM ANALOGY",
+"def_": "To judge an amount approximately.",
+"ex": "They estimated the crowd at two hundred.",
+"note": "An estimate may be informed without being exact.",
+"seen": "E06 p. 5; E07 p. 37."
+},
+{
+"w": "estranged",
+"label": "EXAM ANALOGY",
+"def_": "No longer close or friendly with someone.",
+"ex": "The two friends became estranged.",
+"note": "A state of separation in a relationship.",
+"seen": "E06 p. 7."
+},
+{
+"w": "ethical",
+"label": "EXAM VOCABULARY",
+"def_": "Relating to right and wrong conduct.",
+"ex": "The experiment raised ethical questions.",
+"note": "Ethical acceptability differs from practical effectiveness.",
+"seen": "E03 p. 25; E11 p. 39."
+},
+{
+"w": "evade",
+"label": "EXAM VOCABULARY",
+"def_": "To avoid something, often a duty or a question.",
+"ex": "The official evaded the reporter's question.",
+"note": "An evader avoids; a charlatan pretends.",
+"seen": "E01 p. 19."
+},
+{
+"w": "exaggerate",
+"label": "EXAM ANALOGY",
+"def_": "To describe something as greater than it really is.",
+"ex": "He exaggerated the difficulty of the task.",
+"note": "Different from merely describing a large thing.",
+"seen": "E02 p. 21; E02 p. 25; more occurrences listed online."
+},
+{
+"w": "excessive",
+"label": "EXAM ANALOGY",
+"def_": "More than is needed, reasonable, or usual.",
+"ex": "The request involved excessive expense.",
+"note": "Degree beyond an appropriate limit.",
+"seen": "E07 p. 5."
+},
+{
+"w": "exclusively",
+"label": "ADDITIONAL WORD",
+"def_": "Only, with everyone or everything else excluded.",
+"ex": "The room is used exclusively for rehearsals.",
+"note": "An exclusivity claim is stronger than a majority claim.",
+"seen": ""
+},
+{
+"w": "exile",
+"label": "EXAM ANALOGY",
+"def_": "To force someone to leave their country; also, enforced absence.",
+"ex": "The ruler exiled his opponent.",
+"note": "Forced departure differs from voluntary emigration.",
+"seen": "E03 p. 7."
+},
+{
+"w": "expenditure",
+"label": "EXAM VOCABULARY",
+"def_": "Money, effort, or resources spent.",
+"ex": "The plan required a large expenditure of time.",
+"note": "An amount used up or paid out.",
+"seen": "E01 p. 33; E02 p. 17."
+},
+{
+"w": "expertise",
+"label": "EXAM ANALOGY",
+"def_": "Special knowledge or skill in a subject.",
+"ex": "Her expertise helped solve the technical problem.",
+"note": "Expertise is knowledge, not merely a claim to know.",
+"seen": "E02 p. 7; E04 p. 30; more occurrences listed online."
+},
+{
+"w": "explicit",
+"label": "EXAM VOCABULARY",
+"def_": "Stated clearly and directly.",
+"ex": "The instructions contain an explicit exception.",
+"note": "Contrast with implicit: suggested but unstated.",
+"seen": "E09 p. 11."
+},
+{
+"w": "exploit",
+"label": "ADDITIONAL WORD",
+"def_": "To use effectively; also, to take unfair advantage of.",
+"ex": "The firm exploited the workers' lack of alternatives.",
+"note": "Context decides whether the sense is neutral or critical.",
+"seen": ""
+},
+{
+"w": "exterminator",
+"label": "EXAM ANALOGY",
+"def_": "A person whose job is to eliminate pests.",
+"ex": "The exterminator removed the infestation.",
+"note": "The pest is the target of the work, not the worker's tool.",
+"seen": "E05 p. 28."
+},
+{
+"w": "extinguish",
+"label": "EXAM ANALOGY",
+"def_": "To put out a fire or light; also, to end something.",
+"ex": "The rain extinguished the small fire.",
+"note": "An action that ends burning.",
+"seen": "E05 p. 28; E06 p. 5."
+},
+{
+"w": "extract",
+"label": "EXAM ANALOGY",
+"def_": "To remove or obtain something from a source; also, a short passage.",
+"ex": "The machine extracts juice from fruit.",
+"note": "Notice whether extract is a verb or a noun.",
+"seen": "E03 p. 7; E04 p. 40; more occurrences listed online."
+},
+{
+"w": "fabricate",
+"label": "EXAM VOCABULARY",
+"def_": "To invent false information; also, to manufacture.",
+"ex": "The witness fabricated the story.",
+"note": "Context distinguishes invention from physical production.",
+"seen": "E11 p. 9; E11 p. 13."
+},
+{
+"w": "factual",
+"label": "EXAM VOCABULARY",
+"def_": "Concerned with facts or supported by facts.",
+"ex": "The account contained several factual errors.",
+"note": "A factual question differs from a value judgment.",
+"seen": "E06 p. 15; E10 p. 37."
+},
+{
+"w": "fatigue",
+"label": "EXAM ANALOGY",
+"def_": "Extreme tiredness.",
+"ex": "Fatigue reduced his concentration.",
+"note": "A state that can lead to rest or sleep.",
+"seen": "E05 p. 28."
+},
+{
+"w": "fawn",
+"label": "EXAM ANALOGY",
+"def_": "To flatter someone excessively to win favor.",
+"ex": "He fawned over the powerful visitor.",
+"note": "As a noun, fawn is also a young deer.",
+"seen": "E10 p. 7."
+},
+{
+"w": "feasible",
+"label": "ADDITIONAL WORD",
+"def_": "Possible and practical to carry out.",
+"ex": "The route was difficult but feasible.",
+"note": "Feasible does not mean easy or desirable.",
+"seen": ""
+},
+{
+"w": "flammable",
+"label": "EXAM ANALOGY",
+"def_": "Able to catch fire easily.",
+"ex": "Keep flammable material away from the heater.",
+"note": "A property creates a possibility, not a certainty.",
+"seen": "E05 p. 6."
+},
+{
+"w": "flaw",
+"label": "EXAM ANALOGY",
+"def_": "A defect or weakness.",
+"ex": "The argument contained a serious flaw.",
+"note": "A flaw prevents perfection, not necessarily usefulness.",
+"seen": "E02 p. 21; E02 p. 25; more occurrences listed online."
+},
+{
+"w": "fleet",
+"label": "EXAM ANALOGY",
+"def_": "A group of ships or vehicles operated together.",
+"ex": "The company replaced its delivery fleet.",
+"note": "A collection, not one vehicle.",
+"seen": "E04 p. 8."
+},
+{
+"w": "flicker",
+"label": "EXAM ANALOGY",
+"def_": "To shine or appear unsteadily.",
+"ex": "The candlelight flickered in the draft.",
+"note": "An intermittent manner of giving light.",
+"seen": "E10 p. 5."
+},
+{
+"w": "foliage",
+"label": "EXAM ANALOGY",
+"def_": "The leaves of a plant or group of plants.",
+"ex": "The autumn foliage turned gold.",
+"note": "A collective term for leaves.",
+"seen": "E01 p. 7."
+},
+{
+"w": "foremost",
+"label": "EXAM VOCABULARY",
+"def_": "Most important or leading.",
+"ex": "Safety was their foremost concern.",
+"note": "A ranking of importance.",
+"seen": "E04 p. 22; E05 p. 16."
+},
+{
+"w": "fracture",
+"label": "EXAM ANALOGY",
+"def_": "A crack or break, especially in a bone.",
+"ex": "The fall caused a fracture.",
+"note": "Can describe a break literally or figuratively.",
+"seen": "E05 p. 6; E06 p. 25; more occurrences listed online."
+},
+{
+"w": "frugal",
+"label": "ADDITIONAL WORD",
+"def_": "Careful to avoid wasting money or resources.",
+"ex": "Her frugal habits helped her save.",
+"note": "Different from miserly, which suggests excessive unwillingness to spend.",
+"seen": ""
+},
+{
+"w": "frustration",
+"label": "EXAM ANALOGY",
+"def_": "Annoyance or dissatisfaction when efforts are blocked.",
+"ex": "Repeated delays caused frustration.",
+"note": "A response to being thwarted.",
+"seen": "E05 p. 20; E07 p. 31."
+},
+{
+"w": "glance through",
+"label": "EXAM ANALOGY",
+"def_": "To look over something quickly.",
+"ex": "She glanced through the report before the meeting.",
+"note": "A brief action differs from thorough reading.",
+"seen": "E11 p. 5."
+},
+{
+"w": "glider",
+"label": "EXAM ANALOGY",
+"def_": "An aircraft that can fly without engine power.",
+"ex": "The glider circled above the field.",
+"note": "Compare powered and unpowered forms of transport.",
+"seen": "E09 p. 5."
+},
+{
+"w": "glutton",
+"label": "EXAM ANALOGY",
+"def_": "A person who habitually eats too much.",
+"ex": "The tale describes a glutton who never feels full.",
+"note": "A person characterized by excessive appetite.",
+"seen": "E02 p. 7."
+},
+{
+"w": "gluttony",
+"label": "EXAM ANALOGY",
+"def_": "Habitual excessive eating.",
+"ex": "The fable criticizes gluttony.",
+"note": "Excess, not the complete absence of eating.",
+"seen": "E10 p. 7."
+},
+{
+"w": "goldsmith",
+"label": "EXAM ANALOGY",
+"def_": "A craftsperson who makes objects from gold.",
+"ex": "The goldsmith repaired the ring.",
+"note": "Maker and material.",
+"seen": "E06 p. 7."
+},
+{
+"w": "granary",
+"label": "EXAM ANALOGY",
+"def_": "A building or place where grain is stored.",
+"ex": "The harvest was placed in the granary.",
+"note": "Place and stored material.",
+"seen": "E03 p. 7."
+},
+{
+"w": "grief",
+"label": "EXAM ANALOGY",
+"def_": "Deep sadness, especially after a loss.",
+"ex": "Friends supported him through his grief.",
+"note": "Stronger and more specific than everyday annoyance.",
+"seen": "E05 p. 28; E07 p. 31."
+},
+{
+"w": "grievance",
+"label": "EXAM ANALOGY",
+"def_": "A complaint about a perceived wrong or unfair treatment.",
+"ex": "The workers presented their grievances.",
+"note": "What the complainant is unhappy about.",
+"seen": "E10 p. 31."
+},
+{
+"w": "groom",
+"label": "EXAM ANALOGY",
+"def_": "A person who cares for horses; also, a man getting married.",
+"ex": "The groom brushed the horse.",
+"note": "The horse-care sense matters in the exam analogy.",
+"seen": "E08 p. 7."
+},
+{
+"w": "grovel",
+"label": "EXAM ANALOGY",
+"def_": "To act with extreme humility or submission to gain favor.",
+"ex": "She would apologize, but refused to grovel.",
+"note": "Stronger submission than an ordinary polite request.",
+"seen": "E10 p. 7."
+},
+{
+"w": "harvest",
+"label": "EXAM ANALOGY",
+"def_": "To gather a crop when it is ready.",
+"ex": "They harvested the wheat in summer.",
+"note": "A collecting action after growth.",
+"seen": "E03 p. 29; E09 p. 31."
+},
+{
+"w": "haste",
+"label": "EXAM ANALOGY",
+"def_": "Great speed or urgency in doing something.",
+"ex": "In her haste, she forgot the keys.",
+"note": "Haste can lead to carelessness, but need not do so.",
+"seen": "E03 p. 5; E04 p. 30."
+},
+{
+"w": "haughty",
+"label": "EXAM ANALOGY",
+"def_": "Showing arrogant superiority toward others.",
+"ex": "Her haughty tone offended the audience.",
+"note": "Contrast with humility.",
+"seen": "E06 p. 7."
+},
+{
+"w": "hectic",
+"label": "EXAM ANALOGY",
+"def_": "Extremely busy and full of activity.",
+"ex": "It was a hectic week at work.",
+"note": "Busy is not necessarily disorganized.",
+"seen": "E08 p. 7."
+},
+{
+"w": "hesitant",
+"label": "EXAM ANALOGY",
+"def_": "Uncertain or slow to act because of doubt.",
+"ex": "She was hesitant to sign.",
+"note": "Hesitantly means in an uncertain manner.",
+"seen": "E03 p. 27."
+},
+{
+"w": "hoarseness",
+"label": "EXAM ANALOGY",
+"def_": "A rough or strained quality of the voice.",
+"ex": "Hoarseness made speaking uncomfortable.",
+"note": "An impairment of an activity, not its complete absence.",
+"seen": "E09 p. 5."
+},
+{
+"w": "hostile",
+"label": "ADDITIONAL WORD",
+"def_": "Unfriendly, opposed, or harmful.",
+"ex": "The proposal received a hostile response.",
+"note": "Stronger than merely uninterested.",
+"seen": ""
+},
+{
+"w": "hothouse",
+"label": "EXAM ANALOGY",
+"def_": "A heated glass building for growing plants.",
+"ex": "The seedlings were raised in a hothouse.",
+"note": "A protected growing environment.",
+"seen": "E05 p. 32; E11 p. 5."
+},
+{
+"w": "hum",
+"label": "EXAM ANALOGY",
+"def_": "To make a low continuous sound, sometimes a tune without words.",
+"ex": "He hummed while working.",
+"note": "Manner of producing sound.",
+"seen": "E10 p. 5."
+},
+{
+"w": "humility",
+"label": "EXAM ANALOGY",
+"def_": "A modest view of one's importance or achievements.",
+"ex": "He accepted the praise with humility.",
+"note": "Different from humiliation, which is being made to feel ashamed.",
+"seen": "E06 p. 7."
+},
+{
+"w": "hush",
+"label": "EXAM ANALOGY",
+"def_": "To make quiet or become quiet.",
+"ex": "The teacher hushed the noisy class.",
+"note": "Action and intended result: silence.",
+"seen": "E01 p. 31; E03 p. 7; more occurrences listed online."
+},
+{
+"w": "hypothesis",
+"label": "EXAM VOCABULARY",
+"def_": "A proposed explanation that can be examined or tested.",
+"ex": "The study tested a new hypothesis.",
+"note": "A hypothesis is not an established result.",
+"seen": "E02 p. 37; E08 p. 51; more occurrences listed online."
+},
+{
+"w": "ignite",
+"label": "EXAM ANALOGY",
+"def_": "To set something on fire or begin burning.",
+"ex": "A spark ignited the dry grass.",
+"note": "Opposite process: extinguish.",
+"seen": "E06 p. 5."
+},
+{
+"w": "imminent",
+"label": "ADDITIONAL WORD",
+"def_": "About to happen very soon.",
+"ex": "The dark clouds suggested an imminent storm.",
+"note": "Different from eminent, meaning distinguished.",
+"seen": ""
+},
+{
+"w": "immortal",
+"label": "EXAM ANALOGY",
+"def_": "Never dying or remembered forever.",
+"ex": "The myth describes an immortal hero.",
+"note": "Literal endless life and figurative lasting fame.",
+"seen": "E08 p. 7."
+},
+{
+"w": "immune",
+"label": "EXAM ANALOGY",
+"def_": "Protected or resistant against a particular disease or effect.",
+"ex": "The recovered animal was immune to that infection.",
+"note": "Not necessarily protected against every disease.",
+"seen": "E05 p. 14; E06 p. 5."
+},
+{
+"w": "impartial",
+"label": "EXAM VOCABULARY",
+"def_": "Not favoring one side unfairly.",
+"ex": "An impartial reviewer assessed both proposals.",
+"note": "Related to unbiased, not uninterested.",
+"seen": "E07 p. 49."
+},
+{
+"w": "implicit",
+"label": "ADDITIONAL WORD",
+"def_": "Suggested or understood without being directly stated.",
+"ex": "An implicit assumption links the two claims.",
+"note": "Unstated does not automatically mean false.",
+"seen": ""
+},
+{
+"w": "impoverish",
+"label": "EXAM ANALOGY",
+"def_": "To make someone poor or make something poorer in quality.",
+"ex": "Years of crop failure impoverished the village.",
+"note": "Action and the state it causes.",
+"seen": "E01 p. 29."
+},
+{
+"w": "improvisation",
+"label": "EXAM ANALOGY",
+"def_": "Creating or doing something without preparing all its details beforehand.",
+"ex": "The scene depended on improvisation.",
+"note": "Contrast with following a fully prepared plan.",
+"seen": "E05 p. 8."
+},
+{
+"w": "impudent",
+"label": "EXAM ANALOGY",
+"def_": "Rudely disrespectful or overly bold.",
+"ex": "His impudent reply shocked the guests.",
+"note": "Not simply confident or outspoken.",
+"seen": "E02 p. 7."
+},
+{
+"w": "in contrast",
+"label": "EXAM VOCABULARY",
+"def_": "Used to show a difference between two things.",
+"ex": "The first route is flat; in contrast, the second is steep.",
+"note": "Look for the particular feature being compared.",
+"seen": "E02 p. 21; E07 p. 9; more occurrences listed online."
+},
+{
+"w": "in vain",
+"label": "EXAM ANALOGY",
+"def_": "Without achieving the desired result.",
+"ex": "They searched in vain for the missing note.",
+"note": "Effort without the intended success.",
+"seen": "E05 p. 6."
+},
+{
+"w": "inadvertent",
+"label": "ADDITIONAL WORD",
+"def_": "Unintentional or accidental.",
+"ex": "The omission was inadvertent.",
+"note": "Opposite of deliberate.",
+"seen": ""
+},
+{
+"w": "incentive",
+"label": "ADDITIONAL WORD",
+"def_": "Something that encourages an action.",
+"ex": "The bonus gave workers an incentive to finish early.",
+"note": "A motive or encouragement, not a guaranteed result.",
+"seen": ""
+},
+{
+"w": "incite",
+"label": "EXAM ANALOGY",
+"def_": "To urge or stir someone into an action, often harmful.",
+"ex": "The speech incited the crowd to protest.",
+"note": "Encouragement and the encouraged action are different roles.",
+"seen": "E01 p. 41; E05 p. 8; more occurrences listed online."
+},
+{
+"w": "incongruous",
+"label": "ADDITIONAL WORD",
+"def_": "Out of place or inconsistent with its surroundings.",
+"ex": "The modern chair looked incongruous in the old room.",
+"note": "A mismatch, not necessarily a logical contradiction.",
+"seen": ""
+},
+{
+"w": "incriminate",
+"label": "EXAM ANALOGY",
+"def_": "To provide evidence suggesting someone's involvement in a crime.",
+"ex": "The message appeared to incriminate the suspect.",
+"note": "Does not itself mean convicting the person.",
+"seen": "E06 p. 33."
+},
+{
+"w": "indifference",
+"label": "EXAM ANALOGY",
+"def_": "A lack of interest or concern.",
+"ex": "He greeted the announcement with indifference.",
+"note": "Not the same as active opposition.",
+"seen": "E03 p. 27."
+},
+{
+"w": "indignant",
+"label": "ADDITIONAL WORD",
+"def_": "Angry because something seems unfair or insulting.",
+"ex": "She was indignant at the false accusation.",
+"note": "The perceived injustice is part of the emotion.",
+"seen": ""
+},
+{
+"w": "indispensable",
+"label": "ADDITIONAL WORD",
+"def_": "So important that one cannot do without it.",
+"ex": "The missing map was indispensable to the task.",
+"note": "Stronger than merely useful.",
+"seen": ""
+},
+{
+"w": "inevitable",
+"label": "EXAM ANALOGY",
+"def_": "Certain to happen or impossible to avoid.",
+"ex": "Some wear is inevitable with regular use.",
+"note": "Stronger than likely or common.",
+"seen": "E07 p. 29; E08 p. 47."
+},
+{
+"w": "infer",
+"label": "ADDITIONAL WORD",
+"def_": "To work out something from evidence rather than direct statement.",
+"ex": "Readers can infer why she left.",
+"note": "The writer implies; the reader infers.",
+"seen": ""
+},
+{
+"w": "infuriate",
+"label": "EXAM ANALOGY",
+"def_": "To make someone extremely angry.",
+"ex": "The deliberate delay infuriated her.",
+"note": "Cause and emotional result.",
+"seen": "E01 p. 7."
+},
+{
+"w": "inhabit",
+"label": "EXAM ANALOGY",
+"def_": "To live in a place.",
+"ex": "Several species inhabit the valley.",
+"note": "The inhabitants are those living there.",
+"seen": "E09 p. 31."
+},
+{
+"w": "inhalation",
+"label": "EXAM ANALOGY",
+"def_": "The act of breathing in.",
+"ex": "A deep inhalation filled her lungs.",
+"note": "Contrast with exhalation: breathing out.",
+"seen": "E01 p. 5."
+},
+{
+"w": "inherent",
+"label": "EXAM VOCABULARY",
+"def_": "Existing as a basic or inseparable feature.",
+"ex": "The method has inherent limitations.",
+"note": "Different from a feature added from outside.",
+"seen": "E03 p. 51."
+},
+{
+"w": "inherit",
+"label": "EXAM ANALOGY",
+"def_": "To receive property, a trait, or a position from someone before you.",
+"ex": "He inherited the house from his aunt.",
+"note": "The receiving role contrasts with bequeathing.",
+"seen": "E01 p. 19; E06 p. 33; more occurrences listed online."
+},
+{
+"w": "inkwell",
+"label": "EXAM ANALOGY",
+"def_": "A small container for ink used with a pen.",
+"ex": "He dipped his pen into the inkwell.",
+"note": "Container and substance.",
+"seen": "E03 p. 7."
+},
+{
+"w": "innovative",
+"label": "EXAM VOCABULARY",
+"def_": "Introducing a new idea or method.",
+"ex": "The team proposed an innovative design.",
+"note": "Newness is not itself proof of effectiveness.",
+"seen": "E01 p. 9; E02 p. 9; more occurrences listed online."
+},
+{
+"w": "inquiry",
+"label": "ADDITIONAL WORD",
+"def_": "A search for information or an investigation.",
+"ex": "The inquiry examined the cause of the failure.",
+"note": "Also spelled enquiry in some uses.",
+"seen": ""
+},
+{
+"w": "instill",
+"label": "EXAM ANALOGY",
+"def_": "To gradually put an idea or feeling into someone's mind.",
+"ex": "The teacher instilled confidence in the class.",
+"note": "Cause a quality or feeling to develop.",
+"seen": "E10 p. 31."
+},
+{
+"w": "integrity",
+"label": "ADDITIONAL WORD",
+"def_": "Honesty and strong principles; also, wholeness or soundness.",
+"ex": "The repair restored the bridge's structural integrity.",
+"note": "Moral and physical senses are both useful.",
+"seen": ""
+},
+{
+"w": "intermittent",
+"label": "ADDITIONAL WORD",
+"def_": "Occurring at intervals, with breaks.",
+"ex": "Intermittent rain continued through the day.",
+"note": "Contrast with continuous.",
+"seen": ""
+},
+{
+"w": "intuitive",
+"label": "ADDITIONAL WORD",
+"def_": "Understood immediately without conscious step-by-step reasoning.",
+"ex": "The answer seemed intuitive but needed checking.",
+"note": "An intuition can be wrong.",
+"seen": ""
+},
+{
+"w": "invariably",
+"label": "ADDITIONAL WORD",
+"def_": "Always, without exception.",
+"ex": "In the story, the signal invariably precedes the visitor.",
+"note": "Stronger than usually or frequently.",
+"seen": ""
+},
+{
+"w": "ironic",
+"label": "ADDITIONAL WORD",
+"def_": "Involving a contrast between what is expected or said and what happens or is meant.",
+"ex": "It was ironic that the warning sign caused the accident.",
+"note": "Not every coincidence is irony.",
+"seen": ""
+},
+{
+"w": "irrelevant",
+"label": "EXAM VOCABULARY",
+"def_": "Not connected to the question or issue being considered.",
+"ex": "The fact was true but irrelevant to the claim.",
+"note": "Truth and relevance are separate tests.",
+"seen": "E10 p. 37."
+},
+{
+"w": "justification",
+"label": "EXAM VOCABULARY",
+"def_": "A reason offered to support a claim or action.",
+"ex": "The decision lacked a clear justification.",
+"note": "A justification can be weak or strong.",
+"seen": "E02 p. 45."
+},
+{
+"w": "lapel",
+"label": "EXAM ANALOGY",
+"def_": "The folded-back part of the front of a jacket.",
+"ex": "He pinned the badge to his lapel.",
+"note": "Part of an item of clothing.",
+"seen": "E04 p. 8."
+},
+{
+"w": "launder",
+"label": "EXAM ANALOGY",
+"def_": "To wash clothing or fabric.",
+"ex": "The hotel launders its sheets daily.",
+"note": "The ordinary sense is washing; a financial sense also exists.",
+"seen": "E07 p. 31."
+},
+{
+"w": "legitimate",
+"label": "EXAM VOCABULARY",
+"def_": "Allowed, proper, or reasonably justified.",
+"ex": "The criticism raised a legitimate concern.",
+"note": "Context may concern legality or good grounds.",
+"seen": "E06 p. 15; E09 p. 45; more occurrences listed online."
+},
+{
+"w": "lens",
+"label": "EXAM ANALOGY",
+"def_": "A shaped transparent piece that bends light.",
+"ex": "A scratch damaged the camera lens.",
+"note": "An optical component, not the scratch itself.",
+"seen": "E08 p. 31."
+},
+{
+"w": "limp",
+"label": "EXAM ANALOGY",
+"def_": "To walk unevenly because of injury or weakness; also, that manner of walking.",
+"ex": "He walked with a slight limp.",
+"note": "As an adjective, limp means lacking firmness.",
+"seen": "E09 p. 5."
+},
+{
+"w": "linguistics",
+"label": "EXAM ANALOGY",
+"def_": "The scientific study of language.",
+"ex": "Linguistics examines how languages work.",
+"note": "A field of study, not simply speaking many languages.",
+"seen": "E09 p. 7; E10 p. 31."
+},
+{
+"w": "long for",
+"label": "EXAM ANALOGY",
+"def_": "To want something very strongly.",
+"ex": "She longed for news from home.",
+"note": "A strong desire, not simply a passing preference.",
+"seen": "E04 p. 28."
+},
+{
+"w": "lucrative",
+"label": "ADDITIONAL WORD",
+"def_": "Producing a large profit.",
+"ex": "The new contract proved lucrative.",
+"note": "Financial gain, not simply usefulness.",
+"seen": ""
+},
+{
+"w": "magnanimous",
+"label": "EXAM ANALOGY",
+"def_": "Generous and forgiving, especially toward a rival.",
+"ex": "The winner was magnanimous toward the loser.",
+"note": "Magnanimously describes acting with this generosity.",
+"seen": "E03 p. 27."
+},
+{
+"w": "malingerer",
+"label": "EXAM ANALOGY",
+"def_": "Someone who pretends to be ill to avoid work or duty.",
+"ex": "The supervisor wrongly accused her of being a malingerer.",
+"note": "Pretended illness, not ordinary illness.",
+"seen": "E02 p. 7."
+},
+{
+"w": "marble",
+"label": "EXAM ANALOGY",
+"def_": "A hard stone often used in sculpture or buildings.",
+"ex": "The statue was carved from marble.",
+"note": "Here, a material; a marble can also be a small glass ball.",
+"seen": "E06 p. 7."
+},
+{
+"w": "marginal",
+"label": "EXAM VOCABULARY",
+"def_": "Small in amount or importance; also, at an edge.",
+"ex": "The change produced only a marginal improvement.",
+"note": "Usually limited, not necessarily zero.",
+"seen": "E02 p. 23; E02 p. 25; more occurrences listed online."
+},
+{
+"w": "mast",
+"label": "EXAM ANALOGY",
+"def_": "An upright pole supporting sails or equipment on a ship.",
+"ex": "The flag flew from the mast.",
+"note": "A mast is part of a ship; a ship can belong to a fleet.",
+"seen": "E04 p. 8."
+},
+{
+"w": "mediator",
+"label": "EXAM ANALOGY",
+"def_": "A person who helps opposing sides reach agreement.",
+"ex": "A mediator helped settle the dispute.",
+"note": "The mediator helps the parties agree.",
+"seen": "E02 p. 5."
+},
+{
+"w": "medic",
+"label": "EXAM ANALOGY",
+"def_": "A person trained to give medical care, often in an emergency.",
+"ex": "A medic treated the injured runner.",
+"note": "A role defined by care, not by one specific instrument.",
+"seen": "E07 p. 31."
+},
+{
+"w": "memorialize",
+"label": "EXAM ANALOGY",
+"def_": "To preserve the memory of a person or event.",
+"ex": "The monument memorializes the rescue.",
+"note": "An action intended to support remembrance.",
+"seen": "E03 p. 7."
+},
+{
+"w": "metaphor",
+"label": "ADDITIONAL WORD",
+"def_": "A comparison that describes one thing as another.",
+"ex": "The writer uses a bridge as a metaphor for communication.",
+"note": "Match the intended roles, not every physical detail.",
+"seen": ""
+},
+{
+"w": "meticulous",
+"label": "ADDITIONAL WORD",
+"def_": "Extremely careful about details.",
+"ex": "The historian kept meticulous records.",
+"note": "A stronger degree of carefulness.",
+"seen": ""
+},
+{
+"w": "mislead",
+"label": "EXAM ANALOGY",
+"def_": "To cause someone to form a wrong belief or take a wrong direction.",
+"ex": "The inaccurate map misled the hikers.",
+"note": "Can be intentional or unintentional.",
+"seen": "E02 p. 39; E08 p. 33; more occurrences listed online."
+},
+{
+"w": "misrepresent",
+"label": "EXAM ANALOGY",
+"def_": "To describe something falsely or misleadingly.",
+"ex": "The summary misrepresented her argument.",
+"note": "A distortion of the original meaning.",
+"seen": "E08 p. 33."
+},
+{
+"w": "moderation",
+"label": "EXAM ANALOGY",
+"def_": "Avoiding extremes or excess.",
+"ex": "The speaker called for moderation.",
+"note": "Moderation reduces extremity, not necessarily all disagreement.",
+"seen": "E03 p. 29."
+},
+{
+"w": "moisten",
+"label": "EXAM ANALOGY",
+"def_": "To make slightly wet.",
+"ex": "Moisten the cloth before wiping the table.",
+"note": "A weaker degree than soaking.",
+"seen": "E04 p. 8."
+},
+{
+"w": "monetary",
+"label": "EXAM VOCABULARY",
+"def_": "Relating to money.",
+"ex": "The winner received a monetary reward.",
+"note": "An adjective identifying the kind of value.",
+"seen": "E02 p. 15."
+},
+{
+"w": "mutually",
+"label": "ADDITIONAL WORD",
+"def_": "In a way that applies to each of two or more sides.",
+"ex": "The arrangements were mutually beneficial.",
+"note": "Mutually exclusive events cannot occur together.",
+"seen": ""
+},
+{
+"w": "negligible",
+"label": "EXAM ANALOGY",
+"def_": "Too small or unimportant to matter much.",
+"ex": "The delay had a negligible effect.",
+"note": "Not necessarily exactly zero.",
+"seen": "E04 p. 20; E04 p. 22; more occurrences listed online."
+},
+{
+"w": "norm",
+"label": "EXAM ANALOGY",
+"def_": "An accepted standard or usual pattern.",
+"ex": "The result differed from the norm.",
+"note": "A norm need not be a moral rule.",
+"seen": "E01 p. 35; E02 p. 47; more occurrences listed online."
+},
+{
+"w": "not all",
+"label": "EXAM VOCABULARY",
+"def_": "At least one does not; less than everyone or everything.",
+"ex": "Not all the lights were on.",
+"note": "Does not mean none.",
+"seen": "E02 p. 37; E07 p. 41; more occurrences listed online."
+},
+{
+"w": "notwithstanding",
+"label": "ADDITIONAL WORD",
+"def_": "Despite; in spite of.",
+"ex": "The project continued, the setbacks notwithstanding.",
+"note": "A concession signal, not a cause signal.",
+"seen": ""
+},
+{
+"w": "nourish",
+"label": "EXAM ANALOGY",
+"def_": "To supply what is needed for growth or health.",
+"ex": "The food nourished the recovering animal.",
+"note": "To provide nourishment, not simply to contain food.",
+"seen": "E05 p. 8."
+},
+{
+"w": "nuisance",
+"label": "EXAM ANALOGY",
+"def_": "A person or thing that causes annoyance or inconvenience.",
+"ex": "The repeated noise was a nuisance.",
+"note": "Not necessarily a serious danger.",
+"seen": "E07 p. 31."
+},
+{
+"w": "objection",
+"label": "ADDITIONAL WORD",
+"def_": "A reason for disagreeing with a claim or action.",
+"ex": "She raised an objection to the proposed method.",
+"note": "An objection need not disprove the entire proposal.",
+"seen": ""
+},
+{
+"w": "objective",
+"label": "EXAM VOCABULARY",
+"def_": "Based on facts rather than personal feelings; also, a goal.",
+"ex": "The researcher sought an objective measure.",
+"note": "As a noun, objective means an aim.",
+"seen": "E04 p. 46; E04 p. 50; more occurrences listed online."
+},
+{
+"w": "obscure",
+"label": "EXAM VOCABULARY",
+"def_": "Not well known or difficult to understand; also, to hide or make unclear.",
+"ex": "The detail was buried in an obscure source.",
+"note": "Notice whether the word is an adjective or a verb.",
+"seen": "E04 p. 40."
+},
+{
+"w": "obsolete",
+"label": "ADDITIONAL WORD",
+"def_": "No longer used because something newer has replaced it.",
+"ex": "The device became obsolete.",
+"note": "Different from merely old.",
+"seen": ""
+},
+{
+"w": "officiate",
+"label": "EXAM ANALOGY",
+"def_": "To perform an official role at an event or ceremony.",
+"ex": "She was asked to officiate at the wedding.",
+"note": "An official's role differs from an ordinary participant's role.",
+"seen": "E07 p. 7."
+},
+{
+"w": "on behalf of",
+"label": "EXAM ANALOGY",
+"def_": "As the representative of, or for the benefit of.",
+"ex": "She spoke on behalf of the group.",
+"note": "Check whether representation or benefit is intended.",
+"seen": "E05 p. 6."
+},
+{
+"w": "only if",
+"label": "EXAM VOCABULARY",
+"def_": "On the necessary condition that.",
+"ex": "A parcel is express only if it has a red label.",
+"note": "The condition after only if is required.",
+"seen": "E02 p. 43; E07 p. 47; more occurrences listed online."
+},
+{
+"w": "optimal",
+"label": "EXAM VOCABULARY",
+"def_": "Best under the relevant conditions or for a specified aim.",
+"ex": "The team searched for the optimal route.",
+"note": "Best depends on the criterion being used.",
+"seen": "E03 p. 43; E05 p. 44; more occurrences listed online."
+},
+{
+"w": "orientation",
+"label": "EXAM ANALOGY",
+"def_": "Knowing one's position or direction; also, an introduction to a new setting.",
+"ex": "The map helped her regain her orientation.",
+"note": "Context determines direction, introduction, or general attitude.",
+"seen": "E04 p. 30."
+},
+{
+"w": "ostracize",
+"label": "EXAM ANALOGY",
+"def_": "To exclude someone from a group or social contact.",
+"ex": "The group ostracized the member who broke its rule.",
+"note": "Social exclusion.",
+"seen": "E04 p. 6."
+},
+{
+"w": "otherwise",
+"label": "ADDITIONAL WORD",
+"def_": "If not, or in other respects.",
+"ex": "Leave now; otherwise, you will miss the bus.",
+"note": "Read the local sense rather than applying one fixed translation.",
+"seen": ""
+},
+{
+"w": "overpower",
+"label": "EXAM ANALOGY",
+"def_": "To defeat or overcome with greater strength or force.",
+"ex": "The defenders were overpowered.",
+"note": "Overpowering achieves an outcome; trying to overpower may fail.",
+"seen": "E07 p. 29."
+},
+{
+"w": "paradox",
+"label": "EXAM VOCABULARY",
+"def_": "An apparent contradiction or a result that seems contrary to expectation.",
+"ex": "The result presents a paradox for the theory.",
+"note": "An apparent paradox may have an explanation.",
+"seen": "E03 p. 41."
+},
+{
+"w": "parasol",
+"label": "EXAM ANALOGY",
+"def_": "An umbrella-like object used for shade from the sun.",
+"ex": "She opened a parasol on the beach.",
+"note": "Protection from sun is the defining purpose.",
+"seen": "E09 p. 31."
+},
+{
+"w": "pardon",
+"label": "EXAM ANALOGY",
+"def_": "To forgive or officially release from punishment.",
+"ex": "The ruler granted a pardon.",
+"note": "A pardon differs from a verdict of not guilty.",
+"seen": "E11 p. 7."
+},
+{
+"w": "partial",
+"label": "EXAM VOCABULARY",
+"def_": "Incomplete; also, biased toward one side.",
+"ex": "The report offered only a partial explanation.",
+"note": "Check whether incompleteness or bias is meant.",
+"seen": "E01 p. 35; E04 p. 22."
+},
+{
+"w": "pass sentence",
+"label": "EXAM ANALOGY",
+"def_": "To announce a court's punishment.",
+"ex": "The judge passed sentence after the trial.",
+"note": "A judge performs this action.",
+"seen": "E02 p. 5."
+},
+{
+"w": "pat",
+"label": "EXAM ANALOGY",
+"def_": "To touch gently with a flat hand.",
+"ex": "She patted the dog's head.",
+"note": "A mild form of contact, unlike striking hard.",
+"seen": "E06 p. 31."
+},
+{
+"w": "pauper",
+"label": "EXAM ANALOGY",
+"def_": "A very poor person.",
+"ex": "The story follows a prince and a pauper.",
+"note": "Poverty is part of the word's meaning.",
+"seen": "E01 p. 29."
+},
+{
+"w": "perception",
+"label": "EXAM VOCABULARY",
+"def_": "The way something is sensed or understood.",
+"ex": "Public perception differed from the measured result.",
+"note": "A perception need not match reality.",
+"seen": "E04 p. 44; E04 p. 46; more occurrences listed online."
+},
+{
+"w": "persuade",
+"label": "EXAM ANALOGY",
+"def_": "To cause someone to accept an idea or decide to act.",
+"ex": "She persuaded him to reconsider.",
+"note": "Unlike merely urging, successful persuasion changes a view or decision.",
+"seen": "E06 p. 5."
+},
+{
+"w": "physician",
+"label": "EXAM ANALOGY",
+"def_": "A medical doctor.",
+"ex": "The physician examined the patient.",
+"note": "A physician treats; a vaccine helps prevent disease.",
+"seen": "E01 p. 5; E07 p. 33; more occurrences listed online."
+},
+{
+"w": "pinhole",
+"label": "EXAM ANALOGY",
+"def_": "A very small hole.",
+"ex": "A pinhole let light into the box.",
+"note": "A smaller degree within the category hole.",
+"seen": "E04 p. 30."
+},
+{
+"w": "pitcher",
+"label": "EXAM ANALOGY",
+"def_": "A jug used to hold and pour liquid.",
+"ex": "She poured juice from the pitcher.",
+"note": "Here, a container; it can also mean a baseball player.",
+"seen": "E03 p. 7."
+},
+{
+"w": "plank",
+"label": "EXAM ANALOGY",
+"def_": "A long, flat piece of wood.",
+"ex": "They used a plank to bridge the ditch.",
+"note": "Material shaped into a usable piece.",
+"seen": "E03 p. 7."
+},
+{
+"w": "plausible",
+"label": "EXAM VOCABULARY",
+"def_": "Reasonable enough to seem possible or believable.",
+"ex": "The proposal offered a plausible explanation.",
+"note": "Plausible is weaker than proven.",
+"seen": "E09 p. 23."
+},
+{
+"w": "plead",
+"label": "EXAM ANALOGY",
+"def_": "To make an emotional or earnest request; also, to state a legal position.",
+"ex": "She pleaded with him to stay.",
+"note": "A plea does not guarantee compliance.",
+"seen": "E10 p. 31."
+},
+{
+"w": "plunder",
+"label": "EXAM ANALOGY",
+"def_": "To steal goods by force, especially during conflict.",
+"ex": "The invaders plundered the town.",
+"note": "A specific kind of taking.",
+"seen": "E10 p. 31."
+},
+{
+"w": "populate",
+"label": "EXAM ANALOGY",
+"def_": "To provide a place with inhabitants, or to live in it.",
+"ex": "Settlers populated the island.",
+"note": "A place can become inhabited.",
+"seen": "E05 p. 8; E06 p. 23; more occurrences listed online."
+},
+{
+"w": "porter",
+"label": "EXAM ANALOGY",
+"def_": "A person employed to carry luggage or other loads.",
+"ex": "The porter carried the suitcases upstairs.",
+"note": "The luggage is the object of the work.",
+"seen": "E08 p. 7."
+},
+{
+"w": "portrait",
+"label": "EXAM ANALOGY",
+"def_": "A picture or description of a particular person.",
+"ex": "The artist painted a portrait of her father.",
+"note": "A self-portrait represents the artist herself or himself.",
+"seen": "E02 p. 31."
+},
+{
+"w": "pothole",
+"label": "EXAM ANALOGY",
+"def_": "A hole in a road surface.",
+"ex": "The driver avoided the deep pothole.",
+"note": "A defect in a surface.",
+"seen": "E08 p. 31."
+},
+{
+"w": "pragmatic",
+"label": "ADDITIONAL WORD",
+"def_": "Focused on practical results and workable solutions.",
+"ex": "She took a pragmatic approach to the problem.",
+"note": "Practical emphasis, rather than a guarantee of moral correctness.",
+"seen": ""
+},
+{
+"w": "precede",
+"label": "EXAM VOCABULARY",
+"def_": "To come before in time or order.",
+"ex": "A warning preceded the announcement.",
+"note": "Contrast with succeed in the sense of come after.",
+"seen": "E01 p. 35; E01 p. 49; more occurrences listed online."
+},
+{
+"w": "preclude",
+"label": "ADDITIONAL WORD",
+"def_": "To prevent or make impossible.",
+"ex": "The narrow entrance precludes entry by large vehicles.",
+"note": "Stronger than merely making an action difficult.",
+"seen": ""
+},
+{
+"w": "predecessor",
+"label": "EXAM VOCABULARY",
+"def_": "A person or thing that came before another in the same role.",
+"ex": "The new director changed her predecessor's policy.",
+"note": "Contrast with successor.",
+"seen": "E04 p. 48; E09 p. 17; more occurrences listed online."
+},
+{
+"w": "premise",
+"label": "ADDITIONAL WORD",
+"def_": "A statement on which an argument is based.",
+"ex": "The conclusion follows only if the premise is true.",
+"note": "Premise and conclusion have different jobs.",
+"seen": ""
+},
+{
+"w": "prevailing",
+"label": "EXAM VOCABULARY",
+"def_": "Most common or influential at a particular time.",
+"ex": "The finding challenged the prevailing view.",
+"note": "Common acceptance does not establish truth.",
+"seen": "E04 p. 34; E04 p. 48."
+},
+{
+"w": "prevalent",
+"label": "EXAM ANALOGY",
+"def_": "Common or widespread.",
+"ex": "The belief was prevalent at the time.",
+"note": "Prevalence concerns how common something is.",
+"seen": "E01 p. 19; E01 p. 21; more occurrences listed online."
+},
+{
+"w": "principal",
+"label": "EXAM VOCABULARY",
+"def_": "Main or most important; also, the head of a school.",
+"ex": "The principal reason was cost.",
+"note": "Do not confuse with principle.",
+"seen": "E01 p. 15; E02 p. 41; more occurrences listed online."
+},
+{
+"w": "principle",
+"label": "EXAM VOCABULARY",
+"def_": "A basic rule, belief, or standard.",
+"ex": "The decision violated their stated principle.",
+"note": "Different from principal, meaning main.",
+"seen": "E01 p. 19; E01 p. 21; more occurrences listed online."
+},
+{
+"w": "prominent",
+"label": "EXAM ANALOGY",
+"def_": "Noticeable, important, or projecting outward.",
+"ex": "The tower is a prominent feature of the town.",
+"note": "Being prominent may make something easier to locate.",
+"seen": "E11 p. 27."
+},
+{
+"w": "proponent",
+"label": "EXAM VOCABULARY",
+"def_": "A person who supports an idea or proposal.",
+"ex": "Proponents argued that the change would help.",
+"note": "Contrast with opponent.",
+"seen": "E02 p. 37."
+},
+{
+"w": "proportion",
+"label": "EXAM VOCABULARY",
+"def_": "A part's size relative to a whole.",
+"ex": "A larger proportion of the group agreed.",
+"note": "A larger proportion need not mean a larger number.",
+"seen": "E01 p. 47; E03 p. 13; more occurrences listed online."
+},
+{
+"w": "prosperity",
+"label": "EXAM VOCABULARY",
+"def_": "Success and material well-being.",
+"ex": "The region experienced a period of prosperity.",
+"note": "Usually concerns flourishing economic conditions.",
+"seen": "E03 p. 43; E03 p. 45."
+},
+{
+"w": "provided that",
+"label": "ADDITIONAL WORD",
+"def_": "Only on the condition that.",
+"ex": "You may enter provided that you show a ticket.",
+"note": "Introduces a condition.",
+"seen": ""
+},
+{
+"w": "provocation",
+"label": "EXAM ANALOGY",
+"def_": "Something that causes or is intended to cause a reaction, often anger.",
+"ex": "He stayed calm despite the provocation.",
+"note": "An intended effect is not always an achieved effect.",
+"seen": "E03 p. 29."
+},
+{
+"w": "proximity",
+"label": "EXAM VOCABULARY",
+"def_": "Nearness in space, time, or relationship.",
+"ex": "The station's proximity made the area attractive.",
+"note": "Nearness, not necessarily direct contact.",
+"seen": "E08 p. 53."
+},
+{
+"w": "prudent",
+"label": "ADDITIONAL WORD",
+"def_": "Careful and sensible about possible consequences.",
+"ex": "Keeping a reserve was a prudent decision.",
+"note": "Contrast with reckless.",
+"seen": ""
+},
+{
+"w": "puncture",
+"label": "EXAM ANALOGY",
+"def_": "A small hole made by something sharp; also, to make such a hole.",
+"ex": "A nail caused a puncture in the tire.",
+"note": "A defect is different from the material escaping through it.",
+"seen": "E08 p. 31."
+},
+{
+"w": "purport",
+"label": "EXAM VOCABULARY",
+"def_": "To claim or appear to do or be something.",
+"ex": "The document purports to explain the entire event.",
+"note": "The word leaves room to doubt the claim.",
+"seen": "E04 p. 46."
+},
+{
+"w": "quench",
+"label": "EXAM ANALOGY",
+"def_": "To satisfy thirst or put out a fire.",
+"ex": "The cool water quenched his thirst.",
+"note": "Learn both common senses; neither simply means drink.",
+"seen": "E11 p. 5."
+},
+{
+"w": "rage",
+"label": "EXAM ANALOGY",
+"def_": "Very strong anger; as a verb, to express that anger.",
+"ex": "He raged at the unfair decision.",
+"note": "A stronger degree of anger.",
+"seen": "E01 p. 7."
+},
+{
+"w": "railing",
+"label": "EXAM ANALOGY",
+"def_": "A protective rail that helps prevent people from falling.",
+"ex": "She held the railing on the stairs.",
+"note": "Object and protective purpose.",
+"seen": "E01 p. 5."
+},
+{
+"w": "ramification",
+"label": "EXAM VOCABULARY",
+"def_": "A consequence, often indirect or complicated.",
+"ex": "They discussed the policy's possible ramifications.",
+"note": "A result that may extend beyond the immediate effect.",
+"seen": "E02 p. 25."
+},
+{
+"w": "rational",
+"label": "EXAM VOCABULARY",
+"def_": "Based on reason rather than impulse or unsupported belief.",
+"ex": "She offered a rational explanation.",
+"note": "Rational does not automatically mean correct.",
+"seen": "E03 p. 49; E04 p. 42; more occurrences listed online."
+},
+{
+"w": "reaper",
+"label": "EXAM ANALOGY",
+"def_": "A person or machine that cuts and gathers a crop.",
+"ex": "The reaper moved through the wheat field.",
+"note": "A role or tool connected to harvesting.",
+"seen": "E03 p. 7."
+},
+{
+"w": "reconcile",
+"label": "EXAM ANALOGY",
+"def_": "To restore friendly relations or make apparently conflicting things fit.",
+"ex": "The mediator tried to reconcile the neighbors.",
+"note": "Resolving a conflict does not mean proving one side correct.",
+"seen": "E04 p. 8."
+},
+{
+"w": "recount",
+"label": "EXAM ANALOGY",
+"def_": "To tell the details of an event.",
+"ex": "He recounted the journey.",
+"note": "Different from counting something again, which is another sense.",
+"seen": "E04 p. 6."
+},
+{
+"w": "redundant",
+"label": "ADDITIONAL WORD",
+"def_": "Unnecessary because it repeats or adds nothing needed.",
+"ex": "The final sentence was redundant.",
+"note": "Redundancy is repetition without useful added work.",
+"seen": ""
+},
+{
+"w": "refute",
+"label": "EXAM VOCABULARY",
+"def_": "To show that a claim is false.",
+"ex": "One clear counterexample refuted the universal claim.",
+"note": "Stronger than denying or disagreeing.",
+"seen": "E03 p. 23; E04 p. 14; more occurrences listed online."
+},
+{
+"w": "regardless",
+"label": "ADDITIONAL WORD",
+"def_": "Without being affected by a stated factor.",
+"ex": "The fee is fixed regardless of age.",
+"note": "The stated factor does not change the result.",
+"seen": ""
+},
+{
+"w": "reinforce",
+"label": "EXAM VOCABULARY",
+"def_": "To strengthen or provide additional support.",
+"ex": "The new finding reinforced the earlier conclusion.",
+"note": "Strengthening is not always conclusive proof.",
+"seen": "E04 p. 32; E08 p. 41; more occurrences listed online."
+},
+{
+"w": "reins",
+"label": "EXAM ANALOGY",
+"def_": "Straps used to guide an animal, especially a horse.",
+"ex": "She pulled gently on the reins.",
+"note": "A tool for control; figuratively, authority.",
+"seen": "E05 p. 28."
+},
+{
+"w": "relevant",
+"label": "EXAM VOCABULARY",
+"def_": "Connected to the matter being considered.",
+"ex": "Only one option was relevant to the cause of the change.",
+"note": "An interesting fact may still be irrelevant.",
+"seen": "E02 p. 45; E08 p. 35; more occurrences listed online."
+},
+{
+"w": "reliability",
+"label": "EXAM VOCABULARY",
+"def_": "The extent to which something is dependable or consistent.",
+"ex": "They tested the instrument's reliability.",
+"note": "Reliable repeated readings can still be systematically inaccurate.",
+"seen": "E03 p. 25; E04 p. 40; more occurrences listed online."
+},
+{
+"w": "reluctant",
+"label": "EXAM VOCABULARY",
+"def_": "Unwilling or hesitant.",
+"ex": "He was reluctant to change his plan.",
+"note": "Reluctance does not mean refusal in every case.",
+"seen": "E05 p. 42."
+},
+{
+"w": "remorse",
+"label": "ADDITIONAL WORD",
+"def_": "Deep regret for wrongdoing.",
+"ex": "She expressed remorse for the harm she caused.",
+"note": "Regret specifically connected to wrongdoing.",
+"seen": ""
+},
+{
+"w": "repent",
+"label": "EXAM ANALOGY",
+"def_": "To feel regret for wrongdoing and wish to change.",
+"ex": "He repented of his cruelty.",
+"note": "More than simply noticing an error.",
+"seen": "E10 p. 31."
+},
+{
+"w": "replication",
+"label": "EXAM VOCABULARY",
+"def_": "Repeating a study or making a copy.",
+"ex": "Replication produced similar results.",
+"note": "Repeated support increases confidence without proving every interpretation.",
+"seen": "E01 p. 9; E07 p. 49."
+},
+{
+"w": "reprimand",
+"label": "EXAM ANALOGY",
+"def_": "To express official or strong disapproval.",
+"ex": "The worker received a reprimand.",
+"note": "To reprimand someone is to rebuke them.",
+"seen": "E09 p. 31."
+},
+{
+"w": "reprove",
+"label": "EXAM ANALOGY",
+"def_": "To express disapproval of someone's behavior.",
+"ex": "The teacher reproved the pupil for cheating.",
+"note": "Close to reprimand.",
+"seen": "E09 p. 31."
+},
+{
+"w": "reservation",
+"label": "EXAM VOCABULARY",
+"def_": "A doubt or qualification; also, a booking.",
+"ex": "She supported the plan with reservations.",
+"note": "Here, reservations are limits on her support.",
+"seen": "E06 p. 41; E07 p. 17."
+},
+{
+"w": "reside",
+"label": "EXAM ANALOGY",
+"def_": "To live in a particular place.",
+"ex": "Most members reside nearby.",
+"note": "A place of residence is where someone lives.",
+"seen": "E05 p. 8."
+},
+{
+"w": "resilient",
+"label": "EXAM VOCABULARY",
+"def_": "Able to recover after difficulty or strain.",
+"ex": "The community proved resilient after the flood.",
+"note": "Recovery after pressure, rather than never facing pressure.",
+"seen": "E07 p. 45."
+},
+{
+"w": "resourcefulness",
+"label": "EXAM ANALOGY",
+"def_": "Skill in finding ways to solve problems with what is available.",
+"ex": "Her resourcefulness helped them repair the boat.",
+"note": "Different from merely possessing many resources.",
+"seen": "E10 p. 31."
+},
+{
+"w": "restrain",
+"label": "EXAM ANALOGY",
+"def_": "To hold back, control, or limit.",
+"ex": "She restrained her anger.",
+"note": "Preventing an action is stronger than merely advising against it.",
+"seen": "E01 p. 31."
+},
+{
+"w": "retrospect",
+"label": "EXAM VOCABULARY",
+"def_": "Looking back at past events.",
+"ex": "In retrospect, the warning signs were clear.",
+"note": "Hindsight differs from what was known at the time.",
+"seen": "E02 p. 21; E02 p. 23; more occurrences listed online."
+},
+{
+"w": "revulsion",
+"label": "EXAM ANALOGY",
+"def_": "A strong feeling of disgust or rejection.",
+"ex": "The cruelty filled him with revulsion.",
+"note": "Stronger than mild dislike.",
+"seen": "E03 p. 5; E04 p. 44; more occurrences listed online."
+},
+{
+"w": "rhetoric",
+"label": "EXAM VOCABULARY",
+"def_": "Language used to persuade; sometimes, persuasive words lacking substance.",
+"ex": "The speech relied on forceful rhetoric.",
+"note": "The term can be neutral or critical.",
+"seen": "E02 p. 41; E07 p. 47."
+},
+{
+"w": "ridicule",
+"label": "EXAM ANALOGY",
+"def_": "Mockery intended to make someone seem foolish.",
+"ex": "The proposal met with ridicule.",
+"note": "Contrast with respect, not merely disagreement.",
+"seen": "E07 p. 31."
+},
+{
+"w": "robust",
+"label": "ADDITIONAL WORD",
+"def_": "Strong, sturdy, or able to remain effective under changing conditions.",
+"ex": "The conclusion was robust across several analyses.",
+"note": "Robust evidence is stronger than a fragile result.",
+"seen": ""
+},
+{
+"w": "scarce",
+"label": "ADDITIONAL WORD",
+"def_": "Available in only small amounts.",
+"ex": "Fresh water was scarce.",
+"note": "Contrast with plentiful or abundant.",
+"seen": ""
+},
+{
+"w": "screenplay",
+"label": "EXAM ANALOGY",
+"def_": "The written script for a film.",
+"ex": "The novel was adapted into a screenplay.",
+"note": "A script is different from the finished performance.",
+"seen": "E02 p. 31."
+},
+{
+"w": "scribble",
+"label": "EXAM ANALOGY",
+"def_": "To write or draw quickly and carelessly.",
+"ex": "He scribbled a note on the envelope.",
+"note": "Manner of performing an action.",
+"seen": "E06 p. 31."
+},
+{
+"w": "scrutiny",
+"label": "EXAM VOCABULARY",
+"def_": "Close and careful examination.",
+"ex": "The claim did not survive scrutiny.",
+"note": "A careful examination, not a quick glance.",
+"seen": "E02 p. 9."
+},
+{
+"w": "seedling",
+"label": "EXAM ANALOGY",
+"def_": "A very young plant grown from a seed.",
+"ex": "The seedling produced its first leaves.",
+"note": "An early stage in development.",
+"seen": "E11 p. 5."
+},
+{
+"w": "self-evident",
+"label": "EXAM ANALOGY",
+"def_": "Clear without needing further explanation or proof.",
+"ex": "He treated the rule as self-evident.",
+"note": "What someone treats as obvious may still be questioned.",
+"seen": "E05 p. 26."
+},
+{
+"w": "serenity",
+"label": "EXAM ANALOGY",
+"def_": "Calmness and peacefulness.",
+"ex": "The garden gave her a sense of serenity.",
+"note": "Contrast with agitation.",
+"seen": "E04 p. 30; E05 p. 28."
+},
+{
+"w": "sever",
+"label": "EXAM ANALOGY",
+"def_": "To cut off or break a connection completely.",
+"ex": "The decision severed their business ties.",
+"note": "A stronger separation than loosening.",
+"seen": "E05 p. 26."
+},
+{
+"w": "sift",
+"label": "EXAM ANALOGY",
+"def_": "To pass material through a sieve to separate parts.",
+"ex": "She sifted the flour before baking.",
+"note": "The material may remain after impurities are removed.",
+"seen": "E03 p. 29."
+},
+{
+"w": "signpost",
+"label": "EXAM ANALOGY",
+"def_": "A sign showing direction; as a verb, to indicate a route or structure.",
+"ex": "The signposts helped walkers find the path.",
+"note": "Aids orientation.",
+"seen": "E04 p. 30."
+},
+{
+"w": "skepticism",
+"label": "EXAM VOCABULARY",
+"def_": "Doubt or a questioning attitude toward a claim.",
+"ex": "The surprising result met with skepticism.",
+"note": "Skepticism is not automatic rejection.",
+"seen": "E02 p. 21; E02 p. 25."
+},
+{
+"w": "slingshot",
+"label": "EXAM ANALOGY",
+"def_": "A small device that launches a stone using stretched elastic.",
+"ex": "The boy aimed a slingshot at a target.",
+"note": "A projectile-launching device.",
+"seen": "E02 p. 29."
+},
+{
+"w": "solitary",
+"label": "EXAM VOCABULARY",
+"def_": "Alone, single, or preferring to be alone.",
+"ex": "A solitary tree stood on the hill.",
+"note": "Not necessarily lonely or unhappy.",
+"seen": "E05 p. 12."
+},
+{
+"w": "sow",
+"label": "EXAM ANALOGY",
+"def_": "To plant seeds by scattering or placing them in the ground.",
+"ex": "Farmers sow the fields in spring.",
+"note": "Sowing precedes harvesting but does not guarantee a harvest.",
+"seen": "E09 p. 31."
+},
+{
+"w": "spade",
+"label": "EXAM ANALOGY",
+"def_": "A digging tool with a broad blade.",
+"ex": "She used a spade to turn the soil.",
+"note": "A tool and the work it performs.",
+"seen": "E02 p. 29."
+},
+{
+"w": "spear",
+"label": "EXAM ANALOGY",
+"def_": "A weapon with a long shaft and pointed end.",
+"ex": "The guard carried a spear.",
+"note": "One member of the category weapon.",
+"seen": "E06 p. 7."
+},
+{
+"w": "spontaneous",
+"label": "EXAM VOCABULARY",
+"def_": "Arising naturally or without deliberate planning.",
+"ex": "The audience gave a spontaneous cheer.",
+"note": "Unplanned does not mean causeless.",
+"seen": "E08 p. 23; E08 p. 27; more occurrences listed online."
+},
+{
+"w": "stationary",
+"label": "EXAM ANALOGY",
+"def_": "Not moving.",
+"ex": "The vehicle remained stationary.",
+"note": "Do not confuse with stationery: writing materials.",
+"seen": "E11 p. 27."
+},
+{
+"w": "stench",
+"label": "EXAM ANALOGY",
+"def_": "A strong, unpleasant smell.",
+"ex": "A stench came from the blocked drain.",
+"note": "The unpleasant quality is part of the meaning.",
+"seen": "E08 p. 33."
+},
+{
+"w": "sterilize",
+"label": "EXAM ANALOGY",
+"def_": "To remove or destroy microorganisms; also, to prevent reproduction.",
+"ex": "The instruments were sterilized before use.",
+"note": "Use the sense required by the pair or passage.",
+"seen": "E03 p. 29; E08 p. 25; more occurrences listed online."
+},
+{
+"w": "strum",
+"label": "EXAM ANALOGY",
+"def_": "To play strings by sweeping the fingers across them.",
+"ex": "He strummed the guitar softly.",
+"note": "An action performed on a particular instrument part.",
+"seen": "E10 p. 29."
+},
+{
+"w": "submarine",
+"label": "EXAM ANALOGY",
+"def_": "A vessel designed to travel underwater.",
+"ex": "The submarine remained below the surface.",
+"note": "A special type of vessel.",
+"seen": "E09 p. 5."
+},
+{
+"w": "subordinate",
+"label": "ADDITIONAL WORD",
+"def_": "Lower in rank or importance; also, to make less important.",
+"ex": "The detail is subordinate to the main argument.",
+"note": "A subordinate role is secondary.",
+"seen": ""
+},
+{
+"w": "subsequent",
+"label": "ADDITIONAL WORD",
+"def_": "Coming later.",
+"ex": "Subsequent studies challenged the finding.",
+"note": "Contrast with prior or preceding.",
+"seen": ""
+},
+{
+"w": "substantial",
+"label": "ADDITIONAL WORD",
+"def_": "Large or important in amount or degree.",
+"ex": "The revision made a substantial difference.",
+"note": "Stronger than slight or marginal.",
+"seen": ""
+},
+{
+"w": "sufficient",
+"label": "EXAM VOCABULARY",
+"def_": "Enough for a particular purpose or result.",
+"ex": "One valid example is sufficient to show possibility.",
+"note": "Sufficient differs from necessary.",
+"seen": "E03 p. 39; E05 p. 48; more occurrences listed online."
+},
+{
+"w": "superficial",
+"label": "EXAM VOCABULARY",
+"def_": "Concerning only the surface or lacking depth.",
+"ex": "The review offered only a superficial comparison.",
+"note": "Surface similarity can hide different relationships.",
+"seen": "E06 p. 13."
+},
+{
+"w": "surplus",
+"label": "ADDITIONAL WORD",
+"def_": "An amount beyond what is needed or used.",
+"ex": "The farm sold its surplus grain.",
+"note": "Contrast with deficit or shortage.",
+"seen": ""
+},
+{
+"w": "susceptible",
+"label": "ADDITIONAL WORD",
+"def_": "Easily affected or influenced by something.",
+"ex": "The material is susceptible to damage.",
+"note": "A vulnerability, not a certainty of damage.",
+"seen": ""
+},
+{
+"w": "swallow one's pride",
+"label": "EXAM ANALOGY",
+"def_": "To set aside pride in order to do something difficult or humbling.",
+"ex": "She swallowed her pride and asked for help.",
+"note": "An idiom: do not interpret swallow literally.",
+"seen": "E10 p. 31."
+},
+{
+"w": "syllable",
+"label": "EXAM ANALOGY",
+"def_": "A unit of pronunciation containing one vowel sound.",
+"ex": "The word table has two syllables.",
+"note": "A sound unit is different from a letter or a whole word.",
+"seen": "E11 p. 9; E11 p. 29."
+},
+{
+"w": "symphony",
+"label": "EXAM ANALOGY",
+"def_": "A large musical work, usually for an orchestra.",
+"ex": "The orchestra performed the symphony.",
+"note": "A kind of musical composition.",
+"seen": "E06 p. 7; E07 p. 7."
+},
+{
+"w": "syringe",
+"label": "EXAM ANALOGY",
+"def_": "An instrument used to draw in or inject liquid.",
+"ex": "The nurse prepared a syringe.",
+"note": "A tool and its function.",
+"seen": "E07 p. 7; E08 p. 31."
+},
+{
+"w": "tacit",
+"label": "ADDITIONAL WORD",
+"def_": "Understood or accepted without being stated.",
+"ex": "They had a tacit agreement to avoid the subject.",
+"note": "A kind of implicit understanding.",
+"seen": ""
+},
+{
+"w": "take refuge",
+"label": "EXAM ANALOGY",
+"def_": "To seek protection or shelter.",
+"ex": "The travelers took refuge from the storm.",
+"note": "A response to danger or discomfort.",
+"seen": "E05 p. 8."
+},
+{
+"w": "tenacious",
+"label": "ADDITIONAL WORD",
+"def_": "Holding firmly or persisting despite difficulty.",
+"ex": "The tenacious investigator kept searching.",
+"note": "Persistence can describe a person or a grip.",
+"seen": ""
+},
+{
+"w": "tendency",
+"label": "EXAM VOCABULARY",
+"def_": "A usual direction or likelihood of behavior.",
+"ex": "The group showed a tendency to choose familiar options.",
+"note": "A tendency permits exceptions.",
+"seen": "E01 p. 19; E01 p. 23; more occurrences listed online."
+},
+{
+"w": "tentative",
+"label": "ADDITIONAL WORD",
+"def_": "Not final or certain; open to change.",
+"ex": "The researcher offered a tentative explanation.",
+"note": "Contrast with definite or conclusive.",
+"seen": ""
+},
+{
+"w": "thereby",
+"label": "EXAM VOCABULARY",
+"def_": "By that means or as a result of that action.",
+"ex": "She clarified the rule, thereby reducing confusion.",
+"note": "Links an action to its effect.",
+"seen": "E01 p. 25; E01 p. 45; more occurrences listed online."
+},
+{
+"w": "thoroughly",
+"label": "EXAM ANALOGY",
+"def_": "Completely and with careful attention to detail.",
+"ex": "He checked the evidence thoroughly.",
+"note": "Thoroughness does not automatically imply expertise.",
+"seen": "E04 p. 30."
+},
+{
+"w": "threshold",
+"label": "EXAM VOCABULARY",
+"def_": "A point or level at which something begins or changes.",
+"ex": "The noise crossed the threshold of discomfort.",
+"note": "Can be literal, numerical, or figurative.",
+"seen": "E02 p. 19; E10 p. 21; more occurrences listed online."
+},
+{
+"w": "thriller",
+"label": "EXAM ANALOGY",
+"def_": "A story or film designed to create suspense and excitement.",
+"ex": "The thriller kept us guessing.",
+"note": "A type of story, rather than a production tool.",
+"seen": "E02 p. 31; E11 p. 11."
+},
+{
+"w": "tipsy",
+"label": "EXAM ANALOGY",
+"def_": "Slightly drunk.",
+"ex": "One drink made him tipsy.",
+"note": "A mild degree, rather than extreme drunkenness.",
+"seen": "E01 p. 7."
+},
+{
+"w": "trait",
+"label": "EXAM ANALOGY",
+"def_": "A distinguishing quality or characteristic.",
+"ex": "Patience is one of her strongest traits.",
+"note": "A trait can be part of a personality.",
+"seen": "E01 p. 19; E01 p. 23; more occurrences listed online."
+},
+{
+"w": "tranquility",
+"label": "EXAM ANALOGY",
+"def_": "Calmness and peacefulness.",
+"ex": "The early morning brought tranquility.",
+"note": "Also spelled tranquillity.",
+"seen": "E07 p. 31; E11 p. 15."
+},
+{
+"w": "transient",
+"label": "ADDITIONAL WORD",
+"def_": "Lasting only a short time.",
+"ex": "The effect was transient.",
+"note": "Contrast with permanent or enduring.",
+"seen": ""
+},
+{
+"w": "tributary",
+"label": "EXAM ANALOGY",
+"def_": "A stream or river that flows into a larger river.",
+"ex": "The tributary joins the main river upstream.",
+"note": "A relation within a river system, not just any river.",
+"seen": "E06 p. 7."
+},
+{
+"w": "tripod",
+"label": "EXAM ANALOGY",
+"def_": "A three-legged stand supporting a camera or other equipment.",
+"ex": "The camera rested on a tripod.",
+"note": "A support tool, not the object being photographed.",
+"seen": "E08 p. 7."
+},
+{
+"w": "trustworthy",
+"label": "EXAM ANALOGY",
+"def_": "Deserving to be trusted.",
+"ex": "We need a trustworthy source.",
+"note": "Trustworthy describes grounds for trust, not actual trust by everyone.",
+"seen": "E01 p. 31."
+},
+{
+"w": "unconstrained",
+"label": "EXAM ANALOGY",
+"def_": "Not limited or held back.",
+"ex": "The discussion was unconstrained by a fixed agenda.",
+"note": "Related action: to restrain.",
+"seen": "E01 p. 31."
+},
+{
+"w": "undermine",
+"label": "EXAM VOCABULARY",
+"def_": "To weaken the basis, confidence, or effectiveness of something.",
+"ex": "The new evidence undermined the explanation.",
+"note": "Weakening need not prove the opposite.",
+"seen": "E04 p. 32."
+},
+{
+"w": "unity",
+"label": "EXAM ANALOGY",
+"def_": "The state of being joined or acting as one.",
+"ex": "The disagreement threatened the group's unity.",
+"note": "Contrast with division or a split.",
+"seen": "E05 p. 28."
+},
+{
+"w": "unless",
+"label": "EXAM VOCABULARY",
+"def_": "Except if.",
+"ex": "The gate stays shut unless a guard opens it.",
+"note": "Do not casually turn an exception into a two-way rule.",
+"seen": "E06 p. 17; E10 p. 41."
+},
+{
+"w": "unprecedented",
+"label": "EXAM VOCABULARY",
+"def_": "Not known to have happened before.",
+"ex": "The city faced an unprecedented demand for water.",
+"note": "Different from merely unusual.",
+"seen": "E02 p. 9; E11 p. 43."
+},
+{
+"w": "unravel",
+"label": "EXAM ANALOGY",
+"def_": "To undo twisted or knitted threads; also, to solve a puzzle.",
+"ex": "The investigator unraveled the mystery.",
+"note": "Literal undoing and figurative clarification.",
+"seen": "E10 p. 29."
+},
+{
+"w": "uproot",
+"label": "EXAM ANALOGY",
+"def_": "To pull out by the roots; also, to displace someone.",
+"ex": "The storm uprooted the tree.",
+"note": "Literal removal and a related figurative sense.",
+"seen": "E01 p. 31; E07 p. 5."
+},
+{
+"w": "urgent",
+"label": "EXAM ANALOGY",
+"def_": "Needing immediate attention.",
+"ex": "They sent an urgent request for help.",
+"note": "Urgency can cause haste.",
+"seen": "E10 p. 7."
+},
+{
+"w": "vaccine",
+"label": "EXAM ANALOGY",
+"def_": "A preparation that helps the body develop protection against a disease.",
+"ex": "The vaccine reduced the risk of infection.",
+"note": "Prevention is different from treatment.",
+"seen": "E01 p. 5."
+},
+{
+"w": "valid",
+"label": "EXAM VOCABULARY",
+"def_": "Well-founded or acceptable; in logic, having a conclusion that follows.",
+"ex": "The objection was valid.",
+"note": "A valid logical form can still begin with false premises.",
+"seen": "E02 p. 39; E04 p. 26; more occurrences listed online."
+},
+{
+"w": "vanity",
+"label": "EXAM ANALOGY",
+"def_": "Excessive pride in one's appearance or achievements.",
+"ex": "His vanity made criticism hard to accept.",
+"note": "Not the same as sensible self-confidence.",
+"seen": "E10 p. 31."
+},
+{
+"w": "variable",
+"label": "EXAM VOCABULARY",
+"def_": "Something that can change or take different values.",
+"ex": "Practice time was a variable in the study.",
+"note": "Distinguish the changed variable from the measured outcome.",
+"seen": "E03 p. 21; E03 p. 25; more occurrences listed online."
+},
+{
+"w": "vice versa",
+"label": "ADDITIONAL WORD",
+"def_": "With the order or relationship reversed.",
+"ex": "She helps him, and vice versa.",
+"note": "The reversed direction must also be stated or justified.",
+"seen": ""
+},
+{
+"w": "vindicate",
+"label": "ADDITIONAL WORD",
+"def_": "To show that someone or something was right or wrongly blamed.",
+"ex": "The later evidence vindicated her decision.",
+"note": "Different from merely defending someone.",
+"seen": ""
+},
+{
+"w": "volatile",
+"label": "ADDITIONAL WORD",
+"def_": "Likely to change suddenly; also, easily evaporating.",
+"ex": "Prices remained volatile.",
+"note": "The financial, emotional, and physical senses differ.",
+"seen": ""
+},
+{
+"w": "wardrobe",
+"label": "EXAM ANALOGY",
+"def_": "A collection of someone's clothes; also, a cupboard for clothes.",
+"ex": "Her wardrobe contains several formal jackets.",
+"note": "Choose collection or container according to context.",
+"seen": "E04 p. 8."
+},
+{
+"w": "wedge",
+"label": "EXAM ANALOGY",
+"def_": "A piece thick at one end and tapering to a thin edge.",
+"ex": "She cut a wedge of cheese.",
+"note": "A shape or portion, rather than a different substance.",
+"seen": "E03 p. 7."
+},
+{
+"w": "wheelbarrow",
+"label": "EXAM ANALOGY",
+"def_": "A small hand-pushed cart, usually with one wheel.",
+"ex": "She moved the soil in a wheelbarrow.",
+"note": "A manually moved carrier.",
+"seen": "E09 p. 5."
+},
+{
+"w": "whereas",
+"label": "EXAM VOCABULARY",
+"def_": "While, when used to contrast two facts.",
+"ex": "One group improved, whereas the other did not.",
+"note": "A contrast signal.",
+"seen": "E01 p. 41; E02 p. 9; more occurrences listed online."
+},
+{
+"w": "withdrawal",
+"label": "EXAM ANALOGY",
+"def_": "The act of taking back, removing, or moving away.",
+"ex": "The army announced its withdrawal.",
+"note": "Context may concern money, forces, participation, or a claim.",
+"seen": "E05 p. 28."
+},
+{
+"w": "zeal",
+"label": "ADDITIONAL WORD",
+"def_": "Great energy and enthusiasm for a cause or task.",
+"ex": "He approached the campaign with zeal.",
+"note": "Strong commitment, not necessarily sound judgment. Exam sources E01 - psychometric_feb_2016_EN_acc-2.pdf E02 - psychometric_feb_2017_english 2.pdf E03 - psychometric_july_2013_english.pdf E04 - psychometric_july_2014_english 2.pdf E05 - psychometric_july_2015_english 2.pdf E06 - psychometric_july_2018_english_acc 2.pdf E07 - psychometric_spring_2019_EN_acc_1 2.pdf E08 - psychometric_summer_2021_EN_acc.pdf E09 - psychometric_summer_2022_EN_acc_.pdf E10 - psychometric_summer_2023_EN_acc.pdf E11 - psychometric_summer_2024_EN_acc.pdf Source and study notes Useful medium-level and advanced general vocabulary, with priority given to analogy stems and choices. Proper names and specialist passage-only labels are omitted. Attestation includes the displayed word or a listed related form. Supplementary words are study suggestions, not predictions of a future paper. The online dictionary has a search field, an analogy filter, all recorded page references, and a way to mark words as known on your current browser.",
+"seen": ""
+}
+]

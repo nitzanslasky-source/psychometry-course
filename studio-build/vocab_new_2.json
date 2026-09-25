@@ -1,0 +1,1038 @@
+[
+ {
+  "w": "educated guess",
+  "label": "EXAM VOCABULARY",
+  "def": "An estimate based on some knowledge, though not on certain proof.",
+  "ex": "Without the data, she could only make an educated guess.",
+  "note": "More reliable than a wild guess, less than a proven fact."
+ },
+ {
+  "w": "efficacy",
+  "label": "READING",
+  "def": "The ability to produce the intended result; effectiveness.",
+  "ex": "Researchers tested the efficacy of the new treatment.",
+  "note": "Usually said of treatments, methods, or policies."
+ },
+ {
+  "w": "embodiment",
+  "label": "EXAM VOCABULARY",
+  "def": "A person or thing that perfectly represents a quality or idea.",
+  "ex": "The old judge was the embodiment of fairness.",
+  "note": "Related verb: embody, to give a clear form to an idea."
+ },
+ {
+  "w": "embroider",
+  "label": "READING",
+  "def": "To decorate cloth by sewing patterns on it with thread.",
+  "ex": "She embroidered her initials on the handkerchief.",
+  "note": "Figuratively, to add invented details to a story."
+ },
+ {
+  "w": "emergence",
+  "label": "EXAM VOCABULARY",
+  "def": "The process of coming into view or into existence.",
+  "ex": "The report traced the emergence of a new middle class.",
+  "note": "Related verb: emerge. Not to be confused with emergency."
+ },
+ {
+  "w": "emit",
+  "label": "EXAM VOCABULARY",
+  "def": "To send out light, heat, sound, gas, or a signal.",
+  "ex": "The old factory emitted thick black smoke.",
+  "note": "Related noun: emission. A source emits; a receiver absorbs."
+ },
+ {
+  "w": "employ",
+  "label": "EXAM VOCABULARY",
+  "def": "To use a method, tool, or skill; also, to hire.",
+  "ex": "The author employs humor to soften a serious message.",
+  "note": "In reading passages, the sense 'to use' is the common one."
+ },
+ {
+  "w": "encircle",
+  "label": "EXAM VOCABULARY",
+  "def": "To form a circle around; to surround completely.",
+  "ex": "A low stone wall encircled the old village.",
+  "note": "Close in meaning to surround and enclose."
+ },
+ {
+  "w": "endure",
+  "label": "EXAM VOCABULARY",
+  "def": "To suffer something difficult patiently; also, to last a long time.",
+  "ex": "The settlers endured a long, freezing winter.",
+  "note": "Related adjective: enduring, meaning long-lasting."
+ },
+ {
+  "w": "enforce",
+  "label": "EXAM VOCABULARY",
+  "def": "To make sure a law or rule is obeyed.",
+  "ex": "The police began to enforce the new speed limit.",
+  "note": "A law can exist on paper without being enforced."
+ },
+ {
+  "w": "engage",
+  "label": "READING",
+  "def": "To hire someone; also, to take part in or occupy.",
+  "ex": "The family engaged a tutor for their son.",
+  "note": "Engaged in means busy with; engaged to means promised in marriage."
+ },
+ {
+  "w": "engrave",
+  "label": "EXAM VOCABULARY",
+  "def": "To cut words or designs into a hard surface.",
+  "ex": "The jeweler engraved the date inside the ring.",
+  "note": "Figuratively, engraved in memory means impossible to forget."
+ },
+ {
+  "w": "enhance",
+  "label": "EXAM VOCABULARY",
+  "def": "To improve the quality, value, or strength of something.",
+  "ex": "Good lighting can enhance the colors of a painting.",
+  "note": "Enhances something already present; does not create it."
+ },
+ {
+  "w": "entitled",
+  "label": "READING",
+  "def": "Having the right to have or do something.",
+  "ex": "Every citizen is entitled to a fair trial.",
+  "note": "Also means 'having the title': a book entitled Hope."
+ },
+ {
+  "w": "entity",
+  "label": "EXAM VOCABULARY",
+  "def": "Something that exists as a separate, independent unit.",
+  "ex": "The company became a separate legal entity.",
+  "note": "A formal, general word for a thing, body, or organization."
+ },
+ {
+  "w": "entomologist",
+  "label": "ANALOGY PRACTICE",
+  "def": "A scientist who studies insects.",
+  "ex": "The entomologist spent years studying ants in the desert.",
+  "note": "Pairs in analogies as expert : subject (entomologist : insects)."
+ },
+ {
+  "w": "enumerate",
+  "label": "READING",
+  "def": "To list things one by one.",
+  "ex": "The contract enumerates the duties of each partner.",
+  "note": "Stresses counting off items, not explaining them."
+ },
+ {
+  "w": "equilibrium",
+  "label": "READING",
+  "def": "A state of balance between opposing forces or influences.",
+  "ex": "The market reached equilibrium when supply matched demand.",
+  "note": "Can also mean calm mental balance."
+ },
+ {
+  "w": "eruption",
+  "label": "EXAM VOCABULARY",
+  "def": "A sudden, violent outburst, especially of a volcano.",
+  "ex": "The eruption buried the town under ash.",
+  "note": "Figuratively, an eruption of anger or violence."
+ },
+ {
+  "w": "etiquette",
+  "label": "EXAM VOCABULARY",
+  "def": "The accepted rules of polite behavior in a society or group.",
+  "ex": "Court etiquette required guests to bow to the queen.",
+  "note": "Rules of form, not of law."
+ },
+ {
+  "w": "evacuate",
+  "label": "READING",
+  "def": "To empty a place, or remove people from a dangerous place.",
+  "ex": "The scientists evacuated the air from the glass jar.",
+  "note": "Related noun: evacuation."
+ },
+ {
+  "w": "evaluate",
+  "label": "EXAM VOCABULARY",
+  "def": "To judge the value, quality, or importance of something.",
+  "ex": "Teachers evaluate each project according to clear criteria.",
+  "note": "Evaluation involves judgment, not just description."
+ },
+ {
+  "w": "exalted",
+  "label": "EXAM VOCABULARY",
+  "def": "Having high rank or great honor; also, very joyful.",
+  "ex": "He spoke of the poet in exalted terms.",
+  "note": "Do not confuse with exhausted or exulted."
+ },
+ {
+  "w": "exemplary",
+  "label": "EXAM VOCABULARY",
+  "def": "So good that it serves as an example for others.",
+  "ex": "Her exemplary conduct earned her a public award.",
+  "note": "An exemplary figure is a model to imitate."
+ },
+ {
+  "w": "exhausted",
+  "label": "EXAM VOCABULARY",
+  "def": "Extremely tired; also, completely used up.",
+  "ex": "After the long climb, the hikers were exhausted.",
+  "note": "In analogies, a stronger degree of tired."
+ },
+ {
+  "w": "expire",
+  "label": "EXAM VOCABULARY",
+  "def": "To come to the end of a period of validity.",
+  "ex": "His passport expired a week before the trip.",
+  "note": "Formally, it can also mean to die."
+ },
+ {
+  "w": "expose",
+  "label": "EXAM VOCABULARY",
+  "def": "To leave uncovered or unprotected; also, to reveal a hidden truth.",
+  "ex": "The article exposed corruption in the city council.",
+  "note": "Related noun: exposure, as in exposure to sunlight."
+ },
+ {
+  "w": "extinct",
+  "label": "EXAM VOCABULARY",
+  "def": "No longer existing, especially of a species that has died out.",
+  "ex": "The dodo became extinct in the seventeenth century.",
+  "note": "A mass extinction wipes out many species at once."
+ },
+ {
+  "w": "extremism",
+  "label": "EXAM VOCABULARY",
+  "def": "The holding of extreme political or religious views.",
+  "ex": "The speech warned against extremism of every kind.",
+  "note": "Contrast with moderation."
+ },
+ {
+  "w": "fable",
+  "label": "EXAM VOCABULARY",
+  "def": "A short story, often with animals, that teaches a moral lesson.",
+  "ex": "In the fable, the patient tortoise beats the hare.",
+  "note": "A fable carries a moral; a myth explains origins or beliefs."
+ },
+ {
+  "w": "fade",
+  "label": "EXAM VOCABULARY",
+  "def": "To gradually lose color, brightness, strength, or importance.",
+  "ex": "The painted sign had faded in the sun.",
+  "note": "Her star faded means her fame gradually declined."
+ },
+ {
+  "w": "faint",
+  "label": "EXAM VOCABULARY",
+  "def": "Weak and hard to see, hear, or smell.",
+  "ex": "A faint glow appeared on the horizon before dawn.",
+  "note": "A faint glow is to a glare as a whisper is to a shout."
+ },
+ {
+  "w": "famine",
+  "label": "EXAM VOCABULARY",
+  "def": "A severe, widespread shortage of food.",
+  "ex": "Thousands fled the region during the famine.",
+  "note": "Drought (lack of rain) often causes famine (lack of food)."
+ },
+ {
+  "w": "fathom",
+  "label": "EXAM VOCABULARY",
+  "def": "To understand something difficult after much thought.",
+  "ex": "She could not fathom why he had left.",
+  "note": "Usually used in the negative: could not fathom."
+ },
+ {
+  "w": "fertilize",
+  "label": "EXAM VOCABULARY",
+  "def": "To make soil richer; also, to start reproduction in an egg or plant.",
+  "ex": "Farmers fertilize the fields before planting.",
+  "note": "Related noun: fertilizer."
+ },
+ {
+  "w": "fictional",
+  "label": "EXAM VOCABULARY",
+  "def": "Invented by the imagination; not real.",
+  "ex": "Sherlock Holmes is a fictional detective.",
+  "note": "Fictional means invented; fictitious often means false."
+ },
+ {
+  "w": "firebreak",
+  "label": "ANALOGY PRACTICE",
+  "def": "A strip of cleared land that stops a fire from spreading.",
+  "ex": "The rangers cut a firebreak to protect the village.",
+  "note": "Pairs as protection : danger, like a levee : flood."
+ },
+ {
+  "w": "fitting",
+  "label": "EXAM VOCABULARY",
+  "def": "Suitable or appropriate for the situation.",
+  "ex": "The award was a fitting end to her career.",
+  "note": "As a noun, a fitting is a trying-on of clothes or a small part."
+ },
+ {
+  "w": "flatly",
+  "label": "EXAM VOCABULARY",
+  "def": "In a firm, direct way that allows no discussion.",
+  "ex": "The minister flatly refused to answer the question.",
+  "note": "Flatly refused means refused completely, not politely."
+ },
+ {
+  "w": "flourish",
+  "label": "EXAM VOCABULARY",
+  "def": "To grow or develop successfully and vigorously.",
+  "ex": "The arts flourished during the long period of peace.",
+  "note": "Contrast with decline or wither."
+ },
+ {
+  "w": "foal",
+  "label": "ANALOGY PRACTICE",
+  "def": "A young horse.",
+  "ex": "The foal stayed close to its mother.",
+  "note": "Young : adult pairs, like calf : cow or lamb : sheep."
+ },
+ {
+  "w": "forgery",
+  "label": "EXAM VOCABULARY",
+  "def": "A fake copy made to deceive; also, the crime of making one.",
+  "ex": "The painting was exposed as a clever forgery.",
+  "note": "Related verb: forge, which can also mean to form or create."
+ },
+ {
+  "w": "formulate",
+  "label": "EXAM VOCABULARY",
+  "def": "To create or express an idea or plan carefully.",
+  "ex": "The committee formulated a new policy on housing.",
+  "note": "Related noun: formulation."
+ },
+ {
+  "w": "fossilize",
+  "label": "EXAM VOCABULARY",
+  "def": "To turn into a fossil; figuratively, to become rigid and outdated.",
+  "ex": "The bones had fossilized over millions of years.",
+  "note": "A fossilized idea no longer changes with the times."
+ },
+ {
+  "w": "fragile",
+  "label": "ANALOGY PRACTICE",
+  "def": "Easily broken or damaged.",
+  "ex": "Pack the fragile vases in soft paper.",
+  "note": "Contrast with sturdy or robust."
+ },
+ {
+  "w": "fragment",
+  "label": "READING",
+  "def": "To break into small pieces; as a noun, a broken piece.",
+  "ex": "The ancient scroll had fragmented into tiny pieces.",
+  "note": "A fragmented society is divided into separate groups."
+ },
+ {
+  "w": "frank",
+  "label": "ANALOGY PRACTICE",
+  "def": "Honest and direct, even when the truth is unwelcome.",
+  "ex": "She gave me a frank opinion of my essay.",
+  "note": "Frankness can seem rude but is not intended to hurt."
+ },
+ {
+  "w": "friction",
+  "label": "ANALOGY PRACTICE",
+  "def": "The resistance when surfaces rub; figuratively, conflict between people.",
+  "ex": "Oil reduces friction between the moving parts.",
+  "note": "Friction between colleagues means tension or disagreement."
+ },
+ {
+  "w": "from the outset",
+  "label": "EXAM VOCABULARY",
+  "def": "From the very beginning.",
+  "ex": "The plan was doomed from the outset.",
+  "note": "Similar to from the start."
+ },
+ {
+  "w": "furious",
+  "label": "ANALOGY PRACTICE",
+  "def": "Extremely angry.",
+  "ex": "He was furious when he saw the damage.",
+  "note": "In analogies, a stronger degree of angry."
+ },
+ {
+  "w": "generalization",
+  "label": "EXAM VOCABULARY",
+  "def": "A broad statement based on limited cases.",
+  "ex": "It is risky to make generalizations from a single example.",
+  "note": "A sweeping generalization ignores important exceptions."
+ },
+ {
+  "w": "geologist",
+  "label": "ANALOGY PRACTICE",
+  "def": "A scientist who studies rocks and the earth's structure.",
+  "ex": "The geologist examined layers of rock in the canyon.",
+  "note": "Expert : subject pairs, like geologist : rocks."
+ },
+ {
+  "w": "glacier",
+  "label": "EXAM VOCABULARY",
+  "def": "A huge, slow-moving mass of ice.",
+  "ex": "The glacier has retreated several kilometers this century.",
+  "note": "Glacial also means extremely slow or cold."
+ },
+ {
+  "w": "glimmer",
+  "label": "ANALOGY PRACTICE",
+  "def": "A faint, unsteady light; also, a small sign of something.",
+  "ex": "There was a glimmer of hope in her voice.",
+  "note": "Weaker than a glow or a blaze."
+ },
+ {
+  "w": "glorify",
+  "label": "EXAM VOCABULARY",
+  "def": "To praise highly, often more than is deserved.",
+  "ex": "The film was criticized for glorifying violence.",
+  "note": "Often suggests unjustified praise."
+ },
+ {
+  "w": "goggles",
+  "label": "ANALOGY PRACTICE",
+  "def": "Close-fitting glasses that protect the eyes.",
+  "ex": "The welder lowered his goggles before starting work.",
+  "note": "Protective gear : body part, like helmet : head."
+ },
+ {
+  "w": "gradual",
+  "label": "EXAM VOCABULARY",
+  "def": "Happening slowly, in small steps.",
+  "ex": "The patient made a gradual recovery.",
+  "note": "Contrast with sudden or abrupt."
+ },
+ {
+  "w": "grant",
+  "label": "EXAM VOCABULARY",
+  "def": "To give or allow something formally; as a noun, money given for a purpose.",
+  "ex": "The university granted her permission to study abroad.",
+  "note": "Take for granted means assume without question."
+ },
+ {
+  "w": "grave",
+  "label": "EXAM VOCABULARY",
+  "def": "Very serious and worrying.",
+  "ex": "The doctor said the situation was grave.",
+  "note": "As a noun, a place of burial."
+ },
+ {
+  "w": "groove",
+  "label": "ANALOGY PRACTICE",
+  "def": "A long, narrow cut in a surface.",
+  "ex": "The needle followed the groove in the record.",
+  "note": "A groove guides movement along a fixed path."
+ },
+ {
+  "w": "guardrail",
+  "label": "ANALOGY PRACTICE",
+  "def": "A railing that prevents people or vehicles from falling.",
+  "ex": "The car struck the guardrail but stayed on the road.",
+  "note": "Protection : danger pairs in analogies."
+ },
+ {
+  "w": "gullet",
+  "label": "EXAM VOCABULARY",
+  "def": "The passage from the mouth to the stomach; the throat.",
+  "ex": "The heron swallowed the fish whole, straight down its gullet.",
+  "note": "An informal word for the esophagus."
+ },
+ {
+  "w": "habituation",
+  "label": "READING",
+  "def": "The process of becoming used to something through repetition.",
+  "ex": "Through habituation, the birds stopped fearing the scarecrow.",
+  "note": "Related verb: habituate."
+ },
+ {
+  "w": "harbor",
+  "label": "ANALOGY PRACTICE",
+  "def": "A sheltered place for ships; as a verb, to keep a feeling or hide someone.",
+  "ex": "She harbored a secret dislike for her neighbor.",
+  "note": "Harbor is to ship as garage is to car."
+ },
+ {
+  "w": "hazard",
+  "label": "READING",
+  "def": "A danger or risk.",
+  "ex": "Wet floors are a common hazard in kitchens.",
+  "note": "Hazardous means dangerous."
+ },
+ {
+  "w": "hedonist",
+  "label": "EXAM VOCABULARY",
+  "def": "A person who believes pleasure is the most important goal in life.",
+  "ex": "The hedonist spent his fortune on fine food and travel.",
+  "note": "Contrast with an ascetic, who avoids pleasure."
+ },
+ {
+  "w": "heir",
+  "label": "EXAM VOCABULARY",
+  "def": "A person who will inherit property, rank, or a title.",
+  "ex": "The prince was the heir to the throne.",
+  "note": "Pronounced like air; the h is silent."
+ },
+ {
+  "w": "hindsight",
+  "label": "EXAM VOCABULARY",
+  "def": "Understanding a situation only after it has happened.",
+  "ex": "In hindsight, we should have left earlier.",
+  "note": "Contrast with foresight, which comes beforehand."
+ },
+ {
+  "w": "husk",
+  "label": "ANALOGY PRACTICE",
+  "def": "The dry outer covering of some seeds or fruits.",
+  "ex": "They removed the husks before cooking the corn.",
+  "note": "Covering : contents, like shell : egg."
+ },
+ {
+  "w": "hymn",
+  "label": "ANALOGY PRACTICE",
+  "def": "A religious song of praise.",
+  "ex": "The congregation stood to sing a hymn.",
+  "note": "A type of song, as a sonnet is a type of poem."
+ },
+ {
+  "w": "idealize",
+  "label": "EXAM VOCABULARY",
+  "def": "To picture something as better or more perfect than it is.",
+  "ex": "Many adults idealize their childhood and forget its difficulties.",
+  "note": "An idealized image ignores flaws."
+ },
+ {
+  "w": "idleness",
+  "label": "EXAM VOCABULARY",
+  "def": "The state of being inactive or avoiding work.",
+  "ex": "Months of idleness left him restless.",
+  "note": "Contrast with industriousness."
+ },
+ {
+  "w": "ignorance",
+  "label": "EXAM VOCABULARY",
+  "def": "Lack of knowledge or information.",
+  "ex": "His rude remark came from ignorance, not malice.",
+  "note": "Ignorance is not knowing; ignoring is choosing not to notice."
+ },
+ {
+  "w": "illusion",
+  "label": "EXAM VOCABULARY",
+  "def": "A false idea or a deceptive appearance.",
+  "ex": "The mirrors created the illusion of a larger room.",
+  "note": "Do not confuse with allusion, an indirect reference."
+ },
+ {
+  "w": "imagery",
+  "label": "EXAM VOCABULARY",
+  "def": "Descriptive language that creates pictures in the reader's mind.",
+  "ex": "The poem's imagery of the sea is striking.",
+  "note": "Also refers to visual images in general."
+ },
+ {
+  "w": "immerse",
+  "label": "EXAM VOCABULARY",
+  "def": "To put completely into a liquid; to involve oneself deeply.",
+  "ex": "She immersed herself in her studies.",
+  "note": "Language immersion means learning by living in the language."
+ },
+ {
+  "w": "imperceptible",
+  "label": "READING",
+  "def": "Too slight or gradual to be noticed.",
+  "ex": "The change in the light was almost imperceptible.",
+  "note": "Contrast with conspicuous."
+ },
+ {
+  "w": "implement",
+  "label": "EXAM VOCABULARY",
+  "def": "To put a plan or decision into action.",
+  "ex": "The school will implement the new schedule next month.",
+  "note": "As a noun, an implement is a tool."
+ },
+ {
+  "w": "implication",
+  "label": "EXAM VOCABULARY",
+  "def": "Something suggested without being stated directly; a likely consequence.",
+  "ex": "The implication of his remark was that we had failed.",
+  "note": "Related verb: imply. The speaker implies; the listener infers."
+ },
+ {
+  "w": "impose",
+  "label": "EXAM VOCABULARY",
+  "def": "To force a rule, burden, or penalty on someone.",
+  "ex": "The government imposed strict limitations on imports.",
+  "note": "To impose on someone also means to take unfair advantage."
+ },
+ {
+  "w": "imprint",
+  "label": "EXAM VOCABULARY",
+  "def": "A mark made by pressing; a lasting effect.",
+  "ex": "The boot left a deep imprint in the mud.",
+  "note": "Figuratively, an experience can leave an imprint on memory."
+ },
+ {
+  "w": "in step with",
+  "label": "READING",
+  "def": "Moving at the same pace as; in agreement with.",
+  "ex": "Wages have not risen in step with prices.",
+  "note": "Out of step with means not matching or not in agreement."
+ },
+ {
+  "w": "inadequate",
+  "label": "EXAM VOCABULARY",
+  "def": "Not enough or not good enough for a purpose.",
+  "ex": "The supplies proved inadequate for the long journey.",
+  "note": "Contrast with adequate."
+ },
+ {
+  "w": "inanimate",
+  "label": "EXAM VOCABULARY",
+  "def": "Not alive; without life or movement.",
+  "ex": "A stone is an inanimate object.",
+  "note": "Contrast with animate, meaning living."
+ },
+ {
+  "w": "inborn",
+  "label": "EXAM VOCABULARY",
+  "def": "Present from birth rather than learned.",
+  "ex": "She had an inborn talent for music.",
+  "note": "Synonym: innate. Contrast with acquired."
+ },
+ {
+  "w": "incline",
+  "label": "READING",
+  "def": "To slope or tilt; also, to tend toward an attitude.",
+  "ex": "The road inclines steeply toward the hilltop.",
+  "note": "Inclined to means likely or tending to."
+ },
+ {
+  "w": "inclusive",
+  "label": "EXAM VOCABULARY",
+  "def": "Including everything or everyone; not excluding anyone.",
+  "ex": "The club aims to be inclusive of all ages.",
+  "note": "Also, counting the endpoints: Monday to Friday inclusive."
+ },
+ {
+  "w": "indistinguishable",
+  "label": "EXAM VOCABULARY",
+  "def": "So similar that the difference cannot be seen.",
+  "ex": "The copy was indistinguishable from the original.",
+  "note": "Related verb: distinguish, to tell apart."
+ },
+ {
+  "w": "industrious",
+  "label": "ANALOGY PRACTICE",
+  "def": "Hard-working and diligent.",
+  "ex": "The industrious student finished her project early.",
+  "note": "Not the same as industrial, which relates to industry."
+ },
+ {
+  "w": "infancy",
+  "label": "EXAM VOCABULARY",
+  "def": "Early childhood; also, the earliest stage of development.",
+  "ex": "Space tourism is still in its infancy.",
+  "note": "Figurative use is common in reading passages."
+ },
+ {
+  "w": "inferior",
+  "label": "READING",
+  "def": "Lower in quality, rank, or value.",
+  "ex": "The cheap fabric was clearly inferior.",
+  "note": "Inferior to, not inferior than. Contrast with superior."
+ },
+ {
+  "w": "infinite",
+  "label": "EXAM VOCABULARY",
+  "def": "Without limits or end.",
+  "ex": "The universe seemed to him infinite.",
+  "note": "Informally, extremely great: infinite patience."
+ },
+ {
+  "w": "infrastructure",
+  "label": "EXAM VOCABULARY",
+  "def": "The basic systems a society needs, such as roads and power.",
+  "ex": "The storm damaged the region's infrastructure.",
+  "note": "Includes transport, water, energy, and communications."
+ },
+ {
+  "w": "ingenuity",
+  "label": "EXAM VOCABULARY",
+  "def": "Cleverness and originality in solving problems.",
+  "ex": "The prisoners escaped through sheer ingenuity.",
+  "note": "Related adjective: ingenious. Do not confuse with ingenuous, meaning innocent."
+ },
+ {
+  "w": "ingrained",
+  "label": "EXAM VOCABULARY",
+  "def": "Firmly fixed and hard to change.",
+  "ex": "Such habits are deeply ingrained in our culture.",
+  "note": "Close in meaning to entrenched."
+ },
+ {
+  "w": "inhibit",
+  "label": "EXAM VOCABULARY",
+  "def": "To slow down, restrict, or prevent a process or action.",
+  "ex": "Cold temperatures inhibit the growth of bacteria.",
+  "note": "Related noun: inhibition, also meaning shyness."
+ },
+ {
+  "w": "innate",
+  "label": "EXAM VOCABULARY",
+  "def": "Existing from birth; natural rather than learned.",
+  "ex": "Some linguists believe language ability is innate.",
+  "note": "Synonym: inborn. Contrast with acquired."
+ },
+ {
+  "w": "inscribe",
+  "label": "EXAM VOCABULARY",
+  "def": "To write or carve words on a surface.",
+  "ex": "Their names were inscribed on the monument.",
+  "note": "Related noun: inscription."
+ },
+ {
+  "w": "insensible to",
+  "label": "READING",
+  "def": "Unaware of or unaffected by something.",
+  "ex": "He seemed insensible to the cold.",
+  "note": "Not the same as insensitive, meaning unkind."
+ },
+ {
+  "w": "inseparable",
+  "label": "EXAM VOCABULARY",
+  "def": "Unable to be separated; always together.",
+  "ex": "The two friends were inseparable as children.",
+  "note": "Contrast with separable."
+ },
+ {
+  "w": "insight",
+  "label": "EXAM VOCABULARY",
+  "def": "A deep and clear understanding of something.",
+  "ex": "The book offers insight into life in ancient Rome.",
+  "note": "Insightful means showing such understanding."
+ },
+ {
+  "w": "inspection",
+  "label": "ANALOGY PRACTICE",
+  "def": "A careful examination to check condition or quality.",
+  "ex": "The building failed its safety inspection.",
+  "note": "Related verb: inspect. An inspector carries out inspections."
+ },
+ {
+  "w": "intake",
+  "label": "EXAM VOCABULARY",
+  "def": "The amount of something taken in, especially food or air.",
+  "ex": "Doctors recommend reducing your daily intake of salt.",
+  "note": "Also, the people admitted at one time: this year's intake."
+ },
+ {
+  "w": "intensify",
+  "label": "EXAM VOCABULARY",
+  "def": "To become or make stronger or more extreme.",
+  "ex": "The storm intensified as it approached the coast.",
+  "note": "Related noun: intensity."
+ },
+ {
+  "w": "intercept",
+  "label": "EXAM VOCABULARY",
+  "def": "To stop or catch something on its way somewhere.",
+  "ex": "Guards intercepted the letter before it arrived.",
+  "note": "In math, an intercept is where a line crosses an axis."
+ },
+ {
+  "w": "interchangeable",
+  "label": "READING",
+  "def": "Able to be exchanged for each other without difference.",
+  "ex": "The two words are not always interchangeable.",
+  "note": "Interchangeable parts fit any machine of the same model."
+ },
+ {
+  "w": "interpersonal",
+  "label": "EXAM VOCABULARY",
+  "def": "Relating to relationships and communication between people.",
+  "ex": "The job requires strong interpersonal skills.",
+  "note": "Contrast with intrapersonal, within one person."
+ },
+ {
+  "w": "intimidate",
+  "label": "EXAM VOCABULARY",
+  "def": "To frighten someone, especially to make them obey.",
+  "ex": "The bully tried to intimidate the younger children.",
+  "note": "Being intimidated means feeling frightened or overawed."
+ },
+ {
+  "w": "invoke",
+  "label": "READING",
+  "def": "To call upon something as a reason, authority, or explanation.",
+  "ex": "The lawyer invoked an old law to support her case.",
+  "note": "Can also mean to call upon a god for help."
+ },
+ {
+  "w": "involuntary",
+  "label": "EXAM VOCABULARY",
+  "def": "Done without conscious control or choice.",
+  "ex": "A sneeze is an involuntary reaction.",
+  "note": "Contrast with voluntary or deliberate."
+ },
+ {
+  "w": "irretrievably",
+  "label": "READING",
+  "def": "In a way that can never be recovered or put right.",
+  "ex": "The files were irretrievably lost in the fire.",
+  "note": "Close in meaning to irreversibly."
+ },
+ {
+  "w": "irreversible",
+  "label": "EXAM VOCABULARY",
+  "def": "Impossible to undo or change back.",
+  "ex": "The damage to the forest was irreversible.",
+  "note": "Contrast with reversible or temporary."
+ },
+ {
+  "w": "irrigation",
+  "label": "ANALOGY PRACTICE",
+  "def": "Supplying land with water through channels or pipes.",
+  "ex": "Irrigation turned the desert into farmland.",
+  "note": "Remedy : problem pairs, like irrigation : drought."
+ },
+ {
+  "w": "juror",
+  "label": "ANALOGY PRACTICE",
+  "def": "A member of a jury in a court case.",
+  "ex": "Each juror listened carefully to the witnesses.",
+  "note": "Member : group, like juror : jury."
+ },
+ {
+  "w": "juvenile",
+  "label": "EXAM VOCABULARY",
+  "def": "A young person or animal; also, childish.",
+  "ex": "The court handles cases involving juveniles.",
+  "note": "As an adjective, can criticize immature behavior."
+ },
+ {
+  "w": "latent",
+  "label": "EXAM VOCABULARY",
+  "def": "Present but hidden or not yet developed.",
+  "ex": "The crisis revealed his latent talent for leadership.",
+  "note": "Contrast with manifest or evident."
+ },
+ {
+  "w": "legislator",
+  "label": "EXAM VOCABULARY",
+  "def": "A person who makes laws, such as a member of parliament.",
+  "ex": "Legislators debated the bill for weeks.",
+  "note": "Related nouns: legislation, legislature."
+ },
+ {
+  "w": "libel",
+  "label": "EXAM VOCABULARY",
+  "def": "A false written statement that damages someone's reputation.",
+  "ex": "The newspaper was sued for libel.",
+  "note": "Libel is written; slander is spoken."
+ },
+ {
+  "w": "licensed",
+  "label": "EXAM VOCABULARY",
+  "def": "Officially permitted to do or own something.",
+  "ex": "Only a licensed electrician may do this work.",
+  "note": "Related noun: license, an official permit."
+ },
+ {
+  "w": "lightning rod",
+  "label": "ANALOGY PRACTICE",
+  "def": "A metal rod that safely directs lightning into the ground.",
+  "ex": "A lightning rod protected the church tower.",
+  "note": "Figuratively, a person who attracts criticism."
+ },
+ {
+  "w": "litter",
+  "label": "ANALOGY PRACTICE",
+  "def": "A group of young animals born at the same time; also, trash.",
+  "ex": "The cat gave birth to a litter of five kittens.",
+  "note": "Group : member, like litter : kitten."
+ },
+ {
+  "w": "lofty",
+  "label": "EXAM VOCABULARY",
+  "def": "Very tall; also, noble or grand in ideas.",
+  "ex": "The speech was full of lofty ideals.",
+  "note": "Can also mean proud and superior."
+ },
+ {
+  "w": "long-held",
+  "label": "EXAM VOCABULARY",
+  "def": "Believed or kept for a long time.",
+  "ex": "New evidence challenged a long-held theory.",
+  "note": "Often paired with belief, view, or assumption."
+ },
+ {
+  "w": "lubrication",
+  "label": "ANALOGY PRACTICE",
+  "def": "Applying oil or grease to reduce friction.",
+  "ex": "The engine failed from a lack of lubrication.",
+  "note": "Remedy : problem pairs, like lubrication : friction."
+ },
+ {
+  "w": "make up one's mind",
+  "label": "EXAM VOCABULARY",
+  "def": "To decide.",
+  "ex": "She finally made up her mind to study abroad.",
+  "note": "Contrast with hesitate or waver."
+ },
+ {
+  "w": "marine",
+  "label": "EXAM VOCABULARY",
+  "def": "Relating to the sea.",
+  "ex": "Marine biologists study life in the ocean.",
+  "note": "A marine is also a soldier serving on ships."
+ },
+ {
+  "w": "mechanism",
+  "label": "EXAM VOCABULARY",
+  "def": "A process or system by which something works or happens.",
+  "ex": "Scientists studied the mechanism of memory.",
+  "note": "Also, the moving parts of a machine."
+ },
+ {
+  "w": "merchant",
+  "label": "EXAM VOCABULARY",
+  "def": "A person who buys and sells goods, especially in trade.",
+  "ex": "The merchants brought silk from the East.",
+  "note": "Related noun: merchandise, the goods for sale."
+ },
+ {
+  "w": "metropolis",
+  "label": "EXAM VOCABULARY",
+  "def": "A very large and important city.",
+  "ex": "Tokyo is a vast metropolis of millions of people.",
+  "note": "Related adjective: metropolitan."
+ },
+ {
+  "w": "migrate",
+  "label": "EXAM VOCABULARY",
+  "def": "To move from one region to another, often seasonally.",
+  "ex": "The birds migrate south every autumn.",
+  "note": "Emigrate means leaving a country; migrate is more general."
+ },
+ {
+  "w": "minuscule",
+  "label": "ANALOGY PRACTICE",
+  "def": "Extremely small.",
+  "ex": "A minuscule error ruined the whole experiment.",
+  "note": "Often misspelled miniscule. A stronger degree of small."
+ },
+ {
+  "w": "misconceived",
+  "label": "READING",
+  "def": "Based on a mistaken idea or poor judgment.",
+  "ex": "The plan was misconceived from the beginning.",
+  "note": "Related noun: misconception."
+ },
+ {
+  "w": "misconduct",
+  "label": "EXAM VOCABULARY",
+  "def": "Improper or unacceptable behavior, especially by a professional.",
+  "ex": "The officer was dismissed for misconduct.",
+  "note": "Stronger than a mistake; a breach of rules."
+ },
+ {
+  "w": "miser",
+  "label": "ANALOGY PRACTICE",
+  "def": "A person who hoards money and hates spending it.",
+  "ex": "The miser lived in poverty despite his wealth.",
+  "note": "A miser is extreme; a frugal person is sensibly careful."
+ },
+ {
+  "w": "modification",
+  "label": "READING",
+  "def": "A small change made to improve something.",
+  "ex": "The design needed only minor modification.",
+  "note": "Related verb: modify."
+ },
+ {
+  "w": "monarchy",
+  "label": "EXAM VOCABULARY",
+  "def": "A system of government ruled by a king or queen.",
+  "ex": "France was a monarchy before the revolution.",
+  "note": "Adjective: monarchical. Contrast with republic."
+ },
+ {
+  "w": "mosaic",
+  "label": "ANALOGY PRACTICE",
+  "def": "A picture made from small pieces of stone, glass, or tile.",
+  "ex": "The floor was decorated with a Roman mosaic.",
+  "note": "Figuratively, a mixture of many different parts."
+ },
+ {
+  "w": "motive",
+  "label": "EXAM VOCABULARY",
+  "def": "A reason for doing something.",
+  "ex": "The police could find no motive for the crime.",
+  "note": "Related noun: motivation."
+ },
+ {
+  "w": "murky",
+  "label": "EXAM VOCABULARY",
+  "def": "Dark and dirty; also, unclear or suspicious.",
+  "ex": "The details of the deal remain murky.",
+  "note": "Contrast with clear or transparent."
+ },
+ {
+  "w": "murmur",
+  "label": "ANALOGY PRACTICE",
+  "def": "A soft, low, continuous sound, especially of voices.",
+  "ex": "A murmur of approval spread through the crowd.",
+  "note": "A weaker degree of sound, as a whisper is to a shout."
+ },
+ {
+  "w": "myth",
+  "label": "EXAM VOCABULARY",
+  "def": "A traditional story explaining beliefs; also, a widely held false belief.",
+  "ex": "It is a myth that goldfish have short memories.",
+  "note": "Related noun: mythology."
+ },
+ {
+  "w": "navigator",
+  "label": "ANALOGY PRACTICE",
+  "def": "A person who plans and directs the route of a ship or plane.",
+  "ex": "The navigator plotted a course using the stars.",
+  "note": "Role : task pairs, like navigator : route."
+ },
+ {
+  "w": "negate",
+  "label": "EXAM VOCABULARY",
+  "def": "To cancel the effect of something; to deny.",
+  "ex": "One mistake can negate months of hard work.",
+  "note": "Related noun: negation."
+ },
+ {
+  "w": "negotiate",
+  "label": "READING",
+  "def": "To reach agreement through discussion; also, to get past an obstacle.",
+  "ex": "The truck slowly negotiated the steep gradient.",
+  "note": "The travel sense often surprises readers."
+ },
+ {
+  "w": "nobility",
+  "label": "EXAM VOCABULARY",
+  "def": "The highest social class; also, the quality of being noble.",
+  "ex": "Members of the nobility owned most of the land.",
+  "note": "Moral nobility means honesty and generosity."
+ },
+ {
+  "w": "novel",
+  "label": "ANALOGY PRACTICE",
+  "def": "New and original; as a noun, a long fictional book.",
+  "ex": "The scientist proposed a novel solution to the problem.",
+  "note": "Novel (new) differs from novice (beginner)."
+ },
+ {
+  "w": "novice",
+  "label": "ANALOGY PRACTICE",
+  "def": "A beginner with little experience.",
+  "ex": "The course is designed for novices.",
+  "note": "Contrast with expert or veteran."
+ },
+ {
+  "w": "rigid",
+  "label": "EXAM VOCABULARY",
+  "def": "Stiff and unable to bend; also, strict and unwilling to change.",
+  "ex": "His body grew rigid with fear.",
+  "note": "Contrast with flexible."
+ }
+]

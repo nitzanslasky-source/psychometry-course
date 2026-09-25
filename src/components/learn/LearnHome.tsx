@@ -78,7 +78,7 @@ export function LearnHome({ outline, stepIds, recorded, totals }: Props) {
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
             { href: "/rules", t: "Rules to know", d: "Every formula and rule from the course, on one page." },
-            { href: "/dictionary", t: "Dictionary", d: "Exam vocabulary with Hebrew meanings — tap to hear it." },
+            { href: "/dictionary", t: "Dictionary", d: "Exam vocabulary with meanings and examples — tap to hear it." },
             { href: "/listen", t: "Listen", d: "Vocabulary episodes for the bus, the gym or a walk." },
             { href: "/mental-math", t: "Mental math", d: "60-second rounds: times tables, squares, fractions." },
           ].map((x) => (

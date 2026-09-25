@@ -1,46 +1,41 @@
-"""Build the student site's extra content: the dictionary (content/full-course/dictionary.json).
+"""Build the student dictionary (content/full-course/dictionary.json). English only — no translations.
 
 Sources:
-- content/sources/nite_gloss_he_en.json — English words with the Hebrew meaning NITE printed beside them in real exams
-  (copied from the elite project's work/verbal folder).
-- content/verbal_bank_all.json — English definitions from the reading-passage glossaries.
+- content/sources/vocab_pdf.json — the approved "Psychometric Vocabulary" dictionary (430 words and expressions,
+  parsed word-for-word from the teacher's PDF: definition, example, note, where it was seen in exams).
+- studio-build/vocab_new_*.json — added words in the same style: vocabulary from the course's analogy questions,
+  words glossed in real exams, and reading-passage terms.
 
     python3 studio-build/export_extras.py
 """
-import json, os, re
-from collections import OrderedDict
+import glob, json, os, re
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OUT = os.path.join(ROOT, 'content', 'full-course', 'dictionary.json')
 
-def key(w): return re.sub(r'\s+', ' ', w.strip().lower())
+def key(w): return re.sub(r'[^a-z]', '', w.lower())
 
 def main():
-    words = OrderedDict()
-    for x in json.load(open(os.path.join(ROOT, 'content', 'sources', 'nite_gloss_he_en.json'), encoding='utf-8')):
-        en, he = x['en'].strip(), x['he'].strip()
-        if not en or not he: continue
-        e = words.setdefault(key(en), dict(en=en, he=[], def_='', years=set()))
-        if he not in e['he']: e['he'].append(he)
-        e['years'].add(str(x.get('exam', '')))
-    bank = json.load(open(os.path.join(ROOT, 'content', 'verbal_bank_all.json'), encoding='utf-8'))
-    for r in bank['reading_comprehension']:
-        for part in re.split(r';\s*', (r.get('glossary') or '').strip().rstrip('.')):
-            m = re.match(r'(.+?)\s+—\s+(.+)', part.strip())
-            if not m: continue
-            en, d = m.group(1).strip(), m.group(2).strip()
-            e = words.setdefault(key(en), dict(en=en, he=[], def_='', years=set()))
-            e['def_'] = e['def_'] or d
-    out = []
-    for e in words.values():
-        item = dict(w=e['en'].strip('"“”\' '))
-        if e['he']: item['he'] = ' · '.join(e['he'][:3])
-        if e['def_']: item['def'] = e['def_']
-        if any(y for y in e['years']): item['exam'] = True
-        out.append(item)
-    out.sort(key=lambda x: re.sub(r'[^a-z]', '', x['w'].lower()))
-    json.dump(out, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
-    print('dictionary:', len(out), 'words →', OUT)
+    out, seen = [], set()
+    for x in json.load(open(os.path.join(ROOT, 'content', 'sources', 'vocab_pdf.json'), encoding='utf-8')):
+        out.append(dict(w=x['w'], label=x['label'], def_=x['def_'], ex=x['ex'], note=x['note'], core=True))
+        seen.add(key(x['w']))
+    added = 0
+    for f in sorted(glob.glob(os.path.join(ROOT, 'studio-build', 'vocab_new_*.json'))):
+        for x in json.load(open(f, encoding='utf-8')):
+            k = key(x['w'])
+            if not k or k in seen: continue
+            seen.add(k); added += 1
+            out.append(dict(w=x['w'], label=x['label'], def_=x['def'], ex=x['ex'], note=x.get('note', '')))
+    out.sort(key=lambda x: key(x['w']))
+    res = []
+    for x in out:
+        e = dict(w=x['w'], label=x['label'], def_=x['def_'], ex=x['ex'])
+        if x['note']: e['note'] = x['note']
+        if x.get('core'): e['core'] = True
+        res.append({('def' if k == 'def_' else k): v for k, v in e.items()})
+    json.dump(res, open(OUT, 'w', encoding='utf-8'), ensure_ascii=False, separators=(',', ':'))
+    print('dictionary:', len(res), 'entries (%d from the PDF, %d added) →' % (len(res) - added, added), OUT)
 
 if __name__ == '__main__':
     main()

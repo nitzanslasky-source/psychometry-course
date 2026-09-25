@@ -7,14 +7,19 @@ import type { CourseCardStep, SubjectKey } from "./fullCourseTypes";
 
 const DIR = path.join(process.cwd(), "content", "full-course");
 
+export type DictLabel = "EXAM ANALOGY" | "EXAM VOCABULARY" | "ADDITIONAL WORD" | "ANALOGY PRACTICE" | "READING";
+
 export interface DictEntry {
   w: string;
-  /** Hebrew meaning (from the glosses printed in real exams). */
-  he?: string;
-  /** Short English definition. */
-  def?: string;
-  /** The word appeared (glossed) in a real NITE exam. */
-  exam?: boolean;
+  label: DictLabel;
+  /** Plain-English definition. */
+  def: string;
+  /** Example sentence. */
+  ex: string;
+  /** A short tip: contrast, related form, analogy pairing. */
+  note?: string;
+  /** From the core "Psychometric Vocabulary" list. */
+  core?: boolean;
 }
 
 export function getDictionary(): DictEntry[] {

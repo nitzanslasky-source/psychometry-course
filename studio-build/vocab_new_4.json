@@ -1,0 +1,625 @@
+[
+ {
+  "w": "amass",
+  "label": "ANALOGY PRACTICE",
+  "def": "To gather or collect a large amount over time.",
+  "ex": "He amassed a huge collection of stamps.",
+  "note": "Suggests accumulation, not a single act."
+ },
+ {
+  "w": "certify",
+  "label": "EXAM VOCABULARY",
+  "def": "To officially confirm that something is true or meets a standard.",
+  "ex": "The inspector certified that the building was safe.",
+  "note": "Related noun: certificate, the document that certifies."
+ },
+ {
+  "w": "clarify",
+  "label": "ANALOGY PRACTICE",
+  "def": "To make something clearer or easier to understand.",
+  "ex": "The teacher clarified the difficult passage.",
+  "note": "Noun: clarification."
+ },
+ {
+  "w": "contract",
+  "label": "ANALOGY PRACTICE",
+  "def": "To become smaller or shorter.",
+  "ex": "Most metals contract slightly as they cool down.",
+  "note": "Also, to catch an illness; noun: a formal agreement."
+ },
+ {
+  "w": "demolish",
+  "label": "EXAM VOCABULARY",
+  "def": "To completely destroy a building or an argument.",
+  "ex": "The old factory was demolished last year.",
+  "note": "Noun: demolition."
+ },
+ {
+  "w": "discern",
+  "label": "EXAM VOCABULARY",
+  "def": "To notice or understand something that is not obvious.",
+  "ex": "It was hard to discern his true motives.",
+  "note": "Adjective: discerning, showing good judgment."
+ },
+ {
+  "w": "dissolve",
+  "label": "EXAM VOCABULARY",
+  "def": "To mix into a liquid until it disappears.",
+  "ex": "Stir the sugar until it dissolves completely in the tea.",
+  "note": "Also, to end officially: to dissolve a parliament. A substance that dissolves is soluble."
+ },
+ {
+  "w": "dribble",
+  "label": "ANALOGY PRACTICE",
+  "def": "To let liquid fall in small drops; in sports, to move a ball with small touches.",
+  "ex": "The baby dribbled milk down his chin.",
+  "note": "A slow, small flow, like trickle."
+ },
+ {
+  "w": "evaporate",
+  "label": "EXAM VOCABULARY",
+  "def": "To turn from liquid into vapor; to disappear gradually.",
+  "ex": "His enthusiasm evaporated after the first failure.",
+  "note": "Contrast with condense."
+ },
+ {
+  "w": "evoke",
+  "label": "EXAM VOCABULARY",
+  "def": "To bring a feeling or memory to mind.",
+  "ex": "The song evoked memories of her childhood.",
+  "note": "Related adjective: evocative."
+ },
+ {
+  "w": "far-reaching",
+  "label": "EXAM VOCABULARY",
+  "def": "Having a wide range of effects or influence.",
+  "ex": "The new reform had far-reaching consequences for every school.",
+  "note": "Often said of changes, effects, or decisions."
+ },
+ {
+  "w": "fortify",
+  "label": "EXAM VOCABULARY",
+  "def": "To strengthen, especially against attack.",
+  "ex": "The soldiers fortified the town walls.",
+  "note": "Related noun: fortification."
+ },
+ {
+  "w": "glean",
+  "label": "ANALOGY PRACTICE",
+  "def": "To gather information bit by bit; originally, to collect leftover grain.",
+  "ex": "We gleaned a few facts from the old letters.",
+  "note": "The information is usually gathered slowly or with effort."
+ },
+ {
+  "w": "grant",
+  "label": "EXAM VOCABULARY",
+  "def": "To give or allow something, especially officially.",
+  "ex": "The bank granted him a loan.",
+  "note": "To take for granted: to assume without questioning."
+ },
+ {
+  "w": "immerse",
+  "label": "ANALOGY PRACTICE",
+  "def": "To put something completely in a liquid; also, to involve deeply.",
+  "ex": "She immersed herself in her studies.",
+  "note": "Noun: immersion, as in language immersion."
+ },
+ {
+  "w": "legislate",
+  "label": "ANALOGY PRACTICE",
+  "def": "To make laws.",
+  "ex": "Parliament legislated to protect children from dangerous work.",
+  "note": "Legislate is to law as compose is to music."
+ },
+ {
+  "w": "probe",
+  "label": "EXAM VOCABULARY",
+  "def": "To investigate or examine closely.",
+  "ex": "The committee probed the causes of the accident.",
+  "note": "Also a noun: an investigation or a device for exploring."
+ },
+ {
+  "w": "regulate",
+  "label": "EXAM VOCABULARY",
+  "def": "To control something by rules or adjust it to work properly.",
+  "ex": "The law regulates how factories dispose of waste.",
+  "note": "Noun: regulation."
+ },
+ {
+  "w": "retreat",
+  "label": "ANALOGY PRACTICE",
+  "def": "To move back or withdraw, especially from danger.",
+  "ex": "The army retreated after heavy losses.",
+  "note": "Also a quiet place for rest."
+ },
+ {
+  "w": "sanctify",
+  "label": "EXAM VOCABULARY",
+  "def": "To make holy, or to give something official or moral approval.",
+  "ex": "The ceremony was meant to sanctify the new temple.",
+  "note": "Related noun: sanctity; compare sanctuary, a holy or safe place."
+ },
+ {
+  "w": "sap",
+  "label": "ANALOGY PRACTICE",
+  "def": "The liquid that carries food through a plant.",
+  "ex": "Maple syrup is made from tree sap.",
+  "note": "As a verb, to gradually weaken: the heat sapped her energy."
+ },
+ {
+  "w": "scheming",
+  "label": "EXAM VOCABULARY",
+  "def": "Secretly making clever, dishonest plans to get what one wants.",
+  "ex": "The scheming adviser plotted to replace the king.",
+  "note": "From scheme; carries a negative sense, unlike simply planning."
+ },
+ {
+  "w": "scorching",
+  "label": "ANALOGY PRACTICE",
+  "def": "Extremely hot, enough to burn.",
+  "ex": "The scorching sun dried the fields within days.",
+  "note": "A stronger degree of hot or warm."
+ },
+ {
+  "w": "scripture",
+  "label": "READING",
+  "def": "Sacred writings of a religion.",
+  "ex": "The monks spent hours studying ancient scripture.",
+  "note": "Often plural: the scriptures."
+ },
+ {
+  "w": "seafarer",
+  "label": "EXAM VOCABULARY",
+  "def": "A person who travels by sea, especially a sailor.",
+  "ex": "Early seafarers navigated by the stars.",
+  "note": "Related adjective: seafaring."
+ },
+ {
+  "w": "seasoned",
+  "label": "EXAM VOCABULARY",
+  "def": "Experienced through long practice.",
+  "ex": "A seasoned reporter knows which questions to ask.",
+  "note": "Of food, it means flavored with salt or spices."
+ },
+ {
+  "w": "shatter",
+  "label": "EXAM VOCABULARY",
+  "def": "To break suddenly into many small pieces.",
+  "ex": "The glass shattered when it hit the floor.",
+  "note": "Figuratively, hopes or confidence can also be shattered."
+ },
+ {
+  "w": "shed",
+  "label": "EXAM VOCABULARY",
+  "def": "To lose or get rid of something naturally.",
+  "ex": "Many trees shed their leaves in autumn.",
+  "note": "Also in \"shed light on\": to help explain."
+ },
+ {
+  "w": "shelve",
+  "label": "EXAM VOCABULARY",
+  "def": "To postpone or set aside a plan.",
+  "ex": "The company shelved the project due to lack of funds.",
+  "note": "Postponed, not necessarily cancelled forever."
+ },
+ {
+  "w": "sieve",
+  "label": "ANALOGY PRACTICE",
+  "def": "A utensil with a mesh for separating fine particles from coarse ones.",
+  "ex": "She poured the flour through a sieve.",
+  "note": "A tool and its action: a sieve is used to sift."
+ },
+ {
+  "w": "simplistic",
+  "label": "EXAM VOCABULARY",
+  "def": "Treating something complex as if it were much simpler than it is.",
+  "ex": "His simplistic explanation ignored several key factors.",
+  "note": "Negative; contrast with simple, which can be positive."
+ },
+ {
+  "w": "skim",
+  "label": "EXAM VOCABULARY",
+  "def": "To read quickly to get the main idea.",
+  "ex": "She skimmed the article before the meeting.",
+  "note": "Also, to remove something from a liquid's surface."
+ },
+ {
+  "w": "skinflint",
+  "label": "ANALOGY PRACTICE",
+  "def": "A person who hates spending money; a miser.",
+  "ex": "The old skinflint refused to pay for repairs.",
+  "note": "Stronger and more negative than frugal."
+ },
+ {
+  "w": "small-time",
+  "label": "EXAM VOCABULARY",
+  "def": "Unimportant or operating on a minor scale.",
+  "ex": "He was only a small-time thief, not a gang leader.",
+  "note": "Contrast with big-time."
+ },
+ {
+  "w": "smelt",
+  "label": "EXAM VOCABULARY",
+  "def": "To extract metal from ore by heating and melting it.",
+  "ex": "Ancient workers smelted copper in simple furnaces.",
+  "note": "Not to be confused with smelt, a past form of smell."
+ },
+ {
+  "w": "solidify",
+  "label": "EXAM VOCABULARY",
+  "def": "To make or become solid, firm, or fixed.",
+  "ex": "The lava solidified as it cooled.",
+  "note": "Figuratively, to strengthen: to solidify an alliance."
+ },
+ {
+  "w": "soluble",
+  "label": "ANALOGY PRACTICE",
+  "def": "Able to be dissolved in a liquid.",
+  "ex": "Salt is soluble in water, but sand is not.",
+  "note": "A problem can also be soluble, meaning solvable; opposite: insoluble."
+ },
+ {
+  "w": "sonata",
+  "label": "ANALOGY PRACTICE",
+  "def": "A musical composition for one or two instruments, usually in several movements.",
+  "ex": "The pianist performed a sonata by Mozart.",
+  "note": "A type of musical work, as a sonnet is a type of poem."
+ },
+ {
+  "w": "spirit of the times",
+  "label": "EXAM VOCABULARY",
+  "def": "The general mood and ideas typical of a particular period.",
+  "ex": "Her novels captured the spirit of the times.",
+  "note": "Also known by the German word zeitgeist."
+ },
+ {
+  "w": "sputter",
+  "label": "ANALOGY PRACTICE",
+  "def": "To make popping, spitting sounds, or to speak in a confused, hurried way.",
+  "ex": "The old engine sputtered and then stopped.",
+  "note": "Splutter is a close variant."
+ },
+ {
+  "w": "squander",
+  "label": "EXAM VOCABULARY",
+  "def": "To waste money, time, or opportunities foolishly.",
+  "ex": "He squandered his savings on useless gadgets.",
+  "note": "Contrast with conserve or save."
+ },
+ {
+  "w": "stammer",
+  "label": "ANALOGY PRACTICE",
+  "def": "To speak with pauses and repeated sounds, often from nervousness.",
+  "ex": "He stammered an apology to the angry customer.",
+  "note": "Close in meaning to stutter."
+ },
+ {
+  "w": "standardization",
+  "label": "READING",
+  "def": "Making things conform to one common standard.",
+  "ex": "Standardization of parts made repairs much easier.",
+  "note": "Verb: standardize."
+ },
+ {
+  "w": "stanza",
+  "label": "ANALOGY PRACTICE",
+  "def": "A group of lines forming a unit in a poem.",
+  "ex": "The poem has four stanzas of six lines each.",
+  "note": "Stanza is to poem as paragraph is to essay."
+ },
+ {
+  "w": "stimulate",
+  "label": "EXAM VOCABULARY",
+  "def": "To encourage activity, growth, or interest.",
+  "ex": "The new policy aims to stimulate the economy.",
+  "note": "Related nouns: stimulus, stimulation."
+ },
+ {
+  "w": "strain",
+  "label": "ANALOGY PRACTICE",
+  "def": "To pass a liquid through a sieve to separate solids.",
+  "ex": "Strain the pasta before adding the sauce.",
+  "note": "Also, to stretch or overwork: to strain a muscle."
+ },
+ {
+  "w": "strive",
+  "label": "EXAM VOCABULARY",
+  "def": "To make great efforts to achieve something.",
+  "ex": "The team strives for excellence in every game.",
+  "note": "Past forms: strove, striven."
+ },
+ {
+  "w": "stutter",
+  "label": "ANALOGY PRACTICE",
+  "def": "To speak with involuntary repetition of sounds, especially first sounds.",
+  "ex": "She stuttered when asked to speak in public.",
+  "note": "Often a lasting speech condition; compare stammer."
+ },
+ {
+  "w": "submerge",
+  "label": "READING",
+  "def": "To put or keep under water.",
+  "ex": "The flood submerged the entire village.",
+  "note": "Opposite: emerge or surface."
+ },
+ {
+  "w": "subside",
+  "label": "EXAM VOCABULARY",
+  "def": "To become less strong or intense; to die down.",
+  "ex": "The storm finally subsided after midnight.",
+  "note": "Also, of land, to sink to a lower level."
+ },
+ {
+  "w": "subsist on",
+  "label": "READING",
+  "def": "To stay alive by means of a particular food or income.",
+  "ex": "The villagers subsisted on rice and fish.",
+  "note": "Related noun: subsistence, having just enough to survive."
+ },
+ {
+  "w": "subtle",
+  "label": "EXAM VOCABULARY",
+  "def": "Small and hard to notice, but important.",
+  "ex": "There is a subtle difference between the two words.",
+  "note": "The b is silent; noun: subtlety."
+ },
+ {
+  "w": "summit",
+  "label": "ANALOGY PRACTICE",
+  "def": "The highest point of a mountain.",
+  "ex": "The climbers reached the summit at dawn.",
+  "note": "Also, a meeting between heads of government."
+ },
+ {
+  "w": "suppress",
+  "label": "EXAM VOCABULARY",
+  "def": "To stop something by force or to hold back a feeling.",
+  "ex": "She suppressed a laugh during the lecture.",
+  "note": "Related noun: suppression."
+ },
+ {
+  "w": "surmount",
+  "label": "READING",
+  "def": "To overcome a difficulty or obstacle.",
+  "ex": "They surmounted many problems to finish on time.",
+  "note": "Related adjective: insurmountable, impossible to overcome."
+ },
+ {
+  "w": "sustain",
+  "label": "READING",
+  "def": "To support or keep something going over time.",
+  "ex": "The river sustains the farms along its banks.",
+  "note": "Related adjective: sustainable."
+ },
+ {
+  "w": "take a stance",
+  "label": "EXAM VOCABULARY",
+  "def": "To publicly adopt a position on an issue.",
+  "ex": "The mayor took a firm stance against the plan.",
+  "note": "Stance is a position or attitude."
+ },
+ {
+  "w": "take root",
+  "label": "EXAM VOCABULARY",
+  "def": "To become established and begin to grow or develop.",
+  "ex": "The new ideas slowly took root in society.",
+  "note": "Literally said of plants; figuratively of ideas and habits."
+ },
+ {
+  "w": "tangible",
+  "label": "EXAM VOCABULARY",
+  "def": "Real and able to be touched or clearly seen.",
+  "ex": "The program produced tangible results within a year.",
+  "note": "Opposite: intangible."
+ },
+ {
+  "w": "terminate",
+  "label": "READING",
+  "def": "To bring something to an end.",
+  "ex": "The company terminated the contract early.",
+  "note": "Related noun: termination."
+ },
+ {
+  "w": "terminology",
+  "label": "READING",
+  "def": "The set of special terms used in a particular field.",
+  "ex": "Doctors should avoid technical terminology when speaking to patients.",
+  "note": "Not to be confused with termination."
+ },
+ {
+  "w": "therapeutic",
+  "label": "READING",
+  "def": "Having a healing or calming effect.",
+  "ex": "Gardening can be therapeutic for stressed people.",
+  "note": "Related noun: therapy."
+ },
+ {
+  "w": "thimble",
+  "label": "ANALOGY PRACTICE",
+  "def": "A small cap worn on the finger to protect it when sewing.",
+  "ex": "She pushed the needle through with a thimble.",
+  "note": "A protective tool, like a helmet for the head."
+ },
+ {
+  "w": "timber",
+  "label": "ANALOGY PRACTICE",
+  "def": "Wood prepared for use in building.",
+  "ex": "The cabin was built from local timber.",
+  "note": "Tree is to timber as raw material is to processed material."
+ },
+ {
+  "w": "to no avail",
+  "label": "EXAM VOCABULARY",
+  "def": "Without success; with no useful result.",
+  "ex": "They searched for the key, but to no avail.",
+  "note": "Avail means use or benefit."
+ },
+ {
+  "w": "toil",
+  "label": "EXAM VOCABULARY",
+  "def": "To work very hard for a long time.",
+  "ex": "The workers toiled in the fields all day.",
+  "note": "Also a noun meaning exhausting work."
+ },
+ {
+  "w": "tolerance",
+  "label": "EXAM VOCABULARY",
+  "def": "Willingness to accept views or behavior different from one's own.",
+  "ex": "The school promotes tolerance among students.",
+  "note": "Also, the ability to endure something, e.g. heat tolerance."
+ },
+ {
+  "w": "tone down",
+  "label": "EXAM VOCABULARY",
+  "def": "To make something less intense, extreme, or forceful.",
+  "ex": "The editor asked him to tone down his criticism.",
+  "note": "Contrast with intensify."
+ },
+ {
+  "w": "topple",
+  "label": "ANALOGY PRACTICE",
+  "def": "To fall over, or to cause to fall; to overthrow.",
+  "ex": "The strong wind toppled several old trees in the park.",
+  "note": "Often used for removing leaders from power."
+ },
+ {
+  "w": "transpire",
+  "label": "READING",
+  "def": "To become known, or to turn out.",
+  "ex": "It transpired that the letter was a forgery.",
+  "note": "Also used loosely to mean happen."
+ },
+ {
+  "w": "tremor",
+  "label": "ANALOGY PRACTICE",
+  "def": "A slight shaking movement, especially of the ground.",
+  "ex": "A small tremor was felt before the earthquake.",
+  "note": "A weaker degree of an earthquake."
+ },
+ {
+  "w": "trickle",
+  "label": "ANALOGY PRACTICE",
+  "def": "To flow slowly in a thin stream.",
+  "ex": "Water trickled down the cave wall.",
+  "note": "Weaker than flow; contrast with gush."
+ },
+ {
+  "w": "trivial",
+  "label": "EXAM VOCABULARY",
+  "def": "Of little value or importance.",
+  "ex": "They argued over a trivial detail.",
+  "note": "Related noun: trivia."
+ },
+ {
+  "w": "tyrannical",
+  "label": "EXAM VOCABULARY",
+  "def": "Using power in a cruel and unfair way.",
+  "ex": "The tyrannical ruler jailed all his critics.",
+  "note": "Related nouns: tyrant, tyranny."
+ },
+ {
+  "w": "unauthorized",
+  "label": "EXAM VOCABULARY",
+  "def": "Done without official permission.",
+  "ex": "Unauthorized entry to the lab is forbidden.",
+  "note": "British spelling: unauthorised."
+ },
+ {
+  "w": "unequivocal",
+  "label": "EXAM VOCABULARY",
+  "def": "Clear and allowing only one interpretation.",
+  "ex": "Her answer was an unequivocal no.",
+  "note": "Opposite: equivocal or ambiguous; adverb: unequivocally."
+ },
+ {
+  "w": "unleash",
+  "label": "EXAM VOCABULARY",
+  "def": "To suddenly release a strong force or feeling.",
+  "ex": "The decision unleashed a wave of protests.",
+  "note": "Literally, to free a dog from its leash."
+ },
+ {
+  "w": "untangle",
+  "label": "ANALOGY PRACTICE",
+  "def": "To free from twists or knots; to make clear.",
+  "ex": "It took an hour to untangle the fishing line.",
+  "note": "Figuratively, to sort out a confusing problem."
+ },
+ {
+  "w": "uphold",
+  "label": "EXAM VOCABULARY",
+  "def": "To support or confirm a law, decision, or principle.",
+  "ex": "The court upheld the original ruling.",
+  "note": "Contrast with overturn."
+ },
+ {
+  "w": "vagabond",
+  "label": "EXAM VOCABULARY",
+  "def": "A person who wanders from place to place without a home.",
+  "ex": "The vagabond slept in a different town each night.",
+  "note": "Similar to wanderer or drifter."
+ },
+ {
+  "w": "ventilation",
+  "label": "EXAM VOCABULARY",
+  "def": "The supply of fresh air to a room or building.",
+  "ex": "Poor ventilation made the room stuffy.",
+  "note": "Verb: ventilate."
+ },
+ {
+  "w": "verdict",
+  "label": "ANALOGY PRACTICE",
+  "def": "The decision reached at the end of a trial.",
+  "ex": "The jury delivered its verdict after two days.",
+  "note": "The final result of a trial, as a score is of a game."
+ },
+ {
+  "w": "vigilance",
+  "label": "READING",
+  "def": "Careful watchfulness for danger or difficulty.",
+  "ex": "Constant vigilance helped the guards prevent theft.",
+  "note": "Adjective: vigilant."
+ },
+ {
+  "w": "vital",
+  "label": "EXAM VOCABULARY",
+  "def": "Absolutely necessary or essential.",
+  "ex": "Water is vital for all living things.",
+  "note": "Also, full of energy; noun: vitality."
+ },
+ {
+  "w": "wager",
+  "label": "READING",
+  "def": "A bet, or to bet.",
+  "ex": "He placed a small wager on the race.",
+  "note": "Can be used as a noun or a verb."
+ },
+ {
+  "w": "wax",
+  "label": "EXAM VOCABULARY",
+  "def": "A soft substance, as in candles, that melts when heated.",
+  "ex": "The candle wax dripped onto the table.",
+  "note": "As a verb, to grow, as in the moon waxing and waning."
+ },
+ {
+  "w": "worthwhile",
+  "label": "EXAM VOCABULARY",
+  "def": "Worth the time, money, or effort spent.",
+  "ex": "Volunteering at the shelter proved a worthwhile experience for her.",
+  "note": "Contrast with pointless."
+ },
+ {
+  "w": "yield",
+  "label": "EXAM VOCABULARY",
+  "def": "To produce a result or crop; also, to give way.",
+  "ex": "The careful experiment yielded some very surprising results.",
+  "note": "Also, to surrender: to yield to pressure."
+ },
+ {
+  "w": "zoologist",
+  "label": "ANALOGY PRACTICE",
+  "def": "A scientist who studies animals.",
+  "ex": "The zoologist observed the gorillas for months.",
+  "note": "Field: zoology, as a botanist studies plants."
+ }
+]

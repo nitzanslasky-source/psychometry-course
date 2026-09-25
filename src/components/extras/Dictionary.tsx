@@ -1,27 +1,40 @@
 "use client";
 
 import { useDeferredValue, useEffect, useMemo, useState } from "react";
-import type { DictEntry } from "@/lib/extras";
+import type { DictEntry, DictLabel } from "@/lib/extras";
 import { canSpeak, speak, stopSpeaking } from "@/lib/speech";
 
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
 const first = (w: string) => (w.replace(/^[^a-z]+/i, "")[0] || "#").toUpperCase();
 
+export const LABEL_TEXT: Record<DictLabel, string> = {
+  "EXAM ANALOGY": "Exam analogy",
+  "EXAM VOCABULARY": "Exam word",
+  "ADDITIONAL WORD": "Worth knowing",
+  "ANALOGY PRACTICE": "Analogy practice",
+  READING: "Reading",
+};
+const FILTERS: { id: string; label: string; test: (e: DictEntry) => boolean }[] = [
+  { id: "all", label: "All words", test: () => true },
+  { id: "analogy", label: "Analogies", test: (e) => e.label === "EXAM ANALOGY" || e.label === "ANALOGY PRACTICE" },
+  { id: "exam", label: "From real exams", test: (e) => e.label === "EXAM ANALOGY" || e.label === "EXAM VOCABULARY" },
+  { id: "core", label: "Core list", test: (e) => !!e.core },
+];
+
 export function Dictionary({ entries }: { entries: DictEntry[] }) {
   const [q, setQ] = useState("");
-  const [examOnly, setExamOnly] = useState(false);
+  const [filter, setFilter] = useState("all");
   const [speakOk, setSpeakOk] = useState(false);
   useEffect(() => setSpeakOk(canSpeak()), []);
   const query = useDeferredValue(q.trim().toLowerCase());
+  const test = FILTERS.find((f) => f.id === filter)!.test;
 
   const shown = useMemo(
     () =>
       entries.filter(
-        (e) =>
-          (!examOnly || e.exam) &&
-          (!query || e.w.toLowerCase().includes(query) || (e.he || "").includes(query) || (e.def || "").toLowerCase().includes(query)),
+        (e) => test(e) && (!query || e.w.toLowerCase().includes(query) || e.def.toLowerCase().includes(query)),
       ),
-    [entries, query, examOnly],
+    [entries, query, test],
   );
   const groups = useMemo(() => {
     const m = new Map<string, DictEntry[]>();
@@ -42,71 +55,73 @@ export function Dictionary({ entries }: { entries: DictEntry[] }) {
             <input
               value={q}
               onChange={(e) => setQ(e.target.value)}
-              placeholder="Search a word, a meaning, or Hebrew…"
+              placeholder="Search a word or a meaning…"
               className="w-full rounded-full border border-line bg-white px-5 py-3 text-[15px] outline-none transition-shadow focus:border-ink focus:shadow-[0_0_0_1px_#101826]"
-              autoFocus
             />
           </label>
-          <button
-            type="button"
-            onPointerDown={() => setExamOnly(!examOnly)}
-            aria-pressed={examOnly}
-            className={["pressable rounded-full border px-4 py-2.5 text-sm", examOnly ? "border-ink bg-ink text-white" : "border-line bg-white text-ink-soft"].join(" ")}
-          >
-            From real exams
-          </button>
-          <span className="text-sm text-muted tabular-nums">{shown.length} words</span>
+          <span className="text-sm tabular-nums text-muted">{shown.length} words</span>
         </div>
-        {!query && (
-          <nav className="mt-3 flex flex-wrap gap-1 text-xs" aria-label="Jump to letter">
-            {LETTERS.map((l) => (
-              <a
-                key={l}
-                href={`#letter-${l}`}
-                className={["pressable flex h-7 w-7 items-center justify-center rounded-md", groups.has(l) ? "text-ink-soft hover:bg-paper-deep" : "pointer-events-none text-faint/60"].join(" ")}
-              >
-                {l}
-              </a>
-            ))}
-          </nav>
-        )}
+        <div className="mt-3 flex flex-wrap items-center gap-1.5">
+          {FILTERS.map((f) => (
+            <button
+              key={f.id}
+              type="button"
+              onPointerDown={() => setFilter(f.id)}
+              aria-pressed={filter === f.id}
+              className={["pressable rounded-full px-3.5 py-1.5 text-[13px]", filter === f.id ? "bg-ink text-white" : "border border-line bg-white text-ink-soft"].join(" ")}
+            >
+              {f.label}
+            </button>
+          ))}
+          {!query && (
+            <nav className="ml-auto hidden flex-wrap gap-0.5 text-xs md:flex" aria-label="Jump to letter">
+              {LETTERS.map((l) => (
+                <a
+                  key={l}
+                  href={`#letter-${l}`}
+                  className={["pressable flex h-6 w-6 items-center justify-center rounded", groups.has(l) ? "text-ink-soft hover:bg-paper-deep" : "pointer-events-none text-faint/50"].join(" ")}
+                >
+                  {l}
+                </a>
+              ))}
+            </nav>
+          )}
+        </div>
       </div>
 
       {shown.length === 0 && <p className="py-16 text-center text-muted">No words match “{q}”.</p>}
 
-      <div className="mt-6">
+      <div className="mt-4">
         {[...groups.entries()].map(([letter, list]) => (
           <section key={letter} id={`letter-${letter}`} className="scroll-mt-44">
-            <h2 className="display border-b border-line pb-2 pt-8 text-[36px] text-gold">{letter}</h2>
+            <h2 className="display border-b border-line pb-2 pt-10 text-[40px] text-gold">{letter}</h2>
             <ul className="divide-y divide-line">
               {list.map((e) => (
-                <li key={e.w} className="grid grid-cols-[1fr_auto] items-start gap-4 py-3.5 sm:grid-cols-[minmax(0,14rem)_1fr_auto]">
-                  <div className="font-medium text-ink">
-                    {e.w}
-                    {e.exam && <span className="ml-2 align-middle text-[10px] font-semibold uppercase tracking-[0.1em] text-gold">exam</span>}
+                <li key={e.w} className="grid gap-x-8 gap-y-2 py-6 sm:grid-cols-[13rem_1fr]">
+                  <div>
+                    <div className="flex items-center gap-2">
+                      <span className="display text-[26px] leading-tight">{e.w}</span>
+                      {speakOk && (
+                        <button
+                          type="button"
+                          aria-label={`Hear “${e.w}”`}
+                          onPointerDown={() => {
+                            stopSpeaking();
+                            void speak(e.w, "en", 0.9);
+                          }}
+                          className="pressable flex h-7 w-7 shrink-0 items-center justify-center rounded-full border border-line text-[11px] text-muted hover:border-faint hover:text-ink"
+                        >
+                          ♪
+                        </button>
+                      )}
+                    </div>
+                    <div className="mt-1 text-[10px] font-semibold uppercase tracking-[0.12em] text-gold">{LABEL_TEXT[e.label]}</div>
                   </div>
-                  <div className="col-span-2 text-[15px] text-ink-soft sm:col-span-1">
-                    {e.he && (
-                      <span dir="rtl" lang="he" className="text-[16px]">
-                        {e.he}
-                      </span>
-                    )}
-                    {e.he && e.def && <span className="mx-2 text-faint">·</span>}
-                    {e.def && <span className="text-muted">{e.def}</span>}
+                  <div className="max-w-2xl">
+                    <p className="text-[16px] leading-relaxed text-ink">{e.def}</p>
+                    <p className="mt-1.5 text-[15px] italic leading-relaxed text-ink-soft">“{e.ex}”</p>
+                    {e.note && <p className="mt-1.5 text-[13px] text-muted">{e.note}</p>}
                   </div>
-                  {speakOk && (
-                    <button
-                      type="button"
-                      aria-label={`Hear “${e.w}”`}
-                      onPointerDown={() => {
-                        stopSpeaking();
-                        void speak(e.w, "en", 0.9);
-                      }}
-                      className="pressable row-start-1 flex h-8 w-8 items-center justify-center rounded-full border border-line text-xs text-muted hover:border-faint hover:text-ink sm:row-start-auto"
-                    >
-                      ♪
-                    </button>
-                  )}
                 </li>
               ))}
             </ul>

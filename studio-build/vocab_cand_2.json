@@ -1,0 +1,2590 @@
+[
+{
+"w": "(in) his mind'seye",
+"src": [
+"exam"
+]
+},
+{
+"w": "earplugs",
+"src": [
+"analogy"
+]
+},
+{
+"w": "earth",
+"src": [
+"analogy"
+]
+},
+{
+"w": "edge",
+"src": [
+"exam"
+]
+},
+{
+"w": "edges",
+"src": [
+"exam"
+]
+},
+{
+"w": "editor",
+"src": [
+"analogy"
+]
+},
+{
+"w": "educated guess",
+"src": [
+"exam"
+]
+},
+{
+"w": "efficacy",
+"src": [
+"reading"
+],
+"readingDef": "effectiveness"
+},
+{
+"w": "efficiency",
+"src": [
+"exam"
+]
+},
+{
+"w": "effort",
+"src": [
+"exam"
+]
+},
+{
+"w": "egg",
+"src": [
+"analogy"
+]
+},
+{
+"w": "elbow",
+"src": [
+"analogy"
+]
+},
+{
+"w": "elbow pad",
+"src": [
+"analogy"
+]
+},
+{
+"w": "electric current",
+"src": [
+"analogy"
+]
+},
+{
+"w": "embodiment",
+"src": [
+"exam"
+]
+},
+{
+"w": "embroidered",
+"src": [
+"reading"
+],
+"readingDef": "sewn with thread"
+},
+{
+"w": "emergence",
+"src": [
+"exam"
+]
+},
+{
+"w": "emit",
+"src": [
+"exam"
+]
+},
+{
+"w": "emitted",
+"src": [
+"exam"
+]
+},
+{
+"w": "employing",
+"src": [
+"exam"
+]
+},
+{
+"w": "empty",
+"src": [
+"analogy"
+]
+},
+{
+"w": "encircled",
+"src": [
+"exam"
+]
+},
+{
+"w": "encircles",
+"src": [
+"exam"
+]
+},
+{
+"w": "encourage",
+"src": [
+"exam"
+]
+},
+{
+"w": "encouraging",
+"src": [
+"exam"
+]
+},
+{
+"w": "endure",
+"src": [
+"exam"
+]
+},
+{
+"w": "enforced",
+"src": [
+"exam"
+]
+},
+{
+"w": "engaged",
+"src": [
+"reading"
+],
+"readingDef": "hired"
+},
+{
+"w": "engraved",
+"src": [
+"exam"
+]
+},
+{
+"w": "enhanced",
+"src": [
+"exam"
+]
+},
+{
+"w": "entities",
+"src": [
+"exam"
+]
+},
+{
+"w": "entitled",
+"src": [
+"reading"
+],
+"readingDef": "having the right"
+},
+{
+"w": "entomologist",
+"src": [
+"analogy"
+]
+},
+{
+"w": "entry, entries",
+"src": [
+"exam"
+]
+},
+{
+"w": "enumerated",
+"src": [
+"reading"
+],
+"readingDef": "listed one by one"
+},
+{
+"w": "equal volumes",
+"src": [
+"exam"
+]
+},
+{
+"w": "equation",
+"src": [
+"exam"
+]
+},
+{
+"w": "equator",
+"src": [
+"exam"
+]
+},
+{
+"w": "equilateral triangle",
+"src": [
+"exam"
+]
+},
+{
+"w": "equilibrium",
+"src": [
+"reading"
+],
+"readingDef": "balance"
+},
+{
+"w": "equipment",
+"src": [
+"analogy"
+]
+},
+{
+"w": "error",
+"src": [
+"analogy"
+]
+},
+{
+"w": "eruptions",
+"src": [
+"exam"
+]
+},
+{
+"w": "escaping gas",
+"src": [
+"analogy"
+]
+},
+{
+"w": "established",
+"src": [
+"exam"
+]
+},
+{
+"w": "etiquette",
+"src": [
+"exam"
+]
+},
+{
+"w": "evacuated",
+"src": [
+"reading"
+],
+"readingDef": "emptied of air"
+},
+{
+"w": "evaluate",
+"src": [
+"exam"
+]
+},
+{
+"w": "evaluating",
+"src": [
+"exam"
+]
+},
+{
+"w": "evaporation",
+"src": [
+"exam"
+]
+},
+{
+"w": "even",
+"src": [
+"exam"
+]
+},
+{
+"w": "evenly divisible",
+"src": [
+"exam"
+]
+},
+{
+"w": "evidence",
+"src": [
+"exam"
+]
+},
+{
+"w": "exact",
+"src": [
+"exam"
+]
+},
+{
+"w": "exactly",
+"src": [
+"exam"
+]
+},
+{
+"w": "exaggerated",
+"src": [
+"exam"
+]
+},
+{
+"w": "exalted",
+"src": [
+"exam"
+]
+},
+{
+"w": "exception",
+"src": [
+"exam"
+]
+},
+{
+"w": "excluded",
+"src": [
+"exam"
+]
+},
+{
+"w": "exemplary figure",
+"src": [
+"exam"
+]
+},
+{
+"w": "exercise",
+"src": [
+"analogy"
+]
+},
+{
+"w": "exhausted",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "expansion",
+"src": [
+"exam"
+]
+},
+{
+"w": "experimentation",
+"src": [
+"analogy"
+]
+},
+{
+"w": "expired",
+"src": [
+"exam"
+]
+},
+{
+"w": "explanation",
+"src": [
+"analogy"
+]
+},
+{
+"w": "exploitation",
+"src": [
+"exam"
+]
+},
+{
+"w": "explosive",
+"src": [
+"analogy"
+]
+},
+{
+"w": "exposed",
+"src": [
+"exam"
+]
+},
+{
+"w": "exposure",
+"src": [
+"exam"
+]
+},
+{
+"w": "extinct",
+"src": [
+"exam"
+]
+},
+{
+"w": "extremism",
+"src": [
+"exam"
+]
+},
+{
+"w": "eye",
+"src": [
+"analogy"
+]
+},
+{
+"w": "fables",
+"src": [
+"exam"
+]
+},
+{
+"w": "fabricated",
+"src": [
+"exam"
+]
+},
+{
+"w": "facial expressions",
+"src": [
+"exam"
+]
+},
+{
+"w": "faded",
+"src": [
+"exam"
+]
+},
+{
+"w": "fades",
+"src": [
+"exam"
+]
+},
+{
+"w": "faint glow",
+"src": [
+"analogy"
+]
+},
+{
+"w": "faintest",
+"src": [
+"exam"
+]
+},
+{
+"w": "fair die",
+"src": [
+"exam"
+]
+},
+{
+"w": "falling",
+"src": [
+"analogy"
+]
+},
+{
+"w": "false",
+"src": [
+"exam"
+]
+},
+{
+"w": "famine",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "farmer-producer",
+"src": [
+"exam"
+]
+},
+{
+"w": "fathomed",
+"src": [
+"exam"
+]
+},
+{
+"w": "fear",
+"src": [
+"analogy"
+]
+},
+{
+"w": "fearless",
+"src": [
+"analogy"
+]
+},
+{
+"w": "feminine",
+"src": [
+"exam"
+]
+},
+{
+"w": "fertilizes",
+"src": [
+"exam"
+]
+},
+{
+"w": "fictional",
+"src": [
+"exam"
+]
+},
+{
+"w": "filling",
+"src": [
+"exam"
+]
+},
+{
+"w": "fire",
+"src": [
+"analogy"
+]
+},
+{
+"w": "firebreak",
+"src": [
+"analogy"
+]
+},
+{
+"w": "fired",
+"src": [
+"exam"
+]
+},
+{
+"w": "firewood",
+"src": [
+"analogy"
+]
+},
+{
+"w": "fitting",
+"src": [
+"exam"
+]
+},
+{
+"w": "flame",
+"src": [
+"exam"
+]
+},
+{
+"w": "flat",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "flatly refused",
+"src": [
+"exam"
+]
+},
+{
+"w": "flavor",
+"src": [
+"analogy"
+]
+},
+{
+"w": "flawless",
+"src": [
+"analogy"
+]
+},
+{
+"w": "flood",
+"src": [
+"analogy"
+]
+},
+{
+"w": "flooding",
+"src": [
+"exam"
+]
+},
+{
+"w": "floor",
+"src": [
+"analogy"
+]
+},
+{
+"w": "flour",
+"src": [
+"analogy"
+]
+},
+{
+"w": "flourishing",
+"src": [
+"exam"
+]
+},
+{
+"w": "flow",
+"src": [
+"analogy"
+]
+},
+{
+"w": "flower",
+"src": [
+"analogy"
+]
+},
+{
+"w": "flowing",
+"src": [
+"exam"
+]
+},
+{
+"w": "fluent speaking",
+"src": [
+"analogy"
+]
+},
+{
+"w": "foal",
+"src": [
+"analogy"
+]
+},
+{
+"w": "foggy",
+"src": [
+"exam"
+]
+},
+{
+"w": "folder",
+"src": [
+"exam"
+]
+},
+{
+"w": "foot",
+"src": [
+"analogy"
+]
+},
+{
+"w": "footprint",
+"src": [
+"analogy"
+]
+},
+{
+"w": "footstep",
+"src": [
+"analogy"
+]
+},
+{
+"w": "forbids",
+"src": [
+"exam"
+]
+},
+{
+"w": "force",
+"src": [
+"exam"
+]
+},
+{
+"w": "forged",
+"src": [
+"exam"
+]
+},
+{
+"w": "forgery",
+"src": [
+"exam"
+]
+},
+{
+"w": "formulated",
+"src": [
+"exam"
+]
+},
+{
+"w": "fossilized",
+"src": [
+"exam"
+]
+},
+{
+"w": "fossils",
+"src": [
+"exam"
+]
+},
+{
+"w": "fragile",
+"src": [
+"analogy"
+]
+},
+{
+"w": "fragmented",
+"src": [
+"reading"
+],
+"readingDef": "broke into pieces"
+},
+{
+"w": "frank",
+"src": [
+"analogy"
+]
+},
+{
+"w": "freedom, free",
+"src": [
+"exam"
+]
+},
+{
+"w": "frequency",
+"src": [
+"exam"
+]
+},
+{
+"w": "friction",
+"src": [
+"analogy"
+]
+},
+{
+"w": "from the outset",
+"src": [
+"exam"
+]
+},
+{
+"w": "full",
+"src": [
+"analogy"
+]
+},
+{
+"w": "full recovery",
+"src": [
+"analogy"
+]
+},
+{
+"w": "functionality",
+"src": [
+"exam"
+]
+},
+{
+"w": "furious",
+"src": [
+"analogy"
+]
+},
+{
+"w": "gained",
+"src": [
+"exam"
+]
+},
+{
+"w": "gambling",
+"src": [
+"exam"
+]
+},
+{
+"w": "gang",
+"src": [
+"exam"
+]
+},
+{
+"w": "gap",
+"src": [
+"exam"
+]
+},
+{
+"w": "garage",
+"src": [
+"analogy"
+]
+},
+{
+"w": "genetic variation",
+"src": [
+"exam"
+]
+},
+{
+"w": "geologist",
+"src": [
+"analogy"
+]
+},
+{
+"w": "glaciers",
+"src": [
+"exam"
+]
+},
+{
+"w": "glass",
+"src": [
+"analogy"
+]
+},
+{
+"w": "glimmer",
+"src": [
+"analogy"
+]
+},
+{
+"w": "glorified",
+"src": [
+"exam"
+]
+},
+{
+"w": "glove",
+"src": [
+"analogy"
+]
+},
+{
+"w": "goggles",
+"src": [
+"analogy"
+]
+},
+{
+"w": "gradual",
+"src": [
+"exam"
+]
+},
+{
+"w": "grain",
+"src": [
+"analogy"
+]
+},
+{
+"w": "grants",
+"src": [
+"exam"
+]
+},
+{
+"w": "grave",
+"src": [
+"exam"
+]
+},
+{
+"w": "grew rigid",
+"src": [
+"exam"
+]
+},
+{
+"w": "groove",
+"src": [
+"analogy"
+]
+},
+{
+"w": "ground motion",
+"src": [
+"analogy"
+]
+},
+{
+"w": "guardrail",
+"src": [
+"analogy"
+]
+},
+{
+"w": "guide dogs",
+"src": [
+"exam"
+]
+},
+{
+"w": "gullet",
+"src": [
+"exam"
+]
+},
+{
+"w": "gymnasium",
+"src": [
+"analogy"
+]
+},
+{
+"w": "habituation",
+"src": [
+"reading"
+],
+"readingDef": "becoming accustomed to something"
+},
+{
+"w": "had been worthless",
+"src": [
+"exam"
+]
+},
+{
+"w": "half",
+"src": [
+"exam"
+]
+},
+{
+"w": "hand",
+"src": [
+"analogy"
+]
+},
+{
+"w": "handle",
+"src": [
+"analogy"
+]
+},
+{
+"w": "harbor",
+"src": [
+"analogy"
+]
+},
+{
+"w": "hard",
+"src": [
+"analogy"
+]
+},
+{
+"w": "hazard",
+"src": [
+"reading"
+],
+"readingDef": "danger"
+},
+{
+"w": "head",
+"src": [
+"analogy"
+]
+},
+{
+"w": "hearing",
+"src": [
+"analogy"
+]
+},
+{
+"w": "hearing damage",
+"src": [
+"analogy"
+]
+},
+{
+"w": "hedonist",
+"src": [
+"exam"
+]
+},
+{
+"w": "height",
+"src": [
+"exam"
+]
+},
+{
+"w": "heir",
+"src": [
+"exam"
+]
+},
+{
+"w": "helmet",
+"src": [
+"analogy"
+]
+},
+{
+"w": "hen",
+"src": [
+"analogy"
+]
+},
+{
+"w": "her reputation declined",
+"src": [
+"exam"
+]
+},
+{
+"w": "her star faded",
+"src": [
+"exam"
+]
+},
+{
+"w": "hexagon",
+"src": [
+"exam"
+]
+},
+{
+"w": "hindsight",
+"src": [
+"exam"
+]
+},
+{
+"w": "historian",
+"src": [
+"analogy"
+]
+},
+{
+"w": "holding on",
+"src": [
+"exam"
+]
+},
+{
+"w": "home",
+"src": [
+"analogy"
+]
+},
+{
+"w": "homeless",
+"src": [
+"analogy"
+]
+},
+{
+"w": "honey",
+"src": [
+"analogy"
+]
+},
+{
+"w": "horizontal",
+"src": [
+"exam"
+]
+},
+{
+"w": "horizontal axis",
+"src": [
+"exam"
+]
+},
+{
+"w": "horse",
+"src": [
+"analogy"
+]
+},
+{
+"w": "hot",
+"src": [
+"analogy"
+]
+},
+{
+"w": "humidity",
+"src": [
+"exam"
+]
+},
+{
+"w": "humming",
+"src": [
+"exam"
+]
+},
+{
+"w": "hunter-gatherer",
+"src": [
+"exam"
+]
+},
+{
+"w": "husk",
+"src": [
+"analogy"
+]
+},
+{
+"w": "hymn",
+"src": [
+"analogy"
+]
+},
+{
+"w": "hypotenuse",
+"src": [
+"exam"
+]
+},
+{
+"w": "ice sheet",
+"src": [
+"exam"
+]
+},
+{
+"w": "idealized",
+"src": [
+"exam"
+]
+},
+{
+"w": "identical",
+"src": [
+"exam"
+]
+},
+{
+"w": "identifying",
+"src": [
+"exam"
+]
+},
+{
+"w": "idleness",
+"src": [
+"exam"
+]
+},
+{
+"w": "ignorance",
+"src": [
+"exam"
+]
+},
+{
+"w": "ignore",
+"src": [
+"exam"
+]
+},
+{
+"w": "ignores",
+"src": [
+"exam"
+]
+},
+{
+"w": "illusion",
+"src": [
+"exam"
+]
+},
+{
+"w": "illustrator",
+"src": [
+"exam"
+]
+},
+{
+"w": "image",
+"src": [
+"exam"
+]
+},
+{
+"w": "imagery",
+"src": [
+"exam"
+]
+},
+{
+"w": "immerse",
+"src": [
+"exam"
+]
+},
+{
+"w": "immune system",
+"src": [
+"exam"
+]
+},
+{
+"w": "impact",
+"src": [
+"exam"
+]
+},
+{
+"w": "imperceptible",
+"src": [
+"reading"
+],
+"readingDef": "too small to be noticed"
+},
+{
+"w": "implement",
+"src": [
+"exam"
+]
+},
+{
+"w": "implication",
+"src": [
+"exam"
+]
+},
+{
+"w": "imposes strict limitations",
+"src": [
+"exam"
+]
+},
+{
+"w": "imprints",
+"src": [
+"exam"
+]
+},
+{
+"w": "improve",
+"src": [
+"exam"
+]
+},
+{
+"w": "improved",
+"src": [
+"analogy"
+]
+},
+{
+"w": "in public",
+"src": [
+"exam"
+]
+},
+{
+"w": "in step with",
+"src": [
+"reading"
+],
+"readingDef": "at the same pace as"
+},
+{
+"w": "inadequate",
+"src": [
+"exam"
+]
+},
+{
+"w": "inanimate",
+"src": [
+"exam"
+]
+},
+{
+"w": "inborn",
+"src": [
+"exam"
+]
+},
+{
+"w": "inclined",
+"src": [
+"reading"
+],
+"readingDef": "sloping"
+},
+{
+"w": "inclines",
+"src": [
+"reading"
+],
+"readingDef": "tilts"
+},
+{
+"w": "including",
+"src": [
+"exam"
+]
+},
+{
+"w": "inclusive",
+"src": [
+"exam"
+]
+},
+{
+"w": "incompatible",
+"src": [
+"exam"
+]
+},
+{
+"w": "inconsistent",
+"src": [
+"exam"
+]
+},
+{
+"w": "increased",
+"src": [
+"exam"
+]
+},
+{
+"w": "increases",
+"src": [
+"exam"
+]
+},
+{
+"w": "indicating",
+"src": [
+"exam"
+]
+},
+{
+"w": "indistinguishable",
+"src": [
+"exam"
+]
+},
+{
+"w": "individuals",
+"src": [
+"exam"
+]
+},
+{
+"w": "industrious",
+"src": [
+"analogy"
+]
+},
+{
+"w": "inequalities",
+"src": [
+"exam"
+]
+},
+{
+"w": "inevitability",
+"src": [
+"exam"
+]
+},
+{
+"w": "infancy",
+"src": [
+"exam"
+]
+},
+{
+"w": "infected",
+"src": [
+"exam"
+]
+},
+{
+"w": "inferior",
+"src": [
+"reading"
+],
+"readingDef": "of lower quality"
+},
+{
+"w": "inferred",
+"src": [
+"reading"
+],
+"readingDef": "worked out from indirect evidence"
+},
+{
+"w": "infinite",
+"src": [
+"exam"
+]
+},
+{
+"w": "infrastructure",
+"src": [
+"exam"
+]
+},
+{
+"w": "ingenuity",
+"src": [
+"exam"
+]
+},
+{
+"w": "ingrained",
+"src": [
+"exam"
+]
+},
+{
+"w": "inhibits",
+"src": [
+"exam"
+]
+},
+{
+"w": "injury",
+"src": [
+"analogy"
+]
+},
+{
+"w": "ink",
+"src": [
+"exam"
+]
+},
+{
+"w": "inn",
+"src": [
+"exam"
+]
+},
+{
+"w": "innate",
+"src": [
+"exam",
+"reading"
+],
+"readingDef": "present from birth"
+},
+{
+"w": "innovations",
+"src": [
+"exam"
+]
+},
+{
+"w": "input",
+"src": [
+"exam"
+]
+},
+{
+"w": "inscribed",
+"src": [
+"exam"
+]
+},
+{
+"w": "insects",
+"src": [
+"analogy"
+]
+},
+{
+"w": "insensible to",
+"src": [
+"reading"
+],
+"readingDef": "unaffected by"
+},
+{
+"w": "inseparable",
+"src": [
+"exam"
+]
+},
+{
+"w": "insight",
+"src": [
+"exam"
+]
+},
+{
+"w": "insisted",
+"src": [
+"exam"
+]
+},
+{
+"w": "inspection",
+"src": [
+"analogy"
+]
+},
+{
+"w": "instills terror",
+"src": [
+"exam"
+]
+},
+{
+"w": "insufficient",
+"src": [
+"exam"
+]
+},
+{
+"w": "intake",
+"src": [
+"exam"
+]
+},
+{
+"w": "integer",
+"src": [
+"exam"
+]
+},
+{
+"w": "integers",
+"src": [
+"exam"
+]
+},
+{
+"w": "intensify",
+"src": [
+"exam"
+]
+},
+{
+"w": "intensity",
+"src": [
+"exam"
+]
+},
+{
+"w": "intercepts",
+"src": [
+"exam"
+]
+},
+{
+"w": "interchangeable",
+"src": [
+"reading"
+],
+"readingDef": "able to be swapped"
+},
+{
+"w": "internal angles",
+"src": [
+"exam"
+]
+},
+{
+"w": "interpersonal",
+"src": [
+"exam"
+]
+},
+{
+"w": "interpretative",
+"src": [
+"exam"
+]
+},
+{
+"w": "intersect",
+"src": [
+"exam"
+]
+},
+{
+"w": "intimidated",
+"src": [
+"exam"
+]
+},
+{
+"w": "inventor",
+"src": [
+"exam"
+]
+},
+{
+"w": "invitation",
+"src": [
+"analogy"
+]
+},
+{
+"w": "invokes",
+"src": [
+"reading"
+],
+"readingDef": "calls upon (as an explanation)"
+},
+{
+"w": "irretrievably",
+"src": [
+"reading"
+],
+"readingDef": "beyond recovery"
+},
+{
+"w": "irreversible",
+"src": [
+"exam"
+]
+},
+{
+"w": "irrigation",
+"src": [
+"analogy"
+]
+},
+{
+"w": "is involuntary",
+"src": [
+"exam"
+]
+},
+{
+"w": "isosceles trapezoid",
+"src": [
+"exam"
+]
+},
+{
+"w": "isosceles triangle",
+"src": [
+"exam"
+]
+},
+{
+"w": "journey",
+"src": [
+"analogy"
+]
+},
+{
+"w": "judge",
+"src": [
+"analogy"
+]
+},
+{
+"w": "judgments",
+"src": [
+"exam"
+]
+},
+{
+"w": "juror",
+"src": [
+"analogy"
+]
+},
+{
+"w": "jury",
+"src": [
+"analogy"
+]
+},
+{
+"w": "juveniles",
+"src": [
+"exam"
+]
+},
+{
+"w": "key",
+"src": [
+"analogy"
+]
+},
+{
+"w": "keyboard",
+"src": [
+"exam"
+]
+},
+{
+"w": "kitchen",
+"src": [
+"analogy"
+]
+},
+{
+"w": "kite (deltoid)",
+"src": [
+"exam"
+]
+},
+{
+"w": "kitten",
+"src": [
+"analogy"
+]
+},
+{
+"w": "knee",
+"src": [
+"analogy"
+]
+},
+{
+"w": "kneepad",
+"src": [
+"analogy"
+]
+},
+{
+"w": "knife",
+"src": [
+"analogy"
+]
+},
+{
+"w": "laboratory",
+"src": [
+"analogy"
+]
+},
+{
+"w": "lack",
+"src": [
+"exam"
+]
+},
+{
+"w": "lack of water",
+"src": [
+"analogy"
+]
+},
+{
+"w": "ladder",
+"src": [
+"analogy"
+]
+},
+{
+"w": "lamb",
+"src": [
+"analogy"
+]
+},
+{
+"w": "language",
+"src": [
+"analogy"
+]
+},
+{
+"w": "large",
+"src": [
+"analogy"
+]
+},
+{
+"w": "latent",
+"src": [
+"exam"
+]
+},
+{
+"w": "law",
+"src": [
+"analogy"
+]
+},
+{
+"w": "layer",
+"src": [
+"exam"
+]
+},
+{
+"w": "layers",
+"src": [
+"exam"
+]
+},
+{
+"w": "leak detector",
+"src": [
+"analogy"
+]
+},
+{
+"w": "leather",
+"src": [
+"analogy"
+]
+},
+{
+"w": "left over",
+"src": [
+"exam"
+]
+},
+{
+"w": "legislator",
+"src": [
+"exam"
+]
+},
+{
+"w": "legs",
+"src": [
+"exam"
+]
+},
+{
+"w": "length",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "lengths",
+"src": [
+"exam"
+]
+},
+{
+"w": "letter",
+"src": [
+"analogy"
+]
+},
+{
+"w": "level of difficulty",
+"src": [
+"exam"
+]
+},
+{
+"w": "libel",
+"src": [
+"exam"
+]
+},
+{
+"w": "library",
+"src": [
+"analogy"
+]
+},
+{
+"w": "licensed",
+"src": [
+"exam"
+]
+},
+{
+"w": "lifebuoy",
+"src": [
+"analogy"
+]
+},
+{
+"w": "light",
+"src": [
+"analogy"
+]
+},
+{
+"w": "light breeze",
+"src": [
+"analogy"
+]
+},
+{
+"w": "light sensor",
+"src": [
+"analogy"
+]
+},
+{
+"w": "lightning damage",
+"src": [
+"analogy"
+]
+},
+{
+"w": "lightning rod",
+"src": [
+"analogy"
+]
+},
+{
+"w": "limited",
+"src": [
+"exam"
+]
+},
+{
+"w": "line",
+"src": [
+"exam"
+]
+},
+{
+"w": "linguist",
+"src": [
+"analogy"
+]
+},
+{
+"w": "linguistic overabundance",
+"src": [
+"exam"
+]
+},
+{
+"w": "lining",
+"src": [
+"analogy"
+]
+},
+{
+"w": "link",
+"src": [
+"analogy"
+]
+},
+{
+"w": "liquid",
+"src": [
+"analogy"
+]
+},
+{
+"w": "litter",
+"src": [
+"analogy"
+]
+},
+{
+"w": "loaf",
+"src": [
+"analogy"
+]
+},
+{
+"w": "loans",
+"src": [
+"exam"
+]
+},
+{
+"w": "lock",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "lofty",
+"src": [
+"exam"
+]
+},
+{
+"w": "long-held",
+"src": [
+"exam"
+]
+},
+{
+"w": "long-term",
+"src": [
+"exam"
+]
+},
+{
+"w": "long-time",
+"src": [
+"exam"
+]
+},
+{
+"w": "loss",
+"src": [
+"analogy",
+"exam"
+]
+},
+{
+"w": "lottery",
+"src": [
+"exam"
+]
+},
+{
+"w": "low",
+"src": [
+"exam"
+]
+},
+{
+"w": "lubrication",
+"src": [
+"analogy"
+]
+},
+{
+"w": "made up her mind",
+"src": [
+"exam"
+]
+},
+{
+"w": "magnifier",
+"src": [
+"analogy"
+]
+},
+{
+"w": "mailbox",
+"src": [
+"analogy"
+]
+},
+{
+"w": "majority rule",
+"src": [
+"exam"
+]
+},
+{
+"w": "making generalizations",
+"src": [
+"exam"
+]
+},
+{
+"w": "manners",
+"src": [
+"exam"
+]
+},
+{
+"w": "manufacturing",
+"src": [
+"analogy"
+]
+},
+{
+"w": "map",
+"src": [
+"analogy"
+]
+},
+{
+"w": "marine",
+"src": [
+"exam"
+]
+},
+{
+"w": "market share",
+"src": [
+"exam"
+]
+},
+{
+"w": "masculine",
+"src": [
+"exam"
+]
+},
+{
+"w": "mass",
+"src": [
+"analogy"
+]
+},
+{
+"w": "mass extinction",
+"src": [
+"exam"
+]
+},
+{
+"w": "matched",
+"src": [
+"exam"
+]
+},
+{
+"w": "matters",
+"src": [
+"exam"
+]
+},
+{
+"w": "mechanism",
+"src": [
+"exam"
+]
+},
+{
+"w": "mechanisms",
+"src": [
+"exam"
+]
+},
+{
+"w": "median",
+"src": [
+"exam"
+]
+},
+{
+"w": "melody",
+"src": [
+"analogy"
+]
+},
+{
+"w": "melting",
+"src": [
+"exam"
+]
+},
+{
+"w": "melts",
+"src": [
+"exam"
+]
+},
+{
+"w": "membrane",
+"src": [
+"exam"
+]
+},
+{
+"w": "merchant",
+"src": [
+"exam"
+]
+},
+{
+"w": "merchants",
+"src": [
+"exam"
+]
+},
+{
+"w": "metabolic",
+"src": [
+"exam"
+]
+},
+{
+"w": "metal",
+"src": [
+"analogy"
+]
+},
+{
+"w": "metal detector",
+"src": [
+"analogy"
+]
+},
+{
+"w": "methods",
+"src": [
+"exam"
+]
+},
+{
+"w": "metropolis",
+"src": [
+"exam"
+]
+},
+{
+"w": "microphone",
+"src": [
+"analogy"
+]
+},
+{
+"w": "midpoint",
+"src": [
+"exam"
+]
+},
+{
+"w": "migrated",
+"src": [
+"exam"
+]
+},
+{
+"w": "milk",
+"src": [
+"analogy"
+]
+},
+{
+"w": "mint",
+"src": [
+"analogy"
+]
+},
+{
+"w": "minuscule",
+"src": [
+"analogy"
+]
+},
+{
+"w": "misconceived",
+"src": [
+"reading"
+],
+"readingDef": "based on a mistaken idea"
+},
+{
+"w": "misconduct",
+"src": [
+"exam"
+]
+},
+{
+"w": "miser",
+"src": [
+"analogy"
+]
+},
+{
+"w": "moderate",
+"src": [
+"exam"
+]
+},
+{
+"w": "modification",
+"src": [
+"reading"
+],
+"readingDef": "change"
+},
+{
+"w": "monarchical",
+"src": [
+"exam"
+]
+},
+{
+"w": "monarchy",
+"src": [
+"exam"
+]
+},
+{
+"w": "money",
+"src": [
+"analogy"
+]
+},
+{
+"w": "more valid",
+"src": [
+"exam"
+]
+},
+{
+"w": "mosaic",
+"src": [
+"analogy"
+]
+},
+{
+"w": "motion sensor",
+"src": [
+"analogy"
+]
+},
+{
+"w": "motive",
+"src": [
+"exam"
+]
+},
+{
+"w": "motor scooter",
+"src": [
+"exam"
+]
+},
+{
+"w": "mountain",
+"src": [
+"analogy"
+]
+},
+{
+"w": "mouth",
+"src": [
+"analogy"
+]
+},
+{
+"w": "mouthguard",
+"src": [
+"analogy"
+]
+},
+{
+"w": "movement",
+"src": [
+"analogy"
+]
+},
+{
+"w": "multiplied",
+"src": [
+"exam"
+]
+},
+{
+"w": "multiplies",
+"src": [
+"exam"
+]
+},
+{
+"w": "multiply by",
+"src": [
+"exam"
+]
+},
+{
+"w": "murky",
+"src": [
+"exam"
+]
+},
+{
+"w": "murmur",
+"src": [
+"analogy"
+]
+},
+{
+"w": "musician",
+"src": [
+"analogy"
+]
+},
+{
+"w": "mutually exclusive",
+"src": [
+"reading"
+],
+"readingDef": "unable to be true at the same time"
+},
+{
+"w": "myths",
+"src": [
+"exam"
+]
+},
+{
+"w": "name",
+"src": [
+"analogy"
+]
+},
+{
+"w": "nameless",
+"src": [
+"analogy"
+]
+},
+{
+"w": "nature",
+"src": [
+"exam"
+]
+},
+{
+"w": "navigator",
+"src": [
+"analogy"
+]
+},
+{
+"w": "near-sightedness",
+"src": [
+"exam"
+]
+},
+{
+"w": "nebula",
+"src": [
+"exam"
+]
+},
+{
+"w": "necessary",
+"src": [
+"exam"
+]
+},
+{
+"w": "needle",
+"src": [
+"analogy"
+]
+},
+{
+"w": "needle prick",
+"src": [
+"analogy"
+]
+},
+{
+"w": "negate",
+"src": [
+"exam"
+]
+},
+{
+"w": "negative numbers",
+"src": [
+"exam"
+]
+},
+{
+"w": "negotiate (a gradient)",
+"src": [
+"reading"
+],
+"readingDef": "to travel up or down it"
+},
+{
+"w": "no longer",
+"src": [
+"exam"
+]
+},
+{
+"w": "nobility",
+"src": [
+"exam"
+]
+},
+{
+"w": "not compatible",
+"src": [
+"exam"
+]
+},
+{
+"w": "not likely to",
+"src": [
+"exam"
+]
+},
+{
+"w": "noticeable",
+"src": [
+"exam"
+]
+},
+{
+"w": "noun",
+"src": [
+"exam"
+]
+},
+{
+"w": "novel",
+"src": [
+"analogy"
+]
+},
+{
+"w": "novelist",
+"src": [
+"analogy"
+]
+},
+{
+"w": "novice",
+"src": [
+"analogy"
+]
+},
+{
+"w": "number",
+"src": [
+"exam"
+]
+},
+{
+"w": "number line",
+"src": [
+"exam"
+]
+},
+{
+"w": "nun",
+"src": [
+"exam"
+]
+}
+]

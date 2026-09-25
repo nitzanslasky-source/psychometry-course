@@ -2,13 +2,13 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { DictEntry } from "@/lib/extras";
-import { canSpeak, hasHebrewVoice, speak, stopSpeaking, wait } from "@/lib/speech";
+import { canSpeak, speak, stopSpeaking, wait } from "@/lib/speech";
 
 const SET = 25;
 
-/** Vocabulary "podcast": the device reads each word, its Hebrew meaning, and the word again. */
+/** Vocabulary "podcast": the device reads each word, its meaning, an example sentence, and the word again. */
 export function ListenPlayer({ entries }: { entries: DictEntry[] }) {
-  const words = useMemo(() => entries.filter((e) => e.he || e.def), [entries]);
+  const words = useMemo(() => entries.filter((e) => e.def), [entries]);
   const sets = useMemo(() => {
     const out: { name: string; items: DictEntry[] }[] = [];
     for (let i = 0; i < words.length; i += SET) {
@@ -21,12 +21,7 @@ export function ListenPlayer({ entries }: { entries: DictEntry[] }) {
   }, [words]);
 
   const [ok, setOk] = useState(true);
-  const [heVoice, setHeVoice] = useState(false);
-  useEffect(() => {
-    setOk(canSpeak());
-    const t = setTimeout(() => setHeVoice(hasHebrewVoice()), 400); // voices load asynchronously
-    return () => clearTimeout(t);
-  }, []);
+  useEffect(() => setOk(canSpeak()), []);
 
   const [setIdx, setSetIdx] = useState<number | null>(null);
   const [shuffle, setShuffle] = useState(false);
@@ -66,9 +61,11 @@ export function ListenPlayer({ entries }: { entries: DictEntry[] }) {
         await wait(quiz ? 3200 : 600); // quiz: time to recall the meaning
         if (run.current !== my) return;
         setReveal(true);
-        if (e.he && heVoice) await speak(e.he.split(" · ")[0], "he", rate);
-        else if (e.def) await speak(e.def, "en", rate);
-        else await wait(1400);
+        await speak(e.def, "en", rate);
+        if (run.current !== my) return;
+        await wait(450);
+        if (run.current !== my) return;
+        await speak(e.ex, "en", rate);
         if (run.current !== my) return;
         await wait(500);
         await speak(e.w, "en", rate * 0.95);
@@ -77,7 +74,7 @@ export function ListenPlayer({ entries }: { entries: DictEntry[] }) {
       }
       if (run.current === my) setPlaying(false);
     },
-    [list, quiz, rate, heVoice],
+    [list, quiz, rate],
   );
 
   // lock-screen / headphone controls where supported
@@ -135,9 +132,9 @@ export function ListenPlayer({ entries }: { entries: DictEntry[] }) {
           </div>
           <div key={pos} className="rise-in mt-10 text-center">
             <div className="display text-[56px] sm:text-[72px]">{e.w}</div>
-            <div className={["mt-4 min-h-[2.5rem] transition-opacity duration-300", reveal ? "opacity-100" : "opacity-0"].join(" ")}>
-              {e.he && <div dir="rtl" lang="he" className="text-[26px] text-[#e9d9ad]">{e.he}</div>}
-              {e.def && <div className="mt-1 text-[16px] text-white/70">{e.def}</div>}
+            <div className={["mt-5 min-h-[6rem] transition-opacity duration-300", reveal ? "opacity-100" : "opacity-0"].join(" ")}>
+              <div className="mx-auto max-w-lg text-[20px] leading-snug text-[#e9d9ad]">{e.def}</div>
+              <div className="mx-auto mt-3 max-w-lg text-[16px] italic text-white/70">“{e.ex}”</div>
             </div>
           </div>
           <div className="mt-10 h-1 overflow-hidden rounded-full bg-white/15">
@@ -174,11 +171,6 @@ export function ListenPlayer({ entries }: { entries: DictEntry[] }) {
           </div>
         </div>
       </div>
-      {!heVoice && (
-        <p className="mt-4 text-center text-xs text-muted">
-          Your device has no Hebrew voice, so the meaning is shown on screen and the English definition is read where there is one.
-        </p>
-      )}
     </div>
   );
 }

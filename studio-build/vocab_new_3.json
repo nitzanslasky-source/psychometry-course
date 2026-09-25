@@ -1,0 +1,583 @@
+[
+ {
+  "w": "oar",
+  "label": "ANALOGY PRACTICE",
+  "def": "A long pole with a flat blade, used to row a boat.",
+  "ex": "She pulled hard on the oar to reach the shore.",
+  "note": "The tool used for rowing, as a paddle is for a canoe."
+ },
+ {
+  "w": "obligation",
+  "label": "EXAM VOCABULARY",
+  "def": "Something you must do because of a law, promise, or duty.",
+  "ex": "Parents have a legal obligation to send their children to school.",
+  "note": "Related forms: oblige, obligatory; contrast with an option or choice."
+ },
+ {
+  "w": "obliged",
+  "label": "READING",
+  "def": "Forced or required to do something by law, duty, or circumstances.",
+  "ex": "After the scandal, the minister felt obliged to resign.",
+  "note": "Also means grateful: \"I'm much obliged for your help.\""
+ },
+ {
+  "w": "observatory",
+  "label": "ANALOGY PRACTICE",
+  "def": "A building with telescopes for watching the stars and planets.",
+  "ex": "Astronomers at the observatory tracked the comet for weeks.",
+  "note": "Place and activity: an observatory is where observation happens."
+ },
+ {
+  "w": "odorless",
+  "label": "ANALOGY PRACTICE",
+  "def": "Having no smell at all.",
+  "ex": "Carbon monoxide is dangerous because it is odorless and invisible.",
+  "note": "From odor (a smell); compare tasteless and colorless."
+ },
+ {
+  "w": "off-key",
+  "label": "EXAM VOCABULARY",
+  "def": "Out of tune; not matching the correct musical notes.",
+  "ex": "His off-key singing made the whole audience wince.",
+  "note": "Also figurative: an off-key remark is unsuitable for the situation."
+ },
+ {
+  "w": "offense",
+  "label": "ANALOGY PRACTICE",
+  "def": "An illegal act or a crime; also, a feeling of being insulted.",
+  "ex": "Driving without a license is a serious offense.",
+  "note": "To take offense means to feel hurt or insulted; in sport, the attacking side."
+ },
+ {
+  "w": "omit",
+  "label": "EXAM VOCABULARY",
+  "def": "To leave out or fail to include something.",
+  "ex": "The editor omitted two paragraphs to shorten the article.",
+  "note": "Noun: omission; an omission can be deliberate or accidental."
+ },
+ {
+  "w": "open-minded",
+  "label": "EXAM VOCABULARY",
+  "def": "Willing to consider new ideas and opinions without prejudice.",
+  "ex": "An open-minded judge listens carefully to both sides.",
+  "note": "Contrast with narrow-minded or dogmatic."
+ },
+ {
+  "w": "orchard",
+  "label": "EXAM VOCABULARY",
+  "def": "A piece of land where fruit trees are grown.",
+  "ex": "We picked apples in the orchard behind the farmhouse.",
+  "note": "Pairs in analogies: orchard is to fruit trees as vineyard is to grapes."
+ },
+ {
+  "w": "ornithologist",
+  "label": "ANALOGY PRACTICE",
+  "def": "A scientist who studies birds.",
+  "ex": "The ornithologist recorded the migration routes of the storks.",
+  "note": "Specialist and subject: ornithologist to birds, as entomologist to insects."
+ },
+ {
+  "w": "outcome",
+  "label": "EXAM VOCABULARY",
+  "def": "The final result of an action, process, or event.",
+  "ex": "Nobody could predict the outcome of the close election.",
+  "note": "Outcome is the result; the cause or input comes before it."
+ },
+ {
+  "w": "outdated",
+  "label": "ANALOGY PRACTICE",
+  "def": "No longer current, modern, or useful.",
+  "ex": "The factory still relies on outdated machinery from the 1970s.",
+  "note": "Close to obsolete, which is stronger: no longer used at all."
+ },
+ {
+  "w": "outline",
+  "label": "EXAM VOCABULARY",
+  "def": "To describe the main points of something without full detail.",
+  "ex": "The manager outlined the new plan in a short meeting.",
+  "note": "As a noun, an outline is a summary or the edge shape of an object."
+ },
+ {
+  "w": "overthrow",
+  "label": "EXAM VOCABULARY",
+  "def": "To remove a ruler or government from power by force.",
+  "ex": "The rebels tried to overthrow the military regime.",
+  "note": "Stronger than criticize or oppose: it means actually removing from power."
+ },
+ {
+  "w": "oyster",
+  "label": "ANALOGY PRACTICE",
+  "def": "A flat shellfish that lives in the sea and can produce pearls.",
+  "ex": "A single oyster may take years to form a pearl.",
+  "note": "Producer and product: oyster to pearl, as bee to honey."
+ },
+ {
+  "w": "panel",
+  "label": "ANALOGY PRACTICE",
+  "def": "A small group of people chosen to discuss, judge, or advise.",
+  "ex": "A panel of experts reviewed the research proposals.",
+  "note": "Also a flat piece of material, as in a solar panel."
+ },
+ {
+  "w": "paralysis",
+  "label": "EXAM VOCABULARY",
+  "def": "Loss of the ability to move part or all of the body.",
+  "ex": "The accident caused temporary paralysis in his left arm.",
+  "note": "Figuratively, a complete inability to act: political paralysis."
+ },
+ {
+  "w": "parasite",
+  "label": "EXAM VOCABULARY",
+  "def": "An organism that lives on or in another and feeds on it.",
+  "ex": "The tick is a parasite that feeds on the blood of animals.",
+  "note": "Figuratively, a person who lives off others without giving back."
+ },
+ {
+  "w": "parse",
+  "label": "READING",
+  "def": "To analyze a sentence by breaking it into its grammatical parts.",
+  "ex": "The students parsed each sentence to find the subject and verb.",
+  "note": "More broadly, to examine something closely in order to understand it."
+ },
+ {
+  "w": "pastime",
+  "label": "EXAM VOCABULARY",
+  "def": "An activity done regularly for enjoyment in one's free time.",
+  "ex": "Reading detective novels is her favorite pastime.",
+  "note": "A pastime is chosen for pleasure, unlike a job or duty."
+ },
+ {
+  "w": "patron",
+  "label": "ANALOGY PRACTICE",
+  "def": "A person who gives money or support to an artist or cause.",
+  "ex": "The wealthy patron paid for the young painter's studies.",
+  "note": "Also a regular customer of a shop or restaurant."
+ },
+ {
+  "w": "pave the way",
+  "label": "EXAM VOCABULARY",
+  "def": "To make it easier for something to happen later.",
+  "ex": "Early experiments paved the way for modern vaccines.",
+  "note": "Similar to lay the groundwork; the result comes afterward."
+ },
+ {
+  "w": "peculiar",
+  "label": "READING",
+  "def": "Strange or unusual, often in a slightly disturbing way.",
+  "ex": "There was a peculiar smell coming from the basement.",
+  "note": "Peculiar to means belonging only to: a custom peculiar to the region."
+ },
+ {
+  "w": "perishable",
+  "label": "ANALOGY PRACTICE",
+  "def": "Likely to spoil or decay quickly, especially food.",
+  "ex": "Milk and fish are perishable, so keep them refrigerated.",
+  "note": "Opposite: durable or long-lasting; related verb: perish."
+ },
+ {
+  "w": "permissible",
+  "label": "EXAM VOCABULARY",
+  "def": "Allowed by rules or law.",
+  "ex": "Using a calculator is not permissible during this test.",
+  "note": "Close to permitted; opposite: forbidden or prohibited."
+ },
+ {
+  "w": "persist",
+  "label": "EXAM VOCABULARY",
+  "def": "To continue to exist or to keep doing something despite difficulty.",
+  "ex": "If the pain persists, you should see a doctor.",
+  "note": "Adjective: persistent; noun: persistence."
+ },
+ {
+  "w": "petal",
+  "label": "ANALOGY PRACTICE",
+  "def": "One of the colored, leaf-like parts of a flower.",
+  "ex": "The rose lost its petals after a week in the vase.",
+  "note": "Part and whole: petal to flower, as page to book."
+ },
+ {
+  "w": "philologist",
+  "label": "READING",
+  "def": "A scholar who studies languages and texts, especially their history.",
+  "ex": "The philologist traced the word back to ancient Greek.",
+  "note": "Specialist and field: philologist to language, as historian to the past."
+ },
+ {
+  "w": "phonetic",
+  "label": "READING",
+  "def": "Relating to the sounds of human speech.",
+  "ex": "The dictionary gives a phonetic spelling to show pronunciation.",
+  "note": "Noun: phonetics, the study of speech sounds."
+ },
+ {
+  "w": "point of departure",
+  "label": "READING",
+  "def": "A starting point for a journey, discussion, or line of thought.",
+  "ex": "The author uses a childhood memory as a point of departure.",
+  "note": "Also the literal place a journey begins."
+ },
+ {
+  "w": "poll",
+  "label": "EXAM VOCABULARY",
+  "def": "A survey of people's opinions, or the process of voting.",
+  "ex": "A recent poll shows most citizens support the new law.",
+  "note": "The polls also means the place of voting: a polling station."
+ },
+ {
+  "w": "potter",
+  "label": "ANALOGY PRACTICE",
+  "def": "A person who makes pots and dishes from clay.",
+  "ex": "The potter shaped the wet clay on a spinning wheel.",
+  "note": "Maker and product: potter to pottery, as weaver to cloth."
+ },
+ {
+  "w": "precipitation",
+  "label": "EXAM VOCABULARY",
+  "def": "Rain, snow, or hail that falls to the ground.",
+  "ex": "The region receives very little precipitation in summer.",
+  "note": "In chemistry, the forming of a solid from a liquid."
+ },
+ {
+  "w": "predator",
+  "label": "EXAM VOCABULARY",
+  "def": "An animal that hunts and eats other animals.",
+  "ex": "The lion is the main predator on the savanna.",
+  "note": "Opposite role: prey; adjective: predatory."
+ },
+ {
+  "w": "predetermined",
+  "label": "EXAM VOCABULARY",
+  "def": "Decided or fixed in advance.",
+  "ex": "Each player moves according to a predetermined set of rules.",
+  "note": "Contrast with spontaneous or chosen on the spot."
+ },
+ {
+  "w": "prerequisite",
+  "label": "EXAM VOCABULARY",
+  "def": "Something that must exist or happen before something else can.",
+  "ex": "A basic course in statistics is a prerequisite for this class.",
+  "note": "Close to precondition; do not confuse with perquisite (a perk)."
+ },
+ {
+  "w": "presume",
+  "label": "EXAM VOCABULARY",
+  "def": "To suppose something is true without full proof.",
+  "ex": "I presume the meeting is canceled, since nobody has arrived.",
+  "note": "Also to act too boldly; adjective: presumptuous."
+ },
+ {
+  "w": "presuppose",
+  "label": "READING",
+  "def": "To assume something in advance as a basis for an argument.",
+  "ex": "The plan presupposes that the budget will not be cut.",
+  "note": "Noun: presupposition; similar to take for granted."
+ },
+ {
+  "w": "pretext",
+  "label": "EXAM VOCABULARY",
+  "def": "A false reason given to hide the real reason for an action.",
+  "ex": "He visited on the pretext of borrowing a book.",
+  "note": "A pretext is an excuse, not the true motive."
+ },
+ {
+  "w": "prick",
+  "label": "ANALOGY PRACTICE",
+  "def": "To make a small hole in something with a sharp point.",
+  "ex": "She pricked her finger on a thorn in the garden.",
+  "note": "A needle or thorn pricks; the result is a tiny puncture."
+ },
+ {
+  "w": "prior",
+  "label": "EXAM VOCABULARY",
+  "def": "Existing or happening before something else.",
+  "ex": "No prior experience is needed for this job.",
+  "note": "Prior to means before; noun: priority."
+ },
+ {
+  "w": "privilege",
+  "label": "EXAM VOCABULARY",
+  "def": "A special right or advantage given only to certain people.",
+  "ex": "Having a private tutor was a privilege few students enjoyed.",
+  "note": "Adjective: privileged; contrast with a right shared by everyone."
+ },
+ {
+  "w": "profound",
+  "label": "EXAM VOCABULARY",
+  "def": "Very great or intense; also, showing deep understanding.",
+  "ex": "The discovery had a profound effect on modern medicine.",
+  "note": "Opposite: superficial or shallow."
+ },
+ {
+  "w": "prohibition",
+  "label": "EXAM VOCABULARY",
+  "def": "An official rule forbidding something.",
+  "ex": "The city introduced a prohibition on smoking in parks.",
+  "note": "Verb: prohibit; opposite: permission."
+ },
+ {
+  "w": "proliferate",
+  "label": "EXAM VOCABULARY",
+  "def": "To increase rapidly in number or spread widely.",
+  "ex": "Online news sites have proliferated over the past decade.",
+  "note": "Noun: proliferation; stronger than simply grow."
+ },
+ {
+  "w": "prolonged",
+  "label": "READING",
+  "def": "Continuing for a long time, often longer than expected.",
+  "ex": "Prolonged exposure to the sun can damage the skin.",
+  "note": "Verb: prolong, to make something last longer."
+ },
+ {
+  "w": "promote",
+  "label": "EXAM VOCABULARY",
+  "def": "To help something grow or succeed; also, to raise someone's job rank.",
+  "ex": "Regular exercise and a balanced diet promote good health.",
+  "note": "Noun: promotion, which can also mean advertising a product."
+ },
+ {
+  "w": "propaganda",
+  "label": "EXAM VOCABULARY",
+  "def": "Biased information spread to influence public opinion.",
+  "ex": "The regime used radio propaganda to glorify its leader.",
+  "note": "Propaganda aims to persuade, not to inform fairly."
+ },
+ {
+  "w": "propagate",
+  "label": "READING",
+  "def": "To spread ideas or beliefs widely; also, to breed plants.",
+  "ex": "The group propagated its views through leaflets and speeches.",
+  "note": "Noun: propagation; related to propaganda."
+ },
+ {
+  "w": "prosecution",
+  "label": "EXAM VOCABULARY",
+  "def": "The legal process of charging someone with a crime in court.",
+  "ex": "The prosecution presented evidence against the accused.",
+  "note": "The opposing side in a trial is the defense."
+ },
+ {
+  "w": "provisions",
+  "label": "EXAM VOCABULARY",
+  "def": "Supplies of food and other necessities, especially for a journey.",
+  "ex": "The explorers carried provisions for three months.",
+  "note": "In the singular, a provision is also a condition in a law or contract."
+ },
+ {
+  "w": "put off",
+  "label": "EXAM VOCABULARY",
+  "def": "To postpone something to a later time.",
+  "ex": "They put off the meeting until next week.",
+  "note": "Also to discourage: the smell put me off the food."
+ },
+ {
+  "w": "put one's faith in",
+  "label": "EXAM VOCABULARY",
+  "def": "To trust or believe in someone or something completely.",
+  "ex": "Many voters put their faith in the young candidate.",
+  "note": "Similar to rely on; the trust may later prove mistaken."
+ },
+ {
+  "w": "puzzling",
+  "label": "EXAM VOCABULARY",
+  "def": "Difficult to understand or explain.",
+  "ex": "The results of the experiment were puzzling to everyone.",
+  "note": "Similar to baffling or perplexing."
+ },
+ {
+  "w": "qualified",
+  "label": "EXAM VOCABULARY",
+  "def": "Having the skills or training needed for a job or task.",
+  "ex": "Only a qualified electrician should repair the wiring.",
+  "note": "A qualified statement is limited or partial, not complete."
+ },
+ {
+  "w": "realm",
+  "label": "EXAM VOCABULARY",
+  "def": "A field of activity or interest; also, a kingdom.",
+  "ex": "The question lies outside the realm of science.",
+  "note": "Within the realm of possibility means possible."
+ },
+ {
+  "w": "rebel",
+  "label": "EXAM VOCABULARY",
+  "def": "A person who fights against or refuses to obey authority.",
+  "ex": "The rebels seized control of the northern province.",
+  "note": "As a verb (to reBEL), to resist authority; noun: rebellion."
+ },
+ {
+  "w": "reciprocal",
+  "label": "EXAM VOCABULARY",
+  "def": "Given or felt by each side toward the other; mutual.",
+  "ex": "The two countries signed a reciprocal trade agreement.",
+  "note": "In math, the reciprocal of a number is 1 divided by it."
+ },
+ {
+  "w": "referendum",
+  "label": "EXAM VOCABULARY",
+  "def": "A vote by all citizens on a single political question.",
+  "ex": "The government held a referendum on the new constitution.",
+  "note": "Unlike an election, which chooses people, a referendum decides an issue."
+ },
+ {
+  "w": "refrain",
+  "label": "EXAM VOCABULARY",
+  "def": "To stop yourself from doing something.",
+  "ex": "Please refrain from talking during the performance.",
+  "note": "Usually followed by from; as a noun, the repeated chorus of a song."
+ },
+ {
+  "w": "regime",
+  "label": "EXAM VOCABULARY",
+  "def": "A government, especially one that rules strictly or unfairly.",
+  "ex": "The regime banned all opposition newspapers.",
+  "note": "Also a system of rules or a plan: a diet regime."
+ },
+ {
+  "w": "regiment",
+  "label": "ANALOGY PRACTICE",
+  "def": "A large permanent unit of soldiers in an army.",
+  "ex": "His grandfather served in a cavalry regiment.",
+  "note": "Part and whole: soldier to regiment, as player to team."
+ },
+ {
+  "w": "regulate",
+  "label": "EXAM VOCABULARY",
+  "def": "To control something by rules or to keep it at a steady level.",
+  "ex": "The body regulates its temperature by sweating.",
+  "note": "Noun: regulation, an official rule."
+ },
+ {
+  "w": "reinterpret",
+  "label": "READING",
+  "def": "To explain or understand something in a new or different way.",
+  "ex": "The film reinterprets a classic story for modern audiences.",
+  "note": "Noun: reinterpretation; implies an earlier interpretation existed."
+ },
+ {
+  "w": "relief",
+  "label": "READING",
+  "def": "The raised or hollowed shape of a surface; also, a feeling of ease.",
+  "ex": "The map shows the mountain's relief in shades of brown.",
+  "note": "More common meaning: the ease felt when worry or pain ends."
+ },
+ {
+  "w": "remnant",
+  "label": "ANALOGY PRACTICE",
+  "def": "A small part that remains after the rest is gone.",
+  "ex": "Only remnants of the ancient wall still stand.",
+  "note": "Close to residue and remains; the whole no longer exists."
+ },
+ {
+  "w": "renounce",
+  "label": "EXAM VOCABULARY",
+  "def": "To formally give up a right, claim, or belief.",
+  "ex": "He renounced his citizenship and moved abroad.",
+  "note": "Noun: renunciation; stronger and more formal than stop."
+ },
+ {
+  "w": "replica",
+  "label": "EXAM VOCABULARY",
+  "def": "An exact copy of an object, often smaller.",
+  "ex": "The museum displays a replica of the ancient ship.",
+  "note": "A replica copies an original; it is not a fake meant to deceive."
+ },
+ {
+  "w": "repression",
+  "label": "EXAM VOCABULARY",
+  "def": "The use of force to control people and limit their freedom.",
+  "ex": "Years of repression led to mass protests.",
+  "note": "In psychology, pushing painful memories out of awareness."
+ },
+ {
+  "w": "residue",
+  "label": "READING",
+  "def": "What remains after the main part has gone or been removed.",
+  "ex": "A sticky residue was left where the label had been.",
+  "note": "Similar to remnant; plural: residues."
+ },
+ {
+  "w": "resistant",
+  "label": "EXAM VOCABULARY",
+  "def": "Not easily harmed or affected by something; opposing change.",
+  "ex": "This fabric is resistant to water and stains.",
+  "note": "Noun: resistance; heat-resistant, drug-resistant."
+ },
+ {
+  "w": "restriction",
+  "label": "EXAM VOCABULARY",
+  "def": "A rule or limit on what people can do.",
+  "ex": "The city placed restrictions on water use during the drought.",
+  "note": "Verb: restrict; opposite: freedom or permission."
+ },
+ {
+  "w": "retain",
+  "label": "READING",
+  "def": "To keep or continue to have something.",
+  "ex": "The old building retains much of its original charm.",
+  "note": "Noun: retention; opposite: lose or release."
+ },
+ {
+  "w": "revenue",
+  "label": "EXAM VOCABULARY",
+  "def": "Money that a business or government receives, especially from sales.",
+  "ex": "The company's revenue doubled after the product launch.",
+  "note": "Revenue is income before costs; profit is what remains after costs."
+ },
+ {
+  "w": "revival",
+  "label": "EXAM VOCABULARY",
+  "def": "A return to strength, popularity, or use after a decline.",
+  "ex": "The 1990s saw a revival of interest in vinyl records.",
+  "note": "Verb: revive; contrast with decline."
+ },
+ {
+  "w": "revolve",
+  "label": "EXAM VOCABULARY",
+  "def": "To move in a circle around a central point.",
+  "ex": "The Earth revolves around the Sun once a year.",
+  "note": "Figuratively, to revolve around means to center on: the plot revolves around a theft."
+ },
+ {
+  "w": "rigid",
+  "label": "READING",
+  "def": "Strict and unwilling to change; also, stiff and not bendable.",
+  "ex": "The school had rigid rules about uniforms.",
+  "note": "Opposite: flexible."
+ },
+ {
+  "w": "rival",
+  "label": "EXAM VOCABULARY",
+  "def": "A person or group competing with another for the same goal.",
+  "ex": "The two companies have been rivals for decades.",
+  "note": "Noun: rivalry, the state of competing."
+ },
+ {
+  "w": "role model",
+  "label": "EXAM VOCABULARY",
+  "def": "A person whose behavior others admire and copy.",
+  "ex": "The coach is a role model for many young athletes.",
+  "note": "Being a role model is about example, not formal authority."
+ },
+ {
+  "w": "roll out",
+  "label": "EXAM VOCABULARY",
+  "def": "To officially introduce a new product, service, or plan.",
+  "ex": "The company will roll out the new app next month.",
+  "note": "Noun: rollout; often gradual, region by region."
+ },
+ {
+  "w": "rumor",
+  "label": "EXAM VOCABULARY",
+  "def": "A story passed among people that may not be true.",
+  "ex": "A rumor spread that the factory would close.",
+  "note": "Rumors are unconfirmed; contrast with verified facts."
+ },
+ {
+  "w": "rung",
+  "label": "ANALOGY PRACTICE",
+  "def": "One of the horizontal bars that form the steps of a ladder.",
+  "ex": "He climbed carefully, testing each rung of the ladder.",
+  "note": "Part and whole: rung to ladder, as step to staircase."
+ }
+]

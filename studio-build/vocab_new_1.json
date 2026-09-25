@@ -1,0 +1,800 @@
+[
+ {
+  "w": "absorb",
+  "label": "EXAM VOCABULARY",
+  "def": "To take in or soak up something, such as liquid, information, or attention.",
+  "ex": "The sponge absorbed the spilled water in seconds.",
+  "note": "Absorbing can also mean extremely interesting: an absorbing novel."
+ },
+ {
+  "w": "abstract",
+  "label": "EXAM VOCABULARY",
+  "def": "Existing as an idea rather than as a physical, concrete thing.",
+  "ex": "Justice is an abstract idea, but its effects are very real.",
+  "note": "Opposite: concrete. As a noun, an abstract is a short summary."
+ },
+ {
+  "w": "accelerate",
+  "label": "EXAM VOCABULARY",
+  "def": "To make something happen faster, or to increase speed.",
+  "ex": "The new funding accelerated the research by several years.",
+  "note": "Opposite: slow down or decelerate. Noun: acceleration."
+ },
+ {
+  "w": "accord with",
+  "label": "READING",
+  "def": "To agree with or match something.",
+  "ex": "His account of the evening does not accord with the evidence.",
+  "note": "Noun phrase: in accord with, meaning in agreement with."
+ },
+ {
+  "w": "accumulate",
+  "label": "EXAM VOCABULARY",
+  "def": "To gather or build up gradually over time.",
+  "ex": "Dust accumulated on the shelves while the house stood empty.",
+  "note": "Stresses slow, steady growth rather than a sudden gain."
+ },
+ {
+  "w": "acquire",
+  "label": "EXAM VOCABULARY",
+  "def": "To get or gain something, often through effort or over time.",
+  "ex": "She acquired a good command of Spanish while living abroad.",
+  "note": "Noun: acquisition. Often used for skills, knowledge, and property."
+ },
+ {
+  "w": "acrobat",
+  "label": "EXAM VOCABULARY",
+  "def": "A performer who does difficult balancing, jumping, and swinging acts.",
+  "ex": "The acrobat walked across the high wire without a net.",
+  "note": "In analogies, pairs with a circus as its typical workplace."
+ },
+ {
+  "w": "acute",
+  "label": "EXAM VOCABULARY",
+  "def": "Severe and sudden; also, very sharp or sensitive.",
+  "ex": "The drought caused an acute shortage of drinking water.",
+  "note": "An acute sense of smell is a very keen one; contrast chronic, long-lasting."
+ },
+ {
+  "w": "adapt",
+  "label": "EXAM VOCABULARY",
+  "def": "To change in order to suit new conditions or a new purpose.",
+  "ex": "Many animals adapt to city life faster than scientists expected.",
+  "note": "Adapt to a situation; do not confuse with adopt, to take up."
+ },
+ {
+  "w": "adhere",
+  "label": "EXAM VOCABULARY",
+  "def": "To stick firmly to something; also, to follow a rule or belief closely.",
+  "ex": "All players must adhere to the rules of the competition.",
+  "note": "Noun: adherence, meaning faithful following of rules or beliefs."
+ },
+ {
+  "w": "admit of",
+  "label": "READING",
+  "def": "To allow for or leave room for something.",
+  "ex": "The instructions were so clear that they admitted of no doubt.",
+  "note": "Formal; different from admit, meaning to confess or let in."
+ },
+ {
+  "w": "adopt",
+  "label": "EXAM VOCABULARY",
+  "def": "To take up and begin to use an idea, method, or plan.",
+  "ex": "The school adopted a new system for grading exams.",
+  "note": "Also to legally take a child as one's own; compare adapt."
+ },
+ {
+  "w": "allot",
+  "label": "EXAM VOCABULARY",
+  "def": "To give a share of something, such as time or money, for a purpose.",
+  "ex": "Each speaker was allotted ten minutes to present an argument.",
+  "note": "Noun: allotment. Implies a planned, fixed portion."
+ },
+ {
+  "w": "ally",
+  "label": "ANALOGY PRACTICE",
+  "def": "A person, group, or country that supports another, especially in conflict.",
+  "ex": "The two nations became allies against a common enemy.",
+  "note": "Opposite: enemy or adversary. Verb: to ally oneself with."
+ },
+ {
+  "w": "antidote",
+  "label": "ANALOGY PRACTICE",
+  "def": "A substance that stops the effects of a poison; anything that counteracts a problem.",
+  "ex": "Laughter was her antidote to a stressful day at work.",
+  "note": "Analogy pattern: antidote is to poison as cure is to disease."
+ },
+ {
+  "w": "antithesis",
+  "label": "EXAM VOCABULARY",
+  "def": "The direct opposite of something.",
+  "ex": "His calm, quiet manner is the antithesis of his brother's temper.",
+  "note": "Stronger than a mere difference: an exact opposite."
+ },
+ {
+  "w": "apparatus",
+  "label": "READING",
+  "def": "A set of equipment, or an organized system for doing a task.",
+  "ex": "The laboratory apparatus had to be cleaned after each experiment.",
+  "note": "Can also mean the machinery of an organization, such as a state apparatus."
+ },
+ {
+  "w": "applaud",
+  "label": "EXAM VOCABULARY",
+  "def": "To clap in approval; also, to praise publicly.",
+  "ex": "Critics applauded the director's decision to shorten the film.",
+  "note": "Noun: applause. Figurative praise need not involve clapping."
+ },
+ {
+  "w": "appropriate (verb)",
+  "label": "EXAM VOCABULARY",
+  "def": "To take something for one's own use, often without permission.",
+  "ex": "The company appropriated the idea without crediting its inventor.",
+  "note": "As an adjective, appropriate means suitable; the verb is pronounced differently."
+ },
+ {
+  "w": "apt",
+  "label": "ANALOGY PRACTICE",
+  "def": "Exactly suitable for the situation; also, likely to do something.",
+  "ex": "Her apt remark summed up the whole discussion in one line.",
+  "note": "Apt to means tending to: he is apt to forget names."
+ },
+ {
+  "w": "argumentative",
+  "label": "EXAM VOCABULARY",
+  "def": "Tending to argue or disagree often.",
+  "ex": "The argumentative student challenged every point the teacher made.",
+  "note": "Describes a habit or personality, not a single disagreement."
+ },
+ {
+  "w": "aria",
+  "label": "ANALOGY PRACTICE",
+  "def": "A song for one voice, especially in an opera.",
+  "ex": "The soprano's aria was the highlight of the opera.",
+  "note": "Analogy pattern: aria is to opera as chapter is to book."
+ },
+ {
+  "w": "armory",
+  "label": "ANALOGY PRACTICE",
+  "def": "A place where weapons are stored.",
+  "ex": "The soldiers collected their rifles from the armory before dawn.",
+  "note": "A place-and-contents pair, like library and books."
+ },
+ {
+  "w": "artifact",
+  "label": "EXAM VOCABULARY",
+  "def": "An object made by people, especially one of historical interest.",
+  "ex": "The museum displays artifacts found in an ancient burial site.",
+  "note": "Emphasizes human making, as opposed to natural objects."
+ },
+ {
+  "w": "artillery",
+  "label": "EXAM VOCABULARY",
+  "def": "Large guns used in warfare, such as cannons.",
+  "ex": "The artillery fired on the fort for three days.",
+  "note": "A collective noun: the artillery is a set of weapons, not one gun."
+ },
+ {
+  "w": "artisan",
+  "label": "EXAM VOCABULARY",
+  "def": "A skilled worker who makes things by hand.",
+  "ex": "Local artisans sell handmade pottery at the weekend market.",
+  "note": "Compare craftsman; an artisan is valued for skill, not mass production."
+ },
+ {
+  "w": "aspect",
+  "label": "EXAM VOCABULARY",
+  "def": "One part or feature of a situation, problem, or idea.",
+  "ex": "Cost is only one aspect of the decision we must consider.",
+  "note": "Often used when a question has several sides to examine."
+ },
+ {
+  "w": "assemble",
+  "label": "EXAM VOCABULARY",
+  "def": "To gather together in one place; also, to put parts together.",
+  "ex": "The workers assembled the furniture from a flat box of parts.",
+  "note": "Noun: assembly, meaning a gathering or the act of building."
+ },
+ {
+  "w": "at random",
+  "label": "EXAM VOCABULARY",
+  "def": "Without any plan, pattern, or deliberate choice.",
+  "ex": "The winners were chosen at random from all the entries.",
+  "note": "Random selection means every option has an equal chance."
+ },
+ {
+  "w": "at the latest",
+  "label": "EXAM VOCABULARY",
+  "def": "No later than the stated time.",
+  "ex": "Applications must be submitted by Friday at the latest.",
+  "note": "Contrast at the earliest, meaning no sooner than."
+ },
+ {
+  "w": "atrocious",
+  "label": "ANALOGY PRACTICE",
+  "def": "Extremely bad, cruel, or unpleasant.",
+  "ex": "The food was atrocious, so we left the restaurant hungry.",
+  "note": "A strong degree word: much worse than poor or bad."
+ },
+ {
+  "w": "audacious",
+  "label": "READING",
+  "def": "Bold and daring, often in a way that surprises or shocks.",
+  "ex": "The audacious plan to cross the desert on foot amazed everyone.",
+  "note": "Can be praise or criticism; noun: audacity."
+ },
+ {
+  "w": "auditor",
+  "label": "ANALOGY PRACTICE",
+  "def": "A person who officially examines financial accounts for accuracy.",
+  "ex": "The auditor discovered errors in the company's yearly report.",
+  "note": "Analogy pattern: an auditor checks accounts as an inspector checks buildings."
+ },
+ {
+  "w": "banal",
+  "label": "EXAM VOCABULARY",
+  "def": "So ordinary and overused that it is boring.",
+  "ex": "The film was ruined by banal dialogue and a predictable ending.",
+  "note": "Similar: trite, commonplace. Opposite: original."
+ },
+ {
+  "w": "bankruptcy",
+  "label": "EXAM VOCABULARY",
+  "def": "The legal state of being unable to pay one's debts.",
+  "ex": "After years of losses, the firm declared bankruptcy.",
+  "note": "Adjective: bankrupt. Also used figuratively: moral bankruptcy."
+ },
+ {
+  "w": "barometer",
+  "label": "ANALOGY PRACTICE",
+  "def": "An instrument that measures air pressure.",
+  "ex": "The falling barometer warned the sailors that a storm was coming.",
+  "note": "Figuratively, any indicator of change: a barometer of public opinion."
+ },
+ {
+  "w": "barrier",
+  "label": "EXAM VOCABULARY",
+  "def": "Something that blocks movement or prevents progress.",
+  "ex": "Language can be a barrier to finding work in a new country.",
+  "note": "Can be physical, like a fence, or abstract, like a law."
+ },
+ {
+  "w": "be better off",
+  "label": "EXAM VOCABULARY",
+  "def": "To be in a better situation, often financially.",
+  "ex": "You would be better off taking the train than driving.",
+  "note": "Opposite: be worse off. Often used to give advice."
+ },
+ {
+  "w": "bilingual",
+  "label": "EXAM VOCABULARY",
+  "def": "Able to speak two languages well.",
+  "ex": "Growing up in Canada, she became bilingual in English and French.",
+  "note": "Related: monolingual, one language; multilingual, many."
+ },
+ {
+  "w": "binding",
+  "label": "EXAM VOCABULARY",
+  "def": "Legally or morally requiring someone to act as agreed.",
+  "ex": "Once signed, the contract is binding on both parties.",
+  "note": "From bind; a binding decision cannot simply be ignored."
+ },
+ {
+  "w": "bland",
+  "label": "EXAM VOCABULARY",
+  "def": "Lacking strong flavor, interest, or character.",
+  "ex": "Without salt or spices, the soup tasted bland.",
+  "note": "Used for food and for dull speeches or personalities."
+ },
+ {
+  "w": "blistering",
+  "label": "EXAM VOCABULARY",
+  "def": "Extremely harsh or intense.",
+  "ex": "The minister faced blistering criticism after the failed project.",
+  "note": "Literally, hot enough to cause blisters; also used for great speed."
+ },
+ {
+  "w": "blunt",
+  "label": "EXAM VOCABULARY",
+  "def": "To make something less sharp or less strong; as an adjective, direct and frank.",
+  "ex": "Constant use had blunted the knife's edge.",
+  "note": "A blunt person speaks plainly, sometimes rudely."
+ },
+ {
+  "w": "bound by",
+  "label": "EXAM VOCABULARY",
+  "def": "Required to follow something, such as a rule or promise.",
+  "ex": "Doctors are bound by strict rules of confidentiality.",
+  "note": "Also bound to, meaning certain to: it was bound to happen."
+ },
+ {
+  "w": "breach",
+  "label": "EXAM VOCABULARY",
+  "def": "To break a rule, agreement, or barrier.",
+  "ex": "The company breached the contract by delivering the goods late.",
+  "note": "Also a noun: a breach of trust, or a gap in a wall."
+ },
+ {
+  "w": "breakthrough",
+  "label": "EXAM VOCABULARY",
+  "def": "An important discovery or development that allows progress.",
+  "ex": "The vaccine was a major breakthrough in the fight against disease.",
+  "note": "Stresses sudden progress after difficulty."
+ },
+ {
+  "w": "brittle",
+  "label": "ANALOGY PRACTICE",
+  "def": "Hard but easily broken or cracked.",
+  "ex": "Old paper becomes brittle and tears at the slightest touch.",
+  "note": "Contrast flexible or elastic; brittle things snap rather than bend."
+ },
+ {
+  "w": "broad-minded",
+  "label": "EXAM VOCABULARY",
+  "def": "Willing to accept views and behavior different from one's own.",
+  "ex": "A broad-minded teacher welcomes questions that challenge her views.",
+  "note": "Opposite: narrow-minded."
+ },
+ {
+  "w": "bustling",
+  "label": "EXAM VOCABULARY",
+  "def": "Full of busy movement and activity.",
+  "ex": "The bustling market was crowded with shoppers and traders.",
+  "note": "Used for places; the verb bustle means to move busily."
+ },
+ {
+  "w": "bylaws",
+  "label": "EXAM VOCABULARY",
+  "def": "Rules made by an organization or local authority to govern itself.",
+  "ex": "According to the club's bylaws, members must vote each year.",
+  "note": "Narrower than national laws; they apply to one body."
+ },
+ {
+  "w": "candid",
+  "label": "ANALOGY PRACTICE",
+  "def": "Honest and direct, even when the truth is uncomfortable.",
+  "ex": "In a candid interview, the actor spoke about his failures.",
+  "note": "Noun: candor. A candid photo is taken without posing."
+ },
+ {
+  "w": "cargo",
+  "label": "EXAM VOCABULARY",
+  "def": "Goods carried by a ship, plane, or truck.",
+  "ex": "The ship's cargo included grain, cars, and machinery.",
+  "note": "Compare freight; cargo refers to what is carried, not the vehicle."
+ },
+ {
+  "w": "cartographer",
+  "label": "ANALOGY PRACTICE",
+  "def": "A person who makes maps.",
+  "ex": "The cartographer spent months mapping the unexplored coastline.",
+  "note": "The field is cartography; analogy pattern: worker and product."
+ },
+ {
+  "w": "cast doubt",
+  "label": "EXAM VOCABULARY",
+  "def": "To make something seem less certain or less believable.",
+  "ex": "New evidence cast doubt on the witness's version of events.",
+  "note": "Usually followed by on: cast doubt on a claim."
+ },
+ {
+  "w": "celestial body",
+  "label": "EXAM VOCABULARY",
+  "def": "A natural object in space, such as a star, planet, or moon.",
+  "ex": "The telescope revealed several celestial bodies invisible to the eye.",
+  "note": "Celestial means related to the sky; contrast terrestrial, of the earth."
+ },
+ {
+  "w": "cobbler",
+  "label": "ANALOGY PRACTICE",
+  "def": "A person who repairs shoes.",
+  "ex": "The cobbler replaced the worn soles of my old boots.",
+  "note": "Analogy pattern: cobbler is to shoes as tailor is to clothes."
+ },
+ {
+  "w": "collision",
+  "label": "ANALOGY PRACTICE",
+  "def": "A crash between two moving objects; also, a strong conflict.",
+  "ex": "Two cars were damaged in a collision at the junction.",
+  "note": "Verb: collide. A collision of interests is a clash."
+ },
+ {
+  "w": "command",
+  "label": "EXAM VOCABULARY",
+  "def": "To deserve and get something, such as a high price or respect.",
+  "ex": "Rare stamps command high prices at auction.",
+  "note": "The more familiar sense is to give orders."
+ },
+ {
+  "w": "commemorate",
+  "label": "READING",
+  "def": "To honor and remember an important person or event.",
+  "ex": "A statue was built to commemorate the soldiers who died.",
+  "note": "Related: memorial, memorialize."
+ },
+ {
+  "w": "commonplace",
+  "label": "EXAM VOCABULARY",
+  "def": "Ordinary and found everywhere; not unusual.",
+  "ex": "Smartphones, once rare, are now commonplace.",
+  "note": "Can also be a noun: an obvious or overused remark."
+ },
+ {
+  "w": "compensate",
+  "label": "EXAM VOCABULARY",
+  "def": "To make up for a loss or weakness; also, to pay for damage.",
+  "ex": "His hard work compensated for his lack of experience.",
+  "note": "Noun: compensation, often money paid for loss or injury."
+ },
+ {
+  "w": "competent",
+  "label": "READING",
+  "def": "Having enough skill or knowledge to do something well.",
+  "ex": "We need a competent electrician to repair the wiring.",
+  "note": "Suggests adequate ability, not necessarily excellence."
+ },
+ {
+  "w": "comprise",
+  "label": "EXAM VOCABULARY",
+  "def": "To consist of or be made up of.",
+  "ex": "The committee comprises five teachers and two parents.",
+  "note": "The whole comprises the parts; avoid comprised of in formal writing."
+ },
+ {
+  "w": "concise",
+  "label": "ANALOGY PRACTICE",
+  "def": "Giving much information clearly in few words.",
+  "ex": "Her concise summary fit the whole argument into one paragraph.",
+  "note": "Opposite: wordy or verbose. Concise is brief but complete."
+ },
+ {
+  "w": "condemn",
+  "label": "EXAM VOCABULARY",
+  "def": "To express strong disapproval of something; also, to sentence someone.",
+  "ex": "World leaders condemned the attack on civilians.",
+  "note": "Noun: condemnation. Stronger than criticize."
+ },
+ {
+  "w": "congenital",
+  "label": "EXAM VOCABULARY",
+  "def": "Present from birth.",
+  "ex": "The baby was born with a congenital heart defect.",
+  "note": "Contrast acquired, developed later in life."
+ },
+ {
+  "w": "congestion",
+  "label": "ANALOGY PRACTICE",
+  "def": "A state of being overcrowded or blocked.",
+  "ex": "Traffic congestion doubles the travel time during rush hour.",
+  "note": "Also used in medicine for a blocked nose or chest."
+ },
+ {
+  "w": "congregate",
+  "label": "READING",
+  "def": "To gather together in a group.",
+  "ex": "Birds congregate near the lake before flying south.",
+  "note": "Noun: congregation, often a group gathered for worship."
+ },
+ {
+  "w": "conscience",
+  "label": "EXAM VOCABULARY",
+  "def": "The inner sense of what is morally right and wrong.",
+  "ex": "His conscience would not let him keep the money he found.",
+  "note": "Do not confuse with conscious, meaning awake or aware."
+ },
+ {
+  "w": "consecutive",
+  "label": "EXAM VOCABULARY",
+  "def": "Following one after another without a break.",
+  "ex": "It rained for five consecutive days.",
+  "note": "Also used in math for numbers in order, like 4, 5, 6."
+ },
+ {
+  "w": "consensus",
+  "label": "EXAM VOCABULARY",
+  "def": "General agreement among all or most members of a group.",
+  "ex": "The committee reached a consensus after a long discussion.",
+  "note": "Majority is enough for a vote; consensus implies broad agreement."
+ },
+ {
+  "w": "constructive",
+  "label": "EXAM VOCABULARY",
+  "def": "Helpful and intended to improve something.",
+  "ex": "The teacher offered constructive criticism on each essay.",
+  "note": "Opposite: destructive. Constructive feedback suggests how to improve."
+ },
+ {
+  "w": "continuity",
+  "label": "EXAM VOCABULARY",
+  "def": "The state of continuing without interruption or change.",
+  "ex": "The new manager promised continuity in the company's policies.",
+  "note": "Contrast disruption or a break."
+ },
+ {
+  "w": "contract (verb)",
+  "label": "EXAM VOCABULARY",
+  "def": "To become smaller or shorter; also, to catch an illness.",
+  "ex": "Metal contracts as it cools and expands when heated.",
+  "note": "Opposite: expand. As a noun, a contract is a legal agreement."
+ },
+ {
+  "w": "convey",
+  "label": "READING",
+  "def": "To communicate an idea or feeling; also, to carry from one place to another.",
+  "ex": "Her tone conveyed more anger than her words did.",
+  "note": "A conveyor belt carries objects along."
+ },
+ {
+  "w": "cope",
+  "label": "EXAM VOCABULARY",
+  "def": "To deal successfully with a difficult situation.",
+  "ex": "He found it hard to cope with the pressure of the new job.",
+  "note": "Usually followed by with."
+ },
+ {
+  "w": "cornerstone",
+  "label": "EXAM VOCABULARY",
+  "def": "The basic, most important part on which something is built.",
+  "ex": "Trust is the cornerstone of any good friendship.",
+  "note": "Literally, a stone at the corner of a building's foundation."
+ },
+ {
+  "w": "crest",
+  "label": "ANALOGY PRACTICE",
+  "def": "The top of something, such as a hill or wave.",
+  "ex": "The surfer rode on the crest of the wave.",
+  "note": "Also a bird's tuft or a family emblem; peak is a close synonym."
+ },
+ {
+  "w": "crude",
+  "label": "EXAM VOCABULARY",
+  "def": "In a natural, unrefined state; also, rough or rude.",
+  "ex": "Crude oil must be refined before it can be used as fuel.",
+  "note": "A crude drawing is simple and unskilled; a crude joke is offensive."
+ },
+ {
+  "w": "cumbersome",
+  "label": "EXAM VOCABULARY",
+  "def": "Large, heavy, or complicated, and therefore hard to handle.",
+  "ex": "The old application process was slow and cumbersome.",
+  "note": "Used for objects and for procedures."
+ },
+ {
+  "w": "curator",
+  "label": "ANALOGY PRACTICE",
+  "def": "A person in charge of a museum or collection.",
+  "ex": "The curator chose which paintings would appear in the exhibition.",
+  "note": "Analogy pattern: curator is to museum as librarian is to library."
+ },
+ {
+  "w": "customarily",
+  "label": "READING",
+  "def": "Usually, according to habit or tradition.",
+  "ex": "Guests customarily bring a small gift to the host.",
+  "note": "Adjective: customary; related noun: custom."
+ },
+ {
+  "w": "cygnet",
+  "label": "ANALOGY PRACTICE",
+  "def": "A young swan.",
+  "ex": "The cygnet swam closely behind its mother on the pond.",
+  "note": "Analogy pattern: cygnet is to swan as duckling is to duck."
+ },
+ {
+  "w": "decompose",
+  "label": "READING",
+  "def": "To break down or rot through natural processes.",
+  "ex": "Fallen leaves decompose and enrich the soil.",
+  "note": "Noun: decomposition. Also means to break into parts."
+ },
+ {
+  "w": "defect",
+  "label": "ANALOGY PRACTICE",
+  "def": "A fault or imperfection that makes something work less well.",
+  "ex": "The cars were recalled because of a defect in the brakes.",
+  "note": "Adjective: defective. As a verb, defect means to desert one's side."
+ },
+ {
+  "w": "delicate",
+  "label": "EXAM VOCABULARY",
+  "def": "Easily broken or damaged; also, needing careful handling.",
+  "ex": "The negotiations reached a delicate stage.",
+  "note": "A delicate situation needs tact; a delicate object needs care."
+ },
+ {
+  "w": "dent",
+  "label": "ANALOGY PRACTICE",
+  "def": "A small hollow in a surface caused by a blow.",
+  "ex": "The ball left a dent in the car door.",
+  "note": "Figuratively, to make a dent means to reduce something slightly."
+ },
+ {
+  "w": "deplete",
+  "label": "EXAM VOCABULARY",
+  "def": "To reduce the amount of something so that little remains.",
+  "ex": "Years of overfishing have depleted the ocean's fish stocks.",
+  "note": "Noun: depletion. Stronger than simply to use."
+ },
+ {
+  "w": "descendant",
+  "label": "EXAM VOCABULARY",
+  "def": "A person related to someone who lived in an earlier generation.",
+  "ex": "She is a descendant of immigrants who arrived a century ago.",
+  "note": "Opposite direction: ancestor."
+ },
+ {
+  "w": "despotic",
+  "label": "EXAM VOCABULARY",
+  "def": "Ruling with total, often cruel, power.",
+  "ex": "The despotic ruler jailed anyone who criticized him.",
+  "note": "Noun: despot. Similar: tyrannical, autocratic."
+ },
+ {
+  "w": "devastating",
+  "label": "EXAM VOCABULARY",
+  "def": "Causing great destruction or deep emotional shock.",
+  "ex": "The earthquake had a devastating effect on the region.",
+  "note": "Verb: devastate. Much stronger than harmful."
+ },
+ {
+  "w": "devise",
+  "label": "EXAM VOCABULARY",
+  "def": "To plan or invent something, often cleverly.",
+  "ex": "The engineers devised a way to purify water cheaply.",
+  "note": "Do not confuse with device, a noun meaning a tool."
+ },
+ {
+  "w": "devoid of",
+  "label": "EXAM VOCABULARY",
+  "def": "Completely without something.",
+  "ex": "The speech was long but devoid of any new ideas.",
+  "note": "Always followed by of; stronger than lacking in."
+ },
+ {
+  "w": "dictate",
+  "label": "EXAM VOCABULARY",
+  "def": "To control or decide how something must happen; also, to say words for someone to write.",
+  "ex": "The weather will dictate whether the game goes ahead.",
+  "note": "Related: dictator, one who rules with total control."
+ },
+ {
+  "w": "diligent",
+  "label": "EXAM VOCABULARY",
+  "def": "Careful and hardworking.",
+  "ex": "A diligent student reviews her notes every evening.",
+  "note": "Noun: diligence. Opposite: lazy or negligent."
+ },
+ {
+  "w": "disadvantaged",
+  "label": "EXAM VOCABULARY",
+  "def": "Lacking the money, education, or opportunities that others have.",
+  "ex": "The program offers scholarships to students from disadvantaged backgrounds.",
+  "note": "Opposite: privileged."
+ },
+ {
+  "w": "discerning",
+  "label": "EXAM VOCABULARY",
+  "def": "Able to judge well and notice fine differences.",
+  "ex": "Discerning readers will notice the flaw in the argument.",
+  "note": "Verb: discern, meaning to perceive or recognize."
+ },
+ {
+  "w": "discharge",
+  "label": "READING",
+  "def": "To release or let out; also, to officially allow someone to leave.",
+  "ex": "The factory was fined for discharging waste into the river.",
+  "note": "A patient is discharged from hospital; a soldier from service."
+ },
+ {
+  "w": "discredit",
+  "label": "READING",
+  "def": "To damage the reputation of someone or the believability of something.",
+  "ex": "The scandal discredited the politician in the eyes of voters.",
+  "note": "Stronger than question: it makes others stop trusting."
+ },
+ {
+  "w": "disentangle",
+  "label": "ANALOGY PRACTICE",
+  "def": "To free from knots or confusion.",
+  "ex": "It took an hour to disentangle the fishing lines.",
+  "note": "Opposite: entangle or tangle. Also used for separating ideas."
+ },
+ {
+  "w": "disguise",
+  "label": "EXAM VOCABULARY",
+  "def": "To change the appearance of something so that it is not recognized.",
+  "ex": "The thief disguised himself as a delivery man.",
+  "note": "Figuratively, to hide feelings or facts: a thinly disguised threat."
+ },
+ {
+  "w": "dismantle",
+  "label": "EXAM VOCABULARY",
+  "def": "To take something apart, piece by piece.",
+  "ex": "The workers dismantled the stage after the concert.",
+  "note": "Also used for systems: to dismantle an old policy."
+ },
+ {
+  "w": "disprove",
+  "label": "EXAM VOCABULARY",
+  "def": "To show that something is false.",
+  "ex": "The experiment disproved the popular theory.",
+  "note": "Opposite: prove. Compare refute, which also means to show false."
+ },
+ {
+  "w": "disrupt",
+  "label": "EXAM VOCABULARY",
+  "def": "To interrupt or disturb the normal course of something.",
+  "ex": "A power failure disrupted the train service all morning.",
+  "note": "Noun: disruption; adjective: disruptive."
+ },
+ {
+  "w": "distinct",
+  "label": "EXAM VOCABULARY",
+  "def": "Clearly different or separate; also, clearly noticeable.",
+  "ex": "The two species look alike but are genetically distinct.",
+  "note": "Do not confuse with distinctive, meaning typical of one thing."
+ },
+ {
+  "w": "doodle",
+  "label": "EXAM VOCABULARY",
+  "def": "To draw aimlessly while thinking about something else.",
+  "ex": "He doodled in the margins of his notebook during the lecture.",
+  "note": "Compare scribble, which is careless writing or drawing."
+ },
+ {
+  "w": "downfall",
+  "label": "EXAM VOCABULARY",
+  "def": "A sudden loss of power, success, or status; also, its cause.",
+  "ex": "Greed eventually caused the king's downfall.",
+  "note": "Often used in the phrase cause someone's downfall."
+ },
+ {
+  "w": "drenched",
+  "label": "ANALOGY PRACTICE",
+  "def": "Completely wet.",
+  "ex": "We were drenched after walking home in the storm.",
+  "note": "Degree word: damp, wet, soaked, drenched."
+ },
+ {
+  "w": "drizzle",
+  "label": "ANALOGY PRACTICE",
+  "def": "Light, fine rain.",
+  "ex": "A cold drizzle fell all afternoon.",
+  "note": "Analogy pattern: drizzle is to downpour as breeze is to gale."
+ },
+ {
+  "w": "dubious",
+  "label": "EXAM VOCABULARY",
+  "def": "Doubtful; not to be trusted or relied on.",
+  "ex": "The article's claims come from a dubious source.",
+  "note": "Can describe the thing doubted or the person doubting."
+ },
+ {
+  "w": "hold up",
+  "label": "EXAM VOCABULARY",
+  "def": "Of an argument or claim, to remain convincing when tested.",
+  "ex": "His alibi did not hold up under investigation.",
+  "note": "Also means to delay: traffic held us up."
+ },
+ {
+  "w": "plague",
+  "label": "EXAM VOCABULARY",
+  "def": "A deadly disease that spreads quickly; also, anything that causes great trouble.",
+  "ex": "A plague swept through medieval Europe.",
+  "note": "As a verb, to plague means to trouble repeatedly."
+ },
+ {
+  "w": "portray",
+  "label": "EXAM VOCABULARY",
+  "def": "To represent or describe someone or something in a certain way.",
+  "ex": "The film portrays the scientist as a lonely genius.",
+  "note": "Noun: portrayal. Related: portrait."
+ },
+ {
+  "w": "prestige",
+  "label": "EXAM VOCABULARY",
+  "def": "Respect and admiration earned through success or high status.",
+  "ex": "The university enjoys great prestige around the world.",
+  "note": "Adjective: prestigious."
+ }
+]

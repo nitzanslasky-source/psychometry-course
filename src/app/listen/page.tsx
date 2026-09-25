@@ -11,7 +11,7 @@ export default function ListenPage() {
         <div className="eyebrow">Vocabulary on the go</div>
         <h1 className="display mt-3 text-[52px]">Listen</h1>
         <p className="mt-3 max-w-2xl text-[16px] text-ink-soft">
-          Short vocabulary episodes for the bus, the gym or a walk: each word, its Hebrew meaning, then the word again.
+          Short vocabulary episodes for the bus, the gym or a walk: each word, what it means, an example sentence, then the word again.
           Turn on <b className="font-medium text-ink">Quiz mode</b> to get a pause to say the meaning yourself first.
         </p>
       </header>

@@ -1,0 +1,25 @@
+VOCABULARY WRITER — for the Psychometry course dictionary (students are English-medium test takers; NO Hebrew anywhere).
+
+Input: vocab_cand_<N>.json — candidate words/phrases, each with src: "analogy" (from the course's analogy questions),
+"exam" (a word NITE glossed in a real psychometric exam), "reading" (a reading-passage glossary term; readingDef given).
+Reference style: /Users/nitzanslasky/psychometry-course/content/sources/vocab_pdf.json (the approved dictionary, 430 entries).
+Read ~40 of its entries first and match their voice, length and quality exactly.
+
+1. SELECT. Keep only useful general vocabulary from medium level upward — the kind of word a strong 11th–12th grader
+   might not use confidently. DROP: basic/beginner words (apple, animal, angry, book, bread, arrived…), math and
+   geometry terms (angle, area, absolute value, acute angle, arc…), proper names, specialist labels only meaningful
+   in one passage, OCR junk (e.g. "alimp", "(in) his mind'seye"), and anything already in vocab_pdf.json (any form).
+   When in doubt about difficulty, keep words that appear in analogies (they test word relationships) if they are at
+   least medium level.
+2. MERGE forms into one headword (accelerates/accelerating → accelerate; argumentative person → argumentative).
+   Use the dictionary form. Multi-word expressions are fine when they are real expressions (e.g. "in step with").
+   One entry per headword; no duplicates within your file.
+3. WRITE each entry, newly written (never copy from another dictionary):
+   - def: one clear plain-English definition (for verbs start "To …"), max ~15 words. If the word has two common
+     meanings, give the more exam-relevant one, and mention the other in the note.
+   - ex: one natural example sentence (6–14 words) that makes the meaning obvious from context.
+   - note: one short useful line — a contrast, a related form, a common confusion, or how it pairs in analogies.
+   - label: "EXAM VOCABULARY" if src includes "exam"; else "ANALOGY PRACTICE" if src includes "analogy"; else "READING".
+4. OUTPUT: write /Users/nitzanslasky/psychometry-course/studio-build/vocab_new_<N>.json — a JSON list of
+   {"w":…, "label":…, "def":…, "ex":…, "note":…} sorted alphabetically. Validate it loads with python json.
+Report: how many candidates, how many kept, and 5 examples of dropped words with the reason.
