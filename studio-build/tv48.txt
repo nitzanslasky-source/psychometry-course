@@ -1,0 +1,186 @@
+# Topic 48 Rules and arrangements
+
+######## SECTION vr48-learn — Learn and try (learn)
+=== VIDEO vr-rules-method: kind=lesson title='Rules and arrangements: build a small working model'
+[1] Use the shape the problem gives you
+  BOARD: ['Order → numbered slots', 'Groups → boxes', 'Two qualities → a small table']
+  SCRIPT: An arrangement question becomes easier when the page has the same shape as the task. If five talks are in order, draw five slots. If books are divided between shelves, draw two boxes. If each item has a color and a material, make a small table rather than trying to hold both descriptions in one sentence. This is active reading made visible. Copy only the rules that restrict the arrangement. The names are labels, not facts to memorize. Once the model is on the page, you can test possibilities without rereading the whole paragraph every time.
+[2] Translate each rule once
+  BOARD: ['Before ≠ immediately before', 'Together ≠ in a particular order', 'At least one ≠ exactly one']
+  SCRIPT: Before means somewhere earlier. Immediately before means the two items form a block with no gap. Together may allow either internal order unless one is specified. At least one allows two; exactly one does not. These distinctions are often the whole question. Use a short symbol only after you understand the wording. You might write A before B as a loose arrow, and draw AB inside one box when the two must be adjacent in that order. If a rule says either one course or the other but not both, mark the exclusion explicitly. Do not silently treat every ordinary ‘or’ as exclusive.
+[3] Place the tightest condition first
+  BOARD: ['Fixed position', 'Adjacent block', 'Restricted pair', 'Then the flexible items']
+  SCRIPT: Start with the rule that leaves the fewest choices. A fixed last position is easy to place. A three-item consecutive block in five slots has only three possible starting positions. A rule saying one item is somewhere before another is usually looser. This order of work is not a formal requirement, but it reduces the number of branches you must consider. If an arrangement is not fully determined, that is not a failure. The question may ask only what could happen or what must be shared by all arrangements. Stop filling unnecessary slots when the demanded conclusion is already settled.
+[4] Must, could and cannot need different evidence
+  BOARD: ['Could → one complete valid arrangement', 'Not must → one valid counterexample', 'Must → all cases, or a forced chain']
+  SCRIPT: For a could question, build one complete example that satisfies every rule. For a must question, a single example is not enough; you need a forced deduction or a complete set of cases. To reject a proposed must statement, one valid counterexample is enough. For a cannot question, show the rule that every attempted version would break. Circle the demand before you start. It is frustrating to build a beautiful valid arrangement and then choose an answer that merely could happen when the question asks what has to happen.
+[5] Keep separate rankings separate
+  BOARD: ['Age order', 'Height order', 'Do not merge them unless a rule connects them.']
+  SCRIPT: A question may compare the same people by age and height. Being older does not automatically mean being taller. Keep two rows, one for each ranking. If a rule permits an action when a person is older or taller, check either route independently. If it requires both, check both. The same care applies to floors and room numbers, colors and materials, or speaker order and team membership. A neat diagram helps only if it preserves the distinctions in the text. Combining different dimensions into one convenient-looking line can create a false conclusion.
+[6] Truth-count puzzles: test a complete case
+  BOARD: ['Exactly two true statements', 'Assume a candidate → evaluate all statements', 'Count, then keep or reject the case']
+  SCRIPT: When exactly two statements must be true, do not decide the truth of each in isolation. Pick a candidate situation and evaluate every statement in that same situation. Count the true ones. If the count is wrong, reject that candidate. This is often easier than trying to manipulate several negatives at once. A small table with candidate rows and statement columns makes the work visible. Keep the rule about the number of truths separate from the statements being evaluated. It is a condition on the whole row, not permission to declare whichever two statements you prefer true.
+[7] Use the answers as proposed models
+  BOARD: ['Check the most restrictive rule first.', 'Name the first rule an option breaks.', 'Confirm the surviving option against every rule.']
+  SCRIPT: If the choices are complete schedules, the answers have already done some of the arrangement work for you. Test the fixed positions and adjacent blocks first, since they are quick to check. Reject an option as soon as it breaks a rule. But once only one survives, check it against every rule rather than trusting elimination alone. In independent practice, the written solutions include valid arrangements or counterexamples where appropriate. These are not extra facts added to the question. They are concrete models showing what the given rules permit.
+--- Q vr48-g001: A student must take exactly one of Ceramics and Film. Anyone taking Film must also take Music. Which selection satisfies both rules?
+  CHOICES: ['Film and Music, but not Ceramics', 'Ceramics and Film, but not Music', 'Music only', 'Film only'] correct=1
+=== VIDEO solve-vr48-g001: kind=solution title='Exactly one of two courses'
+[1] Your question
+  BOARD: []
+  SCRIPT: A student must take exactly one of Ceramics and Film. Anyone taking Film must also take Music. Which selection satisfies both rules?
+[2] Put the message in plain English
+  BOARD: ['Film and Music, but not Ceramics']
+  SCRIPT: Exactly one permits Film without Ceramics, and Film then requires Music. The other selections either include both alternatives, neither, or Film without its requirement. Draw the smallest model that keeps all the rules visible. Put fixed positions or a tightly constrained block in first. Then check every remaining rule in the same arrangement; an option cannot borrow one fact from one possible case and another fact from a different case.
+[3] Keep each answer tied to the text
+  BOARD: ['Exclusive choice']
+  SCRIPT: “Ceramics and Film, but not Music” fails because this includes both courses and also misses Film’s required companion. “Music only” fails because this includes neither of the two required alternatives. “Film only” fails because film requires Music. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'Film and Music, but not Ceramics']
+  SCRIPT: The answer is choice 1: Film and Music, but not Ceramics. Exactly one permits Film without Ceramics, and Film then requires Music. The other selections either include both alternatives, neither, or Film without its requirement.
+--- Q vr48-g002: A shelf may contain either only biographies or exactly one biography together with any number of atlases. Which shelf is allowed?
+  CHOICES: ['No biography and two atlases', 'One novel and one biography', 'One biography and three atlases', 'Two biographies and one atlas'] correct=3
+=== VIDEO solve-vr48-g002: kind=solution title='A classification rule'
+[1] Your question
+  BOARD: []
+  SCRIPT: A shelf may contain either only biographies or exactly one biography together with any number of atlases. Which shelf is allowed?
+[2] Put the message in plain English
+  BOARD: ['One biography and three atlases']
+  SCRIPT: The second permitted form has exactly one biography and atlases. A shelf containing atlases with two or no biographies fits neither form. Draw the smallest model that keeps all the rules visible. Put fixed positions or a tightly constrained block in first. Then check every remaining rule in the same arrangement; an option cannot borrow one fact from one possible case and another fact from a different case.
+[3] Keep each answer tied to the text
+  BOARD: ['Apply compound rule']
+  SCRIPT: “Two biographies and one atlas” fails because it is neither biographies-only nor exactly one biography with atlases. “No biography and two atlases” fails because the atlas form requires one biography. “One novel and one biography” fails because novels appear in neither permitted form. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'One biography and three atlases']
+  SCRIPT: The answer is choice 3: One biography and three atlases. The second permitted form has exactly one biography and atlases. A shelf containing atlases with two or no biographies fits neither form.
+--- Q vr48-g003: Four animals occupy four different floors, numbered 1 to 4 from bottom to top. The fox is immediately above the badger. The otter is on floor 1. The hare is above the fox. Which animal is on floor 3?
+  CHOICES: ['The fox', 'The otter', 'The hare', 'The badger'] correct=1
+=== VIDEO solve-vr48-g003: kind=solution title='Use floor slots'
+[1] Your question
+  BOARD: []
+  SCRIPT: Four animals occupy four different floors, numbered 1 to 4 from bottom to top. The fox is immediately above the badger. The otter is on floor 1. The hare is above the fox. Which animal is on floor 3?
+[2] Put the message in plain English
+  BOARD: ['The fox']
+  SCRIPT: The otter fixes floor 1. The badger-fox block must leave a higher floor for the hare, so it occupies floors 2 and 3. The hare takes floor 4. Draw the smallest model that keeps all the rules visible. Put fixed positions or a tightly constrained block in first. Then check every remaining rule in the same arrangement; an option cannot borrow one fact from one possible case and another fact from a different case.
+[3] Keep each answer tied to the text
+  BOARD: ['Adjacent block']
+  SCRIPT: “The otter” fails because the otter is fixed on floor 1. “The hare” fails because the hare must be above the fox and takes floor 4. “The badger” fails because the badger takes floor 2 below the fox. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'The fox']
+  SCRIPT: The answer is choice 1: The fox. The otter fixes floor 1. The badger-fox block must leave a higher floor for the hare, so it occupies floors 2 and 3. The hare takes floor 4.
+--- Q vr48-g004: A gardener plants flowers in the repeating order blue, white, yellow, blue, white, yellow, and so on. Which color is immediately after a yellow flower?
+  CHOICES: ['Yellow', 'The color cannot be determined.', 'Blue', 'White'] correct=3
+=== VIDEO solve-vr48-g004: kind=solution title='A fixed cycle'
+[1] Your question
+  BOARD: []
+  SCRIPT: A gardener plants flowers in the repeating order blue, white, yellow, blue, white, yellow, and so on. Which color is immediately after a yellow flower?
+[2] Put the message in plain English
+  BOARD: ['Blue']
+  SCRIPT: The repeated block ends with yellow and restarts with blue. The local transition is fixed regardless of the cycle number. Draw the smallest model that keeps all the rules visible. Put fixed positions or a tightly constrained block in first. Then check every remaining rule in the same arrangement; an option cannot borrow one fact from one possible case and another fact from a different case.
+[3] Keep each answer tied to the text
+  BOARD: ['Cycle']
+  SCRIPT: “White” fails because white follows blue. “Yellow” fails because consecutive yellow flowers do not occur. “The color cannot be determined.” fails because the repeating rule determines the successor. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'Blue']
+  SCRIPT: The answer is choice 3: Blue. The repeated block ends with yellow and restarts with blue. The local transition is fixed regardless of the cycle number.
+--- Q vr48-g005: Four friends sit in a row. Ada sits immediately to the left of Ben. Cy sits at the right end. Dee does not sit at the left end. Which order, from left to right, is possible?
+  CHOICES: ['Ada, Dee, Ben, Cy', 'Cy, Ada, Ben, Dee', 'Ada, Ben, Dee, Cy', 'Dee, Ada, Ben, Cy'] correct=3
+=== VIDEO solve-vr48-g005: kind=solution title='Seats and incompatible preferences'
+[1] Your question
+  BOARD: []
+  SCRIPT: Four friends sit in a row. Ada sits immediately to the left of Ben. Cy sits at the right end. Dee does not sit at the left end. Which order, from left to right, is possible?
+[2] Put the message in plain English
+  BOARD: ['Ada, Ben, Dee, Cy']
+  SCRIPT: Cy fixes the right end. The Ada-Ben block can start at position 1 or 2, but starting at 2 leaves Dee at the forbidden left end. The stated order is therefore forced. Draw the smallest model that keeps all the rules visible. Put fixed positions or a tightly constrained block in first. Then check every remaining rule in the same arrangement; an option cannot borrow one fact from one possible case and another fact from a different case.
+[3] Keep each answer tied to the text
+  BOARD: ['Seating']
+  SCRIPT: “Dee, Ada, Ben, Cy” fails because dee is at the forbidden left end. “Ada, Dee, Ben, Cy” fails because ada and Ben are not adjacent. “Cy, Ada, Ben, Dee” fails because cy is not at the right end. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'Ada, Ben, Dee, Cy']
+  SCRIPT: The answer is choice 3: Ada, Ben, Dee, Cy. Cy fixes the right end. The Ada-Ben block can start at position 1 or 2, but starting at 2 leaves Dee at the forbidden left end. The stated order is therefore forced.
+--- Q vr48-g006: Exactly one of three boxes contains a token. Ada says it is in Box 1. Ben says it is not in Box 1. Cy says it is in Box 3. Exactly two of these statements are true. Where is the token?
+  CHOICES: ['Box 2', 'The information allows all three boxes.', 'Box 3', 'Box 1'] correct=3
+=== VIDEO solve-vr48-g006: kind=solution title='Count the true statements'
+[1] Your question
+  BOARD: []
+  SCRIPT: Exactly one of three boxes contains a token. Ada says it is in Box 1. Ben says it is not in Box 1. Cy says it is in Box 3. Exactly two of these statements are true. Where is the token?
+[2] Put the message in plain English
+  BOARD: ['Box 3']
+  SCRIPT: Ada and Ben make opposite claims, so exactly one of them is true in every case. To reach two true statements, Cy must be true, placing the token in Box 3. Draw the smallest model that keeps all the rules visible. Put fixed positions or a tightly constrained block in first. Then check every remaining rule in the same arrangement; an option cannot borrow one fact from one possible case and another fact from a different case.
+[3] Keep each answer tied to the text
+  BOARD: ['Truth count']
+  SCRIPT: “Box 1” fails because only Ada is true in this case. “Box 2” fails because only Ben is true in this case. “The information allows all three boxes.” fails because only Box 3 makes Cy true as well as one of the other two. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'Box 3']
+  SCRIPT: The answer is choice 3: Box 3. Ada and Ben make opposite claims, so exactly one of them is true in every case. To reach two true statements, Cy must be true, placing the token in Box 3.
+--- Q vr48-g007: Ilan is older than Mira, and Mira is older than Noa. Noa is taller than Mira, and Mira is taller than Ilan. A person may send a ball to another person if the sender is older or taller than the receiver. Which statement is true?
+  CHOICES: ['Noa cannot send a ball to anyone.', 'Mira can send only to Noa.', 'Every pair can send the ball in both directions.', 'Only Ilan can send a ball.'] correct=3
+=== VIDEO solve-vr48-g007: kind=solution title='Two separate rankings'
+[1] Your question
+  BOARD: []
+  SCRIPT: Ilan is older than Mira, and Mira is older than Noa. Noa is taller than Mira, and Mira is taller than Ilan. A person may send a ball to another person if the sender is older or taller than the receiver. Which statement is true?
+[2] Put the message in plain English
+  BOARD: ['Every pair can send the ball in both directions.']
+  SCRIPT: For each pair, one person is older and the other is taller. The older person qualifies by age and the younger person qualifies by height. Draw the smallest model that keeps all the rules visible. Put fixed positions or a tightly constrained block in first. Then check every remaining rule in the same arrangement; an option cannot borrow one fact from one possible case and another fact from a different case.
+[3] Keep each answer tied to the text
+  BOARD: ['Separate dimensions']
+  SCRIPT: “Only Ilan can send a ball.” fails because the others qualify through height or age. “Noa cannot send a ball to anyone.” fails because noa is tallest and qualifies by height. “Mira can send only to Noa.” fails because mira is taller than Ilan and older than Noa. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'Every pair can send the ball in both directions.']
+  SCRIPT: The answer is choice 3: Every pair can send the ball in both directions.. For each pair, one person is older and the other is taller. The older person qualifies by age and the younger person qualifies by height.
+
+######## SECTION vr48-practice — Independent practice (practice)
+--- Q vr48-p001: Five talks take place in a fixed order, one at a time. Bea speaks immediately after Ari. Eli speaks last. Cal speaks before Dev. Which order is possible?
+  CHOICES: ['Ari, Bea, Cal, Dev, Eli', 'Ari, Bea, Cal, Eli, Dev', 'Ari, Bea, Dev, Cal, Eli', 'Ari, Bea, Dev, Eli, Cal'] correct=1
+--- Q vr48-p002: Five talks take place in a fixed order, one at a time. Bea speaks immediately after Ari. Eli speaks last. Cal speaks before Dev. Which statement must be true?
+  CHOICES: ['Ari is before Cal.', 'Ari is before Dev.', 'Bea is before Ari.', 'Ari is before Bea.'] correct=4
+--- Q vr48-p003: Five talks take place in a fixed order, one at a time. Bea speaks immediately after Ari. Eli speaks last. Cal speaks before Dev. If Ari is in position 1, in which position must Bea be?
+  CHOICES: ['2', '1', '3', '4'] correct=1
+--- Q vr48-p004: Five deliveries are made in a fixed order, one at a time. Birch is immediately before Cedar. Amber is first. Dune is not last. Which order is possible?
+  CHOICES: ['Amber, Birch, Dune, Elm, Cedar', 'Amber, Birch, Cedar, Dune, Elm', 'Amber, Birch, Cedar, Elm, Dune', 'Amber, Birch, Dune, Cedar, Elm'] correct=2
+--- Q vr48-p005: Five deliveries are made in a fixed order, one at a time. Birch is immediately before Cedar. Amber is first. Dune is not last. Which statement must be true?
+  CHOICES: ['Birch is before Elm.', 'Amber is before Birch.', 'Birch is before Amber.', 'Birch is before Dune.'] correct=2
+--- Q vr48-p006: Five deliveries are made in a fixed order, one at a time. Birch is immediately before Cedar. Amber is first. Dune is not last. If Birch is in position 2, in which position must Amber be?
+  CHOICES: ['4', '1', '2', '3'] correct=2
+--- Q vr48-p007: Five exhibits are displayed in a fixed order, one at a time. Glass is immediately before Ink. Jade is immediately before Kite. Lace is not first. Which order is possible?
+  CHOICES: ['Glass, Ink, Jade, Lace, Kite', 'Glass, Ink, Kite, Jade, Lace', 'Glass, Ink, Kite, Lace, Jade', 'Glass, Ink, Jade, Kite, Lace'] correct=4
+--- Q vr48-p008: Five exhibits are displayed in a fixed order, one at a time. Glass is immediately before Ink. Jade is immediately before Kite. Lace is not first. Which statement must be true?
+  CHOICES: ['Glass is before Kite.', 'Glass is before Lace.', 'Glass is before Ink.', 'Glass is before Jade.'] correct=3
+--- Q vr48-p009: Five exhibits are displayed in a fixed order, one at a time. Glass is immediately before Ink. Jade is immediately before Kite. Lace is not first. If Glass is in position 1, in which position must Ink be?
+  CHOICES: ['4', '2', '1', '3'] correct=2
+--- Q vr48-p010: Five workshops take place in a fixed order, one at a time. Map is before Nail. Nail is immediately before Oar. Quill is last. Which order is possible?
+  CHOICES: ['Map, Nail, Paint, Oar, Quill', 'Map, Nail, Paint, Quill, Oar', 'Map, Nail, Oar, Paint, Quill', 'Map, Nail, Oar, Quill, Paint'] correct=3
+--- Q vr48-p011: Five workshops take place in a fixed order, one at a time. Map is before Nail. Nail is immediately before Oar. Quill is last. Which statement must be true?
+  CHOICES: ['Map is before Paint.', 'Nail is before Map.', 'Nail is before Paint.', 'Map is before Oar.'] correct=4
+--- Q vr48-p012: Five workshops take place in a fixed order, one at a time. Map is before Nail. Nail is immediately before Oar. Quill is last. If Map is in position 1, in which position must Quill be?
+  CHOICES: ['2', '3', '5', '1'] correct=3
+--- Q vr48-p013: Five parcels are processed in a fixed order, one at a time. Silver is immediately after Red. Umber is immediately after Tan. Violet is neither first nor last. Which order is possible?
+  CHOICES: ['Red, Silver, Umber, Tan, Violet', 'Red, Silver, Violet, Tan, Umber', 'Red, Silver, Tan, Umber, Violet', 'Red, Silver, Tan, Violet, Umber'] correct=2
+--- Q vr48-p014: Five parcels are processed in a fixed order, one at a time. Silver is immediately after Red. Umber is immediately after Tan. Violet is neither first nor last. Which statement must be true?
+  CHOICES: ['Red is before Silver.', 'Red is before Tan.', 'Red is before Umber.', 'Red is before Violet.'] correct=1
+--- Q vr48-p015: Five parcels are processed in a fixed order, one at a time. Silver is immediately after Red. Umber is immediately after Tan. Violet is neither first nor last. If Red is in position 1, in which position must Silver be?
+  CHOICES: ['2', '1', '3', '4'] correct=1
+--- Q vr48-p016: Five performances take place in a fixed order, one at a time. Wren performs before Xena, who performs before Yuri. Zane performs immediately before Nell. Nell does not perform last. Which order is possible?
+  CHOICES: ['Wren, Xena, Yuri, Nell, Zane', 'Wren, Xena, Zane, Yuri, Nell', 'Wren, Xena, Zane, Nell, Yuri', 'Wren, Xena, Yuri, Zane, Nell'] correct=3
+--- Q vr48-p017: Five performances take place in a fixed order, one at a time. Wren performs before Xena, who performs before Yuri. Zane performs immediately before Nell. Nell does not perform last. Which statement must be true?
+  CHOICES: ['Wren is before Xena.', 'Wren is before Zane.', 'Wren is before Nell.', 'Xena is before Wren.'] correct=1
+--- Q vr48-p018: Five performances take place in a fixed order, one at a time. Wren performs before Xena, who performs before Yuri. Zane performs immediately before Nell. Nell does not perform last. If Wren is in position 1, in which position must Yuri be?
+  CHOICES: ['2', '3', '5', '1'] correct=3
+--- Q vr48-p019: A code contains three different letters chosen from A, B, C and D. If A is used, B must be used. C and D cannot both be used. Which set of letters can form a code?
+  CHOICES: ['A, B, D and C', 'A, B, C', 'A, C, D', 'B, C, D'] correct=2
+--- Q vr48-p020: A badge is valid if it is red with a circle or blue with a triangle. It cannot contain both shapes. Which badge is valid?
+  CHOICES: ['A red badge with only a triangle', 'A blue badge with both shapes', 'A green badge with only a circle', 'A blue badge with only a triangle'] correct=4
+--- Q vr48-p021: Exactly one of two lamps is on. The green lamp is on only if the door is closed. The door is open. Which statement must be true?
+  CHOICES: ['The other lamp is on.', 'The green lamp is on.', 'Both lamps are off.', 'Both lamps are on.'] correct=1
+--- Q vr48-p022: Three runners finish at different times. Pia finishes before Ren, and Sol finishes after Ren. Which statement must be true?
+  CHOICES: ['Ren finishes first.', 'Sol finishes before Pia.', 'The order cannot be determined.', 'Pia finishes first.'] correct=4
+--- Q vr48-p023: A drawer labeled “Pens” contains only pencils, a drawer labeled “Pencils” contains only pens, and a third drawer contains both. Which drawer must contain pens?
+  CHOICES: ['The drawer labeled “Pens”', 'Neither of the first two drawers', 'Only the drawer containing both', 'The drawer labeled “Pencils”'] correct=4
+--- Q vr48-p024: Each of four cards has two faces: one red and one blue. A card is turned over once. If its visible face was red, what must now be visible?
+  CHOICES: ['Blue', 'Red', 'Both colors on the same visible face', 'A color other than red or blue'] correct=1
+--- Q vr48-p025: Exactly one of three cupboards contains a key. Lin says it is in A; Mo says it is not in A; Paz says it is not in C. Exactly one statement is true. Where is the key?
+  CHOICES: ['B', 'Either A or B', 'C', 'A'] correct=3
+--- Q vr48-p026: A person may pass a token to another person only if the sender is older and taller. Jo is older than Kai but shorter than Kai. Which statement follows about Jo passing to Kai?
+  CHOICES: ['Jo is not permitted to pass the token to Kai.', 'Jo is permitted because age alone is enough.', 'Jo must be taller because Jo is older.', 'The rule gives Jo permission regardless of height.'] correct=1
+--- Q vr48-p027: A machine changes a circle into a square, a square into a triangle, and a triangle into a circle. Starting with a circle, which shape appears after four changes?
+  CHOICES: ['A triangle', 'The starting shape is lost after one change.', 'A square', 'A circle'] correct=3

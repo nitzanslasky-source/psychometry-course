@@ -1,0 +1,290 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------ foundations
+   Motion tokens. One curve family everywhere, so everything feels like one material:
+   --ease-out ≈ a critically-damped spring (no overshoot) for UI that just appears;
+   --ease-spring has a touch of overshoot, reserved for feedback that "lands" (a correct answer). */
+:root {
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.36, 0.64, 1);
+  --press: 100ms;
+  --settle: 380ms;
+  font-size: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  @apply bg-canvas text-ink antialiased dark:bg-canvas-dark dark:text-neutral-100;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.5;
+  letter-spacing: 0;
+  transition: background-color 400ms ease, color 400ms ease; /* ease theme changes, no brightness jump */
+}
+
+/* Typography: tracking and leading change with size. Large text tighter, body text untouched. */
+h1,
+h2,
+h3 {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-optical-sizing: auto;
+}
+h1 {
+  line-height: 1.08;
+  letter-spacing: -0.025em;
+}
+h2 {
+  line-height: 1.15;
+  letter-spacing: -0.018em;
+}
+h3 {
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+::selection {
+  @apply bg-brand-200 text-brand-950;
+}
+
+/* Keep MathJax inline math from inflating line height inside stems. */
+mjx-container[display="false"] {
+  vertical-align: -0.1ex;
+}
+mjx-container {
+  @apply dark:text-neutral-100;
+}
+/* Tailwind's preflight makes every <svg> a block — MathJax SVG output must stay inline. */
+mjx-container[jax="SVG"] > svg {
+  display: inline;
+}
+mjx-container[jax="SVG"][display="true"] > svg {
+  display: block;
+  margin: 0 auto;
+}
+
+@layer components {
+  /* Surfaces */
+  .surface-card {
+    @apply rounded-2xl border border-hair bg-surface shadow-soft dark:border-white/10 dark:bg-surface-dark;
+    transition:
+      transform var(--settle) var(--ease-out),
+      box-shadow var(--settle) var(--ease-out),
+      border-color 200ms ease;
+  }
+  .surface-card-hover {
+    @apply hover:border-neutral-300 hover:shadow-card dark:hover:border-white/20;
+  }
+  .surface-card-hover:hover {
+    transform: translateY(-2px);
+  }
+
+  /* Anything pressable: feedback on pointer-DOWN, instantly (not on release). */
+  .pressable,
+  .btn-primary,
+  .btn-secondary,
+  .surface-card-hover {
+    touch-action: manipulation; /* no 300ms tap delay */
+  }
+  .pressable:active,
+  .btn-primary:active:not(:disabled),
+  .btn-secondary:active:not(:disabled),
+  .surface-card-hover:active {
+    transform: scale(0.97);
+    transition: transform var(--press) ease-out;
+  }
+
+  .btn-primary {
+    @apply inline-flex select-none items-center justify-center gap-1.5 rounded-xl bg-brand-600 px-4 py-2.5 text-sm font-semibold text-white shadow-soft hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-40;
+    transition:
+      transform var(--settle) var(--ease-out),
+      background-color 150ms ease,
+      opacity 150ms ease;
+  }
+  .btn-secondary {
+    @apply inline-flex select-none items-center justify-center gap-1.5 rounded-xl border border-hair bg-surface px-4 py-2.5 text-sm font-medium text-ink hover:border-neutral-400 dark:border-white/15 dark:bg-white/5 dark:text-neutral-100 dark:hover:border-white/30;
+    transition:
+      transform var(--settle) var(--ease-out),
+      border-color 150ms ease;
+  }
+  .link-subtle {
+    @apply text-brand-700 transition-colors hover:text-brand-800 hover:underline dark:text-brand-300 dark:hover:text-brand-200;
+  }
+  .kicker {
+    @apply text-xs font-semibold uppercase text-muted dark:text-neutral-400;
+    letter-spacing: 0.06em; /* small caps text: positive tracking for legibility */
+  }
+
+  /* Translucent material: the header floats over content that scrolls beneath it. */
+  .material-bar {
+    background: rgb(255 253 250 / 0.72);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    backdrop-filter: blur(20px) saturate(180%);
+  }
+  .dark .material-bar {
+    background: rgb(28 24 17 / 0.72);
+  }
+  /* Scroll-edge effect instead of a hard divider: a soft fade under the bar. */
+  .material-bar::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 100%;
+    height: 14px;
+    pointer-events: none;
+    background: linear-gradient(to bottom, rgb(0 0 0 / 0.05), transparent);
+  }
+  .material-panel {
+    background: rgb(255 253 250 / 0.8);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    backdrop-filter: blur(16px) saturate(160%);
+  }
+  .dark .material-panel {
+    background: rgb(28 24 17 / 0.8);
+  }
+}
+
+/* ------------------------------------------------------------------ motion
+   Steps enter along the direction you travel (Next → from the right, Previous → from the left),
+   so a step leaves and returns along the same path. Only transform + opacity: compositor-friendly. */
+@keyframes step-in-next {
+  from {
+    opacity: 0;
+    transform: translateX(28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes step-in-prev {
+  from {
+    opacity: 0;
+    transform: translateX(-28px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.step-in-next {
+  animation: step-in-next var(--settle) var(--ease-out) both;
+}
+.step-in-prev {
+  animation: step-in-prev var(--settle) var(--ease-out) both;
+}
+.rise-in {
+  animation: rise-in var(--settle) var(--ease-out) both;
+}
+
+/* Answer feedback — causal and immediate: the right answer "lands", a wrong pick gives a short no-shake. */
+@keyframes land {
+  0% {
+    transform: scale(0.98);
+  }
+  60% {
+    transform: scale(1.015);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes nope {
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-5px);
+  }
+  50% {
+    transform: translateX(4px);
+  }
+  75% {
+    transform: translateX(-2px);
+  }
+}
+.anim-land {
+  animation: land 420ms var(--ease-spring) both;
+}
+.anim-nope {
+  animation: nope 320ms ease-out both;
+}
+
+/* Progress fills grow from where they were. */
+.progress-fill {
+  transition: width 700ms var(--ease-out);
+}
+
+/* ------------------------------------------------------------------ accessibility
+   Reduced motion = gentler, not none: slides and bounces become short cross-fades. */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .step-in-next,
+  .step-in-prev,
+  .rise-in {
+    animation: fade-only 180ms ease both;
+  }
+  .anim-land,
+  .anim-nope {
+    animation: none;
+  }
+  .surface-card-hover:hover,
+  .pressable:active,
+  .btn-primary:active:not(:disabled),
+  .btn-secondary:active:not(:disabled),
+  .surface-card-hover:active {
+    transform: none;
+  }
+  .progress-fill {
+    transition: none;
+  }
+}
+@keyframes fade-only {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media (prefers-reduced-transparency: reduce) {
+  .material-bar,
+  .material-panel {
+    background: rgb(255 253 250);
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+  }
+  .dark .material-bar,
+  .dark .material-panel {
+    background: rgb(28 24 17);
+  }
+}
+@media (prefers-contrast: more) {
+  .material-bar,
+  .material-panel {
+    background: rgb(255 253 250);
+    backdrop-filter: none;
+    border-bottom: 1px solid #211c15;
+  }
+  .surface-card {
+    border-color: #6b6255;
+  }
+}

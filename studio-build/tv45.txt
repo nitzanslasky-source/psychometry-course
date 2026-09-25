@@ -1,0 +1,168 @@
+# Topic 45 Parables and comparisons
+
+######## SECTION vr45-learn — Learn and try (learn)
+=== VIDEO vr-comparison-method: kind=lesson title='Parables and comparisons: match the roles'
+[1] Translate the story into a relationship
+  BOARD: ['Who acts?', 'What are they trying to achieve?', 'What goes wrong or stays the same?']
+  SCRIPT: A speaker may answer a practical argument with a story about a gardener, a ship or a broken road. The objects are not usually the point. Ask who acts, what they are trying to achieve, and which relationship the comparison highlights. If someone criticizes painting over a damp wall without fixing the leak, the point is treating a visible symptom while leaving its source. An answer about a gardener trimming damaged leaves while ignoring the cause may fit even though it contains no paint or building. We are looking for the same reasoning pattern under different scenery.
+[2] Give every important role a partner
+  BOARD: ['Problem ↔ problem', 'Attempted response ↔ attempted response', 'Reason the response fails ↔ same reason']
+  SCRIPT: Map the roles one at a time. The leak is the continuing source of the problem. The stain is its visible effect. Repainting is a response to the effect that leaves the source untouched. A good parallel must preserve those roles and their connection. A distractor may mention a wall too but describe a completely different issue, such as choosing an expensive color. Shared nouns are not enough. In harder questions, two options may both concern prevention, but only one preserves the timing or the dependence that made the original comparison work.
+[3] Find what the speaker is answering
+  BOARD: ['Read the claim before the comparison.', 'Is the reply agreement, criticism or qualification?']
+  SCRIPT: A comparison gets its force from the claim it answers. Suppose a manager wants to reward a team before the project is completed. A colleague says this is like counting fruit before the tree has flowered. The reply challenges treating an uncertain future benefit as already secured. If the preceding claim instead concerned choosing the wrong kind of tree, the intended point would be different. Read the short conversation as a conversation, with a natural change of voice between speakers. Then paraphrase the reply without any of its story objects. That abstract sentence becomes your answer test.
+[4] Do not add an extra lesson
+  BOARD: ['The comparison makes one relevant point.', 'Do not import every property of its objects.']
+  SCRIPT: A ship may have a captain, a crew, an engine and a destination. A comparison involving a ship does not automatically use all four. If the speaker compares a leader following public opinion to a person walking in front of a crowd while copying its turns, the relevant issue is apparent leadership versus actual direction. The weather at sea or the skill of sailors has nothing to do with that point. Keep the map as small as possible. Adding properties from your own experience can make a wrong option seem rich and convincing while moving away from the text.
+[5] Watch the direction of cause
+  BOARD: ['People gather where music is played.', 'Does music attract them, or do performers choose crowds?']
+  SCRIPT: Comparisons can test causal direction. A busy place may attract performers rather than become busy because performers arrived. Both accounts connect the same two things, so an answer that simply mentions the association does not preserve the distinction. Draw the arrows in each story. If the original reply reverses an assumed cause, the correct parallel should reverse an assumed cause too. This connects the comparison topic with strengthening and weakening: we are looking underneath a familiar story to see which inference is being challenged.
+[6] Check the closest distractor
+  BOARD: ['Same problem?', 'Same timing?', 'Same dependence?']
+  SCRIPT: After finding a plausible parallel, compare it with the closest rival. One may describe prevention before a problem occurs; the other repairs damage afterwards. One may reward a result before it is secured; the other merely make a plan in advance. Planning is not the same as pretending the plan has succeeded. A few precise contrasts like these let you reject an attractive answer without a long essay. During practice, write the abstract relationship in a single sentence. Under time pressure, keep that sentence in your head and test the roles in the same order.
+--- Q vr45-g001: When a director claimed that a stern-looking applicant would surely be a strict supervisor, a colleague replied, “A painted tiger cannot frighten the mice out of a granary.” What is the colleague’s main point?
+  CHOICES: ['The applicant has never seen a tiger.', 'The granary needs a different kind of paint.', 'An intimidating appearance does not establish effective behavior.', 'All supervisors should look friendly.'] correct=3
+=== VIDEO solve-vr45-g001: kind=solution title='Appearance is not behavior'
+[1] Your question
+  BOARD: []
+  SCRIPT: When a director claimed that a stern-looking applicant would surely be a strict supervisor, a colleague replied, “A painted tiger cannot frighten the mice out of a granary.” What is the colleague’s main point?
+[2] Put the message in plain English
+  BOARD: ['An intimidating appearance does not establish effective behavior.']
+  SCRIPT: A painted tiger resembles something intimidating without doing what a real predator does. The comparison challenges the leap from appearance to supervisory behavior. Strip away the objects in the story and state its lesson about the relationship. Then put the real situation back into those roles. If a proposed answer needs an extra fact that neither story supplied, the comparison does not justify it.
+[3] Keep each answer tied to the text
+  BOARD: ['Appearance and function']
+  SCRIPT: “All supervisors should look friendly.” fails because this is a new rule about appearance, not the point of the comparison. “The applicant has never seen a tiger.” fails because literal knowledge of tigers is irrelevant. “The granary needs a different kind of paint.” fails because paint is part of the illustration, not a proposed workplace solution. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'An intimidating appearance does not establish effective behavior.']
+  SCRIPT: The answer is choice 3: An intimidating appearance does not establish effective behavior.. A painted tiger resembles something intimidating without doing what a real predator does. The comparison challenges the leap from appearance to supervisory behavior.
+--- Q vr45-g002: People still say “rewind” when asking to replay a digital recording that contains no tape. A writer compares this to tracing a circle in the air to request a car window be lowered. What is common to the examples?
+  CHOICES: ['Both actions require a physical tape.', 'People cannot understand newer devices.', 'The old devices worked without any mechanism.', 'An expression or gesture survives after the old mechanism it referred to has changed.'] correct=4
+=== VIDEO solve-vr45-g002: kind=solution title='A gesture outlives its origin'
+[1] Your question
+  BOARD: []
+  SCRIPT: People still say “rewind” when asking to replay a digital recording that contains no tape. A writer compares this to tracing a circle in the air to request a car window be lowered. What is common to the examples?
+[2] Put the message in plain English
+  BOARD: ['An expression or gesture survives after the old mechanism it referred to has changed.']
+  SCRIPT: Rewinding tape and turning a window handle supplied the original actions; the communicative forms remain useful after those mechanisms disappear. Strip away the objects in the story and state its lesson about the relationship. Then put the real situation back into those roles. If a proposed answer needs an extra fact that neither story supplied, the comparison does not justify it.
+[3] Keep each answer tied to the text
+  BOARD: ['Conventional survival']
+  SCRIPT: “Both actions require a physical tape.” fails because the digital example explicitly lacks tape. “People cannot understand newer devices.” fails because the forms can be understood precisely because they have survived. “The old devices worked without any mechanism.” fails because the comparison concerns changed mechanisms, not their original absence. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'An expression or gesture survives after the old mechanism it referred to has changed.']
+  SCRIPT: The answer is choice 4: An expression or gesture survives after the old mechanism it referred to has changed.. Rewinding tape and turning a window handle supplied the original actions; the communicative forms remain useful after those mechanisms disappear.
+--- Q vr45-g003: A café owner says that musicians make the square crowded. A neighbor replies, “Perhaps they are like market stalls that appear wherever buyers have already gathered.” What alternative is proposed?
+  CHOICES: ['Musicians can never attract anyone.', 'The square has no shops.', 'Crowds always dislike music.', 'Musicians may choose the square because it is already crowded.'] correct=4
+=== VIDEO solve-vr45-g003: kind=solution title='Reverse the causal story'
+[1] Your question
+  BOARD: []
+  SCRIPT: A café owner says that musicians make the square crowded. A neighbor replies, “Perhaps they are like market stalls that appear wherever buyers have already gathered.” What alternative is proposed?
+[2] Put the message in plain English
+  BOARD: ['Musicians may choose the square because it is already crowded.']
+  SCRIPT: The comparison reverses the proposed direction: an existing crowd attracts suppliers or performers. It does not rule out the original direction in every case. Strip away the objects in the story and state its lesson about the relationship. Then put the real situation back into those roles. If a proposed answer needs an extra fact that neither story supplied, the comparison does not justify it.
+[3] Keep each answer tied to the text
+  BOARD: ['Reverse causation']
+  SCRIPT: “Musicians can never attract anyone.” fails because a possible reverse cause is not a universal denial of influence. “The square has no shops.” fails because shop existence is irrelevant. “Crowds always dislike music.” fails because no attitude toward music is supplied. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'Musicians may choose the square because it is already crowded.']
+  SCRIPT: The answer is choice 4: Musicians may choose the square because it is already crowded.. The comparison reverses the proposed direction: an existing crowd attracts suppliers or performers. It does not rule out the original direction in every case.
+--- Q vr45-g004: A commentator says, “Our leader is like a walker who stays at the front of a group by watching where everyone else is about to turn.” What criticism is implied?
+  CHOICES: ['The leader appears to direct others but actually follows their preferences.', 'The leader is physically unable to walk.', 'The group never changes direction.', 'The leader refuses to learn what others want.'] correct=1
+=== VIDEO solve-vr45-g004: kind=solution title='At the front is not necessarily leading'
+[1] Your question
+  BOARD: []
+  SCRIPT: A commentator says, “Our leader is like a walker who stays at the front of a group by watching where everyone else is about to turn.” What criticism is implied?
+[2] Put the message in plain English
+  BOARD: ['The leader appears to direct others but actually follows their preferences.']
+  SCRIPT: The front position creates an appearance of leadership while the direction comes from the group. Strip away the objects in the story and state its lesson about the relationship. Then put the real situation back into those roles. If a proposed answer needs an extra fact that neither story supplied, the comparison does not justify it.
+[3] Keep each answer tied to the text
+  BOARD: ['Apparent and actual direction']
+  SCRIPT: “The leader is physically unable to walk.” fails because the walking image is figurative. “The group never changes direction.” fails because anticipated turns are essential to the comparison. “The leader refuses to learn what others want.” fails because the leader is described as closely watching others. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'The leader appears to direct others but actually follows their preferences.']
+  SCRIPT: The answer is choice 1: The leader appears to direct others but actually follows their preferences.. The front position creates an appearance of leadership while the direction comes from the group.
+--- Q vr45-g005: Before the grant committee had made its decision, a researcher ordered expensive equipment using the money she hoped to receive. A colleague says this is like furnishing a house one has only entered a draw to win. What is the criticism?
+  CHOICES: ['The grant committee is guaranteed to reject her.', 'She is acting as though an uncertain benefit has already been secured.', 'Equipment is always a poor use of grant money.', 'No one should plan any future activity.'] correct=2
+=== VIDEO solve-vr45-g005: kind=solution title='Spending a gain before securing it'
+[1] Your question
+  BOARD: []
+  SCRIPT: Before the grant committee had made its decision, a researcher ordered expensive equipment using the money she hoped to receive. A colleague says this is like furnishing a house one has only entered a draw to win. What is the criticism?
+[2] Put the message in plain English
+  BOARD: ['She is acting as though an uncertain benefit has already been secured.']
+  SCRIPT: Both actions commit resources on the assumption that an uncertain future gain is already available. Strip away the objects in the story and state its lesson about the relationship. Then put the real situation back into those roles. If a proposed answer needs an extra fact that neither story supplied, the comparison does not justify it.
+[3] Keep each answer tied to the text
+  BOARD: ['Premature commitment']
+  SCRIPT: “Equipment is always a poor use of grant money.” fails because the issue is uncertainty, not the inherent value of equipment. “No one should plan any future activity.” fails because planning without premature commitment is not condemned. “The grant committee is guaranteed to reject her.” fails because uncertainty is not certain rejection. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'She is acting as though an uncertain benefit has already been secured.']
+  SCRIPT: The answer is choice 2: She is acting as though an uncertain benefit has already been secured.. Both actions commit resources on the assumption that an uncertain future gain is already available.
+--- Q vr45-g006: A school repeatedly replaces books damaged by a leaking roof. A teacher compares this to replacing punctured bicycle tubes without removing the nail from the tyre. What action fits the teacher’s point?
+  CHOICES: ['Fix the leak that keeps causing the damage.', 'Buy brighter book covers.', 'Count the damaged books without changing anything.', 'Replace the roof only after every book has been destroyed.'] correct=1
+=== VIDEO solve-vr45-g006: kind=solution title='Repair the cause'
+[1] Your question
+  BOARD: []
+  SCRIPT: A school repeatedly replaces books damaged by a leaking roof. A teacher compares this to replacing punctured bicycle tubes without removing the nail from the tyre. What action fits the teacher’s point?
+[2] Put the message in plain English
+  BOARD: ['Fix the leak that keeps causing the damage.']
+  SCRIPT: Both comparisons distinguish recurring repairs to effects from removal of the continuing source. Strip away the objects in the story and state its lesson about the relationship. Then put the real situation back into those roles. If a proposed answer needs an extra fact that neither story supplied, the comparison does not justify it.
+[3] Keep each answer tied to the text
+  BOARD: ['Cause versus symptom']
+  SCRIPT: “Buy brighter book covers.” fails because appearance does not remove the cause. “Count the damaged books without changing anything.” fails because counting alone does not stop recurrence. “Replace the roof only after every book has been destroyed.” fails because waiting for total loss defeats the preventive point. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'Fix the leak that keeps causing the damage.']
+  SCRIPT: The answer is choice 1: Fix the leak that keeps causing the damage.. Both comparisons distinguish recurring repairs to effects from removal of the continuing source.
+
+######## SECTION vr45-practice — Independent practice (practice)
+--- Q vr45-p001: A manager checks a team’s success only by counting the meetings it holds. A colleague compares this to judging a restaurant by the number of plates it washes. What is the objection?
+  CHOICES: ['Washing plates guarantees excellent food.', 'Teams should never meet.', 'A measure of activity need not measure the quality or result of that activity.', 'Meetings and restaurants have nothing in common.'] correct=3
+--- Q vr45-p002: A town keeps widening a road while leaving the narrow bridge at its end unchanged. Which situation is most similar?
+  CHOICES: ['A library replaces all damaged shelves.', 'A gardener waters a dry plant.', 'A driver chooses a shorter route with no obstruction.', 'A factory speeds every stage except the one that limits total output.'] correct=4
+--- Q vr45-p003: A critic says that choosing a translator solely for elegant prose is like choosing a guide solely for a pleasant voice. What quality is likely being neglected?
+  CHOICES: ['Accurate communication of the relevant information', 'The color of the translator’s desk', 'The guide’s ability to be heard at all', 'The number of pages in every book'] correct=1
+--- Q vr45-p004: Someone argues that an ancient tool must have been useless because it no longer works. A historian compares this to judging a once-sharp knife after it has rusted. The comparison emphasizes —
+  CHOICES: ['that modern tools cannot fail', 'the difference between original performance and present condition', 'that all old tools were perfect', 'that rust improves cutting'] correct=2
+--- Q vr45-p005: A speaker calls a small discount on an unaffordable item “a drop of water offered to fill an empty reservoir.” What is implied?
+  CHOICES: ['The help is too small relative to the need.', 'The discount makes the item free.', 'Water and money can never be compared.', 'Any small contribution must be harmful.'] correct=1
+--- Q vr45-p006: A company spends heavily advertising a service it cannot yet deliver. Which comparison best captures the problem?
+  CHOICES: ['Inviting guests to a meal before obtaining any food', 'Checking a map before a journey', 'Sharpening a pencil before writing', 'Testing a bridge before opening it'] correct=1
+--- Q vr45-p007: A writer says an index is to a book what signposts are to a town. What relationship is intended?
+  CHOICES: ['Each helps users locate things within a larger organized space.', 'Each contains every detail of what it refers to.', 'Each replaces the thing being explored.', 'Each creates the destinations it names.'] correct=1
+--- Q vr45-p008: An official answers a criticism of a policy’s results by describing its good intentions. A colleague compares this to defending a leaking umbrella by praising the maker’s wish to keep people dry. What is the point?
+  CHOICES: ['All policies are umbrellas.', 'Intentions can never matter in any judgment.', 'Good intentions do not answer a criticism of actual performance.', 'The maker wanted people to get wet.'] correct=3
+--- Q vr45-p009: A committee copies a successful town’s policy without considering local conditions. Which comparison is closest?
+  CHOICES: ['Measuring several people before making shoes', 'Repairing a shoe that has a known hole', 'Choosing shoes that fit the intended wearer', 'Giving everyone the same shoe size because it fits one person'] correct=4
+--- Q vr45-p010: A researcher ignores an unexpected result because it does not fit her theory. A colleague says this is like adjusting a ruler’s marks to make a table the length one expected. What is criticized?
+  CHOICES: ['Revising a theory in response to evidence', 'Changing the treatment of evidence to protect a preferred conclusion', 'Testing an uncertain idea', 'Using any measuring device'] correct=2
+--- Q vr45-p011: A coach praises a team’s improvement even though it has not yet won. Which comparison is most similar?
+  CHOICES: ['Calling a climber successful without any movement', 'Denying that a mountain has a summit', 'Judging every climb only by the color of the rope', 'Recognizing a climber’s progress before the summit is reached'] correct=4
+--- Q vr45-p012: A speaker says that banning every imperfect method would be like refusing to use a map because it omits individual trees. What is the central point?
+  CHOICES: ['Methods should never be evaluated.', 'A useful tool need not include every detail.', 'Maps are always completely accurate.', 'Every omitted detail is equally important.'] correct=2
+--- Q vr45-p013: A museum removes explanatory labels to make its displays look cleaner, then wonders why visitors understand less. Which comparison is closest?
+  CHOICES: ['Removing road signs for a tidier view and then finding travelers get lost', 'Replacing inaccurate signs with accurate ones', 'Adding lighting to make signs easier to read', 'Closing a road that has become unsafe'] correct=1
+--- Q vr45-p014: A director claims a rule is fair because it uses the same words for everyone. A critic compares it to giving every runner identical shoes regardless of foot size. What is challenged?
+  CHOICES: ['The claim that shoes have sizes', 'The possibility of writing rules', 'The idea that runners can differ', 'The assumption that identical treatment guarantees equal suitability'] correct=4
+--- Q vr45-p015: An author says a tradition can change while retaining its identity, “as a melody remains recognizable when played on a different instrument.” What is the shared idea?
+  CHOICES: ['Continuity can survive a change in outward form.', 'A tradition must never change at all.', 'Different instruments always sound identical.', 'Every changed melody is unrecognisable.'] correct=1
+--- Q vr45-p016: A speaker describes a rumour repeated by many newspapers as “one candle reflected in many mirrors.” What is the warning?
+  CHOICES: ['Mirrors create their own flames.', 'Many reports may trace back to a single source rather than independent evidence.', 'Every newspaper independently confirmed the story.', 'The story must be false.'] correct=2
+--- Q vr45-p017: A team repairs errors only after customers complain. A consultant compares this to placing buckets under leaks instead of checking the roof before rain. What change is suggested?
+  CHOICES: ['Stop listening to every complaint.', 'Use more attractive buckets.', 'Assume the roof can never leak.', 'Identify and prevent likely problems before they cause damage.'] correct=4
+--- Q vr45-p018: A student memorizes the answer to one puzzle and believes this proves understanding of the method. Which comparison is most apt?
+  CHOICES: ['Learning one dance pose and claiming to know the whole dance', 'Practicing a dance sequence in several settings', 'Explaining why a dance movement works', 'Correcting a mistaken step after feedback'] correct=1
+--- Q vr45-p019: A mayor points to a busy market as proof that the new square caused commerce to flourish. A critic notes that the square was built where commerce was already strongest. Which comparison matches the criticism?
+  CHOICES: ['Protecting a sapling from wind', 'Calling a tree tall because birds nest in it, when the birds selected it for its height', 'Watering a seed and later seeing it grow', 'Measuring the same tree twice'] correct=2
+--- Q vr45-p020: A reviewer says that adding impressive terminology to a weak argument is like putting a fine frame around a poor painting. What is implied?
+  CHOICES: ['Every framed painting is poor.', 'Terminology has no meaning in any context.', 'The argument becomes valid merely by sounding impressive.', 'Attractive presentation does not repair the underlying weakness.'] correct=4
+--- Q vr45-p021: A charity judges every project by the amount spent rather than the benefit produced. Which comparison is closest?
+  CHOICES: ['Choosing a vehicle suited to the road', 'Judging a journey’s success by fuel consumed rather than arrival at its destination', 'Checking whether a traveler arrived safely', 'Comparing routes by their actual travel time'] correct=2
+--- Q vr45-p022: A manager dismisses a small defect although it blocks the entire process. A worker compares it to a tiny stone that jams a large gear. What matters in the comparison?
+  CHOICES: ['The gear is made of stone.', 'Importance depends on the defect’s role, not merely its size.', 'Large machines can never stop.', 'Every small stone stops every machine.'] correct=2
+--- Q vr45-p023: A writer calls a provisional theory “a scaffold, not the finished building.” What does the comparison suggest?
+  CHOICES: ['The theory is useless for any purpose.', 'The theory can never be revised.', 'The work has already reached its final form.', 'The theory may help organize further work without being a final account.'] correct=4
+--- Q vr45-p024: A council keeps an outdated rule merely because it once solved a serious problem. Which comparison is most similar?
+  CHOICES: ['Replacing a broken tool with a working one', 'Continuing to wear a cast long after the fracture has healed', 'Using a cast while a fracture heals', 'Checking whether an old bridge is still safe'] correct=2
+--- Q vr45-p025: A speaker says that evaluating every poem by how much factual information it conveys is like evaluating every meal by the weight of its packaging. What is the criticism?
+  CHOICES: ['Poems contain no words.', 'Food can never be weighed.', 'Packaging is always heavier than food.', 'The chosen measure misses a central kind of value in the object.'] correct=4
+--- Q vr45-p026: A plan succeeds only because volunteers quietly repair its defects. An official praises the plan alone. Which comparison fits?
+  CHOICES: ['Noticing and repairing a leak before departure', 'Comparing two boats under the same conditions', 'Crediting a leaking boat’s design for staying afloat while passengers constantly bail water', 'Praising a boat that floats without assistance'] correct=3
+--- Q vr45-p027: A speaker warns against using the last piece of supporting evidence as if it were the entire argument, calling it “the final brick, not the whole wall.” What distinction is intended?
+  CHOICES: ['The conclusion must fall whenever any word changes.', 'A contribution to a conclusion versus all the support for it', 'A final contribution has no value.', 'An argument cannot contain several reasons.'] correct=2

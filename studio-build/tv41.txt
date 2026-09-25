@@ -1,0 +1,227 @@
+# Topic 41 Sentence completion
+
+######## SECTION vr41-learn — Learn and try (learn)
+=== VIDEO vr-completion-method: kind=lesson title='Sentence completion: hear how the parts fit'
+[1] Read a sentence, not a row of holes
+  BOARD: ['Choose the completion that creates a coherent whole.', 'Read one option into all the blanks in order.']
+  SCRIPT: A sentence with several blanks can look like a pile of disconnected fragments. Give yourself a complete version to work with: read an answer choice into the blanks in order. The first phrase goes in the first blank, the second in the second, and so on. You can start with the first option, or begin with an option whose opening you understand quickly. The important thing is to read a real sentence and follow its logic. Do not choose an answer because its first phrase sounds good. A later phrase may reverse the claim or make the example contradict the point it is supposed to illustrate.
+[2] Keep a short skeleton
+  BOARD: ['Long names → clear labels', 'Descriptions → keep only what matters', 'But, only, not and unless stay.']
+  SCRIPT: Suppose a long sentence describes a historian with an unfamiliar name who wrote several books in a city with an unfamiliar name. If the issue is whether she accepts a particular explanation, your mental version can simply say ‘the historian accepts the explanation.’ But do not remove the word ‘partly,’ ‘only,’ or ‘not.’ Those words change the claim. Think of this as keeping the sentence’s skeleton: who takes which position, why, and what turns or limits that position. Use it to reduce memory load, not to flatten all the interesting logic out of the sentence.
+[3] Predict the direction
+  BOARD: ['Although X → expect a contrast', 'Because X → expect a reason that fits', 'For example → expect an instance of the claim']
+  SCRIPT: Once the first clause makes sense, predict the direction of the next one. If the sentence says a device is reliable but something else is true of it, expect a limitation or a contrast. If it says ‘for example,’ the example should illustrate the claim just made. This is not a rule that contrast words always join a positive word to a negative word. ‘Although the team lost, the coach was pleased’ contrasts an event with an unexpected reaction. Read the ideas, not just plus and minus signs. Your prediction is a quick check: does this completion take the sentence where its connective promised to go?
+[4] Read the turn with emphasis
+  BOARD: ['The plan was CHEAP, yet INEFFECTIVE.', 'The plan was cheap and THEREFORE ATTRACTIVE.']
+  SCRIPT: Use dramatic inner reading here. Let ‘yet’ sound like a turn and ‘therefore’ sound like a conclusion. In the first sentence, low cost comes with a disappointing limitation. In the second, low cost explains why someone finds the plan attractive. Saying the sentence naturally can expose a completion that looks grammatical but has the wrong relationship. Do not overdo the performance or read aloud during a timed exam. The point is a small shift in your inner voice that makes the link between clauses easier to hear. If a sentence still feels unclear, pause after the clause and give yourself a plain-language paraphrase.
+[5] An example must demonstrate the point
+  BOARD: ['Claim: predictions sometimes fail.', 'Example: a predicted rise became a fall.', 'A correct prediction would not illustrate failure.']
+  SCRIPT: Here the claim is that predictions sometimes fail. The example should show a prediction that did not match what happened. If an option makes the example a perfectly accurate prediction, the sentence may be grammatical but it does not support its own point. This is one of the most useful checks for a long sentence. Ask what job the last clause is doing. Is it an example, a reason, a qualification, or an opposing view? A completion can fail because it fills the wrong job even when each separate phrase sounds reasonable. Internal coherence is the target; specialist knowledge about an actual historical forecast is not required.
+[6] Counterfactuals: separate the imagined case
+  BOARD: ['Had the guide arrived, the tour could have begun.', 'Imagined condition: guide arrives', 'Do not invent a complete history from this sentence.']
+  SCRIPT: Counterfactual wording asks us to consider a situation different from the one being discussed. ‘Had the guide arrived’ means ‘if the guide had arrived.’ ‘Had it not rained’ means ‘if it had not rained.’ First rewrite that condition simply. Then read the result with its exact strength: would, could, or might. Be careful here: we should not automatically negate both halves and claim to know the whole real outcome. The sentence may leave another route to the outcome open. If the question explicitly tells us the guide did not arrive and the tour was canceled, those are facts we can use. Otherwise, keep the imagined relationship separate from unstated history.
+[7] Untangle one negative at a time
+  BOARD: ['Did not fail to object → did object', 'Not every visitor complained → at least one did not', 'Not impossible → possible, not certain']
+  SCRIPT: Some negatives cancel neatly, but others do not. ‘She did not fail to object’ says she objected. ‘Not every visitor complained’ says at least one visitor did not complain; it does not say no visitor complained. ‘Not impossible’ means possible, not certain. Work from the inside out and keep the scope of each negative clear. When the wording becomes awkward, replace one small phrase at a time with plain English, then reread the sentence. Do not count negative-looking words and decide that an even number must make the whole sentence positive. Natural language contains different verbs, quantifiers and scopes, so that shortcut can produce the wrong meaning.
+[8] Test similar openings efficiently
+  BOARD: ['Same opening meaning → reuse the understood clause', 'Different ending → check the new connection', 'Finish the whole sentence before deciding.']
+  SCRIPT: If two options have essentially the same opening, you can reuse the understanding you already built and focus on where they differ. This saves effort without skipping a logical check. Once one completion makes the entire sentence coherent and you have a clear reason for rejecting the serious rival, do not keep rereading out of anxiety. In untimed practice, inspect all four so you learn the traps. In timed work, avoid unnecessary checking, but never stop after a promising first clause while later blanks remain untested.
+[9] Check the final message
+  BOARD: ['Who believes what?', 'Which clause supports or challenges it?', 'Did every blank preserve that connection?']
+  SCRIPT: At the end, give a one-sentence summary of the completed sentence. ‘The critic expected a weak performance, but the performance changed her mind.’ ‘The survey supports a limited claim, not a universal one.’ If you cannot state that message, the option may only feel familiar rather than make sense. This final paraphrase is especially useful with reported opinions: the writer may describe a belief without accepting it. Keep the owner of each claim attached to it. Then choose and move on. The practice sets will gradually add longer clauses, counterfactuals and multiple speakers while preserving the same basic routine.
+--- Q vr41-g001: The old forecast was described as ____ because its predictions usually matched events; nevertheless, the recent error showed that it was ____. For example, it predicted a rise when sales actually ____.
+  CHOICES: ['unreliable · not infallible · fell', 'reliable · infallible · fell', 'reliable · not infallible · rose', 'reliable · not infallible · fell'] correct=4
+=== VIDEO solve-vr41-g001: kind=solution title='A prediction and its example'
+[1] Your question
+  BOARD: []
+  SCRIPT: The old forecast was described as ____ because its predictions usually matched events; nevertheless, the recent error showed that it was ____. For example, it predicted a rise when sales actually ____.
+[2] Keep the skeleton
+  BOARD: ['Usually matching events supports reliability.', 'An admitted error rules out infallibility.', 'A fall makes the predicted rise an example of error.']
+  SCRIPT: Usually matching events supports reliability. An admitted error rules out infallibility. A fall makes the predicted rise an example of error. Read the sentence with this completion in a natural voice. Pause at each turn and paraphrase the clause you have just completed. The words around a blank tell us what job its phrase has to do. We are checking the links inside this sentence, so outside knowledge about a real forecast, reviewer or repair is unnecessary.
+[3] Locate the exact mismatch
+  BOARD: ['reliable · not infallible · fell']
+  SCRIPT: The fragment “unreliable” does not fit this position. Usually matching events supports reliability. The fragment “infallible” does not fit this position. An admitted error rules out infallibility. The fragment “rose” does not fit this position. A fall makes the predicted rise an example of error. Notice that a completion can begin well and still fail later. Test the entire thought. Once its three parts work together, say the overall message in one short sentence. That check is more reliable than accepting an option because one familiar phrase sounds right.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'reliable · not infallible · fell']
+  SCRIPT: The answer is choice 4: reliable · not infallible · fell. A fall makes the predicted rise an example of error.
+--- Q vr41-g002: Although the new translation is ____ than the earlier one, the reviewer prefers it: its occasional awkwardness is ____ by its greater accuracy, a feature she considers ____ than elegance.
+  CHOICES: ['more elegant · outweighed · more important', 'less elegant · reinforced · more important', 'less elegant · outweighed · less important', 'less elegant · outweighed · more important'] correct=4
+=== VIDEO solve-vr41-g002: kind=solution title='A long sentence in plain English'
+[1] Your question
+  BOARD: []
+  SCRIPT: Although the new translation is ____ than the earlier one, the reviewer prefers it: its occasional awkwardness is ____ by its greater accuracy, a feature she considers ____ than elegance.
+[2] Keep the skeleton
+  BOARD: ['The stated awkwardness supplies the limitation introduced by although.', 'Accuracy must compensate for awkwardness to explain her preference.', 'Her preference despite awkwardness gives accuracy priority.']
+  SCRIPT: The stated awkwardness supplies the limitation introduced by although. Accuracy must compensate for awkwardness to explain her preference. Her preference despite awkwardness gives accuracy priority. Read the sentence with this completion in a natural voice. Pause at each turn and paraphrase the clause you have just completed. The words around a blank tell us what job its phrase has to do. We are checking the links inside this sentence, so outside knowledge about a real forecast, reviewer or repair is unnecessary.
+[3] Locate the exact mismatch
+  BOARD: ['less elegant · outweighed · more important']
+  SCRIPT: The fragment “more elegant” does not fit this position. The stated awkwardness supplies the limitation introduced by although. The fragment “reinforced” does not fit this position. Accuracy must compensate for awkwardness to explain her preference. The fragment “less important” does not fit this position. Her preference despite awkwardness gives accuracy priority. Notice that a completion can begin well and still fail later. Test the entire thought. Once its three parts work together, say the overall message in one short sentence. That check is more reliable than accepting an option because one familiar phrase sounds right.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'less elegant · outweighed · more important']
+  SCRIPT: The answer is choice 4: less elegant · outweighed · more important. Her preference despite awkwardness gives accuracy priority.
+--- Q vr41-g003: Had the repair been completed before the storm, the roof would have remained dry. The repair was not completed, and the roof leaked. Thus the actual outcome ____ the imagined one, and the imagined condition was ____, not ____.
+  CHOICES: ['differed from · completion of the repair · its completion', 'differed from · completion of the repair · its delay', 'matched · completion of the repair · its delay', 'differed from · delay of the repair · its delay'] correct=2
+=== VIDEO solve-vr41-g003: kind=solution title='A counterfactual with stated facts'
+[1] Your question
+  BOARD: []
+  SCRIPT: Had the repair been completed before the storm, the roof would have remained dry. The repair was not completed, and the roof leaked. Thus the actual outcome ____ the imagined one, and the imagined condition was ____, not ____.
+[2] Keep the skeleton
+  BOARD: ['Dry and leaking are different outcomes.', 'The condition explicitly supposes completion before the storm.', 'Delay is the actual circumstance, not the imagined protective condition.']
+  SCRIPT: Dry and leaking are different outcomes. The condition explicitly supposes completion before the storm. Delay is the actual circumstance, not the imagined protective condition. Read the sentence with this completion in a natural voice. Pause at each turn and paraphrase the clause you have just completed. The words around a blank tell us what job its phrase has to do. We are checking the links inside this sentence, so outside knowledge about a real forecast, reviewer or repair is unnecessary.
+[3] Locate the exact mismatch
+  BOARD: ['differed from · completion of the repair · its delay']
+  SCRIPT: The fragment “matched” does not fit this position. Dry and leaking are different outcomes. The fragment “delay of the repair” does not fit this position. The condition explicitly supposes completion before the storm. The fragment “its completion” does not fit this position. Delay is the actual circumstance, not the imagined protective condition. Notice that a completion can begin well and still fail later. Test the entire thought. Once its three parts work together, say the overall message in one short sentence. That check is more reliable than accepting an option because one familiar phrase sounds right.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'differed from · completion of the repair · its delay']
+  SCRIPT: The answer is choice 2: differed from · completion of the repair · its delay. Delay is the actual circumstance, not the imagined protective condition.
+--- Q vr41-g004: Lena did not fail to notice the contradiction. She therefore ____ it. She chose not to tell anyone, so although she was ____ of it, she ____ it.
+  CHOICES: ['noticed · aware · did not disclose', 'missed · aware · did not disclose', 'noticed · unaware · did not disclose', 'noticed · aware · disclosed'] correct=1
+=== VIDEO solve-vr41-g004: kind=solution title='A double negative without losing scope'
+[1] Your question
+  BOARD: []
+  SCRIPT: Lena did not fail to notice the contradiction. She therefore ____ it. She chose not to tell anyone, so although she was ____ of it, she ____ it.
+[2] Keep the skeleton
+  BOARD: ['Did not fail to notice means did notice.', 'Noticing establishes awareness.', 'Choosing not to tell anyone means she did not disclose it.']
+  SCRIPT: Did not fail to notice means did notice. Noticing establishes awareness. Choosing not to tell anyone means she did not disclose it. Read the sentence with this completion in a natural voice. Pause at each turn and paraphrase the clause you have just completed. The words around a blank tell us what job its phrase has to do. We are checking the links inside this sentence, so outside knowledge about a real forecast, reviewer or repair is unnecessary.
+[3] Locate the exact mismatch
+  BOARD: ['noticed · aware · did not disclose']
+  SCRIPT: The fragment “missed” does not fit this position. Did not fail to notice means did notice. The fragment “unaware” does not fit this position. Noticing establishes awareness. The fragment “disclosed” does not fit this position. Choosing not to tell anyone means she did not disclose it. Notice that a completion can begin well and still fail later. Test the entire thought. Once its three parts work together, say the overall message in one short sentence. That check is more reliable than accepting an option because one familiar phrase sounds right.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'noticed · aware · did not disclose']
+  SCRIPT: The answer is choice 1: noticed · aware · did not disclose. Choosing not to tell anyone means she did not disclose it.
+
+######## SECTION vr41-practice — Independent practice (practice)
+--- Q vr41-p001: The old demand estimate was described as ____ because its estimates usually matched events; nevertheless, the recent error showed that it was ____. For example, it predicted a rise when orders actually ____.
+  CHOICES: ['reliable · not infallible · fell', 'unreliable · not infallible · fell', 'reliable · infallible · fell', 'reliable · not infallible · rose'] correct=1
+--- Q vr41-p002: Although the new stage adaptation is ____ than the earlier one, the director prefers it: its occasional awkwardness is ____ by its greater faithfulness to the story, a feature she considers ____ than polish.
+  CHOICES: ['less elegant · reinforced · more important', 'less elegant · outweighed · less important', 'less elegant · outweighed · more important', 'more elegant · outweighed · more important'] correct=3
+--- Q vr41-p003: The council expected the shorter route to ____ delivery times. It was therefore ____ to find that journeys took longer, a result ____ its expectation.
+  CHOICES: ['reduce · surprised · contrary to', 'increase · surprised · contrary to', 'reduce · unsurprised · contrary to', 'reduce · surprised · consistent with'] correct=1
+--- Q vr41-p004: Because the samples were chosen ____, the author cautions against treating them as ____ of the entire collection; conclusions about the whole should therefore be ____.
+  CHOICES: ['for their unusual features · representative · certain', 'for their unusual features · representative · tentative', 'at random · representative · certain', 'for their unusual features · unrepresentative · tentative'] correct=2
+--- Q vr41-p005: The composer was praised not for ____ established forms, but for ____ them: listeners could still recognize the familiar structure, although its details were ____.
+  CHOICES: ['abandoning · adapting · unchanged', 'abandoning · adapting · new', 'preserving · destroying · new', 'abandoning · destroying · new'] correct=2
+--- Q vr41-p006: The company called the trial a success because output ____. Critics replied that this measure ____ the extra cost, which was so large that profit actually ____.
+  CHOICES: ['fell · ignored · fell', 'rose · included · fell', 'rose · ignored · rose', 'rose · ignored · fell'] correct=4
+--- Q vr41-p007: Mina had expected the lecture to be ____, so she was ____ when she found herself following every step; she concluded that the speaker had made a difficult subject ____.
+  CHOICES: ['confusing · pleasantly surprised · obscure', 'confusing · pleasantly surprised · accessible', 'clear · pleasantly surprised · accessible', 'confusing · disappointed · accessible'] correct=2
+--- Q vr41-p008: The historian does not deny that the ruler built roads. Rather, she questions whether these projects were motivated by ____ rather than ____, since the roads mainly connected military posts and did little to improve ____.
+  CHOICES: ['public welfare · military needs · military convenience', 'public welfare · military needs · public convenience', 'military needs · military needs · public convenience', 'public welfare · public welfare · public convenience'] correct=2
+--- Q vr41-p009: The first experiment was ____, since two factors changed together. A second experiment held one factor constant, making it ____ to isolate the effect of the other and thereby ____ the earlier weakness.
+  CHOICES: ['inconclusive · easier · addressing', 'decisive · easier · addressing', 'inconclusive · harder · addressing', 'inconclusive · easier · repeating'] correct=1
+--- Q vr41-p010: Far from ____ the author’s claim, the newly found letter ____ it: the letter describes precisely the visit whose occurrence the author had ____.
+  CHOICES: ['supporting · supported · asserted', 'undermining · undermined · asserted', 'undermining · supported · denied', 'undermining · supported · asserted'] correct=4
+--- Q vr41-p011: The museum’s decision to provide free entry was intended to ____ attendance. Attendance did rise, but the director cautioned that the timing alone ____ that free entry had ____ the rise.
+  CHOICES: ['increase · did not prove · prevented', 'increase · did not prove · caused', 'decrease · proved · caused', 'increase · proved · caused'] correct=2
+--- Q vr41-p012: Although each individual task was ____, completing all of them took considerable time. The manager therefore rejected the claim that a collection of short tasks must itself be ____, emphasising their ____ duration.
+  CHOICES: ['brief · brief · combined', 'lengthy · brief · combined', 'brief · lengthy · combined', 'brief · brief · individual'] correct=1
+--- Q vr41-p013: The reviewer regarded the ending as ____: it followed naturally from earlier events. She objected instead to the dialogue, which she found ____, and thus her overall assessment was ____ rather than wholly favorable.
+  CHOICES: ['convincing · stilted · uniformly positive', 'convincing · stilted · mixed', 'unconvincing · stilted · mixed', 'convincing · natural · mixed'] correct=2
+--- Q vr41-p014: The rules were introduced to make decisions ____. Yet different judges still reached different outcomes in identical cases, suggesting that the rules had ____ their aim and that inconsistency ____.
+  CHOICES: ['more uniform · not achieved · disappeared', 'more uniform · not achieved · remained', 'less uniform · not achieved · remained', 'more uniform · achieved · remained'] correct=2
+--- Q vr41-p015: The researcher had ____ that the two groups would behave differently. Their nearly identical results therefore ____ her expectation, though they did not establish that every individual in one group was ____ every individual in the other.
+  CHOICES: ['predicted · challenged · identical to', 'denied · challenged · identical to', 'predicted · confirmed · identical to', 'predicted · confirmed · different from'] correct=1
+--- Q vr41-p016: The guide’s warning was intended to ____ visitors from entering the tunnel. The fact that several entered anyway shows that a warning does not ____ obedience; its purpose nevertheless remained to ____ entry.
+  CHOICES: ['encourage · prevent · prevent', 'discourage · guarantee · promote', 'discourage · guarantee · prevent', 'encourage · guarantee · prevent'] correct=3
+--- Q vr41-p017: Only after the editor read the final chapter did she ____ her earlier view that the novel lacked focus. The chapter connected its apparently unrelated stories, making her original criticism seem ____. She therefore became ____ favorable.
+  CHOICES: ['retain · less justified · more', 'revise · more justified · more', 'revise · less justified · less', 'revise · less justified · more'] correct=4
+--- Q vr41-p018: Because the new evidence concerns only coastal towns, it ____ a claim about every inland village. The author therefore ____ the scope of the conclusion and describes it as ____ the coast.
+  CHOICES: ['establishes · limits · restricted to', 'cannot by itself establish · expands · restricted to', 'cannot by itself establish · limits · independent of', 'cannot by itself establish · limits · restricted to'] correct=4
+--- Q vr41-p019: Had the window replacement been completed before the storm, the room would have remained dry. The window replacement was not completed, and the room became wet. Thus the actual outcome ____ the imagined one, and the imagined condition was ____, not ____.
+  CHOICES: ['differed from · completion of the window replacement · its delay', 'matched · completion of the window replacement · its delay', 'differed from · delay of the window replacement · its delay', 'differed from · completion of the window replacement · its completion'] correct=1
+--- Q vr41-p020: The critic called the work original, but did not mean that it had ____ influences. Her point was that the artist had ____ familiar elements into a combination that was ____.
+  CHOICES: ['many · rearranged · unchanged', 'no · merely copied · new', 'no · rearranged · unchanged', 'no · rearranged · new'] correct=4
+--- Q vr41-p021: The article describes the tool as ____ but not ____. It performs its narrow task reliably, yet cannot handle the wider range of jobs for which a more ____ tool would be needed.
+  CHOICES: ['effective · versatile · versatile', 'ineffective · versatile · versatile', 'effective · specialized · versatile', 'effective · versatile · specialized'] correct=1
+--- Q vr41-p022: The manager said the delay was ____, not ____, because it resulted from an unexpected power failure rather than a choice to postpone the work. She therefore denied that it had been ____.
+  CHOICES: ['accidental · accidental · planned', 'accidental · deliberate · unexpected', 'accidental · deliberate · planned', 'deliberate · deliberate · planned'] correct=3
+--- Q vr41-p023: The report does not claim that the new method always fails. It claims only that success is ____, a point ____ by one unsuccessful trial and ____ with the existence of successful trials.
+  CHOICES: ['not guaranteed · refuted · compatible', 'not guaranteed · illustrated · incompatible', 'not guaranteed · illustrated · compatible', 'guaranteed · illustrated · compatible'] correct=3
+--- Q vr41-p024: Iris valued the plan’s simplicity but feared that it omitted essential details. Her objection was therefore to its ____, not to simplicity itself; she would accept a simple plan provided that it was also ____, making her position ____.
+  CHOICES: ['complexity · adequate · qualified', 'incompleteness · inadequate · qualified', 'incompleteness · adequate · an unqualified rejection', 'incompleteness · adequate · qualified'] correct=4
+--- Q vr41-p025: The witness sounded certain, yet the investigator refused to equate confidence with ____. Records contradicted parts of the account, so the confident delivery was ____ evidence of truth and the account had been ____.
+  CHOICES: ['accuracy · insufficient · challenged', 'hesitation · insufficient · challenged', 'accuracy · sufficient · challenged', 'accuracy · insufficient · confirmed'] correct=1
+--- Q vr41-p026: The new rule was meant to ____ the exception, not to ____ it. It states that the exception applies only to emergency repairs, thereby ____ the cases in which it may be used.
+  CHOICES: ['restrict · restrict · narrowing', 'restrict · abolish · expanding', 'restrict · abolish · narrowing', 'abolish · abolish · narrowing'] correct=3
+--- Q vr41-p027: The essay praises doubt when it encourages investigation, but criticizes it when it becomes a reason to reject all evidence. Doubt is therefore treated as ____ rather than invariably ____, and its value depends on how it is ____.
+  CHOICES: ['always harmful · harmful · used', 'potentially useful · beneficial · spelled', 'potentially useful · beneficial · used', 'always harmful · beneficial · used'] correct=3
+--- Q vr41-p028: The archaeologist first attributed the marks to natural erosion. Their regular spacing later made this explanation seem ____, prompting her to consider ____ activity. The new account thus ____ the first.
+  CHOICES: ['more plausible · human · replaced', 'less plausible · natural · replaced', 'less plausible · human · confirmed', 'less plausible · human · replaced'] correct=4
+--- Q vr41-p029: The library contains fewer rare books than the archive, yet its rare books are ____. Consequently, a comparison based only on ____ would miss an advantage in ____.
+  CHOICES: ['better preserved · condition · condition', 'better preserved · number · number', 'better preserved · number · condition', 'worse preserved · number · condition'] correct=3
+--- Q vr41-p030: The speaker denied that silence necessarily signals ____. A person may remain silent because of uncertainty rather than approval, so treating silence as agreement would be ____, even though agreement is one ____ explanation.
+  CHOICES: ['agreement · unwarranted · impossible', 'agreement · unwarranted · possible', 'disagreement · unwarranted · possible', 'agreement · justified · possible'] correct=2
+--- Q vr41-p031: The committee’s initial refusal was ____. After the proposal was revised, it approved the project, showing that its opposition concerned the ____ version rather than every ____ version.
+  CHOICES: ['conditional · revised · possible', 'conditional · revised · identical', 'conditional · original · possible', 'permanent · original · possible'] correct=3
+--- Q vr41-p032: The designer reduced the number of controls in order to make the device easier to use. Users found it ____ confusing, so the change ____ its stated purpose, although it also made some advanced functions ____ to reach.
+  CHOICES: ['more · served · harder', 'less · defeated · harder', 'less · served · easier', 'less · served · harder'] correct=4
+--- Q vr41-p033: The biographer admits that the letters reveal much about the author’s public opinions, but warns that they may ____ private doubts. The letters are therefore a ____ source, yet not an ____ one.
+  CHOICES: ['reveal fully · valuable · exhaustive', 'conceal · worthless · exhaustive', 'conceal · valuable · incomplete', 'conceal · valuable · exhaustive'] correct=4
+--- Q vr41-p034: The observer mistook a reduction in the number of complaints for a reduction in the number of problems. This inference would be ____ if people had become ____ willing to complain, because fewer reports could then coexist with ____ problems.
+  CHOICES: ['weakened · less · unchanged numbers of', 'strengthened · less · unchanged numbers of', 'weakened · more · unchanged numbers of', 'strengthened · less · no'] correct=1
+--- Q vr41-p035: The editor removed repeated passages, thereby ____ the article without ____ its main arguments. Its shorter length thus reflected less ____, not less substance.
+  CHOICES: ['shortening · discarding · repetition', 'lengthening · discarding · repetition', 'shortening · preserving · repetition', 'shortening · discarding · clarity'] correct=1
+--- Q vr41-p036: The critic’s praise was ____: she admired the technical skill but objected to the subject matter. Calling her review wholly ____ would therefore ignore her ____.
+  CHOICES: ['qualified · favorable · criticism', 'unqualified · favorable · criticism', 'qualified · unfavourable · criticism', 'qualified · favorable · praise'] correct=1
+--- Q vr41-p037: The theory predicts that the effect appears only in darkness. Finding it in full daylight would therefore ____ the theory, whereas failing to find it in darkness would ____ show that darkness is unnecessary; it might show that darkness is ____ but not sufficient.
+  CHOICES: ['challenge · not by itself · irrelevant', 'challenge · not by itself · necessary', 'confirm · not by itself · necessary', 'challenge · certainly · necessary'] correct=2
+--- Q vr41-p038: The reviewer had not expected to enjoy a book about such a narrow topic. Her enjoyment was therefore ____; she credited the writer with making the topic ____ rather than changing her mind about its ____ scope.
+  CHOICES: ['unexpected · tedious · narrow', 'unexpected · engaging · broad', 'unexpected · engaging · narrow', 'predictable · engaging · narrow'] correct=3
+--- Q vr41-p039: The two accounts agree about what happened but disagree about ____. Their dispute therefore concerns ____ rather than the occurrence of the event, and a record merely confirming the event would ____ settle it.
+  CHOICES: ['whether it happened · explanation · not', 'why it happened · existence · not', 'why it happened · explanation · fully', 'why it happened · explanation · not'] correct=4
+--- Q vr41-p040: The policy excludes visitors except those accompanied by members. Thus an accompanied visitor is ____ by this particular restriction, whereas an unaccompanied visitor is ____. The exception ____ the general exclusion.
+  CHOICES: ['not excluded · excluded · limits', 'excluded · excluded · limits', 'not excluded · not excluded · limits', 'not excluded · excluded · eliminates'] correct=1
+--- Q vr41-p041: The researcher avoided saying that the result proved her account. She said it was ____ with the account, while acknowledging that a rival could ____ the same result. Her language was therefore ____.
+  CHOICES: ['consistent · explain · categorical', 'consistent · explain · cautious', 'inconsistent · explain · cautious', 'consistent · never explain · cautious'] correct=2
+--- Q vr41-p042: The public summary presented the agreement as ____, even though several participants had raised objections. It therefore ____ the degree of agreement and ____ the dissent.
+  CHOICES: ['partial · overstated · concealed', 'unanimous · understated · concealed', 'unanimous · overstated · highlighted', 'unanimous · overstated · concealed'] correct=4
+--- Q vr41-p043: Although one route is shorter in distance, it takes longer because its surface permits only low speeds. The other route’s distance is therefore ____, while its travel time is ____. This example shows that a shorter distance does ____ guarantee a shorter journey time.
+  CHOICES: ['greater · less · always', 'greater · less · not', 'less · less · not', 'greater · greater · not'] correct=2
+--- Q vr41-p044: The author distinguishes a useful approximation from an exact account. She accepts the former when precision is unnecessary, but ____ it when small differences matter. Her position is therefore ____ on the purpose for which the account is ____.
+  CHOICES: ['rejects · dependent · printed', 'rejects · dependent · used', 'accepts unconditionally · dependent · used', 'rejects · independent · used'] correct=2
+--- Q vr41-p045: The report’s claim that no sample was entirely free of impurities means that ____ sample contained ____ impurity. It does ____ mean that every part of every sample was impure.
+  CHOICES: ['every · no · not', 'every · some · necessarily', 'every · some · not', 'no · some · not'] correct=3
+--- Q vr41-p046: Owen did not fail to notice the inconsistency. He therefore ____ it. He chose not to tell anyone, so although he was ____ of it, he ____ it.
+  CHOICES: ['noticed · aware · did not disclose', 'missed · aware · did not disclose', 'noticed · unaware · did not disclose', 'noticed · aware · disclosed'] correct=1
+--- Q vr41-p047: The program succeeded in attracting beginners but failed to retain experienced members. Its overall effect cannot be described as uniformly ____, because it produced both a ____ and a ____ for the club.
+  CHOICES: ['beneficial · loss · loss', 'beneficial · gain · gain', 'beneficial · gain · loss', 'harmful · loss · loss'] correct=3
+--- Q vr41-p048: The warning concerned the possibility of flooding, not its certainty. The absence of a flood therefore ____ refute the warning, since an event described as ____ need not actually ____.
+  CHOICES: ['did not · inevitable · occur', 'did · possible · fail to occur', 'did not · possible · occur', 'did · possible · occur'] correct=3
+--- Q vr41-p049: The map was accurate when drawn but no longer matches the coastline. Its present ____ need not imply that the cartographer was ____, because the coastline itself may have ____.
+  CHOICES: ['accuracy · careful · changed', 'inaccuracy · careless · remained fixed', 'inaccuracy · careless · changed', 'accuracy · careless · changed'] correct=3
+--- Q vr41-p050: The novel’s unfamiliar setting initially ____ some readers. Once they understood its social rules, however, they found the story ____ to follow; familiarity thus ____ the initial difficulty.
+  CHOICES: ['confused · easier · increased', 'confused · easier · reduced', 'reassured · easier · reduced', 'confused · harder · reduced'] correct=2
+--- Q vr41-p051: That a popular work may be poor and an excellent work ignored refutes the claim that popularity and quality are ____. Neither feature therefore ____ the other, although they may sometimes ____.
+  CHOICES: ['equivalent · excludes · be identical in every case', 'equivalent · guarantees · be identical in every case', 'equivalent · guarantees · coincide', 'unrelated · guarantees · coincide'] correct=3
+--- Q vr41-p052: The new measurements were more precise but gave the same average as the old ones. They therefore ____ uncertainty about the estimate without ____ its central value, illustrating a distinction between precision and ____.
+  CHOICES: ['reduced · changing · location of the estimate', 'increased · changing · location of the estimate', 'reduced · preserving · location of the estimate', 'reduced · changing · agreement of individual measurements'] correct=1
+--- Q vr41-p053: The adviser recommended keeping the old system until the replacement had been tested. This recommendation favored ____ rather than permanent ____, since replacement remained acceptable ____ successful testing.
+  CHOICES: ['delay · rejection · after', 'immediate adoption · rejection · after', 'immediate adoption · adoption · after', 'delay · rejection · without'] correct=1
+--- Q vr41-p054: The author says that her conclusion follows only if the witness is reliable. She is therefore treating reliability as ____, not ____, and an unreliable witness would leave this particular justification ____.
+  CHOICES: ['necessary · irrelevant · unsupported', 'sufficient · irrelevant · unsupported', 'necessary · necessary · unsupported', 'necessary · irrelevant · supported'] correct=1
+--- Q vr41-p055: The manager welcomed criticism that identified repairable faults, but dismissed complaints that offered no specific information. Her response depended on the criticism’s ____, not merely on whether it was ____, and was therefore ____.
+  CHOICES: ['usefulness · negative · selective', 'negativity · negative · selective', 'usefulness · useful · uniform', 'usefulness · negative · uniform'] correct=1
+--- Q vr41-p056: The newly discovered draft contains the same ending as the published version. It therefore ____ the suggestion that the ending was added at the last moment, although it does not establish that every other part remained ____. The evidence concerns the ____ specifically.
+  CHOICES: ['weakens · changed · ending', 'weakens · unchanged · entire text', 'weakens · unchanged · ending', 'supports · unchanged · ending'] correct=3
+--- Q vr41-p057: The critic admired the argument’s ____ but doubted the truth of its starting assumptions. A chain of reasoning can thus be internally ____ while failing to establish a ____ conclusion about the world.
+  CHOICES: ['consistency · incoherent · true', 'inconsistency · coherent · false', 'consistency · coherent · true', 'inconsistency · coherent · true'] correct=3
+--- Q vr41-p058: The narrator reports that the villagers regarded the spring as sacred. This tells us what the villagers ____, not necessarily what the narrator ____. Attributing the same view to the narrator would therefore be ____.
+  CHOICES: ['believed · believes · unwarranted', 'doubted · believes · unwarranted', 'believed · doubts · unwarranted', 'believed · believes · required'] correct=1
+--- Q vr41-p059: The two methods produced similar results under ordinary conditions but diverged under extreme ones. Calling them simply ____ would therefore ignore the ____ of the comparison, which depends on the conditions under which they are ____.
+  CHOICES: ['equivalent · certainty · used', 'equivalent · limits · named', 'equivalent · limits · used', 'different · certainty · used'] correct=3
+--- Q vr41-p060: The reviewer’s objection was not that the evidence was fabricated, but that it was ____. He accepted the observations while denying that they were ____ to justify the broad conclusion, making his criticism one of ____ rather than honesty.
+  CHOICES: ['insufficient · enough · deception', 'insufficient · enough · scope', 'false · enough · scope', 'insufficient · too weak · scope'] correct=2
+--- Q vr41-p061: The speaker says, “Had the gate not been locked, we could have entered.” This describes an ____ possibility of entry; it does not claim that an unlocked gate would have ____ entry, since could expresses ____ rather than certainty.
+  CHOICES: ['imagined · guaranteed · necessity', 'imagined · guaranteed · possibility', 'actual · guaranteed · possibility', 'imagined · prevented · necessity'] correct=2
+--- Q vr41-p062: Not all of the reviewers disliked the film: one was neutral and the rest disliked it. The neutral reviewer ____ the film but did ____ it. This makes the claim that every reviewer disliked it ____.
+  CHOICES: ['did not dislike · not like · true', 'did not dislike · not like · false', 'disliked · not like · false', 'did not dislike · like · false'] correct=2
+--- Q vr41-p063: The committee refused to rule out postponement. It therefore kept postponement ____, without necessarily ____ it. Describing the statement as a firm decision to postpone would ____ its force.
+  CHOICES: ['possible · endorsing · understate', 'possible · endorsing · overstate', 'impossible · endorsing · overstate', 'possible · allowing it as a possibility · overstate'] correct=2
+--- Q vr41-p064: The writer contrasts an explanation that fits every imaginable outcome with one that could be challenged by a particular observation. The former is ____ to test, because no possible outcome counts ____ it; the latter exposes itself to the possibility of ____.
+  CHOICES: ['harder · against · automatic confirmation', 'harder · against · refutation', 'easier · against · refutation', 'harder · for · refutation'] correct=2
+--- Q vr41-p065: The editor’s refusal to remove the qualification “in most cases” made the claim ____, not weaker than the evidence warranted. Removing those words would have turned a supported general tendency into an ____ assertion about ____ cases.
+  CHOICES: ['more accurate · unsupported · some', 'more accurate · unsupported · all', 'less accurate · unsupported · all', 'more accurate · supported · all'] correct=2
+--- Q vr41-p066: Because the witness’s account was recorded before she saw the newspaper report, agreement between the two accounts is ____ easily explained by her copying the report. This fact ____ that particular objection without ____ that her account is accurate in every respect.
+  CHOICES: ['more · weakens · proving', 'less · strengthens · proving', 'less · strengthens · casting doubt on', 'less · weakens · proving'] correct=4
+--- Q vr41-p067: The author accepts the observation that the birds arrived earlier, but disputes the proposed cause. Further evidence merely confirming their early arrival would therefore ____ the point of disagreement; what is needed is evidence that ____ competing explanations and bears on ____ arrival changed.
+  CHOICES: ['not address · distinguishes · why', 'settle · distinguishes · why', 'not address · repeats · why', 'not address · distinguishes · whether'] correct=1

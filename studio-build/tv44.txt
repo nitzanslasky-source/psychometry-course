@@ -1,0 +1,193 @@
+# Topic 44 Understanding paragraphs
+
+######## SECTION vr44-learn — Learn and try (learn)
+=== VIDEO vr-paragraph-method: kind=lesson title='Understanding paragraphs: evidence, purpose and scope'
+[1] Ask what each sentence is doing
+  BOARD: ['Claim → reason → example → qualification', 'A topic is not the same as a purpose.']
+  SCRIPT: A paragraph about a railway may describe its construction, defend a decision to build it, or challenge a popular explanation of its failure. ‘Railway’ is the topic in all three cases. The paragraph’s purpose is different. After each sentence, give it a small job label: claim, reason, example, opposing view, or qualification. You do not need all five labels in every paragraph. The point is to understand how the thought develops. A question asking why an example is mentioned wants that job, not just a description of what the example contains.
+[2] Literal information and inference
+  BOARD: ['Stated: find the matching information.', 'Implied: connect what the text actually supplies.', 'Neither: do not add a missing premise.']
+  SCRIPT: Some questions ask what is stated. Others ask what follows or is implied. For a stated-information question, find the relevant sentence and compare the option carefully. An inference may combine two statements, but it still needs support. If a paragraph says a device is cheaper to produce and more expensive to maintain, it does not tell us which device costs less over ten years without more information. Do not confuse a plausible answer with an entailed one. The safest inference often sounds less exciting than the distractors because it respects what remains unknown.
+[3] Keep two views in separate boxes
+  BOARD: ['Writer A: what changes?', 'Writer B: what changes?', 'Disagreement: the exact difference']
+  SCRIPT: When two thinkers are presented, use separate boxes or labels. They may agree on an observation and disagree only on its explanation. Or they may agree that a policy has a benefit while disagreeing about its importance. Ask what each person would accept and what each would reject. A broad answer such as ‘they disagree about science’ is rarely enough. We want the precise point of disagreement. The same habit helps with a writer who quotes a critic: the critic’s words belong in the critic’s box unless the writer explicitly endorses them.
+[4] An example can test a boundary
+  BOARD: ['General claim', 'Specific case', 'Does the case support, limit or challenge it?']
+  SCRIPT: Examples are not decorative. A paragraph may use one to make an abstract idea concrete, show an exception, or expose a weakness in an argument. Read the sentence before and after the example. If the writer says ‘yet this account cannot explain...’ the example is a challenge. If the writer says ‘for instance,’ it is likely an illustration, but still check what feature is being illustrated. A distractor may accurately describe the example and still give the wrong reason for including it. The question is about its role in the paragraph’s reasoning.
+[5] Unknown terms can have clear roles
+  BOARD: ['A defined term gets its meaning from the paragraph.', 'Do not substitute a familiar but different meaning.']
+  SCRIPT: A paragraph may introduce a technical term or an unfamiliar artistic movement. Read the definition supplied there. You usually do not need outside knowledge. If the text says a technique combines ordinary speech sounds to imitate an action, use that description even if you know a related term from another context. In a language-based example, pay attention to the specific feature the definition names. What matters is the same reading task: understand a supplied definition, recognize a case that fits it, and reject a superficially similar case that lacks the defining feature.
+[6] Check scope and the negative demand
+  BOARD: ['According to the paragraph...', 'Which is NOT supported?', 'Some, usually, only, may']
+  SCRIPT: A negative question deserves a small visible mark. If it asks which statement is not supported, three options may be true paraphrases. Do not choose the first true-looking statement out of habit. Beside each answer, mentally put supported, contradicted, or not established. A not-supported answer may be false or simply go beyond the evidence; read the exact demand. Keep the paragraph’s scope: a finding in one setting is not automatically a rule for every setting. At the end, point to the sentence that supports your choice, or the precise extra claim that the text never supplied.
+--- Q vr44-g001: The painter sought ordinary subjects rather than heroic ones. Yet she rearranged their settings to emphasize social conflict, instead of recording every visible detail exactly. Which statement best describes her approach?
+  CHOICES: ['She treated exact visual copying as her only aim.', 'She believed that all ordinary scenes lacked social meaning.', 'She used ordinary subjects but shaped their presentation to express an idea.', 'She avoided ordinary life entirely.'] correct=3
+=== VIDEO solve-vr44-g001: kind=solution title='Observation and artistic choice'
+[1] Your question
+  BOARD: []
+  SCRIPT: The painter sought ordinary subjects rather than heroic ones. Yet she rearranged their settings to emphasize social conflict, instead of recording every visible detail exactly. Which statement best describes her approach?
+[2] Put the message in plain English
+  BOARD: ['She used ordinary subjects but shaped their presentation to express an idea.']
+  SCRIPT: Ordinary subject matter and selective presentation are separate features. The paragraph accepts the first and describes deliberate choices in the second. Give the paragraph a short label before testing the answers. Then check whether the option describes the whole point or only repeats a detail. An accurate paraphrase should preserve both what the writer accepts and what the writer limits.
+[3] Keep each answer tied to the text
+  BOARD: ['Two dimensions']
+  SCRIPT: “She avoided ordinary life entirely.” fails because ordinary subjects are explicitly her preference. “She treated exact visual copying as her only aim.” fails because rearranging settings shows that exact copying was not the sole aim. “She believed that all ordinary scenes lacked social meaning.” fails because the rearrangement is intended to bring out social meaning. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'She used ordinary subjects but shaped their presentation to express an idea.']
+  SCRIPT: The answer is choice 3: She used ordinary subjects but shaped their presentation to express an idea.. Ordinary subject matter and selective presentation are separate features. The paragraph accepts the first and describes deliberate choices in the second.
+--- Q vr44-g002: Ellis and Rana agree that a custom became more common. Ellis says people deliberately copied influential neighbors. Rana says the custom spread without deliberate imitation because the same practical pressures affected many households. What is their disagreement about?
+  CHOICES: ['Whether every household adopted the custom', 'The process that caused the custom to spread', 'Whether the custom spread', 'Whether households existed'] correct=2
+=== VIDEO solve-vr44-g002: kind=solution title='Locate the disagreement'
+[1] Your question
+  BOARD: []
+  SCRIPT: Ellis and Rana agree that a custom became more common. Ellis says people deliberately copied influential neighbors. Rana says the custom spread without deliberate imitation because the same practical pressures affected many households. What is their disagreement about?
+[2] Put the message in plain English
+  BOARD: ['The process that caused the custom to spread']
+  SCRIPT: They accept the change in frequency and propose different mechanisms for it. Give the paragraph a short label before testing the answers. Then check whether the option describes the whole point or only repeats a detail. An accurate paraphrase should preserve both what the writer accepts and what the writer limits.
+[3] Keep each answer tied to the text
+  BOARD: ['Competing explanations']
+  SCRIPT: “Whether the custom spread” fails because both accept increased frequency. “Whether households existed” fails because household existence is assumed by both accounts. “Whether every household adopted the custom” fails because neither claims universal adoption. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'The process that caused the custom to spread']
+  SCRIPT: The answer is choice 2: The process that caused the custom to spread. They accept the change in frequency and propose different mechanisms for it.
+--- Q vr44-g003: A collector published village songs as a record of local tradition. Later research showed that several melodies had arrived from travelling performers decades earlier. This finding challenges the assumption that the songs —
+  CHOICES: ['were sung in the village', 'were included in the collection', 'had melodies', 'originated exclusively in the village'] correct=4
+=== VIDEO solve-vr44-g003: kind=solution title='Collecting is not inventing'
+[1] Your question
+  BOARD: []
+  SCRIPT: A collector published village songs as a record of local tradition. Later research showed that several melodies had arrived from travelling performers decades earlier. This finding challenges the assumption that the songs —
+[2] Put the message in plain English
+  BOARD: ['originated exclusively in the village']
+  SCRIPT: Outside origins undermine an exclusive local-origin claim, while remaining compatible with the songs becoming part of local practice. Give the paragraph a short label before testing the answers. Then check whether the option describes the whole point or only repeats a detail. An accurate paraphrase should preserve both what the writer accepts and what the writer limits.
+[3] Keep each answer tied to the text
+  BOARD: ['Origin versus current membership']
+  SCRIPT: “were sung in the village” fails because an imported melody may be sung locally. “were included in the collection” fails because publication is explicitly reported. “had melodies” fails because the research concerns the melodies’ origin, not their existence. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'originated exclusively in the village']
+  SCRIPT: The answer is choice 4: originated exclusively in the village. Outside origins undermine an exclusive local-origin claim, while remaining compatible with the songs becoming part of local practice.
+--- Q vr44-g004: In the old workshop, each craftsperson completed an entire instrument. In the new workshop, each performed just one stage. The writer argues that the old arrangement made each worker’s contribution easier to recognize. What contrast supports that argument?
+  CHOICES: ['Producing valuable objects versus producing worthless ones', 'Producing a complete object versus contributing one specialized stage', 'Working alone versus never working', 'Using tools versus using no tools'] correct=2
+=== VIDEO solve-vr44-g004: kind=solution title='A whole process and one stage'
+[1] Your question
+  BOARD: []
+  SCRIPT: In the old workshop, each craftsperson completed an entire instrument. In the new workshop, each performed just one stage. The writer argues that the old arrangement made each worker’s contribution easier to recognize. What contrast supports that argument?
+[2] Put the message in plain English
+  BOARD: ['Producing a complete object versus contributing one specialized stage']
+  SCRIPT: A complete object can be directly associated with one maker; a divided process distributes the contribution across stages. Give the paragraph a short label before testing the answers. Then check whether the option describes the whole point or only repeats a detail. An accurate paraphrase should preserve both what the writer accepts and what the writer limits.
+[3] Keep each answer tied to the text
+  BOARD: ['Division of work']
+  SCRIPT: “Working alone versus never working” fails because the new workers still work. “Using tools versus using no tools” fails because both systems may use tools. “Producing valuable objects versus producing worthless ones” fails because no judgment that the new products are worthless is supplied. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'Producing a complete object versus contributing one specialized stage']
+  SCRIPT: The answer is choice 2: Producing a complete object versus contributing one specialized stage. A complete object can be directly associated with one maker; a divided process distributes the contribution across stages.
+--- Q vr44-g005: A reviewer calls “buzz,” “hiss” and “clatter” sound-imitating words because their spoken forms suggest the sounds they name. Which word would most clearly provide another example of the same idea?
+  CHOICES: ['quiet', 'instrument', 'melody', 'splash'] correct=4
+=== VIDEO solve-vr44-g005: kind=solution title='Recreate the English wordplay'
+[1] Your question
+  BOARD: []
+  SCRIPT: A reviewer calls “buzz,” “hiss” and “clatter” sound-imitating words because their spoken forms suggest the sounds they name. Which word would most clearly provide another example of the same idea?
+[2] Put the message in plain English
+  BOARD: ['splash']
+  SCRIPT: The sound of splash resembles the abrupt sound of liquid striking or being struck. The relationship concerns imitation in the word’s spoken form, not merely being about sound. Give the paragraph a short label before testing the answers. Then check whether the option describes the whole point or only repeats a detail. An accurate paraphrase should preserve both what the writer accepts and what the writer limits.
+[3] Keep each answer tied to the text
+  BOARD: ['Definition application']
+  SCRIPT: “quiet” fails because quiet describes an absence or low level of sound rather than imitating a characteristic sound. “instrument” fails because instrument names an object that can make sound. “melody” fails because melody names an organized sequence of sounds without imitating one in this way. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'splash']
+  SCRIPT: The answer is choice 4: splash. The sound of splash resembles the abrupt sound of liquid striking or being struck. The relationship concerns imitation in the word’s spoken form, not merely being about sound.
+
+######## SECTION vr44-practice — Independent practice (practice)
+--- Q vr44-p001: A city replaced its old street signs with larger ones. Visitors reported fewer wrong turns, but residents reported no change. The report suggests that residents already knew the routes well. According to this explanation, the new signs helped visitors more because visitors —
+  CHOICES: ['preferred longer journeys', 'depended more on signs to navigate', 'travelled only on new roads', 'were the only people permitted to read the signs'] correct=2
+--- Q vr44-p002: A writer praises a dictionary for recording changing usage rather than prescribing how everyone should speak. She nevertheless wants its entries to distinguish formal from informal contexts. These views are —
+  CHOICES: ['contradictory, because every contextual label is a ban', 'identical to demanding one permitted form for every situation', 'evidence that she wants no labels at all', 'compatible, because describing usage can include describing its contexts'] correct=4
+--- Q vr44-p003: Two clocks disagree by several minutes. Repeating each clock’s reading does not reveal which is accurate, though it may show that each runs consistently. The paragraph distinguishes —
+  CHOICES: ['consistency from accuracy', 'time from distance', 'agreement from popularity', 'measurement from all possible observation'] correct=1
+--- Q vr44-p004: The historian uses a merchant’s diary to study trade. She notes that the merchant wrote often about unusual losses but rarely about routine profits. Therefore, the frequency of topics in the diary may not match their frequency in daily business. What is the warning?
+  CHOICES: ['The diary’s selection of events may distort their apparent prevalence.', 'Every entry in the diary is false.', 'The merchant never made a profit.', 'Unusual losses cannot be studied from diaries.'] correct=1
+--- Q vr44-p005: A machine replaced one stage of production, allowing workers to complete that stage faster. Overall output did not increase because another stage remained the limiting step. Which statement is supported?
+  CHOICES: ['Every stage became slower.', 'Machines can never improve output.', 'Speeding one stage need not increase the output of the whole process.', 'The machine performed no work.'] correct=3
+--- Q vr44-p006: The critic distinguishes a surprising ending from an arbitrary one. A surprising ending is unexpected but can be understood in light of earlier events; an arbitrary ending lacks that connection. Which ending fits the first category?
+  CHOICES: ['One that readers did not predict but can explain using earlier clues', 'One unrelated to any earlier event', 'One every reader predicted from the opening', 'One whose author refuses to discuss it'] correct=1
+--- Q vr44-p007: A researcher notes that two neighborhoods have equally high library use. One has a nearby library; the other has a reliable mobile service. She uses the comparison to argue that convenient access can take different forms. Why mention the mobile service?
+  CHOICES: ['To explain why the first neighborhood has no readers', 'To show that the two neighborhoods have identical buildings', 'To show another way of providing convenient access', 'To prove that permanent libraries are unnecessary everywhere'] correct=3
+--- Q vr44-p008: A philosopher says a rule may be fair in its wording yet unfair in its effects if people face different obstacles in following it. Which assumption is challenged?
+  CHOICES: ['That people can ever follow rules', 'That outcomes are always identical', 'That identical wording alone guarantees fair outcomes', 'That rules have any wording'] correct=3
+--- Q vr44-p009: An exhibition places early sketches beside finished works. The curator says this arrangement reveals choices the artists rejected, not merely the steps they kept. The sketches primarily help visitors understand —
+  CHOICES: ['why every rejected idea was worthless', 'alternative directions considered during creation', 'the market price of each finished work', 'which artist worked the longest each day'] correct=2
+--- Q vr44-p010: A report finds that a species appears absent from a valley in winter. The author cautions that the survey used a call that the animals rarely answer during that season. What follows from this caution?
+  CHOICES: ['Failure to detect the animals may not establish their absence.', 'The species definitely spends every winter in the valley.', 'The survey proves the animals cannot hear.', 'The animals never answer calls in any season.'] correct=1
+--- Q vr44-p011: A teacher found that students could repeat a definition but could not recognize unfamiliar examples of it. She concluded that recall alone was an inadequate measure of understanding. Which task would best address her concern?
+  CHOICES: ['Ask students to identify and explain a new example.', 'Ask students to repeat the same wording louder.', 'Ask students to count the definition’s words.', 'Ask students whether they liked the classroom.'] correct=1
+--- Q vr44-p012: The town’s old boundary followed a river. When the river changed course, officials kept the legal boundary in its former position. The paragraph illustrates that —
+  CHOICES: ['the officials moved every building', 'the town ceased to have any boundary', 'a legal boundary can outlast the physical feature that originally defined it', 'rivers never influence political boundaries'] correct=3
+--- Q vr44-p013: One critic calls the novel pessimistic because its characters repeatedly fail. Another argues that their continued attempts make it hopeful. Their disagreement concerns chiefly —
+  CHOICES: ['the significance of the characters’ response to failure', 'whether the characters ever fail', 'the number of chapters in the novel', 'whether the novel has characters'] correct=1
+--- Q vr44-p014: A researcher distinguishes a model’s usefulness from its literal truth. A simplified map can guide a journey even though it leaves out most features of the landscape. The map is mentioned to —
+  CHOICES: ['prove that all models are literally true', 'argue that journeys require no information', 'illustrate how an incomplete representation can still serve a purpose', 'show that inaccurate directions are always useful'] correct=3
+--- Q vr44-p015: A factory’s total water use fell while production fell even more sharply. The report warns that the factory may be using more water for each item it produces. Which distinction is essential?
+  CHOICES: ['Factory age versus worker age', 'Water quality versus its color', 'Total consumption versus consumption per item', 'Water temperature versus air temperature'] correct=3
+--- Q vr44-p016: The writer argues that a borrowed custom need not remain foreign. Repeated local use may change its meaning and make it part of a community’s tradition. Which claim is most consistent with this view?
+  CHOICES: ['A local tradition must have been invented locally.', 'Origin alone does not settle a custom’s later cultural role.', 'A custom can belong to only one community forever.', 'Borrowed customs never change.'] correct=2
+--- Q vr44-p017: A survey asked only people who attended a public meeting whether the meeting time was convenient. Most said it was. Why is the result limited?
+  CHOICES: ['Those who attended necessarily lied.', 'Meeting times cannot be compared.', 'Most attendees said it was inconvenient.', 'People excluded by an inconvenient time may be missing from the sample.'] correct=4
+--- Q vr44-p018: A historian says an invention may be technically possible long before anyone has a reason to use it. She cites a mechanism that remained a curiosity until a new industry needed it. What does the example support?
+  CHOICES: ['Curiosities can never become useful.', 'Practical demand can affect when an available invention is adopted.', 'Technical possibility guarantees immediate widespread use.', 'The mechanism was invented only after the industry appeared.'] correct=2
+--- Q vr44-p019: The author notes that a word can remain in use after its original literal meaning has become obscure. Speakers may use it correctly without knowing its history. Which conclusion follows?
+  CHOICES: ['Current meanings never differ from original meanings.', 'Knowledge of a word’s origin is not always required for competent current use.', 'Word origins can never be studied.', 'Every speaker knows every word’s history.'] correct=2
+--- Q vr44-p020: A reviewer praises the book for admitting uncertainty where its evidence is thin. She regards these limits as a sign of reliability rather than weakness. Which statement matches her view?
+  CHOICES: ['Careful limits on a claim can increase trust in an account.', 'Reliable writers must claim certainty about everything.', 'Thin evidence proves every conclusion false.', 'The book contains no claims at all.'] correct=1
+--- Q vr44-p021: The planner argues that a park’s value should not be judged solely by the number of visitors. A quiet wetland may protect wildlife while attracting few people. The wetland example challenges —
+  CHOICES: ['the claim that any park can attract people', 'a single measure of the park’s value', 'the possibility of counting visitors', 'the existence of wildlife'] correct=2
+--- Q vr44-p022: A composer borrows a melody but changes its rhythm so completely that it creates a different mood. The critic calls the result transformation rather than imitation. Which feature matters to this judgment?
+  CHOICES: ['The critic believes all borrowing is forbidden.', 'The altered use changes the effect of the borrowed material.', 'The melody has no source.', 'The composer used the same rhythm.'] correct=2
+--- Q vr44-p023: A study compares two explanations for a delay. One attributes it to distance; the other to repeated inspections. Records show that equally distant deliveries differed greatly in the number of inspections and arrival times. Why are equally distant deliveries useful here?
+  CHOICES: ['They ensure all inspections took equal time.', 'They show that every delivery arrived on time.', 'They help hold distance constant while examining the rival factor.', 'They prove that distance can never affect delivery.'] correct=3
+--- Q vr44-p024: The author says the policy’s popularity explains its adoption but does not establish its wisdom. What distinction is central?
+  CHOICES: ['Adoption versus every possible form of rejection', 'A cause of a decision versus a justification of its merits', 'Popularity versus number of votes as unrelated concepts', 'A policy’s name versus its spelling'] correct=2
+--- Q vr44-p025: A passage first describes a widely accepted belief, then presents a puzzling observation, and finally proposes a revised account that accommodates it. Which structure best describes the passage?
+  CHOICES: ['Established view, difficulty, revision', 'Three unrelated definitions', 'A conclusion repeated without support', 'A biography followed by a travel guide'] correct=1
+--- Q vr44-p026: The writer distinguishes remembering an event from reconstructing it accurately. A vivid memory can include details added later through suggestion. According to the paragraph, vividness —
+  CHOICES: ['is the same as independent confirmation', 'does not by itself guarantee accuracy', 'proves a memory false', 'can occur only in invented stories'] correct=2
+--- Q vr44-p027: A critic argues that an ending can resolve a plot while leaving its moral questions open. Which example best fits the distinction?
+  CHOICES: ['The book ends before any plot begins.', 'The culprit is identified, but readers are left debating whether the punishment is just.', 'Neither the culprit nor any event is ever described.', 'Every moral issue is settled explicitly.'] correct=2
+--- Q vr44-p028: A researcher observed that seedlings near a window grew taller. She noted that those seedlings also received more water. The second fact is mentioned to —
+  CHOICES: ['prove that light prevents growth', 'show that the seedlings were identical in all conditions', 'establish that water had no effect', 'identify another possible explanation of the height difference'] correct=4
+--- Q vr44-p029: The historian warns that official records show how officials classified people, which may differ from how people described themselves. Which use would exceed the records’ stated limits?
+  CHOICES: ['Examining how an administration organized its records', 'Treating official labels as certain evidence of everyone’s self-identity', 'Studying the categories officials used', 'Comparing official labels across years'] correct=2
+--- Q vr44-p030: A scientist says an unexplained result should prompt investigation, not immediate acceptance of the first available explanation. This advice assumes that —
+  CHOICES: ['the first explanation is always wrong', 'investigation is unnecessary once any story is available', 'more than one account may fit the result initially', 'unexplained results are always false'] correct=3
+--- Q vr44-p031: A museum displays replicas beside originals so visitors can handle the replicas without damaging the originals. The replicas serve primarily to —
+  CHOICES: ['permit an experience that preservation concerns restrict for originals', 'prove that originals have no value', 'conceal which objects are replicas', 'replace all historical information with fiction'] correct=1
+--- Q vr44-p032: The author calls the reform modest because it changed procedures while leaving the institution’s main goals intact. Which statement is supported?
+  CHOICES: ['The reform altered means more than ends.', 'The reform changed nothing at all.', 'Every goal was abandoned.', 'Procedures are always more important than goals.'] correct=1
+--- Q vr44-p033: A traveler’s account describes a town as silent, but the account was written during an annual closure when most residents were away. Which conclusion is most cautious?
+  CHOICES: ['Every detail in the account must be invented.', 'The account may describe an unusual interval rather than the town’s normal activity.', 'The traveler never visited the town.', 'The town is always silent.'] correct=2
+--- Q vr44-p034: The paragraph defines redundancy in a message as information that repeats what is already conveyed. It notes that repetition can help recover meaning if part of a message is lost. Thus redundancy —
+  CHOICES: ['always prevents understanding', 'must introduce unrelated information', 'is useful only when nothing is missing', 'can be useful despite adding no new message content'] correct=4
+--- Q vr44-p035: An author argues that a familiar path feels shorter than an unfamiliar path of equal length because fewer details demand attention. Which finding would directly conflict with the specific comparison described?
+  CHOICES: ['People consistently judge the unfamiliar equal-length path shorter.', 'The two paths have equal measured lengths.', 'People know one path well.', 'The unfamiliar path contains details they have not seen before.'] correct=1
+--- Q vr44-p036: A critic describes the dialogue as artificial but effective: its unnatural precision makes the characters’ conflicting ideas easy to distinguish. What follows?
+  CHOICES: ['A stylistic feature can be unrealistic yet serve an artistic purpose.', 'Effective dialogue must imitate ordinary speech exactly.', 'The critic thinks the dialogue has no value.', 'The characters all express the same idea.'] correct=1
+--- Q vr44-p037: The committee received more objections after making its proposal easier to access online. The chair warns that this may reflect visibility rather than growing opposition among those already aware of it. What is the alternative explanation?
+  CHOICES: ['The proposal became harder to find.', 'More people encountered the proposal and had a chance to object.', 'Every previous supporter changed sides.', 'The online version prevented all objections.'] correct=2
+--- Q vr44-p038: The writer says a successful imitation of an old style may require understanding its principles rather than copying its surface features. Which approach best fits this view?
+  CHOICES: ['Use the style’s organizing rules in a new composition.', 'Repeat decorative details without understanding their role.', 'Avoid studying any old work.', 'Assume every old work uses identical decoration.'] correct=1
+--- Q vr44-p039: A book’s index is praised because it gives readers several routes to the same topic: by person, place and concept. Its value lies chiefly in —
+  CHOICES: ['ensuring every reader begins on the first page', 'removing all repeated references', 'replacing the book’s arguments with names', 'accommodating different ways a reader may search'] correct=4
+--- Q vr44-p040: The author argues that silence in an archive about a group may reflect the record-keepers’ priorities rather than the group’s absence. Which inference is challenged?
+  CHOICES: ['That archives contain records', 'That priorities can affect selection', 'That some records survive', 'That a group not mentioned in surviving records did not exist'] correct=4
+--- Q vr44-p041: A scientist distinguishes an observation from an explanation by noting that two researchers can agree that a material expanded while disagreeing about the mechanism. Which statement follows?
+  CHOICES: ['One researcher must have refused to observe it.', 'Mechanisms can never be investigated.', 'Agreement on an event need not include agreement on why it occurred.', 'The material both expanded and failed to expand.'] correct=3
+--- Q vr44-p042: The reviewer calls the account selective without calling it deceptive. Every account must omit details, she says; the problem arises when omissions change the reader’s understanding of a central issue. Which criterion matters to her?
+  CHOICES: ['The effect of omissions on the central understanding', 'Whether any detail at all is omitted', 'Whether the account is written in the first person', 'Whether the account is shorter than every alternative'] correct=1
+--- Q vr44-p043: A town preserves the outline of an old wall in paving stones after the wall itself has been removed. The passage uses this as an example of preserving historical information without preserving the entire original object. Which project is most similar?
+  CHOICES: ['Keeping a building but concealing its history completely', 'Marking the route of a dismantled railway on a map', 'Demolishing a bridge and removing every record of it', 'Building an unrelated tower with no historical reference'] correct=2
+--- Q vr44-p044: The author criticizes a debate in which one side defends a policy’s intentions and the other attacks its outcomes. She says they have not yet addressed the same question. What would most directly remedy this?
+  CHOICES: ['Both sides explicitly discuss whether the actual outcomes justify the policy.', 'Each side repeat its original point more loudly.', 'One side add more information about the policy’s name.', 'Both sides avoid discussing either intentions or outcomes.'] correct=1
+--- Q vr44-p045: A researcher calls a result robust because it survives several reasonable changes in measurement method. This description does not necessarily mean that the result —
+  CHOICES: ['appears under more than one method', 'survives some methodological variation', 'holds under every imaginable condition', 'is not tied to one exact measurement procedure'] correct=3
+--- Q vr44-p046: The critic says the translation preserves the joke’s function even though it changes the words: both versions surprise readers by shifting from one meaning of a term to another. The criterion is primarily —
+  CHOICES: ['identity of the speakers’ names', 'absence of any ambiguous term', 'similarity of the linguistic effect', 'identity of every word'] correct=3
+--- Q vr44-p047: An essay argues that a prediction can be useful even when it is not fulfilled, because acting on the warning may prevent the predicted event. Which case best illustrates this?
+  CHOICES: ['A warning is unreadable and reaches no one.', 'A warning of a bridge closure prompts repairs that keep the bridge open.', 'A random guess is forgotten and nothing changes.', 'A prediction is made after the event has already happened.'] correct=2

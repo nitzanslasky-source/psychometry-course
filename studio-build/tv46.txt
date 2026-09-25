@@ -1,0 +1,168 @@
+# Topic 46 Strengthening and weakening arguments
+
+######## SECTION vr46-learn — Learn and try (learn)
+=== VIDEO vr-argument-method: kind=lesson title='Strengthen or weaken: find the gap'
+[1] Separate the observation from the conclusion
+  BOARD: ['Observed: repair requests increased.', 'Conclusion: the product became less reliable.', 'Gap: were more products in use?']
+  SCRIPT: Repair requests increased, so the product must have become less reliable. The first part is an observation; the second is an interpretation. Ask what would have to be true for the observation to justify that interpretation. If twice as many products were in use, a larger number of repair requests might coexist with the same or a lower failure rate. We have found a gap. Do this before reading the options closely. A short paraphrase such as ‘more repairs means worse quality’ lets you see exactly what an added fact would need to support or challenge.
+[2] Strengthening is not proving
+  BOARD: ['Make the conclusion more credible.', 'Remove a plausible rival explanation.', 'Provide a relevant comparison.']
+  SCRIPT: A strengthening fact need not prove the conclusion beyond doubt. It should make the argument more persuasive relative to what we knew before. If the number of products in use stayed constant, that removes one alternative explanation for more repair requests. Other explanations might remain. This is why the answer can be right without settling every imaginable question. Focus on the specific conclusion in the stem. A fact that praises the company or confirms an unrelated detail does not necessarily support the reliability claim. Ask which part of the gap the new fact addresses.
+[3] Weakening leaves the observation intact
+  BOARD: ['Accept the reported result.', 'Challenge the step from result to explanation.']
+  SCRIPT: For a weakening question, usually accept the stated observation and challenge the inference drawn from it. If sales fell after a shop changed its hours, the fall is still a fact. A road closure that prevented customers reaching the shop gives another explanation for that fall. It weakens the claim that the hours caused it. We do not need to pretend sales rose instead. Some options directly contradict an explicit premise and therefore do not function as a useful explanation of the given situation. Look for information that can coexist with the observation while making the proposed conclusion less secure.
+[4] Counts, rates and who was observed
+  BOARD: ['More failures, but how many items?', 'Fewer complaints, but who could complain?', 'A survey of attendees misses nonattendees.']
+  SCRIPT: Three checks are especially useful. First, a count needs a denominator when the conclusion is about a rate. Second, reports depend on whether people notice and report a problem. Third, a sample can exclude the very people whose experience matters. A meeting-time survey of attendees may miss those unable to attend. These are not automatic objections to every argument. Use them when the facts make them relevant. A correct weakening option should identify a concrete alternative route from the situation to the observed result, rather than merely say that all research is uncertain.
+[5] Draw the rival arrows
+  BOARD: ['A → B?', 'B → A?', 'C → both A and B?']
+  SCRIPT: If the conclusion is causal, sketch its arrow. Does music improve concentration, or do people who already concentrate well choose music? Could a third factor explain both, such as having a quieter workspace? The alternatives correspond to reverse causation and a shared cause. An option strengthens the original account when it makes a rival less plausible, perhaps through a fair comparison or a sequence that rules out the reverse route. An option weakens it when it supplies a credible rival. Keep the measured outcome fixed while you compare these stories.
+[6] Read the demand one last time
+  BOARD: ['Strengthen? Weaken?', 'Which does NOT weaken?', 'Explain the finding?']
+  SCRIPT: A fact can be relevant and still point in the wrong direction for the question. Circle the demand, especially when it contains ‘not.’ In a does-not-weaken question, three choices may raise real doubts and the answer may be neutral or supportive. In an explain-the-finding question, look for a mechanism that makes the reported result less puzzling. Do not answer a different question simply because an option sounds like a familiar criticism. Before choosing, say the effect in one line: ‘This removes the attendance explanation,’ or ‘This makes the sample less representative.’ That line should connect the option to this argument.
+--- Q vr46-g001: After a bakery began opening earlier, its weekly sales fell. The owner concludes that the earlier opening caused the fall. Which fact most weakens this conclusion?
+  CHOICES: ['The earlier hours were chosen to attract commuters.', 'Roadworks blocked the bakery’s entrance during the same weeks.', 'The bakery displayed its new hours clearly.', 'The owner counted sales in the same way in both periods.'] correct=2
+=== VIDEO solve-vr46-g001: kind=solution title='A second change at the same time'
+[1] Your question
+  BOARD: []
+  SCRIPT: After a bakery began opening earlier, its weekly sales fell. The owner concludes that the earlier opening caused the fall. Which fact most weakens this conclusion?
+[2] Put the message in plain English
+  BOARD: ['Roadworks blocked the bakery’s entrance during the same weeks.']
+  SCRIPT: Blocked access can reduce sales independently of opening hours. The observation remains true, but the proposed cause is no longer the only plausible explanation. Name the observed fact and the proposed conclusion separately. Then ask what this new information changes in the step between them. We need a relevant shift in support, not a complete proof or an unrelated criticism of the person making the claim.
+[3] Keep each answer tied to the text
+  BOARD: ['Alternative cause']
+  SCRIPT: “The bakery displayed its new hours clearly.” fails because clear hours do not explain the sales fall. “The owner counted sales in the same way in both periods.” fails because consistent measurement supports comparability. “The earlier hours were chosen to attract commuters.” fails because an intended benefit does not identify the cause of the observed decline. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'Roadworks blocked the bakery’s entrance during the same weeks.']
+  SCRIPT: The answer is choice 2: Roadworks blocked the bakery’s entrance during the same weeks.. Blocked access can reduce sales independently of opening hours. The observation remains true, but the proposed cause is no longer the only plausible explanation.
+--- Q vr46-g002: Brand L received more repair requests than Brand M. A reviewer concludes that an L appliance is more likely to fail. Which fact most weakens this argument?
+  CHOICES: ['The reviewer prefers M’s logo.', 'Many more L appliances than M appliances were in use.', 'Both brands offer repairs.', 'L appliances come in several colors.'] correct=2
+=== VIDEO solve-vr46-g002: kind=solution title='Repair counts need a denominator'
+[1] Your question
+  BOARD: []
+  SCRIPT: Brand L received more repair requests than Brand M. A reviewer concludes that an L appliance is more likely to fail. Which fact most weakens this argument?
+[2] Put the message in plain English
+  BOARD: ['Many more L appliances than M appliances were in use.']
+  SCRIPT: A higher number of appliances can produce more total failures without a higher failure probability per appliance. Name the observed fact and the proposed conclusion separately. Then ask what this new information changes in the step between them. We need a relevant shift in support, not a complete proof or an unrelated criticism of the person making the claim.
+[3] Keep each answer tied to the text
+  BOARD: ['Count versus rate']
+  SCRIPT: “Both brands offer repairs.” fails because this does not compare the relevant rates. “L appliances come in several colors.” fails because color variety does not address the inference. “The reviewer prefers M’s logo.” fails because the reviewer’s taste does not supply an alternative denominator. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'Many more L appliances than M appliances were in use.']
+  SCRIPT: The answer is choice 2: Many more L appliances than M appliances were in use.. A higher number of appliances can produce more total failures without a higher failure probability per appliance.
+--- Q vr46-g003: A workshop introduced protective screens, after which the number of eye injuries fell. Which finding most strengthens the claim that the screens helped?
+  CHOICES: ['Hours worked and tasks performed stayed similar, and no other protective procedure changed.', 'The workshop reduced operating hours sharply at the same time.', 'The screens were chosen because their color was attractive.', 'The workshop changed its address ten years earlier.'] correct=1
+=== VIDEO solve-vr46-g003: kind=solution title='A before-and-after comparison'
+[1] Your question
+  BOARD: []
+  SCRIPT: A workshop introduced protective screens, after which the number of eye injuries fell. Which finding most strengthens the claim that the screens helped?
+[2] Put the message in plain English
+  BOARD: ['Hours worked and tasks performed stayed similar, and no other protective procedure changed.']
+  SCRIPT: Comparable exposure and unchanged other procedures reduce competing explanations for the fall. Name the observed fact and the proposed conclusion separately. Then ask what this new information changes in the step between them. We need a relevant shift in support, not a complete proof or an unrelated criticism of the person making the claim.
+[3] Keep each answer tied to the text
+  BOARD: ['Rule out confounds']
+  SCRIPT: “The workshop reduced operating hours sharply at the same time.” fails because less exposure offers an alternative explanation. “The screens were chosen because their color was attractive.” fails because appearance does not establish protective effect. “The workshop changed its address ten years earlier.” fails because a remote unrelated change does not support the causal comparison. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'Hours worked and tasks performed stayed similar, and no other protective procedure changed.']
+  SCRIPT: The answer is choice 1: Hours worked and tasks performed stayed similar, and no other protective procedure changed.. Comparable exposure and unchanged other procedures reduce competing explanations for the fall.
+--- Q vr46-g004: People who attend evening art classes report greater satisfaction with their week. A writer concludes that the classes increase satisfaction. Which fact does not weaken this conclusion?
+  CHOICES: ['The classes include both painting and sculpture.', 'People already satisfied with their lives are more likely to enrol.', 'People with more free time are both more likely to enrol and more satisfied.', 'Dissatisfied attendees are much less likely to complete the survey.'] correct=1
+=== VIDEO solve-vr46-g004: kind=solution title='Three rivals and one irrelevant fact'
+[1] Your question
+  BOARD: []
+  SCRIPT: People who attend evening art classes report greater satisfaction with their week. A writer concludes that the classes increase satisfaction. Which fact does not weaken this conclusion?
+[2] Put the message in plain English
+  BOARD: ['The classes include both painting and sculpture.']
+  SCRIPT: The subject mix does not by itself supply a reason the observed association would exist without a benefit from classes. The other options supply reverse selection, a common cause or response bias. Name the observed fact and the proposed conclusion separately. Then ask what this new information changes in the step between them. We need a relevant shift in support, not a complete proof or an unrelated criticism of the person making the claim.
+[3] Keep each answer tied to the text
+  BOARD: ['Does not weaken']
+  SCRIPT: “People already satisfied with their lives are more likely to enrol.” fails because this allows satisfaction to influence enrolment. “People with more free time are both more likely to enrol and more satisfied.” fails because free time can explain both features. “Dissatisfied attendees are much less likely to complete the survey.” fails because selective responses can distort the reported satisfaction. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'The classes include both painting and sculpture.']
+  SCRIPT: The answer is choice 1: The classes include both painting and sculpture.. The subject mix does not by itself supply a reason the observed association would exist without a benefit from classes. The other options supply reverse selection, a common cause or response bias.
+--- Q vr46-g005: A technician says a machine stopped because its safety key was removed. Which fact most weakens that specific explanation?
+  CHOICES: ['The machine has a safety key.', 'The key was designed to be easy to locate.', 'The safety key remained securely in place throughout the stoppage.', 'Removing the key normally stops the machine.'] correct=3
+=== VIDEO solve-vr46-g005: kind=solution title='A missing necessary condition'
+[1] Your question
+  BOARD: []
+  SCRIPT: A technician says a machine stopped because its safety key was removed. Which fact most weakens that specific explanation?
+[2] Put the message in plain English
+  BOARD: ['The safety key remained securely in place throughout the stoppage.']
+  SCRIPT: The proposed event did not occur, so it cannot explain this stoppage as described. Name the observed fact and the proposed conclusion separately. Then ask what this new information changes in the step between them. We need a relevant shift in support, not a complete proof or an unrelated criticism of the person making the claim.
+[3] Keep each answer tied to the text
+  BOARD: ['Mechanism contradicted']
+  SCRIPT: “Removing the key normally stops the machine.” fails because this supports the proposed mechanism in general. “The machine has a safety key.” fails because this merely establishes that the component exists. “The key was designed to be easy to locate.” fails because design convenience does not decide whether it caused the stoppage. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'The safety key remained securely in place throughout the stoppage.']
+  SCRIPT: The answer is choice 3: The safety key remained securely in place throughout the stoppage.. The proposed event did not occur, so it cannot explain this stoppage as described.
+--- Q vr46-g006: A survey at a specialist camera shop finds that most respondents own expensive cameras. The survey’s author concludes that most adults own expensive cameras. Which fact most weakens the conclusion?
+  CHOICES: ['People with expensive cameras are unusually likely to visit that shop.', 'The shop sells camera straps as well.', 'Respondents were allowed to answer anonymously.', 'The survey form used large print.'] correct=1
+=== VIDEO solve-vr46-g006: kind=solution title='Who entered the sample?'
+[1] Your question
+  BOARD: []
+  SCRIPT: A survey at a specialist camera shop finds that most respondents own expensive cameras. The survey’s author concludes that most adults own expensive cameras. Which fact most weakens the conclusion?
+[2] Put the message in plain English
+  BOARD: ['People with expensive cameras are unusually likely to visit that shop.']
+  SCRIPT: The location selects people with the feature being generalized to all adults. Name the observed fact and the proposed conclusion separately. Then ask what this new information changes in the step between them. We need a relevant shift in support, not a complete proof or an unrelated criticism of the person making the claim.
+[3] Keep each answer tied to the text
+  BOARD: ['Sampling bias']
+  SCRIPT: “The shop sells camera straps as well.” fails because other products do not remove the selection issue. “Respondents were allowed to answer anonymously.” fails because anonymity may improve honesty but does not make the sample representative. “The survey form used large print.” fails because legibility does not address who was sampled. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'People with expensive cameras are unusually likely to visit that shop.']
+  SCRIPT: The answer is choice 1: People with expensive cameras are unusually likely to visit that shop.. The location selects people with the feature being generalized to all adults.
+
+######## SECTION vr46-practice — Independent practice (practice)
+--- Q vr46-p001: A café added outdoor seating, and sales rose. The owner attributes the rise to the seating. Which fact most weakens the argument?
+  CHOICES: ['Customers could choose indoor or outdoor seats.', 'The café used the same method to count sales.', 'A nearby competing café closed in the same week.', 'The tables were installed before the rise.'] correct=3
+--- Q vr46-p002: A tutor claims that a practice app improved students’ scores. Which finding most strengthens the claim?
+  CHOICES: ['Students randomly assigned to use the app improved more than a comparable group with the same study time.', 'App users chose to study twice as long as everyone else.', 'The app has a colorful opening screen.', 'Students who already had the highest scores were most likely to buy it.'] correct=1
+--- Q vr46-p003: A town reports fewer cycling injuries and credits new helmets. Which fact most weakens this inference?
+  CHOICES: ['The town counted injuries using the same definition.', 'The helmets were distributed before the decline.', 'The number of cycling journeys fell sharply during the same period.', 'Helmet use rose.'] correct=3
+--- Q vr46-p004: People who keep detailed schedules complete more projects. A consultant concludes that scheduling causes completion. Which fact most weakens this claim?
+  CHOICES: ['Schedules can be written on paper.', 'Some projects take longer than others.', 'The consultant also keeps a schedule.', 'Highly motivated people are more likely both to keep schedules and to finish projects.'] correct=4
+--- Q vr46-p005: A library extended its opening hours and visits increased. Which fact most strengthens the causal interpretation?
+  CHOICES: ['The library has had books for many years.', 'Some readers prefer novels to biographies.', 'Similar libraries with unchanged hours showed no increase during the same period.', 'A large housing development opened beside this library at the same time.'] correct=3
+--- Q vr46-p006: A manufacturer cites a drop in returned products as proof of improved quality. Which fact most weakens the claim?
+  CHOICES: ['The company introduced a large fee for returning a product.', 'The products kept the same packaging.', 'The factory remained in the same city.', 'Customers still received receipts.'] correct=1
+--- Q vr46-p007: A survey of commuters on a new train finds high satisfaction. The operator concludes that former car users generally prefer the train. Which fact most weakens this conclusion?
+  CHOICES: ['Passengers could answer anonymously.', 'The survey asked about comfort and reliability.', 'Former car users who disliked the train quickly stopped using it.', 'The train runs on weekdays.'] correct=3
+--- Q vr46-p008: After a building changed its lighting, complaints of eyestrain fell. Which information most strengthens the claim that lighting helped?
+  CHOICES: ['The new lights were delivered in cardboard boxes.', 'Staff numbers, work hours and complaint procedures remained unchanged.', 'Many staff began working elsewhere at the same time.', 'The building changed its name.'] correct=2
+--- Q vr46-p009: A reviewer says an expensive dictionary must be more accurate because it contains more entries. Which fact most weakens the argument?
+  CHOICES: ['The larger dictionary uses thinner paper.', 'An independent check found a higher error rate in its entries than in the smaller dictionary.', 'The expensive dictionary is heavier.', 'Both dictionaries have indexes.'] correct=2
+--- Q vr46-p010: A town claims its new publicity campaign increased tourism. Which fact would be most useful in weakening this specific claim?
+  CHOICES: ['Some residents did not see the advertisements.', 'Tourism had begun rising at the same rate before the campaign started.', 'The campaign used photographs.', 'The town has several hotels.'] correct=2
+--- Q vr46-p011: A manager says staff work better at home because home workers completed more tasks last month. Which fact most weakens the comparison?
+  CHOICES: ['Both groups used computers.', 'Some office workers lived near the office.', 'The manager works in a separate room.', 'The home workers were assigned simpler tasks.'] correct=4
+--- Q vr46-p012: A gardener believes a new soil mixture increases plant growth. Which finding most strengthens the belief?
+  CHOICES: ['The mixture was given only to plants that were already tallest.', 'Plants receiving the mixture also received much more water.', 'The mixture was packaged in a larger bag.', 'Plants randomly assigned to the mixture grew more than otherwise similarly treated plants of the same species.'] correct=4
+--- Q vr46-p013: People with extensive book collections know more literary history. A writer concludes that owning books creates the knowledge. Which fact most weakens this claim?
+  CHOICES: ['Some collections contain dictionaries.', 'The writer owns a bookshelf.', 'People who already know literary history are especially likely to buy many books.', 'Books vary in length.'] correct=3
+--- Q vr46-p014: A school credits a new timetable for better attendance. Which fact most weakens the conclusion?
+  CHOICES: ['Most teachers received copies of the timetable.', 'The attendance-recording rule changed so that late arrivals now count as present.', 'The timetable was announced in advance.', 'The school still teaches the same subjects.'] correct=2
+--- Q vr46-p015: A charity says its training program raises employment because participants find jobs more often than nonparticipants. Which fact most weakens this inference?
+  CHOICES: ['Training occurs in a classroom.', 'The program has a short name.', 'Participants receive notebooks.', 'Admission to the program favors applicants who already have job offers pending.'] correct=4
+--- Q vr46-p016: A warehouse introduced labels, after which picking errors fell. Which finding most strengthens the label explanation?
+  CHOICES: ['Errors fell mainly for items whose labels were clarified, while other items showed little change.', 'The warehouse reduced its workforce by half.', 'The labels were printed in another town.', 'Some workers dislike adhesive paper.'] correct=1
+--- Q vr46-p017: A critic argues that readers disliked a book because its ending was ambiguous. Which fact most weakens this explanation?
+  CHOICES: ['The ending was discussed in reviews.', 'Some readers prefer clear endings.', 'The book has an ending.', 'Readers who disliked it gave poor ratings before reaching the ending.'] correct=4
+--- Q vr46-p018: A company concludes that customers prefer its new design because most people choosing between the two bought the new one. Which fact most weakens the conclusion?
+  CHOICES: ['Customers received a receipt for either design.', 'The old design was usually out of stock when purchases were made.', 'Both designs used the same logo.', 'The new design was displayed in the shop.'] correct=2
+--- Q vr46-p019: A manager says a safety reminder is ineffective because incidents still occur. Which fact most weakens this argument?
+  CHOICES: ['The reminder is printed on paper.', 'The building has several entrances.', 'Some staff have long names.', 'The incident rate has fallen substantially since the reminder was introduced.'] correct=4
+--- Q vr46-p020: A town’s visitor count rose after a new bridge opened. Which fact does not weaken the claim that the bridge contributed?
+  CHOICES: ['A neighboring attraction closed temporarily.', 'The bridge shortened the route from several nearby towns.', 'A major festival occurred for the first time that month.', 'The visitor-counting method began including commuters.'] correct=2
+--- Q vr46-p021: A school says a new reading room caused higher reading scores. Which added fact most strengthens that claim?
+  CHOICES: ['The strongest readers were allowed in first.', 'The room has blue curtains.', 'Scores were already rising at the same rate before it opened.', 'Students gained access in a randomly chosen order, and gains followed each group’s access rather than a common calendar date.'] correct=4
+--- Q vr46-p022: A firm argues that its training must be useful because successful employees often praise it. Which fact most weakens this reasoning?
+  CHOICES: ['The training has several sessions.', 'Some successful employees took notes.', 'Employees who found the training unhelpful usually left the firm before the survey.', 'The survey permitted written comments.'] correct=3
+--- Q vr46-p023: A researcher explains a fall in observations of a bird by claiming that its population declined. Which finding most weakens this explanation?
+  CHOICES: ['The birds shifted to a nearby area outside the observers’ usual route.', 'The observers used the same route as before.', 'The bird has a distinctive call.', 'The study lasted several weeks.'] correct=1
+--- Q vr46-p024: A review panel says a proposal lacks merit because few experts endorsed it. Which fact most weakens the argument?
+  CHOICES: ['The proposal has a long title.', 'The panel met in the afternoon.', 'Most invited experts had not received the proposal before endorsements were counted.', 'Endorsements were recorded in a spreadsheet.'] correct=3
+--- Q vr46-p025: A town says a public warning failed because the predicted shortage did not occur. Which fact most weakens this conclusion?
+  CHOICES: ['Residents reduced consumption in response to the warning, preventing the shortage.', 'The warning was displayed publicly.', 'The town has existed for centuries.', 'The notice used large letters.'] correct=1
+--- Q vr46-p026: A company claims longer service warranties show that its products are more reliable. Which fact most weakens this inference?
+  CHOICES: ['The longer warranty covers only a narrow set of defects, unlike the competitor’s shorter but broad warranty.', 'The warranty is printed in two colors.', 'Both companies sell products.', 'Customers can read the warranty online.'] correct=1
+--- Q vr46-p027: A reviewer says the new edition is better because it corrected many errors. Which fact most directly weakens that particular comparison?
+  CHOICES: ['The cover is a different color.', 'The old edition is no longer advertised.', 'The publisher changed its address.', 'It introduced even more serious errors than it corrected.'] correct=4

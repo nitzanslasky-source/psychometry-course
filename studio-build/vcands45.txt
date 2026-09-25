@@ -1,0 +1,839 @@
+# Bank candidates for topic 45 (107 items, best-trusted first). Answer is 1-based. Use qid exactly.
+
+=== vb-inf_mix_0012 [real exam | set inf_mix | example-of-concept] answer=2
+STEM: People sometimes estimate the prevalence of a phenomenon or the probability of an event happening based on how easily examples or events come to mind. For example, a person is likely to estimate the risk of a middle-aged person having a heart attack by asking himself: "How hard is it for me to remember similar incidents among people I know?" Which of the following could most likely be an additional example of this statement?
+  (1) Physicians generally assume that the patients they examine have common diseases even if they themselves have come across many patients who have rare diseases
+  (2) People assume that there are more words beginning with the letter "c" than there are ending with the letter "c", simply because it is easier to think of words beginning with a certain letter than of words ending with it
+  (3) People assume that political parties that do poorly in pre-election polls, will indeed get few votes in the actual elections
+  (4) People assume that animals that are more commonly found in nature give birth to more offspring in each litter than do animals that are less commonly found in nature
+
+=== vb-inf_mix_0044 [real exam | set inf_mix | example-of-concept] answer=3
+STEM: An indirect lie is a false implication deriving from a statement that is technically true. For example, the implication deriving from the statement: "I did not take notes in the lecture yesterday," when made by someone who did not even attend the lecture, is an indirect lie. Which of the following is the best example of a statement whose implication is an indirect lie?
+  (1) "I do not remember if I have visited Haifa in the past year," said by a person who has not visited Haifa in the past year
+  (2) "I do not remember if I have seen my sister in the past week," said by a person who has more than one sister
+  (3) "I do not usually eat salad with onions," said by a person who never eats salad
+  (4) "I do not usually watch reality shows," said by a person who watches all kinds of shows. English Heccrbq Português Deutsch Italiano
+
+=== vb-inf_mix_0054 [real exam | set inf_mix | example-of-concept] answer=4
+STEM: In the field of conflict studies, the term "negative spiral" describes a negative dynamic in the development of conflict between people: disagreements between the sides result in defensive and suspicious behavior, which intensifies the disagreements to an extent that may cause irreversible damage to their relationship. This term can also apply to other areas of life. Which of the following situations is the best example of a "negative spiral" in another area?
+  (1) A man is training his dog. Every time the dog obeys a command, the owner gives it a piece of meat. As a result, the dog may get used to receiving the meat and will refuse to obey commands unless the owner is holding a piece of meat
+  (2) Following a decrease in tax on imported dairy products, their market share increased along with the importers' profits. As a result, local manufacturers have decided to lower the price of their products, which may lead them to declare bankruptcy
+  (3) A man goes on a diet, loses weight but then returns to his original weight. He tries different diets but the same pattern repeats. This may lead him to stop trying to lose weight altogether
+  (4) A motorcycle has a leak in the tank that contains coolant, the fluid which is responsible for cooling the engine while it is running. This causes the motorcycle to overheat and the
+
+=== vb-inf_v2_0284 [real exam | set inf_v2 | Parables and Comparisons] answer=2
+STEM: "Harel Tel Aviv," the strongest basketball club in the league, has for several seasons been signing the most promising young players from the smaller clubs, although it fields hardly any of them; the club does not need them for its own team, but its rivals, deprived of their best prospects, grow weaker every year. Which of the following business practices most resembles the club's tactic?
+  (1) A chain of pharmacies buys up small independent pharmacies in every town it enters, so as to remove them from the market
+  (2) A jewelry house buys the entire output of a diamond mine, far more than it can set, so that its competitors' jewelry has to be made from lesser stones
+  (3) A car manufacturer buys its electronic components from a rival manufacturer, so that the rival will depend on the income and refrain from competing
+  (4) A paint manufacturer buys a controlling share in the company that supplies its pigments, so as to lower the price it pays for them
+EXPL: The club acquires a resource it does not use in order to deny it to competitors; only (2) buys what it cannot use for the sake of what rivals then lack. (1) removes competitors rather than their resources; (3) makes the rival dependent rather than deprived; (4) is about the buyer's own costs.
+
+=== vb-inf_v2_0285 [real exam | set inf_v2 | Parables and Comparisons] answer=2
+STEM: Yaron and Lihi visited a nature reserve laid out around a group of springs, and noticed that several rare species of dragonfly, found nowhere else in the region, breed there. Yaron: "I suppose the reserve is what produced them — the protection it gives has let species thrive here that could not survive outside." Lihi: "Your supposition is like supposing that joining a basketball team makes people tall." Which of the following claims best expresses what Lihi meant?
+  (1) Rare species are rare everywhere, and there is no reason to look for a special explanation of their presence at the springs
+  (2) The reserve was laid out around the springs precisely because the rare dragonflies were already breeding there
+  (3) The dragonflies are rare because they are found only where springs of this kind exist, and such springs are few
+  (4) The reserve protects the dragonflies from collectors, and it is collectors who made them rare elsewhere
+EXPL: Tall people join basketball teams; the team does not make them tall — the causation runs from the trait to the membership. Lihi's point is that the dragonflies caused the reserve, not the reverse. (1) denies any explanation; (3) and (4) offer explanations of rarity, which is not what Yaron claimed.
+
+=== vb-inf_v2_0286 [real exam | set inf_v2 | Parables and Comparisons] answer=2
+STEM: Noa told Yael about an assignment she had been given in the first session of a course in furniture design. Yael's reply was: "That is like a building contractor asking the crew to hang the doors before the walls have been raised." Which of the following is most likely to be the assignment Noa told Yael about?
+  (1) To read an article that the lecturer would discuss in class only toward the end of the course
+  (2) To design the upholstery for a chair whose frame she would be asked to design later in the course
+  (3) To begin collecting material for the comprehensive project that would be due when the course ended
+  (4) To write down what she hoped to have achieved by the time the course was over
+EXPL: Doors need walls; upholstery needs a frame. (1) is early preparation, not reversed order; (3) is prudent, not premature; (4) asks for an intention, not a product.
+
+=== vb-inf_v2_0287 [real exam | set inf_v2 | Parables and Comparisons] answer=1
+STEM: Rachel's parents, who have two small children, are moving to a new city and have found two flats: one within walking distance of the children's school, which is expensive, and one an hour's drive away, which is much cheaper. A friend advised them to take the expensive flat, saying that the difference in rent would be swallowed within a year by petrol and by the hours the drive would cost them. Which of the following pieces of advice rests on reasoning most similar to the friend's?
+  (1) A shopkeeper who needs a delivery van every day is advised to buy one rather than hire one each morning, since a year's hire charges would exceed the price of a van
+  (2) A student is advised to enrol in the more demanding of two courses, since the effort it requires will be repaid by what she learns
+  (3) A family is advised to holiday in the mountains rather than by the sea, since the mountains are quieter at that season
+  (4) A traveler is advised to carry a light bag, since the weight she saves will let her walk farther each day
+EXPL: A larger outlay now against a recurring cost that soon exceeds it — the same trade-off in both. (2) trades effort for benefit, not money for money over time; (3) and (4) compare qualities, not costs.
+
+=== vb-inf_v2_0288 [real exam | set inf_v2 | Parables and Comparisons] answer=2
+STEM: The new technologies of translation — programs that render speech from one language into another as it is spoken — are not measured against the translation technologies that preceded them, the dictionary and the phrase book, but against the human interpreter, whose skill is the standard they are judged by. In this they differ from most inventions, whose novelty was long expressed in the name of the thing they replaced: the electric light was for years "the flameless lamp." Which of the following examples could best replace the example at the end of the passage?
+  (1) Calling a washing machine "a laundress without hands"
+  (2) Calling an electric heater "a hearth without a fire"
+  (3) Calling a recording of a symphony "a concert without an orchestra"
+  (4) Calling a digital camera "a camera without a screen"
+EXPL: The original example names a new device after the earlier device it replaced, minus the element that defined the earlier one — a lamp without its flame. A hearth without its fire has exactly that form. (1) measures the machine against a person, which is the contrast the passage draws; (3) names an event, not an earlier device; (4) subtracts a feature of the new device, not of the old one.
+
+=== vb-inf_v2_0289 [real exam | set inf_v2 | Parables and Comparisons] answer=1
+STEM: After Mr. Adler's car was stolen from outside his house, his daughter suggested that he fit the replacement with an elaborate tracking device. He answered: "If I did that, I would be like a farmer who fences his field only after the goats have eaten the crop." Which of the following best expresses what Mr. Adler meant?
+  (1) A tracking device would have been worth fitting before the theft, but there is no longer any point in fitting one now
+  (2) Tracking devices do help to protect a car, but their cost is not justified by the protection they give
+  (3) The stolen car had been fitted with a tracking device, and the theft showed the device to be useless
+  (4) There is no point in fitting a tracking device, since such devices deter a thief only after he has already broken into the car
+EXPL: The fence after the goats is a precaution taken once the loss it was meant to prevent has occurred. (2) makes the objection one of cost; (3) invents a device on the stolen car; (4) misdescribes what a tracking device does.
+
+=== vb-inf_v2_0290 [real exam | set inf_v2 | Parables and Comparisons] answer=2
+STEM: Yoram told his children: "This morning, walking to work, I passed an old man who had dropped his shopping in the road, and I stepped round him and walked on, as I usually do in such cases. Later I discovered that I had left my wallet at home, and I had no money for the bus back. I asked the people at the stop to lend me the fare, but not one of them would, until the same old man came along and gave it to me. Without him I could not have got home." Which of the following is LEAST suited to be the moral of Yoram's story?
+  (1) Whoever declines to help today may find that tomorrow he is the one in need of help
+  (2) If you ignore a person who needs your help, you must not accept his help when you need it yourself
+  (3) Whoever does no kindness to others should not be surprised if others are in no hurry to do him a kindness
+  (4) At times it is those who have suffered others' indifference who are the only ones willing to help
+EXPL: Yoram did accept the old man's help, and the story treats that help as the point, not as a breach of principle. (1), (3) and (4) each draw a lesson the events support.
+
+=== vb-inf_v2_0291 [real exam | set inf_v2 | Parables and Comparisons] answer=2
+STEM: Geula and Daniela were waiting for Orit, Daniela's daughter, outside a jewelry shop. Geula: "Aren't you worried that Orit has been in that jewelry shop for so long?" Daniela: "Cream as sour as that can be left for the cat to guard." In her parable Daniela likens ____.
+  (1) Orit's extravagance to the sourness of the cream
+  (2) the jewelry in the shop to sour cream
+  (3) the time Orit has spent in the shop to the sourness of the cream
+  (4) herself to the cat
+EXPL: The cream is what might be stolen but is not worth guarding; the jewelry is what Orit might buy but, in Daniela's view, is not worth worrying about. (1) and (3) make the sourness a property of Orit's behavior; (4) puts Daniela in the cat's place.
+
+=== vb-inf_v2_0292 [real exam | set inf_v2 | Parables and Comparisons] answer=4
+STEM: The female of a certain species of cuckoo lays her eggs in the nests of other birds; the cuckoo chick hatches before the others, pushes the host's eggs out of the nest, and is then fed and raised by the host birds as if it were their own. Which of the following human behaviors most resembles the behavior of this cuckoo?
+  (1) A man lent his friend a bicycle, and when the friend refused to return it he went to the friend's house and took it back by force
+  (2) A man found a wristwatch in the street and, although he knew that his friend had lost such a watch there the day before, did not give it to him
+  (3) A driver went through a red light and, when a policeman stopped him, claimed that the light had been amber and refused to accept the fine
+  (4) A trader sold a customer a string of imitation pearls as genuine, and when the customer complained and asked to return it, the trader refused to take it back and drove him from the shop with curses
+EXPL: Deception to gain a place one has no right to, followed by the ejection of the one who does — the cuckoo's two moves. (1) recovers one's own property; (2) is a failure to return; (3) is a lie without displacement.
+
+=== vb-inf_v2_0293 [real exam | set inf_v2 | Parables and Comparisons] answer=3
+STEM: Miri's children were playing in the living room and had scattered building blocks all over the floor. When Miri was asked why she was not picking the blocks up, she said: "One does not sweep the balcony while the sandstorm is still blowing." In her words Miri likened —
+  (1) picking up the blocks to the sandstorm
+  (2) the scattering of the blocks to sweeping the balcony
+  (3) the children's game to the sandstorm
+  (4) the children's game to sweeping the balcony
+EXPL: Sweeping while the storm blows is picking up while the game goes on: the game is the storm, the picking-up is the sweeping. (1) and (2) cross the pairs; (4) puts the game on the wrong side.
+
+=== vb-inf_v2_0294 [real exam | set inf_v2 | Parables and Comparisons] answer=2
+STEM: Some years ago a notice was hung above a drinking fountain in a scientific research institute: "It has been found that the drinking water in this building contains hydrogen." The notice was a joke, since notices of this kind are usually hung to warn of a danger, whereas the water molecule, as everyone knows, always contains two atoms of hydrogen. Yet, to the surprise of the joker, for several hours most of the staff refused to drink from the fountain. Which of the following cases most resembles the case described?
+  (1) A man who lacks vitamin B12 refused to take a supplement of it after reading an advertisement that warned against additives, although he knew that B12 is a substance the body itself requires
+  (2) A man decided to buy a computer in a certain shop because the salesman told him that its price was especially low thanks to a one-day sale, although he knew that the price the salesman named was the ordinary price in every shop
+  (3) A man who received a parcel from an unknown sender opened it with care, although the postal service had assured him that all parcels are examined before delivery
+  (4) A man who was told that a rare disease is spreading in a distant country cancelled a journey to a neighboring country, although he knew the disease does not cross borders
+EXPL: A framing — a "sale," a "warning" — drives the behavior although the person knows the fact it dresses up is nothing unusual. In (1), (3) and (4) the fear or caution answers to something the person believes might be real.
+
+=== vb-inf_v2_0295 [real exam | set inf_v2 | Parables and Comparisons] answer=1
+STEM: Michal dyed her hair blond, and the change caused a commotion at her workplace. When she was asked why her hair had stirred so much talk, she said: "Among people who live in stillness, every raised eyebrow looks like a mutiny." Which of the following best reflects Michal's meaning?
+  (1) Even a change as slight as the color of one's hair attracts attention in a place where changes are rare
+  (2) In a place where people are used to talking about one another, every change becomes the subject of talk
+  (3) Michal is a colorful figure, and therefore even a small change in her draws attention
+  (4) Michal is usually careful not to change her appearance, and therefore her colleagues noticed
+EXPL: The stillness is the workplace's habit of no change; the eyebrow is the small change. (2) makes gossip the cause; (3) and (4) make Michal the cause.
+
+=== vb-inf_v2_0296 [real exam | set inf_v2 | Parables and Comparisons] answer=2
+STEM: From a novel: "The woman remembered how, years before, in the market of her native city, a farmer had praised a duck he was selling: 'This duck,' he said, 'stretched its neck in the hope of becoming a swan, and it stretched so long that its neck really grew.' When she sailed to America she bought the duck to bring to her daughter, and she imagined how she would give it to her and how the girl would understand what the gift meant. But when she arrived, the officials took the duck from her, and she was left with a single feather. And then she was made to fill in so many forms that she forgot why she had come and what she had left behind." Which of the following is the message the woman most likely wished to convey to her daughter with the gift?
+  (1) Only one who knows where he came from can find the strength to reach his goals
+  (2) One who strives can attain more than his nature seemed to allow
+  (3) A person must not let others take his dreams from him
+  (4) In America, unlike in the old country, people of humble origin can succeed
+EXPL: The duck's stretched neck is aspiration rewarded. (1) reverses the direction of the gift's meaning; (3) is what happened to the gift, not its message; (4) is the belief the passage's ending mocks.
+
+=== vb-inf_v2_0297 [real exam | set inf_v2 | Parables and Comparisons] answer=4
+STEM: Zohar: "Chaya, a rumor reached me that you did not come to Ruti's birthday party because of the malicious rumors that are being spread about you. I am surprised at you! You know perfectly well that rumors almost always have no basis." Chaya: "If you think for a moment about what you are saying, you will see that it is like ____." Which of the following best completes Chaya's words?
+  (1) cheating an opponent in a game only because he cheated you first
+  (2) telephoning a person in order to ask him what his telephone number is
+  (3) thanking a burglar who, having broken into your house, saved the worker who had forgotten to lock the door
+  (4) printing hundreds of copies of an appeal to save paper and handing them to passers-by
+EXPL: Zohar relies on a rumor to reproach Chaya for taking rumors seriously — an act that undermines its own message, like the paper appeal. (1) is retaliation, (2) futility, (3) misplaced gratitude.
+
+=== vb-inf_v2_0298 [real exam | set inf_v2 | Parables and Comparisons] answer=2
+STEM: Friday the thirteenth is regarded by many as an unlucky day on which disasters are to be expected. A study conducted in Holland, however, found that Friday the thirteenth is in fact safer than other Fridays: fewer accidents, fewer fires and fewer thefts occur on it. The researchers explained the finding by the fact that many Dutch people believe the day to be prone to disaster, and are therefore more careful on it and go out less. Which of the following phenomena is most similar to the phenomenon described?
+  (1) Skiing is a dangerous sport that causes many injuries among amateurs, but professional skiers are rarely injured
+  (2) Students tend to do better in examinations they are afraid of failing, because they devote more time to preparing for them
+  (3) People who are afraid of dogs approach them with excessive caution, which arouses the dogs' suspicion and makes them more aggressive
+  (4) Increasing the number of police officers in the streets at night helps to reduce crime at night
+EXPL: Fear of a bad outcome leads to precautions that prevent it. (3) is the mirror image — fear producing the feared outcome; (1) and (4) involve no belief.
+
+=== vb-inf_v2_0299 [real exam | set inf_v2 | Parables and Comparisons] answer=3
+STEM: After the Supreme Court had ruled against him, a man applied for a further hearing, arguing that the ruling rested on an interpretation of a clause that did not match the intention of the legislature. The judge rejected the application and explained: "The legislature is like a housewife baking a cake: she decides what to bake and how to bake it, but once the cake is out of the oven the baker's work is done, and it is not she but whoever tastes it who determines how it tastes." Which of the following messages did the judge wish to convey?
+  (1) Even a person who knows the law thoroughly cannot thereby determine the intention of the legislature
+  (2) The legislature may enact any law it pleases, but the court need not rely on a law it regards as bad
+  (3) The legislature indeed determines the laws, but interpreting them is the task of the court and not of the legislature
+  (4) Even if the legislature intended a particular interpretation at the time of enactment, it may later interpret the law otherwise
+EXPL: Baking is legislating; tasting is interpreting; the baker has no say in the taste. (2) makes the court free to ignore the law; (1) and (4) concern the legislature's intentions, which the parable sets aside.
+
+=== vb-inf_v2_0300 [real exam | set inf_v2 | Parables and Comparisons] answer=4
+STEM: A software company published a "positions vacant" notice for a certain post. Since every applicant demanded a higher salary than the company intended to pay, it decided to publish the same notice again, in the hope of finding candidates whose demands would be lower. The head of personnel objected: "This decision is like trying again and again to push a large object through a small opening, instead of widening the opening." Which of the following best expresses her meaning?
+  (1) She thinks that the applicants who demanded the higher salaries are the ones best suited to the post
+  (2) She thinks that when the notice is published again the candidates will demand even higher salaries
+  (3) She thinks it is possible to persuade the applicants who answered the first notice to lower their demands
+  (4) She thinks the company should raise the salary it is prepared to pay
+EXPL: The opening is the salary; widening it is raising it. (2) predicts, (1) and (3) concern the applicants rather than the company's move.
+
+=== vb-inf_v2_0301 [real exam | set inf_v2 | Parables and Comparisons] answer=1
+STEM: Ehud: "The key to the magazine's recovery is cutting costs — first and foremost by dismissing the senior writers, whose salaries are the highest." Matityahu: "No doubt you would also advise a pilot whose plane was running out of fuel to switch off the engines in order to save fuel!" Which of the following claims best expresses Matityahu's intention?
+  (1) Readers will go on buying the magazine only if the senior writers go on writing for it
+  (2) The senior writers' salaries are indeed high, but the magazine has larger expenses than these
+  (3) The magazine should enlarge its staff of writers rather than reduce it
+  (4) The senior writers will find work elsewhere, and the magazine will be unable to bring them back
+EXPL: The engines are what keeps the plane up; the writers are what keeps the magazine alive — the saving destroys the thing saved. (2), (3) and (4) are objections the image does not make.
+
+=== vb-inf_v2_0302 [real exam | set inf_v2 | Parables and Comparisons] answer=3
+STEM: Tzvi: "Even if it turns out that Podolsky's hypothesis is correct, I will not believe it, since I know that in fact it is mistaken." Which of the following contradictions most resembles the contradiction in Tzvi's words?
+  (1) "Even if it turns out that most people like red clothes, I shall go on wearing red, since I do not like such clothes"
+  (2) "Many studies are indeed doubtful, but I think there are also reliable studies, since I have come across few doubtful ones"
+  (3) "The existence of dark matter in the universe has indeed been proved, but I do not know whether such matter exists, since its existence has not yet been proved"
+  (4) "Even if it is found that most Chinese are short, I will not agree that many Chinese are tall, since most short people are Chinese"
+EXPL: Tzvi grants the proof and denies the conclusion on the strength of the very thing the proof refutes; (3) has the same shape (proved / not proved). (1) is not a contradiction; (2) and (4) are faulty inferences of other kinds.
+
+=== vb-inf_v2_0303 [real exam | set inf_v2 | Parables and Comparisons] answer=2
+STEM: Liora: "I have noticed that every time Giora slides back into drinking, his partner is not at his side. It seems she cannot bear his behavior when he drinks, and so she leaves him every time he goes back to it." Dafna: "Your words are like the claim that the cock's crowing makes the sun rise in the morning." What does Dafna mean?
+  (1) Had Giora's partner not left him, he would have drunk far more
+  (2) Giora slides back into drinking because his partner leaves him
+  (3) Giora drinks because he is trying to drive his partner away
+  (4) Giora's partner does not behave properly when she leaves him in his distress
+EXPL: The cock's crow follows the dawn and does not cause it; Dafna says Liora has the causation backwards. (3) and (4) add motives; (1) adds a counterfactual.
+
+=== vb-inf_v2_0304 [real exam | set inf_v2 | Parables and Comparisons] answer=3
+STEM: Some argue that in order to understand the society we live in today we should study the modern age and not the distant past. The historian Marc Bloch disagreed, and illustrated his position with an analogy: "What would we think of a geophysicist who, content with the fact that the moon is far closer to the earth than the sun, concluded that the moon's influence on the earth is incomparably greater than the sun's?" In his words Bloch likened —
+  (1) the distant past to the earth
+  (2) the distant past to the moon
+  (3) the modern age to the moon
+  (4) the modern age to the sun
+EXPL: The moon is near but not the greater influence — like the modern age; the sun, far but powerful, is the distant past. (2) and (4) swap them; (1) makes the past the thing influenced.
+
+=== vb-inf_v2_0305 [real exam | set inf_v2 | Parables and Comparisons] answer=1
+STEM: The writer Jonathan Swift once said: "I am prepared to believe that the world was created by a random arrangement of atoms, just as I should be prepared to believe that a random mixing of the letters of a printing press could produce a philosophical treatise." In his words Swift likened —
+  (1) the world to a philosophical treatise
+  (2) the random arrangement of atoms to the writing of a philosophical treatise
+  (3) the random mixing of printing letters to a philosophical treatise
+  (4) his belief that the world is made of atoms to his belief that a treatise is made of letters
+EXPL: Atoms are to the world as letters are to the treatise; the two products are the things likened. (2) and (3) pair a process with a product; (4) invents beliefs.
+
+=== vb-inf_v2_0306 [real exam | set inf_v2 | Parables and Comparisons] answer=4
+STEM: The proportion of people suffering from a certain disease among the inhabitants of the town of Yad-Nahum is higher than in the other towns of the country. Tzvi concluded that some environmental factor in the area of the town causes the disease. Shimon replied: "Your words are exactly like the claim that a shipping company's volume of sales is determined by the number of its investors. ____." Which of the following best completes Shimon's words?
+  (1) For those who suffer from the disease are among the main reasons for its spread, and since most of them live in Yad-Nahum, there are many patients there
+  (2) For the population of Yad-Nahum is the smallest in the country, and its inhabitants cannot afford the expensive tests that allow the disease to be diagnosed
+  (3) For it is known that in high places the chance of falling ill is great, and since Yad-Nahum is one of the highest towns in the country, it is no wonder that the proportion of patients in it is high
+  (4) For the blossom of the tsa'alon tree is a known relief for the symptoms of the disease, and since Yad-Nahum is the only place in the country where the tsa'alon grows, many patients move there to live
+EXPL: Investors follow sales; patients follow the remedy — the arrow runs from the disease to the town. (3) supports Tzvi; (1) and (2) are other errors.
+
+=== vb-inf_v2_0307 [real exam | set inf_v2 | Parables and Comparisons] answer=2
+STEM: Hans Christian Andersen's tale "The Ugly Duckling" tells of a duckling that is persecuted because its appearance differs from that of its siblings and is thought ugly. When the duckling grows up it turns out that it is not a duck at all but a swan, admired by all for its beauty. Some hold that the lesson of the tale is that one should not judge a person by his outward appearance; but the tale's ending ("when the duckling grew up…") does not fit that lesson. Which of the following alternative endings would allow that lesson to be drawn from the tale?
+  (1) And behold, when the duckling grew up it married a beautiful swan, and became known everywhere for its beauty
+  (2) The duckling outdid its companions time after time at swimming, and grew into a duck loved by all for its skill
+  (3) In the end it turned out that the duckling was covered with mud, and beneath the mud a handsome duck was hiding
+  (4) The swans came as predators and devoured all the ugly duckling's siblings, but did it no harm
+EXPL: The lesson needs the duckling valued for something other than its looks while remaining as it was; (1) and (3) reward it with beauty after all, (4) rewards it with nothing.
+
+=== vb-inf_v2_0308 [real exam | set inf_v2 | Parables and Comparisons] answer=3
+STEM: Uri: "Two weeks have passed and I have not lost a gram, and I am thinking of leaving the diet institute that was recommended to me." Yoav: "You remind me of the time I said 'you certainly know how to cook' after tasting a dish I had only just put on the stove. I apologized when I tasted the dish again after it had cooked for five hours, as the recipe requires, and found that it tasted like heaven." What corresponds, in Uri's case, to the first time Yoav tasted the dish?
+  (1) Uri's intention to leave the institute
+  (2) The loss of weight that Uri wishes to achieve
+  (3) The weighing at which Uri found he had not lost weight
+  (4) Uri's joining the institute
+EXPL: The premature tasting is the premature test. (1) corresponds to Yoav's hasty verdict, (2) to the finished dish, (4) to putting the dish on the stove.
+
+=== vb-inf_v2_0309 [real exam | set inf_v2 | Parables and Comparisons] answer=4
+STEM: Following the rise in verbal violence against teachers in the schools of Palmania, members of parliament announced a campaign to improve young people's attitude toward their teachers. "I do not understand how we have come to this," said the speaker of the parliament, "Palmanians who need reminding of their manners are like a fish that needs reminding how to swim." From the speaker's words it follows that in his view —
+  (1) it is doubtful whether a campaign can reduce verbal violence among young people
+  (2) a person can learn on his own how to behave, as a fish learns to swim
+  (3) it is not the teachers who should teach young people manners
+  (4) Palmanians are polite people by nature
+EXPL: Swimming is a fish's nature; manners, the speaker implies, are a Palmanian's. (1), (2) and (3) are not what the image says.
+
+=== vb-inf_v2_0310 [real exam | set inf_v2 | Parables and Comparisons] answer=1
+STEM: In a newspaper column it was written: "Nahman's decision to disband the rock band 'Baggad,' which played sound rock but had nothing distinctive about it, and to found the band 'Spilt,' which blends rock with klezmer, has proved justified both artistically and commercially. Nevertheless, it is no surprise that Spilt's best records are precisely those in which the rock element is more prominent than the klezmer." Which of the following claims is most similar to the column's central claim?
+  (1) Adding a light-rail line to the city's public transport system is an important step, but even afterwards buses will remain the main means of public transport in the city
+  (2) The football club was right to accept the supporters' demand and add a striker to its squad, but good tactics will still matter more than any one player
+  (3) The kibbutz's decision to grow mangoes as well as bananas paid off; next year it should enlarge the mango branch
+  (4) Including the musical in the theater's repertoire improved its finances but harmed its artistic standard, and it should therefore remain a secondary item
+EXPL: The innovation is justified, and yet the old foundation remains what works best. (3) reverses the conclusion; (4) makes the innovation harmful; (2) shifts the contrast to a different pair.
+
+=== vb-inf_v2_0311 [real exam | set inf_v2 | Parables and Comparisons] answer=4
+STEM: In a conversation between Yotam and Nadav, Yotam said: "I know this phenomenon — it is precisely on the day you take an umbrella that no rain falls." Which of the following statements is most likely to be the one of Nadav's to which Yotam was replying?
+  (1) "I bought my friend a bunch of roses, but when I gave it to her it turned out that she is allergic to those very flowers."
+  (2) "For ten years I saved money to buy a plot of land, but when I thought I had enough, land prices soared."
+  (3) "My knees hurt during the decisive match, after a whole year without a twinge of pain."
+  (4) "Yesterday, unlike my habit, I did my homework, and today of all days the teacher did not check the homework."
+EXPL: The phenomenon is a precaution followed by the absence of what it guarded against; (3) is its mirror image, and (1) and (2) are misfortunes of other shapes.
+
+=== vb-inf_v2_0312 [real exam | set inf_v2 | Parables and Comparisons] answer=1
+STEM: In a textbook on the history of art it was written: "The famous work 'The Treachery of Images' by the Belgian painter René Magritte depicts an ordinary pipe, and beneath it the caption 'This is not a pipe.' Magritte wished thereby to illustrate the difference between a real object and its representation: a painting of a pipe may be realistic, but one cannot fill it with tobacco or smoke it." Beside the text, as is usual in such books, was a small photograph of the work, and the book's author chose to add beneath it the caption "This is not 'The Treachery of Images.'" What did the author intend by the caption he added?
+  (1) That the photograph in the book is only a representation of the real painting Magritte painted, just as Magritte's painted pipe is not a real pipe
+  (2) That the small size of the photograph does not allow the reader to grasp the meaning of the painting
+  (3) That unlike "The Treachery of Images," which depicts an everyday object, the photograph shows a famous work by an important artist
+  (4) That unlike Magritte's painting, which is a faithful representation of a real pipe, the small photograph is not a faithful representation of the painting
+EXPL: The caption turns Magritte's lesson on the reproduction of Magritte. (4) makes the point about fidelity rather than representation; (2) and (3) miss the echo.
+
+=== vb-inf_v2_0313 [real exam | set inf_v2 | Parables and Comparisons] answer=4
+STEM: Before you is an argument: "Mosquitoes are drawn to light; therefore, if I switch off the light, I shall not be bitten." Which of the following arguments most resembles this argument in its logical structure?
+  (1) Reading is not a tiring activity; therefore, if I read, I shall not get tired
+  (2) Ticks prefer damp places; therefore, if I walk in damp places, I shall hear many ticks
+  (3) The blossom of the myrtle causes an allergic reaction; therefore, if I have no allergic reaction, I shall not be able to go near a myrtle
+  (4) Women like bearded men; therefore, if I shave, I shall not marry
+EXPL: A single attraction treated as the only route to the outcome, so that removing it is taken to remove the outcome. (1) and (3) are different fallacies; (2) is not a fallacy of that kind.
+
+=== vb-inf_v2_0314 [real exam | set inf_v2 | Parables and Comparisons] answer=1
+STEM: "The owl of Minerva," wrote the philosopher Hegel of the symbol of the Roman goddess of wisdom, "takes flight only at dusk," meaning that we are able to grasp the full meaning of a historical event only in retrospect. If we extend Hegel's parable, we may say that "the hours of the day" correspond to —
+  (1) the time in which the historical event takes place
+  (2) Roman wisdom
+  (3) the examination of the meaning of the historical event
+  (4) the historical event itself
+EXPL: Dusk is the time after the event; the day is the time of the event. (3) is the owl's flight; (4) is what happens during the day, not the day.
+
+=== vb-inf_v2_0315 [real exam | set inf_v2 | Parables and Comparisons] answer=4
+STEM: Surely everyone will agree that a million grains of sand make a heap, whereas one grain, or even two or three, do not. Surely everyone will also agree that if we remove one grain from a heap, what remains is still a heap. If so, when we remove grain after grain until a single grain remains, at what point exactly does it cease to be a heap? Which of the following difficulties is most similar to the one described?
+  (1) Since a company's cash balance is computed only at the end of a quarter or a year, one cannot know at a given moment whether the company is profitable
+  (2) Since a person's rate of growth is not fixed and is not known in advance, one cannot say with certainty what height he will reach as an adult
+  (3) Since different people prefer different degrees of saltiness, there is no moment at which one can say for certain that a dish has become too salty for everyone
+  (4) Although there is an age at which everyone agrees a person is old, and an age at which everyone agrees he is not, no one can say at what moment a person becomes old
+EXPL: Clear cases at both ends and no boundary between them; (3) is disagreement between people, (1) and (2) are lack of information.
+
+=== vb-inf_v2_0316 [real exam | set inf_v2 | Parables and Comparisons] answer=4
+STEM: A kindergarten wished to fight the phenomenon of parents arriving late to collect their children at the end of the day, and the head of the kindergarten decided that for every delay of more than a quarter of an hour the parents would pay an extra fee. To her surprise, the number of latecomers grew markedly: it seems the parents were interested in extending the kindergarten's hours, provided they paid for it. Which of the following cases is most similar to the case described?
+  (1) A greengrocer noticed that visits to his shop had become more frequent, and raised his prices; to his surprise, sales did not fall
+  (2) A newspaper ceased publication for economic reasons, and in its place a monthly on economic affairs began to appear at almost the same price; to the surprise of the newspaper's owners, many former subscribers moved to the monthly
+  (3) After a long strike at a factory, the owner agreed to raise the workers' wages; to his surprise, productivity and profits rose
+  (4) The tax office used to let people who came to file their returns wait in line; to shorten the lines it decided to charge a high fee for the service; to its surprise, the number of people coming to file rose
+EXPL: A charge meant as a deterrent turned an imposition into something worth buying. (1), (2) and (3) are surprises of other kinds.
+
+=== vb-inf_v2_0317 [real exam | set inf_v2 | Parables and Comparisons] answer=4
+STEM: It is well known that when we deal with truths, such as mathematical truths, we may use different names for the same entities — wherever "nine" is written, "three times three" may be written as well. But when we deal with what a person thinks or believes, matters are more complicated. It is possible that a person thinks Oslo is in Sweden, though in fact it is the capital of Norway; but there is little chance that he thinks "the capital of Norway is in Sweden." Which of the following examples best illustrates the central claim of the passage?
+  (1) A mathematics book in which, in one place, the phrase "four" was replaced by "two and two," and in another place by "two times two"
+  (2) A mathematics book in which "three minus two" was replaced by "one," but "two minus one" was not
+  (3) A person who mistakenly thinks that "three minus one equals one," and therefore thinks that the sum of one and one is three
+  (4) A person who mistakenly thinks that "two and two are five," but does not think that "four equals five"
+EXPL: Two names of the same thing, one of which the believer accepts and the other rejects — the substitution fails inside belief. (1) and (2) are about texts, not beliefs; (3) is a chain of errors.
+
+=== vb-inf_v2_0318 [real exam | set inf_v2 | Parables and Comparisons] answer=4
+STEM: Psychologists argue that although people are aware that their preferences have changed over the years, they tend to think that their preferences will not change any further, and that their taste in the future will resemble their taste today. Which of the following examples best illustrates this phenomenon?
+  (1) A person aware that he enjoys today a job he enjoyed less in his youth expects that in the future he will enjoy it even more
+  (2) A person aware that he enjoys today the same films he enjoyed in his youth expects that in the future he will enjoy them less
+  (3) A person aware that he chooses today bolder clothes than he wore in his youth thinks that in the future he will choose clothes more sober than those he wears today
+  (4) A person aware that he no longer enjoys the music he enjoyed in his youth thinks that in the future he will still enjoy the music he loves today
+EXPL: Change acknowledged in the past, denied for the future. (1), (2) and (3) all expect further change.
+
+=== vb-inf_v2_0319 [real exam | set inf_v2 | Parables and Comparisons] answer=3
+STEM: A biologist wished to test whether the bacteria of the species Finibacillus vortex exhibit a higher pattern of social behavior than other bacteria. To do so he counted the genes responsible for social behavior in this species and compared their number with their number in five hundred other species of bacteria. Which of the following researchers chose a test most similar to the biologist's?
+  (1) A researcher who wished to test whether frequent yawning indicates a feeling of closeness, and compared the frequency of yawning among people in the company of relatives with its frequency in the company of strangers
+  (2) A researcher who wished to test whether eating chocolate raises the level of dopamine in the brain, and compared the dopamine level in the brains of heavy chocolate eaters with that in the brains of moderate eaters
+  (3) A researcher who wished to test whether a new model of mobile telephone breaks down less than other models, and compared the quality of the electronic components of the new model with that of the components of other models
+  (4) A researcher who wished to test whether prolonged sitting causes back trouble, and compared the incidence of back trouble among office workers with its incidence among manual workers
+EXPL: A property is tested by counting the parts thought to produce it, rather than by observing the property itself. (1), (2) and (4) observe the property directly in two groups.
+
+=== vb-inf_v2_0320 [real exam | set inf_v2 | Parables and Comparisons] answer=1
+STEM: The philosopher Morris Weitz rejected the claim that there is an essence common to all the arts, and argued that the relations between the different arts are of the same kind as the relation between a lion and a cat — two things that resemble each other but differ in essence. He proposed abandoning the large questions about art as a whole and concentrating on what deserves attention: the study of each kind of art — literature or painting, for instance — in itself. Against Weitz, however, it can be argued that the problem he pointed to in dealing with art as a whole exists in his own proposal as well. Which of the following statements illustrates the claim that the problem Weitz pointed to exists in his own proposal too?
+  (1) There is no point in discussing literature as a whole, since the resemblance between a novel and a short story is not the same as the resemblance between a short story and a poem
+  (2) The claim that there is no essence common to all the arts is not valid, since painting, literature and the other arts have features in common
+  (3) Concentrating on each art separately will not allow a fruitful discussion, since it will shed no light on the essence of art as a whole
+  (4) Dealing with each art separately is liable to bring out the differences between the kinds of art and not the connections between them
+EXPL: The lion-and-cat argument, applied one level down, dissolves "literature" as it dissolved "art." (2) rejects Weitz's premise; (3) and (4) object to the proposal on other grounds.
+
+=== vb-inf_v2_0321 [real exam | set inf_v2 | Parables and Comparisons] answer=4
+STEM: Ruti: "Some people keep a vase full of flowers at home, but I like to go out to the fields to see the blossom, since there the flowers are more beautiful." Michal: "I feel as you do about ____." Which of the following best completes Michal's words?
+  (1) pearl necklaces: though everyone agrees that a necklace of real pearls is finer than one of artificial pearls, I am not keen on buying real pearls
+  (2) bread: though some people bake fresh bread at home, I find it easier to buy bread at the shop
+  (3) apples: though I like tasty apples, I usually eat apples in their natural state, since that is healthier
+  (4) films: though some people watch them on the television at home, I think the experience of watching them at the cinema is richer
+EXPL: The convenient domestic form set against the fuller experience in its proper place. (2) prefers the convenience; (1) and (3) trade on quality and health, not on setting.
+
+=== vb-inf_v2_0322 [real exam | set inf_v2 | Parables and Comparisons] answer=1
+STEM: In a conversation between Noa and Roni, Noa said something, and Roni replied: "You sound like someone whose enjoyment of a concert depends on the beauty of the grand piano." Which of the following is most likely to be what Noa said?
+  (1) "Shimon is an excellent dentist — his clinic is large and spacious."
+  (2) "After comparing several necklaces I bought the one I found prettiest, despite its high price."
+  (3) "Gronov's sculptures are not to my taste — I would never invest money in them."
+  (4) "The level of teaching at my children's school is so low that I am thinking of taking them out."
+EXPL: Judging the essential by the incidental — the clinic for the dentist, the piano's looks for the concert. (2), (3) and (4) judge by the thing itself.
+
+=== vb-inf_v2_0323 [real exam | set inf_v2 | Parables and Comparisons] answer=4
+STEM: During a meeting at the ministry of transport on ways of reducing the number of road accidents, Dr. Kobalenz said to Professor Master: "You propose to set before a cat a large bowl of fish and to demand that it not eat it all, when the real solution to the cat's obesity is to give it a smaller bowl." What could have been the context in which these words were said?
+  (1) Master proposed a law under which the penalty for a first traffic offense would be more severe than at present, and Kobalenz argued that the penalty should grow with every further offense
+  (2) Master proposed improving the road network, and Kobalenz argued that the investment should go instead to encouraging the import of cars with a high safety level
+  (3) Master proposed stricter laws against speeding, and Kobalenz argued that it is better to invest in enforcing the existing laws
+  (4) Master proposed lowering the speed limit on the roads, and Kobalenz proposed obliging manufacturers to limit the speed that imported cars can reach
+EXPL: The smaller bowl is a car that cannot go fast; the demand not to eat is a limit the driver is asked to keep. (1), (2) and (3) do not oppose a demand for restraint to the removal of the temptation.
+
+=== vb-inf_v2_0324 [real exam | set inf_v2 | Parables and Comparisons] answer=4
+STEM: Miriam Katz: "I am afraid that if it comes out that I did not finish my secondary schooling, my chances of being elected mayor will be much reduced." Eitan, her communications adviser: "Believe me, eagles do not bother with a carcass that has long since been forgotten." Miriam Katz: "You may be right — but where there is no nightingale, even a crow is a songbird." From Miriam Katz's reply it can be understood that —
+  (1) other candidates for mayor also have flaws in their past
+  (2) she assumes that her failure at school has already been leaked to the media
+  (3) there are no other facts in her past that could damage her chances
+  (4) she suspects that, in the absence of a juicier story, the media will take an interest in her failure at school after all
+EXPL: The crow is her old story; the missing nightingale is the better story the press lacks. (1), (2) and (3) are not in the image.
+
+=== vb-inf_v2_0325 [real exam | set inf_v2 | Parables and Comparisons] answer=1
+STEM: When Dr. Salba told Chaim that he has an infection of the throat, Chaim protested: "But I feel weak all over my body." Dr. Salba replied: "When the governor of the Bank of Israel decides in Jerusalem to change the exchange rate of the shekel, the rate changes in Eilat too." Dr. Salba is trying to explain —
+  (1) the gap between the place where the illness is located and the extent of its effect
+  (2) the gap between the exchange rate in Jerusalem and the rate in Eilat
+  (3) a mistake that has fallen into the medical diagnosis
+  (4) the fact that Chaim feels pain in his throat as well
+EXPL: A local cause with a body-wide effect. (2) takes the image for the subject; (3) and (4) are not what Chaim questioned.
+
+=== vb-inf_v2_0326 [real exam | set inf_v2 | Parables and Comparisons] answer=3
+STEM: Omer was called to travel urgently to France, and hesitated whether to hire the services of a French-speaking interpreter or to try to learn French before the journey. He asked the advice of his friends Gadi and Esther. Gadi said: "Better for a man to dig himself a well than to buy water in bottles." Esther said: "However, when you are thirsty is not the time to start digging a well." Which of the following claims about the two is NOT correct?
+  (1) Gadi argues that hiring an interpreter would be only a one-time solution to Omer's problem
+  (2) Esther argues that hiring an interpreter would be an immediate solution
+  (3) Esther disagrees with the view that in principle knowing French is preferable to using an interpreter
+  (4) Both Gadi and Esther liken learning French to digging a well
+EXPL: Her "however" grants the principle and objects only to the timing. (1), (2) and (4) each read the images correctly.
+
+=== vb-inf_v2_0327 [real exam | set inf_v2 | Parables and Comparisons] answer=1
+STEM: In his article "The Structural Study of Myth," Claude Lévi-Strauss argues that many myths of different cultures have a fixed structure: the myth opens with a description of an opposition between two poles, continues with a mediating element that resolves the conflict between them, and then a new opposition arises between the mediating element and one of the poles — so that the conflict returns to its original elements, but with the roles changed. Which of the following stories best fits the structure Lévi-Strauss describes?
+  (1) Two brothers are locked in a struggle to the death; their sister succeeds in persuading the elder to spare the younger; in the end the sister and the elder brother fall into a struggle with each other
+  (2) Two heads of families are in dispute; the village head proposes a solution; after a time one of the heads of family takes the village head's place, and the dispute is renewed
+  (3) After a struggle with the king, one of his ministers turns to the high priest, who settles the dispute; in later times the minister becomes king and the king a minister
+  (4) A girl quarrels with her mother; the mother is offended; after a time the father marries again and the girl quarrels with her stepmother
+EXPL: Two poles, a mediator, then the mediator against one pole. (2) and (3) exchange roles without a mediator becoming a pole; (4) has no mediation.
+
+=== vb-inf_v2_0328 [real exam | set inf_v2 | Parables and Comparisons] answer=2
+STEM: Eli decided to dismiss Ovadia, the organizational consultant of his firm. In a conversation between them, Ovadia said: "Your behavior is like that of a sick man who throws away the thermometer because it shows a high fever." Which of the following reasons is most likely to be the one for which Eli decided to dismiss the consultant?
+  (1) The consultant's work is not efficient
+  (2) The consultant reports that most of the firm's employees are dissatisfied
+  (3) The consultant causes the employees to complain about their conditions
+  (4) Eli cannot go on paying the consultant's high fee
+EXPL: The thermometer is the bearer of bad news, not its cause; (3) makes him the cause, (1) and (4) are reasons the image does not touch.
+
+=== vb-inf_v2_0329 [real exam | set inf_v2 | Parables and Comparisons] answer=3
+STEM: A businessman filed a libel suit against a newspaper over an anonymous notice published in it that defamed him. During the trial the newspaper argued that the real reason for the suit was the businessman's wish to expose the identity of the notice's author, and that the newspaper stands by its refusal to disclose the identity of the authors of anonymous notices. Which of the following cases is most similar to the newspaper's claim?
+  (1) A teacher was sued for infringement of copyright because she photocopied a textbook for her pupils without the publisher's permission, and argued that she did so because the school has no budget for books
+  (2) A customer sued a telephone company, claiming that it had raised its charges in breach of contract; the company argued that it had raised the charges for all its customers and that the law permits this
+  (3) A contractor was sued for breach of contract because he carried out noisy building work during rest hours, and argued that the residents had filed the suit only in order to delay the occupation of the building, although he is bound to complete it on time
+  (4) A man sued a pharmaceutical company, claiming that its drug had caused him side effects; the company argued that he only wants compensation, although the leaflet expressly warned of the side effects
+EXPL: The defendant answers not the claim but the motive behind it — the suit is a means to another end. (1), (2) and (4) answer the claim itself.
+
+=== vb-inf_v2_0330 [real exam | set inf_v2 | Parables and Comparisons] answer=1
+STEM: Kobalenz criticized the policy of the ministry of immigration, saying: "Better to give a hungry man a fishing rod than a basket full of fish." What could the ministry's policy be?
+  (1) Setting up a radio station broadcasting in the immigrants' language, instead of investing in schools for teaching the local language
+  (2) Housing the immigrants in the area in which the ministry is located, instead of allowing them to choose where to live
+  (3) Directing the immigrants to workplaces that require knowledge of the local language
+  (4) Limiting the number of immigrants entering the country, instead of opening the gates to all who wish to come
+EXPL: The fish is the service in their own language; the rod is the language that would let them manage on their own. (2), (3) and (4) are not about provision versus capability.
+
+=== vb-inf_v2_0331 [real exam | set inf_v2 | Parables and Comparisons] answer=3
+STEM: Master told Kobalenz that he plans to travel to New York in order to watch a performance by his favorite band, "The Alps." In reply Kobalenz said: "Your behavior is like climbing a wall in order to reach a gate that stands wide open. It is well known that the band will perform next month in your own city." In his words Kobalenz likened —
+  (1) the journey to New York to the wall
+  (2) the band to the gate
+  (3) the band's performance in Master's city to the open gate
+  (4) the band's performance in New York to the climbing of the wall
+EXPL: The open gate is the easy way to the same thing — the local performance. The journey is the climbing, not the wall (1); the band is what lies beyond, not the gate (2); the New York performance is the destination, not the climb (4).
+
+=== vb-inf_v2_0332 [real exam | set inf_v2 | Parables and Comparisons] answer=3
+STEM: Gil told Moti what had happened at the job interview he had gone to, after which he did not get the position, and Moti said: "One should not overwork the dough to make it rise beyond its measure." Which of the following is most likely to be Moti's meaning?
+  (1) He thinks Gil could have applied for a more successful position
+  (2) He thinks Gil should have presented his virtues at the interview
+  (3) He thinks Gil boasted too much at the interview
+  (4) He thinks the interviewers should have consulted Gil's references
+EXPL: Overworked dough is a self-presentation pushed too far. (2) reverses the fault; (1) and (4) are not in the image.
+
+=== vb-inf_v2_0333 [real exam | set inf_v2 | Parables and Comparisons] answer=3
+STEM: Tal told Michal about his dismissal from his job, which he regards as unjustified. Following Michal's response, Tal said: "Your words resemble the conduct of someone who admires a work of art in a museum but ignores the frame it is set in." What could have been the context in which Tal's words were said?
+  (1) In her response Michal referred mainly to the fact that Tal was dismissed through no fault of his own
+  (2) In her response Michal referred mainly to the employment possibilities now open before Tal
+  (3) In her response Michal referred mainly to the generous severance package Tal received from his workplace
+  (4) In her response Michal referred mainly to the fact that Tal's dismissal was justified after all
+EXPL: The frame is the circumstances of the dismissal — its injustice — which Michal passed over while admiring what came with it. (1) attends to the frame; (4) denies it; (2) looks past the picture altogether.
+
+=== vb-inf_v2_0334 [real exam | set inf_v2 | Parables and Comparisons] answer=3
+STEM: Nurit and Zeev were watching a basketball match in which the team of their friend Uri was playing. Nurit: "Do you see — Uri has not been given a chance to play again!" Zeev: "You are mistaken. It seems the falling of the leaves makes it hard for you to tell one kind of tree from another." In his reply Zeev likened —
+  (1) the falling of the leaves to Uri's part in the match
+  (2) the watching of the match to the falling of leaves from a tree
+  (3) Uri in the team's uniform to a tree in the season of falling leaves
+  (4) Uri's teammates to leaves falling in autumn
+EXPL: Uri is on the court, but in the uniform all the players look alike — like trees stripped of their leaves. (1), (2) and (4) map the image to the wrong things.
+
+=== vb-inf_v2_0335 [real exam | set inf_v2 | Parables and Comparisons] answer=3
+STEM: Of Professor Kaminer, who teaches linguistics at the University of Michigan on a program for outstanding students, it is customary to say: "He is like the moon — he would not shine at all without the sun." Which of the following interpretations is LEAST suited to the saying?
+  (1) Professor Kaminer excels as a lecturer only thanks to the high level of his students
+  (2) The material Professor Kaminer teaches is taken from the book of Professor Goldenberg, the celebrated linguist
+  (3) Many attribute to Professor Kaminer skill in many fields only because of his great knowledge of linguistics
+  (4) The University of Michigan enjoys an excellent reputation, and Professor Kaminer benefits from it without deserving to
+EXPL: The moon's light comes from elsewhere; in (1), (2) and (4) the source of Kaminer's shine is someone or something else. In (3) the light is his own, merely misapplied.
+
+=== vb-inf_v2_0336 [real exam | set inf_v2 | Parables and Comparisons] answer=1
+STEM: A lecturer said: "An expert in a certain field who sets out to speak about that field had better be more careful than when he speaks about other fields, since his self-confidence is liable to prevent him from checking the details thoroughly, and so to lead him into errors. Think, for example, of ____." Which of the following best completes the lecturer's words?
+  (1) a man walking through a dark apartment who does not know that objects are scattered on the floor — he will probably stumble more if the apartment is his own
+  (2) an experienced driver who drives carefully when the car is not his own — he is less likely to be involved in an accident
+  (3) a skilled accountant who errs in a calculation — the financial loss caused by his error will probably be larger than the loss caused by a beginner's
+  (4) an experienced mountaineer — he will probably choose harder routes than a beginner would
+EXPL: Familiarity breeds confidence, and confidence skips the checking. (2) is the opposite case; (3) and (4) concern consequences and choices, not carelessness.
+
+=== vb-inf_v2_0337 [real exam | set inf_v2 | Parables and Comparisons] answer=3
+STEM: Physicists argue that "shortcuts" may exist — a direct link between two distant points in space. The claim rests on the assumption that the weight of huge celestial bodies, whose mass is enormous, is able to curve space. Many find it hard to grasp the idea that space can curve, but in fact this curvature is no different from the curvature of any other object under a heavy weight: we know, for example, that if a heavy ball is placed on a hammock the hammock sags, and if the ball is very heavy the two ends of the hammock may even touch each other. What in the hammock example corresponds to the "shortcuts" mentioned in the passage?
+  (1) The point of contact between the ball and the hammock
+  (2) The weight of the ball placed on the hammock
+  (3) The point of contact between the two ends of the hammock
+  (4) The hammock on which the heavy ball rests
+EXPL: Two distant points brought together — the ends of the hammock meeting. (4) is space, (2) is mass, (1) is where the mass sits.
+
+=== vb-inf_v1_0025 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=2
+STEM: Yael and Noa have worked for many years at the same insurance company. Yael: "Did you hear that Shlomi has been given the corner office and a company car?" Noa: "In our vineyard, the owner waters the fence posts." Noa's words imply that in her opinion —
+  (1) Shlomi has waited longer for a promotion than anyone else in the company
+  (2) the benefits given to Shlomi are wasted on someone who will produce nothing in return
+  (3) Shlomi should have been given the office and the car long ago
+  (4) the company's profits do not depend on how its managers are rewarded
+EXPL: Watering a fence post is care lavished on something that cannot grow; Shlomi is the post, the office and car are the water. (1) and (3) read the remark as sympathy; (4) generalizes beyond it.
+
+=== vb-inf_v1_0026 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=2
+STEM: At a meeting of the port authority, the harbormaster made a suggestion in figurative language: "It is not wise to clear the driftwood from the mouth of our river. Better to leave it lying there undisturbed, so that it keeps out the silt that would choke the channel altogether." Which of the following is most likely to be the harbormaster's suggestion?
+  (1) Small smugglers should not be arrested but followed, so that they lead the authority to the ships that supply them
+  (2) The one old shipping company that dominates the port should be allowed to keep its position, for fear that if it is driven out, several more aggressive companies would take its place
+  (3) The inefficient harbor pilot should not be dismissed, because his dismissal might expose the authority's own errors
+  (4) Fines should not be imposed on boats that break minor rules, since a record of fines could push their owners into serious violations
+EXPL: The driftwood is a tolerable nuisance that blocks a worse one; only (2) keeps a lesser evil in place because it excludes a greater. (1) is about surveillance, (3) about self-protection, (4) about escalation.
+
+=== vb-inf_v1_0027 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=3
+STEM: When a student asked whether more letters are sent or received in the city each year, the lecturer answered: "Your question is like asking whether our valley has more slopes going up or slopes going down." Which of the following questions could the lecturer have used to make the same point?
+  (1) Which was greater this year — the number of people who lent money or the number of people who borrowed it?
+  (2) Which is greater — the number of marriages that took place in the city this year or the number of people who married in the city this year?
+  (3) Which is greater — the number of goals scored by the home teams in the league this season or the number of goals conceded by the visiting teams?
+  (4) Which is greater in the city — the number of people who have an older sibling or the number of people who have a younger sibling?
+EXPL: Every goal scored by a home team is a goal conceded by a visiting team — one event counted from two sides, exactly like a slope. In (1) one lender may serve many borrowers; in (2) the ratio is fixed but the counts differ; in (4) the counts genuinely differ.
+
+=== vb-inf_v1_0028 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=2
+STEM: Many banks require customers to confirm every online payment with a code sent to their mobile phone; the requirement is meant to stop a thief who has obtained a customer's password. It is doubtful, however, whether the requirement achieves its aim: many customers keep their password written in the notes application of the same phone, so that anyone who takes the phone obtains both the password and the codes. In which of the following cases is the disadvantage of the arrangement described most similar to the disadvantage of the bank's requirement?
+  (1) A woman keeps her jewelry in a safe for fear of theft, and as a result never wears it
+  (2) Parents lock the medicine cabinet and hang the key on a hook beside it, where the children can reach it as easily as the cabinet
+  (3) A driver fits his car with an alarm so sensitive that neighbors learn to ignore it, so that when a thief finally comes, no one reacts
+  (4) A traveler buys insurance against lost luggage and, feeling protected, stops attaching name tags to her bags
+EXPL: The second safeguard is stored together with the first, so one act of theft defeats both — the structure of the bank's case. (1) is a cost of the measure, (3) a measure that erodes attention, (4) a measure that changes behavior.
+
+=== vb-inf_v1_0029 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=2
+STEM: In an experiment, participants waited for a few minutes in a dentist's waiting room and were then asked, in another room, to list the objects they had seen there. Several listed magazines and a water cooler, which were not in the room. The researchers explained this by hypothesizing that memory records only a few details and fills in the rest from expectations about what such a room usually contains. Which of the following can best be explained in the same way?
+  (1) A shopper who bought a particular coat was later able to name every other coat displayed in the shop
+  (2) A witness to a street robbery stated that the robber wore a mask, whereas in fact his face was uncovered
+  (3) A man involved in his first traffic accident remembered the other car as green, whereas in fact it was blue
+  (4) A wedding guest estimated that about a hundred people attended, and the true number was a hundred and two
+EXPL: A mask is what a robber is expected to wear — a detail supplied by expectation, not observed. (3) is a wrong detail with no expectation behind it; (1) and (4) are accurate memories.
+
+=== vb-inf_v1_0030 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=2
+STEM: In economics, the term "debt trap" describes a dynamic in which a borrower takes a new loan to pay the interest on an old one, so that the total debt grows and the next interest payment is larger still, until repayment becomes impossible. The term can also apply to other areas of life. Which of the following situations is the best example of a "debt trap" in another area?
+  (1) A student who studied little for one exam does badly, studies hard for the next, and does well
+  (2) A farmer whose field yields less each year sells part of the field to buy fertilizer, so that the following year the smaller field yields even less and he must sell more of it
+  (3) A runner who trains too hard is injured, rests until she recovers, and returns to the same training
+  (4) A shopkeeper who lowers his prices attracts more customers and raises his prices again
+EXPL: Each remedy shrinks the base that produces the income, making the next shortfall larger — the escalating structure of the trap. (1) and (3) are corrected cycles; (4) is a reversible adjustment.
+
+=== vb-inf_v1_0073 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=2
+STEM: Two teachers were discussing a colleague who had been sent on an expensive training course. Rina: "Do you think the course will change the way he teaches?" Dafna: "You can gild a rusty key, but it still won't turn the lock." Dafna's words imply that in her opinion —
+  (1) the course was too expensive for what it offers
+  (2) the colleague's teaching will not improve, because the course addresses his polish rather than his fault
+  (3) the colleague should have been sent on a different course
+  (4) courses of this kind improve only teachers who are already good
+EXPL: The gilding is the course, the rust is the fault it does not touch, and the lock is the classroom. (1) reads the image as being about cost; (3) and (4) add advice the remark does not contain.
+
+=== vb-inf_v1_0074 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=2
+STEM: At a meeting of the city council, the treasurer said in figurative language: "Better to let a small fire burn under our eyes than to keep the forest so thick that one spark takes it all." Which of the following is most likely to be the treasurer's suggestion?
+  (1) The city should sell a few small parks now rather than risk having to sell the large one in a crisis
+  (2) The city should allow a small deficit each year rather than cut all spending and provoke a strike that would cost far more
+  (3) The city should reduce the fire brigade and rely on volunteers
+  (4) The city should repair the old bridge now, before it collapses
+EXPL: A tolerated small harm that prevents a catastrophic one; (1) is about trading assets, (3) misreads the fire literally, (4) is prevention without any tolerated harm.
+
+=== vb-inf_v1_0075 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=3
+STEM: Asked whether the town's telephone exchange handles more outgoing calls or more incoming calls between residents, the engineer answered: "You might as well ask whether there are more handshakes given than handshakes received." Which of the following questions could the engineer have used to make the same point?
+  (1) Which is greater in the town — the number of people who owe money or the number of people who are owed money?
+  (2) Which is greater at the school — the number of pupils who have a desk partner or the number of desks with two pupils?
+  (3) Which is greater in the league — the number of matches won or the number of matches lost?
+  (4) Which is greater in the town — the number of people with a younger sibling or the number with an older sibling?
+EXPL: Every match won by one team is lost by another (draws aside, a win and a loss are one event seen from two sides). (1) and (4) are genuinely different counts; (2) compares people with desks.
+
+=== vb-inf_v1_0076 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=3
+STEM: To stop pupils from copying answers, a school seated them at separate desks during exams; the pupils responded by passing notes across the gaps, and the teachers now spend the exam watching for notes instead of marking. In which of the following cases is the outcome most similar?
+  (1) A library fines late returns, and readers return books earlier
+  (2) A shop installs a security camera, and thefts stop
+  (3) A town bans parking on its main street, and the cars fill the side streets, which are now as blocked as the main street was
+  (4) A farmer builds a higher fence, and the goats stop escaping
+EXPL: The measure does not remove the behavior but relocates it, creating an equal problem elsewhere. In (2)–(4) the measure works.
+
+=== vb-inf_v1_0077 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=3
+STEM: Shoppers in an experiment were shown two identical loaves, one labeled "farm-baked" and one unlabeled, and most judged the labeled loaf fresher. The researchers explained this by supposing that a label sets an expectation and that the senses then confirm what is expected. Which of the following can best be explained in the same way?
+  (1) Readers who were given a book with large print finished it faster
+  (2) Diners who were served a larger portion reported feeling fuller
+  (3) Listeners told that a recording was made by a famous orchestra rated its playing higher than listeners told nothing, although both heard the same recording
+  (4) Customers who were greeted at the door spent longer in the shop
+EXPL: An identical stimulus judged differently under a different label — expectation shaping perception. In (2)–(4) the stimulus itself differs.
+
+=== vb-inf_v1_0078 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=2
+STEM: In medicine, a "vicious circle" is a state in which a symptom worsens the condition that causes it: pain prevents sleep, and lack of sleep lowers the threshold of pain. Which of the following is the best example of a vicious circle in another area?
+  (1) A student who fails an exam studies harder and passes the next one
+  (2) A shop that loses customers cuts its staff to save money, so that service worsens and more customers leave
+  (3) A river that floods every spring deposits silt that makes the fields more fertile
+  (4) A runner who rests after an injury recovers and trains again
+EXPL: The remedy for the loss (cutting staff) worsens the cause of the loss. (1) and (4) are corrected cycles; (3) is a benign cycle.
+
+=== vb-inf_v1_0122 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=2
+STEM: Two shopkeepers were talking about a competitor who had cut his prices. Amos: "Will his customers stay with him?" Dov: "You can fill a leaking bucket faster, but it still empties." Dov's words imply that in his opinion —
+  (1) the competitor's low prices will attract customers only until his prices rise again
+  (2) lower prices will bring customers in, but whatever drives them away has not been fixed, so they will leave as before
+  (3) the competitor cannot afford his new prices for long
+  (4) customers care more about service than about price
+EXPL: The faster filling is the price cut; the leak is the untouched cause of losing customers.
+
+=== vb-inf_v1_0123 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=3
+STEM: Asked whether the town's restaurants receive more bookings than they give out confirmations, the clerk said: "That is like asking whether more letters are posted than are delivered to the post office." Which of the following questions makes the same point?
+  (1) Which is greater — the number of people who own a car or the number who hold a driving license?
+  (2) Which is greater — the number of teachers in the town or the number of pupils?
+  (3) Which is greater in the town — the number of houses sold this year or the number of houses bought this year?
+  (4) Which is greater — the number of doctors' appointments made this year or the number kept?
+EXPL: Every house sold is a house bought — one transaction seen from both sides; (2) and (1) are different counts, and (4) genuinely differ.
+
+=== vb-inf_v1_0124 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=2
+STEM: To stop rats eating the grain, a farmer brought in cats; the cats multiplied and now eat the chickens' eggs, so the farmer has brought in dogs to keep the cats away — and the dogs keep him awake at night. In which of the following cases is the outcome most similar?
+  (1) A city that widened its roads to ease congestion found that more people drove, and the congestion returned
+  (2) A man who took a pill for a headache found that the pill upset his stomach, and took a second pill for the stomach, which made him drowsy
+  (3) A school that shortened its lessons found that pupils learned less
+  (4) A gardener who watered his lawn more found that weeds grew faster than grass
+EXPL: Each remedy creates a new problem requiring another remedy — a chain, as in the farmer's case. (1) is a single measure defeating itself; (3) and (4) are single consequences.
+
+=== vb-inf_v1_0125 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=3
+STEM: People asked to estimate the length of a line drawn on paper gave longer estimates when the line ended in outward-pointing arrowheads than when it ended in inward-pointing ones, although the lines were the same length. Researchers explained the finding by supposing that the eye takes in the whole figure and cannot ignore the arrowheads when judging the line. Which of the following can best be explained in the same way?
+  (1) A word printed in red is read faster than the same word printed in grey
+  (2) People estimate the weight of a box more accurately after lifting it twice
+  (3) A grey square looks darker against a white background than against a black one
+  (4) People remember the first and last items of a list better than the middle ones
+EXPL: The same patch judged differently because of what surrounds it — the eye cannot isolate the target from its context. (2)–(4) concern repetition, contrast of ink, and memory order.
+
+=== vb-inf_v1_0126 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=3
+STEM: Economists use the term "diminishing returns" for a situation in which each additional unit of effort yields less than the one before: the first hour of weeding clears the worst of the weeds, the fifth hour finds hardly any. Which of the following is the best example of diminishing returns in another area?
+  (1) A shop that advertises more sells proportionally more
+  (2) A runner who trains harder each week runs faster each week
+  (3) A student who revises for a fifth hour learns almost nothing more, having learned most of the material in the first two hours
+  (4) A choir that adds singers sounds louder in proportion to their number
+EXPL: Each additional hour adds less; (2)–(4) describe proportional or increasing returns.
+
+=== vb-inf_v1_0127 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=3
+STEM: A headmistress said at a staff meeting: "We should not prune the tree in the middle of the storm." Which of the following is most likely to be her suggestion?
+  (1) Difficult pupils should be dealt with immediately, before their behavior spreads
+  (2) The school should plant more trees in the playground
+  (3) Changes to the curriculum should wait until the inspection is over, not be made during it
+  (4) The school should cancel classes on stormy days
+EXPL: Pruning is a beneficial change; the storm is a time of upheaval in which it should not be attempted.
+
+=== vb-inf_v1_0173 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=3
+STEM: Two editors were discussing a writer whose new book had been heavily rewritten by the publisher. Lior: "Will readers notice?" Maya: "You can iron a shirt, but you can't make it a coat." Maya's words imply that in her opinion —
+  (1) the publisher should not have rewritten the book
+  (2) readers will not notice the rewriting
+  (3) the rewriting improved the book's surface but did not change what it fundamentally is
+  (4) the book is now unrecognizable
+EXPL: Ironing is the rewriting; a shirt remains a shirt.
+
+=== vb-inf_v1_0174 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=3
+STEM: The finance minister said: "You do not drain the pond to catch one frog." Which of the following is most likely to be her suggestion?
+  (1) Fraud should be investigated thoroughly, whatever the cost
+  (2) The pond in the city park should be preserved
+  (3) A single fraudulent claim does not justify suspending payments to everyone
+  (4) Small offenders should be pursued before large ones
+EXPL: A drastic measure that harms all in order to catch one.
+
+=== vb-inf_v1_0175 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=3
+STEM: Asked whether the club's members give more lifts to each other or receive more, the secretary said: "That is like asking whether the bridge is crossed more often from the east or arrived at more often from the west." Which question makes the same point?
+  (1) Which is greater — the number of letters written this year or the number posted?
+  (2) Which is greater — the number of pupils who have a teacher or the number of teachers who have a pupil?
+  (3) Which is greater — the number of goals scored by the strikers or the number conceded by the goalkeepers?
+  (4) Which is greater — the number of days it rained or the number of days it did not?
+EXPL: Every goal scored by a striker is a goal conceded by a goalkeeper — one event from two sides.
+
+=== vb-inf_v1_0176 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=3
+STEM: A shop keeps its takings in a safe and, to protect the safe's combination, writes it on a card that is kept in the same safe — so that when the owner forgets the combination, the card is useless, and when a thief opens the safe, he gets the card too. Which case is most similar?
+  (1) A library keeps a catalogue of its books in a separate building
+  (2) A man keeps two umbrellas, one at home and one at work
+  (3) A hiker carries a spare battery for her torch inside the torch's case, so that if she loses the torch she loses the spare too
+  (4) A school stores its exam papers in a locked cupboard
+EXPL: The backup is stored where the thing it backs up is, so one loss takes both.
+
+=== vb-inf_v1_0177 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=4
+STEM: Diners given the same soup from two bowls, one labeled "chef's special" and one "soup of the day," rated the "chef's special" tastier. Researchers explained the finding by supposing that expectations shape the sense of taste. Which of the following can best be explained in the same way?
+  (1) Customers bought more coffee when the shop was cold
+  (2) People judged a heavy suitcase heavier after carrying it up stairs
+  (3) Children ate more vegetables when the vegetables were cut into shapes
+  (4) Listeners rated a recording higher when told it was by a famous pianist than when told it was by a student
+EXPL: Identical stimulus, different label, different judgment.
+
+=== vb-inf_v1_0178 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=4
+STEM: Engineers call a system a "positive feedback loop" when its output increases its own input: a microphone picks up the sound from its loudspeaker, which grows louder, and so on. Which of the following is the best example of a positive feedback loop in another area?
+  (1) A driver who brakes early arrives later
+  (2) A thermostat switches the heating off when the room is warm
+  (3) A student who studies more gets better marks
+  (4) A rumor that a bank is failing makes depositors withdraw money, which weakens the bank, which makes the rumor more believable
+EXPL: The effect feeds the cause and the process escalates; (2) is negative feedback, (3) and (1) are single-step effects.
+
+=== vb-inf_v1_0217 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=4
+STEM: Two coaches discussed a young player who had been moved to the first team. Eran: "Will he manage?" Yossi: "You don't learn to swim by watching the sea." Yossi's words imply that in his opinion —
+  (1) the player learns best by watching others
+  (2) the player is not ready for the first team
+  (3) the player should train harder before playing
+  (4) the player will manage only by playing, not by waiting on the bench
+EXPL: Watching the sea is watching from the bench; swimming is playing.
+
+=== vb-inf_v1_0218 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=2
+STEM: Asked whether more students in the school have a locker partner or more lockers have two students, the caretaker said: "That is like asking whether more people are married or more marriages exist — no, wait, it isn't." He corrected himself, and then offered a true parallel. Which is it?
+  (1) Whether more pupils were absent on Monday or more pupils were absent on Tuesday
+  (2) Whether more dancers took a partner at the ball or more dancers were taken as partners
+  (3) Whether more teachers have a class or more classes have a teacher
+  (4) Whether more pupils passed the exam or more pupils failed it
+EXPL: Every dancer who takes a partner is taken as one — a symmetric pairing counted from both sides, like locker partners; the others are different counts.
+
+=== vb-inf_v1_0219 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=2
+STEM: To keep its cash safe, a café empties the till every hour into a locked box under the counter — so that a thief who empties the till finds little, but a thief who takes the box finds a whole day's takings in one place. Which case is most similar?
+  (1) A traveler divides her money among several pockets, so that a pickpocket gets only part of it
+  (2) A firm backs up all its computers every night onto one disk kept in the same office, so that a fire that destroys the office destroys the backup too
+  (3) A farmer stores his grain in several barns so that a fire cannot destroy the whole harvest
+  (4) A bank sends its cash to a vault in another city each evening
+EXPL: Gathering the safeguarded copies in one exposed place recreates a single point of loss.
+
+=== vb-inf_v1_0220 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=4
+STEM: Economists describe a "tragedy of the commons": a pasture open to all is overgrazed, because each herder gains the whole benefit of adding one more cow while the cost of the extra grazing is shared by everyone. Which is the best example of the same dynamic in another area?
+  (1) A town builds a bridge that everyone uses
+  (2) A family shares the cost of a car and each member drives it in turn
+  (3) A shop lowers its prices and its rivals follow
+  (4) Each fisherman in a bay takes as many fish as he can, since the depletion of the bay is shared by all while the catch is his alone, and the bay is emptied
+EXPL: Private gain, shared cost, collective ruin.
+
+=== vb-inf_v1_0247 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=4
+STEM: Asked why he had refused the assignment, the young reporter said: "They wanted me to write the headline before I had spoken to a single witness." Which of the following is most likely to be the demand he refused?
+  (1) To let the editor choose the headline
+  (2) To interview more witnesses than usual
+  (3) To write the article by the evening deadline
+  (4) To state the article's conclusion before doing the research on which it would rest
+EXPL: A headline is a conclusion; witnesses are the research.
+
+=== vb-inf_v1_0248 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=4
+STEM: Two farmers discussed a neighbor who had bought an expensive new tractor for a small field. Avi: "Will it pay?" Dov: "You don't need a sledgehammer to crack a walnut." Dov's words imply that in his opinion —
+  (1) the neighbor should buy a second field
+  (2) the neighbor cannot afford the tractor
+  (3) the field is too small to farm at all
+  (4) the tractor is far larger than the field requires
+
+=== vb-inf_v1_0249 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=2
+STEM: Asked whether more people in the village have borrowed a book from a neighbor or more have lent one, the librarian said: "That is like asking whether more coins were dropped or more coins fell." Which question makes the same point?
+  (1) Which is greater — the number of houses that share a wall with another house or the number of shared walls?
+  (2) Which is greater — the number of people who have shaken someone's hand or the number of people whose hand has been shaken?
+  (3) Which is greater — the number of people who own a bicycle or the number who ride one?
+  (4) Which is greater — the number of boys or the number of girls in the school?
+EXPL: Every handshake given is a handshake received.
+
+=== vb-inf_v1_0250 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=4
+STEM: A town whose river floods every spring raises the height of the flood wall each year, and each year the water rises higher, because the wall keeps the river from spreading into the fields upstream where it once lost its force. Which case is most similar?
+  (1) A driver who fills the tank more often never runs out of fuel
+  (2) A school that hires more teachers finds classes smaller
+  (3) A shop that opens longer sells more
+  (4) A man who takes stronger sleeping pills each month finds that he sleeps worse, because the pills disturb the natural sleep they replace
+EXPL: The remedy removes what used to keep the problem in check, so the problem grows.
+
+=== vb-inf_v1_0251 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=4
+STEM: Wine tasters given the same wine in two glasses, one labeled with a high price and one with a low price, rated the "expensive" one better. Researchers explained the finding by supposing that the label sets an expectation that the senses then confirm. Which is best explained the same way?
+  (1) Diners ate more from a larger plate
+  (2) Runners ran faster on a cool day
+  (3) Readers finished a shorter book sooner
+  (4) Patients given a sugar pill described as a strong painkiller reported less pain than patients given the same pill described as a mild one
+
+=== vb-inf_v1_0252 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=4
+STEM: A fable warns that a boy who raises false alarms will not be believed when the danger is real. Which case is the best example of the same lesson in another area?
+  (1) A dog that barks at strangers protects the house
+  (2) A shop that advertises a sale every week sells more
+  (3) A student who studies every day passes
+  (4) A fire alarm that goes off every day because of burnt toast is ignored on the day of a real fire
+
+=== vb-inf_v1_0277 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=4
+STEM: Rachel's parents have two small children and are moving to a new city. They have found a flat near the school, which is expensive, and a cheaper flat an hour's drive from the school. A friend advised them: "Take the one near the school; you will lose the difference in petrol and in hours within a year." Which of the following situations most resembles the reasoning behind the friend's advice?
+  (1) A traveler is advised to pack lightly so as to walk faster
+  (2) A student is advised to take the harder course because it is more interesting
+  (3) A family is advised to holiday in the mountains rather than at the sea because the mountains are quieter
+  (4) A shopkeeper who needs a delivery van every day is advised to buy one rather than rent one each morning, since the daily rentals will exceed the purchase price within a year
+EXPL: A higher price now against a recurring cost that soon exceeds it — the same trade-off.
+
+=== vb-inf_v1_0278 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=4
+STEM: A restaurant owner was advised: "Since you throw out bread every evening anyway, give it free to the shelter — it costs you nothing and earns you goodwill." Which situation most resembles the reasoning?
+  (1) A shop that closes on Sundays saves on wages
+  (2) A baker who raises prices sells less
+  (3) A farmer who plants twice as much harvests twice as much
+  (4) A cinema that has empty seats at the afternoon show sells them to pensioners at half price, since an empty seat earns nothing and a half-price seat earns something
+EXPL: Something that would otherwise be wasted is put to use at no extra cost.
+
+=== vb-inf_v1_0279 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=4
+STEM: A driver who had been fined twice for parking on the pavement outside his office was advised by a colleague: "Rent a space in the car park — it is cheaper than the fines you keep paying." Which situation most resembles the reasoning?
+  (1) A shopper who spends too much is advised to leave her credit card at home
+  (2) A student who fails an exam is advised to study a different subject
+  (3) A runner who loses races is advised to run shorter distances
+  (4) A householder whose pipes freeze every winter is advised to insulate them once rather than pay a plumber every January
+EXPL: A one-time cost that replaces a recurring, larger loss.
+
+=== vb-inf_v1_0329 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=1
+STEM: Two nurses discussed a hospital that had bought a costly scanner but not hired anyone trained to use it. Rina: "Will it help the patients?" Tal: "A violin in a locked case makes no music." Tal implies that —
+  (1) the scanner will be of no use without someone able to operate it
+  (2) the scanner was too expensive
+  (3) the hospital should buy a cheaper scanner
+  (4) the patients do not need scans
+
+=== vb-inf_v1_0330 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=1
+STEM: The harbormaster said: "We should mend the net before the fish escape, not after." Which is most likely his suggestion?
+  (1) The pier's cracks should be repaired now, before the winter storms widen them
+  (2) Fishing nets should be inspected weekly
+  (3) Fishermen should use smaller nets
+  (4) The harbor should be closed in winter
+
+=== vb-inf_v1_0331 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=1
+STEM: Asked whether more handshakes were given or more were received at the reception, the host said: "You might as well ask whether more coins were dropped or more coins fell." Which question makes the same point?
+  (1) Which was greater — the number of sales made in the market today or the number of purchases made?
+  (2) Which was greater — the number of sellers in the market or the number of buyers?
+  (3) Which was greater — the number of stalls or the number of customers?
+  (4) Which was greater — the number of coins in the till at noon or at closing?
+EXPL: Every sale is a purchase — one transaction counted from two sides; (2) and (3) count different people.
+
+=== vb-inf_v1_0332 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=1
+STEM: To stop pupils using their phones in class, a school collected the phones each morning and returned them at noon; the pupils began bringing a second phone. Which case is most similar?
+  (1) A town fined drivers for parking on one street, and the drivers parked on the next street instead, which is now just as blocked
+  (2) A shop that hired a guard saw thefts fall
+  (3) A library that extended its hours saw more readers
+  (4) A farmer who fenced his field kept the goats out
+
+=== vb-inf_v1_0333 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=1
+STEM: Tasters given the same coffee in a heavy cup and a light cup rated the heavy cup's coffee stronger. Researchers explained this by supposing that weight in the hand sets an expectation of strength that the palate confirms. Which is best explained the same way?
+  (1) Listeners rated a speech more convincing when the speaker wore a suit than when the same speaker wore a T-shirt
+  (2) Runners ran faster on a track than on grass
+  (3) Readers found a book funnier the second time
+  (4) Diners ate more when hungry
+
+=== vb-inf_v1_0334 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=1
+STEM: Economists warn against the "sunk-cost fallacy": continuing a losing course because of what has already been spent on it, though that spending cannot be recovered. Which is the best example?
+  (1) A man keeps watching a dull film to the end because he paid for the ticket
+  (2) A woman sells a car that costs more to repair than it is worth
+  (3) A student changes course after a bad first year
+  (4) A firm cancels a project that is losing money
+
+=== vb-inf_v1_0335 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=1
+STEM: A commuter who spends an hour a day looking for parking was advised: "Pay for a monthly space — the hour is worth more than the fee." Which situation most resembles the reasoning?
+  (1) A cook who spends every evening sharpening knives is advised to buy a knife that holds its edge, since her time is worth more than the knife
+  (2) A student is advised to study the subject she enjoys
+  (3) A runner is advised to rest before a race
+  (4) A traveler is advised to visit the museum in the morning
+
+=== vb-inf_v1_0376 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=1
+STEM: Two teachers discussed a colleague who had been given a class of thirty-five. Miri: "Can she manage?" Orit: "You can't pour a bucket into a cup." Orit implies that —
+  (1) the class is too large for any teacher to manage well
+  (2) the colleague is not a good teacher
+  (3) the class should be split
+  (4) the colleague should ask for help
+
+=== vb-inf_v1_0377 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=1
+STEM: The mayor said: "Better to fix the roof while the sun shines." Which is most likely her suggestion?
+  (1) The flood defenses should be repaired now, in the dry season, not when the river is rising
+  (2) The town hall's roof should be replaced
+  (3) Repairs should be done in summer because workers prefer it
+  (4) The town should buy umbrellas
+
+=== vb-inf_v1_0378 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=1
+STEM: Asked whether more emails were sent or more were received in the office last month, the clerk said: "You might as well ask whether more parcels were dispatched or more were delivered." Which question makes the same point?
+  (1) Which is greater — the number of loans made by the bank or the number of loans taken from it?
+  (2) Which is greater — the number of clerks or the number of customers?
+  (3) Which is greater — the number of letters written or the number answered?
+  (4) Which is greater — the number of days it rained or the number it was dry?
+
+=== vb-inf_v1_0379 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=1
+STEM: A town that widened its main road to relieve congestion found that more people chose to drive, and the road is now as congested as before. Which case is most similar?
+  (1) A man who bought a larger fridge to stop food going off now buys more food, and as much goes off as before
+  (2) A school that hired more teachers has smaller classes
+  (3) A farmer who dug a deeper well has more water
+  (4) A runner who trains more runs faster
+
+=== vb-inf_v1_0380 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=1
+STEM: Patients told that a cream was expensive reported more relief from it than patients given the same cream and told it was cheap. Researchers explained this by supposing that the price set an expectation that shaped the felt effect. Which is best explained the same way?
+  (1) Diners who were told a wine was rare rated it better than diners given the same wine without comment
+  (2) Runners ran faster with a tailwind
+  (3) Readers finished a short book sooner
+  (4) Children ate more when hungry
+
+=== vb-inf_v1_0381 [inf_v1 REVIEW | set inf_v1 | Parables and Comparisons] answer=1
+STEM: A game is "zero-sum" when one player's gain is exactly another's loss, so that the total never changes. Which is the best example of a zero-sum situation in another area?
+  (1) Two shops competing for a fixed number of customers on a single street, where every customer one gains the other loses
+  (2) Two farmers who share a well and both prosper in a wet year
+  (3) Two students who study together and both pass
+  (4) A town whose population grows as newcomers arrive

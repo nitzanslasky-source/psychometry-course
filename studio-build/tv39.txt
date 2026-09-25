@@ -1,0 +1,103 @@
+# Topic 39 Active reading
+
+######## SECTION vr39-learn — Learn and try (learn)
+=== VIDEO vr-active-reading: kind=lesson title='Active reading: make meaning as you go'
+[1] Read for a small picture
+  BOARD: ['Who or what?', 'What changed?', 'How does this sentence connect?']
+  SCRIPT: Think about reading a message from a friend. If it says, ‘The café is closed, so meet me at the library,’ you immediately picture a changed plan. You do not memorize every word and hope the meaning appears later. We want that same habit with an unfamiliar exam paragraph. The subject may be a museum, a scientific study, or a disagreement between two writers. Our job is to build a small, accurate picture as the sentences arrive. At first, we will practice this slowly. Speed comes from understanding without repeatedly starting again. A minute per question is a useful training target for many short questions, not a rule that every question or every passage must fit. Longer passages share their reading time across several questions.
+[2] Pause at the full stop
+  BOARD: ['The council increased parking fees, but traffic did not fall.', 'My words: Parking cost more; traffic stayed about the same.']
+  SCRIPT: At the end of a sentence, take a tiny pause and say its message in your own words. Here the council raised parking fees, but traffic did not fall. My version is: parking cost more, yet traffic stayed about the same. That is enough. I am not writing a second essay, and I am not translating every English word into another language. I am checking that there is a thought in my head. If your paraphrase is just the original sentence with two words replaced, ask what you would tell a younger sibling about it. If the sentence contains several clauses, you can make this pause at a meaningful comma instead. During early practice, say the paraphrase aloud. Later, it becomes a quick mental check.
+[3] Keep the words that control the claim
+  BOARD: ['Some ≠ all', 'May ≠ must', 'Not lower ≠ higher']
+  SCRIPT: Shorter must still mean the same thing. ‘Some visitors disliked the exhibition’ does not mean ‘visitors disliked it’ if your shortened version makes you imagine everyone. ‘The treatment may help’ does not promise that it will help. And if a price did not fall, it might have stayed unchanged; it did not necessarily rise. Keep these small words attached to the claim. They are often the whole reason one answer is right and another is wrong. A useful paraphrase removes decorative detail, not logical limits. Names can become ‘the researcher’ and a long place name can become ‘the town,’ as long as there is only one researcher or town to keep track of. With two researchers, give them separate labels so their views do not get mixed up.
+[4] Give the sentence a voice
+  BOARD: ['Although the plan was CHEAPER, it took LONGER.', 'The word although tells us what is surprising.']
+  SCRIPT: Read this in your head as if you are telling a bedtime story to a younger sibling: although the plan was cheaper, it took longer. Let your voice lean on ‘cheaper’ and ‘longer.’ There is a small disappointment in that contrast. We expected one advantage to come with another, but it did not. This dramatic reading is a way to notice structure. It is not permission to invent the writer’s feelings. A neutral report remains neutral unless the wording supports a stronger tone. Try a second version: because the plan was cheaper, it was chosen. Your inner voice should now make the second part sound like a result. The words are steering you. Hear the change from a contrast to a reason and a result.
+[5] Make a tiny visual
+  BOARD: ['Taxes ↑', 'Shop visits ↓', 'After ≠ because']
+  SCRIPT: When the text says taxes increased, a small upward arrow above ‘taxes’ can save you from rereading that direction. If shop visits fell, add a downward arrow. Put the arrow beside the thing that changed; a loose arrow in the margin may become meaningless a few sentences later. Suppose the text says visits fell after taxes rose. We can draw the two changes in time, but we should not automatically draw a proven causal arrow between them. ‘After’ gives us an order. It does not by itself explain why the visits fell. This distinction will matter in strengthening, weakening and scientific reasoning. Your markings should preserve what the writer actually said, including what the writer has not established.
+[6] Circle the turn
+  BOARD: ['However → a turn', 'Because → a reason', 'For example → support or illustration']
+  SCRIPT: You do not need to underline half the paragraph. Choose the words that tell you how its parts fit together. ‘However’ signals a turn; ‘because’ introduces a reason; ‘for example’ usually gives an illustration of a point already made. These labels are clues, not a replacement for meaning. Two sentences can disagree without using ‘however,’ and a writer can describe someone else’s explanation without accepting it. Try drawing a small bend beside a contrast and writing ‘example’ beside an illustration. If your page starts to look like a coloring exercise, stop adding marks. A few useful marks are faster to read than a paragraph covered in ink.
+[7] Track the owner of each opinion
+  BOARD: ['Critic: the design is impressive.', 'Engineer: the design is impractical.', 'Writer: reports both views.']
+  SCRIPT: Here a critic calls a design impressive and an engineer calls it impractical. Those views can both be true: appearance and usefulness are different questions. More importantly, the writer may only be reporting them. Write C beside the critic’s claim and E beside the engineer’s claim, or simply think ‘one person’ and ‘the other.’ When you meet ‘she,’ ‘this view,’ or ‘such an approach,’ point mentally back to its owner. Do not give the writer an opinion merely because the writer included a quotation. Questions often ask which claim belongs to whom. Keeping that ownership clear now is much easier than untangling it after reading four tempting answers.
+[8] Prediction is a check, not a guess
+  BOARD: ['A paragraph says a method is useful but limited.', 'Expect a qualified conclusion.', 'Keep reading if the text takes a different turn.']
+  SCRIPT: Once you understand a sentence, ask what kind of sentence might follow. If a method is described as useful but limited, I expect either an example of its usefulness or an explanation of its limits. That small expectation keeps me alert. It is not a licence to finish the paragraph in my imagination. If the next sentence goes somewhere else, I update my picture. In sentence completion, predicting the direction of a blank helps me reject a phrase that goes the wrong way. In a passage, predicting the job of the next paragraph helps me notice a change of topic. Stay flexible: the text supplies the evidence, and your prediction only helps you organize it.
+[9] Use a five-word margin label
+  BOARD: ['Paragraph 1: an old explanation', 'Paragraph 2: evidence against it', 'Paragraph 3: a more cautious account']
+  SCRIPT: After a paragraph, give it a short label. ‘An old explanation.’ ‘Evidence against it.’ ‘A more cautious account.’ Five words are often enough, and there is no need to count them. The point is to remember the job of the paragraph as well as its subject. Three paragraphs might all discuss birds, but one introduces a puzzle, one describes a test, and one limits the conclusion. A label such as ‘birds again’ misses that structure. These labels become a map for reading comprehension. When a question asks why a study was mentioned, you can return to the paragraph that does that job without scanning every sentence from the beginning.
+[10] When a word is unfamiliar
+  BOARD: ['Keep its role if its exact meaning is not needed.', 'Use context cautiously.', 'Return if the distinction decides an answer.']
+  SCRIPT: You will occasionally meet a word you do not know. First ask whether you need its exact meaning. If the sentence says a device is expensive but reliable, and the device has an unfamiliar name, ‘the device’ may be enough. If an analogy depends on the difference between reluctant and unwilling, the vocabulary is central and you must be more careful. Context can suggest a meaning, but do not turn a guess into a fact. Mark the uncertainty lightly and continue if the next sentence may clarify it. A useful reader knows both what is understood and what is still uncertain. That is better than pretending every word is clear or stopping at every unfamiliar word.
+[11] Match the technique to the question
+  BOARD: ['Analogy: define the relationship.', 'Logic: keep condition → result.', 'Argument: separate evidence from conclusion.', 'Passage: label roles and return to evidence.']
+  SCRIPT: The same active reading habit will look a little different in each topic. For an analogy, your paraphrase is a relationship sentence. For formal logic, it becomes a condition and a result, with ‘only’ kept in the right place. For a scientific argument, you separate what was observed from the explanation proposed for it. For a passage, you keep a short map of the writer’s steps. We will practice all of those applications. You do not need to perform every technique on every sentence. Choose the smallest action that makes the meaning clear. Often a quiet paraphrase is enough. Add a diagram or a written label when the structure is harder to hold in your head.
+[12] Build accuracy, then shorten the pause
+  BOARD: ['First: read → paraphrase → check.', 'Next: read → tiny mental paraphrase.', 'Finally: time a short set and review the error.']
+  SCRIPT: Start with a few untimed questions. Read each sentence, paraphrase it and compare your version with the original. Did you lose an ‘only’? Did ‘some’ become ‘all’? Did a possible explanation become a proven cause? Correct that habit before chasing a faster time. Then shorten the pause until the check happens almost automatically. When you start timed sets, review more than the score. Ask where the meaning changed in your head. If you understood the text but chose a tempting answer, practice evidence checks. If you had to reread because you lost the subject halfway through, practice short clause summaries. Speed improves when you repair the actual source of delay.
+--- Q vr39-g001: A town reduced bus fares. Passenger numbers rose, but the number of cars entering the town center remained unchanged. Which of the following is necessarily true?
+  CHOICES: ['The extra bus passengers had previously travelled by car.', 'The fare reduction had no effect on anyone’s travel choices.', 'More people used buses after the fare reduction.', 'The fare reduction caused drivers to leave their cars at home.'] correct=3
+=== VIDEO solve-vr39-g001: kind=solution title='A contrast without an invented cause'
+[1] Your question
+  BOARD: []
+  SCRIPT: A town reduced bus fares. Passenger numbers rose, but the number of cars entering the town center remained unchanged. Which of the following is necessarily true?
+[2] Three facts, three short notes
+  BOARD: ['Bus fares ↓', 'Bus passengers ↑', 'Car entries =']
+  SCRIPT: Read the three observations separately. Fares went down. Passenger numbers went up. Car entries stayed the same. Notice how much easier that is to hold in your head than the complete wording. Now keep one detail from the question: necessarily true. We are looking for something the passage commits us to. We are not looking for the most interesting explanation for it. People might have switched from walking to buses, or more people might have made trips. None of that has been stated. Our little set of arrows is a record of observations, not a story about causes.
+[3] The word but is doing work
+  BOARD: ['More bus passengers', 'BUT no reduction in car entries']
+  SCRIPT: The contrast tells us why an obvious story may be too simple. We might have expected cheaper buses to mean fewer cars, but that expected change is not in the figures. Still, we cannot jump to the opposite extreme and claim that the policy changed nobody’s behavior. Some drivers could have changed while other drivers began entering the center. What survives without any added assumption is the reported rise in bus use. That is our answer. This is active reading in action: compress the sentence, preserve the contrast, then check the strength of the claim.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'More people used buses after the fare reduction.']
+  SCRIPT: The answer is choice 3: More people used buses after the fare reduction.. The passage directly reports that passenger numbers rose. It gives no information about the previous travel habits of those additional passengers and does not establish the cause of the increase.
+--- Q vr39-g002: Mara calls the archive valuable because it preserves ordinary people’s letters. Theo agrees that the letters are worth keeping but argues that the archive’s catalog makes them difficult to find. Which of the following best describes Theo’s position?
+  CHOICES: ['He believes that valuable letters are always easy to find.', 'He values the material but criticizes the way it is organized.', 'He rejects Mara’s view that ordinary people’s letters are worth preserving.', 'He considers the catalog more valuable than the letters.'] correct=2
+=== VIDEO solve-vr39-g002: kind=solution title='Who holds the opinion?'
+[1] Your question
+  BOARD: []
+  SCRIPT: Mara calls the archive valuable because it preserves ordinary people’s letters. Theo agrees that the letters are worth keeping but argues that the archive’s catalog makes them difficult to find. Which of the following best describes Theo’s position?
+[2] Agreement first; disagreement second
+  BOARD: ['Mara: preserve these letters.', 'Theo: yes, but improve access.']
+  SCRIPT: Theo is not simply for or against the archive. He agrees about one thing and complains about another. Read ‘agrees’ with a small nod, then let your inner voice turn at ‘but.’ The letters are worth keeping; the catalog is difficult to use. If we paraphrase his whole view as ‘Theo dislikes the archive,’ we erase the agreement and become vulnerable to the first distractor. A fair summary keeps both parts. This is especially useful when a question presents two named thinkers: write down the exact point on which they differ, rather than imagining two completely opposing camps.
+[3] Choose the matching answer
+  BOARD: ['Choice 2', 'He values the material but criticizes the way it is organized.']
+  SCRIPT: The answer is choice 2: He values the material but criticizes the way it is organized.. Theo explicitly accepts the value of the letters. His criticism concerns access to them through the catalog, not whether they deserve preservation.
+
+######## SECTION vr39-practice — Independent practice (practice)
+--- Q vr39-p001: Some members of a theatre company opposed the new rehearsal schedule. Which statement must be true?
+  CHOICES: ['Every member opposed the schedule.', 'Most members supported the schedule.', 'No member was undecided.', 'At least one member opposed the schedule.'] correct=4
+--- Q vr39-p002: The repair may extend the machine’s working life. Which paraphrase preserves the meaning?
+  CHOICES: ['The repair will certainly make the machine last longer.', 'The machine cannot last longer without the repair.', 'The repair has already made the machine last longer.', 'The repair could help the machine last longer.'] correct=4
+--- Q vr39-p003: Although the new lamps use less electricity, they cost more to install. Which pair of notes is accurate?
+  CHOICES: ['Electricity use ↑; installation cost ↓', 'Electricity use ↓; installation cost ↓', 'Electricity use =; installation cost ↑', 'Electricity use ↓; installation cost ↑'] correct=4
+--- Q vr39-p004: The editor rejected the article not because its evidence was weak, but because its main claim was unclear. What was the stated reason for rejection?
+  CHOICES: ['The evidence was weak.', 'The article contained no evidence.', 'The editor disagreed with the main claim.', 'The main claim was unclear.'] correct=4
+--- Q vr39-p005: A paragraph describes an old account of a custom, then gives two observations that the account cannot explain. What is the likely role of those observations?
+  CHOICES: ['To reveal limitations in the old account', 'To prove that the custom never existed', 'To illustrate predictions made successfully by the old account', 'To define every term in the old account'] correct=1
+--- Q vr39-p006: Dana says that the poem is moving. Luis says that its rhythm is uneven. Which conclusion is justified?
+  CHOICES: ['Luis says that the poem cannot be moving.', 'Dana denies that its rhythm is uneven.', 'The narrator prefers Dana’s opinion.', 'Their comments concern different features of the poem.'] correct=4
+--- Q vr39-p007: Library visits increased after evening opening hours were introduced. Which claim goes beyond the information given?
+  CHOICES: ['The passage describes a change in the number of visits.', 'Evening opening hours caused the increase.', 'Visits increased.', 'The introduction of evening hours preceded the reported increase.'] correct=2
+--- Q vr39-p008: The reviewer found the ending less predictable than the opening. Which statement matches this comparison?
+  CHOICES: ['The reviewer could anticipate the opening more easily than the ending.', 'The ending was completely unpredictable.', 'The opening was impossible to anticipate.', 'The reviewer disliked the opening.'] correct=1
+--- Q vr39-p009: The committee kept the old logo. This decision disappointed the designer. What does “this decision” refer to?
+  CHOICES: ['Creating the old logo', 'Keeping the old logo', 'Disappointing the designer', 'Hiring the designer'] correct=2
+--- Q vr39-p010: No volunteer who missed the briefing was assigned to the night shift. Which note preserves the rule?
+  CHOICES: ['Attended briefing → on night shift', 'On night shift → missed briefing', 'Missed briefing → not on night shift', 'Not on night shift → missed briefing'] correct=3
+--- Q vr39-p011: A botanist proposes an explanation for a pattern. The next paragraph describes a test designed to distinguish that explanation from a rival. What is the best margin label for the second paragraph?
+  CHOICES: ['The botanist’s biography', 'Proof that both explanations are true', 'A new description of the pattern only', 'A test between competing explanations'] correct=4
+--- Q vr39-p012: Fewer parcels arrived late this month than last month. Which claim is not necessarily true?
+  CHOICES: ['The statement compares two months.', 'Most parcels arrived on time this month.', 'The number of late parcels fell.', 'Last month had more late parcels than this month.'] correct=2
+--- Q vr39-p013: The article calls the scheme ingenious yet impractical. What should a fair paraphrase retain?
+  CHOICES: ['Praise for its cleverness and criticism of its usefulness', 'Unqualified approval of the scheme', 'A claim that the scheme is both practical and simple', 'A claim that ingenious schemes are always impractical'] correct=1
+--- Q vr39-p014: The researcher did not rule out a seasonal explanation. Which paraphrase is accurate?
+  CHOICES: ['The researcher showed that seasons were irrelevant.', 'The researcher left open the possibility of a seasonal explanation.', 'The researcher proved the seasonal explanation.', 'The researcher rejected every other explanation.'] correct=2
+--- Q vr39-p015: The first paragraph asks why a custom persists. The second proposes an answer. The third gives a case that answer cannot explain. Which description best captures the structure?
+  CHOICES: ['Puzzle, proposed explanation, limitation', 'Conclusion, unrelated story, repetition', 'Three examples of an accepted rule', 'A definition followed by two synonyms'] correct=1
+--- Q vr39-p016: An author writes, “The device is compact; that does not make it convenient.” Which assumption is the author challenging?
+  CHOICES: ['That the device is compact', 'That convenient devices can exist', 'That the device has any purpose', 'That compact size guarantees convenience'] correct=4
+--- Q vr39-p017: A guide says, “Underline only the words you need to recover the argument.” Which reading habit best follows this advice?
+  CHOICES: ['Mark a contrast word and the claim it changes.', 'Underline every sentence equally.', 'Mark every unfamiliar name even when none affects the reasoning.', 'Choose an answer before finishing the relevant sentence.'] correct=1

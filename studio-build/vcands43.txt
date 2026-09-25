@@ -1,0 +1,648 @@
+# Bank candidates for topic 43 (84 items, best-trusted first). Answer is 1-based. Use qid exactly.
+
+=== vb-inf_mix_0015 [real exam | set inf_mix | clause] answer=1
+STEM: To open the safe in the museum without causing the alarm to go off, you must first disable the alarm in the lobby, and then quickly, within ten seconds, disable the general alarm as well. However, that is not all: Before opening the safe, you must push down the red switch and pull up the white one, and only then will you be able to insert the key and open it. Therefore, _____.
+  (1) it is not surprising that the alarm sounded when Yitzhak wanted to open the safe, because he did not pull up the white switch before he inserted the key
+  (2) it is surprising that Yitzhak, who did not pull up the red switch before he inserted the key, did not cause the alarm to go off
+  (3) it is not surprising that Yitzhak opened the safe without causing the alarm to go off, because he disabled the general alarm before disabling the alarm in the lobby
+  (4) it is surprising that the alarm sounded when Yitzhak tried to open the safe, because he inserted the key before he pulled down the red switch and pushed up the white one
+
+=== vb-inf_mix_0033 [real exam | set inf_mix | meaning/equivalence] answer=4
+STEM: The Chinese philosopher and poet Zhuang Zhou wrote: "Words exist for the sake of their meaning, like the fishing rod exists for the sake of the fish. Once you have caught the fish, you can forget about the fishing rod." Which of the following statements best expresses what Zhuang Zhou meant?
+  (1) Words and their meanings are two separate entities
+  (2) People are able to comprehend the meanings of things only because there are words that express them
+  (3) When the meaning that a word expresses is no longer relevant to people who speak the language, then the word is doomed to be forgotten
+  (4) A word is nothing more than a means of transmitting meaning. English Heccrbq Português Deutsch Italiano
+
+=== vb-inf_mix_0043 [real exam | set inf_mix | meaning/equivalence] answer=2
+STEM: In response to a question from one of her students, the lecturer said: "Your question is like asking whether there are more uphills or downhills in your city." Which of the following questions could the lecturer have used to make the same point?
+  (1) What was greater this year - the number of people who committed crimes or the number of people who were victims of crimes?
+  (2) What was greater this year - the number of loans that the banks gave or the number of loans that people took from them?
+  (3) In the student's city, which is greater - the number of people who have brothers or the number of people who have sisters?
+  (4) In the student's city, which is greater - the number of toddlers or the number of parents of toddlers?
+
+=== vb-inf_mix_0085 [real exam | set inf_mix | clause] answer=1
+STEM: In the early twentieth-century debate about which language Jews living in the Land of Israel should speak, Bialik forcefully argued that they should speak Hebrew. He argued his point not only as part of his criticism of traditional Jewish life which was conducted in foreign languages, but also as an invitation to create a modern culture in the Land of Israel. According to his beliefs, the traditional way of engaging with the spiritual treasures of Hebrew culture, in a manner which is disconnected from the real-life realm of everyday speech, prevents these treasures from coming into living contact with reality and limits the extent to which they can influence it. .
+  (1) Thus, the emphasis that Bialik placed on speaking Hebrew did not stem from a wish to move away from engaging with the spiritual treasures of Hebrew culture, but rather from his wish that their power should be expressed in a fitting manner
+  (2) Therefore, those who accuse Bialik of trying to change Hebrew from the language of the spiritual treasures of Hebrew culture into an everyday language have nothing on which to base their claim
+  (3) Nevertheless, Bialik's argument should not be understood as a wish to prevent the spiritual treasures of Hebrew culture from influencing modern Hebrew culture
+  (4) Thus, Bialik opposed the argument that living contact between the spiritual treasures of Hebrew culture and the everyday reality could enrich this reality
+
+=== vb-inf_mix_0112 [real exam | set inf_mix | meaning/equivalence] answer=1
+STEM: An experienced childcare worker claims that if an infant is hungry – they cry. Which of the following claims is equivalent to the childcare worker's claim?
+  (1) A hungry infant always cries, but that does not necessarily mean that if an infant cries, they are hungry
+  (2) If, and only if, an infant is hungry – they cry
+  (3) A crying infant is always hungry, but that does not necessarily mean that if an infant is hungry, they will cry
+  (4) If, and only if, an infant cries – they are hungry. English Русский Português Deutsch Italiano
+
+=== vb-inf_mix_0115 [real exam | set inf_mix | clause] answer=2
+STEM: The average salary of biologists in Israel is lower than that of their colleagues in Western European countries. However, their average salary is only 5% less than the average salary of all academics in Israel, whereas in Western European countries the average salary of biologists is 15% less than the average salary of all academics. .
+  (1) Therefore, in Israel a biologist's salary is lower than in Western Europe, but they can take comfort in the fact that their salary is higher than the average salary of all academics in Israel
+  (2) Therefore, the Israeli biologist is less financially disadvantaged than their Western European colleagues, even though they have a lower salary than them
+  (3) Therefore, it is preferable to be a biologist in Western Europe, and not in Israel: the salary of biologists in Europe is not as low, both in absolute terms, and in comparison with all academics
+  (4) Therefore, someone who finishes studying biology in Western Europe will begin with a lower salary than their Israeli colleague – and for both of them it is more financially
+
+=== vb-inf_v2_0338 [real exam | set inf_v2 | Sentence Understanding] answer=2
+STEM: A blend is a word formed by joining parts of two existing words so that the new word carries a meaning drawn from both: "brunch," for instance, was formed from "breakfast" and "lunch" and names a meal that takes the place of both. Blends of this kind are of two sorts. In a full blend, each of the two source words contributes a recognizable part: in "brunch," "br-" from "breakfast" and "-unch" from "lunch." In a partial blend, one of the two source words appears whole and only the other is shortened: "motel," for instance, was formed from "motor" and "hotel." Thus "smog," formed from "smoke" and "fog," is a ____ blend, whereas "workaholic," formed from "work" and "alcoholic," is a ____ blend. Which of the following completes the sentence correctly?
+  (1) full / full
+  (2) full / partial
+  (3) partial / full
+  (4) partial / partial
+EXPL: In "smog" both sources are cut ("sm-" and "-og"); in "workaholic" the word "work" appears whole and only "alcoholic" is shortened.
+
+=== vb-inf_v2_0339 [real exam | set inf_v2 | Sentence Understanding] answer=2
+STEM: Under the same definitions: "Chunnel," formed from "channel" and "tunnel," is a ____ blend, and "guesstimate," formed from "guess" and "estimate," is a ____ blend.
+  (1) full / full
+  (2) full / partial
+  (3) partial / full
+  (4) partial / partial
+EXPL: "Chunnel" cuts both sources ("ch-" and "-unnel"); "guesstimate" keeps "guess" whole and shortens only "estimate."
+
+=== vb-inf_v2_0340 [real exam | set inf_v2 | Sentence Understanding] answer=4
+STEM: In a lecture on writing for the general public, the historian was asked what makes a good popular history, and answered: "Tell the story as simply as you can — but not more simply than it happened." Which of the following sentences best expresses the historian's intention?
+  (1) Every good popular history should be simple enough for a reader who knows nothing of the period
+  (2) A good popular history is built on the simplest and most fundamental of the events it describes
+  (3) The simplicity of a popular history matters no less than its accuracy
+  (4) Although simplicity is a virtue in popular history, too much of it distorts the events the book is meant to describe
+EXPL: The second clause sets a limit on the first: simplify, but not past the truth. (2) turns a rule about telling into a rule about selecting; (3) makes the two equal rather than one bounded by the other; (1) drops the limit altogether.
+
+=== vb-inf_v2_0341 [real exam | set inf_v2 | Sentence Understanding] answer=4
+STEM: On the memorial to the poet Yona Amit was engraved a quotation from an interview she gave in 1971: "I was the voice of the valley and its people." The quotation angered many of her admirers, who argued that the sentence from which it was taken showed the poet's characteristic modesty, whereas the quotation on its own made her sound boastful, the reverse of her true character. Which of the following sentences is most likely to be the one from which the quotation was taken?
+  (1) "I was the voice of the valley and its people, but today, to my sorrow, others lead it"
+  (2) "Though the price was heavy, as heavy as any burden, I was always the voice of the valley and its people"
+  (3) "I was the voice of the valley and its people, and of its rivers and its fields"
+  (4) "If you insist on calling me a spokeswoman, then say that I was the voice of the valley and its people"
+EXPL: Only (4) makes the claim a concession reluctantly granted — modesty that the excerpt erases. (1) adds regret, (2) sacrifice, (3) scope; none reverses the boast.
+
+=== vb-inf_v2_0342 [real exam | set inf_v2 | Sentence Understanding] answer=4
+STEM: Gal invented a new word — "tsuvek." To show his friend what it means, he said: "In the end, tsuvek the people who bought tickets are expected to turn up, so we had better move the show to the small hall." In which of the following sentences does "tsuvek" appear with the same meaning it has in Gal's sentence?
+  (1) Tsuvek my colleagues objected to the new schedule, so the manager withdrew it the next day
+  (2) Since tsuvek the shops on the street have closed, the council is considering turning it into a pedestrian mall
+  (3) The villagers have a reputation for hospitality because tsuvek of them invite passing travelers to eat
+  (4) Because of the long drought, tsuvek the old olive trees on the hill are still alive, which is why the grove is now protected
+EXPL: Gal's consequence fixes "tsuvek" as "only a small part of"; only (4) carries a consequence that fits a small remainder. In (1), (2) and (3) the consequences require "most."
+
+=== vb-inf_v2_0343 [real exam | set inf_v2 | Sentence Understanding] answer=3
+STEM: It is commonly held that human beings, the apes and dogs are the only animals able to recognize faces. A recent study, however, found that a certain species of wasp also has this ability — a finding that poses a challenge to biologists, since between wasps and human beings there is no direct evolutionary connection, and the wasp's brain is minute. The researchers suggest that the ability developed in wasps independently, because they live in colonies in which recognizing individuals matters. Which of the following claims is NOT implied by the passage?
+  (1) It is commonly held that the dog's ability to recognize faces is connected with its having lived alongside human beings
+  (2) It is commonly held that the apes' ability to recognize faces is connected with their evolutionary closeness to human beings
+  (3) The researchers hold that the ability to recognize faces exists in many animals that have no evolutionary connection with human beings
+  (4) The researchers hold that the ability to recognize faces may develop in other animals that live in colonies
+EXPL: The passage reports one such animal, not many; (1), (2) and (4) each follow from what is said about the common view or the researchers' suggestion.
+
+=== vb-inf_v2_0344 [real exam | set inf_v2 | Sentence Understanding] answer=1
+STEM: The following sentence can be understood in two different ways: "The struggle of the new department's director with the broadcasting authority continues." Which of the following is NOT one of the two meanings of the sentence?
+  (1) The struggle that the director is waging against the new department of the broadcasting authority continues
+  (2) The struggle that the newly appointed director of the department is waging against the broadcasting authority continues
+  (3) The struggle that the director of the newly established department is waging against the broadcasting authority continues
+  (4) The struggle that the director of the new department is waging, jointly with the broadcasting authority, against a third party continues
+EXPL: "New" attaches either to the director or to the department, and "with" reads either as "against" or "alongside" — (2), (3) and (4) are readings the sentence bears; (1) makes the department the opponent, which no reading yields.
+
+=== vb-inf_v2_0345 [real exam | set inf_v2 | Sentence Understanding] answer=3
+STEM: Yonatan held a party for his birthday and invited friends and relatives. At the height of the party he rose and announced: "I know every one of you — but a little fewer than half of you I know rather less well than I would like to." How many of the guests does Yonatan know less well than he would like?
+  (1) Many more than half of them
+  (2) A little more than half of them
+  (3) A little fewer than half of them
+  (4) Many fewer than half of them
+EXPL: The sentence says it directly; the temptations are to read "I know every one of you" as a claim about knowing well, or to invert the fraction.
+
+=== vb-inf_v2_0346 [real exam | set inf_v2 | Sentence Understanding] answer=1
+STEM: A lecturer in medicine wished to illustrate a claim to his students, and said: "If you hear hoofbeats in the street, it is probably horses, not zebras." Which of the following claims is the one the lecturer wished to illustrate?
+  (1) Before a physician examines the possibility that a patient suffers from a rare disease, he must rule out the possibility that he suffers from a common one
+  (2) Concentrating on prominent symptoms is liable to lead to a mistaken diagnosis, and a physician must therefore attend to the subtler symptoms
+  (3) A single symptom may point to more than one disease, and a diagnosis should therefore rest on a combination of symptoms
+  (4) A physician should not assume that mild symptoms point to a mild disease
+EXPL: Hoofbeats are the symptom; horses the common cause, zebras the rare one. The other three are sound medical maxims that the image does not express.
+
+=== vb-inf_v2_0347 [real exam | set inf_v2 | Sentence Understanding] answer=3
+STEM: Reading difficulties take many forms, among them the following: — misidentifying one of the letters of a word; — exchanging two adjacent letters within a word (usually letters in the middle of the word); — exchanging letters between adjacent words (usually letters in the same position in each word). Which of the following is NOT an example of any of the three difficulties?
+  (1) Reading the words "calm sea" as "clam sea"
+  (2) Reading the words "wild boar" as "wild bear"
+  (3) Reading the words "bright light" as "brigh ligt"
+  (4) Reading the words "big cat" as "bag cit"
+EXPL: (1) exchanges adjacent letters within a word; (2) misidentifies a letter; (4) exchanges the vowels between the two words; (3) drops letters, which is none of the three.
+
+=== vb-inf_v2_0348 [real exam | set inf_v2 | Sentence Understanding] answer=2
+STEM: The word "pea" is used for the small round green vegetable. Linguists explain, however, that the historical form of the word is "pease": the common form "pea" arose because speakers took "pease," which was itself singular, to be a plural and stripped it of its supposed plural ending. Linguists point out that the same thing happened to the word "cherry," which was formed in the same way from "cherise." Which of the following words could replace "cherry" in the linguists' example?
+  (1) "berry"
+  (2) "sherry" (from the older "sherris")
+  (3) "plum"
+  (4) "melon"
+EXPL: Only "sherry" is a singular carved out of a word whose final -s was mistaken for a plural marker, exactly as "pea" and "cherry" were. (1), (3) and (4) were never reshaped in this way.
+
+=== vb-inf_v2_0349 [real exam | set inf_v2 | Sentence Understanding] answer=3
+STEM: In a book on politics it was written: "When some matter arises on the public agenda, the American politician asks first of all what the interest of his community is, whereas the European politician asks first of all whether the matter contradicts his ideology. In the end, of course, the American politician also asks whether the matter fits his convictions, and the European also asks what his community wants; the difference between them lies in the order of the questions." Which of the following statements best expresses the central claim of the passage?
+  (1) American politicians take account of their community's interests, whereas European politicians do not
+  (2) The public agenda in America is set by the communities, whereas in Europe it is set by ideologies
+  (3) American and European politicians consider the same two things, but in the opposite order of priority
+  (4) A politician can serve either his community's interest or his ideology, but not both
+EXPL: The passage says explicitly that both ask both questions and differ in order; (1) and (2) turn a difference of order into a difference of kind, and (4) invents an incompatibility.
+
+=== vb-inf_v2_0350 [real exam | set inf_v2 | Sentence Understanding] answer=3
+STEM: Linguists classify verbs by the number of participants they require. A one-place verb requires only a subject: "The baby slept." A two-place verb requires a subject and an object: "The cat caught the mouse." A three-place verb requires a subject, an object and a recipient: "Dan gave Ruth the key." In which of the following sentences is there a three-place verb?
+  (1) The river froze during the night
+  (2) Miriam repaired the fence in the afternoon
+  (3) The teacher lent Yossi a pencil
+  (4) Everyone in the room laughed at once
+EXPL: "Lent" takes a subject, a thing lent and a person lent to; "froze" and "laughed" take only a subject, "repaired" a subject and an object.
+
+=== vb-inf_v2_0351 [real exam | set inf_v2 | Sentence Understanding] answer=4
+STEM: In the language of the Aztecs, possessive markers (my, your, his, and so on) are attached to the beginning of a word. Thus "pulo" means "dog," "ipulo" means "his dog," and "mopulo" means "your dog." Likewise, "nokali" means "my house." Therefore, which of the following words is best suited to be the Aztec word for "your house"?
+  (1) ikali
+  (2) monokali
+  (3) kali
+  (4) mokali
+EXPL: "Your" is the prefix mo-, seen in "mopulo," and "house" is the stem kali, seen in "nokali." (1) is "his house," (3) is "house," (2) doubles the marker.
+
+=== vb-inf_v2_0352 [real exam | set inf_v2 | Sentence Understanding] answer=1
+STEM: Michal passed a note to Shlomi on which she had written: "I am going to tell you at noon what Naama did yesterday." Shlomi returned the note with the words: "But you already told me that later today I would learn what Naama did this week." To clear up the misunderstanding, Michal underlined one word in the sentence she had written and returned the note. Which of the following words is LEAST likely to be the one Michal underlined?
+  (1) I
+  (2) at noon
+  (3) did
+  (4) yesterday
+EXPL: Shlomi's version goes wrong on the time of telling ("later today"), the time of the doing ("this week") and perhaps the doing itself; nothing in it concerns who will tell.
+
+=== vb-inf_v2_0353 [real exam | set inf_v2 | Sentence Understanding] answer=1
+STEM: Yigal: "I have heard that most of the students pass the examination in the course 'Algebraic Structures,' and so I think that the course is ____." Yigal's words are not logical, but had he said ____ instead of "and so," or ____ instead of ____, they would have been logical. Which of the following completes the passage correctly?
+  (1) very hard / "and yet" / "easy" / "very hard"
+  (2) very hard / "and so" / "very hard" / "easy"
+  (3) easy / "and yet" / "very hard" / "easy"
+  (4) easy / "and so" / "easy" / "hard"
+EXPL: A high pass rate followed by "and so… very hard" is illogical; it becomes logical either by turning the connective into a concession ("and yet… very hard") or by turning the verdict to match the evidence ("and so… easy"). (3) starts from a logical sentence; (2) and (4) change nothing.
+
+=== vb-inf_v2_0354 [real exam | set inf_v2 | Sentence Understanding] answer=1
+STEM: In grammar, stress is the special emphasis given to one syllable of a word. The fact that in some languages the position of the stress is not fixed — unlike, for instance, Czech, in which the stress always falls on the first syllable — allows pairs of words of different meaning whose only difference is the position of the stress. When such a pair exists in a language, we say that stress in that language is "phonemic." In which of the following sentences does the pair of emphasized words prove that stress in English is phonemic?
+  (1) The clerk will REcord the complaint and reCORD it again if the first copy is lost
+  (2) The guard will PRESENT the pass and the visitor will present the PRESENT to the director
+  (3) She READ the letter yesterday and will READ it again today
+  (4) The bank by the river is not the bank that holds our money
+EXPL: "REcord" (noun) and "reCORD" (verb) differ in stress alone. In (2) the two words differ in vowel as well; in (3) the difference is vowel, not stress; in (4) the two words sound the same.
+
+=== vb-inf_v2_0355 [real exam | set inf_v2 | Sentence Understanding] answer=1
+STEM: Osnat: "I do not believe anyone could translate the article from German into French, let alone into Spanish." Shlomo: "From your words it follows that you command French better than Spanish." At the basis of Shlomo's claim lies the assumption that whoever finds it easier to translate ____ commands language A better than language B.
+  (1) from language C into language A than from language C into language B
+  (2) from language A into language C than from language B into language C
+  (3) from language A into language B than from language B into language A
+  (4) from language C into language A than from language A into language C
+EXPL: Osnat ranks German → French as easier than German → Spanish; Shlomo infers command of the target language — so ease of translating into a language must indicate command of it.
+
+=== vb-inf_v2_0356 [real exam | set inf_v2 | Sentence Understanding] answer=4
+STEM: Before you is a sentence from a "positions vacant" notice that can be understood in two ways: "Only architects who hold a first degree in sociology and graduates of a diving course will be accepted for this position." Which of the following is NOT possible under either of the two readings of the sentence?
+  (1) Elad, a graduate of a diving course who is not an architect and holds no first degree in sociology, was accepted
+  (2) Nir, a graduate of a diving course who is not an architect and holds no first degree in sociology, was not accepted
+  (3) Anat, an architect and a graduate of a diving course who holds no first degree in sociology, was accepted
+  (4) Drora, who holds a first degree in sociology, is not an architect and is not a graduate of a diving course, was accepted
+EXPL: Under the reading "two groups: sociology-architects, and diving graduates," Drora is in neither; under the reading "one group: architects with both," she is not an architect. (1) and (3) fit the first reading; (2) fits the second.
+
+=== vb-inf_v2_0357 [real exam | set inf_v2 | Sentence Understanding] answer=2
+STEM: The prosecutor said to the accused: "Answer yes or no: ____." Counsel for the defense said: "I object to my client's answering this question, for an innocent person cannot answer it without lying." Which of the following questions is NOT suited to complete the prosecutor's words?
+  (1) Have you stopped smuggling goods through customs?
+  (2) Could your debts have led you to rob the bank branch?
+  (3) Did anyone there notice that you were embezzling the funds?
+  (4) Did you have partners who helped you to evade tax?
+EXPL: (1), (3) and (4) presuppose the offense, so both "yes" and "no" admit it; (2) asks about a possibility, and an innocent person can answer "no" truthfully.
+
+=== vb-inf_v2_0358 [real exam | set inf_v2 | Sentence Understanding] answer=1
+STEM: This spring the migratory birds from East Africa arrived in our region earlier than usual. Nachum argues that it is not reasonable to suppose that the reason is the small amount of rain that fell in East Africa during the winter, since an abundance of offspring causes a late migration. On which of the following assumptions does Nachum's argument rest?
+  (1) Little rain causes the migratory birds to raise many offspring
+  (2) In years of drought the birds find it hard to raise many offspring
+  (3) In rainy years the birds arrive early
+  (4) In the past winter much rain fell in East Africa
+EXPL: Nachum's chain is little rain → many offspring → late arrival, which contradicts the early arrival; the first link is the unstated assumption. (2) would make the little-rain explanation work; (3) and (4) are not needed.
+
+=== vb-inf_v2_0359 [real exam | set inf_v2 | Sentence Understanding] answer=1
+STEM: A political commentator said: "For the present these are only first signs; and in view of the other phenomena occurring in the country, there is still much doubt whether the mood that found expression in this demonstration will take real hold." Which of the following sentences expresses the same meaning as the commentator's?
+  (1) It is not clear to what extent the mood expressed in this demonstration will take root, given the other things happening in the country
+  (2) If we attend to the other phenomena occurring in the country, we cannot doubt that the mood expressed in this demonstration will spread
+  (3) It is not clear to what extent the mood expressed in this demonstration represents what is happening in the country now
+  (4) These are indeed only first signs, but for the present there is no doubt that the mood expressed in this demonstration will take hold
+EXPL: (2) and (4) turn the doubt into certainty; (3) shifts the question from the future to the present.
+
+=== vb-inf_v2_0360 [real exam | set inf_v2 | Sentence Understanding] answer=4
+STEM: Woodrow Wilson said: "If I have to give a ten-minute speech on some subject, I need a week to prepare; if fifteen minutes — three days; if I have an hour — I am ready now." Which of the following claims best expresses Wilson's meaning?
+  (1) The best speeches are the shortest
+  (2) It is precisely when a person plans less that his speech succeeds more
+  (3) The length of a speech does not testify to its importance
+  (4) It is harder to put an idea briefly than to speak about it at length
+EXPL: Preparation time falls as speaking time grows — brevity is the work. (1), (2) and (3) are not what the joke says.
+
+=== vb-inf_v2_0361 [real exam | set inf_v2 | Sentence Understanding] answer=2
+STEM: In one of her articles Dr. Tofi wrote: "I support Dr. Rubin's position, but I am not persuaded by his reasons. In my view, the only reason for allowing prisoners to marry is that preventing it means harming their rights." Which of the following data could be one of Dr. Rubin's reasons?
+  (1) The law regards all citizens as having equal rights, even though they are members of different sectors of society
+  (2) After their release from prison, prisoners who married while in prison tend to return to crime less than prisoners who did not
+  (3) Prisoners who married while in prison used their contact with the outside world to smuggle drugs into the prison
+  (4) The law recognizes the possibility of denying prisoners' rights, and the right to marry is among them
+EXPL: Rubin's reasons must support the position and differ from the rights argument; (2) is a practical benefit. (1) is Tofi's own reason; (3) and (4) argue against the position.
+
+=== vb-inf_v2_0362 [real exam | set inf_v2 | Sentence Understanding] answer=3
+STEM: A group of researchers examined the effect of consuming caffeine on the ability to concentrate. They gave one group a drink rich in caffeine and the other a drink without caffeine, and then played to both an argument in favor of vegetarianism. The researchers found that those who had consumed caffeine were persuaded by the argument much more, and estimated that, because caffeine raises concentration, these participants had concentrated more on the arguments. Which of the following assumptions underlies the researchers' estimate?
+  (1) Lack of concentration causes a person not to notice details, and it therefore makes no difference to him whether the drink contains caffeine
+  (2) Consuming caffeine causes those who need it to support vegetarianism more than those who do not
+  (3) A person who concentrates on the arguments he hears is persuaded by them more than a person who listens with less attention
+  (4) Attention to arguments causes a person to be persuaded more, provided that he has consumed caffeine beforehand
+EXPL: The estimate runs caffeine → concentration → persuasion; the second link is the assumption. (4) adds a condition; (1) and (2) are not needed.
+
+=== vb-inf_v2_0363 [real exam | set inf_v2 | Sentence Understanding] answer=2
+STEM: Before you is a sentence from which a part (a word or a few words) is missing: "At the concert were performed, ____ works by composers living in Israel, works by composers born in Israel but living abroad." In which of the following sentences could the missing part be the same as in the sentence above?
+  (1) Although the director general was expected to announce the reform as early as next week, ____ its implementation will begin only in a few months
+  (2) ____ Dr. Cohen, we succeeded in recruiting for the new study two more researchers from the field of molecular biology
+  (3) The American government will pursue in the coming years ____ policies of intervention in the affairs of other countries, even if the harm is great
+  (4) ____ participation in the demonstration strengthened the calls to lighten the tax burden on single-parent families
+EXPL: "Besides" (or "in addition to") fits both. The other sentences need a subject, a verb or an adjective in the gap.
+
+=== vb-inf_v2_0364 [real exam | set inf_v2 | Sentence Understanding] answer=2
+STEM: Arik: "My sister told me that yesterday she saw Dafna again, taking part in a flower walk on the Gilboa, and that she enjoyed it very much too." Natali: "____." From Natali's reply it emerges that Arik's sentence can be understood in two ways, and that Natali understood it otherwise than he intended. Which of the following is Natali's reply?
+  (1) "And where did she see her this time?"
+  (2) "Your sister went to the Gilboa yesterday, in that stormy weather?"
+  (3) "And did your sister enjoy it as well?"
+  (4) "Does your sister also go on walks to see flowers?"
+EXPL: The participle "taking part" may belong to Dafna or to the sister; Natali gave it to the sister and put her on the mountain. (1), (3) and (4) keep the sister where Arik put her.
+
+=== vb-inf_v2_0365 [real exam | set inf_v2 | Sentence Understanding] answer=3
+STEM: The commandment "You shall love your neighbor as yourself" stands at the center of the book "Works of Love" by the philosopher Søren Kierkegaard. The first three chapters of the book are devoted to questions arising from the commandment: the first deals with the question how one can be commanded to love; the second with the question whom we are commanded to love; and the third seeks to answer the question what self-love is. The title of each of the three chapters is the commandment itself, but each time with a different part of it emphasized. Which of the following is NOT suited to be the title of one of the three chapters?
+  (1) You shall love your NEIGHBOR as yourself
+  (2) You shall love your neighbor AS YOURSELF
+  (3) You shall love your neighbor as YOU love yourself
+  (4) YOU SHALL LOVE your neighbor as yourself
+EXPL: The emphasized "you" answers none of the three questions; (1) is whom, (2) is self-love, (4) is how love can be commanded.
+
+=== vb-inf_v1_0031 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=4
+STEM: In one of his rulings Judge Alon wrote: "Apart from Mr. Sagi himself, everyone regards his conduct as improper — and not without reason." From these words it follows that in Judge Alon's opinion —
+  (1) Mr. Sagi regards his own conduct as improper, and it was indeed improper
+  (2) Mr. Sagi's conduct was improper because everyone regards it so
+  (3) Everyone regards Mr. Sagi's conduct as improper, but they are mistaken
+  (4) Mr. Sagi is the only one who does not regard his conduct as improper, and he is mistaken
+EXPL: "Apart from Mr. Sagi himself" excludes him from those who see the conduct as improper — so (1) fails. "Not without reason" is the judge's own verdict that the others are right — so (3) fails, and (2) invents a cause the judge never states.
+
+=== vb-inf_v1_0032 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=3
+STEM: The economist Ruth Alder wrote: "In most markets, buyers are influenced by the fact that someone will be setting prices, and sellers are influenced by the fact that they will be setting them." Which of the following best expresses Alder's statement?
+  (1) After prices have been set, both buying and selling change
+  (2) The fact that buyers and sellers will both have their prices set for them influences them in the present
+  (3) Knowing that sellers will be setting prices influences both buyers and sellers
+  (4) The fact that buyers know their prices will be set changes how they buy, and this in turn changes how sellers sell
+EXPL: Sellers set; buyers are subject to the setting; both are influenced by the prospect. (2) makes sellers subject to price-setting; (4) adds a causal chain the sentence does not contain; (1) moves the influence to after the fact.
+
+=== vb-inf_v1_0033 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=3
+STEM: The following appeared in a review of a biography of the composer Weil: "Weil's error was to believe that his theory of harmony offered working composers practical methods, and not merely a set of principles." Which of the following statements about Weil's theory is claimed in the quotation?
+  (1) Weil believed that it was of use only as a practical method
+  (2) It is of use both as a set of principles and as a practical method
+  (3) It is of use only as a set of principles
+  (4) Weil believed that it was of use only as a set of principles
+EXPL: Calling the belief in practical use an error asserts that the theory offers principles only. (2) is the belief the reviewer rejects; (1) and (4) misstate what Weil believed.
+
+=== vb-inf_v1_0034 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=4
+STEM: Engineers complain that architects design buildings that cannot be built as drawn; architects complain that engineers build only what they already know how to build. This recalls the remark of the master builder Ivo Brandt: "Architecture without engineering has no walls; engineering without architecture has no reason for them." What does Brandt's remark imply about the complaints the two professions direct at each other?
+  (1) Even if the complaints are justified, there is no great difference between the two professions
+  (2) The complaints are beside the point, because today most firms employ both
+  (3) Both professions deserve criticism, but not for the reasons they usually give
+  (4) Each profession's complaint about the other is justified, which is exactly why the two must work together
+EXPL: Each half of the remark concedes a real lack — walls without reason, reasons without walls — and the two halves together make mutual dependence the conclusion. (1) denies a difference the remark insists on; (2) and (3) change the subject.
+
+=== vb-inf_v1_0035 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=3
+STEM: The director said of the new play: "It is not true that no critic failed to notice the weakness of the second act." From the director's words it follows that —
+  (1) every critic noticed the weakness of the second act
+  (2) no critic noticed the weakness of the second act
+  (3) at least one critic failed to notice the weakness of the second act
+  (4) the second act has no weakness that a critic could notice
+EXPL: "No critic failed to notice" = every critic noticed; "it is not true that" every critic noticed = at least one did not. (1) is the sentence with one negation too few; (2) with one too many; (4) is not about the critics at all.
+
+=== vb-inf_v1_0036 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=3
+STEM: The museum's guide states: "Only members may enter the reading room, and not only members may enter the library." Which of the following follows from the guide's statement?
+  (1) Every member may enter the reading room
+  (2) No member may enter the library
+  (3) Some people who are not members may enter the library
+  (4) Everyone who may enter the library may enter the reading room
+EXPL: "Not only members" means some non-members are admitted to the library. "Only members may enter" restricts who may enter but does not promise that every member may — so (1) does not follow; (2) and (4) contradict or overreach the statement.
+
+=== vb-inf_v1_0079 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=4
+STEM: The reviewer wrote: "Apart from the author himself, no one expects the sequel to succeed — and, I fear, not without cause." From these words it follows that in the reviewer's opinion —
+  (1) the author does not expect the sequel to succeed
+  (2) the sequel will succeed because the author expects it to
+  (3) those who expect the sequel to fail are being unfair
+  (4) the sequel will probably fail, and the author alone believes otherwise
+EXPL: "Apart from the author himself" makes him the lone optimist; "not without cause" endorses the pessimists.
+
+=== vb-inf_v1_0080 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=4
+STEM: The historian wrote: "The colonists were shaped by the fact that the governor would judge their petitions, and the governor was shaped by the fact that he would be judging them." Which of the following best expresses the historian's statement?
+  (1) Both colonists and governor were changed by the petitions after they were judged
+  (2) The governor's judgments changed the colonists, and their reactions changed the governor
+  (3) The colonists and the governor were both shaped by the fact that their petitions would be judged
+  (4) The prospect of judging influenced the governor, and the prospect of being judged influenced the colonists
+EXPL: Only one party judges; both are influenced by the prospect. (3) gives the governor petitions of his own; (1) and (2) move the influence to after the judgments.
+
+=== vb-inf_v1_0081 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=4
+STEM: From a review: "The company's mistake was to believe that its new engine offered customers not only lower fuel consumption but also lower maintenance costs." Which of the following is claimed in the quotation?
+  (1) The company believed that the engine offered lower fuel consumption only
+  (2) The new engine offers neither lower fuel consumption nor lower maintenance costs
+  (3) The company believed that the engine offered lower maintenance costs only
+  (4) The new engine offers lower fuel consumption but not lower maintenance costs
+EXPL: The mistake is the "also"; the "not only" part is left standing.
+
+=== vb-inf_v1_0082 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=3
+STEM: The manager said: "It would be wrong to say that none of the complaints was not justified." From the manager's words it follows that —
+  (1) every complaint was justified
+  (2) no complaint was justified
+  (3) at least one complaint was not justified
+  (4) at least one complaint was justified
+EXPL: "None of the complaints was not justified" = all were justified; "it would be wrong to say" that = not all were justified = at least one was not.
+
+=== vb-inf_v1_0083 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=4
+STEM: The notice reads: "Only ticket-holders may use the express entrance, and all ticket-holders may use the main entrance." Which of the following follows from the notice?
+  (1) Every ticket-holder may use the express entrance
+  (2) The express entrance is quicker than the main entrance
+  (3) No one without a ticket may use the main entrance
+  (4) A person using the express entrance holds a ticket
+EXPL: "Only ticket-holders may use" restricts users to ticket-holders without promising all of them access; the main-entrance rule says nothing about non-ticket-holders.
+
+=== vb-inf_v1_0084 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=1
+STEM: Of the quarrel between the city's planners and its preservationists — the planners saying the preservationists would freeze the city, the preservationists saying the planners would erase it — the mayor remarked: "A city that only remembers has no future; a city that only builds has no past." What does the mayor's remark imply about the two sides' accusations?
+  (1) Each side's accusation is justified, and that is why the two must plan together
+  (2) Neither side's accusation is justified
+  (3) The preservationists are right and the planners are wrong
+  (4) The quarrel is pointless because the city has neither a past nor a future
+EXPL: Each half of the remark concedes the danger the other side names; the pairing makes the two indispensable to each other.
+
+=== vb-inf_v1_0128 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=3
+STEM: The coach said: "Everyone except Dan thinks we lost because of the goalkeeper — and, sad to say, they are not far wrong." From these words it follows that in the coach's opinion —
+  (1) the goalkeeper was not to blame for the loss
+  (2) Dan blames the goalkeeper more than anyone
+  (3) the goalkeeper bears much of the blame, and Dan alone does not think so
+  (4) the team lost because of Dan
+EXPL: "Except Dan" isolates Dan from those who blame the goalkeeper; "not far wrong" endorses them.
+
+=== vb-inf_v1_0129 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=3
+STEM: The critic wrote: "It is not the case that the film is not only long but also dull." From the critic's words it follows that —
+  (1) the film is neither long nor dull
+  (2) the film is dull but not long
+  (3) the film may be long, but it is not dull
+  (4) the film is both long and dull
+EXPL: Denying "not only long but also dull" denies the addition — dullness — while leaving length open.
+
+=== vb-inf_v1_0130 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=1
+STEM: The chairman said: "Referees are influenced by knowing that assessors will be grading them, and assessors are influenced by knowing that they will be grading referees." Which of the following best expresses the chairman's statement?
+  (1) The prospect of grading affects the assessors, and the prospect of being graded affects the referees
+  (2) Referees and assessors are both affected by being graded
+  (3) After the grades are given, both referees and assessors change
+  (4) Assessors grade referees, who in turn grade assessors
+EXPL: Only assessors grade; both parties are affected by the prospect.
+
+=== vb-inf_v1_0131 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=4
+STEM: The sign reads: "Only residents may park here on weekdays." Which of the following follows from the sign?
+  (1) Residents may park here on weekdays
+  (2) Residents may not park here at weekends
+  (3) Non-residents may not park here at weekends
+  (4) A car parked here on a weekday belongs to a resident, if the rule is obeyed
+EXPL: "Only residents" restricts weekday parking to residents without granting every resident a place; the sign says nothing about weekends.
+
+=== vb-inf_v1_0132 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=3
+STEM: The engineer wrote: "Had the dam been built ten meters higher, the flood would have been contained." Which of the following is claimed?
+  (1) The dam was built ten meters higher
+  (2) The flood was contained
+  (3) The dam's height was the reason the flood was not contained
+  (4) A higher dam would have been more expensive
+EXPL: The counterfactual attributes the failure to the height; (1) and (2) contradict what it presupposes; (4) is unmentioned.
+
+=== vb-inf_v1_0133 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=1
+STEM: Of the dispute between the composers who study old scores and those who improvise, the conductor said: "Music that only remembers is an archive; music that only invents is noise." What does the remark imply?
+  (1) Both study and invention are needed, and each side's criticism of the other is justified
+  (2) Improvisation is superior to the study of old scores
+  (3) Neither side's criticism is justified
+  (4) Music should be neither archived nor invented
+EXPL: Each half concedes the other side's charge; together they make the two indispensable.
+
+=== vb-inf_v1_0179 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=4
+STEM: The inspector wrote: "All but the contractor himself regard the delay as avoidable — and, in my view, rightly so." From these words it follows that in the inspector's opinion —
+  (1) the contractor regards the delay as avoidable
+  (2) the delay was caused by the contractor
+  (3) those who regard the delay as avoidable are mistaken
+  (4) the delay was avoidable, and only the contractor thinks otherwise
+EXPL: "All but the contractor" excludes him; "rightly so" endorses the rest.
+
+=== vb-inf_v1_0180 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=4
+STEM: The rule says: "No candidate is interviewed unless her application is complete." Which of the following follows?
+  (1) Every candidate whose application is complete is interviewed
+  (2) Interviews are held only after all applications are complete
+  (3) A candidate whose application is incomplete is rejected
+  (4) A candidate who was interviewed submitted a complete application
+EXPL: Interviewed → complete; nothing more.
+
+=== vb-inf_v1_0181 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=4
+STEM: The report states: "Fewer accidents occurred on the new road this year than on the old road last year, though more than on the old road the year before that." Which of the following is claimed?
+  (1) The new road is safer than the old road
+  (2) The new road had the fewest accidents of the three years mentioned
+  (3) Accidents on the old road fell from one year to the next
+  (4) The old road had more accidents last year than the year before
+EXPL: New < old(last year), and new > old(two years ago), so old(last year) > old(two years ago). (1) and (2) overreach; (3) reverses.
+
+=== vb-inf_v1_0182 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=1
+STEM: The witness said: "It is not true that I saw either the driver or the passenger leave the car." From the witness's words it follows that —
+  (1) the witness saw neither the driver nor the passenger leave the car
+  (2) the witness saw the driver but not the passenger leave the car
+  (3) the witness saw both leave the car
+  (4) the witness saw one of them leave the car but is not sure which
+EXPL: Denying "either A or B" denies both.
+
+=== vb-inf_v1_0183 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=1
+STEM: The painter Ravel wrote that "a true landscape painter is also a kind of historian." Many took him to mean that landscapes record how places once looked. His pupil, however, wrote: "To understand him you must give up the idea that a historian merely records; for Ravel, a historian is someone who sees in the present the marks left by the past." According to the pupil, what did Ravel mean?
+  (1) A landscape painter, like a historian, discerns in a scene the traces of what happened there
+  (2) A landscape painter records places for future historians
+  (3) Painters and historians both invent the past
+  (4) A landscape painter must study history before painting
+EXPL: The pupil's gloss defines the historian as one who sees the past's marks in the present.
+
+=== vb-inf_v1_0184 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=4
+STEM: The notice reads: "The library is the only building on campus open on Saturdays." Which of the following follows?
+  (1) The library is open every day of the week
+  (2) The library is open on Saturdays only
+  (3) The library is closed on Sundays
+  (4) No building on campus other than the library is open on Saturdays
+EXPL: "The only… open on Saturdays" restricts other buildings; it says nothing about other days.
+
+=== vb-inf_v1_0221 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=1
+STEM: The editor wrote: "Apart from the columnist herself, no one on the staff thinks the piece should have run — and, I am afraid, with good reason." From these words it follows that in the editor's opinion —
+  (1) the piece should not have run, and the columnist alone thinks otherwise
+  (2) the columnist agrees with the rest of the staff
+  (3) the staff are wrong about the piece
+  (4) the piece should have run
+
+=== vb-inf_v1_0222 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=4
+STEM: The referee said: "It is not the case that none of the players failed to hear the whistle." It follows that —
+  (1) every player heard the whistle
+  (2) at least one player heard the whistle
+  (3) no player heard the whistle
+  (4) at least one player did not hear the whistle
+EXPL: "None failed to hear" = all heard; its denial = not all heard.
+
+=== vb-inf_v1_0223 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=1
+STEM: The dean said: "Lecturers are shaped by the fact that students will be rating them, and students are shaped by the fact that they will be rating lecturers." Which best expresses the dean's statement?
+  (1) The prospect of being rated shapes the lecturers, and the prospect of rating shapes the students
+  (2) Both lecturers and students are shaped by being rated
+  (3) Lecturers rate students and students rate lecturers
+  (4) After the ratings, both lecturers and students change
+
+=== vb-inf_v1_0224 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=2
+STEM: The notice reads: "Only staff may use the rear entrance." Which follows?
+  (1) Every member of staff uses the rear entrance
+  (2) Anyone using the rear entrance, if the rule is obeyed, is a member of staff
+  (3) Staff may not use the front entrance
+  (4) The rear entrance is closed to staff after hours
+
+=== vb-inf_v1_0269 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=2
+STEM: Ran invented a new word — "plimber" — to describe the guests at his party: "In the end nobody came except the plimbers, who arrive at any party they hear of, whether invited or not." In which of the following sentences does "plimber" appear with the same meaning?
+  (1) The plimbers never come to a party unless they are invited in writing
+  (2) As usual, the plimbers were there before the host, though no one remembers inviting them
+  (3) The plimbers left the party early, as they always do
+  (4) Every plimber brought a gift, which was more than the invited guests did
+EXPL: A plimber attends uninvited; (1) reverses that, (3) and (4) are about other traits.
+
+=== vb-inf_v1_0270 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=2
+STEM: Dana coined the word "sprocket" for a certain kind of driver: "He is a sprocket — he waits at a green light until the car behind him hoots." In which sentence does "sprocket" keep the same meaning?
+  (1) The sprocket sped through the junction before the light had changed
+  (2) Being a sprocket, she sat at the crossing long after the road had cleared, until the honking woke her
+  (3) The sprocket parked across two spaces
+  (4) A sprocket never waits at a light at all
+
+=== vb-inf_v1_0271 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=3
+STEM: In the office, Noam uses the word "tarnish" in his own way: "Yael is a real tarnish — give her a plan and she will tell you, before you have finished, why it cannot work." In which sentence does "tarnish" appear with Noam's meaning?
+  (1) The tarnish agreed to every proposal without reading it
+  (2) The tarnish suggested three improvements to the plan
+  (3) The tarnish had listed the plan's flaws before the presentation reached its second slide
+  (4) The tarnish was the first to volunteer to carry the plan out
+
+=== vb-inf_v1_0272 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=2
+STEM: Grandmother called a certain kind of neighbor a "corridor cat": "A corridor cat is someone who knows what you had for supper before you have washed the dishes." In which sentence is the expression used in the same sense?
+  (1) The corridor cat asked whether he could borrow a ladder
+  (2) The corridor cat could tell you who had visited every flat on the floor that week, and how long they had stayed
+  (3) The corridor cat kept to himself and never learned his neighbors' names
+  (4) The corridor cat fed every stray on the street
+
+=== vb-inf_v1_0273 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=3
+STEM: In her review, the critic invented the word "windowing" for a certain habit of novelists: "This author windows constantly — each chapter opens with a paragraph describing the weather, which has nothing to do with anything that follows." In which sentence does "windowing" appear with the critic's meaning?
+  (1) The novel windows at its climax, when the storm outside mirrors the quarrel inside
+  (2) Windowing is what makes this writer's descriptions of landscape so essential to the plot
+  (3) The book windows so much that a reader could skip every opening paragraph and lose nothing
+  (4) The author windows her characters, letting us see into their thoughts
+EXPL: Windowing = decorative, irrelevant openings; (1) and (2) make the description relevant.
+
+=== vb-inf_v1_0274 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=1
+STEM: The coach calls certain players "lanterns": "A lantern shines only when the crowd is watching — in an empty stadium he cannot be found." In which sentence does "lantern" keep this meaning?
+  (1) The lantern played his best match in front of a full house and his worst in a closed-door friendly
+  (2) The lantern trained hard when no one was looking
+  (3) The lantern was injured for most of the season
+  (4) The lantern is the team's best passer
+
+=== vb-inf_v1_0297 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=3
+STEM: Linguists classify verbs by the number of participants they require. A one-place verb needs only a subject ("The baby slept"); a two-place verb needs a subject and an object ("The cat caught the mouse"); a three-place verb needs a subject, an object and a recipient ("Dan gave Ruth the key"). In which of the following sentences is there a three-place verb?
+  (1) The river froze overnight
+  (2) Miriam repaired the fence
+  (3) The teacher lent Yossi a pencil
+  (4) Everyone laughed at once
+EXPL: Only "lent" takes a subject, an object and a recipient.
+
+=== vb-inf_v1_0298 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=2
+STEM: Grammarians distinguish between a transitive verb, which takes a direct object ("She read the letter"), and an intransitive verb, which does not ("She arrived"). In which of the following sentences is the verb intransitive?
+  (1) The dog buried the bone
+  (2) The guests departed early
+  (3) The child broke the cup
+  (4) The clerk stamped the form
+
+=== vb-inf_v1_0299 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=3
+STEM: A "reflexive" sentence is one in which the subject acts on itself ("The cat washed itself"). In which of the following sentences is the action reflexive?
+  (1) The barber shaved the customer
+  (2) The mirror reflected the lamp
+  (3) The soldier wounded himself while cleaning his rifle
+  (4) The nurse dressed the patient's wound
+
+=== vb-inf_v1_0300 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=2
+STEM: Some sentences state a fact ("The shop is closed"), some give an order ("Close the shop"), and some ask a question ("Is the shop closed?"). Which of the following is an order expressed in the form of a question?
+  (1) Is the shop closed on Sundays?
+  (2) Would you close the shop before you leave?
+  (3) The shop closes at six
+  (4) Who closed the shop?
+EXPL: A request framed as a question.
+
+=== vb-inf_v1_0336 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=1
+STEM: The manager wrote: "Apart from the supplier himself, no one involved regards the delay as excusable — and, I must say, not without justification." It follows that in the manager's opinion —
+  (1) the delay was not excusable, and only the supplier thinks otherwise
+  (2) the supplier regards the delay as inexcusable
+  (3) those who blame the supplier are being unjust
+  (4) the delay was excusable
+
+=== vb-inf_v1_0337 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=2
+STEM: Ella calls a certain kind of colleague a "weathervane": "A weathervane agrees with whoever spoke last." In which sentence is the word used in Ella's sense?
+  (1) The weathervane held her opinion through three meetings of shouting
+  (2) By the end of the meeting the weathervane had supported both sides, each right after it had spoken
+  (3) The weathervane predicted rain
+  (4) The weathervane refused to speak at all
+
+=== vb-inf_v1_0338 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=2
+STEM: The chairman said: "It is not true that no member failed to vote." It follows that —
+  (1) every member voted
+  (2) at least one member did not vote
+  (3) no member voted
+  (4) at least one member voted
+
+=== vb-inf_v1_0339 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=2
+STEM: A "compound" sentence joins two complete clauses with a word such as "and" or "but" ("The rain stopped and the sun came out"); a "complex" sentence contains a clause that cannot stand alone ("When the rain stopped, the sun came out"). Which of the following is a complex sentence?
+  (1) The shop closed and the street emptied
+  (2) Because the shop closed, the street emptied
+  (3) The shop closed
+  (4) The shop closed, but the café stayed open
+
+=== vb-inf_v1_0340 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=2
+STEM: The rule reads: "Only members may reserve the tennis court." Which follows?
+  (1) Every member has reserved the court
+  (2) Anyone who reserves the court, if the rule is kept, is a member
+  (3) Members may not play without reserving
+  (4) Non-members may not play on the court
+EXPL: The rule concerns reserving, not playing.
+
+=== vb-inf_v1_0341 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=1
+STEM: The architect Roth said that "a good building is a good neighbor." Some took him to mean that buildings should not overshadow one another. His assistant, however, wrote: "To understand Roth you must remember what he meant by a neighbor — someone who gives to the street more than he takes from it." According to the assistant, what did Roth mean?
+  (1) A good building contributes more to its surroundings than it draws from them
+  (2) A good building is lower than those around it
+  (3) A good building resembles its neighbors
+  (4) A good building belongs to its neighbors
+
+=== vb-inf_v1_0382 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=1
+STEM: The critic wrote: "With the exception of the director herself, no one connected with the production believes it should have been staged — and, I am sorry to say, they are right." It follows that in the critic's opinion —
+  (1) the production should not have been staged, and only the director thinks otherwise
+  (2) the director agrees with the others
+  (3) the others are mistaken
+  (4) the production was a success
+
+=== vb-inf_v1_0383 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=2
+STEM: Ben calls certain shoppers "hummingbirds": "A hummingbird visits every stall in the market and buys from none." In which sentence is the word used in Ben's sense?
+  (1) The hummingbird bought her whole week's food at the first stall
+  (2) The hummingbird had examined every stall by noon and went home with an empty basket
+  (3) The hummingbird runs the flower stall
+  (4) The hummingbird never comes to the market
+
+=== vb-inf_v1_0384 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=2
+STEM: The guard said: "It is not the case that I checked both the front door and the back door." It follows that —
+  (1) the guard checked neither door
+  (2) the guard checked at most one of the doors
+  (3) the guard checked the back door only
+  (4) the guard checked the front door only
+EXPL: Denying "both" leaves one or none.
+
+=== vb-inf_v1_0385 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=2
+STEM: A "rhetorical question" is a question asked for effect, to which no answer is expected ("Who could refuse such an offer?"). Which of the following is a rhetorical question?
+  (1) What time does the train leave?
+  (2) Is there anyone here who has never made a mistake?
+  (3) How many pupils are in the class?
+  (4) Did you lock the door?
+
+=== vb-inf_v1_0386 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=1
+STEM: The composer Adar said that "silence is the most important note." Some took him to mean that his music should contain many pauses. His pupil, however, wrote: "By silence Adar meant not the absence of sound but the listener's attention — the stillness that a note falls into." According to the pupil, what did Adar mean?
+  (1) A note's effect depends on the listener's attention into which it falls
+  (2) Music should contain many pauses
+  (3) The best music is silent
+  (4) Listeners should not applaud
+
+=== vb-inf_v1_0387 [inf_v1 REVIEW | set inf_v1 | Sentence Understanding] answer=1
+STEM: The notice reads: "All members may use the pool, and only members may use the sauna." Which follows?
+  (1) Anyone using the sauna, if the rule is kept, is a member
+  (2) Every member uses the sauna
+  (3) Non-members may not use the pool
+  (4) The pool is closed to non-members on weekends

@@ -1,0 +1,168 @@
+# Topic 43 Understanding sentences
+
+######## SECTION vr43-learn — Learn and try (learn)
+=== VIDEO vr-sentence-meaning: kind=lesson title='Understanding sentences: scope, emphasis and implication'
+[1] Find the main action
+  BOARD: ['Who did what?', 'What is denied?', 'What is only being suggested?']
+  SCRIPT: A sentence can become difficult without containing a single advanced word. ‘He never missed a chance to avoid the meeting’ is built from ordinary words, but several actions and negatives are nested inside one another. Start with the main subject and action. Then unfold the added phrase. In this case, he took every opportunity to avoid the meeting. That tells us about his repeated attempts or choices, not necessarily whether he managed to avoid every meeting. Plain English is our tool, but the plain version must keep that distinction. When a question asks what can be inferred, we need the meaning supported by the sentence, not an attractive extra story.
+[2] Unpack from the inside out
+  BOARD: ['Avoid attending → try not to attend', 'Never missed a chance → used every opportunity', 'Not necessarily: succeeded every time']
+  SCRIPT: Take the smallest difficult phrase first. Avoid attending means try or arrange not to attend. Now put back ‘never missed a chance.’ He used every opportunity to do that. This inside-out method works better than counting negatives. Some negative-looking verbs express prevention or refusal, and their meanings do not cancel mechanically. If the sentence instead said he failed to avoid attending, he attended despite trying not to. Say the small phrase naturally before rebuilding the full sentence. You should be able to point to which action actually occurred and which one was only attempted, wished for or prevented.
+[3] Only changes what is excluded
+  BOARD: ['Only Maya praised the design.', 'Maya praised only the design.', 'Maya only praised the design.']
+  SCRIPT: These sentences do different jobs. Only Maya praised the design excludes other people from praising it. Maya praised only the design limits the objects of her praise. Maya only praised the design may contrast praising with doing something more, such as funding it, and context can matter. Do not move ‘only’ around while paraphrasing. Attach it to the part it restricts. If a sentence is genuinely ambiguous, a question may ask which interpretation is possible or which revision removes the ambiguity. We should not pretend that English always has just one scope reading. Look at what the wording and surrounding context actually settle.
+[4] Separate fact from attitude
+  BOARD: ['The proposal was rejected.', 'The speaker regretted the rejection.', 'An event and an opinion about it are different.']
+  SCRIPT: ‘Unfortunately, the proposal was rejected’ reports an event and expresses a negative attitude to that event. ‘The proposal was not rejected without reason’ says there was a reason for rejecting it; it does not tell us every reason was good. These small qualifications often decide an answer. Ask two questions: what happened, and what does the speaker think about it? Someone may dislike a decision yet accept that it had a reasonable basis. Someone may support a decision without being pleased about all its consequences. Keep those judgments separate rather than forcing every sentence into a simple approval-or-disapproval label.
+[5] Compare exactly what is compared
+  BOARD: ['More useful than the old version', 'Does not mean useful in every respect', 'Less expensive does not mean inexpensive']
+  SCRIPT: Relative words compare things. A revised manual can be clearer than the old one and still be confusing. A cheaper ticket can still be expensive. When you paraphrase, keep the comparison partner and the direction. If an answer turns ‘more accurate than’ into ‘completely accurate,’ it has made the claim stronger. If it drops ‘for beginners,’ it may have widened the group to which the comparison applies. These are small edits with large logical effects. Your active-reading mark can be a simple greater-than sign, but place the two things and the quality beside it so you remember what is being compared.
+[6] Replace a phrase without changing the claim
+  BOARD: ['Check subject, time, scope and certainty.', 'A true statement may still change the meaning.']
+  SCRIPT: Some questions ask which replacement changes the meaning, or which sentence expresses the same idea. Do not merely ask whether the replacement sounds plausible. Compare it with the original in four respects: who is acting, when the action occurs, how wide the claim is, and how certain it is. ‘Could have arrived’ is not ‘arrived.’ ‘Everyone did not agree’ may be less clear than ‘not everyone agreed.’ ‘The doctor brought the actor to the clinic’ assigns roles differently from ‘the actor brought the doctor.’ Read each complete version once in a natural voice. A role or time change often becomes obvious when you picture the scene.
+--- Q vr43-g001: The director criticized the exhibition, and, in the reviewer’s opinion, not without reason. Which statement best represents the reviewer’s view?
+  CHOICES: ['The criticism had no basis.', 'The reviewer disliked every part of the exhibition.', 'There was some justification for the criticism.', 'Every criticism made by the director was correct.'] correct=3
+=== VIDEO solve-vr43-g001: kind=solution title='The meaning of “not without reason”'
+[1] Your question
+  BOARD: []
+  SCRIPT: The director criticized the exhibition, and, in the reviewer’s opinion, not without reason. Which statement best represents the reviewer’s view?
+[2] Put the message in plain English
+  BOARD: ['There was some justification for the criticism.']
+  SCRIPT: “Not without reason” removes the claim that the criticism was baseless. It supplies some justification, not complete agreement with every detail. Picture the scene with the roles and the time fixed. If you shorten the sentence, leave its logical restriction attached to the same word. That gives us a compact version we can safely compare with the answers.
+[3] Keep each answer tied to the text
+  BOARD: ['Qualified approval']
+  SCRIPT: “Every criticism made by the director was correct.” fails because some justification is weaker than full endorsement. “The criticism had no basis.” fails because this is the meaning explicitly denied. “The reviewer disliked every part of the exhibition.” fails because no judgment about every part of the exhibition is given. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'There was some justification for the criticism.']
+  SCRIPT: The answer is choice 3: There was some justification for the criticism.. “Not without reason” removes the claim that the criticism was baseless. It supplies some justification, not complete agreement with every detail.
+--- Q vr43-g002: After the rehearsal, the conductor who had criticized the soloist was driven to the station by the producer. Who drove someone to the station?
+  CHOICES: ['The soloist', 'The conductor', 'The person criticized by the conductor', 'The producer'] correct=4
+=== VIDEO solve-vr43-g002: kind=solution title='The roles in a long sentence'
+[1] Your question
+  BOARD: []
+  SCRIPT: After the rehearsal, the conductor who had criticized the soloist was driven to the station by the producer. Who drove someone to the station?
+[2] Put the message in plain English
+  BOARD: ['The producer']
+  SCRIPT: The main action is “was driven,” and “by the producer” identifies the person performing it. The relative clause identifies the conductor but does not change the driver. Picture the scene with the roles and the time fixed. If you shorten the sentence, leave its logical restriction attached to the same word. That gives us a compact version we can safely compare with the answers.
+[3] Keep each answer tied to the text
+  BOARD: ['Agent tracking']
+  SCRIPT: “The soloist” fails because the soloist belongs to the criticism clause. “The conductor” fails because the conductor was the passenger. “The person criticized by the conductor” fails because that person is the soloist, not the producer. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'The producer']
+  SCRIPT: The answer is choice 4: The producer. The main action is “was driven,” and “by the producer” identifies the person performing it. The relative clause identifies the conductor but does not change the driver.
+--- Q vr43-g003: Ravi never missed an opportunity to avoid chairing the meeting. Which statement must be true?
+  CHOICES: ['Ravi created every opportunity to avoid chairing.', 'Whenever an opportunity to avoid chairing arose, Ravi took it.', 'Ravi chaired every meeting.', 'Ravi never attended any meeting.'] correct=2
+=== VIDEO solve-vr43-g003: kind=solution title='A chain of negatives'
+[1] Your question
+  BOARD: []
+  SCRIPT: Ravi never missed an opportunity to avoid chairing the meeting. Which statement must be true?
+[2] Put the message in plain English
+  BOARD: ['Whenever an opportunity to avoid chairing arose, Ravi took it.']
+  SCRIPT: “Never missed an opportunity” means he used each opportunity that arose. “Avoid chairing” concerns leading the meeting, not necessarily attending it. Picture the scene with the roles and the time fixed. If you shorten the sentence, leave its logical restriction attached to the same word. That gives us a compact version we can safely compare with the answers.
+[3] Keep each answer tied to the text
+  BOARD: ['Nested negation']
+  SCRIPT: “Ravi chaired every meeting.” fails because this conflicts with taking opportunities to avoid that role. “Ravi never attended any meeting.” fails because a person can attend without chairing. “Ravi created every opportunity to avoid chairing.” fails because using opportunities does not show that he created them. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'Whenever an opportunity to avoid chairing arose, Ravi took it.']
+  SCRIPT: The answer is choice 2: Whenever an opportunity to avoid chairing arose, Ravi took it.. “Never missed an opportunity” means he used each opportunity that arose. “Avoid chairing” concerns leading the meeting, not necessarily attending it.
+--- Q vr43-g004: Only the curator praised the new display. Which statement follows?
+  CHOICES: ['No one other than the curator praised the new display.', 'The curator praised no display except the new one.', 'The curator did nothing except praise the display.', 'No one other than the curator saw the display.'] correct=1
+=== VIDEO solve-vr43-g004: kind=solution title='What does “only” restrict?'
+[1] Your question
+  BOARD: []
+  SCRIPT: Only the curator praised the new display. Which statement follows?
+[2] Put the message in plain English
+  BOARD: ['No one other than the curator praised the new display.']
+  SCRIPT: Only restricts the subject: the curator is the sole person who praised this display. It does not limit everything the curator praised or did. Picture the scene with the roles and the time fixed. If you shorten the sentence, leave its logical restriction attached to the same word. That gives us a compact version we can safely compare with the answers.
+[3] Keep each answer tied to the text
+  BOARD: ['Only scope']
+  SCRIPT: “The curator praised no display except the new one.” fails because this moves the restriction from the person to the object. “The curator did nothing except praise the display.” fails because this changes the restriction to the type of action. “No one other than the curator saw the display.” fails because seeing and praising are different actions. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'No one other than the curator praised the new display.']
+  SCRIPT: The answer is choice 1: No one other than the curator praised the new display.. Only restricts the subject: the curator is the sole person who praised this display. It does not limit everything the curator praised or did.
+--- Q vr43-g005: Leah left the old workshop for a new one because, although its equipment was inferior, its schedule suited her better. Which statement must be true?
+  CHOICES: ['The new workshop was cheaper.', 'Leah regarded every feature of the old workshop as poor.', 'Leah considered the new workshop’s schedule more suitable.', 'Leah considered its equipment better.'] correct=3
+=== VIDEO solve-vr43-g005: kind=solution title='One advantage, one disadvantage'
+[1] Your question
+  BOARD: []
+  SCRIPT: Leah left the old workshop for a new one because, although its equipment was inferior, its schedule suited her better. Which statement must be true?
+[2] Put the message in plain English
+  BOARD: ['Leah considered the new workshop’s schedule more suitable.']
+  SCRIPT: The concession identifies inferior equipment at the new workshop, while the main reason for moving is its better-fitting schedule. Picture the scene with the roles and the time fixed. If you shorten the sentence, leave its logical restriction attached to the same word. That gives us a compact version we can safely compare with the answers.
+[3] Keep each answer tied to the text
+  BOARD: ['Trade-off']
+  SCRIPT: “Leah considered its equipment better.” fails because this reverses the stated equipment comparison. “The new workshop was cheaper.” fails because price is not mentioned. “Leah regarded every feature of the old workshop as poor.” fails because a move based on a trade-off is not a rejection of every old feature. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'Leah considered the new workshop’s schedule more suitable.']
+  SCRIPT: The answer is choice 3: Leah considered the new workshop’s schedule more suitable.. The concession identifies inferior equipment at the new workshop, while the main reason for moving is its better-fitting schedule.
+--- Q vr43-g006: If the strike ends on Monday, the pool will reopen on the following day. The strike did end on Monday. Which statement follows?
+  CHOICES: ['The pool could reopen only if the strike ended on Monday.', 'The pool will reopen on Tuesday.', 'The pool reopened on Monday.', 'The pool will remain closed on Tuesday.'] correct=2
+=== VIDEO solve-vr43-g006: kind=solution title='When does the condition apply?'
+[1] Your question
+  BOARD: []
+  SCRIPT: If the strike ends on Monday, the pool will reopen on the following day. The strike did end on Monday. Which statement follows?
+[2] Put the message in plain English
+  BOARD: ['The pool will reopen on Tuesday.']
+  SCRIPT: The stated condition is met. The following day after Monday is Tuesday, so the promised reopening follows. Picture the scene with the roles and the time fixed. If you shorten the sentence, leave its logical restriction attached to the same word. That gives us a compact version we can safely compare with the answers.
+[3] Keep each answer tied to the text
+  BOARD: ['Time and condition']
+  SCRIPT: “The pool reopened on Monday.” fails because the rule specifies the next day, not the same day. “The pool will remain closed on Tuesday.” fails because this contradicts the promised outcome. “The pool could reopen only if the strike ended on Monday.” fails because the one-way condition does not exclude other routes to reopening. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'The pool will reopen on Tuesday.']
+  SCRIPT: The answer is choice 2: The pool will reopen on Tuesday.. The stated condition is met. The following day after Monday is Tuesday, so the promised reopening follows.
+
+######## SECTION vr43-practice — Independent practice (practice)
+--- Q vr43-p001: Not every applicant submitted a portfolio. Which statement must be true?
+  CHOICES: ['No applicant submitted a portfolio.', 'Most applicants submitted portfolios.', 'Exactly one applicant submitted a portfolio.', 'At least one applicant did not submit a portfolio.'] correct=4
+--- Q vr43-p002: Nadia was no less cautious than Omar. Which interpretation is accurate?
+  CHOICES: ['Nadia was certainly more cautious than Omar.', 'Nadia was less cautious than Omar.', 'Neither person was cautious.', 'Nadia was at least as cautious as Omar.'] correct=4
+--- Q vr43-p003: The decision was neither hasty nor unanimous. What follows?
+  CHOICES: ['It was delayed until everyone agreed.', 'It was not hasty, and not everyone agreed with it.', 'It was hasty but everyone agreed.', 'Everyone opposed it.'] correct=2
+--- Q vr43-p004: Only visitors with reservations were admitted. Which statement must be true?
+  CHOICES: ['Every admitted person was a member of staff.', 'Every admitted visitor had a reservation.', 'Every visitor with a reservation was admitted.', 'No visitor had a reservation.'] correct=2
+--- Q vr43-p005: The reviewer did not deny that the novel was entertaining. Which statement is justified?
+  CHOICES: ['The reviewer denied that it was entertaining.', 'The reviewer read every other novel by the author.', 'The reviewer did not reject the claim that it was entertaining.', 'The reviewer enthusiastically praised the novel.'] correct=3
+--- Q vr43-p006: After the coach spoke to the captain, she revised the training plan. Without further context, what is unclear?
+  CHOICES: ['Whether the plan concerned training', 'Whether the coach or the captain revised the plan', 'Whether anyone revised the plan', 'Whether the conversation occurred before the revision'] correct=2
+--- Q vr43-p007: The new filter is more effective than the old one at removing dust, but less effective at removing odors. Which statement follows?
+  CHOICES: ['Both filters remove all odors.', 'The comparison depends on what is being removed.', 'The new filter is better in every respect.', 'The old filter removes no dust.'] correct=2
+--- Q vr43-p008: The editor refused to promise that the article would be published. What can be concluded?
+  CHOICES: ['The article was never published.', 'The editor disliked the article.', 'The editor did not make the requested promise.', 'The editor promised not to publish the article.'] correct=3
+--- Q vr43-p009: The museum will open unless the restoration is unfinished. Which statement is guaranteed by this rule?
+  CHOICES: ['The museum will open regardless of restoration.', 'If the restoration is finished, the museum will open.', 'If the restoration is unfinished, the museum cannot open.', 'The restoration is already finished.'] correct=2
+--- Q vr43-p010: Tomas regretted not accepting the invitation. Which statement must be true?
+  CHOICES: ['Tomas regretted receiving the invitation.', 'Tomas was never invited.', 'Tomas did not accept the invitation.', 'Tomas attended the event.'] correct=3
+--- Q vr43-p011: The report was not entirely inaccurate. Which statement follows?
+  CHOICES: ['Every statement in the report was accurate.', 'Most statements were accurate.', 'The report contained no information.', 'At least some of the report was accurate.'] correct=4
+--- Q vr43-p012: The assistant, unlike the manager, welcomed the delay. Which statement is supported?
+  CHOICES: ['The manager did not welcome the delay.', 'The manager caused the delay.', 'The assistant regretted the delay.', 'The delay benefited everyone.'] correct=1
+--- Q vr43-p013: The archaeologist dismissed the rumour without dismissing the witness’s observations. Which statement best paraphrases this?
+  CHOICES: ['She proved every observation correct.', 'She rejected the rumour but did not reject the observations.', 'She rejected both the rumour and the observations.', 'She accepted the rumour because of the observations.'] correct=2
+--- Q vr43-p014: At most one committee member abstained. Which situation is ruled out?
+  CHOICES: ['Every member cast a vote.', 'Two members abstained.', 'No member abstained.', 'One member abstained.'] correct=2
+--- Q vr43-p015: The pilot was the first to notice the crack, though not the first to report it. Which statement follows?
+  CHOICES: ['The pilot never reported it.', 'The pilot caused the crack.', 'Someone reported the crack before the pilot did.', 'Someone noticed the crack before the pilot did.'] correct=3
+--- Q vr43-p016: Mira praised the catalog more than the exhibition. Which statement must be true?
+  CHOICES: ['Mira gave the catalog more praise than she gave the exhibition.', 'Mira disliked the exhibition.', 'Mira praised nothing except the catalog.', 'The catalog was longer than the exhibition.'] correct=1
+--- Q vr43-p017: The council’s failure to reject the plan does not amount to approval. Which distinction is being made?
+  CHOICES: ['Every unrejected plan is automatically approved.', 'The plan can never be approved.', 'Withholding rejection and granting approval are different actions.', 'The council both approved and rejected the plan.'] correct=3
+--- Q vr43-p018: No sooner had the exhibition opened than complaints began. Which statement matches the timing?
+  CHOICES: ['Complaints ended before the opening.', 'The exhibition never opened.', 'The opening took place long after the complaints.', 'Complaints began immediately after the opening.'] correct=4
+--- Q vr43-p019: The director would rather cancel the tour than shorten it. What is expressed?
+  CHOICES: ['A promise that the tour will go ahead unchanged', 'A preference for cancellation over shortening', 'A report that the tour has already been canceled', 'A preference for a shorter tour over cancellation'] correct=2
+--- Q vr43-p020: The researcher stopped short of calling the evidence conclusive. Which interpretation is accurate?
+  CHOICES: ['The researcher declared the matter settled.', 'The researcher said there was no evidence.', 'The researcher refused to examine the evidence.', 'The researcher did not go as far as saying the evidence settled the matter.'] correct=4
+--- Q vr43-p021: Every trainee except Niko completed the exercise. Which statement must be true?
+  CHOICES: ['Niko did not complete the exercise.', 'No trainee completed it.', 'Niko was not a trainee.', 'Exactly one trainee completed it.'] correct=1
+--- Q vr43-p022: The proposal was accepted in principle, subject to a cost review. Which statement best captures its status?
+  CHOICES: ['Its cost had already been found acceptable.', 'It received preliminary approval with a remaining condition.', 'It was approved without any remaining condition.', 'It was permanently rejected.'] correct=2
+--- Q vr43-p023: A longer queue need not mean slower service. Which claim is rejected?
+  CHOICES: ['That queues can change length', 'That queue length alone guarantees a conclusion about service speed', 'That slower service can ever create a longer queue', 'That any queue exists'] correct=2
+--- Q vr43-p024: Sara found it difficult to resist correcting the error. Which statement must be true?
+  CHOICES: ['Sara certainly corrected it.', 'Sara certainly left it uncorrected.', 'Sara failed to notice it.', 'Resisting the urge to correct was difficult for Sara.'] correct=4
+--- Q vr43-p025: The researcher’s second explanation was less implausible than her first. Which statement follows?
+  CHOICES: ['Both explanations were impossible.', 'The first was more plausible.', 'The second explanation was judged more plausible than the first.', 'The second explanation was proved correct.'] correct=3
+--- Q vr43-p026: The clerk said that the package might have arrived before noon. Which statement is warranted?
+  CHOICES: ['The package certainly arrived after noon.', 'The clerk promised to deliver it before noon.', 'Arrival before noon was presented as a possibility.', 'The package certainly arrived before noon.'] correct=3
+--- Q vr43-p027: “Even the revised plan leaves a major problem unresolved,” said the engineer. What does even contribute here?
+  CHOICES: ['It shows that the engineer approved the revised plan without reservation.', 'It suggests that improvement might have been expected from the revision.', 'It proves that the original plan solved every problem.', 'It means all plans are identical.'] correct=2

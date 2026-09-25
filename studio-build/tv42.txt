@@ -1,0 +1,312 @@
+# Topic 42 Formal logic and deductions
+
+######## SECTION vr42-learn — Learn and try (learn)
+=== VIDEO vr-logic-condition-result: kind=lesson title='Deductions: condition → result'
+[1] Treat the rule as a promise
+  BOARD: ['Every blue badge is magnetic.', 'Blue badge → magnetic']
+  SCRIPT: Every blue badge is magnetic. Think of that as a promise about anything that meets the condition: if it is a blue badge, it must be magnetic. Blue badge goes on the left of the arrow, and magnetic goes on the right. These are the condition and the result. The arrow does not have to describe a cause or a sequence in time. Being a blue badge need not cause magnetism. It simply tells us which combination the rule allows. For this question, accept the rule as given even if an invented world behaves differently from the real one.
+[2] Condition present: result required
+  BOARD: ['Blue badge ✓ → magnetic ✓']
+  SCRIPT: If I show you a blue badge, the condition has been met. The promised result must follow: the badge is magnetic. We are not guessing from how most badges behave. We are applying a rule that says every blue badge. This first case is the straightforward direction of the arrow. When a longer problem gives several rules, look for a fact that starts one of the arrows. That fact lets you move forward. If the new result starts another arrow, you may be able to continue. We will build those chains in a moment, but every valid chain begins with this same small step.
+[3] Condition absent: the rule is silent
+  BOARD: ['Not a blue badge → undetermined', 'A red badge may still be magnetic.']
+  SCRIPT: Now I show you something that is not a blue badge. Does it have to be nonmagnetic? No. The rule made a promise about blue badges, and we have stepped outside that condition. A red badge might be magnetic too. The result is undetermined, which means the information allows more than one possibility. It does not mean the object has no definite properties in reality; it means this rule does not tell us which properties it has. This is one of the two common traps. Denying the condition does not let us deny the result. We should be able to imagine a non-blue magnetic badge without breaking the original rule.
+[4] Result present: the condition is not guaranteed
+  BOARD: ['Magnetic → undetermined', 'Many different objects could be magnetic.']
+  SCRIPT: Suppose we are told only that an object is magnetic. Must it be a blue badge? Again, no. The original promise did not say that blue badges are the only magnetic objects. A result can be shared by several conditions. A helpful everyday comparison is: every square has four sides, but not every four-sided shape is a square. In the invented badge world, a magnetic red badge is a perfectly good counterexample to the reverse claim. We use such a counterexample to show that a conclusion does not have to follow. We are not claiming the counterexample actually exists unless the question says it does.
+[5] Result absent: the condition is impossible
+  BOARD: ['Not magnetic → not a blue badge', 'Otherwise the promise would be broken.']
+  SCRIPT: Finally, an object is not magnetic. Could it be a blue badge? It cannot, because a blue badge must be magnetic. If we labeled this nonmagnetic object a blue badge, we would break the rule. This is the valid backward move: reverse the arrow and negate both sides. In plain English, if the promised result is missing, the condition cannot have been met. Do not remember this as merely ‘reverse the rule.’ Reversing without changing both sides gives the invalid case we just rejected. The meaning is the safest memory aid: a blue badge with no magnetism is the one forbidden combination.
+[6] The four cases together
+  BOARD: ['Condition yes → result yes', 'Condition no → no conclusion', 'Result yes → no conclusion', 'Result no → condition no']
+  SCRIPT: Here are the four cases in one place. Condition present: result required. Condition absent: no conclusion about the result. Result present: no conclusion about the condition. Result absent: condition ruled out. Instead of memorizing four unrelated lines, keep the promise in mind. The rule forbids condition yes with result no. Every other combination can occur. This gives us a second method: draw four small boxes for the two yes-or-no properties and cross out only that forbidden box. The two methods agree. Use arrows for quick chains and the boxes when you need to check whether a proposed counterexample is actually allowed.
+[7] Only points to a requirement
+  BOARD: ['Only trained staff may enter.', 'May enter → trained', 'Trained does not guarantee permission.']
+  SCRIPT: Only trained staff may enter. Ask: if someone may enter, what must be true of them? They must be trained. That puts permission to enter on the left and trained on the right. The phrase immediately following ‘only’ names the required group here. It is not automatically the condition on the left. A trained person might still lack a pass, so training alone does not guarantee permission. Rephrase the whole sentence as an if-then promise before drawing an arrow. This is especially useful with ‘only if’: the gate opens only if the code is correct means gate opens, therefore code correct. It does not by itself say every correct code opens the gate.
+[8] No and none exclude an overlap
+  BOARD: ['No silver tokens are square.', 'Silver → not square', 'Square → not silver']
+  SCRIPT: No silver tokens are square. Draw two circles that cannot overlap, or write silver implies not square. The valid reverse-and-negate version is square implies not silver. Notice that this does not say all tokens are silver or square. A round bronze token fits the rule perfectly well. The rule excludes one shared region; it does not describe the whole universe. Now consider ‘There is no blue badge that is not magnetic.’ The forbidden thing is a blue badge without magnetism, so this is another way of saying every blue badge is magnetic. Remove the double negative by identifying the combination being forbidden, not by crossing out every word ‘not’ you see.
+[9] If and only if gives two arrows
+  BOARD: ['Access if and only if approved', 'Access → approved', 'Approved → access']
+  SCRIPT: If and only if is a stronger statement than a one-way rule. It says each condition is enough for the other. If a file is accessible if and only if it has been approved, access implies approval and approval implies access. We can move in either direction because both directions were supplied. The same idea appears in wording such as ‘all approved files, and only those files, are accessible.’ Keep the word ‘only’: without it, we would have only one arrow. When a question asks whether a feature lets us decide a second feature completely, this two-way relationship is often what is needed.
+[10] Chain at the matching middle
+  BOARD: ['Courier → registered', 'Registered → carries a pass', 'Courier → carries a pass']
+  SCRIPT: All couriers are registered, and all registered people carry a pass. Registered is the result of the first rule and the condition of the second, so the arrows join. A courier must carry a pass. Compare that with courier implies registered and gardener implies registered. Those two arrows end at the same place. They do not tell us that couriers are gardeners. A shared result is not a bridge. Before linking two rules, check that you are leaving one arrow exactly where the next arrow starts. If a negative version would create the match, write the valid reverse-and-negate form first, then connect it.
+[11] Some gives you a real witness
+  BOARD: ['Some musicians are cyclists.', 'All cyclists wear helmets.', 'Some musicians wear helmets.']
+  SCRIPT: The word ‘some’ tells us that at least one example exists. Take that example with you through a rule. Some musicians are cyclists, and every cyclist wears a helmet. The musician who is a cyclist must therefore wear a helmet. We may conclude that some musicians wear helmets. We cannot conclude that all musicians do. Nor can we combine ‘some musicians are cyclists’ with ‘some cyclists are painters’ and assume it is the same cyclist. The two ‘some’ statements may refer to different people. Give the first witness a small dot or an imaginary name, then track that same witness rather than silently replacing it.
+[12] A universal rule does not supply an example
+  BOARD: ['All moon gardeners wear purple.', 'This alone does not establish a moon gardener.']
+  SCRIPT: A rule about all members of a group does not, by itself, tell us that the group has any members. ‘All moon gardeners wear purple’ may be a perfectly consistent rule even if there are no moon gardeners. This matters when an answer begins with ‘some.’ To establish that someone exists, look for a stated example or a statement such as ‘there are’ or ‘some.’ The ordinary fact that real humans exist should not quietly fill that gap in a made-up logic question. We are checking what follows from the information supplied. Once an example is supplied, use it confidently, but keep its properties attached to that one example.
+[13] Disprove a rule with one forbidden case
+  BOARD: ['Rule: all amber stones are smooth.', 'Counterexample: amber AND not smooth.']
+  SCRIPT: To contradict ‘all amber stones are smooth,’ we need one amber stone that is not smooth. A smooth stone of another color is irrelevant. An amber smooth stone follows the rule rather than contradicting it. This is the same forbidden combination from our four cases: condition present and result absent. If a question asks for one object that disproves two claims, write the forbidden combination for each claim and combine them. Check that your chosen object violates both, not merely one. A very short table with one row per claim can prevent a long, tangled sentence from taking over the problem.
+[14] Distinguish certainty from possibility
+  BOARD: ['Must be true: every allowed case', 'Could be true: at least one allowed case', 'Cannot be true: no allowed case']
+  SCRIPT: Before testing an answer, read the question’s demand carefully. A ‘must’ answer survives every allowed arrangement. A ‘could’ answer needs just one allowed example. A ‘cannot’ answer fails in every allowed example. These are different jobs. For a must question, one valid counterexample is enough to reject an option. For a could question, one working example is enough to accept it. We will use this habit again in rules and arrangements. Your active-reading note can be as small as circling MUST or CANNOT. That one mark is often more valuable than underlining every noun in the premises.
+--- Q vr42-g001: All sealed parcels are labeled. Which of the following must be true?
+  CHOICES: ['There is at least one sealed parcel.', 'Every unlabelled parcel is unsealed.', 'Every labeled parcel is sealed.', 'Every unsealed parcel is unlabelled.'] correct=2
+=== VIDEO solve-vr42-g001: kind=solution title='The four cases in a new setting'
+[1] Your question
+  BOARD: []
+  SCRIPT: All sealed parcels are labeled. Which of the following must be true?
+[2] Write the promises
+  BOARD: ['Sealed → labeled', 'Not labeled → not sealed']
+  SCRIPT: A sealed parcel without a label would break the rule. Therefore, an unlabelled parcel cannot be sealed. The rule permits labeled unsealed parcels and supplies no example of a sealed parcel. Read each arrow as an if-then promise. Keep every negative word attached to the property it changes. For an “only” statement, ask which property is required; for a statement beginning with “some,” keep track of the example whose existence is actually supplied.
+[3] Try to break the proposed inference
+  BOARD: ['Every unlabelled parcel is unsealed.']
+  SCRIPT: Every labeled parcel is sealed.: This reverses the arrow without negating both sides. Every unsealed parcel is unlabelled.: Unsealed parcels fall outside the condition and may still have labels. There is at least one sealed parcel.: A universal rule does not guarantee a member of its condition group. The useful test is whether an alternative can fail while all the given statements remain true. If it can, it is not guaranteed. If we are looking for an impossible case, reverse that test: check whether the proposed case itself breaks a given promise.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'Every unlabelled parcel is unsealed.']
+  SCRIPT: The answer is choice 2: Every unlabelled parcel is unsealed.. A sealed parcel without a label would break the rule. Therefore, an unlabelled parcel cannot be sealed. The rule permits labeled unsealed parcels and supplies no example of a sealed parcel.
+--- Q vr42-g002: Only registered members may borrow cameras. Everyone who borrows a camera pays a deposit. Some visitors borrow cameras. Which conclusion does not necessarily follow?
+  CHOICES: ['Every registered member is a visitor.', 'Some visitors are registered members.', 'Some visitors pay deposits.', 'Anyone who borrows a camera is registered.'] correct=1
+=== VIDEO solve-vr42-g002: kind=solution title='Only and a shared witness'
+[1] Your question
+  BOARD: []
+  SCRIPT: Only registered members may borrow cameras. Everyone who borrows a camera pays a deposit. Some visitors borrow cameras. Which conclusion does not necessarily follow?
+[2] Write the promises
+  BOARD: ['Borrow → registered', 'Borrow → deposit', 'Some visitors borrow']
+  SCRIPT: Borrowing requires registration and a deposit. The stated visitors who borrow cameras therefore have both properties. Nothing makes all registered members visitors. Read each arrow as an if-then promise. Keep every negative word attached to the property it changes. For an “only” statement, ask which property is required; for a statement beginning with “some,” keep track of the example whose existence is actually supplied.
+[3] Try to break the proposed inference
+  BOARD: ['Every registered member is a visitor.']
+  SCRIPT: Some visitors are registered members.: The existing visitor borrowers supply the required examples. Some visitors pay deposits.: The same visitor borrowers must pay deposits. Anyone who borrows a camera is registered.: This is exactly what “only registered members may borrow” means. The useful test is whether an alternative can fail while all the given statements remain true. If it can, it is not guaranteed. If we are looking for an impossible case, reverse that test: check whether the proposed case itself breaks a given promise.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'Every registered member is a visitor.']
+  SCRIPT: The answer is choice 1: Every registered member is a visitor.. Borrowing requires registration and a deposit. The stated visitors who borrow cameras therefore have both properties. Nothing makes all registered members visitors.
+--- Q vr42-g003: Every triangular tile, and only triangular tiles, is stamped. Which of the following must be true?
+  CHOICES: ['Every nontriangular tile is stamped.', 'Some triangular tiles are unstamped.', 'Every stamped tile is nontriangular.', 'Every unstamped tile is nontriangular.'] correct=4
+=== VIDEO solve-vr42-g003: kind=solution title='A two-way description'
+[1] Your question
+  BOARD: []
+  SCRIPT: Every triangular tile, and only triangular tiles, is stamped. Which of the following must be true?
+[2] Write the promises
+  BOARD: ['Triangular ↔ stamped', 'Not stamped → not triangular']
+  SCRIPT: Triangular and stamped are equivalent here. A triangular tile must be stamped, and a stamped tile must be triangular. Negating either property therefore excludes the other. Read each arrow as an if-then promise. Keep every negative word attached to the property it changes. For an “only” statement, ask which property is required; for a statement beginning with “some,” keep track of the example whose existence is actually supplied.
+[3] Try to break the proposed inference
+  BOARD: ['Every unstamped tile is nontriangular.']
+  SCRIPT: Every nontriangular tile is stamped.: Only triangular tiles are stamped, so a nontriangular stamped tile is excluded. Some triangular tiles are unstamped.: This violates the triangular-to-stamped direction. Every stamped tile is nontriangular.: This contradicts the stamped-to-triangular direction. The useful test is whether an alternative can fail while all the given statements remain true. If it can, it is not guaranteed. If we are looking for an impossible case, reverse that test: check whether the proposed case itself breaks a given promise.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'Every unstamped tile is nontriangular.']
+  SCRIPT: The answer is choice 4: Every unstamped tile is nontriangular.. Triangular and stamped are equivalent here. A triangular tile must be stamped, and a stamped tile must be triangular. Negating either property therefore excludes the other.
+--- Q vr42-g004: No gliders in the club have engines. Which statement follows from this information alone?
+  CHOICES: ['The club owns no aircraft.', 'Any club aircraft with an engine is not a glider.', 'The club owns at least one glider.', 'Every club aircraft without an engine is a glider.'] correct=2
+=== VIDEO solve-vr42-g004: kind=solution title='No overlap does not mean existence'
+[1] Your question
+  BOARD: []
+  SCRIPT: No gliders in the club have engines. Which statement follows from this information alone?
+[2] Write the promises
+  BOARD: ['Glider → no engine', 'Engine → not glider']
+  SCRIPT: The rule excludes the overlap between club gliders and aircraft with engines. It does not establish that either group has a member or that all engine-free aircraft are gliders. Read each arrow as an if-then promise. Keep every negative word attached to the property it changes. For an “only” statement, ask which property is required; for a statement beginning with “some,” keep track of the example whose existence is actually supplied.
+[3] Try to break the proposed inference
+  BOARD: ['Any club aircraft with an engine is not a glider.']
+  SCRIPT: The club owns at least one glider.: The existence of a glider was not stated. Every club aircraft without an engine is a glider.: Other types of engine-free aircraft are not excluded. The club owns no aircraft.: A restriction on aircraft types does not mean the club owns none. The useful test is whether an alternative can fail while all the given statements remain true. If it can, it is not guaranteed. If we are looking for an impossible case, reverse that test: check whether the proposed case itself breaks a given promise.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'Any club aircraft with an engine is not a glider.']
+  SCRIPT: The answer is choice 2: Any club aircraft with an engine is not a glider.. The rule excludes the overlap between club gliders and aircraft with engines. It does not establish that either group has a member or that all engine-free aircraft are gliders.
+--- Q vr42-g005: A curator claims: “Every sculpture displayed outdoors is made of stone.” Which discovery would refute the claim?
+  CHOICES: ['An indoor sculpture made of stone', 'An outdoor sculpture made of stone', 'An outdoor sculpture made of metal', 'An indoor sculpture made of metal'] correct=3
+=== VIDEO solve-vr42-g005: kind=solution title='One counterexample'
+[1] Your question
+  BOARD: []
+  SCRIPT: A curator claims: “Every sculpture displayed outdoors is made of stone.” Which discovery would refute the claim?
+[2] Write the promises
+  BOARD: ['Outdoors → stone', 'Outdoors + not stone = contradiction']
+  SCRIPT: The claim applies to outdoor sculptures and requires stone. An outdoor metal sculpture meets the condition but lacks the required material, so it is a counterexample. Read each arrow as an if-then promise. Keep every negative word attached to the property it changes. For an “only” statement, ask which property is required; for a statement beginning with “some,” keep track of the example whose existence is actually supplied.
+[3] Try to break the proposed inference
+  BOARD: ['An outdoor sculpture made of metal']
+  SCRIPT: An indoor sculpture made of metal: An indoor sculpture is outside the condition. An indoor sculpture made of stone: This is also outside the condition. An outdoor sculpture made of stone: This meets the claim rather than violating it. The useful test is whether an alternative can fail while all the given statements remain true. If it can, it is not guaranteed. If we are looking for an impossible case, reverse that test: check whether the proposed case itself breaks a given promise.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'An outdoor sculpture made of metal']
+  SCRIPT: The answer is choice 3: An outdoor sculpture made of metal. The claim applies to outdoor sculptures and requires stone. An outdoor metal sculpture meets the condition but lacks the required material, so it is a counterexample.
+--- Q vr42-g006: Nora claims that only brass keys are heavy and that every red key is small. Which key would show that both claims are false?
+  CHOICES: ['A heavy, large, blue brass key', 'A heavy, large, red steel key', 'A light, large, red brass key', 'A heavy, small, blue steel key'] correct=2
+=== VIDEO solve-vr42-g006: kind=solution title='Refuting two claims at once'
+[1] Your question
+  BOARD: []
+  SCRIPT: Nora claims that only brass keys are heavy and that every red key is small. Which key would show that both claims are false?
+[2] Write the promises
+  BOARD: ['Heavy → brass', 'Red → small', 'Need: heavy + not brass + red + not small']
+  SCRIPT: To refute the first claim, we need a heavy key that is not brass. To refute the second, we need a red key that is not small. The heavy, large, red steel key supplies both counterexamples in one object. Read each arrow as an if-then promise. Keep every negative word attached to the property it changes. For an “only” statement, ask which property is required; for a statement beginning with “some,” keep track of the example whose existence is actually supplied.
+[3] Try to break the proposed inference
+  BOARD: ['A heavy, large, red steel key']
+  SCRIPT: A light, large, red brass key: It refutes the red-to-small claim but is not a heavy nonbrass key. A heavy, small, blue steel key: It refutes the heavy-to-brass claim but is not red, so it does not test the other rule. A heavy, large, blue brass key: It is neither a heavy nonbrass key nor a red nonsmall key. The useful test is whether an alternative can fail while all the given statements remain true. If it can, it is not guaranteed. If we are looking for an impossible case, reverse that test: check whether the proposed case itself breaks a given promise.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'A heavy, large, red steel key']
+  SCRIPT: The answer is choice 2: A heavy, large, red steel key. To refute the first claim, we need a heavy key that is not brass. To refute the second, we need a red key that is not small. The heavy, large, red steel key supplies both counterexamples in one object.
+--- Q vr42-g007: All night guards carry radios. No one who carries a radio works alone. Which statement must be true?
+  CHOICES: ['Everyone who does not work alone is a night guard.', 'No one other than a night guard carries a radio.', 'Every person who works alone is a night guard.', 'No night guard works alone.'] correct=4
+=== VIDEO solve-vr42-g007: kind=solution title='Joining a negative chain'
+[1] Your question
+  BOARD: []
+  SCRIPT: All night guards carry radios. No one who carries a radio works alone. Which statement must be true?
+[2] Write the promises
+  BOARD: ['Night guard → radio → not alone']
+  SCRIPT: A night guard must carry a radio, and carrying a radio rules out working alone. The arrows connect through the same middle property. Read each arrow as an if-then promise. Keep every negative word attached to the property it changes. For an “only” statement, ask which property is required; for a statement beginning with “some,” keep track of the example whose existence is actually supplied.
+[3] Try to break the proposed inference
+  BOARD: ['No night guard works alone.']
+  SCRIPT: Everyone who does not work alone is a night guard.: Many other people may also work with others. No one other than a night guard carries a radio.: The first rule does not say that only guards carry radios. Every person who works alone is a night guard.: Working alone rules out carrying a radio and therefore rules out being a night guard. The useful test is whether an alternative can fail while all the given statements remain true. If it can, it is not guaranteed. If we are looking for an impossible case, reverse that test: check whether the proposed case itself breaks a given promise.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'No night guard works alone.']
+  SCRIPT: The answer is choice 4: No night guard works alone.. A night guard must carry a radio, and carrying a radio rules out working alone. The arrows connect through the same middle property.
+--- Q vr42-g008: All harpists read music. All conductors read music. Which situation is compatible with both statements?
+  CHOICES: ['A harpist and conductor who cannot read music', 'A conductor who is not a harpist', 'A harpist who cannot read music', 'A conductor who cannot read music'] correct=2
+=== VIDEO solve-vr42-g008: kind=solution title='A shared result is not a chain'
+[1] Your question
+  BOARD: []
+  SCRIPT: All harpists read music. All conductors read music. Which situation is compatible with both statements?
+[2] Write the promises
+  BOARD: ['Harpist → reads music', 'Conductor → reads music', 'Shared result does not link the groups']
+  SCRIPT: The two groups share a required ability, but neither group is said to contain the other. A conductor who reads music and is not a harpist satisfies both rules. Read each arrow as an if-then promise. Keep every negative word attached to the property it changes. For an “only” statement, ask which property is required; for a statement beginning with “some,” keep track of the example whose existence is actually supplied.
+[3] Try to break the proposed inference
+  BOARD: ['A conductor who is not a harpist']
+  SCRIPT: A harpist who cannot read music: Every harpist is required to read music. A conductor who cannot read music: Every conductor is required to read music. A harpist and conductor who cannot read music: This person violates both requirements. The useful test is whether an alternative can fail while all the given statements remain true. If it can, it is not guaranteed. If we are looking for an impossible case, reverse that test: check whether the proposed case itself breaks a given promise.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'A conductor who is not a harpist']
+  SCRIPT: The answer is choice 2: A conductor who is not a harpist. The two groups share a required ability, but neither group is said to contain the other. A conductor who reads music and is not a harpist satisfies both rules.
+--- Q vr42-g009: All bakers wake early. Some bakers are cyclists. Which added statement would guarantee that some early risers are painters?
+  CHOICES: ['All painters are cyclists.', 'All painters wake early.', 'Some cyclists are painters.', 'All cyclists are painters.'] correct=4
+=== VIDEO solve-vr42-g009: kind=solution title='Add the missing bridge'
+[1] Your question
+  BOARD: []
+  SCRIPT: All bakers wake early. Some bakers are cyclists. Which added statement would guarantee that some early risers are painters?
+[2] Write the promises
+  BOARD: ['A baker exists who cycles', 'Baker → early', 'Cyclist → painter']
+  SCRIPT: We already have a particular baker who cycles and wakes early. If all cyclists are painters, that same person must also paint. The final “some” therefore has a witness. Read each arrow as an if-then promise. Keep every negative word attached to the property it changes. For an “only” statement, ask which property is required; for a statement beginning with “some,” keep track of the example whose existence is actually supplied.
+[3] Try to break the proposed inference
+  BOARD: ['All cyclists are painters.']
+  SCRIPT: All painters are cyclists.: This does not turn the known cycling baker into a painter. All painters wake early.: It connects painters with early rising but does not establish that any painter exists. Some cyclists are painters.: The cycling painter might be different from the cycling baker. The useful test is whether an alternative can fail while all the given statements remain true. If it can, it is not guaranteed. If we are looking for an impossible case, reverse that test: check whether the proposed case itself breaks a given promise.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'All cyclists are painters.']
+  SCRIPT: The answer is choice 4: All cyclists are painters.. We already have a particular baker who cycles and wakes early. If all cyclists are painters, that same person must also paint. The final “some” therefore has a witness.
+--- Q vr42-g010: Statement A: No archivist is careless. Statement B: Everyone who is not careless is an archivist. The conclusion “Any careless person is not an archivist” follows —
+  CHOICES: ['from B alone, but not from A alone', 'from each statement separately', 'only from A and B together', 'from A alone, but not from B alone'] correct=4
+=== VIDEO solve-vr42-g010: kind=solution title='Which premise supplies the conclusion?'
+[1] Your question
+  BOARD: []
+  SCRIPT: Statement A: No archivist is careless. Statement B: Everyone who is not careless is an archivist. The conclusion “Any careless person is not an archivist” follows —
+[2] Write the promises
+  BOARD: ['A: archivist → not careless', 'B: not careless → archivist', 'Conclusion: careless → not archivist']
+  SCRIPT: A excludes careless archivists, so careless implies not archivist. B says not careless implies archivist; it still permits careless archivists and therefore does not give the conclusion. Read each arrow as an if-then promise. Keep every negative word attached to the property it changes. For an “only” statement, ask which property is required; for a statement beginning with “some,” keep track of the example whose existence is actually supplied.
+[3] Try to break the proposed inference
+  BOARD: ['from A alone, but not from B alone']
+  SCRIPT: from B alone, but not from A alone: This assigns the valid inference to the wrong statement. from each statement separately: B permits a careless archivist. only from A and B together: A already gives the conclusion without using B. The useful test is whether an alternative can fail while all the given statements remain true. If it can, it is not guaranteed. If we are looking for an impossible case, reverse that test: check whether the proposed case itself breaks a given promise.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'from A alone, but not from B alone']
+  SCRIPT: The answer is choice 4: from A alone, but not from B alone. A excludes careless archivists, so careless implies not archivist. B says not careless implies archivist; it still permits careless archivists and therefore does not give the conclusion.
+--- Q vr42-g011: Iris consults only Owen, and does consult him. Felix knows every person except the people Iris consults. Vera trusts every person except the people Felix knows. Which statement must be true?
+  CHOICES: ['Vera trusts Owen and no one else.', 'Vera trusts everyone except Owen.', 'Vera trusts no one.', 'Vera trusts everyone.'] correct=1
+=== VIDEO solve-vr42-g011: kind=solution title='Exceptions through two layers'
+[1] Your question
+  BOARD: []
+  SCRIPT: Iris consults only Owen, and does consult him. Felix knows every person except the people Iris consults. Vera trusts every person except the people Felix knows. Which statement must be true?
+[2] Write the promises
+  BOARD: ['Iris consults: Owen', 'Felix knows: everyone except Owen', 'Vera trusts: Owen only']
+  SCRIPT: Iris consults exactly Owen. Felix therefore knows everyone except Owen. Vera excludes exactly those people Felix knows, leaving Owen as the only person she trusts. Read each arrow as an if-then promise. Keep every negative word attached to the property it changes. For an “only” statement, ask which property is required; for a statement beginning with “some,” keep track of the example whose existence is actually supplied.
+[3] Try to break the proposed inference
+  BOARD: ['Vera trusts Owen and no one else.']
+  SCRIPT: Vera trusts everyone except Owen.: This is Felix’s set of acquaintances, not Vera’s set of trusted people. Vera trusts no one.: Owen survives both exclusions and is trusted. Vera trusts everyone.: Everyone Felix knows is excluded from Vera’s trust. The useful test is whether an alternative can fail while all the given statements remain true. If it can, it is not guaranteed. If we are looking for an impossible case, reverse that test: check whether the proposed case itself breaks a given promise.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'Vera trusts Owen and no one else.']
+  SCRIPT: The answer is choice 1: Vera trusts Owen and no one else.. Iris consults exactly Owen. Felix therefore knows everyone except Owen. Vera excludes exactly those people Felix knows, leaving Owen as the only person she trusts.
+--- Q vr42-g012: Every ranger is either patient or daring, but not both. All islanders are quiet. Which added rule would guarantee that no islander is a ranger?
+  CHOICES: ['Everyone who is patient and daring is quiet.', 'Every nonranger is quiet.', 'Every patient islander is quiet.', 'Everyone who is quiet is both patient and daring.'] correct=4
+=== VIDEO solve-vr42-g012: kind=solution title='Exclusive either-or'
+[1] Your question
+  BOARD: []
+  SCRIPT: Every ranger is either patient or daring, but not both. All islanders are quiet. Which added rule would guarantee that no islander is a ranger?
+[2] Write the promises
+  BOARD: ['Islander → quiet', 'Quiet → patient AND daring', 'Ranger → exactly one']
+  SCRIPT: An islander is quiet. Under the added rule, that islander has both properties. Rangers are forbidden to have both, so the islander cannot be a ranger. Read each arrow as an if-then promise. Keep every negative word attached to the property it changes. For an “only” statement, ask which property is required; for a statement beginning with “some,” keep track of the example whose existence is actually supplied.
+[3] Try to break the proposed inference
+  BOARD: ['Everyone who is quiet is both patient and daring.']
+  SCRIPT: Everyone who is patient and daring is quiet.: This points toward quietness and does not give quiet islanders both properties. Every nonranger is quiet.: This reverses the direction needed to classify islanders. Every patient islander is quiet.: Quietness was already given and does not create an incompatibility. The useful test is whether an alternative can fail while all the given statements remain true. If it can, it is not guaranteed. If we are looking for an impossible case, reverse that test: check whether the proposed case itself breaks a given promise.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'Everyone who is quiet is both patient and daring.']
+  SCRIPT: The answer is choice 4: Everyone who is quiet is both patient and daring.. An islander is quiet. Under the added rule, that islander has both properties. Rangers are forbidden to have both, so the islander cannot be a ranger.
+--- Q vr42-g013: Every round token, and only round tokens, is blue. Every token that is not round is rough. Which added rule would allow its color alone to determine whether any token is valuable?
+  CHOICES: ['Every valuable token is rough.', 'Every rough token is valuable.', 'Every round token is valuable.', 'A token is valuable if and only if it is blue.'] correct=4
+=== VIDEO solve-vr42-g013: kind=solution title='Knowing one feature completely'
+[1] Your question
+  BOARD: []
+  SCRIPT: Every round token, and only round tokens, is blue. Every token that is not round is rough. Which added rule would allow its color alone to determine whether any token is valuable?
+[2] Write the promises
+  BOARD: ['Blue ↔ round', 'Need: color settles both yes and no', 'Valuable ↔ blue']
+  SCRIPT: The two-way added rule classifies both blue and nonblue tokens: blue tokens are valuable, and nonblue tokens are not. One-way rules can leave at least one color group unresolved. Read each arrow as an if-then promise. Keep every negative word attached to the property it changes. For an “only” statement, ask which property is required; for a statement beginning with “some,” keep track of the example whose existence is actually supplied.
+[3] Try to break the proposed inference
+  BOARD: ['A token is valuable if and only if it is blue.']
+  SCRIPT: Every valuable token is rough.: A rough token may or may not be valuable under this rule. Every rough token is valuable.: This can settle nonround rough tokens but leave blue tokens unresolved. Every round token is valuable.: This settles round blue tokens but leaves nonblue tokens unresolved. The useful test is whether an alternative can fail while all the given statements remain true. If it can, it is not guaranteed. If we are looking for an impossible case, reverse that test: check whether the proposed case itself breaks a given promise.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'A token is valuable if and only if it is blue.']
+  SCRIPT: The answer is choice 4: A token is valuable if and only if it is blue.. The two-way added rule classifies both blue and nonblue tokens: blue tokens are valuable, and nonblue tokens are not. One-way rules can leave at least one color group unresolved.
+--- Q vr42-g014: A: All divers are calm. B: All divers carry ropes. C: All calm people carry ropes. Which statement is correct?
+  CHOICES: ['A follows from B and C together.', 'C follows from A and B together.', 'None of the statements follows from the other two.', 'B follows from A and C together.'] correct=4
+=== VIDEO solve-vr42-g014: kind=solution title='Which claim follows from the other two?'
+[1] Your question
+  BOARD: []
+  SCRIPT: A: All divers are calm. B: All divers carry ropes. C: All calm people carry ropes. Which statement is correct?
+[2] Write the promises
+  BOARD: ['Diver → calm → rope']
+  SCRIPT: A takes a diver to calm, and C takes calm to carrying a rope. Together they give B. The other combinations have a shared result or shared starting group without covering all calm people. Read each arrow as an if-then promise. Keep every negative word attached to the property it changes. For an “only” statement, ask which property is required; for a statement beginning with “some,” keep track of the example whose existence is actually supplied.
+[3] Try to break the proposed inference
+  BOARD: ['B follows from A and C together.']
+  SCRIPT: A follows from B and C together.: Carrying a rope does not guarantee calmness. C follows from A and B together.: A and B concern divers and leave calm nondivers unrestricted. None of the statements follows from the other two.: A valid diver-to-calm-to-rope chain does yield B. The useful test is whether an alternative can fail while all the given statements remain true. If it can, it is not guaranteed. If we are looking for an impossible case, reverse that test: check whether the proposed case itself breaks a given promise.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'B follows from A and C together.']
+  SCRIPT: The answer is choice 4: B follows from A and C together.. A takes a diver to calm, and C takes calm to carrying a rope. Together they give B. The other combinations have a shared result or shared starting group without covering all calm people.
+
+######## SECTION vr42-practice — Independent practice (practice)
+--- Q vr42-p001: All bronze medals are engraved. Which statement must be true?
+  CHOICES: ['No unengraved medal is bronze.', 'All engraved medals are bronze.', 'No nonbronze medal is engraved.', 'At least one medal is bronze.'] correct=1
+--- Q vr42-p002: Only residents hold garden keys. Maya holds a garden key. Which statement follows?
+  CHOICES: ['No visitor knows Maya.', 'Maya is a resident.', 'Every resident holds a garden key.', 'Maya owns the garden.'] correct=2
+--- Q vr42-p003: No polished stone is porous. Which stone is impossible under this rule?
+  CHOICES: ['A polished, nonporous stone', 'An unpolished, porous stone', 'An unpolished, nonporous stone', 'A polished, porous stone'] correct=4
+--- Q vr42-p004: All red folders are locked. A particular folder is locked. What follows?
+  CHOICES: ['It cannot be red.', 'All folders are locked.', 'Its color cannot be determined from this information.', 'It must be red.'] correct=3
+--- Q vr42-p005: Every licensed pilot has passed a test. Eva is not a licensed pilot. Which statement must be true?
+  CHOICES: ['Eva has passed the test.', 'No one has passed the test.', 'Whether Eva has passed the test is undetermined.', 'Eva has failed the test.'] correct=3
+--- Q vr42-p006: All festival performers wear badges. All badge wearers may enter the lounge. Which statement must be true?
+  CHOICES: ['Only performers may enter the lounge.', 'All badge wearers are performers.', 'Anyone outside the lounge lacks a badge.', 'All festival performers may enter the lounge.'] correct=4
+--- Q vr42-p007: Some translators are musicians. Every musician practices daily. Which conclusion follows?
+  CHOICES: ['Some translators practice daily.', 'All translators practice daily.', 'All daily practicers are translators.', 'Some translators are not musicians.'] correct=1
+--- Q vr42-p008: All amber cubes are heavy. Which observation refutes the claim?
+  CHOICES: ['A heavy amber cube', 'A heavy green cube', 'A light green cube', 'A light amber cube'] correct=4
+--- Q vr42-p009: A room is available if and only if its light is green. The light is not green. Which statement follows?
+  CHOICES: ['No rooms are available.', 'The room is not available.', 'The room is available.', 'The light must be red.'] correct=2
+--- Q vr42-p010: No poet in the club is impatient. Some club poets are teachers. Which statement follows?
+  CHOICES: ['All teachers are patient club poets.', 'No teacher is impatient.', 'There are impatient club poets.', 'Some teachers are not impatient.'] correct=4
+--- Q vr42-p011: Every ceramic cup is glazed. Every glazed object is waterproof. Which statement must be true?
+  CHOICES: ['A nonwaterproof object cannot be a ceramic cup.', 'Every waterproof object is a cup.', 'No glazed object is ceramic.', 'Every cup is ceramic.'] correct=1
+--- Q vr42-p012: All astronomers in a group use notebooks. All botanists in the group use notebooks. Which statement is not justified?
+  CHOICES: ['A botanist in the group uses a notebook.', 'A group member without a notebook is not an astronomer.', 'Every astronomer is a botanist.', 'An astronomer in the group uses a notebook.'] correct=3
+--- Q vr42-p013: Some silver rings are engraved. Some engraved rings are old. Which statement must be true?
+  CHOICES: ['No silver ring is old.', 'At least one engraved ring exists.', 'Some silver rings are old.', 'All engraved rings are silver.'] correct=2
+--- Q vr42-p014: Only waterproof watches may be used in the pool. Which is an equivalent rule?
+  CHOICES: ['Any watch permitted in the pool is waterproof.', 'Every waterproof watch is permitted in the pool.', 'No waterproof watch is permitted in the pool.', 'Every watch is either waterproof or permitted in the pool, but not both.'] correct=1
+--- Q vr42-p015: All blue tickets are valid, and no valid ticket is torn. Which ticket is impossible?
+  CHOICES: ['A nonblue, untorn ticket', 'A blue, torn ticket', 'A valid, nonblue ticket', 'An invalid, torn ticket'] correct=2
+--- Q vr42-p016: A box contains only wooden toys. It contains at least one toy. Which conclusion must be true?
+  CHOICES: ['At least one wooden toy is in the box.', 'Every wooden toy is in the box.', 'There is exactly one toy in the box.', 'No wooden object exists outside the box.'] correct=1
+--- Q vr42-p017: All orchard workers wear hats. Some hat wearers are visitors. Which conclusion does not necessarily follow?
+  CHOICES: ['At least one visitor wears a hat.', 'Anyone without a hat is not an orchard worker.', 'Some orchard workers are visitors.', 'All orchard workers are hat wearers.'] correct=3
+--- Q vr42-p018: No item is both fragile and stackable. A particular item is stackable. Which statement follows?
+  CHOICES: ['Every nonfragile item is stackable.', 'It is not fragile.', 'It is fragile.', 'It is made of metal.'] correct=2
+--- Q vr42-p019: All red kites have tails. Only large kites have tails. Which statement follows?
+  CHOICES: ['No red kite is large.', 'All red kites are large.', 'All large kites are red.', 'All large kites have tails.'] correct=2
+--- Q vr42-p020: A club rule says every mentor is trained. Which addition guarantees that some trained people are mentors?
+  CHOICES: ['Only trained people may mentor.', 'There are people who are not mentors.', 'At least one mentor belongs to the club.', 'Every trained person is eligible to join.'] correct=3
+--- Q vr42-p021: Only oval stones are striped, and every green stone is striped. Which statement must be true?
+  CHOICES: ['Every oval stone is green.', 'No oval stone is striped.', 'Every striped stone is green.', 'Every green stone is oval.'] correct=4
+--- Q vr42-p022: A gardener claims that all flowering plants in a bed are fragrant and all tall plants in that bed are flowering. Which plant disproves both claims?
+  CHOICES: ['A short, flowering, fragrant plant disproves both.', 'A tall, nonflowering, nonfragrant plant disproves both.', 'No single plant can disprove both claims.', 'A tall, flowering, nonfragrant plant disproves both.'] correct=3
+--- Q vr42-p023: Every eligible applicant is interviewed. Every interviewed applicant is either accepted or placed on a waiting list, but not both. Which statement must be true?
+  CHOICES: ['Every eligible applicant is accepted.', 'Every person on the waiting list is eligible.', 'No eligible applicant is on the waiting list.', 'No eligible applicant is both accepted and on the waiting list.'] correct=4
+--- Q vr42-p024: Some cyclists are gardeners. No gardener works indoors. Which addition guarantees that some cyclists are musicians?
+  CHOICES: ['Every gardener is a musician.', 'Every musician is a gardener.', 'Some indoor workers are musicians.', 'Every musician is a cyclist.'] correct=1
+--- Q vr42-p025: All reserved seats are numbered. A seat is usable if and only if it is numbered. Which statement must be true?
+  CHOICES: ['Every reserved seat is usable.', 'Every usable seat is reserved.', 'No unreserved seat is usable.', 'Every seat is reserved.'] correct=1
+--- Q vr42-p026: No apprentice supervises a manager. Every manager supervises at least one apprentice. Which statement must be true?
+  CHOICES: ['Every apprentice supervises a manager.', 'At least one manager necessarily exists.', 'No manager supervises anyone.', 'If a manager exists, at least one apprentice exists.'] correct=4
+--- Q vr42-p027: Every violet flag is triangular. Every triangular flag is folded. Which added rule would make violet and folded equivalent?
+  CHOICES: ['Some folded flags are violet.', 'Every folded flag is violet.', 'Every violet flag is folded.', 'Every violet flag is triangular.'] correct=2

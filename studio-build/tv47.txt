@@ -1,0 +1,159 @@
+# Topic 47 Scientific reasoning
+
+######## SECTION vr47-learn — Learn and try (learn)
+=== VIDEO vr-science-method: kind=lesson title='Scientific reasoning: what did the comparison show?'
+[1] Five things to keep separate
+  BOARD: ['Question · hypothesis · design · result · conclusion']
+  SCRIPT: Scientific questions in this course are reading and reasoning questions. You do not need to arrive with specialist knowledge of the invented plants or devices in an example. Keep five things separate. The question asks what we want to know. The hypothesis proposes an explanation or predicts a relationship. The design describes how we compare cases. The result is what was observed. The conclusion says what the researcher thinks the result supports. A mechanism is a further account of how an effect occurs. Mixing these roles can make a very ordinary paragraph feel much harder than it is.
+[2] What changes, and what is measured?
+  BOARD: ['Change: amount of shade', 'Measure: seedling growth', 'Keep other relevant conditions comparable.']
+  SCRIPT: Suppose a hypothetical study asks whether shade changes seedling growth. The amount of shade is the factor being changed. Growth is the outcome being measured. Put an arrow from the proposed influence to the outcome, but remember that it is still a hypothesis until we examine evidence. If shaded plants also receive more water, the comparison changes two things at once. A difference in growth would then be difficult to attribute specifically to shade. This is why we need comparable conditions. We want a design that makes the proposed influence easier to separate from other plausible influences.
+[3] A control can be zero or another level
+  BOARD: ['No added shade versus shade', 'Light shade versus heavy shade', 'The comparison should answer the actual question.']
+  SCRIPT: A control group does not always mean doing nothing at all. To test whether added shade matters, we might compare no added shade with some shade. To compare two amounts, we might use light shade and heavy shade. Choose the comparison that answers the question. If we want to know whether a new training program is better than the usual program, comparing it only with no training can miss the relevant difference. Both groups should receive the other important parts of the experience in a comparable way. Otherwise, attention, practice time or equipment might explain the result.
+[4] Random assignment helps; it is not magic
+  BOARD: ['Random assignment reduces systematic selection.', 'Larger groups help balance chance differences.', 'Check what else changed after assignment.']
+  SCRIPT: Random assignment makes it less likely that one group starts with systematically different motivation, experience or ability. It does not guarantee that two small groups are perfectly identical. Nor does it prevent a later difference if one group also gets extra time or different instructions. So do not treat the word ‘random’ as an automatic answer to every design problem. Read what the groups actually received and what was measured. A fair comparison is an argument about which rival explanations have been reduced, not a decorative label attached to an experiment.
+[5] Support does not mean proof
+  BOARD: ['A predicted result supports a hypothesis.', 'A rival may predict the same result.', 'One study has limits.']
+  SCRIPT: If a result matches a prediction, it can support the hypothesis. It does not automatically prove that the hypothesis is the only correct explanation. Another account may predict the same result. If a result fails to match a precise prediction, it creates a problem for that account, but we should also ask whether the relevant conditions were actually present and the measurement worked. For exam questions, use the facts supplied rather than inventing endless possible errors. The main correction to keep in mind is simple: evidence changes the strength of a claim; a favorable finding is not automatically a final proof.
+[6] A useful test separates the rivals
+  BOARD: ['Account A predicts improvement in both groups.', 'Account B predicts improvement in only one.', 'Compare the place where the predictions differ.']
+  SCRIPT: Suppose one explanation says an exercise helps because of the extra practice time. Another says the particular kind of exercise matters. Give two groups equal extra practice time with different exercises. Now the explanations make different predictions. Testing two conditions in which both accounts predict the same thing may add data without settling the dispute. Write a tiny prediction table if needed. Under account A, what should happen? Under account B, what should happen? The best comparison is often the one where those rows separate, not the one with the most elaborate equipment.
+[7] The same result can need a different explanation
+  BOARD: ['More output may mean faster work.', 'Or more workers, easier tasks, longer hours.', 'Check the unit being compared.']
+  SCRIPT: When a study reports an increase, ask increase in what unit. Total output, output per worker, and output per hour are different measures. A larger group may produce more while each person produces less. The same applies to counts of errors, repairs or complaints. Compare the outcome to the opportunity for that outcome to occur. You do not need heavy calculation to see the issue. Often naming the denominator is enough. If the question supplies exact numbers, calculate carefully; if it does not, do not quietly assume equal exposure.
+[8] Explain both parts of a puzzling result
+  BOARD: ['What was expected?', 'What was found?', 'Does the proposed mechanism fit every stated part?']
+  SCRIPT: An explain-the-finding question often gives a result that seems surprising: more help but worse performance, fewer reports despite more problems, or an improvement in one group only. State the whole puzzle before reading the options. A proposed explanation that accounts for only half of it may be incomplete. For example, if an audience helps on a practiced task and hurts on an unfamiliar one, ‘an audience always helps’ does not fit both findings. We need an account whose effect changes with the relevant task feature. Active reading helps us keep both halves in view instead of choosing an option that merely echoes one phrase.
+--- Q vr47-g001: In a hypothetical study, students who practiced a puzzle in the morning performed better than students who practiced it late at night. The researcher attributes the difference to time of day. Which information most weakens this interpretation?
+  CHOICES: ['The groups were tested for the same length of time.', 'The morning group had slept much longer before the practice session.', 'Both groups solved the same puzzle.', 'Both groups received the same instructions.'] correct=2
+=== VIDEO solve-vr47-g001: kind=solution title='A factor hidden inside a comparison'
+[1] Your question
+  BOARD: []
+  SCRIPT: In a hypothetical study, students who practiced a puzzle in the morning performed better than students who practiced it late at night. The researcher attributes the difference to time of day. Which information most weakens this interpretation?
+[2] Put the message in plain English
+  BOARD: ['The morning group had slept much longer before the practice session.']
+  SCRIPT: Sleep differs alongside time of day and offers another explanation of performance. The other facts make the groups more comparable. Label the factor, the measured outcome and the proposed explanation. If two hypotheses are involved, write what each predicts for the same situation. The deciding evidence is where their predictions differ, not a detail that both explanations can comfortably accept.
+[3] Keep each answer tied to the text
+  BOARD: ['Confounding variable']
+  SCRIPT: “Both groups solved the same puzzle.” fails because a shared puzzle controls task differences. “Both groups received the same instructions.” fails because shared instructions reduce an alternative explanation. “The groups were tested for the same length of time.” fails because matched testing time improves the comparison. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'The morning group had slept much longer before the practice session.']
+  SCRIPT: The answer is choice 2: The morning group had slept much longer before the practice session.. Sleep differs alongside time of day and offers another explanation of performance. The other facts make the groups more comparable.
+--- Q vr47-g002: A researcher wants to test whether encouragement improves performance on a familiar throwing task. Which design best isolates encouragement?
+  CHOICES: ['Give encouraged participants twice as much practice.', 'Use an easier target only for the encouraged group.', 'Randomly assign comparable participants to the same task with or without encouragement, keeping practice and scoring the same.', 'Encourage experts and compare them with unencouraged beginners.'] correct=3
+=== VIDEO solve-vr47-g002: kind=solution title='A fair test of encouragement'
+[1] Your question
+  BOARD: []
+  SCRIPT: A researcher wants to test whether encouragement improves performance on a familiar throwing task. Which design best isolates encouragement?
+[2] Put the message in plain English
+  BOARD: ['Randomly assign comparable participants to the same task with or without encouragement, keeping practice and scoring the same.']
+  SCRIPT: Random assignment and matched conditions reduce ability, practice and task-difficulty alternatives. Label the factor, the measured outcome and the proposed explanation. If two hypotheses are involved, write what each predicts for the same situation. The deciding evidence is where their predictions differ, not a detail that both explanations can comfortably accept.
+[3] Keep each answer tied to the text
+  BOARD: ['Isolate one factor']
+  SCRIPT: “Encourage experts and compare them with unencouraged beginners.” fails because experience changes along with encouragement. “Give encouraged participants twice as much practice.” fails because extra practice could explain the result. “Use an easier target only for the encouraged group.” fails because target difficulty could explain the result. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'Randomly assign comparable participants to the same task with or without encouragement, keeping practice and scoring the same.']
+  SCRIPT: The answer is choice 3: Randomly assign comparable participants to the same task with or without encouragement, keeping practice and scoring the same.. Random assignment and matched conditions reduce ability, practice and task-difficulty alternatives.
+--- Q vr47-g003: Two hypotheses concern a hypothetical marker. H1: it appears whenever a person solves a puzzle with a partner. H2: it appears only when the partner is familiar. Which observation would support H1 over H2?
+  CHOICES: ['The marker appears with a familiar partner.', 'No one is tested with a partner.', 'The marker is measured using the same device in every session.', 'The marker appears with an unfamiliar partner.'] correct=4
+=== VIDEO solve-vr47-g003: kind=solution title='Different predictions make a useful test'
+[1] Your question
+  BOARD: []
+  SCRIPT: Two hypotheses concern a hypothetical marker. H1: it appears whenever a person solves a puzzle with a partner. H2: it appears only when the partner is familiar. Which observation would support H1 over H2?
+[2] Put the message in plain English
+  BOARD: ['The marker appears with an unfamiliar partner.']
+  SCRIPT: H1 permits and predicts the marker with any partner. H2 rules it out with an unfamiliar partner, so that case distinguishes the accounts. Label the factor, the measured outcome and the proposed explanation. If two hypotheses are involved, write what each predicts for the same situation. The deciding evidence is where their predictions differ, not a detail that both explanations can comfortably accept.
+[3] Keep each answer tied to the text
+  BOARD: ['Distinguish hypotheses']
+  SCRIPT: “The marker appears with a familiar partner.” fails because both accounts allow this outcome. “No one is tested with a partner.” fails because without a partner the proposed contrast is not tested. “The marker is measured using the same device in every session.” fails because consistent equipment improves measurement but does not supply the discriminating outcome. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'The marker appears with an unfamiliar partner.']
+  SCRIPT: The answer is choice 4: The marker appears with an unfamiliar partner.. H1 permits and predicts the marker with any partner. H2 rules it out with an unfamiliar partner, so that case distinguishes the accounts.
+--- Q vr47-g004: In a hypothetical interview study, participants mentioned architects more often than librarians, but most comments about architects were negative. Which conclusion is justified?
+  CHOICES: ['Being mentioned more often does not here imply being viewed more positively.', 'Participants preferred architects.', 'No participant mentioned a librarian.', 'Every comment about librarians was positive.'] correct=1
+=== VIDEO solve-vr47-g004: kind=solution title='Valence is not frequency'
+[1] Your question
+  BOARD: []
+  SCRIPT: In a hypothetical interview study, participants mentioned architects more often than librarians, but most comments about architects were negative. Which conclusion is justified?
+[2] Put the message in plain English
+  BOARD: ['Being mentioned more often does not here imply being viewed more positively.']
+  SCRIPT: Frequency of mention and tone of evaluation are separate measures. The negative architect comments block the simple preference inference. Label the factor, the measured outcome and the proposed explanation. If two hypotheses are involved, write what each predicts for the same situation. The deciding evidence is where their predictions differ, not a detail that both explanations can comfortably accept.
+[3] Keep each answer tied to the text
+  BOARD: ['Measure distinction']
+  SCRIPT: “Participants preferred architects.” fails because more mentions do not establish preference. “No participant mentioned a librarian.” fails because a comparison of frequency does not establish zero mentions. “Every comment about librarians was positive.” fails because the tone of librarian comments is unspecified. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'Being mentioned more often does not here imply being viewed more positively.']
+  SCRIPT: The answer is choice 1: Being mentioned more often does not here imply being viewed more positively.. Frequency of mention and tone of evaluation are separate measures. The negative architect comments block the simple preference inference.
+--- Q vr47-g005: A survey finds that people who spend longer repairing equipment also report more equipment failures. A writer concludes that long repair sessions cause failures. Which explanation reverses the proposed direction?
+  CHOICES: ['Frequent failures require people to spend more time on repairs.', 'Older equipment may both fail more and take longer to repair.', 'People report failures using different forms.', 'Repair time and failures were recorded in the same month.'] correct=1
+=== VIDEO solve-vr47-g005: kind=solution title='Which direction does the link run?'
+[1] Your question
+  BOARD: []
+  SCRIPT: A survey finds that people who spend longer repairing equipment also report more equipment failures. A writer concludes that long repair sessions cause failures. Which explanation reverses the proposed direction?
+[2] Put the message in plain English
+  BOARD: ['Frequent failures require people to spend more time on repairs.']
+  SCRIPT: The alternative makes failures the cause of time spent repairing rather than its effect. Label the factor, the measured outcome and the proposed explanation. If two hypotheses are involved, write what each predicts for the same situation. The deciding evidence is where their predictions differ, not a detail that both explanations can comfortably accept.
+[3] Keep each answer tied to the text
+  BOARD: ['Reverse causation']
+  SCRIPT: “Older equipment may both fail more and take longer to repair.” fails because this is a shared cause, not a reversal. “People report failures using different forms.” fails because this is a possible measurement issue, not the reverse arrow. “Repair time and failures were recorded in the same month.” fails because same-month measurement alone gives no direction. We have a reason for rejecting each alternative. That matters more than whether an answer repeats a familiar word from the passage. A strong distractor often borrows the vocabulary while changing the owner, direction or strength of the claim. Return to the exact part of the text that decides between the closest two options.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'Frequent failures require people to spend more time on repairs.']
+  SCRIPT: The answer is choice 1: Frequent failures require people to spend more time on repairs.. The alternative makes failures the cause of time spent repairing rather than its effect.
+
+######## SECTION vr47-practice — Independent practice (practice)
+--- Q vr47-p001: A hypothetical experiment compares seedling growth under two lamps. The plants under Lamp A also receive more water. Why is the effect of lamp type unclear?
+  CHOICES: ['Both lamps must have identical effects.', 'Plants cannot be assigned to groups.', 'Watering differs along with lamp type.', 'Growth cannot be measured.'] correct=3
+--- Q vr47-p002: A researcher wants to compare a new memory exercise with the usual exercise. Which comparison is most relevant?
+  CHOICES: ['The new exercise versus no activity, with different practice times', 'Experts using the new exercise versus beginners using the old one', 'One person before breakfast versus another after dinner', 'Equal practice time with the new exercise versus the usual exercise'] correct=4
+--- Q vr47-p003: In a hypothetical trial, participants are randomly assigned to two training methods. What is random assignment chiefly intended to reduce?
+  CHOICES: ['The need to measure an outcome', 'Systematic pre-existing differences between the groups', 'Every possible measurement error', 'The number of participants to zero'] correct=2
+--- Q vr47-p004: A study finds that a technique improves speed but increases errors. Which conclusion is most justified?
+  CHOICES: ['It is better in every respect.', 'It has no effect of any kind.', 'It improves accuracy.', 'Its value depends partly on how speed and accuracy are weighted.'] correct=4
+--- Q vr47-p005: Hypothesis A says a device works whenever it is warm. Hypothesis B says it works only when it is both warm and dry. Which test best distinguishes them?
+  CHOICES: ['Try the device while warm and wet.', 'Try it while warm and dry.', 'Inspect its color without operating it.', 'Repeat a warm-and-dry test without changing conditions.'] correct=1
+--- Q vr47-p006: A hypothetical study reports that teams of six produce more ideas than teams of three. What additional measure is needed to compare output per person?
+  CHOICES: ['The alphabetic order of names', 'Only the total number of teams', 'The number of ideas divided by the number of team members', 'The color of the room'] correct=3
+--- Q vr47-p007: A researcher observes an effect after applying a treatment to one sample, with no comparison sample. Which conclusion is most cautious?
+  CHOICES: ['No observation occurred.', 'The observation alone does not isolate the treatment’s effect from other changes.', 'The treatment certainly caused the effect.', 'The treatment certainly had no effect.'] correct=2
+--- Q vr47-p008: A measure gives nearly the same reading every time but is consistently above a trusted reference value. It is best described as —
+  CHOICES: ['perfectly accurate because it is consistent', 'randomly varying without pattern', 'incapable of producing a reading', 'consistent but biased'] correct=4
+--- Q vr47-p009: In a hypothetical experiment, participants who receive a new tool also receive extra instruction. Their improved performance could be due to —
+  CHOICES: ['only the tool as a matter of logic', 'only the instruction as a matter of logic', 'neither factor under any circumstances', 'the tool, the instruction, or both'] correct=4
+--- Q vr47-p010: A study proposes that a pattern occurs only in quiet rooms. Which observation contradicts that restriction?
+  CHOICES: ['The pattern occurs in a quiet room.', 'The pattern is absent in one quiet room.', 'No room is tested.', 'The pattern occurs in a noisy room.'] correct=4
+--- Q vr47-p011: Two explanations both predict improvement after extra practice. One attributes it to total time; the other to feedback. Which design separates them?
+  CHOICES: ['Give one group both more time and more feedback.', 'Ask which explanation has a shorter name.', 'Give equal extra practice time to groups with and without feedback.', 'Give both groups equal time and equal feedback.'] correct=3
+--- Q vr47-p012: A hypothetical trial finds no detectable difference between two methods in a small sample. Which statement is most cautious?
+  CHOICES: ['The methods are identical in every possible use.', 'One method must be superior.', 'The data must have been fabricated.', 'The study did not detect a difference; this is not the same as proving exact equality.'] correct=4
+--- Q vr47-p013: A researcher compares the same participants before and after training. What alternative explanation may remain if no comparison group is used?
+  CHOICES: ['Improvement from familiarity with the test itself', 'Different names assigned at birth', 'A guaranteed effect of room color', 'Proof that training never works'] correct=1
+--- Q vr47-p014: A questionnaire asks only club members whether membership is useful. Which group is especially important for assessing selection bias?
+  CHOICES: ['The printers who made the paper', 'Former members who left because they found it unhelpful', 'Members who completed the questionnaire', 'People’s favorite colors'] correct=2
+--- Q vr47-p015: A hypothetical study predicts that stronger lighting will improve performance on a visual task. Performance improves under stronger lighting. What follows?
+  CHOICES: ['No other explanation can fit the result.', 'The hypothesis has been proved for every task.', 'The prediction was contradicted.', 'The result is consistent with the prediction.'] correct=4
+--- Q vr47-p016: A researcher records more sightings after switching to a more sensitive sensor. Why is a population increase not established?
+  CHOICES: ['Sensitive sensors always invent observations.', 'The population must have declined.', 'The old sensor could detect everything perfectly.', 'The new sensor may detect individuals the old one missed.'] correct=4
+--- Q vr47-p017: An experiment tests four groups: neither factor, factor A only, factor B only, and both. What can this design examine that a two-group neither-versus-both comparison cannot isolate?
+  CHOICES: ['Whether participants have names', 'The exact answer to every possible hypothesis', 'Only the effect of room size regardless of design', 'The separate and combined roles of A and B'] correct=4
+--- Q vr47-p018: A hypothetical study finds that observers improve performance on a familiar task but impair it on an unfamiliar task. Which explanation fits both findings?
+  CHOICES: ['Being observed always harms all performance.', 'Familiarity has no relation to the result.', 'Being observed strengthens the dominant response, helpful when practiced and harmful when unpractised.', 'Being observed always improves all performance.'] correct=3
+--- Q vr47-p019: A researcher measures success only by how quickly participants finish, although some leave many errors. What limitation follows?
+  CHOICES: ['Errors and time are the same quantity.', 'The measure may miss a trade-off between speed and accuracy.', 'Finishing time cannot ever be recorded.', 'Every fast participant is inaccurate.'] correct=2
+--- Q vr47-p020: A result is repeated in several independent studies using similar methods. What does this chiefly add?
+  CHOICES: ['A guarantee that all methods are error-free', 'A reason to stop considering the limits of the claim', 'Evidence that the finding is not peculiar to one study’s circumstances', 'Proof that every proposed explanation is correct'] correct=3
+--- Q vr47-p021: A hypothetical experiment gives participants a new interface, but the group using it also knows which result the designer hopes to see. Which design change could reduce this concern?
+  CHOICES: ['Change the task only for the other group.', 'Discard all unfavourable results after testing.', 'Avoid telling participants the preferred outcome when this is feasible.', 'Tell only that group even more strongly what to demonstrate.'] correct=3
+--- Q vr47-p022: Hypothesis A says extra practice helps only beginners. Hypothesis B says it helps both beginners and experts. Which result most clearly distinguishes them?
+  CHOICES: ['Experts improve after the extra practice under a fair comparison.', 'Beginners improve.', 'The practice is held in a room.', 'Participants are given the same pencils.'] correct=1
+--- Q vr47-p023: A researcher finds an association between early arrival and high productivity. Which design would better test whether arrival time itself contributes?
+  CHOICES: ['Compare volunteers for early shifts with volunteers for late shifts without other controls.', 'Ask only the most productive early workers.', 'Measure only whether the building has a clock.', 'Randomly assign comparable workers to different start times while matching tasks and total hours.'] correct=4
+--- Q vr47-p024: A hypothetical study finds a benefit for adults in one workplace. Which conclusion exceeds the evidence?
+  CHOICES: ['Further settings could be studied.', 'The participants were adults.', 'The same benefit is guaranteed for every age group and setting.', 'The study observed a benefit in that workplace.'] correct=3
+--- Q vr47-p025: A researcher wants to know whether a reminder helps because of its content or merely because it draws attention. Which control is most useful?
+  CHOICES: ['An equally noticeable reminder with different, irrelevant content', 'No reminder in a much quieter room', 'A less noticeable reminder with the same content', 'No measurement of behavior at all'] correct=1
+--- Q vr47-p026: A hypothetical experiment measures the same effect with two different instruments. Both show a similar change. Which objection does this most directly reduce?
+  CHOICES: ['That a separate unmeasured factor could influence both groups', 'That the finding is caused solely by a fault peculiar to one instrument', 'That the sample could be unrepresentative', 'That the conclusion might be too broad for the tested setting'] correct=2
+--- Q vr47-p027: A researcher notices that every successful trial used both a new material and a new coating. Which next comparison best separates their effects?
+  CHOICES: ['Test the new material without the coating and the old material with the coating.', 'Repeat only the new-material-and-new-coating condition.', 'Change both features and also the task.', 'Compare the names of the two materials.'] correct=1

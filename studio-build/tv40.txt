@@ -1,0 +1,563 @@
+# Topic 40 Analogies
+
+######## SECTION vr40-learn — Learn and try (learn)
+=== VIDEO vr-analogy-method: kind=lesson title='Analogies: start with the word that needs the other'
+[1] A relationship, not a shared subject
+  BOARD: ['time : clock', 'A clock is an instrument that measures time.']
+  SCRIPT: Time and a clock are connected, but ‘connected’ is far too broad to solve an analogy. We need a sentence that tells us how they are connected. Start with the word that is easier to define through the other word. Here that is clock. A clock is an instrument that measures time. Time does not need a clock in order to exist, but our definition of a clock needs the idea of time. This is what we mean by the dependent word. We are looking for a useful defining relationship, not debating whether an object could physically exist in a world without its partner. Our sentence now gives us a clear test for another pair.
+[2] Keep the printed order
+  BOARD: ['time : clock', 'temperature : thermometer', 'Second word measures the first.']
+  SCRIPT: We started the definition with clock, the second word, but we have not reversed the printed pair. Our rule is still: the second thing measures the first. Temperature and thermometer fit that order. A thermometer measures temperature. Thermometer and temperature would put the roles in the wrong places. You can draw an arrow from the word you define to the word you use in its definition. What matters is that you carry exactly the same roles into the answer choices. Starting with the dependent word makes the sentence easier to form; it does not give us permission to rearrange a pair when we check it.
+[3] Try the definition with every role intact
+  BOARD: ['hunger : meal', 'A meal can satisfy hunger.', 'A medicine may relieve a symptom; a diagnosis identifies it.']
+  SCRIPT: Try hunger and meal. It is easier to define the meal’s role through hunger than to define hunger through a meal. A meal can satisfy hunger. Notice the word ‘can.’ Not every meal completely satisfies every person, so our relationship should not make an unnecessary guarantee. Now compare a remedy and a diagnosis. A remedy aims to relieve a problem; a diagnosis identifies it. Both belong to the same general world of problems and responses, but their jobs differ. We want the closest relationship, not just two words from a similar subject. A good definition is precise enough to make that distinction and modest enough to stay true.
+[4] When dependence is not obvious
+  BOARD: ['scarce : plentiful', 'Opposite ends of one scale', 'Do not force a tool or purpose into every pair.']
+  SCRIPT: Sometimes neither word clearly depends on the other. Scarce and plentiful are opposites. There is no need to invent a story about one producing the other. Use the dependent-word approach as your first question: which word can I define naturally through its partner? If that does not reveal a useful direction, test another simple relationship: opposites, similar meanings, stronger degree, part and whole, action and result, or prevention. The method should make the pair clearer. It should never force you into an awkward sentence just because every previous example began with a tool. We will practice a range of relationships so that the first question becomes a flexible habit.
+[5] A true definition can still be too broad
+  BOARD: ['an archive : documents', 'An archive keeps documents.', 'A forest contains trees, but it is not a storage facility.']
+  SCRIPT: ‘An archive contains documents’ is true, but a forest contains trees and a box contains shoes too. If more than one answer fits, sharpen the sentence. An archive is a place or collection organized to preserve records. That gives us something more useful than ‘contains.’ Do not add irrelevant details simply to force a favorite option. We do not need to specify the archive’s opening hours or the color of its shelves. We refine the relationship itself: storage, preservation, membership, material, cause, or purpose. A useful check is to ask whether your extra detail belongs to the meanings of the words, rather than to one example you happened to imagine.
+[6] Cause, purpose and result differ
+  BOARD: ['warning → aims to prevent harm', 'injury → harm has occurred', 'Do not turn an intention into a guaranteed result.']
+  SCRIPT: A warning is intended to help someone avoid a danger. It does not guarantee that the person will listen. An injury, by contrast, tells us that harm has occurred. This difference is easy to lose when we define every pair with a vague verb such as ‘makes.’ Ask whether the second word is the aim of an action, its necessary result, a possible result, or a state the action tries to prevent. The English exam pairs often rely on exactly that small distinction. Your relationship sentence can use ‘aims to,’ ‘can,’ ‘results in,’ or ‘prevents’ as appropriate. Choosing the right verb is part of solving the question.
+[7] Small part or weak degree?
+  BOARD: ['a crumb : a loaf', 'a drizzle : rain', 'A component is not the same as a mild form.']
+  SCRIPT: A crumb is a small piece of a loaf. A drizzle is a light form of rain. Both suggest something small, but they do not have the same structure. One is a component of a larger object; the other is a weaker degree of a phenomenon. A letter and a word would fit the component relationship, not the intensity relationship. When two choices seem close, name the difference in plain English. ‘A piece of’ and ‘a mild form of’ are already enough. You do not need a technical label before you can solve the question. The labels simply help you remember a distinction you have understood.
+[8] Let the pair choose the meaning
+  BOARD: ['eye : needle', 'An eye is the opening through which the thread passes.', 'Do not keep an unrelated sense of eye.']
+  SCRIPT: English has words with more than one meaning too. In eye and needle, eye does not mean a seeing organ. The partner word selects the relevant sense: the small opening through which thread passes. The relationship in the pair helps us choose among possible meanings. Here is the reasoning move: select the sense that makes a precise relationship, then keep that sense while checking the answers. If every choice fails, revisit the definition before assuming that the vocabulary is impossible. Sometimes the words are familiar and the first interpretation was simply the wrong one.
+[9] Use the choices to repair a definition
+  BOARD: ['Define → test → refine', 'Change the rule for all choices together.', 'Never bend it separately for each answer.']
+  SCRIPT: Usually, define the pair before looking closely at the answers. But if you cannot get a useful definition, the choices can suggest the kind of relationship you missed. Perhaps you called an anchor ‘something on a boat’ and then notice that the options all concern preventing an unwanted event. That can prompt a better definition: an anchor prevents a vessel from drifting. Once you revise the rule, apply the revised version to every choice. Do not give one answer ‘prevents,’ another ‘treats,’ and a third ‘detects,’ then say they all fit. That is three different rules. The goal is one sentence with the same roles and the same strength.
+[10] Vocabulary without panic
+  BOARD: ['Identify what you know.', 'Use word families and context cautiously.', 'Do not assume unfamiliar words are synonyms.']
+  SCRIPT: A difficult-looking word may express a simple relationship, but unfamiliar words are not automatically synonyms of their partners. If you know one meaning confidently, use it. A word family can help, and the answer choices may help you recognize a sense, but mark any guess as a guess in your own thinking. During practice, keep a vocabulary note with the word, a short definition and a sentence showing the relevant sense. A bare translation is often less useful than that sentence. In a timed set, make the best supported choice and move on when further staring is not adding information. Afterwards, repair the vocabulary gap separately from the reasoning mistake.
+[11] A short answer check
+  BOARD: ['Same roles?', 'Same direction?', 'Same strength and specificity?']
+  SCRIPT: Before choosing, run three quick checks. Does the answer keep the same roles: tool and task, producer and product, or problem and response? Does it keep the same direction in the printed pair? And does it preserve the strength and specificity of the connection? A possible result is not a guaranteed result, and a place where an action happens is not necessarily a place into which the action puts something. In early practice, explain why each distractor fails. Under time pressure, the explanation can be just a few words in your head. Those few words should identify a real mismatch, rather than simply saying that one answer feels better.
+--- Q vr40-g001: crest : wave
+  CHOICES: ['rain : cloud', 'summit : mountain', 'oar : boat', 'harbor : ship'] correct=2
+=== VIDEO solve-vr40-g001: kind=solution title='Peak and whole'
+[1] Your question
+  BOARD: []
+  SCRIPT: crest : wave
+[2] Define the relationship
+  BOARD: ['crest : wave', 'A crest is the highest part of a wave.']
+  SCRIPT: A crest is the highest part of a wave. Start with crest, because its meaning here depends on the wave whose top it names. A summit is the highest part of a mountain. The answer preserves a particular part of a whole, not merely two related objects. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['summit : mountain', 'oar : boat', 'harbor : ship', 'rain : cloud']
+  SCRIPT: The matching pair is summit : mountain. Consider oar : boat. An oar is equipment used with a boat, not its highest part. Consider harbor : ship. A harbor shelters a ship; it is not a part of the ship. Consider rain : cloud. Rain may come from a cloud, but it is not the cloud’s highest part. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'summit : mountain']
+  SCRIPT: The answer is choice 2: summit : mountain. A crest is the highest part of a wave. Start with crest, because its meaning here depends on the wave whose top it names. A summit is the highest part of a mountain. The answer preserves a particular part of a whole, not merely two related objects.
+--- Q vr40-g002: to inspect : inspection
+  CHOICES: ['to arrive : invitation', 'to select : selection', 'to rest : fatigue', 'to sleep : dream'] correct=2
+=== VIDEO solve-vr40-g002: kind=solution title='An action and its noun'
+[1] Your question
+  BOARD: []
+  SCRIPT: to inspect : inspection
+[2] Define the relationship
+  BOARD: ['to inspect : inspection', 'To inspect is to carry out an inspection.']
+  SCRIPT: To inspect is to carry out an inspection. To select is to make a selection. The second word names the action expressed by the first. Sleeping may involve dreaming, but a dream is not simply another grammatical form naming the entire action of sleeping. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['to select : selection', 'to rest : fatigue', 'to sleep : dream', 'to arrive : invitation']
+  SCRIPT: The matching pair is to select : selection. Consider to rest : fatigue. Rest can relieve fatigue; fatigue does not name the act of resting. Consider to sleep : dream. A dream may occur during sleep, but the two do not name the same action. Consider to arrive : invitation. An invitation may lead someone to arrive; it does not name arriving. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'to select : selection']
+  SCRIPT: The answer is choice 2: to select : selection. To inspect is to carry out an inspection. To select is to make a selection. The second word names the action expressed by the first. Sleeping may involve dreaming, but a dream is not simply another grammatical form naming the entire action of sleeping.
+--- Q vr40-g003: to straighten : bent
+  CHOICES: ['to whisper : quiet', 'to dry : wet', 'to polish : shiny', 'to describe : detailed'] correct=2
+=== VIDEO solve-vr40-g003: kind=solution title='Removing a state'
+[1] Your question
+  BOARD: []
+  SCRIPT: to straighten : bent
+[2] Define the relationship
+  BOARD: ['to straighten : bent', 'To straighten an object is to remove its bent state.']
+  SCRIPT: To straighten an object is to remove its bent state. To dry an object is to remove its wet state. Define the action through the state it changes: the first word makes the second description cease to apply. This is more precise than saying the words are opposites. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['to dry : wet', 'to polish : shiny', 'to describe : detailed', 'to whisper : quiet']
+  SCRIPT: The matching pair is to dry : wet. Consider to polish : shiny. Polishing tends to create or increase shininess, rather than remove it. Consider to describe : detailed. A description may be detailed, but describing does not remove that property. Consider to whisper : quiet. Whispering is quiet speech; it does not make something stop being quiet. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'to dry : wet']
+  SCRIPT: The answer is choice 2: to dry : wet. To straighten an object is to remove its bent state. To dry an object is to remove its wet state. Define the action through the state it changes: the first word makes the second description cease to apply. This is more precise than saying the words are opposites.
+--- Q vr40-g004: trickle : flow
+  CHOICES: ['page : chapter', 'glimmer : light', 'syllable : word', 'drop : bottle'] correct=2
+=== VIDEO solve-vr40-g004: kind=solution title='Weak degree, not component'
+[1] Your question
+  BOARD: []
+  SCRIPT: trickle : flow
+[2] Define the relationship
+  BOARD: ['trickle : flow', 'A trickle is a very small or weak flow.']
+  SCRIPT: A trickle is a very small or weak flow. A glimmer is a faint light. Each first word describes a low degree of the second phenomenon. A syllable may be a small part of a word, but a part is not a weak version of the whole. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['glimmer : light', 'syllable : word', 'drop : bottle', 'page : chapter']
+  SCRIPT: The matching pair is glimmer : light. Consider syllable : word. A syllable is a component, not a weak degree of a word. Consider drop : bottle. A drop may be contained in a bottle; a bottle is not a stronger form of a drop. Consider page : chapter. A page is a component of a chapter, not a faint version of it. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'glimmer : light']
+  SCRIPT: The answer is choice 2: glimmer : light. A trickle is a very small or weak flow. A glimmer is a faint light. Each first word describes a low degree of the second phenomenon. A syllable may be a small part of a word, but a part is not a weak version of the whole.
+--- Q vr40-g005: to immerse : liquid
+  CHOICES: ['to sweep : floor', 'to bury : earth', 'to bake : oven', 'to read : library'] correct=2
+=== VIDEO solve-vr40-g005: kind=solution title='Putting something into a medium'
+[1] Your question
+  BOARD: []
+  SCRIPT: to immerse : liquid
+[2] Define the relationship
+  BOARD: ['to immerse : liquid', 'To immerse something is to put it into a liquid.']
+  SCRIPT: To immerse something is to put it into a liquid. To bury something is to put it into the earth. The action places its object inside the second thing. An oven is a location in which baking occurs, but baking does not mean putting something into an oven: the heating process is essential to baking. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['to bury : earth', 'to bake : oven', 'to read : library', 'to sweep : floor']
+  SCRIPT: The matching pair is to bury : earth. Consider to bake : oven. An oven is a place where baking happens; placing an object there is not itself baking it. Consider to read : library. A library is a possible location for reading, not the medium into which reading puts an object. Consider to sweep : floor. A floor is a surface acted on, not a material into which the object is placed. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'to bury : earth']
+  SCRIPT: The answer is choice 2: to bury : earth. To immerse something is to put it into a liquid. To bury something is to put it into the earth. The action places its object inside the second thing. An oven is a location in which baking occurs, but baking does not mean putting something into an oven: the heating process is essential to baking.
+--- Q vr40-g006: equipment : to equip
+  CHOICES: ['question : to ask', 'song : to sing', 'weapons : to arm', 'law : to legislate'] correct=3
+=== VIDEO solve-vr40-g006: kind=solution title='Giving something to someone'
+[1] Your question
+  BOARD: []
+  SCRIPT: equipment : to equip
+[2] Define the relationship
+  BOARD: ['equipment : to equip', 'To equip someone is to provide that person with equipment.']
+  SCRIPT: To equip someone is to provide that person with equipment. To arm someone is to provide that person with weapons. Start with the verb in the second position and keep the recipient in the definition. ‘Pass something on’ would be too broad, and could hide different meanings of pass. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['weapons : to arm', 'law : to legislate', 'question : to ask', 'song : to sing']
+  SCRIPT: The matching pair is weapons : to arm. Consider law : to legislate. To legislate is to make laws, not simply to give someone a law. Consider question : to ask. To ask is to put a question to someone, not to provide them with the item in the same practical sense. Consider song : to sing. To sing is to perform a song, not to supply someone with songs as equipment. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'weapons : to arm']
+  SCRIPT: The answer is choice 3: weapons : to arm. To equip someone is to provide that person with equipment. To arm someone is to provide that person with weapons. Start with the verb in the second position and keep the recipient in the definition. ‘Pass something on’ would be too broad, and could hide different meanings of pass.
+--- Q vr40-g007: to awaken : to wake up
+  CHOICES: ['to invite : to arrive', 'to watch : to be seen', 'to agree : to persuade', 'to seat : to sit down'] correct=4
+=== VIDEO solve-vr40-g007: kind=solution title='Who acts on whom?'
+[1] Your question
+  BOARD: []
+  SCRIPT: to awaken : to wake up
+[2] Define the relationship
+  BOARD: ['to awaken : to wake up', 'To awaken another person is to cause that person to wake up.']
+  SCRIPT: To awaken another person is to cause that person to wake up. To seat a person is to cause that person to sit down. The first action brings about the second action or state in its object. Inviting someone may encourage arrival, but arrival is not built into the meaning of inviting. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['to seat : to sit down', 'to invite : to arrive', 'to watch : to be seen', 'to agree : to persuade']
+  SCRIPT: The matching pair is to seat : to sit down. Consider to invite : to arrive. An invitation can be refused, so it does not establish the second event. Consider to watch : to be seen. Watching someone does not mean causing yourself or that person to be seen. Consider to agree : to persuade. Agreeing does not mean causing another person to persuade. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'to seat : to sit down']
+  SCRIPT: The answer is choice 4: to seat : to sit down. To awaken another person is to cause that person to wake up. To seat a person is to cause that person to sit down. The first action brings about the second action or state in its object. Inviting someone may encourage arrival, but arrival is not built into the meaning of inviting.
+--- Q vr40-g008: guardrail : falling
+  CHOICES: ['magnifier : shrinking', 'bell : hearing', 'thimble : pricking', 'bandage : bleeding'] correct=3
+=== VIDEO solve-vr40-g008: kind=solution title='A safeguard and the event it prevents'
+[1] Your question
+  BOARD: []
+  SCRIPT: guardrail : falling
+[2] Define the relationship
+  BOARD: ['guardrail : falling', 'A guardrail is intended to prevent falling.']
+  SCRIPT: A guardrail is intended to prevent falling. A thimble is intended to prevent the needle from pricking the finger. The second word names an unwanted event the first object guards against. A bandage is commonly used after an injury; it is a response to a problem that has already occurred. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['thimble : pricking', 'bandage : bleeding', 'magnifier : shrinking', 'bell : hearing']
+  SCRIPT: The matching pair is thimble : pricking. Consider bandage : bleeding. A bandage treats or covers an existing injury; it is not primarily a barrier against the initial event. Consider magnifier : shrinking. A magnifier enlarges an image; it is not a safeguard against shrinking. Consider bell : hearing. A bell produces a sound to be heard, rather than preventing hearing. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'thimble : pricking']
+  SCRIPT: The answer is choice 3: thimble : pricking. A guardrail is intended to prevent falling. A thimble is intended to prevent the needle from pricking the finger. The second word names an unwanted event the first object guards against. A bandage is commonly used after an injury; it is a response to a problem that has already occurred.
+--- Q vr40-g009: “Explain!” : explanation
+  CHOICES: ['“Listen!” : speech', '“Wait!” : departure', '“Reply!” : answer', '“Stop!” : movement'] correct=3
+=== VIDEO solve-vr40-g009: kind=solution title='A request and the response sought'
+[1] Your question
+  BOARD: []
+  SCRIPT: “Explain!” : explanation
+[2] Define the relationship
+  BOARD: ['“Explain!” : explanation', '“Explain!” requests an explanation.']
+  SCRIPT: “Explain!” requests an explanation. “Reply!” requests an answer. The noun names the response the command asks the listener to provide. We are describing the request’s purpose, not claiming that the listener necessarily obeys. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['“Reply!” : answer', '“Stop!” : movement', '“Listen!” : speech', '“Wait!” : departure']
+  SCRIPT: The matching pair is “Reply!” : answer. Consider “Stop!” : movement. “Stop!” asks for movement to cease, not for movement to be supplied. Consider “Listen!” : speech. “Listen!” asks the listener to attend to speech, not to produce speech. Consider “Wait!” : departure. “Wait!” asks the listener to delay departure rather than provide it. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', '“Reply!” : answer']
+  SCRIPT: The answer is choice 3: “Reply!” : answer. “Explain!” requests an explanation. “Reply!” requests an answer. The noun names the response the command asks the listener to provide. We are describing the request’s purpose, not claiming that the listener necessarily obeys.
+--- Q vr40-g010: became dirty : cleaned
+  CHOICES: ['became silent : quietened', 'became old : aged', 'became tangled : disentangled', 'became tired : exhausted'] correct=3
+=== VIDEO solve-vr40-g010: kind=solution title='Reversing a change'
+[1] Your question
+  BOARD: []
+  SCRIPT: became dirty : cleaned
+[2] Define the relationship
+  BOARD: ['became dirty : cleaned', 'The first expression describes entering an unwanted state; the second describes undoing that state.']
+  SCRIPT: The first expression describes entering an unwanted state; the second describes undoing that state. Something that became dirty can be cleaned, and something that became tangled can be disentangled. The other pairs continue or intensify the same state rather than reverse it. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['became tangled : disentangled', 'became tired : exhausted', 'became silent : quietened', 'became old : aged']
+  SCRIPT: The matching pair is became tangled : disentangled. Consider became tired : exhausted. Exhausted strengthens the state of tiredness. Consider became silent : quietened. Quietened continues the movement toward silence rather than reversing it. Consider became old : aged. Aged describes becoming older, not undoing age. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'became tangled : disentangled']
+  SCRIPT: The answer is choice 3: became tangled : disentangled. The first expression describes entering an unwanted state; the second describes undoing that state. Something that became dirty can be cleaned, and something that became tangled can be disentangled. The other pairs continue or intensify the same state rather than reverse it.
+--- Q vr40-g011: coin : mint
+  CHOICES: ['letter : mailbox', 'book : shelf', 'apple : orchard', 'vase : pottery workshop'] correct=4
+=== VIDEO solve-vr40-g011: kind=solution title='Manufacturing, not storage'
+[1] Your question
+  BOARD: []
+  SCRIPT: coin : mint
+[2] Define the relationship
+  BOARD: ['coin : mint', 'A mint is a place where coins are produced.']
+  SCRIPT: A mint is a place where coins are produced. A pottery workshop is a place where vases are produced. The second term names a production place, not simply a place where the first thing may be found. Keep the sense of mint selected by coin; the herb sense does not fit. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['vase : pottery workshop', 'letter : mailbox', 'book : shelf', 'apple : orchard']
+  SCRIPT: The matching pair is vase : pottery workshop. Consider letter : mailbox. A mailbox collects or receives letters; it does not produce them. Consider book : shelf. A shelf stores books; it does not produce them. Consider apple : orchard. An orchard is a place of biological growth, rather than manufacture. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'vase : pottery workshop']
+  SCRIPT: The answer is choice 4: vase : pottery workshop. A mint is a place where coins are produced. A pottery workshop is a place where vases are produced. The second term names a production place, not simply a place where the first thing may be found. Keep the sense of mint selected by coin; the herb sense does not fit.
+--- Q vr40-g012: famine : small food parcel
+  CHOICES: ['wound : full recovery', 'journey : destination', 'drought : brief shower', 'question : complete answer'] correct=3
+=== VIDEO solve-vr40-g012: kind=solution title='Too little relief'
+[1] Your question
+  BOARD: []
+  SCRIPT: famine : small food parcel
+[2] Define the relationship
+  BOARD: ['famine : small food parcel', 'A small food parcel gives limited relief to a problem as large as a famine.']
+  SCRIPT: A small food parcel gives limited relief to a problem as large as a famine. A brief shower gives limited relief during a drought. The relationship includes a mismatch of scale: a small response to a much larger need. A complete answer to a question lacks that inadequacy. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['drought : brief shower', 'question : complete answer', 'wound : full recovery', 'journey : destination']
+  SCRIPT: The matching pair is drought : brief shower. Consider question : complete answer. A complete answer is sufficient by its description; the source pair stresses limited relief. Consider wound : full recovery. Full recovery removes the problem rather than offering only a little relief. Consider journey : destination. A destination is an endpoint, not an inadequate remedy. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'drought : brief shower']
+  SCRIPT: The answer is choice 3: drought : brief shower. A small food parcel gives limited relief to a problem as large as a famine. A brief shower gives limited relief during a drought. The relationship includes a mismatch of scale: a small response to a much larger need. A complete answer to a question lacks that inadequacy.
+--- Q vr40-g013: mouth : cave
+  CHOICES: ['blade : knife', 'eye : needle', 'handle : suitcase', 'lining : coat'] correct=2
+=== VIDEO solve-vr40-g013: kind=solution title='A word with two senses'
+[1] Your question
+  BOARD: []
+  SCRIPT: mouth : cave
+[2] Define the relationship
+  BOARD: ['mouth : cave', 'In this pair, mouth means the opening of a cave.']
+  SCRIPT: In this pair, mouth means the opening of a cave. An eye is an opening in a needle. Start with the first word and define the relevant sense through the second object. Both words also name body parts, but the relationship we need is the opening in the named object. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['eye : needle', 'handle : suitcase', 'lining : coat', 'blade : knife']
+  SCRIPT: The matching pair is eye : needle. Consider handle : suitcase. A handle is a part used for gripping, not an opening. Consider lining : coat. A lining is an inner layer, not an opening. Consider blade : knife. A blade is a cutting part, not an opening. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'eye : needle']
+  SCRIPT: The answer is choice 2: eye : needle. In this pair, mouth means the opening of a cave. An eye is an opening in a needle. Start with the first word and define the relevant sense through the second object. Both words also name body parts, but the relationship we need is the opening in the named object.
+--- Q vr40-g014: was lowered : descended
+  CHOICES: ['was raised : ascended', 'was invited : arrived', 'was warned : obeyed', 'was praised : improved'] correct=1
+=== VIDEO solve-vr40-g014: kind=solution title='Causing versus merely inviting'
+[1] Your question
+  BOARD: []
+  SCRIPT: was lowered : descended
+[2] Define the relationship
+  BOARD: ['was lowered : descended', 'If something was lowered, it was made to descend.']
+  SCRIPT: If something was lowered, it was made to descend. If it was raised, it was made to ascend. The first expression supplies an outside cause of the movement in the second. Being invited, warned or praised does not guarantee the proposed response. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['was raised : ascended', 'was invited : arrived', 'was warned : obeyed', 'was praised : improved']
+  SCRIPT: The matching pair is was raised : ascended. Consider was invited : arrived. A person may be invited without arriving. Consider was warned : obeyed. A person may be warned without obeying. Consider was praised : improved. Praise does not establish that improvement occurred. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'was raised : ascended']
+  SCRIPT: The answer is choice 1: was raised : ascended. If something was lowered, it was made to descend. If it was raised, it was made to ascend. The first expression supplies an outside cause of the movement in the second. Being invited, warned or praised does not guarantee the proposed response.
+--- Q vr40-g015: to gather timber : to build a cabin
+  CHOICES: ['to read a review : to write a novel', 'to lock a gate : to plant a tree', 'to pick grapes : to make juice', 'to wash dishes : to cook dinner'] correct=3
+=== VIDEO solve-vr40-g015: kind=solution title='Collecting material for a product'
+[1] Your question
+  BOARD: []
+  SCRIPT: to gather timber : to build a cabin
+[2] Define the relationship
+  BOARD: ['to gather timber : to build a cabin', 'Timber gathered in the first action is material used in the second action.']
+  SCRIPT: Timber gathered in the first action is material used in the second action. Grapes picked in the first action are material used to make juice. The relationship is collecting raw material for a later product, rather than any two activities that can occur in sequence. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['to pick grapes : to make juice', 'to wash dishes : to cook dinner', 'to read a review : to write a novel', 'to lock a gate : to plant a tree']
+  SCRIPT: The matching pair is to pick grapes : to make juice. Consider to wash dishes : to cook dinner. Clean dishes are equipment, not the raw material from which dinner is made. Consider to read a review : to write a novel. A review may inspire a writer, but it is not raw material in the same direct sense. Consider to lock a gate : to plant a tree. The two actions have no defined material-to-product connection. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'to pick grapes : to make juice']
+  SCRIPT: The answer is choice 3: to pick grapes : to make juice. Timber gathered in the first action is material used in the second action. Grapes picked in the first action are material used to make juice. The relationship is collecting raw material for a later product, rather than any two activities that can occur in sequence.
+--- Q vr40-g016: warm : hot
+  CHOICES: ['scarce : rare', 'silent : quiet', 'annoyed : furious', 'large : tiny'] correct=3
+=== VIDEO solve-vr40-g016: kind=solution title='A stronger degree'
+[1] Your question
+  BOARD: []
+  SCRIPT: warm : hot
+[2] Define the relationship
+  BOARD: ['warm : hot', 'Hot is a stronger degree of warmth, and furious is a stronger degree of annoyance or anger.']
+  SCRIPT: Hot is a stronger degree of warmth, and furious is a stronger degree of annoyance or anger. Keep the direction from milder to stronger. Similar meaning alone is not enough: scarce and rare are close alternatives without the same clear increase. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['annoyed : furious', 'large : tiny', 'scarce : rare', 'silent : quiet']
+  SCRIPT: The matching pair is annoyed : furious. Consider large : tiny. The pair moves toward an opposite rather than a stronger degree. Consider scarce : rare. These are near synonyms, not a clear mild-to-strong scale. Consider silent : quiet. Silent is the stronger endpoint; moving to quiet reverses the direction. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'annoyed : furious']
+  SCRIPT: The answer is choice 3: annoyed : furious. Hot is a stronger degree of warmth, and furious is a stronger degree of annoyance or anger. Keep the direction from milder to stronger. Similar meaning alone is not enough: scarce and rare are close alternatives without the same clear increase.
+--- Q vr40-g017: miser : skinflint
+  CHOICES: ['novice : beginner', 'patron : artist', 'judge : verdict', 'rival : ally'] correct=1
+=== VIDEO solve-vr40-g017: kind=solution title='A simple relation in unfamiliar vocabulary'
+[1] Your question
+  BOARD: []
+  SCRIPT: miser : skinflint
+[2] Define the relationship
+  BOARD: ['miser : skinflint', 'Miser and skinflint both describe a person unwilling to spend money.']
+  SCRIPT: Miser and skinflint both describe a person unwilling to spend money. Novice and beginner likewise have closely similar meanings. Once the vocabulary is known, the relationship is simple. Difficulty can lie in recognizing the words rather than in a complicated logical connection. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['novice : beginner', 'patron : artist', 'judge : verdict', 'rival : ally']
+  SCRIPT: The matching pair is novice : beginner. Consider patron : artist. A patron supports an artist; the terms do not mean the same person by definition. Consider judge : verdict. A judge gives a verdict; one is an actor and the other an outcome. Consider rival : ally. Rival and ally describe contrasting relationships. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'novice : beginner']
+  SCRIPT: The answer is choice 1: novice : beginner. Miser and skinflint both describe a person unwilling to spend money. Novice and beginner likewise have closely similar meanings. Once the vocabulary is known, the relationship is simple. Difficulty can lie in recognizing the words rather than in a complicated logical connection.
+--- Q vr40-g018: sap : to tap
+  CHOICES: ['water : to freeze', 'milk : to milk', 'flour : to bake', 'wood : to carve'] correct=2
+=== VIDEO solve-vr40-g018: kind=solution title='Taking out a substance'
+[1] Your question
+  BOARD: []
+  SCRIPT: sap : to tap
+[2] Define the relationship
+  BOARD: ['sap : to tap', 'To tap a tree is to extract its sap.']
+  SCRIPT: To tap a tree is to extract its sap. To milk an animal is to extract its milk. Define the verb through the substance: the action takes the first thing out of its source. The other verbs change or use a material rather than extract it. Say that relationship once in your own words before looking for the answer. The useful part is the verb or phrase that connects the roles. We can change the subject matter completely and still preserve that connection. Carry the printed order with you even if your definition starts with the second word.
+[3] Test the closest-looking alternatives
+  BOARD: ['milk : to milk', 'flour : to bake', 'wood : to carve', 'water : to freeze']
+  SCRIPT: The matching pair is milk : to milk. Consider flour : to bake. Baking uses flour to make something else. Consider wood : to carve. Carving shapes wood rather than extracting wood as a fluid or substance from a source. Consider water : to freeze. Freezing changes the state of water. If you chose one of those alternatives, compare the exact relationship you used with the one in the original pair. The correction is usually a small change in the defining sentence, not a need to memorize the entire question.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'milk : to milk']
+  SCRIPT: The answer is choice 2: milk : to milk. To tap a tree is to extract its sap. To milk an animal is to extract its milk. Define the verb through the substance: the action takes the first thing out of its source. The other verbs change or use a material rather than extract it.
+
+######## SECTION vr40-practice — Independent practice (practice)
+--- Q vr40-p001: temperature : thermometer
+  CHOICES: ['knife : to cut', 'foal : horse', 'to expand : to contract', 'mass : balance'] correct=4
+--- Q vr40-p005: head : helmet
+  CHOICES: ['radar : aircraft', 'wool : sweater', 'scarce : rare', 'knee : kneepad'] correct=4
+--- Q vr40-p041: to harvest : crops
+  CHOICES: ['mediator : to reconcile', 'to collect : stamps', 'timber : table', 'to loosen : tight'] correct=2
+--- Q vr40-p045: guardrail : falling
+  CHOICES: ['lifebuoy : drowning', 'apology : offense', 'to darken : dark', 'courtroom : trial'] correct=1
+--- Q vr40-p081: to invite : to attend
+  CHOICES: ['knee : kneepad', 'to question : to answer', 'to widen : wide', 'zoologist : animals'] correct=2
+--- Q vr40-p085: flammable : to ignite
+  CHOICES: ['soluble : to dissolve', 'scratch : groove', 'to splutter : words', 'money : vault'] correct=1
+--- Q vr40-p009: grain : granary
+  CHOICES: ['perishable : to spoil', 'records : archive', 'needle : to sew', 'tired : exhausted'] correct=2
+--- Q vr40-p013: potter : vase
+  CHOICES: ['referee : to officiate', 'to reap : grain', 'trickle : flow', 'baker : loaf'] correct=4
+--- Q vr40-p049: smoke detector : smoke
+  CHOICES: ['fatigue : concentrating', 'collision : dent', 'motion sensor : movement', 'mass : balance'] correct=3
+--- Q vr40-p053: to expand : to contract
+  CHOICES: ['diligent : industrious', 'to encourage : to attempt', 'animal : skin', 'to tighten : to loosen'] correct=4
+--- Q vr40-p089: empty : contents
+  CHOICES: ['correction : error', 'novelist : novel', 'tasteless : flavor', 'obsolete : outdated'] correct=3
+--- Q vr40-p093: editor : to revise
+  CHOICES: ['hen : egg', 'comedian : routine', 'teacher : to instruct', 'cartographer : map'] correct=3
+--- Q vr40-p017: actor : play
+  CHOICES: ['lifebuoy : drowning', 'to cool : hot', 'orchestra : symphony', 'baker : loaf'] correct=3
+--- Q vr40-p021: sailor : crew
+  CHOICES: ['to thicken : thick', 'judge : panel', 'petal : flower', 'leak detector : escaping gas'] correct=2
+--- Q vr40-p057: candid : frank
+  CHOICES: ['entomologist : insects', 'reluctant : unwilling', 'to accept : to reject', 'brittle : to shatter'] correct=2
+--- Q vr40-p061: warm : scorching
+  CHOICES: ['homeless : home', 'to stammer : speech', 'small : minuscule', 'light breeze : wind'] correct=3
+--- Q vr40-p097: kitchen : cooking
+  CHOICES: ['argument : convincing', 'sailor : crew', 'theatre : performance', 'grain : granary'] correct=3
+--- Q vr40-p101: fire : ash
+  CHOICES: ['fragile : to break', 'time : clock', 'rung : ladder', 'collision : dent'] correct=4
+--- Q vr40-p025: chapter : book
+  CHOICES: ['to accept : to reject', 'tremor : steady writing', 'tile : mosaic', 'musician : orchestra'] correct=3
+--- Q vr40-p029: foal : horse
+  CHOICES: ['hen : egg', 'impartial : unbiased', 'to urge : to act', 'kitten : cat'] correct=4
+--- Q vr40-p065: drizzle : rain
+  CHOICES: ['editor : to revise', 'antidote : poisoning', 'murmur : sound', 'warm : scorching'] correct=3
+--- Q vr40-p069: to dry : wet
+  CHOICES: ['silkworm : silk', 'to cool : hot', 'to flatten : flat', 'laboratory : experimentation'] correct=2
+--- Q vr40-p105: tree : bark
+  CHOICES: ['eye : goggles', 'calf : cow', 'walnut : husk', 'spoke : wheel'] correct=3
+--- Q vr40-p109: botanist : plants
+  CHOICES: ['leather : belt', 'zoologist : animals', 'referee : to officiate', 'wine : cellar'] correct=2
+--- Q vr40-p033: clay : pot
+  CHOICES: ['potter : vase', 'warm : scorching', 'flammable : to ignite', 'flour : bread'] correct=4
+--- Q vr40-p037: knife : to cut
+  CHOICES: ['silent : sound', 'sieve : to strain', 'to straighten : bent', 'glimmer : light'] correct=2
+--- Q vr40-p073: to moisten : wet
+  CHOICES: ['injury : scar', 'explanation : clear', 'to widen : wide', 'to loosen : tight'] correct=3
+--- Q vr40-p077: hoarseness : speaking
+  CHOICES: ['speed : speedometer', 'fatigue : concentrating', 'apology : offense', 'book : cover'] correct=2
+--- Q vr40-p113: to drip : water
+  CHOICES: ['to dribble : liquid', 'fatigue : concentrating', 'baker : loaf', 'sieve : to strain'] correct=1
+--- Q vr40-p117: antidote : poisoning
+  CHOICES: ['lubrication : friction', 'firebreak : spread of fire', 'choir : hymn', 'to gather : firewood'] correct=1
+--- Q vr40-p002: time : clock
+  CHOICES: ['length : ruler', 'broom : to sweep', 'lamb : sheep', 'to ascend : to descend'] correct=1
+--- Q vr40-p006: hand : glove
+  CHOICES: ['brief : concise', 'elbow : elbow pad', 'metal detector : metal', 'timber : table'] correct=2
+--- Q vr40-p042: to pick : berries
+  CHOICES: ['leather : belt', 'to empty : full', 'referee : to officiate', 'to gather : firewood'] correct=4
+--- Q vr40-p046: earplugs : hearing damage
+  CHOICES: ['lubrication : friction', 'to widen : wide', 'theatre : performance', 'firebreak : spread of fire'] correct=4
+--- Q vr40-p082: to warn : to take care
+  CHOICES: ['to encourage : to attempt', 'to thicken : thick', 'historian : the past', 'elbow : elbow pad'] correct=1
+--- Q vr40-p086: fragile : to break
+  CHOICES: ['explosive : to explode', 'bite : tooth mark', 'to blink : light', 'tools : tool shed'] correct=1
+--- Q vr40-p010: books : library
+  CHOICES: ['angry : furious', 'unstable : to topple', 'money : vault', 'spade : to dig'] correct=3
+--- Q vr40-p014: composer : melody
+  CHOICES: ['to collect : stamps', 'murmur : sound', 'cobbler : shoe', 'teacher : to instruct'] correct=3
+--- Q vr40-p050: radar : aircraft
+  CHOICES: ['stutter : fluent speaking', 'scratch : groove', 'leak detector : escaping gas', 'length : ruler'] correct=3
+--- Q vr40-p054: to ascend : to descend
+  CHOICES: ['to approach : to withdraw', 'obsolete : outdated', 'to apologize : to forgive', 'seed : coat'] correct=1
+--- Q vr40-p090: silent : sound
+  CHOICES: ['impartial : unbiased', 'compensation : loss', 'cartographer : map', 'odorless : smell'] correct=4
+--- Q vr40-p094: translator : to translate
+  CHOICES: ['bee : honey', 'actor : play', 'auditor : to examine accounts', 'potter : vase'] correct=3
+--- Q vr40-p018: pianist : sonata
+  CHOICES: ['choir : hymn', 'cobbler : shoe', 'firebreak : spread of fire', 'to clean : dirty'] correct=1
+--- Q vr40-p022: soldier : regiment
+  CHOICES: ['link : chain', 'microphone : sound', 'to weaken : weak', 'juror : jury'] correct=4
+--- Q vr40-p058: scarce : rare
+  CHOICES: ['volatile : to evaporate', 'ornithologist : birds', 'diligent : industrious', 'to combine : to separate'] correct=3
+--- Q vr40-p062: pleased : delighted
+  CHOICES: ['to drip : water', 'wet : drenched', 'drizzle : rain', 'empty : contents'] correct=2
+--- Q vr40-p098: laboratory : experimentation
+  CHOICES: ['workshop : manufacturing', 'books : library', 'account : credible', 'soldier : regiment'] correct=1
+--- Q vr40-p102: footstep : footprint
+  CHOICES: ['perishable : to spoil', 'air pressure : barometer', 'spoke : wheel', 'scratch : groove'] correct=4
+--- Q vr40-p026: rung : ladder
+  CHOICES: ['petal : flower', 'worker : workforce', 'to combine : to separate', 'congestion : breathing'] correct=1
+--- Q vr40-p030: lamb : sheep
+  CHOICES: ['puppy : dog', 'bee : honey', 'candid : frank', 'to invite : to attend'] correct=1
+--- Q vr40-p066: glimmer : light
+  CHOICES: ['pleased : delighted', 'translator : to translate', 'rest : fatigue', 'sprinkle : shower'] correct=4
+--- Q vr40-p070: to straighten : bent
+  CHOICES: ['to sharpen : sharp', 'classroom : teaching', 'cow : milk', 'to clean : dirty'] correct=4
+--- Q vr40-p106: egg : shell
+  CHOICES: ['foot : safety boot', 'duckling : duck', 'animal : skin', 'stanza : poem'] correct=3
+--- Q vr40-p110: geologist : rocks
+  CHOICES: ['flour : bread', 'historian : the past', 'teacher : to instruct', 'records : archive'] correct=2
+--- Q vr40-p034: wool : sweater
+  CHOICES: ['composer : melody', 'pleased : delighted', 'fragile : to break', 'wax : candle'] correct=4
+--- Q vr40-p038: broom : to sweep
+  CHOICES: ['to loosen : tight', 'breeze : wind', 'nameless : name', 'key : to unlock'] correct=4
+--- Q vr40-p074: to flatten : flat
+  CHOICES: ['to empty : full', 'flood : waterline', 'prediction : accurate', 'to thicken : thick'] correct=4
+--- Q vr40-p078: limp : walking
+  CHOICES: ['stutter : fluent speaking', 'lubrication : friction', 'walnut : husk', 'mass : balance'] correct=1
+--- Q vr40-p114: to flicker : light
+  CHOICES: ['to splutter : words', 'stutter : fluent speaking', 'cobbler : shoe', 'key : to unlock'] correct=1
+--- Q vr40-p118: rest : fatigue
+  CHOICES: ['to pick up : litter', 'irrigation : lack of water', 'thimble : needle prick', 'reciter : poem'] correct=2
+--- Q vr40-p003: air pressure : barometer
+  CHOICES: ['to advance : to retreat', 'angle : protractor', 'needle : to sew', 'calf : cow'] correct=2
+--- Q vr40-p007: eye : goggles
+  CHOICES: ['shin : shin guard', 'seismometer : ground motion', 'leather : belt', 'hostile : unfriendly'] correct=1
+--- Q vr40-p043: to glean : remnants
+  CHOICES: ['to cool : hot', 'teacher : to instruct', 'to pick up : litter', 'flour : bread'] correct=3
+--- Q vr40-p047: lock : unauthorised entry
+  CHOICES: ['thimble : needle prick', 'irrigation : lack of water', 'to thicken : thick', 'workshop : manufacturing'] correct=1
+--- Q vr40-p083: to persuade : to agree
+  CHOICES: ['entomologist : insects', 'shin : shin guard', 'to apologize : to forgive', 'to weaken : weak'] correct=3
+--- Q vr40-p087: perishable : to spoil
+  CHOICES: ['vehicles : garage', 'brittle : to shatter', 'spill : stain', 'to stammer : speech'] correct=2
+--- Q vr40-p011: weapons : armory
+  CHOICES: ['soluble : to dissolve', 'tools : tool shed', 'sieve : to strain', 'small : minuscule'] correct=2
+--- Q vr40-p015: weaver : cloth
+  CHOICES: ['auditor : to examine accounts', 'to gather : firewood', 'sprinkle : shower', 'novelist : novel'] correct=4
+--- Q vr40-p051: metal detector : metal
+  CHOICES: ['microphone : sound', 'angle : protractor', 'tremor : steady writing', 'bite : tooth mark'] correct=1
+--- Q vr40-p055: to advance : to retreat
+  CHOICES: ['bread : crust', 'to accept : to reject', 'impartial : unbiased', 'to urge : to act'] correct=2
+--- Q vr40-p091: nameless : name
+  CHOICES: ['candid : frank', 'antidote : poisoning', 'potter : vase', 'fearless : fear'] correct=4
+--- Q vr40-p095: mediator : to reconcile
+  CHOICES: ['pianist : sonata', 'curator : to manage a collection', 'composer : melody', 'silkworm : silk'] correct=2
+--- Q vr40-p019: singer : aria
+  CHOICES: ['reciter : poem', 'novelist : novel', 'thimble : needle prick', 'to soften : hard'] correct=1
+--- Q vr40-p023: singer : choir
+  CHOICES: ['musician : orchestra', 'step : staircase', 'light sensor : light', 'to brighten : bright'] correct=1
+--- Q vr40-p059: brief : concise
+  CHOICES: ['botanist : plants', 'obsolete : outdated', 'to expand : to contract', 'flammable : to ignite'] correct=2
+--- Q vr40-p063: tired : exhausted
+  CHOICES: ['silent : sound', 'to flicker : light', 'bad : atrocious', 'glimmer : light'] correct=3
+--- Q vr40-p099: classroom : teaching
+  CHOICES: ['gymnasium : exercise', 'weapons : armory', 'explanation : clear', 'singer : choir'] correct=1
+--- Q vr40-p103: injury : scar
+  CHOICES: ['unstable : to topple', 'speed : speedometer', 'stanza : poem', 'bite : tooth mark'] correct=4
+--- Q vr40-p027: spoke : wheel
+  CHOICES: ['to expand : to contract', 'hoarseness : speaking', 'link : chain', 'sailor : crew'] correct=3
+--- Q vr40-p031: calf : cow
+  CHOICES: ['scarce : rare', 'to warn : to take care', 'cygnet : swan', 'silkworm : silk'] correct=3
+--- Q vr40-p067: breeze : wind
+  CHOICES: ['faint glow : light', 'tired : exhausted', 'mediator : to reconcile', 'repair : damage'] correct=1
+--- Q vr40-p071: to loosen : tight
+  CHOICES: ['tree : sap', 'to soften : hard', 'to darken : dark', 'courtroom : trial'] correct=2
+--- Q vr40-p107: orange : peel
+  CHOICES: ['seed : coat', 'tile : mosaic', 'knee : kneepad', 'kitten : cat'] correct=1
+--- Q vr40-p111: linguist : language
+  CHOICES: ['entomologist : insects', 'auditor : to examine accounts', 'money : vault', 'wax : candle'] correct=1
+--- Q vr40-p035: timber : table
+  CHOICES: ['tired : exhausted', 'perishable : to spoil', 'glass : bottle', 'weaver : cloth'] correct=3
+--- Q vr40-p039: needle : to sew
+  CHOICES: ['brush : to paint', 'to empty : full', 'trickle : flow', 'flawless : defect'] correct=1
+--- Q vr40-p075: to sharpen : sharp
+  CHOICES: ['collision : dent', 'plan : feasible', 'to weaken : weak', 'to cool : hot'] correct=3
+--- Q vr40-p079: blurred vision : reading
+  CHOICES: ['length : ruler', 'tremor : steady writing', 'irrigation : lack of water', 'animal : skin'] correct=2
+--- Q vr40-p115: to sputter : sound
+  CHOICES: ['novelist : novel', 'brush : to paint', 'to blink : light', 'tremor : steady writing'] correct=3
+--- Q vr40-p119: repair : damage
+  CHOICES: ['lightning rod : lightning damage', 'comedian : routine', 'to amass : wealth', 'correction : error'] correct=4
+--- Q vr40-p004: speed : speedometer
+  CHOICES: ['to include : to exclude', 'electric current : ammeter', 'spade : to dig', 'duckling : duck'] correct=2
+--- Q vr40-p008: foot : safety boot
+  CHOICES: ['mouth : mouthguard', 'motion sensor : movement', 'flour : bread', 'reluctant : unwilling'] correct=1
+--- Q vr40-p044: to reap : grain
+  CHOICES: ['to clean : dirty', 'auditor : to examine accounts', 'to amass : wealth', 'wax : candle'] correct=3
+--- Q vr40-p048: sunscreen : sunburn
+  CHOICES: ['correction : error', 'to weaken : weak', 'gymnasium : exercise', 'lightning rod : lightning damage'] correct=4
+--- Q vr40-p084: to request : to comply
+  CHOICES: ['ornithologist : birds', 'mouth : mouthguard', 'to urge : to act', 'to brighten : bright'] correct=3
+--- Q vr40-p088: unstable : to topple
+  CHOICES: ['to drip : water', 'grain : granary', 'volatile : to evaporate', 'fire : ash'] correct=3
+--- Q vr40-p012: wine : cellar
+  CHOICES: ['wet : drenched', 'explosive : to explode', 'vehicles : garage', 'key : to unlock'] correct=3
+--- Q vr40-p016: sculptor : statue
+  CHOICES: ['to pick up : litter', 'faint glow : light', 'cartographer : map', 'curator : to manage a collection'] correct=3
+--- Q vr40-p052: seismometer : ground motion
+  CHOICES: ['electric current : ammeter', 'congestion : breathing', 'spill : stain', 'light sensor : light'] correct=4
+--- Q vr40-p056: to include : to exclude
+  CHOICES: ['tree : bark', 'to combine : to separate', 'candid : frank', 'to invite : to attend'] correct=2
+--- Q vr40-p092: flawless : defect
+  CHOICES: ['composer : melody', 'homeless : home', 'scarce : rare', 'rest : fatigue'] correct=2
+--- Q vr40-p096: referee : to officiate
+  CHOICES: ['cow : milk', 'singer : aria', 'navigator : to plot a course', 'weaver : cloth'] correct=3
+--- Q vr40-p020: dancer : ballet
+  CHOICES: ['lightning rod : lightning damage', 'to clarify : unclear', 'comedian : routine', 'cartographer : map'] correct=3
+--- Q vr40-p024: player : team
+  CHOICES: ['smoke detector : smoke', 'to moisten : wet', 'worker : workforce', 'chapter : book'] correct=3
+--- Q vr40-p060: hostile : unfriendly
+  CHOICES: ['impartial : unbiased', 'to ascend : to descend', 'fragile : to break', 'geologist : rocks'] correct=1
+--- Q vr40-p064: angry : furious
+  CHOICES: ['nameless : name', 'to sputter : sound', 'afraid : terrified', 'breeze : wind'] correct=3
+--- Q vr40-p100: courtroom : trial
+  CHOICES: ['wine : cellar', 'prediction : accurate', 'player : team', 'observatory : astronomical observation'] correct=4
+--- Q vr40-p104: flood : waterline
+  CHOICES: ['mass : balance', 'tile : mosaic', 'spill : stain', 'soluble : to dissolve'] correct=3
+--- Q vr40-p028: stanza : poem
+  CHOICES: ['to ascend : to descend', 'limp : walking', 'step : staircase', 'soldier : regiment'] correct=3
+--- Q vr40-p032: duckling : duck
+  CHOICES: ['to persuade : to agree', 'piglet : pig', 'cow : milk', 'brief : concise'] correct=2
+--- Q vr40-p068: trickle : flow
+  CHOICES: ['apology : offense', 'light breeze : wind', 'angry : furious', 'referee : to officiate'] correct=2
+--- Q vr40-p072: to empty : full
+  CHOICES: ['to clarify : unclear', 'to widen : wide', 'theatre : performance', 'oyster : pearl'] correct=1
+--- Q vr40-p108: book : cover
+  CHOICES: ['petal : flower', 'elbow : elbow pad', 'puppy : dog', 'bread : crust'] correct=4
+--- Q vr40-p112: astronomer : celestial bodies
+  CHOICES: ['glass : bottle', 'ornithologist : birds', 'curator : to manage a collection', 'tools : tool shed'] correct=2
+--- Q vr40-p036: leather : belt
+  CHOICES: ['angry : furious', 'unstable : to topple', 'marble : statue', 'sculptor : statue'] correct=3
+--- Q vr40-p040: spade : to dig
+  CHOICES: ['tasteless : flavor', 'comb : to untangle', 'to cool : hot', 'murmur : sound'] correct=2
+--- Q vr40-p076: to darken : dark
+  CHOICES: ['to clean : dirty', 'scratch : groove', 'comparison : apt', 'to brighten : bright'] correct=4
+--- Q vr40-p080: stiffness : bending
+  CHOICES: ['congestion : breathing', 'correction : error', 'seed : coat', 'angle : protractor'] correct=1
+--- Q vr40-p116: to flash : light
+  CHOICES: ['comb : to untangle', 'to stammer : speech', 'congestion : breathing', 'cartographer : map'] correct=2
+--- Q vr40-p120: apology : offense
+  CHOICES: ['guardrail : falling', 'actor : play', 'to harvest : crops', 'compensation : loss'] correct=4
+--- Q vr40-p121: bee : honey
+  CHOICES: ['glass : bottle', 'musician : orchestra', 'thimble : needle prick', 'oyster : pearl'] correct=4
+--- Q vr40-p122: silkworm : silk
+  CHOICES: ['marble : statue', 'worker : workforce', 'lightning rod : lightning damage', 'sheep : wool'] correct=4
+--- Q vr40-p123: cow : milk
+  CHOICES: ['spider : web silk', 'clay : pot', 'sailor : crew', 'guardrail : falling'] correct=1
+--- Q vr40-p124: tree : sap
+  CHOICES: ['earplugs : hearing damage', 'hen : egg', 'wool : sweater', 'soldier : regiment'] correct=2
+--- Q vr40-p125: argument : convincing
+  CHOICES: ['impartial : unbiased', 'step : staircase', 'light sensor : light', 'plan : feasible'] correct=4
+--- Q vr40-p126: account : credible
+  CHOICES: ['comparison : apt', 'candid : frank', 'chapter : book', 'smoke detector : smoke'] correct=1
+--- Q vr40-p127: explanation : clear
+  CHOICES: ['radar : aircraft', 'answer : correct', 'scarce : rare', 'rung : ladder'] correct=2

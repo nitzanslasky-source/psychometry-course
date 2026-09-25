@@ -1,0 +1,63 @@
+VERBAL REASONING — HYBRID WHITEBOARD WRITER RULES (read fully before writing)
+
+WHAT YOU PRODUCE
+- ONE python file in /Users/nitzanslasky/nite-psychometry/studio-build named in your task (modulesV<topic><letter>.py),
+  defining MODULES (list, in teaching order) and MEMORY (list of learn-by-heart cards, may be empty).
+- Use only the helpers in dsl.py: lesson(), guided(), T(), P(), H(), A(), D(), VQ(), PSG(). Read dsl.py first.
+- Do not edit any other file. Do not run build_verbal.py. When done run:  python3 validate_v.py  and fix every problem in your file.
+
+THE TEACHER'S RULE FOR VERBAL (most important)
+- Verbal reasoning is about reading fast and drawing exactly the right conclusion; a translated question changes its
+  difficulty. So: from the Hebrew subtitles take ONLY the concepts, the lesson structure and order, the methods,
+  the tips/warnings and the closing verdicts. NEVER translate or adapt a Hebrew example question or Hebrew sentence.
+- Every example and every guided question comes from the English question source named in your task
+  (bank file vcands<topic>.txt; for Analogies/Active reading the course's own questions in tv<topic>.txt).
+- Never change a single word of a question stem or answer choice. Quote them exactly when you read them aloud.
+- Map each Hebrew worked example to ONE English question of the SAME TYPE and a similar difficulty (the Hebrew says
+  "רמת קושי קלה/בינונית/גבוהה" — easy / medium / hard; say the level on the title slide script like the Geometry modules).
+  Teach the Hebrew method(s) for that example, in the Hebrew order, on the English question.
+- Prefer bank items marked [NITE key] or [real exam], then [keyed]. Do NOT use [VERIFY] or [inf_v1 REVIEW] items as
+  guided questions. Solve every chosen question yourself first; if you disagree with the bank's answer, don't use it
+  (list it in your report).
+- If a Hebrew method genuinely doesn't apply to any available English question, teach the concept on a concept slide
+  (short pop-ins, no invented question) and say in your report which method had no matching question.
+- If the Hebrew relies on something Hebrew-specific (a Hebrew word pair, Hebrew grammar, Hebrew connector words), teach
+  the English equivalent concept instead (English connectors, English word relations) — and say so in your report.
+
+STRUCTURE
+- Follow the Hebrew lesson structure for your range: one lesson() per Hebrew lesson segment (theory), then the guided
+  questions that the Hebrew solves after it, grouped with guided() (one group per lesson; group title e.g.
+  'Sentence Completion Questions I'). Module ids: lessons 'vr<topic>-<short-slug>'; guided ids are automatic
+  ('solve-'+qid). The build numbers modules and renames guided sidebars to "Question N" per topic.
+- Lesson sidebar: <= 13 items, each <= 22 characters. Title slide first (clean: only spoken lines).
+- Concept slides start blank; each rule/term/formula pops in with A(label, T(...)) — full width (x=410, w=1140),
+  y values increasing (or omit y to flow down). Keep pop-ins short (one line or two).
+- You may put a real English example on a lesson slide as mode='question' with pre=[VQ(qid)] (bank/course question),
+  e.g. to demonstrate a method during the lesson. Then that qid must not be reused elsewhere.
+- Guided question slides: the full question is pre-loaded (VQ, automatic in guided()). The stem sits at the top and the
+  four answers are stacked rows at the bottom; the space between is for pop-ins. Put method pop-ins with
+  P('short text', y=...) — they auto-stack under the question text. Max 2–3 short pop-ins per slide; if you need more,
+  make another slide.
+- D('...') = the teacher's hand annotations ON the text: underline a key word, circle a connector, bracket a clause,
+  write a short arrow/label, cross out an answer. The last solving slide must contain D('Circle choice N') with the
+  correct N, followed by the spoken line "Choice N." (N = the correct answer, 1-based).
+- Reading comprehension: show passage paragraphs with a question-mode slide whose pre is [PSG(pid, [n, …])]
+  (pass it via guided slide tuple extra: ('Read paragraph 2', [...], dict(pre=[PSG('vbp-03',[2])])) ), then the question slide.
+
+SPOKEN SCRIPT (subtitles)
+- Punchy, high-energy, short coaching lines in natural English, like the existing modules. Keep the Hebrew teacher's
+  voice, tips, warnings and verdicts ("this is the most common trap", "don't waste time here", recommended time per
+  question, question position in the section, etc.) — adapted to the English exam (the English exam has the same
+  structure: say it the way the Hebrew does unless it's Hebrew-specific).
+- Use NITE terminology (see /Users/nitzanslasky/nite-psychometry/reference/nite_terminology.md): "choice", "passage",
+  "paragraph", "statement", "necessarily", "cannot be inferred", etc.
+
+MEMORY CARDS (MEMORY list)
+- dict(id='mem-<short>', after='<video id it belongs after (a lesson id or solve-<qid>)>', title=..., intro=...,
+  tables=[dict(title=..., head=[...], rows=[[...], ...])], tips=[...]). Only things actually taught that are worth
+  learning by heart (e.g. English connector words by function, logic rules, strengthen/weaken checklist, analogy
+  relation types). Compact.
+
+REPORT (your final message): modules and slide counts; Hebrew line range → module mapping in order; for each guided
+question: Hebrew example type/difficulty → qid chosen (and trust level); methods with no matching English question;
+Hebrew-specific points replaced by English equivalents; bank answers you disagreed with; memory cards.

@@ -1,0 +1,708 @@
+# Topic 49 Reading comprehension
+
+######## SECTION vr49-learn — Learn and try (learn)
+=== VIDEO vr-reading-strategy: kind=lesson title='Reading comprehension: build a map, then use the evidence'
+[1] A passage is a sequence of moves
+  BOARD: ['What is the subject?', 'What question or disagreement drives the passage?', 'What does each paragraph add?']
+  SCRIPT: A reading passage is more than a long collection of facts. A writer is usually moving through a question: introducing a puzzle, describing an explanation, testing it, then qualifying the conclusion. Start by looking for that movement. Our Active Reading habits now work at paragraph scale. Give each paragraph a short label and keep the owner of each opinion clear. You do not need to memorize every name, date or technical term on the first read. You need enough of a map to know where information belongs and how the writer’s main point develops.
+[2] Two routes, one goal
+  BOARD: ['Route A: read and map, then answer.', 'Route B: local questions first, reading enough context.', 'Try both on timed sets; compare accuracy as well as speed.']
+  SCRIPT: One useful route is to start with local questions and read the relevant parts as you go. Another is to make a light map of the passage first. In English, a short first read with paragraph labels may be more efficient for you, especially when the passage builds a single argument. Try both routes on comparable practice sets. Count not only the time, but also the rereading and the mistakes. A strategy that seems fast until you miss the central contrast is not saving you much. Choose the route that reliably gives you enough context for the questions in front of you.
+[3] Route A: read with a light map
+  BOARD: ['After each sentence: a tiny paraphrase', 'After each paragraph: a short role label', 'No detailed summary of every fact']
+  SCRIPT: For the read-first route, move through the passage once with a light touch. Pause briefly after a difficult sentence to put it in your own words. At the end of a paragraph, name its job: old account, new test, competing explanation, or limitation. Do not turn this into writing a separate summary of every sentence. The map should cost little time. When the questions begin, use it to return to the right area. A detail question still deserves a reread of the relevant text; the first reading is not a memory competition.
+[4] Route B: local questions first
+  BOARD: ['Find the first local demand.', 'Read the surrounding sentence or paragraph.', 'Build the map while answering.', 'Return to global questions.']
+  SCRIPT: For the question-first route, begin with a demand that points to a particular phrase, paragraph or detail. Read enough surrounding text to understand it. A pronoun may require the previous sentence, and a contrast may require the start of the paragraph. As you answer, keep a growing map of what each part does. Leave a question about the whole passage until you have seen enough of its structure. Before answering that global question, fill any important gap in your reading. The method is selective reading with context, not grabbing isolated words and hoping the answers explain the passage for you.
+[5] Do not turn order into a guarantee
+  BOARD: ['Local questions often move through the text.', 'Use that as a search clue, not a rule.', 'According to the passage can introduce a local question too.']
+  SCRIPT: Question order can help you look for a detail, but it is not a guarantee that every answer lies after the previous one. Likewise, the phrase ‘according to the passage’ does not automatically make a question global in English. Look at what it asks. A question about a named experiment may be local even with that opening. A question about the writer’s overall purpose is global even without it. The demand, rather than a single stock phrase, tells you how much of the passage you need. Use the wording as a clue, then check what information the answer actually requires.
+[6] Read around the reference
+  BOARD: ['“This result” → which result?', '“However” → contrast with what?', 'A definition may be one sentence earlier.']
+  SCRIPT: When a question points to a phrase, read a little before and after it. ‘This result’ cannot be understood without the result it names. ‘However’ tells us that something turns, so we need the earlier claim as well as the sentence after it. A technical term may have been defined just before the quoted line. Our course uses paragraph numbers so references remain stable when the page size changes or the passage is printed. The exam may use line numbers. The skill is the same: use the reference as an entry point, then read enough context to recover the meaning.
+[7] A meaning-in-context question
+  BOARD: ['Use the meaning that fits this sentence.', 'Replace the word and reread.', 'Do not choose a dictionary sense that changes the point.']
+  SCRIPT: A familiar word can have a less familiar sense in a passage. ‘Account’ might mean an explanation rather than a bank account. ‘Qualified’ might mean limited by reservations rather than professionally trained. Read the whole sentence, replace the word with your proposed meaning, and see whether the paragraph still makes sense. The best answer preserves both grammar and the writer’s point. A distractor may be a perfectly valid dictionary definition in another context. We reject it here because the neighboring ideas select a different sense.
+[8] Inference stays close to the text
+  BOARD: ['Combine stated information.', 'Keep its limits.', 'Do not import outside knowledge.']
+  SCRIPT: An inference may not appear as one exact sentence, but its support should be visible. If a passage says a method works under one condition and not another, we can infer that the condition matters to its success. We cannot infer the exact cause unless the passage supplies it. Use the passage’s own definitions and invented study facts, even if you know a related real-world topic. Outside knowledge can make a plausible distractor feel true, but the question asks what this text supports. Point to the two or three statements that do the work.
+[9] Purpose is different from content
+  BOARD: ['Content: what does the example describe?', 'Purpose: why is it here?']
+  SCRIPT: Suppose a paragraph describes a museum visitor touching a replica. The content is that action. The purpose may be to show how replicas allow an experience that preservation rules restrict for originals. A question asking why the example is included needs the second answer. Look at the claim the example follows and the conclusion the writer draws from it. Your paragraph labels help here. An option can accurately describe the scene while missing its argumentative job. Ask what would be harder to understand or support if the example were removed.
+[10] Choose a title with the right scope
+  BOARD: ['Too narrow: one example only', 'Too broad: a claim the passage never makes', 'Best fit: subject plus main development']
+  SCRIPT: A title should cover the passage’s central development, not merely its most memorable example. If a passage begins with an old view and then explains why it needs qualification, a title that states only the old view misses the point. A dramatic universal claim may be too broad. Try a simple phrase joining the subject and the main idea: ‘When observation changes performance,’ or ‘Why an archive’s silence needs interpretation.’ Then compare the options with that phrase. The best title need not mention every detail, but it should not misrepresent the writer’s conclusion.
+[11] A full check for a negative question
+  BOARD: ['Supported', 'Contradicted', 'Not established']
+  SCRIPT: For a question asking which statement is not supported, inspect all four options. Three may closely paraphrase the passage. The remaining one may be contradicted, or it may add a claim the passage leaves open. Keep those categories separate. If the demand says ‘contradicts,’ an unsupported possibility is not enough. If it says ‘does not follow,’ an extra unproved claim can be the answer. Circle the negative word before you start. Under time pressure, this tiny mark helps prevent answering the opposite question after you have done all the reading correctly.
+[12] Budget the set, not only one question
+  BOARD: ['Reading time serves several questions.', 'Skip a stubborn detail temporarily.', 'Return with a clear location to check.']
+  SCRIPT: A passage and its questions form a set. Reading time is shared across that set, so a rigid one-minute rule for each question can be misleading. Practice with a realistic total allowance based on the paper format you are using, then look at where the time went. If one vocabulary detail is holding you up, mark it and continue when the other questions can still be answered. Do not lose the whole set trying to force certainty from one phrase. On review, record whether the problem was vocabulary, a missing connection, a scope error, or simply searching in the wrong paragraph.
+[13] Use your review to improve the next read
+  BOARD: ['Where did my paraphrase change the claim?', 'Which paragraph role did I miss?', 'What made the distractor attractive?']
+  SCRIPT: After a practice set, do more than note the right letter. Find the exact point where your reading diverged from the text. Perhaps a reported opinion became the writer’s view. Perhaps ‘may’ became ‘must.’ Perhaps you remembered an example but forgot that the writer used it to challenge a general rule. Write a short correction that you can use on the next passage. That is how Active Reading becomes a practical skill rather than a list of techniques. The aim is a clear first understanding, followed by focused returns to evidence when the question needs them.
+=== VIDEO vr-passage-1-map: kind=lesson title='Read and map: When an audience changes performance'
+[1] Read paragraph 1
+  BOARD: []
+  SCRIPT: An instructor once claimed that people always perform better when someone watches them. She pointed to experienced drummers who kept a steadier rhythm during a rehearsal attended by friends than during a rehearsal alone. This observation made the claim sound reasonable, but it left open whether the same pattern would hold for a task the performers had not mastered. Pause here and give the paragraph a short role label. Keep the main claim and any contrast in view; the detailed questions will send us back to the relevant evidence.
+[2] Read paragraph 2
+  BOARD: []
+  SCRIPT: Consider a hypothetical study designed to explore that question. Participants completed a familiar sequence of hand movements and a newly learned sequence, either alone or while observers watched. Observation improved performance on the familiar sequence but increased errors on the new one. The researcher proposed that being watched strengthens a person’s most readily available response. A practiced response is often the appropriate one; on an unfamiliar task, the immediate response may be a mistake. The proposed explanation therefore predicts different effects without assuming that observers are either universally helpful or universally harmful. Pause here and give the paragraph a short role label. Keep the main claim and any contrast in view; the detailed questions will send us back to the relevant evidence.
+[3] Read paragraph 3
+  BOARD: []
+  SCRIPT: A second hypothetical study added another distinction. Some participants believed that their individual scores would be compared publicly. Others believed that only a combined group score would be reported, so their own contribution could not be identified. Under individual comparison, the familiar-task advantage and unfamiliar-task disadvantage appeared again. Under combined scoring, however, participants were less hurried: their familiar actions became slower, while their performance on the unfamiliar sequence became more accurate. Pause here and give the paragraph a short role label. Keep the main claim and any contrast in view; the detailed questions will send us back to the relevant evidence.
+[4] Read paragraph 4
+  BOARD: []
+  SCRIPT: These results would not justify a simple rule that company improves performance or that privacy always does. They would suggest that the meaning of the social situation matters. Being physically near others is not the same as feeling individually evaluated. The original instructor’s observation could be sound while her general conclusion remained too broad. What began as a question about the presence of an audience would then become a question about how a task and a scoring arrangement shape the performer’s response. Pause here and give the paragraph a short role label. Keep the main claim and any contrast in view; the detailed questions will send us back to the relevant evidence.
+--- Q vr49-g001: The drummers are mentioned in paragraph 1 to illustrate —
+  CHOICES: ['proof that every performer benefits from every audience', 'an observation that makes a broad claim initially plausible', 'a case in which observation always harms performance', 'a comparison between two unfamiliar tasks'] correct=2
+=== VIDEO solve-vr49-g001: kind=solution title='When an audience changes performance · Example role'
+[1] Your question
+  BOARD: []
+  SCRIPT: The drummers are mentioned in paragraph 1 to illustrate —
+[2] Return to the evidence
+  BOARD: ['an observation that makes a broad claim initially plausible']
+  SCRIPT: The instructor uses skilled drummers’ improvement as an example supporting her initial view. The paragraph then questions generalising beyond that case. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Example role']
+  SCRIPT: “a case in which observation always harms performance”: The observed change is an improvement. “a comparison between two unfamiliar tasks”: The drummers’ task is practiced, not two unfamiliar tasks. “proof that every performer benefits from every audience”: The example is explicitly insufficient for the universal claim. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'an observation that makes a broad claim initially plausible']
+  SCRIPT: The answer is choice 2: an observation that makes a broad claim initially plausible. The instructor uses skilled drummers’ improvement as an example supporting her initial view. The paragraph then questions generalising beyond that case.
+--- Q vr49-g002: According to paragraph 2, why can observation impair performance on a new task?
+  CHOICES: ['It makes all familiar actions impossible.', 'It guarantees that observers give incorrect instructions.', 'It can strengthen an immediate response that is inappropriate.', 'It removes every response from memory.'] correct=3
+=== VIDEO solve-vr49-g002: kind=solution title='When an audience changes performance · Mechanism'
+[1] Your question
+  BOARD: []
+  SCRIPT: According to paragraph 2, why can observation impair performance on a new task?
+[2] Return to the evidence
+  BOARD: ['It can strengthen an immediate response that is inappropriate.']
+  SCRIPT: The proposed mechanism strengthens the most readily available response, which may be mistaken on an unfamiliar task. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Mechanism']
+  SCRIPT: “It removes every response from memory.”: The mechanism increases a response rather than erases all responses. “It makes all familiar actions impossible.”: Familiar performance improved. “It guarantees that observers give incorrect instructions.”: No observer instructions are described. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'It can strengthen an immediate response that is inappropriate.']
+  SCRIPT: The answer is choice 3: It can strengthen an immediate response that is inappropriate.. The proposed mechanism strengthens the most readily available response, which may be mistaken on an unfamiliar task.
+--- Q vr49-g003: In paragraph 3, “their own contribution” refers to —
+  CHOICES: ['the observers’ instructions', 'the researcher’s written explanation', 'the instructor’s original claim', 'the performance of each participant separately'] correct=4
+=== VIDEO solve-vr49-g003: kind=solution title='When an audience changes performance · Reference'
+[1] Your question
+  BOARD: []
+  SCRIPT: In paragraph 3, “their own contribution” refers to —
+[2] Return to the evidence
+  BOARD: ['the performance of each participant separately']
+  SCRIPT: The contrast is between identifiable individual scores and a pooled group score. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Reference']
+  SCRIPT: “the observers’ instructions”: Instructions are not the scored contribution. “the researcher’s written explanation”: The researcher’s explanation is not being pooled. “the instructor’s original claim”: The instructor’s claim is not a participant score. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'the performance of each participant separately']
+  SCRIPT: The answer is choice 4: the performance of each participant separately. The contrast is between identifiable individual scores and a pooled group score.
+--- Q vr49-g004: Which condition in paragraph 3 is associated with more accurate unfamiliar-task performance?
+  CHOICES: ['Receiving explicit criticism from observers', 'Believing that only a combined group score would be reported', 'Expecting public comparison of individual scores', 'Performing only the familiar sequence'] correct=2
+=== VIDEO solve-vr49-g004: kind=solution title='When an audience changes performance · Detail'
+[1] Your question
+  BOARD: []
+  SCRIPT: Which condition in paragraph 3 is associated with more accurate unfamiliar-task performance?
+[2] Return to the evidence
+  BOARD: ['Believing that only a combined group score would be reported']
+  SCRIPT: Combined scoring is linked to less hurried performance and greater accuracy on the unfamiliar sequence. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Detail']
+  SCRIPT: “Expecting public comparison of individual scores”: Individual comparison reproduced the unfamiliar-task disadvantage. “Performing only the familiar sequence”: This is the wrong task. “Receiving explicit criticism from observers”: Criticism is not described. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'Believing that only a combined group score would be reported']
+  SCRIPT: The answer is choice 2: Believing that only a combined group score would be reported. Combined scoring is linked to less hurried performance and greater accuracy on the unfamiliar sequence.
+--- Q vr49-g005: Which statement is not supported by the passage?
+  CHOICES: ['Individual evaluation and combined scoring are distinguished.', 'Physical presence alone determines the effect of other people.', 'The original observation could be accurate while its generalisation was too broad.', 'Task familiarity can change the direction of an observation effect.'] correct=2
+=== VIDEO solve-vr49-g005: kind=solution title='When an audience changes performance · Unsupported claim'
+[1] Your question
+  BOARD: []
+  SCRIPT: Which statement is not supported by the passage?
+[2] Return to the evidence
+  BOARD: ['Physical presence alone determines the effect of other people.']
+  SCRIPT: Paragraph 4 argues that the meaning of the social situation matters, not presence alone. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Unsupported claim']
+  SCRIPT: “The original observation could be accurate while its generalisation was too broad.”: This is stated in paragraph 4. “Task familiarity can change the direction of an observation effect.”: Paragraph 2 gives opposite effects by familiarity. “Individual evaluation and combined scoring are distinguished.”: Paragraph 3 makes this distinction central. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'Physical presence alone determines the effect of other people.']
+  SCRIPT: The answer is choice 2: Physical presence alone determines the effect of other people.. Paragraph 4 argues that the meaning of the social situation matters, not presence alone.
+--- Q vr49-g006: Which title best captures the passage’s development?
+  CHOICES: ['From an audience’s presence to the meaning of being watched', 'Why all public performance fails', 'The history of musical instruments', 'A proof that groups always improve accuracy'] correct=1
+=== VIDEO solve-vr49-g006: kind=solution title='When an audience changes performance · Main idea'
+[1] Your question
+  BOARD: []
+  SCRIPT: Which title best captures the passage’s development?
+[2] Return to the evidence
+  BOARD: ['From an audience’s presence to the meaning of being watched']
+  SCRIPT: The passage qualifies a broad presence claim by adding task familiarity and individual evaluation. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Main idea']
+  SCRIPT: “Why all public performance fails”: Familiar performance can improve. “The history of musical instruments”: Drummers are only an opening example. “A proof that groups always improve accuracy”: The findings include disadvantages and qualifications. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'From an audience’s presence to the meaning of being watched']
+  SCRIPT: The answer is choice 1: From an audience’s presence to the meaning of being watched. The passage qualifies a broad presence claim by adding task familiarity and individual evaluation.
+=== VIDEO vr-passage-2-map: kind=lesson title='Read and map: Two books by an imaginary scholar'
+[1] Read paragraph 1
+  BOARD: []
+  SCRIPT: Imagine a scholar named Elian who combines public service with private study. While managing a town’s water system, Elian writes two books. The first, The Practical Register, organizes maintenance rules by the tasks workers perform. The second, Questions at the Source, examines why communities accept certain kinds of authority. The books emerge from the same working life, but they address different problems and different readers. Pause here and give the paragraph a short role label. Keep the main claim and any contrast in view; the detailed questions will send us back to the relevant evidence.
+[2] Read paragraph 2
+  BOARD: []
+  SCRIPT: The Practical Register aims to make information easy to retrieve. Its chapters follow a stable pattern, and repeated terms are defined consistently. Questions at the Source deliberately asks more of its readers. Elian places related arguments in separate chapters and sometimes presents objections before explaining the position they challenge. In a preface, the scholar warns that a hurried reader may mistake an objection for the author’s own conclusion. The difficulty is not accidental: Elian wants readers to test connections rather than repeat a convenient summary. Pause here and give the paragraph a short role label. Keep the main claim and any contrast in view; the detailed questions will send us back to the relevant evidence.
+[3] Read paragraph 3
+  BOARD: []
+  SCRIPT: Reception differs across two fictional regions. Workers in both welcome the Register as a useful guide. Readers in the western region often criticize Questions at the Source as needlessly obscure. In the eastern region, where debating through alternating arguments is already a familiar practice, the same book is more readily understood. This contrast does not show that eastern readers agree with every claim. It suggests that familiarity with a form of reasoning can affect access to a work before the reader reaches a judgment about its conclusions. Pause here and give the paragraph a short role label. Keep the main claim and any contrast in view; the detailed questions will send us back to the relevant evidence.
+[4] Read paragraph 4
+  BOARD: []
+  SCRIPT: Elian’s career therefore illustrates more than an opposition between practical work and abstract thought. The practical book seeks clarity through arrangement; the philosophical one uses a demanding arrangement as part of its teaching. Both are purposeful choices. A later editor who turns the second book into a list of simple conclusions may make it easier to consult while removing the very process through which Elian expected readers to understand it. Pause here and give the paragraph a short role label. Keep the main claim and any contrast in view; the detailed questions will send us back to the relevant evidence.
+--- Q vr49-g007: The Practical Register is chiefly described as —
+  CHOICES: ['a biography of western critics', 'a record of imaginary readers’ private letters', 'an arrangement of maintenance rules around workers’ tasks', 'a collection of arguments about political authority'] correct=3
+=== VIDEO solve-vr49-g007: kind=solution title='Two books by an imaginary scholar · Distinguish works'
+[1] Your question
+  BOARD: []
+  SCRIPT: The Practical Register is chiefly described as —
+[2] Return to the evidence
+  BOARD: ['an arrangement of maintenance rules around workers’ tasks']
+  SCRIPT: Paragraph 1 assigns maintenance organization to the Register and authority questions to the other book. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Distinguish works']
+  SCRIPT: “a collection of arguments about political authority”: This describes Questions at the Source. “a biography of western critics”: No such biography is mentioned. “a record of imaginary readers’ private letters”: Letters are not the Register’s content. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'an arrangement of maintenance rules around workers’ tasks']
+  SCRIPT: The answer is choice 3: an arrangement of maintenance rules around workers’ tasks. Paragraph 1 assigns maintenance organization to the Register and authority questions to the other book.
+--- Q vr49-g008: Why might a hurried reader misunderstand Questions at the Source?
+  CHOICES: ['An objection may be encountered before the position it is meant to challenge.', 'Every term in the book is left undefined.', 'The author denies having written it.', 'The book contains only maintenance instructions.'] correct=1
+=== VIDEO solve-vr49-g008: kind=solution title='Two books by an imaginary scholar · Authorial method'
+[1] Your question
+  BOARD: []
+  SCRIPT: Why might a hurried reader misunderstand Questions at the Source?
+[2] Return to the evidence
+  BOARD: ['An objection may be encountered before the position it is meant to challenge.']
+  SCRIPT: Paragraph 2 explains how the order of presentation can obscure the ownership or role of an argument. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Authorial method']
+  SCRIPT: “Every term in the book is left undefined.”: The passage does not say every term is undefined. “The author denies having written it.”: No authorship denial appears. “The book contains only maintenance instructions.”: That is the other book’s practical domain. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'An objection may be encountered before the position it is meant to challenge.']
+  SCRIPT: The answer is choice 1: An objection may be encountered before the position it is meant to challenge.. Paragraph 2 explains how the order of presentation can obscure the ownership or role of an argument.
+--- Q vr49-g009: The regional contrast in paragraph 3 primarily suggests that —
+  CHOICES: ['western workers rejected the Register', 'the two regions received different books with identical titles', 'familiarity with a mode of argument can affect understanding', 'every eastern reader accepted all the conclusions'] correct=3
+=== VIDEO solve-vr49-g009: kind=solution title='Two books by an imaginary scholar · Inference'
+[1] Your question
+  BOARD: []
+  SCRIPT: The regional contrast in paragraph 3 primarily suggests that —
+[2] Return to the evidence
+  BOARD: ['familiarity with a mode of argument can affect understanding']
+  SCRIPT: Eastern readers recognize an argumentative form already familiar to them. The passage separates understanding from agreement. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Inference']
+  SCRIPT: “every eastern reader accepted all the conclusions”: This is explicitly not established. “western workers rejected the Register”: Workers in both regions welcome the Register. “the two regions received different books with identical titles”: The same book is compared across regions. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'familiarity with a mode of argument can affect understanding']
+  SCRIPT: The answer is choice 3: familiarity with a mode of argument can affect understanding. Eastern readers recognize an argumentative form already familiar to them. The passage separates understanding from agreement.
+--- Q vr49-g010: In paragraph 4, “Both” refers to —
+  CHOICES: ['the two water systems', 'the two later editors', 'the objections and conclusions as identical views', 'the two purposeful approaches to arranging the books'] correct=4
+=== VIDEO solve-vr49-g010: kind=solution title='Two books by an imaginary scholar · Reference'
+[1] Your question
+  BOARD: []
+  SCRIPT: In paragraph 4, “Both” refers to —
+[2] Return to the evidence
+  BOARD: ['the two purposeful approaches to arranging the books']
+  SCRIPT: The preceding sentence contrasts the practical book’s clear arrangement with the philosophical book’s demanding arrangement. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Reference']
+  SCRIPT: “the two water systems”: Only one town system is mentioned. “the two later editors”: Only one later editor is imagined. “the objections and conclusions as identical views”: The arguments’ roles are different, not identical. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'the two purposeful approaches to arranging the books']
+  SCRIPT: The answer is choice 4: the two purposeful approaches to arranging the books. The preceding sentence contrasts the practical book’s clear arrangement with the philosophical book’s demanding arrangement.
+--- Q vr49-g011: Which action would most risk removing the process Elian intended in the second book?
+  CHOICES: ['Preserving the sequence of objections and responses', 'Explaining that objections need not be the author’s own views', 'Telling readers that the book requires careful connections', 'Publishing only a simple list of its conclusions'] correct=4
+=== VIDEO solve-vr49-g011: kind=solution title='Two books by an imaginary scholar · Application'
+[1] Your question
+  BOARD: []
+  SCRIPT: Which action would most risk removing the process Elian intended in the second book?
+[2] Return to the evidence
+  BOARD: ['Publishing only a simple list of its conclusions']
+  SCRIPT: The final paragraph warns that simplifying to conclusions may erase the reasoning experience. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Application']
+  SCRIPT: “Preserving the sequence of objections and responses”: This retains the process. “Explaining that objections need not be the author’s own views”: This clarifies a distinction without removing it. “Telling readers that the book requires careful connections”: This matches Elian’s warning. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'Publishing only a simple list of its conclusions']
+  SCRIPT: The answer is choice 4: Publishing only a simple list of its conclusions. The final paragraph warns that simplifying to conclusions may erase the reasoning experience.
+--- Q vr49-g012: Which title best fits the passage?
+  CHOICES: ['Arrangement as a tool for two different kinds of teaching', 'Why public service prevents thought', 'Universal rejection of an imaginary scholar', 'The superiority of every difficult book'] correct=1
+=== VIDEO solve-vr49-g012: kind=solution title='Two books by an imaginary scholar · Main idea'
+[1] Your question
+  BOARD: []
+  SCRIPT: Which title best fits the passage?
+[2] Return to the evidence
+  BOARD: ['Arrangement as a tool for two different kinds of teaching']
+  SCRIPT: Both books use arrangement to serve different instructional purposes. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Main idea']
+  SCRIPT: “Why public service prevents thought”: Elian combines service and study. “Universal rejection of an imaginary scholar”: Reception is mixed, and the Register is welcomed. “The superiority of every difficult book”: The passage explains purpose rather than praising all difficulty. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'Arrangement as a tool for two different kinds of teaching']
+  SCRIPT: The answer is choice 1: Arrangement as a tool for two different kinds of teaching. Both books use arrangement to serve different instructional purposes.
+=== VIDEO vr-passage-3-map: kind=lesson title='Read and map: Where ambiguity comes from'
+[1] Read paragraph 1
+  BOARD: []
+  SCRIPT: A sentence can be grammatically ordinary and still allow more than one interpretation. Sometimes the uncertainty lies in a word; sometimes it lies in how several words are connected. Distinguishing these sources matters because clarifying a single word will not necessarily repair an ambiguous structure. Nor does the presence of a word with several meanings guarantee that an entire sentence is unclear. Pause here and give the paragraph a short role label. Keep the main claim and any contrast in view; the detailed questions will send us back to the relevant evidence.
+[2] Read paragraph 2
+  BOARD: []
+  SCRIPT: Consider “The visitor waited by the bank.” Without more context, bank might identify a financial institution or the side of a river. The ambiguity is lexical: a word permits different senses. In contrast, “The visitor deposited cash at the bank” strongly selects the financial sense. The other meaning still exists in the language, but the surrounding words make it irrelevant to the ordinary reading of this sentence. Context does not erase a word’s other meanings; it makes one interpretation appropriate here. Pause here and give the paragraph a short role label. Keep the main claim and any contrast in view; the detailed questions will send us back to the relevant evidence.
+[3] Read paragraph 3
+  BOARD: []
+  SCRIPT: A different problem appears in “The guide saw the tourist with the telescope.” The phrase with the telescope may describe the instrument the guide used or the object the tourist carried. No unusual vocabulary is needed. The uncertainty concerns how the phrase attaches to the rest of the sentence. Replacing telescope with binoculars would leave the same structural problem. Rewriting the sentence as “Using a telescope, the guide saw the tourist” would settle it in favor of the instrument reading. Pause here and give the paragraph a short role label. Keep the main claim and any contrast in view; the detailed questions will send us back to the relevant evidence.
+[4] Read paragraph 4
+  BOARD: []
+  SCRIPT: Pronouns can create another uncertainty about connection. In “Lena told Priya that she had won,” she might refer to either woman unless the context decides. A careful reader therefore asks what remains unresolved after taking the whole sentence and its context into account. Simply counting words with multiple dictionary meanings is a poor test of ambiguity. The useful question is whether more than one interpretation of the actual message is still available. Pause here and give the paragraph a short role label. Keep the main claim and any contrast in view; the detailed questions will send us back to the relevant evidence.
+--- Q vr49-g013: The main distinction introduced in paragraph 1 is between ambiguity caused by —
+  CHOICES: ['long sentences and short paragraphs', 'correct grammar and the absence of all grammar', 'spoken language and every written text', 'a word’s senses and the connections between words'] correct=4
+=== VIDEO solve-vr49-g013: kind=solution title='Where ambiguity comes from · Central distinction'
+[1] Your question
+  BOARD: []
+  SCRIPT: The main distinction introduced in paragraph 1 is between ambiguity caused by —
+[2] Return to the evidence
+  BOARD: ['a word’s senses and the connections between words']
+  SCRIPT: The passage distinguishes lexical ambiguity from structural or referential connections. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Central distinction']
+  SCRIPT: “long sentences and short paragraphs”: Length is not the defining distinction. “correct grammar and the absence of all grammar”: Grammatically ordinary sentences can still be ambiguous. “spoken language and every written text”: Both sources can appear in written sentences. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'a word’s senses and the connections between words']
+  SCRIPT: The answer is choice 4: a word’s senses and the connections between words. The passage distinguishes lexical ambiguity from structural or referential connections.
+--- Q vr49-g014: Why is the cash-deposit sentence less ambiguous than the waiting sentence?
+  CHOICES: ['The sentence contains no nouns.', 'Cash changes the spelling of bank.', 'Its context selects one relevant sense of bank.', 'Bank has only one meaning in the language.'] correct=3
+=== VIDEO solve-vr49-g014: kind=solution title='Where ambiguity comes from · Context'
+[1] Your question
+  BOARD: []
+  SCRIPT: Why is the cash-deposit sentence less ambiguous than the waiting sentence?
+[2] Return to the evidence
+  BOARD: ['Its context selects one relevant sense of bank.']
+  SCRIPT: Depositing cash points to a financial institution while leaving the word’s other sense available elsewhere. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Context']
+  SCRIPT: “Bank has only one meaning in the language.”: Paragraph 2 explicitly preserves other senses. “The sentence contains no nouns.”: The sentence plainly contains nouns. “Cash changes the spelling of bank.”: The spelling is unchanged. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'Its context selects one relevant sense of bank.']
+  SCRIPT: The answer is choice 3: Its context selects one relevant sense of bank.. Depositing cash points to a financial institution while leaving the word’s other sense available elsewhere.
+--- Q vr49-g015: Replacing telescope with binoculars would fail to resolve the example because —
+  CHOICES: ['the uncertainty concerns attachment, not the object’s name', 'binoculars cannot be carried', 'the guide disappears from the sentence', 'every instrument word has only one grammatical position'] correct=1
+=== VIDEO solve-vr49-g015: kind=solution title='Where ambiguity comes from · Structural ambiguity'
+[1] Your question
+  BOARD: []
+  SCRIPT: Replacing telescope with binoculars would fail to resolve the example because —
+[2] Return to the evidence
+  BOARD: ['the uncertainty concerns attachment, not the object’s name']
+  SCRIPT: Either instrument can be used by the guide or carried by the tourist under the same structure. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Structural ambiguity']
+  SCRIPT: “binoculars cannot be carried”: They can be carried. “the guide disappears from the sentence”: The subject remains. “every instrument word has only one grammatical position”: The example shows multiple possible attachments. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'the uncertainty concerns attachment, not the object’s name']
+  SCRIPT: The answer is choice 1: the uncertainty concerns attachment, not the object’s name. Either instrument can be used by the guide or carried by the tourist under the same structure.
+--- Q vr49-g016: In paragraph 3, the rewritten sentence establishes that —
+  CHOICES: ['the guide and tourist were the same person', 'no telescope was involved', 'the guide used the telescope', 'the tourist carried the telescope'] correct=3
+=== VIDEO solve-vr49-g016: kind=solution title='Where ambiguity comes from · Disambiguation'
+[1] Your question
+  BOARD: []
+  SCRIPT: In paragraph 3, the rewritten sentence establishes that —
+[2] Return to the evidence
+  BOARD: ['the guide used the telescope']
+  SCRIPT: The opening phrase “Using a telescope” attaches the instrument to the guide’s action. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Disambiguation']
+  SCRIPT: “the tourist carried the telescope”: That is the alternative reading removed by the rewrite. “the guide and tourist were the same person”: Two roles remain distinct. “no telescope was involved”: The instrument is explicitly present. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'the guide used the telescope']
+  SCRIPT: The answer is choice 3: the guide used the telescope. The opening phrase “Using a telescope” attaches the instrument to the guide’s action.
+--- Q vr49-g017: Which statement is not supported by the passage?
+  CHOICES: ['Every word with multiple meanings makes every sentence containing it ambiguous.', 'Context can make one lexical sense appropriate.', 'A pronoun may have more than one possible referent.', 'An ordinary vocabulary item can occur in a structurally ambiguous sentence.'] correct=1
+=== VIDEO solve-vr49-g017: kind=solution title='Where ambiguity comes from · Scope'
+[1] Your question
+  BOARD: []
+  SCRIPT: Which statement is not supported by the passage?
+[2] Return to the evidence
+  BOARD: ['Every word with multiple meanings makes every sentence containing it ambiguous.']
+  SCRIPT: The cash example directly challenges the universal ambiguity claim. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Scope']
+  SCRIPT: “Context can make one lexical sense appropriate.”: Paragraph 2 demonstrates this. “A pronoun may have more than one possible referent.”: Paragraph 4 gives two candidates for she. “An ordinary vocabulary item can occur in a structurally ambiguous sentence.”: The telescope sentence illustrates this. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'Every word with multiple meanings makes every sentence containing it ambiguous.']
+  SCRIPT: The answer is choice 1: Every word with multiple meanings makes every sentence containing it ambiguous.. The cash example directly challenges the universal ambiguity claim.
+--- Q vr49-g018: Which title is most appropriate?
+  CHOICES: ['Why grammar eliminates every uncertainty', 'The history of financial institutions', 'How replacing every noun guarantees clarity', 'Ambiguity in words, structures and context'] correct=4
+=== VIDEO solve-vr49-g018: kind=solution title='Where ambiguity comes from · Title'
+[1] Your question
+  BOARD: []
+  SCRIPT: Which title is most appropriate?
+[2] Return to the evidence
+  BOARD: ['Ambiguity in words, structures and context']
+  SCRIPT: The passage traces different sources of ambiguity and the role of context in resolving them. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Title']
+  SCRIPT: “Why grammar eliminates every uncertainty”: Ordinary grammar can leave uncertainty. “The history of financial institutions”: Bank is an example, not the passage’s subject. “How replacing every noun guarantees clarity”: A noun replacement may leave structural ambiguity intact. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'Ambiguity in words, structures and context']
+  SCRIPT: The answer is choice 4: Ambiguity in words, structures and context. The passage traces different sources of ambiguity and the role of context in resolving them.
+=== VIDEO vr-passage-4-map: kind=lesson title='Read and map: A signal without a messenger'
+[1] Read paragraph 1
+  BOARD: []
+  SCRIPT: Consider a hypothetical species of shrub used in a controlled study. When leaves are damaged, they release a volatile substance into the surrounding air. Nearby undamaged shrubs later increase production of a defensive compound. At first, the researchers wonder whether the neighboring plants share a connection through their roots. The sequence is striking because the second plants respond without having suffered the original damage. Pause here and give the paragraph a short role label. Keep the main claim and any contrast in view; the detailed questions will send us back to the relevant evidence.
+[2] Read paragraph 2
+  BOARD: []
+  SCRIPT: The researchers separate the roots while allowing air to pass between the plants. The response still occurs. When they instead block the airflow while leaving other relevant conditions comparable, the response disappears. These comparisons support an airborne route more directly than a root-based one. The damaged plant releases the substance first; the nearby plant’s defensive change follows exposure to it. The account does not require either plant to form an intention or understand a warning. Pause here and give the paragraph a short role label. Keep the main claim and any contrast in view; the detailed questions will send us back to the relevant evidence.
+[3] Read paragraph 3
+  BOARD: []
+  SCRIPT: Calling the process “communication” can be useful if the term means that a change in one organizm supplies information affecting another. It can mislead if it suggests a deliberate message like a spoken instruction. The hypothetical study illustrates why an attractive description should be separated from the mechanism that supports it. The mechanism rests on the controlled comparison and the order of the chemical changes, not on the human associations of the word communication. Pause here and give the paragraph a short role label. Keep the main claim and any contrast in view; the detailed questions will send us back to the relevant evidence.
+--- Q vr49-g019: What makes the neighboring shrubs’ response striking in paragraph 1?
+  CHOICES: ['They are described as forming deliberate plans.', 'They respond without having been damaged themselves.', 'They have no leaves.', 'They release no substances under any condition.'] correct=2
+=== VIDEO solve-vr49-g019: kind=solution title='A signal without a messenger · Detail'
+[1] Your question
+  BOARD: []
+  SCRIPT: What makes the neighboring shrubs’ response striking in paragraph 1?
+[2] Return to the evidence
+  BOARD: ['They respond without having been damaged themselves.']
+  SCRIPT: The neighbors are undamaged yet produce a defensive response after nearby damage. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Detail']
+  SCRIPT: “They have no leaves.”: Leaves are part of the setup. “They release no substances under any condition.”: The paragraph describes a chemical response. “They are described as forming deliberate plans.”: Intention is not required. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 2', 'They respond without having been damaged themselves.']
+  SCRIPT: The answer is choice 2: They respond without having been damaged themselves.. The neighbors are undamaged yet produce a defensive response after nearby damage.
+--- Q vr49-g020: Which observation most directly supports an airborne route?
+  CHOICES: ['The plants are given names.', 'The roots are visible to researchers.', 'The word communication appears in the report.', 'The response persists with separated roots but disappears when airflow is blocked.'] correct=4
+=== VIDEO solve-vr49-g020: kind=solution title='A signal without a messenger · Evidence'
+[1] Your question
+  BOARD: []
+  SCRIPT: Which observation most directly supports an airborne route?
+[2] Return to the evidence
+  BOARD: ['The response persists with separated roots but disappears when airflow is blocked.']
+  SCRIPT: The paired manipulations distinguish air from root connection as the route. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Evidence']
+  SCRIPT: “The plants are given names.”: Names provide no route evidence. “The roots are visible to researchers.”: Visibility is not a causal test. “The word communication appears in the report.”: A descriptive label does not establish the mechanism. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'The response persists with separated roots but disappears when airflow is blocked.']
+  SCRIPT: The answer is choice 4: The response persists with separated roots but disappears when airflow is blocked.. The paired manipulations distinguish air from root connection as the route.
+--- Q vr49-g021: Which sequence matches the account?
+  CHOICES: ['Defensive change in neighbor → original damage → release', 'Blocked airflow → exposure through air → no chemical release', 'Neighbor’s intention → spoken warning → damage', 'Damage → release into air → exposure of neighbor → defensive change'] correct=4
+=== VIDEO solve-vr49-g021: kind=solution title='A signal without a messenger · Sequence'
+[1] Your question
+  BOARD: []
+  SCRIPT: Which sequence matches the account?
+[2] Return to the evidence
+  BOARD: ['Damage → release into air → exposure of neighbor → defensive change']
+  SCRIPT: Paragraph 2 places release before the neighbor’s exposure-dependent response. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Sequence']
+  SCRIPT: “Defensive change in neighbor → original damage → release”: The order is reversed. “Blocked airflow → exposure through air → no chemical release”: The proposed sequence conflicts with the blocked-air condition. “Neighbor’s intention → spoken warning → damage”: Intentions and speech are explicitly unnecessary. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 4', 'Damage → release into air → exposure of neighbor → defensive change']
+  SCRIPT: The answer is choice 4: Damage → release into air → exposure of neighbor → defensive change. Paragraph 2 places release before the neighbor’s exposure-dependent response.
+--- Q vr49-g022: The caution about “communication” concerns —
+  CHOICES: ['importing an assumption of deliberate intention', 'denying that any information can be transmitted', 'claiming that roots were never considered', 'insisting that every useful label proves a mechanism'] correct=1
+=== VIDEO solve-vr49-g022: kind=solution title='A signal without a messenger · Meaning in context'
+[1] Your question
+  BOARD: []
+  SCRIPT: The caution about “communication” concerns —
+[2] Return to the evidence
+  BOARD: ['importing an assumption of deliberate intention']
+  SCRIPT: The word is acceptable in a functional sense but can misleadingly suggest a human-style intention. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Meaning in context']
+  SCRIPT: “denying that any information can be transmitted”: A functional information sense is explicitly allowed. “claiming that roots were never considered”: Roots were an initial hypothesis. “insisting that every useful label proves a mechanism”: The mechanism requires evidence beyond a label. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'importing an assumption of deliberate intention']
+  SCRIPT: The answer is choice 1: importing an assumption of deliberate intention. The word is acceptable in a functional sense but can misleadingly suggest a human-style intention.
+--- Q vr49-g023: Which statement is not justified by the passage?
+  CHOICES: ['Separating roots does not eliminate the reported response.', 'Blocking airflow eliminates the response under the described conditions.', 'The shrubs consciously decide to warn their neighbors.', 'The study is hypothetical.'] correct=3
+=== VIDEO solve-vr49-g023: kind=solution title='A signal without a messenger · Unsupported inference'
+[1] Your question
+  BOARD: []
+  SCRIPT: Which statement is not justified by the passage?
+[2] Return to the evidence
+  BOARD: ['The shrubs consciously decide to warn their neighbors.']
+  SCRIPT: No conscious decision is needed or established by the mechanism. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Unsupported inference']
+  SCRIPT: “The study is hypothetical.”: The opening labels it hypothetical. “Separating roots does not eliminate the reported response.”: This is a reported comparison. “Blocking airflow eliminates the response under the described conditions.”: This is also explicitly described. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 3', 'The shrubs consciously decide to warn their neighbors.']
+  SCRIPT: The answer is choice 3: The shrubs consciously decide to warn their neighbors.. No conscious decision is needed or established by the mechanism.
+--- Q vr49-g024: The passage’s main purpose is to —
+  CHOICES: ['explain a tested mechanism and qualify the language used to describe it', 'prove that all plants communicate in the same way', 'describe how to cultivate every shrub', 'argue that scientific comparisons are unnecessary'] correct=1
+=== VIDEO solve-vr49-g024: kind=solution title='A signal without a messenger · Purpose'
+[1] Your question
+  BOARD: []
+  SCRIPT: The passage’s main purpose is to —
+[2] Return to the evidence
+  BOARD: ['explain a tested mechanism and qualify the language used to describe it']
+  SCRIPT: It moves from a hypothetical response to route tests and then a caution about terminology. First locate the relevant paragraph. Read the sentence in its context and paraphrase the part that decides the question. If the question is about the whole passage, connect the paragraph roles before choosing. A repeated word in an answer is not enough; the relationship and the strength of the claim must match too.
+[3] Why the alternatives miss the point
+  BOARD: ['Purpose']
+  SCRIPT: “prove that all plants communicate in the same way”: The scope is one hypothetical species and setup. “describe how to cultivate every shrub”: Cultivation instructions are not its purpose. “argue that scientific comparisons are unnecessary”: The controlled comparisons support the account. The correct answer preserves the passage’s scope. We have not added a stronger causal claim, changed the owner of an opinion or replaced a qualification with an absolute statement. That is the final check before we move on.
+[4] Choose the matching answer
+  BOARD: ['Choice 1', 'explain a tested mechanism and qualify the language used to describe it']
+  SCRIPT: The answer is choice 1: explain a tested mechanism and qualify the language used to describe it. It moves from a hypothetical response to route tests and then a caution about terminology.
+
+######## SECTION vr49-practice — Independent practice (practice)
+--- Q vr49-p001: According to paragraph 1, selection is —
+  CHOICES: ['a problem that every useful map has eliminated', 'useful only when no one carries the map', 'part of what makes a map useful', 'always evidence of careless drawing'] correct=3
+--- Q vr49-p002: Why might a railway map distort the shape of tracks?
+  CHOICES: ['To hide the existence of stations', 'To make connections easier to identify', 'To measure walking distances more accurately', 'To show every patch of grass'] correct=2
+--- Q vr49-p003: In paragraph 2, “the latter” refers to —
+  CHOICES: ['a traveler’s misuse', 'the railway map', 'the city itself', 'the walking map'] correct=2
+--- Q vr49-p004: The planner’s mistake in paragraph 3 is to —
+  CHOICES: ['treat an omission from a map as proof of absence in the place', 'recognize that the map has a purpose', 'notice an informal path on the ground', 'use different maps for different tasks'] correct=1
+--- Q vr49-p005: Which statement is not supported by the passage?
+  CHOICES: ['A railway map can mislead if used for the wrong task.', 'Adding detail always improves a map.', 'A useful omission depends on purpose.', 'One city can support different useful maps.'] correct=2
+--- Q vr49-p006: The main purpose of the passage is to —
+  CHOICES: ['explain how purposeful omission can both help and mislead map users', 'argue that maps should contain no details', 'prove that railway maps are inaccurate for every purpose', 'describe the history of railway construction'] correct=1
+--- Q vr49-p007: What does paragraph 1 suggest about accurate surviving records?
+  CHOICES: ['They can still form an incomplete picture.', 'They must describe every past activity.', 'They cannot contain any useful information.', 'They were all produced for historians.'] correct=1
+--- Q vr49-p008: Why are property sales well documented in the imagined town?
+  CHOICES: ['Household care was prohibited.', 'Every family kept identical diaries.', 'They required official registration.', 'Residents never did anything else.'] correct=3
+--- Q vr49-p009: The household-care example chiefly illustrates —
+  CHOICES: ['how differences in recording can be mistaken for differences in activity', 'that caring for relatives is a modern invention', 'that all property records are false', 'that archives contain no institutional influence'] correct=1
+--- Q vr49-p010: According to paragraph 3, a sudden documentary gap —
+  CHOICES: ['always proves documents were deliberately destroyed', 'has several possible explanations that need investigation', 'necessarily proves the activity stopped', 'can never be informative'] correct=2
+--- Q vr49-p011: Which question best represents the additional task assigned to historians in paragraph 4?
+  CHOICES: ['Why must every document be rejected?', 'Why was this type of record likely to be preserved?', 'How can every missing event be invented?', 'How can the archive be treated as complete?'] correct=2
+--- Q vr49-p012: Which title best fits the passage?
+  CHOICES: ['Reading both records and the processes behind their survival', 'Why all archives are useless', 'A complete history of one town’s families', 'Property sales as the only historical activity'] correct=1
+--- Q vr49-p013: Paragraph 1 presents restoration as involving a choice about —
+  CHOICES: ['how to avoid every intervention under all conditions', 'which stages of an object’s history remain visible', 'whether paintings ever change', 'the artist’s exact private intentions in every case'] correct=2
+--- Q vr49-p014: Why might the later repair in paragraph 2 be worth retaining?
+  CHOICES: ['It records an earlier effort to preserve the portrait.', 'It was certainly made by the original artist.', 'It proves the portrait never suffered damage.', 'It contains no historical information.'] correct=1
+--- Q vr49-p015: What do the two proposed plans have in common?
+  CHOICES: ['Both select what historical information will be most visible.', 'Both remove the later repair.', 'Both avoid all judgment.', 'Both reconstruct the missing corner.'] correct=1
+--- Q vr49-p016: Paragraph 3 limits the earlier discussion by noting that —
+  CHOICES: ['physical preservation needs can restrict which traces may safely remain', 'every stain is equally valuable', 'technical condition is never relevant', 'all repairs should be destroyed'] correct=1
+--- Q vr49-p017: Which statement is not supported?
+  CHOICES: ['Preserving an object differs from preserving all knowledge about it.', 'A later addition may have historical value.', 'A seamless visual result proves that no reconstruction occurred.', 'Treatment records can reveal interventions.'] correct=3
+--- Q vr49-p018: The passage primarily argues for —
+  CHOICES: ['making every painting look newly painted', 'never removing any material', 'ignoring the object’s physical condition', 'recognizing and documenting the choices involved in restoration'] correct=4
+--- Q vr49-p019: What assumption do the two initial accounts share?
+  CHOICES: ['They treat the final song as one outcome requiring a single complete explanation.', 'They agree that order is learned.', 'They agree that no experience matters.', 'They deny that adults sing.'] correct=1
+--- Q vr49-p020: Which finding challenges the claim that every feature is copied?
+  CHOICES: ['Some notes are arranged in an order.', 'Adult birds produce patterned sequences.', 'Unexposed birds produce the usual number of notes.', 'Exposed birds hear adult song.'] correct=3
+--- Q vr49-p021: Why does unusual order in unexposed birds challenge the fully experience-free account?
+  CHOICES: ['All exposed birds are silent.', 'Order changes with the presence or absence of relevant experience.', 'No bird produces any notes.', 'The number of notes is always wrong.'] correct=2
+--- Q vr49-p022: The revised account would be supported by a finding that —
+  CHOICES: ['every feature always changes together', 'no bird ever produces a sequence', 'adult song is impossible to record', 'exposure changes note order without changing note count'] correct=4
+--- Q vr49-p023: The final sentence warns against using a feature-based account merely to —
+  CHOICES: ['produce testable predictions', 'measure different parts of an outcome', 'compare exposed and unexposed groups', 'shield explanations from any possible contrary evidence'] correct=4
+--- Q vr49-p024: Which title best fits the passage?
+  CHOICES: ['Why experience never affects behavior', 'The superiority of compromise without testing', 'Separating the features of a complex outcome', 'Why birds learn absolutely everything'] correct=3
+--- Q vr49-p025: Why were the original time descriptions difficult to compare?
+  CHOICES: ['Workers were unable to use any words.', 'They concealed different definitions of when the task began.', 'No work was performed at either site.', 'Every morning had an identical preparation period.'] correct=2
+--- Q vr49-p026: According to paragraph 2, a fall in recorded duration could result from —
+  CHOICES: ['using no timing procedure', 'including every displaced step automatically', 'moving work outside the measured interval', 'necessarily completing all work faster'] correct=3
+--- Q vr49-p027: What did the later review do?
+  CHOICES: ['It stopped all tasks permanently.', 'It measured only the final inspection.', 'It examined the full process, including work outside the official interval.', 'It accepted every reported gain without checking.'] correct=3
+--- Q vr49-p028: The fact that some gains remained suggests that —
+  CHOICES: ['not every reported improvement was merely a boundary change', 'all gains were fabricated', 'the timing procedure had no value', 'every task became equally fast'] correct=1
+--- Q vr49-p029: Which distinction is central to the final paragraph?
+  CHOICES: ['A common measurement unit versus a common definition of what is measured', 'Morning versus afternoon as always equal units', 'Precision versus every possible use of numbers', 'Inspection versus the absence of work'] correct=1
+--- Q vr49-p030: The passage’s main warning is that —
+  CHOICES: ['precise-looking numbers can conceal differences in their production', 'standardisation always makes comparison impossible', 'all task boundaries are identical', 'work can be compared without any definitions'] correct=1
+--- Q vr49-p031: The examples in paragraph 1 show that transferred meanings can —
+  CHOICES: ['always require imagining a complete physical scene', 'lose every possible meaning', 'occur only in newly invented words', 'become so familiar that users no longer notice the comparison'] correct=4
+--- Q vr49-p032: Calling a procedure a maze does not necessarily suggest that it —
+  CHOICES: ['can leave a person unsure how to proceed', 'has physical walls', 'offers confusing routes', 'contains obstacles'] correct=2
+--- Q vr49-p033: The contrast between battle and joint investigation illustrates —
+  CHOICES: ['that investigations cannot involve disagreement', 'that words never influence attention', 'how different descriptions emphasize different aspects of disagreement', 'that all disagreements are physically violent'] correct=3
+--- Q vr49-p034: In paragraph 3, “the frame” refers to —
+  CHOICES: ['the chronological date of a battle', 'the complete set of all possible events', 'the organizing description supplied by the metaphor', 'a picture frame hanging on a wall'] correct=3
+--- Q vr49-p035: Which statement would the final paragraph reject?
+  CHOICES: ['Noticing selective emphasis can increase choice.', 'Familiar descriptions can influence attention.', 'A conventional metaphor makes alternative descriptions impossible.', 'Speakers can examine a comparison’s limits.'] correct=3
+--- Q vr49-p036: Which title best fits the passage?
+  CHOICES: ['A list of all English metaphors', 'Recognizing the choices hidden in familiar metaphors', 'The literal architecture of every argument', 'Why language cannot describe disagreement'] correct=2
+--- Q vr49-p037: According to paragraph 1, a teaching model may depart from an original in order to —
+  CHOICES: ['avoid conveying any information', 'guarantee historical identity', 'make a relationship easier to understand', 'prove that the original never existed'] correct=3
+--- Q vr49-p038: Why does the imagined replica have a transparent casing?
+  CHOICES: ['To prevent visitors from seeing moving parts', 'To show that the original had no casing', 'To reveal the toy’s mechanism while it is operated', 'To reproduce the original decoration exactly'] correct=3
+--- Q vr49-p039: What does “division of labor” in paragraph 3 refer to?
+  CHOICES: ['A claim that only one object can teach anything', 'The different informative roles of the original and replica', 'The museum’s employee salaries', 'The number of people needed to turn the handle'] correct=2
+--- Q vr49-p040: Which feature is especially important to the replica’s reliability?
+  CHOICES: ['Preventing every demonstration', 'Accurate representation of the relevant mechanism with changes disclosed', 'Being indistinguishable in every material detail', 'Having the highest market price'] correct=2
+--- Q vr49-p041: The final paragraph warns chiefly against —
+  CHOICES: ['showing any replica beside an original', 'using clear labels', 'allowing visitors to understand a mechanism', 'presenting uncertain reconstruction as established explanation'] correct=4
+--- Q vr49-p042: The passage’s main argument is that —
+  CHOICES: ['all changes improve a model', 'original objects should always be discarded', 'copies should be assessed in relation to their purpose and disclosed limits', 'every copy is worthless because it is not original'] correct=3
+--- Q vr49-p043: Paragraph 1 suggests that a category —
+  CHOICES: ['eliminates the need for an organizing question', 'cannot reveal any pattern', 'captures a shared feature while leaving some differences aside', 'fully describes every member in every respect'] correct=3
+--- Q vr49-p044: Why can one tool belong to different groups in paragraph 2?
+  CHOICES: ['The traveler refuses to classify tools.', 'The schemes use different organizing criteria.', 'The tool changes material whenever it is observed.', 'The curator and instructor use no rules.'] correct=2
+--- Q vr49-p045: A material-based scheme may be less useful for studying —
+  CHOICES: ['trade in metal and timber', 'which tools are wooden', 'which tools share a material', 'similarities in how tools are used'] correct=4
+--- Q vr49-p046: The final paragraph limits flexibility by requiring —
+  CHOICES: ['a consistent and checkable basis for membership', 'identical categories for all purposes', 'the elimination of every borderline case', 'complete description of every object'] correct=1
+--- Q vr49-p047: What may a borderline case reveal?
+  CHOICES: ['That the object cannot exist', 'That every classification is equally useful', 'That consistency is never relevant', 'A limitation in the definitions or features the scheme can represent'] correct=4
+--- Q vr49-p048: Which title best fits the passage?
+  CHOICES: ['Categories, purposes and the differences they set aside', 'The one correct way to arrange all tools', 'Why grouping objects never helps', 'A traveler’s complete packing list'] correct=1
+--- Q vr49-p049: According to paragraph 1, a monument’s meaning can change even when —
+  CHOICES: ['no one sees it', 'the commissioners intended no message', 'its physical material remains much the same', 'every viewer has the same concerns'] correct=3
+--- Q vr49-p050: The later residents’ concern focuses on —
+  CHOICES: ['how credit for the bridge was distributed', 'whether any bridge was ever built', 'whether engineering can require skill', 'the complete absence of any inscription'] correct=1
+--- Q vr49-p051: What distinctive aim can an added panel serve?
+  CHOICES: ['Proving that the original builders lacked skill', 'Preventing any further interpretation', 'Displaying the history of changing public statements', 'Erasing all evidence of the old wording'] correct=3
+--- Q vr49-p052: Why does the passage reject the labels pure preservation and pure destruction?
+  CHOICES: ['Both proposed responses involve choices about what to communicate.', 'The two proposals are physically identical.', 'No material object can survive.', 'Every change has exactly the same effect'] correct=1
+--- Q vr49-p053: The final sentence implies that durable material alone cannot —
+  CHOICES: ['support public memory in any way', 'determine how later communities should interpret it', 'last for many years', 'be used in a monument'] correct=2
+--- Q vr49-p054: The passage chiefly presents public memory as —
+  CHOICES: ['a message fixed forever at the moment of construction', 'a purely technical issue without social choices', 'a process requiring every old monument’s removal', 'an ongoing interpretive practice involving inherited objects'] correct=4
+--- Q vr49-p055: The opening paragraph challenges the assumption that —
+  CHOICES: ['signals can be interrupted', 'saying everything once is always the most effective communication', 'messages can ever be concise', 'listeners can miss words'] correct=2
+--- Q vr49-p056: What is the role of the three-pulse example?
+  CHOICES: ['To describe every real warning system', 'To show that one pulse contains no information', 'To illustrate recovery of meaning despite partial loss', 'To prove that no repeated signal can ever fail'] correct=3
+--- Q vr49-p057: According to paragraph 3, repetition may fail to correct an error when —
+  CHOICES: ['a listener misses a negative in only one version', 'the speaker repeats a crucial condition accurately', 'the same original mistake appears in both versions', 'one version uses different words'] correct=3
+--- Q vr49-p058: The passage distinguishes redundancy’s value for transmission from its ability to —
+  CHOICES: ['add structure to a signal', 'supply a second formulation', 'consume some resources', 'establish the truth of the original message'] correct=4
+--- Q vr49-p059: Which situation would most justify extra repetition under the final paragraph?
+  CHOICES: ['A rule that shortness is the only measure', 'A desire to preserve an admitted source error', 'A noisy setting where misunderstanding is costly', 'A perfectly stable channel with a well-prepared audience'] correct=3
+--- Q vr49-p060: Which title best captures the argument?
+  CHOICES: ['Redundancy as a resource for reliable understanding', 'Why every message should be endlessly repeated', 'Why repetition proves a statement true', 'The impossibility of concise language'] correct=1
+--- Q vr49-p061: What problem in paragraph 1 does the token system help address?
+  CHOICES: ['The inability of fishers to provide food', 'Exchange between people who lack matching immediate needs or personal ties', 'The complete absence of useful goods', 'The impossibility of any exchange among neighbors'] correct=2
+--- Q vr49-p062: According to paragraph 2, a token’s principal usefulness depends on —
+  CHOICES: ['expected acceptance in a later exchange', 'its material being intrinsically valuable', 'its never changing hands', 'every trader wanting the same good immediately'] correct=1
+--- Q vr49-p063: Why are procedures for issuing tokens relevant?
+  CHOICES: ['They help sustain interpretable and stable expectations.', 'They make all physical properties disappear.', 'They guarantee that no trader has any preference.', 'They prevent every future exchange.'] correct=1
+--- Q vr49-p064: The unlimited-copy example illustrates a threat to —
+  CHOICES: ['the existence of every good on the island', 'the ability to hold any physical object', 'the possibility of personal relationships', 'the shared expectations on which acceptance relies'] correct=4
+--- Q vr49-p065: Which claim would the last paragraph reject?
+  CHOICES: ['Material failure can create problems.', 'Social function can exceed physical properties.', 'Acceptance and material suitability can both matter.', 'Durability by itself is enough to make an object an accepted token.'] correct=4
+--- Q vr49-p066: Which title best fits the passage?
+  CHOICES: ['A complete financial history of a real island', 'The object and the expectation behind exchange', 'Why all goods must be exchanged immediately', 'The disappearance of material from social life'] correct=2
+--- Q vr49-p067: The distinction central to paragraph 1 is between —
+  CHOICES: ['first-person words and all possible grammar', 'fictional stories and the absence of events', 'sincerity and guaranteed complete knowledge as identical things', 'events in the story and the narrator’s understanding of them'] correct=4
+--- Q vr49-p068: How does the invented story cast doubt on the narrator’s judgment?
+  CHOICES: ['Every sentence is replaced by an author’s explanation', 'Helpful actions are reported alongside the narrator’s negative interpretation.', 'The text explicitly says no messages exist.', 'The neighbor is never mentioned.'] correct=2
+--- Q vr49-p069: Paragraph 3 suggests that the narrator may be —
+  CHOICES: ['identical in viewpoint to the author on every issue', 'accurate about an event but mistaken about its significance', 'wrong about every fact without exception', 'incapable of reporting any observation'] correct=2
+--- Q vr49-p070: Why should readers not simply reverse every narrator statement?
+  CHOICES: ['The narrator never uses words with meanings.', 'Reversal always reproduces the author’s exact view', 'The evidence may support some statements and leave others uncertain.', 'Every opposite statement is guaranteed false.'] correct=3
+--- Q vr49-p071: Which question best fits the reading method proposed in paragraph 4?
+  CHOICES: ['How can I assume the speaker is always right?', 'How can every uncertainty be removed without evidence?', 'Which fact can I invent to make the narrator look wrong?', 'What reported evidence bears on the speaker’s interpretation?'] correct=4
+--- Q vr49-p072: The passage’s main purpose is to —
+  CHOICES: ['explain how limited narration creates meaningful interpretive gaps', 'argue that first-person fiction should be avoided', 'prove that all narrators deliberately lie', 'identify the author with every narrator statement'] correct=1
+--- Q vr49-p073: The opening paragraph offers an alternative to seeing a worn path as —
+  CHOICES: ['something visitors have used', 'mere disobedience', 'a visible feature', 'a route through the park'] correct=2
+--- Q vr49-p074: What does the diagonal route reveal in the imagined park?
+  CHOICES: ['That drainage is irrelevant', 'That all users have identical mobility', 'A demand for a more direct journey to the bus stop', 'That no visitor ever wants the fountain'] correct=3
+--- Q vr49-p075: Why does paragraph 3 call the informal route evidence rather than an instruction?
+  CHOICES: ['It represents some use while potentially missing other users’ needs.', 'Visible use can never inform planning.', 'Every informal route must be removed.', 'The original plan is guaranteed correct'] correct=1
+--- Q vr49-p076: Who may be underrepresented by visible wear?
+  CHOICES: ['Only the planner who drew the map', 'People unable to cross the rough ground', 'People who repeatedly walk the diagonal', 'Visitors whose feet create the strongest trace'] correct=2
+--- Q vr49-p077: Which statement is not supported?
+  CHOICES: ['Observation can be combined with further inquiry.', 'The most visibly used route necessarily serves every user best.', 'A formal plan can miss a common destination.', 'Paving a path requires considering other constraints.'] correct=2
+--- Q vr49-p078: The final paragraph recommends —
+  CHOICES: ['keeping every initial design unchanged', 'treating observed use as a starting point for broader investigation', 'following every informal route without question', 'ignoring all behavior outside the formal plan'] correct=2
+--- Q vr49-p079: According to paragraph 1, literal translation can fail because it —
+  CHOICES: ['always removes every event', 'necessarily changes every character', 'makes all sentences ungrammatical', 'preserves events without preserving the listener’s changing expectation'] correct=4
+--- Q vr49-p080: Why may a note fail to reproduce the original effect?
+  CHOICES: ['The original contains no ambiguity.', 'Readers are unable to understand any explanation', 'Understanding an explanation afterwards differs from experiencing the surprise.', 'Notes can never explain meanings.'] correct=3
+--- Q vr49-p081: Which adaptation most closely follows paragraph 3?
+  CHOICES: ['An unrelated insult about a character’s appearance', 'An exact word list that cannot create the misunderstanding', 'A removal of both meanings and every turn', 'A new ambiguous-word scene with a similar harmless misunderstanding'] correct=4
+--- Q vr49-p082: The appearance-ridicule example is included to show that —
+  CHOICES: ['every change is equally faithful', 'characters’ appearances must always be described', 'all humour depends on physical traits', 'creative adaptation still has meaningful limits'] correct=4
+--- Q vr49-p083: Which statement is not supported by the final paragraph?
+  CHOICES: ['Fidelity can have several dimensions.', 'An adaptation can be assessed by its mechanism.', 'A translator may need to make a reasoned trade-off.', 'Wording, tone and reader experience always align automatically.'] correct=4
+--- Q vr49-p084: Which title best fits the passage?
+  CHOICES: ['The complete equivalence of every language’s word meanings', 'How to replace all humour with insults', 'Translating the mechanism of surprise', 'Why jokes cannot be adapted at all'] correct=3
+--- Q vr49-p085: What do the three observers agree about?
+  CHOICES: ['Wind has been ruled out.', 'The grain near the hedge is taller.', 'Shade is the sole cause.', 'Leaf material has no effect.'] correct=2
+--- Q vr49-p086: Why would reproducing every hedge-side condition at once be insufficient?
+  CHOICES: ['The candidate causes would remain bundled together.', 'No grain could grow under those conditions.', 'Measurement would become logically impossible.', 'The original observation would cease to exist'] correct=1
+--- Q vr49-p087: What is the concern about the shade screen?
+  CHOICES: ['Its name is too short.', 'It cannot cast shade by definition.', 'It proves that wind is irrelevant.', 'It may change wind exposure as well as shade.'] correct=4
+--- Q vr49-p088: According to paragraph 3, the label shade group —
+  CHOICES: ['proves that all other conditions changed', 'does not establish that shade is the group’s only relevant difference', 'guarantees perfect experimental control', 'eliminates the need to inspect the equipment'] correct=2
+--- Q vr49-p089: Which comparison most directly addresses the leaf-material explanation?
+  CHOICES: ['Adding similar leaves while keeping shade and wind comparable', 'Adding leaves and shade while blocking wind simultaneously', 'Renaming the original field', 'Measuring only the color of the hedge'] correct=1
+--- Q vr49-p090: The passage mainly explains —
+  CHOICES: ['how to maximize grain production in every climate', 'why experimental equipment never changes conditions', 'how comparisons make causal experiments informative', 'why all observations prove a single explanation'] correct=3
+--- Q vr49-p091: The opening examples suggest that an outward refusal may —
+  CHOICES: ['express a settled preference in every convention', 'be understood only after the speaker explains its grammar', 'have the same practical force despite different expectations', 'have a different role depending on the expected sequence of the exchange'] correct=4
+--- Q vr49-p092: The observer in paragraph 2 mistakes later acceptance for inconsistency because the observer —
+  CHOICES: ['assumes the initial refusal is a conventional stage', 'knows that the participant intended to deceive', 'imports an expectation that the first refusal is final', 'has correctly reconstructed the local sequence but rejects its fairness'] correct=3
+--- Q vr49-p093: What is the role of paragraph 3?
+  CHOICES: ['To establish that every participant experiences the practice identically', 'To limit what follows from understanding a convention', 'To show that conventions never help interpretation', 'To replace interpretation with automatic approval'] correct=2
+--- Q vr49-p094: According to the final paragraph, understanding should precede evaluation chiefly because —
+  CHOICES: ['outsiders are incapable of making any judgment', 'evaluation otherwise risks targeting a misdescribed practice', 'accurate description guarantees a favorable verdict', 'local expectations settle every ethical question'] correct=2
+--- Q vr49-p095: Which conclusion is not warranted?
+  CHOICES: ['A familiar sequence can be exploited.', 'Once a convention is understood, criticism of it becomes unnecessary.', 'A practice can be intelligible without being endorsed.', 'Shared expectations contribute to meaning.'] correct=2
+--- Q vr49-p096: The passage’s central distinction is between —
+  CHOICES: ['sincere refusals and all forms of acceptance', 'travelers who learn quickly and travelers who learn slowly', 'understanding a practice’s internal logic and judging its value', 'knowing a gesture’s shape and learning its vocabulary only'] correct=3
+--- Q vr49-p097: According to paragraph 1, the benchmark’s value depends on —
+  CHOICES: ['how well the measured task represents the wider ability of interest', 'how many separate numbers appear beside the result', 'whether the score is rewarded regardless of its connection to performance', 'whether observers can inspect every detail before using it'] correct=1
+--- Q vr49-p098: What change does the help-service example describe?
+  CHOICES: ['Every employee stops solving problems and manipulates the count.', 'The service’s original aim changes from closure to customer help only after rewards begin.', 'A count once associated with solutions can rise through actions that do not solve more problems.', 'Closing requests ceases to be possible once rewards are introduced.'] correct=3
+--- Q vr49-p099: Why does paragraph 3 note that some high scores may reflect genuine improvement?
+  CHOICES: ['To make the score sufficient by itself again', 'To argue that outcomes need never be checked', 'To distinguish reduced evidential clarity from a claim that every score is false', 'To prove that manipulation has no effect on the measure'] correct=3
+--- Q vr49-p100: Why might simply adding a second indicator fail?
+  CHOICES: ['Independent outcomes cannot be observed at all.', 'It may reward the same distortion as the first.', 'Two indicators are always less informative than one.', 'The original goal necessarily disappears when measured twice.'] correct=2
+--- Q vr49-p101: Which practice best follows the final paragraph?
+  CHOICES: ['Remove all records and rely only on impressions.', 'Check whether closed requests correspond to independently verified resolution.', 'Reward the same closure count through several differently named scores.', 'Assume every increase is dishonest.'] correct=2
+--- Q vr49-p102: Which title best captures the argument?
+  CHOICES: ['Why high scores are always evidence of misconduct', 'The more indicators, the more accurate the judgment', 'Customer service as a task that cannot be evaluated', 'Protecting the link between a score and its purpose'] correct=4
+--- Q vr49-p103: The opening paragraph distinguishes maintenance from —
+  CHOICES: ['preventing every change in weather', 'deciding the building’s present function', 'keeping any physical material intact', 'recognizing that the station once had rooms'] correct=2
+--- Q vr49-p104: Why is occupied-room count insufficient to compare the two plans?
+  CHOICES: ['The plans retain exactly the same station features.', 'It misses differences in how the former transport function remains legible.', 'Neither plan brings any activity back.', 'Every occupied room has the same historical meaning.'] correct=2
+--- Q vr49-p105: What do the supporter and critic in paragraph 3 have in common?
+  CHOICES: ['Both regard reading as identical to every old station activity.', 'Both reject any concern with present users.', 'Both evaluate the kinds of continuity a new use would preserve.', 'Both demand that every room remain unused.'] correct=3
+--- Q vr49-p106: The critic’s response mainly qualifies the supporter’s claim by —
+  CHOICES: ['claiming that the reading room removes every historical feature', 'proving that shops preserve all past uses', 'showing that an apparent continuity may serve some uses while excluding others', 'denying that anyone ever waited at the station'] correct=3
+--- Q vr49-p107: Which assumption does the final paragraph challenge?
+  CHOICES: ['Physical survival is a relevant consideration.', 'Present access may matter.', 'Different aims can conflict.', 'A proposal can be fully assessed through a simple saving-versus-destroying label.'] correct=4
+--- Q vr49-p108: The passage chiefly advocates —
+  CHOICES: ['choosing whichever plan fills more rooms', 'treating historical legibility as irrelevant to new use', 'making the competing aims of adaptive reuse explicit', 'preserving every room without a new function'] correct=3
+--- Q vr49-p109: The two bell explanations in paragraph 1 differ mainly in whether they describe —
+  CHOICES: ['the production of the sound or its role in an activity', 'a true event or an event that never occurred', 'a complete explanation or a necessarily false one', 'two incompatible physical mechanisms'] correct=1
+--- Q vr49-p110: According to paragraph 2, a statement of intended purpose does not by itself establish —
+  CHOICES: ['that designers can have aims', 'that a device can be part of an organized activity', 'how the components produce the signal', 'what users were meant to be warned about if that is stated'] correct=3
+--- Q vr49-p111: What is the role of the warning-device example?
+  CHOICES: ['To argue that every device has only one possible explanation', 'To show how a mechanism-level fact can challenge successful fulfilment of a purpose', 'To show that purposes and mechanisms never interact', 'To prove that an operating circuit always warns users effectively'] correct=2
+--- Q vr49-p112: Which statement best matches the final paragraph?
+  CHOICES: ['Explanations should be distinguished by their questions and compared where their claims connect.', 'Different explanatory levels can never be in tension.', 'Every account using why must compete with every other one.', 'Identifying a purpose makes a mechanism investigation unnecessary.'] correct=1
+--- Q vr49-p113: Which case would most clearly create the genuine tension described at the end?
+  CHOICES: ['One account claims a signal warned users, while another establishes that no user could detect it.', 'One account describes vibration and another names the meeting signalled.', 'One person asks about design history and another asks about material composition without making overlapping claims.', 'Two accounts explicitly address separate features and leave one another’s outcomes open.'] correct=1
+--- Q vr49-p114: Which title best fits the passage?
+  CHOICES: ['Why purpose replaces mechanism', 'Explanations that can never be compared', 'The only correct cause of every bell sound', 'Recognizing the question an explanation answers'] correct=4
+--- Q vr49-p115: The opening paragraph challenges the image of observation as —
+  CHOICES: ['identical to a participant’s private report', 'necessarily external to and uninvolved in the activity observed', 'capable of producing any record at all', 'always noticed equally by every participant'] correct=2
+--- Q vr49-p116: Why does improvement under unchanged brightness matter in paragraph 2?
+  CHOICES: ['It establishes that brighter lighting always harms performance', 'It suggests the common improvement may not be explained by a lighting change alone.', 'It proves that attention is the only possible cause.', 'It shows that the original task was not performed.'] correct=2
+--- Q vr49-p117: The passage treats the attention explanation as —
+  CHOICES: ['a claim irrelevant to any possible follow-up', 'a plausible account requiring further discrimination from alternatives', 'a conclusion conclusively established by the first comparison', 'an account contradicted solely by the unchanged-light condition'] correct=2
+--- Q vr49-p118: Which follow-up most directly reduces the practice explanation?
+  CHOICES: ['Give comparison groups equivalent prior exposure to the task.', 'Tell only one group which outcome is preferred.', 'Change workload only in the group receiving attention.', 'Use a brighter lamp and more practice in the same group.'] correct=1
+--- Q vr49-p119: What does the final paragraph imply about a factor called a confound?
+  CHOICES: ['It can never be a legitimate object of study.', 'It is always physically absent from a good experiment.', 'Naming it makes its effect disappear.', 'Its status depends partly on the inquiry’s question.'] correct=4
+--- Q vr49-p120: The passage’s main purpose is to —
+  CHOICES: ['show why the conditions of observation must be included in interpreting evidence', 'deny that controlled comparisons can improve knowledge', 'prove that lighting never affects any task', 'recommend ignoring studies whenever participants know they are observed'] correct=1
+--- Q vr49-p121: Which change best follows the passage’s final recommendation?
+  CHOICES: ['State that a simplified railway map is unsuitable for estimating walking distances.', 'Add every building regardless of readability.', 'Label every unmarked area unused.', 'Remove all station connections.'] correct=1
+--- Q vr49-p122: Which finding would most directly support a document-loss explanation of a gap?
+  CHOICES: ['The town had several unrelated festivals.', 'A surviving inventory lists the missing volumes as present before a later flood.', 'The activity continued in another country.', 'The surviving documents are written neatly.'] correct=2
+--- Q vr49-p123: Which museum label best follows the passage’s recommendation?
+  CHOICES: ['“All later additions are necessarily worthless.”', '“The smooth appearance proves this is entirely original.”', '“The lower corner was reconstructed during treatment; an earlier repair is documented in the archive.”', '“Nothing here has ever changed,” despite known repairs.'] correct=3
+--- Q vr49-p124: Which additional design most directly tests the revised account’s specific prediction?
+  CHOICES: ['Compare birds’ colors without recording songs.', 'Expose comparable birds to reordered examples with the same number of notes.', 'Change note count and order together in every exposure.', 'Observe only adults already singing the familiar sequence.'] correct=2
+--- Q vr49-p125: Which change would best prevent the distortion described in paragraph 2?
+  CHOICES: ['Stop recording whether preparation was included.', 'Require every site to include the same preparation and inspection activities.', 'Let each site choose whatever start point gives the shortest time.', 'Report more decimal places without changing the procedure.'] correct=2
+--- Q vr49-p126: Which question best applies the passage’s advice to the phrase “winning a discussion”?
+  CHOICES: ['Which dictionary has the longest definition of winning?', 'Why must every discussion produce one loser?', 'What aspects of discussion become less visible when success is treated as victory?', 'How many soldiers are physically present?'] correct=3
+--- Q vr49-p127: Which replica label would best meet the passage’s standard?
+  CHOICES: ['“The copy’s price proves its accuracy.”', '“No distinction between known and guessed features is necessary.”', '“The casing is transparent for teaching; the uncertain missing gear is shown as a proposed reconstruction.”', '“Every feature is certainly original,” despite an invented gear.'] correct=3

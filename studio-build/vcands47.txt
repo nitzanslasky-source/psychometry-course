@@ -1,0 +1,891 @@
+# Bank candidates for topic 47 (114 items, best-trusted first). Answer is 1-based. Use qid exactly.
+
+=== vb-inf_mix_0028 [real exam | set inf_mix | explain-findings] answer=3
+STEM: One of the projects that the US National Aeronautics and Space Administration (NASA) is involved in is the search for life on other planets. Recently, scientists working on this project have become interested in ice cauldrons – cracks in the ice that form distinctive spiral shapes that can be recognized easily even from vast distances. Ice cauldrons are common near Earth's North Pole, and they are formed by the eruption of volcanoes buried under a layer of ice and snow. Tests conducted on Earth show that eruptions like these create an environment that combines heat, humidity and a wide range of minerals. A combination of three of the following claims could explain why NASA is interested in ice cauldrons. Which is the remaining claim?
+  (1) Since the conditions that cause ice cauldrons to be formed are not unique to Earth, it is possible that cauldrons are also formed on other planets
+  (2) The combination of heat, humidity and a wide range of minerals is considered ideal conditions for the formation of life
+  (3) Spiral-shaped cracks in ice could be formed not only by a volcanic eruption, but also by other factors
+  (4) NASA has almost no other means of searching for life on other planets other than photographing their surfaces from vast distances
+
+=== vb-inf_mix_0040 [real exam | set inf_mix | explain-findings] answer=2
+STEM: A study on near-sightedness in children found that the more time children spend outdoors, the less likely they are to develop near-sightedness. It was also found that among children who had already developed near-sightedness, the vision of those who spend more time outdoors deteriorates at a slower rate than the vision of the others. Which of the following can explain the study's findings?
+  (1) Children who develop near-sightedness and need to wear glasses tend to spend less time outdoors than children who do not wear glasses
+  (2) Children who spend a lot of time outdoors read less than other children, and the more that people read the more their vision deteriorates
+  (3) Adults spend less time outdoors than children, and they are more likely than children to develop near-sightedness
+  (4) Exposure to sunlight for many hours can damage the eyes and lead to near-sightedness. English Heccrbq Português Deutsch Italiano
+
+=== vb-inf_mix_0047 [real exam | set inf_mix | explain-findings] answer=4
+STEM: In September 1967, traffic laws in Sweden were changed, and motorists began driving on the right side of the road instead of on the left side. This change was supposed to make driving safer, since the steering wheel in most cars in Sweden was on the left side of the car, which is suitable for driving on the right side of the road. Indeed, for the first few months after the change, the rate of traffic accidents in Sweden dropped significantly. However, the decrease was only temporary, and two years later, the rate of accidents had returned to its previous level. Which of the following best explains why the decrease in the rate of accidents in Sweden was temporary?
+  (1) In 1967, Sweden began importing fewer cars with steering wheels on the right side and in 1969, it stopped doing so completely
+  (2) Driving on the right side of the road enabled drivers to sit on the left side of the car, and thus to see the road better
+  (3) In 1967, the speed limit on Sweden's highways was raised by 10 kph
+  (4) After the change was made, drivers were especially cautious, because they were not yet used to driving on the right side
+
+=== vb-inf_mix_0060 [real exam | set inf_mix | explain-findings] answer=3
+STEM: Barak gave Michal a gift. In response, Michal said to Barak: "You gave me a gift to make me happy, but you achieved the exact opposite result." A combination of three of the following facts explains Michal's response. Which is the remaining fact?
+  (1) Michal can read only Hebrew, French and English
+  (2) Receiving a gift that she cannot use makes Michal sad
+  (3) Michal's favorite books are poetry books
+  (4) Barak gave Michal a thriller written in Spanish. Verbal Reasoning – First Section - 8 - Summer 2024
+
+=== vb-inf_mix_0108 [real exam | set inf_mix | explain-findings] answer=2
+STEM: In an experiment, participants were asked to wait in a university lecturer's office. After a few minutes, they were led into another room, where they were asked to list all the items they had seen in the lecturer's office. Some of them mentioned items, such as books, that were not even in the office. The researchers explained this by hypothesizing that human memory is based on absorbing only a few details and on completing the picture through expectations based on previous experience or on commonplace images. Which of the following can be best explained in the same way?
+  (1) A person bought a certain TV model, and was later asked which other models were in the store, and remembered them all
+  (2) A person witnessed a bank robbery, and stated that the robber was carrying a gun, whereas in actual fact the robber was armed only with a knife
+  (3) A person was involved in a car accident for the first time, and remembered that the car that collided with them was green, whereas in actual fact it was blue
+  (4) A person attended a wedding, and estimated that there were about one hundred guests there, and indeed, there were exactly one hundred and two guests in attendance
+
+=== vb-inf_v2_0196 [real exam | set inf_v2 | Scientific Thinking] answer=3
+STEM: In nature, most things that are blue — the wings of certain butterflies, the feathers of certain birds, the skin of some fish — do not owe their color to a blue pigment; such pigments are rare, and where blue appears it is usually produced by the fine structure of the surface, which is built of layers so thin and so regularly spaced that they reflect blue light and let the other colors pass. The blue dyes used in industry, by contrast, are pigments, and most of them fade in sunlight within a few years. Recently, chemists have succeeded in growing on glass a surface of transparent layers whose spacing matches that of a butterfly's wing, and the glass appears a deep blue although nothing in it is colored. Based on the passage, what new way of producing a blue that does not fade might develop from the chemists' success?
+  (1) Extracting the rare blue pigments from butterflies' wings and binding them to a surface that protects them from sunlight
+  (2) Arranging ordinary blue pigments in thin, regularly spaced layers so that they reflect more light and appear deeper in color
+  (3) Manufacturing surfaces whose transparent layers are spaced so as to reflect blue light, so that the color arises from the structure and not from any pigment
+  (4) Coating industrial pigments with a layer of glass thin enough to let blue light pass while blocking the light that causes fading
+EXPL: The discovery is color without pigment; only (3) abandons the pigment. (1) and (2) keep pigments and merely protect or arrange them; (4) protects a pigment rather than replacing it.
+
+=== vb-inf_v2_0197 [real exam | set inf_v2 | Scientific Thinking] answer=3
+STEM: In a study, supporters of two rival football clubs were asked a series of questions about historic matches between the clubs, in each of which one club had beaten the other. The study yielded two findings. The first: supporters of the club that had won a given match remembered its course far more accurately than supporters of the club that had lost it. The second: in the years since those matches, supporters of the winning club had watched the recording of the match many more times than supporters of the losing club. What is the relation between the two findings?
+  (1) The first finding proves the second
+  (2) The second finding contradicts the first
+  (3) The second finding supplies an explanation for the first
+  (4) The first finding describes a general phenomenon, and the second is an instance of it
+EXPL: Repeated viewing accounts for more accurate memory; the direction runs from the second finding to the first. (2) sees a conflict where there is none; (1) reverses the direction; (4) mistakes two different measures for a general case and an instance.
+
+=== vb-inf_v2_0198 [real exam | set inf_v2 | Scientific Thinking] answer=4
+STEM: A researcher compared the prices at which television sets and refrigerators are offered for sale, new and second-hand. She found that the gap between the prices of second-hand television sets bought within the last few years and the prices of new television sets is small, compared with the gap between the prices of second-hand refrigerators of the same age and the prices of new refrigerators. Which of the following facts could explain this finding?
+  (1) A year ago new refrigerators cost far more than new television sets, but the price of new refrigerators has fallen, and it continues to fall
+  (2) A new refrigerator of low quality generally costs more than a used refrigerator of high quality, whereas a new television set of low quality generally costs less than a used one of high quality
+  (3) The quality of a television set deteriorates faster than the quality of a refrigerator
+  (4) The price of new television sets fell noticeably in the past year, while the price of new refrigerators has hardly changed
+EXPL: If new sets now cost less than they did, a recent second-hand set is priced against a lower new price, and the gap closes; stable refrigerator prices leave that gap wide. (1) has the wrong appliance falling; (2) describes quality tiers, not the effect of age; (3) would widen the television gap, not narrow it.
+
+=== vb-inf_v2_0199 [real exam | set inf_v2 | Scientific Thinking] answer=1
+STEM: Dr. Zohar criticized a study for being irrelevant to its own question, and described it in an analogy: "It is as though you wished to find out whether people who have had cosmetic surgery are pleased with the result, and to that end examined whether cosmetic surgeons suffer from headaches more than other people." Which of the following studies is most likely to be the one Dr. Zohar criticized?
+  (1) A study that asked whether people who laugh a great deal are happier than others, by comparing the average happiness of professional comedians with that of the general public
+  (2) A study that asked whether there is a connection between how overweight people believe themselves to be and how overweight they are, by weighing them and questioning them
+  (3) A study that asked whether medical practice differs between hospitals in the north and the south, by examining patients treated in both
+  (4) A study that asked whether people who train in a gymnasium grow stronger, by comparing their strength before and after a year of training
+EXPL: The analogy faults a study for measuring the wrong people (the producers of the thing) on the wrong quantity; comedians stand to laughter as surgeons stand to surgery. (2), (3) and (4) each measure the people the question is about.
+
+=== vb-inf_v2_0200 [real exam | set inf_v2 | Scientific Thinking] answer=3
+STEM: Memory researchers tested a hypothesis by the following experiment. Participants were asked to walk about a room, collect a number of objects scattered in it and place them in a box, which was then sealed. Half of the participants were then asked to remain in the room, and the other half were led to a different room. Finally every participant was asked to name as many of the collected objects as he could. Which of the following hypotheses is the one the researchers tested?
+  (1) A person is more likely to remember a set of items if he chose them himself than if they were chosen for him
+  (2) The more items a person stores in memory at one time, the larger the share of them he forgets
+  (3) A person recalls items better when the recall takes place in the same surroundings in which the items were committed to memory
+  (4) Concealing objects shortly after they have been seen reduces the chance that they will be remembered
+EXPL: The only thing that differs between the halves is the room; (1), (2) and (4) name variables the design does not vary.
+
+=== vb-inf_v2_0201 [real exam | set inf_v2 | Scientific Thinking] answer=1
+STEM: Researchers supposed that a plant exposed to frequent touch develops heightened resistance to pests. To test the supposition they grew two seedlings of the same species under identical conditions, except that one was touched frequently and the other not at all, and found that the touched seedling did develop heightened resistance. A chemical test showed that the level of the hormone jasmonate, which is found in plants of every species, was higher in the touched seedling than in the other. The researchers wished to find out whether the hormone is responsible for the heightened resistance, and to that end repeated the experiment with new seedlings, changing one thing. Which of the following is most likely to be the change they made?
+  (1) They used seedlings that had been genetically altered so as to be unable to produce jasmonate
+  (2) They scattered a pest-repelling substance around the seedling that was not touched
+  (3) They used one seedling of the species tested in the first experiment and one of another species
+  (4) They used two seedlings of the same species, but of a species other than the one tested in the first experiment
+EXPL: If touched seedlings that cannot make the hormone gain no resistance, the hormone is the link; (2), (3) and (4) change something other than the hormone.
+
+=== vb-inf_v2_0202 [real exam | set inf_v2 | Scientific Thinking] answer=3
+STEM: Researchers examined fossilized teeth of people who lived ten thousand years ago and found in them residues of a sedge — a plant that is not a food plant. They noticed that the teeth were remarkably healthy, with almost no cavities, and concluded that people of that period chewed the sedge and that this protected their teeth from decay. Another researcher argued that the finding does not show that the sedge protected the teeth, since people of that period did not eat wheat or refined sugar and therefore had no reason to suffer from decay in any case. Which of the following findings could weaken the other researcher's argument?
+  (1) Fossils other than teeth showing that people of ten thousand years ago consumed large quantities of the sedge
+  (2) Fossilized teeth of people who lived at a time when wheat and sugar were already eaten, which contain no residue of the sedge and have more cavities than the teeth the researchers examined
+  (3) Fossilized teeth of people who lived ten thousand years ago, which contain no residue of the sedge and have more cavities than the teeth the researchers examined
+  (4) Fossilized teeth of people who lived at a time when other means of protecting the teeth were in use, which contain residue of the sedge
+EXPL: Same period, same diet, no sedge, more cavities — the diet cannot be the whole explanation. (2) is what the critic would predict; (1) and (4) do not bear on the diet argument.
+
+=== vb-inf_v2_0203 [real exam | set inf_v2 | Scientific Thinking] answer=3
+STEM: The female cuckoo lays her eggs in the nests of other birds, among them crows. A study found that crow chicks in a nest that also held a cuckoo chick had a higher chance of survival than crow chicks in a nest without one. The authors supposed that the cuckoo chick secretes a smell that repels predators and so lowers the chance that it or its nest-mates will be eaten. Another researcher supposed instead that the cuckoo chooses in the first place to lay in nests that are relatively safe from predators, so as to improve her chicks' chances. The authors carried out a further test whose results allowed them to confirm one of the two hypotheses. Which of the following tests is most likely to be the one they carried out?
+  (1) They blocked predators' access to a number of nests and measured the survival of the chicks in them
+  (2) They measured the survival of crow chicks in nests that held chicks of birds other than the cuckoo
+  (3) They moved cuckoo eggs into randomly chosen crows' nests and measured the survival of the chicks in them
+  (4) They measured the survival of the cuckoo chicks themselves, and not only that of the crow chicks that shared their nests
+EXPL: Random placement removes the cuckoo's choice; if survival still rises, the chick itself is the cause. (1), (2) and (4) do not separate choice from effect.
+
+=== vb-inf_v2_0204 [real exam | set inf_v2 | Scientific Thinking] answer=3
+STEM: The bacterium Helicobacter pylori is found in the stomachs of most people, yet only about fifteen percent of its carriers develop a stomach ulcer. Which of the following claims, if true, explains these facts?
+  (1) The multiplication of the bacterium is the cause of the ulcer
+  (2) The bacterium often appears in the stomach following the presence of another bacterium, and it is the other bacterium that sometimes causes the ulcer
+  (3) The bacterium is only one of the factors that lead to an ulcer, but an ulcer cannot develop without it
+  (4) The presence of the bacterium leads to the appearance of another bacterium, and the two together necessarily cause an ulcer
+EXPL: A necessary condition that is not sufficient is exactly what a common bacterium and an uncommon disease call for. (1) and (4) would make the ulcer common; (2) removes the bacterium's role altogether.
+
+=== vb-inf_v2_0205 [real exam | set inf_v2 | Scientific Thinking] answer=1
+STEM: Do elephants understand the communicative meaning of pointing — a human gesture directing attention toward an object? A new study says they do. The researcher stood before three buckets, all of which contained food, and on each trial pointed at a different one; he found that the elephants tended to turn toward the bucket he pointed at. The researcher argued that the elephants' understanding of pointing was not acquired in the course of the experiment but existed before it, and cited a datum from the experiment in support. Which of the following data is most likely to be the one he cited?
+  (1) The rate at which the elephants turned toward the bucket the researcher pointed at was no lower at the beginning of the experiment than at its end
+  (2) Young elephants turned toward the bucket the researcher pointed at more often than old elephants did
+  (3) At the beginning of the experiment the elephants turned toward each of the three buckets at the same rate
+  (4) Not all the elephants that took part in the experiment turned toward the bucket the researcher pointed at with the same frequency
+EXPL: Learning would show as improvement over trials; a flat rate from the first trials argues for a prior ability. (3) would suggest the opposite; (2) and (4) concern differences between elephants, not learning.
+
+=== vb-inf_v2_0206 [real exam | set inf_v2 | Scientific Thinking] answer=3
+STEM: A teacher noticed that the pupils who attended the revision lessons she gave before the final examination obtained, on average, higher marks than the pupils who did not attend, and concluded that attending the revision lessons contributed to success in the examination. Which of the following explanations could serve as an alternative to the teacher's?
+  (1) The revision lessons were based on the material taught in class during the year, so that only pupils who had understood it in class understood the revision as well
+  (2) The pupils who chose not to attend the revision lessons did so because they believed they already commanded the material
+  (3) The pupils who chose to attend the revision lessons are the diligent and motivated pupils in any case
+  (4) The teacher who gave the revision lessons was not the one who had taught the subject during the year
+EXPL: Diligence explains both attendance and marks. (2) would predict high marks for the absentees, the reverse of the finding; (1) and (4) do not explain the gap.
+
+=== vb-inf_v2_0207 [real exam | set inf_v2 | Scientific Thinking] answer=1
+STEM: A study of forest areas in Africa that had burned found that in the first years after a fire the trees grow quickly, and that the growth slows later. Dr. Bentzur argued that the charcoal produced by the fire is the cause. Which of the following findings does NOT strengthen Dr. Bentzur's claim?
+  (1) Charcoal in the soil speeds the development of the grasses that compete with the trees for nutrients
+  (2) Charcoal neutralizes organic substances in the soil that inhibit the bacteria the trees need for their growth
+  (3) Researchers who sowed tree seeds in soils mixed with charcoal found that the fresher the charcoal, the better the germination
+  (4) In burned forests where the charcoal was washed away by rain soon after the fire, no rapid growth was observed
+EXPL: Helping the trees' competitors would slow the trees, not speed them; (2) supplies a mechanism, (3) the fading of the effect, and (4) the absence of the effect without the cause.
+
+=== vb-inf_v2_0208 [real exam | set inf_v2 | Scientific Thinking] answer=3
+STEM: Tree borers are larvae that live inside the trunks of trees, and they are very difficult to eradicate with pesticides. Nevertheless, many farmers succeed in getting rid of them by irrigating the trees with salt water. Which of the following data could explain why irrigation with salt water is effective against tree borers?
+  (1) The chemical reaction between salt and pesticides lowers the concentration of the pesticides in the trunk without impairing their effectiveness
+  (2) Salt impairs the reproduction of the tiny insects that feed on the borers
+  (3) Salt water causes the trees to draw up from the soil certain minerals, near which the borers cannot survive
+  (4) Salt water costs far less than most of the pesticides on the market
+EXPL: Only (3) connects the salt to the death of the borers. (2) would help them; (1) and (4) are about pesticides and cost.
+
+=== vb-inf_v2_0209 [real exam | set inf_v2 | Scientific Thinking] answer=4
+STEM: In a study, Israeli-born participants were divided into two groups. Group A was asked to memorize a list of names of Israeli towns, group B a list of names of Hungarian towns. When asked to recall the lists, group A remembered many more names. The researcher attributed the difference mainly to group A's familiarity with the names, but raised a second possibility as well: that the result stemmed from the words group B had to remember being Hungarian, and therefore hard for Israelis to pronounce. She therefore conducted a second experiment, whose result showed that the second factor is of secondary importance. Which of the following is most likely to be the result of the second experiment?
+  (1) Israeli newsreaders who were asked to pronounce foreign words in a broadcast did better with words they had never met before
+  (2) Hungarian participants remembered lists of Hungarian names better than lists of Israeli names
+  (3) Hungarian participants remembered lists of everyday Hungarian words better than lists of rare Hungarian words, even when the two lists were equally easy to pronounce
+  (4) Israeli chemists remembered lists of rare Hebrew words less well than lists of names of molecules that were hard for them to pronounce — provided the molecules were ones they work with
+EXPL: Familiar-but-hard-to-pronounce beats unfamiliar-but-easy: the pronunciation factor is directly outweighed. (3) shows familiarity matters but does not rank it against pronunciation; (2) repeats the first experiment in reverse; (1) is about pronunciation alone.
+
+=== vb-inf_v2_0210 [real exam | set inf_v2 | Scientific Thinking] answer=1
+STEM: At a certain university, most of the men who applied for doctoral studies were accepted, whereas only a minority of the women who applied were accepted. An examination by department, however, found that in every department the proportion of men accepted among the men who applied equaled the proportion of women accepted among the women who applied. Which of the following facts could explain these data?
+  (1) Most of the men applied to departments that are easy to enter, and most of the women to departments that are hard to enter
+  (2) Most of the men applied to departments that are hard to enter, and most of the women to departments that are easy to enter
+  (3) Every department received the same number of applications from men and from women
+  (4) Most of the men and most of the women applied to the same departments
+EXPL: Equal rates within departments and unequal rates overall require the two groups to be distributed differently across departments with different acceptance rates — in the direction of (1). (2) gives the wrong direction; (3) and (4) would make the overall rates equal.
+
+=== vb-inf_v2_0211 [real exam | set inf_v2 | Scientific Thinking] answer=4
+STEM: A certain starch has a curious property: mixed with a little water it forms a liquid, but a hard stir turns the liquid instantly into a solid. At first the water molecules coat the starch molecules like a lubricant and let them slide past one another; under hard stirring, however, the starch molecules collide and, because of their rough surfaces, lock together into long tangled chains held by friction, and a solid results. When the stirring stops the chains break and the mixture is liquid again. In most other liquids of this class nothing of the kind happens. Which of the following explanations concerning the molecules of the other liquids best fits the passage?
+  (1) Water does not serve them as a lubricant
+  (2) When they are stirred hard they do not join together into a solid
+  (3) The chains they form break when the stirring stops
+  (4) Their surfaces are not rough
+EXPL: The passage names the roughness as what makes the molecules lock; its absence is the explanation. (2) restates the difference instead of explaining it; (3) is true of the starch too; (1) would leave the mixture solid from the start.
+
+=== vb-inf_v2_0212 [real exam | set inf_v2 | Scientific Thinking] answer=3
+STEM: A study of near-sightedness in children found that the more time children spend out of doors, the less likely they are to become near-sighted. It was also found that among children who had already become near-sighted, the eyesight of those who spend more time out of doors deteriorates more slowly than that of the others. Which of the following can explain the study's findings?
+  (1) Children who become near-sighted and need to wear glasses tend to spend less time out of doors than children who do not wear glasses
+  (2) Adults spend less time out of doors than children, and are more likely than children to become near-sighted
+  (3) Children who spend a great deal of time out of doors read less than other children, and the more a person reads the more his eyesight deteriorates
+  (4) Exposure to sunlight for many hours is liable to damage the eyes and lead to near-sightedness
+EXPL: A mechanism that acts on everyone explains both the lower incidence and the slower deterioration. (1) is reverse causation, and it explains only the first finding; (2) is about adults; (4) predicts the opposite.
+
+=== vb-inf_v2_0213 [real exam | set inf_v2 | Scientific Thinking] answer=4
+STEM: In September 1967 the traffic laws of Sweden were changed, and motorists began to drive on the right side of the road instead of the left. The change was expected to make driving safer, since the steering wheel in most cars in Sweden was on the left, which suits driving on the right. And indeed, in the first months after the change the rate of road accidents in Sweden fell markedly. But the fall was only temporary, and two years later the rate of accidents had returned to its former level. Which of the following best explains why the fall in the rate of accidents was temporary?
+  (1) In 1967 Sweden began importing fewer cars with the steering wheel on the right, and in 1969 it stopped importing them altogether
+  (2) Driving on the right allowed drivers to sit on the left side of the car, and so to see the road better
+  (3) In 1967 the speed limit on Sweden's highways was raised by ten kilometers an hour
+  (4) After the change, drivers were especially cautious because they were not yet used to driving on the right
+EXPL: Caution that wears off explains a fall that reverses. (2) would predict a lasting fall; (1) points the same way; (3) has the wrong timing to explain a fall followed by a return.
+
+=== vb-inf_v2_0214 [real exam | set inf_v2 | Scientific Thinking] answer=4
+STEM: Until the 1980s the medical community believed that the acidity of the stomach was too high for bacteria to survive in it, and that bacteria therefore could not be the cause of stomach ulcers. A scientific experiment disproved this assumption. Which of the following CANNOT be that experiment?
+  (1) Taking a sample of stomach tissue from people suffering from an ulcer, and checking whether bacteria are present in it
+  (2) Creating an artificial environment with an acidity similar to the stomach's, and checking whether any bacteria survive in it
+  (3) Treating a stomach ulcer with a medication whose only effect is to kill bacteria, and checking whether the ulcer is cured by the treatment
+  (4) Using antacids to lower the acidity of the stomach, and checking whether bacteria are present in the stomach after the acidity has been lowered
+EXPL: Finding bacteria in a stomach whose acidity has been lowered says nothing about whether they survive at the stomach's natural acidity — the assumption at issue. (1), (2) and (3) each could show bacteria present or active under the natural conditions.
+
+=== vb-inf_v2_0215 [real exam | set inf_v2 | Scientific Thinking] answer=3
+STEM: Erez boasted to Gadi that he could tell the number of leaves on any bush at a glance. To prove it he pointed at a nearby bush and declared that it had exactly 373 leaves. Gadi, unconvinced, wished to put the claim to the test; but an exact check would have meant counting every leaf on the bush, a long and tiring task, and so he devised a far simpler test. Which of the following is most likely to be the test Gadi devised?
+  (1) Erez will say how many leaves he thinks are on one half of the bush and how many on the other half, and Gadi will check whether the two figures add up to 373
+  (2) A passer-by will also say how many leaves he thinks are on the bush, and Gadi will compare his figure with Erez's
+  (3) Gadi will pick a few leaves off the bush without telling Erez how many he has picked; Erez will say how many leaves are now on the bush, and Gadi will check whether the difference equals the number he picked
+  (4) Erez will say how many leaves he thinks are on a similar-looking bush; Gadi will count the leaves on that bush and compare
+EXPL: A genuine ability would track a change whose size only Gadi knows; a guess would not. (1) can be made consistent by anyone, (2) compares two guesses, (4) is the full count Gadi wished to avoid.
+
+=== vb-inf_v2_0216 [real exam | set inf_v2 | Scientific Thinking] answer=2
+STEM: Two findings emerged from a study of how readers are affected by the typeface of a printed text: people who read texts printed in a hard-to-read typeface remembered them better than people who read similar texts in an easy-to-read typeface; and people who read instructions printed in an easy-to-read typeface were more willing to follow them than people who read the same instructions in a hard-to-read typeface. On the basis of these findings the researchers drew up a number of recommendations. Which of the following is LEAST likely to be one of them?
+  (1) Notices in public transport, such as "Do not put your feet on the seats," should be printed in an easy-to-read typeface
+  (2) The worse a person's memory, the more important it is for him to read texts printed in an easy-to-read typeface
+  (3) The typeface of a text should be chosen according to the purpose the text is meant to serve
+  (4) Actors who wish to memorize a text should read it in a hard-to-read typeface
+EXPL: The first finding links the hard typeface with better memory; (2) sends the person with the weakest memory to the typeface that helps memory least. (1), (3) and (4) follow directly.
+
+=== vb-inf_v2_0217 [real exam | set inf_v2 | Scientific Thinking] answer=4
+STEM: The parasite that causes sleeping sickness is carried from one person to another by the tsetse fly, an insect common in tropical Africa. When a tsetse fly bites a person who has the disease, the parasite passes into the fly's body and multiplies there. If one fly bites several people who have the disease and takes up parasites from each of them, genetic material can pass between the parasites while they are in the fly's body; this increases the genetic variety of the parasites and may make them more resistant to medication. According to the passage, which of the following is a likely explanation for the fact that in certain regions the parasites are especially resistant to medication?
+  (1) In those regions a smaller proportion of the tsetse flies carry the parasite
+  (2) In those regions there are more tsetse flies
+  (3) In those regions there is a greater probability that genetic material will pass from the fly's body to the parasite
+  (4) In those regions there is a greater probability that a fly will bite several people who have the disease
+EXPL: Resistance follows from exchange between parasites from different hosts, which needs one fly biting several sick people. (2) is a step short; (1) points the other way; (3) misplaces the exchange.
+
+=== vb-inf_v2_0218 [real exam | set inf_v2 | Scientific Thinking] answer=4
+STEM: In an experiment, researchers gave yellow teddy bears to children. After a while they offered each child to exchange his bear for one that had been given to another child and was green. Most of the children refused. The researchers supposed that the refusal stemmed from a preference for the color yellow, but a follow-up experiment showed that the supposition was not correct. Which of the following best describes the follow-up experiment?
+  (1) The researchers gave each child a yellow bear, and after a while offered to exchange it for a smaller green bear; most of the children refused
+  (2) The researchers gave each child an orange bear, and after a while offered to exchange it for a larger yellow bear; most of the children agreed
+  (3) The researchers gave each child a yellow bear, and after a while offered to exchange it for a larger yellow bear; most of the children agreed
+  (4) The researchers gave each child a green bear, and after a while offered to exchange it for an identical bear that was yellow; most of the children refused
+EXPL: If the children refuse a yellow bear in favor of the green one they already hold, the color preference cannot be the reason. (1) and (2) are consistent with a preference for yellow; (3) does not test color at all.
+
+=== vb-inf_v2_0219 [real exam | set inf_v2 | Scientific Thinking] answer=2
+STEM: Two experiments are described. Experiment 1: researchers supposed that drinking twice the usual daily quantity of water improves health. They recruited participants whose health was similar and who habitually drank the average daily quantity, asked them to drink twice that quantity for a month (group A), and at the end of the month compared their health with that of a group who had not changed their habits (group B). Experiment 2: researchers supposed that giving up sugar causes headaches. They asked half of their participants to give up sugar for a week and the other half to go on consuming it as usual, and at the end of the week compared the two halves. Four correspondences between elements of the two experiments follow. Which of them is correct?
+  (1) Group A in experiment 1 corresponds to the participants who did not give up sugar in experiment 2
+  (2) Drinking twice the quantity of water in experiment 1 corresponds to giving up sugar in experiment 2
+  (3) The quantity of water drunk by the members of group A in experiment 1 corresponds to the quantity of sugar consumed by the participants who did not give up sugar in experiment 2
+  (4) A participant in experiment 1 who did not double his water corresponds to a participant in experiment 2 who gave up sugar
+EXPL: The change imposed is the change imposed. (1) and (4) pair a changed group with an unchanged one; (3) pairs the manipulated quantity with the untouched one.
+
+=== vb-inf_v2_0220 [real exam | set inf_v2 | Scientific Thinking] answer=4
+STEM: The supposition tested in experiment 1 above was not confirmed, whereas the supposition tested in experiment 2 was confirmed. Which of the following recommendations is best supported by the results of the two experiments?
+  (1) It is worth drinking twice the usual daily quantity of water, and there is no danger in giving up sugar
+  (2) It is worth drinking twice the usual daily quantity of water, and it is not worth giving up sugar
+  (3) There is no need to drink twice the usual daily quantity of water, and there is no danger in giving up sugar
+  (4) There is no need to drink twice the usual daily quantity of water, and it is not worth giving up sugar
+EXPL: Unconfirmed: no reason to double the water. Confirmed: giving up sugar causes headaches — not worth it.
+
+=== vb-inf_v2_0221 [real exam | set inf_v2 | Scientific Thinking] answer=1
+STEM: Researchers showed participants photographs of a dog's face in different emotional states — joy (on receiving a treat), sadness (on being scolded by its owner), fear (on meeting a threatening dog) — and asked them to say which emotion the dog was expressing in each photograph. They found that most participants identified the dog's emotional state well, and that participants who owned dogs succeeded better than the others. Which of the following conclusions best fits the findings?
+  (1) People are able to identify the facial expressions of dogs, and this ability improves with daily contact with dogs
+  (2) Dog owners identify the expressions of their own dog well, but not the expressions of other dogs
+  (3) Some people who have never had contact with dogs can identify their expressions, and some acquire the ability only after prolonged contact
+  (4) People who have no daily contact with dogs find it hard to identify dogs' expressions
+EXPL: Most succeeded, owners more; (4) contradicts the first finding, (2) and (3) add distinctions the study did not draw.
+
+=== vb-inf_v2_0222 [real exam | set inf_v2 | Scientific Thinking] answer=2
+STEM: A study found that the presence of onlookers while a person performs a simple task improves his performance, whereas their presence while he performs a complex task impairs it. Which of the following hypotheses does NOT explain this finding?
+  (1) Onlookers raise a person's alertness and make him sharper and more focused, which helps in a simple task; but a complex task demands a higher degree of care from the outset, and heightened alertness makes the person nervous and impairs his performance
+  (2) Onlookers exert pressure that impairs a person's confidence and his ability to complete a task; but the simpler the task, the more confident the person is, and the harmful effect of the onlookers fades
+  (3) A person wishes to appear in a favorable light and therefore tries to impress the onlookers; the effort helps in a simple task, but in a complex task, which demands much effort in any case, the added effort makes the load too heavy and impairs performance
+  (4) Onlookers impair a person's concentration on the task; in a complex task this harms performance, but since simple tasks are performed automatically, without much thought, reduced concentration actually helps
+EXPL: A harm that merely fades cannot produce the improvement observed in simple tasks; (1), (3) and (4) each supply a reason for both halves of the finding.
+
+=== vb-inf_v2_0223 [real exam | set inf_v2 | Scientific Thinking] answer=2
+STEM: In an experiment, participants were asked about their positions on various subjects, and then received fictitious feedback on their answers: some were told that most of the participants had given answers similar to theirs, and others that only a few had. At the end the participants were asked questions designed to reveal their mood. Which of the following is most likely to have been the purpose of the experiment?
+  (1) To examine the effect of mood on the tendency to express widely held positions
+  (2) To examine whether people prefer to feel unique or to feel similar to others
+  (3) To examine whether under experimental conditions people try to express widely held positions
+  (4) To examine how expressing positions on various subjects affects mood
+EXPL: The only thing manipulated is the feedback about similarity, and the only thing measured afterwards is mood. (1) reverses the order; (3) and (4) name variables the design does not isolate.
+
+=== vb-inf_v2_0224 [real exam | set inf_v2 | Scientific Thinking] answer=2
+STEM: The poet Dana Gioia wrote: "We are in a strange state — although more bad books of poetry are published in the United States today than ever before, most of the reviews of poetry that are published are favorable." Which of the following data could explain the state Gioia describes?
+  (1) Critics of poetry often disagree about what good poetry is
+  (2) Critics of poetry prefer not to write reviews of books they find unappealing
+  (3) Most critics of poetry believe that bad books of poetry should be reviewed harshly, in order to educate readers
+  (4) In Gioia's time more reviews of poetry are published than in earlier times
+EXPL: Reviews written only of the books critics like will be favorable however many bad books exist. (3) predicts the opposite; (1) and (4) do not explain the tilt.
+
+=== vb-inf_v2_0225 [real exam | set inf_v2 | Scientific Thinking] answer=2
+STEM: In an experiment, two groups of participants watched a film and were asked to rate it according to several professional criteria. While group A watched, a loud noise was played in the adjoining room; group B watched in silence. In the second stage, after they had given their ratings, the members of group A were asked whether they thought the noise had disturbed their judgment, and if so, how. Most of them rated the disturbance as strong and said that it had led them to rate the film lower than they otherwise would; but in fact the ratings given by group A were higher than those given by group B. Which of the following is most likely to have been the purpose of the experiment?
+  (1) To examine whether people rate their own judgment as better than that of others
+  (2) To examine whether people assess correctly how disturbances affect their judgment
+  (3) To examine whether hearing noise leads to harsher judgment than judgment in quiet conditions
+  (4) To examine whether a lack of attention causes people to rate a film higher
+EXPL: The second stage asks the participants what the noise did, and the two groups' ratings show what it did; the comparison between the two is the point. (3) is only the second half; (1) and (4) are not tested.
+
+=== vb-inf_v2_0226 [real exam | set inf_v2 | Scientific Thinking] answer=2
+STEM: The researchers Kadmon and Shmida studied the density of the plant malaniel — an annual that blooms in spring and dies in summer — in two habitats of the Judean desert: on the slopes and in the wadis. They found that the density is high in the wadis, and that the difference between the two habitats is not fixed: an increase in rainfall hardly affects the density in the wadis, but leads to a marked rise in density on the slopes. According to their study, if less rain fell in the Judean desert in 2020 than in 2019, it is reasonable that —
+  (1) the density of malaniel on the slopes in 2020 was higher than in 2019
+  (2) the gap between the density in the wadis and the density on the slopes was greater in 2020 than in 2019
+  (3) the density of malaniel on the slopes in 2020 was lower than the density in the wadis in that year
+  (4) in 2020 the density in the wadis did not change from 2019, but on the slopes it was much higher
+EXPL: Less rain lowers the slopes and leaves the wadis, so the gap widens. (3) is true in every year and says nothing about the rain; (1) and (4) point the wrong way.
+
+=== vb-inf_v2_0227 [real exam | set inf_v2 | Scientific Thinking] answer=4
+STEM: In the cosmetics department of the "Kolbo" store two beauty consultants work, one in the first half of the week and the other in the second half. Recently the manager of the department told the consultant of the first half that he intends to replace him, since the department's sales on the days he works are lower than its sales on the other days. The consultant argued that the low sales are not his fault, and proposed a test to the manager. Which of the following is most likely to be the test the consultant proposed?
+  (1) To check whether the products in the cosmetics department have recently become more expensive
+  (2) To check whether the store has recently been short of cosmetic products in high demand
+  (3) To check whether in other departments of the store, too, there are salespeople who work only in the first half of the week or only in the second
+  (4) To check whether in the other departments of the store, too, sales in the second half of the week are higher than in the first
+EXPL: If the whole store sells more late in the week, the days explain the gap, not the consultant. (1) and (2) would affect both halves alike; (3) is about staffing, not sales.
+
+=== vb-inf_v2_0228 [real exam | set inf_v2 | Scientific Thinking] answer=2
+STEM: Researchers studied the coral reefs of the Caribbean and were surprised to discover that the place of the "floating corals," which had dominated the reefs for millions of years and had died out in recent decades because of a parasite that attacked them, had been taken over by a population of "brown corals." Which of the following data CANNOT explain why the researchers were surprised?
+  (1) The floating corals thrive in conditions very different from those in which the brown corals thrive
+  (2) Most floating corals do not fall victim to parasites
+  (3) The brown corals are common mainly in cold regions, whereas the Caribbean Sea is warm
+  (4) The parasite that attacked the floating corals harms every kind of coral
+EXPL: The surprise is at the takeover, not at the extinction; (2) bears on the extinction alone. (1), (3) and (4) each make the brown corals' arrival unexpected.
+
+=== vb-inf_v2_0229 [real exam | set inf_v2 | Scientific Thinking] answer=2
+STEM: A study found that people who often listen to Indian music obtain, on average, higher marks in mathematics tests than people who listen to it rarely. The researchers concluded that listening to Indian music develops mathematical ability. Which of the following could serve as an alternative explanation of the study's findings?
+  (1) The disposition to develop mathematical ability is innate, whereas a liking for Indian music is not
+  (2) People with mathematical ability enjoy Indian music more, since they grasp its complex structure
+  (3) People who listen to music of any kind obtain higher marks in mathematics tests
+  (4) Listening to Indian music develops the regions of the brain responsible for mathematics
+EXPL: Ability leads to the listening, not the reverse. (4) is the researchers' own explanation; (1) and (3) do not explain the specific correlation.
+
+=== vb-inf_v2_0230 [real exam | set inf_v2 | Scientific Thinking] answer=1
+STEM: A student wished to examine whether the rise in the number of people admitted to hospital in spring is caused by allergic reactions to the blossoming of that season. He gathered a sample of people admitted to hospital in spring and checked how many of them had been exposed to blossoming shortly before. In order that the results should be unambiguous, he needs a further check to compare them with. Which of the following checks is best suited for this?
+  (1) Among people who were not exposed to blossoming at that time, what proportion were admitted to hospital in spring
+  (2) Among people admitted to hospital in spring, what proportion were exposed to blossoming only after their admission
+  (3) Among people exposed to blossoming at that time, what proportion were not admitted to hospital in spring
+  (4) Among people admitted to hospital in spring, what proportion were exposed to blossoming
+EXPL: The rate among the unexposed is the baseline the exposed must exceed. (4) repeats his own check; (2) and (3) do not supply a comparison group.
+
+=== vb-inf_v2_0231 [real exam | set inf_v2 | Scientific Thinking] answer=1
+STEM: Yossi argues that adults encourage boys and girls, at times without noticing, to behave according to what is regarded as "masculine" and "feminine" behavior, and that this is one of the causes of the differences in inclination between boys and girls. Tali, by contrast, argues that adults only respond spontaneously to the different wishes of boys and girls, which stem from innate natural inclinations. Which of the following studies could help to decide between the two claims?
+  (1) Observing adults playing with an infant dressed in clothes that do not reveal its sex, and comparing their behavior when they are told it is a boy with their behavior when they are told it is a girl
+  (2) Observing children of both sexes and checking to what extent they engage in activities regarded as typical of their sex
+  (3) Following the toys that parents buy for their children according to the children's sex
+  (4) Interviewing children and asking them whether they are aware of stereotypes about boys and girls
+EXPL: With the same infant, any difference in the adults' behavior comes from the label, not from the child's inclinations. (2), (3) and (4) cannot separate the two explanations.
+
+=== vb-inf_v2_0232 [real exam | set inf_v2 | Scientific Thinking] answer=4
+STEM: Researchers presented two groups of participants with a story about a man who ate in a restaurant and, after receiving a bill of 97 shekels, answered a telephone call and left without paying. Group A was told that the call had distracted him and that this was why he left without paying; group B was told that he had intended from the start not to pay. The researchers supposed that the more a person is perceived as guilty, the more one tends to remember the facts of the case in a way that intensifies the severity of his act. Which of the following findings supports the researchers' supposition?
+  (1) When asked to recall the name of the restaurant, more members of group A than of group B remembered it
+  (2) When asked their opinion of the price of the meal, most of group A thought 97 shekels exaggerated, and most of group B thought it fair
+  (3) When asked whether the story mentioned that the caller was the man's sick mother, more of group B than of group A answered yes
+  (4) When asked to note the amount of the bill, group A gave on average a sum well below 97 shekels, and group B a sum of about 97 shekels
+EXPL: The guiltier man is remembered as having left a larger bill unpaid. (3) would soften his act; (1) and (2) do not bear on severity.
+
+=== vb-inf_v2_0233 [real exam | set inf_v2 | Scientific Thinking] answer=1
+STEM: In a study, researchers followed a group of African mongooses and found that while the group forages, one of them stands guard in a prominent position, and when it identifies a predator it warns the group with special calls. In a further study the researchers gave extra food to some of the mongooses, and found that they devoted more hours to standing guard than did the mongooses that received no extra food. Which of the following conclusions does the further study support?
+  (1) An individual's readiness to contribute to the group grows once its own needs have been met
+  (2) Hunger increases an individual's readiness to endanger itself and to stand guard
+  (3) Foraging increases an individual's risk of being preyed on
+  (4) An individual's wish to guard its companions stems from its strong wish to satisfy other needs, such as eating
+EXPL: More food, more guarding. (2) reverses the finding; (3) and (4) are not tested.
+
+=== vb-inf_v2_0234 [real exam | set inf_v2 | Scientific Thinking] answer=1
+STEM: The teacher Sara found that the marks of the pupils who attended the preparation lessons for the mathematics examination were higher on average than the marks of the pupils who did not attend, and concluded that the preparation lessons helped the pupils who attended them. The teacher Dina holds that there is another explanation for the difference between the averages: the better pupils are the ones who chose to attend the preparation lessons, and since they are good pupils they did better in the examination. Which of the following conclusions could be undermined by an alternative explanation of the kind Dina proposed?
+  (1) Datum: the general health of people who habitually eat organic food is better, on average, than that of people who do not. Conclusion: eating organic food improves health
+  (2) Datum: a survey among the customers of the clothing chain "Beged-Li" found that it is the cheapest chain in the market. Conclusion: there is no chain cheaper than "Beged-Li"
+  (3) Datum: infants who received an experimental vaccine, given at random to every fifth infant, fell ill less on average than infants who did not receive it. Conclusion: the vaccine is effective
+  (4) Datum: people who smile a great deal are happier, on average, than people who smile little. Conclusion: a person who smiles more than another is probably also happier
+EXPL: People who choose organic food may be the health-conscious to begin with — self-selection, as in Dina's explanation. (3) is randomized; (4) draws no causal conclusion; (2) is a different flaw.
+
+=== vb-inf_v2_0235 [real exam | set inf_v2 | Scientific Thinking] answer=2
+STEM: It was found that the group that read text A and then text B rated Ziv's diligence lower than the group that read the texts in the reverse order. This finding —
+  (1) neither strengthens nor weakens the second hypothesis
+  (2) weakens the second hypothesis
+  (3) weakens the first hypothesis and strengthens the second
+  (4) strengthens both hypotheses
+EXPL: If earlier information weighed more, the group that met "diligent" first would rate diligence higher; it rated it lower, so the later text weighed more.
+
+=== vb-inf_v2_0236 [real exam | set inf_v2 | Scientific Thinking] answer=2
+STEM: If both hypotheses are correct, which group's average rating of Ziv's diligence is expected to be the LOWEST?
+  (1) The group that read text A only
+  (2) The group that read text B only
+  (3) The group that read text A first and then text B
+  (4) The group that read text B first and then text A
+EXPL: Only the lazy text, with nothing to raise it; both mixed groups receive some diligent information, which by the first hypothesis affects the rating.
+
+=== vb-inf_v1_0009 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: A researcher wanted to test the hypothesis that the presence of the Z compound in a soil sample is what makes clover grow in it. She tested several hundred soil samples — some in which clover grew and some in which it did not — and summarized the numbers in a table with two columns (samples without Z; samples with Z) and two rows (samples in which clover grew; samples in which it did not). A zero appears in exactly two of the four cells, and the researcher concluded that the hypothesis is correct. Which two cells are these?
+  (1) the two cells in the "with Z" column
+  (2) the two cells in the "clover grew" row
+  (3) "clover grew / without Z" and "clover did not grow / with Z"
+  (4) "clover grew / with Z" and "clover did not grow / without Z"
+EXPL: "Z is what makes clover grow" means: no clover without Z (so "grew / without Z" is empty) and clover wherever Z is present (so "did not grow / with Z" is empty). (4) empties exactly the cells the hypothesis needs to be full; (1) and (2) would mean Z or clover never occurred at all.
+
+=== vb-inf_v1_0010 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: One researcher hypothesized that people judge the weight of an object they lift mainly by its size: a larger object is expected to be heavier, and this expectation colors the judgment of the hands. Another researcher disagreed with her, claiming that people judge weight by the muscular effort of lifting alone, without any influence of what they see. Which of the following experiments is most likely to determine which researcher is right?
+  (1) The participants will lift two boxes of identical size but different weight, and will be asked to say which of the two is heavier
+  (2) The participants will look at two boxes of different size without being allowed to lift them, and will be asked to guess which is heavier
+  (3) The participants will lift two boxes of identical weight but different size, and will be asked to say which of the two is heavier
+  (4) The participants will lift a single box twice, with a rest between the lifts, and will be asked whether its weight seemed to change
+EXPL: Only when size differs and weight does not do the two hypotheses predict different answers (size-influenced: "the smaller one feels heavier / lighter"; effort-only: "the same"). In (1) size is held equal, in (2) nobody lifts, in (4) neither size nor weight varies.
+
+=== vb-inf_v1_0011 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: A study of stage fright in schoolchildren found that the more hours children spend in the school choir, the less likely they are to develop stage fright. It was also found that among children who had already developed stage fright, those who sing in the choir recover from it faster than the others. Which of the following can explain both findings?
+  (1) Children who suffer from stage fright tend to avoid the choir
+  (2) Adults sing less than children and are more likely to suffer from stage fright
+  (3) Singing in a group gives children repeated experience of an audience in conditions where no single child is exposed, and such experience reduces fear of audiences
+  (4) Loud singing for many hours damages the voice and makes children anxious about performing
+EXPL: A mechanism that operates on everyone explains both the lower rate and the faster recovery. (1) is reverse causation — it explains who joins, not why members improve; (2) is about adults; (4) predicts the opposite.
+
+=== vb-inf_v1_0012 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: In March 1998 the municipality replaced all of the city's round traffic signs with square ones, on the grounds that the new shape stands out better against trees and buildings and is therefore easier for drivers to see. In the first months after the change the number of accidents at signed junctions fell noticeably, but within two years it had returned to its former level. Which of the following best explains why the decrease was temporary?
+  (1) In the year of the change the city also raised the speed limit on its main roads
+  (2) Square signs are visible from a greater distance than round ones
+  (3) After the change, drivers slowed at every junction because the unfamiliar signs caught their attention, and the effect faded as the signs became familiar
+  (4) In the year of the change the city stopped importing round signs, and two years later it removed the last of them
+EXPL: A novelty effect that wears off explains a temporary improvement. (2) would predict a lasting improvement; (1) and (4) are changes whose timing and direction do not fit a fall followed by a return.
+
+=== vb-inf_v1_0013 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: A company that developed a herbal remedy for the common cold reported that in a study it had conducted, 85% of those who took the remedy reported feeling better within one week of beginning to take it. A physician reviewing the study argued that this finding does not show that the remedy helps at all. Which of the following could be the finding she relied on?
+  (1) All the cold remedies on the market help about 85% of patients within a week
+  (2) The improvement reported was a milder cough, but not a lower temperature
+  (3) 85% of people with colds feel better within a week even if they take nothing
+  (4) All the participants were adults, whereas most colds occur in children
+EXPL: If the same share recovers with no treatment, the remedy has shown nothing. (1) would still mean remedies help; (2) and (4) limit the finding's scope without erasing it.
+
+=== vb-inf_v1_0014 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: Tali boasted that she could tell the exact number of beans in any jar just by looking. She pointed at a jar on the counter and announced "412." Omer did not want to count all the beans, so he devised a simpler test. Which of the following is most likely to be Omer's test?
+  (1) Tali will estimate the beans in each half of the jar separately, and Omer will check whether the two figures add up to 412
+  (2) A neighbor will also estimate the beans in the jar, and Omer will compare the two estimates
+  (3) Omer will remove a handful of beans without letting Tali see how many, and Tali will state the new total; Omer will check whether the difference equals the number he removed
+  (4) Tali will estimate the beans in a similar jar, and Omer will count that jar and compare
+EXPL: A true ability would track a change whose size only Omer knows; a boaster's number would not. (1) can be made consistent by anyone; (2) compares two guesses; (4) is the full count Omer wanted to avoid.
+
+=== vb-inf_v1_0015 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: A gardener wanted to test the hypothesis that a new fertilizer makes tomato plants produce more fruit. He applied the fertilizer to the twelve plants in the sunny bed by the south wall of his garden, and left the twelve plants in the shaded bed by the north wall without it, watering both beds in the same way. At the end of the season the fertilized plants had produced twice as much fruit. Which of the following is the strongest objection to concluding that the fertilizer works?
+  (1) Twice as much fruit is not a large enough difference to prove anything
+  (2) The gardener should have tested the fertilizer on cucumbers as well
+  (3) The two beds differed in sunlight as well as in fertilizer, so the difference in fruit cannot be attributed to the fertilizer
+  (4) The fertilized plants may have produced more fruit of lower quality
+EXPL: The groups must be alike in everything but X; here they also differed in sun. (1) is about size, not design; (2) and (4) change the question.
+
+=== vb-inf_v1_0016 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: A teacher supposed that students who study more hours before an exam score higher. She compared a group that studied four hours a day with a group that studied eight, keeping everything else the same, and found that the eight-hour group scored LOWER. Which of the following is the most reasonable explanation of the finding?
+  (1) The four-hour group was more intelligent to begin with
+  (2) Studying eight hours a day is impossible, so the group must have misreported its hours
+  (3) The eight-hour group had less time to rest, and fatigue reduced what they retained
+  (4) The exam did not test the material that was studied
+EXPL: The design held everything else equal, so (1) is excluded by the setup and (4) would have lowered both groups; (2) refuses the finding instead of explaining it. (3) offers a mechanism by which more hours could lower scores.
+
+=== vb-inf_v1_0059 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: A researcher concluded from an experiment that the taste of a fruit juice is judged partly by its color. Which of the following cannot be the experiment on which she based her conclusion?
+  (1) Participants tasted two glasses of the same juice, one dyed darker, and most judged the darker glass sweeter
+  (2) Participants tasted the same juice from a red glass and from a clear glass, and most judged the red glass sweeter
+  (3) Participants tasted two different juices of the same color, and most judged the sweeter juice sweeter
+  (4) Participants tasted the same juice with their eyes open and blindfolded, and judged it sweeter with their eyes open
+EXPL: Only in (3) is color held constant and the juices differ — the result says nothing about color. In the others color (or seeing it) is the only difference.
+
+=== vb-inf_v1_0060 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: A teacher gave one class a set of practice tests before the final exam, and the class scored higher on the final than any class she had taught before. She concluded that practice tests raise scores. Which of the following is the strongest objection to her conclusion?
+  (1) The practice tests may have been easier than the final exam
+  (2) Some pupils in the class did not complete all the practice tests
+  (3) She did not give practice tests to a similar class in the same year and compare the two classes' results
+  (4) Higher scores on one final exam do not prove that the pupils learned more
+EXPL: Without a comparison group under the same conditions, the higher score may reflect the year, the pupils or the exam. (1), (2) and (4) are secondary.
+
+=== vb-inf_v1_0061 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: A biologist hypothesized that the song of a certain warbler attracts females mainly by its length: the longer the song, the more females approach. She played recorded songs of different lengths, one at a time, from a loudspeaker in the warblers' territory, and counted the females that approached. Songs of all lengths attracted the same number of females. Which of the following conclusions is best supported?
+  (1) Female warblers are not attracted by song at all
+  (2) The loudspeaker frightened the females away
+  (3) Length is not the feature of the song that governs how many females approach
+  (4) Longer songs attract more females only in the breeding season
+EXPL: The manipulated variable made no difference, so length is not the governing feature. (1) goes beyond the test (females did approach); (2) is contradicted by the approaches; (4) introduces an untested condition.
+
+=== vb-inf_v1_0062 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: An agronomist wants to test whether a new fertilizer increases the yield of a wheat variety. Which of the following designs would best allow her to attribute any difference in yield to the fertilizer?
+  (1) A plot fertilized this year compared with the same plot's yield last year, when it was not fertilized
+  (2) A fertilized plot of the new variety compared with an unfertilized plot of a different variety
+  (3) Two neighboring plots of the same soil, sown on the same day with the same seed, one fertilized and one not, harvested together
+  (4) A fertilized plot in the valley compared with an unfertilized plot on the hillside
+EXPL: Everything equal but the fertilizer. (2) changes the variety, (1) the year and weather, (4) the terrain.
+
+=== vb-inf_v1_0063 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: A survey found that towns with more ice-cream shops per resident also have more drownings per resident. A journalist concluded that ice cream causes drowning. Which of the following best explains the survey's finding without accepting the journalist's conclusion?
+  (1) People who have eaten ice cream swim more carelessly
+  (2) Towns with more drownings receive more visitors, who buy more ice cream
+  (3) Ice-cream shops open where there are beaches, and towns with beaches have both more ice-cream shops and more swimmers at risk
+  (4) The survey counted only towns on the coast
+EXPL: A common cause — beaches — produces both counts. (1) accepts the causal claim; (2) reverses it implausibly; (4) is a remark about the sample, not an explanation.
+
+=== vb-inf_v1_0064 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: Two explanations have been proposed for why moths fly toward lamps at night: one, that moths steer by keeping the moon at a fixed angle and a nearby lamp confuses this steering; the other, that moths are simply attracted to brightness. Which of the following observations would most favor the first explanation over the second?
+  (1) Moths fly toward lamps on cloudy nights as well as clear ones
+  (2) Brighter lamps attract more moths than dimmer lamps
+  (3) Moths fly in a spiral around a lamp rather than straight at it, and do not fly toward the moon itself
+  (4) Moths are attracted to lamps of every color
+EXPL: Spiraling is what steering by a fixed angle to a near light source predicts, and ignoring the moon is what the first explanation expects; (2) favors the second explanation, and (1) and (4) do not distinguish them.
+
+=== vb-inf_v1_0065 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: A publisher reported that in a survey it conducted, 70% of respondents said they had read at least one of its books in the past year, and concluded that its books reach most adults in the country. A statistician replied that the finding shows nothing of the kind. Which of the following could be the fact she relied on?
+  (1) The survey asked about the past year rather than the past month
+  (2) 70% of adults in the country read at least one book a year
+  (3) The survey was conducted among the customers of the publisher's own bookshops
+  (4) Many respondents could not remember the titles of the books they had read
+EXPL: A sample of the publisher's own customers says nothing about adults in general. (2) is a different statistic; (1) and (4) concern precision, not representativeness.
+
+=== vb-inf_v1_0066 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: Researchers found that children who are read to at bedtime learn to read earlier than children who are not, and explained the finding by supposing that hearing stories familiarizes children with the rhythm of written language. Which of the following findings would most support the researchers' explanation?
+  (1) Children who are read to at bedtime come from homes with more books
+  (2) Children who are read to at bedtime go to sleep earlier
+  (3) Parents who read to their children also help them with homework more often
+  (4) Children who listened to recorded stories every evening, with no adult present, also learned to read earlier than children who did not
+EXPL: Removing the adult isolates the stories themselves, which is what the explanation names. (1) and (3) suggest confounds; (2) is irrelevant.
+
+=== vb-inf_v1_0109 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: In an experiment, seedlings were divided into four groups and given, respectively, one, two, three and four hours of artificial light a day, everything else being equal; their height was measured after a month. Which of the following hypotheses was the experiment designed to test?
+  (1) Seedlings grow taller in artificial light than in sunlight
+  (2) The amount of daily light affects the height seedlings reach
+  (3) Seedlings need at least one hour of light a day to grow
+  (4) Taller seedlings need more light
+EXPL: Light is the manipulated variable, height the measured one, across several levels. (1) has no sunlight group; (3) has no zero-light group; (4) reverses cause and effect.
+
+=== vb-inf_v1_0110 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: A study found that pupils who sit in the front rows of the classroom get higher marks, and that pupils who are moved from the back to the front improve their marks in the following term. Which of the following can explain both findings?
+  (1) Good pupils choose to sit at the front
+  (2) Sitting near the teacher makes it easier to follow the lesson, which raises marks
+  (3) Teachers move their best pupils to the front
+  (4) Pupils at the back are more likely to be late
+EXPL: Only a mechanism that acts on whoever sits at the front explains why moved pupils improve. (1) and (3) explain the first finding but not the second.
+
+=== vb-inf_v1_0111 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: A chemist hypothesizes that a certain dye fades faster in acidic solutions. Which of the following results would most support the hypothesis?
+  (1) The dye faded in an acidic solution after two days
+  (2) The dye faded faster in a strongly acidic solution than in a mildly acidic one, and faster in the mildly acidic one than in a neutral one, all kept at the same temperature and light
+  (3) The dye did not fade in a neutral solution kept in the dark
+  (4) The dye faded at the same rate in an acidic solution and in a neutral solution
+EXPL: A graded effect with other conditions held equal; (1) lacks a comparison; (3) confounds acidity with light; (4) contradicts.
+
+=== vb-inf_v1_0112 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: To test whether a new reading method helps children read faster, a school taught it to the morning class, while the afternoon class continued with the old method. At the end of the year the morning class read faster. Which of the following, if true, most undermines the conclusion that the new method is better?
+  (1) Reading speed was measured by the same test in both classes
+  (2) The morning class was smaller by two pupils
+  (3) The teacher of the morning class was the one who proposed the new method
+  (4) The morning class had been the faster readers at the start of the year
+EXPL: If the groups differed in reading speed before the method, the difference at the end proves nothing. (2) is minor; (3) suggests bias but less directly; (1) supports the design.
+
+=== vb-inf_v1_0113 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: Researchers gave a memory test to a hundred adults, half of whom had slept eight hours the previous night and half four hours, and found that the eight-hour group remembered more words. Which of the following conclusions is NOT supported by the finding?
+  (1) On the night before the test, sleeping longer was associated with better recall
+  (2) The four-hour group remembered fewer words than the eight-hour group
+  (3) Sleeping eight hours every night improves memory permanently
+  (4) Sleep on the night before a test may affect performance on it
+EXPL: The study measured one night and one test; nothing was learned about habitual sleep or permanence.
+
+=== vb-inf_v1_0114 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: Dogs are known to find their way home from distant places. One hypothesis is that they follow scent trails they laid on the outward journey; another, that they sense the direction of home directly. Which of the following experiments would best distinguish the hypotheses?
+  (1) Release dogs at home and see whether they wander away
+  (2) Release dogs at a place they walked to earlier that day
+  (3) Release dogs at a place from which their home is visible
+  (4) Take dogs a long way from home by car, with the windows closed, and release them
+EXPL: No outward scent trail exists after a closed-car journey, so scent-following predicts failure and direct sensing predicts success. In (2) both hypotheses predict success; (3) and (1) test nothing.
+
+=== vb-inf_v1_0115 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: A health writer claims that the new sweetener causes headaches, because sales of the sweetener rose last year and complaints of headaches rose in the same year. Which of the following, if true, most weakens the claim?
+  (1) The sweetener is popular with young people
+  (2) The sweetener is sold in only half the country's shops
+  (3) Headaches have many causes
+  (4) Complaints of headaches began rising three years before the sweetener went on sale
+EXPL: A cause cannot precede its effect; if headaches rose before the sweetener existed, the coincidence of last year is not evidence.
+
+=== vb-inf_v1_0116 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: A supermarket expected that placing fruit at the entrance would raise fruit sales; instead, fruit sales fell slightly, while sales of everything else rose. Which of the following best explains the finding?
+  (1) Customers who pass the fruit first fill their baskets with it and buy nothing else
+  (2) Customers who see fruit at the entrance feel virtuous and allow themselves other purchases, but pick up the fruit last and, by then, their baskets are full
+  (3) Fruit is cheaper than the other goods
+  (4) The fruit at the entrance was of poor quality
+EXPL: It explains both the rise elsewhere and the small fall in fruit; (1) predicts the opposite; (3) and (4) explain at most one of the two facts.
+
+=== vb-inf_v1_0160 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: A researcher tested the hypothesis that a certain mineral in drinking water prevents tooth decay in children. She surveyed several hundred children — some whose water contained the mineral and some whose water did not — and recorded for each whether decay was found. She concluded that the hypothesis is correct. In a table with two columns (water without the mineral; water with the mineral) and two rows (decay found; no decay found), which cell must be empty?
+  (1) no decay found / water with the mineral
+  (2) no decay found / water without the mineral
+  (3) decay found / water without the mineral
+  (4) decay found / water with the mineral
+EXPL: "Prevents" means no decay where the mineral is present; children without the mineral may or may not have decay.
+
+=== vb-inf_v1_0161 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: A researcher concluded from an experiment that the loudness of a recording affects how long listeners judge it to have lasted. Which of the following cannot be the experiment she conducted?
+  (1) Participants heard the same piece at two volumes and estimated its length each time
+  (2) Participants heard two pieces of different lengths at the same volume and estimated each
+  (3) Participants heard the same piece once loud and once soft, in random order, and estimated each
+  (4) Participants estimated the length of a loud piece and of the same piece played softly the following day
+EXPL: Volume is held constant; only length differs.
+
+=== vb-inf_v1_0162 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: A survey found that people who own a dog take more walks than people who do not, and concluded that owning a dog makes people walk more. Which of the following most weakens the conclusion?
+  (1) The survey did not include cat owners
+  (2) Dogs need to be walked
+  (3) Dog owners also tend to own gardens
+  (4) People who enjoy walking are more likely to get a dog
+EXPL: If walkers choose dogs, the direction of cause is reversed.
+
+=== vb-inf_v1_0163 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: A doctor wants to know whether a new ointment speeds the healing of burns. Which comparison would best answer the question?
+  (1) Burn patients given the ointment, compared with burn patients in another hospital
+  (2) Burn patients given the ointment, compared with patients with cuts given nothing
+  (3) Burn patients given the ointment this year, compared with the ward's records from ten years ago
+  (4) Burn patients given the ointment, compared with burn patients of similar age and injury given a plain cream, all treated in the same ward
+EXPL: Same injury, same setting, same time — only the ointment differs.
+
+=== vb-inf_v1_0164 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: Plants in a greenhouse grow toward the window. One hypothesis is that they grow toward light; another, that they grow toward warmth, which comes from the same direction. Which observation would best distinguish the hypotheses?
+  (1) Plants grow toward the window in summer and winter alike
+  (2) Plants placed beside a cold lamp grow toward the lamp, while plants beside a warm but dark radiator do not grow toward it
+  (3) Plants grow faster in a warm greenhouse
+  (4) Plants grow toward a window on the south side more than toward a window on the north side
+EXPL: Light without warmth attracts; warmth without light does not — only the first hypothesis survives.
+
+=== vb-inf_v1_0165 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: In an experiment, volunteers who drank a cup of coffee solved arithmetic problems faster than volunteers who drank water. Which of the following conclusions is NOT supported?
+  (1) On this occasion, the coffee drinkers solved the problems faster
+  (2) Coffee improves arithmetic ability permanently
+  (3) A cup of coffee may speed the solving of arithmetic problems shortly after it is drunk
+  (4) The water drinkers were slower than the coffee drinkers
+EXPL: One session, one kind of task; permanence and "ability" were not tested.
+
+=== vb-inf_v1_0166 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: Researchers found that shops that play slow music sell more wine than shops that play fast music, and explained the finding by supposing that slow music makes customers linger and lingering customers buy more. Which finding would most support their explanation?
+  (1) Wine sales are higher on Fridays
+  (2) Slow music is more common in expensive shops
+  (3) Customers say they prefer slow music
+  (4) Customers in shops with slow music spent more time in the wine aisle, and those who spent longer bought more
+EXPL: It shows the middle step — lingering — that the explanation relies on.
+
+=== vb-inf_v1_0167 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: A farmer supposed that giving his hens more light in winter would make them lay more eggs. He kept lamps on in one henhouse for four extra hours a day, changed nothing else, and found that the hens there laid FEWER eggs than in the unlit house. Which is the most reasonable explanation?
+  (1) The farmer counted the eggs wrongly
+  (2) Hens cannot see light
+  (3) The unlit house had better hens to begin with
+  (4) The lamps disturbed the hens' sleep and rest, and tired hens lay less
+EXPL: A mechanism by which extra light could reduce laying; (3) is excluded by "changed nothing else," and (2) and (1) refuse the finding.
+
+=== vb-inf_v1_0207 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=3
+STEM: Researchers divided students from three universities — A, B and C — into three groups by university, and gave each group the same essay to rate, telling group A that its author was from A, group B that the author was from B, and group C that the author was from C. The researchers hypothesized that people rate an author from their own institution more highly. Which pattern of results would most support the hypothesis?
+  (1) Group A rated the essay higher than group B did, and group B rated it higher than group C did
+  (2) All three groups rated the essay the same
+  (3) Each group rated the essay higher than the other two groups did
+  (4) Group A rated the essay higher than group B did, and group C rated it higher than group A did
+EXPL: The hypothesis predicts that each group, told the author is its own, rates highest — a pattern in which each group's rating exceeds the others' is exactly that. Since every group rated the SAME essay, "each higher than the others" is coherent only if each group compares its rating to what the other groups gave when told a different origin. (1) and (4) rank the universities, which the hypothesis does not predict; (2) contradicts it.
+
+=== vb-inf_v1_0208 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: A biologist hypothesizes that the color of a beetle's shell depends on the temperature at which its egg was kept: the warmer, the darker. Which of the following results would contradict the hypothesis?
+  (1) Eggs kept at 20 degrees produced lighter beetles than eggs kept at 30 degrees
+  (2) Eggs from the same clutch, kept at the same temperature, produced beetles of different colors
+  (3) Eggs kept at 30 degrees produced darker beetles than eggs kept at 25 degrees
+  (4) Eggs kept in the dark produced beetles of the same color as eggs kept in the light
+EXPL: Same temperature, different colors — temperature cannot be what determines color. (1) and (3) support; (4) is about light, not temperature.
+
+=== vb-inf_v1_0209 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: A clinic reports that patients who attended its sleep course reported better sleep three months later than they had reported at the start, and concludes that the course works. Which is the strongest objection?
+  (1) Some patients missed one session
+  (2) The course lasts six weeks
+  (3) The patients paid for the course
+  (4) Patients who seek help for sleep tend to do so when their sleep is at its worst, and sleep at its worst tends to improve with time regardless of treatment
+EXPL: Without a comparison group, improvement from a low starting point may be the natural course.
+
+=== vb-inf_v1_0210 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: In an experiment, four groups of volunteers were asked to memorize a list of words while music of four different tempos was played, everything else being equal, and the number of words recalled was recorded. Which hypothesis was the experiment designed to test?
+  (1) Music helps memory
+  (2) The tempo of background music affects how many words are recalled
+  (3) People who like music remember better
+  (4) Faster music is more pleasant
+EXPL: Tempo is varied; recall is measured. (1) has no silent group; (3) and (4) measure nothing tested.
+
+=== vb-inf_v1_0211 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: A magazine claims that the popularity of a new diet has caused a rise in a certain vitamin deficiency, since both rose last year. Which most weakens the claim?
+  (1) The magazine has criticized the diet before
+  (2) The diet is popular among young adults
+  (3) The deficiency is easily treated
+  (4) The deficiency began rising two years before the diet was published
+EXPL: An effect cannot precede its cause.
+
+=== vb-inf_v1_0212 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: Researchers found that shops with wooden floors keep customers longer than shops with tiled floors, and explained the finding by supposing that wood is quieter and that quiet makes people linger. Which finding would most support the explanation?
+  (1) Shops with wooden floors sell more expensive goods
+  (2) Wooden floors are more expensive
+  (3) Customers say they like wood
+  (4) In shops with tiled floors that were carpeted, customers stayed as long as in the wooden-floored shops
+EXPL: Adding quiet to a tiled floor produces the effect — the mechanism, not the material.
+
+=== vb-inf_v1_0241 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: In an experiment, participants were given a list of words and asked to write a short description of themselves using them; half received flattering words ("generous," "fair"), half unflattering ones ("stubborn," "careless"). Afterwards all were invited to donate to a charity. Those who had described themselves with the flattering words gave, on average, less. Which of the following best explains the finding?
+  (1) The participants who received flattering words had less money with them
+  (2) The flattering words made the participants happy, and happy people give more
+  (3) The unflattering words made the participants sad, and sad people give less
+  (4) Describing oneself as generous satisfies the wish to feel generous, so that the act of giving no longer seems necessary
+EXPL: (2) and (3) predict the opposite of the finding; (1) has no basis.
+
+=== vb-inf_v1_0242 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: A researcher hypothesized that people rate a joke funnier when they hear others laughing. She played the same joke to three groups: one heard it with recorded laughter, one with recorded coughing, one with silence. Which pattern of results would most support the hypothesis?
+  (1) The silence group rated the joke funnier than the coughing group
+  (2) All three groups rated the joke the same
+  (3) The coughing group rated the joke funnier than the laughter group
+  (4) The laughter group rated the joke funnier than both other groups, which rated it about the same
+EXPL: The hypothesis is specific to laughter; (4) isolates its effect from mere noise.
+
+=== vb-inf_v1_0243 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: A gardener sprayed his roses with a new solution and found that they had fewer aphids two weeks later than before. He concluded that the solution kills aphids. What would most strengthen his conclusion?
+  (1) He sprayed on a dry day
+  (2) The solution smells of garlic
+  (3) The roses flowered well
+  (4) A second bed of roses, left unsprayed, still had as many aphids two weeks later
+EXPL: A comparison bed rules out the season or the weather.
+
+=== vb-inf_v1_0244 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: A teacher hypothesized that pupils remember a poem better when they learn it aloud than when they read it silently. Which result would contradict the hypothesis?
+  (1) Pupils who learned aloud recalled more lines than pupils who read silently
+  (2) Pupils who read silently recalled as many lines as pupils who learned aloud
+  (3) Pupils who learned aloud enjoyed the poem more
+  (4) Older pupils recalled more lines than younger ones
+EXPL: No difference between the methods contradicts "better." (3) and (4) concern other variables.
+
+=== vb-inf_v1_0245 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: Cats scratch furniture. One explanation is that they are sharpening their claws; another, that they are marking territory with scent from their paws. Which observation would best distinguish the explanations?
+  (1) Cats scratch more in the evening
+  (2) Cats scratch both wood and cloth
+  (3) Kittens scratch as much as adult cats
+  (4) Cats scratch more when a strange cat has been in the house, even when their claws have just been trimmed
+EXPL: Scratching with trimmed claws, triggered by an intruder, fits marking and not sharpening.
+
+=== vb-inf_v1_0246 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: In a trial, patients who took a new tablet for a week reported fewer headaches than in the week before. Which conclusion is NOT supported?
+  (1) The patients had fewer headaches in the tablet week than in the week before
+  (2) The tablet cures headaches permanently
+  (3) The tablet may have reduced headaches during the week it was taken
+  (4) The patients' headaches varied from one week to the next
+EXPL: One week of use shows nothing about cure or permanence.
+
+=== vb-inf_v1_0265 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=4
+STEM: Gardeners noticed that a hedge sprayed with a certain solution stops being eaten by insects — but only about a week after the spraying. Which of the following best explains the delay?
+  (1) The solution evaporates within a day
+  (2) The solution kills insects on contact
+  (3) The insects leave the hedge as soon as they smell the solution
+  (4) The solution is not a poison but a signal that prompts the hedge to produce its own bitter compounds, which takes several days
+EXPL: Only a mechanism that takes days to act explains a delayed effect; (2) and (3) predict an immediate one, and (1) predicts none.
+
+=== vb-inf_v1_0266 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: A researcher hypothesized that people remember faces better when they have been told the person's name. She showed the same faces to three groups: one heard a name with each face, one heard a random word, one heard nothing. Which pattern most supports the hypothesis?
+  (1) The name group recalled more faces than both other groups, which recalled about the same
+  (2) All groups recalled the same number
+  (3) The random-word group recalled the most
+  (4) The silent group recalled more than the name group
+
+=== vb-inf_v1_0267 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: A clinic found that patients who took a new tablet slept better than before and concluded that the tablet works. Which would most strengthen the conclusion?
+  (1) Patients given an identical-looking tablet with no active ingredient, under the same conditions, did not sleep better
+  (2) The tablet is small
+  (3) The patients wanted the tablet to work
+  (4) Sleep was measured by asking the patients
+
+=== vb-inf_v1_0268 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: A teacher hypothesized that pupils learn vocabulary faster with pictures than with translations. Which result would contradict it?
+  (1) Pupils taught with pictures learned faster
+  (2) Pupils taught with translations learned as fast as pupils taught with pictures
+  (3) Pupils enjoyed the pictures
+  (4) Younger pupils learned faster than older ones
+
+=== vb-inf_v1_0284 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: Dr. Amir claims that people remember a film better when they have read its script beforehand. Which of the following studies would best test her claim?
+  (1) One group reads the script and then watches the film; a comparable group watches the film without reading the script; both are tested on the film's details a week later
+  (2) One group reads the script only; another watches the film only; both are tested on the plot
+  (3) A group reads the script and is tested on it
+  (4) A group watches the film twice and is tested after each viewing
+EXPL: Only (1) varies the one thing the claim is about — reading beforehand — while holding the viewing constant.
+
+=== vb-inf_v1_0285 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: A nutritionist claims that eating breakfast improves children's concentration in the first lesson of the day. Which study would best test the claim?
+  (1) Children who usually skip breakfast are randomly assigned either to eat a school breakfast or to continue skipping it, and all are given the same attention test during the first lesson
+  (2) Children who eat breakfast are asked whether they feel alert
+  (3) Children are given an attention test at noon
+  (4) Children who eat breakfast are compared with adults who do not
+EXPL: Random assignment and a common test at the relevant time.
+
+=== vb-inf_v1_0286 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: A coach claims that runners who warm up for twenty minutes are less likely to be injured than runners who warm up for five. Which study would best test the claim?
+  (1) Two groups of similar runners, assigned to the two warm-up lengths, follow the same training for a season, and injuries in each group are counted
+  (2) Runners who were injured last season are asked how long they warmed up
+  (3) Runners who warm up for twenty minutes are asked whether they feel ready
+  (4) One runner tries both warm-ups on different days and reports which feels better
+EXPL: A comparison of matched groups on the outcome the claim names.
+
+=== vb-inf_v1_0315 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: A researcher tested the hypothesis that a certain gene is what makes a plant's flowers blue. She examined hundreds of plants — some with blue flowers and some without — and recorded whether each carried the gene. She concluded the hypothesis is correct. In a table with columns (without the gene; with the gene) and rows (blue flowers; not blue), which two cells must be empty?
+  (1) blue / without the gene, and not blue / with the gene
+  (2) blue / with the gene, and not blue / without the gene
+  (3) both cells of the "with the gene" column
+  (4) both cells of the "blue" row
+
+=== vb-inf_v1_0316 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: One researcher holds that infants prefer their mother's voice because they heard it before birth; another, that infants prefer any soft female voice. Which experiment would best decide between them?
+  (1) Newborns hear their mother's voice and an unfamiliar woman's voice of similar softness, and their attention to each is measured
+  (2) Newborns hear their mother's voice and their father's voice
+  (3) Newborns hear their mother's voice loud and soft
+  (4) Newborns hear two unfamiliar women's voices
+EXPL: Softness is matched; only familiarity differs.
+
+=== vb-inf_v1_0317 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: A study found that villages with more storks have higher birth rates, and that villages where storks have recently settled have seen birth rates rise. Which of the following explains both findings?
+  (1) Storks bring babies
+  (2) Villages that are growing build new houses with chimneys, which attract storks, and growing villages have more young families
+  (3) Storks avoid villages with many children
+  (4) Birth rates are higher in the countryside
+EXPL: A common cause explains both the level and the change.
+
+=== vb-inf_v1_0318 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: After a town installed speed cameras, speeding fell sharply for a year, then returned to its previous level although the cameras remained. Which best explains the return?
+  (1) Drivers learned the cameras' exact positions and slowed only there
+  (2) The cameras were switched off
+  (3) Speed limits were raised
+  (4) Cameras do not affect driving
+
+=== vb-inf_v1_0319 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: A shop reports that 90% of customers who used its new loyalty card returned within a month, and claims the card brings customers back. Which most weakens the claim?
+  (1) About 90% of the shop's customers return within a month whether or not they hold a card
+  (2) The card is free
+  (3) Some customers lost their cards
+  (4) The card is blue
+
+=== vb-inf_v1_0320 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: Omri claims he can tell the weight of any bag of flour to the gram by lifting it. He lifted a bag and said "1,240 grams." Nir devised a test without weighing the bag on a scale. Which is most likely to be it?
+  (1) Nir will remove some flour without letting Omri see how much, Omri will lift the bag and state the new weight, and Nir will check whether the difference equals what he removed
+  (2) Omri will lift the bag again tomorrow
+  (3) A neighbor will also guess the weight
+  (4) Omri will lift a different bag
+
+=== vb-inf_v1_0321 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: A café introduced a new blend and found that sales of coffee rose. It concluded the blend is more popular. Which most strengthens the conclusion?
+  (1) A comparable café that kept the old blend saw no rise in the same weeks
+  (2) The new blend is darker
+  (3) The café also lowered prices
+  (4) Customers were not told about the change
+
+=== vb-inf_v1_0322 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: A biologist hypothesized that the louder a frog's call, the more mates it attracts. Which result contradicts the hypothesis?
+  (1) Loud callers attracted more mates than quiet callers
+  (2) Frogs of equal loudness attracted different numbers of mates, and loud and quiet callers attracted the same number
+  (3) Frogs call more at night
+  (4) Larger frogs call louder
+
+=== vb-inf_v1_0323 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: In a study, people who ate an apple before lunch ate less at lunch than people who did not. Which conclusion is NOT supported?
+  (1) On this occasion, the apple eaters ate less at lunch
+  (2) Eating an apple before every meal will prevent weight gain for life
+  (3) An apple before lunch may reduce what is eaten at lunch
+  (4) The non-apple group ate more than the apple group
+
+=== vb-inf_v1_0362 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: Four groups of tomato plants were grown with identical soil, water and light, and given fertilizer in four different amounts; the weight of fruit was recorded. Which hypothesis was tested?
+  (1) Tomatoes need fertilizer
+  (2) The amount of fertilizer affects the weight of fruit
+  (3) Sunlight affects fruit weight
+  (4) Heavier fruit needs more fertilizer
+
+=== vb-inf_v1_0363 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: A researcher hypothesized that people recall a list better when it is read to them in a familiar voice. She read the same list to three groups: in the voice of a person they knew, in a stranger's voice, and in a computer voice. Which pattern most supports the hypothesis?
+  (1) The familiar-voice group recalled more than both others, which recalled about the same
+  (2) All groups recalled the same
+  (3) The computer-voice group recalled the most
+  (4) The stranger-voice group recalled more than the familiar-voice group
+
+=== vb-inf_v1_0364 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: Some hold that dogs wag their tails because they are happy; others, that they wag to signal to other dogs. Which observation would best decide?
+  (1) A dog alone with a bowl of food wags less than a dog with food and another dog present, though it eats the same amount
+  (2) Dogs wag more in the morning
+  (3) Big dogs wag more than small dogs
+  (4) Dogs wag when their owners return
+EXPL: Same pleasure, more wagging with an audience.
+
+=== vb-inf_v1_0365 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: A survey found that people who play chess have better memories and concluded that chess improves memory. Which most weakens the conclusion?
+  (1) People with good memories are more likely to take up and continue chess
+  (2) Chess is difficult
+  (3) Memory declines with age
+  (4) Chess players also read a great deal
+
+=== vb-inf_v1_0366 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: A farmer sprayed a new pesticide and found fewer beetles the following week. He concluded the pesticide works. What would most strengthen his conclusion?
+  (1) An unsprayed strip of the same field had as many beetles as before
+  (2) The pesticide was expensive
+  (3) The week was rainy
+  (4) The beetles were small
+
+=== vb-inf_v1_0367 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: A tablet taken for hay fever brings relief only on the third day of use. Which best explains the delay?
+  (1) The tablet does not block the symptoms directly but reduces the body's production of the substance that causes them, and the existing supply takes days to clear
+  (2) The tablet dissolves slowly
+  (3) Hay fever is worse in the morning
+  (4) The tablet works immediately but patients do not notice
+
+=== vb-inf_v1_0368 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=2
+STEM: In a test, drivers who had slept five hours reacted more slowly than drivers who had slept eight. Which conclusion is NOT supported?
+  (1) The five-hour drivers were slower in this test
+  (2) Five hours of sleep makes a person a dangerous driver for life
+  (3) Sleep on the night before may affect reaction time
+  (4) The eight-hour drivers reacted faster than the five-hour drivers
+
+=== vb-inf_v1_0369 [inf_v1 REVIEW | set inf_v1 | Scientific Thinking] answer=1
+STEM: A shop expected that giving customers a free sample of cheese would raise cheese sales; sales rose slightly, but sales of bread rose far more. Which best explains the finding?
+  (1) Customers who tasted the cheese thought of bread to eat it with and bought bread whether or not they bought cheese
+  (2) The cheese was unpleasant
+  (3) Bread was on sale
+  (4) Customers do not like free samples

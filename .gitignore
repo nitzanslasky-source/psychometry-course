@@ -1,0 +1,12 @@
+node_modules/
+.next/
+next-env.d.ts
+*.tsbuildinfo
+.env*.local
+studio-build/*.png
+studio-build/render-*.html
+studio-build/dbg.html
+studio-build/layout-harness.html
+studio-build/__pycache__/
+studio-build/*.webm
+.DS_Store
