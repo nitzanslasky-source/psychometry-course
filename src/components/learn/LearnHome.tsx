@@ -72,6 +72,27 @@ export function LearnHome({ outline, stepIds, recorded, totals }: Props) {
         </dl>
       </section>
 
+      {/* ---------------------------------------------------------------- tools */}
+      <section className="mx-auto max-w-6xl px-6 pb-16">
+        <div className="eyebrow">Beyond the lessons</div>
+        <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            { href: "/rules", t: "Rules to know", d: "Every formula and rule from the course, on one page." },
+            { href: "/dictionary", t: "Dictionary", d: "Exam vocabulary with Hebrew meanings — tap to hear it." },
+            { href: "/listen", t: "Listen", d: "Vocabulary episodes for the bus, the gym or a walk." },
+            { href: "/mental-math", t: "Mental math", d: "60-second rounds: times tables, squares, fractions." },
+          ].map((x) => (
+            <Link key={x.href} href={x.href} className="pressable card group p-5 transition-shadow hover:shadow-lift">
+              <div className="display text-[26px]">{x.t}</div>
+              <p className="mt-2 text-sm text-muted">{x.d}</p>
+              <div className="mt-4 text-sm text-ink">
+                Open <span className="inline-block transition-transform duration-300 group-hover:translate-x-1">→</span>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* ---------------------------------------------------------------- contents */}
       <section id="contents" className="scroll-mt-20 border-t border-line bg-white/60">
         <div className="mx-auto max-w-6xl px-6 py-16">
