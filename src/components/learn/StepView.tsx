@@ -89,7 +89,7 @@ export function StepView({
   return (
     <div className="min-h-[calc(100vh-4rem)] pb-28">
       {/* ------------------------------------------------ sub-bar with progress */}
-      <div className="material edge-bottom sticky top-16 z-30 border-t border-line/60">
+      <div className="material edge-bottom sticky top-[var(--hh)] z-30 border-t border-line/60">
         <div className="mx-auto flex h-12 max-w-6xl items-center justify-between gap-4 px-6 text-sm">
           <Link href={`/topic/${nav.topic}`} className="pressable min-w-0 truncate text-ink-soft hover:text-ink">
             <span className="text-faint">←</span> {nav.topicTitle}
@@ -136,7 +136,8 @@ export function StepView({
         <div className="mx-auto flex h-[72px] max-w-6xl items-center justify-between gap-3 px-6">
           {nav.prevHref ? (
             <Link href={nav.prevHref} className="btn-ghost" onPointerDown={() => go("prev")}>
-              <span aria-hidden>←</span> Previous
+              <span aria-hidden>←</span>
+              <span className="hidden sm:inline">Previous</span>
             </Link>
           ) : (
             <span />
@@ -145,7 +146,7 @@ export function StepView({
           {nav.nextHref ? (
             <Link
               href={nav.nextHref}
-              className="btn"
+              className="btn whitespace-nowrap"
               onPointerDown={() => go("next")}
               onClick={() => step.kind !== "question" && complete()}
             >

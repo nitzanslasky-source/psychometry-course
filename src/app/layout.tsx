@@ -27,15 +27,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <body>
         <MathJaxProvider>
           <header className="material edge-bottom sticky top-0 z-40">
-            <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-6">
-              <Link href="/" className="pressable flex items-baseline gap-2">
+            <div className="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-x-6 px-6 pt-3 md:h-16 md:flex-nowrap md:pt-0">
+              <Link href="/" className="pressable flex shrink-0 items-baseline gap-2">
                 <span className="font-serif text-[26px] leading-none tracking-tight">Psychometry</span>
                 <span className="eyebrow hidden xl:inline">The complete course</span>
               </Link>
-              <div className="flex min-w-0 items-center gap-3">
+              <div className="order-last -mx-6 w-[calc(100%+3rem)] min-w-0 px-4 py-2 md:order-none md:mx-0 md:w-auto md:flex-1 md:px-0 md:py-0">
                 <NavLinks />
-                <Search />
               </div>
+              <Search />
             </div>
           </header>
           {children}

@@ -4,10 +4,17 @@
 
 /* ------------------------------------------------------------------ foundations */
 :root {
+  --hh: 104px; /* header height: two rows on phones */
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1); /* ≈ critically-damped spring */
   --ease-spring: cubic-bezier(0.34, 1.36, 0.64, 1); /* a touch of overshoot: only for feedback that "lands" */
   --press: 100ms;
   --settle: 380ms;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --hh: 64px;
+  }
 }
 
 html {

@@ -16,7 +16,7 @@ const LINKS = [
 export function NavLinks() {
   const path = usePathname() || "/";
   return (
-    <nav className="-mr-2 flex items-center gap-0.5 overflow-x-auto text-sm" aria-label="Main">
+    <nav className="flex items-center gap-0.5 overflow-x-auto text-sm [scrollbar-width:none] md:justify-end [&::-webkit-scrollbar]:hidden" aria-label="Main">
       {LINKS.map((l) => {
         const active = l.match(path);
         return (

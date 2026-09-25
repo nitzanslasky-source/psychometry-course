@@ -49,7 +49,7 @@ export function Dictionary({ entries, initialQuery = "" }: { entries: DictEntry[
 
   return (
     <div>
-      <div className="material edge-bottom sticky top-16 z-20 -mx-6 px-6 py-4">
+      <div className="material edge-bottom sticky top-[var(--hh)] z-20 -mx-6 px-6 py-4">
         <div className="flex flex-wrap items-center gap-3">
           <label className="relative min-w-[240px] flex-1">
             <span className="sr-only">Search the dictionary</span>

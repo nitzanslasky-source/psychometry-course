@@ -40,7 +40,7 @@ export function RulesBook({ items }: { items: Item[] }) {
       </div>
 
       <div key={tab} className="fade-in mt-10 grid gap-12 lg:grid-cols-[240px_1fr]">
-        <nav aria-label="Cards" className="lg:sticky lg:top-24 lg:self-start">
+        <nav aria-label="Cards" className="hidden lg:sticky lg:top-24 lg:block lg:self-start">
           <div className="eyebrow mb-3">{SUBJECT[tab].label}</div>
           <ol className="space-y-1 text-sm">
             {list.map((i) => (
