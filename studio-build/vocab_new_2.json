@@ -143,7 +143,7 @@
   "w": "evacuate",
   "label": "READING",
   "def": "To empty a place, or remove people from a dangerous place.",
-  "ex": "The scientists evacuated the air from the glass jar.",
+  "ex": "Firefighters evacuated everyone from the burning building within minutes.",
   "note": "Related noun: evacuation."
  },
  {
@@ -157,8 +157,8 @@
   "w": "exalted",
   "label": "EXAM VOCABULARY",
   "def": "Having high rank or great honor; also, very joyful.",
-  "ex": "He spoke of the poet in exalted terms.",
-  "note": "Do not confuse with exhausted or exulted."
+  "ex": "She held an exalted position at the royal court.",
+  "note": "Verb: exalt, to praise highly. Do not confuse with exulted, meaning rejoiced."
  },
  {
   "w": "exemplary",
@@ -166,13 +166,6 @@
   "def": "So good that it serves as an example for others.",
   "ex": "Her exemplary conduct earned her a public award.",
   "note": "An exemplary figure is a model to imitate."
- },
- {
-  "w": "exhausted",
-  "label": "EXAM VOCABULARY",
-  "def": "Extremely tired; also, completely used up.",
-  "ex": "After the long climb, the hikers were exhausted.",
-  "note": "In analogies, a stronger degree of tired."
  },
  {
   "w": "expire",
@@ -214,14 +207,14 @@
   "label": "EXAM VOCABULARY",
   "def": "To gradually lose color, brightness, strength, or importance.",
   "ex": "The painted sign had faded in the sun.",
-  "note": "Her star faded means her fame gradually declined."
+  "note": "Figuratively, fame or hope can fade: her popularity slowly faded."
  },
  {
   "w": "faint",
   "label": "EXAM VOCABULARY",
   "def": "Weak and hard to see, hear, or smell.",
   "ex": "A faint glow appeared on the horizon before dawn.",
-  "note": "A faint glow is to a glare as a whisper is to a shout."
+  "note": "As a verb, to faint is to lose consciousness briefly."
  },
  {
   "w": "famine",
@@ -343,13 +336,6 @@
   "note": "Similar to from the start."
  },
  {
-  "w": "furious",
-  "label": "ANALOGY PRACTICE",
-  "def": "Extremely angry.",
-  "ex": "He was furious when he saw the damage.",
-  "note": "In analogies, a stronger degree of angry."
- },
- {
   "w": "generalization",
   "label": "EXAM VOCABULARY",
   "def": "A broad statement based on limited cases.",
@@ -390,13 +376,6 @@
   "def": "Close-fitting glasses that protect the eyes.",
   "ex": "The welder lowered his goggles before starting work.",
   "note": "Protective gear : body part, like helmet : head."
- },
- {
-  "w": "gradual",
-  "label": "EXAM VOCABULARY",
-  "def": "Happening slowly, in small steps.",
-  "ex": "The patient made a gradual recovery.",
-  "note": "Contrast with sudden or abrupt."
  },
  {
   "w": "grant",
@@ -529,7 +508,7 @@
   "label": "EXAM VOCABULARY",
   "def": "To put completely into a liquid; to involve oneself deeply.",
   "ex": "She immersed herself in her studies.",
-  "note": "Language immersion means learning by living in the language."
+  "note": "Noun: immersion; language immersion means learning by living in the language."
  },
  {
   "w": "imperceptible",
@@ -640,7 +619,7 @@
   "w": "infinite",
   "label": "EXAM VOCABULARY",
   "def": "Without limits or end.",
-  "ex": "The universe seemed to him infinite.",
+  "ex": "Some scientists believe the universe is infinite, with no edge at all.",
   "note": "Informally, extremely great: infinite patience."
  },
  {
@@ -812,13 +791,6 @@
   "note": "Contrast with manifest or evident."
  },
  {
-  "w": "legislator",
-  "label": "EXAM VOCABULARY",
-  "def": "A person who makes laws, such as a member of parliament.",
-  "ex": "Legislators debated the bill for weeks.",
-  "note": "Related nouns: legislation, legislature."
- },
- {
   "w": "libel",
   "label": "EXAM VOCABULARY",
   "def": "A false written statement that damages someone's reputation.",
@@ -866,13 +838,6 @@
   "def": "Applying oil or grease to reduce friction.",
   "ex": "The engine failed from a lack of lubrication.",
   "note": "Remedy : problem pairs, like lubrication : friction."
- },
- {
-  "w": "make up one's mind",
-  "label": "EXAM VOCABULARY",
-  "def": "To decide.",
-  "ex": "She finally made up her mind to study abroad.",
-  "note": "Contrast with hesitate or waver."
  },
  {
   "w": "marine",
@@ -940,14 +905,14 @@
  {
   "w": "modification",
   "label": "READING",
-  "def": "A small change made to improve something.",
+  "def": "A change made to something, usually to improve it.",
   "ex": "The design needed only minor modification.",
   "note": "Related verb: modify."
  },
  {
   "w": "monarchy",
   "label": "EXAM VOCABULARY",
-  "def": "A system of government ruled by a king or queen.",
+  "def": "A system of government in which a king or queen rules.",
   "ex": "France was a monarchy before the revolution.",
   "note": "Adjective: monarchical. Contrast with republic."
  },
@@ -1004,7 +969,7 @@
   "w": "negotiate",
   "label": "READING",
   "def": "To reach agreement through discussion; also, to get past an obstacle.",
-  "ex": "The truck slowly negotiated the steep gradient.",
+  "ex": "The truck slowly negotiated the narrow mountain road.",
   "note": "The travel sense often surprises readers."
  },
  {
@@ -1027,12 +992,5 @@
   "def": "A beginner with little experience.",
   "ex": "The course is designed for novices.",
   "note": "Contrast with expert or veteran."
- },
- {
-  "w": "rigid",
-  "label": "EXAM VOCABULARY",
-  "def": "Stiff and unable to bend; also, strict and unwilling to change.",
-  "ex": "His body grew rigid with fear.",
-  "note": "Contrast with flexible."
  }
 ]

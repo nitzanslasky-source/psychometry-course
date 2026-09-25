@@ -77,6 +77,7 @@ export function LearnHome({ outline, stepIds, recorded, totals }: Props) {
         <div className="eyebrow">Beyond the lessons</div>
         <div className="mt-5 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {[
+            { href: "/plan", t: "My study plan", d: "Your exam date in, a day-by-day plan out — it adjusts as you go." },
             { href: "/review", t: "Review", d: "Your mistakes, words and rules — back at the right moment." },
             { href: "/simulations", t: "Simulations", d: "Real exam sections: 20 questions, 20 minutes." },
             { href: "/rules", t: "Rules to know", d: "Every formula and rule from the course, on one page." },

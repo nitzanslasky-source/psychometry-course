@@ -9,7 +9,7 @@
  */
 export const FREE_TOPICS = new Set([1, 21, 30, 40]); // first topic of Algebra, Word Problems, Geometry, Verbal
 
-const OPEN_PREFIXES = ["/login", "/auth", "/join", "/account", "/dictionary", "/listen", "/mental-math", "/api/payments", "/_next", "/figures", "/favicon"];
+const OPEN_PREFIXES = ["/plan", "/login", "/auth", "/join", "/account", "/dictionary", "/listen", "/mental-math", "/api/payments", "/_next", "/figures", "/favicon"];
 
 export type AccessNeed = "open" | "paid";
 

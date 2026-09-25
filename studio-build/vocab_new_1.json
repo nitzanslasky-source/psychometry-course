@@ -25,7 +25,7 @@
   "label": "READING",
   "def": "To agree with or match something.",
   "ex": "His account of the evening does not accord with the evidence.",
-  "note": "Noun phrase: in accord with, meaning in agreement with."
+  "note": "Related phrase: in accord with, meaning in agreement with."
  },
  {
   "w": "accumulate",
@@ -126,11 +126,11 @@
   "note": "Noun: applause. Figurative praise need not involve clapping."
  },
  {
-  "w": "appropriate (verb)",
+  "w": "appropriate",
   "label": "EXAM VOCABULARY",
   "def": "To take something for one's own use, often without permission.",
   "ex": "The company appropriated the idea without crediting its inventor.",
-  "note": "As an adjective, appropriate means suitable; the verb is pronounced differently."
+  "note": "As an adjective, appropriate means suitable; the verb ends with a different sound."
  },
  {
   "w": "apt",
@@ -343,11 +343,11 @@
   "note": "Used for places; the verb bustle means to move busily."
  },
  {
-  "w": "bylaws",
+  "w": "bylaw",
   "label": "EXAM VOCABULARY",
-  "def": "Rules made by an organization or local authority to govern itself.",
+  "def": "A rule made by an organization or local authority to govern its own affairs.",
   "ex": "According to the club's bylaws, members must vote each year.",
-  "note": "Narrower than national laws; they apply to one body."
+  "note": "Usually plural: the bylaws. Unlike national laws, bylaws apply to one body only."
  },
  {
   "w": "candid",
@@ -361,7 +361,7 @@
   "label": "EXAM VOCABULARY",
   "def": "Goods carried by a ship, plane, or truck.",
   "ex": "The ship's cargo included grain, cars, and machinery.",
-  "note": "Compare freight; cargo refers to what is carried, not the vehicle."
+  "note": "Freight is a close synonym; a cargo ship carries goods, not passengers."
  },
  {
   "w": "cartographer",
@@ -511,13 +511,6 @@
   "note": "Contrast disruption or a break."
  },
  {
-  "w": "contract (verb)",
-  "label": "EXAM VOCABULARY",
-  "def": "To become smaller or shorter; also, to catch an illness.",
-  "ex": "Metal contracts as it cools and expands when heated.",
-  "note": "Opposite: expand. As a noun, a contract is a legal agreement."
- },
- {
   "w": "convey",
   "label": "READING",
   "def": "To communicate an idea or feeling; also, to carry from one place to another.",
@@ -618,7 +611,7 @@
  {
   "w": "descendant",
   "label": "EXAM VOCABULARY",
-  "def": "A person related to someone who lived in an earlier generation.",
+  "def": "A person's child, grandchild, or anyone in a later generation of their family.",
   "ex": "She is a descendant of immigrants who arrived a century ago.",
   "note": "Opposite direction: ancestor."
  },
@@ -653,7 +646,7 @@
  {
   "w": "dictate",
   "label": "EXAM VOCABULARY",
-  "def": "To control or decide how something must happen; also, to say words for someone to write.",
+  "def": "To control or determine what happens; also, to say words aloud to be written down.",
   "ex": "The weather will dictate whether the game goes ahead.",
   "note": "Related: dictator, one who rules with total control."
  },
@@ -670,13 +663,6 @@
   "def": "Lacking the money, education, or opportunities that others have.",
   "ex": "The program offers scholarships to students from disadvantaged backgrounds.",
   "note": "Opposite: privileged."
- },
- {
-  "w": "discerning",
-  "label": "EXAM VOCABULARY",
-  "def": "Able to judge well and notice fine differences.",
-  "ex": "Discerning readers will notice the flaw in the argument.",
-  "note": "Verb: discern, meaning to perceive or recognize."
  },
  {
   "w": "discharge",
@@ -772,7 +758,7 @@
  {
   "w": "hold up",
   "label": "EXAM VOCABULARY",
-  "def": "Of an argument or claim, to remain convincing when tested.",
+  "def": "To remain convincing or true when tested (said of an argument or claim).",
   "ex": "His alibi did not hold up under investigation.",
   "note": "Also means to delay: traffic held us up."
  },

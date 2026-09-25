@@ -22,10 +22,10 @@
  },
  {
   "w": "contract",
-  "label": "ANALOGY PRACTICE",
-  "def": "To become smaller or shorter.",
+  "label": "EXAM VOCABULARY",
+  "def": "To become smaller or shorter; also, to catch an illness.",
   "ex": "Most metals contract slightly as they cool down.",
-  "note": "Also, to catch an illness; noun: a formal agreement."
+  "note": "Opposite: expand. As a noun, a contract is a formal legal agreement."
  },
  {
   "w": "demolish",
@@ -39,7 +39,7 @@
   "label": "EXAM VOCABULARY",
   "def": "To notice or understand something that is not obvious.",
   "ex": "It was hard to discern his true motives.",
-  "note": "Adjective: discerning, showing good judgment."
+  "note": "Adjective: discerning, able to judge well and notice fine differences."
  },
  {
   "w": "dissolve",
@@ -51,7 +51,7 @@
  {
   "w": "dribble",
   "label": "ANALOGY PRACTICE",
-  "def": "To let liquid fall in small drops; in sports, to move a ball with small touches.",
+  "def": "To let liquid fall in small drops; in sport, to move a ball with small touches.",
   "ex": "The baby dribbled milk down his chin.",
   "note": "A slow, small flow, like trickle."
  },
@@ -91,25 +91,11 @@
   "note": "The information is usually gathered slowly or with effort."
  },
  {
-  "w": "grant",
-  "label": "EXAM VOCABULARY",
-  "def": "To give or allow something, especially officially.",
-  "ex": "The bank granted him a loan.",
-  "note": "To take for granted: to assume without questioning."
- },
- {
-  "w": "immerse",
-  "label": "ANALOGY PRACTICE",
-  "def": "To put something completely in a liquid; also, to involve deeply.",
-  "ex": "She immersed herself in her studies.",
-  "note": "Noun: immersion, as in language immersion."
- },
- {
   "w": "legislate",
-  "label": "ANALOGY PRACTICE",
+  "label": "EXAM VOCABULARY",
   "def": "To make laws.",
   "ex": "Parliament legislated to protect children from dangerous work.",
-  "note": "Legislate is to law as compose is to music."
+  "note": "A legislator makes laws; legislate is to law as compose is to music."
  },
  {
   "w": "probe",
@@ -117,13 +103,6 @@
   "def": "To investigate or examine closely.",
   "ex": "The committee probed the causes of the accident.",
   "note": "Also a noun: an investigation or a device for exploring."
- },
- {
-  "w": "regulate",
-  "label": "EXAM VOCABULARY",
-  "def": "To control something by rules or adjust it to work properly.",
-  "ex": "The law regulates how factories dispose of waste.",
-  "note": "Noun: regulation."
  },
  {
   "w": "retreat",
@@ -296,7 +275,7 @@
  {
   "w": "standardization",
   "label": "READING",
-  "def": "Making things conform to one common standard.",
+  "def": "The process of making things conform to one common standard.",
   "ex": "Standardization of parts made repairs much easier.",
   "note": "Verb: standardize."
  },
@@ -317,7 +296,7 @@
  {
   "w": "strain",
   "label": "ANALOGY PRACTICE",
-  "def": "To pass a liquid through a sieve to separate solids.",
+  "def": "To pour a liquid through a sieve or cloth to separate out solids.",
   "ex": "Strain the pasta before adding the sauce.",
   "note": "Also, to stretch or overwork: to strain a muscle."
  },
@@ -359,7 +338,7 @@
  {
   "w": "subtle",
   "label": "EXAM VOCABULARY",
-  "def": "Small and hard to notice, but important.",
+  "def": "So slight or delicate that it is hard to notice or describe.",
   "ex": "There is a subtle difference between the two words.",
   "note": "The b is silent; noun: subtlety."
  },
@@ -543,7 +522,7 @@
   "label": "ANALOGY PRACTICE",
   "def": "To free from twists or knots; to make clear.",
   "ex": "It took an hour to untangle the fishing line.",
-  "note": "Figuratively, to sort out a confusing problem."
+  "note": "Close in meaning to disentangle; opposite: tangle."
  },
  {
   "w": "uphold",
@@ -590,9 +569,9 @@
  {
   "w": "wager",
   "label": "READING",
-  "def": "A bet, or to bet.",
+  "def": "An amount of money risked on the result of an event; a bet.",
   "ex": "He placed a small wager on the race.",
-  "note": "Can be used as a noun or a verb."
+  "note": "Also a verb: to wager means to bet."
  },
  {
   "w": "wax",
