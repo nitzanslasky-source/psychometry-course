@@ -1,0 +1,29 @@
+REALISM CHECK — do the course's Verbal video questions feel like REAL NITE exam questions?
+
+Course questions to check: /Users/nitzanslasky/psychometry-course/studio-build/video_questions_sources.json
+(qid → topic, video, bank set, source e.g. "Spring 2026 §1 Q10"). Full text of each: /Users/nitzanslasky/psychometry-course/content/verbal_bank_all.json
+(items[].id = qid without the "vb-" prefix; reading passages under reading_comprehension[]).
+
+REAL EXAMS (internal reference only — never copy their text into course files):
+- /Users/nitzanslasky/nite-psychometry/work/verbal/exams_new_mix.pdf — NITE's official ENGLISH translations of verbal sections,
+  2019–2026 (clean text). Extracted English items: vr_inference_newmix.json and verbal_q_corpus_raw.json (same folder).
+- /Users/nitzanslasky/nite-psychometry/work/verbal/exams_old_mix.pdf — official English translations 2010–2017.
+- /Users/nitzanslasky/nite-psychometry/psychometric_summer_2024_EN_acc.pdf, psychometric_summer_2025_EN_acc.pdf — full English exams.
+- Hebrew originals: exams_new_mix_hebrew.pdf (+ OCR pages in work/verbal/ocr_hebmix/p*.txt), work/verbal/ocr/* (2016, 2021).
+- NOTE (from the project notes): the Hebrew mix and the English translations cover the SAME sittings under different names, so a
+  Hebrew-sourced item often has an official English version too. Answer keys: work/verbal/answer_keys.json.
+- Read PDFs with python3 + pypdf (installed for the user's python3: `from pypdf import PdfReader`).
+
+FOR EACH course question in your topics:
+1. Find its original real question (by the source label; search the English translations first, else the Hebrew OCR).
+   If you can't find it, say so and compare against 3 real English items of the same type instead.
+2. Compare: length (stem and options, words) · structure and logic (what is being tested, the trap/mechanism) · difficulty ·
+   answer-choice style (length, parallel form, how tempting the distractors are) · register and wording (does the English read like
+   NITE's official English — formal, precise, slightly dense — or like generic AI prose?) · is the answer as clear-cut as NITE's?
+3. Rate "feels like the real exam" 1–5 and give a verdict: KEEP / TWEAK (say exactly what: e.g. shorten options, add a qualifier,
+   make distractor 3 closer) / REPLACE (and name a better approved alternative from the same bank set if one exists).
+Also add a short overall section: typical differences between the course items and the real ones (length, vocabulary level,
+distractor quality, wording tics), with 3–5 concrete recommendations.
+
+Write your report to /Users/nitzanslasky/psychometry-course/studio-build/realism_<GROUP>.md (a table per topic + the overall
+section). Do NOT edit any course file. Reply with the table of ratings/verdicts and the top findings.

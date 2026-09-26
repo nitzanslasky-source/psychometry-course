@@ -1,0 +1,338 @@
+{
+ "vb-sc_tr_0130": {
+  "topic": 41,
+  "video": "vr41-techniques",
+  "set": "sc_tr",
+  "source": "Autumn 2021 \u00a72 Q12",
+  "category": "Sentence Completion"
+ },
+ "vb-sc_tr_0103": {
+  "topic": 41,
+  "video": "solve-vb-sc_tr_0103",
+  "set": "sc_tr",
+  "source": "Spring 2020 \u00a71 Q9",
+  "category": "Sentence Completion"
+ },
+ "vb-sc_tr_0073": {
+  "topic": 41,
+  "video": "solve-vb-sc_tr_0073",
+  "set": "sc_tr",
+  "source": "Winter 2018 \u00a71 Q10",
+  "category": "Sentence Completion"
+ },
+ "vb-sc_tr_0123": {
+  "topic": 41,
+  "video": "solve-vb-sc_tr_0123",
+  "set": "sc_tr",
+  "source": "Spring 2021 \u00a71 Q11",
+  "category": "Sentence Completion"
+ },
+ "vb-sc_tr_0015": {
+  "topic": 41,
+  "video": "solve-vb-sc_tr_0015",
+  "set": "sc_tr",
+  "source": "Autumn 2025 \u00a71 Q12",
+  "category": "Sentence Completion"
+ },
+ "vb-inf_v2_0409": {
+  "topic": 42,
+  "video": "solve-vb-inf_v2_0409",
+  "set": "inf_v2",
+  "source": "Summer 2020 \u00a71 Q14 (English translation; solver's key)",
+  "category": "Claims and Logic"
+ },
+ "vb-inf_v2_0403": {
+  "topic": 42,
+  "video": "solve-vb-inf_v2_0403",
+  "set": "inf_v2",
+  "source": "Winter 2025 \u00a71 Q13",
+  "category": "Claims and Logic"
+ },
+ "vb-inf_v2_0406": {
+  "topic": 42,
+  "video": "solve-vb-inf_v2_0406",
+  "set": "inf_v2",
+  "source": "Winter 2023 \u00a72 Q15",
+  "category": "Claims and Logic"
+ },
+ "vb-inf_v2_0412": {
+  "topic": 42,
+  "video": "solve-vb-inf_v2_0412",
+  "set": "inf_v2",
+  "source": "July 2016 \u00a72 Q12",
+  "category": "Claims and Logic"
+ },
+ "vb-inf_v2_0411": {
+  "topic": 42,
+  "video": "solve-vb-inf_v2_0411",
+  "set": "inf_v2",
+  "source": "April 2016 \u00a72 Q10",
+  "category": "Claims and Logic"
+ },
+ "vb-inf_v2_0408": {
+  "topic": 42,
+  "video": "solve-vb-inf_v2_0408",
+  "set": "inf_v2",
+  "source": "Summer 2022 \u00a72 Q9 (English translation)",
+  "category": "Claims and Logic"
+ },
+ "vb-inf_v2_0404": {
+  "topic": 42,
+  "video": "solve-vb-inf_v2_0404",
+  "set": "inf_v2",
+  "source": "Autumn 2024 \u00a72 Q17",
+  "category": "Claims and Logic"
+ },
+ "vb-inf_v2_0416": {
+  "topic": 42,
+  "video": "solve-vb-inf_v2_0416",
+  "set": "inf_v2",
+  "source": "April 2014 \u00a72 Q10",
+  "category": "Claims and Logic"
+ },
+ "vb-inf_v2_0405": {
+  "topic": 42,
+  "video": "solve-vb-inf_v2_0405",
+  "set": "inf_v2",
+  "source": "Spring 2024 \u00a72 Q13",
+  "category": "Claims and Logic"
+ },
+ "vb-inf_v2_0359": {
+  "topic": 43,
+  "video": "solve-vb-inf_v2_0359",
+  "set": "inf_v2",
+  "source": "December 2014 \u00a71 Q16",
+  "category": "Sentence Understanding"
+ },
+ "vb-inf_v2_0353": {
+  "topic": 43,
+  "video": "solve-vb-inf_v2_0353",
+  "set": "inf_v2",
+  "source": "September 2016 \u00a71 Q12 (English analogue of a language-bound source)",
+  "category": "Sentence Understanding"
+ },
+ "vb-inf_v2_0356": {
+  "topic": 43,
+  "video": "solve-vb-inf_v2_0356",
+  "set": "inf_v2",
+  "source": "September 2016 \u00a72 Q16",
+  "category": "Sentence Understanding"
+ },
+ "vb-inf_v2_0362": {
+  "topic": 43,
+  "video": "solve-vb-inf_v2_0362",
+  "set": "inf_v2",
+  "source": "April 2014 \u00a72 Q13",
+  "category": "Sentence Understanding"
+ },
+ "vb-inf_v2_0355": {
+  "topic": 43,
+  "video": "solve-vb-inf_v2_0355",
+  "set": "inf_v2",
+  "source": "September 2016 \u00a72 Q14",
+  "category": "Sentence Understanding"
+ },
+ "vb-inf_v2_0077": {
+  "topic": 44,
+  "video": "solve-vb-inf_v2_0077",
+  "set": "inf_v2",
+  "source": "Spring 2019 \u00a71 Q6 (English translation)",
+  "category": "Paragraph Understanding"
+ },
+ "vb-inf_v2_0017": {
+  "topic": 44,
+  "video": "solve-vb-inf_v2_0017",
+  "set": "inf_v2",
+  "source": "Autumn 2025 \u00a71 Q16",
+  "category": "Paragraph Understanding"
+ },
+ "vb-inf_v2_0085": {
+  "topic": 44,
+  "video": "solve-vb-inf_v2_0085",
+  "set": "inf_v2",
+  "source": "Summer 2020 \u00a72 Q12 (English translation; solver's key)",
+  "category": "Paragraph Understanding"
+ },
+ "vb-inf_v2_0031": {
+  "topic": 44,
+  "video": "solve-vb-inf_v2_0031",
+  "set": "inf_v2",
+  "source": "Winter 2024 \u00a72 Q13",
+  "category": "Paragraph Understanding"
+ },
+ "vb-inf_v2_0059": {
+  "topic": 44,
+  "video": "solve-vb-inf_v2_0059",
+  "set": "inf_v2",
+  "source": "Autumn 2022 \u00a72 Q12",
+  "category": "Paragraph Understanding"
+ },
+ "vb-inf_v2_0288": {
+  "topic": 45,
+  "video": "solve-vb-inf_v2_0288",
+  "set": "inf_v2",
+  "source": "Spring 2026 \u00a71 Q14",
+  "category": "Parables and Comparisons"
+ },
+ "vb-inf_v2_0316": {
+  "topic": 45,
+  "video": "solve-vb-inf_v2_0316",
+  "set": "inf_v2",
+  "source": "April 2015 \u00a71 Q10",
+  "category": "Parables and Comparisons"
+ },
+ "vb-inf_v2_0303": {
+  "topic": 45,
+  "video": "solve-vb-inf_v2_0303",
+  "set": "inf_v2",
+  "source": "Autumn 2022 \u00a71 Q10",
+  "category": "Parables and Comparisons"
+ },
+ "vb-inf_v2_0297": {
+  "topic": 45,
+  "video": "solve-vb-inf_v2_0297",
+  "set": "inf_v2",
+  "source": "Spring 2024 \u00a71 Q13",
+  "category": "Parables and Comparisons"
+ },
+ "vb-inf_v2_0322": {
+  "topic": 45,
+  "video": "solve-vb-inf_v2_0322",
+  "set": "inf_v2",
+  "source": "February 2015 \u00a72 Q7",
+  "category": "Parables and Comparisons"
+ },
+ "vb-inf_v2_0331": {
+  "topic": 45,
+  "video": "solve-vb-inf_v2_0331",
+  "set": "inf_v2",
+  "source": "February 2014 \u00a71 Q8",
+  "category": "Parables and Comparisons"
+ },
+ "vb-inf_v2_0378": {
+  "topic": 46,
+  "video": "solve-vb-inf_v2_0378",
+  "set": "inf_v2",
+  "source": "September 2016 \u00a72 Q10",
+  "category": "Strengthen / Weaken"
+ },
+ "vb-inf_v2_0385": {
+  "topic": 46,
+  "video": "solve-vb-inf_v2_0385",
+  "set": "inf_v2",
+  "source": "September 2015 \u00a71 Q11",
+  "category": "Strengthen / Weaken"
+ },
+ "vb-inf_v2_0366": {
+  "topic": 46,
+  "video": "solve-vb-inf_v2_0366",
+  "set": "inf_v2",
+  "source": "Spring 2026 \u00a72 Q7",
+  "category": "Strengthen / Weaken"
+ },
+ "vb-inf_v2_0382": {
+  "topic": 46,
+  "video": "solve-vb-inf_v2_0382",
+  "set": "inf_v2",
+  "source": "July 2016 \u00a72 Q7",
+  "category": "Strengthen / Weaken"
+ },
+ "vb-inf_v2_0387": {
+  "topic": 46,
+  "video": "solve-vb-inf_v2_0387",
+  "set": "inf_v2",
+  "source": "April 2015 \u00a71 Q15",
+  "category": "Strengthen / Weaken"
+ },
+ "vb-inf_v2_0369": {
+  "topic": 46,
+  "video": "solve-vb-inf_v2_0369",
+  "set": "inf_v2",
+  "source": "Winter 2024 \u00a71 Q8",
+  "category": "Strengthen / Weaken"
+ },
+ "vb-inf_v2_0200": {
+  "topic": 47,
+  "video": "solve-vb-inf_v2_0200",
+  "set": "inf_v2",
+  "source": "Winter 2025 \u00a72 Q8",
+  "category": "Scientific Thinking"
+ },
+ "vb-inf_v2_0214": {
+  "topic": 47,
+  "video": "solve-vb-inf_v2_0214",
+  "set": "inf_v2",
+  "source": "Summer 2022 \u00a71 Q9 (English translation)",
+  "category": "Scientific Thinking"
+ },
+ "vb-inf_v2_0222": {
+  "topic": 47,
+  "video": "solve-vb-inf_v2_0222",
+  "set": "inf_v2",
+  "source": "September 2016 \u00a72 Q18",
+  "category": "Scientific Thinking"
+ },
+ "vb-inf_v2_0226": {
+  "topic": 47,
+  "video": "solve-vb-inf_v2_0226",
+  "set": "inf_v2",
+  "source": "September 2015 \u00a71 Q17",
+  "category": "Scientific Thinking"
+ },
+ "vb-inf_v2_0217": {
+  "topic": 47,
+  "video": "solve-vb-inf_v2_0217",
+  "set": "inf_v2",
+  "source": "Summer 2020 \u00a71 Q13 (English translation; solver's key)",
+  "category": "Scientific Thinking"
+ },
+ "vb-inf_v2_0239": {
+  "topic": 48,
+  "video": "solve-vb-inf_v2_0239",
+  "set": "inf_v2",
+  "source": "Winter 2025 \u00a72 Q10",
+  "category": "Rules and Arrangements"
+ },
+ "vb-inf_v2_0281": {
+  "topic": 48,
+  "video": "solve-vb-inf_v2_0281",
+  "set": "inf_v2",
+  "source": "December 2013 \u00a72 Q7",
+  "category": "Rules and Arrangements"
+ },
+ "vb-inf_v2_0252": {
+  "topic": 48,
+  "video": "solve-vb-inf_v2_0252",
+  "set": "inf_v2",
+  "source": "Autumn 2022 \u00a71 Q9",
+  "category": "Rules and Arrangements"
+ },
+ "vb-inf_v2_0282": {
+  "topic": 48,
+  "video": "solve-vb-inf_v2_0282",
+  "set": "inf_v2",
+  "source": "September 2013 \u00a71 Q14",
+  "category": "Rules and Arrangements"
+ },
+ "vb-inf_v2_0272": {
+  "topic": 48,
+  "video": "solve-vb-inf_v2_0272",
+  "set": "inf_v2",
+  "source": "December 2014 \u00a72 Q14",
+  "category": "Rules and Arrangements"
+ },
+ "vb-inf_v2_0238": {
+  "topic": 48,
+  "video": "solve-vb-inf_v2_0238",
+  "set": "inf_v2",
+  "source": "Spring 2026 \u00a72 Q10",
+  "category": "Rules and Arrangements"
+ },
+ "vb-inf_v2_0263": {
+  "topic": 48,
+  "video": "solve-vb-inf_v2_0263",
+  "set": "inf_v2",
+  "source": "December 2015 \u00a72 Q16",
+  "category": "Rules and Arrangements"
+ }
+}

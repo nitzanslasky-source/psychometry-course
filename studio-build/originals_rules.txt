@@ -1,0 +1,50 @@
+ORIGINAL VERBAL QUESTIONS — writer rules (teacher's decision: every Verbal question in the course must be ORIGINAL)
+
+WHY: the course's current Verbal questions turned out to be translations of real NITE exam questions (see realism_A/B/C.md).
+A paid course must not reuse NITE's questions. Each question is replaced by an ORIGINAL that feels exactly like a real one.
+
+FOR EACH QUESTION YOU REPLACE
+1. Read the current course item (content/verbal_bank_all.json, id without "vb-"), its real original (source label → find it in
+   /Users/nitzanslasky/nite-psychometry/work/verbal: exams_new_mix.pdf = official English 2019–2026, exams_old_mix.pdf = English
+   2010–2017, exams_new_mix_hebrew.pdf / ocr_hebmix/*.txt / ocr/* = Hebrew; read PDFs with python3 + pypdf), and the realism
+   report entry for it (studio-build/realism_A.md / realism_B.md / realism_C.md) — it says what makes the real one work.
+2. Write a NEW question that keeps, from the original: the question type and exact stem task ("which of the following
+   necessarily follows", "does not weaken", …), the logical mechanism, the ROLE of each distractor (e.g. "reverses the
+   condition", "true but irrelevant", "overstates 'some' as 'all'"), the difficulty, and the length (stem and options within
+   about ±15% of the original's word counts).
+   Everything else must be NEW: subject/situation, names, numbers, examples, sentence structures and wording. No distinctive
+   phrase of the original may survive. Put the correct answer in a different position than the original's (spread 1–4).
+3. Style = NITE's official English: American spelling (neighbor, color, soccer); plain lowercase "not"/"cannot" (never NOT);
+   generic "they" (not "he"); "According to the paragraph" for short texts ("passage" only for reading comprehension);
+   "Hypothesis:" not "Supposition:"; short hyphen lead-in "… -" where NITE uses it; no long em-dashes; formal, precise,
+   slightly dense; no literary flourishes.
+4. Facts: do not attach invented findings to real people, real institutions or real studies. Invented researchers, places and
+   studies are fine when plainly fictional ("A researcher studied…"). Everyday facts must be true.
+5. Verify: solve it cold; exactly ONE defensible answer; each distractor is tempting for the same reason as the original's;
+   compare side by side with the original and two other real items of the type, and rate "feels like the real exam" 1–5 — only
+   ≥4 is acceptable (revise until it is).
+
+OUTPUT
+- Questions: content/verbal_originals_<GROUP>.json  = {"items": [ {"id": "vo-<topic>-<nnn>", "topic": <int>, "category": "...",
+  "mirrors": "<source label of the real question>", "replaces": "<old qid e.g. vb-inf_v2_0409>", "stem": "...",
+  "options": ["...","...","...","..."], "answer": <1-4>, "explanation": "one or two sentences: why the answer is right and
+  the main trap", "feel": <4|5>} ], "passages": [...only for reading comprehension, see below] }.
+  Stems/options are plain text (no $). Keep line breaks for statement lists with "\n".
+- Update the guided video module(s) (modulesV<topic>.py) that used the old question: swap the qid everywhere, and REWRITE
+  the slide scripts so they teach the SAME Hebrew method(s), in the same order, on the new question — every quote, name,
+  pop-in (P/T text), D(...) annotation, "Circle choice N" and spoken "Choice N." must match the new question. Keep the module
+  id pattern 'solve-' + new qid (automatic in guided()), its position, guided index, group title and sidebar.
+  Also apply the style rules (3) to all other text in the modules you touch.
+- Write studio-build/replacements_<GROUP>.json mapping old video id → new video id.
+- Run: python3 studio-build/validate_v.py — fix anything in your files. Do not run build_verbal.py.
+
+READING COMPREHENSION (only if assigned)
+- An original passage must NOT be a reskin that follows the real passage sentence by sentence. Keep only: length (about
+  600–700 words), number and roles of paragraphs, density and vocabulary level, and the question TYPES in order (text order,
+  the whole-passage question last). New subject, new argument, new examples.
+- Refer to places by paragraph ("in paragraph 2", "the sentence '…' (paragraph 3)") — no line numbers.
+- passages entry: {"id": "vop-<nn>", "title": "Passage <n>", "mirrors": "...", "paragraphs": ["...", ...],
+  "questions": [{"stem","options","answer","explanation"} × 6]}. Question ids become "vop-<nn>-1" … "-6".
+
+REPORT: for each replacement — old qid → new id, mirrors, one line on what was kept (type/mechanism/distractor roles) and what
+is new, feel rating; any Hebrew-method adaptation in the script.

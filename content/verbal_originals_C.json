@@ -1,0 +1,290 @@
+{
+ "items": [
+  {
+   "id": "vo-47-001",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Winter 2025 §2 Q8",
+   "replaces": "vb-inf_v2_0200",
+   "stem": "Consumer researchers tested a hypothesis by means of the following experiment. Each participant received a kit for a small wooden shelf, together with an instruction booklet. Half of the participants were asked to assemble the shelf on their own; the other half watched while a member of the research team assembled it for them. All of the shelves were then wrapped in paper, and each participant was asked to state the highest price they would be willing to pay for their shelf. Which of the following hypotheses did the researchers test?",
+   "options": [
+    "People are willing to pay more for a product that they can examine closely than for a product that is hidden from view",
+    "People value an object more highly if they have built it themselves than if someone else has built it for them",
+    "The clearer the instructions that accompany a product, the higher the price that people are willing to pay for it",
+    "People value a product they chose themselves more than a product that was chosen for them"
+   ],
+   "answer": 2,
+   "explanation": "The only thing that differs between the two halves is who assembled the shelf, and what is measured is the price offered. Every shelf was wrapped (1), everyone had the same booklet (3) and no one chose a shelf (4), so those hypotheses name factors the design does not vary.",
+   "feel": 5
+  },
+  {
+   "id": "vo-47-002",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Summer 2022 §1 Q9 (English translation)",
+   "replaces": "vb-inf_v2_0214",
+   "stem": "For many years, farmers in a certain valley believed that the valley's soil was too salty for earthworms to live in, so that earthworms could not be the cause of the narrow tunnels in their fields. A later study showed that this belief was wrong. Which of the following cannot be that study?",
+   "options": [
+    "Washing the salt out of a field in the valley with fresh water, and then checking whether earthworms are present in the field",
+    "Digging up soil from fields in the valley, and checking whether any earthworms are found in it",
+    "Preparing soil whose salt content is similar to that of the valley soil, and checking whether earthworms can live in it",
+    "Treating a field in the valley with a substance that kills only earthworms, and checking whether new tunnels stop appearing in it"
+   ],
+   "answer": 1,
+   "explanation": "Earthworms found after the salt has been washed out say nothing about whether they can live in the salty soil, which is what the belief is about. (2), (3) and (4) each test the soil as it actually is, so each could have shown the belief to be wrong.",
+   "feel": 5
+  },
+  {
+   "id": "vo-47-003",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "September 2016 §2 Q18",
+   "replaces": "vb-inf_v2_0222",
+   "stem": "A study found that when background music is played, people perform repetitive tasks better than they do in silence, whereas they perform tasks that require careful reading worse than they do in silence. Which of the following hypotheses does not explain this finding?",
+   "options": [
+    "Music raises a person's level of arousal, which prevents the drowsiness that repetitive work tends to cause; but careful reading requires a calm state of mind, and a raised level of arousal makes the reader restless and impairs their comprehension of the text",
+    "Music and reading draw on the same mental resources for processing language, so music interferes with reading; repetitive tasks make no use of these resources, and there the music relieves boredom and so helps the worker keep up their pace",
+    "Music diverts part of a person's attention away from the task at hand, and this harms performance; but the more demanding the task, the more attention it requires, so in a repetitive task, which requires little attention, the harm caused by the music becomes negligible",
+    "Music improves a person's mood, and a good mood helps performance of tasks that require little thought; but a good mood also makes people process information less carefully, which harms reading"
+   ],
+   "answer": 3,
+   "explanation": "A harm that becomes negligible cannot produce the improvement found in repetitive tasks. (1), (2) and (4) each give a reason for both halves of the finding.",
+   "feel": 4
+  },
+  {
+   "id": "vo-47-004",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "September 2015 §1 Q17",
+   "replaces": "vb-inf_v2_0226",
+   "stem": "An ecologist counted the nests of a certain seabird in two parts of an island: the cliffs on its northern coast and the sandy shore on its southern coast. She found that there are many more nests on the cliffs than on the shore, and that the difference between the two parts is not constant: a rise in the number of foxes on the island hardly affects the number of nests on the cliffs, but leads to a sharp drop in the number of nests on the shore. According to her findings, if there were more foxes on the island in 2023 than in 2022, it is reasonable that -",
+   "options": [
+    "the number of nests on the cliffs in 2023 was lower than in 2022",
+    "the number of nests on the shore in 2023 was higher than the number of nests on the cliffs in that year",
+    "in 2023 the number of nests on the shore was the same as in 2022, but on the cliffs it was much lower",
+    "the gap between the number of nests on the cliffs and the number on the shore was greater in 2023 than in 2022"
+   ],
+   "answer": 4,
+   "explanation": "More foxes leave the cliffs almost unchanged and cut the shore sharply, so the gap grows. (1) changes the part that foxes hardly affect, (3) swaps the roles of the two parts, and (2) contradicts the finding that the cliffs have far more nests, which is even truer after a rise in foxes.",
+   "feel": 4
+  },
+  {
+   "id": "vo-47-005",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Summer 2020 §1 Q13",
+   "replaces": "vb-inf_v2_0217",
+   "stem": "A certain virus that attacks cucumber plants is carried from plant to plant by a small beetle. When the beetle feeds on the leaves of an infected plant, virus particles stick to its mouthparts, and it leaves them on the next plant it feeds on. If a single plant receives virus particles that come from several different infected plants, the particles can exchange genetic material inside that plant. This produces new forms of the virus, some of which are able to overcome the resistance that has been bred into modern cucumber varieties. Based on the paragraph, which of the following best explains why forms of the virus that can overcome this resistance arise sooner where the virus is common than where it is rare?",
+   "options": [
+    "In these areas, farmers grow older cucumber varieties that were never bred for resistance to the virus",
+    "In these areas, each beetle feeds on only one plant during its whole life",
+    "In these areas, a single plant is more likely to be fed on by beetles carrying particles from several different infected plants",
+    "In these areas, the beetle population is larger"
+   ],
+   "answer": 3,
+   "explanation": "New forms arise when particles from several infected plants meet inside one plant, and that is more likely where the virus is common. (4) is a step short (more beetles do not mean more sources per plant), (2) would stop the virus from moving between plants at all, and (1) brings in a fact from outside the paragraph that does not lead to resistance-breaking forms.",
+   "feel": 4
+  },
+  {
+   "id": "vo-48-001",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "Winter 2025 §2 Q10",
+   "replaces": "vb-inf_v2_0239",
+   "stem": "Dalia invented a word game: each player says a sentence in which every word meets at least one of two conditions: A. the word contains at least two vowels (a, e, i, o, u); B. the word begins and ends with the same letter. Which of the following sentences does not meet the conditions?",
+   "options": [
+    "Ronit did enjoy reading novels",
+    "Every student likes jazz music",
+    "Maria gave twelve roses away",
+    "Aviva ate that tomato quietly"
+   ],
+   "answer": 2,
+   "explanation": "\"Jazz\" has only one vowel, and its first and last letters differ. In (1) \"did\" and in (4) \"that\" have one vowel but begin and end with the same letter, so condition B saves them; in (3) every word has at least two vowels.",
+   "feel": 5
+  },
+  {
+   "id": "vo-48-002",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "December 2013 §2 Q7",
+   "replaces": "vb-inf_v2_0281",
+   "stem": "Four candidates applied for a job as a guide at a city museum. These were the results:\n- Omer, who speaks English and French, was accepted for the job.\n- Yael, who speaks English, was accepted for the job.\n- Tamar, who speaks Russian, was not accepted.\n- Ido, who speaks Russian and Spanish, was accepted for the job.\nNote: none of the four candidates speaks any language other than those listed above. Which of the following could not have been the requirement for being accepted for the job?",
+   "options": [
+    "Any candidate who speaks two languages is accepted, and any candidate who speaks English is accepted as well",
+    "All of the candidates are accepted, except those who speak one language only and that language is not English",
+    "A candidate is accepted only if they speak more than one language or do not speak English at all",
+    "A candidate who does not speak English is not accepted, unless they speak Spanish"
+   ],
+   "answer": 3,
+   "explanation": "Under (3) Yael, who speaks English and nothing else, could not be accepted, yet she was. Each of the other requirements fits all four results.",
+   "feel": 4
+  },
+  {
+   "id": "vo-48-003",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "Autumn 2022 §1 Q9",
+   "replaces": "vb-inf_v2_0252",
+   "stem": "Omri, Talia and Neta live in a three-story building, one on each floor, not necessarily in that order. Each of them keeps one of these pets: a cat, a dog and a rabbit. Given: A. Talia lives on a floor adjacent to the floor of the dog's owner. B. The owner of the rabbit lives on the second floor. Which of the following is necessarily true?",
+   "options": [
+    "Neta is the owner of the cat",
+    "Omri lives on the third floor",
+    "Omri is not the owner of the rabbit",
+    "Neta is not the owner of the dog"
+   ],
+   "answer": 3,
+   "explanation": "If Talia lived on the first or third floor, the only floor adjacent to hers would be the second, whose tenant owns the rabbit, not the dog; so Talia lives on the second floor and owns the rabbit. Omri and Neta may be on either of the other floors, with either the cat or the dog.",
+   "feel": 4
+  },
+  {
+   "id": "vo-48-004",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "September 2013 §1 Q14",
+   "replaces": "vb-inf_v2_0282",
+   "stem": "Two novels and two cookbooks stand on a shelf in places 1 to 4, numbered from left to right. It is known that the two cookbooks do not stand next to each other. Which of the following additional facts would make it possible to determine with certainty the type of every book?",
+   "options": [
+    "Book 3 is a novel",
+    "Book 4 is a cookbook",
+    "Book 1 is a novel",
+    "No book stands next to a book of its own type"
+   ],
+   "answer": 3,
+   "explanation": "The cookbooks can stand in places 1 and 3, 1 and 4, or 2 and 4; a novel in place 1 leaves only 2 and 4. (1) and (2) each leave 1 and 4 or 2 and 4, and (4) leaves 1 and 3 or 2 and 4.",
+   "feel": 4
+  },
+  {
+   "id": "vo-48-005",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "December 2014 §2 Q14",
+   "replaces": "vb-inf_v2_0272",
+   "stem": "The statements made in the following conversation contradict one another. Hadas: \"Amit lends his books only to people who are older than he is.\" Eli: \"I am younger than Amit.\" Rona: \"I am older than Eli and younger than Hadas.\" Amit: \"I have lent books to Hadas, to Rona and to Eli.\" Without which speaker's statement would the conversation still contain a contradiction?",
+   "options": [
+    "Hadas",
+    "Eli",
+    "Rona",
+    "Amit"
+   ],
+   "answer": 3,
+   "explanation": "Hadas's and Amit's statements together make Eli older than Amit, while Eli says he is younger; Rona's statement plays no part in this. Removing Hadas, Eli or Amit removes one part of the contradiction.",
+   "feel": 4
+  },
+  {
+   "id": "vo-48-006",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "Spring 2026 §2 Q10",
+   "replaces": "vb-inf_v2_0238",
+   "stem": "Maya, Nir and Oren had to choose where their team would spend a day out: at the zoo, at the beach or at the science museum. Each of them expressed a wish. Maya: \"I would like us to go to the beach.\" Nir: \"I don't mind where we go, as long as it is not the zoo.\" Oren: \"I will be pleased if we go to the science museum, or if Nir is pleased.\" The team went to one of the three places, and exactly one of the three did not get their wish. Which of the following is possible?",
+   "options": [
+    "The team went to the beach",
+    "Oren did not get his wish",
+    "The team went to the science museum",
+    "Nir did not get his wish"
+   ],
+   "answer": 3,
+   "explanation": "At the museum Maya is disappointed while Nir and Oren are pleased, so exactly one wish fails. At the beach everyone is pleased. Nir's wish fails only at the zoo, and there Maya's and Oren's wishes fail too; Oren's wish fails only when Nir's does, which again happens only at the zoo.",
+   "feel": 4
+  },
+  {
+   "id": "vo-48-007",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "December 2015 §2 Q16",
+   "replaces": "vb-inf_v2_0263",
+   "stem": "Five contestants take part in a television quiz: Noa, Tal, Yuval, Dana and Ariel. In each round two contestants compete; the loser leaves the quiz, and the winner competes in the next round against a contestant who has not yet competed, until the fourth and last round. The following rule is known: if Noa competes against a contestant who, in the previous round, competed against Tal, Noa loses; in every other case Noa wins. If Noa competed in the first round of the quiz, then -",
+   "options": [
+    "she lost in the second round",
+    "she won the last round",
+    "she lost in the first round",
+    "she lost in the last round"
+   ],
+   "answer": 2,
+   "explanation": "Every opponent Noa meets after the first round is a newcomer who did not compete in the previous round, and in the first round there was no previous round; so the rule never makes her lose, and she wins every round including the last.",
+   "feel": 4
+  }
+ ],
+ "passages": [
+  {
+   "id": "vop-01",
+   "title": "Passage 1",
+   "mirrors": "Winter 2025 §1 Passage A",
+   "paragraphs": [
+    "Biologists have long observed that island animals often differ in size from their closest relatives on the mainland, and in a predictable direction: species that are large on the mainland tend to become smaller on islands, while species that are small tend to become larger. The fossil record offers striking cases of the first kind. Several Mediterranean islands, Sicily and Malta among them, were once home to dwarf elephants, some of which stood barely a meter high at the shoulder. A living case of the second kind is a rat on the Indonesian island of Flores that weighs several times as much as the common rat. The pattern, however, is a tendency rather than a law: a great many island species do not differ in size from their mainland relatives at all, and a few have changed in the direction opposite to the one that the pattern predicts.",
+    "The most widely accepted explanation concerns food. An island offers a limited supply of food, and its animals cannot move elsewhere when that supply runs short. A large body requires a great deal of food, whereas a smaller individual of the same species can get through a lean season on what remains. Over many generations, therefore, smaller individuals are more likely to survive and leave offspring, and the population as a whole becomes smaller. Some researchers have proposed a refinement of this explanation, which we will call here the \"ration hypothesis.\" It holds that what matters is not the area of the island but the amount of food it provides for each animal: a large island consisting mostly of bare rock may favor small bodies more strongly than a small island covered with dense vegetation.",
+    "A second explanation looks not to food but to enemies. Remote islands often have few large predators or none, since such predators need extensive hunting grounds and seldom cross the sea. On the mainland, being small helps an animal to escape by hiding in cracks and burrows, while being very large protects a grazing animal, since few predators can overcome it. Where there are no predators, both advantages lose their value, and body size is free to shift toward whatever suits local conditions best. The merit of this explanation is that it accounts for both directions of change by a single cause, whereas the explanation from food is more convincing for the shrinking of large animals than for the growth of small ones. Its weakness is that it predicts a change in size on every island that lacks predators, although many such islands are home to species whose size has not changed.",
+    "A team of biologists compared the two explanations on a chain of small islands inhabited by a single species of lizard. A predatory snake lives on some of the islands but not on others, and the islands also differ in their vegetation, and hence in the number of insects on which the lizards feed. The researchers reasoned that if the explanation from predators were correct, the lizards on the snake-free islands should differ in size from those on the other islands even where the supply of insects was similar. In fact, the lizards' size corresponded closely to the supply of insects, whereas the presence of snakes made almost no difference. The researchers concluded that on these islands, at least, food is the decisive factor. They added a caution, however: since the snakes reached the islands relatively recently, the lizards may not yet have had time to respond to them.",
+    "Neither explanation, then, turns the island pattern into a law. What the island cases do show is something more general: the size of an animal, which we tend to regard as a fixed feature of its species, is in fact a compromise among competing pressures, such as the need for food, the danger from predators and the demands of the climate. When life on an island shifts the balance among these pressures, size shifts with it, and the fossil record suggests that on some islands this happened within a few thousand years, a moment by the standards of evolution."
+   ],
+   "questions": [
+    {
+     "stem": "Which of the following is closest in meaning to the sentence \"The pattern, however, is a tendency rather than a law … the pattern predicts\" (paragraph 1)?",
+     "options": [
+      "Not every island species conforms to the pattern: many have not changed in size at all, and some have even changed in the opposite direction",
+      "Most island species conform to the pattern, and those that do not conform to it have changed in size in the opposite direction",
+      "Since many island species have not changed in size, the direction of change that the pattern predicts is often the wrong one",
+      "A few island species have changed in size in the predicted direction, but a great many have not changed in size at all"
+     ],
+     "answer": 1,
+     "explanation": "The sentence names two exceptions: many species that did not change and a few that changed the other way. (2) adds \"most\" and merges the two groups, (3) turns \"no change\" into evidence of the wrong direction, and (4) attaches \"a few\" to the species that follow the pattern."
+    },
+    {
+     "stem": "According to paragraph 2, why do large animals tend to become smaller on islands?",
+     "options": [
+      "Because the area of an island is too small to hold animals of a large size",
+      "Because on an island, smaller animals find it easier to hide from predators",
+      "Because when food runs short and there is nowhere else to go, the individuals that need less food are more likely to survive and reproduce",
+      "Because the food available on islands is of poorer quality than the food available on the mainland"
+     ],
+     "answer": 3,
+     "explanation": "The paragraph links size to the amount of food: a smaller body gets through a lean season, and over generations the population shrinks. (1) is what the ration hypothesis denies, (2) belongs to the other explanation (paragraph 3), and (4) speaks of quality, which the paragraph never mentions."
+    },
+    {
+     "stem": "Two populations of the same species of wild goat live on the islands of Arvo and Deska, which are equal in area. The goats on Arvo are considerably smaller than the goats on Deska. According to the \"ration hypothesis,\" which of the following could explain this?",
+     "options": [
+      "Arvo is farther from the mainland than Deska is",
+      "Arvo provides less food for each goat than Deska does",
+      "There are more predators on Arvo than on Deska",
+      "Deska consists mostly of bare rock, whereas Arvo is covered with dense vegetation"
+     ],
+     "answer": 2,
+     "explanation": "Under the ration hypothesis, the food available to each animal, not the island's area, decides how strongly small bodies are favored. (4) reverses the two islands, and (1) and (3) name factors the hypothesis does not use; more predators would, if anything, favor larger bodies."
+    },
+    {
+     "stem": "According to paragraph 3, which of the following is not correct regarding the explanation from predators?",
+     "options": [
+      "It holds that the absence of predators can account both for the growth of small animals and for the shrinking of large ones",
+      "It assumes that a very large body can protect a grazing animal from predators",
+      "It predicts that species living on islands without predators will change in size",
+      "It is more convincing for the shrinking of large animals than for the growth of small ones"
+     ],
+     "answer": 4,
+     "explanation": "The paragraph says this of the explanation from food, and presents the predator explanation's merit as covering both directions. (1), (2) and (3) are each stated in the paragraph."
+    },
+    {
+     "stem": "According to paragraph 4, which of the following findings would have supported the explanation from predators?",
+     "options": [
+      "Lizards on the snake-free islands differ in size from lizards on islands with snakes that have a similar supply of insects",
+      "The size of the lizards on each island corresponds to the number of insects on that island",
+      "The snakes reached the islands only a relatively short time ago",
+      "The lizards are of the same size on all of the islands in the chain"
+     ],
+     "answer": 1,
+     "explanation": "The researchers said the predator explanation required a size difference between snake-free and snake islands even where food was similar. (2) is the actual finding, which supports the food explanation; (3) is the researchers' caution, which may excuse the predator explanation but does not support it; (4) supports neither explanation."
+    },
+    {
+     "stem": "Which of the following best expresses the main idea of the passage?",
+     "options": [
+      "Animals on islands always change in size, in whichever direction the local supply of food dictates",
+      "The size of an animal is not a fixed feature of its species but a compromise among pressures, which the conditions on an island can alter",
+      "The explanation from food has been shown to be correct, and the explanation from predators has been refuted",
+      "Island animals are smaller than their mainland relatives because islands offer less food and fewer predators"
+     ],
+     "answer": 2,
+     "explanation": "The last paragraph draws the general lesson that the whole passage builds toward. (1) says \"always,\" which paragraph 1 denies; (3) overstates a study whose conclusion is limited to \"these islands, at least\"; (4) ignores the small animals that grow larger."
+    }
+   ]
+  }
+ ]
+}

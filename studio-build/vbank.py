@@ -95,6 +95,24 @@ def questions():
                         dict(passageId=pid, bankSet='rc', bankTrust=p.get('trust', ''), trustRank=3,
                              bankCategory='Reading Comprehension', reviewFlag=False, readingNumber=str(n)))
             rc.append(qid)
+    # ORIGINAL questions written for the course (content/verbal_originals_*.json). Each mirrors the type, trap and
+    # difficulty of one real NITE question (field "mirrors", internal) with entirely new content.
+    import glob as _g
+    for f in sorted(_g.glob(os.path.join(os.path.dirname(BANK), 'verbal_originals_*.json'))):
+        doc = json.load(open(f, encoding='utf-8'))
+        for x in doc.get('items', []):
+            Q[x['id']] = _q(x['id'], x['topic'], x['stem'], x['options'], int(x['answer']), x.get('explanation', ''),
+                            dict(bankSet='original', bankTrust='original, mirrors ' + x.get('mirrors', ''), trustRank=0,
+                                 bankCategory=x.get('category', ''), reviewFlag=False, original=True))
+            if x.get('pool', True): pools.setdefault(x['topic'], []).insert(0, x['id'])
+        for n, p in enumerate(doc.get('passages', []), 1):
+            P[p['id']] = dict(id=p['id'], title=p.get('title', 'Passage'), paragraphs=p['paragraphs'], group='original', source='original', glossary='')
+            for k, qq in enumerate(p['questions'], 1):
+                qid = '%s-%d' % (p['id'], k)
+                Q[qid] = _q(qid, 49, qq['stem'], qq['options'], int(qq['answer']), qq.get('explanation', ''),
+                            dict(passageId=p['id'], bankSet='original', bankTrust='original passage', trustRank=0,
+                                 bankCategory='Reading Comprehension', reviewFlag=False, original=True, readingNumber=p['id']))
+                rc.insert(0, qid)
     return Q, pools, P, rc
 
 def _para_of(stem, paras):

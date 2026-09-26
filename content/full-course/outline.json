@@ -387,81 +387,81 @@
      "title": "Sentence completion",
      "videos": 6,
      "lessons": 2,
-     "questions": 107,
-     "minutes": 18,
-     "steps": 114
+     "questions": 112,
+     "minutes": 19,
+     "steps": 119
     },
     {
      "id": 42,
      "title": "Formal logic and deductions",
      "videos": 10,
      "lessons": 1,
-     "questions": 16,
-     "minutes": 17,
-     "steps": 27
+     "questions": 25,
+     "minutes": 18,
+     "steps": 36
     },
     {
      "id": 43,
      "title": "Understanding sentences",
      "videos": 6,
      "lessons": 1,
-     "questions": 28,
-     "minutes": 7,
-     "steps": 35
+     "questions": 33,
+     "minutes": 8,
+     "steps": 40
     },
     {
      "id": 44,
      "title": "Understanding paragraphs",
      "videos": 6,
      "lessons": 1,
-     "questions": 194,
-     "minutes": 10,
-     "steps": 201
+     "questions": 199,
+     "minutes": 11,
+     "steps": 206
     },
     {
      "id": 45,
      "title": "Parables and comparisons",
      "videos": 7,
      "lessons": 1,
-     "questions": 54,
+     "questions": 60,
      "minutes": 9,
-     "steps": 62
+     "steps": 68
     },
     {
      "id": 46,
      "title": "Strengthening and weakening arguments",
      "videos": 7,
      "lessons": 1,
-     "questions": 37,
+     "questions": 43,
      "minutes": 13,
-     "steps": 45
+     "steps": 51
     },
     {
      "id": 47,
      "title": "Scientific reasoning",
      "videos": 6,
      "lessons": 1,
-     "questions": 41,
-     "minutes": 11,
-     "steps": 48
+     "questions": 46,
+     "minutes": 12,
+     "steps": 53
     },
     {
      "id": 48,
      "title": "Rules and arrangements",
      "videos": 9,
      "lessons": 2,
-     "questions": 46,
-     "minutes": 17,
-     "steps": 56
+     "questions": 53,
+     "minutes": 18,
+     "steps": 63
     },
     {
      "id": 49,
      "title": "Reading comprehension",
      "videos": 8,
      "lessons": 2,
-     "questions": 88,
-     "minutes": 20,
-     "steps": 97
+     "questions": 94,
+     "minutes": 21,
+     "steps": 103
     }
    ]
   }

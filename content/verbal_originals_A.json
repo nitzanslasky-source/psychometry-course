@@ -1,0 +1,328 @@
+{
+ "items": [
+  {
+   "id": "vo-41-001",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2021 §2 Q12",
+   "replaces": "vb-sc_tr_0130",
+   "stem": "Keeping classes small is usually a top priority for the members of the town's school board. ____ they ____ the proposal to move the town's music program into the Oren school building, a proposal ____ the number of pupils in each classroom.",
+   "options": [
+    "Therefore / did not support / not expected to increase",
+    "Nevertheless / did not support / certain to increase",
+    "Nevertheless / supported / expected to increase",
+    "Therefore / supported / sure to increase"
+   ],
+   "answer": 3,
+   "explanation": "The board cares about small classes, and nevertheless supported a proposal that will increase class size: a real contrast. (1) and (4) use \"Therefore\" for a decision that does not follow from the board's priority; (2) opposes a harmful proposal, so \"Nevertheless\" has nothing to contrast with.",
+   "feel": 5
+  },
+  {
+   "id": "vo-41-002",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2020 §1 Q9",
+   "replaces": "vb-sc_tr_0103",
+   "stem": "The speaker's heavy reliance on ____ gives his lecture the character of ____ ; the audience was therefore surprised when, amid the lecture's ____ style, he repeatedly paused to ____ .",
+   "options": [
+    "detailed statistical tables / a technical report / dry and impersonal / tell jokes about his own childhood",
+    "precise legal terminology / an official document / formal / quote the exact wording of the relevant laws",
+    "colorful personal anecdotes / a dry academic paper / lively and humorous / share amusing stories",
+    "simple words and short sentences / a talk for young children / playful / ask the audience easy questions"
+   ],
+   "answer": 1,
+   "explanation": "Only personal jokes clash with a dry, impersonal style, so only (1) justifies \"surprised\". In (2) and (4) the last part fits the style, so nothing is surprising; in (3) anecdotes cannot make a lecture a dry academic paper.",
+   "feel": 4
+  },
+  {
+   "id": "vo-41-003",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2018 §1 Q10",
+   "replaces": "vb-sc_tr_0073",
+   "stem": "Critics of the grading reform introduced by Principal Harel argue that since the reform took effect, the time teachers spend checking each student's written assignment ____ . Harel ____ that checking an assignment now takes longer than it did in the past, ____ the extra time is evidence of a genuine improvement in teaching, and that ____ .",
+   "options": [
+    "has decreased / accepts / but maintains that / the teachers' workload has become considerably lighter",
+    "has increased considerably / does not dispute / but maintains that, far from being a flaw, / students now receive far more detailed comments on their work",
+    "has increased / freely admits / but, in contrast to his critics, holds that / checking an assignment is now quicker than it once was",
+    "has decreased / is convinced / but adds in the same breath that / the checking process has become far too slow"
+   ],
+   "answer": 2,
+   "explanation": "Harel concedes the critics' point (more time) and turns it into an advantage, and detailed comments support that view. (1) and (3) contradict the admission that checking takes longer; (4) calls the change an improvement and \"far too slow\" at once.",
+   "feel": 4
+  },
+  {
+   "id": "vo-41-004",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2021 §1 Q11",
+   "replaces": "vb-sc_tr_0123",
+   "stem": "____ found that the inspector's report, according to which the old building is safe, was ____ , the residents would not have been ____ their apartments.",
+   "options": [
+    "Had the engineer / reliable / allowed to stay in",
+    "Had the engineer not / inaccurate / allowed to stay in",
+    "Had the engineer / inaccurate / ordered to leave",
+    "Had the engineer not / inaccurate / ordered to leave"
+   ],
+   "answer": 4,
+   "explanation": "What really happened is the reverse of what is written: the engineer found the \"safe\" report inaccurate, so the residents were ordered to leave. (2) makes the residents stay although the report was rejected; (1) and (3) use a positive condition that gives the opposite result.",
+   "feel": 4
+  },
+  {
+   "id": "vo-41-005",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2025 §1 Q12",
+   "replaces": "vb-sc_tr_0015",
+   "stem": "____ that Tamar generally refuses to lend her tools, ____ when she ____ her new drill.",
+   "options": [
+    "Had I known / I would have been hurt / refused to lend me",
+    "Had I not known / I would have been hurt / offered to lend me",
+    "Had I not known / I would not have been surprised / offered to lend me",
+    "Had I known / I would not have been surprised / agreed to lend me"
+   ],
+   "answer": 3,
+   "explanation": "Because I knew that Tamar does not lend her tools, I was surprised when she offered me her drill. In (1) knowing would prevent the hurt; in (2) no one is hurt by an offer; in (4) knowing is exactly what would cause the surprise.",
+   "feel": 5
+  },
+  {
+   "id": "vo-42-001",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "Summer 2020 §1 Q14",
+   "replaces": "vb-inf_v2_0409",
+   "stem": "For which of the following questions will a negative answer make it possible to determine with absolute certainty that every employee who does not drive to work lives within the city limits?",
+   "options": [
+    "Is there an employee who drives to work and does not live within the city limits?",
+    "Is there an employee who does not drive to work and does not live within the city limits?",
+    "Is there an employee who lives within the city limits and does not drive to work?",
+    "Is there an employee who does not live within the city limits and drives to work?"
+   ],
+   "answer": 2,
+   "explanation": "The claim fails only if some employee does not drive and does not live in the city; a \"no\" to (2) rules that out. (1) and (4) are about drivers, whom the claim does not mention; (3) asks about employees who fit the claim.",
+   "feel": 5
+  },
+  {
+   "id": "vo-42-002",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "Winter 2025 §1 Q13",
+   "replaces": "vb-inf_v2_0403",
+   "stem": "Three of the following claims have the same meaning. Which is the remaining claim?",
+   "options": [
+    "Every boat that has failed the safety test is not permitted to carry passengers",
+    "There is no boat that has failed the safety test and is permitted to carry passengers",
+    "If a boat is not permitted to carry passengers, it has failed the safety test",
+    "Only a boat that is not permitted to carry passengers can have failed the safety test"
+   ],
+   "answer": 3,
+   "explanation": "(1), (2) and (4) all say: failed the test → not permitted to carry passengers. (3) reverses the arrow (not permitted → failed).",
+   "feel": 5
+  },
+  {
+   "id": "vo-42-003",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "Winter 2023 §2 Q15",
+   "replaces": "vb-inf_v2_0406",
+   "stem": "A pair of claims is called \"balanced\" if each of the two claims can be inferred from the other. Which of the following pairs of claims is balanced?",
+   "options": [
+    "A. If the store is open, Dana is at work. B. If Dana is not at work, the store is not open.",
+    "A. There is someone who did not attend the meeting. B. There is no one who attended the meeting.",
+    "A. No painter in the group is without a studio. B. There are painters in the group who have a studio.",
+    "A. Every plant that is not watered wilts. B. Every plant that wilts is not watered."
+   ],
+   "answer": 1,
+   "explanation": "B in (1) is A flipped and negated (the contrapositive), so each follows from the other. (4) reverses the arrow without negating; in (3) A does not guarantee that painters exist and B does not say all of them have a studio; (2) are different claims.",
+   "feel": 4
+  },
+  {
+   "id": "vo-42-004",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "July 2016 §2 Q12",
+   "replaces": "vb-inf_v2_0412",
+   "stem": "Given: the members of the Amber Quartet are left-handed violinists who live in Lisbon. Which of the following questions can be answered on the basis of this information?",
+   "options": [
+    "Do left-handed violinists live in other cities as well?",
+    "Is the Amber Quartet the only group of left-handed violinists in Lisbon?",
+    "Is every left-handed violinist who lives in Lisbon a member of the Amber Quartet?",
+    "Is it true that none of the left-handed musicians who live in Lisbon plays the violin?"
+   ],
+   "answer": 4,
+   "explanation": "The quartet's members exist and are left-handed musicians in Lisbon who play the violin, so the answer to (4) is \"no\". (3) runs the arrow backwards; (1) and (2) ask about other cities and other groups, which the information does not mention.",
+   "feel": 4
+  },
+  {
+   "id": "vo-42-005",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "April 2016 §2 Q10",
+   "replaces": "vb-inf_v2_0411",
+   "stem": "In every month in which the bakery launches a new type of bread, its advertising expenses rise, and consequently its profits for that month fall. Which of the following cases certainly contradicts the statement above?",
+   "options": [
+    "A month in which the advertising expenses did not rise, but profits fell",
+    "A month in which no new type of bread was launched, but profits fell",
+    "A month in which no new type of bread was launched, but advertising expenses rose",
+    "A month in which a new type of bread was launched, but profits did not fall"
+   ],
+   "answer": 4,
+   "explanation": "The statement says that a launch is followed by a fall in profits; (4) has the launch without the fall. The statement says nothing about months without a launch, so (1), (2) and (3) do not contradict it.",
+   "feel": 5
+  },
+  {
+   "id": "vo-42-006",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "Summer 2022 §2 Q9",
+   "replaces": "vb-inf_v2_0408",
+   "stem": "Statement A: All top-floor apartments have balconies.\nStatement B: All apartments without balconies are on lower floors.\nThe existence of a lower-floor apartment with a balcony -",
+   "options": [
+    "contradicts statement A but not statement B",
+    "does not contradict either statement",
+    "contradicts both statements",
+    "contradicts statement B but not statement A"
+   ],
+   "answer": 2,
+   "explanation": "A speaks about top-floor apartments and B about apartments without balconies; this apartment is neither, so neither statement says anything about it. (B is simply A flipped and negated.)",
+   "feel": 4
+  },
+  {
+   "id": "vo-42-007",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "Autumn 2024 §2 Q17",
+   "replaces": "vb-inf_v2_0404",
+   "stem": "Twelve hikers set out on a trail that leads to a lookout point. It is known that:\n- every hiker who carried a map reached the lookout point;\n- every hiker who reached the lookout point returned before sunset.\nIf so, it is not possible that one of the hikers -",
+   "options": [
+    "carried no map and returned after sunset",
+    "carried a map and returned before sunset",
+    "carried a map and returned after sunset",
+    "carried no map and returned before sunset"
+   ],
+   "answer": 3,
+   "explanation": "Map → lookout point → back before sunset, so a hiker with a map cannot return after sunset. The rules say nothing about hikers without a map, so (1) and (4) are possible; (2) is what the rules predict.",
+   "feel": 5
+  },
+  {
+   "id": "vo-42-008",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "April 2014 §2 Q10",
+   "replaces": "vb-inf_v2_0416",
+   "stem": "Omer visited the town library. It is known that:\n- of the books in the library, Omer leafed through all the books written in Spanish;\n- all the books Omer leafed through are hardcovers.\nIf so, it is not possible that the library has a book that -",
+   "options": [
+    "is in Spanish and is a paperback",
+    "is in Italian and is a hardcover",
+    "is in Spanish and is a hardcover",
+    "is in Italian and is a paperback"
+   ],
+   "answer": 1,
+   "explanation": "In Spanish → Omer leafed through it → hardcover, so a Spanish paperback is impossible. The rules say nothing about Italian books, and (3) is what the rules predict.",
+   "feel": 5
+  },
+  {
+   "id": "vo-42-009",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "Spring 2024 §2 Q13",
+   "replaces": "vb-inf_v2_0405",
+   "stem": "Which of the following pieces of information would make it possible to establish with certainty that every tile in the warehouse that is not glazed was made in Portugal?",
+   "options": [
+    "All the tiles not made in Portugal are glazed",
+    "All the tiles made in Portugal are glazed",
+    "Every glazed tile was made in Portugal",
+    "None of the tiles made in Portugal are glazed"
+   ],
+   "answer": 1,
+   "explanation": "\"Not made in Portugal → glazed\" is the flipped-and-negated form of \"not glazed → made in Portugal\". (3) reverses the arrow; (2) and (4) describe the Portuguese tiles, not where the unglazed tiles come from.",
+   "feel": 4
+  },
+  {
+   "id": "vo-43-001",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "December 2014 §1 Q16",
+   "replaces": "vb-inf_v2_0359",
+   "stem": "An economist said: \"Whether the recovery suggested by last quarter's sales figures will be sustained remains highly uncertain, particularly in light of the other developments in the market; what we are seeing is, so far, no more than an early indication.\" Which of the following sentences expresses the same meaning as the economist's statement?",
+   "options": [
+    "If we take into account the other developments in the market, it is certain that the recovery suggested by last quarter's sales figures will continue",
+    "It is uncertain whether the recovery suggested by last quarter's sales figures accurately reflects the current state of the market",
+    "Last quarter's sales figures are admittedly no more than an early indication, but it is already clear that the recovery they suggest will be sustained",
+    "Given the other developments in the market, it is doubtful whether the recovery suggested by last quarter's sales figures will last for long"
+   ],
+   "answer": 4,
+   "explanation": "The economist doubts whether the recovery will last, because of other developments in the market. (1) and (3) turn the doubt into certainty; (2) moves the doubt from the future to the present.",
+   "feel": 4
+  },
+  {
+   "id": "vo-43-002",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "September 2016 §1 Q12",
+   "replaces": "vb-inf_v2_0353",
+   "stem": "Maya: \"At the new restaurant on Elm Street, most diners come back, so I assume the food there is ____.\" Maya's words are not logical, but they would have been logical had she said ____ instead of \"so,\" ____ instead of ____. Which of the following best completes the text?",
+   "options": [
+    "disappointing / \"therefore\" / or \"few diners fail to come back\" / \"most diners come back\"",
+    "excellent / \"even so\" / or alternatively \"not excellent\" / \"excellent\"",
+    "disappointing / \"even so\" / or \"excellent\" / \"disappointing\"",
+    "mediocre / \"and yet\" / and also \"quite good\" / \"mediocre\""
+   ],
+   "answer": 3,
+   "explanation": "\"Most come back, so … disappointing\" is illogical; it becomes logical with a concession (\"even so\") or with a verdict that fits the evidence (\"excellent\"). (1) swaps in a synonym and a paraphrase, which change nothing; (2) starts from a logical sentence; (4) requires both changes at once, which makes the sentence illogical again.",
+   "feel": 4
+  },
+  {
+   "id": "vo-43-003",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "September 2016 §2 Q16",
+   "replaces": "vb-inf_v2_0356",
+   "stem": "The following sentence, taken from an announcement about a scholarship, can be understood in two ways: \"The scholarship will be awarded only to nursing students who work at the city hospital and residents of the northern district.\" Which of the following is not possible according to either of the two ways of understanding the sentence?",
+   "options": [
+    "Yael, who works at the city hospital but is not a nursing student and does not live in the northern district, was awarded the scholarship",
+    "Ron, a resident of the northern district who is not a nursing student and does not work at the city hospital, was awarded the scholarship",
+    "Shira, a nursing student who lives in the northern district but does not work at the city hospital, was awarded the scholarship",
+    "Gil, a resident of the northern district who is not a nursing student and does not work at the city hospital, was not awarded the scholarship"
+   ],
+   "answer": 1,
+   "explanation": "Reading 1: nursing student + hospital + north; reading 2: (nursing student + hospital) or a resident of the north. Yael is not a nursing student and does not live in the north, so she fails both. Ron and Shira fit reading 2, and \"only\" never forces an award, so Gil is always possible.",
+   "feel": 5
+  },
+  {
+   "id": "vo-43-004",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "April 2014 §2 Q13",
+   "replaces": "vb-inf_v2_0362",
+   "stem": "A researcher examined the effect of room temperature on willingness to donate. One group of participants waited for a quarter of an hour in a warm room, and another group in a cool room. Then all the participants were asked to contribute to a fund for renovating a local playground. Those who had waited in the warm room donated considerably more, and the researcher estimated that, since warmth improves mood, these participants had been in a better mood when asked to donate. Which of the following assumptions underlies the researcher's estimate?",
+   "options": [
+    "A person in a bad mood does not notice the room's temperature, so it makes no difference to them whether the room is warm or cool",
+    "A person in a good mood contributes more generously to a cause than a person whose mood is less good",
+    "Waiting in a warm room causes people to support playground renovation more than people who waited in a cool room",
+    "A good mood causes a person to donate more generously, provided that they have spent time in a warm room beforehand"
+   ],
+   "answer": 2,
+   "explanation": "The estimate runs warmth → good mood → larger donations; the researcher must assume the second link. (4) adds a condition the estimate does not need; (1) is irrelevant and (3) merely restates the finding.",
+   "feel": 4
+  },
+  {
+   "id": "vo-43-005",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "September 2016 §2 Q14",
+   "replaces": "vb-inf_v2_0355",
+   "stem": "Noa: \"I doubt that I could arrange this violin sonata for the piano, much less for the guitar.\" Eyal: \"What you say implies that you play the piano better than you play the guitar.\" Eyal's claim is based on the assumption that a musician who finds it easier to arrange a piece ____ plays instrument A better than instrument B.",
+   "options": [
+    "from instrument A for instrument C than from instrument A for instrument B",
+    "from instrument A for instrument C than from instrument B for instrument C",
+    "from instrument A for instrument B than from instrument B for instrument A",
+    "from instrument C for instrument A than from instrument C for instrument B"
+   ],
+   "answer": 4,
+   "explanation": "Noa finds violin → piano easier than violin → guitar, and Eyal concludes that she plays the piano better, so ease of arranging for an instrument must reflect command of it: from C (violin) for A (piano) rather than for B (guitar). The other choices put the instruments in the wrong roles.",
+   "feel": 4
+  }
+ ],
+ "passages": []
+}
