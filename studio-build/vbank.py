@@ -31,7 +31,14 @@ def trust_rank(x):
 HEB = re.compile(r'[֐-׿]')
 EXCLUDE = {'inf_mix_0024', 'inf_mix_0063', 'inf_mix_0074', 'inf_v1_0348', 'inf_v2_0010'}   # junk choices / needs figure / two correct answers (found by writers)
 
+# Only two sources are used (teacher's decision, 2026-09-26):
+#  inf_v2 — English questions each rebuilt one-for-one from a real NITE exam question
+#  sc_tr  — sentence completions translated from Hebrew exams whose answers MATCH the official NITE key
+def approved(x):
+    return x['set'] == 'inf_v2' or (x['set'] == 'sc_tr' and 'matches NITE published key' in str(x.get('trust', '')))
+
 def usable(x):
+    if not approved(x): return False
     if x['id'] in EXCLUDE: return False
     if x['set'] == 'inf_mix' and x['category'] == 'inference': return False   # sentence completions with the blanks stripped
     if x.get('answer') in (None, '', 0) or len(x.get('options', [])) != 4: return False

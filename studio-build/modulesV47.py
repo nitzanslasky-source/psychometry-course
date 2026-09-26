@@ -1,7 +1,6 @@
 # Verbal Reasoning · Topic 47 · Scientific reasoning.
 # Hebrew (hebverbal.txt 3549-4001, "חשיבה מדעית") gives the concepts, order, methods and verdicts;
-# every question is an English bank item, used word for word. (vb-inf_mix_0118 is a bank 'assumption'
-# item filed under topic 46 — it is the only design-assumption question matching the Hebrew example.)
+# every question is an English bank item (vcands47.txt), used word for word.
 from dsl import *
 
 T47 = 47
@@ -118,35 +117,32 @@ guided(0, 'vb-inf_v2_0200', GT, SBQ,
   ])], T47),
 
 # ------------------------------------------------------------------ Q2 · Hebrew ex. 2 (medium-plus, even hard): assumptions behind a design
-guided(1, 'vb-inf_mix_0118', GT, SBQ,
- ["A sample question — medium-plus, even hard.", "A different question: what did the researchers ASSUME when they designed the experiment?"],
+guided(1, 'vb-inf_v2_0214', GT, SBQ,
+ ["A sample question — medium-plus, even hard.", "A different question: we judge how an experiment was DESIGNED — and whether it can really test the assumption."],
  [('Read the design', [
-   "The hypothesis: a large payment raises teenagers' motivation to improve their performance; a small payment actually lowers it.",
-   "Ninety teenagers, divided at random into three groups. Lift a light weight as many times as possible in thirty seconds.",
-   "Group one: ten agorot per lift. Group two: five shekels. Group three: no payment.",
-   "Which is NOT one of the assumptions they used?",
+   "Until the 1980s, doctors assumed the stomach was too acidic for bacteria to survive — so bacteria couldn't cause ulcers.",
+   D("Underline: the acidity of the stomach was too high for bacteria to survive"),
+   "A scientific experiment disproved this assumption. Which CANNOT be that experiment?",
+   "So three of the experiments could disprove it — we cross those out.",
    A("Everything equal except X appears", P('Design: everything equal except X — no alternative explanation')),
    "Remember: when you design an experiment, everything must be equal except the tested factor — so no alternative explanation can creep in.",
   ]),
-  ('Flip each assumption', [
-   "Choice three: when participants are divided at random, the groups don't differ in fitness.",
-   "Flip it: if the opposite would ruin the experiment, it's an assumption.",
-   "Flip it: if one group were much fitter, that alone could explain the results. So they must assume this. Cross it out.",
-   D("Cross out choice 3"),
-   "Choice four: ten agorot counts as a small reward, five shekels as a large one.",
-   "Flip it: if the teenagers didn't see it that way, the groups wouldn't test small against large at all. An assumption. Cross it out.",
-   D("Cross out choice 4"),
+  ('Flip each experiment', [
+   "Flip it: imagine the experiment came out positive. Would the old assumption be broken? If yes — it could be the experiment.",
+   A("Positive result breaks the assumption → it could be the one appears", P('Imagine a positive result: does it break the assumption? → it could be the one')),
+   "Choice one: stomach tissue from ulcer patients — bacteria found. In a real stomach, at its normal acidity, bacteria live. The assumption is broken. Cross it out.",
+   D("Cross out choice 1"),
+   "Choice two: an artificial environment with the stomach's acidity — bacteria survive. Broken again. Cross it out.",
+   D("Cross out choice 2"),
   ]),
   ('Generalize', [
-   "Choice two: success at lifting light weights reflects success at the usual exercises at a fitness club.",
-   "They test one task — but want to conclude about performance at the club in general.",
-   "To generalize, they must assume the test task stands for the rest.",
-   "To generalize from one task, they must assume it represents the others. An assumption. Cross it out.",
-   D("Cross out choice 2"),
-   "Choice one: teenagers are highly motivated by any timed physical challenge.",
-   "Did they need that? No — if anything, it would blur the effect of the money.",
-   D("Circle choice 1"),
-   "Choice one.",
+   "Choice three: a medicine whose only effect is to kill bacteria — and the ulcer is cured. So bacteria were there, causing it. Broken. Cross it out.",
+   D("Cross out choice 3"),
+   "Choice four: antacids lower the acidity — and then they check for bacteria.",
+   "They changed the very thing the assumption is about. To generalize to the real stomach, the test must stand for the real stomach.",
+   "Bacteria in a stomach whose acidity was lowered say nothing about a stomach at its natural acidity.",
+   D("Circle choice 4"),
+   "Choice four.",
    "A slightly different question — not a simple one. Good to have seen it once.",
   ])], T47),
 
@@ -203,38 +199,42 @@ guided(3, 'vb-inf_v2_0226', GT, SBQ,
    "Choice three? It's true every year — it says nothing about the rain.",
   ])], T47),
 
-# ------------------------------------------------------------------ Q5 · Hebrew ex. 5 (medium): combine three facts into a chain
-guided(4, 'vb-inf_mix_0028', GT, SBQ,
+# ------------------------------------------------------------------ Q5 · Hebrew ex. 5 (medium): combine facts into a chain
+guided(4, 'vb-inf_v2_0217', GT, SBQ,
  ["A sample question — medium level.", "Here we have to combine facts into one chain."],
  [('Read the passage', [
-   "NASA searches for life on other planets. Its scientists got interested in ice cauldrons — spiral cracks in ice, easy to recognize even from vast distances.",
-   "They form when volcanoes erupt under ice — creating heat, humidity and a wide range of minerals.",
-   "Three of the claims combine to explain NASA's interest. Which is the remaining claim?",
+   "Sleeping sickness: its parasite is carried from person to person by the tsetse fly.",
+   "When a fly bites a sick person, the parasite passes into the fly and multiplies there.",
+   "If one fly bites several sick people, genetic material can pass between the parasites inside it — more variety, and maybe more resistance to medication.",
+   "Why are the parasites especially resistant in certain regions? Which explanation is likely?",
    A("Combine facts appears", P('Combining facts: write each one briefly, then link them by a shared term')),
   ]),
   ('Build the chain', [
-   "Each choice is a long line — so write each one briefly.",
-   "Choice one: the conditions aren't unique to Earth — so cauldrons may form on other planets too.",
-   D("Write: cauldrons → on other planets too"),
-   "Choice two: heat, humidity and minerals are ideal for life.",
-   D("Write: cauldron conditions → life"),
-   "Choice four: NASA can mostly only photograph planets from far away.",
-   D("Write: only photos from far → spirals visible"),
-   A("The chain appears", P('Seen from afar → a cauldron → conditions for life')),
-   "Link them by what they share: from far away you can spot a spiral — a cauldron — which means conditions ideal for life. That's why NASA cares.",
+   "Each fact is a long line — so write each one briefly.",
+   D("Write: one fly bites several sick people → parasites from each in one fly"),
+   D("Write: parasites together in the fly → genetic exchange → more variety"),
+   D("Write: more variety → more resistant to medication"),
+   A("The chain appears", P('bites several sick people → exchange → variety → resistance')),
+   "Link them by what they share — the parasites in one fly. Several sick people bitten, exchange, variety, resistance. That's the whole chain.",
   ]),
-  ('What remains', [
-   "Choice three: spiral cracks could also be formed by other factors.",
-   "That doesn't explain the interest — it actually weakens it: a spiral may not mean a volcano at all.",
-   D("Circle choice 3"),
-   "Choice three.",
+  ('Find the start', [
+   "Now look for the choice that starts the chain.",
+   "Choice two: more flies. But does each fly bite several sick people? Not necessarily. A step short.",
+   D("Cross out choice 2"),
+   "Choice one: fewer flies carry the parasite — that makes mixing rarer. The wrong way.",
+   D("Cross out choice 1"),
+   "Choice three: material passing from the fly to the parasite. The chain says between the parasites. Out.",
+   D("Cross out choice 3"),
+   "Choice four: a greater chance that a fly bites several sick people — the first link of our chain.",
+   D("Circle choice 4"),
+   "Choice four.",
    A("Chicken and egg again appears", P('In research questions, watch for chicken and egg: cause and effect swapped')),
    "One last thing from strengthen and weaken: in research questions, the chicken-and-egg explanation — cause and effect swapped — comes up a lot.",
   ])], T47),
 ]
 
 MEMORY = [
- dict(id='mem-research', after='solve-vb-inf_mix_0028', title='Scientific reasoning — the words to know',
+ dict(id='mem-research', after='solve-vb-inf_v2_0217', title='Scientific reasoning — the words to know',
   intro='Every study follows one chain: hypothesis → experiment → results → conclusion.',
   tables=[dict(head=['Term', 'What it means'], rows=[
    ['!Hypothesis', 'Cause and effect: if X changes, Y changes'],

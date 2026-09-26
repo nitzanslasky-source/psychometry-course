@@ -387,63 +387,63 @@
      "title": "Sentence completion",
      "videos": 6,
      "lessons": 2,
-     "questions": 263,
+     "questions": 107,
      "minutes": 18,
-     "steps": 270
+     "steps": 114
     },
     {
      "id": 42,
      "title": "Formal logic and deductions",
      "videos": 10,
      "lessons": 1,
-     "questions": 36,
-     "minutes": 16,
-     "steps": 47
+     "questions": 16,
+     "minutes": 17,
+     "steps": 27
     },
     {
      "id": 43,
      "title": "Understanding sentences",
      "videos": 6,
      "lessons": 1,
-     "questions": 34,
+     "questions": 28,
      "minutes": 7,
-     "steps": 41
+     "steps": 35
     },
     {
      "id": 44,
      "title": "Understanding paragraphs",
      "videos": 6,
      "lessons": 1,
-     "questions": 245,
+     "questions": 194,
      "minutes": 10,
-     "steps": 252
+     "steps": 201
     },
     {
      "id": 45,
      "title": "Parables and comparisons",
      "videos": 7,
      "lessons": 1,
-     "questions": 57,
+     "questions": 54,
      "minutes": 9,
-     "steps": 65
+     "steps": 62
     },
     {
      "id": 46,
      "title": "Strengthening and weakening arguments",
      "videos": 7,
      "lessons": 1,
-     "questions": 43,
-     "minutes": 12,
-     "steps": 51
+     "questions": 37,
+     "minutes": 13,
+     "steps": 45
     },
     {
      "id": 47,
      "title": "Scientific reasoning",
      "videos": 6,
      "lessons": 1,
-     "questions": 45,
-     "minutes": 12,
-     "steps": 52
+     "questions": 41,
+     "minutes": 11,
+     "steps": 48
     },
     {
      "id": 48,
