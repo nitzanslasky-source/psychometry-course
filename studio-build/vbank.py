@@ -113,6 +113,13 @@ def questions():
                             dict(passageId=p['id'], bankSet='original', bankTrust='original passage', trustRank=0,
                                  bankCategory='Reading Comprehension', reviewFlag=False, original=True, readingNumber=p['id']))
                 rc.insert(0, qid)
+    # Practice uses ORIGINALS ONLY wherever a topic has them: the bank's items are translations of real NITE questions.
+    for t in pools:
+        if any(Q[q].get('original') for q in pools[t]): pools[t] = [q for q in pools[t] if Q[q].get('original')]
+    if any(Q[q].get('original') for q in rc): rc = [q for q in rc if Q[q].get('original')]
+    _k = lambda q: [int(n) for n in re.findall(r'\d+', q)]
+    for t in pools: pools[t].sort(key=lambda q: (not Q[q].get('original'), _k(q) if Q[q].get('original') else 0))
+    rc.sort(key=lambda q: (not Q[q].get('original'), _k(q) if Q[q].get('original') else 0))
     return Q, pools, P, rc
 
 def _para_of(stem, paras):

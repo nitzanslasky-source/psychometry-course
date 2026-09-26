@@ -1,0 +1,321 @@
+{
+ "items": [],
+ "passages": [
+  {
+   "id": "vop-02",
+   "title": "Passage 2",
+   "mirrors": "Winter 2025 §1 Passage B",
+   "paragraphs": [
+    "For much of the twentieth century, many psychologists assumed that remembering an event is much like taking a document out of a filing cabinet. According to this \"storage\" view, every experience leaves in the mind a trace that preserves it exactly as it occurred, so that a given memory is either found intact or not found at all. Forgetting, on this view, is a failure of search, never an alteration of what was stored. The favorite illustration of the storage view was the memorized list: a person who has studied a list of twenty words either recalls a particular word or fails to recall it, and whatever is recalled can be checked against the list. The proponents of the view held that memory for the events of daily life works in exactly the same way, and that research had only to discover the conditions under which traces are stored and found reliably.",
+    "This view came under sustained attack. First, its critics argued, a memory does not remain fixed from one occasion of remembering to the next. A person who tells the story of a childhood holiday many times over the years tells a slightly different story each time: a detail is dropped, another is added. Can one say at which telling the story stopped being the original memory - the fifth, say, but not the fourth? The critics held that no such point can be found, since the changes accumulate by steps too small to notice. Second, they argued, the errors of memory are not only omissions. People also remember, with complete confidence, things that never occurred. In a well-known experiment of the 1970s, participants who had watched a short film of a collision between two cars were questioned about it a week later, and a considerable number of them reported having seen broken glass at the scene, although the film showed none. A witness who describes shattered glass at an accident in which no glass was broken has not failed to find a record; they have found a record that was never made.",
+    "The psychologist Dalia Meron proposed a different account of remembering. In her view, to remember is not to retrieve a record but to reconstruct an event. What the mind retains is a collection of fragments - an image, a phrase, a feeling - and each time we remember, we rebuild the event from these fragments, filling the gaps with our general knowledge of how events of that kind usually unfold. Meron's account explains what the storage view could not: why the errors of memory are not scattered at random but lean consistently toward the typical, so that what people add to a memory is almost always something that usually happens in such situations. It also accommodates the memorized list, the storage view's favorite illustration: a list studied a few minutes earlier leaves fragments so complete that rebuilding it requires almost no filling at all. In one of Meron's experiments, participants who had read a short story about a visit to a doctor were asked, two weeks later, to retell it. Many of them included details that the story did not contain but that belong to most such visits, such as sitting in a waiting room or being weighed; hardly any included details that do not belong to such visits.",
+    "Meron's account has not escaped criticism. Its critics point out that unusual events - precisely the ones that general knowledge cannot supply - are often remembered with particular accuracy, whereas the account would lead one to expect them to be remembered worst of all. Meron replied that the mind does not retain fragments at random: what it retains above all is whatever departs from the typical, since the typical can always be supplied later and the unusual cannot. This reply, however, raises a further difficulty. If the mind retains what departs from the typical, it must already know, at the moment of the experience, what is typical. Young children, who know far less than adults about how events usually unfold, should then retain more of what they experience and remember it more faithfully - whereas the evidence, as far as it goes, suggests that their memories are, if anything, less accurate."
+   ],
+   "questions": [
+    {
+     "stem": "What is the answer implied by the passage to the question \"Can one say at which telling … but not the fourth?\" (paragraph 2)?",
+     "options": [
+      "Yes - it is the first telling, since only the first telling is based on the original trace",
+      "Yes - it is the telling in which a detail was added to the story for the first time, rather than dropped from it",
+      "No - because a story that is told many times does not change from one telling to the next",
+      "No - because the story changes by steps too small to notice, so there is no telling at which it becomes a different story"
+     ],
+     "answer": 4,
+     "explanation": "The critics answer the question themselves: no such point can be found, because the changes accumulate by tiny steps. (3) gives the right \"no\" for the storage view's reason, which the critics reject; (1) and (2) invent a boundary the passage denies."
+    },
+    {
+     "stem": "Yael defends the storage view. To illustrate her position, she says that she can tell with certainty whether she remembers the code of her building's front door, since she need only enter it and see whether the door opens. Which of the following claims points to the difficulty in Yael's argument?",
+     "options": [
+      "The door might open for a reason that has nothing to do with the code Yael entered",
+      "A short code leaves fragments so complete that it hardly needs rebuilding, so success in recalling it does not show how memory for events works",
+      "A code that has been entered many times is remembered more accurately than a code that has been entered only once",
+      "According to the critics, a person may remember a code with complete confidence and nevertheless remember it wrongly"
+     ],
+     "answer": 2,
+     "explanation": "Like the memorized list, a door code is a case that Meron's account also accommodates, so it cannot decide between the views or show that memory for events works by retrieval. (4) sounds like the critics, but the door test would expose such an error, so it is no difficulty for Yael; (1) and (3) are beside the point."
+    },
+    {
+     "stem": "What does the sentence \"A witness who describes shattered glass … a record that was never made\" (paragraph 2) illustrate?",
+     "options": [
+      "That an error of memory may consist of something added to what occurred, and not only of something missing from it",
+      "That a memory changes slightly each time the event is told again",
+      "That witnesses to real accidents are less reliable than participants in laboratory experiments",
+      "That forgetting is a failure to find a record that was stored in the mind"
+     ],
+     "answer": 1,
+     "explanation": "The sentence sums up the second objection: errors are not only omissions, since people remember things that never happened. (2) is the first objection, (4) is the storage view itself, and (3) compares two groups the passage never compares."
+    },
+    {
+     "stem": "According to paragraph 3, what does Meron's account explain that the storage view could not?",
+     "options": [
+      "Why a list studied a few minutes earlier is usually recalled almost in full",
+      "Why people remember some events in detail and forget others entirely",
+      "Why the details that people wrongly add to a memory are usually typical of events of that kind",
+      "Why unusual events are often remembered with particular accuracy"
+     ],
+     "answer": 3,
+     "explanation": "The paragraph says the account explains why errors lean toward the typical. (1) is something the account merely accommodates (the storage view handles it too), and (4) is the criticism raised against Meron in paragraph 4."
+    },
+    {
+     "stem": "According to paragraph 4, how did Meron reply to the criticism that unusual events are often remembered with particular accuracy?",
+     "options": [
+      "She argued that unusual events are in fact remembered less accurately than they seem to be",
+      "She argued that the mind retains above all what departs from the typical, because the typical can always be supplied later",
+      "She argued that general knowledge includes knowledge of unusual events as well as of typical ones",
+      "She argued that young children, who know little about typical events, remember unusual events best"
+     ],
+     "answer": 2,
+     "explanation": "Her reply is that the mind keeps chiefly what departs from the typical. (4) is not her reply but the consequence that the critics draw from it, and (1) and (3) do not appear in the passage."
+    },
+    {
+     "stem": "What is the structure of the passage?",
+     "options": [
+      "A view of memory is presented, evidence supporting it is described, two objections to it are raised, and the view is revised in order to meet them",
+      "Two views of memory are presented side by side, and an experiment is described that decides between them",
+      "A view of memory is presented; two objections to it are raised; an alternative account is presented along with the evidence that supports it; and an objection to that account, the reply to it and a difficulty that the reply raises are described",
+      "A view of memory is presented along with two objections to it; an alternative account is then presented, and the passage concludes that it has overcome all the difficulties of the earlier view"
+     ],
+     "answer": 3,
+     "explanation": "Paragraph 1 presents the storage view, paragraph 2 the two objections, paragraph 3 Meron's account and its support, and paragraph 4 a criticism, her reply and a new difficulty. (4) ignores the open ending, and (1) wrongly has the storage view revised."
+    }
+   ]
+  },
+  {
+   "id": "vop-03",
+   "title": "Passage 3",
+   "mirrors": "Autumn 2025 §1",
+   "paragraphs": [
+    "Tipping has long puzzled economists. In many countries, restaurant diners hand over a sum that they are not legally obliged to pay, often to a server they will never see again, and the custom has proved remarkably durable. The accepted explanation has been that the tip is a payment for quality: diners reward good service and withhold the reward from poor service, and servers, knowing this, have an incentive to serve well. The explanation rests on a large body of findings. In one study, the servers at a group of restaurants were asked to serve half of their tables with special attentiveness - checking on the diners frequently and remembering orders without writing them down - and to serve the other half as usual. The tables that received the attentive service left larger tips. Dozens of similar studies, conducted in different cities and with different measures of quality, have found that a diner's rating of the service predicts the size of the tip, and the finding has been regarded as one of the most secure in the study of consumer behavior.",
+    "Recently the economist Tamar Halevi proposed a different explanation. The effect of service on tips, as documented in these studies, is small: a diner who rates the service as excellent tips only a few percentage points more than one who rates it as poor - too little, in her view, for reward to be the main purpose of so widespread a custom. She argues, moreover, that tipping is not necessary for good service at all: if it were, service would be poor wherever tipping is not customary, whereas in Japan, where tipping is not customary, restaurant service is widely regarded as exceptionally attentive. She also reinterprets an earlier case in which a restaurant chain abolished tipping, added a fixed service charge to its prices, and at the same time replaced most of its experienced servers with newly hired ones; in the following months, diners' ratings of the service fell steeply. The cause, Halevi argues, was not the loss of the tip but the loss of the experienced staff. A recent study supports her reading: in another chain, which abolished tipping but kept its entire staff - a change the servers described as unwelcome at first but soon routine - diners' ratings of the service did not fall at all, and remained indistinguishable from those of branches that continued to accept tips.",
+    "To understand tipping, Halevi maintains, one must look not at the server but at the audience - at who sees the tip being given. This approach, she claims, accounts for the considerable variation in tipping between people and between situations. Why, for example, do people tip in restaurants they will never visit again, where good service can no longer be encouraged by the promise of a return visit? And why, in her own data, did diners who paid at the table in view of their companions leave larger tips than diners at the same restaurants who paid alone at the counter? Because, according to Halevi, a tip is a signal: it tells those who witness it that the person tipping is generous and can afford to be, and it thereby raises that person's standing in their eyes. \"The value of a tip lies in the eyes that see it,\" she writes. \"It is greatest when the witnesses are people whose regard one wishes to keep, smaller when they are strangers, and nothing at all when no one sees it.\" Halevi regards both observations as evidence that the size of a tip is adjusted to its audience rather than to the quality of the meal.",
+    "Halevi's theory is now being tested with a new source of data: the electronic payment terminals used in many restaurants, which record every tip together with the time, the number of diners at the table, and whether the bill was paid at the table or at the counter. If the theory is correct, the tips paid where no one can see them should prove to be the smallest of all. Whether they are, the records will show."
+   ],
+   "questions": [
+    {
+     "stem": "Which assumption is necessary in order to conclude from the findings of the study described in paragraph 1 that diners reward good service with larger tips?",
+     "options": [
+      "That the servers taking part in the study preferred serving attentively to serving as usual",
+      "That the diners knew that the servers had been asked to serve some of the tables with special attentiveness",
+      "That the diners seated at the tables served attentively did not differ from the other diners in any other respect that affects the size of a tip",
+      "That diners in every city leave the same share of the bill as a tip"
+     ],
+     "answer": 3,
+     "explanation": "The study attributes the larger tips to the attentive service; this holds only if the two groups of tables differed in nothing else that affects tipping. (2) would, if anything, weaken the conclusion, and (1) and (4) are not needed for it."
+    },
+    {
+     "stem": "From Halevi's words in paragraph 2 it follows that, in her view, the difference between the results of the earlier case and those of the recent study stems from -",
+     "options": [
+      "the fact that in the earlier case the experienced servers were replaced, whereas in the recent study the staff remained the same",
+      "the fact that the recent study was conducted in a country where tipping is not customary",
+      "the fact that in the earlier case a service charge was added to the prices, whereas in the recent study no charge was added",
+      "the fact that in the recent study the servers regarded the abolition of tipping as unwelcome"
+     ],
+     "answer": 1,
+     "explanation": "Halevi attributes the fall in ratings to the loss of experienced staff, and the recent study differs precisely in keeping its staff. (3) invents a difference the passage does not state, (2) confuses the study with the remark about Japan, and (4) is a detail that did not affect the ratings."
+    },
+    {
+     "stem": "Suppose the diners' ratings of the service in the two cases described in paragraph 2 were plotted on a graph against the months since tipping was abolished, with a solid line for the earlier case and a dashed line for the recent study. Which of the following descriptions of the graph is consistent with paragraph 2?",
+     "options": [
+      "Both lines fall steeply from the same starting point",
+      "The solid line remains level; the dashed line falls steeply",
+      "The solid line falls steeply; the dashed line falls gradually",
+      "The solid line falls steeply; the dashed line remains level"
+     ],
+     "answer": 4,
+     "explanation": "In the earlier case ratings fell steeply; in the recent study they did not fall at all. (3) is the tempting half-right choice, but the passage says the ratings in the recent study did not fall at all, and (2) reverses the lines."
+    },
+    {
+     "stem": "Which of the following explanations could be offered, according to Halevi's approach, for the fact that in a certain city, tips given for meals delivered to the home are much smaller than tips given in restaurants?",
+     "options": [
+      "The service provided by delivery workers is of lower quality than the service provided by restaurant servers",
+      "Tips for delivered meals are usually added in an app when the customer is alone, so no one whose regard the customer wishes to keep sees them",
+      "Customers are unlikely to meet the same delivery worker again, so there is no reason to encourage good service in the future",
+      "People who order meals to their homes usually earn less than people who eat in restaurants"
+     ],
+     "answer": 2,
+     "explanation": "For Halevi, a tip is worth what its audience makes of it, and a tip given where no one sees it is worth nothing. (1) is the explanation of the accepted view, and (3) fails because, as paragraph 3 notes, people tip generously even where they will never return."
+    },
+    {
+     "stem": "According to paragraph 3, how would Halevi rank the following tips according to their value to the person who gives them, from the greatest to the smallest?\nI. A tip added in an app while the diner is alone at home\nII. A tip left at the table in view of a business partner whom the diner wishes to impress\nIII. A tip left at the table by a diner eating alone among strangers",
+     "options": [
+      "III, II, I",
+      "II, I, III",
+      "I, III, II",
+      "II, III, I"
+     ],
+     "answer": 4,
+     "explanation": "Halevi's quotation sets the order: witnesses whose regard one wishes to keep (II), then strangers (III), then no witnesses at all (I). (1) swaps the first two, and (2) places the unseen tip above the one seen by strangers."
+    },
+    {
+     "stem": "What is the structure of the passage?",
+     "options": [
+      "A prevailing explanation of a custom is presented along with its supporting evidence; an alternative explanation is proposed, based on a critique of that evidence and on a new reading of an earlier case; the alternative is developed; and a way of testing it is described",
+      "Two explanations of a custom are presented, and the results of an experiment are described that decide in favor of the second",
+      "An explanation of a custom is presented, criticisms of it are raised, and the passage shows how the explanation can be defended against them",
+      "A custom is described, the reasons for its spread across different countries are examined, and it is predicted that it will soon disappear"
+     ],
+     "answer": 1,
+     "explanation": "Paragraph 1 gives the accepted view and its evidence, paragraph 2 Halevi's critique and reinterpretation, paragraph 3 her positive theory, and paragraph 4 a test whose result is still unknown. (2) wrongly treats the test as decided, and (3) reverses who wins the argument."
+    }
+   ]
+  },
+  {
+   "id": "vop-04",
+   "title": "Passage 4",
+   "mirrors": "Autumn 2025 §2",
+   "paragraphs": [
+    "In 1971, workers renovating an old schoolhouse in a village in the mountains of central Europe found in its cellar a wooden crate holding some two hundred wax cylinders - the medium on which sound was most commonly recorded at the beginning of the twentieth century. The cylinders had been recorded around 1908 by the village teacher, who had carried a phonograph from house to house and asked his neighbors to sing for it. A find of this size is rare. Wax softens in heat and cracks in cold, and the cellar, which stayed cool and dark throughout the year, had spared the cylinders the summers that ruined so many recordings of the period. The shelter, however, had exacted its own price. The damp of the cellar had covered the wax with mold, and the slow swelling and shrinking of the wooden crate had pressed on the cylinders until many of them cracked along their length; some had broken into several pieces. When the first intact cylinders were played on a phonograph of the period, moreover, its heavy stylus scraped away part of the groove, and whatever had been recorded in those turns was lost for good. The cylinders are among the very few records of the region's songs as the villagers themselves sang them, rather than as collectors wrote them down in musical notation, and this explains the effort that has been invested in them.",
+    "The development of electrical transfer revived the hope of hearing the whole collection. In this method the cylinder is turned on a modern machine at a precisely controlled speed, and a stylus far lighter than the old ones follows the groove. The stylus moves up and down with the pattern cut into the groove, and its motion is converted into an electrical signal that can be recorded on tape or stored in a computer. Because the stylus presses on the wax so lightly, a cylinder can be played in this way many times without being worn down, and filters applied to the signal reduce the hiss that covers old recordings. Over the past decades archives have transferred many thousands of cylinders by this method, among them collections of folk songs recorded early in the century by composers who traveled from village to village to collect them, and scholars expected it to do the same for the crate from the schoolhouse.",
+    "A stylus, however light, can read a groove only by riding along it as the cylinder turns. Along a crack the groove is interrupted, and at each crack the stylus jumped, or caught on the broken edge and chipped it. A cylinder in pieces could not be mounted on the machine or turned at all. For the cracked and broken cylinders, which made up most of the collection, the method that had served other archives so well was of no use, and after a series of trials in the 1980s that left two cylinders more damaged than before, the attempt was abandoned. For thirty years the cylinders stayed on the shelves of a national archive, cleaned, cataloged and silent.",
+    "Then, in 2016, a team of physicists and sound engineers recovered the songs on several of the broken cylinders by means of optical scanning. Like electrical transfer, optical scanning reads the groove, but it does not touch it. A microscope passes over the surface of the wax and measures the depth of the groove at millions of points, and a computer assembles the measurements into a three-dimensional map of the surface. From this map the computer calculates the motion that a stylus would have made had it ridden along the groove, and converts that motion into sound. The team's microscope had originally been built for inspecting the surfaces of precision machine parts. Since the method requires neither contact nor rotation, the fragments of a broken cylinder can be scanned one at a time and fitted together on the screen, so that a crack becomes a gap of a fraction of a second in the recording rather than an obstacle to it. Scanning a single cylinder takes about a day, and the team has so far recovered some forty songs."
+   ],
+   "questions": [
+    {
+     "stem": "According to paragraph 1, which of the following is not correct regarding the cylinders found in the schoolhouse?",
+     "options": [
+      "The damp of the cellar softened the wax, and many of the cylinders cracked as a result",
+      "They were recorded by the village teacher, who asked his neighbors to sing",
+      "Some of the recordings on them were lost when they were first played",
+      "They preserve songs as the villagers sang them, not as collectors wrote them down"
+     ],
+     "answer": 1,
+     "explanation": "The paragraph says that heat softens wax, which the cool cellar prevented; the damp caused mold, and the cracks came from the pressure of the crate. (3) is correct: the old stylus scraped away part of the groove."
+    },
+    {
+     "stem": "According to paragraph 2, why did the development of electrical transfer revive the hope of hearing the whole collection?",
+     "options": [
+      "Because it made it possible to play cylinders that had broken into pieces",
+      "Because it removed completely the hiss that covers old recordings",
+      "Because it had been developed especially for collections of folk songs",
+      "Because it read the groove with a stylus light enough not to wear down the wax"
+     ],
+     "answer": 4,
+     "explanation": "The old stylus had destroyed grooves; the new method reads them without wearing them down. (1) is exactly what the method could not do (paragraph 3), (2) overstates \"reduce\" as \"remove completely,\" and (3) confuses the collections it was used on with its origin."
+    },
+    {
+     "stem": "Which of the following claims is not correct regarding the \"collections of folk songs\" mentioned in paragraph 2?",
+     "options": [
+      "They were recorded early in the twentieth century",
+      "They were recorded by composers who traveled from village to village",
+      "They were transferred to a modern medium only after optical scanning had been developed",
+      "They were recorded on wax cylinders"
+     ],
+     "answer": 3,
+     "explanation": "The paragraph cites these collections as having been transferred by electrical transfer, so the claim that they had to wait for optical scanning is false. The other three claims are stated or implied in the same sentence."
+    },
+    {
+     "stem": "According to paragraph 3, why was electrical transfer of no use for most of the cylinders in the crate?",
+     "options": [
+      "Because the stylus of the modern machine was too heavy for wax that had been weakened by mold",
+      "Because the stylus follows the groove as the cylinder turns, and the cracks interrupted the groove while broken cylinders could not be turned at all",
+      "Because the earliest recordings in the collection were too faint for the stylus to register",
+      "Because the filters applied to the signal could not separate the singing from the hiss"
+     ],
+     "answer": 2,
+     "explanation": "The paragraph explains that reading depends on riding along a continuous, rotating groove, which cracks and fragments prevent. (1) contradicts the lightness stressed in paragraph 2, and (3) and (4) are not mentioned."
+    },
+    {
+     "stem": "According to the last paragraph, which of the following sentences correctly describes the difference between electrical transfer and optical scanning?",
+     "options": [
+      "The first converts the motion of a stylus into sound, whereas the second produces only an image of the surface",
+      "The first wears down the wax, whereas the second leaves it untouched",
+      "The first reads the groove itself, whereas the second reads the color of the wax around it",
+      "Both read the groove, but the first follows it by contact while the cylinder turns, whereas the second measures its shape without contact and without rotation"
+     ],
+     "answer": 4,
+     "explanation": "Both methods read the groove; they differ in how - contact and rotation versus measurement from above. (1) is wrong because the computer converts the calculated motion into sound, (2) contradicts paragraph 2, and (3) invents a property of the surface."
+    },
+    {
+     "stem": "According to the last paragraph, what occurred in 2016?",
+     "options": [
+      "Songs were recovered from several of the broken cylinders by a method that does not touch them",
+      "All the songs in the collection were recovered from the cylinders",
+      "A method for reading broken cylinders was invented especially for the collection",
+      "The broken cylinders were glued together and played on a modern machine"
+     ],
+     "answer": 1,
+     "explanation": "In 2016 the team recovered the songs on several broken cylinders by optical scanning. (2) overstates the result (only some forty songs so far), (3) ignores that the method came from inspecting machine parts, and (4) describes the approach that failed."
+    }
+   ]
+  },
+  {
+   "id": "vop-05",
+   "title": "Passage 5",
+   "mirrors": "Winter 2024 §2",
+   "paragraphs": [
+    "The old market quarter of Lendra, a river city in northern Europe, contains one of the largest groups of timber-framed merchants' houses that survive anywhere on the continent, and for five centuries its market was the commercial center of the surrounding province. The quarter is nevertheless in serious decline, and its condition has been worsening steadily since the 1960s. Because of the floods that struck the city in those years, and the closure of its shipyards, which left thousands of workers unemployed, the fate of the quarter drew little attention beyond the city itself. Only in the last decade have heritage organizations begun to survey the quarter systematically and to try to save what remains of its trade. Their first surveys show that of the three hundred shops recorded in the market in 1950, fewer than a hundred are still open.",
+    "The urban historian Karin Vos maintains that the principal cause of the decline is the ring road. The road was built around the old quarter in the 1960s by the city's planners, who wished to give the growing number of motorists a fast route in place of the narrow streets through the market, and to replace the trams that had carried shoppers into the quarter since the beginning of the century. The road carries tens of thousands of vehicles a day, but it passes around the quarter without entering it, and the trams, which had stopped at the market gate, were withdrawn. Within twenty years the stream of shoppers had shrunk to a trickle. Moreover, since the road cut the quarter off from the residential districts on its far side, which could now be reached on foot only through a few narrow underpasses, the shopkeepers lost the customers who had once walked in every day. Those who stayed in business were forced to sell at weekly markets in the suburbs, where they paid high fees for their stalls and competed with the supermarkets.",
+    "Unlike the shopkeepers, the city council regards the ring road as an unqualified success. The road has brought to the edge of the quarter the coaches of tourists who come to see the timber houses, and the parking fees provide the city with an income it never had before, and a considerable share of its budget for maintaining the streets. The coach parks, like the souvenir kiosks around them, are operated by companies from the capital. The coach parks have changed the lives of the quarter's traders in ways that no one planned. The bakers, for example, who once sold bread to the households of the quarter, now sell small pastries to the tourists waiting beside the coaches - the same dough, shaped smaller and sold at a higher price, to customers who will never return. The trade is much smaller than it was, and far less secure; but it survives, and it remains in the hands of the same families.",
+    "A further danger to the quarter is structural: the timber houses have begun to lean, and their walls to crack. This too, it was assumed, was the road's doing. The heavy traffic shook the ground; the vibrations loosened the soil beneath the houses; the loosened soil settled; and as it settled, the foundations sank unevenly and the walls cracked. The explanation went unchallenged for years and was repeated in every report on the quarter. But when engineers from the city's technical university examined the wooden piles on which the houses stand, the piles contradicted it. Wooden piles can last for centuries as long as they remain submerged in groundwater, which keeps from them the oxygen that wood-decaying fungi need; once the water level falls and the wood is exposed to air, they rot. The rot in the piles of the quarter had begun well before the road was built - in precisely the years in which breweries and dye works along the river began to pump large quantities of groundwater for their processes, lowering the water level beneath the quarter. The road, it appears, has hastened a decay that industry began."
+   ],
+   "questions": [
+    {
+     "stem": "Why is the closure of the city's shipyards mentioned in paragraph 1?",
+     "options": [
+      "To explain why the number of shops in the market fell after 1950",
+      "To show that the decline of the quarter was part of a general decline of the city's economy",
+      "To explain why the decline of the quarter received little attention beyond the city",
+      "To give an example of the damage that the floods caused in the city"
+     ],
+     "answer": 3,
+     "explanation": "The closure appears in the sentence explaining why the quarter's fate drew little outside attention. (1) and (2) turn it into a cause of the decline, which the passage attributes to other factors, and (4) confuses it with the floods mentioned beside it."
+    },
+    {
+     "stem": "Which of the following claims is implied by paragraph 3?",
+     "options": [
+      "The income from the souvenir kiosks around the coach parks goes to the city",
+      "Some of the quarter's traders have adapted their products to a clientele that the road brought to the quarter",
+      "The bakers of the quarter now earn more than they did before the road was built",
+      "Most of the tourists who visit the quarter return to it several times"
+     ],
+     "answer": 2,
+     "explanation": "The bakers now sell smaller pastries to tourists brought by the coaches. (1) is contradicted - the kiosks belong to companies from the capital, and the city's income comes from parking fees; (3) contradicts \"much smaller\"; (4) contradicts \"customers who will never return.\""
+    },
+    {
+     "stem": "According to the explanation that was assumed in paragraph 4, what is the order of events that led to the \"further danger\"?",
+     "options": [
+      "Vibrations from the traffic - the foundations sank unevenly - the soil settled - the soil loosened - the walls cracked",
+      "The groundwater level fell - the piles rotted - the foundations sank unevenly - the walls cracked",
+      "The soil loosened - vibrations from the traffic - the soil settled - the walls cracked - the foundations sank unevenly",
+      "Vibrations from the traffic - the soil loosened - the soil settled - the foundations sank unevenly - the walls cracked"
+     ],
+     "answer": 4,
+     "explanation": "The assumed explanation runs: traffic shakes the ground, the soil loosens, settles, the foundations sink and the walls crack. (2) is the engineers' explanation, not the assumed one, and (1) and (3) scramble the chain."
+    },
+    {
+     "stem": "Suppose a new means of transport were introduced in Lendra, and within a few years the condition of the market quarter and of its traders improved considerably. Which of the following is best suited to be that means of transport?",
+     "options": [
+      "A shuttle bus between the coach parks and the city's airport, for tourists only",
+      "A tram line that stops at the market gate and links it with the residential districts on the far side of the ring road",
+      "A second, wider ring road farther from the quarter, which would draw the heavy traffic away from it",
+      "An underground railway with a station beneath the market, whose tunnels must be kept dry by constant pumping of groundwater"
+     ],
+     "answer": 2,
+     "explanation": "Such a tram restores what the road took away - shoppers and the walking customers from across the road - without harming the piles. (4) brings customers but lowers the groundwater and speeds the rot; (3) moves traffic away but brings no customers; (1) serves only tourists."
+    },
+    {
+     "stem": "According to the last paragraph, what did the examination of the wooden piles reveal?",
+     "options": [
+      "That the rot in the piles had begun before the ring road was built",
+      "That the vibrations of the traffic were the only cause of the damage to the houses",
+      "That the piles had never been submerged in groundwater",
+      "That the pumping by the breweries and dye works began only after the ring road was built"
+     ],
+     "answer": 1,
+     "explanation": "The engineers found that the rot began before the road, in the years when industry started pumping groundwater. (2) is the assumption the piles contradicted, and (4) reverses the order of events."
+    },
+    {
+     "stem": "Following their studies, Vos and the engineers from the technical university publish a joint article presenting their shared conclusions. Which of the following titles is best suited to it?",
+     "options": [
+      "\"The Ring Road: Sole Cause of the Decline of Lendra's Market Quarter\"",
+      "\"Industry, Not Traffic: What Emptied Lendra's Market\"",
+      "\"How the Ring Road Emptied the Market and Hastened the Decay of the Timber Houses\"",
+      "\"The Ring Road as a Blessing for Lendra's Old Quarter\""
+     ],
+     "answer": 3,
+     "explanation": "Vos holds that the road drove away the shoppers; the engineers found that it hastened a decay that industry began. (1) ignores the engineers' finding, (2) contradicts Vos, and (4) is the city council's view."
+    }
+   ]
+  }
+ ]
+}

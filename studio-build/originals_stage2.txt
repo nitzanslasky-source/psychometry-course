@@ -1,0 +1,18 @@
+STAGE 2 — ORIGINAL PRACTICE QUESTIONS (read originals_rules.txt first; everything there applies, except the module edits)
+
+- These are PRACTICE questions: no video modules to edit. Output only your JSON file.
+- Pick your real questions to mirror from studio-build/templates<topic>.txt (each template is a faithful English version of the
+  real NITE question named in [source]). Choose DIFFERENT real sources for every item, spread over sittings, question sub-types
+  and difficulty (roughly the real exam's mix: about 1/3 easy, 1/3 medium, 1/3 hard), and skip every source listed in
+  studio-build/stage1_mirrors.json (already used). If a topic has fewer templates than you need, mirror further real questions
+  of the same type straight from the real exam files (exams_new_mix.pdf / exams_old_mix.pdf English; Hebrew OCR), recording the
+  source label as "<Sitting> §<n> Q<k>".
+- You may use the template text to understand the original (it is faithful); open the real file when a template looks odd.
+- Ids: vo-<topic>-101, -102, … (stage 1 used 001–009). Put "pool": true on each item.
+- Answer positions across your file: spread evenly over 1–4, and different from each original's position.
+- Variety: vary subjects (science, society, history, arts, economics, everyday life), names (international and Israeli),
+  and sentence shapes. No two items in your file may share a scenario.
+- Quality bar is the same: new content, same mechanism, exactly one defensible answer, feel ≥4, NITE American style.
+- Validate your JSON loads (python3 -c "import json;json.load(open(...))") and that every item has all fields.
+- File: content/verbal_originals_<GROUP>.json with {"items": [...], "passages": [...]}.
+REPORT: count written, answer-position spread, difficulty spread, list of sources mirrored, anything you could not do.

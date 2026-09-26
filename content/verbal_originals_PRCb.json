@@ -1,0 +1,323 @@
+{
+ "items": [],
+ "passages": [
+  {
+   "id": "vop-06",
+   "title": "Passage 6",
+   "mirrors": "Autumn 2024 §2",
+   "paragraphs": [
+    "Histories of technology tend to tell the story of the modern world through its great machines: the steam engine, the telegraph, the airplane. Standard time does not appear on such lists. It is not a machine at all, and it involved no discovery; it is simply an agreement that everyone in a given region will set their clocks to the same hour, and that neighboring regions will differ from one another by whole hours. Yet its effect on everyday life has been enormous. A person who wakes to an alarm, catches a train and then joins a call with colleagues on another continent relies on it three times before lunch without giving it a thought.",
+    "For most of history every town kept its own time. Noon was the moment at which the sun stood highest, and since the sun reaches that point later the farther west one goes, the clocks of two cities a hundred kilometers apart might differ by several minutes. As long as people traveled on foot or by carriage, the differences did no harm, since a traveler who spent days on the road hardly noticed that their watch no longer agreed with the clocks of their destination. The railways changed this. A train that covered a hundred kilometers in two hours had to run to a timetable, and a timetable is meaningless unless everyone who reads it agrees on what the time is. Each railroad therefore ran on the time of its own headquarters, and a large station might display several clocks, one for each company, all showing different hours. The British railways were the first to respond: during the 1840s most of them adopted London time along their entire networks. In North America, where the distances were far greater, a single time was impractical, and on November 18, 1883, the railroads of the United States and Canada replaced the dozens of times they had been using with a few broad zones, each an hour apart from the next.",
+    "The decisive step, however, was not the zones themselves but agreement on the line from which they were counted. For the zones of one country to fit those of its neighbors, all of them had to be measured from a common meridian, and every country had to accept that its clocks would be set by reference to a place outside its own borders. Agreement took years. In 1884 delegates of twenty-five countries met in Washington and chose the meridian that passes through the observatory at Greenwich, near London. The choice was not a scientific one, since any meridian would have served; it was made because the great majority of the world's ships already navigated by charts drawn from Greenwich, and the adoption of any other line would have obliged their owners to replace those charts. The countries that had been counting from meridians of their own were the losers. France, which had measured longitude from Paris for two centuries, abstained in the vote and kept Paris time until 1911, when it adopted a time based on Greenwich but defined it in law, without naming Greenwich, as Paris time set back by nine minutes and twenty-one seconds. The debate was conducted by astronomers and diplomats, but its outcome was determined chiefly by the commercial weight of those who had already committed themselves.",
+    "Like most conventions, standard time has not served everyone equally. A zone is a compromise, and the farther a town lies from the center of its zone, the further its clocks depart from its sun. China, which has kept a single time zone since 1949 although the country spans roughly five geographical ones, is the extreme case: in its far west the sun reaches its highest point at around three in the afternoon by the official clock, and many residents keep an unofficial local time alongside the national one. In the nineteenth century, too, newspapers and preachers in some American towns protested against what they called \"railroad time,\" a company's hour imposed on communities that had always taken their hour from the sky. Whether the uniformity has been worth what it cost is a matter of opinion. That it governs our days is not."
+   ],
+   "questions": [
+    {
+     "stem": "Standard time \"does not appear on such lists\" (paragraph 1) - that is, it is not usually counted among -",
+     "options": [
+      "the arrangements on which people rely many times a day",
+      "the agreements that were reached only after years of dispute",
+      "the great machines through which histories of technology tell the story of the modern world",
+      "the innovations that required no discovery"
+     ],
+     "answer": 3,
+     "explanation": "The \"lists\" are the great machines named in the previous sentence. (1) is exactly what the paragraph says standard time is, (2) describes it too (paragraph 3), and (4) reverses the point: it involved no discovery."
+    },
+    {
+     "stem": "The sentence \"Yet its effect on everyday life has been enormous\" (paragraph 1) is given below four times, each time with a different word or words stressed (in capital letters). Which of the stresses best expresses the sentence's intent in the passage?",
+     "options": [
+      "Yet ITS effect on everyday life has been enormous",
+      "Yet its effect on everyday life has been ENORMOUS",
+      "Yet its effect on EVERYDAY life has been enormous",
+      "Yet its effect on everyday life HAS BEEN enormous"
+     ],
+     "answer": 2,
+     "explanation": "\"Yet\" contrasts the size of the effect with the modesty of the means just described (no machine, no discovery). Stressing \"its\" would imply that the great machines had a smaller effect, \"everyday\" would contrast with some other area of life the passage never mentions, and \"has been\" would contrast past with future."
+    },
+    {
+     "stem": "According to paragraph 2, why did the differences between the times kept in different towns cause no harm before the railways?",
+     "options": [
+      "Because travel was so slow that a traveler hardly noticed a difference of a few minutes between the time of one place and that of another",
+      "Because every town set its clocks by the sun, so the time kept in each town was accurate",
+      "Because the clocks of towns a hundred kilometers apart showed the same time",
+      "Because travelers set their watches by the clocks of the stations they passed"
+     ],
+     "answer": 1,
+     "explanation": "The paragraph ties the harmlessness to slow travel: someone days on the road did not notice the drift. (2) is true but does not explain why the differences did no harm, (3) contradicts the paragraph (such clocks differed by minutes), and (4) belongs to the railway age."
+    },
+    {
+     "stem": "According to paragraph 3, what would have happened if each country had counted its time zones from a meridian of its own?",
+     "options": [
+      "Ships would have had to replace the charts by which they navigated",
+      "Each country would have had to set its clocks by reference to a place outside its borders",
+      "France would have gone on keeping Paris time until 1911",
+      "The zones of neighboring countries would not have fit together"
+     ],
+     "answer": 4,
+     "explanation": "The paragraph states that zones fit those of neighboring countries only if all are measured from a common meridian. (2) is the price of the common meridian, not of separate ones; (1) is what choosing a line other than Greenwich would have caused; (3) is what actually happened, not a consequence of the hypothetical."
+    },
+    {
+     "stem": "According to paragraphs 2 and 3, in which of the following options are the events presented in the correct chronological order?",
+     "options": [
+      "The railroads of North America adopt time zones - most British railways adopt London time - delegates meet in Washington - France adopts a time based on Greenwich",
+      "Most British railways adopt London time - the railroads of North America adopt time zones - delegates meet in Washington - France adopts a time based on Greenwich",
+      "Most British railways adopt London time - delegates meet in Washington - the railroads of North America adopt time zones - France adopts a time based on Greenwich",
+      "Most British railways adopt London time - the railroads of North America adopt time zones - delegates meet in Washington - most of the world's ships begin to navigate by charts drawn from Greenwich"
+     ],
+     "answer": 2,
+     "explanation": "1840s, 1883, 1884, 1911. (1) and (3) each swap two events, and (4) places the use of Greenwich charts after the conference, although the ships \"already\" used them, which is why Greenwich was chosen."
+    },
+    {
+     "stem": "According to the last paragraph, on which of the following questions are opinions divided?",
+     "options": [
+      "Whether the advantages of a uniform time have outweighed its drawbacks",
+      "Whether standard time has shaped everyday life",
+      "Whether the official clock in western China departs from the position of the sun",
+      "Whether the railroads introduced standard time in order to impose their own hour on communities"
+     ],
+     "answer": 1,
+     "explanation": "\"Whether the uniformity has been worth what it cost is a matter of opinion.\" (2) is what the passage says is not a matter of opinion, (3) is presented as a fact, and (4) is the view of the nineteenth-century protesters, not a question the passage presents as open."
+    }
+   ]
+  },
+  {
+   "id": "vop-07",
+   "title": "Passage 7",
+   "mirrors": "Winter 2023 §1",
+   "paragraphs": [
+    "When the cosmetics company Varela hired the linguist Dafna Tirosh in 1996 to find a brand name that would sound appealing in every market, it expected her to produce a single winning word. Tirosh invented some two hundred words, had them read aloud to speakers of fourteen languages and asked the listeners to rate how pleasant each one sounded. The results dismayed the company: there was no word that a majority of the listeners rated highly. The listeners fell instead into three groups: those who preferred short words with hard consonants, such as \"Tak\"; those who preferred long words made of soft sounds, such as \"Lomela\"; and those who preferred words that resembled a word in their own language. A name that one group liked was rated poorly by the other two. There is no word that pleases everyone, Tirosh concluded, and the search for one had been mistaken from the start. The company ordered a second survey before it accepted her conclusion.",
+    "Tirosh's conclusion has since been confirmed for names of many kinds, but one word is a striking exception: \"OK.\" Speakers of dozens of languages use it in everyday conversation, and it is often described as the most widely understood word in the world. Its story begins in Boston in the late 1830s, when newspaper writers amused their readers with abbreviations of deliberately misspelled phrases: \"O.W.\" for \"oll wright,\" \"K.Y.\" for \"know yuse\" and \"O.K.\" for \"oll korrect.\" Most of these jokes were forgotten within a season or two. \"O.K.\" was saved by an accident of politics. In 1840 supporters of President Martin Van Buren, who was nicknamed \"Old Kinderhook\" after the town in New York where he was born, formed \"O.K. Clubs,\" and the letters spread across the country as a campaign slogan. Van Buren lost the election, but the word outlived the campaign and passed from political slang into ordinary speech. For decades afterward, writers of usage guides urged their readers to avoid it as vulgar; the readers took no notice.",
+    "Why has \"OK\" succeeded where other words fail? One explanation, proposed by phoneticians, is that it combines, in balance, five features that make a word easy to borrow. Its sounds, or close substitutes for them, exist in nearly every language, so no speaker has to learn a new sound in order to say it. It is short enough to say in a single breath, yet its two syllables make it hard to mishear. It can be written with two capital letters that are familiar far beyond the countries that use the Latin alphabet. Its form never changes, whatever the sentence around it. And its tone is neither formal nor rude. Most words have two or three of these features. \"Affirmative\" cannot be misheard, but it is long and stiff; \"yeah\" is short and friendly, but it is easily lost in noise. \"OK\" has all five, and none of them at the expense of another. The explanation also accounts for the fate of the words that were offered as replacements for it over the years: each of them gained one advantage by giving up another.",
+    "Another explanation appeals to the reluctance of people to use words that mark them as outsiders. This reluctance presumably served people well in the past, when a stranger's unfamiliar speech could be a sign that they were not to be trusted; today it mainly obstructs conversation between people who share no language, each of whom hesitates to speak for fear of sounding foreign. Travelers, however, have found a practical use for \"OK.\" Because it has been adopted by speakers of so many languages, it no longer sounds foreign to anyone, and a tourist and a shopkeeper who have not a single other word in common can close a sale with it. In one survey, teachers of immigrant children reported that newcomers who used \"OK\" from their first day joined classroom conversation within weeks, while those who did not often remained silent for months. \"OK,\" in other words, is not merely a word but a means by which speakers get around a reluctance that they cannot simply decide to abandon."
+   ],
+   "questions": [
+    {
+     "stem": "Noa and Amir heard Tirosh's conclusion and argued that their own preferences could serve as evidence in its favor. Which of the following best describes Noa's and Amir's preferences?",
+     "options": [
+      "Noa and Amir both find the name \"Rex\" too harsh for their new puppy, and both prefer the name \"Lulabel\"",
+      "Noa wants to call their new puppy \"Rex,\" a name that Amir finds harsh, and Amir wants to call it \"Lulabel,\" a name that Noa finds silly",
+      "Noa and Amir both like the name \"Rex\" for their new puppy, although Noa likes it more than Amir does",
+      "Noa preferred the name \"Rex\" for their new puppy at first, but after hearing Amir's reasons she came to prefer \"Lulabel,\" as he does"
+     ],
+     "answer": 2,
+     "explanation": "Tirosh found that a name one group likes is rejected by the others, so no name pleases everyone; only (2) shows each person's favorite rejected by the other. (1) and (3) show agreement, and (4) shows preferences converging, which is evidence against the conclusion."
+    },
+    {
+     "stem": "Which of the following arises from paragraph 2 regarding the \"O.K. Clubs\" formed in 1840?",
+     "options": [
+      "They coined the abbreviation \"O.K.\" as a campaign slogan",
+      "They helped Van Buren win the election of 1840",
+      "They opposed the writers of usage guides who regarded the word as vulgar",
+      "Without them, \"O.K.\" would probably have been forgotten like most of the other abbreviations"
+     ],
+     "answer": 4,
+     "explanation": "The paragraph says most of the jokes were soon forgotten and that \"O.K.\" was \"saved by an accident of politics,\" the clubs. (1) ignores that the abbreviation existed in Boston in the 1830s, (2) contradicts \"Van Buren lost,\" and (3) links two things the paragraph never connects."
+    },
+    {
+     "stem": "According to the passage, which of the following completes the sentence below correctly?\n\"The fact that \"OK\" ____ could strengthen ____.\"",
+     "options": [
+      "can be written with two capital letters that are familiar far beyond the countries that use the Latin alphabet / the explanation presented in paragraph 4",
+      "was first used in newspapers in Boston / the explanation presented in paragraph 3",
+      "is used more often by immigrants in their first months in a new country than by those who have lived there for years / the explanation presented in paragraph 4",
+      "contains sounds that are missing from several widely spoken languages / the explanation presented in paragraph 3"
+     ],
+     "answer": 3,
+     "explanation": "Newcomers are the speakers most afraid of sounding foreign, so their heavier use of a word that sounds foreign to no one supports the explanation from reluctance (paragraph 4). (1) is one of the five features listed in paragraph 3, so it bears on that explanation, not on paragraph 4; (2) is irrelevant to either explanation; (4) would weaken paragraph 3, which relies on sounds found in nearly every language."
+    },
+    {
+     "stem": "According to paragraph 2, which of the following characteristics is not common to \"O.W.\" and \"O.K.\", but belongs to only one of them?",
+     "options": [
+      "It spread across the country as a political slogan",
+      "It abbreviated a deliberately misspelled phrase",
+      "It appeared in Boston newspapers in the late 1830s",
+      "It was meant to amuse newspaper readers"
+     ],
+     "answer": 1,
+     "explanation": "Only \"O.K.\" was taken up by the Van Buren campaign. The other three describe the whole family of Boston abbreviations, \"O.W.\" included."
+    },
+    {
+     "stem": "Which of the following claims is implied by the last paragraph?",
+     "options": [
+      "Immigrant children who use \"OK\" learn the language of their new country faster than those who do not",
+      "People today no longer feel reluctant to use words that mark them as outsiders",
+      "Travelers use \"OK\" mainly because it is the only word they know in the language of the country they visit",
+      "People who share no language may prefer to remain silent rather than use words that could make them sound foreign"
+     ],
+     "answer": 4,
+     "explanation": "The paragraph says the reluctance obstructs conversation because each side hesitates to speak for fear of sounding foreign, which implies (4). (1) turns joining conversation into learning the language faster, (2) contradicts \"a reluctance they cannot simply decide to abandon,\" and (3) gives a reason the paragraph does not give."
+    },
+    {
+     "stem": "Which of the following best summarizes the claims made in the passage?",
+     "options": [
+      "A linguist searched for a word that would please speakers of every language and found one, \"OK,\" whose success is explained by its sounds and by the needs of travelers",
+      "\"OK\" is an exception to the conclusion that no word pleases everyone; it spread because newspaper writers in Boston promoted it more than their other abbreviations",
+      "A study concluded that no word appeals to speakers of every language; \"OK\" is an exception whose history is traced, and two explanations of its wide acceptance are presented",
+      "Speakers of different languages prefer different sounds, so a company that sells its products worldwide should choose a different name for each region, as the history of \"OK\" shows"
+     ],
+     "answer": 3,
+     "explanation": "The passage moves from Tirosh's conclusion, to the exception and its history, to two explanations. (1) contradicts her finding, (2) invents the cause of the spread (it was politics), and (4) draws a business recommendation that the passage never makes and misuses the history of \"OK.\""
+    }
+   ]
+  },
+  {
+   "id": "vop-08",
+   "title": "Passage 8",
+   "mirrors": "Winter 2022 §1",
+   "paragraphs": [
+    "In 1868 the German art historian Ludwig Halm published a study of the wall paintings in the tombs of ancient Egypt, some of which are more than four thousand years old. His most surprising finding concerned depth. The paintings depict gardens, banquets and processions in minute detail, yet they show almost nothing of how near or far things are. A figure in the foreground is no larger than a figure behind it, and a nobleman is drawn taller than his servants wherever they happen to stand. Stranger still, a rectangular garden pool is shown as if seen from above, while the trees that surround it lie flat on the ground, pointing outward in every direction. Halm argued that these pictures were made by people who saw depth less clearly than we do. The reason, in his view, was that the human eye had not yet completed its development.",
+    "Halm's claim was a bold one: Darwin's theory of evolution had been published less than a decade earlier, and the idea that a human sense could change within recorded history seemed far-fetched even to many of the theory's supporters. Nevertheless, the claim was taken up. A few years later the art historian Erich Wendt examined the earliest surviving pictures of many cultures and found that the devices for showing depth had appeared in a fixed order. The first was overlapping, in which one figure is partly hidden behind another. Next came placement, in which distant figures are drawn higher up in the picture. Then came diminution, in which distant things are drawn smaller. The last to appear, and only in some cultures, was a single vanishing point toward which all parallel lines converge. Wendt held that this order recorded a gradual change in the eye itself, and in this he went well beyond Halm, who had spoken of a single stage. The physiological part of Wendt's claim was soon abandoned, but the order he described outlived it and shaped much of the later work on the subject.",
+    "In the twentieth century researchers set out to test whether the source of the phenomenon really lay in the eye. They worked with peoples whose own traditions of picture-making made no use of perspective. The first results seemed to support Halm and Wendt. Shown a drawing of a hunter, an antelope near him and an elephant drawn small on a distant hill, many participants said that the hunter was aiming at the elephant, which stood closer to his spear on the page. Yet the same people judged distances in their own surroundings as accurately as anyone else, as their skill in hunting and herding required. Their eyes, evidently, registered what their pictures did not show. Studies in other regions reached the same result: the conventions of a culture limit how depth is depicted, not how it is seen.",
+    "Why, then, did the Egyptians draw the pool from above and the trees lying flat? The Egyptologist Heinrich Schäfer proposed that the Egyptian painter set out to show what each thing is rather than how it looks from one spot. A pool is a rectangle, so it was drawn as a rectangle; a tree stands upright at the pool's edge, so it was drawn upright, rising from the edge. Something similar happens when a person is asked to sketch the way to their house: they draw a map, not the view from a street corner. But if the eye is not the issue, why the fixed order? One answer is that overlapping is needed as soon as one figure stands in front of another, which happens in almost every scene with more than one figure, so every tradition needed it early. A single vanishing point, by contrast, becomes necessary only when a picture is meant to be seen as if through a window, from one fixed position, and few traditions asked this of their pictures. When painters and architects in fifteenth-century Florence began to ask it, the rules of linear perspective were set down within a few decades."
+   ],
+   "questions": [
+    {
+     "stem": "Which of the following best summarizes the findings of Halm's study described in paragraph 1?",
+     "options": [
+      "The Egyptian paintings depict their scenes in great detail but give almost no indication of how near or far things are, and they show some objects in ways that seem strange to us",
+      "The Egyptian painters saw depth less clearly than we do, because the human eye had not yet completed its development",
+      "The Egyptian paintings show important figures larger than others because such figures stand nearer to the viewer",
+      "The Egyptian paintings depict gardens and banquets from above, as they would appear to a person looking down from a height"
+     ],
+     "answer": 1,
+     "explanation": "The findings are what Halm observed: detailed scenes, almost no depth, and oddities such as the pool and the trees. (2) is his interpretation, not his finding; (3) contradicts \"wherever they happen to stand\"; (4) generalizes the single example of the pool."
+    },
+    {
+     "stem": "Why is it noted in paragraph 2 that Darwin's theory \"had been published less than a decade earlier\"?",
+     "options": [
+      "To show that Halm based his claim on observations that Darwin had made",
+      "To explain how Wendt was able to extend Halm's claim",
+      "To explain why Halm's claim seemed bold at the time it was made",
+      "To suggest that Halm's claim was mistaken because it relied on a new theory"
+     ],
+     "answer": 3,
+     "explanation": "The sentence opens with \"Halm's claim was a bold one\" and gives the youth of the theory as the reason. (1) and (2) invent links, and (4) passes a judgment the paragraph does not make; the physiological claim is rejected later, and for other reasons."
+    },
+    {
+     "stem": "Which of the following descriptions fits both Halm's study and Wendt's study?",
+     "options": [
+      "It examined the earliest surviving pictures of many cultures",
+      "It identified a fixed order in which the devices for showing depth appeared",
+      "It compared the way depth is shown in pictures with the way living people judge distances",
+      "It explained a feature of old pictures by the state of development of the eye of the people who made them"
+     ],
+     "answer": 4,
+     "explanation": "Both men attributed what they saw in pictures to the development of the eye. (1) and (2) describe Wendt's study only (Halm studied Egypt alone), and (3) describes the twentieth-century research in paragraph 3."
+    },
+    {
+     "stem": "Which of the following best summarizes the findings described in paragraph 3 regarding peoples whose traditions of picture-making made no use of perspective?",
+     "options": [
+      "They judged depth in drawings correctly, but misjudged real distances",
+      "They often misread depth in drawings, but judged real distances as accurately as anyone else",
+      "They could not tell which of two figures in a drawing was drawn larger",
+      "They saw depth less clearly than people whose traditions use perspective"
+     ],
+     "answer": 2,
+     "explanation": "Participants misread the hunting drawing yet judged real distances accurately: convention limits depiction, not seeing. (1) reverses the two findings, (3) invents a difficulty, and (4) is Halm's view, which the research refuted."
+    },
+    {
+     "stem": "Why is a sketch of the way to a person's house mentioned in paragraph 4?",
+     "options": [
+      "To illustrate a picture that shows how things are arranged rather than how they look from a single spot",
+      "To show that the Egyptian painters drew maps rather than pictures",
+      "To give an example of a picture that uses a single vanishing point",
+      "To show that people who cannot see depth clearly draw maps instead of views"
+     ],
+     "answer": 1,
+     "explanation": "The sketch is a familiar case of drawing what things are and where they are, as Schäfer says the Egyptian painter did. (2) takes the comparison literally, (3) is the opposite of the point, and (4) brings back the physiological explanation the passage rejects."
+    },
+    {
+     "stem": "Which of the following claims is correct according to the explanation offered in paragraph 4 for the fixed order in which the devices for showing depth appeared?",
+     "options": [
+      "Linear perspective appeared last because it is the hardest device for the eye to perceive",
+      "Every tradition of picture-making eventually adopted a single vanishing point",
+      "Overlapping appeared first because it was invented in Egypt and spread from there",
+      "A device appeared early in a tradition if pictures in that tradition could hardly do without it"
+     ],
+     "answer": 4,
+     "explanation": "The explanation is need: overlapping is needed in almost any scene, a vanishing point only when a picture is meant as a window. (1) is a physiological reason, which the passage abandons; (2) contradicts \"only in some cultures\"; (3) invents a history of diffusion."
+    }
+   ]
+  },
+  {
+   "id": "vop-09",
+   "title": "Passage 9",
+   "mirrors": "Autumn 2022 §1",
+   "paragraphs": [
+    "In everyday usage, a \"constraint\" is a limitation: something that prevents a person from doing what they would otherwise do. Writers of the literary genre known as constrained writing use the word in a different sense. For them a constraint is not an obstacle placed in the way of a work but the rule from which the work grows, and a text written under a constraint is not a weaker version of a free one. Such texts obey rules of their own, and a reader who does not notice the rule will find much of what they read arbitrary or clumsy.",
+    "The best-known feature of constrained writing is the deliberate exclusion of something that ordinary writing takes for granted. The most celebrated example is the French novel \"La Disparition,\" published by Georges Perec in 1969, which runs to some three hundred pages without once using the letter e, the most common letter in French. What might seem a mere feat of endurance is in fact the subject of the book: its plot concerns a series of disappearances, and its characters sense that something is missing from their world without ever being able to name it. The constraint, in other words, is not a trick played on the reader alongside the story; it is the story, told a second time in the alphabet itself.",
+    "A second feature is the use of mechanical procedures that give familiar words unfamiliar meanings. In one such procedure, each word of a sentence is replaced by its dictionary definition. Applied to the saying \"Time is money,\" it produces something like \"The continued progress of existence is a medium of exchange,\" and a reader who meets the saying in this form suddenly notices how strange a claim it makes, a strangeness that its familiar wording had concealed. In some constrained works the rule plays a still larger part: it is never announced, and the reader must reconstruct it from the text alone, much as a cryptographer reconstructs a code from the messages written in it.",
+    "Some constrained works have a visual feature as well: their lines are arranged on the page so as to form a shape. In \"Easter Wings,\" published by the English poet George Herbert in 1633, each of the two stanzas is printed so that its lines narrow and then widen again, forming a pair of wings. The shape is not an ornament. The lines grow shortest precisely where the poem speaks of human decline, at the words \"Most poore\" and \"Most thinne,\" and lengthen again as it speaks of rising. The reader must decide whether they are reading a poem or looking at a picture, and the poem allows no single answer, since the picture is one of the things that the words say.",
+    "Constrained writing, then, uses familiar signs - letters, words, the printed line - but combines them under rules that the reader does not expect. Practiced readers of literature often find such works harder than readers who come to them from word games and puzzles. The practiced reader treats every choice in a text as the expression of a meaning, and looks for it even where a word was chosen only because it lacks a certain letter; when the search fails, they are frustrated. The puzzle lover, who expects a rule rather than a message, looks for the rule, finds it and is delighted. The difference lies not in ability but in expectation.",
+    "It may be asked, then, whether constrained writing belongs to literature at all, or rather to the world of puzzles. The answer is not clear-cut. There are constrained works, such as collections of palindromes (sentences that read the same backward and forward, like \"A man, a plan, a canal: Panama\"), whose pleasure lies chiefly in the solving, and which have little more to offer once the rule has been found. But there are others in which the rule is the source of the meaning, as in Perec's novel or Herbert's poem, and these require a reader who notices the rule, since only such a reader can see that the form is saying something the words alone do not. Works of this kind, although they are built like puzzles, are addressed to readers of literature."
+   ],
+   "questions": [
+    {
+     "stem": "In paragraph 3, the saying \"Time is money\" is presented as -",
+     "options": [
+      "a claim about the value of time that the author of the passage wishes to refute",
+      "a sentence that the procedure described in the paragraph renders ungrammatical",
+      "an example of a rule that the reader must reconstruct from the text alone",
+      "a familiar saying whose strangeness is concealed by its usual wording"
+     ],
+     "answer": 4,
+     "explanation": "The definitions procedure lets the reader \"suddenly notice how strange a claim it makes,\" a strangeness the familiar wording had concealed. (1) turns an illustration into an argument, (2) invents an effect: the rewritten sentence is perfectly grammatical, and (3) belongs to the last sentence of the paragraph."
+    },
+    {
+     "stem": "\"The reader must reconstruct it from the text alone\" (paragraph 3) - that is, in such works the rule plays a larger part than in -",
+     "options": [
+      "works in which the procedure is known to the reader, like those described earlier in the paragraph",
+      "works written without any rule at all",
+      "the messages from which a cryptographer reconstructs a code",
+      "works that exclude a letter, like \"La Disparition\""
+     ],
+     "answer": 1,
+     "explanation": "\"A still larger part\" compares these works with the procedures just described, whose rules are known. (2) is not discussed, (3) takes the comparison with the cryptographer literally, and (4) picks a work from another paragraph that the comparison does not concern."
+    },
+    {
+     "stem": "The description of \"Easter Wings\" (paragraph 4) is presented as an illustration of -",
+     "options": [
+      "a work whose rule the reader must reconstruct from the text alone",
+      "a work in which the arrangement of the lines on the page contributes to what the work says",
+      "a work that deliberately excludes something that ordinary writing takes for granted",
+      "a work whose shape serves mainly as a decoration of its text"
+     ],
+     "answer": 2,
+     "explanation": "The paragraph presents the visual feature and insists that the shape \"is one of the things that the words say.\" (1) and (3) belong to paragraphs 3 and 2, and (4) contradicts \"The shape is not an ornament.\""
+    },
+    {
+     "stem": "The question raised at the beginning of paragraph 6 follows from the fact that -",
+     "options": [
+      "constrained writing uses familiar signs such as letters and words",
+      "some constrained works are addressed to readers of literature",
+      "readers who come to constrained works from puzzles tend to enjoy them more than practiced readers of literature",
+      "\"La Disparition\" runs to some three hundred pages without the letter e"
+     ],
+     "answer": 3,
+     "explanation": "\"Then\" refers back to paragraph 5: if puzzle lovers enjoy these works more than readers of literature, one may ask whether they belong to the world of puzzles. (2) is part of the answer, not its ground; (1) is true but does not raise the question; (4) is an unrelated detail."
+    },
+    {
+     "stem": "According to the last paragraph, why do certain constrained works require a reader who notices the rule?",
+     "options": [
+      "Because in these works the rule is never announced",
+      "Because only such a reader can see that the form expresses something that the words alone do not",
+      "Because the pleasure these works offer lies chiefly in finding the rule",
+      "Because these works are addressed mainly to lovers of puzzles"
+     ],
+     "answer": 2,
+     "explanation": "The paragraph gives the reason explicitly: \"only such a reader can see that the form is saying something the words alone do not.\" (1) comes from paragraph 3, (3) describes the other kind of work (palindromes), and (4) reverses \"addressed to readers of literature.\""
+    },
+    {
+     "stem": "What answer does the passage give to the question raised in the last paragraph?",
+     "options": [
+      "Constrained writing belongs to literature, since every constrained work obeys rules of its own",
+      "Constrained writing belongs to the world of puzzles, since the pleasure it offers lies in solving",
+      "Some constrained works are chiefly puzzles, while others, in which the rule creates the meaning, belong to literature",
+      "The question cannot be answered, since the answer depends on what each reader expects"
+     ],
+     "answer": 3,
+     "explanation": "\"The answer is not clear-cut\": palindromes are mainly puzzles, while works like Perec's and Herbert's are addressed to readers of literature. (1) and (2) each take one side for all works, and (4) borrows \"expectation\" from paragraph 5 and turns a divided answer into no answer."
+    }
+   ]
+  }
+ ]
+}

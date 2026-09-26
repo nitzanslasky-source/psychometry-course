@@ -1,0 +1,18 @@
+INDEPENDENT COLD-SOLVE CHECK (stage 2 original practice questions)
+
+1. BLIND: open ONLY the blind copy /private/tmp/claude-501/-Users-nitzanslasky/3900a95f-9e6b-4d5d-beea-3c24fc3dcf44/scratchpad/blind/<GROUP>.json
+   (no answers). Solve every question as a careful strong test-taker. For each, write down your answer and a
+   confidence (sure / fairly sure / unsure) and note any question where two options are defensible or none is.
+   Save your answers to scratchpad/blind/<GROUP>_answers.json BEFORE step 2.
+2. COMPARE with the key in content/verbal_originals_<GROUP>.json. List every mismatch and every item you marked
+   ambiguous/unsure.
+3. JUDGE each flagged item on the merits (re-read both answers carefully; do not simply defer to the key or to yourself).
+   - Key is right and your miss was a slip -> no change.
+   - Real problem (two defensible answers, keyed answer wrong, distractor accidentally correct, broken grammar,
+     completion whose parts don't fit the blanks) -> FIX the item in content/verbal_originals_<GROUP>.json with the smallest
+     edit that leaves exactly one defensible answer (usually rewrite one distractor or tighten the stem). Update the
+     explanation if needed. Keep the style rules of studio-build/originals_rules.txt.
+4. Also scan all items for: British spelling, capital NOT/CANNOT, em-dashes, "passage" in non-reading items, line
+   numbers, invented findings attached to real people/institutions, and false real-world facts (check any real fact
+   you can; if uncertain, rewrite it as plainly fictional). Fix what you find.
+5. Validate the JSON loads. REPORT: blind agreement (x/N), each flagged item with verdict and what you changed.

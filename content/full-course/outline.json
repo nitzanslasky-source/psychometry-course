@@ -387,81 +387,81 @@
      "title": "Sentence completion",
      "videos": 6,
      "lessons": 2,
-     "questions": 112,
+     "questions": 71,
      "minutes": 19,
-     "steps": 119
+     "steps": 78
     },
     {
      "id": 42,
      "title": "Formal logic and deductions",
      "videos": 10,
      "lessons": 1,
-     "questions": 25,
+     "questions": 36,
      "minutes": 18,
-     "steps": 36
+     "steps": 47
     },
     {
      "id": 43,
      "title": "Understanding sentences",
      "videos": 6,
      "lessons": 1,
-     "questions": 33,
+     "questions": 32,
      "minutes": 8,
-     "steps": 40
+     "steps": 39
     },
     {
      "id": 44,
      "title": "Understanding paragraphs",
      "videos": 6,
      "lessons": 1,
-     "questions": 199,
+     "questions": 52,
      "minutes": 11,
-     "steps": 206
+     "steps": 59
     },
     {
      "id": 45,
      "title": "Parables and comparisons",
      "videos": 7,
      "lessons": 1,
-     "questions": 60,
+     "questions": 33,
      "minutes": 9,
-     "steps": 68
+     "steps": 41
     },
     {
      "id": 46,
      "title": "Strengthening and weakening arguments",
      "videos": 7,
      "lessons": 1,
-     "questions": 43,
+     "questions": 33,
      "minutes": 13,
-     "steps": 51
+     "steps": 41
     },
     {
      "id": 47,
      "title": "Scientific reasoning",
      "videos": 6,
      "lessons": 1,
-     "questions": 46,
+     "questions": 32,
      "minutes": 12,
-     "steps": 53
+     "steps": 39
     },
     {
      "id": 48,
      "title": "Rules and arrangements",
      "videos": 9,
      "lessons": 2,
-     "questions": 53,
+     "questions": 34,
      "minutes": 18,
-     "steps": 63
+     "steps": 44
     },
     {
      "id": 49,
      "title": "Reading comprehension",
      "videos": 8,
      "lessons": 2,
-     "questions": 94,
+     "questions": 54,
      "minutes": 21,
-     "steps": 103
+     "steps": 63
     }
    ]
   }

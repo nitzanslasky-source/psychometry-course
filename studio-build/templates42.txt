@@ -1,0 +1,129 @@
+# Approved templates for topic 42 (16 items). Each is a faithful English version of the real NITE question named in [source]. Answer 1-based.
+
+=== vb-inf_v2_0403 [source: Winter 2025 §1 Q13] answer=1
+STEM: Three of the following claims have the same meaning. Which is the remaining claim?
+  (1) If a country is not a great power, it has an untrained army
+  (2) Every country that has an untrained army is not a great power
+  (3) There is no country that has an untrained army and is a great power
+  (4) Only a country that is not a great power can have an untrained army
+EXPL: (4), (2) and (3) all say: untrained army ⇒ not a great power. (1) reverses the direction.
+
+=== vb-inf_v2_0404 [source: Autumn 2024 §2 Q17] answer=1
+STEM: Ten children stood at the stop of bus 66; some of them boarded the bus and others did not. It is known that: — every child who wore sports shoes boarded the bus; — every child who boarded the bus lives in the village of Savyonim. If so, it is NOT possible that one of the children —
+  (1) wore sports shoes and lives in Shikmim
+  (2) wore sandals and lives in the village of Shikmim
+  (3) wore sports shoes and lives in Savyonim
+  (4) wore sandals and lives in Savyonim
+EXPL: Sports shoes ⇒ boarded ⇒ lives in Savyonim. The rules say nothing about children in sandals, so (4) and (2) are possible; (3) is what the rules predict.
+
+=== vb-inf_v2_0405 [source: Spring 2024 §2 Q13] answer=2
+STEM: Which of the following data would make it possible to establish with certainty that every elephant that does NOT have green eyes is an Asian elephant?
+  (1) All Asian elephants have green eyes
+  (2) All elephants that are not Asian have green eyes
+  (3) Every green-eyed elephant is an Asian elephant
+  (4) No Asian elephant has green eyes
+EXPL: "Not Asian ⇒ green eyes" is the same as "not green eyes ⇒ Asian." (3) is its converse; (1) and (4) concern the Asian elephants' eyes, not the non-green-eyed elephants' origin.
+
+=== vb-inf_v2_0406 [source: Winter 2023 §2 Q15] answer=2
+STEM: A pair of claims is called "complete" if the first can be inferred from the second and the second from the first. Which of the following pairs of claims is complete?
+  (1) A. There is something that is not in my possession. B. There is nothing that is in my possession.
+  (2) A. If it rains, Liron is happy. B. If Liron is not happy, it is not raining.
+  (3) A. Everything that is not red is tasty. B. Everything that is tasty is not red.
+  (4) A. There are no professors who are not absent-minded. B. There are absent-minded professors.
+EXPL: A conditional and its contrapositive are equivalent. (3) pairs a conditional with its converse; (4) runs one way only; (1) are different claims.
+
+=== vb-inf_v2_0407 [source: Winter 2022 §1 Q15] answer=2
+STEM: Three claims are before you: A. Moshe has no brother younger than himself. B. Eyal and Moshe are not brothers. C. Moshe is older than Eyal. Which of the following is correct?
+  (1) Claim A necessarily follows from claims B and C together
+  (2) Claim B necessarily follows from claims A and C together
+  (3) Claim C necessarily follows from claims A and B together
+  (4) None of the claims necessarily follows from the other two together
+EXPL: If Eyal is younger than Moshe (C) and Moshe has no younger brother (A), then Eyal is not Moshe's brother (B). Neither A nor C is forced by the other two.
+
+=== vb-inf_v2_0408 [source: Summer 2022 §2 Q9 (English translation)] answer=3
+STEM: Statement A: All the tall workers are married. Statement B: All the unmarried workers are short. The existence of a short, married worker —
+  (1) contradicts statement A but not statement B
+  (2) contradicts statement B but not statement A
+  (3) contradicts neither statement
+  (4) contradicts both statements
+EXPL: A constrains the tall workers and B the unmarried ones; a short married worker is neither, so neither statement speaks about him.
+
+=== vb-inf_v2_0409 [source: Summer 2020 §1 Q14 (English translation; solver's key)] answer=3
+STEM: For which of the following questions will a negative answer make it possible to determine with certainty that every student who does not like playing football was born in the summer?
+  (1) Are there students who like playing football and were not born in the summer?
+  (2) Are there students who were born in the summer and do not like playing football?
+  (3) Are there students who do not like playing football and were not born in the summer?
+  (4) Are there students who were not born in the summer and like playing football?
+EXPL: "Every non-lover of football was born in summer" is false exactly when some non-lover was not; a "no" to (3) rules that out. (1) and (4) are about the lovers; (2) is the claim's own instances.
+
+=== vb-inf_v2_0410 [source: April 2016 §1 Q10] answer=3
+STEM: Three colors — yellow, blue and red — are primary colors, and three colors — green, purple and orange — are not. In a shop Dina found four tins of paint in four different colors out of the six named above, one color in each tin. What is certainly true of the colors Dina found?
+  (1) At most one of them is not a primary color
+  (2) Two of them are primary colors and two are not
+  (3) At least one of them is not a primary color
+  (4) Exactly one of them is a primary color
+EXPL: Four different colors cannot all come from a set of three; so at least one is non-primary — and by the same argument at least one is primary. (1), (2) and (4) each fix a count the data leave open.
+
+=== vb-inf_v2_0411 [source: April 2016 §2 Q10] answer=2
+STEM: In every year in which heavy rains fall in the winter, the agricultural crop shrinks, and in consequence its prices in the markets rise. Which of the following cases certainly contradicts the statement above?
+  (1) A winter after which the crop did not shrink, but prices in the markets rose
+  (2) A winter in which heavy rains fell, but the crop's prices in the markets did not rise
+  (3) A winter in which no heavy rains fell, but the crop's prices in the markets rose
+  (4) A winter in which no heavy rains fell, but the crop shrank
+EXPL: Heavy rain is asserted to be followed by higher prices; (2) denies exactly that. The statement says nothing about winters without heavy rain, so (1), (3) and (4) do not touch it.
+
+=== vb-inf_v2_0412 [source: July 2016 §2 Q12] answer=1
+STEM: Given: the wombats are a family of nocturnal marsupials common in Australia. Which of the following questions can be answered on the basis of the datum?
+  (1) Is it the case that no nocturnal mammal common in Australia is a marsupial?
+  (2) Are there nocturnal marsupials found outside Australia as well?
+  (3) Is there only one family of nocturnal marsupials common in Australia?
+  (4) Does every nocturnal marsupial common in Australia belong to the wombat family?
+EXPL: The wombats themselves are nocturnal, marsupial and common in Australia, so the answer to (1) is no. The datum says nothing about other families or other continents.
+
+=== vb-inf_v2_0413 [source: December 2015 §2 Q17] answer=4
+STEM: Yossi: "It seems to me that the avocado trees blossomed early this year." Nachum: "Why do you think so?" Yossi: "Because the avocado fruit ripened early this year." Nachum: "You are mistaken. ____." Which of the following best completes Nachum's words?
+  (1) If the avocado trees blossom late the crop is large, and the fruit ripens early only if the crop is small
+  (2) If the avocado fruit ripens late the crop is large, and early blossom causes a small crop
+  (3) If the avocado fruit ripens early the crop is large, and late blossom causes a small crop
+  (4) If the avocado trees blossom early the crop is large, and the fruit ripens early only if the crop is small
+EXPL: Early blossom → large crop → no early ripening; so early ripening means the blossom was not early. (3) supports Yossi; (1) and (2) do not connect the two facts in the needed direction.
+
+=== vb-inf_v2_0414 [source: September 2015 §2 Q17] answer=4
+STEM: At the "Ranim" school: A. No pupil of class 3 who takes part in the nature club also takes part in the cooking club. B. Every pupil of class 3 who does not take part in the drawing club takes part in the cooking club. Therefore it is NOT possible that Ophir, a pupil of class 3, takes part in —
+  (1) the drawing club and the nature club
+  (2) the cooking club and the drawing club
+  (3) the drawing club only
+  (4) the nature club only
+EXPL: Nature only means no drawing, so by B cooking — which A forbids for a nature-club member. Each of the other combinations satisfies both rules.
+
+=== vb-inf_v2_0415 [source: October 2014 §2 Q10] answer=3
+STEM: The relation "loves" is neither symmetric nor reflexive. It is not symmetric because the truth of the statement "A loves B" does not entail the truth of "B loves A." It is not reflexive because, although a person may love himself, there are people who do not love themselves. On the basis of this information, which of the following relations is both symmetric and reflexive?
+  (1) is married to
+  (2) is the father of
+  (3) is the same height as
+  (4) is not younger than
+EXPL: Same height runs both ways and holds of everyone with himself. (1) is symmetric only; (4) is reflexive only; (2) is neither.
+
+=== vb-inf_v2_0416 [source: April 2014 §2 Q10] answer=4
+STEM: Neta visited the zoo. It is known that: — of the animals in the zoo, Neta saw all the animals that come from Africa; — all the animals Neta saw eat grass only. Therefore it is NOT possible that there is in the zoo an animal that —
+  (1) eats grass and comes from Africa
+  (2) eats insects and comes from Asia
+  (3) eats grass and comes from Asia
+  (4) eats insects and comes from Africa
+EXPL: African ⇒ seen ⇒ eats grass only. The rules say nothing about animals from Asia.
+
+=== vb-inf_v2_0417 [source: September 2013 §1 Q7] answer=4
+STEM: Before you are a hypothesis and two findings from two different studies. Hypothesis: narcissi grow only where the climate is rainy. Finding A: only in mountainous regions is the climate rainy. Finding B: narcissi cannot be found in mountainous regions. Which of the following claims is correct?
+  (1) Each of the findings on its own weakens the hypothesis
+  (2) One finding supports the hypothesis, and the other weakens it
+  (3) The combination of the two findings supports the hypothesis
+  (4) The combination of the two findings weakens the hypothesis
+EXPL: Together the findings say that if narcissi grew only in rainy places they would grow only in the mountains — where they do not grow at all. Neither finding alone conflicts with the hypothesis.
+
+=== vb-inf_v2_0418 [source: Autumn 2021 §2 Q15] answer=1
+STEM: Moshe loves only people who do NOT love him. Ephraim loves only Moshe. Ephraim is the only person David does NOT love. Hence —
+  (1) Moshe does not love Ephraim and does not love David
+  (2) Moshe loves Ephraim and loves David
+  (3) Moshe loves Ephraim and does not love David
+  (4) Moshe loves David and does not love Ephraim
+EXPL: Ephraim loves Moshe, and David (who loves everyone but Ephraim) loves Moshe too; Moshe loves only those who do not love him.

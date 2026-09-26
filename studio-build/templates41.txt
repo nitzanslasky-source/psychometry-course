@@ -1,0 +1,758 @@
+# Approved templates for topic 41 (108 items). Each is a faithful English version of the real NITE question named in [source]. Answer 1-based.
+
+=== vb-sc_tr_0001 [source: Spring 2026 §1 Q11] answer=2
+STEM: In a lecture she gave at the annual conference on environmental quality, Dr. Peretz argued that ____ the use of birds of prey for pest control, ____ the use of this method. She justified this by saying that raising birds of prey in agricultural areas makes it possible to reduce the use of chemical pesticides, ____ wild animals that cause no damage to agriculture ____ .
+  (1) in view of the success achieved by / steps should be taken to expand / which admittedly also harm / but the damage they cause is far smaller than the damage the birds of prey cause to those same animals
+  (2) despite the success achieved by / limits should be placed on / and even to improve the quality of the crops; but since the birds of prey also harm / there are cases in which the damage they cause outweighs their benefit
+  (3) despite the failure of / it is nonetheless right to expand / and although here and there the birds have harmed / this casts a heavy shadow over the method's seemingly impressive achievements
+  (4) even if one disregards the failure of / there are many reasons to oppose / which are liable to harm / in addition to the damage they cause to the quality of agricultural produce
+
+=== vb-sc_tr_0002 [source: Spring 2026 §1 Q12] answer=2
+STEM: Ministers Shakdi and Agmon ____ on the question of benefits for workers in the textile industry: Shakdi holds that ____ benefits to salaried workers employed in this industry, ____ , and Agmon ____ .
+  (1) are of one mind / there is no justification for granting / nor to the self-employed either / does not support withholding benefits from the self-employed
+  (2) are not of one mind / it is proper to grant / and to the self-employed all the more so / holds that they should be granted to salaried workers only
+  (3) are in full agreement / there is a duty to grant / and no justification for granting them to the self-employed / holds that they should be granted to the self-employed but not to salaried workers
+  (4) are not in full agreement / there is no need whatsoever to grant / and that it is precisely the self-employed who need them / holds that they should be granted to the self-employed and to them alone
+
+=== vb-sc_tr_0003 [source: Spring 2026 §1 Q13] answer=2
+STEM: When examining whether languages that differ from one another have a common source, great weight should be given to the existence of similarity between the grammatical rules of the languages, and only secondary weight to the existence of similarity in the sounds of words that are close to one another in meaning — a similarity that may well be coincidental. Thus, for example, the fact that in most Semitic languages the words meaning “king” resemble one another in sound does indeed hint at a connection between the languages, but ____ .
+  (1) the fact that there is similarity between the grammatical rules of these languages shows that this similarity is merely coincidental
+  (2) what establishes this connection is the similarity between the rules of these languages, as for example in the inflection of words to express possession: malki, malkan, and the like
+  (3) the fact that attests to a real connection between them is precisely the similarity in basic words, such as “mama” and “I”
+  (4) in order to establish this it must be determined whether the Hebrew word “melekh” predates its counterparts in the other Semitic languages, or the reverse
+
+=== vb-sc_tr_0004 [source: Spring 2026 §2 Q13] answer=3
+STEM: What makes a work of art worth exhibiting in a museum? ____ considerable differences in judgement among the curators of different museums, ____ to exhibit a work that another museum ____ . Nevertheless, when curators are asked to justify their decisions, ____ : the work's historical importance, the message embodied in it, and its ability to attract a wide public.
+  (1) We would expect to find / but in practice it is not rare for a museum to be willing / rejected / each of them offers a different justification
+  (2) There seem to be no / since only rarely does it happen that a museum refuses / has already exhibited before it / the same considerations are heard again and again
+  (3) There is no doubt that there are / since more than once a museum chooses / refused to exhibit / they all raise the same considerations
+  (4) Only rarely are there / and therefore it is not rare for a museum to choose / refused to exhibit / they offer varied justifications
+
+=== vb-sc_tr_0005 [source: Spring 2026 §2 Q14] answer=3
+STEM: If the ____ that the axe was hanging over you ____ you to work harder at your job, all the more so ____ that your dismissal was on the table would not have brought you to work ____ .
+  (1) unfounded rumour / brought / an explicit notice from your employer / harder
+  (2) unfounded rumour / did not bring / an explicit notice from your employer / harder
+  (3) explicit warning you received from your employer / did not bring / an unfounded rumour / harder
+  (4) explicit warning you received from your employer / brought / a rumour / less
+
+=== vb-sc_tr_0006 [source: Spring 2026 §2 Q15] answer=4
+STEM: The defrauding of customers at the supermarket chain was exposed by a journalist who posed as an employee of the chain. Some criticised the act of impersonation, ____ : in my view, ____ the exposure of the fraud is of great public importance, the claim that in this case the end justified the means ____ , since the journalist ____ had she not concealed her identity.
+  (1) but I disagree with them / even though / is justified / could not have exposed the information
+  (2) and I agree with them / although / is not justified / could not have exposed the information
+  (3) but I disagree with them / since / is justified / could have exposed the information even
+  (4) and I agree with them / even though / is not justified / could have exposed the information even
+
+=== vb-sc_tr_0007 [source: Winter 2025 §1 Q7] answer=1
+STEM: ____ the political commentator's forecasts about the results of the previous election ____ , the party leaders treat his forecasts about the results of the coming election ____ .
+  (1) even though / were fully borne out / with contempt
+  (2) owing to the fact that / proved entirely wrong / seriously
+  (3) despite the fact that / were fully borne out / with the utmost gravity
+  (4) although / proved entirely wrong / dismissively
+
+=== vb-sc_tr_0008 [source: Winter 2025 §1 Q8] answer=3
+STEM: The great writer Yoshizu declared more than once that ____ create a good work ____ he has directly experienced the materials of his art. This artistic credo ____ why he ____ about the experience of motherhood, which he himself never underwent.
+  (1) a creator cannot / unless / therefore does not help us understand / refused to write
+  (2) a creator can / only if he has not / may therefore explain / refrained from writing
+  (3) a creator cannot / unless / may therefore explain / refrained from writing
+  (4) a creator can / only if he has not / therefore does not help us understand / did not refrain from writing
+
+=== vb-sc_tr_0009 [source: Winter 2025 §1 Q9] answer=1
+STEM: In an experiment, participants were asked to reduce the amount of sugar in the food they consumed over five months. They were then asked to rate the sweetness of foods served to them, and it was found that they rated them as sweeter than did people whose dietary sugar had not been reduced. The researchers therefore hypothesised that the experiment had brought about a change in the participants' sense of taste, and that now ____ it was found that in the weeks after the experiment ended the participants tended to consume food sweeter than the food they had consumed before it.
+  (1) food containing a smaller amount of sugar was enough to satisfy their need for sweetness. However, to their surprise,
+  (2) they needed food containing a larger amount of sugar in order to satisfy their need for sweetness. And indeed,
+  (3) food containing a smaller amount of sugar was enough to satisfy their need for sweetness. And indeed,
+  (4) they needed food containing a larger amount of sugar in order to satisfy their need for sweetness. However, to their surprise,
+
+=== vb-sc_tr_0010 [source: Winter 2025 §2 Q14] answer=2
+STEM: Some of my fellow psychologists ____ with my ____ answer to the question whether Kohut's approach to therapy differs from the traditional approaches that preceded it. They ____ that this approach ____ substantively from the traditional approaches.
+  (1) agree / affirmative / do not believe / differs
+  (2) do not agree / negative / hold the view / differs
+  (3) agree / negative / do not accept the claim / does not differ
+  (4) do not agree / affirmative / do not accept the claim / does not differ
+
+=== vb-sc_tr_0011 [source: Winter 2025 §2 Q15] answer=2
+STEM: Is it desirable to encourage mathematics students to use computer software to solve mathematical problems? Does the ease of solving problems by computer impair the development of mathematical thinking? ____ . But since, to the best of our knowledge, this is not the case, then even if the technology continues to advance and becomes more widespread still, the ability of future mathematicians will not be impaired, and may even improve as a result.
+  (1) If it were possible to develop creative mathematical thinking in students without training their minds in computation, there would be no harm at all in the use of computers
+  (2) If the use of a computer could replace the need for creative thinking in the solving of mathematical problems, that would impair the students' training
+  (3) There would be a point in encouraging the use of computers if the length of time required to solve problems were the principal obstacle to the development of students' mathematical thinking
+  (4) There is ostensibly logic in the claim that students' mathematical thinking will not continue to develop without the use of aids that remove the computational limits of the human brain
+
+=== vb-sc_tr_0012 [source: Winter 2025 §2 Q16] answer=3
+STEM: An article stated: “What is a ‘feminist foreign policy’? It is a foreign policy that redefines several of the basic assumptions and political priorities: in place of the usual focus on advancing narrow national interests, it strives to advance a vision of peace, human rights and universal mutual responsibility — foundations whose essence is the safeguarding of the welfare and the rights of all human beings, including, of course, women. ____ : it inscribes on its banner a determined and vigorous war on grave worldwide phenomena such as human trafficking and the flourishing of drug cartels.”
+  (1) However, its positions on concrete issues are often not consistent with these principles
+  (2) Nevertheless, many aspects of this policy attest that it is not only the good of the female sex that it has in view
+  (3) That said, this is not a conciliatory policy that shrinks from confrontation and always seeks compromise and gentle means. Quite the reverse
+  (4) However, in practice there are no substantive differences between it and an ‘ordinary’ foreign policy, neither in the principles that guide it nor in the actions that derive from them
+
+=== vb-sc_tr_0013 [source: Autumn 2025 §1 Q10] answer=1
+STEM: Sharon believes that business discussions that open with ____ produce decisions ____ . She therefore hopes that she is ____ in her assessment that her business partner ____ her positions on the development plans for the coming year, which are to be discussed shortly.
+  (1) disagreement / that are sound and well formed / mistaken / agrees with
+  (2) disagreement / that satisfy no one / right / disagrees with
+  (3) unanimity / that are flawed and ill formed / mistaken / disagrees with
+  (4) unanimity / that fail to take all the relevant factors into account / right / agrees with
+
+=== vb-sc_tr_0014 [source: Autumn 2025 §1 Q11] answer=2
+STEM: The Society for the Protection of Nature's ____ report on the state of the country's birds ____ . “____,” say ____ .
+  (1) grave / left the Ministry of Environmental Protection indifferent / Only if we succeed in raising resources promptly / officials in the minister's office, “will a catastrophe be averted and many species of birds saved from extinction”
+  (2) encouraging / is not enough to gladden nature lovers / Further resources are required / the latter, “and if not, many species of birds will become extinct”
+  (3) encouraging / brings a smile to the faces of nature lovers / This is certainly good news / the latter, “we have managed to wipe out many species of birds”
+  (4) grave / did not leave the authorities indifferent / There is hope / its authors, “that we will not manage to save many species of birds”
+
+=== vb-sc_tr_0015 [source: Autumn 2025 §1 Q12] answer=2
+STEM: ____ that Nadav generally avoids eating cake, ____ when he ____ the apple cake I offered him.
+  (1) Had I known / I would have been offended / refused to taste
+  (2) Had I not known / I would not have been surprised / helped himself to a thick slice
+  (3) Had I known / I would not have been surprised / agreed to taste
+  (4) Had I not known / I would have been offended / helped himself to a thick slice
+
+=== vb-sc_tr_0016 [source: Autumn 2025 §2 Q14] answer=1
+STEM: Dr. Avi Elitzur: “Psychoanalysis teaches that understanding the adult is conditional upon understanding the child he once was, and it may be argued that the historical and pre-historical past of a people or a society is parallel to childhood in the life of the individual, since in both cases the past reveals emotions and drives that raged before education and social conventions had been instilled. Accordingly, ____ .”
+  (1) understanding a people's past is a condition for understanding its present
+  (2) the drives at work among societies and peoples are in all likelihood the same drives at work in the individual
+  (3) societies and peoples, like human beings, must learn social conventions through education
+  (4) understanding the adult requires an examination of the social conventions instilled in him in his childhood
+
+=== vb-sc_tr_0017 [source: Autumn 2025 §2 Q15] answer=2
+STEM: In a study conducted on a dolphin population it was found that individuals who were relatively isolated from the members of their pod were at increased risk of death, chiefly in years in which there was a shortage of salmon, which is the dolphins' principal food: in years in which salmon were scarce, the survival chances of a dolphin with close ties to the members of its pod were ____ those of a dolphin whose ties to the pod were loose, and in years in which there was no shortage its chances were ____ .
+  (1) twice as high as / three times as high
+  (2) three times as high as / twice as high
+  (3) half as high as / a third as high
+  (4) a third as high as / half as high
+
+=== vb-sc_tr_0018 [source: Autumn 2025 §2 Q16] answer=1
+STEM: Attorney Shvika consulted his colleague about a defamation suit ____ his client, and she told him that the claims made in the suit ____ , and moreover, that more than one piece of evidence could be brought to support them. “That said,” she added, “there is still room for hope: in my experience, similar suits ____ , so that it is still ____ that the suit will be rejected.”
+  (1) filed against / are convincing on their face / are accepted in only a few cases / not impossible
+  (2) brought by / are well founded / are rejected in very few cases / almost inconceivable
+  (3) brought by / are not anchored in law / are accepted in not a few cases / not certain
+  (4) filed against / are not baseless / are accepted in many cases / not reasonable
+
+=== vb-sc_tr_0025 [source: Winter 2024 §1 Q11] answer=2
+STEM: Unlike Eran, Michal believes that ____ prevent the paving of the new access road to their town. In her view, Eran clings to his position ____ aware of the fact that this road ____ .
+  (1) it is necessary to / even though he is / may ease matters for travellers leaving the town and entering it
+  (2) there is a need to / even though he is / is liable to cause irreparable harm to the population of rare animals in the area
+  (3) there is no reason to / even though he is not / may ease matters for travellers leaving the town and entering it
+  (4) there is no need to / since he is not / is liable to cause irreparable harm to the population of rare animals in the area
+
+=== vb-sc_tr_0026 [source: Winter 2024 §1 Q12] answer=3
+STEM: Professor Cooper used to argue that theories which have not been accepted by the academic community ____ sink into oblivion. ____ Cooper's student, ____ on this issue, chose ____ his political doctrine, which had been utterly rejected by his fellow researchers.
+  (1) should rightly be allowed to / It is therefore easy to understand why / who had adopted his position / to devote a large part of her book to presenting
+  (2) should not be allowed to / It is therefore easy to understand why / although she rejected his position / not to mention
+  (3) should not be allowed to / It is surprising that / who disagreed with him / nevertheless to devote a large part of her book to presenting
+  (4) should rightly be allowed to / It is therefore astonishing that / who shared his position / not to mention in her book
+
+=== vb-sc_tr_0027 [source: Winter 2024 §1 Q13] answer=2
+STEM: A newspaper item stated: “Anyone who ____ a decline in the proportion of young people who devote their time to reading ____ : over the past year there was recorded ____ in the number of young people holding subscriptions at the municipal libraries.” Had the writer of the item known that in this year, unlike in previous years, registration at the municipal libraries ____ , he would certainly have been more careful in what he wrote, since when ____ that everyone who registers at a library does indeed trouble to borrow books, let alone to read them.
+  (1) feared / feared with good reason / a further decline / did not involve a high payment / the price of a subscription is so high, it is reasonable to suppose
+  (2) was troubled by / can relax / a sharp rise, of all things / did not involve payment / a subscription is given entirely free of charge, there is no guarantee
+  (3) thought that the decline had been halted / appears to have been mistaken / a sharp decline / was not left to the young people's own choice / registration at a library is made by choice, it is reasonable to suppose
+  (4) hoped that the trend of decline would cease / can rejoice / a moderate rise / was not an obligation imposed on all secondary-school pupils / registration at a library is made by choice, there is ground to assume
+
+=== vb-sc_tr_0028 [source: Winter 2024 §2 Q9] answer=3
+STEM: Prof. Serussi: “In the most basic traits of a person's personality only slight changes can occur in the course of his life, and only in less central traits can far-reaching changes take place.”
+Prof. Levy: “I disagree with you. ____ .”
+  (1) Slight changes can take place in the non-basic traits of the personality as well
+  (2) In the non-basic traits of the personality far-reaching changes can take place
+  (3) Far-reaching changes can take place in the most basic traits of a person's personality as well
+  (4) In the course of every person's life both slight changes and far-reaching changes take place in his personality
+
+=== vb-sc_tr_0029 [source: Winter 2024 §2 Q10] answer=4
+STEM: Sharon claims that ____ flu, she ____ the final examination successfully. Her brother ____ what she says, and as proof he cites the fact that Sharon failed on the three previous occasions on which she sat the final examination, ____ .
+  (1) had she not fallen ill with / could have passed / agrees with / even though she was healthy then
+  (2) had she not recovered from / would not have passed / disagrees with / since she was ill then
+  (3) even had she not recovered from / would have passed / agrees with / since she was ill then
+  (4) even had she not fallen ill with / would not have passed / agrees with / even though she was healthy then
+
+=== vb-sc_tr_0030 [source: Winter 2024 §2 Q11] answer=3
+STEM: The article is written at a level that ____ the level required of articles published in professional scientific journals. ____ surprised to discover that it is ____ the work of a student just starting out in the field, ____ an experienced scientist.
+  (1) does not approach / I was therefore / nothing but the product of / from whom one cannot expect writing like that of
+  (2) is in no way inferior to / I was therefore not / nothing but the product of / and not of
+  (3) is not inferior to / I was therefore / nothing but the fruit of / and not of
+  (4) does not approach / I was therefore not / not the fruit of / but rather of
+
+=== vb-sc_tr_0031 [source: Autumn 2024 §1 Q13] answer=4
+STEM: Molking washing machines ____ Sherwood washing machines, ____ surprising that they sell ____ than Sherwood's machines, since the design of the Sherwood machines is more attractive. ____ .
+  (1) are admittedly of lower quality than / but it is / more / For this reason Molking is now concentrating on improving the design of its washing machines
+  (2) are admittedly of higher quality than / but it is nevertheless / more / After all, it is well known that buyers attach far more importance to the quality of washing machines than to their design
+  (3) are not as high in quality as / and it is nevertheless / less / After all, it is well known that buyers attach far more importance to the quality of washing machines than to their design
+  (4) are in no way inferior in quality to / and even so it is not / less / For this reason Molking is now concentrating on improving the design of its washing machines
+
+=== vb-sc_tr_0032 [source: Autumn 2024 §1 Q14] answer=4
+STEM: In his review of Haim Ben-Harush's new book the literary critic wrote: “Bored protagonists seeking some thrill to break the routine of their existence ____ a recipe for a bad book, ____ the writer Margalit Cohen, ____ , Ben-Harush ____ to portray the characters in a vivid and thought-provoking manner.”
+  (1) are / and indeed, like / who shaped such characters in a hackneyed and thin manner / succeeds admirably
+  (2) are not always / and indeed, like / who depicted such characters superbly / does not succeed
+  (3) are / but unlike / who shaped such characters in a hackneyed and thin manner / does not succeed
+  (4) are not always / but unlike / who depicted such characters superbly / does not succeed
+
+=== vb-sc_tr_0033 [source: Autumn 2024 §1 Q15] answer=2
+STEM: ____ tried to persuade you to go back on your decision ____ I thought it ____ . In any case, ____ your mind, Amir will certainly try to make you do so.
+  (1) Perhaps I would have / if / a good decision, contrary to what Amir thinks / I know that if I do not try to make you change
+  (2) I would not have / even if / an even worse decision than Amir thinks it / you should bear in mind that although I have no interest in your changing
+  (3) Rest assured that I would have / even had I not / a decision liable to harm me too, and not only Amir / since it is not in my power to persuade you to hold to
+  (4) I would never have / even if / a decision devoid of logic, as Amir says it is / you must realise that since I have already failed in my attempt to persuade you to change
+
+=== vb-sc_tr_0034 [source: Autumn 2024 §2 Q12] answer=4
+STEM: Despite the revolution led by the Minister of Communications, which allows customers to switch internet providers whenever they wish, the number of customers leaving their internet provider ____ customers who ____ to a competing company ____ switching provider ____ the trouble involved in switching.
+  (1) has not risen appreciably. This is a surprise, particularly in view of the fact that many of the / switched / saved money by / , though not to a degree that justifies
+  (2) has risen greatly. Yet there are those who are surprised at this, since even / switched / testified that the financial saving arising from / justifies
+  (3) has not risen appreciably. This fact is not surprising, because / switched / explained that the money they saved by / justifies
+  (4) has not risen appreciably. This is not to be wondered at, because / refrained from switching / explained that the financial saving expected from / does not justify
+
+=== vb-sc_tr_0035 [source: Autumn 2024 §2 Q13] answer=2
+STEM: The economist Harriet Franzen ____ the claim of the organisations for the advancement of the status of women that the first step in the war on poverty should be encouraging women to go out to work: “____ , in many countries the authorities ____ war on poverty ____ such encouragement, ____ improving education among disadvantaged populations.”
+  (1) does not dispute / Unfortunately / have still not internalised the fact that although the / requires / but even before that poverty must be fought through
+  (2) disputes / Admittedly, happily / have already internalised that the / will not succeed without / but nevertheless there are in my view more important and more urgent steps in this war, for example
+  (3) endorses / To my sorrow / today recognise the fact that the / calls for / even before allocating resources to
+  (4) does not endorse / Despite the immense efforts of these organisations / already recognise the fact that the / will not succeed without / and this step is even more important than
+
+=== vb-sc_tr_0036 [source: Autumn 2024 §2 Q14] answer=2
+STEM: A present-day English speaker does not understand the English that was spoken a thousand years ago. From this one might have inferred that at some point in time serious breakdowns in communication were bound to occur among speakers of this language. After all, ____ . However, great historical changes are very often a sequence of small changes that go unnoticed.
+  (1) the legal system, for example, has changed little over the course of history
+  (2) if some drivers were suddenly to drive according to different traffic laws, the results would be disastrous
+  (3) water wears away rock slowly, but in the end the rock breaks
+  (4) many of the conflicts in history broke out against a background of failure to understand the other
+
+=== vb-sc_tr_0055 [source: Winter 2022 §1 Q7] answer=4
+STEM: The pace of developments in genetic engineering is ____ , ____ what could not be carried out a few years ago can today ____ .
+  (1) slow / however / serve as a difficult challenge for the most experienced of scientists
+  (2) truly dizzying / with the result that / be regarded as a complete mystery
+  (3) too slow / and therefore / be performed as a matter of routine
+  (4) so rapid / that / be performed by a student just starting out
+
+=== vb-sc_tr_0056 [source: Winter 2022 §1 Q8] answer=3
+STEM: The enjoyment of those at last night's party ____ complete. Uri, for example, who ____ the rhythmic music that was played, ____ the refreshments, which consisted entirely of cheeses, since he ____ dairy products.
+  (1) was not / suffered from / was able to console himself with / is allergic to
+  (2) was / suffered from / was able to console himself with / is a devoted lover of
+  (3) was not / was thrilled by / could not help being disappointed by / is allergic to
+  (4) was not / was thrilled by / was able to console himself with / is a devoted lover of
+
+=== vb-sc_tr_0057 [source: Winter 2022 §1 Q9] answer=1
+STEM: ____ Slutsky, who maintains that in every literary work there are traces that attest to the author's personality, Bromberg ____ the author and the fictional figure of the narrator in the literary work, because in his view the figure of the narrator ____ of its own. Nevertheless, even Bromberg sometimes uses expressions such as “____ expresses her pain in the work.”
+  (1) Unlike / argues that a separation must be made between / has a life / the authoress
+  (2) Like / stresses the resemblance between / has a life / the figure of the narrator
+  (3) Unlike / stresses the resemblance between / has no existence / the authoress
+  (4) Like / prefers to separate / has no existence / the authoress
+
+=== vb-sc_tr_0058 [source: Winter 2022 §2 Q12] answer=3
+STEM: I wanted to know whether it was worth my while to see the film “Agon”, and from Hamutal's words — “It is not among the ____ Hungarian films made in the last decade” — I understood that the answer to my question was ____ , since ____ , to the point that ____ .
+  (1) worst / negative / in the last decade the quality of Hungarian films has declined so far / even the least bad of them is apparently not particularly good
+  (2) most successful / negative / Hungarian cinema has enjoyed so impressive a flowering in the last decade / even a mediocre Hungarian film is worth seeing
+  (3) worst / positive / Hamutal so detests Hungarian cinema / such an answer from her means that the film may well appeal to me
+  (4) most successful / positive / Hamutal so admires Hungarian cinema / if even she has reservations about the film, that testifies to its quality
+
+=== vb-sc_tr_0059 [source: Winter 2022 §2 Q13] answer=4
+STEM: This ____ , without a shred of ____ , is astonishingly ____ of ____ .
+  (1) idea / logic / the weak point / the theory
+  (2) punishment / justice / a common outcome / a miscarriage of justice
+  (3) composition / originality / the work / a conservative writer
+  (4) person / ambition / a direct product / achievement-oriented education
+
+=== vb-sc_tr_0060 [source: Winter 2022 §2 Q14] answer=4
+STEM: Although ____ the experts at the national space agency were of the view that the voyage of the space shuttle “Klinsky” ____ , the President decided not to ____ the funding of the project, on the grounds that ____ .
+  (1) the lion's share of / had ended in failure / suspend for the time being the continuation of / until he has also heard the minority view he will not go on supporting the project
+  (2) only a negligible minority among / had ended in failure / halt / he has no doubt as to the error of those few experts
+  (3) only a negligible minority among / had been crowned with success / delay for even a moment / he attaches little weight to the opinion of those few experts
+  (4) the majority of / had been crowned with success / continue / the few voices which held that the voyage had failed convinced him more
+
+=== vb-sc_tr_0061 [source: Autumn 2022 §1 Q12] answer=2
+STEM: Had the rival company offered me work ____ challenging than my present job, at a salary ____ than my present one, I ____ have accepted their offer, because challenges at work are ____ important to me than money.
+  (1) less / higher / would / more
+  (2) more / lower / would not / less
+  (3) less / higher / would not / less
+  (4) more / lower / would not / more
+
+=== vb-sc_tr_0062 [source: Autumn 2022 §1 Q13] answer=4
+STEM: ____ that Shula's remarks in her weekly radio slot are usually ____ contradictions, ____ when she claimed that ____ , and immediately afterwards recommended ____ .
+  (1) Since / free of / it was not unusual / drinking coffee is dangerous to health / that all her listeners drink at least five cups of coffee a day
+  (2) Had I not known / riddled with / I would have been surprised / sunlight is harmful to ornamental fish / that aquarium owners keep the tank in some dark place in the house
+  (3) Even though / not free of / I thought she had gone too far / eating green vegetables improves heart function / that all her listeners eat plenty of cucumbers
+  (4) Had I not known / free of / I would not have been so disappointed / it is inadvisable to teach children a foreign language before the age of six / a French class intended for children aged three and four whose mother tongue is Hebrew
+
+=== vb-sc_tr_0063 [source: Autumn 2022 §1 Q14] answer=4
+STEM: In Jamieson's eyes the practice of criticism is a lowly business — incomparably lowlier than the practice of creation — ____ . We would then discover our own qualities more quickly, and at the very least we would do no harm, since penetrating and sharp criticism may wound others deeply, whereas a bad work of art has no power to injure.
+  (1) and even so, in his eyes there is no substitute for the critic's role. He argues that had the institution of criticism not existed, we would have found it hard to assess the level of other people's work
+  (2) although a measure of critical spirit is essential if the world of creation is to flourish. In his view, had we encouraged the expression of direct and blunt criticism, even when accompanied by a breach of the rules of politeness, the world would have been blemished by fewer bad works
+  (3) and precisely for that reason it is easy to understand his claim regarding the negative influence of amateur work. If only we could avoid such inferior creation in advance, we would be able to limit the damage done by amateurism
+  (4) and he holds that if we were to invest in original work of our own the resources we invest in writing criticism of other people's work, that would be a far better use of our resources
+
+=== vb-sc_tr_0064 [source: Autumn 2022 §2 Q7] answer=1
+STEM: The editor of the scientific journal ____ Dr. Oren for ____ Richardson's article. According to Oren, there is ____ Richardson's ideas, and it would therefore have been right ____ the article to appear in a journal that adheres to scientific standards.
+  (1) was showered with criticism by / not refraining from publishing / no scientific basis whatsoever to / to prevent
+  (2) was praised by / not shrinking from publishing / no room to doubt the scientific basis of / to prevent
+  (3) was sharply criticised by / deciding to publish / no scientific basis whatsoever in / to allow
+  (4) was warmly praised by / refusing to publish / no reason at all to question the scientific basis of / to allow
+
+=== vb-sc_tr_0065 [source: Autumn 2022 §2 Q8] answer=4
+STEM: While the prices of basic foodstuffs have not changed, the prices of sweets ____ greatly over the past year. Unlike in days gone by, when the prices of sweets were ____ , today many ____ afford to buy them.
+  (1) have fallen / within everyone's reach / can
+  (2) have fallen / particularly high / cannot
+  (3) have risen / relatively low / can
+  (4) have risen / within everyone's reach / cannot
+
+=== vb-sc_tr_0066 [source: Autumn 2022 §2 Q9] answer=2
+STEM: Even though Tamir usually ____ sentimentality, ____ aroused strong emotions in him, ____ , in his view, ____ to watch it.
+  (1) despises / he was glad to discover that this film / and even so / it is recommended
+  (2) tends towards / this film did not / and even so / that is no reason not
+  (3) recoils from / he was glad to discover that this film / and for that reason / it is not recommended
+  (4) tends towards / this film actually did / and therefore / it is highly recommended
+
+=== vb-sc_tr_0067 [source: Autumn 2018 §1 Q12] answer=2
+STEM: The clothing company Buehler launched last year a new collection of garments designed to be especially durable, ____ . Admittedly the garments contain ____ quantity of milirium fibres, fibres that ____ the fading of the fabric's colours, but it turns out that ____ to iron these garments after washing, and as is well known, ____ .
+  (1) but in retrospect it proved an utter failure / a very large / accelerate / one must take care / the less a garment is ironed, the better it is preserved
+  (2) but it proved a bitter disappointment / a very small / accelerate / one must take care / the more a garment is ironed, the more it wears out
+  (3) a collection that did indeed prove especially successful / a small / slow / one must take care / the more a garment is ironed, the more it wears out
+  (4) a collection that proved an enormous success / a relatively large / slow / there is no need at all / the less a garment is ironed, the better it is preserved
+
+=== vb-sc_tr_0068 [source: Autumn 2018 §1 Q13] answer=4
+STEM: In her ruling the judge wrote: “It is beyond dispute that ____ into the traffic ____ the law, the accident ____ have been avoided, and in this respect it makes no difference whether ____ or not, and I therefore rule that he ____ responsible for causing the accident.”
+  (1) even had the accused merged / contrary to / would not / someone other than him is at fault for the accident / is
+  (2) even had the accused not merged / in accordance with / would / the car he collided with was travelling at excessive speed / is
+  (3) had the accused merged / in accordance with / would / the stop sign had been placed in a sufficiently prominent position / is not
+  (4) even had the accused not merged / contrary to / would not / the accused drove lawfully / is not
+
+=== vb-sc_tr_0069 [source: Autumn 2018 §1 Q14] answer=4
+STEM: Every summer my friend Paul's weight ____ . I always supposed that the reason lay in the fact that in summer he ____ physical activity, which as is known helps to reduce weight. Recently, when I learned that in summer Paul ____ beer, which as is known causes weight gain, ____ in the correctness of my supposition.
+  (1) rises / does a great deal of / abstains from drinking / I began to doubt
+  (2) falls / does a great deal of / abstains from drinking / my confidence grew
+  (3) falls / does a great deal of / drinks a great deal of / I began to doubt
+  (4) rises / does little / abstains from drinking / my confidence grew
+
+=== vb-sc_tr_0070 [source: Autumn 2018 §2 Q7] answer=3
+STEM: My friend Arnon claims that often, when he complains of a physical problem to a ____ doctor, it seems to him that the pain he feels is ____ consideration among the doctor's considerations. In his view, ____ the Western outlook, Chinese medicine attaches great importance to the treatment of pain.
+  (1) Western / the last, if any, / similarly to
+  (2) Chinese / the last, if any, / similarly to
+  (3) Western / the last, if any, / unlike
+  (4) Western / an important and central / unlike
+
+=== vb-sc_tr_0071 [source: Autumn 2018 §2 Q8] answer=4
+STEM: ____ that in recent years the institution of the monarchy ____ , the polls show that ____ of the public ____ its abolition.
+  (1) In keeping with the general feeling / has suffered a decline in its standing / a large part / is not interested in
+  (2) As corroboration of the position / is not as popular as it once was / only a few per cent / desire
+  (3) Contrary to the widespread view / has been enjoying growing affection / a considerable part / does not want
+  (4) Even though / has been enjoying a renewed flourishing / a large segment / supports
+
+=== vb-sc_tr_0072 [source: Autumn 2018 §2 Q9] answer=2
+STEM: Albert's ____ ____ to his disadvantage when he put himself forward for the post, ____ the factory manager is known as someone who ____ to the experience of candidates when he comes to weigh their candidacy.
+  (1) rich experience / was / since / attaches little importance
+  (2) lack of experience / was not / and this even though / attaches great importance
+  (3) lack of experience / was / and this because / attaches no importance whatever
+  (4) lack of experience / was not / since / attaches great importance
+
+=== vb-sc_tr_0073 [source: Winter 2018 §1 Q10] answer=4
+STEM: Opponents of the law initiated by Barel claim that today, following the law's approval, the number of bodies required to approve a large-scale construction project ____ . Barel ____ that the process now required to carry out such a project is more complicated than it was, ____ the complexity of the process is a sign of a real improvement, and that ____ .
+  (1) has fallen / agrees / but argues that / the bureaucracy in the field has been greatly reduced
+  (2) has fallen / actually thinks / but adds at the same time that / the process of obtaining building permits is now too complicated
+  (3) has grown / does indeed admit / but, unlike his opponents, believes that / today the process is simpler than it used to be
+  (4) has grown greatly / does not deny / but argues that precisely / this law helps to prevent corruption
+
+=== vb-sc_tr_0074 [source: Winter 2018 §1 Q11] answer=2
+STEM: Although everyone expected that Mr Simchon from the second floor would ____ the view of Mrs Segev, chair of the house committee, ____ , the position he presented last night at the residents' meeting does not ____ her position: he argued ____ .
+  (1) accept / that the heavy heating costs make a cut in the gardening budget unavoidable / accord with / that there is no alternative to diverting part of the gardening budget to pay for the heating
+  (2) firmly oppose / that because of the recession the building's gardening budget should be cut / contradict / only that it must be ensured that nobody objects to the cut
+  (3) enthusiastically support / that despite the high cost the communal garden should continue to be tended / contradict / that harming the garden's appearance is harming the quality of life
+  (4) sharply oppose / that the cost of tending the communal garden should not be cut / contradict / that the garden should indeed continue to be tended, but on a lower budget
+
+=== vb-sc_tr_0075 [source: Winter 2018 §1 Q12] answer=2
+STEM: A student: “A fellow student on my course told me that if I write a summary paper instead of sitting the examination, I will be able to get a pass mark only if I miss no more than two classes. ____ .”
+  (1) I intend to write a summary paper and to miss two classes, and I therefore hope he is mistaken
+  (2) Since I have missed three classes and have decided not to sit the examination, I was glad to discover that he was mistaken
+  (3) I have already missed five classes and therefore decided to sit the examination, but I was sorry to discover that he was right
+  (4) For this reason I decided to write a summary paper, even though I do not intend to miss any class at all
+
+=== vb-sc_tr_0076 [source: Winter 2018 §2 Q11] answer=4
+STEM: The declaration made last week by the well-known actor Dave Miller, according to which he ____ the casting of the actress Lydia Jones in the leading female role, ____ , because several months earlier he had declared that he would take part in the film ____ , and it is well known that Miller is careful ____ in everything to do with the films he appears in.
+  (1) would pull out of the film “Memories” unless they cancelled / surprised many / only if Lydia Jones took part in it / to scatter contradictory declarations
+  (2) was making his participation in the film “Memories” conditional on / surprised nobody / on condition that the role went to any actress other than Lydia Jones / to stand by his word
+  (3) was making his participation in the film “Memories” conditional on cancelling / surprised nobody / only if Lydia Jones took part in it / not to scatter contradictory declarations
+  (4) would pull out of the film “Memories” because of / surprised many / even if Lydia Jones took part in it / to be consistent in his statements
+
+=== vb-sc_tr_0077 [source: Winter 2018 §2 Q12] answer=2
+STEM: Since Indonesia is of negligible political and economic importance from Israel's point of view, only a few Israeli researchers take an interest in it, ____ . Characteristic of these studies is a preoccupation with processes of democratisation and with national and religious minorities, subjects that concern the whole of East Asia.
+  (1) but it seems that despite their small number their studies do shed light on several subjects that have received no deep academic attention, because of all the countries of East Asia they concern Indonesia alone
+  (2) and their studies too examine Indonesia only as part of a preoccupation with more general subjects that are not specific to Indonesia in particular
+  (3) and even so their studies do not manage to cover all the core issues occupying Indonesian society at present
+  (4) and their studies too have no bearing on the great influence that Indonesia has, even if indirectly, on the economy and society of Israel
+
+=== vb-sc_tr_0078 [source: Winter 2018 §2 Q13] answer=4
+STEM: The Hebrew translation of Oberbay's new book, ____ the cumbersome formulations in the third chapter, ____ justice to the author's sweeping and elegant style. ____ , the Hebrew version ____ to clarify for its readers the central scientific ideas with which the book deals.
+  (1) apart from / does not do / and nevertheless / does not succeed
+  (2) and especially / does / and indeed / succeeds
+  (3) including / does not do / However / does not succeed
+  (4) apart from / does / However / does not succeed
+
+=== vb-sc_tr_0079 [source: Spring 2018 §1 Q13] answer=1
+STEM: Knowledge of English ____ is a necessary condition for applying for a ____ post in the organisation, let alone ____ .
+  (1) at a basic level / junior / for a managerial post in it
+  (2) at a basic level / junior / a knowledge of English at native-speaker level
+  (3) at native-speaker level / senior / for a junior post in it
+  (4) at a basic level / senior / a knowledge of English at native-speaker level
+
+=== vb-sc_tr_0080 [source: Spring 2018 §1 Q14] answer=4
+STEM: The minister's loyal adviser ____ in the face of the ____ reactions to the minister's remarks in a newspaper interview, and this because she believed that the reactions would have been utterly different had the minister not ____ the advice she gave him ahead of the interview.
+  (1) felt satisfaction and pride / positive / ignored
+  (2) felt no guilt / negative / heeded
+  (3) felt a sense of failure / positive / heeded
+  (4) felt frustration mixed with a trace of satisfaction / negative / ignored
+
+=== vb-sc_tr_0081 [source: Spring 2018 §1 Q15] answer=3
+STEM: ____ thought that a person may be presumed ____ he knows for certain that he really needs it, or ____ believes this to be so, ____ that most of the customers who frequent my shop are well aware that the products they buy are necessary to them.
+  (1) I never / not to buy a product unless / at least / and yet I would find it hard to say
+  (2) I innocently / to buy a product only if / at least not to / but recently it became clear to me
+  (3) I have always / not to buy a product unless / at the very least / and I have indeed found
+  (4) I have never in my life / to buy a product even if he does not / at the very least / until I noticed
+
+=== vb-sc_tr_0082 [source: Spring 2018 §2 Q7] answer=3
+STEM: Sometimes a person decides ____ in a demonstration whose messages ____ with his views, because he ____ the manner in which the positions are expressed, ____ the content of the ideas expressed in it.
+  (1) to take part / accord / objects to / as well as to
+  (2) to take part / do not accord / objects to / even if he supports
+  (3) to refrain from taking part / accord / objects to / even if he supports
+  (4) to refrain from taking part / do not accord / supports / as well as
+
+=== vb-sc_tr_0083 [source: Spring 2018 §2 Q8] answer=2
+STEM: If one examines the origin of the term “gentleman”, one finds that it denoted ____ . The word entered the English language in the heyday of the English aristocracy, an age in which the word “work” was almost an insult: a true gentleman need not work; he should know how to enjoy life and occupy himself with the management of his social affairs.
+  (1) a man whose good qualities serve him not only in his relations with women but also in the world of commerce and business — a gentleman is first and foremost an honest working man
+  (2) a man who is not necessarily polite or courteous — though these qualities usually do characterise him — but rather a man of means, a man with property enough to live a life of leisure
+  (3) a man deserving of reproach, a man regarded as too delicate and weak to do respectable work, and who therefore wastes his days chasing after women
+  (4) a sensitive, inward-looking man who keeps away from people — a man of letters who shrinks from all work and shuts himself away with his books
+
+=== vb-sc_tr_0084 [source: Spring 2018 §2 Q9] answer=4
+STEM: ____ the explanations in Gal's new book, “Problems in Contemporary Physics”, ____ to understand, the fate of the book ____ the fate of his previous book, which ____ .
+  (1) Had / not been so hard / would surely have been similar to / even physicists had difficulty understanding
+  (2) Had / not been so hard / could have been different from / even people with no knowledge of physics had no difficulty understanding
+  (3) Had / been harder / would surely have been similar to / even people with no knowledge of physics had no difficulty understanding
+  (4) Had / been easier / could have been different from / even physicists had difficulty understanding
+
+=== vb-sc_tr_0085 [source: Winter 2019 §1 Q13] answer=2
+STEM: After he told his close friend that he ____ the act, the friend advised him ____ , and explained: “Your silence ____ , and it would therefore be better if you ____ .”
+  (1) was being accused, though blameless, of committing / not to respond to the false accusation / will work against you / did not keep silent
+  (2) had taken part in committing / to confess his part in the affair / will work against you / did not keep silent
+  (3) was being accused of committing / to confess his part in the affair / will work against you / kept silent
+  (4) had taken part in committing / not to conceal his part in the affair / may prevent your conviction / kept silent
+
+=== vb-sc_tr_0086 [source: Winter 2019 §1 Q14] answer=4
+STEM: In his weekly column Dror did not ____ Nina Levin's playing, which in his words ____ Rafi Dotan's. ____ in the past Dror often praised Dotan's style, ____ agree with those who accuse Dror of inconsistency in his musical preferences.
+  (1) spare his rod from / is not as good as the playing of / Since / I
+  (2) cease to praise / falls below the level of the playing of / Even though / I do not
+  (3) spare his rod from / is no better than the uninspired playing of / Since / I do not
+  (4) cease to praise / is a refreshing novelty compared with the tedious playing of / Since / I
+
+=== vb-sc_tr_0087 [source: Winter 2019 §1 Q15] answer=2
+STEM: A decline in the number of vacancies in the economy and a fall in the number of workers resigning from their jobs on their own initiative are two phenomena regarded by economists as signs of a bleak economic situation. On this basis Dr. Hamo argues: “A sign attesting to the economy's ____ in recent months is the ____ in the number of workers resigning on their own initiative. ____ the vacancies in the economy ____ .”
+  (1) deterioration / fall / Moreover, / have multiplied of late
+  (2) recovery / rise / However, the number of / has for the time being remained as meagre as it was
+  (3) deterioration / rise / By contrast, the number of / has risen in these months
+  (4) recovery / rise / Moreover, / have become a rare commodity of late
+
+=== vb-sc_tr_0088 [source: Winter 2019 §2 Q8] answer=2
+STEM: Since Professor Elliott's research ____ the claim that drinking fizzy drinks during pregnancy ____ the chances of ____ birth, it is no wonder that the “Gazoz” company, which manufactures fizzy drinks, ____ the findings of the research in its latest advertising campaign.
+  (1) strengthens / raises / a long and exhausting / featured
+  (2) weakens / raises / an easy and quick / did not feature
+  (3) strengthens / lowers / an easy and quick / featured
+  (4) strengthens / lowers / a long and exhausting / did not feature
+
+=== vb-sc_tr_0089 [source: Winter 2019 §2 Q9] answer=1
+STEM: Most of the members of the project's implementation team ____ to the new conditions that had arisen, and this fact was reflected in the efficiency of their work. Thus it came about that all the development plans ____ , ____ .
+  (1) did not manage to get used / that were supposed to be implemented were shelved / and never came to be carried out
+  (2) had no difficulty adapting themselves / that were already on the verge of realisation were not shelved / and what is more, they were never implemented
+  (3) did not have the sense to adapt / that were about to be realised were shelved / and in the process won immediate implementation
+  (4) did not manage to adapt / that they were handling were not shelved / but instead enjoyed an unprecedented surge of development
+
+=== vb-sc_tr_0090 [source: Winter 2019 §2 Q10] answer=2
+STEM: At the opening of the committee meeting MK Dilman demanded that the clause proposed by MK Cohen ____ the bill. In response our commentator observed: “____.” This because ____ the committee members had announced ____ the meeting that they intended ____ the inclusion of this clause.
+  (1) be struck from / The dogs bark and the caravan moves on / only a few of / during / to support
+  (2) be included in / His demand is like forcing an open door / most of / before / to support
+  (3) be struck from / His words are nothing but a voice crying in the wilderness / many of / during / to oppose
+  (4) be included in / His demand sounds the death knell of the bill / most of / following / to support it despite
+
+=== vb-sc_tr_0091 [source: Autumn 2019 §1 Q7] answer=2
+STEM: Eating grass is no trivial matter: its nutritional value is low, and in order to derive enough energy from it animals have to eat very large quantities of it. ____ , and in this there is a danger: they are forced to graze for long periods in the open field, where they are exposed to the eyes of predators.
+  (1) In order to avoid this, many herbivores have also developed the ability to digest other foods of high nutritional value
+  (2) This obliges herbivores to devote a considerable part of their time to eating
+  (3) However, when grass is not plentiful, herbivores are able to make do with an extremely meagre diet
+  (4) In order to avoid prolonged grazing, some herbivores have learned to snatch as much grass as they can and flee to a hiding place
+
+=== vb-sc_tr_0092 [source: Autumn 2019 §1 Q8] answer=3
+STEM: Anyone who seeks to learn about the game “Brisley” from books will quickly realise that the opening move and the closing move ____ a systematic and exhaustive presentation, ____ the infinite variety of possible moves between the opening and the ending ____ such a presentation.
+  (1) do not lend themselves to / whereas / does not permit
+  (2) lend themselves to / whereas / permits
+  (3) lend themselves to / whereas / does not permit
+  (4) do not lend themselves to / and even / permits
+
+=== vb-sc_tr_0093 [source: Autumn 2019 §1 Q9] answer=4
+STEM: In the ____ in this region ____ , and several tourists who were unlucky enough to ____ there at the time ____ .
+  (1) traditional festivities held / many of the local residents took part this year / happen to be / found it enchanting
+  (2) earthquake / many of the local residents were injured / find themselves / were filled with contentment
+  (3) colourful carnival held / many of the local residents came out dancing / be strolling / joined them
+  (4) floods / the homes of many local residents were destroyed / find themselves / were hurt as well
+
+=== vb-sc_tr_0094 [source: Autumn 2019 §2 Q15] answer=1
+STEM: Centralised regimes often try to prevent their subjects from gaining access to information originating outside the country's borders. They fear that citizens will infer from it that, compared with the inhabitants of other countries, their own situation is not good, that they will grow resentful and will point an accusing finger at their rulers. Such, for example, was the conduct of the East German government during the period when Germany was divided into two separate states. Yet despite its efforts, television broadcasts from West Germany “leaked” into several areas of East Germany. ____ .
+  (1) Contrary to the government's fears, it turned out that the residents of the areas in which these broadcasts were received were more satisfied with their situation than the residents of the areas in which only local broadcasts were received
+  (2) Following this, government officials were not surprised to discover that among the residents of the areas in which only local television broadcasts were received an anti-regime outlook had developed
+  (3) However, the powerful outlook that developed in the areas in which the broadcasts from the West were received did not bring the East German government to recognise that there is no real danger in exposing its subjects to information from outside
+  (4) As the government had predicted, the residents of the areas in which the broadcasts from West Germany were received tended to see their government in a more favourable light than the residents of the areas in which those broadcasts were not received
+
+=== vb-sc_tr_0095 [source: Autumn 2019 §2 Q16] answer=4
+STEM: Yoav told me that even ____ in the competition, he ____ have been convinced that she is an excellent sprinter, let alone ____ . This is because the athletic abilities of the other competitors were ____ .
+  (1) had Naomi not come last / would not / had she come third / most impressive
+  (2) had Naomi come only third / would / now that she has come second / poor
+  (3) had Naomi not come first / would not / had she come only fourth / decidedly impressive
+  (4) had Naomi come first / would not / seeing that she did not even come third / extremely poor
+
+=== vb-sc_tr_0096 [source: Autumn 2019 §2 Q17] answer=1
+STEM: In the writings of the philosopher Norman Kemp Smith one may find criticism of the claim that ____ . Kemp Smith argued that had real objects not been apprehended in our consciousness, our perception of time would have vanished: “We cannot hold on to time in the absence of any appearance of sensation,” he wrote.
+  (1) it is possible to apprehend time in itself, that is, as an entity separate from the world around us
+  (2) the objects in our world are apprehended by our senses only so long as they exist in the dimension of time
+  (3) human beings' perception of time is closely bound up with their sensory perception
+  (4) time is an illusion that exists only as a sensation felt by human beings
+
+=== vb-sc_tr_0097 [source: Winter 2020 §1 Q7] answer=2
+STEM: The newspaper article about the new treatment method was ____ : the reporter ____ the method's advantages, ____ its disadvantages.
+  (1) tendentious / listed / but did not ignore
+  (2) too sympathetic / concentrated on / and played down the presentation of
+  (3) too critical / ignored / as well as
+  (4) unsympathetic / devoted a great deal of space to / and barely referred to
+
+=== vb-sc_tr_0098 [source: Winter 2020 §1 Q8] answer=3
+STEM: The “Azuz” College ____ those who register with it that the number of students in each study group at the college ____ at other colleges, which ____ every student. ____ that the level of studies there will be high compared with other colleges.
+  (1) refuses to give an undertaking to / will not be much higher than / casts doubt on its promise that the lecturers will give personal attention to / Worse still, the college demonstrates
+  (2) refrains from promising / will be higher than is usual / will make it easier for the college's teachers to give personal attention to / However, the college declares
+  (3) promises / will be lower than is usual / will make it possible to assign a personal mentor from among the college's lecturers to / However, the college does not promise
+  (4) undertakes, in a letter sent to all those who register with it, / will from now on be low compared with / will make it easier for the college's lecturers to broaden the horizons of / Accordingly, the college denies
+
+=== vb-sc_tr_0099 [source: Winter 2020 §1 Q9] answer=4
+STEM: Prof. Azrieli holds that the claim that physical activity helps to lower the level of fats in the blood ____ . He bases his position on the fact that ____ the studies that examined whether a high level of fats in the blood is a condition ____ physical activity found that the answer to this question was ____ .
+  (1) is correct / a considerable proportion of / that is irreversible and unaffected by / affirmative
+  (2) is not correct / only a few of / that is irreversible and unaffected by / affirmative
+  (3) is fundamentally mistaken / only a negligible proportion of / that is reversible and can be altered by means of / negative
+  (4) is not baseless / most of / that is reversible and can be altered by means of / affirmative
+
+=== vb-sc_tr_0100 [source: Winter 2020 §2 Q9] answer=2
+STEM: ____ in the price of avocado at Ariel's greengrocer's, ____ say that for most consumers shopping there is ____ worthwhile than shopping at David's shop. This is because the change in the price of avocado at Ariel's shop ____ the price level of the vegetables sold in the shop, and at David's shop the prices of most vegetables are still lower.
+  (1) Following the sharp fall / it is no longer possible to / less / does attest to
+  (2) Despite the sharp fall / it is possible to / less / does not attest to
+  (3) Only since the sharp rise / is it possible to / more / reflects
+  (4) Despite the sharp rise / it is still possible to / more / faithfully reflects
+
+=== vb-sc_tr_0101 [source: Winter 2020 §2 Q10] answer=3
+STEM: An experiment conducted in Europe, in which subjects were shown films in various languages accompanied by subtitles in their mother tongue, ____ the claim that ____ people ____ every word they see: the subjects were asked not to read the subtitles, and lo, ____ , even when the film they watched was ____ need them in order to understand what was happening in it.
+  (1) confirmed / there are no / capable of not reading / not one subject read them / in a foreign language, and they did
+  (2) refuted / there are no / who read / not one subject read all of them / in the subjects' mother tongue, and they did not
+  (3) strengthened / there are / incapable of not reading / some of them read all the subtitles / in their mother tongue, and they did not
+  (4) weakened / there are / who do not read / they all read them / in a foreign language, and they did
+
+=== vb-sc_tr_0102 [source: Winter 2020 §2 Q11] answer=3
+STEM: A new study found that the “Nitzan” method for screening candidates for a post ____ predict how successful they will be in that post. The study joins a long line of studies that also reached the conclusion that ____ scientific validity. Nevertheless, since this study ____ the requisite scientific criteria, ____ the conclusion arising from the other studies.
+  (1) is of no use in helping to / it has no / does not meet / it in fact refutes
+  (2) succeeds to some degree in helping to / it has no / is far broader than the studies conducted to date and meets / it strengthens
+  (3) is well able to / despite the dubious reputation of the “Nitzan” method, it does have / does not meet / it cannot be regarded as corroboration of
+  (4) is incapable of helping to / it has no / only barely meets / it can nevertheless serve to strengthen
+
+=== vb-sc_tr_0103 [source: Spring 2020 §1 Q9] answer=3
+STEM: The use of ____ lends the writing the characteristics ____ ; it is therefore surprising to find, alongside the ____ tone of the writing, also an abundance of ____ .
+  (1) many foreign words / of serious writing / scientific / quotations from studies conducted on the subject
+  (2) vowel points and large letters / of a children's book / aimed at the younger generation / words regarded as easy
+  (3) references drawn from various studies / of objective research / neutral / the author's personal pronouncements
+  (4) rich imagery / of dry, matter-of-fact research / poetic and literary / descriptions of nature
+
+=== vb-sc_tr_0104 [source: Spring 2020 §1 Q10] answer=4
+STEM: The drama school's policy was ____ expressed doubts about this way of life, because of the belief that such doubts attest to ____ . In time ____ , since the candidates who were admitted to the school in spite of their doubts ____ .
+  (1) to reject candidates who had not / a sincerity important to the actor's professional development / it emerged that the policy had justified itself / dropped out of it sooner or later
+  (2) to admit candidates who had / unsuitability for the profession / it emerged that the policy had justified itself / became excellent actors
+  (3) to admit only candidates who had not / a lack of commitment to the profession / the policy was changed / dropped out of it sooner or later
+  (4) to reject most of the candidates who had / a lack of commitment to the profession / the policy was changed / became excellent actors
+
+=== vb-sc_tr_0105 [source: Spring 2020 §1 Q11] answer=3
+STEM: Had we not known of Eliyahu that his way has always been ____ , we might have ____ Mordechai ____ , or at the very least ____ .
+  (1) to treat his children with favouritism / believed the claim of his son / that his father prefers his younger brother to him / that he does not grant him the displays of affection his brother receives
+  (2) to take the blame for things he had not done / believed, of all people, the words of / who denied that Eliyahu was the one who initiated the prank / that he took part in it
+  (3) to pull the wool over his acquaintances' eyes / doubted the accusations hurled at him by his neighbour / that the latter had deceived him / we might have thought that Eliyahu had acted inadvertently
+  (4) to extend a hand to anyone in need / disregarded the advice of / according to which in time of distress there is no point turning to Eliyahu, since he will certainly reject us out of hand / that he will send us away empty-handed
+
+=== vb-sc_tr_0106 [source: Spring 2020 §2 Q7] answer=2
+STEM: Dr. Karni argues that adherence to a fixed daily routine ____ the baby's proper development. ____ , she ____ an occasional departure from the routine.
+  (1) may harm / Therefore / does not support
+  (2) is beneficial to / Nevertheless / does not rule out
+  (3) is essential to / Accordingly / does not rule out
+  (4) does not assist / Therefore / does not support
+
+=== vb-sc_tr_0107 [source: Spring 2020 §2 Q8] answer=4
+STEM: ____ the investor in the company ____ to commit to more than a one-off financial investment, ____ the company ____ , unless ____ already in its first months of operation.
+  (1) Even though / is willing / there is no guarantee that / will not run into difficulties / it does not make a profit
+  (2) Because / refuses / it is clear to all that / is destined to flourish / it succeeds in making a profit
+  (3) Because / is ready / there is no reason why / should not run into difficulties / it does not make a profit
+  (4) Since / is not willing / it is likely that / will run into difficulties / it begins to make a profit
+
+=== vb-sc_tr_0108 [source: Spring 2020 §2 Q9] answer=2
+STEM: A well-known French philosopher argued that ____ human reason alone is sufficient to solve any problem, and ____ also be tested by scientific experiment in order to be solved. However, that same philosopher held, one must not go so far as to determine that ____ reason — ____ .
+  (1) it is doubtful whether / many of the problems must / because there is not enough / it is essential
+  (2) it goes without saying that / no problem need / since there is enough / scientific experiments are of no use whatever
+  (3) there is no doubt that / no problem need / although there is enough / it is not essential
+  (4) it is doubtful whether / every problem must / because there is not enough / scientific experiments are not essential
+
+=== vb-sc_tr_0109 [source: Autumn 2020 §1 Q12] answer=1
+STEM: Although it has been proved that playing music in school classrooms during individual study ____ concentration in most pupils, ____ this practice, ____ that pupils with concentration difficulties ____ .
+  (1) contributes to / this is not sufficient to justify / unless the fear is refuted / are in fact affected by it in the opposite way
+  (2) impairs / it is still too early to abandon / since there is evidence / are affected by it in the same way
+  (3) does not improve / it is right to adopt / if it turns out that there is no truth in the claim / actually benefit from it
+  (4) does not impair / it is doubtful whether one should encourage / even though / actually manage to concentrate better in complete silence
+
+=== vb-sc_tr_0110 [source: Autumn 2020 §1 Q13] answer=1
+STEM: ____ in the volume before us ____ the articles describe the social situation ____ , it seems that the central claims presented in it ____ lost their freshness.
+  (1) Although / most of / that prevailed half a century ago / have not
+  (2) Although / only a few of / of our own day / have already
+  (3) Since / most of / of the future / have already
+  (4) Since / only a few of / of the present day / have not yet
+
+=== vb-sc_tr_0111 [source: Autumn 2020 §1 Q14] answer=3
+STEM: Ezra holds that the claim that physical activity does not help to lower the level of fats in the blood ____ . Israel, who ____ Ezra, argues that he has proof that physical activity ____ the level of fats in the blood.
+  (1) is not fundamentally mistaken / agrees with / lowers, in many cases,
+  (2) is not baseless / disagrees with / may, in certain cases, even raise
+  (3) is fundamentally mistaken / disagrees with / does not affect
+  (4) is baseless / agrees with / does not reduce
+
+=== vb-sc_tr_0112 [source: Autumn 2020 §2 Q15] answer=1
+STEM: ____ that during my visit to the museum I would meet my greatest enemy, ____ have been ____ ahead of the visit.
+  (1) Had I not known / I would not / so worried
+  (2) I knew / and nevertheless I would / worried
+  (3) Had I known / it is likely that I would / even more untroubled
+  (4) Even though I did not know / I would not / worried
+
+=== vb-sc_tr_0113 [source: Autumn 2020 §2 Q16] answer=4
+STEM: Since the quantity of fish near the shores of String Island ____ , the fishermen chose to seek their catch ____ island. ____ , because fishing in the open sea ____ .
+  (1) increased / only there, and not in the rivers on the / They preferred to keep away from the rivers / is more dangerous than fishing in the rivers
+  (2) declined / far out at sea, away from the / This was hard on them / is no more dangerous than fishing near the shores
+  (3) increased / only in the rivers on the / The change was hard on them / is not as dangerous as fishing in the island's rivers
+  (4) declined / in the rivers on the / They did so with apprehension / is less dangerous than fishing in the stormy rivers
+
+=== vb-sc_tr_0114 [source: Autumn 2020 §2 Q17] answer=4
+STEM: The psychologist Steven Pinker argues that language is natural to man, since we acquire language and speak it without deliberate practice, whereas music is not natural to man, since only a few are capable of acquiring the ability to play a musical instrument, and even they require constant practice. However, Pinker's critics point out that in fact ____ , and Pinker's argument is therefore like the argument that language is not natural to man because writing requires deliberate practice.
+  (1) acquiring the ability to speak is no less complex than acquiring the ability to play a musical instrument
+  (2) the ability to speak is acquired after the ability to understand speech, and the process of acquiring it is more complex
+  (3) although few people actually play a musical instrument, many have the ability to do so
+  (4) the parallel in the field of music to speech is singing, not playing a musical instrument
+
+=== vb-sc_tr_0115 [source: Winter 2021 §1 Q7] answer=3
+STEM: Klemanovich was accused of refraining from publicly condemning the atrocities that took place in his day, ____ argue that ____ demonstrative proclamations ____ , and that many refugees ____ .
+  (1) but his defenders / he feared lest / would bring about a positive turn / found refuge with him
+  (2) and his critics / even had he issued / many people would have been saved / would have lost their lives
+  (3) but his defenders / he believed that / would do more harm than good / were saved thanks to his quiet intervention
+  (4) and his critics / his issuing of / prevented graver injuries / lost their lives because of them
+
+=== vb-sc_tr_0116 [source: Winter 2021 §1 Q8] answer=4
+STEM: It seems to me that Yuval's wish that Miki should not resign from his post as organiser of the orchestra's performances ____ Yuval's blind admiration for the orchestra's conductor, Tirtza. ____ Tirtza would have preferred that ____ fill this post, ____ that Miki fills it well.
+  (1) stems from / This is because / Miki / even though everyone agrees
+  (2) does not stem from / Admittedly / someone else / but the rest of the orchestra's members do not think
+  (3) is further proof of / This is because / someone else / all the more so since it cannot be denied
+  (4) is nothing but the result of / This is because / Miki / even though the rest of the orchestra's members do not think
+
+=== vb-sc_tr_0117 [source: Winter 2021 §1 Q9] answer=4
+STEM: ____ banning the publication of books dealing with the exploits of miracle-healers and sorcerers of various kinds, even though in my view ____ . ____ to every such book an appeal to the reading public to examine it with a critical eye, and not ____ .
+  (1) I do not propose / there is nothing wrong with them / Any possible danger will be averted if there is added / to be tempted into believing the preposterous tales
+  (2) I demand / the danger in them is minimal / This is because even if there is added / to believe the exploits described in it, all the dangers latent in them will disappear
+  (3) I do not propose / they may harm anyone who believes them to be true / I believe the danger will be averted if there is added / to treat with scepticism any of the cases described in it
+  (4) I do not propose / they may be dangerous / That said, in my view there should be added / to be tempted into imitating the methods of healing described in it
+
+=== vb-sc_tr_0118 [source: Winter 2021 §2 Q11] answer=3
+STEM: The pool of graduates of the scientific programmes ____ , and for this reason the knowledge-intensive companies ____ skilled manpower. Because of this, salaries ____ , and even ____ willing to settle for posts regarded as simple.
+  (1) is dwindling / have no difficulty obtaining / are being eroded / skilled professionals are
+  (2) is growing / are courted by / are soaring / beginning professionals are not
+  (3) is shrinking / compete for / are soaring / beginning professionals are not
+  (4) is expanding / are flooded with / are soaring / beginning professionals are
+
+=== vb-sc_tr_0119 [source: Winter 2021 §2 Q12] answer=2
+STEM: ____ that a district court ____ hearing a matter ____ , ____ a litigant who is dissatisfied with the ruling of that court to present his case in the district court.
+  (1) It follows from the right of appeal / should not refrain from / that has been heard in a lower instance / and should not permit
+  (2) The principle of non-intervention requires / refrain from / that has been heard in the rabbinical court / and should not encourage
+  (3) Justice requires / refrain from / in which a miscarriage of justice occurred in another court / and should urge
+  (4) It follows from the law / refrain from / that lies within the exclusive jurisdiction of a higher instance / and should encourage
+
+=== vb-sc_tr_0120 [source: Winter 2021 §2 Q13] answer=1
+STEM: “A person falls ill — ____ . If his illness departs and returns, he ____ ”: behold, Yossi had already forgotten the misery of sleepless nights and would sleep at night and be cheerful by day, and now he tosses from side to side, finds no rest for himself, and ____ the doctors ____ .
+  (1) he seeks help for himself / despairs / no longer goes to / so that they might try to improve his condition
+  (2) he sits idle / does everything in his power to be cured / frequents / as he did at first
+  (3) he tries to find a remedy / redoubles his efforts / no longer goes to / so that they might help him
+  (4) he is quick to despair / despairs sevenfold / frequents / despite his hope of finding deliverance with them
+
+=== vb-sc_tr_0121 [source: Spring 2021 §1 Q9] answer=4
+STEM: Bloom warned of the danger that the ____ regime, which was intended to be ____ , would in the end become ____ , ____ .
+  (1) democratic / merely a means / an end in itself / to everyone's benefit
+  (2) military / a deterrent factor / a conciliatory government / as had been planned from the outset
+  (3) socialist / applied throughout society / common property / contrary to what had been planned
+  (4) tyrannical / a temporary solution / a permanent solution / to the people's sorrow
+
+=== vb-sc_tr_0122 [source: Spring 2021 §1 Q10] answer=2
+STEM: The archaeologist Pnina Even does not ____ the assumption that the biblical text ____ historical events that really took place. ____ that the biblical author was faithful to the order in which they occurred. ____ in her view to use this text for the purpose of dating archaeological finds.
+  (1) dispute / recounts / What is more, she believes / Despite this, it is possible
+  (2) dispute / recounts / That said, she does not believe / It is therefore not possible
+  (3) accept / does not recount at all / What is more, she believes / It is therefore not possible
+  (4) accept / recounts / In her view, even if she is mistaken, it is not likely / It is therefore possible
+
+=== vb-sc_tr_0123 [source: Spring 2021 §1 Q11] answer=3
+STEM: ____ determined that the neighbour's testimony, from which it emerges that the accused is innocent, is ____ testimony, the accused would not have been found ____ .
+  (1) Had the judge not / false / not guilty
+  (2) Only if the judge had / reliable / not guilty
+  (3) Had the judge not / false / guilty
+  (4) Only if the judge had / false / guilty
+
+=== vb-sc_tr_0124 [source: Spring 2021 §2 Q13] answer=4
+STEM: The adaptation of the book “Shuki and I” into a film presented the screenwriters with a ____ challenge than they had first thought: ____ the large number of pages made their work difficult, ____ they discovered that omitting long sections from the book ____ .
+  (1) greater / not only did / they were also relieved when / contributes to the flow of the plot and to the shaping of the characters
+  (2) smaller / there is no doubt that / but / leaves them with a collection of events lacking any connecting thread
+  (3) greater / even though / they / damages the continuity of the plot and the credibility of the characters
+  (4) smaller / admittedly / but / does not affect the main plot line
+
+=== vb-sc_tr_0125 [source: Spring 2021 §2 Q14] answer=2
+STEM: According to Prof. Avidor ____ that mediators in international disputes use threats or military sanctions, because ____ using force in order to bring about peace is morally problematic, ____ over time, like the agreement between Gormitia and Dolmania, which ____ .
+  (1) it is not a common sight / in addition to the fact that / more than once an agreement achieved by such means does not prove itself / both sides are very careful not to violate
+  (2) it is a common sight / although / such coercion often does yield an agreement that proves itself / was signed two decades ago
+  (3) it is a common sight / in addition to the fact that there is no basis for the claim that / frequently such an agreement even proves itself / both sides violate again and again
+  (4) it is not a common sight / not only is there no basis for the claim that / but an agreement achieved by such means does not prove itself / both sides violate again and again
+
+=== vb-sc_tr_0126 [source: Spring 2021 §2 Q15] answer=4
+STEM: This medicine contains almin, a hormone which ____ components ____ the proper functioning of certain cells in the body. In human beings these cells respond to the medicine by secreting a substance which ____ almin's effect. Such a substance is not found in the body cells of animals, and the medicine therefore ____ .
+  (1) causes the formation of / important to / intensifies / is particularly recommended for them
+  (2) encourages the production of / that disrupt / strengthens / is permitted for use in human beings only
+  (3) blocks the production of / harmful to / dispels / is prohibited for use in animals
+  (4) may neutralise / essential to / moderates / may harm them
+
+=== vb-sc_tr_0127 [source: Autumn 2021 §1 Q10] answer=4
+STEM: In the view of the ____ of investigative journalism, there is ____ the fact that the press, which strives to expose the truth, takes it upon itself to investigate complicated legal affairs and to determine, with the help of ____ investigation, where the court erred in this or that ruling.
+  (1) supporters / cause to welcome / a superficial and tendentious
+  (2) critics / great benefit in / an unprofessional
+  (3) supporters / cause to wonder at / a thorough and searching
+  (4) critics / something objectionable in / a merely amateurish
+
+=== vb-sc_tr_0128 [source: Autumn 2021 §1 Q11] answer=3
+STEM: As a musicologist researching contemporary music I was present at performances of many of the composer Wolf's works. ____ that the audience always responded with cries of ____ , since these are not ____ at performances of new works of this kind. Music critics, unlike the audience, tend ____ Wolf's works at every opportunity.
+  (1) I was surprised / enthusiasm and prolonged applause / a common sight / to praise
+  (2) I was surprised / loud booing / a rare sight / to praise
+  (3) I was surprised / enthusiasm and applause / an ordinary sight / to disparage
+  (4) I was not surprised / adoration and clapping / a common sight / to deride
+
+=== vb-sc_tr_0129 [source: Autumn 2021 §1 Q12] answer=3
+STEM: When Rafi discovered that his watch was ____ and that until lunch there remained a ____ time than he had thought, he felt ____ , because he could not ____ .
+  (1) fast / shorter / joy / wait a long time more until the meal
+  (2) slow / shorter / relief / eat in the coming hours
+  (3) fast / longer / relief / have tasted so much as a morsel in the near future
+  (4) slow / longer / disappointment / hold out so long without eating
+
+=== vb-sc_tr_0130 [source: Autumn 2021 §2 Q12] answer=1
+STEM: Nature conservation is usually uppermost in the minds of the members of the planning committee. ____ they ____ the plan to build a residential tower in the “Hazayit” neighbourhood, a plan ____ the green spaces remaining in the city.
+  (1) Nevertheless / endorsed / expected to harm
+  (2) Therefore / did not endorse / not expected to harm
+  (3) Nevertheless / did not endorse / destined to damage
+  (4) Therefore / endorsed / bound to damage
+
+=== vb-sc_tr_0131 [source: Autumn 2021 §2 Q13] answer=1
+STEM: The forecast that Pandoria's population would ____ in the last decades of the century ____ : ____ in dissatisfaction with living conditions in Pandoria, ____ the birth rate in the country.
+  (1) shrink / was not realised / despite the rise / migration into the country increased in those years, and likewise so did
+  (2) grow / was realised / because of the decline / migration into the country increased in those years, and likewise there fell
+  (3) shrink / was realised / despite the rise / emigration from the country increased in those years, and likewise there fell
+  (4) grow / was not realised / admittedly because of the rise / emigration from the country increased in those years, but in those same years there rose sharply
+
+=== vb-sc_tr_0132 [source: Autumn 2021 §2 Q14] answer=4
+STEM: A fierce argument raged between Yosef and Amir: while ____ holds that human beings' motives are always material, ____ believes that lofty ideas are what guide their actions. “____ agree with Amir,” said Bella, “since ____ the spirit is ____ than matter.”
+  (1) Amir / Yosef / I / those who claim are mistaken that / weaker
+  (2) Yosef / Amir / I do not / it is clear that / stronger
+  (3) Amir / Yosef / I do not / it is inconceivable that / stronger
+  (4) Yosef / Amir / I / it is known that / stronger

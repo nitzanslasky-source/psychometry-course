@@ -1,0 +1,977 @@
+{
+ "items": [
+  {
+   "id": "vo-42-101",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "Winter 2022 §1 Q15",
+   "replaces": "",
+   "stem": "Three claims are given:\nA. Noga is taller than Liat.\nB. Liat has no teammate who is taller than she is.\nC. Noga and Liat are not teammates.\nWhich of the following is correct?",
+   "options": [
+    "Claim A necessarily follows from claims B and C together",
+    "Claim B necessarily follows from claims A and C together",
+    "Claim C necessarily follows from claims A and B together",
+    "None of the claims necessarily follows from the other two together"
+   ],
+   "answer": 3,
+   "explanation": "Noga is taller than Liat (A), and no teammate of Liat's is taller than her (B), so Noga cannot be her teammate (C). B and C leave Noga's height open, and A and C say nothing about Liat's other teammates.",
+   "feel": 5,
+   "pool": true
+  },
+  {
+   "id": "vo-42-102",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "April 2016 §1 Q10",
+   "replaces": "",
+   "stem": "Of the six instruments in a school's music room, three - the violin, the cello and the harp - are string instruments, and three - the flute, the trumpet and the drum - are not. Four students each took a different instrument from the room. What is certainly true of the instruments the students took?",
+   "options": [
+    "Exactly one of them is not a string instrument",
+    "At most one of them is a string instrument",
+    "Two of them are string instruments and two are not",
+    "At least one of them is a string instrument"
+   ],
+   "answer": 4,
+   "explanation": "Four different instruments cannot all come from the three that are not string instruments, so at least one is a string instrument. (1), (2) and (3) each fix a number that the data leave open.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-103",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "December 2015 §2 Q17",
+   "replaces": "",
+   "stem": "Keren: \"It seems to me that the lake's water level was low this spring.\"\nAvi: \"Why do you think so?\"\nKeren: \"Because the ferry began operating late this year.\"\nAvi: \"You are mistaken. ____.\"\nWhich of the following best completes Avi's words?",
+   "options": [
+    "If the water level is high in spring, the water warms early, and the ferry begins operating late only if the water warms late",
+    "If the water level is low in spring, the water warms early, and the ferry begins operating late only if the water warms late",
+    "If the ferry begins operating late, the water warms early, and a high water level causes the water to warm late",
+    "If the ferry begins operating early, the water warms early, and a low water level causes the water to warm late"
+   ],
+   "answer": 2,
+   "explanation": "In (2), a late ferry means the water warmed late, so it did not warm early, so the level was not low - the opposite of Keren's conclusion. (1) and (3) lead from a late ferry to a low level and support Keren; (4) never leads back from the ferry to the water level.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-104",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "September 2015 §2 Q17",
+   "replaces": "",
+   "stem": "At the Dekel community center, the following holds for every member of the youth group:\nA. No member who plays in the orchestra also sings in the choir.\nB. Every member who does not attend the pottery workshop sings in the choir.\nIf so, it is not possible that Yael, a member of the youth group, takes part in -",
+   "options": [
+    "the orchestra only",
+    "the pottery workshop and the orchestra",
+    "the choir and the pottery workshop",
+    "the pottery workshop only"
+   ],
+   "answer": 1,
+   "explanation": "Orchestra only means no pottery, so by B Yael sings in the choir, which A forbids for an orchestra player. Each of the other combinations satisfies both rules.",
+   "feel": 5,
+   "pool": true
+  },
+  {
+   "id": "vo-42-105",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "October 2014 §2 Q10",
+   "replaces": "",
+   "stem": "A relation between two people is called \"symmetric\" if, whenever it holds between the first and the second, it also holds between the second and the first. It is called \"reflexive\" if it holds between every person and themselves. For example, \"is heavier than\" is neither: if Dan is heavier than Ruth, Ruth is not heavier than Dan, and no one is heavier than themselves. Which of the following relations is both symmetric and reflexive?",
+   "options": [
+    "was born in the same month as",
+    "is a sibling of",
+    "is no heavier than",
+    "is the teacher of"
+   ],
+   "answer": 1,
+   "explanation": "Being born in the same month works in both directions and holds of everyone with themselves. \"Is a sibling of\" is symmetric only; \"is no heavier than\" is reflexive only; \"is the teacher of\" is neither.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-106",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "September 2013 §1 Q7",
+   "replaces": "",
+   "stem": "A hypothesis and two findings from two separate studies are presented below.\nHypothesis: the Arvan lizard lays its eggs only in sandy soil.\nFinding A: in the lizard's region, only the coast has sandy soil.\nFinding B: no Arvan lizard eggs have been found on the coast.\nWhich of the following claims is correct?",
+   "options": [
+    "Each of the findings on its own weakens the hypothesis",
+    "The combination of the two findings weakens the hypothesis",
+    "One of the findings supports the hypothesis, and the other weakens it",
+    "The combination of the two findings supports the hypothesis"
+   ],
+   "answer": 2,
+   "explanation": "If the lizard laid eggs only in sandy soil, then by A it would lay them only near the coast, and by B none are found there. Each finding alone is compatible with the hypothesis; only together do they conflict with it.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-107",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "Autumn 2021 §2 Q15",
+   "replaces": "",
+   "stem": "Rina invites only people who do not invite her. Gil invites only Rina. Gil is the only person Tal does not invite. Hence -",
+   "options": [
+    "Rina invites Gil and invites Tal",
+    "Rina invites Tal and does not invite Gil",
+    "Rina does not invite Gil and does not invite Tal",
+    "Rina invites Gil and does not invite Tal"
+   ],
+   "answer": 3,
+   "explanation": "Gil invites Rina, and Tal, who invites everyone except Gil, invites Rina too. Since Rina invites only people who do not invite her, she invites neither of them.",
+   "feel": 5,
+   "pool": true
+  },
+  {
+   "id": "vo-42-108",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "Spring 2019 §2 Q13",
+   "replaces": "",
+   "stem": "Dana is married to Ido, and she has exactly one brother-in-law. Which of the following is not possible?",
+   "options": [
+    "Dana has only brothers, and Ido has one brother, who is not married",
+    "Dana has two sisters, and one of them is married. Ido has only one sister",
+    "Dana has one sister. Ido is an only son",
+    "Dana has only sisters, and none of them is married. Ido is an only child"
+   ],
+   "answer": 4,
+   "explanation": "Dana's possible brothers-in-law are Ido's brothers and the husbands of her sisters (and, in a broader sense, the husbands of Ido's sisters). In (4) Ido has no siblings and none of Dana's sisters has a husband, so Dana has no brother-in-law at all. In each of the other cases exactly one can exist.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-109",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "Summer 2022 §1 Q8",
+   "replaces": "",
+   "stem": "There are three boxes on a shelf. Each box holds a ball and a cube. Each of the two objects can be either black or white. Given:\nA. Only one of the cubes is white.\nB. There are more black cubes than white balls.\nBased on this information, it necessarily follows that -",
+   "options": [
+    "at least one box holds two white objects",
+    "there are more white objects than black objects",
+    "at least one box holds two black objects",
+    "if a box holds a black object, it also holds a white object"
+   ],
+   "answer": 3,
+   "explanation": "Two cubes are black (A), so there is at most one white ball (B), and at least two balls are black. Two black cubes and two black balls in three boxes must share a box. (2) and (4) are in fact impossible, and (1) may or may not be true.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-110",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "Summer 2023 §2 Q7",
+   "replaces": "",
+   "stem": "If Dor is Eli's \"marvek,\" and Eli is Fadi's \"marvek,\" then Fadi cannot be Dor's \"marvek.\" What could be the meaning of \"marvek\"?",
+   "options": [
+    "coworker",
+    "grandson",
+    "neighbor",
+    "competitor"
+   ],
+   "answer": 2,
+   "explanation": "If Dor is Eli's grandson and Eli is Fadi's grandson, Fadi is Dor's great-grandfather and cannot be his grandson. Coworkers, neighbors and competitors can form a closed circle of three.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-111",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "Summer 2023 §2 Q11",
+   "replaces": "",
+   "stem": "Each of the paintings shown at the Tamar Gallery's spring exhibition was painted by a single artist. It is known that at this exhibition:\nA. All the paintings done in watercolor were by local artists.\nB. All the paintings by foreign artists were for sale.\nWhich of the following best completes the sentence below?\nTherefore, ____ that \"Harbor at Dawn,\" an oil painting by a local artist that was for sale, was shown at the exhibition, since this ____.",
+   "options": [
+    "it is possible / does not contradict either statement",
+    "it is not possible / contradicts statement A",
+    "it is not possible / contradicts statement B",
+    "it is not possible / contradicts the combination of the two statements"
+   ],
+   "answer": 1,
+   "explanation": "A speaks only about watercolors and B only about foreign artists; an oil painting by a local artist is neither, so neither statement rules it out. \"Local\" and \"for sale\" merely echo the statements' results.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-112",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "Summer 2024 §1 Q11",
+   "replaces": "",
+   "stem": "Given:\n- Old trees never bloom early.\n- Early-blooming trees are the only ones that are pruned in winter.\nWhich of the following statements about the fig tree in Noam's garden is necessarily true?",
+   "options": [
+    "If it is pruned in winter, then it is not old",
+    "If it is not pruned in winter, then it is old",
+    "If it does not bloom early, then it is old",
+    "If it is not old, then it is not pruned in winter"
+   ],
+   "answer": 1,
+   "explanation": "Pruned in winter → blooms early → not old. (2) and (3) start from what is missing and draw a result the rules never give; (4) flips the arrow wrongly - the valid flip is \"old → not pruned in winter.\"",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-113",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "Summer 2026 §2 Q8",
+   "replaces": "",
+   "stem": "A veteran mechanic claims that if a car's engine overheats - the red warning light comes on. Which of the following claims is equivalent to the mechanic's claim?",
+   "options": [
+    "If, and only if, a car's engine overheats - the red warning light comes on",
+    "A lit warning light always means an overheating engine, but an overheating engine does not necessarily turn the light on",
+    "An overheating engine always turns the warning light on, but a lit warning light does not necessarily mean an overheating engine",
+    "If, and only if, the red warning light comes on - the car's engine is overheating"
+   ],
+   "answer": 3,
+   "explanation": "The claim runs one way only: overheating → light. (3) says exactly that and denies the reverse. (1) and (4) add the reverse direction; (2) keeps only the reverse.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-114",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "Summer 2026 §1 Q13",
+   "replaces": "",
+   "stem": "Four musicians - Adi, Boaz, Carmela and Dov - auditioned for the city orchestra.\n- Adi and Dov have each played professionally for more than five years.\n- Boaz has played professionally for two years.\n- Carmela has never played professionally.\nThe orchestra's announcement stressed that \"candidates with less than five years of professional experience will not be accepted.\" If this rule is enforced, which of the following situations is not possible?",
+   "options": [
+    "Only Adi and Dov were accepted into the orchestra",
+    "Adi, Boaz and Carmela were not accepted into the orchestra",
+    "Dov was not accepted into the orchestra",
+    "Carmela and Adi were accepted into the orchestra"
+   ],
+   "answer": 4,
+   "explanation": "Carmela has no professional experience, so the rule excludes her. The rule only rules people out; it does not require anyone to be accepted, so (1), (2) and (3) are all possible.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-115",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "July 2010 §1 Q15",
+   "replaces": "",
+   "stem": "Hagit: \"After a year of working with Oren, I have reached two conclusions about him. First, Oren would never turn down an assignment that involves travel. Second, Oren might accept an assignment that involves no travel.\"\nRavid: \"Then one of your conclusions is wrong. I offered Oren an assignment that ____.\"\nWhich of the following would logically complete Ravid's words?",
+   "options": [
+    "involved travel, and he accepted it",
+    "involved no travel, and he turned it down",
+    "involved travel, and he turned it down",
+    "involved no travel, and he accepted it"
+   ],
+   "answer": 3,
+   "explanation": "Only a travel assignment that Oren refused contradicts the first conclusion. The second says only that he might accept; one refusal of a no-travel assignment does not refute it, and (1) and (4) fit both conclusions.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-116",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "July 2010 §1 Q16",
+   "replaces": "",
+   "stem": "A hotel hosted eight delegates: two from Spain, two from Chile, two from Kenya and two from Japan. The delegates stayed in four rooms. It is known that -\nA. Each room was shared by two delegates.\nB. No two delegates from the same country shared a room.\nC. One of the rooms was shared by a delegate from Japan and a delegate from Spain.\nTherefore, there must be -",
+   "options": [
+    "at least one room shared by a delegate from Kenya and a delegate from Chile",
+    "at least one room shared by a delegate from Chile and a delegate from Japan",
+    "more than one room shared by a delegate from Japan and a delegate from Spain",
+    "more than one room shared by a delegate from Kenya and a delegate from Chile"
+   ],
+   "answer": 1,
+   "explanation": "The other three rooms hold one Japanese, one Spanish, two Chilean and two Kenyan delegates. Only two of the four Chileans and Kenyans can be paired with the Japanese and the Spaniard, so at least one Chilean shares with a Kenyan. The other choices fail in some arrangement.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-117",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "July 2010 §1 Q19",
+   "replaces": "",
+   "stem": "A book club has a rule about recommending books. It follows from the rule that Ayelet may recommend books to Boris but not to Carmel, while Carmel may recommend books to Ayelet but not to Boris. Which of the following could this rule be?",
+   "options": [
+    "A member may recommend books to all the members who are younger than they are, and only to them",
+    "A member may recommend books to all the members whom they themselves brought into the club, and only to them",
+    "A member may recommend books to all the members who live on their street, and only to them",
+    "A member may recommend books to all the members who read French, and only to them"
+   ],
+   "answer": 2,
+   "explanation": "Ayelet brought in Boris and Carmel brought in Ayelet, while Carmel did not bring in Boris - no conflict. With age, Boris would be younger than Carmel, so Carmel could recommend to him (1); living on the same street works both ways (3); reading French would have to be both true and false of Boris (4).",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-118",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "July 2010 §2 Q15",
+   "replaces": "",
+   "stem": "- The heron greets only the frog.\n- The otter trusts all the animals, except for the animals that the heron greets.\n- The eagle envies all the animals, except for the animals that the otter trusts.\nTherefore, the eagle -",
+   "options": [
+    "envies all the animals",
+    "envies only the frog",
+    "does not envy any animal",
+    "envies all the animals, except for the heron"
+   ],
+   "answer": 2,
+   "explanation": "The otter trusts every animal except the frog, so the only animal it does not trust - and the only one the eagle envies - is the frog.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-119",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "July 2010 §2 Q20",
+   "replaces": "",
+   "stem": "- Every judge is either a musician or a critic, but not both.\n- All the guests are from abroad.\nThe addition of which of the following would lead to the conclusion that no guest is a judge?",
+   "options": [
+    "Anyone from abroad is a musician and a critic",
+    "Anyone who is not a judge is from abroad",
+    "Anyone who is a musician and a critic is from abroad",
+    "Anyone from abroad who is a critic is a musician"
+   ],
+   "answer": 1,
+   "explanation": "With (1), every guest is both a musician and a critic, which no judge can be. (3) reverses the needed arrow; (4) leaves room for a guest who is a musician only; (2) says nothing about the guests.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-120",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "July 2011 §1 Q16",
+   "replaces": "",
+   "stem": "Given:\n- Only on the third floor are there offices with a balcony.\n- Only offices with a balcony can have a coffee machine.\n- Some corner offices have a coffee machine.\nWhich of the following conclusions does not follow from the information given?",
+   "options": [
+    "Some corner offices have a balcony",
+    "No office without a balcony has a coffee machine",
+    "Only corner offices have a balcony",
+    "Some corner offices are on the third floor"
+   ],
+   "answer": 3,
+   "explanation": "The corner offices with a coffee machine must have a balcony and be on the third floor, which gives (1), (2) and (4). Nothing rules out non-corner offices with a balcony, so (3) does not follow.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-121",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "July 2011 §2 Q19",
+   "replaces": "",
+   "stem": "Taken together, the following four statements about the brothers Amit and Yoav contain a contradiction. Which statement could be omitted with the contradiction remaining?",
+   "options": [
+    "Yoav has read the novel \"Glass Orchards.\"",
+    "There is no novel that Yoav has read and Amit has not read.",
+    "Only one of the brothers has read the novel \"Glass Orchards.\"",
+    "Amit has read only one novel."
+   ],
+   "answer": 4,
+   "explanation": "(1) and (2) mean that Amit has also read \"Glass Orchards,\" which contradicts (3). The contradiction stands without (4); dropping any of the other three removes it.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-122",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "July 2012 §1 Q18",
+   "replaces": "",
+   "stem": "Statement A: Only in the museum's old wing are there halls without air conditioning.\nStatement B: None of the halls in the old wing are air-conditioned.\nClaim: If the map hall is air-conditioned, it is not in the old wing.\nThis claim follows -",
+   "options": [
+    "from statement A but not from statement B",
+    "only from the combination of the two statements",
+    "from statement B but not from statement A",
+    "from each of the statements separately"
+   ],
+   "answer": 3,
+   "explanation": "B says old wing → no air conditioning; flipped and negated, air conditioning → not in the old wing, which is the claim. A says no air conditioning → old wing, which says nothing about air-conditioned halls.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-123",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "July 2012 §2 Q19",
+   "replaces": "",
+   "stem": "Rachel claimed that all the hardcover books in her shop were in English, and that she had no used books that were not signed by their author. Eli browsed the shop and found one book that disproved both claims. Which of the following cannot be the book Eli found?",
+   "options": [
+    "a paperback",
+    "a used book",
+    "a hardcover",
+    "a book not signed by its author"
+   ],
+   "answer": 1,
+   "explanation": "To disprove the first claim the book must be a hardcover not in English; to disprove the second it must be used and unsigned. So it is a hardcover and cannot be a paperback.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-124",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "July 2014 §1 Q9",
+   "replaces": "",
+   "stem": "It is known that some runners in the club are faster than Ilan.\nBelow are two statements:\nA. Ilan is heavier than every runner who is faster than he is.\nB. Ilan is faster than every runner he is heavier than.\nWhich of the following is true of the above statements?",
+   "options": [
+    "The two statements mean the same thing",
+    "The two statements contradict each other",
+    "Statement B necessarily follows from statement A",
+    "Statement A necessarily follows from statement B"
+   ],
+   "answer": 2,
+   "explanation": "Take a runner who is faster than Ilan. By A, Ilan is heavier than that runner; then by B, Ilan is faster than them - impossible. Because such a runner exists, the statements cannot both be true.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-125",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "July 2014 §2 Q12",
+   "replaces": "",
+   "stem": "Shai, a farmer, runs a sprinkler and a water pump according to the following rules:\n- The sprinkler runs at night and is off during the day.\n- The pump can run only when Shai is in the field.\n- Shai is never in the field at night.\nWhich of the following situations is not possible?",
+   "options": [
+    "Shai is not in the field and the sprinkler is running",
+    "The pump and the sprinkler are both running",
+    "The pump is off and the sprinkler is running",
+    "The pump and the sprinkler are both off"
+   ],
+   "answer": 2,
+   "explanation": "If the pump runs, Shai is in the field, so it is daytime and the sprinkler is off. Each of the other situations fits some time of day.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-126",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "July 2015 §1 Q12",
+   "replaces": "",
+   "stem": "Uri claims that every restaurant in town that is not near the sea is either noisy or expensive, but not both. The existence of which of the following restaurants proves that Uri is mistaken?",
+   "options": [
+    "A restaurant near the sea that is quiet and cheap",
+    "A restaurant far from the sea that is quiet and expensive",
+    "A restaurant near the sea that is noisy and expensive",
+    "A restaurant far from the sea that is quiet and cheap"
+   ],
+   "answer": 4,
+   "explanation": "Uri's claim covers only restaurants far from the sea, and requires exactly one of the two traits; (4) has neither. (1) and (3) are near the sea, and (2) fits the claim.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-42-127",
+   "topic": 42,
+   "category": "Claims and Logic",
+   "mirrors": "February 2017 §1 Q8",
+   "replaces": "",
+   "stem": "At a certain moment, there are exactly four visitors at an amusement park's go-kart track: Avner, Batya, Gidi and Dalia.\nGiven:\n- Avner is 11 years old.\n- Batya is only watching.\n- Gidi is 30 years old.\n- Dalia is driving a go-kart.\nWhich of the following additional pieces of information makes it possible to determine that, at that moment, the rule strictly prohibiting anyone under the age of 14 from driving a go-kart was not broken?",
+   "options": [
+    "Avner is only watching and Gidi is driving a go-kart",
+    "Dalia is 13 years old and Avner is only watching",
+    "Batya is 10 years old and Gidi is driving a go-kart",
+    "Avner is only watching and Dalia is 16 years old"
+   ],
+   "answer": 4,
+   "explanation": "Only Avner (too young to drive) and Dalia (driving, age unknown) need checking; (4) settles both. (1) and (3) leave Dalia's age open, and in (2) the rule is broken.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-101",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Winter 2022 §2 Q9",
+   "replaces": "",
+   "stem": "A clipping is a word formed by cutting off part of a longer word while keeping its meaning: \"exam,\" for instance, was formed from \"examination\" and means exactly the same thing. Clippings are common in everyday speech, and many speakers are not even aware that the short form was once part of a longer word. Clippings are of two kinds. In a back clipping, the end of the longer word is removed and its beginning is kept: \"lab\" from \"laboratory,\" for example. In a fore clipping, the beginning of the longer word is removed and its end is kept: \"phone\" from \"telephone,\" for example. Thus \"bus,\" formed from \"omnibus,\" is a ____ clipping, whereas \"memo,\" formed from \"memorandum,\" is a ____ clipping. Which of the following completes the sentence correctly?",
+   "options": [
+    "back / back",
+    "back / fore",
+    "fore / back",
+    "fore / fore"
+   ],
+   "answer": 3,
+   "explanation": "\"Bus\" keeps the end of \"omnibus\" (fore clipping); \"memo\" keeps the beginning of \"memorandum\" (back clipping). The trap is to mix up the part that is removed with the part that is kept.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-102",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Spring 2026 §2 Q9",
+   "replaces": "",
+   "stem": "In an interview about her new cookbook, a well-known chef was asked what makes a dish good, and answered: \"Season it as boldly as you like - but never so boldly that the ingredients disappear.\" Which of the following sentences best expresses the chef's intention?",
+   "options": [
+    "Every good dish should be seasoned boldly enough to satisfy diners who like strong flavors",
+    "Although bold seasoning is a virtue in cooking, too much of it hides the very ingredients the dish is meant to present",
+    "A good dish is built on the boldest and most basic of its ingredients",
+    "The boldness of the seasoning matters no less than the quality of the ingredients"
+   ],
+   "answer": 2,
+   "explanation": "The second half of the answer sets a limit on the first: season boldly, but not past the point where the ingredients are lost. (1) drops the limit; (3) turns advice about seasoning into advice about choosing ingredients; (4) makes the two equal instead of one limiting the other.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-103",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Winter 2025 §2 Q9",
+   "replaces": "",
+   "stem": "At the entrance to the Morvin Concert Hall hangs a plaque quoting the conductor Ada Morvin, from a radio interview she gave in 1984: \"I built this orchestra with my own hands.\" Many of her former musicians protested, arguing that the sentence from which the quotation was taken reflected her well-known humility, whereas the quotation on its own made her sound arrogant - the very opposite of who she was. Which of the following sentences is most likely to be the one from which the quotation was taken?",
+   "options": [
+    "\"The only sense in which I built this orchestra with my own hands is that I set out the chairs before every rehearsal\"",
+    "\"I built this orchestra with my own hands, and I will always miss the years we spent together\"",
+    "\"It cost me my health and most of my savings, but I built this orchestra with my own hands\"",
+    "\"I built this orchestra with my own hands, and the concert hall and the music school as well\""
+   ],
+   "answer": 1,
+   "explanation": "Only (1) turns the words into modest self-mockery, which the quotation on its own erases. (2) adds longing, (3) sacrifice and (4) scope; none reverses the boast, and (3) and (4) even strengthen it.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-104",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Spring 2025 §1 Q7",
+   "replaces": "",
+   "stem": "Ofra invented a new word - \"mazlit.\" To show her brother what it means, she said: \"This year mazlit the apricots on our tree ripened in the same week, so we had to make jam for three days straight.\" In which of the following sentences does \"mazlit\" appear with the same meaning it has in Ofra's sentence?",
+   "options": [
+    "Because mazlit the students passed the final exam, the teacher decided to go over the whole course again",
+    "The curve is considered dangerous because mazlit the drivers who reach it slow down in time",
+    "After the storm, mazlit the windows in the old school were broken, so the classes were moved to the new building",
+    "Since mazlit the town's residents own a car, the bus service is used by almost everyone"
+   ],
+   "answer": 3,
+   "explanation": "Ofra's consequence fixes \"mazlit\" as \"nearly all\"; only in (3) does the consequence fit nearly all the windows being broken. In (1), (2) and (4) the consequences require \"only a few.\"",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-105",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Spring 2025 §2 Q8",
+   "replaces": "",
+   "stem": "A team of zoologists had long assumed that the ability to tell individual voices apart exists only in human beings, in the apes and in horses. A recent study of theirs, however, found that a certain species of tree frog also has this ability - a finding that puzzled them, since frogs are only very distantly related to human beings, and the frog's hearing organ is simple. The researchers suggest that the ability developed in the frogs independently, because they breed in dense choruses in which telling one caller from another is important. Which of the following claims is not implied by the paragraph?",
+   "options": [
+    "It has long been assumed that the ability to tell voices apart requires a complex hearing organ",
+    "It has long been assumed that the apes' ability to tell voices apart is connected with their close evolutionary relationship to human beings",
+    "The researchers hold that the ability to tell voices apart may also develop in other animals that breed in dense groups",
+    "The researchers hold that the ability to tell voices apart exists in many animals that are only distantly related to human beings"
+   ],
+   "answer": 4,
+   "explanation": "The paragraph reports a single such species, not many. The zoologists' puzzlement implies the assumptions in (1) (the frog's simple hearing organ) and (2) (its distant relationship to human beings), and the researchers' reason implies (3).",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-106",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Spring 2025 §2 Q11",
+   "replaces": "",
+   "stem": "The following sentence can be understood in several different ways: \"The campaign of the former party's spokesman with the students' union has ended.\" Which of the following is not one of the ways of understanding the sentence?",
+   "options": [
+    "The campaign that the spokesman of a party that no longer exists waged against the students' union has ended",
+    "The campaign that the spokesman waged against the former party of the students' union has ended",
+    "The campaign that the party's ex-spokesman waged against the students' union has ended",
+    "The campaign that the former party's spokesman waged, together with the students' union, against another body has ended"
+   ],
+   "answer": 2,
+   "explanation": "\"Former\" can describe the party or the spokesman, and \"with\" can mean \"against\" or \"together with\"; (1), (3) and (4) follow these options. (2) makes the party belong to the students' union, which no reading allows.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-107",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Spring 2024 §1 Q7",
+   "replaces": "",
+   "stem": "At the end of the season, the conductor of a youth choir said to the singers: \"Every one of you has improved this year - though a little more than a third of you have improved less than I had hoped.\" How many of the singers have improved less than the conductor had hoped?",
+   "options": [
+    "A little more than a third of them",
+    "A little fewer than two thirds of them",
+    "Many more than a third of them",
+    "Many fewer than a third of them"
+   ],
+   "answer": 1,
+   "explanation": "The conductor says so directly. The traps are to read \"every one of you has improved\" as praise that cancels the reservation, or to count the other group (a little fewer than two thirds).",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-108",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Winter 2023 §2 Q10",
+   "replaces": "",
+   "stem": "A lecturer in management wished to illustrate a claim to her students, and said: \"If one door on the street sticks, call the carpenter; if every door on the street sticks, look at the weather.\" Which of the following claims is the one the lecturer wished to illustrate?",
+   "options": [
+    "A manager should deal with an organization's minor problems before turning to its major ones",
+    "A problem that appears in only one department is usually more serious than a problem that appears in all of them",
+    "Managers should not assume that a problem that is common today will remain common in the future",
+    "When the same problem appears in every department of an organization, its cause should be sought in something they all share, and not in each department separately"
+   ],
+   "answer": 4,
+   "explanation": "One sticking door points to a local fault; all of them sticking points to a shared cause. The other claims may be sound advice, but the image says nothing about them.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-109",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Winter 2023 §2 Q8",
+   "replaces": "",
+   "stem": "Typing errors take many forms, among them the following:\n- striking a key next to the intended one on the keyboard;\n- typing the same letter twice;\n- leaving out one of two identical letters that appear one after the other in a word.\nWhich of the following is not an example of any of the three errors? (On a standard English keyboard, the keys for \"i\" and \"o\" are next to each other.)",
+   "options": [
+    "Typing \"a dog barked\" as \"a dig barked\"",
+    "Typing \"a new form\" as \"a new from\"",
+    "Typing \"a long letter\" as \"a long leter\"",
+    "Typing \"a black cat\" as \"a black caat\""
+   ],
+   "answer": 2,
+   "explanation": "(1) strikes a neighboring key, (3) drops one of the double t's and (4) types a letter twice. (2) swaps two letters, which is none of the three.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-110",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Autumn 2022 §1 Q7",
+   "replaces": "",
+   "stem": "The word \"apron\" names a garment worn over the front of one's clothes. Linguists explain, however, that the older form of the word was \"napron\": the form \"apron\" arose because speakers heard \"a napron\" as \"an apron\" and took the \"n\" to belong to the word before it. Linguists point out that the same thing happened to the word \"adder,\" which developed in the same way from \"nadder.\" Which of the following words could replace \"adder\" in the linguists' example?",
+   "options": [
+    "\"newt\" (from the older \"ewt\")",
+    "\"oven\"",
+    "\"apple\"",
+    "\"umpire\" (from the older \"noumpere\")"
+   ],
+   "answer": 4,
+   "explanation": "\"A noumpere\" was heard as \"an oumpere,\" so \"umpire\" lost its first \"n\" exactly as \"apron\" and \"adder\" did. \"Newt\" went the opposite way - \"an ewt\" became \"a newt\" - and \"oven\" and \"apple\" were never reshaped like this.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-111",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Autumn 2023 §2 Q16",
+   "replaces": "",
+   "stem": "In a book on raising children it was written: \"When a child misbehaves, some parents ask first why the child acted as they did, while others ask first how the behavior can be stopped. In the end, naturally, the former also look for a way to stop the behavior, and the latter also want to know what lay behind it; what separates the two groups is only which question they put first.\" Which of the following statements best expresses the central claim of the text?",
+   "options": [
+    "Both groups of parents consider the same two questions, but give priority to different ones",
+    "Some parents try to understand their children's behavior, whereas others do not",
+    "Some parents react out of curiosity, whereas others react out of a wish for quiet",
+    "A parent can either understand a child's behavior or stop it, but not both"
+   ],
+   "answer": 1,
+   "explanation": "The text says outright that both groups ask both questions and differ only in order. (2) and (3) turn a difference of order into a difference of kind, and (4) invents a conflict.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-112",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Autumn 2023 §2 Q18",
+   "replaces": "",
+   "stem": "Grammarians divide sentences into three kinds according to their purpose. A declarative sentence states something: \"The shop is closed.\" An interrogative sentence asks something: \"Is the shop closed?\" An imperative sentence tells or asks the listener to do something: \"Close the shop.\" Which of the following is an imperative sentence?",
+   "options": [
+    "The guests left the hall before midnight",
+    "Turn off the lights when you leave the hall",
+    "Who left the lights on in the hall?",
+    "Everyone in the hall stood up at once"
+   ],
+   "answer": 2,
+   "explanation": "Only (2) tells the listener to do something. (1) and (4) state facts, and (3) asks a question.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-113",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "December 2016 §2 Q12",
+   "replaces": "",
+   "stem": "In Varesh, an invented language used in a fantasy novel, tense markers are attached to the end of a verb. Thus \"kali\" means \"to eat,\" \"kalira\" means \"ate,\" \"kalisu\" means \"will eat\" and \"kalimo\" means \"is eating.\" Likewise, \"petasu\" means \"will sleep.\" Therefore, which of the following words is best suited to be the Varesh word for \"slept\"?",
+   "options": [
+    "petara",
+    "petamo",
+    "peta",
+    "petasura"
+   ],
+   "answer": 1,
+   "explanation": "The stem for \"sleep\" is \"peta\" (from \"petasu\"), and the past marker is \"-ra\" (from \"kalira\"). (2) means \"is sleeping,\" (3) is the bare verb, and (4) adds two markers.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-114",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "December 2016 §2 Q16",
+   "replaces": "",
+   "stem": "Dana sent Amir a message: \"At lunch I will show you the drawings that Gal made on Monday.\" Amir answered: \"But you already told me that today I would get to see what Gal has been drawing this week.\" To clear up the misunderstanding, Dana underlined one word in her message and sent it back. Which of the following words is least likely to be the one Dana underlined?",
+   "options": [
+    "lunch",
+    "made",
+    "I",
+    "Monday"
+   ],
+   "answer": 3,
+   "explanation": "Amir's version blurs the time of the showing (\"today\"), the time of the drawing (\"this week\") and whether the drawings are finished (\"has been drawing\"). Nothing in it concerns who will do the showing, so \"I\" is the least likely.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-115",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "September 2016 §1 Q15",
+   "replaces": "",
+   "stem": "In linguistics, two words of different meaning that differ from each other in a single sound only - such as \"pin\" and \"bin\" - are called a \"minimal pair.\" The existence of such a pair in a language shows that the two sounds that distinguish its words are separate sounds in that language, and not merely two ways of pronouncing the same sound. In which of the following sentences do the two words in capital letters prove that \"f\" and \"v\" are separate sounds in English?",
+   "options": [
+    "His BEST shirt was hidden under a thick wool VEST he had bought in the market",
+    "The new PHASE of the project did not seem to FAZE the engineers in the least",
+    "The VOTE on the budget was held inside the old FORT at the edge of town",
+    "The FAN in the back of the delivery VAN stopped working halfway through the trip"
+   ],
+   "answer": 4,
+   "explanation": "\"Fan\" and \"van\" differ only in f/v. (1) is a minimal pair for b/v, not f/v; the words in (2) sound the same; the words in (3) differ in more than one sound.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-116",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "April 2016 §2 Q13",
+   "replaces": "",
+   "stem": "At a press conference, a journalist said to the mayor: \"Answer yes or no: ____\" The mayor's spokesperson said: \"The mayor will not answer this question, since a mayor who has done nothing wrong cannot answer it either way without lying.\" Which of the following questions is not suited to complete the journalist's words?",
+   "options": [
+    "Could the city's budget deficit have been caused by your decisions?",
+    "Have you stopped handing out city contracts to your friends?",
+    "Did your deputy know that you were hiding the audit report?",
+    "Were you paid well for approving the illegal building permits?"
+   ],
+   "answer": 1,
+   "explanation": "(2), (3) and (4) take the wrongdoing for granted, so both \"yes\" and \"no\" admit it. (1) asks only about a possibility, and an honest mayor can answer it truthfully.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-117",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "September 2015 §1 Q16",
+   "replaces": "",
+   "stem": "This year sea turtles laid their eggs on the local beaches later than usual. A marine biologist argues that it is not reasonable to suppose that the reason is the cold winter, since a large supply of jellyfish causes the turtles to nest early. On which of the following assumptions does the biologist's argument rest?",
+   "options": [
+    "In cold winters the turtles find it hard to find jellyfish",
+    "In warm winters the turtles nest late",
+    "A cold winter brings about a large supply of jellyfish",
+    "Last winter was warmer than usual"
+   ],
+   "answer": 3,
+   "explanation": "The argument works only if a cold winter → many jellyfish → early nesting, which clashes with the late nesting; the first link is unstated. (1) would actually support the cold-winter explanation; (2) and (4) are not needed.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-118",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "December 2014 §2 Q9",
+   "replaces": "",
+   "stem": "A veteran newspaper editor said: \"Give me a whole page and I will write it tonight; give me half a page and I need two days; give me a single line and I need a week.\" Which of the following claims best expresses the editor's meaning?",
+   "options": [
+    "Short texts are better than long ones",
+    "It is harder to express an idea briefly than to write about it at length",
+    "Writers who prepare less produce better work",
+    "The importance of an article cannot be judged by its length"
+   ],
+   "answer": 2,
+   "explanation": "The shorter the text, the longer the preparation: brevity is the hard part. The other claims are not what the joke says.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-119",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "April 2014 §1 Q13",
+   "replaces": "",
+   "stem": "In a column, Professor Galor wrote: \"I share Professor Weiss's view that students should choose their own reading lists, but his arguments do not persuade me. In my view, the only argument for this is that choosing what to read teaches young people to judge for themselves.\" Which of the following could be one of Professor Weiss's arguments?",
+   "options": [
+    "When students choose their own books, they gradually learn to form opinions of their own about what is worth reading",
+    "Students who chose their own books read far fewer classic works than students whose reading lists were set by their teachers",
+    "Experienced teachers know better than their students which books will develop independent judgment in young readers",
+    "Students who choose their own books tend to go on reading many more books in the years after they finish school"
+   ],
+   "answer": 4,
+   "explanation": "Weiss's arguments must support the view and differ from Galor's; (4) offers a practical benefit. (1) is Galor's own argument in other words, and (2) and (3) argue against giving students the choice.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-120",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "September 2013 §1 Q17",
+   "replaces": "",
+   "stem": "Below is a sentence from which a part (a word or a few words) is missing: \"____ the heavy rain that fell throughout the night, the marathon started on time.\" In which of the following sentences could the missing part be the same as in the sentence above?",
+   "options": [
+    "The planning committee approved the new building plan ____ it had been presented to its members only a day earlier",
+    "The new bridge over the river was opened to the public ____ to reduce the heavy traffic in the town center",
+    "____ the objections of several residents of the neighborhood, the city council decided to widen the main road",
+    "____ of the students in the advanced class passed the final exam on their first attempt, as their teacher had expected"
+   ],
+   "answer": 3,
+   "explanation": "\"Despite\" (or \"in spite of\") fills both. In (1) the gap needs a word such as \"although\" before a full clause, in (2) something like \"in order,\" and in (4) a word of quantity.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-121",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Autumn 2021 §1 Q14",
+   "replaces": "",
+   "stem": "Yuval: \"My uncle told me that yesterday he saw Orit again, rowing on the lake with the university team, and that she looked very happy.\"\nNeta: \"____\"\nNeta's reply shows that Yuval's sentence can be understood in two ways, and that she understood it differently from the way he meant it. Which of the following is Neta's reply?",
+   "options": [
+    "\"Your uncle was out rowing on the lake yesterday, in that cold wind?\"",
+    "\"And where did he see her this time?\"",
+    "\"And was your uncle happy to see her?\"",
+    "\"Does your uncle also like rowing?\""
+   ],
+   "answer": 1,
+   "explanation": "\"Rowing on the lake\" can describe Orit or the uncle; Neta took it to describe the uncle and put him on the lake. In (2), (3) and (4) the uncle stays where Yuval put him - on shore, with Orit doing the rowing.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-122",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Autumn 2021 §2 Q10",
+   "replaces": "",
+   "stem": "The saying \"Rest when you are tired\" stands at the center of a book by a sleep researcher. The first three chapters of the book deal with questions that arise from the saying: the first asks what real rest is, as opposed to mere idleness; the second asks how a person can tell that they are tired; and the third asks whether rest should wait until tiredness sets in or should come before it. The title of each of the three chapters is the saying itself, but each time a different part of it is emphasized. Which of the following is not suited to be the title of one of the three chapters?",
+   "options": [
+    "Rest WHEN you are tired",
+    "REST when you are tired",
+    "Rest when you are TIRED",
+    "Rest when YOU are tired"
+   ],
+   "answer": 4,
+   "explanation": "The emphasized \"you\" answers none of the three questions. (2) matches what rest is, (3) how to tell one is tired, and (1) whether rest should wait for tiredness.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-123",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Summer 2022 §2 Q8",
+   "replaces": "",
+   "stem": "A composer wrote: \"Written notes exist for the sake of the music, as scaffolding exists for the sake of the building: once the building stands, the scaffolding can be taken down.\" Which of the following statements best expresses what the composer meant?",
+   "options": [
+    "Written notes and the music they record are two separate things",
+    "Written notes are nothing more than a means of producing music",
+    "People are able to understand music only because there are written notes that record it",
+    "When a piece of music is no longer performed by musicians, its written notes are bound to be lost"
+   ],
+   "answer": 2,
+   "explanation": "Scaffolding serves the building and is then discarded; notes likewise only serve the music. (1) states a separation the image does not stress, (3) makes notes a condition of understanding, and (4) is about something else entirely.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-124",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Summer 2023 §2 Q8",
+   "replaces": "",
+   "stem": "A theater director said: \"Actors perform differently when they know that a critic is sitting in the audience, and critics watch differently when they know that they will have to write about the actors.\" Which of the following best expresses the director's statement?",
+   "options": [
+    "The knowledge that a critic will review a performance affects both the actors and the critic",
+    "After a performance has been reviewed, both the acting and the criticism change",
+    "The fact that actors and critics will both be reviewed in the future affects them in the present",
+    "Actors' knowledge that they will be reviewed changes their acting, and this changes the way critics watch"
+   ],
+   "answer": 1,
+   "explanation": "One expected review affects both sides. (2) moves the effect to after the review, (3) has both sides being reviewed, and (4) invents a chain in which the actors' change causes the critics'.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-125",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Summer 2026 §1 Q10",
+   "replaces": "",
+   "stem": "The following appeared in an essay: \"I once had no doubt that a university writing program gives a young writer something that cannot be obtained anywhere else; today I am far less sure that what writers gain from its courses exceeds what they could gain from a serious apprenticeship to an experienced author.\" Which of the following most accurately expresses the content of the excerpt?",
+   "options": [
+    "In the past, the author did not doubt that what is special about university writing programs is the apprenticeship to experienced authors that they offer",
+    "The author believes that today, an apprenticeship to an experienced author may benefit a young writer more than a university writing program",
+    "The author is less convinced than before that, for a young writer, the value of a university writing program is greater than that of a serious apprenticeship to an experienced author",
+    "In the past, the author was always convinced that the value of a university writing program is no greater than that of an apprenticeship"
+   ],
+   "answer": 3,
+   "explanation": "The author now doubts that the program is worth more than apprenticeship. (2) turns doubt into a preference, (1) mixes the two things being compared, and (4) reverses the author's past view.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-126",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Summer 2026 §1 Q14",
+   "replaces": "",
+   "stem": "Professor Adler: \"Had old recordings of Kelani folk songs, made by the villagers themselves and not by folklorists, not come to light recently, I would have hesitated to back those who share Professor Ofir's view about who recorded the Kelani songs.\" Which of the following is not implied by Professor Adler's words?",
+   "options": [
+    "Professors Adler and Ofir now hold similar views about the recordings of the Kelani songs",
+    "Until recently, Professor Adler had doubts about Professor Ofir's view of who recorded the Kelani songs",
+    "Professor Ofir claimed that folklorists were not the only people who recorded the Kelani songs",
+    "Recordings of Kelani songs made by folklorists came to light recently"
+   ],
+   "answer": 4,
+   "explanation": "What came to light were recordings made by the villagers, not by folklorists. The rest follows: the new recordings back Ofir's view that others recorded too (3), which Adler now supports (1) after having doubted it (2).",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-43-127",
+   "topic": 43,
+   "category": "Sentence Understanding",
+   "mirrors": "Summer 2024 §2 Q14",
+   "replaces": "",
+   "stem": "Whoever announces to a group of tourists that the city museum is closed today conveys two things at once: that the museum is closed today, and that they themselves think so. So if someone makes this announcement knowing perfectly well that the museum is open, the listeners are misled on two counts - although only one falsehood was stated, since the speaker never actually said that they thought the museum was closed. Which of the following is implied in the text?",
+   "options": [
+    "A person who announces that the museum is closed today while knowing that it is open states two falsehoods",
+    "A person who says something that they themselves believe to be true cannot mislead the listener",
+    "A person who says something they believe to be true, although it is false, misleads the listener on one count only",
+    "A person who announces that the museum is closed while believing this to be false misleads the listener on two counts even if the museum really is closed without their knowing it"
+   ],
+   "answer": 3,
+   "explanation": "A sincere but mistaken speaker conveys a false fact and a true belief - one count. (1) contradicts \"only one falsehood\"; (2) ignores the false fact; in (4) the fact is true, so only the belief misleads.",
+   "feel": 4,
+   "pool": true
+  }
+ ],
+ "passages": []
+}

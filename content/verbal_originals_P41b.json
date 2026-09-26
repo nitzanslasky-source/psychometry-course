@@ -1,0 +1,599 @@
+{
+ "items": [
+  {
+   "id": "vo-41-135",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2018 §1 Q13",
+   "replaces": "vb-sc_tr_0079",
+   "stem": "Being able to swim ____ without stopping is a minimum requirement for volunteering as a ____ at the town's public pool, let alone ____ .",
+   "options": [
+    "one length / lifeguard's assistant / the ability to swim ten lengths without stopping",
+    "ten lengths / senior lifeguard / for volunteering as a lifeguard's assistant",
+    "one length / lifeguard's assistant / for volunteering as a senior lifeguard",
+    "one length / senior lifeguard / the ability to swim ten lengths without stopping"
+   ],
+   "answer": 3,
+   "explanation": "\"Let alone\" must lead from the easier post to a more demanding post: a small requirement for an assistant, all the more so for a senior lifeguard. (2) reverses the direction, and (1) and (4) put an ability after \"let alone\" where a post is needed.",
+   "feel": 5,
+   "pool": true
+  },
+  {
+   "id": "vo-41-136",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2018 §1 Q14",
+   "replaces": "vb-sc_tr_0080",
+   "stem": "The team's assistant coach ____ after the ____ result of Sunday's game, since she was convinced that the result would have been entirely different had the head coach not ____ the game plan she had proposed to him before the match.",
+   "options": [
+    "felt disappointment mixed with a certain sense of vindication / poor / rejected",
+    "felt proud and content / excellent / rejected",
+    "felt no remorse / poor / adopted",
+    "felt that she had failed / excellent / adopted"
+   ],
+   "answer": 1,
+   "explanation": "The team lost because her plan was rejected, so she is disappointed but proved right. In (3) her adopted plan caused the loss, so \"no remorse\" is odd; in (2) and (4) the win came without / thanks to her plan, which contradicts pride / failure.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-137",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2018 §2 Q7",
+   "replaces": "vb-sc_tr_0082",
+   "stem": "Sometimes a reader chooses ____ a newspaper whose editorial line ____ their own opinions, because they ____ the style in which its articles are written, ____ the positions expressed in them.",
+   "options": [
+    "to keep buying / is in line with / dislike / as well as",
+    "to stop buying / is in line with / dislike / even if they agree with",
+    "to stop buying / is at odds with / like / as well as",
+    "to keep buying / is at odds with / dislike / even if they agree with"
+   ],
+   "answer": 2,
+   "explanation": "The interesting case: the reader agrees with the paper yet stops buying it because of its style. In (1) and (4) disliking the style is given as a reason to keep buying; in (3) liking both style and positions is a reason to stop.",
+   "feel": 5,
+   "pool": true
+  },
+  {
+   "id": "vo-41-138",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2018 §2 Q8",
+   "replaces": "vb-sc_tr_0083",
+   "stem": "If one examines the origin of the word “amateur”, one finds that it originally described ____ . The word, which comes through French from the Latin word for “lover”, entered English at a time when many well-known scientists and naturalists were people of independent means, who could devote themselves to their interests without depending on the income these interests produced.",
+   "options": [
+    "a person with little skill, whose work was of a lower standard than that of a trained professional - someone who tries a field without really mastering it",
+    "a person who earned a living by teaching an art or a science to others - a professional in every sense of the word, who charged fees for their knowledge",
+    "a shy, solitary person who kept away from society - a collector who shut themselves away with their paintings and scientific instruments",
+    "a person who was not necessarily inexperienced or unskilled - though beginners were sometimes given this name too - but rather one who pursued an activity out of love for it, and not for payment"
+   ],
+   "answer": 4,
+   "explanation": "The rest of the text (\"lover\", people who did not depend on income) points to doing something for love, not money. (1) is the modern meaning the text does not support; (2) contradicts \"not depending on income\"; (3) has no basis in the text.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-139",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2018 §2 Q9",
+   "replaces": "vb-sc_tr_0084",
+   "stem": "____ the dishes on the new menu at Dalia's restaurant ____ , the reception of the new menu ____ the reception of her first menu, whose dishes ____ .",
+   "options": [
+    "Had / not been so spicy / would surely have resembled / even lovers of hot food found too fiery",
+    "Had / been milder / might have differed from / even lovers of hot food found too fiery",
+    "Had / been spicier / would surely have resembled / even diners who avoid hot food ate with pleasure",
+    "Had / not been so spicy / might have differed from / even diners who avoid hot food ate with pleasure"
+   ],
+   "answer": 2,
+   "explanation": "In reality the new dishes are very spicy, like the first menu's, so their fate is similar; milder dishes might have changed it. In the other choices the imagined change moves the new menu away from the menu it is said it would then resemble, or toward the menu it would then differ from.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-140",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2019 §1 Q13",
+   "replaces": "vb-sc_tr_0085",
+   "stem": "After she told her manager that she ____ the error in the quarterly report, the manager advised her ____ , and explained: “If you stay quiet, ____ , so it would be wise for you ____ .”",
+   "options": [
+    "had been responsible for / to report it to the finance department herself / suspicion will eventually fall on you / to come forward now",
+    "was being blamed, unfairly, for / to ignore the unfounded complaint / suspicion will eventually fall on you / to come forward now",
+    "was being blamed for / to report her part in the matter / suspicion will eventually fall on you / to say nothing",
+    "had been responsible for / not to hide her part in the matter / no one will ever find out / to say nothing"
+   ],
+   "answer": 1,
+   "explanation": "The advice, the explanation and the conclusion must all point the same way: report the error, because silence will make things worse. In (2) \"ignore\" clashes with \"come forward\"; in (3) and (4) the advice to report ends with the opposite conclusion, \"say nothing\".",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-141",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2019 §1 Q15",
+   "replaces": "vb-sc_tr_0087",
+   "stem": "Ecologists regard two phenomena as signs that a lake is polluted: a decline in the number of fish species living in it and a rise in the amount of algae on its surface. On this basis Dr. Stern argues: “An indication that the lake's condition has ____ in recent years is the ____ in the number of fish species found in it. ____ the amount of algae on its surface ____ .”",
+   "options": [
+    "worsened / decline / Moreover, / has dropped sharply in recent years",
+    "improved / increase / Moreover, / has grown considerably of late",
+    "improved / increase / However, / has so far remained as high as ever",
+    "worsened / increase / By contrast, / has fallen in these years"
+   ],
+   "answer": 3,
+   "explanation": "More fish species signal improvement, and \"However\" correctly introduces the sign that has not improved (algae still high). (4) links worsening to more species; in (1) and (2) \"Moreover\" adds a sign that points the other way.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-142",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2019 §2 Q8",
+   "replaces": "vb-sc_tr_0088",
+   "stem": "Since Dr. Varga's study ____ the claim that chewing gum after meals ____ the chances of ____ , it is hardly surprising that the “Zafrir” company, which makes chewing gum, ____ the study in its new television commercials.",
+   "options": [
+    "supports / increases / developing tooth decay / cited",
+    "supports / reduces / keeping one's teeth healthy / cited",
+    "supports / reduces / developing tooth decay / did not cite",
+    "casts doubt on / increases / keeping one's teeth healthy / did not cite"
+   ],
+   "answer": 4,
+   "explanation": "A study that doubts a benefit of gum is bad for a gum maker, so it is \"hardly surprising\" that the company ignored it. In (1) and (2) the study says gum is harmful, yet the company cited it; in (3) the study is good news, yet the company did not cite it.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-143",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2019 §1 Q7",
+   "replaces": "vb-sc_tr_0091",
+   "stem": "Hummingbirds use up energy at an extremely high rate: their wings beat dozens of times per second, and their hearts beat faster than those of almost any other bird. ____ , and this carries a risk: whenever they are unable to feed for several hours, as happens every night, their energy reserves may run dangerously low.",
+   "options": [
+    "As a result, they must feed on nectar almost constantly throughout the day",
+    "To avoid this, many hummingbirds have also learned to store large reserves of fat that last them for days",
+    "However, when flowers are scarce, hummingbirds can survive on very small amounts of nectar",
+    "To avoid feeding constantly, some hummingbirds have learned to drink as much nectar as they can at once and then rest for long hours"
+   ],
+   "answer": 1,
+   "explanation": "The missing sentence must follow from the high energy use and lead to the danger of going without food. (2) and (4) describe solutions that would remove the danger mentioned next; (3) contradicts the need for large amounts of energy.",
+   "feel": 5,
+   "pool": true
+  },
+  {
+   "id": "vo-41-144",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2019 §1 Q8",
+   "replaces": "vb-sc_tr_0092",
+   "stem": "Anyone who tries to learn bread baking from recipe books soon discovers that measuring the ingredients and setting the oven temperature ____ precise written instructions, ____ the countless small judgments the baker makes while kneading the dough and deciding when it has risen enough ____ such instructions.",
+   "options": [
+    "do not lend themselves to / whereas / do not lend themselves to",
+    "lend themselves to / whereas / lend themselves to",
+    "do not lend themselves to / and even / lend themselves to",
+    "lend themselves to / whereas / do not lend themselves to"
+   ],
+   "answer": 4,
+   "explanation": "\"Whereas\" needs a contrast: measurable steps can be written down, while countless small judgments cannot. (1) and (2) use \"whereas\" with no contrast; (3) says the simple steps cannot be written but the complex ones can.",
+   "feel": 5,
+   "pool": true
+  },
+  {
+   "id": "vo-41-145",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2019 §1 Q9",
+   "replaces": "vb-sc_tr_0093",
+   "stem": "During the ____ in the coastal town last week ____ , and a number of visitors who had the misfortune to ____ in the town at the time ____ .",
+   "options": [
+    "annual music festival / many of the town's residents performed in the streets / be staying / described it as unforgettable",
+    "severe storm / the roofs of many of the town's houses were torn off / be staying / were injured as well",
+    "street carnival / many of the town's residents danced in the squares / be passing through / joined in the fun",
+    "heat wave / many of the town's residents fled to the beaches / be staying / felt refreshed and relaxed"
+   ],
+   "answer": 2,
+   "explanation": "\"Had the misfortune\" requires a harmful event and a bad outcome for the visitors. (1) and (3) describe happy events, and (4) ends with the visitors feeling refreshed.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-146",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2019 §2 Q15",
+   "replaces": "vb-sc_tr_0094",
+   "stem": "Many companies try to prevent their employees from learning what salaries are paid for similar jobs at other firms. Managers fear that employees who discover that others earn more will become dissatisfied, will lose motivation and will blame the company's management. Such, for example, was the policy of the management of a large textile factory studied by one researcher. Yet despite management's efforts, a survey of salaries in the industry reached the employees of several of the factory's departments. ____ .",
+   "options": [
+    "Following this, managers were not surprised to discover that resentment toward the management had grown among the employees of the departments that had not seen the survey",
+    "However, the strong resentment that developed in the departments that had seen the survey did not lead the management to recognize that there is no real danger in letting employees see such information",
+    "Contrary to management's fears, it turned out that the employees of the departments that had seen the survey were more satisfied with their pay than the employees of the departments that had not seen it",
+    "As management had predicted, the employees of the departments that had seen the survey tended to view the management more favorably than the employees of the other departments"
+   ],
+   "answer": 3,
+   "explanation": "\"Yet despite\" prepares a result about the departments that saw the survey, and a favorable one is \"contrary to\" the fears. (1) is about the wrong departments; (2) makes resentment a reason to see no danger; (4) calls a favorable result \"as predicted\".",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-147",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2019 §2 Q16",
+   "replaces": "vb-sc_tr_0095",
+   "stem": "Dana told me that even ____ in the regional chess tournament, she ____ have concluded that he is a gifted player, let alone ____ . This is because the other players in the tournament were ____ .",
+   "options": [
+    "had Eitan won first place / would not / now that he did not even finish in the top five / mostly beginners",
+    "had Eitan finished last / would not / had he finished only fifth / highly experienced",
+    "had Eitan finished only third / would / now that he has finished second / weak",
+    "had Eitan not won first place / would not / had he finished only tenth / highly skilled"
+   ],
+   "answer": 1,
+   "explanation": "Against weak opponents even a win proves little, all the more so a weak result. (3) draws a strong conclusion although the opponents were weak; (2) and (4) use \"even\" with a poor result and strong opponents, which reverses the logic.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-148",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2020 §1 Q7",
+   "replaces": "vb-sc_tr_0097",
+   "stem": "The review of the new smartphone on the technology website was ____ : the reviewer ____ the phone's weak points, ____ its strengths.",
+   "options": [
+    "one-sided / listed / but did not ignore",
+    "overly flattering / ignored / as well as",
+    "overly harsh / focused on / and gave little attention to",
+    "biased in the phone's favor / devoted a great deal of space to / and hardly referred to"
+   ],
+   "answer": 3,
+   "explanation": "Stressing weak points and playing down strengths is \"overly harsh\". (1) describes a balanced review, not a one-sided one; (2) ignores everything, which is not flattery; (4) describes criticism, not bias in the phone's favor.",
+   "feel": 5,
+   "pool": true
+  },
+  {
+   "id": "vo-41-149",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2020 §1 Q9",
+   "replaces": "vb-sc_tr_0099",
+   "stem": "Dr. Levy holds that the claim that reading aloud to young children improves their vocabulary ____ . She bases her view on the fact that ____ the studies that examined whether a small vocabulary in early childhood is a condition ____ being read to found that the answer to this question was ____ .",
+   "options": [
+    "is not unfounded / most of / that can be changed by / affirmative",
+    "is correct / a large proportion of / that is permanent and unaffected by / affirmative",
+    "is not correct / only a few of / that is permanent and unaffected by / affirmative",
+    "is completely mistaken / only a tiny fraction of / that can be changed by / negative"
+   ],
+   "answer": 1,
+   "explanation": "Most studies found that vocabulary can be improved by reading aloud, which supports the claim. In (2) many studies found it cannot be changed, which contradicts \"correct\"; in (3) and (4) \"only a few\" found the opposite, so most studies actually support the claim that is called wrong.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-150",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2020 §2 Q9",
+   "replaces": "vb-sc_tr_0100",
+   "stem": "____ in the price of bread at the Hadar bakery, ____ claim that for most customers buying at Hadar is ____ economical than buying at the Oak Street bakery. This is because the change in the price of bread at Hadar ____ the prices of its other baked goods, and at the Oak Street bakery most baked goods are still cheaper.",
+   "options": [
+    "Following the steep drop / one can no longer / less / does reflect",
+    "Only since the steep rise / can one / more / reflects",
+    "Despite the steep rise / one can still / more / accurately reflects",
+    "Despite the steep drop / one can still / less / does not reflect"
+   ],
+   "answer": 4,
+   "explanation": "The cheaper bread does not change the overall picture: most goods are still cheaper on Oak Street, so Hadar is still less economical. \"Still cheaper\" rules out (1), where Hadar has caught up; in (2) and (3) Hadar is called more economical although Oak Street is cheaper.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-151",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2020 §2 Q11",
+   "replaces": "vb-sc_tr_0102",
+   "stem": "A new study found that the “Sela” diet ____ reduce the risk of heart disease. The study joins a long series of studies that also concluded that ____ health benefits. Nevertheless, since this study ____ the accepted standards of scientific research, ____ the conclusion of the earlier studies.",
+   "options": [
+    "does nothing to / the diet has no / fails to meet / it actually contradicts",
+    "can significantly / despite the diet's questionable reputation, it does offer / fails to meet / it cannot be considered support for",
+    "helps to some extent to / the diet has no / is far larger than earlier studies and meets / it reinforces",
+    "is unable to / the diet has no / barely meets / it can serve to reinforce"
+   ],
+   "answer": 2,
+   "explanation": "The new study agrees with the earlier ones (\"also\"), but its weak method means it adds no real support. (1) says a study that agrees with them contradicts them; (3) says \"also\" of a finding that disagrees; (4) has no contrast to justify \"Nevertheless\".",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-152",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2020 §1 Q10",
+   "replaces": "vb-sc_tr_0104",
+   "stem": "The flight academy's policy was ____ admitted to feeling anxious about flying, because it was believed that such anxiety indicates ____ . Over time ____ , since the trainees who were accepted in spite of their anxiety ____ .",
+   "options": [
+    "to turn away applicants who had not / an honesty that is important to a pilot's development / it became clear that the policy had proved itself / left the academy sooner or later",
+    "to accept applicants who had / an unsuitability for the profession / it became clear that the policy had proved itself / became outstanding pilots",
+    "to turn away most of the applicants who had / an unsuitability for the profession / the policy was changed / became outstanding pilots",
+    "to accept only applicants who had not / an unsuitability for the profession / the policy was changed / left the academy sooner or later"
+   ],
+   "answer": 3,
+   "explanation": "Anxious applicants were rejected as unsuitable; the few accepted anyway did well, so the policy was changed. In (1) the trainees who left undermine the policy rather than prove it; in (2) no one would accept unsuitable applicants; in (4) failing anxious trainees would confirm the policy, not change it.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-153",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2020 §2 Q7",
+   "replaces": "vb-sc_tr_0106",
+   "stem": "The nutritionist Dr. Oren argues that eating a varied diet ____ children's health. ____ , she ____ letting children eat the same favorite meal several days in a row now and then.",
+   "options": [
+    "may damage / Therefore / does not approve of",
+    "is essential to / Accordingly / does not object to",
+    "does not contribute to / Therefore / does not approve of",
+    "is beneficial to / Even so / does not object to"
+   ],
+   "answer": 4,
+   "explanation": "Variety is good, but an occasional exception is acceptable: a contrast, so \"Even so\". (2) uses \"Accordingly\" for a contrast; in (1) and (3) the view does not lead to rejecting a repeated meal, so \"Therefore\" does not fit.",
+   "feel": 5,
+   "pool": true
+  },
+  {
+   "id": "vo-41-154",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2020 §2 Q8",
+   "replaces": "vb-sc_tr_0107",
+   "stem": "____ the city council ____ to fund the new community theater beyond its first season, ____ the theater ____ , unless ____ by the end of that season.",
+   "options": [
+    "Since / has refused / it is probable that / will have to close / it manages to attract a large paying audience",
+    "Although / has agreed / there is no guarantee that / will not have to close / it fails to attract a large paying audience",
+    "Because / has refused / everyone is certain that / will thrive / it succeeds in attracting a large paying audience",
+    "Because / is prepared / there is no reason why / should not have to close / it fails to attract a large paying audience"
+   ],
+   "answer": 1,
+   "explanation": "Without further funding the theater will probably close, unless it finds its own income. In (2) and (4) a failure to attract an audience is given as the way to avoid closing; (3) says refusing funding makes success certain, and \"unless it succeeds\" then contradicts that.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-155",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2020 §2 Q9",
+   "replaces": "vb-sc_tr_0108",
+   "stem": "A well-known historian argued that ____ written documents alone are enough to reconstruct any past event, and that ____ be checked against archaeological evidence in order to be reconstructed. However, the same historian held, one should not go so far as to conclude that, ____ written documents, ____ .",
+   "options": [
+    "it is doubtful whether / many events must / because there are not enough / archaeological evidence is essential",
+    "there is no doubt that / no event need / although there are enough / archaeological evidence is not essential",
+    "it goes without saying that / no event need / since there are enough / archaeological evidence is of no value at all",
+    "it is doubtful whether / every event must / because there are not enough / archaeological evidence is not essential"
+   ],
+   "answer": 3,
+   "explanation": "The historian trusts documents fully, but warns against the extreme step of calling archaeology worthless. In (1) the \"extreme\" conclusion is simply the historian's own view; in (2) \"although\" does not fit; in (4) lacking documents is said to make archaeology unnecessary.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-156",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2020 §1 Q12",
+   "replaces": "vb-sc_tr_0109",
+   "stem": "Although it has been shown that allowing employees to work from home ____ the productivity of most workers, ____ this arrangement, ____ that employees who live alone ____ .",
+   "options": [
+    "harms / it is still too early to give up / since there is evidence / are affected by it in the same way",
+    "increases / this alone does not justify adopting / unless the concern is disproved / are in fact affected by it in the opposite way",
+    "does not improve / it would be right to adopt / if it turns out that there is no basis for the claim / actually benefit from it",
+    "does not harm / it is doubtful whether it is worth encouraging / even though / actually work better at the office"
+   ],
+   "answer": 2,
+   "explanation": "\"Although\" introduces a limit on a benefit: working from home helps most workers, but it may hurt a certain group. In (1) evidence of harm is a reason to keep the arrangement; in (3) disproving a benefit is a reason to adopt it; in (4) \"even though\" introduces the reason for doubt.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-157",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2020 §1 Q13",
+   "replaces": "vb-sc_tr_0110",
+   "stem": "____ in the exhibition now on display at the city museum ____ the photographs document life in the city ____ , it seems that the questions they raise ____ lost their relevance.",
+   "options": [
+    "Since / most of / in the coming decades / have already",
+    "Although / only a few of / in our own time / have already",
+    "Since / only a few of / in the present day / have not yet",
+    "Although / most of / as it was a century ago / have not"
+   ],
+   "answer": 4,
+   "explanation": "Old photographs that still raise relevant questions: a real contrast, so \"Although\". (1) has photographs of the future; in (2) old photographs losing relevance is expected, not a contrast; in (3) \"Since\" does not explain why the questions are still relevant.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-158",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2020 §2 Q15",
+   "replaces": "vb-sc_tr_0112",
+   "stem": "____ that the exam would include questions on the chapter I had skipped, ____ have felt ____ on the morning of the test.",
+   "options": [
+    "I knew / and yet I would / nervous",
+    "Had I known / it is likely that I would / even calmer",
+    "Had I not known / I would not / so anxious",
+    "Although I did not know / I would not / anxious"
+   ],
+   "answer": 3,
+   "explanation": "In reality I knew about the questions and was very anxious; not knowing would have spared me. (2) makes knowledge of a weak spot a reason to be calmer; (1) and (4) do not form a correct conditional sentence with \"would have felt\".",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-159",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2020 §2 Q16",
+   "replaces": "vb-sc_tr_0113",
+   "stem": "Since the pasture around the village of Kerem ____ , the shepherds chose to take their flocks ____ village. ____ , because grazing on the distant plains ____ .",
+   "options": [
+    "expanded / only there, and not up to the mountains above the / They preferred to avoid the mountains / is more dangerous than grazing in the mountains",
+    "shrank / up to the mountains above the / They did so with some anxiety / is less dangerous than grazing on the steep mountain slopes",
+    "shrank / far out to the plains, away from the / This was hard for them / is no more dangerous than grazing near the village",
+    "expanded / only up to the mountains above the / The change was hard for them / is not as dangerous as grazing in the mountains"
+   ],
+   "answer": 2,
+   "explanation": "With less pasture they moved to the mountains, and were anxious because the mountains are riskier than the plains. In (1) a greater danger on the plains is no reason to avoid the mountains; in (3) the plains being no more dangerous does not explain why the move was hard; in (4) a bigger pasture near the village is no reason to leave.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-160",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2021 §1 Q7",
+   "replaces": "vb-sc_tr_0115",
+   "stem": "The head nurse Rivka Adler was criticized for not publicly protesting against the hospital's staffing cuts, ____ argue that ____ a public protest ____ , and that many patients ____ .",
+   "options": [
+    "but her supporters / she was convinced that / would do more harm than good / received better care thanks to the changes she quietly negotiated with management",
+    "and her critics / even had she made / many patients would have benefited / would have suffered",
+    "but her supporters / she was afraid that / would bring about a positive change / received care thanks to her",
+    "and her critics / her decision to launch / prevented even deeper cuts / suffered because of it"
+   ],
+   "answer": 1,
+   "explanation": "The supporters defend her silence: a protest would have hurt, and her quiet work helped patients. (2) uses \"even had\" illogically; in (3) she is \"afraid\" of a positive change; (4) speaks of a protest she never made.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-161",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2021 §2 Q11",
+   "replaces": "vb-sc_tr_0118",
+   "stem": "The number of qualified nurses in the country ____ , and as a result hospitals ____ trained staff. Consequently, nurses' wages ____ , and even ____ willing to accept night shifts in remote clinics, which are considered undesirable.",
+   "options": [
+    "is falling / have no trouble recruiting / are declining / experienced nurses are",
+    "is growing / are courted by / are rising sharply / newly qualified nurses are not",
+    "is rising / are flooded with applications from / are rising sharply / newly qualified nurses are",
+    "is falling / compete fiercely for / are rising sharply / newly qualified nurses are not"
+   ],
+   "answer": 4,
+   "explanation": "A shortage makes hospitals compete, wages rise, and even beginners can refuse unwanted jobs. In (1) a shortage makes recruiting easy; in (2) and (3) a surplus of nurses makes wages rise sharply.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-162",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2021 §2 Q13",
+   "replaces": "vb-sc_tr_0124",
+   "stem": "Translating the novel “The Lanterns of Fenmoor” into Hebrew proved a ____ task than the translator had expected: ____ the book's many dialect words slowed her down, ____ she found that replacing them with standard Hebrew words ____ .",
+   "options": [
+    "greater / not only did / she was also relieved to find that / made the characters sound more natural",
+    "smaller / there is no doubt that / but / left the dialogue flat and lifeless",
+    "greater / as expected, / but in addition / stripped the characters of their distinct voices",
+    "smaller / admittedly / but / made the novel almost impossible to follow"
+   ],
+   "answer": 3,
+   "explanation": "The task was harder than expected: besides the expected slowness, an unexpected problem appeared. In (1) a relief does not make the task greater; in (2) and (4) a new, serious problem does not fit a \"smaller\" task.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-163",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2021 §2 Q15",
+   "replaces": "vb-sc_tr_0126",
+   "stem": "This fertilizer contains dorin, a compound that ____ substances ____ the healthy growth of plant roots. In wheat, the roots respond to the fertilizer by producing an enzyme that ____ dorin's action. Corn roots do not produce such an enzyme, and the fertilizer therefore ____ .",
+   "options": [
+    "stimulates the production of / important to / intensifies / is especially recommended for corn",
+    "may break down / essential to / weakens / may damage corn crops",
+    "blocks the production of / harmful to / cancels / is prohibited for use on corn",
+    "increases the production of / that interfere with / reinforces / is approved for use on wheat only"
+   ],
+   "answer": 2,
+   "explanation": "Dorin can harm roots; wheat protects itself by weakening it, and corn cannot, so corn may be damaged. In (1) wheat gets the stronger benefit, so corn is not the best choice; in (3) dorin helps corn, so there is no reason to ban it; in (4) wheat suffers more harm, not corn.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-164",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2021 §1 Q11",
+   "replaces": "vb-sc_tr_0128",
+   "stem": "As a critic who covers modern dance, I have attended many performances by the choreographer Lena Moss. ____ that the audience always responded with ____ , since such reactions are not ____ at performances of experimental works of this kind. Other critics, unlike the audience, tend ____ Moss's works whenever they can.",
+   "options": [
+    "I was surprised / a standing ovation / typical / to criticize",
+    "I was surprised / loud whistles of disapproval / unusual / to praise",
+    "I was surprised / cheers and long applause / typical / to praise",
+    "I was not surprised / admiration and applause / typical / to mock"
+   ],
+   "answer": 1,
+   "explanation": "The audience's enthusiasm is surprising at experimental works, and the critics, \"unlike the audience\", criticize. (3) has critics praising, like the audience; in (2) a usual reaction is surprising; in (4) an unusual reaction is not surprising.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-165",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2021 §1 Q12",
+   "replaces": "vb-sc_tr_0129",
+   "stem": "When Noa discovered that her watch was ____ and that there was ____ time left before the train's departure than she had thought, she felt ____ , because she could not ____ .",
+   "options": [
+    "fast / less / glad / wait a moment longer on the crowded platform",
+    "slow / less / relieved / finish packing in the time remaining",
+    "slow / more / disappointed / bear to wait so long",
+    "fast / more / relieved / possibly have finished packing in only a few minutes"
+   ],
+   "answer": 4,
+   "explanation": "A fast watch means there is more time than she thought, which is a relief for someone who could not pack in a few minutes. In (1) a fast watch gives less time; in (3) a slow watch gives more time; in (2) she is relieved that she has too little time to finish packing.",
+   "feel": 5,
+   "pool": true
+  },
+  {
+   "id": "vo-41-166",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2021 §2 Q13",
+   "replaces": "vb-sc_tr_0131",
+   "stem": "The prediction that the number of students at Galil College would ____ during the past decade ____ : ____ in tuition fees at the college, ____ the number of students who stayed on until graduation.",
+   "options": [
+    "grow / came true / owing to the drop / the enrollment of new students rose in those years, and likewise there fell",
+    "shrink / did not come true / despite the rise / the enrollment of new students rose in those years, and so did",
+    "shrink / came true / despite the rise / the number of students who dropped out rose in those years, and likewise there fell",
+    "grow / did not come true / admittedly because of the rise / the number of students who dropped out rose in those years, but in those same years there rose sharply"
+   ],
+   "answer": 2,
+   "explanation": "Despite higher fees, which would suggest shrinking, both enrollment and graduation rose, so the forecast failed. In (1) \"likewise\" joins a rise with a fall; in (3) higher fees are presented as a surprising reason for shrinking; in (4) a sharp rise in graduates does not explain why growth did not happen.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-167",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2021 §2 Q14",
+   "replaces": "vb-sc_tr_0132",
+   "stem": "A heated debate took place between Talia and Marco: while ____ believes that people's choices are driven mainly by reason, ____ is convinced that emotions are what truly determine them. “____ side with Marco,” said Ido, “because ____ feelings are ____ than logic.”",
+   "options": [
+    "Marco / Talia / I / it is wrong to claim that / weaker",
+    "Talia / Marco / I do not / it is clear that / stronger",
+    "Talia / Marco / I / it is well known that / stronger",
+    "Marco / Talia / I do not / it is hard to believe that / stronger"
+   ],
+   "answer": 3,
+   "explanation": "Marco holds that emotions rule, and Ido supports him because feelings are stronger than logic. In each other choice Ido's reason supports the opposite side from the one he takes.",
+   "feel": 4,
+   "pool": true
+  }
+ ],
+ "passages": []
+}

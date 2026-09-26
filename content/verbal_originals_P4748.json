@@ -1,0 +1,977 @@
+{
+ "items": [
+  {
+   "id": "vo-47-101",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Spring 2026 §1 Q15",
+   "replaces": "vb-inf_v2_0196",
+   "stem": "The wings of certain insects, such as cicadas and dragonflies, stay free of bacteria, and not because they contain any substance that is poisonous to bacteria: their surface is covered with tiny spikes, packed so densely that they tear apart any bacterium that settles on them. The coatings used to protect hospital equipment from bacteria, by contrast, contain poisonous substances, and most of them lose their effect within a few months, as the substance wears away. Recently, engineers have succeeded in etching into a steel plate a pattern of tiny spikes whose density matches that of an insect's wing, and bacteria placed on the plate die although nothing poisonous has been added to it. Based on the paragraph, what new way of keeping surfaces free of bacteria over time might develop from the engineers' success?",
+   "options": [
+    "Extracting from insects the substances they produce against bacteria, and binding them to a surface that keeps them from wearing away",
+    "Arranging ordinary poisonous substances in tiny, densely packed spikes, so that they come into closer contact with bacteria and kill them faster",
+    "Covering existing coatings with a layer of steel thin enough to let the poison reach the bacteria while keeping the coating from wearing away",
+    "Shaping the surfaces of hospital equipment into patterns of tiny spikes that tear bacteria apart, so that the protection comes from the form of the surface and not from any poisonous substance"
+   ],
+   "answer": 4,
+   "explanation": "The discovery is protection without poison, and only (4) gives up the poisonous substance. (1) and (2) keep a poison and merely protect or arrange it, and (3) protects an existing coating instead of replacing it.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-102",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Spring 2026 §1 Q9",
+   "replaces": "vb-inf_v2_0197",
+   "stem": "In a study, employees of a large company, some of whom walk to work and some of whom drive, were asked to name the streets along the route between their home and their office. The study yielded two findings. The first: the employees who walk named the streets along their route far more accurately than the employees who drive. The second: on their way to work, the employees who walk look at street signs much more often than the employees who drive. What is the relation between the two findings?",
+   "options": [
+    "The second finding can explain the first",
+    "The first finding is proof of the second",
+    "The two findings contradict each other",
+    "The second finding is a particular case of the first"
+   ],
+   "answer": 1,
+   "explanation": "Looking at street signs more often accounts for knowing the street names better, so the second finding explains the first. (2) reverses the direction, (3) sees a conflict where there is none, and (4) treats two different measures as a rule and an example of it.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-103",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Spring 2026 §2 Q18",
+   "replaces": "vb-inf_v2_0198",
+   "stem": "A survey of the second-hand market in household goods found that a digital camera bought within the past two years is usually resold for only a little less than the current price of a new camera, whereas a dishwasher of the same age is usually resold for much less than the current price of a new dishwasher. Which of the following facts could explain this finding?",
+   "options": [
+    "Two years ago new dishwashers cost far more than new cameras, but the price of new dishwashers has fallen since then and is still falling",
+    "The price of new cameras has fallen noticeably over the past two years, while the price of new dishwashers has hardly changed",
+    "A new low-quality dishwasher generally costs more than a used high-quality one, whereas a new low-quality camera generally costs less than a used high-quality one",
+    "Cameras lose their quality with use faster than dishwashers do"
+   ],
+   "answer": 2,
+   "explanation": "If new cameras now cost less than they did, a camera bought two years ago is resold close to today's lower price, so the gap is small; stable dishwasher prices leave that gap wide. (1) has the wrong appliance getting cheaper, (3) compares quality levels rather than age, and (4) would widen the camera gap, not narrow it.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-104",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Winter 2025 §1 Q11",
+   "replaces": "vb-inf_v2_0199",
+   "stem": "Prof. Levanon criticized a study for not examining what it set out to examine, and compared it to the following: \"It is like wanting to know whether people who go on guided tours enjoy their trips, and checking for that purpose whether tour guides suffer from back pain more often than other people do.\" Which of the following studies is most likely to be the one Prof. Levanon criticized?",
+   "options": [
+    "A study that asked whether there is a connection between how much people believe they sleep and how much they actually sleep, by monitoring their sleep and questioning them",
+    "A study that asked whether the teaching of mathematics differs between schools in large cities and schools in small towns, by examining pupils from both",
+    "A study that asked whether people who read many novels are more understanding of others, by comparing how understanding novelists are with how understanding the general public is",
+    "A study that asked whether people who take a speed-reading course read faster, by comparing their reading speed before and after the course"
+   ],
+   "answer": 3,
+   "explanation": "The comparison faults a study for examining the people who provide something instead of the people who receive it: novelists stand to readers of novels as guides stand to tourists. (1), (2) and (4) each examine the very people the question is about.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-105",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Autumn 2025 §1 Q15",
+   "replaces": "vb-inf_v2_0201",
+   "stem": "A group of researchers found that a mouse kept in a cage with a running wheel does better on memory tasks than a mouse of the same strain kept in an identical cage without a wheel. They also found that the brain of the mouse with the wheel contains a higher level of a certain protein, which is present in the brains of mice of all strains. To find out whether it is this protein that improves the memory of the running mouse, the researchers repeated the experiment with new mice, making one change. Which of the following is most likely to be that change?",
+   "options": [
+    "They placed a substance known to improve memory in the cage of the mouse without the wheel",
+    "They used one mouse of the strain tested in the first experiment and one mouse of a different strain",
+    "They used two mice of the same strain, but of a strain other than the one tested in the first experiment",
+    "They used mice that had been genetically altered so that they cannot produce the protein"
+   ],
+   "answer": 4,
+   "explanation": "If mice that run but cannot produce the protein gain no memory advantage, the protein is the link. (1) changes the mouse without the wheel, and (2) and (3) change the strain, not the protein.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-106",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Spring 2025 §1 Q13",
+   "replaces": "vb-inf_v2_0202",
+   "stem": "Researchers who examined skeletons of people who lived in a certain valley three thousand years ago found in the bones traces of a mineral that is present in the water of a nearby spring. The bones were remarkably strong and showed almost no signs of fractures, and the researchers concluded that the people of the valley drank from the spring and that its water strengthened their bones. Another researcher argued that the finding does not show that the spring water strengthened the bones, since the people of that period did hard physical work every day, which keeps bones strong in any case. Which of the following findings could weaken the other researcher's argument?",
+   "options": [
+    "Skeletons of people who lived in the region three thousand years ago, whose bones contain no traces of the mineral and show many more signs of fractures than the bones the researchers examined",
+    "Skeletons of people who lived at a later period, when most work was no longer physical, whose bones contain no traces of the mineral and show more signs of fractures than the bones the researchers examined",
+    "Remains of clay jars showing that the people of the valley at that time drew large amounts of water from the spring",
+    "Skeletons of people who lived at a time when other means of strengthening the bones were known, whose bones contain traces of the mineral"
+   ],
+   "answer": 1,
+   "explanation": "People of the same period did the same hard work, yet without the mineral their bones broke far more, so the work cannot be the whole explanation. (2) is exactly what the critic would expect, and (3) and (4) do not bear on the argument about work.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-107",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Spring 2025 §1 Q17",
+   "replaces": "vb-inf_v2_0203",
+   "stem": "A certain kind of spider spins its webs among the branches of a certain shrub. A study found that shrubs with spider webs on them lost fewer leaves to caterpillars than shrubs without webs. The authors of the study hypothesized that the spiders catch the moths that come to lay eggs on the shrub, so that fewer caterpillars hatch on it. Another researcher hypothesized instead that the spiders choose, in the first place, to spin their webs on shrubs that are less exposed to caterpillars, since such shrubs offer them steadier shelter. The authors carried out a further test whose results allowed them to confirm one of the two hypotheses. Which of the following tests is most likely to be the one they carried out?",
+   "options": [
+    "They covered a number of shrubs with nets that keep moths out and measured the leaf loss of those shrubs",
+    "They moved spiders onto randomly chosen shrubs and measured the leaf loss of those shrubs",
+    "They measured the leaf loss of shrubs that held webs of other kinds of spider",
+    "They counted the moths caught by each spider, and not only the leaves lost by the shrubs"
+   ],
+   "answer": 2,
+   "explanation": "Random placement removes the spiders' choice; if the shrubs they were placed on still lose fewer leaves, the spiders themselves are the cause. (1), (3) and (4) cannot tell the spiders' effect apart from their choice of shrub.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-108",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Spring 2025 §2 Q7",
+   "replaces": "vb-inf_v2_0204",
+   "stem": "A certain fungus is found in the soil of almost every orchard in a certain region, yet only about one tree in ten in these orchards develops root rot. Which of the following claims, if true, explains these facts?",
+   "options": [
+    "The spread of the fungus in the soil is what causes root rot",
+    "The fungus usually appears in the soil after a certain bacterium has appeared there, and it is the bacterium that sometimes causes root rot",
+    "The presence of the fungus leads to the appearance of a certain bacterium, and the two together always cause root rot",
+    "The fungus is only one of the factors that lead to root rot, but root rot cannot develop where the fungus is absent"
+   ],
+   "answer": 4,
+   "explanation": "A condition that is necessary but not sufficient fits a fungus that is almost everywhere and a disease that is not. (1) and (3) would make root rot common wherever the fungus is found, and (2) leaves the fungus with no part in the facts at all.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-109",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Spring 2024 §1 Q8",
+   "replaces": "vb-inf_v2_0205",
+   "stem": "Can horses tell from where a person is looking which object the person is paying attention to? A new study suggests that they can. The researcher placed three covered bowls, each containing food, in front of the horses, and on each trial looked steadily at a different bowl; the horses tended to approach the bowl the researcher was looking at. The researcher argued that the horses had this ability before the experiment began and did not acquire it during the experiment, and cited a finding from the experiment in support. Which of the following findings is most likely to be the one cited?",
+   "options": [
+    "Young horses approached the bowl that the researcher looked at more often than old horses did",
+    "In the first trials the horses approached each of the three bowls equally often",
+    "The rate at which the horses approached the bowl that the researcher looked at was no lower in the first trials of the experiment than in its last trials",
+    "Not all of the horses that took part in the experiment approached the bowl that the researcher looked at equally often"
+   ],
+   "answer": 3,
+   "explanation": "Learning during the experiment would show as improvement from trial to trial, so a rate that is as high at the start as at the end points to an ability the horses already had. (2) suggests the opposite, and (1) and (4) compare horses with one another rather than early trials with late ones.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-110",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Spring 2024 §2 Q17",
+   "replaces": "vb-inf_v2_0207",
+   "stem": "A study of river valleys that had flooded found that in the first years after a flood the trees along the river grow quickly, and that their growth then slows. Dr. Amsalem argued that the cause is the layer of silt that the flood leaves on the ground. Which of the following findings does not strengthen Dr. Amsalem's claim?",
+   "options": [
+    "Silt contains nitrogen compounds that the trees need for growth and that are scarce in the soil of the valleys",
+    "Silt speeds the growth of the grasses that compete with the trees for water",
+    "Researchers who planted tree seedlings in soils mixed with silt found that the fresher the silt, the faster the seedlings grew",
+    "In valleys where the silt was washed away by rain soon after the flood, no rapid growth of trees was observed"
+   ],
+   "answer": 2,
+   "explanation": "Helping the trees' competitors would slow the trees, not speed them. (1) supplies a mechanism, (3) explains why the effect fades as the silt ages, and (4) shows that without the silt there is no effect.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-111",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Winter 2023 §2 Q7",
+   "replaces": "vb-inf_v2_0208",
+   "stem": "Root-knot nematodes are tiny worms that live inside the roots of tomato plants, where pesticides hardly reach them. Nevertheless, many growers reduce their numbers by growing marigolds in a field for a season before planting tomatoes there. Which of the following data could explain why growing marigolds is effective against root-knot nematodes?",
+   "options": [
+    "Marigold roots release into the soil a substance near which the worms cannot survive",
+    "Marigold roots react with pesticides in the soil and lower their concentration without reducing their effectiveness",
+    "Marigolds give off a smell that drives away the beetles that feed on root-knot nematodes",
+    "Marigold seeds cost far less than most of the pesticides on the market"
+   ],
+   "answer": 1,
+   "explanation": "Only (1) links the marigolds to the death of the worms. (3) would actually help the worms, and (2) and (4) concern pesticides and cost.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-112",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Autumn 2023 §1 Q17",
+   "replaces": "vb-inf_v2_0209",
+   "stem": "A researcher asked experienced chess players to look briefly at chessboards and then set up the positions from memory. Some of the boards showed positions taken from real games, and others showed pieces placed at random. The players reproduced the positions from real games much more accurately. The researcher attributed this mainly to the players' familiarity with the kind of positions that arise in real games, but she also raised a second possibility: that the random boards held more pieces than the boards from real games, and were therefore harder to take in. She then carried out a second experiment, whose result showed that the second factor is of minor importance. Which of the following is most likely to be the result of the second experiment?",
+   "options": [
+    "Beginners, who had played few games, reproduced random positions as accurately as positions taken from real games",
+    "Experienced players reproduced positions from games they had played themselves more accurately than positions from games played by others",
+    "Experienced players reproduced positions from real games that held many pieces more accurately than random positions that held few pieces",
+    "Players who were asked to count the pieces on a board did so faster and more accurately when the board held few pieces"
+   ],
+   "answer": 3,
+   "explanation": "Only (3) sets the two factors against each other: familiar boards that are hard to take in still beat unfamiliar boards that are easy, so the number of pieces matters less. (2) shows that familiarity has an effect but says nothing about the number of pieces, (1) concerns players with no familiarity at all, and (4) is about the number of pieces alone.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-113",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Autumn 2022 §2 Q13",
+   "replaces": "vb-inf_v2_0210",
+   "stem": "At a certain bank, most of the loan applications submitted by small businesses were approved, whereas only a minority of the applications submitted by large businesses were approved. An examination of each branch, however, found that in every branch the proportion of approved applications among those submitted by small businesses equaled the proportion among those submitted by large businesses. Which of the following facts could explain these data?",
+   "options": [
+    "Most of the small businesses applied at branches where loans are rarely approved, and most of the large businesses at branches where loans are approved easily",
+    "Every branch received the same number of applications from small businesses as from large businesses",
+    "Most of the small businesses and most of the large businesses applied at the same branches",
+    "Most of the small businesses applied at branches where loans are approved easily, and most of the large businesses at branches where loans are rarely approved"
+   ],
+   "answer": 4,
+   "explanation": "Equal rates in every branch but unequal rates overall mean that the two groups applied at different kinds of branches, and the group with the higher overall rate must have gone mainly to the lenient ones. (1) has the direction reversed, and (2) and (3) would make the overall rates equal.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-114",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Winter 2022 §1 Q14",
+   "replaces": "vb-inf_v2_0211",
+   "stem": "A certain kind of clay has an unusual property: left undisturbed, it is firm, but a strong shake turns it at once into a liquid. Its tiny, flat particles have edges whose electric charge is opposite to that of their faces, so each particle's edge clings to another's face, and the particles form a loose framework, like a house of cards, with water in its spaces. A strong shake breaks these contacts; the particles fall flat, slide over one another in the water, and the clay flows. When the shaking stops, they slowly cling together again and the clay becomes firm. In most other clays this does not happen. Which of the following explanations about the particles of those clays best fits the paragraph?",
+   "options": [
+    "Their edges and faces do not carry opposite electric charges",
+    "They are larger than the particles of this clay",
+    "A strong shake does not make them flow",
+    "When the shaking stops, they cling to one another again"
+   ],
+   "answer": 1,
+   "explanation": "The paragraph names the opposite charges of edges and faces as what builds the framework, so their absence explains why nothing happens. (3) restates the difference instead of explaining it, (4) is true of this clay as well, and (2) brings in a property the paragraph never links to the effect.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-115",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Summer 2023 §2 Q5 (English translation)",
+   "replaces": "vb-inf_v2_0213",
+   "stem": "In 2015 a certain city changed the color of the lines marking its bicycle lanes from white to bright red. The change was expected to make the roads safer for cyclists, since red lines stand out to drivers more than white ones. And indeed, in the first months after the change the number of accidents involving cyclists in the city fell sharply. But the fall did not last, and two years later the number of such accidents had returned to its former level. Which of the following best explains why the fall in the number of accidents did not last?",
+   "options": [
+    "In 2015 the city began repainting its remaining white lanes red, and by 2017 no white lanes were left",
+    "In the first months after the change, drivers paid special attention to the bicycle lanes because the new markings were unfamiliar to them",
+    "Red lines are easier for drivers to notice than white lines, especially at night",
+    "In 2015 the speed limit on the city's main roads was raised by ten kilometers an hour"
+   ],
+   "answer": 2,
+   "explanation": "Attention that fades as the markings become familiar explains a fall that is later reversed. (1) and (3) would predict a lasting fall, and (4) took effect just when accidents fell, so it cannot explain why they later rose.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-116",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Spring 2019 §1 Q8 (English translation)",
+   "replaces": "vb-inf_v2_0215",
+   "stem": "Liora claimed that she could tell exactly how many coins are in a jar just by shaking it. To prove it, she shook a jar of coins and announced that it held 214 coins. Gil did not believe her and wanted to test her claim; but counting all the coins would take a long time, so he thought of a much quicker test. Which of the following is most likely to be the test Gil thought of?",
+   "options": [
+    "Gil will pour the coins into two smaller jars; Liora will shake each of them and say how many coins it holds, and Gil will check whether the two numbers add up to 214",
+    "Gil's brother will also shake the jar and say how many coins he thinks it holds, and Gil will compare his number with Liora's",
+    "Liora will shake a second jar and say how many coins it holds; Gil will count the coins in that jar and compare",
+    "Gil will take a few coins out of the jar without telling Liora how many; Liora will shake the jar again and say how many coins are left, and Gil will check whether the difference equals the number he took out"
+   ],
+   "answer": 4,
+   "explanation": "Only a real ability could follow a change whose size Gil alone knows. Anyone can make the two numbers in (1) add up to 214, (2) compares two guesses, and (3) requires the full count Gil wanted to avoid.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-117",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Spring 2019 §2 Q6 (English translation)",
+   "replaces": "vb-inf_v2_0216",
+   "stem": "A study of how lighting affects people at work yielded two findings: people who worked on a problem in a dimly lit room came up with more original solutions than people who worked on the same problem in a brightly lit room; and people who checked documents for errors in a brightly lit room found more errors than people who checked the same documents in a dimly lit room. On the basis of these findings, the researchers made a number of recommendations. Which of the following is least likely to be one of them?",
+   "options": [
+    "Proofreaders who check texts for errors should do their work in brightly lit rooms",
+    "The lighting of a workroom should be chosen according to the kind of work that is done in it",
+    "The less original a person's thinking, the more important it is for them to work in a brightly lit room",
+    "Advertising teams that meet in order to think of new ideas for campaigns should meet in a dimly lit room"
+   ],
+   "answer": 3,
+   "explanation": "Dim light is what helps original thinking, yet (3) sends the person who most needs that help into bright light. (1), (2) and (4) follow directly from the findings.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-118",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "December 2016 §1 Q9",
+   "replaces": "vb-inf_v2_0218",
+   "stem": "In an experiment, researchers gave each participant a notebook with a red cover. After a while, each participant was offered the chance to exchange it for a notebook with a blue cover that had been given to another participant. Most of the participants refused. The researchers hypothesized that the refusals stemmed from a preference for the color red, but a follow-up experiment showed that this hypothesis was wrong. Which of the following best describes the follow-up experiment?",
+   "options": [
+    "Each participant received a notebook with a blue cover and was later offered an identical notebook with a red cover in exchange; most refused",
+    "Each participant received a notebook with a red cover and was later offered a thinner notebook with a blue cover in exchange; most refused",
+    "Each participant received a notebook with a green cover and was later offered a thicker notebook with a red cover in exchange; most agreed",
+    "Each participant received a notebook with a red cover and was later offered a thicker notebook with a red cover in exchange; most agreed"
+   ],
+   "answer": 1,
+   "explanation": "People who refuse to give up a blue notebook for an identical red one cannot be driven by a preference for red. (2) and (3) fit a preference for red, and (4) does not test color at all.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-119",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "April 2016 §2 Q8",
+   "replaces": "vb-inf_v2_0223",
+   "stem": "In an experiment, participants were shown ten paintings and asked which one they liked best. Each participant then received false information about the choices of the others: some were told that most of the participants had chosen the same painting as they had, and others that almost no one had. Finally, the participants answered questions designed to reveal their mood. Which of the following is most likely to have been the purpose of the experiment?",
+   "options": [
+    "To examine how mood affects the tendency to choose paintings that others like",
+    "To examine whether, in an experiment, people try to choose paintings that others like",
+    "To examine whether people prefer to feel different from others or to feel similar to them",
+    "To examine how choosing between paintings affects mood"
+   ],
+   "answer": 3,
+   "explanation": "The only thing varied is what the participants hear about how similar their choice is to others', and the only thing measured afterward is mood. (1) reverses cause and effect, and (2) and (4) name factors the design does not isolate.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-120",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "July 2016 §2 Q13",
+   "replaces": "vb-inf_v2_0224",
+   "stem": "A food critic wrote: \"Something strange is happening in our city: every year more mediocre restaurants open here than ever before, yet nearly all the restaurant reviews published in the local press are favorable.\" Which of the following data could explain the situation the critic describes?",
+   "options": [
+    "Food critics often disagree about what makes a restaurant good",
+    "Most food critics believe that mediocre restaurants should be reviewed harshly, so as to warn diners",
+    "Food critics prefer not to write about restaurants that disappointed them",
+    "More restaurant reviews are published in the local press today than in the past"
+   ],
+   "answer": 3,
+   "explanation": "If critics write only about the restaurants they liked, the reviews will be favorable however many mediocre restaurants open. (2) predicts the opposite, and (1) and (4) do not explain why the reviews lean toward praise.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-121",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "December 2015 §1 Q14",
+   "replaces": "vb-inf_v2_0225",
+   "stem": "In an experiment, two groups of participants read the same short story and rated it according to several literary criteria. Group A read the story in an uncomfortably cold room; group B read it in a room at a normal temperature. After giving their ratings, the members of group A were asked whether the cold had affected their judgment, and if so, how. Most of them said that the cold had affected them strongly and had led them to rate the story lower than they would have otherwise; in fact, however, the ratings given by group A were higher than those given by group B. Which of the following is most likely to have been the purpose of the experiment?",
+   "options": [
+    "To examine whether people consider their own judgment better than that of others",
+    "To examine whether reading in the cold leads to harsher judgment than reading at a normal temperature",
+    "To examine whether lack of concentration causes people to rate a story higher",
+    "To examine whether people judge correctly how uncomfortable conditions affect their judgment"
+   ],
+   "answer": 4,
+   "explanation": "The experiment sets what the participants said the cold did to their ratings against what it actually did. (2) covers only the comparison between the two groups, and (1) and (3) are not tested at all.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-122",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "April 2015 §1 Q8",
+   "replaces": "vb-inf_v2_0227",
+   "stem": "At a telephone sales center, the team in one of the rooms has two supervisors: one supervises the morning shift and the other the evening shift. Recently the center's manager told the morning supervisor that he intends to replace her, since the team sells less during her shift than during the evening shift. The supervisor argued that the low sales are not her fault, and proposed a check to the manager. Which of the following is most likely to be the check she proposed?",
+   "options": [
+    "To check whether the prices of the products the center sells have recently gone up",
+    "To check whether in the center's other rooms, too, more is sold in the evening shift than in the morning shift",
+    "To check whether the center has recently run short of products that customers often ask for",
+    "To check whether in the center's other rooms, too, there are supervisors who work only in the morning shift or only in the evening shift"
+   ],
+   "answer": 2,
+   "explanation": "If every room sells more in the evening, the shift explains the gap, not the supervisor. (1) and (3) would affect both shifts alike, and (4) is about staffing, not sales.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-123",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "December 2014 §1 Q9",
+   "replaces": "vb-inf_v2_0229",
+   "stem": "A study found that people who regularly do crossword puzzles have, on average, a larger vocabulary than people who rarely do them. The researchers concluded that doing crossword puzzles enlarges a person's vocabulary. Which of the following could serve as an alternative explanation of the study's findings?",
+   "options": [
+    "People with a large vocabulary enjoy crossword puzzles more, since they manage to solve them",
+    "The ability to acquire a large vocabulary is innate, whereas a liking for crossword puzzles is not",
+    "People who solve puzzles of any kind have, on average, a larger vocabulary",
+    "Doing crossword puzzles strengthens the regions of the brain responsible for language"
+   ],
+   "answer": 1,
+   "explanation": "The large vocabulary may lead to the puzzles rather than the reverse. (4) is the researchers' own explanation, and (2) and (3) do not explain the link between these puzzles and vocabulary.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-124",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "December 2014 §1 Q13",
+   "replaces": "vb-inf_v2_0230",
+   "stem": "A doctor wished to examine whether the rise in the number of people who come to the emergency room with back injuries in winter is caused by shoveling snow. She gathered a sample of people who came to the emergency room with back injuries in winter and checked how many of them had shoveled snow shortly before. To make her results unambiguous, she must compare them with the result of a further check. Which of the following checks is best suited for this?",
+   "options": [
+    "Among people who came in with back injuries in winter, what proportion shoveled snow only after coming in",
+    "Among people who had not shoveled snow at that time, what proportion came in with back injuries in winter",
+    "Among people who had shoveled snow at that time, what proportion did not come in with back injuries in winter",
+    "Among people who came in with back injuries in winter, what proportion had shoveled snow"
+   ],
+   "answer": 2,
+   "explanation": "The rate among people who did not shovel snow is the baseline that the rate among those who did must exceed. (4) repeats the doctor's own check, and (1) and (3) provide no group to compare with.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-125",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "October 2014 §1 Q14",
+   "replaces": "vb-inf_v2_0231",
+   "stem": "Dana argues that teachers, sometimes without noticing, give more encouragement to pupils whose parents are university graduates, and that this is one of the reasons these pupils do better at school. Yoav, by contrast, argues that teachers merely respond to differences in the pupils' own eagerness to learn, which stem from the pupils' homes. Which of the following studies could help decide between the two claims?",
+   "options": [
+    "Observing pupils and checking to what extent their achievements match their parents' level of education",
+    "Following the books that parents with different levels of education buy for their children",
+    "Interviewing pupils and asking them whether they feel their teachers treat them differently from their classmates",
+    "Giving teachers the same essay, telling some of them that the pupil's parents are university graduates and others that they are not, and comparing the comments the two groups write"
+   ],
+   "answer": 4,
+   "explanation": "With the same essay in every teacher's hands, any difference in the comments comes from the label and not from the pupil's eagerness. (1), (2) and (3) cannot separate the two explanations.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-126",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "October 2014 §2 Q12",
+   "replaces": "vb-inf_v2_0232",
+   "stem": "Researchers presented two groups of participants with a story about a driver who backed into a parked car, causing damage of 4,000 shekels, and drove away without leaving a note. Group A was told that the driver had not noticed hitting the car; group B was told that the driver had noticed and decided to leave. The researchers hypothesized that the guiltier a person is thought to be, the more people tend to remember the details of the case in a way that makes the act more serious. Which of the following findings supports the researchers' hypothesis?",
+   "options": [
+    "Asked to state the cost of the damage, group A gave on average a sum of about 4,000 shekels, and group B a sum well above 4,000 shekels",
+    "Asked the name of the street where the accident took place, more members of group A than of group B remembered it",
+    "Asked their opinion of the cost of the damage, most of group A thought 4,000 shekels an exaggerated sum, and most of group B thought it a fair one",
+    "Asked whether the story mentioned that the driver was rushing to a hospital, more members of group B than of group A answered yes"
+   ],
+   "answer": 1,
+   "explanation": "The driver seen as guiltier is remembered as having caused more damage. (4) would make the act less serious, and (2) and (3) do not show memory that adds to the severity of the act.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-47-127",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "September 2013 §1 Q16",
+   "replaces": "vb-inf_v2_0234",
+   "stem": "The human-resources manager of a large company found that employees who took the company's optional workshop on time management were promoted, on average, sooner than employees who did not take it, and she concluded that the workshop helped the employees who took it. Her colleague Amos holds that there is another explanation: the more ambitious employees are the ones who chose to take the workshop, and since they are ambitious they were promoted sooner. Which of the following conclusions could be undermined by an alternative explanation of the kind Amos proposed?",
+   "options": [
+    "Datum: patients who received a new ointment, given by lottery to half the patients at a clinic, recovered faster, on average, than patients who did not. Conclusion: the ointment is effective",
+    "Datum: children who take part in an optional after-school chess club get higher marks in mathematics, on average, than children who do not. Conclusion: playing chess improves mathematical ability",
+    "Datum: people who sleep more are, on average, less irritable than people who sleep less. Conclusion: a person who sleeps more than another person is probably also less irritable",
+    "Datum: a survey among the passengers of the \"Nof\" bus company found that it is the most punctual company in the country. Conclusion: no bus company is more punctual than \"Nof\""
+   ],
+   "answer": 2,
+   "explanation": "Children who choose a chess club may be the ones who are strong in mathematics to begin with, the same self-selection Amos points to. In (1) the ointment was given by lottery, (3) draws no causal conclusion, and (4) has a different flaw.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-101",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "Spring 2026 §1 Q17",
+   "replaces": "vb-inf_v2_0237",
+   "stem": "Under the rules of a certain housing cooperative, the board meets once a week, on Tuesday, and any member may ask the board to discuss a particular matter. Such requests must reach the chairperson of the board through the secretary, who is required to pass each request on to the chairperson on the day it is submitted. A matter whose request has reached the chairperson by 5 p.m. on Friday will be placed on the agenda of the following Tuesday; however, if the chairperson determines that the matter needs more preparation than that allows - and only in such a case - she may postpone the discussion to the Tuesday after that, but no later. Four cases of requests to discuss a matter are described below. In which of them were the rules certainly broken?",
+   "options": [
+    "A member submitted a request to the secretary on a Saturday, and the matter was not discussed on the following Tuesday or on the Tuesday after that, although the secretary passed the request on to the chairperson on the same day",
+    "The matter was not discussed on the Tuesday following the request, although the chairperson determined that it needed no extra preparation and although the request was submitted to the secretary on a Friday",
+    "The matter was discussed nine days after the request reached the chairperson, although she had not determined that it needed more preparation",
+    "A member submitted a request to the secretary on a Wednesday, and the matter was discussed only on the third Tuesday after that, the chairperson having determined that it needed more preparation"
+   ],
+   "answer": 4,
+   "explanation": "A Wednesday request reaches the chairperson that day, before the Friday deadline, so it must be discussed on the following Tuesday or, if she so determines, on the Tuesday after - never on the third. In (1) the request missed that week's deadline and may have been postponed, in (2) a Friday request may have arrived after 5 p.m., and in (3) a request that reached her on a Sunday is due only nine days later.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-102",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "Autumn 2025 §1 Q13",
+   "replaces": "vb-inf_v2_0240",
+   "stem": "Avner, Eitan, Rivka and Tamar are sitting at a square table, one on each side, so that each of them sits opposite one of the others. Given: A. Tamar sits opposite the only man with glasses. B. Avner sits opposite the only woman with a hat. Therefore, it is not possible that -",
+   "options": [
+    "Tamar does not wear a hat, and Rivka sits beside Eitan",
+    "Eitan does not wear glasses, and Avner sits beside Rivka",
+    "Avner wears glasses, and Tamar does not wear a hat",
+    "Eitan wears glasses, and Avner sits beside Tamar"
+   ],
+   "answer": 3,
+   "explanation": "If Avner is the man with glasses, Tamar sits opposite him; but the person opposite Avner is the woman with the hat, so Tamar must wear the hat. Each of the other combinations fits some seating.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-103",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "Spring 2025 §1 Q9",
+   "replaces": "vb-inf_v2_0241",
+   "stem": "Lea, Moti, Nili, Oded and Ruth are sitting around a round table (not necessarily in this order). It is known that Nili sits immediately to the left of Oded. Which of the following data would make it possible to determine with certainty how all five are seated?",
+   "options": [
+    "Lea sits between Oded and Moti, next to both of them",
+    "Lea sits between Moti and Ruth, next to both of them",
+    "Lea sits next to Nili, and Moti sits next to Ruth",
+    "Lea sits next to Ruth, and Moti sits next to Oded"
+   ],
+   "answer": 1,
+   "explanation": "With Nili and Oded fixed, three seats in a row remain, beginning beside Oded; (1) fills them in the order Lea, Moti, Ruth. Each of the other data leaves two possible seatings.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-104",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "Winter 2024 §1 Q17",
+   "replaces": "vb-inf_v2_0243",
+   "stem": "From the regulations of a certain city: \"Every resident of the city must pay an annual waste-removal fee. Notwithstanding the above, a resident is exempt from the fee for 2023 if in that year they were a student - a full-time student under the age of 30 or a part-time student under the age of 25 - and their water consumption that year was below 60 cubic meters. The exemption does not apply, however, if in 2023 the resident ran from their apartment a business that received customers there.\" For which of the following residents is there not enough information to determine whether they must pay the fee for 2023?",
+   "options": [
+    "Lior, a full-time student aged 28 in 2023, who ran a hair salon for customers in his apartment and used 45 cubic meters of water",
+    "Adi, a full-time student aged 27 in 2023, who ran a design business from her apartment and used 50 cubic meters of water",
+    "Guy, a part-time student aged 27 in 2023, who worked as a waiter and used 30 cubic meters of water",
+    "Rina, a full-time student aged 22 in 2023, who worked in a bookshop and used 40 cubic meters of water"
+   ],
+   "answer": 2,
+   "explanation": "Adi meets every condition of the exemption, which is cancelled only if her business received customers at the apartment, and that is not stated. Lior's salon cancels his exemption, Guy is a part-time student over 25 and must pay, and Rina is exempt.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-105",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "Autumn 2024 §1 Q10",
+   "replaces": "vb-inf_v2_0244",
+   "stem": "Four cars are parked in a row: two red cars and two white cars. The two white cars are not parked next to each other. Which of the following is necessarily true?",
+   "options": [
+    "There is a red car at each end of the row",
+    "The two red cars are parked next to each other",
+    "At least one of the two cars at the ends of the row is white",
+    "At least one white car is parked between the two red cars"
+   ],
+   "answer": 3,
+   "explanation": "The white cars can stand only in places 1 and 3, 1 and 4, or 2 and 4, and in each case one of them is at an end. (1) and (4) fail when the white cars are in places 1 and 4, and (2) fails in the other two cases.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-106",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "Spring 2024 §1 Q14",
+   "replaces": "vb-inf_v2_0245",
+   "stem": "Maya said to Yonatan: \"I scored higher than you on the test, but Dror scored higher than I did.\" Yonatan said to Maya: \"Dror scored lower than you, and lower than me too.\" No two of the three got the same score, and exactly one of the two speakers is lying - that is, stating the opposite of the truth. Which of the following is necessarily true, whether it is Maya or Yonatan who is lying?",
+   "options": [
+    "The highest score of the three was not Yonatan's",
+    "Dror got the highest score of the three",
+    "Yonatan's score was lower than Maya's",
+    "The lowest score of the three was not Maya's"
+   ],
+   "answer": 4,
+   "explanation": "If Maya is lying, the truth is Dror below Maya below Yonatan; if Yonatan is lying, it is Yonatan below Maya below Dror. Either way Maya is in the middle. (1), (2) and (3) each hold in only one of the two cases.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-107",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "Spring 2024 §2 Q8",
+   "replaces": "vb-inf_v2_0246",
+   "stem": "Pitzi, Mocha and Lulu are three kittens of different weights. Given: Pitzi is not the heaviest of the three; Lulu is not the lightest. Which of the following statements is necessarily true?",
+   "options": [
+    "If Mocha is the lightest, then Lulu is the heaviest",
+    "If Pitzi is the lightest, then Lulu is the heaviest",
+    "Mocha is the heaviest",
+    "Pitzi is the lightest"
+   ],
+   "answer": 1,
+   "explanation": "If Mocha is the lightest, Pitzi and Lulu remain for the top, and Pitzi cannot be the heaviest. (2) fails when Mocha is the heaviest, and (3) and (4) each fail in some order.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-108",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "Autumn 2023 §1 Q9",
+   "replaces": "vb-inf_v2_0248",
+   "stem": "Given: A. Gali's salary is not higher than Ofer's salary. B. Gali's salary is not lower than Nurit's salary. Which of the following is not possible?",
+   "options": [
+    "Gali, Ofer and Nurit all earn the same salary",
+    "Ofer's salary is lower than Nurit's salary",
+    "Ofer's salary is higher than Nurit's salary",
+    "The three salaries are all different"
+   ],
+   "answer": 2,
+   "explanation": "Nurit earns no more than Gali, and Gali no more than Ofer, so Ofer can never earn less than Nurit. Equal salaries all round and three different salaries are both allowed.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-109",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "Autumn 2022 §2 Q11 [English analogue: the source sorts by Hebrew letters",
+   "replaces": "vb-inf_v2_0253",
+   "stem": "In a certain law office, the files of clients are kept in a single long drawer and arranged from front to back according to three criteria: first by the name of the client's city, then by the client's surname, and then by the year in which the file was opened, as follows. Files of cities whose names begin with A stand in front of files of cities whose names begin with B, and so on; where the first letters are the same, the second letters decide. Within one city, the files are arranged by the client's surname in alphabetical order, and the files of one client by year, the earlier in front. Four files are in the drawer: Mizrahi of Acre, 2016; Barak of Eilat, 2019; Sasson of Eilat, 2012; Barak of Elad, 2014. Which of the four files is at the back of the drawer?",
+   "options": [
+    "Mizrahi of Acre, 2016",
+    "Barak of Eilat, 2019",
+    "Sasson of Eilat, 2012",
+    "Barak of Elad, 2014"
+   ],
+   "answer": 4,
+   "explanation": "The city decides first: Acre, then Eilat (E-i), then Elad (E-l). Elad is the last city, and it has only one file. The surname Sasson and the year 2019 matter only within a city.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-110",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "Winter 2022 §2 Q10",
+   "replaces": "vb-inf_v2_0254",
+   "stem": "Noga writes secret messages according to these rules: (a) each word is written backwards; (b) in the result, every A is replaced by I and every I by A; (c) if the original word ended with a vowel, the letter K is added at the beginning of its coded form. Noga wants to send the message NINA LIKES TAPAS. How will she write it?",
+   "options": [
+    "ANIN SEKIL SAPAT",
+    "INAN SEKAL SIPIT",
+    "KINAN SEKAL SIPIT",
+    "INANK SEKALK SIPITK"
+   ],
+   "answer": 3,
+   "explanation": "NINA becomes ANIN, then INAN, and since NINA ends with a vowel, KINAN; LIKES becomes SEKIL, then SEKAL; TAPAS becomes SAPAT, then SIPIT. (1) applies only rule (a), (2) forgets rule (c), and (4) puts the K at the end and adds it to every word.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-111",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "December 2016 §1 Q7",
+   "replaces": "vb-inf_v2_0256",
+   "stem": "Three friends stand in a row: Yoav at the left end, Keren in the middle and Dvir at the right end. Exactly two of them play the guitar, exactly two play the piano and exactly two play the violin. It is known that: - Yoav plays the violin; - the two guitar players stand next to each other; - the two piano players stand on either side of one of the violin players. Therefore, of the three instruments, Keren plays -",
+   "options": [
+    "guitar and violin",
+    "violin only",
+    "guitar only",
+    "piano and guitar"
+   ],
+   "answer": 1,
+   "explanation": "Players on either side of someone can only be the two ends, so Yoav and Dvir play the piano and Keren, in the middle, plays the violin. Two neighbors must include the middle, so Keren also plays the guitar, and she does not play the piano.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-112",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "December 2016 §2 Q17",
+   "replaces": "vb-inf_v2_0257",
+   "stem": "A catering company follows these rules when planning a menu: - if a menu includes soup, it must also include bread, and it may not include salad; - if a menu includes fish, it must also include rice, and it may not include soup; - if a menu includes cake, it must also include salad, and it may not include fish. Which of the following menus does not follow the rules?",
+   "options": [
+    "A menu that includes rice, salad and cake",
+    "A menu that includes soup, salad and cake",
+    "A menu that includes bread, rice and fish",
+    "A menu that includes soup, bread and rice"
+   ],
+   "answer": 2,
+   "explanation": "A menu that includes soup may not include salad (and needs bread). Each of the other menus meets every rule that applies to it.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-113",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "September 2016 §1 Q16",
+   "replaces": "vb-inf_v2_0258",
+   "stem": "Each of the three senior nurses of a hospital ward - Orly, Pnina and Rachel - is either in the ward (at the nurses' station or elsewhere) or out of it (in surgery, escorting a patient to X-ray, or at a meeting). These standing orders are always kept: - when Rachel is in the ward, she stays at the nurses' station only if Orly is in surgery and Pnina is at a meeting; - when Pnina is in the ward, either the other two are in the ward as well, or Rachel is in the ward and Orly is escorting a patient to X-ray. Which of the following situations certainly cannot occur?",
+   "options": [
+    "Pnina is at a meeting and Orly is escorting a patient to X-ray",
+    "Orly is in the ward but not at the nurses' station",
+    "Pnina is at the nurses' station and Orly is escorting a patient to X-ray",
+    "All three nurses are at the nurses' station"
+   ],
+   "answer": 4,
+   "explanation": "Rachel may stay at the nurses' station only while Orly is in surgery, so Orly cannot be at the station with her. (3) is allowed by the second part of the second order, and nothing forbids (1) or (2).",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-114",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "September 2016 §2 Q12",
+   "replaces": "vb-inf_v2_0259",
+   "stem": "Under the rules of a certain college, a student is entitled to a full scholarship if at least one of two conditions holds: - the student's average grade is at least 90 and the student has completed at least two years of studies; - the student's income together with that of the student's parents (the \"family income\") is lower than an amount defined as the \"support threshold.\" According to the rules, which of the following students is certainly not entitled to a full scholarship?",
+   "options": [
+    "A student with an average of 95, whose family income is higher than the support threshold",
+    "A student with three years of studies, whose family income is higher than the support threshold",
+    "A student with an average of 85 and three years of studies, whose parents alone earn more than the support threshold",
+    "A student with an average of 92 and four years of studies, whose family income is lower than the support threshold"
+   ],
+   "answer": 3,
+   "explanation": "An average of 85 rules out the first condition, and if the parents alone earn more than the threshold, the family income does too. (1) may qualify by years of study, which are not stated, (2) may qualify by grades, which are not stated, and (4) qualifies twice over.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-115",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "July 2016 §2 Q17",
+   "replaces": "vb-inf_v2_0261",
+   "stem": "Four irrigation channels - Dekel, Oren, Rimon and Shaked, not necessarily in this order - are connected as follows: one of them (channel 1) flows into a second (channel 2); channel 2 and a third channel (channel 3) both flow into the fourth (channel 4), which flows into a reservoir. Three leaves were dropped into the water, not necessarily at the same point, and each drifted downstream until it sank. Two of the leaves drifted along these routes - Leaf A: Oren, then Dekel. Leaf B: Rimon, then Shaked. Which of the following could not have been the route of leaf C?",
+   "options": [
+    "Shaked, Oren",
+    "Dekel, Shaked, the reservoir",
+    "Shaked, Dekel",
+    "Oren, Dekel, the reservoir"
+   ],
+   "answer": 1,
+   "explanation": "The only two flows that share no channel are 1 into 2 and 3 into 4, so leaves A and B took these two, in one order or the other. Either Oren and Dekel are 1 and 2 and Rimon and Shaked are 3 and 4, or the reverse; in neither case does Shaked flow into Oren. Each of the other routes fits one of the two cases.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-116",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "September 2015 §1 Q15",
+   "replaces": "vb-inf_v2_0264",
+   "stem": "On every day on which Itai does not work a night shift at the factory where he is employed - and only on such days - he picks up his daughter from kindergarten in the afternoon. On those days he always walks to the kindergarten at four o'clock, unless the temperature at that hour is above 35 degrees, in which case he does not walk there but drives there instead. Which of the following could happen?",
+   "options": [
+    "On Sunday the temperature at four o'clock was 30 degrees, and Itai drove to the kindergarten",
+    "On Wednesday the temperature at four o'clock was 38 degrees, and Itai did not drive to the kindergarten",
+    "On Monday Itai worked a night shift, and at four o'clock he drove to the kindergarten to pick up his daughter",
+    "On Tuesday Itai did not work a night shift, the temperature at four o'clock was 28 degrees, and Itai did not walk to the kindergarten"
+   ],
+   "answer": 2,
+   "explanation": "If Itai worked a night shift that day, he did not go to the kindergarten at all, so on a hot day he may well not have driven there. In (1) it was not hot enough to drive, in (3) the night shift rules out the pickup, and in (4) nothing excuses him from walking.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-117",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "April 2015 §1 Q9",
+   "replaces": "vb-inf_v2_0265",
+   "stem": "At a certain research institute the following rule applies: the last person to leave any laboratory must turn off its air conditioner, and whoever is the last to leave the building must turn off every air conditioner left on anywhere in the building. One evening Yaron was the last to leave the building. He noticed that the air conditioner was on in one of the laboratories - a laboratory in which only Michal had worked that day - and he left without turning it off. Which of the following claims is correct?",
+   "options": [
+    "Neither Yaron nor Michal broke the rule",
+    "Yaron broke the rule, but Michal did not",
+    "Both Yaron and Michal broke the rule",
+    "Yaron did not break the rule, but Michal did"
+   ],
+   "answer": 3,
+   "explanation": "Michal was the last to leave her laboratory and left its air conditioner on; Yaron was the last to leave the building and left it on as well.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-118",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "February 2015 §1 Q14",
+   "replaces": "vb-inf_v2_0267",
+   "stem": "The city's regulations contain three clauses on shop signs. Clause 1: \"A neon sign may be hung only on a shop front up to 8 meters wide.\" Clause 2: \"A large sign may be hung only on a shop front up to 12 meters wide.\" Clause 3: \"Only a shop front up to 4 meters wide may display a small wooden sign.\" A shop owner argued that the answer to a question that interested her could not be known with certainty from any one clause on its own. Which of the following could be that question?",
+   "options": [
+    "May a shop front 3 meters wide carry a large neon sign?",
+    "May a shop front 8 meters wide carry a small neon sign?",
+    "May a shop front 12 meters wide carry a large neon sign?",
+    "May a shop front 4 meters wide carry a small wooden sign?"
+   ],
+   "answer": 1,
+   "explanation": "\"Large\" and \"neon\" fall under different clauses, and only the two together settle the question. (2) and (3) are settled by clause 1 alone, and (4) by clause 3 alone.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-119",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "December 2014 §1 Q8",
+   "replaces": "vb-inf_v2_0270",
+   "stem": "A cake is made of three layers - chocolate, vanilla and strawberry - of different thicknesses, placed one on top of another. It is known that: - the thickest layer is next to the vanilla layer; - the chocolate layer is neither the thickest nor the thinnest. From this it necessarily follows that -",
+   "options": [
+    "the top layer is strawberry",
+    "the thinnest layer is not vanilla",
+    "the middle layer is not chocolate",
+    "the chocolate layer and the strawberry layer are not next to each other"
+   ],
+   "answer": 3,
+   "explanation": "Chocolate is of middle thickness, so the thickest layer is strawberry or vanilla; it is next to vanilla, so it is strawberry, and vanilla is the thinnest. Strawberry and vanilla are next to each other, so chocolate cannot be between them and must be at the top or the bottom. (1) and (4) are possible but not necessary, and (2) is false.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-120",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "December 2014 §1 Q17",
+   "replaces": "vb-inf_v2_0271",
+   "stem": "The computer system that controls the watering, spraying and ventilation of a large greenhouse operates according to three rules, which were written by its designers: A. The system may not harm a plant, and must do all it can to prevent harm to a plant. B. The system must carry out the grower's instructions, unless they conflict with rule A. C. The system must save water, unless this conflicts with rule A or rule B. There are cases, however, in which the rules make conflicting demands on the system, and it cannot decide how it should act. Which of the following situations is an example of such a case?",
+   "options": [
+    "Two growers who share the greenhouse each instruct the system to uproot the other's plants",
+    "Pests are attacking a plant, and the only way the system can stop them is to spray a substance that will harm the plant next to it",
+    "A grower instructs the system to water all the plants twice a day, although once a day is enough",
+    "A plant is wilting and the system could water it, but a grower instructs it not to"
+   ],
+   "answer": 2,
+   "explanation": "Rule A both forbids harming a plant and demands preventing harm, and here the two halves collide. In (1) and (4) rule A overrides the instructions, and in (3) rule B overrides rule C.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-121",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "December 2014 §2 Q17",
+   "replaces": "vb-inf_v2_0273",
+   "stem": "In a certain region there are two ferry lines (ferry X and ferry Y) and two train lines (the green line and the orange line). It is known that: - no station is shared by the two ferry lines, and no station is shared by the two train lines; - ferry Y and the orange line have no station in common; - ferry X and the green line have only one station in common, and at that station the ferry only lets passengers off and does not take any on. A tourist traveled on all four lines, once on each, changing lines only at shared stations and using no other means of transport. Which line did the tourist travel on first?",
+   "options": [
+    "Ferry X",
+    "Ferry Y",
+    "The orange line",
+    "The green line"
+   ],
+   "answer": 3,
+   "explanation": "The only possible changes are between the orange line and ferry X, from ferry X to the green line (one way only), and between the green line and ferry Y. A route through all four lines must therefore run orange line, ferry X, green line, ferry Y.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-122",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "April 2014 §1 Q14",
+   "replaces": "vb-inf_v2_0276",
+   "stem": "At a certain university, two bodies are authorized to decide on students' requests: the faculty committee and the university committee. Different arrangements apply to different kinds of request, and they determine which body is authorized to decide: A. Exclusive authority - only one of the two bodies is authorized to decide on the request. B. Parallel authority - both bodies are authorized, but once one of them has begun to deal with the request, the other may not deal with it. C. Authority by consent - only the faculty committee is authorized, unless the student and the lecturer have both agreed to bring the request before the university committee. A request to change an exam grade is under the exclusive authority of the faculty committee; a request for an extension on a paper is under parallel authority; a request for exemption from a course is under authority by consent. Which of the following situations is possible?",
+   "options": [
+    "The student and the lecturer agreed that the university committee would decide on a request to change an exam grade, and it does so",
+    "The student and the lecturer disagree about which body should decide on a request for exemption from a course, and the university committee decides it",
+    "The faculty committee began to deal with a request for an extension on a paper, and at the student's request the university committee began to deal with it too",
+    "The student and the lecturer agreed that the university committee would decide on a request for exemption from a course, and it does so"
+   ],
+   "answer": 4,
+   "explanation": "Consent of both sides opens the university committee to a request for exemption. (1) breaks the faculty committee's exclusive authority, (2) lacks the required consent, and (3) breaks the bar that parallel authority sets.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-123",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "February 2014 §1 Q16",
+   "replaces": "vb-inf_v2_0277",
+   "stem": "Noga, Hadas and Efrat, three sisters of different ages, are sitting on a bench (not necessarily in this order). It is known that: - Noga is older than the sister sitting at the left end; - Hadas is older than the sister sitting in the middle. Therefore, necessarily -",
+   "options": [
+    "Hadas is sitting at the right end",
+    "Efrat is not sitting at the right end",
+    "Hadas is older than Noga",
+    "Efrat is older than Noga"
+   ],
+   "answer": 2,
+   "explanation": "Noga is not at the left end and Hadas is not in the middle, which leaves two seatings: Efrat, Noga, Hadas (Hadas older than Noga, Noga older than Efrat) and Hadas, Efrat, Noga (Noga older than Hadas, Hadas older than Efrat). In both, Efrat is the youngest and not at the right end; (1) and (3) hold in only one seating, and (4) in neither.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-124",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "February 2014 §2 Q13",
+   "replaces": "vb-inf_v2_0278",
+   "stem": "A company makes plant-food mixtures for houseplant problems. Each mixture contains two of the four salts the company uses - P, Q, R and S - and its label names the problems it is suited to. The company considers a mixture suited to a problem if at least one of its two salts relieves the problem and neither of them is liable to worsen it. It is known that: - only P relieves yellowing, and only S is liable to worsen it; - only Q relieves drooping, and only P is liable to worsen it; - only R relieves brown tips, and only Q is liable to worsen them; - only S relieves root rot, and only R is liable to worsen it. The label of a certain mixture says that it is suited to two different problems. Which two could they be?",
+   "options": [
+    "Drooping and yellowing",
+    "Brown tips and root rot",
+    "Root rot and yellowing",
+    "Yellowing and brown tips"
+   ],
+   "answer": 4,
+   "explanation": "A mixture of P and R relieves yellowing and brown tips, and neither salt worsens either problem. Every other pair of problems calls for two salts one of which worsens the other's problem.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-125",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "December 2013 §1 Q10",
+   "replaces": "vb-inf_v2_0279",
+   "stem": "When Hila orders dessert at her favorite café, the waiter offers her two desserts she has not yet tasted, and she chooses one of them. It is known that: A. Hila prefers cakes to ice creams, and ice creams to fruit salads. B. When she is offered two desserts of the same kind, she prefers the cheaper one. C. If one of the desserts contains pistachio, Hila chooses it regardless of its kind or its price. Yesterday Hila chose a vanilla ice cream that cost 28 shekels. Which of the following could have been the dessert offered to her together with it?",
+   "options": [
+    "A strawberry ice cream with chocolate sauce that cost 32 shekels",
+    "A lemon cake with whipped cream that cost 34 shekels",
+    "A chocolate ice cream with whipped cream that cost 22 shekels",
+    "A fruit salad topped with chopped pistachios that cost 30 shekels"
+   ],
+   "answer": 1,
+   "explanation": "Of two ice creams Hila takes the cheaper, so a 32-shekel one loses to the vanilla. (2) would have won by kind, (3) by price and (4) by its pistachios.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-126",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "December 2013 §1 Q13",
+   "replaces": "vb-inf_v2_0280",
+   "stem": "Ilan has three marbles: two blue and one green. Maya also has three marbles: one blue, one red and one green. Ilan gave Maya one of his marbles in exchange for one of hers. After the exchange, each of them had two marbles of one color and a third marble of another color. Which of the following could not have happened?",
+   "options": [
+    "Ilan received Maya's blue marble",
+    "Maya received one of Ilan's blue marbles",
+    "Maya received Ilan's green marble",
+    "Ilan received Maya's green marble"
+   ],
+   "answer": 1,
+   "explanation": "If Ilan received a blue marble, either he gave his green one and was left with three blue marbles, or he gave a blue one and nothing changed, leaving Maya with three colors. Each of the other exchanges has a version that meets the condition.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-48-127",
+   "topic": 48,
+   "category": "Rules and Arrangements",
+   "mirrors": "September 2013 §2 Q10",
+   "replaces": "vb-inf_v2_0283",
+   "stem": "Three kinds of caterpillar - A, B and C - feed on the leaves of three kinds of tree: mulberry, fig and grape. Kind A feeds only on fig and grape leaves; kind B feeds only on mulberry and fig leaves; kind C feeds only on mulberry and grape leaves. In a biology lesson, the teacher put one caterpillar of each kind in a separate box with leaves of all three trees, and at the end of the lesson checked which leaves each caterpillar had eaten. Which of the following cannot be?",
+   "options": [
+    "None of the caterpillars ate mulberry leaves",
+    "All three caterpillars ate the same kind of leaf",
+    "Two of the caterpillars ate a kind of leaf that the third did not eat",
+    "Each caterpillar ate two kinds of leaf"
+   ],
+   "answer": 2,
+   "explanation": "No kind of leaf is eaten by all three kinds of caterpillar: each leaf is refused by exactly one of them. Each of the other outcomes is possible.",
+   "feel": 4,
+   "pool": true
+  }
+ ],
+ "passages": []
+}

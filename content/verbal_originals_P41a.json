@@ -1,0 +1,617 @@
+{
+ "items": [
+  {
+   "id": "vo-41-101",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2026 §1 Q11",
+   "replaces": "vb-sc_tr_0001",
+   "stem": "In an address she gave at a national forestry conference, Dr. Halevi argued that ____ the use of grazing goats to clear undergrowth in forests, ____ this practice. She explained that goat grazing makes it possible to reduce the use of heavy machinery for clearing, ____ young saplings that are important for the renewal of the forest ____ .",
+   "options": [
+    "in view of the success achieved by / steps should be taken to extend / which admittedly also damages / but the harm the machines cause is far less than the harm the goats cause to those same saplings",
+    "despite the failure of / it is nonetheless right to extend / and although the goats have occasionally damaged / this casts serious doubt on the practice's seemingly impressive results",
+    "even if one disregards the failure of / there are many reasons to oppose / which is liable to damage / in addition to the harm it causes to the soil",
+    "despite the success achieved by / limits should be placed on / and even to lower the cost of maintaining the forest; but since the goats also eat / there are areas in which the harm they cause outweighs their benefit"
+   ],
+   "answer": 4,
+   "explanation": "Only (4) explains why a successful method should still be limited: the goats also eat the saplings. (1) ends by arguing against the goats while calling to extend their use; (3) praises goats in the justification while claiming there are reasons to oppose them.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-102",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2026 §1 Q13",
+   "replaces": "vb-sc_tr_0003",
+   "stem": "When determining whether two unsigned paintings were made by the same artist, great weight should be given to similarity in brushwork technique, and only secondary weight to similarity in subject matter - a similarity that may simply reflect the fashion of the period. Thus, for example, the fact that both paintings depict a harbor at sunset does suggest a connection between them, but ____ .",
+   "options": [
+    "what would establish this connection is similarity in the way the paint is applied, as for example in the short, thick strokes used to render the water in both works",
+    "the fact that the brushwork in the two paintings is similar shows that this similarity is merely a matter of chance",
+    "what truly indicates a common artist is precisely the similarity in subject, such as the choice of boats and gulls",
+    "to determine this one must first establish which of the two paintings was completed earlier"
+   ],
+   "answer": 1,
+   "explanation": "The sentence applies the stated rule: subject similarity only hints, brushwork decides. (3) reverses the weighting; (2) contradicts the rule; (4) raises an irrelevant question of priority.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-103",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2026 §2 Q13",
+   "replaces": "vb-sc_tr_0004",
+   "stem": "What makes a novel deserving of a literary prize? ____ considerable disagreement among the judging panels of different prizes, ____ to honor a novel that another panel ____ . Nevertheless, when judges are asked to explain their choices, ____ : the originality of the plot, the quality of the writing, and the book's relevance to its time.",
+   "options": [
+    "There is clearly / since it often happens that a panel decides / passed over / they all cite the same criteria",
+    "We might expect to find / but in practice it is not unusual for a panel to agree / dismissed / each of them gives a different explanation",
+    "There appears to be no / since it rarely happens that a panel refuses / has already honored / the same criteria are mentioned again and again",
+    "Only rarely is there / and therefore it is not unusual for a panel to choose / passed over / they offer a variety of explanations"
+   ],
+   "answer": 1,
+   "explanation": "\"Nevertheless\" requires a contrast between real disagreement and shared criteria, which only (1) supplies. (3) denies the disagreement, so there is nothing to contrast; (2) and (4) end with varied explanations, which does not contrast with disagreement.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-104",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2026 §2 Q14",
+   "replaces": "vb-sc_tr_0005",
+   "stem": "If ____ that the old bridge was unsafe ____ you to drive more slowly across it, then all the more so ____ would not have made you drive across it ____ .",
+   "options": [
+    "an unconfirmed rumor / made / an official warning from the city engineer / more slowly",
+    "the official warning from the city engineer / made / a rumor / faster",
+    "an unconfirmed rumor / did not make / an official warning from the city engineer / more slowly",
+    "the official warning from the city engineer / did not make / an unconfirmed rumor / more slowly"
+   ],
+   "answer": 4,
+   "explanation": "\"All the more so\" moves from the stronger case to the weaker one: if even an official warning did not slow you down, a rumor surely would not. (3) runs the inference from the weak case to the strong one.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-105",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Spring 2026 §2 Q15",
+   "replaces": "vb-sc_tr_0006",
+   "stem": "A consumer advocate secretly recorded conversations with the sales staff of a car dealership, and thereby revealed that the dealership was systematically misleading buyers about the terms of its warranty. Some condemned the secret recording, ____ : in my opinion, ____ revealing the deception served the public interest, the argument that in this case the result excused the method ____ , since the advocate ____ simply by reading the warranty documents that the dealership hands to every buyer.",
+   "options": [
+    "but I do not share their view / even though / holds / could not have uncovered the deception",
+    "and I share their view / even though / does not hold / could have uncovered the deception",
+    "and I share their view / although / does not hold / could not have uncovered the deception",
+    "but I do not share their view / since / holds / could have uncovered the deception"
+   ],
+   "answer": 2,
+   "explanation": "The recording was unnecessary because the documents already revealed the deception, so the method is not excused despite the public benefit. In (4) the method was unnecessary, yet the writer claims it was justified; (3) gives a reason that supports the recording while rejecting it.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-106",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2025 §1 Q7",
+   "replaces": "vb-sc_tr_0007",
+   "stem": "____ the new coach's training methods ____ last season, the club's veteran players regard her instructions for the coming season ____ .",
+   "options": [
+    "owing to the fact that / produced the team's worst results in years / with great respect",
+    "although / led the team to the championship / with suspicion",
+    "despite the fact that / led the team to the championship / with complete trust",
+    "even though / produced the team's worst results in years / skeptically"
+   ],
+   "answer": 2,
+   "explanation": "Only (2) sets a real contrast: her methods succeeded, yet the players are suspicious. In (3) and (4) the attitude follows naturally from the results, so the concessive connector does not fit; in (1) the cause does not lead to the result.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-107",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2025 §1 Q8",
+   "replaces": "vb-sc_tr_0008",
+   "stem": "The photographer Anna Lindqvist has often stated that ____ portray a place truthfully ____ lived there for at least a year. This belief ____ why she ____ the invitation to photograph the research stations in the Arctic, where she has never lived.",
+   "options": [
+    "a photographer cannot / unless they have / therefore does not help explain / turned down",
+    "a photographer can / only if they have not / may therefore explain / declined",
+    "a photographer can / only if they have not / therefore does not help explain / did not decline",
+    "a photographer cannot / unless they have / may therefore explain / declined"
+   ],
+   "answer": 4,
+   "explanation": "Her belief requires having lived in a place, so it explains why she declined to photograph a place she never lived in. (1) has the right belief and decision but denies the obvious explanation; (2) and (3) state an absurd belief.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-108",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2025 §1 Q9",
+   "replaces": "vb-sc_tr_0009",
+   "stem": "In a study, participants spent six weeks working in a very quiet environment. They were then asked to rate the loudness of recorded sounds, and they rated them as louder than did people who had worked in an ordinary office. The researchers therefore hypothesized that the quiet period had made the participants more sensitive to sound, so that now ____ it turned out that in the weeks after the study ended the participants tended to set the volume on their televisions and phones higher than they had before the study.",
+   "options": [
+    "they would need a higher volume in order to hear comfortably. And indeed,",
+    "a lower volume would be enough for them to hear comfortably. And indeed,",
+    "they would need a higher volume in order to hear comfortably. However, to their surprise,",
+    "a lower volume would be enough for them to hear comfortably. However, to their surprise,"
+   ],
+   "answer": 4,
+   "explanation": "Greater sensitivity predicts that a lower volume would suffice; raising the volume contradicts this prediction, so \"to their surprise\" is required. (1) and (3) reverse what greater sensitivity implies.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-109",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2025 §2 Q15",
+   "replaces": "vb-sc_tr_0011",
+   "stem": "Does relying on navigation apps harm drivers' sense of direction? Does the ease of finding a route with an app keep drivers from developing the ability to find their way on their own? ____ . But since, as far as we know, this is not the case, then even if navigation apps become more accurate and more widespread, drivers' sense of direction will not be harmed, and may even improve as a result.",
+   "options": [
+    "If drivers could develop a good sense of direction without ever having to find their way on their own, relying on the apps would do no harm at all",
+    "It would make sense to encourage the use of these apps if heavy traffic were the main obstacle to developing drivers' sense of direction",
+    "If a navigation app could replace the driver's need to build a mental picture of the route, that would weaken drivers' sense of direction",
+    "There is some logic in the claim that drivers' sense of direction will not keep developing without aids that overcome the limits of human memory"
+   ],
+   "answer": 3,
+   "explanation": "The conclusion (no harm) follows only if \"this is not the case\" denies a condition for harm, as in (3). Denying (1)'s condition would imply harm; (2) and (4) are not conditions whose denial leads to the conclusion.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-110",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2025 §2 Q16",
+   "replaces": "vb-sc_tr_0012",
+   "stem": "A school principal wrote: \"What is 'restorative discipline'? It is an approach that rethinks several basic assumptions of school discipline: instead of the usual focus on punishing the offender, it seeks to repair the harm done, to rebuild trust and to strengthen shared responsibility - principles whose core is the dignity and well-being of every member of the school community, including, of course, the offender. ____ : it insists that every student who has caused harm face those they have hurt and take concrete, demanding steps to make amends.\"",
+   "options": [
+    "However, in practice its responses to specific incidents often fail to reflect these principles",
+    "That said, this is not a lenient approach that avoids confrontation and settles for a quick apology. Quite the opposite",
+    "Nevertheless, many of its features show that it cares about the welfare of the offender too",
+    "However, in practice there is no real difference between it and ordinary school discipline, either in its guiding principles or in the actions that follow from them"
+   ],
+   "answer": 2,
+   "explanation": "The sentence after the colon shows the approach is demanding, which illustrates (2). (3) repeats what was already said about the offender, so \"Nevertheless\" has nothing to contrast with; (1) and (4) are not illustrated by the colon sentence.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-111",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2025 §1 Q10",
+   "replaces": "vb-sc_tr_0013",
+   "stem": "Daniel, a theater director, is convinced that rehearsals marked by ____ lead to performances that ____ . He therefore hopes that he is ____ in his feeling that the cast ____ the staging he has planned for the new play, which they will rehearse for the first time tomorrow.",
+   "options": [
+    "complete harmony / are lifeless and predictable / wrong / are unhappy with",
+    "heated arguments / nobody enjoys / right / are unhappy with",
+    "heated arguments / are fresh and daring / wrong / are happy with",
+    "complete harmony / fail to reach their full potential / right / are happy with"
+   ],
+   "answer": 3,
+   "explanation": "Daniel thinks disagreement produces good performances, so he hopes the cast is not in fact content with his staging. In every other option his hope would lead to the result he considers bad.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-112",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2025 §1 Q11",
+   "replaces": "vb-sc_tr_0014",
+   "stem": "The Coastal Research Institute's ____ report on the state of the coral reefs along the southern coast ____ . \"____ ,\" say ____ .",
+   "options": [
+    "alarming / left the Ministry of Tourism unmoved / Only if funding is found quickly / officials in the minister's office, \"will the reefs be saved from destruction\"",
+    "encouraging / has brought smiles to the faces of divers / This is certainly good news / the latter, \"we have managed to destroy large parts of the reefs\"",
+    "alarming / did not leave the authorities unmoved / There is hope / its authors, \"that we will not be able to save large parts of the reefs\"",
+    "encouraging / is not enough to reassure marine biologists / More funding is needed / the latter, \"or else large parts of the reefs will be lost\""
+   ],
+   "answer": 4,
+   "explanation": "Only (4) is consistent throughout: good news, yet not enough, so the biologists demand more funds. In (1) a ministry that is unmoved urges urgent funding; (2) and (3) end with quotes that contradict their opening.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-113",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2025 §2 Q14",
+   "replaces": "vb-sc_tr_0016",
+   "stem": "Dr. Noa Ravid: \"Geology teaches that understanding a landscape as it looks today depends on understanding the forces that shaped it over millions of years, and it may be argued that the founding years of an organization parallel those forces, since in both cases the early period reveals the pressures that determined the basic structure before later layers covered them. Accordingly, ____ .\"",
+   "options": [
+    "the pressures at work in organizations are probably the same forces at work in shaping landscapes",
+    "organizations, like landscapes, are gradually covered over by later layers",
+    "understanding an organization's founding years is a condition for understanding the organization as it is today",
+    "understanding a landscape requires examining the layers that covered it in later periods"
+   ],
+   "answer": 3,
+   "explanation": "The analogy transfers the geological rule (present depends on formative past) to organizations, as in (3). (1) equates the two domains literally; (2) restates a side detail; (4) stays in geology and reverses the rule.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-114",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2025 §2 Q15",
+   "replaces": "vb-sc_tr_0017",
+   "stem": "A study of employees at a large factory found that workers with few friends at work were more likely to leave, especially in years in which the company cut wages: in years of wage cuts, the likelihood that a worker with close friendships at work would still be with the company at the end of the year was ____ that of a worker with few such friendships, and in years without cuts it was ____ .",
+   "options": [
+    "four times as high as / twice as high",
+    "twice as high as / four times as high",
+    "half as high as / a quarter as high",
+    "a quarter as high as / half as high"
+   ],
+   "answer": 1,
+   "explanation": "Workers with friends stay more, and the gap is largest in wage-cut years, so the ratio must be higher then. (2) puts the larger gap in the wrong years; (3) and (4) make friendless workers more likely to stay.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-115",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2025 §2 Q16",
+   "replaces": "vb-sc_tr_0018",
+   "stem": "The architect Maya Katz asked a colleague to look over an objection ____ her building plan, and he told her that the arguments raised in the objection ____ , and moreover that several expert opinions could be cited in their support. \"Even so,\" he added, \"don't give up: in my experience, objections of this kind ____ , so it is still ____ that this one will be dismissed.\"",
+   "options": [
+    "submitted in support of / are sound / are dismissed only very rarely / hardly conceivable",
+    "filed against / are not groundless / are upheld in most cases / not reasonable",
+    "filed against / are persuasive at first sight / are upheld in only a few cases / quite possible",
+    "submitted in support of / have no basis in the regulations / are upheld fairly often / not certain"
+   ],
+   "answer": 3,
+   "explanation": "\"Even so ... don't give up\" needs strong arguments against her plan and yet a real chance of dismissal. (2) offers no hope; (1) and (4) make the objection support her plan, so there is nothing to hope for.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-116",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2024 §1 Q11",
+   "replaces": "vb-sc_tr_0025",
+   "stem": "Unlike Yael, Omer thinks that ____ approve the plan to close the neighborhood's old public library. In his view, Yael holds on to her position ____ aware that the library ____ .",
+   "options": [
+    "it is right to / even though she is / serves hundreds of elderly residents who have no other access to books",
+    "there is no reason not to / even though she is not / serves hundreds of elderly residents who have no other access to books",
+    "there is no need to / since she is not / costs the city a great deal to maintain and is rarely used",
+    "it would be wrong to / even though she is / serves hundreds of elderly residents who have no other access to books"
+   ],
+   "answer": 4,
+   "explanation": "Omer opposes closing, so Yael supports it despite knowing the library serves many residents. In (1) Yael opposes closing \"even though\" she knows a fact that supports her; in (3) her ignorance of the costs would not explain supporting closure.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-117",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2024 §1 Q12",
+   "replaces": "vb-sc_tr_0026",
+   "stem": "The historian Dr. Weiss used to argue that old buildings that have lost their original purpose ____ torn down. ____ his daughter, ____ on this question, decided ____ the abandoned railway station, which the town council had voted to demolish.",
+   "options": [
+    "should rightly be / It is therefore easy to understand why / who adopted his view / to lead the campaign to save",
+    "should not be / It is surprising that / who disagreed with him / nevertheless to lead the campaign to save",
+    "should not be / It is therefore easy to understand why / although she rejected his view / not even to sign the petition to save",
+    "should rightly be / It is therefore astonishing that / who shared his view / not even to sign the petition to save"
+   ],
+   "answer": 2,
+   "explanation": "She disagrees with preserving old buildings yet leads the campaign to save one: surprising, as (2) says. In (1) and (4) her action contradicts or matches the shared view with the wrong reaction; in (3) her behavior follows from her rejection, not \"therefore\" from his view.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-118",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2024 §2 Q9",
+   "replaces": "vb-sc_tr_0028",
+   "stem": "Dr. Amsalem: \"In a country's core constitutional principles only minor amendments can be made over the years, and far-reaching reforms are possible only in ordinary legislation.\"\nDr. Hart: \"I disagree with you. ____ .\"",
+   "options": [
+    "Far-reaching reforms can be made in a country's core constitutional principles as well",
+    "Minor amendments can be made in ordinary legislation as well",
+    "In ordinary legislation far-reaching reforms can be made",
+    "Over the years every country makes both minor amendments and far-reaching reforms in its laws"
+   ],
+   "answer": 1,
+   "explanation": "Only (1) contradicts Amsalem's claim. (3) repeats it; (2) and (4) are compatible with it.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-119",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2024 §2 Q10",
+   "replaces": "vb-sc_tr_0029",
+   "stem": "Gil claims that ____ the injury to his ankle, he ____ the marathon in under four hours. His coach ____ this claim, and as evidence points out that in each of Gil's three previous marathons he took more than four and a half hours, ____ .",
+   "options": [
+    "had it not been for / could have finished / agrees with / even though he was fully fit in all of them",
+    "even without / would not have finished / agrees with / even though he was fully fit in all of them",
+    "had he not recovered from / would not have finished / disagrees with / since he was injured in all of them",
+    "even had he not recovered from / would have finished / agrees with / since he was injured in all of them"
+   ],
+   "answer": 2,
+   "explanation": "Gil says the injury made no difference; the coach agrees because Gil was slow even when fit. In (1) and (4) the evidence contradicts the claim the coach agrees with; in (3) the evidence supports the claim the coach disputes.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-120",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2024 §2 Q11",
+   "replaces": "vb-sc_tr_0030",
+   "stem": "The violin solo was performed at a level that ____ the level expected of soloists in the country's leading orchestras. ____ amazed to learn that the performer was ____ a twelve-year-old pupil, ____ a seasoned professional.",
+   "options": [
+    "falls far short of / I was therefore / none other than / from whom one cannot expect playing like that of",
+    "is not below / I was therefore / none other than / and not",
+    "is in no way below / I was therefore not / none other than / and not",
+    "falls far short of / I was therefore not / not / but rather"
+   ],
+   "answer": 2,
+   "explanation": "Professional-level playing by a child is amazing, as (2) says. (3) says the writer was not amazed; in (1) and (4) weak playing gives no reason for the reaction described.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-121",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2024 §1 Q13",
+   "replaces": "vb-sc_tr_0031",
+   "stem": "The Arbel bakery's bread ____ the bread of the Golan bakery, ____ surprising that it sells ____ than Golan's bread, since Golan's prices are lower. ____ .",
+   "options": [
+    "is admittedly less tasty than / but it is / more / For this reason Arbel is now looking for ways to cut its prices",
+    "is admittedly tastier than / but it is nevertheless / more / After all, it is well known that shoppers care far more about taste than about price",
+    "is in no way inferior in taste to / and even so it is not / less / For this reason Arbel is now looking for ways to cut its prices",
+    "is not as tasty as / and it is nevertheless / less / After all, it is well known that shoppers care far more about taste than about price"
+   ],
+   "answer": 3,
+   "explanation": "Equal taste plus higher price explains lower sales, so Arbel works on price. In (2) and (4) the final sentence removes the surprise that was just claimed; in (1) a bakery that sells more has no reason to cut prices.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-122",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2024 §1 Q14",
+   "replaces": "vb-sc_tr_0032",
+   "stem": "In her review of the new album by the singer Tom Avrahami, the music critic wrote: \"Songs about lost love ____ a formula for a dull album, ____ the singer Rina Mor, ____ , Avrahami ____ to give these songs genuine depth and freshness.\"",
+   "options": [
+    "are not necessarily / but unlike / who wrote such songs brilliantly / does not manage",
+    "are / and indeed, like / who wrote such songs in a clichéd and shallow way / manages admirably",
+    "are not necessarily / and indeed, like / who wrote such songs brilliantly / does not manage",
+    "are / but unlike / who wrote such songs in a clichéd and shallow way / does not manage"
+   ],
+   "answer": 1,
+   "explanation": "The theme can succeed (Mor proved it), but Avrahami fails, so \"unlike\" is right. (3) says \"like\" for opposite results; (4) says \"unlike\" for the same result; (2) contradicts \"and indeed\".",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-123",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2024 §2 Q14",
+   "replaces": "vb-sc_tr_0036",
+   "stem": "A person who lives in a city today would hardly recognize the same city as it looked two hundred years ago. From this one might conclude that at some point its residents must have felt that they had suddenly been moved to a strange place. After all, ____ . However, sweeping historical transformations are very often a series of small changes that go unnoticed.",
+   "options": [
+    "the street names in many cities have hardly changed over the centuries",
+    "a river carves a canyon slowly, but in the end the whole landscape is transformed",
+    "many migrations in history were driven by residents' wish to leave their home cities",
+    "a person who fell asleep and woke to find every building on their street replaced would feel completely lost"
+   ],
+   "answer": 4,
+   "explanation": "\"After all\" must support the tempting conclusion with an example of sudden change causing disorientation, as in (4). (2) illustrates gradual change, which belongs to the \"However\" sentence; (1) and (3) are irrelevant.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-124",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2022 §1 Q7",
+   "replaces": "vb-sc_tr_0055",
+   "stem": "The prices of solar panels have been falling ____ , ____ a system that only wealthy households could afford a decade ago can today ____ .",
+   "options": [
+    "so steeply / that / be installed by many families of modest means",
+    "only slightly / and therefore / be found on the roof of almost every home",
+    "at a dizzying rate / with the result that / be seen as an unattainable luxury",
+    "too slowly / and therefore / be bought as a matter of course by ordinary households"
+   ],
+   "answer": 1,
+   "explanation": "A steep fall in price makes a once-expensive system widely affordable. In each of the other options the result contradicts the rate of change.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-125",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2022 §1 Q9",
+   "replaces": "vb-sc_tr_0057",
+   "stem": "____ Harel, who holds that every role an actor plays reveals something of the actor's own character, Lavi ____ the actor and the character, because in his view the character ____ . Nevertheless, even Lavi sometimes says things like \"In this scene ____ reveals his own fears.\"",
+   "options": [
+    "Like / emphasizes the similarity between / has an existence of its own / the character",
+    "Unlike / emphasizes the similarity between / has no existence of its own / the actor",
+    "Like / prefers to separate / has no existence of its own / the actor",
+    "Unlike / insists on a clear distinction between / has an existence of its own / the actor"
+   ],
+   "answer": 4,
+   "explanation": "Lavi separates actor from character, unlike Harel, yet \"nevertheless\" slips into attributing the fears to the actor. (2) has him agree with Harel after \"unlike\"; (1) and (3) mismatch the reason with the position.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-126",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2022 §2 Q12",
+   "replaces": "vb-sc_tr_0058",
+   "stem": "I wanted to know whether the new Thai restaurant in town was worth a visit, and when Ido told me, \"It isn't one of the ____ Thai restaurants I've eaten at,\" I understood that the answer was ____ , since ____ , to the point that ____ .",
+   "options": [
+    "best / no / Ido has been so impressed by the Thai restaurants he has visited / even an average Thai restaurant is worth trying",
+    "worst / yes / Ido dislikes Thai food so strongly / a remark like that from him means the restaurant may well suit my taste",
+    "worst / no / Ido has such refined taste in Thai food / even a restaurant he considers acceptable is sure to delight me",
+    "best / yes / Ido admires Thai cuisine so greatly / if even he has doubts about the place, that proves its quality"
+   ],
+   "answer": 2,
+   "explanation": "From someone who dislikes Thai food, \"not among the worst\" is high praise, so the answer is yes. In (1) and (3) the explanation implies \"yes\" while the answer is \"no\"; in (4) doubts are taken as proof of quality.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-127",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2022 §1 Q12",
+   "replaces": "vb-sc_tr_0061",
+   "stem": "If the apartment across town were ____ spacious than mine, with a rent ____ than mine, I ____ move there, since space is ____ important to me than money.",
+   "options": [
+    "more / higher / would not / less",
+    "less / lower / would / more",
+    "more / higher / would / less",
+    "less / lower / would not / less"
+   ],
+   "answer": 1,
+   "explanation": "More space at a higher rent is rejected because money matters more to the speaker than space. In each other option the decision contradicts the stated priority.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-128",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2022 §1 Q14",
+   "replaces": "vb-sc_tr_0063",
+   "stem": "In Ofer's view, debating other people's plans at meetings is a poor use of time - far poorer than actually trying things out - ____ . We would then learn what works more quickly, and at the very least we would cause no harm, since harsh criticism at a meeting can discourage colleagues, whereas a failed trial run hurts no one.",
+   "options": [
+    "and even so, he sees no substitute for such debates. He argues that without them it would be hard to judge the quality of other people's ideas",
+    "although a certain amount of critical discussion is necessary for good ideas to develop. In his view, if blunt criticism were encouraged, even at the expense of politeness, fewer bad plans would be carried out",
+    "and he maintains that if the time spent picking apart other people's plans were spent testing our own ideas instead, the time would be far better used",
+    "and for exactly that reason it is easy to understand his warning against hasty trial runs. If only we could avoid poorly planned trials in advance, we could limit the damage they cause"
+   ],
+   "answer": 3,
+   "explanation": "\"We would then\" requires a proposal to replace debating with trying, which only (3) makes. (1) and (2) defend criticism, which the next sentence attacks; (4) warns against the trials the paragraph praises.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-129",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2022 §2 Q8",
+   "replaces": "vb-sc_tr_0065",
+   "stem": "While ticket prices for most sporting events have stayed the same, ticket prices for the national basketball league ____ sharply in recent seasons. Unlike in the past, when these tickets were ____ , today many fans ____ buy them.",
+   "options": [
+    "have risen / affordable for almost everyone / can no longer afford to",
+    "have dropped / affordable for almost everyone / can afford to",
+    "have dropped / especially expensive / cannot afford to",
+    "have risen / relatively cheap / can afford to"
+   ],
+   "answer": 1,
+   "explanation": "Rising prices mean that tickets once affordable are now out of reach. \"Unlike in the past\" requires a change, which (2) lacks; (3) and (4) contradict the price trend.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-130",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2022 §2 Q9",
+   "replaces": "vb-sc_tr_0066",
+   "stem": "Even though Rotem usually ____ very spicy food, ____ appeal to her, ____ , in her opinion, ____ to order it.",
+   "options": [
+    "avoids / she was glad to find that the café's new chili dish did / and even so / people would do well",
+    "likes / the café's new chili dish did / and therefore / people should certainly be encouraged",
+    "likes / the café's new chili dish did not / and even so / that is no reason for others not",
+    "cannot stand / she was glad to find that the café's new chili dish did / and for that reason / people would be wise not"
+   ],
+   "answer": 3,
+   "explanation": "She likes spicy food, yet this dish did not appeal to her, and still she does not discourage others. (2) uses \"even though\" with no contrast; (1) uses \"even so\" with no contrast; (4) draws a conclusion that contradicts her enjoyment.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-131",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2018 §1 Q14",
+   "replaces": "vb-sc_tr_0069",
+   "stem": "Every spring my brother Itai's grades ____ . I always assumed that the reason was that in spring he ____ time to basketball practice, which of course takes time away from studying. Recently, when I learned that in spring he ____ playing video games, which are known to hurt school performance, ____ that my assumption was correct.",
+   "options": [
+    "improve / devotes a great deal of / gives up / I began to doubt",
+    "drop / devotes a great deal of / gives up / I became even more convinced",
+    "improve / devotes very little / gives up / I became even more convinced",
+    "drop / devotes a great deal of / spends many hours / I became even more convinced"
+   ],
+   "answer": 2,
+   "explanation": "Grades drop even though he stops gaming, so gaming cannot explain the drop and the basketball explanation is strengthened. In (4) the hours of gaming are a rival explanation for the drop, so confidence should fall, not rise; in (3) giving up games is a rival explanation for the improvement; in (1) the assumption never explained improvement.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-132",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2018 §2 Q8",
+   "replaces": "vb-sc_tr_0071",
+   "stem": "____ that in recent years the town's annual street festival ____ , a survey shows that ____ of the residents ____ canceling it.",
+   "options": [
+    "In line with the general impression / has been losing its appeal / a large proportion / are not interested in",
+    "Despite the fact / has been attracting record crowds / a large proportion / are in favor of",
+    "Contrary to the common view / has become more popular than ever / a considerable proportion / do not want",
+    "As confirmation of the claim / is not as popular as it once was / only a small percentage / want"
+   ],
+   "answer": 2,
+   "explanation": "A popular festival that many still want canceled is a true contrast. In (3) the finding agrees with the popularity it claims to contradict; (1) and (4) cite findings that do not confirm what they claim to confirm.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-133",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Autumn 2018 §2 Q9",
+   "replaces": "vb-sc_tr_0072",
+   "stem": "Noa's ____ ____ when she auditioned for a place in the orchestra, ____ the conductor is known as someone who ____ to candidates' academic degrees.",
+   "options": [
+    "impressive academic record / did not work in her favor / and this even though / attaches great importance",
+    "lack of formal degrees / worked against her / since / attaches little importance",
+    "impressive academic record / did not work in her favor / since / attaches great importance",
+    "impressive academic record / worked in her favor / and this because / attaches no importance at all"
+   ],
+   "answer": 1,
+   "explanation": "Her strong record did not help her despite the conductor's regard for degrees: a real contrast. In (3) \"since\" presents a reason that contradicts the outcome; in (2) and (4) the conductor's attitude cannot explain what happened.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-41-134",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Winter 2018 §1 Q12",
+   "replaces": "vb-sc_tr_0075",
+   "stem": "A gym member: \"The receptionist told me that if I choose the monthly plan instead of the annual plan, I can freeze my membership only if I give at least two weeks' notice. ____ .\"",
+   "options": [
+    "I plan to choose the monthly plan and to give two weeks' notice, so I hope she is wrong",
+    "I have already given only three days' notice, so I chose the annual plan, but I was sorry to find out that she was right",
+    "Since I gave only one week's notice and chose the monthly plan, I was pleased to find out that she was wrong",
+    "That is why I chose the monthly plan, even though I do not intend to give any notice at all"
+   ],
+   "answer": 3,
+   "explanation": "The rule would have blocked the speaker (monthly plan, short notice), so learning it was wrong is good news. In (1) the rule would not affect the speaker; in (2) the rule applies only to the monthly plan; (4) chooses the plan \"for that reason\" while breaking its condition.",
+   "feel": 4,
+   "pool": true
+  }
+ ],
+ "passages": []
+}

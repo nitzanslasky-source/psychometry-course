@@ -1,0 +1,851 @@
+{
+ "items": [
+  {
+   "id": "vo-44-101",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Winter 2025 §2 Q17",
+   "replaces": "vb-inf_v2_0002",
+   "stem": "In one traditional way of making noodles by hand, the cook begins with a single rope of dough as thick as a person's wrist - far thicker than any noodle that will be served. The cook stretches the rope to about twice its length, folds it in half so that it becomes two strands lying side by side, and stretches it again; each fold doubles the number of strands. No dough is added or removed along the way, and the total weight of the dough stays the same from beginning to end, so that from one thick rope there result, within a few minutes, several hundred strands as thin as string. Based on the paragraph, while the cook is folding and stretching the dough -",
+   "options": [
+    "each fold produces strands as thick as the rope that was folded, until the dough reaches its final number of strands",
+    "the first fold already produces strands as thin as the noodles that are served, and these are then multiplied without further change in thickness",
+    "the thick rope is divided at a single moment into several hundred strands of the final thickness",
+    "a series of folds takes place, each of which produces strands thinner than the strands that were folded"
+   ],
+   "answer": 4,
+   "explanation": "With no dough added and the weight fixed, every doubling of the strands must make each strand thinner. (1) would require dough to be added, (2) puts the whole thinning into the first fold, and (3) ignores the series of folds the paragraph describes.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-102",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Spring 2026 §1 Q10",
+   "replaces": "vb-inf_v2_0004",
+   "stem": "It is widely accepted that engineering has much to learn from living nature - not only are many machines built on principles that also govern the bodies of animals, but more than once the study of a plant or an animal has led directly to a new invention. Few, however, stop to consider that this debt is far from obvious and is in fact puzzling: an engineered device is the product of deliberate planning by a mind that has a goal in view, whereas the structures of living creatures arose from blind processes of variation and selection that aim at nothing at all. The usefulness of nature to engineers therefore raises deep questions about the relation between purpose and chance. According to the paragraph, why is the debt of engineering to living nature puzzling?",
+   "options": [
+    "Because it links a practical discipline to a natural science, and the questions it raises therefore belong to philosophy rather than to engineering or biology",
+    "Because it shows that the structures of living creatures were in fact shaped by a mind with a goal in view, like machines",
+    "Because the processes that produce engineered devices and those that produce living structures are of entirely different kinds, and would seem to have nothing in common",
+    "Because living nature has not merely supplied principles for machines but has also led directly to new inventions"
+   ],
+   "answer": 3,
+   "explanation": "The paragraph grounds the puzzle in the difference between deliberate planning and blind processes. (1) describes a consequence of the puzzle, not its cause; (2) draws a conclusion the paragraph does not draw; (4) is part of what everyone accepts, not what is puzzling.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-103",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Spring 2026 §2 Q16",
+   "replaces": "vb-inf_v2_0006",
+   "stem": "Old stone walls are damaged both by frost and by the roots of plants, and in many cases the two work on the same wall at once. Such combined damage is especially severe, since frost and roots strengthen each other's effect, and not only because each of them harms the stone on its own: water that freezes in a crack expands and widens it, so that roots can push deeper into the wall than they could otherwise reach; the roots, for their part, hold moisture inside the stone, so that more water is available to freeze; moreover, the roots break up the hard lime crust that would otherwise shed rainwater from the surface, so that the stone loses the protection it would have had against frost alone. Which of the following is not given in the paragraph as a reason why combined damage is more severe than damage by frost alone?",
+   "options": [
+    "The roots break the stone faster in the presence of frost than frost does on its own",
+    "The roots break up the crust that would otherwise protect the stone from water",
+    "Freezing water widens cracks, so that the roots can push deeper into the wall",
+    "The roots keep moisture in the stone, so that more water is available to freeze"
+   ],
+   "answer": 1,
+   "explanation": "The paragraph compares combined damage with each agent working alone, but never says that the roots' own effect is faster than frost's. (2), (3) and (4) are each stated.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-104",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Spring 2026 §2 Q17",
+   "replaces": "vb-inf_v2_0007",
+   "stem": "Marine archaeologists report that the cannons of a merchant ship that sank in the eighteenth century may lie in Merrow Bay. A magnetometer towed across the bay recorded an unusually strong reading over its western shoal - a finding that points to the presence of iron, since iron disturbs the earth's magnetic field, and iron is the metal of which the ship's cannons, like many other objects on board, were made. The archaeologists nevertheless hold that if the cannons are in the bay, they are buried under the sand. Which of the following claims follows from the paragraph?",
+   "options": [
+    "Where there are no cannons in Merrow Bay, the magnetic reading is probably strong",
+    "The chance that there are cannons buried under the sand of the western shoal is smaller than the chance that there is iron there",
+    "Where the magnetic reading is weak, there are probably cannons under the sand",
+    "The chance that the cannons lie exposed on the western shoal is greater than the chance that they are buried there"
+   ],
+   "answer": 2,
+   "explanation": "The strong reading points to iron; buried cannons require iron and more besides, so they are less likely than iron alone. (1) and (3) reverse the indicator, and (4) contradicts the archaeologists' view.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-105",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Winter 2025 §1 Q12",
+   "replaces": "vb-inf_v2_0009",
+   "stem": "The art historian Dr. Lena Farrow said: \"The portrait in the museum's east hall is signed by a little-known painter, but X-ray images show beneath its surface a second face that was painted over. The faint shadow around the sitter's chin is produced by the layers of this earlier work. If our chemical tests hold - and the hidden layer contains the kind of lead white that was used only before 1700 - then the portrait is older than its signature suggests, and was painted over a work by a far more skilled hand.\" Which of the following claims does Dr. Farrow present as a fact?",
+   "options": [
+    "The hidden layer contains lead white used only before 1700",
+    "The portrait is older than its signature suggests",
+    "The shadow around the sitter's chin is produced by an earlier layer of paint",
+    "The hidden painting is by a more skilled painter"
+   ],
+   "answer": 3,
+   "explanation": "Only the source of the shadow is stated outright; (1), (2) and (4) all sit inside the condition \"if our chemical tests hold.\"",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-106",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Winter 2025 §1 Q16",
+   "replaces": "vb-inf_v2_0012",
+   "stem": "The art critic Helen Marsh wrote: \"In the 1920s many painters abandoned portraiture in favor of what they took to be the only art suited to the modern age. The reason was, above all, a widespread and only partly justified belief: that a painted portrait, which does little more than record the features of a face, adds little that a photograph cannot provide.\" According to the paragraph, what is Marsh's position on portrait painting?",
+   "options": [
+    "The purpose of portrait painting is to record the features of a face, and not to offer what a photograph cannot",
+    "A painted portrait can certainly offer something a photograph cannot, though only to a limited degree",
+    "There is no basis for the belief that a painted portrait does little more than record the features of a face",
+    "A painting that records the features of a face adds nothing that a photograph cannot provide"
+   ],
+   "answer": 2,
+   "explanation": "\"Only partly justified\" means the belief is partly wrong - a portrait does add something - but partly right, so the addition is limited. (4) is the belief itself; (1) and (3) go further than Marsh in opposite directions.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-107",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Winter 2025 §2 Q13",
+   "replaces": "vb-inf_v2_0015",
+   "stem": "Many species of insects spend part of their lives as larvae buried in the soil. Underground the larvae barely feed, grow very slowly and are protected from cold and from predators. An adult insect comes out of the soil only when its larval stage \"ends.\" In most species the emergence is not synchronized: larvae that hatched in the same year may emerge in different years. Which of the following describes a synchronized emergence in a species of insect?",
+   "options": [
+    "All the larvae that hatched in a given year entered the soil at the same time",
+    "Larvae that hatched in a given year emerged as adults in different years",
+    "Not all the adults that emerged in a given year had hatched in the same year",
+    "All the larvae that hatched in a given year spent the same number of years in the soil"
+   ],
+   "answer": 4,
+   "explanation": "Synchronized emergence means that larvae of one year come out together, so they must all have stayed underground equally long. (1) concerns entering the soil, not leaving it; (2) is the unsynchronized case; (3) concerns the year of hatching.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-108",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Autumn 2025 §2 Q7",
+   "replaces": "vb-inf_v2_0018",
+   "stem": "Researchers at an eye hospital found that the retinas of people with a certain hereditary form of night blindness contain no fewer light-sensing rod cells than healthy retinas. The rods of the affected, however, do not respond: they fail to produce the pigment that allows them to react to dim light. Since 2015 the researchers have been seeking a way to make these cells produce it. Which of the following headlines is best suited to a report of the study?",
+   "options": [
+    "\"A Light in the Dark? If the Rods Can Be Made to Respond, Night Vision May Return\"",
+    "\"Breakthrough: Pigment Production in Rod Cells Successfully Restored\"",
+    "\"Night Blindness Explained: Sufferers Lose Their Rod Cells\"",
+    "\"Question Answered: The Retinas of the Night-Blind Lack Rod Cells\""
+   ],
+   "answer": 1,
+   "explanation": "The study found the rods present but inactive and is still looking for a remedy. (2) reports a success the paragraph does not claim; (3) and (4) contradict the finding that the rods are there.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-109",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Autumn 2025 §2 Q9",
+   "replaces": "vb-inf_v2_0020",
+   "stem": "In an article on journalism it was written: \"Reporters who cover a single government ministry for years are in a position of divided allegiance. As journalists they owe their first duty to the public's right to know, but as regular visitors to the ministry they also depend on the goodwill of its officials. This position is liable to compromise the reporter's independence.\" Which of the following claims is implied by the paragraph?",
+   "options": [
+    "A reporter in a position of divided allegiance will necessarily lose their independence",
+    "A reporter who covers a ministry ought to owe their first duty to the goodwill of its officials",
+    "In practice, only reporters who cover government ministries find themselves in a position of divided allegiance",
+    "What the public has a right to know does not always coincide with what the ministry's officials would like to see published"
+   ],
+   "answer": 4,
+   "explanation": "An allegiance is divided only if its two claims can conflict. (1) turns \"liable to\" into \"necessarily\"; (2) reverses the stated order of duties; (3) turns an example into the only case.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-110",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Autumn 2025 §2 Q10",
+   "replaces": "vb-inf_v2_0021",
+   "stem": "In an account of farming in a remote valley it was written: \"When the villagers' crops failed, they both brought offerings to the shrine of the harvest spirit and changed their practical methods - resting fields, adding manure and digging new channels. This mixture of ritual and husbandry may seem strange, but to the villagers it was perfectly sensible. In their view, a poor harvest might be a sign of the spirit's anger or the result of exhausted soil, and since no one could tell which was to blame in a given year, it was wisest to act against both at once.\" According to the paragraph, what did the villagers believe?",
+   "options": [
+    "The mixture of ritual and husbandry was strange, but it kept alive a tradition worth preserving",
+    "They did not know which of their measures would help against the spirit's anger and which against exhausted soil",
+    "The means at their disposal allowed them to act against a poor harvest, but not to know for certain what had caused it",
+    "No harvest could be improved by practical methods alone, and therefore ritual had to be added to them"
+   ],
+   "answer": 3,
+   "explanation": "The villagers' reasoning rests on uncertainty about the cause, not about the remedy. (2) misplaces the uncertainty; (1) and (4) supply grounds the paragraph does not give.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-111",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Spring 2025 §1 Q16",
+   "replaces": "vb-inf_v2_0025",
+   "stem": "Over the past decade the prices of both new and used cars have risen in every region of the country. In the northern region, however, the prices of used cars have risen at a faster rate than the prices of new cars, whereas in the southern region the prices of new cars have risen faster than the prices of used cars. Which of the following claims follows from the paragraph?",
+   "options": [
+    "In the northern region only used-car prices are rising, and in the southern region only new-car prices",
+    "In the southern region used-car prices are rising more slowly than new-car prices",
+    "Used-car prices in the northern region are rising faster than used-car prices in the southern region",
+    "Used-car prices in the northern region are rising faster than new-car prices in the southern region"
+   ],
+   "answer": 2,
+   "explanation": "The paragraph compares new with used cars only within each region. (3) and (4) compare the regions, which the paragraph does not allow, and (1) denies the rise that all prices share.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-112",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Spring 2025 §2 Q10",
+   "replaces": "vb-inf_v2_0026",
+   "stem": "The historian Dr. Tamar Levin wrote: \"According to the old chronicles of the city of Velmar, the city's fortunes were shaped from the start by its river: the river drew the first merchants to settle on its banks and, generations later, led them to build the great bridge. During the long siege the river was the secret channel through which the city was supplied, and in every age the rulers of Velmar invoked the river in their speeches to stir the loyalty of the citizens.\" What is the main subject of the paragraph?",
+   "options": [
+    "The reasons that led the merchants of Velmar to build the great bridge",
+    "The means by which the rulers of Velmar secured the loyalty of the citizens",
+    "The early history of the city of Velmar",
+    "The part played by the river in the history of Velmar"
+   ],
+   "answer": 4,
+   "explanation": "Every sentence turns on the river; (1), (2) and (3) each name one part of the paragraph as if it were the whole.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-113",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Winter 2024 §1 Q10",
+   "replaces": "vb-inf_v2_0028",
+   "stem": "Noa: \"The value of team sports at school lies in the cooperation and self-discipline they teach pupils for the rest of their lives.\" Daniel: \"Team sports are worth playing for the joy of the game alone, and every attempt to justify them by what they teach only cheapens them.\" With which of the following claims would both Noa and Daniel agree?",
+   "options": [
+    "It is better not to justify team sports at school by the lessons they teach",
+    "Team sports at school deserve time and resources",
+    "Team sports should be optional unless their educational benefit can be shown",
+    "Team sports are justified because they improve pupils' ability to work with others"
+   ],
+   "answer": 2,
+   "explanation": "Both value team sports; they differ only over why. (1) is Daniel's view, which Noa rejects; (3) and (4) rest on Noa's kind of reason, which Daniel rejects.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-114",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Winter 2024 §1 Q15",
+   "replaces": "vb-inf_v2_0030",
+   "stem": "In the introduction to her grammar of an ancient language, the linguist Dr. Irit Navon wrote: \"This book treats the sounds, the word forms and the sentence structure of the language in three separate parts. We do not imagine that these are independent systems, as though any one of them could be grasped without the other two; but examining each of them in isolation is the only way to see how they depend on one another, and every description of a language must begin in this way.\" Which of the following sentences best expresses Navon's position?",
+   "options": [
+    "Dividing a language into sounds, word forms and sentence structure is artificial, but necessary for describing it",
+    "A language's sounds, word forms and sentence structure are so interdependent that none can be studied apart from the others",
+    "The nature of linguistic description leads grammarians to treat sounds, word forms and sentence structure as separate",
+    "Every grammarian must deal with how the sounds, word forms and sentence structure of a language are related"
+   ],
+   "answer": 1,
+   "explanation": "\"We do not imagine that these are independent systems\" concedes that the division is artificial; \"the only way\" asserts that it is necessary. (2) states only the concession; (3) reverses method and cause; (4) is not what she says.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-115",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Autumn 2024 §1 Q16",
+   "replaces": "vb-inf_v2_0033",
+   "stem": "Social psychology describes the \"foot-in-the-door effect\": a person who has agreed to a small request is more likely to agree later to a larger one. It also describes the \"scarcity effect\": people value an opportunity more when it is available only for a limited time. A city museum wishes to increase the number of its yearly members, and considers the two effects. Which of the following courses of action should the museum adopt?",
+   "options": [
+    "Mailing every resident of the city a membership offer that expires at the end of the month",
+    "Asking visitors to fill out a short survey, and later sending them a membership offer that remains open for as long as they wish",
+    "Asking visitors at the entrance to sign the guest book, and a week later sending them a membership offer that is valid only until the end of the month",
+    "Placing a sign at the entrance announcing that the price of membership will rise next month"
+   ],
+   "answer": 3,
+   "explanation": "Only this course uses both effects - a small request first, then a time-limited offer. (2) fails the scarcity effect; (1) and (4) skip the small request.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-116",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Spring 2024 §1 Q12",
+   "replaces": "vb-inf_v2_0037",
+   "stem": "In a book on working life it was written: \"Every employee is caught in a web of expectations, each strand of which represents a demand that pulls at them. When an employee thinks of all the people whose approval they must win - from the client on the telephone to the colleague at the next desk - and is overcome by the sense that the entire workplace is resting on their shoulders, they would do well not to dismiss that sense as mere fatigue.\" What is the central claim that emerges from the author's words?",
+   "options": [
+    "At the center of the web of expectations stand certain people who make demands, and an employee must learn to identify them",
+    "An employee is at times overcome by fatigue and imagines that everyone at work is pressing on them",
+    "An employee ought not to let the demands that surround them at work, and the pressure these exert, affect them",
+    "The people an employee deals with at work exert real pressure on them, and each employee ought to recognize this"
+   ],
+   "answer": 4,
+   "explanation": "The author advises taking the feeling seriously as a true perception of pressure. (1) misplaces the people at the center; (2) treats the feeling as an illusion, which the author denies; (3) adds advice the author does not give.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-117",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Spring 2024 §1 Q15",
+   "replaces": "vb-inf_v2_0038",
+   "stem": "In an article it was written: \"Many historians of medicine hold that medical practice follows a pattern of development unlike that of other crafts. According to this view, medicine only ever moves forward: once the causes of infection were understood, for example, no physician could go on prescribing bloodletting, and once antibiotics appeared, the older remedies were set aside for good. In fact, however, the history of medicine shows that treatments dismissed as outdated may return to use, supported by new evidence.\" Which of the following claims does the paragraph seek to undermine?",
+   "options": [
+    "The view that medicine develops differently from other crafts is held by many historians of medicine",
+    "All crafts, medicine among them, move only in one direction",
+    "Treatments that have been replaced by others are abandoned permanently",
+    "New treatments are often based on discoveries originally made for older ones"
+   ],
+   "answer": 3,
+   "explanation": "The paragraph argues against the claim that discarded treatments never return. It reports (1) without disputing it, and does not address (2) or (4).",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-118",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Winter 2023 §1 Q15",
+   "replaces": "vb-inf_v2_0041",
+   "stem": "Since 2008 a national orchestra has held a yearly competition for young composers, and each year it selects up to ten works for performance. In 2021 three works by composers under the age of eighteen were selected, and although that is a small number, it was the first time since 2015 that more than two such works had been selected. Which of the following claims contradicts what is stated in the paragraph?",
+   "options": [
+    "In 2019 no such work was selected",
+    "In 2013 no such work was selected",
+    "In 2017 only two such works were selected",
+    "In 2015 only two such works were selected"
+   ],
+   "answer": 4,
+   "explanation": "\"The first time since 2015\" makes 2015 the last year in which more than two such works were selected. (1) and (3) fit what the paragraph implies about 2016-2020, and (2) concerns a year the paragraph does not constrain.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-119",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Winter 2023 §2 Q17",
+   "replaces": "vb-inf_v2_0045",
+   "stem": "Boats built with a deep keel are an ancient invention: remains of them have been found in shipwrecks thousands of years old, and today they are found on every sea. The advantage of the keel is that it keeps a boat from being pushed sideways by the wind, so that it can sail at an angle against it. According to the maritime historian Dr. Oren Kessler, the modern racing yacht developed either from the northern \"vessa,\" a narrow fishing boat with a deep keel, or from the southern \"moran,\" which resembles the yacht in its sails but has a flat bottom rather than a keel. Which of the following claims arises from the paragraph?",
+   "options": [
+    "The keeled boats found in the ancient shipwrecks resemble neither the vessa nor the moran",
+    "Contrary to Dr. Kessler's view, the racing yacht developed from the boats found in the ancient shipwrecks",
+    "The vessa and the modern racing yacht share an ability that the moran lacks",
+    "Because the keel is so useful, racing yachts developed independently in several places"
+   ],
+   "answer": 3,
+   "explanation": "A keel lets a boat sail at an angle against the wind; the moran has no keel. (1), (2) and (4) go beyond, or against, what the paragraph says.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-120",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Autumn 2023 §1 Q7",
+   "replaces": "vb-inf_v2_0046",
+   "stem": "A study of teenagers found that the more time they spend on social media, the lonelier they report feeling, and that feeling lonely in turn leads them to spend more time on social media. What is the central idea of the paragraph?",
+   "options": [
+    "The reason teenagers spend so much time on social media is that they feel lonely",
+    "Time spent on social media increases loneliness, which leads to more time on social media, and so on in a circle",
+    "How lonely teenagers feel depends on the number of friends they have on social media",
+    "Time spent on social media is liable to make teenagers excessively lonely"
+   ],
+   "answer": 2,
+   "explanation": "The two findings close a loop. (1) states only the second link, (3) invents a factor, and (4) invents an excess.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-121",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Autumn 2023 §1 Q11",
+   "replaces": "vb-inf_v2_0048",
+   "stem": "In the hill country the spread of olive groves lessened the harm that raids did to farming villages. Raiders who reached a village preferred not to labor at cutting down olive trees, whose trunks are thick and hard, if there were fields of ripe grain that could be set on fire in a matter of minutes. Even where olives had almost entirely replaced grain, the raiders did not stay long enough to fell more than a few trees, and the villagers were left with a harvest. According to the paragraph, how did the olive groves lessen the harm that raids did to the villages?",
+   "options": [
+    "The olive trees were a source of livelihood that was hard to destroy, and so it remained to the villagers",
+    "The olive served as a substitute for grain, which was hard to grow at a time of raids",
+    "The villagers could live on olives and hand over their grain to the raiders",
+    "The olive groves allowed the raiders to supply themselves with food"
+   ],
+   "answer": 1,
+   "explanation": "Both halves of the paragraph turn on how hard the trees were to destroy. (2), (3) and (4) describe roles the paragraph does not give the olive.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-122",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Winter 2022 §1 Q12",
+   "replaces": "vb-inf_v2_0053",
+   "stem": "In March 2023 the emergency rooms of the city's hospitals treated more patients with sports injuries than in an average month. One possible explanation is that more sports injuries occurred that month than in an average month. Which of the following data supplies an alternative explanation?",
+   "options": [
+    "In March 2023 a strike closed most of the city's private clinics, where sports injuries are usually treated",
+    "Most emergency room doctors have no special training in treating sports injuries",
+    "In February 2023 many sports injuries were treated, and this made athletes more careful",
+    "In that month fewer people than usual took part in organized sports"
+   ],
+   "answer": 1,
+   "explanation": "Patients who normally go to the clinics came to the emergency rooms instead. (4) argues against the given explanation without offering another; (2) is irrelevant and (3) points the wrong way.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-123",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Winter 2022 §1 Q17",
+   "replaces": "vb-inf_v2_0055",
+   "stem": "In a book on labor law it was written: \"An employee is entitled to paid leave for every year of work. A special case is that of an employee who leaves the job before using all the leave days they have accumulated. Calculating what is owed to such an employee is complicated, and in the past it gave rise to disputes between employees, employers and the labor courts. To prevent such disputes, rules were enacted that fix the payment according to the length of employment, the salary, the number of unused days, and so on.\" Which of the following titles best fits the paragraph?",
+   "options": [
+    "Employees, Employers and the Labor Courts",
+    "Unused Leave on Leaving a Job - the Payment Owed",
+    "Paid Leave for Employees - Who, How Much, When?",
+    "The Rules on Unused Leave - the Dispute"
+   ],
+   "answer": 2,
+   "explanation": "The paragraph is about the payment for unused leave. (1) names the parties, not the subject; (3) is too broad; (4) names the dispute that the rules ended.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-124",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Autumn 2022 §1 Q15",
+   "replaces": "vb-inf_v2_0058",
+   "stem": "An environmental historian wrote: \"It would seem that the environmental movement and modern science have much in common, since scientific knowledge is the surest basis for understanding the harm done to nature. In fact, however, the relation is complex, since modern industrial science took shape, in the nineteenth century, within an ethic that regarded nature as raw material to be exploited - forests to be cleared, rivers to be dammed, minerals to be mined - and the environmental struggle was therefore directed precisely against the institutions of scientific industry.\" Which of the following claims is implied by the paragraph?",
+   "options": [
+    "The rise of industrial science is what first led people to campaign for the protection of nature",
+    "Because of its treatment of nature, modern science failed to live up to the ethic within which it took shape",
+    "Relying on scientific knowledge could have done more for nature than the struggle against scientific industry did",
+    "Although the environmental struggle was directed against the institutions of scientific industry, it shares much with modern science"
+   ],
+   "answer": 4,
+   "explanation": "The paragraph holds both halves together - common ground and opposed institutions. (1), (2) and (3) each add a causal or counterfactual claim the paragraph does not make.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-125",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Autumn 2022 §2 Q15",
+   "replaces": "vb-inf_v2_0061",
+   "stem": "In the preface to her book the musicologist Dr. Hila Baram wrote: \"This book deals with the folk songs of the mountain villages as they were recorded by the foreign travelers who passed through them in the nineteenth century. It is a point of view we cannot afford to ignore: the life of the villages was always lived within sight and earshot of strangers, and the village singers themselves knew how much an outsider's ear can reveal - as their own proverb has it, 'The guest sees in an hour what the host misses in a year.'\" Dr. Baram's words are intended to rebut a certain claim. Which of the following claims is it?",
+   "options": [
+    "The study of how outsiders heard the village songs does not accord with the values of the village tradition",
+    "It is not right to examine the travelers' records from the villagers' point of view alone",
+    "There is no point in studying the travelers' records unless the travelers lived among the villagers",
+    "To describe the village songs without regard to those who heard them from outside is to give only a partial picture"
+   ],
+   "answer": 1,
+   "explanation": "She quotes the villagers' own proverb to show that their tradition values the outsider's view. (4) is her own position, not the one she rebuts; (2) and (3) are not addressed.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-126",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Summer 2023 §1 Q14",
+   "replaces": "vb-inf_v2_0067",
+   "stem": "A folklorist who studied the fiddle music of a mountain region found that, until recordings reached the region, tunes were passed on by ear. The fiddlers tried to reproduce the tunes they learned as exactly as they could, but at times they erred: phrases were dropped or repeated, notes were changed, and so on. When a flawed version itself became the model from which others learned, all its \"offspring\" - the versions learned directly from it, those learned from them, and so on - inherited its errors, because the players reproduced the errors even when they could hear that something was wrong. At times new errors were added to these versions. According to the paragraph, why did the offspring of the flawed version inherit its errors?",
+   "options": [
+    "Because the players tried to reproduce the tunes as exactly as they could",
+    "Because they were passed on by ear, a method that is liable to produce errors",
+    "Because the players were not aware that the version they were learning might contain errors",
+    "Because they were not learned as carefully as the versions learned from the original tune"
+   ],
+   "answer": 1,
+   "explanation": "The players copied even what they could hear was wrong, because faithfulness was their aim. \"Even when they could hear that something was wrong\" rules out (3) and (4); (2) explains new errors, not inherited ones.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-127",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Summer 2022 §1 Q4",
+   "replaces": "vb-inf_v2_0070",
+   "stem": "In the nineteenth century the Danish astronomer Anders Kjeldby, who was also a keen chess player, published a collection of chess puzzles together with their solutions. One of the puzzles asked: in how few moves can a king, alone on the board, travel from one corner to the opposite corner? Kjeldby showed that the answer is seven. Which of the following statements about the puzzle is not made in the paragraph?",
+   "options": [
+    "The answer to the puzzle is seven",
+    "The puzzle appears in a collection published in the nineteenth century",
+    "The puzzle concerns not only chess but also astronomy",
+    "The solution to the puzzle appears in a collection published by Anders Kjeldby"
+   ],
+   "answer": 3,
+   "explanation": "Kjeldby's profession is stated, but the puzzle itself concerns chess alone. (1), (2) and (4) are each in the text.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-128",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Summer 2022 §1 Q14",
+   "replaces": "vb-inf_v2_0072",
+   "stem": "Companies tend to tell stories about their past in order to steady themselves, especially in hard times. Thus, in the 1990s, when the Arvel textile firm was steadily losing customers and struggling to stay afloat, it made a hero of its founder, the weaver who had opened the first workshop a century earlier, in an attempt to attach itself to a proud tradition and so to strengthen the loyalty of its workers. By contrast, its rival Denning was then expanding rapidly and opening new branches; it therefore had no need to be nostalgic about its own founder. The paragraph above was written in answer to a question. Which of the following is most likely to be that question?",
+   "options": [
+    "Why did Arvel lose customers and struggle to stay afloat in the 1990s, whereas its rival Denning was expanding rapidly at that time?",
+    "Why did the story of its founder take hold at Arvel in the 1990s, whereas Denning's founder did not fulfill a similar function for Denning?",
+    "What significance did the stories of their founders have for the workers of Arvel on the one hand and for those of Denning on the other?",
+    "What might explain the fact that Arvel drew inspiration from its own founder in particular, and not from the founder of its rival Denning?"
+   ],
+   "answer": 2,
+   "explanation": "The paragraph explains why one firm told its founder's story and the other did not. (1) asks about the two firms' fortunes, which the paragraph takes as given, (3) asks about significance rather than cause, and (4) asks about a choice between the two founders that the paragraph never discusses.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-129",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Spring 2019 §1 Q7",
+   "replaces": "vb-inf_v2_0078",
+   "stem": "Discussing the tasting menu that the celebrated chef Rafael Ortiz introduced at his restaurant in 2019, the food critic Dana Keller wrote: \"His dishes are like small paintings - composed, balanced and exact, each one a pleasure to the eye.\" Yet as food to be eaten, she argues, they \"promise everything and deliver nothing\": they neither satisfy hunger nor leave a lasting taste, and are no more than clever exercises dreamed up by someone who has forgotten what diners come to a restaurant for. Which of the following best presents Keller's opinion of Ortiz's dishes?",
+   "options": [
+    "The visual qualities of his dishes outweigh their shortcomings",
+    "At first sight his dishes seemed composed and exact, but in fact they were not so at all",
+    "His dishes are impressive to look at, but as meals they fail to do what food should do",
+    "Since he forgot what diners come for, his dishes were not composed and exact enough"
+   ],
+   "answer": 3,
+   "explanation": "Keller praises the dishes as visual works and faults them as food. (2) and (4) turn the praise into an illusion, and (1) weighs the two the wrong way.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-130",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Spring 2019 §2 Q14",
+   "replaces": "vb-inf_v2_0081",
+   "stem": "Research by the ethologist Dr. Ruth Amsel shows that ravens share food with members of their group who helped them in the past - a finding that challenges the belief that fairness is a human invention. It troubles those who see fairness as a product of civilization alone, but its message is an encouraging one: if the sense of fairness has roots in the very distant past, we may expect it to withstand social and political upheavals better. Which of the following is not implied by the text?",
+   "options": [
+    "If the sense of fairness has no roots in the distant past, it may be more easily shaken by social and political upheavals",
+    "Some of those who see fairness as a product of civilization alone have held that no other creature acts fairly",
+    "Although fairness is apparently not unique to human beings, the human sense of fairness may prove more stable than had been thought",
+    "The fact that ravens share food with those who helped them proves that the sense of fairness already existed in the distant past"
+   ],
+   "answer": 4,
+   "explanation": "The text says \"if the sense of fairness has roots in the distant past\" - a condition, not a proof, and ravens are not human ancestors in any case. (1) restates the text's \"better\" comparison from the other side, (2) follows from seeing fairness as a product of civilization alone, and (3) combines the finding with the text's hopeful conclusion.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-131",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Summer 2020 §1 Q10",
+   "replaces": "vb-inf_v2_0083",
+   "stem": "In 2011 the geologist Mira Tal found, in a cave on Mount Keren, a group of engraved stones lying beneath a layer of volcanic ash. A few years earlier researchers had learned how to date such ash layers by the minerals they contain, and the find therefore enabled Tal to establish, for the first time, a minimum age for engravings in the region: about forty thousand years - far older than the farming villages that appeared there later. In this way it came to be recognized that the engravings were not the work of the farmers who settled the region, but of hunters who had lived there long before them. According to the paragraph, what was the part played by Tal's find?",
+   "options": [
+    "It showed that layers of volcanic ash, which are found in the cave on Mount Keren, are not found in the region's other caves",
+    "It made it possible to apply an existing method to date the engravings, and so to show that they are older than the region's farmers",
+    "It pointed to a new way of dating layers of volcanic ash, and so made it possible to show how old the region's farming villages are",
+    "It showed that the engravings in the region are in fact the work of hunters, and hence it can be inferred that the stones in the cave were engraved by hunters"
+   ],
+   "answer": 2,
+   "explanation": "The dating method already existed; the find supplied engravings to which it could be applied. (3) credits Tal with the method, and (1) and (4) reverse the direction of the inference.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-132",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "December 2016 §2 Q14",
+   "replaces": "vb-inf_v2_0094",
+   "stem": "In a book on the digital age it was written: \"The internet is remarkable in that it connects and in that it separates. Alongside the growth of the worldwide flow of knowledge, trade and entertainment, a gap is widening between those who can make use of these riches and those who cannot. Digital literacy - the ability to find, judge and use information - becomes an object of desire, but it is a precious resource that is distributed unequally.\" Which of the following claims best expresses the central idea of the paragraph?",
+   "options": [
+    "Although the worldwide flow of knowledge, trade and entertainment affects everyone, it opens a gap between those who have digital literacy and those who do not",
+    "Although the internet seeks to benefit everyone equally, it fails, since not everyone has equal digital literacy",
+    "Since the advantage of the internet is the worldwide flow of knowledge, and since it harms the digital literacy of some, there are people whom the internet harms",
+    "The lack of digital literacy among some people is what holds back the worldwide flow of knowledge, trade and entertainment"
+   ],
+   "answer": 1,
+   "explanation": "The paragraph pairs a flow that reaches everyone with a gap in who can use it. (2) attributes an aim to the internet; (3) makes the flow itself the harm; (4) reverses cause and effect.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-133",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "September 2016 §1 Q17",
+   "replaces": "vb-inf_v2_0099",
+   "stem": "Songbirds that nest in a forest can be counted in several ways; one of them relies on the fact that a male defending its nest sings. Ornithologists estimate that in the Arden Forest there are, on average, about 3.2 nesting pairs of songbirds per hectare, but they note that this estimate is low. The method rests on recordings made at listening posts, most of them along the forest's paths: every pair whose song is recorded is counted. But a song can be picked up only when the nest is within about fifty meters of a post and the species sings loudly. According to the paragraph, why does the method yield an underestimate?",
+   "options": [
+    "Because it is reasonable to suppose that besides the areas near the paths there are parts of the forest that are hard to reach, and songbirds nest there too",
+    "Because it is reasonable to suppose that there are also quiet species, both near the posts and far from them, which make up only a small fraction of all pairs",
+    "Because pairs of quiet species, or pairs that nest far from the posts, are not picked up by the recordings",
+    "Because it rests on posts along the paths and on birdsong, and is not suited to counting birds that live outside the forest"
+   ],
+   "answer": 3,
+   "explanation": "Pairs the recordings cannot pick up are pairs the count misses. (1) and (4) concern places, not the limits of the recordings; (2) makes the missed pairs few.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-134",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "April 2016 §1 Q16",
+   "replaces": "vb-inf_v2_0105",
+   "stem": "In the 1990s, with the spread of \"flat\" management, which celebrated the creativity and freedom of each employee, the private office faded from many firms. There is irony in this: the old hierarchical firm, with its emphasis on rank and conformity, was a better place for employees who wished to close their door and work undisturbed than the new firm which, although it raised individual creativity on high, could not tolerate any offense against the value of openness. What is the irony the paragraph describes?",
+   "options": [
+    "It was the hierarchical firm, concerned with rank rather than with the individual, that shaped the norms of employee freedom in the first years of flat management",
+    "The fading of the private office, which let employees work undisturbed, hints at flat management's preference for the individual over the group",
+    "Working behind a closed door, which let employees work undisturbed, was consistent with the hierarchical firm's emphasis on rank",
+    "The hierarchical firm, which put rank and conformity first, gave employees a quiet that was no longer possible in the new firm, which supposedly celebrated the individual"
+   ],
+   "answer": 4,
+   "explanation": "The irony is the gap between the new firm's values and their effect. (3) is only the half without the gap; (1) and (2) invent claims.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-135",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "July 2016 §1 Q7",
+   "replaces": "vb-inf_v2_0110",
+   "stem": "Borrowing a word from another language - as English has done thousands of times - is one of the ways in which a language acquires new words. Other ways are, for instance, joining two existing words into a single new word, and giving an existing word a meaning it did not have before. Which of the following examples does not illustrate any of the ways mentioned in the paragraph?",
+   "options": [
+    "English speakers began to use the word \"mouse\" for a small device that controls a computer",
+    "The word \"toothbrush\" was formed by joining \"tooth\" and \"brush\"",
+    "English took the word \"kindergarten\" from German",
+    "Over the centuries English speakers stopped pronouncing the \"k\" at the beginning of the word \"knight\""
+   ],
+   "answer": 4,
+   "explanation": "A change in pronunciation gives the language no new word. (1) is a new meaning, (2) joins two words, and (3) is borrowing.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-136",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "July 2016 §2 Q8",
+   "replaces": "vb-inf_v2_0115",
+   "stem": "The appointment of a new head coach to the national basketball team in 2018 brought a sharp change in the team's style of play. The patient, defensive game that had marked it under the previous coach - and that found striking expression in the 2016 semifinal, in which the team held its rival to fewer than fifty points - gave way to an approach of the opposite character. The 2016 semifinal is presented in the paragraph as an example of -",
+   "options": [
+    "the patient, defensive style of play under the previous coach",
+    "the weakness of the team's defense under the new coach",
+    "the influence of the rival team on the team's style of play",
+    "the sharp change that the new coach brought about"
+   ],
+   "answer": 1,
+   "explanation": "The semifinal is the \"striking expression\" of the earlier defensive game. (4) is what came after it, and (2) and (3) are not in the paragraph.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-137",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "December 2015 §1 Q13",
+   "replaces": "vb-inf_v2_0119",
+   "stem": "Oral testimony - the accounts of events given by the people who lived through them - is a concern mainly of historians who study communities that kept no written records. Such communities left no archives, and the historians seize on every account in order to learn from it about the customs and beliefs of those communities. According to what is implied by the paragraph, why do historians who study communities with rich archives deal little with oral testimony?",
+   "options": [
+    "Because the information that oral testimony provides about communities with archives is less than the information it provides about communities without them",
+    "Because they are not interested in the customs and beliefs of the communities they study, but in other matters",
+    "Because they can learn about the customs and beliefs of the communities they study from their written records",
+    "Because the archives of the communities they study contain little information about oral testimony"
+   ],
+   "answer": 3,
+   "explanation": "What the communities without records lack is exactly what the others have. (1), (2) and (4) supply reasons the paragraph does not give.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-138",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "December 2015 §2 Q10",
+   "replaces": "vb-inf_v2_0123",
+   "stem": "\"Planted rumors\" are stories deliberately introduced into a community by an outside party, which spread there rapidly and take hold. At times stories that arise within the community itself also spread rapidly, but these are called \"spontaneous rumors.\" The distinction between the two is important in public communication: experts recommend exposing planted rumors publicly at once, but only correcting spontaneous ones quietly. According to the paragraph, which question must be asked in order to decide whether to expose a rapidly spreading rumor publicly?",
+   "options": [
+    "Did it arise within the community, or was it introduced by an outside party?",
+    "Is it spreading quickly, like a planted rumor, or more slowly, like a spontaneous one?",
+    "Has it already taken hold, or has it only begun to circulate?",
+    "Can it be corrected quietly?"
+   ],
+   "answer": 1,
+   "explanation": "Origin is the whole distinction; speed (2), having taken hold (3) and whether it can be corrected (4) do not separate the two kinds.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-139",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "September 2015 §1 Q12",
+   "replaces": "vb-inf_v2_0126",
+   "stem": "In the republic of Morvania it was recently enacted that the results of genetic tests may not be relied upon except in medical treatment. Accordingly, insurance companies are today forbidden to use genetic tests in setting premiums, and forbidden to refuse a customer because they declined to be tested. Moreover, in the past, when a job applicant agreed to a genetic test, employers in most regions of the country were allowed to take the results into account, whereas today employers may not take them into account at all. Which of the following sentences summarizes the paragraph most precisely?",
+   "options": [
+    "In most regions of Morvania it was permitted until recently to compel an insurance customer to take a genetic test",
+    "Apart from medical treatment, it is forbidden to rely on genetic test results in Morvania",
+    "Morvania was the first country to forbid the use of genetic tests",
+    "Today genetic test results are hardly used at all by employers in Morvania"
+   ],
+   "answer": 2,
+   "explanation": "Every detail is an instance of the one rule with its one exception. (4) softens \"not at all\" to \"hardly\"; (1) and (3) are not stated.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-140",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "April 2015 §1 Q16",
+   "replaces": "vb-inf_v2_0134",
+   "stem": "The following is a news item: \"Although the city council's plan to close the old central bus station angered neighborhood groups, which saw in it harm to residents without cars, the head of the transport department chose to support it - not because she wished to avoid a clash with those groups, nor because she ignored the plan's likely effects, but because she knew that if she opposed it she would lose the funding promised for a new light-rail line; and so long as that funding is secured, she believed, the harm caused by the closure will be small.\" According to the item, which of the following is likely to cause the head of the transport department to withdraw her support for the plan?",
+   "options": [
+    "A meeting with neighborhood leaders at which they describe to her the harm the closure will cause residents",
+    "A statement by the mayor that the light-rail funding will be canceled even if the council approves the plan to close the station",
+    "A decision by the council that the land freed by the closure will be used to provide services for residents without cars",
+    "A conversation with the mayor in which he stresses the importance of serving residents without cars"
+   ],
+   "answer": 2,
+   "explanation": "Her support rests on securing the funding; if the funding is lost anyway, her reason is gone. (3) would make support easier, and (1) and (4) tell her what she already knows.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-141",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "April 2015 §2 Q14",
+   "replaces": "vb-inf_v2_0137",
+   "stem": "\"Root uptake\" is the process by which water from the soil enters a plant. Water can travel inward, toward the center of the root, by two routes: between the cells of the root, or through the cells themselves. \"Transpiration\" is the process by which water leaves the plant: the water rises through thin tubes in the stem to the leaves, collects in the spaces inside them, and escapes as vapor through tiny pores in the surface of the leaf, called stomata. Which of the following claims is made in the paragraph?",
+   "options": [
+    "When a plant takes in water, it takes in minerals along with it",
+    "Through its roots the plant takes back the water it lost by transpiration",
+    "Water that leaves the plant by transpiration passes through the stomata",
+    "Some plants take in water and others give it off"
+   ],
+   "answer": 3,
+   "explanation": "\"Escapes as vapor through tiny pores ... called stomata\" says so; (1), (2) and (4) are not stated.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-142",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "February 2015 §1 Q13",
+   "replaces": "vb-inf_v2_0140",
+   "stem": "In her book \"Towns before Industry,\" the historian Dr. Naomi Stern surveys the growth of farming villages into market towns. The book deals with Scandinavia and the lands around the Baltic Sea; it begins with the Viking raids around the year 800, ends at the start of the industrial age in the late eighteenth century, and concentrates on the period between 1100 and 1350. According to the paragraph, in which period does Stern place the growth of most towns?",
+   "options": [
+    "From the late eighteenth century onward",
+    "Before the year 800",
+    "At the time of the Viking raids",
+    "Between 1100 and 1350"
+   ],
+   "answer": 4,
+   "explanation": "A book on the growth of towns concentrates where it holds that most of that growth took place. (1) is where the book ends, and (2) and (3) are where it begins or before.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-143",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "December 2014 §2 Q7",
+   "replaces": "vb-inf_v2_0149",
+   "stem": "From the introduction to a guide for high-school students published by a hospital's volunteer program: \"The guide is meant to prepare students for volunteering in the children's ward, by presenting the difficulties that sick children face and the difficulties we ourselves face as visitors. In one of its chapters, for example, there are eight diary entries written by two nurses as though written by children staying in the ward.\" What is the purpose of the diary entries mentioned in the paragraph?",
+   "options": [
+    "To make the difficulties that children in the ward face vivid to the students",
+    "To help children in the ward and student volunteers get to know one another",
+    "To allow children in the ward to identify with the figures who supposedly wrote the entries",
+    "To prepare children in the ward for the visits of student volunteers"
+   ],
+   "answer": 1,
+   "explanation": "The guide's readers are the students; the entries show them the children's side. (2), (3) and (4) make the children the readers.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-144",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "December 2014 §2 Q10",
+   "replaces": "vb-inf_v2_0150",
+   "stem": "It turns out that the lighthouse of the old port of Kalden was not unusually short, as is commonly thought. The confusion among historians apparently arose from the difference between the Kalden and the Danish units of length: the lighthouse's height was forty ells in Kalden measure, which equals sixty-two ells in Danish measure - that is, about 39 meters. The lighthouse, in other words, was even somewhat taller than most lighthouses of its day. According to the paragraph, why did historians mistakenly think that the lighthouse was short?",
+   "options": [
+    "Because they took its height to be forty ells in Danish measure",
+    "Because in its day Danish lighthouses were much taller than the lighthouses of Kalden",
+    "Because in its day the Kalden units of length differed from those used today",
+    "Because its height in the Kalden measure of its day was less than 39 meters"
+   ],
+   "answer": 1,
+   "explanation": "The error is reading the right number in the wrong unit. (4) confuses a unit with a height; (2) and (3) are not the error described.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-145",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "October 2014 §2 Q13",
+   "replaces": "vb-inf_v2_0157",
+   "stem": "In a report published in 2020 it was written: \"In recent decades the average yearly rainfall in our district has changed: from relatively high amounts in the 1970s it fell to lower amounts in the 1990s, did not change noticeably in the first years of the 2000s, rose sharply in the course of the 2010s, and finally reached a level higher than its level in the 1970s. On the whole, the change in our district corresponds to the change in the national average rainfall over this period. Nevertheless, in our district the difference between the rainfall at the end of the 2010s and that of the 1970s is not as large as it is in the national figures.\" Which of the following claims is certainly correct according to the data above?",
+   "options": [
+    "At the end of the 2010s the average rainfall in our district was lower than the national average",
+    "In our district the average rainfall throughout the 2010s was higher than in the 1970s",
+    "In our district the gap between the rainfall of the 1970s and that of the 1990s was larger than the gap between the 1970s and the end of the 2010s",
+    "At the end of the 2010s the national average rainfall was higher than it had been in the 1970s"
+   ],
+   "answer": 4,
+   "explanation": "The district ended above its 1970s level, and its rise is smaller than the national one, so the national rise is larger still. (1) compares two averages the report never compares; (2) turns a rise \"in the course of the 2010s\" into a rise throughout them; (3) compares gaps the report does not measure against each other.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-146",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "February 2014 §1 Q18",
+   "replaces": "vb-inf_v2_0169",
+   "stem": "The following is taken from an essay on architecture: \"[...] But since the verdicts of every generation, even of those who grew up in the building's shadow, are always liable to error, and since admiration, however long it has lasted, may be nothing more than loyalty to habit or to fashion - the only fair way to judge the old city hall is to examine it as though no one had ever praised it.\" Which of the following sentences is best suited to precede the excerpt?",
+   "options": [
+    "The old city hall has been praised in every generation since it was built, and yet from the start this may have been nothing but loyalty to habit and fashion",
+    "The old city hall has deserved its praise since the day it was built, and the praise was not given lightly - neither for its grand front nor for the harmony of its proportions",
+    "The old city hall was built more than a century ago, yet the admiration for it has never faded, and each new generation of residents knows it and takes pride in it",
+    "The old city hall was admired when it was built, but over the years its reputation has declined, so that today it is regarded as an ordinary building"
+   ],
+   "answer": 3,
+   "explanation": "The excerpt's \"but\" answers a statement of long-lasting admiration. (1) already contains the excerpt's reservation, and (2) and (4) contradict it.",
+   "feel": 4,
+   "pool": true
+  },
+  {
+   "id": "vo-44-147",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Autumn 2021 §1 Q16",
+   "replaces": "vb-inf_v2_0191",
+   "stem": "A factory makes bolts on two production lines: line A turns out about two million bolts a week, and line B about one hundred thousand. Suppose that to estimate the share of defective bolts on each line, an inspector draws a random sample of four hundred bolts from line A, and likewise a random sample of four hundred bolts from line B. Many believe that the estimate for line B will be much more precise than the estimate for line A; but in fact this is not so - the number of bolts a line produces has almost no effect on the precision of an estimate based on a random sample, which depends almost entirely on the size of the sample. According to the paragraph, what do the \"many\" believe?",
+   "options": [
+    "The size of a sample does not affect the precision of an estimate based on it",
+    "The more items there are, the larger the sample needed for a precise estimate",
+    "The number of items produced does not affect the precision of an estimate based on a sample of them",
+    "An estimate based on a large sample is more precise than an estimate based on a small one"
+   ],
+   "answer": 2,
+   "explanation": "Only this belief would make the estimate for the smaller line the more precise. (3) and (4) are what the paragraph says is true; (1) is no one's belief here.",
+   "feel": 4,
+   "pool": true
+  }
+ ],
+ "passages": []
+}
