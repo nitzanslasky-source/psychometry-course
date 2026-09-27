@@ -64,3 +64,19 @@ Patch: `math_patches/t08.py`. Check: `python3 math_check.py 8` gives 0 problems,
 
 ## Tool note
 `student_view.py` builds the question list from `../content/full-course/topics/t8.json`. That is the old export, so `tmp_check/view/t8.md` does not show patched questions or new videos. I read a dump made from the patched data instead.
+
+## Pass 2 (teacher-approved remove/restore plan, 2026-09-27)
+**Removed**
+- `r26-t08-traps`: slide "Counting zeros" and its sidebar label; the title slide says "Four short ideas".
+- Guided q-r26-t08-03 (largest of 2⁴⁰, 3³⁰, 5²⁰, 10¹⁰) and q-r26-t08-04 (zeros of 2⁷·5⁴) with their solution videos. The guided questions are renumbered: T8's own are Questions 1–6, and q-131 and q-132 (moved in by the T5 patch) are Questions 7–8. The T8 sidebar is widened automatically to cover them.
+- Practice q-r26-t08-13 (ordering 2⁵⁰, 3³⁰, 5²⁰) and q-r26-t08-16 (digits of 4⁵·5⁸). The other ids stay the same.
+- Card `powers`, table "Exam traps": row "Zeros at the end".
+
+**Restored**
+- alg-extra-exponent-extra-1 (2⁶/2³), back in the practice as its first item (TeX, numeric solution).
+- alg-extra-exponent-extra-6: the original "Which is greater: 2¹⁰ or 4⁴?" with the choices "It cannot be determined… / The first power / The second power / They are equal" (key: the first power).
+- `exponents` "Bases 1 and 0": the original line "A negative exponent means dividing by zero — undefined. Zero to the zero? Not defined in this course either." is back (the slide now comes after negative exponents).
+- `exponents` "Dividing powers": the original proof 5³/5³ = 5⁰ = 1 comes back as a second way, at the end of that slide, so it uses the division law only after teaching it. The ÷5 staircase stays.
+- q-131, q-132 and q-expression-extra-09 are moved in by the T5 patch (not by this one).
+
+**Summary video (new)** `r26-t08-summary` "Exponent Laws: Summary", at the end of the core section, right before the practice: Summary · Exponents 1, 0, −n · The three laws · Same exponent · Negative bases · When aᵇ = 1 · Split and count · Compare powers · Before you practice.

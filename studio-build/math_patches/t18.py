@@ -563,11 +563,12 @@ def practice(M):
         'The others fail: $A=5$, $B=8$ gives $158-85=73\\ne83$. $A=6$, $B=9$ gives $169-96=73\\ne93$. $A+B=17$ would need $B=10$.'])
 
     X = 'alg-extra-unit-t18-3-'
-    S(X + '2', stem='A and B represent digits. Given: $\\overline{AB}=6(A+B)$\n$A+B=?$',
-      choices=['$9$', '$12$', '$6$', '$15$'], correct=1, expl=[
-        'Plug in the choices: $\\overline{AB}=6\\cdot(A+B)$.',
-        '$A+B=9$: $\\overline{AB}=54$, and $5+4=9$ ✓.',
-        'The others fail: $6\\cdot12=72$ ($7+2\\ne12$), $6\\cdot6=36$ ($3+6\\ne6$), $6\\cdot15=90$ ($9+0\\ne15$).'])
+    # Pass 2: the original question (the ratio A : B) is back; the A + B version is dropped
+    S(X + '2', stem='A and B represent digits, and $A\\ne0$. Given: $\\overline{AB}=6(A+B)$\nWhat is the ratio $A:B$?',
+      choices=['$2:3$', '$5:4$', '$4:5$', '$3:2$'], correct=2, expl=[
+        'Algebraic form: $\\overline{AB}=10A+B$, so $10A+B=6A+6B$.',
+        'Therefore $4A=5B$, and the ratio is $A:B=5:4$.',
+        'Check: $A=5$, $B=4$: $54=6\\cdot(5+4)=6\\cdot9$ ✓.'])
     S(X + '3', stem='What is the ones digit of $38\\times47$?', choices=['$8$', '$6$', '$2$', '$4$'], expl=[
         'Only the ones digits decide the ones digit of a product: $8\\times7=56$, which ends in 6.',
         'Check: $38\\times47=1786$ ✓.'])
@@ -579,13 +580,23 @@ def practice(M):
         'Plug in the choices: $24=4\\cdot(2+4)$ ✓.',
         'The others fail: $22\\ne4\\cdot4$, $26\\ne4\\cdot8$, $28\\ne4\\cdot10$.',
         'Algebraic form: $20+b=4(2+b)$, so $12=3b$ and $b=4$.'])
-    S(X + '7', stem='A and B represent digits. Given: $\\overline{4A}+\\overline{4A}=\\overline{9B}$\nWhat is the smallest possible value of A?',
+    S(X + '7', stem='A and B represent digits. Given: $\\overline{4A}+\\overline{4A}=\\overline{9B}$\nWhat must A be at least?',
       choices=['$5$', '$2$', '$3$', '$4$'], expl=[
         'Tens column: $4+4=8$, but the tens digit of the result is 9. So 1 must carry from the ones column.',
         'Ones column: $A+A$ must be at least 10, so $A\\ge5$. $A=5$ works: $45+45=90$ ✓ ($B=0$).'])
-    # near-duplicate of q-524 / off-topic counting (T28, not taught yet)
-    M.unplace(X + '1')
-    M.unplace(X + '4')
+    # Pass 2 (teacher's plan): both originals are back. X + '1' stays here; X + '4' (counting) moves to the T28 practice.
+    S(X + '1', stem='A two-digit number has a digit sum of 11. When its digits are reversed, the new number is 27 smaller. What is the original number?',
+      choices=['$74$', '$47$', '$65$', '$83$'], correct=1, expl=[
+        'Call the tens digit A and the ones digit B:\n$\\begin{cases} A+B=11 \\\\ \\overline{AB}-\\overline{BA}=27 \\end{cases}$',
+        '$\\overline{AB}-\\overline{BA}=9(A-B)=27$, so $A-B=3$.',
+        'Add $A+B=11$ and $A-B=3$: $2A=14$, so $A=7$ and $B=4$. The number is 74.',
+        'Check: $7+4=11$ and $74-47=27$ ✓.'])
+    S(X + '4', stem='How many three-digit numbers can be made from the digits 2, 5 and 8, if no digit is repeated?',
+      choices=['$9$', '$27$', '$6$', '$3$'], correct=3, expl=[
+        'Hundreds digit: 3 options. Tens digit: 2 digits are left. Ones digit: 1 digit is left.',
+        '$3\\cdot2\\cdot1=6$. The numbers: 258, 285, 528, 582, 825, 852.'])
+    first28 = next(f['ref'] for f in M.D['flow'] if f['section'] == 'wp28-practice' and f['type'] == 'question')
+    M.move(X + '4', 'wp28-practice', before=first28)
 
     # new exam-level practice
     P = {}
@@ -631,7 +642,7 @@ def practice(M):
 
     N = lambda k: 'q-r26-t18-%02d' % k
     M.practice_order(PRACTICE, [
-        X + '3', 'q-521', N(6), X + '5', 'q-524', 'q-523', X + '6', 'q-539', 'q-522', 'q-525', X + '2',
+        X + '3', 'q-521', N(6), X + '5', 'q-524', X + '1', 'q-523', X + '6', 'q-539', 'q-522', 'q-525', X + '2',
         N(7), N(8), 'q-527', 'q-529', X + '7', 'q-531', 'q-528', 'q-530', 'q-538', 'q-532', N(9),
         'q-526', 'q-533', 'q-535', 'q-534', N(5), N(4), 'q-536', 'q-537', N(10), 'q-540'])
 
@@ -642,3 +653,106 @@ def apply(M):
     guided_existing(M)
     guided_new(M)
     practice(M)
+    summary(M)
+
+
+# =========================================================================================
+# Pass 2: summary lesson right before the practice (the topic has one practice section)
+# =========================================================================================
+def summary(M):
+    sb = ['Letters are digits', 'The 4 steps', 'The ones column', 'Leading digit & size', 'Special digits',
+          'Plug in', 'Algebraic form', 'Products & powers', 'Largest & smallest', 'Before you practice']
+    C = lambda i, script: dict(title=sb[i], mode='concept', active=i, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice — all of letter puzzles in a few minutes.",
+            "Every rule, every trap. Short and fast.",
+        ]),
+        C(0, [
+            "First: what the letters mean.",
+            A('AB = 10A + B appears', T('$\\overline{AB}=10A+B$', 48, gap=20)),
+            A('ABC = 100A + 10B + C appears', T('$\\overline{ABC}=100A+10B+C$', 48, gap=40)),
+            "A bar on top: the digits of ONE number. AB is not A times B.",
+            A("'Same letter → same digit · leading digit ≠ 0' appears", T('Same letter $\\to$ same digit · leading digit $\\ne0$', 44, gap=40)),
+            "The same letter is always the same digit. Different letters? Only if the question says so.",
+            "And a leftmost digit is never zero.",
+        ]),
+        C(1, [
+            "The technique — four steps, every time.",
+            A('Step 1 appears', T('1 · Write it vertically', 44)),
+            A('Step 2 appears', T('2 · Check the ones digit', 44)),
+            A('Step 3 appears', T('3 · Check the leftmost digit and the size', 44)),
+            A('Step 4 appears', T('4 · Plug in numbers — or the choices', 44)),
+            "Write it vertically. Check the ones digit. Check the leftmost digit and the size. Then plug in.",
+        ]),
+        C(2, [
+            "The ones column is special: nothing carries into it.",
+            A("'Ones column: B + D ends in B → D = 0' appears", T('Ones column: $B+D$ ends in $B\\ \\to\\ D=0$', 44, gap=40)),
+            A("'Other columns: X + Y ends in X → Y = 0 or 9' appears", T('Other columns: $X+Y$ ends in $X\\ \\to\\ Y=0$ or $9$', 44, gap=40)),
+            "In any other column there may be a carry. Then Y can be nine: one X seven plus Y five — Y is nine.",
+            A("'Carry: two numbers → 0 or 1' appears", T('Carry, two numbers: $0$ or $1$', 44, gap=20)),
+            A("'Carry: three or four numbers → up to 2 or 3' appears", T('Carry, three or four numbers: up to $2$ or $3$', 44)),
+            "Two numbers carry zero or one. Three or four numbers can carry more: eight plus eight plus eight — carry two.",
+        ]),
+        C(3, [
+            "Now the leftmost digit.",
+            A("'Two numbers, sum with more digits → leading digit 1' appears", T('Two numbers, sum with more digits $\\to$ leading digit $1$:  $99+99=198$', 40, gap=40)),
+            "Add TWO numbers and get more digits? The leading digit is one.",
+            A("'Four numbers: at most 4 · 999 = 3996' appears", T('Four three-digit numbers: at most $4\\cdot999=3996$', 42, gap=40)),
+            "Only for two numbers. Four numbers can start with two or three.",
+            A('24² = 576 and 27² = 729 appear', T('Estimate:  $24^2=576$,  $27^2=729$', 44)),
+            "And estimate the size — it throws out choices fast.",
+        ]),
+        C(4, [
+            "The special digits: zero, one, five and six.",
+            A("'d · d ends in d: 0, 1, 5, 6' appears", T('$d\\cdot d$ ends in $d$:  $0,\\ 1,\\ 5,\\ 6$  ($5\\cdot5=25$, $6\\cdot6=36$)', 42, gap=40)),
+            "Multiply one by itself — the ones digit stays. No other digit does that.",
+            A("'5 × even ends in 0, 5 × odd ends in 5' appears", T('$5\\,\\times$ even ends in $0$;  $5\\,\\times$ odd ends in $5$', 44, gap=20)),
+            A("'6 × even keeps its digit' appears", T('$6\\,\\times$ an even digit keeps it:  $6\\cdot8=48$', 44)),
+            "Five times even ends in zero, times odd ends in five. Six times an even digit keeps that digit: six times eight, forty-eight.",
+        ]),
+        C(5, [
+            "Every letter question can be solved by plugging in.",
+            A("'Asked for one letter? Plug in the choices, from the middle one' appears", T('One letter? Plug in the choices, from the middle one', 42, gap=40)),
+            A("'Test numbers that are not alike' appears", T('"Always divisible by"? Test two numbers that are not alike', 42, gap=40)),
+            "Two choices survive? Try a third number.",
+            A("'Subtraction → addition · division → multiplication' appears", T('Subtraction $\\to$ addition · Division $\\to$ multiplication', 42)),
+            "And flip a subtraction into an addition, a division into a multiplication. It's easier to see.",
+        ]),
+        C(6, [
+            "The algebraic form gives facts that come back again and again.",
+            A('AB − BA = 9(A − B) appears', T('$\\overline{AB}-\\overline{BA}=9(A-B)$', 44, gap=20)),
+            A('AB + BA = 11(A + B) appears', T('$\\overline{AB}+\\overline{BA}=11(A+B)$', 44, gap=40)),
+            A('ABC − CBA = 99(A − C) appears', T('$\\overline{ABC}-\\overline{CBA}=99(A-C)$:  $521-125=396$', 42, gap=40)),
+            "A number minus its reversal: divisible by nine. With three digits, by ninety-nine — middle digit nine.",
+            A('AAA = 111A = 3 · 37 · A appears', T('$\\overline{AAA}=111A=3\\cdot37\\cdot A$', 44, gap=20)),
+            A('BBBB ÷ BB = 101 appears', T('$\\overline{BBBB}\\div\\overline{BB}=101$', 44)),
+            "Triple digits: divisible by three and thirty-seven. And BBBB over BB is always one hundred one.",
+        ]),
+        C(7, [
+            "Products and powers.",
+            A("'Ones digit of a product: only the ones digits' appears", T('Ones digit of a product: $38\\cdot47\\to8\\cdot7=56\\to6$', 42, gap=40)),
+            A("'Digits of a product: add the counts, or one fewer' appears", T('Digits of a product: add the counts, or one fewer', 42, gap=40)),
+            "Two-digit times two-digit: four digits, or three.",
+            A('The cycle of 2 appears', T('Ones digits of powers repeat:  $2,\\ 4,\\ 8,\\ 6,\\ 2,\\ 4,\\ \\ldots$', 42, gap=20)),
+            A('The ones digit of 2⁵⁰ appears', T('$2^{50}$:  $50=4\\cdot12+2\\ \\to$ like $2^2$, ends in $4$', 42)),
+            "The ones digits of powers repeat in a cycle. Find where you land in the cycle.",
+        ]),
+        C(8, [
+            "Largest or smallest with a given digit sum.",
+            A("'Digit sum 8: largest 800, smallest 107' appears", T('Digit sum $8$:  largest $800$ · smallest $107$', 48)),
+            "Largest: big digits on the left. Smallest: one first, then zeros, the big digits on the right.",
+        ]),
+        C(9, [
+            "Before you practice, always ask yourself:",
+            A('Check 1', T('1. Must the letters be different digits?', 40)),
+            A('Check 2', T('2. Which column am I in? Is there a carry?', 40)),
+            A('Check 3', T('3. How many numbers are added? Does the size fit?', 40)),
+            A('Check 4', T('4. One letter asked? Plug in the choices.', 40)),
+            "The common traps: forgetting the carry, a leading zero, and the leading-digit-one rule with more than two numbers.",
+            "And a matching last digit is not a full proof — check the size too. Go practice.",
+        ]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
+    v = M.new_video('r26-t18-summary', TOPIC, 'Letter Puzzles: Summary', sb, slides, ADV, after=last)
+    v['hybrid']['num'] = M.video(FACTS)['hybrid']['num'] or M.video(LESSON)['hybrid']['num']

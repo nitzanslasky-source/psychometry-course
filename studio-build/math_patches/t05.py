@@ -1,5 +1,6 @@
 """Topic 5 (Expressions) - course review 2026-09 fixes. See t05_CHANGES.md."""
-from math_api import T, H, A, D, Q
+import re
+from math_api import T, H, A, D, Q, rich_plain
 
 TOPIC = 5
 ADV = 'expression-advanced'
@@ -44,7 +45,8 @@ def lesson(M):
         "Why? Take a minus out of the bracket: b minus a is minus, a minus b.",
         ('D', 'Write "b − a = −(a − b)"'),
         "Open it and check: minus a, plus b. The same thing.",
-        "So the bottom is the top with a minus. Any number over its opposite — negative one."])
+        "So the bottom is the top with a minus. Any number over its opposite — negative one.",
+        "Honestly? Trust it. It's always negative one."])     # pass 2: original line restored (it is true)
     # repeated bracket: pointer to "given a block"
     _append(M, vid, 6, ["And if a question GIVES you the value of a block — say, a plus b equals five — put the number in its place. You'll practise that after Question 14."])
 
@@ -174,63 +176,9 @@ def guided_fixes(M):
     M.set_q('q-130', expl=["The minus stands in front of the second bracket only: $(p-q)-(q-p)=p-q-q+p=2p-2q=2(p-q)$.",
                            "Divide by $p-q$ (not zero, because $p\\ne q$): $\\frac{2(p-q)}{p-q}=2$. The answer is choice 2."])
     _append(M, 'solve-q-130', 1, ["Method one is the standard route. Know it well? Skip ahead to Method two."])
-    # Q11 - no negative exponents (taught only in Topic 8)
-    M.set_q('q-131', stem='Given: $x\\ne0$.\n$\\left(\\frac{1}{x^2}+\\frac{4x^2}{x^4}\\right)\\cdot\\frac{1}{5}\\cdot\\frac{5}{\\frac{1}{x^2}}=\\ ?$',
-            expl=["Cancel $x^2$ in the second fraction: $\\frac{4x^2}{x^4}=\\frac{4}{x^2}$. The bracket equals $\\frac{1}{x^2}+\\frac{4}{x^2}=\\frac{5}{x^2}$.",
-                  "Dividing by a fraction means multiplying by its reciprocal: $\\frac{5}{\\frac{1}{x^2}}=5x^2$.",
-                  "The expression is $\\frac{5}{x^2}\\cdot\\frac{1}{5}\\cdot5x^2=5$. The answer is choice 3.",
-                  "Faster: the choices are numbers only, therefore one legal value is enough. With $x=1$: $(1+4)\\cdot\\frac{1}{5}\\cdot5=5$."])
-    _replace(M, 'solve-q-131', 1, "Negative powers — and a plug-in that makes them disappear.",
-             "Fractions inside fractions — and a plug-in that makes them disappear.")
-    M.set_slide('solve-q-131', 2, script=[
-        "Take it piece by piece.",
-        D('Under 4x²/x⁴ write "= 4/x²"'),
-        "Four x squared over x to the fourth. Cancel x squared from the top and the bottom. Four over x squared.",
-        D('Under the bracket write "1/x² + 4/x² = 5/x²"'),
-        "Same bottom — add the tops. Five over x squared.",
-        D('Under the last fraction write "5 ÷ 1/x² = 5 · x² = 5x²"'),
-        "The last part is five, divided by one over x squared. Dividing by a fraction: multiply by its reciprocal. Five x squared.",
-        D('Write "= 5/x² · 1/5 · 5x²"'),
-        D('Cancel the 5s and the x²; write "= 5"'),
-        "Cancel everything that cancels. Five.",
-        D('Circle choice 3'),
-        "Choice three.",
-    ])
-    M.set_slide('solve-q-131', 3, script=[
-        "Look at the choices — only numbers. No letters.",
-        "That means the answer can't depend on x. So ONE legal number is enough.",
-        "And the friendliest number for powers is one. One to any power is one.",
-        D('Write "x = 1: (1 + 4) · 1/5 · 5/1"'),
-        "One plus four is five. Times a fifth — one. Times five — five.",
-        D('Write "= 5" and circle choice 3'),
-        "Five. Choice three. Here, plugging in is much shorter — use it.",
-    ])
-    # Q12 - no a^0 / (-1)^a (exponents come in Topic 8)
-    M.set_q('q-132', stem='Given: $a$ is a positive integer.\nWhich of the following expressions has a value that does not depend on $a$?',
-            choices=['$(a+3a)-(3a-a)$', '$\\dfrac{(a+2)+(a+2)^2}{a+3}$', '$(a+1)^2-(a-1)^2$', '$\\dfrac{a^2-9}{a+3}-a$'], correct=4,
-            expl=["(1): $4a-2a=2a$. It depends on $a$.",
-                  "(2): take out $a+2$ on top: $(a+2)+(a+2)^2=(a+2)(1+a+2)=(a+2)(a+3)$. Cancel $a+3$: $a+2$. It depends on $a$.",
-                  "(3): $(a^2+2a+1)-(a^2-2a+1)=4a$. It depends on $a$.",
-                  "(4): $\\frac{a^2-9}{a+3}=\\frac{(a-3)(a+3)}{a+3}=a-3$, therefore the expression is $(a-3)-a=-3$ for every $a$. The answer is choice 4."])
-    M.set_slide('solve-q-132', 2, script=[
-        "We're hunting for the expression where a vanishes.",
-        D('Next to choice 1 write "4a − 2a = 2a"'),
-        "Choice one: a plus three a is four a. Three a minus a is two a. Four a minus two a: two a. Still has a. Out.",
-        D('Cross out choice 1'),
-        D('Next to choice 2 write "(a + 2) + (a + 2)² = (a + 2)(1 + a + 2) = (a + 2)(a + 3)"'),
-        "Choice two: a plus two appears twice on top. Take it out: a plus two, times one plus a plus two. That's a plus three.",
-        D('Write "(a + 2)(a + 3)/(a + 3) = a + 2" and cross out choice 2'),
-        "Cancel a plus three. a plus two. It depends on a. Out.",
-        D('Next to choice 3 write "(a² + 2a + 1) − (a² − 2a + 1) = 4a"'),
-        "Choice three: open both squares. a squared cancels. One cancels. Two a, minus minus two a: four a. Out.",
-        D('Cross out choice 3'),
-        "Three out — choice four is our answer. On the exam, mark it and move on.",
-        D('Next to choice 4 write "(a − 3)(a + 3)/(a + 3) − a = −3"'),
-        "Proof, for the lesson: a squared minus nine is a minus three, times a plus three. Cancel. a minus three, minus a — minus three. Always.",
-        D('Circle choice 4'),
-        "Choice four.",
-        "Quick check by plugging in: a equals one gives minus three, a equals two gives minus three. Same value.",
-    ])
+    # Q11 and Q12 (pass 2): the ORIGINAL questions are restored (negative exponents, a^0) and move to Topic 8 -
+    # see restore_moved(). Their original solution videos are no longer edited here.
+
     # Q13
     M.set_q('q-133', expl=["Factor the fraction. Top: $4b^2+4ab=4b(b+a)$. Bottom: $a^2-b^2=(a-b)(a+b)$.",
                            "Cancel $a+b$ (not zero, because $a\\ne-b$): the fraction equals $\\frac{4b}{a-b}$.",
@@ -312,6 +260,7 @@ def shortcuts(M):
         for title, script in slides:
             beats.append(dict(mode='question', active=k, title=title, pre=[Q(qid)], script=script))
         M.new_video('solve-' + qid, TOPIC, 'Exam Shortcuts', sb, beats, ADV, kind='solution', qid=qid)
+        M.video('solve-' + qid)['beats'][0]['title'] = 'Exam Shortcuts'   # like the base videos; keeps renumbering single-pass
         prev = 'solve-' + qid
 
     # Question 15 - sum and product
@@ -477,11 +426,7 @@ def practice(M):
       choices=['$1+4b$', '$1+\\frac{4b}{a}$', '$a+\\frac{4b}{a}$', '$4+\\frac{b}{a}$'],
       expl=["A sum on top may be split: $\\frac{a+4b}{a}=\\frac{a}{a}+\\frac{4b}{a}=1+\\frac{4b}{a}$. The answer is choice 2.",
             "Check with $a=2$, $b=1$: $\\frac{2+4}{2}=3$. The choices give $5$, $3$, $4$ and $4\\frac{1}{2}$ — only choice 2 gives $3$."])
-    S('q-expression-extra-09', stem='Given: $x\\ne0$.\n$\\left(\\frac{3}{x^2}-\\frac{x}{x^3}\\right)\\cdot\\frac{x^2}{2}=\\ ?$',
-      choices=['$1$', '$2$', '$3$', '$x^2$'], correct=1,
-      expl=["Cancel $x$ in the second fraction: $\\frac{x}{x^3}=\\frac{1}{x^2}$. The bracket is $\\frac{3}{x^2}-\\frac{1}{x^2}=\\frac{2}{x^2}$.",
-            "Then $\\frac{2}{x^2}\\cdot\\frac{x^2}{2}=1$. The answer is choice 1.",
-            "The choices are almost all numbers, therefore plugging in is fast: $x=2$ gives $\\left(\\frac{3}{4}-\\frac{2}{8}\\right)\\cdot\\frac{4}{2}=\\frac{1}{2}\\cdot2=1$, and choice 4 would give $4$."])
+    # q-expression-extra-09: original restored and moved to Topic 8 (pass 2) - see restore_moved()
     S('q-expression-extra-10', stem='Given: $a>4$.\n$\\frac{a^2-16}{a+4}-a=\\ ?$', choices=['$-4$', '$4$', '$0$', '$a-4$'],
       expl=["$a^2-16=(a-4)(a+4)$. Cancel $a+4$: $a-4$. Then $a-4-a=-4$. The answer is choice 1.",
             "Check with $a=5$: $\\frac{25-16}{9}-5=1-5=-4$ ✓."])
@@ -540,12 +485,43 @@ def practice(M):
     S('alg-extra-unit-t5-1-5', stem='$95\\cdot105=\\ ?$', choices=['$9{,}990$', '$9{,}995$', '$9{,}975$', '$10{,}025$'],
       expl=["Both numbers are $5$ away from $100$: $95\\cdot105=(100-5)(100+5)=100^2-5^2=10{,}000-25=9{,}975$. The answer is choice 3."])
 
-    # near-duplicates (repeated-bracket clones, copy of Q10, self/unit twins)
-    for qid in ['q-expression-extra-02', 'q-expression-extra-03', 'q-expression-extra-08',
-                'alg-extra-expression-self-1', 'alg-extra-expression-self-2', 'alg-extra-expression-self-3',
-                'alg-extra-expression-self-4', 'alg-extra-expression-self-5', 'alg-extra-expression-self-6',
-                'alg-extra-expression-self-7', 'alg-extra-unit-t5-1-6', 'alg-extra-unit-t5-1-7']:
-        M.unplace(qid)
+    # pass 2: the 12 original practice items are restored (plan), with TeX and full numeric solutions
+    S('q-expression-extra-02', stem='Given: $a\\ne b$.\n$4-\\frac{a-b}{b-a}=\\ ?$', choices=['$3$', '$4$', '$5$', '$-5$'],
+      expl=["Since $b-a=-(a-b)$, the fraction $\\frac{a-b}{b-a}$ equals $-1$.",
+            "Therefore the expression is $4-(-1)=4+1=5$. The answer is choice 3.",
+            "Check with $a=5$, $b=2$: $4-\\frac{3}{-3}=4+1=5$ ✓."])
+    S('q-expression-extra-03', stem='$(u+v)(t-5)+(u+v)(t+5)=\\ ?$',
+      choices=['$2t(u+v)$', '$10(u+v)$', '$2t+u+v$', '$0$'],
+      expl=["Take out the common bracket: $(u+v)[(t-5)+(t+5)]$. Inside, $-5$ and $+5$ cancel: $2t$.",
+            "The expression is $(u+v)\\cdot2t=2t(u+v)$. The answer is choice 1."])
+    S('q-expression-extra-08', stem='Given: $p\\ne q$.\n$\\frac{(p-q)-(q-p)}{p-q}=\\ ?$', choices=['$0$', '$1$', '$2$', '$p-q$'],
+      expl=["The minus stands in front of the second bracket only: $(p-q)-(q-p)=p-q-q+p=2p-2q=2(p-q)$.",
+            "Cancel $p-q$ (not zero, because $p\\ne q$): $\\frac{2(p-q)}{p-q}=2$. The answer is choice 3."])
+    S('alg-extra-expression-self-1', stem='$4x+6y-2x-3y=\\ ?$',
+      expl=["Collect like terms: $4x-2x=2x$ and $6y-3y=3y$. The expression is $2x+3y$. The answer is choice 3."])
+    S('alg-extra-expression-self-2', stem='$4(x+4)-3(x+1)=\\ ?$',
+      expl=["Open the brackets (the minus multiplies both terms): $4x+16-3x-3$.",
+            "Collect like terms: $x+13$. The answer is choice 2."])
+    S('alg-extra-expression-self-3', stem='Which of the following expressions is necessarily equal to $x^2+10x+24$?',
+      expl=["Sum and product: we need two numbers with product $24$ and sum $10$. They are $4$ and $6$.",
+            "Therefore $x^2+10x+24=(x+4)(x+6)$. The answer is choice 3. Check: $(x+4)(x+6)=x^2+6x+4x+24$ ✓."])
+    S('alg-extra-expression-self-4', stem='Given: $x\\ne4$.\n$\\frac{x^2-16}{x-4}=\\ ?$',
+      expl=["Sum times difference: $x^2-16=(x-4)(x+4)$. Cancel $x-4$ (not zero): $x+4$. The answer is choice 3.",
+            "Check with $x=5$: $\\frac{25-16}{1}=9$, and choice 3 gives $9$ ✓."])
+    S('alg-extra-expression-self-5', stem='$96\\cdot104=\\ ?$', choices=['$9{,}996$', '$9{,}984$', '$10{,}016$', '$9{,}992$'],
+      expl=["Both numbers are $4$ away from $100$: $96\\cdot104=(100-4)(100+4)=100^2-4^2=10{,}000-16=9{,}984$. The answer is choice 2."])
+    S('alg-extra-expression-self-6', stem='$(u+v)(w-4)+(u+v)(w+4)=\\ ?$',
+      expl=["Take out the common bracket: $(u+v)[(w-4)+(w+4)]$. Inside, $-4$ and $+4$ cancel: $2w$.",
+            "The expression is $(u+v)\\cdot2w=2w(u+v)$. The answer is choice 1."])
+    S('alg-extra-expression-self-7', stem='Given: $x\\ne0$.\n$\\frac{4x^2+24x}{4x}=\\ ?$',
+      expl=["Take out $4x$ on top: $4x^2+24x=4x(x+6)$. Cancel $4x$ (not zero): $x+6$. The answer is choice 2.",
+            "Or split the top: $\\frac{4x^2}{4x}+\\frac{24x}{4x}=x+6$."])
+    S('alg-extra-unit-t5-1-6', stem='$(u+v)(w-5)+(u+v)(w+5)=\\ ?$',
+      expl=["Take out the common bracket: $(u+v)[(w-5)+(w+5)]$. Inside, $-5$ and $+5$ cancel: $2w$.",
+            "The expression is $(u+v)\\cdot2w=2w(u+v)$. The answer is choice 4."])
+    S('alg-extra-unit-t5-1-7', stem='Given: $x\\ne0$.\n$\\frac{5x^2+35x}{5x}=\\ ?$',
+      expl=["Take out $5x$ on top: $5x^2+35x=5x(x+7)$. Cancel $5x$ (not zero): $x+7$. The answer is choice 3.",
+            "Or split the top: $\\frac{5x^2}{5x}+\\frac{35x}{5x}=x+7$."])
 
     new = [
         ('q-r26-t05-05', 'Given: $x-2y=4$.\n$3x-6y-(2y-x)^2=\\ ?$', ['$-28$', '$-4$', '$4$', '$28$'], 2,
@@ -604,15 +580,18 @@ def practice(M):
         M.place_q(qid, SELF)
 
     M.practice_order(SELF, [
-        'q-expression-extra-16', 'q-expression-extra-06', 'q-expression-extra-17', 'q-expression-extra-07',
-        'q-expression-extra-04', 'q-expression-extra-01', 'q-expression-extra-19', 'q-r26-t05-08',
-        'q-expression-extra-12', 'q-expression-extra-05', 'q-expression-extra-15', 'q-expression-extra-10',
-        'q-expression-extra-20', 'q-expression-extra-09', 'q-expression-extra-18', 'q-r26-t05-14',
+        'alg-extra-expression-self-1', 'alg-extra-expression-self-2', 'q-expression-extra-16', 'q-expression-extra-06',
+        'q-expression-extra-02', 'q-expression-extra-17', 'alg-extra-expression-self-7', 'q-expression-extra-07',
+        'q-expression-extra-03', 'alg-extra-expression-self-6', 'q-expression-extra-08', 'q-expression-extra-04',
+        'q-expression-extra-01', 'q-expression-extra-19', 'alg-extra-expression-self-5', 'q-r26-t05-08',
+        'q-expression-extra-12', 'alg-extra-expression-self-3', 'q-expression-extra-05', 'alg-extra-expression-self-4',
+        'q-expression-extra-15', 'q-expression-extra-10', 'q-expression-extra-20', 'q-expression-extra-18', 'q-r26-t05-14',
         'q-r26-t05-13', 'q-r26-t05-11', 'q-r26-t05-12', 'q-expression-extra-13', 'q-expression-extra-14',
         'q-r26-t05-09', 'q-r26-t05-10', 'q-r26-t05-16', 'q-expression-extra-11', 'q-r26-t05-05',
         'q-r26-t05-06', 'q-r26-t05-15', 'q-r26-t05-07'])
-    M.practice_order(BANK, ['alg-extra-unit-t5-1-1', 'alg-extra-unit-t5-1-2', 'q-123', 'q-124', 'q-122',
-                            'alg-extra-unit-t5-1-5', 'alg-extra-unit-t5-1-4', 'alg-extra-unit-t5-1-3'])
+    M.practice_order(BANK, ['alg-extra-unit-t5-1-1', 'alg-extra-unit-t5-1-2', 'q-123', 'q-124', 'alg-extra-unit-t5-1-6',
+                            'alg-extra-unit-t5-1-7', 'q-122', 'alg-extra-unit-t5-1-5', 'alg-extra-unit-t5-1-4',
+                            'alg-extra-unit-t5-1-3'])
 
 
 def so_fixes(M):
@@ -627,9 +606,157 @@ def so_fixes(M):
              "The units-digit trick? Here it can't help. Eight times three is twenty-four. Therefore every choice times sixty-three ends in four — same as the top.")
 
 
+# ---------------------------------------------------------------------------------------------------------------
+# 5. Pass 2: restore the originals q-131, q-132, q-expression-extra-09 and move them to Topic 8 (after `exponents`)
+# ---------------------------------------------------------------------------------------------------------------
+T8_CORE, T8_PRACTICE = 'exponent-core', 'exponent-extra'
+MOVED_SOLVE = ('solve-q-131', 'solve-q-132')
+
+
+def restore_moved(M):
+    # original stems/choices/keys, text clean-up only (TeX, no ':' division, numbers in the solutions)
+    M.set_q('q-131', stem='Given: $x\\ne0$.\n$\\left(x^{-2}+\\frac{4x^2}{x^4}\\right)\\cdot\\frac{1}{5}\\cdot\\frac{5}{x^{-2}}=\\ ?$',
+            expl=["A negative power flips: $x^{-2}=\\frac{1}{x^2}$. Cancel $x^2$ in the second fraction: $\\frac{4x^2}{x^4}=\\frac{4}{x^2}$.",
+                  "The bracket equals $\\frac{1}{x^2}+\\frac{4}{x^2}=\\frac{5}{x^2}$.",
+                  "The negative power in the denominator moves up: $\\frac{5}{x^{-2}}=5x^2$.",
+                  "The expression is $\\frac{5}{x^2}\\cdot\\frac{1}{5}\\cdot5x^2=5$. The answer is choice 3.",
+                  "Faster: the choices are numbers only. With $x=1$: $(1+4)\\cdot\\frac{1}{5}\\cdot5=5$."])
+    M.set_q('q-132', choices=['$(a+3a)-(3a-a)$', '$\\dfrac{(a+2)+(a+2)^2}{a+3}$', '$a^0+(-1)^a$', '$\\dfrac{a^2-9}{a+3}-a$'], correct=4,
+            expl=["(1): $4a-2a=2a$. It depends on $a$.",
+                  "(2): take out $a+2$ on top: $(a+2)+(a+2)^2=(a+2)(1+a+2)=(a+2)(a+3)$. Cancel $a+3$: $a+2$. It depends on $a$.",
+                  "(3): $a^0=1$, but $(-1)^a$ is $1$ when $a$ is even and $-1$ when $a$ is odd. The expression is $2$ or $0$. It depends on $a$.",
+                  "(4): $\\frac{a^2-9}{a+3}=\\frac{(a-3)(a+3)}{a+3}=a-3$, therefore the expression is $(a-3)-a=-3$ for every $a$. The answer is choice 4."])
+    M.set_q('q-expression-extra-09', stem='Given: $x\\ne0$.\n$\\left(x^{-2}+\\frac{2}{x^2}\\right)\\cdot x^2=\\ ?$',
+            choices=['$1$', '$2$', '$3$', '$x^2$'], correct=3,
+            expl=["$x^{-2}=\\frac{1}{x^2}$, therefore the bracket equals $\\frac{1}{x^2}+\\frac{2}{x^2}=\\frac{3}{x^2}$.",
+                  "Then $\\frac{3}{x^2}\\cdot x^2=3$. The answer is choice 3.",
+                  "Or multiply each term by $x^2$: $x^{-2}\\cdot x^2+\\frac{2}{x^2}\\cdot x^2=x^0+2=1+2=3$."])
+    for q in ('q-131', 'q-132'):
+        v = M.video('solve-' + q); v['title'] = v['navLabel'] = rich_plain(M.q(q)['stemRich'])
+    # the Advanced Expressions sidebars no longer list Questions 11 and 12 (renumbering happens after all patches)
+    for f in M.D['flow']:
+        if f['section'] == ADV and f['type'] == 'video' and f['ref'].startswith('solve-q-1'):
+            hy = M.video(f['ref'])['hybrid']
+            hy['sidebar'] = [x for x in hy.get('sidebar', []) if x not in ('Question 11', 'Question 12')]
+    # move to Topic 8: guided pair into the core section (after the T8 guided questions), extra-09 into T8 practice
+    M.move('q-131', T8_CORE); M.move('solve-q-131', T8_CORE, after='q-131')
+    M.move('q-132', T8_CORE, after='solve-q-131'); M.move('solve-q-132', T8_CORE, after='q-132')
+    M.move('q-expression-extra-09', T8_PRACTICE)
+    M.touched_videos.update(MOVED_SOLVE)
+    # Topic 8's patch runs after this one: finish the move once every patch has run
+    fin = M.finish
+    def finish():
+        _t8_fixup(M)
+        fin()
+    M.finish = finish
+
+
+def _t8_fixup(M):
+    D, flow = M.D, M.D['flow']
+    def is_sol(ref):
+        v = D['videos'].get(ref) or {}
+        return v.get('kind') == 'solution' and bool(v.get('beats')) and re.match(r'Question \d+$', v['beats'][0].get('bigTitle') or '')
+    others = [f['ref'] for f in flow if f['section'] == T8_CORE and f['type'] == 'video' and f['ref'] not in MOVED_SOLVE and is_sol(f['ref'])]
+    if others:                          # after the last Topic 8 guided question
+        M.move('q-131', T8_CORE, after=others[-1]); M.move('solve-q-131', T8_CORE, after='q-131')
+        M.move('q-132', T8_CORE, after='solve-q-131'); M.move('solve-q-132', T8_CORE, after='q-132')
+    prac = [f['ref'] for f in flow if f['section'] == T8_PRACTICE]
+    for anchor in ('alg-extra-exponent-extra-4', 'q-230'):     # next to the other negative-exponent item
+        if anchor in prac:
+            M.move('q-expression-extra-09', T8_PRACTICE, after=anchor); break
+    for vid in MOVED_SOLVE: D['videos'][vid]['topic'] = 8
+    # one sidebar for all Topic 8 guided questions (old numbers; renumber_guided maps them afterwards)
+    sols = [f['ref'] for f in flow if f['topic'] == 8 and f['type'] == 'video' and is_sol(f['ref'])]
+    labels = ['Question %s' % D['videos'][v]['beats'][0]['bigTitle'].split()[1] for v in sols]
+    ref = D['videos'][others[0]]['hybrid'] if others else None
+    for v in sols:
+        hy = D['videos'][v].setdefault('hybrid', {})
+        if v in MOVED_SOLVE or all(re.match(r'Question \d+$', x) for x in hy.get('sidebar', [])):
+            hy['sidebar'] = list(labels); M.touched_videos.add(v)
+            k = sols.index(v)
+            for b in D['videos'][v]['beats']:
+                if b.get('mode') != 'title': b['active'] = k
+        if v in MOVED_SOLVE and ref:
+            hy['title'] = ref.get('title', hy.get('title')); hy['num'] = ref.get('num', hy.get('num'))
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# 6. Pass 2: summary lesson right before the practice
+# ---------------------------------------------------------------------------------------------------------------
+def summary(M):
+    sb = ['Expression or equation?', 'Splitting a fraction', 'The main fraction bar', 'Opposite brackets',
+          'Take it out front', 'Round numbers', 'Given a block', 'Plug in numbers', 'Before you practice']
+    S = lambda k, script: dict(title=sb[k], mode='concept', active=k, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice — a quick summary of expressions.",
+            "Everything you need, one idea at a time."]),
+        S(0, [
+            A('Expression: = ? appears', T('Expression: something $=\\ ?$ · one side', size=46)),
+            "An expression has one side. Something equals a question mark.",
+            A('a/b + b/a = (a² + b²)/ab appears', T('$\\frac{a}{b}+\\frac{b}{a}=\\frac{a^2+b^2}{ab}$', size=56)),
+            "So the denominator stays. You may never just wipe it away.",
+            "Only in an equation can you clear a denominator — from both sides."]),
+        S(1, [
+            A('Split rule appears', T('$\\frac{a+b}{c}=\\frac{a}{c}+\\frac{b}{c}$ ✓', size=56)),
+            "A sum on top? You may split it.",
+            A('Trap appears', T('$\\frac{c}{a+b}\\ne\\frac{c}{a}+\\frac{c}{b}$ ✗', size=56)),
+            "A sum on the bottom? Never.",
+            "Six over one plus two is two. Split it wrongly and you get nine."]),
+        S(2, [
+            A('Main bar rule appears', T('Main bar first · work from the inside out', size=46)),
+            "Many fraction bars? Find the longest one — the main bar.",
+            "Then start from the deepest layer and work outward. One layer at a time.",
+            A('Example appears', T('$1\\div\\frac{1}{2}=1\\cdot2=2$', size=50)),
+            "And dividing by a fraction means multiplying by its reciprocal."]),
+        S(3, [
+            A('(a − b)/(b − a) = −1 appears', T('$\\frac{a-b}{b-a}=-1$, when $a\\ne b$', size=54)),
+            "Same two letters, opposite order: always negative one.",
+            A('b − a = −(a − b) appears', T('$b-a=-(a-b)$', size=50)),
+            "Because b minus a is minus, a minus b.",
+            "Watch the minus in front of a bracket. It flips every sign inside."]),
+        S(4, [
+            A('Repeated bracket appears', T('$(a+b)(u-4)+(a+b)(u+4)=(a+b)\\cdot2u$', size=44)),
+            "A bracket that repeats? Treat it as one object and take it out front.",
+            A('Sum and product appears', T('$x^2+9x+20=(x+4)(x+5)$', size=50)),
+            "A trinomial? Sum and product, from Topic 4. Product twenty, sum nine: four and five.",
+            "Factor first — then cancel what cancels."]),
+        S(5, [
+            A('99 · 41 appears', T('$99\\cdot41=100\\cdot41-41=4{,}059$', size=50)),
+            "No calculator. Look for a round number nearby.",
+            A('96 · 104 appears', T('$96\\cdot104=100^2-4^2=9{,}984$', size=50)),
+            "Two numbers the same distance from a round number? Sum times difference."]),
+        S(6, [
+            A('Given: x + y = 5 appears', T('Given: $x+y=5$', size=50)),
+            A('3x + 3y + 1 = 3 · 5 + 1 = 16 appears', T('$3x+3y+1=3(x+y)+1=3\\cdot5+1=16$', size=46)),
+            "They give you a block? Find it inside the question and put in its value.",
+            "Don't hunt for x and y. You can't find them — and you don't need them."]),
+        S(7, [
+            A('Plug-in rules appear', T('Only for $=\\ ?$ · obey every condition', size=46)),
+            "Stuck? Plug in numbers — but only in an expression, and only legal numbers.",
+            A('Different letters appear', T('Different letters → different values: $2$, $3$, $5$', size=44)),
+            "Zero and one are lazy numbers. They often make choices tie.",
+            A('Eliminate three appears', T('Eliminate three · a tie? New numbers', size=46)),
+            "You are knocking out three wrong choices. A tie? New numbers, only for the tied choices.",
+            "Only numbers in the choices? Then one legal substitution is enough."]),
+        S(8, [
+            "Before you start, always ask yourself:",
+            A('Check 1 appears', T('Expression or equation? Can I cancel this?', size=42)),
+            A('Check 2 appears', T('A sum on top or on the bottom?', size=42)),
+            A('Check 3 appears', T('Is there a repeated bracket or a block I know?', size=42)),
+            A('Check 4 appears', T('Did my numbers obey every condition?', size=42)),
+            "And the traps: cancelling a denominator, splitting a sum on the bottom, and a lost minus before a bracket.",
+            "Now it's your turn. Good luck!"]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
+    M.new_video('r26-t05-summary', TOPIC, 'Summary: Expressions', sb, slides, ADV, after=last)
+
+
 def apply(M):
     lesson(M)
     guided_fixes(M)
     shortcuts(M)
     practice(M)
     so_fixes(M)
+    restore_moved(M)
+    summary(M)

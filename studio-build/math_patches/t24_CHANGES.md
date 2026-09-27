@@ -58,4 +58,12 @@ Check: `python3 math_check.py 24` gives 0 problems, 0 warnings and 0 layout prob
 
 ## For the teacher to decide
 - The 2×2 table and three groups are separate short lessons, not slides inside "Exact Overlap". Please check that this is the order you want.
-- p02 and p04 were removed as near-duplicates. p17 (easy exactly one) was kept as the easiest warm-up.
+- (Pass 2: p02 and p04 are restored - see below.) p17 (easy exactly one) was kept as an easy warm-up.
+
+## Pass 2 (teacher-approved plan, 2026-09-27)
+**Removed:** nothing. `q-r26-t24-08` stays ("exactly one" is an original type).
+
+**Restored:** `wp24-p02` (26 art, 19 music, 11 both → 34) and `wp24-p04` (120 hikers, neither → 15), with TeX choices and numeric solutions. They are placed at the easy start of the practice (p02 first, p04 after p14).
+
+**Summary lesson added:** `r26-t24-summary` "Summary: Overlapping Groups" (about 2.8 minutes), at the end of "More methods and guided examples", right before the practice.
+Slides: Summary · Four regions (a full group = its only-region + both) · Count each once (A + B − both + neither = total) · Maximum overlap (the smaller group) · Minimum overlap ((A + B) − total, or 0; fractions and percents) · Other regions (union, neither, A only; "at most / at least" of the thing they ask) · The squares method (strip, exactly one = A + B − 2·both) · Two-way tables (plug in 100, rows/columns, "of the ..." is the whole) · Three groups (min = total − the missing ones, A + B + C − 2·total, max = smallest group) · Before you practice (range or exact?, which region?, what overlap makes THIS big or small?, who is the whole?, plus the common traps).

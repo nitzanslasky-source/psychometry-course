@@ -141,7 +141,6 @@ def apply(M):
         "Minimum-maximum questions are about ranges. What's the smallest possible value? The largest?",
         "Unlike general problems, you're not trying blindly.",
         "You can work out which way to push — which direction takes you to the minimum, and which to the maximum.",
-        "And this thinking comes back all over the exam: in geometry, in overlapping groups, in averages.",
     ])
     M.set_slide(W6, 4, script=[
         "On the exam, the key words are printed in bold.",
@@ -150,9 +149,9 @@ def apply(M):
         D('Circle LARGEST and SMALLEST'),
         "In our questions, find that word yourself and circle it — before you push in any direction.",
     ])
-    M.remove_slides(W6, [3])
-    # now: 1 title, 2 Ranges, 3 Bold words, 4 Squeeze, 5 Balance, 6 Recap
-    M.insert_slides(W6, 5, [dict(mode='concept', active=4, title='Cheapest k different', script=[
+    # Pass 2: the original slide 3 "A recurring motif" stays (plan: RESTORE)
+    # now: 1 title, 2 Ranges, 3 A recurring motif, 4 Bold words, 5 Squeeze, 6 Balance, 7 Recap
+    M.insert_slides(W6, 6, [dict(mode='concept', active=5, title='Cheapest k different', script=[
         "One formula worth knowing here.",
         A('1 + 2 + … + k = k(k + 1)/2 appears', T('$1+2+3+\\ldots+k=\\frac{k(k+1)}{2}$', size=58, gap=50)),
         "The cheapest way to give k people DIFFERENT positive amounts: one, two, three, up to k.",
@@ -162,7 +161,7 @@ def apply(M):
         "Four pairs of nine: thirty-six. That's eight times nine, over two.",
         "So k people with different amounts need at least k times k plus one, over two.",
     ])])
-    M.set_slide(W6, 7, script=[
+    M.set_slide(W6, 8, script=[
         A("'Max of one part → squeeze the others' appears", T('Max of one part $\\to$ squeeze the others', size=42)),
         A("'Min of the largest → balance' appears", T('Min of the largest $\\to$ balance the group', size=42)),
         A("'k different amounts → at least k(k+1)/2' appears",
@@ -172,9 +171,9 @@ def apply(M):
         "And always show both halves: nothing better fits — and your value really works.",
         "Now a real question of this type.",
     ])
-    for n, a in zip(range(2, 8), range(0, 6)):
+    for n, a in zip(range(2, 9), range(0, 7)):
         M.set_slide(W6, n, active=a)
-    M.set_sidebar(W6, ['Ranges', 'Bold words', 'Squeeze the others', 'Balance the group', 'Cheapest k different', 'Recap'])
+    M.set_sidebar(W6, ['Ranges', 'A recurring motif', 'Bold words', 'Squeeze the others', 'Balance the group', 'Cheapest k different', 'Recap'])
 
     # Q3 video: no bold print in our stems
     _fix_say(M, 'solve-wp21-g007', 2, 'Read the bold word: the LARGEST', 'Find the key word and circle it: the LARGEST')
@@ -638,9 +637,16 @@ def apply(M):
         'To make the highest score as large as possible, give the other four the least: $1+2+3+4=10$.',
         'The highest score: $43-10=33$. It is different from $1, 2, 3, 4$ ✓. Choice 2.'])
 
-    # near-duplicates: p26 = Q6 again (4 / 9, six packs), p23 = Q3 / p07 again (different amounts)
-    M.unplace('wp21-p26')
-    M.unplace('wp21-p23')
+    # Pass 2: p23 and p26 are original questions and stay (plan: RESTORE); text clean-up only
+    S('wp21-p23', stem='Thirty-six stickers are given to children. Each child receives a different positive whole number of stickers. '
+                       'What is the greatest possible number of children?',
+      expl=['To have as many children as possible, give each child as few stickers as possible: $1, 2, 3, \\ldots$',
+            'Eight children: $1+2+3+\\ldots+8=\\frac{8\\cdot9}{2}=36$ ✓. All $36$ stickers are given out.',
+            'Nine children would need at least $36+9=45>36$ ✗. Choice 4.'])
+    S('wp21-p26', expl=[
+        'Six small packs: $6\\times4=24$ markers. Changing a small pack to a large one adds $9-4=5$.',
+        'The possible totals: $24, 29, 34, 39, 44, 49, 54$.',
+        '$24$, $39$ and $54$ are in the list. $42$ is skipped: from $39$ we jump to $44$. Choice 4.'])
 
     # =====================================================================================
     # 6. New practice: worst case, must be true, formula sequences, days of the week, last digits
@@ -680,12 +686,6 @@ def apply(M):
              'Plug in $n=3$. The terms are $5$, $9$, $13$. The third term is $13$.',
              'Put $n=3$ into each choice: $5\\cdot3=15$, $4\\cdot3+1=13$, $4\\cdot3+5=17$, $3+4=7$. Only choice 2 gives $13$.',
              'With $n=1$ both $5n$ and $4n+1$ give $5$. That is why we use $n=3$.']),
-        ('08', 'The sum of the first $n$ terms of a sequence is $n^2+2n$. What is the $10$th term of the sequence?',
-         ['$19$', '$21$', '$23$', '$120$'], 2, [
-             'The $10$th term is the sum of the first $10$ terms minus the sum of the first $9$ terms.',
-             '$10^2+2\\cdot10=120$ and $9^2+2\\cdot9=99$. The $10$th term: $120-99=21$. Choice 2.',
-             'Check: the sums are $3, 8, 15, \\ldots$ The terms are $3$, $8-3=5$, $15-8=7$, and they go up by $2$. The $10$th term is $3+9\\times2=21$ ✓.',
-             '$120$ is the trap: that is the SUM of the first $10$ terms, not the $10$th term.']),
         ('09', 'Which expression is equal to the sum of the first $n$ even positive numbers, $2+4+6+\\ldots+2n$?',
          ['$2n^2$', '$n^2$', '$n(n+1)$', '$n(n+2)$'], 3, [
              'Plug in $n=3$: $2+4+6=12$.',
@@ -710,6 +710,98 @@ def apply(M):
     P = lambda k: 'q-r26-t21-' + k
     M.practice_order(PRAC, [
         'wp21-p21', 'wp21-p02', 'wp21-p04', 'wp21-p01', 'wp21-p08', 'wp21-p22', 'wp21-p27', 'wp21-p07', 'wp21-p16',
-        'wp21-p11', 'wp21-p10', P('07'), P('10'), P('11'), P('03'), 'wp21-p05', 'wp21-p09', 'wp21-p15', 'wp21-p20',
-        'wp21-p03', 'wp21-p25', 'wp21-p14', 'wp21-p19', 'wp21-p24', 'wp21-p06', P('09'), P('05'), P('06'),
-        'wp21-p12', P('08'), P('04'), 'wp21-p13', 'wp21-p17', 'wp21-p18'])
+        'wp21-p11', 'wp21-p10', 'wp21-p23', P('07'), P('10'), P('11'), P('03'), 'wp21-p05', 'wp21-p09', 'wp21-p15', 'wp21-p20',
+        'wp21-p03', 'wp21-p26', 'wp21-p25', 'wp21-p14', 'wp21-p19', 'wp21-p24', 'wp21-p06', P('09'), P('05'), P('06'),
+        'wp21-p12', P('04'), 'wp21-p13', 'wp21-p17', 'wp21-p18'])
+
+    summary(M)
+
+
+# =====================================================================================
+# Pass 2: summary lesson right before the practice
+# =====================================================================================
+def summary(M):
+    sb = ['Three types', 'Try in order', 'The skip', 'Push the right way', 'Different amounts',
+          'Worst luck + 1', 'Patterns', 'Cycles', 'Before you practice']
+    C = lambda k, script: dict(title=sb[k], mode='concept', active=k, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice — a quick summary of trial, limits and patterns.",
+            "Everything important, one idea at a time."]),
+        C(0, [
+            A("'General · Minimum & maximum · Patterns' appears", T('General · Minimum & maximum · Patterns', size=46)),
+            "Trial and error comes in three types.",
+            "General problems: nothing tells you what to try first. So you try.",
+            "Minimum and maximum: a little understanding tells you which way to push.",
+            "Patterns: write it out, or plug in a number."]),
+        C(1, [
+            A("'Draw → follow → split into routes → test the choices' appears",
+              T('Draw $\\to$ follow $\\to$ split into routes $\\to$ test the choices', size=40)),
+            "Draw the story and follow it. It can go two ways? Split it into two routes.",
+            "Often the fastest try: test the answer choices, one by one.",
+            A("'Keep an order: no 7s, one 7, two 7s, …' appears", T('Keep an order: no $7$s, one $7$, two $7$s, $\\ldots$', size=42)),
+            "Keep your tries in order. Then you know your list is complete.",
+            "And every try must pass EVERY condition — including the question itself."]),
+        C(2, [
+            A("'4 tickets of 6 or 11: 24, 29, 34, 39, 44' appears",
+              T('$4$ tickets of $6$ or $11$: $\\ 24,\\ 29,\\ 34,\\ 39,\\ 44$', size=44)),
+            "Two values that swap? Start from the minimum. Each swap is a constant step — here, plus five.",
+            A("'36? Remainder 1 when ÷ 5 — skipped' appears", T('$36$? $36\\div5$ leaves remainder $1$, not $4$ ✗', size=42)),
+            "Thirty-six is inside the range — but it gets skipped. Inside the range is NOT enough.",
+            "Test by remainder: every possible total leaves the same remainder."]),
+        C(3, [
+            A("'Max of one → give the others the least' appears", T('Max of one $\\to$ give the others the least', size=40)),
+            A("'Min of the largest → share as equally as possible' appears",
+              T('Min of the largest $\\to$ share as equally as possible', size=40)),
+            A("'Min of one → give the others the most' appears", T('Min of one $\\to$ give the others the most', size=40)),
+            "Three rules. Max of one: give the others the least. Min of the largest: share as equally as you can. Min of one: give the others the most.",
+            A("'Prove the bound, then build it' appears", T('Prove the bound, then build it', size=40)),
+            "Then two jobs: show nothing better fits — and build one real example that reaches it."]),
+        C(4, [
+            A("'1 + 2 + … + k = k(k+1)/2' appears", T('$1+2+3+\\ldots+k=\\frac{k(k+1)}{2}$', size=56)),
+            "Everyone gets a DIFFERENT positive amount? The cheapest list is one, two, three, up to k.",
+            A("'7 people need 28, 8 people need 36' appears",
+              T('$32$ pins: $\\frac{7\\cdot8}{2}=28\\le32$ ✓ · $\\frac{8\\cdot9}{2}=36>32$ ✗', size=42)),
+            "Thirty-two pins: seven people need at least twenty-eight — fine. Eight need thirty-six — too many.",
+            A("'At least 3 in each box? Fill to the minimum, count the spares' appears",
+              T('At least $3$ in each box? Fill to the minimum, then count the spares', size=40)),
+            "Everyone has a minimum? Fill everyone to the minimum first. Then count what is spare."]),
+        C(5, [
+            A("'To be sure → worst luck + 1' appears", T('To be sure $\\to$ worst luck $+\\,1$', size=50)),
+            "To be SURE? Imagine the worst luck — then add one.",
+            A("'3 socks of one color: 2 + 2 + 2 = 6, then 6 + 1 = 7' appears",
+              T('$3$ socks of one color, $3$ colors: $2+2+2=6$, then $6+1=7$', size=42)),
+            "Three socks of one color: the worst luck is two of each. Six socks, and still nothing. The seventh must do it.",
+            "It's a maximum question in disguise: how long can the bad luck last?"]),
+        C(6, [
+            A("'Step by step → write 1, 2, 3, 4 in the rule order' appears",
+              T('Step by step $\\to$ write $1,\\ 2,\\ 3,\\ 4$ in the rule order', size=42)),
+            "A rule repeated round after round? Write the items one by one. Halve, then subtract — not the other way round.",
+            A("'Sequences → plug in n = 3 · two survive? n = 4' appears",
+              T('Sequences $\\to$ plug in $n=3$ · two survive? Also $n=4$', size=42)),
+            "A formula with n in the choices? Plug in three and test every choice. n equals one often leaves two standing.",
+            A("'Check both edges · items ≠ gaps' appears", T('Check both edges · items $\\ne$ gaps', size=42)),
+            "And check the edges. Does the first step count? The last? Eight items in a row have seven gaps."]),
+        C(7, [
+            A("'Cycle → divide by its length, use the remainder' appears",
+              T('Cycle $\\to$ divide by its length, use the remainder', size=42)),
+            "A repeating cycle? Divide by the cycle length and look at the remainder.",
+            A("'Tuesday + 30 days: 30 = 28 + 2 → Thursday' appears",
+              T('Tuesday $+\\ 30$ days: $30=4\\cdot7+2\\to$ Thursday', size=42)),
+            "Days repeat every seven. Last digits of powers repeat too — write the first few and find the cycle.",
+            "Remainder zero? Then it's the LAST one in the cycle.",
+            A("'Meet again → jump with the bigger number' appears",
+              T('Meet again $\\to$ jump with the bigger number: $15,\\ 30,\\ 45,\\ 60$', size=40)),
+            "Two things meeting again? A common multiple. Jump along the bigger number."]),
+        C(8, [
+            "Before you start, always ask yourself:",
+            A("'Check 1' appears", T('Which type: general, min–max or pattern?', size=40)),
+            A("'Check 2' appears", T('Which way do I push — and does my example really work?', size=40)),
+            A("'Check 3' appears", T('Must or could? One counterexample kills "must".', size=40)),
+            A("'Check 4' appears", T('Constant step? Is this choice skipped?', size=40)),
+            A("'Check 5' appears", T('The edges: the first step, the last step, items or gaps?', size=40)),
+            "And the traps: \"inside the range\" is not enough, n equals one alone is not enough, and \"at least\" is a floor — not the answer for a maximum.",
+            "Now it's your turn. Good luck!"]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
+    M.new_video('r26-t21-summary', TOPIC, 'Summary: Trial, Limits and Patterns', sb, slides, ADV, after=last)

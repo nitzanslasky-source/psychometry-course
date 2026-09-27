@@ -104,3 +104,21 @@ The review found no wrong rules in the videos. Two places taught a shaky method,
 - The review suggested splitting the practice into foundation and advanced sections. The API has no function for creating a new section, so I kept one section and ordered it from easy to hard. If you want two sections, the natural split is before p05 ("Pentagon ABCDE consists of square BCDE…").
 - "Haman's ear" is kept, now explained and also called the "star partition". You can drop the name if you prefer.
 - Slide 11 ("Diagonals: equal parts") already gives the rule before the reason, so I left it unchanged.
+
+## Pass 2 (teacher-approved remove/restore plan, 2026-09-27)
+`python3 math_check.py 26 27 33 34`: 0 problems, 0 warnings, 0 layout problems.
+
+**Removed (3 items)**
+- Polygons video, slide "Angle → sides": the last 5 lines ("a classic exam question: which of these could be an angle of a regular polygon?", the 140°/130° examples and the board item). "n from an angle" stays.
+- Polygons card: the tip "Could it be an angle of a regular polygon? …".
+- Practice q-r26-t34-06 ("which could be an interior angle", 140°).
+- The guided numbering does not change.
+
+**Restored**
+- Practice geo34-core-p03 (900° → heptagon) and geo34-core-p14 (1,980° → 13 sides), with the solutions in TeX. They are placed at the start of the practice (easy).
+- Polygons video, slide "+1 side = +180°": the board is back to "5: 540° → 6: 720° → 7: 900° → 8: 1080°". The label colons are outside the math, so they are not read as fractions.
+- Two Hexagon Partitions, slide 4: the original line "…fold the three corners in, like the paper, and you get a hamantasch" is back. After it, one short line explains what a hamantasch is and gives the name "star partition".
+- Practice size: 33 → 34, ordered easy → hard.
+
+**Summary lesson (new)**
+- `r26-t34-summary` "Polygons: Summary", at the end of the learn section, right before the practice. Slides: Summary · Angle sum · One angle · Exterior angles · Diagonals · Triangles inside · Areas · Meeting at a point · Before you practice.

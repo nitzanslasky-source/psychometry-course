@@ -16,8 +16,8 @@ CARD = 'mem-percent'
 CARD2 = 'mem-r26-t23-traps'
 ADV = 'wp23-advanced'
 PRAC = 'wp23-practice'
-# advanced-section solution videos: old numbers 2..10 + new guided questions 11..15 (renumbered automatically)
-QSIDEBAR = ['Question %d' % n for n in range(2, 16)]
+# advanced-section solution videos: old numbers 2..10 + new guided questions 11..14 (renumbered automatically)
+QSIDEBAR = ['Question %d' % n for n in range(2, 15)]
 
 
 def VIS(v, **k): return dict(k='vis', v=v, **k)
@@ -75,12 +75,13 @@ def apply(M):
         "A tenth: ten percent. A fifth is two tenths: twenty. A twentieth is half a tenth: five.",
         "On the exam you'll see twelve point five AND twelve and a half. Get used to both.",
     ])
-    # new slide 5: thirds and families (the old "sixteen and a bit" line is gone)
+    # new slide 5: thirds and families (pass 2: the original "sixteen and a bit" line is back, before the exact value)
     M.insert_slides(L1, 4, [dict(mode='concept', active=3, title='Thirds and families', script=[
         A('A row appears: 1/3 = 33⅓%, 1/6 = 16⅔%', row3),
         "A third: thirty-three and a third percent.",
         D('Draw a "÷2" arrow from 1/3 to 1/6'),
-        "A sixth is half a third. Half of thirty-three is sixteen and a half. Half of one third is one sixth.",
+        "A sixth is half a third. Can't halve it precisely? Half of thirty-two is sixteen — so it's sixteen and a bit.",
+        "Exactly: half of thirty-three is sixteen and a half. Half of one third is one sixth.",
         D('Write "16½ + ⅙ = 16⅔"'),
         "Sixteen and a half, plus one sixth: sixteen and two thirds percent.",
         "Now build the families. Take a basic fraction a few times.",
@@ -331,10 +332,15 @@ def apply(M):
         'The original price is $x+36$.',
         'Change divided by the original, times $100$: $\\frac{36}{x+36}\\times100=\\frac{3600}{x+36}$.',
         'Check with a number: if $x=64$, the original price is $100$ and the discount is $36\\%$. $\\frac{3600}{64+36}=36$ ✓.'])
-    # p21 repeated the lesson example exactly (16% of 25) - new numbers
-    S('wp23-p21', stem='What is $28\\%$ of $75$?', choices=['$18$', '$24$', '$28$', '$21$'], correct=4, expl=[
+    # pass 2: the original p21 (16% of 25) is restored; the "28% of 75" version stays as a new question
+    S('wp23-p21', stem='What is $16\\%$ of $25$?', choices=['$2$', '$6$', '$8$', '$4$'], correct=4, expl=[
+        'Swap: $16\\%$ of $25$ equals $25\\%$ of $16$.',
+        '$25\\%=\\frac14$, and $\\frac14\\times16=4$.',
+        'The swap works because both are $\\frac{16\\times25}{100}=\\frac{400}{100}=4$.'])
+    M.new_q('q-r26-t23-15', TOPIC, 'What is $28\\%$ of $75$?', ['$18$', '$24$', '$28$', '$21$'], 4, [
         'Swap: $28\\%$ of $75$ equals $75\\%$ of $28$.',
         '$75\\%=\\frac34$, and $\\frac34\\times28=21$.'])
+    M.place_q('q-r26-t23-15', PRAC, after='wp23-p21')
     S('wp23-p22', expl=[
         'Plug in $100$: up $20\\%$ to $120$. Then $20\\%$ of $120$ is $24$, so the price falls to $120-24=96$.',
         '$96$ out of $100$: a $4\\%$ decrease.',
@@ -401,11 +407,11 @@ def apply(M):
     # =====================================================================================
     # 6. New lesson video "Percent Traps and Shortcuts" + card + guided questions 2-5
     # =====================================================================================
-    sb = ['More than or of?', 'Percentage points', 'Mixtures', 'Letters: plug in numbers', 'Estimate and test', 'Recap']
+    sb = ['More than or of?', 'Mixtures', 'Letters: plug in numbers', 'Estimate and test', 'Recap']
     M.new_video(TRAPS, TOPIC, 'Percent Traps and Shortcuts', sb, [
         dict(mode='title', title='Percent Traps and Shortcuts', script=[
             "The exam loves a few percent traps.",
-            "Today: three traps — and two shortcuts that save a lot of time.",
+            "Today: two traps — and two shortcuts that save a lot of time.",
         ]),
         dict(mode='concept', active=0, title='More than or of?', script=[
             A("'150% of 80' appears", T('$150\\%$ of $80$', size=48, gap=40)),
@@ -421,20 +427,7 @@ def apply(M):
             "The rule: p percent more than a number is a hundred plus p percent of it.",
             "Read the question slowly. \"Of\" or \"more than\"? It changes everything.",
         ]),
-        dict(mode='concept', active=1, title='Percentage points', script=[
-            A('A table appears: pass rate 20% in 2024, 25% in 2025',
-              VIS({'type': 'table', 'headers': ['Year', 'Pass rate'], 'rows': [['2024', '20%'], ['2025', '25%']]}, w=560, h=150, gap=50)),
-            "The pass rate at a school went from twenty percent to twenty-five percent. How much did it rise?",
-            D('Write "25 − 20 = 5 percentage points"'),
-            "Twenty-five minus twenty: five. But five WHAT? Five percentage points. That's the difference between two percents.",
-            D('Write "5/20 × 100 = 25%"'),
-            "The rise in percent? Use the change rule: the change, five, divided by the original, twenty. A quarter. Twenty-five percent.",
-            A("'20% → 25%: up 5 percentage points = up 25%' appears",
-              T('$20\\%\\to25\\%$: up $5$ percentage points $=$ up $25\\%$', size=42)),
-            "So both are true: up five percentage points, and up twenty-five percent.",
-            "The trap choice says \"up five percent\". That's wrong.",
-        ]),
-        dict(mode='concept', active=2, title='Mixtures', script=[
+        dict(mode='concept', active=1, title='Mixtures', script=[
             A("'200 g of salt water is 10% salt. Add water to make it 8% salt. How much water?' appears",
               T('$200$ g of salt water is $10\\%$ salt. How much water must we add to make it $8\\%$ salt?', size=40, gap=50)),
             "A mixture question. The key: find what does NOT change.",
@@ -447,7 +440,7 @@ def apply(M):
             "We had two hundred. So we add fifty grams of water.",
             "Adding salt instead? Then the WATER stays the same. Always ask: what stays?",
         ]),
-        dict(mode='concept', active=3, title='Letters: plug in numbers', script=[
+        dict(mode='concept', active=2, title='Letters: plug in numbers', script=[
             A("'What percent of a is b?' appears", T('What percent of $a$ is $b$?', size=48, gap=40)),
             A('The four choices appear',
               T('(1) $\\frac{100b}{a}$ $\\quad$ (2) $\\frac{b}{100a}$ $\\quad$ (3) $\\frac{100a}{b}$ $\\quad$ (4) $\\frac{ab}{100}$', size=46, gap=40)),
@@ -459,7 +452,7 @@ def apply(M):
             "Now put the numbers into each choice. Only choice one gives twenty.",
             "If two choices give the target, choose new numbers — and test only those two.",
         ]),
-        dict(mode='concept', active=4, title='Estimate and test', script=[
+        dict(mode='concept', active=3, title='Estimate and test', script=[
             A("'What percent of 320 is 90?' appears", T('What percent of $320$ is $90$?', size=48, gap=40)),
             A('The four choices appear', T('(1) $22\\%$ $\\quad$ (2) $28.125\\%$ $\\quad$ (3) $32\\%$ $\\quad$ (4) $36\\%$', size=44, gap=50)),
             "You don't always need the exact number. Estimate.",
@@ -473,24 +466,22 @@ def apply(M):
             D('Write "150 × 1.2 = 180 ✓"'),
             "A hundred fifty times one point two: a hundred eighty. It works. No equation needed.",
         ]),
-        dict(mode='concept', active=5, title='Recap', script=[
+        dict(mode='concept', active=4, title='Recap', script=[
             "Let's lock it in.",
             A("'p% more than = (100 + p)% of' appears", T('"$p\\%$ more than" $=$ "$(100+p)\\%$ of"', size=40)),
-            A("'Difference of two percents = percentage points' appears", T('Difference of two percents $=$ percentage points', size=40)),
             A("'Mixtures: find what stays the same' appears", T('Mixtures: find what stays the same', size=40)),
             A("'Letters in the choices: plug in numbers' appears", T('Letters in the choices: plug in numbers', size=40)),
             A("'Estimate · test a round choice' appears", T('Estimate · test a round choice', size=40)),
             D('Tick each line'),
-            "Four questions next. Try each one first. Then watch.",
+            "Three questions next. Try each one first. Then watch.",
         ]),
     ], ADV, after='solve-wp23-g065')
 
     M.new_card(CARD2, TOPIC, ADV, {
         'title': 'Percent traps and shortcuts',
-        'intro': 'Three traps the exam loves, and two shortcuts that save time.',
+        'intro': 'Two traps the exam loves, and two shortcuts that save time.',
         'tables': [{'title': 'Traps and shortcuts', 'head': ['Idea', 'Example'], 'rows': [
             ['"$p\\%$ more than" $=$ "$(100+p)\\%$ of"', '$50\\%$ more than $80=150\\%$ of $80=120$; $150\\%$ more than $80=200$'],
-            ['Percentage points', '$20\\%\\to25\\%$: up $5$ percentage points, but up $\\frac{5}{20}=25\\%$'],
             ['Mixtures: what stays the same?', 'Add water: the salt stays. $20$ g salt $=8\\%$ → total $250$ g'],
             ['Letters in the choices: plug in numbers', 'What percent of $a$ is $b$? $a=50$, $b=10$ → $20\\%$ → test each choice'],
             ['Estimate', '$90$ of $320$: $25\\%=80$, $30\\%=96$ → between $25\\%$ and $30\\%$'],
@@ -500,31 +491,6 @@ def apply(M):
                  'If two choices give your target, choose new numbers and test only those two.'],
     }, after=TRAPS)
 
-    # guided 2: percentage points
-    g2 = 'q-r26-t23-02'
-    M.new_q(g2, TOPIC, 'Last year, $40\\%$ of the students in a school passed a test. This year, $50\\%$ of the students passed. The number of students in the school did not change. By what percent did the number of students who passed increase?',
-            ['$10\\%$', '$20\\%$', '$25\\%$', '$125\\%$'], 3, [
-                'Plug in $100$ students. Last year $40$ passed, and this year $50$ passed.',
-                'The change is $50-40=10$. Divide by the original: $\\frac{10}{40}=\\frac14=25\\%$.',
-                'The rate rose by $10$ percentage points, but the number of students who passed rose by $25\\%$.'])
-    M.place_q(g2, ADV, after=CARD2)
-    _solution(M, g2, ["The pass rate went up by ten. Ten what?", "Try it first. Then let's solve it together."], [
-        ('Method 1 · Plug in 100', [
-            "The number of students didn't change. Plug in a hundred students.",
-            D('Write "last year: 40 passed,   this year: 50 passed"'),
-            "Forty percent of a hundred: forty passed. Then fifty percent: fifty passed.",
-            D('Write "change = 10,   10/40 = 1/4 = 25%" and circle choice 3'),
-            "The change is ten. Divide by the ORIGINAL — forty. One quarter. Twenty-five percent. Choice three.",
-            "The trap is choice one. Fifty minus forty is ten — but that's ten percentage points, not ten percent.",
-            "And choice two divides by fifty, the new number. The change is always divided by where it started.",
-        ]),
-        ('Method 2 · Multiplier', [
-            "Faster: the number of students is the same, so compare the rates directly.",
-            D('Write "50/40 = 1.25 → +25%"'),
-            "Fifty over forty: one point two five. A multiplier of one point two five means up twenty-five percent. Choice three.",
-        ]),
-    ])
-
     # guided 3: "of" vs "more than"
     g3 = 'q-r26-t23-03'
     M.new_q(g3, TOPIC, 'The price of a desk is $150\\%$ of the price of a chair. The price of a table is $150\\%$ more than the price of the chair. By what percent is the price of the table higher than the price of the desk?',
@@ -532,7 +498,7 @@ def apply(M):
                 'Plug in $100$ for the chair. The desk is $150\\%$ of $100$: $150$.',
                 'The table is $150\\%$ more than $100$: $100+150=250$.',
                 'Compared with the desk: the change is $250-150=100$, and $\\frac{100}{150}=\\frac23=66\\frac23\\%$.'])
-    M.place_q(g3, ADV, after='solve-' + g2)
+    M.place_q(g3, ADV, after=CARD2)
     _solution(M, g3, ["Of, or more than? Read carefully.", "Try it first. Then let's solve it together."], [
         ('Method 1 · Plug in 100', [
             "No prices given. Plug in a hundred. Into whom? Both prices are compared to the chair — so the chair is the hundred.",
@@ -640,14 +606,6 @@ def apply(M):
          ['$30\\%$', '$21\\%$', '$33.1\\%$', '$31\\%$'], 3,
          ['Each year: $\\times1.1$. Three years: $1.1^3=1.21\\times1.1=1.331$.',
           'That is $133.1\\%$ of the start: a growth of $33.1\\%$.']),
-        ('q-r26-t23-07', 'In January, $20\\%$ of the workers in a factory worked at night. In February, $25\\%$ of the same workers worked at night. Which of the following statements is true?\nI. The share of night workers rose by $5$ percentage points.\nII. The number of night workers rose by $25\\%$.',
-         ['I only', 'II only', 'Both I and II', 'Neither I nor II'], 3,
-         ['I: $25\\%-20\\%=5$ percentage points. True.',
-          'II: plug in $100$ workers. Night workers: $20\\to25$. The change is $5$, and $\\frac5{20}=25\\%$. True.']),
-        ('q-r26-t23-08', 'A bank lowered its interest rate from $5\\%$ to $4\\%$. By what percent did the interest rate fall?',
-         ['$1\\%$', '$20\\%$', '$25\\%$', '$4\\%$'], 2,
-         ['The rate fell by $5-4=1$ percentage point.',
-          'In percent: change divided by the original, $\\frac15=20\\%$.']),
         ('q-r26-t23-09', 'Given: $y>0$, and $x$ is $300\\%$ more than $y$. $x$ is what percent of $y$?',
          ['$300\\%$', '$400\\%$', '$200\\%$', '$133\\frac13\\%$'], 2,
          ['$300\\%$ more than $y$ is $(100+300)\\%=400\\%$ of $y$.',
@@ -656,7 +614,7 @@ def apply(M):
          ['$30\\%$', '$20\\%$', '$50\\%$', '$25\\%$'], 4,
          ['Plug in $100$ for the original price: $100\\to120\\to150$.',
           'The second rise is $150-120=30$, measured against $120$: $\\frac{30}{120}=\\frac14=25\\%$.',
-          'The trap: $150-120=30$ percentage points is not $30\\%$.']),
+          'The trap is $30\\%$: the rise of $30$ is measured against $120$, not against the original $100$.']),
         ('q-r26-t23-11', 'A $60$-liter drink is $25\\%$ juice, and the rest is water. How many liters of water must be removed so that the drink becomes $40\\%$ juice?',
          ['$22.5$', '$9$', '$15$', '$24$'], 1,
          ['Removing water does not change the juice: $25\\%$ of $60$ is $15$ liters.',
@@ -682,8 +640,103 @@ def apply(M):
         M.place_q(qid, PRAC)
 
     M.practice_order(PRAC, [
-        'wp23-p21', 'wp23-p01', 'wp23-p05', 'wp23-p02', 'wp23-p04', 'wp23-p09', 'wp23-p25', 'wp23-p26',
+        'wp23-p21', 'q-r26-t23-15', 'wp23-p01', 'wp23-p05', 'wp23-p02', 'wp23-p04', 'wp23-p09', 'wp23-p25', 'wp23-p26',
         'wp23-p12', 'wp23-p07', 'wp23-p22', 'wp23-p13', 'wp23-p15', 'wp23-p11', 'wp23-p27', 'wp23-p24',
-        'wp23-p17', 'wp23-p08', 'q-r26-t23-08', 'q-r26-t23-07', 'wp23-p06', 'q-r26-t23-09', 'q-r26-t23-10',
+        'wp23-p17', 'wp23-p08', 'wp23-p06', 'q-r26-t23-09', 'q-r26-t23-10',
         'wp23-p10', 'q-r26-t23-13', 'q-r26-t23-06', 'wp23-p14', 'wp23-p19', 'wp23-p23', 'q-r26-t23-11',
         'q-r26-t23-12', 'wp23-p20', 'wp23-p16', 'wp23-p18', 'q-r26-t23-14', 'wp23-p03'])
+    summary(M)
+
+
+# =====================================================================================
+# 9. Pass 2: summary lesson right before the practice
+# =====================================================================================
+def summary(M):
+    sb = ['The percent formula', 'Fractions to know', 'Equal ratios', 'The 10% method', 'Change in percent',
+          'What is my 100%?', 'Multipliers', 'Traps and shortcuts', 'Before you practice']
+    S = lambda k, script: dict(title=sb[k], mode='concept', active=k, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice — a quick summary of percentages.",
+            "Everything important, one idea at a time."]),
+        S(0, [
+            A('\'Percent = over 100 · "of" = times\' appears', T('Percent = over $100$ · "of" = times', size=44, gap=40)),
+            "Percent means over a hundred. \"Of\" means times.",
+            A("'p/100 × whole = part' appears", T('$\\frac{p}{100}\\times\\text{whole}=\\text{part}$', size=54, gap=40)),
+            "That's the percent formula. Sixty-five percent of eighty: sixty-five over a hundred, times eighty. Fifty-two.",
+            "Unknown percent? Unknown whole? The same equation — just solve it.",
+            A("'16% of 25 = 25% of 16 = 4' appears", T('$16\\%$ of $25=25\\%$ of $16=4$', size=46)),
+            "And you may swap them: a percent of b equals b percent of a."]),
+        S(1, [
+            A('A row appears: 1/2, 1/4, 1/8',
+              dict(k='row', items=['$\\frac12=50\\%$', '$\\frac14=25\\%$', '$\\frac18=12.5\\%$'], sp=340, below=70)),
+            A('A row appears: 1/5, 1/10, 1/20',
+              dict(k='row', items=['$\\frac15=20\\%$', '$\\frac1{10}=10\\%$', '$\\frac1{20}=5\\%$'], sp=340, below=70)),
+            A('A row appears: 1/3, 1/6',
+              dict(k='row', items=['$\\frac13=33\\frac13\\%$', '$\\frac16=16\\frac23\\%$'], sp=420)),
+            "Know these by heart. Halve to go down: fifty, twenty-five, twelve and a half.",
+            "Then build the families. Three eighths: three times twelve and a half — thirty-seven and a half."]),
+        S(2, [
+            A('A ratio table appears: 100% → 80, 65% → ?',
+              dict(k='vis', v={'type': 'table', 'headers': ['Percent', 'Amount'], 'rows': [['100%', '80'], ['65%', '?']]},
+                   w=560, h=150, gap=50)),
+            "Equal ratios — the triangle value. Percents on the left, amounts on the right.",
+            A("'Multiply along the diagonal, divide by what's left' appears",
+              T("Multiply along the diagonal, divide by what's left", size=42, gap=40)),
+            D('Write "65 × 80 ÷ 100 = 52"'),
+            "Sixty-five times eighty, divided by a hundred: fifty-two.",
+            "You can also jump between percents. Fifteen percent is forty-two? Then five percent is fourteen, and thirty-five percent is ninety-eight. No whole needed."]),
+        S(3, [
+            A("'10% of 230 = 23' appears", T('$10\\%$ of $230=23$', size=50, gap=40)),
+            "Ten percent: just divide by ten.",
+            A("'35% = 30% + 5% = 69 + 11.5 = 80.5' appears", T('$35\\%=30\\%+5\\%=69+11.5=80.5$', size=46, gap=40)),
+            "Then build any percent from ten-percent chunks. Five percent is half of ten percent.",
+            A("'30% = 54 → 10% = 18 → 100% = 180' appears", T('$30\\%=54\\ \\to\\ 10\\%=18\\ \\to\\ 100\\%=180$', size=46)),
+            "Whole missing? Go down to ten percent, then up to a hundred."]),
+        S(4, [
+            A("'Change in % = change ÷ original × 100' appears",
+              T('Change in $\\% = \\frac{\\text{change}}{\\text{original}}\\times100$', size=46, gap=40)),
+            "A change is always measured against where it started — the original.",
+            A("'80 → 100: 20/80 = 25%' appears", T('$80\\to100$: $\\ \\frac{20}{80}=25\\%$', size=48, gap=40)),
+            "Eighty up to a hundred: twenty out of eighty. Twenty-five percent — not twenty.",
+            A("'After a 20% loss: 96 = 80% → 100% = 120' appears", T('After a $20\\%$ loss: $\\ 96=80\\%\\ \\to\\ 100\\%=120$', size=44)),
+            "Going backwards? Ninety-six is what STAYED — eighty percent. The original: a hundred twenty."]),
+        S(5, [
+            A("'Whole not given? Plug in 100' appears", T('Whole not given? Plug in $100$', size=46, gap=40)),
+            "No starting number? Plug in a hundred. The number you get at the end is the percent.",
+            A('\'The whole comes after "of" / "than"\' appears', T('The whole comes after "of" / "than" — in the question', size=40, gap=40)),
+            "Who is the hundred? The word after \"of\" or \"than\" — in the question itself.",
+            A("'100 → 125 → 100' appears", T('$+25\\%$, then $-20\\%$: $\\ 100\\to125\\to100$', size=46)),
+            "And it can change on the way. After the rise, the twenty percent is of a hundred twenty-five, not of a hundred.",
+            "Each new percent sits on the new amount.",
+            "A fixed amount in the story? Then a hundred doesn't work. Use the real number, or a letter."]),
+        S(6, [
+            A("'Up x%: ×(1 + x/100) · Down x%: ×(1 − x/100)' appears",
+              T('Up $x\\%$: $\\times\\left(1+\\frac{x}{100}\\right)$ $\\qquad$ Down $x\\%$: $\\times\\left(1-\\frac{x}{100}\\right)$', size=40, gap=40)),
+            "Up twenty percent: times one point two. Down fifteen: times zero point eight five.",
+            A("'+10%, then +10%: 1.1 × 1.1 = 1.21' appears", T('$+10\\%$, then $+10\\%$: $\\ 1.1\\times1.1=1.21$', size=44, gap=40)),
+            "Several changes? Multiply the factors. Up ten percent twice is up twenty-one, not twenty.",
+            A("'Up p% and down p%: a loss of p²/100 %' appears", T('Up $p\\%$ and down $p\\%$: a loss of $\\frac{p^2}{100}\\%$', size=42, gap=40)),
+            "Up twenty and down twenty is not back to the start. It's four percent lower.",
+            A("'60% of 45% = 27%' appears", T('$60\\%$ of $45\\%=0.6\\times45\\%=27\\%$', size=44)),
+            "A percent of a percent? Multiply them — the percent tree."]),
+        S(7, [
+            A("'p% more than = (100 + p)% of' appears", T('$p\\%$ more than $=\\ (100+p)\\%$ of', size=44, gap=40)),
+            "Fifty percent more than eighty is a hundred fifty percent of eighty: a hundred twenty.",
+            A("'Mixtures: find what stays the same' appears", T('Mixtures: find what stays the same', size=42, gap=40)),
+            "Add water? The salt stays. Add sugar? The water stays.",
+            A("'Letters in the choices: plug in numbers' appears", T('Letters in the choices: plug in numbers', size=42, gap=40)),
+            "Not zero, not one, and a different number for each letter.",
+            A("'Estimate · test a round choice' appears", T('Estimate · test a round choice', size=42)),
+            "And you don't always need the exact number. Estimate, or test a round choice."]),
+        S(8, [
+            "Before you start, always ask yourself:",
+            A('Check 1 appears', T('What is my $100\\%$? It can change when there are several stages.', size=38, gap=30)),
+            A('Check 2 appears', T('"Of" or "more than"?', size=40, gap=30)),
+            A('Check 3 appears', T('A change? Divide by the ORIGINAL.', size=40, gap=30)),
+            A('Check 4 appears', T('A mixture? What stays the same?', size=40)),
+            "And the traps: adding percents that sit on different amounts, dividing a change by the new number, and thinking that up and down brings you back to the start.",
+            "Now it's your turn. Good luck!"]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
+    M.new_video('r26-t23-summary', TOPIC, 'Summary: Percentages', sb, slides, ADV, after=last)

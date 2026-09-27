@@ -73,3 +73,37 @@ Figures: 4 question figures and 4 slide figures (3 geometry figures and the tree
 - There is no "append to slide" call. The patch rebuilds the old script from its lines (`_script_of`) and adds lines to it.
 - The sidebars for the solution videos list the pre-renumbering numbers in course order, so `renumber_guided()` can
   sort them into Q1–Q16 (learn) and Q17–Q22 (advanced).
+
+## Pass 2 (teacher-approved remove/restore plan + summary lesson)
+**Removed (plan):**
+- The whole geometric probability block: lesson video `r26-t29-geometric` (5 slides, 3 figures), guided
+  `q-r26-t29-05` (+ figure) and `solve-q-r26-t29-05`, the card `mem-r26-t29-geometric`, and the practice items
+  `q-r26-t29-12`, `-13`, `-14` (with their figures). "Question 22" is gone from the advanced sidebar.
+- "Unknown count": the slide in `r26-t29-more-rules` (and its sidebar entry in all lesson parts), guided `q-r26-t29-04`
+  + `solve-q-r26-t29-04`, practice `q-r26-t29-06` and `-07`, and the card row. The more-rules title slide now says
+  "Three more tools".
+- The AND/OR size check: the last board item and two lines of the "OR with overlap" slide, and the card tip.
+
+**Restored (plan):**
+- Practice **wp29-p03** (two eight-sided dice match: 1/8) and **wp29-p20** (k boxes, cards 1 to m: 1/m^k), with text
+  clean-up only (TeX letters, "at random", worked numbers; p20 has a plug-in check k = 2, m = 3).
+- Dice symmetry slide: "By the way — opposite faces of a die always add to seven…" is back (the 7 − x reason stays after it).
+- "And · Or" slide: the original lines 'By the way — "or" questions are much rarer on the exam. They're also the
+  harder ones.' and 'Most of what you'll see is "and".' (the separate-cases condition stays).
+- Card: the original OR example 1/7 + 6/7 · 1/6 = 2/7 next to the new one, and the full tip '"Or" questions are rare —
+  and a second try only happens after a first miss.'
+- Q11 video (`solve-wp29-g158`): the original complement slide is back as slide 4, "Method 3 · Complement" (miss both:
+  6/7 · 5/6 = 5/7 → 1 − 5/7 = 2/7). Its last line ("two lockers cover two of the seven places") is not repeated,
+  because it is now Method 1.
+
+Guided questions renumber automatically: the three new learn-section questions are Q12–Q14, g160 is Q15, the
+advanced ones are Q16–Q20. Practice: 34 → 31 (−5 removed, +2 restored), still easy → hard.
+
+**New: summary video `r26-t29-summary` "Summary: Probability"** (about 3.4 min), at the end of "Further guided examples",
+right before the practice. Slides: Summary · Wanted over possible · Possible first · The complement · AND · OR ·
+At least one · exactly one · Two stages: a tree · Shortcuts · Before you practice (checks: what is possible — everyone
+or a smaller group; AND or OR; can the OR cases happen together; "at least one" → 1 − none; did the bag change; traps:
+adding instead of 1 − none, pouring two bags together, giving the complement instead of what was asked).
+
+**For the teacher:** the Q13 video still says "Size check: with five questions, that way gives five quarters — more
+than one. Impossible." This is the "a probability can't be more than 1" check, not the removed AND/OR size check, so it stays.

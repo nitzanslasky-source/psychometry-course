@@ -340,8 +340,8 @@ def renumber_guided(D, topics=range(1, 39)):
                     for b in V['beats']:
                         if b.get('active', -1) >= 0: b['active'] = lab.index(mine) if mine in lab else b['active']
                 hy['sidebar'] = lab
-            for b in V['beats']:
-                b['title'] = fix(b.get('title', ''))
+            for bi, b in enumerate(V['beats']):
+                if not (v in new and bi == 0): b['title'] = fix(b.get('title', ''))   # title slide already set above
                 for l in b['lines']:
                     for key in ('say', 'draw', 'label'):
                         if key in l: l[key] = fix(l[key])

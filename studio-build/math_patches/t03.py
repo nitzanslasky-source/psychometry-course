@@ -303,42 +303,41 @@ def fix_questions(M):
         r'$\frac{4}{33}$ against $\frac{5}{38}$: $4\cdot 38=152<165=33\cdot 5$. Therefore $\frac{4}{33}<\frac{5}{38}$.',
         r'The order is $\frac{6}{50}<\frac{4}{33}<\frac{5}{38}$. Choice 3. (Decimals: 0.12, about 0.121, about 0.132.)'])
 
-    # the GRE-style "which is greater: first / second / equal / cannot be determined" items -> NITE format,
-    # and the near-duplicates (t3-1-2 ~ q-084, t3-1-4 = lesson slide, t3-1-7 ~ q-088) -> new content
-    S('alg-extra-unit-t3-1-1', stem=r'Which of the following fractions is greater than $\frac{1}{2}$?',
-      choices=[r'$\frac{3}{7}$', r'$\frac{6}{13}$', r'$\frac{5}{9}$', r'$\frac{5}{11}$'], correct=3, expl=[
-        'Compare each fraction with one half: halve the bottom, then check the top.',
-        r'$\frac{3}{7}$: half of 7 is 3.5, and $3<3.5$. $\frac{6}{13}$: half of 13 is 6.5, and $6<6.5$. $\frac{5}{11}$: half of 11 is 5.5, and $5<5.5$.',
-        r'$\frac{5}{9}$: half of 9 is 4.5, and $5>4.5$. Only $\frac{5}{9}$ is greater than $\frac{1}{2}$. Choice 3.'])
-    S('alg-extra-unit-t3-1-2', stem='Which of the following numbers is the smallest?',
-      choices=[r'$\frac{22}{20}$', r'$\frac{24}{22}$', r'$\frac{21}{19}$', r'$\frac{23}{21}$'], correct=2, expl=[
-        r'All four are above 1. Each one is the one before it with 1 added to the top and to the bottom: $\frac{21}{19}\to\frac{22}{20}\to\frac{23}{21}\to\frac{24}{22}$.',
-        'Above 1, adding the same positive number to the top and the bottom moves the fraction down toward 1.',
-        r'Or compare the extras: $1+\frac{2}{19}$, $1+\frac{2}{20}$, $1+\frac{2}{21}$, $1+\frac{2}{22}$. Same top 2: the biggest bottom gives the smallest extra.',
-        r'The smallest is $\frac{24}{22}$. Choice 2.'])
-    S('alg-extra-unit-t3-1-3', stem=r'Given: $x>0$. Which of the following is the largest?',
-      choices=[r'$\frac{7}{x+5}$', r'$\frac{7}{x+2}$', r'$\frac{5}{x+5}$', r'$\frac{5}{x+7}$'], correct=2, expl=[
-        'All the tops and bottoms are positive.',
-        r'Same top 7: the smaller bottom wins. Therefore $\frac{7}{x+2}>\frac{7}{x+5}$.',
-        r'Same bottom $x+5$: the bigger top wins, $\frac{7}{x+5}>\frac{5}{x+5}$. Same top 5: $\frac{5}{x+5}>\frac{5}{x+7}$.',
-        r'The largest is $\frac{7}{x+2}$ — the biggest top over the smallest bottom. Check with $x=1$: $\frac{7}{6}$, $\frac{7}{3}$, $\frac{5}{6}$, $\frac{5}{8}$. Choice 2.'])
-    S('alg-extra-unit-t3-1-4', stem='Which of the following numbers is the largest?',
-      choices=[r'$\frac{3}{\sqrt{2}}$', r'$\frac{4}{\sqrt{3}}$', r'$\frac{5}{\sqrt{5}}$', r'$\frac{6}{\sqrt{7}}$'], correct=2, expl=[
-        'All four numbers are positive. Therefore we can square them and keep the order.',
-        r'$\frac{9}{2}=4.5$, $\frac{16}{3}\approx 5.33$, $\frac{25}{5}=5$, $\frac{36}{7}\approx 5.14$.',
-        r'The largest square is $\frac{16}{3}$. Therefore the largest number is $\frac{4}{\sqrt{3}}$. Choice 2.'])
+    # Pass 2 (PLAN_REMOVE_RESTORE): the original extra items come back in their original form (stem, choices, key),
+    # with the usual clean-up only (TeX, full numeric solutions).
+    S('alg-extra-unit-t3-1-1', stem=r'Which is greater: $\frac{3}{7}$ or $\frac{5}{9}$?',
+      choices=['The first fraction', 'They are equal', 'It depends on a missing value', 'The second fraction'], correct=4, expl=[
+        r'Compare each fraction with one half: halve the bottom, then check the top.',
+        r'$\frac{3}{7}$: half of 7 is 3.5, and $3<3.5$. Therefore $\frac{3}{7}<\frac{1}{2}$.',
+        r'$\frac{5}{9}$: half of 9 is 4.5, and $5>4.5$. Therefore $\frac{5}{9}>\frac{1}{2}$.',
+        r'Check by cross-multiplying: $3\cdot 9=27<35=7\cdot 5$. The second fraction is greater. Choice 4.'])
+    S('alg-extra-unit-t3-1-2', stem='Which is largest?',
+      choices=[r'$\frac{15}{16}$', r'$\frac{4}{5}$', r'$\frac{7}{8}$', r'$\frac{10}{11}$'], correct=1, expl=[
+        r'Each fraction is 1 minus a small piece: $\frac{15}{16}=1-\frac{1}{16}$, $\frac{4}{5}=1-\frac{1}{5}$, $\frac{7}{8}=1-\frac{1}{8}$, $\frac{10}{11}=1-\frac{1}{11}$.',
+        r'The smallest missing piece is $\frac{1}{16}$ (the biggest bottom). Therefore $\frac{15}{16}$ is the largest. Choice 1.'])
+    S('alg-extra-unit-t3-1-3', stem=r'Given: $x>0$. Which is greater: $\frac{7}{x+2}$ or $\frac{7}{x+5}$?',
+      choices=['They are equal', 'It cannot be determined from the information given.', 'The first fraction', 'The second fraction'], correct=3, expl=[
+        r'$x>0$, therefore both bottoms are positive, and $x+2<x+5$.',
+        r'Same top 7: the smaller bottom wins. Therefore $\frac{7}{x+2}>\frac{7}{x+5}$ for every $x>0$.',
+        r'Check with $x=1$: $\frac{7}{3}\approx 2.33$ and $\frac{7}{6}\approx 1.17$. The first fraction is greater. Choice 3.'])
+    S('alg-extra-unit-t3-1-4', stem=r'Which is greater: $\frac{3}{\sqrt{10}}$ or $\frac{2}{\sqrt{5}}$?',
+      choices=['Neither is real', 'The first expression', 'The second expression', 'They are equal'], correct=2, expl=[
+        'Both numbers are positive. Therefore we can square them and keep the order.',
+        r'$\left(\frac{3}{\sqrt{10}}\right)^2=\frac{9}{10}$ and $\left(\frac{2}{\sqrt{5}}\right)^2=\frac{4}{5}=\frac{8}{10}$.',
+        r'$\frac{9}{10}>\frac{8}{10}$, therefore $\frac{3}{\sqrt{10}}>\frac{2}{\sqrt{5}}$. The first expression is greater. Choice 2.'])
     S('alg-extra-unit-t3-1-5', stem=r'Given: $0<x<1$. Which of the following is the largest?', expl=[
         r'Plug in $x=\frac{1}{2}$: $x=\frac{1}{2}$, $x^2=\frac{1}{4}$, $\frac{1}{x}=2$. The largest is $\frac{1}{x}$.',
         r'The rule: for $0<x<1$, $x^2<x<1<\frac{1}{x}$. Choice 4.'])
-    S('alg-extra-unit-t3-1-6', stem='Which of the following numbers is the smallest?',
-      choices=[r'$\frac{3}{5}$', r'$\frac{2}{3}$', r'$\frac{5}{8}$', r'$\frac{7}{11}$'], correct=1, expl=[
-        r'Cross-multiply $\frac{3}{5}$ with each of the others: $3\cdot 3=9<10=5\cdot 2$, $3\cdot 8=24<25=5\cdot 5$, $3\cdot 11=33<35=5\cdot 7$.',
-        r'$\frac{3}{5}$ is smaller than each of the others. Choice 1.'])
-    S('alg-extra-unit-t3-1-7', stem=r'Given: $-1<x<0$. Which of the following is the largest?',
-      choices=[r'$x$', r'$x^2$', r'$x^3$', r'$\frac{1}{x}$'], correct=2, expl=[
-        r'Plug in $x=-\frac{1}{2}$: $x=-\frac{1}{2}$, $x^2=\frac{1}{4}$, $x^3=-\frac{1}{8}$, $\frac{1}{x}=-2$.',
-        r'$x^2$ is the only positive one. Choice 2.',
-        r'The rule: for $-1<x<0$, $\frac{1}{x}<x<x^3<0<x^2$.'])
+    S('alg-extra-unit-t3-1-6', stem=r'Which is smaller: $\frac{3}{5}$ or $\frac{4}{6}$?',
+      choices=['The first fraction', 'The second fraction', 'They are equal', 'It cannot be determined from the information given.'], correct=1, expl=[
+        r'Both bottoms are positive. Cross-multiply: $6\cdot 3=18$ goes above $\frac{3}{5}$, and $5\cdot 4=20$ goes above $\frac{4}{6}$.',
+        r'$18<20$, therefore $\frac{3}{5}<\frac{4}{6}$. Check with decimals: $0.6$ and about $0.67$.',
+        'The first fraction is smaller. Choice 1.'])
+    S('alg-extra-unit-t3-1-7', stem=r'Given: $c>1$. For which of the following values of x is the value of $\frac{c+x}{c-x}$ the smallest?',
+      choices=[r'$-1$', r'$0$', r'$\frac{1}{2}$', r'$1$'], correct=1, expl=[
+        r'All four values of x are at most 1, and $c>1$. Therefore the bottom $c-x$ is positive.',
+        r'When x gets smaller, the top $c+x$ gets smaller and the bottom $c-x$ gets bigger. Both changes make the fraction smaller. Therefore the smallest x gives the smallest value: $x=-1$.',
+        r'Check with $c=2$: $x=-1$ gives $\frac{1}{3}$; $x=0$ gives $1$; $x=\frac{1}{2}$ gives $\frac{2.5}{1.5}\approx 1.67$; $x=1$ gives $\frac{3}{1}=3$. Choice 1.'])
 
 
 # ------------------------------------------------------------------ existing solution videos
@@ -519,12 +518,110 @@ def add_practice(M):
         r'Why: one bottom is negative. With one negative bottom, the cross products point the wrong way (the trap from the lesson): $\frac{a}{b}<\frac{c}{d}$ gives $ad>bc$.',
         'Choice 2.'])
 
+    # Pass 2: the fixers' new versions of t3-1-2, -4 and -7 test kept methods -> they stay under new ids
+    P('q-r26-t03-09', 'Which of the following numbers is the smallest?',
+      [r'$\frac{22}{20}$', r'$\frac{24}{22}$', r'$\frac{21}{19}$', r'$\frac{23}{21}$'], 2, [
+        r'All four are above 1. Each one is the one before it with 1 added to the top and to the bottom: $\frac{21}{19}\to\frac{22}{20}\to\frac{23}{21}\to\frac{24}{22}$.',
+        'Above 1, adding the same positive number to the top and the bottom moves the fraction down toward 1.',
+        r'Or compare the extras: $1+\frac{2}{19}$, $1+\frac{2}{20}$, $1+\frac{2}{21}$, $1+\frac{2}{22}$. Same top 2: the biggest bottom gives the smallest extra.',
+        r'The smallest is $\frac{24}{22}$. Choice 2.'])
+    P('q-r26-t03-10', 'Which of the following numbers is the largest?',
+      [r'$\frac{3}{\sqrt{2}}$', r'$\frac{4}{\sqrt{3}}$', r'$\frac{5}{\sqrt{5}}$', r'$\frac{6}{\sqrt{7}}$'], 2, [
+        'All four numbers are positive. Therefore we can square them and keep the order.',
+        r'$\frac{9}{2}=4.5$, $\frac{16}{3}\approx 5.33$, $\frac{25}{5}=5$, $\frac{36}{7}\approx 5.14$.',
+        r'The largest square is $\frac{16}{3}$. Therefore the largest number is $\frac{4}{\sqrt{3}}$. Choice 2.'])
+    P('q-r26-t03-11', r'Given: $-1<x<0$. Which of the following is the largest?',
+      [r'$x$', r'$x^2$', r'$x^3$', r'$\frac{1}{x}$'], 2, [
+        r'Plug in $x=-\frac{1}{2}$: $x=-\frac{1}{2}$, $x^2=\frac{1}{4}$, $x^3=-\frac{1}{8}$, $\frac{1}{x}=-2$.',
+        r'$x^2$ is the only positive one. Choice 2.',
+        r'The rule: for $-1<x<0$, $\frac{1}{x}<x<x^3<0<x^2$.'])
+
     M.practice_order(PRACTICE, [
         'q-083', 'q-086', 'q-081', 'q-082',                               # fraction operations (review)
-        'alg-extra-unit-t3-1-1', 'alg-extra-unit-t3-1-6', 'q-084', 'alg-extra-unit-t3-1-3',
-        'q-085', 'q-089', 'alg-extra-unit-t3-1-5', 'q-r26-t03-05', 'q-r26-t03-07',
-        'alg-extra-unit-t3-1-2', 'alg-extra-unit-t3-1-4', 'q-090', 'q-r26-t03-04',
-        'alg-extra-unit-t3-1-7', 'q-087', 'q-088', 'q-r26-t03-06', 'q-r26-t03-08'])
+        'alg-extra-unit-t3-1-6', 'alg-extra-unit-t3-1-1', 'q-084', 'alg-extra-unit-t3-1-2', 'alg-extra-unit-t3-1-3',
+        'q-085', 'q-089', 'alg-extra-unit-t3-1-5', 'alg-extra-unit-t3-1-4', 'q-r26-t03-05', 'q-r26-t03-07',
+        'q-r26-t03-09', 'q-r26-t03-10', 'q-090', 'q-r26-t03-04',
+        'q-r26-t03-11', 'alg-extra-unit-t3-1-7', 'q-087', 'q-088', 'q-r26-t03-06', 'q-r26-t03-08'])
+
+
+# ------------------------------------------------------------------ Pass 2: summary video before the practice
+def add_summary(M):
+    sb = ['Cross-multiply', 'Signs first', 'Quick shortcuts', 'Distance from 1', 'Add to top and bottom',
+          'Square or flip', 'x by range', 'Plug in numbers', 'Before you practice']
+    C = lambda i, title, script: dict(title=title, mode='concept', active=i, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice, let's review the whole topic in two minutes.",
+            'Every method, every trap. Short and fast.']),
+        C(0, 'Cross-multiply', [
+            'Method number one: cross-multiply.',
+            A('5/8 ? 7/11 with the products', T(r'$\frac{5}{8}\;?\;\frac{7}{11}\qquad 11\cdot 5=55 \;<\; 56=8\cdot 7$', size=50)),
+            'Each product goes above ITS numerator. Fifty-five against fifty-six: seven elevenths is bigger.',
+            A('The condition appears', T('Condition: both bottoms positive', size=42)),
+            'One condition: both bottoms must be positive.']),
+        C(1, 'Signs first', [
+            'Signs first. Always.',
+            A('Negative < positive', T(r'negative $<$ positive: $\frac{1}{-2}<\frac{1}{3}$', size=46)),
+            'A negative number is smaller than any positive number. No calculation needed.',
+            A('Move the minus to the top', T(r'A negative bottom? $\frac{1}{-2}=-\frac{1}{2}$', size=46)),
+            'A negative bottom? Move the minus to the top. Then cross-multiply.',
+            A('Two negatives', T(r'$\frac{2}{3}<\frac{3}{4}\;\Rightarrow\;-\frac{2}{3}>-\frac{3}{4}$', size=46)),
+            'Two negatives? Compare them without the minus, then reverse.']),
+        C(2, 'Quick shortcuts', [
+            'Sometimes the numbers invite a shortcut.',
+            A('Benchmark 1/2', T(r'Benchmark $\frac{1}{2}$: $\frac{5}{13}<\frac{1}{2}<\frac{8}{15}$', size=44)),
+            'Halve the bottom, then check the top.',
+            A('Same top or bottom', T(r'Same bottom: bigger top wins. Same top: $\frac{5}{13}<\frac{5}{11}$', size=40)),
+            'Same bottom: the bigger top wins. Same top: the SMALLER bottom wins.',
+            A('Make them match', T(r'Make them match: $\frac{5}{11}=\frac{15}{33}>\frac{15}{34}$', size=44)),
+            'No match? Expand one fraction until they match.',
+            A('Decimals to know', T(r'$\frac{1}{4}=0.25\quad \frac{1}{8}=0.125\quad \frac{1}{3}\approx 0.33\quad \frac{1}{7}\approx 0.14$', size=40)),
+            'And know the basic decimals by heart.']),
+        C(3, 'Distance from 1', [
+            'Both fractions close to one? Look at what is missing.',
+            A('Below 1', T(r'$\frac{8}{9}=1-\frac{1}{9}\;<\;1-\frac{1}{12}=\frac{11}{12}$', size=48)),
+            'The smaller missing piece wins. Eleven twelfths is bigger.',
+            A('Above 1', T(r'$\frac{7}{6}=1+\frac{1}{6}\;<\;1+\frac{3}{16}=\frac{19}{16}$', size=48)),
+            'Above one, compare the extras. The bigger extra wins.']),
+        C(4, 'Add to top and bottom', [
+            'Add the same positive number to the top and the bottom. The fraction moves toward one.',
+            A('Below 1', T(r'Below 1: $\frac{3}{5}<\frac{4}{6}<\frac{5}{7}$ (it grows)', size=46)),
+            'Below one, it grows.',
+            A('Above 1', T(r'Above 1: $\frac{7}{5}>\frac{8}{6}$ (it shrinks)', size=46)),
+            'Above one, it shrinks. Positive numbers only.']),
+        C(5, 'Square or flip', [
+            'Two more tools, and each one has a sign condition.',
+            A('Square', T(r'Roots? Square: $\frac{3}{\sqrt{10}}>\frac{2}{\sqrt{5}}$ because $\frac{9}{10}>\frac{4}{5}$', size=42)),
+            'Roots in the fractions? Square them. Only when both numbers are positive.',
+            A('Flip', T(r'Flip: $\frac{19}{3}>\frac{25}{4}\;\Rightarrow\;\frac{3}{19}<\frac{4}{25}$', size=42)),
+            'Flipping reverses the order. Only when both numbers have the same sign.']),
+        C(6, 'x by range', [
+            'x, x squared, root x, one over x: the order depends on the range.',
+            A('0 < x < 1', T(r'$0<x<1:\quad x^2<x<\sqrt{x}<1<\frac{1}{x}$', size=46)),
+            'Between zero and one, squaring makes a number smaller.',
+            A('x > 1', T(r'$x>1:\quad \frac{1}{x}<1<\sqrt{x}<x<x^2$', size=46)),
+            'Above one, the order flips.',
+            A('−1 < x < 0', T(r'$-1<x<0:\quad \frac{1}{x}<x<0<x^2$', size=46)),
+            'Not sure? Plug in one number from the range: one quarter, four, or negative one half.']),
+        C(7, 'Plug in numbers', [
+            'Letters in the question? Plug in numbers.',
+            A('Rule 1', T('Legal values only — check every condition', size=42)),
+            A('Rule 2', T('Avoid 0 and 1', size=42)),
+            A('Rule 3', T('Two choices survive? Try a negative or a fraction', size=42)),
+            'Legal values only. Avoid zero and one. Two choices survive? Plug in a different kind of number.',
+            A('Necessarily / could be', T('"Necessarily": every legal value · "Could be": one example', size=40)),
+            '"Necessarily true" must work for every legal value. One counterexample kills a choice.']),
+        C(8, 'Before you practice', [
+            'Before you practice, always ask yourself:',
+            A('Check 1', T('1. What are the signs? Negative or positive?', size=42)),
+            A('Check 2', T('2. Are both bottoms positive before I cross-multiply?', size=42)),
+            A('Check 3', T('3. Do the numbers invite a shortcut?', size=42)),
+            A('Check 4', T('4. With letters: which numbers are legal?', size=42)),
+            'And watch the traps: a product written under the wrong fraction, squaring negatives, flipping numbers with different signs.',
+            'You know all of this. Go practice.']),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == LEARN][-1]
+    M.new_video('r26-t03-summary', TOPIC, 'Comparing Fractions: Summary', sb, slides, LEARN, after=last)
 
 
 def apply(M):
@@ -534,3 +631,4 @@ def apply(M):
     fix_solution_videos(M)
     add_guided(M)
     add_practice(M)
+    add_summary(M)

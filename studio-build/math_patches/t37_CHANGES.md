@@ -75,3 +75,17 @@ Patch: `math_patches/t37.py`. Check: `python3 math_check.py 37` → 0 problems, 
 - The added lesson slides are new recordings: video 1 (2 slides), Lengths (a few lines on slide 8), Slope (4 slides), the new "Area of a Slanted Triangle" lesson and 4 solution videos.
 - Please decide whether the spoken "— so ..." lines that became ". So, ..." still sound like you. Those were mechanical rewordings to follow the style rule.
 - API: no gaps. Figures inside question slides (the `fig` copies on solution-video slides) were edited in place, next to the question figures.
+
+## Pass 2 (2026-09-27, approved remove/restore plan + summary lesson)
+**Removed (4 questions, 1 solution video, 1 slide, 1 card row, 3 lines):**
+- Guided q-r26-t37-01 ("which quadrant", letters) and its video `solve-q-r26-t37-01`. The later guided questions renumber automatically (the box lesson's "in Question 1" still points to the triangle-perimeter question).
+- Practice q-r26-t37-02 and q-r26-t37-04 (which quadrant) and q-r26-t37-08 (negative slope).
+- Slope video `geo-159`: the slide "Stairs going down" (and its figure and sidebar entry). On "The line equation" slide: the draw note 'Write "y = −3/2 x + 6"…' and the spoken line after it.
+- Memory card: the row "Slope | up ÷ across, with a sign…".
+- Dependent lines: "Notice the stairs … a negative slope" at the end of the "Where a line cuts the axes" solution video; "Exam questions love this: they give letters, not numbers…" on the "Four quadrants" slide (it led into the removed quadrant question).
+
+**Restored (1 question, 1 board item, 1 line):**
+- geo37-core-p16 (a line through $(-4,\ 6)$ that does not cut the $y$-axis → perpendicular to the $x$-axis) is back in the practice, in the middle of the order. The text is now in TeX, and the solution shows the numbers.
+- `solve-geo37-g166` slide 3: the original board is back as $\frac{10}{4}=\frac{5}{?}$, and so is the original line "If you prefer an equation: y equals two fifths x plus b. Plug in A: 7 equals 2 plus b. So, b is 5. Same answer."
+
+**Summary lesson (1 new video):** `r26-t37-summary` "Summary" is at the end of "Learn and try", right before the practice (about 3.6 min). Slides: Summary · Points · Reflections · Along an axis · Slanted segments · Slanted triangles · Circles · Slope and midpoint · Through the origin · Lines and axes · Before you practice.

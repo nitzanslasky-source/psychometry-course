@@ -96,3 +96,10 @@ Other corrections:
 - **Topic order:** the review and the plan suggest teaching T16 before T15 (T15 uses the consecutive-product rules). The math API cannot reorder topics, so this patch does not change the order. It needs a course-level decision.
 - **T15 q-444:** that question is where the old "smallest product" rule gave the wrong answer. T16 now teaches the candidate method, but the T15 solution itself belongs to the T15 patch.
 - **API note:** existing solution-video titles and slide descriptions do not update when a stem changes, so the patch refreshes them itself (section 10 of t16.py).
+
+## Pass 2 (teacher-approved plan, 2026-09-27)
+**Removed:** nothing (per the plan).
+
+**Restored:** q-477 (a, b, c consecutive positive integers, c² − a² = 48, b = 12). Text clean-up only: TeX, a full numeric solution (c² − a² = (c − a)(c + a) = 2(2a + 2) = 4b = 48, check 169 − 121 = 48). Placed in the practice after q-482 (same type, same difficulty).
+
+**Summary video** `r26-t16-summary` "Integers: Summary", the last item of the advanced section, right before the practice. Slides: Summary · Multiply and divide · Signs of sums · Never negative · Consecutive integers · Sums in a row · Even and odd · Parity: plug in · Products in a row · Candidates and twos · Before you practice.

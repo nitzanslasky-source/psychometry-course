@@ -468,6 +468,13 @@ QTEXT = {
         expl=['$BC$ is horizontal: $BC=6-(-2)=8$. Its midpoint is $\\left(\\frac{-2+6}{2},\\ 2\\right)=(2,\\ 2)$.',
               'In an isosceles triangle, the altitude from $A$ goes to the midpoint of $BC$. So $A$ has $x=2$.',
               '$\\frac{8\\cdot h}{2}=40$, so $h=10$. $A$ is 10 above $(2,\\ 2)$: $A=(2,\\ 12)$.']),
+    'geo37-core-p16': dict(  # Pass 2: restored original, text clean-up only
+        stem='A straight line passes through $(-4,\\ 6)$ and does not intersect the $y$-axis. Which of the following statements is necessarily true?',
+        choices=['The point $(6,\\ -4)$ lies on the line.', 'The line is perpendicular to the $x$-axis.',
+                 'The point $(4,\\ 6)$ lies on the line.', 'The line passes through the origin.'],
+        expl=['A whole straight line that never meets the $y$-axis must be parallel to it. Therefore it is vertical: every point on it has $x=-4$.',
+              'A vertical line is perpendicular to the $x$-axis: choice 2.',
+              'The other choices: $(6,\\ -4)$, $(4,\\ 6)$ and the origin $(0,\\ 0)$ do not have $x=-4$, so they are not on the line.']),
     'geo37-core-p17': dict(
         stem='$AOBC$ is a square in the first quadrant. $O$ is the origin, and the sides $OA$ and $OB$ lie on the axes. The side of the square is $3$. A circle centered at $O$ passes through $C$. What is the area of the part of the circle in the first quadrant that is outside the square?',
         expl=['$C=(3,\\ 3)$, so $r=OC=3\\sqrt2$ (a 45-45-90 triangle) and $r^2=18$.',
@@ -519,24 +526,8 @@ QTEXT = {
               'Line $b$ is parallel, so it has the same steps. From $(3,\\ 8)$ to the $y$-axis is 3 left, so 2 down: $(0,\\ 6)$.']),
 }
 
-QUADS = ['The first quadrant', 'The second quadrant', 'The third quadrant', 'The fourth quadrant']
-
 NEWQ = {
-    # --- quadrants and reflections ---
-    'q-r26-t37-01': dict(  # guided
-        stem='The point $(a,\\ b)$ lies in the second quadrant. In which quadrant does the point $(b,\\ -a)$ lie?',
-        choices=QUADS, correct=1,
-        expl=['Second quadrant: $x<0$ and $y>0$. So $a<0$ and $b>0$.',
-              'The new point: its $x$ is $b>0$. Its $y$ is $-a$, and $-a>0$ because $a$ is negative.',
-              'Both coordinates are positive: the first quadrant.',
-              'With numbers: $a=-2$ and $b=3$. Then $(b,\\ -a)=(3,\\ 2)$, in the first quadrant.']),
-    'q-r26-t37-02': dict(
-        stem='The point $(a,\\ b)$ lies in the fourth quadrant. Which of the following points lies in the second quadrant?',
-        choices=['$(a,\\ -b)$', '$(b,\\ a)$', '$(-a,\\ b)$', '$(-b,\\ -a)$'], correct=2,
-        expl=['Fourth quadrant: $a>0$ and $b<0$.',
-              'The second quadrant needs $x<0$ and $y>0$.',
-              '$(b,\\ a)$: $b<0$ and $a>0$. It is in the second quadrant.',
-              'The others: $(a,\\ -b)$ is $(+,\\ +)$, $(-a,\\ b)$ is $(-,\\ -)$ and $(-b,\\ -a)$ is $(+,\\ -)$.']),
+    # --- reflections ---
     'q-r26-t37-03': dict(
         stem='The point $P(4,\\ -3)$ is reflected across the $x$-axis to $Q$. Then $Q$ is reflected across the $y$-axis to $R$. What is the length of $PR$?',
         choices=['$14$', '$8$', '$10$', '$6$'], correct=3,
@@ -544,13 +535,6 @@ NEWQ = {
               'Across the $y$-axis: $(x,\\ y)\\rightarrow(-x,\\ y)$, so $R=(-4,\\ 3)$. (Two reflections, one across each axis, are the same as a reflection through the origin.)',
               'From $P(4,\\ -3)$ to $R(-4,\\ 3)$: 8 across and 6 up. $PR^2=8^2+6^2=100$, so $PR=10$ (the triple 6-8-10).',
               'Trap: $14=8+6$ adds the legs.']),
-    'q-r26-t37-04': dict(
-        stem='Given: $ab<0$ and $a>b$. In which quadrant does the point $(b,\\ a)$ lie?',
-        choices=QUADS, correct=2,
-        expl=['$ab<0$, so one of the numbers is positive and the other is negative.',
-              '$a>b$, so $a$ is the positive one: $a>0$ and $b<0$.',
-              'The point $(b,\\ a)$ has $x=b<0$ and $y=a>0$: the second quadrant.',
-              'Trap: the point $(a,\\ b)$ would be in the fourth quadrant. Read the order of the coordinates.']),
     # --- midpoint ---
     'q-r26-t37-05': dict(  # guided
         stem='$M(2,\\ -1)$ is the midpoint of segment $AB$. Given: $A(-4,\\ 3)$. What are the coordinates of $B$?',
@@ -565,7 +549,7 @@ NEWQ = {
               '$M=\\left(\\frac{-3+7}{2},\\ \\frac{5+(-1)}{2}\\right)=(2,\\ 2)$.',
               'From $O$ to $M$: 2 right and 2 up, a 45-45-90 triangle. So $OM=2\\sqrt2$.',
               'Trap: $\\frac{7-(-3)}{2}=5$ and $\\frac{-1-5}{2}=-3$ are half of the moves, not the midpoint. They give $\\sqrt{34}$.']),
-    # --- negative slope and the line equation ---
+    # --- the line equation ---
     'q-r26-t37-07': dict(  # guided
         stem='The line $4x+3y=24$ intersects the $x$-axis at $A$ and the $y$-axis at $B$. What is the length of $AB$?',
         choices=['$14$', '$2\\sqrt7$', '$10$', '$24$'], correct=3,
@@ -573,12 +557,6 @@ NEWQ = {
               'On the $y$-axis, $x=0$: $3y=24$, so $y=8$ and $B=(0,\\ 8)$.',
               '$OA=6$ and $OB=8$ are the legs of a right triangle with the right angle at $O$. $AB$ is the hypotenuse: 6-8-10, so $AB=10$.',
               'Traps: $14=6+8$ adds the legs, and $24=\\frac{6\\cdot8}{2}$ is the area.']),
-    'q-r26-t37-08': dict(
-        stem='A straight line passes through $(-2,\\ 7)$ and $(4,\\ -2)$. At what point does the line intersect the $y$-axis?',
-        choices=['$(0,\\ 4)$', '$(0,\\ 10)$', '$(0,\\ 1)$', '$\\left(0,\\ \\frac{17}{3}\\right)$'], correct=1,
-        expl=['From $(-2,\\ 7)$ to $(4,\\ -2)$: 6 right and 9 down. So every 2 right go 3 down. The line goes down to the right: its slope is negative, $-\\frac32$.',
-              'From $(-2,\\ 7)$ to the $y$-axis is 2 right, so 3 down: $7-3=4$.',
-              'The point is $(0,\\ 4)$. Trap: $(0,\\ 10)$ goes 3 up instead of down.']),
     'q-r26-t37-09': dict(
         stem='The line $y=-2x+b$ passes through the point $(3,\\ 1)$. At what point does the line intersect the $x$-axis?',
         choices=['$(0,\\ 7)$', '$(-3.5,\\ 0)$', '$(7,\\ 0)$', '$(3.5,\\ 0)$'], correct=4,
@@ -638,20 +616,6 @@ def _fig_box(step):
     p.label(1, 1, 'A (1, 1)', dx=8, dy=16, anchor='start')
     p.label(7, 3, 'B (7, 3)', dx=10, dy=0, anchor='start')
     p.label(3, 6, 'C (3, 6)', dx=0, dy=-18)
-    return p.svg()
-
-
-def _fig_down():
-    p = Plane(-1, 6, -1, 7, grid=True, ticks=True, skip_y=(6, 7))
-    p.seg((-2.0 / 3, 7), (14.0 / 3, -1), TEAL, 3)
-    for a, b in (((0, 6), (2, 6)), ((2, 6), (2, 3)), ((2, 3), (4, 3)), ((4, 3), (4, 0))):
-        p.seg(a, b, ORANGE, 2.5, dash=True)
-    for (x, y) in ((0, 6), (2, 3), (4, 0)): p.point(x, y)
-    p.label(0, 6, '(0, 6)', dx=-12, dy=-12, anchor='end')
-    p.label(2, 3, '(2, 3)', dx=-10, dy=16, anchor='end')
-    p.label(4, 0, '(4, 0)', dx=10, dy=-14, anchor='start')
-    p.label(1, 6, '2', dy=-16, size=20, color=ORANGE)
-    p.label(2, 4.5, '3', dx=16, size=20, color=ORANGE)
     return p.svg()
 
 
@@ -727,7 +691,6 @@ def apply(M):
               T('I $(+,+)$ · II $(-,+)$ · III $(-,-)$ · IV $(+,-)$', size=44, x=410, y=650)),
             "Our A was in the first quadrant, B in the second, C in the third.",
             "And a point on an axis is in no quadrant at all.",
-            "Exam questions love this: they give letters, not numbers. Find the signs first.",
         ]),
         dict(mode='concept', title='Reflections', script=[
             A('P (4, 2) and its three reflections appear', VIS(fig_refl)),
@@ -745,42 +708,11 @@ def apply(M):
                        'Four quadrants', 'Reflections', 'On an axis'])
     _renumber_active(M, V1)
 
-    # guided question: quadrant signs
+    # Pass 2: the guided "which quadrant" question q-r26-t37-01 (+ its video) is removed (approved plan).
     NQ = NEWQ
     def mk(qid, figure=None):
         d = NQ[qid]
         M.new_q(qid, TOPIC, d['stem'], d['choices'], d['correct'], d['expl'], figure=figure)
-    mk('q-r26-t37-01')
-    M.place_q('q-r26-t37-01', LEARN, before='geo-155')
-    _solution(M, 'q-r26-t37-01', 'Quadrant signs with letters', [
-        "A quadrant question with letters. Signs first.",
-    ], [
-        ('Signs of a and b', [
-            "(a, b) is in the second quadrant. In which quadrant is (b, minus a)?",
-            "First, the signs. The second quadrant is the top left.",
-            A("'II: x < 0, y > 0 → a < 0, b > 0' appears",
-              T('II: $x<0,\\ y>0$ $\\rightarrow$ $a<0,\\ b>0$', size=36, x=410, y=260, w=1100)),
-            "Left of the y-axis: x is negative. So a is negative.",
-            "Above the x-axis: y is positive. So b is positive.",
-        ]),
-        ('The new point', [
-            "Now the new point. Its x is b — positive.",
-            A("'(b, −a): b > 0, −a > 0' appears", T('$(b,\\ -a)$: $b>0$, $-a>0$', size=36, x=410, y=260, w=1100)),
-            "Its y is minus a. Careful: a is negative, so minus a is positive.",
-            "Here's the trap. Minus a looks negative. It isn't.",
-            A("'(+, +) → the first quadrant' appears", T('$(+,\\ +)$ $\\rightarrow$ the first quadrant', size=36, x=410, y=330, w=1100)),
-            "Plus, plus: the first quadrant.",
-            D('Circle choice 1'),
-            "Choice one.",
-        ]),
-        ('Plug in numbers', [
-            "The fast way: plug in numbers.",
-            "Pick a point in the second quadrant: a is minus 2, b is 3.",
-            A("'a = −2, b = 3: (b, −a) = (3, 2)' appears", T('$a=-2,\\ b=3$: $\\ (b,\\ -a)=(3,\\ 2)$', size=36, x=410, y=260, w=1100)),
-            "Then (b, minus a) is (3, 2). The first quadrant.",
-            "Ten seconds, and no sign traps. Use it whenever a question gives letters.",
-        ]),
-    ])
 
     # ---------------------------------------------------------------------------------------------
     # 2. "Lengths on the Plane": roots in the answers (strong-student shortcut)
@@ -885,17 +817,7 @@ def apply(M):
         "And the other way around: you know A and the midpoint B? Just repeat the move.",
         "A to B is 4 right and 3 up. Do it again from B — and you're at C.",
     ])])
-    # after the insert: 6 = The length AD, 7 = Slope is a ratio
-    M.insert_slides(SV, 7, [dict(mode='concept', title='Stairs going down', script=[
-        A('A line with stairs going down appears', VIS(_fig_down())),
-        "So far, every line went up to the right. A line can also go down.",
-        "Start at (0, 6). Go 2 right and 3 down — (2, 3). Again — (4, 0).",
-        A("'Slope = −3/2' appears", T('Slope $=\\frac{-3}{2}=-\\frac32$', size=46, x=410, y=650)),
-        "Up divided by across — but here 'up' is minus 3. The slope is minus three halves.",
-        A("'Down to the right → negative slope' appears", T('Up to the right $\\rightarrow+$ · down to the right $\\rightarrow-$', size=40, x=410, y=740, w=1100)),
-        "The rule: up to the right — a positive slope. Down to the right — a negative slope.",
-        "Lengths work the same way: each step is 2 across and 3 down — a right triangle, Pythagoras.",
-    ])])
+    # Pass 2: the "Stairs going down" slide (negative slope) is removed (approved plan).
     n_end = len(M.video(SV)['beats'])
     M.insert_slides(SV, n_end, [
         dict(mode='concept', title='The line equation', script=[
@@ -905,8 +827,6 @@ def apply(M):
             "m is the slope — the step: up divided by across.",
             A("'b = where the line cuts the y-axis' appears", T('$b$ = where the line cuts the $y$-axis: the point $(0,\\ b)$', size=40)),
             "b is where the line cuts the y-axis. At x = 0, y is b.",
-            D('Write "y = −3/2 x + 6" next to the stairs-going-down line'),
-            "Our stairs going down: slope minus three halves, and it cuts the y-axis at 6. So y = minus three halves x plus 6.",
             A("'y = −2: horizontal · x = 4: vertical' appears", T('$y=-2$: horizontal $\\cdot$ $x=4$: vertical', size=40)),
             "Two special lines: y = minus 2 is horizontal — every point on it has y = minus 2. And x = 4 is vertical.",
         ]),
@@ -924,7 +844,7 @@ def apply(M):
         ]),
     ])
     M.set_sidebar(SV, ['Slope is constant', 'Equal steps', 'Step size', 'Midpoint', 'The length AD', 'Slope is a ratio',
-                       'Stairs going down', 'Through the origin', 'Same multiplier', 'Negative side too', 'Other lines',
+                       'Through the origin', 'Same multiplier', 'Negative side too', 'Other lines',
                        'The line equation', 'Cutting the axes'])
     _renumber_active(M, SV)
 
@@ -998,7 +918,6 @@ def apply(M):
             D('Circle choice 3'),
             "Choice three.",
             "The traps: 14 adds the legs. 24 is the area. And 2 root 7 subtracts the squares instead of adding them.",
-            "Notice the stairs: from B, 6 right and 8 down. The line goes down to the right — a negative slope.",
         ]),
     ])
 
@@ -1013,10 +932,10 @@ def apply(M):
     # 9. Question 8 video: fractions instead of ":", the equation remark now uses the taught y = mx + b
     # ---------------------------------------------------------------------------------------------
     S8 = 'solve-geo37-g166'
-    _item(M, S8, 3, '$10:4=5:\\ ?$', 'Ratio of the legs: $\\frac{4}{10}=\\frac{?}{5}$ $\\rightarrow$ $?=2$',
-          'Ratio of the legs: 4/10 = ?/5 → ? = 2')
+    # Pass 2: the original board and the original "If you prefer an equation" line are restored (clean-up only).
+    _item(M, S8, 3, '$10:4=5:\\ ?$', '$\\frac{10}{4}=\\frac{5}{?}$', '10/4 = 5/? appears')
     _say(M, S8, 3, "If you prefer an equation: y equals two fifths x plus b; plug in A: 7 equals 2 plus b, so b is 5. Same answer.",
-         "If you prefer the line equation: y = two fifths x plus b, and b is where the line cuts the y-axis. Put in A: 7 = 2 plus b. Then b = 5. Same answer.")
+         "If you prefer an equation: y equals two fifths x plus b. Plug in A: 7 equals 2 plus b. So, b is 5. Same answer.")
 
     # ---------------------------------------------------------------------------------------------
     # 10. Question 9 video: the first board line was wrong ("they never meet")
@@ -1044,7 +963,6 @@ def apply(M):
         ['!Midpoint', 'the average of the $x$ values, the average of the $y$ values · or repeat the move from one end'],
         ['Slanted triangle area', 'box it in (sides parallel to the axes), subtract the corner right triangles']])
     after('Straight line', [
-        ['Slope', 'up $\\div$ across, with a sign: up to the right $+$, down to the right $-$'],
         ['!Parallel lines', 'the same slope: the same step across and the same step up'],
         ['Line equation', '$y=mx+b$: $m$ = slope, $b$ = where it cuts the $y$-axis · $x$-axis: put $y=0$ · $y$-axis: put $x=0$']])
     c['tips'] += ['Answers given as roots? Compare across$^2+$ up$^2$ with the number under the root. No need to take the root.',
@@ -1059,17 +977,21 @@ def apply(M):
     # ---------------------------------------------------------------------------------------------
     # 13. Practice: drop the near-duplicate p16, add new questions, order easy -> hard
     # ---------------------------------------------------------------------------------------------
-    M.unplace('geo37-core-p16')
-    for qid in ('q-r26-t37-02', 'q-r26-t37-03', 'q-r26-t37-04', 'q-r26-t37-06', 'q-r26-t37-08', 'q-r26-t37-09',
-                'q-r26-t37-11', 'q-r26-t37-12'):
+    # Pass 2: geo37-core-p16 is restored; q-r26-t37-02, -04 (which quadrant) and -08 (negative slope) are removed.
+    for qid in ('q-r26-t37-03', 'q-r26-t37-06', 'q-r26-t37-09', 'q-r26-t37-11', 'q-r26-t37-12'):
         mk(qid)
         M.place_q(qid, PRACTICE)
     P = lambda n: 'geo37-core-p%02d' % n
     R = lambda n: 'q-r26-t37-%02d' % n
     M.practice_order(PRACTICE, [
-        P(8), P(21), R(2), P(24), P(23), P(1), P(19), P(5), P(6), P(22), P(2), P(26), P(3), P(10), P(9), P(14),
-        P(20), P(27), R(8), P(25), P(4), R(6), R(11), P(7), P(12), P(13), R(3), R(9), P(11), P(17), P(15), P(18),
-        R(4), R(12)])
+        P(8), P(21), P(24), P(23), P(1), P(19), P(5), P(6), P(22), P(2), P(26), P(3), P(10), P(9), P(14),
+        P(20), P(27), P(25), P(4), R(6), R(11), P(16), P(7), P(12), P(13), R(3), R(9), P(11), P(17), P(15), P(18),
+        R(12)])
+
+    # ---------------------------------------------------------------------------------------------
+    # Pass 2: summary lesson right before the practice
+    # ---------------------------------------------------------------------------------------------
+    summary(M)
 
     # ---------------------------------------------------------------------------------------------
     # 14. American spelling everywhere in the topic's videos and card
@@ -1096,3 +1018,90 @@ def apply(M):
             for it in b['items']:
                 if it.get('t') and fx(it['t']) != it['t']:
                     it['t'] = fx(it['t']); M.touched_videos.add(v['id'])
+
+
+def _b(label, tex, size=40):
+    """A board line that pops in (label = what the teacher sees in the script)."""
+    return A("'%s' appears" % label, T(tex, size=size))
+
+
+def summary(M):
+    """Pass 2: a short summary lesson at the end of the learn section, right before the practice."""
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == LEARN][-1]
+    sb = ['Points', 'Reflections', 'Along an axis', 'Slanted segments', 'Slanted triangles', 'Circles', 'Slope and midpoint',
+          'Through the origin', 'Lines and axes', 'Before you practice']
+    M.new_video('r26-t37-summary', TOPIC, 'Summary', sb, [
+        dict(mode='title', title='Summary', script=[
+            "A quick summary before you practice.",
+            "Everything important about the coordinate plane."]),
+        dict(title='Points', active=0, script=[
+            _b('A(x, y): x first, y second', '$A(x,\\ y)$: $x$ first, $y$ second'),
+            "x first, y second. Always. (4, 3) and (3, 4) are different points.",
+            _b('On the x-axis: y = 0 · on the y-axis: x = 0', 'On the $x$-axis: $y=0$ · on the $y$-axis: $x=0$'),
+            _b('I (+,+) · II (−,+) · III (−,−) · IV (+,−)', 'I $(+,+)$ · II $(-,+)$ · III $(-,-)$ · IV $(+,-)$'),
+            "The four quadrants go counterclockwise from the top right. A point on an axis is in no quadrant."]),
+        dict(title='Reflections', active=1, script=[
+            _b('Across the x-axis: (x, −y) · across the y-axis: (−x, y)', 'Across the $x$-axis: $(x,\\ {-y})$ · across the $y$-axis: $(-x,\\ y)$'),
+            "A reflection is a mirror. Across the x-axis, only y changes its sign. Across the y-axis, only x.",
+            _b('Through the origin: (−x, −y)', 'Through the origin: $(-x,\\ {-y})$'),
+            "Through the origin, both signs change. (4, 2) goes to (minus 4, minus 2)."]),
+        dict(title='Along an axis', active=2, script=[
+            _b('Same x → vertical · same y → horizontal', 'Same $x$ $\\rightarrow$ vertical · same $y$ $\\rightarrow$ horizontal'),
+            "Same x? The segment is vertical — use the y values. Same y? It's horizontal — use the x values.",
+            _b('Same side: subtract · opposite sides: add', 'Same side: subtract · opposite sides: add'),
+            "Same side of the axis — subtract. Opposite sides — add the two parts.",
+            _b('From x = −4 to x = 6: 4 + 6 = 10, not 6 − 4 = 2', 'From $x=-4$ to $x=6$: $4+6=10$, not $6-4=2$'),
+            "6 minus 4 is the classic mistake."]),
+        dict(title='Slanted segments', active=3, script=[
+            _b('Slanted → right triangle → Pythagoras', 'Slanted $\\rightarrow$ right triangle $\\rightarrow$ Pythagoras'),
+            "A slanted segment? Draw lines parallel to the axes and close a right triangle.",
+            _b('Across 5, up 12 → 13', 'Across $5$, up $12$ $\\rightarrow$ $13$'),
+            "Across 5, up 12. A triple — 13. No distance formula needed. It's just Pythagoras.",
+            _b('Roots in the answers? Compare across² + up²', 'Roots in the answers? Compare across$^2+$ up$^2$'),
+            "And if the answers are roots, don't take the root. Look for across squared plus up squared under the root."]),
+        dict(title='Slanted triangles', active=4, script=[
+            _b('A horizontal or vertical side → base × height ÷ 2', 'A horizontal or vertical side $\\rightarrow$ $\\frac{\\text{base}\\cdot\\text{height}}{2}$'),
+            "The area of a triangle on the plane. Is one side horizontal or vertical? Use it as the base. The height is a straight drop.",
+            _b('No such side → box it in, subtract the corners', 'No such side $\\rightarrow$ box it in, subtract the corners'),
+            _b('36 − (6 + 6 + 8) = 16', 'Box $36$, corners $6+6+8$: $\\ 36-20=16$'),
+            "Then subtract the three corner right triangles. Box 36, corners 20 — the triangle is 16."]),
+        dict(title='Circles', active=5, script=[
+            _b('Circle: find r first', 'Circle: find $r$ first'),
+            "With a circle, find the radius first. Then the area, the circumference — whatever they ask.",
+            _b('Center at O, point (5, 12) → r = 13', 'Center at $O$, point $(5,\\ 12)$ $\\rightarrow$ $r=13$'),
+            "Center at the origin? Draw the radius to the point, close a right triangle, Pythagoras.",
+            _b('Tangent to both axes: center (r, r) · center (6, 0) ≠ r = 6', 'Tangent to both axes: center $(r,\\ r)$ · center $(6,\\ 0)$ does not mean $r=6$', size=36),
+            "Tangent to both axes: the distances to the axes, without the signs, both equal r.",
+            "And a leg that is half the hypotenuse? A 30-60-90 triangle."]),
+        dict(title='Slope and midpoint', active=6, script=[
+            _b('Straight line: identical steps', 'Straight line: identical steps — the same across, the same up'),
+            "A straight line has a constant slope. Cut it into equal pieces, and every step is the same.",
+            _b('Slope = up ÷ across', 'Slope $=$ up $\\div$ across — a ratio, not a length'),
+            "The slope is up divided by across. Parallel lines have the same step.",
+            _b('Midpoint: the averages, or repeat the move', 'Midpoint: $\\left(\\frac{x_1+x_2}{2},\\ \\frac{y_1+y_2}{2}\\right)$ · or repeat the move'),
+            "The midpoint: the average of the x values and the average of the y values.",
+            "Or repeat the move from the midpoint."]),
+        dict(title='Through the origin', active=7, script=[
+            _b('(2, 3) → (4, 6) → (6, 9): both × the same number', '$(2,\\ 3)\\rightarrow(4,\\ 6)\\rightarrow(6,\\ 9)$: both $\\times$ the same number'),
+            "A line through the origin: every point is one point with both values multiplied by the same number.",
+            _b('Only for a line through the origin', 'Only for a line through the origin'),
+            "This works only for a line through the origin. On other lines, compare the steps, not the points.",
+            "Letters in the question? Plug in easy numbers, like a = 1 and b = 2."]),
+        dict(title='Lines and axes', active=8, script=[
+            _b('Never cuts an axis → parallel to it', 'Never cuts an axis $\\rightarrow$ parallel to it'),
+            "A whole line that never cuts an axis is parallel to it. A line parallel to neither axis cuts each axis once.",
+            _b('y = mx + b: b = where it cuts the y-axis', '$y=mx+b$: $m$ = slope, $b$ = where it cuts the $y$-axis'),
+            "Some questions give a line as an equation: y = mx + b.",
+            _b('x-axis: put y = 0 · y-axis: put x = 0', '$x$-axis: put $y=0$ · $y$-axis: put $x=0$'),
+            "Where does it cut the axes? Put y = 0, then x = 0.",
+            "Then it's ordinary geometry."]),
+        dict(title='Before you practice', active=9, script=[
+            "Before you practice, ask yourself these questions.",
+            _b('x first? Which sign changes?', 'Did I read $x$ first? In a reflection, which sign changes?'),
+            _b('Parallel to an axis? Same side or opposite sides?', 'Is the segment parallel to an axis? Same side or opposite sides?', size=36),
+            _b('Slanted? Close a right triangle.', 'Slanted? Close a right triangle.'),
+            _b('A circle? Find r first.', 'A circle? Find $r$ first.'),
+            "The traps: 6 minus 4 instead of 4 plus 6. Adding the legs instead of Pythagoras.",
+            "A center at (6, 0) is not a radius of 6. And across the x-axis, it's the y that changes.",
+            "Good luck."]),
+    ], LEARN, after=last)

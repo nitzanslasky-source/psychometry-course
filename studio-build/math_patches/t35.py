@@ -194,16 +194,6 @@ def fig_pour():
     return f
 
 
-def fig_drop():
-    f = Fig('A cube is dropped into a box of water; the water level rises')
-    return box_fig(f.title, 150, 300, 300, 150, 120, water=80,
-                   labels=[(300, 322, '25'), (510, 296, '20'), (282, 206, '10')],
-                   extra=lambda f, P: [f.poly([(250, 300), (310, 300), (310, 240), (250, 240)], fill=HL, sw=2),
-                                       f.poly([(250, 240), (310, 240), (340, 222), (280, 222)], fill=HL, sw=2),
-                                       f.poly([(310, 300), (340, 282), (340, 222), (310, 240)], fill=HL, sw=2),
-                                       ])
-
-
 def fig_turn():
     f = Fig('A right triangle turns about one leg and makes a cone')
     # triangle on the left with the axis
@@ -220,18 +210,6 @@ def fig_turn():
     f.line((cx, cy - hh), (cx, cy), TEAL, 2.5, dash=True)
     f.line((cx, cy), (cx + rx, cy), TEAL, 2.5)
     f.text(cx - 14, cy - hh / 2, '6'); f.text(cx + rx / 2, cy + 40, '3')
-    return f
-
-
-def fig_unfold():
-    f = Fig('The front face and the top face of a cube unfolded flat, with the straight path from A to G')
-    s = 120
-    x0, y0 = 250, 320
-    f.poly([(x0, y0), (x0 + s, y0), (x0 + s, y0 - s), (x0, y0 - s)], fill=FRONT)
-    f.poly([(x0, y0 - s), (x0 + s, y0 - s), (x0 + s, y0 - 2 * s), (x0, y0 - 2 * s)], fill=TOP)
-    f.line((x0, y0), (x0 + s, y0 - 2 * s), ORANGE, 3)
-    f.text(x0 - 16, y0 + 12, 'A'); f.text(x0 + s + 16, y0 - 2 * s - 10, 'G')
-    f.text(x0 + s / 2, y0 + 20, 'a'); f.text(x0 + s + 26, y0 - s, '2a')
     return f
 
 
@@ -379,10 +357,7 @@ def apply(M):
     # =====================================================================================
     # 1. Lesson "Solids: Surface and Volume" (geo-119)
     # =====================================================================================
-    box_plain = M.slide(L1, 6)['items'][0]['v']['svg']
     lying_prism = M.slide(L1, 3)['items'][0]['v']['svg']
-    # slide 2: a plain box instead of the Rubik-style grid cube
-    M.slide(L1, 2)['items'][0]['v'] = {'type': 'geometry', 'svg': box_plain}
     _fix(M, L1, 2, 'draw', 'Trace one edge in colour', 'Trace one edge in color')
     _fix(M, L1, 2, 'say', 'And the bottom face and the top face — we also call them bases.',
          'And the bottom face and the top face — we call them bases. In a box, any two opposite faces can be the bases.')
@@ -444,10 +419,10 @@ def apply(M):
     # 2. Guided questions 1-12: solutions, wording, figures, wrong rule
     # =====================================================================================
     S('geo35-g121', expl=[
-        'The cone holds $\\frac{\\pi(\\sqrt7)^2\\cdot9}{3}=21\\pi\\approx65.97$ cm³ of water.',
+        'The cone holds $\\frac{\\pi(\\sqrt7)^2\\cdot9}{3}=21\\pi$ cm³ of water.',
         'Check each container. The box (choice 1): $7\\times3\\times3=63$, too small. The pyramid (choice 2): $\\frac{6^2\\times6}{3}=72$, big enough. '
         'The cube (choice 3): $4^3=64$, too small. The cylinder (choice 4): $\\pi(\\sqrt5)^2\\times4=20\\pi$, less than $21\\pi$.',
-        'Only the pyramid can hold all the water.'])
+        'Since $65.1<21\\pi<66$, only the pyramid (72 cm³) can hold all the water.'])
 
     S('geo35-g122', expl=[
         'Let the common base area be B and the cone height be H. The cone volume is $\\frac{BH}{3}$ and the cylinder volume is $Bh$.',
@@ -522,21 +497,18 @@ def apply(M):
     _insert_say_after(M, V10, 3, 'The other way round? Diagonal 18', [
         "Why does it work? Multiply the top and the bottom by root 3: 18 root 3 over 3. And 18 over 3 is 6.",
         "Same with root 2: 18 over root 2 is 18 root 2 over 2 — 9 root 2. Divide by the number under the root, keep the root."])
-    # slide 4 talks about a 6 x 8 x 24 box: show that box (the old slide showed the cube of the question)
-    M.set_slide(V10, 4, mode='concept', pre=[], script=[
+    # slide 4: the original slide (question with its edge-2 cube stays on the left) + the one-step box diagonal
+    M.set_slide(V10, 4, script=[
         'What about a box?',
-        A('A 6 by 8 by 24 box appears', VIS(fig_box_diag().svg(tight=True), w=560, h=440, x=400, y=200)),
         "Unlike a cube, the edges aren't all equal. There's no fixed ratio.",
         'What we do: build two right triangles, like we did in this question.',
-        A('Box 6 × 8 × 24 appears', RT('Box $6\\times8\\times24$', 250, 36)),
+        A('Box 6 × 8 × 24 appears', RT('Box $6\\times8\\times24$', 280, 36)),
         'A box: 6 by 8, height 24. How long is the inner diagonal?',
-        D('Trace the base diagonal'),
-        A('Base: 6, 8 → 10 appears', RT('Base: $6,\\ 8\\rightarrow10$ (3-4-5)', 330, 34)),
+        A('Base: 6, 8 → 10 appears', RT('Base: $6,\\ 8\\rightarrow10$', 350, 36)),
         'First the diagonal of the base: 6, 8 — the right angle there — a 3-4-5 triple times 2. 10.',
-        D('Trace the body diagonal'),
-        A('10, 24 → 26 appears', RT('$10,\\ 24\\rightarrow26$ (5-12-13)', 410, 34)),
+        A('10, 24 → 26 appears', RT('$10,\\ 24\\rightarrow26$', 420, 36)),
         'Now with the height, another right triangle: 10 and 24. 5-12-13 times 2 — hamsa, bat mitzvah, bar mitzvah. 26.',
-        A('One step appears', RT('One step: $\\sqrt{6^2+8^2+24^2}=\\sqrt{676}=26$', 490, 30)),
+        A('One step appears', RT('One step: $\\sqrt{6^2+8^2+24^2}=\\sqrt{676}=26$', 500, 30)),
         'Or in one step: the root of 6 squared plus 8 squared plus 24 squared. Root 676 — 26.',
         'In a cube — a fixed ratio. In a box — two right triangles, or the root of the three squares.',
     ])
@@ -571,8 +543,8 @@ def apply(M):
     # 3. New lesson: Water Level (after Question 1) + guided question
     # =====================================================================================
     WV = 'r26-t35-water'
-    _lesson(M, WV, 'Water Level', ['Height = volume ÷ base', 'Pouring', 'Dropping in a solid', 'Liters and cm³', 'Recap'], [
-        ["Water in containers.", "A classic on the exam — and it's just the volume formula, turned around."],
+    _lesson(M, WV, 'Water Level', ['Height = volume ÷ base', 'Pouring', 'Liters and cm³', 'Recap'], [
+        ["Water in containers.", "It's just the volume formula, turned around."],
         ('Height = volume ÷ base', [
             A("'V = base area × height' appears", T('$V=$ base area $\\times$ height', size=46)),
             "We know: volume equals base area times height.",
@@ -594,17 +566,6 @@ def apply(M):
             "Pour it into a cylinder with radius 3. Its base is 9 pi. 36 pi over 9 pi — 4 centimeters.",
             "A wider container — lower water. It makes sense.",
         ]),
-        ('Dropping in a solid', [
-            A('A tank with water and a cube inside appears', VIS(fig_drop().svg(tight=True), w=760, h=400)),
-            "Now we drop a solid into the water. It sinks, and the water goes up. By how much?",
-            "The object pushes the water up by exactly its own volume.",
-            A("'Rise = object volume ÷ base area' appears", T('Rise $=\\frac{\\text{volume of the object}}{\\text{base area of the tank}}$', size=40)),
-            D('Write "cube: 10 · 10 · 10 = 1000 cm³ · base: 25 · 20 = 500 cm²"'),
-            "A cube with edge 10: 1000 cubic centimeters. The tank's base: 25 by 20 — 500.",
-            D('Write "1000 ÷ 500 = 2 cm"'),
-            "1000 over 500: the water rises by 2 centimeters.",
-            "Two conditions: the object is completely under water, and no water spills over.",
-        ]),
         ('Liters and cm³', [
             "Units. Often the water is in liters and the container is in centimeters.",
             A("'1 ml = 1 cm³' appears", T('$1$ ml $=1\\text{ cm}^3$', size=46)),
@@ -620,9 +581,8 @@ def apply(M):
         ('Recap', [
             A("'Height' appears", T('Water height $=$ volume $\\div$ base area', size=40)),
             A("'Pouring' appears", T('Pouring: same volume, new base', size=40)),
-            A("'Rise' appears", T('Object under water: rise $=$ its volume $\\div$ base area', size=40)),
             A("'Units' appears", T('$1$ liter $=1000\\text{ cm}^3$ · $1$ ml $=1\\text{ cm}^3$', size=40)),
-            "Height is volume over base area. Pouring keeps the volume. An object pushes the water up by its own volume.",
+            "Height is volume over base area. Pouring keeps the volume.",
             "And check the units first. Now try a question.",
         ]),
     ], after='solve-geo35-g121', num=66)
@@ -736,7 +696,7 @@ def apply(M):
     # 5. New lesson: Cube and Box Facts (after Question 12) + guided painted-cube question
     # =====================================================================================
     FV = 'r26-t35-cubefacts'
-    fsb = ['Diagonals', 'Angles in a cube', 'Faces, edges, vertices', 'Painted cube', 'Three faces → volume', 'Walk on the surface', 'Quick checks']
+    fsb = ['Diagonals', 'Angles in a cube', 'Faces, edges, vertices', 'Painted cube', 'Three faces → volume', 'Quick checks']
     _lesson(M, FV, 'Cube and Box Facts', fsb, [
         ["All the cube and box facts in one place.", "Some you met in the questions. Some are new. None of them are on the formula page."],
         ('Diagonals', [
@@ -785,16 +745,6 @@ def apply(M):
             D('Write "6, 10, 15 → √(6 · 10 · 15) = √900 = 30"'),
             "Areas 6, 10 and 15: the product is 900. The volume is 30.",
         ]),
-        ('Walk on the surface', [
-            A('Two faces unfolded, with a straight path, appear', VIS(fig_unfold().svg(tight=True), w=400, h=440)),
-            "An ant walks on the surface of a cube, from A to the opposite corner G. What is the shortest path?",
-            "It can't go through the inside. So it's not the body diagonal.",
-            A("'Unfold, then a straight line' appears", T('On the surface: unfold the faces, then a straight line', size=38)),
-            "Unfold two faces flat. Now it's a rectangle, a by 2a, and the shortest path is a straight line.",
-            D('Write "√(a² + (2a)²) = √(5a²) = a√5"'),
-            "Pythagoras: a squared plus 4 a squared. The path is a root 5.",
-            "Edge 2: 2 root 5, about 4.5. Shorter than walking along the edges, which is 6.",
-        ]),
         ('Quick checks', [
             "Before you calculate — cross out what's impossible.",
             A("'Size checks' appears", T('Height $<$ slant edge · a part $<$ the whole · a fraction of a volume is between 0 and 1', size=34)),
@@ -841,7 +791,6 @@ def apply(M):
     c['tables'].append({'title': 'Water and units', 'head': ['Question', 'Rule'], 'rows': [
         ['Water height', 'volume \\(\\div\\) base area'],
         ['Pouring into another container', 'the volume stays the same — find it, then \\(\\div\\) the new base area'],
-        ['Object sinks in water', 'rise \\(=\\) object volume \\(\\div\\) base area of the tank'],
         ['!Units', '\\(1\\) ml \\(=1\\text{ cm}^3\\) · \\(1\\) liter \\(=1000\\text{ cm}^3\\) · \\(1\\text{ m}^3=1{,}000{,}000\\text{ cm}^3\\)']]})
     c['tables'].append({'title': 'Cones', 'head': ['Idea', 'Rule'], 'rows': [
         ['!Slant height \\(\\ell\\)', '\\(r^2+h^2=\\ell^2\\) — the slant height is not the height'],
@@ -869,7 +818,6 @@ def apply(M):
             ['3 (corners)', '\\(8\\)'], ['2 (edges)', '\\(12(n-2)\\)'], ['1 (middle of a face)', '\\(6(n-2)^2\\)'], ['0 (inside)', '\\((n-2)^3\\)']]}]
     c['tips'] = [_american(t) for t in c['tips']] + [
         'Three face areas \\(ab,\\ bc,\\ ca\\) → volume \\(=\\sqrt{ab\\cdot bc\\cdot ca}\\).',
-        'Shortest path on the surface: unfold the faces and draw a straight line (cube: \\(a\\sqrt5\\) between opposite corners).',
         'Bricks in a box: try every position — the count can change.']
 
     # =====================================================================================
@@ -895,7 +843,9 @@ def apply(M):
       expl=['$NC=DC-DN=\\frac13$ of the side, and $AM=\\frac13$ of the side. AMCN is a parallelogram with base AM and height AD.',
             'Its area is $\\frac13$ of the square. The two outer parts make $\\frac23$.',
             'All three prisms have the same height. Therefore the ratio of the volumes is $\\frac23:\\frac13=2:1$.'])
-    M.unplace('geo35-core-p09')   # the same fact as guided Question 10 and the memory card (angle AEG = 90°)
+    S('geo35-core-p09', expl=[   # restored original (pass 2)
+        'Edge EA is perpendicular to the top face EFGH. So it is perpendicular to every line in that face that passes through E, including the diagonal EG.',
+        'Therefore angle AEG $=90°$.'])
     S('geo35-core-p10',
       stem='Twelve cubes, each with edge 3 cm, form the stepped solid shown in the accompanying figure. The highlighted cube is removed. What is the change in the total surface area (in cm²)?',
       expl=['The highlighted cube shows 3 faces: front, top and bottom. It touches 3 cubes: left, right and behind.',
@@ -937,14 +887,6 @@ def apply(M):
          ['$1$', '$4$', '$16$', '$2$'], 4,
          ['Water volume: $\\pi\\cdot3^2\\cdot8=72\\pi$ cm³. New base: $\\pi\\cdot6^2=36\\pi$ cm².',
           'Height: $72\\pi\\div36\\pi=2$ cm. Trap: 4. The radius doubles, so the base area is 4 times larger, not 2 times.']),
-        ('q-r26-t35-06', 'A rectangular tank with a base of 20 cm × 15 cm contains water. A solid metal cube with edge 6 cm is dropped in and is completely covered by the water. No water spills. By how many centimeters does the water level rise?',
-         ['$0.72$', '$1.2$', '$0.36$', '$7.2$'], 1,
-         ['The water rises by the volume of the cube, spread over the base of the tank.',
-          'Cube: $6^3=216$ cm³. Base: $20\\times15=300$ cm². Rise: $216\\div300=0.72$ cm.']),
-        ('q-r26-t35-07', 'A cylinder with radius 5 cm contains water. A stone is placed in the water and is completely covered. The water level rises by 2 cm, and no water spills. What is the volume of the stone (in cm³)?',
-         ['$10\\pi$', '$20\\pi$', '$50\\pi$', '$100\\pi$'], 3,
-         ['The stone pushes the water up by its own volume. The extra water is a cylinder with radius 5 and height 2.',
-          'Volume: $\\pi\\cdot5^2\\cdot2=50\\pi$ cm³.']),
         ('q-r26-t35-08', 'A cone-shaped cup with base radius 6 cm and height 10 cm is full of water. All the water is poured into an empty cylinder with base radius 6 cm. How high is the water in the cylinder (in cm)?',
          ['$10$', '$30$', '$\\frac{10}{3}$', '$5$'], 3,
          ['Water: $\\frac{\\pi\\cdot6^2\\cdot10}{3}=120\\pi$ cm³. The cylinder base: $36\\pi$ cm².',
@@ -958,11 +900,6 @@ def apply(M):
          ['Bricks are solids: count each direction, and try each way of turning the brick.',
           'Best: 2 cm along the 7 (3 bricks), 5 cm along the 10 (2 bricks), 3 cm along the 9 (3 bricks): $3\\times2\\times3=18$.',
           'Another position, e.g. 2 along 7, 3 along 10, 5 along 9, gives only $3\\times3\\times1=9$. Trap: $630\\div30=21$ divides the volumes, as if the bricks were water.']),
-        ('q-r26-t35-11', 'An ant walks on the surface of a cube with edge 4 cm, from vertex A to vertex G, the vertex farthest from A. What is the length of the shortest possible path (in cm)?',
-         ['$4\\sqrt3$', '$12$', '$4+4\\sqrt2$', '$4\\sqrt5$'], 4,
-         ['Unfold two neighboring faces into one flat $4\\times8$ rectangle. A and G become opposite corners of it.',
-          'The shortest path is a straight line: $\\sqrt{4^2+8^2}=\\sqrt{80}=4\\sqrt5\\approx8.9$.',
-          'The body diagonal, $4\\sqrt3$, goes through the inside — not allowed. An edge plus a face diagonal, $4+4\\sqrt2\\approx9.7$, is longer.']),
         ('q-r26-t35-12', 'Solid I is a cube with edge 3 cm. Solid II is a cylinder with radius 2 cm and height 2 cm. Solid III is a cone with radius 3 cm and height 3 cm. Which list orders the solids from the smallest volume to the largest?',
          ['I, II, III', 'II, I, III', 'III, II, I', 'II, III, I'], 2,
          ['I: $3^3=27$. II: $\\pi\\cdot2^2\\cdot2=8\\pi\\approx25.1$. III: $\\frac{\\pi\\cdot3^2\\cdot3}{3}=9\\pi\\approx28.3$.',
@@ -987,23 +924,18 @@ def apply(M):
     for qid, stem, ch, cor, ex in new:
         M.new_q(qid, TOPIC, stem, ch, cor, ex)
         M.place_q(qid, PRACT)
-    M.set_q('q-r26-t35-06', figure=box_fig('A tank with a base of 20 by 15 and a cube with edge 6 inside', 150, 300, 300, 150, 120, water=80,
-                                            labels=[(300, 322, '20'), (510, 296, '15'), (282, 206, '6')],
-                                            extra=lambda f, P: [f.poly([(250, 300), (310, 300), (310, 240), (250, 240)], fill=HL, sw=2),
-                                                                f.poly([(250, 240), (310, 240), (340, 222), (280, 222)], fill=HL, sw=2),
-                                                                f.poly([(310, 300), (340, 282), (340, 222), (310, 240)], fill=HL, sw=2)]).svg())
 
     M.practice_order(PRACT, [
         # easy
         'geo35-core-p02', 'geo35-core-p03', 'geo35-core-p22', 'geo35-core-p21', 'q-r26-t35-04', 'geo35-core-p01',
-        'geo35-core-p04', 'q-r26-t35-15', 'geo35-core-p26', 'geo35-core-p18', 'geo35-core-p14', 'geo35-core-p19',
+        'geo35-core-p04', 'q-r26-t35-15', 'geo35-core-p26', 'geo35-core-p18', 'geo35-core-p14', 'geo35-core-p19', 'geo35-core-p09',
         # medium
-        'geo35-core-p06', 'geo35-core-p05', 'q-r26-t35-05', 'q-r26-t35-07', 'q-r26-t35-06', 'geo35-core-p16', 'q-r26-t35-09',
+        'geo35-core-p06', 'geo35-core-p05', 'q-r26-t35-05', 'geo35-core-p16', 'q-r26-t35-09',
         'geo35-core-p13', 'q-r26-t35-12', 'geo35-core-p20', 'q-r26-t35-16', 'geo35-core-p24', 'geo35-core-p07', 'geo35-core-p25',
         'q-r26-t35-14', 'geo35-core-p10',
         # exam-hard
         'geo35-core-p11', 'geo35-core-p15', 'geo35-core-p12', 'geo35-core-p23', 'geo35-core-p08', 'geo35-core-p17',
-        'q-r26-t35-13', 'q-r26-t35-08', 'q-r26-t35-10', 'q-r26-t35-11',
+        'q-r26-t35-13', 'q-r26-t35-08', 'q-r26-t35-10',
     ])
 
     # =====================================================================================
@@ -1034,3 +966,86 @@ def apply(M):
             if len(pre) == 1 and pre[0].get('k') == 'q' and b.get('canvas', '').startswith('Pre-loaded — question'):
                 qid = pre[0]['qid']
                 b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, M.q(qid)['stem'])
+    summary(M)
+
+
+# =========================================================================================
+# 9. Pass 2: summary lesson right before the practice
+# =========================================================================================
+def summary(M):
+    sb = ['Straight or pointed', 'Surface area', 'Water and units', 'Right triangles inside', 'Cube and box facts',
+          'Turning a shape', 'Cubes in a box', 'Counting and face areas', 'Before you practice']
+    S = lambda k, script: dict(title=sb[k], mode='concept', active=k, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice — a quick summary of solid geometry.",
+            "Everything important, one idea at a time."]),
+        S(0, [
+            A("'Straight: V = base area × height' appears", T('Straight (prism, box, cylinder): $V=$ base area $\\times$ height', size=40, gap=30)),
+            "First question: is the solid straight or pointed? A straight solid: base area times height.",
+            A("'Pointed: ÷ 3' appears", T('Pointed (cone, pyramid): $V=\\frac{\\text{base area}\\times\\text{height}}{3}$', size=40, gap=30)),
+            "A pointed solid: the same, divided by 3. One third of the straight solid with the same base and height.",
+            A("'pyramid : left : cube = 1 : 2 : 3' appears", T('Pyramid in a cube: pyramid : left : cube $=1:2:3$', size=38)),
+            "Box, cylinder, cone and pyramid are on the formula page. The general rules — know them by heart."]),
+        S(1, [
+            A("'Lateral = perimeter of the base × height' appears", T('Lateral $=$ perimeter of the base $\\times$ height', size=42, gap=30)),
+            "Lateral area is what wraps around: the perimeter of the base times the height.",
+            A("'Total = lateral + 2 bases' appears", T('Total $=$ lateral $+$ the two bases', size=42, gap=30)),
+            "Total surface area: add the two bases.",
+            A("'Bases = the two identical faces' appears", T('Bases $=$ the two identical faces — even lying down', size=40)),
+            "A prism lying on its side? Find the two identical faces first. The height joins them."]),
+        S(2, [
+            A("'Water height = volume ÷ base area' appears", T('Water height $=$ volume $\\div$ base area', size=42, gap=30)),
+            "Water takes the shape of the container. Its height is the volume over the base area.",
+            A("'Pouring: the volume stays' appears", T('Pouring: the VOLUME stays — not the height', size=42, gap=30)),
+            "Pouring into another container? The volume stays, and the height changes. A wider base — lower water.",
+            A("'1 ml = 1 cm³ · 1 liter = 1000 cm³' appears", T('$1$ ml $=1\\text{ cm}^3$ · $1$ liter $=1000\\text{ cm}^3$', size=42)),
+            "And the same units first: a liter is a thousand cubic centimeters."]),
+        S(3, [
+            A("'Cone: r² + h² = ℓ²' appears", T('Cone: $r^2+h^2=\\ell^2$ — the slant height is not the height', size=40, gap=30)),
+            "Many questions hide a right triangle inside the solid. Find it.",
+            "A cone: radius, height and slant height. Radius 6, slant height 10 — the height is 8.",
+            A("'Pyramid: height, half the diagonal, the edge' appears", T('Pyramid: height $\\cdot$ half the base diagonal $\\cdot$ the slanted edge', size=38, gap=30)),
+            "A pyramid with equal edges: the apex is above the center. The height, half the diagonal and the edge.",
+            A("'Height < slanted edge' appears", T('The height is shorter than any slanted edge', size=40)),
+            "The height goes straight down. It's always shorter than a slanted edge."]),
+        S(4, [
+            A("'Cube: a√2 and a√3' appears", T('Cube: face diagonal $a\\sqrt2$ · body diagonal $a\\sqrt3$', size=42, gap=30)),
+            "In a cube: the face diagonal is a root 2, the body diagonal a root 3.",
+            A("'Box: √(a² + b² + c²)' appears", T('Box: body diagonal $=\\sqrt{a^2+b^2+c^2}$', size=42, gap=30)),
+            "In a box: two right triangles, or the root of the three squares. 6, 8, 24 — 26.",
+            A("'90°' appears", T('Edge $+$ diagonal of the face it stands on (same corner): $90°$', size=36, gap=20)),
+            A("'45° · 60°' appears", T('Edge $+$ diagonal of the same face: $45°$ · two face diagonals, same corner: $60°$', size=36)),
+            "And the angles in a cube — only when the lines meet at the same corner."]),
+        S(5, [
+            A("'Rectangle about a side → cylinder' appears", T('Rectangle about a side $\\rightarrow$ cylinder', size=42, gap=30)),
+            A("'Right triangle about a leg → cone' appears", T('Right triangle about a leg $\\rightarrow$ cone', size=42, gap=30)),
+            "Turn a flat shape one full turn: a rectangle makes a cylinder, a right triangle makes a cone.",
+            A("'The side on the axis = the height' appears", T('The side on the axis $=$ the height · the other side $=$ the radius', size=38)),
+            "The side on the axis is the height. The other side is the radius — and the radius is squared, so it counts more."]),
+        S(6, [
+            A("'Count each direction, drop the remainder' appears", T('Solids in a box: divide each direction, drop the remainder, multiply', size=36, gap=30)),
+            "Solids in a box aren't water. Divide each direction, drop the remainder, then multiply. Never divide the volumes.",
+            "Bricks that aren't cubes? Try each position — the count can change.",
+            A("'Remove a corner cube: lose 3, gain 3' appears", T('Remove a corner cube: lose $3$ faces, gain $3$ — no change', size=38, gap=30)),
+            "Remove a corner cube: the volume goes down, the surface area stays the same.",
+            A("'Painted cube' appears", T('Painted $n\\times n\\times n$: $8$ · $12(n-2)$ · $6(n-2)^2$ · $(n-2)^3$', size=38)),
+            "A painted cube: 3 faces — the 8 corners. 2 faces — the edges. 1 face — the middle of each face. None — the inside."]),
+        S(7, [
+            A("'Prism: n + 2 faces · 3n edges · 2n vertices' appears", T('Prism, base with $n$ sides: $n+2$ faces · $3n$ edges · $2n$ vertices', size=36, gap=30)),
+            A("'Pyramid: n + 1 · 2n · n + 1' appears", T('Pyramid: $n+1$ faces · $2n$ edges · $n+1$ vertices', size=36, gap=30)),
+            "Counting: check the rule on a cube — n is 4: 6 faces, 12 edges, 8 vertices.",
+            A("'V = √(ab · bc · ca)' appears", T('Three face areas $\\rightarrow V=\\sqrt{ab\\cdot bc\\cdot ca}$', size=40)),
+            "Three face areas at one corner? Multiply them and take the root. 6, 10, 15 — the volume is 30."]),
+        S(8, [
+            "Before you start, always ask yourself:",
+            A('Check 1 appears', T('Straight or pointed? (pointed: $\\div3$)', size=38, gap=24)),
+            A('Check 2 appears', T('Where are the bases — and the height?', size=38, gap=24)),
+            A('Check 3 appears', T('What stays the same? (pouring: the volume)', size=38, gap=24)),
+            A('Check 4 appears', T('Is there a right triangle inside?', size=38, gap=24)),
+            A('Check 5 appears', T('Same units?', size=38)),
+            "And the traps: the slant height is not the height, a pointed solid needs the divide by 3, and solids in a box are not water.",
+            "Now it's your turn. Good luck!"]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == LEARN][-1]
+    M.new_video('r26-t35-summary', TOPIC, 'Summary: Solid Geometry', sb, slides, LEARN, after=last)

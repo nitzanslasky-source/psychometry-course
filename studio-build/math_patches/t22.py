@@ -472,9 +472,19 @@ def apply(M):
                         'Two adults and seven children cost the same as $2+4=6$ adult tickets: $6A=84$.',
                         '$A=\\frac{84}{6}=14$ credits.'])
 
-    # near-duplicates of guided questions (review section 5)
-    for q in ('wp22-p22', 'wp22-p25', 'wp22-p28'):
-        M.unplace(q)
+    # Pass 2: p22, p25 and p28 are original questions and stay (plan: RESTORE); text clean-up only
+    S('wp22-p22', expl=['Plug in: 6 residents and $\\frac56\\cdot6=5$ visitors.',
+                        'All the people: $6+5=11$.',
+                        'Visitors out of all the people: $\\frac5{11}$. (The denominator must include both groups.)'])
+    S('wp22-p25', choices=['$11:4$', '$3:2$', '$4:1$', '$13:17$'],
+      expl=['After the transfer the total is still 30, and Owen has 4 more than Iris.',
+            'Iris $=x$, Owen $=x+4$: $x+(x+4)=30$, therefore $2x=26$ and $x=13$. Iris has 13 and Owen has 17.',
+            'Go back: Iris had $13+9=22$ and Owen had $17-9=8$.',
+            'The ratio is $22:8=11:4$.'])
+    S('wp22-p28', expl=['What is left of the first pile is $\\frac34$ of it, therefore it must divide by 3. 18 divides by 3, 25 does not.',
+                        'First pile: $\\frac34F=18$, therefore $F=18\\cdot\\frac43=24$.',
+                        'Second pile: $\\frac56G=25$, therefore $G=25\\cdot\\frac65=30$.',
+                        'In the box: $24+30=54$ beads.'])
 
     # =====================================================================================
     # 8. New guided questions in "Learn and try"
@@ -812,12 +822,114 @@ def apply(M):
     p = lambda n: 'wp22-p%02d' % n
     M.practice_order(PRAC, [
         p(3), p(4), p(8), p(12), p(33), p(32), p(7), p(14), p(37), g[14], g[6], g[8], p(6), p(2), p(10),
-        p(16), p(31), g[13], p(15), p(20), p(21), g[12], p(36), g[10], p(19), p(13), p(35), g[17], p(1),
+        p(22), p(16), p(31), g[13], p(25), p(15), p(20), p(21), g[12], p(36), g[10], p(19), p(13), p(35), g[17], p(1),
         p(5), p(9), p(11), p(23), p(34), p(17), g[16], p(29), g[19], g[7], g[9], g[11], g[15], g[18],
-        p(26), p(24), p(27), p(18), p(30)])
+        p(26), p(28), p(24), p(27), p(18), p(30)])
 
     # =====================================================================================
     # 12. Whole-topic text pass, sidebars
     # =====================================================================================
     _cleanup_videos(M)
     _fix_sidebars(M)
+    summary(M)
+
+
+# =====================================================================================
+# Pass 2: summary lesson right before the practice
+# =====================================================================================
+def summary(M):
+    sb = ['Three stages', 'Words to math', 'Equal ratios', 'Inverse proportion', 'Ratios: use x',
+          'The part that stays', 'Build the equation', 'Ranges and rounding', 'Exam shortcuts', 'Before you practice']
+    C = lambda k, script: dict(title=sb[k], mode='concept', active=k, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice — a quick summary of word problems and ratios.",
+            "Everything important, one idea at a time."]),
+        C(0, [
+            A("'Translate → solve → answer what they asked' appears",
+              T('Translate $\\to$ solve $\\to$ answer what they asked', size=44)),
+            "Every word problem has three stages: translate the words, solve, and answer what they ASKED.",
+            A("'x = 9, asked for 2x → 18' appears", T('$x=9$, but they ask for $2x$ $\\to$ $18$', size=46)),
+            "x is nine, and they ask for twice the number? The answer is eighteen.",
+            "Tip: let x be the thing they ask for."]),
+        C(1, [
+            A("'6 more: A = B + 6' appears", T('$A$ is $6$ more than $B$: $\\ A=B+6$', size=44)),
+            "More and less: plus and minus.",
+            A("'3 times: A = 3B' appears", T('$A$ is $3$ times $B$: $\\ A=3B$', size=44)),
+            "Three times is not three more.",
+            A("'One quarter less than n: 3/4 n · \"of\" = ×' appears",
+              T('One quarter less than $n$: $\\ \\frac34n$ ("of" means $\\times$)', size=44)),
+            "Of means times. A quarter less leaves three quarters.",
+            A("'3 notebooks cost the same as 5 pens: 3N = 5P' appears",
+              T('$3$ notebooks cost the same as $5$ pens: $3N=5P$', size=42)),
+            "Is, makes up, costs the same as: all equals signs. Translate one phrase at a time."]),
+        C(2, [
+            A("'Across or down is whole? Use that multiplier' appears",
+              T('Across or down is a whole number? Use that multiplier', size=40)),
+            "Put the data in a ratio table. Across or down is a whole number? Use that multiplier.",
+            A("'Triangle value: 8 · 15 ÷ 6 = 20' appears",
+              T('Not whole? Triangle value: $\\frac{8\\cdot15}{6}=20$', size=46)),
+            "Not whole? The triangle value: multiply along the diagonal, then divide by what's left.",
+            "Or cross-multiply — the same answer.",
+            "And a sense check first: should the answer be bigger or smaller?"]),
+        C(3, [
+            A("'Workers × days stays the same' appears", T('Same job: workers $\\times$ days stays the same', size=44)),
+            "One goes up and the other goes down? That's inverse. The product stays the same.",
+            A("'6 · 10 = 60 = 4 · 15' appears", T('$6\\cdot10=60=4\\cdot15$', size=54)),
+            "Six workers, ten days: sixty worker-days. Four workers need fifteen days.",
+            "The ratio table here gives fewer days with fewer workers. Impossible — so ask: more or less?"]),
+        C(4, [
+            A("'Ratio 3 : 5 → 3x and 5x' appears", T('Ratio $3:5$ $\\to$ $3x$ and $5x$', size=48)),
+            "A ratio is a fraction. Read it in order: the first name goes with the first number.",
+            "A ratio alone gives no amounts. Write three x and five x.",
+            A("'3/8 of all → part 3x, all 8x' appears", T('$\\frac38$ of all $\\to$ part $3x$, all $8x$', size=46)),
+            "Three eighths of all? The part is three x, and all of them is eight x.",
+            A("'3N = 5P → ratio N : P = 5 : 3' appears", T('$3N=5P$ $\\to$ ratio $N:P=5:3$ (reversed)', size=44)),
+            "Costs the same as? Reversed: notebook to pen is five to three.",
+            "Counting people? x is a whole number — the total divides by the sum of the ratio numbers."]),
+        C(5, [
+            A("'Ratio A : B = 2 : 3 = 8 : 12, B : C = 4 : 5 = 12 : 15' appears",
+              T('Ratios $A:B=2:3=8:12$ and $B:C=4:5=12:15$', size=42)),
+            "Two ratios share a letter? Make it the same number in both. A to B to C: eight, twelve, fifteen.",
+            "Not two to three to five — the three and the four are not the same B.",
+            A("'One part changes? Make the unchanged part equal' appears",
+              T('One part changes? Make the unchanged part equal', size=42)),
+            "Something is added to one part? Find the part nobody touched. Make it equal in both ratios, then compare the units."]),
+        C(6, [
+            A("'Changes? Write the new amounts first' appears", T('Changes? Write the new amounts first', size=42)),
+            "Something changes? Write the new amounts before you write the equation. Moved between groups? The total stays.",
+            A("'Twice? The ×2 goes on the smaller side: B = x, A = 2x' appears",
+              T('Twice? The $\\times2$ goes on the smaller side: $B=x$, $A=2x$', size=40)),
+            "One is twice the other? Give it to the little guy.",
+            A("'Ages: the gap stays, the ratio changes' appears", T('Ages: the gap stays, the ratio changes', size=42)),
+            "Ages: a row for every time in the story. Or test the answers: run each choice through the story."]),
+        C(7, [
+            A("'Enough for 4, not for 5: 4B ≤ 50 and 5B > 50' appears",
+              T('Enough for $4$, not for $5$: $\\ 4B\\le50$ and $5B>50$', size=42)),
+            "Enough — but not enough? Two inequalities. The answer is a range: more than ten, at most twelve and a half.",
+            A("'\"Or part of\" → round UP' appears", T('"Or part of" $\\to$ round UP: $50$ people, vans of $12$ $\\to$ $5$ vans', size=40)),
+            "Or part of? Round up. Two people left over still need a van.",
+            "And label every number: price per kilogram is not per gram, and a fixed fee is paid once."]),
+        C(8, [
+            A("'Letters in the choices? Choose numbers' appears",
+              T('Letters in the choices? Choose numbers — not $0$, not $1$', size=40)),
+            "Letters in the answers? Choose numbers and test every choice.",
+            A("'Two kinds, a known total? Assume all the same' appears", T('Two kinds, a known total? Assume all the same', size=40)),
+            "Two kinds with a known total? Pretend they're all one kind, then fix the difference.",
+            A("'One equation, two unknowns: only a multiple of it' appears", T('One equation, two unknowns: only a multiple of it', size=40)),
+            "One equation, two unknowns? You can find only a multiple of it. Anything else cannot be determined.",
+            A("'Several stages? Write it all first · What changed?' appears",
+              T('Several stages? Write it all first · A fixed part? What changed?', size=38)),
+            "Several stages? Write the whole exercise first. A fixed amount plus a price per item? Compare the two cases."]),
+        C(9, [
+            "Before you start, always ask yourself:",
+            A("'Check 1' appears", T('What exactly did they ask: $x$, $2x$ or $x-1$?', size=40)),
+            A("'Check 2' appears", T('Bigger or smaller? Direct or inverse?', size=40)),
+            A("'Check 3' appears", T('Which part stays the same?', size=40)),
+            A("'Check 4' appears", T('Where does the $\\times2$ go? On the smaller side.', size=40)),
+            A("'Check 5' appears", T('Can it really be found — or only a multiple?', size=40)),
+            "And the traps: a ratio read in the wrong order, the ratio table on workers and days, and units instead of people.",
+            "Now it's your turn. Good luck!"]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
+    M.new_video('r26-t22-summary', TOPIC, 'Summary: Word Problems and Ratios', sb, slides, ADV, after=last)

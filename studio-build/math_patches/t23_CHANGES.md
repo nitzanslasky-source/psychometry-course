@@ -89,3 +89,18 @@ Guided questions are numbered automatically in course order. The new multiplier 
 ## For the teacher to decide
 - Mixtures are taught here, in one slide, one guided question and 3 practice questions. No other topic teaches mixtures. If mixtures should become a full topic later, this block can move there.
 - The a + b + ab/100 formula is presented as "for strong students". Weak students can keep using plug in 100 and multipliers.
+
+## Pass 2 (teacher-approved plan, 2026-09-27)
+**Removed** (percentage points / percent change of a rate - not on the real exam and not in the original course):
+- Lesson "Percent Traps and Shortcuts": the slide "Percentage points", its sidebar entry and its recap line. The intro now says "two traps", and the recap says "Three questions next".
+- Card "Percent traps and shortcuts": the row "Percentage points"; the intro now says "Two traps".
+- Guided question `q-r26-t23-02` (pass rate) and its solution video. The guided questions after it are renumbered (now Questions 12-14).
+- Practice `q-r26-t23-07` and `q-r26-t23-08`.
+- `q-r26-t23-10` (kept): its solution no longer uses the words "percentage points". The trap line now says the rise of 30 is measured against 120, not against the original 100.
+
+**Restored:**
+- `wp23-p21`: the original "What is 16% of 25?" (2 / 6 / 8 / 4, key 4), in TeX with a numeric solution. The "28% of 75" version stays as a new practice question `q-r26-t23-15` (right after it).
+- Lesson "Calculating Percentages", slide "Thirds and families": the original line "Can't halve it precisely? Half of thirty-two is sixteen — so it's sixteen and a bit." It comes right before the exact value (16½ + ⅙ = 16⅔).
+
+**Summary lesson added:** `r26-t23-summary` "Summary: Percentages" (about 3.4 minutes), at the end of "Further guided examples", right before the practice.
+Slides: Summary · The percent formula (percent = over 100, "of" = times, p/100 × whole = part, the swap) · Fractions to know · Equal ratios ("multiply along the diagonal, divide by what's left") · The 10% method · Change in percent (divide by the original, working backwards) · What is my 100%? (plug in 100, the whole after "of"/"than", each new percent sits on the new amount, when 100 fails) · Multipliers (several changes, up p and down p, the percent tree) · Traps and shortcuts ("more than" vs "of", mixtures, plug in numbers, estimate / test a choice) · Before you practice ("What is my 100%? It can change when there are several stages", "of" or "more than", divide by the original, what stays the same in a mixture, plus the common traps).

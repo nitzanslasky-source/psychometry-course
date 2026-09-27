@@ -47,7 +47,10 @@ def apply(M):
     M.insert_slides(LESSON, 1, [
         dict(mode='concept', active=0, title='Three tools', script=[
             "This topic mixes ideas from all of algebra.",
-            "The questions look different each time. But three tools open almost all of them.",
+            "Now the honest truth: it's a fairly small part of the exam — and the questions don't repeat themselves.",
+            "There's no repeating principle I can hand you that solves them all.",
+            "But this lesson, and the practice after it, give you tools that open your head for questions like these.",
+            "Three tools open almost all of them.",
             A("'1 · Plug in numbers' appears", T('1 · Plug in numbers')),
             "One: plug in numbers. Small, simple, allowed numbers.",
             A("'2 · Test the answers' appears", T('2 · Test the answers')),
@@ -56,7 +59,6 @@ def apply(M):
             "Three: algebra — and understanding what the givens really say.",
             D('Put a box around the three numbers'),
             "Try them in this order. Numbers first — they're fast and safe. Algebra when the numbers don't decide.",
-            "It's a small part of the exam. With these tools, it's a part you can win.",
         ]),
         dict(mode='concept', active=1, title='Must, could, cannot', script=[
             "You met these three words in Topic 1. A quick reminder — then we go deeper.",
@@ -141,8 +143,8 @@ def apply(M):
             "Then c squared is bigger than b squared. Therefore c is bigger than b — and bigger than a.",
             "In geometry you'll meet this again, as Pythagoras.",
             A("'x/y · y/z · z/x = 1' appears", T('$\\frac{x}{y}\\cdot\\frac{y}{z}\\cdot\\frac{z}{x}=1$', size=54)),
-            "A cycle of fractions cancels to one. So the three fractions can't all be bigger than one.",
-            "Check the givens before you use it: cancelling needs values that aren't zero.",
+            "A cycle of ratios cancels to one. So the three fractions can't all be bigger than one.",
+            "But the connection must come from the givens. Lengths must be positive; cancelling needs nonzero values. Check before you use it.",
         ]),
         dict(mode='concept', active=7, title='Recap', script=[
             "Let's lock in the last algebra lesson.",
@@ -583,7 +585,10 @@ def apply(M):
     S('alg-extra-unit-t20-2-7', stem='Given:\n$\\begin{cases} x+y=9 \\\\ x-y=3 \\end{cases}$\nWhich of the following gives $xy$ without finding $x$ and $y$ first?',
       expl=['$(x+y)^2-(x-y)^2=4xy$. Therefore $xy=\\frac{9^2-3^2}{4}=\\frac{81-9}{4}=18$.',
             'Check: $x=6$ and $y=3$ give $x+y=9$, $x-y=3$ and $xy=18$ ✓.'])
-    M.unplace('alg-extra-unit-t20-2-6')     # same "squares" idea as extra 3; replaced by a size question (q-r26-t20-05)
+    # Pass 2: the original is restored (plan), cleaned up.
+    S('alg-extra-unit-t20-2-6', stem='Given: $a$ and $b$ are numbers, and $a^2=b^2$. Which of the following is necessarily true?',
+      expl=['$a^2-b^2=0$, so $(a-b)(a+b)=0$. Therefore $a=b$ or $a=-b$. In both cases $|a|=|b|$.',
+            'The others are not necessarily true: $a=2$, $b=-2$ gives $a\\ne b$; $a=b=2$ gives $a\\ne-b$ and $a+b=4\\ne0$.'])
 
     # =====================================================================================
     # 7. New practice questions (exam level)
@@ -634,7 +639,88 @@ def apply(M):
     # 8. Practice order: easy -> hard
     # =====================================================================================
     M.practice_order(PRAC, [
-        'alg-extra-unit-t20-2-5', 'alg-extra-unit-t20-2-1', 'alg-extra-unit-t20-2-4', 'alg-extra-unit-t20-2-3',
+        'alg-extra-unit-t20-2-5', 'alg-extra-unit-t20-2-1', 'alg-extra-unit-t20-2-4', 'alg-extra-unit-t20-2-3', 'alg-extra-unit-t20-2-6',
         'alg-extra-unit-t20-2-2', 'alg-extra-unit-t20-2-7', 'q-581', 'q-r26-t20-05', 'q-582', 'q-584',
         'q-r26-t20-06', 'q-588', 'q-r26-t20-11', 'q-586', 'q-r26-t20-08', 'q-587', 'q-r26-t20-10', 'q-585',
         'q-r26-t20-07', 'q-583', 'q-r26-t20-09', 'q-r26-t20-12', 'q-589', 'q-590'])
+
+    summary(M)
+
+
+def _b(label, tex, size=44):
+    """A board line that pops in (label = what the teacher sees in the script)."""
+    return A("'%s' appears" % label, T(tex, size=size))
+
+
+def summary(M):
+    """Pass 2: a summary lesson right before the independent practice (end of the 'understanding' section)."""
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == SEC][-1]
+    sb = ['Three tools', 'Must, could, cannot', 'Which numbers?', 'Between 0 and 1', 'Integer gaps', 'Scaling',
+          'Connect topics', 'Counting integers', 'Pigeonhole', 'Before you practice']
+    M.new_video('r26-t20-summary', TOPIC, 'Summary', sb, [
+        dict(mode='title', title='Summary', script=[
+            "A quick summary before you practice on your own.",
+            "Everything from algebraic understanding — in about three minutes."]),
+        dict(mode='concept', active=0, title='Three tools', script=[
+            _b('Plug in → test the answers → algebra', 'Plug in numbers $\\to$ test the answers $\\to$ algebra'),
+            "No fixed recipe here — but three tools open almost every question.",
+            "Numbers first: fast and safe. Then the answers. Algebra when the numbers don't decide."]),
+        dict(mode='concept', active=1, title='Must, could, cannot', script=[
+            _b('Must — every allowed case', 'Must be true — every allowed case', size=40),
+            _b('Could — one allowed case', 'Could be true — at least one allowed case', size=40),
+            _b('Cannot — no allowed case', 'Cannot be true — no allowed case', size=40),
+            _b('Not necessarily — fails once', 'Not necessarily true — fails in at least one case', size=40),
+            "Must: one case that fails, and it's out. Could: one example is enough.",
+            "Write the word down before you touch the choices. Under pressure, the directions flip."]),
+        dict(mode='concept', active=2, title='Which numbers?', script=[
+            _b('Regions: x > 1 · 0 < x < 1 · −1 < x < 0 · x < −1', 'One number from each region: $x>1$;  $0<x<1$;  $-1<x<0$;  $x<-1$', size=40),
+            "Read the conditions first. Test only numbers they allow.",
+            "Then one number from each region. For x positive: two, and one half.",
+            _b('Letters may be equal? Try a = b too.', 'Letters may be equal? Try $a=b$ too.', size=40),
+            _b('Two choices survive? A second number.', 'Two choices survive? Try a second number.', size=40),
+            "Two choices left? Don't guess — try a number from another region."]),
+        dict(mode='concept', active=3, title='Between 0 and 1', script=[
+            _b('0 < x < 1: x² < x < √x < 1 < 1/x', '$0<x<1:\\quad x^2<x<\\sqrt{x}<1<\\frac{1}{x}$', size=50),
+            "Between zero and one, squaring makes a number smaller, and the root makes it bigger.",
+            _b('Negatives: −5 < −2', 'Negatives: $-5<-2$ — farther from $0$ means smaller', size=40),
+            "With negatives, the farther from zero, the smaller.",
+            "Which is the largest for every x in a range? One easy number from the range decides."]),
+        dict(mode='concept', active=4, title='Integer gaps', script=[
+            _b('Integer and < 12 → ≤ 11', 'Integer and $<12\\ \\to\\ \\le11$', size=44),
+            _b('a > b > c integers → a ≥ c + 2', '$a>b>c$ integers $\\to$ $a\\ge b+1\\ge c+2$', size=44),
+            "Integers leave gaps. Bigger means bigger by at least one.",
+            "Use the gaps to find the biggest or smallest possible value.",
+            "A cannot question with a hidden maximum? Test the most extreme choices first."]),
+        dict(mode='concept', active=5, title='Scaling', script=[
+            _b('x² = a³, a × 16 → x × 64', '$x^2=a^3:\\quad a\\times16\\ \\to\\ x\\times16^{\\frac32}=x\\times64$', size=44),
+            "One variable is multiplied — what happens to the other?",
+            "Start from one and one, then put in the new value. Sixteen cubed is four thousand ninety-six. Its root: sixty-four.",
+            "Or the rule: x changes by the factor to the power three halves."]),
+        dict(mode='concept', active=6, title='Connect topics', script=[
+            _b('c² = a² + b², all positive → c > a, c > b', '$c^2=a^2+b^2$, all positive $\\to$ $c>a$ and $c>b$', size=42),
+            "A structure from another topic can be the key.",
+            _b('x/y · y/z · z/x = 1', '$\\frac{x}{y}\\cdot\\frac{y}{z}\\cdot\\frac{z}{x}=1$', size=50),
+            "A cycle of ratios cancels to one — so the three can't all be bigger than one.",
+            "Check the givens before you use it: positive values, nothing equal to zero."]),
+        dict(mode='concept', active=7, title='Counting integers', script=[
+            _b('From a to b: b − a + 1', 'From $a$ to $b$, both included: $\\ b-a+1$', size=42),
+            _b('Strictly between: b − a − 1', 'Strictly between: $\\ b-a-1\\quad$ One end: $\\ b-a$', size=42),
+            _b('Every second number: (last − first)/2 + 1', 'Only odd or even: $\\ \\frac{\\text{last}-\\text{first}}{2}+1$', size=42),
+            "Both ends in: plus one. Both ends out: minus one. One end: just subtract.",
+            "Only odd or only even numbers: find the first and the last that count, then jump by two.",
+            "Not sure? Count a small case on your fingers."]),
+        dict(mode='concept', active=8, title='Pigeonhole', script=[
+            _b('More items than boxes → one box gets two', 'More items than boxes $\\to$ one box gets two', size=42),
+            "Thirteen numbers, but only twelve remainders when you divide by twelve. Two of them share a remainder — and their difference divides by twelve.",
+            _b('To be sure: worst luck, then one more', '"To be sure": worst luck first, then one more', size=42),
+            "To be sure? Imagine the worst luck — one in every box. Then one more."]),
+        dict(mode='concept', active=9, title='Before you practice', script=[
+            "Before every question, ask yourself:",
+            _b('Must, could or cannot?', 'Must, could or cannot? Did I write the word?', size=40),
+            _b('Which numbers are allowed?', 'Which numbers are allowed? Did I try every region?', size=40),
+            _b('Integers? Where are the gaps?', 'Integers? Where are the gaps?', size=40),
+            _b('Both ends included?', 'Counting: are the ends included?', size=40),
+            _b('Traps: 0 < x < 1 · negatives · +1', 'Traps: numbers between $0$ and $1$ · negatives · the $+1$', size=38),
+            "The traps: numbers between zero and one, negative numbers, and the forgotten plus one.",
+            "Then practice on your own — and you've finished algebra. Good luck."]),
+    ], SEC, after=last)

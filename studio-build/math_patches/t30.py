@@ -1,4 +1,6 @@
 """Topic 30 - Lines and angles. Course review 2026-09 fixes.
+Pass 2 (teacher-approved remove/restore plan): the C-shape bend and the units-digit tip are removed; the "dot in the
+right-angle square" line, foundation p09, p14 (original) and p15 are restored; a summary video comes before each practice.
 See t30_CHANGES.md for the plain-language list."""
 import math
 import re
@@ -122,20 +124,6 @@ def fig_u_shape():
     return _svg('Parallel lines cut by a transversal; a U shape holds two angles on the same side', b, '61.7 32.3 498.4 295.3')
 
 
-def fig_c_shape(la='120°', lb='140°', lx='x', label='Parallel lines a and b with a bent line whose bend points left'):
-    """C shape: angle at A (between a to the right and AP) = 120, at B = 140, at P = 100."""
-    P = (250.0, 170.0)
-    A_ = _pt(80 / math.sin(math.radians(60)), 60, *P)        # A is up-right of P
-    B_ = _pt(120 / math.sin(math.radians(40)), -40, *P)      # B is down-right of P
-    dA, dB = _dir(A_, P), _dir(B_, P)
-    b = [_ln(130, 90, 540, 90), _ln(130, 290, 540, 290), _tx(117, 90, 'a'), _tx(117, 290, 'b'),
-         _ln(A_[0], A_[1], P[0], P[1]), _ln(P[0], P[1], B_[0], B_[1]),
-         _arc(A_[0], A_[1], 24, dA, 360), _alab(A_[0], A_[1], 46, dA, 360, la),
-         _arc(B_[0], B_[1], 22, 0, dB), _alab(B_[0], B_[1], 44, 0, dB, lb),
-         _arc(P[0], P[1], 22, -40, 60), _alab(P[0], P[1], 42, -40, 60, lx)]
-    return _svg(label, b)
-
-
 # --- question figures ----------------------------------------------------------------------
 def fig_g1():
     """a and b both perpendicular to c; transversal d; 50 at a, x at b."""
@@ -181,19 +169,6 @@ def fig_p07():
     pts = _walk((230.0, 90.0), [(-50, 70.0), (210, 50.0), (-20, 80.0)])
     return _bent(pts, [(0, -50, 0, '50°'), (1, 130, 210, '80°'), (2, -20, 30, 'x'), (3, 160, 180, '20°')],
                  'Parallel lines a and b with a line that bends twice between them')
-
-
-def fig_p14():
-    """C shape: 125 at a, 150 at b, x at the bend."""
-    P = (240.0, 190.0)
-    A_ = _pt(100 / math.sin(math.radians(55)), 55, *P); B_ = _pt(100 / math.sin(math.radians(30)), -30, *P)
-    dA, dB = _dir(A_, P), _dir(B_, P)
-    bd = [_ln(130, 90, 540, 90), _ln(130, 290, 540, 290), _tx(117, 90, 'a'), _tx(117, 290, 'b'),
-          _ln(A_[0], A_[1], P[0], P[1]), _ln(P[0], P[1], B_[0], B_[1]),
-          _arc(A_[0], A_[1], 24, dA, 360), _alab(A_[0], A_[1], 46, dA, 360, '125°'),
-          _arc(B_[0], B_[1], 22, 0, dB), _alab(B_[0], B_[1], 44, 0, dB, '150°'),
-          _arc(P[0], P[1], 22, -30, 55), _alab(P[0], P[1], 40, -30, 55, 'x')]
-    return _svg('Parallel lines a and b with a bent line whose bend points left', bd)
 
 
 def _transversal(deg, top_label, bot_label, top_arc, bot_arc, title, names=('a', 'b', 't'), lines=None):
@@ -373,9 +348,11 @@ def apply(M):
     _fix_say(M, L1, 6, 'Adjacent angles: two neighbouring angles formed where two lines cross — and together they add up to 180.',
              'Adjacent angles on a straight line: two angles side by side, on one straight line. Together they add up to 180.')
     M.edit_lines(L1, 6, lambda ls: ls + [{'say': "Careful: two angles side by side that are NOT on one straight line don't have to add up to 180."}])
-    # --- slide 4 right angle: no "dot" claim; never assume 90 ---
-    _fix_say(M, L1, 4, "On the psychometric exam, in almost every case, there's also a dot in the middle of the square.",
-             "The rule for the exam: an angle is 90 degrees only if it's marked like this, or it's given. Looks like 90? That's not enough.")
+    # --- slide 4 right angle: keep the (true) "dot" line; add: never assume 90 ---
+    def _add_rule(ls):
+        k = next(i for i, l in enumerate(ls) if l.get('say', '').startswith('On the psychometric exam, in almost every case'))
+        return ls[:k + 1] + [{'say': "The rule for the exam: an angle is 90 degrees only if it's marked like this, or it's given. Looks like 90? That's not enough."}] + ls[k + 1:]
+    M.edit_lines(L1, 4, _add_rule)
     # --- new slide after 2: segments on a line ---
     M.insert_slides(L1, 2, [dict(mode='concept', active=0, title='Segments on a line', script=[
         "Points on one line make segments. Two tricks for the exam.",
@@ -417,7 +394,6 @@ def apply(M):
         ['When are lines parallel?', '$\\perp$ to the same line, or $\\parallel$ to the same line', 'or equal small angles / small + large $=180°$'],
         ['Not to scale', 'parallel only if given or proved', 'looks parallel $\\ne$ parallel'],
         ['Bent line (Z-type bends)', 'angles pointing left $=$ angles pointing right', 'one bend: $x=a+b$'],
-        ['Bent line (C shape)', '$\\alpha+\\beta+x=360°$', 'or: a parallel line through the bend'],
         ['Segments on a line', '$AC+BD=AD+BC$', 'equal parts: count the gaps, not the points'],
     ]
     c['tips'] = [
@@ -520,7 +496,7 @@ def apply(M):
     _fix_say(M, V3, 3, 'So q is 150 — its neighbour is 30. And r is 150 — its neighbour is 30.',
              'So q is 150 — its neighbor is 30. And r is 150 — its neighbor is 30.')
     M.edit_lines(V3, 4, lambda ls: ls[:5] + [{'say': "Give this idea a name: overlapping angles. Add them, and subtract the full turn."}] + ls[6:])
-    # Q4 (g007): the zig-zag rule and the C shape
+    # Q4 (g007): the zig-zag rule
     V4 = 'solve-geo30-g007'
     _fix_say(M, V4, 2, "and realising that you need to add one at all.", "and realizing that you need to add one at all.")
     M.edit_lines(V4, 2, lambda ls: [l for l in ls if l.get('say') != "That's it for lines and angles."])
@@ -535,19 +511,6 @@ def apply(M):
             "So x equals 38 plus 57: 95. One step.",
             "Two bends? Same rule. Add the angles that point left, add the ones that point right — equal.",
             "The rule is for the angles inside the zig-zag, between neighboring pieces. Not sure? Draw a parallel line through each bend. That always works.",
-        ]),
-        dict(mode='question', active=2, title='The C shape', pre=[], script=[
-            "Now the bend turns the other way — a C shape.",
-            A('Parallel lines with a C-shaped bent line appear: 120°, 140° and x', dict(k='vis', v={'type': 'geometry', 'svg': fig_c_shape()}, w=900, h=420)),
-            "The marked angles are the big ones, inside the C.",
-            D('Draw a line through the bend, parallel to a and b'),
-            "Draw the parallel line through the bend. It cuts x into two pieces.",
-            "Each piece sits in a U with a given angle. So each piece completes it to 180.",
-            D('Write "(180° − 120°) + (180° − 140°) = 60° + 40° = 100°"'),
-            "180 minus 120 is 60. 180 minus 140 is 40. x is 100.",
-            A("'C shape: α + β + x = 360°' appears", T('C shape: $\\alpha+\\beta+x=360°$', size=44, x=410, y=700)),
-            "Or in one step: the three angles inside the C add up to 360.",
-            "120 plus 140 plus 100 — 360. It checks.",
         ]),
     ])
 
@@ -650,16 +613,16 @@ def apply(M):
                                     'This segment is exactly that distance: $7$ cm.'])
     S('geo30-foundation-p17', expl=['$2+3+4=9$ units make $180°$. Therefore, one unit is $\\frac{180°}{9}=20°$.',
                                     'The largest angle is $4$ units: $4\\cdot20°=80°$.'])
-    M.unplace('geo30-foundation-p09')   # same small/large step as p05 and adv-p01
-    M.unplace('geo30-foundation-p15')   # too easy, and the figure shows the answer
-    # p14: was a copy of guided Q4; now the C shape (taught in the Q4 video) -> advanced practice
-    S('geo30-foundation-p14', stem='In the accompanying figure, $a\\parallel b$. What is the value of $x$?',
-      choices=['$95°$', '$85°$', '$55°$', '$125°$'], correct=2,
-      expl=['The bend points the other way: a C shape. The three angles inside the C add up to $360°$.',
-            '$125°+150°+x=360°$. Therefore, $x=360°-275°=85°$.',
-            'With a parallel line through the bend: $(180°-125°)+(180°-150°)=55°+30°=85°$.'],
-      figure=fig_p14())
-    M.move('geo30-foundation-p14', ADV)
+    # Pass 2 (plan): the original p09, p14 and p15 stay in the foundation practice (text clean-up only)
+    S('geo30-foundation-p09', expl=['$\\alpha$ and the $122°$ angle are adjacent on line $a$: $\\alpha=180°-122°=58°$.',
+                                    '$\\beta$ is a small angle, like $\\alpha$. Small angles are equal: $\\beta=58°$.',
+                                    '$\\alpha+\\beta=58°+58°=116°$.'])
+    S('geo30-foundation-p14', stem='In the accompanying figure, lines $a$ and $b$ are parallel. What is the value of $x$?',
+      expl=['Draw a line through the bend, parallel to $a$ and $b$. It splits $x$ into two parts.',
+            'The upper part makes a Z with the $39°$ angle, and the lower part makes a Z with the $63°$ angle.',
+            '$x=39°+63°=102°$.'])
+    S('geo30-foundation-p15', expl=['The fourth line crosses each of the three parallel lines exactly once.',
+                                    'The parallel lines never meet, so the three crossing points are different: $3$ points.'])
 
     n4 = NEW[4]
     M.new_q(n4, TOPIC, 'In the accompanying figure, line $t$ crosses lines $a$ and $b$. What is the value of $x$?',
@@ -734,15 +697,6 @@ def apply(M):
              'Pointing left: $50°$ and $x$. Pointing right: $80°$ and $20°$.',
              '$50°+x=80°+20°$. Therefore, $x=100°-50°=50°$.'], figure=fig_p07())
     M.place_q(n7, ADV)
-    n8 = NEW[8]
-    M.new_q(n8, TOPIC, 'In the accompanying figure, $a\\parallel b$. Which expression equals $x$?',
-            ['$\\alpha+\\beta-180°$', '$\\alpha+\\beta$', '$360°-\\alpha-\\beta$', '$180°-\\alpha-\\beta$'], 3,
-            ['Draw a line through the bend, parallel to $a$ and $b$. It splits $x$ into two parts.',
-             'Each part sits in a U with $\\alpha$ or with $\\beta$: the parts are $180°-\\alpha$ and $180°-\\beta$.',
-             '$x=(180°-\\alpha)+(180°-\\beta)=360°-\\alpha-\\beta$.',
-             'Plug in to check: $\\alpha=120°$, $\\beta=140°$ gives $x=100°$. Choice 1 gives $80°$, choice 2 $260°$, choice 4 $-80°$.'],
-            figure=fig_c_shape('α', 'β', 'x', 'Parallel lines a and b with a bent line; angles alpha, beta and x'))
-    M.place_q(n8, ADV)
     n9 = NEW[9]
     M.new_q(n9, TOPIC, 'In the accompanying figure, line $t$ crosses lines $a$ and $b$. Which of the following is necessarily true?',
             ['Lines $a$ and $b$ are parallel.', 'Lines $a$ and $b$ meet to the right of line $t$.',
@@ -758,13 +712,14 @@ def apply(M):
     M.practice_order(FOUND, [
         'geo30-foundation-p16', 'geo30-foundation-p01', 'geo30-foundation-p02', 'geo30-foundation-p12',
         'geo30-foundation-p17', 'geo30-foundation-p11', 'geo30-foundation-p03', 'geo30-foundation-p04',
-        'geo30-foundation-p05', 'geo30-foundation-p10', 'geo30-foundation-p13', n5, 'geo30-foundation-p06',
-        'geo30-foundation-p07', 'geo30-foundation-p08', n4])
+        'geo30-foundation-p15', 'geo30-foundation-p05', 'geo30-foundation-p09', 'geo30-foundation-p10',
+        'geo30-foundation-p13', n5, 'geo30-foundation-p06', 'geo30-foundation-p07', 'geo30-foundation-p08',
+        'geo30-foundation-p14', n4])
     M.practice_order(ADV, [
         'geo30-advanced-p12', 'geo30-advanced-p11', 'geo30-advanced-p14', 'geo30-advanced-p17', 'geo30-advanced-p04',
         'geo30-advanced-p15', 'geo30-advanced-p01', 'geo30-advanced-p05', 'geo30-advanced-p08', 'geo30-advanced-p13',
         'geo30-advanced-p07', 'geo30-advanced-p02', n6, 'geo30-advanced-p03', 'geo30-advanced-p16', 'geo30-advanced-p09',
-        'geo30-advanced-p06', 'geo30-advanced-p10', n9, 'geo30-foundation-p14', n7, n8])
+        'geo30-advanced-p06', 'geo30-advanced-p10', n9, n7])
 
     S('geo30-foundation-p11', stem='A ray bisects the angle adjacent to the marked $124°$ angle. Based on this information and the information in the accompanying figure, what is the value of $x$?')
     S('geo30-foundation-p16', stem='Two parallel lines are $7$ cm apart. A line segment joining them is perpendicular to both. What is the length of the segment (in cm)?')
@@ -775,6 +730,8 @@ def apply(M):
         if f['topic'] == TOPIC and f['type'] == 'question':
             q = M.q(f['ref'])
             if q['stemRich'] != q['stemRich'].strip(): S(f['ref'], stem=q['stemRich'].strip())
+
+    summaries(M)
 
     # =====================================================================================
     # 12. Cleanup: spelling, solution-video titles and "on screen" notes in sync
@@ -796,3 +753,131 @@ def apply(M):
                 if len(pre) == 1 and pre[0].get('k') == 'q' and b.get('canvas', '').startswith('Pre-loaded — question'):
                     qid = pre[0]['qid']
                     b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, M.q(qid)['stem'])
+
+
+# =====================================================================================
+# Pass 2: summary lessons right before each practice section
+# =====================================================================================
+def summaries(M):
+    # --- 1. end of "Learn and try", before the foundation practice ---
+    sb = ['Angles at a point', 'Right angle', 'Adjacent and vertical', 'Parallel lines', 'Z and U', 'Parallel or not?',
+          'Segments on a line', 'Before you practice']
+    S = lambda k, script: dict(title=sb[k], mode='concept', active=k, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice — a quick summary of lines and angles.",
+            "All the rules, one at a time."]),
+        S(0, [
+            A("'Full circle = 360°' appears", T('Full circle (angles around a point) $=360°$', size=44, gap=40)),
+            "All the angles around one point add up to 360.",
+            A("'Straight angle = 180°' appears", T('Straight angle $=180°$ — half of the circle', size=44, gap=40)),
+            "A straight line is half of that: 180.",
+            A("'Acute < 90° < obtuse' appears", T('Acute $<90°<$ obtuse', size=44)),
+            "Smaller than 90: acute. Bigger than 90: obtuse."]),
+        S(1, [
+            A("'Right angle = 90° — a small square' appears", T('Right angle $=90°$ — marked with a small square', size=44, gap=40)),
+            "A right angle is 90 degrees. Two perpendicular lines make it.",
+            "On the exam, there is almost always a dot in the middle of the square.",
+            A("'90° only if marked or given' appears", T('$90°$ only if it is marked or given', size=44)),
+            "Looks like 90? That's not enough. It must be marked, or given."]),
+        S(2, [
+            A("'Adjacent on a straight line: sum 180°' appears", T('Adjacent on a straight line: sum $180°$', size=44, gap=40)),
+            "Two angles side by side on one straight line add up to 180. Sixty-five next to x? x is 115.",
+            A("'Vertical angles: equal' appears", T('Vertical angles: equal', size=44, gap=40)),
+            "Two lines cross: the angles facing each other are equal.",
+            A("'Bisector: two equal halves' appears", T('Bisector: $72°\\div2=36°$', size=44)),
+            "A bisector splits an angle into two equal halves."]),
+        S(3, [
+            A("'small = small · large = large' appears", T('small $=$ small $\\cdot$ large $=$ large', size=46, gap=40)),
+            "Parallel lines and a transversal give eight angles: four small and four large.",
+            "All the small ones are equal. All the large ones are equal.",
+            A("'small + large = 180°' appears", T('small $+$ large $=180°$', size=46)),
+            "And a small one plus a large one is always 180."]),
+        S(4, [
+            A("'Z → equal' appears", T('Z $\\to$ the two angles are equal', size=46, gap=40)),
+            "See parallel lines? Look for the Z. The two angles in its corners are equal.",
+            A("'U → sum 180°' appears", T('U $\\to$ the two angles add up to $180°$', size=46)),
+            "Two angles inside a U — same side, between the lines — add up to 180. Fifty-five and 125."]),
+        S(5, [
+            A("'⊥ or ∥ to the same line → parallel' appears",
+              T('Two lines $\\perp$ or $\\parallel$ to the same line $\\to$ parallel', size=42, gap=40)),
+            "Two lines perpendicular to the same line are parallel. So are two lines parallel to the same line.",
+            A("'Not to scale: parallel only if given or proved' appears",
+              T('Not to scale: parallel only if given or proved', size=42)),
+            "Lines can LOOK parallel. Don't trust your eyes.",
+            "Nothing given, nothing proved? The answer may be: it cannot be determined."]),
+        S(6, [
+            A("'AC + BD = AD + BC' appears", T('$AC+BD=AD+BC$', size=50, gap=40)),
+            "Four points on a line: AC and BD overlap on BC. Nine plus ten, minus the whole fifteen: BC is four.",
+            A("'Count the gaps, not the points' appears", T('Equal parts: count the gaps, not the points', size=44)),
+            "Five equally spaced points make four gaps, not five."]),
+        S(7, [
+            "Before you start, always ask yourself:",
+            A('Check 1 appears', T('Is it really $90°$? Is it marked or given?', size=40, gap=30)),
+            A('Check 2 appears', T('Are the lines really parallel? Given, or proved?', size=40, gap=30)),
+            A('Check 3 appears', T('Small or large? Equal, or a sum of $180°$?', size=40, gap=30)),
+            A('Check 4 appears', T('Segments: did I count the gaps?', size=40)),
+            "And the traps: trusting the picture, and counting points instead of gaps.",
+            "Now it's your turn. Good luck!"]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == LEARN1][-1]
+    M.new_video('r26-t30-summary', TOPIC, 'Summary: Lines and Angles', sb, slides, LEARN1, after=last)
+
+    # --- 2. end of "Further guided examples", before the advanced practice ---
+    sb = ['Crowded figures', 'Anchor: 180° or 360°', 'Letters: plug in', 'Overlapping angles', 'A missing line',
+          'The zig-zag rule', 'Before you practice']
+    S = lambda k, script: dict(title=sb[k], mode='concept', active=k, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before the advanced practice — a quick summary of the harder questions.",
+            "Three things make them harder: a crowded figure, letters, and a missing line."]),
+        S(0, [
+            A("'One pair of parallel lines at a time' appears", T('Crowded figure: one pair of parallel lines at a time', size=42, gap=40)),
+            "Several pairs of lines? Take one pair and its transversal. Ignore the rest.",
+            "Move the angle you know to the place you need. Then the next pair.",
+            A("'83° + 54° + x = 180° → x = 43°' appears", T('$83°+54°+x=180°\\ \\to\\ x=43°$', size=46)),
+            "Then build the equation.",
+            "Shortcut: three plus four is seven, so x must end in three. Only forty-three does."]),
+        S(1, [
+            A("'Anchor: a straight angle 180° or a full turn 360°' appears",
+              T('Anchor: a straight angle $180°$ or a full turn $360°$', size=42, gap=40)),
+            "Lost? Look for an anchor: angles that make a straight line, or a full circle.",
+            A("'The angle next to p: 180° − p' appears", T('The angle next to $p$: $\\ 180°-p$', size=44)),
+            "Every angle gives you its neighbor: 180 minus it."]),
+        S(2, [
+            A("'Letters? Plug in round numbers' appears", T('Letters? Plug in round numbers that look like the figure', size=40, gap=40)),
+            "Letters instead of numbers? Put numbers back. Looks obtuse? Plug in 150.",
+            A("'p = q = r = 150° → θ = 90°' appears", T('$p=q=r=150°\\ \\to\\ \\theta=90°$', size=46, gap=40)),
+            "Then plug the same numbers into the choices. Cross out every choice that doesn't give ninety.",
+            "Check that the four choices come out different. If two tie, plug in again."]),
+        S(3, [
+            A("'Overlapping angles: add, subtract the full turn' appears",
+              T('Overlapping angles: add them, subtract $360°$ or $180°$', size=40, gap=40)),
+            "Angles that overlap count a piece twice.",
+            A("'θ = p + q + r − 360°' appears", T('$\\theta=p+q+r-360°$', size=48)),
+            "p, q and r cover the full turn, and theta one more time. So theta is their sum minus 360."]),
+        S(4, [
+            A("'A bent line? Draw a parallel line through the bend' appears",
+              T('A bent line? Draw a parallel line through the bend', size=42, gap=40)),
+            "No straight transversal? Add an auxiliary line: through the bend, parallel to both lines.",
+            A("'x = 38° + 57° = 95°' appears", T('$x=38°+57°=95°$', size=46)),
+            "It splits x into two pieces. Each piece makes a Z with a given angle.",
+            "The hard part is seeing that you need a line at all."]),
+        S(5, [
+            A("'Angles pointing left = angles pointing right' appears",
+              T('Zig-zag: angles pointing left $=$ angles pointing right', size=42, gap=40)),
+            "The shortcut. Look where each angle's tip points.",
+            A("'40° + 65° = x + 35° → x = 70°' appears", T('$40°+65°=x+35°\\ \\to\\ x=70°$', size=46)),
+            "Two bends? Same rule. Left side equals right side.",
+            "Not sure? A parallel line through each bend always works."]),
+        S(6, [
+            "Before you start, always ask yourself:",
+            A('Check 1 appears', T('Which pair of lines is parallel — and which line cuts them?', size=38, gap=30)),
+            A('Check 2 appears', T('Where is my anchor: $180°$ or $360°$?', size=40, gap=30)),
+            A('Check 3 appears', T('Letters? Plug in — and check the choices come out different.', size=38, gap=30)),
+            A('Check 4 appears', T('A bent line? Draw a parallel line through the bend.', size=38)),
+            "And the traps: adding only one side of the zig-zag, and forgetting that overlapping angles count a piece twice.",
+            "Now it's your turn. Good luck!"]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == LEARN2][-1]
+    M.new_video('r26-t30-summary-2', TOPIC, 'Summary: Harder Line and Angle Questions', sb, slides, LEARN2, after=last)

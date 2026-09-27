@@ -65,3 +65,13 @@ Check: `python3 math_check.py 2`. PROBLEMS 0, WARNINGS 0, LAYOUT 0 (62 slides). 
 - Question 23 and the Shortcuts video use letters (a, b). Topic 2 already uses a/b in its recap boards, so this seemed acceptable for the strong-student layer.
 - Topic 1's review suggests moving q-018 (200 ÷ 6 = 33⅓) into Topic 2. That belongs to the Topic 1 patch, so I did not do it here.
 - No API workarounds were needed. Canvas notes, the actives after inserted slides and the colon fixes were edited directly on the beat dicts inside the patch.
+
+## Pass 2 (2026-09-27, approved remove/restore plan + summary lesson)
+**Removed:** nothing (the plan keeps every Topic 2 addition).
+
+**Restored (4) and received (1):**
+- q-041 ($\frac{5}{6}=\frac{35}{?}$), q-042 ($\frac{4}{12}=\frac{?}{27}$) and q-045 ($7\frac{1}{6}=?$) are back at the start of the mixed fraction practice (easy end). Solutions rewritten with fractions and numbers (no ":").
+- alg-extra-unit-t2-1-2 is back as the original "Evaluate $\frac{5}{6}-\frac{1}{4}$" (choices $\frac{7}{12}$, $\frac{1}{2}$, $\frac{2}{3}$, $\frac{1}{3}$; key $\frac{7}{12}$). The $\frac{7}{10}-\frac{1}{4}$ version stays as new question **q-r26-t02-25**, right after it.
+- q-018 ($200\div 6=33\frac{1}{3}$) arrives from Topic 1 (moved by t01.py) and is ordered after q-044 (mixed numbers).
+
+**Summary lesson (1 new video):** `r26-t02-summary` "Summary", at the end of "4 · Decimal fractions", right before "Mixed fraction practice". Slides: Summary · What a fraction is · Same value · Multiplying · Dividing · Adding & subtracting · Several operations · Shortcuts · Decimals · Before you practice (about 2.6 min). Only content the Topic 2 lessons teach.

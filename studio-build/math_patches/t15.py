@@ -305,18 +305,6 @@ def apply(M):
             A('N leaves r → N − r divides by d appears', T('$N$ leaves $r$ → $N-r$ divides by $d$', size=46)),
             D('Write "53 = 7 · 7 + 4  →  53 − 4 = 49 = 7 · 7"'),
             "Fifty-three divided by seven leaves four. Take away the four: forty-nine. Seven times seven — no remainder.",
-            "Now turn it around. The exam loves this one.",
-            A('100 ÷ n leaves 4 appears', T('$100\\div n$ leaves $4$. How many values can $n$ have?', size=42)),
-            D('Write "100 − 4 = 96 → n divides 96"'),
-            "Take away the remainder: ninety-six. So n divides ninety-six exactly.",
-            D('Write "and n > 4"'),
-            "And the condition everybody forgets: the remainder is smaller than the divisor. So n is bigger than four.",
-            D('Write "96 = 1·96 = 2·48 = 3·32 = 4·24 = 6·16 = 8·12"'),
-            "Divisors of ninety-six in pairs: one and ninety-six, two and forty-eight, three and thirty-two, four and twenty-four, six and sixteen, eight and twelve.",
-            D('Circle 6, 8, 12, 16, 24, 32, 48, 96'),
-            "Keep only the ones bigger than four: six, eight, twelve, sixteen, twenty-four, thirty-two, forty-eight, ninety-six. Eight values.",
-            D('Write "check: 100 = 6 · 16 + 4 ✓"'),
-            "Check one: a hundred is six times sixteen, plus four. It works.",
         ]),
         dict(mode='concept', active=1, title='Counting multiples', script=[
             "Second tool: how many multiples are there in a range?",
@@ -378,7 +366,7 @@ def apply(M):
         ]),
         dict(mode='concept', active=5, title='Recap', script=[
             "Let's lock it in.",
-            A('Take away the remainder appears', T('Leaves $r$ → $N-r$ divides by $d$, and $d>r$', size=40)),
+            A('Take away the remainder appears', T('Leaves $r$ → $N-r$ divides by $d$', size=40)),
             A('Counting multiples appears', T('Count multiples: last $k\\,-$ first $k\\,+\\,1$', size=40)),
             A('Units digit appears', T('Units digit: use only the units digits', size=40)),
             A('Numbers in a row appears', T('In a row: two → by $2$, three → by $6$', size=40)),
@@ -392,7 +380,7 @@ def apply(M):
         'title': 'More remainder tools',
         'intro': 'The tools of the advanced questions, each with one example.',
         'tables': [{'title': 'Tools', 'head': ['Situation', 'Method', 'Example'], 'rows': [
-            ['Known remainder', '$N-r$ divides by $d$, and $d>r$', '$100\\div n$ leaves $4$ → $n$ divides $96$, $n>4$: $8$ values'],
+            ['Known remainder', '$N-r$ divides by $d$', '$53\\div7$ leaves $4$ → $53-4=49=7\\cdot7$'],
             ['How many multiples of $d$?', 'write the first and last as $d\\cdot k$; count $=$ last $k-$ first $k+1$',
              'three-digit multiples of $11$: $110=11\\cdot10$ to $990=11\\cdot90$ → $81$'],
             ['Units digit', 'multiply or add only the units digits; powers repeat', '$7, 9, 3, 1, 7, \\ldots$; $7^{20}$ ends in $1$'],
@@ -532,46 +520,9 @@ def apply(M):
             '(4) Not necessarily: $6+4+2=12$. 6 divides by 3, but 4 and 2 do not.'])
 
     # =====================================================================================
-    # 6. New guided question: reverse remainder (after the "Build 12" question)
-    # =====================================================================================
-    g2 = 'q-r26-t15-02'
-    M.new_q(g2, TOPIC, 'When 75 is divided by the positive integer $n$, the remainder is 3. How many possible values does $n$ have?',
-            ['$6$', '$9$', '$10$', '$12$'], 2, [
-        'Take away the remainder: $75-3=72$. So $n$ divides 72.',
-        'Also $n>3$, because the remainder is smaller than the divisor.',
-        'Divisors of 72 in pairs: $1\\cdot72$, $2\\cdot36$, $3\\cdot24$, $4\\cdot18$, $6\\cdot12$, $8\\cdot9$. That is 12 divisors.',
-        'Without 1, 2 and 3: 4, 6, 8, 9, 12, 18, 24, 36, 72. That is 9 values.',
-        'Traps: 12 forgets $n>3$; 10 keeps $n=3$ (but $75=3\\cdot25$ leaves 0); 6 counts the divisors of 75.'])
-    M.place_q(g2, ADV, after='solve-q-429')
-    _solution(M, g2, ADV, ["A remainder question — turned around."], [
-        ('Take away the remainder', [
-            "Seventy-five divided by n leaves three. Take away the remainder.",
-            D('Write "75 − 3 = 72 → n divides 72"'),
-            "Seventy-two. So n divides seventy-two exactly.",
-            D('Write "n > 3"'),
-            "And the condition everybody forgets: the remainder is smaller than the divisor. So n is bigger than three.",
-            D('Write "72 = 1·72 = 2·36 = 3·24 = 4·18 = 6·12 = 8·9"'),
-            "Divisors of seventy-two in pairs: one and seventy-two, two and thirty-six, three and twenty-four, four and eighteen, six and twelve, eight and nine. Twelve divisors.",
-            D('Cross out 1, 2 and 3'),
-            "One, two and three are too small. Twelve minus three: nine values.",
-            D('Circle choice 2'),
-            "Choice two.",
-        ]),
-        ('The traps', [
-            "Twelve counts all the divisors. It forgets that n is bigger than three.",
-            D('Write "n = 3: 75 = 3 · 25 + 0 ✗"'),
-            "Ten keeps n equals three. But seventy-five divides by three exactly — the remainder is zero, not three.",
-            "Six is the number of divisors of seventy-five. Take away the remainder first.",
-            D('Write "n = 4: 75 = 4 · 18 + 3 ✓"'),
-            "Quick check of one value: four. Four times eighteen is seventy-two, plus three. It works.",
-        ]),
-    ])
-
-    # =====================================================================================
     # 7. Practice: text, fixed solutions, removed near-duplicates
     # =====================================================================================
-    M.unplace('alg-extra-unit-t15-3-4')   # same type as guided Q2 and q-437
-    M.unplace('alg-extra-unit-t15-3-6')   # an LCM question (T14), not this topic
+    # Pass 2: the originals alg-extra-unit-t15-3-4 and -3-6 are restored (text clean-up only, see below)
 
     S('q-437', stem='A class is divided into groups of 3 students. Then it is divided into groups of 5 students. Each time, there is exactly one group with only 2 students. Which of the following could be the number of students in the class?',
       expl=['The number leaves remainder 2 when divided by 3 and when divided by 5.',
@@ -665,6 +616,16 @@ def apply(M):
     S(E % 3, stem='What will be the remainder if $12{,}345$ is divided by 9?', choices=['$6$', '$0$', '$3$', '$5$'],
       expl=['Digit sum: $1+2+3+4+5=15$, and 15 divided by 9 leaves 6.',
             'A number leaves the same remainder by 9 as its digit sum, so the answer is 6.'])
+    S(E % 4, stem='A positive integer leaves remainder 3 when divided by 4 and remainder 2 when divided by 5. What is the smallest such number?',
+      choices=['$3$', '$12$', '$17$', '$7$'],
+      expl=['The numbers that leave 2 when divided by 5 are $2, 7, 12, 17, \\ldots$',
+            'Test them in order with 4: $2=4\\cdot0+2$ ✗, $7=4\\cdot1+3$ ✓.',
+            'So the smallest number is 7. The other choices: $3=5\\cdot0+3$ ✗, $12=4\\cdot3+0$ ✗, $17=4\\cdot4+1$ ✗.'])
+    S(E % 6, stem='What is the smallest positive integer that is divisible by both 8 and 12?',
+      choices=['$48$', '$24$', '$16$', '$36$'],
+      expl=['This is the least common multiple of 8 and 12. Break into primes: $8=2^3$ and $12=2^2\\cdot3$.',
+            'Take each prime with its highest power: $2^3\\cdot3=24$.',
+            'Check: $24\\div8=3$ and $24\\div12=2$ ✓. 48 also divides by both, but it is not the smallest. $16\\div12$ and $36\\div8$ are not whole numbers.'])
     S(E % 5, stem='$n$ is an integer. Which of the following expressions is necessarily divisible by 6?',
       expl=['$n(n+1)(n+2)$ is three numbers in a row: one divides by 3, and at least one is even. So the product divides by 6.',
             'The others fail for $n=1$: $1\\cdot3=3$, $1^2+1=2$, $3\\cdot1+1=4$.'])
@@ -676,17 +637,6 @@ def apply(M):
     # 8. New practice questions (the new methods + exam-level items)
     # =====================================================================================
     new = [
-        ('q-r26-t15-03', 'When 50 is divided by the positive integer $n$, the remainder is 2. Which of the following could be $n$?',
-         ['$5$', '$7$', '$9$', '$12$'], 4,
-         ['Take away the remainder: $50-2=48$. So $n$ divides 48, and $n>2$.',
-          'Among the choices, only 12 divides 48: $50=12\\cdot4+2$ ✓.',
-          'The others: $50=5\\cdot10+0$, $50=7\\cdot7+1$, $50=9\\cdot5+5$.']),
-        ('q-r26-t15-04', 'When 62 is divided by the positive integer $n$, the remainder is 6. How many possible values does $n$ have?',
-         ['$3$', '$5$', '$6$', '$8$'], 2,
-         ['Take away the remainder: $62-6=56$, so $n$ divides 56. Also $n>6$, because the remainder is smaller than the divisor.',
-          'Divisors of 56 in pairs: $1\\cdot56$, $2\\cdot28$, $4\\cdot14$, $7\\cdot8$.',
-          'Bigger than 6: 7, 8, 14, 28, 56. That is 5 values.',
-          'Trap: 8 counts all the divisors and forgets $n>6$.']),
         ('q-r26-t15-05', 'How many integers from 50 to 150 (inclusive) are divisible by 8?',
          ['$11$', '$12$', '$13$', '$18$'], 2,
          ['First: $56=8\\cdot7$. Last: $144=8\\cdot18$.',
@@ -746,9 +696,9 @@ def apply(M):
     # easy -> hard
     P = lambda k: 'q-r26-t15-%02d' % k
     M.practice_order(PRACTICE, [
-        E % 7, E % 1, 'q-441', 'q-439', E % 3, E % 2, 'q-454', P(10), E % 5, 'q-442', 'q-443', 'q-437',
-        P(3), P(5), P(7), P(9), 'q-440', 'q-438', 'q-450', 'q-451', 'q-452', 'q-453',
-        P(11), P(14), P(6), P(4), P(8), 'q-448', 'q-447', 'q-446', 'q-456', P(13), 'q-449', P(12), 'q-444',
+        E % 7, E % 1, 'q-441', 'q-439', E % 3, E % 2, E % 6, 'q-454', P(10), E % 5, 'q-442', 'q-443', E % 4, 'q-437',
+        P(5), P(7), P(9), 'q-440', 'q-438', 'q-450', 'q-451', 'q-452', 'q-453',
+        P(11), P(14), P(6), P(8), 'q-448', 'q-447', 'q-446', 'q-456', P(13), 'q-449', P(12), 'q-444',
         'q-455', 'q-445'])
 
     # =====================================================================================
@@ -767,3 +717,86 @@ def apply(M):
                     b['active'] = nums.index(n)
                 if b.get('canvas', '').startswith('Pre-loaded — question'):
                     b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (q['id'], q['stem'])
+
+    summary(M)
+
+
+# ======================================================================================================
+# Pass 2: summary video right before the practice (end of the advanced section)
+# ======================================================================================================
+def summary(M):
+    sb = ['Divisibility signs', 'Build a divisor', 'Divisibility stories', 'Remainder basics', 'Combine remainders',
+          'Change the divisor', 'Counting and units digits', 'Numbers in a row', 'Before you practice']
+    C = lambda i, title, script: dict(title=title, mode='concept', active=i, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice, a quick review of the whole topic.",
+            "The signs, the remainder rules, the tools — and the traps."]),
+        C(0, 'Divisibility signs', [
+            "Know when a number divides — without dividing.",
+            A('2, 5, 10', T('$2,\\ 5,\\ 10$: look at the last digit', size=44)),
+            A('3, 9', T('$3,\\ 9$: the digit sum divides by $3$ or $9$', size=44)),
+            A('4, 8', T('$4$: last two digits · $8$: last three digits', size=44)),
+            A('11', T('$11$: $+\\,-\\,+\\,-$ gives $0$ or $\\pm11$ · $715$: $7-1+5=11$', size=42)),
+            "Eleven: alternate plus and minus, digit by digit."]),
+        C(1, 'Build a divisor', [
+            "A bigger divisor? Split it into parts with no common factor.",
+            A('Six', T('$6$: by $2$ AND by $3$', size=46)),
+            A('Parts', T('$12=3\\cdot4\\qquad15=3\\cdot5\\qquad18=2\\cdot9$', size=46)),
+            A('Trap', T('Trap: $12=2\\cdot6$ ✗ — six divides by $2$ and $6$, not by $12$', size=42)),
+            "Two and six share a two. So that check proves nothing."]),
+        C(2, 'Divisibility stories', [
+            "A fraction of a fraction? Build it from the inside.",
+            A('Zebras', T('$\\frac14$ of $\\frac15$: $k\\to5k\\to20k$', size=48)),
+            "Multiply the denominators. The number divides by twenty.",
+            A('Eliminate', T('"What could it be?" → eliminate what it can\'t be', size=44)),
+            "There's no such thing as a quarter of a zebra."]),
+        C(3, 'Remainder basics', [
+            "The remainder is always smaller than the divisor.",
+            A('Form', T('$N=d\\cdot q+r \\qquad 0\\le r<d$', size=48)),
+            A('Biggest', T('Biggest remainder $=d-1$', size=46)),
+            "Dividing by seven? The remainder is at most six.",
+            A('Algebraic form', T('Leaves $2$ by $6$: $N=6k+2$ → $2,\\ 8,\\ 14,\\ 20,\\ \\ldots$', size=44)),
+            A('Digit sum', T('By $3$ or $9$: same remainder as the digit sum', size=44)),
+            "Five thousand four hundred thirty-two: digit sum fourteen, so it leaves five by nine."]),
+        C(4, 'Combine remainders', [
+            "Only the leftovers matter.",
+            A('Setup', T('$a$ leaves $4$, $b$ leaves $5$ (dividing by $7$)', size=44)),
+            A('Sum and product', T('$a+b$: $4+5=9\\to2$ · $ab$: $4\\cdot5=20\\to6$', size=44)),
+            A('Difference', T('$a-b$: $4-5=-1\\to-1+7=6$', size=44)),
+            "Add, multiply, or subtract the remainders. Negative? Add the divisor.",
+            A('Take away', T('$N$ leaves $r$ → $N-r$ divides by $d$', size=44)),
+            "Take away the remainder, and what's left divides exactly."]),
+        C(5, 'Change the divisor', [
+            "A new divisor? Check that it divides the old one.",
+            A('Works', T('Leaves $8$ by $10$ → by $5$: $8\\to3$', size=46)),
+            "Five divides ten. Keep the remainder — and divide it again if it's too big.",
+            A('Unknown', T('Leaves $3$ by $6$ → by $4$: $3\\to3$, but $9\\to1$', size=46)),
+            "Four doesn't divide six. Two answers — you can't know."]),
+        C(6, 'Counting and units digits', [
+            "How many multiples? First and last.",
+            A('Count', T('$110=11\\cdot10$ to $990=11\\cdot90$: $90-10+1=81$', size=44)),
+            "Don't forget the plus one — both ends count.",
+            A('Units digit', T('Units digit: multiply only the units digits', size=44)),
+            A('Powers', T('$7,\\ 9,\\ 3,\\ 1,\\ 7,\\ \\ldots$ → $7^{20}$ ends in $1$', size=46)),
+            "Powers repeat every four steps."]),
+        C(7, 'Numbers in a row', [
+            "Numbers in a row hide everywhere.",
+            A('Two', T('Two in a row → divides by $2$', size=46)),
+            A('Three', T('Three in a row → divides by $6$', size=46)),
+            A('Hidden', T('$a^3-a=(a-1)\\,a\\,(a+1)$', size=46)),
+            "Only IN A ROW. n times n plus two is not.",
+            A('Plugging in', T('Plug in to knock out — not to prove. Avoid $0$.', size=44)),
+            "One value that fails knocks out a choice. Values that work prove nothing."]),
+        C(8, 'Before you practice', [
+            "Before each question, always ask yourself:",
+            A('Check 1', T('1. Parts with no common factor?', size=42)),
+            A('Check 2', T('2. Is my remainder smaller than the divisor?', size=42)),
+            A('Check 3', T('3. Negative remainder? Add the divisor.', size=42)),
+            A('Check 4', T('4. Does the new divisor divide the old one?', size=42)),
+            A('Check 5', T('5. Plugging in: did I avoid values that give $0$?', size=42)),
+            "And the traps: twelve is not two times six, and counting forgets the plus one.",
+            "You know all of this. Go practice."]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
+    M.new_video('r26-t15-summary', TOPIC, 'Division & Remainder: Summary', sb, slides, ADV, after=last)

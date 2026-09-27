@@ -58,3 +58,13 @@ Guided questions are renumbered automatically. Below, "Q9" etc. means the **old*
 - The bisector-ratio shortcut in Q10 is shown without proof. Check whether T31 teaches it; if not, you may prefer to drop it.
 - Six practice answers are still "cannot be determined / none". The new questions add several look-alikes where the answer IS determined (q-r26-t38-03, 06, 09, 10).
 - The review asked me to check that the sphere (Q8) is taught before T38. That is outside this topic, so I did not check it.
+
+## Pass 2 (2026-09-27, approved remove/restore plan + summary lesson)
+**Removed (1 question, 1 board item, 3 lines):**
+- Practice q-r26-t38-08 (the shortest path on a cube).
+- `solve-geo38-g184` slide 5: the board item "Shortcut: KN/NL = KM/ML > 1" and its 2 spoken lines. In the geo38-g184 written solution: the line "Shortcut: the bisector gives…".
+
+**Restored (2 questions):**
+- geo38-core-p18 (a square and a rectangle with perimeter 32 → the square has the greater area) and geo38-core-p26 (4 vertical and 3 horizontal lines → 12 points). Both are at the easy start of the practice. The solutions now show the numbers ($8\cdot8=64$, and for example $10\cdot6=60$; $4\cdot3=12$).
+
+**Summary lesson (1 new video):** `r26-t38-summary` "Summary" is right after the memory card at the end of "Learn and try", before the practice (about 2.7 min). Slides: Summary · Shape efficiency · Moving the vertex · Angle on a diameter · Two fixed sides · Acute or obtuse? · Must, could, cannot · Test a claim · Slide the apex · Before you practice.

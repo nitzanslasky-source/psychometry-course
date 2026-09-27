@@ -79,3 +79,19 @@ New guided questions (end of the advanced section), each with a solution video:
 - **Ones digit of powers (cycles)** is now taught here, on one slide with one practice question. If the T15 patch also teaches it, one of the two can be cut.
 - **Guided question order:** the three new guided questions (10–12) are at the end of the advanced section, so Questions 4–9 keep their numbers. Q10 (carry) could also go into the theory section right after Q3.
 - The API had no function for the sidebar "active" index of existing slides. After inserting the Carries slide, the patch shifts those indexes directly on the slide data.
+
+## Pass 2 (teacher-approved plan, 2026-09-27)
+
+### Part A: remove / restore
+- **Removed:** nothing. The plan keeps the "Powers: ones digit" slide, its card row and tip, q-r26-t18-08 and q-r26-t18-06.
+- **Restored (4 originals):**
+  - alg-extra-unit-t18-3-1 (digit sum 11, the reversal is 27 smaller; the answer is 74). It is back in the practice. The solution uses stacked givens (cases), 9(A − B) = 27, and a check.
+  - alg-extra-unit-t18-3-2: the original question is back: "What is the ratio A : B?", with choices 2:3, 5:4, 4:5, 3:2 and key 5:4 (10A + B = 6A + 6B → 4A = 5B). The A + B version is dropped.
+  - alg-extra-unit-t18-3-7: the original wording "What must A be at least?" is back. Choices and key are unchanged (5).
+  - alg-extra-unit-t18-3-4 (three-digit numbers from 2, 5, 8 with no repeats; the answer is 6): restored and **moved to the T28 practice** (`wp28-practice`, topic 28), placed before its first question. The T28 patch runs later and its `practice_order` does not list this id, so for now it ends up LAST in the T28 practice. The T28 owner should add it to the easy group of that order.
+- The T18 practice order stays easy → hard: t18-3-1 goes next to q-524, which uses the same 9(A − B) fact.
+
+### Part B: summary lesson
+- New video `r26-t18-summary` "Letter Puzzles: Summary" (about 3 minutes). It is the last item of "Digit puzzles · advanced study", right before the independent practice (one practice section, so one summary).
+- Slides: Summary · Letters are digits · The 4 steps · The ones column · Leading digit & size · Special digits · Plug in · Algebraic form · Products & powers · Largest & smallest · Before you practice.
+- Content comes only from the main lesson and "Number Facts". The final slide has these checks: must the letters be different · which column, is there a carry · how many numbers are added, does the size fit · one letter asked → plug in the choices. It also lists the traps: a forgotten carry, a leading zero, "leading digit 1" used with more than two numbers, and a matching last digit taken as proof.

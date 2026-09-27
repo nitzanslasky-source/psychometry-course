@@ -73,3 +73,19 @@ The old Q9 video no longer says "That's the number line done". The sidebars of t
 ## For the teacher to decide
 - The new lesson comes before Q3, so Q4, Q5 and Q9 can use "must/could" and negative multipliers. If you prefer it after Q9, move `r26-t17-reading-the-line` and its card.
 - Comparing powers with different bases (2³⁰ vs 3²⁰) is not repeated here. It is taught in the T10 patch.
+
+## Pass 2 (teacher-approved plan, 2026-09-27)
+
+### Part A: remove / restore
+- **Removed:** nothing (the plan keeps every addition, including q-r26-t17-02 / -08, "which marked point could be √x / x³").
+- **Restored (2 questions, 1 choice):**
+  - q-505 (1 < m < n, which is the largest?) is back in the practice. Text in TeX, and the solution shows the numbers (m = 2, n = 4) and the "strong on strong" reason.
+  - alg-extra-unit-t17-3-1 (−1 < x < 0, which is the largest?) is back in the practice, with a worked check (x = −1/2).
+  - alg-extra-unit-t17-3-4: the original distractor "1/2 < 1/x < 1/5" is back as choice 2 (it replaces "−1/2 < 1/x < −1/5"). Key unchanged (choice 1).
+- The practice order stays easy → hard: t17-3-1 goes in the easy group, q-505 in the middle (after q-503).
+- No action (as planned): the "replace every ten with a two" fix in solve-q-500 and the q-503 fix stay.
+
+### Part B: summary lesson
+- New video `r26-t17-summary` "The Number Line: Summary" (about 3.5 minutes). It is the last item of "The number line · advanced study", right before the independent practice (this topic has one practice section, so one summary).
+- Slides: Summary · Four ranges · Multiply & divide · Hierarchy · Exceptions first · The arrows · Reciprocals · Test numbers · Must or could? · Distance & midpoint · Before you practice.
+- Content comes only from the two lessons and "Reading the Number Line". The final slide has these checks: which range, are the borders allowed · any exceptions · positive or negative (mirror, flip for times a negative) · necessarily or could. It also lists the common traps.

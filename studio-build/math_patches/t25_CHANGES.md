@@ -52,3 +52,16 @@ Split into two tables (Basics / Weighted averages). New rows: evenly spaced, bal
 - No guided "which information is enough" question was added; p20 covers it in practice.
 - Q3 (pair averages) stays in the first section, before weighted averages. It now points weak students to the plug-in method.
 - API workaround: I set the solution-video sidebars in the patch (per section, in course order) so the automatic renumbering gives 1…9 and 10…13.
+
+## Pass 2 (2026-09-27, approved remove/restore plan + summary lesson)
+**Removed:** nothing (the plan keeps every Topic 25 addition).
+
+**Restored (5):**
+- wp25-p06 (two rope lengths, average equal to one length, ratio $1:1$) is back in the practice, next to p08/p12 (same idea). Choices in TeX, solution with an example.
+- wp25-p05 is again the original "average of $\frac23$ and $\frac16$" (key $\frac5{12}$), solution with the numbers. The "how many numbers at first" version stays as new question **q-r26-t25-14** (medium part of the practice).
+- wp25-p25 is again the original "... What is their sum?" (choices 168, 175, 161, 154; key 161). The "largest of them" version stays as new question **q-r26-t25-15**.
+- wp25-p23 has its original numbers again (test 68, project 92; choices 74, 72, 76, 80; key 74). The 72/88 version is dropped.
+- wp25-p11 has its original condition "$b=a+2$" again (the solution notes it is not needed; key $\frac{3b}{5}$ unchanged).
+- Practice order: p05 and p25 at the easy start; q-r26-t25-15 next to q-r26-t25-10; q-r26-t25-14 before q-r26-t25-07; p06 before p08.
+
+**Summary lesson (1 new video):** `r26-t25-summary` "Summary", at the end of "Further guided examples", right before the practice. Slides: Summary · The middle · Sum and average · The balance · When values change · Largest value, how many · Weighted averages · The see-saw · Groups · Before you practice. Only content the Topic 25 lessons and guided solutions teach.

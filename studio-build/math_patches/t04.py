@@ -239,10 +239,11 @@ def formulas_video(M, fb):
             A('(a − b)² appears', T(r'$(a-b)^2=a^2-2ab+b^2$', size=44)),
             A('(a − b)(a + b) appears', T(r'$(a-b)(a+b)=a^2-b^2$', size=44)),
             A('a² + b² appears', T(r'$a^2+b^2=(a+b)^2-2ab$', size=44)),
-            D('Circle "2ab" in the first two formulas'),
+            D('Circle the three formulas'),
             'Three formulas — and the middle term is where the points are lost.',
             'Use them forward to expand, backward to factor, and to find values without finding x.',
-            'Now try the questions — then watch each solution video.',
+            'Two big takeaways from this lesson: taking out a common factor, and the three formulas.',
+            'Now try a question — then watch its solution video.',
         ]),
     ]
     M.new_video(FORMULAS, TOPIC, 'Multiplication Formulas',
@@ -349,11 +350,11 @@ def trinomial_video(M, after):
 # ======================================================================================================
 def cards(M):
     c = M.card('mem-formulas')
-    c['intro'] = 'Use them forward to expand, backward to factor, and to find values without finding the letters.'
+    c['intro'] = 'Use them forward to expand and backward to factor. They also find values without finding the letters.'
     c['tables'] = [{'title': '', 'head': ['Formula', 'Example'], 'rows': [
         [r'$(a+b)^2=a^2+2ab+b^2$', r'$(3+2)^2=9+12+4=25$'],
         [r'$(a-b)^2=a^2-2ab+b^2$', r'$(5-3)^2=25-30+9=4$'],
-        [r'$(a-b)(a+b)=a^2-b^2$', r'$98\cdot102=100^2-2^2=9996$'],
+        [r'$(a-b)(a+b)=a^2-b^2$', r'$48\cdot52=50^2-2^2=2500-4=2496$'],
         [r'$a^2+b^2=(a+b)^2-2ab$', r'$a+b=7$ and $ab=10$: $a^2+b^2=49-20=29$'],
         [r'$\left(x+\frac{1}{x}\right)^2=x^2+2+\frac{1}{x^2}$', r'$x+\frac{1}{x}=3$: $x^2+\frac{1}{x^2}=9-2=7$'],
         [r'$ka+kb=k(a+b)$', r'$6x+15=3(2x+5)$; $x(a+b)+3(a+b)=(a+b)(x+3)$'],
@@ -394,19 +395,14 @@ def fix_guided(M):
             choices=[r'$a-b$', r'$a^2-b^2$', r'$0$', r'$4ab$'],
             expl=[r'Expand both squares and keep the second one in brackets: $(a^2+2ab+b^2)-(a^2-2ab+b^2)$.',
                   r'The minus flips every sign in the second bracket: $a^2+2ab+b^2-a^2+2ab-b^2=4ab$ (choice 4).',
-                  r'Check with $a=3$, $b=4$: $7^2-(-1)^2=49-1=48$, and $4\cdot3\cdot4=48$. The other choices give $-1$, $-7$ and $0$.',
-                  r'Twin identity: with a plus between the squares, $(a+b)^2+(a-b)^2=2a^2+2b^2$.'])
+                  r'Check with $a=3$, $b=4$: $7^2-(-1)^2=49-1=48$, and $4\cdot3\cdot4=48$. The other choices give $-1$, $-7$ and $0$.'])
     M.set_q('q-121', stem=r'$(m-2)(m+2)-(n-2)(n+2)=?$',
             choices=[r'$4$', r'$m+n$', r'$m^2-n^2$', r'$0$'],
             expl=[r'Each product is a difference of squares: $(m-2)(m+2)=m^2-4$ and $(n-2)(n+2)=n^2-4$.',
                   r'Subtract, keeping the brackets: $(m^2-4)-(n^2-4)=m^2-4-n^2+4=m^2-n^2$ (choice 3).',
                   r'Check with $m=3$, $n=4$: $1\cdot5-2\cdot6=5-12=-7$, and $9-16=-7$.'])
-    # Q1 video: move the cancel/reduce remark to the lesson; add the twin identity; add the plug-in rule
+    # Q1 video: move the cancel/reduce remark to the lesson; add the plug-in rule (Pass 2: twin identity removed)
     M.edit_lines('solve-q-120', 2, lambda ls: [l for l in ls if not l.get('say', '').startswith('Small nuance')])
-    b = beat_to_slide(M.slide('solve-q-120', 2))
-    b['script'] += [D('Below, write "(a + b)² + (a − b)² = 2a² + 2b²"'),
-                    'Bonus: with a PLUS between the squares, the middle terms cancel instead. You get two a squared plus two b squared.']
-    M.set_slide('solve-q-120', 2, script=b['script'])
     b = beat_to_slide(M.slide('solve-q-120', 3))
     k = b['script'].index('Check it by plugging in: a equals three, b equals four.')
     b['script'][k + 1:k + 1] = [
@@ -709,8 +705,19 @@ def practice(M):
       expl=[r'Take out the common factor $3x$ on the top: $3x^2+15x=3x(x+5)$.',
             r'Reduce $3x$: $\frac{3x(x+5)}{3x}=x+5$ (choice 1).'])
 
-    # near-duplicates out
-    for qid in ('q-108', 'q-109', 'q-111', 'q-117'): M.unplace(qid)
+    # Pass 2: the original q-108, q-109, q-111, q-117 stay (only text clean-up)
+    S('q-108', stem=r'$(3a-b)-(-b+3a)=?$', choices=[r'$6a$', r'$6a-2b$', r'$-2b$', r'$0$'],
+      expl=[r'The two brackets hold the same expression: $-b+3a$ is $3a-b$ written in the other order.',
+            r'The minus flips both signs of the second bracket: $3a-b+b-3a=0$ (choice 4).'])
+    S('q-109', stem=r'$(-q+p)-(-p-q)=?$', choices=[r'$2p$', r'$-2q$', r'$2p-2q$', r'$0$'],
+      expl=[r'The minus flips both signs of the second bracket: $-q+p+p+q$.',
+            r'The q terms cancel and the p terms add up: $2p$ (choice 1).'])
+    S('q-111', stem=r'$(3x+4)^2=?$', choices=[r'$9x^2+16$', r'$9x^2+16+12x$', r'$9x^2+16+24x$', r'$9x^2+16+48x$'],
+      expl=[r'Use $(a+b)^2=a^2+2ab+b^2$ with $a=3x$ and $b=4$.',
+            r'$(3x)^2=9x^2$, $2\cdot3x\cdot4=24x$, $4^2=16$. The result is $9x^2+24x+16$ (choice 3).'])
+    S('q-117', stem=r'$(x-8)(x+8)=?$', choices=[r'$x^2-64$', r'$x^2+64$', r'$x^2-64-16x$', r'$x^2-64-64x$'],
+      expl=[r'Difference of squares: $(a-b)(a+b)=a^2-b^2$ with $a=x$ and $b=8$.',
+            r'$x^2-8^2=x^2-64$ (choice 1). There is no middle term.'])
 
     # new exam-level practice
     N = lambda n: 'q-r26-t04-%02d' % n
@@ -772,11 +779,90 @@ def practice(M):
         M.place_q(N(n), PRACTICE)
 
     order = ['q-100', 'alg-extra-unit-t4-1-1', 'q-102', 'q-103', 'q-104', 'q-101', 'q-105', 'alg-extra-unit-t4-1-2',
-             'q-107', 'q-110', 'q-114', 'q-112', 'q-118', 'q-113', 'q-116', 'q-119', 'alg-extra-unit-t4-1-5',
+             'q-107', 'q-108', 'q-109', 'q-110', 'q-111', 'q-114', 'q-117', 'q-112', 'q-118', 'q-113', 'q-116', 'q-119', 'alg-extra-unit-t4-1-5',
              'alg-extra-unit-t4-1-6', 'alg-extra-unit-t4-1-7', 'alg-extra-unit-t4-1-4', 'q-115', 'q-106',
              'alg-extra-unit-t4-1-3', N(12), N(11), N(8), N(9), N(7), N(10), N(14), N(19),
              N(13), N(16), N(15), N(18), N(17)]
     M.practice_order(PRACTICE, order)
+
+
+# ======================================================================================================
+# 8. Pass 2: summary video right before the practice
+# ======================================================================================================
+def summary(M):
+    sb = ['Like terms', 'Brackets', 'Common factor', 'The three formulas', 'Formula traps', 'Number shortcuts',
+          'Value without x', 'Trinomials', 'Before you practice']
+    C = lambda i, title, script: dict(title=title, mode='concept', active=i, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice, let's review the whole topic in a few minutes.",
+            'The rules, the formulas, and the traps.']),
+        C(0, 'Like terms', [
+            'Add and subtract only like terms. Same letters, same powers.',
+            A('Like terms example', T(r'$8a+5b-3a-2b=5a+3b$', size=50)),
+            A('Roots example', T(r'$3\sqrt{5}-\sqrt{5}=2\sqrt{5}$', size=50)),
+            'Roots behave like letters. Root five is one family.',
+            A('Multiplying terms', T(r'$2a\cdot3a=6a^2\qquad a\cdot a^3=a^4$', size=50)),
+            'Multiplying? Numbers with numbers, letters with letters. Count the factors.']),
+        C(1, 'Brackets', [
+            'Opening brackets.',
+            A('Minus before a bracket', T(r'$-(b-c)=-b+c$', size=50)),
+            'A minus before a bracket flips every sign inside.',
+            A('Two brackets', T(r'$(x-5)(x+2)=x^2+2x-5x-10=x^2-3x-10$', size=46)),
+            'Two brackets: every term meets every term. Keep each sign glued to its number.']),
+        C(2, 'Common factor', [
+            'Taking out a common factor: the big tool of this topic.',
+            A('Number factor', T(r'$6x+15=3(2x+5)$', size=50)),
+            A('Bracket factor', T(r'$x(a+b)+3(a+b)=(a+b)(x+3)$', size=50)),
+            'The common factor can be a number, a letter, or a whole bracket.',
+            A('Reduce needs a product', T(r'$\dfrac{3x^2+15x}{3x}=\dfrac{3x(x+5)}{3x}=x+5$', size=50)),
+            'In a fraction, reduce only a common factor. Factor first, then reduce.']),
+        C(3, 'The three formulas', [
+            'The three short multiplication formulas. Know them cold.',
+            A('(a + b)²', T(r'$(a+b)^2=a^2+2ab+b^2$', size=48)),
+            A('(a − b)²', T(r'$(a-b)^2=a^2-2ab+b^2$', size=48)),
+            A('(a − b)(a + b)', T(r'$(a-b)(a+b)=a^2-b^2$', size=48)),
+            'Forward to expand. Backward to factor.']),
+        C(4, 'Formula traps', [
+            'Three traps.',
+            A('Middle term', T(r'$(a+b)^2\ne a^2+b^2$', size=48)),
+            'Don\'t forget the middle term, two a b.',
+            A('Power first', T(r'$3(x+3)^2=3(x^2+6x+9)=3x^2+18x+27$', size=46)),
+            'Power first. The three waits outside the square.',
+            A('Minus and square', T(r'For $x=3$: $-x^2=-9$, but $(-x)^2=9$', size=46)),
+            'In minus x squared, only x is squared.']),
+        C(5, 'Number shortcuts', [
+            'The formulas work with plain numbers too.',
+            A('98 · 102', T(r'$98\cdot102=100^2-2^2=10000-4=9996$', size=46)),
+            A('31² − 29²', T(r'$31^2-29^2=(31-29)(31+29)=2\cdot60=120$', size=46)),
+            'No big multiplications at all.',
+            A('Perfect-square check', T(r'$9x^2-12x+4=(3x-2)^2$ because $2\cdot3x\cdot2=12x$', size=44)),
+            'Perfect square? First and last terms are squares, and the middle term is two times first times last.']),
+        C(6, 'Value without x', [
+            'They give a sum and a product? Don\'t look for the letters.',
+            A('a² + b²', T(r'$a^2+b^2=(a+b)^2-2ab$', size=48)),
+            'a plus b is seven, a b is ten: forty-nine minus twenty, twenty-nine.',
+            A('a² − b²', T(r'$a^2-b^2=(a+b)(a-b)$', size=48)),
+            A('x + 1/x', T(r'$\left(x+\frac{1}{x}\right)^2=x^2+2+\frac{1}{x^2}$', size=48)),
+            'Know x plus one over x? Square it, then subtract two.']),
+        C(7, 'Trinomials', [
+            'Factoring a trinomial: find two numbers.',
+            A('The rule', T('Product = last term · Sum = middle term', size=44)),
+            A('Example', T(r'$x^2+7x+10=(x+2)(x+5)$', size=50)),
+            'Start from the pairs of the product. Two times five is ten, two plus five is seven.',
+            A('Signs', T(r'$x^2-x-12=(x-4)(x+3)$', size=50)),
+            'Last term negative: one plus, one minus. Take out a common factor first, if there is one.']),
+        C(8, 'Before you practice', [
+            'Before you practice, always ask yourself:',
+            A('Check 1', T('1. Is there a common factor to take out first?', size=42)),
+            A('Check 2', T('2. Do I see one of the three formulas — forward or backward?', size=42)),
+            A('Check 3', T('3. Can I find the value without finding x?', size=42)),
+            A('Check 4', T('4. Check with a number: different numbers, not 0 or 1', size=42)),
+            'And watch the traps: the lost middle term, a minus before a bracket, and the power that comes first.',
+            'You know all of this. Go practice.']),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == LEARN][-1]
+    M.new_video('r26-t04-summary', TOPIC, 'Expressions: Summary', sb, slides, LEARN, after=last)
 
 
 def apply(M):
@@ -787,4 +873,5 @@ def apply(M):
     place_guided(M, qs)
     cards(M)
     practice(M)
+    summary(M)
     # the formulas card comes right after the formulas video (it already follows it in the flow)

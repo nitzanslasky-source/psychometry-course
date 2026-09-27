@@ -136,59 +136,59 @@
 "topic": 32
 },
 "solve-geo32-g057": {
-"n": 11,
+"n": 10,
 "topic": 32
 },
 "solve-geo32-g058": {
-"n": 13,
+"n": 11,
 "topic": 32
 },
 "solve-geo32-g059": {
-"n": 14,
+"n": 12,
 "topic": 32
 },
 "solve-geo32-g060": {
-"n": 15,
+"n": 13,
 "topic": 32
 },
 "solve-geo32-g061": {
-"n": 16,
+"n": 14,
 "topic": 32
 },
 "solve-geo32-g062": {
-"n": 17,
+"n": 15,
 "topic": 32
 },
 "solve-geo32-g063": {
-"n": 18,
+"n": 16,
 "topic": 32
 },
 "solve-geo32-g066": {
-"n": 19,
+"n": 17,
 "topic": 32
 },
 "solve-geo32-g067": {
-"n": 20,
+"n": 18,
 "topic": 32
 },
 "solve-geo32-g068": {
-"n": 21,
+"n": 19,
 "topic": 32
 },
 "solve-geo32-g069": {
-"n": 22,
+"n": 20,
 "topic": 32
 },
 "solve-geo32-g070": {
-"n": 24,
+"n": 21,
 "topic": 32
 },
 "solve-geo32-g071": {
-"n": 25,
+"n": 22,
 "topic": 32
 },
 "solve-geo32-g072": {
-"n": 26,
+"n": 23,
 "topic": 32
 },
 "solve-geo33-g076": {
@@ -428,47 +428,47 @@
 "topic": 36
 },
 "solve-geo37-g156": {
-"n": 2,
+"n": 1,
 "topic": 37
 },
 "solve-geo37-g158": {
-"n": 4,
+"n": 3,
 "topic": 37
 },
 "solve-geo37-g160": {
-"n": 5,
+"n": 4,
 "topic": 37
 },
 "solve-geo37-g162": {
-"n": 8,
+"n": 7,
 "topic": 37
 },
 "solve-geo37-g163": {
-"n": 9,
+"n": 8,
 "topic": 37
 },
 "solve-geo37-g164": {
-"n": 10,
+"n": 9,
 "topic": 37
 },
 "solve-geo37-g165": {
-"n": 11,
+"n": 10,
 "topic": 37
 },
 "solve-geo37-g166": {
-"n": 12,
+"n": 11,
 "topic": 37
 },
 "solve-geo37-g167": {
-"n": 13,
+"n": 12,
 "topic": 37
 },
 "solve-geo37-g168": {
-"n": 14,
+"n": 13,
 "topic": 37
 },
 "solve-geo37-g169": {
-"n": 15,
+"n": 14,
 "topic": 37
 },
 "solve-geo38-g173": {
@@ -592,19 +592,19 @@
 "topic": 5
 },
 "solve-q-131": {
+"n": 7,
+"topic": 8
+},
+"solve-q-132": {
+"n": 8,
+"topic": 8
+},
+"solve-q-133": {
 "n": 11,
 "topic": 5
 },
-"solve-q-132": {
-"n": 12,
-"topic": 5
-},
-"solve-q-133": {
-"n": 13,
-"topic": 5
-},
 "solve-q-134": {
-"n": 14,
+"n": 12,
 "topic": 5
 },
 "solve-q-135": {
@@ -916,7 +916,7 @@
 "topic": 13
 },
 "solve-q-370": {
-"n": 17,
+"n": 16,
 "topic": 13
 },
 "solve-q-386": {
@@ -940,31 +940,31 @@
 "topic": 14
 },
 "solve-q-391": {
-"n": 15,
+"n": 13,
 "topic": 14
 },
 "solve-q-392": {
-"n": 16,
+"n": 14,
 "topic": 14
 },
 "solve-q-393": {
-"n": 17,
+"n": 15,
 "topic": 14
 },
 "solve-q-394": {
-"n": 18,
+"n": 16,
 "topic": 14
 },
 "solve-q-395": {
-"n": 19,
+"n": 17,
 "topic": 14
 },
 "solve-q-396": {
-"n": 20,
+"n": 18,
 "topic": 14
 },
 "solve-q-397": {
-"n": 21,
+"n": 19,
 "topic": 14
 },
 "solve-q-398": {
@@ -1016,31 +1016,31 @@
 "topic": 15
 },
 "solve-q-430": {
-"n": 10,
+"n": 9,
 "topic": 15
 },
 "solve-q-431": {
-"n": 11,
+"n": 10,
 "topic": 15
 },
 "solve-q-432": {
-"n": 12,
+"n": 11,
 "topic": 15
 },
 "solve-q-433": {
-"n": 13,
+"n": 12,
 "topic": 15
 },
 "solve-q-434": {
-"n": 14,
+"n": 13,
 "topic": 15
 },
 "solve-q-435": {
-"n": 15,
+"n": 14,
 "topic": 15
 },
 "solve-q-436": {
-"n": 16,
+"n": 15,
 "topic": 15
 },
 "solve-q-457": {
@@ -1212,35 +1212,35 @@
 "topic": 19
 },
 "solve-q-549": {
-"n": 13,
+"n": 12,
 "topic": 19
 },
 "solve-q-550": {
-"n": 14,
+"n": 13,
 "topic": 19
 },
 "solve-q-551": {
-"n": 15,
+"n": 14,
 "topic": 19
 },
 "solve-q-552": {
-"n": 17,
+"n": 16,
 "topic": 19
 },
 "solve-q-553": {
-"n": 18,
+"n": 17,
 "topic": 19
 },
 "solve-q-554": {
-"n": 19,
+"n": 18,
 "topic": 19
 },
 "solve-q-555": {
-"n": 20,
+"n": 19,
 "topic": 19
 },
 "solve-q-556": {
-"n": 21,
+"n": 20,
 "topic": 19
 },
 "solve-q-577": {
@@ -1340,19 +1340,19 @@
 "topic": 4
 },
 "solve-q-r26-t05-01": {
-"n": 15,
+"n": 13,
 "topic": 5
 },
 "solve-q-r26-t05-02": {
-"n": 16,
+"n": 14,
 "topic": 5
 },
 "solve-q-r26-t05-03": {
-"n": 17,
+"n": 15,
 "topic": 5
 },
 "solve-q-r26-t05-04": {
-"n": 18,
+"n": 16,
 "topic": 5
 },
 "solve-q-r26-t06-01": {
@@ -1384,15 +1384,15 @@
 "topic": 7
 },
 "solve-q-r26-t07-04": {
-"n": 24,
+"n": 23,
 "topic": 7
 },
 "solve-q-r26-t07-05": {
-"n": 25,
+"n": 24,
 "topic": 7
 },
 "solve-q-r26-t07-06": {
-"n": 26,
+"n": 25,
 "topic": 7
 },
 "solve-q-r26-t08-01": {
@@ -1412,7 +1412,7 @@
 "topic": 8
 },
 "solve-q-r26-t08-05": {
-"n": 8,
+"n": 6,
 "topic": 8
 },
 "solve-q-r26-t09-01": {
@@ -1508,7 +1508,7 @@
 "topic": 14
 },
 "solve-q-r26-t14-03": {
-"n": 13,
+"n": 12,
 "topic": 14
 },
 "solve-q-r26-t14-04": {
@@ -1588,7 +1588,7 @@
 "topic": 19
 },
 "solve-q-r26-t19-05": {
-"n": 16,
+"n": 15,
 "topic": 19
 },
 "solve-q-r26-t20-01": {
@@ -1644,15 +1644,15 @@
 "topic": 23
 },
 "solve-q-r26-t23-03": {
-"n": 13,
+"n": 12,
 "topic": 23
 },
 "solve-q-r26-t23-04": {
-"n": 14,
+"n": 13,
 "topic": 23
 },
 "solve-q-r26-t23-05": {
-"n": 15,
+"n": 14,
 "topic": 23
 },
 "solve-q-r26-t24-01": {
@@ -1720,11 +1720,11 @@
 "topic": 27
 },
 "solve-q-r26-t27-05": {
-"n": 18,
+"n": 17,
 "topic": 27
 },
 "solve-q-r26-t27-06": {
-"n": 19,
+"n": 18,
 "topic": 27
 },
 "solve-q-r26-t27-07": {
@@ -1744,27 +1744,27 @@
 "topic": 28
 },
 "solve-q-r26-t28-04": {
-"n": 21,
+"n": 18,
 "topic": 28
 },
 "solve-q-r26-t28-05": {
-"n": 22,
+"n": 19,
 "topic": 28
 },
 "solve-q-r26-t28-06": {
-"n": 23,
+"n": 20,
 "topic": 28
 },
 "solve-q-r26-t28-07": {
-"n": 24,
+"n": 21,
 "topic": 28
 },
 "solve-q-r26-t28-08": {
-"n": 25,
+"n": 22,
 "topic": 28
 },
 "solve-q-r26-t28-09": {
-"n": 26,
+"n": 23,
 "topic": 28
 },
 "solve-q-r26-t29-01": {
@@ -1832,11 +1832,11 @@
 "topic": 32
 },
 "solve-q-r26-t32-06": {
-"n": 27,
+"n": 24,
 "topic": 32
 },
 "solve-q-r26-t32-07": {
-"n": 28,
+"n": 25,
 "topic": 32
 },
 "solve-q-r26-t33-01": {
@@ -1908,15 +1908,15 @@
 "topic": 37
 },
 "solve-q-r26-t37-05": {
-"n": 6,
+"n": 5,
 "topic": 37
 },
 "solve-q-r26-t37-07": {
-"n": 7,
+"n": 6,
 "topic": 37
 },
 "solve-q-r26-t37-10": {
-"n": 3,
+"n": 2,
 "topic": 37
 },
 "solve-q-r26-t38-01": {
@@ -2576,23 +2576,23 @@
 "topic": 28
 },
 "solve-wp28-g140": {
-"n": 14,
+"n": 13,
 "topic": 28
 },
 "solve-wp28-g141": {
-"n": 15,
+"n": 14,
 "topic": 28
 },
 "solve-wp28-g142": {
-"n": 16,
+"n": 15,
 "topic": 28
 },
 "solve-wp28-g143": {
-"n": 17,
+"n": 16,
 "topic": 28
 },
 "solve-wp28-g144": {
-"n": 18,
+"n": 17,
 "topic": 28
 },
 "solve-wp29-g147": {
@@ -2640,27 +2640,27 @@
 "topic": 29
 },
 "solve-wp29-g160": {
-"n": 16,
+"n": 15,
 "topic": 29
 },
 "solve-wp29-g161": {
-"n": 17,
+"n": 16,
 "topic": 29
 },
 "solve-wp29-g162": {
-"n": 18,
+"n": 17,
 "topic": 29
 },
 "solve-wp29-g163": {
-"n": 19,
+"n": 18,
 "topic": 29
 },
 "solve-wp29-g164": {
-"n": 20,
+"n": 19,
 "topic": 29
 },
 "solve-wp29-g165": {
-"n": 21,
+"n": 20,
 "topic": 29
 }
 }

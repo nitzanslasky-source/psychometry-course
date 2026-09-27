@@ -69,29 +69,27 @@ def apply(M):
     # =====================================================================================
     # 1. Lesson 1 "Inequalities"
     # =====================================================================================
-    # slide 4: the flip demo now uses x (-2x < 6), done both ways
-    M.set_slide(L1, 4, pre=[T('$-12<-4$', size=64, gap=40)], script=[
-        "Now the one difference.",
-        "When you multiply or divide by a NEGATIVE number — the sign flips.",
-        "Negative twelve is less than negative four. True — it's farther left.",
-        D('Write "÷(−4)" under both sides, then "3 > 1"'),
-        "Divide both sides by negative four: three and one. Three is GREATER than one. The sign had to flip — or the line would be false.",
+    # slide 4: Pass 2 - the original demo and advice come back (only ":" becomes "÷"); the x example is a kept
+    # addition and gets its own slide right after it (inserted below, after the slide-5/7 edits).
+    _fix_draw(M, L1, 4, '":(−4)"', '"÷(−4)"')
+    _fix_draw(M, L1, 4, '":4"', '"÷4"')
+    _fix_draw(M, L1, 5, '":2"', '"÷ 2"')
+    rec = M.slide(L1, 7)
+    rec['items'][1]['t'] = '$\\times$ or $\\div$ by a negative $\\to$ flip the sign'
+    M.touched_videos.add(L1)
+    M.insert_slides(L1, 4, [dict(mode='concept', active=M.slide(L1, 4)['active'], title='The same with x', script=[
+        "Now the same with x.",
         A('−2x < 6 appears', T('$-2x<6$', size=64, gap=40)),
-        "Now with x. Negative two x is less than six.",
+        "Negative two x is less than six.",
         D('Write "÷(−2):  x > −3"'),
         "Way one: divide by negative two — and flip. x is greater than negative three.",
-        "That's correct. But under time pressure, the flip is exactly the thing people forget.",
         D('Write "−6 < 2x", then "−3 < x"'),
         "Way two: move the terms across, like in an equation. Negative two x goes right and becomes two x. Six goes left and becomes negative six.",
         "Negative six is less than two x. Divide by two — positive, no flip. Negative three is less than x.",
         "Same answer. And the sign never had to flip. That's the way I recommend.",
         D('Write "x = 0: 0 < 6 ✓"'),
         "Quick check: x equals zero. Zero is less than six — and zero is greater than negative three. It fits.",
-    ])
-    _fix_draw(M, L1, 5, '":2"', '"÷ 2"')
-    rec = M.slide(L1, 7)
-    rec['items'][1]['t'] = '$\\times$ or $\\div$ by a negative $\\to$ flip the sign'
-    M.touched_videos.add(L1)
+    ])])
 
     # =====================================================================================
     # 2. Lesson 2 "Systems of Inequalities"
@@ -163,7 +161,7 @@ def apply(M):
         'Divide by $2$ (positive, so no flip): $-6<x$.',
         'Check: $x=0$ gives $3<15$ ✓, and only choice (3) includes $0$.'])
     S('q-323', stem='Given: $3(4-3x)-7<8-9x$. For which values of $x$ does the inequality hold?',
-      choices=['Only for $x<0$', 'Only for $x>12$', 'Only for $x<1$', 'For every value of $x$'], expl=[
+      choices=['$0$', '$12$', '$1$', 'Any value'], expl=[
         'Open the brackets: $12-9x-7<8-9x$, so $5-9x<8-9x$.',
         'Add $9x$ to both sides: $5<8$. The $x$ is gone, and $5<8$ is always true.',
         'Therefore the inequality holds for every value of $x$.'])
@@ -355,8 +353,12 @@ def apply(M):
         'Check: $a=-4$, $b=-2$: $\\frac1a=-\\frac14$ and $\\frac1b=-\\frac12$, and $-\\frac14>-\\frac12$ ✓.',
         'The others: $a^2=16>4=b^2$, and $ab=8>0$.'])
 
-    # near-duplicate of q-339
-    M.unplace('q-340')
+    # Pass 2: q-340 is an original practice question and stays (text clean-up only)
+    S('q-340', stem=given(['x^2<25', '3x+9<0'], 'What is $x$?', pre='$x$ is an integer.\n'), expl=[
+        'From $x^2<25$: $-5<x<5$.',
+        'From $3x+9<0$: $3x<-9$, so $x<-3$.',
+        'The integers that satisfy both are strictly between $-5$ and $-3$: $x=-4$.',
+        'Check: $(-4)^2=16<25$ ✓ and $3(-4)+9=-3<0$ ✓.'])
 
     # =====================================================================================
     # 5. New lesson video: signs, numbers between 0 and 1, reciprocals, must / could / cannot
@@ -687,7 +689,84 @@ def apply(M):
     # =====================================================================================
     M.practice_order(PRACTICE, [
         X + '4', X + '1', X + '6', X + '2', 'q-344', 'q-346', 'q-342', X + '3', X + '5', X + '7',
-        'q-338', 'q-341', 'q-339', 'q-345', 'q-347', 'q-348', 'q-343', 'q-349', 'q-351',
+        'q-338', 'q-341', 'q-339', 'q-340', 'q-345', 'q-347', 'q-348', 'q-343', 'q-349', 'q-351',
         'q-r26-t12-07', 'q-r26-t12-05', 'q-r26-t12-06', 'q-r26-t12-08', 'q-r26-t12-12',
         'q-353', 'q-354', 'q-352', 'q-r26-t12-09', 'q-350', 'q-r26-t12-10', 'q-r26-t12-11',
         'q-355', 'q-356', 'q-357'])
+
+    add_summary(M)
+
+
+# ------------------------------------------------------------------ Pass 2: summary video before the practice
+def add_summary(M):
+    sb = ['Same moves', 'x disappears', 'Systems', 'x² inequalities', 'Test the choices',
+          'Signs and fractions', 'Combining ranges', 'Must, could, cannot', 'Before you practice']
+    C = lambda i, title, script: dict(title=title, mode='concept', active=i, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice, let's review the whole topic in three minutes.",
+            "Every rule, every trap. Short and fast."]),
+        C(0, 'Same moves', [
+            "An inequality is solved like an equation — the same moves, on both sides.",
+            A('Flip', T('$\\times$ or $\\div$ by a negative $\\to$ flip the sign', size=46)),
+            "One difference: multiply or divide by a negative number, and the sign flips.",
+            A('No flip', T('$-2x<6\\ \\Rightarrow\\ -6<2x\\ \\Rightarrow\\ -3<x$', size=50)),
+            "My tip: don't divide by a minus at all. Move the terms across, so x stays positive. Then nothing flips."]),
+        C(1, 'x disappears', [
+            "Sometimes x cancels out.",
+            A('True', T('$5-9x<8-9x\\ \\Rightarrow\\ 5<8$: every $x$', size=46)),
+            "What's left is true? Every x works.",
+            A('False', T('Left with something false: no $x$ works', size=46)),
+            "What's left is false? No x works."]),
+        C(2, 'Systems', [
+            "Two inequalities: solve each one, then take the overlap.",
+            A('Overlap', T('$x<7$ and $x>3\\ \\Rightarrow\\ 3<x<7$', size=48)),
+            "It's AND, not OR. No overlap — no solution.",
+            A('Chain', T('$2y-1<x<y+1\\ \\Rightarrow\\ 2y-1<y+1$', size=48)),
+            "A shared side? Chain them, and ignore the middle.",
+            "An equation too? Substitute — just like with two equations."]),
+        C(3, 'x² inequalities', [
+            "x squared on one side, a number on the other.",
+            A('Small side', T('$x^2<9\\ \\Rightarrow\\ -3<x<3$', size=50)),
+            "x squared on the small side: x is between the roots.",
+            A('Big side', T('$x^2\\ge16\\ \\Rightarrow\\ x\\ge4$ or $x\\le-4$', size=50)),
+            "On the big side: x is outside the roots. Don't forget the negative root."]),
+        C(4, 'Test the choices', [
+            "Hard to solve? Plug in the choices.",
+            A('Plug in', T('$x^4<20<x^5$: $x=2$: $16<20<32$ ✓', size=48)),
+            "First ask: can x be negative? Here no — a negative x to the fifth is negative.",
+            "Then plug in. Once one choice works, you can move on."]),
+        C(5, 'Signs and fractions', [
+            "Numbers between zero and one behave strangely.",
+            A('0 < x < 1', T('$0<x<1:\\quad x^2<x<\\sqrt x<1<\\frac1x$', size=46)),
+            "Squaring makes them smaller. Above one, the order turns around.",
+            A('Reciprocals', T('Reciprocals: same sign $\\to$ flip; different signs $\\to$ no flip', size=40)),
+            "One over a number: same sign — flip. Different signs — no flip.",
+            A('Sign table', T('Sign table: zeros on the line, test one number in each part', size=40)),
+            "A product or a fraction above or below zero? Mark the zeros, and test each part."]),
+        C(6, 'Combining ranges', [
+            "Two ranges together.",
+            A('Add', T('Add: $1<a<3,\\ 2<b<5\\ \\Rightarrow\\ 3<a+b<8$', size=44)),
+            "Adding is safe — when both point the same way.",
+            A('Subtract', T('$a-b$: biggest $a$ minus smallest $b$: $-4<a-b<1$', size=44)),
+            "Never subtract end from end. Biggest minus smallest, smallest minus biggest.",
+            A('Corners', T('Multiply: all positive, or check the four corners', size=44)),
+            "Multiplying with a negative inside? Check the four corners.",
+            "And x squared: if zero is inside the range, x squared starts at zero."]),
+        C(7, 'Must, could, cannot', [
+            "Three question words, three jobs.",
+            A('Must', T('Necessarily true: one counterexample kills it', size=44)),
+            A('Could', T('Could be true: one example keeps it', size=44)),
+            A('Cannot', T('Cannot be true: it breaks the givens', size=44)),
+            "Which numbers to try? Zero, one, negative one, one half — and a big number."]),
+        C(8, 'Before you practice', [
+            "Before you practice, always ask yourself:",
+            A('Check 1', T('1. Am I dividing by a negative? Then flip — or move the terms', size=40)),
+            A('Check 2', T('2. Is it AND? Then take the overlap', size=40)),
+            A('Check 3', T('3. Can x be negative, zero, or a fraction?', size=40)),
+            A('Check 4', T('4. Can I just plug in the choices?', size=40)),
+            "And watch the traps: the forgotten flip, the negative root of x squared, and subtracting ranges end from end.",
+            "You know all of this. Go practice."]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
+    M.new_video('r26-t12-summary', TOPIC, 'Inequalities: Summary', sb, slides, ADV, after=last)

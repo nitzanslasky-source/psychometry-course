@@ -182,15 +182,12 @@ def apply(M):
     ])
     M.insert_slides(P, 6, [dict(mode='concept', active=5, title='Definition in words', script=[
         "Type five: the definition is in words, not in a formula.",
-        A('[x] = the largest integer not bigger than x appears',
-          T('$[x]$ = the largest integer that is not bigger than $x$', size=40, gap=40)),
-        "A classic: the integer part of x. The largest integer that is not bigger than x.",
+        A("'Definition in words? Write 2–3 examples first' appears",
+          T('Definition in words? Write $2$–$3$ examples first', size=44, gap=50)),
         "Words are easy to misread. So before you touch the choices, write two or three quick examples.",
-        A('[3.7] = 3, [5] = 5, [−2.3] = ? appear', T('$[3.7]=3\\qquad[5]=5\\qquad[-2.3]=\\ ?$', size=46, gap=40)),
-        "Three point seven: three. Five: five — it's already an integer.",
-        D('Next to [−2.3] write "= −3, not −2"'),
-        "Minus two point three? Not minus two — minus two is bigger than minus two point three. So it's minus three.",
-        "Other definitions in words: the remainder of a division, the number of divisors, the sum of the digits. Same move: examples first.",
+        A("'the remainder · the number of divisors · the sum of the digits' appears",
+          T('the remainder · the number of divisors · the sum of the digits', size=40)),
+        "Definitions in words you may meet: the remainder of a division, the number of divisors, the sum of the digits. Same move: examples first.",
     ])])
     M.set_slide(P, 8, title='Must be true?', pre=[], script=[
         "Type six: \"which of the following must be true\" — sometimes they write \"necessarily true\" — with the operation inside every choice.",
@@ -461,9 +458,15 @@ def apply(M):
       expl=['$2t+5=19$, so $2t=14$ and $t=7$.'])
     S(X + '7', stem='For every two numbers $a$ and $b$: $a\\circ b=(a-b)^2$. $(-2)\\circ3=?$', choices=['$1$', '$5$', '$-25$', '$25$'],
       expl=['$(-2)\\circ3=(-2-3)^2=(-5)^2=25$.'])
-    # near-duplicates of Q2 / q-560 (nested one-letter operations)
-    M.unplace(X + '3')
-    M.unplace(X + '6')
+    # Pass 2: the two original nested questions are restored (plan), cleaned up.
+    S(X + '3', stem='For every number $x$: $F(x)=x^2-3$. $F(F(2))=?$', choices=['$1$', '$13$', '$-2$', '$-1$'], correct=3,
+      expl=['Inside out: $F(2)=2^2-3=4-3=1$.',
+            'Then $F(F(2))=F(1)=1^2-3=1-3=-2$.'])
+    S(X + '6', stem='For every positive number $x$: $H(x)=\\frac1x$. $H(H(4))=?$',
+      choices=['$\\frac{1}{16}$', '$\\frac14$', '$16$', '$4$'], correct=4,
+      expl=['Inside out: $H(4)=\\frac14$.',
+            'Then $H\\left(\\frac14\\right)=1\\div\\frac14=1\\cdot4=4$.',
+            'The reciprocal of the reciprocal is the number itself: $H(H(x))=x$.'])
 
     # =====================================================================================
     # 5. New guided questions (+ solution videos)
@@ -569,35 +572,7 @@ def apply(M):
         ]),
     ])
 
-    # G4 - definition in words: the integer part
-    M.new_q(g[3], TOPIC, 'For every number $x$, $[x]$ is the largest integer that is not bigger than $x$. '
-            'For example: $[3.7]=3,\\ \\ [5]=5$.\n$[-2.5]+[2.5]+[0.5]=?$',
-            ['$2$', '$0$', '$-1$', '$1$'], 3, [
-        'Examples first. For a positive number, drop the decimal part: $[2.5]=2$ and $[0.5]=0$.',
-        'Negative numbers are the trap. $-2$ is bigger than $-2.5$, so it is not allowed. The largest integer not bigger than $-2.5$ is $-3$. So $[-2.5]=-3$.',
-        '$-3+2+0=-1$.',
-        'The trap answer $0$ comes from $[-2.5]=-2$.'])
-    M.place_q(g[3], THEORY, after='solve-q-548')
-    _solution(M, g[3], 'theory', ["A definition in words. Examples first."], [
-        ('Examples first', [
-            "The largest integer that is not bigger than x. Let's make it concrete.",
-            D('Write "[3.7] = 3, [5] = 5"'),
-            "They gave two examples: three point seven gives three. Five gives five.",
-            D('Write "[2.5] = 2, [0.5] = 0"'),
-            "Same for ours: two point five gives two. Zero point five gives zero.",
-            "For a positive number, just drop the decimal part.",
-        ]),
-        ('The negative trap', [
-            "Now minus two point five. Drop the decimals — minus two? Careful.",
-            D('Draw a number line: −3, −2.5, −2'),
-            "On the number line, minus two is to the RIGHT of minus two point five. It's bigger. Not allowed.",
-            D('Write "[−2.5] = −3"'),
-            "The largest integer not bigger than minus two point five is minus three.",
-            D('Write "−3 + 2 + 0 = −1" and circle choice 3'),
-            "Minus three plus two plus zero: minus one. Choice three.",
-            "Choice two, zero, is exactly the trap: minus two instead of minus three.",
-        ]),
-    ])
+    # (Pass 2: G4, the integer part [x] question q-r26-t19-04, was removed - plan: not on the exam.)
 
     # G5 (advanced) - opposite inputs: only odd powers survive in f(k) - f(-k)
     M.new_q(g[4], TOPIC, 'For every number $x$: $\\blacklozenge(x)=x^5+3x^4-2x^3+x^2+4x-7$. $\\blacklozenge(2)-\\blacklozenge(-2)=?$',
@@ -663,7 +638,7 @@ def apply(M):
         ['Conditions, result given', 'try every rule; keep an answer only if it fits its rule', '$\\blacklozenge(x)=9\\Rightarrow x=4$'],
         ['Circular', 'down to the start value, then back up', '$\\blacklozenge(x)=7-\\blacklozenge(x-2)$'],
         ['Operation on both sides', 'isolate it like an unknown', '$\\blacklozenge(x)=4x+10$'],
-        ['Definition in words', 'write 2–3 examples first', '$[3.7]=3$, $[-2.3]=-3$'],
+        ['Definition in words', 'write 2–3 examples first', 'remainder of $47\\div9$: $47=5\\cdot9+2$, so $2$'],
         ['$\\blacklozenge(k)-\\blacklozenge(-k)$', 'only the odd powers are left, doubled', '$x^4+6x$: $2\\cdot6\\cdot4=48$ for $k=4$'],
         ['Must be true', 'skip, come back last, plug in', '$x=2$, then $x=3$'],
     ]}]
@@ -718,10 +693,6 @@ def apply(M):
         '$\\blacklozenge(-1)=\\frac{1}{1-(-1)}=\\frac12$.',
         '$\\blacklozenge\\left(\\frac12\\right)=\\frac{1}{1-\\frac12}=\\frac{1}{\\frac12}=2$.',
         'Three steps bring you back to $2$. So the pattern repeats every three steps: applying $\\blacklozenge$ $30$ times to $2$ also gives $2$.'])
-    PQ['14'] = ('For every number $x$, $[x]$ is the largest integer that is not bigger than $x$. Given: $[x]=3$. Which of the following could be the value of $x$?',
-                ['$2.9$', '$3.99$', '$4$', '$4.5$'], 2, [
-        'Examples first: $[3]=3$, $[3.5]=3$, $[3.99]=3$, but $[4]=4$ and $[2.9]=2$.',
-        'So $[x]=3$ means $3\\le x<4$. Only $3.99$ fits.'])
     PQ['15'] = ('For every positive integer $n$, $\\blacklozenge(n)$ is the sum of the digits of $n$. For example, $\\blacklozenge(47)=4+7=11$. '
                 'For how many two-digit numbers $n$ is $\\blacklozenge(n)$ equal to $5$?',
                 ['$4$', '$5$', '$6$', '$9$'], 2, [
@@ -750,7 +721,89 @@ def apply(M):
     # =====================================================================================
     R = 'q-r26-t19-'
     M.practice_order(PRACTICE, [
-        X + '1', X + '2', X + '5', X + '7', R + '06', 'q-557', 'q-558', 'q-560', 'q-559', X + '4', R + '09',
-        'q-563', R + '14', 'q-566', 'q-569', R + '10', 'q-565', 'q-561', 'q-562', 'q-576', R + '15',
+        X + '1', X + '2', X + '3', X + '5', X + '7', X + '6', R + '06', 'q-557', 'q-558', 'q-560', 'q-559', X + '4', R + '09',
+        'q-563', 'q-566', 'q-569', R + '10', 'q-565', 'q-561', 'q-562', 'q-576', R + '15',
         'q-564', 'q-568', R + '07', R + '12', 'q-571', 'q-572', 'q-570', 'q-575', 'q-567',
         R + '16', R + '17', R + '11', R + '08', R + '13', 'q-573', 'q-574'])
+
+    summary(M)
+
+
+def _b(label, tex, size=44):
+    """A board line that pops in (label = what the teacher sees in the script)."""
+    return A("'%s' appears" % label, T(tex, size=size))
+
+
+def summary(M):
+    """Pass 2: a summary lesson right before the independent practice (end of the advanced section)."""
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
+    sb = ['Read, then substitute', 'Brackets on every input', 'One step at a time', 'Match the whole input',
+          'Missing pieces', 'Conditions', 'Circular · both sides', 'Always? Must?', 'Before you practice']
+    M.new_video('r26-t19-summary', TOPIC, 'Summary', sb, [
+        dict(mode='title', title='Summary', script=[
+            "A quick summary before you practice on your own.",
+            "Everything we learned about new operations — in about three minutes."]),
+        dict(mode='concept', active=0, title='Read, then substitute', script=[
+            _b('a ♥ b = 3(a + b): 6 ♥ 2 = 3(6 + 2) = 24', '$a\\heartsuit b=3(a+b):\\quad 6\\heartsuit2=3(6+2)=24$'),
+            "A new operation is just a definition. Read it first — then follow the whole recipe.",
+            "Whatever sits before the symbol goes into a. Whatever sits after it goes into b.",
+            _b('3 ⋆ 4 ≠ 4 ⋆ 3', 'Order can matter: $\\ 3\\star4\\ne4\\star3$'),
+            "And don't assume it behaves like plus. Swap the inputs — you can get a different answer.",
+            "So circle which number goes into which slot."]),
+        dict(mode='concept', active=1, title='Brackets on every input', script=[
+            _b('◆(x) = x² − 2x', '$\\blacklozenge(x)=x^2-2x$'),
+            _b('◆(−3) = (−3)² − 2 · (−3) = 9 + 6 = 15', '$\\blacklozenge(-3)=(-3)^2-2\\cdot(-3)=9+6=15$', size=42),
+            "Whatever goes in, goes in brackets. Every time.",
+            "Minus three, squared, in brackets: nine. Without brackets you'd get minus nine.",
+            _b('◆(x + 1) = (x + 1)² − 2(x + 1) = x² − 1', '$\\blacklozenge(x+1)=(x+1)^2-2(x+1)=x^2-1$', size=42),
+            "An expression goes in the same way: the whole thing, in brackets, then open them."]),
+        dict(mode='concept', active=2, title='One step at a time', script=[
+            _b('◆(3) + ◆(4) = 9 + 16 = 25 ≠ ◆(7)', '$\\blacklozenge(x)=x^2:\\quad \\blacklozenge(3)+\\blacklozenge(4)=9+16=25\\ne\\blacklozenge(7)$', size=40),
+            "Inside a longer exercise: first turn every operation into a plain number. Then do the rest.",
+            _b('(2 ⋆ 3) ⋆ 1 = 13 ⋆ 1 = 27', '$a\\star b=2a+b^2:\\quad (2\\star3)\\star1=13\\star1=27$', size=40),
+            "An operation inside an operation? Inside out.",
+            "The result of the inside becomes the input of the outside. Don't stop halfway — the halfway number is waiting in the choices."]),
+        dict(mode='concept', active=3, title='Match the whole input', script=[
+            _b('F(4t) = t + 5. F(20) = ?', '$F(4t)=t+5.\\quad F(20)=\\ ?$'),
+            "Here the rule works on four t — not on t.",
+            _b('4t = 20 → t = 5 → F(20) = 5 + 5 = 10', '$4t=20\\ \\to\\ t=5\\ \\to\\ F(20)=5+5=10$'),
+            "So first match the whole input: four t is twenty, t is five. Then the rule: ten.",
+            "Put twenty straight into t, and you're really calculating F of eighty."]),
+        dict(mode='concept', active=4, title='Missing pieces', script=[
+            _b('◆(3) = 24. Which cannot be ◆?', '$\\blacklozenge(3)=24$. Which definition cannot be $\\blacklozenge$?', size=42),
+            "No definition at all? Put the given input into each choice. The one that doesn't give the result is out.",
+            "Found it? Mark it and move on.",
+            _b('x ⋆ 2 = 18 → 2x + 4 = 18 → x = 7', '$x\\star2=18\\ \\to\\ 2x+4=18\\ \\to\\ x=7$'),
+            "An unknown input? Write the definition — and it's an ordinary equation.",
+            "Or work back from the answers: put each choice into the rule."]),
+        dict(mode='concept', active=5, title='Conditions', script=[
+            _b('◆(x) = 2x (x odd), x² − 7 (x even)', '$\\blacklozenge(x)=\\begin{cases} 2x, & x \\text{ odd} \\\\ x^2-7, & x \\text{ even} \\end{cases}$'),
+            "Two rules? Check the input first: odd or even?",
+            "And check again at every step. The output of one step is the next input — and it can switch.",
+            _b('◆(x) = 9: odd → x = 4.5 ✗ · even → x = 4 ✓', '$\\blacklozenge(x)=9$: odd rule $x=4.5$ ✗ $\\quad$ even rule $x=4$ ✓', size=40),
+            "The result is given? Try every rule. Keep an answer only if it fits the rule you used."]),
+        dict(mode='concept', active=6, title='Circular · both sides', script=[
+            _b('◆(1) = 3, ◆(x) = 2 · ◆(x − 1): ◆(3) = 12', '$\\blacklozenge(1)=3,\\ \\ \\blacklozenge(x)=2\\cdot\\blacklozenge(x-1):\\quad \\blacklozenge(3)=2\\cdot6=12$', size=40),
+            "The operation inside its own definition? Go down to the start value. Then climb back up with real numbers.",
+            _b('2 · ◆(x) + 1 = ◆(x) + x → ◆(x) = x − 1', '$2\\cdot\\blacklozenge(x)+1=\\blacklozenge(x)+x\\ \\to\\ \\blacklozenge(x)=x-1$', size=40),
+            "The operation on both sides? Treat it as the unknown, and isolate it.",
+            "Definition in words? Write two or three examples first."]),
+        dict(mode='concept', active=7, title='Always? Must?', script=[
+            _b('"Not always"? One counterexample.', '"Not always"? One counterexample is enough.', size=40),
+            _b('"Always"? Swap the letters.', '"Always"? Swap the letters in the algebra: $b\\star a=a\\star b$?', size=40),
+            "To say no — one example. To say yes — algebra.",
+            _b('Must be true: plug in 2 or 3, not 0 or 1', 'Must be true: plug in $2$ or $3$ — not $0$, $1$ or equal values', size=40),
+            "Zero, one and equal values can make a false rule look true. Two choices left? Try a second number.",
+            "And a must-be-true question can eat your time. Skip it, and come back at the end.",
+            _b('◆(k) − ◆(−k): odd powers, doubled', '$\\blacklozenge(k)-\\blacklozenge(-k)$: only the odd powers are left, doubled', size=40),
+            "One shortcut from the advanced questions: a number minus its opposite — the even powers cancel."]),
+        dict(mode='concept', active=8, title='Before you practice', script=[
+            "Before every question, ask yourself:",
+            _b('Which number goes into which slot?', 'Which number goes into which slot?', size=40),
+            _b('Did every input get brackets?', 'Did every input get brackets?', size=40),
+            _b('Odd or even — at this step?', 'Conditions: which rule — at this step?', size=40),
+            _b('Does my answer fit the rule I used?', 'Does my answer fit the rule I used?', size=40),
+            _b('Traps: no brackets · stopping halfway · 20 straight into t', 'Traps: $-3^2$ without brackets · stopping halfway · $20$ straight into $t$', size=38),
+            "The traps: minus three squared without brackets, stopping halfway in a nested operation, and putting the number straight into t.",
+            "Read the definition, and follow it faithfully. Good luck."]),
+    ], ADV, after=last)

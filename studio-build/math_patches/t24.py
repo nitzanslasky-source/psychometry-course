@@ -588,9 +588,13 @@ def fix_practice(M):
     S('wp24-p17', expl=['Remote only: $90-60=30$. Flexible only: $75-60=15$.',
                         'Exactly one: $30+15=45$. In one line: $90+75-2\\cdot60=45$.'])
 
-    # near-duplicates of guided Q1 / Q8 and of p08
-    M.unplace('wp24-p04')
-    M.unplace('wp24-p02')
+    # Pass 2: the two original questions stay (restored), with the usual text clean-up
+    S('wp24-p02', choices=['$56$', '$34$', '$30$', '$45$'],
+      expl=['Adding $26$ and $19$ counts the $11$ students who study both twice. Remove one copy: $26+19-11=34$.',
+            'Or split into separate groups: art only $26-11=15$, music only $19-11=8$, both $11$. '
+            'Total: $15+8+11=34$.'])
+    S('wp24-p04', choices=['$15$', '$16$', '$23$', '$31$'],
+      expl=['At least one item: $54+82-31=105$.', 'Neither: $120-105=15$.'])
 
     new = [
         ('q-r26-t24-04', 'A class has 30 students, and 18 of them are girls. 12 students wear glasses, and 5 of those are boys. '
@@ -648,7 +652,7 @@ def fix_practice(M):
         M.new_q(qid, TOPIC, stem, ch, cor, ex)
         M.place_q(qid, PRAC)
 
-    M.practice_order(PRAC, ['wp24-p17', 'wp24-p14', 'wp24-p12', 'q-r26-t24-04', 'wp24-p09', 'wp24-p01', 'wp24-p08',
+    M.practice_order(PRAC, ['wp24-p02', 'wp24-p17', 'wp24-p14', 'wp24-p04', 'wp24-p12', 'q-r26-t24-04', 'wp24-p09', 'wp24-p01', 'wp24-p08',
                             'wp24-p11', 'wp24-p15', 'q-r26-t24-11', 'q-r26-t24-07', 'wp24-p16', 'wp24-p03', 'wp24-p06',
                             'wp24-p07', 'wp24-p10', 'q-r26-t24-05', 'q-r26-t24-10', 'wp24-p05', 'q-r26-t24-08',
                             'q-r26-t24-06', 'q-r26-t24-09', 'wp24-p13'])
@@ -698,4 +702,85 @@ def apply(M):
     M.section_title(ADV, 'More methods and guided examples')
     for qid in ('wp24-g074', 'wp24-g076', 'wp24-p05'):          # stray spaces around the stem
         M.set_q(qid, stem=M.q(qid)['stemRich'].strip())
+    summary(M)
     tidy(M)
+
+
+# =====================================================================================================
+# 9. Pass 2: summary lesson right before the practice
+# =====================================================================================================
+def summary(M):
+    sb = ['Four regions', 'Count each once', 'Maximum overlap', 'Minimum overlap', 'Other regions',
+          'The squares method', 'Two-way tables', 'Three groups', 'Before you practice']
+    S = lambda k, script: dict(title=sb[k], mode='concept', active=k, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice — a quick summary of overlapping groups.",
+            "Everything important, one idea at a time."]),
+        S(0, [
+            A("'A only · both · B only · neither' appears", T('A only · both · B only · neither', size=48, gap=40)),
+            "Two groups make four regions. Every person lands in exactly one of them.",
+            A("'A full group = its only-region + both' appears", T('A full group $=$ its only-region $+$ both', size=46)),
+            "Careful: \"music students\" means the WHOLE circle — music only plus both."]),
+        S(1, [
+            A("'A + B − both + neither = total' appears", T('$A+B-\\text{both}+\\text{neither}=\\text{total}$', size=52, gap=40)),
+            "Add both groups — the middle is counted twice. Subtract it once. Then add the ones outside.",
+            A("'45 campers: 28 + 23 − 16 + neither = 45' appears", T('$28+23-16+\\text{neither}=45\\ \\to\\ \\text{neither}=10$', size=46)),
+            "Twenty-eight plus twenty-three minus sixteen is thirty-five. Neither: ten."]),
+        S(2, [
+            A("'Maximum overlap = the smaller group' appears", T('Maximum overlap $=$ the smaller group', size=48, gap=40)),
+            "Range questions: a fact is missing, so the overlap is not one number.",
+            "The biggest it can be? Put the small group inside the big one.",
+            A("'8 and 7 → max 7' appears", T('$8$ and $7$ $\\to$ max $7$', size=48)),
+            "Eight and seven: seven. Nothing to calculate."]),
+        S(3, [
+            A("'Minimum overlap = (A + B) − total, or 0' appears", T('Minimum overlap $=(A+B)-\\text{total}$, or $0$', size=46, gap=40)),
+            "The smallest it must be: how far do the groups go over the total?",
+            A("'12 students: 8 + 7 − 12 = 3' appears", T('$12$ students: $\\ 8+7-12=3$', size=48, gap=40)),
+            "Fifteen for twelve students: three must be in both.",
+            "The sum doesn't pass the total? Then nobody is forced. The minimum is zero, never negative.",
+            A("'Fractions: the whole is 1 · Percents: the whole is 100%' appears",
+              T('Fractions: the whole is $1$ · Percents: $100\\%$', size=44)),
+            "Two thirds plus a half minus one: at least a sixth."]),
+        S(4, [
+            A("'Union = A + B − both · Neither = total − union' appears",
+              T('Union $=A+B-\\text{both}$ · Neither $=\\text{total}-\\text{union}$', size=42, gap=30)),
+            A("'A only = A − both' appears", T('A only $=A-\\text{both}$', size=44, gap=40)),
+            "Asked about another region? Find the overlap range first.",
+            "Big overlap, small union — and then neither is big. Big overlap, small A only.",
+            A("'\"at most\" / \"at least\" → of the thing they ask' appears",
+              T('"at most" / "at least" $\\to$ of the thing they ask', size=42)),
+            "At least, at most — of WHAT? Ask: to make THIS small, what must the overlap be?"]),
+        S(5, [
+            A('The strip appears', dict(STRIP_SE, gap=40)),
+            "Exact questions: one more fact fixes every region. Use the squares method.",
+            "One strip, four boxes. The two brackets share the middle box — the overlap.",
+            "Put in the data and fill the boxes like a sudoku. Start from any box they give you.",
+            A("'Exactly one = A + B − 2 · both' appears", T('Exactly one $=A+B-2\\cdot\\text{both}$', size=46)),
+            "Exactly one: take both away TWICE — it sits inside each group once."]),
+        S(6, [
+            A("'Two yes/no traits → a table with totals' appears", T('Two yes/no traits $\\to$ a table with totals', size=44, gap=40)),
+            "The same people with two traits? Draw a table. Percents? Plug in a hundred.",
+            A("'Rows add across · columns add down' appears", T('Rows add across · columns add down', size=44, gap=40)),
+            A("'\"of the …\" → that row or column is the whole' appears", T('"of the …" $\\to$ that row or column is the whole', size=44)),
+            "Twenty percent of the women and thirty percent of the men: don't add them, don't average them. Fill the table.",
+            "\"Of the people with glasses\"? Then the glasses column is the whole."]),
+        S(7, [
+            A("'Min in all three = total − the missing ones, or 0' appears",
+              T('Min in all three $=$ total $-$ the missing ones, or $0$', size=42, gap=40)),
+            "Three groups? Count who misses a group. Everyone else MUST be in all three.",
+            A("'A + B + C − 2 · total' appears", T('$A+B+C-2\\cdot\\text{total}$: $\\ 40+35+30-100=5$', size=44, gap=40)),
+            "In one line: add the three groups and subtract the total twice.",
+            A("'Max in all three = the smallest group' appears", T('Max in all three $=$ the smallest group', size=44)),
+            "And the most in all three? The smallest group."]),
+        S(8, [
+            "Before you start, always ask yourself:",
+            A('Check 1 appears', T('Range or exact? Is a fact missing?', size=40, gap=30)),
+            A('Check 2 appears', T('Which region do they ask about?', size=40, gap=30)),
+            A('Check 3 appears', T('To make THIS big or small, what must the overlap be?', size=38, gap=30)),
+            A('Check 4 appears', T('"Of the …" — who is the whole?', size=40)),
+            "And the traps: \"music students\" is the whole circle, a negative minimum is really zero, and percents of different groups can't be added.",
+            "Now it's your turn. Good luck!"]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
+    M.new_video('r26-t24-summary', TOPIC, 'Summary: Overlapping Groups', sb, slides, ADV, after=last)

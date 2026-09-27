@@ -1,5 +1,8 @@
-"""Topic 29 - Probability. Course review 2026-09 fixes (+ geometric probability, missing from the whole course).
+"""Topic 29 - Probability. Course review 2026-09 fixes.
+Pass 2 (teacher-approved remove/restore plan): geometric probability, "unknown count" and the AND/OR size check are
+removed; wp29-p03, wp29-p20 and the true original lines are restored; a summary video comes before the practice.
 See t29_CHANGES.md for the plain-language list."""
+import copy
 import re
 from dsl import T, H, A, D, Q
 from math_api import VIS, _word
@@ -8,19 +11,18 @@ TOPIC = 29
 LEARN, ADV, PRACTICE = 'wp29-learn', 'wp29-advanced', 'wp29-practice'
 LESSON_VIDS = ['wp-146', 'wp-147-after', 'wp-151', 'wp-159']
 MORE = 'r26-t29-more-rules'
-GEO = 'r26-t29-geometric'
 LESSON_SB = ['Wanted over possible', 'Between 0 and 1', 'Possible first', 'Certain & impossible', 'And · Or',
-             'OR with overlap', 'At least one', 'Exactly one', 'Two stages: a tree', 'Unknown count',
+             'OR with overlap', 'At least one', 'Exactly one', 'Two stages: a tree',
              'Dice symmetry', 'Recap']
-# Guided numbers before renumbering: new ones get 18-22. renumber_guided() then numbers them in course order.
-LEARN_SB = ['Question %d' % n for n in list(range(1, 12)) + [18, 19, 20, 21, 12]]
-ADV_SB = ['Question %d' % n for n in [13, 14, 15, 16, 17, 22]]
+# Guided numbers before renumbering: new ones get 18-20. renumber_guided() then numbers them in course order.
+LEARN_SB = ['Question %d' % n for n in list(range(1, 12)) + [18, 19, 20, 12]]
+ADV_SB = ['Question %d' % n for n in [13, 14, 15, 16, 17]]
 GID = ['q-r26-t29-%02d' % k for k in range(1, 15)]
 
 # ------------------------------------------------------------------------------------------------
 # Figures (same style as the geometry topics: ink #203344, shaded #d5f1ed / #087f83, DejaVu 20)
 # ------------------------------------------------------------------------------------------------
-INK, TEAL, FILL = '#203344', '#087f83', '#d5f1ed'
+INK, TEAL = '#203344', '#087f83'
 
 
 def _svg(label, body, vb='0 0 640 360'):
@@ -34,21 +36,6 @@ def _t(x, y, s, italic=False, size=20, color=INK):
             % (x, y, color, size, ' font-style="italic"' if italic else '', s))
 
 
-def _poly(pts, shade=False):
-    p = ' '.join('%.1f,%.1f' % xy for xy in pts)
-    if shade:
-        return '<polygon points="%s" fill="%s" stroke="%s" stroke-width="2.5" stroke-linejoin="round"/>' % (p, FILL, TEAL)
-    return '<polygon points="%s" fill="none" stroke="%s" stroke-width="2.5" stroke-linejoin="round"/>' % (p, INK)
-
-
-def _rect(x0, y0, x1, y1, shade=False):
-    return _poly([(x0, y0), (x1, y0), (x1, y1), (x0, y1)], shade)
-
-
-def _circle(cx, cy, r, fill='none', stroke=INK):
-    return '<circle cx="%.1f" cy="%.1f" r="%.1f" fill="%s" stroke="%s" stroke-width="2.5"/>' % (cx, cy, r, fill, stroke)
-
-
 def _dot(cx, cy):
     return '<circle cx="%.1f" cy="%.1f" r="3.2" fill="%s"/>' % (cx, cy, INK)
 
@@ -57,40 +44,6 @@ def _line(x1, y1, x2, y2, color=INK, w=1.8, dash=False):
     return ('<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="%s" stroke-width="%s"%s/>'
             % (x1, y1, x2, y2, color, w, ' stroke-dasharray="6 5"' if dash else ''))
 
-
-def _crop(svg, vb):
-    return re.sub(r'viewBox="[^"]*"', 'viewBox="%s"' % vb, svg, count=1)
-
-
-# guided question: square 6, circle radius 2 at the center, shaded = square outside the circle
-FIG_GUIDED = _svg('A square with a circle at its center; the region outside the circle is shaded',
-                  _rect(200, 60, 440, 300, shade=True) + _circle(320, 180, 80, fill='white') +
-                  _line(320, 180, 400, 180) + _dot(320, 180) + _t(360, 166, '2') + _t(320, 324, '6'))
-# practice: rectangle 8 by 5 with a shaded triangle on the bottom side
-FIG_P_TRI = _svg('A rectangle with a shaded triangle whose base is the bottom side',
-                 _rect(160, 80, 480, 280) + _poly([(160, 280), (480, 280), (400, 80)], shade=True) +
-                 _rect(160, 80, 480, 280) + _t(320, 304, '8') + _t(142, 180, '5'))
-# practice: target radius 10 with a small circle of radius 2 at the same center
-FIG_P_TARGET = _svg('A round target with a small circle at its center',
-                    _circle(320, 180, 150) + _circle(320, 180, 40, fill=FILL, stroke=TEAL) +
-                    _line(320, 180, 442.9, 94.0) + _line(320, 180, 280, 180) + _dot(320, 180) +
-                    _t(372, 122, '10') + _t(300, 166, '2'))
-# practice: large square side 10 with a small shaded square side x in a corner (not to scale)
-FIG_P_SQ = _svg('A large square with a small shaded square in its corner',
-                _rect(200, 60, 440, 300) + _rect(200, 180, 320, 300, shade=True) + _rect(200, 60, 440, 300) +
-                _t(462, 180, '10') + _t(260, 322, 'x', italic=True))
-# lesson figures
-FIG_S_AREA = _svg('A 10 by 10 square with a shaded 4 by 5 rectangle inside',
-                  _rect(200, 60, 440, 300) + _rect(250, 110, 346, 230, shade=True) +
-                  _t(320, 324, '10') + _t(462, 180, '10') + _t(298, 248, '4') + _t(234, 170, '5'), vb='170 40 320 300')
-FIG_S_CIRC = _svg('A circle that fits exactly inside a square',
-                  _rect(200, 60, 440, 300) + _circle(320, 180, 120, fill=FILL, stroke=TEAL) +
-                  _line(320, 180, 440, 180) + _dot(320, 180) + _t(380, 164, 'r', italic=True) +
-                  _t(320, 324, '2r', italic=True), vb='170 40 320 300')
-FIG_S_TRI = _svg('A rectangle with a shaded triangle on its bottom side',
-                 _poly([(160, 280), (480, 280), (260, 80)], shade=True) + _rect(160, 80, 480, 280) +
-                 _line(260, 80, 260, 280, TEAL, 1.8, dash=True) +
-                 _t(320, 304, 'a', italic=True) + _t(142, 180, 'h', italic=True), vb='120 55 400 270')
 
 
 def _tree():
@@ -198,10 +151,10 @@ def apply(M):
     _existing_solution_videos(M)
     _existing_questions(M)
     _more_rules_block(M)
-    _geometric_block(M)
     _cards(M)
     _practice(M)
     _american(M)
+    _summary(M)
 
 
 # ------------------------------------------------------------------------------------------------
@@ -232,7 +185,8 @@ def _lessons(M):
         "One sixth plus one sixth. One third.",
         "If the two cases CAN happen together, adding counts the overlap twice. That's the next slide.",
         D('Circle "multiply" and "add"'),
-        "Most of what you'll see on the exam is \"and\". \"Or\" questions are rarer — and harder.",
+        "By the way — \"or\" questions are much rarer on the exam. They're also the harder ones.",
+        "Most of what you'll see is \"and\".",
     ])
     # wp-151 new slide 3: OR with overlap + size check
     M.insert_slides('wp-151', 2, [dict(mode='concept', active=5, title='OR with overlap', script=[
@@ -251,17 +205,10 @@ def _lessons(M):
         "First plus second, minus both. The same rule as in overlapping groups.",
         D('Write "7 + 5 − 2 = 10 → 10/30 = 1/3"'),
         "Ten out of thirty. One third.",
-        A("'Size check: AND → smaller, OR → bigger' appears",
-          T('Size check: AND $\\to$ smaller $\\cdot$ OR $\\to$ bigger', size=42)),
-        "A quick size check. AND gives a smaller chance than each event alone. OR gives a bigger chance than each event alone.",
-        "Use it to cross out choices fast.",
     ])])
 
-    # wp-159 slide 2: dice symmetry - replace the opposite-faces remark with the 7 - x argument, add n + 1
-    M.video('wp-159')['beats'][1]['active'] = 10
-    _replace_say(M, 'wp-159', 2,
-                 "By the way — opposite faces of a die always add to seven: six and one, five and two, four and three.",
-                 None)
+    # wp-159 slide 2: dice symmetry - keep the (true) opposite-faces remark, add the 7 - x argument and n + 1
+    M.video('wp-159')['beats'][1]['active'] = 9
     M.edit_lines('wp-159', 2, lambda ls: ls + [
         {'say': "Why? Swap every face x for seven minus x. A one becomes a six, a two becomes a five, a three becomes a four."},
         {'draw': 'Write "(3, 6) → (4, 1): 9 → 5"'},
@@ -271,7 +218,7 @@ def _lessons(M):
         {'say': "Six faces: seven. Eight faces: nine — not seven."},
     ])
     # wp-159 slide 3: recap
-    M.set_slide('wp-159', 3, active=11, script=[
+    M.set_slide('wp-159', 3, active=10, script=[
         "Let's lock in probability.",
         A("'wanted ÷ possible, always between 0 and 1' appears",
           T('$P=\\dfrac{\\text{wanted}}{\\text{possible}}$, always between $0$ and $1$', size=40)),
@@ -321,6 +268,8 @@ def _existing_solution_videos(M):
     # Q11: simple way first, then the two cases as a check (the complement moves to the "at least one" slide)
     _replace_say(M, 'solve-wp29-g158', 1, "The hard kind: an OR question.",
                  "Two tries to find a prize. Start with the simple way.")
+    # Pass 2: the original slide "Method 2 · Complement" is restored (it comes back as the third method, slide 4)
+    comp = copy.deepcopy(M.slide('solve-wp29-g158', 3))
     M.set_slide('solve-wp29-g158', 2, title='Method 1 · Count the lockers', script=[
         "Possible first: the prize can be in any of seven lockers. Seven equally likely places.",
         D('Write "possible = 7"'),
@@ -343,6 +292,11 @@ def _existing_solution_videos(M):
         "Two sevenths — the same answer.",
         "The trap: \"one seventh on the first try, one sixth on the second\". But you only get a second try after you miss the first.",
         "Think of a driving test. You can't walk in and say: I'm here for my second test. First you have to fail the first one.",
+    ])
+    M.video('solve-wp29-g158')['beats'].insert(3, comp)
+    M.set_slide('solve-wp29-g158', 4, title='Method 3 · Complement', script=[
+        D('Write "miss both: 6/7 · 5/6 = 5/7 → 1 − 5/7 = 2/7"'),
+        "Or: missing both is six sevenths times five sixths — five sevenths. The complement: two sevenths.",
     ])
 
 
@@ -504,18 +458,24 @@ def _existing_questions(M):
 
     _sync_stem_copies(M, [q for q in M.D['questions'] if q.startswith('wp29-g')])
 
-    # near-duplicates: p03 = Q9 (two 8-sided dice match); p20 = Q14 with new letters
-    M.unplace('wp29-p03')
-    M.unplace('wp29-p20')
+    # Pass 2 (plan): the original p03 and p20 stay (text clean-up only)
+    S('wp29-p03', stem='Two fair eight-sided dice, each numbered 1 through 8, are rolled. What is the probability that they show the same number?',
+      expl=['The first dice can show anything: probability 1.',
+            'The second dice must show the same number: 1 good face out of 8, so $\\frac18$.',
+            '$1\\cdot\\frac18=\\frac18$. Check by counting: 8 doubles out of $8\\cdot8=64$ pairs, and $\\frac8{64}=\\frac18$.'])
+    S('wp29-p20', stem='There are $k$ boxes, and each box contains cards numbered 1 through $m$ ($m\\ge2$). One card is drawn at random from each box, independently. What is the probability that every card drawn is numbered 2?',
+      expl=['In each box exactly one card is numbered 2: probability $\\frac1m$.',
+            'All $k$ boxes must succeed (AND): $\\left(\\frac1m\\right)^k=\\frac1{m^k}$.',
+            'Check with numbers: $k=2$ and $m=3$ give $\\frac13\\cdot\\frac13=\\frac19$. Only $\\frac1{m^k}=\\frac1{3^2}=\\frac19$ fits (the others give $\\frac23$, $\\frac18$ and $\\frac16$).'])
 
 
 # ------------------------------------------------------------------------------------------------
-# 4. New lesson part after Q11 + four guided questions (overlap, at least one, tree, unknown count)
+# 4. New lesson part after Q11 + three guided questions (overlap, at least one, tree)
 # ------------------------------------------------------------------------------------------------
 def _more_rules_block(M):
     v = M.new_video(MORE, TOPIC, 'Probability', LESSON_SB, [
         dict(mode='title', title='At Least One & Trees', script=[
-            "Four more tools. These are the harder exam questions.",
+            "Three more tools. These are the harder exam questions.",
         ]),
         dict(mode='concept', active=6, title='At least one', script=[
             "\"At least one\" means one, two, or more. That's a lot of cases.",
@@ -566,19 +526,6 @@ def _more_rules_block(M):
             D('Write "3/8 + 1/12 = 9/24 + 2/24 = 11/24"'),
             "Eleven twenty-fourths.",
             "The trap: pour both bags together — four red out of ten. Wrong. The bags aren't the same size, so the tokens don't have equal chances.",
-        ]),
-        dict(mode='concept', active=9, title='Unknown count', script=[
-            "Sometimes the number of tokens is the unknown.",
-            A("'5 red and some blue, P(red) = 1/3. How many blue?' appears",
-              T('5 red and some blue. $P(\\text{red})=\\frac13$. How many blue?', size=44, gap=50)),
-            "Call the blue ones x. Careful: the bottom is the TOTAL — five plus x.",
-            D('Write "5/(5 + x) = 1/3"'),
-            D('Write "15 = 5 + x → x = 10"'),
-            "Cross-multiply: fifteen equals five plus x. x is ten.",
-            "Check: five red out of fifteen — one third. Yes.",
-            A("'Faster: work back from the answers' appears", T('Faster: work back from the answers', size=44)),
-            "On the exam, the fastest way is often to work back from the answers. Put each choice into the fraction.",
-            "And watch the trap: when tokens are added, the total grows too.",
         ]),
     ], LEARN, after='solve-wp29-g158')
     v['hybrid']['num'] = 57
@@ -677,132 +624,6 @@ def _more_rules_block(M):
             "Pouring works only when the boxes are the same size. Use the tree — it always works.",
         ]),
     ])
-    last = 'solve-' + g
-
-    # ---- guided D: unknown count ----
-    g = GID[3]
-    M.new_q(g, TOPIC, 'A bag contains 5 red marbles and 7 blue marbles. How many red marbles must be added to the bag so that the probability of drawing a red marble at random is $\\frac34$?',
-            ['$4$', '$9$', '$16$', '$21$'], 3, [
-        'Add $x$ red marbles. Red: $5+x$. Total: $12+x$ (the total grows too).',
-        '$\\frac{5+x}{12+x}=\\frac34$, so $4(5+x)=3(12+x)$: $20+4x=36+3x$ and $x=16$.',
-        'Check: $\\frac{21}{28}=\\frac34$ ✓.',
-        'Working back from the answers is often faster: 4 gives $\\frac9{16}$, 9 gives $\\frac{14}{21}=\\frac23$, and 16 gives $\\frac{21}{28}=\\frac34$ ✓.'])
-    M.place_q(g, LEARN, after=last)
-    _solution(M, g, 'learn', ["An unknown number of marbles."], [
-        ('Method 1 · Equation', [
-            "Add x red marbles. Careful: the red count grows — AND the total grows.",
-            D('Write "red: 5 + x · total: 12 + x"'),
-            D('Write "(5 + x)/(12 + x) = 3/4"'),
-            "Five plus x, over twelve plus x, equals three quarters.",
-            D('Write "4(5 + x) = 3(12 + x) → 20 + 4x = 36 + 3x → x = 16"'),
-            "Cross-multiply: twenty plus four x equals thirty-six plus three x. x is sixteen.",
-            D('Circle choice 3'),
-            "Choice three.",
-            "The trap: keeping the total at twelve. Three quarters of twelve is nine red — add four. That's choice one.",
-        ]),
-        ('Method 2 · Work back from the answers', [
-            "Faster on the exam: work back from the answers. Put each choice into the fraction.",
-            D('Write "4: 9/16 ✗"'),
-            "Add four: nine red out of sixteen. Not three quarters.",
-            D('Write "9: 14/21 = 2/3 ✗"'),
-            "Add nine: fourteen out of twenty-one — two thirds. Still too small.",
-            D('Write "16: 21/28 = 3/4 ✓"'),
-            "Add sixteen: twenty-one out of twenty-eight. Three quarters. Found it.",
-            "Tip: start with a middle choice. Too small? Go up. Too big? Go down.",
-        ]),
-    ])
-
-
-# ------------------------------------------------------------------------------------------------
-# 5. Geometric probability: short lesson + guided question (end of the advanced section)
-# ------------------------------------------------------------------------------------------------
-def _geometric_block(M):
-    sb = ['Area over area', 'Areas you need', 'Circle in a square', 'Triangle in a rectangle']
-    v = M.new_video(GEO, TOPIC, 'Geometric Probability', sb, [
-        dict(mode='title', title='Geometric Probability', script=[
-            "Geometric probability.",
-            "The same idea as always — wanted over possible. But now we measure areas instead of counting.",
-        ]),
-        dict(mode='concept', active=0, title='Area over area', script=[
-            "A point is chosen at random inside a shape. Every spot is equally likely.",
-            A("A 10 by 10 square with a shaded 4 by 5 rectangle appears", VIS(FIG_S_AREA, w=560, h=420)),
-            "There are endless points, so we can't count them. We compare areas.",
-            A("'P = wanted area ÷ total area' appears",
-              T('$P=\\dfrac{\\text{wanted area}}{\\text{total area}}$', size=48)),
-            "Possible first: the whole square. Ten times ten — a hundred.",
-            D('Write "total = 10 · 10 = 100"'),
-            "Wanted: the shaded rectangle. Four times five — twenty.",
-            D('Write "wanted = 4 · 5 = 20 → 20/100 = 1/5"'),
-            "Twenty out of a hundred: one fifth.",
-            "Where the rectangle sits doesn't matter. Only its area.",
-        ]),
-        dict(mode='concept', active=1, title='Areas you need', script=[
-            "You need only three areas for these questions.",
-            A("'Rectangle: length × width' appears", T('Rectangle: $a\\cdot b$ $\\quad$ (square: $a^2$)', size=48, gap=40)),
-            "Rectangle: length times width. A square: side times side.",
-            A("'Triangle: base × height ÷ 2' appears", T('Triangle: $\\dfrac{\\text{base}\\cdot\\text{height}}{2}$', size=48, gap=40)),
-            "Triangle: base times height, over two.",
-            A("'Circle: πr²' appears", T('Circle: $\\pi r^2$', size=48)),
-            "Circle: pi r squared. Radius three? Nine pi.",
-            "You'll learn them fully in geometry. For now, these three are enough.",
-        ]),
-        dict(mode='concept', active=2, title='Circle in a square', script=[
-            "A circle fits exactly inside a square. Its radius is r.",
-            A("A circle inside a square appears", VIS(FIG_S_CIRC, w=560, h=420)),
-            "The side of the square is the diameter: two r.",
-            D('Write "square: (2r)² = 4r² · circle: πr²"'),
-            A("'P = πr² ÷ 4r² = π/4' appears", T('$P=\\dfrac{\\pi r^2}{4r^2}=\\dfrac{\\pi}{4}$', size=48)),
-            "Pi r squared over four r squared. The r squared cancels: pi over four.",
-            "Yes, a probability can have pi in it. It's just a number — about zero point seven eight. The circle fills most of the square.",
-            "And outside the circle? The complement: one minus pi over four.",
-        ]),
-        dict(mode='concept', active=3, title='Triangle in a rectangle', script=[
-            "One more shape that comes up a lot.",
-            A("A rectangle with a shaded triangle on its bottom side appears", VIS(FIG_S_TRI, w=600, h=400)),
-            "The triangle's base is the bottom side of the rectangle. Its top vertex is on the top side.",
-            "So the triangle's height is the rectangle's height.",
-            D('Write "triangle = a · h ÷ 2 · rectangle = a · h"'),
-            A("'P = 1/2' appears", T('$P=\\dfrac{a\\cdot h\\div2}{a\\cdot h}=\\dfrac12$', size=48)),
-            "The triangle is always half of the rectangle. Probability one half — wherever the top vertex is.",
-            "Now try a question.",
-        ]),
-    ], ADV, after='solve-wp29-g165')
-    v['hybrid']['num'] = 59
-
-    g = GID[4]
-    M.new_q(g, TOPIC, 'The figure shows a square with side 6 and a circle with radius 2. The center of the circle is the center of the square. A point is chosen at random inside the square. What is the probability that the point is in the shaded region?',
-            ['$\\frac{\\pi}9$', '$1-\\frac{\\pi}{18}$', '$1-\\frac{\\pi}9$', '$1-\\frac{\\pi}6$'], 3, [
-        'Geometric probability: $P=\\frac{\\text{wanted area}}{\\text{total area}}$.',
-        'Total: the square, $6^2=36$. Circle: $\\pi\\cdot2^2=4\\pi$. Shaded: $36-4\\pi$.',
-        '$P=\\frac{36-4\\pi}{36}=1-\\frac{4\\pi}{36}=1-\\frac{\\pi}9$.',
-        'Or with the complement: $P(\\text{circle})=\\frac{4\\pi}{36}=\\frac{\\pi}9$, so $P(\\text{shaded})=1-\\frac{\\pi}9$.'],
-            figure=FIG_GUIDED)
-    M.place_q(g, ADV, after=GEO)
-    fig = {'type': 'geometry', 'svg': _crop(FIG_GUIDED, '180 40 280 300')}
-    pre = lambda: [Q(g, fig=fig, figw=0.56, figalign='left')]
-    _solution(M, g, 'adv', ["A random point in a square — geometric probability."], [
-        ('Area over area', [
-            "Possible first: the whole square. Six times six — thirty-six.",
-            A("'Total: 6² = 36' appears", T('Total: $6^2=36$', size=38, x=1060, y=300, w=470)),
-            "The shaded region is the square minus the circle. Circle: pi times two squared — four pi.",
-            A("'Circle: π · 2² = 4π' appears", T('Circle: $\\pi\\cdot2^2=4\\pi$', size=38, x=1060, y=370, w=470)),
-            A("'Shaded: 36 − 4π' appears", T('Shaded: $36-4\\pi$', size=38, x=1060, y=440, w=470)),
-            "Shaded: thirty-six minus four pi.",
-            A("'P = 1 − π/9' appears", T('$P=\\frac{36-4\\pi}{36}=1-\\frac{\\pi}9$', size=40, x=1060, y=520, w=470)),
-            "Split the fraction: thirty-six over thirty-six is one. Four pi over thirty-six is pi over nine.",
-            D('Circle choice 3'),
-            "One minus pi over nine. Choice three.",
-        ], pre()),
-        ('The traps', [
-            "Look at what the other choices did.",
-            D('Next to choice 1 write "circle, not shaded"'),
-            "Pi over nine is the chance of the CIRCLE. Read what is shaded.",
-            D('Next to choice 2 write "π · 2 = 2π ✗"'),
-            "One minus pi over eighteen: the radius wasn't squared. The area is pi r SQUARED.",
-            D('Next to choice 4 write "4π/24: lengths ✗"'),
-            "One minus pi over six compares the circumference, four pi, with the perimeter, twenty-four. Probability compares areas, not lengths.",
-        ], pre()),
-    ])
 
 
 # ------------------------------------------------------------------------------------------------
@@ -817,12 +638,11 @@ def _cards(M):
         ['Chosen from a smaller group', 'possible = that group only', '10 of the 18 music students study art: \\(\\frac{10}{18}=\\frac59\\)'],
         ['Complement', '\\(P(\\text{not }A)=1-P(A)\\)', 'gold \\(\\frac37\\) → silver \\(\\frac47\\)'],
         ['AND', 'multiply the probabilities', 'heads and a 5 (8-sided): \\(\\frac12\\cdot\\frac18=\\frac1{16}\\)'],
-        ['OR, separate cases', 'add', 'a 2 or a 5 on a dice: \\(\\frac16+\\frac16=\\frac13\\)'],
+        ['OR, separate cases', 'add', 'a 2 or a 5 on a dice: \\(\\frac16+\\frac16=\\frac13\\) · second try: \\(\\frac17+\\frac67\\cdot\\frac16=\\frac27\\)'],
         ['OR, cases overlap', 'first + second − both', '1 to 30, divisible by 4 or 6: \\(\\frac{7+5-2}{30}=\\frac13\\)'],
         ['At least one', '\\(1-P(\\text{none})\\)', 'two dice, at least one six: \\(1-\\frac{25}{36}=\\frac{11}{36}\\)'],
         ['Exactly one / exactly k', 'one order × number of orders', '3 tosses, exactly 1 head: \\(3\\cdot\\frac18=\\frac38\\)'],
         ['Two stages (tree)', 'multiply along a branch, add the branches', '\\(\\frac12\\cdot\\frac34+\\frac12\\cdot\\frac16=\\frac{11}{24}\\)'],
-        ['Unknown count', 'the total changes too — or work back from the answers', '\\(\\frac5{5+x}=\\frac13\\Rightarrow x=10\\)'],
         ["First pick doesn't matter", 'that stage has probability 1', 'double: \\(1\\cdot\\frac18\\)'],
         ['Without replacement', 'update the bag before the next draw', '8 counters → 7 left'],
         ['History', "past results don't change a fair coin or dice", 'next toss: always \\(\\frac12\\)'],
@@ -830,22 +650,9 @@ def _cards(M):
     c['tips'] = [
         'Two sums the same distance from 7 have the same probability (swap each face \\(x\\) for \\(7-x\\)).',
         'Two dice with \\(n\\) faces: the most likely sum is \\(n+1\\) (8 faces: 9).',
-        'Size check: AND makes the chance smaller, OR makes it bigger.',
         'Two drawn together = one after the other, without replacement.',
-        'A second try only happens after a first miss.',
+        '"Or" questions are rare — and a second try only happens after a first miss.',
     ]
-    M.new_card('mem-r26-t29-geometric', TOPIC, ADV, {
-        'title': 'Geometric probability',
-        'intro': 'A point chosen at random: compare areas.',
-        'tables': [{'title': 'Area over area', 'head': ['Situation', 'Probability', 'Example'], 'rows': [
-            ['Random point in a shape', '$\\frac{\\text{wanted area}}{\\text{total area}}$', '$4\\cdot5$ inside $10\\cdot10$: $\\frac{20}{100}=\\frac15$'],
-            ['Circle that fits in a square', '$\\frac{\\pi r^2}{(2r)^2}=\\frac{\\pi}4$', 'outside the circle: $1-\\frac{\\pi}4$'],
-            ['Triangle on a side of a rectangle, top vertex on the opposite side', 'always $\\frac12$', 'base 8, height 5: $\\frac{20}{40}$'],
-            ['Areas', 'rectangle $a\\cdot b$ · triangle $\\frac{\\text{base}\\cdot\\text{height}}2$ · circle $\\pi r^2$', 'radius 3: $9\\pi$'],
-        ]}],
-        'tips': ['Compare areas, not lengths: radius 2 inside radius 10 gives $\\frac{4\\pi}{100\\pi}=\\frac1{25}$, not $\\frac2{10}$.',
-                 'Shaded outside a shape? Use the complement: $1-P(\\text{shape})$.'],
-    }, after='solve-' + GID[4])
 
 
 # ------------------------------------------------------------------------------------------------
@@ -853,16 +660,6 @@ def _cards(M):
 # ------------------------------------------------------------------------------------------------
 def _practice(M):
     P = {}
-    P[5] = ('A bag contains 6 red balls and some blue balls. The probability of drawing a red ball at random is $\\frac25$. How many blue balls are in the bag?',
-            ['$4$', '$15$', '$9$', '$10$'], 3, [
-        'Let $x$ be the number of blue balls. Total: $6+x$.',
-        '$\\frac6{6+x}=\\frac25$, so $2(6+x)=30$: $6+x=15$ and $x=9$.',
-        'Check: $\\frac6{15}=\\frac25$ ✓. (15 is the total, not the number of blue balls.)'], None)
-    P[6] = ('A drawer contains 10 socks, some black and the rest white. Two black socks are added to the drawer. Now the probability of drawing a black sock at random is $\\frac12$. How many black socks were in the drawer at first?',
-            ['$5$', '$6$', '$4$', '$3$'], 3, [
-        'After adding: $b+2$ black socks out of $10+2=12$ socks.',
-        '$\\frac{b+2}{12}=\\frac12$, so $b+2=6$ and $b=4$.',
-        'Work back from the answers: 4 black at first gives $\\frac{4+2}{12}=\\frac12$ ✓. (6 is the number of black socks after adding; 5 forgets that the total grew.)'], None)
     P[7] = ('In a raffle there are 5 tickets, and 2 of them are winning tickets. Roni draws 2 tickets together at random. What is the probability that at least one of Roni\'s tickets is a winning ticket?',
             ['$\\frac25$', '$\\frac45$', '$\\frac3{10}$', '$\\frac7{10}$'], 4, [
         'At least one winner $=1-$ no winner.',
@@ -884,28 +681,106 @@ def _practice(M):
         'If Dana is chosen, 2 places are left for the other 9 students: $P(\\text{Tal})=\\frac29$.',
         '$\\frac3{10}\\cdot\\frac29=\\frac6{90}=\\frac1{15}$.',
         'By counting: committees with both of them — choose the third member, 8 ways. All committees: $\\frac{10\\cdot9\\cdot8}{3\\cdot2\\cdot1}=120$. $\\frac8{120}=\\frac1{15}$.'], None)
-    P[11] = ('In the figure, a rectangle measures 8 by 5. The base of the shaded triangle is the bottom side of the rectangle, and its third vertex is on the top side. A point is chosen at random inside the rectangle. What is the probability that the point is in the shaded triangle?',
-             ['$\\frac14$', '$\\frac12$', '$\\frac25$', '$\\frac58$'], 2, [
-        'Rectangle: $8\\cdot5=40$. Triangle: base 8 and height 5 (the distance between the top and bottom sides): $\\frac{8\\cdot5}2=20$.',
-        '$P=\\frac{20}{40}=\\frac12$.',
-        'This is always $\\frac12$, wherever the third vertex is on the top side.'], FIG_P_TRI)
-    P[12] = ('A round target has a radius of 10 cm. At its center there is a small circle with a radius of 2 cm (the circles have the same center). An arrow hits a random point on the target. What is the probability that the arrow hits the small circle?',
-             ['$\\frac15$', '$\\frac1{25}$', '$\\frac1{10}$', '$\\frac4{25}$'], 2, [
-        'Target: $\\pi\\cdot10^2=100\\pi$. Small circle: $\\pi\\cdot2^2=4\\pi$.',
-        '$P=\\frac{4\\pi}{100\\pi}=\\frac1{25}$. The $\\pi$ cancels.',
-        'Trap: $\\frac2{10}=\\frac15$ compares the radii, not the areas.'], FIG_P_TARGET)
-    P[13] = ('A square with side 10 contains a smaller square with side $x$, as in the figure. A point is chosen at random inside the large square. The probability that the point is inside the small square is $0.36$. $x=?$',
-             ['$3.6$', '$6$', '$0.6$', '$36$'], 2, [
-        '$P=\\frac{x^2}{10^2}=\\frac{x^2}{100}=0.36$, so $x^2=36$ and $x=6$.',
-        'Check: $\\frac{6^2}{100}=\\frac{36}{100}=0.36$ ✓. (3.6 compares the sides instead of the areas.)'], FIG_P_SQ)
     for k, (stem, ch, cor, ex, fig) in P.items():
         M.new_q(GID[k], TOPIC, stem, ch, cor, ex, figure=fig)
         M.place_q(GID[k], PRACTICE)
 
     g = GID
     M.practice_order(PRACTICE, [
-        'wp29-p01', 'wp29-p06', 'wp29-p07', 'wp29-p09', 'wp29-p08', 'wp29-p04', 'wp29-p02', g[5], g[11], g[12],
-        'wp29-p26', 'wp29-p12', 'wp29-p05', 'wp29-p18', g[6],
+        'wp29-p01', 'wp29-p06', 'wp29-p07', 'wp29-p09', 'wp29-p08', 'wp29-p03', 'wp29-p04', 'wp29-p02',
+        'wp29-p26', 'wp29-p12', 'wp29-p05', 'wp29-p18',
         'wp29-p21', 'wp29-p27', 'wp29-p22', 'wp29-p25', 'wp29-p24', g[9], g[7], 'wp29-p10', g[8], 'wp29-p15',
-        'wp29-p11', 'wp29-p14', 'wp29-p23', g[13], 'wp29-p19',
+        'wp29-p11', 'wp29-p20', 'wp29-p14', 'wp29-p23', 'wp29-p19',
         'wp29-p17', g[10], 'wp29-p13', 'wp29-p16'])
+
+
+# ------------------------------------------------------------------------------------------------
+# 8. Pass 2: summary lesson right before the practice (end of "Further guided examples")
+# ------------------------------------------------------------------------------------------------
+def _summary(M):
+    sb = ['Wanted over possible', 'Possible first', 'The complement', 'AND · OR', 'At least one · exactly one',
+          'Two stages: a tree', 'Shortcuts', 'Before you practice']
+    S = lambda k, script: dict(title=sb[k], mode='concept', active=k, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice — a quick summary of probability.",
+            "Everything important, one idea at a time."]),
+        S(0, [
+            A("'P = wanted ÷ possible' appears", T('$P=\\dfrac{\\text{wanted}}{\\text{possible}}$', size=54, gap=40)),
+            "Probability is wanted over possible. Count outcomes that are equally likely.",
+            A("'5 green, 4 orange: P(green) = 5/9' appears", T('5 green, 4 orange: $\\ P(\\text{green})=\\frac59$', size=44, gap=40)),
+            "Five green out of nine counters: five ninths.",
+            A("'0 ≤ P ≤ 1 · 0 = impossible · 1 = certain' appears",
+              T('$0\\le P\\le1$ — $0$: impossible, $1$: certain', size=44)),
+            "A probability is always between zero and one. Bigger than one? Something went wrong."]),
+        S(1, [
+            A("'Possible first — then wanted' appears", T('Possible first — then wanted', size=48, gap=40)),
+            "Always start from the bottom: what CAN happen?",
+            A("'Chosen from a smaller group? Possible = that group only' appears",
+              T('Chosen from a smaller group? Possible $=$ that group only', size=40, gap=40)),
+            "A music student is chosen? The bottom is the eighteen music students — not all forty students.",
+            A("'Without replacement: update the bag' appears", T('Without replacement: update the bag first', size=42, gap=40)),
+            "Something was already taken out? Count the bag as it is now.",
+            A("'A coin has no memory' appears", T('A fair coin or dice has no memory: next toss $\\frac12$', size=40)),
+            "And past results don't change a fair coin. Six heads in a row — the next toss is still one half."]),
+        S(2, [
+            A("'P(not A) = 1 − P(A)' appears", T('$P(\\text{not }A)=1-P(A)$', size=54, gap=40)),
+            "The complement. Something happens or it doesn't — together, one.",
+            A("'gold 3/7 → silver 4/7' appears", T('gold $\\frac37\\ \\to\\ $ silver $\\frac47$', size=46, gap=40)),
+            "Gold is three sevenths? Then silver is four sevenths.",
+            "Sometimes the opposite is easier to count. Blue buttons: one eighth. So not blue: seven eighths.",
+            "But answer what they asked. One eighth is the blue trap."]),
+        S(3, [
+            A("'AND → multiply' appears", T('AND — both happen $\\to$ multiply', size=46, gap=40)),
+            "AND: multiply. Heads and a five on an eight-sided dice: one half times one eighth — one sixteenth.",
+            A("'OR, separate cases → add' appears", T('OR, separate cases $\\to$ add', size=46, gap=40)),
+            "OR: add — but only cases that can't happen together. A two or a five: one sixth plus one sixth.",
+            A("'OR, overlap: first + second − both' appears", T('OR, cases overlap: first $+$ second $-$ both', size=44, gap=40)),
+            "Can they happen together? Subtract the overlap once. Divisible by four or six: seven plus five minus two.",
+            A("'Second try: 1/7 + 6/7 · 1/6 = 2/7' appears", T('Second try: $\\frac17+\\frac67\\cdot\\frac16=\\frac27$', size=44)),
+            "And a second try only happens after a first miss."]),
+        S(4, [
+            A("'At least one = 1 − none' appears", T('At least one $=1-P(\\text{none})$', size=48, gap=40)),
+            "At least one? Too many cases. Count the opposite — none — and subtract from one.",
+            A("'Two dice, at least one six: 1 − 25/36 = 11/36' appears",
+              T('Two dice, at least one six: $\\ 1-\\frac{25}{36}=\\frac{11}{36}$', size=42, gap=40)),
+            "Not one sixth plus one sixth — that counts the double six twice.",
+            A("'Exactly k: one order × number of orders' appears",
+              T('Exactly $k$: one order $\\times$ number of orders', size=42, gap=40)),
+            "Exactly one head in three tosses: one order is one eighth. Three orders: three eighths.",
+            A("'Drawn together = one after the other, without replacement' appears",
+              T('Drawn together $=$ one after the other, without replacement', size=38)),
+            "Two drawn together? Treat it as one after the other."]),
+        S(5, [
+            A("'Multiply along a branch · add the branches' appears",
+              T('Multiply along a branch $\\cdot$ add the branches', size=44, gap=40)),
+            "Two stages — first a bag, then a token? Draw a tree.",
+            A("'1/2 · 3/4 + 1/2 · 1/6 = 11/24' appears",
+              T('$\\frac12\\cdot\\frac34+\\frac12\\cdot\\frac16=\\frac{11}{24}$', size=48, gap=40)),
+            "Along a branch it's AND — multiply. Different branches are OR — add.",
+            "Don't pour the bags together. Different sizes mean different chances.",
+            A("'One stage can change the next one' appears", T('One stage can change the next stage', size=42)),
+            "And watch the stages that depend on each other. Folk on Tuesday blocks folk on Wednesday."]),
+        S(6, [
+            A("'A stage that can't go wrong = 1' appears", T("A stage that can't go wrong: probability $1$", size=42, gap=40)),
+            "Two dice show the same number? The first can be anything — one. The second must match: one eighth.",
+            "You may choose the order. Start with the stage that can't go wrong.",
+            A("'Symmetry: every place is equally likely' appears", T('Symmetry: the blue sweet is fifth? $\\frac17$', size=42, gap=40)),
+            "One blue sweet out of seven. First, fifth or last — always one seventh.",
+            A("'Two dice: sums symmetric around 7 · n faces → n + 1' appears",
+              T('Two dice: symmetric around $7$ · $n$ faces: top sum $n+1$', size=40, gap=40)),
+            "Nine and five are the same distance from seven — same probability. Eight-sided dice? The top sum is nine.",
+            A("'Letters in the choices: plug in numbers' appears", T('Letters in the choices: plug in numbers', size=42)),
+            "Letters in the choices? Plug in small numbers. First check that the four choices come out different."]),
+        S(7, [
+            "Before you start, always ask yourself:",
+            A('Check 1 appears', T('What is possible — everyone, or a smaller group?', size=40, gap=30)),
+            A('Check 2 appears', T('AND or OR — multiply or add?', size=40, gap=30)),
+            A('Check 3 appears', T('OR: can the cases happen together?', size=40, gap=30)),
+            A('Check 4 appears', T('"At least one"? Use $1-$ none.', size=40, gap=30)),
+            A('Check 5 appears', T('Did the bag change after a draw?', size=40)),
+            "And the traps: adding when you should use one minus none, pouring two bags together, and giving the complement instead of what they asked.",
+            "Now it's your turn. Good luck!"]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
+    M.new_video('r26-t29-summary', TOPIC, 'Summary: Probability', sb, slides, ADV, after=last)

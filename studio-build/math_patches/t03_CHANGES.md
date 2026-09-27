@@ -68,3 +68,23 @@ All keys (old and new) were re-solved; the new ones were also checked numericall
   itself was checked directly and on rendered slides.
 - Solution-video `title` fields still hold the old raw stem text (e.g. `\frac{...}`); the API has no setter, and the
   visible slide header uses "Fraction Questions".
+
+## Pass 2 (2026-09-27, teacher-approved remove/restore plan)
+
+**Removed:** nothing (the plan removes nothing in Topic 3).
+
+**Restored (6 original practice questions, original stem, choices and key; clean-up only: TeX, numeric solutions):**
+- alg-extra-unit-t3-1-1: "Which is greater: 3/7 or 5/9?" (first / equal / depends / second) - key: the second fraction.
+- alg-extra-unit-t3-1-2: "Which is largest? 15/16, 4/5, 7/8, 10/11" - key 15/16.
+- alg-extra-unit-t3-1-3: "Given x > 0. Which is greater: 7/(x+2) or 7/(x+5)?" - key: the first fraction.
+- alg-extra-unit-t3-1-4: "Which is greater: 3/√10 or 2/√5?" - key: the first expression.
+- alg-extra-unit-t3-1-6: "Which is smaller: 3/5 or 4/6?" - key: the first fraction.
+- alg-extra-unit-t3-1-7: "Given c > 1. For which x is (c+x)/(c−x) the smallest?" (−1, 0, 1/2, 1) - key −1.
+
+**New versions kept under new ids** (they test kept methods): q-r26-t03-09 (smallest of 21/19 ... 24/22),
+q-r26-t03-10 (largest of 3/√2 ... 6/√7), q-r26-t03-11 (−1 < x < 0 order). The new versions of -1, -3 and -6 were dropped.
+The "cross-multiplying always works" wording stays corrected (wrong rule). Practice re-ordered easy to hard (25 items).
+
+**Summary video** `r26-t03-summary` "Comparing Fractions: Summary" (about 2.4 min), last item of the learn section,
+right before the practice. Slides: Summary · Cross-multiply · Signs first · Quick shortcuts · Distance from 1 ·
+Add to top and bottom · Square or flip · x by range · Plug in numbers · Before you practice.

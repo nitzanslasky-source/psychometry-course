@@ -60,3 +60,17 @@ Patch: `math_patches/t07.py`. `python3 math_check.py 7` gives 0 problems, 0 warn
 - The main lesson is now about 8 minutes long. If that is too long, "Plug in numbers" and "Try the choices" could become a separate short video.
 - Existing solution-video titles are still the raw stem text (for example "Given: {x}^{7}…"). That is the base data, not something this patch changed. The "Q None" numbering shown on practice items comes from the renderer, not from this topic's data.
 - T4/T5 practice uses quadratics before this lesson (see PLAN.md). Those topics may want a pointer to T7, or the quadratics lesson could move earlier in the course.
+
+## Pass 2 (teacher-approved remove/restore plan, 2026-09-27)
+**Removed**
+- `r26-t07-more-tools`: slide "Solutions of a system" and its sidebar entry; the title slide now says "Two more tools … multiplying or dividing equations, and the famous x plus one over x"; recap line "Same left side: different right → none; same → infinitely many" removed; "Three questions now" → "Two questions now".
+- Guided q-r26-t07-03 (parameter k, no solution) and `solve-q-r26-t07-03`. The quadratic guided questions are renumbered 23–25 (title slides, sidebars, spoken "Question twenty-three…").
+- Practice q-r26-t07-17 and q-r26-t07-18 (removed from the `unit-t7-5` order).
+- Card `mem-r26-t07-equations`: tip "Two equations: make the left sides equal…".
+
+**Restored**
+- alg-extra-unit-t7-1-1 … -1-7 back in `unit-t7-1`, original position, text cleaned (TeX, stacked givens, numeric solutions). Section title back to "Additional source-bank variants".
+- q-203: original choice 4, $m^2 - 2$.
+- `equation-strategy` slide 6: board line "Add, subtract — or divide — the equations" and the two spoken lines (practice, recognize the patterns); the new example stays. Slide 8: "See x minus y, x squared plus y squared, and x times y together? That's this formula…" and "Find the right formula, plug in what you know, and isolate what they ask for." Recap: "Asked for an expression? Build it directly — use the checklist".
+
+**Summary video (new)** `r26-t07-summary` "Equations: Summary", at the end of the Quadratic equations section, right before the practice: Summary · Don't divide by x · Plus AND minus · Quadratics · Fraction = 0 · Build the expression · Hidden formulas · Two unknowns · Plug in or try · Before you practice.

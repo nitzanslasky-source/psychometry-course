@@ -84,3 +84,19 @@ Existing videos now use the new tools:
 - **Topic order:** the sign rules (topic 16) and the must/could/cannot wordings (topic 20) are now taught briefly here, so nothing is used before it is taught. If topic 16 or topic 20 moves earlier, the "Signs of a product" slide and the wordings card can stay as short reminders.
 - Solution-video titles for questions with stacked conditions show the raw text of the stem ("\begin{cases}…") in the navigation label. This is the same as in other topics. It happens because the API builds the label from the plain stem.
 - The lesson video is now about 8.7 minutes long (it was 6.3). The strong-student tools went into a separate 3.6-minute video to keep the main lesson for weak students.
+
+## Pass 2 (teacher-approved remove/restore plan, 2026-09-27)
+
+**Removed** (not on the real exam and not in the original course: writing a range as |x − m| < r):
+- Video "Absolute Value — Exam Tools": slide "From a range to bars", its sidebar label and its Recap line.
+- Guided question q-r26-t13-04 ("which inequality is exactly −3 < x < 7") and its solution video. The advanced guided questions are renumbered (now Questions 8–16), sidebars updated.
+- Practice q-r26-t13-06 (−8 < x < 2 → bars), also taken out of the practice order.
+- Memory card "Absolute value", table "Distance tools": the row "a < x < b → |x − (a+b)/2| < (b−a)/2".
+
+**Kept** (as the plan says): the "no solution / every x / one solution" items (q-r26-t13-02, -05, -11) and the sum of distances (q-r26-t13-10).
+
+**Restored:** nothing - no original question was deleted in this topic.
+
+**New: summary video** `r26-t13-summary` "Absolute Value — Summary", at the end of the advanced section, right before the independent practice (about 2.6 minutes).
+Slides: Summary · Distance from zero · The rules · Sign clues · Equations · Inequalities · Negative right side · Distance · Plug in · Before you practice.
+It only repeats what the lessons teach. The last slide lists the checks (is the letter positive, negative or zero? both cases? right side negative or zero? letter on the right: checked? which question word?) and the traps (forgetting zero, losing the second case, keeping a fake answer).

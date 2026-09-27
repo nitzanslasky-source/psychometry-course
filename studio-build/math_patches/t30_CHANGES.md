@@ -62,3 +62,30 @@ New rows: right angle only if marked, adjacent on a straight line, Z shape, U sh
 - The zig-zag rule is taught as "angles pointing left = angles pointing right" for the angles inside the zig-zag. The C shape is taught as a separate case. Please confirm the wording works for recording.
 - The "Parallel or not?" slide teaches the reverse rule (equal small angles or small + large = 180° → parallel). It is needed for new practice -09. Remove both if you think it is too much for this topic.
 - Foundation p16 (distance = 7 cm) is still very easy. It is kept as the first warm-up question.
+
+## Pass 2 (teacher-approved remove/restore plan + summary lessons)
+**Removed (plan):**
+- Q4 video (`solve-geo30-g007`): the slide "The C shape" (the zig-zag slide stays).
+- Card: the row "Bent line (C shape)". (The units-digit tip was removed first, then put back: the original Q2 video teaches it.)
+- Practice `q-r26-t30-08` (C shape with α and β).
+
+**Restored (plan):**
+- Lesson, slide "Right angle": the original line "On the psychometric exam, in almost every case, there's also a dot
+  in the middle of the square." is back. The new rule (90° only if marked or given) follows it.
+- Foundation practice **geo30-foundation-p09** (α + β = 116°), **p15** (three parallel lines and a fourth line: 3
+  points) and the original **p14** (bent line, a ∥ b, 39° and 63° → x = 102°, with its original figure). p14 is no
+  longer rewritten as a C shape and stays in the foundation practice. Clean-up only: full numeric solutions.
+- Practice: foundation 16 → 19, advanced 22 → 20 (p14 back to foundation, q-08 removed).
+
+**New summary videos (the topic is learn → practice → learn → practice, so there are two):**
+- `r26-t30-summary` "Summary: Lines and Angles" (end of "Learn and try", before the foundation practice). Slides:
+  Summary · Angles at a point · Right angle · Adjacent and vertical · Parallel lines · Z and U · Parallel or not? ·
+  Segments on a line · Before you practice (checks: really 90° — marked or given; really parallel — given or proved;
+  small or large; segments — count the gaps).
+- `r26-t30-summary-2` "Summary: Harder Line and Angle Questions" (end of "Further guided examples", before the advanced
+  practice). Slides: Summary · Crowded figures · Anchor: 180° or 360° · Letters: plug in · Overlapping angles ·
+  A missing line · The zig-zag rule · Before you practice.
+
+**Units-digit shortcut:** the plan removed the card tip ("0 original questions"), but the original Q2 video
+(`solve-geo30-g005`, slide "Units-digit shortcut") teaches it. By the rule it stays: the card tip is back, the Q2 video
+slide and written-solution line stay, and summary 2 ("Crowded figures") has one spoken line about it.

@@ -116,3 +116,15 @@ The review asked for a medium guided must/could/cannot question before Q1. Q1 an
 - **Topic 21** repeats "Possible vs must" and "Minimum & maximum". You may want a cross-reference, or to shorten those slides there. I did not edit Topic 21.
 - **The two sock questions (G4 and q-r26-t20-09) use the same drawer on purpose.** The practice one asks the harder "two blue socks" version.
 - **q-r26-t20-11 (taxi) has the same answer logic as old Q4.** The correct answer is in position 2 so that it does not repeat.
+
+## Pass 2 (2026-09-27, teacher-approved remove/restore plan + summary lesson)
+**Removed:** nothing (the plan keeps every Topic 20 addition, including "To be sure", q-r26-t20-04 and q-r26-t20-09).
+
+**Restored:**
+- alg-extra-unit-t20-2-6 ($a^2=b^2\Rightarrow|a|=|b|$), cleaned up with a numeric solution, in the easy part of the practice.
+- Main lesson, true lines from the original slides, merged into the new slides without repeating:
+  - "Three tools": the original "honest truth" lines (a fairly small part of the exam, the questions don't repeat themselves, no repeating principle, this lesson gives you tools that open your head). The new line "It's a small part of the exam..." was dropped so the idea is said once.
+  - "Connect topics": "A cycle of ratios cancels to one" (replaces the new "cycle of fractions" wording) and "But the connection must come from the givens. Lengths must be positive; cancelling needs nonzero values. Check before you use it." (replaces the new, shorter check line).
+  - The "Pythagoras in disguise" line stays replaced (it points to a later topic), as the plan says.
+
+**Summary lesson (1 new video):** `r26-t20-summary` "Summary", at the end of "Algebraic understanding" (after the counting card), right before the independent practice. Slides: Summary · Three tools · Must, could, cannot · Which numbers? · Between 0 and 1 · Integer gaps · Scaling · Connect topics · Counting integers · Pigeonhole · Before you practice. Only content the Topic 20 lessons teach.

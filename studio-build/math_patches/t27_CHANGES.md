@@ -107,3 +107,24 @@ In **"Average Speed"**, recap: estimate first (which side of the middle?), and t
 - The new videos are in "Further guided examples", after Q13. They could also go into "Learn and try".
 - p13 (scientific notation) stays as an easy warm-up. It is more exponents than motion.
 - Q2 still depends on Pythagoras. The lesson now gives a one-line reminder. The other option is to move Q2 after T31.
+
+## Pass 2 (2026-09-27): remove/restore plan + summary lesson
+Check: `python3 math_check.py 18 27 28 33` shows 0 problems, 0 warnings and 0 layout problems.
+
+**Removed (plan):**
+- "Special Motion Cases": the slides "Two trains" and "Meeting twice", their Recap lines and sidebar entries. The title slide no longer mentions meeting twice. The recap now says "Three questions next."
+- Guided q-r26-t27-04 (meeting twice) and its solution video. Later guided questions were renumbered: the guided questions now run 1 to 18.
+- Practice q-r26-t27-08 (two trains), -13 and -14 (meeting twice).
+- Card "Motion — special cases": the rows "Two trains pass each other" and "Two walkers meet … meet again". The intro no longer mentions meeting twice.
+
+**Removed (teacher decision: distance-time graphs):**
+- In `r26-t27-graphs`: the slides "Distance–time graphs" and "Two travelers", with their figures, recap lines and sidebar entries. The video is now called "Percents and Letters" (2 concept slides and a recap, which says "Two questions next.").
+- Guided q-r26-t27-07 (graph) and its solution video. Practice q-r26-t27-19 and -20.
+- The card table "Distance–time graphs". The code that drew the 5 graphs was deleted too.
+
+**Restored:**
+- Practice wp27-p14, wp27-p21, wp27-p22 and wp27-p23 (the original text, with TeX and the numbers shown in the solutions; p21 now says "8 kph"). They are placed in the practice order by difficulty.
+- wp27-p10: the original question (central angle, 45°/72°/90°/60°, key 60°) is restored. It is **moved to the T33 foundation practice** (`geo33-foundation-practice`), because central angles belong to circles. The pass-1 version ("what fraction of the track", key 1/6) stays in the T27 practice as a new question, **q-r26-t27-23**.
+- "Average Speed", slide 1: the line "Honestly? Rare on the exam." is back, followed by the original "the idea behind it shows up in disguise" line.
+
+**Summary lesson added:** `r26-t27-summary` "Summary" (about 2.4 minutes). It is at the end of "Further guided examples", right before the practice. Slides: Summary · The formula · The table · Average speed · What is fixed? · Relative speed · Special cases (train, river, circle) · Percents and letters · Before you practice (units, what is fixed, toward each other or a chase / the starting gap, average speed = total ÷ total; traps: 20 minutes ≠ 0.2 hour, the average of the speeds, sketch).

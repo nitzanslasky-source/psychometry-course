@@ -47,22 +47,20 @@ def apply(M):
         "Most rules here you already know — from topics eight, nine and ten. These questions combine them.",
         "The hard part is choosing the right form. Let's see how.",
     ])
-    M.set_slide(LESSON, 3, title='Patterns to spot', script=[
-        "Some questions hide a pattern you already know. Spot it, and the question gets short.",
-        A('(x+y)² formula appears', T('$(x+y)^2=x^2+y^2+2xy$', size=52, gap=40)),
-        "Pattern one: a multiplication formula inside an exponent question.",
-        "Once an exponent law gives you x plus y, this formula hands you x squared plus y squared — directly.",
-        D('Circle "x² + y²" and "2xy"'),
-        "No need to find x and y separately. If the expression they ask for is already determined — just build it.",
-        A("'aᵇ = bᵃ: only 2 and 4' appears", T('Different positive whole numbers: $a^b=b^a$ only for $2$ and $4$', size=40)),
-        "Pattern two, from topic eight: a to the b equals b to the a.",
+    # Pass 2: the original slide 3 "Laws + identities" stays; "Patterns to spot" is an added slide after it
+    # (its (x+y)^2 pattern is on the original slide, so it holds the other two patterns).
+    M.insert_slides(LESSON, 3, [dict(mode='concept', active=2, title='Patterns to spot', script=[
+        "Two more patterns you already know. Spot them, and the question gets short.",
+        A("'aᵇ = bᵃ: only 2 and 4' appears", T('Different positive whole numbers: $a^b=b^a$ only for $2$ and $4$', size=40, gap=40)),
+        "Pattern one, from topic eight: a to the b equals b to the a.",
         "For two different positive whole numbers, the only pair is two and four.",
         "Only whole numbers! With fractions there are other pairs. So check what the question gives you.",
         A('copies appear', T('$2^y+2^y+2^y+2^y=4\\cdot2^y=2^{y+2}$', size=48)),
-        "Pattern three, from topics eight and ten: equal powers added. Count the copies.",
+        "Pattern two, from topics eight and ten: equal powers added. Count the copies.",
         "Four copies of two to the y is four times two to the y — two to the y plus two.",
-    ])
-    M.set_slide(LESSON, 5, script=[
+    ])])
+    M.video(LESSON)['beats'][4]['active'] = 3; M.video(LESSON)['beats'][5]['active'] = 4   # Choose a method, Recap shift down
+    M.set_slide(LESSON, 6, script=[
         "Let's lock it in.",
         A("'Translate before calculating' appears", T('Translate before calculating', size=46)),
         A("'Look for a known pattern' appears", T('Look for a known pattern', size=46)),
@@ -70,7 +68,7 @@ def apply(M):
         D('Tick each line'),
         "Five questions next. Try each one first — then watch its solution.",
     ])
-    M.set_sidebar(LESSON, ['Translate first', 'Patterns to spot', 'Choose a method', 'Recap'])
+    M.set_sidebar(LESSON, ['Translate first', 'Laws + identities', 'Patterns to spot', 'Choose a method', 'Recap'])
 
     # =====================================================================================
     # 2. Q4 video: "only 2 and 4" needs "positive whole numbers"
@@ -92,16 +90,11 @@ def apply(M):
     # =====================================================================================
     # 3. Other existing solution videos
     # =====================================================================================
-    # Q10: the "lesson's favourite" was never said in this topic
-    def q10(ls):
-        for l in ls:
-            if "lesson's favourite" in l.get('say', ''):
-                l['say'] = "We need a number whose roots come out clean. Four is good for square roots — but here four gives root eight at the end. Not clean."
-        return ls
-    M.edit_lines('solve-q-297', 3, q10)
+    # Q10 (solve-q-297 slide 3): Pass 2 keeps the original line "The lesson's favourite is four ..."
 
-    # Q9: rationalize first (fastest), then the old "match the denominators" route
-    M.set_slide('solve-q-296', 3, title='Method 1 · Clear the root', script=[
+    # Q9: rationalize first (fastest), then the original two methods (match / multiply the denominators)
+    M.insert_slides('solve-q-296', 1, [dict(mode='question', active=M.slide('solve-q-296', 2)['active'],
+                                            title='Method 1 · Clear the root', pre=[Q('q-296')], script=[
         "Fastest route: get the root out of the first denominator.",
         D('Next to 3/(2√2) write "· √2/√2 = 3√2/(2 · 2) = 3√2/4"'),
         "Multiply top and bottom by root two. Root two times root two is two — so the bottom is two times two, four.",
@@ -110,17 +103,23 @@ def apply(M):
         "Three root two plus one root two: four root two. Over four: root two.",
         D('Circle choice 2'),
         "Choice two.",
-    ])
-    M.move_slide('solve-q-296', 3, 2)
+    ])])
     M.set_slide('solve-q-296', 3, title='Method 2 · Match the denominators')
     M.edit_lines('solve-q-296', 3, lambda ls: [
         {'say': "Method two: rewrite the second fraction so it matches the first."} if 'Method one' in l.get('say', '') else l
         for l in ls])
+    M.set_slide('solve-q-296', 4, title='Method 3 · Multiply the denominators')
+    M.edit_lines('solve-q-296', 4, lambda ls: [
+        dict(l, say=l['say'].replace('Method two:', 'Method three:')) if 'say' in l else l for l in ls])
+    M.edit_lines('solve-q-296', 1, lambda ls: [
+        {'say': 'Two fractions with roots. Three ways to add them.'} if l.get('say', '').startswith('Two fractions with roots') else l
+        for l in ls])
 
-    # Q12: lead with "product = 0"
-    M.set_slide('solve-q-299', 2, title='Product equals zero', script=[
-        "To count the solutions, we have to solve it.",
-        "Look at the left side: it's already a product. Root x, times root x minus three.",
+    # Q12: the original "Open the brackets" first, then "Product equals zero" as the second method
+    M.set_slide('solve-q-299', 2, title='Method 1 · Open the brackets')
+    M.insert_slides('solve-q-299', 2, [dict(mode='question', active=M.slide('solve-q-299', 2)['active'],
+                                            title='Method 2 · Product equals zero', pre=[Q('q-299')], script=[
+        "Method two — the fast one. Look at the left side: it's already a product. Root x, times root x minus three.",
         "A product is zero only when one of the factors is zero.",
         D('Write "√x = 0  or  √x − 3 = 0"'),
         "So root x is zero — or root x minus three is zero.",
@@ -128,12 +127,9 @@ def apply(M):
         "Root x is zero: x is zero.",
         D('Write "√x = 3 → x = 9"'),
         "Root x is three: x is nine.",
-        D('Write "x = 0: 0 · (−3) = 0 ✓" and "x = 9: 3 · 0 = 0 ✓"'),
-        "Check both. Both work.",
         D('Circle choice 2'),
-        "Exactly two solutions. Choice two.",
-        "The trap: dividing both sides by root x. That throws away x equals zero — and you'd answer one. Wrong.",
-    ])
+        "The same two solutions. Choice two.",
+    ])])
 
     # Q13: quick check - 108 = 4 * 27
     M.edit_lines('solve-q-300', 2, lambda ls: ls + [
@@ -273,7 +269,7 @@ def apply(M):
     S('q-316', expl=[
         '$\\frac{\\sqrt2\\cdot\\sqrt5}{2}=\\frac{\\sqrt{10}}{\\sqrt4}=\\sqrt{\\frac{10}4}=\\sqrt{\\frac52}=\\left(\\frac52\\right)^{\\frac12}$.',
         'Same base, so the exponents are equal: $3x=\\frac12$ and $x=\\frac16$.'])
-    S('q-317', choices=['$\\frac{4}{3}$', '$\\frac{2}{3}$', '$\\frac{3}{2}$', '$\\frac{1}{6}$'], expl=[
+    S('q-317', choices=['$\\frac{4}{3}$', '$\\frac{2}{3}$', '$\\frac{2}{6}$', '$\\frac{1}{6}$'], expl=[
         'Write everything with primes: $36^2=(6^2)^2=6^4$, so the top is $6^4\\cdot6^4=6^8=2^8\\cdot3^8$.',
         '$\\frac{2^8\\cdot3^8}{3^9\\cdot2^7}=2^{8-7}\\cdot3^{8-9}=2\\cdot3^{-1}=\\frac23$.'])
     S('q-318', stem='Given: $y$ is an integer, and\n$\\begin{cases} x>0,\\ y>0 \\\\ x^{3y}=x^y \\end{cases}$\n$y^x=?$',
@@ -299,8 +295,15 @@ def apply(M):
     S('alg-extra-unit-t11-3-7', stem='$\\sqrt{128}+\\sqrt{50}=?$',
       expl=['$\\sqrt{128}=\\sqrt{64}\\cdot\\sqrt2=8\\sqrt2$ and $\\sqrt{50}=\\sqrt{25}\\cdot\\sqrt2=5\\sqrt2$.',
             '$8\\sqrt2+5\\sqrt2=13\\sqrt2$ (not $\\sqrt{178}$: roots do not add under one root).'])
-    for k in [1, 3, 5, 6]:
-        M.unplace('alg-extra-unit-t11-3-%d' % k)
+    # Pass 2: the other four extras are original items and come back (text clean-up only)
+    S('alg-extra-unit-t11-3-1', stem='$\\frac{5^9}{5^6}=?$', choices=['$5$', '$25$', '$625$', '$125$'],
+      expl=['Same base: subtract the exponents. $\\frac{5^9}{5^6}=5^{9-6}=5^3=125$.'])
+    S('alg-extra-unit-t11-3-3', stem='Given: $3^{x+1}=3^7$. $x=?$', choices=['$18$', '$6$', '$5$', '$7$'],
+      expl=['Same base, so the exponents are equal: $x+1=7$, so $x=6$.'])
+    S('alg-extra-unit-t11-3-5', stem='Given: $x\\ne0$. $\\frac{(5x)^3}{25x^2}=?$', choices=['$x$', '$125x$', '$5x$', '$5x^2$'],
+      expl=['$(5x)^3=5^3\\cdot x^3=125x^3$.', '$\\frac{125x^3}{25x^2}=\\frac{125}{25}\\cdot x^{3-2}=5x$.'])
+    S('alg-extra-unit-t11-3-6', stem='Which is greater: $2^{16}$ or $4^7$?',
+      expl=['Same base: $4^7=(2^2)^7=2^{14}$.', '$2^{16}>2^{14}$, so the first power, $2^{16}$, is greater.'])
 
     # =====================================================================================
     # 5. New Section B lesson: the tools the solution videos used without teaching
@@ -477,7 +480,6 @@ def apply(M):
             ]},
             {'title': 'From topics 8 to 10', 'head': ['Topic', 'Tool', 'Example'], 'rows': [
                 ['8, 10', 'equal powers added: count the copies', '$2^x+2^x=2^{x+1}$'],
-                ['8, 10', 'compare powers: make the exponents equal', '$2^{30}=8^{10}<9^{10}=3^{20}$'],
                 ['8, 9', 'between 0 and 1', '$x^3<x^2<x<\\sqrt x$'],
                 ['9', 'different roots: raise to a common power', '$\\sqrt2$ vs $\\sqrt[3]3$: $8<9$'],
                 ['9', 'square of a sum of roots', '$(\\sqrt a+\\sqrt b)^2=a+b+2\\sqrt{ab}$'],
@@ -495,10 +497,6 @@ def apply(M):
     # 8. New practice questions (exam level)
     # =====================================================================================
     P = {}
-    P['03'] = ('$\\frac{(0.2)^3\\cdot10^4}{\\sqrt{0.0016}}=?$', ['$20$', '$200$', '$2000$', '$20000$'], 3, [
-        '$(0.2)^3=0.008$, so the top is $0.008\\cdot10^4=80$.',
-        '$\\sqrt{0.0016}=0.04$ (half the decimal digits: $4$ digits become $2$).',
-        '$\\frac{80}{0.04}=\\frac{8000}{4}=2000$. ($200$ is the trap: it takes $\\sqrt{0.0016}=0.4$.)'])
     P['04'] = ('$\\frac{2}{\\sqrt7+\\sqrt5}=?$', ['$\\sqrt7+\\sqrt5$', '$2(\\sqrt7-\\sqrt5)$', '$\\sqrt7-\\sqrt5$', '$\\frac{\\sqrt7-\\sqrt5}{2}$'], 3, [
         'Multiply the top and the bottom by the conjugate $\\sqrt7-\\sqrt5$.',
         'Bottom: $(\\sqrt7+\\sqrt5)(\\sqrt7-\\sqrt5)=7-5=2$.',
@@ -511,11 +509,6 @@ def apply(M):
         'Square the sum: $(\\sqrt a+\\sqrt b)^2=a+b+2\\sqrt{ab}=10+2\\sqrt9=10+6=16$.',
         '$\\sqrt a+\\sqrt b$ is positive, so it is $\\sqrt{16}=4$.',
         'Check: $a=1$, $b=9$ fit the givens, and $\\sqrt1+\\sqrt9=4$ ✓. ($\\sqrt{10}$ is the trap $\\sqrt a+\\sqrt b=\\sqrt{a+b}$.)'])
-    P['07'] = ('Given:\n$\\begin{cases} a=2^{100} \\\\ b=10^{30} \\\\ c=3^{60} \\end{cases}$\nWhich of the following is correct?',
-               ['$a<b<c$', '$c<b<a$', '$b<c<a$', '$c<a<b$'], 2, [
-        'The exponents 100, 30 and 60 all divide by 10. Make the exponents equal (topics 8 and 10):',
-        '$a=(2^{10})^{10}=1024^{10}$, $b=(10^3)^{10}=1000^{10}$, $c=(3^6)^{10}=729^{10}$.',
-        'Same exponent, so compare the bases: $729<1000<1024$. Therefore $c<b<a$.'])
     P['08'] = ('Given: $0<x<1$. Which of the following is the largest?', ['$\\sqrt[3]{x}$', '$x^{-\\frac12}$', '$x^{-2}$', '$x^3$'], 3, [
         'Choose a number between 0 and 1: $x=\\frac14$.',
         '$\\sqrt[3]{\\frac14}<1$, $\\left(\\frac14\\right)^{-\\frac12}=4^{\\frac12}=2$, $\\left(\\frac14\\right)^{-2}=4^2=16$, $\\left(\\frac14\\right)^3=\\frac1{64}$.',
@@ -546,8 +539,84 @@ def apply(M):
     # 9. Practice order: warm-up first, easy -> hard
     # =====================================================================================
     M.practice_order('unit-t11-3', [
-        'alg-extra-unit-t11-3-2', 'alg-extra-unit-t11-3-4', 'alg-extra-unit-t11-3-7',
+        'alg-extra-unit-t11-3-1', 'alg-extra-unit-t11-3-3', 'alg-extra-unit-t11-3-2', 'alg-extra-unit-t11-3-4',
+        'alg-extra-unit-t11-3-5', 'alg-extra-unit-t11-3-6', 'alg-extra-unit-t11-3-7',
         'q-302', 'q-304', 'q-311', 'q-320', 'q-305', 'q-317', 'q-308', 'q-307', 'q-309', 'q-313',
-        'q-306', 'q-r26-t11-03', 'q-r26-t11-04', 'q-316', 'q-319', 'q-r26-t11-05', 'q-303', 'q-312',
+        'q-306', 'q-r26-t11-04', 'q-316', 'q-319', 'q-r26-t11-05', 'q-303', 'q-312',
         'q-318', 'q-315', 'q-314', 'q-321', 'q-310', 'q-r26-t11-06', 'q-r26-t11-10', 'q-r26-t11-12',
-        'q-r26-t11-08', 'q-r26-t11-07', 'q-r26-t11-09', 'q-r26-t11-11'])
+        'q-r26-t11-08', 'q-r26-t11-09', 'q-r26-t11-11'])
+
+    add_summary(M)
+
+
+# ------------------------------------------------------------------ Pass 2: summary video before the practice
+def add_summary(M):
+    sb = ['Translate first', 'Hidden formulas', 'Root of a root', 'Undo a power', 'Conjugates',
+          'Product = 0', 'Power = 1 and "or"', 'Two routes', 'Before you practice']
+    C = lambda i, title, script: dict(title=title, mode='concept', active=i, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice, let's review the whole topic in three minutes.",
+            "Every tool, every trap. Short and fast."]),
+        C(0, 'Translate first', [
+            "Before any arithmetic — translate.",
+            A('Prime bases', T('Big power $\\to$ prime bases: $36^2=(6^2)^2=6^4$', size=44)),
+            "A big power? Break the base into primes. Equal bases start cancelling.",
+            A('Fractional exponent', T('Nested root $\\to$ fractional exponent: $\\sqrt{\\sqrt5}=5^{\\frac14}$', size=44)),
+            "A root inside a root? Turn it into a fractional exponent.",
+            "Don't compute giant numbers just because you can."]),
+        C(1, 'Hidden formulas', [
+            "Some questions hide a pattern you already know.",
+            A('(x+y)²', T('$(x+y)^2=x^2+y^2+2xy$', size=48)),
+            "You know x plus y and x times y? Build x squared plus y squared directly. No need to find x and y.",
+            A('2 and 4', T('Different positive whole numbers: $a^b=b^a$ only for $2$ and $4$', size=40)),
+            "a to the b equals b to the a: only two and four — and only for whole numbers.",
+            A('Copies', T('$2^y+2^y+2^y+2^y=4\\cdot2^y=2^{y+2}$', size=46)),
+            "Equal powers added? Count the copies."]),
+        C(2, 'Root of a root', [
+            "A root inside a root: multiply the indices.",
+            A('Root of a root', T('$\\sqrt{\\sqrt{x}}=\\sqrt[4]{x}$', size=54)),
+            "Two times two: a fourth root.",
+            A('Factor inside', T('$\\sqrt{x\\sqrt x}=\\sqrt{\\sqrt{x^3}}=\\sqrt[4]{x^3}$', size=50)),
+            "A factor in front of the inner root? Bring it inside first — squared."]),
+        C(3, 'Undo a power', [
+            "x has a strange power, and you want x alone?",
+            A('Reciprocal power', T('$x^{-\\frac12}=4\\ \\Rightarrow\\ x=4^{-2}=\\frac1{16}$', size=52)),
+            "Raise both sides to the reciprocal power. Minus a half times minus two is one.",
+            "Then check it: one sixteenth to the minus a half is sixteen to the half. Four. It works."]),
+        C(4, 'Conjugates', [
+            "The difference of squares, with roots.",
+            A('Conjugates', T('$a-b=(\\sqrt a-\\sqrt b)(\\sqrt a+\\sqrt b)$', size=50)),
+            "a minus b over root a minus root b? Split the top and cancel.",
+            A('Clear the bottom', T('$\\dfrac{1}{\\sqrt5-2}=\\dfrac{\\sqrt5+2}{5-4}=\\sqrt5+2$', size=48)),
+            "A root difference at the bottom? Multiply the top and the bottom by the conjugate."]),
+        C(5, 'Product = 0', [
+            "An equation that is already a product equal to zero:",
+            A('Product = 0', T('$\\sqrt{x}\\cdot(\\sqrt{x}-3)=0\\ \\Rightarrow\\ x=0$ or $x=9$', size=48)),
+            "Each factor can be zero. Root x is zero, or root x is three.",
+            A('Never divide', T('Never divide by $\\sqrt{x}$ — it can be $0$', size=46)),
+            "Never divide by root x. You lose x equals zero."]),
+        C(6, 'Power = 1 and "or"', [
+            "When is a power equal to one?",
+            A('Power = 1', T('$a^b=1$: base $1$; base $-1$, $b$ even; $b=0$, $a\\ne0$', size=42)),
+            "Base one. Base minus one with an even exponent. Or exponent zero — with a base that isn't zero.",
+            A('Or claims', T('"A or B" is killed by one allowed case where both are false', size=40)),
+            "An \"or\" claim is necessarily true if every allowed case makes one part true. To kill it, find one case where both parts are false."]),
+        C(7, 'Two routes', [
+            "Every question has two routes.",
+            A('Two routes', T('Route 1: the laws · Route 2: plug in numbers', size=44)),
+            "The laws, step by step. Or plug in numbers — or try the choices.",
+            A('Choices differ', T('Check that the choices give different values', size=44)),
+            "Before you trust one number, check that the choices give different values. If two tie — try another number.",
+            "Pick a number whose roots come out clean — like sixteen."]),
+        C(8, 'Before you practice', [
+            "Before you practice, always ask yourself:",
+            A('Check 1', T('1. Can I write it with prime bases or the same base?', size=40)),
+            A('Check 2', T('2. Is there a known pattern or formula here?', size=40)),
+            A('Check 3', T('3. Can the thing I divide by be $0$?', size=40)),
+            A('Check 4', T('4. Do the choices give different values for my number?', size=40)),
+            "And watch the traps: root a plus root b is NOT root of a plus b. Two and four only for whole numbers. And never divide by root x.",
+            "You know all of this. Go practice."]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == 'power-b'][-1]
+    M.new_video('r26-t11-summary', TOPIC, 'Advanced Exponents & Roots: Summary', sb, slides, 'power-b', after=last)

@@ -71,3 +71,21 @@ The new guided questions get new numbers automatically. In course order they are
 - fp06, fp15 and adv-p12 are really T30 angle-chasing questions. I kept them, because they use quadrilaterals. They could move to T30.
 - fp25 (area ×k²) is now taught here, on the Square slide. T36 teaches it again for similar figures.
 - T33 adv-p17 uses "the midpoint square has half the area". It is now on the T32 properties card and in practice item q-13.
+
+## Pass 2 (2026-09-27, teacher-approved remove/restore plan + summary lessons)
+
+**Removed (added items the plan drops)**
+- Lesson slides: "The arrow rule" (geo-042), "The midsegment" (geo-054), "Trapezoid butterfly" (geo-067-after). Sidebars back to the original lists (geo-042 keeps "Who is also who?").
+- Guided questions with their solution videos: `q-r26-t32-03` (midsegment), `-04` (arrow rule), `-05` (butterfly). Group sidebars fixed; guided questions renumber automatically.
+- Practice: `q-r26-t32-10`, `-11`, `-14` (foundation), `-15`, `-16`, `-19` (advanced).
+- Cards: `mem-quad-family` tip "Concave (arrow)…" and the Trapezoid diagonals cell (back to the original "—"); `mem-quad-area` Trapezoid "Remember" cell back to the original "sum of the bases × height ÷ 2"; `mem-equal-heights` row "Trapezoid with both diagonals…".
+
+**Restored**
+- Foundation practice `geo32-foundation-p05`, `-p08`, `-p12`, `-p19`, `-p22`, placed by difficulty. Clean-up only: solutions in TeX with the numbers shown, "therefore"; p19's givens stacked with `cases`.
+- `solve-geo32-g070` (Q19): slide 3 "Approach 2 · Completions" is back; slide 4 is "Approach 3 · Split with symmetry" again, with its original opening line and the closing line "…by completions or by symmetry."
+- `solve-geo32-g059`: original framing ("Learn all three", "it's important to know all of them") and original order (median, four equal areas, base × height). Kept clean-ups: the "Circle choice 3" note and "true in every parallelogram…".
+- `solve-geo32-g060`: original framing and order (diagonals first, "get to know them all", the two-equilateral-triangles way as slide 6). Slide 6 keeps its fix: the original said "the angle opposite AD is 60 too" (that is the given angle); it now says "angle ADB is 60 too".
+
+**Summary lessons (new)**
+- `r26-t32-summary` (end of "Learn and try", before the foundation practice, ~3.6 min): The family · The diagonals · Angles · Area formulas · The height · Drop a height · Scale it up · In questions · Before you practice.
+- `r26-t32-summary-2` (end of "Further guided examples", after the perimeter card, before the advanced practice, ~2.8 min): Not necessarily · Equal halves · Area ratios · Shaded areas · Letters and hidden ratios · Perimeter tricks · Perimeter and diagonal · Before you practice.

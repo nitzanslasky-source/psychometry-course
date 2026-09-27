@@ -78,3 +78,24 @@ Guided questions are renumbered automatically. There are now 27 (22 + 5). The ne
 - p11 no longer shows "144°" in the figure. It did not fit inside the angle. The value is only in the stem.
 - Stems with stacked givens (Q47, Q51) make the question text smaller on the solution slides. This follows the "givens one on top of the other" rule.
 - "Distance between the centers" (R ± r) has a lesson slide and practice questions, but no guided question of its own. The existing guided Q12/Q16 (tangent circles) use it.
+
+## Pass 2 (teacher-approved remove/restore plan, 2026-09-27)
+`python3 math_check.py 26 27 33 34`: 0 problems, 0 warnings, 0 layout problems.
+
+**Removed (4 items)**
+- Tangents video, slide "Circle inside a triangle": the board item "Quadrilateral around a circle: AB + CD = BC + AD" and its spoken line. The triangle part stays.
+- Circle rules card: the row "Quadrilateral around a circle".
+- Practice q-r26-t33-08 (quadrilateral around a circle) and q-r26-t33-13 (two circles meeting at two points).
+
+**Restored**
+- Practice: geo33-foundation-p09, -p13, -p25 and geo33-advanced-p08 are back. Their solutions are now in TeX with the numbers shown. The p13 givens are stacked. On p09 and p13 the unused "α" in the figure is now "?", as on the other figures.
+- "Equal chords" slide: the original proof is back ("Join each chord's ends to the center: two triangles, radius, radius, equal chord — identical triangles"). The new figure stays.
+- Q3 solution (tangents): the "Pavlov" line is back.
+- "Let's solve a sample question." / "Let's see a psychometric question." are still spoken at the end of the Tangents and the Area and Circumference lessons. A sample question still follows each one.
+- Q22 closing line: not restored. It is no longer the last circles video, because "More Circle Tools" and the new summary come after it.
+- Received from other topics: wp26-p10 (rough circular floor, answer $\frac{3\pi}{4}$ hours) and wp27-p10 (runners on a circular track, central angle 60°). Both are in the foundation practice. wp26-p10 comes after the circle-area items and wp27-p10 after the central-angle / arc-fraction items.
+- Practice size: foundation 26 → 31 (3 restored, 2 moved in), advanced 33 → 32 (2 removed, 1 restored). Both sections are still ordered easy → hard.
+
+**Summary lessons (new)**
+- `r26-t33-summary` "Circles: Summary", at the end of "Learn and try", right before the foundation practice. Slides: Summary · Radii · Central and inscribed · Diameter, quad · Chords · Tangents · Circle in a triangle · Area and circumference · Sectors and arcs · Before you practice.
+- `r26-t33-summary-2` "Advanced Circles: Summary", at the end of "Further guided examples", right before the advanced practice. Slides: Summary · Shaded areas · Segments · Nested shapes · Special triangles · Tangent and ring · The whole, not the parts · Numbers and estimates · Before you practice.

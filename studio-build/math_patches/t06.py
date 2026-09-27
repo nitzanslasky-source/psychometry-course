@@ -36,7 +36,7 @@ def apply(M):
     S = M.set_q
     # --- guided ---
     S('q-171', stem='Given: $x \\ne 2$ and $x \\ne 4$.\n$\\frac{3}{x-4}=\\frac{1}{x-2}$\n$x = ?$',
-      choices=['$1$', '$-1$', '$5$', '$2$'], correct=1,
+      choices=['$1$', '$31$', '$21$', '$2$'], correct=1,   # pass 2: original distractors 31 and 21 restored
       expl=['The restrictions are $x \\ne 2$ and $x \\ne 4$.',
             'One fraction equals one fraction, so cross-multiply: $3(x-2)=1\\cdot(x-4)$.',
             '$3x-6=x-4 \\to 2x=2 \\to x=1$.',
@@ -153,9 +153,9 @@ def apply(M):
       expl=['Put $y=3x$ into the first equation: $x^2=4\\cdot3x=12x$.',
             'Do not divide by something that could be $0$. Here we are told $x \\ne 0$, so we may divide by $x$: $x=12$.'])
     S('q-156', stem='How many solutions does the equation $x=7x$ have?',
-      choices=['Exactly one', 'Exactly two', 'Infinitely many', 'None'], correct=1,
+      choices=['One', 'Two', 'Seven', 'The equation has no solution'], correct=1,   # pass 2: original choices
       expl=['Move everything to one side: $7x-x=0$, so $6x=0$ and $x=0$.',
-            'Exactly one solution: $x=0$.',
+            'One solution: $x=0$. The answer is choice 1.',
             'The trap: dividing both sides by $x$ gives $1=7$ and "no solution". But $x$ may be $0$, so we may not divide by it.'])
     S('q-157', stem='Given:\n' + cases('(m+1)(n+1)=5', 'mn=-3') + '\n$m+n = ?$',
       expl=['Open the brackets: $(m+1)(n+1)=mn+m+n+1$.',
@@ -185,12 +185,47 @@ def apply(M):
             'For any other $k$ we can divide by $5-k$ and get one solution.'])
 
     # =====================================================================================
-    # 2. Remove near-duplicates
+    # 2. Pass 2: the 13 original practice items are restored (plan), with TeX and full numeric solutions
     # =====================================================================================
-    for qid in ['alg-extra-unit-t6-4-1', 'alg-extra-unit-t6-4-2', 'alg-extra-unit-t6-4-3', 'alg-extra-unit-t6-4-5',
-                'alg-extra-unit-t6-2-1', 'alg-extra-unit-t6-2-2', 'alg-extra-unit-t6-2-5', 'alg-extra-unit-t6-2-6',
-                'alg-extra-unit-t6-2-7', 'q-141', 'alg-extra-unit-t6-1-1', 'alg-extra-unit-t6-1-2', 'alg-extra-unit-t6-1-3']:
-        M.unplace(qid)
+    S('alg-extra-unit-t6-4-1', stem=given_eq('2x-5=1'), choices=['$3$', '$2$', '$4$', '$5$'],
+      expl=['Add $5$ to both sides: $2x=6$.', 'Divide by $2$: $x=3$. The answer is choice 1.'])
+    S('alg-extra-unit-t6-4-2', stem=given_eq('3(x-2)=6'), choices=['$5$', '$6$', '$4$', '$3$'],
+      expl=['Divide both sides by $3$: $x-2=2$.', 'Add $2$: $x=4$. The answer is choice 3.'])
+    S('alg-extra-unit-t6-4-3', stem=given_eq('\\frac{x+7}{4}=\\frac{12}{4}'), choices=['$4$', '$6$', '$7$', '$5$'],
+      expl=['Same denominator on both sides: multiply both sides by $4$. Then $x+7=12$.',
+            'Subtract $7$: $x=5$. The answer is choice 4.'])
+    S('alg-extra-unit-t6-4-5', stem=given_eq('\\frac{x}{2}+9=\\frac{25}{2}'), choices=['$8$', '$9$', '$7$', '$6$'],
+      expl=['Multiply every term by $2$: $x+18=25$.', 'Subtract $18$: $x=7$. The answer is choice 3.'])
+    S('alg-extra-unit-t6-2-1', stem=given_sys('2x+3y=19', '3x+2y=16'), choices=['$4$', '$2$', '$1$', '$3$'],
+      expl=['Match the $x$ terms: multiply the first equation by $3$ and the second by $2$: $6x+9y=57$ and $6x+4y=32$.',
+            'Subtract: $5y=25$, therefore $y=5$.',
+            'Put it into the first equation: $2x+15=19 \\to 2x=4 \\to x=2$. The answer is choice 2.'])
+    S('alg-extra-unit-t6-2-2', stem=given_sys('2x+3y=24', '3x+2y=21', ask='y'), choices=['$8$', '$6$', '$5$', '$7$'],
+      expl=['Match the $x$ terms: multiply the first equation by $3$ and the second by $2$: $6x+9y=72$ and $6x+4y=42$.',
+            'Subtract: $5y=30$, therefore $y=6$. The answer is choice 2.',
+            'Check: $2x+18=24$ gives $x=3$, and $3\\cdot3+2\\cdot6=21$.'])
+    S('alg-extra-unit-t6-2-5', stem=given_sys('2x+3y=39', '3x+2y=36', ask='2x+y'), choices=['$21$', '$20$', '$22$', '$23$'],
+      expl=['Multiply the first equation by $3$ and the second by $2$: $6x+9y=117$ and $6x+4y=72$.',
+            'Subtract: $5y=45$, therefore $y=9$. Then $2x+27=39$, therefore $x=6$.',
+            '$2x+y=12+9=21$. The answer is choice 1.'])
+    S('alg-extra-unit-t6-2-6', stem=given_sys('2x+3y=44', '3x+2y=41', ask='xy'), choices=['$70$', '$69$', '$71$', '$72$'],
+      expl=['Multiply the first equation by $3$ and the second by $2$: $6x+9y=132$ and $6x+4y=82$.',
+            'Subtract: $5y=50$, therefore $y=10$. Then $2x+30=44$, therefore $x=7$.',
+            '$xy=7\\cdot10=70$. The answer is choice 1.'])
+    S('alg-extra-unit-t6-2-7', stem=given_sys('2x+3y=49', '3x+2y=46', ask='x^2+y^2'), choices=['$187$', '$185$', '$184$', '$186$'],
+      expl=['Multiply the first equation by $3$ and the second by $2$: $6x+9y=147$ and $6x+4y=92$.',
+            'Subtract: $5y=55$, therefore $y=11$. Then $2x+33=49$, therefore $x=8$.',
+            '$x^2+y^2=64+121=185$. The answer is choice 2.'])
+    S('q-141', stem=given_eq('\\frac{x+3}{4}=5'),
+      expl=['Multiply both sides by $4$: $x+3=20$.', 'Subtract $3$: $x=17$. The answer is choice 2.'])
+    S('alg-extra-unit-t6-1-1', stem=given_eq('5x+7=52'), choices=['$7$', '$8$', '$10$', '$9$'],
+      expl=['Subtract $7$ from both sides: $5x=45$.', 'Divide by $5$: $x=9$. The answer is choice 4.'])
+    S('alg-extra-unit-t6-1-2', stem=given_sys('x+y=13', 'x-y=3'), choices=['$5$', '$6$', '$7$', '$8$'],
+      expl=['Add the two equations: the $y$ terms cancel, and $2x=16$.', 'Therefore $x=8$. The answer is choice 4.',
+            'Shortcut: $x$ is half the sum: $\\frac{13+3}{2}=8$.'])
+    S('alg-extra-unit-t6-1-3', stem=given_sys('2x+3y=31', '3x+2y=29', ask='x+y'), choices=['$12$', '$11$', '$13$', '$14$'],
+      expl=['They ask for $x+y$, therefore add the equations: $(2x+3y)+(3x+2y)=31+29$.',
+            '$5x+5y=60$, therefore $5(x+y)=60$ and $x+y=12$. The answer is choice 1.'])
 
     # =====================================================================================
     # 3. Lesson 1: Equations — Fundamentals
@@ -354,7 +389,7 @@ def apply(M):
         'Let\'s lock it in. Which method when?',
         A("'coefficient 1' appears", T('A letter with coefficient $1$ $\\to$ substitution', size=40)),
         A("'same or opposite' appears", T('Same or opposite coefficients $\\to$ subtract or add', size=40)),
-        A("'multiply WHOLE' appears", T('No match $\\to$ multiply WHOLE equations', size=40)),
+        A("'multiply WHOLE' appears", T('No match $\\to$ multiply WHOLE equations to match coefficients', size=40)),   # pass 2: original line
         A("'combination' appears", T('They ask for $x+y$ or $x-y$ $\\to$ add or subtract first', size=40)),
         A("'product' appears", T('$xy$ and $\\frac{x}{y}$ $\\to$ multiply or divide the equations', size=40)),
         D('Underline "WHOLE"'),
@@ -380,6 +415,7 @@ def apply(M):
             sl.append(dict(mode='question', active=active, title=title, pre=[Q(qid)], script=script))
         v = M.new_video('solve-' + qid, TOPIC, group, sidebar or [], sl, section, kind='solution', qid=qid)
         v['title'] = v['navLabel'] = rich_plain(stem)
+        v['beats'][0]['title'] = group   # like the base videos; keeps renumbering single-pass (bigTitle shows the number)
         return n
 
     q1 = 'q-r26-t06-01'
@@ -617,12 +653,15 @@ def apply(M):
     # =====================================================================================
     # 7. Practice order (easy -> hard)
     # =====================================================================================
-    M.practice_order('unit-t6-4', ['q-166', 'alg-extra-unit-t6-4-4', 'q-167', 'alg-extra-unit-t6-4-6', 'q-168',
+    M.practice_order('unit-t6-4', ['alg-extra-unit-t6-4-1', 'q-166', 'alg-extra-unit-t6-4-2', 'alg-extra-unit-t6-4-4', 'q-167',
+                                   'alg-extra-unit-t6-4-3', 'alg-extra-unit-t6-4-5', 'alg-extra-unit-t6-4-6', 'q-168',
                                    'q-169', 'q-170', 'alg-extra-unit-t6-4-7', p05, p06, p07, p08, p09, p10])
-    M.practice_order('unit-t6-2', ['q-159', 'q-160', 'q-162', 'q-161', p11, 'q-163', 'alg-extra-unit-t6-2-3',
-                                   'alg-extra-unit-t6-2-4', p12, p13])
-    M.practice_order('unit-t6-1', ['q-139', 'q-140', 'q-142', 'q-144', 'q-145', 'q-146', 'q-147', 'q-148', 'q-149',
-                                   'q-150', 'q-151', 'alg-extra-unit-t6-1-6', 'q-156', 'q-152', 'q-154',
+    M.practice_order('unit-t6-2', ['q-159', 'q-160', 'q-162', 'q-161', p11, 'q-163', 'alg-extra-unit-t6-2-1',
+                                   'alg-extra-unit-t6-2-2', 'alg-extra-unit-t6-2-3', 'alg-extra-unit-t6-2-4',
+                                   'alg-extra-unit-t6-2-5', 'alg-extra-unit-t6-2-6', 'alg-extra-unit-t6-2-7', p12, p13])
+    M.practice_order('unit-t6-1', ['alg-extra-unit-t6-1-1', 'q-139', 'q-140', 'q-141', 'q-142', 'q-144', 'q-145',
+                                   'alg-extra-unit-t6-1-2', 'q-146', 'q-147', 'q-148', 'q-149',
+                                   'q-150', 'q-151', 'alg-extra-unit-t6-1-3', 'alg-extra-unit-t6-1-6', 'q-156', 'q-152', 'q-154',
                                    'alg-extra-unit-t6-1-5', 'q-155', 'q-158', p16, 'q-157', 'alg-extra-unit-t6-1-4',
                                    'q-153', p14, 'alg-extra-unit-t6-1-7', p15, 'q-143', p17])
 
@@ -661,3 +700,99 @@ def apply(M):
         'tips': ['Subtracting an equation: put the whole equation in brackets: $(x+y)-(x-y)=2y$.',
                  'As many equations as unknowns usually, but not always, gives one solution.'],
     }, after=SY)
+
+    summaries(M)
+
+
+# =====================================================================================
+# 9. Pass 2: a summary lesson right before each practice block
+# =====================================================================================
+def _summary(M, vid, section, title, sb, bodies, intro):
+    slides = [dict(mode='title', title='Summary', script=intro)]
+    for k, script in enumerate(bodies):
+        slides.append(dict(title=sb[k], mode='concept', active=k, pre=[], script=script))
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == section][-1]
+    M.new_video(vid, TOPIC, title, sb, slides, section, after=last)
+
+
+def summaries(M):
+    # --- before "Single-equation practice": everything in "Equations — Fundamentals" ---
+    _summary(M, 'r26-t06-summary', 'single-equation', 'Summary: One Equation',
+             ['Same on both sides', 'Brackets and fractions', 'Minus before a fraction', 'x cancels',
+              'x in the denominator', 'Cross-multiply', "Don't divide by x", 'Test the choices', 'Before you practice'], [
+        [A('4x + 7 = 31 appears', T('$4x+7=31 \\to 4x=24 \\to x=6$', size=50)),
+         'The golden rule: whatever you do to one side, do to the other.',
+         'Get x alone. Minus seven on both sides, then divide both sides by four.',
+         A('Check appears', T('Check: $4\\cdot6+7=31$ ✓', size=46)),
+         'Then check your answer in the ORIGINAL equation.'],
+        [A('Brackets appear', T('$3(x-2)=3x-6$', size=52)),
+         'The number before a bracket multiplies EVERYTHING inside.',
+         A('Fraction appears', T('$\\frac{x+3}{4}=5 \\to x+3=20 \\to x=17$', size=50)),
+         'A number under a fraction? Multiply every term by the common denominator.',
+         'The four divides the WHOLE top. x plus three is twenty — not x plus twelve.'],
+        [A('Minus rule appears', T('$\\frac{x+1}{2}-\\frac{x-3}{5}=2 \\to 5(x+1)-2(x-3)=20$', size=42)),
+         'A minus before a fraction? Put the numerator in brackets first.',
+         A('Sign appears', T('$-2(x-3)=-2x+6$', size=52)),
+         'The minus hits the whole numerator. Minus times minus is plus.'],
+        [A('True appears', T('$6=6$ → infinitely many solutions', size=46)),
+         'Sometimes x cancels out. Look at what is left.',
+         'Always true? Every x works — infinitely many solutions.',
+         A('False appears', T('$6=9$ → no solution', size=46)),
+         'Always false? No x works — no solution.'],
+        [A('Restriction appears', T('$\\frac{x+2}{x-3}=2$, $x\\ne3$', size=52)),
+         'x in the denominator? Write the restriction FIRST.',
+         'The denominator can never be zero.',
+         A('Forbidden appears', T('A forbidden answer is out → maybe no solution', size=44)),
+         'If the algebra gives a forbidden number, throw it out. If nothing is left — no solution.'],
+        [A('Cross-multiply appears', T('$\\frac{a}{b}=\\frac{c}{d} \\to ad=bc$', size=54)),
+         'One fraction equals one fraction? Cross-multiply.',
+         A('Condition appears', T('Only when: one fraction $=$ one fraction', size=44)),
+         'A plus or a minus outside the fractions? Use a common denominator instead.'],
+        [A('x(x − 5) = 0 appears', T('$x(x-5)=0 \\to x=0$ or $x=5$', size=50)),
+         'Never divide by something that could be zero.',
+         'A product is zero when one of the factors is zero. Keep both solutions.'],
+        [A('Test appears', T('Number choices → put each one into the equation', size=44)),
+         'The choices are numbers? You can test them.',
+         'Start with the easiest one. Skip any forbidden value — it is out without any work.'],
+        ['Before you start, always ask yourself:',
+         A('Check 1 appears', T('Is $x$ in a denominator? What is forbidden?', size=42)),
+         A('Check 2 appears', T('Is there a minus before a bracket or a fraction?', size=42)),
+         A('Check 3 appears', T('One fraction on each side? Then cross-multiply.', size=42)),
+         A('Check 4 appears', T('Did I check the answer in the original equation?', size=42)),
+         'The common traps: a lost minus, a forbidden answer, and dividing by x.',
+         "Now it's your turn. Good luck!"],
+    ], ['Before you practice — a quick summary of solving one equation.', 'The moves, and the traps.'])
+
+    # --- before "Systems practice": everything in "Systems of Equations" ---
+    _summary(M, 'r26-t06-summary-2', 'systems-study', 'Summary: Systems of Equations',
+             ['Two equations', 'Substitution', 'Add or subtract', 'Match coefficients', 'Ask what they want',
+              'Multiply equations', 'Before you practice'], [
+        [A('System appears', T(cases('x+y=11', '2x-y=7'), size=56, gap=30)),
+         'Two unknowns, two equations. We need values that make BOTH true.',
+         'As many equations as unknowns — usually, not always, one solution.'],
+        [A('Substitution appears', T('$y=11-x \\to 2x-(11-x)=7$', size=50)),
+         'A letter with coefficient one? Isolate it and put it into the other equation.',
+         'Put the WHOLE expression in brackets. The minus hits both terms.'],
+        [A('Add appears', T(cases('x+y=10', 'x-y=4'), size=56, gap=30)),
+         'Opposite coefficients? Add the equations. The same coefficients? Subtract.',
+         A('Shortcut appears', T('$x=\\frac{10+4}{2}=7$, $\\ y=\\frac{10-4}{2}=3$', size=48)),
+         'x plus y and x minus y: x is half the sum, y is half the difference.',
+         'Subtracting? Put the whole second equation in brackets.'],
+        [A('Match appears', T('×3 and ×2 → $6x+9y=57$, $\\ 6x+4y=32$', size=46)),
+         'Nothing cancels? Multiply WHOLE equations to match coefficients.',
+         'Every term gets multiplied — the right side too.',
+         'Match the letter they do NOT ask for. Use the smallest multipliers.'],
+        [A('Combination appears', T('$(3x+y)+(x+3y)=17+11 \\to x+y=7$', size=46)),
+         'Circle what they ask for — before you start.',
+         'They ask for x plus y, or x minus y? Add or subtract first. You may not need x and y at all.'],
+        [A('Multiply appears', T('$xy\\cdot\\frac{x}{y}=12\\cdot3 \\to x^2=36$', size=50)),
+         'A product and a quotient? Multiply or divide the equations.',
+         'x squared is thirty-six. x is positive — therefore x is six.'],
+        ['Before you start, always ask yourself:',
+         A('Check 1 appears', T('What do they ask for: $x$, $y$ or a combination?', size=42)),
+         A('Check 2 appears', T('A coefficient $1$? Same or opposite coefficients?', size=42)),
+         A('Check 3 appears', T('Did I multiply the WHOLE equation?', size=42)),
+         A('Check 4 appears', T('Did I use brackets when I subtracted?', size=42)),
+         'The common traps: a lost minus when you subtract, and forgetting the right side.',
+         "Now it's your turn. Good luck!"],
+    ], ['Before you practice — a quick summary of systems of equations.', 'Which method, and when.'])

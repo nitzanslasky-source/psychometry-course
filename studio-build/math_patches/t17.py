@@ -351,7 +351,7 @@ def apply(M):
           'Distance = the bigger number minus the smaller one: $5-(-8)=5+8=13$.',
           'On the line: 8 steps from $-8$ to $0$, and 5 more to $5$.'])
     S('alg-extra-unit-t17-3-4', stem='Given: $2<x<5$. Which of the following is necessarily true?',
-      choices=['$\\frac15<\\frac1x<\\frac12$', '$-\\frac12<\\frac1x<-\\frac15$', '$2<\\frac1x<5$', '$0<\\frac1x<\\frac15$'], expl=[
+      choices=['$\\frac15<\\frac1x<\\frac12$', '$\\frac12<\\frac1x<\\frac15$', '$2<\\frac1x<5$', '$0<\\frac1x<\\frac15$'], expl=[
           'For positive numbers, reciprocals reverse the order: $2<x<5$ gives $\\frac15<\\frac1x<\\frac12$.',
           'Check: $x=4$: $\\frac14$ is between $\\frac15$ and $\\frac12$ ✓.'])
     S('alg-extra-unit-t17-3-5', stem='Given: $a<-2$. Which of the following is necessarily true?',
@@ -380,8 +380,15 @@ def apply(M):
     # =====================================================================================
     # 7. Practice: remove near-duplicates / trivial items
     # =====================================================================================
-    M.unplace('q-505')                      # Q3 turned around (1 < m < n, largest)
-    M.unplace('alg-extra-unit-t17-3-1')     # one-step: "the square is the only positive"
+    # Pass 2 (teacher's plan): q-505 and alg-extra-unit-t17-3-1 are original questions - they stay (clean text only)
+    S('q-505', stem='Given: $1<m<n$. Which of the following expressions is the largest?',
+      choices=['$n^3$', '$m\\cdot n^2$', '$m^2\\cdot n$', '$m^3$'], correct=1, expl=[
+          'Plug in $m=2$, $n=4$: $n^3=64$, $m\\cdot n^2=2\\cdot16=32$, $m^2\\cdot n=4\\cdot4=16$, $m^3=8$. The largest is $n^3$.',
+          'Why: all the numbers are greater than 1. $n^3=n\\cdot n\\cdot n$ uses the strongest factor three times (strong on strong). Every other choice has $m<n$ in place of at least one $n$, so it is smaller.'])
+    S('alg-extra-unit-t17-3-1', stem='Given: $-1<x<0$. Which of the following is the largest?',
+      choices=['$x$', '$x^3$', '$-1$', '$x^2$'], correct=4, expl=[
+          '$x^2$ is an even power of a negative number, so it is positive. $x$, $x^3$ and $-1$ are all negative.',
+          'So $x^2$ is the largest. Check with $x=-\\frac12$: $x=-\\frac12$, $x^3=-\\frac18$, $-1$ and $x^2=\\frac14$. The largest is $\\frac14$.'])
 
     # =====================================================================================
     # 8. New lesson: negative multipliers, reciprocals, test numbers, must/could, pictures, distance
@@ -718,6 +725,109 @@ def apply(M):
 
     # easy -> hard
     M.practice_order('unit-t17-3', [
-        'alg-extra-unit-t17-3-3', 'alg-extra-unit-t17-3-6', 'alg-extra-unit-t17-3-5', 'alg-extra-unit-t17-3-2',
-        'q-502', 'q-506', 'alg-extra-unit-t17-3-4', 'alg-extra-unit-t17-3-7', 'q-503', P[3], P[4], 'q-504',
+        'alg-extra-unit-t17-3-3', 'alg-extra-unit-t17-3-6', 'alg-extra-unit-t17-3-1', 'alg-extra-unit-t17-3-5',
+        'alg-extra-unit-t17-3-2', 'q-502', 'q-506', 'alg-extra-unit-t17-3-4', 'alg-extra-unit-t17-3-7', 'q-503', 'q-505',
+        P[3], P[4], 'q-504',
         'q-508', 'q-509', P[2], P[0], 'q-507', P[7], P[5], 'q-510', 'q-511', P[1], P[8], P[9], P[6]])
+    summary(M)
+
+
+# =========================================================================================
+# Pass 2: summary lesson right before the practice (the topic has one practice section)
+# =========================================================================================
+def summary(M):
+    sb = ['Four ranges', 'Multiply & divide', 'Hierarchy', 'Exceptions first', 'The arrows', 'Reciprocals',
+          'Test numbers', 'Must or could?', 'Distance & midpoint', 'Before you practice']
+    C = lambda i, script: dict(title=sb[i], mode='concept', active=i, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice — the whole number line in a few minutes.",
+            "Every rule, every trap. Short and fast.",
+        ]),
+        C(0, [
+            "It all starts with four ranges.",
+            A("'x < −1 · −1 < x < 0 · 0 < x < 1 · x > 1' appears", T('$x<-1\\quad\\ -1<x<0\\quad\\ 0<x<1\\quad\\ x>1$', size=50, gap=40)),
+            "Below minus one, negative fractions, positive fractions, above one. Every number in a range behaves the same way.",
+            A("'Borders: −1, 0, 1' appears", T('Borders: $-1,\\ 0,\\ 1$ — are they allowed?', size=44, gap=40)),
+            "Watch the borders. And if they only say x is positive — it could be below one or above one.",
+            A("'Negatives mirror the positives' appears", T('Negatives mirror the positives', size=44)),
+            "The negative side is a mirror. Look at the positive side, then mirror the picture.",
+        ]),
+        C(1, [
+            "What do multiplying and dividing do? One is the dividing line.",
+            A("'× more than 1 or ÷ a fraction → bigger' appears", T('$\\times$ more than 1, $\\div$ a fraction $\\to$ bigger:  $12\\div\\frac13=36$', size=42, gap=40)),
+            A("'÷ more than 1 or × a fraction → smaller' appears", T('$\\div$ more than 1, $\\times$ a fraction $\\to$ smaller:  $12\\cdot\\frac13=4$', size=42, gap=40)),
+            "That's for positive numbers. A negative number makes the same moves — away from zero or toward zero.",
+            A("'Times a negative: other side of zero, the order flips' appears", T('Times a negative: other side of zero, the order flips:  $2<5\\Rightarrow-2>-5$', size=40)),
+            "And times a NEGATIVE number? You jump to the other side of zero — and the order flips.",
+        ]),
+        C(2, [
+            "Hierarchy: a number in a higher range stays bigger — after any positive power or root.",
+            A('The fifth root of 9/8 and the square root of 5/6 appear', T('$\\sqrt[5]{\\frac98}>\\sqrt{\\frac56}$  (above 1 against a fraction)', size=46, gap=40)),
+            "Nine eighths is above one; five sixths is a fraction. Don't calculate the roots.",
+            "For negative numbers: odd powers and odd roots only.",
+            A("'Same operation: ignore it (positive numbers only)' appears", T('Same operation on both? Ignore it — positive numbers only', size=42, gap=40)),
+            A("'Strong on strong' appears", T('Strong on strong:  $0<a<b,\\ 0<c<d\\ \\Rightarrow\\ ac<bd$', size=42)),
+            "Same operation on two positive numbers? Ignore it. And weak times weak loses to strong times strong.",
+        ]),
+        C(3, [
+            "Exceptional powers move a number into another range. Handle them first.",
+            A('(−3)² = 9 appears', T('Even power of a negative:  $(-3)^2=9$', size=46, gap=40)),
+            "An even power of a negative number turns positive. Read the brackets: without them, minus three squared is minus nine.",
+            A('(2/5)⁻² = (5/2)² appears', T('Negative exponent:  $\\left(\\frac25\\right)^{-2}=\\left(\\frac52\\right)^2>1$', size=46)),
+            "A negative exponent: to compare ranges, flip it first. A fraction became a number above one.",
+        ]),
+        C(4, [
+            "The arrows show what a bigger power does in each range.",
+            A('The arrows of the positive side appear', T('$0<x<1:\\ \\leftarrow\\qquad x>1:\\ \\rightarrow$', size=48, gap=30)),
+            A('The arrows of the negative side appear', T('$x<-1:\\ \\leftarrow\\qquad -1<x<0:\\ \\rightarrow$', size=48, gap=40)),
+            "Right means bigger, left means smaller. On the negative side — odd powers only.",
+            A('0 < x < 1 → x³ < x² < x < √x appears', T('$0<x<1:\\quad x^3<x^2<x<\\sqrt x$', size=48, gap=40)),
+            "A positive fraction: a bigger power, a smaller number. The root goes the other way.",
+            A("'Exceptions → roots to powers → arrows' appears", T('Exceptions $\\to$ roots to powers $\\to$ arrows', size=44)),
+            "Three steps: exceptions, roots into powers, then the arrows. With the arrows you may keep a negative exponent.",
+            "They give the order and ask for the range? Use the arrows backwards — or plug in.",
+        ]),
+        C(5, [
+            "The reciprocal, one over x, keeps the sign — big and small swap.",
+            A('0 < x < 1 → 1/x > 1 and x > 1 → 0 < 1/x < 1 appear', T('$0<x<1\\Rightarrow\\frac1x>1\\qquad x>1\\Rightarrow0<\\frac1x<1$', size=46, gap=40)),
+            "A half becomes two. Two becomes a half. The negative side is the mirror.",
+            A('2 < x < 5 → 1/5 < 1/x < 1/2 appears', T('$2<x<5\\ \\Rightarrow\\ \\frac15<\\frac1x<\\frac12$', size=48)),
+            "Numbers with the same sign: the reciprocal flips the order.",
+        ]),
+        C(6, [
+            "Not sure? Plug in — one number from each allowed range.",
+            A("'Test numbers: 2, 1/2, −1/2, −2' appears", T('Test numbers:  $2,\\ \\ \\frac12,\\ \\ {-\\frac12},\\ \\ {-2}$', size=50, gap=40)),
+            A("'Roots: 1/4 for √x · ±1/8 for ∛x · −1/32 for ⁵√x' appears", T('Roots:  $\\frac14$ for $\\sqrt{x}$  ·  $\\pm\\frac18$ for $\\sqrt[3]{x}$  ·  $-\\frac1{32}$ for $\\sqrt[5]{x}$', size=42, gap=40)),
+            "A root in the choices? Pick a number with a clean root.",
+            A("'Change only x — never the numbers in the question' appears", T('Change only the unknown — never the numbers in the question', size=40)),
+            "And change only the unknown. Changing the numbers in the question can change the answer.",
+        ]),
+        C(7, [
+            "Read the question word: necessarily, or could?",
+            A("'Necessarily: one counter-example kills it' appears", T('Necessarily true: one counter-example kills it', size=44, gap=40)),
+            A("'Could be: one example is enough' appears", T('Could be true: one example is enough', size=44, gap=40)),
+            "To find a counter-example, push the values to the edges of their ranges.",
+            A("'Picture: write each range, trust only the order' appears", T('A picture of the line: write each range, trust only the order', size=40)),
+            "A picture of the line? Write the range under each letter. Not drawn to scale — trust the order, not the distances.",
+        ]),
+        C(8, [
+            "Last: distance and midpoint.",
+            A('Distance = bigger − smaller appears', T('Distance $=$ bigger $-$ smaller:  $5-(-8)=13$', size=46, gap=40)),
+            A('Midpoint = (a + b)/2 appears', T('Midpoint $=\\frac{a+b}{2}$:  $\\frac{-9+3}{2}=-3$', size=46)),
+            "The midpoint is the average. A third of the way? Take a third of the distance and walk it from the start.",
+        ]),
+        C(9, [
+            "Before you practice, always ask yourself:",
+            A('Check 1', T('1. Which range am I in? Are the borders allowed?', size=40)),
+            A('Check 2', T('2. Any exceptions? An even power of a negative, a negative exponent?', size=40)),
+            A('Check 3', T('3. Positive or negative? Mirror, and flip for times a negative.', size=40)),
+            A('Check 4', T('4. Necessarily, or could?', size=40)),
+            "The common traps: ignoring an operation on negative numbers, forgetting that a positive x can be a fraction, and trusting the distances in a picture.",
+            "You know all of this. Go practice.",
+        ]),
+    ]
+    sec = 'number-line-advanced'
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == sec][-1]
+    v = M.new_video('r26-t17-summary', TOPIC, 'The Number Line: Summary', sb, slides, sec, after=last)
+    v['hybrid']['num'] = M.video(L2)['hybrid']['num']

@@ -93,3 +93,17 @@ The Q4 solution group is renamed "Similar Triangles Questions" and now holds 3 q
 - "The man with glasses" name is kept, and only the extra images are removed.
 - p04 (inscribed angles) stays in the set. It depends on the circles topic, which comes before T36.
 - The new videos need recording. Guided numbers are assigned automatically in course order: 1–4, then 5–6 for the new triangle questions, 8 for the cube-percent question, and 17–18 for map scale.
+
+## Pass 2 (teacher-approved plan, 2026-09-27)
+**Removed:** nothing.
+
+**Restored:**
+- `geo36-core-p10` (a disk in a semicircle → $\frac12$) and `geo36-core-p15` (regular heptagon, side 2 → 5 → $\frac{25a}{4}$) are back in the practice, with TeX and full numeric solutions. p15 is with the easy items (before p21), p10 in the middle (after p09).
+- `geo-134` slide 12: the original lines ("this 'Batman' up here", "like Kenny from South Park, with a pair of binoculars"). There is only one figure on this slide in the base, and it stays (with the "3 units" label fix).
+- `geo-143` slide 6: "From the course — what if both change? ..." is back.
+- `solve-geo36-g138` slide 3: "A small tip about answers: usually they don't confuse me — they help me." is back. The false line about harder questions stays replaced.
+- `geo-139` slide 12 "Recap": the original board line "Rectangles: both dimensions use one factor" is back (it was spoken but was missing from the board).
+- `geo35-core-p27` (moved here by T35) stays in the practice.
+
+**Summary lesson added:** `r26-t36-summary` "Summary: Similarity" (about 2.8 minutes), at the end of "Learn and try" (after the map-scale card), right before the practice.
+Slides: Summary · Length, area, volume · Always similar? · Similar triangles · The exam pictures · Same height · Parts and leftovers · Similar solids · Percent change · Map scale · Before you practice.

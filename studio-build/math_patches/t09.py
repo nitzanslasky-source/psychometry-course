@@ -148,28 +148,14 @@ def fix_lesson(M):
 
 # ---------------------------------------------------------------- second lesson video: exam traps
 def traps_video(M):
-    sb = ['Small numbers', 'Between 0 and 1', 'Compare by squaring', 'Different roots', 'Conjugates', 'Square of a sum']
+    sb = ['Between 0 and 1', 'Compare by squaring', 'Different roots', 'Conjugates', 'Square of a sum']
     slides = [
         dict(mode='title', title='Roots — Exam traps', script=[
             "Now the traps. The exam loves these.",
-            "Small numbers, comparing roots, and a partner that removes roots.",
+            "Numbers between zero and one, comparing roots, and a partner that removes roots.",
             "Let's go.",
         ]),
-        dict(title='Roots of small numbers', mode='concept', active=0, pre=[], script=[
-            A('√0.09 appears', T('$\\sqrt{0.09}$', size=60, gap=40)),
-            D('Write "= 0.3, because 0.3² = 0.09"'),
-            "Root of zero point zero nine. Zero point three squared is zero point zero nine. So the root is zero point three.",
-            "Quick rule: count the digits after the point. The root has HALF as many.",
-            A('√0.9 appears', T('$\\sqrt{0.9}$', size=60, gap=40)),
-            "Now the trap: root of zero point nine. It is NOT zero point three.",
-            D('Write "0.3² = 0.09 ≠ 0.9"'),
-            "Zero point three squared is zero point zero nine — not zero point nine.",
-            D('Write "0.95² ≈ 0.90 → √0.9 ≈ 0.95"'),
-            "Zero point nine five squared is about zero point nine. So root zero point nine is about zero point nine five.",
-            A('√(1/9) = 1/3 appears', T('$\\sqrt{\\frac19}=\\frac{\\sqrt1}{\\sqrt9}=\\frac13$', size=52)),
-            "Fractions are easy: root of the top over root of the bottom. Root of one ninth is one third.",
-        ]),
-        dict(title='Between 0 and 1', mode='concept', active=1, pre=[], script=[
+        dict(title='Between 0 and 1', mode='concept', active=0, pre=[], script=[
             A('0 < x < 1: x² < x < √x appears', T('$0<x<1:\\quad x^2<x<\\sqrt x$', size=54, gap=50)),
             "Here's the rule to remember. Between zero and one, the root is BIGGER than the number. And the square is smaller.",
             D('Write "x = 0.25:  0.0625 < 0.25 < 0.5"'),
@@ -181,7 +167,7 @@ def traps_video(M):
             "At zero and at one, all three are equal.",
             "In a 'which is the largest' question with x between zero and one: plug in a number like one quarter. Then compare.",
         ]),
-        dict(title='Compare by squaring', mode='concept', active=2, pre=[], script=[
+        dict(title='Compare by squaring', mode='concept', active=1, pre=[], script=[
             A('4√3 ? 5√2 appears', T('$4\\sqrt3\\quad ?\\quad 5\\sqrt2$', size=58, gap=50)),
             "Which is bigger? Don't guess. Square both.",
             D('Write "(4√3)² = 16 · 3 = 48"'),
@@ -195,7 +181,7 @@ def traps_video(M):
             D('Write "√64 < √70 < √81 → 8 < √70 < 9"'),
             "Seventy is between sixty-four and eighty-one. So root seventy is between eight and nine.",
         ]),
-        dict(title='Different roots', mode='concept', active=3, pre=[], script=[
+        dict(title='Different roots', mode='concept', active=2, pre=[], script=[
             A('√2 ? ∛3 appears', T('$\\sqrt2\\quad ?\\quad \\sqrt[3]3$', size=60, gap=60)),
             "A square root and a cube root. Squaring alone won't remove the cube root.",
             "Raise both to a power that removes both roots. Two times three: the sixth power.",
@@ -207,7 +193,7 @@ def traps_video(M):
             A('rule appears', T('Square root and cube root: raise both to the 6th power.', size=40)),
             "Square root and cube root? Use the sixth power. It clears both.",
         ]),
-        dict(title='Conjugates', mode='concept', active=4, pre=[], script=[
+        dict(title='Conjugates', mode='concept', active=3, pre=[], script=[
             A('(√a + √b)(√a − √b) = a − b appears', T('$(\\sqrt a+\\sqrt b)(\\sqrt a-\\sqrt b)=a-b$', size=52, gap=50)),
             "Remember the difference of squares? It removes roots.",
             D('Write "(√5 + √3)(√5 − √3) = 5 − 3 = 2"'),
@@ -218,7 +204,7 @@ def traps_video(M):
             D('Write "= (√2 + 1) ÷ [(√2 − 1)(√2 + 1)] = (√2 + 1) ÷ (2 − 1) = √2 + 1"'),
             "The bottom is two minus one — one. The answer: root two plus one.",
         ]),
-        dict(title='Square of a sum', mode='concept', active=5, pre=[], script=[
+        dict(title='Square of a sum', mode='concept', active=4, pre=[], script=[
             A('(√a + √b)² = a + b + 2√(ab) appears', T('$(\\sqrt a+\\sqrt b)^2=a+b+2\\sqrt{ab}$', size=52, gap=50)),
             "Squaring a sum of roots: don't forget the middle term.",
             D('Write "(√2 + √3)² = 2 + 3 + 2√6 = 5 + 2√6"'),
@@ -417,11 +403,16 @@ def fix_questions(M):
     M.set_q('q-238', expl=['A square root times itself gives the number under the root: $\\sqrt{31}\\cdot\\sqrt{31}=\\sqrt{31\\cdot31}=31$.'])
     M.set_q('q-240', expl=['Put the quotient under one root: $\\frac{\\sqrt{50}}{\\sqrt2}=\\sqrt{\\frac{50}{2}}=\\sqrt{25}=5$.'])
     M.set_q('q-241', expl=['Put the quotient under one root: $\\frac{\\sqrt3}{\\sqrt{48}}=\\sqrt{\\frac{3}{48}}=\\sqrt{\\frac{1}{16}}=\\frac14$.'])
-    # q-242: index 2.5 is not exam material -> root of a root (same choices, same key)
-    M.set_q('q-242', stem='$\\sqrt{\\sqrt{81}} = ?$', choices=['$9$', '$27$', '$3$', '$1$'], correct=3, expl=[
-        'Work from the inside out: $\\sqrt{81}=9$, then $\\sqrt9=3$.',
-        'Or: a root of a root is a fourth root. $\\sqrt{\\sqrt{81}}=\\sqrt[4]{81}=3$, because $3^4=81$.',
-        'The trap is $9$: that is only the first root.'])
+    # q-239: original (restored in pass 2), text clean-up only
+    M.set_q('q-239', stem='$\\sqrt[3]{9}\\cdot\\sqrt[3]{9}\\cdot\\sqrt[3]{9} = ?$', expl=[
+        'Three copies of a cube root multiply back to the number under it: $\\sqrt[3]{9}\\cdot\\sqrt[3]{9}\\cdot\\sqrt[3]{9}=\\left(\\sqrt[3]{9}\\right)^3=9$.',
+        'Or put everything under one root: $\\sqrt[3]{9\\cdot9\\cdot9}=\\sqrt[3]{729}=9$, because $9^3=729$.'])
+    # q-242: the original question (restored in pass 2), text clean-up only
+    M.set_q('q-242', stem='$\\sqrt[2.5]{\\sqrt{243}} = ?$\n(The root index $2.5$ means the power $\\frac{1}{2.5}$: $\\sqrt[2.5]{\\sqrt{243}}=\\left(\\sqrt{243}\\right)^{\\frac{1}{2.5}}$.)',
+            choices=['$9$', '$27$', '$3$', '$1$'], correct=3, expl=[
+        'Write both roots as powers: $\\sqrt{243}=243^{\\frac12}$, and the root index $2.5$ is the power $\\frac{1}{2.5}=\\frac25$.',
+        'Power of a power: multiply the exponents. $\\left(243^{\\frac12}\\right)^{\\frac25}=243^{\\frac12\\cdot\\frac25}=243^{\\frac15}=\\sqrt[5]{243}$.',
+        '$243=3^5$, therefore $\\sqrt[5]{243}=3$.'])
     M.set_q('q-243', expl=['Bring the $3$ inside the root by squaring it: $3\\sqrt7=\\sqrt9\\cdot\\sqrt7=\\sqrt{9\\cdot7}=\\sqrt{63}$.'])
     M.set_q('q-244', expl=['To go inside a cube root, the $3$ is cubed: $3\\sqrt[3]{2}=\\sqrt[3]{27}\\cdot\\sqrt[3]{2}=\\sqrt[3]{27\\cdot2}=\\sqrt[3]{54}$.'])
     M.set_q('q-245', expl=[
@@ -436,7 +427,7 @@ def fix_questions(M):
         'Therefore $x=0$ or $x=5$.',
         'Check both in the original equation: $0=\\sqrt0$ and $5=\\sqrt{25}$. Both work. Therefore, there are $2$ solutions.'])
 
-    # extra practice 1-7 (6 is removed as a near-duplicate of q-237)
+    # extra practice 1-7
     M.set_q('alg-extra-root-practice-1', stem='$\\sqrt{144}-\\sqrt{49} = ?$', choices=['$11$', '$19$', '$5$', '$7$'],
             expl=['$\\sqrt{144}=12$ and $\\sqrt{49}=7$. Therefore $12-7=5$.',
                   'The trap is $\\sqrt{144-49}=\\sqrt{95}$: a root does not split over a minus.'])
@@ -449,6 +440,9 @@ def fix_questions(M):
             expl=['An odd root keeps the minus sign: $(-5)^3=-125$. Therefore, $\\sqrt[3]{-125}=-5$.'])
     M.set_q('alg-extra-root-practice-5', stem='Given: $\\sqrt{x+7}=5$\nWhat is $x$?', choices=['$18$', '$12$', '$25$', '$32$'],
             expl=['Square both sides: $x+7=25$. Therefore, $x=18$.', 'Check: $\\sqrt{18+7}=\\sqrt{25}=5$.'])
+    M.set_q('alg-extra-root-practice-6', stem='$\\sqrt{12}\\cdot\\sqrt{27} = ?$', choices=['$18$', '$9$', '$36$', '$324$'],
+            expl=['Put the product under one root: $\\sqrt{12}\\cdot\\sqrt{27}=\\sqrt{12\\cdot27}=\\sqrt{324}=18$.',
+                  'Or simplify first: $2\\sqrt3\\cdot3\\sqrt3=6\\cdot3=18$.'])
     M.set_q('alg-extra-root-practice-7', stem='Between which two consecutive whole numbers is $\\sqrt{70}$?',
             choices=['$9$ and $10$', '$6$ and $7$', '$8$ and $9$', '$7$ and $8$'],
             expl=['Put $70$ between two perfect squares: $64<70<81$.', 'Therefore $\\sqrt{64}<\\sqrt{70}<\\sqrt{81}$, that is, $8<\\sqrt{70}<9$.'])
@@ -456,13 +450,6 @@ def fix_questions(M):
 
 # ---------------------------------------------------------------- new practice (exam level)
 NEW_PRACTICE = [
-    ('q-r26-t09-07', '$\\sqrt{0.0016} = ?$', ['$0.4$', '$0.04$', '$0.004$', '$0.016$'], 2, [
-        '$0.0016$ has $4$ digits after the point. Therefore, the root has $2$: $0.04$.',
-        'Check: $0.04^2=0.0016$. (And $0.4^2=0.16$, $0.004^2=0.000016$.)']),
-    ('q-r26-t09-08', 'Which of the following is closest to $\\sqrt{0.9}$?', ['$0.3$', '$0.45$', '$0.81$', '$0.95$'], 4, [
-        'For a number between $0$ and $1$, the root is bigger than the number. Therefore, $\\sqrt{0.9}>0.9$. Only $0.95$ is bigger than $0.9$.',
-        'Check: $0.95^2=0.9025\\approx0.9$.',
-        'The trap is $0.3$: $0.3^2=0.09$, not $0.9$.']),
     ('q-r26-t09-09', 'Which of the following is true?',
      ['$0.5^2<0.5<\\sqrt{0.5}$', '$\\sqrt{0.5}<0.5<0.5^2$', '$0.5<0.5^2<\\sqrt{0.5}$', '$0.5^2<\\sqrt{0.5}<0.5$'], 1, [
         '$0.5$ is between $0$ and $1$. Squaring makes it smaller, and a root makes it bigger.',
@@ -512,14 +499,13 @@ NEW_PRACTICE = [
 def add_practice(M):
     for qid, stem, ch, c, ex in NEW_PRACTICE:
         M.new_q(qid, TOPIC, stem, ch, c, ex); M.place_q(qid, PRAC)
-    # near-duplicates
-    M.unplace('q-239')                      # same idea as q-238 (a root times itself)
-    M.unplace('alg-extra-root-practice-6')  # same as q-237 (product under one root)
     p = 'alg-extra-root-practice-'
-    M.practice_order(PRAC, [p + '1', p + '4', p + '2', p + '3', p + '7', p + '5', 'q-r26-t09-13', 'q-r26-t09-12',
-                            'q-r26-t09-07', 'q-r26-t09-10', 'q-r26-t09-11', 'q-r26-t09-16', 'q-r26-t09-08',
-                            'q-r26-t09-09', 'q-r26-t09-17', 'q-r26-t09-14', 'q-r26-t09-18', 'q-r26-t09-15',
-                            'q-r26-t09-19'])
+    # (pass 2: q-239 and alg-extra-root-practice-6 are original questions and stay in the course)
+    # q-227, alg-extra-exponent-extra-2 and -7 are moved here by the T8 patch
+    M.practice_order(PRAC, [p + '1', p + '4', p + '2', p + '6', p + '3', 'alg-extra-exponent-extra-7', p + '7', p + '5',
+                            'q-r26-t09-13', 'q-r26-t09-12', 'q-r26-t09-10', 'alg-extra-exponent-extra-2', 'q-227',
+                            'q-r26-t09-11', 'q-r26-t09-16', 'q-r26-t09-09', 'q-r26-t09-17', 'q-r26-t09-14',
+                            'q-r26-t09-18', 'q-r26-t09-15', 'q-r26-t09-19'])
 
 
 # ---------------------------------------------------------------- memory card
@@ -532,7 +518,6 @@ def fix_card(M):
     rows.insert(6, ['\\(\\sqrt{\\sqrt a}=\\sqrt[4]a\\)', 'root of a root: multiply the indexes'])
     c['tables'].append({'title': 'Exam traps', 'head': ['Rule', 'Example'], 'rows': [
         ['\\(0<x<1:\\ x^2<x<\\sqrt x\\)', '\\(x=\\frac14:\\ \\frac1{16}<\\frac14<\\frac12\\)'],
-        ['roots of small numbers', '\\(\\sqrt{0.09}=0.3\\), but \\(\\sqrt{0.9}\\approx0.95\\)'],
         ['compare by squaring (positive numbers)', '\\(4\\sqrt3=\\sqrt{48}<\\sqrt{50}=5\\sqrt2\\)'],
         ['square root vs cube root: 6th power', '\\((\\sqrt2)^6=8<9=(\\sqrt[3]3)^6\\)'],
         ['\\((\\sqrt a+\\sqrt b)(\\sqrt a-\\sqrt b)=a-b\\)', '\\(\\frac1{\\sqrt2-1}=\\sqrt2+1\\)'],
@@ -547,9 +532,103 @@ def fix_card(M):
     ]
 
 
+# ---------------------------------------------------------------- pass 2: summary lesson before the practice
+def summary(M):
+    sb = ['What a root is', 'Simplify roots', 'Multiply & divide', 'Roots as powers', 'Not for sums',
+          'Comparing roots', 'Between 0 and 1', 'Conjugates', 'Root equations', 'Before you practice']
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Roots — a quick summary before you practice.",
+            "Everything important from this topic, one idea at a time.",
+        ]),
+        dict(title='What a root is', mode='concept', active=0, pre=[], script=[
+            A('√49 = 7 and x² = 49 → x = ±7 appear', T('$\\sqrt{49}=7\\qquad x^2=49\\ \\Rightarrow\\ x=\\pm7$', size=50, gap=50)),
+            "A root is never negative. Root forty-nine is just seven.",
+            "But the equation x squared equals forty-nine has two solutions: seven and negative seven.",
+            A('√(x²) = |x| appears', T('$\\sqrt{x^2}=|x|$', size=56, gap=50)),
+            "Root of x squared is the absolute value of x. If x is negative, it's minus x.",
+            A('never negative inside appears', T('Inside a square root: never negative.', size=40)),
+            "And the number inside a square root can't be negative.",
+        ]),
+        dict(title='Simplify roots', mode='concept', active=1, pre=[], script=[
+            A('√72 = 6√2 appears', T('$\\sqrt{72}=\\sqrt{36\\cdot2}=6\\sqrt2$', size=54, gap=50)),
+            "Pull out the LARGEST square you can find.",
+            "Then look at what's left inside. Still divisible by four, nine or twenty-five? Keep going.",
+            A('√72 + √32 = 10√2 appears', T('$\\sqrt{72}+\\sqrt{32}=6\\sqrt2+4\\sqrt2=10\\sqrt2$', size=48)),
+            "Roots add like letters, but only the same root. So simplify first, then add.",
+        ]),
+        dict(title='Multiply & divide', mode='concept', active=2, pre=[], script=[
+            A('product and quotient rules appear', T('$\\sqrt a\\cdot\\sqrt b=\\sqrt{ab}\\qquad \\frac{\\sqrt a}{\\sqrt b}=\\sqrt{\\frac ab}$', size=50, gap=40)),
+            "Multiplying or dividing? Put everything under one root.",
+            A('6/√3 = 2√3 appears', T('$\\frac{6}{\\sqrt3}=2\\sqrt3$', size=54, gap=40)),
+            "A number over a root: divide by the number under the root, and keep the root. Six divided by three is two. Two root three.",
+            A('3√7 = √63 appears', T('$3\\sqrt7=\\sqrt{63}$', size=54)),
+            "To bring a number inside a square root, square it. For a cube root, cube it.",
+        ]),
+        dict(title='Roots as powers', mode='concept', active=3, pre=[], script=[
+            A('ⁿ√(aᵐ) = a^(m/n) appears', T('$\\sqrt[n]{a^m}=a^{\\frac mn}$', size=58, gap=50)),
+            "A root is a fractional power. The power inside goes on top. The root index goes on the bottom.",
+            A('8^(2/3) = 4 appears', T('$8^{\\frac23}=\\left(\\sqrt[3]8\\right)^2=2^2=4$', size=52, gap=50)),
+            "Take the root first. The numbers stay small.",
+            "A root of a root? Multiply the indexes. Root of a root is a fourth root.",
+            "And odd roots of negative numbers exist. Even roots of negative numbers don't.",
+        ]),
+        dict(title='Not for sums', mode='concept', active=4, pre=[], script=[
+            A('√(a + b) ≠ √a + √b appears', T('$\\sqrt{a+b}\\ne\\sqrt a+\\sqrt b$', size=58, gap=50)),
+            "The big trap. A root does not split over a plus or a minus.",
+            D('Write "√(9 + 16) = √25 = 5, but √9 + √16 = 3 + 4 = 7"'),
+            "Root of twenty-five is five. Three plus four is seven. Not equal.",
+            A('(√a + √b)² appears', T('$(\\sqrt a+\\sqrt b)^2=a+b+2\\sqrt{ab}$', size=52)),
+            "And when you square a sum of roots, don't forget the middle term.",
+        ]),
+        dict(title='Comparing roots', mode='concept', active=5, pre=[], script=[
+            A('4√3 ? 5√2 appears', T('$4\\sqrt3\\ \\ ?\\ \\ 5\\sqrt2\\quad\\to\\quad 48<50$', size=52, gap=50)),
+            "Positive numbers? Square both. Bigger square, bigger number. It's the same as bringing the numbers inside the root.",
+            "To estimate one root, put it between two perfect squares. Root seventy is between eight and nine.",
+            A('√2 ? ∛3 appears', T('$\\sqrt2\\ \\ ?\\ \\ \\sqrt[3]3\\quad\\to\\quad 8<9$', size=52)),
+            "A square root and a cube root? Raise both to the sixth power. That clears both roots.",
+        ]),
+        dict(title='Between 0 and 1', mode='concept', active=6, pre=[], script=[
+            A('0 < x < 1: x² < x < √x appears', T('$0<x<1:\\quad x^2<x<\\sqrt x$', size=54, gap=50)),
+            "Between zero and one, squaring makes a number smaller. The root makes it bigger.",
+            D('Write "x = 1/4:  1/16 < 1/4 < 1/2"'),
+            "Not sure? Plug in one quarter. Its root is one half.",
+            "Above one, it's the other way around.",
+        ]),
+        dict(title='Conjugates', mode='concept', active=7, pre=[], script=[
+            A('(√a + √b)(√a − √b) = a − b appears', T('$(\\sqrt a+\\sqrt b)(\\sqrt a-\\sqrt b)=a-b$', size=52, gap=50)),
+            "The partner removes roots. It's the difference of squares.",
+            A('1/(√2 − 1) = √2 + 1 appears', T('$\\frac{1}{\\sqrt2-1}=\\sqrt2+1$', size=56)),
+            "A root difference on the bottom? Multiply the top and the bottom by the partner.",
+            "The bottom becomes two minus one. One. No roots left.",
+        ]),
+        dict(title='Root equations', mode='concept', active=8, pre=[], script=[
+            A('√(x + 6) = x appears', T('$\\sqrt{x+6}=x$', size=58, gap=50)),
+            "Square both sides and solve. Then check every answer in the ORIGINAL equation.",
+            D('Write "x = 3: √9 = 3 ✓    x = −2: √4 = 2 ≠ −2 ✗"'),
+            "Squaring can add a fake solution. Negative two fails: a root is never negative.",
+            "x on both sides? Don't divide by x. Move everything to one side and factor.",
+            "Or plug in the four choices. A fake solution fails on its own.",
+        ]),
+        dict(title='Before you practice', mode='concept', active=9, pre=[], script=[
+            "Before each question, ask yourself:",
+            A('check 1 appears', T('Is there a plus or a minus under the root? It does not split.', size=36, gap=24)),
+            A('check 2 appears', T('Is this the largest square I can pull out?', size=36, gap=24)),
+            A('check 3 appears', T('Is $x$ negative? Then $\\sqrt{x^2}=-x$, not $x$.', size=36, gap=24)),
+            A('check 4 appears', T('Did I check my answer in the original equation?', size=36, gap=24)),
+            A('check 5 appears', T('Comparing? Square both, or use the 6th power.', size=36)),
+            "The common traps: splitting a root over a plus, forgetting the middle term, and keeping a fake solution.",
+            "You know all of this. Now practice.",
+        ]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == CORE][-1]
+    M.new_video('r26-t09-summary', TOPIC, 'Roots — Summary', sb, slides, CORE, after=last)
+
+
 def apply(M):
     fix_lesson(M)
     fix_questions(M)
     add_guided(M)
     add_practice(M)
     fix_card(M)
+    summary(M)

@@ -126,7 +126,11 @@ def fix_lesson(M):
         'Add the equations: three x plus three y equals fifteen.',
         A('3x + 3y = 15 → x + y = 5 appears', T('$3x+3y=15 \\;\\to\\; x+y=5$', 46)),
         'Divide by three: x plus y is five. We never found x or y.',
-        'How do you choose what to do with the equations? The next slide gives you a checklist.'])
+        A("'Add, subtract — or divide — the equations' appears", T('Add, subtract — or divide — the equations', 40)),
+        D('Underline "Add", "subtract" and "divide"'),
+        'Adding the equations, subtracting them, sometimes dividing them — look for the short route straight to what they want.',
+        "How do you know which one? Practice. You'll start to recognize the patterns.",
+        'And the next slide gives you a checklist to start with.'])
     # new slide 7 - which operation?
     M.insert_slides(vid, 6, [dict(title='Which operation?', mode='concept', active=5, pre=[], script=[
         'Which operation? Check the question against this list.',
@@ -151,10 +155,12 @@ def fix_lesson(M):
         'Notice I wrote the two x y at the end — just so the x squared plus y squared sit together.',
         A("'Know 2 of the 3 pieces → get the 3rd' appears", T('Know two of: $x \\pm y$, $\\ x^2+y^2$, $\\ xy$ $\\to$ get the third', 38)),
         D('Circle x ± y, x² + y² and xy in the formulas'),
+        "See x minus y, x squared plus y squared, and x times y together? That's this formula — the square of a difference.",
         'Three pieces: x plus or minus y, x squared plus y squared, and x y. Know two pieces — get the third.',
         A('Example x + y = 5, xy = 6 appears', T('$x+y=5,\\ xy=6$: $\\ 25=x^2+y^2+12 \\;\\to\\; x^2+y^2=13$', 38)),
         'Example. x plus y is five, x y is six. Square the sum: twenty-five equals x squared plus y squared, plus twelve.',
         'So x squared plus y squared is thirteen. Check with two and three: four plus nine — thirteen.',
+        'Find the right formula, plug in what you know, and isolate what they ask for.',
         'One famous version — x plus one over x — gets its own slide later in this topic.'])
     # slide 9 (was 8) - break it apart + mini example
     M.set_slide(vid, 9, active=7, script=[
@@ -200,7 +206,7 @@ def fix_lesson(M):
         A("'Dividing by an unknown? Only if it can't be 0' appears", T("Dividing by an unknown? Only if it can't be $0$", 36)),
         A("'Power 2 and up: common factor → product = 0' appears", T('Power $2$ and up: common factor $\\to$ product $=0$', 36)),
         A("'Taking a root: plus AND minus' appears", T('Taking a root: plus AND minus', 36)),
-        A("'Asked for an expression? Use the checklist' appears", T('Asked for an expression? Use the checklist', 36)),
+        A("'Asked for an expression? Build it directly' appears", T('Asked for an expression? Build it directly — use the checklist', 36)),
         A("'Letters in the answers → plug in; numbers → try the choices' appears", T('Letters in the answers $\\to$ plug in; numbers $\\to$ try them', 36)),
         D('Tick each line'),
         'Every one of these shows up in the questions that follow. Try each one first.'])
@@ -369,7 +375,7 @@ def fix_questions(M):
         'Cancel $p^2 + q^2$ on both sides: $0 = 2pq$, therefore $pq = 0$.',
         'Since $q \\ne 0$, $p = 0$.'])
     S('q-203', stem='Given: $m > 0$, $n > 0$ and $\\frac{(m - n)^2 + (m + n)^2}{2} = 2n^2$. $m = ?$',
-      choices=['$n$', '$2n$', '$\\frac{n^2}{2}$', '$-n$'], correct=1, expl=[
+      choices=['$n$', '$2n$', '$\\frac{n^2}{2}$', '$m^2 - 2$'], correct=1, expl=[
         'Expand: $(m - n)^2 + (m + n)^2 = 2m^2 + 2n^2$ (the $2mn$ terms cancel).',
         'Half of it: $m^2 + n^2 = 2n^2$, therefore $m^2 = n^2$.',
         'Then $m = n$ or $m = -n$. Both numbers are positive. Therefore $m = n$.'])
@@ -465,7 +471,7 @@ def fix_questions(M):
       choices=['$5$', '$7$', '$0$', '$6$'], correct=4, expl=[
         'If $6 - k \\ne 0$, then $x = \\frac{8}{6 - k}$ is a solution.',
         'If $k = 6$, the equation reads $0 \\cdot x = 8$, that is, $0 = 8$. This is never true: no solution.'])
-    # --- retry set (unit-t7-1): same types as Questions 1-6
+    # --- unit-t7-1: additional source-bank variants
     S('q-172', stem='Given: $x^5 = x^4 y$. $y = ?$', choices=['$x$', '$x^4$', '$0$', NOTDET], correct=4, expl=[
         'If $x \\ne 0$, divide both sides by $x^4$: $y = x$.',
         'But if $x = 0$, the equation reads $0 = 0$, which is true for every $y$.',
@@ -491,16 +497,43 @@ def fix_questions(M):
       choices=['$40$', '$30$', '$24$', '$15$'], correct=1, expl=[
         'Use the square of a difference: $(x - y)^2 = x^2 + y^2 - 2xy$.',
         'Substitute: $9 = 89 - 2xy$. Therefore $2xy = 80$ and $xy = 40$.'])
+    # pass 2: the original variants alg-extra-unit-t7-1-1 ... -7 are restored (text clean-up only)
+    S('alg-extra-unit-t7-1-1', stem='Given: $7x + 9 = 86$. $x = ?$', choices=['$11$', '$9$', '$10$', '$12$'], correct=1, expl=[
+        'Subtract $9$ from both sides: $7x = 77$.', 'Divide by $7$: $x = 11$.'])
+    S('alg-extra-unit-t7-1-2', stem='Given:\n' + CASES('x + y = 17', 'x - y = 3') + '\n$x = ?$',
+      choices=['$9$', '$10$', '$7$', '$8$'], correct=2, expl=[
+        'Add the equations. The $y$ terms cancel: $2x = 20$.', 'Therefore $x = 10$.'])
+    S('alg-extra-unit-t7-1-3', stem='Given:\n' + CASES('2x + 3y = 41', '3x + 2y = 39') + '\n$x + y = ?$',
+      choices=['$17$', '$18$', '$16$', '$15$'], correct=3, expl=[
+        'Add the equations: $5x + 5y = 80$.', 'Divide by $5$: $x + y = 16$.'])
+    S('alg-extra-unit-t7-1-4', stem='Given:\n' + CASES('x + y = 16', 'xy = 63') + '\n$x^2 + y^2 = ?$',
+      choices=['$130$', '$256$', '$132$', '$128$'], correct=1, expl=[
+        'Square the sum: $(x + y)^2 = x^2 + y^2 + 2xy$.',
+        'Substitute: $256 = x^2 + y^2 + 126$.',
+        'Therefore $x^2 + y^2 = 130$. (Check: $7$ and $9$ give $49 + 81 = 130$.)'])
+    S('alg-extra-unit-t7-1-5', stem='Given: $\\frac{x - 7}{x + 9} = \\frac{1}{2}$. $x = ?$',
+      choices=['$23$', '$16$', '$24$', '$22$'], correct=1, expl=[
+        'The denominator cannot be $0$: $x \\ne -9$.',
+        'Cross-multiply: $2(x - 7) = x + 9$, that is, $2x - 14 = x + 9$.',
+        'Therefore $x = 23$. Check: $\\frac{16}{32} = \\frac{1}{2}$ ✓.'])
+    S('alg-extra-unit-t7-1-6', stem='Given: $x(x - 7) = 0$. What is the sum of all the solutions of the equation?',
+      choices=['$7$', '$0$', '$-7$', '$14$'], correct=1, expl=[
+        'A product is $0$ when one factor is $0$: $x = 0$ or $x - 7 = 0$.',
+        'The solutions are $0$ and $7$. Their sum is $7$.'])
+    S('alg-extra-unit-t7-1-7', stem='For which value of $k$ does the equation $(7 - k)x = 9$ have no solution?',
+      choices=['$8$', '$0$', '$7$', '$6$'], correct=3, expl=[
+        'If $7 - k \\ne 0$, then $x = \\frac{9}{7 - k}$ is a solution.',
+        'If $k = 7$, the equation reads $0 \\cdot x = 9$, that is, $0 = 9$. This is never true: no solution.'])
 
 
-# ---------------------------------------------------------------- 3. new lesson: more equation tools + guided Q21-23
+# ---------------------------------------------------------------- 3. new lesson: more equation tools + guided Q21-22
 def more_tools(M):
     sec = 'equation-b'
     title = 'More Equation Tools'
-    M.new_video('r26-t07-more-tools', TOPIC, title, ['Multiply or divide', 'x + 1/x', 'Solutions of a system', 'Recap'], [
+    M.new_video('r26-t07-more-tools', TOPIC, title, ['Multiply or divide', 'x + 1/x', 'Recap'], [
         dict(mode='title', title=title, script=[
-            'Three more tools for equation questions.',
-            'Multiplying or dividing equations, the famous x plus one over x, and systems with no solution — or infinitely many.']),
+            'Two more tools for equation questions.',
+            'Multiplying or dividing equations, and the famous x plus one over x.']),
         dict(mode='concept', title='Multiply or divide', active=0, script=[
             'We add and subtract equations all the time. We can also multiply or divide them.',
             A("'Products or ratios? Multiply or divide the equations.' appears", T('Products or ratios? Multiply or divide the equations.', 40)),
@@ -523,28 +556,14 @@ def more_tools(M):
             A('Example x + 1/x = 3 appears', T('$x+\\frac{1}{x}=3 \\;\\to\\; 9=x^2+\\frac{1}{x^2}+2 \\;\\to\\; x^2+\\frac{1}{x^2}=7$', 36)),
             'Example: x plus one over x is three. Square both sides: nine. Take away two: x squared plus one over x squared is seven.',
             'With a minus — x minus one over x — the middle term is minus two. Then you add two instead.']),
-        dict(mode='concept', title='Solutions of a system', active=2, script=[
-            'Two equations with two unknowns usually have exactly one solution.',
-            A("'Two equations, two unknowns: usually one solution' appears", T('Two equations, two unknowns: usually one solution', 38)),
-            'But not always. First, multiply one equation so the x terms match.',
-            A("'Same left side, different right side → no solution' appears", T('Same left side, different right side $\\to$ no solution', 38)),
-            'Now the left sides are equal. Different right sides? They contradict each other — no solution.',
-            A("'Same equation twice → infinitely many solutions' appears", T('Same equation twice $\\to$ infinitely many solutions', 38)),
-            "Same right sides too? It's really one equation written twice — infinitely many solutions.",
-            A('The example x + 2y = 3, 2x + 4y = 6 appears', T(CASES('x+2y=3', '2x+4y=6') + ' $\\;\\to\\;$ infinitely many', 40)),
-            'Example: x plus two y is three. Two x plus four y is six. The second is just the first, times two. Infinitely many solutions.',
-            D('Next to the example write "2x + 4y = 5 → no solution"'),
-            'Change the six to five — and there is no solution at all.',
-            'Questions with a letter k ask exactly this: for which k does it happen?']),
-        dict(mode='concept', title='Recap', active=3, script=[
+        dict(mode='concept', title='Recap', active=2, script=[
             "Let's lock it in.",
             A("'Products or ratios → multiply or divide' appears", T('Products or ratios $\\to$ multiply or divide the equations', 38)),
             A('(x ± 1/x)² = x² + 1/x² ± 2 appears', T('$\\left(x \\pm \\frac{1}{x}\\right)^2 = x^2+\\frac{1}{x^2} \\pm 2$', 44)),
-            A("'Same left side: different right → none; same → infinitely many' appears", T('Same left side: different right $\\to$ none; same $\\to$ infinitely many', 36)),
             D('Tick each line'),
-            'Three questions now — one for each tool. Try each one before you watch.'])], sec)
+            'Two questions now — one for each tool. Try each one before you watch.'])], sec)
 
-    sb = ['Question %d' % (M.next_question_number(TOPIC) + k) for k in range(3)]
+    sb = ['Question %d' % (M.next_question_number(TOPIC) + k) for k in range(2)]
     # Q21 - dividing equations
     q = 'q-r26-t07-01'
     _add_q(M, q, 'Given:\n' + CASES('x^2y = 18', 'xy^2 = 12') + '\n$\\frac{x}{y} = ?$',
@@ -590,34 +609,9 @@ def more_tools(M):
             D('Circle choice 2'),
             'Choice two.',
             'The trap: squaring each part and forgetting the middle term. That gives nine — choice one.'])], sec)
-    # Q23 - system with a parameter
-    q = 'q-r26-t07-03'
-    _add_q(M, q, 'Given the system:\n' + CASES('2x + ky = 5', 'x + 3y = 2') + '\nFor which value of $k$ does the system have no solution?',
-           ['$3$', '$-6$', '$6$', '$1.5$'], 3, [
-               'Multiply the second equation by $2$: $2x + 6y = 4$.',
-               'If $k = 6$, the first equation is $2x + 6y = 5$. The same left side cannot equal both $5$ and $4$: no solution.',
-               'For any other $k$, subtract: $(k - 6)y = 1$ gives one value of $y$, and then one value of $x$.'], sec)
-    _solution(M, q, title, sb, ['Question twenty-three.', 'A letter k inside a system. When does it break?'], [
-        ('Match the left sides', [
-            'No solution means the two equations contradict each other.',
-            'That happens when the left sides are the same — but the right sides are different.',
-            D('Under the second equation write "×2: 2x + 6y = 4"'),
-            'Multiply the second equation by two: two x plus six y equals four.',
-            'Now both equations start with two x.',
-            D('Next to the first equation write "k = 6 → 2x + 6y = 5"'),
-            "If k is six, the first one says two x plus six y is five. The second says it's four.",
-            "The same thing can't be five and four. No solution.",
-            D('Circle choice 3'),
-            'k equals six. Choice three.']),
-        ('Any other k', [
-            'What if k is any other number? Subtract the doubled second equation from the first.',
-            D('Write "(k − 6)y = 1"'),
-            "k minus six, times y, equals one. If k isn't six, y has one value — and then x has one value.",
-            'Same left side, different right side — no solution. Same left side AND same right side — infinitely many.',
-            'Choice one — three — is the trap: copying the three from the second equation. Always multiply first.'])], sec)
 
 
-# ---------------------------------------------------------------- 4. new lesson: quadratic equations + guided Q24-26
+# ---------------------------------------------------------------- 4. new lesson: quadratic equations + guided Q23-25
 def _new_section(M, sid, title, after_sec):
     """The API cannot create sections; add one right after `after_sec` (same topic, kind 'learn')."""
     sec = {'id': sid, 'topic': TOPIC, 'title': title, 'kind': 'learn', 'questionCount': 0, 'items': []}
@@ -725,10 +719,10 @@ def quadratics(M):
             A("'a² = b² → a = b or a = −b' appears", T('$a^2=b^2 \\to a=b$ or $a=-b$', 38)),
             A("'Fraction: denominator ≠ 0' appears", T('Fraction: the denominator $\\ne 0$', 38)),
             D('Tick each line'),
-            'Three questions now. Try each one before you watch.'])], sec, after='solve-q-r26-t07-03')
+            'Three questions now. Try each one before you watch.'])], sec, after='solve-q-r26-t07-02')
 
     sb = ['Question %d' % (M.next_question_number(TOPIC) + k) for k in range(3)]
-    # Q24 - factor a trinomial
+    # Q23 - factor a trinomial
     q = 'q-r26-t07-04'
     _add_q(M, q, 'Given: $x^2 - 2x = 15$. Which of the following could be the value of $x$?',
            ['$-5$', '$-3$', '$3$', '$15$'], 2, [
@@ -736,7 +730,7 @@ def quadratics(M):
                'Two numbers with product $-15$ and sum $-2$: $-5$ and $3$. Therefore $(x - 5)(x + 3) = 0$.',
                'Therefore $x = 5$ or $x = -3$. Only $-3$ is among the choices.',
                'Check: $(-3)^2 - 2 \\cdot (-3) = 9 + 6 = 15$ ✓.'], sec)
-    _solution(M, q, title, sb, ['Question twenty-four.', 'An x squared and an x. A quadratic.'], [
+    _solution(M, q, title, sb, ['Question twenty-three.', 'An x squared and an x. A quadratic.'], [
         ('Everything to one side', [
             'Tempting: x times x minus two is fifteen — so x is fifteen? No!',
             'A product equal to ZERO splits into cases. A product equal to fifteen does not.',
@@ -758,7 +752,7 @@ def quadratics(M):
             'Negative five: twenty-five plus ten — thirty-five. Negative three: nine plus six — fifteen. Yes.',
             'Three: nine minus six — three. Fifteen: far too big.',
             'Choice two again. For "which could be" questions, trying the choices is very fast.'])], sec)
-    # Q25 - the a^2 = b^2 trap
+    # Q24 - the a^2 = b^2 trap
     q = 'q-r26-t07-05'
     _add_q(M, q, 'Given: $(x + 1)^2 = (x - 3)^2$. $x = ?$',
            ['$-1$', '$1$', '$3$', 'No number satisfies the equation.'], 2, [
@@ -766,7 +760,7 @@ def quadratics(M):
                'Case 1: $x + 1 = x - 3$, that is, $1 = -3$. This is impossible.',
                'Case 2: $x + 1 = -(x - 3) = -x + 3$. Therefore $2x = 2$ and $x = 1$.',
                'Check: $(1 + 1)^2 = 4$ and $(1 - 3)^2 = 4$ ✓.'], sec)
-    _solution(M, q, title, sb, ['Question twenty-five.', 'Two equal squares. Here comes the trap.'], [
+    _solution(M, q, title, sb, ['Question twenty-four.', 'Two equal squares. Here comes the trap.'], [
         ('Plus or minus', [
             'The tempting move: the squares are equal, so the insides are equal.',
             D('Write "x + 1 = x − 3 → 1 = −3 ✗"'),
@@ -788,7 +782,7 @@ def quadratics(M):
             D('Write "8x = 8 → x = 1"'),
             'The x squared cancels. Eight x equals eight. x is one.',
             'Same answer. Choice two.'])], sec)
-    # Q26 - fraction = 0, extraneous solution; try the choices
+    # Q25 - fraction = 0, extraneous solution; try the choices
     q = 'q-r26-t07-06'
     _add_q(M, q, 'Given: $\\frac{x^2 - 7x + 12}{x - 3} = 0$. $x = ?$',
            ['$3$', '$4$', '$3$ or $4$', '$-4$'], 2, [
@@ -796,7 +790,7 @@ def quadratics(M):
                'Numerator: two numbers with product $12$ and sum $-7$: $-3$ and $-4$. Therefore $(x - 3)(x - 4) = 0$, and $x = 3$ or $x = 4$.',
                'But $x = 3$ makes the denominator $0$, which is not allowed. Therefore $x = 4$ only.',
                'Trying the choices: $x = 3$ gives $\\frac{0}{0}$, which is not a number. $x = 4$ gives $\\frac{0}{1} = 0$ ✓. $x = -4$ gives $\\frac{56}{-7} = -8$.'], sec)
-    _solution(M, q, title, sb, ['Question twenty-six.', 'A fraction equal to zero. Watch the denominator.'], [
+    _solution(M, q, title, sb, ['Question twenty-five.', 'A fraction equal to zero. Watch the denominator.'], [
         ('Top zero, bottom not', [
             'A fraction is zero when the top is zero — and the bottom is not.',
             D('Write "x² − 7x + 12 = 0"'),
@@ -871,16 +865,6 @@ NEW_PRACTICE = [
          'Multiply the three equations: $xy \\cdot yz \\cdot xz = 12 \\cdot 6 \\cdot 8$, that is, $(xyz)^2 = 576$.',
          'Therefore $xyz = 24$ or $xyz = -24$. All three numbers are positive. Therefore $xyz = 24$.',
          'Check: $x = 4$, $y = 3$, $z = 2$ ✓.']),
-    ('17', 'Given the system:\n' + CASES('3x - ky = 6', 'x - 2y = 2') + '\nFor which value of $k$ does the system have infinitely many solutions?',
-     ['$2$', '$-6$', '$6$', '$3$'], 3, [
-         'Multiply the second equation by $3$: $3x - 6y = 6$.',
-         'If $k = 6$, the first equation is also $3x - 6y = 6$. It is the same equation twice. Every pair that fits it is a solution: infinitely many.',
-         'For any other $k$, there is exactly one solution.']),
-    ('18', 'Given: the system\n' + CASES('ax + 2y = 4', '3x + y = b') + '\nhas infinitely many solutions. $a + b = ?$',
-     ['$8$', '$5$', '$7$', '$10$'], 1, [
-         'Multiply the second equation by $2$: $6x + 2y = 2b$.',
-         'Infinitely many solutions means the two equations are the same equation: $a = 6$ and $2b = 4$. Therefore $b = 2$.',
-         'Therefore $a + b = 8$.']),
     ('19', 'Given: $x = 2y + 3$. $4y = ?$',
      ['$2x - 6$', '$2x - 3$', '$\\frac{x - 3}{2}$', '$x - 6$'], 1, [
          'Plug in: $y = 1$ gives $x = 5$ and $4y = 4$.',
@@ -902,18 +886,13 @@ def practice(M):
     sec = 'unit-t7-5'
     for suf, stem, ch, c, ex in NEW_PRACTICE:
         _add_q(M, 'q-r26-t07-' + suf, stem, ch, c, ex, sec)
-    # remove the clone set (copies of the alg-extra t7-5 items)
-    for k in range(1, 8):
-        M.unplace('alg-extra-unit-t7-1-%d' % k)
-    # the other variants section is now a retry set for Questions 1-6
-    M.sections['unit-t7-1']['title'] = 'Retry set (same types as Questions 1–6)'
     n = lambda s: 'q-r26-t07-' + s
     a = lambda k: 'alg-extra-unit-t7-5-%d' % k
     M.practice_order(sec, [
         a(1), a(2), a(3), a(6), n('07'), a(5), a(4), a(7), 'q-198', 'q-212', 'q-199', n('15'), n('19'), n('08'),
         n('10'), n('21'), 'q-200', 'q-210', 'q-211', 'q-201', 'q-202', 'q-204', 'q-205', 'q-206', n('09'), n('13'),
-        n('17'), 'q-209', 'q-203', 'q-207', 'q-213', 'q-216', 'q-217', n('11'), n('20'), n('14'), n('12'), n('16'),
-        n('18'), 'q-215', 'q-208', 'q-214'])
+'q-209', 'q-203', 'q-207', 'q-213', 'q-216', 'q-217', n('11'), n('20'), n('14'), n('12'), n('16'),
+        'q-215', 'q-208', 'q-214'])
 
 
 # ---------------------------------------------------------------- 6. memory card
@@ -943,7 +922,6 @@ def card(M):
                 ['4. Each factor $= 0$ (the sign flips)', '$x = 2$ or $x = 3$']]}],
         'tips': [
             '$x^2 = 9$ has two solutions ($3$ and $-3$). $(x - 5)^2 = 0$ has one ($5$). $x^2 = -4$ has none.',
-            'Two equations: make the left sides equal. Different right sides $\\to$ no solution. Same right sides $\\to$ infinitely many.',
             '"Necessarily true": one legal counterexample kills a choice.']},
         after='equation-strategy')
 
@@ -956,3 +934,70 @@ def apply(M):
     quadratics(M)
     practice(M)
     card(M)
+    summary(M)
+
+
+# ---------------------------------------------------------------- 7. pass 2: summary video before the practice
+def summary(M):
+    sb = ["Don't divide by x", 'Plus AND minus', 'Quadratics', 'Fraction = 0', 'Build the expression',
+          'Hidden formulas', 'Two unknowns', 'Plug in or try', 'Before you practice']
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            'Before you practice, a quick summary of equations.',
+            'The rules, the shortcuts and the traps — in three minutes.']),
+        dict(mode='concept', title="Don't divide by x", active=0, pre=[], script=[
+            A('x³ = x²y → x²(x − y) = 0 appears', T('$x^3=x^2y \;\\to\; x^2(x-y)=0 \;\\to\; x=0$ or $x=y$', 44)),
+            "Dividing by x? Only if x can't be zero.",
+            'Otherwise: everything to one side, take out the common factor, and split the product.']),
+        dict(mode='concept', title='Plus AND minus', active=1, pre=[], script=[
+            A('(x − 6)² = 16 → x − 6 = 4 or −4 appears', T('$(x-6)^2=16 \;\\to\; x-6=4$ or $x-6=-4$', 44)),
+            'Taking a root to solve? Plus AND minus.',
+            A('a² = b² → a = b or a = −b appears', T('$a^2=b^2 \;\\to\; a=b$ or $a=-b$', 46)),
+            'Two equal squares: the numbers are equal — or opposite. Check both cases.']),
+        dict(mode='concept', title='Quadratics', active=2, pre=[], script=[
+            A('x² − 5x + 6 = (x − 2)(x − 3) = 0 appears', T('$x^2-5x+6=(x-2)(x-3)=0$', 48)),
+            'Everything to one side, zero on the other. Two numbers: product c, sum b.',
+            A('x = 2 or x = 3 appears', T('$x=2$ or $x=3$ — the sign flips', 44)),
+            'Each factor equals zero. Watch the sign: x minus two gives two.',
+            'Two solutions, one — like x minus three, squared — or none, like x squared equals minus four.']),
+        dict(mode='concept', title='Fraction = 0', active=3, pre=[], script=[
+            A("'Numerator = 0, denominator ≠ 0' appears", T('Fraction $=0$: numerator $=0$, denominator $\\ne 0$', 42)),
+            'A fraction is zero when the top is zero — and the bottom is not.',
+            A('(x² − 9)/(x − 3) = 0 → x = −3 appears', T('$\\frac{x^2-9}{x-3}=0 \;\\to\; x=-3$ only', 46)),
+            'Three makes the bottom zero. Throw it out.']),
+        dict(mode='concept', title='Build the expression', active=4, pre=[], script=[
+            A("'Asked for an expression? Build it directly' appears", T('Asked for an expression? Build it directly', 40)),
+            "Don't find every letter. Add, subtract — or divide — the equations.",
+            A("'Mirror coefficients → add' appears", T('Mirror coefficients $\\to$ add', 36)),
+            'Mirror coefficients? Add.',
+            A("'A letter missing from the answers → make it cancel' appears", T('A letter missing from the answers $\\to$ make it cancel', 36)),
+            'A letter missing from the answers? Make it cancel.',
+            A("'Products or ratios → multiply or divide' appears", T('Products or ratios $\\to$ multiply or divide', 36)),
+            'Products or ratios? Multiply or divide.']),
+        dict(mode='concept', title='Hidden formulas', active=5, pre=[], script=[
+            A('(x ± y)² = x² + y² ± 2xy appears', T('$(x\\pm y)^2=x^2+y^2\\pm 2xy$', 46)),
+            'x plus or minus y, x squared plus y squared, and x y: know two, get the third.',
+            A('(x ± 1/x)² = x² + 1/x² ± 2 appears', T('$\\left(x\\pm\\frac{1}{x}\\right)^2=x^2+\\frac{1}{x^2}\\pm 2$', 46)),
+            'x plus one over x: the middle term is just two.',
+            A('a + 2b + c = (a + b) + (b + c) appears', T('$a+2b+c=(a+b)+(b+c)$', 44)),
+            'A big equation? Break it into the small ones.']),
+        dict(mode='concept', title='Two unknowns', active=6, pre=[], script=[
+            A("'One equation, two unknowns → a relationship' appears", T('One equation, two unknowns $\\to$ a relationship', 40)),
+            "One equation, two unknowns: no values — but a relationship. a plus three equals b means b is bigger.",
+            A("'Necessarily true = true in EVERY allowed case' appears", T('Necessarily true = true in EVERY allowed case', 38)),
+            'One legal counterexample kills a choice.',
+            '"Cannot be determined" only when different allowed cases give different answers.']),
+        dict(mode='concept', title='Plug in or try', active=7, pre=[], script=[
+            A("'Letters in the answers → plug in numbers' appears", T('Letters in the answers $\\to$ plug in numbers', 40)),
+            'Numbers that fit all the givens. Avoid zero and one. Check all four choices.',
+            A("'Numbers in the answers → try them' appears", T('Numbers in the answers $\\to$ try them in the question', 40)),
+            'A choice that works is A solution — maybe not the only one.']),
+        dict(mode='concept', title='Before you practice', active=8, pre=[], script=[
+            'Before every question, ask yourself:',
+            A("'Am I dividing by something that could be 0?' appears", T('Am I dividing by something that could be $0$?', 38)),
+            A("'Did I take plus AND minus?' appears", T('Did I take plus AND minus?', 38)),
+            A("'Does a solution make a denominator 0?' appears", T('Does a solution make a denominator $0$?', 38)),
+            A("'Do I need each letter — or just the expression?' appears", T('Do I need each letter — or just the expression?', 38)),
+            'The classic traps: losing x equals zero, forgetting the negative root, and keeping a solution that breaks the denominator.',
+            'Now go practice.'])]
+    M.new_video('r26-t07-summary', TOPIC, 'Equations: Summary', sb, slides, 'r26-t07-quadratic', after='solve-q-r26-t07-06')

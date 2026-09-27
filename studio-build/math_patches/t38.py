@@ -475,16 +475,9 @@ def apply(M):
                  ["Here we don't have enough givens to decide.",
                   "Notice: TR is free. Nothing in the givens fixes it. That's the 'find what is free' check."])
 
-    # --- (c) Q10: the angle-bisector shortcut for strong students
-    b = M.slide('solve-geo38-g184', 5)
-    b['items'].append(R(0, 510, 'Shortcut: $\\dfrac{KN}{NL}=\\dfrac{KM}{ML}>1$', 32))
-    M.edit_lines('solve-geo38-g184', 5, lambda ls: ls + [
-        {'say': 'A shortcut for strong students: a bisector splits the opposite side in the same ratio as the two sides next to it.'},
-        {'appear': len(b['items']) - 1, 'label': "'KN/NL = KM/ML > 1' appears"},
-        {'say': 'KN to NL is like KM to ML. KM is the hypotenuse — longer than ML. So KN is longer than NL. One line.'}])
+    # --- (c) Pass 2: the angle-bisector shortcut is removed (approved plan); the solution keeps its fixed text
     S('geo38-g184', expl=['Drop NE perpendicular to KM. Right triangles MNE and MNL have equal angles at M and the same hypotenuse MN. They are congruent, therefore NE = NL.',
-                          'In right triangle KNE, KN is the hypotenuse, therefore KN > NE = NL. Choice 3.',
-                          'Shortcut: the bisector gives $\\frac{KN}{NL}=\\frac{KM}{ML}$, and $KM>ML$ (KM is the hypotenuse).'])
+                          'In right triangle KNE, KN is the hypotenuse, therefore KN > NE = NL. Choice 3.'])
 
     # --- (d) goodbye only at the very end (Question 13 video)
     _replace_say(M, 'solve-geo38-g187', 3, "That's it — we've finished geometric understanding",
@@ -569,8 +562,13 @@ def apply(M):
     # ================================================================================
     # 5. PRACTICE: remove repeats, add exam-level questions, order easy -> hard
     # ================================================================================
-    M.unplace('geo38-core-p18')   # the same rectangle fact as p22
-    M.unplace('geo38-core-p26')   # a plain counting repeat (T28)
+    # Pass 2: geo38-core-p18 and geo38-core-p26 are restored (text clean-up only); q-r26-t38-08 is removed.
+    S('geo38-core-p18', stem='A square and a rectangle that is not a square both have perimeter 32 cm. Which of the following statements is necessarily true?',
+      expl=['The square has side $\\frac{32}{4}=8$ and area $8\\cdot8=64$ cm².',
+            'For a fixed perimeter, the square has the greatest area of all rectangles. The other rectangle is not a square, so its area is less than 64 (for example, $10\\cdot6=60$).',
+            'The square has the greater area: choice 4.'])
+    S('geo38-core-p26', expl=['Each of the 4 vertical lines meets each of the 3 horizontal lines exactly once: $4\\cdot3=12$ points.',
+                              'Two vertical lines are parallel, and two horizontal lines are parallel, so they add no more points. The answer is 12: choice 1.'])
     NEW = [
         ('q-r26-t38-03', 'A parallelogram has sides 4 cm and 9 cm. Its angles can change. What is its greatest possible area?',
          ['$18$ cm²', '$26$ cm²', '$13$ cm²', '$36$ cm²'], 4,
@@ -597,11 +595,6 @@ def apply(M):
          ['Each side of the cut face lies on one face of the cube, and the plane meets each face at most once. The cube has 6 faces, so the cut face has at most 6 sides.',
           'A triangle: cut off a corner. A rectangle that is not a square: cut through two opposite edges. A regular hexagon: cut through the center, straight across a long diagonal of the cube.',
           'A shape with 7 sides is impossible: choice 4.'], None),
-        ('q-r26-t38-08', 'An ant walks on the surface of a cube with edge 2 cm, from one corner to the opposite corner (the corner farthest from it). '
-                         'What is the length of the shortest path?',
-         ['$2\\sqrt3$ cm', '$2\\sqrt5$ cm', '$2+2\\sqrt2$ cm', '$6$ cm'], 2,
-         ['Unfold two neighboring faces into one flat $2\\times4$ rectangle. The shortest path is its diagonal: $\\sqrt{4^2+2^2}=\\sqrt{20}=2\\sqrt5\\approx4.5$.',
-          'Traps: $2\\sqrt3$ goes through the inside of the cube (not allowed). A face diagonal and then an edge is $2+2\\sqrt2\\approx4.8$, and three edges are 6. Both are longer.'], None),
         ('q-r26-t38-09', 'Triangle 1 has two sides of 5 cm and 8 cm with a 50° angle between them. '
                          'Triangle 2 has two sides of 5 cm and 8 cm with a 130° angle between them. Which of the following is true?',
          ['The areas are equal, and the third sides are equal.', 'The areas are equal, and triangle 2 has the longer third side.',
@@ -624,9 +617,11 @@ def apply(M):
         M.place_q(qid, PRACT)
     P = lambda n: 'geo38-core-p%02d' % n
     M.practice_order(PRACT, [
-        P(22), P(23), P(24), P(21), P(1), P(4), 'q-r26-t38-04', 'q-r26-t38-03', P(5), P(25), 'q-r26-t38-05', P(20),
-        P(13), P(14), 'q-r26-t38-06', P(9), P(6), P(7), 'q-r26-t38-07', 'q-r26-t38-08', P(2), P(10), P(16), P(8),
+        P(26), P(22), P(18), P(23), P(24), P(21), P(1), P(4), 'q-r26-t38-04', 'q-r26-t38-03', P(5), P(25), 'q-r26-t38-05', P(20),
+        P(13), P(14), 'q-r26-t38-06', P(9), P(6), P(7), 'q-r26-t38-07', P(2), P(10), P(16), P(8),
         'q-r26-t38-09', 'q-r26-t38-10', 'q-r26-t38-11', P(12), P(11), P(19), P(3), P(15), P(17)])
+
+    summary(M)   # Pass 2: summary lesson right before the practice
 
     # ================================================================================
     # 6. CLEAN-UP: American spelling, "so" = therefore, hyphens in words on pre-loaded canvases
@@ -648,3 +643,78 @@ def apply(M):
                     ns = _so(_us(l['say']))
                     if ns != l['say']: l['say'] = ns; ch = True
         if ch: M.touched_videos.add(f['ref'])
+
+
+
+def _b(label, tex, size=40):
+    """A board line that pops in (label = what the teacher sees in the script)."""
+    return A("'%s' appears" % label, T(tex, size=size))
+
+
+def summary(M):
+    """Pass 2: a short summary lesson at the end of the learn section (after the memory card), right before the practice."""
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == LEARN][-1]
+    sb = ['Shape efficiency', 'Moving the vertex', 'Angle on a diameter', 'Two fixed sides', 'Acute or obtuse?',
+          'Must, could, cannot', 'Test a claim', 'Slide the apex', 'Before you practice']
+    M.new_video('r26-t38-summary', TOPIC, 'Summary', sb, [
+        dict(mode='title', title='Summary', script=[
+            "A quick summary before you practice.",
+            "The big ideas of geometric understanding — with almost no calculation."]),
+        dict(title='Shape efficiency', active=0, script=[
+            _b('Same perimeter → the more circle-like shape has more area', 'Same perimeter $\\rightarrow$ the more circle-like shape has MORE area', size=38),
+            _b('Same area → the more circle-like shape has less perimeter', 'Same area $\\rightarrow$ the more circle-like shape has LESS perimeter', size=38),
+            "The circle is the most efficient shape. The country rule: most land, least border.",
+            "So read what is fixed — the perimeter or the area.",
+            _b('P = 24: 1 · 11 = 11, 4 · 8 = 32, 6 · 6 = 36', '$P=24$: $\\ 1\\cdot11=11$, $\\ 4\\cdot8=32$, $\\ 6\\cdot6=36$'),
+            "Rectangles: the closer to a square, the more area. Regular polygons: the more sides, the more like a circle."]),
+        dict(title='Moving the vertex', active=1, script=[
+            _b('Vertex moves straight away → the angle gets smaller', 'Vertex moves straight away $\\rightarrow$ the angle gets smaller'),
+            "Move the vertex straight away from the segment, and the angle closes. Bring it closer, and it opens toward 180.",
+            _b('Vertex fixed, segment longer → the angle gets bigger', 'Vertex fixed, segment longer $\\rightarrow$ the angle gets bigger'),
+            "Keep the vertex and stretch the segment: the old angle sits inside the new one. Bigger.",
+            "And the farther the vertex from an arc, the smaller the angle."]),
+        dict(title='Angle on a diameter', active=2, script=[
+            _b('On the circle: 90° · inside: > 90° · outside: < 90°', 'On the circle: $90°$ · inside: $>90°$ · outside: $<90°$'),
+            "An angle resting on a diameter. With the vertex on the circle, it's exactly 90.",
+            "Inside the circle, the vertex is closer: the angle opens, more than 90.",
+            "Outside, it's farther: the angle closes, less than 90."]),
+        dict(title='Two fixed sides', active=3, script=[
+            _b('Wider angle → longer third side', 'Wider angle $\\rightarrow$ longer third side'),
+            "Two rods that don't change, and the angle between them opens. The third side always gets longer.",
+            _b('Greatest area at 90°: 5 · 8 ÷ 2 = 20', 'Greatest area at $90°$: $\\ \\frac{5\\cdot8}{2}=20$ · parallelogram $5\\cdot8=40$'),
+            "The area is different. It grows only up to 90 degrees. At 90 it's the greatest.",
+            _b('θ and 180° − θ: the same area', '$\\theta$ and $180°-\\theta$: the same area'),
+            "Here's the trap: 50 and 130 degrees give the same height — the same area."]),
+        dict(title='Acute or obtuse?', active=4, script=[
+            _b('c² = a² + b² → right · c² > a² + b² → obtuse · c² < a² + b² → acute', '$c^2=a^2+b^2$ right · $c^2>a^2+b^2$ obtuse · $c^2<a^2+b^2$ acute', size=36),
+            "The anchor you'll use most: the right angle. Compare with Pythagoras.",
+            _b('7, 8, 10: 100 < 49 + 64 = 113 → acute', '$7,\\ 8,\\ 10$: $\\ 100<49+64=113$ $\\rightarrow$ acute'),
+            "The longest side is longer than in the right triangle? Obtuse. Shorter? Acute.",
+            "Always use the longest side as c."]),
+        dict(title='Must, could, cannot', active=5, script=[
+            _b('Must: in every allowed case', 'Must be true: in EVERY case the givens allow'),
+            _b('Could: in at least one', 'Could be true: in at least ONE allowed case'),
+            _b('Cannot: in none', 'Cannot be true: in NO allowed case'),
+            "Read which one they're asking before you look at the choices.",
+            "One allowed case where a claim fails — and 'must be true' is out."]),
+        dict(title='Test a claim', active=6, script=[
+            _b('Change the shape — keep every given', 'Change the shape — keep every given'),
+            "The figure isn't necessarily drawn to scale. Trust the givens, not the picture.",
+            _b('The end · the middle · what is free?', 'Push to the end · put it in the middle · find what is free'),
+            "Exaggerate: push the free point to the end, then put it in the middle.",
+            _b('Depends on something free → cannot be determined', 'Depends on something free $\\rightarrow$ cannot be determined'),
+            "If the answer depends on something the givens don't fix, it cannot be determined."]),
+        dict(title='Slide the apex', active=7, script=[
+            _b('Same base, apex on a parallel line → same area', 'Same base, apex on a parallel line $\\rightarrow$ same height $\\rightarrow$ same area', size=38),
+            "The apex slides along a line parallel to the base. The height stays the same — so the area stays the same.",
+            _b('The perimeter does change', 'The perimeter DOES change'),
+            "But the perimeter changes. You'll see this in a trapezoid too."]),
+        dict(title='Before you practice', active=8, script=[
+            "Before you practice, ask yourself these questions.",
+            _b('What is fixed: the perimeter or the area?', 'What is fixed: the perimeter or the area?'),
+            _b('Must, could or cannot?', 'Must, could or cannot?'),
+            _b('What is really given, and what is free?', 'What is really given, and what is free?'),
+            _b('What happens at the extremes?', 'What happens at the extremes? Compare with $90°$.'),
+            "The traps: trusting the drawing, and thinking a wider angle always means a bigger area.",
+            "Good luck."]),
+    ], LEARN, after=last)

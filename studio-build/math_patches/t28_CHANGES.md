@@ -60,3 +60,22 @@ These now teach the methods that practice already used without a lesson: p15 (ga
 - The road-diagram slide is in the new video, not in "Multiply the Choices" (it needs "or = add", which comes later).
 - p02 and p16 test exponents more than counting; kept as short factorial/power practice.
 - The API has no way to shrink a slide table, so Q15's stem was shortened ("A and B on top, C and D below") to keep the Q15 video table clear of the answer choices.
+
+## Pass 2 (2026-09-27): remove/restore plan + summary lesson
+Check: `python3 math_check.py 18 27 28 33` shows 0 problems, 0 warnings and 0 layout problems.
+
+**Removed (plan):**
+- "Choosing a Group" (wp-137): the slide "Groups with no names", its sidebar entry and its recap line. The recap says the original "Two questions next — one of each." again.
+- `r26-t28-cases`: the slides "Road maps" (with its figure) and "The zero trap", their recap lines and sidebar entries. The video is renamed **"Boxes and 'At Least One'"**. The title slide and the recap ("Two questions next — one of each.") were updated.
+- Guided q-r26-t28-01 (groups with no names), -02 (road map, with its figure) and -03 (zero among the digits), with their solution videos. The guided questions were renumbered: learn 1–12, advanced 13–23. The original line "Last question of the set." in the Q12 video is back, because Q12 is again the last question of the section.
+- Practice q-r26-t28-10, -11, -12, -13, -24 and -25.
+- Card `mem-counting`: the row "Groups with no names". Card `mem-counting-advanced`: the rows "Road map" and "A zero among the digits", and the two tips about the direct road and digits with a zero.
+
+**Kept (plan):** "Which is the base?" slide, guided q-r26-t28-05 (mailboxes), practice -16 and the card row "Objects into boxes".
+
+**Restored:**
+- Practice wp28-p04, wp28-p07 and wp28-p13 (original text, solutions in TeX with the numbers shown), in the practice order by difficulty.
+- The true "rare" lines: wp-134 slide 2 "Rare and hard" (the original slide; its last line also says that probability uses this idea); wp-134 slide 4 "Subtracting possibilities is even rarer."; wp-137 slide 2 "…Very hard, and very rare."
+- alg-extra-unit-t18-3-4 comes from T18 (the T18 patch moves it). It is first in the T28 practice order, the easiest question.
+
+**Summary lesson added:** `r26-t28-summary` "Summary" (about 2.2 minutes). It is at the end of "Further guided examples", after the advanced card and right before the practice. Slides: Summary · Stages: multiply · Repetition and rows · Counted twice? · Who stays out · Cases · Objects into boxes · Together and apart · Before you practice (the 5 checklist questions; traps: adding instead of multiplying, dividing without a reason, a zero that leads a number).

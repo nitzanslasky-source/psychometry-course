@@ -6,7 +6,7 @@
    and a short strong-student lesson (estimate & eliminate, test a rule with numbers, cross shortcut,
    mixed numbers part by part). 5 guided questions with solution videos, 19 new practice questions, 2 new cards.
 3. Every written solution rewritten with real fractions ($\\frac{}{}$) and numbers.
-5. Practice: 3 near-duplicates removed, extra-2 replaced, answer positions shuffled, practice ordered easy -> hard.
+5. Practice: (Pass 2: q-041, q-042, q-045 and the original extra-2 restored; q-018 received from Topic 1), answer positions shuffled, practice ordered easy -> hard.
 """
 import re
 from dsl import T, H, A, D, Q, P
@@ -471,11 +471,16 @@ def rewrite_existing(M):
             choices=['$\\frac{1}{4}$', '$\\frac{2}{3}$', '$1$', '$\\frac{3}{4}$'], correct=4,
             expl=["Reduce first: $\\frac{3}{6}=\\frac{1}{2}=\\frac{2}{4}$.",
                   "Then $\\frac{2}{4}+\\frac{1}{4}=\\frac{3}{4}$."])
-    M.set_q(X % 2, stem='Evaluate $\\frac{7}{10}-\\frac{1}{4}$.',
-            choices=['$\\frac{3}{5}$', '$1$', '$\\frac{9}{20}$', '$\\frac{19}{20}$'], correct=3,
-            expl=["The LCM of 10 and 4 is 20: $\\frac{7}{10}=\\frac{14}{20}$ and $\\frac{1}{4}=\\frac{5}{20}$.",
-                  "$\\frac{14}{20}-\\frac{5}{20}=\\frac{9}{20}$.",
-                  "Choice 4 ($\\frac{19}{20}$) adds instead of subtracting. Choice 2 ($1$) subtracts tops and bottoms: $\\frac{7-1}{10-4}=\\frac{6}{6}$."])
+    # Pass 2 (plan): the original extra-2 (5/6 - 1/4) is restored; the 7/10 - 1/4 version stays as q-r26-t02-25
+    M.set_q(X % 2, stem='Evaluate $\\frac{5}{6}-\\frac{1}{4}$.',
+            choices=['$\\frac{7}{12}$', '$\\frac{1}{2}$', '$\\frac{2}{3}$', '$\\frac{1}{3}$'], correct=1,
+            expl=["The LCM of 6 and 4 is 12: $\\frac{5}{6}=\\frac{10}{12}$ and $\\frac{1}{4}=\\frac{3}{12}$.",
+                  "$\\frac{10}{12}-\\frac{3}{12}=\\frac{7}{12}$."])
+    M.new_q(QN % 25, TOPIC, 'Evaluate $\\frac{7}{10}-\\frac{1}{4}$.',
+            ['$\\frac{3}{5}$', '$1$', '$\\frac{9}{20}$', '$\\frac{19}{20}$'], 3,
+            ["The LCM of 10 and 4 is 20: $\\frac{7}{10}=\\frac{14}{20}$ and $\\frac{1}{4}=\\frac{5}{20}$.",
+             "$\\frac{14}{20}-\\frac{5}{20}=\\frac{9}{20}$.",
+             "Choice 4 ($\\frac{19}{20}$) adds instead of subtracting. Choice 2 ($1$) subtracts tops and bottoms: $\\frac{7-1}{10-4}=\\frac{6}{6}$."])
     M.set_q(X % 3, stem='Evaluate $\\frac{9}{7}\\cdot\\frac{14}{3}$.',
             choices=['$12$', '$6$', '$3$', '$7$'], correct=2,
             expl=["Cancel first: 3 into 9 (they become 1 and 3) and 7 into 14 (they become 1 and 2).",
@@ -496,9 +501,13 @@ def rewrite_existing(M):
     M.set_q(X % 7, expl=["Swap the numerator and the denominator and keep the minus sign: the reciprocal of $-\\frac{3}{5}$ is $-\\frac{5}{3}$.",
                          "Check: $-\\frac{3}{5}\\cdot\\left(-\\frac{5}{3}\\right)=1$ (two minus signs make a plus)."])
 
-    # near-duplicates in the practice set (fill the missing term / mixed <-> improper): keep the lesson versions
-    for qid in ('q-041', 'q-042', 'q-045'):
-        M.unplace(qid)
+    # Pass 2 (plan): q-041, q-042 and q-045 are restored (no longer removed), with clean solutions
+    M.set_q('q-041', expl=["The numerator went from 5 to 35: it was multiplied by 7.",
+                           "To keep the fraction's value, multiply the denominator by 7 too: $6\\cdot7=42$. The answer is 42."])
+    M.set_q('q-042', expl=["First reduce (divide top and bottom by 4): $\\frac{4}{12}=\\frac{1}{3}$.",
+                           "Then expand $\\frac{1}{3}$ to a denominator of 27: $27\\div3=9$. Multiply top and bottom by 9: $\\frac{1\\cdot9}{3\\cdot9}=\\frac{9}{27}$. The answer is 9."])
+    M.set_q('q-045', expl=["Mixed to improper: multiply the whole part by the denominator and add the numerator: $7\\cdot6+1=43$.",
+                           "Keep the same denominator: $7\\frac{1}{6}=\\frac{43}{6}$."])
 
 
 # ---------------------------------------------------------------- new questions
@@ -729,10 +738,11 @@ def place_all(M):
     M.place_q(q(18), 'decimals'); M.place_q(q(16), 'decimals')
     # ---- section 5: exam-level practice
     for n in (17, 4, 24, 8, 12, 23, 13): M.place_q(q(n), 'unit-t2-1')
+    M.place_q(q(25), 'unit-t2-1')
     X = 'alg-extra-unit-t2-1-%d'
     M.practice_order('unit-t2-1', [
-        'q-043', 'q-044', 'q-056', X % 5, 'q-057', 'q-060', 'q-051', 'q-052', X % 1, 'q-046', X % 3, 'q-050', X % 7,
-        'q-058', 'q-059', 'q-047', 'q-048', X % 4, 'q-049', X % 2, X % 6, 'q-053', 'q-055', 'q-054',
+        'q-041', 'q-042', 'q-043', 'q-045', 'q-044', 'q-018', 'q-056', X % 5, 'q-057', 'q-060', 'q-051', 'q-052', X % 1, 'q-046', X % 3, 'q-050', X % 7,
+        'q-058', 'q-059', 'q-047', 'q-048', X % 4, 'q-049', X % 2, q(25), X % 6, 'q-053', 'q-055', 'q-054',
         q(17), q(4), q(24), q(8), q(12), q(23), q(13)])
 
 
@@ -746,3 +756,86 @@ def apply(M):
     rewrite_existing(M)
     new_questions(M)
     place_all(M)
+    summary(M)
+
+
+def _b(label, tex, size=44):
+    """A board line that pops in (label = what the teacher sees in the script)."""
+    return A("'%s' appears" % label, T(tex, size=size))
+
+
+def summary(M):
+    """Pass 2: a summary lesson right before the mixed fraction practice (end of the decimals section)."""
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == 'decimals'][-1]
+    sb = ['What a fraction is', 'Same value', 'Multiplying', 'Dividing', 'Adding & subtracting', 'Several operations',
+          'Shortcuts', 'Decimals', 'Before you practice']
+    M.new_video('r26-t02-summary', TOPIC, 'Summary', sb, [
+        dict(mode='title', title='Summary', script=[
+            'A quick summary before the mixed fraction practice.',
+            'Every rule from the fraction lessons — in about three minutes.']),
+        dict(title='What a fraction is', active=0, script=[
+            _b('Numerator: pieces we have · Denominator: pieces in one whole', 'Numerator: pieces we have · Denominator: pieces in one whole', size=40),
+            _b('Bigger numerator → bigger · bigger denominator → smaller', 'Bigger numerator $\\to$ bigger · Bigger denominator $\\to$ smaller', size=40),
+            'More cakes — everyone gets more. More people — everyone gets less.',
+            _b('15/4 = 3 3/4 · 2 3/5 = 13/5', '$\\frac{15}{4}=3\\frac{3}{4} \\qquad 2\\frac{3}{5}=\\frac{2\\cdot 5+3}{5}=\\frac{13}{5}$'),
+            'Improper to mixed: how many times it fits, and the remainder goes on top.',
+            'Mixed to improper: whole times denominator, plus numerator. Same denominator.',
+            'And a denominator can never be zero.']),
+        dict(title='Same value', active=1, script=[
+            _b('18/24 = 3/4 = 12/16', 'Same factor on top and bottom: $\\frac{18}{24}=\\frac{3}{4}=\\frac{12}{16}$'),
+            'Expand or reduce: the same factor on top AND bottom. The value stays.',
+            _b('(6·5)/(6·7) = 5/7 but (6+5)/(6·7): no cancelling', '$\\frac{6\\cdot 5}{6\\cdot 7}=\\frac{5}{7}$ ✓ $\\qquad \\frac{6+5}{6\\cdot 7}$: no cancelling ✗'),
+            'Cancel factors only — never a term in a sum.',
+            _b('(12+8)/4 = 12/4 + 8/4 = 5', 'Split the top — never the bottom: $\\frac{12+8}{4}=\\frac{12}{4}+\\frac{8}{4}=5$'),
+            _b('−3/4 = (−3)/4 = 3/(−4)', '$-\\frac{3}{4}=\\frac{-3}{4}=\\frac{3}{-4} \\qquad \\frac{-3}{-4}=\\frac{3}{4}$'),
+            'One minus sign can sit anywhere. Two minus signs cancel.']),
+        dict(title='Multiplying', active=2, script=[
+            _b('a/b · c/d = ac/bd', '$\\frac{a}{b}\\cdot\\frac{c}{d}=\\frac{ac}{bd}$ — cancel first'),
+            'Top times top, bottom times bottom. Cancel first, and the numbers stay small.',
+            _b('2/3 of 36 = 24', '"Of" means times: $\\frac{2}{3}$ of $36=\\frac{2}{3}\\cdot 36=24$'),
+            _b('Spend 1/3, then 1/4 of the rest: 3/4 · 2/3 = 1/2 left', 'Spend $\\frac{1}{3}$, then $\\frac{1}{4}$ of the rest: $\\frac{3}{4}\\cdot\\frac{2}{3}=\\frac{1}{2}$ left', size=40),
+            '"Of the rest" means of what is left — not of the whole.']),
+        dict(title='Dividing', active=3, script=[
+            _b('3/4 ÷ 2/5 = 3/4 · 5/2 = 15/8', 'Keep, change, flip: $\\frac{3}{4}\\div\\frac{2}{5}=\\frac{3}{4}\\cdot\\frac{5}{2}=\\frac{15}{8}$'),
+            'Multiply by the reciprocal. Flip only the second one.',
+            _b('Stacked fraction: the main bar means ÷', 'Stacked fraction: the main bar means $\\div$'),
+            _b('Mixed numbers → improper first', 'Mixed numbers $\\to$ improper fractions first'),
+            'Mixed numbers first become improper fractions. Never multiply the parts separately.',
+            _b('3/4 ÷ 1/8 = 6', '$\\frac{3}{4}\\div\\frac{1}{8}=6$: dividing by a small fraction makes it bigger'),
+            'You count how many eighths fit into three quarters: six.']),
+        dict(title='Adding & subtracting', active=4, script=[
+            _b('3/8 + 5/12 = 9/24 + 10/24 = 19/24', 'Common denominator (LCM): $\\frac{3}{8}+\\frac{5}{12}=\\frac{9}{24}+\\frac{10}{24}=\\frac{19}{24}$', size=40),
+            'Adding and subtracting need a common denominator. Run through the multiples of the bigger one: twelve no, twenty-four yes.',
+            'Then add the tops. The denominator stays.',
+            _b('2 − 3/5 = 10/5 − 3/5 = 7/5', 'Whole numbers: $2-\\frac{3}{5}=\\frac{10}{5}-\\frac{3}{5}=\\frac{7}{5}$'),
+            'A whole number can wear any denominator. Mixed numbers? Improper fractions first.']),
+        dict(title='Several operations', active=5, script=[
+            _b('3/4 − 1/2 · 2/3 = 3/4 − 1/3 = 5/12', '$\\frac{3}{4}-\\frac{1}{2}\\cdot\\frac{2}{3}=\\frac{3}{4}-\\frac{1}{3}=\\frac{5}{12}$'),
+            'Same order as Topic 1: multiply and divide before add and subtract.',
+            _b('A fraction bar is brackets', 'A fraction bar is brackets: $\\dfrac{1+\\frac{1}{2}}{2-\\frac{1}{4}}=\\dfrac{\\frac{3}{2}}{\\frac{7}{4}}=\\frac{6}{7}$'),
+            'Work out the whole top and the whole bottom first. Then divide.',
+            'Name the operation. Then use its rule.']),
+        dict(title='Shortcuts', active=6, script=[
+            _b('Estimate with 0, 1/2, 1', 'Estimate with $0,\\ \\frac{1}{2},\\ 1$ — kill choices'),
+            'Eight ninths is almost one. Four sevenths is a little more than a half. The sum is about one and a half.',
+            _b('Test a rule with easy numbers', 'Test a rule: $\\frac{1}{2}+\\frac{1}{2}=1$, but $\\frac{1+1}{2+2}=\\frac{1}{2}$ ✗'),
+            'One example that fails kills a rule.',
+            _b('a/b + c/d = (ad + bc)/bd', 'Cross shortcut: $\\frac{a}{b}+\\frac{c}{d}=\\frac{ad+bc}{bd}$'),
+            'Cross shortcut: multiply across and add on top, multiply the bottoms. These are for speed — the safe method always works.']),
+        dict(title='Decimals', active=7, script=[
+            _b('0.36 = 36/100 = 9/25', 'Places = zeros: $0.36=\\frac{36}{100}=\\frac{9}{25}$'),
+            'Decimal places tell you the zeros in the denominator.',
+            _b('1.4 · 0.6 = 0.84', 'Multiply: count the places: $1.4\\cdot 0.6=0.84$'),
+            _b('4.8 ÷ 0.06 = 480/6 = 80', 'Divide: expand until whole: $\\frac{4.8}{0.06}=\\frac{480}{6}=80$'),
+            _b('÷0.5 = ×2 · ÷0.25 = ×4 · ÷0.2 = ×5', '$\\div 0.5=\\times 2 \\quad \\div 0.25=\\times 4 \\quad \\div 0.2=\\times 5 \\quad \\div 0.125=\\times 8$', size=40),
+            'And to compare decimals, give them the same number of places: zero point six eight is bigger than zero point six zero seven.']),
+        dict(title='Before you practice', active=8, script=[
+            'Before you practice, ask yourself these questions.',
+            _b('Which operation? Which rule?', 'Which operation is it? Which rule goes with it?'),
+            'Adding needs a common denominator. Multiplying doesn\'t.',
+            _b('Can I cancel? Only factors.', 'Can I cancel? Only factors of the whole top and the whole bottom.', size=40),
+            _b('Of what? Of the whole or of the rest?', 'Of what? The whole, or the rest?'),
+            _b('About how big is the answer?', 'About how big is the answer? Estimate with $0,\\ \\frac{1}{2},\\ 1$'),
+            'The traps: adding tops and bottoms, flipping the wrong fraction, splitting the bottom, and "of the rest."',
+            'Good luck.'])],
+        'decimals', after=last)

@@ -10,7 +10,7 @@ L1, L2 = 'geo31-learn-1', 'geo31-learn-2'
 FOUND, ADV = 'geo31-foundation-practice', 'geo31-advanced-practice'
 V_TRI, V_SPEC, V_AREA, V_EQ, V_MED = 'geo-009', 'geo-013', 'geo-016', 'geo-017-after', 'geo-018-after'
 V_PYT, V_TRIP, V_3060, V_4545 = 'geo-019', 'geo-024', 'geo-026', 'geo-027-after'
-N = ['q-r26-t31-%02d' % k for k in range(1, 12)]
+N = ['q-r26-t31-%02d' % k for k in range(1, 13)]
 C = r'\text{ cm}'
 
 # ---------------------------------------------------------------------------------------------
@@ -618,9 +618,8 @@ def apply(M):
     # =========================================================================================
     # 5. Pythagoras (geo-019): acute / right / obtuse from the sides + guided question
     # =========================================================================================
-    _say(M, V_PYT, 3, "Let's see sample questions", None)
     M.insert_slides(V_PYT, 3, [dict(mode='concept', title='Acute or obtuse?', script=[
-        "One more use of the squares — even when there's no right-angle mark.",
+        "But first — one more use of the squares, even when there's no right-angle mark.",
         A("'c = the longest side' appears", T('$c$ = the longest side', size=46)),
         "Take the longest side, c. Compare c squared with a squared plus b squared.",
         A("'c² = a² + b² → right' appears", T(r'$c^2=a^2+b^2$ → right', size=46)),
@@ -632,7 +631,7 @@ def apply(M):
         D('Write 5, 5, 8: 8² = 64 > 5² + 5² = 50 → obtuse'),
         "Sides 5, 5 and 8: 8 squared is 64. 25 plus 25 is 50. 64 is bigger — obtuse.",
         "Think of a door: open the angle wider, and the side opposite it grows.",
-        "Let's see sample questions — first finding the hypotenuse, then a leg, then this test.",
+        "Now the sample questions: the hypotenuse, a leg — and then this test.",
     ])])
     M.set_sidebar(V_PYT, ['The theorem', 'Right triangles only', 'Acute or obtuse?'])
     _lesson_actives(M, V_PYT)
@@ -931,13 +930,21 @@ def apply(M):
         'Area $=\\frac{8\\cdot8}{2}=32$.'])
 
     # --- advanced practice
-    S('geo31-advanced-p01', choices=['A triangle with two angles of $60°$', 'A triangle in which one median is also an altitude',
-                                     'An isosceles triangle with one angle of $60°$',
-                                     'A triangle in which two different medians are also altitudes'], correct=2, expl=[
+    S('geo31-advanced-p01', choices=[
+        'A triangle in which an altitude also bisects the angle at its starting vertex', 'A triangle with two angles of $60°$',
+        'An isosceles triangle with one angle of $60°$', 'An isosceles triangle whose base is twice half of an equal side'],
+      correct=1, expl=[
+        'An altitude that also bisects its starting angle makes the triangle isosceles. It does not force the base to equal the '
+        'other two sides.',
+        'Example: a triangle with sides $5,\\ 5,\\ 6$ has this symmetry line, but it is not equilateral.'])
+    M.new_q(N[11], TOPIC, 'Which of the following triangles is not necessarily equilateral?',
+            ['A triangle with two angles of $60°$', 'A triangle in which one median is also an altitude',
+             'An isosceles triangle with one angle of $60°$', 'A triangle in which two different medians are also altitudes'], 2, [
         'Choice 1: the third angle is $180°-60°-60°=60°$: equilateral.',
         'Choice 3: a $60°$ vertex angle gives base angles of $\\frac{180°-60°}{2}=60°$; $60°$ base angles give a third angle of $60°$: equilateral.',
         'Choice 4: each such median is a symmetry line, therefore two pairs of sides are equal: all three sides are equal.',
         'Choice 2: one symmetry line makes the triangle only isosceles. Example: sides $5,\\ 5,\\ 6$ — not equilateral.'])
+    M.place_q(N[11], ADV)
     S('geo31-advanced-p02', expl=[
         'ABC: legs $4$ and $4$, therefore $AC=4\\sqrt2$.',
         'ACD is equilateral: $AD=CD=AC=4\\sqrt2$.',
@@ -1085,7 +1092,10 @@ def apply(M):
     # =========================================================================================
     # 10. Practice: new questions, one duplicate out, easy -> hard
     # =========================================================================================
-    M.unplace('geo31-foundation-p26')      # third "median halves the area" question (p10 and adv-p08 stay)
+    # Pass 2: geo31-foundation-p26 stays (original question) - text clean-up only
+    S('geo31-foundation-p26', expl=[
+        'The median bisects the base, and the two small triangles share the same height, therefore their areas are equal.',
+        'The original triangle: $19+19=38$.'])
 
     # acute test (foundation)
     M.new_q(N[3], TOPIC, 'Which of the following could be the side lengths of an acute triangle (in cm)?',
@@ -1151,7 +1161,7 @@ def apply(M):
     M.place_q(N[10], ADV)
 
     M.practice_order(FOUND, [
-        'geo31-foundation-p04', 'geo31-foundation-p10', 'geo31-foundation-p23', 'geo31-foundation-p15', 'geo31-foundation-p14',
+        'geo31-foundation-p04', 'geo31-foundation-p10', 'geo31-foundation-p26', 'geo31-foundation-p23', 'geo31-foundation-p15', 'geo31-foundation-p14',
         'geo31-foundation-p01', 'geo31-foundation-p02', 'geo31-foundation-p07', 'geo31-foundation-p12', 'geo31-foundation-p16',
         'geo31-foundation-p22', N[4], 'geo31-foundation-p05', 'geo31-foundation-p08', 'geo31-foundation-p13',
         'geo31-foundation-p17', 'geo31-foundation-p18', 'geo31-foundation-p19', 'geo31-foundation-p20', 'geo31-foundation-p03',
@@ -1159,7 +1169,7 @@ def apply(M):
         'geo31-foundation-p25', 'geo31-foundation-p11', N[5], 'geo31-foundation-p27'])
     M.practice_order(ADV, [
         'geo31-advanced-p03', 'geo31-advanced-p06', 'geo31-advanced-p27', 'geo31-advanced-p09', 'geo31-advanced-p14',
-        'geo31-advanced-p01', 'geo31-advanced-p19', 'geo31-advanced-p15', 'geo31-advanced-p02', 'geo31-advanced-p11',
+        'geo31-advanced-p01', 'geo31-advanced-p19', 'geo31-advanced-p15', 'geo31-advanced-p02', 'geo31-advanced-p11', N[11],
         'geo31-advanced-p25', 'geo31-advanced-p08', 'geo31-advanced-p10', 'geo31-advanced-p13', 'geo31-advanced-p04',
         N[9], 'geo31-advanced-p17', 'geo31-advanced-p07', 'geo31-advanced-p05', 'geo31-advanced-p16', 'geo31-advanced-p20',
         'geo31-advanced-p12', 'geo31-advanced-p26', 'geo31-advanced-p18', N[6], N[8], N[7], 'geo31-advanced-p24', N[10],
@@ -1176,3 +1186,156 @@ def apply(M):
     # =========================================================================================
     _cleanup(M)
     _fix_sidebars(M)
+    _summaries(M)
+
+
+# =============================================================================================
+# Pass 2: summary lessons - one right before each practice section
+# =============================================================================================
+def _b(label, tex, size=40):
+    """A board line that pops in (label = what the teacher sees in the script)."""
+    return A("'%s' appears" % label, T(tex, size=size))
+
+
+def _summary_video(M, vid, section, intro, slides):
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == section][-1]
+    sb = [s[0] for s in slides]
+    beats = [dict(mode='title', title='Summary', script=intro)]
+    beats += [dict(mode='concept', title=t, active=k, script=sc) for k, (t, sc) in enumerate(slides)]
+    M.new_video(vid, TOPIC, 'Summary', sb, beats, section, after=last)
+
+
+def _summaries(M):
+    # ---- before the foundation practice: everything taught in "Learn and try" ----
+    _summary_video(M, 'r26-t31-summary', L1, [
+        'A quick summary before the practice.',
+        'Everything important about triangles — in about three minutes.'], [
+        ('Three lines', [
+            _b('Median → midpoint', 'Median $\\to$ the midpoint of the opposite side'),
+            'Three lines from a vertex. The median goes to the midpoint of the opposite side.',
+            _b('Altitude → 90°', 'Altitude $\\to$ $90°$ to the opposite side (maybe outside)'),
+            'The altitude meets the opposite side at 90 degrees. In an obtuse triangle it can fall outside.',
+            _b('Bisector → two equal angles', 'Angle bisector $\\to$ two equal angles'),
+            'The angle bisector splits the angle into two equal angles. Nothing more is promised.']),
+        ('Angles', [
+            _b('α + β + γ = 180°', '$\\alpha+\\beta+\\gamma=180°$'),
+            'The angles of a triangle add up to 180. Always.',
+            _b('Exterior angle = the two interior angles not next to it', 'Exterior angle $=$ the two interior angles not next to it'),
+            'An exterior angle equals the two interior angles not next to it. 47 and 68? The exterior angle is 115.',
+            _b('Larger angle ↔ longer side', 'Larger angle $\\leftrightarrow$ longer side opposite it'),
+            'And the larger angle sits opposite the longer side.']),
+        ('Sides', [
+            _b('big − small < c < big + small', '$\\text{big}-\\text{small}<c<\\text{big}+\\text{small}$'),
+            'Any two sides together are longer than the third.',
+            'So the third side is between the difference and the sum — never equal to either end.',
+            _b('Sides 7 and 12: 5 < c < 19 → 2 · 7 − 1 = 13 lengths', 'Sides $7$ and $12$: $5<c<19$ $\\Rightarrow$ $2\\cdot7-1=13$ whole lengths', size=38),
+            'Whole-number lengths? Twice the shorter side, minus one. Sides 7 and 12 — 13 lengths.']),
+        ('Special triangles', [
+            _b('Isosceles: base angle = (180° − v)/2', 'Isosceles: each base angle $=\\dfrac{180°-v}{2}$'),
+            'Isosceles: equal legs, equal base angles — and the other way around.',
+            'Vertex angle 44? Each base angle is 180 minus 44, over 2 — 68.',
+            _b('To the base: median = altitude = bisector', 'To the base: median $=$ altitude $=$ bisector'),
+            'The line to the base is a median, an altitude and a bisector at once.',
+            _b('Equilateral: 60° · median to the hypotenuse = half', 'Equilateral: all $60°$ · Right: median to the hypotenuse $=\\frac12$ hypotenuse', size=36),
+            'Equilateral: every angle is 60. And in a right triangle, the median to the hypotenuse is half the hypotenuse.']),
+        ('Area', [
+            _b('Area = side × height to that side / 2', 'Area $=\\dfrac{\\text{side}\\times\\text{height to that side}}{2}$'),
+            'A side times the height to THAT side, over 2. Any side can be the base.',
+            'The height falls outside? Still use only the side itself.',
+            _b('leg × leg = hypotenuse × altitude', 'Right triangle: leg $\\times$ leg $=$ hypotenuse $\\times$ altitude'),
+            'In a right triangle, count the area twice. Legs 15 and 20, hypotenuse 25: the altitude is 300 over 25 — 12.',
+            _b('area ≤ ab/2 · a median halves the area', 'Sides $a,\\ b$: area $\\le\\dfrac{ab}{2}$ · a median halves the area', size=38),
+            'Two sides a and b: the area is at most a times b over 2 — only with a right angle between them.',
+            'And a median splits a triangle into two equal areas: same base, same height.']),
+        ('Pythagoras', [
+            _b('a² + b² = c² — right triangles only', '$a^2+b^2=c^2$ — right triangles only'),
+            'Pythagoras works only in a right triangle. Find the right angle first — the hypotenuse is opposite it.',
+            _b('Hypotenuse: add · Leg: subtract', 'Hypotenuse: add the squares · Leg: subtract'),
+            'Looking for the hypotenuse? Add the squares. A leg? Subtract.',
+            _b('c² > a² + b² → obtuse · < → acute', '$c^2>a^2+b^2$ → obtuse · $c^2<a^2+b^2$ → acute', size=38),
+            'No right angle? Take the longest side, c. c squared bigger than the other two squares — obtuse. Smaller — acute. Equal — right.']),
+        ('Triples', [
+            _b('3:4:5 · 5:12:13 · 8:15:17', '$3:4:5$ · $5:12:13$ · $8:15:17$'),
+            'Before you calculate, look for a triple.',
+            _b('6:8:10 · 15:20:25 · 10:24:26', 'Multiples: $6:8:10$ · $15:20:25$ · $10:24:26$'),
+            'Any multiple works too: 6, 8, 10 or 15, 20, 25.',
+            _b('The largest number = the hypotenuse', 'The largest number $=$ the hypotenuse'),
+            'Match the positions. Hypotenuse 20 and a leg 15? That is not 15, 20, 25.']),
+        ('Special right triangles', [
+            _b('30°-60°-90°: a, a√3, 2a', '$30°$-$60°$-$90°$: $a,\\ a\\sqrt3,\\ 2a$'),
+            'The golden triangle: the short leg, a, is opposite the 30. Double it for the hypotenuse, times root 3 for the long leg.',
+            _b('45°-45°-90°: a, a, a√2', '$45°$-$45°$-$90°$: $a,\\ a,\\ a\\sqrt2$'),
+            'The silver triangle: legs a and a, hypotenuse a root 2.',
+            _b('30°-30°-120°: a, a, a√3 · equilateral: a²√3/4', '$30°$-$30°$-$120°$: $a,\\ a,\\ a\\sqrt3$ · equilateral: $S=\\dfrac{a^2\\sqrt3}{4}$', size=36),
+            'The 30-30-120: legs a, base a root 3. And the equilateral triangle: a squared root 3, over 4.',
+            _b('9/√3 = 3√3', '$\\dfrac{9}{\\sqrt3}=3\\sqrt3$'),
+            'Dividing by a root? Ignore the root, divide, attach it back: 9 over root 3 is 3 root 3.']),
+        ('Before you practice', [
+            'Before you practice, ask yourself:',
+            _b('Where is the right angle? Which side is the hypotenuse?', 'Where is the right angle? Which side is the hypotenuse?', size=36),
+            _b('Is this height perpendicular to my base?', 'Is this height perpendicular to my base?', size=36),
+            _b('A special angle or a triple hiding?', 'A special angle ($30°$, $45°$, $60°$, $120°$) or a triple hiding?', size=36),
+            _b('An angle outside? The exterior angle.', 'An angle outside? Use the exterior angle.', size=36),
+            'The traps: doubling the long leg instead of the short one, forgetting to divide the area by 2, '
+            'using a sloping side as the height, and a side equal to the sum or the difference.',
+            'Good luck.']),
+    ])
+
+    # ---- before the advanced practice: the methods of the further guided examples ----
+    _summary_video(M, 'r26-t31-summary-2', L2, [
+        'A quick summary before the advanced practice.',
+        'The methods from the last examples — in about three minutes.'], [
+        ('Letters in the answers', [
+            _b('Plug in: p = 100 → q = 40 → check every choice', 'Plug in: $p=100$ $\\Rightarrow$ $q=40$ · check every choice', size=38),
+            'Letters in the answers? Plug in a comfortable number that fits the figure.',
+            'An obtuse p? Try 100. Find q: 40. Put 100 into every answer, and keep only the one that gives 40.',
+            _b('Exterior angle: p = q + 60°', 'Exterior angle: $p=q+60°$'),
+            'And look for an exterior angle — it cuts the angle-sum equation short.']),
+        ('The longest side', [
+            _b('Opposite the largest angle: the longest side', 'Opposite the largest angle $\\to$ the longest side'),
+            'No lengths at all? Order the angles. The longest side is opposite the largest angle.',
+            'You don\'t always need the full order — only the largest angle.',
+            _b('Obtuse angle → the side opposite it is the longest', 'Obtuse angle $\\to$ the side opposite it is the longest', size=38),
+            'An obtuse angle is always the largest. The side opposite it is the longest.']),
+        ('Trap it: min and max', [
+            'Can\'t calculate it exactly? Trap it between a minimum and a maximum.',
+            _b('Minimum: two sides > the third', 'Minimum: two sides together $>$ the third'),
+            'AB is 6. The two other sides together are more than 6 — so the perimeter is more than 12.',
+            _b('Obtuse at C: AC, BC < AB = 6 → P < 18', 'Obtuse at C: $AC,\\ BC<AB=6$ $\\Rightarrow$ $12<P<18$', size=38),
+            'Obtuse at C? AB is the longest side. The other two are each less than 6 — the perimeter is less than 18.',
+            'Answers in order? If a bigger answer fit, every answer between it and the minimum would fit too. Only the smallest one above the minimum can be right.']),
+        ('Not necessarily', [
+            _b('Two of median, altitude, bisector → isosceles', 'Two of median $\\cdot$ altitude $\\cdot$ bisector $\\to$ isosceles', size=38),
+            '"Not necessarily" questions: go through the answers — the quick ones first.',
+            'A line that is two of the three — median, altitude, bisector — is a symmetry line. The triangle is isosceles.',
+            _b('A median alone → not necessarily', 'A median alone $\\to$ not necessarily'),
+            'A median alone can lean to one side. Sketch it: the two sides come out different.',
+            'Not sure? Sketch a counterexample.']),
+        ('Shaded areas', [
+            _b('Shaded = big − white', '$S_{\\text{shaded}}=S_{\\text{big}}-S_{\\text{white}}$'),
+            'Shaded area? The main way: a shape you know, minus the white.',
+            'Complete the data first — in an equilateral triangle, the altitude is also a median.',
+            _b('Or: split into triangles you can calculate', 'Or: split it into triangles you can calculate'),
+            'Or split the shaded part into triangles with a known base and height. An altitude outside still counts.']),
+        ('Same height', [
+            _b('Same height: area ratio = base ratio', 'Same height: area ratio $=$ base ratio'),
+            'Two triangles with the same height? The area ratio is the base ratio.',
+            _b('DC = 3BD, area 32 → 8 and 24', '$DC=3BD$, area $32$ $\\Rightarrow$ $8$ and $24$'),
+            'DC is 3 times BD — so the areas are 1 to 3. 32 is 4 parts of 8: 8 and 24.']),
+        ('Faster ways', [
+            _b('Shared sides cancel in a difference', 'Shared and equal sides cancel in a difference'),
+            'A difference of two perimeters? Shared sides and equal sides cancel — you don\'t need their lengths.',
+            _b('√2 ≈ 1.4 · √3 ≈ 1.7', '$\\sqrt2\\approx1.4$ · $\\sqrt3\\approx1.7$'),
+            'Out of time? Estimate: root 2 is about 1.4, root 3 about 1.7. A negative length? Eliminate it.',
+            _b('a < b → a/b < 1', '$a<b$ $\\Rightarrow$ $\\dfrac ab<1$'),
+            'A ratio? Check which way it goes: a is smaller than b, so a over b is less than 1.',
+            'And you can always work back from the answers.']),
+        ('Before you practice', [
+            'Before you practice, ask yourself:',
+            _b('Letters in the answers? Plug in numbers.', 'Letters in the answers? Plug in numbers.', size=36),
+            _b('Can I calculate it — or only trap it?', 'Can I calculate it — or only trap it between a min and a max?', size=36),
+            _b('Which angle is the largest?', 'Which angle is the largest? Which side is opposite it?', size=36),
+            _b('A shape I know, minus the white?', 'A shape I know, minus the white?', size=36),
+            'The traps: a ratio upside down, a perimeter equal to the minimum, and mixing "could be" with "necessarily".',
+            'Good luck.']),
+    ])

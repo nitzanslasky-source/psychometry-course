@@ -6,10 +6,9 @@ from math_api import VIS, rich_plain, _word
 
 TOPIC = 28
 LEARN, ADV, PRAC = 'wp28-learn', 'wp28-advanced', 'wp28-practice'
-# Provisional numbers: the new learn question is created first (18), then the advanced ones (19-26).
-# renumber_guided() renumbers everything in course order after all patches ran.
-SB_LEARN = ['Question %d' % n for n in list(range(1, 13)) + [18]]
-SB_ADV = ['Question %d' % n for n in list(range(13, 18)) + list(range(19, 27))]
+# New guided questions (all in the advanced section) get 18-23; renumber_guided() keeps course order.
+SB_LEARN = ['Question %d' % n for n in range(1, 13)]
+SB_ADV = ['Question %d' % n for n in range(13, 24)]
 INK, TEAL = '#203344', '#087f83'
 
 
@@ -52,36 +51,6 @@ def _say(M, vid, n, old, new):
             out.append(l)
         return out
     M.edit_lines(vid, n, fn)
-
-
-def _roads(label, towns, roads):
-    """Road map in the course SVG style. roads = [(town1, town2, number of roads)]."""
-    out = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="%s"><title>%s</title>'
-           % (label, label)]
-    for a, b, k in roads:
-        (x1, y1), (x2, y2) = towns[a], towns[b]
-        mx, my = (x1 + x2) / 2, (y1 + y2) / 2
-        dx, dy = x2 - x1, y2 - y1
-        L = (dx * dx + dy * dy) ** 0.5
-        px, py = -dy / L, dx / L
-        for i in range(k):
-            off = (i - (k - 1) / 2) * 26
-            cx, cy = mx + px * off * 2, my + py * off * 2
-            out.append('<path d="M %.1f %.1f Q %.1f %.1f %.1f %.1f" fill="none" stroke="%s" stroke-width="2.4"/>'
-                       % (x1, y1, cx, cy, x2, y2, TEAL))
-    for t, (x, y) in towns.items():
-        out.append('<circle cx="%d" cy="%d" r="19" fill="white" stroke="%s" stroke-width="2.5"/>' % (x, y, INK))
-        out.append('<text x="%d" y="%d" text-anchor="middle" dominant-baseline="middle" fill="%s" '
-                   'font-family="DejaVu Sans,Arial,sans-serif" font-size="20">%s</text>' % (x, y + 1, INK, t))
-    out.append('</svg>')
-    return ''.join(out)
-
-
-TOWNS = {'A': (80, 180), 'B': (320, 58), 'C': (560, 180), 'D': (320, 302)}
-ROADS_LESSON = _roads('Roads between towns A, B, C and D', TOWNS,
-                      [('A', 'B', 3), ('B', 'C', 2), ('A', 'D', 2), ('D', 'C', 4)])
-ROADS_Q = _roads('Roads between towns A, B, C and D', TOWNS,
-                 [('A', 'B', 4), ('B', 'C', 3), ('A', 'D', 2), ('D', 'C', 5), ('A', 'C', 1)])
 
 
 def _square():
@@ -264,9 +233,16 @@ def apply(M):
                         'The rest go to Maple.',
                         'The teams have names, so we do not divide by $2$.'])
 
-    # near-duplicates / off-topic puzzle
-    for qid in ['wp28-p04', 'wp28-p07', 'wp28-p13']:
-        M.unplace(qid)
+    # restored originals (pass 2): text clean-up only
+    S('wp28-p04', expl=['The first position has $6$ options, then $5$ remain, then $4$, $3$, $2$ and $1$.',
+                        'Multiply: $6\\times5\\times4\\times3\\times2\\times1=720$.'])
+    S('wp28-p07', stem='Four different prizes are given to four finalists, one prize per finalist. In how many different '
+                       'ways can this be done?',
+      expl=['The first prize has $4$ possible recipients. $3$ remain for the next prize, then $2$, then $1$.',
+            'The product is $4\\times3\\times2\\times1=24$.'])
+    S('wp28-p13', expl=['The first cupboard may need $6$ tests before it opens.',
+                        'Then $5$ unmatched keys remain for the next cupboard, then $4$, $3$, $2$ and $1$.',
+                        'Add them: $6+5+4+3+2+1=21$.'])
 
     # =====================================================================================================
     # 2. Lesson videos: wording, naming, "rare"
@@ -283,23 +259,13 @@ def apply(M):
     M.set_slide('wp-131', 1, title='Mutual Action')
     _say(M, 'wp-131', 1, 'Mutual action.', 'Mutual action — like a two-way connection.')
 
-    # Add or Subtract Cases: not "rare"
-    M.set_slide('wp-134', 2, title='Why learn it', script=[
-        "First thing to know: on their own, these questions are less common on the exam.",
-        A("'Less common · needed for probability' appears", T('Less common $\\cdot$ needed for probability', size=46)),
-        "But the idea is everywhere. Probability — the next topic — uses it all the time.",
-        "And the harder counting questions near the end of the section need it too.",
-        D('Underline "needed"'),
-        "So learn it well.",
-    ])
-    _say(M, 'wp-134', 4, 'Subtracting possibilities is even rarer.', 'Subtracting possibilities: all minus forbidden.')
+    # Add or Subtract Cases: the original (true) "rare" lines stay; one line links it to probability
+    M.edit_lines('wp-134', 2, lambda ls: ls[:-1] + [
+        {'say': "So don't panic. But know the idea — probability, the next topic, uses it all the time."}])
     M.edit_lines('wp-134', 4, lambda ls: ls + [
         {'say': "Watch for the words \"not\" and \"at least one\". They almost always mean: all minus forbidden."}])
-    M.set_sidebar('wp-134', ['Why learn it', 'Adding cases', 'Subtracting', 'Recap'])
 
-    # Choosing a Group: drop "very hard, very rare", general complement rule, unlabelled groups, checklist
-    _say(M, 'wp-137', 2, 'Choosing a group — first, know these are edge questions. Very hard, and very rare.',
-         "Choosing a group. On its own it's less common — but probability needs it all the time.")
+    # Choosing a Group: general complement rule and the checklist (the original "very rare" line stays)
     M.set_slide('wp-137', 4, title='Who stays out', script=[
         "The second type is simpler than it looks: choose who stays OUT.",
         A("'Choose n − 1 out of n → n ways' appears", T('Choose $n-1$ out of $n$ $\\to$ $n$ ways', size=46)),
@@ -315,20 +281,7 @@ def apply(M):
         "Always count the smaller side.",
     ])
     M.insert_slides('wp-137', 4, [
-        dict(mode='concept', active=3, title='Groups with no names', script=[
-            "One more trap: groups that have no names.",
-            A("'6 people into two groups of 3' appears", T('$6$ people into two groups of $3$', size=46)),
-            "If the groups have names — team red and team blue — choose three for red. The rest go to blue.",
-            D('Write "named: (6 × 5 × 4) ÷ 3! = 120 ÷ 6 = 20"'),
-            "Six times five times four, over three factorial: twenty.",
-            "But if the groups have no names, A, B, C against D, E, F is the same split as D, E, F against A, B, C.",
-            D('Write "ABC | DEF = DEF | ABC"'),
-            "Every split was counted twice.",
-            D('Write "no names: 20 ÷ 2 = 10"'),
-            "Divide by two: ten.",
-            "Names — keep the count. No names — halve it.",
-        ]),
-        dict(mode='concept', active=4, title='The checklist', script=[
+        dict(mode='concept', active=3, title='The checklist', script=[
             "Now you have the main tools. Here's the order to think in — for every counting question.",
             A("Step 1 appears", T('1 · Does order matter? Row, code: yes. Group: no', size=36)),
             "One: does order matter? A row or a code — yes. A group — no, so we'll divide by k factorial.",
@@ -344,14 +297,12 @@ def apply(M):
             "It's on your memory card. Use it on every question.",
         ]),
     ])
-    M.set_slide('wp-137', 7, active=5, script=[
+    M.set_slide('wp-137', 6, active=4, script=[
         A("Recap line 1 appears", T('A group: ordered count $\\div\\ k!$', size=44)),
         A("Recap line 2 appears", T('Choose $k$ of $n$ = choose the $n-k$ who stay out', size=44)),
-        A("Recap line 3 appears", T('Groups with no names: $\\div\\ 2$', size=44)),
-        "Three questions next. Try each one with the checklist.",
+        "Two questions next — one of each. Try each one with the checklist.",
     ])
-    M.set_sidebar('wp-137', ["Order doesn't matter", 'Divide by k!', 'Who stays out', 'Groups with no names',
-                             'The checklist', 'Recap'])
+    M.set_sidebar('wp-137', ["Order doesn't matter", 'Divide by k!', 'Who stays out', 'The checklist', 'Recap'])
 
     # =====================================================================================================
     # 3. Existing solution videos
@@ -380,7 +331,6 @@ def apply(M):
         D('Circle choice 4'),
         "Seventy. Choice four.",
     ])
-    _say(M, 'solve-wp28-g139', 1, 'Last question of the set.', 'Question twelve.')
 
     # Q14: most restricted position first (hundreds), not the free tens digit
     M.set_slide('solve-wp28-g141', 2, script=[
@@ -411,82 +361,16 @@ def apply(M):
     _say(M, 'solve-wp28-g144', 3, '…choose the ONE who stays in place.', '…choose the ONE who stays out.')
 
     # =====================================================================================================
-    # 4. New guided question in "Learn and try": groups with no names
-    # =====================================================================================================
-    g = 'q-r26-t28-01'
-    M.new_q(g, TOPIC, 'Six friends are split into two groups of 3 to play a game. The groups have no names. In how '
-                      'many different ways can the split be done?', ['$20$', '$10$', '$40$', '$120$'], 2, [
-        'If the groups had names (group 1 and group 2): choose $3$ of the $6$ for group 1: '
-        '$\\frac{6\\times5\\times4}{3!}=\\frac{120}{6}=20$. The rest go to group 2.',
-        'The groups have no names, so A, B, C against D, E, F is the same split as D, E, F against A, B, C. '
-        'Every split was counted twice: $\\frac{20}{2}=10$.',
-        'Check: follow one friend. Choose her $2$ partners from the other $5$: $\\frac{5\\times4}{2}=10$.'])
-    M.place_q(g, LEARN, after='solve-wp28-g139')
-    _sol(M, g, False, ["Groups with no names."], [
-        ('Method 1 · Named, then halve', [
-            "Checklist: does order matter inside a group? No. Do the groups have names? No — that's the key.",
-            "First pretend the groups have names: group one and group two.",
-            D('Write "group 1: (6 × 5 × 4) ÷ 3! = 120 ÷ 6 = 20"'),
-            "Choose three for group one: six times five times four, over three factorial. Twenty. The rest go to group two.",
-            "But the groups have no names. A, B, C against D, E, F is the same split as D, E, F against A, B, C.",
-            D('Write "ABC | DEF = DEF | ABC"'),
-            "Every split was counted twice.",
-            D('Write "20 ÷ 2 = 10"'),
-            "Twenty over two: ten.",
-            D('Circle choice 2'),
-            "Choice two. Twenty is the trap — that's the answer for named groups.",
-        ]),
-        ('Method 2 · Follow one friend', [
-            "A check. Take one friend — call her A. She is in some group.",
-            "Who are her two partners? Choose two of the other five.",
-            D('Write "(5 × 4) ÷ 2 = 10"'),
-            "Five times four, over two: ten. The other three form the second group. Ten again.",
-        ]),
-    ])
-
-    # =====================================================================================================
-    # 5. New lesson video A (advanced section): roads, zero digits, at least one, objects into boxes, checks
+    # 5. New lesson video A (advanced section): at least one, objects into boxes, checks
     # =====================================================================================================
     VA = 'r26-t28-cases'
-    sbA = ['Road maps', 'The zero trap', 'At least one', 'Which is the base?', 'Quick checks', 'Recap']
-    M.new_video(VA, TOPIC, 'Roads, Zeros and "At Least One"', sbA, [
-        dict(mode='title', title='Roads, Zeros and "At Least One"', script=[
-            "Four question types the exam loves.",
-            "Road maps, the zero in digit questions, \"at least one\" — and objects into boxes.",
+    sbA = ['At least one', 'Which is the base?', 'Quick checks', 'Recap']
+    M.new_video(VA, TOPIC, 'Boxes and "At Least One"', sbA, [
+        dict(mode='title', title='Boxes and "At Least One"', script=[
+            "Two question types the exam loves.",
+            "\"At least one\" — and objects into boxes.",
         ]),
-        dict(mode='concept', active=0, title='Road maps', script=[
-            "First: road maps. A very typical exam drawing.",
-            A('The road map appears', VIS(ROADS_LESSON, w=760, h=380)),
-            "From A to C you can go through B — or through D.",
-            "Through B: three roads to B, then two roads to C. Each road to B goes with each road to C.",
-            D('Write "via B: 3 × 2 = 6"'),
-            "Along one path, the roads are stages of choice. And — multiply. Six.",
-            D('Write "via D: 2 × 4 = 8"'),
-            "Through D: two roads, then four. Eight.",
-            "But you go through B OR through D — never both. Those are separate cases.",
-            D('Write "6 + 8 = 14"'),
-            "Or — add. Fourteen routes.",
-            D('Write "and → ×   or → +"'),
-            "The rule: \"and\" along a path — multiply. \"Or\" between paths — add.",
-        ]),
-        dict(mode='concept', active=1, title='The zero trap', script=[
-            "Digit questions have one classic trap: the zero.",
-            A('The example appears', T('Even three-digit numbers from $0, 1, 2, 3, 4, 5$, no digit repeats: how many?',
-                                       size=40)),
-            "Most restricted first: the units digit must be even. Zero, two or four.",
-            "But if the units digit is zero, zero is used up — and the hundreds digit has more options.",
-            "If the units digit is two or four, the hundreds digit still can't be zero.",
-            "The number of options depends on the case. So split into cases.",
-            D('Write "Case 1: units = 0 → 5 × 4 × 1 = 20"'),
-            "Case one: the units digit is zero. Hundreds: any of the other five. Tens: four left. Twenty.",
-            D('Write "Case 2: units = 2 or 4 → 4 × 4 × 2 = 32"'),
-            "Case two: the units digit is two or four — two options. Hundreds: not zero and not the units digit — four options.",
-            "Tens: four left — and now zero is allowed. Four times four times two: thirty-two.",
-            D('Write "20 + 32 = 52"'),
-            "Add the cases: fifty-two.",
-            "The trap answer is sixty: three even digits, times five, times four. It forgets that zero can't lead.",
-        ]),
-        dict(mode='concept', active=2, title='At least one', script=[
+        dict(mode='concept', active=0, title='At least one', script=[
             "Now three words the exam loves: at least one.",
             A("'At least one = all − none' appears", T('At least one $=$ all $-$ none', size=52)),
             "At least one means one, or two, or three... Many cases. Too many.",
@@ -501,7 +385,7 @@ def apply(M):
             "All minus none: two hundred eighty.",
             "You'll use this again and again in probability.",
         ]),
-        dict(mode='concept', active=3, title='Which is the base?', script=[
+        dict(mode='concept', active=1, title='Which is the base?', script=[
             A("'4 letters into 3 mailboxes' appears", T('$4$ different letters into $3$ mailboxes', size=48)),
             "Four different letters go into three mailboxes. Any mailbox can get any number of letters.",
             "Is it three to the fourth, or four to the third? Ask: who chooses?",
@@ -511,7 +395,7 @@ def apply(M):
             "The trap is four to the third, sixty-four. That would be each mailbox choosing one letter — but a mailbox can get two letters, or none.",
             A("'Each object chooses a box' appears", T('Each object chooses: one stage per object', size=44)),
         ]),
-        dict(mode='concept', active=4, title='Quick checks', script=[
+        dict(mode='concept', active=2, title='Quick checks', script=[
             "Two quick checks that save points.",
             A('Check 1 appears', T('1 · Test a formula on a small case', size=42)),
             "One: not sure about a formula? Test it on a small case you can draw.",
@@ -523,86 +407,23 @@ def apply(M):
             "Seven people, choose three: two hundred ten with roles, thirty-five as a group. Both will be in the choices.",
             "So ask the checklist question first: does order matter?",
         ]),
-        dict(mode='concept', active=5, title='Recap', script=[
-            A('Recap line 1 appears', T('Road map: $\\times$ along a path, $+$ between paths', size=40)),
-            A('Recap line 2 appears', T('Zero among the digits? Split into cases', size=40)),
-            A('Recap line 3 appears', T('At least one $=$ all $-$ none', size=40)),
-            A('Recap line 4 appears', T('Objects into boxes: each object chooses', size=40)),
-            A('Recap line 5 appears', T('Not sure? Test on a small case', size=40)),
-            "Four questions next — one of each.",
+        dict(mode='concept', active=3, title='Recap', script=[
+            A('Recap line 1 appears', T('At least one $=$ all $-$ none', size=40)),
+            A('Recap line 2 appears', T('Objects into boxes: each object chooses', size=40)),
+            A('Recap line 3 appears', T('Not sure? Test on a small case', size=40)),
+            "Two questions next — one of each.",
         ]),
     ], ADV, after='solve-wp28-g144')
     M.video(VA)['hybrid']['num'] = 54
 
-    g2, g3, g4, g5 = ['q-r26-t28-%02d' % k for k in (2, 3, 4, 5)]
-    M.new_q(g2, TOPIC, 'The figure shows all the roads between four towns: A, B, C and D. A route from A to C may not '
-                       'pass through the same town twice. How many different routes lead from A to C?',
-            ['$14$', '$22$', '$23$', '$120$'], 3, [
-        'Through B: $4$ roads, then $3$ roads: $4\\times3=12$ routes ("and" along a path: multiply).',
-        'Through D: $2\\times5=10$ routes.',
-        'Directly: $1$ route.',
-        'A route goes through B, or through D, or directly: separate cases, so add. $12+10+1=23$.'], figure=ROADS_Q)
-    M.place_q(g2, ADV, after=VA)
-    _sol(M, g2, True, ["A road map."], [
-        ('Method 1 · Multiply along, add between', [
-            "Checklist step five: cases. A route goes through B, or through D, or straight to C.",
-            D('Write "via B: 4 × 3 = 12"'),
-            "Through B: count the roads. Four from A to B, three from B to C. Four times three: twelve.",
-            D('Write "via D: 2 × 5 = 10"'),
-            "Through D: two, then five. Ten.",
-            D('Write "direct: 1"'),
-            "And one direct road. Don't miss it.",
-            D('Write "12 + 10 + 1 = 23"'),
-            "Three separate cases — add. Twenty-three.",
-            D('Circle choice 3'),
-            "Choice three.",
-            "The traps: forgetting the direct road gives twenty-two. Multiplying all the numbers gives one hundred twenty.",
-        ]),
-    ])
-
-    M.new_q(g3, TOPIC, 'How many four-digit even numbers can be formed from the digits 0, 1, 2, 3 and 4 if no digit '
-                       'may repeat?', ['$72$', '$36$', '$60$', '$48$'], 3, [
-        'The units digit must be even: $0$, $2$ or $4$. Zero changes the count for the first digit, so split into cases.',
-        'Case 1, units digit $0$: thousands $4$ options, hundreds $3$, tens $2$: $4\\times3\\times2\\times1=24$.',
-        'Case 2, units digit $2$ or $4$ ($2$ options): the thousands digit is not $0$ and not the units digit: '
-        '$3$ options. Then hundreds $3$ and tens $2$: $3\\times3\\times2\\times2=36$.',
-        'Add: $24+36=60$.',
-        'Check: all four-digit numbers with different digits: $4\\times4\\times3\\times2=96$. Odd ones (units $1$ or $3$): '
-        '$3\\times3\\times2\\times2=36$. $96-36=60$.'])
-    M.place_q(g3, ADV, after='solve-' + g2)
-    _sol(M, g3, True, ["Digits — with a zero among them."], [
-        ('Method 1 · Split by the units digit', [
-            "Checklist: order matters — it's a number. No repeats. A restriction: the units digit is even. Most restricted first.",
-            "The units digit: zero, two or four. But zero is special — it can't lead. So split.",
-            D('Write "Case 1: units = 0 → 4 × 3 × 2 × 1 = 24"'),
-            "Case one: units digit zero. The thousands digit: any of the other four. Then three, then two. Twenty-four.",
-            D('Write "Case 2: units = 2 or 4 → 3 × 3 × 2 × 2 = 36"'),
-            "Case two: units digit two or four — two options. Thousands: not zero, and not the units digit. Three options.",
-            "Hundreds: three left — zero is back in. Tens: two. Thirty-six.",
-            D('Write "24 + 36 = 60"'),
-            "Add: sixty.",
-            D('Circle choice 3'),
-            "Choice three.",
-            "The trap is seventy-two: three even digits, times four, times three, times two. It forgets that zero can't lead.",
-        ]),
-        ('Method 2 · All minus odd', [
-            "A check from the other side.",
-            D('Write "all: 4 × 4 × 3 × 2 = 96"'),
-            "All four-digit numbers with different digits: the first digit is not zero — four options. Then four, three, two. Ninety-six.",
-            D('Write "odd: 3 × 3 × 2 × 2 = 36"'),
-            "Odd ones: units one or three — two options. First digit: not zero, not the units digit — three. Then three, two. Thirty-six.",
-            D('Write "96 − 36 = 60"'),
-            "Ninety-six minus thirty-six: sixty again.",
-        ]),
-    ])
-
+    g4, g5 = ['q-r26-t28-%02d' % k for k in (4, 5)]
     M.new_q(g4, TOPIC, 'A code has 4 digits. Each digit is from 0 to 9, digits may repeat, and the code may start with '
                        '0. How many codes contain the digit 5 at least once?', ['$4000$', '$3439$', '$6561$', '$2916$'], 2, [
         'At least one $=$ all $-$ none.',
         'All codes: $10^4=10000$.',
         'Codes with no 5: each digit has $9$ options: $9^4=6561$.',
         '$10000-6561=3439$.'])
-    M.place_q(g4, ADV, after='solve-' + g3)
+    M.place_q(g4, ADV, after=VA)
     _sol(M, g4, True, ["At least once."], [
         ('Method 1 · All minus none', [
             "\"At least once.\" That's the signal: all minus none.",
@@ -845,7 +666,6 @@ def apply(M):
         M.set_sidebar(vid, SB_LEARN)
     for vid in ['solve-wp28-g%d' % k for k in (140, 141, 142, 143, 144)]:
         M.set_sidebar(vid, SB_ADV)
-    M.set_sidebar('solve-' + g, SB_LEARN)
 
     # =====================================================================================================
     # 7. Memory cards
@@ -861,8 +681,6 @@ def apply(M):
     rows = c['tables'][1]['rows']
     rows.append(['\\(k\\) out of \\(n\\)', 'choose the \\(n-k\\) who stay out',
                  '8 of 10: \\(\\frac{10\\times9}{2}=45\\)'])
-    rows.append(['Groups with no names', 'count as if named, then divide by \\(2\\)',
-                 '6 into two groups of 3: \\(\\frac{20}{2}=10\\)'])
     c['tips'] += ['Not sure about a formula? Test it on a small case you can draw: 4 people, '
                   '\\(\\frac{4\\times3}{2}=6\\) handshakes.',
                   'Choices that differ by a factor (\\(210\\) and \\(35\\))? Order matters: the bigger one. '
@@ -870,9 +688,6 @@ def apply(M):
 
     c = M.card('mem-counting-advanced')
     c['tables'].insert(1, {'title': 'More methods', 'head': ['Situation', 'Method', 'Example'], 'rows': [
-        ['Road map', '\\(\\times\\) along a path, \\(+\\) between paths', '\\(4\\times3+2\\times5+1=23\\)'],
-        ['A zero among the digits', 'split into cases: units digit \\(0\\) or not',
-         'even, from \\(0\\)–\\(5\\): \\(20+32=52\\)'],
         ['At least one', 'all \\(-\\) none', '\\(10^4-9^4=3439\\)'],
         ['Objects into boxes', 'each object chooses a box', '5 letters, 3 boxes: \\(3^5=243\\)'],
         ['Must be together', 'glue into one block, \\(\\times\\) the order inside', '\\(4!\\times3!=144\\)'],
@@ -882,40 +697,11 @@ def apply(M):
         ['Round table', 'fix one person: \\((n-1)!\\)', '4 people: \\(3!=6\\)'],
     ]})
     c['intro'] = 'The shortcuts from the advanced counting questions and the two method videos.'
-    c['tips'] += ['A route may use the direct road too — count every path from start to end.',
-                  'Digits with a zero: the leading digit is never 0, so split by where the 0 goes.']
 
     # =====================================================================================================
     # 8. New practice questions
     # =====================================================================================================
     P = {}
-    P['10'] = ('From town A to town B there are 3 roads, and from town B to town C there are 4 roads. There is also '
-               '1 direct road from A to C. Dan drives from A to C and back to A. On the way back he does not use any '
-               'road he used on the way there. How many different round trips are possible?',
-               ['$169$', '$156$', '$96$', '$84$'], 3, [
-        'Split by the way there.',
-        'Case 1, the direct road there ($1$ way): back through B on any roads: $4\\times3=12$. Total $1\\times12=12$.',
-        'Case 2, through B there ($3\\times4=12$ ways): back by the direct road ($1$ way), or through B on two new '
-        'roads ($3\\times2=6$ ways): $1+6=7$ ways back. Total $12\\times7=84$.',
-        'Add: $12+84=96$.'])
-    P['11'] = ('From her home, Noa can walk to bus stop P by 2 paths, or to bus stop R by 2 paths. From stop P, '
-               '3 bus lines go to school. From stop R, 4 bus lines go to school. Noa uses exactly one bus stop. In how '
-               'many different ways can she get from home to school?', ['$14$', '$48$', '$11$', '$28$'], 1, [
-        'Through P: $2\\times3=6$. Through R: $2\\times4=8$.',
-        'She goes through P or through R (separate cases): $6+8=14$.'])
-    P['12'] = ('How many three-digit odd numbers can be formed from the digits 0, 1, 2, 3, 4 and 5 if no digit may '
-               'repeat?', ['$60$', '$48$', '$36$', '$52$'], 2, [
-        'Most restricted first: the units digit is odd: $1$, $3$ or $5$, so $3$ options.',
-        'Hundreds digit: not $0$ and not the units digit: $4$ options.',
-        'Tens digit: $4$ digits are left (now $0$ is allowed): $4$ options.',
-        '$3\\times4\\times4=48$.'])
-    P['13'] = ('How many three-digit numbers with all digits different can be formed from the digits 0, 2, 5, 7 and 8 '
-               'if the number must be divisible by 5?', ['$24$', '$21$', '$12$', '$18$'], 2, [
-        'Divisible by $5$: the units digit is $0$ or $5$. The zero changes the count, so split into cases.',
-        'Case 1, units digit $0$: hundreds $4$ options, tens $3$: $4\\times3=12$.',
-        'Case 2, units digit $5$: hundreds not $0$ and not $5$: $3$ options. Tens: $3$ left (including $0$): '
-        '$3\\times3=9$.',
-        'Add: $12+9=21$.'])
     P['14'] = ('A committee of 3 is chosen from 5 men and 4 women. How many committees include at least one woman?',
                ['$84$', '$40$', '$74$', '$80$'], 3, [
         'At least one $=$ all $-$ none.',
@@ -964,16 +750,6 @@ def apply(M):
         'All arrangements: fix one person, $(5-1)!=4!=24$.',
         'Adi and Ben together: glue them, $4$ items around the table: $(4-1)!\\times2=6\\times2=12$.',
         'Not together: $24-12=12$.'])
-    P['24'] = ('Eight players are split into two teams of 4. The teams have no names. In how many different ways can '
-               'the split be done?', ['$70$', '$35$', '$140$', '$1680$'], 2, [
-        'As if the teams had names: choose $4$ of $8$ for team 1: $\\frac{8\\times7\\times6\\times5}{4!}=\\frac{1680}{24}=70$.',
-        'No names: every split was counted twice. $\\frac{70}{2}=35$.'])
-    P['25'] = ('Six students are split into 3 pairs for a project. The pairs have no names. In how many different ways '
-               'can this be done?', ['$15$', '$90$', '$30$', '$45$'], 1, [
-        'Follow one student: choose her partner from the other $5$: $5$ ways.',
-        'Take one of the $4$ students left: choose his partner from the other $3$: $3$ ways. The last $2$ form '
-        'the third pair: $1$ way.',
-        '$5\\times3\\times1=15$.'])
     P['26'] = ('In how many different ways can 8 players be chosen from 10 players for a trip?',
                ['$90$', '$10$', '$45$', '$80$'], 3, [
         'Choosing $8$ of $10$ is the same as choosing the $2$ who stay out.',
@@ -991,10 +767,82 @@ def apply(M):
     n = lambda k: 'q-r26-t28-' + k
     p = lambda k: 'wp28-p' + k
     M.practice_order(PRAC, [
-        p('05'), p('06'), p('01'), p('08'), p('10'), p('21'), p('22'), p('14'), p('09'), p('11'), p('03'), n('11'),
-        p('24'), p('12'), n('16'), n('17'), n('26'), p('16'), p('02'), p('27'), n('24'), n('12'), p('17'), p('19'),
-        p('23'), n('18'), n('21'), p('25'), n('13'), n('14'), n('27'), n('15'), n('25'), n('19'), p('26'), n('23'),
-        p('15'), n('20'), n('22'), n('10'), p('18'), p('20')])
+        'alg-extra-unit-t18-3-4', p('07'), p('05'), p('06'), p('04'), p('01'), p('08'), p('10'), p('21'), p('22'),
+        p('14'), p('09'), p('11'), p('03'), p('24'), p('12'), n('16'), n('17'), n('26'), p('16'), p('02'), p('27'),
+        p('17'), p('19'), p('23'), n('18'), n('21'), p('25'), p('13'), n('14'), n('27'), n('15'), n('19'), p('26'),
+        n('23'), p('15'), n('20'), n('22'), p('18'), p('20')])
+
+    # =====================================================================================================
+    # 8b. Summary lesson right before the practice (pass 2)
+    # =====================================================================================================
+    sbS = ['Stages: multiply', 'Repetition and rows', 'Counted twice?', 'Who stays out', 'Cases', 'Objects into boxes',
+           'Together and apart', 'Before you practice']
+    M.new_video('r26-t28-summary', TOPIC, 'Summary', sbS, [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice — a quick summary of counting.",
+            "Everything important, in a few minutes.",
+        ]),
+        dict(mode='concept', active=0, title='Stages: multiply', script=[
+            A("'Stages → multiply' appears", T('Stages of choice $\\to$ multiply: $4\\times6=24$', size=44)),
+            "Work in stages. How many options at each stage? Multiply.",
+            A("'Most restricted first' appears", T('Most restricted position first; a forced position $=1$', size=40)),
+            "A restriction? Start with the most restricted position. A position that is already decided gets one.",
+            "Four fillings and six drinks: twenty-four meals. Not ten — adding counts menu items, not meals.",
+            "A short list with no pattern? Just list and count.",
+        ]),
+        dict(mode='concept', active=1, title='Repetition and rows', script=[
+            A("'With repetition' appears", T('Repeats allowed: the pool stays full, $6\\times6\\times6=216$', size=40)),
+            A("'Without repetition' appears", T('No repeats: the pool shrinks, $6\\times5\\times4=120$', size=40)),
+            "May items repeat? The pool stays full. If not, it shrinks by one each stage.",
+            A("'n in a row: n!' appears", T('$n$ items in a row: $n!$ $\\quad\\frac{7!}{5!}=7\\times6=42$', size=40)),
+            "n items in a row: n factorial. And with factorials, expand only until they cancel.",
+        ]),
+        dict(mode='concept', active=2, title='Counted twice?', script=[
+            A("'Mutual action ÷ 2' appears", T('Handshakes, games, routes: $\\frac{n(n-1)}{2}$', size=42)),
+            "Handshakes, games, two-way routes: each pair was counted twice. Divide by two.",
+            A("'Diagonals' appears", T('Diagonals of an $n$-gon: $\\frac{n(n-3)}{2}$', size=42)),
+            A("'A group ÷ k!' appears", T('A group: ordered count $\\div\\ k!$', size=42)),
+            "A group, where order doesn't matter: count in order, then divide by k factorial.",
+        ]),
+        dict(mode='concept', active=3, title='Who stays out', script=[
+            A("'Choose k of n = choose n − k' appears", T('Choose $k$ of $n$ $=$ choose the $n-k$ who stay out', size=42)),
+            "Choosing many? Choose who stays out instead.",
+            A('The example appears', T('$7$ of $8\\to8$ ways $\\qquad 8$ of $10=2$ of $10=\\frac{10\\times9}{2}=45$', size=40)),
+            "Seven of eight: eight ways. Eight of ten: the two who stay out — forty-five. Always count the smaller side.",
+        ]),
+        dict(mode='concept', active=4, title='Cases', script=[
+            A("'Separate cases: add' appears", T('Separate cases (no overlap): add', size=42)),
+            "Can't count in one go? Split into cases that don't overlap — and add.",
+            A("'Allowed = all − forbidden' appears", T('Allowed $=$ all $-$ forbidden', size=42)),
+            A("'At least one = all − none' appears", T('At least one $=$ all $-$ none: $10^4-9^4=3439$', size=42)),
+            "\"Not\" or \"at least one\"? Count all, subtract the forbidden ones.",
+            "Four-digit codes with at least one five: all ten thousand, minus the six thousand five hundred sixty-one with no five.",
+        ]),
+        dict(mode='concept', active=5, title='Objects into boxes', script=[
+            A("'Each object chooses' appears", T('Each object chooses a box: $(\\text{boxes})^{\\text{objects}}$', size=42)),
+            "Objects into boxes: each object chooses. Five letters, three mailboxes: three to the fifth.",
+            A("'Test on a small case' appears", T('Not sure? Test it on a small case you can draw', size=42)),
+            "Not sure about a formula? Test it on a tiny case.",
+        ]),
+        dict(mode='concept', active=6, title='Together and apart', script=[
+            A("'Together: glue' appears", T('Together: glue into a block, $\\times$ the order inside', size=38)),
+            A("'Not together' appears", T('Not together $=$ all $-$ together', size=38)),
+            "Together? Glue them, then multiply by the order inside. Not together? All minus together.",
+            A("'Gaps' appears", T('No two side by side: place the others, then use the gaps', size=38)),
+            A("'Repeats and round table' appears", T('Repeats: $\\div$ each repeat\'s factorial $\\quad$ Round table: $(n-1)!$', size=38)),
+            "Repeated items: divide by the factorial of each repeat. A round table: fix one person — n minus one, factorial.",
+        ]),
+        dict(mode='concept', active=7, title='Before you practice', script=[
+            "Before every question, ask yourself:",
+            A('Check 1 appears', T('Does order matter? A row or a code: yes. A group: no', size=38)),
+            A('Check 2 appears', T('May items repeat?', size=38)),
+            A('Check 3 appears', T('Which position is the most restricted?', size=38)),
+            A('Check 4 appears', T('Did I count the same thing twice?', size=38)),
+            A('Check 5 appears', T('One count — or cases?', size=38)),
+            "The traps: adding when you should multiply. Dividing without a reason. And a zero that can't lead a number.",
+            "Good luck. Let's practice.",
+        ]),
+    ], ADV, after='mem-counting-advanced')
 
     # =====================================================================================================
     # 9. Keep the slide notes of all guided solution videos in sync (and no "−" inside words)

@@ -115,3 +115,28 @@ Both practice sections are now ordered from easy to hard. q-284 and q-287 come l
 - **Fractional exponents:** alg-extra-unit-t10-2-2 (64^(2/3)) and q-285 (⁴√(5⁶)) need ⁿ√(aᵐ) = a^(m/n). The T9 patch is expected to teach this.
 - **Negative bases:** (−2)⁴ vs −2⁴ are not revisited here, because the T8 card covers them.
 - **Recording length:** the main lesson is now about 8.6 minutes (it was 6.9). The new lesson is about 4.9 minutes.
+
+## Pass 2 (2026-09-27, teacher-approved remove/restore plan + summary lesson)
+
+**Removed (0 real and 0 original questions of these types)**
+- Video `r26-t10-power-traps`: slides "Compare powers", "Bases between 0 and 1" and "When is aˣ = bˣ?", their
+  sidebar labels and their three Recap lines. The title slide no longer mentions comparing powers or bases smaller
+  than one, and the video is renamed "Exponent Traps — Sums of Powers". The Recap now says "Two questions next."
+- Guided q-r26-t10-04 (order of $2^{45}, 3^{30}, 5^{15}$) and q-r26-t10-05 ($\left(\frac13\right)^x>\frac1{27}$) with
+  their solution videos. The section is now "Eight guided questions"; the question sidebars run Q1–Q8.
+- Practice q-r26-t10-13, -14, -15.
+- Card `mem-r26-t10-techniques`: rows "Comparing powers", "Base between 0 and 1" and "aˣ = bˣ, a ≠ b (positive)".
+
+**Restored (original course)**
+- q-263 ($\sqrt{63}$), q-283 ($\sqrt{98}$), q-277 ($x=y=8$), and alg-extra-unit-t10-3-1 … -3-7 (7 questions). They are back
+  in their practice sections, placed by difficulty. Text is in TeX and the solutions show the numbers (keys unchanged).
+- alg-extra-unit-t10-2-6: the original choices "They are equal / It cannot be determined from the information given. /
+  The first power / The second power" (key: the first power).
+- Lesson "Exponents & Roots — Techniques", slide 9 "Root equations": the original slide with $\sqrt{x+7}=x-1$ and the
+  board line "x − 1 ≥ 0 → x ≥ 1" is back. The fully solved $\sqrt{x+2}=x$ follows it as a new slide,
+  "Root equations: an example", before "Try the choices".
+
+**New: summary lesson** `r26-t10-summary` "Exponents & Roots — Summary" (about 2.6 min), right after the memory card and
+before the practice sections (both practice sections follow one after the other, so there is one summary). Slides:
+Summary · Dividing roots · Same prime base · Adding roots · Power equations · Root equations · Don't divide by x ·
+Sums of powers · Common factor · Before you practice.

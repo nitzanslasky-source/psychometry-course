@@ -77,3 +77,13 @@ Other teaching changes:
 - I kept p21 and p36 (assume all the same) and p31 and p35 (changing a ratio) next to the new questions of the same type.
   If practice feels long, these are the first to cut.
 - The review asks to put "What must the total divide by?" as the first line of every ratio question. I added it only as a card tip and a Ratios recap line. I did not edit every video.
+
+## Pass 2 (teacher-approved remove/restore plan + summary lesson)
+**Removed:** nothing (the plan keeps all the additions).
+
+**Restored (3):** the original practice questions pass 1 had removed as near-duplicates are back, with text clean-up only:
+- **wp22-p22** (visitors are 5/6 of the residents → visitors are 5/11 of everyone). The solution now plugs in 6 residents and 5 visitors. Placed after p10.
+- **wp22-p25** (Iris and Owen, 30 counters, 9 are passed → 11 : 4). The choices are in TeX ratio form, and the solution shows every step: 13 and 17 after, 22 and 8 before, 22 : 8 = 11 : 4. Placed after q-r26-t22-13.
+- **wp22-p28** (bead piles, 1/4 and 1/6 used, 18 and 25 left → 54). The "18:3×4" division colons are gone: (3/4)F = 18 → F = 24, (5/6)G = 25 → G = 30, 24 + 30 = 54. Placed after p26.
+
+**New: summary video `r26-t22-summary` "Summary: Word Problems and Ratios"** (about 3.9 min), at the end of "Further guided examples" (after the advanced memory card), right before the practice. Slides: Summary · Three stages · Words to math · Equal ratios · Inverse proportion · Ratios: use x · The part that stays · Build the equation · Ranges and rounding · Exam shortcuts · Before you practice (checks: what exactly did they ask, bigger or smaller and direct or inverse, which part stays the same, the ×2 goes on the smaller side, can it really be found or only a multiple; traps: a ratio read in the wrong order, using the ratio table for workers and days, and giving the number of units instead of the number of people).

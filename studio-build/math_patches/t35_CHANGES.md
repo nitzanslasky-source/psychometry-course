@@ -59,3 +59,20 @@
 - The Q9 video slide 5 still teaches the angles *after* the question; the new "Cube and Box Facts" lesson repeats them all after Q12. If you prefer the facts lesson before Q9 (as the review suggests), move `r26-t35-cubefacts` — it would spoil Q9's "it's equilateral" insight, which is why I placed it later.
 - The review's "cone filled to half its height holds 1/8" trap belongs in T36 (k³). I did not add it here.
 - API workaround: slide copies of a question figure are separate strings (`fig` on the slide's Q item), and `M.set_q(figure=...)` does not update them. The patch updates those copies itself (`_set_q_figs` / `_set_q_fig_new`).
+
+## Pass 2 (teacher-approved plan, 2026-09-27)
+**Removed (displacement and the shortest path on a cube's surface):**
+- `r26-t35-water`: the slide "Dropping in a solid" (with its figure) and its sidebar entry; the recap board "Rise" and the sentence "An object pushes the water up by its own volume." The title line "A classic on the exam — ..." (a false claim) now says "It's just the volume formula, turned around."
+- `r26-t35-cubefacts`: the slide "Walk on the surface" (with its figure) and its sidebar entry.
+- Practice `q-r26-t35-06`, `q-r26-t35-07` (displacement) and `q-r26-t35-11` (the ant on a cube), also taken out of the practice order.
+- `mem-solids`: the row "Object sinks in water". `mem-cube-facts`: the tip "Shortest path on the surface ...".
+
+**Restored:**
+- `geo35-core-p09` (angle AEG = 90°) is back in the practice, at the easy end (after p19). Its solution now has two short steps.
+- `geo-119` slide 2: the original figure is back (the patch no longer replaces it). Note: in base-v18 / course18 this figure is a plain box, not a 3 × 3 "Rubik" cube as the audit says.
+- `solve-geo35-g130` slide 4: the original slide is back (a question slide with the edge-2 cube of the question on the left, and the lines about the 6 × 8 × 24 box). The one-step diagonal $\sqrt{6^2+8^2+24^2}=26$ stays as an added board line.
+- `geo35-g121` solution: the bound "65.1 < 21π < 66" is back.
+- `geo35-core-p27` stays in the T36 practice (it needs k³).
+
+**Summary lesson added:** `r26-t35-summary` "Summary: Solid Geometry" (about 3.4 minutes), at the end of "Learn and try", right before the practice.
+Slides: Summary · Straight or pointed · Surface area · Water and units · Right triangles inside · Cube and box facts · Turning a shape · Cubes in a box · Counting and face areas · Before you practice.

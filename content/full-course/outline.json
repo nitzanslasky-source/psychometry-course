@@ -7,182 +7,182 @@
     {
      "id": 1,
      "title": "Algebraic Fundamentals",
-     "videos": 12,
-     "lessons": 7,
-     "questions": 75,
-     "minutes": 46,
-     "steps": 93
+     "videos": 14,
+     "lessons": 9,
+     "questions": 78,
+     "minutes": 51,
+     "steps": 98
     },
     {
      "id": 2,
      "title": "Fractions — Fundamentals",
-     "videos": 10,
-     "lessons": 5,
-     "questions": 68,
-     "minutes": 33,
-     "steps": 82
+     "videos": 11,
+     "lessons": 6,
+     "questions": 73,
+     "minutes": 35,
+     "steps": 88
     },
     {
      "id": 3,
      "title": "Fractions",
-     "videos": 14,
-     "lessons": 1,
-     "questions": 35,
-     "minutes": 27,
-     "steps": 50
+     "videos": 15,
+     "lessons": 2,
+     "questions": 38,
+     "minutes": 30,
+     "steps": 54
     },
     {
      "id": 4,
      "title": "Expressions — Fundamentals",
-     "videos": 11,
-     "lessons": 3,
-     "questions": 44,
-     "minutes": 25,
-     "steps": 57
+     "videos": 12,
+     "lessons": 4,
+     "questions": 48,
+     "minutes": 27,
+     "steps": 62
     },
     {
      "id": 5,
      "title": "Expressions",
-     "videos": 20,
-     "lessons": 2,
-     "questions": 55,
+     "videos": 19,
+     "lessons": 3,
+     "questions": 64,
      "minutes": 36,
-     "steps": 76
+     "steps": 84
     },
     {
      "id": 6,
      "title": "Equations — Fundamentals",
-     "videos": 9,
-     "lessons": 2,
-     "questions": 58,
-     "minutes": 21,
-     "steps": 69
+     "videos": 11,
+     "lessons": 4,
+     "questions": 71,
+     "minutes": 25,
+     "steps": 84
     },
     {
      "id": 7,
      "title": "Equations",
      "videos": 29,
-     "lessons": 3,
-     "questions": 74,
+     "lessons": 4,
+     "questions": 78,
      "minutes": 44,
-     "steps": 104
+     "steps": 108
     },
     {
      "id": 8,
      "title": "Exponent Laws — Fundamentals",
-     "videos": 10,
-     "lessons": 2,
+     "videos": 11,
+     "lessons": 3,
      "questions": 41,
-     "minutes": 17,
-     "steps": 52
+     "minutes": 20,
+     "steps": 53
     },
     {
      "id": 9,
      "title": "Roots — Fundamentals",
-     "videos": 8,
-     "lessons": 2,
+     "videos": 9,
+     "lessons": 3,
      "questions": 42,
-     "minutes": 16,
-     "steps": 51
+     "minutes": 19,
+     "steps": 52
     },
     {
      "id": 10,
      "title": "Laws of Exponents & Roots — Fundamentals",
-     "videos": 12,
-     "lessons": 2,
-     "questions": 60,
-     "minutes": 24,
-     "steps": 73
+     "videos": 11,
+     "lessons": 3,
+     "questions": 65,
+     "minutes": 23,
+     "steps": 77
     },
     {
      "id": 11,
      "title": "Laws of Exponents & Roots — Advanced",
-     "videos": 18,
-     "lessons": 2,
-     "questions": 49,
-     "minutes": 29,
-     "steps": 68
+     "videos": 19,
+     "lessons": 3,
+     "questions": 51,
+     "minutes": 34,
+     "steps": 71
     },
     {
      "id": 12,
      "title": "Inequalities",
-     "videos": 24,
+     "videos": 25,
+     "lessons": 5,
+     "questions": 55,
+     "minutes": 40,
+     "steps": 82
+    },
+    {
+     "id": 13,
+     "title": "Absolute Value",
+     "videos": 19,
+     "lessons": 3,
+     "questions": 45,
+     "minutes": 38,
+     "steps": 66
+    },
+    {
+     "id": 14,
+     "title": "Prime Numbers",
+     "videos": 23,
      "lessons": 4,
      "questions": 54,
      "minutes": 37,
      "steps": 80
     },
     {
-     "id": 13,
-     "title": "Absolute Value",
-     "videos": 19,
-     "lessons": 2,
-     "questions": 47,
-     "minutes": 37,
-     "steps": 68
-    },
-    {
-     "id": 14,
-     "title": "Prime Numbers",
-     "videos": 24,
-     "lessons": 3,
-     "questions": 56,
-     "minutes": 37,
-     "steps": 83
-    },
-    {
      "id": 15,
      "title": "Division & Remainder",
      "videos": 18,
-     "lessons": 2,
-     "questions": 53,
+     "lessons": 3,
+     "questions": 52,
      "minutes": 33,
-     "steps": 73
+     "steps": 72
     },
     {
      "id": 16,
      "title": "Integers",
-     "videos": 25,
-     "lessons": 5,
-     "questions": 57,
-     "minutes": 48,
-     "steps": 87
+     "videos": 26,
+     "lessons": 6,
+     "questions": 58,
+     "minutes": 50,
+     "steps": 89
     },
     {
      "id": 17,
      "title": "The Number Line",
-     "videos": 17,
-     "lessons": 3,
-     "questions": 39,
-     "minutes": 38,
-     "steps": 58
+     "videos": 18,
+     "lessons": 4,
+     "questions": 41,
+     "minutes": 42,
+     "steps": 61
     },
     {
      "id": 18,
      "title": "Exercises with Letters",
-     "videos": 14,
-     "lessons": 2,
-     "questions": 44,
-     "minutes": 25,
-     "steps": 60
+     "videos": 15,
+     "lessons": 3,
+     "questions": 45,
+     "minutes": 28,
+     "steps": 62
     },
     {
      "id": 19,
      "title": "Defining a New Operation",
      "videos": 23,
-     "lessons": 2,
+     "lessons": 3,
      "questions": 58,
-     "minutes": 36,
+     "minutes": 38,
      "steps": 82
     },
     {
      "id": 20,
      "title": "Algebraic Understanding",
-     "videos": 10,
-     "lessons": 2,
-     "questions": 32,
-     "minutes": 20,
-     "steps": 44
+     "videos": 11,
+     "lessons": 3,
+     "questions": 33,
+     "minutes": 24,
+     "steps": 46
     }
    ]
   },
@@ -193,83 +193,83 @@
     {
      "id": 21,
      "title": "Trial, limits and patterns",
-     "videos": 25,
-     "lessons": 7,
-     "questions": 52,
-     "minutes": 39,
-     "steps": 79
+     "videos": 26,
+     "lessons": 8,
+     "questions": 53,
+     "minutes": 43,
+     "steps": 81
     },
     {
      "id": 22,
      "title": "General word problems and ratios",
-     "videos": 31,
-     "lessons": 8,
-     "questions": 71,
-     "minutes": 48,
-     "steps": 105
+     "videos": 32,
+     "lessons": 9,
+     "questions": 74,
+     "minutes": 52,
+     "steps": 109
     },
     {
      "id": 23,
      "title": "Percentages",
      "videos": 18,
-     "lessons": 3,
-     "questions": 51,
-     "minutes": 33,
-     "steps": 71
+     "lessons": 4,
+     "questions": 49,
+     "minutes": 35,
+     "steps": 69
     },
     {
      "id": 24,
      "title": "Overlapping groups",
-     "videos": 16,
-     "lessons": 5,
-     "questions": 34,
-     "minutes": 28,
-     "steps": 52
+     "videos": 17,
+     "lessons": 6,
+     "questions": 36,
+     "minutes": 31,
+     "steps": 55
     },
     {
      "id": 25,
      "title": "Averages",
-     "videos": 16,
-     "lessons": 3,
-     "questions": 47,
-     "minutes": 23,
-     "steps": 64
+     "videos": 17,
+     "lessons": 4,
+     "questions": 50,
+     "minutes": 25,
+     "steps": 68
     },
     {
      "id": 26,
      "title": "Work and rates",
-     "videos": 19,
-     "lessons": 4,
-     "questions": 47,
-     "minutes": 29,
-     "steps": 67
+     "videos": 20,
+     "lessons": 5,
+     "questions": 50,
+     "minutes": 32,
+     "steps": 71
     },
     {
      "id": 27,
      "title": "Motion",
-     "videos": 26,
-     "lessons": 6,
-     "questions": 58,
-     "minutes": 37,
-     "steps": 86
+     "videos": 25,
+     "lessons": 7,
+     "questions": 55,
+     "minutes": 35,
+     "steps": 82
     },
     {
      "id": 28,
      "title": "Counting possibilities",
-     "videos": 36,
-     "lessons": 10,
-     "questions": 68,
-     "minutes": 50,
-     "steps": 106
+     "videos": 34,
+     "lessons": 11,
+     "questions": 63,
+     "minutes": 46,
+     "steps": 99
     },
     {
      "id": 29,
      "title": "Probability",
-     "videos": 28,
+     "videos": 26,
      "lessons": 6,
-     "questions": 56,
-     "minutes": 34,
-     "steps": 86
+     "questions": 51,
+     "minutes": 33,
+     "steps": 78
     }
    ]
   },
@@ -280,83 +280,83 @@
     {
      "id": 30,
      "title": "Lines and angles",
-     "videos": 9,
-     "lessons": 2,
-     "questions": 45,
-     "minutes": 31,
-     "steps": 55
+     "videos": 11,
+     "lessons": 4,
+     "questions": 46,
+     "minutes": 35,
+     "steps": 58
     },
     {
      "id": 31,
      "title": "Triangles",
-     "videos": 36,
-     "lessons": 10,
-     "questions": 87,
-     "minutes": 95,
-     "steps": 129
+     "videos": 38,
+     "lessons": 12,
+     "questions": 89,
+     "minutes": 102,
+     "steps": 133
     },
     {
      "id": 32,
      "title": "Quadrilaterals",
-     "videos": 39,
-     "lessons": 11,
-     "questions": 91,
-     "minutes": 86,
-     "steps": 134
+     "videos": 38,
+     "lessons": 13,
+     "questions": 87,
+     "minutes": 88,
+     "steps": 129
     },
     {
      "id": 33,
      "title": "Circles",
-     "videos": 36,
-     "lessons": 9,
-     "questions": 86,
-     "minutes": 84,
-     "steps": 126
+     "videos": 38,
+     "lessons": 11,
+     "questions": 90,
+     "minutes": 90,
+     "steps": 132
     },
     {
      "id": 34,
      "title": "Polygons",
-     "videos": 20,
-     "lessons": 5,
-     "questions": 48,
-     "minutes": 52,
-     "steps": 72
+     "videos": 21,
+     "lessons": 6,
+     "questions": 49,
+     "minutes": 54,
+     "steps": 74
     },
     {
      "id": 35,
      "title": "Three-dimensional geometry",
-     "videos": 20,
-     "lessons": 5,
-     "questions": 53,
-     "minutes": 52,
-     "steps": 75
+     "videos": 21,
+     "lessons": 6,
+     "questions": 51,
+     "minutes": 54,
+     "steps": 74
     },
     {
      "id": 36,
      "title": "Similarity and scale",
-     "videos": 24,
-     "lessons": 6,
-     "questions": 57,
-     "minutes": 69,
-     "steps": 85
+     "videos": 25,
+     "lessons": 7,
+     "questions": 59,
+     "minutes": 72,
+     "steps": 88
     },
     {
      "id": 37,
      "title": "The coordinate system",
      "videos": 21,
-     "lessons": 6,
-     "questions": 49,
-     "minutes": 55,
-     "steps": 71
+     "lessons": 7,
+     "questions": 46,
+     "minutes": 56,
+     "steps": 68
     },
     {
      "id": 38,
      "title": "Geometric reasoning",
-     "videos": 18,
-     "lessons": 3,
-     "questions": 49,
-     "minutes": 51,
-     "steps": 68
+     "videos": 19,
+     "lessons": 4,
+     "questions": 50,
+     "minutes": 53,
+     "steps": 70
     }
    ]
   },

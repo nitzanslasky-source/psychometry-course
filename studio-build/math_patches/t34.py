@@ -1,7 +1,7 @@
 """Topic 34 - Polygons. Course review 2026-09 fixes.
-Adds exterior angles (sum 360, n = 360/(180 - angle), "which could be an angle"), the diagonal count (n - 3, n(n - 3)/2),
+Adds exterior angles (sum 360, n = 360/(180 - angle)), the diagonal count (n - 3, n(n - 3)/2),
 concave polygons, polygons meeting at a point / on a common side, hexagon diagonal facts; rewrites every written
-solution in TeX, fixes figures, removes two duplicate practice items and adds exam-level practice.
+solution in TeX, fixes figures and adds exam-level practice (pass 2: the plan of real_exam/PLAN_REMOVE_RESTORE.md is applied).
 See t34_CHANGES.md for the plain-language list."""
 import math
 import re
@@ -277,6 +277,7 @@ def apply(M):
     _new_guided(M)
     _practice(M)
     _figures(M)
+    _summary(M)
     _text_pass(M)            # new slides too
 
 
@@ -284,10 +285,10 @@ def apply(M):
 # 1-2. The main lesson: diagonal count, concave polygons, exterior angles, n from an angle
 # ------------------------------------------------------------------------------------------------
 def _lesson_polygons(M):
-    # slide 5 board: "5: 540°" reads like a ratio
+    # slide 5 board: pass 2 - the original "5: 540° → 6: 720° → 7: 900° → 8: 1080°" is restored as it was; only the
+    # label colons move out of the math (the ':' pass in _text_pass would read them as fractions)
     _set_item(M, MAIN, 5, '$5: 540°\\ \\rightarrow\\ 6: 720°\\ \\rightarrow\\ 7: 900°\\ \\rightarrow\\ 8: 1080°$',
-              '$540°\\ \\rightarrow\\ 720°\\ \\rightarrow\\ 900°\\ \\rightarrow\\ 1080°$ (5, 6, 7, 8 sides)',
-              '540° → 720° → 900° → 1080° (5, 6, 7, 8 sides) appears')
+              '5: $540°$ $\\rightarrow$ 6: $720°$ $\\rightarrow$ 7: $900°$ $\\rightarrow$ 8: $1080°$')
     # slide 6: concave polygons (one sentence the review asked for)
     _insert_after_say(M, MAIN, 6, "These two sides are exactly those two sides. But it's no longer a regular hexagon.", [
         "By the way — the folded shape is still a hexagon. Its angle sum is still 720.",
@@ -318,12 +319,6 @@ def _lesson_polygons(M):
         A('n = 360° / (180° − angle) appears', T('$n=\\frac{360°}{180°-\\text{angle}}$', size=48)),
         A('150°: 180 − 150 = 30, 360/30 = 12 sides appears',
           T('$150°$: $180-150=30$, $\\frac{360}{30}=12$ sides', size=40)),
-        "And a classic exam question: which of these could be an angle of a regular polygon?",
-        "Take 180 minus the angle. It must divide 360 exactly — the number of sides is a whole number.",
-        "140? 180 minus 140 is 40. 360 over 40 is 9. Yes — a regular 9-sided polygon.",
-        "130? 180 minus 130 is 50. 360 over 50 is 7.2 — not a whole number. No such polygon.",
-        A('Could it be an angle? 180 − angle must divide 360 appears',
-          T('Could it be an angle of a regular polygon? $180-$ angle must divide $360$', size=36)),
     ])
     M.insert_slides(MAIN, 10, [ext, rev])
 
@@ -373,10 +368,10 @@ def _lesson_polygons(M):
 # ------------------------------------------------------------------------------------------------
 def _other_videos(M):
     # Two Hexagon Partitions: explain "Haman's ear" for English learners
-    _replace_say(M, 'geo-112-after', 4,
-                 "We call it the Haman's-ear partition: fold the three corners in, like the paper, and you get a hamantasch.",
-                 ["We call it the Haman's-ear partition, or the star partition.",
-                  "A Haman's ear is a cookie with three corners. Fold the three outside triangles in, and you get its shape."])
+    # pass 2: the original line stays; one explaining line is added after it
+    _insert_after_say(M, 'geo-112-after', 4,
+                      "We call it the Haman's-ear partition: fold the three corners in, like the paper, and you get a hamantasch.",
+                      ["A hamantasch — a Haman's ear — is a cookie with three corners. That's why we also call it the star partition."])
 
     # Q6: state the hexagon diagonal facts once
     _insert_after_say(M, 'solve-geo34-g112', 3, "Choice four. That's the math solution.", [
@@ -410,8 +405,7 @@ def _cards(M):
     rows[3:3] = [['!Exterior angles', '$360°$ in all (any convex polygon)', 'regular: each $\\frac{360°}{n}$ = central angle'],
                  ['!Sides from one angle (regular)', '$n=\\frac{360°}{180°-\\text{angle}}$', '$150°$: $\\frac{360}{30}=12$ sides']]
     rows.insert(1, ['Diagonals', '$n-3$ from one vertex · $\\frac{n(n-3)}{2}$ in all', 'each diagonal has 2 ends'])
-    c['tips'] += ['Could it be an angle of a regular polygon? Only if $180°-$ angle divides $360°$ exactly.',
-                  'A concave polygon (one angle bigger than $180°$) still has the angle sum $180°(n-2)$.']
+    c['tips'] += ['A concave polygon (one angle bigger than $180°$) still has the angle sum $180°(n-2)$.']
 
     h = M.card('mem-hexagon-partitions')
     h['tables'][1]['rows'][2][0] = "Haman's ear (star)"
@@ -705,8 +699,9 @@ def _new_guided(M):
 # 5. Practice: remove duplicates, add new items, order easy -> hard
 # ------------------------------------------------------------------------------------------------
 def _practice(M):
-    M.unplace('geo34-core-p03')    # same as the last step of Q12 (900° -> heptagon)
-    M.unplace('geo34-core-p14')    # same as Q11 (angle sum -> number of sides)
+    # pass 2: p03 and p14 are original questions - they stay (restored, solutions in TeX)
+    M.set_q('geo34-core-p03', expl=['$180°(n-2)=900°$, so $n-2=\\frac{900}{180}=5$ and $n=7$: a heptagon.'])
+    M.set_q('geo34-core-p14', expl=['$180°(n-2)=1{,}980°$, so $n-2=\\frac{1980}{180}=11$ and $n=13$.'])
     new = [
         (G[3], 'What is the size of each interior angle of a regular decagon (a 10-sided polygon)?',
          ['$108°$', '$144°$', '$150°$', '$162°$'], 2,
@@ -717,11 +712,6 @@ def _practice(M):
          ['$2160°$', '$2340°$', '$2520°$', '$2700°$'], 2,
          ["$n=\\frac{360°}{24°}=15$ sides.",
           "Angle sum: $180°(15-2)=180°\\cdot13=2340°$."], None),
-        (G[5], 'Which of the following could be the size of an interior angle of a regular polygon?',
-         ['$130°$', '$140°$', '$145°$', '$155°$'], 2,
-         ["The exterior angle, $180°-$ angle, must divide $360°$ exactly (the number of sides is a whole number).",
-          "$130°$: $\\frac{360}{50}=7.2$, no. $140°$: $\\frac{360}{40}=9$, yes. $145°$: $\\frac{360}{35}$ is not whole, no. $155°$: $\\frac{360}{25}=14.4$, no.",
-          "Only $140°$ works: a regular 9-sided polygon."], None),
         (G[6], 'A polygon has 20 diagonals. How many sides does it have?',
          ['$5$', '$7$', '$8$', '$10$'], 3,
          ["Number of diagonals: $\\frac{n(n-3)}{2}=20$, so $n(n-3)=40$.",
@@ -757,7 +747,7 @@ def _practice(M):
 
     p = lambda k: 'geo34-core-p%02d' % k
     M.practice_order(PRACTICE, [
-        G[3], p(26), p(21), p(8), p(7), p(6), p(23), G[6], p(22), G[4], G[5], p(11), p(24), p(25), p(27), p(5), p(2),
+        p(3), G[3], p(14), p(26), p(21), p(8), p(7), p(6), p(23), G[6], p(22), G[4], p(11), p(24), p(25), p(27), p(5), p(2),
         p(1), p(18), p(20), p(17), G[7], p(9), G[8], p(13), G[10], p(12), p(16), p(19), p(15), p(4), p(10), G[9]])
 
 
@@ -796,3 +786,79 @@ def _figures(M):
             qq = M.q(f['ref']); vis = qq.get('questionVisual')
             if vis and vis.get('svg') and 'viewBox="0 0 640 360"' in vis['svg']:
                 M.set_q(f['ref'], figure=_zoom(vis['svg']))
+
+
+# ------------------------------------------------------------------------------------------------
+# Pass 2: a summary lesson right before the practice
+# ------------------------------------------------------------------------------------------------
+def _summary(M):
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == LEARN][-1]
+    sb = ['Angle sum', 'One angle', 'Exterior angles', 'Diagonals', 'Triangles inside', 'Areas',
+          'Meeting at a point', 'Before you practice']
+    M.new_video('r26-t34-summary', TOPIC, 'Polygons: Summary', sb, [
+        dict(mode='title', title='Summary', script=[
+            "Polygons — a quick summary before you practice.",
+            "Everything important from these lessons, one idea at a time.",
+        ]),
+        dict(title='Angle sum', mode='concept', active=0, pre=[], script=[
+            A('S = 180°(n − 2) appears', T('Angle sum: $180°(n-2)$', size=52, gap=40)),
+            "The angle sum: 180 times n minus 2. Or split the polygon into n minus 2 triangles.",
+            A('+1 side = +180° appears', T('5: $540°$ $\\rightarrow$ 6: $720°$ $\\rightarrow$ 7: $900°$ $\\rightarrow$ 8: $1080°$', size=42, gap=40)),
+            "Every extra side adds 180.",
+            D('Write "900° ÷ 180° = 5 triangles → 7 sides"'),
+            "Backwards: a sum of 900 is 5 triangles — 7 sides.",
+        ]),
+        dict(title='One angle', mode='concept', active=1, pre=[], script=[
+            A('one angle appears', T('Regular: one angle $=\\frac{180°(n-2)}{n}=180°-\\frac{360°}{n}$', size=42, gap=40)),
+            "Regular means all the sides AND all the angles are equal. Then divide the sum by n.",
+            A('three to know appears', T('Pentagon $108°$ $\\cdot$ hexagon $120°$ $\\cdot$ octagon $135°$', size=44, gap=40)),
+            "Don't remember one? Find the central angle, 360 over n, and complete it to 180. Octagon: 45 — so 135.",
+        ]),
+        dict(title='Exterior angles', mode='concept', active=2, pre=[], script=[
+            A('exterior angles: 360° appears', T('All the exterior angles together: $360°$', size=46, gap=40)),
+            "The exterior angles always add up to 360 — any number of sides.",
+            A('n = 360°/(180° − angle) appears', T('$n=\\frac{360°}{180°-\\text{angle}}$', size=52, gap=40)),
+            "An angle of a regular polygon is given? 180 minus it — the exterior angle. Then 360 over that.",
+            D('Write "150°: 180 − 150 = 30, 360 ÷ 30 = 12 sides"'),
+            "150: the exterior angle is 30. 12 sides.",
+        ]),
+        dict(title='Diagonals', mode='concept', active=3, pre=[], script=[
+            A('n − 3 and n(n − 3)/2 appears', T('Diagonals: $n-3$ from one vertex $\\cdot$ $\\frac{n(n-3)}{2}$ in all', size=42, gap=40)),
+            "From one vertex: n minus 3. All of them: n times n minus 3, over 2 — each diagonal has two ends.",
+            D('Write "heptagon: 7 · 4 ÷ 2 = 14"'),
+            A('equal parts appears', T('Regular: the diagonals from a vertex split its angle equally', size=38)),
+            "In a regular polygon, the diagonals from one vertex split its angle into equal parts. Pentagon: 108 over 3 — 36 each.",
+        ]),
+        dict(title='Triangles inside', mode='concept', active=4, pre=[], script=[
+            A('n isosceles triangles appears', T('Radii $\\rightarrow$ $n$ congruent isosceles triangles', size=44, gap=40)),
+            "Draw the radii of a regular polygon: n congruent isosceles triangles.",
+            A('hexagon appears', T('Hexagon, side $a$: 6 equilateral triangles $\\cdot$ short diagonal $a\\sqrt3$ $\\cdot$ long diagonal $2a$', size=36)),
+            "The hexagon is special: 6 equilateral triangles. The short diagonal is a root 3, the long one 2a.",
+        ]),
+        dict(title='Areas', mode='concept', active=5, pre=[], script=[
+            A('no formula appears', T('No formula: split into shapes you know', size=46, gap=30)),
+            "Polygons have no area formula. Split them into triangles, rectangles, trapezoids.",
+            A('big shape minus corners appears', T('Or: a big shape minus the missing pieces', size=46, gap=30)),
+            "Or surround them: an octagon is a square minus four corner triangles.",
+            A('hexagon area appears', T('Regular hexagon: $6\\cdot\\frac{a^2\\sqrt3}{4}$', size=46)),
+            "And in the hexagon, every corner triangle of the star partition is also a sixth of the hexagon.",
+        ]),
+        dict(title='Meeting at a point', mode='concept', active=6, pre=[], script=[
+            A('360° around a point appears', T('Around a point: $360°$', size=50, gap=40)),
+            "Polygons meeting at a point: their angles add up to 360.",
+            D('Write "360° − 120° − 90° = 150°"'),
+            "A hexagon and a square: 360 minus 120 minus 90 — 150.",
+            A('common side → isosceles appears', T('Regular polygons on a common side $\\rightarrow$ equal sides $\\rightarrow$ isosceles triangle', size=36)),
+            "On a common side, all the sides are equal. Look for the isosceles triangle.",
+        ]),
+        dict(title='Before you practice', mode='concept', active=7, pre=[], script=[
+            "Before each question, ask yourself:",
+            A('check 1 appears', T('Is the polygon regular? Only then are all the angles equal.', size=34, gap=24)),
+            A('check 2 appears', T('Which angle is it: the polygon’s angle, the exterior angle or the central angle?', size=34, gap=24)),
+            A('check 3 appears', T('Which triangles hide here: isosceles from radii, equilateral in a hexagon?', size=34, gap=24)),
+            A('check 4 appears', T('Around a point: do the angles add up to $360°$?', size=34, gap=24)),
+            "The common traps: dividing the angle sum by n when the polygon is not regular, and counting every diagonal twice.",
+            "And a polygon that fits in a circle is not necessarily regular.",
+            "You know all of this. Now practice.",
+        ]),
+    ], LEARN, after=last)

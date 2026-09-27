@@ -503,6 +503,7 @@ def apply(M):
     _cards(M)
     _practice(M)
     _american(M)
+    _summaries(M)
 
 
 def _all_svgs(M):
@@ -540,22 +541,10 @@ def _figures(M):
 # 1. Lesson videos: "not necessarily", definitions, family tree, new rules
 # ------------------------------------------------------------------------------------------------
 def _lesson_videos(M):
-    # ---- geo-042 Quadrilaterals: arrow rule + family tree ----
+    # ---- geo-042 Quadrilaterals: family tree ----
     _say(M, 'geo-042', 5, 'From here: a lesson on each one. We start with the square — the easiest to understand, because we all know what a square is.',
          "These arrows show how we changed one shape into another. But which shape is ALSO which? Let's draw it as a family tree.")
-    M.insert_slides('geo-042', 4, [dict(mode='concept', active=3, title='The arrow rule', script=[
-        A('A concave quadrilateral with the angles a, b, c and x appears', VIS(FIG_ARROW, w=1000, h=520)),
-        "Back to the quadrilateral that bends inward. On the exam it often looks like an arrow.",
-        "Look at the dent at D. Outside the shape, in the notch, there's an angle smaller than 180. Call it x.",
-        "Here's the arrow rule: x equals the sum of the other three angles.",
-        A("'x = a + b + c' appears", T('$x=a+b+c$', size=54, x=410, y=650)),
-        "Why? The inside angle at D is the big one: 360 minus x.",
-        A("'a + b + c + (360° − x) = 360°' appears", T('$a+b+c+(360°-x)=360°$', size=40, x=410, y=740)),
-        "The four inside angles add up to 360, like in every quadrilateral. Take 360 away from both sides — and x is a plus b plus c.",
-        "Example: 40, 90 and 30 at the other corners. The notch angle is 160.",
-    ])])
-    M.video('geo-042')['beats'][5]['active'] = 4          # "The family" moved one slide down
-    M.insert_slides('geo-042', 6, [dict(mode='concept', active=5, title='Who is also who?', script=[
+    M.insert_slides('geo-042', 5, [dict(mode='concept', active=4, title='Who is also who?', script=[
         A('The family tree appears', VIS(FIG_TREE, w=1000, h=520)),
         "Now the same family as a tree. Read every arrow as \"a special kind of\".",
         "A trapezoid, a parallelogram and a kite are special kinds of quadrilateral.",
@@ -570,7 +559,7 @@ def _lesson_videos(M):
         "That's why we say \"not necessarily\". A rectangle's diagonals are not necessarily perpendicular — but in a square they are.",
         "From here: a lesson on each one. We start with the square — the easiest to understand, because we all know what a square is.",
     ])])
-    M.set_sidebar('geo-042', ['What it is', 'It can bend inward', 'Angle sum 360°', 'The arrow rule', 'The family', 'Who is also who?'])
+    M.set_sidebar('geo-042', ['What it is', 'It can bend inward', 'Angle sum 360°', 'The family', 'Who is also who?'])
 
     # ---- geo-043 The Square: scaling rule + colon in a draw note ----
     _draw(M, 'geo-043', 6, 'Write 6 × 6 : 2 = 18 inside that triangle', 'Write 6 × 6 ÷ 2 = 18 inside that triangle')
@@ -653,36 +642,7 @@ def _lesson_videos(M):
     _draw(M, 'geo-054', 7, 'Draw a leg perpendicular to the bases, with right-angle marks top and bottom', 'Draw right-angle marks at A and at B')
     _say(M, 'geo-054', 7, 'Nothing else special about it.',
          'In questions: drop the height from D. You get a rectangle and a right triangle — and Pythagoras does the rest.')
-    M.insert_slides('geo-054', 5, [dict(mode='concept', active=4, title='The midsegment', script=[
-        A('Trapezoid ABCD with its midsegment MN appears', VIS(FIG_MID, w=1000, h=520)),
-        "One more segment you'll meet on the exam: the midsegment.",
-        "M is the midpoint of leg AB. N is the midpoint of leg CD. MN joins them.",
-        "The midsegment is parallel to the bases. And its length is the average of the bases.",
-        A("'MN = (a + b)/2' appears", T('Midsegment $MN=\\frac{a+b}{2}$', size=46, x=410, y=650)),
-        "a plus b, over 2. Bases 10 and 6? The midsegment is 8.",
-        "Now look at the area formula again: a plus b over 2, times h. That's the midsegment times the height.",
-        A("'S = MN · h' appears", T('$S=\\frac{a+b}{2}\\cdot h=MN\\cdot h$', size=46, x=410, y=740)),
-        "Midsegment 8 and height 5? The area is 40. You don't even need the bases.",
-    ])])
-    for n, a in ((7, 5), (8, 6)): M.video('geo-054')['beats'][n - 1]['active'] = a
-    M.set_sidebar('geo-054', ['Bases and legs', 'Angles on a leg', 'Area formula', 'Why: two copies', 'The midsegment',
-                              'Isosceles trapezoid', 'Right trapezoid'])
-
-    # ---- geo-067-after Equal Heights, Equal Halves: the trapezoid "butterfly" ----
-    M.insert_slides('geo-067-after', 7, [dict(mode='concept', active=6, title='Trapezoid butterfly', script=[
-        A('A trapezoid with both diagonals appears; the side triangles are shaded', VIS(FIG_BFLY, w=1000, h=520)),
-        "One more — a classic on the exam. A trapezoid with both diagonals.",
-        D('Trace triangle ABC, then triangle DBC'),
-        "Look at triangles ABC and DBC. Same base, BC. And the same height — A and D sit on the same parallel line.",
-        "So the two triangles have equal areas.",
-        A("'S(ABC) = S(DBC) → S(AOB) = S(COD)' appears", T('$S_{ABC}=S_{DBC}\\ \\Rightarrow\\ S_{AOB}=S_{COD}$', size=46, x=410, y=650)),
-        "Both of them contain the bottom triangle, BOC. Take it away from both —",
-        "— and what's left is equal: the two shaded side triangles.",
-        "In every trapezoid the two side triangles have equal areas. Even when the trapezoid is not isosceles.",
-        "Picture a butterfly: its two wings are always equal.",
-    ])])
-    M.set_sidebar('geo-067-after', ['Diagonal halves', 'Triangle in rectangle', 'Many triangles', 'Parallelograms too',
-                                    'Triangle on the base', 'Part of the base', 'Trapezoid butterfly'])
+    # (Pass 2: the arrow rule, the midsegment and the trapezoid "butterfly" slides were removed - teacher's plan)
 
 
 # ------------------------------------------------------------------------------------------------
@@ -703,63 +663,34 @@ def _existing_solution_videos(M):
     _say(M, 'solve-geo32-g066', 2, "What's a kite? Two isosceles triangles on a shared base — the short diagonal.",
          "What's a kite? Two isosceles triangles on a shared base — the secondary diagonal.")
 
-    # Q10: simplest way first, the other two are optional
+    # Q10: three ways, all taught (original framing and order - Pass 2); only clean-ups here
     vid = 'solve-geo32-g059'
-    _say(M, vid, 1, 'One answer — three ways to get it. Learn all three.', 'One answer, three ways. The first way is enough — the other two are optional.')
-    _say(M, vid, 4, "Now the area of ABE. There are several ways — and it's important to know all of them.",
-         'Optional: two more ways to see it — for practice.')
-    _say(M, vid, 4, "On the exam, pick the first one that jumps out. But now we're at the basics — learn them all.",
-         'On the exam, pick the first one that jumps out.')
-    _say(M, vid, 4, 'Way one: the median. Look at triangle ABC.', 'Way two: the median. Look at triangle ABC.')
-    _say(M, vid, 5, 'Way two: the diagonals of a rectangle always split it into four triangles of equal area.',
-         'Now the area of ABE. Way one — the simplest: the diagonals of a rectangle always split it into four triangles of equal area.')
     _say(M, vid, 5, 'By the way — that\'s true across the whole parallelogram family: rectangle, rhombus, square.',
          "By the way — that's true in every parallelogram, and so also in a rectangle, a rhombus and a square.")
-    _say(M, vid, 5, 'Why? The top triangle is congruent to the bottom one. The left is congruent to the right. And we just saw S1 equals S2.',
-         'Why? Opposite triangles are congruent. And two neighbors, like ABE and CBE, have equal bases, AE and EC, and the same height from B.')
     _say(M, vid, 5, 'So one triangle is the rectangle divided by 4: 5 times 12 is 60, over 4 — 15. Choice three.', [
         {'say': 'So one triangle is the rectangle divided by 4: 5 times 12 is 60, over 4 — 15.'}, {'draw': 'Circle choice 3'}, {'say': 'Choice three.'}])
-    _say(M, vid, 6, 'And a third way — the most basic one: base times height.', 'Way three, also optional — the most basic one: base times height.')
-    M.move_slide(vid, 5, 4)
-    for n, t in ((4, 'Way 1 · Four equal areas'), (5, 'Way 2 · A median (optional)'), (6, 'Way 3 · Base × height (optional)')):
-        M.slide(vid, n)['title'] = t
 
-    # Q11: the short way (two equilateral triangles) first, the diagonal ways optional
+    # Q11: original framing and order (Pass 2). Slide 6 keeps its fix: AB = AD, so angle ADB (not "the angle opposite AD") is 60.
     vid = 'solve-geo32-g060'
-    _say(M, vid, 1, 'Two area formulas, several ways to add it up — and one short psychometric way.',
-         'One short way first. The longer ways after it are optional.')
     b6 = M.slide(vid, 6)
-    M.set_slide(vid, 6, title='Way 1 · Two equilateral triangles', script=[
-        "ABCD is a rhombus. The diagonal BD is 6, and angle ABD is 60. What is the area of the rhombus?",
-        "The 60 degrees is a hint.",
+    M.set_slide(vid, 6, script=[
+        "One more way. Well done if you spotted this one.",
+        "Some notice the 60 degrees and say: wait — that's a hint.",
         D('Mark AB and AD as equal'),
         "In a rhombus all the sides are equal. AB equals AD — so triangle ABD is isosceles, and angle ADB is 60 too.",
         D('Write 60° at D and at A in triangle ABD'),
         "Two 60s make 120 — so the top angle is 60 as well. The triangle is equilateral.",
         "Worth remembering: an isosceles triangle with a 60-degree angle is always equilateral.",
         D('Write 6 on AB, AD, BC and CD'),
-        "BD is 6 — so AB and AD are 6. All the sides of a rhombus are equal: DC and BC are 6 too.",
-        "So the rhombus is two equilateral triangles.",
+        "BD is 6 — so AB and AD are 6. And all the sides of a rhombus are equal: DC and BC are 6 too.",
+        "So what do we have? Two equilateral triangles.",
         A(b6['lines'][[l.get('appear') for l in b6['lines']].index(1)]['label'], b6['items'][1]),
-        "One equilateral triangle: side squared times root 3, over 4. Twice: 2 times 36 root 3 over 4 — 18 root 3.",
+        "Area of one equilateral triangle: side squared times root 3 over 4. Twice: 2 times 36 root 3 over 4 — 18 root 3.",
         D('Circle choice 4'),
-        "Choice four. That's the short, psychometric way.",
+        "That's the shorter, psychometric way. Choice four.",
     ])
-    _say(M, vid, 2, 'ABCD is a rhombus. The diagonal BD is 6, and angle ABD is 60. What is the area of the rhombus?',
-         'Optional: the longer way — with the diagonals.')
-    _say(M, vid, 2, "A diagonal is given here — so we'll probably use the diagonal formula. That's way one.",
-         "A diagonal is given — so let's use the diagonal formula.")
-    M.slide(vid, 2)['title'] = 'Way 2 · The diagonals (optional)'
-    M.move_slide(vid, 6, 2)
 
-    # Q19: drop the "completions" slide that does not settle the question
-    vid = 'solve-geo32-g070'
-    _say(M, vid, 4, 'Third and last approach — with the symmetry rule we already know. Break the shape into familiar pieces.',
-         'Approach two — break the shape into familiar pieces, with the symmetry rule we already know.')
-    _say(M, vid, 4, 'Two main approaches: subtract areas — or break the shaded area into familiar shapes, by completions or by symmetry.',
-         'Two main approaches: subtract areas — or break the shaded area into familiar shapes.')
-    M.slide(vid, 4)['title'] = 'Approach 2 · Split with symmetry'
-    M.remove_slides(vid, [3])
+    # Q19: the "Completions" slide stays (restored in Pass 2 - it is correct)
 
     # Q21: work back from the answers
     vid = 'solve-geo32-g072'
@@ -1080,91 +1011,7 @@ def _new_guided(M):
         ]),
     ], FIG_G2)
 
-    # ---- G3: the midsegment ----
-    M.new_q(G[2], TOPIC, 'In trapezoid ABCD, $AD\\parallel BC$. M and N are the midpoints of the legs AB and CD. Given:\n' +
-            _cases('MN=11' + CM, 'BC-AD=6' + CM) + '\nWhat is the length of BC (in cm)?',
-            ['$17$', '$8$', '$14$', '$11$'], 3,
-            ['MN is the midsegment, so it is the average of the bases: $\\frac{AD+BC}{2}=11$, and $AD+BC=22$.',
-             'Together with $BC-AD=6$: add the two equations, $2BC=28$, so $BC=14$.',
-             'Check: $AD=8$, and $\\frac{8+14}{2}=11$.'], figure=FIG_G3)
-    M.place_q(G[2], LEARN1, after='solve-' + G[1])
-    n3 = _solution(M, G[2], 'solve-' + G[2], 'The midsegment is the average of the bases', 'Trapezoid Questions', 36,
-                   ['A sample question — medium level.', 'The midsegment — and two equations.'], [
-        ('Average of the bases', [
-            "Trapezoid ABCD. M and N are the midpoints of the legs, so MN is the midsegment. It's 11. And BC is 6 longer than AD. What is BC?",
-            "The midsegment is the average of the bases.",
-            A("'(AD + BC)/2 = 11 → AD + BC = 22' appears", _R('$\\frac{AD+BC}{2}=11\\ \\Rightarrow\\ AD+BC=22$', 0, size=34)),
-            "AD plus BC, over 2, is 11. So AD plus BC is 22.",
-            A("'AD + BC = 22, BC − AD = 6' appears", _R('$\\begin{cases} AD+BC=22 \\\\ BC-AD=6 \\end{cases}$', 1, size=36)),
-            "And BC minus AD is 6. Two equations.",
-            A("'2BC = 28 → BC = 14' appears", _R('$2BC=28\\ \\Rightarrow\\ BC=14$', 2, size=36)),
-            "Add them: AD cancels. 2 BC is 28 — BC is 14.",
-            D('Circle choice 3'),
-            "Choice three.",
-        ]),
-        ('Check from the answers', [
-            "A quick check — work back from the answer. BC 14 means AD is 8.",
-            A("'(8 + 14)/2 = 11' appears", _R('$\\frac{8+14}{2}=11$', 0)),
-            "The average of 8 and 14 is 11. It fits.",
-            "The traps: 8 is AD — the short base. 17 is 11 plus 6 — mixing the midsegment with a base.",
-        ]),
-    ], FIG_G3)
-
-    # ---- G4: the arrow (concave) rule ----
-    M.new_q(G[3], TOPIC, 'ABCD is a concave quadrilateral, as in the accompanying figure. Given:\n' +
-            _cases('\\angle A=25°', '\\angle B=70°', '\\angle C=35°') + '\nWhat is x, the angle ADC marked in the notch?',
-            ['$230°$', '$50°$', '$110°$', '$130°$'], 4,
-            ['The angle in the notch equals the sum of the other three angles: $x=25°+70°+35°=130°$.',
-             'Why: the inside angle at D is $360°-x$, and the four inside angles add up to $360°$: $25°+70°+35°+(360°-x)=360°$. Therefore $x=130°$.',
-             '$230°$ is the inside angle at D, not the angle in the notch.'], figure=FIG_G5)
-    M.place_q(G[3], LEARN1, after='solve-geo32-g057')
-    n4 = _solution(M, G[3], 'solve-' + G[3], 'The arrow rule in a concave quadrilateral', 'Quadrilateral Questions', 38,
-                   ['A sample question — easy-plus.', 'An arrow shape. One rule settles it.'], [
-        ('The arrow rule', [
-            "ABCD is concave — it has a dent at D. Angle A is 25, B is 70 and C is 35. What is x, the angle in the notch?",
-            "The arrow rule: the angle in the notch equals the sum of the other three angles.",
-            A("'x = 25° + 70° + 35° = 130°' appears", _R('$x=25°+70°+35°=130°$', 0)),
-            "25 plus 70 plus 35 — 130.",
-            D('Circle choice 4'),
-            "Choice four.",
-        ]),
-        ('Why it works', [
-            A("'25° + 70° + 35° + (360° − x) = 360°' appears", _R('$25°+70°+35°+(360°-x)=360°$', 0, size=32)),
-            "Why? The inside angle at D is the big one — 360 minus x.",
-            "The four inside angles add up to 360, like in every quadrilateral. Take 360 away from both sides: x is 130.",
-            D('Cross out choice 1'),
-            "230? That's the inside angle at D — the one bigger than 180. The question marked the notch.",
-        ]),
-    ], FIG_G5)
-
-    # ---- G5: the trapezoid butterfly ----
-    M.new_q(G[4], TOPIC, 'In trapezoid ABCD, $AD\\parallel BC$, and the diagonals meet at O. The area of triangle AOB is 12 cm², '
-            'the area of triangle BOC is 18 cm², and the area of triangle AOD is 8 cm². What is the area of the trapezoid (in cm²)?',
-            ['$50$', '$46$', '$56$', '$38$'], 1,
-            ['Triangles ABC and DBC have the same base BC and the same height (A and D are on the same parallel line), so their areas are equal.',
-             'Take away triangle BOC from both: $S_{COD}=S_{AOB}=12$.', '$S=12+18+8+12=50$.'], figure=FIG_G4)
-    M.place_q(G[4], LEARN2, after='solve-geo32-g069')
-    n5 = _solution(M, G[4], 'solve-' + G[4], 'The two side triangles of a trapezoid are equal', 'Advanced Quadrilaterals II', 42,
-                   ['A sample question — medium level.', 'A trapezoid and its diagonals — the butterfly.'], [
-        ('Equal side triangles', [
-            "Trapezoid ABCD, the diagonals meet at O. AOB is 12, BOC is 18, AOD is 8. What is the whole trapezoid?",
-            "One piece is missing: triangle COD.",
-            D('Highlight triangles ABC and DBC'),
-            "Look at triangles ABC and DBC. Same base, BC. Same height — A and D are both on the top base.",
-            A("'S(ABC) = S(DBC)' appears", _R('$S_{ABC}=S_{DBC}$', 0)),
-            "So they have the same area.",
-            "Both contain triangle BOC. Take it away from both —",
-            A("'S(COD) = S(AOB) = 12' appears", _R('$S_{COD}=S_{AOB}=12$', 1)),
-            "— and what's left is equal. COD is 12, like AOB.",
-        ]),
-        ('Add it up', [
-            A("'S = 12 + 18 + 8 + 12 = 50' appears", _R('$S=12+18+8+12=50$', 0)),
-            "The trapezoid: 12 plus 18 plus 8 plus 12 — 50.",
-            D('Circle choice 1'),
-            "Choice one.",
-            "The traps: 46 guesses that COD equals the top triangle, 8. 56 guesses the bottom one, 18. And 38 forgot COD.",
-        ]),
-    ], FIG_G4)
+    # (Pass 2: G3 midsegment, G4 arrow rule and G5 trapezoid butterfly - q-r26-t32-03/04/05 - removed)
 
     # ---- perimeter tricks lesson ----
     PER = 'r26-t32-perimeter'
@@ -1263,10 +1110,8 @@ def _new_guided(M):
     # ---- sidebars of the groups the new questions joined ----
     Qn = lambda *ns: ['Question %d' % k for k in ns]
     _set_group(M, ['solve-geo32-g048', 'solve-geo32-g049', 'solve-' + G[0]], Qn(3, 4, n1))
-    _set_group(M, ['solve-geo32-g055', 'solve-' + G[1], 'solve-' + G[2]], Qn(7, n2, n3))
+    _set_group(M, ['solve-geo32-g055', 'solve-' + G[1]], Qn(7, n2))
     M.video('solve-geo32-g055')['beats'][0]['title'] = 'Trapezoid Questions'
-    _set_group(M, ['solve-geo32-g0%d' % k for k in range(57, 64)] + ['solve-' + G[3]], Qn(8, n4, 9, 10, 11, 12, 13, 14))
-    _set_group(M, ['solve-geo32-g0%d' % k for k in range(68, 73)] + ['solve-' + G[4]], Qn(17, 18, n5, 19, 20, 21))
     _set_group(M, ['solve-' + G[5], 'solve-' + G[6]], Qn(n6, n7))
 
 
@@ -1278,7 +1123,6 @@ def _cards(M):
     rows = c['tables'][0]['rows']
     for r in rows:
         if r[0] == 'Parallelogram': r[2] = 'the height, not the sloping side · angle $30°$: $h=\\frac12$ side'
-        if r[0] == 'Trapezoid': r[2] = 'or midsegment $\\times h$ (midsegment $=\\frac{a+b}{2}$)'
     rows.append(['Any quadrilateral with $\\perp$ diagonals', '$\\frac{d_1\\cdot d_2}{2}$', 'even if the diagonals do not bisect each other'])
     c['tips'] = ['Trapezoid: drop both heights — a rectangle in the middle, triangles at the ends. Right trapezoid: one height is enough.',
                  'Dropped a height? Look for Pythagoras, a triple, or a $30°$/$45°$/$60°$ triangle.',
@@ -1292,21 +1136,15 @@ def _cards(M):
         if r[0] == 'Parallelogram': r[3] = 'bisect each other — that\'s all (not necessarily equal or $\\perp$)'
         if r[0] == 'Rhombus': r[3] = '$\\perp$ · bisect each other · bisect the angles — not necessarily equal'
         if r[0] == 'Kite': r[2] = 'the main diagonal bisects the angles between the equal sides'
-        if r[0] == 'Trapezoid':
-            r[1] = 'exactly one pair of parallel sides (the bases)'
-            r[3] = 'the two side triangles have equal areas'
+        if r[0] == 'Trapezoid': r[1] = 'exactly one pair of parallel sides (the bases)'
         if r[0] == 'Isosceles trapezoid': r[2] = 'base angles equal · opposite angles sum $180°$'
     c['tips'] = ['Who is also who: a square is a rectangle AND a rhombus; a rectangle and a rhombus are parallelograms; a rhombus is also a kite. Down the family tree a shape only gains properties.',
                  '"Not necessarily": a property of a special shape (a square) is not a property of the general one (a rectangle).',
                  'Not sure about a property? Sketch an extreme version — very wide and very low — and look.',
                  'Rhombus: symmetric right–left AND top–bottom. Kite: right–left only.',
                  'An angle bisector in a parallelogram cuts off an isosceles triangle.',
-                 'Concave (arrow): the angle in the notch $=$ the sum of the other three angles.',
                  'Midpoints of the sides: of a rectangle — a rhombus; of a square — a square with half the area.',
                  'Right trapezoid: always two right angles.']
-
-    c = M.card('mem-equal-heights')
-    c['tables'][0]['rows'].append(['!Trapezoid with both diagonals', 'The two side triangles have equal areas ("butterfly")'])
 
     M.new_card('mem-r26-t32-perimeter', TOPIC, LEARN2, {
         'title': 'Perimeter tricks',
@@ -1386,18 +1224,190 @@ NEW_PRACTICE = [
 ]
 
 
+# Pass 2: these added practice items are removed (arrow rule, midsegment, butterfly) - teacher's plan
+REMOVED_PRACTICE = {'q-r26-t32-10', 'q-r26-t32-11', 'q-r26-t32-14', 'q-r26-t32-15', 'q-r26-t32-16', 'q-r26-t32-19'}
+
+# Pass 2: original foundation questions restored, with the text clean-up only
+RESTORED = {
+    'geo32-foundation-p05': dict(expl=[
+        'The side of the triangle is $\\frac{216}{3}=72$.',
+        'This is the perimeter of the square, therefore each side of the square is $\\frac{72}{4}=18$.']),
+    'geo32-foundation-p08': dict(expl=[
+        'A diagonal is the hypotenuse of a right triangle whose legs are sides of the square, therefore it is longer than a side '
+        '($d=s\\sqrt2$).',
+        'Each route has four segments. Replacing a side-length segment with a diagonal-length segment makes the route longer, '
+        'therefore four sides is the shortest route.']),
+    'geo32-foundation-p12': dict(expl=[
+        'Both horizontal lines are perpendicular to the right vertical line, therefore they are parallel.',
+        'The downward sloping line makes $32°$ with either horizontal line.',
+        'Its perpendicular therefore makes $90°-32°=58°$ with the horizontal line: $\\alpha=58°$.']),
+    'geo32-foundation-p19': dict(
+        stem='ABCD is a kite, and its diagonals intersect at O. Given:\n' +
+             _cases('AB=AD=17' + CM, 'CB=CD', 'BO=8' + CM, 'OC=9' + CM) + '\nWhat is its area (in cm²)?',
+        expl=['$OD=BO=8$, therefore $BD=8+8=16$.',
+              'Right triangle ABO: $8, 15, 17$, therefore $AO=15$ and $AC=15+9=24$.',
+              '$S=\\frac{16\\cdot24}{2}=192$.']),
+    'geo32-foundation-p22': dict(expl=[
+        'The half-diagonals are $\\frac{16}{2}=8$ and $\\frac{30}{2}=15$, and they are perpendicular.',
+        'They form a right triangle whose hypotenuse is a side of the rhombus: $8, 15, 17$, therefore the side is $17$.',
+        '$P=4\\cdot17=68$.']),
+}
+
+
 def _practice(M):
-    for qid in ['geo32-foundation-p05', 'geo32-foundation-p08',        # trivial fillers
-                'geo32-foundation-p12',                                # a pure T30 lines-and-angles item
-                'geo32-foundation-p19', 'geo32-foundation-p22']:       # repeats of the "half-diagonals -> triple" pattern
-        M.unplace(qid)
+    for qid, kw in RESTORED.items():
+        M.set_q(qid, **kw)
     for qid, (sec, stem, ch, cor, ex, fig) in zip(PID, NEW_PRACTICE):
+        if qid in REMOVED_PRACTICE: continue
         M.new_q(qid, TOPIC, stem, ch, cor, _therefore(ex), figure=fig)
         M.place_q(qid, sec)
     f = lambda *k: ['geo32-foundation-p%02d' % x for x in k]
     a = lambda *k: ['geo32-advanced-p%02d' % x for x in k]
     p = lambda *k: ['q-r26-t32-%02d' % x for x in k]
-    M.practice_order(FOUND, f(13, 14, 26, 27, 18) + p(10) + f(9, 4, 3, 2, 17, 11) + p(13, 9) + f(24) + p(12) + f(25, 21, 23) + p(8) +
-                     f(16) + p(11, 14) + f(6, 15, 10, 7, 20, 1))
-    M.practice_order(ADVP, a(26, 9, 23, 16, 25, 2, 7, 11) + p(19) + a(3, 5) + p(20, 21) + a(12) + p(18) + a(13, 4, 6, 10, 1, 24, 15, 14) +
-                     p(17) + a(19, 22, 8, 17, 18, 20, 21, 27) + p(16, 15))
+    M.practice_order(FOUND, f(13, 14, 5, 8, 26, 27, 18) + f(9, 4, 12, 3, 2, 17, 11) + p(13, 9) + f(22, 24) + p(12) +
+                     f(25, 21, 23, 19) + p(8) + f(16) + f(6, 15, 10, 7, 20, 1))
+    M.practice_order(ADVP, a(26, 9, 23, 16, 25, 2, 7, 11) + a(3, 5) + p(20, 21) + a(12) + p(18) + a(13, 4, 6, 10, 1, 24, 15, 14) +
+                     p(17) + a(19, 22, 8, 17, 18, 20, 21, 27))
+
+
+# ------------------------------------------------------------------------------------------------
+# 7. Pass 2: summary lessons - one right before each practice section
+# ------------------------------------------------------------------------------------------------
+def _b(label, tex, size=40):
+    """A board line that pops in (label = what the teacher sees in the script)."""
+    return A("'%s' appears" % label, T(tex, size=size))
+
+
+def _summary_video(M, vid, section, intro, slides):
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == section][-1]
+    beats = [dict(mode='title', title='Summary', script=intro)]
+    beats += [dict(mode='concept', title=t, active=k, script=sc) for k, (t, sc) in enumerate(slides)]
+    M.new_video(vid, TOPIC, 'Summary', [s[0] for s in slides], beats, section, after=last)
+
+
+def _summaries(M):
+    # ---- before the foundation practice: everything taught in "Learn and try" ----
+    _summary_video(M, 'r26-t32-summary', LEARN1, [
+        'A quick summary before the practice.',
+        'Everything important about quadrilaterals — in about three minutes.'], [
+        ('The family', [
+            _b('Angle sum 360°', 'Any quadrilateral: the angles add up to $360°$'),
+            'Every quadrilateral — even one that bends inward — has angles that add up to 360.',
+            _b('Down the tree: all the properties above', 'Down the tree: all the properties of the shapes above'),
+            'A square is a rectangle AND a rhombus. A rectangle and a rhombus are parallelograms. A rhombus is also a kite.',
+            _b('Up the tree: not necessarily', 'Up the tree: "not necessarily"'),
+            'Going down, a shape only gains properties. Going up — careful: a rectangle is not necessarily a square.']),
+        ('The diagonals', [
+            _b('Square: all yes', 'Square: equal · bisect each other · $\\perp$ · bisect the angles'),
+            'A square: every diagonal property — yes.',
+            _b('Rectangle: equal · Parallelogram: bisect each other', 'Rectangle: equal, bisect each other · Parallelogram: bisect each other — that\'s all', size=36),
+            'A rectangle: equal, and they bisect each other. A parallelogram: they only bisect each other.',
+            _b('Rhombus: ⊥, bisect the angles · Kite: main diagonal = symmetry line', 'Rhombus: $\\perp$, bisect the angles · Kite: main diagonal $=$ symmetry line', size=36),
+            'A rhombus: perpendicular, and they bisect the angles. A kite: the main diagonal is its line of symmetry.']),
+        ('Angles', [
+            _b('Parallelogram: opposite equal, adjacent 180°', 'Parallelogram: opposite angles equal · adjacent sum $180°$'),
+            'In a parallelogram, opposite angles are equal, and two neighbors add up to 180.',
+            _b('Trapezoid: angles on one leg 180°', 'Trapezoid: the angles on one leg sum $180°$'),
+            'In a trapezoid, the two angles on the same leg add up to 180. Isosceles trapezoid: the base angles are equal.',
+            _b('Bisector in a parallelogram → isosceles triangle', 'Bisector in a parallelogram $\\to$ an isosceles triangle'),
+            'And an angle bisector in a parallelogram cuts off an isosceles triangle.']),
+        ('Area formulas', [
+            _b('Square a² or d²/2 · Rectangle ab', 'Square: $a^2$ or $\\dfrac{d^2}{2}$ · Rectangle: $a\\cdot b$'),
+            'Square: side squared — or the diagonal squared, over 2. Diagonal 12? 144 over 2 — 72.',
+            _b('Parallelogram a · h', 'Parallelogram: $a\\cdot h$'),
+            'Parallelogram: base times height.',
+            _b('Rhombus, kite: d₁ · d₂ / 2', 'Rhombus, kite ($\\perp$ diagonals): $\\dfrac{d_1\\cdot d_2}{2}$'),
+            'Rhombus and kite: the diagonals multiplied, over 2. Diagonals 10 and 6 — 30.',
+            _b('Trapezoid (a + b) · h / 2', 'Trapezoid: $\\dfrac{(a+b)\\cdot h}{2}$'),
+            'Trapezoid: the sum of the bases, times the height, over 2.']),
+        ('The height', [
+            _b('The height, not the sloping side', 'The height — not the sloping side'),
+            'The height is perpendicular to the base. The sloping side is not the height.',
+            _b('30°: h = half the side', '$30°$: $h=\\frac{\\text{side}}{2}$ · sides $8,\\ 6$: $S=8\\cdot3=24$'),
+            'A 30-degree angle? The height is half the sloping side. Sides 8 and 6: the height is 3, the area 24.',
+            _b('45°: side/√2 · 60°: side/2 · √3', '$45°$: $h=\\frac{\\text{side}}{\\sqrt2}$ · $60°$: $h=\\frac{\\text{side}}{2}\\cdot\\sqrt3$'),
+            'With 45: the side over root 2. With 60: half the side, times root 3. An angle of 150? Look at the 30 next to it.']),
+        ('Drop a height', [
+            _b('Trapezoid: a rectangle + triangles', 'Trapezoid: a rectangle in the middle, triangles at the ends', size=38),
+            'A trapezoid? Drop the heights: a rectangle in the middle, right triangles at the ends.',
+            _b('Then: Pythagoras, a triple, or 30°/45°/60°', 'Then: Pythagoras, a triple, or a $30°$/$45°$/$60°$ triangle', size=38),
+            'Then look for Pythagoras, a triple, or a special triangle.',
+            'Bases 9 and 15, and a sloping leg 10: the piece at the end is 6, so the height is 8. The area: 24 times 8, over 2 — 96.']),
+        ('Scale it up', [
+            _b('Every length × k → area × k²', 'Every length $\\times k$ $\\Rightarrow$ area $\\times k^2$'),
+            'Every length times k? The area times k squared.',
+            _b('Diagonal +50% → area × 2.25', 'Diagonal $+50\\%$: $1.5^2=2.25$ $\\Rightarrow$ area up $125\\%$'),
+            'The diagonal of a square grows by 50 percent? The area grows times 2.25 — up 125 percent.',
+            'Only the base grows, and the height stays? Then the area grows by the same factor as the base.']),
+        ('In questions', [
+            _b('The name → its properties', 'The shape\'s name $\\to$ its properties'),
+            'In a question, the name of the shape gives you its properties. Write them on the figure.',
+            _b('Look for a useful triangle', 'Look for a useful triangle — or equal areas'),
+            'Then look for a useful triangle: a silver triangle in a square, an equilateral triangle in a rhombus with a 60.',
+            'The diagonals of a parallelogram split it into four triangles of equal area.',
+            'Several ways to the answer? Learn them all — on the exam, take the first one you see.']),
+        ('Before you practice', [
+            'Before you practice, ask yourself:',
+            _b('What does the name promise — and what not?', 'What does the name promise — and what is only "not necessarily"?', size=36),
+            _b('Is this the height, or a sloping side?', 'Is this the height — or a sloping side?', size=36),
+            _b('Can I drop a height and get a special triangle?', 'Can I drop a height and get a triple or a special triangle?', size=36),
+            _b('Did all the lengths grow, or only one?', 'Did all the lengths grow — or only one?', size=36),
+            'The traps: a sloping side used as the height, forgetting to divide by 2 in the diagonal formula, and a property of a square given to a rectangle.',
+            'Good luck.']),
+    ])
+
+    # ---- before the advanced practice: the methods of "Further guided examples" ----
+    _summary_video(M, 'r26-t32-summary-2', LEARN2, [
+        'A quick summary before the advanced practice.',
+        'The ideas from the last examples — in about three minutes.'], [
+        ('Not necessarily', [
+            _b('Check each statement against the definition', 'Check each statement against the definition'),
+            '"Not necessarily true" questions: check every statement against the definitions.',
+            _b('Not sure? Sketch an extreme version', 'Not sure? Sketch an extreme version — very wide and very low', size=38),
+            'Not sure? Sketch an extreme version of the shape — very wide and very low — and look.']),
+        ('Equal halves', [
+            _b('A diagonal: two equal halves', 'A diagonal splits a parallelogram into two equal halves', size=38),
+            'A diagonal splits a parallelogram — a rectangle, a rhombus, a square — into two equal halves.',
+            _b('Triangle on the full base, tip on the opposite side = 1/2', 'Triangle on the full base, tip on the opposite side $=\\frac12$', size=38),
+            'A triangle on the full base, with its tip on the opposite side, is half the shape. The white parts are the other half.',
+            _b('On 1/4 of the base: 1/4 × 1/2 = 1/8', 'On $\\frac14$ of the base: $\\frac14\\times\\frac12=\\frac18$'),
+            'On a quarter of the base? A quarter of a half — one eighth.']),
+        ('Area ratios', [
+            _b('Same height: area ratio = base ratio', 'Same height: area ratio $=$ base ratio'),
+            'Two triangles with the same height? The area ratio is the base ratio.',
+            _b('Bases 4 and 12: 14 and 42 → 56', 'Bases $4$ and $12$: $14$ and $3\\cdot14=42$ $\\Rightarrow$ $56$'),
+            'A trapezoid with bases 4 and 12, cut by a diagonal. The top triangle is 14 — the bottom one is 3 times as much, 42. Together: 56.']),
+        ('Shaded areas', [
+            _b('Subtract: known shape − white', 'Subtract: a shape you know $-$ the white'),
+            'Shaded area? Approach one: take a shape you know, and subtract the white. 35 minus 13 — 22.',
+            _b('Or: break it into familiar pieces', 'Or: break it into familiar pieces'),
+            'Approach two: break the shaded area into familiar pieces — by completions or by symmetry.',
+            'Completions: pair only pieces that truly complete each other. A guess by eye is not a method.']),
+        ('Letters and hidden ratios', [
+            _b('Angles with letters? Plug in numbers', 'Angles with letters? Plug in numbers'),
+            'Angles with letters in the answers? Solve it — or plug in numbers and check every choice.',
+            _b('Congruent rectangles: find the hidden ratio', 'Congruent rectangles: find the hidden ratio first'),
+            'Congruent rectangles? Read the hidden ratio off the figure. Then one unknown, x, is enough.',
+            'And check from the answers: plug one back into the figure and test the number you were given.']),
+        ('Perimeter tricks', [
+            _b('A cut counts twice', 'Sum of the pieces $=$ original $+\\ 2\\times$ cut'),
+            'Cut a shape into pieces? The cut belongs to both pieces — it counts twice.',
+            _b('Staircase: P = 2(width + height)', 'Staircase: $P=2(\\text{width}+\\text{height})$ · $2(12+8)=40$'),
+            'A staircase has the perimeter of its rectangle: 12 wide and 8 tall — 40.',
+            _b('Notch: + 2 × depth', 'Notch: $+\\ 2\\times\\text{depth}$'),
+            'A notch is different: its two walls are extra — add two times its depth.']),
+        ('Perimeter and diagonal', [
+            _b('(a + b)² = a² + b² + 2ab', '$(a+b)^2=a^2+b^2+2ab$'),
+            'A rectangle with the perimeter and the diagonal? You don\'t need the sides.',
+            _b('17² = 169 + 2ab → ab = 60', '$17^2=169+2ab$ $\\Rightarrow$ $ab=60$'),
+            'Perimeter 34: a plus b is 17. Diagonal 13: a squared plus b squared is 169. 289 is 169 plus 2ab — the area is 60.',
+            'Or try a triple: 5, 12, 13. The perimeter is 34 — it fits.']),
+        ('Before you practice', [
+            'Before you practice, ask yourself:',
+            _b('Same base or same height anywhere?', 'Same base or same height anywhere? Then equal areas or a ratio.', size=36),
+            _b('Subtract the white, or break it up?', 'Subtract the white — or break the shape into pieces?', size=36),
+            _b('Letters in the answers? Plug in numbers.', 'Letters in the answers? Plug in numbers.', size=36),
+            _b('Perimeter or area?', 'Is it a perimeter or an area?', size=36),
+            'The traps: pairing pieces by eye, "same area" taken as "congruent", and an area answer to a perimeter question.',
+            'Good luck.']),
+    ])

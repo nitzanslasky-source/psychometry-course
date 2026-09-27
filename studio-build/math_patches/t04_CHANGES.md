@@ -101,3 +101,22 @@ No figures in this topic.
   Quadratic *equations* are still not taught anywhere (PLAN priority 2). That belongs to the equations topic.
 - In the guided-question choices, fractions show at small (inline) size. The renderer seems to force inline style in choices. This is readable, but a renderer fix would help every topic.
 - API note: `math_api` has no call to rename a video. I set `title`/`navLabel` of the solution videos directly in the patch.
+
+## Pass 2 (2026-09-27, teacher-approved remove/restore plan)
+
+**Removed:** the "twin identity" (a+b)² + (a−b)² = 2a² + 2b²: the draw note and the "Bonus" line on `solve-q-120`
+slide 2, and the last line of the q-120 written solution. The trinomial lesson and questions stay (the plan keeps them);
+guided numbering unchanged.
+
+**Restored:**
+- Practice q-108, q-109, q-111, q-117 back in `unit-t4-1` (original stems, choices, keys; TeX + numeric solutions),
+  placed at their difficulty in the easy-to-hard order.
+- The original `expression-basics` Recap content on the `r26-t04-formulas` Recap (which closes the old slides 9-12):
+  "Circle the three formulas", "Two big takeaways from this lesson: taking out a common factor, and the three formulas",
+  "Now try a question — then watch its solution video." The three formulas were already on that board.
+- `mem-formulas`: the (a−b)(a+b) example is again 48·52 = 50² − 2² (= 2500 − 4 = 2496); the intro again says
+  "Use them forward to expand and backward to factor." (American spelling), plus the kept "find values" sentence.
+
+**Summary video** `r26-t04-summary` "Expressions: Summary" (about 2.2 min), last item of the learn section, right before
+the practice. Slides: Summary · Like terms · Brackets · Common factor · The three formulas · Formula traps ·
+Number shortcuts · Value without x · Trinomials · Before you practice.

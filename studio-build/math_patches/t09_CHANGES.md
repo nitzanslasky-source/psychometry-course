@@ -86,3 +86,25 @@ Where they sit: Q1 before q-235, Q2 after q-244, Q3 before q-247, and Q4–Q6 af
 - **Length:** the main video grew from 3.8 to about 7.3 minutes. If that is too long, you could move the new "Root equations" slide (slide 12) into the traps video.
 - **T10 overlap:** T10 slide 9 also covers root equations. Now that T9 teaches "square, then check", T10 can build on it (the T10 review suggests √(x+2) = x).
 - **Number line:** the review asked for a number-line picture on the 0–1 slide. I used a worked example (x = 0.25) instead, because algebra slides have no figure style to copy. A drawn number line could be added later.
+
+## Pass 2 (2026-09-27, teacher-approved remove/restore plan + summary lesson)
+
+**Removed (roots of decimals: 0 real and 0 original questions of this type)**
+- Video "Roots — Exam traps": slide "Roots of small numbers", its sidebar label "Small numbers", and the words
+  "small numbers" on the title slide (now "Numbers between zero and one, comparing roots, and a partner that removes roots.").
+- Practice q-r26-t09-07 ($\sqrt{0.0016}$) and q-r26-t09-08 ($\sqrt{0.9}$ closest to).
+- Memory card "roots", table "Exam traps": row "roots of small numbers".
+
+**Restored (original course)**
+- q-239 ($\sqrt[3]{9}\cdot\sqrt[3]{9}\cdot\sqrt[3]{9}$) back in its original place; solution in TeX.
+- alg-extra-root-practice-6 ($\sqrt{12}\cdot\sqrt{27}$) back in the practice; stem, choices and solution in TeX.
+- q-242: the original question $\sqrt[2.5]{\sqrt{243}}$ (choices 9 / 27 / 3 / 1, key 3), with the original note that
+  the index 2.5 means the power $\frac{1}{2.5}$; the solution now shows the numbers
+  ($243^{\frac12\cdot\frac25}=243^{\frac15}=3$).
+- Practice order now also places q-227, alg-extra-exponent-extra-2 and -7 (moved here by the T8 patch) by difficulty.
+
+**Kept as the plan says:** slide "Different roots", guided Q5, practice -15 and -12, card row "6th power".
+
+**New: summary lesson** `r26-t09-summary` "Roots — Summary" (about 3.5 min), right before "Extra independent root
+practice". Slides: Summary · What a root is · Simplify roots · Multiply & divide · Roots as powers · Not for sums ·
+Comparing roots · Between 0 and 1 · Conjugates · Root equations · Before you practice.

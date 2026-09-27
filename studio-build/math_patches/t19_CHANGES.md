@@ -74,3 +74,15 @@ Guided questions are renumbered automatically. The topic now has 21 guided quest
 - **Integer-part notation.** I used `[x]`, the usual exam notation. q-556 already uses ⟦x⟧ for another word definition.
 - **q-562 and q-575.** They are really equation questions with a ◆ label. I kept them as mix practice, as the review allows.
 - **q-556's ⟦ ⟧ brackets** are plain characters around TeX, as before. The API has no TeX double-bracket that is known to render safely.
+
+## Pass 2 (2026-09-27, teacher-approved remove/restore plan + summary lesson)
+**Removed (the integer part [x] — not on the exam, not in the original course):**
+- Video "Operation Patterns", slide "Definition in words": the [x] boards, the "= −3, not −2" note and the spoken lines about [x]. The rule ("write 2–3 examples first") and the remainder / number of divisors / digit-sum examples stay (now on the board too).
+- Memory card: the [x] example in the "Definition in words" row (now the remainder example $47=5\cdot9+2$ from q-576).
+- Guided question q-r26-t19-04 ($[-2.5]+[2.5]+[0.5]$) and its solution video. Guided questions renumber automatically (the advanced section is now Questions 13–20).
+- Practice q-r26-t19-14 ($[x]=3$).
+- Kept as the plan says: "Conditions backwards" slide and card row, q-r26-t19-03 + video, practice q-r26-t19-11.
+
+**Restored (2):** alg-extra-unit-t19-3-3 ($F(F(2))$ with $F(x)=x^2-3$, answer $-2$) and alg-extra-unit-t19-3-6 ($H(H(4))$ with $H(x)=\frac1x$, answer $4$), cleaned up (TeX, numeric solutions), at the easy end of the practice.
+
+**Summary lesson (1 new video):** `r26-t19-summary` "Summary", at the end of "Defined operations · advanced study", right before the independent practice. Slides: Summary · Read, then substitute · Brackets on every input · One step at a time · Match the whole input · Missing pieces · Conditions · Circular · both sides · Always? Must? · Before you practice. Only content the Topic 19 lessons teach.

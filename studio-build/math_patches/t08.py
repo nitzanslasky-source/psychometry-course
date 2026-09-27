@@ -72,10 +72,18 @@ def fix_lesson(M):
         'The minus in the exponent means "flip". A minus in the base decides the sign. Keep them apart.',
     ])
 
-    # slide 5 (bases 1 and 0) - the reason now comes after negative exponents
-    _replace_say(M, VID, 5, "A negative exponent means dividing by zero — undefined. Zero to the zero? Not defined in this course either.",
-                 "Zero to a negative power means one over zero. You can't divide by zero — undefined.")
-    M.edit_lines(VID, 5, lambda ls: ls[:-1] + [{'say': "Zero to the zero? Not defined in this course either."}] + ls[-1:])
+    # slide 5 (bases 1 and 0) - now after negative exponents; its original line
+    # "A negative exponent means dividing by zero — undefined. Zero to the zero? ..." is kept as it is (pass 2)
+
+    # slide 7 (dividing powers) - pass 2: the original proof 5³/5³ = 5⁰ = 1 comes back as a second way,
+    # here where the division law is taught
+    b7 = M.slide(VID, 7)
+    b7['items'].append({'k': 't', 't': r'$\frac{5^3}{5^3}$', 'size': 62})
+    M.edit_lines(VID, 7, lambda ls: ls + [
+        {'say': "Now a second way to see why five to the zero is one."},
+        {'appear': len(b7['items']) - 1, 'label': '5³ / 5³ appears'},
+        {'draw': 'Write "= 1"; then write "= 5³⁻³ = 5⁰"'},
+        {'say': 'A number over itself is one. But subtracting the exponents gives five to the zero. So five to the zero has to be one.'}])
 
     # slide 9 - "two sixteen"
     _replace_say(M, VID, 9, "Two times three, cubed — or two cubed times three cubed. Same thing: two sixteen. You'll use this a LOT.",
@@ -147,7 +155,6 @@ def fix_card(M):
     c['tables'].append({'title': 'Exam traps', 'head': ['Trap', 'Rule'], 'rows': [
         ['Between $0$ and $1$', r'a higher power is smaller: $0.3^2=0.09$, $0.2^3=0.008$'],
         ['Compare powers', r'same base or same exponent: $2^{30}=8^{10}<9^{10}=3^{20}$'],
-        ['Zeros at the end', r'pair each $2$ with a $5$: $2^5\cdot5^3=4\cdot10^3$ (zeros = smaller exponent)'],
         ['Signs', r'odd power keeps the sign ($x^3<0\Rightarrow x<0$); even power is never negative'],
     ]})
     c['tips'] = [
@@ -209,11 +216,14 @@ def fix_questions(M):
     S('alg-extra-exponent-extra-5', stem=r'Given: $x\ne0$.' + '\n' + r'$\frac{(2x)^3}{4x^2}=?$',
       expl=[r'Same exponent over a product: $(2x)^3=2^3x^3=8x^3$.',
             r'Divide the numbers and the powers separately: $\frac{8x^3}{4x^2}=\frac{8}{4}\cdot x^{3-2}=2x$.'])
-    S('alg-extra-exponent-extra-6', stem='Which of the following is true?',
-      choices=[r'$2^{10}>4^{4}$', r'$2^{10}=4^{4}$', r'$2^{10}<4^{4}$', r'$2^{10}=2\cdot4^{4}$'], correct=1,
+    # pass 2: the original question and choices are restored (text clean-up only)
+    S('alg-extra-exponent-extra-6', stem=r'Which is greater: $2^{10}$ or $4^{4}$?',
+      choices=['It cannot be determined from the information given.', 'The first power', 'The second power', 'They are equal'], correct=2,
       expl=[r'Make the bases the same: $4^4=\left(2^2\right)^4=2^8$.',
-            r'Same base, bigger exponent, bigger number: $2^{10}>2^8$. Choice 1 is true.',
-            r'Choice 4 is false: $2\cdot4^4=2\cdot2^8=2^9$, not $2^{10}$.'])
+            r'Same base, bigger exponent, bigger number: $2^{10}>2^8$. The first power is greater.'])
+    S('alg-extra-exponent-extra-1', stem=r'$\frac{2^{6}}{2^{3}}=?$', choices=['$8$', '$2$', '$4$', '$16$'], correct=1,
+      expl=[r'Same base, dividing: subtract the exponents, top minus bottom.',
+            r'$\frac{2^6}{2^3}=2^{6-3}=2^3=8$.'])
 
     # used before taught (fractional exponents, roots) -> T9 practice; near-duplicate of q-225 removed
     M.set_q('q-227', expl=[r'A power of a power: multiply the exponents. $3\cdot\frac{2}{3}=2$.',
@@ -231,7 +241,6 @@ def fix_questions(M):
             sec['questionCount'] = sum(1 for g in flow if g['section'] == f['section'] and g['type'] == 'question')
         M.q(qid)['topic'] = 9
         M.place_q(qid, T9_PRACTICE)
-    M.unplace('alg-extra-exponent-extra-1')      # 2^6/2^3: same as core q-225
 
     # q-231 needs a solution video -> it becomes a guided question in the core section, right after q-226
     flow = M.D['flow']
@@ -245,7 +254,7 @@ def fix_questions(M):
 # ----------------------------------------------------------------------------------------------------------------
 # 4. Solution videos
 # ----------------------------------------------------------------------------------------------------------------
-SIDEBAR = ['Question %d' % k for k in range(1, 9)]
+SIDEBAR = ['Question %d' % k for k in range(1, 7)]   # 6 T8 guided questions; apply() adds the ones moved in from T5
 
 
 def solve(M, qid, intro, slides):
@@ -317,11 +326,11 @@ def solution_videos_existing(M):
 # 5. New lesson video: exam traps
 # ----------------------------------------------------------------------------------------------------------------
 def traps_video(M):
-    sb = ['Between 0 and 1', 'Compare powers', 'Counting zeros', 'Signs with letters', 'Check with a number']
+    sb = ['Between 0 and 1', 'Compare powers', 'Signs with letters', 'Check with a number']
     slides = [
         dict(mode='title', title='Exponent Traps', script=[
             "The laws are done. Now the traps the exam loves.",
-            "Five short ideas. Questions on each one come right after this video.",
+            "Four short ideas. Questions come right after this video.",
         ]),
         dict(mode='concept', active=0, title='Between 0 and 1', pre=[], script=[
             "Most people think a power makes a number bigger. Not always.",
@@ -356,18 +365,7 @@ def traps_video(M):
             "Same idea in equations. The same positive base, not one, on both sides? Then the exponents are equal. x is three.",
             "Later in the course you'll do this all the time: write every base as a power of the smallest prime.",
         ]),
-        dict(mode='concept', active=2, title='Counting zeros', pre=[], script=[
-            "Two times five is ten. That's where the zeros at the end of a number come from.",
-            A('2⁴ · 5⁴ = 10⁴ appears', T(r'$2^4\cdot5^4=(2\cdot5)^4=10^4$', size=54, gap=50)),
-            "Same exponent: pair them up. Ten to the fourth. Ten thousand — four zeros.",
-            A('2⁵ · 5³ appears', T(r'$2^5\cdot5^3$', size=58, gap=30)),
-            "Uneven exponents? Five twos, three fives. Make as many pairs as you can: three pairs.",
-            A('= 2² · (2 · 5)³ = 4 · 10³ = 4000 appears', T(r'$=2^2\cdot(2\cdot5)^3=4\cdot10^3=4000$', size=52)),
-            "Three tens, and two twos left over. Four thousand.",
-            D('Circle the exponent 3'),
-            "The number of zeros at the end is the smaller exponent. The leftovers make the digits in front.",
-        ]),
-        dict(mode='concept', active=3, title='Signs with letters', pre=[], script=[
+        dict(mode='concept', active=2, title='Signs with letters', pre=[], script=[
             "Letters hide the sign. Powers can tell you — or not.",
             A('Odd power keeps the sign appears', T(r'Odd power keeps the sign: $x^3<0\;\Rightarrow\;x<0$', size=46, gap=50)),
             "An odd power keeps the sign. x cubed is negative, therefore x is negative.",
@@ -379,7 +377,7 @@ def traps_video(M):
             "Minus x squared: first the square, then the minus. It is never positive.",
             "Say it to yourself: odd keeps the sign, even hides it.",
         ]),
-        dict(mode='concept', active=4, title='Check with a number', pre=[], script=[
+        dict(mode='concept', active=3, title='Check with a number', pre=[], script=[
             "Letters in the answers? You can check with a number.",
             A('3ˣ⁺¹ = ? appears', T(r'$3^{x+1}=\;?$', size=58, gap=40)),
             "The law says: three times three to the x. But let's check it.",
@@ -411,13 +409,6 @@ def guided(M):
          [r'Plug in a number between $0$ and $1$: $x=\frac{1}{2}$.',
           r'$x=\frac{1}{2}$, $x^2=\frac{1}{4}$, $x^3=\frac{1}{8}$, $x^{-2}=2^2=4$.',
           r'The smallest is $x^3$. A negative exponent does not make the number negative: $x^{-2}$ is the largest here.']),
-        (3, 'Which of the following is the largest?', [r'$2^{40}$', r'$3^{30}$', r'$5^{20}$', r'$10^{10}$'], 2,
-         [r'Make the exponents the same. All the exponents are multiples of $10$.',
-          r'$2^{40}=\left(2^4\right)^{10}=16^{10}$, $3^{30}=\left(3^3\right)^{10}=27^{10}$, $5^{20}=\left(5^2\right)^{10}=25^{10}$, and $10^{10}$.',
-          r'Same exponent: the biggest base wins. $27^{10}=3^{30}$ is the largest.']),
-        (4, r'How many zeros are there at the end of the number $2^{7}\cdot5^{4}$?', [r'$3$', r'$4$', r'$7$', r'$11$'], 2,
-         [r'Pair each $5$ with a $2$. There are $4$ fives, therefore $4$ pairs: $2^7\cdot5^4=2^3\cdot(2\cdot5)^4=8\cdot10^4$.',
-          r'$8\cdot10^4=80{,}000$: $4$ zeros at the end.']),
         (5, r'Given: $x^{3}y^{2}<0$.' + '\nWhich of the following is necessarily true?', [r'$x<0$', r'$y<0$', r'$xy<0$', r'$x^{2}y>0$'], 1,
          [r'$y^2$ is an even power, therefore $y^2\ge0$. It is not $0$, because then the product would be $0$. Therefore $y^2>0$.',
           r'Therefore $x^3<0$. An odd power keeps the sign: $x<0$. Choice 1 is necessarily true.',
@@ -459,31 +450,6 @@ def guided_videos(M):
             "The smallest is one eighth.",
             D('Circle choice 3'),
             "Choice three. Between zero and one, each extra power makes the number smaller.",
-        ]),
-    ])
-    solve(M, qid(3), ["Four powers. Different bases, different exponents.", "Make one of them the same."], [
-        ('Same exponent', [
-            "The exponents are forty, thirty, twenty, ten. All multiples of ten. Make every exponent ten.",
-            D('Write "2⁴⁰ = (2⁴)¹⁰ = 16¹⁰"'),
-            D('Write "3³⁰ = (3³)¹⁰ = 27¹⁰"'),
-            D('Write "5²⁰ = (5²)¹⁰ = 25¹⁰"'),
-            "Ten to the tenth stays as it is.",
-            "Now the exponents match. The biggest base wins: twenty-seven.",
-            D('Circle choice 2'),
-            "Choice two.",
-            "Notice: the biggest exponent, forty, did not win. The biggest base, ten, did not win either.",
-        ]),
-    ])
-    solve(M, qid(4), ["How many zeros at the end?", "Every zero is a two times a five."], [
-        ('Pair twos with fives', [
-            "Seven twos, four fives. Every two with a five makes a ten.",
-            D('Write "2⁷ · 5⁴ = 2³ · 2⁴ · 5⁴"'),
-            "Split off as many twos as there are fives: four.",
-            D('Write "= 2³ · (2 · 5)⁴ = 8 · 10⁴ = 80,000"'),
-            "Eight, followed by four zeros.",
-            D('Circle choice 2'),
-            "Four zeros. Choice two.",
-            "The trap: seven, the bigger exponent. The extra twos only make the eight.",
         ]),
     ])
     solve(M, qid(5), ["A product with powers is negative.", "Odd keeps the sign, even hides it."], [
@@ -561,18 +527,23 @@ PRACTICE_Q = [
 ]
 
 
+# pass 2 (teacher-approved plan): ordering 2^50, 3^30, 5^20 (-13) and counting digits (-16) are removed
+REMOVED_PRACTICE = {'cmp-order', 'digits'}
+
+
 def practice(M):
     ids = {}
     k = 6
     for key, stem, ch, c, ex in PRACTICE_Q:
         ids[key] = qid(k)
-        M.new_q(qid(k), TOPIC, stem, ch, c, ex)
-        M.place_q(qid(k), PRACTICE)
+        if key not in REMOVED_PRACTICE:      # pass 2: ids stay stable, removed items are simply not created
+            M.new_q(qid(k), TOPIC, stem, ch, c, ex)
+            M.place_q(qid(k), PRACTICE)
         k += 1
-    order = ['q-228', 'q-229', 'q-230', 'alg-extra-exponent-extra-4', 'alg-extra-exponent-extra-5', 'alg-extra-exponent-extra-6',
+    order = ['alg-extra-exponent-extra-1', 'q-228', 'q-229', 'q-230', 'alg-extra-exponent-extra-4', 'alg-extra-exponent-extra-5', 'alg-extra-exponent-extra-6',
              'alg-extra-exponent-extra-3', ids['dec-sq'], ids['copies-3'], ids['sign-odd'], ids['mix-1'], ids['mix-2'],
              ids['zeros-eq'], ids['dec-cube'], ids['cmp-base'], ids['sign-neg'], ids['copies-5'], ids['cmp-eq'], ids['mix-3'],
-             ids['digits'], ids['copies-eq'], ids['neg-01'], ids['cmp-order'], ids['sign-2'], 'q-232', ids['ab1']]
+             ids['copies-eq'], ids['neg-01'], ids['sign-2'], 'q-232', ids['ab1']]
     M.practice_order(PRACTICE, order)
 
 
@@ -582,8 +553,82 @@ def apply(M):
     fix_lesson(M)
     fix_card(M)
     fix_questions(M)
+    # guided questions moved in from Topic 5 (q-131, q-132) are numbered after the T8 ones: widen the sidebar
+    global SIDEBAR
+    moved = sum(1 for f in M.D['flow'] if f['topic'] == TOPIC and f['type'] == 'video'
+                and M.D['videos'].get(f['ref'], {}).get('kind') == 'solution')
+    SIDEBAR = ['Question %d' % k for k in range(1, 7 + moved)]
     solution_videos_existing(M)     # Question 1-3: q-224, q-226, q-231
     traps_video(M)
     guided(M)
-    guided_videos(M)                # Question 4-8
+    guided_videos(M)                # Question 4-6
     practice(M)
+    summary(M)
+
+
+# ----------------------------------------------------------------------------------------------------------------
+# 7. Pass 2: summary video right before the practice section
+# ----------------------------------------------------------------------------------------------------------------
+def summary(M):
+    sb = ['Exponents 1, 0, −n', 'The three laws', 'Same exponent', 'Negative bases', 'When aᵇ = 1',
+          'Split and count', 'Compare powers', 'Before you practice']
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice, a quick summary of the exponent laws.",
+            "Everything you need — in two minutes.",
+        ]),
+        dict(mode='concept', active=0, title='Exponents 1, 0, −n', pre=[], script=[
+            A('a¹ = a and a⁰ = 1 appear', T(r'$a^1=a \qquad a^0=1\quad(a\ne0)$', size=50, gap=50)),
+            "Power of one: the number itself. Power of zero: one — for any number except zero.",
+            A('a⁻ⁿ = 1/aⁿ appears', T(r'$a^{-n}=\frac{1}{a^n} \qquad \left(\frac{2}{5}\right)^{-3}=\left(\frac{5}{2}\right)^3$', size=50)),
+            "A negative exponent means flip. It does NOT make the number negative.",
+        ]),
+        dict(mode='concept', active=1, title='The three laws', pre=[], script=[
+            A('The three laws appear', T(r'$a^m\cdot a^n=a^{m+n} \qquad \frac{a^m}{a^n}=a^{m-n} \qquad \left(a^m\right)^n=a^{mn}$', size=44, gap=50)),
+            "Same base. Multiply: add the exponents. Divide: subtract, top minus bottom. Power of a power: multiply.",
+            A('The trap 3² + 3⁴ ≠ 3⁶ appears', T(r'$3^2+3^4=90\ne3^6$', size=50)),
+            "A plus sign has no law. Check for the same base AND a multiplication sign.",
+        ]),
+        dict(mode='concept', active=2, title='Same exponent', pre=[], script=[
+            A('(ab)ⁿ = aⁿbⁿ appears', T(r'$(ab)^n=a^n b^n \qquad \left(\frac{a}{b}\right)^n=\frac{a^n}{b^n}$', size=50, gap=50)),
+            "Different bases, same exponent? Put them under one exponent.",
+            A('2⁴ · 5⁴ = 10⁴ appears', T(r'$2^4\cdot5^4=10^4 \qquad (a+b)^2\ne a^2+b^2$', size=50)),
+            "Two to the fourth times five to the fourth: ten to the fourth. But never over a plus or a minus.",
+        ]),
+        dict(mode='concept', active=3, title='Negative bases', pre=[], script=[
+            A('(−3)⁴, (−3)³ and −3² appear', T(r'$(-3)^4=81 \qquad (-3)^3=-27 \qquad -3^2=-9$', size=48, gap=50)),
+            "Even power: the minus disappears. Odd power: the minus stays.",
+            "No brackets? The power comes first, then the minus.",
+            A("'Odd keeps the sign, even hides it' appears", T(r'Odd keeps the sign: $x^3<0 \Rightarrow x<0$. Even: $x^2\ge0$', size=40)),
+            "Odd keeps the sign. Even hides it.",
+        ]),
+        dict(mode='concept', active=4, title='When aᵇ = 1', pre=[], script=[
+            A('The three options appear', T(r'$a^b=1$: $\ a=1$ · $\ a=-1$ ($b$ even whole) · $\ b=0$ ($a\ne0$)', size=40, gap=50)),
+            "a to the b is one in three cases. Check all three.",
+            A('2⁴ = 4² appears', T(r'$2^4=4^2=16$', size=50)),
+            "And one special pair: two and four. Among positive whole numbers, it's the only one.",
+        ]),
+        dict(mode='concept', active=5, title='Split and count', pre=[], script=[
+            A('2ⁿ⁺³ = 8 · 2ⁿ appears', T(r'$2^{n+3}=2^n\cdot2^3=8\cdot2^n$', size=50, gap=50)),
+            "A sum in the exponent splits into a product.",
+            A('2ⁿ + 2ⁿ = 2ⁿ⁺¹ appears', T(r'$2^n+2^n=2\cdot2^n=2^{n+1} \qquad \ne 2^{2n}$', size=48)),
+            "Copies of the same power? Count them, and write the count as a power of the base.",
+        ]),
+        dict(mode='concept', active=6, title='Compare powers', pre=[], script=[
+            A('4⁴ = 2⁸ < 2¹⁰ appears', T(r'$4^4=\left(2^2\right)^4=2^8<2^{10}$', size=50, gap=50)),
+            "To compare, make the bases the same — or the exponents the same.",
+            A('0.3² = 0.09 appears', T(r'$0<x<1:\ x^3<x^2<x \qquad 0.3^2=0.09$', size=46)),
+            "Between zero and one, a higher power is SMALLER.",
+        ]),
+        dict(mode='concept', active=7, title='Before you practice', pre=[], script=[
+            "Before every question, ask yourself:",
+            A("'Same base? Multiplying — or adding?' appears", T('Same base? Multiplying — or adding?', size=40)),
+            A("'Is the minus in the base or in the exponent?' appears", T('Is the minus in the base or in the exponent?', size=40)),
+            A("'Brackets: what exactly is the base?' appears", T('Brackets: what exactly is the base?', size=40)),
+            A("'A number between 0 and 1?' appears", T('A number between $0$ and $1$?', size=40)),
+            A("'Letters in the answers? Check with a number.' appears", T('Letters in the answers? Check with a number.', size=40)),
+            "The classic traps: adding exponents across a plus sign, and reading minus three squared as nine.",
+            "Now go practice.",
+        ]),
+    ]
+    M.new_video('r26-t08-summary', TOPIC, 'Exponent Laws: Summary', sb, slides, CORE)

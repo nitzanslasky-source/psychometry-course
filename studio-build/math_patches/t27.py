@@ -2,87 +2,18 @@
 See t27_CHANGES.md for the plain-language list."""
 import re
 from dsl import T, H, A, D, Q
+from math_api import _word
 
 TOPIC = 27
 L1, L2, L3, L4 = 'wp-106', 'wp-108-after', 'wp-110', 'wp-113'
 SPECIAL = 'r26-t27-special'
 GRAPHS = 'r26-t27-graphs'
-SPECIAL_SB = ['Question %d' % n for n in (14, 15, 16, 17)]
-GRAPHS_SB = ['Question %d' % n for n in (18, 19, 20)]
-
-
-def VIS(svg, w=1150, h=647):
-    return dict(k='vis', v={'type': 'geometry', 'svg': svg}, w=w, h=h)
+SPECIAL_SB = ['Question %d' % n for n in (14, 15, 16)]
+GRAPHS_SB = ['Question %d' % n for n in (17, 18)]
 
 
 def TABLE(headers, rows, w=1000, h=200):
     return dict(k='vis', v={'type': 'table', 'headers': headers, 'rows': rows}, w=w, h=h)
-
-
-# ------------------------------------------------------------------------------------------------ graphs
-_F = 'font-family="DejaVu Sans,Arial,sans-serif"'
-
-
-def _txt(x, y, s, size=16, anchor='middle', fill='#203344', weight=None):
-    w = ' font-weight="%s"' % weight if weight else ''
-    return ('<text x="%.1f" y="%.1f" text-anchor="%s" dominant-baseline="middle" fill="%s" %s font-size="%d"%s>%s</text>'
-            % (x, y, anchor, fill, _F, size, w, s))
-
-
-def _graph(series, xmax, ymax, xt, yt, grid=True, guides=(), title='Distance-time graph',
-           xlabel='time (hours)', ylabel='distance (km)'):
-    """Distance-time graph in the course figure style (viewBox 640 x 360).
-    series = [(points, color, name, (label_x, label_y) in data units)]"""
-    L, R, TP, B = 78.0, 585.0, 40.0, 300.0
-    X = lambda t: L + (R - L) * t / xmax
-    Y = lambda d: B - (B - TP) * d / ymax
-    s = ['<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="%s"><title>%s</title>' % (title, title)]
-    if grid:
-        for t in xt: s.append('<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="#e1e7ee" stroke-width="1.2"/>' % (X(t), B, X(t), TP))
-        for d in yt: s.append('<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="#e1e7ee" stroke-width="1.2"/>' % (L, Y(d), R, Y(d)))
-    for (t, d) in guides:
-        s.append('<path d="M %.1f %.1f L %.1f %.1f L %.1f %.1f" fill="none" stroke="#9aa8b5" stroke-width="1.4" stroke-dasharray="5 4"/>'
-                 % (X(t), B, X(t), Y(d), L, Y(d)))
-    s.append('<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="#71818d" stroke-width="1.8"/>' % (L, B, R + 22, B))
-    s.append('<path d="M%.1f %.1f L%.1f %.1f L%.1f %.1f" fill="none" stroke="#71818d" stroke-width="1.8"/>' % (R + 15, B - 4, R + 22, B, R + 15, B + 4))
-    s.append('<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="#71818d" stroke-width="1.8"/>' % (L, B, L, TP - 18))
-    s.append('<path d="M%.1f %.1f L%.1f %.1f L%.1f %.1f" fill="none" stroke="#71818d" stroke-width="1.8"/>' % (L - 4, TP - 11, L, TP - 18, L + 4, TP - 11))
-    s.append(_txt(L - 14, B + 16, '0', 15))
-    for t in xt:
-        s.append('<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="#71818d" stroke-width="1.5"/>' % (X(t), B - 4, X(t), B + 4))
-        s.append(_txt(X(t), B + 20, ('%g' % t), 15))
-    for d in yt:
-        s.append('<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="#71818d" stroke-width="1.5"/>' % (L - 4, Y(d), L + 4, Y(d)))
-        s.append(_txt(L - 10, Y(d), ('%g' % d), 15, 'end'))
-    s.append(_txt(R + 22, B + 46, xlabel, 16, 'end'))
-    s.append(_txt(L + 10, TP - 24, ylabel, 16, 'start'))
-    for pts, color, name, at in series:
-        s.append('<polyline points="%s" fill="none" stroke="%s" stroke-width="3.5" stroke-linejoin="round"/>'
-                 % (' '.join('%.1f,%.1f' % (X(t), Y(d)) for t, d in pts), color))
-        for t, d in pts: s.append('<circle cx="%.1f" cy="%.1f" r="3.6" fill="%s"/>' % (X(t), Y(d), color))
-        if name: s.append(_txt(X(at[0]), Y(at[1]), name, 18, 'middle', color, 700))
-    s.append('</svg>')
-    return ''.join(s)
-
-
-TEAL, ORANGE = '#087f83', '#b8661a'
-# lesson: one trip - 60 km in 1 h, stop 1 h, then 100 km in 2 h
-G_LESSON1 = _graph([([(0, 0), (1, 60), (2, 60), (4, 160)], TEAL, '', (0, 0))], 4.4, 175, [1, 2, 3, 4], [60, 160], grid=False,
-                   guides=[(1, 60), (4, 160)], title='Distance-time graph of one trip')
-# lesson: two travelers - A from P at 20 kph, B from 120 km toward P at 40 kph; they cross at (2, 40)
-G_LESSON2 = _graph([([(0, 0), (4, 80)], TEAL, 'A', (4.15, 88)), ([(0, 120), (3, 0)], ORANGE, 'B', (0.35, 128))],
-                   4.6, 135, [1, 2, 3, 4], [40, 80, 120], grid=True, title='Distance-time graph of two travelers')
-# guided Q20: trip out and back
-G_Q20 = _graph([([(0, 0), (2, 30), (3, 30), (4, 50), (6, 0)], TEAL, '', (0, 0))], 6.5, 56, [1, 2, 3, 4, 5, 6],
-               [10, 20, 30, 40, 50], grid=True, title='Distance of a cyclist from her home',
-               ylabel='distance from home (km)')
-# practice: two cyclists, no grid
-G_P19 = _graph([([(0, 0), (4, 80)], TEAL, 'A', (4.15, 90)), ([(0, 120), (3, 0)], ORANGE, 'B', (0.35, 128))],
-               4.6, 135, [3, 4], [80, 120], grid=False, guides=[(4, 80)], title='Distance of two cyclists from town P',
-               ylabel='distance from P (km)')
-# practice: one trip with a stop
-G_P20 = _graph([([(0, 0), (2, 60), (3, 60), (4, 100)], TEAL, '', (0, 0))], 4.4, 110, [1, 2, 3, 4], [20, 40, 60, 80, 100],
-               grid=True, title='Distance-time graph of a car trip')
 
 
 # ------------------------------------------------------------------------------------------------ helpers
@@ -147,7 +78,7 @@ def _text_fixes(M, vid):
 def _solution(M, qid, group, sb, intro, slides):
     n = M.next_question_number(TOPIC)
     label = 'Question %d' % n
-    beats = [dict(mode='title', title=label, script=intro)]
+    beats = [dict(mode='title', title=label, script=['Question %s.' % _word(n)] + intro)]
     for title, script in slides:
         beats.append(dict(mode='question', active=sb.index(label), title=title, pre=[Q(qid)], script=script))
     v = M.new_video('solve-' + qid, TOPIC, group, sb, beats, M.section_of(qid), kind='solution', qid=qid)
@@ -235,8 +166,9 @@ def apply(M):
     # =====================================================================================
     M.set_slide(L2, 1, script=[
         "Average speed.",
-        "A classic trap — most students fall into it the first time.",
-        "Let's understand it properly.",
+        "Honestly? Rare on the exam.",
+        "But the idea behind it shows up in disguise. And it's a classic trap — most students fall into it the first time.",
+        "So let's understand it properly.",
     ])
     M.set_slide(L2, 4, script=[
         "And here's the big one.",
@@ -504,12 +436,14 @@ def apply(M):
         'Remaining: $360-120=240$ km. One quarter of it: $\\frac{240}{4}=60$ km at $120$ kph, $\\frac{60}{120}=0.5$ hour.',
         'The rest: $240-60=180$ km at $30$ kph, $\\frac{180}{30}=6$ hours.',
         'Total: $2+0.5+6=8.5$ hours.'])
-    S('wp27-p10', stem='Two runners leave the same point on a circular track at the same time and run in opposite directions. One runs five times as fast as the other. What fraction of the track has the slower runner covered when they meet for the first time?',
-      choices=['$\\frac18$', '$\\frac15$', '$\\frac14$', '$\\frac16$'], correct=4, expl=[
-        'Opposite directions on a circle: at the first meeting, together they have covered exactly one lap.',
-        'Equal times: the distances follow the speed ratio $1:5$. The lap is $1+5=6$ parts.',
-        'The slower runner covers $1$ part: $\\frac16$ of the track.',
-        'Trap: $\\frac15$ compares the two runners, not the slower runner with the whole lap.'])
+    # wp27-p10: the original asks for a central angle (circles, T33) -> restored and moved to the T33 practice.
+    # The "fraction of the track" version stays in T27 under a new id (q-r26-t27-23, created below).
+    S('wp27-p10', stem='Two runners leave the same point on a circular track at the same time, in opposite directions. One runs five times as fast as the other. At their first meeting, what central angle corresponds to the arc traveled by the slower runner?',
+      choices=['45°', '72°', '90°', '60°'], correct=4, expl=[
+        'At their first meeting, together they have covered one full circle.',
+        'Equal times: their distances are in the same ratio as their speeds, $1:5$. The circle is $1+5=6$ parts, and the slower runner covers $1$ part: $\\frac16$ of the circle.',
+        'Central angle: $\\frac{360°}{6}=60°$.'])
+    M.move('wp27-p10', 'geo33-foundation-practice')
     S('wp27-p11', stem='Two buses start together and travel the same route of 180 km. Bus A is 15 kph faster than bus B. How much earlier does bus A arrive?', expl=[
         'Plug in two pairs of speeds that differ by $15$ kph.',
         'Speeds $45$ and $30$: times $\\frac{180}{45}=4$ and $\\frac{180}{30}=6$ hours. A arrives $2$ hours earlier.',
@@ -565,9 +499,20 @@ def apply(M):
         'First half: $\\frac{120}{2}=60$ kph. Second half: $\\frac{120}{3}=40$ kph.',
         'Difference: $60-40=20$ kph.'])
 
-    # near-duplicates / one-step repeats
-    for qid in ['wp27-p14', 'wp27-p21', 'wp27-p22', 'wp27-p23']:
-        M.unplace(qid)
+    # restored originals (pass 2): text clean-up only
+    S('wp27-p14', stem='Two cyclists start together and ride in the same direction on a 3-km circular track. Their speeds are 15 and 9 kph. After how many minutes does the faster rider first lap the slower one?', expl=[
+        'Lapping means gaining one full lap: $3$ kilometers.',
+        'The gain rate is $15-9=6$ kilometers per hour.',
+        '$3$ kilometers at that rate take $\\frac36=\\frac12$ hour $=30$ minutes.'])
+    S('wp27-p21', stem='A cyclist rides 24 km at 12 kph and returns along the same route at 8 kph. What is the average speed for the whole trip?', expl=[
+        'The outward trip takes $\\frac{24}{12}=2$ hours, and the return $\\frac{24}{8}=3$ hours.',
+        'The total distance is $24+24=48$ kilometers in $2+3=5$ hours. Average speed $=\\frac{48}{5}=9.6$ kilometers per hour.'])
+    S('wp27-p22', stem='Two trains start 420 km apart and move toward each other at 80 and 60 kph. After how many hours do they meet?', expl=[
+        'Each hour, the gap falls by $80+60=140$ km.',
+        'A gap of $420$ km closes in $\\frac{420}{140}=3$ hours.'])
+    S('wp27-p23', stem='A runner travels at 3 meters per second. How many kilometers does she cover in 25 minutes?', expl=[
+        '$25$ minutes is $25\\times60=1{,}500$ seconds.',
+        'At $3$ meters per second, the distance is $3\\times1{,}500=4{,}500$ meters, or $4.5$ kilometers.'])
 
     # =====================================================================================
     # 8. Memory card "Motion — rules to know" (basics)
@@ -606,13 +551,13 @@ def apply(M):
         'Work back from the answers: start with a friendly one.']
 
     # =====================================================================================
-    # 9. New lesson video: special cases (trains, current, circular track, meeting twice)
+    # 9. New lesson video: special cases (train length, current, circular track)
     # =====================================================================================
-    sb = ['Train length', 'Two trains', 'Current', 'Circular track', 'Meeting twice', 'Recap']
+    sb = ['Train length', 'Current', 'Circular track', 'Recap']
     M.new_video(SPECIAL, TOPIC, 'Special Motion Cases', sb, [
         dict(mode='title', title='Special Motion Cases', script=[
             "Special cases.",
-            "Trains that have a length. Boats on a river. Circular tracks. And two walkers who meet twice.",
+            "Trains that have a length. Boats on a river. And circular tracks.",
             "Each one has one idea. Learn it once — and these questions become easy.",
         ]),
         dict(mode='concept', active=0, title='Train length', script=[
@@ -628,17 +573,7 @@ def apply(M):
             D('Write "(400 + 200) ÷ 20 = 30 seconds"'),
             "Four hundred plus two hundred: six hundred meters. At twenty meters per second: thirty seconds.",
         ]),
-        dict(mode='concept', active=1, title='Two trains', script=[
-            "Two trains pass each other. Now both have a length.",
-            A("'Two trains passing: distance = both lengths' appears", T('Two trains pass each other: distance $=$ the sum of the lengths', size=42)),
-            "From the moment the fronts meet until the backs separate, the gap covers both lengths.",
-            A("'Speed = relative speed' appears", T('Speed $=$ relative speed: toward each other add, same direction subtract', size=40)),
-            "And the speed? The relative speed — the rule you already know. Toward each other: add. One overtakes the other: subtract.",
-            A('The example appears', T('Trains $150$ m and $250$ m, toward each other at $15$ and $25$ m per second', size=40)),
-            D('Write "(150 + 250) ÷ (15 + 25) = 400 ÷ 40 = 10 seconds"'),
-            "Four hundred meters, closing at forty meters per second: ten seconds.",
-        ]),
-        dict(mode='concept', active=2, title='Current', script=[
+        dict(mode='concept', active=1, title='Current', script=[
             "A boat on a river. The water moves too.",
             A("'Downstream: boat + current' appears", T('Downstream (with the current): boat $+$ current', size=42)),
             A("'Upstream: boat − current' appears", T('Upstream (against the current): boat $-$ current', size=42)),
@@ -650,7 +585,7 @@ def apply(M):
             D('Write "downstream 20, upstream 12 → current (20 − 12) ÷ 2 = 4, boat (20 + 12) ÷ 2 = 16"'),
             "Downstream twenty, upstream twelve. The current: eight, halved — four. The boat in still water: the average — sixteen.",
         ]),
-        dict(mode='concept', active=3, title='Circular track', script=[
+        dict(mode='concept', active=2, title='Circular track', script=[
             "A circular track. Two runners start together from the same point.",
             A("'Same direction: subtract — meet each time the faster gains one lap' appears",
               T('Same direction: subtract the speeds — they meet each time the faster one gains one lap', size=38)),
@@ -662,28 +597,14 @@ def apply(M):
             D('Write "same direction: 400 ÷ (5 − 3) = 200 s;  opposite: 400 ÷ (5 + 3) = 50 s"'),
             "Same direction: four hundred over two — a meeting every two hundred seconds. Opposite directions: four hundred over eight — every fifty seconds.",
         ]),
-        dict(mode='concept', active=4, title='Meeting twice', script=[
-            "The hardest classic. Two walkers start at the same time from the two ends of a road and walk toward each other.",
-            "They meet. Each one continues to the far end, turns back at once — and they meet again.",
-            D('Draw the road; mark the first meeting, both ends, and the second meeting'),
-            A("'First meeting: together 1 road length' appears", T('First meeting: together they walk $1$ road length', size=42)),
-            "Until the first meeting, together they walk one road length.",
-            A("'Second meeting: together 3 road lengths' appears", T('Second meeting: together they walk $3$ road lengths', size=42)),
-            "Then each one walks to the far end — together, one more length. Then they walk toward each other and meet — one more. Three in total.",
-            "Constant speeds: three lengths together take three times as long.",
-            D('Write "1st meeting after 1 hour → 2nd meeting after 3 hours"'),
-            "First meeting after one hour? The second is after three hours — and each walker has walked three times as far as at the first meeting.",
-        ]),
-        dict(mode='concept', active=5, title='Recap', script=[
+        dict(mode='concept', active=3, title='Recap', script=[
             "Let's lock it in.",
             A("'Train past a post: its own length' appears", T('Train past a post: its own length', size=36)),
             A("'Tunnel: tunnel + train' appears", T('Through a tunnel: tunnel $+$ train', size=36)),
-            A("'Two trains: both lengths, relative speed' appears", T('Two trains: both lengths, at the relative speed', size=36)),
             A("'River: add or subtract; current = half the difference' appears", T('River: down $=$ boat $+$ current, up $=$ boat $-$ current; current $=$ half the difference', size=36)),
             A("'Circle: one lap per meeting' appears", T('Circle: one lap per meeting — same direction subtract, opposite add', size=36)),
-            A("'Meeting twice: 3 lengths' appears", T('Meeting twice: together $3$ road lengths, $3$ times the time', size=36)),
             D('Tick each line'),
-            "Four questions next. Try each one first — then watch.",
+            "Three questions next. Try each one first — then watch.",
         ]),
     ], 'wp27-advanced', after='solve-wp27-g121')
 
@@ -696,7 +617,7 @@ def apply(M):
         'Time $=\\frac{800}{20}=40$ seconds.',
         'Trap: $\\frac{500}{20}=25$ forgets the length of the train.'])
     M.place_q(g1, 'wp27-advanced', after=SPECIAL)
-    _solution(M, g1, 'Special Motion Cases', SPECIAL_SB, ["Question fourteen.", "A train with a length."], [
+    _solution(M, g1, 'Special Motion Cases', SPECIAL_SB, ["A train with a length."], [
         ('Post, then bridge', [
             "First the speed. Passing a post, the train moves its own length.",
             D('Write "300 ÷ 15 = 20 m/s"'),
@@ -720,7 +641,7 @@ def apply(M):
         'Subtract the equations: $2c=8$. Therefore $c=4$ kph (and $b=20$ kph).',
         'Shortcut: current $=\\frac{24-16}{2}=4$. Trap: $8$ is the difference before halving, and $20$ is the speed of the boat.'])
     M.place_q(g2, 'wp27-advanced', after='solve-' + g1)
-    _solution(M, g2, 'Special Motion Cases', SPECIAL_SB, ["Question fifteen.", "Downstream, upstream — find the current."], [
+    _solution(M, g2, 'Special Motion Cases', SPECIAL_SB, ["Downstream, upstream — find the current."], [
         ('Two speeds, then half the difference', [
             "First, the two speeds.",
             D('Write "downstream: 48 ÷ 2 = 24 kph,  upstream: 48 ÷ 3 = 16 kph"'),
@@ -747,7 +668,7 @@ def apply(M):
         'Time $=\\frac{1.2}{36}=\\frac{1}{30}$ hour $=\\frac{60}{30}=2$ minutes.',
         'Trap: $\\frac{1.2}{20-16}=0.3$ hour $=18$ minutes is the answer for the same direction.'])
     M.place_q(g3, 'wp27-advanced', after='solve-' + g2)
-    _solution(M, g3, 'Special Motion Cases', SPECIAL_SB, ["Question sixteen.", "A circular track — opposite directions."], [
+    _solution(M, g3, 'Special Motion Cases', SPECIAL_SB, ["A circular track — opposite directions."], [
         ('Opposite directions: add', [
             "Opposite directions on a circle. They ride toward each other around the track.",
             "They meet when together they have covered one full lap.",
@@ -761,45 +682,14 @@ def apply(M):
         ]),
     ])
 
-    # ---- guided Q17: meeting twice
-    g4 = 'q-r26-t27-04'
-    M.new_q(g4, TOPIC, 'Two walkers start at the same time from the two ends, A and B, of a straight road and walk toward each other at constant speeds. They meet for the first time 4 km from A. Each walker continues to the far end and turns back at once. They meet for the second time 2 km from B. How long is the road, in km?',
-            ['$6$', '$10$', '$12$', '$14$'], 2, [
-        'Until the first meeting, together they walk $1$ road length. Until the second meeting, together they walk $3$ road lengths: one to meet, one more to reach the far ends, and one more to meet again.',
-        'Constant speeds: $3$ times the distance together takes $3$ times the time. The walker from A walks $3\\times4=12$ km.',
-        'Those $12$ km are the whole road plus $2$ km back from B: $L+2=12$. Therefore $L=10$ km.',
-        'Check: at the first meeting they have walked $4$ and $6$ km. By the second meeting, $12=10+2$ and $18=10+8$. Both are $2$ km from B.'])
-    M.place_q(g4, 'wp27-advanced', after='solve-' + g3)
-    _solution(M, g4, 'Special Motion Cases', SPECIAL_SB, ["Question seventeen.", "They meet — and meet again."], [
-        ('Count the road lengths', [
-            D('Draw the road A to B; mark the first meeting 4 km from A and the second meeting 2 km from B'),
-            "Draw it first. The first meeting: four kilometers from A. The second: two kilometers from B.",
-            "Until the first meeting, together they walk one road length. The walker from A walks four of it.",
-            "Until the second meeting, together they walk three road lengths.",
-            "Three times the distance together — three times the time. So each one walks three times as far.",
-            D('Write "walker from A: 4 × 3 = 12 km"'),
-            "The walker from A: three times four, twelve kilometers.",
-            D('Write "12 = L + 2 → L = 10" and circle choice 2'),
-            "Twelve kilometers: the whole road to B, then two kilometers back. The road is ten kilometers. Choice two.",
-        ]),
-        ('Check', [
-            "Check with ten.",
-            D('Write "1st meeting: 4 and 6 km"'),
-            "First meeting: the walker from A walked four, the other one six.",
-            D('Write "2nd meeting: 12 = 10 + 2 and 18 = 10 + 8"'),
-            "By the second meeting: twelve — ten to B and two back. And eighteen — ten to A and eight back. Eight from A is two from B. It fits.",
-            "Six, twelve and fourteen are traps: adding the numbers, forgetting the road, or adding two instead of taking it back.",
-        ]),
-    ])
-
     # =====================================================================================
-    # 10. New lesson video: percents, letters, graphs
+    # 10. New lesson video: percents and letters (the distance-time graphs block was removed by the teacher)
     # =====================================================================================
-    sb = ['Speed % → time %', 'Answers in letters', 'Distance–time graphs', 'Two travelers', 'Recap']
-    M.new_video(GRAPHS, TOPIC, 'Percents, Letters and Graphs', sb, [
-        dict(mode='title', title='Percents, Letters and Graphs', script=[
-            "Three exam favorites.",
-            "Speed changes by a percent. Answers written with letters. And distance–time graphs.",
+    sb = ['Speed % → time %', 'Answers in letters', 'Recap']
+    M.new_video(GRAPHS, TOPIC, 'Percents and Letters', sb, [
+        dict(mode='title', title='Percents and Letters', script=[
+            "Two exam favorites.",
+            "Speed changes by a percent. And answers written with letters.",
         ]),
         dict(mode='concept', active=0, title='Speed % → time %', script=[
             "A classic trap: the speed goes up by some percent. By what percent does the time go down?",
@@ -828,42 +718,14 @@ def apply(M):
             "Choice one gives thirty. The others don't. Choice one.",
             "Two choices give the target? Try other numbers on those two.",
         ]),
-        dict(mode='concept', active=2, title='Distance–time graphs', script=[
-            "Sometimes the exam gives a graph: time across, distance up.",
-            A('A distance–time graph appears', VIS(G_LESSON1)),
-            "Three things to read.",
-            "One: the steepness is the speed — how much the distance grows in one hour.",
-            D('On the first part write "60 ÷ 1 = 60 kph"'),
-            "First part: sixty kilometers in one hour. Sixty kilometers per hour.",
-            "Two: a flat line. Time goes on, but the distance doesn't change. The car is standing still.",
-            D('On the flat part write "stop"'),
-            D('On the last part write "(160 − 60) ÷ 2 = 50 kph"'),
-            "Three: the last part. From sixty to a hundred sixty — a hundred kilometers in two hours. Fifty. Less steep, slower.",
-            D('Write "average: 160 ÷ 4 = 40 kph"'),
-            "The average speed? Total distance over total time — the stop counts too. A hundred sixty over four: forty.",
-        ]),
-        dict(mode='concept', active=3, title='Two travelers', script=[
-            "Two lines on one graph: two travelers.",
-            A('A graph with two travelers appears', VIS(G_LESSON2)),
-            "A starts at zero and moves away. B starts a hundred twenty kilometers away and comes back toward zero.",
-            "A line going DOWN is not slower. It means: moving back toward the starting point.",
-            D('Circle the point where the lines cross and write "meeting"'),
-            "Where the lines cross, they are at the same place at the same time. They meet.",
-            D('Write "A: 80 ÷ 4 = 20 kph,  B: 120 ÷ 3 = 40 kph"'),
-            "Can't read the crossing exactly? Calculate. A: twenty kilometers per hour. B: forty.",
-            D('Write "120 ÷ (20 + 40) = 2 h → 20 × 2 = 40 km"'),
-            "Toward each other — add: sixty. A hundred twenty over sixty: two hours. They meet forty kilometers from the start.",
-        ]),
-        dict(mode='concept', active=4, title='Recap', script=[
+        dict(mode='concept', active=2, title='Recap', script=[
             "Let's lock it in.",
             A("'Speed × fraction → time × the flipped fraction' appears", T('Speed $\\times\\frac54$ $\\to$ time $\\times\\frac45$: $+25\\%$ speed $=-20\\%$ time', size=38)),
             A("'Letters: plug in easy numbers' appears", T('Letters in the choices: plug in easy numbers (not $0$ or $1$)', size=38)),
-            A("'Graph: steep = fast, flat = stop' appears", T('Graph: steepness $=$ speed, flat $=$ stop', size=38)),
-            A("'Lines cross = meeting' appears", T('Two lines cross $=$ a meeting', size=38)),
             D('Tick each line'),
-            "Three questions next.",
+            "Two questions next.",
         ]),
-    ], 'wp27-advanced', after='solve-' + g4)
+    ], 'wp27-advanced', after='solve-' + g3)
 
     # ---- guided Q18: percent speed -> time
     g5 = 'q-r26-t27-05'
@@ -874,7 +736,7 @@ def apply(M):
         'Check: $60\\times\\frac45=48$ minutes, which is $12$ minutes less.',
         'Trap: $12\\div0.25=48$ assumes that the time drops by 25%. And $48$ is the new time, not the usual time.'])
     M.place_q(g5, 'wp27-advanced', after=GRAPHS)
-    _solution(M, g5, 'Percents, Letters and Graphs', GRAPHS_SB, ["Question eighteen.", "Faster by a percent — how much time is saved?"], [
+    _solution(M, g5, 'Percents and Letters', GRAPHS_SB, ["Faster by a percent — how much time is saved?"], [
         ('Flip the fraction', [
             "Twenty-five percent faster: the speed is times five quarters.",
             D('Write "speed × 5/4 → time × 4/5"'),
@@ -902,7 +764,7 @@ def apply(M):
         'With algebra: speed $=\\frac{d}{t}$. Time $=k\\div\\frac{d}{t}=\\frac{kt}{d}$ hours $=\\frac{60kt}{d}$ minutes.',
         'Avoid a speed of $60$ kph when you plug in: then choices (3) and (4) give the same number.'])
     M.place_q(g6, 'wp27-advanced', after='solve-' + g5)
-    _solution(M, g6, 'Percents, Letters and Graphs', GRAPHS_SB, ["Question nineteen.", "Letters in the question, letters in the answers."], [
+    _solution(M, g6, 'Percents and Letters', GRAPHS_SB, ["Letters in the question, letters in the answers."], [
         ('Method 1 · Plug in numbers', [
             "Plug in easy numbers. Not zero, not one.",
             D('Write "d = 40, t = 2, k = 10"'),
@@ -924,72 +786,33 @@ def apply(M):
         ]),
     ])
 
-    # ---- guided Q20: reading a distance-time graph
-    g7 = 'q-r26-t27-07'
-    M.new_q(g7, TOPIC, 'The graph shows a cyclist’s distance from her home during a trip. What was her speed, in kph, during the part of the trip in which she rode fastest?',
-            ['$15$', '$20$', '$25$', '$30$'], 3, [
-        'Read each part. Speed $=$ the change in distance $\\div$ the time.',
-        'From $0$ to $2$ hours: $\\frac{30}{2}=15$ kph. From $2$ to $3$ hours: the line is flat, she stops. From $3$ to $4$ hours: $\\frac{50-30}{1}=20$ kph.',
-        'From $4$ to $6$ hours: she rides back home, from $50$ km to $0$: $\\frac{50}{2}=25$ kph.',
-        'The fastest part is the ride back: $25$ kph. Trap: a line going down is not slower — it means riding back toward home.'],
-            figure=G_Q20)
-    M.place_q(g7, 'wp27-advanced', after='solve-' + g6)
-    _solution(M, g7, 'Percents, Letters and Graphs', GRAPHS_SB, ["Question twenty.", "A graph — read every part."], [
-        ('Read each part', [
-            "Speed is how much the distance changes in one hour. Read each part.",
-            D('On the first part write "30 ÷ 2 = 15"'),
-            "First part: thirty kilometers in two hours. Fifteen.",
-            D('On the flat part write "stop"'),
-            "Then flat: she stops for an hour.",
-            D('On the third part write "20 ÷ 1 = 20"'),
-            "Then from thirty to fifty in one hour: twenty.",
-            D('On the last part write "50 ÷ 2 = 25"'),
-            "Last part: the line goes down — from fifty kilometers to zero. She rides back home. Fifty kilometers in two hours: twenty-five.",
-            D('Circle choice 3'),
-            "The fastest part: twenty-five kilometers per hour. Choice three.",
-            "The trap is choice two. A line going down is not slower. The steepness is the speed, up or down.",
-        ]),
-    ])
-
     # ---- memory card for the new methods
     M.new_card('mem-r26-t27-special', TOPIC, 'wp27-advanced', {
         'title': 'Motion — special cases',
-        'intro': 'Trains, rivers, circular tracks, meeting twice, percents, letters and graphs.',
+        'intro': 'Trains, rivers, circular tracks, percents and letters.',
         'tables': [
             {'title': 'Special cases', 'head': ['Situation', 'Distance', 'Speed'], 'rows': [
                 ['Train passes a post or a person', 'the train’s length', 'the train’s speed'],
                 ['Train passes through a tunnel or over a bridge', 'tunnel $+$ train', 'the train’s speed'],
-                ['Two trains pass each other', 'the sum of the lengths', 'relative speed (add or subtract)'],
                 ['Boat downstream / upstream', '—', 'boat $+$ current / boat $-$ current'],
                 ['Both trips given', '—', 'current $=\\frac{\\text{down}-\\text{up}}{2}$, boat $=\\frac{\\text{down}+\\text{up}}{2}$'],
                 ['Circle, same direction', '$1$ lap per meeting', 'difference of the speeds'],
-                ['Circle, opposite directions', '$1$ lap per meeting', 'sum of the speeds'],
-                ['Two walkers meet, go on to the ends, meet again', 'together $3$ road lengths', '$3$ times the time of the first meeting']]},
+                ['Circle, opposite directions', '$1$ lap per meeting', 'sum of the speeds']]},
             {'title': 'Speed % → time % (same distance)', 'head': ['Speed', 'Time'], 'rows': [
                 ['$+25\\%$ ($\\times\\frac54$)', '$-20\\%$ ($\\times\\frac45$)'],
                 ['$+50\\%$ ($\\times\\frac32$)', '$-33\\frac13\\%$ ($\\times\\frac23$)'],
                 ['$+100\\%$ ($\\times2$)', '$-50\\%$ ($\\times\\frac12$)'],
-                ['$-20\\%$ ($\\times\\frac45$)', '$+25\\%$ ($\\times\\frac54$)']]},
-            {'title': 'Distance–time graphs', 'head': ['You see', 'It means'], 'rows': [
-                ['A steeper line', 'a higher speed (steepness $=$ speed)'],
-                ['A flat line', 'a stop'],
-                ['A line going down', 'moving back toward the starting point'],
-                ['Two lines cross', 'a meeting']]}],
+                ['$-20\\%$ ($\\times\\frac45$)', '$+25\\%$ ($\\times\\frac54$)']]}],
         'tips': [
             'Letters in the choices? Plug in easy numbers (not $0$ or $1$), find the target, and test every choice.',
             'If two choices give the target, try other numbers on those two.',
             'Speed changes by a percent? Write it as a fraction, flip it, and read the change of the time.']},
-        after='solve-' + g7)
+        after='solve-' + g6)
 
     # =====================================================================================
     # 11. New practice questions (exam level)
     # =====================================================================================
     P = {}
-    P['08'] = ('Two trains, 120 meters and 180 meters long, travel toward each other on parallel tracks, at 20 and 30 meters per second. From the moment their fronts meet, how many seconds pass until their backs separate?',
-               ['$30$', '$15$', '$6$', '$2.4$'], 3, [
-        'The distance: the sum of the lengths, $120+180=300$ m.',
-        'Toward each other: the relative speed is $20+30=50$ m per second.',
-        'Time $=\\frac{300}{50}=6$ seconds.'], None)
     P['09'] = ('A train passes a man standing on a platform in 10 seconds. At the same speed, it takes the train 25 seconds to pass a platform 300 meters long completely. How long is the train, in meters?',
                ['$120$', '$200$', '$300$', '$500$'], 2, [
         'Let the train be $L$ meters long, at speed $v$ meters per second.',
@@ -1014,17 +837,6 @@ def apply(M):
         'Therefore $a+b=5(a-b)$. Then $6b=4a$, and the ratio is $a:b=3:2$.',
         'Check with $a=3$, $b=2$ and $L=200$: $\\frac{200}{5}=40$ and $\\frac{200}{1}=200$ seconds.',
         'Trap: $5:1$ is the ratio of the two times, not of the speeds.'], None)
-    P['13'] = ('Two cars start at the same time from towns A and B and drive toward each other at constant speeds. They first meet 60 km from A. Each car continues to the other town and turns back at once. They meet for the second time 20 km from A. How far apart are the towns, in km?',
-               ['$80$', '$100$', '$160$', '$180$'], 2, [
-        'Until the second meeting, together they drive $3$ times the distance between the towns. The car from A drives $3\\times60=180$ km.',
-        'The car from A drives to B ($L$) and then back toward A, and stops $20$ km from A: $L+(L-20)=180$.',
-        'Therefore $2L=200$ and $L=100$ km.',
-        'Check: at the first meeting the cars drove $60$ and $40$ km. By the second: $180=100+80$ and $120=100+20$. Both are $20$ km from A.'], None)
-    P['14'] = ('Two walkers start at the same time from the two ends of a path and walk toward each other at constant speeds. They meet for the first time after 20 minutes. Each walker continues to the far end and turns back at once. How many minutes after the start do they meet for the second time?',
-               ['$40$', '$60$', '$80$', '$30$'], 2, [
-        'Until the first meeting, together they walk $1$ path length: $20$ minutes.',
-        'Until the second meeting, together they walk $3$ path lengths.',
-        'Constant speeds: $3\\times20=60$ minutes.'], None)
     P['15'] = ('A driver usually drives to work in 30 minutes. How many minutes would the trip take if she drove 50% faster?',
                ['$15$', '$20$', '$22.5$', '$45$'], 2, [
         '50% faster: the speed is multiplied by $\\frac32$.',
@@ -1045,16 +857,6 @@ def apply(M):
         'Head start of A: $v\\cdot h$ km.',
         'A chase: the gap closes at $2v-v=v$ kph. Time $=\\frac{vh}{v}=h$ hours.',
         'Or plug in numbers: $v=10$, $h=1$. A is $10$ km ahead, and B gains $10$ km per hour: $1$ hour $=h$.'], None)
-    P['19'] = ('The graph shows the distances of two cyclists, A and B, from town P. They start at the same time and ride at constant speeds. How far from P do they meet, in km?',
-               ['$60$', '$40$', '$48$', '$80$'], 2, [
-        'Read the speeds. A: $80$ km in $4$ hours, $\\frac{80}{4}=20$ kph, away from P. B: $120$ km in $3$ hours, $\\frac{120}{3}=40$ kph, toward P.',
-        'At the start they are $120$ km apart and ride toward each other: the gap closes at $20+40=60$ kph.',
-        'They meet after $\\frac{120}{60}=2$ hours. A has ridden $20\\times2=40$ km from P.'], G_P19)
-    P['20'] = ('The graph shows a car trip. What is the average speed of the car for the whole trip, in kph?',
-               ['$35$', '$33\\frac13$', '$25$', '$40$'], 3, [
-        'The car drives $100$ km in $4$ hours in total. The flat part (a stop) counts as time too.',
-        'Average speed $=\\frac{100}{4}=25$ kph.',
-        'Traps: $35$ averages the two driving speeds, $30$ and $40$. $33\\frac13=\\frac{100}{3}$ leaves out the stop.'], G_P20)
     P['21'] = ('A car drives for 2 hours at 60 kph and then for 2 more hours at 90 kph. What is its average speed for the whole trip, in kph?',
                ['$72$', '$75$', '$70$', '$80$'], 2, [
         'Total distance: $2\\times60+2\\times90=120+180=300$ km, in $4$ hours.',
@@ -1065,6 +867,13 @@ def apply(M):
         'Choose a route of $90$ km. First third: $30$ km at $30$ kph, $1$ hour. The rest: $60$ km at $60$ kph, $1$ hour.',
         'Average speed $=\\frac{90}{2}=45$ kph.',
         'Trap: $50=\\frac13\\cdot30+\\frac23\\cdot60$ weights the speeds by distance. Speeds must be weighted by time.'], None)
+    # the pass-1 version of wp27-p10 ("fraction of the track"), kept under a new id; the original moved to T33
+    P['23'] = ('Two runners leave the same point on a circular track at the same time and run in opposite directions. One runs five times as fast as the other. What fraction of the track has the slower runner covered when they meet for the first time?',
+               ['$\\frac18$', '$\\frac15$', '$\\frac14$', '$\\frac16$'], 4, [
+        'Opposite directions on a circle: at the first meeting, together they have covered exactly one lap.',
+        'Equal times: the distances follow the speed ratio $1:5$. The lap is $1+5=6$ parts.',
+        'The slower runner covers $1$ part: $\\frac16$ of the track.',
+        'Trap: $\\frac15$ compares the two runners, not the slower runner with the whole lap.'], None)
     for k, (stem, ch, cor, ex, fig) in P.items():
         M.new_q('q-r26-t27-' + k, TOPIC, stem, ch, cor, ex, figure=fig)
         M.place_q('q-r26-t27-' + k, 'wp27-practice')
@@ -1074,11 +883,85 @@ def apply(M):
     # =====================================================================================
     n = lambda k: 'q-r26-t27-' + k
     M.practice_order('wp27-practice', [
-        'wp27-p13', 'wp27-p18', 'wp27-p01', 'wp27-p04', 'wp27-p27', 'wp27-p12', 'wp27-p08', 'wp27-p09',
-        'wp27-p05', 'wp27-p06', n('15'), 'wp27-p07', 'wp27-p26', 'wp27-p11', 'wp27-p20', n('21'),
-        'wp27-p24', 'wp27-p25', n('08'), 'wp27-p15', 'wp27-p16', 'wp27-p10', 'wp27-p02', 'wp27-p03', n('18'),
-        n('20'), n('19'), n('10'), 'wp27-p19', n('14'), n('17'), 'wp27-p17', n('16'), n('22'),
-        n('09'), n('11'), n('12'), n('13')])
+        'wp27-p13', 'wp27-p23', 'wp27-p18', 'wp27-p01', 'wp27-p04', 'wp27-p27', 'wp27-p22', 'wp27-p12', 'wp27-p08',
+        'wp27-p09', 'wp27-p05', 'wp27-p06', n('15'), 'wp27-p07', 'wp27-p26', 'wp27-p11', 'wp27-p20', 'wp27-p21',
+        n('21'), 'wp27-p24', 'wp27-p14', 'wp27-p25', 'wp27-p15', 'wp27-p16', n('23'), 'wp27-p02', 'wp27-p03',
+        n('18'), n('10'), 'wp27-p19', n('17'), 'wp27-p17', n('16'), n('22'), n('09'), n('11'), n('12')])
+
+    # =====================================================================================
+    # 12b. Summary lesson right before the practice (pass 2)
+    # =====================================================================================
+    sbS = ['The formula', 'The table', 'Average speed', 'What is fixed?', 'Relative speed', 'Special cases',
+           'Percents and letters', 'Before you practice']
+    M.new_video('r26-t27-summary', TOPIC, 'Summary', sbS, [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice — a quick summary of motion.",
+            "Everything important, in a few minutes.",
+        ]),
+        dict(mode='concept', active=0, title='The formula', script=[
+            A('The formula appears', T('$\\text{distance}=\\text{time}\\times\\text{speed}$', size=46)),
+            "Distance equals time times speed. Need the time? Distance divided by speed.",
+            A("'Same units, always' appears", T('Same units, always: $20$ minutes $=\\frac13$ hour, $45$ minutes $=\\frac34$ hour', size=38)),
+            "Always work in the same units. Minutes are fractions of an hour.",
+            A("'Identical ratios, not 3.6' appears", T('Converting a speed? Identical ratios ($\\times60$, $\\times30$) — not $3.6$', size=38)),
+            "Converting a speed? Use identical ratios. Forget three point six.",
+        ]),
+        dict(mode='concept', active=1, title='The table', script=[
+            A('The table appears', TABLE(['', 'Distance', 'Speed', 'Time'], [['Part 1', '', '', ''], ['Part 2', '', '', ''],
+                                                                            ['Total', '', '', '']], w=900, h=260)),
+            "Two people, or one trip in two parts? A table. One row for each.",
+            "In every row: distance equals speed times time.",
+            "In the total row, add the distances and add the times. Never add the speeds.",
+            "Then find the link: equal times, equal distances, or a total. That's your equation.",
+        ]),
+        dict(mode='concept', active=2, title='Average speed', script=[
+            A('The rule appears', T('Average speed $=$ total distance $\\div$ total time', size=42)),
+            "Average speed: total distance over total time. Stops count as time too.",
+            A("'Equal times → plain average' appears", T('Equal times $\\to$ the plain average', size=40)),
+            A("'Equal distances → closer to the slower' appears", T('Equal distances $\\to$ closer to the slower speed', size=40)),
+            "Equal times? The plain average works. Equal distances? The answer sits closer to the slower speed.",
+            "Distance missing? Pick a friendly number.",
+        ]),
+        dict(mode='concept', active=3, title='What is fixed?', script=[
+            A("'Same time → distances follow speeds' appears", T('Same time $\\to$ distances follow the speeds', size=40)),
+            A("'Same speed → distances follow times' appears", T('Same speed $\\to$ distances follow the times', size=40)),
+            A("'Same distance → times flip' appears", T('Same distance $\\to$ times flip: speeds $3:4$, times $4:3$', size=40)),
+            "Ratios save calculation. First ask: what is fixed?",
+            "Same time: distances follow the speeds. Same distance: the times flip.",
+        ]),
+        dict(mode='concept', active=4, title='Relative speed', script=[
+            A("'Toward or apart: add' appears", T('Toward each other or apart: add the speeds', size=40)),
+            A("'A chase: subtract' appears", T('A chase (same direction): subtract the speeds', size=40)),
+            "Toward each other, or moving apart: add the speeds. A chase: subtract.",
+            A("'Only the gap at the start' appears", T('The distance that matters: the gap at the start', size=40)),
+            "In a chase, the only distance that matters is the gap at the start.",
+            "One left earlier? Work out the head start first. That's your gap.",
+        ]),
+        dict(mode='concept', active=5, title='Special cases', script=[
+            A("'Train' appears", T('Train: past a post $=$ its length; tunnel $=$ tunnel $+$ train', size=38)),
+            "A train has a length. Past a post: its own length. Through a tunnel: tunnel plus train.",
+            A("'River' appears", T('River: down $=$ boat $+$ current, up $=$ boat $-$ current', size=38)),
+            "A river: downstream, add the current. Upstream, subtract. The current is half the difference.",
+            A("'Circle' appears", T('Circle: one lap per meeting — same direction subtract, opposite add', size=38)),
+            "A circular track: they meet once every lap — gained, or covered together.",
+        ]),
+        dict(mode='concept', active=6, title='Percents and letters', script=[
+            A("'Speed × 5/4 → time × 4/5' appears", T('Speed $\\times\\frac54$ $\\to$ time $\\times\\frac45$: $+25\\%$ speed $=-20\\%$ time', size=38)),
+            "Speed up by a percent? Write it as a fraction and flip it. Twenty-five percent faster: twenty percent less time.",
+            A("'Letters: plug in easy numbers' appears", T('Letters in the choices: plug in easy numbers (not $0$ or $1$)', size=38)),
+            "Letters in the choices? Plug in easy numbers, find the target, and test every choice.",
+        ]),
+        dict(mode='concept', active=7, title='Before you practice', script=[
+            "Before every question, ask yourself:",
+            A('Check 1 appears', T('Same units everywhere?', size=40)),
+            A('Check 2 appears', T('What is fixed: time, speed or distance?', size=40)),
+            A('Check 3 appears', T('Toward each other, or a chase? What is the gap at the start?', size=40)),
+            A('Check 4 appears', T('Average speed? Total distance $\\div$ total time', size=40)),
+            "And the traps: twenty minutes is not point two of an hour. The average speed is not the average of the speeds.",
+            "In a chase, count only the starting gap. And draw a sketch — every time.",
+            "Good luck. Let's practice.",
+        ]),
+    ], 'wp27-advanced', after='mem-r26-t27-special')
 
     # trim stray spaces around the old stems
     for f in [f for f in M.D['flow'] if f['topic'] == TOPIC and f['type'] == 'question']:

@@ -54,3 +54,14 @@ Division uses ÷. New rows: rate % → time, pick a job size (LCM), two workers 
 - Moving T26 right before T27 (Motion) is outside this patch and should be done in the course order. The new "Average rate" slide already points ahead to average speed.
 - The "Sense check" rule is taught as "together ≥ fastest ÷ 2 (exactly half only if equally fast)". Please confirm that this wording works for the videos.
 - The API cannot rename a video, so the patch renames Work Time → Worker-Hours by setting the video/title-slide fields directly. It also updates the stale "on screen" notes of pre-loaded questions directly.
+
+## Pass 2 (2026-09-27, approved remove/restore plan + summary lesson)
+**Removed:** nothing. The "Sense check" slide, its recap part and card tip stay (plan: KEEP).
+
+**Restored (6, one of them moved):**
+- wp26-p02 (printer B 3 times as fast, $12x$), wp26-p14 (third hose, $\frac1{10}$) and wp26-p15 (experts vs trainees, $\frac83$) are back in the practice; letters in TeX, solutions with the numbers.
+- wp26-p12 is again the original "seal $2q$ envelopes" with its original choices (key $\frac{2q^2}{p}$); the "$n$ envelopes" version is dropped. Solution checked with numbers.
+- wp26-p10 is again the original rough circular floor of radius 15 (key $\frac{3\pi}{4}$ hours). It uses circle area, so it is **moved to the Topic 33 foundation practice** (end of that section). The "600 m², half smooth and half rough" version stays in Topic 26 as new question **q-r26-t26-13** (exam-hard part).
+- `solve-wp26-g093` (Question 1): the original "Method 2 · Triple value" slide is back as "Method 2 · Triangle value" (the name the course now uses; "÷" instead of ":"). The added slides follow as "Method 3 · Rate × time" and "Method 4 · Plug in numbers".
+
+**Summary lesson (1 new video):** `r26-t26-summary` "Summary", at the end of "Further guided examples", right before the practice. Slides: Summary · The formula · Three relationships · Rate in percent · One job = 1 · Working together · Two workers · Team questions · Worker-hours · Average rate · Before you practice. Only content the Topic 26 lessons and guided solutions teach.

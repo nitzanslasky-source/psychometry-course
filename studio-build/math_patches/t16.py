@@ -748,7 +748,12 @@ def apply(M):
     # =====================================================================================
     # 9. Practice: remove a near-duplicate, add new items, order easy -> hard
     # =====================================================================================
-    M.unplace('q-477')   # 4th copy of the consecutive difference-of-squares item (Q2, Q12, q-482 remain)
+    # Pass 2: q-477 is an original question and is restored (text clean-up only)
+    S('q-477', stem='a, b and c are consecutive positive integers, and $a<b<c$. Given: $c^2-a^2=48$. $b=?$', expl=[
+        'Consecutive: $b=a+1$ and $c=a+2$, so $c-a=2$ and $c+a=2a+2$.',
+        '$c^2-a^2=(c-a)(c+a)=2(2a+2)=4(a+1)=4b$.',
+        'So $4b=48$ and $b=12$.',
+        'Check: $a=11$, $c=13$: $13^2-11^2=169-121=48$ ✓.'])
     P = {}
     P['05'] = ('Given: $a<b<0<c$. Which of the following expressions is necessarily negative?',
                ['$a+c$', '$c-a$', '$a+b$', '$ab$'], 3, [
@@ -809,7 +814,7 @@ def apply(M):
     N = lambda k: 'q-r26-t16-' + k
     M.practice_order(PRACTICE, [
         X + '6', X + '1', X + '4', 'q-474', 'q-479', X + '2', X + '3', N('05'), N('07'), 'q-476', X + '7', N('08'),
-        N('10'), X + '5', 'q-475', 'q-473', 'q-482', 'q-485', N('06'), N('15'), 'q-484', 'q-478', 'q-481', 'q-483',
+        N('10'), X + '5', 'q-475', 'q-473', 'q-482', 'q-477', 'q-485', N('06'), N('15'), 'q-484', 'q-478', 'q-481', 'q-483',
         'q-486', 'q-487', 'q-488', N('09'), N('14'), N('11'), N('12'), N('13'), 'q-480', 'q-489', 'q-490', 'q-491',
         'q-492'])
 
@@ -826,3 +831,90 @@ def apply(M):
             if b['mode'] == 'question' and b.get('canvas', '').startswith('Pre-loaded — question'):
                 b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, stem)
         M.touched_videos.add(f['ref'])
+
+    summary(M)
+
+
+# ======================================================================================================
+# Pass 2: summary video right before the practice (end of the advanced section)
+# ======================================================================================================
+def summary(M):
+    sb = ['Multiply and divide', 'Signs of sums', 'Never negative', 'Consecutive integers', 'Sums in a row',
+          'Even and odd', 'Parity: plug in', 'Products in a row', 'Candidates and twos', 'Before you practice']
+    C = lambda i, title, script: dict(title=title, mode='concept', active=i, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice, a quick review of the whole topic.",
+            "Signs, consecutive numbers, even and odd — and the traps."]),
+        C(0, 'Multiply and divide', [
+            "Multiplying and dividing: same rules.",
+            A('Same / different', T('Same signs $\\to\\ +$ · different signs $\\to\\ -$', size=46)),
+            A('Count the minuses', T('Count the minuses: odd $\\to\\ -$, even $\\to\\ +$', size=46)),
+            "Only the minuses matter. Every two of them cancel.",
+            A('ab > 0', T('$ab>0$: same sign — maybe both negative!', size=44)),
+            "A positive product doesn't mean both are positive."]),
+        C(1, 'Signs of sums', [
+            "Adding has its own rules.",
+            A('Two negatives', T('$(-)+(-)\\ \\to\\ -$', size=48)),
+            A('Mixed', T('Mixed signs: the bigger size wins · $-7+3=-4$', size=44)),
+            A('Difference', T('Bigger $-$ smaller $>0$ · $-2-(-5)=3$', size=46)),
+            "Bigger minus smaller is positive — even when both are negative."]),
+        C(2, 'Never negative', [
+            "Find the pieces that are surely positive.",
+            A('Even power', T('Even power: $x^2\\ge0$', size=46)),
+            A('Odd power', T('Odd power keeps the sign: $(-2)^3=-8$', size=46)),
+            A('Absolute value', T('$|y|>0$ when $y\\ne0$', size=46)),
+            A('Minus x', T('$x<0\\ \\Rightarrow\\ -x>0$', size=46)),
+            "Minus x means the opposite of x — not a negative number. And zero is neither positive nor negative."]),
+        C(3, 'Consecutive integers', [
+            "Consecutive numbers: three ways in.",
+            A('Algebra', T('1 · One letter: $b-1,\\ b,\\ b+1$', size=44)),
+            A('Plug in', T('2 · Plug in the smallest legal numbers', size=44)),
+            A('Differences', T('3 · Differences: $b-a=1$, but $a-b=-1$', size=44)),
+            "Plugging in? Make sure the choices give different values.",
+            "Even or odd in a row: the gap is two.",
+            "And \"greater than zero\" doesn't mean the list starts at one."]),
+        C(4, 'Sums in a row', [
+            "Adding numbers in a row.",
+            A('Count x middle', T('Sum $=$ count $\\times$ middle · $11+\\ldots+15=5\\cdot13=65$', size=42)),
+            A('Odd/even count', T('Odd count → divides by the count · even count → never', size=42)),
+            A('Counting', T('From $a$ to $b$: $b-a+1$ integers', size=44)),
+            A('Neighbors', T('Neighbors $a<b$: $b^2-a^2=a+b$', size=44)),
+            "Three to ten is eight numbers, not seven. Add one."]),
+        C(5, 'Even and odd', [
+            "Zero is even.",
+            A('Add', T('Odd $\\pm$ odd $=$ even · even $\\pm$ odd $=$ odd', size=44)),
+            A('Count odd terms', T('In a sum, count only the odd terms', size=44)),
+            A('Multiply', T('One even factor → even · odd product ⇔ every factor odd', size=42)),
+            A('Powers', T('Powers don\'t change parity — delete them', size=44)),
+            "Odd divided by even is always a fraction."]),
+        C(6, 'Parity: plug in', [
+            "Parity questions? Plug in: two for even, one or three for odd.",
+            A('One per case', T('$\\pm,\\ \\times$: one plug-in for each parity case', size=44)),
+            A('Division', T('Division: three plug-ins, close together', size=44)),
+            A('Proof', T('A plug-in can disprove "always" — it can\'t prove it', size=42)),
+            "One example that fails kills \"always\". Examples that work prove nothing."]),
+        C(7, 'Products in a row', [
+            "These rules are proven. Trust them.",
+            A('In a row', T('In a row: two by $2$ · three by $6$ · four by $24$', size=44)),
+            A('Evens', T('Two evens by $4$ · two consecutive evens by $8$', size=44)),
+            A('Hidden', T('$x^2-1=(x-1)(x+1)\\qquad x^3-x=(x-1)x(x+1)$', size=42)),
+            "Watch for them hidden inside an expression.",
+            "x odd? Then x squared minus one is two consecutive evens — it divides by eight."]),
+        C(8, 'Candidates and twos', [
+            "Anything else? The smallest case is only a candidate.",
+            A('Odd in a row', T('$1\\cdot3\\cdot5=15$, but $7\\cdot9\\cdot11=693$ → only $3$', size=44)),
+            "Cross out, then test a second case that avoids the factor.",
+            A('Count the twos', T('Integer? Count the twos: $\\frac{m^2(n+1)}{8}$ has three', size=44)),
+            "m even, n odd: two twos from m squared, one from n plus one. Enough for eight."]),
+        C(9, 'Before you practice', [
+            "Before each question, always ask yourself:",
+            A('Check 1', T('1. Which pieces are surely positive? Which one decides?', size=40)),
+            A('Check 2', T('2. Multiplying or adding? The sign rules differ.', size=40)),
+            A('Check 3', T('3. Numbers in a row hiding here?', size=40)),
+            A('Check 4', T('4. Did my plug-in prove it — or only fail to break it?', size=40)),
+            "And the traps: zero is even, zero divides by everything, and minus x isn't always negative.",
+            "You know all of this. Go practice."]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == 'whole-numbers-advanced'][-1]
+    M.new_video('r26-t16-summary', TOPIC, 'Integers: Summary', sb, slides, 'whole-numbers-advanced', after=last)

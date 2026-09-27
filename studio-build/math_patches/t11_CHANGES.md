@@ -114,3 +114,20 @@ Topics 8–10 now teach sums of powers, comparing powers, bases between 0 and 1,
 
 ## Tool note
 `student_view.py` reads the old site export. I checked the patched flow and numbering from the patched data instead, and I rendered every new and changed slide.
+
+## Pass 2 (plan `real_exam/PLAN_REMOVE_RESTORE.md`, teacher-approved 2026-09-27)
+**Removed (3):**
+- Practice q-r26-t11-03 ((0.2)³·10⁴/√0.0016) and q-r26-t11-07 (order of 2¹⁰⁰, 10³⁰, 3⁶⁰). Also removed from the practice order.
+- Card `mem-r26-t11-advanced`, table "From topics 8 to 10": the row "compare powers: make the exponents equal". The row "different roots: raise to a common power" stays.
+
+**Restored (9):**
+- Practice extras alg-extra-unit-t11-3-1, -3-3, -3-5, -3-6. They are back at the start of the practice (warm-ups, original order 1–7). Only clean-up: TeX, "=?" stems, numeric solutions.
+- `advanced-powers` slide 3: the original "Laws + identities" slide and script. "Patterns to spot" stays as an added slide after it (slide 4). Its (x+y)² pattern was the same as the original slide, so it now holds only the other two patterns (2 and 4; counting copies). Sidebar: Translate first, Laws + identities, Patterns to spot, Choose a method, Recap.
+- `solve-q-296`: the original slide "Multiply the denominators" is back as Method 3 (after Method 1 · Clear the root and Method 2 · Match the denominators). The title slide now says "Three ways".
+- `solve-q-299`: the original slide "Open the brackets" is back as Method 1. "Product equals zero" is now Method 2 (shortened so it doesn't repeat the trap line).
+- `solve-q-297` slide 3: the original line "The lesson's favourite is four — but here four gives root eight…" is back.
+- q-317: the original distractor 2/6 is back (in place of 3/2).
+
+**Summary video (new):** `r26-t11-summary`, "Advanced Exponents & Roots: Summary". It is at the end of Section B, after the memory card and right before the practice. Slides: Summary · Translate first · Hidden formulas · Root of a root · Undo a power · Conjugates · Product = 0 · Power = 1 and "or" · Two routes · Before you practice. About 3 minutes.
+
+Check: `python3 math_check.py 11` gives 0 problems, 0 warnings and 0 layout problems. The same is true for `11 12` together.

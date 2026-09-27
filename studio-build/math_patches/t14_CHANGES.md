@@ -139,3 +139,22 @@ Every new or changed answer was checked by hand and by brute force.
   - The moved Q4 and Q5 solution videos now belong to the "Factor Questions" group (module 42).
   - The new lesson shares module 43 with the "Advanced Primes" group, because the API has no way to create a new module number.
 - **"Primes near the target" strip (2 to 60):** added to the memory card as a table, not as a separate slide.
+
+## Pass 2 (teacher-approved remove/restore plan, 2026-09-27)
+
+**Removed** (not on the real exam and not in the original course: zeros at the end of a number, perfect cubes, finding a number from its GCD and LCM):
+- Video "More Factor Tools": slide "Zeros at the end", its sidebar label and its Recap line. The slide "Squares & cubes" lost its cube lines and is now called "Perfect squares". The title and recap now say "three tools".
+- Guided q-r26-t14-02 (24k a perfect cube) and q-r26-t14-04 (zeros of 20⁴·15³), with their solution videos. The advanced guided questions are renumbered (the prime-equation question is now Question 12, q-391 is Question 13).
+- Practice q-r26-t14-08 (GCD 6, LCM 180 → the other number), q-r26-t14-11 (cube), q-r26-t14-14 (zeros of 20!).
+- Card "More factor tools": rows "Perfect cube" and "Zeros at the end"; intro now "Three tools".
+
+**Kept:** q-r26-t14-10 (smallest k so that 2³·3⁴·5·k is a square).
+
+**Restored** (3 original questions, text clean-up only: TeX, stacked givens, full numeric solutions; same choices and key):
+- q-416 (t > 1, t² prime → t is not an integer), q-420 (exactly three divisors → √m is prime), q-410 (GCD of p²q³r and p³qr² = p²qr).
+- They are back in the independent practice at matching difficulty (q-410 with the GCD/LCM items, q-416 and q-420 next to q-417).
+- The recap lines "Know the primes up to 40 — and 97" and "Divides by every combination of its prime factors", the two `mem-primes` tips and the `mem-factor-tools` tip ("Divides by 2 and 5 → by 10 …") that the plan lists were already present in the pass-1 patch, so nothing more was needed.
+
+**New: summary video** `r26-t14-summary` "Prime Numbers — Summary", at the end of the advanced section, right before the independent practice (about 2.6 minutes).
+Slides: Summary · What a prime is · Two primes, odd result · Is it prime? · Break it down · GCD and LCM · Counting divisors · Squares and equations · A prime in a product · Before you practice.
+It only repeats what the three lessons teach. The last slide lists the checks (broke it into primes? really prime - tried up to the root and 7? odd sum → one prime is 2? GCD or LCM - lower or higher power?) and the traps (calling 1 a prime, forgetting 2, multiplying instead of taking the LCM).

@@ -327,6 +327,7 @@ def apply(M):
     _practice(M)
     _wording(M)
     _sync_stem_copies(M)
+    summary(M)
     for k, t in enumerate(['Same height: area ratio without squaring', 'A trapezoid and its diagonals: four triangles',
                            'A cube grows by 20%: the volume in percent', 'Map scale: a real distance',
                            'Map scale: a real area']):
@@ -355,12 +356,6 @@ def _figures(M):
 # 1-2. lesson videos
 # ------------------------------------------------------------------------------------------------
 def _lesson_similarity(M):
-    # geo-134 slide 12: one image only (no Kenny / Batman / binoculars)
-    _replace_say(M, 'geo-134', 12, "Meaning: the area of one small circle equals the area of this 'Batman' up here.",
-                 "Meaning: the area of one small circle equals the area of the white shape at the top.")
-    _replace_say(M, 'geo-134', 12, "I call this shape the man with glasses — like Kenny from South Park, with a pair of binoculars.",
-                 "I call this picture 'the man with glasses': the two small circles are the glasses.")
-
     # geo-135 slide 2: regular shapes are always similar - other shapes are NOT automatically similar
     M.set_slide('geo-135', 2, script=_script_of(M, 'geo-135', 2) + [
         "But careful: other shapes are NOT automatically similar.",
@@ -389,8 +384,9 @@ def _lesson_triangles(M):
         A('Same height, not similar → area ratio = base ratio appears',
           T('Same height, not similar $\\rightarrow$ area ratio $=$ base ratio (no squaring)', size=34, y=570)),
         "Same height but not similar — the areas follow the bases. No squaring.",
+        A('Rectangles: both dimensions, one factor appears', T('Rectangles: both dimensions use one factor', size=34, y=650)),
         A('Also similar: 3 proportional sides, or 2 + the angle between appears',
-          T('Also similar: 3 proportional side pairs — or 2 pairs and the angle between them', size=30, y=650)),
+          T('Also similar: 3 proportional side pairs — or 2 pairs and the angle between them', size=30, y=730)),
         "Rectangles: both dimensions, one factor.",
         "Two more ways to prove similarity — you will rarely need them on the exam: all three sides in the same ratio, or two sides in the same ratio and the angle between them equal.",
     ])
@@ -502,8 +498,6 @@ def _lesson_solids(M):
     M.set_sidebar('geo-141', ['Volume: cubed', 'Similar solids', 'Cubes: count them', 'Cylinders: check both', 'Half-height cone'])
 
     # geo-143: wording, percent-change slide, recap
-    _replace_say(M, 'geo-143', 6, "From the course — what if both change? Just multiply the separate factors.",
-                 "What if both change? Just multiply the separate factors.")
     M.insert_slides('geo-143', 7, [dict(mode='concept', active=6, title='Percent change', script=[
         "Percent questions with similar shapes. Every side grows by 10 percent.",
         "First, turn the percent into a factor: plus 10 percent is times 1.1.",
@@ -531,8 +525,6 @@ def _lesson_solids(M):
 def _solution_videos(M):
     # Q3: trap answers can be there at any level
     V = 'solve-geo36-g138'
-    _replace_say(M, V, 3, "A small tip about answers: usually they don't confuse me — they help me.",
-                 "A tip about the answer choices: the common mistake is often one of them.")
     _replace_say(M, V, 3, "In a harder question, the common mistake usually won't even be in the choices. It's a hint: read the question again.",
                  "A trap answer can be there at any level — in easy questions and in hard ones.")
     _replace_say(M, V, 3, "But in a very easy question — the common-mistake answer CAN be there. Like here: 1 to 9 is choice 2. Don't fall for it.",
@@ -1060,15 +1052,22 @@ def _new_practice(M):
         g = G[5 + k]
         M.new_q(g, TOPIC, stem, ch, c, ex, figure=fig)
         M.place_q(g, PRACTICE)
-    # p10 (tangent circles - not similarity) and p15 (a near-duplicate of p21) leave the set
-    M.unplace('geo36-core-p10')
-    M.unplace('geo36-core-p15')
+    # pass 2: p10 and p15 are originals and stay (restored)
+    M.set_q('geo36-core-p10', stem='A disk is inscribed in a semicircle of radius $6$ cm. It is tangent to the diameter at its midpoint O and tangent internally to the semicircular arc. What fraction of the semicircle\u2019s area lies outside the disk?',
+            expl=['The disk touches the diameter at O, so its center lies directly above O, at a distance equal to its radius $r$.',
+                  'It also touches the arc from the inside, so the distance from O to its center is $6-r$. Therefore $r=6-r$, and $r=3$.',
+                  'The semicircle: $\\frac{\\pi\\cdot6^2}{2}=18\\pi$. The disk: $\\pi\\cdot3^2=9\\pi$. Outside the disk: $18\\pi-9\\pi=9\\pi$.',
+                  'The fraction is $\\frac{9\\pi}{18\\pi}=\\frac12$.'])
+    M.set_q('geo36-core-p15', stem='A regular heptagon with side $2$ cm has area $a$ cm². What is the area of a regular heptagon with side $5$ cm (in cm²)?',
+            expl=['Regular heptagons are similar. The ratio of the sides is $5:2$, so every length is multiplied by $\\frac52$.',
+                  'Areas use the square: $\\left(\\frac52\\right)^2=\\frac{25}{4}$.',
+                  'The new area is $\\frac{25}{4}\\cdot a=\\frac{25a}{4}$ cm².'])
 
 
 def _practice(M):
     p = lambda n: 'geo36-core-p%02d' % n
-    order = [p(5), p(26), p(6), p(13), p(8), p(21), p(12), G[5], p(2), p(22), G[15], p(20), G[14], p(11),
-             G[7], p(23), G[17], G[6], p(25), p(7), p(16), p(4), p(1), p(9), p(14), G[13], G[11], G[9],
+    order = [p(5), p(26), p(6), p(13), p(8), p(15), p(21), p(12), G[5], p(2), p(22), G[15], p(20), G[14], p(11),
+             G[7], p(23), G[17], G[6], p(25), p(7), p(16), p(4), p(1), p(9), p(10), p(14), G[13], G[11], G[9],
              G[10], G[8], G[16], p(24), p(27), G[12], p(17), p(3), p(18), p(19)]
     if 'geo35-core-p27' in M.D['questions'] and M.section_of('geo35-core-p27') == PRACTICE:   # moved here by t35
         order.insert(order.index(G[8]) + 1, 'geo35-core-p27')
@@ -1144,3 +1143,82 @@ def _sync_stem_copies(M):
         for b in v['beats']:
             if (b.get('canvas') or '').startswith('Pre-loaded — question'):
                 b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, q['stem'])
+
+
+# ------------------------------------------------------------------------------------------------
+# Pass 2: summary lesson right before the practice
+# ------------------------------------------------------------------------------------------------
+def summary(M):
+    sb = ['Length, area, volume', 'Always similar?', 'Similar triangles', 'The exam pictures', 'Same height',
+          'Parts and leftovers', 'Similar solids', 'Percent change', 'Map scale', 'Before you practice']
+    S = lambda k, script: dict(title=sb[k], mode='concept', active=k, pre=[], script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice — a quick summary of similarity.",
+            "Everything important, one idea at a time."]),
+        S(0, [
+            A("'Length k · area k² · volume k³' appears", T('Length $k$ $\\cdot$ area $k^2$ $\\cdot$ volume $k^3$', size=48, gap=30)),
+            "Similar shapes: every matching line has the same ratio — sides, heights, diagonals, perimeters, circumferences.",
+            "Areas — square it. Volumes — cube it.",
+            A("'2 : 3 → 4 : 9 → 8 : 27' appears", T('Linear $2:3$ $\\rightarrow$ area $4:9$ $\\rightarrow$ volume $8:27$', size=42, gap=30)),
+            A("'Area 25 : 49 → linear 5 : 7' appears", T('Back: area $25:49$ $\\rightarrow$ linear $5:7$ (square root)', size=40)),
+            "Going back from areas to lengths? Take the square root."]),
+        S(1, [
+            A("'Always similar' appears", T('Always similar: circles · squares · equilateral triangles · regular polygons (same number of sides) · cubes · spheres', size=34, gap=30)),
+            "Some shapes are always similar: circles, squares, equilateral triangles, regular polygons with the same number of sides. Cubes and spheres too.",
+            A("'NOT always' appears", T('NOT always: rectangles · rhombuses · isosceles triangles · right triangles', size=36, gap=30)),
+            "Others are not. A rectangle needs both dimensions to grow by one factor.",
+            A("'Man with glasses' appears", T('Man with glasses: top leftover $=$ one small circle', size=40)),
+            "And the man with glasses: the top leftover is exactly one small circle."]),
+        S(2, [
+            A("'Two equal angles → similar' appears", T('Two equal angles $\\rightarrow$ similar triangles', size=44, gap=30)),
+            "Two equal angles are enough. The third completes to 180.",
+            A("'Match sides opposite equal angles' appears", T('Match sides opposite equal angles — make a small–big table', size=38, gap=30)),
+            "Match the sides by the angles, not by left and right. Then make the small–big table.",
+            "Stuck on what matches what? Plug in an easy angle, like 20 degrees, and follow it."]),
+        S(3, [
+            A("'Parallel to the base' appears", T('Parallel line: part to part ✓ · the segment $\\leftrightarrow$ the WHOLE side', size=36, gap=30)),
+            "A line parallel to the base: part to part is fine. The parallel segment itself — always against the whole side.",
+            A("'Hourglass' appears", T('Hourglass: parallel lines, two similar triangles', size=40, gap=30)),
+            A("'Altitude to the hypotenuse' appears", T('Altitude to the hypotenuse: $h^2=p\\cdot q$ · $\\text{leg}^2=\\text{its part}\\cdot\\text{hypotenuse}$', size=36)),
+            "The altitude to the hypotenuse: parts 9 and 16 — the altitude squared is 144. It's 12."]),
+        S(4, [
+            A("'Same height → area ratio = base ratio' appears", T('Same height, NOT similar $\\rightarrow$ area ratio $=$ base ratio', size=40, gap=30)),
+            "Not similar, but the same height? The areas follow the bases. No squaring! 2 to 3 stays 2 to 3.",
+            A("'Trapezoid: a², ab, ab, b²' appears", T('Trapezoid with its diagonals, bases $a$, $b$: $a^2,\\ ab,\\ ab,\\ b^2$', size=38)),
+            "A trapezoid with its diagonals: the hourglass triangles are a squared and b squared. The side triangles — a times b each."]),
+        S(5, [
+            A("'Leftover = whole − part' appears", T('Leftover $=$ whole $-$ part: $1:9$ $\\rightarrow$ $1:8$', size=42, gap=30)),
+            "Read what they compare. The small disk to the whole big disk — 1 to 9. To what's left — 1 to 8.",
+            A("'Work in units' appears", T('Small $9$ units, whole $25$ $\\rightarrow$ trapezoid $25-9=16$', size=40)),
+            "Work in units: square the ratio, subtract, and then find what one unit is worth."]),
+        S(6, [
+            A("'Similar solids: the radius AND the height' appears", T('Similar solids: every edge — the radius AND the height', size=40, gap=30)),
+            A("'Only one changes: multiply the factors' appears", T('Radius $\\times n\\rightarrow$ volume $\\times n^2$ · height $\\times n\\rightarrow$ volume $\\times n$', size=38, gap=30)),
+            "Only one dimension changes? It's not similar. Multiply the separate factors: radius times 2, height times 5 — volume times 20.",
+            A("'Half the height → 1/8' appears", T('Cone filled to half its height $\\rightarrow\\left(\\frac12\\right)^3=\\frac18$', size=40)),
+            "A cone filled to half its height holds only one eighth."]),
+        S(7, [
+            A("'Percent → factor → power → percent' appears", T('Percent $\\rightarrow$ factor $\\rightarrow$ power $\\rightarrow$ back to percent', size=40, gap=30)),
+            "Percents: turn them into a factor first.",
+            A("'+10%: area +21%, volume +33.1%' appears", T('Sides $+10\\%$: area $\\times1.21$ ($+21\\%$) · volume $\\times1.331$ ($+33.1\\%$)', size=38, gap=30)),
+            A("'× 4 = +300%' appears", T('Volume $\\times4$ $=$ an increase of $300\\%$', size=40)),
+            "And a factor is not a percent: times 4 is an increase of 300 percent."]),
+        S(8, [
+            A("'Scale 1 : n' appears", T('Scale $1:n$: lengths $\\times n$ · areas $\\times n^2$', size=44, gap=30)),
+            "A map is a similar copy. Lengths times n, areas times n squared.",
+            A("'One map cm first' appears", T('Change ONE map cm into the real unit first — then square for areas', size=38, gap=30)),
+            A("'cm ÷ 100 → m ÷ 1000 → km' appears", T('cm $\\div100\\rightarrow$ m $\\div1000\\rightarrow$ km', size=42)),
+            "Scale 1 to 40,000: one centimeter is 0.4 kilometers. One square centimeter — 0.16 square kilometers."]),
+        S(9, [
+            "Before you start, always ask yourself:",
+            A('Check 1 appears', T('Similar or not? (same angles — or every length, one factor)', size=36, gap=24)),
+            A('Check 2 appears', T('Length, area or volume? $k$, $k^2$ or $k^3$', size=36, gap=24)),
+            A('Check 3 appears', T('What matches what? Opposite equal angles — the WHOLE side', size=36, gap=24)),
+            A('Check 4 appears', T('Part or leftover — what exactly do they compare?', size=36, gap=24)),
+            A('Check 5 appears', T('Percent or scale? Turn it into a factor first', size=36)),
+            "And the traps: squaring shapes that aren't similar, the parallel segment against a part, and 20 percent times 3.",
+            "Now it's your turn. Good luck!"]),
+    ]
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == LEARN][-1]
+    M.new_video('r26-t36-summary', TOPIC, 'Summary: Similarity', sb, slides, LEARN, after=last)

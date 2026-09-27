@@ -71,3 +71,23 @@ I solved every new or changed question again with exact arithmetic. Each has exa
 - **x² before exponents.** The lesson example and Q7 use x² = 36 and x² = 100 (known squares, positive root given). Exponents are formally taught only in Topic 8. Check that this is acceptable.
 - **Not done:** a guided example for q-157 (expanding (m+1)(n+1)). Expanding brackets is taught in Topics 4 and 5, so I kept it as an exam-level practice item with a full solution.
 - **Tool limitation.** `tmp_check/view/t6.md` takes question text from the exported site (`content/full-course/topics/t6.json`), not from the patched data. The questions there still show the old text until the site is re-exported. The videos in that file do reflect the patch. I checked the questions with a direct dump of the patched data instead.
+
+## Pass 2 (2026-09-27, teacher-approved remove/restore plan + summary lessons)
+**Removed:** nothing (the plan keeps every addition, including q-r26-t06-15 and q-r26-t06-17).
+
+**Restored:**
+- 13 practice questions are back, cleaned up (TeX, "Given:" with stacked equations in `cases`, full numeric solutions), and placed easy to hard:
+  - Single-equation practice: alg-extra-unit-t6-4-1, -4-2, -4-3, -4-5
+  - Systems practice: alg-extra-unit-t6-2-1, -2-2, -2-5, -2-6, -2-7
+  - Mixed practice: q-141, alg-extra-unit-t6-1-1, -1-2, -1-3
+- q-156: the original choices One / Two / Seven / The equation has no solution (key: One).
+- q-171: the original distractors 31 and 21 (the choices are 1, 31, 21, 2; key 1).
+- Systems Recap: the board line is now "No match → multiply WHOLE equations to match coefficients". This brings back the original line "Multiply WHOLE equations to match coefficients".
+
+**Summary lessons added (the topic is learn → practice → learn → practice, so there are two):**
+- `r26-t06-summary`, "Summary: One Equation". It comes at the end of "Single equations", before the single-equation practice, and has 10 slides: Summary · Same on both sides · Brackets and fractions · Minus before a fraction · x cancels · x in the denominator · Cross-multiply · Don't divide by x · Test the choices · Before you practice.
+- `r26-t06-summary-2`, "Summary: Systems of Equations". It comes at the end of "Systems of equations", before the systems practice, and has 8 slides: Summary · Two equations · Substitution · Add or subtract · Match coefficients · Ask what they want · Multiply equations · Before you practice.
+
+**Small fix:** the title slides of the four new guided videos now keep the lesson name as the slide label. The big title still shows the number. Before this fix, renumbering changed the label twice, so a slide was labeled "Question 4" while its big title said "Question 2".
+
+Check: `python3 math_check.py 5 6` gives 0 problems, 0 warnings for Topic 6 and 0 layout problems.

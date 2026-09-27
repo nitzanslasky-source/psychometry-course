@@ -642,6 +642,7 @@ def apply(M):
     _tools_block(M)
     _cards(M)
     _practice(M)
+    _summaries(M)
     _american(M)
     _sync_canvas(M)
 
@@ -992,13 +993,14 @@ def _lesson_videos(M):
         {'appear': len(M.slide('geo-075', 4)['items']) - 1, 'label': "'Backwards: right angle on the circle → hypotenuse = diameter' appears"})
     _draw(M, 'geo-075', 6, 'Write 2α at O on the side facing A', 'Write 2α at O, on the side of C (angle BOD that rests on arc BCD)')
     _draw(M, 'geo-075', 6, 'Write 2β for the other central angle', 'Write 2β for the other central angle BOD, on the side of A')
-    # Equal chords: a figure, no SSS proof (not taught in T31)
+    # Equal chords: a figure + the original SSS proof (pass 2: the proof is restored)
     M.set_slide('geo-075', 8, script=[
-        "One more fact that we'll use later.",
+        "One more fact from the course that we'll use later.",
         A('Two equal chords AB and CD with the radii to their ends appear', VIS(fig_equal_chords(), w=1000, h=520)),
-        "Two equal chords in the same circle. Join the ends of each chord to the center O.",
+        "In the same circle, equal chords cut off equal arcs — and equal central angles.",
+        "Join each chord's ends to the center: two triangles, radius, radius, equal chord — identical triangles. "
+        "So the central angles are equal.",
         D('Mark the equal central angles at O'),
-        "Equal chords make equal central angles — and cut off equal arcs.",
         A('Equal chords → equal central angles → equal arcs',
           T('Equal chords $\\rightarrow$ equal central angles $\\rightarrow$ equal arcs', size=40, x=410, y=650)),
         "And it works backwards too: equal arcs — equal chords.",
@@ -1039,9 +1041,6 @@ def _lesson_videos(M):
             "A right triangle has a shortcut. At the right angle, the two tangent pieces are r and r — they make a little square with the radii.",
             D('Write "legs 6, 8, hypotenuse 10 → r = (6 + 8 − 10) ÷ 2 = 2"'),
             "Legs 6 and 8, hypotenuse 10. 6 plus 8 minus 10 is 4. Half of it — the radius is 2.",
-            A('Around a circle: AB + CD = BC + AD',
-              T('Quadrilateral around a circle: $AB+CD=BC+AD$', size=34, x=1110, y=560, w=420)),
-            "The same idea works for a quadrilateral around a circle: the two pairs of opposite sides have the same sum.",
         ]),
         dict(mode='concept', active=4, title='Tangent circles', script=[
             "Two circles that touch at one point. Join the centers.",
@@ -1129,10 +1128,9 @@ def _solution_videos(M):
         "So twice x plus y is 360 minus 112 — 248. And x plus y — that's angle ABC — is 124.",
         "Again 124. But the two methods before are the ones to remember.",
     ])
-    # Q2: no cultural reference
+    # Q2
     M.set_slide('solve-geo33-g078', 2, title='Automatic: draw the radii')
-    _say(M, 'solve-geo33-g078', 2, "Always, automatically. It should be Pavlov — anyone who doesn't know who Pavlov is, look him up.",
-         "Always, automatically — every time.")
+    # pass 2: the original "Pavlov" line stays (restored)
     _item(M, 'solve-geo33-g078', 3, '$\\angle DAE=128°:2=64°$', '$\\angle DAE=\\frac{128°}{2}=64°$', '∠DAE = 128° ÷ 2 = 64°')
     # Q7
     _item(M, 'solve-geo33-g086', 2, '$\\angle OBC=(180°-80°):2=50°$', '$\\angle OBC=\\frac{180°-80°}{2}=50°$', '(180° − 80°) ÷ 2 = 50° appears')
@@ -1458,7 +1456,6 @@ def _cards(M):
         ['!Chord and center', 'the perpendicular from the center cuts a chord in half: '
                               '\\(d^2+\\left(\\frac{\\text{chord}}{2}\\right)^2=r^2\\)'],
         ['Circle inside a triangle', 'tangent pieces from each vertex are equal; right triangle: \\(r=\\frac{a+b-c}{2}\\)'],
-        ['Quadrilateral around a circle', '\\(AB+CD=BC+AD\\)'],
         ['Tangent circles', 'distance between the centers: \\(R+r\\) (from outside) or \\(R-r\\) (from inside)'],
     ]
     c['tips'] = c['tips'] + ['Distance from the center to a chord? Draw the perpendicular — it halves the chord.']
@@ -1474,9 +1471,27 @@ def _cards(M):
 # 8. Practice: remove near-duplicates, add chord / tangent / scaling / "which statement" questions, order easy -> hard
 # ------------------------------------------------------------------------------------------------
 def _practice(M):
-    # near-duplicates: "tangents -> quadrilateral 360°" (Q2, p09, p13) and "ring = big - small" (Q10, p25, adv-p08)
-    for q in ['geo33-foundation-p09', 'geo33-foundation-p13', 'geo33-foundation-p25', 'geo33-advanced-p08']:
-        M.unplace(q)
+    # pass 2: p09, p13, p25 and adv-p08 are original questions - they stay (restored, text cleaned up)
+    F = lambda q: M.q(q)['questionVisual']['svg']
+    M.set_q('geo33-foundation-p09', stem='Circles with centers K and M intersect at A and B. MA is tangent to the circle with '
+            'center K at A, and KB is tangent to the circle with center M at B. Given: $\\angle AMB=72°$. What is angle AKB?',
+            figure=_q_to_mark(F('geo33-foundation-p09'), 'α'), expl=[
+                'Radius to the point of tangency: $KA\\perp MA$ and $MB\\perp KB$, so $\\angle KAM=\\angle KBM=90°$.',
+                'The angles of quadrilateral KAMB add up to $360°$: $\\angle AKB=360°-90°-90°-72°=108°$.'])
+    M.set_q('geo33-foundation-p13', stem='ABC is an isosceles triangle. Given:\n'
+            '$\\begin{cases} AB=AC \\\\ \\angle BCA=56° \\end{cases}$\n'
+            'A circle with center O is tangent to AB and AC at D and E. What is the smaller angle DOE?',
+            figure=_q_to_mark(F('geo33-foundation-p13'), 'α'), expl=[
+                '$AB=AC$, so the base angles are equal: $\\angle A=180°-2\\cdot56°=68°$.',
+                'Radii to the points of tangency: $\\angle ADO=\\angle AEO=90°$.',
+                'The angles of quadrilateral ADOE add up to $360°$: $\\angle DOE=360°-90°-90°-68°=112°$.'])
+    M.set_q('geo33-foundation-p25', expl=[
+        'The area between the circles: $\\pi\\cdot3^2-\\pi\\cdot2^2=9\\pi-4\\pi=5\\pi$.',
+        'The smaller disk: $\\pi\\cdot2^2=4\\pi$.',
+        'The ratio: $5\\pi:4\\pi=5:4$.'])
+    M.set_q('geo33-advanced-p08', expl=[
+        'Same units first: the inner radius is $600$ m $=0.6$ km, and the outer radius is $600+100=700$ m $=0.7$ km.',
+        'Path $=$ big disk $-$ small disk: $\\pi\\cdot0.7^2-\\pi\\cdot0.6^2=\\pi(0.49-0.36)=0.13\\pi$ km².'])
 
     P = {}
     P[5] = (FOUND, 'The area of a circle is multiplied by 9. By what number is its circumference multiplied?',
@@ -1489,12 +1504,6 @@ def _practice(M):
             ['$13$', '$4$', '$5$', '$9$'], 3, [
                 'One circle inside the other, touching: the distance between the centers is the difference of the radii.',
                 '$AB=9-4=5$. (13 is the distance for circles that touch from outside.)'], fig_internal())
-    P[7] = (ADVP, 'Quadrilateral ABCD is drawn around a circle: all four sides are tangent to the circle. Given:\n'
-                  '$\\begin{cases} AB=7\\text{ cm} \\\\ BC=9\\text{ cm} \\\\ CD=12\\text{ cm} \\end{cases}$\nWhat is AD (in cm)?',
-            ['$14$', '$10$', '$16$', '$4$'], 2, [
-                'Tangent pieces from each vertex are equal. Call them a, b, c and d (from A, B, C and D).',
-                '$AB+CD=(a+b)+(c+d)$ and $BC+AD=(b+c)+(d+a)$ — both are $a+b+c+d$.',
-                '$7+12=9+AD$, so $AD=10$.'], None)
     P[8] = (ADVP, 'A circle is inscribed in triangle ABC and touches side AB at D. Given:\n'
                   '$\\begin{cases} AB=10\\text{ cm} \\\\ BC=12\\text{ cm} \\\\ CA=8\\text{ cm} \\end{cases}$\nWhat is BD (in cm)?',
             ['$5$', '$6$', '$7$', '$3$'], 3, [
@@ -1521,12 +1530,6 @@ def _practice(M):
                  'Triangle AOB: $\\frac{8\\cdot3}{2}=12$ — true.',
                  'If $\\angle AOB$ were $90°$, AB would be $5\\sqrt2\\approx7.07$, not 8. And $\\angle OAB=45°$ would need '
                  'the distance (3) to equal the half chord (4).'], None)
-    P[12] = (ADVP, 'Two circles with radii 3 cm and 5 cm meet at exactly two points. Which of the following cannot be '
-                   'the distance between their centers (in cm)?',
-             ['$3$', '$5$', '$7$', '$8$'], 4, [
-                 'At $5+3=8$ the circles touch from outside at one point only. Farther apart, they do not meet at all.',
-                 'At $5-3=2$ the small circle touches the big one from inside. Closer, they do not meet.',
-                 'Two points: the distance is between 2 and 8. 3, 5 and 7 are possible; 8 is not.'], None)
     P[13] = (ADVP, 'The radius of a circle decreases by 10%. By what percent does its area decrease?',
              ['$10\\%$', '$20\\%$', '$19\\%$', '$81\\%$'], 3, [
                  'The radius is multiplied by 0.9, so the area is multiplied by $0.9^2=0.81$.',
@@ -1539,8 +1542,171 @@ def _practice(M):
     a = lambda n: 'geo33-advanced-p%02d' % n
     g = GID
     M.practice_order(FOUND, [
-        f(1), f(10), f(12), f(2), g[5], f(24), f(6), f(14), f(26), f(7), f(21), f(19), f(20), f(18), f(17), f(23),
-        f(27), g[6], f(22), f(5), f(4), f(3), f(8), f(11), f(16), f(15)])
+        f(1), f(10), f(12), f(2), f(25), 'wp26-p10', g[5], f(24), f(6), f(14), f(26), f(7), 'wp27-p10', f(21), f(19),
+        f(20), f(18), f(17), f(23), f(27), g[6], f(22), f(5), f(4), f(3), f(8), f(9), f(11), f(13), f(16), f(15)])
     M.practice_order(ADVP, [
-        a(1), a(7), a(9), a(22), a(2), a(12), a(13), a(3), a(10), a(14), a(25), g[7], a(26), a(16), a(4), a(5), a(6),
-        a(11), a(17), a(18), a(21), g[10], g[11], g[12], g[13], a(24), g[9], a(19), a(15), g[8], a(20), a(23), a(27)])
+        a(1), a(7), a(9), a(22), a(8), a(2), a(12), a(13), a(3), a(10), a(14), a(25), a(26), a(16), a(4), a(5), a(6),
+        a(11), a(17), a(18), a(21), g[10], g[11], g[13], a(24), g[9], a(19), a(15), g[8], a(20), a(23), a(27)])
+
+
+# ------------------------------------------------------------------------------------------------
+# 9. Pass 2: summary lessons right before each practice section
+# ------------------------------------------------------------------------------------------------
+def _summaries(M):
+    last = lambda sec: [f['ref'] for f in M.D['flow'] if f['section'] == sec][-1]
+
+    # ---- 1. before the foundation practice: everything taught in "Learn and try" ----
+    sb = ['Radii', 'Central and inscribed', 'Diameter, quad', 'Chords', 'Tangents',
+          'Circle in a triangle', 'Area and circumference', 'Sectors and arcs', 'Before you practice']
+    M.new_video('r26-t33-summary', TOPIC, 'Circles: Summary', sb, [
+        dict(mode='title', title='Summary', script=[
+            "Circles — a quick summary before you practice.",
+            "Everything important from these lessons, one idea at a time.",
+        ]),
+        dict(title='Radii', mode='concept', active=0, pre=[], script=[
+            A('All radii are equal appears', T('All radii of one circle are equal $\\rightarrow$ isosceles triangles', size=40, gap=40)),
+            "Rule number one: every radius is equal.",
+            "Two radii and a chord? An isosceles triangle. They hide everywhere inside a circle.",
+            A('d = 2r appears', T('Diameter $d=2r$ — the longest chord', size=44)),
+            "The diameter is two radii. Diameter 14? The radius is 7. Switch to r before any formula.",
+        ]),
+        dict(title='Central and inscribed', mode='concept', active=1, pre=[], script=[
+            A('central = 2 × inscribed appears', T('Central $=2\\times$ inscribed (same arc)', size=48, gap=40)),
+            "The one big rule: the central angle is twice the inscribed angle on the same arc.",
+            D('Write "central 120° → inscribed 60°"'),
+            "Central 120? The inscribed angle is 60.",
+            A('same arc → equal inscribed angles appears', T('Same arc $\\rightarrow$ equal inscribed angles', size=44)),
+            "And all the inscribed angles on the same arc are equal.",
+            "First ask: which arc does the angle rest on? Stand at the vertex — the arc you see is the one.",
+        ]),
+        dict(title='Diameter, quad', mode='concept', active=2, pre=[], script=[
+            A('On a diameter: 90° appears', T('On a diameter: $\\frac{180°}{2}=90°$', size=48, gap=40)),
+            "An inscribed angle on a diameter is 90.",
+            "And backwards: a right triangle in a circle — its hypotenuse is a diameter. A rectangle — its diagonal.",
+            A('Inscribed quadrilateral: α + β = 180° appears', T('Inscribed quadrilateral: opposite angles $\\alpha+\\beta=180°$', size=40)),
+            "All four vertices on the circle? Opposite angles add up to 180. 70 here — 110 across.",
+        ]),
+        dict(title='Chords', mode='concept', active=3, pre=[], script=[
+            A('Equal chords → equal central angles → equal arcs appears',
+              T('Equal chords $\\rightarrow$ equal central angles $\\rightarrow$ equal arcs', size=38, gap=40)),
+            "Equal chords cut off equal arcs and equal central angles. And backwards too.",
+            A('d² + (chord/2)² = r² appears', T('$d^2+\\left(\\frac{\\text{chord}}{2}\\right)^2=r^2$', size=50, gap=30)),
+            "The distance from the center to a chord? Draw the perpendicular. It cuts the chord in half.",
+            D('Write "r = 13, d = 5 → half chord 12 → chord 24"'),
+            "Radius 13, distance 5: half the chord is 12. The whole chord — 24.",
+        ]),
+        dict(title='Tangents', mode='concept', active=4, pre=[], script=[
+            A('Radius ⊥ tangent appears', T('Radius to the point of tangency $\\perp$ tangent', size=42, gap=40)),
+            "See a tangent? Draw the radius to the point of tangency. Automatically. 90 degrees.",
+            A('Two tangents from one point are equal appears', T('Two tangents from one point are equal $\\rightarrow$ a kite', size=40)),
+            "Two tangents from one point are equal. With the radii, they make a kite.",
+            "The kite has two right angles, so the other two angles add up to 180.",
+        ]),
+        dict(title='Circle in a triangle', mode='concept', active=5, pre=[], script=[
+            A('Equal tangent pieces appears', T('Circle inside a triangle: equal tangent pieces from each vertex', size=38, gap=30)),
+            "A circle inside a triangle: from each vertex, two equal tangent pieces.",
+            A('Right triangle: r = (a + b − c)/2 appears', T('Right triangle: $r=\\frac{a+b-c}{2}$', size=46, gap=40)),
+            "Right triangle? Leg plus leg minus hypotenuse, over 2. Legs 6 and 8, hypotenuse 10 — r is 2.",
+            A('Tangent circles: R + r or R − r appears', T('Tangent circles: $d=R+r$ (outside) $\\cdot$ $d=R-r$ (inside)', size=38)),
+            "Two circles touch? Join the centers. Outside each other — R plus r. One inside the other — R minus r.",
+        ]),
+        dict(title='Area and circumference', mode='concept', active=6, pre=[], script=[
+            A('S = πr², C = 2πr appears', T('$S=\\pi r^2\\qquad C=2\\pi r$', size=56, gap=40)),
+            "Area: π r squared. Circumference: 2π r. Given the area or the circumference? Go back to r first.",
+            "π is a bit more than 3. If the answers have π — keep the π.",
+            A('r × k → C × k, S × k² appears', T('$r\\times k\\ \\Rightarrow\\ C\\times k,\\ \\ S\\times k^2$', size=46, gap=30)),
+            "Lengths grow like the radius, areas like the radius squared. Radius plus 20 percent — area plus 44.",
+            A('Turns = distance ÷ circumference appears', T('Wheel: turns $=\\frac{\\text{distance}}{\\text{circumference}}$ — same units!', size=38)),
+            "And a wheel: one turn is one circumference. Change the units first.",
+        ]),
+        dict(title='Sectors and arcs', mode='concept', active=7, pre=[], script=[
+            A('Which fraction of the circle? appears', T('Which fraction of the circle is it?', size=48, gap=40)),
+            "Sectors and arcs: skip the formula. Ask which part of the circle it is.",
+            A('angles to know appears', T('$90°=\\frac14\\quad60°=\\frac16\\quad72°=\\frac15\\quad45°=\\frac18\\quad120°=\\frac13$', size=44, gap=40)),
+            "90 is a quarter, 60 a sixth, 72 a fifth, 45 an eighth, 120 a third.",
+            D('Write "r = 6, 60°: sector 36π ÷ 6 = 6π · arc 12π ÷ 6 = 2π"'),
+            "A sector — part of the area. An arc — part of the circumference.",
+            A('Sector perimeter = arc + 2r appears', T('Sector perimeter $=$ arc $+\\,2r$', size=44)),
+            "And the perimeter of a sector is the arc plus two radii.",
+        ]),
+        dict(title='Before you practice', mode='concept', active=8, pre=[], script=[
+            "Before each question, ask yourself:",
+            A('check 1 appears', T('Did I draw the helper lines? Radii, the radius to a tangent point, the line between the centers.', size=34, gap=24)),
+            A('check 2 appears', T('Which arc does the angle rest on — the minor or the major one?', size=34, gap=24)),
+            A('check 3 appears', T('Radius or diameter? Area or circumference? Arc or perimeter?', size=34, gap=24)),
+            A('check 4 appears', T('Is it really an inscribed quadrilateral — are all four vertices on the circle?', size=34, gap=24)),
+            "The common traps: 180 minus a central angle when the center is not on the circle, forgetting that area grows like r squared, and mixing up the radius and the diameter.",
+            "You know all of this. Now practice.",
+        ]),
+    ], LEARN1, after=last(LEARN1))
+
+    # ---- 2. before the advanced practice: everything taught in "Further guided examples" ----
+    sb = ['Shaded areas', 'Segments', 'Nested shapes', 'Special triangles', 'Tangent and ring',
+          'The whole, not the parts', 'Numbers and estimates', 'Before you practice']
+    M.new_video('r26-t33-summary-2', TOPIC, 'Advanced Circles: Summary', sb, [
+        dict(mode='title', title='Summary', script=[
+            "Advanced circles — a quick summary before you practice.",
+            "The tools for the hardest circle questions, one at a time.",
+        ]),
+        dict(title='Shaded areas', mode='concept', active=0, pre=[], script=[
+            A('Shaded = what minus what? appears', T('Shaded area: what minus what?', size=50, gap=40)),
+            "A shaded region? Don't calculate it directly. Build a scheme: which shape minus which shape.",
+            D('Write "triangle 16 − quarter circle 4π = 16 − 4π"'),
+            "A triangle with area 16, minus a quarter circle of 4π: the shaded part is 16 minus 4π.",
+            "Overlapping circles? Split the region into pieces you know — or add both and take away the overlap.",
+        ]),
+        dict(title='Segments', mode='concept', active=1, pre=[], script=[
+            A('Segment = sector − triangle appears', T('Segment $=$ sector $-$ triangle', size=50, gap=40)),
+            "The region between a chord and its arc: the sector, minus the triangle.",
+            D('Write "r = 6, 60°: 6π − 9√3"'),
+            "Radius 6, angle 60: the sector is 6π. The triangle is equilateral — 9 root 3.",
+            A('Two equal circles through each other’s centers appears',
+              T('Two equal circles, each through the other’s center: $120°$, common region $=2$ segments', size=36)),
+            "Two equal circles through each other's centers: two equilateral triangles, 120 degrees, and two segments.",
+        ]),
+        dict(title='Nested shapes', mode='concept', active=2, pre=[], script=[
+            A('square · circle · square appears', T('Square $\\cdot$ circle $\\cdot$ square: area $\\times2$', size=44, gap=30)),
+            A('circle · square · circle appears', T('Circle $\\cdot$ square $\\cdot$ circle: area $\\times2$', size=44, gap=30)),
+            A('triangle · circle · triangle appears', T('Triangle $\\cdot$ circle $\\cdot$ triangle: area $\\times4$', size=44, gap=40)),
+            "Three nested objects to know by heart. Square in a circle in a square — twice. Circle, square, circle — twice. Equilateral triangles — four times.",
+            "Anything else inside a circle? Write every length with r.",
+            "And careful: a length factor is not an area factor. Root 2 for lengths is 2 for areas.",
+        ]),
+        dict(title='Special triangles', mode='concept', active=3, pre=[], script=[
+            A('30°-60°-90° appears', T('$30°$-$60°$-$90°$: $\\ x,\\ x\\sqrt3,\\ 2x$', size=48, gap=30)),
+            A('45°-45°-90° appears', T('$45°$-$45°$-$90°$: $\\ x,\\ x,\\ x\\sqrt2$', size=48, gap=40)),
+            "Radii and tangents make right triangles all the time.",
+            "A leg that is half of the hypotenuse? That's the 30-60-90 triangle. Two equal legs? 45-45-90.",
+            "Two radii and a 60-degree angle? An equilateral triangle.",
+        ]),
+        dict(title='Tangent and ring', mode='concept', active=4, pre=[], script=[
+            A('DC² + (R − r)² = (R + r)² appears', T('Common tangent: $DC^2+(R-r)^2=(R+r)^2$', size=42, gap=30)),
+            "A line touches two touching circles: radii to the line, join the centers, cut off a right triangle.",
+            A('Touching: DC = 2√(Rr) appears', T('Touching circles: $DC=2\\sqrt{Rr}$', size=44, gap=40)),
+            "Radii 8 and 2: 2 root 16 — 8.",
+            A('Ring = πh² appears', T('Chord of a ring: ring $=\\pi h^2$ ($h=$ half the chord)', size=40)),
+            "A chord of the big circle that touches the small one? The ring is π times half the chord, squared.",
+        ]),
+        dict(title='The whole, not the parts', mode='concept', active=5, pre=[], script=[
+            A('Find the total directly appears', T('They ask for a total? Find the total directly.', size=44, gap=40)),
+            "Two arcs together, two sectors together — you often can't find each one. You don't need to.",
+            D('Write "6α + 6β = 360° → α + β = 60°"'),
+            "Six α and six β make a full turn: α plus β is 60. That's all we need.",
+        ]),
+        dict(title='Numbers and estimates', mode='concept', active=6, pre=[], script=[
+            A('Plug in numbers appears', T('Letters in the answers? Plug in numbers: $r=2$, $\\alpha=30$', size=40, gap=30)),
+            "Letters in the question? Choose easy numbers, solve, and test the choices.",
+            A('Estimate appears', T('Estimate: $\\pi\\approx3.14$, a circle $<$ the square around it', size=40, gap=30)),
+            "Estimate sizes to cross out choices. An area can't be negative. A circle is smaller than the square around it.",
+            "And a ratio of two lengths can't contain r.",
+        ]),
+        dict(title='Before you practice', mode='concept', active=7, pre=[], script=[
+            "Before each question, ask yourself:",
+            A('check 1 appears', T('What minus what? Write the scheme before you calculate.', size=34, gap=24)),
+            A('check 2 appears', T('Which helper lines? Radii, the line between the centers, a perpendicular.', size=34, gap=24)),
+            A('check 3 appears', T('Is a special triangle hiding here: equilateral, 30-60-90 or 45-45-90?', size=34, gap=24)),
+            A('check 4 appears', T('Can I plug in numbers or estimate to cross out choices?', size=34, gap=24)),
+            "The common traps: treating a triangle as a right triangle when it isn't, taking the wrong fraction of the circle, and a length factor used for an area.",
+            "You know all of this. Now practice.",
+        ]),
+    ], LEARN2, after=last(LEARN2))

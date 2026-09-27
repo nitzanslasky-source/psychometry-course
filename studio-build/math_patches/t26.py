@@ -221,7 +221,7 @@ def apply(M):
     _fix_draw(M, V, 2, 'In row 3 write "12x"', 'In the last row write "12x"')
     M.edit_lines(V, 2, lambda ls: [dict(l, say="The table: samples and minutes. Row one is what they give us: x samples in y minutes. Now the rate triples.")
                                    if l.get('say', '').startswith('The robot packs x samples') else l for l in ls])
-    M.set_slide(V, 3, title='Method 2 · Rate × time', script=[
+    M.set_slide(V, 3, title='Method 3 · Rate × time', script=[
         "Or use the formula. Rate is work over time.",
         D('Write "rate = x/y samples per minute"'),
         "x samples in y minutes: x over y per minute.",
@@ -232,7 +232,7 @@ def apply(M):
         "Careful: the two changes multiply — three times four. Don't add them to seven.",
         D('Circle choice 2'),
     ])
-    M.insert_slides(V, 3, [dict(mode='question', active=0, title='Method 3 · Plug in numbers', pre=[Q('wp26-g093')], script=[
+    M.insert_slides(V, 3, [dict(mode='question', active=0, title='Method 4 · Plug in numbers', pre=[Q('wp26-g093')], script=[
         "Letters in the answers? Plug in easy numbers.",
         D('Write "x = 6, y = 2 → 3 per minute"'),
         "Say six samples in two minutes. That's three a minute.",
@@ -242,6 +242,17 @@ def apply(M):
         "Now put x equals six into each choice. Only twelve x gives seventy-two.",
         D('Circle choice 2'),
         "Pick numbers that are not zero or one, and not equal to each other. Then only one choice survives.",
+    ])])
+
+    # Pass 2: the original "Method 2 · Triple value" is back, named "triangle value" as in the ratio topic
+    M.insert_slides(V, 2, [dict(mode='question', active=0, title='Method 2 · Triangle value', pre=[Q('wp26-g093')], script=[
+        "Ratios not your thing? Use the triangle value: multiply along the diagonal and divide by what's left.",
+        D('Write "? = (4y · 3x) ÷ y"'),
+        "Four y times three x, divided by y.",
+        D('Cancel the y\'s and write "= 12x"'),
+        "The y's cancel. Twelve x.",
+        "Careful: the two changes multiply — three times four. Don't add them to seven.",
+        D('Circle choice 2'),
     ])])
 
     # Q2 (g095)
@@ -515,7 +526,9 @@ def apply(M):
     S('wp26-p01', stem='Eva folds 4 boxes in 6 minutes. Max labels 5 boxes in 8 minutes. Each of them works for 24 minutes at these constant rates. What is the total number of boxes folded by Eva and boxes labeled by Max?',
       expl=['Eva: $24=4\\times6$, so she folds $4\\times4=16$ boxes. Max: $24=3\\times8$, so he labels $3\\times5=15$ boxes.',
             'Total: $16+15=31$.'])
-    M.unplace('wp26-p02')   # near-copy of guided Q1
+    # Pass 2: p02, p14, p15 restored (originals)
+    S('wp26-p02', stem='Printer A produces $x$ posters per hour. Printer B is 3 times as fast. How many posters does B produce in 4 hours?',
+      expl=['B produces $3x$ posters per hour.', 'In 4 hours: $4\\cdot3x=12x$ posters.'])
     S('wp26-p03', expl=['Small: $3\\div6=\\frac12$ hour. Large: $5\\div4=1\\frac14$ hours.',
                         'Total: $\\frac12+1\\frac14=1\\frac34$ hours = 1 hour 45 minutes.'])
     S('wp26-p04', expl=['Seven packers make 96 more items than three packers because of the $7-3=4$ extra packers.',
@@ -530,21 +543,25 @@ def apply(M):
                         'Ten workers: $100\\div10=10$ days.'])
     S('wp26-p09', expl=['Plain: $48\\div24=2$ days. Decorated: $48\\div8=6$ days.',
                         'Average rate $=$ total work $\\div$ total time $=96\\div8=12$ mugs per day (not the average of 24 and 8, which is 16).'])
+    # Pass 2: p10 back to the original circular floor (uses circle area) -> moved to the T33 practice.
+    # The half-smooth, half-rough version stays in T26 as q-r26-t26-13 (added with the new practice below).
     S('wp26-p10',
-      stem='A machine paints 600 m² per hour on a smooth surface. On a rough surface its rate is halved. A floor of 600 m² is half smooth and half rough. How many minutes does the machine need to paint the whole floor?',
-      choices=['60', '80', '90', '120'], correct=3,
-      expl=['Smooth half: $300\\div600=\\frac12$ hour. Rough half: the rate is 300 m² per hour, so $300\\div300=1$ hour.',
-            'Total: $1\\frac12$ hours $=90$ minutes. Trap: the average rate, 450 m² per hour, gives 80 minutes — but the machine spends more time at the slow rate.'])
+      stem='A machine paints 600 m² per hour on a smooth surface. On a rough surface its rate is halved. How many hours does it need to paint a rough circular floor of radius 15 meters?',
+      expl=['On the rough surface the rate is $600\\div2=300$ m² per hour.',
+            'The floor area is $\\pi\\cdot15^2=225\\pi$ m². Time $=$ work $\\div$ rate $=\\frac{225\\pi}{300}=\\frac{3\\pi}{4}$ hours.'])
+    M.move('wp26-p10', 'geo33-foundation-practice')
     S('wp26-p11', expl=['A: $\\frac16$ of the tank per hour. B: $\\frac1{12}$. Together: $\\frac2{12}+\\frac1{12}=\\frac3{12}=\\frac14$, so 4 hours.',
                         'Shortcut: $\\frac{6\\cdot12}{6+12}=\\frac{72}{18}=4$.'])
-    S('wp26-p12', stem='A robot seals p envelopes in q minutes at a constant rate. How many minutes does it need to seal n envelopes?',
-      choices=['$\\frac{nq}{p}$', '$\\frac{np}{q}$', '$\\frac{pq}{n}$', '$\\frac{n}{pq}$'], correct=1,
-      expl=['Rate: $\\frac pq$ envelopes per minute. Time $=$ work $\\div$ rate $=n\\div\\frac pq=\\frac{nq}p$.',
-            'Check with numbers: $p=2$, $q=10$, $n=4$. Two envelopes take 10 minutes, so four take 20 minutes, and $\\frac{4\\cdot10}2=20$ ✓.'])
+    S('wp26-p12', stem='A robot seals $p$ envelopes in $q$ minutes at a constant rate. How many minutes does it need to seal $2q$ envelopes?',
+      expl=['One envelope takes $\\frac qp$ minutes. For $2q$ envelopes: $2q\\cdot\\frac qp=\\frac{2q^2}{p}$ minutes.',
+            'Check with numbers: $p=2$, $q=10$. One envelope takes $5$ minutes, and $2q=20$ envelopes take $100$ minutes. $\\frac{2\\cdot10^2}{2}=100$ ✓.'])
     S('wp26-p13', expl=['The team works $5\\times2=10$ worker-hours for 8 crates. One crate: $10\\div8=1.25$ worker-hours.',
                         'One worker needs 1.25 hours $=75$ minutes.'])
-    M.unplace('wp26-p14')   # same as guided Q9 with other numbers
-    M.unplace('wp26-p15')   # same as guided Q6 with other numbers
+    S('wp26-p14', expl=['The three hoses fill $\\frac15$ of the tank per hour. The two hoses fill $\\frac1{10}$ per hour.',
+                        'The third hose fills the difference: $\\frac15-\\frac1{10}=\\frac2{10}-\\frac1{10}=\\frac1{10}$ of the tank per hour.'])
+    S('wp26-p15', stem='Three expert sorters process twice as many letters per hour as four trainees. What is one expert’s rate divided by one trainee’s rate?',
+      expl=['Let $e$ be the rate of one expert and $t$ the rate of one trainee.',
+            'The experts are twice as fast, so the 2 goes on the smaller side: $3e=2\\cdot4t=8t$. Divide by $3t$: $\\frac et=\\frac83$.'])
     S('wp26-p16', expl=['Four slow cycles: $4\\times\\frac35=\\frac{12}5$ seconds.',
                         'Seven fast cycles take the same time, therefore one fast cycle takes $\\frac{12}5\\div7=\\frac{12}{35}$ second.'])
     S('wp26-p17', expl=['One scanner: $\\frac LM$ pages per hour. D scanners: $\\frac{DL}M$ pages per hour.',
@@ -614,6 +631,11 @@ def apply(M):
          ['4.5', '8.5', '7.5', '9'], 2,
          ['The job: $12\\times10=120$ worker-days. First 4 days: $12\\times4=48$. Left: $120-48=72$.',
           'Now $12+4=16$ workers: $72\\div16=4.5$ more days. The whole job: $4+4.5=8.5$ days. (4.5 is only the part after they join.)']),
+        ('q-r26-t26-13',
+         'A machine paints 600 m² per hour on a smooth surface. On a rough surface its rate is halved. A floor of 600 m² is half smooth and half rough. How many minutes does the machine need to paint the whole floor?',
+         ['60', '80', '90', '120'], 3,
+         ['Smooth half: $300\\div600=\\frac12$ hour. Rough half: the rate is 300 m² per hour, so $300\\div300=1$ hour.',
+          'Total: $1\\frac12$ hours $=90$ minutes. Trap: the average rate, 450 m² per hour, gives 80 minutes — but the machine spends more time at the slow rate.']),
     ]
     for qid, stem, ch, cor, ex in new:
         M.new_q(qid, TOPIC, stem, ch, cor, ex)
@@ -621,14 +643,16 @@ def apply(M):
 
     M.practice_order(P, [
         # easy
-        'wp26-p06', 'wp26-p24', 'wp26-p11', 'wp26-p21', 'wp26-p03', 'wp26-p01', 'wp26-p04', 'wp26-p12', 'wp26-p17',
+        'wp26-p06', 'wp26-p02', 'wp26-p24', 'wp26-p11', 'wp26-p21', 'wp26-p03', 'wp26-p01', 'wp26-p04', 'wp26-p12', 'wp26-p17',
         'wp26-p13', 'q-r26-t26-05', 'wp26-p25',
         # medium
         'wp26-p05', 'wp26-p27', 'wp26-p08', 'wp26-p09', 'wp26-p16', 'wp26-p20', 'q-r26-t26-06', 'wp26-p18',
-        'wp26-p22', 'wp26-p23', 'q-r26-t26-10', 'q-r26-t26-11',
+        'wp26-p15', 'wp26-p14', 'wp26-p22', 'wp26-p23', 'q-r26-t26-10', 'q-r26-t26-11',
         # exam-hard
-        'wp26-p10', 'wp26-p26', 'wp26-p07', 'wp26-p19', 'q-r26-t26-07', 'q-r26-t26-12', 'q-r26-t26-09', 'q-r26-t26-08',
+        'q-r26-t26-13', 'wp26-p26', 'wp26-p07', 'wp26-p19', 'q-r26-t26-07', 'q-r26-t26-12', 'q-r26-t26-09', 'q-r26-t26-08',
     ])
+
+    summary(M)
 
     # =====================================================================================
     # 9. Cleanup: American spelling, trimmed stems, solution-video titles in sync with stems
@@ -658,3 +682,81 @@ def apply(M):
             if len(pre) == 1 and pre[0].get('k') == 'q' and b.get('canvas', '').startswith('Pre-loaded — question'):
                 qid = pre[0]['qid']
                 b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, M.q(qid)['stem'])
+
+
+def _b(label, tex, size=42):
+    """A board line that pops in (label = what the teacher sees in the script)."""
+    return A("'%s' appears" % label, T(tex, size=size))
+
+
+def summary(M):
+    """Pass 2: a summary lesson right before the practice (end of the further guided examples)."""
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == 'wp26-advanced'][-1]
+    sb = ['The formula', 'Three relationships', 'Rate in percent', 'One job = 1', 'Working together',
+          'Two workers', 'Team questions', 'Worker-hours', 'Average rate', 'Before you practice']
+    M.new_video('r26-t26-summary', TOPIC, 'Summary', sb, [
+        dict(mode='title', title='Summary', script=[
+            'A quick summary before the practice.',
+            'Everything important about work and rate — in about three minutes.']),
+        dict(title='The formula', active=0, script=[
+            _b('Rate × Time = Work', 'Rate $\\times$ Time $=$ Work'),
+            'One formula. They give you two of the three — you find the third.',
+            _b('Rate = work in ONE time unit', 'Rate $=$ work in ONE time unit: $18$ labels in $3$ min $\\to$ $6$ per minute', size=40),
+            'A rate is always "per": per minute, per hour. Work is everything you did.',
+            _b('Matching units', 'Combine only matching units: minutes $\\to$ hours: $\\div 60$'),
+            'Per hour and per minute? Convert first.']),
+        dict(title='Three relationships', active=1, script=[
+            _b('Time or rate fixed → direct', 'Time or rate fixed $\\to$ direct: rate $\\times2$ $\\to$ work $\\times2$'),
+            _b('Work fixed → inverse', 'Work fixed $\\to$ inverse: rate $\\times2$ $\\to$ time $\\times\\frac12$'),
+            'Same job, twice as fast? Half the time.',
+            _b('Two changes multiply: ×3 and ×4 → ×12', 'Two changes multiply: $\\times3$ and $\\times4$ $\\to$ $\\times12$, not $\\times7$'),
+            'Two changes at once? Multiply them. Never add them.']),
+        dict(title='Rate in percent', active=2, script=[
+            _b('Rate +25% → time −20%', 'Rate $+25\\%$ $=\\times\\frac54$ $\\to$ time $\\times\\frac45$ $=-20\\%$'),
+            'Turn the percent into a fraction. Flip it. Multiply the time.',
+            _b('Rate −20% → time +25%', 'Rate $-20\\%$ $=\\times\\frac45$ $\\to$ time $\\times\\frac54$ $=+25\\%$'),
+            'Twenty percent faster does NOT mean twenty percent less time.']),
+        dict(title='One job = 1', active=3, script=[
+            _b('One job in 5 hours → 1/5 per hour', 'One job in $5$ hours $\\to$ $\\frac15$ of the job per hour'),
+            'No job size? Call the whole job one.',
+            _b('Or pick a job size: the LCM of the times', 'Or pick a job size: the LCM of the times. $5$ h and $8$ h $\\to$ $40$ units', size=40),
+            'Five and eight hours: a job of forty units. Eight and five units per hour. No fractions.']),
+        dict(title='Working together', active=4, script=[
+            _b('Together → add the rates', 'Together $\\to$ add the rates · never the times'),
+            'Working together? Add the rates. Never add the completion times.',
+            _b('Working against → subtract its rate', 'Working against $\\to$ subtract its rate: $9-4=+5$ per minute'),
+            'A drain or a leak gets a minus.',
+            _b('Match the times first', 'Match the times first: in $12$ h, A does $3$ jobs, B does $2$'),
+            'A nice common time? Stretch both workers to it, then add.']),
+        dict(title='Two workers', active=5, script=[
+            _b('Two workers: ab/(a + b)', 'Two workers: together $=\\frac{a\\cdot b}{a+b}$ · $\\frac{4\\cdot6}{4+6}=2.4$ h'),
+            'Times over plus — for exactly two workers. Two equal workers: half the time.',
+            _b('Sense check: fastest ÷ 2 ≤ together < fastest', 'Sense check: fastest time $\\div2$ $\\le$ together $<$ fastest time'),
+            'Four and six hours: the answer is between two and four. Cross out everything outside first.']),
+        dict(title='Team questions', active=6, script=[
+            _b('Identical workers → table Team · Work · Time', 'Identical, constant rate $\\to$ table: Team · Work · Time'),
+            'Identical workers and a group? A team question. Work always sits in the middle.',
+            _b('V method', 'V: top-left $\\times$ bottom-middle $\\times$ top-right $\\div$ the other two', size=40),
+            'Question row second. Blank in Team or Time: the V. Blank in Work: the V upside down.',
+            _b('More work → more time · more workers → less time', 'More work $\\to$ more time · More workers $\\to$ less time'),
+            'Then a quick sense check of the direction.']),
+        dict(title='Worker-hours', active=7, script=[
+            _b('Worker-hours = workers × hours', 'Worker-hours $=$ workers $\\times$ hours: $3\\times4=12$'),
+            'Worker-hours measure the size of the job. One worker alone needs that many hours.',
+            _b('Phases: add each phase', 'Phases: $6\\times5+4\\times3=42$ worker-days'),
+            _b('Joins or leaves: whole − done = left', 'Joins or leaves: whole job $-$ done $=$ left, then $\\div$ the new team'),
+            'Someone joins or leaves? Whole job, minus what\'s done, is what\'s left.']),
+        dict(title='Average rate', active=8, script=[
+            _b('Average rate = total work ÷ total time', 'Average rate $=\\dfrac{\\text{total work}}{\\text{total time}}$'),
+            _b('60 at 20/h, 60 at 60/h → 120 ÷ 4 = 30, not 40', '$60$ at $20$ per hour, $60$ at $60$ per hour: $\\frac{120}{3+1}=30$, not $40$', size=40),
+            'Not the average of the rates. More time goes to the slow rate, so the answer is closer to it.']),
+        dict(title='Before you practice', active=9, script=[
+            'Before you practice, ask yourself these questions.',
+            _b('What is the work, what is the rate, what is the time?', 'What is the work? The rate? The time?'),
+            _b('What stays fixed? Direct or inverse?', 'What stays fixed? Direct or inverse?'),
+            _b('Where must the answer be?', 'Where must the answer be? Cross out first.'),
+            _b('Left, or the whole job?', 'Do they want what is LEFT, or the whole job?'),
+            _b('Letters in the answers? Plug in numbers.', 'Letters in the answers? Plug in numbers (not $0$ or $1$, not equal).'),
+            'The traps: adding times instead of rates, a percent in the rate taken as the same percent in the time, the average of two rates, and mixing minutes with hours.',
+            'Good luck.'])],
+        'wp26-advanced', after=last)

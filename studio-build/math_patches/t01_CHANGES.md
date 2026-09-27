@@ -60,3 +60,16 @@ Sidebars were updated for all three lessons that got new slides.
 - **Fast Calculation position:** it is still after the mixed practice (section 6). The review suggests moving it earlier. I left the order and moved the three questions that needed it instead.
 - **Colon line:** Mult/Div slide 3 now says that some books use ":" for division. Delete it if you prefer not to mention ":" at all.
 - The new videos use "could be true". Topic 20 uses "can be true". You may want the same word in both topics.
+
+## Pass 2 (2026-09-27, approved remove/restore plan + summary lessons)
+**Removed:** nothing (the plan keeps every Topic 1 addition).
+
+**Restored (4):**
+- q-003 ($84-36$) and q-004 ($95+(-38)$) are back in "Mixed arithmetic practice" (easy end of the order); q-033 ($63-27$) is back in "Addition and subtraction" after q-032. Their solutions are rewritten in TeX with every number shown.
+- q-018 is back in its original form, "$200\div 6=?$" with the choices $33\frac{1}{6}$ / $33\frac{1}{3}$ / $33\frac{2}{3}$ / $33\frac{5}{6}$ (key $33\frac{1}{3}$). It needs fractions, so it moves to the Topic 2 practice (`unit-t2-1`, after q-044).
+- The quotient-and-remainder version stays in Topic 1 as a new question **q-r26-t01-25** (same place in the practice order).
+
+**Summary lessons (2 new videos):**
+- `r26-t01-summary` "Summary", at the end of "4 · Order of operations", right before "Mixed arithmetic practice". Slides: Summary · Number words · Opposites · reciprocals · Exam words · Must · could · cannot · Adding signed numbers · Multiplying signs · Calculating by hand · Order of operations · Before you practice (about 2.5 min).
+- `r26-t01-summary-fast` "Summary: Fast Calculation", at the end of "6 · Fast calculation", right before "Fast-calculation practice". Slides: Summary · Sums and differences · Split a factor · Double, halve, ×25 · Near a round number · Pairs and cancelling · Special products · Percent and estimates · Before you practice (about 2 min).
+- Content is only what the Topic 1 lessons teach; the existing recap slides are unchanged.

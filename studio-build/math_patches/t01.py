@@ -135,14 +135,30 @@ def apply(M):
     S('q-017', stem='$3{,}618 \\div 18 = ?$',
       expl=['Split $3{,}618$ into $3{,}600+18$: $3{,}600\\div 18=200$ and $18\\div 18=1$.',
             'The answer is $201$. Check: $18\\cdot 201=3{,}600+18=3{,}618$.'])
-    # q-018 needed fractions (Topic 2). Now it tests the quotient and the remainder (taught in Topic 1).
-    S('q-018', stem='What are the quotient and the remainder when $200$ is divided by $6$?',
-      choices=['quotient $33$, remainder $1$', 'quotient $33$, remainder $2$',
-               'quotient $32$, remainder $8$', 'quotient $34$, remainder $2$'], correct=2,
-      expl=['$6\\cdot 33=198$, and $200-198=2$. The quotient is $33$ and the remainder is $2$.',
-            'Choice 3 is a trap: $6\\cdot 32+8=200$ is true, but $8$ is bigger than $6$. Another $6$ still fits. '
-            'The remainder must be smaller than the number you divide by.',
-            'Choice 4 is too big: $6\\cdot 34=204$, which is more than $200$.'])
+    # Pass 2 (plan): q-018 is restored in its original fraction form and moves to the Topic 2 practice (see the end of
+    # apply()). Its quotient-and-remainder version stays in Topic 1 as a new question, q-r26-t01-25.
+    S('q-018', stem='$200 \\div 6 = ?$',
+      choices=['$33\\,\\frac{1}{6}$', '$33\\,\\frac{1}{3}$', '$33\\,\\frac{2}{3}$', '$33\\,\\frac{5}{6}$'], correct=2,
+      expl=['$6\\cdot 33=198$, therefore $200\\div 6=33$ with remainder $2$.',
+            'The remainder becomes the fraction $\\frac{2}{6}$, which reduces to $\\frac{1}{3}$. The answer is $33\\,\\frac{1}{3}$.'])
+    M.new_q('q-r26-t01-25', TOPIC, 'What are the quotient and the remainder when $200$ is divided by $6$?',
+      ['quotient $33$, remainder $1$', 'quotient $33$, remainder $2$',
+       'quotient $32$, remainder $8$', 'quotient $34$, remainder $2$'], 2,
+      ['$6\\cdot 33=198$, and $200-198=2$. The quotient is $33$ and the remainder is $2$.',
+       'Choice 3 is a trap: $6\\cdot 32+8=200$ is true, but $8$ is bigger than $6$. Another $6$ still fits. '
+       'The remainder must be smaller than the number you divide by.',
+       'Choice 4 is too big: $6\\cdot 34=204$, which is more than $200$.'])
+    M.place_q('q-r26-t01-25', 'unit-t1-1', after='q-018')
+    # Pass 2 (plan): restored drill questions, cleaned up
+    S('q-003', stem='$84 - 36 = ?$',
+      expl=['Ones: $6$ is bigger than $4$. Borrow a ten: $14-6=8$.',
+            'Tens: the $8$ became $7$, and $7-3=4$. The answer is $48$. Check: $48+36=84$.'])
+    S('q-004', stem='$95 + \\left(-38\\right) = ?$',
+      expl=['Adding a negative number is the same as subtracting: $95+(-38)=95-38=57$.',
+            'The trap $133$ comes from adding $38$ instead of subtracting it.'])
+    S('q-033', stem='$63 - 27 = ?$',
+      expl=['Ones: $3-7$ does not work. Borrow a ten: $13-7=6$.',
+            'Tens: the $6$ became $5$, and $5-2=3$. The answer is $36$. Check: $36+27=63$.'])
     S('q-019', stem='$18 \\div \\left(8 - 2\\right) - \\left(-4\\right) \\cdot 3 = ?$',
       expl=['Parentheses first: $8-2=6$.',
             'Then divide and multiply: $18\\div 6=3$ and $(-4)\\cdot 3=-12$.',
@@ -843,13 +859,14 @@ def apply(M):
     U = 'unit-t1-1'
     for n in range(17, 23): M.place_q(qid(n), U)
 
-    # near-duplicates (two-digit borrowing / adding a negative) and questions that used tricks taught later
-    for q in ('q-003', 'q-004', 'q-033'): M.unplace(q)
+    # questions that used tricks taught later (Pass 2: q-003, q-004 and q-033 are no longer removed)
     for q in ('q-014', E % 3, E % 4): move_q(M, q, 'fast-practice')
 
-    M.practice_order(U, ['q-001', 'q-006', 'q-002', 'q-005', E % 1, E % 2, 'q-007', 'q-008', 'q-009', 'q-010', E % 6,
-                         'q-011', E % 5, 'q-015', 'q-016', 'q-012', 'q-013', 'q-017', 'q-018', E % 7, 'q-019', 'q-020',
+    M.practice_order(U, ['q-001', 'q-003', 'q-006', 'q-002', 'q-004', 'q-005', E % 1, E % 2, 'q-007', 'q-008', 'q-009', 'q-010', E % 6,
+                         'q-011', E % 5, 'q-015', 'q-016', 'q-012', 'q-013', 'q-017', qid(25), E % 7, 'q-019', 'q-020',
                          qid(22), qid(21), qid(17), qid(20), qid(19), qid(18)])
+    # Pass 2 (plan): the original q-018 (200 ÷ 6 = 33 1/3) needs fractions -> Topic 2 practice (ordered by t02.py)
+    M.move('q-018', 'unit-t2-1')
 
     # ============================================================================================================
     # 10. Fast-calculation practice: x9 question, exam-level estimate, easy -> hard
@@ -897,3 +914,154 @@ def apply(M):
         if r[0] == 'Times 9 / 11': r[2] = '$47\\times11=517$ · $47\\times9=423$'
     c['tips'] = ['$65^2$ means $65\\times 65$ (a number times itself).',
                  'Percent means out of a hundred: $24\\%$ of $75$ is $\\frac{24\\times 75}{100}$.']
+
+    # ============================================================================================================
+    # 12. Pass 2: summary lessons right before each practice section
+    # ============================================================================================================
+    summaries(M)
+
+
+def _last_item(M, section):
+    return [f['ref'] for f in M.D['flow'] if f['section'] == section][-1]
+
+
+def _b(label, tex, size=44):
+    """A board line that pops in (label = what the teacher sees in the script)."""
+    return A("'%s' appears" % label, T(tex, size=size))
+
+
+def summaries(M):
+    # ---- 1. everything taught in sections 1-4, right before "Mixed arithmetic practice"
+    sb = ['Number words', 'Opposites · reciprocals', 'Exam words', 'Must · could · cannot', 'Adding signed numbers',
+          'Multiplying signs', 'Calculating by hand', 'Order of operations', 'Before you practice']
+    M.new_video('r26-t01-summary', TOPIC, 'Summary', sb, [
+        dict(mode='title', title='Summary', script=[
+            'A quick summary before the mixed practice.',
+            'Everything important from the first four lessons — in about three minutes.']),
+        dict(title='Number words', active=0, script=[
+            _b('Integer: negative, zero or positive', 'Integer: negative, $0$ or positive'),
+            '"Integer" lets in negatives and zero. Don\'t read it as "positive integer."',
+            _b('Positive ≠ integer · nonzero ≠ positive', 'Positive $\\ne$ integer · Nonzero $\\ne$ positive'),
+            'Positive can be a fraction. Nonzero can be negative.',
+            _b('0: integer · even · neither + nor −', '$0$: integer · even · neither $+$ nor $-$'),
+            _b('1 is not prime · 2 is the only even prime', '$1$ is not prime · $2$ is the only even prime'),
+            'One is not prime. Two is the only even prime.',
+            'And even or odd? Only integers. One half is neither.']),
+        dict(title='Opposites · reciprocals', active=1, script=[
+            _b('Opposites: sum 0 · Reciprocals: product 1', 'Opposites: sum $0$ · Reciprocals: product $1$'),
+            'Opposites add up to zero. Reciprocals multiply to one.',
+            _b('−x is the opposite of x', 'The opposite of $x$ is $-x$: $\\ x=-4 \\to -x=4$'),
+            'Minus x is not "a negative number." If x is negative, minus x is positive.',
+            _b('10 ÷ 3 → remainder 1', '$10\\div 3$: $\\ 3\\cdot 3=9$, remainder $1$'),
+            'And a remainder is always smaller than the number you divide by.']),
+        dict(title='Exam words', active=2, script=[
+            _b('Sum + · Difference − · Product × · Quotient ÷', 'Sum $+$ · Difference $-$ · Product $\\times$ · Quotient $\\div$'),
+            'Product is times. Quotient is divided by. Don\'t mix them up.',
+            _b('3 is a divisor of 12 · 12 is a multiple of 3', '$3$ is a divisor of $12$ · $12$ is a multiple of $3$'),
+            _b('Distinct = different · at least 3: x ≥ 3', 'Distinct $=$ different · At least $3$: $x\\ge 3$'),
+            'At least and at most include the number itself.',
+            _b('Consecutive even / odd: steps of 2', 'Consecutive even / odd: steps of $2$'),
+            'A digit is one symbol. The sum of the digits of five hundred seven is twelve.']),
+        dict(title='Must · could · cannot', active=3, script=[
+            _b('Circle the word: must · could · cannot', 'Circle the word: must · could · cannot'),
+            'First, circle the word. It decides everything.',
+            _b('One failing example kills "must"', 'One failing example kills "must".'),
+            _b('One working example proves "could"', 'One working example proves "could".'),
+            _b('Test 0, 1, −1, 1/2, 10', 'Test $0,\\ 1,\\ {-1},\\ \\frac{1}{2},\\ 10$ — only allowed numbers'),
+            'Test the troublemakers. But only numbers the question allows.']),
+        dict(title='Adding signed numbers', active=4, script=[
+            _b('−(−a) = +a and +(−a) = −a', 'Two signs touching: $-(-a)=+a \\qquad +(-a)=-a$'),
+            'Two signs touching: same signs — plus. Different signs — minus.',
+            _b('9 + (−14) = 9 − 14 = −5', '$9+(-14)=9-14=-5$'),
+            'Different signs? Take the difference. The bigger one decides the sign.',
+            _b('−8 − 6 = −14', '$-8-6=-14$'),
+            'These two minus signs don\'t touch. Both push left: minus fourteen.',
+            'Name the operation first. Then use its sign rule.']),
+        dict(title='Multiplying signs', active=5, script=[
+            _b('× and ÷: same signs +, different signs −', '$\\times$ and $\\div$: same signs $\\to +$ · different signs $\\to -$'),
+            'Decide the sign first. Then do the numbers.',
+            _b('Even number of negatives +, odd −', 'Even number of negatives $\\to +$ · odd $\\to -$'),
+            _b('a · 0 = 0 · 9 ÷ 0 is undefined', '$a\\cdot 0=0 \\qquad 0\\div 9=0 \\qquad 9\\div 0$ undefined'),
+            'Anything times zero is zero. Dividing by zero means nothing.']),
+        dict(title='Calculating by hand', active=6, script=[
+            _b('17 · 8 = 80 + 56 = 136', 'Split a factor: $17\\cdot 8=80+56=136$'),
+            'Splitting is usually the fastest way.',
+            _b('576 ÷ 8 = 560 ÷ 8 + 16 ÷ 8 = 72', '$576\\div 8=\\frac{560}{8}+\\frac{16}{8}=70+2=72$'),
+            'Split the number you divide. Never the divisor.',
+            _b('8 · 47: ends in 6, a bit less than 400', '$8\\cdot 47$: ends in $6$ · a little less than $8\\cdot 50=400$'),
+            'On the exam, look at the choices. Last digit first, then a quick estimate.',
+            'Columns? Line them up, track every carry and borrow — and estimate to check.']),
+        dict(title='Order of operations', active=7, script=[
+            _b('Grouped → powers → × ÷ → + −', 'Grouped $\\to$ powers $\\to$ $\\times\\ \\div$ $\\to$ $+\\ -$'),
+            _b('24 ÷ 6 · 2 = 4 · 2 = 8', 'Same level? Left to right: $24\\div 6\\cdot 2=4\\cdot 2=8$'),
+            'Same level — left to right. Not twenty-four over twelve.',
+            _b('5 − (9 − 2) = 5 − 9 + 2 = −2', 'Minus before brackets: $5-(9-2)=5-9+2=-2$'),
+            'A minus before brackets flips every sign inside.',
+            _b('Split a numerator, never a denominator', 'A fraction bar is brackets. Split the top — never the bottom.'),
+            'The fraction bar groups the whole top and the whole bottom. Work them out first.']),
+        dict(title='Before you practice', active=8, script=[
+            'Before you practice, ask yourself these questions.',
+            _b('Which word? integer · positive · distinct · must', 'Which word? integer · positive · distinct · must'),
+            'What exactly does each word allow — and rule out?',
+            _b('Which operation? Then which sign rule?', 'Which operation? Then which sign rule?'),
+            _b('What goes first?', 'What goes first? Brackets, $\\times\\ \\div$, left to right'),
+            _b('Does the size make sense?', 'Does the size of my answer make sense?'),
+            'And the traps: two minus signs that don\'t touch, twenty-four divided by six times two, and a minus before brackets.',
+            'Take your time. Good luck.'])],
+        'order', after=_last_item(M, 'order'))
+
+    # ---- 2. fast calculation, right before "Fast-calculation practice"
+    sb = ['Sums and differences', 'Split a factor', 'Double, halve, ×25', 'Near a round number', 'Pairs and cancelling',
+          'Special products', 'Percent and estimates', 'Before you practice']
+    M.new_video('r26-t01-summary-fast', TOPIC, 'Summary: Fast Calculation', sb, [
+        dict(mode='title', title='Summary', script=[
+            'A quick summary of the fast-calculation toolkit.',
+            'Every trick finds an easier calculation with exactly the same answer.']),
+        dict(title='Sums and differences', active=0, script=[
+            _b('498 + 76 = 500 + 74 = 574', 'Sum: move an amount across: $498+76=500+74=574$'),
+            'A sum stays the same when you move an amount from one part to the other.',
+            _b('903 − 487 = 916 − 500 = 416', 'Difference: shift both: $903-487=916-500=416$'),
+            'A difference stays the same when you add the same amount to both numbers.',
+            'Don\'t mix them up. That\'s the trap.']),
+        dict(title='Split a factor', active=1, script=[
+            _b('36 × 15 = 360 + 180 = 540', '$36\\times 15=36\\times(10+5)=360+180=540$'),
+            'Split one factor into easy pieces.',
+            _b('47 × 11 = 470 + 47 = 517', '$\\times 11$: $\\ 47\\times 11=470+47=517$'),
+            _b('47 × 9 = 470 − 47 = 423', '$\\times 9$: $\\ 47\\times 9=470-47=423$'),
+            'Times eleven: times ten plus one copy. Times nine: times ten minus one copy.']),
+        dict(title='Double, halve, ×25', active=2, script=[
+            _b('16 × 35 = 8 × 70 = 560', 'Double and halve: $16\\times 35=8\\times 70=560$'),
+            'Halve one factor, double the other. The product doesn\'t move.',
+            'Sixteen halves to eight. Thirty-five doubles to seventy. Eight seventies: five sixty.',
+            _b('×25 = ×100 ÷ 4 · ×125 = ×1000 ÷ 8', '$\\times 25=\\times 100\\div 4 \\qquad \\times 125=\\times 1000\\div 8$'),
+            _b('44 × 25 = 11 × 100 = 1,100', '$44\\times 25=11\\times 100=1{,}100$'),
+            'Divide first, and the numbers stay small.']),
+        dict(title='Near a round number', active=3, script=[
+            _b('97 × 42 = 4,200 − 126 = 4,074', '$97\\times 42=(100-3)\\times 42=4{,}200-126=4{,}074$'),
+            'Round to a hundred, then correct.',
+            'A hundred forty-twos is forty-two hundred. That is three forty-twos too many — one twenty-six.',
+            'Rounded up? The easy product is too big — subtract. Rounded down? Add.']),
+        dict(title='Pairs and cancelling', active=4, script=[
+            _b('8 × 37 × 125 = 1,000 × 37', 'Friendly pairs: $8\\times 37\\times 125=1{,}000\\times 37=37{,}000$'),
+            'Look for pairs that make a round number: eight and one twenty-five, four and twenty-five, two and fifty, five and twenty.',
+            _b('Products over products: cancel first', 'Products over products: cancel first: $\\frac{48\\times 35}{14\\times 12}=10$'),
+            'Cancel only when the top and the bottom are products. A plus on top? No cancelling.']),
+        dict(title='Special products', active=5, script=[
+            _b('48 × 52 = 50² − 2² = 2,496', 'Around a centre: $48\\times 52=50^2-2^2=2{,}496$'),
+            'Evenly around a centre: the centre squared minus the gap squared. The gaps must be equal.',
+            _b('65² = 4,225', 'Square ending in $5$: $\\ 65^2$: $\\ 6\\times 7=42 \\to 4{,}225$'),
+            'Front digit times the next number, then twenty-five on the end. Only for squares.']),
+        dict(title='Percent and estimates', active=6, script=[
+            _b('24% of 75 = 75% of 24 = 18', '$24\\%$ of $75=75\\%$ of $24=18$'),
+            'You may swap the two numbers. Pick the easier one.',
+            _b('49 × 21 ≈ 1,000', 'Estimate: $49\\times 21\\approx 50\\times 20=1{,}000$'),
+            'Use exactly as much precision as the choices need. One choice left? Stop.']),
+        dict(title='Before you practice', active=7, script=[
+            'Before you practice, ask yourself these questions.',
+            _b('Is there an easier calculation with the same answer?', 'Is there an easier calculation with the same answer?'),
+            _b('Can I say why the trick works?', 'Can I say why the trick works?'),
+            _b('Sum: move across · difference: shift both', 'Sum: move across · Difference: shift both'),
+            _b('How precise do the choices need me to be?', 'How precise do the choices need me to be?'),
+            'The traps: shifting a sum the wrong way, cancelling across a plus, and using the centre trick with unequal gaps.',
+            'Nothing looks easier? A clean written calculation is a great answer too.'])],
+        'fast-calculation', after=_last_item(M, 'fast-calculation'))

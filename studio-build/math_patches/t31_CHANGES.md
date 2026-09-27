@@ -80,3 +80,17 @@ All answer keys were already correct. The main work: fix the lesson order, teach
 - The "triple from the perimeter" trick is taught only in the adv-p21 solution, not in a lesson slide.
 - The small "24°" label in foundation p17 touches line AD; it was not listed in the review, so I left it.
 - API workaround: the solution-video sidebars are set in the patch per question group (the solution videos between two lessons), so the automatic renumbering gives 1…16 and 17…26. Figure copies on solution slides are edited together with the question figure (set_q does not update them).
+
+## Pass 2 (2026-09-27, teacher-approved remove/restore plan + summary lessons)
+
+**Removed:** nothing (the plan keeps every T31 addition).
+
+**Restored**
+- `geo31-foundation-p26` (median halves the area, 19 → 38) is back in the foundation practice, right after p10. Solution now shows the numbers ($19+19=38$).
+- `geo31-advanced-p01`: the original question "Which of the following triangles is not necessarily equilateral?" with its original four choices and key (choice 1: an altitude that also bisects its angle). Only clean-up: $60°$ in TeX, the 5, 5, 6 example in TeX.
+- The Pass 1 version of that question ("one median is also an altitude", key 2) stays as a new extra item `q-r26-t31-12` in the advanced practice (placed a few items later, so the two are not back to back).
+- `geo-019` slide 3: the original closing line "Let's see sample questions — first finding the hypotenuse, then finding a leg." is back. The added slide "Acute or obtuse?" that follows now opens with "But first — one more use of the squares…" and ends with "Now the sample questions: the hypotenuse, a leg — and then this test."
+
+**Summary lessons (new)**
+- `r26-t31-summary` (end of "Learn and try", right before the foundation practice, ~3.7 min): Three lines · Angles · Sides · Special triangles · Area · Pythagoras · Triples · Special right triangles · Before you practice.
+- `r26-t31-summary-2` (end of "Further guided examples", right before the advanced practice, ~3.2 min): Letters in the answers · The longest side · Trap it: min and max · Not necessarily · Shaded areas · Same height · Faster ways · Before you practice.

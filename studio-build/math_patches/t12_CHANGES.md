@@ -103,3 +103,15 @@ I solved every new and changed question from scratch. Each has exactly one corre
 - The API has no call to change a board item's text only. I changed the item text directly on the slide (lesson 1 recap, lesson 2 recap), and the patch marks those videos as touched.
 - The new lesson "Signs, Fractions & Must-Be-True" sits at the start of the advanced section, so the first two advanced questions are now the new Q9 and Q10. If you prefer the old Q9 (x/(x+1)) to open the section, move the video and its two questions after it.
 - Q15 (old Q13, "which is NOT necessarily true") has a choice that is never true. That is fine for the key, but you may want to reword the stem to "Which of the following is not true?"
+
+## Pass 2 (plan `real_exam/PLAN_REMOVE_RESTORE.md`, teacher-approved 2026-09-27)
+**Removed:** nothing. The plan removes nothing in T12.
+
+**Restored (3):**
+- q-340 is back in the practice, after q-339 (it was removed as a near-duplicate). Only clean-up: the givens are stacked, and the solution shows the numbers. Answer: x = −4 (choice 3). I solved it again.
+- `inequalities` slide 4 "A minus flips it": the original demo and advice are back, exactly as in the original. This includes "I recommend you don't multiply by a minus at all", "move the terms across… 4 < 12" and "÷4 → 1 < 3". Only ":(−4)" and ":4" changed, to "÷(−4)" and "÷4". The added −2x < 6 example (both ways, with a check) stays on a new slide 5, "The same with x". It uses the same sidebar entry.
+- q-323: the original choices are back: 0 / 12 / 1 / Any value. The key is "Any value" (choice 4), and it matches the solution video ("So any value works. Choice four.").
+
+**Summary video (new):** `r26-t12-summary`, "Inequalities: Summary". It is at the end of the advanced section, after the "Inequality traps" card and right before the practice. Slides: Summary · Same moves · x disappears · Systems · x² inequalities · Test the choices · Signs and fractions · Combining ranges · Must, could, cannot · Before you practice. About 3 minutes.
+
+Check: `python3 math_check.py 12` gives 0 problems, 0 warnings and 0 layout problems. The same is true for `11 12` together.

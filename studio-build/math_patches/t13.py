@@ -16,9 +16,10 @@ def qid(n): return 'q-r26-t13-%02d' % n
 
 
 # Guided-question numbers BEFORE renumbering (renumber_guided() in math_api puts them in course order).
-# New solution videos get 14, 15, 16, 17 in the order they are created below.
+# New solution videos get 14, 15, 16 in the order they are created below.
+# (Pass 2: guided q-r26-t13-04 'from a range to bars' was removed.)
 SB1 = ['Question %d' % n for n in (1, 2, 3, 4, 5, 14, 15)]
-SB2 = ['Question %d' % n for n in (6, 7, 8, 9, 16, 10, 11, 12, 17, 13)]
+SB2 = ['Question %d' % n for n in (6, 7, 8, 9, 16, 10, 11, 12, 13)]
 
 # number line: |x - 2| < 4  ->  within 4 of 2
 NL_SVG = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 150" role="img" aria-label="Number line: the numbers less than 4 away from 2">'
@@ -247,7 +248,6 @@ def apply(M):
         {'title': 'Distance tools', 'head': ['Form', 'Meaning'], 'rows': [
             ['$|x-a|$', 'the distance between $x$ and $a$ ($|x+5|$: distance from $-5$)'],
             ['$|x-a|<r$', '$x$ is less than $r$ from $a$: $a-r<x<a+r$'],
-            ['$a<x<b$', '$\\left|x-\\frac{a+b}{2}\\right|<\\frac{b-a}{2}$ (center, half the length)'],
         ]},
     ]
     card['tips'] = [
@@ -261,7 +261,7 @@ def apply(M):
     # 3. New lesson video at the start of the advanced section: exam tools
     # =====================================================================================
     M.new_video(TOOLS, TOPIC, 'Absolute Value — Exam Tools',
-                ['Squares and bars', 'Square both sides', 'Letter on the right', 'Distance', 'From a range to bars', 'Recap'], [
+                ['Squares and bars', 'Square both sides', 'Letter on the right', 'Distance', 'Recap'], [
         dict(mode='title', title='Absolute Value — Exam Tools', script=[
             "Four tools for the harder absolute-value questions.",
             "Each one saves time on the exam.",
@@ -325,28 +325,12 @@ def apply(M):
             A('|x + 5| = distance from −5 appears', T('Plus inside: $|x+5|=|x-(-5)|$ $\\to$ distance from $-5$', size=42)),
             "Careful with a plus inside. x plus five is x minus negative five. So it's the distance from NEGATIVE five.",
         ]),
-        dict(mode='concept', active=4, title='From a range to bars', script=[
-            "The exam also asks the other way around.",
-            A('−3 < x < 7 appears', T('$-3<x<7$', size=58, gap=150)),
-            "Which inequality with bars describes this range?",
-            D('Write "center = (−3 + 7) ÷ 2 = 2"'),
-            "First the center: the middle of negative three and seven. Add them and divide by two: two.",
-            D('Write "half the length = (7 − (−3)) ÷ 2 = 5"'),
-            "Then the distance from the center to each end: half the length. Ten divided by two: five.",
-            A('|x − 2| < 5 appears', T('$|x-2|<5$', size=58, gap=90)),
-            "x is less than five from two.",
-            D('Write "check: |7 − 2| = 5, |−3 − 2| = 5 ✓"'),
-            "Check the ends: both are exactly five from two.",
-            A('General rule appears', T('$a<x<b \\;\\to\\; \\left|x-\\frac{a+b}{2}\\right|<\\frac{b-a}{2}$', size=46)),
-            "In general: the center goes inside the bars, and half the length goes on the right.",
-        ]),
-        dict(mode='concept', active=5, title='Recap', script=[
+        dict(mode='concept', active=4, title='Recap', script=[
             "Let's lock it in.",
             A("'|x|² = x², √(x²) = |x|' appears", T('$|x|^2=x^2$ · $\\sqrt{x^2}=|x|$ · $|a-b|=|b-a|$', size=42)),
             A("'Bars on both sides → square' appears", T('Bars on both sides $\\to$ square both sides', size=42)),
             A("'Letter on the right → check' appears", T('Letter on the right $\\to$ check every answer', size=42)),
             A("'|x − a| = distance' appears", T('$|x-a|$ = distance between $x$ and $a$', size=42)),
-            A("'Range → center and half the length' appears", T('Range $\\to$ center and half the length', size=42)),
             "Next: a card with the question wordings. Then the advanced questions.",
         ]),
     ], SEC2, before='q-363')
@@ -712,43 +696,6 @@ def apply(M):
         ]),
     ])
 
-    # --- G4 (section 2, after Q12): from a range to bars (midpoint)
-    M.new_q(qid(4), TOPIC, 'Which of the following inequalities has exactly the solutions $-3<x<7$?',
-            ['$|x+2|<5$', '$|x-5|<2$', '$|x-2|<10$', '$|x-2|<5$'], 4, [
-        'The center of the range: $\\frac{-3+7}{2}=2$. Half the length: $\\frac{7-(-3)}{2}=5$.',
-        '$x$ is less than $5$ from $2$: $|x-2|<5$.',
-        'Check: $|x-2|<5$ gives $-5<x-2<5$, so $-3<x<7$ ✓.',
-        'Choice 1 has the wrong sign inside (its center is $-2$). Choice 3 uses the whole length instead of half.'])
-    M.place_q(qid(4), SEC2, after='solve-q-369')
-    _solution(M, qid(4), G2, SB2, 38, [
-        "A range between two numbers — and they want bars.",
-        "Two ways: the center, or checking the ends.",
-    ], [
-        ('Method 1 · Center and half the length', [
-            "Use the tool from the lesson. First the center.",
-            D('Write "center = (−3 + 7) ÷ 2 = 2"'),
-            "Negative three plus seven is four. Divided by two: two.",
-            D('Write "half the length = (7 − (−3)) ÷ 2 = 10 ÷ 2 = 5"'),
-            "The length is ten. Half of it: five.",
-            D('Write "|x − 2| < 5"'),
-            "x is less than five from two.",
-            D('Circle choice 4'),
-            "Choice four.",
-            "The traps: choice one has plus two inside — that's a center of negative two. Choice three uses the whole length, not half.",
-        ]),
-        ('Method 2 · Check the ends', [
-            "Or check the ends. At each end, the bars must equal the right side exactly.",
-            D('Next to choice 1 write "x = 7: |9| = 9 ≠ 5 ✗"'),
-            "Choice one at seven: nine, not five. Out.",
-            D('Next to choice 2 write "x = 7: |2| = 2 ✓   x = −3: |−8| = 8 ✗"'),
-            "Choice two: seven gives two — fine. Negative three gives eight — not two. Out.",
-            D('Next to choice 3 write "x = 7: |5| = 5 ≠ 10 ✗"'),
-            "Choice three: seven gives five, not ten. Out.",
-            D('Next to choice 4 write "x = 7: |5| = 5 ✓   x = −3: |−5| = 5 ✓" and circle it'),
-            "Choice four: both ends give exactly five. Choice four.",
-        ]),
-    ])
-
     # =====================================================================================
     # 7. New practice questions
     # =====================================================================================
@@ -757,12 +704,6 @@ def apply(M):
             ['$|x-1|>0$', '$|x|>x$', '$|x+1|>|x|$', '$|x-1|\\ge-1$'], 4, [
         'Choice 4: an absolute value is never negative, so it is always greater than $-1$. True for every $x$.',
         'The others fail for some $x$. Choice 1: $x=1$ gives $0>0$ ✗. Choice 2: $x=5$ gives $5>5$ ✗. Choice 3: $x=-5$ gives $4>5$ ✗.'])
-    P[6] = ('Which of the following inequalities has exactly the solutions $-8<x<2$?',
-            ['$|x-3|<5$', '$|x+3|<10$', '$|x+3|<5$', '$|x+5|<3$'], 3, [
-        'The center: $\\frac{-8+2}{2}=-3$. Half the length: $\\frac{2-(-8)}{2}=5$.',
-        '$x$ is less than $5$ from $-3$: $|x-(-3)|<5$, so $|x+3|<5$.',
-        'Check the ends: $|-8+3|=5$ and $|2+3|=5$ ✓.',
-        'Choice 1 has the wrong sign inside, and choice 2 uses the whole length instead of half.'])
     P[7] = ('Given: $x<0<y$. $\\frac{|x|}{x}+\\frac{2y}{|y|}=?$', ['$3$', '$-1$', '$1$', '$-3$'], 3, [
         '$x<0$, so $|x|=-x$ and $\\frac{|x|}{x}=\\frac{-x}{x}=-1$.',
         '$y>0$, so $|y|=y$ and $\\frac{2y}{|y|}=2$.',
@@ -802,7 +743,7 @@ def apply(M):
     # =====================================================================================
     M.practice_order(PRACT, [
         E % 1, E % 4, E % 2, E % 3, E % 6, E % 7, qid(11), qid(5), 'q-383', 'q-375', 'q-373', qid(8), qid(7),
-        'q-371', 'q-374', 'q-378', 'q-379', qid(12), 'q-372', E % 5, qid(6), qid(9), 'q-380', 'q-377', qid(10),
+        'q-371', 'q-374', 'q-378', 'q-379', qid(12), 'q-372', E % 5, qid(9), 'q-380', 'q-377', qid(10),
         'q-376', 'q-384', 'q-382', 'q-381', 'q-385'])
 
     # =====================================================================================
@@ -815,3 +756,99 @@ def apply(M):
         for b in v['beats']:
             if (b.get('canvas') or '').startswith('Pre-loaded — question'):
                 b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (q['id'], q['stem'])
+
+    # =====================================================================================
+    # 10. Pass 2: summary lesson right before the independent practice
+    # =====================================================================================
+    summary(M)
+
+
+SUMMARY_SB = ['Distance from zero', 'The rules', 'Sign clues', 'Equations', 'Inequalities',
+              'Negative right side', 'Distance', 'Plug in', 'Before you practice']
+
+
+def summary(M):
+    def s(k, title, script):
+        return dict(mode='concept', active=k, title=title, script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice — a quick summary of absolute value.",
+            "Everything important, in a few minutes.",
+        ]),
+        s(0, 'Distance from zero', [
+            A('|x| = distance from 0 appears', T('$|x|$ = the distance from $0$ $\;\\to\;$ never negative', size=44, gap=40)),
+            "Absolute value is distance from zero. It is zero or positive — never negative.",
+            A('|−9| = 9, |0| = 0 appears', T('$|6|=6 \\qquad |-9|=9 \\qquad |0|=0$', size=48, gap=40)),
+            "With a plain number, the minus just drops off.",
+            A("'Letters hide their sign' appears", T('Letters: if $x=-3$, then $|x|=3=-x$', size=44)),
+            "But a letter hides its sign. First ask: is it positive or negative?",
+            "And an expression inside the bars? Calculate the whole inside first.",
+        ]),
+        s(1, 'The rules', [
+            A('Product and fraction rules appear', T('$|a\\cdot b|=|a|\\cdot|b| \\qquad \\left|\\frac{a}{b}\\right|=\\frac{|a|}{|b|}$', size=46, gap=30)),
+            "A product or a fraction: the bars can go on each part.",
+            A('|a + b| ≤ |a| + |b| appears', T('$|a+b|\\le|a|+|b|$', size=46, gap=30)),
+            "A sum: at most the sum of the bars. Not sure? Plug in.",
+            A('Squares and roots appear', T('$|x|^2=x^2 \\qquad \\sqrt{x^2}=|x| \\qquad |a-b|=|b-a|$', size=44)),
+            "A square and the bars both remove the sign. The root of x squared is the absolute value of x — not x.",
+        ]),
+        s(2, 'Sign clues', [
+            A('Sign clues appear', T('$|x|>x \\to x<0 \\qquad |x|=x \\to x\\ge0$', size=44, gap=20)),
+            A('More sign clues appear', T('$|x|=-x \\to x\\le0 \\qquad x>|x| \\to$ impossible', size=44, gap=40)),
+            "Compare a number with its absolute value, and you know its sign.",
+            D('Circle the "≥" and the "≤"'),
+            "Don't forget the zero. It's the favorite trap.",
+            A('Product signs and x/|x| appear', T('$a\\cdot b>0 \\to$ same signs $\\qquad \\frac{x}{|x|}=\\pm1$', size=44)),
+            "A positive product: same signs. A negative product: opposite signs. And x over its absolute value is one or minus one.",
+        ]),
+        s(3, 'Equations', [
+            A('|x + 3| = 8 appears', T('$|x+3|=8 \;\\to\; x+3=8$ or $x+3=-8$', size=44, gap=30)),
+            "Bars equal a number? Two cases: plus and minus.",
+            D('Write "x = 5 or x = −11"'),
+            "x is five or negative eleven. Keep both.",
+            A("'Letter on the right → check' appears", T('Letter on the right $\\to$ check every answer', size=44, gap=30)),
+            "A letter on the right side? The right side can't be negative. Check each answer in the original equation.",
+            A("'Bars on both sides → square' appears", T('Bars on both sides $\\to$ square both sides', size=44)),
+            "Bars on both sides? Both sides are zero or positive, so you may square them.",
+        ]),
+        s(4, 'Inequalities', [
+            A('Small side appears', T('$|x-2|<4 \;\\to\; -2<x<6$  (between)', size=44, gap=40)),
+            "Bars on the small side: the answer is trapped in the middle — between.",
+            A('Big side appears', T('$|x-2|>4 \;\\to\; x>6$ or $x<-2$  (outside)', size=44)),
+            "Bars on the big side: two ranges — outside.",
+        ]),
+        s(5, 'Negative right side', [
+            "Look at the right side before any algebra.",
+            A('|x + 1| < −3 appears', T('$|x+1|<-3$ $\\;\\to\\;$ no solution', size=46, gap=30)),
+            "Bars less than a negative number? Never. No solution.",
+            A('|x + 1| > −3 appears', T('$|x+1|>-3$ $\\;\\to\\;$ every $x$', size=46, gap=30)),
+            "Bars bigger than a negative number? Always. Every x works.",
+            A('|x + 1| ≤ 0 appears', T('$|x+1|\\le0$ $\\;\\to\\;$ $x=-1$', size=46)),
+            "Bars at most zero: the inside must be zero. One solution.",
+        ]),
+        s(6, 'Distance', [
+            A('|x − a| = distance appears', T('$|x-a|$ = the distance between $x$ and $a$', size=44, gap=30)),
+            "The absolute value of x minus a is the distance between x and a.",
+            A('|x + 5| = distance from −5 appears', T('$|x+5|$ = the distance from $-5$', size=44)),
+            "Careful with a plus inside: x plus five is the distance from NEGATIVE five.",
+        ]),
+        s(7, 'Plug in', [
+            A("'Plug in a number that fits' appears", T('An expression $=\\ ?$ $\;\\to\;$ plug in a number that fits', size=44, gap=30)),
+            "Asked what an expression equals? Plug in a number that fits the conditions.",
+            A("'Avoid 0, 1, −1 and numbers from the choices' appears", T('Avoid $0$, $1$, $-1$ and numbers from the choices', size=44)),
+            "Avoid the special numbers. Eliminate three choices. Two survive? Plug in again.",
+        ]),
+        s(8, 'Before you practice', [
+            "Before each question, ask yourself:",
+            A("'Is the letter positive or negative?' appears", T('Is the letter positive, negative — or zero?', size=42)),
+            A("'Did I keep both cases?' appears", T('Equation or inequality: did I keep both cases?', size=42)),
+            A("'Right side negative or zero?' appears", T('Is the right side negative or zero?', size=42)),
+            A("'Letter on the right: did I check?' appears", T('Letter on the right: did I check every answer?', size=42)),
+            A("'What does the question ask?' appears", T('Must, could, cannot, or not necessarily?', size=42)),
+            "The common traps: forgetting the zero, losing the second case, and keeping a fake answer.",
+            "That's it. Now go practice.",
+        ]),
+    ]
+    v = M.new_video('r26-t13-summary', TOPIC, 'Absolute Value — Summary', SUMMARY_SB, slides,
+                    SEC2, after='solve-q-370')
+    v['hybrid']['num'] = M.video('solve-q-370')['hybrid']['num']

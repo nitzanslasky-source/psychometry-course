@@ -519,10 +519,24 @@ def apply(M):
             'So the primes are $7$ and $13$, and $7+13=20$.'])
 
     # =====================================================================================
-    # 6. Remove near-duplicates (y^2 prime x2, exactly 3 divisors x3, GCD with letter primes x2)
+    # 6. Originals restored in Pass 2 (they were removed as near-duplicates in pass 1)
     # =====================================================================================
-    for qid in ('q-416', 'q-420', 'q-410'):
-        M.unplace(qid)
+    # Pass 2 (teacher-approved plan): the originals q-416, q-420 and q-410 are restored, with text clean-up only.
+    S('q-416', stem='Given: $t>1$, and $t^2$ is a prime number. Which of the following is necessarily true about $t$?',
+      choices=['$t$ is odd', '$t$ is even', '$t$ is not an integer', '$t$ is less than $5$'],
+      expl=['If $t$ were an integer greater than $1$, then $t^2=t\\cdot t$ would break into two factors greater than $1$. It would not be prime.',
+            'So $t$ is not an integer. Example: $t=\\sqrt2$ gives $t^2=2$, a prime.',
+            '$t$ does not have to be small: $t=\\sqrt{97}$ gives $t^2=97$, a prime, and $\\sqrt{97}>9$. So choice 4 is not necessarily true.'])
+    S('q-420', stem='$m$ is a positive integer. $m$ has exactly three different divisors (including $1$ and $m$). Which of the following is necessarily true about $\\sqrt{m}$?',
+      choices=['$\\sqrt{m}$ is prime', '$\\sqrt{m}$ is even', '$\\sqrt{m}$ is divisible by $5$', '$\\sqrt{m}$ is not an integer'],
+      expl=['Exactly three divisors means $m=p^2$ for a prime $p$. Its divisors are $1$, $p$ and $p^2$.',
+            'Then $\\sqrt{m}=\\sqrt{p^2}=p$, a prime ✓.',
+            'The others are not necessarily true: $m=9$ gives $\\sqrt{m}=3$, which is odd and not divisible by $5$. And $\\sqrt{m}=p$ is always an integer.'])
+    S('q-410', stem='$p$, $q$, $r$ are different prime numbers.\nGiven:\n$\\begin{cases} M=p^2\\cdot q^3\\cdot r \\\\ N=p^3\\cdot q\\cdot r^2 \\end{cases}$\nWhat is the greatest common divisor (GCD) of $M$ and $N$?',
+      choices=['$p\\cdot q\\cdot r$', '$p^2\\cdot q\\cdot r$', '$p^3\\cdot q^3\\cdot r^2$', '$p^2\\cdot q^3\\cdot r^2$'],
+      expl=['GCD: take each prime that is in both numbers, at its LOWER power.',
+            '$p$: $p^2$ and $p^3$ → $p^2$. $q$: $q^3$ and $q$ → $q$. $r$: $r$ and $r^2$ → $r$.',
+            'GCD $=p^2\\cdot q\\cdot r$. (Choice 3 takes the higher powers: that is the LCM.)'])
 
     # =====================================================================================
     # 7. New guided question (section A): the square-root test
@@ -556,30 +570,27 @@ def apply(M):
     ], 'primes-a', after=G[0])
 
     # =====================================================================================
-    # 8. New lesson video (start of the advanced section): squares, prime equations, zeros, prime in a product
+    # 8. New lesson video (start of the advanced section): squares, prime equations, prime in a product
     # =====================================================================================
     first_adv = 'q-391'
-    sb = ['Squares & cubes', 'Prime equations', 'Zeros at the end', 'A prime in a product', 'Recap']
+    sb = ['Perfect squares', 'Prime equations', 'A prime in a product', 'Recap']
     v = M.new_video(TRICKS, TOPIC, 'More Factor Tools', sb, [
         dict(mode='title', title='More Factor Tools', script=[
             "More factor tools.",
-            "Four quick tools the exam loves. Each one starts the same way: break the number into primes.",
+            "Three quick tools the exam loves. Each one starts the same way: break the number into primes.",
         ]),
-        dict(mode='concept', active=0, title='Squares & cubes', script=[
+        dict(mode='concept', active=0, title='Perfect squares', script=[
             "When is a number a perfect square — a whole number times itself?",
             A('36 = 2² · 3² appears', T('$36=2^2\\cdot3^2$ — a square', size=48, gap=20)),
             "Thirty-six is two squared times three squared. Every exponent is even. That's a perfect square: six times six.",
             A('18 = 2 · 3² appears', T('$18=2\\cdot3^2$ — not a square', size=48, gap=30)),
             "Eighteen is two times three squared. The two has exponent one — odd. Not a square.",
-            A("'Square: every exponent even · Cube: every exponent divides by 3' appears",
-              T('Square: every exponent even · Cube: every exponent divides by $3$', size=40, gap=30)),
-            "The rule: in a perfect square every exponent is even. In a perfect cube every exponent divides by three.",
+            A("'Square: every exponent even' appears",
+              T('Perfect square: every exponent is even', size=40, gap=30)),
+            "The rule: in a perfect square every exponent is even.",
             "Classic question: the smallest k so that eighteen k is a perfect square.",
             D('Write "18k = 2 · 3² · k → k = 2 → 36 = 6² ✓"'),
             "The two is missing one copy. So k is two. Eighteen times two is thirty-six — six squared.",
-            "And the smallest k so that eighteen k is a perfect CUBE?",
-            D('Write "2¹ · 3² → needs 2² · 3¹ → k = 12 → 216 = 6³ ✓"'),
-            "The two needs two more copies, the three needs one more. k is four times three: twelve. Eighteen times twelve is two hundred sixteen — six cubed.",
         ]),
         dict(mode='concept', active=1, title='Prime equations', script=[
             "Every number breaks into primes in exactly ONE way. That solves equations.",
@@ -592,18 +603,7 @@ def apply(M):
             "Careful with the order: p is the one that's squared. p equals two would give four times q — and fifty over four isn't whole.",
             "The method: break the number into primes, then match prime by prime, exponent by exponent.",
         ]),
-        dict(mode='concept', active=2, title='Zeros at the end', script=[
-            "How many zeros are at the end of a number? Each zero is a ten. And ten is two times five.",
-            A('2⁵ · 5³ · 7 appears', T('$2^5\\cdot5^3\\cdot7$', size=58, gap=60)),
-            D('Write "2³ · 5³ = 10³   left over: 2² · 7 = 28"'),
-            "Pair each five with a two. Three fives, five twos: three pairs. Three tens.",
-            D('Write "= 28 · 1000 = 28,000 → 3 zeros"'),
-            "What's left, two squared times seven, is twenty-eight. The number is twenty-eight thousand. Three zeros.",
-            A("'Zeros at the end: count the 2s and the 5s — the smaller count' appears",
-              T('Zeros at the end: count the $2$s and the $5$s — take the smaller count', size=40)),
-            "The rule: count the twos and the fives. The smaller count is the number of zeros.",
-        ]),
-        dict(mode='concept', active=3, title='A prime in a product', script=[
+        dict(mode='concept', active=2, title='A prime in a product', script=[
             "Last tool. If a PRIME divides a product, it divides one of the factors.",
             A("'7 divides a · b → 7 divides a or b' appears", T('$7$ divides $a\\cdot b$  $\\to$  $7$ divides $a$ or $b$', size=46, gap=60)),
             "Seven divides a times b? Then seven is inside a, or inside b. A prime can't be split between them.",
@@ -612,29 +612,26 @@ def apply(M):
             "The two came from the four, and the three came from the nine.",
             "So: with a prime, one of the factors must hold it. With a number that isn't prime, break it into primes first.",
         ]),
-        dict(mode='concept', active=4, title='Recap', script=[
+        dict(mode='concept', active=3, title='Recap', script=[
             "Let's lock it in.",
-            A("'Square: all exponents even · Cube: all divide by 3' appears",
-              T('Square: all exponents even · Cube: all exponents divide by $3$', size=38)),
+            A("'Square: all exponents even' appears",
+              T('Perfect square: all exponents even', size=38)),
             A("'Only one way to break into primes → match the exponents' appears",
               T('Only one way to break into primes $\\to$ match the exponents', size=38)),
-            A("'Zeros at the end: pairs of 2 and 5' appears", T('Zeros at the end: pairs of $2$ and $5$', size=38)),
             A("'A prime divides a product → it divides one of the factors' appears",
               T('A prime divides a product $\\to$ it divides one of the factors', size=38)),
             D('Tick each line'),
-            "There's a card with these four tools right after this video. Then three questions. Try each one first — then watch.",
+            "There's a card with these three tools right after this video. Then the advanced questions. Try each one first — then watch.",
         ]),
     ], 'primes-advanced', before=first_adv)
     v['hybrid']['num'] = M.video('solve-q-391')['hybrid']['num']
 
     M.new_card('mem-r26-t14-more-tools', TOPIC, 'primes-advanced', {
         'title': 'More factor tools',
-        'intro': 'Four tools. Each one starts with breaking the number into primes.',
+        'intro': 'Three tools. Each one starts with breaking the number into primes.',
         'tables': [{'title': '', 'head': ['Tool', 'Rule', 'Example'], 'rows': [
             ['Perfect square', 'every exponent is even', '$18k$ a square: $18=2\\cdot3^2$ → $k=2$ ($36=6^2$)'],
-            ['Perfect cube', 'every exponent divides by $3$', '$18k$ a cube: $k=2^2\\cdot3=12$ ($216=6^3$)'],
             ['Prime equation', 'break into primes, then match the exponents', '$2^a\\cdot3^b=72=2^3\\cdot3^2$ → $a=3$, $b=2$'],
-            ['Zeros at the end', 'pairs of $2$ and $5$: the smaller count', '$2^5\\cdot5^3\\cdot7=28000$ → $3$ zeros'],
             ['A prime divides a product', 'it divides one of the factors', '$7$ divides $a\\cdot b$ → $7$ divides $a$ or $b$'],
         ]}],
         'tips': ['Only for primes: $6$ divides $4\\cdot9=36$, but $6$ divides neither $4$ nor $9$.',
@@ -642,38 +639,15 @@ def apply(M):
     }, after=TRICKS)
 
     # =====================================================================================
-    # 9. New guided questions (advanced section): cube, prime equation, zeros
+    # 9. New guided question (advanced section): prime equation
+    #    (Pass 2: the cube and zeros guided questions q-r26-t14-02 / -04 were removed)
     # =====================================================================================
     adv_num = M.video('solve-q-391')['hybrid']['num']
-    M.new_q(G[1], TOPIC, 'What is the smallest positive integer $k$ such that $24k$ is a perfect cube (the cube of an integer)?',
-            ['$3$', '$6$', '$9$', '$72$'], 3, [
-        '$24=2^3\\cdot3$.',
-        'In a perfect cube every exponent divides by $3$. $2^3$ is fine. The $3$ has exponent $1$, therefore it needs two more copies: $k=3^2=9$.',
-        'Check: $24\\cdot9=216=6^3$ ✓.',
-        'The traps: $k=6$ gives $144=12^2$, a square but not a cube. $k=72$ gives $1728=12^3$, a cube, but $72$ is not the smallest $k$.'])
-    M.place_q(G[1], 'primes-advanced', after='mem-r26-t14-more-tools')
-    _solution(M, G[1], 'Advanced Primes', adv_num, ["A perfect cube. Break it into primes."], [
-        ('Exponents divide by 3', [
-            "A perfect cube: every prime's exponent must divide by three.",
-            D('Write "24 = 2³ · 3"'),
-            "Break twenty-four into primes: two cubed times three.",
-            "Two cubed — the exponent is three. Fine.",
-            "Three to the first — the exponent is one. It needs to reach three: two more threes.",
-            D('Write "k = 3² = 9"'),
-            "So k is three squared: nine.",
-            D('Write "24 · 9 = 216 = 6³ ✓"'),
-            "Check: twenty-four times nine is two hundred sixteen. Six cubed. It works.",
-            D('Circle choice 3'),
-            "Choice three.",
-            "The traps: six gives a hundred forty-four — a perfect SQUARE, not a cube. Seventy-two gives a cube, but not with the smallest k.",
-        ]),
-    ], 'primes-advanced', after=G[1])
-
     M.new_q(G[2], TOPIC, '$a$ and $b$ are positive integers.\nGiven: $2^a\\cdot3^b=108$.\n$a-b=?$', ['$1$', '$-1$', '$2$', '$5$'], 2, [
         'Break $108$ into primes: $108=4\\cdot27=2^2\\cdot3^3$.',
         'A number breaks into primes in only one way, therefore match the exponents: $2^a\\cdot3^b=2^2\\cdot3^3$ gives $a=2$ and $b=3$.',
         '$a-b=2-3=-1$. (Swapping $a$ and $b$ gives $1$ — the trap.)'])
-    M.place_q(G[2], 'primes-advanced', after='solve-' + G[1])
+    M.place_q(G[2], 'primes-advanced', after='mem-r26-t14-more-tools')
     _solution(M, G[2], 'Advanced Primes', adv_num, ["An equation with primes. Break, then match."], [
         ('Break and match', [
             "A number breaks into primes in only one way. So break a hundred eight.",
@@ -688,35 +662,12 @@ def apply(M):
         ]),
     ], 'primes-advanced', after=G[2])
 
-    M.new_q(G[3], TOPIC, 'How many zeros are there at the end of the number $20^4\\cdot15^3$?', ['$4$', '$7$', '$8$', '$15$'], 2, [
-        '$20^4=(2^2\\cdot5)^4=2^8\\cdot5^4$ and $15^3=(3\\cdot5)^3=3^3\\cdot5^3$.',
-        'Together: $2^8\\cdot3^3\\cdot5^7$.',
-        'Each zero needs one $2$ and one $5$. There are $8$ twos and $7$ fives: $7$ pairs, therefore $7$ zeros.',
-        'Check: $2^8\\cdot3^3\\cdot5^7=2\\cdot27\\cdot10^7=540{,}000{,}000$ ✓.'])
-    M.place_q(G[3], 'primes-advanced', after='solve-' + G[2])
-    _solution(M, G[3], 'Advanced Primes', adv_num, ["Zeros at the end. Count the twos and the fives."], [
-        ('Pairs of 2 and 5', [
-            "Each zero at the end is a ten — a two and a five. So count the twos and the fives.",
-            D('Write "20⁴ = (2² · 5)⁴ = 2⁸ · 5⁴"'),
-            "Twenty is two squared times five. To the fourth: two to the eighth, five to the fourth.",
-            D('Write "15³ = (3 · 5)³ = 3³ · 5³"'),
-            "Fifteen is three times five. Cubed: three cubed, five cubed.",
-            D('Write "together: 2⁸ · 3³ · 5⁷"'),
-            "Together: eight twos, and four plus three — seven fives.",
-            D('Write "7 pairs → 7 zeros"'),
-            "Seven fives, each with a two. Seven pairs: seven zeros. One two is left over.",
-            D('Circle choice 2'),
-            "Choice two.",
-            "The traps: four counts only the zeros of twenty to the fourth. Eight counts the twos — but a two without a five makes no zero.",
-        ]),
-    ], 'primes-advanced', after=G[3])
-
     # =====================================================================================
     # 10. Sidebars and titles of all solution videos (numbers are renumbered in course order by the build)
     # =====================================================================================
     groupA = ['solve-q-386', 'solve-q-387', 'solve-q-388', 'solve-' + G[0]]
     groupB = ['solve-q-389', 'solve-q-390', 'solve-q-398', 'solve-q-399', 'solve-q-400', 'solve-q-401', 'solve-q-402']
-    groupC = ['solve-' + g for g in G[1:]] + ['solve-q-%d' % k for k in range(391, 398)]
+    groupC = ['solve-' + G[2]] + ['solve-q-%d' % k for k in range(391, 398)]
     for grp in (groupA, groupB, groupC):
         labels = [M.video(v)['beats'][0]['bigTitle'] for v in grp]
         for k, vid in enumerate(grp):
@@ -752,11 +703,6 @@ def apply(M):
         'If $n$ were not prime, it would break into two factors, and the smaller one would be at most $\\sqrt{n}<\\sqrt{121}=11$.',
         'Then $n$ would have a prime factor smaller than $11$: $2$, $3$, $5$ or $7$. But none of them divides $n$. So $n$ is prime ✓.',
         'The others are not necessarily true: $n=113$ is not less than $100$; $n=19$ ends in $9$; $n=11$ is not greater than $11$.'])
-    NP[8] = ('The greatest common divisor (GCD) of two numbers is $6$, and their least common multiple (LCM) is $180$. One of the numbers is $36$. What is the other number?',
-             ['$30$', '$60$', '$18$', '$5$'], 1, [
-        'GCD $\\cdot$ LCM $=$ the product of the two numbers: $6\\cdot180=36\\cdot n$.',
-        '$1080=36n$, therefore $n=30$.',
-        'Check: $36=2^2\\cdot3^2$ and $30=2\\cdot3\\cdot5$. GCD $=2\\cdot3=6$ ✓. LCM $=2^2\\cdot3^2\\cdot5=180$ ✓.'])
     NP[9] = ('$p$ and $q$ are different prime numbers.\nGiven:\n$\\begin{cases} M=p^3\\cdot q \\\\ N=p^2\\cdot q^4 \\end{cases}$\nWhat is the least common multiple (LCM) of $M$ and $N$?',
              ['$p^2\\cdot q$', '$p^3\\cdot q^4$', '$p^5\\cdot q^5$', '$p^3\\cdot q$'], 2, [
         'LCM: every prime at its higher power.',
@@ -767,11 +713,6 @@ def apply(M):
         'In a perfect square every exponent is even.',
         '$2^3$: odd exponent, needs one more $2$. $3^4$: even ✓. $5^1$: odd, needs one more $5$.',
         '$k=2\\cdot5=10$. Check: $2^4\\cdot3^4\\cdot5^2=(2^2\\cdot3^2\\cdot5)^2=180^2$ ✓.'])
-    NP[11] = ('$m$ is a positive integer, and $2^4\\cdot3^2\\cdot m$ is a perfect cube (the cube of an integer). What is the smallest possible value of $m$?',
-              ['$6$', '$12$', '$18$', '$36$'], 2, [
-        'In a perfect cube every exponent divides by $3$.',
-        '$2^4$ needs two more $2$s (to reach $2^6$). $3^2$ needs one more $3$ (to reach $3^3$).',
-        '$m=2^2\\cdot3=12$. Check: $2^6\\cdot3^3=(2^2\\cdot3)^3=12^3$ ✓.'])
     NP[12] = ('$p$ and $q$ are prime numbers.\nGiven: $p^2\\cdot q=75$.\n$p+q=?$', ['$8$', '$15$', '$28$', '$34$'], 1, [
         'Break $75$ into primes: $75=3\\cdot25=3\\cdot5^2$.',
         'The prime that is squared is $5$, therefore $p=5$ and $q=3$.',
@@ -780,12 +721,6 @@ def apply(M):
         'Break into primes: $1080=8\\cdot135=8\\cdot27\\cdot5=2^3\\cdot3^3\\cdot5$.',
         '$6^x=2^x\\cdot3^x$, therefore $2^x\\cdot3^x\\cdot5^y=2^3\\cdot3^3\\cdot5^1$.',
         'Match the exponents: $x=3$ and $y=1$. So $x+y=4$.'])
-    NP[14] = ('How many zeros are there at the end of the product $1\\cdot2\\cdot3\\cdot\\ldots\\cdot20$ (all the integers from $1$ to $20$)?',
-              ['$2$', '$3$', '$4$', '$6$'], 3, [
-        'Each zero at the end needs one $2$ and one $5$.',
-        'Fives: only $5$, $10$, $15$ and $20$ have a factor $5$ — one each. That is $4$ fives.',
-        'There are many more twos ($2$, $4$, $6$, …), therefore every five gets a partner.',
-        'So there are $4$ zeros. (Counting only $10$ and $20$ gives $2$ — the trap.)'])
     NP[15] = ('$a$ and $b$ are positive integers, and $a\\cdot b$ is divisible by $14$. Which of the following is necessarily true?',
               ['$a$ or $b$ is divisible by $7$.', '$a$ or $b$ is divisible by $14$.', '$a$ is even.', '$a\\cdot b$ is divisible by $28$.'], 1, [
         '$14=2\\cdot7$, and $7$ is prime. A prime that divides a product divides one of the factors. So $a$ or $b$ is divisible by $7$ ✓.',
@@ -801,5 +736,97 @@ def apply(M):
     E = 'alg-extra-unit-t14-4-%d'
     M.practice_order('unit-t14-4', [
         E % 5, E % 3, E % 1, E % 2, E % 7, 'q-404', 'q-406', 'q-411', E % 6, 'q-405', P(5), P(6), 'q-409',
-        'q-413', 'q-418', 'q-403', E % 4, 'q-412', P(8), P(9), P(12), P(10), P(11), 'q-414', 'q-419', 'q-407',
-        P(13), P(14), P(15), 'q-415', 'q-417', 'q-422', P(7), 'q-408', 'q-421'])
+        'q-413', 'q-418', 'q-403', E % 4, 'q-412', 'q-410', P(9), P(12), P(10), 'q-414', 'q-419', 'q-407',
+        P(13), P(15), 'q-415', 'q-416', 'q-420', 'q-417', 'q-422', P(7), 'q-408', 'q-421'])
+
+    # =====================================================================================
+    # 13. Pass 2: summary lesson right before the independent practice
+    # =====================================================================================
+    summary(M)
+
+
+SUMMARY_SB = ['What a prime is', 'Two primes, odd result', 'Is it prime?', 'Break it down', 'GCD and LCM',
+              'Counting divisors', 'Squares and equations', 'A prime in a product', 'Before you practice']
+
+
+def summary(M):
+    def s(k, title, script):
+        return dict(mode='concept', active=k, title=title, script=script)
+    slides = [
+        dict(mode='title', title='Summary', script=[
+            "Before you practice — a quick summary of primes and factors.",
+            "Everything important, in a few minutes.",
+        ]),
+        s(0, 'What a prime is', [
+            A("'Prime: only 1 and itself' appears", T('Prime: divides only by $1$ and itself', size=44, gap=30)),
+            "A prime divides only by one and by itself.",
+            A("'0, 1 and negatives are not prime' appears", T('$0$, $1$ and negative numbers are not prime', size=42, gap=20)),
+            A("'2 is the only even prime' appears", T('$2$ is the only even prime', size=42, gap=30)),
+            "One is not prime. Two is — and it's the only even prime.",
+            A("'Know the primes up to 40 — and 97' appears", T('Know the primes up to $40$ — and $97$', size=44)),
+            "Know them by heart: two, three, five, seven, eleven… up to thirty-seven. And ninety-seven, the largest two-digit prime.",
+        ]),
+        s(1, 'Two primes, odd result', [
+            A("'Odd sum or difference → one of them is 2' appears", T('Two primes, odd sum or difference $\\to$ one of them is $2$', size=42, gap=40)),
+            "All the other primes are odd. Odd plus odd is even. Odd minus odd is even too.",
+            "So an odd sum or an odd difference means one of the primes is two.",
+            D('Write "25 = 2 + 23"'),
+            "Twenty-five as a sum of two primes? Two plus twenty-three.",
+        ]),
+        s(2, 'Is it prime?', [
+            A("'Try the primes up to √n' appears", T('Is $n$ prime? Try the primes up to $\\sqrt{n}$', size=44, gap=30)),
+            "To test a number, divide it by the primes up to its square root. No further.",
+            A('The fake primes appear', T('Fake primes: $51=3\\cdot17$,   $87=3\\cdot29$,   $91=7\\cdot13$', size=40)),
+            "Watch out for the fakes. For three, add the digits. And never forget to try seven.",
+        ]),
+        s(3, 'Break it down', [
+            A('12 = 2 · 2 · 3 appears', T('$12=2\\cdot2\\cdot3$ $\;\\to\;$ divides by $2,\\ 3,\\ 4,\\ 6,\\ 12$', size=44, gap=30)),
+            "Break every number into primes. It divides by every combination of its prime factors.",
+            A("'Test a divisor: its prime ingredients' appears", T('Is it a divisor? Check its prime ingredients', size=44, gap=30)),
+            "To test a divisor, break it into primes too. Unpack bases like six or ten squared first.",
+            A("'Which prime is missing?' appears", T('Break apart · build · which prime is missing?', size=44)),
+            "Most questions are just this: break a number apart, or build it — and look for the missing prime.",
+        ]),
+        s(4, 'GCD and LCM', [
+            A('GCD rule appears', T('GCD: shared primes, each at its LOWER power', size=42, gap=20)),
+            A('LCM rule appears', T('LCM (guaranteed divisor): every prime at its HIGHER power', size=40, gap=30)),
+            D('Write "72 = 2³ · 3², 90 = 2 · 3² · 5 → GCD = 18, LCM = 360"'),
+            "Seventy-two and ninety: the GCD is eighteen, the LCM is three hundred sixty.",
+            A('GCD · LCM = a · b appears', T('GCD $\\cdot$ LCM $=a\\cdot b$', size=44)),
+            "The trap: just multiplying the two numbers. That's too big when they share a prime.",
+        ]),
+        s(5, 'Counting divisors', [
+            A("'Each exponent + 1, multiplied' appears", T('$2^3\\cdot5^2$ $\;\\to\;$ $(3+1)(2+1)=12$ divisors', size=44, gap=30)),
+            "Number of divisors: add one to each exponent, and multiply.",
+            A("'Odd number of divisors → a perfect square' appears", T('Odd number of divisors $\\to$ a perfect square', size=44, gap=30)),
+            "Divisors come in pairs. Only a perfect square has one without a partner.",
+            A("'Exactly 3 → a prime squared' appears", T('Exactly $3$ divisors $\\to$ a prime squared', size=44)),
+            "Exactly three divisors: a prime squared, like nine or twenty-five.",
+        ]),
+        s(6, 'Squares and equations', [
+            A("'Perfect square: every exponent even' appears", T('Perfect square: every exponent even', size=42, gap=30)),
+            "In a perfect square every exponent is even.",
+            D('Write "18k a square: 18 = 2 · 3² → k = 2 → 36 = 6²"'),
+            "Eighteen is two times three squared — it needs one more two. k is two.",
+            A('2ᵃ · 3ᵇ = 72 appears', T('$2^a\\cdot3^b=72=2^3\\cdot3^2$ $\;\\to\;$ $a=3$, $b=2$', size=42)),
+            "A number breaks into primes in only one way. Break it, then match the exponents.",
+        ]),
+        s(7, 'A prime in a product', [
+            A("'A prime divides a · b → it divides a or b' appears", T('A prime divides $a\\cdot b$ $\;\\to\;$ it divides $a$ or $b$', size=42, gap=30)),
+            "A prime can't be split between two factors. One of them holds it.",
+            A("'Letters as primes? Plug in 2, 3, 5, 7' appears", T('Letters as primes? Plug in $2,\\ 3,\\ 5,\\ 7$', size=42)),
+            "And when the primes are letters, plug in the smallest primes — then check every choice.",
+        ]),
+        s(8, 'Before you practice', [
+            "Before each question, ask yourself:",
+            A("'Did I break it into primes?' appears", T('Did I break every number into primes?', size=42)),
+            A("'Is it really prime?' appears", T('Is it really prime? Did I try up to the root — and $7$?', size=42)),
+            A("'An odd sum of primes?' appears", T('An odd sum or difference? Then one prime is $2$.', size=42)),
+            A("'GCD or LCM?' appears", T('GCD or LCM? Lower power or higher power?', size=42)),
+            "The common traps: calling one a prime, forgetting two, and multiplying instead of taking the LCM.",
+            "That's it. Now go practice.",
+        ]),
+    ]
+    v = M.new_video('r26-t14-summary', TOPIC, 'Prime Numbers — Summary', SUMMARY_SB, slides,
+                    'primes-advanced', after='solve-q-397')
+    v['hybrid']['num'] = M.video('solve-q-397')['hybrid']['num']

@@ -78,3 +78,23 @@ Patch: `math_patches/t05.py`. Check: `python3 math_check.py 4 5` gives 0 problem
 - **Numbering**: Questions 15–18 sit after Q14 so that the "Question N" numbering stays in order. The review wanted the "block" guided question near the lesson's repeated-bracket slide, so slide 7 now points forward to it ("after Question 14").
 - **Topic 4 overlap (resolved)**: Topic 4 teaches trinomial factoring. Topic 5 keeps only a one-slide reminder and the guided Q15 (factoring inside a fraction). I dropped the card rows that repeat Topic 4 cards (sum and product, (a−b)/(b−a) = −1, 96·104). Practice item 07 is now x − 1/x = 3 → 11, so it does not repeat Topic 4's x + 1/x = 3 item.
 - **Sign questions** ("if x < 0 < y, which is positive?"): only one practice item is added here. A full treatment belongs to the inequalities topic.
+
+## Pass 2 (2026-09-27, teacher-approved remove/restore plan + summary lesson)
+**Removed:** nothing (the plan keeps every addition in Topic 5).
+
+**Restored (15 questions + 1 line):**
+- 12 practice questions are back, cleaned up (TeX, "= ?" stems, conditions on their own line, full numeric solutions), and placed easy to hard:
+  - Independent practice: q-expression-extra-02, -03, -08, alg-extra-expression-self-1 … self-7
+  - Source-bank practice: alg-extra-unit-t5-1-6, -1-7
+- q-131 (guided): the original stem with negative exponents, (x⁻² + 4x²/x⁴)·(1/5)·(5/x⁻²), and the original `solve-q-131` slides 1–3. It **moves to Topic 8**.
+- q-132 (guided): the original choice 3, a⁰ + (−1)ᵃ, and the original `solve-q-132` slide 2. It **moves to Topic 8**.
+- q-expression-extra-09: the original (x⁻² + 2/x²)·x² = 3 (key choice 3). It **moves to Topic 8 practice**, next to the other negative-exponent item (after alg-extra-exponent-extra-4).
+- In Topic 8, q-131 and q-132 come after the Topic 8 guided questions, before the Topic 8 summary. Their solution videos get the Topic 8 video title and sidebar. The Topic 8 patch runs after this one, so this last step runs when all patches have finished (a small hook on `M.finish`).
+- The "Opposite brackets" lesson slide has its original line back after the new proof: "Honestly? Trust it. It's always negative one."
+- In Topic 5, the guided questions are renumbered automatically. Old Q13–Q18 are now Q11–Q16, and the spoken references follow ("after Question 12", "in Question 13"). The Advanced Expressions sidebars no longer list the two questions that moved.
+
+**Summary lesson added:** `r26-t05-summary`, "Summary: Expressions". It sits at the end of Advanced expressions, right before the independent practice. It has 10 slides: Summary · Expression or equation? · Splitting a fraction · The main fraction bar · Opposite brackets · Take it out front (repeated bracket, sum and product) · Round numbers · Given a block · Plug in numbers · Before you practice (4 checks and the common traps).
+
+**Small fix:** the title slides of the new guided videos now keep the lesson name as the slide label. The big title still shows the number. Before this fix, automatic renumbering could change that label twice (for example "Question 11" on a video whose big title was "Question 13").
+
+Check: `python3 math_check.py 5 6` gives 0 problems and 0 layout problems. The 1 warning is the known exception: Q9 (q-129) states two claims.

@@ -59,3 +59,17 @@ All 16 old guided questions and all 25 kept practice questions now have written 
 - Q8 and Q14 are still the same question on purpose (first by testing the answers, then with the shortcut). The Q14 video and solution now say so clearly. If you would rather merge them, Q14's slides could become methods 2 and 3 of Q8.
 - Clock times (07:30 and similar) still trigger the checker's colon warning. They are genuine exceptions.
 - The review asks to merge the two sets of min/max rules. Both videos are kept, but the second video now shows all three rules on one board, and the two recaps and cards use the same words.
+
+## Pass 2 (teacher-approved remove/restore plan + summary lesson)
+**Removed (1):** practice q-r26-t21-08 (sum of the first n terms is n² + 2n → 10th term). It is not on the real exam and not in the original course. It is also gone from the practice order.
+
+**Restored (3):**
+- Practice **wp21-p23** (36 stickers, different amounts → 8 children). Clean-up only: a clearer stem ("a different positive whole number of stickers") and a full solution: 1 + 2 + … + 8 = (8 · 9)/2 = 36, and nine children need 36 + 9 = 45 > 36. Choice 4. Placed after p10.
+- Practice **wp21-p26** (six packs of 4 or 9 markers → 42 is impossible). Clean-up only: a full solution (24, 29, …, 54, and 42 is skipped). Choice 4. Placed after p03.
+- **"Minimum & Maximum", slide 3 "A recurring motif"** is back as it was, with its sidebar entry. The line that pass 1 had moved onto "Ranges" was removed, so the point is not made twice. The video now has: Ranges, A recurring motif, Bold words, Squeeze the others, Balance the group, Cheapest k different, Recap.
+
+**Kept, as the plan says:** "Days and last digits", q-r26-t21-10 and -11, and the corrected "no holes" slide and card row.
+
+**New: summary video `r26-t21-summary` "Summary: Trial, Limits and Patterns"** (about 3.4 min), at the end of "Further guided examples", right before the practice. Slides: Summary · Three types · Try in order · The skip · Push the right way · Different amounts · Worst luck + 1 · Patterns · Cycles · Before you practice (checks: which type, which way to push and does the example really work, must or could, constant step and the skip, the edges; traps: being inside the range is not enough, n = 1 alone, and "at least" is a lower limit, not the answer when they ask for the maximum). The examples all come from the lessons, not from the practice questions.
+
+Practice now: 27 original questions (all of them) + 8 added = 35.

@@ -77,3 +77,17 @@ The topic order is unchanged: T15 still comes before T16. For this reason, produ
 - If T16 is later moved before T15, the "Numbers in a row" slide can be cut or shortened to a reminder.
 - q-445 (lockers, a divisor-count question from T14) and q-455 (mostly a roots question) are kept as the last, hardest items. You could move them to T14 and T10.
 - The main lesson grew from 6.4 to 9.3 minutes. If that is too long, "Change the divisor" can move into the tools video.
+
+## Pass 2 (teacher-approved plan, 2026-09-27)
+**Removed** (the "reverse" remainder question, "100 ÷ n leaves 4: how many n?"; 0 real-exam and 0 original questions of this type):
+- "More Remainder Tools", slide "Take away the remainder": the reverse half (100 ÷ n leaves 4, 96, n > 4, the divisors of 96, the check). The first half (N − r divides by d, the 53 example) stays.
+- Same video, Recap: ", and d > r" dropped.
+- Card "More remainder tools", row "Known remainder": the example is now the slide's 53 example (53 ÷ 7 leaves 4 → 53 − 4 = 49 = 7·7).
+- Guided question q-r26-t15-02 (75 ÷ n leaves 3) and its solution video. The guided questions after it renumber automatically (now 15 guided: 1–5 theory, 6–15 advanced).
+- Practice q-r26-t15-03 and q-r26-t15-04.
+
+**Restored** (originals, text clean-up only):
+- alg-extra-unit-t15-3-4 (remainder 3 by 4 and 2 by 5, smallest = 7) and alg-extra-unit-t15-3-6 (smallest number divisible by 8 and 12 = 24, the LCM from T14). Choices in TeX, full numeric solutions. Both placed back in the practice at matching difficulty.
+- Card "Divisibility signs & remainders": checked against the original. Every true original row is present (the 15 row is covered by "12, 15, 18, 24"); the old 6/15, 11 and "÷4 and ÷5" rules stay fixed.
+
+**Summary video** `r26-t15-summary` "Division & Remainder: Summary" (about 2 minutes), the last item of the advanced section, right before the practice. Slides: Summary · Divisibility signs · Build a divisor · Divisibility stories · Remainder basics · Combine remainders · Change the divisor · Counting and units digits · Numbers in a row · Before you practice.

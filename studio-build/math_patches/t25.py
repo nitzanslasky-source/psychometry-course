@@ -463,14 +463,9 @@ def apply(M):
                         'Distance ratio $6:12=1:2$, therefore the size ratio of A to B is $2:1$. Team A has more members.'])
     S('wp25-p03', expl=['Both groups have three numbers, and sum $=3\\times$ average. Equal averages give equal sums.',
                         'The difference of the sums is $0$.'])
-    # p05 (fraction arithmetic only) -> "how many values" with a removed value
-    S('wp25-p05', stem='The average of a list of numbers is 40. The number 16 is removed from the list, and the average of '
-                       'the remaining numbers is 43. How many numbers were in the list at first?',
-      choices=['$7$', '$8$', '$9$', '$10$'], correct=3,
-      expl=['The removed number is $40-16=24$ below the old average. Without it, each remaining number counts '
-            '$43-40=3$ more.',
-            '$24\\div3=8$ numbers remain. At first there were $8+1=9$.',
-            'Check: $9\\cdot40-16=344=8\\cdot43$ ✓.'])
+    # p05: the original "average of 2/3 and 1/6" (restored, Pass 2); the "how many at first" version is q-r26-t25-14
+    S('wp25-p05', expl=['$\\frac23=\\frac46$, therefore $\\frac23+\\frac16=\\frac46+\\frac16=\\frac56$.',
+                        'The average is half of the sum: $\\frac56\\div2=\\frac5{12}$.'])
     S('wp25-p07', expl=['Adding Chen did not change the average. Therefore Chen\'s score equals that average: $84$.',
                         'Ava and Ben average $84$, therefore they total $2\\cdot84=168$. Ava: $168-72=96$.'])
     S('wp25-p08', expl=['The middle temperature equals the average: its difference is $0$.',
@@ -481,9 +476,10 @@ def apply(M):
     S('wp25-p10', stem='$M$ is the average of $x$, $y$ and $z$. Given: $x<M<z$. Which of the following statements is necessarily true?',
       expl=['$M<z$ means $\\frac{x+y+z}{3}<z$. Multiply by $3$: $x+y+z<3z$.',
             'Therefore $x+y<2z$, and $\\frac{x+y}{2}<z$.'])
-    S('wp25-p11', stem='The average of the numbers $a$ and $b$ is $3a$. What is their average in terms of $b$?',
+    S('wp25-p11', stem='The numbers $a$ and $b$ satisfy $b=a+2$, and their average is $3a$. What is their average in terms of $b$?',
       expl=['$\\frac{a+b}{2}=3a$, therefore $a+b=6a$ and $b=5a$, that is, $a=\\frac b5$.',
-            'The average is $3a=3\\cdot\\frac b5=\\frac{3b}{5}$.'])
+            'The average is $3a=3\\cdot\\frac b5=\\frac{3b}{5}$. (The condition $b=a+2$ is not needed for this. It gives $a=\\frac12$ and '
+            '$b=\\frac52$, and indeed $\\frac{3}{5}\\cdot\\frac52=\\frac32=3\\cdot\\frac12$.)'])
     S('wp25-p12', expl=['An average cannot equal the largest value if any value is smaller: the balance would have only '
                         'values below it.', 'Therefore $r=s=t$.'])
     S('wp25-p13', expl=['The first two total $2\\cdot4=8$. The last two total $2\\cdot6=12$. Together: $20$, with the '
@@ -511,17 +507,14 @@ def apply(M):
                         '$20+6\\cdot2=32$.'])
     S('wp25-p22', expl=['Sum: $5\\cdot24=120$. Remove $39$: $120-39=81$, for four values.',
                         'New average: $\\frac{81}{4}=20.25$.'])
-    S('wp25-p23', stem='A course grade gives a test three times the weight of a project. The test score is 72 and the '
-                       'project score is 88. What is the course grade?',
-      choices=['$76$', '$80$', '$84$', '$74$'], correct=1,
-      expl=['$\\frac{3\\cdot72+88}{4}=\\frac{216+88}{4}=\\frac{304}{4}=76$.',
-            'See-saw: the gap $88-72=16$ splits into $4$ parts of $4$. One part above the heavy side: $72+4=76$.'])
+    S('wp25-p23', choices=['$74$', '$72$', '$76$', '$80$'],
+      expl=['$\\frac{3\\cdot68+92}{4}=\\frac{204+92}{4}=\\frac{296}{4}=74$.',
+            'See-saw: the gap $92-68=24$ splits into $4$ parts of $6$. One part above the heavy side: $68+6=74$.'])
     S('wp25-p24', expl=['Multiplying every number by $3$ multiplies the average by $3$: $3\\cdot15=45$.',
                         'Subtracting $4$ from every number subtracts $4$ from the average: $45-4=41$.'])
-    S('wp25-p25', stem='Seven consecutive integers have an average of 23. What is the largest of them?',
-      choices=['$26$', '$27$', '$29$', '$30$'], correct=1,
-      expl=['Consecutive integers are evenly spaced. Therefore the average is the middle (4th) number: $23$.',
-            'Three more numbers above it: $24, 25, 26$. The largest is $26$.'])
+    S('wp25-p25', choices=['$168$', '$175$', '$161$', '$154$'],
+      expl=['Sum $=$ number $\\times$ average: $7\\cdot23=161$.',
+            'That the integers are consecutive is not needed for the sum.'])
     S('wp25-p26', expl=['Old total: $20\\cdot30=600$. New total: $25\\cdot32=800$.',
                         'The five newcomers total $800-600=200$ years. Their average: $\\frac{200}{5}=40$.'])
     S('wp25-p27', expl=['Extra per item: $30$ notebooks at $4$ credits would bring $30\\cdot4=120$ credits. The real '
@@ -537,7 +530,11 @@ def apply(M):
     S('wp25-p18', stem='The average of $a$, $b$ and $14$ is $3$ greater than the average of $b$, $c$ and $20$. What is $a-c$?')
     S('wp25-p20', stem='A group has $x$ members with an average of 76 points and $y$ members with an average of 91 points '
                        '($x>0$ and $y>0$). Which piece of information is always enough to find the average of the whole group?')
-    M.unplace('wp25-p06')      # same idea as p08 and p12 (average equals a value)
+    # p06 restored (Pass 2): the original "two rope lengths" question
+    S('wp25-p06', choices=['$1:1$', '$1:2$', '$2:3$', '$3:4$'],
+      expl=['If the two lengths were different, their average would lie strictly between them: above the shorter length and '
+            'below the longer one. For example, $4$ and $6$ have the average $5$.',
+            'The average equals one of the lengths only if both lengths are equal. The ratio is $1:1$.'])
 
     # =====================================================================================
     # 8. New practice questions
@@ -581,15 +578,29 @@ def apply(M):
                ['$1{,}001$', '$1{,}002$', '$1{,}003$', '$1{,}010$'], 2, [
         'Base number $1{,}000$. The differences: $-2+3+5-4+8=+10$.',
         'Shared over $5$ numbers: $10\\div5=2$. The average is $1{,}000+2=1{,}002$.'])
+    # Pass 2: the fixer's new versions of p05 and p25 stay as extra questions under new ids
+    P['14'] = ('The average of a list of numbers is 40. The number 16 is removed from the list, and the average of the '
+               'remaining numbers is 43. How many numbers were in the list at first?', ['$7$', '$8$', '$9$', '$10$'], 3, [
+        'The removed number is $40-16=24$ below the old average. Without it, each remaining number counts '
+        '$43-40=3$ more.',
+        '$24\\div3=8$ numbers remain. At first there were $8+1=9$.',
+        'Check: $9\\cdot40-16=360-16=344=8\\cdot43$ ✓.'])
+    P['15'] = ('Seven consecutive integers have an average of 23. What is the largest of them?',
+               ['$26$', '$27$', '$29$', '$30$'], 1, [
+        'Consecutive integers are evenly spaced. Therefore the average is the middle (4th) number: $23$.',
+        'Three more numbers above it: $24, 25, 26$. The largest is $26$.'])
     for k, (stem, ch, cor, ex) in P.items():
         M.new_q('q-r26-t25-' + k, TOPIC, stem, ch, cor, ex)
         M.place_q('q-r26-t25-' + k, PRACT)
     n = lambda k: 'q-r26-t25-' + k
     M.practice_order(PRACT, [
-        'wp25-p21', 'wp25-p22', 'wp25-p26', 'wp25-p24', n('10'), 'wp25-p25', 'wp25-p23', 'wp25-p03', 'wp25-p04',
-        'wp25-p01', n('06'), n('13'), 'wp25-p07', 'wp25-p27', 'wp25-p19', 'wp25-p02', 'wp25-p13', 'wp25-p05', n('07'),
-        n('09'), 'wp25-p14', 'wp25-p15', n('08'), n('11'), n('12'), 'wp25-p16', 'wp25-p18', 'wp25-p08', 'wp25-p12',
+        'wp25-p05', 'wp25-p25', 'wp25-p21', 'wp25-p22', 'wp25-p26', 'wp25-p24', n('10'), n('15'), 'wp25-p23', 'wp25-p03',
+        'wp25-p04', 'wp25-p01', n('06'), n('13'), 'wp25-p07', 'wp25-p27', 'wp25-p19', 'wp25-p02', 'wp25-p13', n('14'),
+        n('07'), n('09'), 'wp25-p14', 'wp25-p15', n('08'), n('11'), n('12'), 'wp25-p16', 'wp25-p18', 'wp25-p06',
+        'wp25-p08', 'wp25-p12',
         'wp25-p11', 'wp25-p09', 'wp25-p10', 'wp25-p17', 'wp25-p20'])
+
+    summary(M)
 
     # =====================================================================================
     # 9. Solution-video sidebars (one per section, in flow order) and pre-loaded stems
@@ -608,3 +619,83 @@ def apply(M):
             for b in v['beats']:
                 if b.get('canvas', '').startswith('Pre-loaded — question'):
                     b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (q['id'], q['stem'])
+
+
+def _b(label, tex, size=42):
+    """A board line that pops in (label = what the teacher sees in the script)."""
+    return A("'%s' appears" % label, T(tex, size=size))
+
+
+def summary(M):
+    """Pass 2: a summary lesson right before the practice (end of the further guided examples)."""
+    last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
+    sb = ['The middle', 'Sum and average', 'The balance', 'When values change', 'Largest value, how many',
+          'Weighted averages', 'The see-saw', 'Groups', 'Before you practice']
+    M.new_video('r26-t25-summary', TOPIC, 'Summary', sb, [
+        dict(mode='title', title='Summary', script=[
+            'A quick summary before the practice.',
+            'Everything important about averages — in about three minutes.']),
+        dict(title='The middle', active=0, script=[
+            _b('Symmetric or evenly spaced: average = middle', 'Symmetric or evenly spaced: average $=$ middle $=\\dfrac{\\text{first}+\\text{last}}{2}$'),
+            'Symmetric numbers? The average is the middle. No calculation.',
+            _b('3, 7, 11, 15, 19 → 11', '$3,\\ 7,\\ 11,\\ 15,\\ 19\\ \\to\\ 11$'),
+            'Evenly spaced numbers are symmetric too. The middle one, or first plus last, over two.',
+            _b('Add or remove the average → no change', 'Add or remove a value equal to the average $\\to$ no change'),
+            _b('Always between the smallest and the largest', 'Always between the smallest and the largest value'),
+            'And the average always sits between the smallest and the largest value.']),
+        dict(title='Sum and average', active=1, script=[
+            _b('average = sum ÷ number', 'average $=\\dfrac{\\text{sum}}{\\text{number of values}}$'),
+            _b('sum = number × average', 'sum $=$ number $\\times$ average: $7$ values, average $9\\ \\to\\ 63$'),
+            'The most useful move: turn it around. Sum equals number times average.',
+            'You don\'t know the values? You don\'t need them. Treat every value as the average.',
+            _b('New value: update the sum AND the number', 'A new value: update the sum AND the number of values'),
+            'A value joins or leaves? Change the sum, and change what you divide by.']),
+        dict(title='The balance', active=2, script=[
+            _b('Above the average = below the average', 'Above the average $=$ below the average'),
+            'The differences from the average always add up to zero.',
+            _b('86, 93, 95, ? with average 90: −4 + 3 + 5 = +4 → ? = 86', '$86,\\ 93,\\ 95,\\ ?$ average $90$: $-4+3+5=+4\\ \\to\\ ?=86$', size=40),
+            'Plus four too many above. So the missing one is four below: eighty-six.',
+            _b('Base number: 97, 102, 104, 99 → 100 + 2/4 = 100.5', 'Base number: $97,\\ 102,\\ 104,\\ 99\\ \\to\\ 100+\\frac{2}{4}=100.5$', size=40),
+            'Numbers near a round number? Work only with the differences.']),
+        dict(title='When values change', active=3, script=[
+            _b('One value +10, five values → average +2', 'One value $+10$, five values $\\to$ average $+\\frac{10}{5}=+2$'),
+            'One value changes? Share the change over all the values.',
+            _b('Every value +k or ×k → average +k or ×k', 'Every value $+k$ or $\\times k$ $\\to$ the average $+k$ or $\\times k$'),
+            'Every value changes the same way? The average changes the same way.',
+            _b('Ages: average 30 now → 35 in five years', 'Average age $30$ now $\\to$ $35$ in five years'),
+            'Both at once? Same order: times three, then plus one.']),
+        dict(title='Largest value, how many', active=4, script=[
+            _b('Largest one: the others as small as possible', 'Largest one: make the others as small as possible'),
+            _b('5 positive integers, average 10: 50 − 4 = 46; different: 50 − 10 = 40', '$5$ positive integers, average $10$: $50-4=46$ · different: $50-10=40$', size=40),
+            'Five ones? Only if they may be equal. Different integers: one, two, three, four.',
+            _b('How many before? (new value − new average) ÷ (rise)', 'How many before? $\\dfrac{\\text{new value}-\\text{new average}}{\\text{rise of the average}}=\\dfrac{30-22}{22-20}=4$', size=40),
+            'Compare the new value to the NEW average. Share the extra among the old values.',
+            'And check: before the new value joined, or after?']),
+        dict(title='Weighted averages', active=5, script=[
+            'On the exam it just says "average". You must notice the weights.',
+            _b('Weight = number of copies', 'Weight $=$ number of copies: $70, 70, 70, 90\\ \\to\\ \\frac{300}{4}=75$'),
+            _b('Weighted average formula', '$\\dfrac{v_1w_1+v_2w_2}{w_1+w_2}=\\dfrac{70\\cdot3+90\\cdot1}{3+1}=75$'),
+            'Each value times its weight. Divide by the sum of the weights — not by the number of values.']),
+        dict(title='The see-saw', active=6, script=[
+            _b('Weight ratio 3 : 1 → distance ratio 1 : 3', 'Weight ratio $3:1\\ \\to$ distance ratio $1:3$'),
+            'The distances are the weights, flipped.',
+            _b('The heavy side gets the small part', 'The heavy side gets the SMALL part of the gap'),
+            'Seventy and ninety: a gap of twenty. Four parts of five. One part from the heavy side: seventy-five.',
+            _b('Extra per item', 'Extra per item: everyone at the low value, then count the extra'),
+            'Only two kinds of items? Start everyone at the low value. Share the extra.']),
+        dict(title='Groups', active=7, script=[
+            _b('Group size = weight; reduce the ratio first', 'Group size $=$ weight · reduce the ratio first: $6:9=2:3$'),
+            'Combining groups? The size of each group is its weight.',
+            _b('50 and 70 → 60 only if the groups are equal', 'The average of $50$ and $70$ is $60$ only if the groups are equal'),
+            _b('Closer to the bigger group', 'The answer is closer to the bigger group'),
+            'Before you calculate: the answer is on the side of the bigger group.']),
+        dict(title='Before you practice', active=8, script=[
+            'Before you practice, ask yourself these questions.',
+            _b('Do I know the number and the average? Then I know the sum.', 'Number and average given? Multiply: that\'s the sum.'),
+            _b('Is it weighted? Which side is heavier?', 'Is it weighted? Which side is heavier?'),
+            _b('Positive? Different? Integers?', 'Positive? Different? Integers? Every word counts.'),
+            _b('Before or after the change?', 'Before or after the new value joined?'),
+            _b('Letters in the answers? Plug in numbers.', 'Letters in the answers? Plug in numbers (all equal, then others).'),
+            'The traps: the average of two group averages when the groups are not equal, dividing by the wrong number, and counting before instead of after.',
+            'Good luck.'])],
+        ADV, after=last)
