@@ -14,8 +14,8 @@ def fig(svg, name):
 
 def item_text(it):
     if isinstance(it, str): return it
-    if isinstance(it, dict) and it.get('k') == 'vis' and isinstance(it.get('v'), dict) and it['v'].get('svg'): return fig(it['v']['svg'], 'v%d' % len(FIG))
-    if isinstance(it, dict) and it.get('k') == 'q': return 'question %s shown%s' % (it.get('qid'), (' ' + fig(it['fig']['svg'], 'v%d' % len(FIG))) if isinstance(it.get('fig'), dict) and it['fig'].get('svg') else '')
+    if isinstance(it, dict) and it.get('k') == 'vis' and isinstance(it.get('v'), dict) and it['v'].get('svg'): return fig(it['v']['svg'], 'v' + __import__('hashlib').md5(str(it.get('v', it.get('fig', {})).get('svg', '')).encode()).hexdigest()[:10])
+    if isinstance(it, dict) and it.get('k') == 'q': return 'question %s shown%s' % (it.get('qid'), (' ' + fig(it['fig']['svg'], 'v' + __import__('hashlib').md5(str(it.get('v', it.get('fig', {})).get('svg', '')).encode()).hexdigest()[:10])) if isinstance(it.get('fig'), dict) and it['fig'].get('svg') else '')
     if isinstance(it, dict): return ' | '.join(str(v) for k, v in it.items() if k in ('t', 'text', 'tex', 'label', 'title', 'body', 'html', 'q', 'a') and v)
     return ''
 
@@ -71,8 +71,10 @@ import subprocess
 FD = os.path.join(H, 'student_review', 'fig'); os.makedirs(FD, exist_ok=True)
 todo = []
 for name, svg in FIG:
-    if not os.path.exists(os.path.join(FD, name + '.png')):
-        open(os.path.join(FD, name + '.svg'), 'w').write(svg); todo.append(name + '.svg')
+    sp = os.path.join(FD, name + '.svg')
+    same = os.path.exists(sp) and open(sp).read() == svg
+    if not (same and os.path.exists(os.path.join(FD, name + '.png'))):
+        open(sp, 'w').write(svg); todo.append(name + '.svg')
 for k in range(0, len(todo), 40):   # macOS Quick Look renders SVG -> <name>.svg.png
     subprocess.run(['qlmanage', '-t', '-s', '640', '-o', FD] + [os.path.join(FD, t) for t in todo[k:k + 40]], capture_output=True, timeout=300)
 for t in todo:
