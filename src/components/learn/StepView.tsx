@@ -268,7 +268,7 @@ function QuestionStep({
     <div ref={ref}>
       {passage && <PassagePanel passage={passage} />}
       {step.instructions && <p className="mb-5 border-l-2 border-line pl-4 text-sm italic text-muted">{step.instructions}</p>}
-      <div className="text-[19px] leading-[1.65] text-ink">{step.stem}</div>
+      <div className="whitespace-pre-line text-[19px] leading-[1.65] text-ink">{step.stem}</div>
       {step.figure && (
         <figure className="card mt-7 p-6">
           <div className="mx-auto max-w-lg [&>svg]:h-auto [&>svg]:w-full" dangerouslySetInnerHTML={{ __html: step.figure }} />

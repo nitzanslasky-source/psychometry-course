@@ -40,6 +40,12 @@ LABEL_NEW = ("{const TS={2:'Fractions — Basics',4:'Expressions — Basics',6:'
              "if(textWidth(lbl,z,800)>W){lbl=tt;z=17;while(textWidth(lbl,z,800)>W&&z>11)z--}"
              "s+=svgText(lbl,36,64,z,'#f0b64a',800)}")
 
+# Forced line breaks ("\n") in rich text: e.g. a stacked system of equations on its own line, then the question.
+BR_TOK_OLD = "else for(const w of p.split(/(\\s+)/)){if(w)tokens.push({text:w,w:textWidth(w,size),h:size*1.1})}}"
+BR_TOK_NEW = "else for(const w of p.split(/(\\s+)/)){if(!w)continue;if(w.includes('\\n')){tokens.push({br:1});continue}tokens.push({text:w,w:textWidth(w,size),h:size*1.1})}}"
+BR_ROW_OLD = "for(let t of tokens){if(t.w>width&&t.tex)"
+BR_ROW_NEW = "for(let t of tokens){if(t.br){rows.push({tokens:row,h:rh});row=[];rw=0;rh=size*1.25;continue}if(t.w>width&&t.tex)"
+
 def apply(html):
     assert html.count(LABEL_OLD) == 1, 'sidebar label not found'
     html = html.replace(LABEL_OLD, LABEL_NEW)
@@ -47,6 +53,8 @@ def apply(html):
     html = html.replace(PLACE_OLD, PLACE_NEW).replace("const placed=[];b.items.forEach(", "const placed=[];let ctop=900;b.items.forEach(")
     assert html.count(HOOK_OLD) == 1, 'hyItem hook not found'
     html = html.replace(HOOK_OLD, HOOK_NEW)
+    assert html.count(BR_TOK_OLD) == 1 and html.count(BR_ROW_OLD) == 1, 'richSvg tokenizer not found'
+    html = html.replace(BR_TOK_OLD, BR_TOK_NEW).replace(BR_ROW_OLD, BR_ROW_NEW)
     k = html.find('function hyPie(')
     assert k > 0
     return html[:k] + FUNCS.lstrip() + html[k:]

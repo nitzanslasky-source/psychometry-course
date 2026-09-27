@@ -21,6 +21,11 @@ s, i, j, D = load(BASE)
 s = renderer_patch.apply(s)
 s = studio_patch.apply(s)
 
+# ---------- math fixes (course review 2026-09): math_patches/tNN.py on top of the baked Algebra/WP/Geometry ----------
+import math_api
+MATH = math_api.apply_patches(D)
+print('math patches: %d questions, %d videos touched' % (len(MATH.touched_questions), len(MATH.touched_videos)))
+
 # ---------- bank questions + passages ----------
 BQ, POOLS, BP, RC = vbank.questions()
 D['questions'].update(BQ)
@@ -127,6 +132,9 @@ for t, mods in MODS.items():
                 if sl['mode'] == 'title': sl['title'] = 'Question %d' % k
                 sl['script'] = [fix(x) if isinstance(x, str) else x for x in sl['script']]
 
+for vid, v in D['videos'].items():   # math solution videos added by math_patches
+    if v.get('topic', 99) <= 38 and v.get('kind') == 'solution' and v.get('beats') and (v['beats'][0].get('bigTitle') or '').startswith('Question '):
+        LOCK[vid] = {'topic': v['topic'], 'n': int(v['beats'][0]['bigTitle'].split()[1])}
 json.dump(LOCK, open(LOCKF, 'w'), indent=0, sort_keys=True)
 # ---------- module numbers (per subject, course order; a guided group shares one number) ----------
 num, seen = 0, {}

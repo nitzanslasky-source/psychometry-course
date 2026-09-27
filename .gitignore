@@ -10,3 +10,5 @@ studio-build/layout-harness.html
 studio-build/__pycache__/
 studio-build/*.webm
 .DS_Store
+student_review/
+tmp_check/
