@@ -1,0 +1,137 @@
+NITE ENGLISH VOICE GUIDE (consolidated from blind "spot the fake" tests, rounds 1-2; the old running notes are in
+blind_tells_log.txt, but THIS file wins where they differ). An expert who knows the English psychometric exam must
+not be able to pick our items out of a mix with real ones. Every point below is something that got our items caught.
+Keep each item's question TYPE, KIND of trap, answer position and rough difficulty; everything else (subject, names,
+wording, option construction) may change. After editing, re-solve every item cold: exactly ONE defensible answer,
+decidable from the item itself without outside knowledge.
+Run: python3 /Users/nitzanslasky/psychometry-course/studio-build/lint_originals.py <GROUP>  (must pass).
+
+A. VOICE
+ 1. Real NITE English is a professional translation from Hebrew: formal, plain, literal, slightly stiff, a little
+    wordy; translation traces such as "if X - Y" conditionals, stems ending "... -", "is of the opinion that", "has
+    no choice but to", comma-splice "however". Ours read as smooth native magazine, Wikipedia or essay English -
+    the most common single tell. (Do not insert spelling or grammar errors.)
+ 2. No idioms/colloquialisms ("would do well", "trial run", "of modest means", "That said", "passed over"), no
+    literary images, no clever turns ("lies not in X but in Y"), no punchline endings, no explanatory asides.
+ 3. No contractions anywhere. Hyphen " - " only, never en/em dashes. American spelling. Few semicolons.
+ 4. Generic pronoun: avoid needing one; when needed, "he" or "they" both occur in real items (older/newer exams).
+
+B. CONTENT
+ 5. NOT famous material. Famous people, textbook cases and encyclopedia stories are a strong tell in EVERY type:
+    Darwin, Mendel, Kafka, Galileo, Newton, Plato's cave, Fleming, Euler, Rosetta Stone, Napoleon, Aesop, Odysseus,
+    Matthew effect, Simpson/Berkeley, chess memory, endowment/Hawthorne effects, Loftus, famous quotes (Pascal,
+    Heraclitus, Churchill). Also no "In 1747 the Scottish naval surgeon James Lind ..." openings.
+ 6. What real items use instead: opinion/argument snippets on unusual subjects by little-known or invented writers
+    ("Professor Shore", "historian Malkin", "the essayist Burak"); invented dialogues between two people; odd,
+    specific invented entities (Zviel, Igleson, Mr. Mekam, the Dolmanian sculptor Ptolemy, Beznia, Upper Barbonia,
+    Lundia and Sarvia, the Hothouse Theater, "vitamin Q", the Galilee Egg Company, AppleNet Company, Hatsavim School,
+    the journal "Microscope"); odd concrete scenes (a compote, a king's chamomile, an orchestra's driver). Israeli
+    context where natural (shekels, an Israeli town, a kibbutz, Hebrew names). Do not reuse these exact examples -
+    invent your own in the same spirit.
+    SAFEST pattern for paragraph/reading texts: an invented or unnamed writer arguing a view (opinions, not new
+    factual claims). Background facts must be true and uncontroversial; never attach invented findings, quotes or
+    opinions to real people or institutions.
+ 7. Not modern consumer/tech/Anglo-American life (apps, gyms, solar panels, cafés, marathons, quarterly reports,
+    Oak Street, city council, community theater) and no news-style recent facts or dates after about 2020.
+ 8. Names: modern Israeli transliterations (Nechama, Chagit, Bentzi, Na'or, Gilad, Oded, Avner, Aya, Bella, Galit,
+    Dorit, Galia, Erez, Gadi, Ella, Shira, Barak, Michal), sets of people often in Hebrew-alphabet order (Aya, Bella,
+    Galit); researchers as "Professor X"/"Dr. X" with less common surnames. NOT the Bible set (Joseph, David, Ruth,
+    Miriam, Shlomo, Esther), not stock surnames (Cohen, Levi, Katz, Mizrahi, Rosen, Shapira), not trendy names
+    (Rotem, Lavi, Itai, Noa), not Anglo full names. Name things sparingly: no brand/band/album/street names.
+ 9. Sayings (parables): not stock English idioms (golden goose, cart before the horse, stable door) and not
+    polished invented proverbs that fit the answer exactly; real ones sound translated and a little odd ("Every
+    duck is a swan in its lover's eyes") or are plain concrete comparisons.
+10. No English-specific language content (English word formation, spelling puzzles, letter codes, stress in
+    English words); no textbook-term lectures (loanword, minimal pair, sentence types, symmetric relations).
+
+C. SHAPE AND OPTIONS
+11. NO CLONES: an expert who knows the mirrored real item must not be able to pair ours with it - do not keep its
+    skeleton (stem formula + option layout + distractor order). Keep only the type and the kind of trap.
+12. Key must not stand out: not the longest (lint: <= 30% of items), not the most detailed/hedged/qualified, not a
+    near-verbatim lift of a sentence of the text, not the only option with a "since"/semicolon explanation. Long
+    options are often WRONG in real items.
+13. Distractors are plausible, locally coherent and as detailed as the key; they fail by subtle logic (reversed
+    condition, necessary vs sufficient, "not necessarily", stacked negation, counterfactual, order of steps, one
+    clause changed). Never crude antonym flips, nonsense, irrelevant trivia, self-contradicting options, straw-man
+    absolutes, or mere reorderings of the key.
+14. Real option sets are uneven and a little messy. Avoid: one phrase repeated verbatim in all 4 options,
+    near-synonym distractor trios, graded-intensifier sets, symmetric 2x2 grids, perfectly parallel templates.
+15. Stems use only formulas attested in the real sample (see your profile file); they do not explain their own
+    logic, and options do not carry their own justification.
+16. Real items are rarely one-dimensional: a single clean textbook flaw with an obvious answer looks fake;
+    many real items need two steps.
+
+D. TYPE-SPECIFIC
+17. Completions: one or two dense sentences, 3-4 blanks, trap in the connectors; fills of uneven length;
+    one-blank items test MEANING with same-part-of-speech words, never grammatical form. No analogy mapping,
+    principle application, dialogue or litotes puzzles dressed as completions; no encyclopedic prose with one
+    sentence-length blank; every wrong option survives blank 1 and fails only on the whole sentence.
+18. Rules/arrangements: small everyday settings (salaries of three people, four cars, a square table, a school's
+    bylaws), wordy but logically flat. No legal drafting ("- and only on such days -", "Notwithstanding"), defined
+    terms in quotes, abstract symmetric tables (salts P/Q/R/S), knights-and-knaves, loophole-closing clauses.
+19. Science: quirky invented settings, not famous studies or taught named designs (lottery randomization,
+    knockout mouse).
+20. Reading: stems point to places with a parenthetical reference exactly where NITE puts "(line N)" - ours
+    use "(paragraph N)": "The word 'surprisingly' (paragraph 3) ...", "'this' (paragraph 2) refers to -". Mix stem
+    formats as real sets do (slash-option blank fills, reference questions, "explains the use of the word",
+    analogy items, long overlapping options); no graph questions; 590-720 words, 4-6 paragraphs; not built
+    backwards for a structure question.
+
+E. METHOD (added after round 3 - the voice tell persists when we write in English)
+21. WRITE IN HEBREW FIRST, THEN TRANSLATE - exactly how NITE produces its English exam. For each item: (a) write the
+    complete item in Hebrew as a NITE item writer would (Hebrew phrasing, Hebrew connectors like "לפיכך", "אף על
+    פי כן", "קל וחומר", Israeli setting and names); (b) translate it into English as a faithful, literal,
+    professional translation - keep Hebrew sentence order and connectors where English allows, do not smooth or
+    polish, do not add clauses the Hebrew lacks. Store the Hebrew draft in an internal field "he_draft" (never shown
+    to students). Compare the English with 3 real items of the same type before saving.
+22. Do not over-engineer: no planted explanatory clause whose only job is to make the key airtight; connector
+    options differ in LOGIC (therefore / nevertheless / however), never near-synonyms (in addition / on top of that);
+    minimal-pair options (surprising / not surprising) at most in some items, not as the file's pattern; no neat 2x2
+    grids of option halves; some distractors wrong in their own odd way.
+23. Paragraph-completion options (a whole sentence completing a text) end with a period, as in real items.
+
+F. ROUND 3 (completions)
+24. Invented COUNTRY/PLACE names used as adjectives (Oshrian, Tolvian, Kardonian, "Upper X") are now a tell by
+    overuse. Default to generic or real settings (Israel, Haifa, a town in the north, Western Europe, a certain
+    country, Rome); use at most an occasional invented culture. Characters: bare surname (Eldad, Talmon), first name
+    only (Nili, Yoav, Dina), or "Professor/Dr. X" - NOT "The [profession] [first name + surname]" and never invented
+    full names just to vary options.
+25. Every slot in every option must do logical work: no filler slot of near-synonyms ("fell by half / was cut in
+    half", "twenty years / two decades"), no long clause copied verbatim across options, no punctuation-only or
+    fixed connector slots. Real items change almost every slot.
+26. Scenarios: fewer village/institution anecdotes with one causal twist; more abstract claims about a thinker's or
+    researcher's view, nested negations/counterfactuals, sayings, rule-like statements.
+27. STYLE DONOR METHOD (use for every item from now on - it prevents the whole file from sharing one set of habits,
+    which is what testers keep catching): for each of our items, pick a DIFFERENT real item of the same type from
+    your real sample (not the mirrored source; use each donor at most once) and match its SURFACE: number of
+    sentences and their length, how people are named (or not), setting type, register and translation traces,
+    option lengths and how many slots change, whether options end with periods. Take NO content, names or
+    distinctive wording from it. Record the donor's source label in an internal field "style_donor".
+    Combined with point 21 (Hebrew first), this is the method; the example lists in this guide are illustrations,
+    not a palette to reuse.
+28. CORRECTION: option LENGTHS must vary a lot, as in real items (a one-line option next to a two-sentence one).
+    The old lint rule "no distractor under 45% of the key" made our sets evenly balanced, which is itself a tell -
+    it is removed. Only the key-is-longest share (<= 30%) remains. Do not make all four options full compound
+    clauses of the same shape.
+29. Invented LOCAL place and institution names (the village of Tzurim, Kiryat Levona, Tavor Insurance, Emek
+    College) and titled full names ("Dr. Menucha Kalir") are tells; real items say "a municipality", "a coastal
+    city", "a pharmaceutical company", or use one plain first name / a surname. Never reuse a name across items.
+    Invented rustic proverbs with farm images are a tell; prefer recognisable real sayings or plain comparisons.
+
+G. ROUND 4 RESULT AND FINAL RECIPE
+30. P41b PASSED round 4 (tester caught 0 of 33 and wrongly accused 16 real items). Its recipe: Hebrew draft first,
+    then a PROFESSIONAL translation - not word-for-word. Every other group overshot into calques and was caught for
+    them. Translation traces belong ONLY in connectors, set phrases and a slight formal stiffness ("It is not
+    surprising that", "had no choice but to", "is of the opinion that", "all the more so", "to their bad luck",
+    "a threshold requirement"). Grammar, word order and possessives must be normal edited English:
+    "Rina's conclusion" (never "the conclusion of Rina"), "his son's books", "the auditor's report", "he also read
+    the letters" (never "read also the letters"), no sentences opening "Also ...", no "for two years already", no
+    "If so, although", no "suggested to her to", no "see in X the Y", no resumptive pronouns ("whoever ..., he").
+    Read content/verbal_originals_P41b.json (items 135-167) before writing: that is the target voice.
+31. Invented authorities with Hebrew surnames + job label ("Dr. Handelsman, who studies folk tales") in every item
+    are a tell; vary: some items with no named source, some dialogues between two first-name characters, some
+    unnamed "researchers", occasional invented countries. Do not tag every scenario with an Israeli place.
+32. Paragraph and reading texts: real ones are denser and carry detail that does not affect the answer (figures,
+    dates, extra facts). Reading passages may rest on real, well-documented subjects with real named researchers and
+    figures, described accurately (list them in "facts"), as in round 1 - but in the recipe-30 voice and without a
+    fixed "accepted view -> scholar objects -> critics" arc.

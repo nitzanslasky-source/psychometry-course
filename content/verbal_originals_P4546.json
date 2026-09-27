@@ -6,18 +6,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "Autumn 2024 §1 Q7",
    "replaces": "vb-inf_v2_0284",
-   "stem": "For several years now \"Orbit,\" the country's leading publishing house, has been offering contracts to the most talented first-time authors who approach the smaller publishers. Few of these authors' books ever appear: Orbit has more than enough titles of its own, but the small publishers, left without new talent, are losing readers from year to year. Which of the following business practices most resembles Orbit's strategy?",
+   "stem": "Over the past decade, Arnon Books, the largest publishing house in the country, has signed contracts with nearly every young poet whose work has appeared in the literary journals, although it publishes only a handful of their collections each year. The small presses, which once discovered most of the country's new poets, now publish almost no new poetry. In which of the following cases is the practice most similar to that of Arnon Books?",
    "options": [
-    "A chain of bakeries acquires the independent bakeries in every neighborhood it moves into, and closes them down",
-    "A shoe manufacturer orders the soles for its shoes from a competing manufacturer, so that the competitor will come to rely on the orders and avoid price wars",
-    "A furniture maker buys most of the shares of the sawmill that supplies its timber, in order to pay less for the wood",
-    "A winery buys the entire harvest of the region's best vineyard, much more than it can use, so that rival wineries must make their wine from inferior grapes"
+    "A bakery chain buys the old bakery in each neighborhood it enters, keeps it open under the chain's name, and gradually replaces its products with the chain's own",
+    "A shoe manufacturer buys all its soles from a smaller competitor, so that the competitor comes to depend on its orders and can no longer afford to compete with it on price",
+    "A furniture maker buys large quantities of timber in the summer, when prices are low, and stores it until winter, when it uses the timber in its own workshops",
+    "A winery buys the entire harvest of the region's best vineyard, although it can use only part of the grapes, leaving the other wineries to make do with inferior fruit"
    ],
    "answer": 4,
-   "explanation": "Orbit acquires what it does not need so that its rivals will lack it; only the winery buys more than it can use in order to deprive its competitors. (1) removes the competitors themselves rather than a resource they need, (2) makes a rival dependent, and (3) is about the buyer's own costs.",
+   "explanation": "Arnon Books takes more than it needs so that its competitors will not have it; the winery does the same with the grapes. (1) uses what it buys, (2) makes a competitor dependent, and (3) stores a resource for its own later use.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "בעשור האחרון חתמה הוצאת \"ארנון\", הגדולה בהוצאות הספרים במדינה, על חוזים עם כמעט כל משורר צעיר ששיריו הופיעו בכתבי העת הספרותיים, אף שהיא מוציאה לאור מדי שנה רק קומץ מספריהם. ההוצאות הקטנות, שבעבר גילו את רוב המשוררים החדשים, כמעט אינן מוציאות היום שירה חדשה. באיזה מן המקרים הבאים הנוהג דומה ביותר לנוהג של הוצאת \"ארנון\"?\n(1) רשת מאפיות קונה את המאפייה הוותיקה בכל שכונה שהיא נכנסת אליה, מפעילה אותה בשם הרשת ומחליפה בהדרגה את מוצריה במוצרי הרשת\n(2) יצרן נעליים קונה את כל הסוליות ממתחרה קטן, כך שהמתחרה נעשה תלוי בהזמנותיו ואינו יכול עוד להתחרות בו במחיר\n(3) נגרייה קונה עצים בכמויות גדולות בקיץ, כשהמחירים נמוכים, ומאחסנת אותם עד החורף, אז היא משתמשת בהם בבתי המלאכה שלה\n(4) יקב קונה את כל היבול של הכרם הטוב באזור, אף שהוא יכול להשתמש רק בחלק מן הענבים, והיקבים האחרים נאלצים להסתפק בפרי נחות",
+   "style_donor": "Summer 2025 Second Q8"
   },
   {
    "id": "vo-45-102",
@@ -25,18 +28,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "Winter 2022 §2 Q8",
    "replaces": "vb-inf_v2_0285",
-   "stem": "Gal and Tamar visited a weekly market held in a hill village and learned that the cheeses sold there, all made by cheesemakers from the village itself, are among the finest in the country. Gal: \"I suppose the market is what made them so good – the steady stream of buyers has allowed the cheesemakers to perfect their craft.\" Tamar: \"Your supposition is like supposing that sitting in the front row of a classroom makes people nearsighted.\" Which of the following claims best expresses what Tamar meant?",
+   "stem": "Professor Lahav found that students who attend the optional review sessions before the final exam in his course get higher grades than those who do not, and he is considering making the sessions compulsory. His teaching assistant remarked: \"That is like concluding that umbrellas cause rain.\" Which of the following best expresses what the assistant meant?",
    "options": [
-    "Fine cheeses are made in many villages, and there is no reason to look for a special explanation of their quality in this one",
-    "The cheeses are fine because they are made from the milk of a rare breed of goat that is raised only in these hills",
-    "The market is held in the village precisely because its cheesemakers were already known for their fine cheeses",
-    "The market protects the cheesemakers from competition with factory cheese, which has driven cheesemakers out of business elsewhere"
+    "Compulsory sessions will not raise the grades of students who do not also prepare for the exam on their own",
+    "Students who are required to attend will pay less attention than those who come by choice, and so will gain less from the sessions",
+    "The students who are already doing well are the ones who choose to attend the review sessions",
+    "The sessions help only because Professor Lahav hints in them at what will appear on the exam"
    ],
    "answer": 3,
-   "explanation": "Nearsighted people choose the front row; the front row does not cause nearsightedness. Likewise the good cheesemakers drew the market, not the reverse. (1) denies that any explanation is needed, and (2) and (4) offer other explanations of quality instead of reversing Gal's cause and effect.",
+   "explanation": "People carry umbrellas because rain is expected; umbrellas do not cause it. Likewise, students who are already doing well choose to attend, and the sessions are not the cause of their success. (1), (2) and (4) all accept that the sessions have some effect.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "פרופסור להב מצא שסטודנטים המשתתפים בשיעורי החזרה הרשות לפני הבחינה בקורס שלו מקבלים ציונים גבוהים יותר מאלה שאינם משתתפים בהם, והוא שוקל להפוך את השיעורים לחובה. העוזר שלו העיר: \"זה כמו להסיק שמטריות גורמות לגשם.\" איזה מן הבאים מבטא בצורה הטובה ביותר את כוונת העוזר?\n(1) שיעורי חובה לא ישפרו את ציוני הסטודנטים שאינם מתכוננים לבחינה גם בעצמם\n(2) סטודנטים שיחויבו להשתתף יהיו קשובים פחות ממי שבאים מבחירה, ולכן יפיקו מן השיעורים פחות\n(3) הסטודנטים שכבר מצליחים הם שבוחרים להשתתף בשיעורי החזרה\n(4) השיעורים עוזרים רק משום שפרופסור להב רומז בהם מה יהיה בבחינה",
+   "style_donor": "Summer 2020 Second Q13"
   },
   {
    "id": "vo-45-103",
@@ -44,18 +50,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "Autumn 2025 §1 Q7",
    "replaces": "vb-inf_v2_0286",
-   "stem": "Amir told Dafna about a task he had been given in the first week of a course in website design. Dafna's response was: \"That is like asking a tailor to sew on the buttons before the cloth has been cut.\" Which of the following is most likely to be the task Amir told Dafna about?",
+   "stem": "Dina, a first-year architecture student, described her first assignment to her father. He said: \"That sounds like choosing curtains for a house that has not been built yet.\" Which of the following is most likely to have been Dina's assignment?",
    "options": [
-    "To choose the fonts and colors for the pages of a website whose structure he would plan only later in the course",
-    "To look through websites that the class would analyze in the final weeks of the course",
-    "To open a folder for saving the drafts he would submit at the end of the course",
-    "To describe the kind of website he hoped to be able to build after the course"
+    "To select colors and materials for the interior of a public building, although the building's plan will be drawn only at the end of the course",
+    "To visit three public buildings in the city and write a short description of each, before the buildings are discussed in class",
+    "To put together a portfolio of the sketches she made before starting her studies, so that the lecturer can assess her starting level",
+    "To write a short essay on the kind of buildings she hopes to design one day, although she has not yet taken any courses in design"
    ],
    "answer": 1,
-   "explanation": "Buttons need cut cloth, and page colors need a planned structure: the finishing touch comes before the thing it depends on. (2) is early preparation, (3) is sensible organization, and (4) asks for a wish, not a product.",
+   "explanation": "Choosing curtains before the house exists is finishing something before its structure is there; selecting interior colors before the plan is drawn is the same. The other tasks do not depend on a stage that has not yet been done.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "דינה, סטודנטית בשנה הראשונה ללימודי אדריכלות, תיארה לאביה את המטלה הראשונה שקיבלה. אביה אמר: \"זה נשמע כמו לבחור וילונות לבית שעוד לא נבנה.\" מה ככל הנראה הייתה המטלה?\n(1) לבחור צבעים וחומרים לחלל הפנים של בניין ציבורי, אף שתוכנית הבניין תשורטט רק בסוף הקורס\n(2) לבקר בשלושה בניינים ציבוריים בעיר ולכתוב תיאור קצר של כל אחד, לפני שיידונו בכיתה\n(3) לאסוף תיק של הרישומים שרשמה לפני תחילת לימודיה, כדי שהמרצה יוכל להעריך את רמתה ההתחלתית\n(4) לכתוב חיבור קצר על הבניינים שהייתה רוצה לתכנן יום אחד, אף שעוד לא למדה אף קורס בתכנון",
+   "style_donor": "July 2015 First Q10"
   },
   {
    "id": "vo-45-104",
@@ -63,18 +72,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "Spring 2024 §2 Q7",
    "replaces": "vb-inf_v2_0287",
-   "stem": "Yonatan, who works from home as a translator, needs a new printer and has narrowed his choice to two models: an expensive one whose ink cartridges are cheap, and a cheap one whose cartridges cost a great deal. A colleague advised him to buy the expensive model, saying that, given how much he prints, the savings on cartridges would cover the difference in price within a few months. Which of the following pieces of advice rests on reasoning most similar to the colleague's?",
+   "stem": "A printer bought an expensive press rather than a model that costs half as much and does the same work, explaining that ink for the cheaper model is so expensive that within two years it would cost him more than the difference in price. In which of the following cases is the reasoning most similar to the printer's?",
    "options": [
-    "A runner is advised to train on hills rather than on flat roads, since the extra effort will be repaid by faster times in races",
-    "A couple is advised to hold their wedding in the spring rather than in the summer, since the weather is milder then",
-    "A commuter who takes the train every day is advised to buy an annual pass rather than a ticket each morning, since a year of daily tickets would cost far more than the pass",
-    "A hiker is advised to take a smaller tent, since the lighter load will let her cover more ground each day"
+    "A runner trains on steep hills rather than on flat roads, accepting a harder training season in exchange for faster times in the races at the end of it",
+    "A couple chose to hold their wedding in the spring, when the hall they wanted charges less and the guests would not suffer from the heat",
+    "A commuter paid for an annual train pass, although it is expensive, because buying a ticket for each trip would cost him more over the year",
+    "A hiker paid more for a light tent than for the heavy one he already owned, so that he could cover more ground each day of his trek"
    ],
    "answer": 3,
-   "explanation": "In both cases a larger payment now is set against a recurring cost that soon exceeds it. (1) trades effort for results, not money for money over time; (2) and (4) weigh qualities, not costs.",
+   "explanation": "The printer pays more once to avoid repeated costs that would add up to more; so does the commuter. (1) trades effort, not money, (2) chooses the cheaper option, and (4) pays more for a different kind of benefit.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "בעל בית דפוס קנה מכונה יקרה במקום דגם שמחירו מחצית ועושה את אותה העבודה, והסביר שהדיו לדגם הזול יקר כל כך, שבתוך שנתיים היה עולה לו יותר מן ההפרש במחיר. באיזה מן המקרים הבאים ההנמקה דומה ביותר להנמקתו?\n(1) רץ מתאמן בגבעות תלולות ולא בדרכים מישוריות, ומקבל עליו עונת אימונים קשה תמורת זמנים מהירים יותר במרוצים שבסופה\n(2) זוג בחר לערוך את החתונה באביב, כשהאולם שרצו גובה פחות והאורחים לא יסבלו מן החום\n(3) אדם הנוסע לעבודה ברכבת שילם על כרטיס שנתי, אף שהוא יקר, משום שכרטיס לכל נסיעה היה עולה לו יותר במשך השנה\n(4) מטייל שילם על אוהל קל יותר מאשר על האוהל הכבד שכבר היה לו, כדי שיוכל לעבור מרחק רב יותר בכל יום",
+   "style_donor": "Summer 2026 First Q12"
   },
   {
    "id": "vo-45-105",
@@ -82,18 +94,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "Spring 2026 §2 Q8",
    "replaces": "vb-inf_v2_0289",
-   "stem": "After burglars broke into Mrs. Shavit's apartment and took all her jewelry, her son suggested that she install a safe in her bedroom closet. She replied: \"If I did that, I would be like a shepherd who builds a pen once the wolves have carried off the whole flock.\" Which of the following best expresses what Mrs. Shavit meant?",
+   "stem": "After burglars took all of Galit's jewelry, her son urged her to install a safe. Galit replied: \"Now? That is like calling the fire department after the house has burned down.\" Which of the following best expresses what Galit meant?",
    "options": [
-    "A safe does offer protection, but its price is out of proportion to the value of what it would guard",
-    "The jewelry had been kept in a safe, and the burglary proved that safes are of no use",
-    "There is no point in a safe, since burglars who break into an apartment usually know how to open a safe as well",
-    "A safe would have been worth installing before the burglary, but now that the jewelry is gone there is nothing left for it to protect"
+    "A good safe would cost more than the few pieces of jewelry she still has",
+    "Her jewelry had been kept in a locked drawer, and the burglary showed that locks do not stop determined burglars",
+    "Burglars who managed to break into her apartment would have opened a safe as well, so a safe would not have helped even before the burglary",
+    "Installing a safe would have made sense before the burglary, but now there is nothing left for it to protect"
    ],
    "answer": 4,
-   "explanation": "The pen built after the flock is gone is a precaution taken once the loss it should have prevented has already occurred. (1) makes the objection one of cost, (2) invents an earlier safe, and (3) claims safes do not work, which the image does not say.",
+   "explanation": "Calling the fire department after the fire is acting when there is nothing left to save. (1) assumes some jewelry is left, (2) adds a fact that is not given, and (3) claims that a safe would never have helped.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "לאחר שפורצים לקחו את כל התכשיטים של גלית, הפציר בה בנה להתקין כספת. גלית השיבה: \"עכשיו? זה כמו להזמין את מכבי האש אחרי שהבית כבר נשרף.\" איזה מן הבאים מבטא בצורה הטובה ביותר את כוונתה?\n(1) כספת טובה תעלה יותר מן התכשיטים המעטים שנשארו לה\n(2) התכשיטים היו במגירה נעולה, והפריצה הראתה שמנעולים אינם עוצרים פורצים נחושים\n(3) פורצים שהצליחו לפרוץ לדירתה היו פותחים גם כספת, ולכן כספת לא הייתה עוזרת גם לפני הפריצה\n(4) להתקין כספת היה הגיוני לפני הפריצה, אבל עכשיו לא נשאר דבר שתגן עליו",
+   "style_donor": "Summer 2022 Second Q8"
   },
   {
    "id": "vo-45-106",
@@ -101,18 +116,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "Spring 2026 §2 Q12",
    "replaces": "vb-inf_v2_0290",
-   "stem": "Dalia told her friends: \"Last week a young woman in my building asked me to help her carry a crib up the stairs, and I said I was in a hurry, as I usually do. That evening my car would not start in the parking lot. I asked three neighbors who were passing to help me push it, and each of them had some excuse, until that same young woman came down and pushed the car with me until the engine started. If not for her, I would have been stuck there all night.\" Which of the following is least suited to be the moral of Dalia's story?",
+   "stem": "The historian Malkiel describes two neighboring villages in the eighteenth century. When a flood destroyed the crops of the lower village, the upper village refused to share its grain. Two years later a drought struck the upper village, and the only help it received came from the lower village, which sent it seed for the following season. Which of the following cannot be learned from Malkiel's account?",
    "options": [
-    "Whoever refuses to help others today may find that tomorrow they are the ones who need help",
-    "Sometimes the only person willing to help is the one who was refused help",
-    "Whoever has turned away someone in need has no right to accept that person's help later on",
-    "Whoever does not lend others a hand should not be surprised when others do not lend theirs"
+    "A community that refuses to help its neighbors may later find itself in need of their help",
+    "Help sometimes comes from the very people who were once refused it",
+    "A community that refused to help another has no right to accept help from it later",
+    "Being refused help does not necessarily make a community unwilling to help others"
    ],
    "answer": 3,
-   "explanation": "Dalia accepted the young woman's help, and the story presents that help as its point, not as something she should have refused. (1), (2) and (4) each draw a lesson that the events support.",
+   "explanation": "The upper village accepted the lower village's help, and nothing in the account suggests that it was wrong to do so. (1), (2) and (4) can all be learned from the account.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "ההיסטוריון מלכיאל מתאר שני כפרים שכנים במאה השמונה עשרה: כששיטפון השמיד את יבולי הכפר התחתון, סירב הכפר העליון לחלוק עמו את תבואתו. כעבור שנתיים פקדה בצורת את הכפר העליון, והעזרה היחידה שקיבל באה מן הכפר התחתון, ששלח לו זרעים לעונה הבאה. איזה מן הבאים אי אפשר ללמוד מתיאורו של מלכיאל?\n(1) קהילה המסרבת לעזור לשכנותיה עלולה להזדקק לעזרתן בעתיד\n(2) לפעמים העזרה באה דווקא ממי שסירבו לעזור לו בעבר\n(3) קהילה שסירבה לעזור לאחרת אין לה זכות לקבל ממנה עזרה אחר כך\n(4) סירוב לעזרה אינו גורם בהכרח לקהילה להימנע מלעזור לאחרים",
+   "style_donor": "Summer 2022 First Q11"
   },
   {
    "id": "vo-45-107",
@@ -120,18 +138,23 @@
    "category": "Parables and Comparisons",
    "mirrors": "Winter 2025 §2 Q7",
    "replaces": "vb-inf_v2_0291",
-   "stem": "Ronit and Hagai were waiting outside an electronics store for Alon, Hagai's son, who had gone in more than an hour earlier. Ronit: \"Aren't you afraid that Alon will come out having spent a fortune?\" Hagai: \"No one posts a guard over a field of thistles.\" In his reply, Hagai compares -",
+   "stem": "Eldad complained to Yaara that his neighbor talks too loudly in the stairwell. Yaara answered with the Talmudic saying: \"When one says, 'Remove the splinter from between your teeth,' he is told, 'Remove the beam from between your eyes.'\" Yaara was comparing -",
    "options": [
-    "Alon's spending to the thistles",
-    "the time Alon has spent in the store to the field of thistles",
-    "himself to the guard",
-    "the goods in the store to the thistles"
+    "the neighbor's loud talking to the beam",
+    "Eldad to the splinter",
+    "the other tenants to the beam",
+    "Eldad's own faults to the beam"
    ],
    "answer": 4,
-   "explanation": "No one guards thistles because no one wants them; in Hagai's view nothing in the store is worth Alon's money. (1) and (2) turn the thistles into something about Alon's behavior, and (3) puts Hagai in the guard's place, although the point is that no guard is needed.",
+   "explanation": "The one who points out another's splinter is told to remove the beam from his own eyes; Eldad, who complains about his neighbor, has greater faults of his own. The neighbor's loud talking corresponds to the splinter, not to the beam.",
    "feel": 5,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [
+    "Talmudic saying (Arachin 16b; Bava Batra 15b): one who says 'remove the splinter from between your teeth' is answered 'remove the beam from between your eyes'"
+   ],
+   "he_draft": "אלדד התלונן באוזני יערה שהשכן שלו מדבר בקול רם מדי בחדר המדרגות. יערה השיבה במימרה התלמודית: \"אומר לו: טול קיסם מבין שיניך, אומר לו: טול קורה מבין עיניך.\" יערה השוותה -\n(1) את דיבורו הרם של השכן לקורה\n(2) את אלדד לקיסם\n(3) את שאר הדיירים לקורה\n(4) את פגמיו של אלדד עצמו לקורה",
+   "style_donor": "old-mix p86 Q10"
   },
   {
    "id": "vo-45-108",
@@ -139,18 +162,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "Autumn 2025 §2 Q12",
    "replaces": "vb-inf_v2_0292",
-   "stem": "The caterpillar of a certain species of butterfly gives off a scent resembling that of the larvae of a particular kind of ant. The ants, taking it for one of their own young, carry it into their nest, where it lives among their brood and feeds on the ants' larvae. Which of the following human behaviors most resembles the behavior of this caterpillar?",
+   "stem": "The larvae of certain beetles give off a scent resembling that of ant larvae. Worker ants carry them into the nest and feed them along with their own brood, and once grown, the beetle larvae feed on the ants' eggs. Which of the following is most similar to the behavior of the beetle larvae?",
    "options": [
-    "A man presented forged references in order to be hired as a restaurant's head chef, and once hired persuaded the owner to dismiss the cook who had held the post for years",
-    "A woman lent her neighbor a lawnmower, and when he kept putting off returning it she went into his yard and took it back herself",
-    "A man found a set of keys in the stairwell and, although he knew that his neighbor had lost such keys there that morning, kept them",
-    "A cyclist who rode on the sidewalk told the inspector who stopped him that the bicycle lane was closed, and refused to pay the fine"
+    "A man joined a gang of thieves by passing himself off as a thief, and once the gang trusted him, he handed its members over to the police",
+    "A man passed himself off as a doctor in order to win his neighbors' admiration, but never treated anyone",
+    "A thief cut through the fence of a warehouse at night and stole the goods that were stored there",
+    "A new employee who was hired on his cousin's recommendation, without any pretense, gradually persuaded the owner to dismiss the veteran workers"
    ],
    "answer": 1,
-   "explanation": "The caterpillar uses deception to gain a place it has no right to and then does away with those whose place it is; the forged references and the ousted cook repeat both steps. (2) recovers one's own property, (3) is a failure to return property, and (4) is a lie that displaces no one.",
+   "explanation": "The larvae are accepted because they pass for members of the colony and then harm it from within; so does the man in the gang. In (2) the disguise harms no one, in (3) there is no acceptance, and in (4) there is no disguise.",
    "feel": 4,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "הזחלים של חיפושיות מסוימות מפיצים ריח הדומה לריח של זחלי נמלים. הנמלים הפועלות נושאות אותם לקן ומאכילות אותם יחד עם צאצאיהן, וכשהזחלים גדלים הם ניזונים מביצי הנמלים. איזה מן הבאים דומה ביותר להתנהגות זחלי החיפושיות?\n(1) אדם הצטרף לכנופיית גנבים כשהוא מתחזה לגנב, וכשהכנופיה נתנה בו אמון, הסגיר את חבריה למשטרה\n(2) אדם התחזה לרופא כדי לזכות בהערכת שכניו, אך מעולם לא טיפל באיש\n(3) גנב חתך את הגדר של מחסן בלילה וגנב את הסחורה שאוחסנה בו\n(4) עובד חדש שהתקבל בהמלצת בן דודו, בלי כל התחזות, שכנע בהדרגה את הבעלים לפטר את העובדים הוותיקים",
+   "style_donor": "Summer 2023 Second Q12"
   },
   {
    "id": "vo-45-109",
@@ -158,18 +184,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "Winter 2024 §1 Q7",
    "replaces": "vb-inf_v2_0293",
-   "stem": "Yuval's teenage son was repainting the walls of his room, and drops of paint were falling on the floor. When Yuval was asked why he was not wiping up the drops, he said: \"No one mops the deck while the waves are still breaking over it.\" In his words, Yuval compares -",
+   "stem": "Yoni's son was painting his room, and drops of paint were falling on the floor. When Yoni asked why he was not wiping them up, his son answered: \"Nobody washes the dishes in the middle of cooking.\" In his answer, the son compares painting the room to -",
    "options": [
-    "wiping up the drops to the waves",
-    "the painting of the room to the waves",
-    "the drops of paint to mopping the deck",
-    "the painting of the room to mopping the deck"
+    "washing the dishes after the meal",
+    "cooking",
+    "the dirty dishes that pile up in the sink",
+    "wiping up the drops of paint"
    ],
    "answer": 2,
-   "explanation": "Mopping while the waves still break is wiping up while the painting goes on: the painting is the waves, and wiping is the mopping. (1) and (3) cross the pairs, and (4) puts the painting on the wrong side.",
+   "explanation": "Cooking, like painting, is the work that makes the mess, and washing the dishes, like wiping up the drops, is left for the end. (1) and (4) are the cleaning, and (3) is the mess itself.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "בנו של יוני צבע את חדרו, וטיפות צבע נפלו על הרצפה. כשיוני שאל מדוע אינו מנגב אותן, השיב הבן: \"אף אחד לא שוטף כלים באמצע הבישול.\" בתשובתו משווה הבן את צביעת החדר ל-\n(1) שטיפת הכלים שאחרי הארוחה\n(2) בישול\n(3) הכלים המלוכלכים המצטברים בכיור\n(4) ניגוב טיפות הצבע",
+   "style_donor": "Summer 2025 First Q7"
   },
   {
    "id": "vo-45-110",
@@ -177,18 +206,23 @@
    "category": "Parables and Comparisons",
    "mirrors": "Winter 2024 §2 Q14",
    "replaces": "vb-inf_v2_0294",
-   "stem": "A company that sells bottled mineral water decided to add to its labels, in large letters, the words \"Contains no fat.\" The words were meant as a gimmick, since no water contains any fat, and the company assumed that consumers, who are well aware of this, would pay them little attention. Yet in the months that followed, the company's sales rose markedly, and a survey found that many buyers had chosen its water because of the new label. Which of the following cases most resembles the case described?",
+   "stem": "Some manufacturers of vegetable oil print on the bottle, in large letters, the words \"contains no cholesterol.\" Cholesterol is found only in foods of animal origin, so no vegetable oil contains it. Nevertheless, such labels lead many consumers to prefer the bottles on which they appear to other bottles of oil. In which of the following cases is the consumers' behavior most similar to the behavior described?",
    "options": [
-    "A woman chose to buy her washing machine at a certain store because it advertised that its machines come \"with free delivery,\" although she knew that every store in the city delivers washing machines free of charge",
-    "A man whose doctor had advised him to eat more fish stopped buying fish after reading a report on mercury in fish, although he knew that the fish he usually bought is of a kind low in mercury",
-    "A woman who heard that a flu outbreak had struck a city in another country postponed a visit to a nearby city, although she knew that the outbreak had not spread beyond the first city",
-    "A man checked the brakes of a car he had rented, although the rental company had assured him that all its cars are inspected before every rental"
+    "Many people prefer to buy a washing machine in a store that advertises free delivery, although all the stores in the city deliver free",
+    "After reading a report about mercury in fish, a man stopped buying fish, even the kinds that contain almost no mercury",
+    "A woman postponed a trip abroad after she heard news of an epidemic in a neighboring country, although the epidemic had not reached her destination",
+    "A man checks the brakes of every car he rents, although the rental company promises that its cars are checked before every rental"
    ],
    "answer": 1,
-   "explanation": "A label that presents something ordinary as special drives the choice, although the buyer knows it is nothing special. In (2), (3) and (4) the caution responds to a risk the person believes might be real.",
+   "explanation": "The consumers are drawn by an advantage that is true of every product of the kind; free delivery, offered by all the stores, is such an advantage. (2) and (3) are exaggerated reactions to a danger, and (4) is extra caution.",
    "feel": 4,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [
+    "Dietary cholesterol is found only in foods of animal origin; vegetable oils contain none"
+   ],
+   "he_draft": "יש יצרנים של שמן צמחי המדפיסים על הבקבוק באותיות גדולות את המילים \"אינו מכיל כולסטרול\". כולסטרול נמצא רק במזון שמקורו בבעלי חיים, ולכן אין שמן צמחי המכיל אותו. אף על פי כן, תוויות כאלה גורמות לצרכנים רבים להעדיף את הבקבוקים שעליהם הן מופיעות על פני בקבוקי שמן אחרים.\nבאיזה מן המקרים הבאים התנהגותם של הצרכנים דומה ביותר להתנהגות המתוארת?\n(1) אנשים רבים מעדיפים לקנות מכונת כביסה בחנות המפרסמת משלוח חינם, אף על פי שכל החנויות בעיר מספקות משלוח חינם\n(2) לאחר שקרא ידיעה על כספית בדגים, הפסיק אדם לקנות דגים, אפילו את הסוגים שכמעט אין בהם כספית\n(3) אישה דחתה נסיעה לחוץ לארץ לאחר ששמעה ידיעות על מגפה במדינה שכנה, אף על פי שהמגפה לא הגיעה ליעד שלה\n(4) אדם בודק את הבלמים של כל מכונית שהוא שוכר, אף על פי שחברת ההשכרה מבטיחה שמכוניותיה נבדקות לפני כל השכרה",
+   "style_donor": "Spring 2019 Second Q7"
   },
   {
    "id": "vo-45-111",
@@ -196,18 +230,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "Autumn 2024 §2 Q7",
    "replaces": "vb-inf_v2_0295",
-   "stem": "Yossi, an archive clerk, began coming to work in a bow tie, and the change became the talk of the building. Asked why a tie had caused such a stir, he said: \"On a pond where no wind blows, a single falling leaf makes waves.\" Which of the following best reflects Yossi's meaning?",
+   "stem": "For a whole week, everyone in Kornblit's office talked about the bow tie he wore one day. Asked why a tie should cause such a stir, he said: \"Our office is like a very quiet room: even the ticking of a clock sounds loud there.\" According to Kornblit -",
    "options": [
-    "In a workplace where people like to gossip about one another, any change becomes a subject of conversation",
-    "Yossi is a flamboyant person, and so even a small change in him draws attention",
-    "Where things hardly ever change, even a minor change such as a new tie attracts attention",
-    "Yossi usually avoids changing the way he dresses, and so his colleagues noticed"
+    "his colleagues enjoy gossiping about one another, and any change in a colleague's appearance gives them something to talk about for days",
+    "he is known for dressing in a way that attracts attention, and this time too his colleagues noticed what he was wearing",
+    "so little changes in his office that even a minor change stands out",
+    "a bow tie is so unusual that it would have attracted attention in any office"
    ],
    "answer": 3,
-   "explanation": "The still pond is the archive, where nothing changes, and the leaf is the small change. (1) makes gossip the cause, and (2) and (4) locate the cause in Yossi rather than in his surroundings.",
+   "explanation": "A ticking clock sounds loud only because the room is quiet; the tie was noticed only because so little changes in the office. (1) explains the talk by gossip, (2) contradicts the smallness of the change, and (4) attributes the attention to the tie itself.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "במשך שבוע שלם דיברו כולם במשרד של קורנבליט על עניבת הפרפר שענד יום אחד. כשנשאל מדוע עניבה עוררה מהומה כזו, אמר: \"המשרד שלנו הוא כמו חדר שקט מאוד: שם אפילו תקתוק של שעון נשמע רם.\" לדברי קורנבליט -\n(1) עמיתיו נהנים לרכל זה על זה, וכל שינוי במראהו של עמית נותן להם נושא לשיחה לימים\n(2) הוא ידוע כמי שמתלבש באופן מושך תשומת לב, וגם הפעם הבחינו עמיתיו במה שלבש\n(3) במשרדו משתנה מעט כל כך, שגם שינוי קטן בולט\n(4) עניבת פרפר היא דבר יוצא דופן כל כך שהייתה מושכת תשומת לב בכל משרד",
+   "style_donor": "old-mix p65 Q17"
   },
   {
    "id": "vo-45-112",
@@ -215,18 +252,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "Winter 2023 §1 Q7",
    "replaces": "vb-inf_v2_0298",
-   "stem": "The Tzuriel curve, a sharp bend on a mountain road, is known among drivers as one of the most dangerous spots in the region. The records of the traffic police, however, show that fewer accidents occur at the curve than on the straight stretches of the same road. The police explain this by the curve's reputation: drivers who believe it is dangerous slow down and take extra care as they approach it. Which of the following phenomena is most similar to the phenomenon described?",
+   "stem": "Traffic engineers have noticed that on some mountain roads, fewer accidents occur on sharp bends that drivers regard as dangerous than on the straight sections of the same road. One explanation is that drivers who fear the bends slow down and drive more carefully as they approach them. In which of the following cases is the explanation most similar to the one described?",
    "options": [
-    "Riders who are new to horseback riding fall far more often than experienced riders",
-    "Speakers who are afraid of forgetting their lines rehearse them so anxiously that they forget them on stage",
-    "Installing lights along a dark footpath reduces the number of people who fall on it at night",
-    "Hikers who fear getting lost on an unfamiliar trail get lost less often, since they study the map more carefully before setting out"
+    "Novice riders fall off horses more often than experienced riders, because they have not yet learned to keep their balance when the horse changes pace",
+    "Speakers who are afraid of forgetting their lines often do forget them, because their anxiety keeps them from concentrating on what they are saying",
+    "Fewer people fall on the riverside path at night since lamps were installed along it, because they can now see the stones on the path",
+    "Hikers get lost less often on unfamiliar trails than on familiar ones, because on an unfamiliar trail they consult the map more often"
    ],
    "answer": 4,
-   "explanation": "Fear of a bad outcome leads to precautions that prevent it. (2) is the reverse, fear bringing about what is feared; (1) and (3) involve no belief at all.",
+   "explanation": "The danger people expect makes them more careful, and so there are fewer mishaps; the same is true of the hikers. In (1) lack of skill causes the falls, in (2) fear causes the mishap, and in (3) the danger itself was reduced.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "מהנדסי תנועה הבחינו כי בכבישים הרריים מסוימים מתרחשות בעיקולים חדים, שהנהגים רואים בהם מסוכנים, פחות תאונות מאשר בקטעים הישרים של אותו כביש. אחד ההסברים הוא שנהגים החוששים מן העיקולים מאטים ונוהגים בזהירות רבה יותר כשהם מתקרבים אליהם. באיזה מן המקרים הבאים ההסבר דומה ביותר להסבר המתואר?\n(1) רוכבים מתחילים נופלים מסוסים יותר מרוכבים מנוסים, משום שעוד לא למדו לשמור על שיווי משקל כשהסוס משנה קצב\n(2) נואמים החוששים לשכוח את דבריהם שוכחים אותם לעתים קרובות, משום שהחרדה מונעת מהם להתרכז\n(3) מאז שהוצבו פנסים לאורך השביל שליד הנהר נופלים בו פחות אנשים בלילה, משום שעכשיו הם רואים את האבנים\n(4) מטיילים הולכים לאיבוד בשבילים שאינם מכירים פחות מאשר בשבילים מוכרים, משום שבשביל לא מוכר הם מעיינים במפה לעתים קרובות יותר",
+   "style_donor": "February 2016 Second Q13"
   },
   {
    "id": "vo-45-113",
@@ -234,18 +274,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "Winter 2023 §2 Q14",
    "replaces": "vb-inf_v2_0299",
-   "stem": "At a literary conference, a novelist complained that critics had read into her latest book a political message she had never intended. One of the critics answered her: \"A writer is like a gardener who plants a fruit tree: the gardener chooses the seed, the soil and the spot, and tends the tree as it grows, but once the fruit has ripened, it is not the gardener but whoever eats it who decides how it tastes.\" Which of the following messages did the critic wish to convey?",
+   "stem": "At a literary conference, a novelist complained that critics had found in her latest book a political message she had never intended. One of the critics replied: \"Once a letter has been sent, it is the recipient, not the sender, who decides how to read it.\" Which of the following can be inferred from the critic's reply?",
    "options": [
-    "The novelist indeed wrote the book, but determining its meaning is the task of its readers and not of its author",
-    "The novelist may write whatever she pleases, but critics need not review a book they consider poor",
-    "Even a reader who knows the book thoroughly cannot thereby discover what its author intended",
-    "Even if the novelist intended a particular message when she wrote the book, she may later come to read it differently"
+    "Once a book is published, its readers, not its author, determine its meaning",
+    "Critics are under no obligation to accept an author's explanation of her own book, and certainly not to praise the book on that basis",
+    "Even readers who know a book thoroughly cannot discover what its author intended, since authors rarely state their intentions explicitly",
+    "The novelist herself may come to read her book differently in a few years, when she is no longer as close to it as she is now"
    ],
    "answer": 1,
-   "explanation": "Planting is writing and eating is reading, and the gardener has no say over the taste. (2) lets critics ignore the book, and (3) and (4) concern the author's intentions, which the parable sets aside.",
+   "explanation": "The sender does not control how a letter is read, and the author does not control what readers find in a published book. (2) concerns praise, (3) concerns discovering the intention, which the critic does not discuss, and (4) concerns the author's own reading.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "בכנס ספרותי התלוננה סופרת שהמבקרים מצאו בספרה האחרון מסר פוליטי שלא התכוונה אליו. אחד המבקרים השיב: \"משנשלח מכתב, הנמען, ולא השולח, הוא שמחליט כיצד לקרוא אותו.\" איזה מן הבאים אפשר להסיק מתשובתו?\n(1) משיצא ספר לאור, קוראיו ולא מחברו הם שקובעים את משמעותו\n(2) המבקרים אינם חייבים לקבל את הסבריה של הסופרת לספרה, ובוודאי לא לשבח את הספר על סמך הסברים אלה\n(3) אפילו קוראים המכירים ספר היטב אינם יכולים לגלות את כוונת מחברו, שכן סופרים מרבים שלא לפרש את כוונותיהם\n(4) הסופרת עצמה עשויה לקרוא את ספרה אחרת בעוד כמה שנים, כשלא תהיה קרובה אליו כמו היום",
+   "style_donor": "Summer 2022 First Q11"
   },
   {
    "id": "vo-45-114",
@@ -253,18 +296,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "Autumn 2023 §1 Q8",
    "replaces": "vb-inf_v2_0300",
-   "stem": "A family was trying to sell its apartment. Since every buyer who came to see it offered less than the family was asking, they decided to advertise it again, hoping that new buyers would offer more. Their real-estate agent objected: \"That is like casting the same bait again and again into a pond where the fish will not bite, instead of changing the bait.\" Which of the following best expresses the agent's meaning?",
+   "stem": "Every buyer who came to see the Havkins' apartment offered less than the family was asking, and the family decided to advertise the apartment in a different newspaper. Their real estate agent said: \"Putting a picture in a new frame does not change what people think of the picture.\" Which of the following best expresses what the agent meant?",
    "options": [
-    "She thinks that the buyers who offered the lower prices are the most serious buyers",
-    "She thinks that the family should lower the price it is asking",
-    "She thinks that if the apartment is advertised again, buyers will offer even less",
-    "She thinks that the buyers who have already come can be persuaded to raise their offers"
+    "The buyers who have already seen the apartment are the only serious ones, and the family should accept the best of their offers",
+    "New buyers will react to the same asking price as the previous ones did, so it is the price that must change",
+    "Buyers who read the other newspaper tend to offer even less than those who read the first one",
+    "Instead of looking for new buyers, the family should try to persuade those who have already seen the apartment to raise their offers"
    ],
    "answer": 2,
-   "explanation": "The bait is the asking price, and changing it means lowering the price. (3) is a prediction, and (1) and (4) are about the buyers rather than the step the family should take.",
+   "explanation": "A new frame leaves the picture unchanged, and a new newspaper leaves the offer unchanged; new buyers will judge the same price in the same way. (1) and (4) concern the earlier buyers, and (3) predicts lower offers, which does not follow.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "כל קונה שבא לראות את דירת משפחת חבקין הציע פחות ממה שביקשה המשפחה, והיא החליטה לפרסם את הדירה בעיתון אחר. המתווך אמר: \"מסגרת חדשה אינה משנה את מה שאנשים חושבים על התמונה.\" איזה מן הבאים מבטא בצורה הטובה ביותר את כוונתו?\n(1) הקונים שכבר ראו את הדירה הם היחידים הרציניים, ועל המשפחה לקבל את הטובה בהצעותיהם\n(2) קונים חדשים יגיבו לאותו מחיר מבוקש כמו הקודמים, ולכן המחיר הוא שצריך להשתנות\n(3) קוראי העיתון האחר נוטים להציע אפילו פחות מקוראי העיתון הראשון\n(4) במקום לחפש קונים חדשים, על המשפחה לנסות לשכנע את מי שכבר ראו את הדירה להעלות את הצעותיהם",
+   "style_donor": "Summer 2022 Second Q8"
   },
   {
    "id": "vo-45-115",
@@ -272,18 +318,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "Autumn 2023 §2 Q9",
    "replaces": "vb-inf_v2_0301",
-   "stem": "Ruthie: \"The way to rescue the orchestra's budget is to cut costs – starting with the first violinists, who are the best-paid musicians in the orchestra.\" Nimrod: \"I suppose you would also advise the captain of a leaking ship to throw the pumps overboard to lighten the load!\" Which of the following claims best expresses Nimrod's intention?",
+   "stem": "At a board meeting of a chamber orchestra, it was proposed that the orchestra reduce its deficit by dismissing its two soloists, who receive the highest salaries. One board member objected that this would be \"sawing off the branch we are sitting on.\" Which of the following is most likely to be what he meant?",
    "options": [
-    "The orchestra's other expenses are much larger than the first violinists' salaries",
-    "Audiences will go on buying tickets only if the orchestra's leading violinists go on playing in it",
-    "The orchestra should hire more musicians rather than fewer",
-    "The first violinists will find positions in other orchestras, and the orchestra will not be able to bring them back"
+    "The soloists' salaries account for only a small part of the orchestra's expenses, so dismissing them would hardly reduce the deficit",
+    "Most of the audience comes to hear the soloists, so without them the orchestra's income would fall",
+    "Rather than dismissing musicians, the orchestra should hire more of them, so that it can perform larger and more popular works",
+    "Other orchestras would be quick to hire the soloists, and the orchestra would be unable to bring them back when its finances improve"
    ],
    "answer": 2,
-   "explanation": "The pumps are what keeps the ship afloat, and the violinists are what keeps the orchestra alive: the saving destroys what it is meant to save. (1), (3) and (4) are objections the image does not make.",
+   "explanation": "The branch is what holds the orchestra up: the soloists bring in its income. (1) says only that the saving is small, and (3) and (4) do not concern the source of income.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "בישיבת הנהלה של תזמורת קאמרית הוצע לצמצם את הגירעון על ידי פיטורי שני הסולנים, המקבלים את המשכורות הגבוהות ביותר. אחד מחברי ההנהלה התנגד ואמר שזה יהיה \"לנסר את הענף שאנחנו יושבים עליו\". למה התכוון ככל הנראה?\n(1) משכורות הסולנים הן חלק קטן מהוצאות התזמורת, ופיטוריהם כמעט לא יקטינו את הגירעון\n(2) רוב הקהל בא כדי לשמוע את הסולנים, ובלעדיהם תרד ההכנסה של התזמורת\n(3) במקום לפטר נגנים, על התזמורת להעסיק נגנים נוספים כדי שתוכל לבצע יצירות גדולות ופופולריות יותר\n(4) תזמורות אחרות ימהרו להעסיק את הסולנים, והתזמורת לא תוכל להחזירם כשמצבה הכספי ישתפר",
+   "style_donor": "Summer 2024 First Q9"
   },
   {
    "id": "vo-45-116",
@@ -291,10 +340,10 @@
    "category": "Parables and Comparisons",
    "mirrors": "Winter 2022 §1 Q13",
    "replaces": "vb-inf_v2_0302",
-   "stem": "Nurit: \"Should it be proven beyond doubt that Halperin wrote the manuscript, I would still deny it, for I am certain he did not.\" Which of the following contradictions most resembles the contradiction in Nurit's words?",
+   "stem": "Nurit: \"Should it be proven beyond doubt that Pomerantz wrote the manuscript, I would still deny it, because I am certain that he did not write it.\" Which of the following contradictions is most similar to the contradiction in Nurit's words?",
    "options": [
     "\"It has indeed been shown that the comet will pass close to the earth, but I cannot tell whether it will pass close, since this has not yet been shown\"",
-    "\"Even if it turns out that most critics admire the film, I shall go on watching it, since I do not enjoy it\"",
+    "\"Even if it turns out that most critics admire the film, I will go on watching it, since I do not enjoy it\"",
     "\"Many restaurants are indeed overpriced, but some must be reasonably priced, since I have eaten at few overpriced ones\"",
     "\"Even if it is shown that most cyclists are thin, I will not accept that many cyclists are heavy, since most thin people are cyclists\""
    ],
@@ -302,7 +351,10 @@
    "explanation": "Nurit grants a proof and then denies its conclusion on the strength of the very claim the proof refutes; (1) has the same shape (shown / not shown). (2) is not a contradiction, and (3) and (4) are faulty inferences of other kinds.",
    "feel": 4,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "נורית: \"אילו הוכח מעבר לכל ספק שפומרנץ כתב את כתב היד, הייתי מכחישה זאת בכל זאת, משום שאני בטוחה שהוא לא כתב אותו.\"\nאיזו מן הסתירות הבאות דומה ביותר לסתירה שבדבריה של נורית?\n(1) \"אמנם הוכח שהשביט יעבור קרוב לכדור הארץ, אך איני יכול לדעת אם יעבור קרוב, שהרי הדבר עוד לא הוכח\"\n(2) \"גם אם יתברר שרוב המבקרים מתפעלים מן הסרט, אמשיך לצפות בו, שהרי אינני נהנה ממנו\"\n(3) \"אמנם מסעדות רבות יקרות מדי, אך בוודאי יש כאלה שמחיריהן סבירים, שהרי אכלתי במעט מסעדות יקרות מדי\"\n(4) \"גם אם יוכח שרוב רוכבי האופניים רזים, לא אקבל שרוכבי אופניים רבים שמנים, שהרי רוב הרזים הם רוכבי אופניים\"",
+   "style_donor": "Summer 2023 First Q9"
   },
   {
    "id": "vo-45-117",
@@ -310,7 +362,7 @@
    "category": "Parables and Comparisons",
    "mirrors": "Autumn 2022 §2 Q10",
    "replaces": "vb-inf_v2_0304",
-   "stem": "Some argue that in order to understand a person's character we should examine their recent experiences and not their early childhood. A psychologist disagreed and illustrated her position with an analogy: \"What would we think of a gardener who, noting that the lamp on their porch is far closer to their plants than the sun, concluded that the lamp does much more to make them grow than the sun does?\" In her words, the psychologist compares -",
+   "stem": "Some argue that in order to understand a person's character we should examine his recent experiences and not his early childhood. A psychologist disagreed and illustrated her position with an analogy: \"What would we think of a gardener who, noting that the lamp on his porch is far closer to his plants than the sun, concluded that the lamp does much more to make them grow than the sun does?\" In saying this, the psychologist compares -",
    "options": [
     "early childhood to the plants",
     "recent experiences to the porch lamp",
@@ -321,7 +373,10 @@
    "explanation": "The lamp is near but has little influence, like recent experiences; the sun is far but decisive, like early childhood. (3) and (4) swap the two, and (1) makes childhood the thing influenced.",
    "feel": 5,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "יש הטוענים שכדי להבין את אופיו של אדם יש לבחון את חוויותיו האחרונות ולא את ילדותו המוקדמת. פסיכולוגית חלקה על כך והמחישה את עמדתה בהשוואה: \"מה היינו חושבים על גנן שהבחין כי המנורה שבמרפסת שלו קרובה לצמחיו הרבה יותר מן השמש, והסיק כי המנורה תורמת לצמיחתם הרבה יותר מן השמש?\"\nבדבריה משווה הפסיכולוגית -\n(1) את הילדות המוקדמת לצמחים\n(2) את החוויות האחרונות למנורה שבמרפסת\n(3) את הילדות המוקדמת למנורה שבמרפסת\n(4) את החוויות האחרונות לשמש",
+   "style_donor": "Summer 2020 Second Q13"
   },
   {
    "id": "vo-45-118",
@@ -329,18 +384,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "September 2016 §2 Q17",
    "replaces": "vb-inf_v2_0306",
-   "stem": "The proportion of residents over the age of seventy in the town of Givat Oren is higher than in any other town in the country. Hadas concluded that something in the town's way of life lengthens its residents' lives. Uri replied: \"Your words are exactly like the claim that a restaurant's popularity is determined by the number of cars parked outside it. ____.\" Which of the following best completes Uri's words?",
+   "stem": "Galia: \"The proportion of residents over 80 in our town is the highest in the country, so something about life here must lengthen people's lives.\" Na'or: \"You might just as well say that hospitals make people ill, since that is where most sick people are found.\" Which of the following is most likely to be the point on which Na'or's reply is based?",
    "options": [
-    "For Givat Oren has the country's largest and best-equipped homes for the elderly, and every year many elderly people from other towns move there to spend their later years",
-    "For it is well known that clean mountain air lengthens life, and since Givat Oren lies higher than any other town in the country, its air is the cleanest",
-    "For few children are born in Givat Oren, and when the number of young people in a town is small, the proportion of its elderly residents is naturally higher",
-    "For the population of Givat Oren is the smallest in the country, and in so small a population a handful of long-lived residents is enough to raise the proportion markedly"
+    "Many elderly people move to the town from elsewhere, drawn by its services for the elderly",
+    "The town's air is exceptionally clean, and clean air is known to lengthen life",
+    "Few children are born in the town, so the elderly make up a larger share of its population than they otherwise would",
+    "The town is so small that a handful of long-lived residents is enough to raise the proportion considerably"
    ],
    "answer": 1,
-   "explanation": "Cars gather where a restaurant is already popular, and the elderly gather where the town already serves them: the arrow runs from old age to the town. (2) supports Hadas, and (3) and (4) point to errors of other kinds.",
+   "explanation": "Sick people come to hospitals; hospitals do not make them sick. Likewise, elderly people come to the town, and the town does not make them live long. (2) supports Galia, and (3) and (4) point to errors that the comparison does not express.",
    "feel": 5,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "גליה: \"שיעור התושבים בני יותר מ-80 בעיירה שלנו הוא הגבוה בארץ, כך שמשהו בחיים כאן מאריך את החיים.\" נאור: \"באותה מידה אפשר לומר שבתי חולים גורמים למחלות, שהרי שם נמצאים רוב החולים.\" על איזו מן הנקודות הבאות מבוססת ככל הנראה תשובתו של נאור?\n(1) קשישים רבים עוברים לעיירה ממקומות אחרים, בזכות השירותים שהיא מציעה לקשישים\n(2) האוויר בעיירה נקי במיוחד, ואוויר נקי ידוע כמאריך חיים\n(3) בעיירה נולדים מעט ילדים, ולכן הקשישים הם חלק גדול יותר מאוכלוסייתה משהיו אחרת\n(4) העיירה קטנה כל כך, שקומץ תושבים ארוכי ימים מספיק כדי להעלות את השיעור במידה ניכרת",
+   "style_donor": "Summer 2025 Second Q10"
   },
   {
    "id": "vo-45-119",
@@ -348,18 +406,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "April 2016 §2 Q7",
    "replaces": "vb-inf_v2_0308",
-   "stem": "Gili: \"I've been taking guitar lessons for three weeks now and I still can't play a single song from start to finish, so I'm thinking of quitting.\" Ido: \"You remind me of the fall I planted tulip bulbs and dug one up a week later, grumbling that nothing was growing. That spring, after I had left them alone, as the gardener had told me to, the whole bed was in bloom.\" What corresponds, in Gili's case, to Ido's digging up the bulb?",
+   "stem": "Asaf has been taking guitar lessons for three weeks. Every few days he tries to play a whole song from beginning to end, and each time he fails, he considers giving up. His teacher told him: \"If you keep opening the oven to see whether the cake has risen, it never will.\" In her reply, the teacher was comparing -",
    "options": [
-    "Gili's thought of quitting",
-    "The songs Gili hopes to be able to play",
-    "Gili's first guitar lesson",
-    "Gili's attempt, after only three weeks, to play a whole song"
+    "Asaf's thoughts of giving up to the oven",
+    "the songs Asaf wants to learn to the oven",
+    "Asaf's thoughts of giving up the lessons to opening the oven",
+    "Asaf's attempts to play a whole song to opening the oven"
    ],
    "answer": 4,
-   "explanation": "Digging up the bulb is the premature check. (1) corresponds to Ido's grumbling, (2) to the tulips in bloom, and (3) to the planting.",
+   "explanation": "Opening the oven is checking too early whether the cake has risen; this is what Asaf does each time he tries to play a whole song after only a few weeks. His thoughts of giving up are the result of these checks, not the checks themselves, and the oven does not correspond to the songs.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "אסף לוקח שיעורי גיטרה זה שלושה שבועות. כל כמה ימים הוא מנסה לנגן שיר שלם מתחילתו ועד סופו, ובכל פעם שאינו מצליח הוא שוקל לוותר. המורה שלו אמרה לו: \"אם תמשיך לפתוח את התנור כדי לבדוק אם העוגה תפחה, היא לא תתפח לעולם.\" בדבריה השוותה המורה -\n(1) את מחשבותיו של אסף לוותר לתנור\n(2) את השירים שאסף רוצה ללמוד לתנור\n(3) את מחשבותיו של אסף לוותר על השיעורים לפתיחת התנור\n(4) את ניסיונותיו של אסף לנגן שיר שלם לפתיחת התנור",
+   "style_donor": "old-mix p40 Q15"
   },
   {
    "id": "vo-45-120",
@@ -367,18 +428,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "December 2015 §1 Q7",
    "replaces": "vb-inf_v2_0311",
-   "stem": "In a conversation between Adi and Ronen, Adi said: \"I know that feeling – the one night you lock your bicycle with two chains is the night no one comes near it.\" Which of the following statements is most likely to be the one of Ronen's to which Adi was responding?",
+   "stem": "In a conversation with Ronen, Adi said: \"That is always the way: the day you bring a ladder, the cat climbs down from the tree by itself.\" Which of the following could Ronen have said to prompt Adi's remark?",
    "options": [
-    "\"I trained for months for the marathon, and on the morning of the race it was canceled because of a heat wave.\"",
-    "\"For once I backed up all my files before a trip, and this time, of all times, my laptop worked perfectly.\"",
-    "\"My car broke down on the day of my job interview, after running for three years without a single problem.\"",
-    "\"I baked my neighbor a cake for her birthday, and it turned out that she had just started a strict diet.\""
+    "\"I studied for the exam for two months, and on the morning of the exam I came down with a fever and could not take it.\"",
+    "\"This time I took a spare tire on the trip, and of course none of the tires went flat.\"",
+    "\"My car, which had not given me any trouble for three years, broke down on the morning of my job interview.\"",
+    "\"I baked my neighbor a birthday cake, only to find out that she does not eat sweets at all.\""
    ],
    "answer": 2,
-   "explanation": "The pattern is a precaution taken for once, followed by the absence of the trouble it guarded against. (3) is the reverse, trouble arriving when unprepared, and (1) and (4) are disappointments of other kinds.",
+   "explanation": "Adi means that the one time a person prepares for a problem, the problem does not occur. Only in (2) was a precaution taken that turned out to be unnecessary; (1), (3) and (4) describe plain bad luck.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "בשיחה עם רונן אמרה עדי: \"זה תמיד ככה: ביום שמביאים סולם, החתול יורד מן העץ לבד.\" מה יכול היה רונן לומר שבעקבותיו אמרה עדי את דבריה?\n(1) \"למדתי לבחינה חודשיים, ובבוקר הבחינה חליתי ולא יכולתי להיבחן.\"\n(2) \"הפעם לקחתי צמיג רזרבי לטיול, וכמובן שאף צמיג לא התפנצ'ר.\"\n(3) \"המכונית שלי, שלא עשתה לי צרות שלוש שנים, התקלקלה בבוקר של ראיון העבודה.\"\n(4) \"אפיתי לשכנה עוגה ליום ההולדת, ורק אז גיליתי שהיא בכלל לא אוכלת מתוקים.\"",
+   "style_donor": "old-mix p52 Q15"
   },
   {
    "id": "vo-45-121",
@@ -386,18 +450,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "December 2015 §2 Q12",
    "replaces": "vb-inf_v2_0313",
-   "stem": "Before you is an argument: \"Car thieves are drawn to expensive cars; therefore, if I drive a cheap car, my car will not be stolen.\" Which of the following arguments most resembles this argument in its logical structure?",
+   "stem": "Bella said: \"Car thieves in our city steal mainly new cars, and so my car, which is twelve years old, will not be stolen.\" Which of the following arguments is most similar to Bella's argument?",
    "options": [
-    "Walking is not a dangerous activity; therefore, if I walk, I shall not be injured",
-    "Wasps are drawn to sweet drinks; therefore, if I drink a sweet drink outdoors, I shall attract wasps",
-    "Employers prefer candidates with a university degree; therefore, if I do not complete my degree, I shall not find a job",
-    "Pollen causes sneezing; therefore, if I do not sneeze, I shall not be able to go into the garden"
+    "Swimming in the sea is not dangerous when there is a lifeguard on the beach, so if I swim only when he is there, nothing will happen to me",
+    "Mosquitoes are attracted mainly to people who sweat, and since I sweat a great deal in the summer, I will be bitten more than my brother",
+    "The Tamuz Company hires mainly candidates who have a university degree, and so I, who have no degree, will not be hired there",
+    "The flowers in the garden make me sneeze, so if I am not sneezing today, it means that the flowers in the garden have not yet opened"
    ],
    "answer": 3,
-   "explanation": "A single attraction is treated as the only route to an outcome, so that removing it is taken to rule the outcome out. (1) and (4) are faulty inferences of other kinds, and (2) is not this fallacy at all.",
+   "explanation": "Bella turns \"mainly new cars\" into \"never an old car\"; (3) turns \"mainly candidates with a degree\" into \"never a candidate without one\". (1) does not start from a preference, (2) concludes that the preferred group will be affected more, which does follow, and (4) reasons back from an effect that did not occur.",
    "feel": 4,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "בלה אמרה: \"גנבי המכוניות בעיר שלנו גונבים בעיקר מכוניות חדשות, ולכן המכונית שלי, שהיא בת שתים עשרה, לא תיגנב.\"\nאיזה מן הטיעונים הבאים דומה ביותר לטיעון של בלה?\n(1) רחצה בים אינה מסוכנת כשיש מציל בחוף, ולכן אם אשחה רק כשהוא שם, לא יקרה לי דבר\n(2) יתושים נמשכים בעיקר לאנשים המזיעים, ומכיוון שאני מזיע הרבה בקיץ, יעקצו אותי יותר מאשר את אחי\n(3) חברת תמוז מעסיקה בעיקר מועמדים בעלי תואר אוניברסיטאי, ולכן אני, שאין לי תואר, לא אתקבל אליה\n(4) הפרחים בגינה גורמים לי להתעטש, ולכן אם אינני מתעטש היום, סימן שהפרחים בגינה עוד לא נפתחו",
+   "style_donor": "Spring 2019 Second Q7"
   },
   {
    "id": "vo-45-122",
@@ -405,18 +472,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "September 2015 §2 Q11",
    "replaces": "vb-inf_v2_0315",
-   "stem": "Everyone will agree that a person with a hundred thousand hairs on their head is not bald, whereas a person with none, or with only a handful, is. Everyone will also agree that pulling out a single hair from a head that is not bald does not make it bald. If so, when we pull out hair after hair, at what point exactly does the head become bald? Which of the following difficulties is most similar to the one described?",
+   "stem": "The philosopher Gavish poses the following problem: twenty trees are not a forest, but a thousand trees are, and adding a single tree to a group of trees that is not a forest does not turn it into one. It therefore seems impossible to say at which tree a group of trees becomes a forest. In which of the following cases is the difficulty most similar to the one Gavish describes?",
    "options": [
-    "Since a runner's time is recorded only at the finish line, one cannot know during the race whether the runner is on course for a record",
-    "Although there is a temperature at which everyone agrees that water is hot, and one at which everyone agrees it is not, no one can name the degree at which it becomes hot",
-    "Since people differ in how much noise they can bear, there is no volume at which one can say that a party has become too loud for everyone",
-    "Since a tree's growth depends on rainfall that cannot be foreseen, one cannot say how tall a young tree will be in twenty years"
+    "A runner's time is recorded only at the finish line, so while the race is under way it cannot be known whether he is on his way to breaking the record",
+    "Everyone agrees that a person of twenty is young and a person of eighty is not, yet no one can name the birthday on which a person stops being young",
+    "Since people differ in how much noise they can tolerate, there is no volume at which everyone at a party would agree that the music is too loud",
+    "How tall a young tree will grow over the next twenty years depends on how much rain falls in those years, which no one can predict"
    ],
    "answer": 2,
-   "explanation": "Clear cases at both ends and no point at which one turns into the other. (3) is disagreement between people, and (1) and (4) are lack of information.",
+   "explanation": "Small steps lead from one clear state to its opposite without any single step at which the change occurs; the same is true of youth and age. (1) and (4) concern knowledge of the future, and (3) concerns differences between people.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "הפילוסוף גביש מציג את הבעיה הבאה: עשרים עצים אינם יער, אבל אלף עצים הם יער; ועץ אחד שמוסיפים לקבוצת עצים שאינה יער אינו הופך אותה ליער. לכן נראה שאי אפשר לומר באיזה עץ נעשית קבוצת עצים ליער. באיזה מן המקרים הבאים הקושי דומה ביותר לקושי שמתאר גביש?\n(1) זמנו של רץ נרשם רק בקו הסיום, ולכן כל עוד המרוץ נמשך אי אפשר לדעת אם הוא בדרך לשבור את השיא\n(2) הכול מסכימים שבן עשרים הוא צעיר ושבן שמונים אינו צעיר, אך איש אינו יכול לנקוב ביום ההולדת שבו אדם חדל להיות צעיר\n(3) מכיוון שאנשים נבדלים במידת הרעש שהם יכולים לשאת, אין עוצמה שבה כל האורחים במסיבה יסכימו שהמוזיקה רועשת מדי\n(4) הגובה שעץ צעיר יגיע אליו בעשרים השנים הבאות תלוי בכמות הגשם שתרד בשנים אלה, ואיש אינו יכול לחזות אותה",
+   "style_donor": "February 2016 Second Q13"
   },
   {
    "id": "vo-45-123",
@@ -424,18 +494,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "April 2015 §2 Q8",
    "replaces": "vb-inf_v2_0318",
-   "stem": "Psychologists report that people readily admit that they have changed a great deal over the past decade, yet believe that they will change little in the decade ahead, as though the person they are today were the final version. Which of the following examples best illustrates this phenomenon?",
+   "stem": "Historians of science have described the following phenomenon: a scientist who is already well known receives more credit for a discovery than an unknown scientist who made a similar discovery, so that the gap between them keeps widening. Which of the following is the best example of a similar phenomenon in another field?",
    "options": [
-    "A woman who knows that she no longer holds the political views she held as a student expects to hold her present views for the rest of her life",
-    "A man who knows that he still has the same friends he had in school expects to drift apart from some of them in the future",
-    "A woman who knows that she is more patient today than she was in her youth expects to become more patient still in old age",
-    "A man who knows that he now prefers quieter vacations than he did in his youth thinks that in the future he will again prefer lively ones"
+    "A singer whose first record was a success is invited onto more radio programs than other singers, and as a result his next record also outsells theirs",
+    "A student who failed his first exam began studying with a private tutor, and by the end of the year he had the highest grades in his class",
+    "A company that cut its prices attracted many new customers, but because of the lower prices its profits at the end of the year did not rise",
+    "A painter whose work was ignored in his lifetime became famous after his death, and his paintings now sell for very high prices"
    ],
    "answer": 1,
-   "explanation": "Change is acknowledged in the past and denied for the future. (2), (3) and (4) all expect further change.",
+   "explanation": "An existing advantage brings further advantages, and the gap grows; only the singer's first success brings him more exposure and more success. (2) is improvement after failure, (3) has no advantage that grows, and (4) is late recognition.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "היסטוריונים של המדע תיארו את התופעה הבאה: מדען שכבר מוכר זוכה לקרדיט רב יותר על תגלית מאשר מדען אלמוני שגילה תגלית דומה, וכך הפער ביניהם הולך ומתרחב. איזו מן הדוגמאות הבאות היא הדוגמה הטובה ביותר לתופעה דומה בתחום אחר?\n(1) זמר שתקליטו הראשון הצליח מוזמן ליותר תוכניות רדיו מזמרים אחרים, וכתוצאה מכך גם תקליטו הבא נמכר טוב יותר משלהם\n(2) תלמיד שנכשל בבחינתו הראשונה החל ללמוד עם מורה פרטי, ובסוף השנה היו לו הציונים הגבוהים בכיתה\n(3) חברה שהורידה את מחיריה משכה לקוחות חדשים רבים, אך בגלל המחירים הנמוכים רווחיה בסוף השנה לא עלו\n(4) צייר שעבודותיו לא זכו לתשומת לב בחייו התפרסם לאחר מותו, וציוריו נמכרים היום במחירים גבוהים מאוד",
+   "style_donor": "Summer 2023 First Q10"
   },
   {
    "id": "vo-45-124",
@@ -443,18 +516,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "December 2014 §1 Q15",
    "replaces": "vb-inf_v2_0323",
-   "stem": "At a meeting of a school's teaching staff on ways to reduce the use of phones during lessons, Mr. Ashkenazi said to Ms. Peleg: \"You propose to leave a child alone with a jar of candy and ask them not to touch it, when the real way to keep them from eating it is to put the jar on a shelf they cannot reach.\" What could have been the context in which these words were said?",
+   "stem": "For years Doron has tried to save money, without success. He told a friend: \"This time I am going to do what my grandfather did when his doctor forbade him to eat sugar - he gave the key to the sugar cupboard to his neighbor.\" Which of the following is most likely to be Doron's plan?",
    "options": [
-    "Peleg proposed that a pupil caught using a phone for the first time be punished more severely than at present, and Ashkenazi argued that the punishment should grow with each further offense",
-    "Peleg proposed teaching the pupils about the harm of excessive phone use, and Ashkenazi argued that the time should go instead to making the lessons more engaging",
-    "Peleg proposed a rule forbidding pupils to use their phones during lessons, and Ashkenazi proposed that pupils hand in their phones at the classroom door when a lesson begins",
-    "Peleg proposed stricter rules against using phones in lessons, and Ashkenazi argued that it is better to enforce the rules that already exist"
+    "Each time he breaks the promise he made himself to save, he will give a sum to charity, and each time the sum will be larger than the time before",
+    "He will read about people who reached old age without any savings, so that the fear of ending up like them will keep him from spending",
+    "He will have his bank transfer part of his salary each month to a savings account from which no money can be withdrawn for five years",
+    "He will set himself a strict monthly budget and keep a record of every purchase he makes"
    ],
    "answer": 3,
-   "explanation": "Asking the child not to eat is a rule that relies on restraint; the jar out of reach is a phone that is not there to use. (1), (2) and (4) do not set a demand for restraint against removing the temptation.",
+   "explanation": "The grandfather did not rely on his own willpower but gave up his access to the sugar in advance; Doron does the same when he arranges that the money cannot be withdrawn. (1), (2) and (4) all still depend on his own willpower.",
    "feel": 5,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "דורון מנסה כבר שנים לחסוך כסף, בלי הצלחה. הוא אמר לחבר: \"הפעם אעשה מה שעשה סבי כשהרופא אסר עליו לאכול סוכר - הוא נתן לשכן את המפתח של ארון הסוכר.\" מהי ככל הנראה התוכנית של דורון?\n(1) בכל פעם שיפר את ההבטחה שנתן לעצמו לחסוך, יתרום סכום לצדקה, ובכל פעם הסכום יהיה גדול מבפעם הקודמת\n(2) הוא יקרא על אנשים שהגיעו לזקנה בלי חסכונות, כדי שהפחד להיות כמותם ימנע ממנו לבזבז\n(3) הוא יבקש מן הבנק להעביר מדי חודש חלק ממשכורתו לחשבון חיסכון שאי אפשר למשוך ממנו כסף במשך חמש שנים\n(4) הוא יקבע לעצמו תקציב חודשי נוקשה וירשום כל קנייה שהוא עושה",
+   "style_donor": "old-mix p87 Q11"
   },
   {
    "id": "vo-45-125",
@@ -462,18 +538,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "October 2014 §1 Q13",
    "replaces": "vb-inf_v2_0326",
-   "stem": "Tamar's company is launching a product in Japan next month, and she is unsure whether to rely on a local marketing firm or to study the Japanese market herself before the launch. She asked her colleagues Avi and Rina for advice. Avi said: \"Better to learn to sew than to keep paying the tailor.\" Rina said: \"But the night before the wedding is no time to take up sewing.\" Which of the following statements about Avi and Rina is not correct?",
+   "stem": "The staff of a small company must submit a grant application in French within a week. Yaron proposed that they translate it themselves: \"If we pay a translator every time, we will never learn French ourselves.\" Hadas replied: \"You do not learn to swim when the boat is already sinking.\" Which of the following cannot be inferred from the conversation?",
    "options": [
-    "Avi argues that relying on a marketing firm would solve Tamar's problem only once",
-    "Rina argues that relying on a marketing firm would provide an immediate solution",
-    "Both Avi and Rina compare studying the market to learning to sew",
-    "Rina disagrees with the view that, in principle, knowing the market oneself is better than relying on a firm"
+    "Yaron believes that paying a translator would solve the company's problem only for this application",
+    "Hadas believes that there is not enough time now for the staff to translate the application themselves",
+    "Both Yaron and Hadas regard knowledge of French as a skill that the staff would have to acquire through their own effort",
+    "Hadas disagrees with Yaron that, in general, it is better for the staff to know French than to depend on a translator"
    ],
    "answer": 4,
-   "explanation": "Rina's \"But\" grants Avi's principle and objects only to the timing. (1), (2) and (3) each read the images correctly.",
+   "explanation": "Hadas objects only to learning at the last moment, not to learning; nothing she says rejects the view that knowing French is better. (1), (2) and (3) can be inferred.",
    "feel": 5,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "עובדי חברה קטנה צריכים להגיש בתוך שבוע בקשה למענק בצרפתית. ירון הציע שיתרגמו אותה בעצמם: \"אם נשלם למתרגם בכל פעם, לעולם לא נלמד צרפתית בעצמנו.\" הדס השיבה: \"לא לומדים לשחות כשהסירה כבר טובעת.\" איזה מן הבאים אי אפשר להסיק מן השיחה?\n(1) ירון סבור שתשלום למתרגם יפתור את בעיית החברה רק לגבי הבקשה הזאת\n(2) הדס סבורה שאין עכשיו די זמן כדי שהעובדים יתרגמו את הבקשה בעצמם\n(3) גם ירון וגם הדס רואים בידיעת הצרפתית מיומנות שהעובדים יצטרכו לרכוש במאמץ שלהם\n(4) הדס חולקת על ירון בדעה שבאופן כללי עדיף שהעובדים יידעו צרפתית מאשר שיהיו תלויים במתרגם",
+   "style_donor": "Summer 2025 Second Q10"
   },
   {
    "id": "vo-45-126",
@@ -481,18 +560,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "April 2014 §1 Q15",
    "replaces": "vb-inf_v2_0328",
-   "stem": "The mayor of Beit Shalem decided to stop publishing the city's yearly survey of residents' satisfaction with municipal services. A council member told him: \"You are like a driver who tapes over the fuel gauge because it shows that the tank is almost empty.\" Which of the following is most likely to be the reason for the mayor's decision?",
+   "stem": "A mayor decided to stop publishing the annual survey in which residents rate the city's services. A member of the city council told him: \"You are like a sick man who covers the mirror so as not to see how pale he is.\" It follows that, in the council member's view -",
    "options": [
-    "The survey is not prepared efficiently",
-    "The city can no longer afford the cost of the survey",
-    "The latest survey showed that most residents are dissatisfied with the city's services",
-    "The survey causes residents to complain about the city's services"
+    "preparing the survey takes up too much of the municipal staff's time, which could be put to better use",
+    "the city can no longer afford the survey, and the mayor is using the budget cuts as an excuse to drop it",
+    "the last survey showed that residents are dissatisfied with the city's services",
+    "publishing the survey every year prompts residents to flood the municipality with complaints"
    ],
    "answer": 3,
-   "explanation": "The gauge only reports the empty tank, as the survey only reports the residents' dissatisfaction. (4) makes the survey the cause of the problem, and (1) and (2) are reasons the image does not touch.",
+   "explanation": "Covering the mirror hides the illness without curing it; the council member means that the survey showed something bad that the mayor prefers not to see. (1) and (2) are practical reasons, and in (4) the problem is the complaints, not what the survey shows.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "ראש עירייה החליט להפסיק לפרסם את הסקר השנתי שבו מדרגים התושבים את שירותי העירייה. חבר מועצה אמר לו: \"אתה כמו חולה שמכסה את המראה כדי לא לראות כמה הוא חיוור.\" מכאן שלדעת חבר המועצה -\n(1) הכנת הסקר גוזלת זמן רב מדי מעובדי העירייה, זמן שאפשר לנצל טוב יותר\n(2) העירייה אינה יכולה עוד לממן את הסקר, וראש העירייה משתמש בקיצוצים כתירוץ לוותר עליו\n(3) הסקר האחרון הראה שהתושבים אינם מרוצים משירותי העירייה\n(4) פרסום הסקר מדי שנה גורם לתושבים להציף את העירייה בתלונות",
+   "style_donor": "old-mix p65 Q18"
   },
   {
    "id": "vo-45-127",
@@ -500,18 +582,21 @@
    "category": "Parables and Comparisons",
    "mirrors": "September 2013 §1 Q8",
    "replaces": "vb-inf_v2_0335",
-   "stem": "Of Ms. Barak, who manages the most successful branch of a nationwide bank, it is often said: \"She is like the wheel of a water mill – it would not turn at all without the stream.\" Which of the following interpretations is least suited to this saying?",
+   "stem": "People say of Hofman, who manages the most successful branch of a large bank, that the wind is always at his back. Which of the following is not implied by this remark?",
    "options": [
-    "Ms. Barak's branch succeeds only thanks to the unusually skilled staff who work under her",
-    "The procedures Ms. Barak applies at the branch were all designed by her predecessor, a celebrated manager",
-    "The bank enjoys an excellent reputation, and Ms. Barak's branch benefits from it without any merit of her own",
-    "Many credit Ms. Barak with talent in many areas only because of her outstanding knowledge of banking"
+    "The branch owes its success mainly to its experienced and skilled staff rather than to Hofman's management",
+    "The branch is located in the city's wealthiest neighborhood and would succeed under almost any manager",
+    "Customers are drawn by the bank's good reputation, from which Hofman's branch benefits more than others",
+    "Hofman has succeeded because of his skill in managing the branch under difficult conditions"
    ],
    "answer": 4,
-   "explanation": "The mill wheel moves only by a force that comes from outside it; in (1), (2) and (3) Ms. Barak's success comes from someone or something else. In (4) the ability is her own and is merely credited too widely.",
+   "explanation": "A wind at one's back is a force that is not one's own and makes the going easy; (1), (2) and (3) each name such a force. (4) attributes the success to Hofman's own skill under difficult conditions, the opposite of the remark.",
    "feel": 5,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "על הופמן, המנהל את הסניף המצליח ביותר של בנק גדול, אומרים שהרוח תמיד בגבו. איזה מן הבאים אינו משתמע מאמירה זו?\n(1) הסניף חב את הצלחתו בעיקר לצוות המנוסה והמיומן שלו, ולא לניהולו של הופמן\n(2) הסניף נמצא בשכונה העשירה בעיר והיה מצליח כמעט תחת כל מנהל\n(3) המוניטין הטוב של הבנק מושך לקוחות, וסניפו של הופמן נהנה ממנו יותר מאחרים\n(4) הופמן הצליח בזכות כישרונו לנהל את הסניף בתנאים קשים",
+   "style_donor": "old-mix p65 Q17"
   },
   {
    "id": "vo-46-101",
@@ -519,18 +604,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "Winter 2025 §2 Q11",
    "replaces": "vb-inf_v2_0367",
-   "stem": "In city A, researchers tested whether four-year-olds understand that another person may hold a false belief. Each child watched a puppet put a ball into a box and leave the room; the ball was then moved to a basket, and the child was asked where the puppet would look for the ball when it returned. Most of the children answered \"in the box.\" When the experiment was repeated in city B, most of the children answered \"in the basket.\" The researchers concluded that in city B the understanding that others may hold false beliefs develops later than in city A. Which of the following findings does not weaken the researchers' conclusion?",
+   "stem": "A developmental psychologist asked seven-year-olds in two schools to copy a drawing of a house. Most of the children in the first school copied it accurately, whereas most of the drawings from the second school were inaccurate. The psychologist concluded that the ability to copy a drawing develops later among the children of the second school. Which of the following does not weaken her conclusion?",
    "options": [
-    "In city B, children tend to take a question about where someone will look for an object as asking where the object is",
-    "Puppets are rare in city B, and children there do not see them as characters with thoughts",
-    "In city A many more children than in city B have hearing difficulties that make spoken stories hard to follow",
-    "In another test, children from city B, unlike those from city A, correctly predicted where a friend who had not seen a toy moved would look for it"
+    "Children in the second school are taught that copying another person's work is wrong, and many of them deliberately drew a house of their own design",
+    "Most of the houses in the second school's neighborhood look very different from the house in the drawing, and many children drew the kind of house they see every day",
+    "The proportion of children with poor eyesight is considerably higher in the first school than in the second",
+    "When asked to copy a drawing of a tree, the children of the second school were as accurate as those of the first"
    ],
    "answer": 3,
-   "explanation": "Hearing difficulties would make the task harder in city A, so A's success despite them leaves the conclusion intact. (4) shows the understanding present in city B, and (1) and (2) explain the children's answers in city B without any difference in understanding.",
+   "explanation": "Poorer eyesight in the first school would make its children's success harder, not easier, so it does not explain away the gap. (1) and (2) give other reasons for the inaccurate drawings, and (4) shows that the children of the second school can copy.",
    "feel": 4,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "פסיכולוגית התפתחותית ביקשה מילדים בני שבע בשני בתי ספר להעתיק ציור של בית. רוב הילדים בבית הספר הראשון העתיקו אותו בדייקנות, ואילו רוב הציורים מבית הספר השני לא היו מדויקים. היא הסיקה שהיכולת להעתיק ציור מתפתחת מאוחר יותר אצל ילדי בית הספר השני. איזה מן הבאים אינו מחליש את מסקנתה?\n(1) בבית הספר השני מלמדים שהעתקת עבודתו של אחר פסולה, ורבים מן הילדים ציירו בכוונה בית בעיצוב שלהם\n(2) רוב הבתים בשכונה של בית הספר השני שונים מאוד מן הבית שבציור, וילדים רבים ציירו את סוג הבית שהם רואים בכל יום\n(3) שיעור הילדים בעלי ראייה חלשה גבוה בהרבה בבית הספר הראשון מאשר בשני\n(4) כשהתבקשו להעתיק ציור של עץ, דייקו ילדי בית הספר השני כמו ילדי הראשון",
+   "style_donor": "Summer 2025 Second Q7"
   },
   {
    "id": "vo-46-102",
@@ -538,18 +626,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "Autumn 2025 §2 Q11",
    "replaces": "vb-inf_v2_0368",
-   "stem": "The director of a botanical garden brought a rare orchid from another garden, hoping that it would flower. For four months the plant produced no flowers, and the director moved it to a greenhouse with much higher humidity; shortly afterwards it flowered. The director concluded that the plants in the garden need high humidity in order to flower. Which of the following facts would weaken the director's conclusion?",
+   "stem": "Ofer's orchid had not flowered in the four months since he bought it. He then moved it from the living room to the kitchen, where the air is more humid, and two weeks later it flowered. Ofer concluded that orchids of this kind flower only when the air is humid. Which of the following statements can weaken Ofer's conclusion?",
    "options": [
-    "The previous orchid brought to the garden had not been moved to a greenhouse",
-    "Orchids of this kind are rarely found growing in dense clusters in the wild",
-    "Before coming to the garden, the orchid had grown for years in a climate like the garden's",
-    "Orchids of this kind flower only after a long period of adjusting to a new place"
+    "Ofer's neighbor keeps an orchid of the same kind in her kitchen, and it too flowered this month",
+    "In the wild, orchids of this kind grow high on the branches of trees in tropical forests",
+    "Ofer waters the orchid once a week, exactly as the florist advised him",
+    "Orchids of this kind usually stop flowering for several months after they are moved to a new home"
    ],
    "answer": 4,
-   "explanation": "If the orchid needed time rather than humidity, the flowering after four months and a move is explained by the time alone. (3) removes the need for adjustment and so supports the director, and (1) and (2) do not bear on the cause.",
+   "explanation": "If such orchids stop flowering for some months after a move, this one may have flowered simply because enough time had passed. (1) and (2) are consistent with the conclusion, and (3) does not bear on it.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "הסחלב של עופר לא פרח ארבעה חודשים מאז שקנה אותו. אז העביר אותו מן הסלון למטבח, שבו האוויר לח יותר, וכעבור שבועיים הוא פרח. עופר הסיק שסחלבים מסוג זה פורחים רק כשהאוויר לח. איזה מן המשפטים הבאים יכול להחליש את מסקנתו?\n(1) שכנתו של עופר מחזיקה סחלב מאותו סוג במטבח שלה, וגם הוא פרח החודש\n(2) בטבע גדלים סחלבים מסוג זה גבוה על ענפי העצים ביערות טרופיים\n(3) עופר משקה את הסחלב פעם בשבוע, בדיוק כפי שהמליץ לו המוכר\n(4) סחלבים מסוג זה מפסיקים בדרך כלל לפרוח לכמה חודשים לאחר שהם מועברים לבית חדש",
+   "style_donor": "July 2010 Second Q17"
   },
   {
    "id": "vo-46-103",
@@ -557,18 +648,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "Autumn 2023 §2 Q7",
    "replaces": "vb-inf_v2_0371",
-   "stem": "Ofir read in a local newspaper that in 2019 attendance at the Marom Jazz Festival did not rise compared with the previous year, although early that year the festival's organizers had launched a wide advertising campaign on radio and online. He judged that the reason is that the festival grounds are too small to hold more visitors. Which of the following facts would weaken Ofir's judgment?",
+   "stem": "For the past two summers, a music festival has been held in the courtyard of an old caravanserai. Last year the organizers ran an extensive radio campaign, yet attendance did not rise. One of the organizers argued that the courtyard is simply too small to hold more visitors. Which of the following statements can weaken the organizer's argument?",
    "options": [
-    "In 2018 the festival grounds were never filled to capacity, not even on the busiest evening of the festival",
-    "At the end of 2019 the organizers decided to move the festival to larger grounds",
-    "In 2019 tickets to the festival were cheaper than they had been in 2018",
-    "Listeners' reactions to the organizers' advertising campaign were very favorable"
+    "Neither last year nor the year before were all the tickets for any of the festival's evenings sold",
+    "Next year the festival is to move to the town's soccer stadium, which can hold three times as many people",
+    "Last year tickets were cheaper than the year before, and students were offered an additional discount",
+    "In a survey, most people who had heard the radio advertisements could remember the festival's name"
    ],
    "answer": 1,
-   "explanation": "If there was spare room the year before, lack of space is not what kept attendance flat. (2) concerns a later change, and (3) and (4) make the flat figure more puzzling without bearing on the space.",
+   "explanation": "If the tickets never sold out, the size of the courtyard did not limit attendance. (2) is consistent with the argument, (3) makes the result more surprising without weakening the argument, and (4) does not bear on it.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "בשני הקיצים האחרונים נערך פסטיבל מוזיקה בחצר של חאן עתיק. בשנה שעברה ערכו המארגנים מסע פרסום נרחב ברדיו, ובכל זאת מספר המבקרים לא עלה. אחד המארגנים טען שהחצר פשוט קטנה מכדי להכיל יותר מבקרים. איזה מן המשפטים הבאים יכול להחליש את טענתו?\n(1) לא בשנה שעברה ולא בשנה שלפניה נמכרו כל הכרטיסים לאף אחד מערבי הפסטיבל\n(2) בשנה הבאה יעבור הפסטיבל לאצטדיון הכדורגל של העיירה, המכיל פי שלושה אנשים\n(3) בשנה שעברה היו הכרטיסים זולים מבשנה שלפניה, וסטודנטים קיבלו הנחה נוספת\n(4) בסקר, רוב מי ששמעו את הפרסומות ברדיו זכרו את שם הפסטיבל",
+   "style_donor": "Summer 2022 First Q10"
   },
   {
    "id": "vo-46-104",
@@ -576,18 +670,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "Summer 2022 §1 Q10 (English translation)",
    "replaces": "vb-inf_v2_0372",
-   "stem": "Researchers compared two kinds of restaurant reviews to find out which influences diners more: reviews written by well-known food critics and reviews written by anonymous diners. They found that a restaurant praised by a well-known critic received more reservations in the following month than a restaurant praised by anonymous diners, and they summed up their conclusion in the title of their article: \"A Famous Name Fills the Tables.\" Which of the following statements could weaken the researchers' conclusion?",
+   "stem": "Researchers studied how the location of an exhibition in a museum affects attendance. Over a year, they counted the visitors to each of the museum's exhibitions and found that exhibitions shown in the hall next to the entrance drew more visitors than those shown elsewhere. They concluded that placing an exhibition next to the entrance increases the number of people who visit it. Which of the following weakens the researchers' conclusion?",
    "options": [
-    "A review by a well-known local critic is no less influential than a review by a well-known foreign critic",
-    "Well-known critics generally review only restaurants that are already among the most popular in their city",
-    "In printed magazines, unlike on websites, most restaurant reviews are written by well-known critics",
-    "Readers suspect that anonymous reviews are written by the restaurants' owners, and this makes them distrust such reviews"
+    "Most visitors spend less than two hours in the museum, and many leave before they have seen all the halls",
+    "Each year the museum assigns the hall next to the entrance to the exhibition it expects to be the most popular",
+    "Exhibitions of embroidery attract more visitors than exhibitions of pottery, regardless of the hall in which they are shown",
+    "Visitors who come with guided groups see only the halls the guide chooses, rather than those they would choose themselves"
    ],
    "answer": 2,
-   "explanation": "If the critics choose restaurants that are already popular, the gap in reservations has another cause. (4) offers a mechanism that supports the conclusion, and (1) and (3) do not bear on the comparison.",
+   "explanation": "If the exhibition expected to be most popular is placed next to the entrance, its location does not explain its popularity. (1) if anything supports the conclusion, and (3) and (4) do not bear on the link between location and attendance.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "חוקרים בדקו כיצד מיקומה של תערוכה במוזיאון משפיע על מספר המבקרים בה. במשך שנה ספרו את המבקרים בכל תערוכה ומצאו שתערוכות שהוצגו באולם הסמוך לכניסה משכו יותר מבקרים מאשר תערוכות שהוצגו במקומות אחרים. הם הסיקו שהצבת תערוכה ליד הכניסה מגדילה את מספר המבקרים בה. איזה מן הבאים מחליש את מסקנתם?\n(1) רוב המבקרים שוהים במוזיאון פחות משעתיים, ורבים יוצאים לפני שראו את כל האולמות\n(2) בכל שנה מקצה המוזיאון את האולם הסמוך לכניסה לתערוכה שהוא צופה שתהיה הפופולרית ביותר\n(3) תערוכות רקמה מושכות יותר מבקרים מתערוכות קדרות, בלי קשר לאולם שבו הן מוצגות\n(4) מבקרים הבאים בקבוצות מודרכות רואים רק את האולמות שהמדריך בוחר, ולא את אלה שהיו בוחרים בעצמם",
+   "style_donor": "Summer 2026 Second Q5"
   },
   {
    "id": "vo-46-105",
@@ -595,18 +692,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "Summer 2022 §2 Q10 (English translation)",
    "replaces": "vb-inf_v2_0373",
-   "stem": "About eight years ago, several car insurance companies in the country of Nordavia began to require drivers under the age of twenty-five to install in their cars a device that beeps whenever the car exceeds the speed limit. Recently the traffic authority reported that over the past eight years the number of accidents involving drivers under twenty-five fell by fifteen percent, and officials proposed a law requiring every driver to install the device, arguing that this would reduce accidents among all drivers. Critics of the argument suggested that several questions be investigated first. Which of the following investigations is not relevant to testing the officials' argument?",
+   "stem": "Several years ago a municipality installed speed cameras on its main street. Since then, the number of accidents on the street has dropped by 30%. The municipality now plans to install cameras on all the city's streets, claiming that this will reduce the number of accidents throughout the city. The answer to which of the following questions will not help to determine whether the municipality's claim is correct?",
    "options": [
-    "Over the past eight years, did the number of drivers over twenty-five whose cars are fitted with the device increase?",
-    "Over the past eight years, did the proportion of drivers under twenty-five who took an advanced driving course increase?",
-    "Did the fall in accidents apply only to young drivers whose cars were fitted with the device?",
-    "Over the past eight years, did the number of accidents fall among all drivers, or only among drivers under twenty-five?"
+    "How was the money collected from the fines used?",
+    "Were other changes made on the main street during those years, such as new traffic lights or wider sidewalks?",
+    "Did the number of accidents in the other streets of the city also drop during those years?",
+    "Is the main street different from the other streets in the city in the amount of traffic or in the speed at which people drive on it?"
    ],
    "answer": 1,
-   "explanation": "How many older drivers installed the device has no bearing on why accidents among young drivers fell. (2) tests a rival cause, (3) tests whether the device is the cause, and (4) tests whether the fall is general.",
+   "explanation": "The use of the fine money has nothing to do with whether cameras reduce accidents. (2) and (3) check whether the drop was caused by the cameras, and (4) checks whether the result on the main street can be applied to other streets.",
    "feel": 4,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "לפני כמה שנים התקינה עירייה מצלמות מהירות ברחוב הראשי שלה. מאז ירד מספר התאונות ברחוב ב-30%. עכשיו מתכננת העירייה להתקין מצלמות בכל רחובות העיר, בטענה שהדבר יקטין את מספר התאונות בכל העיר.\nהתשובה לאיזו מן השאלות הבאות לא תעזור לקבוע אם טענת העירייה נכונה?\n(1) לאיזו מטרה שימש הכסף שנגבה מן הקנסות?\n(2) האם נעשו ברחוב הראשי בשנים אלה שינויים אחרים, כגון רמזורים חדשים או הרחבת מדרכות?\n(3) האם גם מספר התאונות ברחובות האחרים של העיר ירד בשנים אלה?\n(4) האם הרחוב הראשי שונה משאר רחובות העיר בכמות התנועה או במהירות הנסיעה בו?",
+   "style_donor": "July 2010 Second Q17"
   },
   {
    "id": "vo-46-106",
@@ -614,18 +714,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "Spring 2019 §1 Q13 (English translation)",
    "replaces": "vb-inf_v2_0374",
-   "stem": "A study found that children who ate breakfast at the same hour every morning had higher grades than children who did not eat breakfast at a fixed hour. Following the study, a school principal sent the parents a letter recommending that their children eat breakfast at a fixed hour. A child psychologist argued that the recommendation was unjustified, basing her argument on a certain piece of information. Which of the following is most likely to be the information on which the psychologist relied?",
+   "stem": "A study found that children who eat breakfast at the same time every day get higher grades than children who eat breakfast at different times. Following the study, a school principal recommended that parents have their children eat breakfast at the same time every day. A psychologist argued that the recommendation was unjustified. Which of the following could be the basis for her argument?",
    "options": [
-    "Eating breakfast at one particular hour is not necessarily more beneficial than eating it at another",
-    "The grades of the children in the study were, on the whole, lower than the national average",
-    "Children whose home life is orderly, and whose parents follow their studies closely, tend to eat breakfast at a fixed hour",
-    "Most parents do not follow the recommendations that schools send home"
+    "Children who eat breakfast at the same time every day do not eat more, on average, than children who eat it at different times",
+    "The grades of the children in the study were below the national average, both among those who eat at the same time and among the others",
+    "Children who eat breakfast at the same time also tend to go to bed at a regular hour, and their parents tend to keep a close eye on their schoolwork",
+    "Most parents do not follow recommendations of this kind"
    ],
    "answer": 3,
-   "explanation": "The children who keep a fixed hour come from homes that also support their studies, so the higher grades may be due to the home rather than the hour. (1) repeats the doubt without grounding it, and (2) and (4) do not bear on the comparison.",
+   "explanation": "If these children also come from orderly homes that follow their schoolwork, their grades may be due to their homes and not to the time of breakfast. (1) rules out one mechanism but not the connection, and (2) and (4) do not bear on the comparison.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "מחקר מצא שילדים האוכלים ארוחת בוקר באותה שעה בכל יום מקבלים ציונים גבוהים יותר מילדים האוכלים אותה בשעות שונות. בעקבות המחקר המליצה מנהלת בית ספר להורים להקפיד שילדיהם יאכלו ארוחת בוקר באותה שעה בכל יום. פסיכולוגית טענה שההמלצה אינה מוצדקת. איזה מן הבאים יכול להיות הבסיס לטענתה?\n(1) ילדים האוכלים ארוחת בוקר באותה שעה בכל יום אינם אוכלים, בממוצע, יותר מילדים האוכלים בשעות שונות\n(2) ציוני הילדים במחקר היו נמוכים מן הממוצע הארצי, הן אצל האוכלים באותה שעה והן אצל האחרים\n(3) ילדים האוכלים ארוחת בוקר באותה שעה נוטים גם ללכת לישון בשעה קבועה, והוריהם נוטים לעקוב מקרוב אחר לימודיהם\n(4) רוב ההורים אינם ממלאים המלצות מסוג זה",
+   "style_donor": "February 2016 Second Q9"
   },
   {
    "id": "vo-46-107",
@@ -633,18 +736,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "Summer 2020 §1 Q12 (English translation; solver's key)",
    "replaces": "vb-inf_v2_0375",
-   "stem": "The mayor of a city claims that vandalism in the city's parks increased this year compared with last year. As evidence he points out that park wardens filed significantly more reports of vandalism this year than they did last year. Which of the following pieces of information shows that the evidence the mayor cites cannot, on its own, establish his claim?",
+   "stem": "This year, many more thefts were reported to the police in a rural district than last year. A local council member concluded that thefts in the district have increased. Which of the following weakens his conclusion?",
    "options": [
-    "Last year the city carried out a surprise inspection of all its parks to locate damaged equipment",
-    "Many of the wardens who filed reports this year had themselves been assigned to repair the damage",
-    "Last year the city invested heavily in fences and lighting to prevent vandalism in its parks",
-    "Early this year the city gave the wardens an app that lets them file a report in seconds instead of filling out a paper form"
+    "Last year the police caught most of the people who committed thefts in the district",
+    "Most of the thefts reported this year involved small sums of money left in unlocked cars",
+    "About forty new families moved to the district this year, most of them from the large cities in the center of the country",
+    "Until this year, residents who wished to report a theft had to travel to a police station in the nearest town"
    ],
    "answer": 4,
-   "explanation": "More reports may reflect easier reporting rather than more vandalism. (3) supports the mayor, and (1) and (2) do not bear on the number of reports.",
+   "explanation": "If reporting became much easier this year, the number of reports may have risen although the number of thefts did not. (3) could explain a real rise, and (1) and (2) do not bear on the comparison.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "השנה דווחו למשטרה במחוז כפרי הרבה יותר גניבות מבשנה שעברה. חבר מועצה מקומי הסיק שמספר הגניבות במחוז עלה. איזה מן הבאים מחליש את מסקנתו?\n(1) בשנה שעברה תפסה המשטרה את רוב האנשים שביצעו גניבות במחוז\n(2) רוב הגניבות שדווחו השנה היו של סכומי כסף קטנים שהושארו במכוניות לא נעולות\n(3) השנה עברו למחוז כארבעים משפחות חדשות, רובן מן הערים הגדולות שבמרכז הארץ\n(4) עד השנה, תושבים שרצו לדווח על גניבה נאלצו לנסוע לתחנת משטרה בעיר הקרובה",
+   "style_donor": "July 2010 First Q17"
   },
   {
    "id": "vo-46-108",
@@ -652,18 +758,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "Summer 2020 §2 Q6 (English translation; solver's key)",
    "replaces": "vb-inf_v2_0376",
-   "stem": "Dr. Stern: \"Hikers estimate how long they have been walking by how tired they feel.\" Dr. Eilon: \"Hikers estimate how long they have been walking by the number of landmarks they have passed.\" Which of the following findings weakens Dr. Stern's claim without strengthening Dr. Eilon's?",
+   "stem": "In recent years, many old carob trees in one region have stopped bearing fruit. The regional agronomist attributes this to the decline in rainfall, while a researcher at the Ministry of Agriculture attributes it to a fungus carried by a beetle that reached the region about ten years ago. Which of the following findings weakens the agronomist's explanation without supporting the researcher's?",
    "options": [
-    "Hikers with heavy packs and hikers with no packs estimate their walking time equally accurately",
-    "Hikers on featureless trails estimate their walking time less accurately than others",
-    "Hikers find it hard to estimate walking times longer than five hours",
-    "Hikers estimate their walking time less accurately at night than by day"
+    "Trees that were irrigated regularly stopped bearing fruit at the same rate as trees that were not irrigated",
+    "Trees that were sprayed against beetles every spring have continued to bear fruit as before",
+    "In a neighboring region, where rainfall has not declined, the carob trees continue to bear fruit",
+    "The trees bore the least fruit in the years in which the beetle was most widespread"
    ],
    "answer": 1,
-   "explanation": "Equal accuracy despite very different levels of effort tells against tiredness and says nothing about landmarks. (2) and (4) strengthen Dr. Eilon, and (3) bears on neither claim.",
+   "explanation": "Regular irrigation makes up for the lack of rain, so if irrigated trees were affected just as much, rainfall is not the cause; this says nothing about the beetle. (2) and (4) support the researcher, and (3) supports the agronomist.",
    "feel": 5,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "בשנים האחרונות חדלו עצי חרוב ותיקים רבים באזור אחד לשאת פרי. האגרונום האזורי תולה זאת בירידה בכמות הגשמים, ואילו חוקר במשרד החקלאות תולה זאת בפטרייה שנושאת חיפושית שהגיעה לאזור לפני כעשר שנים. איזה מן הממצאים הבאים מחליש את הסברו של האגרונום בלי לתמוך בהסברו של החוקר?\n(1) עצים שהושקו בקביעות חדלו לשאת פרי באותו שיעור כמו עצים שלא הושקו\n(2) עצים שרוססו נגד חיפושיות בכל אביב ממשיכים לשאת פרי כבעבר\n(3) באזור שכן, שבו כמות הגשמים לא ירדה, עצי החרוב ממשיכים לשאת פרי\n(4) העצים נשאו את הפרי המועט ביותר בשנים שבהן הייתה החיפושית נפוצה ביותר",
+   "style_donor": "old-mix p111 Q12"
   },
   {
    "id": "vo-46-109",
@@ -671,18 +780,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "December 2016 §2 Q7",
    "replaces": "vb-inf_v2_0377",
-   "stem": "Dr. Navon noticed that a large share of the patients who come to his clinic with the eye disease \"tzarevet\" are long-distance truck drivers. He concluded that driving for many hours encourages the outbreak of the disease. Which of the following would strengthen Dr. Navon's conclusion?",
+   "stem": "An ophthalmologist noticed that many of the patients who come to him with a certain eye disease are truck drivers. He concluded that driving for many hours increases the risk of the disease. Which of the following strengthens his conclusion?",
    "options": [
-    "Dr. Navon's clinic is located next to the country's largest truck depot",
-    "Staring at the road for hours reduces blinking, and reduced blinking is suspected of causing the disease",
-    "A study found that the disease tends to run in families",
-    "Driving for many hours causes eye strain, and the disease also causes eye strain"
+    "His clinic is next to the country's largest truck depot, and many drivers come to him simply because it is convenient for them",
+    "Among bus drivers, the disease is more common among those who drive long intercity routes than among those who drive in the city",
+    "The disease tends to run in families, and many of his patients have relatives who also suffer from it",
+    "Many truck drivers suffer from back pain and headaches, which doctors also attribute to long hours at the wheel without a break"
    ],
    "answer": 2,
-   "explanation": "A mechanism links long driving to the disease. (1) explains the observation without the cause, (3) offers a different cause, and (4) mistakes a shared symptom for a link.",
+   "explanation": "Finding more of the disease among other drivers whose driving is longer supports the conclusion. (1) offers another reason why many truck drivers come to this clinic, (3) points to heredity, and (4) concerns other complaints.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "רופא עיניים הבחין שרבים מן המטופלים הבאים אליו עם מחלת עיניים מסוימת הם נהגי משאיות. הוא הסיק שנהיגה במשך שעות רבות מגבירה את הסיכון למחלה. איזה מן הבאים מחזק את מסקנתו?\n(1) המרפאה שלו נמצאת ליד חניון המשאיות הגדול בארץ, ונהגים רבים באים אליו פשוט משום שהדבר נוח להם\n(2) בקרב נהגי אוטובוס, המחלה נפוצה יותר אצל הנוהגים בקווים בין-עירוניים ארוכים מאשר אצל הנוהגים בעיר\n(3) המחלה נוטה לעבור במשפחות, ולרבים ממטופליו יש קרובים הסובלים ממנה\n(4) נהגי משאיות רבים סובלים מכאבי גב ומכאבי ראש, שגם אותם מייחסים הרופאים לשעות ארוכות מאחורי ההגה בלי הפסקה",
+   "style_donor": "July 2015 First Q13"
   },
   {
    "id": "vo-46-110",
@@ -690,18 +802,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "April 2016 §1 Q14",
    "replaces": "vb-inf_v2_0379",
-   "stem": "The pupils of Ms. Kedar's piano class and the pupils of Mr. Zohar's piano class took part in the same regional competition, and the average score of Ms. Kedar's pupils was higher. The director of the music school supposed that Ms. Kedar's teaching methods are better than Mr. Zohar's; the deputy director supposed instead that Ms. Kedar's pupils practice at home more than Mr. Zohar's do. Which of the following data would weaken both suppositions?",
+   "stem": "Medieval manuscripts copied in one monastery contain far fewer errors than those copied in a neighboring monastery. One scholar attributes the difference to the better training of the first monastery's copyists; another argues that they simply worked more slowly. Which of the following, if true, would explain the difference without relying on either scholar's explanation?",
    "options": [
-    "A third class, also taught by Mr. Zohar, scored lower on average than Ms. Kedar's class and higher than Mr. Zohar's first class",
-    "In a theory examination, for which both classes had the same teacher, Mr. Zohar's pupils scored higher than Ms. Kedar's",
-    "Two months before the competition Ms. Kedar went on leave, and Mr. Zohar taught both classes",
-    "Most of Ms. Kedar's pupils had played the piano for years before joining her class, whereas Mr. Zohar's pupils were all beginners"
+    "Most of the first monastery's copyists had learned their craft at the second monastery before moving",
+    "The copyists of the first monastery copied fewer pages a day than those of the second, and rested more often",
+    "The second monastery was much larger than the first, and many more copyists worked in its scriptorium",
+    "In the first monastery, each page was read by a second monk after it had been copied, and he corrected the errors he found"
    ],
    "answer": 4,
-   "explanation": "Prior experience is a third cause of the gap, neither the teacher's methods nor the pupils' practice. (2) tells against the practice explanation only, and (1) and (3) bear on the teacher only.",
+   "explanation": "If each page was checked and corrected afterwards, the difference is explained without better training or slower work. (1) weakens the first explanation but explains nothing, (2) supports the second, and (3) does not explain the difference.",
    "feel": 5,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "כתבי יד מימי הביניים שהועתקו במנזר אחד מכילים הרבה פחות שגיאות מכתבי יד שהועתקו במנזר שכן. חוקר אחד תולה את ההבדל בהכשרה הטובה יותר של המעתיקים במנזר הראשון, ואחר טוען שהם פשוט עבדו לאט יותר. איזו מן העובדות הבאות, אם היא נכונה, תסביר את ההבדל בלי להסתמך על אף אחד משני ההסברים?\n(1) רוב המעתיקים של המנזר הראשון למדו את מלאכתם במנזר השני לפני שעברו\n(2) מעתיקי המנזר הראשון העתיקו פחות דפים ביום ממעתיקי השני, ונחו לעתים קרובות יותר\n(3) המנזר השני היה גדול בהרבה מן הראשון, ובחדר ההעתקה שלו עבדו הרבה יותר מעתיקים\n(4) במנזר הראשון קרא נזיר שני כל דף לאחר שהועתק ותיקן את השגיאות שמצא",
+   "style_donor": "old-mix p86 Q9"
   },
   {
    "id": "vo-46-111",
@@ -709,18 +824,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "April 2016 §2 Q9",
    "replaces": "vb-inf_v2_0380",
-   "stem": "\"Midnight Harbor,\" the second album of the band Kestrel, sold far fewer copies than the band's first album, \"Salt Roads.\" The record company judged that the second album sold less because it was priced higher than the first. Which of the following facts does not weaken the record company's judgment?",
+   "stem": "A novelist's second book sold far fewer copies than his first. His publisher believes that this is because the second book was more expensive. Which of the following does not weaken the publisher's explanation?",
    "options": [
-    "\"Salt Roads\" was released with a music video that was widely broadcast on television, whereas \"Midnight Harbor\" had no video",
-    "The songs on \"Midnight Harbor\" are long and slow, whereas those on \"Salt Roads\" are short, lively songs well suited to radio",
-    "The band's third album, \"Glass Tide,\" was priced lower than both earlier albums and sold more copies than either",
-    "Unlike \"Midnight Harbor,\" \"Salt Roads\" came out just before the holiday season, when many people buy albums as gifts"
+    "Shortly after the first novel came out, it was adapted into a television series that was broadcast on the main channel",
+    "The second novel is almost twice as long as the first, and many readers complained that it is hard going",
+    "The novelist's third book, which was cheaper than the other two, sold more copies than either of them",
+    "The first novel was published shortly after the author won a well-known literary prize, which the newspapers covered widely"
    ],
    "answer": 3,
-   "explanation": "A cheaper album that sold more is just what the price explanation predicts. (1), (2) and (4) each supply a different cause of the difference in sales.",
+   "explanation": "The success of the cheaper third book is consistent with the publisher's explanation. (1), (2) and (4) offer other reasons for the difference in sales.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "הספר השני של סופר נמכר בהרבה פחות עותקים מספרו הראשון. המו\"ל סבור שהסיבה היא שהספר השני היה יקר יותר. איזה מן הבאים אינו מחליש את הסברו?\n(1) זמן קצר לאחר צאת הרומן הראשון הוא עובד לסדרת טלוויזיה ששודרה בערוץ המרכזי\n(2) הרומן השני ארוך כמעט פי שניים מן הראשון, וקוראים רבים התלוננו שקשה לקרוא אותו\n(3) ספרו השלישי של הסופר, שהיה זול משני האחרים, נמכר ביותר עותקים מכל אחד מהם\n(4) הרומן הראשון יצא זמן קצר אחרי שהסופר זכה בפרס ספרותי ידוע, שהעיתונים סיקרו בהרחבה",
+   "style_donor": "Summer 2024 Second Q9"
   },
   {
    "id": "vo-46-112",
@@ -728,18 +846,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "July 2016 §1 Q15",
    "replaces": "vb-inf_v2_0381",
-   "stem": "A study conducted in the country of Norland found that over the past fifteen years the rate of \"nishtefet,\" a skin disease that causes a temporary rash, has been higher in the port city of Veltra than in the country's other cities. The researchers supposed that the reason is the high humidity in Veltra. Which of the following facts does not weaken the researchers' supposition?",
+   "stem": "Over the past fifteen years, the rate of a certain skin disease has been higher in one of the country's coastal cities than in its other cities. Researchers assume that the reason is the high humidity in that city. Which of the following does not weaken the researchers' assumption?",
    "options": [
-    "Veltra's drinking water contains a high level of chlorine, and chlorine raises the risk of contracting the disease",
-    "The disease mainly affects young children, and the proportion of young children in Veltra's population is lower than the national average",
-    "Until a dam was built near Veltra three years ago, the humidity in the city was low",
-    "The humidity in the city of Arnes is higher than in Veltra, but the rate of the disease there is very low"
+    "The drinking water in the coastal city contains more chlorine than the water in other cities, and chlorine increases the risk of the disease",
+    "The disease is most common among young children, and the proportion of young children in the coastal city is lower than in other cities",
+    "Until a power station was built near the city three years ago, the humidity in the city was low",
+    "In another city the humidity is even higher, but the disease is rare there"
    ],
    "answer": 2,
-   "explanation": "Fewer young children makes Veltra's high rate harder to explain but offers no rival cause. (1) offers one, (3) breaks the timing, and (4) breaks the link between humidity and the disease.",
+   "explanation": "If the city has fewer young children, its higher rate of the disease is even harder to explain by its population, so (2) does not weaken the assumption. (1) offers another cause, (3) shows that the humidity was low during most of the period, and (4) shows high humidity without the disease.",
    "feel": 5,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "במשך חמש עשרה השנים האחרונות היה שיעור החולים במחלת עור מסוימת באחת מערי החוף של המדינה גבוה מאשר בשאר עריה. חוקרים מניחים שהסיבה לכך היא הלחות הגבוהה בעיר זו.\nאיזה מן הבאים אינו מחליש את הנחת החוקרים?\n(1) במי השתייה של עיר החוף יש יותר כלור מאשר במים של ערים אחרות, וכלור מגביר את הסיכון לחלות במחלה\n(2) המחלה נפוצה ביותר בקרב ילדים צעירים, ושיעור הילדים הצעירים בעיר החוף נמוך מאשר בערים אחרות\n(3) עד שנבנתה תחנת כוח ליד העיר לפני שלוש שנים, הייתה הלחות בעיר נמוכה\n(4) בעיר אחרת הלחות גבוהה עוד יותר, אך המחלה נדירה שם",
+   "style_donor": "Summer 2020 Second Q6"
   },
   {
    "id": "vo-46-113",
@@ -747,18 +868,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "December 2015 §1 Q12",
    "replaces": "vb-inf_v2_0383",
-   "stem": "A plan has been proposed to build a large parking garage in the center of a city, which will make it easier for drivers to find parking there and so shorten the time they spend circling in search of a space. Opponents of the plan argue that the garage, if built, will increase traffic congestion in the city center. Which of the following facts does not support the opponents' claim?",
+   "stem": "A municipality is planning to build a large parking garage downtown, so that drivers will no longer have to circle the streets in search of a space. Opponents of the plan argue that the garage will actually increase downtown traffic. Which of the following does not support the opponents' argument?",
    "options": [
-    "The easier it is to park somewhere, the more people drive there instead of using public transportation",
-    "The more parking a city center offers, the more cars enter it",
-    "Cars entering and leaving a large garage cause lines on nearby streets",
-    "The longer drivers search for parking, the heavier the congestion in the streets"
+    "When parking is easy to find, more people drive downtown instead of taking the bus",
+    "In other cities, the number of cars entering the city center rose after large garages were built there",
+    "At the end of the working day, long lines of cars form at the exits of large garages and block the surrounding streets",
+    "A large share of downtown traffic consists of drivers looking for a parking space"
    ],
    "answer": 4,
-   "explanation": "A garage that shortens the search would, by (4), reduce congestion, the opposite of the opponents' claim. (1), (2) and (3) each supply a route from the garage to more congestion.",
+   "explanation": "If much of the traffic consists of drivers looking for parking, a garage would reduce it, as the plan claims. (1), (2) and (3) support the opponents.",
    "feel": 5,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "עירייה מתכננת לבנות חניון גדול במרכז העיר, כדי שהנהגים לא יצטרכו עוד להסתובב ברחובות בחיפוש אחר מקום. מתנגדי התוכנית טוענים שהחניון דווקא יגביר את התנועה במרכז. איזה מן הבאים אינו תומך בטענת המתנגדים?\n(1) כשקל למצוא חניה, יותר אנשים נוסעים למרכז במכונית במקום באוטובוס\n(2) בערים אחרות עלה מספר המכוניות הנכנסות למרכז לאחר שנבנו בו חניונים גדולים\n(3) בסוף יום העבודה נוצרים תורים ארוכים של מכוניות ביציאות מחניונים גדולים, והם חוסמים את הרחובות שמסביב\n(4) חלק גדול מן התנועה במרכז העיר הוא של נהגים המחפשים מקום חניה",
+   "style_donor": "Summer 2024 Second Q4"
   },
   {
    "id": "vo-46-114",
@@ -766,18 +890,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "December 2015 §2 Q9",
    "replaces": "vb-inf_v2_0384",
-   "stem": "In an international survey, workers in different countries were asked to rate their satisfaction with their jobs on a scale from one to ten, and the average satisfaction of the workers in Lundia was higher than that of the workers in Sarvia. Professor Weiss argues that one cannot conclude from the survey that there is a gap in job satisfaction between the workers of the two countries. Which of the following is best suited to be the basis of her argument?",
+   "stem": "In an international survey, workers in two neighboring countries were asked to rate their job satisfaction on a scale of 1 to 10. The average rating in the first country was higher than in the second. Professor Weisser argues that this does not show that workers in the first country are more satisfied with their jobs. Which of the following could be the basis for her argument?",
    "options": [
-    "In Sarvian culture it is considered immodest to express great satisfaction, and people who are very pleased with something tend to call it merely \"acceptable\"",
-    "Wages in Lundia are higher than in Sarvia, and the higher a person's wage, the more satisfied they are with their job",
-    "The share of respondents who chose \"6\" among the Lundian respondents was equal to the share among the Sarvian respondents",
-    "Because of an error, several hundred Lundian questionnaires were not counted, and the average satisfaction among those respondents was higher than among the other Lundians"
+    "In the second country it is considered immodest to express great satisfaction, and people who are very pleased with something usually describe it as merely \"reasonable\"",
+    "Wages in the first country are higher, and people with higher wages tend to be more satisfied with their jobs",
+    "The percentage of respondents who chose 6 was the same in both countries",
+    "Several hundred questionnaires from the first country were left out by mistake, and the average rating in them was even higher than in those that were counted"
    ],
    "answer": 1,
-   "explanation": "If the two cultures use the scale differently, the numbers do not measure the same thing. (2) supports the gap, (4) would widen it, and (3) is beside the point.",
+   "explanation": "If people in the two countries use the scale differently, the averages do not measure the same thing. (2) supports the gap, (4) would widen it, and (3) is beside the point.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "בסקר בינלאומי התבקשו עובדים בשתי מדינות שכנות לדרג את שביעות רצונם מעבודתם בסולם של 1 עד 10. הדירוג הממוצע במדינה הראשונה היה גבוה מזה שבשנייה. פרופסור וייסר טוענת שאין בכך כדי להראות שהעובדים במדינה הראשונה מרוצים יותר מעבודתם. איזה מן הבאים יכול להיות הבסיס לטענתה?\n(1) במדינה השנייה נחשב חוסר צניעות להביע שביעות רצון רבה, ומי שמרוצים מאוד מדבר מה מתארים אותו בדרך כלל כ\"סביר\" בלבד\n(2) השכר במדינה הראשונה גבוה יותר, ובעלי שכר גבוה נוטים להיות מרוצים יותר מעבודתם\n(3) אחוז המשיבים שבחרו ב-6 היה זהה בשתי המדינות\n(4) כמה מאות שאלונים מן המדינה הראשונה הושמטו בטעות, והדירוג הממוצע בהם היה גבוה אף יותר מבאלה שנספרו",
+   "style_donor": "old-mix p86 Q9"
   },
   {
    "id": "vo-46-115",
@@ -785,18 +912,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "September 2015 §2 Q8",
    "replaces": "vb-inf_v2_0386",
-   "stem": "Irit, who runs the \"Tempo\" dance studio, noticed that only a few of the studio's students are over fifty. She assumed that the reason is that people over fifty are less interested in dancing than younger people. Her assistant, Moshe, pointed out a fact that led Irit to change her mind. Which of the following is most likely to be the fact Moshe pointed out?",
+   "stem": "Tamar, who teaches folk dancing, noticed that few of her students are over 50, and assumed that people over 50 are less interested in dancing than younger people. Something a friend told her made her change her mind. Which of the following is most likely to be what her friend told her?",
    "options": [
-    "The \"Tempo\" studio is small and poorly ventilated, and it offers only a few styles of dance",
-    "Across the street from \"Tempo\" is the busy \"Rhythm\" studio, the only studio in the city that offers classes designed especially for people over fifty",
-    "The rival studio \"Salsa Club\" began to offer a reduced price to people over fifty, but this did not increase their number among its students",
-    "Among the students at \"Tempo,\" the share of those in their twenties is higher than the share of those in their thirties"
+    "The hall in which Tamar teaches is very hot in the summer, and many of her students stop coming in July and August",
+    "A teacher in the neighboring town holds classes especially for people over 50 on the same evenings, and they are always full",
+    "When Tamar lowered her fees for people over 50 last year, their number in her classes did not rise at all",
+    "Among Tamar's students there are more people in their twenties than in their thirties or forties"
    ],
    "answer": 2,
-   "explanation": "People over fifty are dancing, but elsewhere. (3) supports Irit's assumption, and (1) and (4) do not bear on that age group's interest in dancing.",
+   "explanation": "If people over 50 fill classes elsewhere, they are interested in dancing but go elsewhere. (3) supports Tamar's assumption, and (1) and (4) do not bear on the interest of people over 50.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "תמר, המלמדת ריקודי עם, הבחינה שמעטים מתלמידיה הם בני יותר מ-50, והניחה שבני יותר מ-50 מתעניינים בריקוד פחות מצעירים מהם. משהו שסיפרה לה חברה גרם לה לשנות את דעתה. מה ככל הנראה סיפרה לה החברה?\n(1) האולם שבו מלמדת תמר חם מאוד בקיץ, ותלמידים רבים שלה מפסיקים להגיע ביולי ובאוגוסט\n(2) מורה בעיירה השכנה מקיים באותם ערבים חוגים המיועדים במיוחד לבני יותר מ-50, והם תמיד מלאים\n(3) כשהורידה תמר בשנה שעברה את שכר הלימוד לבני יותר מ-50, מספרם בחוגים שלה לא עלה כלל\n(4) בין תלמידיה של תמר יש יותר בני עשרים ומשהו מאשר בני שלושים או ארבעים ומשהו",
+   "style_donor": "Summer 2025 Second Q7"
   },
   {
    "id": "vo-46-116",
@@ -804,18 +934,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "April 2015 §2 Q12",
    "replaces": "vb-inf_v2_0388",
-   "stem": "A study of the leaves of the karva shrub found that a tea made from them improves concentration. The researchers supposed that delta, one of the substances in the leaves, is responsible for the effect. However, participants who swallowed capsules containing delta showed no similar improvement, and the researchers therefore concluded that their supposition had been mistaken. Which of the following findings would strengthen the researchers' conclusion?",
+   "stem": "Tea made from the leaves of a certain plant is known to improve concentration. A pharmaceutical company assumed that one of the substances in the leaves was responsible, and produced capsules containing that substance alone. People who took the capsules showed no improvement in concentration, and the company's researchers concluded that the substance is not responsible for the effect. Which of the following would strengthen the researchers' conclusion?",
    "options": [
-    "Participants who drank tea made from karva leaves from which the delta had been removed improved their concentration as much as participants who drank ordinary karva tea",
-    "The concentration of participants who drank tea made from karva leaves that contain no delta did not improve",
-    "Participants who drank karva tea were, on average, more tired than participants who did not",
-    "The capsules also contained another substance, epsilon, which blocks the action of delta"
+    "Tea made from leaves from which the substance had been removed improved concentration as much as ordinary tea",
+    "Tea made from other plants, which do not contain the substance, does not improve concentration",
+    "The people who drank the tea in the original studies had slept less than usual the night before",
+    "The capsules also contained a second substance, which prevents the body from absorbing the first when the two are taken together"
    ],
    "answer": 1,
-   "explanation": "If the tea works just as well without delta, delta is not the cause. (2) supports the original supposition, (4) rescues it by explaining the capsules' failure, and (3) is beside the point.",
+   "explanation": "If the tea works just as well without the substance, the substance is not what causes the effect. (2) supports the original assumption, (4) explains the capsules' failure and so weakens the conclusion, and (3) does not bear on it.",
    "feel": 5,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "ידוע שתה העשוי מעלי צמח מסוים משפר את הריכוז. חברת תרופות הניחה שאחד החומרים שבעלים אחראי לכך, וייצרה כמוסות המכילות חומר זה בלבד. אנשים שנטלו את הכמוסות לא הראו כל שיפור בריכוז, וחוקרי החברה הסיקו שהחומר אינו אחראי להשפעה. איזה מן הבאים יחזק את מסקנתם?\n(1) תה העשוי מעלים שהוצא מהם החומר שיפר את הריכוז במידה שבה שיפר אותו תה רגיל\n(2) תה העשוי מצמחים אחרים, שאינם מכילים את החומר, אינו משפר את הריכוז\n(3) האנשים ששתו את התה במחקרים המקוריים ישנו פחות מן הרגיל בלילה שלפני כן\n(4) הכמוסות הכילו גם חומר שני, המונע מן הגוף לספוג את הראשון כששניהם נלקחים יחד",
+   "style_donor": "Summer 2024 Second Q4"
   },
   {
    "id": "vo-46-117",
@@ -823,18 +956,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "February 2015 §1 Q7",
    "replaces": "vb-inf_v2_0389",
-   "stem": "For two weeks Eyal read the local newspaper every day and noticed that it did not report a single traffic accident in the town. He concluded that no traffic accidents had occurred there during those two weeks. Which of the following facts would weaken Eyal's conclusion?",
+   "stem": "While researching the history of a small town, a historian read every issue of the local newspaper for 1921 and found no report of a flood that year. She concluded that there was no flood in the town in 1921. Which of the following weakens her conclusion?",
    "options": [
-    "The local newspaper makes a point of covering every event in the town",
-    "In those two weeks nothing happened that could have pushed accident reports out of the paper",
-    "The town's roads were crowded during those weeks, and accidents could have occurred",
-    "The local newspaper reports traffic accidents only in a monthly supplement"
+    "The newspaper reported on every event in the town, however minor, including fires in single houses",
+    "According to the records of a nearby weather station, very little rain fell in the region in the winter of 1921",
+    "There were floods in the town in 1920 and in 1922, and the newspaper reported both of them in detail",
+    "In the winter of 1921 the newspaper did not appear for four months, because its printing press had broken down"
    ],
    "answer": 4,
-   "explanation": "If the daily paper never carries accident reports, its silence proves nothing. (1) and (2) strengthen Eyal's inference, and (3) shows only that accidents were possible, not that they happened.",
+   "explanation": "If the newspaper did not appear during the rainy months of 1921, a flood could have occurred without being reported. (1), (2) and (3) support the conclusion or do not bear on it.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "במסגרת מחקר על תולדותיה של עיירה קטנה קראה היסטוריונית את כל גיליונות העיתון המקומי משנת 1921, ולא מצאה בהם ידיעה על שיטפון באותה שנה. היא הסיקה שב-1921 לא היה שיטפון בעיירה. איזה מן הבאים מחליש את מסקנתה?\n(1) העיתון דיווח על כל אירוע בעיירה, קטן ככל שיהיה, כולל שריפות בבתים בודדים\n(2) לפי רישומי תחנת מזג אוויר סמוכה, בחורף 1921 ירד באזור מעט מאוד גשם\n(3) ב-1920 וב-1922 היו שיטפונות בעיירה, והעיתון דיווח על שניהם בפירוט\n(4) בחורף 1921 לא הופיע העיתון במשך ארבעה חודשים, משום שמכונת הדפוס שלו התקלקלה",
+   "style_donor": "July 2015 First Q13"
   },
   {
    "id": "vo-46-118",
@@ -842,18 +978,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "February 2015 §2 Q10",
    "replaces": "vb-inf_v2_0390",
-   "stem": "Until the middle of the twentieth century the inhabitants of the island of Tarvo drank almost no coffee, and few cases of the heart condition \"palpeset\" were recorded among them. Today, now that coffee has become the island's most popular drink, the island's clinics record a marked rise in the number of cases of the condition. From this, researchers concluded that drinking coffee raises the risk of palpeset. Which of the following facts would weaken the researchers' conclusion?",
+   "stem": "Until the middle of the twentieth century, the inhabitants of a certain island drank very little coffee, and few cases of a certain heart disease were recorded there. Today coffee is the most popular drink on the island, and the number of recorded cases of the disease has risen sharply. Researchers concluded that drinking coffee increases the risk of the disease. Which of the following weakens the researchers' conclusion?",
    "options": [
-    "Life expectancy on Tarvo is still among the highest in the region",
-    "The instruments that the island's clinics use to detect heart conditions have improved greatly over the past seventy years",
-    "Among islanders who moved to the mainland, where coffee is widely drunk, the rate of palpeset is similar to that of the mainland population",
-    "Compared with the middle of the twentieth century, far fewer islanders suffer from headaches today, and coffee is known to relieve headaches"
+    "Life expectancy on the island is still higher than on any of the neighboring islands",
+    "Until thirty years ago there was no hospital on the island, and people who complained of chest pain were rarely examined",
+    "Islanders who have moved to the mainland, where much coffee is drunk, suffer from the disease as often as other mainlanders",
+    "Most of the islanders drink their coffee black, whereas on the mainland it is usually drunk with milk"
    ],
    "answer": 2,
-   "explanation": "More recorded cases may mean better detection rather than more disease. (3) supports the conclusion, and (1) and (4) do not bear on it.",
+   "explanation": "If people with heart complaints were rarely examined in the past, many cases went unrecorded, and the rise may reflect diagnosis rather than more illness. (1), (3) and (4) do not show that the rise is not real.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "עד אמצע המאה העשרים שתו תושבי אי מסוים מעט מאוד קפה, ונרשמו שם מקרים מעטים של מחלת לב מסוימת. היום הקפה הוא המשקה הפופולרי ביותר באי, ומספר המקרים הרשומים של המחלה עלה בחדות. חוקרים הסיקו ששתיית קפה מגבירה את הסיכון למחלה. איזה מן הבאים מחליש את מסקנתם?\n(1) תוחלת החיים באי עדיין גבוהה מבכל האיים השכנים\n(2) עד לפני שלושים שנה לא היה באי בית חולים, ואנשים שהתלוננו על כאבים בחזה נבדקו לעתים רחוקות\n(3) תושבי האי שעברו ליבשה, שבה שותים הרבה קפה, חולים במחלה באותה תדירות כמו שאר תושבי היבשה\n(4) רוב תושבי האי שותים את הקפה שלהם שחור, ואילו ביבשה שותים אותו בדרך כלל עם חלב",
+   "style_donor": "Summer 2026 Second Q5"
   },
   {
    "id": "vo-46-119",
@@ -861,18 +1000,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "December 2014 §2 Q8",
    "replaces": "vb-inf_v2_0391",
-   "stem": "Ofra wanted to find out which of eight sample paint colors her grandparents would like best for their living room. She showed them the eight samples one after another and asked them to give each one a score, the highest score going to the color they found most pleasing. When she added up the results, Ofra found that the color with the highest score was the lightest one. Which of the following facts casts doubt on the reliability of Ofra's test?",
+   "stem": "Rina wanted to find out which of eight shades of paint her grandparents would prefer for their living room. One evening she showed them the samples one after another and asked them to give each a score. The lightest shade received the highest score, and Rina concluded that this is the shade her grandparents prefer. Which of the following weakens Rina's conclusion?",
    "options": [
-    "Ofra's grandmother said the room grew dark while they were scoring, and she could hardly tell the last samples apart",
-    "Ofra's grandfather paints landscapes as a hobby",
-    "Ofra's grandmother says that her favorite color is sky blue, which was not among the eight samples",
-    "Ofra's grandparents seldom sit in their living room"
+    "The samples were shown in dim light, in which the darker shades looked almost identical",
+    "Rina's grandfather has been painting landscapes in oils for many years and is considered an expert on color",
+    "Her grandmother's favorite color is light blue, which was not among the eight samples",
+    "Her grandparents spend most of their time in the kitchen and the garden and rarely sit in the living room"
    ],
    "answer": 1,
-   "explanation": "If the last samples could not be seen properly, the scores do not compare like with like. (2), (3) and (4) do not affect how the samples were scored.",
+   "explanation": "In dim light the darker shades could not be judged properly, so the lightest may have won for that reason alone. (2) and (4) do not bear on the test, and (3) concerns a color that was not tested.",
    "feel": 4,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "רינה רצתה לברר איזה מבין שמונה גווני צבע יעדיפו סבה וסבתה לסלון. ערב אחד הראתה להם את הדוגמאות בזו אחר זו וביקשה מהם לתת לכל אחת ציון. הגוון הבהיר ביותר קיבל את הציון הגבוה ביותר, ורינה הסיקה שזה הגוון שהם מעדיפים. איזה מן הבאים מחליש את מסקנתה?\n(1) הדוגמאות הוצגו באור עמום, שבו נראו הגוונים הכהים כמעט זהים\n(2) סבה של רינה מצייר נופים בצבעי שמן שנים רבות ונחשב למומחה לצבע\n(3) הצבע האהוב על סבתה הוא תכלת, שלא היה בין שמונה הדוגמאות\n(4) סבה וסבתה מבלים את רוב זמנם במטבח ובגינה, ורק לעתים רחוקות יושבים בסלון",
+   "style_donor": "Summer 2024 Second Q9"
   },
   {
    "id": "vo-46-120",
@@ -880,18 +1022,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "October 2014 §1 Q9",
    "replaces": "vb-inf_v2_0392",
-   "stem": "A company offered its sales staff an optional negotiation workshop. At the end of the quarter the sales manager found that those who had attended did not close more deals than those who had not, and concluded that the workshop was useless. Which of the following data could cause the manager to retract his conclusion?",
+   "stem": "A company offered its sales staff an optional course in negotiation. At the end of the year, the sales manager found that those who had taken the course had not sold more than those who had not, and concluded that the course had been useless. Which of the following weakens the manager's conclusion?",
    "options": [
-    "The only employees who did not attend the workshop were those who were away on business trips at the time",
-    "The employees who attended the workshop are the company's most experienced and ambitious salespeople",
-    "Employees of another company who attended a similar workshop closed fewer deals, on average, than those who did not",
-    "The employees with the strongest sales records chose not to attend the workshop, preferring to spend the time with clients"
+    "The course was taught by a lecturer who had never worked in sales himself",
+    "The salespeople who took the course are among the most experienced in the company",
+    "At another company, salespeople who took a similar course sold less than their colleagues who did not",
+    "Most of those who took the course had joined the company only a few months earlier"
    ],
    "answer": 4,
-   "explanation": "If the strongest salespeople stayed away, equal results mean the workshop lifted the weaker ones. (2) makes the equal results even worse for the workshop, and (1) and (3) do not bear on it.",
+   "explanation": "New salespeople would be expected to sell less; if they sold as much as their experienced colleagues, the course may well have helped. (2) strengthens the conclusion, and (1) and (3) do not weaken it.",
    "feel": 5,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "חברה הציעה לאנשי המכירות שלה קורס רשות במשא ומתן. בסוף השנה מצא מנהל המכירות שמי שלמדו בקורס לא מכרו יותר ממי שלא למדו בו, והסיק שהקורס לא הועיל. איזה מן הבאים מחליש את מסקנתו?\n(1) את הקורס לימד מרצה שמעולם לא עבד במכירות בעצמו\n(2) אנשי המכירות שלמדו בקורס הם מן המנוסים ביותר בחברה\n(3) בחברה אחרת, אנשי מכירות שלמדו בקורס דומה מכרו פחות מעמיתיהם שלא למדו בו\n(4) רוב מי שלמדו בקורס הצטרפו לחברה רק כמה חודשים קודם לכן",
+   "style_donor": "old-mix p111 Q12"
   },
   {
    "id": "vo-46-121",
@@ -899,18 +1044,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "October 2014 §2 Q8",
    "replaces": "vb-inf_v2_0393",
-   "stem": "An agricultural company wished to test a new fertilizer for tomatoes. It compared two plots: both received the same irrigation and care, but one was also treated with the fertilizer. At harvest the plants in the treated plot yielded more tomatoes, on average, than the plants in the other plot, and the company concluded that the fertilizer increases the yield. Which of the following data does not weaken the company's conclusion?",
+   "stem": "To find out whether a new fertilizer increases the yield of his tomatoes, a farmer treated half of his field with it and cultivated the other half as usual. At harvest time the treated half yielded more tomatoes, and the farmer concluded that the fertilizer increases the yield. Which of the following does not weaken the farmer's conclusion?",
    "options": [
-    "Besides the fertilizer, the treated plot received more hours of direct sunlight than the other plot",
-    "Before the trial the soil in the treated plot was richer than the soil in the other plot",
-    "The company's researchers do not yet know which of the fertilizer's ingredients is responsible for its effect",
-    "Some plants in the treated plot that produced few tomatoes were pulled up during the trial and were not counted"
+    "The treated half of the field faces south and gets several more hours of sun each day than the other half",
+    "In each of the three previous years, too, this half of the field yielded more tomatoes than the other half",
+    "The company that makes the fertilizer does not disclose which of its ingredients is responsible for its effect",
+    "During the season, the farmer's family picked tomatoes from the untreated half for their own use, and these were not weighed"
    ],
    "answer": 3,
-   "explanation": "Not knowing how the fertilizer works does not show that it does not work. (1) is a rival cause, (2) a difference present from the start, and (4) a biased count.",
+   "explanation": "Not knowing which ingredient works does not cast doubt on the fertilizer's effect. (1) and (2) offer other reasons for the difference, and (4) shows that the untreated half yielded more than was counted.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "כדי לברר אם דשן חדש מגדיל את יבול העגבניות שלו, טיפל חקלאי במחצית משדהו בדשן ועיבד את המחצית האחרת כרגיל. בקטיף הניבה המחצית המטופלת יותר עגבניות, והחקלאי הסיק שהדשן מגדיל את היבול. איזה מן הבאים אינו מחליש את מסקנתו?\n(1) המחצית המטופלת פונה דרומה ומקבלת בכל יום כמה שעות שמש יותר מן המחצית האחרת\n(2) גם בכל אחת משלוש השנים הקודמות הניבה מחצית זו יותר עגבניות מן האחרת\n(3) החברה המייצרת את הדשן אינה מגלה איזה מרכיביו אחראי להשפעתו\n(4) במהלך העונה קטפה משפחת החקלאי לשימושה עגבניות מן המחצית שלא טופלה, ואלה לא נשקלו",
+   "style_donor": "July 2010 First Q17"
   },
   {
    "id": "vo-46-122",
@@ -918,18 +1066,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "April 2014 §2 Q11",
    "replaces": "vb-inf_v2_0394",
-   "stem": "Sales of electric fans at the \"Breeze\" appliance store rose by forty percent last month. The owner estimated that the rise was due to the heat wave that struck the region during that month. Which of the following data would weaken the owner's estimate?",
+   "stem": "Last month, sales of electric fans at an appliance store in Beersheba rose by 40%. The store's owner attributed the rise to the heat wave that hit the region that month. Which of the following weakens the owner's explanation?",
    "options": [
-    "Sales of air conditioners at the store also rose last month",
-    "In the month before, the store's sales fell by fifteen percent",
-    "During the heat wave the store cut the prices of all its fans by half",
-    "In that month a rival store lowered the prices of its fans"
+    "Sales of air conditioners at the store rose that month by an even higher percentage",
+    "It was the longest heat wave recorded in the region in twenty years",
+    "During that month, the store gave a second fan free to every customer who bought one",
+    "During that month, another appliance store on the same street cut the prices of its fans"
    ],
    "answer": 3,
-   "explanation": "A price cut at the same time is a rival cause of the rise. (1) supports the heat-wave explanation, and (2) and (4) do not bear on it.",
+   "explanation": "A free second fan is another reason for the rise in the number of fans sold. (1) and (2) support the explanation, and (4) would, if anything, have lowered the store's sales.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "בחודש שעבר עלו מכירות המאווררים החשמליים בחנות למוצרי חשמל בבאר שבע ב-40%. בעל החנות תלה את העלייה בגל החום שפקד את האזור באותו חודש. איזה מן הבאים מחליש את הסברו?\n(1) מכירות המזגנים בחנות עלו באותו חודש בשיעור גבוה אף יותר\n(2) זה היה גל החום הארוך ביותר שנרשם באזור מזה עשרים שנה\n(3) באותו חודש נתנה החנות מאוורר שני חינם לכל לקוח שקנה מאוורר\n(4) באותו חודש הוזילה חנות מוצרי חשמל אחרת באותו רחוב את מחירי המאווררים שלה",
+   "style_donor": "old-mix p108 Q9"
   },
   {
    "id": "vo-46-123",
@@ -937,18 +1088,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "February 2014 §1 Q7",
    "replaces": "vb-inf_v2_0395",
-   "stem": "A statistics lecturer found that every one of the history students enrolled in her introductory course regularly hands in the homework late. She concluded that students who take a course outside their own department tend not to bother handing in its homework on time. Which of the following data would strengthen the lecturer's conclusion?",
+   "stem": "A statistics lecturer noticed that all the history students in her course hand in their assignments late. She concluded that students who take a course outside their own department do not make an effort to hand in assignments on time. Which of the following statements can strengthen the lecturer's conclusion?",
    "options": [
-    "The statistics students enrolled in a course in modern history regularly hand in its homework late",
-    "The history students hand in their homework late in all their courses, including their history courses",
-    "The statistics students in the introductory course also hand in the homework late",
-    "The history department's examination period falls in the middle of the statistics course"
+    "Economics students who take courses in the history department also tend to hand in their assignments late",
+    "The history students hand in their assignments late in all their courses, including those in their own department",
+    "Several of the statistics students in the course also hand in their assignments late",
+    "In the middle of the semester, the history students have to submit long seminar papers in their own department"
    ],
    "answer": 1,
-   "explanation": "The same pattern in the opposite direction supports the claim about courses outside one's department. (4) supplies another cause, and (2) and (3) show lateness that has nothing to do with the department.",
+   "explanation": "Late work from other students taking courses outside their department shows that the pattern is not limited to the history students. (2) and (4) offer other explanations for the history students' lateness, and (3) does not support the conclusion.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "מרצה לסטטיסטיקה הבחינה שכל הסטודנטים להיסטוריה בקורס שלה מגישים את העבודות באיחור. היא הסיקה שסטודנטים הלומדים קורס מחוץ לחוג שלהם אינם מתאמצים להגיש עבודות בזמן. איזה מן המשפטים הבאים יכול לחזק את מסקנתה?\n(1) סטודנטים לכלכלה הלומדים קורסים בחוג להיסטוריה נוטים גם הם להגיש עבודות באיחור\n(2) הסטודנטים להיסטוריה מגישים עבודות באיחור בכל הקורסים שלהם, כולל בחוג שלהם\n(3) גם כמה מן הסטודנטים לסטטיסטיקה בקורס מגישים את עבודותיהם באיחור\n(4) באמצע הסמסטר חייבים הסטודנטים להיסטוריה להגיש עבודות סמינריוניות ארוכות בחוג שלהם",
+   "style_donor": "Summer 2022 First Q10"
   },
   {
    "id": "vo-46-124",
@@ -956,18 +1110,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "February 2014 §1 Q14",
    "replaces": "vb-inf_v2_0396",
-   "stem": "A report on injuries at the Tzur climbing wall over the past five years shows that more climbers were injured while climbing with a safety rope than while climbing without one. Following the report, the wall's manager decided to stop requiring climbers to use a rope, claiming that ropes do not reduce the risk. Which of the following data explains why the manager's claim is mistaken?",
+   "stem": "A report on road accidents in a small town found that most accidents involving local drivers occurred less than five kilometers from the drivers' homes. A local journalist concluded that drivers are less careful near home than farther away. Which of the following weakens the journalist's conclusion?",
    "options": [
-    "The number of climbers at the Tzur wall is small compared with the number at other climbing walls in the region",
-    "The number of climbs made with a rope at the Tzur wall is many times the number made without one",
-    "At the nearby Eitan climbing wall, more climbers were injured without a rope than with one",
-    "Climbers who use a rope pay less attention to their footing than climbers who do not"
+    "The town is smaller than the other towns in the region, and fewer accidents occur there each year",
+    "Most of the trips made by the town's drivers are to work, shops and schools within the town itself",
+    "In a neighboring town, most accidents involving local drivers occurred far from the drivers' homes",
+    "Drivers on a road they know well pay less attention to road signs than drivers on an unfamiliar road"
    ],
    "answer": 2,
-   "explanation": "More injuries with a rope because there are far more climbs with a rope; the rate of injury per climb may be much lower. (4) explains the count without bearing on the rate, and (1) and (3) are beside the point.",
+   "explanation": "If most driving is done near home, it is not surprising that most accidents happen there, even if drivers are equally careful everywhere. (4) supports the journalist, and (1) and (3) do not bear on the comparison.",
    "feel": 5,
    "pool": true,
-   "difficulty": "hard"
+   "difficulty": "hard",
+   "facts": [],
+   "he_draft": "דוח על תאונות דרכים בעיירה קטנה מצא שרוב התאונות שבהן היו מעורבים נהגים מקומיים אירעו במרחק של פחות מחמישה קילומטרים מבתי הנהגים. עיתונאי מקומי הסיק שנהגים זהירים פחות ליד הבית מאשר הרחק ממנו. איזה מן הבאים מחליש את מסקנתו?\n(1) העיירה קטנה משאר העיירות באזור, ומתרחשות בה פחות תאונות בכל שנה\n(2) רוב הנסיעות של נהגי העיירה הן לעבודה, לחנויות ולבתי ספר בתוך העיירה עצמה\n(3) בעיירה שכנה אירעו רוב התאונות של נהגים מקומיים הרחק מבתי הנהגים\n(4) נהגים בכביש שהם מכירים היטב שמים לב פחות לתמרורים מנהגים בכביש לא מוכר",
+   "style_donor": "Summer 2020 Second Q6"
   },
   {
    "id": "vo-46-125",
@@ -975,18 +1132,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "December 2013 §1 Q14",
    "replaces": "vb-inf_v2_0400",
-   "stem": "In a study of classroom seating, teachers arranged their pupils' desks in two ways: for one week in a circle, each pupil facing the others, and for one week in rows facing the board. The researchers found that with the desks in a circle the pupils took part in discussions more often, and concluded that pupils who can see their classmates' faces feel freer to speak. Which of the following facts does not weaken the researchers' conclusion?",
+   "stem": "In a study, elementary school teachers arranged the desks in their classrooms in a circle for one week and in rows facing the board for another. When the desks were in a circle, the children took part in class discussions more often. The researchers concluded that children speak more freely when they can see one another's faces. Which of the following does not weaken the researchers' conclusion?",
    "options": [
-    "The week of rows came second, at the end of the term, when many of the pupils were tired from examinations",
-    "When the desks were in rows, the pupils at the back of the room found it hard to hear the teacher",
-    "The chairs used in the circle arrangement were more comfortable than those used in the rows",
-    "Some of the teachers who took part in the study were experienced, and for some it was their first year of teaching"
+    "The week in which the desks were in rows was the last week before the exams, when many children were busy studying",
+    "When the desks were in rows, the children at the back could hardly hear what the children in front of them said",
+    "The chairs used in the circle were new and comfortable, whereas those used in the rows were old and hard",
+    "In both weeks the teachers asked the same number of questions and raised the same topics for discussion"
    ],
    "answer": 4,
-   "explanation": "The teachers' experience does not bear on why the pupils spoke more in the circle. (1), (2) and (3) each offer a reason other than seeing classmates' faces.",
+   "explanation": "That the teachers asked the same questions in both weeks rules out one other explanation, so it does not weaken the conclusion. (1), (2) and (3) offer other reasons why the children spoke less when the desks were in rows.",
    "feel": 5,
    "pool": true,
-   "difficulty": "easy"
+   "difficulty": "easy",
+   "facts": [],
+   "he_draft": "במחקר סידרו מורים בבית ספר יסודי את השולחנות בכיתותיהם במעגל במשך שבוע אחד ובשורות מול הלוח במשך שבוע אחר. כשהשולחנות היו במעגל השתתפו הילדים בדיונים בכיתה לעתים קרובות יותר. החוקרים הסיקו שילדים מדברים בחופשיות רבה יותר כשהם יכולים לראות זה את פני זה. איזה מן הבאים אינו מחליש את מסקנתם?\n(1) השבוע שבו היו השולחנות בשורות היה השבוע האחרון לפני הבחינות, כשילדים רבים היו עסוקים בלמידה\n(2) כשהשולחנות היו בשורות, הילדים שישבו מאחור כמעט לא שמעו את מה שאמרו הילדים שלפניהם\n(3) הכיסאות במעגל היו חדשים ונוחים, ואילו הכיסאות בשורות היו ישנים וקשים\n(4) בשני השבועות שאלו המורים אותו מספר של שאלות והעלו לדיון אותם נושאים",
+   "style_donor": "Summer 2022 First Q12"
   },
   {
    "id": "vo-46-126",
@@ -994,18 +1154,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "September 2013 §2 Q11",
    "replaces": "vb-inf_v2_0401",
-   "stem": "Yael's olive tree produced a larger harvest this year than Noam's. Yael attributes the difference to the variety of olive she planted. Noam argues that the difference stems from the fact that Yael's tree grows on a sunny slope, whereas his grows in the shade of a building. Which of the following facts would weaken both claims?",
+   "stem": "This year Ze'ev's pomegranate tree yielded more fruit than the tree in his neighbor Dalia's garden. Ze'ev attributes the difference to the variety he planted, while Dalia attributes it to the fact that his tree gets more sun. Which of the following is inconsistent with both explanations?",
    "options": [
-    "Yael's tree and Noam's tree are of the same variety",
-    "Yael's slope is sunny, but it is also very windy",
-    "Yael watered and fertilized her tree far more often than Noam did",
-    "Yael and Noam watered and fertilized their trees equally often"
+    "The two trees are of the same variety and were bought at the same nursery in the same year",
+    "Pomegranate trees that get more sun generally yield more fruit than trees growing in partial shade",
+    "Last year, when both trees stood where they stand now, Dalia's tree yielded more fruit than Ze'ev's",
+    "Trees of the variety Ze'ev planted generally yield more fruit than trees of other varieties"
    ],
    "answer": 3,
-   "explanation": "Watering and fertilizing are a third cause that is neither the variety nor the sun. (1) tells against the variety alone, (2) touches the sun claim alone, and (4) removes a rival cause instead of adding one.",
+   "explanation": "Last year the variety and the sun were the same as this year, yet Dalia's tree yielded more, so neither factor accounts for this year's difference. (1) is inconsistent only with Ze'ev's explanation, (2) supports Dalia's, and (4) supports Ze'ev's.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "השנה הניב עץ הרימון של זאב יותר פרי מן העץ שבגינת שכנתו דליה. זאב תולה את ההבדל בזן ששתל, ואילו דליה תולה אותו בכך שהעץ שלו מקבל יותר שמש. איזה מן הבאים אינו מתיישב עם אף אחד משני ההסברים?\n(1) שני העצים הם מאותו זן, ושניהם נקנו באותה משתלה באותה שנה\n(2) עצי רימון המקבלים יותר שמש מניבים בדרך כלל יותר פרי מעצים הגדלים בצל חלקי\n(3) בשנה שעברה, כששני העצים עמדו במקום שבו הם עומדים היום, הניב העץ של דליה יותר פרי משל זאב\n(4) עצים מן הזן ששתל זאב מניבים בדרך כלל יותר פרי מעצים מזנים אחרים",
+   "style_donor": "old-mix p108 Q9"
   },
   {
    "id": "vo-46-127",
@@ -1013,18 +1176,21 @@
    "category": "Strengthen / Weaken",
    "mirrors": "Autumn 2021 §1 Q8",
    "replaces": "vb-inf_v2_0402",
-   "stem": "Most of the bridal shops in the town of Kfar Levanon are clustered on Almond Street. Tal, who has just completed her studies in fashion design, was advised not to open her new bridal shop on that street. Which of the following facts could be a consideration against this advice?",
+   "stem": "Most of the bridal shops in a certain town are on one street. A young designer who is planning to open a bridal shop was advised not to open it on that street because of the competition. Which of the following weakens this advice?",
    "options": [
-    "The long-established shops on Almond Street sometimes copy designs from newly opened shops",
-    "The town council is about to approve a plan granting reduced municipal taxes to fashion businesses on Almond Street",
-    "Most of the fabric suppliers in the region are far from Almond Street, and deliveries there are often delayed",
-    "Brides looking for a gown on Almond Street usually start at one end of it, and often tire before they reach the other end"
+    "The long-established shops on the street sometimes copy the designs of new shops and sell them more cheaply within weeks",
+    "Brides looking for a gown usually spend a whole day on that street and visit almost every shop on it",
+    "Rents on that street are almost twice as high as in the town's other shopping areas",
+    "The workshops that sew the gowns for the shops are all in the industrial zone, on the other side of town"
    ],
    "answer": 2,
-   "explanation": "A benefit available only on that street is a reason to open the shop there. (1) and (3) support the advice, and (4) is neutral.",
+   "explanation": "If brides come to that street and visit almost every shop on it, a new shop there will be seen by many buyers despite the competition. (1), (3) and (4) support the advice.",
    "feel": 5,
    "pool": true,
-   "difficulty": "medium"
+   "difficulty": "medium",
+   "facts": [],
+   "he_draft": "רוב חנויות שמלות הכלה בעיירה מסוימת נמצאות ברחוב אחד. למעצבת צעירה המתכננת לפתוח חנות כזו יעצו שלא לפתוח אותה ברחוב זה בגלל התחרות. איזה מן הבאים מחליש עצה זו?\n(1) החנויות הוותיקות ברחוב מעתיקות לפעמים עיצובים של חנויות חדשות ומוכרות אותם בזול בתוך שבועות\n(2) כלות המחפשות שמלה מבלות בדרך כלל יום שלם ברחוב זה ונכנסות כמעט לכל חנות שבו\n(3) שכר הדירה ברחוב זה גבוה כמעט פי שניים מבשאר אזורי המסחר בעיירה\n(4) הסדנאות התופרות את השמלות לחנויות נמצאות כולן באזור התעשייה, בצדה השני של העיירה",
+   "style_donor": "February 2016 Second Q9"
   }
  ],
  "passages": []

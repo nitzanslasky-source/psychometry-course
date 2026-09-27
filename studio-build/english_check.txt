@@ -1,0 +1,40 @@
+NITE-ENGLISH AUTHENTICITY PASS (teacher's standard: an expert who knows the English psychometric exam well must NOT be able
+to tell our original questions from real ones)
+
+REAL ENGLISH SOURCES (official English-language NITE exams; this is the target voice)
+  /Users/nitzanslasky/nite-psychometry/work/verbal/
+   - exams_new_mix.pdf   official English Verbal Reasoning 2019-2026 (read with python3 + pypdf; NOTES.md there lists pages/keys)
+   - exams_old_mix.pdf   official English 2010-2017 (+ old-format completions pp. 3-61)
+   - vr_inference_newmix.json (142 real critical-reading/inference items, already extracted from exams_new_mix; blanks lost)
+   - nite_completions_en_keyed.json, english_sc_oldmix.json, english_sc_corpus.json (real completions; blanks lost in extraction)
+   - STYLE_GUIDE_sentence_completions.md
+  Also read ~/.claude/projects/-Users-nitzanslasky/memory/nite-translation-style.md (verified official phrasing).
+  Do NOT use the Hebrew files or the course bank/templates as style models (they are translations, not NITE's English).
+
+STEP 1 - REAL SAMPLE. Collect the real English questions of your types (as many as exist, target >= the number of
+  originals you check; for reading comprehension: >= 6 whole passages with their questions). Take the text from the PDFs so
+  blanks are restored as "____" and options are clean. Normalize to OUR format exactly (plain text, stem + 4 options,
+  statement lists joined with "\n", options without "(1)" numbering, same quote/dash characters as our files) so that
+  formatting alone never tells real from ours. Save to
+  /private/tmp/claude-501/-Users-nitzanslasky/3900a95f-9e6b-4d5d-beea-3c24fc3dcf44/scratchpad/real/<GROUP>.json as
+  {"items":[{"source","stem","options"}], "passages":[{"source","paragraphs":[...],"questions":[{"stem","options"}]}]}.
+
+STEP 2 - STYLE PROFILE. From the real sample write down concretely, per question type: the exact stem formulas NITE uses
+  (and ones it never uses), how options are built (length, parallelism, articles, final punctuation, capitalization),
+  typical sentence length and clause structure, vocabulary level, connectors, how names/numbers/units/quotes appear,
+  how people are referred to, tense, hedging words ("certain", "some", "necessarily"), recurring tics. Save it to
+  scratchpad/real/<GROUP>_profile.md.
+
+STEP 3 - LINE-BY-LINE EDIT of every assigned original. For each item ask: would an expert spot this as not NITE?
+  Typical tells: wording a native copywriter would use but NITE's slightly formal, translated-from-Hebrew-by-professionals
+  register would not; stem formulas that NITE never uses; options unequal or non-parallel in ways real ones are not;
+  too-vivid or literary scenarios; too-clever names; British forms; em-dashes; overlong sentences; explanatory
+  asides; unnatural collocations; wrong prepositions/articles; "the passage" in short texts; numbers written in a
+  non-NITE way. Fix the English so it reads exactly like the real ones. Keep the item's logic, keyed answer, answer
+  position and difficulty unchanged; if an edit could affect the logic, re-solve it and make sure exactly one answer is
+  still defensible. Keep it original: generic formulas ("Which of the following ...") are fine, but never copy a
+  distinctive phrase from a real question. Update "explanation" only if the item text it refers to changed.
+STEP 4 - Validate the JSON loads. REPORT: size of real sample, the 10 most important profile points, every item changed
+  with a short before/after of the key phrase, and items you believe still risk detection.
+Wait afterwards: blind testers will try to pick our items out of a mix with your real sample; you will get their catches
+  to fix.

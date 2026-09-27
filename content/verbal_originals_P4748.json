@@ -6,17 +6,24 @@
    "category": "Scientific Thinking",
    "mirrors": "Spring 2026 §1 Q15",
    "replaces": "vb-inf_v2_0196",
-   "stem": "The wings of certain insects, such as cicadas and dragonflies, stay free of bacteria, and not because they contain any substance that is poisonous to bacteria: their surface is covered with tiny spikes, packed so densely that they tear apart any bacterium that settles on them. The coatings used to protect hospital equipment from bacteria, by contrast, contain poisonous substances, and most of them lose their effect within a few months, as the substance wears away. Recently, engineers have succeeded in etching into a steel plate a pattern of tiny spikes whose density matches that of an insect's wing, and bacteria placed on the plate die although nothing poisonous has been added to it. Based on the paragraph, what new way of keeping surfaces free of bacteria over time might develop from the engineers' success?",
+   "stem": "The skin of the Galapagos shark stays remarkably free of algae and barnacles, although no toxic substance has been found in it. Its tiny scales form a pattern of fine ridges, and surfaces imprinted with a similar pattern have been found to make it difficult for bacteria to attach to them and settle on them. In hospitals, surfaces are kept clean with disinfectants, which must be applied again and again, and some bacteria develop resistance to them. According to the paragraph, which of the following new ways of keeping hospital surfaces free of bacteria could develop as a result of this finding?",
    "options": [
-    "Extracting from insects the substances they produce against bacteria, and binding them to a surface that keeps them from wearing away",
-    "Arranging ordinary poisonous substances in tiny, densely packed spikes, so that they come into closer contact with bacteria and kill them faster",
-    "Covering existing coatings with a layer of steel thin enough to let the poison reach the bacteria while keeping the coating from wearing away",
-    "Shaping the surfaces of hospital equipment into patterns of tiny spikes that tear bacteria apart, so that the protection comes from the form of the surface and not from any poisonous substance"
+    "Extracting the substance that protects the shark's skin from algae and barnacles and adding it to disinfectants",
+    "Adding disinfectants to the material from which door handles and bed rails are made, so that there is no need to apply them again and again and the bacteria do not have time to develop resistance",
+    "Applying disinfectants in a pattern of fine ridges, so that they cover the surface more efficiently",
+    "Making door handles and bed rails whose surface is imprinted with a pattern like that of the shark's skin, instead of disinfecting them again and again"
    ],
    "answer": 4,
-   "explanation": "The discovery is protection without poison, and only (4) gives up the poisonous substance. (1) and (2) keep a poison and merely protect or arrange it, and (3) protects an existing coating instead of replacing it.",
+   "explanation": "The finding is protection that works through the shape of the surface, not through any substance; only (4) uses it. (1) relies on a substance that, according to the paragraph, has not been found in the skin, (2) keeps the disinfectants, and (3) uses the pattern only as a way of applying them.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [
+    "The Sharklet micropattern, developed by Anthony Brennan's group (University of Florida) and inspired by the skin of the Galapagos shark, is a pattern of microscopic ridges shown to reduce bacterial attachment and colonization without any biocide.",
+    "Shark skin is covered with small tooth-like scales (dermal denticles) with ridged surfaces.",
+    "Shark skin is not bacteria-free (sharks carry skin microbiomes); the Galapagos shark observation concerned fouling by algae and barnacles, and the bacterial-attachment results come from the engineered Sharklet surfaces. The resistance is attributed to the surface texture, not to any known toxin."
+   ],
+   "he_draft": "עורו של כריש הגלפגוס נשאר נקי במידה בולטת מאצות ומבלוטים, אף שלא נמצא בו שום חומר רעיל. קשקשיו הזעירים יוצרים דגם של רכסים דקים, ונמצא כי משטחים שהוטבע בהם דגם דומה מקשים על חיידקים להיאחז בהם ולהתיישב עליהם. בבתי חולים שומרים על ניקיון משטחים בעזרת חומרי חיטוי, שיש למרוח שוב ושוב, ויש חיידקים שמפתחים כלפיהם עמידות. על פי הקטע, איזו מן הדרכים החדשות הבאות לשמירה על משטחים בבתי חולים נקיים מחיידקים עשויה להתפתח בעקבות ממצא זה?\n(1) הפקת החומר שמגן על עור הכריש מפני אצות ומבלוטים והוספתו לחומרי החיטוי\n(2) הוספת חומרי חיטוי לחומר שממנו עשויים ידיות הדלתות ומעקות המיטות, כדי שלא יהיה צורך למרוח אותם שוב ושוב וכדי שהחיידקים לא יספיקו לפתח עמידות\n(3) מריחת חומרי החיטוי בדגם של רכסים דקים, כדי שיכסו את המשטח ביעילות רבה יותר\n(4) ייצור ידיות דלתות ומעקות מיטות שפניהם מוטבעים בדגם כמו זה של עור הכריש, במקום לחטא אותם שוב ושוב",
+   "style_donor": "Summer 2022 First Section Q12"
   },
   {
    "id": "vo-47-102",
@@ -24,17 +31,20 @@
    "category": "Scientific Thinking",
    "mirrors": "Spring 2026 §1 Q9",
    "replaces": "vb-inf_v2_0197",
-   "stem": "In a study, employees of a large company, some of whom walk to work and some of whom drive, were asked to name the streets along the route between their home and their office. The study yielded two findings. The first: the employees who walk named the streets along their route far more accurately than the employees who drive. The second: on their way to work, the employees who walk look at street signs much more often than the employees who drive. What is the relation between the two findings?",
+   "stem": "In a study, employees of a large company, some of whom walk to work and some of whom drive, were asked to list the names of the streets along the route between their home and their workplace. Two findings emerged from the study. First, the employees who walk named the streets along their route far more accurately than the employees who drive. Second, on their way to work, the employees who walk look at street signs much more often than the employees who drive. What is the relationship between the two findings?",
    "options": [
-    "The second finding can explain the first",
-    "The first finding is proof of the second",
+    "The second finding can explain the first finding",
+    "The first finding proves the second finding",
     "The two findings contradict each other",
-    "The second finding is a particular case of the first"
+    "The second finding is a particular case of the first finding"
    ],
    "answer": 1,
    "explanation": "Looking at street signs more often accounts for knowing the street names better, so the second finding explains the first. (2) reverses the direction, (3) sees a conflict where there is none, and (4) treats two different measures as a rule and an example of it.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "במחקר התבקשו עובדי חברה גדולה, שחלקם הולכים לעבודה ברגל וחלקם נוסעים ברכב, לפרט את שמות הרחובות לאורך הדרך שבין ביתם למקום עבודתם. מן המחקר עלו שני ממצאים. האחד: העובדים ההולכים ברגל ציינו את שמות הרחובות שבדרכם בדייקנות רבה בהרבה מן העובדים הנוסעים ברכב. השני: בדרכם לעבודה מביטים העובדים ההולכים ברגל בשלטי הרחובות לעתים קרובות בהרבה מן העובדים הנוסעים ברכב. מה היחס בין שני הממצאים?\n(1) הממצא השני יכול להסביר את הממצא הראשון\n(2) הממצא הראשון מוכיח את הממצא השני\n(3) שני הממצאים סותרים זה את זה\n(4) הממצא השני הוא מקרה פרטי של הממצא הראשון",
+   "style_donor": "February 2017 First Section Q11"
   },
   {
    "id": "vo-47-103",
@@ -42,17 +52,20 @@
    "category": "Scientific Thinking",
    "mirrors": "Spring 2026 §2 Q18",
    "replaces": "vb-inf_v2_0198",
-   "stem": "A survey of the second-hand market in household goods found that a digital camera bought within the past two years is usually resold for only a little less than the current price of a new camera, whereas a dishwasher of the same age is usually resold for much less than the current price of a new dishwasher. Which of the following facts could explain this finding?",
+   "stem": "A study of the market for used farm machinery in a certain country found that a tractor bought two years earlier was usually sold for only slightly less than the current price of a new tractor of the same model, whereas a combine harvester bought two years earlier sold for much less than the current price of a new combine of the same model. Which of the following could explain these findings?",
    "options": [
-    "Two years ago new dishwashers cost far more than new cameras, but the price of new dishwashers has fallen since then and is still falling",
-    "The price of new cameras has fallen noticeably over the past two years, while the price of new dishwashers has hardly changed",
-    "A new low-quality dishwasher generally costs more than a used high-quality one, whereas a new low-quality camera generally costs less than a used high-quality one",
-    "Cameras lose their quality with use faster than dishwashers do"
+    "Two years ago new combines cost much more than new tractors, but since then their price has fallen, and it is still falling",
+    "In the two years before the study, the price of new tractors fell considerably, while the price of new combines hardly changed",
+    "Most buyers of used combines are small farms that cannot afford to buy a new one",
+    "Combines wear out with use more slowly than tractors, so a two-year-old combine is usually in better condition than a tractor of the same age"
    ],
    "answer": 2,
-   "explanation": "If new cameras now cost less than they did, a camera bought two years ago is resold close to today's lower price, so the gap is small; stable dishwasher prices leave that gap wide. (1) has the wrong appliance getting cheaper, (3) compares quality levels rather than age, and (4) would widen the camera gap, not narrow it.",
+   "explanation": "If new tractors have become much cheaper, a used tractor is compared with today's low price, so the gap is small; combine prices did not fall, so their gap stays wide. (1) has the wrong machine getting cheaper, (3) does not explain the difference between the two machines, and (4) would narrow the gap for combines rather than widen it.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "מחקר על שוק המכונות החקלאיות המשומשות במדינה מסוימת מצא כי טרקטור שנקנה לפני שנתיים נמכר בדרך כלל במחיר נמוך רק במעט ממחירו הנוכחי של טרקטור חדש מאותו דגם, ואילו קומביין שנקנה לפני שנתיים נמכר במחיר נמוך בהרבה ממחירו הנוכחי של קומביין חדש מאותו דגם. איזה מן הבאים יכול להסביר ממצאים אלה?\n(1) לפני שנתיים היו קומביינים חדשים יקרים בהרבה מטרקטורים חדשים, אך מאז ירד מחירם, והוא ממשיך לרדת\n(2) בשנתיים שקדמו למחקר ירד מחירם של טרקטורים חדשים במידה ניכרת, ואילו מחירם של קומביינים חדשים כמעט לא השתנה\n(3) רוב הקונים קומביינים משומשים הם משקים קטנים שאין ביכולתם לקנות קומביין חדש\n(4) קומביינים נשחקים בשימוש לאט יותר מטרקטורים, ולכן קומביין בן שנתיים נמצא בדרך כלל במצב טוב יותר מטרקטור בן אותו גיל",
+   "style_donor": "Summer 2023 First Section Q6"
   },
   {
    "id": "vo-47-104",
@@ -60,17 +73,20 @@
    "category": "Scientific Thinking",
    "mirrors": "Winter 2025 §1 Q11",
    "replaces": "vb-inf_v2_0199",
-   "stem": "Prof. Levanon criticized a study for not examining what it set out to examine, and compared it to the following: \"It is like wanting to know whether people who go on guided tours enjoy their trips, and checking for that purpose whether tour guides suffer from back pain more often than other people do.\" Which of the following studies is most likely to be the one Prof. Levanon criticized?",
+   "stem": "Professor Gorlitz said of a certain study: \"It is like trying to find out whether the passengers on a bus arrive rested at their destination, by checking how tired the driver is at the end of the day.\" Which of the following is most likely to be the study to which Professor Gorlitz was referring?",
    "options": [
-    "A study that asked whether there is a connection between how much people believe they sleep and how much they actually sleep, by monitoring their sleep and questioning them",
-    "A study that asked whether the teaching of mathematics differs between schools in large cities and schools in small towns, by examining pupils from both",
-    "A study that asked whether people who read many novels are more understanding of others, by comparing how understanding novelists are with how understanding the general public is",
-    "A study that asked whether people who take a speed-reading course read faster, by comparing their reading speed before and after the course"
+    "A study that examined whether the residents of a certain neighborhood sleep better since the road near their homes was closed to traffic, in which the residents were asked how they had slept before the closure and after it",
+    "A study on the question of whether cookery programs on the radio improve the cooking of their listeners, in which the dishes of listeners were compared with the dishes of people who do not listen to such programs",
+    "A study that examined whether a certain cookery program on the radio improves the cooking of its listeners, by comparing the dishes of the program's presenters with the dishes of other cooks",
+    "A study on the effect of a new mattress, in which people who had bought it were asked, a year later, whether their back pain had lessened"
    ],
    "answer": 3,
-   "explanation": "The comparison faults a study for examining the people who provide something instead of the people who receive it: novelists stand to readers of novels as guides stand to tourists. (1), (2) and (4) each examine the very people the question is about.",
+   "explanation": "The comparison faults a study that examines those who provide something instead of those who receive it: the presenters stand to the listeners as the driver stands to the passengers. (1), (2) and (4) examine the very people the question is about, whatever their other weaknesses.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "פרופסור גורליץ אמר על מחקר מסוים: \"זה כמו לנסות לברר אם הנוסעים באוטובוס מגיעים רעננים ליעדם באמצעות בדיקה עד כמה עייף הנהג בסוף היום.\" איזה מן המחקרים הבאים הוא ככל הנראה המחקר שאליו התכוון פרופסור גורליץ?\n(1) מחקר שבדק אם תושבי שכונה מסוימת ישנים טוב יותר מאז נסגר לתנועה הכביש הסמוך לבתיהם, ובו נשאלו התושבים כיצד ישנו לפני הסגירה ואחריה\n(2) מחקר בשאלה אם תוכניות בישול ברדיו משפרות את הבישול של מאזיניהן, ובו הושוו תבשילי מאזינים לתבשילי אנשים שאינם מאזינים לתוכניות כאלה\n(3) מחקר שבדק אם תוכנית בישול מסוימת ברדיו משפרת את הבישול של מאזיניה, באמצעות השוואת תבשיליהם של מגישי התוכנית לתבשילי טבחים אחרים\n(4) מחקר על השפעתו של מזרן חדש, ובו נשאלו אנשים שקנו אותו, שנה לאחר מכן, אם פחתו כאבי הגב שלהם",
+   "style_donor": "Summer 2020 First Section Q8"
   },
   {
    "id": "vo-47-105",
@@ -78,17 +94,20 @@
    "category": "Scientific Thinking",
    "mirrors": "Autumn 2025 §1 Q15",
    "replaces": "vb-inf_v2_0201",
-   "stem": "A group of researchers found that a mouse kept in a cage with a running wheel does better on memory tasks than a mouse of the same strain kept in an identical cage without a wheel. They also found that the brain of the mouse with the wheel contains a higher level of a certain protein, which is present in the brains of mice of all strains. To find out whether it is this protein that improves the memory of the running mouse, the researchers repeated the experiment with new mice, making one change. Which of the following is most likely to be that change?",
+   "stem": "Researchers found that mice kept in cages with a running wheel did better on memory tasks than mice kept in identical cages without a wheel, and that the blood of the running mice contained higher levels of a certain protein that muscles produce during exercise. The researchers hypothesized that this protein, carried by the blood to the brain, is what improves memory. To test their hypothesis, they repeated the experiment with a single change. Which of the following is most likely to be that change?",
    "options": [
-    "They placed a substance known to improve memory in the cage of the mouse without the wheel",
-    "They used one mouse of the strain tested in the first experiment and one mouse of a different strain",
-    "They used two mice of the same strain, but of a strain other than the one tested in the first experiment",
-    "They used mice that had been genetically altered so that they cannot produce the protein"
+    "They placed in the cages without a wheel a substance known to improve memory",
+    "They used mice of a strain with especially large muscles, which produce more of the protein during exercise",
+    "They replaced the running wheels with wheels that are harder to turn",
+    "They gave the mice in the cages with a wheel a substance that keeps the protein from reaching the brain"
    ],
    "answer": 4,
-   "explanation": "If mice that run but cannot produce the protein gain no memory advantage, the protein is the link. (1) changes the mouse without the wheel, and (2) and (3) change the strain, not the protein.",
+   "explanation": "If mice that run but whose brains receive no protein lose their advantage in memory, the protein is the link. (1) changes only the mice that do not run, and (2) and (3) change the amount of exercise or muscle, not the path of the protein to the brain.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "חוקרים מצאו כי עכברים שהוחזקו בכלובים עם גלגל ריצה הצליחו במטלות זיכרון יותר מעכברים שהוחזקו בכלובים זהים בלי גלגל, וכי בדמם של העכברים הרצים היה ריכוז גבוה יותר של חלבון מסוים שהשרירים מייצרים בשעת מאמץ. החוקרים שיערו כי חלבון זה, המגיע עם הדם אל המוח, הוא שמשפר את הזיכרון. כדי לבדוק את השערתם חזרו על הניסוי, ושינו בו דבר אחד בלבד. איזה מן הבאים הוא ככל הנראה השינוי?\n(1) הם הניחו בכלובים שאין בהם גלגל חומר שידוע כי הוא משפר את הזיכרון\n(2) הם השתמשו בעכברים מזן ששריריו גדולים במיוחד, והם מייצרים בשעת מאמץ יותר מן החלבון\n(3) הם החליפו את גלגלי הריצה בגלגלים שקשה יותר לסובב\n(4) הם נתנו לעכברים שבכלובים עם הגלגל חומר המונע מן החלבון להגיע אל המוח",
+   "style_donor": "Summer 2025 First Section Q6"
   },
   {
    "id": "vo-47-106",
@@ -96,17 +115,22 @@
    "category": "Scientific Thinking",
    "mirrors": "Spring 2025 §1 Q13",
    "replaces": "vb-inf_v2_0202",
-   "stem": "Researchers who examined skeletons of people who lived in a certain valley three thousand years ago found in the bones traces of a mineral that is present in the water of a nearby spring. The bones were remarkably strong and showed almost no signs of fractures, and the researchers concluded that the people of the valley drank from the spring and that its water strengthened their bones. Another researcher argued that the finding does not show that the spring water strengthened the bones, since the people of that period did hard physical work every day, which keeps bones strong in any case. Which of the following findings could weaken the other researcher's argument?",
+   "stem": "Archaeologists who examined skeletons from a Bronze Age settlement found that there was almost no decay in the inhabitants' teeth. Since the water of the settlement's spring is rich in fluoride, the archaeologists concluded that drinking this water protected the inhabitants' teeth. Another researcher argued that people in that period ate almost no sugar, and that their teeth would have been healthy in any case. Which of the following findings could weaken the other researcher's argument?",
    "options": [
-    "Skeletons of people who lived in the region three thousand years ago, whose bones contain no traces of the mineral and show many more signs of fractures than the bones the researchers examined",
-    "Skeletons of people who lived at a later period, when most work was no longer physical, whose bones contain no traces of the mineral and show more signs of fractures than the bones the researchers examined",
-    "Remains of clay jars showing that the people of the valley at that time drew large amounts of water from the spring",
-    "Skeletons of people who lived at a time when other means of strengthening the bones were known, whose bones contain traces of the mineral"
+    "Skeletons from the same period from a nearby settlement, whose spring water contains almost no fluoride, with a high rate of tooth decay",
+    "Skeletons from the same settlement from the Roman period, when honey was common in the diet, whose teeth are mostly decayed although the spring was still in use",
+    "Remains of many clay jars near the spring",
+    "Plant remains showing that the inhabitants ate mainly barley and lentils"
    ],
    "answer": 1,
-   "explanation": "People of the same period did the same hard work, yet without the mineral their bones broke far more, so the work cannot be the whole explanation. (2) is exactly what the critic would expect, and (3) and (4) do not bear on the argument about work.",
+   "explanation": "People of the same period ate as little sugar, yet without fluoride their teeth decayed, so the diet alone does not explain the healthy teeth. (2) points to sugar as the cause and fits the other researcher, (3) at most shows that the spring was used, and (4) fits his argument.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [
+    "Fluoride in drinking water reduces tooth decay (well established since the community water fluoridation studies of the 1940s)."
+   ],
+   "he_draft": "ארכאולוגים שבדקו שלדים מיישוב מתקופת הברונזה מצאו כי בשיני התושבים כמעט לא הייתה עששת. מכיוון שמי המעיין של היישוב עשירים בפלואוריד, הסיקו הארכאולוגים כי שתיית מים אלה הגנה על שיני התושבים. חוקר אחר טען כי בני התקופה כמעט לא אכלו סוכר, ושיניהם היו בריאות בכל מקרה. איזה מן הממצאים הבאים יכול להחליש את טענת החוקר האחר?\n(1) שלדים מאותה תקופה מיישוב סמוך, שבמי המעיין שלו כמעט אין פלואוריד, ששיעור העששת בשיניהם גבוה\n(2) שלדים מאותו יישוב מן התקופה הרומית, שבה היה הדבש נפוץ במזון, ששיניהם רקובות ברובן אף שהמעיין עדיין שימש את התושבים\n(3) שרידים של כדי חרס רבים ליד המעיין\n(4) שרידי צמחים המעידים כי התושבים אכלו בעיקר שעורה ועדשים",
+   "style_donor": "July 2015 Second Section Q9"
   },
   {
    "id": "vo-47-107",
@@ -114,17 +138,20 @@
    "category": "Scientific Thinking",
    "mirrors": "Spring 2025 §1 Q17",
    "replaces": "vb-inf_v2_0203",
-   "stem": "A certain kind of spider spins its webs among the branches of a certain shrub. A study found that shrubs with spider webs on them lost fewer leaves to caterpillars than shrubs without webs. The authors of the study hypothesized that the spiders catch the moths that come to lay eggs on the shrub, so that fewer caterpillars hatch on it. Another researcher hypothesized instead that the spiders choose, in the first place, to spin their webs on shrubs that are less exposed to caterpillars, since such shrubs offer them steadier shelter. The authors carried out a further test whose results allowed them to confirm one of the two hypotheses. Which of the following tests is most likely to be the one they carried out?",
+   "stem": "Researchers who studied a certain songbird found that there are fewer aphids on bushes in which the birds nest than on other bushes. According to one hypothesis, the birds feed aphids to their chicks and thus reduce their numbers. According to another hypothesis, the birds prefer from the start to nest in bushes with few aphids, because the sticky honeydew that aphids secrete fouls their feathers. Which of the following tests could decide between the two hypotheses?",
    "options": [
-    "They covered a number of shrubs with nets that keep moths out and measured the leaf loss of those shrubs",
-    "They moved spiders onto randomly chosen shrubs and measured the leaf loss of those shrubs",
-    "They measured the leaf loss of shrubs that held webs of other kinds of spider",
-    "They counted the moths caught by each spider, and not only the leaves lost by the shrubs"
+    "Covering some of the bushes with nets that birds cannot pass through, and comparing the number of aphids on them with the number on bushes that were not covered",
+    "Moving nests with chicks in them to bushes chosen without regard to the number of aphids on them, and counting the aphids on these bushes a few weeks later",
+    "Counting the aphids on bushes in which birds of other species have nested",
+    "Examining the food that the parents bring to the chicks"
    ],
    "answer": 2,
-   "explanation": "Random placement removes the spiders' choice; if the shrubs they were placed on still lose fewer leaves, the spiders themselves are the cause. (1), (3) and (4) cannot tell the spiders' effect apart from their choice of shrub.",
+   "explanation": "When the bushes are chosen without regard to aphids, the birds' preference plays no part: if these bushes lose their aphids, the birds are the cause. In (1) the uncovered bushes include those the birds chose, (3) says nothing about this bird's choice, and (4) at most shows that the birds eat aphids, not why their bushes have few.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "חוקרים שחקרו ציפור שיר מסוימת מצאו כי על שיחים שהציפורים מקננות בהם יש פחות כנימות עלה מאשר על שיחים אחרים. לפי השערה אחת, הציפורים מאכילות את גוזליהן בכנימות ובכך ממעטות את מספרן. לפי השערה אחרת, הציפורים מעדיפות מלכתחילה לקנן בשיחים שיש עליהם מעט כנימות, משום שהטל הדביק שהכנימות מפרישות מלכלך את נוצותיהן. איזו מן הבדיקות הבאות יכולה להכריע בין שתי ההשערות?\n(1) כיסוי חלק מן השיחים ברשתות שציפורים אינן יכולות לעבור דרכן, והשוואת מספר הכנימות עליהם לזה שעל שיחים שלא כוסו\n(2) העברת קנים ובהם גוזלים לשיחים שנבחרו בלי להתחשב במספר הכנימות שעליהם, וספירת הכנימות על שיחים אלה כעבור כמה שבועות\n(3) ספירת הכנימות על שיחים שקיננו בהם ציפורים ממינים אחרים\n(4) בדיקת המזון שמביאים ההורים לגוזלים",
+   "style_donor": "Summer 2020 Second Section Q6"
   },
   {
    "id": "vo-47-108",
@@ -132,17 +159,24 @@
    "category": "Scientific Thinking",
    "mirrors": "Spring 2025 §2 Q7",
    "replaces": "vb-inf_v2_0204",
-   "stem": "A certain fungus is found in the soil of almost every orchard in a certain region, yet only about one tree in ten in these orchards develops root rot. Which of the following claims, if true, explains these facts?",
+   "stem": "More than ninety percent of the world's adults carry the Epstein-Barr virus, but only a small proportion of them have ever had mononucleosis, a disease that this virus causes. Which of the following could explain these facts?",
    "options": [
-    "The spread of the fungus in the soil is what causes root rot",
-    "The fungus usually appears in the soil after a certain bacterium has appeared there, and it is the bacterium that sometimes causes root rot",
-    "The presence of the fungus leads to the appearance of a certain bacterium, and the two together always cause root rot",
-    "The fungus is only one of the factors that lead to root rot, but root rot cannot develop where the fungus is absent"
+    "Mononucleosis appears in everyone who has carried the virus for more than a few years",
+    "The virus passes from person to person mainly through saliva, and most people are infected with it before the age of thirty",
+    "Mononucleosis is caused by the virus together with a certain bacterium that almost all adults also carry, usually from early childhood",
+    "Mononucleosis develops mainly in people who were first infected with the virus as adolescents or adults, and most people are infected as young children"
    ],
    "answer": 4,
-   "explanation": "A condition that is necessary but not sufficient fits a fungus that is almost everywhere and a disease that is not. (1) and (3) would make root rot common wherever the fungus is found, and (2) leaves the fungus with no part in the facts at all.",
+   "explanation": "A virus that causes the disease mainly under a condition that most carriers do not meet fits a virus that nearly everyone carries and a disease that few have had. (1) and (3) would make the disease almost universal, and (2) explains only why so many carry the virus, not why so few have had the disease.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [
+    "More than 90% of adults worldwide are infected with Epstein-Barr virus.",
+    "Primary EBV infection in early childhood is usually mild or without symptoms; infection in adolescence or adulthood often causes infectious mononucleosis.",
+    "Worldwide, most people acquire EBV in childhood (in developing countries nearly all by early childhood); mononucleosis does occur in young children but rarely, so the option says 'mainly', not 'only'."
+   ],
+   "he_draft": "יותר מתשעים אחוזים מן המבוגרים בעולם נושאים את נגיף אפשטיין-בר, אך רק חלק קטן מהם חלו אי פעם במחלת הנשיקה, מחלה שנגיף זה גורם לה. איזה מן הבאים יכול להסביר עובדות אלה?\n(1) מחלת הנשיקה מופיעה בכל מי שנושא את הנגיף יותר מכמה שנים\n(2) הנגיף עובר מאדם לאדם בעיקר ברוק, ורוב האנשים נדבקים בו לפני גיל שלושים\n(3) מחלת הנשיקה נגרמת על ידי הנגיף יחד עם חיידק מסוים שכמעט כל המבוגרים נושאים גם הוא, בדרך כלל מילדות מוקדמת\n(4) מחלת הנשיקה מתפתחת בעיקר באנשים שנדבקו בנגיף לראשונה בגיל ההתבגרות או בבגרות, ורוב האנשים נדבקים בו בילדות המוקדמת",
+   "style_donor": "Summer 2020 First Section Q13"
   },
   {
    "id": "vo-47-109",
@@ -150,17 +184,20 @@
    "category": "Scientific Thinking",
    "mirrors": "Spring 2024 §1 Q8",
    "replaces": "vb-inf_v2_0205",
-   "stem": "Can horses tell from where a person is looking which object the person is paying attention to? A new study suggests that they can. The researcher placed three covered bowls, each containing food, in front of the horses, and on each trial looked steadily at a different bowl; the horses tended to approach the bowl the researcher was looking at. The researcher argued that the horses had this ability before the experiment began and did not acquire it during the experiment, and cited a finding from the experiment in support. Which of the following findings is most likely to be the one cited?",
+   "stem": "Researchers who study the young of a certain desert lizard offered each young lizard, in a series of trials, two beetles: one of a species that secretes a foul-tasting liquid, and an edible beetle of similar size. In most of the trials the lizards ate the edible beetle. The researchers hypothesized that the lizards could tell the two beetles apart before the experiment began, and did not learn to do so during it. Which of the following findings would support their hypothesis?",
    "options": [
-    "Young horses approached the bowl that the researcher looked at more often than old horses did",
-    "In the first trials the horses approached each of the three bowls equally often",
-    "The rate at which the horses approached the bowl that the researcher looked at was no lower in the first trials of the experiment than in its last trials",
-    "Not all of the horses that took part in the experiment approached the bowl that the researcher looked at equally often"
+    "Larger lizards ate the edible beetle more often than smaller lizards did",
+    "In the first trials the lizards ate both kinds of beetle about equally often, but a lizard that had once tasted the foul-tasting beetle did not touch it again",
+    "The lizards chose the edible beetle in their first trials no less often than in their last trials",
+    "Lizards that ate the foul-tasting beetle were not harmed"
    ],
    "answer": 3,
-   "explanation": "Learning during the experiment would show as improvement from trial to trial, so a rate that is as high at the start as at the end points to an ability the horses already had. (2) suggests the opposite, and (1) and (4) compare horses with one another rather than early trials with late ones.",
+   "explanation": "Learning during the experiment would show as improvement from the first trials to the last; no improvement points to an ability the lizards already had. (2) describes learning, (1) compares lizards with one another rather than early trials with late ones, and (4) does not bear on the hypothesis.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "חוקרים שחוקרים את צאצאיה של לטאת מדבר מסוימת הציגו בפני כל לטאה צעירה, בסדרה של ניסויים, שתי חיפושיות: חיפושית ממין המפריש נוזל בעל טעם רע, וחיפושית ראויה למאכל בגודל דומה. ברוב הניסויים אכלו הלטאות את החיפושית הראויה למאכל. החוקרים שיערו כי הלטאות ידעו להבחין בין שתי החיפושיות עוד לפני שהחל הניסוי, ולא למדו זאת במהלכו. איזה מן הממצאים הבאים יתמוך בהשערתם?\n(1) לטאות גדולות יותר אכלו את החיפושית הראויה למאכל לעתים קרובות יותר מלטאות קטנות\n(2) בניסויים הראשונים אכלו הלטאות משתי החיפושיות בתדירות דומה, אך לטאה שטעמה פעם את החיפושית המפרישה לא נגעה בה שוב\n(3) הלטאות בחרו בחיפושית הראויה למאכל בניסויים הראשונים שלהן לא פחות מאשר בניסויים האחרונים\n(4) לטאות שאכלו את החיפושית המפרישה לא נפגעו",
+   "style_donor": "Summer 2026 Second Section Q4"
   },
   {
    "id": "vo-47-110",
@@ -168,17 +205,20 @@
    "category": "Scientific Thinking",
    "mirrors": "Spring 2024 §2 Q17",
    "replaces": "vb-inf_v2_0207",
-   "stem": "A study of river valleys that had flooded found that in the first years after a flood the trees along the river grow quickly, and that their growth then slows. Dr. Amsalem argued that the cause is the layer of silt that the flood leaves on the ground. Which of the following findings does not strengthen Dr. Amsalem's claim?",
+   "stem": "Farmers in a river valley have noticed that in the two or three years after a winter in which the river overflows its banks, the fields near the river yield larger wheat crops than usual, after which the yield returns to its normal level. An agronomist attributes this to the layer of silt that the flood leaves on the fields. Which of the following does not strengthen his explanation?",
    "options": [
-    "Silt contains nitrogen compounds that the trees need for growth and that are scarce in the soil of the valleys",
-    "Silt speeds the growth of the grasses that compete with the trees for water",
-    "Researchers who planted tree seedlings in soils mixed with silt found that the fresher the silt, the faster the seedlings grew",
-    "In valleys where the silt was washed away by rain soon after the flood, no rapid growth of trees was observed"
+    "The silt left by the river contains a large amount of nitrogen, which the soil of these fields lacks and which wheat needs in order to grow well",
+    "In the years after a flood there are almost no voles, which eat young wheat plants, in the fields near the river, because many of them drowned",
+    "In a field near the river whose owner scraped away the silt immediately after the flood, the yield was no larger than usual",
+    "The nitrogen in the silt is gradually washed down into the deeper layers of the soil"
    ],
    "answer": 2,
-   "explanation": "Helping the trees' competitors would slow the trees, not speed them. (1) supplies a mechanism, (3) explains why the effect fades as the silt ages, and (4) shows that without the silt there is no effect.",
+   "explanation": "The drowned voles offer another reason for the larger crops, one that has nothing to do with the silt. (1) gives the silt a way of helping the wheat, (3) shows no effect where the silt was removed, and (4) explains why the effect of the silt fades.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "חקלאים בעמק נהר הבחינו כי בשנתיים או שלוש שלאחר חורף שבו עלה הנהר על גדותיו, השדות הסמוכים לנהר מניבים יבול חיטה גדול מן הרגיל, ואחר כך היבול חוזר לרמתו הרגילה. אגרונום מייחס זאת לשכבת הסחף שההצפה משאירה בשדות. איזה מן הבאים אינו מחזק את הסברו?\n(1) בסחף שהנהר משאיר יש כמות גדולה של חנקן, שחסר בקרקע של שדות אלה ושהחיטה זקוקה לו כדי לגדול היטב\n(2) בשנים שלאחר ההצפה כמעט אין בשדות הסמוכים לנהר נברנים, האוכלים צמחי חיטה צעירים, משום שרבים מהם טבעו\n(3) בשדה סמוך לנהר שבעליו גרף את הסחף מיד לאחר ההצפה, היבול לא היה גדול מן הרגיל\n(4) החנקן שבסחף נשטף בהדרגה אל שכבות הקרקע העמוקות",
+   "style_donor": "Summer 2025 Second Section Q7"
   },
   {
    "id": "vo-47-111",
@@ -186,17 +226,23 @@
    "category": "Scientific Thinking",
    "mirrors": "Winter 2023 §2 Q7",
    "replaces": "vb-inf_v2_0208",
-   "stem": "Root-knot nematodes are tiny worms that live inside the roots of tomato plants, where pesticides hardly reach them. Nevertheless, many growers reduce their numbers by growing marigolds in a field for a season before planting tomatoes there. Which of the following data could explain why growing marigolds is effective against root-knot nematodes?",
+   "stem": "Root-knot nematodes are tiny worms that live inside the roots of tomato plants, where many chemical pesticides do not reach them. Nevertheless, some growers reduce their numbers by growing French marigolds in a field for one season before planting tomatoes in it. Which of the following could explain why growing marigolds is effective against root-knot nematodes?",
    "options": [
-    "Marigold roots release into the soil a substance near which the worms cannot survive",
-    "Marigold roots react with pesticides in the soil and lower their concentration without reducing their effectiveness",
-    "Marigolds give off a smell that drives away the beetles that feed on root-knot nematodes",
-    "Marigold seeds cost far less than most of the pesticides on the market"
+    "The roots of the marigold release into the soil a substance that is toxic to the worms",
+    "Marigolds attract bees, which pollinate the flowers of the tomato plants",
+    "The smell of the marigolds drives away insects that feed on nematodes",
+    "Marigolds lower the concentration of pesticides in the soil, so that they do less damage to the roots of the tomato plants"
    ],
    "answer": 1,
-   "explanation": "Only (1) links the marigolds to the death of the worms. (3) would actually help the worms, and (2) and (4) concern pesticides and cost.",
+   "explanation": "Only (1) links the marigolds to the death of the worms. (3) would actually help the worms, and (2) and (4) concern pollination and pesticides.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [
+    "Root-knot nematodes (Meloidogyne) are endoparasites that live inside the roots of tomatoes and other crops.",
+    "French marigold (Tagetes patula) roots release compounds such as alpha-terthienyl that are toxic to nematodes, and marigolds are grown as a rotation or cover crop to suppress root-knot nematodes."
+   ],
+   "he_draft": "נמטודות עפצים הן תולעים זעירות החיות בתוך שורשי צמחי עגבנייה, ושם אין מגיעים אליהן חומרי הדברה רבים. אף על פי כן, יש מגדלים הממעיטים את מספרן בכך שהם מגדלים בשדה טגטס (ציפורני חתול) במשך עונה אחת לפני שהם שותלים בו עגבניות. איזה מן הבאים יכול להסביר מדוע גידול הטגטס יעיל נגד נמטודות העפצים?\n(1) שורשי הטגטס מפרישים לקרקע חומר הרעיל לתולעים\n(2) הטגטס מושך דבורים, המאביקות את פרחי העגבנייה\n(3) ריח הטגטס מרחיק חרקים הניזונים מנמטודות\n(4) הטגטס מוריד את ריכוז חומרי ההדברה בקרקע, כך שהם פוגעים פחות בשורשי העגבנייה",
+   "style_donor": "July 2014 Second Section Q9"
   },
   {
    "id": "vo-47-112",
@@ -204,17 +250,20 @@
    "category": "Scientific Thinking",
    "mirrors": "Autumn 2023 §1 Q17",
    "replaces": "vb-inf_v2_0209",
-   "stem": "A researcher asked experienced chess players to look briefly at chessboards and then set up the positions from memory. Some of the boards showed positions taken from real games, and others showed pieces placed at random. The players reproduced the positions from real games much more accurately. The researcher attributed this mainly to the players' familiarity with the kind of positions that arise in real games, but she also raised a second possibility: that the random boards held more pieces than the boards from real games, and were therefore harder to take in. She then carried out a second experiment, whose result showed that the second factor is of minor importance. Which of the following is most likely to be the result of the second experiment?",
+   "stem": "In a study of memory for songs, Hebrew speakers listened once to songs they did not know and then sang them from memory. Some of the songs were in Hebrew and some in Hungarian, a language none of the participants knew. The participants remembered the Hebrew songs much better. The researchers attributed this mainly to understanding the language, but pointed out another possibility: the Hungarian songs that had been chosen were longer than the Hebrew ones. A second experiment showed that the length of the songs is of little importance. Which of the following is most likely to be the result of the second experiment?",
    "options": [
-    "Beginners, who had played few games, reproduced random positions as accurately as positions taken from real games",
-    "Experienced players reproduced positions from games they had played themselves more accurately than positions from games played by others",
-    "Experienced players reproduced positions from real games that held many pieces more accurately than random positions that held few pieces",
-    "Players who were asked to count the pieces on a board did so faster and more accurately when the board held few pieces"
+    "Participants who do not understand Hebrew remembered Hebrew songs and Hungarian songs equally well",
+    "The participants remembered songs they had performed in the past better than songs they had only heard",
+    "The participants remembered long Hebrew songs better than short Hungarian songs",
+    "The participants learned short songs faster than long songs, whatever the language"
    ],
    "answer": 3,
-   "explanation": "Only (3) sets the two factors against each other: familiar boards that are hard to take in still beat unfamiliar boards that are easy, so the number of pieces matters less. (2) shows that familiarity has an effect but says nothing about the number of pieces, (1) concerns players with no familiarity at all, and (4) is about the number of pieces alone.",
+   "explanation": "Only (3) sets the two factors against each other: long Hebrew songs still beat short Hungarian ones, so length matters little. (4) shows that length does matter, (2) is about having performed a song, not its length, and (1) concerns people who understand neither language.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בניסוי בזיכרון מנגינות האזינו דוברי עברית פעם אחת לשירים שלא הכירו, ואחר כך שרו אותם מן הזיכרון. חלק מן השירים היו בעברית וחלקם בהונגרית, שפה שאיש מן המשתתפים לא ידע. המשתתפים זכרו את השירים בעברית טוב בהרבה. החוקרים ייחסו זאת בעיקר להבנת השפה, אך ציינו אפשרות נוספת: השירים בהונגרית שנבחרו היו ארוכים מן השירים בעברית. ניסוי נוסף הראה כי לאורך השירים חשיבות מועטה. איזו מן הבאות היא ככל הנראה תוצאת הניסוי הנוסף?\n(1) משתתפים שאינם מבינים עברית זכרו שירים בעברית ושירים בהונגרית באותה מידה\n(2) המשתתפים זכרו שירים שביצעו בעבר טוב יותר משירים ששמעו בלבד\n(3) המשתתפים זכרו שירים ארוכים בעברית טוב יותר משירים קצרים בהונגרית\n(4) המשתתפים למדו שירים קצרים מהר יותר משירים ארוכים, בכל שפה",
+   "style_donor": "February 2017 Second Section Q10"
   },
   {
    "id": "vo-47-113",
@@ -222,17 +271,20 @@
    "category": "Scientific Thinking",
    "mirrors": "Autumn 2022 §2 Q13",
    "replaces": "vb-inf_v2_0210",
-   "stem": "At a certain bank, most of the loan applications submitted by small businesses were approved, whereas only a minority of the applications submitted by large businesses were approved. An examination of each branch, however, found that in every branch the proportion of approved applications among those submitted by small businesses equaled the proportion among those submitted by large businesses. Which of the following facts could explain these data?",
+   "stem": "A study compared the success rates in the final examinations of two high schools in a certain European city. In school A, a larger proportion of the students passed the examinations than in school B. However, when the students were divided into those who had studied at the advanced level and those who had studied at the basic level, it was found that at each level the proportion of students who passed in school B was no smaller than in school A. Which of the following could explain these findings?",
    "options": [
-    "Most of the small businesses applied at branches where loans are rarely approved, and most of the large businesses at branches where loans are approved easily",
-    "Every branch received the same number of applications from small businesses as from large businesses",
-    "Most of the small businesses and most of the large businesses applied at the same branches",
-    "Most of the small businesses applied at branches where loans are approved easily, and most of the large businesses at branches where loans are rarely approved"
+    "The advanced-level examinations in school A are harder than those in school B, because in school A they include an additional part that is not required in school B",
+    "In each of the schools, the number of students at the advanced level was equal to the number at the basic level",
+    "In both schools, most of the students who passed the examinations had studied at the basic level",
+    "Most of the students in school B studied at the advanced level, at which fewer students pass the examinations, while in school A most studied at the basic level"
    ],
    "answer": 4,
-   "explanation": "Equal rates in every branch but unequal rates overall mean that the two groups applied at different kinds of branches, and the group with the higher overall rate must have gone mainly to the lenient ones. (1) has the direction reversed, and (2) and (3) would make the overall rates equal.",
+   "explanation": "If school B does no worse at either level but worse overall, most of its students must be at the level where fewer pass. (1) would lower school A's results, not raise them, (2) would make the overall rates follow the rates at each level, and (3) describes where the successful students studied in both schools alike.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "מחקר השווה את שיעור ההצלחה בבחינות הגמר בשני בתי ספר תיכוניים בעיר אירופית מסוימת. בבית ספר א עבר את הבחינות שיעור גדול יותר של תלמידים מאשר בבית ספר ב. עם זאת, כאשר חולקו התלמידים לאלה שלמדו ברמה מוגברת ולאלה שלמדו ברמה בסיסית, נמצא כי בכל אחת מן הרמות שיעור התלמידים שעברו בבית ספר ב לא היה קטן מזה שבבית ספר א. איזה מן הבאים יכול להסביר ממצאים אלה?\n(1) הבחינות ברמה המוגברת בבית ספר א קשות מאלה שבבית ספר ב, משום שבבית ספר א יש בהן חלק נוסף שאינו נדרש בבית ספר ב\n(2) בכל אחד מבתי הספר מספר התלמידים ברמה המוגברת שווה למספרם ברמה הבסיסית\n(3) בשני בתי הספר, רוב התלמידים שעברו את הבחינות למדו ברמה הבסיסית\n(4) רוב התלמידים בבית ספר ב למדו ברמה המוגברת, שבה עוברים את הבחינות פחות תלמידים, ואילו בבית ספר א למדו רובם ברמה הבסיסית",
+   "style_donor": "July 2015 Second Section Q13"
   },
   {
    "id": "vo-47-114",
@@ -240,17 +292,23 @@
    "category": "Scientific Thinking",
    "mirrors": "Winter 2022 §1 Q14",
    "replaces": "vb-inf_v2_0211",
-   "stem": "A certain kind of clay has an unusual property: left undisturbed, it is firm, but a strong shake turns it at once into a liquid. Its tiny, flat particles have edges whose electric charge is opposite to that of their faces, so each particle's edge clings to another's face, and the particles form a loose framework, like a house of cards, with water in its spaces. A strong shake breaks these contacts; the particles fall flat, slide over one another in the water, and the clay flows. When the shaking stops, they slowly cling together again and the clay becomes firm. In most other clays this does not happen. Which of the following explanations about the particles of those clays best fits the paragraph?",
+   "stem": "Honey is a supersaturated solution of sugars, mainly glucose and fructose. Glucose dissolves in water less readily than fructose, and when there is a great deal of it relative to the water, it separates from the solution as crystals. Acacia honey, in which the proportion of fructose is especially high, stays liquid for years, whereas rapeseed honey crystallizes within a few days. According to the paragraph, which of the following could explain why rapeseed honey crystallizes quickly?",
    "options": [
-    "Their edges and faces do not carry opposite electric charges",
-    "They are larger than the particles of this clay",
-    "A strong shake does not make them flow",
-    "When the shaking stops, they cling to one another again"
+    "It contains a high proportion of glucose relative to its water content",
+    "Rapeseed flowers in cold regions",
+    "The sugars in it do not stay dissolved for long",
+    "Like acacia honey, it contains both glucose and fructose, as well as a little water"
    ],
    "answer": 1,
-   "explanation": "The paragraph names the opposite charges of edges and faces as what builds the framework, so their absence explains why nothing happens. (3) restates the difference instead of explaining it, (4) is true of this clay as well, and (2) brings in a property the paragraph never links to the effect.",
+   "explanation": "According to the paragraph, crystals form when there is much glucose relative to the water, so a high proportion of glucose explains the quick crystallization. (3) restates the fact instead of explaining it, (4) is true of acacia honey as well, and (2) brings in a factor the paragraph does not mention.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [
+    "Honey is a supersaturated sugar solution, mainly glucose and fructose; glucose is less soluble and crystallizes out.",
+    "Acacia (black locust) honey is high in fructose and stays liquid for a long time; rapeseed (canola) honey is high in glucose and crystallizes within days."
+   ],
+   "he_draft": "דבש הוא תמיסה רוויה-על של סוכרים, בעיקר גלוקוז ופרוקטוז. גלוקוז מתמוסס במים פחות מפרוקטוז, וכאשר יש ממנו הרבה ביחס למים, הוא נפרד מן התמיסה בצורת גבישים. דבש שיטה, ששיעור הפרוקטוז בו גבוה במיוחד, נשאר נוזלי במשך שנים, ואילו דבש לפתית מתגבש בתוך ימים ספורים. על פי הקטע, איזה מן הבאים יכול להסביר מדוע דבש הלפתית מתגבש מהר?\n(1) יש בו שיעור גבוה של גלוקוז ביחס לכמות המים שבו\n(2) הלפתית פורחת באזורים קרים\n(3) הסוכרים שבו אינם נשארים מומסים זמן רב\n(4) כמו דבש השיטה, יש בו גם גלוקוז וגם פרוקטוז, וכן מעט מים",
+   "style_donor": "Summer 2022 First Section Q9"
   },
   {
    "id": "vo-47-115",
@@ -258,17 +316,20 @@
    "category": "Scientific Thinking",
    "mirrors": "Summer 2023 §2 Q5 (English translation)",
    "replaces": "vb-inf_v2_0213",
-   "stem": "In 2015 a certain city changed the color of the lines marking its bicycle lanes from white to bright red. The change was expected to make the roads safer for cyclists, since red lines stand out to drivers more than white ones. And indeed, in the first months after the change the number of accidents involving cyclists in the city fell sharply. But the fall did not last, and two years later the number of such accidents had returned to its former level. Which of the following best explains why the fall in the number of accidents did not last?",
+   "stem": "In several hospital wards, a large sign reminding the staff to wash their hands was hung above every sink. In the first weeks, the rate of hand washing rose considerably, but after about four months it returned to its previous level. Which of the following best explains these findings?",
    "options": [
-    "In 2015 the city began repainting its remaining white lanes red, and by 2017 no white lanes were left",
-    "In the first months after the change, drivers paid special attention to the bicycle lanes because the new markings were unfamiliar to them",
-    "Red lines are easier for drivers to notice than white lines, especially at night",
-    "In 2015 the speed limit on the city's main roads was raised by ten kilometers an hour"
+    "When the signs were hung, the wards also switched to a soap that dries the skin less",
+    "At first the staff noticed the signs because they were new, but after a while they stopped paying attention to them",
+    "Staff members who noticed the signs washed their hands more often, and every staff member passes the sinks many times a day",
+    "About a month after the signs were hung, the wards began to hold a monthly check of hand washing"
    ],
    "answer": 2,
-   "explanation": "Attention that fades as the markings become familiar explains a fall that is later reversed. (1) and (3) would predict a lasting fall, and (4) took effect just when accidents fell, so it cannot explain why they later rose.",
+   "explanation": "Signs that stop being noticed explain an effect that fades. (1) and (3) would predict a lasting rise, and (4) should have raised the rate further, not lowered it.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בכמה מחלקות בבית חולים נתלה מעל כל כיור שלט גדול המזכיר לצוות לשטוף ידיים. בשבועות הראשונים עלה שיעור שטיפת הידיים במידה ניכרת, אך כעבור כארבעה חודשים חזר לרמתו הקודמת. איזה מן הבאים מסביר בצורה הטובה ביותר ממצאים אלה?\n(1) בזמן שנתלו השלטים עברו המחלקות גם לסבון המייבש את העור פחות\n(2) בתחילה הבחין הצוות בשלטים משום שהיו חדשים, אך לאחר זמן מה חדל לשים לב אליהם\n(3) אנשי צוות שהבחינו בשלטים שטפו ידיים לעתים קרובות יותר, וכל אנשי הצוות עוברים ליד הכיורים פעמים רבות בכל יום\n(4) כחודש לאחר שנתלו השלטים החלו המחלקות לערוך בדיקה חודשית של שטיפת הידיים",
+   "style_donor": "July 2014 First Section Q10"
   },
   {
    "id": "vo-47-116",
@@ -276,17 +337,20 @@
    "category": "Scientific Thinking",
    "mirrors": "Spring 2019 §1 Q8 (English translation)",
    "replaces": "vb-inf_v2_0215",
-   "stem": "Liora claimed that she could tell exactly how many coins are in a jar just by shaking it. To prove it, she shook a jar of coins and announced that it held 214 coins. Gil did not believe her and wanted to test her claim; but counting all the coins would take a long time, so he thought of a much quicker test. Which of the following is most likely to be the test Gil thought of?",
+   "stem": "A man claims that when he walks across a field holding a forked stick, he can tell where water flows beneath the ground. A researcher wished to test his claim. Which of the following tests is the most suitable for this purpose?",
    "options": [
-    "Gil will pour the coins into two smaller jars; Liora will shake each of them and say how many coins it holds, and Gil will check whether the two numbers add up to 214",
-    "Gil's brother will also shake the jar and say how many coins he thinks it holds, and Gil will compare his number with Liora's",
-    "Liora will shake a second jar and say how many coins it holds; Gil will count the coins in that jar and compare",
-    "Gil will take a few coins out of the jar without telling Liora how many; Liora will shake the jar again and say how many coins are left, and Gil will check whether the difference equals the number he took out"
+    "The man will walk across the same field twice, a week apart, and the researcher will check whether he points to the same places both times",
+    "Another person who claims to have the same ability will walk across the field without having seen the first man do so, and the researcher will compare the places to which the two of them point",
+    "The man will walk across a field in which there is a well, and will be asked whether there is water under the well",
+    "Several pipes will be buried under a field, and each time water will flow through one of them, chosen by the researcher without the man's knowledge; the man will be asked to point to it"
    ],
    "answer": 4,
-   "explanation": "Only a real ability could follow a change whose size Gil alone knows. Anyone can make the two numbers in (1) add up to 214, (2) compares two guesses, and (3) requires the full count Gil wanted to avoid.",
+   "explanation": "Only a test in which the answer is known to the researcher and hidden from the man can show whether he really senses the water. Anyone can repeat the same answers in (1), (2) compares two claims that have not been tested, and in (3) the well gives the answer away.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "אדם טוען כי כשהוא הולך בשדה ובידיו מקל מפוצל, הוא יכול לדעת היכן זורמים מים מתחת לפני הקרקע. חוקר ביקש לבדוק את טענתו. איזו מן הבדיקות הבאות מתאימה ביותר לשם כך?\n(1) האיש יעבור באותו שדה פעמיים, בהפרש של שבוע, והחוקר יבדוק אם הצביע על אותם מקומות בשתי הפעמים\n(2) אדם אחר הטוען לאותה יכולת יעבור בשדה בלי שראה את האיש הראשון עושה זאת, והחוקר ישווה את המקומות שהשניים הצביעו עליהם\n(3) האיש יעבור בשדה שיש בו באר, וישאל אם יש מים מתחת לבאר\n(4) מתחת לשדה ייטמנו כמה צינורות, ובכל פעם יזרמו מים באחד מהם, שהחוקר יבחר בלי ידיעת האיש; האיש יתבקש להצביע על הצינור שבו זורמים המים",
+   "style_donor": "February 2016 First Section Q6"
   },
   {
    "id": "vo-47-117",
@@ -294,17 +358,20 @@
    "category": "Scientific Thinking",
    "mirrors": "Spring 2019 §2 Q6 (English translation)",
    "replaces": "vb-inf_v2_0216",
-   "stem": "A study of how lighting affects people at work yielded two findings: people who worked on a problem in a dimly lit room came up with more original solutions than people who worked on the same problem in a brightly lit room; and people who checked documents for errors in a brightly lit room found more errors than people who checked the same documents in a dimly lit room. On the basis of these findings, the researchers made a number of recommendations. Which of the following is least likely to be one of them?",
+   "stem": "A study of the work of professional tasters found that they identify sourness more accurately in the morning than in the afternoon, while they identify sweetness more accurately in the afternoon than in the morning. Following these findings, several recommendations were made to a juice factory. Which of the following recommendations is not consistent with the findings of the study?",
    "options": [
-    "Proofreaders who check texts for errors should do their work in brightly lit rooms",
-    "The lighting of a workroom should be chosen according to the kind of work that is done in it",
-    "The less original a person's thinking, the more important it is for them to work in a brightly lit room",
-    "Advertising teams that meet in order to think of new ideas for campaigns should meet in a dimly lit room"
+    "Tasters who check whether a juice is too sweet should do so in the afternoon",
+    "The hour at which juice is tasted should be determined according to what the taster is checking",
+    "Since lemon juice is mainly sour, the sweetness of new kinds of lemon juice should be checked in the morning",
+    "A juice that was found in the afternoon to be less sour than required should be tasted again in the morning before its recipe is changed"
    ],
    "answer": 3,
-   "explanation": "Dim light is what helps original thinking, yet (3) sends the person who most needs that help into bright light. (1), (2) and (4) follow directly from the findings.",
+   "explanation": "Sweetness is identified better in the afternoon, whatever the juice; the fact that lemon juice is sour does not change that. (1), (2) and (4) follow from the findings.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "מחקר על עבודתם של טועמים מקצועיים מצא כי הם מזהים חמיצות בדייקנות רבה יותר בבוקר מאשר אחר הצהריים, ואילו את המתיקות הם מזהים בדייקנות רבה יותר אחר הצהריים. בעקבות הממצאים הוגשו למפעל למיצים כמה המלצות. איזו מן ההמלצות הבאות אינה עולה בקנה אחד עם ממצאי המחקר?\n(1) טועמים הבודקים אם מיץ מתוק מדי יעשו זאת אחר הצהריים\n(2) השעה שבה טועמים מיץ צריכה להיקבע לפי מה שהטועם בודק\n(3) מאחר שמיץ לימון הוא בעיקרו חמוץ, יש לבדוק את המתיקות של סוגים חדשים של מיץ לימון בבוקר\n(4) מיץ שנמצא אחר הצהריים חמוץ פחות מן הדרוש יש לטעום שוב בבוקר לפני שמשנים את המתכון שלו",
+   "style_donor": "Summer 2026 Second Section Q14"
   },
   {
    "id": "vo-47-118",
@@ -312,17 +379,20 @@
    "category": "Scientific Thinking",
    "mirrors": "December 2016 §1 Q9",
    "replaces": "vb-inf_v2_0218",
-   "stem": "In an experiment, researchers gave each participant a notebook with a red cover. After a while, each participant was offered the chance to exchange it for a notebook with a blue cover that had been given to another participant. Most of the participants refused. The researchers hypothesized that the refusals stemmed from a preference for the color red, but a follow-up experiment showed that this hypothesis was wrong. Which of the following best describes the follow-up experiment?",
+   "stem": "At a summer camp, the children are served juice every morning in red cups and in blue cups, and each child takes one cup. The red cups are always placed on the table nearer the door. Ronit, one of the counselors, noticed that most of the children take red cups, and assumed that they prefer the color red. The camp director suspected another reason, and an experiment carried out the next day showed that Ronit's assumption was wrong. Which of the following best describes the experiment and its result?",
    "options": [
-    "Each participant received a notebook with a blue cover and was later offered an identical notebook with a red cover in exchange; most refused",
-    "Each participant received a notebook with a red cover and was later offered a thinner notebook with a blue cover in exchange; most refused",
-    "Each participant received a notebook with a green cover and was later offered a thicker notebook with a red cover in exchange; most agreed",
-    "Each participant received a notebook with a red cover and was later offered a thicker notebook with a red cover in exchange; most agreed"
+    "The blue cups were placed on the table nearer the door and the red cups on the other table, and most of the children took blue cups",
+    "The red cups were placed farther from the children than the blue cups, and most of the children still took red cups",
+    "Only blue cups were served, and almost all the children agreed to drink from them",
+    "The children were offered red cups and green cups, and most of them took red ones"
    ],
    "answer": 1,
-   "explanation": "People who refuse to give up a blue notebook for an identical red one cannot be driven by a preference for red. (2) and (3) fit a preference for red, and (4) does not test color at all.",
+   "explanation": "When the colors change places and the children follow the place, not the color, the preference for red is ruled out. (2) and (4) fit a preference for red, and (3) does not test preference at all.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "במחנה קיץ מוגש לילדים בכל בוקר מיץ בכוסות אדומות ובכוסות כחולות, וכל ילד לוקח כוס אחת. הכוסות האדומות מונחות תמיד על השולחן הקרוב לדלת. רונית, אחת המדריכות, הבחינה כי רוב הילדים לוקחים כוסות אדומות, והניחה שהם מעדיפים את הצבע האדום. מנהל המחנה חשד שיש לכך סיבה אחרת, וניסוי שנערך למחרת הראה כי ההנחה של רונית שגויה. איזה מן הבאים מתאר בצורה הטובה ביותר את הניסוי ואת תוצאתו?\n(1) הכוסות הכחולות הונחו על השולחן הקרוב לדלת והאדומות על השולחן האחר, ורוב הילדים לקחו כוסות כחולות\n(2) הכוסות האדומות הונחו רחוק יותר מן הילדים מן הכחולות, ורוב הילדים לקחו בכל זאת כוסות אדומות\n(3) הוגשו רק כוסות כחולות, וכמעט כל הילדים הסכימו לשתות מהן\n(4) הוצעו לילדים כוסות אדומות וכוסות ירוקות, ורובם לקחו אדומות",
+   "style_donor": "Summer 2022 First Section Q10"
   },
   {
    "id": "vo-47-119",
@@ -330,17 +400,20 @@
    "category": "Scientific Thinking",
    "mirrors": "April 2016 §2 Q8",
    "replaces": "vb-inf_v2_0223",
-   "stem": "In an experiment, participants were shown ten paintings and asked which one they liked best. Each participant then received false information about the choices of the others: some were told that most of the participants had chosen the same painting as they had, and others that almost no one had. Finally, the participants answered questions designed to reveal their mood. Which of the following is most likely to have been the purpose of the experiment?",
+   "stem": "In an experiment, participants were asked to choose, from twelve reproductions of paintings, the one they liked best. Some of the participants were then told, falsely, that most of the other participants had chosen the same painting, and the others were told that hardly anyone had chosen it. Finally, each participant was asked how much they would be willing to pay for a print of the painting they had chosen. Which of the following is most likely to have been the purpose of the experiment?",
    "options": [
-    "To examine how mood affects the tendency to choose paintings that others like",
-    "To examine whether, in an experiment, people try to choose paintings that others like",
-    "To examine whether people prefer to feel different from others or to feel similar to them",
-    "To examine how choosing between paintings affects mood"
+    "To examine how the price of a print affects the chance that people will choose it",
+    "To examine whether people tend to choose the paintings that others have chosen",
+    "To examine whether the value people attach to an object they chose depends on whether their choice seems unusual or common",
+    "To examine whether choosing one painting out of many increases people's willingness to buy it, even for more than it is worth"
    ],
    "answer": 3,
-   "explanation": "The only thing varied is what the participants hear about how similar their choice is to others', and the only thing measured afterward is mood. (1) reverses cause and effect, and (2) and (4) name factors the design does not isolate.",
+   "explanation": "The only thing varied is whether the choice seems common or unusual, and the only thing measured is how much the participant would pay. (1) reverses cause and effect, (2) concerns the choice, which was made before the information was given, and (4) names something that was the same for everyone.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בניסוי התבקשו משתתפים לבחור מבין שתים עשרה העתקות של ציורים את הציור שמצא חן בעיניהם יותר מכולם. לאחר מכן נאמר לחלק מן המשתתפים, שלא כדבר אמת, כי רוב המשתתפים האחרים בחרו באותו ציור, ולאחרים נאמר כי כמעט איש לא בחר בו. לבסוף נשאל כל משתתף כמה היה מוכן לשלם בעבור הדפס של הציור שבחר. איזו מן הבאות היא ככל הנראה מטרת הניסוי?\n(1) לבדוק כיצד מחירו של הדפס משפיע על הסיכוי שאנשים יבחרו בו\n(2) לבדוק אם אנשים נוטים לבחור בציורים שאחרים בחרו בהם\n(3) לבדוק אם הערך שאנשים מייחסים לחפץ שבחרו תלוי בכך שבחירתם נראית נדירה או שכיחה\n(4) לבדוק אם הבחירה בציור אחד מתוך ציורים רבים מגבירה את נכונותם של אנשים לקנות אותו, אפילו ביותר משוויו",
+   "style_donor": "Summer 2024 First Section Q7"
   },
   {
    "id": "vo-47-120",
@@ -348,17 +421,20 @@
    "category": "Scientific Thinking",
    "mirrors": "July 2016 §2 Q13",
    "replaces": "vb-inf_v2_0224",
-   "stem": "A food critic wrote: \"Something strange is happening in our city: every year more mediocre restaurants open here than ever before, yet nearly all the restaurant reviews published in the local press are favorable.\" Which of the following data could explain the situation the critic describes?",
+   "stem": "A reader wrote to the editor of a local weekly: \"Every year more amateur theater groups perform in our area, and surely not all of them are good. How is it, then, that almost every review of a play in your paper is favorable?\" Which of the following could explain the situation she describes?",
    "options": [
-    "Food critics often disagree about what makes a restaurant good",
-    "Most food critics believe that mediocre restaurants should be reviewed harshly, so as to warn diners",
-    "Food critics prefer not to write about restaurants that disappointed them",
-    "More restaurant reviews are published in the local press today than in the past"
+    "The paper's critics often disagree among themselves about which plays are good",
+    "The editor is of the opinion that bad plays should be criticized severely, so that the public will not waste money on them",
+    "The paper's critics write only about the plays they recommend to readers",
+    "The paper devotes more space to reviews of plays today than it did in the past"
    ],
    "answer": 3,
-   "explanation": "If critics write only about the restaurants they liked, the reviews will be favorable however many mediocre restaurants open. (2) predicts the opposite, and (1) and (4) do not explain why the reviews lean toward praise.",
+   "explanation": "If the critics write only about plays they liked, the reviews will be favorable however many poor plays are performed. (2) predicts the opposite, and (1) and (4) do not explain why the reviews lean toward praise.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "קוראת כתבה לעורך של שבועון מקומי: \"בכל שנה מופיעות באזורנו יותר להקות של תיאטרון חובבים, ובוודאי לא כולן טובות. כיצד זה, אם כן, שכמעט כל ביקורת על הצגה בעיתונכם היא אוהדת?\" איזה מן הבאים יכול להסביר את המצב שהיא מתארת?\n(1) המבקרים של העיתון חלוקים לעתים קרובות ביניהם בשאלה אילו הצגות טובות\n(2) העורך סבור שיש לבקר בחומרה הצגות גרועות, כדי שהציבור לא יבזבז עליהן כסף\n(3) מבקרי העיתון כותבים רק על ההצגות שהם ממליצים עליהן לקוראים\n(4) העיתון מקדיש היום יותר מקום לביקורות על הצגות מאשר בעבר",
+   "style_donor": "Summer 2020 First Section Q12"
   },
   {
    "id": "vo-47-121",
@@ -366,17 +442,20 @@
    "category": "Scientific Thinking",
    "mirrors": "December 2015 §1 Q14",
    "replaces": "vb-inf_v2_0225",
-   "stem": "In an experiment, two groups of participants read the same short story and rated it according to several literary criteria. Group A read the story in an uncomfortably cold room; group B read it in a room at a normal temperature. After giving their ratings, the members of group A were asked whether the cold had affected their judgment, and if so, how. Most of them said that the cold had affected them strongly and had led them to rate the story lower than they would have otherwise; in fact, however, the ratings given by group A were higher than those given by group B. Which of the following is most likely to have been the purpose of the experiment?",
+   "stem": "In an experiment, two groups of participants tasted the same soup and rated its saltiness. One group tasted it while loud music was playing, and the other in a quiet room. The participants in the first group were then asked whether the music had affected their rating, and most of them said that it had not affected it at all. However, the first group rated the soup as considerably less salty than the second group did. Which of the following is most likely to have been the purpose of the experiment?",
    "options": [
-    "To examine whether people consider their own judgment better than that of others",
-    "To examine whether reading in the cold leads to harsher judgment than reading at a normal temperature",
-    "To examine whether lack of concentration causes people to rate a story higher",
-    "To examine whether people judge correctly how uncomfortable conditions affect their judgment"
+    "To examine whether people consider their own sense of taste better than that of others",
+    "To examine whether loud music makes food taste less salty",
+    "To examine whether people whose attention is distracted by music or by conversation rate the food they are eating more highly",
+    "To examine whether people are aware of the way in which the noise around them affects their judgment of taste"
    ],
    "answer": 4,
-   "explanation": "The experiment sets what the participants said the cold did to their ratings against what it actually did. (2) covers only the comparison between the two groups, and (1) and (3) are not tested at all.",
+   "explanation": "The experiment sets what the participants said the music did against what it actually did. (2) covers only the comparison between the groups and ignores the question put to the first group, and (1) and (3) are not tested at all.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בניסוי טעמו שתי קבוצות משתתפים מאותו מרק ודירגו את מידת המליחות שלו. קבוצה אחת טעמה אותו בזמן שהתנגנה מוזיקה רועשת, והשנייה בחדר שקט. לאחר מכן נשאלו המשתתפים בקבוצה הראשונה אם המוזיקה השפיעה על הדירוג שלהם, ורובם אמרו שלא השפיעה כלל. אולם הקבוצה הראשונה דירגה את המרק כמלוח פחות בהרבה מן הקבוצה השנייה. איזו מן הבאות היא ככל הנראה מטרת הניסוי?\n(1) לבדוק אם אנשים מחשיבים את חוש הטעם שלהם טוב יותר מזה של אחרים\n(2) לבדוק אם מוזיקה רועשת גורמת למזון להיות פחות מלוח בטעמו\n(3) לבדוק אם אנשים שדעתם מוסחת במוזיקה או בשיחה מדרגים גבוה יותר את המזון שהם אוכלים\n(4) לבדוק אם אנשים מודעים לאופן שבו הרעש סביבם משפיע על שיפוט הטעם שלהם",
+   "style_donor": "February 2016 Second Section Q9"
   },
   {
    "id": "vo-47-122",
@@ -384,17 +463,20 @@
    "category": "Scientific Thinking",
    "mirrors": "April 2015 §1 Q8",
    "replaces": "vb-inf_v2_0227",
-   "stem": "At a telephone sales center, the team in one of the rooms has two supervisors: one supervises the morning shift and the other the evening shift. Recently the center's manager told the morning supervisor that he intends to replace her, since the team sells less during her shift than during the evening shift. The supervisor argued that the low sales are not her fault, and proposed a check to the manager. Which of the following is most likely to be the check she proposed?",
+   "stem": "A bakery has two branches, and in each of them bread is baked in two shifts, a day shift and a night shift. At one of the branches, the owner noticed that more loaves are burnt in the day shift, which Sima manages, than in the night shift, and told Sima that he intends to replace her. Sima claimed that the burnt loaves are not her fault, and asked him to look into a certain matter before he decides. Which of the following is most likely to be that matter?",
    "options": [
-    "To check whether the prices of the products the center sells have recently gone up",
-    "To check whether in the center's other rooms, too, more is sold in the evening shift than in the morning shift",
-    "To check whether the center has recently run short of products that customers often ask for",
-    "To check whether in the center's other rooms, too, there are supervisors who work only in the morning shift or only in the evening shift"
+    "Whether the ovens have recently been breaking down more often than in the past",
+    "Whether at the other branch, too, more loaves are burnt in the day shift than in the night shift",
+    "Whether the flour the bakery has been buying recently is of lower quality than before",
+    "Whether the manager of the night shift has been managing it longer than Sima has been managing the day shift, and whether he has more experience in baking"
    ],
    "answer": 2,
-   "explanation": "If every room sells more in the evening, the shift explains the gap, not the supervisor. (1) and (3) would affect both shifts alike, and (4) is about staffing, not sales.",
+   "explanation": "If the other branch also burns more loaves by day, the shift and not the manager explains the difference. The ovens (1) and the flour (3) serve both shifts alike, and (4) would point to Sima's shorter experience rather than clear her.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "למאפייה שני סניפים, ובכל אחד מהם אופים לחם בשתי משמרות, משמרת יום ומשמרת לילה. באחד הסניפים הבחין הבעלים כי במשמרת היום, שמנהלת סימה, נשרפות יותר כיכרות מאשר במשמרת הלילה, ואמר לסימה שבכוונתו להחליף אותה. סימה טענה שהכיכרות השרופות אינן באשמתה, וביקשה ממנו לבדוק עניין מסוים לפני שיחליט. איזה מן הבאים הוא ככל הנראה העניין שביקשה לבדוק?\n(1) אם התנורים מתקלקלים לאחרונה לעתים קרובות יותר מבעבר\n(2) אם גם בסניף האחר נשרפות במשמרת היום יותר כיכרות מאשר במשמרת הלילה\n(3) אם הקמח שהמאפייה קונה לאחרונה איכותו ירודה מבעבר\n(4) אם מנהל משמרת הלילה מנהל אותה זמן רב יותר משסימה מנהלת את משמרת היום, ואם יש לו ניסיון רב יותר באפייה",
+   "style_donor": "Summer 2022 Second Section Q10"
   },
   {
    "id": "vo-47-123",
@@ -402,17 +484,20 @@
    "category": "Scientific Thinking",
    "mirrors": "December 2014 §1 Q9",
    "replaces": "vb-inf_v2_0229",
-   "stem": "A study found that people who regularly do crossword puzzles have, on average, a larger vocabulary than people who rarely do them. The researchers concluded that doing crossword puzzles enlarges a person's vocabulary. Which of the following could serve as an alternative explanation of the study's findings?",
+   "stem": "A survey of beekeepers and of other residents of several farming villages found that allergy to bee stings is far less common among the beekeepers than among the other residents. The authors of the survey concluded that keeping bees reduces the risk of developing such an allergy. Which of the following could be an alternative explanation for the survey's findings?",
    "options": [
-    "People with a large vocabulary enjoy crossword puzzles more, since they manage to solve them",
-    "The ability to acquire a large vocabulary is innate, whereas a liking for crossword puzzles is not",
-    "People who solve puzzles of any kind have, on average, a larger vocabulary",
-    "Doing crossword puzzles strengthens the regions of the brain responsible for language"
+    "People who are allergic to bee stings generally avoid keeping bees",
+    "Beekeepers are stung by bees much more often than other people",
+    "Beekeepers who wear protective suits are stung less often than beekeepers who do not",
+    "Frequent stings gradually accustom the body not to react severely to the venom"
    ],
    "answer": 1,
-   "explanation": "The large vocabulary may lead to the puzzles rather than the reverse. (4) is the researchers' own explanation, and (2) and (3) do not explain the link between these puzzles and vocabulary.",
+   "explanation": "The allergy may keep people away from beekeeping rather than beekeeping preventing the allergy. (4) is a way in which the survey's own conclusion could work, and (2) and (3) do not explain why beekeepers are less often allergic.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "סקר שנערך בקרב כוורנים ובקרב תושבים אחרים של כמה כפרים חקלאיים מצא כי אלרגיה לעקיצות דבורים נפוצה בקרב הכוורנים הרבה פחות מאשר בקרב שאר התושבים. עורכי הסקר הסיקו כי גידול דבורים מפחית את הסיכון לפתח אלרגיה כזו. איזה מן הבאים יכול להיות הסבר חלופי לממצאי הסקר?\n(1) אנשים האלרגיים לעקיצות דבורים נמנעים בדרך כלל מגידול דבורים\n(2) כוורנים נעקצים הרבה יותר מאנשים אחרים\n(3) כוורנים הלובשים חליפות מגן נעקצים פחות מכוורנים שאינם לובשים אותן\n(4) עקיצות תכופות מרגילות בהדרגה את הגוף שלא להגיב בחריפות לרעל",
+   "style_donor": "Summer 2025 First Section Q8"
   },
   {
    "id": "vo-47-124",
@@ -420,17 +505,20 @@
    "category": "Scientific Thinking",
    "mirrors": "December 2014 §1 Q13",
    "replaces": "vb-inf_v2_0230",
-   "stem": "A doctor wished to examine whether the rise in the number of people who come to the emergency room with back injuries in winter is caused by shoveling snow. She gathered a sample of people who came to the emergency room with back injuries in winter and checked how many of them had shoveled snow shortly before. To make her results unambiguous, she must compare them with the result of a further check. Which of the following checks is best suited for this?",
+   "stem": "A veterinarian noticed that in the week after a holiday on which bonfires are lit, more dogs than usual are brought to his clinic with burns on their paws. He suspected that the dogs had stepped on embers left from the bonfires, and found that about seventy percent of the dogs brought to him with burns had been taken by their owners to a bonfire. The answer to which of the following questions will help him determine whether his suspicion is justified?",
    "options": [
-    "Among people who came in with back injuries in winter, what proportion shoveled snow only after coming in",
-    "Among people who had not shoveled snow at that time, what proportion came in with back injuries in winter",
-    "Among people who had shoveled snow at that time, what proportion did not come in with back injuries in winter",
-    "Among people who came in with back injuries in winter, what proportion had shoveled snow"
+    "What proportion of the burned dogs were burned at night?",
+    "What proportion of the dogs in the area that were not burned had been taken to a bonfire?",
+    "How many of the dogs that were taken to a bonfire were not burned?",
+    "What proportion of the dogs that were taken to a bonfire were puppies, whose paws are more sensitive than those of grown dogs?"
    ],
    "answer": 2,
-   "explanation": "The rate among people who did not shovel snow is the baseline that the rate among those who did must exceed. (4) repeats the doctor's own check, and (1) and (3) provide no group to compare with.",
+   "explanation": "Seventy percent means something only if it is higher than the proportion of unhurt dogs that were taken to a bonfire. (3) gives a number with nothing to compare it with, and (1) and (4) do not bear on the suspicion.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "וטרינר הבחין כי בשבוע שלאחר חג שבו מדליקים מדורות, מובאים למרפאתו יותר כלבים מן הרגיל עם כוויות בכפות הרגליים. הוא חשד כי הכלבים דרכו על גחלים שנותרו מן המדורות, ומצא כי כשבעים אחוזים מן הכלבים שהובאו אליו עם כוויות נלקחו על ידי בעליהם אל מדורה. התשובה לאיזו מן השאלות הבאות תסייע לו לקבוע אם חשדו מוצדק?\n(1) איזה שיעור מן הכלבים שנכוו נכוו בלילה?\n(2) איזה שיעור מן הכלבים באזור שלא נכוו נלקחו אל מדורה?\n(3) כמה מן הכלבים שנלקחו אל מדורה לא נכוו?\n(4) איזה שיעור מן הכלבים שנלקחו אל מדורה היו גורים, שכפות רגליהם רגישות יותר משל כלבים בוגרים?",
+   "style_donor": "Summer 2024 Second Section Q4"
   },
   {
    "id": "vo-47-125",
@@ -438,17 +526,20 @@
    "category": "Scientific Thinking",
    "mirrors": "October 2014 §1 Q14",
    "replaces": "vb-inf_v2_0231",
-   "stem": "Dana argues that teachers, sometimes without noticing, give more encouragement to pupils whose parents are university graduates, and that this is one of the reasons these pupils do better at school. Yoav, by contrast, argues that teachers merely respond to differences in the pupils' own eagerness to learn, which stem from the pupils' homes. Which of the following studies could help decide between the two claims?",
+   "stem": "At gymnastics competitions, judges give on average higher scores to gymnasts from well-known clubs. According to one explanation, the judges are influenced by the reputation of these clubs. According to another explanation, gymnasts from well-known clubs are simply better trained. Which of the following studies is most likely to determine which of the two explanations is correct?",
    "options": [
-    "Observing pupils and checking to what extent their achievements match their parents' level of education",
-    "Following the books that parents with different levels of education buy for their children",
-    "Interviewing pupils and asking them whether they feel their teachers treat them differently from their classmates",
-    "Giving teachers the same essay, telling some of them that the pupil's parents are university graduates and others that they are not, and comparing the comments the two groups write"
+    "Comparing the average scores of gymnasts from well-known clubs with those of gymnasts from small clubs",
+    "Asking the judges whether they know which club each gymnast belongs to",
+    "Checking the number of weekly training hours at well-known clubs and at small clubs, and the qualifications of the coaches at each of them",
+    "Comparing the scores of gymnasts who moved from a small club to a well-known one in competitions held shortly before the move and shortly after it"
    ],
    "answer": 4,
-   "explanation": "With the same essay in every teacher's hands, any difference in the comments comes from the label and not from the pupil's eagerness. (1), (2) and (3) cannot separate the two explanations.",
+   "explanation": "Shortly after the move, the gymnast's training has hardly changed, but the club's name has; a rise in scores would support the first explanation and no rise the second. Both explanations predict (1), (3) supports the second without ruling out the first, and (2) does not show whether knowing the club affects the scores.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "שופטים בתחרויות התעמלות נותנים בממוצע ציונים גבוהים יותר למתעמלים ממועדונים ידועים. לפי הסבר אחד, השופטים מושפעים מן המוניטין של המועדונים האלה. לפי הסבר אחר, מתעמלים ממועדונים ידועים פשוט מאומנים טוב יותר. איזה מן המחקרים הבאים עשוי ביותר לקבוע איזה משני ההסברים נכון?\n(1) השוואת הציונים הממוצעים של מתעמלים ממועדונים ידועים לציונים של מתעמלים ממועדונים קטנים\n(2) שאלת השופטים אם הם יודעים לאיזה מועדון שייך כל מתעמל\n(3) בדיקת מספר שעות האימון בשבוע במועדונים ידועים ובמועדונים קטנים, ובדיקת הכשרתם של המאמנים בכל אחד מהם\n(4) השוואת הציונים של מתעמלים שעברו ממועדון קטן למועדון ידוע בתחרויות שנערכו זמן קצר לפני המעבר וזמן קצר אחריו",
+   "style_donor": "July 2015 Second Section Q12"
   },
   {
    "id": "vo-47-126",
@@ -456,17 +547,20 @@
    "category": "Scientific Thinking",
    "mirrors": "October 2014 §2 Q12",
    "replaces": "vb-inf_v2_0232",
-   "stem": "Researchers presented two groups of participants with a story about a driver who backed into a parked car, causing damage of 4,000 shekels, and drove away without leaving a note. Group A was told that the driver had not noticed hitting the car; group B was told that the driver had noticed and decided to leave. The researchers hypothesized that the guiltier a person is thought to be, the more people tend to remember the details of the case in a way that makes the act more serious. Which of the following findings supports the researchers' hypothesis?",
+   "stem": "Researchers gave two groups of participants a story about a grocer who sold cheese that had gone bad, after which seven of his customers fell ill. Group A was told that the grocer had not known that the cheese had gone bad, and group B was told that he had known and sold it anyway. The researchers hypothesized that when a person is regarded as more to blame for an act, people tend to remember the act as more serious than it really was. Which of the following findings supports the researchers' hypothesis?",
    "options": [
-    "Asked to state the cost of the damage, group A gave on average a sum of about 4,000 shekels, and group B a sum well above 4,000 shekels",
-    "Asked the name of the street where the accident took place, more members of group A than of group B remembered it",
-    "Asked their opinion of the cost of the damage, most of group A thought 4,000 shekels an exaggerated sum, and most of group B thought it a fair one",
-    "Asked whether the story mentioned that the driver was rushing to a hospital, more members of group B than of group A answered yes"
+    "When asked how many customers had fallen ill, the members of group A gave, on average, about the number in the story, and the members of group B a much larger number",
+    "More members of group A than of group B remembered what kind of cheese had been sold",
+    "Most of the members of group B, but only a few of the members of group A, thought that the grocer should be fined",
+    "More members of group B than of group A remembered, mistakenly, that the story said the grocer had apologized to his customers and compensated them for the damage"
    ],
    "answer": 1,
-   "explanation": "The driver seen as guiltier is remembered as having caused more damage. (4) would make the act less serious, and (2) and (3) do not show memory that adds to the severity of the act.",
+   "explanation": "The grocer seen as more to blame is remembered as having made more people ill. (4) is a memory error that makes the act less serious, (3) is a judgment, not a memory, and (2) does not concern the seriousness of the act.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "חוקרים נתנו לשתי קבוצות משתתפים סיפור על בעל מכולת שמכר גבינה מקולקלת, ובעקבות זאת חלו שבעה מלקוחותיו. לקבוצה א נאמר שבעל המכולת לא ידע שהגבינה התקלקלה, ולקבוצה ב נאמר שידע ומכר אותה בכל זאת. החוקרים שיערו כי כאשר אדם נחשב אשם יותר במעשה, אנשים נוטים לזכור את המעשה כחמור משהיה באמת. איזה מן הממצאים הבאים תומך בהשערת החוקרים?\n(1) כשנשאלו כמה לקוחות חלו, ציינו חברי קבוצה א בממוצע בערך את המספר שבסיפור, וחברי קבוצה ב מספר גדול ממנו בהרבה\n(2) יותר חברים בקבוצה א מאשר בקבוצה ב זכרו איזו גבינה נמכרה\n(3) רוב חברי קבוצה ב, אך רק מעטים מחברי קבוצה א, סברו שיש להטיל קנס על בעל המכולת\n(4) יותר חברים בקבוצה ב מאשר בקבוצה א זכרו, בטעות, שבסיפור נאמר כי בעל המכולת התנצל בפני לקוחותיו ופיצה אותם על הנזק",
+   "style_donor": "Spring 2019 First Section Q13"
   },
   {
    "id": "vo-47-127",
@@ -474,17 +568,20 @@
    "category": "Scientific Thinking",
    "mirrors": "September 2013 §1 Q16",
    "replaces": "vb-inf_v2_0234",
-   "stem": "The human-resources manager of a large company found that employees who took the company's optional workshop on time management were promoted, on average, sooner than employees who did not take it, and she concluded that the workshop helped the employees who took it. Her colleague Amos holds that there is another explanation: the more ambitious employees are the ones who chose to take the workshop, and since they are ambitious they were promoted sooner. Which of the following conclusions could be undermined by an alternative explanation of the kind Amos proposed?",
+   "stem": "A school principal found that students who chose to join the school's chess club received, on average, higher grades in mathematics than the other students, and concluded that playing chess improves students' ability in mathematics. The mathematics coordinator argued that her conclusion is not justified, since students who are good at mathematics are more likely than others to choose to join a chess club. In which of the following cases can the conclusion be criticized in the same way?",
    "options": [
-    "Datum: patients who received a new ointment, given by lottery to half the patients at a clinic, recovered faster, on average, than patients who did not. Conclusion: the ointment is effective",
-    "Datum: children who take part in an optional after-school chess club get higher marks in mathematics, on average, than children who do not. Conclusion: playing chess improves mathematical ability",
-    "Datum: people who sleep more are, on average, less irritable than people who sleep less. Conclusion: a person who sleeps more than another person is probably also less irritable",
-    "Datum: a survey among the passengers of the \"Nof\" bus company found that it is the most punctual company in the country. Conclusion: no bus company is more punctual than \"Nof\""
+    "A dairy farmer gave a new feed to the cows in one of his two cowsheds, which are identical, and these cows gave more milk than the others; he concluded that the new feed increases milk production",
+    "Residents of a certain town who chose to join a morning walking group run by the local council have, on average, lower blood pressure than the other residents; the council concluded that walking lowers blood pressure",
+    "People who sleep more are, on average, less irritable than people who sleep less; a psychologist concluded that Yigal, who sleeps more than his brother, is probably less irritable than he is",
+    "Most of the passengers of a certain bus company said in a survey that it is the most punctual company in the country, and the company concluded from this that no other bus company in the country is more punctual than it is"
    ],
    "answer": 2,
-   "explanation": "Children who choose a chess club may be the ones who are strong in mathematics to begin with, the same self-selection Amos points to. In (1) the ointment was given by lottery, (3) draws no causal conclusion, and (4) has a different flaw.",
+   "explanation": "People who choose to walk every morning may be the ones who take care of their health anyway, just as good students choose the chess club. In (1) the cows did not choose the feed, (3) draws no conclusion about a cause, and (4) has a different flaw.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "מנהלת בית ספר תיכון מצאה כי תלמידים שבחרו להצטרף לחוג השחמט של בית הספר קיבלו בממוצע ציונים גבוהים יותר במתמטיקה משאר התלמידים, והסיקה כי משחק השחמט משפר את יכולתם של התלמידים במתמטיקה. רכז המתמטיקה טען כי המסקנה שלה אינה מוצדקת, שכן תלמידים הטובים במתמטיקה נוטים יותר מאחרים לבחור להצטרף לחוג שחמט. באיזה מן המקרים הבאים אפשר לבקר את המסקנה באותו אופן?\n(1) רפתן נתן מזון חדש לפרות באחת משתי הרפתות שלו, הזהות זו לזו, והפרות האלה נתנו יותר חלב מן האחרות; הוא הסיק כי המזון החדש מגדיל את תנובת החלב\n(2) תושבים של עיירה מסוימת שבחרו להצטרף לקבוצת הליכה של בוקר מטעם המועצה המקומית לחץ הדם שלהם נמוך בממוצע משל שאר התושבים; המועצה הסיקה כי הליכה מורידה את לחץ הדם\n(3) אנשים שישנים יותר עצבניים בממוצע פחות מאנשים שישנים פחות; פסיכולוג הסיק כי יגאל, שישן יותר מאחיו, ככל הנראה עצבני פחות ממנו\n(4) רוב נוסעי חברת אוטובוסים מסוימת אמרו בסקר שהיא החברה הדייקנית ביותר בארץ, והחברה הסיקה מכך שאין בארץ חברת אוטובוסים דייקנית ממנה",
+   "style_donor": "February 2016 First Section Q8"
   },
   {
    "id": "vo-48-101",
@@ -492,17 +589,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "Spring 2026 §1 Q17",
    "replaces": "vb-inf_v2_0237",
-   "stem": "Under the rules of a certain housing cooperative, the board meets once a week, on Tuesday, and any member may ask the board to discuss a particular matter. Such requests must reach the chairperson of the board through the secretary, who is required to pass each request on to the chairperson on the day it is submitted. A matter whose request has reached the chairperson by 5 p.m. on Friday will be placed on the agenda of the following Tuesday; however, if the chairperson determines that the matter needs more preparation than that allows - and only in such a case - she may postpone the discussion to the Tuesday after that, but no later. Four cases of requests to discuss a matter are described below. In which of them were the rules certainly broken?",
+   "stem": "The house committee of an apartment building meets on the first Sunday of each month. A tenant who wants the committee to discuss a matter hands a note to the committee's secretary. If the note is handed in by the 20th of the month, the matter is discussed at the next meeting; if it is handed in later, the matter is discussed at the meeting after that. The chairman may postpone a discussion by one meeting, but no more. In which of the following cases was the procedure definitely not followed?",
    "options": [
-    "A member submitted a request to the secretary on a Saturday, and the matter was not discussed on the following Tuesday or on the Tuesday after that, although the secretary passed the request on to the chairperson on the same day",
-    "The matter was not discussed on the Tuesday following the request, although the chairperson determined that it needed no extra preparation and although the request was submitted to the secretary on a Friday",
-    "The matter was discussed nine days after the request reached the chairperson, although she had not determined that it needed more preparation",
-    "A member submitted a request to the secretary on a Wednesday, and the matter was discussed only on the third Tuesday after that, the chairperson having determined that it needed more preparation"
+    "Ronen handed in a note on March 25th, and his matter was not discussed until the May meeting",
+    "Sigal handed in a note in March, and her matter was not discussed until the June meeting, after the chairman had postponed it",
+    "The chairman postponed Doron's matter, and it was discussed at the May meeting",
+    "Orna handed in a note on March 10th, and her matter was discussed at the June meeting, after the chairman had postponed it"
    ],
    "answer": 4,
-   "explanation": "A Wednesday request reaches the chairperson that day, before the Friday deadline, so it must be discussed on the following Tuesday or, if she so determines, on the Tuesday after - never on the third. In (1) the request missed that week's deadline and may have been postponed, in (2) a Friday request may have arrived after 5 p.m., and in (3) a request that reached her on a Sunday is due only nine days later.",
+   "explanation": "A note handed in on March 10th is due at the April meeting, and one postponement brings it to May at the latest, never June. In (1) a note handed in after the 20th is due in May, in (2) a note handed in after the 20th and postponed once is discussed in June, and in (3) nothing is known that rules out May.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "ועד הבית של בניין דירות מתכנס ביום ראשון הראשון של כל חודש. דייר שרוצה שהוועד ידון בעניין מסוים מוסר פתק למזכירת הוועד. אם הפתק נמסר עד ה-20 בחודש, העניין נדון בישיבה הקרובה; אם נמסר מאוחר יותר, העניין נדון בישיבה שאחריה. יושב הראש רשאי לדחות דיון בישיבה אחת, אך לא יותר. באיזה מן המקרים הבאים ודאי לא נהגו לפי הנוהל?\n(1) רונן מסר פתק ב-25 במרץ, ועניינו נדון רק בישיבה של מאי\n(2) סיגל מסרה פתק במרץ, ועניינה נדון רק בישיבה של יוני, לאחר שיושב הראש דחה אותו\n(3) יושב הראש דחה את העניין של דורון, והוא נדון בישיבה של מאי\n(4) אורנה מסרה פתק ב-10 במרץ, ועניינה נדון בישיבה של יוני, לאחר שיושב הראש דחה אותו",
+   "style_donor": "Summer 2025 First Section Q9"
   },
   {
    "id": "vo-48-102",
@@ -510,7 +610,7 @@
    "category": "Rules and Arrangements",
    "mirrors": "Autumn 2025 §1 Q13",
    "replaces": "vb-inf_v2_0240",
-   "stem": "Avner, Eitan, Rivka and Tamar are sitting at a square table, one on each side, so that each of them sits opposite one of the others. Given: A. Tamar sits opposite the only man with glasses. B. Avner sits opposite the only woman with a hat. Therefore, it is not possible that -",
+   "stem": "Avner, Eitan, Rivka and Tamar are sitting at a square table, one on each side, so that each of them sits opposite one of the others.\nGiven:\nA. Tamar sits opposite the only man with glasses.\nB. Avner sits opposite the only woman with a hat.\nTherefore, it is not possible that -",
    "options": [
     "Tamar does not wear a hat, and Rivka sits beside Eitan",
     "Eitan does not wear glasses, and Avner sits beside Rivka",
@@ -520,7 +620,10 @@
    "answer": 3,
    "explanation": "If Avner is the man with glasses, Tamar sits opposite him; but the person opposite Avner is the woman with the hat, so Tamar must wear the hat. Each of the other combinations fits some seating.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "אבנר, איתן, רבקה ותמר יושבים סביב שולחן מרובע, אחד בכל צלע, כך שכל אחד מהם יושב מול אחד האחרים.\nנתון:\nא. תמר יושבת מול הגבר היחיד המרכיב משקפיים.\nב. אבנר יושב מול האישה היחידה החובשת כובע.\nלפיכך, לא ייתכן ש-\n(1) תמר אינה חובשת כובע, ורבקה יושבת ליד איתן\n(2) איתן אינו מרכיב משקפיים, ואבנר יושב ליד רבקה\n(3) אבנר מרכיב משקפיים, ותמר אינה חובשת כובע\n(4) איתן מרכיב משקפיים, ואבנר יושב ליד תמר",
+   "style_donor": "Spring 2019 Second Section Q9"
   },
   {
    "id": "vo-48-103",
@@ -528,17 +631,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "Spring 2025 §1 Q9",
    "replaces": "vb-inf_v2_0241",
-   "stem": "Lea, Moti, Nili, Oded and Ruth are sitting around a round table (not necessarily in this order). It is known that Nili sits immediately to the left of Oded. Which of the following data would make it possible to determine with certainty how all five are seated?",
+   "stem": "Five families live in five adjacent houses, numbered 1 to 5, on one side of a street: the Peretz, Sasson, Hadad, Ben-Ami and Gabai families. The Peretz family lives in house 1 and the Sasson family in house 2. Which of the following pieces of information, if added, would make it possible to determine with certainty where each family lives?",
    "options": [
-    "Lea sits between Oded and Moti, next to both of them",
-    "Lea sits between Moti and Ruth, next to both of them",
-    "Lea sits next to Nili, and Moti sits next to Ruth",
-    "Lea sits next to Ruth, and Moti sits next to Oded"
+    "The Hadad family lives next door to the Sasson family, and the Gabai family lives at the end of the street",
+    "The Ben-Ami family lives between the Hadad family and the Gabai family",
+    "The Gabai family does not live at the end of the street, and the Hadad family does not live next door to the Sasson family",
+    "The Hadad family and the Ben-Ami family live next door to each other"
    ],
    "answer": 1,
-   "explanation": "With Nili and Oded fixed, three seats in a row remain, beginning beside Oded; (1) fills them in the order Lea, Moti, Ruth. Each of the other data leaves two possible seatings.",
+   "explanation": "With houses 1 and 2 taken, (1) puts the Hadads in house 3 and the Gabais in house 5, which leaves house 4 for the Ben-Amis. Each of the other pieces of information leaves more than one possibility.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "חמש משפחות גרות בחמישה בתים סמוכים בצד אחד של רחוב, הממוספרים 1 עד 5: משפחות פרץ, ששון, חדד, בן-עמי וגבאי. משפחת פרץ גרה בבית 1 ומשפחת ששון בבית 2. איזה מן הפרטים הבאים, אם יתווסף, יאפשר לקבוע בוודאות היכן גרה כל משפחה?\n(1) משפחת חדד גרה ליד משפחת ששון, ומשפחת גבאי גרה בקצה הרחוב\n(2) משפחת בן-עמי גרה בין משפחת חדד למשפחת גבאי\n(3) משפחת גבאי אינה גרה בקצה הרחוב, ומשפחת חדד אינה גרה ליד משפחת ששון\n(4) משפחת חדד ומשפחת בן-עמי גרות זו ליד זו",
+   "style_donor": "February 2017 First Section Q8"
   },
   {
    "id": "vo-48-104",
@@ -546,17 +652,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "Winter 2024 §1 Q17",
    "replaces": "vb-inf_v2_0243",
-   "stem": "From the regulations of a certain city: \"Every resident of the city must pay an annual waste-removal fee. Notwithstanding the above, a resident is exempt from the fee for 2023 if in that year they were a student - a full-time student under the age of 30 or a part-time student under the age of 25 - and their water consumption that year was below 60 cubic meters. The exemption does not apply, however, if in 2023 the resident ran from their apartment a business that received customers there.\" For which of the following residents is there not enough information to determine whether they must pay the fee for 2023?",
+   "stem": "A community center charges 80 shekels a month for its pottery class; soldiers and pensioners pay half. For which of the following participants is there not enough information to determine how much they must pay this month?",
    "options": [
-    "Lior, a full-time student aged 28 in 2023, who ran a hair salon for customers in his apartment and used 45 cubic meters of water",
-    "Adi, a full-time student aged 27 in 2023, who ran a design business from her apartment and used 50 cubic meters of water",
-    "Guy, a part-time student aged 27 in 2023, who worked as a waiter and used 30 cubic meters of water",
-    "Rina, a full-time student aged 22 in 2023, who worked in a bookshop and used 40 cubic meters of water"
+    "Tzipi, a pensioner who has attended the class for many years",
+    "Amnon, who is not a soldier",
+    "Pnina, who is neither a soldier nor a pensioner",
+    "Itzik, a nineteen-year-old soldier"
    ],
    "answer": 2,
-   "explanation": "Adi meets every condition of the exemption, which is cancelled only if her business received customers at the apartment, and that is not stated. Lior's salon cancels his exemption, Guy is a part-time student over 25 and must pay, and Rina is exempt.",
+   "explanation": "Amnon is not a soldier, but it is not stated whether he is a pensioner, so he may pay either amount. Tzipi and Itzik pay half, and Pnina pays the full amount.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "מתנ\"ס גובה 80 שקלים לחודש בעבור חוג הקרמיקה שלו; חיילים וגמלאים משלמים מחצית. לגבי איזה מן המשתתפים הבאים אין די מידע כדי לקבוע כמה עליו לשלם החודש?\n(1) ציפי, גמלאית המשתתפת בחוג שנים רבות\n(2) אמנון, שאינו חייל\n(3) פנינה, שאינה חיילת ואינה גמלאית\n(4) איציק, חייל בן תשע עשרה",
+   "style_donor": "Spring 2019 First Section Q14"
   },
   {
    "id": "vo-48-105",
@@ -574,7 +683,10 @@
    "answer": 3,
    "explanation": "The white cars can stand only in places 1 and 3, 1 and 4, or 2 and 4, and in each case one of them is at an end. (1) and (4) fail when the white cars are in places 1 and 4, and (2) fails in the other two cases.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "ארבע מכוניות חונות בשורה: שתי מכוניות אדומות ושתי מכוניות לבנות. שתי המכוניות הלבנות אינן חונות זו ליד זו. איזה מן הבאים נכון בהכרח?\n(1) בכל אחד מקצות השורה יש מכונית אדומה\n(2) שתי המכוניות האדומות חונות זו ליד זו\n(3) לפחות אחת משתי המכוניות שבקצות השורה לבנה\n(4) לפחות מכונית לבנה אחת חונה בין שתי המכוניות האדומות",
+   "style_donor": "February 2017 First Section Q9"
   },
   {
    "id": "vo-48-106",
@@ -582,17 +694,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "Spring 2024 §1 Q14",
    "replaces": "vb-inf_v2_0245",
-   "stem": "Maya said to Yonatan: \"I scored higher than you on the test, but Dror scored higher than I did.\" Yonatan said to Maya: \"Dror scored lower than you, and lower than me too.\" No two of the three got the same score, and exactly one of the two speakers is lying - that is, stating the opposite of the truth. Which of the following is necessarily true, whether it is Maya or Yonatan who is lying?",
+   "stem": "Ofra, Hanan and Varda are three siblings, no two of whom are the same age. Their mother mentioned that Ofra is older than Hanan, and their father added that Varda is not the youngest of them. Based on what the parents said, which of the following is necessarily true?",
    "options": [
-    "The highest score of the three was not Yonatan's",
-    "Dror got the highest score of the three",
-    "Yonatan's score was lower than Maya's",
-    "The lowest score of the three was not Maya's"
+    "Varda is the oldest of the three",
+    "Ofra is the oldest of the three",
+    "Varda is older than Ofra",
+    "Hanan is the youngest of the three"
    ],
    "answer": 4,
-   "explanation": "If Maya is lying, the truth is Dror below Maya below Yonatan; if Yonatan is lying, it is Yonatan below Maya below Dror. Either way Maya is in the middle. (1), (2) and (3) each hold in only one of the two cases.",
+   "explanation": "Ofra is older than Hanan, so she is not the youngest, and neither is Varda; the youngest must be Hanan. Who is the oldest is not determined, so (1), (2) and (3) are possible but not necessary.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "עפרה, חנן וורדה הם שלושה אחים, שאין שניים מהם בני אותו גיל. אמם ציינה כי עפרה מבוגרת מחנן, ואביהם הוסיף כי ורדה אינה הצעירה שבהם. על פי דברי ההורים, איזה מן הבאים נכון בהכרח?\n(1) ורדה היא המבוגרת מבין השלושה\n(2) עפרה היא המבוגרת מבין השלושה\n(3) ורדה מבוגרת מעפרה\n(4) חנן הוא הצעיר מבין השלושה",
+   "style_donor": "July 2014 First Section Q9"
   },
   {
    "id": "vo-48-107",
@@ -600,17 +715,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "Spring 2024 §2 Q8",
    "replaces": "vb-inf_v2_0246",
-   "stem": "Pitzi, Mocha and Lulu are three kittens of different weights. Given: Pitzi is not the heaviest of the three; Lulu is not the lightest. Which of the following statements is necessarily true?",
+   "stem": "Three suitcases - a red one, a black one and a brown one - have different weights.\nGiven:\n- The red suitcase is not the heaviest of the three.\n- The brown suitcase is not the lightest of the three.\nWhich of the following statements is necessarily true?",
    "options": [
-    "If Mocha is the lightest, then Lulu is the heaviest",
-    "If Pitzi is the lightest, then Lulu is the heaviest",
-    "Mocha is the heaviest",
-    "Pitzi is the lightest"
+    "If the black suitcase is the lightest, then the brown suitcase is the heaviest",
+    "If the red suitcase is the lightest, then the brown suitcase is the heaviest",
+    "The black suitcase is the heaviest",
+    "The red suitcase is the lightest"
    ],
    "answer": 1,
-   "explanation": "If Mocha is the lightest, Pitzi and Lulu remain for the top, and Pitzi cannot be the heaviest. (2) fails when Mocha is the heaviest, and (3) and (4) each fail in some order.",
+   "explanation": "If the black suitcase is the lightest, the red and brown ones remain for the top, and the red one cannot be the heaviest. (2) fails when the black suitcase is the heaviest, and (3) and (4) each fail in some order.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "שלוש מזוודות - אדומה, שחורה וחומה - שונות זו מזו במשקלן.\nנתון:\n- המזוודה האדומה אינה הכבדה מבין השלוש.\n- המזוודה החומה אינה הקלה מבין השלוש.\nאיזה מן המשפטים הבאים נכון בהכרח?\n(1) אם המזוודה השחורה היא הקלה, אז המזוודה החומה היא הכבדה\n(2) אם המזוודה האדומה היא הקלה, אז המזוודה החומה היא הכבדה\n(3) המזוודה השחורה היא הכבדה\n(4) המזוודה האדומה היא הקלה",
+   "style_donor": "Summer 2024 First Section Q11"
   },
   {
    "id": "vo-48-108",
@@ -618,7 +736,7 @@
    "category": "Rules and Arrangements",
    "mirrors": "Autumn 2023 §1 Q9",
    "replaces": "vb-inf_v2_0248",
-   "stem": "Given: A. Gali's salary is not higher than Ofer's salary. B. Gali's salary is not lower than Nurit's salary. Which of the following is not possible?",
+   "stem": "Given:\nA. Gali's salary is not higher than Ofer's salary.\nB. Gali's salary is not lower than Nurit's salary.\nWhich of the following is not possible?",
    "options": [
     "Gali, Ofer and Nurit all earn the same salary",
     "Ofer's salary is lower than Nurit's salary",
@@ -628,7 +746,10 @@
    "answer": 2,
    "explanation": "Nurit earns no more than Gali, and Gali no more than Ofer, so Ofer can never earn less than Nurit. Equal salaries all round and three different salaries are both allowed.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "נתון:\nא. משכורתה של גלי אינה גבוהה ממשכורתו של עופר.\nב. משכורתה של גלי אינה נמוכה ממשכורתה של נורית.\nאיזה מן הבאים אינו אפשרי?\n(1) גלי, עופר ונורית משתכרים כולם אותה משכורת\n(2) משכורתו של עופר נמוכה ממשכורתה של נורית\n(3) משכורתו של עופר גבוהה ממשכורתה של נורית\n(4) שלוש המשכורות שונות זו מזו",
+   "style_donor": "Summer 2022 Second Section Q9"
   },
   {
    "id": "vo-48-109",
@@ -636,17 +757,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "Autumn 2022 §2 Q11 [English analogue: the source sorts by Hebrew letters",
    "replaces": "vb-inf_v2_0253",
-   "stem": "In a certain law office, the files of clients are kept in a single long drawer and arranged from front to back according to three criteria: first by the name of the client's city, then by the client's surname, and then by the year in which the file was opened, as follows. Files of cities whose names begin with A stand in front of files of cities whose names begin with B, and so on; where the first letters are the same, the second letters decide. Within one city, the files are arranged by the client's surname in alphabetical order, and the files of one client by year, the earlier in front. Four files are in the drawer: Mizrahi of Acre, 2016; Barak of Eilat, 2019; Sasson of Eilat, 2012; Barak of Elad, 2014. Which of the four files is at the back of the drawer?",
+   "stem": "The membership cards of a chess club are kept in a box, arranged from front to back by the month in which each member joined the club, from January to December. Cards of members who joined in the same month are arranged by the age at which they joined, with the card of the member who joined younger in front. There are four cards in the box: Zalman's, who joined in March at the age of 70; Ofir's, who joined in November at the age of 12; Tamir's, who joined in March at the age of 81; and Chen's, who joined in November at the age of 15. Which card is at the back of the box?",
    "options": [
-    "Mizrahi of Acre, 2016",
-    "Barak of Eilat, 2019",
-    "Sasson of Eilat, 2012",
-    "Barak of Elad, 2014"
+    "Zalman's card",
+    "Ofir's card",
+    "Tamir's card",
+    "Chen's card"
    ],
    "answer": 4,
-   "explanation": "The city decides first: Acre, then Eilat (E-i), then Elad (E-l). Elad is the last city, and it has only one file. The surname Sasson and the year 2019 matter only within a city.",
+   "explanation": "The month decides first, so the two November cards are behind the two March cards; of these, Chen joined at an older age than Ofir, so his card is behind Ofir's. Tamir was the oldest when he joined, but age matters only within the same month.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "כרטיסי החברים של מועדון שחמט שמורים בקופסה, מסודרים מקדימה לאחור לפי החודש שבו הצטרף כל חבר למועדון, מינואר עד דצמבר. כרטיסים של חברים שהצטרפו באותו חודש מסודרים לפי הגיל שבו הצטרפו, כשהכרטיס של מי שהצטרף בגיל צעיר יותר מלפנים. בקופסה ארבעה כרטיסים: של זלמן, שהצטרף במרץ בגיל 70; של אופיר, שהצטרף בנובמבר בגיל 12; של תמיר, שהצטרף במרץ בגיל 81; ושל חן, שהצטרף בנובמבר בגיל 15. איזה כרטיס נמצא בסוף הקופסה?",
+   "style_donor": "Summer 2020 Second Section Q11"
   },
   {
    "id": "vo-48-110",
@@ -654,17 +778,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "Winter 2022 §2 Q10",
    "replaces": "vb-inf_v2_0254",
-   "stem": "Noga writes secret messages according to these rules: (a) each word is written backwards; (b) in the result, every A is replaced by I and every I by A; (c) if the original word ended with a vowel, the letter K is added at the beginning of its coded form. Noga wants to send the message NINA LIKES TAPAS. How will she write it?",
+   "stem": "Every month Eli changes the code of his storeroom lock according to these rules: first he reverses the order of the digits of the old code; then he replaces every 1 with a 7 and every 7 with a 1; finally, if the old code ended in an even digit, he adds a 9 at the beginning of the new code. This month's code is 1784. What will next month's code be?",
    "options": [
-    "ANIN SEKIL SAPAT",
-    "INAN SEKAL SIPIT",
-    "KINAN SEKAL SIPIT",
-    "INANK SEKALK SIPITK"
+    "4871",
+    "4817",
+    "94817",
+    "48179"
    ],
    "answer": 3,
-   "explanation": "NINA becomes ANIN, then INAN, and since NINA ends with a vowel, KINAN; LIKES becomes SEKIL, then SEKAL; TAPAS becomes SAPAT, then SIPIT. (1) applies only rule (a), (2) forgets rule (c), and (4) puts the K at the end and adds it to every word.",
+   "explanation": "Reversing 1784 gives 4871, exchanging 1 and 7 gives 4817, and since 1784 ends in an even digit, a 9 is added at the beginning: 94817. (1) applies only the first rule, (2) forgets the last rule, and (4) adds the 9 at the end.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בכל חודש משנה אלי את הקוד של מנעול המחסן שלו לפי הכללים האלה: תחילה הוא הופך את סדר הספרות של הקוד הישן; אחר כך הוא מחליף כל 1 ב-7 וכל 7 ב-1; ולבסוף, אם הקוד הישן הסתיים בספרה זוגית, הוא מוסיף 9 בתחילת הקוד החדש. הקוד של החודש הזה הוא 1784. מה יהיה הקוד בחודש הבא?",
+   "style_donor": "Summer 2025 Second Section Q12"
   },
   {
    "id": "vo-48-111",
@@ -672,17 +799,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "December 2016 §1 Q7",
    "replaces": "vb-inf_v2_0256",
-   "stem": "Three friends stand in a row: Yoav at the left end, Keren in the middle and Dvir at the right end. Exactly two of them play the guitar, exactly two play the piano and exactly two play the violin. It is known that: - Yoav plays the violin; - the two guitar players stand next to each other; - the two piano players stand on either side of one of the violin players. Therefore, of the three instruments, Keren plays -",
+   "stem": "Adva, Benny and Gilit work in the same office. Two of them speak French, and two of them speak Russian. Adva does not speak French, and Benny speaks only one of the two languages. Therefore, Gilit speaks -",
    "options": [
-    "guitar and violin",
-    "violin only",
-    "guitar only",
-    "piano and guitar"
+    "both French and Russian",
+    "French only",
+    "Russian only",
+    "neither French nor Russian"
    ],
    "answer": 1,
-   "explanation": "Players on either side of someone can only be the two ends, so Yoav and Dvir play the piano and Keren, in the middle, plays the violin. Two neighbors must include the middle, so Keren also plays the guitar, and she does not play the piano.",
+   "explanation": "Adva does not speak French, so the two French speakers are Benny and Gilit. Benny speaks only one language, so he does not speak Russian, and the two Russian speakers are Adva and Gilit.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "אדוה, בני וגילית עובדים באותו משרד. שניים מהם דוברים צרפתית, ושניים מהם דוברים רוסית. אדוה אינה דוברת צרפתית, ובני דובר רק אחת משתי השפות. לפיכך, גילית דוברת -\n(1) גם צרפתית וגם רוסית (2) צרפתית בלבד (3) רוסית בלבד (4) לא צרפתית ולא רוסית",
+   "style_donor": "Summer 2022 First Section Q8"
   },
   {
    "id": "vo-48-112",
@@ -690,7 +820,7 @@
    "category": "Rules and Arrangements",
    "mirrors": "December 2016 §2 Q17",
    "replaces": "vb-inf_v2_0257",
-   "stem": "A catering company follows these rules when planning a menu: - if a menu includes soup, it must also include bread, and it may not include salad; - if a menu includes fish, it must also include rice, and it may not include soup; - if a menu includes cake, it must also include salad, and it may not include fish. Which of the following menus does not follow the rules?",
+   "stem": "A catering company follows these rules when planning a menu:\n- If a menu includes soup, it must also include bread, and it may not include salad.\n- If a menu includes fish, it must also include rice, and it may not include soup.\n- If a menu includes cake, it must also include salad, and it may not include fish.\nWhich of the following menus does not follow the rules?",
    "options": [
     "A menu that includes rice, salad and cake",
     "A menu that includes soup, salad and cake",
@@ -700,7 +830,10 @@
    "answer": 2,
    "explanation": "A menu that includes soup may not include salad (and needs bread). Each of the other menus meets every rule that applies to it.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "חברת קייטרינג פועלת על פי הכללים הבאים בתכנון תפריט:\n- אם התפריט כולל מרק, עליו לכלול גם לחם, ואסור שיכלול סלט.\n- אם התפריט כולל דג, עליו לכלול גם אורז, ואסור שיכלול מרק.\n- אם התפריט כולל עוגה, עליו לכלול גם סלט, ואסור שיכלול דג.\nאיזה מן התפריטים הבאים אינו עומד בכללים?\n(1) תפריט הכולל אורז, סלט ועוגה\n(2) תפריט הכולל מרק, סלט ועוגה\n(3) תפריט הכולל לחם, אורז ודג\n(4) תפריט הכולל מרק, לחם ואורז",
+   "style_donor": "July 2014 Second Section Q12"
   },
   {
    "id": "vo-48-113",
@@ -708,17 +841,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "September 2016 §1 Q16",
    "replaces": "vb-inf_v2_0258",
-   "stem": "Each of the three senior nurses of a hospital ward - Orly, Pnina and Rachel - is either in the ward (at the nurses' station or elsewhere) or out of it (in surgery, escorting a patient to X-ray, or at a meeting). These standing orders are always kept: - when Rachel is in the ward, she stays at the nurses' station only if Orly is in surgery and Pnina is at a meeting; - when Pnina is in the ward, either the other two are in the ward as well, or Rachel is in the ward and Orly is escorting a patient to X-ray. Which of the following situations certainly cannot occur?",
+   "stem": "Three members of a tenants' committee - Moran, Shai and Liora - have so far attended committee meetings as follows: whenever Shai came to a meeting, Moran came too, and Moran and Liora have never come to the same meeting. If the same is true of the next meeting, which of the following is not possible?",
    "options": [
-    "Pnina is at a meeting and Orly is escorting a patient to X-ray",
-    "Orly is in the ward but not at the nurses' station",
-    "Pnina is at the nurses' station and Orly is escorting a patient to X-ray",
-    "All three nurses are at the nurses' station"
+    "Only Liora will come to the meeting",
+    "Moran will come to the meeting, but Shai and Liora will not",
+    "Shai will not come to the meeting, but Liora will",
+    "Shai and Liora will both come to the meeting"
    ],
    "answer": 4,
-   "explanation": "Rachel may stay at the nurses' station only while Orly is in surgery, so Orly cannot be at the station with her. (3) is allowed by the second part of the second order, and nothing forbids (1) or (2).",
+   "explanation": "If Shai comes, Moran comes too, and then Liora cannot come. Each of the other situations breaks neither pattern.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "שלושה חברים בוועד דיירים - מורן, שי וליאורה - הגיעו עד היום לישיבות הוועד כך: בכל פעם ששי הגיע לישיבה, גם מורן הגיעה, ומורן וליאורה מעולם לא הגיעו לאותה ישיבה. אם כך יהיה גם בישיבה הבאה, איזה מן הבאים אינו אפשרי?\n(1) רק ליאורה תגיע לישיבה\n(2) מורן תגיע לישיבה, אך שי וליאורה לא יגיעו\n(3) שי לא יגיע לישיבה, וליאורה תגיע\n(4) שי וליאורה יגיעו שניהם לישיבה",
+   "style_donor": "February 2016 Second Section Q6"
   },
   {
    "id": "vo-48-114",
@@ -726,17 +862,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "September 2016 §2 Q12",
    "replaces": "vb-inf_v2_0259",
-   "stem": "Under the rules of a certain college, a student is entitled to a full scholarship if at least one of two conditions holds: - the student's average grade is at least 90 and the student has completed at least two years of studies; - the student's income together with that of the student's parents (the \"family income\") is lower than an amount defined as the \"support threshold.\" According to the rules, which of the following students is certainly not entitled to a full scholarship?",
+   "stem": "A municipal swimming pool gives a discount on the annual subscription to residents of the city who are over 60, and also to anyone who swam in the pool at least 50 times in the previous year. Which of the following is definitely not entitled to the discount?",
    "options": [
-    "A student with an average of 95, whose family income is higher than the support threshold",
-    "A student with three years of studies, whose family income is higher than the support threshold",
-    "A student with an average of 85 and three years of studies, whose parents alone earn more than the support threshold",
-    "A student with an average of 92 and four years of studies, whose family income is lower than the support threshold"
+    "A 70-year-old man who swam in the pool 20 times last year and 45 times the year before",
+    "A 45-year-old woman who lives in the city",
+    "A woman who moved to another city two years ago and swam in the pool 30 times last year",
+    "A 62-year-old resident of the city who swam in the pool 60 times last year"
    ],
    "answer": 3,
-   "explanation": "An average of 85 rules out the first condition, and if the parents alone earn more than the threshold, the family income does too. (1) may qualify by years of study, which are not stated, (2) may qualify by grades, which are not stated, and (4) qualifies twice over.",
+   "explanation": "The woman who moved away is not a resident, so the first condition does not hold, and 30 swims are too few for the second. The 70-year-old man may live in the city, the 45-year-old woman may have swum 50 times, and the 62-year-old resident qualifies twice over.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בריכה עירונית נותנת הנחה על המנוי השנתי לתושבי העיר שהם מעל גיל 60, וכן לכל מי ששחה בבריכה לפחות 50 פעמים בשנה הקודמת. מי מן הבאים ודאי אינו זכאי להנחה?\n(1) גבר בן 70 ששחה בבריכה 20 פעמים בשנה שעברה ו-45 פעמים בשנה שלפניה\n(2) תושבת העיר בת 45\n(3) אישה שעברה לגור בעיר אחרת לפני שנתיים ושחתה בבריכה 30 פעמים בשנה שעברה\n(4) תושב העיר בן 62 ששחה בבריכה 60 פעמים בשנה שעברה",
+   "style_donor": "Summer 2026 First Section Q13"
   },
   {
    "id": "vo-48-115",
@@ -744,17 +883,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "July 2016 §2 Q17",
    "replaces": "vb-inf_v2_0261",
-   "stem": "Four irrigation channels - Dekel, Oren, Rimon and Shaked, not necessarily in this order - are connected as follows: one of them (channel 1) flows into a second (channel 2); channel 2 and a third channel (channel 3) both flow into the fourth (channel 4), which flows into a reservoir. Three leaves were dropped into the water, not necessarily at the same point, and each drifted downstream until it sank. Two of the leaves drifted along these routes - Leaf A: Oren, then Dekel. Leaf B: Rimon, then Shaked. Which of the following could not have been the route of leaf C?",
+   "stem": "Every morning a minibus stops at four stops, one after another - the school, the clinic, the post office and the market, not necessarily in this order. Yesterday one passenger got on at the school and got off at the next stop, the clinic, and another passenger got on at the post office and got off at the next stop, the market. Which of the following could not have happened on the same trip?",
    "options": [
-    "Shaked, Oren",
-    "Dekel, Shaked, the reservoir",
-    "Shaked, Dekel",
-    "Oren, Dekel, the reservoir"
+    "A passenger got on at the clinic and got off at the next stop, the market",
+    "A passenger got on at the clinic and got off two stops later, at the market",
+    "A passenger got on at the market and got off at the next stop, the school",
+    "A passenger got on at the school and got off two stops later, at the post office"
    ],
    "answer": 1,
-   "explanation": "The only two flows that share no channel are 1 into 2 and 3 into 4, so leaves A and B took these two, in one order or the other. Either Oren and Dekel are 1 and 2 and Rimon and Shaked are 3 and 4, or the reverse; in neither case does Shaked flow into Oren. Each of the other routes fits one of the two cases.",
+   "explanation": "The clinic comes right after the school and the market right after the post office, so the order is either school, clinic, post office, market or post office, market, school, clinic. In neither order does the market come right after the clinic. (2) and (4) fit the first order and (3) the second.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "מיניבוס עובר בכל בוקר, בזו אחר זו, בארבע תחנות - בית הספר, המרפאה, הדואר והשוק, לאו דווקא בסדר זה. אתמול עלה נוסע אחד בבית הספר וירד בתחנה הבאה, המרפאה, ונוסעת אחרת עלתה בדואר וירדה בתחנה הבאה, השוק. איזה מן הבאים לא ייתכן שקרה באותה נסיעה?\n(1) נוסע עלה במרפאה וירד בתחנה הבאה, השוק\n(2) נוסע עלה במרפאה וירד שתי תחנות אחר כך, בשוק\n(3) נוסע עלה בשוק וירד בתחנה הבאה, בית הספר\n(4) נוסע עלה בבית הספר וירד שתי תחנות אחר כך, בדואר",
+   "style_donor": "Summer 2024 Second Section Q10"
   },
   {
    "id": "vo-48-116",
@@ -762,17 +904,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "September 2015 §1 Q15",
    "replaces": "vb-inf_v2_0264",
-   "stem": "On every day on which Itai does not work a night shift at the factory where he is employed - and only on such days - he picks up his daughter from kindergarten in the afternoon. On those days he always walks to the kindergarten at four o'clock, unless the temperature at that hour is above 35 degrees, in which case he does not walk there but drives there instead. Which of the following could happen?",
+   "stem": "On days when Shmulik does not work in the afternoon, he picks up his daughter from kindergarten; on days when he does, his wife picks her up. When Shmulik picks her up, he walks, unless it is raining, in which case he drives. Which of the following is possible?",
    "options": [
-    "On Sunday the temperature at four o'clock was 30 degrees, and Itai drove to the kindergarten",
-    "On Wednesday the temperature at four o'clock was 38 degrees, and Itai did not drive to the kindergarten",
-    "On Monday Itai worked a night shift, and at four o'clock he drove to the kindergarten to pick up his daughter",
-    "On Tuesday Itai did not work a night shift, the temperature at four o'clock was 28 degrees, and Itai did not walk to the kindergarten"
+    "On Sunday it did not rain, and Shmulik drove to pick up his daughter",
+    "On Wednesday it rained, and Shmulik did not drive to the kindergarten",
+    "On Monday Shmulik worked in the afternoon, and he picked up his daughter from kindergarten",
+    "On Tuesday Shmulik did not work in the afternoon, it did not rain, and his wife picked up their daughter"
    ],
    "answer": 2,
-   "explanation": "If Itai worked a night shift that day, he did not go to the kindergarten at all, so on a hot day he may well not have driven there. In (1) it was not hot enough to drive, in (3) the night shift rules out the pickup, and in (4) nothing excuses him from walking.",
+   "explanation": "If Shmulik worked that afternoon, his wife picked up the girl, so on a rainy day he need not have driven. In (1) there was no rain, so he would have walked; in (3) and (4) the wrong parent picked her up.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בימים ששמוליק אינו עובד אחר הצהריים, הוא אוסף את בתו מן הגן; בימים שהוא עובד, אשתו אוספת אותה. כששמוליק אוסף אותה, הוא הולך ברגל, אלא אם יורד גשם, ואז הוא נוסע ברכב. איזה מן הבאים אפשרי?\n(1) ביום ראשון לא ירד גשם, ושמוליק נסע ברכב לאסוף את בתו\n(2) ביום רביעי ירד גשם, ושמוליק לא נסע ברכב לגן\n(3) ביום שני עבד שמוליק אחר הצהריים, ואסף את בתו מן הגן\n(4) ביום שלישי שמוליק לא עבד אחר הצהריים, לא ירד גשם, ואשתו אספה את הבת",
+   "style_donor": "July 2015 First Section Q9"
   },
   {
    "id": "vo-48-117",
@@ -780,17 +925,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "April 2015 §1 Q9",
    "replaces": "vb-inf_v2_0265",
-   "stem": "At a certain research institute the following rule applies: the last person to leave any laboratory must turn off its air conditioner, and whoever is the last to leave the building must turn off every air conditioner left on anywhere in the building. One evening Yaron was the last to leave the building. He noticed that the air conditioner was on in one of the laboratories - a laboratory in which only Michal had worked that day - and he left without turning it off. Which of the following claims is correct?",
+   "stem": "In a community garden, the following rule applies: whoever is the last to leave the tool shed must lock it, and whoever closes the garden gate in the evening must make sure that the shed is locked. One evening Menachem closed the garden gate. He noticed that the shed, which only Tova had used that day, was not locked, and he went home without locking it. Which of the following is true?",
    "options": [
-    "Neither Yaron nor Michal broke the rule",
-    "Yaron broke the rule, but Michal did not",
-    "Both Yaron and Michal broke the rule",
-    "Yaron did not break the rule, but Michal did"
+    "Only Menachem broke the rule",
+    "Tova did not break the rule, since Menachem was the last to leave the garden",
+    "Both Tova and Menachem broke the rule",
+    "Neither of them broke the rule, since the rule does not say what to do when the shed is found open"
    ],
    "answer": 3,
-   "explanation": "Michal was the last to leave her laboratory and left its air conditioner on; Yaron was the last to leave the building and left it on as well.",
+   "explanation": "Tova was the last to leave the shed and did not lock it; Menachem closed the gate without making sure that the shed was locked. Leaving the garden is not the same as leaving the shed, and making sure the shed is locked means locking it if it is open.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בגינה קהילתית חל הכלל הזה: מי שיוצא אחרון ממחסן הכלים חייב לנעול אותו, ומי שסוגר בערב את שער הגינה חייב לוודא שהמחסן נעול. ערב אחד סגר מנחם את שער הגינה. הוא הבחין שהמחסן, שרק טובה השתמשה בו באותו יום, אינו נעול, והלך הביתה בלי לנעול אותו. איזה מן הבאים נכון?\n(1) רק מנחם הפר את הכלל\n(2) טובה לא הפרה את הכלל, שכן מנחם יצא אחרון מן הגינה\n(3) גם טובה וגם מנחם הפרו את הכלל\n(4) איש מהם לא הפר את הכלל, שכן הכלל אינו אומר מה לעשות כשמוצאים את המחסן פתוח",
+   "style_donor": "Summer 2023 Second Section Q11"
   },
   {
    "id": "vo-48-118",
@@ -798,17 +946,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "February 2015 §1 Q14",
    "replaces": "vb-inf_v2_0267",
-   "stem": "The city's regulations contain three clauses on shop signs. Clause 1: \"A neon sign may be hung only on a shop front up to 8 meters wide.\" Clause 2: \"A large sign may be hung only on a shop front up to 12 meters wide.\" Clause 3: \"Only a shop front up to 4 meters wide may display a small wooden sign.\" A shop owner argued that the answer to a question that interested her could not be known with certainty from any one clause on its own. Which of the following could be that question?",
+   "stem": "Two rules are posted at a library:\n1. Only readers over the age of 18 may borrow more than three books at a time.\n2. Only people who have been members of the library for at least a year may borrow books for more than two weeks.\nThe librarian said that in order to answer one of the following questions she has to use both rules. Which question is it?",
    "options": [
-    "May a shop front 3 meters wide carry a large neon sign?",
-    "May a shop front 8 meters wide carry a small neon sign?",
-    "May a shop front 12 meters wide carry a large neon sign?",
-    "May a shop front 4 meters wide carry a small wooden sign?"
+    "May a 30-year-old reader who has been a member for three years borrow five books for a month?",
+    "May a 25-year-old reader who joined the library last month borrow two books for three weeks?",
+    "May a 15-year-old reader borrow six books for a week?",
+    "May a 17-year-old reader who has been a member for four years borrow five books for three weeks?"
    ],
    "answer": 1,
-   "explanation": "\"Large\" and \"neon\" fall under different clauses, and only the two together settle the question. (2) and (3) are settled by clause 1 alone, and (4) by clause 3 alone.",
+   "explanation": "The 30-year-old's request is allowed only if he meets both rules, so both must be checked. The 25-year-old fails rule 2, and the 15-year-old and the 17-year-old fail rule 1, so in each of these cases one rule is enough to refuse.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בספרייה תלויים שני כללים:\n1. רק קוראים מעל גיל 18 רשאים לשאול יותר משלושה ספרים בבת אחת.\n2. רק מי שחבר בספרייה לפחות שנה רשאי לשאול ספרים ליותר משבועיים.\nהספרנית אמרה שכדי לענות על אחת מן השאלות הבאות עליה להשתמש בשני הכללים. איזו שאלה היא זו?\n(1) האם קורא בן 30, החבר בספרייה שלוש שנים, רשאי לשאול חמישה ספרים לחודש?\n(2) האם קוראת בת 25, שהצטרפה לספרייה בחודש שעבר, רשאית לשאול שני ספרים לשלושה שבועות?\n(3) האם קורא בן 15 רשאי לשאול שישה ספרים לשבוע?\n(4) האם קורא בן 17, החבר בספרייה ארבע שנים, רשאי לשאול חמישה ספרים לשלושה שבועות?",
+   "style_donor": "Summer 2020 First Section Q14"
   },
   {
    "id": "vo-48-119",
@@ -816,17 +967,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "December 2014 §1 Q8",
    "replaces": "vb-inf_v2_0270",
-   "stem": "A cake is made of three layers - chocolate, vanilla and strawberry - of different thicknesses, placed one on top of another. It is known that: - the thickest layer is next to the vanilla layer; - the chocolate layer is neither the thickest nor the thinnest. From this it necessarily follows that -",
+   "stem": "A kitchen cupboard has three shelves, one above another. One shelf holds plates, one holds cups and one holds pots, and no two shelves carry the same weight. It is known that:\n- The heaviest shelf is next to the shelf with the cups.\n- The shelf with the plates is neither the heaviest nor the lightest.\nWhich of the following is necessarily true?",
    "options": [
-    "the top layer is strawberry",
-    "the thinnest layer is not vanilla",
-    "the middle layer is not chocolate",
-    "the chocolate layer and the strawberry layer are not next to each other"
+    "The pots are on the top shelf",
+    "The shelf with the cups is not the lightest",
+    "The plates are not on the middle shelf",
+    "The plates and the pots are not on adjacent shelves"
    ],
    "answer": 3,
-   "explanation": "Chocolate is of middle thickness, so the thickest layer is strawberry or vanilla; it is next to vanilla, so it is strawberry, and vanilla is the thinnest. Strawberry and vanilla are next to each other, so chocolate cannot be between them and must be at the top or the bottom. (1) and (4) are possible but not necessary, and (2) is false.",
+   "explanation": "The shelf with the plates is of middle weight, so the heaviest is the pots or the cups; it is next to the cups, so it is the pots, and the cups are the lightest. The pots and the cups are on adjacent shelves, so the plates cannot be between them and are on the top or the bottom shelf. (1) and (4) are possible but not necessary, and (2) is false.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בארון מטבח יש שלושה מדפים, זה מעל זה. על מדף אחד צלחות, על אחד כוסות ועל אחד סירים, ומשקלם הכולל של הכלים שונה מכל מדף לכל מדף. ידוע כי:\n- המדף הכבד ביותר סמוך למדף שעליו הכוסות.\n- המדף שעליו הצלחות אינו הכבד ביותר ואינו הקל ביותר.\nאיזה מן הבאים נכון בהכרח?\n(1) הסירים על המדף העליון\n(2) המדף שעליו הכוסות אינו הקל ביותר\n(3) הצלחות אינן על המדף האמצעי\n(4) הצלחות והסירים אינם על מדפים סמוכים",
+   "style_donor": "February 2016 First Section Q14"
   },
   {
    "id": "vo-48-120",
@@ -834,17 +988,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "December 2014 §1 Q17",
    "replaces": "vb-inf_v2_0271",
-   "stem": "The computer system that controls the watering, spraying and ventilation of a large greenhouse operates according to three rules, which were written by its designers: A. The system may not harm a plant, and must do all it can to prevent harm to a plant. B. The system must carry out the grower's instructions, unless they conflict with rule A. C. The system must save water, unless this conflicts with rule A or rule B. There are cases, however, in which the rules make conflicting demands on the system, and it cannot decide how it should act. Which of the following situations is an example of such a case?",
+   "stem": "The municipality gave the guard of a public park three instructions, and told him that if two of them conflict, the one listed first takes precedence:\n1. He must not let dogs into the playground.\n2. He must lock the park gate at eight in the evening, but must not lock any visitor inside the park.\n3. He must water the lawns every evening.\nIn which of the following situations will the guard not be able to know how to act?",
    "options": [
-    "Two growers who share the greenhouse each instruct the system to uproot the other's plants",
-    "Pests are attacking a plant, and the only way the system can stop them is to spray a substance that will harm the plant next to it",
-    "A grower instructs the system to water all the plants twice a day, although once a day is enough",
-    "A plant is wilting and the system could water it, but a grower instructs it not to"
+    "At eight the lawns have not yet been watered, and watering them takes an hour",
+    "At eight there is still a visitor in the park, and he refuses to leave",
+    "A visitor asks the guard to let his dog into the playground for a few minutes",
+    "At eight there is a dog in the playground, and getting it out will delay the locking of the gate"
    ],
    "answer": 2,
-   "explanation": "Rule A both forbids harming a plant and demands preventing harm, and here the two halves collide. In (1) and (4) rule A overrides the instructions, and in (3) rule B overrides rule C.",
+   "explanation": "Locking the gate and not locking a visitor inside are both parts of the same instruction, so the order of precedence does not help. In (1) instruction 2 comes before instruction 3, in (4) instruction 1 comes before instruction 2, and in (3) instruction 1 decides.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "העירייה נתנה לשומר של גן ציבורי שלוש הוראות, ואמרה לו שאם שתיים מהן מתנגשות, זו הרשומה ראשונה קודמת:\n1. אסור לו להכניס כלבים לגן המשחקים.\n2. עליו לנעול את שער הגן בשמונה בערב, אך אסור לו לנעול מבקר בתוך הגן.\n3. עליו להשקות את המדשאות בכל ערב.\nבאיזה מן המצבים הבאים לא יוכל השומר לדעת כיצד לנהוג?\n(1) בשמונה עדיין לא הושקו המדשאות, וההשקיה נמשכת שעה\n(2) בשמונה עדיין נמצא בגן מבקר, והוא מסרב לצאת\n(3) מבקר מבקש מן השומר להכניס את כלבו לגן המשחקים לכמה דקות\n(4) בשמונה יש כלב בגן המשחקים, והוצאתו תעכב את נעילת השער",
+   "style_donor": "Summer 2026 Second Section Q8"
   },
   {
    "id": "vo-48-121",
@@ -852,17 +1009,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "December 2014 §2 Q17",
    "replaces": "vb-inf_v2_0273",
-   "stem": "In a certain region there are two ferry lines (ferry X and ferry Y) and two train lines (the green line and the orange line). It is known that: - no station is shared by the two ferry lines, and no station is shared by the two train lines; - ferry Y and the orange line have no station in common; - ferry X and the green line have only one station in common, and at that station the ferry only lets passengers off and does not take any on. A tourist traveled on all four lines, once on each, changing lines only at shared stations and using no other means of transport. Which line did the tourist travel on first?",
+   "stem": "Yesterday Tehila ran four errands, one after another: she went to the bank, the post office, the pharmacy and the supermarket, not necessarily in this order. It is known that:\n- She went to the supermarket last.\n- She went to the post office immediately after going to the bank.\n- She did not go to the pharmacy immediately after the post office.\nWhere did Tehila go first?",
    "options": [
-    "Ferry X",
-    "Ferry Y",
-    "The orange line",
-    "The green line"
+    "To the bank",
+    "To the post office",
+    "To the pharmacy",
+    "To the supermarket"
    ],
    "answer": 3,
-   "explanation": "The only possible changes are between the orange line and ferry X, from ferry X to the green line (one way only), and between the green line and ferry Y. A route through all four lines must therefore run orange line, ferry X, green line, ferry Y.",
+   "explanation": "The supermarket is last, so the bank, the post office and the pharmacy fill the first three places, with the post office right after the bank. Bank, post office, pharmacy puts the pharmacy right after the post office, so the order is pharmacy, bank, post office, supermarket.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "אתמול עשתה תהילה ארבעה סידורים, בזה אחר זה: היא הלכה לבנק, לדואר, לבית המרקחת ולסופרמרקט, לאו דווקא בסדר זה. ידוע כי:\n- היא הלכה לסופרמרקט אחרון.\n- היא הלכה לדואר מיד אחרי הבנק.\n- היא לא הלכה לבית המרקחת מיד אחרי הדואר.\nלאן הלכה תהילה ראשונה?",
+   "style_donor": "Summer 2024 Second Section Q11"
   },
   {
    "id": "vo-48-122",
@@ -870,17 +1030,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "April 2014 §1 Q14",
    "replaces": "vb-inf_v2_0276",
-   "stem": "At a certain university, two bodies are authorized to decide on students' requests: the faculty committee and the university committee. Different arrangements apply to different kinds of request, and they determine which body is authorized to decide: A. Exclusive authority - only one of the two bodies is authorized to decide on the request. B. Parallel authority - both bodies are authorized, but once one of them has begun to deal with the request, the other may not deal with it. C. Authority by consent - only the faculty committee is authorized, unless the student and the lecturer have both agreed to bring the request before the university committee. A request to change an exam grade is under the exclusive authority of the faculty committee; a request for an extension on a paper is under parallel authority; a request for exemption from a course is under authority by consent. Which of the following situations is possible?",
+   "stem": "At a youth club, the following rules apply:\n- Only club members may use the ping-pong table.\n- Anyone may use the club's computer, but while someone is working on it, no one else may use it until they have finished.\n- Only members may play the club's piano, unless the counselor has given someone else permission to play it.\nWhich of the following situations is possible?",
    "options": [
-    "The student and the lecturer agreed that the university committee would decide on a request to change an exam grade, and it does so",
-    "The student and the lecturer disagree about which body should decide on a request for exemption from a course, and the university committee decides it",
-    "The faculty committee began to deal with a request for an extension on a paper, and at the student's request the university committee began to deal with it too",
-    "The student and the lecturer agreed that the university committee would decide on a request for exemption from a course, and it does so"
+    "The counselor gave Kobi, who is not a member, permission to play ping-pong, and he played",
+    "Kobi, who is not a member, played the piano after the club's secretary had given him permission",
+    "Nachum began working on the computer, and while he was working, Kobi joined him at Nachum's request",
+    "Kobi, who is not a member, played the piano after the counselor had given him permission"
    ],
    "answer": 4,
-   "explanation": "Consent of both sides opens the university committee to a request for exemption. (1) breaks the faculty committee's exclusive authority, (2) lacks the required consent, and (3) breaks the bar that parallel authority sets.",
+   "explanation": "The counselor's permission opens the piano to a non-member. (1) breaks the ping-pong rule, which has no exception, (2) lacks the counselor's permission, and (3) breaks the computer rule.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "במועדון נוער חלים הכללים הבאים:\n- רק חברי המועדון רשאים להשתמש בשולחן הפינג-פונג.\n- כל אחד רשאי להשתמש במחשב של המועדון, אך כל עוד מישהו עובד עליו, איש אחר אינו רשאי להשתמש בו עד שיסיים.\n- רק חברים רשאים לנגן בפסנתר של המועדון, אלא אם המדריך התיר למישהו אחר לנגן בו.\nאיזה מן המצבים הבאים אפשרי?\n(1) המדריך התיר לקובי, שאינו חבר, לשחק פינג-פונג, והוא שיחק\n(2) קובי, שאינו חבר, ניגן בפסנתר לאחר שמזכירת המועדון התירה לו\n(3) נחום התחיל לעבוד על המחשב, ובזמן שעבד הצטרף אליו קובי, לבקשתו של נחום\n(4) קובי, שאינו חבר, ניגן בפסנתר לאחר שהמדריך התיר לו",
+   "style_donor": "July 2015 First Section Q12"
   },
   {
    "id": "vo-48-123",
@@ -888,17 +1051,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "February 2014 §1 Q16",
    "replaces": "vb-inf_v2_0277",
-   "stem": "Noga, Hadas and Efrat, three sisters of different ages, are sitting on a bench (not necessarily in this order). It is known that: - Noga is older than the sister sitting at the left end; - Hadas is older than the sister sitting in the middle. Therefore, necessarily -",
+   "stem": "Shiri, Nimrod and Hadar live in a three-story building, each on a different floor. It is known that:\n- Shiri does not live on the first floor.\n- The tenant on the second floor has a dog.\n- Nimrod does not have a dog, and he lives on a higher floor than Hadar.\nWhich of the following is necessarily true?",
    "options": [
-    "Hadas is sitting at the right end",
-    "Efrat is not sitting at the right end",
-    "Hadas is older than Noga",
-    "Efrat is older than Noga"
+    "Hadar has a dog",
+    "Shiri has a dog",
+    "Nimrod lives on the second floor",
+    "Hadar does not have a dog"
    ],
    "answer": 2,
-   "explanation": "Noga is not at the left end and Hadas is not in the middle, which leaves two seatings: Efrat, Noga, Hadas (Hadas older than Noga, Noga older than Efrat) and Hadas, Efrat, Noga (Noga older than Hadas, Hadas older than Efrat). In both, Efrat is the youngest and not at the right end; (1) and (3) hold in only one seating, and (4) in neither.",
+   "explanation": "Nimrod has no dog, so he is not on the second floor, and since he lives above Hadar he is on the third. Shiri is not on the first floor, so she is on the second and has the dog, and Hadar is on the first. Whether Hadar has a dog is not known.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "שירי, נמרוד והדר גרים בבניין בן שלוש קומות, כל אחד בקומה אחרת. ידוע כי:\n- שירי אינה גרה בקומה הראשונה.\n- לדייר בקומה השנייה יש כלב.\n- לנמרוד אין כלב, והוא גר בקומה גבוהה מזו של הדר.\nאיזה מן הבאים נכון בהכרח?\n(1) להדר יש כלב (2) לשירי יש כלב (3) נמרוד גר בקומה השנייה (4) להדר אין כלב",
+   "style_donor": "Spring 2019 Second Section Q13"
   },
   {
    "id": "vo-48-124",
@@ -906,17 +1072,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "February 2014 §2 Q13",
    "replaces": "vb-inf_v2_0278",
-   "stem": "A company makes plant-food mixtures for houseplant problems. Each mixture contains two of the four salts the company uses - P, Q, R and S - and its label names the problems it is suited to. The company considers a mixture suited to a problem if at least one of its two salts relieves the problem and neither of them is liable to worsen it. It is known that: - only P relieves yellowing, and only S is liable to worsen it; - only Q relieves drooping, and only P is liable to worsen it; - only R relieves brown tips, and only Q is liable to worsen them; - only S relieves root rot, and only R is liable to worsen it. The label of a certain mixture says that it is suited to two different problems. Which two could they be?",
+   "stem": "Batya is preparing sandwiches for a family trip. In each sandwich there are two different fillings from among egg, tuna, cheese and avocado. Yoel will eat a sandwich only if there is egg in it, and he never eats avocado. Zohar eats only sandwiches with tuna, and cannot stand egg. Chanan wants cheese in his sandwich and refuses to eat tuna, and Tzvi eats only sandwiches with avocado, provided that there is no cheese in them. Batya wants to prepare one kind of sandwich that two of the children will eat. Who could the two be?",
    "options": [
-    "Drooping and yellowing",
-    "Brown tips and root rot",
-    "Root rot and yellowing",
-    "Yellowing and brown tips"
+    "Zohar and Yoel",
+    "Chanan and Tzvi",
+    "Tzvi and Yoel",
+    "Yoel and Chanan"
    ],
    "answer": 4,
-   "explanation": "A mixture of P and R relieves yellowing and brown tips, and neither salt worsens either problem. Every other pair of problems calls for two salts one of which worsens the other's problem.",
+   "explanation": "A sandwich of egg and cheese suits Yoel, who gets egg and no avocado, and Chanan, who gets cheese and no tuna. Every other pair needs a filling that one of the two refuses.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בתיה מכינה כריכים לטיול משפחתי. בכל כריך יש שתי תוספות שונות מבין ביצה, טונה, גבינה ואבוקדו. יואל יאכל כריך רק אם יש בו ביצה, והוא לעולם אינו אוכל אבוקדו. זוהר אוכל רק כריכים עם טונה, ואינו סובל ביצה. חנן רוצה גבינה בכריך שלו ומסרב לאכול טונה, וצבי אוכל רק כריכים עם אבוקדו, ובלבד שאין בהם גבינה. בתיה רוצה להכין סוג אחד של כריך ששניים מן הילדים יאכלו. מי יכולים להיות השניים?\n(1) זוהר ויואל (2) חנן וצבי (3) צבי ויואל (4) יואל וחנן",
+   "style_donor": "Summer 2023 Second Section Q7"
   },
   {
    "id": "vo-48-125",
@@ -924,17 +1093,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "December 2013 §1 Q10",
    "replaces": "vb-inf_v2_0279",
-   "stem": "When Hila orders dessert at her favorite café, the waiter offers her two desserts she has not yet tasted, and she chooses one of them. It is known that: A. Hila prefers cakes to ice creams, and ice creams to fruit salads. B. When she is offered two desserts of the same kind, she prefers the cheaper one. C. If one of the desserts contains pistachio, Hila chooses it regardless of its kind or its price. Yesterday Hila chose a vanilla ice cream that cost 28 shekels. Which of the following could have been the dessert offered to her together with it?",
+   "stem": "Nissan buys a new pair of work shoes every year. In the store they always offer him two pairs, and he chooses one of them. Nissan prefers leather shoes to canvas shoes, and when both pairs are made of the same material, he takes the lighter pair; but if one of the pairs is waterproof, he takes it in any case. This year Nissan chose leather shoes that weigh 900 grams and are not waterproof. Which of the following could have been the other pair that was offered to him?",
    "options": [
-    "A strawberry ice cream with chocolate sauce that cost 32 shekels",
-    "A lemon cake with whipped cream that cost 34 shekels",
-    "A chocolate ice cream with whipped cream that cost 22 shekels",
-    "A fruit salad topped with chopped pistachios that cost 30 shekels"
+    "Leather shoes that weigh 1.1 kilograms and are not waterproof",
+    "Leather shoes with rubber soles that weigh 800 grams",
+    "Waterproof canvas shoes that weigh 1.2 kilograms",
+    "Leather shoes that weigh 850 grams and are not waterproof"
    ],
    "answer": 1,
-   "explanation": "Of two ice creams Hila takes the cheaper, so a 32-shekel one loses to the vanilla. (2) would have won by kind, (3) by price and (4) by its pistachios.",
+   "explanation": "Of two leather pairs Nissan takes the lighter, so a 1.1-kilogram pair loses to the one he chose. (2) and (4) are lighter leather pairs and would have won ((2) would also win if it were waterproof), and (3) is waterproof.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "ניסן קונה בכל שנה זוג נעלי עבודה חדש. בחנות מציעים לו תמיד שני זוגות, והוא בוחר באחד מהם. ניסן מעדיף נעלי עור על פני נעלי בד, וכששני הזוגות עשויים מאותו חומר, הוא לוקח את הזוג הקל יותר; אבל אם אחד הזוגות עמיד במים, הוא לוקח אותו בכל מקרה. השנה בחר ניסן בנעלי עור השוקלות 900 גרם ואינן עמידות במים. איזה מן הבאים יכול היה להיות הזוג האחר שהוצע לו?\n(1) נעלי עור השוקלות 1.1 קילוגרם ואינן עמידות במים\n(2) נעלי עור עם סוליות גומי השוקלות 800 גרם\n(3) נעלי בד עמידות במים השוקלות 1.2 קילוגרם\n(4) נעלי עור השוקלות 850 גרם ואינן עמידות במים",
+   "style_donor": "Summer 2024 First Section Q8"
   },
   {
    "id": "vo-48-126",
@@ -942,17 +1114,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "December 2013 §1 Q13",
    "replaces": "vb-inf_v2_0280",
-   "stem": "Ilan has three marbles: two blue and one green. Maya also has three marbles: one blue, one red and one green. Ilan gave Maya one of his marbles in exchange for one of hers. After the exchange, each of them had two marbles of one color and a third marble of another color. Which of the following could not have happened?",
+   "stem": "Tzipora had two baskets of fruit. In the first there were two apples and a pear; in the second, an apple, a plum and a pear. She moved one fruit from the first basket to the second and one fruit from the second to the first. After this, each basket held two fruits of the same kind and one fruit of a different kind. Which of the following could not have happened?",
    "options": [
-    "Ilan received Maya's blue marble",
-    "Maya received one of Ilan's blue marbles",
-    "Maya received Ilan's green marble",
-    "Ilan received Maya's green marble"
+    "An apple was moved from the second basket to the first",
+    "An apple was moved from the first basket to the second",
+    "The pear from the first basket was moved to the second",
+    "The plum was moved to the first basket"
    ],
    "answer": 1,
-   "explanation": "If Ilan received a blue marble, either he gave his green one and was left with three blue marbles, or he gave a blue one and nothing changed, leaving Maya with three colors. Each of the other exchanges has a version that meets the condition.",
+   "explanation": "If an apple came into the first basket, either a pear left it and it held three apples, or an apple left it and the second basket kept three different fruits. Each of the other moves is part of an exchange that meets the condition.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "לצפורה היו שתי סלסלות פירות. בראשונה היו שני תפוחים ואגס, ובשנייה תפוח, שזיף ואגס. היא העבירה פרי אחד מן הסלסלה הראשונה לשנייה ופרי אחד מן השנייה לראשונה. לאחר מכן היו בכל סלסלה שני פירות מאותו סוג ופרי אחד מסוג אחר. איזה מן הבאים לא ייתכן שקרה?\n(1) תפוח הועבר מן הסלסלה השנייה לראשונה\n(2) תפוח הועבר מן הסלסלה הראשונה לשנייה\n(3) האגס מן הסלסלה הראשונה הועבר לשנייה\n(4) השזיף הועבר לסלסלה הראשונה",
+   "style_donor": "July 2014 First Section Q11"
   },
   {
    "id": "vo-48-127",
@@ -960,17 +1135,20 @@
    "category": "Rules and Arrangements",
    "mirrors": "September 2013 §2 Q10",
    "replaces": "vb-inf_v2_0283",
-   "stem": "Three kinds of caterpillar - A, B and C - feed on the leaves of three kinds of tree: mulberry, fig and grape. Kind A feeds only on fig and grape leaves; kind B feeds only on mulberry and fig leaves; kind C feeds only on mulberry and grape leaves. In a biology lesson, the teacher put one caterpillar of each kind in a separate box with leaves of all three trees, and at the end of the lesson checked which leaves each caterpillar had eaten. Which of the following cannot be?",
+   "stem": "Grandmother Zelda served her three grandchildren a plate of cheese burekas, potato burekas and poppy seed pastries. Ohad eats only cheese burekas and potato burekas, Batel eats only potato burekas and poppy seed pastries, and Gal eats only poppy seed pastries. Each of the grandchildren ate at least one pastry. Which of the following is not possible?",
    "options": [
-    "None of the caterpillars ate mulberry leaves",
-    "All three caterpillars ate the same kind of leaf",
-    "Two of the caterpillars ate a kind of leaf that the third did not eat",
-    "Each caterpillar ate two kinds of leaf"
+    "None of the grandchildren ate cheese burekas",
+    "All three grandchildren ate from the same kind of pastry",
+    "Two of the grandchildren ate from a kind of pastry that the third did not eat",
+    "Only one of the grandchildren ate potato burekas"
    ],
    "answer": 2,
-   "explanation": "No kind of leaf is eaten by all three kinds of caterpillar: each leaf is refused by exactly one of them. Each of the other outcomes is possible.",
+   "explanation": "Cheese burekas are eaten only by Ohad, potato burekas not by Gal, and poppy seed pastries not by Ohad, so no kind was eaten by all three. Each of the other situations can happen.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "סבתא זלדה הגישה לשלושת נכדיה צלחת של בורקס גבינה, בורקס תפוחי אדמה ומאפי פרג. אוהד אוכל רק בורקס גבינה ובורקס תפוחי אדמה, בתאל אוכלת רק בורקס תפוחי אדמה ומאפי פרג, וגל אוכל רק מאפי פרג. כל אחד מן הנכדים אכל לפחות מאפה אחד. איזה מן הבאים אינו אפשרי?\n(1) אף אחד מן הנכדים לא אכל בורקס גבינה\n(2) שלושת הנכדים אכלו מאותו סוג מאפה\n(3) שניים מן הנכדים אכלו מסוג מאפה שהשלישי לא אכל\n(4) רק אחד מן הנכדים אכל בורקס תפוחי אדמה",
+   "style_donor": "February 2017 Second Section Q11"
   }
  ],
  "passages": []

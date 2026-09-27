@@ -1,0 +1,154 @@
+WHAT GIVES OUR QUESTIONS AWAY (from blind tests: in round 1 an expert picked out 30 of 34 of our completions and 0 of 61
+real ones). Fix ALL of these - rewriting content where needed, not just polishing words. Keep each item's mechanism, key,
+answer position and difficulty; re-solve after every change (exactly one defensible answer).
+
+1. REGISTER. Real NITE English is a professional translation from Hebrew: formal, slightly stiff, literal, plain.
+   Ours was smooth native/idiomatic magazine English. Remove idioms and colloquialisms ("would do well", "picking apart",
+   "trial run", "at a dizzying rate", "of modest means", "as a matter of course", "passed over", "That said", "Quite the
+   opposite", "hurts no one", "may well"). Prefer literal, somewhat formal phrasing: "is of the opinion that", "has no
+   choice but to", "one of the reasons why", "it is not surprising that", "in contrast to". (Do not insert grammar errors.)
+2. TOPICS. Real items favor academic / historical / cultural / scientific / abstract-ethical matter, often dated or
+   invented (a historian's view of a king, an invented culture or tribe, a researcher's theory, a philosopher, a
+   poet's work, an old custom, a company with a plain invented name, an invented vitamin). Ours used present-day
+   consumer/tech/civic life (navigation apps, gyms, solar panels, cafés, marathons, ticket prices, street festivals).
+   Move scenarios toward the real mix; everyday scenes are fine occasionally, but plain and old-fashioned, never trendy.
+3. NAMES. Real: title + surname (Professor Hochberg, Dr. Mizrahi) or surname alone, or plain/classic first names
+   (David, Joseph, Shlomo, Yoram, Miriam, Ruth). Ours: trendy Israeli first names (Rotem, Lavi, Itai, Omer, Noa, Ido)
+   and modern full names (Maya Katz, Dana Ronen). Use fewer names overall; a researcher is "Professor X" or "the
+   historian X".
+4. PRONOUNS. Real NITE uses generic "he/his" (not singular "they"). Use "he" for generic persons and a named person's
+   own gender. (This overrides the earlier "generic they" rule.)
+5. ITEM SHAPE. Real completions are one or two dense sentences with 3-4 blanks, where the trap is in the logic
+   connectors. Ours were sometimes LSAT/argument puzzles dressed as completions (analogy mapping, principle
+   application, "Dr. A: ... Dr. B: I disagree. ____" dialogues, litotes tricks, counterfactuals on rhetorical questions,
+   modern study write-ups). Recast into the real shape.
+6. OPTIONS. Ours repeated a long padded phrase verbatim in 3-4 options, used near-synonym distractor pairs
+   (turned down/declined), tidy mirrored symmetry (4x/2x vs 1/2, 1/4), and asides that seal the logic ("which are
+   known to hurt school performance", "After all, it is well known that ..."). Real options are shorter, messier,
+   unequal, and distractors sometimes wander slightly. No explanatory asides.
+7. OPENINGS/PUNCTUATION. No magazine openers ("What makes a novel worthy ...?", "Does relying on ...?"), no colon +
+   list of three with Oxford comma, no "Even so," he added. Open plainly: "Professor X claims that ...", "Although ...",
+   "It is not surprising that ...".
+8. DIFFICULTY. Items that are one-dimensional with no trap look fake; every item needs the real kind of trap.
+
+ROUND 1, PARAGRAPH ITEMS: 47 of 47 caught. Additional tells:
+9. REAL CONTENT. Real short texts are excerpts about REAL, checkable people, works, places and facts (Jane Jacobs on Le
+   Corbusier, Hubble's Cepheid, de Waal's bonobos, Kovalevskaya, Bilu), often with Israeli context (shekels, Israeli
+   universities, Hebrew names, Israeli history). Ours used invented experts (Helen Marsh, Lena Farrow, Ruth Amsel),
+   invented places (Merrow Bay, Kalden, Morvania) and invented words. NEW RULE: build short texts and scenarios on REAL,
+   ACCURATE, well-documented material wherever the mechanism allows: a real scholar's actually held view, a real
+   historical episode, a real scientific finding, a real custom - described correctly (the old rule stands only in
+   this form: never ATTACH AN INVENTED finding/quote/opinion to a real person or institution). Use only facts you are
+   confident about and that are widely documented; paraphrase, do not invent quotes. Invented material only where
+   the mechanism truly needs it (logic puzzles, everyday dialogues with plain Hebrew names).
+10. NO CLONES OF THE SOURCE. The mirrored real item must not be recognizable: keep the question TYPE and the KIND of
+   trap, but do not reproduce its skeleton (same paragraph moves, same option layout, same stem formula + same
+   distractor order). An expert who knows the real item should not be able to pair ours with it.
+11. SOURCE LINES. Real short texts usually carry a plain source line ("The following appeared in an article about ...",
+   "The following is an excerpt from a book by historian X ...") or none; avoid generic invented ones and avoid texts
+   that are obviously written-to-order puzzles (date arithmetic, rate/probability comparisons, unit mix-ups,
+   textbook statistics examples, "combine two psychology effects").
+12. LENGTH/DENSITY. Match the real distribution: no tiny two-sentence texts and no long semicolon chains; options
+   uneven and concrete, full of the text's own detail, not tidily balanced. Keys should not hinge on one planted hedge.
+13. Language examples: the real exam is translated from Hebrew, so items about English word formation stand out; if a
+   language example is needed, make it general (or about a language described in the text), not English-specific.
+
+ROUND 1, COMPLETIONS PART 2 - extra tells:
+14. KEY TELEGRAPHED. Our correct option was often the longest / most detailed / most hedged; or three near-synonym
+   distractors vs one unique key ("in recent years / in our own time / in the present day" vs "a century ago"); or a
+   mechanical grid of a phrase and its negation in every combination. Real option sets are uneven in a way that does
+   NOT point to the key, and distractors differ in meaning, sometimes oddly.
+15. One-blank items: real ones offer same-part-of-speech words that differ in MEANING; ours tested grammatical form
+   ("recognize right away / instantly recognizable") - never do that.
+16. No encyclopedic popular-science prose with one sentence-length blank; no "set up a rule then apply it" completions.
+17. Anglo-American settings (Oak Street bakery, quarterly reports, community theater, city council, assistant coach)
+   stand out; real ones are Israeli, historical, academic or plainly invented (Zviel, Gormezia, vitamin Q).
+
+ROUND 1, PARABLES / STRENGTHEN-WEAKEN - extra tells:
+18. INVENTED SAYINGS. Polished pastoral/nautical proverbs that fit the scenario exactly ("No one mops the deck while
+   the waves are still breaking over it") are the strongest tell. Real items use everyday comparisons (oatmeal, a
+   duck and a swan, uphills and downhills, a bridge over a river) or real, known sayings.
+19. NAMING EVERYTHING. Real items name things sparingly. Do not give quoted brand names, album/band titles, street or
+   climbing-wall names, or Hebrew-looking invented disease names in Nordic-sounding countries. At most one plain
+   invented country name (like Lundia) when needed.
+20. Dashes: plain hyphen " - " only; never the en dash "–".
+21. TEXTBOOK CONFOUNDS. One clean named-fallacy key (self-selection, base rate, survivorship, reporting rate) in a
+   GMAT-style setup reads as imitation; real strengthen/weaken items are rooted in a concrete, somewhat messy
+   situation, and distractors are odder and less tidy. Avoid famous psychology-textbook effects as scenarios.
+22. Use only stem formulas attested in the real sample (see your profile); avoid "could be a consideration against",
+   "could lead X to reconsider", "In X's case, what corresponds to", "casts doubt on the reliability of".
+23. Perfectly parallel option templates ("A woman who knows that... / A man who knows that...") are a tell; vary
+   options as the real ones do.
+
+24. SELF-CONTAINED. Real content is welcome, but the key must be decidable from the text/sentence itself, never from
+   outside knowledge (which philosopher held which view, what the Black Death did to wages). State what is needed.
+
+ROUND 2 LESSONS (retests: completions pt1 20/34 caught, parables/weaken 48/54 caught) - these REFINE earlier points:
+25. RULE 9 IS NARROWED: real famous people and encyclopedia facts belong in PARAGRAPH (topic 44) and READING items,
+   where real NITE quotes articles/books. In COMPLETIONS, PARABLES/COMPARISONS, STRENGTHEN/WEAKEN, SCIENCE and
+   LOGIC items, famous people / textbook cases (Darwin, Mendel, Kafka, Galileo, Aesop, Odysseus, Newton, Matthew
+   effect, Simpson's paradox, Berkeley admissions, endowment effect) are now the #1 tell. There, use SPECIFIC but
+   INVENTED people/places with slightly odd names (Professor Igleson, Zviel, Mr. Mekam, the Dolmanian sculptor
+   Ptolemy, Beznia, Upper Barbonia, Lundia and Sarvia, the Hothouse Theater, "vitamin Q", the Galilee Egg Company)
+   and odd concrete scenes (a compote, a king's chamomile, an orchestra's driver). Not generic actors ("A farmer",
+   "A company", "In a certain village") and not trendy first names.
+26. SAYINGS: stock English idioms (cart before the horse, gift horse, golden goose, stable door, teach a man to fish)
+   are as much a tell as polished invented proverbs. Real items use sayings that sound translated/foreign and a
+   little odd ("Every duck is a swan in its lover's eyes"), or concrete odd comparisons.
+27. OPTIONS - run python3 studio-build/lint_originals.py <GROUP> and make it pass: the key must not be the longest
+   option in more than 30% of items; distractors as detailed, specific and plausible as the key (never one-line
+   filler, never irrelevant trivia); no "since"/semicolon explanation only in the key; no qualifier in the key's
+   wording that gives it away; long options are often WRONG in real items.
+28. DISTRACTORS fail by subtle logic (stacked negation, counterfactual, a strengthener hidden among weakeners, a
+   reversed condition), not by crude antonym flips ("rose/fell", "accepted/rejected") or plain contradictions.
+29. STOCK TEMPLATES to avoid: "X hypothesized... To his surprise...", the harsh critic whose "not bad" is praise, the
+   new teaching method veteran teachers resist, one clean textbook flaw (base rate, reverse causation, selection,
+   better diagnosis) with an obvious answer. Real weaken items often need two steps.
+30. EVERY ITEM MUST HAVE EXACTLY ONE DEFENSIBLE ANSWER - round 2 found items with two keys or none (vo-41-101,
+   vo-41-119, vo-41-103). Re-solve every item cold after editing.
+31. NAMES, CORRECTED (replaces point 3's list): the anglicised Bible set (Joseph, David, Ruth, Miriam, Shlomo,
+   Esther) and stock surnames (Cohen, Levi, Mizrahi, Rosen, Katz, Shapira, Harel, Adler) are now a tell. Real items
+   use modern Israeli transliterations (Nechama, Chagit, Bentzi, Na'or, Gilad, Oded, Avner, Aya, Bella, Galit, Dorit,
+   Galia), often in Hebrew alphabetical order for sets of people (Aya, Bella, Galit / Amir, Bentzi, Galia, Dorit),
+   less common surnames, and odd invented institutions ("AppleNet Company", "Hatsavim School", the journal
+   "Microscope"). Vary names across the file; never reuse a name set.
+32. Real items do not lecture on a term (loanword, minimal pair, sentence types, symmetric relations) - avoid
+   textbook-term setups. Stems must not explain their own logic; options must not carry their own justification
+   ("since not every tree..."). Real quotes are obscure and long, clumsily translated - not famous Western maxims.
+33. Translation scars in real items: "if X - Y" conditionals, stems ending "... -", "According to what X", comma-
+   splice "however". Use these patterns naturally where they fit (do not insert spelling errors).
+34. DISTRACTORS MUST BE LOCALLY SENSIBLE. Each wrong completion option must read as coherent on its own and survive
+   the first blank; it fails only when the whole sentence's logic is followed. Never a self-contradicting option,
+   never an off-topic word at blank 1. Often two options differ in one slot only.
+35. No graded-intensifier option sets ("less / considerably / as expected / much more") and no hedged key
+   ("may ... may ...").
+36. RULES/ARRANGEMENT items (topic 48): real ones are small and everyday (three people's salaries, four cars, a
+   square table, a school's bylaws), wordy but logically FLAT. Avoid legal drafting ("- and only on such days -",
+   "Notwithstanding the above", defined terms in quotes, labelled taxonomies), abstract symmetric tables (salts
+   P/Q/R/S, caterpillars A/B/C), knights-and-knaves lying, puzzles on English spelling/letters, exhaustive 2x2
+   option layouts, recent specific years and shekel tiebreaks, and loophole-closing clauses whose only job is to
+   block alternative readings.
+37. SCIENCE items (topic 47): no famous textbook studies (Simpson/Berkeley, chess memory, endowment, Hawthorne,
+   thixotropy) and no taught named designs (lottery randomization, knockout mouse). Real ones use quirky invented
+   settings with Israeli names and odd details.
+38. READING (and any paragraph reference): real NITE points to places with a parenthetical line reference
+   ("'this' (line 12) refers to -"). Our site has no line numbers, so our convention mirrors it exactly with
+   "(paragraph N)" inside the stem: "The word 'surprisingly' (paragraph 3) ...", "In paragraph 2 (paragraph 2) ..." is
+   NOT needed - just use the parenthetical form where NITE would put "(line N)". Do not use "According to the second
+   paragraph" as the default retrieval stem. Mix stem formats as real sets do: slash-option blank fills, "'this'
+   (paragraph 3) refers to -", "explains the use of the word '...'", analogy items, and long tangled overlapping
+   options. No graph questions without a printed graph. Avoid facts dated after about 2020. No passage built
+   backwards for a structure question; keys must not lift a passage sentence verbatim; distractors close to the key,
+   not absolute straw men; chronology distractors not mere reorderings of the key. Israeli context where natural.
+39. RULE 9 CORRECTED AGAIN (applies to paragraph and reading items): famous encyclopedia stories told in the
+   "In 1747 the Scottish naval surgeon James Lind ..." template are a tell (Plato's cave, Fleming, Euler, Rosetta,
+   Galileo, Napoleon's height, Columbus/flat earth, Einstein-Bohr, Darwin, Silent Spring, Voynich, Mallory).
+   Real items are ARGUMENT or OPINION snippets on unusual subjects by little-known or invented writers (an essayist,
+   a historian with a plain name, "Professor Shore"), invented dialogues between two people with modern Israeli
+   names, or fictional countries - and some real content only as lightly held background. Safest pattern: an
+   invented or unnamed writer arguing a view (opinions, not factual claims about real people). Fewer dates and
+   figures; shorter and more abstract than an encyclopedia entry.
+40. Keys must not copy a sentence of the text; they should turn on a fine distinction (necessary vs sufficient,
+   "not necessarily", order of steps, near-identical options differing by one clause). Distractors are plausible
+   misreadings close to the text - never nonsense, never real trivia as options. Frames like "The following appeared
+   in an article about X:" introduce an OPINION, not a narrated history. No news-style recent facts.

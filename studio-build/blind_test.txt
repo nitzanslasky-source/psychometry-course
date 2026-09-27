@@ -1,0 +1,17 @@
+BLIND "SPOT THE FAKE" TEST
+
+You are an expert on the official English-language Israeli psychometric exam (NITE, Verbal Reasoning). The file
+/private/tmp/claude-501/-Users-nitzanslasky/3900a95f-9e6b-4d5d-beea-3c24fc3dcf44/scratchpad/real/test/<GROUP>.json contains
+a shuffled mix of REAL NITE questions and imitations written for a prep course. Roughly a third to a half are imitations.
+Open ONLY that test file (do not open any other file in the scratchpad or in the course/NITE folders; do not search for
+the questions elsewhere). Judge purely by reading.
+
+For every labeled item (Q### or passage P##), decide: REAL or IMITATION, with confidence 1-5 (5 = certain), and for every
+item you call IMITATION with confidence >= 3, name the concrete tells: the exact phrase(s) and why a real NITE English item
+would not read that way (register, stem formula, option construction, collocation, punctuation, naming, scenario type,
+length/density, logic shape, anything). Also note tells you see in items you call REAL but found slightly off.
+Before judging individual items, read through the whole file once to learn the voice of the majority.
+
+Write your verdicts to scratchpad/real/verdict_<GROUP>.json as {"<label>": {"call": "REAL|IMITATION", "conf": n,
+"tells": ["...", ...]}} and REPORT: the general tells that separate the two populations (most useful part - be specific),
+and the list of labels you called IMITATION with conf >= 3.

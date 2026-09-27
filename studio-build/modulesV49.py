@@ -14,7 +14,7 @@ SB_METHOD = ['The passage section', 'Base it on the text', 'Questions in order',
 SB_PASSAGE = ['Three approaches', 'Choices first?', 'Paragraph 1', 'Paragraph 2', 'Paragraph 3', 'Paragraph 4',
               'Paragraph 5', 'The solving order']
 
-SB_Q = ['Q1 · Sentence', 'Q2 · Paragraph 2', 'Q3 · Ration hypothesis', 'Q4 · Not correct', 'Q5 · The study',
+SB_Q = ['Q1 · Sentence', 'Q2 · Paragraph 2', 'Q3 · The refinement', 'Q4 · Not correct', 'Q5 · The study',
         'Q6 · Main idea']
 GQ = 'Reading Comprehension Passage'
 
@@ -122,11 +122,11 @@ lesson('vr49-method', 'Reading Comprehension', SB_METHOD, [
   A("See one? Skip it, mark it, solve it last appears", T('See a general question?  Skip it · mark it · solve it last', size=42, x=410, y=190, w=1140)),
   "That's exactly why we leave them for the end. Wherever one shows up — start, middle, end — you skip it.",
   "And mark it! So you don't reach the end of the test and discover you forgot a general question or two.",
-  A("How to spot one: \"according to the passage\" appears", T('How to spot one: it always says "according to the passage" / "from the passage"', size=36, x=410, y=280, w=1140)),
-  "How do you recognize a general question? It will always say \"according to the passage\" — always.",
+  A("How to spot one: \"according to the text\" appears", T('How to spot one: it always says "according to the text" / "from the text" / "in the text"', size=36, x=410, y=280, w=1140)),
+  "How do you recognize a general question? It will always refer to the text as a whole — \"according to the text\", \"implied in the text\" — always.",
   A("Exception: the last question appears", T('Exception: the last question may leave it out', size=38, x=410, y=360, w=1140)),
   "Except one case: if the general question is the last question, it doesn't have to say it. Sometimes it does, sometimes it doesn't.",
-  "A specific no-reference question won't say \"according to the passage\". That's how you tell them apart.",
+  "A specific no-reference question won't say \"according to the text\". That's how you tell them apart.",
  ]),
  dict(mode='concept', active=10, title='Names in questions', script=[
   "An important point — many students lose time on this.",
@@ -197,21 +197,21 @@ lesson('vr49-passage', 'Practice Passage', SB_PASSAGE, [
   D("Underline: \"tend to become smaller on islands … tend to become larger\""),
   "Paragraph one: island animals change size in a predictable direction — the large get smaller, the small get larger.",
   D("Bracket the elephants and the Flores rat and write \"examples\""),
-  "Then examples — dwarf elephants on Mediterranean islands, a giant rat on Flores.",
+  "Then examples — dwarf elephants on Mediterranean islands, a giant rat on Flores. And a name: Foster described the pattern in 1964, the island rule.",
   D("Underline \"a tendency rather than a law\""),
   "And a limit: it's a tendency, not a law.",
  ]),
  dict(mode='question', active=3, title='Paragraph 2', pre=[PSG(PID, [2])], script=[
   D("Circle the first sentence: \"The most widely accepted explanation concerns food.\""),
   "Paragraph two opens with its key sentence: the first explanation — food. That's the first sentence.",
-  D("Underline \"ration hypothesis\""),
-  "Scarce food favors smaller bodies. And inside it, a refinement: the ration hypothesis — food per animal, not the island's area.",
+  D("Underline \"Some researchers have refined this explanation\""),
+  "Scarce food favors smaller bodies. And inside it, a refinement: what matters is food per animal, not the island's area.",
  ]),
  dict(mode='question', active=4, title='Paragraph 3', pre=[PSG(PID, [3])], script=[
   D("Circle \"A second explanation\""),
   "Paragraph three — watch the connector: \"A second explanation\". That tells you its role: another explanation — predators.",
-  D("Underline \"The merit of this explanation\" and \"Its weakness\""),
-  "It ends by weighing it: one merit, one weakness.",
+  D("Underline \"accounts for both directions of change\" and \"On the other hand\""),
+  "It ends by weighing it: what it explains, and — \"on the other hand\" — where it fails.",
  ]),
  dict(mode='question', active=5, title='Paragraph 4', pre=[PSG(PID, [4])], script=[
   D("Underline \"compared the two explanations\""),
@@ -229,14 +229,14 @@ lesson('vr49-passage', 'Practice Passage', SB_PASSAGE, [
   "Now the questions. Before solving — sort them. Where does each one send us?",
   A("Sentence \"The pattern, however … predicts\" (paragraph 1) → specific appears", T('"The pattern, however, is a tendency … the pattern predicts" (paragraph 1) → specific', size=32, x=410, y=100, w=1140)),
   "The sentence question — paragraph one. Specific: on the exam it's a line question.",
-  A("\"According to paragraph 2…\" → specific appears", T('"According to paragraph 2, why…" → specific (paragraph)', size=32, x=410, y=160, w=1140)),
-  "\"According to paragraph 2\" — a paragraph question.",
-  A("Arvo and Deska … \"ration hypothesis\" → no reference appears", T('Arvo and Deska … "ration hypothesis" → no reference · names not in the passage', size=32, x=410, y=220, w=1140)),
-  "Arvo and Deska — names! Are they in the passage? We haven't met them. Don't hunt: they're made up for the question. And it doesn't say \"according to the passage\" — so it's specific with no reference. The ration hypothesis sits in paragraph two.",
-  A("\"According to paragraph 3…\" / \"…paragraph 4…\" → specific appears", T('"According to paragraph 3…" · "According to paragraph 4…" → specific', size=32, x=410, y=280, w=1140)),
+  A("\"…(paragraph 2)?\" → specific appears", T('"Why do large animals tend to become smaller… (paragraph 2)?" → specific (paragraph)', size=32, x=410, y=160, w=1140)),
+  "\"Paragraph 2\" in brackets — a paragraph question. On the exam you'd see a line number there.",
+  A("Two islands, goats … \"the refinement\" → no reference appears", T('Two islands, goats … "the refinement" → no reference · a case not in the text', size=32, x=410, y=220, w=1140)),
+  "Two islands, wild goats — are they in the passage? We haven't met them. Don't hunt: the case is made up for the question. And it doesn't say \"according to the text\" — so it's specific with no reference. The refinement of the food explanation sits in paragraph two.",
+  A("\"(paragraph 3)\" / \"described in paragraph 4\" → specific appears", T('"…the explanation from predators (paragraph 3)?" · "…the study described in paragraph 4…" → specific', size=32, x=410, y=280, w=1140)),
   "Paragraph three, paragraph four — paragraph questions.",
-  A("\"…the main idea of the passage?\" → general · last appears", T('"Which of the following best expresses the main idea of the passage?" → general · last', size=32, x=410, y=340, w=1140)),
-  "And the main idea of the passage — a general question. It comes last, so we solve it last anyway.",
+  A("\"…the main idea of the text?\" → general · last appears", T('"Which of the following best expresses the main idea of the text?" → general · last', size=32, x=410, y=340, w=1140)),
+  "And the main idea of the text — a general question. It comes last, so we solve it last anyway.",
   "So we solve in the order of the passage: paragraph one, two, the no-reference question on paragraph two, three, four — and the general question at the end.",
  ]),
 ], T49),
@@ -247,7 +247,7 @@ guided(0, 'vop-01-1', GQ, SB_Q, [
   "It points to one sentence in the first paragraph. On the exam this is a line question; here the sentence is quoted and its paragraph is given.",
  ], [
   ('Read the sentence', [
-   "Which of the following is closest in meaning to the sentence \"The pattern, however, is a tendency rather than a law … the pattern predicts\"?",
+   "Which of the following is closest in meaning to the sentence \"The pattern, however, is a tendency rather than a law … the pattern predicts\" (paragraph 1)?",
    "The choices are long — so first, to the passage.",
   ], PS(1)),
   ('Start one sentence before', [
@@ -268,34 +268,34 @@ guided(1, 'vop-01-2', GQ, SB_Q, [
   "Question two — a paragraph question. Medium difficulty.",
  ], [
   ('Go to paragraph 2', [
-   "According to paragraph 2, why do large animals tend to become smaller on islands?",
+   "Why do large animals tend to become smaller on islands, according to the most widely accepted explanation (paragraph 2)?",
    "Long choices again. Read only the question — and go to the paragraph.",
    D("Underline \"its animals cannot move elsewhere when that supply runs short\""),
    D("Underline \"smaller individuals are more likely to survive and leave offspring\""),
    "Here it is: food is limited, the animals can't leave, and a smaller body gets through a lean season. So over generations the smaller ones survive.",
   ], PS(2)),
   ('Now the choices', [
-   A("Little food · nowhere to go → the small survive appears", P('Limited food + nowhere to go → those that need less food survive and reproduce', size=30, y=190)),
+   A("Little food · nowhere to go → the small survive appears", P('Limited food + nowhere to go → those that need less food survive and leave offspring', size=30, y=190)),
    D("Cross out choice 1 — the area is not what matters"),
    "Choice one: the island's area is too small. The paragraph says the opposite — it's not the area, it's the food. Out.",
    D("Cross out choice 2 — predators belong to paragraph 3"),
    "Choice two: hiding from predators. That's the other explanation, in paragraph three — and it's about small animals. Out.",
    D("Cross out choice 4 — quality is never mentioned"),
-   "Choice four: poorer food. The paragraph talks about how much food, not how good. Out.",
+   "Choice four: poorer food, which cannot sustain a large body. The paragraph talks about how much food, not how good. Out.",
    D("Circle choice 3"),
-   "Food runs short, there's nowhere to go, and those that need less food survive. Choice 3.",
+   "Food runs short, and those that need less food survive and leave offspring. Choice 3.",
   ]),
  ], T49),
 guided(2, 'vop-01-3', GQ, SB_Q, [
   "Question three — an application question. Medium difficulty.",
   "Not \"pull a fact out of the passage\" — we need to understand an idea and apply it to a new case.",
  ], [
-  ('Names and no reference', [
-   "Two populations of the same wild goat live on the islands of Arvo and Deska, which are equal in area. The goats on Arvo are considerably smaller. According to the ration hypothesis, what could explain this?",
-   A("Names not in the passage → don't hunt appears", P('Arvo, Deska — not in the passage. Don\'t hunt for them.', size=30, y=250)),
-   "Names we never met in the passage. Don't look for them — they're invented for the question.",
-   A("No reference → bounded: paragraph 2 (the ration hypothesis) appears", P('No reference → the ration hypothesis: paragraph 2', size=30, y=310)),
-   "No reference — but it mentions the ration hypothesis, which we met in paragraph two, between the questions before and after it.",
+  ('A new case, no reference', [
+   "Two populations of the same wild goat live on two islands of equal area. The goats on the first island are considerably smaller. According to the refinement that some researchers proposed to the explanation from food, what could explain this?",
+   A("A new case → don't hunt for it in the text appears", P('Two islands, goats — a new case. It is not in the text. Don\'t hunt for it.', size=30, y=250)),
+   "A case we never met in the passage. Don't look for it — it's invented for the question.",
+   A("No reference → bounded: paragraph 2 (the refinement) appears", P('No reference → the refinement of the explanation from food: paragraph 2', size=30, y=310)),
+   "No reference — but it mentions the refinement of the explanation from food, which we met in paragraph two, between the questions before and after it.",
   ]),
   ('The hypothesis', [
    "Paragraph two: what matters is not the area of the island, but the amount of food it provides for each animal.",
@@ -305,11 +305,11 @@ guided(2, 'vop-01-3', GQ, SB_Q, [
   ('Apply it', [
    A("Smaller ← less food per animal appears", P('Smaller body ← less food for each animal', size=32, y=250)),
    D("Cross out choice 4 — reverses the islands"),
-   "Choice four: Deska is bare rock, Arvo is green. That gives Arvo more food — its goats should be larger, not smaller. Reversed. Out.",
+   "Choice four: the second island is bare rock, the first is green. That gives the first island more food — its goats should be larger, not smaller. Reversed. Out.",
    D("Cross out choices 1 and 3 — not about food per animal"),
-   "Choices one and three — distance from the mainland, predators — the ration hypothesis doesn't use them. Out.",
+   "Choices one and three — distance from the mainland, predators — the refinement doesn't use them. Out.",
    D("Circle choice 2"),
-   "Arvo provides less food for each goat than Deska does. Choice 2.",
+   "The first island provides less food for each goat than the second. Choice 2.",
   ]),
  ], T49),
 guided(3, 'vop-01-4', GQ, SB_Q, [
@@ -317,7 +317,7 @@ guided(3, 'vop-01-4', GQ, SB_Q, [
   "Here's the method: check each choice against the paragraph. Every one that is true — cross out.",
  ], [
   ('Mark what\'s true', [
-   "According to paragraph 3, which of the following is not correct regarding the explanation from predators?",
+   "Which of the following is not correct regarding the explanation from predators (paragraph 3)?",
    D("Underline \"being very large protects a grazing animal\""),
    D("Underline \"it accounts for both directions of change by a single cause\""),
    D("Underline \"whereas the explanation from food is more convincing…\""),
@@ -341,7 +341,7 @@ guided(4, 'vop-01-5', GQ, SB_Q, [
   "The trap in these: choices that sound like the study, but don't do what the question asks.",
  ], [
   ('What did the study test?', [
-   "According to paragraph 4, which of the following findings would have supported the explanation from predators?",
+   "Which of the following findings in the study described in paragraph 4 would have supported the explanation from predators?",
    D("Underline \"if the explanation from predators were correct, the lizards on the snake-free islands should differ in size … even where the supply of insects was similar\""),
    "The logic: the researchers wrote down what the predator explanation predicts — a size difference between islands with and without snakes, even when the food is the same.",
    D("Underline \"the lizards' size corresponded closely to the supply of insects\""),
@@ -349,7 +349,7 @@ guided(4, 'vop-01-5', GQ, SB_Q, [
   ], PS(4)),
   ('The choices', [
    D("Cross out choice 2 — the actual finding: it supports food"),
-   "Choice two: size corresponds to the number of insects. That's the real result — it supports the food explanation. Out.",
+   "Choice two: size corresponds closely to the number of insects they feed on. That's the real result — it supports the food explanation. Out.",
    D("Cross out choice 3 — the caution: an excuse, not support"),
    "Choice three: the snakes arrived recently. That's the researchers' caution — it may excuse the predator explanation, but it doesn't support it. Out.",
    D("Cross out choice 4 — supports neither"),
@@ -360,10 +360,10 @@ guided(4, 'vop-01-5', GQ, SB_Q, [
  ], T49),
 guided(5, 'vop-01-6', GQ, SB_Q, [
   "Last question — the general one. A hard question.",
-  "It's the last question, so it doesn't have to say \"according to the passage\". We left it for the end anyway.",
+  "It's the last question, so it doesn't have to say \"according to the text\". We left it for the end anyway.",
  ], [
   ('Use what you gathered', [
-   "Which of the following best expresses the main idea of the passage?",
+   "Which of the following best expresses the main idea of the text?",
    "Do we need to read the whole passage now? No. We've read almost all of it on the way.",
    A("P1: a tendency, not a law · P5: size = a compromise that islands shift appears", P('Paragraph 1: a tendency, not a law · paragraph 5: size is a compromise — islands shift it', size=30, y=160)),
    "Paragraph one: a tendency, not a law. Two explanations, a study — and paragraph five, the bottom line: size is a compromise among pressures, and an island shifts the balance.",
@@ -374,7 +374,7 @@ guided(5, 'vop-01-6', GQ, SB_Q, [
    D("Cross out choice 4 — only half the pattern"),
    "Choice four: island animals are smaller. What about the small animals that grow larger? Only half the story. Out.",
    D("Circle choice 2"),
-   "Size is not fixed — it's a compromise that island conditions can alter. Choice 2.",
+   "Size is not fixed — it's a compromise among pressures that island conditions can change. Choice 2.",
    "That's the method: specific questions in order, general questions at the end. That wraps up reading comprehension — and the verbal section as a whole.",
   ]),
  ], T49),
@@ -386,8 +386,8 @@ MEMORY = [
   tables=[dict(title='Question types', head=['Type', 'How to spot it', 'What to read'], rows=[
     ['Line', '"(lines 6–7)"', 'From one sentence before; several lines → just those'],
     ['Paragraph', '"According to the third paragraph…"', 'The paragraph — its idea'],
-    ['No reference', 'No place given, no "according to the passage"', 'Between the question before and after'],
-    ['General', '"according to the passage" (the last question may omit it)', 'Skip, mark, solve last — use what you gathered'],
+    ['No reference', 'No place given, no "according to the text"', 'Between the question before and after'],
+    ['General', '"according to the text" (the last question may omit it)', 'Skip, mark, solve last — use what you gathered'],
    ]),
    dict(title='Steps', head=['#', 'Do this'], rows=[
     ['1', 'Read the question — without the choices'],

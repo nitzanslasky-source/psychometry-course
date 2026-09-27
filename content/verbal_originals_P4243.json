@@ -6,17 +6,20 @@
    "category": "Claims and Logic",
    "mirrors": "Winter 2022 §1 Q15",
    "replaces": "",
-   "stem": "Three claims are given:\nA. Noga is taller than Liat.\nB. Liat has no teammate who is taller than she is.\nC. Noga and Liat are not teammates.\nWhich of the following is correct?",
+   "stem": "Below are three claims regarding the employees in a certain government ministry:\nA. Tamar earns more than Yoav.\nB. None of the employees in Yoav's department earns more than him.\nC. Tamar does not work in Yoav's department.\nWhich of the following is true?",
    "options": [
-    "Claim A necessarily follows from claims B and C together",
-    "Claim B necessarily follows from claims A and C together",
-    "Claim C necessarily follows from claims A and B together",
-    "None of the claims necessarily follows from the other two together"
+    "If claims B and C are true, claim A is also necessarily true",
+    "Claim B can be inferred from claims A and C",
+    "If claims A and B are true, there is no possibility that claim C is not true",
+    "None of the three claims can be inferred from the other two, but also none of them contradicts the other two"
    ],
    "answer": 3,
-   "explanation": "Noga is taller than Liat (A), and no teammate of Liat's is taller than her (B), so Noga cannot be her teammate (C). B and C leave Noga's height open, and A and C say nothing about Liat's other teammates.",
+   "explanation": "A and B: Tamar earns more than Yoav, and no one in his department does, so she is not in his department - C cannot be false (3). B and C say nothing about Tamar's salary (1), A and C say nothing about Yoav's colleagues (2), and (4) is false because C follows from A and B.",
    "feel": 5,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "להלן שלוש טענות בנוגע לעובדים במשרד ממשלתי מסוים:\nא. תמר משתכרת יותר מיואב.\nב. אף אחד מן העובדים במחלקה של יואב אינו משתכר יותר ממנו.\nג. תמר אינה עובדת במחלקה של יואב.\nאיזה מן המשפטים הבאים נכון?\n(1) אם טענות ב ו-ג נכונות, גם טענה א נכונה בהכרח\n(2) את טענה ב אפשר להסיק מטענות א ו-ג\n(3) אם טענות א ו-ב נכונות, אין אפשרות שטענה ג אינה נכונה\n(4) אף אחת משלוש הטענות אינה ניתנת להסקה משתי האחרות, אך גם אף אחת מהן אינה סותרת את שתי האחרות",
+   "style_donor": "July 2014 First Section Q11"
   },
   {
    "id": "vo-42-102",
@@ -24,17 +27,20 @@
    "category": "Claims and Logic",
    "mirrors": "April 2016 §1 Q10",
    "replaces": "",
-   "stem": "Of the six instruments in a school's music room, three - the violin, the cello and the harp - are string instruments, and three - the flute, the trumpet and the drum - are not. Four students each took a different instrument from the room. What is certainly true of the instruments the students took?",
+   "stem": "A museum lends paintings to exhibitions abroad. Of the six works by a certain painter in its collection, three are oil paintings and three are watercolors. This year one of the watercolors was being restored, and four of the other five works were sent to an exhibition in Paris. Which of the following is necessarily true?",
    "options": [
-    "Exactly one of them is not a string instrument",
-    "At most one of them is a string instrument",
-    "Two of them are string instruments and two are not",
-    "At least one of them is a string instrument"
+    "Both watercolors that were not being restored were sent to Paris",
+    "Exactly one watercolor was shown in Paris",
+    "Most of the works sent to Paris were oil paintings",
+    "At least two oil paintings were sent to Paris"
    ],
    "answer": 4,
-   "explanation": "Four different instruments cannot all come from the three that are not string instruments, so at least one is a string instrument. (1), (2) and (3) each fix a number that the data leave open.",
+   "explanation": "Five works were available: three oils and two watercolors. Four were sent, so at most two watercolors and at least two oils (4). Two and two, or three oils and one watercolor, are both possible, which refutes (1), (2) and (3).",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "מוזיאון משאיל ציורים לתערוכות בחו\"ל. מבין ששת הציורים של צייר מסוים שבאוספו, שלושה הם ציורי שמן ושלושה ציורי צבעי מים. השנה היה אחד מציורי צבעי המים בשימור, וארבעה מחמשת האחרים נשלחו לתערוכה בפריז. איזה מן הבאים נכון בהכרח?",
+   "style_donor": "February 2017 First Section Q9"
   },
   {
    "id": "vo-42-103",
@@ -42,17 +48,20 @@
    "category": "Claims and Logic",
    "mirrors": "December 2015 §2 Q17",
    "replaces": "",
-   "stem": "Keren: \"It seems to me that the lake's water level was low this spring.\"\nAvi: \"Why do you think so?\"\nKeren: \"Because the ferry began operating late this year.\"\nAvi: \"You are mistaken. ____.\"\nWhich of the following best completes Avi's words?",
+   "stem": "The advanced choir of a conservatory accepts only candidates who have passed an audition and, within a week of it, a written test in music theory. In addition, a candidate is accepted only if there is a free place in his voice range. Ronit passed both the audition and the written test, but was not accepted. Which of the following could explain this?",
    "options": [
-    "If the water level is high in spring, the water warms early, and the ferry begins operating late only if the water warms late",
-    "If the water level is low in spring, the water warms early, and the ferry begins operating late only if the water warms late",
-    "If the ferry begins operating late, the water warms early, and a high water level causes the water to warm late",
-    "If the ferry begins operating early, the water warms early, and a low water level causes the water to warm late"
+    "Ronit's audition took place three days before her written test",
+    "There was no free place in the voice range in which Ronit sings",
+    "Ronit's written test was graded only after the results of the auditions had been published",
+    "Ronit had applied to the choir a year earlier and had been rejected"
    ],
    "answer": 2,
-   "explanation": "In (2), a late ferry means the water warmed late, so it did not warm early, so the level was not low - the opposite of Keren's conclusion. (1) and (3) lead from a late ferry to a low level and support Keren; (4) never leads back from the ferry to the water level.",
+   "explanation": "The three conditions are necessary; the only one that (2) says was not met is the free place. In (1) the test came within a week of the audition, so the conditions were met; (3) and (4) are irrelevant to the conditions.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "המקהלה המתקדמת של קונסרבטוריון מקבלת רק מועמדים שעברו אודישן, ובתוך שבוע ממנו גם מבחן בכתב בתורת המוזיקה; נוסף על כך, מועמד מתקבל רק אם יש מקום פנוי במנעד הקול שלו. רונית עברה את האודישן ואת המבחן בכתב, אך לא התקבלה. איזה מן הבאים יכול להסביר זאת?",
+   "style_donor": "Spring 2019 Second Section Q10"
   },
   {
    "id": "vo-42-104",
@@ -60,17 +69,20 @@
    "category": "Claims and Logic",
    "mirrors": "September 2015 §2 Q17",
    "replaces": "",
-   "stem": "At the Dekel community center, the following holds for every member of the youth group:\nA. No member who plays in the orchestra also sings in the choir.\nB. Every member who does not attend the pottery workshop sings in the choir.\nIf so, it is not possible that Yael, a member of the youth group, takes part in -",
+   "stem": "Every student in a certain boarding school participates in at least one of three activities: the orchestra, the choir and the drama club. It is known that among the students of the boarding school:\n- no one who plays in the orchestra also sings in the choir.\n- whoever does not participate in the drama club sings in the choir.\nWhich of the following is not possible?",
    "options": [
-    "the orchestra only",
-    "the pottery workshop and the orchestra",
-    "the choir and the pottery workshop",
-    "the pottery workshop only"
+    "Hila plays in the orchestra and does not participate in any other activity",
+    "Hila participates in the drama club and also plays in the orchestra",
+    "Every student who sings in the choir also participates in the drama club",
+    "None of the students of the boarding school plays in the orchestra"
    ],
    "answer": 1,
-   "explanation": "Orchestra only means no pottery, so by B Yael sings in the choir, which A forbids for an orchestra player. Each of the other combinations satisfies both rules.",
+   "explanation": "Orchestra only means no drama club, so by the second rule Hila sings in the choir, which the first rule forbids for an orchestra player (1). (2) breaks no rule; (3) is possible if every student is in the drama club; (4) is possible.",
    "feel": 5,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "כל תלמיד בפנימייה מסוימת משתתף לפחות באחת משלוש פעילויות: התזמורת, המקהלה וחוג הדרמה. ידוע כי בקרב תלמידי הפנימייה:\n- אף מי שמנגן בתזמורת אינו שר גם במקהלה.\n- מי שאינו משתתף בחוג הדרמה שר במקהלה.\nאיזה מן הבאים אינו אפשרי?\n(1) הילה מנגנת בתזמורת ואינה משתתפת בשום פעילות אחרת\n(2) הילה משתתפת בחוג הדרמה וגם מנגנת בתזמורת\n(3) כל תלמיד ששר במקהלה משתתף גם בחוג הדרמה\n(4) אף אחד מתלמידי הפנימייה אינו מנגן בתזמורת",
+   "style_donor": "Spring 2019 Second Section Q9"
   },
   {
    "id": "vo-42-105",
@@ -78,17 +90,20 @@
    "category": "Claims and Logic",
    "mirrors": "October 2014 §2 Q10",
    "replaces": "",
-   "stem": "A relation between two people is called \"symmetric\" if, whenever it holds between the first and the second, it also holds between the second and the first. It is called \"reflexive\" if it holds between every person and themselves. For example, \"is heavier than\" is neither: if Dan is heavier than Ruth, Ruth is not heavier than Dan, and no one is heavier than themselves. Which of the following relations is both symmetric and reflexive?",
+   "stem": "Five members of a chess club played a tournament in which each member played one game against each of the others. None of the games ended in a draw. The club's chairman won all his games, and its youngest member lost all of his. Which of the following is necessarily true?",
    "options": [
-    "was born in the same month as",
-    "is a sibling of",
-    "is no heavier than",
-    "is the teacher of"
+    "At least one of the other three players won exactly two games",
+    "The other three players each won the same number of games",
+    "The chairman won more games than any two of the other players together",
+    "No player won exactly three games"
    ],
    "answer": 1,
-   "explanation": "Being born in the same month works in both directions and holds of everyone with themselves. \"Is a sibling of\" is symmetric only; \"is no heavier than\" is reflexive only; \"is the teacher of\" is neither.",
+   "explanation": "The three others each lost to the chairman and beat the youngest member, and played three games among themselves: either one win each (2, 2, 2 wins) or 2-1-0 (3, 2, 1 wins). Either way someone has exactly two wins (1). The 2-1-0 case refutes (2) and (4); in the 1-1-1 case two players together have 4 wins, refuting (3).",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "במועדון שחמט שיחקו חמישה חברים טורניר שבו כל חבר שיחק משחק אחד נגד כל אחד מן האחרים. אף משחק לא הסתיים בתיקו. יושב ראש המועדון ניצח בכל משחקיו, והחבר הצעיר ביותר הפסיד בכל משחקיו. איזה מן הבאים נכון בהכרח?",
+   "style_donor": "February 2016 First Section Q14"
   },
   {
    "id": "vo-42-106",
@@ -96,17 +111,20 @@
    "category": "Claims and Logic",
    "mirrors": "September 2013 §1 Q7",
    "replaces": "",
-   "stem": "A hypothesis and two findings from two separate studies are presented below.\nHypothesis: the Arvan lizard lays its eggs only in sandy soil.\nFinding A: in the lizard's region, only the coast has sandy soil.\nFinding B: no Arvan lizard eggs have been found on the coast.\nWhich of the following claims is correct?",
+   "stem": "Zoologists studying a certain species of lizard hypothesized that the females lay their eggs only in sandy soil, where the eggs are protected from the heat. A survey of the area in which the species lives found that sandy soil occurs there only in a narrow strip along the coast, about two kilometers wide. A second survey, carried out a year later along the same strip, did not find a single egg of the species. Which of the following is true?",
    "options": [
-    "Each of the findings on its own weakens the hypothesis",
-    "The combination of the two findings weakens the hypothesis",
-    "One of the findings supports the hypothesis, and the other weakens it",
-    "The combination of the two findings supports the hypothesis"
+    "The first survey weakens the hypothesis, and the second adds nothing to this",
+    "The two surveys together weaken the hypothesis, although neither weakens it on its own",
+    "The second survey weakens the hypothesis, but the first strengthens it",
+    "The surveys support the hypothesis, since they show that the lizards avoid the coast, where the soil does not suit them"
    ],
    "answer": 2,
-   "explanation": "If the lizard laid eggs only in sandy soil, then by A it would lay them only near the coast, and by B none are found there. Each finding alone is compatible with the hypothesis; only together do they conflict with it.",
+   "explanation": "If eggs are laid only in sandy soil, the first survey places them in the coastal strip and the second finds none there - only together do they weaken the hypothesis (2). Each survey alone is compatible with it.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "זואולוגים שחקרו מין מסוים של לטאה שיערו שהנקבות מטילות את ביציהן רק בקרקע חולית, שבה הביצים מוגנות מן החום. סקר של האזור שבו חי המין מצא שקרקע חולית יש בו רק ברצועה צרה לאורך החוף, ברוחב של כשני קילומטרים. סקר שני, שנערך שנה לאחר מכן לאורך אותה רצועה, לא מצא אף ביצה אחת של המין. איזה מן הבאים נכון?",
+   "style_donor": "July 2014 First Section Q10"
   },
   {
    "id": "vo-42-107",
@@ -114,17 +132,20 @@
    "category": "Claims and Logic",
    "mirrors": "Autumn 2021 §2 Q15",
    "replaces": "",
-   "stem": "Rina invites only people who do not invite her. Gil invites only Rina. Gil is the only person Tal does not invite. Hence -",
+   "stem": "Claim A: Ofra invites to her home only people who do not invite her to theirs.\nClaim B: Tzachi invites only Ofra, and Yoni invites everyone except Tzachi.\nIf both claims are true, Ofra -",
    "options": [
-    "Rina invites Gil and invites Tal",
-    "Rina invites Tal and does not invite Gil",
-    "Rina does not invite Gil and does not invite Tal",
-    "Rina invites Gil and does not invite Tal"
+    "invites Tzachi and Yoni",
+    "invites only Yoni",
+    "does not invite either of them",
+    "invites Tzachi, but Yoni does not invite her"
    ],
    "answer": 3,
-   "explanation": "Gil invites Rina, and Tal, who invites everyone except Gil, invites Rina too. Since Rina invites only people who do not invite her, she invites neither of them.",
+   "explanation": "Tzachi invites Ofra, and Yoni, who invites everyone except Tzachi, invites Ofra too; since Ofra invites only those who do not invite her, she invites neither (3). (4) fails already on its second half.",
    "feel": 5,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "טענה א: עפרה מזמינה לביתה רק את מי שאינו מזמין אותה.\nטענה ב: צחי מזמין רק את עפרה, ויוני מזמין את כולם חוץ מצחי.\nאם שתי הטענות נכונות, עפרה -\n(1) מזמינה את צחי ואת יוני\n(2) מזמינה רק את יוני\n(3) אינה מזמינה אף אחד מהם\n(4) מזמינה את צחי, אך יוני אינו מזמין אותה",
+   "style_donor": "Summer 2022 Second Section Q9"
   },
   {
    "id": "vo-42-108",
@@ -132,17 +153,20 @@
    "category": "Claims and Logic",
    "mirrors": "Spring 2019 §2 Q13",
    "replaces": "",
-   "stem": "Dana is married to Ido, and she has exactly one brother-in-law. Which of the following is not possible?",
+   "stem": "In a certain family there are four children. Their names, from the eldest to the youngest, are: Eliav, Orly, Tzuriel and Yifat. Each of them has brown eyes or blue eyes, and it is known that:\na. Eliav and Orly have eyes of different colors.\nb. Every child in the family who has blue eyes has an older brother or sister with brown eyes.\nWhich of the following is not possible?",
    "options": [
-    "Dana has only brothers, and Ido has one brother, who is not married",
-    "Dana has two sisters, and one of them is married. Ido has only one sister",
-    "Dana has one sister. Ido is an only son",
-    "Dana has only sisters, and none of them is married. Ido is an only child"
+    "Tzuriel and Yifat both have blue eyes, like their older sister",
+    "Yifat, the youngest, is the only one in the family whose eyes are brown, apart from the eldest",
+    "Three of the children have blue eyes",
+    "Orly has brown eyes"
    ],
    "answer": 4,
-   "explanation": "Dana's possible brothers-in-law are Ido's brothers and the husbands of her sisters (and, in a broader sense, the husbands of Ido's sisters). In (4) Ido has no siblings and none of Dana's sisters has a husband, so Dana has no brother-in-law at all. In each of the other cases exactly one can exist.",
+   "explanation": "Eliav has no older sibling, so by b his eyes cannot be blue; they are brown, and by a Orly's are blue - (4) is impossible. (1): Eliav is the older brown-eyed sibling of all. (2): Eliav and Yifat brown, Orly and Tzuriel blue. (3): all except Eliav blue.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "במשפחה מסוימת ארבעה ילדים. שמותיהם, מן הבכור ועד הצעירה, הם: אליאב, אורלי, צוריאל ויפעת. לכל אחד מהם עיניים חומות או עיניים כחולות, וידוע כי:\nא. לאליאב ולאורלי עיניים בצבעים שונים.\nב. לכל ילד במשפחה שעיניו כחולות יש אח או אחות מבוגרים ממנו שעיניהם חומות.\nאיזה מן הבאים אינו אפשרי?\n(1) לצוריאל וליפעת עיניים כחולות, כמו לאחותם המבוגרת\n(2) יפעת, הצעירה, היא היחידה במשפחה שעיניה חומות, מלבד הבכור\n(3) לשלושה מן הילדים עיניים כחולות\n(4) לאורלי עיניים חומות",
+   "style_donor": "Summer 2020 Second Section Q11"
   },
   {
    "id": "vo-42-109",
@@ -150,17 +174,20 @@
    "category": "Claims and Logic",
    "mirrors": "Summer 2022 §1 Q8",
    "replaces": "",
-   "stem": "There are three boxes on a shelf. Each box holds a ball and a cube. Each of the two objects can be either black or white. Given:\nA. Only one of the cubes is white.\nB. There are more black cubes than white balls.\nBased on this information, it necessarily follows that -",
+   "stem": "Each of the four articles that were submitted to a certain journal was written in one language only - Hebrew or Arabic. It is known that of these articles:\nA. only one was written in Arabic.\nB. the number of articles that were rejected is greater than the number of articles in Hebrew that were accepted.\nWhich of the following is necessarily true?",
    "options": [
-    "at least one box holds two white objects",
-    "there are more white objects than black objects",
-    "at least one box holds two black objects",
-    "if a box holds a black object, it also holds a white object"
+    "The article in Arabic was rejected",
+    "At least three of the four articles were rejected",
+    "At least two of the articles in Hebrew were rejected",
+    "If the article in Arabic was accepted, then none of the articles in Hebrew was accepted"
    ],
    "answer": 3,
-   "explanation": "Two cubes are black (A), so there is at most one white ball (B), and at least two balls are black. Two black cubes and two black balls in three boxes must share a box. (2) and (4) are in fact impossible, and (1) may or may not be true.",
+   "explanation": "Let h be the number of accepted Hebrew articles and a = 1 if the Arabic one was accepted. Rejected = 4 - h - a > h gives h ≤ 1, so at least two of the three Hebrew articles were rejected (3). h = 1, a = 1 (two rejected) refutes (1), (2) and (4).",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "כל אחד מארבעת המאמרים שהוגשו לכתב עת מסוים נכתב בשפה אחת בלבד - עברית או ערבית. ידוע כי מבין מאמרים אלה:\nא. רק אחד נכתב בערבית.\nב. מספר המאמרים שנדחו גדול ממספר המאמרים בעברית שהתקבלו.\nאיזה מן המשפטים הבאים נכון בהכרח?\n(1) המאמר בערבית נדחה\n(2) לפחות שלושה מארבעת המאמרים נדחו\n(3) לפחות שניים מן המאמרים בעברית נדחו\n(4) אם המאמר בערבית התקבל, אז אף אחד מן המאמרים בעברית לא התקבל",
+   "style_donor": "Summer 2023 Second Section Q11"
   },
   {
    "id": "vo-42-110",
@@ -168,17 +195,20 @@
    "category": "Claims and Logic",
    "mirrors": "Summer 2023 §2 Q7",
    "replaces": "",
-   "stem": "If Dor is Eli's \"marvek,\" and Eli is Fadi's \"marvek,\" then Fadi cannot be Dor's \"marvek.\" What could be the meaning of \"marvek\"?",
+   "stem": "Five runners participated in a race, and no two of them finished at the same moment.\nGiven:\n- Moti finished after Nava and before Shula.\n- Doron finished immediately after Shula.\n- Hodaya did not finish last.\nWhich of the following is necessarily true?",
    "options": [
-    "coworker",
-    "grandson",
-    "neighbor",
-    "competitor"
+    "Nava finished first in the race",
+    "Doron finished last",
+    "Hodaya finished in second place",
+    "Shula finished before Hodaya"
    ],
    "answer": 2,
-   "explanation": "If Dor is Eli's grandson and Eli is Fadi's grandson, Fadi is Dor's great-grandfather and cannot be his grandson. Coworkers, neighbors and competitors can form a closed circle of three.",
+   "explanation": "Nava, Moti and Shula finish in that order and Doron right after Shula, so the last runner is Doron or Hodaya; Hodaya was not last (2). The possible orders are H-N-M-S-D, N-H-M-S-D and N-M-H-S-D, so (1) and (3) are not necessary and (4) never holds.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "חמישה רצים השתתפו במרוץ, ואף שניים מהם לא סיימו באותו רגע.\nנתון:\n- מוטי סיים אחרי נאוה ולפני שולה.\n- דורון סיים מיד אחרי שולה.\n- הודיה לא סיימה אחרונה.\nאיזה מן המשפטים הבאים נכון בהכרח?\n(1) נאוה סיימה ראשונה במרוץ\n(2) דורון סיים אחרון\n(3) הודיה סיימה במקום השני\n(4) שולה סיימה לפני הודיה",
+   "style_donor": "February 2017 First Section Q8"
   },
   {
    "id": "vo-42-111",
@@ -186,17 +216,20 @@
    "category": "Claims and Logic",
    "mirrors": "Summer 2023 §2 Q11",
    "replaces": "",
-   "stem": "Each of the paintings shown at the Tamar Gallery's spring exhibition was painted by a single artist. It is known that at this exhibition:\nA. All the paintings done in watercolor were by local artists.\nB. All the paintings by foreign artists were for sale.\nWhich of the following best completes the sentence below?\nTherefore, ____ that \"Harbor at Dawn,\" an oil painting by a local artist that was for sale, was shown at the exhibition, since this ____.",
+   "stem": "Given:\n- Some of the members of the photography club in a certain town are also members of the chess club.\n- None of the members of the chess club lives outside the town.\nWhich of the following statements about the members of the photography club is necessarily true?",
    "options": [
-    "it is possible / does not contradict either statement",
-    "it is not possible / contradicts statement A",
-    "it is not possible / contradicts statement B",
-    "it is not possible / contradicts the combination of the two statements"
+    "Some of them live in the town",
+    "All of them live in the town",
+    "Most of them are also members of the chess club",
+    "If one of them lives in the town, he is also a member of the chess club"
    ],
    "answer": 1,
-   "explanation": "A speaks only about watercolors and B only about foreign artists; an oil painting by a local artist is neither, so neither statement rules it out. \"Local\" and \"for sale\" merely echo the statements' results.",
+   "explanation": "The members of both clubs are chess-club members, so they live in the town (1). Nothing is said about photography members who are not in the chess club, so (2), (3) and (4) do not follow.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "נתון:\n- חלק מחברי חוג הצילום ביישוב מסוים הם גם חברי חוג השחמט.\n- אף אחד מחברי חוג השחמט אינו גר מחוץ ליישוב.\nאיזה מן המשפטים הבאים בנוגע לחברי חוג הצילום נכון בהכרח?\n(1) חלק מהם גרים ביישוב\n(2) כולם גרים ביישוב\n(3) רובם חברים גם בחוג השחמט\n(4) אם אחד מהם גר ביישוב, הוא חבר גם בחוג השחמט",
+   "style_donor": "Summer 2024 First Section Q11"
   },
   {
    "id": "vo-42-112",
@@ -204,17 +237,20 @@
    "category": "Claims and Logic",
    "mirrors": "Summer 2024 §1 Q11",
    "replaces": "",
-   "stem": "Given:\n- Old trees never bloom early.\n- Early-blooming trees are the only ones that are pruned in winter.\nWhich of the following statements about the fig tree in Noam's garden is necessarily true?",
+   "stem": "An agronomist claims that in the orchard that he manages, only trees that bloomed early are pruned in the winter, and that an old tree never blooms early. Which of the following claims follows from the agronomist's words?",
    "options": [
-    "If it is pruned in winter, then it is not old",
-    "If it is not pruned in winter, then it is old",
-    "If it does not bloom early, then it is old",
-    "If it is not old, then it is not pruned in winter"
+    "If a tree in the orchard was pruned in the winter - it is not old",
+    "A young tree in the orchard that bloomed early is always pruned in the winter",
+    "If a tree in the orchard is not old, it bloomed early, but it was not necessarily pruned in the winter",
+    "Every tree that was not pruned in the winter is an old tree"
    ],
    "answer": 1,
-   "explanation": "Pruned in winter → blooms early → not old. (2) and (3) start from what is missing and draw a result the rules never give; (4) flips the arrow wrongly - the valid flip is \"old → not pruned in winter.\"",
+   "explanation": "Pruned → bloomed early → not old, so (1). (2) reverses the first rule (early blooming is necessary for pruning, not sufficient); (3) reverses the second rule; (4) reverses the whole chain.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "אגרונום טוען כי במטע שהוא מנהל גוזמים בחורף רק עצים שפרחו מוקדם, וכי עץ זקן אינו פורח מוקדם לעולם. איזו מן הטענות הבאות נובעת מדברי האגרונום?\n(1) אם עץ במטע נגזם בחורף - הוא אינו זקן\n(2) עץ צעיר במטע שפרח מוקדם נגזם תמיד בחורף\n(3) אם עץ במטע אינו זקן, הוא פרח מוקדם, אך לא בהכרח נגזם בחורף\n(4) כל עץ שלא נגזם בחורף הוא עץ זקן",
+   "style_donor": "Summer 2026 Second Section Q8"
   },
   {
    "id": "vo-42-113",
@@ -222,17 +258,20 @@
    "category": "Claims and Logic",
    "mirrors": "Summer 2026 §2 Q8",
    "replaces": "",
-   "stem": "A veteran mechanic claims that if a car's engine overheats - the red warning light comes on. Which of the following claims is equivalent to the mechanic's claim?",
+   "stem": "According to the manufacturer of a certain incubator, whenever the temperature inside it rises above 38 degrees, a warning light comes on, and when it rises above 40 degrees, an alarm sounds as well. Which of the following, if it happened, would show that the manufacturer's claim is wrong?",
    "options": [
-    "If, and only if, a car's engine overheats - the red warning light comes on",
-    "A lit warning light always means an overheating engine, but an overheating engine does not necessarily turn the light on",
-    "An overheating engine always turns the warning light on, but a lit warning light does not necessarily mean an overheating engine",
-    "If, and only if, the red warning light comes on - the car's engine is overheating"
+    "The warning light came on when the temperature inside the incubator was only 37 degrees",
+    "The alarm sounded while the warning light was off",
+    "The temperature reached 41 degrees and the warning light came on, but the alarm did not sound",
+    "The temperature stayed at 39 degrees for an hour, during which the light was on and the alarm sounded twice"
    ],
    "answer": 3,
-   "explanation": "The claim runs one way only: overheating → light. (3) says exactly that and denies the reverse. (1) and (4) add the reverse direction; (2) keeps only the reverse.",
+   "explanation": "The claim gives sufficient conditions only: above 38 → light, above 40 → alarm. Only (3), 41 degrees without an alarm, violates it. It does not say that the light or the alarm works only in those cases, so (1), (2) and (4) do not refute it.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "לדברי יצרן של אינקובטור מסוים, בכל פעם שהטמפרטורה בתוכו עולה על 38 מעלות נדלקת נורת אזהרה, וכשהיא עולה על 40 מעלות נשמעת גם אזעקה. איזה מן הבאים, אילו קרה, היה מראה שטענת היצרן אינה נכונה?",
+   "style_donor": "July 2015 First Section Q9"
   },
   {
    "id": "vo-42-114",
@@ -240,17 +279,20 @@
    "category": "Claims and Logic",
    "mirrors": "Summer 2026 §1 Q13",
    "replaces": "",
-   "stem": "Four musicians - Adi, Boaz, Carmela and Dov - auditioned for the city orchestra.\n- Adi and Dov have each played professionally for more than five years.\n- Boaz has played professionally for two years.\n- Carmela has never played professionally.\nThe orchestra's announcement stressed that \"candidates with less than five years of professional experience will not be accepted.\" If this rule is enforced, which of the following situations is not possible?",
+   "stem": "According to the regulations of a certain poetry prize, the prize can be given only to a poet who has published at least two books of poetry, at least one of them within the five years before the award. The second condition does not apply to poets who have won the prize before, but the first does. Which of the following poets definitely cannot receive the prize this year?",
    "options": [
-    "Only Adi and Dov were accepted into the orchestra",
-    "Adi, Boaz and Carmela were not accepted into the orchestra",
-    "Dov was not accepted into the orchestra",
-    "Carmela and Adi were accepted into the orchestra"
+    "a poet who won the prize in the past and has published three books",
+    "a poet whose second book came out last year",
+    "a poet who has published two books, both of them seven years ago, and who won the prize in the past",
+    "a poet who never won the prize and whose last book, out of four, came out six years ago"
    ],
    "answer": 4,
-   "explanation": "Carmela has no professional experience, so the rule excludes her. The rule only rules people out; it does not require anyone to be accepted, so (1), (2) and (3) are all possible.",
+   "explanation": "(4) meets the first condition but has no book in the last five years and is not exempt. (1) and (3) are past winners with at least two books, so the second condition does not apply; (2) has two books, one of them last year.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "על פי תקנון של פרס שירה מסוים, הפרס יכול להינתן רק למשורר שפרסם לפחות שני ספרי שירה, ואחד מהם בחמש השנים שלפני מתן הפרס. משוררים שכבר זכו בפרס בעבר פטורים מן התנאי השני, אך לא מן הראשון. איזה מן המשוררים הבאים בוודאות לא יכול לקבל את הפרס השנה?\n(1) משורר שזכה בפרס בעבר ופרסם שלושה ספרים\n(2) משורר שספרו השני יצא לאור בשנה שעברה\n(3) משורר שפרסם שני ספרים, שניהם לפני שבע שנים, ושזכה בפרס בעבר\n(4) משורר שמעולם לא זכה בפרס ושספרו האחרון, מתוך ארבעה, יצא לפני שש שנים",
+   "style_donor": "Spring 2019 First Section Q14"
   },
   {
    "id": "vo-42-115",
@@ -258,17 +300,20 @@
    "category": "Claims and Logic",
    "mirrors": "July 2010 §1 Q15",
    "replaces": "",
-   "stem": "Hagit: \"After a year of working with Oren, I have reached two conclusions about him. First, Oren would never turn down an assignment that involves travel. Second, Oren might accept an assignment that involves no travel.\"\nRavid: \"Then one of your conclusions is wrong. I offered Oren an assignment that ____.\"\nWhich of the following would logically complete Ravid's words?",
+   "stem": "Ilana told her friend that after a year of working with Yigal she had reached two conclusions about him: he will never refuse an assignment that involves travel, and it is possible that he will agree to an assignment that does not involve travel. Her friend told her that she is mistaken, and brought as proof an assignment that she had offered Yigal a month earlier. Which of the following could have been that assignment and Yigal's response to it?",
    "options": [
-    "involved travel, and he accepted it",
-    "involved no travel, and he turned it down",
-    "involved travel, and he turned it down",
-    "involved no travel, and he accepted it"
+    "An assignment in the office, which Yigal agreed to only after he was promised a trip later on",
+    "An assignment that did not involve any travel, and Yigal refused it",
+    "A two-day assignment in Eilat, which Yigal refused",
+    "An assignment abroad, which Yigal accepted immediately, although he had said before that he was tired of traveling"
    ],
    "answer": 3,
-   "explanation": "Only a travel assignment that Oren refused contradicts the first conclusion. The second says only that he might accept; one refusal of a no-travel assignment does not refute it, and (1) and (4) fit both conclusions.",
+   "explanation": "Only a travel assignment that Yigal refused (3) refutes \"he will never refuse\". The second conclusion says only that he may agree, so one refusal of a no-travel assignment (2) does not refute it; (1) and (4) are consistent with both conclusions.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "אילנה סיפרה לחברתה שאחרי שנה של עבודה עם יגאל הגיעה לשתי מסקנות לגביו: הוא לעולם לא יסרב למשימה הכרוכה בנסיעה, וייתכן שיסכים למשימה שאינה כרוכה בנסיעה. חברתה אמרה לה שהיא טועה, והביאה כראיה משימה שהציעה ליגאל חודש קודם לכן. איזו מן הבאות יכולה להיות המשימה, ומה עלה בגורלה?\n(1) משימה במשרד, שיגאל הסכים לה רק לאחר שהובטחה לו נסיעה בהמשך\n(2) משימה שלא הייתה כרוכה בשום נסיעה, ויגאל סירב לה\n(3) משימה בת יומיים באילת, שיגאל סירב לה\n(4) משימה בחו\"ל, שיגאל קיבל מיד, אף שאמר קודם לכן שנמאס לו לנסוע",
+   "style_donor": "Spring 2019 First Section Q8"
   },
   {
    "id": "vo-42-116",
@@ -276,17 +321,20 @@
    "category": "Claims and Logic",
    "mirrors": "July 2010 §1 Q16",
    "replaces": "",
-   "stem": "A hotel hosted eight delegates: two from Spain, two from Chile, two from Kenya and two from Japan. The delegates stayed in four rooms. It is known that -\nA. Each room was shared by two delegates.\nB. No two delegates from the same country shared a room.\nC. One of the rooms was shared by a delegate from Japan and a delegate from Spain.\nTherefore, there must be -",
+   "stem": "Eight delegates - two from each of four countries: Spain, Chile, Kenya and Japan - stayed in a hotel, two in each room, and no two delegates from the same country slept in the same room. In one of the rooms a delegate from Japan slept with a delegate from Spain. Which of the following is necessarily true?",
    "options": [
-    "at least one room shared by a delegate from Kenya and a delegate from Chile",
-    "at least one room shared by a delegate from Chile and a delegate from Japan",
-    "more than one room shared by a delegate from Japan and a delegate from Spain",
-    "more than one room shared by a delegate from Kenya and a delegate from Chile"
+    "In at least one of the rooms, a delegate from Kenya slept with a delegate from Chile",
+    "One of the delegates from Chile slept with a delegate from Japan",
+    "The second delegate from Japan did not sleep with the second delegate from Spain",
+    "Exactly two rooms were shared by delegates from Kenya and from Chile"
    ],
    "answer": 1,
-   "explanation": "The other three rooms hold one Japanese, one Spanish, two Chilean and two Kenyan delegates. Only two of the four Chileans and Kenyans can be paired with the Japanese and the Spaniard, so at least one Chilean shares with a Kenyan. The other choices fail in some arrangement.",
+   "explanation": "The other three rooms hold one Japanese, one Spanish, two Chilean and two Kenyan delegates. At most two of the four Kenyans and Chileans can be paired with the Japanese and the Spanish delegate, so the other two share a room - and they cannot both be from the same country (1). The pairings J-S, K-C, K-C and K-J, K-C, C-S refute (2), (3) and (4).",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "שמונה נציגים - שניים מכל אחת מארבע מדינות: ספרד, צ'ילה, קניה ויפן - התארחו במלון, שניים בכל חדר, ואף שני נציגים מאותה מדינה לא לנו באותו חדר. באחד החדרים לן נציג מיפן עם נציג מספרד. איזה מן המשפטים הבאים נכון בהכרח?\n(1) לפחות באחד החדרים לן נציג מקניה עם נציג מצ'ילה\n(2) אחד הנציגים מצ'ילה לן עם נציג מיפן\n(3) הנציג השני מיפן לא לן עם הנציג השני מספרד\n(4) בדיוק שני חדרים היו משותפים לנציגים מקניה ומצ'ילה",
+   "style_donor": "Spring 2019 Second Section Q13"
   },
   {
    "id": "vo-42-117",
@@ -294,17 +342,20 @@
    "category": "Claims and Logic",
    "mirrors": "July 2010 §1 Q19",
    "replaces": "",
-   "stem": "A book club has a rule about recommending books. It follows from the rule that Ayelet may recommend books to Boris but not to Carmel, while Carmel may recommend books to Ayelet but not to Boris. Which of the following could this rule be?",
+   "stem": "In a certain poetry circle, members comment on one another's poems according to a fixed rule. Under this rule, Nurit may comment on Menachem's poems but not on Tzofit's, and Tzofit may comment on Nurit's poems but not on Menachem's. Which of the following could be the rule?",
    "options": [
-    "A member may recommend books to all the members who are younger than they are, and only to them",
-    "A member may recommend books to all the members whom they themselves brought into the club, and only to them",
-    "A member may recommend books to all the members who live on their street, and only to them",
-    "A member may recommend books to all the members who read French, and only to them"
+    "Each member may comment on the poems of any member who joined the circle after him",
+    "A member may comment only on the poems of members whom he himself recommended for admission",
+    "Members of the same workshop group may comment on each other's poems",
+    "A member may comment on the poems of any member whose poems have not yet been published"
    ],
    "answer": 2,
-   "explanation": "Ayelet brought in Boris and Carmel brought in Ayelet, while Carmel did not bring in Boris - no conflict. With age, Boris would be younger than Carmel, so Carmel could recommend to him (1); living on the same street works both ways (3); reading French would have to be both true and false of Boris (4).",
+   "explanation": "(2): Nurit recommended Menachem, Tzofit recommended Nurit and not Menachem - no conflict. (1): Menachem joined after Nurit and Nurit after Tzofit, so Tzofit could comment on Menachem. (3) is symmetric, so Nurit could comment on Tzofit. (4): Nurit may comment on Menachem, so his poems are unpublished, and then Tzofit could comment on them too.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בחוג שירה מסוים מעירים החברים על שיריהם של חברים אחרים לפי כלל קבוע. לפי הכלל, נורית רשאית להעיר על שיריו של מנחם אך לא על שיריה של צופית, וצופית רשאית להעיר על שיריה של נורית אך לא על שיריו של מנחם. איזה מן הבאים יכול להיות הכלל?",
+   "style_donor": "Summer 2026 First Section Q13"
   },
   {
    "id": "vo-42-118",
@@ -312,17 +363,20 @@
    "category": "Claims and Logic",
    "mirrors": "July 2010 §2 Q15",
    "replaces": "",
-   "stem": "- The heron greets only the frog.\n- The otter trusts all the animals, except for the animals that the heron greets.\n- The eagle envies all the animals, except for the animals that the otter trusts.\nTherefore, the eagle -",
+   "stem": "The heron greets only the frog. The otter trusts all the animals except those that the heron greets, and the eagle envies all the animals except those that the otter trusts. Therefore, the eagle envies -",
    "options": [
-    "envies all the animals",
-    "envies only the frog",
-    "does not envy any animal",
-    "envies all the animals, except for the heron"
+    "the heron and the otter",
+    "the frog only",
+    "no animal",
+    "all the animals that the heron does not greet"
    ],
    "answer": 2,
-   "explanation": "The otter trusts every animal except the frog, so the only animal it does not trust - and the only one the eagle envies - is the frog.",
+   "explanation": "The otter trusts every animal except the frog, so the only animal the eagle envies is the frog (2). (1) and (4) name animals that the otter trusts, which the eagle therefore does not envy.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "האנפה מברכת לשלום רק את הצפרדע. הלוטרה סומכת על כל בעלי החיים חוץ מאלה שהאנפה מברכת לשלום, והנשר מקנא בכל בעלי החיים חוץ מאלה שהלוטרה סומכת עליהם. לפיכך, הנשר מקנא ב-\n(1) אנפה ובלוטרה\n(2) צפרדע בלבד\n(3) אף בעל חיים\n(4) כל בעלי החיים שהאנפה אינה מברכת לשלום",
+   "style_donor": "Summer 2023 Second Section Q7"
   },
   {
    "id": "vo-42-119",
@@ -330,17 +384,20 @@
    "category": "Claims and Logic",
    "mirrors": "July 2010 §2 Q20",
    "replaces": "",
-   "stem": "- Every judge is either a musician or a critic, but not both.\n- All the guests are from abroad.\nThe addition of which of the following would lead to the conclusion that no guest is a judge?",
+   "stem": "At a certain festival, every judge is a musician or a critic, but not both, and all the guests came from abroad. Adding which of the following statements makes it possible to conclude that none of the guests is a judge?",
    "options": [
-    "Anyone from abroad is a musician and a critic",
-    "Anyone who is not a judge is from abroad",
-    "Anyone who is a musician and a critic is from abroad",
-    "Anyone from abroad who is a critic is a musician"
+    "Whoever came from abroad is a musician and also a critic",
+    "Whoever is not a judge came from abroad",
+    "Some of the guests are musicians who do not write criticism",
+    "Every critic from abroad also plays music, though not necessarily as a professional"
    ],
    "answer": 1,
-   "explanation": "With (1), every guest is both a musician and a critic, which no judge can be. (3) reverses the needed arrow; (4) leaves room for a guest who is a musician only; (2) says nothing about the guests.",
+   "explanation": "With (1) every guest is both a musician and a critic, which no judge can be. (2) reverses the needed direction; (3) says nothing about the other guests; (4) leaves room for a guest who is a musician only and is a judge.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בפסטיבל מסוים כל שופט הוא מוזיקאי או מבקר, אך לא שניהם, וכל האורחים באו מחו\"ל. הוספת איזה מן המשפטים הבאים מאפשרת להסיק שאף אחד מן האורחים אינו שופט?\n(1) מי שבא מחו\"ל הוא מוזיקאי וגם מבקר\n(2) מי שאינו שופט בא מחו\"ל\n(3) חלק מן האורחים הם מוזיקאים שאינם כותבים ביקורת\n(4) כל מבקר מחו\"ל גם מנגן, אם כי לא בהכרח כמקצוען",
+   "style_donor": "July 2015 First Section Q12"
   },
   {
    "id": "vo-42-120",
@@ -348,17 +405,20 @@
    "category": "Claims and Logic",
    "mirrors": "July 2011 §1 Q16",
    "replaces": "",
-   "stem": "Given:\n- Only on the third floor are there offices with a balcony.\n- Only offices with a balcony can have a coffee machine.\n- Some corner offices have a coffee machine.\nWhich of the following conclusions does not follow from the information given?",
+   "stem": "In a certain office building there are four floors.\nGiven:\nA. Only the third floor has offices with a balcony.\nB. A coffee machine can be found only in an office that has a balcony.\nC. In some of the corner offices there is a coffee machine.\nWhich of the following does not necessarily follow from this information?",
    "options": [
-    "Some corner offices have a balcony",
-    "No office without a balcony has a coffee machine",
+    "There is no coffee machine in any office on the fourth floor",
+    "At least one of the corner offices is on the third floor",
     "Only corner offices have a balcony",
-    "Some corner offices are on the third floor"
+    "Some of the offices that have a balcony are corner offices"
    ],
    "answer": 3,
-   "explanation": "The corner offices with a coffee machine must have a balcony and be on the third floor, which gives (1), (2) and (4). Nothing rules out non-corner offices with a balcony, so (3) does not follow.",
+   "explanation": "The corner offices with a coffee machine have a balcony (B) and are on the third floor (A), which gives (2) and (4); an office on the fourth floor has no balcony and so no coffee machine (1). Nothing rules out non-corner offices with a balcony, so (3) does not follow.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בבניין משרדים מסוים ארבע קומות.\nנתון:\nא. משרדים עם מרפסת יש רק בקומה השלישית.\nב. מכונת קפה יכולה להימצא רק במשרד שיש לו מרפסת.\nג. בחלק מן המשרדים הפינתיים יש מכונת קפה.\nאיזה מן הבאים אינו נובע בהכרח ממידע זה?\n(1) אין מכונת קפה באף משרד בקומה הרביעית\n(2) לפחות אחד מן המשרדים הפינתיים נמצא בקומה השלישית\n(3) רק למשרדים פינתיים יש מרפסת\n(4) חלק מן המשרדים שיש להם מרפסת הם משרדים פינתיים",
+   "style_donor": "Summer 2022 First Section Q8"
   },
   {
    "id": "vo-42-121",
@@ -366,17 +426,20 @@
    "category": "Claims and Logic",
    "mirrors": "July 2011 §2 Q19",
    "replaces": "",
-   "stem": "Taken together, the following four statements about the brothers Amit and Yoav contain a contradiction. Which statement could be omitted with the contradiction remaining?",
+   "stem": "Below are four claims about the brothers Elad and Moshik:\nA. Moshik has read the novel \"The White City\".\nB. Elad has read every novel that Moshik has read.\nC. Only one of the brothers has read \"The White City\".\nD. Elad has read only one novel in his life.\nThe four claims together contain a contradiction. Which of them can be omitted without the contradiction disappearing?",
    "options": [
-    "Yoav has read the novel \"Glass Orchards.\"",
-    "There is no novel that Yoav has read and Amit has not read.",
-    "Only one of the brothers has read the novel \"Glass Orchards.\"",
-    "Amit has read only one novel."
+    "claim A",
+    "claim B",
+    "claim C",
+    "claim D"
    ],
    "answer": 4,
-   "explanation": "(1) and (2) mean that Amit has also read \"Glass Orchards,\" which contradicts (3). The contradiction stands without (4); dropping any of the other three removes it.",
+   "explanation": "A and B mean that Elad has also read \"The White City\", which contradicts C. The contradiction stands without D; dropping A, B or C removes it (with D, Elad's one novel is \"The White City\").",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "להלן ארבע טענות על האחים אלעד ומושיק:\nא. מושיק קרא את הרומן \"העיר הלבנה\".\nב. כל רומן שמושיק קרא - גם אלעד קרא.\nג. רק אחד מן האחים קרא את \"העיר הלבנה\".\nד. אלעד קרא בחייו רומן אחד בלבד.\nארבע הטענות יחד מכילות סתירה. איזו מהן אפשר להשמיט בלי שהסתירה תיעלם?\n(1) טענה א\n(2) טענה ב\n(3) טענה ג\n(4) טענה ד",
+   "style_donor": "July 2014 First Section Q9"
   },
   {
    "id": "vo-42-122",
@@ -384,17 +447,20 @@
    "category": "Claims and Logic",
    "mirrors": "July 2012 §1 Q18",
    "replaces": "",
-   "stem": "Statement A: Only in the museum's old wing are there halls without air conditioning.\nStatement B: None of the halls in the old wing are air-conditioned.\nClaim: If the map hall is air-conditioned, it is not in the old wing.\nThis claim follows -",
+   "stem": "A guide at a museum said: \"Only the halls in the old wing have no air conditioning.\" Another guide said: \"None of the halls in the old wing is air-conditioned.\" A visitor concluded that the hall in which the ancient maps are displayed, which is air-conditioned, is not in the old wing. On which of the guides' statements can the visitor's conclusion be based?",
    "options": [
-    "from statement A but not from statement B",
-    "only from the combination of the two statements",
-    "from statement B but not from statement A",
-    "from each of the statements separately"
+    "On the first guide's statement only",
+    "Only on the two statements together",
+    "On the second guide's statement, even without the first",
+    "On neither statement, even when the two are taken together"
    ],
    "answer": 3,
-   "explanation": "B says old wing → no air conditioning; flipped and negated, air conditioning → not in the old wing, which is the claim. A says no air conditioning → old wing, which says nothing about air-conditioned halls.",
+   "explanation": "The second statement says: old wing → not air-conditioned; hence air-conditioned → not in the old wing (3). The first says only that halls without air conditioning are in the old wing, which leaves room for air-conditioned halls there.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "מדריך במוזיאון אמר: \"רק באולמות האגף הישן אין מיזוג אוויר.\" מדריך אחר אמר: \"אף אחד מאולמות האגף הישן אינו ממוזג.\" מבקר הסיק שהאולם שבו מוצגות המפות העתיקות, שהוא ממוזג, אינו נמצא באגף הישן. על איזו מאמירות המדריכים יכולה מסקנתו של המבקר להתבסס?",
+   "style_donor": "February 2017 Second Section Q11"
   },
   {
    "id": "vo-42-123",
@@ -402,17 +468,20 @@
    "category": "Claims and Logic",
    "mirrors": "July 2012 §2 Q19",
    "replaces": "",
-   "stem": "Rachel claimed that all the hardcover books in her shop were in English, and that she had no used books that were not signed by their author. Eli browsed the shop and found one book that disproved both claims. Which of the following cannot be the book Eli found?",
+   "stem": "The owner of a bookstore claimed:\n- All the books with a hard cover in the store are in Hebrew.\n- Every used book in the store is signed by its author.\nA customer found in the store a book that proved both claims false. Which of the following cannot be true of this book?",
    "options": [
-    "a paperback",
-    "a used book",
-    "a hardcover",
-    "a book not signed by its author"
+    "It has a soft cover",
+    "It is used and was printed abroad",
+    "It is not in Hebrew",
+    "Its author did not sign it"
    ],
    "answer": 1,
-   "explanation": "To disprove the first claim the book must be a hardcover not in English; to disprove the second it must be used and unsigned. So it is a hardcover and cannot be a paperback.",
+   "explanation": "To refute the first claim the book must be a hardcover that is not in Hebrew; to refute the second it must be used and unsigned. So it is a hardcover and cannot have a soft cover (1); (2), (3) and (4) are all true of it.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בעל חנות ספרים טען:\n- כל הספרים בכריכה קשה שבחנות הם בעברית.\n- כל ספר משומש בחנות חתום בידי מחברו.\nלקוח מצא בחנות ספר אחד שהראה ששתי הטענות אינן נכונות. מה מן הבאים לא ייתכן שנכון לגבי ספר זה?\n(1) יש לו כריכה רכה\n(2) הוא משומש ונדפס בחו\"ל\n(3) הוא אינו בעברית\n(4) מחברו לא חתם עליו",
+   "style_donor": "July 2014 Second Section Q12"
   },
   {
    "id": "vo-42-124",
@@ -420,17 +489,20 @@
    "category": "Claims and Logic",
    "mirrors": "July 2014 §1 Q9",
    "replaces": "",
-   "stem": "It is known that some runners in the club are faster than Ilan.\nBelow are two statements:\nA. Ilan is heavier than every runner who is faster than he is.\nB. Ilan is faster than every runner he is heavier than.\nWhich of the following is true of the above statements?",
+   "stem": "A certain residents' committee decided on the following procedure: a proposal is accepted if a majority of the committee members vote for it. At one of the meetings, the proposal to pave the old road was accepted. Afterwards, two claims were made about this vote:\nA. Every committee member who voted for the proposal lives on the hill.\nB. Not one of the committee members who live on the hill voted for the proposal.\nWhich of the following is true?",
    "options": [
-    "The two statements mean the same thing",
-    "The two statements contradict each other",
-    "Statement B necessarily follows from statement A",
-    "Statement A necessarily follows from statement B"
+    "Claim B follows from claim A",
+    "Claims A and B cannot both be true",
+    "If claim B is true, claim A is also necessarily true",
+    "Claim A is not consistent with the fact that the proposal was accepted"
    ],
    "answer": 2,
-   "explanation": "Take a runner who is faster than Ilan. By A, Ilan is heavier than that runner; then by B, Ilan is faster than them - impossible. Because such a runner exists, the statements cannot both be true.",
+   "explanation": "The proposal was accepted, so at least one member voted for it; by A he lives on the hill, and by B no one on the hill voted for it - a contradiction (2). B does not follow from A (1) nor A from B (3), and A alone is consistent with the vote if most members live on the hill (4).",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "ועד תושבים מסוים קבע את הנוהל הבא: הצעה מתקבלת אם רוב חברי הוועד מצביעים בעדה. באחת הישיבות התקבלה ההצעה לסלול את הדרך הישנה. לאחר מכן נטענו שתי טענות בנוגע להצבעה זו:\nא. כל חבר ועד שהצביע בעד ההצעה גר על הגבעה.\nב. אף לא אחד מחברי הוועד הגרים על הגבעה הצביע בעד ההצעה.\nאיזה מן המשפטים הבאים נכון?\n(1) טענה ב נובעת מטענה א\n(2) טענות א ו-ב אינן יכולות להיות נכונות שתיהן\n(3) אם טענה ב נכונה, גם טענה א נכונה בהכרח\n(4) טענה א אינה מתיישבת עם העובדה שההצעה התקבלה",
+   "style_donor": "Summer 2025 First Section Q9"
   },
   {
    "id": "vo-42-125",
@@ -438,17 +510,20 @@
    "category": "Claims and Logic",
    "mirrors": "July 2014 §2 Q12",
    "replaces": "",
-   "stem": "Shai, a farmer, runs a sprinkler and a water pump according to the following rules:\n- The sprinkler runs at night and is off during the day.\n- The pump can run only when Shai is in the field.\n- Shai is never in the field at night.\nWhich of the following situations is not possible?",
+   "stem": "In a certain museum, the old-map room is open to visitors only on Tuesdays and Thursdays. The drawers in which the maps are kept may be opened only when the curator is present, and the curator works at the museum only on Sundays, Mondays and Thursdays. Which of the following situations necessarily involves breaking one of the rules?",
    "options": [
-    "Shai is not in the field and the sprinkler is running",
-    "The pump and the sprinkler are both running",
-    "The pump is off and the sprinkler is running",
-    "The pump and the sprinkler are both off"
+    "On a Thursday, a group of visitors looked at maps that the curator had taken out of the drawers for them",
+    "On a Tuesday, visitors in the old-map room were shown a map that had been taken out of its drawer that morning",
+    "On a Monday, the curator opened the drawers to check the condition of the maps while the room was closed",
+    "On a Wednesday, the room was closed and the drawers stayed locked"
    ],
    "answer": 2,
-   "explanation": "If the pump runs, Shai is in the field, so it is daytime and the sprinkler is off. Each of the other situations fits some time of day.",
+   "explanation": "On Tuesday the curator is not at the museum, so a drawer opened that morning was opened without him (2). On Thursday both the room and the curator are available (1); (3) and (4) break no rule.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "במוזיאון מסוים פתוח חדר המפות הישנות למבקרים רק בימי שלישי וחמישי. את המגירות שבהן שמורות המפות מותר לפתוח רק בנוכחות האוצר, והאוצר עובד במוזיאון רק בימי ראשון, שני וחמישי. איזה מן המצבים הבאים כרוך בהכרח בהפרת אחד הכללים?",
+   "style_donor": "February 2016 Second Section Q6"
   },
   {
    "id": "vo-42-126",
@@ -456,17 +531,20 @@
    "category": "Claims and Logic",
    "mirrors": "July 2015 §1 Q12",
    "replaces": "",
-   "stem": "Uri claims that every restaurant in town that is not near the sea is either noisy or expensive, but not both. The existence of which of the following restaurants proves that Uri is mistaken?",
+   "stem": "An article on Hebrew translations states: \"Of the novels of the nineteenth century that were translated into Hebrew, every one was either published in installments in a newspaper in its country of origin, or became a best seller there - but not both.\" Which of the following claims about four novels contradicts what is claimed in the article?",
    "options": [
-    "A restaurant near the sea that is quiet and cheap",
-    "A restaurant far from the sea that is quiet and expensive",
-    "A restaurant near the sea that is noisy and expensive",
-    "A restaurant far from the sea that is quiet and cheap"
+    "A novel that came out in 1850, appeared in installments in a newspaper and became a best seller, and was never translated into Hebrew",
+    "A novel that came out in 1905 and was translated into Hebrew in 1930, appeared in installments and in the same year became a best seller in its country",
+    "A novel from 1872 that was translated into Hebrew, and appeared in installments in a newspaper; however, only a few copies of it were sold in its country",
+    "A novel from 1868, translated into Hebrew in 1911, that became a best seller in its country of origin after it appeared there in installments"
    ],
    "answer": 4,
-   "explanation": "Uri's claim covers only restaurants far from the sea, and requires exactly one of the two traits; (4) has neither. (1) and (3) are near the sea, and (2) fits the claim.",
+   "explanation": "The article covers nineteenth-century novels translated into Hebrew and allows exactly one of the two traits; (4) is such a novel with both. (1) was not translated, (2) is from the twentieth century, and (3) has only one trait.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "במאמר על תרגומים לעברית נכתב: \"מן הרומנים של המאה התשע-עשרה שתורגמו לעברית, כל אחד פורסם בהמשכים בעיתון בארץ מוצאו, או היה שם לרב מכר - אך לא שניהם.\" איזו מן הטענות הבאות על ארבעה רומנים סותרת את הנטען במאמר?\n(1) רומן שיצא לאור בשנת 1850, הופיע בהמשכים בעיתון והיה לרב מכר, ומעולם לא תורגם לעברית\n(2) רומן שיצא לאור בשנת 1905 ותורגם לעברית בשנת 1930, הופיע בהמשכים ובאותה שנה היה לרב מכר בארצו\n(3) רומן משנת 1872 שתורגם לעברית, והופיע בהמשכים בעיתון; אולם בארצו נמכרו ממנו עותקים ספורים בלבד\n(4) רומן משנת 1868, שתורגם לעברית בשנת 1911, שהיה לרב מכר בארץ מוצאו לאחר שהופיע שם בהמשכים",
+   "style_donor": "Summer 2020 Second Section Q7"
   },
   {
    "id": "vo-42-127",
@@ -474,17 +552,20 @@
    "category": "Claims and Logic",
    "mirrors": "February 2017 §1 Q8",
    "replaces": "",
-   "stem": "At a certain moment, there are exactly four visitors at an amusement park's go-kart track: Avner, Batya, Gidi and Dalia.\nGiven:\n- Avner is 11 years old.\n- Batya is only watching.\n- Gidi is 30 years old.\n- Dalia is driving a go-kart.\nWhich of the following additional pieces of information makes it possible to determine that, at that moment, the rule strictly prohibiting anyone under the age of 14 from driving a go-kart was not broken?",
+   "stem": "A swimming club allows members under 16 to swim in the deep pool only if a lifeguard is with them or if they have passed the advanced swimming test. Which of the following situations breaks the club's rule?",
    "options": [
-    "Avner is only watching and Gidi is driving a go-kart",
-    "Dalia is 13 years old and Avner is only watching",
-    "Batya is 10 years old and Gidi is driving a go-kart",
-    "Avner is only watching and Dalia is 16 years old"
+    "A 14-year-old who has not passed the advanced test swam in the deep pool while a lifeguard watched him",
+    "A 15-year-old who passed the advanced test last year swam alone in the deep pool",
+    "A 17-year-old who has never taken the advanced test swam alone in the deep pool",
+    "A 13-year-old who has not yet passed the advanced test swam in the deep pool with no lifeguard present"
    ],
    "answer": 4,
-   "explanation": "Only Avner (too young to drive) and Dalia (driving, age unknown) need checking; (4) settles both. (1) and (3) leave Dalia's age open, and in (2) the rule is broken.",
+   "explanation": "Under 16 in the deep pool requires a lifeguard or the advanced test; (4) has neither. (1) has a lifeguard, (2) has passed the test, and (3) is over 16.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "מועדון שחייה מתיר לחברים מתחת לגיל 16 לשחות בבריכה העמוקה רק אם מציל נמצא איתם או אם עברו את מבחן השחייה המתקדם. איזה מן המצבים הבאים מפר את כלל המועדון?",
+   "style_donor": "July 2015 Second Section Q13"
   },
   {
    "id": "vo-43-101",
@@ -492,17 +573,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Winter 2022 §2 Q9",
    "replaces": "",
-   "stem": "A clipping is a word formed by cutting off part of a longer word while keeping its meaning: \"exam,\" for instance, was formed from \"examination\" and means exactly the same thing. Clippings are common in everyday speech, and many speakers are not even aware that the short form was once part of a longer word. Clippings are of two kinds. In a back clipping, the end of the longer word is removed and its beginning is kept: \"lab\" from \"laboratory,\" for example. In a fore clipping, the beginning of the longer word is removed and its end is kept: \"phone\" from \"telephone,\" for example. Thus \"bus,\" formed from \"omnibus,\" is a ____ clipping, whereas \"memo,\" formed from \"memorandum,\" is a ____ clipping. Which of the following completes the sentence correctly?",
+   "stem": "Researchers who studied the speech of villages in the Galilee in the 1950s found that older residents avoided many words that young people brought back from the cities. At first the researchers assumed that the older residents did not understand these words, but they later found that most of them understood the words well and even used them when speaking with outsiders. Which of the following conclusions is best supported by these findings?",
    "options": [
-    "back / back",
-    "back / fore",
-    "fore / back",
-    "fore / fore"
+    "Most of the older residents did not understand the words that the young people brought from the cities",
+    "The young people stopped using the new words when they came back to the villages",
+    "The older residents avoided the new words mainly when speaking among themselves",
+    "The researchers' first assumption was correct with regard to only a few of the words"
    ],
    "answer": 3,
-   "explanation": "\"Bus\" keeps the end of \"omnibus\" (fore clipping); \"memo\" keeps the beginning of \"memorandum\" (back clipping). The trap is to mix up the part that is removed with the part that is kept.",
+   "explanation": "The older residents understood the words and used them with outsiders, so their avoidance was limited to talk among themselves (3). (1) contradicts the later finding; (2) and (4) are not supported (the finding was about most residents, not about some words).",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "חוקרים שבחנו את הדיבור בכפרים בגליל בשנות החמישים מצאו שהתושבים המבוגרים נמנעו ממילים רבות שהביאו הצעירים מן הערים. תחילה הניחו החוקרים שהמבוגרים אינם מבינים את המילים, אך לאחר מכן מצאו שרובם הבינו אותן היטב, ואף השתמשו בהן כשדיברו עם אנשים מבחוץ. איזו מן המסקנות הבאות נתמכת בצורה הטובה ביותר בממצאים אלה?",
+   "style_donor": "July 2014 First Section Q14"
   },
   {
    "id": "vo-43-102",
@@ -510,17 +594,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Spring 2026 §2 Q9",
    "replaces": "",
-   "stem": "In an interview about her new cookbook, a well-known chef was asked what makes a dish good, and answered: \"Season it as boldly as you like - but never so boldly that the ingredients disappear.\" Which of the following sentences best expresses the chef's intention?",
+   "stem": "Pnina told Hezi that it was strange that their neighbor, who owns a restaurant, never cooks at home. Hezi replied that the electrician in their building had been living with a broken kitchen lamp for two years. Hezi's reply suggests that in his opinion -",
    "options": [
-    "Every good dish should be seasoned boldly enough to satisfy diners who like strong flavors",
-    "Although bold seasoning is a virtue in cooking, too much of it hides the very ingredients the dish is meant to present",
-    "A good dish is built on the boldest and most basic of its ingredients",
-    "The boldness of the seasoning matters no less than the quality of the ingredients"
+    "the neighbor does not like the food served in his own restaurant",
+    "people often neglect at home the work that they do for others",
+    "the neighbor is less skilled than people think",
+    "the electrician and the neighbor are both too busy to look after their own homes"
    ],
    "answer": 2,
-   "explanation": "The second half of the answer sets a limit on the first: season boldly, but not past the point where the ingredients are lost. (1) drops the limit; (3) turns advice about seasoning into advice about choosing ingredients; (4) makes the two equal instead of one limiting the other.",
+   "explanation": "Hezi answers with another professional who does not do his own work at home: the thing is common, not strange (2). (4) adds a reason he does not give, and (1) and (3) are about the neighbor's restaurant, which the example does not touch.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "פנינה אמרה לחזי שמוזר שהשכן שלהם, שיש לו מסעדה, אינו מבשל בבית לעולם. חזי השיב שהחשמלאי שבבניין שלהם חי כבר שנתיים עם מנורה מקולקלת במטבח. מתשובתו של חזי עולה שלדעתו -",
+   "style_donor": "Summer 2025 First Section Q7"
   },
   {
    "id": "vo-43-103",
@@ -528,17 +615,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Winter 2025 §2 Q9",
    "replaces": "",
-   "stem": "At the entrance to the Morvin Concert Hall hangs a plaque quoting the conductor Ada Morvin, from a radio interview she gave in 1984: \"I built this orchestra with my own hands.\" Many of her former musicians protested, arguing that the sentence from which the quotation was taken reflected her well-known humility, whereas the quotation on its own made her sound arrogant - the very opposite of who she was. Which of the following sentences is most likely to be the one from which the quotation was taken?",
+   "stem": "A food factory used to check every crate that left its gates, and its inspectors found few defects. Later, to save money, the factory began to check only one crate in ten, and the number of defects found rose sharply. The factory's manager noted that during this period there had been no change in the workers, the machines or the raw materials. Which of the following can be inferred from the manager's remark?",
    "options": [
-    "\"The only sense in which I built this orchestra with my own hands is that I set out the chairs before every rehearsal\"",
-    "\"I built this orchestra with my own hands, and I will always miss the years we spent together\"",
-    "\"It cost me my health and most of my savings, but I built this orchestra with my own hands\"",
-    "\"I built this orchestra with my own hands, and the concert hall and the music school as well\""
+    "The rise in the number of defects found probably reflects a change in the checking itself",
+    "The workers became less careful once they knew that most crates would not be checked",
+    "Checking one crate in ten saves money without harming the quality of the products",
+    "The more crates are checked, the fewer defects there are"
    ],
    "answer": 1,
-   "explanation": "Only (1) turns the words into modest self-mockery, which the quotation on its own erases. (2) adds longing, (3) sacrifice and (4) scope; none reverses the boast, and (3) and (4) even strengthen it.",
+   "explanation": "If nothing in production changed, the rise in defects found must come from the checking (1). (2) contradicts \"no change in the workers\", (3) is not addressed, and (4) turns one factory's experience into a rule.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "מפעל מזון בדק בעבר כל ארגז שיצא משעריו, ובודקיו מצאו פגמים מעטים. מאוחר יותר, כדי לחסוך, החל המפעל לבדוק רק ארגז אחד מכל עשרה, ומספר הפגמים שנמצאו עלה בחדות. מנהל המפעל ציין שבתקופה זו לא חל שינוי בעובדים, במכונות או בחומרי הגלם. איזה מן הבאים אפשר להסיק מהערת המנהל?",
+   "style_donor": "February 2017 First Section Q13"
   },
   {
    "id": "vo-43-104",
@@ -546,17 +636,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Spring 2025 §1 Q7",
    "replaces": "",
-   "stem": "Ofra invented a new word - \"mazlit.\" To show her brother what it means, she said: \"This year mazlit the apricots on our tree ripened in the same week, so we had to make jam for three days straight.\" In which of the following sentences does \"mazlit\" appear with the same meaning it has in Ofra's sentence?",
+   "stem": "Two researchers at an experimental farm are comparing twelve plots that were sprayed this year with twelve plots that were not. Yael says: \"Not one of the unsprayed plots produced a larger crop than the weakest sprayed plot.\" If Yael is right, which of the following is necessarily true?",
    "options": [
-    "Because mazlit the students passed the final exam, the teacher decided to go over the whole course again",
-    "The curve is considered dangerous because mazlit the drivers who reach it slow down in time",
-    "After the storm, mazlit the windows in the old school were broken, so the classes were moved to the new building",
-    "Since mazlit the town's residents own a car, the bus service is used by almost everyone"
+    "Every sprayed plot produced a larger crop than every unsprayed plot",
+    "Most of the sprayed plots produced larger crops than most of the unsprayed plots",
+    "No sprayed plot produced a smaller crop than any unsprayed plot",
+    "The spraying increased the farm's total crop this year"
    ],
    "answer": 3,
-   "explanation": "Ofra's consequence fixes \"mazlit\" as \"nearly all\"; only in (3) does the consequence fit nearly all the windows being broken. In (1), (2) and (4) the consequences require \"only a few.\"",
+   "explanation": "Every unsprayed plot ≤ the weakest sprayed plot ≤ every sprayed plot (3). (1) and (2) require \"larger\", which fails if some crops were equal; (4) is a causal claim that does not follow.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "שתי חוקרות בחווה ניסיונית משוות בין שתים עשרה חלקות שרוססו השנה לבין שתים עשרה חלקות שלא רוססו. יעל אומרת: \"אף אחת מן החלקות שלא רוססו לא נתנה יבול גדול יותר מן החלקה המרוססת החלשה ביותר.\" אם יעל צודקת, איזה מן הבאים נכון בהכרח?",
+   "style_donor": "July 2015 First Section Q11"
   },
   {
    "id": "vo-43-105",
@@ -564,17 +657,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Spring 2025 §2 Q8",
    "replaces": "",
-   "stem": "A team of zoologists had long assumed that the ability to tell individual voices apart exists only in human beings, in the apes and in horses. A recent study of theirs, however, found that a certain species of tree frog also has this ability - a finding that puzzled them, since frogs are only very distantly related to human beings, and the frog's hearing organ is simple. The researchers suggest that the ability developed in the frogs independently, because they breed in dense choruses in which telling one caller from another is important. Which of the following claims is not implied by the paragraph?",
+   "stem": "Very few complaints by villagers against tax collectors have survived in the Ottoman archives of a certain district, although the archives contain thousands of other documents from the same years, including detailed tax lists. Some historians have concluded from this that the collectors in the district were unusually fair. Others point out that complaints were often made orally to local officials and were not necessarily recorded, and that recorded complaints may have been kept in archives that did not survive. Which of the following is not implied by the paragraph?",
    "options": [
-    "It has long been assumed that the ability to tell voices apart requires a complex hearing organ",
-    "It has long been assumed that the apes' ability to tell voices apart is connected with their close evolutionary relationship to human beings",
-    "The researchers hold that the ability to tell voices apart may also develop in other animals that breed in dense groups",
-    "The researchers hold that the ability to tell voices apart exists in many animals that are only distantly related to human beings"
+    "The district's archives are not poor in documents from the period in question",
+    "Some historians regard the small number of complaints as evidence about the collectors' conduct",
+    "A villager could complain without leaving a written record",
+    "Most of the complaints that were written down were lost"
    ],
    "answer": 4,
-   "explanation": "The paragraph reports a single such species, not many. The zoologists' puzzlement implies the assumptions in (1) (the frog's simple hearing organ) and (2) (its distant relationship to human beings), and the researchers' reason implies (3).",
+   "explanation": "The paragraph raises the loss of recorded complaints only as a possibility and says nothing about most of them (4). (1) follows from \"thousands of other documents\", (2) is the first view, and (3) is the oral-complaint point.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בארכיוני הממשל העות'מאני של מחוז מסוים נשתמרו תלונות מעטות מאוד של כפריים נגד גובי המסים, אף שבארכיונים אלפי מסמכים אחרים מאותן שנים, ובהם רשימות מס מפורטות. כמה היסטוריונים הסיקו מכך שהגובים במחוז היו הגונים במיוחד. אחרים מציינים שתלונות הוגשו פעמים רבות בעל פה לפקידים מקומיים ולא נרשמו בהכרח, ושתלונות שנרשמו אולי נשמרו בארכיונים שלא שרדו. איזה מן הבאים אינו משתמע מן הקטע?",
+   "style_donor": "Summer 2020 First Section Q9"
   },
   {
    "id": "vo-43-106",
@@ -582,17 +678,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Spring 2025 §2 Q11",
    "replaces": "",
-   "stem": "The following sentence can be understood in several different ways: \"The campaign of the former party's spokesman with the students' union has ended.\" Which of the following is not one of the ways of understanding the sentence?",
+   "stem": "The following sentence appeared in a local newspaper: \"The committee rejected the proposal of the teachers' representative from the northern district.\" Which of the following is not a possible way of understanding the sentence?",
    "options": [
-    "The campaign that the spokesman of a party that no longer exists waged against the students' union has ended",
-    "The campaign that the spokesman waged against the former party of the students' union has ended",
-    "The campaign that the party's ex-spokesman waged against the students' union has ended",
-    "The campaign that the former party's spokesman waged, together with the students' union, against another body has ended"
+    "The committee rejected a proposal made by the representative of the teachers of the northern district",
+    "The committee members from the northern district rejected the proposal of the teachers' representative",
+    "The committee rejected a proposal from the northern district that the teachers' representative had brought",
+    "The teachers' representative, who comes from the northern district, had his proposal rejected by the committee"
    ],
    "answer": 2,
-   "explanation": "\"Former\" can describe the party or the spokesman, and \"with\" can mean \"against\" or \"together with\"; (1), (3) and (4) follow these options. (2) makes the party belong to the students' union, which no reading allows.",
+   "explanation": "\"From the northern district\" can describe the teachers, the representative or the proposal (1, 3, 4). It cannot describe the committee members who rejected it (2).",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בעיתון מקומי הופיע המשפט: \"הוועדה דחתה את הצעת נציג המורים מן המחוז הצפוני.\" איזו מן הבאות אינה דרך אפשרית להבין את המשפט?",
+   "style_donor": "Summer 2024 Second Section Q5"
   },
   {
    "id": "vo-43-107",
@@ -600,17 +699,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Spring 2024 §1 Q7",
    "replaces": "",
-   "stem": "At the end of the season, the conductor of a youth choir said to the singers: \"Every one of you has improved this year - though a little more than a third of you have improved less than I had hoped.\" How many of the singers have improved less than the conductor had hoped?",
+   "stem": "Dafna, who sings in a youth choir, told her parents: \"At the end of the year the conductor said that only a little less than two thirds of us had made the progress he had hoped for.\" According to Dafna, what did the conductor's words imply about the singers in the choir?",
    "options": [
-    "A little more than a third of them",
-    "A little fewer than two thirds of them",
-    "Many more than a third of them",
-    "Many fewer than a third of them"
+    "That a little more than a third of them had made less progress than he had hoped",
+    "That about two thirds of them had not made the progress he had hoped for",
+    "That most of them had made no progress at all",
+    "That a third of them should leave the choir"
    ],
    "answer": 1,
-   "explanation": "The conductor says so directly. The traps are to read \"every one of you has improved\" as praise that cancels the reservation, or to count the other group (a little fewer than two thirds).",
+   "explanation": "Those who met his hopes are a little under two thirds, so the rest - a little over a third - made less progress than he hoped (1). (2) takes the group he mentioned as the other group; (3) and (4) are not said.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "דפנה, השרה במקהלת נוער, סיפרה להוריה: \"בסוף השנה אמר המנצח שרק מעט פחות משני שלישים מאיתנו התקדמו כפי שקיווה.\" על פי דפנה, מה משתמע מדברי המנצח על זמרי המקהלה?",
+   "style_donor": "Summer 2025 Second Section Q15"
   },
   {
    "id": "vo-43-108",
@@ -618,17 +720,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Winter 2023 §2 Q10",
    "replaces": "",
-   "stem": "A lecturer in management wished to illustrate a claim to her students, and said: \"If one door on the street sticks, call the carpenter; if every door on the street sticks, look at the weather.\" Which of the following claims is the one the lecturer wished to illustrate?",
+   "stem": "A worker complained to a factory's maintenance manager that all the machines in the hall where he works had stopped at the same moment. The manager replied: \"When the lights go out in every room of a house at once, nobody starts replacing bulbs.\" Which of the following expresses the same idea as the manager's reply?",
    "options": [
-    "A manager should deal with an organization's minor problems before turning to its major ones",
-    "A problem that appears in only one department is usually more serious than a problem that appears in all of them",
-    "Managers should not assume that a problem that is common today will remain common in the future",
-    "When the same problem appears in every department of an organization, its cause should be sought in something they all share, and not in each department separately"
+    "When a machine stops, first check whether the worker operated it properly",
+    "Old machines break down more often than new ones",
+    "A machine that stops once a week needs more attention than one that stops once a year",
+    "When all the children in a kindergarten fall ill in the same week, the doctor asks what they ate"
    ],
    "answer": 4,
-   "explanation": "One sticking door points to a local fault; all of them sticking points to a shared cause. The other claims may be sound advice, but the image says nothing about them.",
+   "explanation": "A failure of everything at once points to one common cause; the doctor who looks for something all the children shared follows the same idea (4). (1), (2) and (3) are about single machines, age and frequency.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "פועל התלונן בפני מנהל האחזקה של מפעל שכל המכונות באולם שבו הוא עובד נעצרו באותו רגע. המנהל השיב: \"כשהאור כבה בכל חדרי הבית בבת אחת, איש אינו מתחיל להחליף נורות.\" איזה מן הבאים מבטא את אותו רעיון כמו תשובת המנהל?",
+   "style_donor": "Summer 2023 First Section Q9"
   },
   {
    "id": "vo-43-109",
@@ -636,17 +741,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Winter 2023 §2 Q8",
    "replaces": "",
-   "stem": "Typing errors take many forms, among them the following:\n- striking a key next to the intended one on the keyboard;\n- typing the same letter twice;\n- leaving out one of two identical letters that appear one after the other in a word.\nWhich of the following is not an example of any of the three errors? (On a standard English keyboard, the keys for \"i\" and \"o\" are next to each other.)",
+   "stem": "A clerk who copied numbers from old handwritten ledgers made three kinds of mistakes: sometimes he wrote a number twice; sometimes, when the same number appeared twice in succession, he wrote it only once; and sometimes he read a 7 as a 1, since the two looked alike in the original handwriting. An auditor who compared the ledgers with the copies found four discrepancies. Which of them cannot be explained by the clerk's three kinds of mistakes?",
    "options": [
-    "Typing \"a dog barked\" as \"a dig barked\"",
-    "Typing \"a new form\" as \"a new from\"",
-    "Typing \"a long letter\" as \"a long leter\"",
-    "Typing \"a black cat\" as \"a black caat\""
+    "The ledger shows 77 and the copy shows 17",
+    "The ledger shows 17 and the copy shows 71",
+    "The ledger shows 40, 12 and the copy shows 40, 40, 12",
+    "The ledger shows 12, 12, 9 and the copy shows 12, 9"
    ],
    "answer": 2,
-   "explanation": "(1) strikes a neighboring key, (3) drops one of the double t's and (4) types a letter twice. (2) swaps two letters, which is none of the three.",
+   "explanation": "(2) reverses the order of the digits, which is none of the three kinds. (1) reads the first 7 as a 1, (3) writes a number twice, and (4) writes once a number that appeared twice.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "פקיד שהעתיק מספרים מפנקסים ישנים בכתב יד עשה שלושה סוגי טעויות: לפעמים כתב מספר פעמיים; לפעמים, כשאותו מספר הופיע פעמיים ברציפות, כתב אותו פעם אחת בלבד; ולפעמים קרא 7 כ-1, משום שבכתב היד המקורי נראו השניים דומים. מבקר שהשווה את הפנקסים עם ההעתקים מצא ארבע אי-התאמות. איזו מהן אינה יכולה לנבוע משלושת סוגי הטעויות של הפקיד?",
+   "style_donor": "Summer 2023 First Section Q10"
   },
   {
    "id": "vo-43-110",
@@ -654,17 +762,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Autumn 2022 §1 Q7",
    "replaces": "",
-   "stem": "The word \"apron\" names a garment worn over the front of one's clothes. Linguists explain, however, that the older form of the word was \"napron\": the form \"apron\" arose because speakers heard \"a napron\" as \"an apron\" and took the \"n\" to belong to the word before it. Linguists point out that the same thing happened to the word \"adder,\" which developed in the same way from \"nadder.\" Which of the following words could replace \"adder\" in the linguists' example?",
+   "stem": "Under a village's bylaws, a request to add a floor to a house can be approved only if it is submitted by a member who has lived in the village for at least ten years, or jointly by two members who have lived there for a combined total of at least fifteen years. Which of the following requests can be approved under the bylaws?",
    "options": [
-    "\"newt\" (from the older \"ewt\")",
-    "\"oven\"",
-    "\"apple\"",
-    "\"umpire\" (from the older \"noumpere\")"
+    "A request submitted jointly by a member who has lived in the village for nine years and his wife, also a member, who has lived there for five",
+    "A request by a member who moved to the village nine years ago, after living for twenty years in a neighboring village",
+    "A request submitted by the village council on behalf of a member who arrived two years ago",
+    "A request submitted jointly by two members who have each lived in the village for eight years"
    ],
    "answer": 4,
-   "explanation": "\"A noumpere\" was heard as \"an oumpere,\" so \"umpire\" lost its first \"n\" exactly as \"apron\" and \"adder\" did. \"Newt\" went the opposite way - \"an ewt\" became \"a newt\" - and \"oven\" and \"apple\" were never reshaped like this.",
+   "explanation": "Eight plus eight is sixteen years combined (4). (1) totals fourteen, in (2) the twenty years were not in the village, and in (3) the request is not submitted by qualifying members.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "על פי תקנון של יישוב, בקשה להוסיף קומה לבית יכולה להיות מאושרת רק אם הגיש אותה חבר המתגורר ביישוב עשר שנים לפחות, או שהגישו אותה במשותף שני חברים שהתגוררו בו יחד בסך הכול חמש עשרה שנים לפחות. איזו מן הבקשות הבאות יכולה להיות מאושרת על פי התקנון?",
+   "style_donor": "July 2014 First Section Q12"
   },
   {
    "id": "vo-43-111",
@@ -672,17 +783,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Autumn 2023 §2 Q16",
    "replaces": "",
-   "stem": "In a book on raising children it was written: \"When a child misbehaves, some parents ask first why the child acted as they did, while others ask first how the behavior can be stopped. In the end, naturally, the former also look for a way to stop the behavior, and the latter also want to know what lay behind it; what separates the two groups is only which question they put first.\" Which of the following statements best expresses the central claim of the text?",
+   "stem": "Nava: \"When a child misbehaves, the first thing to do is to ask him why.\"\nTzvi: \"Nonsense. First you tell him to stop; there will be time for questions afterwards.\"\nNava: \"I did not say that the questions replace stopping him. Of course he has to stop - I only think that the question should come first.\"\nWhich of the following best describes the disagreement between Nava and Tzvi?",
    "options": [
-    "Both groups of parents consider the same two questions, but give priority to different ones",
-    "Some parents try to understand their children's behavior, whereas others do not",
-    "Some parents react out of curiosity, whereas others react out of a wish for quiet",
-    "A parent can either understand a child's behavior or stop it, but not both"
+    "They disagree about the order in which a parent should act, not about what the parent should eventually do",
+    "Nava thinks that the child's reasons matter more than stopping the behavior, whereas Tzvi thinks the opposite",
+    "Tzvi thinks that a child who misbehaves should not be asked for his reasons at all",
+    "They agree about everything, but Tzvi misunderstood Nava's first remark"
    ],
    "answer": 1,
-   "explanation": "The text says outright that both groups ask both questions and differ only in order. (2) and (3) turn a difference of order into a difference of kind, and (4) invents a conflict.",
+   "explanation": "Both want the child stopped and questioned; they differ only on what comes first (1). (2) and (3) contradict their words, and (4) ignores that they still disagree about the order.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "נאוה: \"כשילד מתנהג רע, הדבר הראשון שצריך לעשות הוא לשאול אותו למה.\" צבי: \"שטות. קודם אומרים לו להפסיק; לשאלות יהיה זמן אחר כך.\" נאוה: \"לא אמרתי שהשאלות באות במקום לעצור אותו. ודאי שהוא צריך להפסיק - אני רק חושבת שהשאלה צריכה לבוא קודם.\" איזה מן הבאים מתאר בצורה הטובה ביותר את המחלוקת בין נאוה לצבי?",
+   "style_donor": "Spring 2019 First Section Q9"
   },
   {
    "id": "vo-43-112",
@@ -690,17 +804,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Autumn 2023 §2 Q18",
    "replaces": "",
-   "stem": "Grammarians divide sentences into three kinds according to their purpose. A declarative sentence states something: \"The shop is closed.\" An interrogative sentence asks something: \"Is the shop closed?\" An imperative sentence tells or asks the listener to do something: \"Close the shop.\" Which of the following is an imperative sentence?",
+   "stem": "The founder of a small theater told an interviewer that the newspapers had been wrong to describe the theater's first season as a failure. \"The first performances sold out,\" he said. \"Our problem was that people who had seen one play did not come to the next.\" Which of the following best summarizes the founder's claim?",
    "options": [
-    "The guests left the hall before midnight",
-    "Turn off the lights when you leave the hall",
-    "Who left the lights on in the hall?",
-    "Everyone in the hall stood up at once"
+    "The newspapers exaggerated the number of empty seats at the theater's first performances, which were in fact well attended",
+    "The theater had no difficulty attracting an audience, but it did have difficulty keeping one",
+    "The first plays were poor, and most of the people who came to see them left disappointed",
+    "The theater's later plays were more successful than its first ones"
    ],
    "answer": 2,
-   "explanation": "Only (2) tells the listener to do something. (1) and (4) state facts, and (3) asks a question.",
+   "explanation": "Sold-out first performances, but people did not return (2). (1) is not claimed, (3) gives a reason he does not give, and (4) contradicts his description.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "מייסד תיאטרון קטן אמר למראיין שהעיתונים טעו כשתיארו את העונה הראשונה של התיאטרון ככישלון. \"ההצגות הראשונות נמכרו עד המקום האחרון,\" אמר. \"הבעיה שלנו הייתה שמי שראה הצגה אחת לא בא להצגה הבאה.\" איזה מן הבאים מתמצת בצורה הטובה ביותר את טענת המייסד?",
+   "style_donor": "February 2016 Second Section Q15"
   },
   {
    "id": "vo-43-113",
@@ -708,17 +825,20 @@
    "category": "Sentence Understanding",
    "mirrors": "December 2016 §2 Q12",
    "replaces": "",
-   "stem": "In Varesh, an invented language used in a fantasy novel, tense markers are attached to the end of a verb. Thus \"kali\" means \"to eat,\" \"kalira\" means \"ate,\" \"kalisu\" means \"will eat\" and \"kalimo\" means \"is eating.\" Likewise, \"petasu\" means \"will sleep.\" Therefore, which of the following words is best suited to be the Varesh word for \"slept\"?",
+   "stem": "A notice at the entrance to a library reads: \"Books may be borrowed for two weeks. Readers who return a book late will not be allowed to borrow more than one book at a time for a month.\" Which of the following is consistent with the notice?",
    "options": [
-    "petara",
-    "petamo",
-    "peta",
-    "petasura"
+    "A reader who returned a book three days late borrowed one book a week later",
+    "A reader who returned a book late borrowed three books at once the following week",
+    "A reader kept a book for three weeks and was not restricted in any way afterwards",
+    "A reader who returned a book late borrowed two books at once three weeks later"
    ],
    "answer": 1,
-   "explanation": "The stem for \"sleep\" is \"peta\" (from \"petasu\"), and the past marker is \"-ra\" (from \"kalira\"). (2) means \"is sleeping,\" (3) is the bare verb, and (4) adds two markers.",
+   "explanation": "After a late return the reader may borrow only one book at a time for a month; (1) keeps to this. (2) and (4) borrow several books within the month, and (3) kept the book late without the restriction that follows.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בכניסה לספרייה תלויה הודעה: \"ניתן לשאול ספרים לשבועיים. קורא שיחזיר ספר באיחור לא יורשה לשאול יותר מספר אחד בכל פעם במשך חודש.\" איזה מן הבאים מתיישב עם ההודעה?",
+   "style_donor": "Summer 2025 Second Section Q12"
   },
   {
    "id": "vo-43-114",
@@ -726,17 +846,20 @@
    "category": "Sentence Understanding",
    "mirrors": "December 2016 §2 Q16",
    "replaces": "",
-   "stem": "Dana sent Amir a message: \"At lunch I will show you the drawings that Gal made on Monday.\" Amir answered: \"But you already told me that today I would get to see what Gal has been drawing this week.\" To clear up the misunderstanding, Dana underlined one word in her message and sent it back. Which of the following words is least likely to be the one Dana underlined?",
+   "stem": "In an interview about his latest novel, a writer said: \"This is the first book I have written that I would have shown my father without fear, had he still been alive.\" Which of the following can be inferred from the writer's words?",
    "options": [
-    "lunch",
-    "made",
-    "I",
-    "Monday"
+    "The writer's father read only some of his son's books",
+    "The writer considers his latest novel his best book",
+    "There is at least one earlier book that the writer would have hesitated to show his father",
+    "The writer's father had disapproved of his son's decision to become a writer and rarely read his books"
    ],
    "answer": 3,
-   "explanation": "Amir's version blurs the time of the showing (\"today\"), the time of the drawing (\"this week\") and whether the drawings are finished (\"has been drawing\"). Nothing in it concerns who will do the showing, so \"I\" is the least likely.",
+   "explanation": "If this is the first book he would have shown without fear, then each earlier book he would have shown with fear - in particular at least one (3). (2) turns \"without fear\" into \"best\", and (1) and (4) say things about the father that are not said.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בראיון על הרומן האחרון שלו אמר סופר: \"זה הספר הראשון שכתבתי שהייתי מראה לאבי בלי חשש, אילו היה עדיין בחיים.\" איזה מן הבאים אפשר להסיק מדברי הסופר?",
+   "style_donor": "Summer 2026 First Section Q14"
   },
   {
    "id": "vo-43-115",
@@ -744,17 +867,20 @@
    "category": "Sentence Understanding",
    "mirrors": "September 2016 §1 Q15",
    "replaces": "",
-   "stem": "In linguistics, two words of different meaning that differ from each other in a single sound only - such as \"pin\" and \"bin\" - are called a \"minimal pair.\" The existence of such a pair in a language shows that the two sounds that distinguish its words are separate sounds in that language, and not merely two ways of pronouncing the same sound. In which of the following sentences do the two words in capital letters prove that \"f\" and \"v\" are separate sounds in English?",
+   "stem": "A historian who read some four hundred letters written by members of a family of grain merchants over three generations, between 1840 and 1910, found that nearly every letter mentions the current price of wheat, often in its first lines. None of the letters, however, explains why the price concerned the writers so much - even in years when, according to its account books, the family was not trading in wheat at all. Which of the following best summarizes the historian's findings?",
    "options": [
-    "His BEST shirt was hidden under a thick wool VEST he had bought in the market",
-    "The new PHASE of the project did not seem to FAZE the engineers in the least",
-    "The VOTE on the budget was held inside the old FORT at the edge of town",
-    "The FAN in the back of the delivery VAN stopped working halfway through the trip"
+    "The family's interest in the price of wheat stemmed from its trade in wheat",
+    "Only some of the letters mention the price of wheat, mostly in years in which the family traded in it",
+    "The account books explain what the letters do not: why the family was so interested in the price of wheat",
+    "The letters show how much the price of wheat concerned the family, but not the reason for this concern"
    ],
    "answer": 4,
-   "explanation": "\"Fan\" and \"van\" differ only in f/v. (1) is a minimal pair for b/v, not f/v; the words in (2) sound the same; the words in (3) differ in more than one sound.",
+   "explanation": "Nearly every letter mentions the price, none explains the concern (4). (1) is contradicted by the years without trade, (2) reverses \"nearly every\", and (3) credits the account books with an explanation they do not give.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "היסטוריונית שקראה כארבע מאות מכתבים שכתבו בני משפחה של סוחרי תבואה במשך שלושה דורות, בין 1840 ל-1910, מצאה שכמעט כל מכתב מזכיר את מחיר החיטה, לעתים קרובות כבר בשורות הראשונות. אולם אף אחד מן המכתבים אינו מסביר מדוע העסיק המחיר את הכותבים כל כך - גם בשנים שבהן, על פי ספרי החשבונות שלה, המשפחה כלל לא סחרה בחיטה. איזה מן הבאים מתמצת בצורה הטובה ביותר את ממצאי ההיסטוריונית?",
+   "style_donor": "July 2015 First Section Q14"
   },
   {
    "id": "vo-43-116",
@@ -762,17 +888,20 @@
    "category": "Sentence Understanding",
    "mirrors": "April 2016 §2 Q13",
    "replaces": "",
-   "stem": "At a press conference, a journalist said to the mayor: \"Answer yes or no: ____\" The mayor's spokesperson said: \"The mayor will not answer this question, since a mayor who has done nothing wrong cannot answer it either way without lying.\" Which of the following questions is not suited to complete the journalist's words?",
+   "stem": "At a council meeting, a member put a question to the head of the council and demanded a plain \"yes\" or \"no\". The head of the council refused, saying that even a person who had done nothing wrong could not answer it either way without incriminating himself. Which of the following questions could an innocent person answer with \"yes\" or \"no\" without incriminating himself?",
    "options": [
-    "Could the city's budget deficit have been caused by your decisions?",
-    "Have you stopped handing out city contracts to your friends?",
-    "Did your deputy know that you were hiding the audit report?",
-    "Were you paid well for approving the illegal building permits?"
+    "Did you know about the delay in building the new school before the newspapers reported it?",
+    "Have you stopped giving council contracts to your relatives?",
+    "Was it your deputy who advised you to hide the auditor's report from the council members?",
+    "Do you regret the building permits you granted in return for money to contractors who supported you in the election?"
    ],
    "answer": 1,
-   "explanation": "(2), (3) and (4) take the wrongdoing for granted, so both \"yes\" and \"no\" admit it. (1) asks only about a possibility, and an honest mayor can answer it truthfully.",
+   "explanation": "An innocent person can answer (1) either way. (2), (3) and (4) take a wrongdoing for granted, so both \"yes\" and \"no\" admit it - they could be the question that was asked.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בישיבת מועצה הפנה אחד החברים שאלה לראש המועצה ודרש תשובה של \"כן\" או \"לא\" בלבד. ראש המועצה סירב, ואמר שאפילו אדם שלא עשה דבר רע אינו יכול להשיב עליה בשום אחת מן הדרכים בלי להפליל את עצמו. על איזו מן השאלות הבאות יכול אדם חף מפשע להשיב \"כן\" או \"לא\" בלי להפליל את עצמו?",
+   "style_donor": "Summer 2024 First Section Q9"
   },
   {
    "id": "vo-43-117",
@@ -780,17 +909,20 @@
    "category": "Sentence Understanding",
    "mirrors": "September 2015 §1 Q16",
    "replaces": "",
-   "stem": "This year sea turtles laid their eggs on the local beaches later than usual. A marine biologist argues that it is not reasonable to suppose that the reason is the cold winter, since a large supply of jellyfish causes the turtles to nest early. On which of the following assumptions does the biologist's argument rest?",
+   "stem": "This year a certain species of migrating bird arrived in Israel later than in previous years. Some attributed this to the cold winter that preceded the migration. A birdwatcher rejects this explanation: in his opinion, when there is an abundance of insects these birds arrive early, and therefore it is not reasonable that the cold winter is what delayed them. On which of the following assumptions does the birdwatcher rely?",
    "options": [
-    "In cold winters the turtles find it hard to find jellyfish",
-    "In warm winters the turtles nest late",
-    "A cold winter brings about a large supply of jellyfish",
-    "Last winter was warmer than usual"
+    "In a cold winter it is difficult for the birds to find insects along the migration route",
+    "In years in which the winter is warm, the birds arrive late",
+    "A cold winter brings about an abundance of insects",
+    "Last winter was not colder than previous winters, although many people felt that it was"
    ],
    "answer": 3,
-   "explanation": "The argument works only if a cold winter → many jellyfish → early nesting, which clashes with the late nesting; the first link is unstated. (1) would actually support the cold-winter explanation; (2) and (4) are not needed.",
+   "explanation": "The argument works only if a cold winter → many insects → early arrival, which clashes with the late arrival; the first link is unstated (3). (1) would support the cold-winter explanation; (2) and (4) are not needed.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "השנה הגיע ארצה מין מסוים של ציפור נודדת מאוחר יותר מאשר בשנים הקודמות. היו שייחסו זאת לחורף הקר שקדם לנדידה. צפר אחד דוחה הסבר זה: לדעתו, כאשר יש שפע של חרקים מגיעות ציפורים אלה מוקדם, ולכן אין זה סביר שהחורף הקר הוא שעיכב אותן. על איזו מן ההנחות הבאות מסתמך הצפר?\n(1) בחורף קר קשה לציפורים למצוא חרקים לאורך מסלול הנדידה\n(2) בשנים שבהן החורף חם, הציפורים מגיעות מאוחר\n(3) חורף קר מביא לשפע של חרקים\n(4) החורף שעבר לא היה קר מן החורפים הקודמים, אף שאנשים רבים חשו שהיה",
+   "style_donor": "February 2017 Second Section Q12"
   },
   {
    "id": "vo-43-118",
@@ -798,17 +930,20 @@
    "category": "Sentence Understanding",
    "mirrors": "December 2014 §2 Q9",
    "replaces": "",
-   "stem": "A veteran newspaper editor said: \"Give me a whole page and I will write it tonight; give me half a page and I need two days; give me a single line and I need a week.\" Which of the following claims best expresses the editor's meaning?",
+   "stem": "A young writer complained to a friend: \"I gave the editor two pages and a twenty-page story at the same time. He finished the story that evening, but kept the two pages for a week.\" Her friend replied: \"That does not mean that he preferred the story.\" Which of the following, if true, best supports the friend's reply?",
    "options": [
-    "Short texts are better than long ones",
-    "It is harder to express an idea briefly than to write about it at length",
-    "Writers who prepare less produce better work",
-    "The importance of an article cannot be judged by its length"
+    "The editor usually rejects short texts submitted by young writers",
+    "The editor believes that in a short text every word must be weighed carefully",
+    "Long stories are easier to write than short texts",
+    "The editor published the twenty-page story in the next issue of his journal"
    ],
    "answer": 2,
-   "explanation": "The shorter the text, the longer the preparation: brevity is the hard part. The other claims are not what the joke says.",
+   "explanation": "If short texts demand that every word be weighed, the week spent on two pages reflects care, not preference (2). (1) and (4) support the opposite, and (3) is about writing, not reading.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "סופרת צעירה התלוננה בפני חברתה: \"נתתי לעורך בבת אחת שני עמודים וסיפור בן עשרים עמודים. את הסיפור הוא סיים באותו ערב, ואת שני העמודים החזיק שבוע.\" חברתה השיבה: \"זה לא אומר שהוא העדיף את הסיפור.\" איזה מן הבאים, אם הוא נכון, תומך בצורה הטובה ביותר בתשובת החברה?",
+   "style_donor": "Summer 2026 First Section Q11"
   },
   {
    "id": "vo-43-119",
@@ -816,17 +951,20 @@
    "category": "Sentence Understanding",
    "mirrors": "April 2014 §1 Q13",
    "replaces": "",
-   "stem": "In a column, Professor Galor wrote: \"I share Professor Weiss's view that students should choose their own reading lists, but his arguments do not persuade me. In my view, the only argument for this is that choosing what to read teaches young people to judge for themselves.\" Which of the following could be one of Professor Weiss's arguments?",
+   "stem": "In an article on school reading lists, the author writes that she agrees with those who want students to choose their own books, but not with their arguments. The only good argument for such a choice, in her view, is that choosing what to read teaches young people to judge for themselves. Which of the following could be one of the arguments that the author rejects?",
    "options": [
-    "When students choose their own books, they gradually learn to form opinions of their own about what is worth reading",
-    "Students who chose their own books read far fewer classic works than students whose reading lists were set by their teachers",
-    "Experienced teachers know better than their students which books will develop independent judgment in young readers",
-    "Students who choose their own books tend to go on reading many more books in the years after they finish school"
+    "Students who choose their own books gradually learn to decide for themselves which books are worth reading",
+    "Students whose teachers chose their books read more classics than students who chose for themselves",
+    "Only experienced teachers know which books will develop independent judgment",
+    "Students who chose their own books at school tend to go on reading after they leave school"
    ],
    "answer": 4,
-   "explanation": "Weiss's arguments must support the view and differ from Galor's; (4) offers a practical benefit. (1) is Galor's own argument in other words, and (2) and (3) argue against giving students the choice.",
+   "explanation": "The argument she rejects must support free choice and differ from her own; (4) is such an argument. (1) is her own argument in other words, and (2) and (3) argue against free choice.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "במאמר על רשימות קריאה בבתי ספר כותבת המחברת שהיא מסכימה עם מי שרוצים שהתלמידים יבחרו את ספריהם בעצמם, אך לא עם נימוקיהם. לדעתה, הנימוק הטוב היחיד לבחירה כזאת הוא שבחירת הספרים מלמדת צעירים לשפוט בעצמם. איזה מן הבאים יכול להיות אחד הנימוקים שהמחברת דוחה?",
+   "style_donor": "February 2017 First Section Q10"
   },
   {
    "id": "vo-43-120",
@@ -834,17 +972,20 @@
    "category": "Sentence Understanding",
    "mirrors": "September 2013 §1 Q17",
    "replaces": "",
-   "stem": "Below is a sentence from which a part (a word or a few words) is missing: \"____ the heavy rain that fell throughout the night, the marathon started on time.\" In which of the following sentences could the missing part be the same as in the sentence above?",
+   "stem": "Below is a sentence from which a word or phrase is missing: \"____ the long delay, the passengers waited patiently on the platform.\" In which of the following sentences could the same word or phrase be missing?",
    "options": [
-    "The planning committee approved the new building plan ____ it had been presented to its members only a day earlier",
-    "The new bridge over the river was opened to the public ____ to reduce the heavy traffic in the town center",
-    "____ the objections of several residents of the neighborhood, the city council decided to widen the main road",
-    "____ of the students in the advanced class passed the final exam on their first attempt, as their teacher had expected"
+    "____ the heat wave, many residents spent the weekend at the beach",
+    "The festival was canceled ____ the storm",
+    "____ the warnings of the weather service, hundreds of hikers set out on the trail",
+    "____ the new road that was opened last year, the trip from the city to the village now takes half as long"
    ],
    "answer": 3,
-   "explanation": "\"Despite\" (or \"in spite of\") fills both. In (1) the gap needs a word such as \"although\" before a full clause, in (2) something like \"in order,\" and in (4) a word of quantity.",
+   "explanation": "The missing phrase is \"Despite\" (or \"In spite of\"), which fits only (3). (1) and (2) need \"Because of\", and (4) needs \"Thanks to\".",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "לפניכם משפט שחסרה בו מילה או צירוף: \"____ העיכוב הארוך, הנוסעים חיכו ברציף בסבלנות.\" באיזה מן המשפטים הבאים יכולים להיות חסרים אותה מילה או אותו צירוף?",
+   "style_donor": "Summer 2025 Second Section Q11"
   },
   {
    "id": "vo-43-121",
@@ -852,17 +993,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Autumn 2021 §1 Q14",
    "replaces": "",
-   "stem": "Yuval: \"My uncle told me that yesterday he saw Orit again, rowing on the lake with the university team, and that she looked very happy.\"\nNeta: \"____\"\nNeta's reply shows that Yuval's sentence can be understood in two ways, and that she understood it differently from the way he meant it. Which of the following is Neta's reply?",
+   "stem": "Shimrit, back from a weekend at the lake, told her friend Orna: \"My uncle, who lives near the lake, told me that yesterday he saw Tova rowing with the university team, and that she looked very happy.\"\nOrna replied: \"I did not know that your uncle rows on the university team.\"\nOrna apparently understood that -",
    "options": [
-    "\"Your uncle was out rowing on the lake yesterday, in that cold wind?\"",
-    "\"And where did he see her this time?\"",
-    "\"And was your uncle happy to see her?\"",
-    "\"Does your uncle also like rowing?\""
+    "Shimrit's uncle was one of the rowers",
+    "Tova is a member of the university team",
+    "Shimrit's uncle was happy to see Tova",
+    "Tova rowed on the lake every day that week"
    ],
    "answer": 1,
-   "explanation": "\"Rowing on the lake\" can describe Orit or the uncle; Neta took it to describe the uncle and put him on the lake. In (2), (3) and (4) the uncle stays where Yuval put him - on shore, with Orit doing the rowing.",
+   "explanation": "\"Rowing with the university team\" can describe Tova or the uncle; Orna's reply shows she took it to describe the uncle (1). (2) is what Shimrit meant, and (3) and (4) are not in the sentence.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "שמרית, שחזרה מסוף שבוע ליד האגם, סיפרה לחברתה אורנה: \"הדוד שלי, שגר ליד האגם, סיפר לי שאתמול הוא ראה את טובה חותרת עם נבחרת האוניברסיטה, ושהיא נראתה מאושרת מאוד.\" אורנה השיבה: \"לא ידעתי שהדוד שלך חותר בנבחרת האוניברסיטה.\" נראה שאורנה הבינה ש-",
+   "style_donor": "February 2017 Second Section Q13"
   },
   {
    "id": "vo-43-122",
@@ -870,17 +1014,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Autumn 2021 §2 Q10",
    "replaces": "",
-   "stem": "The saying \"Rest when you are tired\" stands at the center of a book by a sleep researcher. The first three chapters of the book deal with questions that arise from the saying: the first asks what real rest is, as opposed to mere idleness; the second asks how a person can tell that they are tired; and the third asks whether rest should wait until tiredness sets in or should come before it. The title of each of the three chapters is the saying itself, but each time a different part of it is emphasized. Which of the following is not suited to be the title of one of the three chapters?",
+   "stem": "In the introduction to a collection of letters written by settlers in the Galilee in the early twentieth century, the editor warns readers that the letters were not written for historians. Most were sent to relatives abroad whom the writers wanted to reassure, and they say little about hardship. The letters are therefore an important source, the editor writes, but not a complete picture of life in the settlements. Which of the following is implied in the introduction?",
    "options": [
-    "Rest WHEN you are tired",
-    "REST when you are tired",
-    "Rest when you are TIRED",
-    "Rest when YOU are tired"
+    "The settlers wrote more letters to their relatives abroad than to one another",
+    "The editor believes that letters are not a reliable source for historical research",
+    "Most of the settlers who wrote the letters later returned to their countries of origin",
+    "Life in the settlements was probably harder than the letters suggest"
    ],
    "answer": 4,
-   "explanation": "The emphasized \"you\" answers none of the three questions. (2) matches what rest is, (3) how to tell one is tired, and (1) whether rest should wait for tiredness.",
+   "explanation": "The writers played down hardship to reassure their relatives, so life was probably harder than the letters show (4). (1) confuses the letters in the collection with all letters written, (2) contradicts \"an important source\", and (3) is not mentioned.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "בהקדמה לקובץ מכתבים שכתבו מתיישבים בגליל בראשית המאה העשרים מזהיר העורך את הקוראים שהמכתבים לא נכתבו בשביל היסטוריונים. רובם נשלחו לקרובים בחוץ לארץ, שהכותבים רצו להרגיע, והם מספרים מעט על הקשיים. לכן, כותב העורך, המכתבים הם מקור חשוב, אך לא תמונה שלמה של החיים ביישובים. איזה מן הבאים משתמע מן ההקדמה?",
+   "style_donor": "Summer 2024 Second Section Q12"
   },
   {
    "id": "vo-43-123",
@@ -888,17 +1035,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Summer 2022 §2 Q8",
    "replaces": "",
-   "stem": "A composer wrote: \"Written notes exist for the sake of the music, as scaffolding exists for the sake of the building: once the building stands, the scaffolding can be taken down.\" Which of the following statements best expresses what the composer meant?",
+   "stem": "After a mathematics exam, several students complained to their teacher that the questions were not like the exercises they had practiced in class. The teacher answered: \"Someone who has learned only the way from his house to the grocery store is lost the day the store moves.\" In his answer, the teacher compares -",
    "options": [
-    "Written notes and the music they record are two separate things",
-    "Written notes are nothing more than a means of producing music",
-    "People are able to understand music only because there are written notes that record it",
-    "When a piece of music is no longer performed by musicians, its written notes are bound to be lost"
+    "the students who complained to people who have never left their own neighborhood",
+    "learning only the way to the store to learning only the practiced exercises",
+    "the classroom in which the exercises were practiced to the house from which the way begins",
+    "the store's move to the students' complaint"
    ],
    "answer": 2,
-   "explanation": "Scaffolding serves the building and is then discarded; notes likewise only serve the music. (1) states a separation the image does not stress, (3) makes notes a condition of understanding, and (4) is about something else entirely.",
+   "explanation": "Knowing one fixed route is like knowing only the practiced exercises, and the store's move is like the new questions (2). (4) matches the move to the complaint instead of the exam; (1) and (3) match people and places that play no part in the comparison.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "אחרי בחינה במתמטיקה התלוננו כמה תלמידים בפני המורה שהשאלות לא דמו לתרגילים שתרגלו בכיתה. המורה ענה: \"מי שלמד רק את הדרך מביתו למכולת הולך לאיבוד ביום שבו המכולת עוברת.\" בתשובתו משווה המורה -",
+   "style_donor": "Summer 2020 Second Section Q13"
   },
   {
    "id": "vo-43-124",
@@ -906,17 +1056,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Summer 2023 §2 Q8",
    "replaces": "",
-   "stem": "A theater director said: \"Actors perform differently when they know that a critic is sitting in the audience, and critics watch differently when they know that they will have to write about the actors.\" Which of the following best expresses the director's statement?",
+   "stem": "An architect who designed several kibbutz dining halls in the 1950s recalled that the planners had tried to fit each hall to the members' way of life. Within a few years, he said, it was the other way round: where people sat, whom they met and even how the general meetings were run were determined by the layout of the hall. Which of the following best describes the change that the architect noticed?",
    "options": [
-    "The knowledge that a critic will review a performance affects both the actors and the critic",
-    "After a performance has been reviewed, both the acting and the criticism change",
-    "The fact that actors and critics will both be reviewed in the future affects them in the present",
-    "Actors' knowledge that they will be reviewed changes their acting, and this changes the way critics watch"
+    "Buildings that were designed to suit a way of life came to shape that way of life",
+    "The halls suited the members in the 1950s, but not the way of life that developed later",
+    "The planners ignored the members' way of life when they designed the halls",
+    "The members disliked the halls but had no choice but to adapt to them"
    ],
    "answer": 1,
-   "explanation": "One expected review affects both sides. (2) moves the effect to after the review, (3) has both sides being reviewed, and (4) invents a chain in which the actors' change causes the critics'.",
+   "explanation": "The halls were planned to follow the members' life and ended up shaping it (1). (2) reverses the direction of influence, (3) contradicts the planners' effort, and (4) adds dissatisfaction.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "אדריכל שתכנן כמה חדרי אוכל בקיבוצים בשנות החמישים סיפר שהמתכננים ניסו להתאים כל חדר אוכל לאורח החיים של החברים. בתוך שנים ספורות, אמר, התהפך הדבר: היכן אנשים ישבו, את מי פגשו ואפילו כיצד התנהלו האסיפות הכלליות - כל אלה נקבעו לפי מבנה האולם. איזה מן הבאים מתאר בצורה הטובה ביותר את השינוי שהבחין בו האדריכל?",
+   "style_donor": "Spring 2019 First Section Q7"
   },
   {
    "id": "vo-43-125",
@@ -924,17 +1077,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Summer 2026 §1 Q10",
    "replaces": "",
-   "stem": "The following appeared in an essay: \"I once had no doubt that a university writing program gives a young writer something that cannot be obtained anywhere else; today I am far less sure that what writers gain from its courses exceeds what they could gain from a serious apprenticeship to an experienced author.\" Which of the following most accurately expresses the content of the excerpt?",
+   "stem": "A music critic wrote about a certain singer: \"Many people believe that her early recordings are weaker than her later ones, and point to the fact that for years hardly anyone bought them. But the public was slow to appreciate them for reasons that had nothing to do with the recordings themselves, and anyone who listens to them today will find them no less moving than her later work.\" Which of the following best expresses the critic's main point?",
    "options": [
-    "In the past, the author did not doubt that what is special about university writing programs is the apprenticeship to experienced authors that they offer",
-    "The author believes that today, an apprenticeship to an experienced author may benefit a young writer more than a university writing program",
-    "The author is less convinced than before that, for a young writer, the value of a university writing program is greater than that of a serious apprenticeship to an experienced author",
-    "In the past, the author was always convinced that the value of a university writing program is no greater than that of an apprenticeship"
+    "The public now prefers the singer's early recordings to her later ones",
+    "The singer's later recordings are better, which is why they sold more",
+    "Poor sales of the early recordings are no evidence that they are inferior to her later ones",
+    "The early recordings sold poorly because of the poor technical conditions in which they were made, unlike the later ones"
    ],
    "answer": 3,
-   "explanation": "The author now doubts that the program is worth more than apprenticeship. (2) turns doubt into a preference, (1) mixes the two things being compared, and (4) reverses the author's past view.",
+   "explanation": "The critic rejects the inference from poor sales to lower quality (3). (2) is the view he argues against, (4) gives a reason connected to the recordings themselves, which he denies, and (1) claims a present preference he does not mention.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "מבקר מוזיקה כתב על זמרת מסוימת: \"רבים סבורים שהקלטותיה המוקדמות חלשות מן המאוחרות, ומצביעים על כך שבמשך שנים כמעט איש לא קנה אותן. אבל הציבור היה איטי להעריך אותן מסיבות שאין להן כל קשר להקלטות עצמן, ומי שיאזין להן היום ימצא שהן מרגשות לא פחות מעבודתה המאוחרת.\" איזה מן הבאים מבטא בצורה הטובה ביותר את עיקר דבריו של המבקר?",
+   "style_donor": "July 2015 Second Section Q14"
   },
   {
    "id": "vo-43-126",
@@ -942,17 +1098,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Summer 2026 §1 Q14",
    "replaces": "",
-   "stem": "Professor Adler: \"Had old recordings of Kelani folk songs, made by the villagers themselves and not by folklorists, not come to light recently, I would have hesitated to back those who share Professor Ofir's view about who recorded the Kelani songs.\" Which of the following is not implied by Professor Adler's words?",
+   "stem": "In a letter to a local newspaper, a resident writes that he voted against moving the market out of the town center, and that he still thinks the decision was taken too hastily. Nevertheless, he admits, the streets of the center have been cleaner since the move - the very thing that the plan's opponents, himself included, had said would not happen. Which of the following is not implied by the letter?",
    "options": [
-    "Professors Adler and Ofir now hold similar views about the recordings of the Kelani songs",
-    "Until recently, Professor Adler had doubts about Professor Ofir's view of who recorded the Kelani songs",
-    "Professor Ofir claimed that folklorists were not the only people who recorded the Kelani songs",
-    "Recordings of Kelani songs made by folklorists came to light recently"
+    "The plan's opponents did not expect the move to make the center cleaner",
+    "The resident still has reservations about the way the decision was made",
+    "At least one of the opponents' predictions turned out to be wrong",
+    "Since the move, the resident has come to support moving the market"
    ],
    "answer": 4,
-   "explanation": "What came to light were recordings made by the villagers, not by folklorists. The rest follows: the new recordings back Ofir's view that others recorded too (3), which Adler now supports (1) after having doubted it (2).",
+   "explanation": "He concedes only that the streets are cleaner and still criticizes the decision, so nothing implies that he now supports the move (4). (1) and (3) follow from \"said would not happen\", and (2) from \"still thinks ... too hastily\".",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "במכתב לעיתון מקומי כותב תושב שהצביע נגד העברת השוק ממרכז העיר, ושהוא עדיין סבור שההחלטה התקבלה בחיפזון. עם זאת, הוא מודה, רחובות המרכז נקיים יותר מאז ההעברה - בדיוק מה שמתנגדי התוכנית, והוא בכללם, אמרו שלא יקרה. איזה מן הבאים אינו משתמע מן המכתב?",
+   "style_donor": "Summer 2020 Second Section Q5"
   },
   {
    "id": "vo-43-127",
@@ -960,17 +1119,20 @@
    "category": "Sentence Understanding",
    "mirrors": "Summer 2024 §2 Q14",
    "replaces": "",
-   "stem": "Whoever announces to a group of tourists that the city museum is closed today conveys two things at once: that the museum is closed today, and that they themselves think so. So if someone makes this announcement knowing perfectly well that the museum is open, the listeners are misled on two counts - although only one falsehood was stated, since the speaker never actually said that they thought the museum was closed. Which of the following is implied in the text?",
+   "stem": "A philosopher once remarked that a man who announces that he is the humblest person in the village has not only praised himself but, by the very announcement, has shown that he does not deserve the praise, whereas a man who announces that he is the proudest person in the village may be telling the truth. Which of the following best expresses the philosopher's point?",
    "options": [
-    "A person who announces that the museum is closed today while knowing that it is open states two falsehoods",
-    "A person who says something that they themselves believe to be true cannot mislead the listener",
-    "A person who says something they believe to be true, although it is false, misleads the listener on one count only",
-    "A person who announces that the museum is closed while believing this to be false misleads the listener on two counts even if the museum really is closed without their knowing it"
+    "Anyone who praises himself is lying",
+    "A proud man who openly admits his pride shows by doing so that he is in fact humble",
+    "Declaring oneself humble, unlike declaring oneself proud, undermines the very claim being made",
+    "A man who is truly humble does not say anything about his own character, whether good or bad"
    ],
    "answer": 3,
-   "explanation": "A sincere but mistaken speaker conveys a false fact and a true belief - one count. (1) contradicts \"only one falsehood\"; (2) ignores the false fact; in (4) the fact is true, so only the belief misleads.",
+   "explanation": "Announcing one's humility is itself immodest, whereas announcing one's pride can be true (3). (1) contradicts \"may be telling the truth\", and (2) and (4) are not said.",
    "feel": 4,
-   "pool": true
+   "pool": true,
+   "facts": [],
+   "he_draft": "פילוסוף העיר פעם שאדם המכריז שהוא הצנוע באנשי הכפר לא רק שיבח את עצמו, אלא בעצם ההכרזה הראה שאינו ראוי לשבח, ואילו אדם המכריז שהוא הגאוותן באנשי הכפר אולי אומר אמת. איזה מן הבאים מבטא בצורה הטובה ביותר את כוונת הפילוסוף?",
+   "style_donor": "Summer 2023 Second Section Q8"
   }
  ],
  "passages": []

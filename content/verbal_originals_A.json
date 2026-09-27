@@ -2,54 +2,63 @@
  "items": [
   {
    "id": "vo-41-001",
+   "style_donor": "Summer 2025 §2 Q12 (Shlomo, \"the more the better\")",
+   "he_draft": "שמירה על כיתות קטנות הייתה תמיד אחת המטרות העיקריות של חברי ועד ההורים. ____ הם ____ את הצעת העירייה להעביר את הקונסרבטוריון המקומי לבניין בית הספר ״אורן״, הצעה ש____ את מספר התלמידים בכל כיתה. (1) לפיכך / התנגדו ל / לא צפויה לשנות (2) אף על פי כן / דחו / עשויה להגדיל (3) אף על פי כן / תמכו ב / צפויה להגדיל (4) לפיכך / הצביעו בעד / תגדיל בוודאות",
    "topic": 41,
    "category": "Sentence Completion",
    "mirrors": "Autumn 2021 §2 Q12",
    "replaces": "vb-sc_tr_0130",
-   "stem": "Keeping classes small is usually a top priority for the members of the town's school board. ____ they ____ the proposal to move the town's music program into the Oren school building, a proposal ____ the number of pupils in each classroom.",
+   "stem": "Keeping classes small has always been one of the main goals of the members of the parents' committee. ____ they ____ the municipality's proposal to move the local music school into the Oren school building, a proposal ____ the number of students in each class.",
    "options": [
-    "Therefore / did not support / not expected to increase",
-    "Nevertheless / did not support / certain to increase",
+    "Therefore / opposed / not expected to change",
+    "Nevertheless / rejected / likely to increase",
     "Nevertheless / supported / expected to increase",
-    "Therefore / supported / sure to increase"
+    "Therefore / voted in favor of / certain to increase"
    ],
    "answer": 3,
-   "explanation": "The board cares about small classes, and nevertheless supported a proposal that will increase class size: a real contrast. (1) and (4) use \"Therefore\" for a decision that does not follow from the board's priority; (2) opposes a harmful proposal, so \"Nevertheless\" has nothing to contrast with.",
-   "feel": 5
+   "explanation": "The committee cares about small classes, and nevertheless supported a proposal that will increase class size: a real contrast. (1) and (4) use \"Therefore\" for a decision that does not follow from the committee's goal; (2) rejects a harmful proposal, so \"Nevertheless\" has nothing to contrast with.",
+   "feel": 5,
+   "facts": []
   },
   {
    "id": "vo-41-002",
+   "style_donor": "Summer 2026 §1 Q6 (jazz album)",
+   "he_draft": "הרצאתו של פרופסור אלמגור התבססה כמעט כולה על ____, ולכן היה לה אופי של ____. על אחת כמה וכמה מפתיע, אפוא, שבאמצע הרצאה ____ זו הוא עצר כמה פעמים כדי ____. (1) טבלאות סטטיסטיות מפורטות / דוח טכני / יבשה / לספר לקהל על ילדותו בטבריה (2) ציטוטים ממסמכים משפטיים / מסמך רשמי / רשמית / להקריא את נוסחם המדויק של כמה חוקים (3) סיפורים אישיים / מאמר אקדמי יבש / חיה / לספר עוד סיפור מחייו (4) משפטים קצרים ופשוטים / שיחה עם ילדים / קלילה / לשאול את הקהל שאלות קלות",
    "topic": 41,
    "category": "Sentence Completion",
    "mirrors": "Spring 2020 §1 Q9",
    "replaces": "vb-sc_tr_0103",
-   "stem": "The speaker's heavy reliance on ____ gives his lecture the character of ____ ; the audience was therefore surprised when, amid the lecture's ____ style, he repeatedly paused to ____ .",
+   "stem": "Professor Almagor's lecture was based almost entirely on ____ , and therefore it had the character of ____ . All the more surprising, then, that in the middle of this ____ lecture he stopped several times in order ____ .",
    "options": [
-    "detailed statistical tables / a technical report / dry and impersonal / tell jokes about his own childhood",
-    "precise legal terminology / an official document / formal / quote the exact wording of the relevant laws",
-    "colorful personal anecdotes / a dry academic paper / lively and humorous / share amusing stories",
-    "simple words and short sentences / a talk for young children / playful / ask the audience easy questions"
+    "detailed statistical tables / a technical report / dry / to tell the audience about his childhood in Tiberias",
+    "quotations from legal documents / an official document / formal / to read aloud the exact wording of several laws",
+    "personal stories / a dry academic paper / lively / to tell another story from his own life",
+    "short and simple sentences / a talk with children / light / to ask the audience easy questions"
    ],
    "answer": 1,
-   "explanation": "Only personal jokes clash with a dry, impersonal style, so only (1) justifies \"surprised\". In (2) and (4) the last part fits the style, so nothing is surprising; in (3) anecdotes cannot make a lecture a dry academic paper.",
-   "feel": 4
+   "explanation": "Only stories about his childhood clash with a dry lecture built on tables, so only (1) justifies \"surprising\". In (2) and (4) the last part fits the character of the lecture, so nothing is surprising; in (3) personal stories cannot give a lecture the character of a dry academic paper.",
+   "feel": 4,
+   "facts": []
   },
   {
    "id": "vo-41-003",
+   "style_donor": "Summer 2026 §2 Q10 (Dina's election as mayor)",
+   "he_draft": "מתנגדי שיטת הבחינות החדשה שהונהגה בבית הספר טוענים שמאז הונהגה, ____. המנהל, הראל, ____ זאת, ____, שכן ____. (1) המורים מקדישים פחות זמן לבדיקת כל בחינה / מאשר / ומוסיף שלא לכך התכוון / השיטה נועדה לחסוך למורים זמן (2) המורים מקדישים זמן רב הרבה יותר לבדיקת כל בחינה / אינו מכחיש / אך טוען שזו בדיוק מטרת השיטה / רק כך יכול כל תלמיד לקבל הערה מפורטת על עבודתו (3) המורים מקדישים זמן רב הרבה יותר לבדיקת כל בחינה / מודה ב / ומסביר שזה בדיוק מה שציפה לו / השיטה נועדה מלכתחילה לחסוך למורים זמן (4) התלמידים מקבלים פחות הערות על עבודתם / דוחה / וטוען שזו בדיוק מטרת השיטה / התלמידים אמורים למצוא את טעויותיהם בעצמם",
    "topic": 41,
    "category": "Sentence Completion",
    "mirrors": "Winter 2018 §1 Q10",
    "replaces": "vb-sc_tr_0073",
-   "stem": "Critics of the grading reform introduced by Principal Harel argue that since the reform took effect, the time teachers spend checking each student's written assignment ____ . Harel ____ that checking an assignment now takes longer than it did in the past, ____ the extra time is evidence of a genuine improvement in teaching, and that ____ .",
+   "stem": "Opponents of the new examination method that was introduced in the school claim that since it was introduced, ____ . The principal, Harel, ____ this, ____ , since ____ .",
    "options": [
-    "has decreased / accepts / but maintains that / the teachers' workload has become considerably lighter",
-    "has increased considerably / does not dispute / but maintains that, far from being a flaw, / students now receive far more detailed comments on their work",
-    "has increased / freely admits / but, in contrast to his critics, holds that / checking an assignment is now quicker than it once was",
-    "has decreased / is convinced / but adds in the same breath that / the checking process has become far too slow"
+    "the teachers spend less time checking each examination / confirms / and adds that this was not his intention / the method was meant to save the teachers' time",
+    "the teachers spend much more time checking each examination / does not deny / but claims that this is exactly the purpose of the method / only in this way can each student receive a detailed comment on his work",
+    "the teachers spend much more time checking each examination / admits / and explains that this is exactly what he expected / the method was meant from the start to save the teachers' time",
+    "the students receive fewer comments on their work / rejects / and claims that this is exactly the purpose of the method / the students are expected to find their mistakes by themselves"
    ],
    "answer": 2,
-   "explanation": "Harel concedes the critics' point (more time) and turns it into an advantage, and detailed comments support that view. (1) and (3) contradict the admission that checking takes longer; (4) calls the change an improvement and \"far too slow\" at once.",
-   "feel": 4
+   "explanation": "Harel concedes the critics' point (more time) and presents it as the purpose of the method, which the detailed comments explain. In (1) the method saves time as it was meant to, so \"this was not his intention\" makes no sense; in (3) a method meant to save time cannot be expected to take more time; in (4) he rejects a claim and at the same time calls it the purpose of the method.",
+   "feel": 4,
+   "facts": []
   },
   {
    "id": "vo-41-004",
@@ -66,7 +75,8 @@
    ],
    "answer": 4,
    "explanation": "What really happened is the reverse of what is written: the engineer found the \"safe\" report inaccurate, so the residents were ordered to leave. (2) makes the residents stay although the report was rejected; (1) and (3) use a positive condition that gives the opposite result.",
-   "feel": 4
+   "feel": 4,
+   "facts": []
   },
   {
    "id": "vo-41-005",
@@ -83,24 +93,28 @@
    ],
    "answer": 3,
    "explanation": "Because I knew that Tamar does not lend her tools, I was surprised when she offered me her drill. In (1) knowing would prevent the hurt; in (2) no one is hurt by an offer; in (4) knowing is exactly what would cause the surprise.",
-   "feel": 5
+   "feel": 5,
+   "facts": []
   },
   {
    "id": "vo-42-001",
+   "style_donor": "Summer 2024 §1 Q11 (tall ducks)",
+   "he_draft": "גלעד רוצה לוודא שכל עובד במפעל שלו שאינו מגיע לעבודה באוטובוס גר בעיירה עצמה. על איזו מן השאלות שלהלן עליו לקבל את התשובה ״לא״ כדי שיהיה בטוח בכך? (1) האם יש עובד שמגיע לעבודה באוטובוס וגר מחוץ לעיירה? (2) האם יש עובד שגר מחוץ לעיירה ואינו נוסע למפעל באוטובוס? (3) האם יש עובד שגר בעיירה ואינו מגיע לעבודה באוטובוס? (4) האם יש עובדים מחוץ לעיירה שמגיעים באוטובוס?",
    "topic": 42,
    "category": "Claims and Logic",
    "mirrors": "Summer 2020 §1 Q14",
    "replaces": "vb-inf_v2_0409",
-   "stem": "For which of the following questions will a negative answer make it possible to determine with absolute certainty that every employee who does not drive to work lives within the city limits?",
+   "stem": "Gilad wishes to verify that every worker in his factory who does not come to work by bus lives in the town itself. To which of the following questions must he receive the answer \"no\" in order to be certain of this?",
    "options": [
-    "Is there an employee who drives to work and does not live within the city limits?",
-    "Is there an employee who does not drive to work and does not live within the city limits?",
-    "Is there an employee who lives within the city limits and does not drive to work?",
-    "Is there an employee who does not live within the city limits and drives to work?"
+    "Is there a worker who comes to work by bus every day and lives outside the town?",
+    "Is there a worker who lives outside the town and does not come by bus?",
+    "Is there a worker who lives in the town itself and does not come to work by bus?",
+    "Are there workers from outside the town who arrive by bus?"
    ],
    "answer": 2,
-   "explanation": "The claim fails only if some employee does not drive and does not live in the city; a \"no\" to (2) rules that out. (1) and (4) are about drivers, whom the claim does not mention; (3) asks about employees who fit the claim.",
-   "feel": 5
+   "explanation": "The claim is: does not come by bus → lives in the town. Only a worker who does not come by bus and lives outside the town can break it, so Gilad needs a \"no\" to (2). (1) and (4) are about workers who come by bus, whom the claim does not cover; (3) asks about workers who simply fit the claim.",
+   "feel": 5,
+   "facts": []
   },
   {
    "id": "vo-42-002",
@@ -117,112 +131,133 @@
    ],
    "answer": 3,
    "explanation": "(1), (2) and (4) all say: failed the test → not permitted to carry passengers. (3) reverses the arrow (not permitted → failed).",
-   "feel": 5
+   "feel": 5,
+   "facts": []
   },
   {
    "id": "vo-42-003",
+   "style_donor": "Summer 2026 §2 Q8 (childcare worker, equivalent claim)",
+   "he_draft": "זוג טענות ייקרא ״מאוזן״ אם כל אחת משתי הטענות נובעת מן האחרת. איזה מזוגות הטענות שלהלן מאוזן? (1) א. אם החנות פתוחה, אורנה בעבודה. ב. אם אורנה אינה בעבודה, החנות אינה פתוחה. (2) א. יש מישהו שלא השתתף בישיבה. ב. אין אף אחד שהשתתף בישיבה. (3) א. אין בקבוצה צייר שאין לו סטודיו. ב. יש בקבוצה ציירים שיש להם סטודיו. (4) א. כל צמח שאינו מושקה נובל. ב. כל צמח שנובל אינו מושקה.",
    "topic": 42,
    "category": "Claims and Logic",
    "mirrors": "Winter 2023 §2 Q15",
    "replaces": "vb-inf_v2_0406",
    "stem": "A pair of claims is called \"balanced\" if each of the two claims can be inferred from the other. Which of the following pairs of claims is balanced?",
    "options": [
-    "A. If the store is open, Dana is at work. B. If Dana is not at work, the store is not open.",
+    "A. If the store is open, Orna is at work. B. If Orna is not at work, the store is not open.",
     "A. There is someone who did not attend the meeting. B. There is no one who attended the meeting.",
     "A. No painter in the group is without a studio. B. There are painters in the group who have a studio.",
     "A. Every plant that is not watered wilts. B. Every plant that wilts is not watered."
    ],
    "answer": 1,
    "explanation": "B in (1) is A flipped and negated (the contrapositive), so each follows from the other. (4) reverses the arrow without negating; in (3) A does not guarantee that painters exist and B does not say all of them have a studio; (2) are different claims.",
-   "feel": 4
+   "feel": 4,
+   "facts": []
   },
   {
    "id": "vo-42-004",
+   "style_donor": "Spring 2019 §1 Q14 (Water Authority pools)",
+   "he_draft": "נתון: חברי רביעייה מסוימת הם כנרים שמאליים המתגוררים בחיפה. על איזו מן השאלות שלהלן אפשר לענות על סמך מידע זה? (1) האם כנרים שמאליים מתגוררים גם בערים אחרות? (2) האם רביעייה זו היא הקבוצה היחידה של כנרים שמאליים בחיפה? (3) האם כל כנר שמאלי המתגורר בחיפה הוא חבר ברביעייה? (4) האם נכון שאף אחד מן המוזיקאים השמאליים המתגוררים בחיפה אינו מנגן בכינור?",
    "topic": 42,
    "category": "Claims and Logic",
    "mirrors": "July 2016 §2 Q12",
    "replaces": "vb-inf_v2_0412",
-   "stem": "Given: the members of the Amber Quartet are left-handed violinists who live in Lisbon. Which of the following questions can be answered on the basis of this information?",
+   "stem": "Given: the members of a certain quartet are left-handed violinists who live in Haifa. Which of the following questions can be answered on the basis of this information?",
    "options": [
     "Do left-handed violinists live in other cities as well?",
-    "Is the Amber Quartet the only group of left-handed violinists in Lisbon?",
-    "Is every left-handed violinist who lives in Lisbon a member of the Amber Quartet?",
-    "Is it true that none of the left-handed musicians who live in Lisbon plays the violin?"
+    "Is this quartet the only group of left-handed violinists in Haifa?",
+    "Is every left-handed violinist who lives in Haifa a member of the quartet?",
+    "Is it true that none of the left-handed musicians who live in Haifa plays the violin?"
    ],
    "answer": 4,
-   "explanation": "The quartet's members exist and are left-handed musicians in Lisbon who play the violin, so the answer to (4) is \"no\". (3) runs the arrow backwards; (1) and (2) ask about other cities and other groups, which the information does not mention.",
-   "feel": 4
+   "explanation": "The quartet's members exist and are left-handed musicians in Haifa who play the violin, so the answer to (4) is \"no\". (3) runs the arrow backwards; (1) and (2) ask about other cities and other groups, which the information does not mention.",
+   "feel": 4,
+   "facts": []
   },
   {
    "id": "vo-42-005",
+   "style_donor": "Summer 2022 §1 Q4 (Claude Bachet's riddle)",
+   "he_draft": "בעל מאפייה מצא שבכל חודש שבו השיקה המאפייה סוג לחם חדש, היא הוציאה יותר כסף על פרסום, וכתוצאה מכך רווחה באותו חודש היה נמוך מבחודש הקודם. איזה מן המקרים שלהלן, אילו התרחש, היה סותר בוודאות ממצא זה? (1) חודש שבו הוצאות הפרסום לא עלו, אך הרווח היה נמוך מבחודש הקודם (2) חודש שבו לא הושק סוג לחם חדש והרווח היה נמוך מבחודש הקודם (3) חודש שבו לא הושק לחם חדש, אך הוצא יותר כסף על פרסום (4) חודש שבו הושק סוג לחם חדש והרווח היה גבוה מבחודש הקודם",
    "topic": 42,
    "category": "Claims and Logic",
    "mirrors": "April 2016 §2 Q10",
    "replaces": "vb-inf_v2_0411",
-   "stem": "In every month in which the bakery launches a new type of bread, its advertising expenses rise, and consequently its profits for that month fall. Which of the following cases certainly contradicts the statement above?",
+   "stem": "The owner of a bakery found that in every month in which the bakery launched a new kind of bread, it spent more money on advertising, and as a result its profit in that month was lower than in the previous month. Which of the following cases, had it occurred, would certainly contradict this finding?",
    "options": [
-    "A month in which the advertising expenses did not rise, but profits fell",
-    "A month in which no new type of bread was launched, but profits fell",
-    "A month in which no new type of bread was launched, but advertising expenses rose",
-    "A month in which a new type of bread was launched, but profits did not fall"
+    "A month in which the advertising expenses did not rise, but the profit was lower than in the previous month",
+    "A month in which no new kind of bread was launched and the profit was lower than in the previous month",
+    "A month in which no new bread was launched, but more money was spent on advertising",
+    "A month in which a new kind of bread was launched and the profit was higher than in the previous month"
    ],
    "answer": 4,
-   "explanation": "The statement says that a launch is followed by a fall in profits; (4) has the launch without the fall. The statement says nothing about months without a launch, so (1), (2) and (3) do not contradict it.",
-   "feel": 5
+   "explanation": "The finding says that a launch is followed by a lower profit; (4) has the launch without the lower profit. The finding says nothing about months without a launch, so (2) and (3) do not contradict it, and (1) does not say whether a new bread was launched.",
+   "feel": 5,
+   "facts": []
   },
   {
    "id": "vo-42-006",
+   "style_donor": "Summer 2023 §2 Q11 (journal Microscope)",
+   "he_draft": "יואב: ״כל ספר בספריה הזאת שנדפס לפני שנת 1900 שמור במרתף.״ דינה: ״כל ספר בספריה הזאת שאינו שמור במרתף נדפס אחרי שנת 1900.״ ספר שנדפס בשנת 1950 ושמור במרתף - (1) סותר את דברי יואב, אך לא את דברי דינה (2) אינו סותר את דבריו של אף אחד מהם (3) סותר את דבריהם של שניהם (4) סותר רק את דברי דינה",
    "topic": 42,
    "category": "Claims and Logic",
    "mirrors": "Summer 2022 §2 Q9",
    "replaces": "vb-inf_v2_0408",
-   "stem": "Statement A: All top-floor apartments have balconies.\nStatement B: All apartments without balconies are on lower floors.\nThe existence of a lower-floor apartment with a balcony -",
+   "stem": "Yoav: \"Every book in this library that was printed before 1900 is kept in the basement.\" Dina: \"Every book in this library that is not kept in the basement was printed after 1900.\" A book that was printed in 1950 and is kept in the basement -",
    "options": [
-    "contradicts statement A but not statement B",
-    "does not contradict either statement",
-    "contradicts both statements",
-    "contradicts statement B but not statement A"
+    "contradicts what Yoav said, but not what Dina said",
+    "does not contradict what either of them said",
+    "contradicts what both of them said",
+    "contradicts only what Dina said"
    ],
    "answer": 2,
-   "explanation": "A speaks about top-floor apartments and B about apartments without balconies; this apartment is neither, so neither statement says anything about it. (B is simply A flipped and negated.)",
-   "feel": 4
+   "explanation": "Yoav: before 1900 → basement. Dina: not in the basement → after 1900, which is Yoav's claim flipped and negated. A book from 1950 kept in the basement meets neither condition (it was not printed before 1900 and it is in the basement), so it contradicts neither of them.",
+   "feel": 4,
+   "facts": []
   },
   {
    "id": "vo-42-007",
+   "style_donor": "Summer 2024 §1 Q7 (hamsters and the X gene)",
+   "he_draft": "קבוצת מטיילים יצאה לטיול בשביל המוביל לנקודת תצפית. ידוע כי: - כל מטייל שנשא מפה הגיע לנקודת התצפית. - כל מטייל שהגיע לנקודת התצפית חזר לפני השקיעה. אם כן, לא ייתכן שאחד המטיילים - (1) לא נשא מפה וחזר אחרי השקיעה (2) נשא מפה, הגיע לנקודת התצפית וחזר לפני השקיעה (3) נשא מפה וחזר אחרי השקיעה (4) לא הגיע לנקודת התצפית וחזר לפני השקיעה",
    "topic": 42,
    "category": "Claims and Logic",
    "mirrors": "Autumn 2024 §2 Q17",
    "replaces": "vb-inf_v2_0404",
-   "stem": "Twelve hikers set out on a trail that leads to a lookout point. It is known that:\n- every hiker who carried a map reached the lookout point;\n- every hiker who reached the lookout point returned before sunset.\nIf so, it is not possible that one of the hikers -",
+   "stem": "A group of hikers went on a trip along a path that leads to a lookout point. It is known that:\n- Every hiker who carried a map reached the lookout point.\n- Every hiker who reached the lookout point returned before sunset.\nIf so, it is not possible that one of the hikers -",
    "options": [
-    "carried no map and returned after sunset",
-    "carried a map and returned before sunset",
+    "did not carry a map and returned after sunset",
+    "carried a map, reached the lookout point and returned before sunset",
     "carried a map and returned after sunset",
-    "carried no map and returned before sunset"
+    "did not reach the lookout point and returned before sunset"
    ],
    "answer": 3,
-   "explanation": "Map → lookout point → back before sunset, so a hiker with a map cannot return after sunset. The rules say nothing about hikers without a map, so (1) and (4) are possible; (2) is what the rules predict.",
-   "feel": 5
+   "explanation": "Map → lookout point → back before sunset, so a hiker with a map cannot return after sunset. The rules say nothing about hikers without a map or hikers who did not reach the lookout point, so (1) and (4) are possible; (2) is what the rules predict.",
+   "feel": 5,
+   "facts": []
   },
   {
    "id": "vo-42-008",
+   "style_donor": "Spring 2019 §2 Q9 (houses in the Givon neighborhood)",
+   "he_draft": "אמנון ביקר בספריה העירונית. ידוע כי: - מבין הספרים שבספריה, אמנון דפדף בכל הספרים שנכתבו בספרדית; - כל הספרים שאמנון דפדף בהם כרוכים בכריכה קשה. אם כן, לא ייתכן שיש בספריה ספר ש- (1) כתוב בספרדית וכרוך בכריכה רכה (2) נכתב באיטלקית וכרוך בכריכה קשה (3) כתוב בספרדית וכרוך בכריכה קשה (4) כתוב באיטלקית וכרוך בכריכה רכה",
    "topic": 42,
    "category": "Claims and Logic",
    "mirrors": "April 2014 §2 Q10",
    "replaces": "vb-inf_v2_0416",
-   "stem": "Omer visited the town library. It is known that:\n- of the books in the library, Omer leafed through all the books written in Spanish;\n- all the books Omer leafed through are hardcovers.\nIf so, it is not possible that the library has a book that -",
+   "stem": "Amnon visited the town library. It is known that:\n- of the books in the library, Amnon leafed through all the books written in Spanish;\n- all the books Amnon leafed through are hardcovers.\nIf so, it is not possible that the library has a book that -",
    "options": [
     "is in Spanish and is a paperback",
-    "is in Italian and is a hardcover",
+    "is written in Italian and is a hardcover",
     "is in Spanish and is a hardcover",
     "is in Italian and is a paperback"
    ],
    "answer": 1,
-   "explanation": "In Spanish → Omer leafed through it → hardcover, so a Spanish paperback is impossible. The rules say nothing about Italian books, and (3) is what the rules predict.",
-   "feel": 5
+   "explanation": "In Spanish → Amnon leafed through it → hardcover, so a Spanish paperback is impossible. The rules say nothing about Italian books, and (3) is what the rules predict.",
+   "feel": 5,
+   "facts": []
   },
   {
    "id": "vo-42-009",
+   "style_donor": "Summer 2026 §1 Q13 (scholarships, Yossi, Liran, Menashe and Na'or)",
+   "he_draft": "איזה מן המידעים שלהלן יאפשר לקבוע בוודאות שכל אריח במחסן שאינו מזוגג יוצר בפורטוגל? (1) כל האריחים שלא יוצרו בפורטוגל מזוגגים (2) כל האריחים שיוצרו בפורטוגל מזוגגים (3) כל אריח מזוגג יוצר בפורטוגל (4) אף אחד מן האריחים שיוצרו בפורטוגל אינו מזוגג",
    "topic": 42,
    "category": "Claims and Logic",
    "mirrors": "Spring 2024 §2 Q13",
@@ -232,36 +267,42 @@
     "All the tiles not made in Portugal are glazed",
     "All the tiles made in Portugal are glazed",
     "Every glazed tile was made in Portugal",
-    "None of the tiles made in Portugal are glazed"
+    "None of the tiles that were made in Portugal are glazed"
    ],
    "answer": 1,
    "explanation": "\"Not made in Portugal → glazed\" is the flipped-and-negated form of \"not glazed → made in Portugal\". (3) reverses the arrow; (2) and (4) describe the Portuguese tiles, not where the unglazed tiles come from.",
-   "feel": 4
+   "feel": 4,
+   "facts": []
   },
   {
    "id": "vo-43-001",
+   "style_donor": "Summer 2023 §2 Q8 (educator Ralph Tyler)",
+   "he_draft": "הכלכלן שני כתב: ״אם העלייה במכירות ברבעון האחרון מסמנת את תחילתה של התאוששות - הדבר עדיין מוטל בספק רב, על אחת כמה וכמה לנוכח ההתפתחויות האחרות בשוק. לעת עתה אין זה אלא סימן ראשון.״ איזו מן הטענות שלהלן מבטאת בצורה הטובה ביותר את דבריו של שני? (1) אם מביאים בחשבון את ההתפתחויות האחרות בשוק, ודאי שההתאוששות שהחלה ברבעון האחרון תימשך (2) ספק אם העלייה במכירות ברבעון האחרון משקפת את מצבו הנוכחי של השוק (3) העלייה במכירות היא אמנם רק סימן ראשון, אך כבר ברור שהחלה התאוששות (4) לנוכח ההתפתחויות האחרות בשוק, יש יסוד לספק אם העלייה במכירות היא תחילתה של התאוששות מתמשכת",
    "topic": 43,
    "category": "Sentence Understanding",
    "mirrors": "December 2014 §1 Q16",
    "replaces": "vb-inf_v2_0359",
-   "stem": "An economist said: \"Whether the recovery suggested by last quarter's sales figures will be sustained remains highly uncertain, particularly in light of the other developments in the market; what we are seeing is, so far, no more than an early indication.\" Which of the following sentences expresses the same meaning as the economist's statement?",
+   "stem": "The economist Shani wrote: \"Whether the rise in sales in the last quarter marks the beginning of a recovery is still very much in doubt, all the more so in view of the other developments in the market. For the time being, it is no more than a first sign.\" Which of the following best expresses Shani's statement?",
    "options": [
-    "If we take into account the other developments in the market, it is certain that the recovery suggested by last quarter's sales figures will continue",
-    "It is uncertain whether the recovery suggested by last quarter's sales figures accurately reflects the current state of the market",
-    "Last quarter's sales figures are admittedly no more than an early indication, but it is already clear that the recovery they suggest will be sustained",
-    "Given the other developments in the market, it is doubtful whether the recovery suggested by last quarter's sales figures will last for long"
+    "Taking into account the other developments in the market, it is certain that the recovery that began in the last quarter will continue",
+    "It is doubtful whether the rise in sales in the last quarter reflects the present state of the market",
+    "The rise in sales is indeed only a first sign, but it is already clear that a recovery has begun",
+    "In view of the other developments in the market, there is reason to doubt whether the rise in sales is the beginning of a lasting recovery"
    ],
    "answer": 4,
-   "explanation": "The economist doubts whether the recovery will last, because of other developments in the market. (1) and (3) turn the doubt into certainty; (2) moves the doubt from the future to the present.",
-   "feel": 4
+   "explanation": "Shani doubts whether the rise in sales is the beginning of a recovery, especially because of other developments in the market. (1) and (3) turn the doubt into certainty; (2) moves the doubt from what the rise will lead to onto what it shows about the present.",
+   "feel": 4,
+   "facts": []
   },
   {
    "id": "vo-43-002",
+   "style_donor": "Summer 2023 §1 Q10 (indirect lie)",
+   "he_draft": "שרית: ״במסעדה החדשה, רוב הסועדים חוזרים, ולכן אני מניחה שהאוכל שם ____.״ דבריה של שרית אינם הגיוניים, אך הם היו הגיוניים אילו אמרה ____ במקום ״ולכן״, ____ במקום ____. איזו מן התשובות שלהלן משלימה את הקטע בצורה הטובה ביותר? (1) מאכזב / ״לפיכך״ / או ״מעטים הסועדים שאינם חוזרים״ / ״רוב הסועדים חוזרים״ (2) מצוין / ״אף על פי כן״ / או לחלופין ״אינו מצוין״ / ״מצוין״ (3) מאכזב / ״אף על פי כן״ / או ״מצוין״ / ״מאכזב״ (4) בינוני / ״ובכל זאת״ / וגם ״טוב למדי״ / ״בינוני״",
    "topic": 43,
    "category": "Sentence Understanding",
    "mirrors": "September 2016 §1 Q12",
    "replaces": "vb-inf_v2_0353",
-   "stem": "Maya: \"At the new restaurant on Elm Street, most diners come back, so I assume the food there is ____.\" Maya's words are not logical, but they would have been logical had she said ____ instead of \"so,\" ____ instead of ____. Which of the following best completes the text?",
+   "stem": "Sarit: \"At the new restaurant, most diners come back, so I assume the food there is ____.\" Sarit's words are not logical, but they would have been logical had she said ____ instead of \"so,\" ____ instead of ____. Which of the following best completes the text?",
    "options": [
     "disappointing / \"therefore\" / or \"few diners fail to come back\" / \"most diners come back\"",
     "excellent / \"even so\" / or alternatively \"not excellent\" / \"excellent\"",
@@ -270,49 +311,58 @@
    ],
    "answer": 3,
    "explanation": "\"Most come back, so … disappointing\" is illogical; it becomes logical with a concession (\"even so\") or with a verdict that fits the evidence (\"excellent\"). (1) swaps in a synonym and a paraphrase, which change nothing; (2) starts from a logical sentence; (4) requires both changes at once, which makes the sentence illogical again.",
-   "feel": 4
+   "feel": 4,
+   "facts": []
   },
   {
    "id": "vo-43-003",
+   "style_donor": "Summer 2020 §2 Q11 (New Encyclopedia of People in History)",
+   "he_draft": "את המשפט הבא, הלקוח ממודעה על מלגה, אפשר להבין בשתי דרכים: ״המלגה תוענק רק לסטודנטים לסיעוד העובדים בבית החולים העירוני ולתושבי המחוז הצפוני.״ איזה מן המקרים שלהלן אינו אפשרי לפי אף אחת משתי דרכי ההבנה של המשפט? (1) עינת, העובדת בבית החולים העירוני אך אינה סטודנטית לסיעוד ואינה גרה במחוז הצפוני, קיבלה את המלגה (2) חגי, תושב המחוז הצפוני שאינו סטודנט לסיעוד ואינו עובד בבית החולים העירוני, קיבל את המלגה (3) נורית, סטודנטית לסיעוד הגרה במחוז הצפוני אך אינה עובדת בבית החולים העירוני, קיבלה את המלגה (4) יורם, תושב המחוז הצפוני שאינו סטודנט לסיעוד ואינו עובד בבית החולים העירוני, לא קיבל את המלגה",
    "topic": 43,
    "category": "Sentence Understanding",
    "mirrors": "September 2016 §2 Q16",
    "replaces": "vb-inf_v2_0356",
    "stem": "The following sentence, taken from an announcement about a scholarship, can be understood in two ways: \"The scholarship will be awarded only to nursing students who work at the city hospital and residents of the northern district.\" Which of the following is not possible according to either of the two ways of understanding the sentence?",
    "options": [
-    "Yael, who works at the city hospital but is not a nursing student and does not live in the northern district, was awarded the scholarship",
-    "Ron, a resident of the northern district who is not a nursing student and does not work at the city hospital, was awarded the scholarship",
-    "Shira, a nursing student who lives in the northern district but does not work at the city hospital, was awarded the scholarship",
-    "Gil, a resident of the northern district who is not a nursing student and does not work at the city hospital, was not awarded the scholarship"
+    "Einat, who works at the city hospital but is not a nursing student and does not live in the northern district, was awarded the scholarship",
+    "Hagai, a resident of the northern district who is not a nursing student and does not work at the city hospital, was awarded the scholarship",
+    "Nurit, a nursing student who lives in the northern district but does not work at the city hospital, was awarded the scholarship",
+    "Yoram, a resident of the northern district who is not a nursing student and does not work at the city hospital, was not awarded the scholarship"
    ],
    "answer": 1,
-   "explanation": "Reading 1: nursing student + hospital + north; reading 2: (nursing student + hospital) or a resident of the north. Yael is not a nursing student and does not live in the north, so she fails both. Ron and Shira fit reading 2, and \"only\" never forces an award, so Gil is always possible.",
-   "feel": 5
+   "explanation": "Reading 1: nursing student + hospital + north; reading 2: (nursing student + hospital) or a resident of the north. Einat is not a nursing student and does not live in the north, so she fails both. Hagai and Nurit fit reading 2, and \"only\" never forces an award, so Yoram is always possible.",
+   "feel": 5,
+   "facts": []
   },
   {
    "id": "vo-43-004",
+   "style_donor": "Summer 2026 §1 Q9 (headaches and pectin)",
+   "he_draft": "חוקר ביקש משתי קבוצות משתתפים למלא שאלון ארוך. קבוצה אחת מילאה אותו בחדר מחומם, והאחרת בחדר שלא חומם. בסוף התבקשו כל המשתתפים לתרום לקרן לשיפוץ גן השעשועים השכונתי. המשתתפים שהיו בחדר המחומם תרמו יותר במידה ניכרת, והחוקר הסיק שהחום שיפר את מצב רוחם. על איזו מן ההנחות שלהלן מבוססת מסקנתו של החוקר? (1) אנשים שמצב רוחם רע אינם שמים לב לטמפרטורה בחדר שהם נמצאים בו (2) אדם שמצב רוחו טוב תורם יותר מאדם שמצב רוחו פחות טוב (3) אנשים היושבים בחדר מחומם נכונים יותר לתמוך בשיפוץ גני שעשועים (4) המשתתפים בחדר המחומם מילאו את השאלון מהר יותר משאר המשתתפים",
    "topic": 43,
    "category": "Sentence Understanding",
    "mirrors": "April 2014 §2 Q13",
    "replaces": "vb-inf_v2_0362",
-   "stem": "A researcher examined the effect of room temperature on willingness to donate. One group of participants waited for a quarter of an hour in a warm room, and another group in a cool room. Then all the participants were asked to contribute to a fund for renovating a local playground. Those who had waited in the warm room donated considerably more, and the researcher estimated that, since warmth improves mood, these participants had been in a better mood when asked to donate. Which of the following assumptions underlies the researcher's estimate?",
+   "stem": "A researcher asked two groups of participants to fill in a long questionnaire. One group filled it in in a heated room, and the other in a room that was not heated. At the end, all the participants were asked to donate to a fund for the renovation of the neighborhood playground. The participants who had been in the heated room donated considerably more, and the researcher concluded that the warmth had improved their mood. Which of the following assumptions underlies the researcher's conclusion?",
    "options": [
-    "A person in a bad mood does not notice the room's temperature, so it makes no difference to them whether the room is warm or cool",
-    "A person in a good mood contributes more generously to a cause than a person whose mood is less good",
-    "Waiting in a warm room causes people to support playground renovation more than people who waited in a cool room",
-    "A good mood causes a person to donate more generously, provided that they have spent time in a warm room beforehand"
+    "People who are in a bad mood do not pay attention to the temperature of the room they are in",
+    "A person in a good mood donates more than a person whose mood is less good",
+    "People who sit in a heated room are more willing to support the renovation of playgrounds",
+    "The participants in the heated room filled in the questionnaire faster than the other participants"
    ],
    "answer": 2,
-   "explanation": "The estimate runs warmth → good mood → larger donations; the researcher must assume the second link. (4) adds a condition the estimate does not need; (1) is irrelevant and (3) merely restates the finding.",
-   "feel": 4
+   "explanation": "The researcher infers the mood from the donations, so he must assume that a better mood leads to larger donations. (3) merely restates the finding, and (1) and (4) do not connect the donations to mood at all.",
+   "feel": 4,
+   "facts": []
   },
   {
    "id": "vo-43-005",
+   "style_donor": "Summer 2025 §2 Q10 (Ella and Shira, bass)",
+   "he_draft": "ציפי: ״יהיה לי קשה לעבד את סונטת הכינור הזאת לפסנתר, ולעבד אותה לגיטרה יהיה קשה עוד יותר.״ יגאל: ״מדברייך נובע שאת מנגנת בפסנתר טוב יותר מבגיטרה.״ טענתו של יגאל מבוססת על ההנחה שמוזיקאי שקל לו יותר לעבד יצירה ____ מנגן בכלי א טוב יותר מבכלי ב. (1) מכלי א לכלי ג מאשר מכלי א לכלי ב (2) מכלי א לכלי ג מאשר מכלי ב לכלי ג (3) מכלי א לכלי ב מאשר מכלי ב לכלי א (4) מכלי ג לכלי א מאשר מכלי ג לכלי ב",
    "topic": 43,
    "category": "Sentence Understanding",
    "mirrors": "September 2016 §2 Q14",
    "replaces": "vb-inf_v2_0355",
-   "stem": "Noa: \"I doubt that I could arrange this violin sonata for the piano, much less for the guitar.\" Eyal: \"What you say implies that you play the piano better than you play the guitar.\" Eyal's claim is based on the assumption that a musician who finds it easier to arrange a piece ____ plays instrument A better than instrument B.",
+   "stem": "Tzipi: \"It will be hard for me to arrange this violin sonata for the piano, and to arrange it for the guitar will be even harder.\" Yigal: \"It follows from what you say that you play the piano better than the guitar.\" Yigal's claim is based on the assumption that a musician who finds it easier to arrange a piece ____ plays instrument A better than instrument B.",
    "options": [
     "from instrument A for instrument C than from instrument A for instrument B",
     "from instrument A for instrument C than from instrument B for instrument C",
@@ -320,8 +370,9 @@
     "from instrument C for instrument A than from instrument C for instrument B"
    ],
    "answer": 4,
-   "explanation": "Noa finds violin → piano easier than violin → guitar, and Eyal concludes that she plays the piano better, so ease of arranging for an instrument must reflect command of it: from C (violin) for A (piano) rather than for B (guitar). The other choices put the instruments in the wrong roles.",
-   "feel": 4
+   "explanation": "Tzipi finds violin → piano easier than violin → guitar, and Yigal concludes that she plays the piano better, so ease of arranging for an instrument must reflect command of it: from C (violin) for A (piano) rather than for B (guitar). The other choices put the instruments in the wrong roles.",
+   "feel": 4,
+   "facts": []
   }
  ],
  "passages": []
