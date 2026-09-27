@@ -75,7 +75,7 @@ class MathCourse:
         q['stemHtml'] = rich_html(q['stemRich'])
         q['choices'] = [rich_plain(c) for c in q['choicesRich']]
         q['choicesHtml'] = [rich_html(c) for c in q['choicesRich']]
-        q['navLabel'] = rich_plain(q['stemRich'])[:120]
+        q['navLabel'] = rich_plain(re.sub(r'\\begin\{(cases|aligned)\}.*?\\end\{(cases|aligned)\}', '…', q['stemRich'], flags=re.S).replace('\n', ' '))[:120]
         ex = q.get('explanation') or []
         q['answerHtml'] = ''.join('<p>%s</p>' % rich_html(e) for e in ex)
         q['work'] = []; q['workText'] = []
@@ -192,7 +192,8 @@ class MathCourse:
 
     def set_slide(self, vid, n, title=None, script=None, pre=None, mode=None, active=None):
         v = self.video(vid); old = v['beats'][n - 1]
-        sl = {'title': old['title'] if title is None else title, 'mode': old['mode'] if mode is None else mode,
+        keep = (old.get('bigTitle') or old['title']) if old['mode'] == 'title' else old['title']
+        sl = {'title': keep if title is None else title, 'mode': old['mode'] if mode is None else mode,
               'active': old['active'] if active is None else active,
               'pre': old['items'][:old['pre']] if pre is None else pre}
         if script is None:
@@ -299,7 +300,7 @@ _W = 'zero one two three four five six seven eight nine ten eleven twelve thirte
 def _word(n):
     if n < 21: return _W[n]
     return {2: 'twenty', 3: 'thirty', 4: 'forty', 5: 'fifty'}[n // 10] + ('-' + _W[n % 10] if n % 10 else '')
-_NUMRX = r'(\d+|' + '|'.join(sorted({_word(k) for k in range(1, 60)}, key=len, reverse=True)) + r')'
+_NUMRX = r'(\d+|(?i:' + '|'.join(sorted({_word(k) for k in range(1, 60)}, key=len, reverse=True)) + r'))'
 def _val(w): return int(w) if w.isdigit() else next(k for k in range(1, 60) if _word(k) == w.lower())
 
 def renumber_guided(D, topics=range(1, 39)):
@@ -318,7 +319,9 @@ def renumber_guided(D, topics=range(1, 39)):
             def r(mo):
                 n = _val(mo.group(2))
                 if n not in mp: return mo.group(0)
-                k = mp[n]; return mo.group(1) + 'uestion ' + (str(k) if mo.group(2).isdigit() else _word(k))
+                k = mp[n]; w = str(k) if mo.group(2).isdigit() else _word(k)
+                if mo.group(2)[:1].isupper(): w = w.capitalize()
+                return mo.group(1) + 'uestion ' + w
             return re.sub(r'\b([Qq])uestion ' + _NUMRX + r'\b', r, x)
         for v in set(vids):
             V = D['videos'].get(v)
@@ -344,6 +347,19 @@ def renumber_guided(D, topics=range(1, 39)):
                         if key in l: l[key] = fix(l[key])
                 if b.get('nextCue'): b['nextCue'] = fix(b['nextCue'])
 
+def renumber_modules(D):
+    """Module numbers per subject in course order: every lesson its own number; a run of consecutive solution
+    videos of one guided group (same sidebar) shares one number. Only when all math topics are patched."""
+    num = {}; last = {}
+    for f in D['flow']:
+        if f['type'] != 'video' or f['topic'] > 38: continue
+        v = D['videos'].get(f['ref']); hy = (v or {}).get('hybrid')
+        if not hy: continue
+        subj = hy.get('subject')
+        key = ('sol', f['section'], tuple(hy.get('sidebar') or [])) if v.get('kind') == 'solution' else ('lesson', f['ref'])
+        if last.get(subj) != key: num[subj] = num.get(subj, 0) + 1; last[subj] = key
+        hy['num'] = num[subj]
+
 def apply_patches(D, only=None):
     """Import math_patches/tNN.py (all, or only the given topic numbers) and apply them."""
     import glob, importlib.util, os
@@ -356,4 +372,5 @@ def apply_patches(D, only=None):
         spec.loader.exec_module(mod); mod.apply(M)
     M.finish()
     renumber_guided(D, only or range(1, 39))
+    if not only: renumber_modules(D)
     return M

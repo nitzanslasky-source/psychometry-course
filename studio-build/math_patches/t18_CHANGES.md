@@ -1,0 +1,81 @@
+# Topic 18 — Exercises with Letters: changes
+
+Patch: `math_patches/t18.py`. Check: `python3 math_check.py 18` shows 0 problems, 0 warnings and 0 layout problems.
+Every puzzle (old and new) was checked by computer search over all digits: each has exactly one correct choice.
+
+## Summary
+- Questions: 34 rewritten, 10 added (3 guided with solution videos and 7 practice), 2 removed.
+  Before, the topic had 36 questions (9 guided and 27 practice). Now it has 44 (12 guided and 32 practice).
+- Main lesson "Exercises with Letters": 7 slides changed and 1 slide added ("Carries"). It is now about 8.9 minutes long.
+- New lesson video: "Number Facts for Letter Puzzles" (7 slides, about 3 minutes). It is the first item in the advanced section.
+- New solution videos: Questions 10, 11 and 12.
+- Existing solution videos changed: Q1, Q4, Q7, Q8 and Q9 (method 2 rewritten). The sidebar of the Q4–Q9 videos now lists Questions 4 to 12.
+- Memory card "Exercises with letters — toolkit" updated. New card: "Number facts for letter puzzles".
+- Figures: this topic has none.
+
+## 1. Wrong or misleading teaching (fixed)
+- **Lesson slide 4:** "B plus something equals B, so it's zero" is now "ends in B. Nothing carries into the ones column, so it's zero." A new last line says the rule is safe only in the ones column.
+- **New slide 5 "Carries":** the carry from two numbers is 0 or 1. From three or four numbers it can be 2 or 3 (8 + 8 + 8 = 24). The trap example is 1X7 + Y5 = 2X2. The carry from the ones means Y = 9, not 0 (147 + 95 = 242). Rule on the board: in a middle column, "X + Y ends in X" means Y = 0 or Y = 9.
+- **Leading-digit slide:** the rule is now "**two** numbers, more digits in the sum → leading digit 1". A new line and board item say that four three-digit numbers can reach 3996, so the leading digit can be 2 or 3 (q-527).
+- **Q7 video:** deleted the confusing "With a five here we'd use the five-rule".
+- **Q9 video, method 2:** the unclear "cube sits on the tens digit" sentence is gone. The method now really plugs in the choices: T = 3 → 30 + U = U³ + 3 + U → U³ = 27. The other choices give U³ = 45, 18, 36, and none of these is a cube.
+- **Q1 and Q4 videos:** the "B = 0" step now says why: nothing carries into the ones column.
+- **q-536 solution:** the false reason "any BB ≥ 22 makes these four-digit" is fixed. Now: 55 × 22 = 1210, 66 × 22 = 1452 and 77 × 22 = 1694 have four digits, and 33 × 11 = 363 works.
+- **q-532 solution:** deleted the self-correction "621 and 226? No —".
+
+## 2. Methods added
+In the main lesson:
+- **The 4 steps:** step 3 is now "Check the leftmost digit **and the size**" (estimate first). Step 4 is now "Plug in numbers — **or the choices**".
+- **"What letters mean":** one line explains the bar: the letters under a bar are the digits of ONE number. Every question now uses the bar.
+- **Plug-in slide:** a warning to use test numbers that are not alike, and to try a third number if two choices survive. A new board line: "Asked for one letter? Plug in the choices, from the middle one."
+- **Minus → plus slide:** one line added: flip a division into a multiplication (used in Q7).
+- **Algebraic-form slide:** says when to use each route. If a result is given, work the columns. For "always divisible by" with no result, plug in two numbers or use the algebraic form. This replaces "plugging in is faster most of the time".
+- **Recap** updated to match.
+
+The **new lesson video "Number Facts for Letter Puzzles"** covers:
+1. Repdigits: AA = 11A, AAA = 111A = 3·37·A, BBBB ÷ BB = 101 (used in Q5, Q7, q-539 and the extras).
+2. Reversals: AB ± BA, ABC − CBA = 99(A − C). Multiples of 99 have middle digit 9, and their outer digits add up to 9 (q-532).
+3. Products: only the ones digits decide the ones digit. Digit count of a product = the two counts added, or one fewer. Estimating squares.
+4. Ones digits of powers repeat in a cycle (2, 4, 8, 6 …). Example: 2⁵⁰ ends in 4.
+5. Largest and smallest number with a given digit sum (q-529).
+6. Recap.
+
+New guided questions (end of the advanced section), each with a solution video:
+- **Q10 (q-r26-t18-01)** 2A6 + B8 = 3A4, B = ? → 9. Carry trap: the distractor is 0.
+- **Q11 (q-r26-t18-02)** Which could be ABC − CBA? → 495 (the multiple of 99).
+- **Q12 (q-r26-t18-03)** Which could be A3 × B7? → 851. Solved with the ones digit (ends in 1) and the size (221 to 9021).
+
+## 3. Text (all questions)
+- Every stem now uses the standard form "A, B and C represent digits. Given: $\overline{AB}+…$". The bar is used everywhere. The long notes in parentheses ("each letter being the digit in that position", "literally 6", "repdigit") are gone. "Units digit" is now "ones digit", as in the lesson.
+- Q3: "necessarily divisible by —" is now "Which of the following necessarily divides AB + BA?", with "nonzero digits" (BA must be a two-digit number).
+- Q8: "distinct prime digits (i.e. …)" is now "different digits, and each of them is a prime number".
+- All written solutions are rewritten in TeX with the numbers shown. They use the method the lesson teaches (columns, carries, plugging in the choices). The algebraic form comes after that when it helps. The review listed the heavy algebra in q-522, q-525, q-530, q-533, q-534 and q-540. It is now replaced:
+  - q-540: flip to BA + B3 = 1AB. Ones: B = A + 3. Plug in the choices.
+  - q-534: flip. The tens column needs a carry, so A = B + 2 and C = B − 2.
+  - q-533: the tens need a carry, so A = B + 1. Then A = 9.
+  - q-522: the ones column gives 2B ending in 0, so B = 5.
+  - q-525: B·B ends in 4, and B = 8 is too big.
+  - q-530: plug in the choices.
+- No ":" for division is left (it was in q-533, q-539 and extra 2). The checker shows no missing spaces after commas.
+- Solution-video titles now match the new stems. Spelling: "organised" is now "organized".
+
+## 4. Practice
+- **Removed:** extra t18-3-1 (a near-copy of q-524: reverse, 27 smaller). Also extra t18-3-4 (a counting question: that method is taught in T28, which comes later).
+- **Rewritten extras:**
+  - Extra 2 no longer asks for a ratio A:B, because ratios are taught later. It now asks for A + B (answer 9, by plugging in the choices).
+  - Extra 7 is now "$\overline{4A}+\overline{4A}=\overline{9B}$, smallest possible A" (5), solved with the carry.
+- **New practice (exam level):**
+  - q-r26-t18-04: A8 + A8 + A8 = 1A4, a carry of 2 → A = 4. The trap choice is 9.
+  - q-r26-t18-05: 4AB + CB = 5A0 → B + C = 14 (the carry makes C = 9).
+  - q-r26-t18-06: digits of a (three-digit) × (two-digit) product → 4 or 5.
+  - q-r26-t18-07: ones digit of A7 × B3 × C9 → 9. The trap choice is "cannot be determined".
+  - q-r26-t18-08: ones digit of 2⁵⁰ → 4.
+  - q-r26-t18-09: AAA ÷ 37 = 1A → A = 5.
+  - q-r26-t18-10: ABC − CBA = 693 and B = A + C (stacked conditions) → 891.
+- **Order:** the practice section now goes from easy (ones digit of 38 × 47, digits of a sum) to exam-hard. The last items are q-r26-t18-05, q-r26-t18-04, q-536, q-537, q-r26-t18-10 and q-540.
+
+## For the teacher to decide
+- **q-537 (remainders, T15) and q-538 (primes, T14)** stay as mixed review, because those topics come before T18.
+- **Ones digit of powers (cycles)** is now taught here, on one slide with one practice question. If the T15 patch also teaches it, one of the two can be cut.
+- **Guided question order:** the three new guided questions (10–12) are at the end of the advanced section, so Questions 4–9 keep their numbers. Q10 (carry) could also go into the theory section right after Q3.
+- The API had no function for the sidebar "active" index of existing slides. After inserting the Carries slide, the patch shifts those indexes directly on the slide data.

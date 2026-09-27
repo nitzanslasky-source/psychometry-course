@@ -1,0 +1,118 @@
+# Topic 20: Algebraic Understanding. Changes
+
+Patch: `math_patches/t20.py`. Running `python3 math_check.py 20` shows 0 problems, 0 warnings and 0 layout problems.
+
+## Summary
+- **Questions:** 20 rewritten, 12 added (4 guided with solution videos, 8 practice) and 1 removed.
+  - Before: 21 questions (4 guided, 17 practice).
+  - Now: 32 questions (8 guided, 24 practice).
+- **Main lesson "Algebraic Understanding":** rebuilt. It had 7 slides and now has 9. The title slide is the same, and the other 8 slides are new or rewritten. It is about 5.5 minutes long.
+- **New lesson video "Counting Integers & Pigeonhole":** 7 slides, about 2.7 minutes. It comes after the old Question 4.
+- **New solution videos:** 4. The guided questions are renumbered in course order:
+  - Q1 and Q2 are new (plug-in questions).
+  - Q3 to Q6 are the old Q1 to Q4.
+  - Q7 and Q8 are new (counting and pigeonhole).
+- **Existing solution videos:**
+  - Old Q1: 3 slides changed.
+  - Old Q2: 2 slides edited.
+  - Old Q3: rewritten (2 slides changed, 1 added).
+  - Old Q4: 2 slides edited.
+  - All sidebars now list Questions 1 to 8.
+- **Memory cards:**
+  - "Must, can, cannot" is rewritten as "Algebraic understanding".
+  - New card: "Counting integers and pigeonhole".
+- **Figures:** none in this topic.
+
+## Wording: "could", as in Topic 1
+- "Can be true" is now **"could be true"** everywhere: slides, card and stems. This matches Topic 1's lesson `r26-t01-must-could`.
+- Slide 3 now says: "You met these three words in Topic 1. A quick reminder — then we go deeper." It also adds "not necessarily true", because the exam uses it.
+- "Necessarily true" is kept in the old stems (q-579, q-587, extra 4). The card explains it as "Must be true / necessarily true".
+- q-581 said "necessarily not correct". It now says "cannot be true".
+
+## 1. Wrong statements (fixed)
+- **Old Q3 video:** "Two sides of a triangle are always longer than the third" is gone. The video now proves choice 1 with algebra: (a+b)² = c² + 2ab > c². At the end it says: "the sum of any two sides of a triangle is longer than the third" (in geometry).
+- **q-585:** the solution said "impossible, so certainly not necessarily correct". It now just says that (4) cannot be true.
+
+## 2. Methods added
+**Main lesson, rebuilt:**
+1. **Three tools** (was "No fixed recipe"). The tools are: plug in numbers, test the answers, algebra. Students try them in that order. The line "There's no repeating principle I can hand you" is gone.
+2. **Must, could, cannot:** a short reminder of Topic 1, plus "not necessarily true".
+3. **Which numbers? (new).** This goes deeper than Topic 1's list:
+   - read which numbers are allowed
+   - try one number from each region (x > 1, 0 < x < 1, −1 < x < 0, x < −1)
+   - try a = b when the letters may be equal
+   - if two choices survive, try a second number
+4. **Between 0 and 1 (new):**
+   - for 0 < x < 1: x² < x < √x < 1 < 1/x (checked with x = ¼)
+   - with negative numbers, farther from 0 means smaller
+   - "which is the largest, for every x in a range": one number from the range decides
+5. **Integer gaps** (was "Extreme cases"). The order is now: strictness first (< 12 means ≤ 11), then gaps and chaining. Two things are new:
+   - the general chain: n increasing integers give last ≥ first + (n − 1)
+   - "test the most extreme choices first"
+6. **Scaling:** adds the general rule. When x² = a³, x changes by (factor)^(3/2), so 16^(3/2) = 64 (and 9^(3/2) = 27 in Q4).
+7. **Connect topics:**
+   - Pythagoras (Topic 31, taught later) is no longer needed. The slide teaches the algebra instead: c² = a² + b² with all numbers positive gives c > a and c > b. It adds "you'll meet this again in geometry, as Pythagoras."
+   - The cycle of fractions is kept, with a new line: "the three can't all be bigger than one".
+8. **Recap:** updated.
+
+**New lesson "Counting Integers & Pigeonhole"** (after the old Q4):
+- from a to b, both ends included: b − a + 1
+- strictly between: b − a − 1; one end included: b − a
+- every second number (only odd or only even): (last − first)/2 + 1
+- letters in the choices: plug in small numbers and count
+- pigeonhole principle, with 13 numbers and 12 remainders: two numbers with the same remainder have a difference that divides by 12
+- "to be sure": worst luck first, then one more
+
+**New guided questions:**
+
+| No. | Id | Method | Answer |
+|---|---|---|---|
+| Q1 | q-r26-t20-01 | x > y > 0: which must be true? Plug in 3 and 2 (three choices survive), then ½ and ¼ | x² > y² |
+| Q2 | q-r26-t20-02 | −1 < x < 0: which is the smallest? One number (−½), then order the negatives | 1/x |
+| Q7 | q-r26-t20-03 | How many odd numbers are there between 20 and 80? Two methods | 30 |
+| Q8 | q-r26-t20-04 | Socks: the smallest number to be sure of a pair (pigeonhole) | 4 |
+
+The review asked for a medium guided must/could/cannot question before Q1. Q1 and Q2 fill that gap.
+
+**Changes inside existing solution videos:**
+- **Old Q1:**
+  - Method 1 writes the key step on the board: b + c = (a + b) − (a − c) ≤ 11 − 2 = 9.
+  - Method 3 now tests the extreme choices first (10, then −10). After that it checks the others.
+- **Old Q2:** adds the general rule at the end: x = a^(3/2), so the factor is 9^(3/2) = 27.
+- **Old Q3:** now starts with the algebra. It writes a/b = a²/(ab) and b/a = b²/(ab), then gets c² = a² + b². Choices 3 and 4 follow from c² > b². The counterexample is 3-4-5 against 6-8-10.
+- **Old Q4:**
+  - The stem now says "S, W and D are all greater than 1" (it used to say "(1 < S, W, D)").
+  - "Last question of algebra" is removed, because the counting lesson comes after it. The words "you've finished algebra" moved to the end of Q8.
+
+## 3. Text
+- Every question in the topic is rewritten in TeX, with no ":" used for division.
+- The stems of q-577, q-578, q-582, q-584 and extra 7 now show their given conditions one on top of the other.
+- q-585 used "x:y, y:z, z:x". It now uses fraction bars, and says "Exactly one" / "Exactly two".
+- q-586: "between x and y (not including x)" became "greater than x and smaller than y".
+- q-583 and q-590 are reworded in plainer English.
+- q-584, q-586 and q-588: the plug-in route now comes first, then the counting rule.
+- Extras:
+  - Solutions use numbers, not words ("five,six,seven,eight").
+  - The missing spaces after commas are fixed.
+  - Extra 2 (max of ab) now tests pairs first. The (a−b)² ≥ 0 argument comes second.
+- Fewer "so" in the middle of sentences in the solutions I rewrote. They use "Therefore" instead.
+
+## 4. Practice (24 questions, ordered easy → hard)
+- **Removed:** extra 6 (a² = b²). It repeated the "squares" idea of extra 3. The size question q-r26-t20-05 replaces it.
+- **Added:**
+  - q-r26-t20-05: 0 < x < 1, which is the smallest? Answer: x².
+  - q-r26-t20-06: x < y < 0, which must be true? Answer: x² > y².
+  - q-r26-t20-07: how many integers satisfy 10 < x² < 100? Answer: 12. This is hard: the trap 6 forgets the negative numbers.
+  - q-r26-t20-08: how many even numbers from 2n to 8n? Answer: 3n + 1. n = 1 leaves two choices, so the student must try a second number.
+  - q-r26-t20-09: socks, to be sure of two blue socks. Answer: 16.
+  - q-r26-t20-10: scaling with a new pair: x³ = y², y × 8, so x × 4.
+  - q-r26-t20-11: a formula-structure question like Q4 (taxi price). Answer: n/d.
+  - q-r26-t20-12: x² < x, which must be true? Answer: x³ < x². This is hard: first find 0 < x < 1.
+- **Order:** the easy extras come first, then medium, then the exam-hard items at the end: q-585, -07, q-583, -09, -12, q-589, q-590.
+- **Exam-level items:** about 14.
+- I checked every key of the new and changed questions by brute force: exactly one correct choice each.
+
+## For the teacher to decide
+- **Topic 21** repeats "Possible vs must" and "Minimum & maximum". You may want a cross-reference, or to shorten those slides there. I did not edit Topic 21.
+- **The two sock questions (G4 and q-r26-t20-09) use the same drawer on purpose.** The practice one asks the harder "two blue socks" version.
+- **q-r26-t20-11 (taxi) has the same answer logic as old Q4.** The correct answer is in position 2 so that it does not repeat.

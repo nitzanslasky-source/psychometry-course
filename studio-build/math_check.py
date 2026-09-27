@@ -31,7 +31,7 @@ for q in D['questions'].values():
     for fld in ['stemRich'] + ['explanation'] * 1:
         for t in (q.get(fld) if isinstance(q.get(fld), list) else [q.get(fld)]):
             t = str(t or '')
-            if re.search(r'[\d)](:[\d(a-z]| : [\d(a-z])', re.sub(r'\$[^$]*\$', '', t)) and not re.search(r'ratio|proportion|scale|odds', t, re.I): W.append('%s %s: colon used as division? «%s»' % (q['id'], fld, t[:90]))
+            if re.search(r'[\d)](:[\d(a-z]| : [\d(a-z])', re.sub(r'\b\d{1,2}:\d{2}\b', 'TIME', re.sub(r'\$[^$]*\$', '', t))) and not re.search(r'ratio|proportion|scale|odds', t, re.I): W.append('%s %s: colon used as division? «%s»' % (q['id'], fld, t[:90]))
             for tex in re.findall(r'\$([^$]*)\$', t):
                 if re.search(r'[\d)}]\s?:\s?[\d(\\]', tex) and not re.search(r'ratio|proportion|scale|odds', t, re.I): W.append('%s %s: colon in math «%s»' % (q['id'], fld, tex[:60]))
             if re.search(r'[a-z°)],[A-Za-z(]|[a-z°)],\d(?!\d\d(\D|$))|\d,(?!\d\d\d)[A-Za-z0-9(]', re.sub(r'\$[^$]*\$', 'X', t)): W.append('%s %s: missing space after comma «%s»' % (q['id'], fld, t[:80]))
@@ -45,7 +45,7 @@ for v in D['videos'].values():
         for l in b['lines']:
             if 'appear' in l and not 0 <= l['appear'] < len(b['items']): P.append('%s #%d: appear index out of range' % (v['id'], n))
             dr = l.get('draw') or ''
-            if re.search(r'[\d)](:[\d(a-z]| : [\d(a-z])', dr) and not re.search(r'ratio|proportion|scale', dr, re.I): W.append('%s #%d draw uses colon for division: «%s»' % (v['id'], n, dr[:80]))
+            if re.search(r'[\d)](:[\d(a-z]| : [\d(a-z])', re.sub(r'\b\d{1,2}:\d{2}\b', 'TIME', dr)) and not re.search(r'ratio|proportion|scale', dr, re.I): W.append('%s #%d draw uses colon for division: «%s»' % (v['id'], n, dr[:80]))
         for it in b['items']:
             tx = it.get('t') or ''
             if re.search(r'[A-Za-z]{2,}−[A-Za-z]{2,}', tx): W.append('%s #%d board: math minus inside a word «%s»' % (v['id'], n, tx[:60]))
