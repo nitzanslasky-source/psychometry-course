@@ -31,7 +31,7 @@ CAM_Q = 'In your opinion, should face-recognition cameras be installed in public
 
 # ================================================================= lesson 1: the opening paragraph (seg43)
 SB_OPEN = ['Two jobs', 'The rater\'s first look', 'Same content for all', 'Three parts',
-           'Position at the end', 'Take it from the task', 'Copying is allowed', 'No empty phrases',
+           'Position at the end', 'Take it from the task', 'Copying segments', 'No empty phrases',
            'Don\'t try to impress', 'The horse drawing', 'Short and efficient']
 
 OPEN = lesson('vr50-h-opening', 'The Opening Paragraph', SB_OPEN, [
@@ -110,17 +110,15 @@ OPEN = lesson('vr50-h-opening', 'The Opening Paragraph', SB_OPEN, [
   L("Rewrite the relevant parts", 'Recommended: rewrite the relevant parts in your own words', 470, 36),
   "So the recommendation is to rewrite the relevant parts in your own words.",
  ]),
- dict(mode='concept', active=6, title='Copying is allowed', script=[
-  "But you can even copy parts. Is there a sentence that's worded really well? Take it, word for word.",
-  L("Copying parts does not hurt the score", 'Copying parts of the task text does not lower your score', 110, 38),
-  "It does not hurt your score. Let me explain why.",
-  L("Rewritten opening: rated as part of the essay", 'A rewritten opening is rated as part of the essay', 210, 36),
-  "As far as we know, this is how raters are guided: if the opening is rewritten, it is rated as part of the essay, like everything else.",
-  L("Mostly copied: set aside", 'A mostly copied opening is simply set aside, and the rest of the essay is rated\n(and can still reach the top score)', 290, 34),
-  "If the opening is mostly copied from the task, the rater sets it aside, ignores it, and scores the rest of the essay. And the rest can still reach the top score.",
-  "Why? If they rated it, it would get a high score. Of course it would: those sentences were worded by the test writers, who worked on them for a long time. That wouldn't be fair, so they simply ignore it.",
-  L("For you: don't get stuck", 'What it means for you: can rewrite well? Great.\nStruggling? Copy the relevant parts and get to the body.', 450, 36),
-  "What does this mean for you? Don't get stuck. You can rewrite it? Excellent. You can't? Copy the relevant parts and move on to the essay.",
+ dict(mode='concept', active=6, title='Copying segments', script=[
+  "But you can also copy parts. Is there a phrase or a sentence that's worded really well? Take it.",
+  L("Copying segments is fine", 'Copying segments of the task text is fine', 110, 38),
+  "Copying segments of the task text is fine. A well-worded phrase, a key term, one sentence.",
+  L("Not the whole thing word for word", 'But not the whole task word for word: select, shorten and connect it in your own words', 210, 34),
+  "But don't copy the whole task word for word. Choose the parts you need, shorten them, and connect them with your own words.",
+  "The opening should show that you understood the issue. A copied block of text doesn't show that.",
+  L("For you: don't get stuck", 'What it means for you: can rewrite well? Great.\nStruggling? Copy the key segments, link them, and get to the body.', 360, 36),
+  "What does this mean for you? Don't get stuck. You can rewrite it? Excellent. You can't? Take the key segments, link them in a sentence or two of your own, and move on to the essay.",
   L("Complex position: here, if you can", 'Tip: if you can, state a complex position here\n(instead of a bridging recommendation later)', 600, 32),
   "And as I said in the bridging recommendation lesson: if you can, present a complex position here instead of a bridging recommendation in the rebuttal paragraph. If that's too much for you, a simple position is fine.",
  ]),
@@ -1162,7 +1160,7 @@ MEMORY = [
     ['Time-pressure line', 'In conclusion, [position], since, as shown above, its advantages outweigh its disadvantages.'],
    ])],
   tips=['Opening: background + dispute + your position (at the end). About 2-3 minutes. No empty phrases ("This is a problematic issue").',
-        'Copying well-worded parts of the task text is fine. Struggling to rewrite? Use the minimal template.',
+        'Copying segments of the task text is fine, but not the whole task word for word. Struggling to rewrite? Use the minimal template.',
         'Closing: no new argument, no repeated counterargument. It must follow from the body.',
         'Never leave out the closing. No time? The one-line template.']),
  dict(id='mem-wr-skeleton', after='vr50-h-essay', title='Essay skeleton + 35-minute plan',

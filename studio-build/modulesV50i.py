@@ -109,7 +109,7 @@ lesson('vr50-i-summary', 'Writing Task: Summary', SB, [
   ('Bridging', 'Nevertheless, since [their worry] is a legitimate concern, [measure] could be introduced, so that ...', 32),
  ]),
  slide(7, 'Opening & closing', [
-  "The opening comes from the task: the background, the dispute, and your position at the end. Short. Copying good wording from the task is fine.",
+  "The opening comes from the task: the background, the dispute, and your position at the end. Short. Copying segments of the task is fine, but not the whole task word for word.",
   "The closing comes from your essay: your position and your reasons. No new argument.",
   "Never skip the closing. No time? One line.",
  ], [
