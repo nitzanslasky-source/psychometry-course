@@ -11,6 +11,8 @@ import type { SubjectKey } from "@/lib/fullCourseTypes";
 const DAY = 86400000;
 const WEEKDAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const FINAL_DAYS = 14; // last two weeks: exam simulations + review
+const WORD_UNITS = 10; // English words: the dictionary's 10 study units, spread over the learning days (as the Hebrew course does with Hebrew words)
+const WORD_MIN = 20; // minutes of words on each learning day
 const KIND: Record<PlanStep["k"], string> = { v: "lesson", q: "question", p: "practice", c: "rules card" };
 
 const midnight = (d: Date) => new Date(d.getFullYear(), d.getMonth(), d.getDate());
@@ -23,6 +25,8 @@ interface DayPlan {
   items: { topic: PlanTopic; from: number; to: number; count: number; kinds: Record<string, number>; minutes: number }[];
   sims: { id: string; label: string }[];
   minutes: number;
+  /** English words unit for the day (learning days only). */
+  words?: number;
 }
 
 function schedule(s: PlanSettings, steps: PlanStep[], topics: PlanTopic[], sims: { id: string; label: string }[], done: Record<string, true>) {
@@ -37,13 +41,16 @@ function schedule(s: PlanSettings, steps: PlanStep[], topics: PlanTopic[], sims:
   for (let d = today; d < exam; d = new Date(d.getTime() + DAY)) if (s.days.includes(d.getDay())) studyDays.push(d);
   const learnDays = studyDays.filter((d) => d < finalStart);
   const finalDays = studyDays.filter((d) => d >= finalStart);
-  const needPerDay = learnDays.length ? Math.ceil(totalMin / learnDays.length) : Infinity;
+  const words = s.minutes >= 45 ? WORD_MIN : 0; // with less than 45 minutes a day, words are left to free moments
+  const budget = s.minutes - words;
+  const needPerDay = learnDays.length ? Math.ceil(totalMin / learnDays.length) + words : Infinity;
 
   const plan: DayPlan[] = [];
   let i = 0;
-  for (const d of learnDays) {
+  learnDays.forEach((d, di) => {
     const day: DayPlan = { date: d, final: false, items: [], sims: [], minutes: 0 };
-    while (i < left.length && (day.minutes === 0 || day.minutes + left[i].m <= s.minutes + 5)) {
+    if (words) day.words = Math.min(WORD_UNITS, Math.floor((di * WORD_UNITS) / Math.max(1, learnDays.length)) + 1);
+    while (i < left.length && (day.minutes === 0 || day.minutes + left[i].m <= budget + 5)) {
       const st = left[i++];
       const last = day.items[day.items.length - 1];
       if (last && last.topic.id === st.t) {
@@ -54,8 +61,9 @@ function schedule(s: PlanSettings, steps: PlanStep[], topics: PlanTopic[], sims:
       } else day.items.push({ topic: tById.get(st.t)!, from: st.n, to: st.n, count: 1, minutes: st.m, kinds: { [st.k]: 1 } });
       day.minutes += st.m;
     }
+    day.minutes += words;
     plan.push(day);
-  }
+  });
   // final stretch: one simulation section per day (two if time allows), then review
   let si = 0;
   for (const d of finalDays) {
@@ -178,6 +186,22 @@ function DayCard({ day, big }: { day: DayPlan; big?: boolean }) {
               </li>
             );
           })}
+          {day.words && (
+            <li className="flex items-start gap-3">
+              <span className="mt-2 h-2 w-2 shrink-0 rounded-full" style={{ background: SUBJECT.verbal.color }} />
+              <div className="min-w-0 flex-1">
+                <Link href={`/dictionary?unit=${day.words}`} className={["font-medium hover:underline", big ? "text-[17px]" : "text-[15px]"].join(" ")}>
+                  English words · Unit {day.words}
+                </Link>
+                <div className="text-xs text-muted">about {WORD_MIN} min · learn the unit&apos;s words, then listen to them again</div>
+              </div>
+              {big && (
+                <Link href={`/dictionary?unit=${day.words}`} className="btn px-4 py-1.5">
+                  Start
+                </Link>
+              )}
+            </li>
+          )}
         </ul>
       )}
       <div className="mt-3 text-xs text-faint">about {Math.round(day.minutes)} min</div>

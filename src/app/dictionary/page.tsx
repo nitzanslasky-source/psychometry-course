@@ -3,8 +3,8 @@ import { Dictionary } from "@/components/extras/Dictionary";
 
 export const metadata = { title: "Dictionary — Psychometry" };
 
-export default async function DictionaryPage({ searchParams }: { searchParams: Promise<{ q?: string }> }) {
-  const { q } = await searchParams;
+export default async function DictionaryPage({ searchParams }: { searchParams: Promise<{ q?: string; unit?: string }> }) {
+  const { q, unit } = await searchParams;
   const entries = getDictionary();
   return (
     <main className="mx-auto max-w-5xl px-6">
@@ -17,7 +17,7 @@ export default async function DictionaryPage({ searchParams }: { searchParams: P
           listen to them all in <a href="/listen" className="link">Listen</a>.
         </p>
       </header>
-      <Dictionary entries={entries} initialQuery={q ?? ""} />
+      <Dictionary entries={entries} initialQuery={q ?? ""} initialUnit={Number(unit) || 0} />
     </main>
   );
 }

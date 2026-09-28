@@ -20,10 +20,19 @@ export interface DictEntry {
   note?: string;
   /** From the core "Psychometric Vocabulary" list. */
   core?: boolean;
+  /** Study unit 1-10 (core list first): one unit is learned every few days, as in the study plan. */
+  unit?: number;
 }
 
+export const WORD_UNITS = 10;
+
 export function getDictionary(): DictEntry[] {
-  return JSON.parse(fs.readFileSync(path.join(DIR, "dictionary.json"), "utf8")) as DictEntry[];
+  const all = JSON.parse(fs.readFileSync(path.join(DIR, "dictionary.json"), "utf8")) as DictEntry[];
+  // study units: the core list first, then the rest, split into WORD_UNITS equal units
+  const order = [...all.filter((e) => e.core), ...all.filter((e) => !e.core)];
+  const per = Math.ceil(order.length / WORD_UNITS);
+  order.forEach((e, i) => (e.unit = Math.floor(i / per) + 1));
+  return all;
 }
 
 export interface CardWithPlace {

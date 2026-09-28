@@ -22,8 +22,10 @@ const FILTERS: { id: string; label: string; test: (e: DictEntry) => boolean }[] 
   { id: "core", label: "Core list", test: (e) => !!e.core },
 ];
 
-export function Dictionary({ entries, initialQuery = "" }: { entries: DictEntry[]; initialQuery?: string }) {
+export function Dictionary({ entries, initialQuery = "", initialUnit = 0 }: { entries: DictEntry[]; initialQuery?: string; initialUnit?: number }) {
   const [q, setQ] = useState(initialQuery);
+  const [unit, setUnit] = useState(initialUnit);
+  const units = useMemo(() => Array.from(new Set(entries.map((e) => e.unit || 0).filter(Boolean))).sort((a, b) => a - b), [entries]);
   const [filter, setFilter] = useState("all");
   const [speakOk, setSpeakOk] = useState(false);
   useEffect(() => setSpeakOk(canSpeak()), []);
@@ -33,9 +35,9 @@ export function Dictionary({ entries, initialQuery = "" }: { entries: DictEntry[
   const shown = useMemo(
     () =>
       entries.filter(
-        (e) => test(e) && (!query || e.w.toLowerCase().includes(query) || e.def.toLowerCase().includes(query)),
+        (e) => test(e) && (!unit || e.unit === unit) && (!query || e.w.toLowerCase().includes(query) || e.def.toLowerCase().includes(query)),
       ),
-    [entries, query, test],
+    [entries, query, test, unit],
   );
   const groups = useMemo(() => {
     const m = new Map<string, DictEntry[]>();
@@ -88,6 +90,22 @@ export function Dictionary({ entries, initialQuery = "" }: { entries: DictEntry[
             </nav>
           )}
         </div>
+        {units.length > 0 && (
+          <div className="mt-2 flex flex-wrap items-center gap-1.5" aria-label="Study units">
+            <span className="mr-1 text-xs text-muted">Study unit</span>
+            {[0, ...units].map((u) => (
+              <button
+                key={u}
+                type="button"
+                onPointerDown={() => setUnit(u)}
+                aria-pressed={unit === u}
+                className={["pressable rounded-full px-3 py-1 text-[12px] tabular-nums", unit === u ? "bg-ink text-white" : "border border-line bg-white text-ink-soft"].join(" ")}
+              >
+                {u === 0 ? "All" : u}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       {shown.length === 0 && <p className="py-16 text-center text-muted">No words match “{q}”.</p>}
