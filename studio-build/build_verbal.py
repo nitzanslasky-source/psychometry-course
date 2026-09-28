@@ -11,9 +11,9 @@ import renderer_patch, studio_patch, vbank
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.join(HERE, 'base-v18.html')
-OUT = '/Users/nitzanslasky/Downloads/Psychometric-Teacher-Studio-v19-hybrid.html'
+OUT = os.environ.get('OUT', '/Users/nitzanslasky/Downloads/Psychometric-Teacher-Studio-v19-hybrid.html')
 DOCDIR = '/Users/nitzanslasky/Downloads'
-VERBAL = range(39, 50)
+VERBAL = range(39, 51)
 DROP_OLD = os.environ.get('DROP_OLD', '1') == '1'
 KEEP_COURSE_PRACTICE = {39, 40}          # topics whose practice stays the course's own (no bank category)
 
@@ -26,6 +26,14 @@ import math_api
 MATH = math_api.apply_patches(D)
 print('math patches: %d questions, %d videos touched' % (len(MATH.touched_questions), len(MATH.touched_videos)))
 
+# ---------- Topic 50: Writing task (new topic, not in the base) ----------
+if not any(x['id'] == 50 for x in D['topics']):
+    D['topics'].append({'id': 50, 'title': 'Writing task', 'description': 'Verbal reasoning · Writing task',
+                        'subject': 'Verbal reasoning', 'sections': ['vr50-learn', 'vr50-practice']})
+    D['sections'] += [{'id': 'vr50-learn', 'topic': 50, 'title': 'Learn', 'kind': 'learn', 'items': ['flow-vr50-anchor'], 'questionCount': 0},
+                      {'id': 'vr50-practice', 'topic': 50, 'title': 'Practice tasks', 'kind': 'practice', 'items': [], 'questionCount': 0}]
+    D['flow'].append({'id': 'flow-vr50-anchor', 'topic': 50, 'section': 'vr50-learn', 'type': 'reference', 'ref': 'vr50-anchor'})
+
 # ---------- bank questions + passages ----------
 BQ, POOLS, BP, RC = vbank.questions()
 D['questions'].update(BQ)
@@ -33,8 +41,11 @@ D.setdefault('passages', {}).update(BP)
 
 # ---------- modules ----------
 MODS, CARDS = {}, []
+TEST = 'OUT' in os.environ          # test build: own output file, no shared side files
+ONLY = os.environ.get('VMODS')      # e.g. VMODS=modulesV50 -> load only module files starting with that
 for f in sorted(glob.glob(os.path.join(HERE, 'modulesV*.py'))):
     name = os.path.basename(f)[:-3]
+    if ONLY and not any(name.startswith(x) for x in ONLY.split(',')): continue
     m = importlib.import_module(name)
     for mod in m.MODULES: MODS.setdefault(mod['topic'], []).append(mod)
     CARDS += getattr(m, 'MEMORY', [])
@@ -135,7 +146,7 @@ for t, mods in MODS.items():
 for vid, v in D['videos'].items():   # math solution videos added by math_patches
     if v.get('topic', 99) <= 38 and v.get('kind') == 'solution' and v.get('beats') and (v['beats'][0].get('bigTitle') or '').startswith('Question '):
         LOCK[vid] = {'topic': v['topic'], 'n': int(v['beats'][0]['bigTitle'].split()[1])}
-json.dump(LOCK, open(LOCKF, 'w'), indent=0, sort_keys=True)
+if not TEST: json.dump(LOCK, open(LOCKF, 'w'), indent=0, sort_keys=True)
 # ---------- module numbers (per subject, course order; a guided group shares one number) ----------
 num, seen = 0, {}
 for t in sorted(MODS):
@@ -217,6 +228,11 @@ for card in CARDS:
     D['references'][card['id']] = ref
     k = next(n for n, f in enumerate(flow) if f['type'] == 'video' and f['ref'] == card['after'])
     vf = flow[k]; fid = 'flow-' + card['id']
+    sec = card.get('section') or vf['section']          # a card may go straight into another section (e.g. practice)
+    if sec != vf['section']:
+        ks = [n for n, f in enumerate(flow) if f['section'] == sec]; k = (ks[-1] if ks else k)
+        flow.insert(k + 1, {'id': fid, 'topic': vf['topic'], 'section': sec, 'type': 'reference', 'ref': card['id']})
+        sections[sec]['items'].append(fid); continue
     flow.insert(k + 1, {'id': fid, 'topic': vf['topic'], 'section': vf['section'], 'type': 'reference', 'ref': card['id']})
     items = sections[vf['section']]['items']; items.insert(items.index(vf['id']) + 1, fid)
 
@@ -245,5 +261,5 @@ for t in sorted(MODS):
                 else: md.append('%d. *[DRAW: %s]*' % (n, l['draw']))
             md += ['', b['nextCue'], '']
     p = os.path.join(DOCDIR, 'Verbal-Hybrid-Scripts-Topic%d.md' % t)
-    open(p, 'w', encoding='utf-8').write('\n'.join(md)); print('wrote', p)
+    if not TEST: open(p, 'w', encoding='utf-8').write('\n'.join(md)); print('wrote', p)
 print(json.dumps(report))

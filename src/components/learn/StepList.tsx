@@ -151,15 +151,15 @@ function PracticeGrid({
                     href={`/topic/${topic}/${it.index + 1}`}
                     onClick={onNavigate}
                     aria-current={active ? "step" : undefined}
-                    title={`Practice question ${it.n}`}
+                    title={it.kind === "card" ? it.label : `Practice question ${it.n}`}
                     className={[
                       "pressable flex items-center justify-center rounded-lg text-xs tabular-nums transition-colors duration-150",
-                      compact ? "h-7 w-7" : "h-9 w-9",
+                      it.kind === "card" ? (compact ? "h-7 px-2.5" : "h-9 px-3") : compact ? "h-7 w-7" : "h-9 w-9",
                       active ? "bg-ink text-white" : done ? "text-white" : "border border-line bg-white text-ink-soft hover:border-faint",
                     ].join(" ")}
                     style={done && !active ? { background: accent } : undefined}
                   >
-                    {it.n}
+                    {it.kind === "card" ? it.label : it.n}
                   </Link>
                 );
               })}
