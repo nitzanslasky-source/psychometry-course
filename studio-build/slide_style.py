@@ -53,6 +53,12 @@ def apply(s, layout=True):
     s = s[:a] + f + s[b:]
     s = rep(s, 'font-family="Arial,Helvetica,sans-serif"', 'font-family="%s"' % FONT)
     s = rep(s, "measure.font=weight+' '+size+'px Arial'", "measure.font=weight+' '+size+'px \"Helvetica Neue\"'")
+    # camera bubble: right in the corner (6px from the edges instead of 26), top right by default
+    s = rep(s, "function camRect(){const d=CAM_D[camSize]||250,m=26;", "function camRect(){const d=CAM_D[camSize]||250,m=6;")
+    s = rep(s, "camPos=(()=>{try{return localStorage.getItem('hy-cam-pos')||'br'}catch{return 'br'}})()",
+            "camPos=(()=>{try{return localStorage.getItem('hy-cam-pos')||'tr'}catch{return 'tr'}})()")
+    s = rep(s, '<select id="cam-pos"><option value="br">Bottom right</option><option value="bl">Bottom left</option><option value="tr">Top right</option></select>',
+            '<select id="cam-pos"><option value="tr">Top right</option><option value="br">Bottom right</option><option value="bl">Bottom left</option></select>')
     if layout:
         s = rep(s, RICH_OLD_HEAD, RICH_NEW_HEAD)
         s = rep(s, RICH_TOK_OLD, RICH_TOK_NEW)
