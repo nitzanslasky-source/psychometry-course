@@ -26,6 +26,12 @@ export const SUBJECT: Record<SubjectKey, { label: string; short: string; color: 
     color: "#b0662b",
     blurb: "Angles, triangles, quadrilaterals, circles, solids, similarity and the coordinate plane.",
   },
+  charts: {
+    label: "Charts & Tables",
+    short: "Charts",
+    color: "#6b5b95",
+    blurb: "Reading tables and every chart type on the exam: points, lines, bars, ranges, pies, cumulative and change graphs.",
+  },
   verbal: {
     label: "Verbal Reasoning",
     short: "Verbal",

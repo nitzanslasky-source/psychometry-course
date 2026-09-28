@@ -3,7 +3,7 @@
  * Student-facing only: no scripts, slides or teacher notes ever reach this data.
  */
 
-export type SubjectKey = "thinking" | "algebra" | "word-problems" | "geometry" | "verbal";
+export type SubjectKey = "thinking" | "algebra" | "word-problems" | "geometry" | "charts" | "verbal";
 
 export interface CourseVideoStep {
   kind: "video";

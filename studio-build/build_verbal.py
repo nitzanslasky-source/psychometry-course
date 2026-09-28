@@ -13,7 +13,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.join(HERE, 'base-v18.html')
 OUT = os.environ.get('OUT', '/Users/nitzanslasky/Downloads/Psychometric-Teacher-Studio-v19-hybrid.html')
 DOCDIR = '/Users/nitzanslasky/Downloads'
-VERBAL = list(range(39, 51)) + [51]   # 51 = Psychometric Thinking (quantitative methods, built like the verbal topics)
+VERBAL = list(range(39, 51)) + [51, 52]   # 52 = Charts & Tables   # 51 = Psychometric Thinking (quantitative methods, built like the verbal topics)
 DROP_OLD = os.environ.get('DROP_OLD', '1') == '1'
 KEEP_COURSE_PRACTICE = {39, 40}          # topics whose practice stays the course's own (no bank category)
 
@@ -41,6 +41,13 @@ if not any(x['id'] == 51 for x in D['topics']):
                       {'id': 'pt51-practice', 'topic': 51, 'title': 'Practice', 'kind': 'practice', 'items': [], 'questionCount': 0}]
     D['flow'].append({'id': 'flow-pt51-anchor', 'topic': 51, 'section': 'pt51-learn', 'type': 'reference', 'ref': 'pt51-anchor'})
 
+if not any(x['id'] == 52 for x in D['topics']):
+    D['topics'].append({'id': 52, 'title': 'Charts & Tables', 'description': 'Quantitative reasoning · Charts and tables',
+                        'subject': 'Quantitative reasoning', 'sections': ['ch52-learn', 'ch52-practice']})
+    D['sections'] += [{'id': 'ch52-learn', 'topic': 52, 'title': 'Learn', 'kind': 'learn', 'items': ['flow-ch52-anchor'], 'questionCount': 0},
+                      {'id': 'ch52-practice', 'topic': 52, 'title': 'Practice', 'kind': 'practice', 'items': [], 'questionCount': 0}]
+    D['flow'].append({'id': 'flow-ch52-anchor', 'topic': 52, 'section': 'ch52-learn', 'type': 'reference', 'ref': 'ch52-anchor'})
+
 # ---------- bank questions + passages ----------
 BQ, POOLS, BP, RC = vbank.questions()
 D['questions'].update(BQ)
@@ -62,7 +69,7 @@ for f in sorted(glob.glob(os.path.join(HERE, 'modulesV*.py'))):
         for t_, qs_ in pr_.items(): PRACT.setdefault(t_, []).extend(qs_)
 
 # topics created above but with no module loaded (test builds with VMODS): take them out again
-for t_, anc in ((50, 'vr50-anchor'), (51, 'pt51-anchor')):
+for t_, anc in ((50, 'vr50-anchor'), (51, 'pt51-anchor'), (52, 'ch52-anchor')):
     if t_ not in MODS:
         D['topics'] = [x for x in D['topics'] if x['id'] != t_]
         D['sections'] = [x for x in D['sections'] if x.get('topic') != t_]
@@ -233,7 +240,7 @@ for t in sorted(MODS):
     for m in MODS[t]:
         beats = build_video(m)
         words = sum(len(l['say'].split()) for b in beats for l in b['lines'] if 'say' in l)
-        hy = {'num': m['num'], 'title': m['title'], 'sidebar': m['sidebar'], 'subject': 'QUANTITATIVE' if t == 51 else 'VERBAL'}
+        hy = {'num': m['num'], 'title': m['title'], 'sidebar': m['sidebar'], 'subject': 'QUANTITATIVE' if t in (51, 52) else 'VERBAL'}
         D['videos'][m['id']] = {'id': m['id'], 'topic': t, 'title': m['title'] if not m.get('guided') else
                                 'Question %d · %s' % (m['qn'], m['title']), 'kind': m['kind'], 'beats': beats,
                                 'sourceFiles': ['04-Verbal-Reasoning-Original-Subtitles.txt'], 'wordCount': words,
