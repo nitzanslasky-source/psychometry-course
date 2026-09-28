@@ -10,7 +10,8 @@ WORDS = {w: n for n, w in enumerate('zero one two three four'.split())}
 probs, n = [], 0
 for f in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'modulesV*.py'))):
     name = os.path.basename(f)[:-3]
-    for m in importlib.import_module(name).MODULES:
+    _mm = importlib.import_module(name); QS.update(getattr(_mm, "QUESTIONS", {}))
+    for m in _mm.MODULES:
         n += 1; tag = '%s %s' % (name, m['id'])
         sb = m['sidebar']
         if len(sb) > 13: probs.append(tag + ' | sidebar has %d items' % len(sb))

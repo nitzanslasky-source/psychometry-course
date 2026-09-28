@@ -1,6 +1,21 @@
 {
  "subjects": [
   {
+   "key": "thinking",
+   "title": "Psychometric Thinking",
+   "topics": [
+    {
+     "id": 51,
+     "title": "Psychometric Thinking",
+     "videos": 30,
+     "lessons": 7,
+     "questions": 23,
+     "minutes": 101,
+     "steps": 54
+    }
+   ]
+  },
+  {
    "key": "algebra",
    "title": "Algebra",
    "topics": [

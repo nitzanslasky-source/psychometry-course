@@ -13,7 +13,7 @@ HERE_ = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(os.path.dirname(HERE_), 'content', 'full-course')
 HERE = os.path.dirname(os.path.abspath(__file__))
 
-SUBJECTS = [('algebra', 'Algebra', range(1, 21)), ('word-problems', 'Word Problems', range(21, 30)),
+SUBJECTS = [('thinking', 'Psychometric Thinking', [51]), ('algebra', 'Algebra', range(1, 21)), ('word-problems', 'Word Problems', range(21, 30)),
             ('geometry', 'Geometry', range(30, 39)), ('verbal', 'Verbal Reasoning', range(39, 51))]
 def subject_of(t): return next(k for k, _, r in SUBJECTS if t in r)
 

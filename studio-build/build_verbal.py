@@ -13,7 +13,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 BASE = os.path.join(HERE, 'base-v18.html')
 OUT = os.environ.get('OUT', '/Users/nitzanslasky/Downloads/Psychometric-Teacher-Studio-v19-hybrid.html')
 DOCDIR = '/Users/nitzanslasky/Downloads'
-VERBAL = range(39, 51)
+VERBAL = list(range(39, 51)) + [51]   # 51 = Psychometric Thinking (quantitative methods, built like the verbal topics)
 DROP_OLD = os.environ.get('DROP_OLD', '1') == '1'
 KEEP_COURSE_PRACTICE = {39, 40}          # topics whose practice stays the course's own (no bank category)
 
@@ -34,13 +34,20 @@ if not any(x['id'] == 50 for x in D['topics']):
                       {'id': 'vr50-practice', 'topic': 50, 'title': 'Practice tasks', 'kind': 'practice', 'items': [], 'questionCount': 0}]
     D['flow'].append({'id': 'flow-vr50-anchor', 'topic': 50, 'section': 'vr50-learn', 'type': 'reference', 'ref': 'vr50-anchor'})
 
+if not any(x['id'] == 51 for x in D['topics']):
+    D['topics'].append({'id': 51, 'title': 'Psychometric Thinking', 'description': 'Quantitative reasoning · Psychometric thinking',
+                        'subject': 'Quantitative reasoning', 'sections': ['pt51-learn', 'pt51-practice']})
+    D['sections'] += [{'id': 'pt51-learn', 'topic': 51, 'title': 'Learn', 'kind': 'learn', 'items': ['flow-pt51-anchor'], 'questionCount': 0},
+                      {'id': 'pt51-practice', 'topic': 51, 'title': 'Practice', 'kind': 'practice', 'items': [], 'questionCount': 0}]
+    D['flow'].append({'id': 'flow-pt51-anchor', 'topic': 51, 'section': 'pt51-learn', 'type': 'reference', 'ref': 'pt51-anchor'})
+
 # ---------- bank questions + passages ----------
 BQ, POOLS, BP, RC = vbank.questions()
 D['questions'].update(BQ)
 D.setdefault('passages', {}).update(BP)
 
 # ---------- modules ----------
-MODS, CARDS = {}, []
+MODS, CARDS, PRACT = {}, [], {}
 TEST = 'OUT' in os.environ          # test build: own output file, no shared side files
 ONLY = os.environ.get('VMODS')      # e.g. VMODS=modulesV50 -> load only module files starting with that
 for f in sorted(glob.glob(os.path.join(HERE, 'modulesV*.py'))):
@@ -49,6 +56,17 @@ for f in sorted(glob.glob(os.path.join(HERE, 'modulesV*.py'))):
     m = importlib.import_module(name)
     for mod in m.MODULES: MODS.setdefault(mod['topic'], []).append(mod)
     CARDS += getattr(m, 'MEMORY', [])
+    D['questions'].update(getattr(m, 'QUESTIONS', {}))          # a module may bring its own questions
+    pr_ = getattr(m, 'PRACTICE', {})
+    if isinstance(pr_, dict):
+        for t_, qs_ in pr_.items(): PRACT.setdefault(t_, []).extend(qs_)
+
+# topics created above but with no module loaded (test builds with VMODS): take them out again
+for t_, anc in ((50, 'vr50-anchor'), (51, 'pt51-anchor')):
+    if t_ not in MODS:
+        D['topics'] = [x for x in D['topics'] if x['id'] != t_]
+        D['sections'] = [x for x in D['sections'] if x.get('topic') != t_]
+        D['flow'] = [f for f in D['flow'] if f.get('topic') != t_]
 
 def tex_plain(t):
     return re.sub(r'\s+', ' ', t.replace('$', '')).strip()
@@ -184,6 +202,8 @@ for t in sorted(MODS):
                 if old_flow[fid]['type'] == 'question' and old_flow[fid]['ref'] not in USED_ANY]   # unused course learn questions join practice
     elif t == 49:
         prac = [q for q in RC if q not in USED_ANY]
+    elif t in PRACT:
+        prac = [q for q in PRACT[t] if q not in USED_ANY]
     else:
         target = sum(1 for fid in sections[prac_id]['items'] if old_flow[fid]['type'] == 'question')
         pool = [q for q in POOLS.get(t, []) if q not in USED_ANY]
@@ -213,7 +233,7 @@ for t in sorted(MODS):
     for m in MODS[t]:
         beats = build_video(m)
         words = sum(len(l['say'].split()) for b in beats for l in b['lines'] if 'say' in l)
-        hy = {'num': m['num'], 'title': m['title'], 'sidebar': m['sidebar'], 'subject': 'VERBAL'}
+        hy = {'num': m['num'], 'title': m['title'], 'sidebar': m['sidebar'], 'subject': 'QUANTITATIVE' if t == 51 else 'VERBAL'}
         D['videos'][m['id']] = {'id': m['id'], 'topic': t, 'title': m['title'] if not m.get('guided') else
                                 'Question %d · %s' % (m['qn'], m['title']), 'kind': m['kind'], 'beats': beats,
                                 'sourceFiles': ['04-Verbal-Reasoning-Original-Subtitles.txt'], 'wordCount': words,

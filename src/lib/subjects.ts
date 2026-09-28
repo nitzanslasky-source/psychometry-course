@@ -2,6 +2,12 @@ import type { SubjectKey } from "./fullCourseTypes";
 
 /** Display identity per subject. Colours are used as small markers only. */
 export const SUBJECT: Record<SubjectKey, { label: string; short: string; color: string; blurb: string }> = {
+  thinking: {
+    label: "Psychometric Thinking",
+    short: "Thinking",
+    color: "#0f766e",
+    blurb: "The shortcuts behind the questions: plugging in the answers, plugging in numbers, estimating, and spotting the insight.",
+  },
   algebra: {
     label: "Algebra",
     short: "Algebra",
