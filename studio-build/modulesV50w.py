@@ -132,17 +132,17 @@ assign('vr50-e-args-intro', 6, 'Choose a position',
        ['Tasks A, B, C: choose a position', 'One sentence + the key consideration'])
 
 assign('vr50-e-test', 7, 'Find and test arguments',
-       'For each task, find at least three arguments for your side, using the three techniques. Then test them and keep the best two.',
+       'For each task, find at least three arguments for your side, in the three ways. Then test them and keep the best two.',
        [dict(title='Tasks', head=['Task', 'Question'], rows=ABC),
         dict(title='Steps', head=['#', 'Do'], rows=[
-            ['1', 'Rights: which rights are harmed or at play?'],
-            ['2', 'Zoom out: the wider frame and the perspectives'],
-            ['3', 'Zoom in: who, what, how - player by player'],
+            ['1', 'From the task: the arguments it gives (in your own words, explained)'],
+            ['2', 'Who is involved, and how does it affect them - for better AND for worse?'],
+            ['3', 'Points of view: go through all nine'],
             ['4', 'Test each: direct link · one breath · logical links'],
             ['5', 'Keep the best two; write each as one short sentence'],
         ])],
        ['About 5 minutes per task.', 'Different arguments = different reasons, not the same reason in other words.'],
-       ['Tasks A, B, C: 3+ arguments each', 'Rights · zoom out · zoom in', 'Test them, keep the best two'])
+       ['Tasks A, B, C: 3+ arguments each', 'From the task · who is involved · points of view', 'Test them, keep the best two'])
 
 assign('vr50-f-chain-examples', 8, 'Chains',
        'Turn the two arguments you kept for each task into chains: about ten words each, from the thing the task asks about to the final result.',

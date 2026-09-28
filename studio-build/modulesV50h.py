@@ -651,8 +651,8 @@ SKEL = lesson('vr50-h-skeleton', 'The Essay Skeleton', SB_SKEL, [
  ]),
  dict(mode='concept', active=1, title='How to build it', script=[
   "How do we build a skeleton?",
-  L("Step 1", '1 · Analyse the task and find arguments (zoom in, zoom out, rights, ...)', 110, 34),
-  "We start from the analysis of the task, finding arguments with the techniques we learned: zoom in, zoom out, rights, and so on.",
+  L("Step 1", '1 · Analyse the task and find arguments (from the task, who is involved, points of view)', 110, 34),
+  "We start from the analysis of the task, and find arguments in the three ways we learned: from the task, who is involved, and points of view.",
   L("Step 2", '2 · Choose a side, based on the arguments you found', 190, 34),
   "Then we choose a side, based on the arguments we found.",
   L("Step 3", '3 · Choose: the arguments for your argument paragraphs,\nthe counterargument, and the weakening', 270, 34),

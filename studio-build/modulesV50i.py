@@ -67,14 +67,14 @@ lesson('vr50-i-summary', 'Writing Task: Summary', SB, [
   ('Position', 'Choose the side you can argue best. No position is preferred', 34),
  ]),
  slide(3, 'Find arguments', [
-  "Three ways to find arguments. Rights: which rights are harmed or at play.",
-  "Zoom out: the wider frame and the perspectives, and how each affects each player.",
-  "Zoom in: who, what, how. Player by player, what they gain or lose, and how.",
+  "Three ways to find arguments. One: from the task. Use its arguments, but not only them, not word for word, and explain them well.",
+  "Two: who is involved, and how does it affect them? For each player, for better and for worse.",
+  "Three: points of view. Social-economic, psychological, educational, moral, democracy, rights, safety, environment, science and progress.",
   "Then test every argument: a direct link to the question, simple enough to say in one breath, and logical links all the way.",
  ], [
-  ('Rights', 'Rights: which rights are harmed, or at play?', 36),
-  ('Zoom out', 'Zoom out: the wider frame + perspectives → effect on each player', 36),
-  ('Zoom in', 'Zoom in: who · what · how', 36),
+  ('From the task', '1 · From the task: not only, not word for word, explained', 34),
+  ('Who', '2 · Who is involved, and how? For better AND for worse', 34),
+  ('Points of view', '3 · Points of view: social-economic · psychological · educational · moral · democracy · rights · safety · environment · progress', 32),
   ('Test', 'Test: direct link · one breath · logical links (the chain)', 36),
  ]),
  slide(4, 'The chain', [

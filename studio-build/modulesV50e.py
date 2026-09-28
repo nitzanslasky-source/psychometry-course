@@ -1,6 +1,6 @@
 # Verbal Reasoning · Topic 50 · Writing Task · Part E: planning - analysing the task and finding arguments.
 # Backbone: the teacher's Hebrew lessons, writing_src/seg20-seg28 (task analysis, gathering information from the
-# prompt, considerations for choosing a position, introduction to finding arguments, rights, zoom out, zoom in,
+# prompt, considerations for choosing a position, introduction to finding arguments, the three ways (from the task, who is involved, points of view), rights,
 # the reduced-tax example, evaluating arguments). Official English facts from nite_verbal_guide.txt; findings.md
 # points 1-2 (the exact decision, population and every part of the question) are added where the task is analysed.
 # The teacher's running examples (face-recognition cameras, reduced tax for large companies) are translated and kept;
@@ -568,16 +568,15 @@ def _args_intro():
         "For example, I might prefer an argument that's a bit less strong, but still strong enough, because it's very creative. One that will impress the rater, because not many people thought of it.",
     ]))
     c = Col(y=60, gap=26)
-    s.append(dict(mode='concept', active=1, title='Three techniques', script=[
+    s.append(dict(mode='concept', active=1, title='Three ways', script=[
         "We'll learn several techniques for finding arguments. It's important to master all of them, because one technique may suit one task better, and another technique another task.",
-        A('Rights appears', c('1 · Rights: which rights clash? Is the harm to them too great, or proportionate and reasonable?', 34)),
-        "First, human and civil rights. Many tasks have a clash between rights. Then we can argue that the harm to a right is too great. Or, from the other direction, that it's actually proportionate and reasonable.",
-        A('Zoom out appears', c('2 · Zoom out: the wider frame of the debate + different perspectives (social, educational, economic...)', 34)),
-        "Zoom out. That means looking at the wider frame of the debate. Understanding that the case in the task is a particular case of a wider problem. Something at the macro level.",
-        "In zoom out we also examine the dispute from the points of view of different fields. You've probably heard: social, educational, economic and so on.",
-        A('Zoom in appears', c('3 · Zoom in: into the issue: who are the players, how are they affected, what do they gain or lose?', 34)),
-        "And zoom in. Going into the issue. Who are the relevant parties? Who are the players? Who does it affect, how, what do they gain, what do they lose?",
-        "We'll fill in each of these in the coming lessons.",
+        A('From the task appears', c('1 · From the task: the arguments the task already gives you', 34)),
+        "First: the task itself. It usually hands you the main argument of each side. You may use them, as long as you do it well.",
+        A('Who is involved appears', c('2 · Who is involved, and how does it affect them? (for better AND for worse)', 34)),
+        "Second: who is involved, and how does it affect them? Not only who wins and who loses. The same person can gain in one way and lose in another.",
+        A('Points of view appears', c('3 · Points of view: social-economic · psychological · educational · moral · democracy · rights · safety · environment · science, medicine and progress', 34)),
+        "Third: points of view. We force ourselves to look at the issue from one direction after another. You'll be surprised how many arguments you find just by doing that.",
+        "We'll go through each of the three in the coming lessons.",
     ]))
     c = Col(y=60, gap=18)
     s.append(dict(mode='concept', active=2, title='Types of argument', script=[
@@ -632,21 +631,21 @@ def _args_intro():
         "But if I start with the fact and add in my view only to the second part, now we can talk about whether you agree with me, and I'll try to explain why I think so.",
     ]))
     c = Col(y=60, gap=26)
-    s.append(dict(mode='concept', active=6, title='Next: the techniques', script=[
+    s.append(dict(mode='concept', active=6, title='Next: the three ways', script=[
         "So the distinction between types of argument affects the wording too.",
         A('Summary 1 appears', c('Look for the most suitable arguments, not "the best"', 36)),
         A('Summary 2 appears', c('Aim for facts and reasonable assumptions, not only opinions', 36)),
         A('Summary 3 appears', c('Word each argument by its type: "in my opinion" only where it is opinion', 36)),
         "Most suitable, not best. As many facts and reasonable assumptions as you can. And word each argument according to its type.",
-        A('Next appears', c('Next: rights · zoom out · zoom in', 42)),
-        "Now let's dive in and see how we find arguments with the techniques: rights, zoom out and zoom in.",
+        A('Next appears', c('Next: from the task · who is involved · points of view', 42)),
+        "Now let's dive in and see how we find arguments in the three ways: from the task, who is involved, and points of view.",
     ]))
     return s
 
 
 ARGS_INTRO = lesson('vr50-e-args-intro', 'Finding Arguments',
-                    ['The most suitable', 'Three techniques', 'Types of argument', 'Links in the chain',
-                     'Wording: opinion', 'Wording: fact first', 'Next: the techniques'],
+                    ['The most suitable', 'Three ways', 'Types of argument', 'Links in the chain',
+                     'Wording: opinion', 'Wording: fact first', 'Next: the three ways'],
                     [dict(mode='title', title='Finding Arguments', script=[
                         "An introduction to finding arguments.",
                         "What are we looking for, what kinds of arguments are there, and how does the kind of argument change the way we word it?",
@@ -658,7 +657,7 @@ def _rights():
     s = []
     c = Col(y=60)
     s.append(dict(mode='concept', active=0, title='Which rights?', script=[
-        "Our first technique for finding arguments: think about rights.",
+        "Rights, one of our points of view, and a very useful one.",
         A('Which rights appears', c('Which rights are at play? Which are harmed? Too much? Too little?', 42)),
         "Which rights are at play here? Which are harmed, too much, too little, and so on.",
         "Most of you have heard the words right and rights before. But there's some confusion. Which rights are there? Which categories? Are some rights stronger and some weaker?",
@@ -768,12 +767,12 @@ def _rights():
     return s
 
 
-RIGHTS = lesson('vr50-e-rights', 'Finding Arguments: Rights',
+RIGHTS = lesson('vr50-e-rights', 'Points of View: Rights',
                 ['Which rights?', 'Natural rights', 'Civil & social rights', 'A short history',
                  'Social vs property', "State's passive role", "State's active role",
                  'Proportionate harm', 'A rights argument'],
-                [dict(mode='title', title='Finding Arguments: Rights', script=[
-                    "The first technique for finding arguments: rights.",
+                [dict(mode='title', title='Points of View: Rights', script=[
+                    "A closer look at one of the points of view: rights. It's on our list, and it deserves its own lesson.",
                     "Which rights are there, what does the state owe us, and how do we turn a right into an argument?",
                 ])] + _rights(), T50)
 
@@ -783,7 +782,7 @@ def _zoom_out():
     s = []
     c = Col(y=60, gap=22)
     s.append(dict(mode='concept', active=0, title='A view from above', script=[
-        "Zoom out. By zoom out we mean a kind of view from above over everything that's happening here.",
+        "The third way: points of view. It starts with a kind of view from above over everything that's happening here.",
         A('Like task analysis appears', c('It is like analysing the task:', 38, gap=12)),
         "First of all, there's something here that really reminds us of analysing the task.",
         A('Same or different aim appears', c('• Same or different interest? Friends with one aim, or rivals pulling apart?', 34)),
@@ -792,25 +791,26 @@ def _zoom_out():
         "We said: this is a particular case of... and tried to understand the wider frame of the debate.",
         A('Rights appears', c('• The state is involved → probably a debate about rights', 34)),
         "What's here? A debate about rights? Something else? And if the state is involved, we probably have a debate about rights.",
-        A('New: perspectives appears', c('+ NEW: different perspectives', 40)),
-        "And what I want to add here: different perspectives.",
+        A('New: perspectives appears', c('+ NEW: the nine points of view', 40)),
+        "And what I want to add here: the points of view.",
     ]))
     c = Col(y=60, gap=18)
-    s.append(dict(mode='concept', active=1, title='Four perspectives', script=[
+    s.append(dict(mode='concept', active=1, title='Nine points of view', script=[
         "Many students call them different fields, angles, aspects: the social aspect, the economic aspect and so on.",
-        "There are many points of view on any case, debate or dispute. But I want to focus on four that, in my eyes, can be linked to almost every dispute.",
-        A('Economic appears', c('1 · Economic', 42, gap=8)),
-        A('Social appears', c('2 · Social', 42, gap=8)),
-        A('Educational appears', c('3 · Educational', 42, gap=8)),
-        A('Psychological appears', c('4 · Psychological', 42, gap=30)),
-        "Economic. Social. Educational. And psychological.",
-        A('And more appears', c('and more: moral · environmental · legal · religious', 34)),
-        "There are more, of course: moral, environmental, legal, even religious. But these four are the ones I like to look from.",
+        "Here's the list I work with. Nine points of view.",
+        A('List 1 appears', c('1 · Social-economic      2 · Psychological      3 · Educational', 38, gap=14)),
+        A('List 2 appears', c('4 · Moral      5 · Democracy      6 · Rights', 38, gap=14)),
+        A('List 3 appears', c('7 · Safety      8 · Environment      9 · Science, medicine and progress', 38, gap=36)),
+        "Social-economic. Psychological. Educational. Moral. Democracy. Rights. Safety. Environment. And science, medicine and progress.",
+        A('How to use appears', c('For each one, ask: how does the decision affect things from THIS point of view? Not every one fits every task.', 34, gap=20)),
+        "And for each one, we ask: from this point of view, how does the decision affect things? Not every point of view fits every task. That's fine. We check them all, and keep what works.",
+        A('Why it works appears', c('Forcing yourself to think in different directions opens up arguments you would never have found', 34)),
+        "What this does is open up your mind. Just by forcing yourself to think in different directions, you'll find far more arguments than you expected.",
     ]))
     c = Col(y=60, gap=16)
     s.append(dict(mode='concept', active=2, title='Economic', script=[
         A('Economic question appears', c('Economic: money is almost always a consideration. Who pays? Who gains? Who loses?', 36, gap=26)),
-        "The first is economic. What can you do: money will almost always be one of the considerations. In the end someone has to pay. Where does the money come from? Who pays, who loses, who gains?",
+        "The first point of view is social-economic. Let's start with the economic half. What can you do: money will almost always be one of the considerations. In the end someone has to pay. Where does the money come from? Who pays, who loses, who gains?",
         "It's a point you can fit onto almost every task. Let's take some examples. Reduced tax for large companies.",
         A('State earns less appears', c('The state collects less tax', 34)),
         "If there's a reduced tax for large companies, the state earns less tax. Less money comes into the state.",
@@ -839,7 +839,7 @@ def _zoom_out():
     c = Col(y=60, gap=22)
     s.append(dict(mode='concept', active=4, title='Social', script=[
         A('Social appears', c('Social: we do not live in a vacuum. Almost every decision affects society.', 38)),
-        "The next point of view is social. Because we don't live in a vacuum. We live in a society, and there's almost always an effect on society.",
+        "And the social half of social-economic. Because we don't live in a vacuum. We live in a society, and there's almost always an effect on society.",
         A('Tax social appears', c('Reduced tax → companies hire → fewer unemployed → a stronger society', 34)),
         "For example, reduced tax for large companies. The companies start employing people, so there are fewer unemployed. That contributes to the strength of society.",
         A('Cameras social appears', c('Cameras → people avoid public spaces (they do not want to be followed) → fewer social interactions → people meet only in private homes', 34)),
@@ -863,7 +863,7 @@ def _zoom_out():
     ]))
     c = Col(y=60, gap=22)
     s.append(dict(mode='concept', active=6, title='Psychological', script=[
-        "And I'll finish with the point of view I love most: the psychological one.",
+        "Now the point of view I love most: the psychological one.",
         A('Psychological appears', c('Psychological: almost every decision has psychological effects on people', 38)),
         "Why? One, we can bring it into almost anything, because almost every action or decision has psychological effects on people, or could have.",
         A('Tax psych appears', c('Reduced tax → the unemployed find work → a sense of worth, less stress and depression', 34)),
@@ -881,38 +881,59 @@ def _zoom_out():
         A('Credit for originality appears', c('The same strength of support, but extra credit for originality', 36)),
         "And that shows in the score. Let's say using a psychological argument, which isn't so common, affects the rater psychologically. He gives me a bit more credit for the originality of my argument, even if I supported it exactly as well as others support other arguments.",
     ]))
+    c = Col(y=60, gap=18)
+    s.append(dict(mode='concept', active=8, title='More points of view', script=[
+        "Let's go quickly through the rest of the list, each with an example from our tasks.",
+        A('Moral appears', c('Moral: is it right? is it fair? Cameras: is it right to treat every citizen as a suspect? · Tax: is it fair that the richest pay less?', 32)),
+        "Moral: is it right, is it fair? Is it right to treat every citizen as a possible suspect? Is it fair that the richest companies pay less tax than the corner shop?",
+        A('Democracy appears', c('Democracy: power, control, majority and minority. Cameras: a future government could use the network to follow journalists, opponents or demonstrators', 32)),
+        "Democracy: who holds power, and who controls it? A camera network built to fight crime could one day be used by a government to follow journalists, political opponents or demonstrators.",
+        A('Safety appears', c('Safety: physical safety and security. Cameras: offences stopped while they are taking place, missing people found faster', 32)),
+        "Safety: people's physical safety and security. Cameras could stop an offence while it is taking place, or help find a missing child within minutes.",
+    ]))
+    c = Col(y=60, gap=18)
+    s.append(dict(mode='concept', active=9, title='Environment, progress', script=[
+        A('Rights appears', c('Rights: which rights are at play, and is the harm to them proportionate? (a whole lesson on this, next)', 32)),
+        "Rights, which we'll look at closely in the next lesson.",
+        A('Environment appears', c('Environment: land, pollution, resources. Tax: new factories bring jobs, but also pollution and the loss of open land', 32)),
+        "Environment: land, pollution, natural resources. A reduced tax brings new factories. Jobs, yes. But also pollution, and open land that is gone.",
+        A('Progress appears', c('Science, medicine and progress: Cameras: developing the technology creates a local tech industry, but the technology also makes mistakes: an innocent person wrongly identified', 32)),
+        "Science, medicine and progress. Developing face-recognition technology can build a whole local industry. But new technology also makes mistakes. What happens to an innocent person who is identified by mistake?",
+        A('Not all fit appears', c('Not every point of view fits every task: check them all, keep the ones that give you a real argument', 32)),
+        "Not all nine will fit every task. Go through them anyway. It takes a minute, and the one you almost skipped is often the original argument.",
+    ]))
     c = Col(y=60, gap=22)
-    s.append(dict(mode='concept', active=8, title='Knowing is not enough', script=[
+    s.append(dict(mode='concept', active=10, title='Knowing is not enough', script=[
         "I'll end this lesson with a recommendation.",
         A('Lists do not help appears', c('Memorising a list of fields (acronyms, "the ministers method") does not find arguments for you', 36)),
         "I meet many students who have the list of fields. Sometimes they make acronyms, sometimes the ministers method: the minister of economy, the minister of finance, the minister of education. That's how they try to remember it.",
         "But just knowing the fields doesn't help you find the argument. To find arguments you need to think. It's not enough that I tell you: social. Oh, OK, wait, I don't know how it affects anything.",
         A('Practise appears', c('Practise: one essay a week is the bare minimum. Analyse many published tasks.', 38)),
-        "You need to practise. You need to try it. Remember the weekly essay? It isn't enough. It's the absolute minimum: one essay a week. You need to write much more and look at many more tasks.",
+        "You need to practise. You need to try it. Writing a whole essay once a week is the absolute minimum. You need to look at many more tasks.",
         A('Just find arguments appears', c('You do not always have to write the whole essay: sometimes just find the arguments', 34)),
         "There are dozens of NITE tasks that have already been published. Go through them, analyse them, try to find arguments.",
         "And you don't always have to write the whole essay. You can just go through a task and see whether you manage to find arguments. Practise this part.",
     ]))
     c = Col(y=60, gap=26)
-    s.append(dict(mode='concept', active=9, title='Right vs perspective', script=[
+    s.append(dict(mode='concept', active=11, title='Right vs perspective', script=[
         "One more thing. Some students mix up rights with perspectives. For example, a social right like the right to education, and the educational perspective.",
         A('Right to education appears', c('The RIGHT to education: something I am entitled to receive, here from the state', 36)),
         "The right to a proper education is my right. It's something I'm entitled to receive, in this case from the state.",
         A('Educational perspective appears', c('The EDUCATIONAL PERSPECTIVE: what effect does this decision have on how children and adults are educated?', 36)),
         "In the educational perspective, I ask myself: what effect does this have on education? What effects does what we do, or choosing this position or that one, have on how children and adults are educated?",
-        A('Summary appears', c('Zoom out = the macro view: the wider frame + perspectives', 38)),
-        "That's it for finding arguments with zoom out. The macro view. And from here we go on to zoom in.",
+        A('Summary appears', c('Points of view: go through all nine, force yourself to think in each direction', 38)),
+        "That's the third way: points of view. Go through all nine, one direction at a time. Next, a closer look at one of them: rights.",
     ]))
     return s
 
 
-ZOOM_OUT = lesson('vr50-e-zoom-out', 'Finding Arguments: Zoom Out',
-                  ['A view from above', 'Four perspectives', 'Economic', 'Economic: cameras', 'Social',
-                   'Educational', 'Psychological', 'Why psychological', 'Knowing is not enough',
-                   'Right vs perspective'],
-                  [dict(mode='title', title='Finding Arguments: Zoom Out', script=[
-                      "The second technique for finding arguments: zoom out.",
-                      "We step back, look at the wider debate, and look at it through different perspectives.",
+ZOOM_OUT = lesson('vr50-e-zoom-out', 'Way 3: Points of View',
+                  ['A view from above', 'Nine points of view', 'Economic', 'Economic: cameras', 'Social',
+                   'Educational', 'Psychological', 'Why psychological', 'More points of view',
+                   'Environment, progress', 'Knowing is not enough', 'Right vs perspective'],
+                  [dict(mode='title', title='Way 3: Points of View', script=[
+                      "The third way to find arguments: points of view.",
+                      "We look at the issue from one direction after another: social-economic, psychological, educational, moral, and more.",
                   ])] + _zoom_out(), T50)
 
 
@@ -937,7 +958,7 @@ def _zoom_in():
         "When I make an argument, what am I really saying? We should do this, because it will be better. Or: we shouldn't, because it will be worse. Right?",
         A('Different parties appears', c('Benefit and harm belong to different parties → who are they, and what does each gain or lose?', 34)),
         "So we need to start thinking in terms of benefit and harm. And benefit and harm can belong to different parties.",
-        "In zoom in, we try to understand who the different parties playing in this game are, and what benefit or harm each one gets.",
+        "So in this way, we ask who is involved in this game, and how the decision affects each of them.",
     ]))
     c = Col(y=60, gap=20)
     s.append(dict(mode='concept', active=1, title='Who, what, how', script=[
@@ -950,8 +971,20 @@ def _zoom_in():
         A('How appears', c('HOW: how does it happen? Why?', 38)),
         "And how: how does it happen? I need to explain why it happens.",
     ]))
+    c = Col(y=60, gap=18)
+    s.append(dict(mode='concept', active=2, title='Both ways', script=[
+        "And here's the most important thing in this way of thinking.",
+        A('Ask how appears', c('Do not ask "who wins and who loses?"  Ask: "HOW does it affect them?"', 40, gap=24)),
+        "Don't ask who wins and who loses. Ask: how does it affect them? Because the same person can be affected for the better AND for the worse.",
+        A('Usual picture appears', c('Four-day school week, the usual picture: good for students (rest) · bad for parents (childcare)', 34, gap=12)),
+        "Take the four-day school week. The picture everyone sees immediately: it's good for the students, they rest. It's bad for the parents, they need childcare.",
+        A('Other half appears', c('But: students — longer days, tired in the last lessons (bad) · parents — a whole day with their children, one day less of driving (good)', 34, gap=24)),
+        "But ask how it affects them. Students: longer days, so they're exhausted in the last lessons. That's bad for them. Parents: a whole extra day with their children, one day less of driving them around. That can be good for them.",
+        A('Open up appears', c('Asking "how" for EACH player, in BOTH directions, doubles what you find, and finds what others miss', 36)),
+        "When we only think good for this one, bad for that one, we lose half the arguments. Asking how, in both directions, for each player, opens up your brain.",
+    ]))
     c = Col(y=60, gap=22)
-    s.append(dict(mode='concept', active=2, title='The key sentence', script=[
+    s.append(dict(mode='concept', active=3, title='The key sentence', script=[
         A('Who+what appears', c('WHO + WHAT = the key sentence (the short version of the argument)', 40)),
         "Who and what: that's really my key sentence. The argument itself, my short argument. It says who the players are, and what the benefit or harm is.",
         A('Example key sentence appears', c('"In my opinion, face-recognition cameras should be installed in public spaces, since they are likely to prevent or reduce harm to people."', 34, gap=8)),
@@ -962,7 +995,7 @@ def _zoom_in():
         "Key sentence first, then develop and support it. Explain why it's true. That whole process is the how.",
     ]))
     c = Col(y=60, gap=20)
-    s.append(dict(mode='concept', active=3, title='The table', script=[
+    s.append(dict(mode='concept', active=4, title='The table', script=[
         "Let's see how it's done in practice.",
         A('Question appears', c('"Should the security services be allowed to install face-recognition cameras in public spaces?"', 34, gap=30)),
         "Here's our question. And we ask ourselves: who? Who are the players? And what? What's the harm or the benefit?",
@@ -970,12 +1003,12 @@ def _zoom_in():
         A('Table rows appears', c('people · law enforcement · society and the state · offenders', 34, gap=30)),
         "I recommend doing it as a table like this. Benefit, harm. And here you simply write the players, who is affected.",
         A('Perspectives optional appears', c('You may tag each item with a perspective or a right: it makes you more precise (optional)', 32)),
-        "I'll be using the same perspectives we used before, in zoom out. You don't have to write them. You can just write the benefit. But it makes me more precise.",
+        "I'll also tag each item with a point of view: economic, psychological and so on. We'll meet all of them properly in the third way. You don't have to write them. But it makes me more precise.",
         A('Just for you appears', c('Nobody marks this table: it is a thinking tool for you', 32)),
         "And remember: this isn't a table we hand in to anyone. It's for you, to help you think of arguments.",
     ]))
     items, L, R = two_cols('the people')
-    s.append(dict(mode='concept', active=4, title='The people', script=[
+    s.append(dict(mode='concept', active=5, title='The people', script=[
         "Who are our first players? I chose the people.",
         items[0], items[1], items[2],
         "What benefit or harm may be caused to them? Let's start.",
@@ -992,7 +1025,7 @@ def _zoom_in():
         "The harm to privacy is certain. Will there also be leaks? That's a risk. It isn't certain, but it could happen.",
     ]))
     items, L, R = two_cols('law enforcement')
-    s.append(dict(mode='concept', active=5, title='Law enforcement', script=[
+    s.append(dict(mode='concept', active=6, title='Law enforcement', script=[
         "Which other players do we have? Law enforcement.",
         items[0], items[1], items[2],
         A('Efficiency appears', L('Efficiency: far fewer resources to catch and stop offenders (economic)', 30)),
@@ -1006,7 +1039,7 @@ def _zoom_in():
         "There's a danger here too. If officers get used to relying only on cameras, they'll forget the old-fashioned police work.",
     ]))
     items, L, R = two_cols('society and the state')
-    s.append(dict(mode='concept', active=6, title='Society and the state', script=[
+    s.append(dict(mode='concept', active=7, title='Society and the state', script=[
         "Another player: society, the state. It doesn't always have to be together. Sometimes the state is separate and society is separate. Here I put them together; sometimes it's hard to separate them.",
         "And society is almost always there. Even when the state itself isn't part of the issue, society is often affected somehow. For example: what do you think of the rise in cosmetic surgery? The state isn't involved, but society is.",
         items[0], items[1], items[2],
@@ -1023,7 +1056,7 @@ def _zoom_in():
         "And economic here too. If the country is seen as a police state, think of the Soviet Union and the KGB, I'm less keen to go there. They might catch me and do something to me.",
     ]))
     items, L, R = two_cols('the offenders')
-    s.append(dict(mode='concept', active=7, title='The offenders', script=[
+    s.append(dict(mode='concept', active=8, title='The offenders', script=[
         "And we also have the offenders themselves. I often mark them in red, because we understand the issue isn't really about them. But they're players in this game too.",
         items[0], items[1], items[2],
         A('Risk to freedom appears', R('A risk to their freedom: suddenly they are filmed', 30)),
@@ -1038,8 +1071,8 @@ def _zoom_in():
         "It's a bit like playing poker with someone whose cards you can see. They see the police's cards: I know where their cameras are, fine, I'll mislead them and use it against them.",
     ]))
     c = Col(y=60, gap=26)
-    s.append(dict(mode='concept', active=8, title='Why it works', script=[
-        "Look how nice this technique is. Who, what, how.",
+    s.append(dict(mode='concept', active=9, title='Why it works', script=[
+        "Look how nice this way of thinking is. Who, what, how.",
         A('Players easy appears', c('Finding the players is not hard: society and the state are almost always there', 38)),
         "Finding the players isn't too hard. Usually society is there. Even if specific people are linked to the issue, society and the state are often involved in a more indirect way.",
         A('Use rights and perspectives appears', c('Inside each player, use rights and perspectives to find benefits and harms', 38)),
@@ -1051,12 +1084,12 @@ def _zoom_in():
     return s
 
 
-ZOOM_IN = lesson('vr50-e-zoom-in', 'Finding Arguments: Zoom In',
-                 ['An argument = a result', 'Who, what, how', 'The key sentence', 'The table',
+ZOOM_IN = lesson('vr50-e-zoom-in', 'Way 2: Who Is Involved?',
+                 ['An argument = a result', 'Who, what, how', 'Both ways', 'The key sentence', 'The table',
                   'The people', 'Law enforcement', 'Society and the state', 'The offenders', 'Why it works'],
-                 [dict(mode='title', title='Finding Arguments: Zoom In', script=[
-                     "The third technique for finding arguments: zoom in.",
-                     "We go into the issue itself: who are the players, and what could each of them gain or lose?",
+                 [dict(mode='title', title='Way 2: Who Is Involved?', script=[
+                     "The second way to find arguments: who is involved, and how does it affect them?",
+                     "We go into the issue itself, player by player, and look for the good and the bad for each of them.",
                  ])] + _zoom_in(), T50)
 
 
@@ -1066,7 +1099,7 @@ def _tax():
     it, bottom = box(TAX_PROMPT, TAX_Q, y=60, w=1100)
     c = Col(y=bottom + 40, gap=16)
     s.append(dict(mode='concept', active=0, title='The task', script=[
-        "Another example of zoom in. Here's the task.",
+        "Another example of the second way: who is involved, and how does it affect them? Here's the task.",
         A('The tax task appears', it),
         "In your opinion, should the state charge large companies a reduced rate of tax?",
         A('Who what how appears', c('Who? What? How?  →  player by player', 40)),
@@ -1146,21 +1179,21 @@ def _tax():
         "What this technique mainly does, I think, is give you focus.",
         A('General is hard appears', c('"I\'m trying to think of arguments... something general" → hard', 36)),
         "Often, when students try to think of arguments, they say in their heads: OK, I'm trying to think of arguments, something general. That's hard.",
-        A('Zoom out direction appears', c('Zoom out: a perspective → who does it affect?  (economic → the state? the unemployed? citizens?)', 34)),
-        "In zoom out, I take one perspective, say economic, and ask: who does it affect? The state? The unemployed? The citizens?",
-        A('Zoom in direction appears', c('Zoom in: a player → which perspectives and rights?  (the state → economic? moral? social?)', 34)),
-        "In zoom in we go the other way. I take a certain player, say the state, and ask: in which fields is it affected? Which rights are involved?",
+        A('Points of view direction appears', c('Points of view: one point of view → who does it affect?  (economic → the state? the unemployed? citizens?)', 34)),
+        "With points of view, the third way, I take one point of view, say economic, and ask: who does it affect? The state? The unemployed? The citizens?",
+        A('Who direction appears', c('Who is involved: one player → how, from which points of view?  (the state → economic? moral? social?)', 34)),
+        "Here, in the second way, we go the other way. I take one player, say the state, and ask: how is it affected, and from which points of view?",
         A('Same technique appears', c('The same technique from the other side. Either way: focus on one thing at a time.', 36)),
         "It's exactly the same technique, from the other side. And either way it creates focus. When you look only at the state, you can find arguments about it, instead of thinking in general about everyone at once.",
     ]))
     return s
 
 
-TAX = lesson('vr50-e-zoom-in-tax', 'Zoom In: Reduced Tax',
+TAX = lesson('vr50-e-zoom-in-tax', 'Who Is Involved? Reduced Tax',
              ['The task', 'The state: harm', 'The state: benefit', 'Same field, other side', 'The unemployed',
               'Other citizens', 'The companies', 'Focus'],
-             [dict(mode='title', title='Zoom In: Reduced Tax', script=[
-                 "Zoom in, a second example: reduced tax for large companies.",
+             [dict(mode='title', title='Who Is Involved? Reduced Tax', script=[
+                 "Who is involved, a second example: reduced tax for large companies.",
                  "Player by player, we'll find benefits and harms, and see how deep this technique can go.",
              ])] + _tax(), T50)
 
@@ -1243,13 +1276,13 @@ def _test():
     ]))
     c = Col(y=60, gap=22)
     s.append(dict(mode='concept', active=6, title='Summary', script=[
-        "Let's sum up the techniques for finding arguments.",
-        A('Rights appears', c('Rights: which rights are harmed, or at play? Too much, or proportionately?', 34)),
-        "Rights: which rights are harmed, or at play, in this issue?",
-        A('Zoom out appears', c('Zoom out: the wider frame + perspectives → how each one affects each player', 34)),
-        "Zoom out: understand the wider frame of the debate, look through different perspectives, and in each perspective ask how it affects the different players.",
-        A('Zoom in appears', c('Zoom in: who, what, how → start from the players, then which rights and perspectives affect each', 34)),
-        "Or go from the other side. Zoom in: who, what, how. Who are the players, what do they gain or lose, and how does it happen.",
+        "Let's sum up the three ways to find arguments.",
+        A('Way 1 appears', c('1 · From the task: use its arguments, but not only them, not word for word, and explain them well', 34)),
+        "One: from the task. Use the arguments it gives you, but not only them, not word for word, and explain them well.",
+        A('Way 2 appears', c('2 · Who is involved, and how does it affect them? For each player: for better AND for worse', 34)),
+        "Two: who is involved, and how does it affect them? For each player, in both directions.",
+        A('Way 3 appears', c('3 · Points of view: social-economic · psychological · educational · moral · democracy · rights · safety · environment · science and progress', 34)),
+        "Three: points of view. Go through all nine and force yourself to think in each direction.",
         A('Test appears', c('Then test each argument: direct link · simple · logical links (the chain)', 34)),
         "Then test each argument: a direct link, simple, and logical links. Draft its chain.",
         "Next, we move on to actually writing the essay. We'll start with paragraphs, and at the end put them all together into a whole essay. Hopefully a perfect one, or almost. But a good one.",
@@ -1266,12 +1299,74 @@ TEST = lesson('vr50-e-test', 'Is It a Good Argument?',
               ])] + _test(), T50)
 
 
-MODULES = [ANALYSE, GATHER, POSITION, ARGS_INTRO, RIGHTS, ZOOM_OUT, ZOOM_IN, TAX, TEST]
+# =====================================================================================================================
+def _from_task():
+    s = []
+    c = Col(y=60, gap=22)
+    s.append(dict(mode='concept', active=0, title='Already in the task', script=[
+        "The first way to find arguments is the simplest: look at what the task already gives you.",
+        A('Task gives arguments appears', c('Most tasks already state the main argument of each side', 40)),
+        "Most tasks already state the main argument of each side. Remember the green part we marked when we gathered information.",
+        A('Camera for appears', c('For: "such a system would reduce, and even completely eliminate, criminal and security incidents"', 34)),
+        A('Camera against appears', c('Against: "it would seriously harm privacy"', 34)),
+        "In the camera task: supporters say it would reduce, and even eliminate, crime. Opponents say it would seriously harm privacy.",
+        A('Allowed appears', c('Using them is allowed, and smart: they are the heart of the debate', 38)),
+        "Can you use them? Yes. It's allowed, and it's smart. They're the heart of the debate, and the rater expects to see them dealt with.",
+    ]))
+    c = Col(y=60, gap=26)
+    s.append(dict(mode='concept', active=1, title='Three conditions', script=[
+        "But there are three conditions.",
+        A('Not only appears', c('1 · Not ONLY them: add at least one argument of your own (ways 2 and 3)', 38)),
+        "One: not only them. If your whole essay is the two arguments from the task, you haven't shown the rater any thinking of your own. Add at least one argument you found yourself.",
+        A('Not word for word appears', c('2 · Not word for word: say it in your own words', 38)),
+        "Two: not word for word. Take the idea, not the sentence.",
+        A('Explain well appears', c('3 · Explain it well: the task gives a CLAIM, not the explanation. You add the how: the chain.', 38)),
+        "And three, the most important: explain it well. The task only gives you the claim. It never explains how it happens. That's your job. That's where the chain comes in.",
+    ]))
+    c = Col(y=60, gap=20)
+    s.append(dict(mode='concept', active=2, title='Copied vs developed', script=[
+        "Let's see the difference.",
+        A('Copied appears', c('✗ "Supporters claim that such a system would reduce, and even eliminate, crime, and I agree with them."', 34, gap=10)),
+        A('Copied why appears', c('Copied, and nothing explained', 30, gap=34)),
+        "This one is copied, and it explains nothing. The rater has read that sentence already, in the task.",
+        A('Developed appears', c('✓ "Face-recognition cameras are likely to reduce crime in public spaces. Once offenders know that their faces can be identified within seconds, many of them may think twice before acting, since the chance of being caught rises sharply. As a result, the monitored areas are likely to become safer."', 32, gap=10)),
+        A('Developed why appears', c('The same idea, in my own words, with the steps explained', 30)),
+        "This one takes the same idea, says it in my own words, and explains the steps: they know they can be identified, the chance of being caught rises, they think twice, the areas become safer.",
+    ]))
+    c = Col(y=60, gap=24)
+    s.append(dict(mode='concept', active=3, title='Their side too', script=[
+        A('Other side appears', c("The OTHER side's argument in the task = the argument you will answer in the rebuttal paragraph", 38)),
+        "And the other side's argument from the task? Don't throw it away. That's usually the argument you'll answer in your rebuttal paragraph.",
+        A('Ready made appears', c('Privacy (against) → state it fairly, then weaken it', 36)),
+        "If I support the cameras, the privacy argument is ready for me. I'll state it fairly, and then weaken it.",
+    ]))
+    c = Col(y=60, gap=26)
+    s.append(dict(mode='concept', active=4, title='Then look further', script=[
+        A('Everyone has these appears', c('Every student has the arguments from the task', 40)),
+        "Remember: every student in the exam has the same task in front of them. Everyone has these arguments.",
+        A('Stand out appears', c('What makes your essay stand out: the arguments you find yourself', 38)),
+        "What makes your essay stand out is what you find yourself. And for that we have the next two ways.",
+        A('Next ways appears', c('Next: 2 · Who is involved, and how does it affect them?   3 · Points of view', 36)),
+        "Who is involved and how it affects them, and points of view.",
+    ]))
+    return s
+
+
+FROM_TASK = lesson('vr50-e-from-task', 'Way 1: From the Task',
+                   ['Already in the task', 'Three conditions', 'Copied vs developed', 'Their side too',
+                    'Then look further'],
+                   [dict(mode='title', title='Way 1: From the Task', script=[
+                       "The first way to find arguments: from the task itself.",
+                       "What it gives you, and how to use it without copying it.",
+                   ])] + _from_task(), T50)
+
+
+MODULES = [ANALYSE, GATHER, POSITION, ARGS_INTRO, FROM_TASK, ZOOM_IN, TAX, ZOOM_OUT, RIGHTS, TEST]
 
 MEMORY = [dict(
     id='mem-wr-planning', after='vr50-e-test', title='Planning: analyse the task & find arguments',
     intro='Before writing: analyse the task, gather what it gives you, choose a position you can explain, '
-          'find arguments with three techniques, and test each one.',
+          'find arguments in three ways, and test each one.',
     tables=[
         dict(title='1 · Analyse the task', head=['Ask', 'What to look for'], rows=[
             ['Same or different aim?', 'Friends with one aim, different ways, or rivals with different interests'],
@@ -1296,10 +1391,11 @@ MEMORY = [dict(
             ['Rights', 'The right the task explains in detail'],
             ['Three opinions', 'The middle (≈ 80 + 80 instead of 100 / 0)'],
         ]),
-        dict(title='4 · Three techniques for finding arguments', head=['Technique', 'How'], rows=[
-            ['Rights', 'Natural (life, liberty, movement, occupation, property, equality, dignity → privacy) · civil (vote, association, press, expression) · social (education, health, housing, work). Argue the harm is too great, or proportionate, in THIS task.'],
-            ['Zoom out', 'The wider frame + perspectives: economic · social · educational · psychological (+ moral, environmental, legal...) → how each affects each player'],
-            ['Zoom in', 'Who (the players) · what (possible benefit / harm) · how (the development). Who + what = the key sentence.'],
+        dict(title='4 · Three ways to find arguments', head=['Way', 'How'], rows=[
+            ['1 · From the task', "Use the sides' arguments given in the task - but not only them, not word for word, and explain each one well (a chain)."],
+            ['2 · Who is involved?', 'Who are the players, and HOW does the decision affect each of them - for better and for worse? Who + what = the key sentence; how = the development.'],
+            ['3 · Points of view', 'Social-economic · psychological · educational · moral · democracy · rights · safety · environment · science, medicine and progress. Check each; keep what gives a real argument.'],
+            ['Rights (close-up)', 'Natural (life, liberty, movement, occupation, property, equality, dignity → privacy) · civil (vote, association, press, expression) · social (education, health, housing, work). Argue the harm is too great, or proportionate, in THIS task.'],
         ]),
         dict(title='5 · The argument test', head=['Test', 'Check'], rows=[
             ['Direct link', 'Answers the exact question; does not dispute facts the task gives'],
