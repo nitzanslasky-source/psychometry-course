@@ -21,22 +21,22 @@ export interface PlanTopic {
  * The study order follows the teacher's Hebrew course schedule (2-month course, day by day): subjects are mixed
  * every day, fundamentals come first, psychometric thinking early, and the writing task is spread over the first
  * two weeks (intro → language → content → planning → argument → rebuttal → opening/closing/structure).
- * [topicId] = the whole topic; [50, "b"] = the writing-task lessons whose ids start with "vr50-b" (with the cards
+ * [topicId] = the whole topic; [50, "vr50-b"] = the writing-task lessons whose ids start with "vr50-b" (with the cards
  * and workshops that follow them). Topics missing from the list are added at the end.
  */
 const ORDER: [number, string?][] = [
   [1], [30], [2], [4], [31], [6], [8], [32], [9], [10], [33], // days 1-5: fundamentals
-  [51], [50, "a"], // day 6: psychometric thinking, intro to the writing task
-  [39], [42], [21], [50, "b"], [50, "c"], // day 8
-  [50, "d"], [3], // day 9
-  [43], [50, "e"], [50, "f"], // days 10-11
-  [50, "g"], [22], // day 12
-  [41], [50, "h"], [50, "i"], [5], // day 13
+  [51], [50, "vr50-a"], // day 6: psychometric thinking, intro to the writing task
+  [39], [42], [21], [50, "vr50-b"], [50, "vr50-c"], // day 8
+  [50, "vr50-d"], [3], // day 9
+  [43], [50, "vr50-e"], [50, "vr50-f"], // days 10-11
+  [50, "vr50-g"], [22], // day 12
+  [41], [50, "vr50-h"], [50, "vr50-i"], [5], // day 13
   [7], [44], [23], [11], [24], [49], [12], // days 15-20
-  [45], [25], [40], [34], [13], [52], [26], [14], // days 22-26 (charts: day 24)
-  [46], [35], [15], [47], [27], [16], [17], // days 29-33
-  [36], [18], [28], [48], [37], [19], // days 36-40
-  [20], [29], [38], // days 43-44
+  [45], [25], [40], [34], [13], [52, "ch52-"], [26], [14], // days 22-26 (charts lessons + practice units 1-5: day 24)
+  [46], [35], [15], [52, "chp06"], [47], [27], [16], [17], // days 29-33 (charts units 6-10: day 30)
+  [36], [18], [52, "chp11"], [28], [48], [37], [19], // days 36-40 (charts units 11-15: day 37)
+  [20], [29], [38], [52, "chp16"], // days 43-44 (charts units 16-20: day 44)
 ];
 
 export function getPlanData() {
@@ -65,8 +65,9 @@ export function getPlanData() {
     if (part) {
       // the part runs from its first lesson to the first lesson of the next part of the same topic
       const starts = ORDER.filter(([id, p]) => id === t.id && p).map(([, p]) => p as string);
-      const at = (p: string) => flat.findIndex(({ step }) => step.id.startsWith(`vr${t.id}-${p}`));
-      from = Math.max(0, at(part));
+      const at = (p: string) => flat.findIndex(({ step }) => step.id.startsWith(p));
+      from = at(part);
+      if (from < 0) continue; // this part does not exist (yet)
       const later = starts.slice(starts.indexOf(part) + 1).map(at).filter((k) => k > from);
       to = later.length ? Math.min(...later) : flat.length;
     }

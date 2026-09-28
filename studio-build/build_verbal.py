@@ -221,7 +221,7 @@ for t in sorted(MODS):
         qq = D['questions'][q]
         if t not in KEEP_COURSE_PRACTICE:
             qq['unit'] = prac_id
-            if os.environ.get('PG','1')=='1': qq['practiceGroup'] = D['passages'][qq['passageId']]['title'] if qq.get('passageId') else 'Unit %d' % (k // 10 + 1)
+            if os.environ.get('PG','1')=='1': qq['practiceGroup'] = qq.get('setTitle') or (D['passages'][qq['passageId']]['title'] if qq.get('passageId') else 'Unit %d' % (k // 10 + 1))
         new.append({'id': 'flow-%s-q-%s' % (prac_id, q), 'topic': t, 'section': prac_id, 'type': 'question', 'ref': q})
     for q in used_q: D['questions'][q]['unit'] = learn_id; D['questions'][q]['guided'] = True
     flow[pos:pos] = new

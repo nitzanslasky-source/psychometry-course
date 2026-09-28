@@ -67,7 +67,7 @@ def set_page(hl=None):
         on = hl == key
         b.append(_r(20, y, 860, h, AMBER_SOFT if on else '#fff', AMBER if on else GRID, 4 if on else 2, 10))
         b.append(_t(40, y + 30, label, 20, '#8A5A00' if on else MUTED, 'start', 700))
-    part('instr', 14, 46, 'Refer to the chart below and answer the questions that follow.')
+    part('instr', 14, 46, 'Study the chart below, then answer the questions that follow.')
     part('expl', 70, 96, 'The explanation: what the chart describes')
     for k in range(2): b.append(_r(40, 112 + k * 18, 700 - k * 180, 8, GRID, rx=4))
     b.append(_t(40, 157, 'For example: in 2010, 60 thousand vehicles were sold.', 18, INK if hl != 'example' else '#8A5A00', 'start',
@@ -347,8 +347,8 @@ def L_intro():
     ], pre=[wide(chart_menu(), w=900)]))
     n = NU(620)
     s.append(S(SB1, 2, [
-        A('Instructions appear', n('"Refer to the chart (table) below and answer the questions that follow."', size=32)),
-        "The instructions: refer to the chart or the table below, and answer the questions that follow.",
+        A('Instructions appear', n('"Study the graph (table) below, then answer the four questions that follow."', size=32)),
+        "The instructions: study the graph or the table below, then answer the questions that follow.",
         "In other words, we don't really have instructions. Read the chart, look at it, and answer the questions after it.",
         "How is it built? Let's go through it from top to bottom.",
     ], pre=[wide(set_page('instr'), w=800)]))
