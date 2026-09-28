@@ -704,7 +704,7 @@ lesson('vr50-a-baseline', 'Your Opening Essay', SB_BASE, [
  ]),
  dict(mode='concept', active=0, title='Where you start', script=[
   L('Your starting level', 'Goal: find your starting level in the essay', 110, 42),
-  "Just like the diagnostic test at the start of the course, we want to know your starting point in the essay specifically.",
+  "We want to know your starting point in the essay.",
   L('To see progress', 'So you can see how much you improve during the course', 200, 40),
   "That way you'll be able to see how much you've improved by the end.",
  ]),
