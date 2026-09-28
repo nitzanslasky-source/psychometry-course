@@ -101,7 +101,7 @@ BUS_PROMPT = [
 BUS_Q = ('In your opinion, what are the advantages and disadvantages of free public transport, '
          'for city residents and for the city itself? Give reasons.')
 # one shared version of every task (writing_tasks.py, shaped like the real English tasks)
-from writing_tasks import T as _T, split_task_slides
+from writing_tasks import T as _T, split_task_slides, box as _TB
 CAM_PROMPT, CAM_Q = _T['camera']['paras'], _T['camera']['q']
 from writing_assets import _wrap
 CAM_BACKGROUND = _wrap(' '.join(CAM_PROMPT[:2]), 80)   # the marked version: background (facts) ...
@@ -893,8 +893,8 @@ def _zoom_out():
     ]))
     c = Col(y=60, gap=18)
     s.append(dict(mode='concept', active=9, title='Environment, progress', script=[
-        A('Rights appears', c('Rights: which rights are at play, and is the harm to them proportionate? (a whole lesson on this, next)', 32)),
-        "Rights, which we'll look at closely in the next lesson.",
+        A('Rights appears', c('Rights: which rights are at play, and is the harm to them proportionate? (a whole lesson on this soon)', 32)),
+        "Rights, which we'll look at closely soon.",
         A('Environment appears', c('Environment: land, pollution, resources. Tax: new factories bring jobs, but also pollution and the loss of open land', 32)),
         "Environment: land, pollution, natural resources. A reduced tax brings new factories. Jobs, yes. But also pollution, and open land that is gone.",
         A('Progress appears', c('Science, medicine and progress: Cameras: developing the technology creates a local tech industry, but the technology also makes mistakes: an innocent person wrongly identified', 32)),
@@ -922,7 +922,7 @@ def _zoom_out():
         A('Educational perspective appears', c('The EDUCATIONAL PERSPECTIVE: what effect does this decision have on how children and adults are educated?', 36)),
         "In the educational perspective, I ask myself: what effect does this have on education? What effects does what we do, or choosing this position or that one, have on how children and adults are educated?",
         A('Summary appears', c('Points of view: go through all nine, force yourself to think in each direction', 38)),
-        "That's the third way: points of view. Go through all nine, one direction at a time. Next, a closer look at one of them: rights.",
+        "That's the third way: points of view. Go through all nine, one direction at a time. Next, we will see all nine in action on one task, and then take a closer look at rights.",
     ]))
     return s
 
@@ -1070,8 +1070,32 @@ def _zoom_in():
         "Not to mention more sophisticated offenders, who can use the cameras to their advantage. For example, to create an alibi: dress in very distinctive clothes, dress a look-alike in the same clothes in front of the cameras, while they commit the offence somewhere else.",
         "It's a bit like playing poker with someone whose cards you can see. They see the police's cards: I know where their cameras are, fine, I'll mislead them and use it against them.",
     ]))
+    c = Col(y=500, gap=16)
+    s.append(dict(mode='concept', active=9, title='Smoking: the task', script=[
+        "One more example, to practise the most important part: both ways, for each player.",
+        A('Smoking task appears', _TB('smoking', y=40)),
+        "Anti-smoking laws. Smoking is banned in cafés, restaurants, bus stations, with heavy fines, even for business owners. Are the laws justified?",
+        A('Who appears', c('Who is involved? smokers · non-smokers · café and restaurant owners · their workers · the state', 34)),
+        "Who is involved? Smokers. Non-smokers. Café and restaurant owners. The people who work there. And the state.",
+    ]))
+    c = Col(y=60, gap=14)
+    s.append(dict(mode='concept', active=10, title='Smoking: both ways', script=[
+        "Now, for each one: how does it affect them? For better, and for worse.",
+        A('Smokers appears', c('Smokers:  − fewer places to smoke, fines, feel pushed out   + may smoke less, or quit → better health', 32)),
+        "Smokers. The obvious part: it's bad for them. Fewer places, fines, they feel pushed out. But how does it affect them? Many smoke less, some quit. That's good for their health.",
+        A('Non-smokers appears', c('Non-smokers:  + no passive smoking, healthier   − friends who smoke go elsewhere, evenings out split up', 32)),
+        "Non-smokers. The obvious part: it's good for them. No passive smoking. But: friends who smoke now go elsewhere, or keep going outside. Evenings out split up.",
+        A('Owners appears', c('Owners:  − smoking customers stay away, fines   + non-smokers and families come, lower cleaning costs', 32)),
+        "Café owners. We think: bad for business. But how? Smoking customers may stay away. And yet families and non-smokers, who used to avoid smoky places, may come instead.",
+        A('Workers appears', c('Workers:  + a whole shift without smoke   − the job of enforcing the ban on customers', 32)),
+        "The waiters. A whole shift without breathing smoke. But also the unpleasant job of telling customers to stop.",
+        A('State appears', c('The state:  + lower health costs in the long term   − less tobacco tax, the cost of enforcement', 32)),
+        "And the state. Lower health costs in the long term. But less income from tobacco tax, and the cost of enforcement.",
+        A('Lesson appears', c('Every player has both sides. The side nobody expects is often your best argument.', 34)),
+        "See? Every single player has both sides. And the side nobody expects, like the café owner who gains, is often your most original argument.",
+    ]))
     c = Col(y=60, gap=26)
-    s.append(dict(mode='concept', active=9, title='Why it works', script=[
+    s.append(dict(mode='concept', active=11, title='Why it works', script=[
         "Look how nice this way of thinking is. Who, what, how.",
         A('Players easy appears', c('Finding the players is not hard: society and the state are almost always there', 38)),
         "Finding the players isn't too hard. Usually society is there. Even if specific people are linked to the issue, society and the state are often involved in a more indirect way.",
@@ -1086,7 +1110,8 @@ def _zoom_in():
 
 ZOOM_IN = lesson('vr50-e-zoom-in', 'Way 2: Who Is Involved?',
                  ['An argument = a result', 'Who, what, how', 'Both ways', 'The key sentence', 'The table',
-                  'The people', 'Law enforcement', 'Society and the state', 'The offenders', 'Why it works'],
+                  'The people', 'Law enforcement', 'Society and the state', 'The offenders',
+                  'Smoking: the task', 'Smoking: both ways', 'Why it works'],
                  [dict(mode='title', title='Way 2: Who Is Involved?', script=[
                      "The second way to find arguments: who is involved, and how does it affect them?",
                      "We go into the issue itself, player by player, and look for the good and the bad for each of them.",
@@ -1361,7 +1386,73 @@ FROM_TASK = lesson('vr50-e-from-task', 'Way 1: From the Task',
                    ])] + _from_task(), T50)
 
 
-MODULES = [ANALYSE, GATHER, POSITION, ARGS_INTRO, FROM_TASK, ZOOM_IN, TAX, ZOOM_OUT, RIGHTS, TEST]
+# =====================================================================================================================
+def _pov_example():
+    s = []
+    c = Col(y=470, gap=16)
+    s.append(dict(mode='concept', active=0, title='The task', script=[
+        "Let's take one task and run it through all nine points of view.",
+        A('Tax vote task appears', _TB('taxvote', y=40)),
+        "A bill proposes to deny voting rights to people who don't pay taxes. Should non-taxpayers be allowed to vote?",
+        A('Two from the task appears', c('From the task: rights come with duties (for) · voting is a basic right (against). Now let\'s look further.', 32)),
+        "The task already gives us two arguments: rights come with duties, and voting is a basic right. That's way one. Now let's see how many more we find, just by changing direction.",
+    ]))
+    c = Col(y=60, gap=16)
+    s.append(dict(mode='concept', active=1, title='Economic, psychology', script=[
+        A('Social-economic appears', c('Social-economic: who does not pay tax? Often the unemployed, students, pensioners, people on low incomes → the bill silences the weakest groups', 32)),
+        "Social-economic. Who actually doesn't pay tax? Often the unemployed, students, pensioners, people on very low incomes. So the bill takes the vote away from the weakest groups, the ones who need the state most.",
+        A('Economic for appears', c('And for the bill: more people paying tax → more income for public services', 32, gap=24)),
+        "And from the other side of the same point of view: if it works, more people pay tax, and there's more money for public services.",
+        A('Psychological appears', c('Psychological: "I have no voice" → a sense of exclusion, of being a second-class citizen · or: "my vote is earned" → pride and responsibility', 32)),
+        "Psychological. Someone who loses the vote feels excluded, a second-class citizen. Or, from the other side: a vote you've earned may feel more valuable, and give a sense of responsibility.",
+    ]))
+    c = Col(y=60, gap=16)
+    s.append(dict(mode='concept', active=2, title='Education · moral', script=[
+        A('Educational appears', c('Educational: what do we teach young people? That rights must be earned, or that they belong to every citizen?', 32)),
+        "Educational. What does the law teach young people about citizenship? That rights have to be earned? Or that they belong to every citizen?",
+        A('Moral appears', c('Moral: is it fair? People contribute in other ways: raising children, caring for parents, volunteering, military service', 32)),
+        "Moral. Is it fair? People contribute to the state in many ways besides tax: raising children, caring for elderly parents, volunteering, military service. Is tax the only measure of a citizen?",
+    ]))
+    c = Col(y=60, gap=16)
+    s.append(dict(mode='concept', active=3, title='Democracy · rights', script=[
+        A('Democracy appears', c('Democracy: one person, one vote. If the government can decide who votes, it can shape its own voters.', 32)),
+        "Democracy. The basic principle: one person, one vote. And a dangerous precedent: if a government can decide who is allowed to vote, it can start choosing its own voters.",
+        A('Democracy for appears', c('And for the bill: citizens who fund the state have a stronger claim to decide how the money is spent', 32, gap=24)),
+        "From the other side: those who fund the state may have a stronger claim to decide how its money is spent.",
+        A('Rights appears', c('Rights: voting is a civil right. Is removing it completely a proportionate response to not paying tax?', 32)),
+        "Rights. Voting is a civil right. Even if non-payment deserves a response, is removing the vote completely proportionate? The state already has fines and courts for that.",
+    ]))
+    c = Col(y=60, gap=16)
+    s.append(dict(mode='concept', active=4, title='Safety · the rest', script=[
+        A('Safety appears', c('Safety: groups with no voice in parliament may turn to protest, even unrest', 32)),
+        "Safety. Groups with no voice in parliament may look for other ways to be heard: protest, and sometimes unrest.",
+        A('Do not fit appears', c('Environment · science and progress: nothing real here → skip them. That is fine.', 34, gap=30)),
+        "Environment, science and progress? I can't find anything real here. So I skip them. That's fine. Not every point of view fits every task, and a forced argument is worse than none.",
+        A('Count appears', c('From 2 arguments in the task → about 10 directions in a few minutes', 38)),
+        "Look what happened. The task gave us two arguments. In a few minutes, just by changing direction, we have about ten.",
+    ]))
+    c = Col(y=60, gap=20)
+    s.append(dict(mode='concept', active=5, title='Choose the best', script=[
+        "Now choose. We don't write ten arguments. We pick the strongest two or three for our side.",
+        A('Against appears', c('Against the bill, for example: 1 · social-economic: it silences the weakest   2 · democracy: the government chooses its voters   + rebuttal: rights come with duties → but tax is not the only duty', 32)),
+        "If I oppose the bill: first, it silences the weakest. Second, it lets the government choose its voters. And in the rebuttal, I answer rights come with duties: yes, but tax isn't the only duty.",
+        A('For appears', c('For the bill, for example: 1 · economic: more tax paid   2 · moral: rights with duties   + rebuttal: a basic right → but the right is kept for anyone who pays, even a small amount', 32)),
+        "And if I support it? Economic: more tax is paid. Moral: rights come with duties. And the rebuttal answers the basic-right argument.",
+        A('Original appears', c('The less obvious ones (psychological, educational, democracy) are often the most original', 34)),
+        "And notice: the less obvious directions, psychological, educational, the precedent for democracy, are the ones most students won't think of.",
+    ]))
+    return s
+
+
+POV_EX = lesson('vr50-e-pov-example', 'Points of View: An Example',
+                ['The task', 'Economic, psychology', 'Education · moral', 'Democracy · rights',
+                 'Safety · the rest', 'Choose the best'],
+                [dict(mode='title', title='Points of View: An Example', script=[
+                    "Points of view in action: one task, nine directions.",
+                    "Should people who don't pay taxes be allowed to vote?",
+                ])] + _pov_example(), T50)
+
+MODULES = [ANALYSE, GATHER, POSITION, ARGS_INTRO, FROM_TASK, ZOOM_IN, TAX, ZOOM_OUT, POV_EX, RIGHTS, TEST]
 
 MEMORY = [dict(
     id='mem-wr-planning', after='vr50-e-test', title='Planning: analyse the task & find arguments',

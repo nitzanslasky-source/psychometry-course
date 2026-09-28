@@ -237,6 +237,24 @@ task('retire', 'A fixed retirement age', [
 ], 'In your opinion, is a fixed retirement age preferable to allowing employees to continue working as long as '
    'they wish? Give reasons for your answer.')
 
+# ------------------------------------------------------------------ the teacher's own examples (their wording, verbatim)
+task('smoking', 'Anti-smoking laws', [
+    "In recent years, laws have significantly restricted the areas where smoking is allowed in public. Today, "
+    "smoking is prohibited in places like cafés, restaurants, bus stations, and more, and the number of designated "
+    "smoking areas has been reduced. Enforcement has also increased, and violators—including business owners who "
+    "allow smoking on their premises—face heavy fines.",
+    "Supporters of the legislation argue that it protects the health of non-smokers and is therefore morally "
+    "justified. On the other hand, critics claim the laws discriminate unfairly against smokers.",
+], 'What is your opinion? Are anti-smoking laws justified? Explain your answer.')
+
+task('taxvote', 'Voting rights and taxes', [
+    "A bill proposes to deny voting rights to people who don't pay taxes. Supporters say that in a democracy, "
+    "rights come with duties, so those who don't pay taxes shouldn't vote. They believe this would encourage tax "
+    "payment and benefit the economy and democracy.",
+    "Opponents argue voting is a basic right that shouldn't be restricted, and limiting it could harm democracy. "
+    "They also say low voter turnout means the bill won't effectively increase tax compliance.",
+], 'What do you think? Should non-taxpayers be allowed to vote? Explain your view.')
+
 WORKSHOP = ['social', 'organ', 'exams', 'grades', 'voting']
 PRACTICE = ['carfree', 'volunteer', 'sugar', 'er', 'homework', 'rentals', 'sport', 'retire']
 
