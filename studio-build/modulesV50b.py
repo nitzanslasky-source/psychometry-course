@@ -281,7 +281,7 @@ lesson('vr50-b-academic', 'Academic Writing', SB_ACAD, [
  ]),
  dict(mode='concept', active=2, title='No personal tone', script=[
   "Following from the goal: in literary writing, the writer uses a personal tone a lot, and examples from his own experience.",
-  A("Literary: personal = expected appears", T('Literary: personal tone and personal experience — welcome and expected', size=34, x=410, y=110, w=1140)),
+  A("Literary: personal = expected appears", T('Literary: personal tone and experience — welcome and expected', size=34, x=410, y=110, w=1140)),
   "That's welcome and expected there.",
   A("Academic: objective appears", T('Academic: objective — a personal tone is really not acceptable', size=34, x=410, y=175, w=1140)),
   "Academic writing is more objective. A personal tone is really, really not acceptable.",

@@ -245,6 +245,7 @@ body = json.dumps(D, ensure_ascii=False, separators=(',', ':'))
 s2, i2, j2, _ = load(BASE)   # positions in the base; recompute on the patched html
 k0 = s.find('window.COURSE=') + len('window.COURSE='); k1 = s.find('</script>', k0)
 out = s[:k0] + body + ';' + s[k1:]
+import slide_style; out = slide_style.apply(out)   # slide look: teal theme, bold labels, panels, larger text
 open(OUT, 'w', encoding='utf-8').write(out)
 print('wrote', OUT, '%.1f MB' % (len(out) / 1e6))
 
