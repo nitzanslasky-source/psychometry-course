@@ -26,12 +26,44 @@ def wide(svg, w=1060, y=82):
     return vis(svg, w=w, x=345 + (1250 - w) // 2, y=y)
 
 
+CAM_X, CAM_Y = 1300, 272          # webcam corner: text that starts above CAM_Y must end by x = CAM_X
+
+
+def qq(t, q):
+    """a piece of a quoted text: give it both quote marks (so it sits in the quote panel)."""
+    return ('"' if q and t[:1] != '"' else '') + t + ('"' if q and t[-1:] != '"' else '')
+
+
+def stack(text, size, x, y, wfull):
+    """Text flowed round the webcam corner: sentences that start above CAM_Y go in narrow items (right edge <= CAM_X),
+    the rest in one full-width item. Returns (items, y below the text)."""
+    import re
+    lh = size * 1.1 + 17
+    wtop = CAM_X - x
+    def est(t, w): return math.ceil(len(t) * size * .49 / w) * lh
+    q = text[:1] == '"' and text[-1:] == '"' and len(text) > 2
+    items, sents = [], [t for t in re.split(r'(?<=[.?!])\s+', text[1:-1] if q else text) if t]
+    if q: sents = ['"' + t for t in sents[:1]] + sents[1:]; sents[-1] += '"'
+    while sents:
+        if y >= CAM_Y or x + wfull <= CAM_X:
+            t = ' '.join(sents); sents = []
+            items.append(T(qq(t, q), size=size, x=x, y=round(y), w=wfull)); y += est(t, wfull) + 14
+            continue
+        t = sents.pop(0)
+        while sents and y + est(t + ' ' + sents[0], wtop) <= CAM_Y:
+            t += ' ' + sents.pop(0)
+        items.append(T(qq(t, q), size=size, x=x, y=round(y), w=wtop)); y += est(t, wtop) + 14
+    return items, y
+
+
 class Notes:
     """Stacks text items (estimates wrapped height)."""
     def __init__(self, x=1195, y=110, w=390, size=27, gap=18):
         self.x, self.y, self.w, self.size, self.gap = x, y, w, size, gap
 
     def __call__(self, text, size=None, gap=None):
+        if self.x + self.w > CAM_X and self.y < CAM_Y:     # keep out of the webcam corner (top right)
+            self.y = CAM_Y + 8
         z = size or self.size
         it = T(text, size=z, x=self.x, y=self.y, w=self.w)
         rows = max(1, math.ceil(len(text) * 0.53 * z / self.w))
@@ -50,6 +82,23 @@ def S(sb, active, script, pre=None):
 
 
 def TITLE(t, script): return dict(mode='title', title=t, script=script)
+
+
+def QTOP(stem, choices=None, size=26, y=76, x=360, w=1220):
+    """A sample question on top of the board (the question text, and its choices in one row when the teacher gives them).
+    Returns (items, y just below it)."""
+    items, y = stack('Question: ' + stem, size, x, y, w)
+    if choices:
+        cw = w if y >= CAM_Y else CAM_X - x           # the row stays out of the webcam corner too
+        items.append(dict(k='row', items=['(%d)  %s' % (k + 1, c) for k, c in enumerate(choices)], size=size,
+                          sp=cw // len(choices), below=0, x=x, y=round(y - 10)))
+        y += size * 1.1 + 5
+    return items, int(y + 12)
+
+
+def QS(stem, choices=None):
+    """The same question as a note in a side column (for slides that keep their side layout)."""
+    return 'Question: ' + stem + ('  ' + '  '.join('(%d) %s' % (k + 1, c) for k, c in enumerate(choices)) if choices else '')
 
 
 def hours(v): return '%d:00' % v
@@ -520,9 +569,10 @@ def L_tables():
     n = NU(520)
     s.append(S(SB2, 0, [
         "After the introduction, where we saw the pros and cons of a table and of a chart, let's start with the first type: the table.",
+        A('Explanation appears', n('"The table describes the number of new vehicles sold in Israel in the years 2010–2013."')),
         "We'll start with an example. The table in front of you describes the number of new vehicles sold in Israel in the years 2010 to 2013.",
         "Here I have the year, and here the total number of vehicles sold.",
-        A('Example appears', n('For example: in 2010, 60 thousand new vehicles were sold.')),
+        A('Example appears', n('"For example: in 2010, 60 thousand new vehicles were sold."')),
         "For example: in 2010, 60 thousand new vehicles were sold. Very simple to understand.",
     ], pre=[wide(car_table(2, highlight=[(0, 1)]), w=720)]))
     n = NU(560)
@@ -555,15 +605,15 @@ def L_tables():
         A('Last appears', n('Learn charts & tables after all the other problem types')),
         "Let's see examples of questions from different fields.",
     ], pre=[wide(car_table(5))]))
-    n = NU(560)
+    q, qy = QTOP('What is the yearly average of the total vehicles sold?')
+    n = NU(qy + 393 + 24)
     s.append(S(SB2, 5, [
         "The topic of averages. What is the yearly average of the total vehicles sold?",
-        A('Q appears', n('What is the yearly average of all the vehicles sold?')),
         "I look at the total vehicles sold. In the table I have 2010 to 2013; I need the average of these years.",
         "60 plus 80 plus 80 plus 100, divided by 4. That's 320 divided by 4 — 80. The average is the sum of the items divided by the number of items.",
         A('Calc appears', n('(60 + 80 + 80 + 100) ÷ 4 = 320 ÷ 4 = 80')),
-    ], pre=[wide(car_table(5, hl_cols=[1]))]))
-    n = NU(560)
+    ], pre=q + [wide(car_table(5, hl_cols=[1]), y=qy)]))
+    n = NU(qy + 393 + 24)
     s.append(S(SB2, 6, [
         "If you notice, I didn't really need this calculation. Why?",
         "Because this is a symmetric group, with equal distances between the numbers: 60, 80, 80, 100.",
@@ -572,19 +622,19 @@ def L_tables():
         "The distance here is 20, the distance here is 20, and here there's nothing — it's the same.",
         "So the average must be in the middle — exactly 80.",
         A('Middle appears', n('Symmetric group → the average is the middle: 80')),
-    ], pre=[wide(car_table(5, hl_cols=[1]))]))
-    n = NU(560)
+    ], pre=q + [wide(car_table(5, hl_cols=[1]), y=qy)]))
+    q, qy = QTOP('What percent of the vehicles sold were privately owned?')
+    n = NU(qy + 393 + 24)
     s.append(S(SB2, 7, [
         "Another example, from the world of percents. What percent of the vehicles sold were privately owned?",
-        A('Q appears', n('What percent of the vehicles sold were privately owned?')),
         "Privately owned is here; vehicles sold is here. With percents it's always important to know who the whole is. 'Of' — what comes after 'of' is the whole.",
         A('Whole appears', n('"Of the vehicles sold" → the vehicles sold are the whole (100%)')),
         "2010: 40 thousand privately owned out of 60 thousand in total. 40 over 60 is two-thirds — 66 and two-thirds percent.",
         "2011: 50 thousand out of 80 thousand. 50 over 80 is five-eighths — 62.5 percent. 2012 is also 50 over 80.",
         "And 2013 is 65 over 100 — that's already very simple: 65 percent.",
         A('Calc appears', n('40/60 = 66⅔% · 50/80 = 62.5% · 50/80 = 62.5% · 65/100 = 65%')),
-    ], pre=[wide(car_table(5, hl_cols=[1, 3]))]))
-    n = NS()
+    ], pre=q + [wide(car_table(5, hl_cols=[1, 3]), y=qy)]))
+    n = Notes(y=qy + 10)
     s.append(S(SB2, 8, [
         "Here I remind you: it's very important to know the eighths. One-eighth is 12.5 percent. How do you remember?",
         "A quarter is 25 percent, and an eighth is exactly half of a quarter. Half of 25 is 12.5.",
@@ -592,16 +642,16 @@ def L_tables():
         "But you need to master the extensions too.",
         A('Ext appears', n('3/8 = 37.5% · 5/8 = 62.5%', size=30)),
         "One-eighth is 12.5, three-eighths 37.5, five-eighths 62.5.",
-    ], pre=[side(car_table(5, highlight=[(1, 1), (1, 3)]), w=800)]))
-    n = NU(430, x=1030, w=540, size=28)
+    ], pre=q + [vis(car_table(5, highlight=[(1, 1), (1, 3)]), w=800, x=345, y=qy)]))
+    q, qy = QTOP('How many private cars were owned by a company in 2010?')
+    n = NU(qy + 330, x=1030, w=540, size=28)
     s.append(S(SB2, 9, [
         "Let's see a question in another field: overlap.",
-        A('Q appears', n('How many private cars were owned by a company in 2010?')),
         "How many private cars were commercially owned — owned by a company — in 2010?",
         "We have groups here. On one side, private cars or commercial vehicles. On the other side, private ownership or company ownership.",
         A('Groups appears', n('Groups: private / commercial × privately owned / company-owned')),
-    ], pre=[wide(car_table(5, hl_rows=[0]), w=900, y=80), vis(grid(('', '', '')), w=640, x=360, y=430)]))
-    n = NU(430, x=1030, w=540, size=28)
+    ], pre=q + [wide(car_table(5, hl_rows=[0]), w=860, y=qy), vis(grid(('', '', '')), w=620, x=360, y=qy + 330)]))
+    n = NU(qy + 330, x=1030, w=540, size=28)
     s.append(S(SB2, 10, [
         "If we remember the squares method from overlap — very convenient for us.",
         "One group is private cars: in 2010 there were 45 thousand. The other group is ownership. Let's take private ownership, since that's in the table — very easy. Privately owned: 40 thousand.",
@@ -612,8 +662,8 @@ def L_tables():
         "And to get the square that's left here: 45 minus 36 is 9.",
         A('9 appears', n('45 − 36 = 9 → 9,000 private cars owned by a company')),
         "They asked about private cars owned by a company. Here are private cars privately owned — so what's left here is private cars owned by a company: 9,000.",
-    ], pre=[wide(car_table(5, highlight=[(0, 2), (0, 3), (0, 4)]), w=900, y=80),
-            vis(grid(('36', '9', '4'), hl=[(0, 1)]), w=640, x=360, y=430)]))
+    ], pre=q + [wide(car_table(5, highlight=[(0, 2), (0, 3), (0, 4)]), w=860, y=qy),
+            vis(grid(('36', '9', '4'), hl=[(0, 1)]), w=620, x=360, y=qy + 330)]))
     n = NU(560)
     s.append(S(SB2, 11, [
         "That's it for our lesson on tables. A short lesson.",
@@ -701,17 +751,17 @@ def L_scatter():
         "So in 2011, 8 dealers sold the vehicles.",
         A('2011 appears', n('2011: 80 thousand vehicles, 8 dealers')),
     ], pre=[side(car_scatter_num(hl=[(0, 1)]))]))
-    n = NU(560, size=28)
+    q, qy = QTOP('In which year was the average number of vehicles sold per dealer the greatest?', ['2010', '2011', '2012', '2013'])
+    n = NU(qy + 416 + 14, size=28)
     s.append(S(SB3, 8, [
         "Let's see a sample question. In which year was the average number of vehicles sold per dealer the greatest?",
-        A('Q appears', n('In which year was the average number of vehicles sold per dealer the greatest?  (1) 2010  (2) 2011  (3) 2012  (4) 2013')),
         "I go to 2010: 60 thousand cars were sold, by 5 dealers. To find the average: 60 divided by 5 — 12 thousand.",
         "In 2011, 8 dealers sold 80 thousand in total — 80 over 8 is 10. In 2012, 10 dealers: 80 over 10 is 8.",
         "And in 2013, 100 thousand vehicles by 15 dealers. 100 over 15 doesn't really interest me — it's clearly less than 10, and I already have more than 10.",
         A('Calc appears', n('60/5 = 12 · 80/8 = 10 · 80/10 = 8 · 100/15 < 10  → answer (1)')),
         D('Circle choice 1'),
         "So I know answer 1 is correct.",
-    ], pre=[wide(car_scatter_num(hl=[(0, 0)]), w=820, y=80)]))
+    ], pre=q + [wide(car_scatter_num(hl=[(0, 0)]), w=720, y=qy)]))
     n = NS()
     s.append(S(SB3, 9, [
         "More nuances that can appear on a coordinate system. First: a coordinate system can also take negative values.",
@@ -898,12 +948,13 @@ def L_bar():
         A('Case1 appears', n('Case 1: all 50 inside the 60 → 50 are both')),
     ], pre=[side(overlap_fig(1))]))
     n = NS()
+    qn = n('Question: how many are both private cars AND privately owned?')
     s.append(S(SB5, 5, [
         "And it could be — if I take it up, like ranges — that I push it to the top, and then I see that only 30 thousand are both.",
         A('Case2 appears', n('Case 2: pushed to the top → only 30 are both')),
         "A bit like an overlap question. Whoever hasn't learned overlap yet — I suggest going back before this lesson, or at least trying to follow roughly what I'm saying, and carrying on.",
         A('Range appears', n('So "both" is anywhere from 30 to 50 thousand')),
-    ], pre=[side(overlap_fig(2))]))
+    ], pre=[side(overlap_fig(2)), qn]))
     n = NS()
     s.append(S(SB5, 6, [
         "Another nuance. Let's change the chart a bit, change the legend a bit.",
@@ -936,8 +987,9 @@ def L_bar():
         "Another nuance that appears on the psychometric exam — and not rarely, by the way — is horizontal bars.",
         "It's exactly a bar chart, only it appears sideways instead of upright. Sometimes it confuses students.",
         A('Horizontal appears', n('Horizontal bars = a bar chart lying on its side')),
+        A('Explanation appears', n('"The chart describes the average grades at the end of 10th grade in two schools, \'Carob\' and \'Zucchini\'."')),
         "Let's see an example. The chart describes the average grades at the end of 10th grade in two schools — 'Carob' and 'Zucchini'.",
-        A('Example appears', n('For example: the average grade in English was 75 at "Carob" and 80 at "Zucchini".')),
+        A('Example appears', n('"For example: the average grade in English at the \'Carob\' school was 75, and at \'Zucchini\' — 80."')),
         "For example: the average grade in English at the 'Carob' school was 75, and at 'Zucchini' — 80.",
     ], pre=[wide(school_chart(), w=880)]))
     n = NU(610)
@@ -975,20 +1027,20 @@ def L_continuous():
     n = NU(640)
     s.append(S(SB6, 0, [
         "To understand what a continuous line graph is — and why we need such a graph at all — we'll start with an example. Actually, with a bar chart.",
+        A('Story appears', n('"The chart describes data about visitors\' activity on the \'Psycho\' website over 24 hours in a row."')),
         "The chart describes data about visitors' activity on the 'Psycho' website over 24 hours in a row.",
-        A('Story appears', n('Visitors on the "Psycho" website over 24 hours')),
         "Here I have the hours, and here the number of visitors.",
     ], pre=[wide(site_bars(4), w=950)]))
     n = NU(640)
     s.append(S(SB6, 1, [
+        A('Strips appears', n('"The rectangles at the bottom of the chart show the area of the site where most of the visitors are during that hour."')),
         "The rectangles at the bottom of the chart — these rectangles — show the area of the site where most of the visitors are during that hour.",
-        A('Strips appears', n('The rectangles at the bottom = the area of the site where MOST visitors are in that hour')),
         D('Run along the rectangles'),
     ], pre=[wide(site_bars(4, marks=[('col', 0, 24)]), w=950)]))
     n = NU(640)
     s.append(S(SB6, 2, [
         "For example — let's look at the example and make sure we really understand the chart.",
-        A('Example appears', n('For example: at 16:00 there were 390 visitors on the site; between 16:00 and 17:00 most of them were in the forum.')),
+        A('Example appears', n('"For example: at 16:00 there were 390 visitors on the site; between 16:00 and 17:00 most of them were in the forum."')),
         "At 16:00 there were 390 visitors on the site. I look, and I really see the bar reaches a bit less than 400.",
         "And between 16:00 and 17:00 — that's this area — we have a grey mark here. Grey, according to the legend, is the forum.",
         "Most visitors are in the site's forum. So between 16:00 and 17:00, the visitors are usually in the forum.",
@@ -1027,15 +1079,16 @@ def L_continuous():
         "I could have checked how many cars were sold every day — and then maybe I'd use a continuous line graph.",
         A('Cars appears', n('Cars: one total per year → points / line graph')),
     ], pre=[wide(site_curve(), w=950)]))
-    n = NU(640, size=28)
+    q, qy = QTOP('At which hour was the relative increase in the number of visitors on the site, compared with the hour before it, the greatest?', ['9:00', '16:00', '21:00', '23:00'])
+    CW6 = 820
+    n = NU(qy + 474 + 10, size=28)
     s.append(S(SB6, 8, [
         "Let's see a sample question. At which hour was the relative increase in the number of visitors on the site, compared with the hour before it, the greatest?",
-        A('Q appears', n('At which hour was the relative increase in visitors, compared with the hour before, the greatest?  (1) 9:00  (2) 16:00  (3) 21:00  (4) 23:00')),
         "Relative increase is a bit of a percent matter: understanding where the increase was the most significant — not necessarily in numbers, but relative to what came before.",
         "Was the growth times 1, times 2, times 3, times 4, times 1.5 and so on? The bigger the 'times', the bigger the relative increase.",
         A('Relative appears', n('Relative increase = how many TIMES bigger than the hour before')),
-    ], pre=[wide(site_curve(marks=[('pt', 9, 300), ('pt', 16, 390), ('pt', 21, 480), ('pt', 23, 420)]), w=950)]))
-    n = NU(640, size=28)
+    ], pre=q + [wide(site_curve(marks=[('pt', 9, 300), ('pt', 16, 390), ('pt', 21, 480), ('pt', 23, 420)]), w=CW6, y=qy)]))
+    n = NU(qy + 474 + 10, size=28)
     s.append(S(SB6, 9, [
         "So let's first see the hours in question. At 9:00 we have 300 visitors, and at 8:00 about 80.",
         "That's a very, very big increase. From 100 to 300 is times 3 — so from 80 it's almost times 4.",
@@ -1047,8 +1100,8 @@ def L_continuous():
         "I can mark the trend of the line before each point, and see that here the trend is much sharper — the relative increase was much bigger than at the other points.",
         A('Slope appears', n('Mark the slope before each point → the sharpest one wins')),
         D('Draw the slope before each of the four hours'),
-    ], pre=[wide(site_curve(marks=[('seg', 8, 80, 9, 300), ('seg', 15, 350, 16, 390), ('seg', 20, 430, 21, 480), ('seg', 22, 400, 23, 420)]), w=950)]))
-    n = NU(640, size=28)
+    ], pre=q + [wide(site_curve(marks=[('seg', 8, 80, 9, 300), ('seg', 15, 350, 16, 390), ('seg', 20, 430, 21, 480), ('seg', 22, 400, 23, 420)]), w=CW6, y=qy)]))
+    n = NU(qy + 474 + 10, size=28)
     s.append(S(SB6, 10, [
         "There are also elements of how many visitors I'm at — we won't go into that too much.",
         "But if we compare, for example, two points that are similar in the number of visitors, we can see the slope here is bigger — so the change here was bigger.",
@@ -1058,7 +1111,7 @@ def L_continuous():
         A('Answer appears', n('Answer (1): 9:00')),
         D('Circle choice 1'),
         "That's it — see you in the next lesson, as usual.",
-    ], pre=[wide(site_curve(marks=[('seg', 8, 80, 9, 300), ('label', 9.3, 200, 'almost ×4')]), w=950)]))
+    ], pre=q + [wide(site_curve(marks=[('seg', 8, 80, 9, 300), ('label', 9.3, 200, 'almost ×4')]), w=CW6, y=qy)]))
     return lesson('ch52-continuous', 'Continuous Line Graph', SB6, s, T52)
 
 
@@ -1080,6 +1133,7 @@ def L_range():
     ], pre=[side(rent_chart())]))
     n = NS()
     s.append(S(SB7, 1, [
+        A('Explanation appears', n('"The chart describes the results of a survey that checked the monthly rent of flats in Tel Aviv in 2012, by number of rooms."')),
         "In front of you is a chart describing the results of a survey that checked the monthly rent of flats in Tel Aviv in 2012, by number of rooms.",
         "Here we can see the number of rooms on the x-axis, and the price in thousands of shekels.",
         A('Axes appears', n('x: number of rooms · y: rent, thousands of NIS')),
@@ -1093,15 +1147,15 @@ def L_range():
     ], pre=[side(rent_chart())]))
     n = NS()
     s.append(S(SB7, 3, [
+        A('Ends appears', n('"The bottom end of each bar shows the lowest rent that was set, and the top end shows the highest rent."')),
         "We have bars by number of rooms. The bottom end of each bar shows the lowest rent that was set, and the top end shows the highest rent.",
-        A('Ends appears', n('Bottom of the bar = lowest rent · top = highest rent')),
+        A('Mean appears', n('"The bold line inside each bar shows the mean rent set for the flats."')),
         "The bold line inside each bar shows the mean rent set for the flats.",
-        A('Mean appears', n('Bold line inside = the mean rent')),
     ], pre=[side(rent_chart(hl=[(5, 'min'), (5, 'max')]))]))
     n = NS()
     s.append(S(SB7, 4, [
         "For example, take a 6-room flat. In 6-room flats, the minimum price set was 4,500, and the maximum price was 8,000.",
-        A('6 appears', n('For example: 6 rooms — lowest 4,500 · highest 8,000 · mean 6,500')),
+        A('6 appears', n('"For example: in 6-room flats, the lowest rent was 4,500 NIS, the highest 8,000 NIS, and the mean 6,500 NIS."')),
         "The mean price was 6,500 — that's the bold line.",
     ], pre=[side(rent_chart(hl=[(5, 'min'), (5, 'max'), (5, 'mean')]))]))
     n = NS()
@@ -1114,14 +1168,14 @@ def L_range():
         "Say, just for example, there's only one flat that costs 2,500, and all the other flats cost 4 or 4.5 — so the mean will be higher.",
         A('Example appears', n('2 rooms: one flat at 2,500, the rest 4–4.5 → mean 4')),
     ], pre=[side(rent_chart(hl=[(1, 'min'), (1, 'mean'), (1, 'max')]))]))
-    n = NU(610, size=28)
+    q, qy = QTOP('Ella rents a 2-room flat and rents out a 5-room flat. Daniel rents a 1-room flat and rents out a 4-room flat. They deposit the difference between the rents in a monthly savings plan. Which of the following cannot be the difference between their monthly deposits (in NIS)?', ['0', '2,500', '5,000', '5,500'], size=25)
+    RW7 = 700                                     # the chart beside the notes while the question is on top
     s.append(S(SB7, 6, [
         "Let's see a sample question. Ella rents a 2-room flat and rents out a 5-room flat. Daniel rents a 1-room flat and rents out a 4-room flat.",
         "They deposit the difference between the rents in a monthly savings plan.",
         "Which of the following cannot be the difference between their monthly deposits, in shekels?",
-        A('Q appears', n('Ella rents a 2-room flat and rents out a 5-room flat. Daniel rents a 1-room flat and rents out a 4-room flat. Each deposits the difference between the rents in savings every month. Which of the following cannot be the difference between their monthly deposits (NIS)?  (1) 0  (2) 2,500  (3) 5,000  (4) 5,500')),
-    ], pre=[wide(rent_chart(), w=880)]))
-    n = NS()
+    ], pre=q + [wide(rent_chart(), w=860, y=qy)]))
+    n = Notes(x=1075, y=qy, w=500)
     s.append(S(SB7, 7, [
         "What are they telling us? Take Ella, for example. She has her own flat, a 5-room flat, which she rents out.",
         "By the way, when I rent out a flat, I'm the one giving the flat, and someone pays me. If I live in a flat, I don't rent it out — I rent it.",
@@ -1129,23 +1183,23 @@ def L_range():
         A('Rent appears', n('Rent = you live there, you PAY')),
         "So Ella again: she has a 5-room flat that she rents out — that's the money she gets. And a 2-room flat she lives in, which she rents — that's the money she pays.",
         A('Ella appears', n('Ella: gets the 5-room rent, pays the 2-room rent')),
-    ], pre=[side(rent_chart(hl=[(1, 'bar'), (4, 'bar')]))]))
-    n = NS()
+    ], pre=q + [vis(rent_chart(hl=[(1, 'bar'), (4, 'bar')]), w=RW7, x=345, y=qy)]))
+    n = Notes(x=1075, y=qy, w=500)
     s.append(S(SB7, 8, [
         "Let's see what her monthly deposit can be. Take the maximum. The maximum means she gets the most money.",
         "Say she gets 7,500 shekels — the maximum for a 5-room flat — and pays the minimum for a 2-room flat. She gets 7,500 and pays 2,500.",
         A('Max appears', n('Most: gets 7,500 − pays 2,500 = 5,000')),
         "So her savings can be up to 5,000 shekels.",
-    ], pre=[side(rent_chart(hl=[(4, 'max'), (1, 'min')]))]))
-    n = NS()
+    ], pre=q + [vis(rent_chart(hl=[(4, 'max'), (1, 'min')]), w=RW7, x=345, y=qy)]))
+    n = Notes(x=1075, y=qy, w=500)
     s.append(S(SB7, 8, [
         "The minimum, by the way: maybe she gets only 4,500 — the minimum — and also pays 4,500, because she took the fanciest 2-room flat.",
         "Then it really cancels out: 4.5 minus 4.5 is 0.",
         A('Min appears', n('Least: gets 4,500 − pays 4,500 = 0')),
         "So her savings can be between 0 and 5,000.",
         A('Range appears', n('Ella: from 0 to 5,000')),
-    ], pre=[side(rent_chart(hl=[(4, 'min'), (1, 'max')]))]))
-    n = NS()
+    ], pre=q + [vis(rent_chart(hl=[(4, 'min'), (1, 'max')]), w=RW7, x=345, y=qy)]))
+    n = Notes(x=1075, y=qy, w=500)
     s.append(S(SB7, 9, [
         "Let's see Daniel. Daniel rents a 1-room flat and rents out a 4-room flat.",
         "The maximum his savings can be: he gets 7,000 if he rents out the 4-room flat at the maximum price, and pays 2,000 — the minimum he'll pay. 7,000 minus 2,000 — also 5,000.",
@@ -1154,8 +1208,8 @@ def L_range():
         A('Min appears', n('Least: gets 4,000 − pays 4,000 = 0')),
         "So for Daniel too, it's between 0 and 5,000.",
         A('Range appears', n('Daniel: from 0 to 5,000')),
-    ], pre=[side(rent_chart(hl=[(3, 'max'), (0, 'min'), (3, 'min'), (0, 'max')]))]))
-    n = NU(610, size=28)
+    ], pre=q + [vis(rent_chart(hl=[(3, 'max'), (0, 'min'), (3, 'min'), (0, 'max')]), w=RW7, x=345, y=qy)]))
+    n = Notes(x=1075, y=qy, w=500)
     s.append(S(SB7, 10, [
         "Which cannot be the difference between the monthly deposits? Can the difference be 0? Yes — say both deposit 5,000 shekels; the difference is 0.",
         "Can it be 2,500? Yes. It can be 2,500 and also 5,000.",
@@ -1163,7 +1217,7 @@ def L_range():
         "It can't be 5,500. The most each of them can deposit is 5,000. Even in the extreme case where Ella deposits 5,000 and Daniel deposits 0, the difference between them is only 5,000.",
         A('Cannot appears', n('5,500 ✗ — each deposits between 0 and 5,000, so the difference is at most 5,000 → answer (4)')),
         D('Circle choice 4'),
-    ], pre=[wide(rent_chart(hl=[(4, 'max'), (1, 'min'), (3, 'min'), (0, 'max')]), w=880)]))
+    ], pre=q + [vis(rent_chart(hl=[(4, 'max'), (1, 'min'), (3, 'min'), (0, 'max')]), w=RW7, x=345, y=qy)]))
     n = NU(560)
     s.append(S(SB7, 11, [
         "Let's see how this chart would look if they gave it to us in a table.",
@@ -1205,6 +1259,7 @@ def L_regions():
     ], pre=[side(ins_chart())]))
     n = NS()
     s.append(S(SB8, 1, [
+        A('Explanation appears', n('"The graph describes the cost of health insurance according to the height and weight of the insured."')),
         "Let's see an example. The graph describes the cost of health insurance according to the height and weight of the insured.",
         "Here I have the height of the insured, and here the weight.",
         A('Axes appears', n('x: height (cm) · y: weight (kg)')),
@@ -1212,15 +1267,15 @@ def L_regions():
     n = NS()
     s.append(S(SB8, 2, [
         "And the cost of the insurance is marked inside. Let's see exactly how.",
+        A('Inside appears', n('"The numbers inside the graph are the yearly cost of health insurance, in thousands of shekels."')),
         "The numbers inside the graph are the yearly cost of health insurance, in thousands of shekels. So it's not 4 — it's 4,000.",
-        A('Inside appears', n('The number in each area = the yearly cost, thousands of NIS')),
+        A('Range appears', n('"Health insurance prices range from 4,000 to 12,000 shekels a year."')),
         "Health insurance prices range from 4,000 to 12,000 shekels a year. We see it really starts at 4 — the lowest — and 12 is the highest.",
-        A('Range appears', n('From 4 (4,000) to 12 (12,000)')),
     ], pre=[side(ins_chart(hl=[0, 4]))]))
     n = NS()
     s.append(S(SB8, 3, [
         "For example — the example always puts things in order, to make sure we really understand the chart.",
-        A('Example appears', n('For example: an insured person weighing 100 kg, 174 cm tall, pays 6,000 NIS a year.')),
+        A('Example appears', n('"For example: an insured person who weighs 100 kg and is 174 cm tall pays 6,000 shekels a year."')),
         "An insured person who weighs 100 kilograms: here's 100 kilograms — he's somewhere on this line. And his height is 174 centimetres — he's somewhere on this line.",
         D('Follow 100 kg across and 174 cm up'),
         "Where they cross — this insured person is here, at this point. He pays 6,000 shekels a year for health insurance.",
@@ -1259,27 +1314,28 @@ def L_circle():
     n = NU(120, x=1110, w=470, size=27)
     s.append(S(SB9, 1, [
         "Let's see an example. We already know the story behind this chart, from the continuous line graph.",
+        A('Story appears', n('"The chart describes data about visitors\' activity on the \'Psycho\' website over 24 hours in a row."')),
         "The chart describes data about visitors' activity on the 'Psycho' website over 24 hours in a row.",
-        A('Story appears', n('Same story: visitors on the "Psycho" website over 24 hours')),
         "Here we have the hours, around the circle.",
         A('Hours appears', n('The hours go round the circle')),
     ], pre=[circ()]))
     n = NU(120, x=1110, w=470, size=27)
     s.append(S(SB9, 2, [
+        A('Circles appears', n('"The number of visitors is shown by the circles."')),
         "The number of visitors is shown by the circles. We see this is the line of 500, 400, 300 and so on.",
-        A('Circles appears', n('Each circle = a number of visitors: 100, 200 … 500')),
+        A('Circles values appears', n('Each circle = a number of visitors: 100, 200 … 500')),
         D('Trace the 300 circle'),
     ], pre=[circ()]))
     n = NU(120, x=1110, w=470, size=27)
     s.append(S(SB9, 3, [
+        A('Dark appears', n('"The dark areas show the area of the site where most of the visitors are during that hour."')),
         "And the dark areas show the area of the site where most of the visitors are during that hour.",
-        A('Dark appears', n('Dark arcs = the area where MOST visitors are in that hour')),
         "If you remember, we had the coloured rectangles at the bottom of the previous chart. We'll see that again in a moment.",
     ], pre=[circ(highlight_spans=[(0, 12, 16), (1, 18, 20), (2, 9, 10)])]))
     n = NU(120, x=1110, w=470, size=27)
     s.append(S(SB9, 4, [
+        A('Example appears', n('"For example: at 9:00 there were 300 visitors on the site; between 9:00 and 10:00 most of them were in the forum."')),
         "For example: at 9:00 there are 300 visitors on the site. We go along the line and see the point here — this point is 300 visitors.",
-        A('Example appears', n('For example: at 9:00 there were 300 visitors; between 9:00 and 10:00 most were in the forum.')),
         "And between 9:00 and 10:00 — in this range — we see what's coloured grey is this part.",
         "And if I look here, I see it says 'forum'. So between 9:00 and 10:00, most visitors are in the site's forum.",
     ], pre=[circ(guide_hours=[9], highlight_spans=[(2, 9, 10)])]))
@@ -1322,15 +1378,17 @@ def L_circle():
         "So what we really have is exactly the same chart; it just looks different.",
     ], pre=[vis(site_curve(marks=[('col', 12, 16)]), w=640, x=345, y=110), vis(site_circle(show_band_names=False, highlight_spans=[(0, 12, 16)]), w=500, x=1030, y=85)]))
     n = NU(120, x=1110, w=470, size=27)
+    qc = n(QS('What is the latest hour at which there are visitors in the practice area of the site?'))
     s.append(S(SB9, 10, [
         "Let's see a sample question. What is the latest hour at which there are visitors in the practice area of the site?",
-        A('Q appears', n('What is the latest hour at which there are visitors in the practice area?')),
         "Let's do it on the circle chart. The practice area is here. For a late hour I start from here, and I see that around 20:00 is the last hour where the practice area is coloured.",
         A('20 appears', n('The practice arc ends at 20:00 …')),
         "But is that really the last hour at which there are visitors in the practice area?",
-    ], pre=[circ(highlight_spans=[(1, 18, 20)], highlight_hours=[20])]))
+    ], pre=[circ(highlight_spans=[(1, 18, 20)], highlight_hours=[20]), qc]))
     n = NU(120, x=1110, w=470, size=27)
+    qc = n(QS('What is the latest hour at which there are visitors in the practice area of the site?'))
     s.append(S(SB9, 11, [
+        A('Data appears', n('"The dark areas show the area of the site where most of the visitors are during that hour."')),
         "Notice what the question is and what the data say. The data say the dark areas show the area of the site where most of the visitors are in that hour.",
         "What does that mean? Between 18:00 and 20:00, most of the visitors on the site were in the practice area.",
         A('Most appears', n('Dark = where MOST visitors are — not where ALL of them are')),
@@ -1338,8 +1396,9 @@ def L_circle():
         "But that still doesn't mean nobody was in the practice area. Maybe a few visitors were in practice, and in explanations, or other areas.",
         A('Some appears', n('22:00–23:00: most in the forum — some may still be practising')),
         "The grey mark doesn't show where all the visitors are — only where most are, more than half.",
-    ], pre=[circ(highlight_spans=[(1, 18, 20), (2, 22, 23)])]))
+    ], pre=[circ(highlight_spans=[(1, 18, 20), (2, 22, 23)]), qc]))
     n = NU(120, x=1110, w=470, size=27)
+    qc = n(QS('What is the latest hour at which there are visitors in the practice area of the site?'))
     s.append(S(SB9, 12, [
         "So we can't really know the latest hour. Maybe until midnight someone was still practising on the site. He wasn't the majority, but he was there.",
         "Or maybe, on the other hand, at 23:00 that's it — nobody was practising any more. People were on the site, some in explanations, most in the forum, some elsewhere — but nobody in practice.",
@@ -1349,7 +1408,7 @@ def L_circle():
         "Theoretically I could cut the chart here and spread it out — fold this part to the right and this half to the left — and I'd get straight lines. The same chart on a coordinate system.",
         A('Unfold appears', n('Cut it open and unfold it → a normal chart on axes')),
         "That's it — see you, as usual, in the next lesson. Bye.",
-    ], pre=[circ(highlight_spans=[(1, 18, 20)])]))
+    ], pre=[circ(highlight_spans=[(1, 18, 20)]), qc]))
     return lesson('ch52-circle', 'Circle Chart', SB9, s, T52)
 
 
@@ -1376,19 +1435,21 @@ def L_cumulative():
     ], pre=[side(pix_chart())]))
     n = NS()
     s.append(S(SB10, 1, [
+        A('Explanation appears', n('"The graph describes the cumulative income of the \'Pixeltech\' company during the first half of 2013."')),
         "Let's see an example. In front of you is a graph describing the cumulative income of the 'Pixeltech' company during the first half of 2013.",
         "Here we can see months, and here cumulative income in thousands of shekels. So the 80 isn't 80 — it's 80,000 shekels.",
         A('Axes appears', n('x: months · y: cumulative income, thousands of NIS (80 = 80,000)')),
     ], pre=[side(pix_chart())]))
     n = NS()
     s.append(S(SB10, 2, [
+        A('Example appears', n('"For example: the income of Pixeltech in May was 20,000 shekels."')),
         "For example, the income of Pixeltech in May was 20,000 shekels.",
-        A('Example appears', n('For example: Pixeltech\'s income in May was 20,000 NIS.')),
         "I go to May, I go up — and I see I'm at 70,000 shekels. Why is that?",
         A('70 appears', n('But at May the graph shows 70 …')),
     ], pre=[side(pix_chart(marks=[('guide', 4, 70, '70')]))]))
     n = NS()
     s.append(S(SB10, 3, [
+        A('Explanation appears', n('"The graph describes the cumulative income …"')),
         "Let's see what's written here: the graph describes the cumulative income. What does cumulative income mean?",
         "The value at the May point isn't really what I had in May — it's not May's income. It's all the income of January, February, March, April and May together.",
         A('Together appears', n('70 = Jan + Feb + Mar + Apr + May together')),
@@ -1411,29 +1472,31 @@ def L_cumulative():
         "As we see, in May our income was only 20,000 shekels: this is 70,000; this is the 50,000 from April; and how much I had to add to reach May's 70,000 — I added another 20,000 here.",
     ], pre=[side(pix_chart(marks=[('guide', 4, 70, '70'), ('hline', 50, '50'), ('brace', 4.15, 50, 70, '+20')]))]))
     n = NS()
+    qc = n(QS('In which of the months described in the graph did Pixeltech have no income at all?'))
     s.append(S(SB10, 6, [
         "Let's see a sample question. In which of the months described in the graph did Pixeltech have no income at all?",
-        A('Q appears', n('In which month did Pixeltech have no income at all?')),
         "Here we can see it really visually.",
-    ], pre=[side(pix_chart())]))
+    ], pre=[side(pix_chart()), qc]))
     n = NS()
+    qc = n(QS('In which of the months described in the graph did Pixeltech have no income at all?'))
     s.append(S(SB10, 7, [
         "Once I have a flat line here — if up to March I earned 50,000 shekels, and up to April I also earned 50,000 —",
         "that means in April there was no income. There was no income, so I stayed the same.",
         A('Flat appears', n('Flat segment = nothing was added = no income that month')),
         "If I'd deposited 50,000 into the account so far, in April I deposited nothing and stayed at 50,000. So our answer is April.",
         A('Answer appears', n('Answer: April')),
-    ], pre=[side(pix_chart(hl=[(0, 2)]))]))
+    ], pre=[side(pix_chart(hl=[(0, 2)])), qc]))
     n = NS()
+    qc = n(QS('What was Pixeltech\'s total income in all the months described in the graph?'))
     s.append(S(SB10, 8, [
         "Next question. What was Pixeltech's total income in all the months described in the graph?",
-        A('Q appears', n('What was the total income in all the months in the graph?')),
         "I need the total of January, February, March, April, May and June. Notice — I don't need to start adding January plus February plus March.",
         "This whole chart describes cumulative income. So in June I'm at 80,000 — and those 80,000 shekels are the total income of all the months.",
         A('June appears', n('The last point = the total: 80,000 NIS')),
         "That's the whole meaning of a cumulative chart: a graph that accumulates everything up to now.",
-    ], pre=[side(pix_chart(marks=[('guide', 5, 80, '80')]))]))
+    ], pre=[side(pix_chart(marks=[('guide', 5, 80, '80')])), qc]))
     n = NS()
+    qc = n(QS('What was Pixeltech\'s total income in all the months described in the graph?'))
     s.append(S(SB10, 9, [
         "This question is actually very simple. In June I'm at 80,000 — and 80,000 isn't in June, it's up to June. From January to June the income was 80,000 shekels.",
         A('Up to appears', n('"80 at June" = up to June, not in June')),
@@ -1441,7 +1504,7 @@ def L_cumulative():
         "It's one of those types that it's better to know beforehand, and not meet for the first time in the exam.",
         A('Know appears', n('Not common — but meet it here, not first in the exam')),
         "That's it for the cumulative graph. See you in our last video, where we finish the topic of charts.",
-    ], pre=[side(pix_chart())]))
+    ], pre=[side(pix_chart()), qc]))
     return lesson('ch52-cumulative', 'Cumulative Graph', SB10, s, T52)
 
 
@@ -1474,15 +1537,15 @@ def L_change():
     ], pre=[side(vol_chart(show_line=False))]))
     n = NS()
     s.append(S(SB11, 3, [
+        A('Story appears', n('"The graph describes the change in the number of volunteers at the \'Green Light\' association at the end of each week, compared with the end of the previous week, over a period of 10 weeks."', size=25)),
         "Let's see an example. The graph describes the change in the number of volunteers at the 'Green Light' association at the end of each week, compared with the end of the previous week, over a period of 10 weeks.",
-        A('Story appears', n('Volunteers at "Green Light": change at the end of each week vs. the previous week')),
         "We have weeks here — 10 weeks — and the change in the number of volunteers. Here there's an addition of volunteers, and here a drop.",
         A('Signs appears', n('Above 0 = volunteers joined · below 0 = volunteers left')),
     ], pre=[side(vol_chart())]))
     n = NS()
     s.append(S(SB11, 4, [
+        A('Example appears', n('"For example: at the end of the second week there were 10 more volunteers at the association than at the end of the first week."', size=25)),
         "For example: at the end of the second week there were 10 more volunteers at the association than at the end of the first week.",
-        A('Example appears', n('For example: at the end of week 2 there were 10 more volunteers than at the end of week 1.')),
         "Notice: here it says plus 10. That's 10 more than what was here.",
         "Say at the end of the first week there were 100 volunteers — at the end of the second week there are 110. During the second week, 10 volunteers joined.",
         A('100 appears', n('Week 1: 100 → week 2: 110')),
@@ -1496,19 +1559,21 @@ def L_change():
         "So if last week there were 110, here there are 115.",
     ], pre=[side(vol_chart(hl=[2], marks=[('seg', 1, 10, 2, 5)]))]))
     n = NS()
+    qc = n(QS('In how many of the weeks was there no change in the number of volunteers at the association?'))
     s.append(S(SB11, 6, [
         "Let's see a sample question. In how many of the weeks was there no change in the number of volunteers at the association?",
-        A('Q appears', n('In how many of the weeks was there no change in the number of volunteers?')),
         "What does 'no change' mean? The change was 0.",
         A('Zero appears', n('No change = the point is at 0')),
-    ], pre=[side(vol_chart())]))
+    ], pre=[side(vol_chart()), qc]))
     n = NS()
+    qc = n(QS('In how many of the weeks was there no change in the number of volunteers at the association?'))
     s.append(S(SB11, 7, [
         "As we recommended before, let's ignore the line. Let's make the line disappear for a moment.",
         "In how many weeks was there no change — the change was 0? I can see I have three such weeks: the end of week 5, week 9 and week 10.",
         A('Three appears', n('At 0: weeks 5, 9, 10 → 3 weeks')),
-    ], pre=[side(vol_chart(show_line=False, hl=[4, 8, 9]))]))
+    ], pre=[side(vol_chart(show_line=False, hl=[4, 8, 9])), qc]))
     n = NS()
+    qc = n(QS('In how many of the weeks was there no change in the number of volunteers at the association?'))
     s.append(S(SB11, 8, [
         "Now let's bring the line back for a moment. Notice: here it looks as if there's a drop, and here as if there's a rise.",
         "There isn't really a rise. I ignore the line and look only at the point. This point tells me there was 0 change: what there was at the end of week 4 is exactly what there is at the end of week 5.",
@@ -1516,16 +1581,17 @@ def L_change():
         "The same here — there isn't really a rise. What there was at the end of week 8 is exactly what there is at the end of week 9, because in week 9 there was no change.",
         A('9 appears', n('Week 9: the line rises, but 0 = no change')),
         "So how many points have no change? 5, 9 and 10 — three such points, three weeks.",
-    ], pre=[side(vol_chart(hl=[4, 8, 9], marks=[('seg', 3, 5, 4, 0), ('seg', 7, -5, 8, 0)]))]))
-    n = NU(120, x=1195, w=390, size=26)
+    ], pre=[side(vol_chart(hl=[4, 8, 9], marks=[('seg', 3, 5, 4, 0), ('seg', 7, -5, 8, 0)])), qc]))
+    n = NU(100, x=1195, w=390, size=25)
+    qc = n(QS('If at the end of the second week there were 75 volunteers at the association, how many were there at the end of the sixth week?'))
     s.append(S(SB11, 9, [
         "Another question. If at the end of the second week there were 75 volunteers at the association, how many were there at the end of the sixth week?",
-        A('Q appears', n('Week 2 = 75 volunteers. How many at the end of week 6?')),
         "So at the end of week 2 I have 75 volunteers. That's what I have here.",
         "I make the line disappear, because it's more convenient to see only the points and relate only to them.",
         A('75 appears', n('Week 2: 75')),
-    ], pre=[side(vol_chart(show_line=False, hl=[1]))]))
-    n = NU(120, x=1195, w=390, size=26)
+    ], pre=[side(vol_chart(show_line=False, hl=[1])), qc]))
+    n = NU(100, x=1195, w=390, size=25)
+    qc = n(QS('If at the end of the second week there were 75 volunteers at the association, how many were there at the end of the sixth week?'))
     s.append(S(SB11, 10, [
         "End of week 3: I have plus 5. Plus 5 means 5 more than week 2 — even though it looks like a drop, this point is lower than the end of week 2.",
         "I don't look at the previous point. I ignore everything here and look only at this point — and I see plus 5. So I add 5: I'm at 80.",
@@ -1539,7 +1605,7 @@ def L_change():
         "Notice — when I bring the line back, it's confusing. Here the line is straight, but in fact there's a rise. And here the line goes down, and in fact there's no change.",
         "So, as we said: ignore the line. Don't look at it — look only at the points themselves. At the end of week 6 we have 75 volunteers. Answer 1 is correct.",
         A('Answer appears', n('End of week 6: 75 volunteers', size=30)),
-    ], pre=[side(vol_chart(hl=[2, 3, 4, 5]))]))
+    ], pre=[side(vol_chart(hl=[2, 3, 4, 5])), qc]))
     n = NS()
     s.append(S(SB11, 11, [
         "To sum up the change graph: it's a confusing, hard graph. Maybe some of you will want to watch this video again — that's fine.",

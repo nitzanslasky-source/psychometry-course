@@ -101,7 +101,7 @@ C1_HIST = [c1_cbins(), c1_hbins(), [5, 6, 6, 7, 7, 3, 1], [4, 7, 6, 7, 6, 2, 3]]
 C1_OPT_VB = (900, 650)
 
 
-def chart1_options_svg():
+def chart1_options_svg(hl_bin=None):
     o = [_t(450, 18, 'Horizontal axis: percentage of hydrogen in the sample  ·  Vertical axis: number of samples', 17, MUTED)]
     for k, hist in enumerate(C1_HIST):
         px, py = (k % 2) * 450, 36 + (k // 2) * 307
@@ -112,6 +112,9 @@ def chart1_options_svg():
             o.append(_l(x0, yb - v * sy, x1, yb - v * sy, GRID, 1)); o.append(_t(x0 - 8, yb - v * sy, str(v), 15, INK, 'end'))
         for j, n in enumerate(hist):
             if n: o.append(_r(x0 + j * bw, yb - n * sy, bw, n * sy, SOFT, TEAL, 1.6))
+            if j == hl_bin:   # the bin being checked: amber frame + its count
+                o.append(_r(x0 + j * bw - 3, yb - max(n, 1) * sy - 3, bw + 6, max(n, 1) * sy + 6, 'none', AMBER, 4))
+                o.append(_t(x0 + j * bw + bw / 2, yb - max(n, 1) * sy - 16, str(n), 20, '#8A5A00', 'middle', 800))
         o.append(_l(x0, yb, x1, yb, INK, 1.8)); o.append(_l(x0, yt, x0, yb, INK, 1.8))
         for j in range(8): o.append(_t(x0 + j * bw, yb + 17, BINS[j], 14))
     return _svg(C1_OPT_VB, 'Four histograms of the number of samples by percentage of hydrogen, labelled (1) to (4)', ''.join(o))
@@ -445,47 +448,95 @@ CW = 680.0                        # chart width on the slide
 RX, RW = 1112, 428                # right-hand column for pop-ins
 
 
-def _stem_y(stem):
-    lines = max(1, -(-len(stem) * 30 * .5 // 1130))
-    return 78 + lines * 40 + 26
+def _nlines(text, size, w=1130):
+    return sum(max(1, -(-len(par) * size * .5 // w)) for par in text.split('\n'))
+
+
+def _stem_y(stem, size=30):
+    return 78 + _nlines(stem, size) * (size * 1.1 + 17) + 20
+
+
+CAM_Y, CAM_W = 272, 890           # webcam corner (top right): text that starts above CAM_Y must end by x = 410 + CAM_W
+
+
+def qq(t, q):
+    """a piece of a quoted text: give it both quote marks (so it sits in the quote panel)."""
+    return ('"' if q and t[:1] != '"' else '') + t + ('"' if q and t[-1:] != '"' else '')
+
+
+def stack(text, size, x=410, y=78, wtop=CAM_W, wfull=1130):
+    """Text flowed round the webcam corner: sentences that start above CAM_Y go in narrow items (right edge <= 1300),
+    the rest in full-width items. '\n' = a new line. Returns (items, y below the text)."""
+    import re
+    lh = size * 1.1 + 17
+    def est(t, w): return max(1, -(-len(t) * size * .49 // w)) * lh
+    items = []
+    for par in text.split('\n'):
+        q = par[:1] == '"' and par[-1:] == '"' and len(par) > 2        # a quote: every piece keeps its quote marks (panel)
+        sents = [t for t in re.split(r'(?<=[.?!])\s+', par[1:-1] if q else par) if t]
+        if q: sents = ['"' + t for t in sents[:1]] + sents[1:]; sents[-1] += '"'
+        while sents:
+            if y >= CAM_Y:
+                t = ' '.join(sents); sents = []
+                items.append(T(qq(t, q), size=size, x=x, y=round(y), w=wfull)); y += est(t, wfull) + 14
+                continue
+            t = sents.pop(0)
+            while sents and y + est(t + ' ' + sents[0], wtop) <= CAM_Y:
+                t += ' ' + sents.pop(0)
+            items.append(T(qq(t, q), size=size, x=x, y=round(y), w=wtop)); y += est(t, wtop) + 14
+    return items, y
 
 
 def _chart_item(svg, vb, y, w=CW):
     return dict(k='vis', v={'type': 'geometry', 'svg': svg}, x=410, y=round(y), w=round(w, 1), h=round(w * vb[1] / vb[0], 1))
 
 
-SLIDE = {   # shorter question text for the slides (the full text is in the question itself)
-    'ch-q02': 'A region is more suitable for human habitation the more carbon and the less hydrogen in its soil. '
-              'On which planet is the most suitable region?',
-    'ch-q05': 'Which graph describes the number of samples (all five planets together) in each range of hydrogen percentages?',
-    'ch-q07': 'A "dramatic change" = a change of 3 places or more between two consecutive races. '
-              'How many "dramatic changes" occurred in 2017-2022?',
-    'ch-q10': 'In 2016, two teams tied for 1st and split the 1st + 2nd prizes equally (places 3-7 unchanged). '
-              'The average prize per team in 2016 was ___ that of 2017.',
-    'ch-q11': 'A "happy wedding" has equal numbers of guests from the groom\'s side and from the bride\'s side. '
-              'On which day was a "happy wedding" held?',
-    'ch-q13': 'A photographer worked on one day and photographed exactly 1% of the wedding guests. '
-              'Which of the following cannot be that day?',
-    'ch-q15': "Monday: the groom's side only gave 150 on average, the bride's side only 250, the shared guests 350. "
-              'What about the average gift per guest?',
+# on-screen choices shortened only where the full wording would push the choices into one column and shrink the chart
+SLIDE_CHOICES = {
+    'ch-q15': ['Less than 250 shekels', 'More than 250 shekels', 'Equal to 250 shekels', 'Cannot be determined'],
 }
 
 
 def QC(qid, stem=None, fig=None, vb=None):
-    """pre-loaded question (short stem, no own figure) + the chart below it, as large as the free space allows."""
-    st = stem or SLIDE.get(qid) or SHORT[qid]
-    y = _stem_y(st)
+    """pre-loaded question (the full question text + its four choices) + the chart below it, as large as the free space allows."""
+    st = stem or SHORT[qid]
+    size = 30 if len(st) <= 160 else 27 if len(st) <= 260 else 25 if len(st) <= 300 else 24
+    stem_items, y = stack(st, size)
+    y += 8
     chart = {1: (S1, C1_VB), 2: (S2, C2_VB), 3: (S3, C3_VB)}[int(QUESTIONS[qid]['setTitle'][-1])]
     svg, v = (fig, vb) if fig else chart
-    long = any(len(rich_plain(c)) > 30 for c in QUESTIONS[qid]['choicesRich'])
+    ch = SLIDE_CHOICES.get(qid) or QUESTIONS[qid]['choicesRich']
+    long = any(len(rich_plain(c)) > 30 for c in ch)
     top = (900 - 24 - 4 * 58 - 3 * 8) if long else (900 - 24 - 2 * 74 - 14)
     w = min(786.0, (top - 16 - y) * v[0] / v[1])
-    return {'pre': [Q(qid, stem=st, nofig=True, size=30), _chart_item(svg, v, y, w)], 'y': y, 'w': w}
+    # the stem is drawn by the text items above (so it can flow round the webcam); the question item only draws the
+    # four choices at the bottom - it sits low (y=850) so the webcam never narrows it
+    q = Q(qid, stem='\u200b', nofig=True, size=size, y=850)
+    if qid in SLIDE_CHOICES: q['choices'] = SLIDE_CHOICES[qid]
+    return {'pre': stem_items + [q, _chart_item(svg, v, y, w)], 'y': y, 'w': w}
+
+
+def RD(n, paras, size=23):
+    """'Read the chart' slide: the explanation (and example / notes) of the chart page on top, the chart under it."""
+    items, y = [], 78
+    for p in paras:
+        it, y = stack(p, size, y=y)
+        items += it
+    y += 10
+    svg, v = {1: (S1, C1_VB), 2: (S2, C2_VB), 3: (S3, C3_VB)}[n]
+    w = min(720.0, (888 - y) * v[0] / v[1])
+    return {'pre': items + [_chart_item(svg, v, y, w)], 'y': y, 'w': w}
+
+
+def _intro(txt, *keep):
+    """lines of a set intro (0 = 'Study the graph...', 1 = the explanation, ...), quoted so they sit in a panel."""
+    ls = txt.split('\n')
+    return ['"%s"' % ls[k] for k in keep]
 
 
 def R(t, y=None, size=25):
     """pop-in in the right-hand column (x and width are set per slide in G, next to the chart)."""
-    return T(t, size=size, x=RX, y=y or 190, w=RW)
+    return T(t, size=size, x=RX, y=max(y or 0, CAM_Y + 8), w=RW)
 
 
 def HL(x1, y1, x2):
@@ -525,6 +576,23 @@ L = {q: QC(q) for q in QUESTIONS}
 L5opt = QC('ch-q05', fig=FIG['ch-q05-options'], vb=C1_OPT_VB)
 
 
+def L5both(hl_bin):
+    """q05 edge slides: the scatter (left, highlight lines drawn on it) and the four answer histograms (right) side by side,
+    the question on top, the teacher's note under the two charts, the choices at the bottom."""
+    o = L['ch-q05']
+    y, ws = o['y'], 560.0
+    hw = 1540 - (410 + ws + 30)
+    hist = dict(_chart_item(chart1_options_svg(hl_bin), C1_OPT_VB, y, hw), x=round(410 + ws + 30))
+    return {'pre': o['pre'][:-1] + [_chart_item(S1, C1_VB, y, ws), hist], 'y': y, 'w': ws,
+            'below': round(y + max(ws * C1_VB[1] / C1_VB[0], hw * C1_OPT_VB[1] / C1_OPT_VB[0]) + 12)}
+
+
+L5L, L5R = L5both(0), L5both(6)
+RD1 = RD(1, _intro(C1_INTRO, 1, 2))
+RD2 = RD(2, _intro(C2_INTRO, 1, 3))
+RD3 = RD(3, _intro(C3_INTRO, 1, 2))
+
+
 def withx(o, *extra):
     return {'pre': o['pre'] + list(extra), 'y': o['y']}
 
@@ -539,41 +607,42 @@ lesson('ch52-practice-intro', 'Solving a Chart Set',
   "Before we start — how do we attack a chart set on the exam?",
  ]),
  dict(mode='concept', active=0, title='A set of questions', script=[
-  A("One chart, 4-5 questions appears", T('One chart or table → 4 or 5 questions', size=44)),
+  A("One chart, 4-5 questions appears", T('One chart or table → 4 or 5 questions', size=44, w=CAM_W)),
   "In the quantitative section there's a chart or a table, and after it four or five questions.",
-  A("5-6 minutes appears", T('About 5-6 minutes for the whole set', size=40)),
+  A("5-6 minutes appears", T('About 5-6 minutes for the whole set', size=40, w=CAM_W)),
   "Recommended time: five to six minutes — a little more than a minute per question.",
-  A("Easy to hard appears", T('The questions go from easy to hard', size=40)),
+  A("Easy to hard appears", T('The questions go from easy to hard', size=40, w=CAM_W)),
   "The questions go from easy to hard. The first one is usually just pulling one fact out of the chart.",
  ]),
  dict(mode='concept', active=1, title='Intro and example', script=[
-  A("Intro + example appears", T('Before the chart: an explanation, and at its end — an example', size=40)),
+  A("Intro + example appears", T('Before the chart: an explanation, and at its end — an example', size=40, w=CAM_W)),
   "Before every chart there's an explanation of what it shows, and at the end of it — almost always — an example.",
-  A("Example = test appears", T('The example is your test: find it in the chart', size=40)),
+  A("Example = test appears", T('The example is your test: find it in the chart', size=40, w=CAM_W)),
   "The example is the most important thing. Read it, go to the chart, and check that you see exactly what it says.",
-  A("Not clear → reread appears", T("Don't understand the example? Read again, slowly — or come back later", size=36)),
+  A("Not clear → reread appears", T("Don't understand the example? Read again, slowly — or come back later", size=36, w=CAM_W)),
   "If you don't understand the example, you don't understand the chart. Read again slowly — or leave the set for the end of the section.",
  ]),
  dict(mode='concept', active=2, title='Read the chart', script=[
-  A("1-1.5 minutes appears", T('Spend 1 to 1.5 minutes on the chart itself', size=40)),
+  A("1-1.5 minutes appears", T('Spend 1 to 1.5 minutes on the chart itself', size=40, w=CAM_W)),
   "Invest a minute, a minute and a half, in the chart itself — before you look at any question.",
-  A("Axes, units, legend, notes appears", T('Axes · units · legend · notes', size=44)),
+  A("Axes, units, legend, notes appears", T('Axes · units · legend · notes', size=44, w=CAM_W)),
   "Titles, axes, units — thousands, percent — the legend, and every note. A note is there for a reason.",
   A("Chart 1 appears", _chart_item(S1, C1_VB, 390, 560)),
+  A("Note appears", T('"Note: The exact location of each shape is its centre."', size=30, x=1000, y=470, w=540)),
   "Here, for example: two axes that both go up to 60 percent and more — and a note: the exact location of each shape is its centre.",
  ]),
  dict(mode='concept', active=3, title='Then the questions', script=[
-  A("Each question alone appears", T('Each question stands alone', size=44)),
+  A("Each question alone appears", T('Each question stands alone', size=44, w=CAM_W)),
   "Now the questions. Each one stands alone: information given inside one question does not carry over to the next.",
-  A("Circle the key word appears", T('Circle the key word: carbon or hydrogen? only or shared?', size=38)),
+  A("Circle the key word appears", T('Circle the key word: carbon or hydrogen? only or shared?', size=38, w=CAM_W)),
   "Circle the key word in each question, so you check exactly what's asked — and not the axis next to it.",
-  A("Not in the choices → stop appears", T("Your answer isn't among the choices? Stop and check yourself", size=38)),
+  A("Not in the choices → stop appears", T("Your answer isn't among the choices? Stop and check yourself", size=38, w=CAM_W)),
   "And if your answer isn't one of the choices — don't panic. Stop, and check the legend, the axis and the question again.",
  ]),
  dict(mode='concept', active=4, title='Solve by eye', script=[
-  A("By eye appears", T('Solve by eye: lines, edges, comparisons — calculate only when needed', size=38)),
+  A("By eye appears", T('Solve by eye: lines, edges, comparisons — calculate only when needed', size=38, w=CAM_W)),
   "Most chart questions are solved by eye: draw a line, compare lengths, look at a corner. Calculate only when you must.",
-  A("Mini-charts: differences appears", T('Graphs as answers → check only where they differ, edges first', size=38)),
+  A("Mini-charts: differences appears", T('Graphs as answers → check only where they differ, edges first', size=38, w=CAM_W)),
   "When the answers are small graphs, don't check each one to the end. Find where they differ — usually the edges.",
   "Let's start with the first chart.",
  ]),
@@ -589,7 +658,7 @@ G(0, 'ch-q01', G1,
    A("Hydrogen = vertical appears", R('Hydrogen → vertical axis')),
    "And the note: the exact location of each shape is its centre. Keep that in mind — it will matter right away.",
    A("Centre note appears", R('Exact location = the centre of the shape')),
-  ], L['ch-q01']),
+  ], RD1),
   ('Draw a line at 60%', [
    "In how many of the samples is the percentage of carbon greater than 60 percent?",
    "Carbon — the horizontal axis. We want more than 60, so draw a boundary line at 60 percent. In your head or on the figure.",
@@ -698,18 +767,18 @@ G(4, 'ch-q05', G1,
    "So — hydrogen below 10 percent. Draw a line at 10 percent hydrogen and count what's under it.",
    A("10% line appears", HL(C1_X0, c1y(10), C1_X1)),
    "One — the Mercury dot at 6. Two, three, four — the Neptune rings. Centres, remember. Four samples.",
-   A("Below 10%: 4 appears", R('Below 10% hydrogen: 4 samples → (2) or (4)', 200)),
+   A("Below 10%: 4 appears", T('Below 10% hydrogen: 4 samples → (2) or (4)', size=26, x=410, y=L5L['below'], w=1130)),
    "Graphs one and three show 1 and 5 — out. We're left with two and four.",
    D("Cross out choices 1 and 3"),
-  ], L['ch-q05']),
+  ], L5L),
   ('The right edge', [
    "Now tell two and four apart. The middle is possible — but between 30 and 40 I'd need two lines and a careful count. The edge is easier.",
    "The other edge: from 60 to 70 percent hydrogen. Graph two says 1, graph four says 3.",
    A("60% line appears", HL(C1_X0, c1y(60), C1_X1)),
    "Above the line — just one square, Venus at 64.",
-   A("Above 60%: 1 appears", R('60% to 70% hydrogen: 1 sample → graph (2)', 200)),
+   A("Above 60%: 1 appears", T('60% to 70% hydrogen: 1 sample → graph (2)', size=26, x=410, y=L5R['below'], w=1130)),
    "Graph four is out.",
-  ], L['ch-q05']),
+  ], L5R),
   ('Graph two', [
    "Graph two is right.",
    D("Circle choice 2"),
@@ -728,7 +797,7 @@ G(0, 'ch-q06', G2,
    A("Example row appears", HL(C2_TX, c2_row_bottom('Night Owls'), C2_TX + C2_TW + 6 * C2_YW)),
    A("Example checks appears", R('Night Owls, 2019: place 2 → 80,000 ✓')),
    "Notice: places 6 and 7 win nothing.",
-  ], L['ch-q06']),
+  ], RD2),
   ('Find the 1s', [
    "Which team won 120,000 shekels twice?",
    "First translate the money into a place: 120,000 is first place. So we're looking for the 1s.",
@@ -828,7 +897,7 @@ G(0, 'ch-q11', G3,
    A("Bars and pies appears", R('Bar = number of guests · Pie = the split in %', 200)),
    "Check with the example: Sunday, 300 guests — the Sunday bar reaches 300. 60 percent from the groom's side only — the dark slice on Sunday's pie says 60. Good.",
    A("Example checks appears", R("Sunday: 300 guests, 60% groom's side only ✓")),
-  ], L['ch-q11']),
+  ], RD3),
   ('Shared counts twice', [
    "A happy wedding: an equal number of guests from the groom's side and from the bride's side. On which day?",
    "Careful: the shared guests are on both sides. They add the same amount to the groom's side and to the bride's side.",

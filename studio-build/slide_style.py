@@ -37,10 +37,10 @@ HY_NEW = ("const shown=(b.pre||0)+Math.max(0,step|0);\n"
           "let it=sc===1?it0:Object.assign({},it0,{size:(it0.size||(it0.k==='h'?60:46))*sc,y:it0.y!=null?HY.top+(it0.y-HY.top)*sc:it0.y,gap:(it0.gap??44)*sc});")
 # keep the camera's corner free: text that starts in the camera's rows wraps before it (camera on, top right only)
 HY_ZONE_OLD = "const x=it.x??HY.x,W=HY.w-(x-HY.x);let y=it.y??yL,r=hyItem(it,x,y,W);"
-HY_ZONE_NEW = ("const x=it.x??HY.x;let W=HY.w-(x-HY.x);let y=it.y??yL,r=hyItem(it,x,y,W);{const z=camZone();if(z&&y<z.y&&z.x-x>300){"
+HY_ZONE_NEW = ("const x=it.x??HY.x;let W=HY.w-(x-HY.x);let y=it.y??yL,r=hyItem(it,x,y,W);{const z=camZone();if(z&&y<z.y&&z.x-x>300&&!CAM_SKIP.includes(v.id)){"
                "if(it.k==='t'&&x+(it.w||W)>z.x){it=Object.assign({},it,{w:z.x-x});r=hyItem(it,x,y,W)}"
-               "else if((it.k==='q'||it.k==='nl')&&x+W>z.x){const r2=hyItem(it,x,y,z.x-x);if(!CAM_SKIP.includes(v.id)){W=z.x-x;r=r2}}}}")
-CAM_ZONE_FN = ("const CAM_SKIP=['solve-vo-44-005','solve-wp26-g105','solve-wp28-g132','solve-wp28-g142'];function camZone(){try{if(!(window.CAM_TEST||(camStream&&camPos==='tr')))return null;const r=camRect();"
+               "else if((it.k==='q'||it.k==='nl')&&x+W>z.x){const r2=hyItem(it,x,y,z.x-x);{W=z.x-x;r=r2}}}}")
+CAM_ZONE_FN = ("const CAM_SKIP=['solve-pt-q16','solve-vo-44-005','solve-wp26-g105','solve-wp28-g132','solve-wp28-g142'];function camZone(){try{if(!(window.CAM_TEST||(camStream&&camPos==='tr')))return null;const r=camRect();"
                "return {x:r.x-24,y:r.y+r.d+16}}catch(e){return null}}\n")
 
 HY_OLD_END = "if(it.y==null)yL=y+r.h+(it.gap??44);if(i<shown)out+=`<g data-i=\"${i}\">${r.svg}</g>`});\n return out+'</svg>'}"
