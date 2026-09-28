@@ -100,6 +100,14 @@ BUS_PROMPT = [
 ]
 BUS_Q = ('In your opinion, what are the advantages and disadvantages of free public transport, '
          'for city residents and for the city itself? Give reasons.')
+# one shared version of every task (writing_tasks.py, shaped like the real English tasks)
+from writing_tasks import T as _T, split_task_slides
+CAM_PROMPT, CAM_Q = _T['camera']['paras'], _T['camera']['q']
+from writing_assets import _wrap
+CAM_BACKGROUND = _wrap(' '.join(CAM_PROMPT[:2]), 80)   # the marked version: background (facts) ...
+CAM_CLAIMS = _wrap(CAM_PROMPT[2], 80)                    # ... and the two sides' claims
+TAX_PROMPT, TAX_Q = _T['tax']['paras'], _T['tax']['q']
+BUS_PROMPT, BUS_Q = _T['bus2']['paras'], _T['bus2']['q']
 
 
 # =====================================================================================================================
@@ -1303,3 +1311,5 @@ MEMORY = [dict(
     tips=['Aim for facts and reasonable assumptions, not only opinions; "in my opinion" goes only where the opinion starts.',
           'Original angles (e.g. psychological) stand out, but only if they are explained as well as any other argument.',
           'Practise finding arguments on published tasks, without always writing the whole essay.'])]
+
+MODULES = split_task_slides(MODULES)

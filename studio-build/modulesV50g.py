@@ -68,6 +68,10 @@ PHONE_PROMPT = [
     'that it cuts students off from their parents and removes a useful learning tool.',
 ]
 PHONE_Q = 'In your opinion, should schools collect students\' phones for the whole school day? Give reasons.'
+# one shared version of every task (writing_tasks.py, shaped like the real English tasks)
+from writing_tasks import T as _T, split_task_slides
+CAMERA_PROMPT, CAMERA_Q = _T['camera']['paras'], _T['camera']['q']
+PHONE_PROMPT, PHONE_Q = _T['phones']['paras'], _T['phones']['q']
 
 SB_FIND = ['Why we need them', 'Their chain first', 'Mine matters more', 'Common good vs one', 'A solution',
            'Pay per result', 'What can go wrong?', 'A new problem', 'It will not work', 'Not done, bypassed',
@@ -1054,3 +1058,5 @@ MEMORY = [
         '"Both sides have a point" is not an answer.',
         'Two nouns sharing one object need the same preposition: "a break-in to the database or a leak from it".']),
 ]
+
+MODULES = split_task_slides(MODULES)

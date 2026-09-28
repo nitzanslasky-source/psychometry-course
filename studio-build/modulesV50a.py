@@ -31,6 +31,9 @@ CAM_PROMPT = [
 ]
 CAM_QUESTION = ('In your opinion, should security officials be allowed to place face-recognition cameras '
                 'in public spaces? Give reasons.')
+# one shared version of every task (writing_tasks.py, shaped like the real English tasks)
+from writing_tasks import T as _T, split_task_slides
+CAM_PROMPT, CAM_QUESTION = _T['camera']['paras'], _T['camera']['q']
 
 P_OPEN = ("Recently, security officials have been working to set up a national network of face-recognition "
           "cameras in public spaces. These cameras, which can identify people and objects in real time with a "
@@ -898,3 +901,5 @@ MEMORY = [
         'Stay exactly on the task: an off-topic essay gets the minimum.',
         'Fly under the radar: if you are not sure of a word, use a simpler one you know.']),
 ]
+
+MODULES = split_task_slides(MODULES)

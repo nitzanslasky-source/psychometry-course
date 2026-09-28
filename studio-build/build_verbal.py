@@ -222,6 +222,7 @@ for t in sorted(MODS):
 D['meta']['videos'] = len(D['videos'])
 
 # ---------- memory cards ----------
+PLACED = set()
 for card in CARDS:
     ref = {k: card[k] for k in ('title', 'intro', 'tables', 'tips') if k in card}
     ref.update(kind='memory', rows=[], example='')
@@ -233,8 +234,11 @@ for card in CARDS:
         ks = [n for n, f in enumerate(flow) if f['section'] == sec]; k = (ks[-1] if ks else k)
         flow.insert(k + 1, {'id': fid, 'topic': vf['topic'], 'section': sec, 'type': 'reference', 'ref': card['id']})
         sections[sec]['items'].append(fid); continue
+    items = sections[vf['section']]['items']; ki = items.index(vf['id'])
+    while k + 1 < len(flow) and flow[k + 1]['type'] == 'reference' and flow[k + 1]['id'] in PLACED:   # keep list order
+        k += 1; ki += 1
     flow.insert(k + 1, {'id': fid, 'topic': vf['topic'], 'section': vf['section'], 'type': 'reference', 'ref': card['id']})
-    items = sections[vf['section']]['items']; items.insert(items.index(vf['id']) + 1, fid)
+    items.insert(ki + 1, fid); PLACED.add(fid)
 
 # ---------- write ----------
 body = json.dumps(D, ensure_ascii=False, separators=(',', ':'))

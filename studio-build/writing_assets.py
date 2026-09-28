@@ -12,14 +12,17 @@ from xml.sax.saxutils import escape as _e
 
 INK = '#1f2937'; MUTED = '#6b7280'; RULE = '#cbd5e1'; ACCENT = '#2F6BFF'; PAPER = '#ffffff'
 
-EXAMPLE_PROMPT = [
-    'In recent years, some cities have allowed schools to move to a four-day',
-    'school week. Supporters say that a longer weekend lets students rest and',
-    'pursue other interests, and that it saves money on transport and heating.',
-    'Opponents warn that longer school days tire young children and that',
-    'working parents will struggle to arrange care on the fifth day.',
+EXAMPLE_PROMPT = [   # whole paragraphs (the shape of a real task: situation + change, then both sides)
+    "In most schools, students study five or six days a week. In recent years, several local authorities have "
+    "allowed their schools to move to a four-day week: the school day is lengthened by about an hour and a half, so "
+    "that students receive roughly the same number of teaching hours, and on the fifth day the school is closed.",
+    "Supporters of the change say that the long weekend lets students rest and pursue other interests, such as "
+    "sport, music or volunteering, and that it reduces the cost of running the school, since buses, heating and "
+    "cleaning are needed one day less each week. Opponents warn that the longer school days tire young children, "
+    "so that the last lessons of each day are of little value, and that working parents will struggle to find "
+    "care for their children on the fifth day.",
 ]
-EXAMPLE_QUESTION = 'In your opinion, should schools move to a four-day week? Give reasons.'
+EXAMPLE_QUESTION = 'In your opinion, should schools move to a four-day week? Give reasons for your answer.'
 
 
 def _text(x, y, s, size=13, weight=400, color=INK, anchor='start', italic=False):
@@ -61,8 +64,10 @@ def task_page_svg(prompt_lines=EXAMPLE_PROMPT, question=EXAMPLE_QUESTION):
     box_top = y
     b.append(_text(W / 2, y + 26, 'Writing Task', 16, 700, anchor='middle'))
     y += 58
-    for s in prompt_lines:
-        b.append(_text(64, y, s, 14)); y += 23
+    for i, para in enumerate(prompt_lines):
+        for s in (_wrap(para, 74) if len(para) > 80 else [para]):
+            b.append(_text(64, y, s, 14)); y += 22
+        if len(para) > 80 and i < len(prompt_lines) - 1: y += 8
     y += 12
     for q in _wrap(question, 64):
         b.append(_text(64, y, q, 14, 700)); y += 22
@@ -109,14 +114,20 @@ def task_page(prompt_lines, question):
     return vis(task_page_svg(prompt_lines, question))
 
 
-def prompt_box(prompt_lines, question, w=1000, h=None):
-    """Just the boxed task (landscape) for question-analysis slides."""
+def prompt_box(prompt_lines, question, w=1000, h=None, fs=21):
+    """The boxed task (landscape). prompt_lines: pre-wrapped lines, or whole paragraphs (wrapped here, with a gap
+    between paragraphs, as on the real page)."""
     W = max(800, int(w * 0.8)); y = 40; b = []   # ~26px text on the board
-    for s in prompt_lines:
-        b.append(_text(24, y, s, 21)); y += 30
-    y += 8
-    for q in _wrap(question, int((W - 48) / 10.5)):
-        b.append(_text(24, y, q, 21, 700)); y += 29
+    n = int((W - 48) / (fs * 0.5))
+    paras = len(prompt_lines) > 0 and max(len(x) for x in prompt_lines) > n
+    for i, s in enumerate(prompt_lines):
+        for line in (_wrap(s, n) if paras else [s]):
+            b.append(_text(24, y, line, fs)); y += fs * 1.43
+        if paras and i < len(prompt_lines) - 1: y += fs * 0.55
+    y += 12
+    for q in _wrap(question, int(n * 0.93)):
+        b.append(_text(24, y, q, fs, 700)); y += fs * 1.38
+    y = int(y)
     svg = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 %d %d" role="img" aria-label="Writing task"><title>Writing task</title>'
            '<rect x="1" y="1" width="%d" height="%d" fill="#fff" stroke="%s" stroke-width="2"/>%s</svg>') % (W, y, W - 2, y - 2, INK, ''.join(b))
     return dict(k='vis', v={'type': 'geometry', 'svg': svg}, w=w, h=h or int(w * y / W))

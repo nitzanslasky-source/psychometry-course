@@ -27,6 +27,9 @@ CAM_PROMPT = [
     'it. Opponents fear serious harm to privacy and constant tracking of citizens.',
 ]
 CAM_Q = 'In your opinion, should face-recognition cameras be installed in public spaces? Give reasons.'
+# one shared version of every task (writing_tasks.py, shaped like the real English tasks)
+from writing_tasks import T as _T, split_task_slides, PRACTICE
+CAM_PROMPT, CAM_Q = _T['camera']['paras'], _T['camera']['q']
 
 
 # ================================================================= lesson 1: the opening paragraph (seg43)
@@ -1202,19 +1205,13 @@ MEMORY = [
         'Write only on the lines, in pencil, legibly: an illegible essay gets the lowest score.',
         'A few small mistakes are fine. It is a draft.']),
  dict(id='mem-wr-practice', section='vr50-practice', after='vr50-h-review', title='Practice writing tasks',
-  intro='Eight original tasks in the style of the exam. Write each one in 35 minutes, on a 50-line sheet.',
-  tables=[dict(title='Tasks', head=['#', 'Task'], rows=[
-    ['1', 'Several cities have closed their centres to private cars, allowing only buses, bicycles and delivery vehicles. Supporters say that the change reduces pollution and noise and makes streets safer for pedestrians. Shop owners and residents of outlying neighbourhoods worry that fewer customers will come and that reaching the centre will become harder. In your opinion, should city centres be closed to private cars? Give reasons.'],
-    ['2', 'Some countries require every high-school student to complete a set number of hours of community volunteering before graduating. Supporters believe that the requirement teaches responsibility and connects young people with their community. Critics argue that volunteering loses its value when it is compulsory and that the hours take time away from studies. In your opinion, should community volunteering be a graduation requirement? Give reasons.'],
-    ['3', 'A number of cities have made public buses free for all residents, funding the service from municipal taxes. Supporters say that free buses encourage people to leave their cars at home and help low-income families. Opponents point out that the cost falls on all taxpayers, including those who never use the buses, and that the money could improve the service instead. In your opinion, should public transport in cities be free? Give reasons.'],
-    ['4', 'More and more schools require students to hand in their smartphones at the start of the school day. Supporters say that phones distract students in class and encourage online bullying during breaks. Some parents and students object that phones are useful learning tools and that parents need to be able to reach their children. In your opinion, should smartphones be banned during the school day? Give reasons.'],
-    ['5', 'Several governments have introduced a special tax on sweetened drinks. Supporters argue that a higher price reduces the consumption of sugar and that the income can fund health programmes. Opponents claim that the tax mainly burdens low-income families and that adults should make their own choices about what they drink. In your opinion, is a tax on sweetened drinks a good policy? Give reasons.'],
-    ['6', 'Hospital emergency rooms are often crowded with patients whose problems are not urgent. Some hospitals have proposed charging a fee to patients who come to the emergency room without a referral and are found not to need urgent care. Supporters believe that the fee would shorten waiting times for those in real danger. Critics warn that some people might stay at home even when they are seriously ill. In your opinion, should such a fee be introduced? Give reasons.'],
-    ['7', 'In some primary schools, teachers have stopped giving homework altogether. Those in favour say that young children need free time to play and rest, and that homework widens the gap between children who get help at home and those who do not. Others believe that homework builds independent study habits and lets parents follow what their children are learning. In your opinion, should homework in primary schools be abolished? Give reasons.'],
-    ['8', 'In popular tourist cities, many apartments are rented to tourists for short stays instead of to local residents. Some cities have limited the number of days a year an apartment may be rented this way. Supporters say that the limit returns homes to the market and lowers rents for residents. Opponents argue that it harms owners who depend on the income and reduces the money tourists bring to the city. In your opinion, which is more important: protecting residents\' access to housing, or allowing owners to rent freely? Give reasons.'],
-   ])],
+  intro='Eight original tasks in the shape of the real exam: the situation, the change, both sides, then the question. Write each one in 35 minutes, on a 50-line sheet.',
+  tables=[dict(title='Task %d · %s' % (i + 1, _T[k]['title']), head=['', ''],
+               rows=[[p, ''] for p in _T[k]['paras']] + [[_T[k]['q'], '']]) for i, k in enumerate(PRACTICE)],
   tips=['How to practise: set a timer for 35 minutes. Spend the first 8-10 minutes on the skeleton: draft a chain (~10 words) for each argument and for the opponent\'s main argument, and find its weakest arrow.',
         'Then write on a 50-line sheet (at least 25 lines; about 30-40 is good), and leave 2-3 minutes to check with the proofreading checklist.',
         'Note the time of every stage. A day later, review the essay (key lines first, then paragraph by paragraph), fix it, and only then submit it.',
         'Best of all: write the same task again from the other side.']),
 ]
+
+MODULES = split_task_slides(MODULES)

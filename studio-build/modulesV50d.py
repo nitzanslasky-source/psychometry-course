@@ -27,6 +27,10 @@ BUS_PROMPT = [
     'from somewhere else.',
 ]
 BUS_QUESTION = 'In your opinion, should cities make local buses free of charge? Give reasons.'
+# one shared version of every task (writing_tasks.py, shaped like the real English tasks)
+from writing_tasks import T as _T, split_task_slides
+CAM_PROMPT, CAM_QUESTION = _T['camera']['paras'], _T['camera']['q']
+BUS_PROMPT, BUS_QUESTION = _T['bus']['paras'], _T['bus']['q']
 
 SB_RUBRIC = ['What raters check', 'Words vs. criteria', 'Four rows, 1 to 6', 'Relevance + main idea',
              'Development', 'Focus', 'Coherence', 'Critical thinking', 'Opinion vs. fact',
@@ -872,3 +876,5 @@ MEMORY = [dict(
   tips=['Test: does each new sentence explain a cause, a consequence, a distinction, an illustration or a limit?',
         'Examples explain a reason - they do not replace it, and one example does not show how common something is.',
         'Length is not quality: 25-50 lines, good essays usually 30-40; more lines must mean more steps.'])]
+
+MODULES = split_task_slides(MODULES)
