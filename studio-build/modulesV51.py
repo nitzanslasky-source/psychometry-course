@@ -61,7 +61,7 @@ def _right(c, p1, p2, s=16):
 
 
 def fig_cube():
-    """A cylinder inscribed in a cube with edge a (oblique drawing, like the book)."""
+    """A cylinder inscribed in a cube with edge 3a (oblique drawing, like the book)."""
     s, dx, dy = 180, 70, -70
     TL, TR, BR, BL = (100, 120), (280, 120), (280, 300), (100, 300)
     b = lambda p: (p[0] + dx, p[1] + dy)
@@ -89,8 +89,8 @@ def fig_cube():
     x = b(TR)[0] + 22; y1, y2 = b(TR)[1], b(BR)[1]
     out.append(_l((x, y1 + 4), (x, y2 - 4), INK, 2))
     out.append('<path d="M %.1f %.1f l -6 12 l 12 0 Z M %.1f %.1f l -6 -12 l 12 0 Z" fill="%s"/>' % (x, y1, x, y2, INK))
-    out.append(_t(x + 20, (y1 + y2) / 2, 'a', 24, italic=True))
-    return _svg('70 30 340 290', 'A cylinder inscribed in a cube with edge a', ''.join(out))
+    out.append(_t(x + 26, (y1 + y2) / 2, '3a', 24, italic=True))
+    return _svg('70 30 355 290', 'A cylinder inscribed in a cube with edge 3a', ''.join(out))
 
 
 def fig_triangles():
@@ -114,7 +114,7 @@ def fig_triangles():
 
 
 def fig_sector():
-    """Circle with center O, radius 1 cm; sector AOB of 45 degrees; AF perpendicular to OB; shaded = sector minus triangle."""
+    """Circle with center O, radius 2 cm; sector AOB of 45 degrees; AF perpendicular to OB; shaded = sector minus triangle."""
     O, R = (230.0, 250.0), 170.0
     pt = lambda deg, r=R: (O[0] + r * math.cos(math.radians(deg)), O[1] - r * math.sin(math.radians(deg)))
     B, A = pt(20), pt(65)
@@ -126,12 +126,12 @@ def fig_sector():
            _l(O, A), _l(O, B), _l(A, F), _right(F, O, A, 14),
            _arc(O, B, A, 38), _t(*_mid_dir(O, B, A, 60), s='45°', size=18, color=ACC),
            '<circle cx="%.1f" cy="%.1f" r="3.2" fill="%s"/>' % (O[0], O[1], INK),
-           _t(O[0], O[1] + 22, 'O'), _t(A[0] - 6, A[1] - 18, 'A'), _t(B[0] + 18, B[1] + 4, 'B'), _t(lab[0], lab[1], '1 cm', 18)]
-    return _svg('40 60 380 380', 'Sector AOB of a circle with radius 1 cm', ''.join(out))
+           _t(O[0], O[1] + 22, 'O'), _t(A[0] - 6, A[1] - 18, 'A'), _t(B[0] + 18, B[1] + 4, 'B'), _t(lab[0], lab[1], '2 cm', 18)]
+    return _svg('40 60 380 380', 'Sector AOB of a circle with radius 2 cm', ''.join(out))
 
 
 def fig_rect():
-    """Rectangle ABCD, height 2 cm, a quarter circle of radius 1 at each vertex, circle O tangent to all of them."""
+    """Rectangle ABCD, height 4 cm, a quarter circle of radius 2 at each vertex, circle O tangent to all of them."""
     u = 90.0
     A = (110.0, 60.0); W = 2 * math.sqrt(3) * u; H = 2 * u
     D, B, C = (A[0] + W, A[1]), (A[0], A[1] + H), (A[0] + W, A[1] + H)
@@ -147,14 +147,14 @@ def fig_rect():
            _t(A[0] - 14, A[1] - 14, 'A'), _t(D[0] + 14, D[1] - 14, 'D'), _t(B[0] - 14, B[1] + 16, 'B'), _t(C[0] + 14, C[1] + 16, 'C'),
            '<path d="M %.1f %.1f q -12 0 -12 12 L %.1f %.1f q 0 12 -12 12 q 12 0 12 12 L %.1f %.1f q 0 12 12 12" fill="none" stroke="%s" stroke-width="2"/>'
            % (A[0] - 10, A[1], A[0] - 22, O[1] - 12, A[0] - 22, B[1] - 12, INK),
-           _t(A[0] - 58, O[1], '2 cm', 18)]
+           _t(A[0] - 58, O[1], '4 cm', 18)]
     return _svg('20 20 %.0f %.0f' % (W + 150, H + 80), 'Rectangle ABCD with quarter circles at its vertices and a circle O', ''.join(out))
 
 
 def fig_square():
-    """Square ABCD with side x cm; E on BC with BE = y cm; segment DE."""
+    """Square ABCD with side x cm; E on BC with EC = y cm; segment DE."""
     A, D, B, C = (110.0, 50.0), (330.0, 50.0), (110.0, 270.0), (330.0, 270.0)
-    E = (B[0] + 72, B[1])
+    E = (C[0] - 72, B[1])
     out = ['<polygon points="%s" fill="none" stroke="%s" stroke-width="2.5"/>' % (_poly([A, D, C, B]), INK), _l(D, E),
            _t(A[0] - 12, A[1] - 14, 'A'), _t(D[0] + 12, D[1] - 14, 'D'), _t(B[0] - 14, B[1] + 16, 'B'), _t(C[0] + 14, C[1] + 16, 'C'),
            _t(E[0], E[1] + 18, 'E'),
@@ -162,8 +162,8 @@ def fig_square():
            % (A[0] - 10, A[1], A[0] - 22, 148, A[0] - 22, B[1] - 12, INK),
            _t(A[0] - 60, 160, 'x cm', 18),
            '<path d="M %.1f %.1f q 0 10 10 10 L %.1f %.1f q 8 0 8 10 q 0 -10 8 -10 L %.1f %.1f q 10 0 10 -10" fill="none" stroke="%s" stroke-width="2"/>'
-           % (B[0] + 2, B[1] + 34, (B[0] + E[0]) / 2 - 8, B[1] + 44, E[0] - 12, B[1] + 44, INK),
-           _t((B[0] + E[0]) / 2, B[1] + 72, 'y cm', 18)]
+           % (E[0] + 2, B[1] + 34, (E[0] + C[0]) / 2 - 8, B[1] + 44, C[0] - 12, B[1] + 44, INK),
+           _t((E[0] + C[0]) / 2, B[1] + 72, 'y cm', 18)]
     return _svg('20 20 350 340', 'Square ABCD with a segment from D to E on side BC', ''.join(out))
 
 
@@ -175,7 +175,7 @@ QUESTIONS = {}
 
 def mk(qid, page, n, stem, choices, key, steps, fig=None):
     q = _q(qid, T51, rich_plain(stem), [rich_plain(c) for c in choices], key, '',
-           dict(subject='psychometric-thinking', trustRank=1, reviewFlag=False, source='Course book p.%d q%d' % (page, n)))
+           dict(subject='psychometric-thinking', trustRank=1, reviewFlag=False, source='Course book p.%d q%d (numbers changed)' % (page, n)))
     q.update(stem=rich_plain(stem), stemRich=stem, stemHtml=rich_html(stem),
              choices=[rich_plain(c) for c in choices], choicesRich=list(choices), choicesHtml=[rich_html(c) for c in choices],
              explanation=list(steps), answerHtml=''.join('<p>%s</p>' % rich_html(e) for e in steps),
@@ -186,128 +186,128 @@ def mk(qid, page, n, stem, choices, key, steps, fig=None):
 
 
 # ---- Introduction (book p. 11-12) ----
-mk('pt-q01', 11, 1, r'$\sqrt{16{,}384}=?$', ['128', '146', '184', '202'], 1, [
-    r'The square must end in 4. $146^2$ and $184^2$ end in 6 ($6\cdot6=36$, $4\cdot4=16$), so choices 2 and 3 are out.',
-    r'$200^2=40{,}000$ is far more than 16,384, so 202 is too big.',
-    r'Only 128 is left: $128^2=16{,}384$.'])
-mk('pt-q02', 11, 2, r'Basket A contains 400 eggs, and basket B contains 500 eggs.' '\n'
-    r'How many eggs must be moved from basket A to basket B so that basket A will contain $\frac{7}{11}$ of the number of eggs in basket B?',
-   ['25', '50', '65', '80'], 2, [
-    r'Move x eggs: basket A has $400-x$ eggs and basket B has $500+x$.',
-    r'$400-x=\frac{7}{11}(500+x)$, so $4400-11x=3500+7x$, $18x=900$ and $x=50$.',
-    r'Or plug in the round answer 50: $\frac{350}{550}=\frac{7}{11}$.'])
-mk('pt-q03', 11, 3, r'Given: $a\ne0$ and $b\ne0$.' '\n' r'$\frac{a^2+b^2+(a+b)^2}{2ab}-1=?$',
+mk('pt-q01', 11, 1, r'$\sqrt{19{,}044}=?$', ['138', '156', '194', '212'], 1, [
+    r'The square must end in 4. $156^2$ and $194^2$ end in 6 ($6\cdot6=36$, $4\cdot4=16$), so choices 2 and 3 are out.',
+    r'$200^2=40{,}000$ is far more than 19,044, so 212 is too big.',
+    r'Only 138 is left: $138^2=19{,}044$.'])
+mk('pt-q02', 11, 2, r'Basket A contains 500 eggs, and basket B contains 600 eggs.' '\n'
+    r'How many eggs must be moved from basket A to basket B so that basket A will contain $\frac{9}{13}$ of the number of eggs in basket B?',
+   ['25', '50', '70', '85'], 2, [
+    r'Move x eggs: basket A has $500-x$ eggs and basket B has $600+x$.',
+    r'$500-x=\frac{9}{13}(600+x)$, so $6500-13x=5400+9x$, $22x=1100$ and $x=50$.',
+    r'Or plug in the round answer 50: $\frac{450}{650}=\frac{9}{13}$.'])
+mk('pt-q03', 11, 3, r'Given: $a\ne0$ and $b\ne0$.' '\n' r'$\frac{a^2+b^2+(a-b)^2}{2ab}+1=?$',
    [r'$\frac{a}{b}+\frac{b}{a}$', r'$\frac{a}{2b}+\frac{b}{2a}$', r'$\frac{(a+b)(a-b)}{ab}$', r'$2(a^2+b^2)$'], 1, [
-    r'Open the brackets: $\frac{2a^2+2b^2+2ab}{2ab}-1=\frac{a}{b}+\frac{b}{a}+1-1=\frac{a}{b}+\frac{b}{a}$.',
-    r'Or plug in $a=b=1$: the expression is $\frac{6}{2}-1=2$. Choices 2, 3 and 4 give 1, 0 and 4, so only choice 1 is left.'])
-mk('pt-q04', 12, 4, r'A cylinder is inscribed in a cube whose edge is a (see figure).' '\n' r'What is the volume of the cylinder?',
-   [r'$\frac{\pi}{2}a^3$', r'$\pi a^3$', r'$\frac{4\pi}{3}a^3$', r'$\frac{\pi}{4}a^3$'], 4, [
-    r'The diameter of the base equals the edge of the cube: $r=\frac{a}{2}$, and the height is $h=a$.',
-    r'$V=\pi\left(\frac{a}{2}\right)^2\cdot a=\frac{\pi a^3}{4}$.',
-    r'Estimate: the cylinder is inside the cube, so its volume is less than $a^3$. With $\pi\approx3$, choices 1, 2 and 3 are all more than $a^3$.'],
+    r'Open the brackets: $\frac{2a^2+2b^2-2ab}{2ab}+1=\frac{a}{b}+\frac{b}{a}-1+1=\frac{a}{b}+\frac{b}{a}$.',
+    r'Or plug in $a=b=1$: the expression is $\frac{2}{2}+1=2$. Choices 2, 3 and 4 give 1, 0 and 4, so only choice 1 is left.'])
+mk('pt-q04', 12, 4, r'A cylinder is inscribed in a cube whose edge is 3a (see figure).' '\n' r'What is the volume of the cylinder?',
+   [r'$\frac{27\pi}{2}a^3$', r'$27\pi a^3$', r'$36\pi a^3$', r'$\frac{27\pi}{4}a^3$'], 4, [
+    r'The diameter of the base equals the edge of the cube: $r=\frac{3a}{2}$, and the height is $h=3a$.',
+    r'$V=\pi\left(\frac{3a}{2}\right)^2\cdot3a=\frac{27\pi a^3}{4}$.',
+    r'Estimate: the cylinder is inside the cube, so its volume is less than $(3a)^3=27a^3$. With $\pi\approx3$, choices 1, 2 and 3 are all more than $27a^3$.'],
    fig_cube())
-mk('pt-q05', 12, 5, r'Two fair dice, one blue and one red, are rolled.' '\n'
+mk('pt-q05', 12, 5, r'Two fair eight-sided dice, one blue and one red, are rolled. The faces of each die are numbered 1 to 8.' '\n'
     r'What is the probability that the number obtained on the blue die will be greater than the number obtained on the red die?',
-   [r'$\frac{35}{72}$', r'$\frac{1}{2}$', r'$\frac{1}{3}$', r'$\frac{5}{12}$'], 4, [
-    r'There are 36 equally likely outcomes, and 6 of them are doubles (a tie).',
-    r'By symmetry, the other 30 split equally: in 15 of them the blue die shows the greater number.',
-    r'$P=\frac{15}{36}=\frac{5}{12}$.'])
+   [r'$\frac{63}{128}$', r'$\frac{1}{2}$', r'$\frac{1}{3}$', r'$\frac{7}{16}$'], 4, [
+    r'There are 64 equally likely outcomes, and 8 of them are doubles (a tie).',
+    r'By symmetry, the other 56 split equally: in 28 of them the blue die shows the greater number.',
+    r'$P=\frac{28}{64}=\frac{7}{16}$.'])
 
 # ---- Plugging in the answers (book p. 13) ----
-mk('pt-q06', 13, 1, 'x is an integer.\nGiven:\n' r'$\begin{cases} x^2<16 \\ 2x+4<0 \end{cases}$' '\n' r'$x=?$',
-   ['1', '2', '$-3$', '$-8$'], 3, [
-    r'Plug in the answers. $x=1$: $2\cdot1+4=6$, which is not less than 0. $x=2$ also gives a positive result.',
-    r'$x=-3$: $(-3)^2=9<16$ and $2(-3)+4=-2<0$. Both hold. (For $x=-8$, $64$ is not less than 16.)'])
-mk('pt-q07', 13, 2, r'Nadav and Amit have a total of 105 cards. Nadav has more cards than Amit. The difference between the numbers of cards the two of them have is equal to $\frac{1}{4}$ of the number of cards Nadav has.' '\n'
-    'How many cards does Nadav have?', ['45', '47', '58', '60'], 4, [
-    r'Nadav has more than half of 105, so 45 and 47 are out.',
-    r'Plug in 60: Amit has 45, the difference is 15, and $\frac{1}{4}\cdot60=15$.'])
-mk('pt-q08', 13, 3, 'Kobi bought a pair of pants at a 50% discount and a shirt at a 10% discount, and paid a total of 300 shekels instead of 500 shekels.\n'
-    'What was the price of the shirt before the discount (in shekels)?', ['100', '125', '180', '200'], 2, [
-    r'Shirt 100, pants 400: $200+90=290$. Shirt 200, pants 300: $150+180=330$. Shirt 180, pants 320: $160+162=322$. None is 300.',
-    r'Shirt 125, pants 375: $187.5+112.5=300$.'])
-mk('pt-q09', 13, 4, 'If Ron gives Miri 3 stamps, the number of stamps she has will be 2 times the number of stamps he will have. '
+mk('pt-q06', 13, 1, 'x is an integer.\nGiven:\n' r'$\begin{cases} x^2<25 \\ 3x+6<0 \end{cases}$' '\n' r'$x=?$',
+   ['1', '3', '$-4$', '$-7$'], 3, [
+    r'Plug in the answers. $x=1$: $3\cdot1+6=9$, which is not less than 0. $x=3$ also gives a positive result.',
+    r'$x=-4$: $(-4)^2=16<25$ and $3(-4)+6=-6<0$. Both hold. (For $x=-7$, $49$ is not less than 25.)'])
+mk('pt-q07', 13, 2, r'Nadav and Amit have a total of 90 cards. Nadav has more cards than Amit. The difference between the numbers of cards the two of them have is equal to $\frac{1}{5}$ of the number of cards Nadav has.' '\n'
+    'How many cards does Nadav have?', ['40', '43', '48', '50'], 4, [
+    r'Nadav has more than half of 90, so 40 and 43 are out.',
+    r'Plug in 50: Amit has 40, the difference is 10, and $\frac{1}{5}\cdot50=10$.'])
+mk('pt-q08', 13, 3, 'Kobi bought a pair of pants at a 50% discount and a shirt at a 10% discount, and paid a total of 280 shekels instead of 500 shekels.\n'
+    'What was the price of the shirt before the discount (in shekels)?', ['50', '75', '140', '150'], 2, [
+    r'Shirt 50, pants 450: $225+45=270$. Shirt 150, pants 350: $175+135=310$. Shirt 140, pants 360: $180+126=306$. None is 280.',
+    r'Shirt 75, pants 425: $212.5+67.5=280$.'])
+mk('pt-q09', 13, 4, 'If Ron gives Miri 4 stamps, the number of stamps she has will be 2 times the number of stamps he will have. '
     'If it is known that the two of them now have the same number of stamps, how many stamps does Miri have now?',
-   ['9', '6', '3', '12'], 1, [
-    r'Plug in 9: both have 9. After Ron gives 3, Miri has 12 and Ron has 6, and $12=2\cdot6$.'])
+   ['12', '8', '4', '16'], 1, [
+    r'Plug in 12: both have 12. After Ron gives 4, Miri has 16 and Ron has 8, and $16=2\cdot8$.'])
 
 # ---- Plugging in numbers (book p. 14-15) ----
-mk('pt-q10', 14, 1, r'Given: $x\ge3$' '\n' r'$\sqrt{x+4-\sqrt{x^2-6x+9}}=?$', ['1', r'$\sqrt5$', r'$3\sqrt2$', r'$\sqrt7$'], 4, [
-    r'For $x\ge3$: $\sqrt{x^2-6x+9}=\sqrt{(x-3)^2}=x-3$, so the expression is $\sqrt{x+4-(x-3)}=\sqrt7$.',
-    r'Or plug in $x=3$: $\sqrt{7-\sqrt0}=\sqrt7$.'])
+mk('pt-q10', 14, 1, r'Given: $x\ge4$' '\n' r'$\sqrt{x+2-\sqrt{x^2-8x+16}}=?$', ['1', r'$\sqrt2$', r'$2\sqrt3$', r'$\sqrt6$'], 4, [
+    r'For $x\ge4$: $\sqrt{x^2-8x+16}=\sqrt{(x-4)^2}=x-4$, so the expression is $\sqrt{x+2-(x-4)}=\sqrt6$.',
+    r'Or plug in $x=4$: $\sqrt{6-\sqrt0}=\sqrt6$.'])
 mk('pt-q11', 14, 2, r'In the accompanying figure, ABC is a right triangle, and DBC is an isosceles triangle ($DB=DC$).' '\n'
     'Given: AB bisects angle DBC.\n' r'Based on this information and the information in the figure, $\beta=?$',
-   [r'$45°+\alpha$', r'$90°+\frac{\alpha}{2}$', r'$180°-2\alpha$', r'$270°-3\alpha$'], 4, [
+   [r'$60°+\alpha$', r'$90°+\frac{\alpha}{2}$', r'$4\alpha-180°$', r'$270°-3\alpha$'], 4, [
     r'In triangle ABC: $\angle ABC=90°-\alpha$. AB bisects angle DBC, so $\angle DBC=180°-2\alpha$, and $\angle DCB$ is the same (base angles).',
     r'$\angle D=180°-2(180°-2\alpha)=4\alpha-180°$.',
     r'In the triangle formed by D, B and the vertex of $\beta$: $\beta=180°-(4\alpha-180°)-(90°-\alpha)=270°-3\alpha$.',
-    r'Or plug in $\alpha=50°$: $\beta=120°$, while choices 1, 2 and 3 give $95°$, $115°$ and $80°$.'], fig_triangles())
-mk('pt-q12', 14, 3, 'a is a positive integer.\n' r'$a!\cdot(a+1)!=?$',
-   [r'$(2a+1)!$', r'$(a^2+a)!$', r'$2\cdot a!\cdot(a+1)$', r'$(a!)^2\cdot(a+1)$'], 4, [
-    r'$(a+1)!=(a+1)\cdot a!$, so $a!\cdot(a+1)!=(a!)^2\cdot(a+1)$.',
-    r'Or plug in: $a=1$ gives 2 (choices 1 and 3 give 6 and 4); $a=2$ gives 12 (choice 2 gives $6!$).'])
+    r'Or plug in $\alpha=50°$: $\beta=120°$, while choices 1, 2 and 3 give $110°$, $115°$ and $20°$ (that is angle D, not $\beta$).'], fig_triangles())
+mk('pt-q12', 14, 3, 'a is a positive integer.\n' r'$a!\cdot(a+2)!=?$',
+   [r'$(2a+2)!$', r'$(a^2+2a)!$', r'$(a!)^2\cdot(a+2)$', r'$(a!)^2\cdot(a+1)(a+2)$'], 4, [
+    r'$(a+2)!=(a+2)(a+1)\cdot a!$, so $a!\cdot(a+2)!=(a!)^2\cdot(a+1)(a+2)$.',
+    r'Or plug in: $a=1$ gives 6 (choices 1 and 3 give 24 and 3); $a=2$ gives 48 (choice 2 gives $8!$).'])
 mk('pt-q13', 15, 4, 'One pen contains x cm³ of ink. To write one word, y cm³ of ink are needed. '
-    r"Hagai's supply of pens was enough for him to write $x^2y^2$ words." '\nHow many pens did Hagai have?',
-   [r'$xy^3$', r'$x^2y$', r'$\frac{1}{x^3y}$', r'$\frac{1}{x^2y}$'], 1, [
-    r'Each pen writes $\frac{x}{y}$ words, so the number of pens is $\frac{x^2y^2}{\frac{x}{y}}=xy^3$.',
-    r'Or plug in $x=2$, $y=1$: 4 words, 2 words per pen, so 2 pens. Only choice 1 gives 2.'])
-mk('pt-q14', 15, 5, 'Ella bought a dress at a discount of 20 shekels. The price of the dress after the discount was x shekels. '
+    r"Hagai's supply of pens was enough for him to write $x^3y$ words." '\nHow many pens did Hagai have?',
+   [r'$x^2y^2$', r'$x^3y$', r'$\frac{1}{x^2y^2}$', r'$\frac{1}{x^3y}$'], 1, [
+    r'Each pen writes $\frac{x}{y}$ words, so the number of pens is $\frac{x^3y}{\frac{x}{y}}=x^2y^2$.',
+    r'Or plug in $x=2$, $y=1$: 8 words, 2 words per pen, so 4 pens. Only choice 1 gives 4.'])
+mk('pt-q14', 15, 5, 'Dana bought a dress at a discount of 40 shekels. The price of the dress after the discount was x shekels. '
     'What was the discount on the dress, in percent?',
-   [r'$\frac{20\cdot100}{x+20}$', r'$\frac{20x}{100}$', r'$\frac{x+20}{100}$', r'$\frac{(x+20)\cdot100}{20}$'], 1, [
-    r'The price before the discount was $x+20$, so the discount in percent is $\frac{20}{x+20}\cdot100=\frac{20\cdot100}{x+20}$.',
-    r'Or put 100 at the whole: before 100, after $x=80$, a 20% discount. Only choice 1 gives 20.'])
+   [r'$\frac{40\cdot100}{x+40}$', r'$\frac{40x}{100}$', r'$\frac{x+40}{100}$', r'$\frac{(x+40)\cdot100}{40}$'], 1, [
+    r'The price before the discount was $x+40$, so the discount in percent is $\frac{40}{x+40}\cdot100=\frac{40\cdot100}{x+40}$.',
+    r'Or put 100 at the whole: before 100, after $x=60$, a 40% discount. Only choice 1 gives 40.'])
 mk('pt-q15', 15, 6, r'Orit and Batya decided to go on a trip and to share the expenses. Each of them undertook to pay $\frac{1}{2}$ of the total. '
-    r'In the end, Orit paid only $\frac{1}{4}$ of the amount she had undertaken to pay, and Batya paid all the rest of the expenses.' '\n'
+    r'In the end, Orit paid only $\frac{1}{3}$ of the amount she had undertaken to pay, and Batya paid all the rest of the expenses.' '\n'
     'What is the ratio between the amount of money Batya actually paid and the amount of money she undertook to pay?',
-   ['7 : 4', '5 : 2', '3 : 1', '4 : 1'], 1, [
-    r'Say each of them undertook to pay 4 (8 in all). Orit paid $\frac{1}{4}\cdot4=1$, so Batya paid 7.',
-    r'What Batya paid to what she undertook to pay: 7 : 4.'])
+   ['5 : 3', '2 : 1', '3 : 1', '5 : 1'], 1, [
+    r'Say each of them undertook to pay 3 (6 in all). Orit paid $\frac{1}{3}\cdot3=1$, so Batya paid 5.',
+    r'What Batya paid to what she undertook to pay: 5 : 3.'])
 
 # ---- Order-of-magnitude estimation (book p. 16-17) ----
-mk('pt-q16', 16, 1, 'AOB is a sector of a circle with center O and a radius of 1 cm.\n'
+mk('pt-q16', 16, 1, 'AOB is a sector of a circle with center O and a radius of 2 cm.\n'
     'Based on this information and the information in the figure, what is the area of the shaded region (in cm²)?',
-   [r'$2-\frac{\pi}{2}$', r'$\frac{1}{2}\left(\frac{\pi}{8}-1\right)$', r'$\frac{\pi}{4\sqrt2}$', r'$\frac{\pi}{8}-\frac{1}{4}$'], 4, [
-    r'The sector is $\frac{45}{360}=\frac18$ of the circle, so its area is $\frac{\pi}{8}$.',
-    r'The right triangle has legs $\frac{\sqrt2}{2}$ and $\frac{\sqrt2}{2}$, so its area is $\frac12\cdot\frac{\sqrt2}{2}\cdot\frac{\sqrt2}{2}=\frac14$.',
-    r'Shaded area: $\frac{\pi}{8}-\frac14$.',
+   [r'$4-\pi$', r'$\frac{1}{2}\left(\frac{\pi}{2}-2\right)$', r'$\frac{\pi}{\sqrt2}$', r'$\frac{\pi}{2}-1$'], 4, [
+    r'The circle has area $\pi\cdot2^2=4\pi$. The sector is $\frac{45}{360}=\frac18$ of it, so its area is $\frac{4\pi}{8}=\frac{\pi}{2}$.',
+    r'The right triangle has legs $\sqrt2$ and $\sqrt2$, so its area is $\frac12\cdot\sqrt2\cdot\sqrt2=1$.',
+    r'Shaded area: $\frac{\pi}{2}-1$.',
     r'Estimate: we need $\pi$ minus a number (choices 1 and 3 are out), and choice 2 is negative.'], fig_sector())
-mk('pt-q17', 16, 2, r'$\frac{\sqrt2}{1+\sqrt2}=?$', [r'$(\sqrt2-1)^2$', r'$2\sqrt2$', r'$\sqrt2+1$', r'$2-\sqrt2$'], 4, [
-    r'Multiply by $\frac{1-\sqrt2}{1-\sqrt2}$: $\frac{\sqrt2(1-\sqrt2)}{1-2}=\frac{\sqrt2-2}{-1}=2-\sqrt2$.',
-    r'Or estimate with $\sqrt2\approx1.4$: $\frac{1.4}{2.4}\approx0.6$, and $2-1.4=0.6$.'])
-mk('pt-q18', 16, 3, 'In the accompanying figure, each of the vertices of rectangle ABCD is the center of a circle with a radius of 1 cm. '
+mk('pt-q17', 16, 2, r'$\frac{\sqrt2}{2+\sqrt2}=?$', [r'$(\sqrt2-1)^2$', r'$2\sqrt2$', r'$\sqrt2+1$', r'$\sqrt2-1$'], 4, [
+    r'Multiply by $\frac{2-\sqrt2}{2-\sqrt2}$: $\frac{\sqrt2(2-\sqrt2)}{4-2}=\frac{2\sqrt2-2}{2}=\sqrt2-1$.',
+    r'Or estimate with $\sqrt2\approx1.4$: $\frac{1.4}{3.4}\approx0.4$, and $1.4-1=0.4$.'])
+mk('pt-q18', 16, 3, 'In the accompanying figure, each of the vertices of rectangle ABCD is the center of a circle with a radius of 2 cm. '
     'Point O is the center of a circle that is tangent to the four quarter circles and to sides AD and BC of the rectangle.\n'
-    'What is the area of rectangle ABCD (in cm²)?', [r'$4\sqrt3$', r'$4\sqrt2$', '8', '10'], 1, [
-    r'Circle O is tangent to AD and BC, so its radius is 1. It is tangent to the quarter circle at A, so $OA=1+1=2$.',
-    r'O is 1 below AD, so its horizontal distance from A is $\sqrt{2^2-1^2}=\sqrt3$, and $AD=2\sqrt3$.',
-    r'Area: $2\cdot2\sqrt3=4\sqrt3\approx6.8$.',
-    r'Estimate: the width is between 3 and 4, so the area is between 6 and 8. Only $4\sqrt3\approx6.8$ fits.'], fig_rect())
-mk('pt-q19', 17, 4, 'Bottle A contains 2.2 liters of a solution with an alcohol concentration of 20%. '
-    'Bottle B contains 3 liters of a solution with an alcohol concentration of 2%.\n'
-    'How many liters of alcohol are there in the two bottles together?', ['0.5', '0.75', '1.16', '2.6'], 1, [
-    r'20% of 2.2 is 0.44. 2% of 3 is only 0.06, so the total is a little more than 0.44.',
-    r'$0.44+0.06=0.5$.'])
+    'What is the area of rectangle ABCD (in cm²)?', [r'$16\sqrt3$', r'$16\sqrt2$', '32', '40'], 1, [
+    r'Circle O is tangent to AD and BC, so its radius is 2. It is tangent to the quarter circle at A, so $OA=2+2=4$.',
+    r'O is 2 below AD, so its horizontal distance from A is $\sqrt{4^2-2^2}=\sqrt{12}=2\sqrt3$, and $AD=4\sqrt3$.',
+    r'Area: $4\cdot4\sqrt3=16\sqrt3\approx27.2$.',
+    r'Estimate: the width is between 6 and 8, so the area is between 24 and 32. Only $16\sqrt3\approx27.2$ fits.'], fig_rect())
+mk('pt-q19', 17, 4, 'Bottle A contains 3.2 liters of a solution with an alcohol concentration of 20%. '
+    'Bottle B contains 2 liters of a solution with an alcohol concentration of 3%.\n'
+    'How many liters of alcohol are there in the two bottles together?', ['0.7', '0.95', '1.24', '3.1'], 1, [
+    r'20% of 3.2 is 0.64. 3% of 2 is only 0.06, so the total is a little more than 0.64.',
+    r'$0.64+0.06=0.7$.'])
 
 # ---- Insights (book p. 18-19) ----
-mk('pt-q20', 18, 1, r'$\frac{\frac{1}{3}+\frac{1}{4}}{\frac{2}{3}+\frac{2}{4}}=?$', [r'$\frac{1}{2}$', '2', r'$\frac{1}{12}$', r'$\frac{1}{6}$'], 1, [
+mk('pt-q20', 18, 1, r'$\frac{\frac{1}{5}+\frac{1}{6}}{\frac{2}{5}+\frac{2}{6}}=?$', [r'$\frac{1}{2}$', '2', r'$\frac{1}{30}$', r'$\frac{1}{15}$'], 1, [
     r'Each term in the denominator is twice the matching term in the numerator, so the fraction is $\frac12$.',
-    r'Check: $\frac{7}{12}\div\frac{14}{12}=\frac{7}{14}=\frac12$.'])
-mk('pt-q21', 18, 2, 'Roni has 50,000 shekels. He invests half of the money in a savings plan that yields a profit of 4% per year. '
-    'He invests the rest of the money in a mutual fund that yields a profit ranging from 2% to 8% per year.\n'
+    r'Check: $\frac{11}{30}\div\frac{22}{30}=\frac{11}{22}=\frac12$.'])
+mk('pt-q21', 18, 2, 'Roni has 60,000 shekels. He invests half of the money in a savings plan that yields a profit of 8% per year. '
+    'He invests the rest of the money in a mutual fund that yields a profit ranging from 4% to 16% per year.\n'
     "Roni's profit in the coming year will be at least ____ of the total amount he invested, and at most ____ of the total amount he invested.",
-   ['6% ; 12%', '4% ; 10%', '3% ; 6%', '6% ; 10%'], 3, [
-    r'Half of the money at 4% earns 2% of the total.',
-    r'Half of the money at 2% to 8% earns 1% to 4% of the total.',
-    r'In all: at least $2+1=3$% and at most $2+4=6$%.'])
+   ['12% ; 24%', '8% ; 20%', '6% ; 12%', '12% ; 20%'], 3, [
+    r'Half of the money at 8% earns 4% of the total.',
+    r'Half of the money at 4% to 16% earns 2% to 8% of the total.',
+    r'In all: at least $4+2=6$% and at most $4+8=12$%.'])
 mk('pt-q22', 18, 3, 'In the accompanying figure, ABCD is a square.\n'
     'Based on this information and the information in the figure, what is the difference between the perimeter of quadrilateral ABED '
-    'and the perimeter of triangle ECD (in cm)?', [r'$\frac{x}{2}$', r'$2y$', r'$\sqrt{x^2-y^2}$', r'$\sqrt{x^2-2xy+y^2}$'], 2, [
+    'and the perimeter of triangle ECD (in cm)?', [r'$\frac{x}{2}$', r'$2(x-y)$', r'$\sqrt{x^2-y^2}$', r'$\sqrt{x^2+y^2}$'], 2, [
     r'DE is in both perimeters, and $AB=DC=x$, so they cancel.',
-    r'What is left: $(BE+AD)-EC=(y+x)-(x-y)=2y$.'], fig_square())
-mk('pt-q23', 19, 4, 'In a certain season, a basketball team won 20% of its first 30 games. From the 31st game on, the team won all of its games '
+    r'What is left: $(BE+AD)-EC=(x-y)+x-y=2(x-y)$.'], fig_square())
+mk('pt-q23', 19, 4, 'In a certain season, a basketball team won 30% of its first 40 games. From the 41st game on, the team won all of its games '
     'until the end of the season, and as a result, its overall winning percentage rose to 50%.\n'
-    'How many games in total did the team win in this season?', ['12', '15', '21', '24'], 4, [
-    r'First 30 games: 6 wins and 24 losses.',
-    r'After that there are no more losses. 50% means wins = losses, so the team won 24 games in all.'])
+    'How many games in total did the team win in this season?', ['12', '16', '20', '28'], 4, [
+    r'First 40 games: 12 wins and 28 losses.',
+    r'After that there are no more losses. 50% means wins = losses, so the team won 28 games in all.'])
 
 
 # =====================================================================================================================
@@ -402,21 +402,21 @@ lesson('pt51-intro', 'Psychometric Thinking',
 # ------------------------------------------------------------------ intro examples (seg1)
 G(0, 'pt-q01', GI,
  ["A sample question — number 17, toward the end of the section. A fairly high level of difficulty.",
-  "The square root of 16,384."],
+  "The square root of 19,044."],
  [('No calculator', [
-   "The square root of 16,384. To calculate this, I'd need a calculator — and on the exam there's no calculator.",
+   "The square root of 19,044. To calculate this, I'd need a calculator — and on the exam there's no calculator.",
    "No calculator — but I do have answers.",
-   "What is the square root of 16,384? Which number, times itself, gives me the number under the root?",
+   "What is the square root of 19,044? Which number, times itself, gives me the number under the root?",
    "I have four answers, and I can check. I could multiply each answer by itself and see which one gives the number in the question.",
    "But that would be the calculating way. Here's where the shortcut we talked about comes in.",
   ]),
   ('The last digit', [
    A("Units digit appears", P('The number under the root ends in 4 → look at the units digit only')),
-   "Take 146, for example, and multiply it by itself. Only the last digits: 6 times 6 — 36. That's it.",
+   "Take 156, for example, and multiply it by itself. Only the last digits: 6 times 6 — 36. That's it.",
    D('Write: 6 × 6 = 36 → ends in 6'),
    "My units digit is 6. It isn't 4 — it doesn't fit, and I don't need to keep calculating. Cross out choice two.",
    D('Cross out choice 2'),
-   "The same way — take 184, and look only at the units digit. 4 times 4 is 16. Again a units digit of 6.",
+   "The same way — take 194, and look only at the units digit. 4 times 4 is 16. Again a units digit of 6.",
    "It doesn't fit either. Cross out choice three.",
    D('Cross out choice 3'),
    "8 times 8 is 64 — the 4 is fine. 2 times 2 is 4 — that fits too.",
@@ -425,10 +425,10 @@ G(0, 'pt-q01', GI,
   ('Estimate the size', [
    "Now I could calculate: take one of them and multiply. If it works — fine. If not — the one that's left is correct.",
    "But here there's another shortcut. How much is 200 times 200?",
-   A("200 × 200 appears", P(r'$200\cdot200=40{,}000$ — far more than 16,384')),
-   "2 times 2 is 4 — so 200 times 200 is 40,000. That's much too much. 202 will be even more.",
+   A("200 × 200 appears", P(r'$200\cdot200=40{,}000$ — far more than 19,044')),
+   "2 times 2 is 4 — so 200 times 200 is 40,000. That's much too much. 212 will be even more.",
    D('Cross out choice 4'),
-   "So I can eliminate this answer too — and the one that's left, 128, is correct.",
+   "So I can eliminate this answer too — and the one that's left, 138, is correct.",
    D('Circle choice 1'),
    "Choice one.",
    "Psychometric thinking led me to another shortcut — order-of-magnitude estimation. It helped me solve this without calculating at all.",
@@ -448,22 +448,22 @@ G(0, 'pt-q01', GI,
 G(1, 'pt-q02', GI,
  ["A sample question — number 15, medium-plus difficulty.", "Two baskets of eggs."],
  [('Read the question', [
-   "Basket A has 400 eggs. Basket B has 500 eggs.",
-   "How many eggs must be moved from basket A to basket B, so that basket A will have seven-elevenths of the eggs in basket B?",
+   "Basket A has 500 eggs. Basket B has 600 eggs.",
+   "How many eggs must be moved from basket A to basket B, so that basket A will have nine-thirteenths of the eggs in basket B?",
    "Let's start by putting the data in order — we'll draw a table: basket A and basket B, before and after.",
-   A("Table appears", P('Before: A = 400, B = 500 · Move x eggs → A = 400 − x, B = 500 + x')),
-   "Right now, before, basket A has 400 eggs and basket B has 500.",
+   A("Table appears", P('Before: A = 500, B = 600 · Move x eggs → A = 500 − x, B = 600 + x')),
+   "Right now, before, basket A has 500 eggs and basket B has 600.",
    "They ask how many eggs to move. I don't know — so I'll call it x.",
-   "I move x eggs, so basket A is left with 400 minus x — I moved x eggs to basket B. And basket B has 500 plus the x eggs I moved.",
+   "I move x eggs, so basket A is left with 500 minus x — I moved x eggs to basket B. And basket B has 600 plus the x eggs I moved.",
   ]),
   ('Build an equation', [
-   "Now, what do they ask for? Basket A should have seven-elevenths of the eggs in basket B.",
+   "Now, what do they ask for? Basket A should have nine-thirteenths of the eggs in basket B.",
    "That's basket A after I moved eggs out of it, and basket B after it received them.",
-   A("Equation appears", P(r'$400-x=\frac{7}{11}(500+x)$')),
-   "Let's solve the equation. Multiply by 11: 11 times 400 minus x equals 7 times 500 plus x.",
-   A("Open brackets appears", P(r'$4400-11x=3500+7x \;\Rightarrow\; 900=18x$')),
-   "Open the brackets: 4,400 minus 11x equals 3,500 plus 7x. Move the terms across: 900 equals 18x.",
-   "Instead of dividing by 18, a middle step: divide by 9.",
+   A("Equation appears", P(r'$500-x=\frac{9}{13}(600+x)$')),
+   "Let's solve the equation. Multiply by 13: 13 times 500 minus x equals 9 times 600 plus x.",
+   A("Open brackets appears", P(r'$6500-13x=5400+9x \;\Rightarrow\; 1100=22x$')),
+   "Open the brackets: 6,500 minus 13x equals 5,400 plus 9x. Move the terms across: 1,100 equals 22x.",
+   "Instead of dividing by 22, a middle step: divide by 11.",
    A("x = 50 appears", P(r'$100=2x \;\Rightarrow\; x=50$')),
    "100 equals 2x. Now it's clearer: x equals 50. Choice two is correct — and we solved it by building an equation.",
   ]),
@@ -471,7 +471,7 @@ G(1, 'pt-q02', GI,
    "Now another way — psychometric thinking. One of our super-methods is plugging in the answers.",
    A("One must be right appears", P('Plugging in the answers: one of the four choices must be the answer')),
    "What does that mean? They ask how many eggs to move — and they already give me four options. One of them must be the answer. So let's check.",
-   "If we move 25: 375 are left here, and here 525. Now I need to check whether that ratio equals seven-elevenths.",
+   "If we move 25: 475 are left here, and here 625. Now I need to check whether that ratio equals nine-thirteenths.",
    "I could reduce — divide by 25, or by 5, and slowly get there. But that can be a fairly long calculation.",
    "But I don't have to start from the first answer. I don't have to check the answers in order.",
    A("Start convenient appears", P('A very important rule: start from the most convenient answer — usually a round one')),
@@ -479,9 +479,9 @@ G(1, 'pt-q02', GI,
   ]),
   ('Start with 50', [
    "The most convenient answer here is choice two, 50. Let's check it.",
-   "400 and 500. If I move 50 from basket A to basket B, 350 are left here, and here there are 550.",
-   A("Check appears", P(r'$\frac{350}{550}=\frac{35}{55}=\frac{7}{11}$ ✓')),
-   "Drop the zero. 35 and 55 both divide by 5 — we get 7 and 11. Exactly the ratio they asked for in the question.",
+   "500 and 600. If I move 50 from basket A to basket B, 450 are left here, and here there are 650.",
+   A("Check appears", P(r'$\frac{450}{650}=\frac{45}{65}=\frac{9}{13}$ ✓')),
+   "Drop the zero. 45 and 65 both divide by 5 — we get 9 and 13. Exactly the ratio they asked for in the question.",
    D('Circle choice 2'),
    "Choice two.",
    "We saw we can solve it algebraically, by building an equation — or we can plug in answers, faster, with a much easier calculation.",
@@ -497,14 +497,14 @@ G(2, 'pt-q03', GI,
    "We're given an algebraic expression, and they ask what it equals. What does 'what it equals' mean?",
    "It means that one of the answers has an expression equivalent to this one. How do we find it?",
    "We take this expression and simplify it, reduce it, until we reach one of the expressions in the answers.",
-   "Here's our expression, and we see a short multiplication formula — let's open it. a squared plus b squared plus 2ab.",
-   A("Open appears", P(r'$\frac{a^2+b^2+a^2+2ab+b^2}{2ab}-1=\frac{2a^2+2b^2+2ab}{2ab}-1$')),
-   "Collect like terms: 2a squared, 2b squared, and the 2ab.",
+   "Here's our expression, and we see a short multiplication formula — let's open it. a squared minus 2ab plus b squared.",
+   A("Open appears", P(r'$\frac{a^2+b^2+a^2-2ab+b^2}{2ab}+1=\frac{2a^2+2b^2-2ab}{2ab}+1$')),
+   "Collect like terms: 2a squared, 2b squared, and the minus 2ab.",
    "Many students take out a common factor of 2 here, reduce with the denominator — and honestly get a bit tangled.",
    "We'll do a small algebraic manipulation: split this fraction into three fractions.",
-   A("Three fractions appears", P(r'$\frac{2a^2}{2ab}+\frac{2b^2}{2ab}+\frac{2ab}{2ab}-1=\frac{a}{b}+\frac{b}{a}$')),
-   "If you add these three fractions back, you get exactly what we had: the denominator is the same, so we just add the numerators.",
-   "Why did we do it? Because the right fraction, 2ab over 2ab, is 1. Now we have plus 1 and minus 1 — they cancel each other.",
+   A("Three fractions appears", P(r'$\frac{2a^2}{2ab}+\frac{2b^2}{2ab}-\frac{2ab}{2ab}+1=\frac{a}{b}+\frac{b}{a}$')),
+   "If you put these three fractions back together, you get exactly what we had: the denominator is the same, so we just combine the numerators.",
+   "Why did we do it? Because the right fraction, 2ab over 2ab, is 1. Now we have minus 1 and plus 1 — they cancel each other.",
    "Reduce the other two: a over b, and b over a. We got choice one. That was the algebraic way.",
   ]),
   ('Plug in numbers', [
@@ -515,8 +515,8 @@ G(2, 'pt-q03', GI,
    "If I plug a pair of values into this expression, and the same pair into the equivalent expression — I must get the same result.",
    "Let's choose convenient numbers. For a — 1. And for b? I could take 2, 3, any number. But I can also take 1.",
    "It's the most convenient — the smallest number, the easiest to calculate with. And there's no restriction: nobody said they must be different.",
-   A("a = b = 1 appears", P(r'$a=b=1$: $\frac{1+1+2^2}{2}-1=3-1=2$')),
-   "1 squared is 1, plus 1, plus 2 squared — 4. Over 2. We have 6 over 2 — 3. Minus 1 — 2. So the original expression gives 2.",
+   A("a = b = 1 appears", P(r'$a=b=1$: $\frac{1+1+0^2}{2}+1=1+1=2$')),
+   "1 squared is 1, plus 1, plus 0 squared — 0. Over 2. We have 2 over 2 — 1. Plus 1 — 2. So the original expression gives 2.",
   ]),
   ('Eliminate three', [
    "Now I go over the answers, and there too I plug in a and b equal to 1.",
@@ -538,48 +538,48 @@ G(2, 'pt-q03', GI,
 G(3, 'pt-q04', GI,
  ["A sample question — again number 20, the last in the section. High difficulty.", "A cylinder inside a cube."],
  [('The formula way', [
-   "A cylinder is inscribed in a cube with edge a — see the figure. Here's the cube, the cylinder is inside it, and the edge of the cube is a.",
+   "A cylinder is inscribed in a cube with edge 3a — see the figure. Here's the cube, the cylinder is inside it, and the edge of the cube is 3a.",
    "What do they ask? The volume of the cylinder.",
    "For that we need the formula for the volume of a cylinder. Most students know it by heart — and if not, it's on the formula sheet.",
    A("Formula appears", R(r'$V=\pi r^2\cdot h$')),
    "Pi r squared, times h. Pi r squared is the area of the base of the cylinder, and h is its height.",
-   "We need the radius of the base. The edge of the cube is a — that's given.",
+   "We need the radius of the base. The edge of the cube is 3a — that's given.",
    "If we slide it inward, we can see that the diameter of the base equals the edge of the cube.",
-   D('Mark the diameter of the base = a'),
-   A("r and h appears", R(r'$d=a \Rightarrow r=\frac{a}{2}$, $h=a$')),
-   "The diameter equals a — so the radius is exactly half of a. A diameter is 2 radii, so our radius is a over 2. And the height? The height is a.",
+   D('Mark the diameter of the base = 3a'),
+   A("r and h appears", R(r'$d=3a \Rightarrow r=\frac{3a}{2}$, $h=3a$')),
+   "The diameter equals 3a — so the radius is exactly half of 3a. A diameter is 2 radii, so our radius is 3a over 2. And the height? The height is 3a.",
   ]),
   ('The bracket trap', [
-   A("Volume appears", R(r'$\pi\left(\frac{a}{2}\right)^2\cdot a=\frac{\pi a^3}{4}$')),
+   A("Volume appears", R(r'$\pi\left(\frac{3a}{2}\right)^2\cdot3a=\frac{27\pi a^3}{4}$')),
    "Plug it into the formula: squared, times h.",
-   "Careful — many students write a over 2 here without brackets. They forget the brackets.",
-   "What happens is that they square the a, but not the 2. Then they get pi a cubed over 2 — which appears in choice one. They mark it, and they're wrong.",
+   "Careful — many students write 3a over 2 here without brackets. They forget the brackets.",
+   "What happens is that they square the 3a, but not the 2. Then they get 27 pi a cubed over 2 — which appears in choice one. They mark it, and they're wrong.",
    A("Brackets appears", R('A fraction for the radius → brackets → square the top and the bottom', size=28)),
    "If your radius is a fraction, put it in brackets — and square both the numerator and the denominator.",
-   "Pi times a squared, over 2 squared — that's 4 — times a. Pi a cubed over 4. We got choice four. That was the algebraic way.",
+   "Pi times 9a squared, over 2 squared — that's 4 — times 3a. 27 pi a cubed over 4. We got choice four. That was the algebraic way.",
   ]),
   ('Estimate', [
    "The psychometric way — our third super-method: order-of-magnitude estimation.",
    "If you remember, we used it in the question with the root: 200 squared was 40,000. How do we estimate in geometry?",
-   A("Cube appears", R(r'Cube: $a^3$ → the cylinder is inside → a little less than $a^3$', size=28)),
-   "The volume of a cube is a cubed — again, something almost every student remembers. At most — the formula sheet.",
+   A("Cube appears", R(r'Cube: $(3a)^3=27a^3$ → the cylinder is inside → a little less than $27a^3$', size=28)),
+   "The volume of a cube is the edge cubed — 3a cubed is 27 a cubed. Again, something almost every student remembers. At most — the formula sheet.",
    "And the cylinder? It's inside the cube, so its volume will be a bit less. How much less? We don't know — right now we're only estimating.",
    "All the answers have a cubed, with some coefficient in front. And there's a π — it will be much easier to plug in a number.",
    A("π ≈ 3 appears", R(r'$\pi\approx3$')),
    "π is about 3.14 — but for estimating, π equals 3. That's enough.",
-   "Choice one: 3 over 2 — 1.5. Could the cylinder be 1.5 times the cube? More than the cube? Not logical. Cross it out.",
+   "Choice one: 27 times 3, over 2 — about 40 a cubed. That's 1.5 times the cube. Could the cylinder be more than the cube? Not logical. Cross it out.",
    D('Cross out choice 1'),
-   "Choice two: 3 times a cubed — three times the volume of the cube. It can't be. Cross it out.",
+   "Choice two: 27 times 3 — 81 a cubed. Three times the volume of the cube. It can't be. Cross it out.",
    D('Cross out choice 2'),
-   "Choice three: the 3 cancels with the denominator — four times the cube. Also impossible.",
+   "Choice three: 36 times 3 — 108 a cubed. Four times the cube. Also impossible.",
    D('Cross out choice 3'),
    "We eliminated three answers that make no sense, so we can mark the fourth.",
    D('Circle choice 4'),
    "Choice four.",
   ]),
   ('Why these answers?', [
-   A("¾ appears", R(r'Choice 4: $\frac{3}{4}a^3$ — about $\frac34$ of the cube', size=28)),
-   "By the way — plug in 3 there and you get three-quarters. That makes sense: the cylinder is about three-quarters of the cube.",
+   A("¾ appears", R(r'Choice 4: $\frac{81}{4}a^3\approx20a^3$ — about $\frac34$ of $27a^3$', size=28)),
+   "By the way — plug in 3 there and you get 81 over 4, about 20 a cubed. That's about three-quarters of 27. That makes sense: the cylinder is about three-quarters of the cube.",
    "Notice: they didn't give us three-quarters, two-thirds, four-fifths. They gave three answers that are each more than the cube — not possible at all. Why?",
    A("Advantage appears", R('The answers are built to help whoever thinks', size=28)),
    "That's the exam's way of giving an advantage to whoever thinks.",
@@ -588,26 +588,26 @@ G(3, 'pt-q04', GI,
   ])], fig=True),
 
 G(4, 'pt-q05', GI,
- ["A sample question — again number 20, the last in the section. High difficulty — and this one is especially hard.", "Two dice."],
+ ["A sample question — again number 20, the last in the section. High difficulty — and this one is especially hard.", "Two eight-sided dice."],
  [('A table of cases', [
-   "Two fair dice are rolled — a blue one and a red one. 'Fair dice' is the usual exam wording for regular dice.",
+   "Two fair dice are rolled — a blue one and a red one. Each die has eight faces, numbered 1 to 8. 'Fair' is the usual exam wording: every face is equally likely.",
    "What's the probability that the number on the blue die will be greater than the number on the red die?",
    "How do we start calculating this? The blue number I need depends on what I got on the red.",
-   "If I get 1 on the red, there are many numbers I can get on the blue. But if I get 6 on the red — no blue number is good for me.",
+   "If I get 1 on the red, there are many numbers I can get on the blue. But if I get 8 on the red — no blue number is good for me.",
    "How do I put order in all of this? We'll draw a table and list the options.",
-   A("Red 1 appears", P(r'Red 1 → blue 2, 3, 4, 5 or 6: $\frac16\cdot\frac56=\frac{5}{36}$')),
-   "If we get 1 on the red, the blue can be 2, 3, 4, 5 or 6. Every one of those is good.",
-   "The probability of 1 on the red is one-sixth. The probability of one of those on the blue — five-sixths.",
-   "And the probability that both happen — 1 on the red and one of those on the blue — is the product: five thirty-sixths.",
-   A("Other cases appears", P(r'Red 2 → $\frac{4}{36}$ · red 3 → $\frac{3}{36}$ · red 4 → $\frac{2}{36}$ · red 5 → $\frac{1}{36}$ · red 6 → 0')),
-   "That's one case. We might get 2 on the red — then the blue must be 3, 4, 5 or 6. One-sixth times four-sixths: four thirty-sixths.",
-   "And so on: red 3 — three thirty-sixths. Red 4 — two. Red 5 — one. And the last option, 6 on the red — there's nothing for the blue. Zero.",
+   A("Red 1 appears", P(r'Red 1 → blue 2, 3, …, 8: $\frac18\cdot\frac78=\frac{7}{64}$')),
+   "If we get 1 on the red, the blue can be 2, 3, 4, 5, 6, 7 or 8. Every one of those is good.",
+   "The probability of 1 on the red is one-eighth. The probability of one of those on the blue — seven-eighths.",
+   "And the probability that both happen — 1 on the red and one of those on the blue — is the product: seven sixty-fourths.",
+   A("Other cases appears", P(r'Red 2 → $\frac{6}{64}$ · red 3 → $\frac{5}{64}$ · … · red 7 → $\frac{1}{64}$ · red 8 → 0')),
+   "That's one case. We might get 2 on the red — then the blue must be 3 up to 8, six numbers. One-eighth times six-eighths: six sixty-fourths.",
+   "And so on: red 3 — five sixty-fourths. Red 4 — four. Red 5 — three. Red 6 — two. Red 7 — one. And the last option, 8 on the red — there's nothing for the blue. Zero.",
   ]),
   ('Add the cases', [
    "Between these cases the link is 'or': this case happens, or this one, or this one.",
-   A("Add appears", P(r'"Or" → add: $\frac{5+4+3+2+1}{36}=\frac{15}{36}=\frac{5}{12}$')),
+   A("Add appears", P(r'"Or" → add: $\frac{7+6+5+4+3+2+1}{64}=\frac{28}{64}=\frac{7}{16}$')),
    "To find the total probability we add — a link of 'or' means we add probabilities.",
-   "Adding all of them gives fifteen thirty-sixths. Reduce by 3 — five-twelfths.",
+   "Adding all of them gives twenty-eight sixty-fourths. Reduce by 4 — seven-sixteenths.",
    D('Circle choice 4'),
    "Choice four.",
    "That was the mathematical way. Long — we listed all the options. And not trivial: most students don't even get there.",
@@ -618,13 +618,13 @@ G(4, 'pt-q05', GI,
    "What's an insight? Besides the questions these methods help us solve quickly and easily, here and there there's a question with some insight unique to it.",
    "Not a method we can learn — something specific to this question. In another question it'll be something completely different.",
    "So it's a bit harder to learn, except by practicing and opening your mind. But because it's on the exam — we'll learn it. Don't worry: these are rarer questions.",
-   A("36 − 6 appears", P('36 outcomes − 6 doubles = 30 → split equally: 15 and 15')),
-   "Two dice: 36 options in all. What's in them? Either the red is higher, or the blue is higher, or it's a tie — a double, the same number.",
-   "Let's subtract the doubles. Two dice have 6 doubles: 1-1, 2-2, 3-3, 4-4, 5-5 and 6-6. Subtract them — 30 options are left.",
-   "Those 30 must split equally between the red and the blue. The blue die isn't better or more special than the red — they're just different colors.",
-   "So it's symmetric: in 15 of them the red gets the higher number, and in 15 the blue.",
-   A("15/36 appears", P(r'$\frac{15}{36}=\frac{5}{12}$')),
-   "We found that in 15 out of 36 options the blue gets a higher number. The probability is fifteen thirty-sixths — and we saw that after reducing, it's five-twelfths.",
+   A("64 − 8 appears", P('64 outcomes − 8 doubles = 56 → split equally: 28 and 28')),
+   "Two dice: 8 times 8 — 64 options in all. What's in them? Either the red is higher, or the blue is higher, or it's a tie — a double, the same number.",
+   "Let's subtract the doubles. Two dice have 8 doubles: 1-1, 2-2, and so on up to 8-8. Subtract them — 56 options are left.",
+   "Those 56 must split equally between the red and the blue. The blue die isn't better or more special than the red — they're just different colors.",
+   "So it's symmetric: in 28 of them the red gets the higher number, and in 28 the blue.",
+   A("28/64 appears", P(r'$\frac{28}{64}=\frac{7}{16}$')),
+   "We found that in 28 out of 64 options the blue gets a higher number. The probability is twenty-eight sixty-fourths — and we saw that after reducing, it's seven-sixteenths.",
    "That was the insight specific to this question.",
   ])]),
 
@@ -713,7 +713,7 @@ lesson('pt51-plug-answers', 'Plugging In the Answers',
 G(0, 'pt-q06', GA,
  ["A sample question — number 2, the beginning of the section. An easy question.", "x is an integer — and two inequalities."],
  [('Why is it here?', [
-   "x is an integer. Given: x squared is less than 16, and 2x plus 4 is less than 0.",
+   "x is an integer. Given: x squared is less than 25, and 3x plus 6 is less than 0.",
    "Wait — number 2 is supposed to be an easy question. And we have two inequalities here, one of them a quadratic inequality, where I need to deal with the negative side and the positive side.",
    "This really isn't a question that fits number 2. It doesn't fit the beginning of the section. So why is it here?",
    "Because on the exam we also have answers — and we remember that the answers help us.",
@@ -721,15 +721,15 @@ G(0, 'pt-q06', GA,
   ]),
   ('Plug in the answers', [
    "They ask what x equals. Let's plug in the first answer: suppose x equals 1.",
-   A("x = 1 appears", P(r'$x=1$: $1^2<16$ ✓ · $2\cdot1+4=6<0$ ✗')),
-   "1 squared less than 16? Yes. 2 times 1 is 2, plus 4 — 6. Is that less than 0? No. So we can eliminate choice one.",
+   A("x = 1 appears", P(r'$x=1$: $1^2<25$ ✓ · $3\cdot1+6=9<0$ ✗')),
+   "1 squared less than 25? Yes. 3 times 1 is 3, plus 6 — 9. Is that less than 0? No. So we can eliminate choice one.",
    D('Cross out choice 1'),
-   "Choice two — 2. But wait: we already plugged in 1, a positive number, and here we got a positive number.",
-   "Plug a positive number in here, and you can't get a negative one. So 2 also gives a positive number — it doesn't fit. We can eliminate choice two as well.",
+   "Choice two — 3. But wait: we already plugged in 1, a positive number, and here we got a positive number.",
+   "Plug a positive number in here, and you can't get a negative one. So 3 also gives a positive number — it doesn't fit. We can eliminate choice two as well.",
    D('Cross out choice 2'),
-   A("x = −3 appears", P(r'$x=-3$: $(-3)^2=9<16$ ✓ · $2(-3)+4=-2<0$ ✓')),
-   "Let's continue — plug in choice three, minus 3. Minus 3 squared is 9. Less than 16? Yes.",
-   "2 times minus 3 is minus 6. Plus 4 — minus 2. Less than 0? Yes. This answer fits.",
+   A("x = −4 appears", P(r'$x=-4$: $(-4)^2=16<25$ ✓ · $3(-4)+6=-6<0$ ✓')),
+   "Let's continue — plug in choice three, minus 4. Minus 4 squared is 16. Less than 25? Yes.",
+   "3 times minus 4 is minus 12. Plus 6 — minus 6. Less than 0? Yes. This answer fits.",
    "Can I mark it? In plugging in answers, the moment I find a correct answer I can mark it. I don't need to keep checking and eliminate three answers.",
    D('Circle choice 3'),
    "So yes — choice three.",
@@ -746,21 +746,21 @@ G(0, 'pt-q06', GA,
 G(1, 'pt-q07', GA,
  ["A sample question — number 13, a bit after the middle of the section. Medium difficulty.", "Nadav and Amit have cards."],
  [('Estimate first', [
-   "Nadav and Amit have a total of 105 cards. Nadav has more cards than Amit.",
-   "The difference between the numbers of cards the two of them have equals a quarter of the number of cards Nadav has. How many cards does Nadav have?",
-   "Now, I could build an equation. Nadav — n, Amit — 105 minus n, and then build the equation from the data: a quarter of Nadav's cards, and so on.",
+   "Nadav and Amit have a total of 90 cards. Nadav has more cards than Amit.",
+   "The difference between the numbers of cards the two of them have equals a fifth of the number of cards Nadav has. How many cards does Nadav have?",
+   "Now, I could build an equation. Nadav — n, Amit — 90 minus n, and then build the equation from the data: a fifth of Nadav's cards, and so on.",
    "But why? On the exam we have answers. Let's start with an order-of-magnitude estimate.",
-   A("More than half appears", P('Nadav has more than Amit → more than half of 105 → not 45, not 47')),
-   "We're told that Nadav has more cards than Amit. So I can already eliminate 45 and 47 — that's less than half, and Nadav must have more than half.",
+   A("More than half appears", P('Nadav has more than Amit → more than half of 90 → not 40, not 43')),
+   "We're told that Nadav has more cards than Amit. So I can already eliminate 40 and 43 — that's less than half, and Nadav must have more than half.",
    D('Cross out choice 1'),
    D('Cross out choice 2'),
    "We eliminated two answers.",
   ]),
   ('Plug in the round one', [
-   "Two answers are left. Which should I plug in? The more convenient, rounder answer — in this case, 60.",
-   A("60 appears", P(r'Nadav 60 → Amit 45 → difference 15 = $\frac14\cdot60$ ✓')),
-   "Let's check. Nadav has 60 cards, together they have 105 — so Amit has 45 cards. What's the difference between them? 15.",
-   "Is 15 a quarter of 60? Yes. We found the correct answer.",
+   "Two answers are left. Which should I plug in? The more convenient, rounder answer — in this case, 50.",
+   A("50 appears", P(r'Nadav 50 → Amit 40 → difference 10 = $\frac15\cdot50$ ✓')),
+   "Let's check. Nadav has 50 cards, together they have 90 — so Amit has 40 cards. What's the difference between them? 10.",
+   "Is 10 a fifth of 50? Yes. We found the correct answer.",
    D('Circle choice 4'),
    "Choice four.",
    A("Round first appears", P('Starting from convenient answers is very important — the round ones are often correct')),
@@ -772,27 +772,27 @@ G(1, 'pt-q07', GA,
 G(2, 'pt-q08', GA,
  ["A sample question — number 18, toward the end of the section. A relatively hard question.", "Kobi buys pants and a shirt on sale."],
  [('Round answers first', [
-   "Kobi bought pants at a 50% discount and a shirt at a 10% discount, and paid 300 shekels in total instead of 500. What was the price of the shirt before the discount?",
+   "Kobi bought pants at a 50% discount and a shirt at a 10% discount, and paid 280 shekels in total instead of 500. What was the price of the shirt before the discount?",
    "If we try to solve this mathematically, we'll build two equations with two unknowns and calculate. Few students really manage to solve it that way.",
    "But we have answers — answers that help us. What we need is an answer that, if we plug it in, satisfies the data of the question.",
    "So we start plugging in — from the convenient answers. Let's start with choice one.",
-   A("100 appears", P('Shirt 100, pants 400 → 200 + 90 = 290 ✗')),
-   "If the shirt cost 100 shekels, the pants cost 400 — because he was supposed to pay 500. Those are the prices before the discount.",
-   "On the pants he got 50% off — that's 200. On the shirt, 10% off — that's 90. Together, 290. It doesn't fit — we didn't reach 300.",
+   A("50 appears", P('Shirt 50, pants 450 → 225 + 45 = 270 ✗')),
+   "If the shirt cost 50 shekels, the pants cost 450 — because he was supposed to pay 500. Those are the prices before the discount.",
+   "On the pants he got 50% off — that's 225. On the shirt, 10% off — that's 45. Together, 270. It doesn't fit — we didn't reach 280.",
    D('Cross out choice 1'),
    "I'm a little disappointed that I plugged in a round answer and it didn't work. But there's nothing to do — we continue.",
-   A("200 appears", P('Shirt 200, pants 300 → 150 + 180 = 330 ✗')),
-   "The next round answer. If he was supposed to pay 200 for the shirt, he was supposed to pay 300 for the pants, to reach 500.",
-   "50% off — 150. 10% off — 180. Together, 330. It doesn't fit either. We can eliminate this one too.",
+   A("150 appears", P('Shirt 150, pants 350 → 175 + 135 = 310 ✗')),
+   "The next round answer. If he was supposed to pay 150 for the shirt, he was supposed to pay 350 for the pants, to reach 500.",
+   "50% off — 175. 10% off — 135. Together, 310. It doesn't fit either. We can eliminate this one too.",
    D('Cross out choice 4'),
   ]),
   ('When round fails', [
    "What's happening here? We said that usually the correct answer will be among the round, convenient answers — and here's a case where it isn't.",
    "Right: usually doesn't mean always. This question is here exactly so we learn what to do when it doesn't work out.",
    "So what do we do? We just continue as usual.",
-   A("180 appears", P('Shirt 180, pants 320 → 160 + 162 = 322 ✗')),
-   "We eliminated two answers, and two are left. We choose the rounder one and check it. Which is rounder? 180.",
-   "If the shirt's price was 180 before the discount, the pants were 320. 50% off — 160. 10% off — 162. That won't come to 300 — we can eliminate it.",
+   A("140 appears", P('Shirt 140, pants 360 → 180 + 126 = 306 ✗')),
+   "We eliminated two answers, and two are left. We choose the rounder one and check it. Which is rounder? 140.",
+   "If the shirt's price was 140 before the discount, the pants were 360. 50% off — 180. 10% off — 126. That won't come to 280 — we can eliminate it.",
    D('Cross out choice 3'),
    "OK — we're left with choice two. What now? Can I mark it? Yes, I can.",
    "When we plug in answers and eliminate three, we know they don't fit — the answer that's left must be correct. Eliminated three, mark the fourth without checking.",
@@ -801,11 +801,11 @@ G(2, 'pt-q08', GA,
   ]),
   ('A shortcut by estimate', [
    "Let's go back to where we had eliminated the two round answers. We could already have shortened the way there, with estimation.",
-   A("290 vs 330 appears", P('100 → 290 · 200 → 330 · we need 300: much closer to 290')),
-   "Here we got 290 when we plugged in 100, and when we plugged in 200 we got 330. We were supposed to reach 300.",
-   "Look: 300 is much closer to 290 than to 330.",
-   A("125 appears", P('125 is close to 100, 180 is close to 200 → the answer is 125')),
-   "And of the two answers left, 125 is close to 100, and 180 is close to 200. So the answer will be 125.",
+   A("270 vs 310 appears", P('50 → 270 · 150 → 310 · we need 280: much closer to 270')),
+   "Here we got 270 when we plugged in 50, and when we plugged in 150 we got 310. We were supposed to reach 280.",
+   "Look: 280 is much closer to 270 than to 310.",
+   A("75 appears", P('75 is close to 50, 140 is close to 150 → the answer is 75')),
+   "And of the two answers left, 75 is close to 50, and 140 is close to 150. So the answer will be 75.",
    "That's another way of estimating. Whoever saw it earlier — nice. Whoever didn't — no big deal: we plugged in another answer and eliminated it.",
    "Let's see another example.",
   ])]),
@@ -813,18 +813,18 @@ G(2, 'pt-q08', GA,
 G(3, 'pt-q09', GA,
  ["A sample question — number 18, toward the end of the section. Quite a hard question.", "Ron, Miri and their stamps."],
  [('No round answer', [
-   "If Ron gives Miri 3 stamps, the number of stamps she has will be 2 times the number he will have.",
+   "If Ron gives Miri 4 stamps, the number of stamps she has will be 2 times the number he will have.",
    "If it's known that right now they both have the same number of stamps — how many stamps does Miri have now?",
    "We can work mathematically: build an equation, set Ron, move stamps to Miri, and so on.",
    "But let's work the way we did this whole lesson — plug in the answers. We have answers here; let's use them.",
    "When I look at these answers, there's no round or convenient answer. So I'll simply start from the first answer.",
   ]),
-  ('Plug in 9', [
-   "They ask how many stamps Miri has now. If she has 9 stamps now — how many does Ron have?",
-   "We know that right now they both have the same number of stamps — so Ron has 9 stamps.",
-   A("9 appears", P(r'Miri 9, Ron 9 → Ron gives 3 → Miri 12, Ron 6 → $12=2\cdot6$ ✓')),
-   "If Ron gives Miri 3 stamps — she'll have 12, and he'll be left with only 6.",
-   "Will her number be 2 times his? 12 is twice 6. That's it — that's the correct answer.",
+  ('Plug in 12', [
+   "They ask how many stamps Miri has now. If she has 12 stamps now — how many does Ron have?",
+   "We know that right now they both have the same number of stamps — so Ron has 12 stamps.",
+   A("12 appears", P(r'Miri 12, Ron 12 → Ron gives 4 → Miri 16, Ron 8 → $16=2\cdot8$ ✓')),
+   "If Ron gives Miri 4 stamps — she'll have 16, and he'll be left with only 8.",
+   "Will her number be 2 times his? 16 is twice 8. That's it — that's the correct answer.",
    D('Circle choice 1'),
    "Choice one.",
    "Look — number 18, the end of the section, supposed to be a very hard question. The moment we plugged in answers, it was really, really simple. Amazing.",
@@ -910,7 +910,7 @@ lesson('pt51-plug-numbers', 'Plugging In Numbers',
   "And if along the way we see that it isn't convenient — we can change the plug-in. We chose it.",
  ]),
  dict(mode='concept', active=9, title='Keep the conditions', script=[
-  A("Conditions appears", T('Never break a condition of the question (x ≥ 3, a positive integer, …)', size=38)),
+  A("Conditions appears", T('Never break a condition of the question (x ≥ 4, a positive integer, …)', size=38)),
   "Whatever we plug in must not break the conditions written in the question.",
   A("Figure appears", T('In a figure: choose a value that looks logical in the drawing', size=40)),
   "And in a figure, we plug in a number that looks logical from the drawing — not something that contradicts it.",
@@ -926,19 +926,19 @@ lesson('pt51-plug-numbers', 'Plugging In Numbers',
 G(0, 'pt-q10', GN,
  ["A sample question — number 17. Relatively high difficulty.", "An algebraic expression — what does it equal?"],
  [('The long way', [
-   "Given: x is greater than or equal to 3. And an algebraic expression — they ask what it equals.",
+   "Given: x is greater than or equal to 4. And an algebraic expression — they ask what it equals.",
    "If we tried to solve it the trivial way, the school way, we'd calculate it algebraically.",
    "We'd need to spot the short multiplication formula here, put it in brackets, take the root and calculate, until we got to the result.",
    "But that takes time. On the exam we have a shortcut. Let's see.",
   ]),
-  ('Plug in x = 3', [
+  ('Plug in x = 4', [
    "We have an expression with the unknown x. We don't know what x equals — x can be any number, as long as it meets the conditions of the question.",
    "And we have four numerical answers. That means whatever value I plug in for x, I'll always get the same answer.",
    A("Case appears", P('An expression with an unknown + numerical answers → plug in a number')),
    "If so, let's check a particular case: choose a certain number, plug it in for x, calculate the value of the expression, and see what we get.",
-   "What do we plug in? x can be 3, or more. Let's plug in x equals 3 — the smallest, most convenient number.",
-   A("x = 3 appears", P(r'$x=3$: $\sqrt{3+4-\sqrt{9-18+9}}=\sqrt{7-0}=\sqrt7$')),
-   "3, 3, 3. 9 minus 18, plus 9 — that gives us 0. So inside the root, 0 — and we're left with root 7.",
+   "What do we plug in? x can be 4, or more. Let's plug in x equals 4 — the smallest, most convenient number.",
+   A("x = 4 appears", P(r'$x=4$: $\sqrt{4+2-\sqrt{16-32+16}}=\sqrt{6-0}=\sqrt6$')),
+   "4, 4, 4. 16 minus 32, plus 16 — that gives us 0. So inside the root, 0 — and we're left with root 6.",
    D('Circle choice 4'),
    "Choice four.",
    "Look — number 17, the end of the section. We solved it by plugging in a number, and it took 10 seconds.",
@@ -981,11 +981,11 @@ G(1, 'pt-q11', GN,
   ('Eliminate three', [
    "We found it. Now we need to find beta in the answers — which answer gives us 120? Actually, not exactly.",
    "When we solve by plugging in numbers, we don't look for the correct answer. We need to find which answers are wrong and eliminate them — three answers.",
-   "Choice one: plug in alpha equals 50 — 95. We can eliminate it.",
+   "Choice one: plug in alpha equals 50 — 110. We can eliminate it.",
    D('Cross out choice 1'),
    "Choice two: plug in 50. I don't even need to calculate — half of 50 is 25, so it ends in 5. It isn't round, it doesn't end in 0. I can eliminate it.",
    D('Cross out choice 2'),
-   "Choice three: plug in 50 — 180 minus 100, that's 80. Eliminate it.",
+   "Choice three: plug in 50 — 4 times 50 is 200, minus 180, that's 20. That's angle D, not beta. Eliminate it.",
    D('Cross out choice 3'),
    "And do I need to check the last answer? No. If we eliminated three answers, we can mark the one that's left.",
    "Why? Because we've already shown those are wrong — and there must be one correct answer. So it's the one left.",
@@ -1008,21 +1008,21 @@ G(2, 'pt-q12', GN,
    "Inside the expression we have this exclamation mark. It's called a factorial, and it means the product of all the integers from the number down to 1.",
    A("Factorial appears", P(r'$5!=5\cdot4\cdot3\cdot2\cdot1$,  $4!=4\cdot3\cdot2\cdot1$,  $3!=3\cdot2\cdot1$')),
    "Let's see an example to understand. 5 factorial is 5 times 4 times 3 times 2 times 1. 4 factorial — 4 times 3 times 2 times 1. 3 factorial — 3 times 2 times 1. And so on.",
-   "Back to the expression: a factorial, times a plus 1, factorial. The factorial of a certain number, a, times the factorial of the next number.",
+   "Back to the expression: a factorial, times a plus 2, factorial. The factorial of a certain number, a, times the factorial of the number two steps above it.",
    "Honestly, few students manage to solve this question in a mathematical, understanding way. So what do we do?",
    "We're given an expression with an unknown — we can plug in numbers.",
   ]),
   ('Plug in a = 1', [
    "a is a positive integer. Which really small positive integer do we know? 1. Let's plug in 1.",
-   A("a = 1 appears", P(r'$a=1$: $1!\cdot2!=1\cdot2=2$')),
-   "1 and 1 — what do we have? 1 factorial times 2 factorial. 1 factorial is simply 1. And 2 factorial? 2 times 1. 1 times 2 — 2.",
-   "Let's check the answers. Remember, we're looking for answers that give a number other than 2, so we can eliminate them — we need to eliminate three.",
-   "Choice one: plug in 1 — 2 times 1 plus 1. That's 3 factorial. 3 times 2 times 1 — 6. It doesn't fit — we can eliminate it.",
+   A("a = 1 appears", P(r'$a=1$: $1!\cdot3!=1\cdot6=6$')),
+   "1 and 1 plus 2 — what do we have? 1 factorial times 3 factorial. 1 factorial is simply 1. And 3 factorial? 3 times 2 times 1 — 6. 1 times 6 — 6.",
+   "Let's check the answers. Remember, we're looking for answers that give a number other than 6, so we can eliminate them — we need to eliminate three.",
+   "Choice one: plug in 1 — 2 times 1 plus 2. That's 4 factorial. 4 times 3 times 2 times 1 — 24. It doesn't fit — we can eliminate it.",
    D('Cross out choice 1'),
-   "Choice two: 1 squared is 1, plus 1 — 2. 2 factorial is 2 times 1 — 2. It fits; we don't eliminate it. We keep checking.",
-   "Choice three: plug in 1. 1 factorial is 1, then 2 — 2 times 1 times 2 is 4. It doesn't fit — eliminate it.",
+   "Choice two: 1 squared is 1, plus 2 — 3. 3 factorial is 3 times 2 times 1 — 6. It fits; we don't eliminate it. We keep checking.",
+   "Choice three: plug in 1. 1 factorial squared is 1, times 3 — 3. It doesn't fit — eliminate it.",
    D('Cross out choice 3'),
-   "And if we eliminate this one too — we're done. Choice four: 1 factorial squared, times 2. 1 squared is 1, times 2 — that's also 2.",
+   "And if we eliminate this one too — we're done. Choice four: 1 factorial squared is 1, times 2, times 3 — that's also 6.",
   ]),
   ('Plug in again', [
    "What happened here? We checked a particular case — we plugged in a equals 1 — and we managed to eliminate only two answers.",
@@ -1030,10 +1030,10 @@ G(2, 'pt-q12', GN,
    A("Plug again appears", P('Could not eliminate 3 → plug in another number')),
    "When we can't eliminate three answers, we simply do another plug-in — we check another, different particular case.",
    "Notice: the two answers we already eliminated — we don't need to check them again. We already proved they're not the correct answer.",
-   A("a = 2 appears", P(r'$a=2$: $2!\cdot3!=2\cdot6=12$')),
-   "Before, we plugged in 1; now let's plug in 2. 2 factorial is 2, 3 factorial is 6. 2 times 6 — 12.",
-   "Choice two: plug in 2 — 2 squared is 4, plus 2 — 6. 6 factorial — how much is that? 6 times 5 times 4 times 3... wait.",
-   "6 times 5 is 30 — that's already too big. This can't be the correct answer; I don't need to keep calculating. We can eliminate it.",
+   A("a = 2 appears", P(r'$a=2$: $2!\cdot4!=2\cdot24=48$')),
+   "Before, we plugged in 1; now let's plug in 2. 2 factorial is 2, 4 factorial is 24. 2 times 24 — 48.",
+   "Choice two: plug in 2 — 2 squared is 4, plus 2 times 2 — 8. 8 factorial — how much is that? 8 times 7 times 6 times 5... wait.",
+   "8 times 7 is 56 — that's already more than 48, and we haven't finished. This can't be the correct answer; I don't need to keep calculating. We can eliminate it.",
    D('Cross out choice 2'),
    "And now we can already mark choice four — the moment we eliminated three answers, we can mark the fourth.",
    D('Circle choice 4'),
@@ -1043,21 +1043,21 @@ G(3, 'pt-q13', GN,
  ["A sample question — number 20, the last in the section. High difficulty — and this one is especially hard.", "Pens, ink and words."],
  [('Can we understand it?', [
    "One pen holds x cubic centimeters of ink. To write one word you need y cubic centimeters of ink.",
-   "Hagai's supply of pens was enough for him to write x squared times y squared words. How many pens did Hagai have?",
+   "Hagai's supply of pens was enough for him to write x cubed times y words. How many pens did Hagai have?",
    "Wow. Let's try for a moment to understand what's going on.",
    "One pen has x cubic centimeters, and one word needs y — so each pen writes x over y words. And these are the words he managed to write, so times...",
    "This isn't a simple question. Honestly, it confuses quite a few students, who get tangled up in it. But we don't need to get tangled.",
    "Look at the answers: x and y. When there are unknowns in the answers — we can plug in numbers and make the question easier.",
   ]),
   ('Plug in 1 and 1', [
-   A("1 and 1 appears", P(r'$x=1,\ y=1$: 1 pen writes 1 word · $1^2\cdot1^2=1$ word → 1 pen')),
+   A("1 and 1 appears", P(r'$x=1,\ y=1$: 1 pen writes 1 word · $1^3\cdot1=1$ word → 1 pen')),
    "Let's plug in 1 for x and for y. One pen has 1 cubic centimeter of ink, and one word needs 1. So each pen writes exactly one word.",
-   "Hagai's supply was enough for 1 squared times 1 squared — that's 1. One word.",
+   "Hagai's supply was enough for 1 cubed times 1 — that's 1. One word.",
    "One pen writes one word — so if he wrote one word, he had one pen.",
    "Now we need to check the answers — and see where we don't get 1, so we can eliminate.",
-   "Choice one: 1 times 1 cubed is 1. It fits — we continue. Choice two: 1 squared times 1 — also 1.",
+   "Choice one: 1 squared times 1 squared is 1. It fits — we continue. Choice two: 1 cubed times 1 — also 1.",
    "OK — it's happened to us before that a plug-in fit more than one answer. Let's keep checking.",
-   "Choice three: 1 over 1 cubed times 1 — also 1. And choice four — also 1.",
+   "Choice three: 1 over 1 squared times 1 squared — also 1. And choice four — also 1.",
    "What happened? We said we plug in small numbers — we often plug in 1. In this case we plugged in 1 and couldn't eliminate a single answer. Why?",
   ]),
   ('Distinct results', [
@@ -1065,10 +1065,10 @@ G(3, 'pt-q13', GN,
    "When we plug in, we do want small, convenient numbers — but it's important to choose plug-ins that give distinct answers.",
    "In this question, if we look at the answers, we have a power, multiplication and division here — and 1 has no effect in those cases.",
    "That's what happened to us: we got the same result in every answer — 1. So let's change the plug-in. If we didn't eliminate three answers — we do another plug-in.",
-   A("2 and 1 appears", P(r'$x=2,\ y=1$: 1 pen writes 2 words · $2^2\cdot1^2=4$ words → 2 pens')),
-   "Plug in 2: one pen has 2 cubic centimeters of ink, and one word needs 1. The supply was enough for 2 squared times 1 squared — that's 4 words.",
-   "So one pen writes 2 words, and he wrote 4 words in all — so he had 2 pens.",
-   "Now the answers. Choice one: 2 times 1 cubed — 2. It fits; let's keep checking. Choice two: 2 squared times 1 — 4. It doesn't fit — eliminate it.",
+   A("2 and 1 appears", P(r'$x=2,\ y=1$: 1 pen writes 2 words · $2^3\cdot1=8$ words → 4 pens')),
+   "Plug in 2: one pen has 2 cubic centimeters of ink, and one word needs 1. The supply was enough for 2 cubed times 1 — that's 8 words.",
+   "So one pen writes 2 words, and he wrote 8 words in all — so he had 4 pens.",
+   "Now the answers. Choice one: 2 squared times 1 squared — 4. It fits; let's keep checking. Choice two: 2 cubed times 1 — 8. It doesn't fit — eliminate it.",
    D('Cross out choice 2'),
    "In choices three and four we actually get fractions — 1 over something. So we can eliminate both of them.",
    D('Cross out choice 3'),
@@ -1078,15 +1078,15 @@ G(3, 'pt-q13', GN,
   ]),
   ('From 20 to 2', [
    "Look what we did. We took number 20, the hardest question in the section — and this one is even very hard. The moment we plugged in numbers, we made it light.",
-   A("20 to 2 appears", P('2 cm³ in a pen, 1 cm³ per word: 1 pen → 2 words · 4 words → 2 pens')),
-   "We took number 20 and turned it into number 2. Two cubic centimeters in a pen, one to write a word — that's easy to understand. One pen, 2 words; 4 words, 2 pens. We found it easily.",
+   A("20 to 2 appears", P('2 cm³ in a pen, 1 cm³ per word: 1 pen → 2 words · 8 words → 4 pens')),
+   "We took number 20 and turned it into number 2. Two cubic centimeters in a pen, one to write a word — that's easy to understand. One pen, 2 words; 8 words, 4 pens. We found it easily.",
    "Again — the beauty of psychometric thinking: it knows how to take the hardest questions and make them really, really easy. Let's see another example.",
   ])]),
 
 G(4, 'pt-q14', GN,
- ["A sample question — number 20. High difficulty.", "Ella buys a dress on sale."],
+ ["A sample question — number 20. High difficulty.", "Dana buys a dress on sale."],
  [('Unknown in the answers', [
-   "Ella bought a dress at a discount of 20 shekels. The price of the dress after the discount was x shekels. What was the discount on the dress, in percent?",
+   "Dana bought a dress at a discount of 40 shekels. The price of the dress after the discount was x shekels. What was the discount on the dress, in percent?",
    "Honestly, at first glance this question doesn't look so complicated. But from its position, we can assume it's probably less simple than we think.",
    "Anyway, that doesn't really interest us. We're not in this game of difficulty levels at all. We don't intend to solve the question mathematically — we work with psychometric thinking.",
    A("Unknown appears", P('An unknown in the answers → plug in numbers')),
@@ -1096,24 +1096,24 @@ G(4, 'pt-q14', GN,
    "We have the price of the dress before the discount, and after the discount. We know the price after the discount is x.",
    A("100 appears", P('Percent questions: plug in 100 — at the whole')),
    "In percent questions we usually plug in 100, so the calculations are easy. Where do we put the 100?",
-   "Some students choose to put the 100 here, at x. Then the price before the discount is 120, because the discount was 20 shekels.",
-   A("Inconvenient appears", P(r'At x: before 120 → $\frac{20}{120}$ — an inconvenient calculation')),
-   "They ask what the discount on the dress was, in percent. So we'd need to calculate how much 20 is out of 120 — a slightly inconvenient calculation.",
-   "It would be much easier if we had to calculate how much 20 is out of 100. So let's do that: put 100 at the original price — at the whole.",
-   A("At the whole appears", P(r'Before: 100 → after: $x=80$ → $\frac{20}{100}=20\%$')),
-   "That's the reason we put 100 at the whole — so the calculations are convenient. After the discount the price is 80.",
-   "Now I need to calculate how much 20 is out of 100 — that's already simple. A 20% discount.",
-   "Our next rule: we choose to plug in a convenient number. We could have calculated with 100 and 120 — but the calculation would just come out more complicated.",
+   "Some students choose to put the 100 here, at x. Then the price before the discount is 140, because the discount was 40 shekels.",
+   A("Inconvenient appears", P(r'At x: before 140 → $\frac{40}{140}$ — an inconvenient calculation')),
+   "They ask what the discount on the dress was, in percent. So we'd need to calculate how much 40 is out of 140 — a slightly inconvenient calculation.",
+   "It would be much easier if we had to calculate how much 40 is out of 100. So let's do that: put 100 at the original price — at the whole.",
+   A("At the whole appears", P(r'Before: 100 → after: $x=60$ → $\frac{40}{100}=40\%$')),
+   "That's the reason we put 100 at the whole — so the calculations are convenient. After the discount the price is 60.",
+   "Now I need to calculate how much 40 is out of 100 — that's already simple. A 40% discount.",
+   "Our next rule: we choose to plug in a convenient number. We could have calculated with 100 and 140 — but the calculation would just come out more complicated.",
   ]),
   ('Check the answers', [
-   "Now check the answers — where we get 20, or rather where we don't get 20, so we can eliminate.",
-   "Choice one: plug in 80. We have 100 over 100 here — reduce it, and we're left with 20. That's fine — we don't eliminate; we keep checking.",
-   A("Check appears", P(r'$x=80$: (1) 20 ✓ · (2) 16 ✗ · (3) 1 ✗ · (4) 500 ✗')),
-   "Choice two: plug in 80, cancel the zeros — 2 times 8 is 16. We eliminate it.",
+   "Now check the answers — where we get 40, or rather where we don't get 40, so we can eliminate.",
+   "Choice one: plug in 60. We have 100 over 100 here — reduce it, and we're left with 40. That's fine — we don't eliminate; we keep checking.",
+   A("Check appears", P(r'$x=60$: (1) 40 ✓ · (2) 24 ✗ · (3) 1 ✗ · (4) 250 ✗')),
+   "Choice two: plug in 60, cancel the zeros — 4 times 6 is 24. We eliminate it.",
    D('Cross out choice 2'),
-   "Choice three: plug in 80 — 100 over 100, that's 1. We can eliminate it.",
+   "Choice three: plug in 60 — 100 over 100, that's 1. We can eliminate it.",
    D('Cross out choice 3'),
-   "Choice four: again plug in 80 — we have 100 here. 100 over 20 is 5, and 5 times 100 — 500. We can eliminate this one too.",
+   "Choice four: again plug in 60 — we have 100 here. 100 over 40 is 2.5, and 2.5 times 100 — 250. We can eliminate this one too.",
    D('Cross out choice 4'),
    "And mark the first answer.",
    D('Circle choice 1'),
@@ -1124,7 +1124,7 @@ G(5, 'pt-q15', GN,
  ["A sample question — number 12. Medium difficulty.", "Orit and Batya share the cost of a trip."],
  [('A ratio → plug in', [
    "Orit and Batya decided to go on a trip and share the expenses. Each of them committed to pay half of the total.",
-   "In the end, Orit paid only a quarter of the amount she had committed to, and Batya paid all the rest of the expenses.",
+   "In the end, Orit paid only a third of the amount she had committed to, and Batya paid all the rest of the expenses.",
    "What's the ratio between the amount Batya actually paid and the amount she committed to pay?",
    "Wait — what's this question doing here? We don't have an expression with an unknown, and we don't have unknowns in the answers. But we do have a ratio.",
    A("Case 3 appears", P('Case 3: ratio problems — the numbers do not matter')),
@@ -1134,19 +1134,19 @@ G(5, 'pt-q15', GN,
   ('You can change it', [
    "Let's start. We'll draw a table: Orit, Batya — the amount they committed to, and the amount they actually paid.",
    "They decided to share the expenses; each was supposed to pay half. So let's plug in a small number — 1. Suppose this trip cost 1 shekel each. A cheap trip.",
-   "In the end Orit paid only a quarter of the amount — so Orit pays a quarter. But a quarter is a fraction.",
+   "In the end Orit paid only a third of the amount — so Orit pays a third. But a third is a fraction.",
    "That's an inconvenient number. I don't feel like working with fractions — I want convenient numbers, round numbers.",
    "Wait — who chose this 1? I did. So I can change it.",
    A("Change it appears", P('You chose the number → you may change it')),
    "If I see along the way that my calculations are leading me to inconvenient numbers, I can change the plug-in — I'm the one who plugged it in.",
-   "So let's choose another number that's easy to take a quarter of. For example — 4.",
-   A("Table appears", P('Committed: Orit 4, Batya 4 · Paid: Orit 1, Batya 7')),
-   "How much is a quarter of 4? 1. And Batya paid all the rest: together they were supposed to pay 8. Orit paid 1, so Batya paid 7.",
+   "So let's choose another number that's easy to take a third of. For example — 3.",
+   A("Table appears", P('Committed: Orit 3, Batya 3 · Paid: Orit 1, Batya 5')),
+   "How much is a third of 3? 1. And Batya paid all the rest: together they were supposed to pay 6. Orit paid 1, so Batya paid 5.",
   ]),
   ('The ratio', [
    "What do they ask? The ratio between the amount Batya actually paid — this — and the amount she committed to pay — this.",
-   A("7 : 4 appears", P('Batya actually paid 7 and committed to 4 → the ratio is 7 to 4')),
-   "7 to 4.",
+   A("5 : 3 appears", P('Batya actually paid 5 and committed to 3 → the ratio is 5 to 3')),
+   "5 to 3.",
    D('Circle choice 1'),
    "Choice one.",
   ]),
@@ -1204,7 +1204,7 @@ lesson('pt51-estimation', 'Estimation',
   "These are the three numbers you can replace with these values, and then calculate approximately — an order-of-magnitude estimate.",
  ]),
  dict(mode='concept', active=5, title='Round the numbers', script=[
-  A("Approximately appears", T(r'An approximate calculation: $\frac{14}{24}\approx\frac{15}{25}$', size=44)),
+  A("Approximately appears", T(r'An approximate calculation: $\frac{14}{34}\approx\frac{14}{35}$', size=44)),
   "In an approximate calculation we don't need to be exact. If a fraction doesn't reduce nicely, we look for a close fraction that reduces better — we're calculating approximately anyway.",
   A("Far apart appears", T('The answers are far enough apart to find the correct one', size=40)),
   "The answers are far enough apart for us to find the correct one.",
@@ -1215,7 +1215,7 @@ lesson('pt51-estimation', 'Estimation',
   "Calculate part — and then peek at the answers.",
  ]),
  dict(mode='concept', active=7, title='Negligible parts', script=[
-  A("Negligible appears", T('A tiny part is negligible: "0.44 and a little more" is enough', size=40)),
+  A("Negligible appears", T('A tiny part is negligible: "0.64 and a little more" is enough', size=40)),
   "And sometimes part of the calculation is negligible — so small that we don't need to calculate it at all.",
   "The question is built that way on purpose — to give an advantage to whoever thinks: wait, this is negligible, I don't need to waste time on it.",
  ]),
@@ -1233,7 +1233,7 @@ lesson('pt51-estimation', 'Estimation',
 G(0, 'pt-q16', GE,
  ["A sample question — number 19. Relatively high difficulty.", "A sector of a circle, and a shaded region."],
  [('The plan', [
-   "AOB is a sector of a circle with center O and a radius of 1 centimeter. Based on this and the figure — what's the area of the shaded region?",
+   "AOB is a sector of a circle with center O and a radius of 2 centimeters. Based on this and the figure — what's the area of the shaded region?",
    "To find the shaded area, we need to calculate the area of the sector, and subtract the area of the triangle.",
    A("Scheme appears", R('Shaded = sector − triangle')),
    "Sector minus triangle. The trivial way is to do it with the area formulas: sector area minus triangle area.",
@@ -1254,8 +1254,8 @@ G(0, 'pt-q16', GE,
   ]),
   ('Negative? Out', [
    "How do we continue? Two answers are left. We know π equals 3.14 — for estimation, more or less 3.",
-   A("Negative appears", R(r'(2): $\frac12\left(\frac38-1\right)<0$')),
-   "Let's check what choice two is worth. Plug in 3: three-eighths minus 1 — that's negative.",
+   A("Negative appears", R(r'(2): $\frac12\left(\frac32-2\right)<0$')),
+   "Let's check what choice two is worth. Plug in 3: three-halves minus 2 — that's negative.",
    A("No negative area appears", R('An area cannot be negative → eliminate')),
    "It's a negative answer — and that's the second way we can eliminate: we can't get an area or a volume that's negative. If there's a negative answer, we can eliminate it.",
    "By the way, on the exam it won't say minus 5 — they hide it with π. But the moment we plug in a number, it's easy to see this answer is negative.",
@@ -1271,45 +1271,45 @@ G(0, 'pt-q16', GE,
    A("Pizza appears", R(r'4 slices → $90°$ each · 8 slices → $45°$ each → $\frac18$ of the circle', size=28)),
    "Let's count. When we cut a pizza into 4 parts, each one has an angle of 90 degrees — a quarter. And if we cut it into 8, the angle is 45 degrees.",
    "So this sector is exactly an eighth of the circle — there are 8 pizza slices like this in the pizza.",
-   A("π/8 appears", R(r'Circle: $\pi\cdot1^2=\pi$ → sector: $\frac{\pi}{8}$')),
-   "The area of a circle is πr squared, and our radius is 1 — so the area of this circle is π, and the sector is π over 8.",
-   "Now, instead of calculating the area of the triangle, let's peek at the answers. The only place with π over 8 is choice four.",
-   "In choice two we have π over 8 times a half — that's π over 16. It doesn't fit.",
+   A("π/2 appears", R(r'Circle: $\pi\cdot2^2=4\pi$ → sector: $\frac{4\pi}{8}=\frac{\pi}{2}$')),
+   "The area of a circle is πr squared, and our radius is 2 — so the area of this circle is 4π, and the sector is an eighth of it: π over 2.",
+   "Now, instead of calculating the area of the triangle, let's peek at the answers. The only place with π over 2 is choice four.",
+   "In choice two we have π over 2 times a half — that's π over 4. It doesn't fit.",
    A("Partial appears", R('Partial calculation: calculate part — then peek at the answers', size=28)),
    "What we just did is a partial calculation. Even when we want to calculate, sometimes there's still a shortcut — we don't always need to calculate the whole expression. Only part of it.",
    "Let's see another example.",
   ])], fig=True),
 
 G(1, 'pt-q17', GE,
- ["A sample question — number 20. High difficulty — and this one is especially hard.", "Root 2 over 1 plus root 2. It looks like an innocent expression."],
+ ["A sample question — number 20. High difficulty — and this one is especially hard.", "Root 2 over 2 plus root 2. It looks like an innocent expression."],
  [('The 5-unit trick', [
    "We have a fraction here, and they ask what it equals. And in the answers there are no fractions.",
    "So I need to simplify this fraction and get rid of the denominator. When I look at this expression, I don't really know where to start.",
    "Honestly, to know how to continue from here, there's a trick that only students of 5-unit math know how to do — and not all of them.",
    "What's the trick? We're going to multiply this fraction by 1. We multiply it by a fraction whose numerator and denominator are identical — so the fraction we multiplied by is 1. It doesn't change the value of our expression.",
-   A("Times 1 appears", P(r'$\frac{\sqrt2}{1+\sqrt2}\cdot\frac{1-\sqrt2}{1-\sqrt2}$')),
-   "Why did we do it? Because when we multiply the denominators, we get 1 plus root 2, times 1 minus root 2.",
-   A("Formula appears", P(r'$(1+\sqrt2)(1-\sqrt2)=1^2-(\sqrt2)^2=1-2=-1$')),
+   A("Times 1 appears", P(r'$\frac{\sqrt2}{2+\sqrt2}\cdot\frac{2-\sqrt2}{2-\sqrt2}$')),
+   "Why did we do it? Because when we multiply the denominators, we get 2 plus root 2, times 2 minus root 2.",
+   A("Formula appears", P(r'$(2+\sqrt2)(2-\sqrt2)=2^2-(\sqrt2)^2=4-2=2$')),
    "That's a short multiplication formula: a plus b, times a minus b — we can close it to a squared minus b squared.",
-   "1 squared is 1, root 2 squared is 2. 1 minus 2 — minus 1. From here, continuing is simple.",
-   A("Finish appears", P(r'$\frac{\sqrt2(1-\sqrt2)}{-1}=\frac{\sqrt2-2}{-1}=2-\sqrt2$')),
+   "2 squared is 4, root 2 squared is 2. 4 minus 2 — 2. From here, continuing is simple.",
+   A("Finish appears", P(r'$\frac{\sqrt2(2-\sqrt2)}{2}=\frac{2\sqrt2-2}{2}=\sqrt2-1$')),
   ]),
   ('Estimate: √2 ≈ 1.4', [
    "But what happens if I'm not one of those chosen few who know how to do this manipulation? How do I deal with an exercise like this?",
    "What we'll do is an approximate calculation. We don't need to be exact.",
    "Instead of root 2, we can plug in 1.4 — root 2 is about 1.4. Now we calculate the expression with numbers, and that's much simpler.",
-   A("1.4 appears", P(r'$\frac{1.4}{2.4}=\frac{14}{24}\approx\frac{15}{25}=\frac35=0.6$')),
-   "1.4 over 2.4. Multiply by 10 to get rid of the decimal point: 14 over 24.",
-   "This fraction doesn't reduce so nicely. Let's look for another, close fraction that reduces more nicely: 15 over 25.",
-   "Very, very close — and I'm allowed, because we're calculating approximately anyway. Reduce by 5: three-fifths, which is 0.6.",
-   A("Answers appears", P(r'(1) $0.4^2=0.16$ · (2) $2.8$ · (3) $2.4$ · (4) $2-1.4=0.6$')),
+   A("1.4 appears", P(r'$\frac{1.4}{3.4}=\frac{14}{34}\approx\frac{14}{35}=\frac25=0.4$')),
+   "1.4 over 3.4. Multiply by 10 to get rid of the decimal point: 14 over 34.",
+   "This fraction doesn't reduce so nicely. Let's look for another, close fraction that reduces more nicely: 14 over 35.",
+   "Very, very close — and I'm allowed, because we're calculating approximately anyway. Reduce by 7: two-fifths, which is 0.4.",
+   A("Answers appears", P(r'(1) $0.4^2=0.16$ · (2) $2.8$ · (3) $2.4$ · (4) $1.4-1=0.4$')),
    "Let's check the answers. Choice one: 1.4 minus 1 is 0.4. Squared — 0.16. Too small — we can eliminate it.",
    D('Cross out choice 1'),
    "Choice two: 2 times 1.4 — 2.8. Big — eliminate it.",
    D('Cross out choice 2'),
    "Choice three: 1.4 plus 1 — 2.4. Eliminate it.",
    D('Cross out choice 3'),
-   "And choice four: 2 minus 1.4 — 0.6. Exactly what we got — we can mark it.",
+   "And choice four: 1.4 minus 1 — 0.4. Exactly what we got — we can mark it.",
    D('Circle choice 4'),
   ]),
   ('Numbers to know', [
@@ -1324,11 +1324,11 @@ G(1, 'pt-q17', GE,
 G(2, 'pt-q18', GE,
  ["A sample question — number 20. High difficulty.", "A rectangle, quarter circles and a circle."],
  [('The width is the problem', [
-   "In the figure, each vertex of rectangle ABCD is the center of a circle with a radius of 1 centimeter.",
+   "In the figure, each vertex of rectangle ABCD is the center of a circle with a radius of 2 centimeters.",
    "Point O is the center of a circle tangent to the four quarter circles and to the sides AD and BC. What's the area of rectangle ABCD?",
-   "To calculate the area of a rectangle, we need the length and the width. The height of the rectangle is already given here — 2 centimeters.",
-   "Our problem is to find BC. We know this part is a radius — it's 1. And this one is also a radius — 1.",
-   D('Mark 1 and 1 at the two ends of BC'),
+   "To calculate the area of a rectangle, we need the length and the width. The height of the rectangle is already given here — 4 centimeters.",
+   "Our problem is to find BC. We know this part is a radius — it's 2. And this one is also a radius — 2.",
+   D('Mark 2 and 2 at the two ends of BC'),
    "And this segment in the middle — we don't know how to calculate it. To calculate it you need some auxiliary construction, a calculation, Pythagoras and so on.",
    "But what happens if we don't think of that auxiliary construction? How can we deal with the exercise? We solve with order-of-magnitude estimation.",
   ]),
@@ -1342,23 +1342,23 @@ G(2, 'pt-q18', GE,
    "As for accurate figures — there's a whole lesson that explains how to know when they're accurate and when less so. You'll see it later.",
   ]),
   ('Estimate the width', [
-   "Let's start. We know this is 1 and this is 1, and we don't know what this segment equals.",
-   A("Middle appears", R('Middle segment: more than 1, less than 2')),
-   "We can see it's more than 1 — yes, we can estimate that. And we can also see it's less than 2: it's less than the diameter.",
-   "If you can't see exactly what its size is, you can even use your eraser on the exam: take the eraser, mark a certain length, and check. You'll see it's more than 1 and less than the diameter.",
-   A("Width appears", R('Width: between 3 and 4 → area: between 6 and 8')),
-   "So the area of the rectangle is 2 times its width. If this were 1, the width would be 3; if it were 2, the width would be 4. It's neither — so the width is more than 3 and less than 4.",
-   "That means the area will be between 2 times 3 and 2 times 4. It can't equal either of them — it's somewhere in the middle.",
+   "Let's start. We know this is 2 and this is 2, and we don't know what this segment equals.",
+   A("Middle appears", R('Middle segment: more than 2, less than 4')),
+   "We can see it's more than 2 — yes, we can estimate that. And we can also see it's less than 4: it's less than the diameter.",
+   "If you can't see exactly what its size is, you can even use your eraser on the exam: take the eraser, mark a certain length, and check. You'll see it's more than 2 and less than the diameter.",
+   A("Width appears", R('Width: between 6 and 8 → area: between 24 and 32')),
+   "So the area of the rectangle is 4 times its width. If this were 2, the width would be 6; if it were 4, the width would be 8. It's neither — so the width is more than 6 and less than 8.",
+   "That means the area will be between 4 times 6 and 4 times 8 — between 24 and 32. It can't equal either of them — it's somewhere in the middle.",
   ]),
   ('Check the answers', [
-   A("Check appears", R(r'(1) $4\cdot1.7=6.8$ ✓')),
-   "Let's look at the answers. Plug in root 3 as we learned: 1.7 times 4 — 6.8. It fits — it's in the range.",
-   A("5.6 appears", R(r'(2) $4\cdot1.4=5.6$ ✗')),
-   "Here plug in 1.4 — that's 5.6. It's less than 6; it doesn't fit — eliminate it.",
+   A("Check appears", R(r'(1) $16\cdot1.7=27.2$ ✓')),
+   "Let's look at the answers. Plug in root 3 as we learned: 1.7 times 16 — 27.2. It fits — it's in the range.",
+   A("22.4 appears", R(r'(2) $16\cdot1.4=22.4$ ✗')),
+   "Here plug in 1.4 — that's 22.4. It's less than 24; it doesn't fit — eliminate it.",
    D('Cross out choice 2'),
-   "8 doesn't fit either. The area can't be 8 — it must be less, because this segment is less than 2. We can eliminate it.",
+   "32 doesn't fit either. The area can't be 32 — it must be less, because this segment is less than 4. We can eliminate it.",
    D('Cross out choice 3'),
-   "And 10, of course, we eliminate.",
+   "And 40, of course, we eliminate.",
    D('Cross out choice 4'),
    D('Circle choice 1'),
    "Look — we marked the first answer. We solved number 20, a very hard question, not easy to solve. But the moment we made an order-of-magnitude estimate — in seconds, really, really easily.",
@@ -1366,30 +1366,30 @@ G(2, 'pt-q18', GE,
 
 G(3, 'pt-q19', GE,
  ["A sample question — number 13. Medium-plus difficulty.", "Two bottles of alcohol solution."],
- [('20% of 2.2', [
-   "Bottle A has 2.2 liters of a solution with an alcohol concentration of 20%. Bottle B has 3 liters of a solution with an alcohol concentration of 2%.",
+ [('20% of 3.2', [
+   "Bottle A has 3.2 liters of a solution with an alcohol concentration of 20%. Bottle B has 2 liters of a solution with an alcohol concentration of 3%.",
    "How many liters of alcohol are there in the two bottles together?",
-   "What do we need to do? Calculate how much 20% of 2.2 is, calculate how much 2% of 3 liters is — and add.",
-   A("20% appears", P('10% of 2.2 = 0.22 → 20% = 0.44')),
-   "Let's start. 10% of 2.2 is 0.22 — I just divide by 10, move the decimal point one place to the left. That means 20% is 0.44.",
-   D('Write 0.44'),
+   "What do we need to do? Calculate how much 20% of 3.2 is, calculate how much 3% of 2 liters is — and add.",
+   A("20% appears", P('10% of 3.2 = 0.32 → 20% = 0.64')),
+   "Let's start. 10% of 3.2 is 0.32 — I just divide by 10, move the decimal point one place to the left. That means 20% is 0.64.",
+   D('Write 0.64'),
   ]),
   ('Negligible', [
-   "Now we need to calculate how much 2% of 3 liters is. Actually — not really.",
-   A("Negligible appears", P('2% of 3 liters = 0.0-something → negligible → 0.44 and a little more')),
-   "What's 2% of 3 liters? It's nothing — 0.0-something. For us it's negligible. I don't need to calculate it.",
-   "What I need to check in the answers is where I have 0.44 — and a bit more.",
-   "0.5 — that's fine: 0.44 and a bit more. 0.75 is too big, 1.16 is big, 2.6 is big.",
+   "Now we need to calculate how much 3% of 2 liters is. Actually — not really.",
+   A("Negligible appears", P('3% of 2 liters = 0.0-something → negligible → 0.64 and a little more')),
+   "What's 3% of 2 liters? It's nothing — 0.0-something. For us it's negligible. I don't need to calculate it.",
+   "What I need to check in the answers is where I have 0.64 — and a bit more.",
+   "0.7 — that's fine: 0.64 and a bit more. 0.95 is too big, 1.24 is big, 3.1 is big.",
    D('Cross out choices 2, 3 and 4'),
    D('Circle choice 1'),
-   "We mark the first answer — 0.5. We found the correct answer fast, without getting tangled in the calculation.",
+   "We mark the first answer — 0.7. We found the correct answer fast, without getting tangled in the calculation.",
   ]),
   ('Built on purpose', [
-   "It's important to note: most students manage to calculate 20% of 2.2 — it's an easy calculation.",
-   "2% of 3 — some get tangled. And even if they don't get tangled and they manage, it still takes them more time. And what did we see? It isn't needed at all.",
+   "It's important to note: most students manage to calculate 20% of 3.2 — it's an easy calculation.",
+   "3% of 2 — some get tangled. And even if they don't get tangled and they manage, it still takes them more time. And what did we see? It isn't needed at all.",
    A("On purpose appears", P('The question is built on purpose — it rewards whoever sees what is negligible')),
    "And that's no accident. The question is built this way on purpose — to give an advantage to whoever thinks and says: wait, this is negligible, I don't need to waste time on it at all.",
-   "I can look for something a bit more than 0.44, mark it, and move on to the next question.",
+   "I can look for something a bit more than 0.64, mark it, and move on to the next question.",
   ]),
   ('What we learned', [
    A("Summary appears", P('Estimation works amazingly — even on hard questions')),
@@ -1435,31 +1435,31 @@ lesson('pt51-insights', 'Insight Questions',
 G(0, 'pt-q20', GH,
  ["A sample question — number 6. An easy question.", "A fraction of fractions."],
  [('Calculate', [
-   "One-third plus one-quarter, divided by two-thirds plus two-quarters. Let's calculate.",
-   "In the numerator we have fractions to add. Common denominator: 3 and 4 — a common denominator of 12. We get 4 plus 3, over 12.",
-   A("Numerator appears", P(r'Numerator: $\frac{4+3}{12}=\frac{7}{12}$ · Denominator: $\frac{8+6}{12}=\frac{14}{12}$')),
-   "In the denominator we again have 2 fractions — common denominator 12. We get 8 plus 6, over 12.",
-   A("Divide appears", P(r'$\frac{7}{12}\div\frac{14}{12}=\frac{7}{12}\cdot\frac{12}{14}=\frac{7}{14}=\frac12$')),
-   "Add: seven-twelfths divided by fourteen-twelfths. We need to divide fractions — multiply by the reciprocal, or any way that's convenient for you.",
-   "Reduce the 12s, and we're left with 7 over 14 — that's a half.",
+   "One-fifth plus one-sixth, divided by two-fifths plus two-sixths. Let's calculate.",
+   "In the numerator we have fractions to add. Common denominator: 5 and 6 — a common denominator of 30. We get 6 plus 5, over 30.",
+   A("Numerator appears", P(r'Numerator: $\frac{6+5}{30}=\frac{11}{30}$ · Denominator: $\frac{12+10}{30}=\frac{22}{30}$')),
+   "In the denominator we again have 2 fractions — common denominator 30. We get 12 plus 10, over 30.",
+   A("Divide appears", P(r'$\frac{11}{30}\div\frac{22}{30}=\frac{11}{30}\cdot\frac{30}{22}=\frac{11}{22}=\frac12$')),
+   "Add: eleven-thirtieths divided by twenty-two-thirtieths. We need to divide fractions — multiply by the reciprocal, or any way that's convenient for you.",
+   "Reduce the 30s, and we're left with 11 over 22 — that's a half.",
    D('Circle choice 1'),
    "Choice one.",
   ]),
   ('The insight', [
    "Now let's see the insight. Some students look at this expression and immediately see it's a half. How?",
-   A("Double appears", P(r'The denominator is exactly twice the numerator: $\frac23=2\cdot\frac13$ and $\frac24=2\cdot\frac14$')),
-   "What's in the denominator is exactly twice what's in the numerator. Here we have two-thirds, and here one-third. Here two-quarters, and here one-quarter.",
+   A("Double appears", P(r'The denominator is exactly twice the numerator: $\frac25=2\cdot\frac15$ and $\frac26=2\cdot\frac16$')),
+   "What's in the denominator is exactly twice what's in the numerator. Here we have two-fifths, and here one-fifth. Here two-sixths, and here one-sixth.",
    A("Bananas appears", P('(a banana + an apple) over (2 bananas + 2 apples) = a half')),
    "Maybe it's easier to see it like this: it's as if we have a banana and 2 bananas, an apple and 2 apples. That's exactly a half.",
-   "By the way — notice that NITE wrote two-quarters here, and not a half. They want us to see that it's exactly double the numerator.",
+   "By the way — notice that NITE wrote two-sixths here, and not a third. They want us to see that it's exactly double the numerator.",
    "Honestly, I love this question. It shows that even in simple calculation questions — easy questions — NITE still gives an advantage to whoever thinks creatively. Let's see another example like this.",
   ])]),
 
 G(1, 'pt-q21', GH,
- ["A sample question — number 19. High difficulty.", "Roni invests 50,000 shekels."],
+ ["A sample question — number 19. High difficulty.", "Roni invests 60,000 shekels."],
  [('A simpler example', [
-   "Roni has 50,000 shekels. He invests half of the money in a savings plan that yields a profit of 4% a year.",
-   "He invests the rest of the money in a mutual fund that yields a profit ranging between 2% and 8% a year.",
+   "Roni has 60,000 shekels. He invests half of the money in a savings plan that yields a profit of 8% a year.",
+   "He invests the rest of the money in a mutual fund that yields a profit ranging between 4% and 16% a year.",
    "Roni's profit in the coming year will be at least blank of the total he invested, and at most blank of the total he invested.",
    "You can solve this question in seconds, without calculating at all. But before we understand the idea behind the question, let's first take a simpler example.",
    A("100 shekels appears", P('100 shekels, a plan that yields 10%: invest all → 10% · invest half → 5%')),
@@ -1470,24 +1470,24 @@ G(1, 'pt-q21', GH,
    "How much are those 5 shekels out of the 100? 5%. I invested half of the amount I had — and earned only half, in percent.",
   ]),
   ('Half the money, half the percent', [
-   "Back to the question. He invests half of the money in a plan that yields 4% a year. So wait:",
-   A("4% appears", P('Half of the money at 4% → 2% of the total')),
-   "if he invested all the money, he would earn 4%. But he invested only half of the money — so he earned only 2%. Half of 4.",
-   A("2–8% appears", P('Half of the money at 2%–8% → 1%–4% of the total')),
-   "And here we have the rest of the money — that's also half of the money. If he invested all of it, he'd earn between 2 and 8%.",
-   "But he invested only half — so he'll earn only half: between 1% and 4%.",
-   A("3–6% appears", P('At least 2 + 1 = 3% · at most 2 + 4 = 6%')),
-   "So how many percent at the minimum? 2 plus 1. At the maximum? 2 plus 4. Between 3% and 6%.",
+   "Back to the question. He invests half of the money in a plan that yields 8% a year. So wait:",
+   A("8% appears", P('Half of the money at 8% → 4% of the total')),
+   "if he invested all the money, he would earn 8%. But he invested only half of the money — so he earned only 4%. Half of 8.",
+   A("4–16% appears", P('Half of the money at 4%–16% → 2%–8% of the total')),
+   "And here we have the rest of the money — that's also half of the money. If he invested all of it, he'd earn between 4 and 16%.",
+   "But he invested only half — so he'll earn only half: between 2% and 8%.",
+   A("6–12% appears", P('At least 4 + 2 = 6% · at most 4 + 8 = 12%')),
+   "So how many percent at the minimum? 4 plus 2. At the maximum? 4 plus 8. Between 6% and 12%.",
    D('Circle choice 3'),
    "Choice three. We solved this question just from understanding — without calculating anything.",
   ]),
   ('If you calculate', [
    "By the way — whoever still chose to calculate, there's a shortcut here too.",
-   A("Ratios appears", P('Work with ratios: 2% is half of 4% · 8% is twice 4%')),
-   "Suppose you already calculated how much 4% of 25,000 is. You don't need to calculate 2% and 8% — you can work with ratios.",
-   "2% is exactly half of 4. 8% is exactly twice 4.",
-   A("Stop appears", P('Found the minimum (3%)? Stop — only one answer fits')),
-   "And if we go on, there's another shortcut. Suppose you calculated the minimum and got 3%. Stop — check the answers.",
+   A("Ratios appears", P('Work with ratios: 4% is half of 8% · 16% is twice 8%')),
+   "Suppose you already calculated how much 8% of 30,000 is. You don't need to calculate 4% and 16% — you can work with ratios.",
+   "4% is exactly half of 8. 16% is exactly twice 8.",
+   A("Stop appears", P('Found the minimum (6%)? Stop — only one answer fits')),
+   "And if we go on, there's another shortcut. Suppose you calculated the minimum and got 6%. Stop — check the answers.",
    "Only one answer fits; you don't need to calculate the maximum. And if you calculated the maximum first — again, only one answer fits.",
    "Remember? The answers help us. Let's see another example.",
   ])]),
@@ -1497,8 +1497,8 @@ G(2, 'pt-q22', GH,
  [('The long way', [
    "In the figure, ABCD is a square. Based on this and the figure: what's the difference between the perimeter of quadrilateral ABED and the perimeter of triangle ECD?",
    "We need the difference between the perimeters of the two shapes.",
-   "One option is to calculate the perimeter of the quadrilateral — by the way, it's a trapezoid. We have x, and x, and y here — and then calculate this side with Pythagoras.",
-   "And after that, the perimeter of the triangle. Here too we have x minus y, and x — and Pythagoras again; we calculated it before — and subtract.",
+   "One option is to calculate the perimeter of the quadrilateral — by the way, it's a trapezoid. We have x, and x, and x minus y here — and then calculate this side with Pythagoras.",
+   "And after that, the perimeter of the triangle. Here we have y, and x — and Pythagoras again; we calculated it before — and subtract.",
    "That's the long way. Let's solve it faster.",
   ]),
   ('Cancel what is shared', [
@@ -1508,36 +1508,36 @@ G(2, 'pt-q22', GH,
    "It's a shared side — it's in both of them. We can cancel it out, not deal with it at all.",
    A("Cancel appears", R('DE is shared → cancel · AB = DC = x → cancel')),
    "The sides AB and DC too — they're equal, both are x, both are sides of the square. We can cancel them as well.",
-   A("Left appears", R(r'Left: $(y+x)-(x-y)$')),
-   "Now we're left with y and x here — minus x minus y.",
-   "And we can shorten this even more. Notice: if I draw a line here parallel to side AB, these two segments are equal too — I can cancel them as well.",
+   A("Left appears", R(r'Left: $(x-y)+x-y$')),
+   "Now we're left with x minus y and x here — minus y.",
+   "And we can shorten this even more. Notice: if I draw a line here parallel to side AB, it cuts off a piece of AD that equals EC — y. These two cancel as well.",
    D('Draw a line from E parallel to AB; mark the two equal segments'),
-   A("2y appears", R(r'$y+y=2y$')),
-   "And what are we left with? y and y — 2y.",
+   A("2(x − y) appears", R(r'$(x-y)+(x-y)=2(x-y)$')),
+   "And what are we left with? x minus y, twice — 2 times x minus y.",
    D('Circle choice 2'),
    "Choice two. Simple. Let's see another example.",
   ])], fig=True),
 
 G(3, 'pt-q23', GH,
  ["A sample question — number 20. High difficulty.", "A basketball season."],
- [('The first 30 games', [
-   "In a certain season, a basketball team won 20% of its first 30 games.",
-   "From the 31st game on, the team won all its games until the end of the season — and because of that, its overall winning percentage rose to 50%.",
-   "At first it was 20%, and it rose to 50%. How many games in total did the team win in this season?",
-   A("First 30 appears", P('First 30 games: 20% → 6 wins · the rest → 24 losses')),
-   "Let's see. At first — the first 30 games — it won 20% of them. 10% is 3 games; 20% is 6 games.",
-   "All the rest it lost — that means 24 games.",
+ [('The first 40 games', [
+   "In a certain season, a basketball team won 30% of its first 40 games.",
+   "From the 41st game on, the team won all its games until the end of the season — and because of that, its overall winning percentage rose to 50%.",
+   "At first it was 30%, and it rose to 50%. How many games in total did the team win in this season?",
+   A("First 40 appears", P('First 40 games: 30% → 12 wins · the rest → 28 losses')),
+   "Let's see. At first — the first 40 games — it won 30% of them. 10% is 4 games; 30% is 12 games.",
+   "All the rest it lost — that means 28 games.",
   ]),
   ('Win until it is even', [
-   "From game 31, the team only wins. No more losses — from now on, only wins. Until when?",
-   A("50% appears", P('50% = wins equal losses → 24 wins')),
+   "From game 41, the team only wins. No more losses — from now on, only wins. Until when?",
+   A("50% appears", P('50% = wins equal losses → 28 wins')),
    "Until the number of wins equals the number of losses — because in the end it reached 50% wins. That means exactly fifty-fifty.",
    "So it wins the next game, and the game after that, and after that — it wins and wins, until the number of wins equals the number of losses.",
-   "How many wins did it have in total? 24.",
+   "How many wins did it have in total? 28.",
    D('Circle choice 4'),
    "Choice four.",
    "Amazing — number 20, the end of the section, and it's solved in seconds, without any calculation. Only from an insight, an understanding:",
-   "if it won 6 games and lost 24, it needs to reach 24 wins. That's all.",
+   "if it won 12 games and lost 28, it needs to reach 28 wins. That's all.",
   ]),
   ('Keep practicing', [
    A("Different appears", P('Each insight question had something different')),
@@ -1594,7 +1594,7 @@ lesson('pt51-summary', 'Summary: The Super-Methods',
   "Estimation — when? Areas, volumes, roots, π — when the answers are far enough apart.",
   A("How appears", T(r'How: $\pi\approx3$, $\sqrt2\approx1.4$, $\sqrt3\approx1.7$ · where is the π? · negative area → out', size=36)),
   "How? π about 3, root 2 about 1.4, root 3 about 1.7. Check where the π should be. A negative area — out.",
-  A("More appears", T('Partial calculation · negligible parts · a range: "between 6 and 8"', size=38)),
+  A("More appears", T('Partial calculation · negligible parts · a range: "between 24 and 32"', size=38)),
   "Calculate only part and peek at the answers. Drop what's negligible. Find a range the answer must be in.",
   A("Trap appears", T('Trap: estimation eliminates — make sure only one answer is left in the range', size=38)),
   "The trap: estimation is for eliminating. Make sure only one answer is left in your range.",
