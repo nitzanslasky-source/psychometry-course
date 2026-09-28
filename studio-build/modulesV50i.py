@@ -60,11 +60,11 @@ lesson('vr50-i-summary', 'Writing Task: Summary', SB, [
  slide(2, 'Analyse the task', [
   "First, analyse. What exactly is being decided, who is affected, and under what conditions? Answer every part of the question.",
   "Then gather: the background goes to the opening paragraph, the claims of both sides are raw material for arguments.",
-  "Choose a position you can argue well, not the one you feel strongest about. Every position can score well.",
+  "Choose a first position you can argue well, not the one you feel strongest about, and confirm or change it after you find your arguments. Every position can score well.",
  ], [
   ('Exact question', 'The exact decision · the people affected · the conditions · every part of the question', 34),
   ('Gather', 'Background → opening paragraph · the sides\' claims → material for arguments', 34),
-  ('Position', 'Choose the side you can argue best. No position is preferred', 34),
+  ('Position', 'A first position: the side you can argue best. Confirm or change it after finding arguments', 34),
  ]),
  slide(3, 'Find arguments', [
   "Three ways to find arguments. One: from the task. Use its arguments, but not only them, not word for word, and explain them well.",

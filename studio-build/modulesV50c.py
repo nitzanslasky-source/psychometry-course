@@ -46,11 +46,11 @@ SB_SENT = ['No terminology', 'Too short', 'Too long', 'The breath test', 'The fi
            'Dash and brackets', 'Quotation marks', '? and !', 'Allowed in an essay?']
 
 SB_ORG = ['Three tools', 'What connectors do', 'An example', 'Know your connectors',
-          'Relationship first', 'Connectors by type', 'Paragraph openers', 'Vary the chain',
+          'Relationship first', 'Connectors by type', 'Paragraph openers',
           'Paragraphs have jobs', 'Transition sentences', 'One argument each?', 'On the page']
 
 SB_RICH = ['Not in the rubric?', 'Repetition', 'Referring words', 'The paragraph, fixed',
-           'Keep the key term', 'Raising the register', 'Not flowery', 'Practice']
+           'Raising the register', 'Not flowery', 'Practice']
 
 
 MODULES = [
@@ -63,11 +63,7 @@ lesson('vr50-c-style', 'Correctness and Style', SB_STYLE, [
  ]),
  dict(mode='concept', active=0, title='Correct, not perfect', script=[
   "Correctness means using the language according to its accepted rules, the grammar you learned at school.",
-  "But I want to remind you of something important first.",
-  S("Raters read a first draft appears", 'The raters read your essay as a first draft written under time pressure', size=40),
-  "The official guide says it clearly: the raters know you wrote this in thirty-five minutes, and they treat it as a first draft.",
-  S("A few small slips will not sink you appears", 'A small number of minor slips will not sink your language score', size=40),
-  "So a small number of minor mistakes is not what brings your score down.",
+  "But remember: correct, not perfect. A small number of minor slips is not what brings your score down.",
   S("Don't let perfectionism slow you down appears", 'Do not let perfectionism stop you from starting, or slow you down', size=40),
   "Don't let perfectionism make it hard to start, or make you write too slowly.",
   N("Clear language first appears", 'Clear language with an occasional small error  >  a perfect sentence you never finished', size=32),
@@ -130,15 +126,10 @@ lesson('vr50-c-style', 'Correctness and Style', SB_STYLE, [
   "'Also' is completely fine inside the sentence: 'such purchases may also lead to debt'. Just don't open with it.",
  ]),
  dict(mode='concept', active=5, title='Spoken forms', script=[
-  "Now, a mistake that comes from the way we speak.",
-  X("In my opinion, face-recognition cameras should be installed, and I'm gonna explain why.", size=30),
-  "When we speak, we say 'gonna', 'wanna', 'I'm'. Because we talk like that, we often write like that too, unless we're paying attention.",
-  V('Face-recognition cameras should be installed in public spaces, for the following reasons.', size=30),
-  N("No contractions appears", "No contractions in the essay:  don't → do not ·  it's → it is ·  can't → cannot", size=32),
-  "In an academic essay, write the full forms: 'do not', 'it is', 'cannot'.",
+  "Now, a mistake that comes from the way we speak. We already said: no contractions. But there's more to it.",
   X("I'll demonstrate a case where a paternalistic law hurts society as a whole:", size=30),
   V('One case in which a paternalistic law harms society as a whole is the following:', size=30),
-  "And notice the second improvement. We didn't need 'I will demonstrate' at all. Just present the case.",
+  "Full forms, of course. But notice the second improvement. We didn't need 'I will demonstrate' at all. Just present the case.",
   "Don't say the same thing twice. Which brings us to the next topic.",
  ]),
  dict(mode='concept', active=6, title='Say it once', script=[
@@ -165,7 +156,8 @@ lesson('vr50-c-style', 'Correctness and Style', SB_STYLE, [
   "Pick one: 'In my opinion', with a comma. Or 'I believe that'. Or 'I would argue that'.",
   N("Other ways appear", 'Also possible:  "My view is that ..."   ·   "It seems to me that ..."', size=32),
   "Other options: 'My view is that', or, a bit softer, 'It seems to me that'.",
-  N("Once is enough appears", 'State your position once, clearly, and then argue it. Do not repeat "in my opinion" in every paragraph.', size=30),
+  N("Once is enough appears", 'Where it goes: the position in the opening, and the start of each key sentence. Inside the development, hedge (may, is likely to) instead of repeating it.', size=30),
+  "Where does it go? Once when you state your position, and at the start of each key sentence. Inside the development, don't repeat it. Hedge instead: may, is likely to.",
  ]),
  dict(mode='concept', active=8, title='One register', script=[
   "Now I want to talk about fixed 'fancy' phrases.",
@@ -435,42 +427,24 @@ lesson('vr50-c-sentences', 'Sentence Structure and Punctuation', SB_SENT, [
  ]),
  dict(mode='concept', active=9, title='Dash and brackets', script=[
   S("Dash appears", 'Dash ( – ): a stronger separation, often before an explanation (like a colon)', size=34),
-  "The dash. When we need a stronger separation between parts of the sentence. It can come before an explanation of what came before it, like a colon.",
   N("Dash example appears", 'This regulation is a "dead letter" – nobody actually follows it.', size=31),
-  "For example: 'This regulation is a dead letter', dash, 'nobody actually follows it'. The dash introduces the explanation.",
-  N("Leaving words out appears", 'Leaving words out:  In the first part, you present your position; in the second, why you hold it.', size=31),
-  "And when you leave words out to avoid repeating them. 'In the first part, you present your position; in the second', and here I dropped 'you explain'. In English we usually mark that with a comma.",
-  S("Brackets appear", 'Brackets ( ): an addition, detail, example, side note or translation', size=34),
-  "Brackets. For an addition, a detail, an example, a side remark, an explanation or a translation. Or instead of commas, when the addition is only loosely connected to the sentence, when you could do without it.",
-  N("Brackets example appears", 'closed-circuit television (CCTV) cameras', size=31),
-  "For example, when you define an abbreviation: closed-circuit television, and in brackets, CCTV.",
+  "The dash. A stronger separation, often before an explanation, like a colon. This regulation is a dead letter, dash, nobody actually follows it.",
+  S("Brackets appear", 'Brackets ( ): an addition, detail or side note:  closed-circuit television (CCTV)', size=34),
+  "Brackets: an addition or a side note, for example when you define an abbreviation.",
  ]),
  dict(mode='concept', active=10, title='Quotation marks', script=[
-  S("Quotation marks appear", 'Quotation marks ( " " ):', size=36, gap=14),
-  "Quotation marks. We use them in a few cases.",
-  N("Quote or direct speech appears", '· a quotation or direct speech', size=31, gap=10),
-  N("Name of a work or institution appears", '· the name of a work or an institution (in handwriting)', size=31, gap=10),
-  N("A term appears", '· a term or expression you are discussing:  the "dead letter" problem', size=31, gap=10),
-  N("A word used loosely appears", '· an informal word used on purpose:  brands may make buyers feel more "important" to their friends', size=31),
-  "A quotation or direct speech. The name of a work or an institution. When we point to a specific term or expression.",
-  "And even an informal or slang word. It's generally not recommended in an essay, but sometimes, in the right place, it fits and it's fine.",
-  "For example: buying brand-name products can serve buyers' psychological needs, making them feel more, in quotation marks, 'important' in the eyes of their friends.",
+  S("Quotation marks appear", 'Quotation marks ( " " ): a quotation · a name · a term you discuss · a word used loosely, on purpose', size=34),
+  "Quotation marks: a quotation, a name, a term you're discussing, or, rarely, an informal word used on purpose.",
   N("A useful expression appears", 'Useful in an essay:  "a dead letter" = a rule that exists on paper but nobody follows', size=31),
-  "By the way, 'a dead letter' is a great expression for the essay. If there's a law or a rule you think nobody will really keep, you can write: this law may become a dead letter.",
+  "By the way, a dead letter is a great expression for the essay: a rule that exists on paper, but nobody follows.",
  ]),
  dict(mode='concept', active=11, title='? and !', script=[
   S("Question mark appears", 'Question mark ( ? ): after a direct question only', size=36),
-  "The question mark. After a direct question. Not after an indirect question.",
   X('The question is whether the city should close the centre to cars?', label='The indirect question appears'),
   V('The question is whether the city should close the centre to cars.'),
-  "'The question is whether...' is an indirect question, so no question mark at the end.",
-  N("No rhetorical questions appears", 'And in the essay itself: no rhetorical questions', size=32),
-  "And remember, rhetorical questions don't belong in the essay at all. The guide lists them among the things to avoid.",
-  S("Exclamation mark appears", 'Exclamation mark ( ! ): an order or strong emotion: Stop!', size=36),
-  "The exclamation mark. After an order, 'Stop!', or to express a wish or surprise.",
-  N("Two marks in a row appears", 'Two marks in a row are rare:  ?! (disbelief) · a mark after a closing bracket or quotation mark', size=31),
-  "In general, two punctuation marks don't come in a row, except after brackets or quotation marks. And question mark with an exclamation mark, 'Seriously?!', expresses disbelief. Again, that's not for academic writing.",
-  "Whether the full stop goes inside or outside the quotation marks, don't worry about that level of detail right now.",
+  "The question mark goes only after a direct question. 'The question is whether' is indirect, so no question mark. And no rhetorical questions in the essay.",
+  S("Exclamation mark appears", 'Exclamation mark ( ! ): an order or strong emotion. Not in the essay', size=36),
+  "The exclamation mark is for an order or strong emotion. Not for academic writing.",
  ]),
  dict(mode='concept', active=12, title='Allowed in an essay?', script=[
   "So, can we use all these marks in academic writing? Here's the summary.",
@@ -572,25 +546,16 @@ lesson('vr50-c-organize', 'Organizational Tools', SB_ORG, [
   "Connectors at the start of paragraphs. Here's a list you can go through.",
   N("Opening paragraph appears", 'Opening paragraph:  no connector.  Start with the background:  In recent years, ... / Recently, ...', size=30, gap=14),
   "The opening paragraph doesn't start with a connector. It usually starts with 'In recent years' or 'Recently', depending on the background in the task.",
-  N("First argument paragraph appears", 'First argument paragraph:  First, ... / To begin with, ... / First and foremost, ...', size=30, gap=14),
-  "Some connectors are typical of certain paragraphs. The first argument paragraph: 'First', 'To begin with', 'First and foremost'.",
-  N("Second argument paragraph appears", 'Second argument paragraph:  Second, ... / In addition, ... / Moreover, ... / Beyond this, ...', size=30, gap=14),
-  "The second argument paragraph: 'Second', 'In addition', 'Moreover', 'Beyond this'.",
+  N("First argument paragraph appears", 'First argument paragraph:  its key sentence opens with  In my opinion, ... / I believe that ...', size=30, gap=14),
+  "The first argument paragraph opens with its key sentence, and the key sentence starts with 'In my opinion' or 'I believe that'. No connector needed.",
+  N("Second argument paragraph appears", 'Second argument paragraph:  Moreover, in my opinion, ... / In addition, I believe that ... / Beyond this, I believe that ...', size=30, gap=14),
+  "The second argument paragraph adds a connector before it: 'Moreover, in my opinion', 'In addition, I believe that'. 'First, in my opinion' sounds awkward, so skip the numbers.",
   N("Rebuttal paragraph appears", 'Rebuttal paragraph:  On the other hand, ... / Nevertheless, some argue that ... / Admittedly, ...', size=30, gap=14),
   "The rebuttal paragraph. Now I want to confront the other side, there's a counter-argument: 'On the other hand', 'Nevertheless', 'Admittedly'. There's contrast here.",
   N("Closing paragraph appears", 'Closing paragraph:  In conclusion, ... / To sum up, ... / In light of the above, ...', size=30),
   "And the closing paragraph. I want to sum up: 'In conclusion', 'To sum up', 'In light of the above'.",
  ]),
- dict(mode='concept', active=7, title='Vary the chain', script=[
-  "Connectors also matter when you turn your chain into a paragraph.",
-  N("A pasted chain appears", '✗  Lower taxes attract companies. Companies open factories. Factories create jobs. Jobs raise income.', size=30, gap=16),
-  "If you just copy the chain, step after step with full stops, it sounds pasted. Choppy, like the paragraph we saw in the last lesson.",
-  N("A connected chain appears", '✓  Lower taxes may attract large companies, which in turn are likely to open new factories. As a result, more jobs would be created, and once more people are employed, household income tends to rise.', size=30),
-  "Vary the connectors: 'which in turn', 'as a result', 'and once...'. Now each arrow in the chain has a word that says what kind of link it is.",
-  S("Each arrow = a connector appears", 'Each arrow in the chain becomes a connector that names the relationship', size=36),
-  "And if you can't find an honest connector for an arrow, that's a sign the arrow is weak. Go back and explain it.",
- ]),
- dict(mode='concept', active=8, title='Paragraphs have jobs', script=[
+ dict(mode='concept', active=7, title='Paragraphs have jobs', script=[
   "Paragraphing and transition sentences.",
   S("Essay = paragraphs with roles appears", 'The essay is built of paragraphs, and each paragraph has a job', size=40),
   "First of all, the essay is made of paragraphs. Each paragraph has a specific role, and we have to make sure each one does its job in the essay.",
@@ -599,7 +564,7 @@ lesson('vr50-c-organize', 'Organizational Tools', SB_ORG, [
   N("Paragraphs reflect ideas appears", 'The official guide: the division into paragraphs should reflect the ideas in the essay', size=32),
   "The official guide says the division into paragraphs should reflect the ideas in the essay. A new idea, a new paragraph.",
  ]),
- dict(mode='concept', active=9, title='Transition sentences', script=[
+ dict(mode='concept', active=8, title='Transition sentences', script=[
   S("Transition sentence defined appears", 'A transition sentence links two paragraphs and shows the reader how the ideas continue', size=38),
   "Transition sentences are sentences that connect paragraphs and help the reader follow the line of thought.",
   "I can connect paragraphs with a connector, or with a longer sentence that explains how the paragraphs relate.",
@@ -607,18 +572,17 @@ lesson('vr50-c-organize', 'Organizational Tools', SB_ORG, [
   N("A transition sentence appears", 'A transition sentence:   Beyond preventing crime, cameras could also change what happens once a crime has occurred: they could shorten police response times.', size=31),
   "The transition sentence reminds the reader where we've been, preventing crime, and tells them where we're going now, what happens after a crime.",
  ]),
- dict(mode='concept', active=10, title='One argument each?', script=[
-  "As a rule, different arguments go in different paragraphs.",
-  S("Same field → one paragraph is fine appears", 'Two arguments from the same field may share a paragraph', size=40),
-  "But sometimes the arguments come from the same field. For example, two economic arguments: one from the employers' side and one from the workers' side.",
-  N("Tax example appears", 'Reduced tax for large companies:  the economic benefit for the companies + the economic benefit for their workers  →  one economic paragraph', size=31),
-  "Take reduced tax for large companies. The benefit to the companies, and the benefit to their employees. Both economic. In a case like that, I can put them in one paragraph.",
-  N("Not a fixed rule appears", '"One paragraph = one argument" is not a rule.  Different perspectives → split.  Same field → combine.', size=31),
-  "There's a belief that each paragraph must have exactly one argument. It doesn't have to be that way.",
-  "If the arguments are different, from different perspectives, we split them into different paragraphs. If they're from the same field, I can combine them, and that's even better.",
-  "If I split them into two paragraphs, they'll look too similar to each other, because they're from the same field. That weakens the critical thinking I'm showing.",
+ dict(mode='concept', active=9, title='One argument each?', script=[
+  "The rule: one argument per paragraph.",
+  S("Same field → one paragraph is fine appears", 'One argument per paragraph. Two points from the same field that serve ONE argument may share it', size=38),
+  "But sometimes two points come from the same field and serve one argument. For example, two economic points: one from the employers' side and one from the workers' side.",
+  N("Tax example appears", 'Reduced tax for large companies:  the benefit for the companies + the benefit for their workers  →  one economic argument, one paragraph', size=31),
+  "Take reduced tax for large companies. The benefit to the companies, and the benefit to their employees. Both economic, and together they make one argument: the economy gains. So they share one paragraph.",
+  N("Not a fixed rule appears", 'Different perspectives → split into paragraphs.  Same field, one argument → combine.', size=31),
+  "If the points are from different perspectives, they are different arguments, so we split them. If they're from the same field and serve one argument, I combine them.",
+  "Split into two paragraphs, they'd look too similar to each other. That weakens the critical thinking I'm showing.",
  ]),
- dict(mode='concept', active=11, title='On the page', script=[
+ dict(mode='concept', active=10, title='On the page', script=[
   "And now, how it looks on the answer sheet.",
   A("The answer sheet appears", dict(ANSWER_SHEET, x=400, y=20, w=640, h=832)),
   A("No new line mid-paragraph appears", T('No new line in the middle of a paragraph', size=32, x=1070, y=90, w=470)),
@@ -668,17 +632,7 @@ lesson('vr50-c-richness', 'Language Richness', SB_RICH, [
   D("teacher underlines: they · trained · the courses they have taken · Unlike them · it"),
   "We've seen how I used different referring words to make the text more readable.",
  ]),
- dict(mode='concept', active=4, title='Keep the key term', script=[
-  "One warning, so you don't overdo it.",
-  S("Same term for the same thing appears", 'Your key term stays the same.  Variety is for the words around it.', size=40),
-  "The central term of your argument stays the same throughout the essay.",
-  X('A suspect\'s name should not be published ... because publishing the name of a criminal ...', size=30),
-  "'A suspect' and 'a criminal' aren't synonyms. A suspect hasn't been convicted. Change the word, and you've changed the argument.",
-  V('A suspect\'s name should not be published ... because publishing the name of a person who has not been convicted ...', size=30),
-  N("Referring word must be clear appears", 'And a referring word must point clearly to one thing (see pronoun reference)', size=31),
-  "And like we saw in the grammar lesson, a 'they' or an 'it' must point clearly to one thing.",
- ]),
- dict(mode='concept', active=5, title='Raising the register', script=[
+ dict(mode='concept', active=4, title='Raising the register', script=[
   "Now some examples of raising the register. Just a few examples, to give you a direction, so you understand what to do and try it yourselves, with every word and sentence you come across.",
   N("Pairs appear", 'but → however, yet   ·   because → since, as   ·   because of → due to, owing to', size=31, gap=12),
   "Instead of 'but', you can write 'however' or 'yet'. Everything is correct. 'But' is fine. 'However' is just a bit more formal.",
@@ -690,7 +644,7 @@ lesson('vr50-c-richness', 'Language Richness', SB_RICH, [
   "Again, these are just a few small examples. You can take almost any sentence and try to raise it with synonyms that keep the same meaning.",
   "With practice, and depending on your vocabulary, you'll gradually be able to take sentences and raise the language, and show more richness.",
  ]),
- dict(mode='concept', active=6, title='Not flowery', script=[
+ dict(mode='concept', active=5, title='Not flowery', script=[
   "But here's the limit.",
   S("Guide: avoid needlessly difficult appears", 'Avoid flowery and needlessly difficult language', size=42),
   "The guide says: avoid flowery and needlessly difficult language. And use only words that accurately convey what you mean.",
@@ -702,7 +656,7 @@ lesson('vr50-c-richness', 'Language Richness', SB_RICH, [
   S("Use the range you control appears", 'Richness = the range you can control, used precisely', size=40),
   "So richness means using the range of English you can control, and using it precisely.",
  ]),
- dict(mode='concept', active=7, title='Practice', script=[
+ dict(mode='concept', active=6, title='Practice', script=[
   "A short practice routine.",
   N("Step 1 appears", '1 · Take a paragraph you wrote. Circle every noun that appears three times or more.', size=32, gap=18),
   "Take a paragraph from a practice essay. Circle every noun that appears three times or more.",
@@ -741,6 +695,8 @@ MEMORY = [
     ['Plus, / Also, (at the start)', 'In addition, / Moreover,'],
     ["don't · it's · gonna", 'do not · it is · will'],
     ['informations · researches · evidences', 'information · research / studies · evidence'],
+    ['on the one side ... on the other side · until today', 'on the one hand ... on the other hand · to this day'],
+    ['a lot of damages · the possibility to', 'a great deal of damage · the opportunity to / the possibility of'],
     ['logical and reasonable · basically · a complex issue', 'say it once; delete empty words'],
    ])],
   tips=['A few minor slips in a first draft will not sink you; errors that change the meaning will.',
@@ -761,13 +717,13 @@ MEMORY = [
    ]),
    dict(title='Paragraph openers', head=['Paragraph', 'Opens with'], rows=[
     ['Opening paragraph', 'no connector: In recent years, ... / Recently, ...'],
-    ['First argument paragraph', 'First, ... / To begin with, ... / First and foremost, ...'],
-    ['Second argument paragraph', 'Second, ... / In addition, ... / Moreover, ... / Beyond this, ...'],
+    ['First argument paragraph', 'its key sentence: In my opinion, ... / I believe that ...'],
+    ['Second argument paragraph', 'Moreover, in my opinion, ... / In addition, I believe that ...'],
     ['Rebuttal paragraph', 'On the other hand, ... / Nevertheless, ... / Admittedly, ...'],
     ['Closing paragraph', 'In conclusion, ... / To sum up, ... / In light of the above, ...'],
    ])],
   tips=['Use only connectors you understand: albeit = although; "on the contrary" is not "on the other hand".',
-        'Turning a chain into a paragraph: each arrow gets a connector that names the link.',
-        'A new idea = a new paragraph; two arguments from the same field may share one.',
+        'Turning a chain (the cause-and-effect steps, taught later) into a paragraph: each arrow gets a connector that names the link.',
+        'One argument per paragraph; two points from the same field that serve one argument may share it.',
         'No new line mid-paragraph; indent each new paragraph.']),
 ]

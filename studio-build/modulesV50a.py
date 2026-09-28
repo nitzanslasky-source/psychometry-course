@@ -40,9 +40,10 @@ P_OPEN = ("Recently, security officials have been working to set up a national n
           "high level of accuracy, are intended to help the security forces catch offenders during or after "
           "illegal activity, and thus to reduce, and perhaps even eliminate, crime in the country. However, some "
           "people have come out strongly against this move because of the harm to privacy that it involves. "
-          "In my opinion, these cameras should be installed, and the sooner the better.")
+          "In my opinion, these cameras should be installed, since their benefits to public safety are likely to "
+          "outweigh the harm to privacy.")
 
-P_ARG1 = ("First, placing face-recognition cameras in public spaces would, in my view, create deterrence, which "
+P_ARG1 = ("In my opinion, placing face-recognition cameras in public spaces would create deterrence, which "
           "would lead to fewer offences in the monitored areas. It is reasonable to assume that the cameras would "
           "be accompanied by a broad public campaign and by signs in the filmed areas, which would raise awareness "
           "of their presence. This awareness would lead people who plan to commit offences in these areas to "
@@ -50,13 +51,13 @@ P_ARG1 = ("First, placing face-recognition cameras in public spaces would, in my
           "considerably. For example, since cameras were installed at traffic lights, the number of vehicles "
           "crossing on a red light has dropped significantly. Since the situation is very similar, it stands to "
           "reason that the same would happen here: knowing that the cameras exist would deter offenders and, as "
-          "a result, would considerably reduce the number of offences committed in filmed public spaces.")
+          "a result, would probably reduce the number of offences committed in filmed public spaces.")
 
-P_ARG2 = ("Second, installing the cameras could make law enforcement far more efficient and increase the number "
+P_ARG2 = ("In addition, I believe that installing the cameras could make law enforcement considerably more efficient and increase the number "
           "of crimes that are solved, while reducing the resources needed to do so. With the help of the cameras, "
           "the police could work faster, both while an offence is taking place, by sending officers to the area "
           "and stopping it, and afterwards, by identifying and locating suspects more quickly and later proving "
-          "their guilt. In my estimation, this step would save a great deal of time, manpower and money, since "
+          "their guilt. This step would probably save a great deal of time, manpower and money, since "
           "without the cameras officers would have to question passers-by and invest considerable resources in "
           "searching for other evidence. For instance, suppose that the police arrest a suspect in the act. "
           "Footage of that person committing the offence would make it easier to prove his guilt, and in many "
@@ -67,8 +68,8 @@ P_REBUT = ("On the other hand, some argue that operating cameras in public space
            "public. Since the cameras can identify people and vehicles with a high degree of certainty, the "
            "database would hold information about people's locations without their consent, unlike, for example, "
            "tracking by certain apps, which depends on each person's own choice of permission settings on the "
-           "device. At first glance, this argument seems very reasonable. However, in my view, in the age of "
-           "smartphones and social media, the privacy argument has become outdated in this case. Even if a person "
+           "device. At first glance, this argument seems very reasonable. However, in the age of smartphones and "
+           "social media, the privacy argument largely does not hold in this case. Even if a person "
            "can deny tracking permissions to certain apps, mobile phone companies know the exact location of the "
            "phone at every moment, and this monitoring cannot be switched off. Since many people today keep their "
            "phones with them wherever they go, there is, in practice, a constant ability to track a large part of "
@@ -79,7 +80,7 @@ P_CLOSE = ("In conclusion, in my opinion, placing face-recognition cameras in pu
            "probably make law enforcement more efficient and save considerable resources, which could then be "
            "used for other important purposes.")
 
-SB_INTRO = ['The exam page', 'The answer sheet', 'Why it matters', 'Why an essay?', 'Where in the test',
+SB_INTRO = ['The exam page', 'Why it matters', 'Why an essay?', 'Where in the test',
             'Academic writing', 'An argument essay', 'Explain, not persuade', 'No right answer',
             'Skills you have', 'A skill for life']
 
@@ -87,18 +88,17 @@ SB_RULES = ['The instructions', 'Time: 35 minutes', 'One given task', 'Length: 2
             'Scrap paper', 'One answer sheet', 'Style and language', 'Which language?', 'Pencil and eraser',
             'Only on the lines']
 
-SB_RUBRIC = ['Why a rubric', 'Two rubrics', 'The content rubric', 'One row, 1 to 6', 'Critical thinking',
-             'The language rubric', 'Organizational tools', 'Richness', 'A toolbox', 'Stay under the radar']
+SB_RUBRIC = ['Why a rubric', 'Two rubrics', 'The criteria', 'A toolbox', 'Stay under the radar']
 
 SB_SCORE = ['Two raters', 'One rater: 2 to 12', 'The total: 4 to 24', 'A third rater', 'Disqualified',
-            '25% of Verbal', 'Hidden in Verbal', 'Next: practice']
+            '25% of Verbal', 'Hidden in Verbal']
 
 SB_EXPECT = ['An example task', 'The question', 'Two values clash', 'Opening paragraph', 'What it does',
-             'Language in it', 'Argument paragraph 1', 'How it is built', 'One idea per paragraph',
+             'Language in it', 'Argument paragraph 1', 'How it is built', 'One argument each',
              'Quotation marks', 'Argument paragraph 2', 'Hedging = opinion', 'Another perspective']
 
-SB_EXPECT2 = ['Rebuttal paragraph', 'Why a rebuttal', 'Their block', 'Our answer', '"Many", not "most"',
-              'Closing paragraph', 'A first draft', 'Content: polished', 'Missing the task', 'What we saw']
+SB_EXPECT2 = ['Rebuttal paragraph', 'Why a rebuttal', 'Their block', 'Our answer',
+              'Closing paragraph', 'Content: polished', 'What we saw']
 
 SB_BASE = ['Where you start', 'Your task', 'The rules', 'No pressure', 'Keep it', 'Before and after']
 
@@ -124,22 +124,7 @@ lesson('vr50-a-intro', 'The Writing Task', SB_INTRO, [
   "You have 35 minutes to read the task, plan, and write.",
   "This page is a re-created example with a task we wrote for the course. The real one looks just like it.",
  ]),
- dict(mode='concept', active=1, title='The answer sheet', script=[
-  "And this is where you write: the answer sheet.",
-  A('The answer sheet appears', SHEET),
-  RC('50 lines', 'One sheet, 50 numbered lines.', 60),
-  "One sheet. Fifty lines. That's all the room you have.",
-  RC('At least 25', 'At least 25 lines. That red line is the minimum.', 160),
-  "Your essay must be at least 25 lines long. See the red line? That's the minimum.",
-  D("teacher traces the red line at line 25"),
-  RC('Good: 30-40', 'A good essay is usually about 30-40 lines (average handwriting).', 290),
-  "According to NITE, a good essay in average-size handwriting is usually about 30 to 40 lines. The blue zone.",
-  RC('Maximum 50', 'Never more than 50. Write only on the lines.', 450),
-  "And never more than 50. Write only on the lines. Anything else is not read.",
-  RC('Draft not marked', 'Scrap paper is in the test booklet. It is not marked.', 570),
-  "For planning, you get scrap paper in the test booklet. Nobody marks it.",
- ]),
- dict(mode='concept', active=2, title='Why it matters', script=[
+ dict(mode='concept', active=1, title='Why it matters', script=[
   L('25% of Verbal', 'The essay = 25% of your Verbal Reasoning score', 110, 44),
   "Why should you care? The essay is a quarter of your Verbal Reasoning score.",
   L('About a tenth of the total', 'That is roughly a tenth of your whole test score', 220, 40),
@@ -150,7 +135,7 @@ lesson('vr50-a-intro', 'The Writing Task', SB_INTRO, [
   L('Useful beyond the test', 'And it matters beyond the test, too', 440, 36),
   "And by the way, what you learn here matters far beyond the test. We'll come back to that.",
  ]),
- dict(mode='concept', active=3, title='Why an essay?', script=[
+ dict(mode='concept', active=2, title='Why an essay?', script=[
   "Why was a writing task added to the test? It wasn't always there.",
   L('Writing is key in academic studies', 'Writing is a key skill in academic studies', 110, 42),
   "In short: someone concluded that writing is a key skill for academic studies.",
@@ -159,16 +144,15 @@ lesson('vr50-a-intro', 'The Writing Task', SB_INTRO, [
   L('Other tests do it too', 'Other admission tests around the world, such as the GRE, include a writing task too', 300, 32),
   "And it's not only us. Other admission tests around the world include a writing task as well.",
  ]),
- dict(mode='concept', active=4, title='Where in the test', script=[
+ dict(mode='concept', active=3, title='Where in the test', script=[
   L('The essay comes first', 'The test opens with the writing task', 110, 44),
   "The test starts with the essay. It's the very first thing you do.",
   L('35 minutes', '35 minutes · then the essays are collected', 210, 40),
   "You get 35 minutes. Then the essays are collected.",
-  "If you've heard 30 minutes somewhere, that's the Hebrew test. In other languages the time is 35 minutes.",
   L('Then the multiple-choice sections', 'Then: the multiple-choice sections (Verbal, Quantitative, English)', 310, 36),
   "After that, the multiple-choice sections begin: Verbal Reasoning, Quantitative Reasoning and English.",
  ]),
- dict(mode='concept', active=5, title='Academic writing', script=[
+ dict(mode='concept', active=4, title='Academic writing', script=[
   "There are many kinds of essays. For this test, NITE chose academic writing.",
   L('Academic writing', 'Academic writing: the style of papers, exercises and articles at university', 110, 38),
   "Why? Because that's the style used at university, for papers, exercises and articles.",
@@ -181,7 +165,7 @@ lesson('vr50-a-intro', 'The Writing Task', SB_INTRO, [
   L('Language', 'LANGUAGE: how you write (rich, clear, correct)', 550, 34),
   "And language: how you write it. Rich, clear, correct language.",
  ]),
- dict(mode='concept', active=6, title='An argument essay', script=[
+ dict(mode='concept', active=5, title='An argument essay', script=[
   "In practice, you're asked to write an argument essay. For and against.",
   L('An issue is presented', 'The task presents an issue: a new law, cancelling an old law, a proposal, a trend', 110, 34),
   "The task presents an issue. A new law someone wants to pass, an old law someone wants to cancel, a proposal, some trend.",
@@ -192,7 +176,7 @@ lesson('vr50-a-intro', 'The Writing Task', SB_INTRO, [
   L('Choose the side whose advantages are bigger', 'Choose the position whose advantages you think are bigger, and give arguments that show why', 460, 36),
   "Your job: choose the position whose advantages, in your view, are bigger. Then give arguments that explain why.",
  ]),
- dict(mode='concept', active=7, title='Explain, not persuade', script=[
+ dict(mode='concept', active=6, title='Explain, not persuade', script=[
   "Many students pick the position they think will be more convincing. And that creates pressure.",
   L('You do not have to persuade', 'You do not have to persuade the other side', 110, 42),
   "Listen: you don't have to persuade the other side.",
@@ -204,7 +188,7 @@ lesson('vr50-a-intro', 'The Writing Task', SB_INTRO, [
   L('But: strong arguments', 'But your arguments must still be strong and convincing', 400, 36),
   "But careful. This does not mean average arguments. You need strong, convincing arguments, or the reader won't understand why you chose your side.",
  ]),
- dict(mode='concept', active=8, title='No right answer', script=[
+ dict(mode='concept', active=7, title='No right answer', script=[
   "Another important point: the opinion you choose doesn't really matter.",
   L('Any position is legitimate', 'There is no right or wrong position. Any position is legitimate', 110, 40),
   "Nobody expects position X or position Y. There's no right or wrong here.",
@@ -216,7 +200,7 @@ lesson('vr50-a-intro', 'The Writing Task', SB_INTRO, [
   L('Some are easier to explain', 'Still: some positions are easier to explain. We will see which', 400, 36),
   "Still, we'll see later that some positions are easier to explain, so it can be smart to choose them.",
  ]),
- dict(mode='concept', active=9, title='Skills you have', script=[
+ dict(mode='concept', active=8, title='Skills you have', script=[
   "By the way, writing an essay combines skills you're already learning in Verbal Reasoning.",
   L('Strengthen and weaken', 'Strengthening and weakening arguments: you weaken the other side and strengthen yours', 110, 34),
   "Strengthening and weakening arguments: you face opposing views, you weaken them, and you strengthen your own.",
@@ -227,17 +211,12 @@ lesson('vr50-a-intro', 'The Writing Task', SB_INTRO, [
   L('Reading and sentence structure', 'Reading comprehension and understanding how sentences are built', 380, 34),
   "Reading comprehension, and understanding how sentences are built.",
  ]),
- dict(mode='concept', active=10, title='A skill for life', script=[
-  "And as I said, this isn't only for university. It really matters in life.",
-  "Honestly, at first I wasn't thrilled that they added an essay to the test. Today it's the topic I love most.",
-  L('We discuss things every day', 'We argue and discuss every single day', 110, 42),
-  "We don't live in a vacuum. We're always dealing with people: family, friends, colleagues, strangers online.",
-  L('At home', 'At home: what to eat? where to go? "You work too much!"', 200, 36),
-  "At home: what should we eat? Where should we go? \"It's not okay that you work so much.\" And then I explain why it is okay.",
-  L('At work', 'At work: how to market the product? which platform? which treatment fits this patient?', 290, 36),
-  "At work, there are always people who think differently. How should we market the product? Which platform should we build on? Which treatment suits this patient?",
-  L('Skills you will keep', 'Explaining a position clearly is a skill you will keep long after the test', 400, 36),
-  "In short, the skills in these lessons are critical. You'll take them with you far beyond the test.",
+ dict(mode='concept', active=9, title='A skill for life', script=[
+  "And as I said, this isn't only for university.",
+  L('We discuss things every day', 'At home and at work, we explain our positions every day', 110, 40),
+  "At home and at work, we explain our positions to people who think differently every single day.",
+  L('Skills you will keep', 'Explaining a position clearly is a skill you will keep long after the test', 220, 36),
+  "So the skills in these lessons are ones you'll keep long after the test.",
   "Next: the instructions on that page, one by one.",
  ]),
 ], T50),
@@ -383,81 +362,29 @@ lesson('vr50-a-rubric', 'How the Essay Is Rated', SB_RUBRIC, [
   L('1 to 6', 'Each is rated from 1 (very poor) to 6 (very good)', 370, 40),
   "Each one gets a score from 1, very poor, to 6, very good.",
  ]),
- dict(mode='concept', active=2, title='The content rubric', script=[
+ dict(mode='concept', active=2, title='The criteria', script=[
   "Let's start with content. I won't go through every box. What matters now are the criteria.",
-  L('Heading', 'A clear main idea, relevant to the task', 100, 42),
+  L('Heading', 'Content: a clear main idea, relevant to the task', 100, 42),
   "The heading, what the raters look for first: a clear main idea, relevant to the task.",
   L('1', '1 · Development of the thesis: are the ideas explained and supported?', 200, 34),
   "Under it: development of the thesis. Do you explain and support your ideas?",
   L('2', '2 · Focus and coherence: one line of thought, no jumping, no repetition', 290, 34),
   "Focus and coherence. One clear line of thought, no jumping around, no needless repetition.",
-  L('3', '3 · Critical thinking', 380, 34),
-  "And critical thinking.",
-  L('Main idea', 'Relevance to the task + main idea: everything else hangs on these', 450, 34),
-  "Remember the heading: relevance to the task and a clear main idea. Everything else hangs on them.",
-  "We'll go deep into each of these in later lessons. This is the map.",
+  L('3', '3 · Critical thinking: define the issue, opinion vs fact, several perspectives, answer the other side', 380, 34),
+  "And critical thinking: defining the issue precisely, telling opinion from fact, several perspectives, and answering the other side.",
+  L('Language', 'Language: clarity and academic style · precise words · grammar · varied sentences · organizational tools (connectors, paragraphs)', 500, 34),
+  "And the language rubric: clarity and academic style, precise words, correct grammar, varied sentences, and organizational tools, like connectors and paragraphs.",
+  L('Best fit', 'Each criterion is rated 1 to 6; raters pick the description that fits best', 640, 34),
+  "Each one is rated from 1 to 6, and raters pick the description that fits best. Each rubric gets its own lesson. This is the map.",
  ]),
- dict(mode='concept', active=3, title='One row, 1 to 6', script=[
-  "Every criterion has its own row, with a description for each score. Look at one row: development.",
-  L('Score 1', 'Development · 1: "Inadequate content"', 110, 38),
-  "A score of 1: the content is inadequate. Thin.",
-  L('Score 6', 'Development · 6: relevant, detailed and insightful, with full explanations, convincing and varied arguments, appropriate examples', 200, 34),
-  "A score of 6: relevant, detailed and insightful development. Full explanations, convincing and varied arguments, appropriate examples.",
-  L('Best fit', 'Raters pick the description that fits best: an essay rarely matches one box exactly', 360, 34),
-  "Raters choose the description that fits best. An essay rarely matches one box exactly.",
- ]),
- dict(mode='concept', active=4, title='Critical thinking', script=[
-  "Critical thinking has a small star next to it. The star explains what it includes.",
-  L('Precise definition', '• A precise definition of the issue', 110, 38),
-  "A precise definition of the issue.",
-  L('Opinion vs fact', '• Telling opinion apart from fact', 180, 38),
-  "Distinguishing between opinion and fact.",
-  L('Several perspectives', '• Looking at the issue from several perspectives', 250, 38),
-  "Examining the issue from several perspectives.",
-  L('Opposing views', '• Dealing with opposing views: answering them', 320, 38),
-  "And the ability to deal with opposing views, and answer them.",
-  "Each of these will get its own lesson. For now, just know they're on the list.",
- ]),
- dict(mode='concept', active=5, title='The language rubric', script=[
-  "Now the language rubric.",
-  L('Heading', 'Clarity and consistency with academic writing', 100, 42),
-  "The heading: clarity, and consistency with academic writing.",
-  L('1', '1 · Semantic precision: the exact word for the exact meaning', 200, 34),
-  "What does that include? Semantic precision: the right word for exactly what you mean.",
-  L('2', '2 · Grammar: correct grammar and syntax', 270, 34),
-  "Grammar: correct grammar and sentence structure.",
-  L('3', '3 · Syntactic structures: complex, varied sentences', 340, 34),
-  "Syntactic structures: complex, varied sentences, not only short basic ones.",
-  L('4', '4 · Organizational tools', 410, 34),
-  "And organizational tools.",
- ]),
- dict(mode='concept', active=6, title='Organizational tools', script=[
-  "Organizational tools also have a star. Here's what they include.",
-  L('Connectors', '• Connectors: because, however, therefore, as a result...', 110, 38),
-  "Connectors: because, however, therefore, as a result.",
-  L('Transition sentences', '• Transition sentences between parts and paragraphs', 190, 38),
-  "Transition sentences, that lead the reader from one part to the next.",
-  L('Paragraphing', '• Paragraphing: dividing the essay into paragraphs correctly', 270, 38),
-  "And paragraphing: dividing the essay into paragraphs correctly.",
- ]),
- dict(mode='concept', active=7, title='Richness', script=[
-  "And there's one more thing I add, even though it's not a separate row in the rubric.",
-  L('Rich vocabulary', 'Richness of vocabulary', 110, 44),
-  "Richness of vocabulary.",
-  L('In the guide', 'NITE\'s guide says raters consider "richness of vocabulary"', 200, 38),
-  "It's implied by clarity and academic style. And NITE's guide says it outright: raters consider richness of vocabulary.",
-  L('No slang', 'Academic writing: no slang, not everyday chat', 290, 38),
-  "Academic writing needs a certain richness. You can't write in slang or in everyday chat.",
-  "We'll go through both rubrics in depth in the coming lessons.",
- ]),
- dict(mode='concept', active=8, title='A toolbox', script=[
+ dict(mode='concept', active=3, title='A toolbox', script=[
   L('Thinking is tested', 'One thing the essay tests is thinking: critical thinking', 110, 40),
   "One of the main things this essay tests is thinking. Critical thinking.",
   L('A toolbox', 'Like the toolbox in Quantitative Reasoning, you will get a toolbox for thinking critically and expressing yourself well', 210, 36),
   "Just like in Quantitative Reasoning you have a toolbox of methods, here too we'll give you a toolbox.",
   "Tools to think critically, and tools to express yourself better.",
  ]),
- dict(mode='concept', active=9, title='Stay under the radar', script=[
+ dict(mode='concept', active=4, title='Stay under the radar', script=[
   "One small tip to end this lesson.",
   L('Silence is wisdom', '"If you are not sure, leave it out."', 100, 44),
   "There's an old saying: if you don't know, better stay silent than say something foolish.",
@@ -547,14 +474,6 @@ lesson('vr50-a-score', 'The Essay Score', SB_SCORE, [
   L('No separate essay score', 'You cannot see the essay score on its own', 310, 40),
   "But you can't see how much you got on the essay itself. It's hidden inside the Verbal score.",
  ]),
- dict(mode='concept', active=7, title='Next: practice', script=[
-  L('Now you know the score', 'Now you know how the score works', 110, 42),
-  "So now we understand how the essay score works.",
-  L('How to practise', 'Next: how to practise during the course', 200, 42),
-  "Before we dive into how to write an essay, let's see what's expected of you, and then how to practise.",
-  L('Plan your time', 'So you can plan your time', 290, 42),
-  "That way you can plan your time for the whole course.",
- ]),
 ], T50),
 
 # ------------------------------------------------------------------ 5. what is expected of me, part 1 (seg04)
@@ -594,7 +513,7 @@ lesson('vr50-a-expect', 'What Is Expected of Me', SB_EXPECT, [
   "Recently, security officials have been working to set up a national network of face-recognition cameras in public spaces.",
   "The cameras are meant to help catch offenders, and thus reduce, perhaps even eliminate, crime.",
   "However, some people have come out strongly against this move, because of the harm to privacy.",
-  "In my opinion, these cameras should be installed, and the sooner the better.",
+  "In my opinion, these cameras should be installed, since their benefits to public safety are likely to outweigh the harm to privacy.",
   D("teacher underlines \"In my opinion, these cameras should be installed\""),
  ]),
  dict(mode='concept', active=4, title='What it does', script=[
@@ -611,8 +530,8 @@ lesson('vr50-a-expect', 'What Is Expected of Me', SB_EXPECT, [
  ]),
  dict(mode='concept', active=5, title='Language in it', script=[
   "Language is checked everywhere, including in the opening. No mistakes, and some richness.",
-  L('Rich phrases', '"have come out strongly against" · "the sooner the better"', 110, 38),
-  "Look at phrases like these: have come out strongly against. The sooner the better.",
+  L('Rich phrases', '"have come out strongly against" · "are likely to outweigh"', 110, 38),
+  "Look at phrases like these: have come out strongly against. Are likely to outweigh. Calm, precise and hedged.",
   L('Do not overdo it', 'But do not overdo it: a phrase or two, not one in every line', 210, 38),
   "But as we'll learn, you must not overdo it.",
   L('One register', 'Keep one register throughout: do not jump from chat to lofty style', 300, 38),
@@ -621,7 +540,7 @@ lesson('vr50-a-expect', 'What Is Expected of Me', SB_EXPECT, [
  dict(mode='concept', active=6, title='Argument paragraph 1', script=[
   "Now the first argument paragraph. My first reason for the cameras.",
   A('The first argument paragraph appears', T(P_ARG1, size=32, x=410, y=60, w=1140)),
-  "First: the cameras would create deterrence, which would lead to fewer offences in the monitored areas.",
+  "In my opinion, the cameras would create deterrence, which would lead to fewer offences in the monitored areas.",
   D("teacher underlines the first sentence"),
   "It's reasonable to assume there'd be a campaign and signs. That raises awareness.",
   "Awareness makes offenders think twice, because their chances of being caught have gone up.",
@@ -630,23 +549,23 @@ lesson('vr50-a-expect', 'What Is Expected of Me', SB_EXPECT, [
  ]),
  dict(mode='concept', active=7, title='How it is built', script=[
   L('Key sentence', 'Key sentence: position + reason (deterrence → fewer offences)', 90, 36),
-  "The paragraph opens with a key sentence: my position and my reason. Deterrence, which leads to fewer offences.",
+  "The paragraph opens with a key sentence: in my opinion, plus my reason. Deterrence, which leads to fewer offences.",
   L('An opinion, not a fact', 'It is an opinion, not a fact, so it must be explained', 180, 36),
   "That's an opinion, not a fact. So I have to explain why I think it's true.",
   L('Development', 'Development: cameras → campaign and signs → awareness → "think twice" → fewer offences', 270, 34),
   "That's the development. Step by step: cameras, a campaign, awareness, offenders think twice, fewer offences.",
-  L('Nothing is obvious', 'Nothing is obvious: explain every step of the chain', 380, 36),
-  "We'll learn that nothing is obvious. You must explain every step in the chain, from the cameras to the result.",
+  L('Nothing is obvious', 'Nothing is obvious: explain every step, from the cameras to the result', 380, 36),
+  "We'll learn that nothing is obvious. You must explain every step, from the cameras to the result.",
   L('Support', 'Support: a comparison to a similar case (traffic-light cameras)', 470, 36),
   "And at the end, support. Up to here I explained with logic. Now I compare to a similar case, traffic-light cameras, to make it stronger.",
  ]),
- dict(mode='concept', active=8, title='One idea per paragraph', script=[
+ dict(mode='concept', active=8, title='One argument each', script=[
   L('One argument', 'This paragraph deals with one argument only: deterrence', 110, 40),
   "Notice: this paragraph talks about one argument only. Deterrence.",
-  L('One idea per paragraph', 'Rule: one idea per paragraph', 210, 44),
-  "We'll learn this rule: every paragraph deals with one idea.",
-  L('Other reasons', 'More reasons? Save them for another paragraph, or pick only the strongest', 300, 38),
-  "Other reasons or advantages don't go in here. Save them for another paragraph, or choose only your strongest ones.",
+  L('One argument per paragraph', 'Rule: one argument per paragraph (two points from the same field that serve ONE argument may share it)', 190, 36),
+  "We'll learn this rule: one argument per paragraph. Two points from the same field may share a paragraph, but only when together they serve one argument.",
+  L('Other reasons', 'Another reason? It gets its own paragraph, or pick only the strongest', 320, 36),
+  "A different reason doesn't go in here. It gets its own paragraph, or you choose only your strongest ones.",
   L('Connectors', 'Connectors show how each sentence links to the next: "For example", "as a result"', 410, 36),
   "And there's a clear flow. Connectors like for example and as a result show how each sentence links to the next.",
   L('Hedging', 'Hedged: "It is reasonable to assume", "it stands to reason"', 510, 36),
@@ -664,9 +583,9 @@ lesson('vr50-a-expect', 'What Is Expected of Me', SB_EXPECT, [
  dict(mode='concept', active=10, title='Argument paragraph 2', script=[
   "The second argument paragraph: my second reason for the cameras.",
   A('The second argument paragraph appears', T(P_ARG2, size=31, x=410, y=50, w=1140)),
-  "Second: the cameras could make law enforcement far more efficient, and save resources.",
+  "In addition, I believe the cameras could make law enforcement considerably more efficient, and save resources.",
   "The police could act during the offence, and afterwards: identify, locate, prove guilt.",
-  "In my estimation, this saves time, manpower and money. Without cameras, officers would question passers-by and search for other evidence.",
+  "This would probably save time, manpower and money. Without cameras, officers would question passers-by and search for other evidence.",
   "Then an example: a suspect caught in the act. The footage helps prove guilt, and he can't commit further offences.",
  ]),
  dict(mode='concept', active=11, title='Hedging = opinion', script=[
@@ -679,8 +598,8 @@ lesson('vr50-a-expect', 'What Is Expected of Me', SB_EXPECT, [
   L('Opinion vs fact', '2 · Opinion vs fact (critical thinking): "could" marks an opinion', 340, 36),
   "Two: critical thinking. Distinguishing opinion from fact.",
   "Could make things more efficient says: this is my view. Will make them more efficient states a fact I can't really know.",
-  L('No need for "I think"', 'No need to write "in my opinion" every time: the hedge already says it', 440, 36),
-  "So I don't have to write in my opinion every time. Hedging words do that job. And \"in my estimation\" is another way to say it.",
+  L('Opinion once', '"In my opinion": once, in the key sentence. In the development: hedging (could, may, is likely to)', 430, 34),
+  "So in my opinion, or I believe that, goes once, at the start of the key sentence. Inside the development I don't repeat it. Hedging words like could, may and is likely to do that job.",
   L('Level', 'Richer phrases now and then: "not merely", "which in turn"', 530, 36),
   "Notice some higher phrases: not merely, which in turn. But the essay is not full of dictionary words.",
   "Normal, simple, clear writing. Just not everyday chat, with a higher phrase here and there.",
@@ -708,7 +627,7 @@ lesson('vr50-a-expect2', 'What Is Expected: The Rest', SB_EXPECT2, [
   A('The rebuttal paragraph appears', T(P_REBUT, size=31, x=410, y=60, w=1140)),
   "On the other hand, some argue the cameras would violate privacy. The database would know where people are, without their consent.",
   "Unlike apps, where each person chooses the permissions.",
-  "At first glance, this seems very reasonable. However, in the age of smartphones, the privacy argument has become outdated.",
+  "At first glance, this seems very reasonable. However, in the age of smartphones, the privacy argument largely does not hold.",
   "Phone companies know where your phone is at every moment. And many people keep their phones with them everywhere.",
  ]),
  dict(mode='concept', active=1, title='Why a rebuttal', script=[
@@ -727,7 +646,7 @@ lesson('vr50-a-expect2', 'What Is Expected: The Rest', SB_EXPECT2, [
   L('Their main argument', 'Their main argument: privacy. Tracking us without our consent', 110, 38),
   "First, I present their main argument: privacy. They could track us all the time, without our consent.",
   L('A block', 'Then a "block": "unlike apps, where each person chooses the permissions"', 210, 38),
-  "And look: the writer even gives the other side a block against a future weakening.",
+  "And look: the writer even gives the other side a block against our answer, before we give it.",
   "The other side says: I know you'll answer that apps track us anyway. But with apps, I choose the permissions.",
   L('Fair to them', 'We present the other side at its strongest, not as a straw man', 330, 38),
   "That's a nice touch. The other side isn't naive either. It blocks us before we even start.",
@@ -736,27 +655,15 @@ lesson('vr50-a-expect2', 'What Is Expected: The Rest', SB_EXPECT2, [
  dict(mode='concept', active=3, title='Our answer', script=[
   L('Concede', '"At first glance, this argument seems very reasonable."', 100, 38),
   "First we admit: at first glance, it makes sense. With apps I choose, with cameras I don't.",
-  L('However', '"However, in my view, ... the privacy argument has become outdated."', 190, 38),
-  "However, in the age of smartphones and social media, the privacy argument has become outdated.",
+  L('However', '"However, ... the privacy argument largely does not hold in this case."', 190, 38),
+  "However, in the age of smartphones and social media, the privacy argument largely does not hold.",
   L('Break the block', 'Answer the block: phone companies know where the phone is, and that cannot be switched off', 290, 36),
   "And now we answer their block directly. Even if you deny permissions to apps, the phone company knows where your phone is.",
   "Location services on or off, it doesn't matter. And if they know where my phone is, they practically know where I am.",
   L('"in practice"', '"in practice" = not just in theory', 420, 38),
-  "In practice, there is already constant tracking of a large part of the population. That's the weakening: we hit the point their argument depends on.",
+  "In practice, there is already constant tracking of a large part of the population. That's a weakening, an answer that weakens their argument. This kind is called: the argument does not hold. Saying 'not true' is risky, but here we show why, with a fact. Weakenings get their own lessons later.",
  ]),
- dict(mode='concept', active=4, title='"Many", not "most"', script=[
-  "Here's another tip, about hedged wording.",
-  L('most', '✗ "most people keep their phones with them"', 110, 40),
-  "Instead of writing: most people keep their phones with them,",
-  L('many', '✓ "many people keep their phones with them"', 200, 40),
-  "I write: many people keep their phones with them.",
-  L('Why', '"Many" cannot be wrong. "Most" is a claim of fact that the rater may doubt', 300, 38),
-  "What's the difference? The meaning is almost the same. But nobody can tell me many is wrong.",
-  "Most is a claim of fact. It may even be true, but I can't be sure the rater will read it and agree.",
-  L('Hedge what is not certain', 'If it is not a certain fact, hedge it', 420, 40),
-  "That's distinguishing opinion from fact again. Anything that isn't a certain fact, I hedge.",
- ]),
- dict(mode='concept', active=5, title='Closing paragraph', script=[
+ dict(mode='concept', active=4, title='Closing paragraph', script=[
   "And we finish with the closing paragraph.",
   A('The closing paragraph appears', T(P_CLOSE, size=38, x=410, y=80, w=1140)),
   "In conclusion, the cameras would create deterrence and reduce offences.",
@@ -766,40 +673,17 @@ lesson('vr50-a-expect2', 'What Is Expected: The Rest', SB_EXPECT2, [
   L('Nothing new', 'No new arguments in the closing', 500, 38),
   "No new claims here. The conclusion follows from what the essay already explained.",
  ]),
- dict(mode='concept', active=6, title='A first draft', script=[
-  "So that's an example of a high-level essay. Now, one important reminder.",
-  L('Not a perfect essay', 'Nobody expects a perfect essay, in content or in language', 110, 38),
-  "Nobody expects a perfect essay. Not in language, and not fully in content either.",
-  L('A first draft', 'NITE: raters view the essay as a first draft written under time pressure', 200, 38),
-  "NITE knows you write it in 35 minutes. Raters are told to view the essay as a first draft only.",
-  L('Small slips', 'Small language slips here and there (a comma, a spelling slip) are acceptable', 300, 36),
-  "So a few small language slips here and there, a comma, a spelling mistake, are acceptable. With time to proofread, you'd catch them.",
-  L('Not a licence', 'But that is not a licence to be careless', 400, 38),
-  "The radar will spot them, but it will be decided that it's fine, because it's a draft.",
-  "Of course, that doesn't mean: oh, so it's fine if I make mistakes. That's not the point.",
- ]),
- dict(mode='concept', active=7, title='Content: polished', script=[
-  L('Content: fairly polished', 'Content, though, is expected to be fairly polished', 110, 40),
-  "In content, NITE expects something fairly polished.",
-  L('Good direction', 'A good direction: clear position, developed explanations', 200, 38),
+ dict(mode='concept', active=5, title='Content: polished', script=[
+  L('Content: fairly polished', 'Raters read a first draft: small language slips are forgiven. Content, though, should be fairly polished', 110, 36),
+  "Raters know this is a first draft written in 35 minutes, so a small language slip is forgiven. More on that in the proofreading lesson. In content, though, NITE expects something fairly polished.",
+  L('Good direction', 'A good direction: clear position, developed explanations', 240, 38),
   "A good direction: a clear position, the development, the explanations.",
-  L('Small gaps OK', 'A small gap is fine: an explanation missing a little, no extra example', 290, 36),
+  L('Small gaps OK', 'A small gap is fine: an explanation missing a little, no extra example', 330, 36),
   "A small gap is okay. The explanation was fine but missed a little, or you didn't add an example or comparison. Not terrible.",
-  L('Big misses are not', 'Missing the task is not a small gap', 390, 40),
-  "But missing the task is a different story.",
+  L('Big misses are not', 'Missing the task is not a small gap', 440, 40),
+  "But missing the task is a different story. We'll see what that looks like in the Relevance lesson.",
  ]),
- dict(mode='concept', active=8, title='Missing the task', script=[
-  "What does missing the task look like? Say one of the arguments were this:",
-  L('Off-target argument', '"Law enforcement officers are people of integrity, and we should trust them."', 110, 38),
-  "Law enforcement officers are people of integrity, and we should trust them.",
-  L('Near, but not it', 'Related, perhaps. But that is not the issue', 230, 38),
-  "Okay. It's near the topic. Maybe the database could leak through them, something like that.",
-  L('The real issue', 'The issue: privacy versus the right to life and security', 320, 38),
-  "But that's not the issue we were asked about. The issue is privacy versus the right to life and security.",
-  L('A miss', 'An argument that misses the issue = a miss of the task', 410, 38),
-  "An argument like that misses the task. And that's a real problem in content, not a small slip.",
- ]),
- dict(mode='concept', active=9, title='What we saw', script=[
+ dict(mode='concept', active=6, title='What we saw', script=[
   L('Structure', 'Opening paragraph → argument paragraph → argument paragraph → rebuttal paragraph → closing paragraph', 100, 34),
   "So here's what we saw: an opening, two argument paragraphs, a rebuttal paragraph, and a closing.",
   L('Content', 'Content: clear position, developed arguments, several perspectives, dealing with the other side', 220, 34),

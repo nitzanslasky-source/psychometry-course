@@ -2,8 +2,8 @@
 # Backbone: the teacher's Hebrew lessons seg15-seg19 (content rubric overview, relevance to the task and the central
 # idea, development of ideas, focus and coherence, critical thinking), translated with the teacher's running example
 # (face-recognition cameras in public spaces). Official facts and criteria: nite_verbal_guide.txt (content table).
-# Extra lesson (vr50-d-strong): the lessons of writing_src/findings.md, shown only with ORIGINAL paragraphs
-# (free city buses) - no real exam task or sample essay is named, quoted or retold.
+# The weak / adequate / strong paragraphs in Development of Ideas come from writing_src/findings.md, shown only with
+# ORIGINAL paragraphs (free city buses) - no real exam task or sample essay is named, quoted or retold.
 from dsl import *
 from writing_assets import TASK_PAGE, ANSWER_SHEET, task_page, prompt_box, EXAMPLE_PROMPT, EXAMPLE_QUESTION
 
@@ -32,29 +32,24 @@ from writing_tasks import T as _T, split_task_slides
 CAM_PROMPT, CAM_QUESTION = _T['camera']['paras'], _T['camera']['q']
 BUS_PROMPT, BUS_QUESTION = _T['bus']['paras'], _T['bus']['q']
 
-SB_RUBRIC = ['What raters check', 'Words vs. criteria', 'Four rows, 1 to 6', 'Relevance + main idea',
-             'Development', 'Focus', 'Coherence', 'Critical thinking', 'Opinion vs. fact',
-             'Several perspectives', 'Opposing views', 'Next lessons']
+SB_RUBRIC = ['What raters check', 'Words vs. criteria', 'Four rows, 1 to 6']
 
 SB_REL = ['Two terms', 'Say where you stand', 'Read the task closely', 'The background text', 'Use its ideas',
-          'The question itself', 'Positions that fit', 'The complex position', 'The near miss', 'Reasons that fit',
+          'The question itself', 'Positions that fit', 'The near miss', 'Reasons that fit',
           'The central idea', 'Inside each paragraph', 'Where it is scored']
 
-SB_DEV = ['Two components', 'Variety', 'Same angle twice', 'A new angle', 'Finding varied reasons',
-          'Logical and full', 'Too thin', 'What is missing', 'A full argument', 'Step by step', 'The official row',
-          'Summary']
+SB_DEV = ['Variety', 'Same angle twice', 'A new angle', 'Finding varied reasons',
+          'Too thin', 'What is missing', 'A full argument', 'Step by step', 'Weak version', 'Adequate version',
+          'Strong version', 'The official row']
 
 SB_FOC = ['Two terms', 'A long paragraph', 'Repeated words', 'Repeated ideas', 'Padding', 'Short but focused',
           'A jumpy paragraph', 'Linking, part 1', 'Linking, part 2', 'The fixed version', 'The wrong connector',
           'The official row']
 
-SB_CRIT = ['Four components', 'Precise issue', 'Near miss: custody', 'Near miss: flights', 'Opinion vs. fact',
+SB_CRIT = ['Precise issue', 'Near miss: custody', 'Near miss: flights', 'Opinion vs. fact',
            'Why tasks are 50-50', 'Reasonable assumption', 'An opinion-only chain', 'Facts and assumptions',
-           'Completing the chain', 'Several perspectives', 'Opposing views', 'What comes next']
+           'Completing the chain', 'Several perspectives', 'Opposing views']
 
-SB_STRONG = ['Three levels', 'The exact question', 'Every part of it', 'Reasons that support', 'Add a step',
-             'The missing link', 'Weak version', 'Adequate version', 'Strong version', 'The other side fairly',
-             'Answer its worry', 'Claims and facts', 'Examples and length']
 
 
 def para(t, y=120, size=29):
@@ -68,7 +63,7 @@ lesson('vr50-d-content-rubric', 'The Content Rubric', SB_RUBRIC, [
  dict(mode='title', title='The Content Rubric', script=[
   "Let's meet the content rubric.",
   "This is the table the raters use to score the content of your essay.",
-  "First a quick tour of everything in it. Then, lesson by lesson, we go deep into each part.",
+  "First the big picture. Then, lesson by lesson, we go deep into each part.",
  ]),
  dict(mode='concept', active=0, title='What raters check', script=[
   "Two raters read your essay. Each one gives content a score from one to six, and language a score from one to six.",
@@ -82,8 +77,6 @@ lesson('vr50-d-content-rubric', 'The Content Rubric', SB_RUBRIC, [
   A("No repetition", T('Is it free of unnecessary repetitions and vague statements?', size=32, x=440, y=500, w=1100)),
   A("Critical thinking", T('Does it show critical thinking?', size=32, x=440, y=560, w=1100)),
   "Keep this list in mind. Everything in the next lessons comes back to one of these questions.",
-  A("They read a first draft", T('Raters know it is a first draft written in 35 minutes', size=34, x=410, y=660, w=1140)),
-  "And one comforting fact: the raters are told to treat your essay as a first draft written under time pressure.",
  ]),
  dict(mode='concept', active=1, title='Words vs. criteria', script=[
   "Now, I'll be honest with you. The detailed wording in the table doesn't really help us.",
@@ -109,93 +102,7 @@ lesson('vr50-d-content-rubric', 'The Content Rubric', SB_RUBRIC, [
   A("Scale", T('Each row: from 1 (very poor) to 6 (very good). The rater picks the description that fits best.', size=32, x=410, y=500, w=1140)),
   "Each row goes from one, very poor, to six, very good. Often no description fits perfectly, so the rater picks the closest one.",
   A("Our names", T('In our lessons: relevance + main idea · development · focus and coherence · critical thinking', size=32, x=410, y=640, w=1140)),
-  "In our lessons we'll call them: relevance and the main idea, development, focus and coherence, and critical thinking.",
- ]),
- dict(mode='concept', active=3, title='Relevance + main idea', script=[
-  "Let's start at the top. Relevance to the task, and the main idea.",
-  A("Relevance to the task", T('Relevance to the task: how much does your content relate to the issue the task is about?', size=36, x=410, y=110, w=1140)),
-  "Relevance to the task means: how closely is what you wrote connected to the issue the task deals with?",
-  "Does what you wrote really answer what you were asked?",
-  A("The central idea", T('The central idea: are your arguments clear, well explained, logically linked to each other - and do they express your position?', size=36, x=410, y=260, w=1140)),
-  "The central idea is about your arguments. Are they clear? Well explained? Connected to each other logically? And do they express your position?",
-  "That's the general idea. Now let's break it into the criteria that are checked.",
- ]),
- dict(mode='concept', active=4, title='Development', script=[
-  "Development of ideas is mainly about two things.",
-  A("Varied arguments", T('1 · How varied are your arguments?', size=40, x=410, y=110, w=1140)),
-  "How varied your arguments are.",
-  A("Fully and logically explained", T('2 · How fully and logically is each one explained?', size=40, x=410, y=190, w=1140)),
-  "And how fully and logically each one is explained.",
-  A("Claim + explanation", T('Claiming is not enough. You must explain why the claim is true - that explanation is the development.', size=36, x=410, y=300, w=1140)),
-  "Look: you made a claim. Fine. But you need to explain why that claim is true. That explanation is called the development.",
-  A("Take nothing for granted", T('Full · detailed · clear · takes nothing for granted', size=42, x=410, y=450, w=1140)),
-  "It has to be full, detailed and clear, and it takes nothing for granted.",
- ]),
- dict(mode='concept', active=5, title='Focus', script=[
-  "Next: focus and coherence. First, focus.",
-  A("Focus", T('Focus: how precise and concise your text is - no repetitions, no padding', size=38, x=410, y=110, w=1140)),
-  "Focus is how precise and concise your text is. You write what you want to say, without pouring out words.",
-  A("The trap", T('"I have nothing more to say, but I need more lines..."', size=36, x=410, y=240, w=1140)),
-  "Many students feel they have to write more, but they have nothing more to say.",
-  A("What happens", T('→ the same sentences again · the same ideas in other words', size=36, x=410, y=330, w=1140)),
-  "So they repeat sentences they already wrote, or the same ideas in other words. Padding and repetition.",
-  A("Costs points", T('Raters take off a lot for this', size=42, x=410, y=450, w=1140)),
-  "And that is something raters take off a lot of points for.",
- ]),
- dict(mode='concept', active=6, title='Coherence', script=[
-  "Coherence means the text holds together.",
-  A("Coherence", T('Coherence: a continuous line of thought - clear links between sentences and between ideas', size=36, x=410, y=110, w=1140)),
-  "There is a continuous line of thought, and a clear connection between the sentences and between the ideas.",
-  A("Don't jump", T('No jumping: one paragraph for, one paragraph against, and the rater has no idea where you stand', size=34, x=410, y=240, w=1140)),
-  "You don't jump from topic to topic. One paragraph for, one paragraph against, and the rater doesn't even know your position.",
-  "Are you for the cameras? Against the cameras? What's going on here?",
-  A("Inside the text too", T('Also between sentences: a connector that does not fit, a conclusion that does not follow', size=34, x=410, y=380, w=1140)),
-  "It's about your position, but also about the text itself. We use connectors between sentences, and sometimes they miss.",
-  "I say one thing, and then I draw a conclusion that isn't connected to it.",
- ]),
- dict(mode='concept', active=7, title='Critical thinking', script=[
-  "And the last row: critical thinking. Here the table spells out exactly what it means.",
-  A("Four parts", T('Critical thinking =', size=40, x=410, y=100, w=1140)),
-  A("Precise issue", T('· a precise definition of the issue', size=36, x=440, y=180, w=1100)),
-  "A precise definition of the issue. That is really relevance again: are you talking about the issue you were asked about?",
-  A("Opinion vs fact", T('· distinguishing between opinion and fact', size=36, x=440, y=250, w=1100)),
-  "Distinguishing between opinion and fact.",
-  A("Several perspectives", T('· examining the issue from several perspectives', size=36, x=440, y=320, w=1100)),
-  "Examining the issue from several perspectives.",
-  A("Opposing views", T('· dealing with opposing views (refuting them)', size=36, x=440, y=390, w=1100)),
-  "And dealing with opposing views. Let's go over them one by one.",
- ]),
- dict(mode='concept', active=8, title='Opinion vs. fact', script=[
-  "Opinion versus fact.",
-  A("The mistake", T('A common mistake: stating your opinions as if they were facts', size=38, x=410, y=110, w=1140)),
-  "Many students simply state things that are their opinion, but treat them as facts.",
-  A("House of cards", T('Build a whole house of cards on an opinion...', size=36, x=410, y=230, w=1140)),
-  "And then they build a whole house of cards on top of that opinion.",
-  A("It collapses", T('...and one reader saying "that is not a fact, it is just your opinion" brings it all down', size=36, x=410, y=310, w=1140)),
-  "All it takes is someone saying: wait, your first assumption isn't really a fact. It's just your opinion. And the whole tower collapses.",
- ]),
- dict(mode='concept', active=9, title='Several perspectives', script=[
-  "Several perspectives.",
-  A("Not one narrow angle", T('Not one narrow angle: "money, money, money"', size=40, x=410, y=110, w=1140)),
-  "They want to see that you can look at the issue not from one very narrow angle. Only money. Economic, economic, economic.",
-  A("Different angles", T('Different angles → different consequences', size=40, x=410, y=210, w=1140)),
-  "No. You look from different points and see different consequences. We'll go deeper into this later.",
- ]),
- dict(mode='concept', active=10, title='Opposing views', script=[
-  "And dealing with opposing views.",
-  A("No right and wrong", T('There is no "right" and "wrong" here - there are positions, each with advantages and disadvantages', size=36, x=410, y=110, w=1140)),
-  "It means you see the other side. You understand there's no right and wrong here. There are two positions, sometimes more, each with its advantages and disadvantages.",
-  A("Respect and answer", T('See the issue from the other side\'s point of view · treat it with respect · answer it', size=36, x=410, y=260, w=1140)),
-  "You can look at the issue from the other side's point of view, treat it with respect, and deal with it.",
-  A("Think ahead", T('Know the weak points of your own arguments - and deal with them in advance', size=36, x=410, y=390, w=1140)),
-  "There are counter-arguments. I want to weaken them. I took them into account. I don't just throw an argument into the air.",
-  "I think about the weak points of my own arguments, and I deal with them in advance.",
- ]),
- dict(mode='concept', active=11, title='Next lessons', script=[
-  "That was the general tour of the content rubric.",
-  A("Coming up", T('Next: each criterion in depth, with examples', size=42, x=410, y=110, w=1140)),
-  A("List", T('Relevance and the central idea → development → focus and coherence → critical thinking', size=34, x=410, y=210, w=1140)),
-  "Now we go deep into each of these criteria, with examples. As usual, I'll see you in the next lesson.",
+  "In our lessons we'll call them: relevance and the main idea, development, focus and coherence, and critical thinking. Each one gets its own lesson, starting now.",
  ]),
 ], T50),
 
@@ -275,21 +182,10 @@ lesson('vr50-d-relevance', 'Relevance and the Central Idea', SB_REL, [
   A("With conditions", T('"In my opinion, security authorities should be allowed to install face-recognition cameras in public spaces, but only under certain conditions."  ✓', size=32, x=410, y=360, w=1140)),
   "In my opinion, they should be allowed, but only under certain conditions.",
   "Many students are afraid of this one. They asked yes or no, didn't they? So is it yes or no?",
-  A("That's fine", T('A complex position - perfectly fine', size=40, x=410, y=520, w=1140)),
-  "We'll see that it's perfectly fine. It's simply a complex position.",
+  A("That's fine", T('A complex position: fine. A strong option if you can keep its limit clear - not required, and no automatic bonus', size=34, x=410, y=520, w=1140)),
+  "It's fine. It's called a complex position: yes, with a clear limit. It's a strong option if you can keep that limit coherent. But it's not required, and it earns no automatic bonus. Yes, no, or yes-with-conditions: any of them can score high if it is well argued.",
  ]),
- dict(mode='concept', active=7, title='The complex position', script=[
-  "Why is the complex position fine, and even more logical?",
-  A("Not black and white", T('Life is not black and white - every position has advantages and disadvantages', size=38, x=410, y=110, w=1140)),
-  "Because we don't see life in black and white. There's grey too. Each position has advantages and disadvantages.",
-  A("What it says", T('"In principle I support the cameras, but I see the problem, and I want safeguards and limits to reduce the harm to privacy."', size=34, x=410, y=240, w=1140)),
-  "It says: in principle, I lean towards installing the cameras. But I understand there's a problem here, and I want to deal with it.",
-  "I want safeguards, protections and limits, to reduce the harm to privacy as much as possible.",
-  A("Critical thinking", T('It shows critical thinking - as long as you state clearly what you support and where the limit is', size=34, x=410, y=400, w=1140)),
-  "That shows critical thinking. Just make sure you say clearly what you support and where your limit is.",
-  "One more thing: a middle position is not a bonus in itself. Yes, no, or yes-with-conditions: any of them can score high if it is well argued.",
- ]),
- dict(mode='concept', active=8, title='The near miss', script=[
+ dict(mode='concept', active=7, title='The near miss', script=[
   "Now look at this last sentence.",
   A("The sentence", T('"In my opinion, security authorities can be trusted to do their job ethically and not to misuse face-recognition cameras."  ✗', size=32, x=410, y=100, w=1140)),
   "In my opinion, security authorities can be trusted to do their job ethically and not to misuse face-recognition cameras.",
@@ -303,7 +199,7 @@ lesson('vr50-d-relevance', 'Relevance and the Central Idea', SB_REL, [
   "In the complex position I can use it: I understand that some security staff may abuse their access, so I propose limits to prevent or reduce it.",
   "But as a position, this sentence does not answer the question.",
  ]),
- dict(mode='concept', active=9, title='Reasons that fit', script=[
+ dict(mode='concept', active=8, title='Reasons that fit', script=[
   "Relevance is not only about your position.",
   A("Also the arguments", T('Relevance is checked in your arguments too - not only in your position', size=38, x=410, y=110, w=1140)),
   "During the essay you also present arguments. Make sure they clearly support your position.",
@@ -312,7 +208,7 @@ lesson('vr50-d-relevance', 'Relevance and the Central Idea', SB_REL, [
   A("Then development", T('After it: the development - why the key sentence is true', size=38, x=410, y=320, w=1140)),
   "After each key sentence, we explain it: why we think our argument, our key sentence, is true.",
  ]),
- dict(mode='concept', active=10, title='The central idea', script=[
+ dict(mode='concept', active=9, title='The central idea', script=[
   "Now, the central idea.",
   A("Definition", T('The central idea: your arguments are clear, logically linked to each other, and support your position', size=36, x=410, y=110, w=1140)),
   "How clear the arguments in your essay are. Whoever reads them understands what you want to say. They connect logically, and they support your position.",
@@ -321,16 +217,16 @@ lesson('vr50-d-relevance', 'Relevance and the Central Idea', SB_REL, [
   A("Whole essay", T('Opening paragraph → argument 1 → argument 2 → ... → closing paragraph', size=34, x=410, y=400, w=1140)),
   "That's the line of the whole essay: opening paragraph, argument one, argument two, and so on.",
  ]),
- dict(mode='concept', active=11, title='Inside each paragraph', script=[
+ dict(mode='concept', active=10, title='Inside each paragraph', script=[
   "But the central idea isn't only the line of the whole essay.",
   A("Inside each paragraph", T('Inside every paragraph there is a line too', size=42, x=410, y=110, w=1140)),
   "Inside every paragraph there's also a line: the development of my key sentence must be in logical order.",
   A("Links", T('A  →  B  →  C  →  D  →  the result', size=48, x=410, y=220, w=1140)),
   "The development is made of steps, links, like mini-arguments. A leads to B, B leads to C, C leads to D, and here I am at the result I wanted.",
-  A("The chain", T('This is the chain - we plan it before we write', size=38, x=410, y=340, w=1140)),
-  "That is exactly the chain we plan before writing. We'll see it in the lesson on development.",
+  A("The chain", T('This is the chain - the cause-and-effect steps we plan before we write (its own lesson comes later)', size=36, x=410, y=340, w=1140)),
+  "That is exactly the chain: the cause-and-effect steps we plan before writing. It gets its own lesson later.",
  ]),
- dict(mode='concept', active=12, title='Where it is scored', script=[
+ dict(mode='concept', active=11, title='Where it is scored', script=[
   "Where does all this show up in the rubric?",
   A("Central idea", T('The central idea shows in three criteria: development · focus and coherence · critical thinking', size=34, x=410, y=110, w=1140)),
   "The central idea shows up in three criteria: development, focus and coherence, and critical thinking.",
@@ -348,20 +244,13 @@ lesson('vr50-d-development', 'Development of Ideas', SB_DEV, [
   "We continue with the content rubric.",
   "Development of ideas: how varied your arguments are, and how logical and full each one is.",
  ]),
- dict(mode='concept', active=0, title='Two components', script=[
-  "Development of ideas has two components.",
-  A("Variety", T('1 · Variety - arguments from different points of view, not one narrow angle', size=38, x=410, y=110, w=1140)),
-  "Variety. The arguments come from different points of view, not from one very narrow angle.",
-  A("Logical and full", T('2 · Logical and full - the reader says: "Ah, I see why you think that"', size=38, x=410, y=240, w=1140)),
-  "And logic and fullness: how well I explain my argument, so that the reader says: ah, OK, I understand why you think this is true.",
- ]),
- dict(mode='concept', active=1, title='Variety', script=[
+ dict(mode='concept', active=0, title='Variety', script=[
   "Let's start with variety. Say my first argument paragraph is against the cameras.",
   A("Argument 1", T('Argument 1: "In my opinion, security authorities should not be allowed to install face-recognition cameras in public spaces, since this will violate the public\'s right to privacy."', size=32, x=410, y=110, w=1140)),
   "In my opinion, they should not be allowed, since it will violate the public's right to privacy.",
   "That's true, and of course I'd have to go on and explain it. But right now we're not talking about the explanation. We're talking about variety.",
  ]),
- dict(mode='concept', active=2, title='Same angle twice', script=[
+ dict(mode='concept', active=1, title='Same angle twice', script=[
   "Now the second paragraph.",
   A("Argument 2", T('Argument 2: "In addition, installing face-recognition cameras in public spaces may give security authorities the personal information of private people without their consent."', size=32, x=410, y=110, w=1140)),
   "In addition, installing face-recognition cameras may give security authorities the personal information of private people without their consent.",
@@ -371,7 +260,7 @@ lesson('vr50-d-development', 'Development of Ideas', SB_DEV, [
   "One talks about the right to privacy. The other talks about personal information taken without consent. It's the same thing in other words.",
   "Privacy is general; the second is a bit more specific. But it's not a different angle. It's the same narrow point of view.",
  ]),
- dict(mode='concept', active=3, title='A new angle', script=[
+ dict(mode='concept', active=2, title='A new angle', script=[
   "Let's see how to improve it.",
   A("Better argument 2", T('Argument 2: "In addition, installing face-recognition cameras in public spaces may not reduce crime, since criminals will not stop committing crimes but will move their activity to unmonitored areas."', size=32, x=410, y=110, w=1140)),
   "In addition, the cameras may not reduce crime, since criminals won't stop. They'll move their activity to unmonitored areas.",
@@ -382,7 +271,7 @@ lesson('vr50-d-development', 'Development of Ideas', SB_DEV, [
   "That's a nice example of arguments from different points of view. It shows high critical thinking.",
   "Of course all of this is very condensed. We still need to develop, detail and explain it.",
  ]),
- dict(mode='concept', active=4, title='Finding varied reasons', script=[
+ dict(mode='concept', active=3, title='Finding varied reasons', script=[
   "So our arguments need to be varied.",
   A("Hard part", T('Finding varied arguments is one of the hardest parts for students', size=38, x=410, y=110, w=1140)),
   "Finding varied arguments is one of the things students struggle with most.",
@@ -390,20 +279,15 @@ lesson('vr50-d-development', 'Development of Ideas', SB_DEV, [
   "Later we have lessons on three ways to find arguments: from the task, who is involved and how it affects them, and points of view.",
   "I won't say more about those names now. They make finding varied arguments much, much easier.",
  ]),
- dict(mode='concept', active=5, title='Logical and full', script=[
-  "The next step: how logical and full our arguments are. How good the explanation is.",
-  A("The test", T('The reader must see how you got from your claim to your result', size=40, x=410, y=110, w=1140)),
-  "Whoever reads what we wrote must understand how we got from what we think to the result we reached.",
-  "Let's look at some examples.",
- ]),
- dict(mode='concept', active=6, title='Too thin', script=[
+ dict(mode='concept', active=4, title='Too thin', script=[
+  "Now the second component: how logical and full each argument is. The reader must see how you got from your claim to your result.",
   A("Thin paragraph", para('"In my opinion, security authorities should be allowed to install face-recognition cameras in public spaces, since installing cameras will reduce the level of crime. When a person\'s behaviour is monitored, the chance that he will behave according to accepted social norms increases. Therefore, installing face-recognition cameras will cause criminals to avoid committing crimes and will protect the population."', y=100)),
   "In my opinion, they should be allowed, since the cameras will reduce crime. When a person's behaviour is monitored, the chance that he'll behave according to accepted social norms increases.",
   "Therefore, the cameras will cause criminals to avoid committing crimes and will protect the population.",
   A("Verdict", T('Too short · not full · not detailed enough', size=40, x=410, y=470, w=1140)),
   "This paragraph is a bit too short. The argument isn't full enough, not detailed enough.",
  ]),
- dict(mode='concept', active=7, title='What is missing', script=[
+ dict(mode='concept', active=5, title='What is missing', script=[
   "Where exactly is the gap?",
   A("The jump", T('"social norms"  → ? →  "criminals avoid crimes"  → ? →  "protects the population"', size=38, x=410, y=110, w=1140)),
   "It talks about social norms, and suddenly I jump straight to criminals, crimes and protecting the population.",
@@ -412,7 +296,7 @@ lesson('vr50-d-development', 'Development of Ideas', SB_DEV, [
   A("The fix", T('Fill the missing links - each step must lead to the next', size=40, x=410, y=390, w=1140)),
   "The fix: fill in the missing links, so that each step leads to the next.",
  ]),
- dict(mode='concept', active=8, title='A full argument', script=[
+ dict(mode='concept', active=6, title='A full argument', script=[
   "Now an argument that is full and detailed.",
   A("Full paragraph", para('"In my opinion, security authorities should not be allowed to install face-recognition cameras in public spaces, since doing so will not reduce the level of crime. The cameras will not be installed secretly; the public will know that its actions in public spaces are being recorded. Assuming that criminals will know this too, they may not stop committing crimes but simply move their activity to unmonitored areas, particularly to private property. The result would be a situation in which crime does not decrease but merely moves to places that the face-recognition cameras do not cover."', y=100)),
   "In my opinion, they should not be allowed, since it will not reduce crime.",
@@ -421,7 +305,7 @@ lesson('vr50-d-development', 'Development of Ideas', SB_DEV, [
   "Assuming criminals know it too, and they will, they may not stop. A criminal still 'needs his salary'. Stealing is his job.",
   "So he won't steal here. He'll steal there. That doesn't mean he steals less. Crime doesn't shrink, it just moves.",
  ]),
- dict(mode='concept', active=9, title='Step by step', script=[
+ dict(mode='concept', active=7, title='Step by step', script=[
   "Look at the steps he gave us.",
   A("Step 1", T('1 · The cameras will not be secret - the public will know', size=34, x=440, y=100, w=1100)),
   A("Step 2", T('2 · Criminals will know too', size=34, x=440, y=170, w=1100)),
@@ -433,7 +317,31 @@ lesson('vr50-d-development', 'Development of Ideas', SB_DEV, [
   A("Notice", T('The stranger the key sentence sounds, the more the reader needs the steps', size=36, x=410, y=520, w=1140)),
   "Notice: the stranger the key sentence sounds at first, the more the reader needs these steps.",
  ]),
- dict(mode='concept', active=10, title='The official row', script=[
+ dict(mode='concept', active=8, title='Weak version', script=[
+  "Now let's see the whole difference on one reason, written at three levels. A new topic: should cities make local buses free? First, weak.",
+  A("Weak", para('"In my opinion I think free buses are a great idea because everybody loves free things and everyone will use them. Free buses are the best solution because people will use them more. Everyone knows that pollution is terrible, so the city must do it now!"', y=100, size=30)),
+  A("Problems", T('"In my opinion I think" · "everybody", "everyone" · the same point twice · no route from the fare to the result · emotion instead of explanation', size=32, x=410, y=420, w=1140)),
+  "A doubled opinion phrase. 'Everybody', 'everyone': claims far bigger than the support.",
+  "The same point twice. No route from removing the fare to any result. And emotion, an exclamation mark, pressure on the reader, instead of an explanation.",
+ ]),
+ dict(mode='concept', active=9, title='Adequate version', script=[
+  "Now adequate.",
+  A("Adequate", para('"Free buses would reduce traffic in the city centre. When the bus is free, more people will choose it. As a result, there will be fewer cars on the roads. This means that traffic will be reduced and the city will be less crowded, and the roads will also be less busy."', y=100, size=30)),
+  A("Better", T('Relevant ✓ · clear position ✓ · a connector for each step ✓', size=34, x=410, y=420, w=1140)),
+  "It's relevant, clear, and it uses connectors. Much better.",
+  A("But", T('But: "free → more people choose it" is assumed, not explained · the last sentence says the same thing three times', size=32, x=410, y=500, w=1140)),
+  "But the key link, why a free bus makes drivers switch, is assumed, not explained. And the last sentence says 'less traffic' three times.",
+  "That's the typical adequate paragraph: a good idea, but the reader has to fill in part of the explanation.",
+ ]),
+ dict(mode='concept', active=10, title='Strong version', script=[
+  "And now strong.",
+  A("Strong", para('"Making local buses free is likely to reduce traffic in the city centre, provided that the service is frequent enough to be a real alternative. For many short trips, the fare is one of the few costs that a driver compares directly with the price of parking; once it disappears, the bus becomes the cheaper option. Some drivers, especially those whose daily route is already well served, would therefore leave the car at home, and each of them removes a car from the busiest roads at the busiest hours. Fewer cars at peak times, in turn, mean shorter delays for those who still need to drive, including delivery vans and emergency vehicles."', y=90, size=29)),
+  "Look what changed. Each sentence adds a step: why the fare matters, who would switch, where and when it helps, and who else benefits.",
+  A("What makes it strong", T('the missing link is written · a condition on the weak step · a careful claim ("likely", "some drivers") · effects beyond the obvious people', size=31, x=410, y=520, w=1140)),
+  "The missing link is on the page. The weak step has its condition. The claim is careful: 'likely', 'some drivers'. And it follows the effect beyond the bus passenger, to delivery vans and emergency vehicles.",
+  "No invented numbers. No big words. Just the steps.",
+ ]),
+ dict(mode='concept', active=11, title='The official row', script=[
   "Here is what the official table says for development at the top levels.",
   A("Level 4", T('4: explanations mostly adequate · fairly convincing arguments · appropriate examples', size=32, x=410, y=110, w=1140)),
   "At level four: mostly adequate explanations, fairly convincing arguments, appropriate examples.",
@@ -444,15 +352,7 @@ lesson('vr50-d-development', 'Development of Ideas', SB_DEV, [
   A("Low levels", T('Low levels: inadequate explanations · unconvincing arguments · inappropriate examples', size=32, x=410, y=430, w=1140)),
   "At the low levels the words are: inadequate explanations, unconvincing arguments, inappropriate examples.",
   D("teacher circles 'full explanations' and 'varied'"),
-  "Our two components, full and varied, are right there in the wording.",
- ]),
- dict(mode='concept', active=11, title='Summary', script=[
-  "Let's sum up development of ideas.",
-  A("Varied", T('Varied arguments - from different points of view', size=40, x=410, y=110, w=1140)),
-  "We want varied arguments, from different points of view. We'll learn how to find them.",
-  A("Logical and full", T('Logical, full explanations - every step from the claim to the result', size=40, x=410, y=210, w=1140)),
-  "And logical, full explanations: the reader understands how we got from what we think to the result.",
-  "Next criterion: focus and coherence. See you there.",
+  "Our two components, full and varied, are right there in the wording. Next criterion: focus and coherence.",
  ]),
 ], T50),
 
@@ -570,16 +470,9 @@ lesson('vr50-d-critical', 'Critical Thinking', SB_CRIT, [
  dict(mode='title', title='Critical Thinking', script=[
   "Critical thinking.",
   "The last row of the content rubric, and the one that covers everything.",
+  "Four parts: a precise definition of the issue, opinion versus fact, several perspectives, and dealing with opposing views. Let's take them one by one.",
  ]),
- dict(mode='concept', active=0, title='Four components', script=[
-  "According to the official table, critical thinking means four things.",
-  A("1", T('1 · A precise definition of the issue', size=38, x=410, y=110, w=1140)),
-  A("2", T('2 · Distinguishing between opinion and fact', size=38, x=410, y=190, w=1140)),
-  A("3", T('3 · Examining the issue from several perspectives', size=38, x=410, y=270, w=1140)),
-  A("4", T('4 · Dealing with opposing views - the ability to refute them', size=38, x=410, y=350, w=1140)),
-  "A precise definition of the issue. Opinion versus fact. Several perspectives. And dealing with opposing views. Let's understand each one.",
- ]),
- dict(mode='concept', active=1, title='Precise issue', script=[
+ dict(mode='concept', active=0, title='Precise issue', script=[
   "A precise definition of the issue. We already talked about it: it's relevance to the task. But let's see examples.",
   A("The rule", T('Answer the issue you were asked about - not the issue next to it', size=40, x=410, y=110, w=1140)),
   "The students in these examples don't miss completely. They don't start writing about horse racing. They land next to the issue.",
@@ -588,7 +481,7 @@ lesson('vr50-d-critical', 'Critical Thinking', SB_CRIT, [
   A("Official", T('Officially: content not relevant to the task → the essay is disqualified (lowest score); little relevance → the bottom of the content table', size=32, x=410, y=340, w=1140)),
   "Officially, content that doesn't relate to the task gets the lowest score, and 'little relevance' is at the very bottom of the table. This is critical.",
  ]),
- dict(mode='concept', active=2, title='Near miss: custody', script=[
+ dict(mode='concept', active=1, title='Near miss: custody', script=[
   "Example one.",
   A("The question", T('"In your opinion, should the \'tender years presumption\' be abolished? (Under this rule, when divorced parents cannot agree on custody, the court gives custody of children under six to the mother.)"', size=32, x=410, y=100, w=1140)),
   "Custody means who the child lives with, on which days, and so on. Until age six, the child is with the mother; only then do they start discussing shared custody.",
@@ -597,7 +490,7 @@ lesson('vr50-d-critical', 'Critical Thinking', SB_CRIT, [
   A("Why", T('Asked: should this rule be abolished?  Answered: should courts decide at all?', size=36, x=410, y=500, w=1140)),
   "The issue is the tender years presumption. The student started discussing whether a court should decide at all, or psychologists. That's next to the issue, not the issue.",
  ]),
- dict(mode='concept', active=3, title='Near miss: flights', script=[
+ dict(mode='concept', active=2, title='Near miss: flights', script=[
   "Another example.",
   A("The question", T('"In your opinion, should the number of weekly flights be limited because of the damage to the ozone layer?"', size=34, x=410, y=100, w=1140)),
   A("The answer", T('"In my opinion, all people must share responsibility for protecting the planet and make every effort to recycle and protect the environment."  ✗', size=32, x=410, y=230, w=1140)),
@@ -607,7 +500,7 @@ lesson('vr50-d-critical', 'Critical Thinking', SB_CRIT, [
   A("So", T('Check: the decision · who is affected · the conditions in the question', size=36, x=410, y=540, w=1140)),
   "So always check: what exactly is being decided, who it affects, and which conditions the question sets.",
  ]),
- dict(mode='concept', active=4, title='Opinion vs. fact', script=[
+ dict(mode='concept', active=3, title='Opinion vs. fact', script=[
   "Opinion versus fact. This is one of the main problems in students' essays. Many present their opinions as facts.",
   A("The axis", T('FALSE  ←——————————————→  TRUE', size=46, x=410, y=110, w=1140)),
   "Picture an axis from not true to true.",
@@ -618,7 +511,7 @@ lesson('vr50-d-critical', 'Critical Thinking', SB_CRIT, [
   "If you ask many people, some will say yes, some will say no.",
   D("teacher marks the middle of the axis 'opinion' and the right end 'fact'"),
  ]),
- dict(mode='concept', active=5, title='Why tasks are 50-50', script=[
+ dict(mode='concept', active=4, title='Why tasks are 50-50', script=[
   "By the way: exam tasks are chosen so that the opinions on each side are around fifty-fifty.",
   A("Near 50%", T('Exam tasks sit near the middle: roughly half would say yes, half no', size=38, x=410, y=110, w=1140)),
   "If almost everyone agreed with one side, or it were a fact, there would be no discussion. The task would be useless.",
@@ -627,7 +520,7 @@ lesson('vr50-d-critical', 'Critical Thinking', SB_CRIT, [
   A("And so", T('So your position will always be an opinion - what you build it from is what counts', size=36, x=410, y=360, w=1140)),
   "So your position will always be an opinion. What matters is what you build it from.",
  ]),
- dict(mode='concept', active=6, title='Reasonable assumption', script=[
+ dict(mode='concept', active=5, title='Reasonable assumption', script=[
   "Between opinion and fact there's another idea: a reasonable assumption.",
   A("Definition", T('A reasonable assumption: not a checked fact - but what a reasonable person would most likely do', size=36, x=410, y=110, w=1140)),
   "It's not a fact. I didn't go and check it. But I can say: it's reasonable to assume that...",
@@ -637,8 +530,8 @@ lesson('vr50-d-critical', 'Critical Thinking', SB_CRIT, [
   A("Strength", T('fact  >  reasonable assumption  >  opinion', size=46, x=410, y=400, w=1140)),
   "A fact has amazing power, because it's true. A reasonable assumption has more power than an opinion.",
  ]),
- dict(mode='concept', active=7, title='An opinion-only chain', script=[
-  "When I develop an argument, I rely on steps, links, mini-arguments. The ideal is to build them from facts and reasonable assumptions.",
+ dict(mode='concept', active=6, title='An opinion-only chain', script=[
+  "When I develop an argument, I rely on steps, links, mini-arguments. We'll call them the chain: the cause-and-effect steps, with their own lesson later. The ideal is to build them from facts and reasonable assumptions.",
   A("Weak chain", T('I think A causes B → I think B causes C → I think C causes D → result', size=36, x=410, y=150, w=1140)),
   "If my whole development is: I think this causes that, I think that causes this, I think this causes that, and here's the result...",
   A("Reply", T('The reader: "I think A does not cause B. Or C. Or D."', size=36, x=410, y=270, w=1140)),
@@ -646,7 +539,7 @@ lesson('vr50-d-critical', 'Critical Thinking', SB_CRIT, [
   A("The fix", T('Build the steps from facts and reasonable assumptions', size=42, x=410, y=390, w=1140)),
   "But if I use facts and reasonable assumptions more than opinions, I make the argument and its development stronger.",
  ]),
- dict(mode='concept', active=8, title='Facts and assumptions', script=[
+ dict(mode='concept', active=7, title='Facts and assumptions', script=[
   "Say my argument is an opinion: installing cameras in public spaces will reduce crime. How do I explain it with facts and reasonable assumptions?",
   A("Fact", T('FACT: the cameras will be installed with the public\'s knowledge, not secretly', size=34, x=410, y=110, w=1140)),
   "Fact: the cameras will be installed with the public's knowledge. Not secretly.",
@@ -658,7 +551,7 @@ lesson('vr50-d-critical', 'Critical Thinking', SB_CRIT, [
   "Some speed cameras are even on brightly painted poles, so we won't miss them. Why? Because their aim is less to catch drivers and more to deter. Knowing a camera is there, we drive slower.",
   "I don't need to repeat the explanation in other words. That would be repetition and padding. The comparison says it for me.",
  ]),
- dict(mode='concept', active=9, title='Completing the chain', script=[
+ dict(mode='concept', active=8, title='Completing the chain', script=[
   "Another reason, the same method.",
   A("1", T('FACT: enforcement agencies will be able to use the footage in their work', size=32, x=410, y=100, w=1140)),
   "Fact: enforcement agencies will be able to use the footage. Obviously; that's why we build the database.",
@@ -671,9 +564,9 @@ lesson('vr50-d-critical', 'Critical Thinking', SB_CRIT, [
   A("5", T('CONCLUSION: they cannot go back to crime - crime decreases', size=32, x=410, y=520, w=1140)),
   "So I complete it. It'll be easier to prove their guilt. So they'll go to prison instead of being released. So crime decreases.",
   A("Point", T('The claim is an opinion - but its development is built from facts and reasonable assumptions', size=34, x=410, y=620, w=1140)),
-  "My argument was an opinion. But I built its development from facts and reasonable assumptions, and that makes it much stronger. This is the chain, with every arrow tested.",
+  "My argument was an opinion. But I built its development from facts and reasonable assumptions, and that makes it much stronger. This is the chain, with every step tested.",
  ]),
- dict(mode='concept', active=10, title='Several perspectives', script=[
+ dict(mode='concept', active=9, title='Several perspectives', script=[
   "Examining the issue from several perspectives.",
   A("Areas", T('Social · educational · economic · health · rights that are affected...', size=38, x=410, y=110, w=1140)),
   "We'll have a whole lesson on looking at an issue from different areas: social, educational, economic, the rights involved.",
@@ -682,7 +575,7 @@ lesson('vr50-d-critical', 'Critical Thinking', SB_CRIT, [
   A("Why", T('Several perspectives → more impressive critical thinking than one very narrow view', size=36, x=410, y=330, w=1140)),
   "When I examine the issue from several perspectives, it shows more impressive critical thinking than someone who looks very, very narrowly.",
  ]),
- dict(mode='concept', active=11, title='Opposing views', script=[
+ dict(mode='concept', active=10, title='Opposing views', script=[
   "And dealing with opposing views.",
   A("Legitimate", T('No right and wrong: different positions, both legitimate, each with advantages and disadvantages', size=34, x=410, y=100, w=1140)),
   "Remember: there's no such thing as right and wrong here. There are different positions. Both are legitimate.",
@@ -695,164 +588,12 @@ lesson('vr50-d-critical', 'Critical Thinking', SB_CRIT, [
   A("Why it matters", T('Without dealing with the other side, a high content score is very hard to reach', size=36, x=410, y=500, w=1140)),
   "This matters a lot to the raters. Without dealing with the opposing view, the score may be medium, but it's very hard for it to be high.",
  ]),
- dict(mode='concept', active=12, title='What comes next', script=[
-  "That's it: the content rubric is done.",
-  A("Next stage", T('Next: analysing and planning the essay', size=42, x=410, y=110, w=1140)),
-  "Next, we move to analysing and planning the essay. Before we run to write, we plan. And before we plan, we analyse.",
-  A("The questions", T('Which arguments can I use? Which are strong? How will I explain each one? What are the counter-arguments? Where are the weak points - mine and theirs?', size=34, x=410, y=210, w=1140)),
-  "Analyse the task. Which arguments could I use? Which are strong? How will I explain each one? What counter-arguments are there? What are the weak points, on my side and on theirs?",
-  "As usual, I'll see you there.",
- ]),
 ], T50),
 
-# ------------------------------------------------------------------ lesson 6: what strong essays do differently
-# Built from writing_src/findings.md; all paragraphs are original (free city buses).
-lesson('vr50-d-strong', 'What Strong Essays Do Differently', SB_STRONG, [
- dict(mode='title', title='What Strong Essays Do Differently', script=[
-  "What makes a strong essay strong?",
-  "We compared many official sample essays marked strong, adequate and weak. In this lesson: what really separates them.",
-  "I won't show you those essays. We'll use our own examples, on a new topic.",
- ]),
- dict(mode='concept', active=0, title='Three levels', script=[
-  "Here's the big picture.",
-  A("Strong", T('STRONG: the reasoning is easy to follow - every step is on the page', size=36, x=410, y=100, w=1140)),
-  "In a strong essay, the reasoning is easy to follow. Every step is written down.",
-  A("Adequate", T('ADEQUATE: starts with a relevant idea, but leaves part of the explanation for the reader to fill in', size=36, x=410, y=200, w=1140)),
-  "An adequate essay usually starts with a relevant idea, but leaves part of the explanation for the reader to supply.",
-  A("Weak", T('WEAK: may have a good idea - but loses the exact question, contradicts its own answer, or cannot be followed', size=36, x=410, y=320, w=1140)),
-  "A weak essay may also contain a good idea. But it loses the exact question, contradicts its own answer, or explains so unclearly that the reader can't rebuild it.",
-  A("No preferred opinion", T('No opinion is preferred. Yes, no or "yes, under conditions" - each can be strong if it is well argued.', size=34, x=410, y=460, w=1140)),
-  "And notice: no opinion is the 'right' one. A strong essay isn't strong because of the side it chose.",
-  A("Our topic", T('Our practice topic: free local buses', size=40, x=410, y=590, w=1140)),
-  "For this lesson, one original topic: should cities make local buses free?",
- ]),
- dict(mode='concept', active=1, title='The exact question', script=[
-  A('The task appears', dict(prompt_box(BUS_PROMPT, BUS_QUESTION, w=1140), x=410, y=40)),
-  "Here's our task. The first difference between the levels: answering the exact question.",
-  A("Three checks", T('Before any reason: the decision · the people affected · the conditions', size=34, x=410, y=380, w=1140)),
-  "Before you look for reasons, pin down three things: what is being decided, who is affected, and what conditions the question sets.",
-  A("Drift 1", T('"Should students get cheaper bus passes?"  → changes the people', size=32, x=440, y=460, w=1100)),
-  A("Drift 2", T('"Should cities build more bike lanes?"  → changes the decision', size=32, x=440, y=530, w=1100)),
-  A("Drift 3", T('"Are buses better than cars?"  → changes the question', size=32, x=440, y=600, w=1100)),
-  "An essay can sound thoughtful and still answer one of these. Cheaper passes for students changes the people. Bike lanes changes the decision. Buses versus cars changes the question.",
-  A("Verdict", T('That is a reasoning problem, not a wording problem', size=36, x=410, y=690, w=1140)),
-  "These aren't small wording problems. They're reasoning problems.",
- ]),
- dict(mode='concept', active=2, title='Every part of it', script=[
-  "Second: every part of the question needs an answer.",
-  A("A two-part question", T('"What are the benefits of school gardens for students and for the school community?"', size=36, x=410, y=110, w=1140)),
-  "Say a question asks about benefits for students and for the school community.",
-  A("Half an answer", T('A clear, well-explained paragraph on students only = half the task is missing', size=36, x=410, y=240, w=1140)),
-  "A clear explanation of the benefits for students alone still leaves half the task unfinished.",
-  A("Plan from the question", T('Build your outline from what the question asks - not from a memorized essay shape', size=36, x=410, y=370, w=1140)),
-  "So your plan comes from what the question asks, not from a memorized shape.",
-  A("Not always yes/no", T('Not every task is a yes-or-no debate - read what it actually asks for', size=34, x=410, y=500, w=1140)),
-  "Not every task is a for-or-against debate. Our structure is a tool. It has to serve this question.",
- ]),
- dict(mode='concept', active=3, title='Reasons that support', script=[
-  "Third: a clear opinion at the start is not enough. The reasons must actually support it.",
-  A("Position", T('Position: "Cities should make local buses free."', size=36, x=410, y=110, w=1140)),
-  A("Reason that drifts", T('Reason: "Bus drivers work long shifts and deserve better pay."  ✗', size=36, x=410, y=200, w=1140)),
-  "Does that support free buses? Maybe it's true. But it points somewhere else: to drivers' pay, not to the fare.",
-  A("Reason against", T('Reason: "Fares teach passengers to value the service."  ✗ - this supports keeping fares!', size=34, x=410, y=300, w=1140)),
-  "Even worse: a reason that actually supports the other side.",
-  A("Test", T('Test: read the key sentence, then the position. Does "because..." really lead to it?', size=36, x=410, y=420, w=1140)),
-  "The test: read each key sentence, then your position. Does 'because' really lead there?",
-  A("Closing can't fix it", T('A closing paragraph cannot fix reasons that point the other way', size=36, x=410, y=540, w=1140)),
-  "And a closing paragraph can't rescue it. If the reasons point to keeping fares, you can't just end by saying 'make them free'.",
- ]),
- dict(mode='concept', active=4, title='Add a step', script=[
-  "Fourth: development means adding something, not saying the same thing differently.",
-  A("Repeat", T('"The service improves. Passengers enjoy a better service. The travel experience becomes better."', size=34, x=410, y=110, w=1140)),
-  "Three sentences, one idea. Several versions of 'the service is better' don't deepen the argument.",
-  A("A new sentence must...", T('Every new sentence must do a job:', size=38, x=410, y=260, w=1140)),
-  A("Jobs", T('explain a cause · show a consequence · make a distinction · illustrate · state a meaningful limit', size=34, x=440, y=340, w=1100)),
-  "Every new sentence needs a job: explain a cause, show a consequence, make a distinction, illustrate something, or state a real limit.",
-  A("Otherwise", T('If it does none of these jobs - it is probably repetition', size=38, x=410, y=470, w=1140)),
-  "If it does none of these, it's probably repetition. And a second paragraph must add a different reason too, not the same one with new people or new words.",
- ]),
- dict(mode='concept', active=5, title='The missing link', script=[
-  "Fifth, and the most useful thing to repair: the missing link.",
-  A("Outcome only", T('"Free buses will reduce traffic."  - names an outcome, does not explain it', size=36, x=410, y=110, w=1140)),
-  "This names an outcome. It doesn't explain how the policy produces it.",
-  A("The chain", T('no fare → the bus is cheaper than driving for short trips → some drivers switch → fewer cars at peak hours → less traffic', size=34, x=410, y=230, w=1140)),
-  "Here is the chain. Each arrow is a step the reader needs.",
-  A("Test the arrows", T('Test every arrow: why would this step lead to the next?', size=38, x=410, y=380, w=1140)),
-  "Now test every arrow. Cheaper, so drivers switch? Only if the bus is a real alternative: frequent enough and going where they go.",
-  A("A condition", T('Weak arrow → add an explanation or a condition: "...provided the service is frequent"', size=34, x=410, y=480, w=1140)),
-  "A weak arrow needs an explanation or a condition. And don't add arrows that just rename the same thing: 'fewer cars' and 'less traffic' are almost the same step.",
- ]),
- dict(mode='concept', active=6, title='Weak version', script=[
-  "Let's write the same reason three times: weak, adequate, strong. First, weak.",
-  A("Weak", para('"In my opinion I think free buses are a great idea because everybody loves free things and everyone will use them. Free buses are the best solution because people will use them more. Everyone knows that pollution is terrible, so the city must do it now!"', y=100, size=30)),
-  A("Problems", T('"In my opinion I think" · "everybody", "everyone" · the same point twice · no route from the fare to the result · emotion instead of explanation', size=32, x=410, y=420, w=1140)),
-  "'In my opinion I think': a classic doubled phrase. 'Everybody', 'everyone': claims far bigger than the support.",
-  "The same point twice. No route from removing the fare to any result. And emotion, an exclamation mark, pressure on the reader, instead of an explanation.",
- ]),
- dict(mode='concept', active=7, title='Adequate version', script=[
-  "Now adequate.",
-  A("Adequate", para('"Free buses would reduce traffic in the city centre. When the bus is free, more people will choose it. As a result, there will be fewer cars on the roads. This means that traffic will be reduced and the city will be less crowded, and the roads will also be less busy."', y=100, size=30)),
-  A("Better", T('Relevant ✓ · clear position ✓ · a connector for each step ✓', size=34, x=410, y=420, w=1140)),
-  "It's relevant, clear, and it uses connectors. Much better.",
-  A("But", T('But: "free → more people choose it" is assumed, not explained · the last sentence says the same thing three times', size=32, x=410, y=500, w=1140)),
-  "But the key link, why a free bus makes drivers switch, is assumed, not explained. And the last sentence says 'less traffic' three times.",
-  "That's the typical adequate paragraph: a good idea, but the reader has to fill in part of the explanation.",
- ]),
- dict(mode='concept', active=8, title='Strong version', script=[
-  "And now strong.",
-  A("Strong", para('"Making local buses free is likely to reduce traffic in the city centre, provided that the service is frequent enough to be a real alternative. For many short trips, the fare is one of the few costs that a driver compares directly with the price of parking; once it disappears, the bus becomes the cheaper option. Some drivers, especially those whose daily route is already well served, would therefore leave the car at home, and each of them removes a car from the busiest roads at the busiest hours. Fewer cars at peak times, in turn, mean shorter delays for those who still need to drive, including delivery vans and emergency vehicles."', y=90, size=29)),
-  "Look what changed. Each sentence adds a step: why the fare matters, who would switch, where and when it helps, and who else benefits.",
-  A("What makes it strong", T('the missing link is written · a condition on the weak arrow · a careful claim ("likely", "some drivers") · effects beyond the obvious people', size=31, x=410, y=520, w=1140)),
-  "The missing link is on the page. The weak arrow has its condition. The claim is careful: 'likely', 'some drivers'. And it follows the effect beyond the bus passenger, to delivery vans and emergency vehicles.",
-  "No invented numbers. No big words. Just the steps.",
- ]),
- dict(mode='concept', active=9, title='The other side fairly', script=[
-  "Now the other side. Mentioning it is not the same as answering it.",
-  A("Dismissive", T('"Some people say free buses are too expensive, but they only care about money, and people\'s health is more important."  ✗', size=33, x=410, y=100, w=1140)),
-  "This makes the other side sound selfish, then walks away. Easy to write, but it shows very little critical thinking.",
-  A("Fair", T('"Opponents rightly point out that fares pay for part of the service, so free travel means the city must find that money elsewhere, possibly by cutting other services."  ✓', size=33, x=410, y=280, w=1140)),
-  "This states the other side's actual reason, not just its conclusion, and states it fairly.",
-  A("Why fair", T('Name their reason, not only their conclusion - and admit what is reasonable in it', size=36, x=410, y=470, w=1140)),
-  "You can disagree firmly and still admit that the other side has a reasonable concern.",
- ]),
- dict(mode='concept', active=10, title='Answer its worry', script=[
-  "And the reply has to target that concern.",
-  A("The question", T('Ask: what exactly does the other side worry will happen?  → answer THAT', size=36, x=410, y=100, w=1140)),
-  "Ask yourself: what exactly is the other side worried will happen? Here: lost income, and cuts to other services.",
-  A("Reply", para('"This concern is serious. However, part of the lost income may be offset by costs the city already bears: fewer cars mean less wear on the roads, and fares no longer need to be collected or checked. Where a gap remains, the city can introduce free travel gradually, starting with the most crowded routes, so that the real cost is measured before the policy is extended."', y=220, size=30)),
-  "Notice: the reply deals with money. It doesn't change the subject to health. It even explains how the safeguard works: start small, measure, then extend.",
-  A("Not this", T('"Clean air matters more" / "health is more important" = repeating your side, not answering theirs', size=32, x=410, y=590, w=1140)),
-  "Just repeating that your side matters more is not an answer.",
- ]),
- dict(mode='concept', active=11, title='Claims and facts', script=[
-  "The strength of your wording must match your support.",
-  A("Too strong", T('"Free buses will end traffic jams completely."  ✗', size=34, x=410, y=100, w=1140)),
-  A("Matched", T('"Free buses are likely to reduce traffic on well-served routes."  ✓', size=34, x=410, y=170, w=1140)),
-  "One plausible consequence doesn't prove what will always happen. 'Many', 'most', 'everyone' are claims too, and they need support. But 'may' can't rescue an explanation that makes no sense.",
-  A("Invented", T('"A 2019 study found that free buses cut traffic by 43%."  ✗ - invented', size=34, x=410, y=280, w=1140)),
-  "Never make up studies, statistics or experts to sound convincing. The official guide warns explicitly against incorrect or fabricated information.",
-  A("Instead", T('Use accurate knowledge you really have - or careful reasoning: "It is reasonable to expect that..."', size=34, x=410, y=370, w=1140)),
-  "Use knowledge you really have, or explain a plausible consequence carefully. That is enough for a strong argument.",
-  A("Reported ≠ proved", T('"Supporters say it will reduce traffic" (in the task) is a claim to examine, not a proven fact', size=34, x=410, y=490, w=1140)),
-  "And keep facts, assumptions and reported opinions apart. When the task says supporters believe something, that's their prediction, not proof.",
- ]),
- dict(mode='concept', active=12, title='Examples and length', script=[
-  "Last two points. Examples, and length.",
-  A("Story", T('"Last summer I took a free bus in my city and it was amazing..."  ✗ personal story', size=32, x=410, y=100, w=1140)),
-  "A personal story is easy to picture, but it doesn't explain anything, and the guide advises against a personal, narrative style.",
-  A("Explaining example", T('"For example, a worker who drives a short distance to the centre pays for fuel and parking; if the bus is free and frequent, it becomes both cheaper and nearly as fast - a clear reason to switch."  ✓', size=32, x=410, y=190, w=1140)),
-  "A short, general illustration that shows the mechanism is useful. It explains the reason instead of replacing it.",
-  A("Limit", T('One example shows HOW something can happen - not how OFTEN it happens', size=34, x=410, y=390, w=1140)),
-  "But one example shows how it could happen, not that it happens to most people.",
-  A("Length", T('25-50 lines · good essays are usually 30-40 · more lines ≠ more explanation', size=36, x=410, y=500, w=1140)),
-  "And length: at least twenty-five lines, at most fifty; good essays are usually thirty to forty. But length alone is not quality.",
-  "Long weak essays often just drift further. More lines should mean more steps, not more words.",
- ]),
-], T50),
 ]
 
 MEMORY = [dict(
-  id='mem-wr-content-rubric', after='vr50-d-strong', title='Content rubric - what raters look for',
+  id='mem-wr-content-rubric', after='vr50-d-critical', title='Content rubric - what raters look for',
   intro='Two raters, content 1-6 each (rated separately from language). A timed first draft - clarity of reasoning is what counts.',
   tables=[
    dict(title='The four content criteria', head=['Criterion', 'What raters look for', 'Typical loss'], rows=[

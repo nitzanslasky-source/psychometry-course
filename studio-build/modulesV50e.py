@@ -347,7 +347,7 @@ def _gather():
         A('Key word 2 appears', c('"...provided that their image already exists in the database"', 38, gap=6)),
         A('A condition appears', c('→ a condition! No image in the database, maybe no identification. Possible argument or weakening.', 32, gap=30)),
         "Provided that their image already exists in the database. Wait. There's a condition here.",
-        "If their image isn't in the database, maybe they can't be identified. I might use that as an argument, or as a weakening.",
+        "If their image isn't in the database, maybe they can't be identified. I might use that as an argument, or as a weakening: an answer that weakens the other side's argument. Weakenings come later.",
         A('Key word 3 appears', c('"before an offence... while it is taking place... after the event"', 34, gap=6)),
         A('Three moments appears', c('→ three different moments: prevent, stop, catch', 32, gap=30)),
         "Suspicious activity identified before the offence, stopped while it's happening, or offenders caught afterwards. Three different moments.",
@@ -362,7 +362,7 @@ def _gather():
         A('Background row appears', c('The background (facts) → the opening paragraph', 40)),
         "The background to the dispute: we take it to the opening paragraph.",
         A('Material row appears', c('Material for arguments → the body: argument paragraphs, counter-arguments, weakenings', 40)),
-        "The material for arguments helps us with the body of the essay: the argument paragraphs, the counter-arguments, the weakenings.",
+        "The material for arguments helps us with the body of the essay: the argument paragraphs, the counter-arguments, and the weakenings, our answers to them.",
         A('Key words row appears', c('Key words → keep you focused on the exact question = relevance to the task', 40)),
         "And the important words keep me focused. They make sure I don't miss the question for discussion, and that my essay stays relevant to the task.",
         A('That is the analysis appears', c('Read slowly · mark the relevant parts · find the material · mark the key words', 34)),
@@ -479,13 +479,13 @@ def _position():
         A('Complex position appears', c('A complex position: choose side A, and add reservations and safeguards that solve some of its disadvantages', 36)),
         "And here I want to talk about a complex position. It lets me have my cake and eat it.",
         "I don't choose end A or end B. I choose side A, but I add some reservations. Safeguards that help solve some of the disadvantages I'd have if I went all the way with side A.",
-        A('Shows critical thinking appears', c('It already shows critical thinking and consideration of the opposing view', 32)),
-        "A complex position already signals critical thinking. Consideration of the opposing view. An understanding that nobody is simply right or wrong.",
+        A('Shows critical thinking appears', c('It can show critical thinking and consideration of the opposing view, if its limit is clear', 32)),
+        "Done well, a complex position shows critical thinking. Consideration of the opposing view. An understanding that nobody is simply right or wrong.",
         A('Cameras: yes, with safeguards appears', c('Cameras: YES, but a special body to handle the data (fewer people see it) + strong data security (no leaks)', 32)),
         "In our camera task: I don't choose the absolute end, no cameras. I choose the flexible end, because it lets me present a complex position.",
         "Yes, I do want face-recognition cameras in public spaces. But I understand the problem, the danger to privacy. So I want to add safeguards.",
         "For example, a special body that handles the data, to reduce the number of people exposed to it. And information-security measures, so the database doesn't leak.",
-        "Choosing a complex position is, in my eyes, one of the best things you can do in an essay. And it's like that in life too. Life isn't black and white.",
+        "A complex position is a strong option, if you can keep its boundary coherent: a clear limit that follows from your reasons. But it's not required, and it earns no automatic bonus. A simple yes or no, well argued, can score just as high.",
     ]))
     c = Col(y=60)
     s.append(dict(mode='concept', active=9, title='Rights: detailed?', script=[
@@ -505,7 +505,7 @@ def _position():
         A('8 · Three opinions appears', c('8 · Three-opinion tasks: if possible, choose the middle', 42)),
         "And sometimes, more rarely, there are three-opinion tasks. If possible, it's better to choose the middle.",
         A('Middle = complex position appears', c('The middle is exactly a complex position: not black, not white, grey', 36)),
-        "Why? The middle signals critical thinking. I'm choosing a complex position. Not black, not white. Grey.",
+        "Why? The middle is a complex position. Not black, not white. Grey. Done well, it shows critical thinking.",
         A('80+80 appears', c('One end = 100 / 0      The middle ≈ 80 + 80 = 160', 44)),
         "When I choose one of the ends, it's as if I'm at a hundred and zero.",
         "When I choose a complex position, it's as if I take eighty percent of the advantages of this side and eighty percent of the advantages of that side. Pareto's eighty-twenty again.",
@@ -535,9 +535,10 @@ def _position():
         "So that's the lesson on considerations for choosing a position. And a reminder: they're considerations, not instructions.",
         A('The most important appears', c('The most important: in a degree task, do not choose an extreme; choose the flexible end', 42)),
         "If I had to pick the single most important one, it's degree tasks. Don't choose the extremes. Choose the flexible end.",
-        A('Why appears', c('→ a complex position → critical thinking + dealing with the opposing view', 36)),
-        "It'll be much, much easier for you to present a complex position that shows critical thinking and consideration of the opposing view.",
-        "Perfect. Everything they're looking for.",
+        A('Why appears', c('→ room for a complex position, if you can keep its limit clear (not required)', 36)),
+        "It leaves you room for a complex position, if you can keep its limit clear. Not required, but a strong option.",
+        A('First position appears', c('This is a FIRST position, a leaning. After you find and test your arguments, confirm it or change it.', 36)),
+        "And one more thing: the position you choose now is a first position, a leaning. After you find your arguments and test them, confirm it, or change it if the other side turns out easier to explain.",
     ]))
     return s
 
@@ -578,35 +579,16 @@ def _args_intro():
         "Third: points of view. We force ourselves to look at the issue from one direction after another. You'll be surprised how many arguments you find just by doing that.",
         "We'll go through each of the three in the coming lessons.",
     ]))
-    c = Col(y=60, gap=18)
+    c = Col(y=60, gap=22)
     s.append(dict(mode='concept', active=2, title='Types of argument', script=[
         "Types of argument. What is an argument? It's something I claim. It's not necessarily my opinion.",
-        A('Opinion appears', c('Opinion: "This is what I think." Someone else can simply think otherwise.', 34)),
-        "An argument can be my opinion. It can be an opinion.",
-        A('Reasonable assumption appears', c('Reasonable assumption: "It is likely that..." Others will agree more easily. Stronger than an opinion.', 34)),
-        "But it can also be a reasonable assumption that strengthens my position. And that's of course stronger than an opinion.",
-        A('Fact appears', c('Fact: cannot be refuted. Maybe weakened in other ways, but not by saying "that is not true". The strongest.', 34, gap=34)),
-        "And it can even be a fact that strengthens my position. The fact argument is the strongest, because it's a fact. You can't refute it.",
-        "You may be able to weaken it in other ways, but not by saying it isn't true.",
         A('The ladder appears', c('opinion  →  reasonable assumption  →  fact      (weaker → stronger)', 38)),
-        "An opinion is, you know, what you think. And I think otherwise.",
-        "So we want our arguments to be as close as possible to this end: fact, or at least reasonable assumption.",
-        "Of course we'll sometimes use opinion arguments too. But the more fact and reasonable assumption, the stronger the arguments.",
-    ]))
-    c = Col(y=60, gap=20)
-    s.append(dict(mode='concept', active=3, title='Links in the chain', script=[
-        A('Not just the key sentence appears', c('An argument is not only the key sentence', 40)),
-        "And by the way, an argument isn't only the key sentence, the main argument of my paragraph.",
-        A('Mini-arguments appears', c('The development is built of small arguments: links in a logical chain, each leading to the next', 34)),
-        "In the development stage, where I explain and support my argument, I actually do it with small arguments. Links in the logical chain of something that leads to something that leads to something.",
-        "And there I can definitely include reasonable assumptions and facts. That strengthens the development and the support.",
-        A('Only opinions appears', c('"I think... and I think... and I think..." → very weak', 34, gap=8)),
-        A('Likely appears', c('"It is likely that this will cause... which is likely to lead to..." → easier to agree with', 34)),
-        "Now imagine that every link in my paragraph is only opinion. I think this, and I think that, and I think this. It's very weak. Someone looks on and says: fine, that's what you think. I think differently.",
-        "But if I say: it's likely that this will cause that, and it's likely that that will cause this... Then other people will agree with me more. It's easier to show the logic. The arguments are more convincing.",
+        "As we saw in the critical thinking lesson: an argument can be an opinion, a reasonable assumption, or a fact. And the closer to fact, the stronger.",
+        A('Every step appears', c('The same goes for every step of the development: "It is likely that this will cause... which is likely to lead to..."', 34)),
+        "And that goes for every small step in the development too. Not I think, and I think, and I think. But: it is likely that this will cause that. Then people agree with you more easily.",
     ]))
     c = Col(y=60, gap=16)
-    s.append(dict(mode='concept', active=4, title='Wording: opinion', script=[
+    s.append(dict(mode='concept', active=3, title='Wording: opinion', script=[
         "One more thing: the wording of the argument.",
         A('Type affects wording appears', c('The type of argument decides where "in my opinion" goes', 40)),
         "The difference between opinion, reasonable assumption and fact also affects how you word the argument.",
@@ -614,29 +596,28 @@ def _args_intro():
         "An opinion argument starts with: in my opinion. In my opinion, face-recognition cameras will deter offenders and reduce crime.",
         A('All opinion appears', c('Both parts are opinion: not certain to deter, not certain to reduce crime → "In my opinion" at the start', 32, gap=30)),
         "Here it's an opinion, right? That's why I wrote in my opinion. It isn't certain the cameras will deter. That's my opinion. And I also think deterrence will reduce crime. Again, my opinion.",
-        A('Hebrew-speaker errors appears', c('Avoid: "In my opinion I think..." · "According to me..." → write "In my opinion, ..." or "I believe that ..."', 32)),
-        "And a note for English: don't write in my opinion, I think. That's saying the same thing twice. And don't write according to me. Write in my opinion, or I believe that.",
+        A('The rule appears', c('The rule: every key sentence starts with "In my opinion, ..." or "I believe that ..."', 34)),
+        "So that's the rule for every key sentence: it starts with in my opinion, or I believe that.",
     ]))
     c = Col(y=60, gap=16)
-    s.append(dict(mode='concept', active=5, title='Wording: fact first', script=[
-        "But sometimes part of my argument is factual. Then in my opinion appears in the middle of the argument, not at the beginning.",
+    s.append(dict(mode='concept', active=4, title='Wording: fact first', script=[
+        "Now an advanced option. The standard start, in my opinion, is always correct. But when the first part of your sentence is a fact, you may put in my view in the middle instead.",
         A('Fact-first example appears', c('"The database will eventually have to be accessible to people, and in my view, even if only a few people have access, there is a risk that it will leak."', 34, gap=30)),
         "Look at this argument. The database will eventually have to be accessible to people, and in my view, even if only a few people have access, there is a risk that it will leak.",
         A('Part 1 = fact appears', c('Part 1 = FACT: a database nobody ever looks at cannot be used', 32, gap=8)),
         "The first part is factual. If the database just sits in some cloud and nobody ever sees the footage, it can't be used. Obviously some people will have to be exposed to it.",
         A('Part 2 = opinion appears', c('Part 2 = OPINION: "in my view" goes here, in the middle', 32, gap=30)),
         "So I add in my view only in the middle, because I started with a fact.",
-        A('Wrong placement appears', c('"In my view, the database will eventually have to..." → casts doubt on the whole argument, even on the fact', 32)),
-        "If I put in my view at the start of the sentence, I cast doubt on my whole argument. Everything from here on is now opinion, and the reader thinks: I'm not sure I agree with you.",
-        "But if I start with the fact and add in my view only to the second part, now we can talk about whether you agree with me, and I'll try to explain why I think so.",
+        A('Why it can help appears', c('Optional: it keeps the fact a fact, and marks only the second part as opinion. "In my opinion, ..." at the start is still fine.', 32)),
+        "Why bother? It keeps the fact a fact, and marks only the second part as my opinion. It's optional. If you're not sure, start with in my opinion, as usual.",
     ]))
     c = Col(y=60, gap=26)
-    s.append(dict(mode='concept', active=6, title='Next: the three ways', script=[
+    s.append(dict(mode='concept', active=5, title='Next: the three ways', script=[
         "So the distinction between types of argument affects the wording too.",
         A('Summary 1 appears', c('Look for the most suitable arguments, not "the best"', 36)),
         A('Summary 2 appears', c('Aim for facts and reasonable assumptions, not only opinions', 36)),
-        A('Summary 3 appears', c('Word each argument by its type: "in my opinion" only where it is opinion', 36)),
-        "Most suitable, not best. As many facts and reasonable assumptions as you can. And word each argument according to its type.",
+        A('Summary 3 appears', c('Start each key sentence with "In my opinion, ..." (advanced: after a fact, "in my view" in the middle)', 36)),
+        "Most suitable, not best. As many facts and reasonable assumptions as you can. And start each key sentence with in my opinion.",
         A('Next appears', c('Next: from the task · who is involved · points of view', 42)),
         "Now let's dive in and see how we find arguments in the three ways: from the task, who is involved, and points of view.",
     ]))
@@ -644,7 +625,7 @@ def _args_intro():
 
 
 ARGS_INTRO = lesson('vr50-e-args-intro', 'Finding Arguments',
-                    ['The most suitable', 'Three ways', 'Types of argument', 'Links in the chain',
+                    ['The most suitable', 'Three ways', 'Types of argument',
                      'Wording: opinion', 'Wording: fact first', 'Next: the three ways'],
                     [dict(mode='title', title='Finding Arguments', script=[
                         "An introduction to finding arguments.",
@@ -692,17 +673,8 @@ def _rights():
     ]))
     c = Col(y=60, gap=20)
     s.append(dict(mode='concept', active=3, title='A short history', script=[
-        "Let's look at human history for a moment.",
-        A('Once: no rights appears', c('Once there were no rights: a slave was property, with no equality, no property, no freedom of movement or occupation', 34)),
-        "Once, there simply were no rights. The concept didn't exist. Certainly not equality, life, security, liberty. There were slaves, and a slave was like your property.",
-        "He wasn't allowed to own property, he certainly wasn't your equal. No freedom of movement, no freedom of occupation. He did what he was forced to do.",
-        A('Natural rights recognised appears', c('Gradually: "all people are born equal" → natural rights for everyone', 34)),
-        "Over history there were many situations where certain societies recognised these rights. Sometimes it stayed in those societies, or was forgotten, until at some point people began to understand that natural rights belong to every person.",
-        "All people are born equal. And it became accepted all over the world, with declarations of this organisation and that one, the United Nations and so on.",
-        A('Then civil rights appears', c('People who feel equal want a voice → civil rights: to vote, to be elected, to speak', 34)),
-        "Once there were natural rights, civil rights began to form. People who feel equal say: wait, I also want to vote, and to be elected. I'm entitled to equality, so I want freedom of expression too.",
-        A('Then social rights appears', c('Weaker groups enter government → social rights that look after weaker groups', 34)),
-        "And then the weaker groups began to enter politics, the institutions of government. Once they were there, they began to look after themselves, and they created social rights. Rights that look after the weaker groups.",
+        A('History appears', c('In history: natural rights first → then civil rights → then social rights', 36)),
+        "Historically, the order was the same: first natural rights were recognised for every person; people who felt equal then wanted a voice, civil rights; and once weaker groups entered government, they created social rights.",
     ]))
     c = Col(y=60, gap=20)
     s.append(dict(mode='concept', active=4, title='Social vs property', script=[
@@ -782,17 +754,8 @@ def _zoom_out():
     s = []
     c = Col(y=60, gap=22)
     s.append(dict(mode='concept', active=0, title='A view from above', script=[
-        "The third way: points of view. It starts with a kind of view from above over everything that's happening here.",
-        A('Like task analysis appears', c('It is like analysing the task:', 38, gap=12)),
-        "First of all, there's something here that really reminds us of analysing the task.",
-        A('Same or different aim appears', c('• Same or different interest? Friends with one aim, or rivals pulling apart?', 34)),
-        "In the analysis we checked whether the interest is similar or different. Guys, why are you arguing? Are you two friends who want the same goal in different ways, or two rivals each pulling in a different direction?",
-        A('Particular case appears', c('• A particular case of... → the wider frame of the debate', 34)),
-        "We said: this is a particular case of... and tried to understand the wider frame of the debate.",
-        A('Rights appears', c('• The state is involved → probably a debate about rights', 34)),
-        "What's here? A debate about rights? Something else? And if the state is involved, we probably have a debate about rights.",
-        A('New: perspectives appears', c('+ NEW: the nine points of view', 40)),
-        "And what I want to add here: the points of view.",
+        "The third way: points of view. We step back and look at the issue from above, as we did when we analysed the task, but now through nine points of view.",
+        A('New: perspectives appears', c('A view from above: the same issue, through nine points of view', 40)),
     ]))
     c = Col(y=60, gap=18)
     s.append(dict(mode='concept', active=1, title='Nine points of view', script=[
@@ -1095,7 +1058,7 @@ def _zoom_in():
         "It's a bit like playing poker with someone whose cards you can see. They see the police's cards: I know where their cameras are, fine, I'll mislead them and use it against them.",
     ]))
     c = Col(y=500, gap=16)
-    s.append(dict(mode='concept', active=9, title='Smoking: the task', script=[
+    s.append(dict(mode='concept', active=9, title='Smoking: both ways', script=[
         "One more example, to practise the most important part: both ways, for each player.",
         A('Smoking task appears', _TB('smoking', y=40)),
         "Anti-smoking laws. Smoking is banned in cafés, restaurants, bus stations, with heavy fines, even for business owners. Are the laws justified?",
@@ -1103,7 +1066,7 @@ def _zoom_in():
         "Who is involved? Smokers. Non-smokers. Café and restaurant owners. The people who work there. And the state.",
     ]))
     c = Col(y=60, gap=14)
-    s.append(dict(mode='concept', active=10, title='Smoking: both ways', script=[
+    s.append(dict(mode='concept', active=9, title='Smoking: both ways', script=[
         "Now, for each one: how does it affect them? For better, and for worse.",
         A('Smokers appears', c('Smokers:  − fewer places to smoke, fines, feel pushed out   + may smoke less, or quit → better health', 32)),
         "Smokers. The obvious part: it's bad for them. Fewer places, fines, they feel pushed out. But how does it affect them? Many smoke less, some quit. That's good for their health.",
@@ -1119,7 +1082,30 @@ def _zoom_in():
         "See? Every single player has both sides. And the side nobody expects, like the café owner who gains, is often your most original argument.",
     ]))
     c = Col(y=60, gap=26)
-    s.append(dict(mode='concept', active=11, title='Why it works', script=[
+    s.append(dict(mode='concept', active=10, title='Same field, other side', script=[
+        "One more trick. Remember the café owners? We expected bad for business, and found that families may come instead. Same field, economic, but the other side.",
+        "Here it is on another task: should the state charge large companies a reduced rate of tax?",
+        A('Obvious appears', c('Reduced tax for large companies. The obvious argument: "less tax revenue" (economic, against)', 38)),
+        "Less tax coming in is the obvious one. The argument everyone sees immediately. And it's economic.",
+        A('Other side same field appears', c('An argument from the OTHER side in the SAME field: "less unemployment, factories stay here" (economic, for)', 38)),
+        "But on the economic side there's also something that could be better: without the reduction, the factories may go abroad. With it, they stay, and so do the jobs.",
+        A('Critical thinking appears', c('→ this usually signals strong critical thinking', 40)),
+        "When there are very common or obvious arguments in a certain field, if I manage to bring an argument from the other side in the same field, it usually signals high critical thinking.",
+    ]))
+    c = Col(y=60, gap=26)
+    s.append(dict(mode='concept', active=11, title='Focus', script=[
+        "What this technique mainly does, I think, is give you focus.",
+        A('General is hard appears', c('"I\'m trying to think of arguments... something general" → hard', 36)),
+        "Often, when students try to think of arguments, they say in their heads: OK, I'm trying to think of arguments, something general. That's hard.",
+        A('Points of view direction appears', c('Points of view (the third way, next): one point of view → who does it affect?  (safety → the people? the police? offenders?)', 34)),
+        "With points of view, the third way, coming next, I take one point of view, say safety, and ask: who does it affect? The people? The police? The offenders?",
+        A('Who direction appears', c('Who is involved: one player → how, from which points of view?  (the state → economic? moral? social?)', 34)),
+        "Here, in the second way, we go the other way. I take one player, say the state, and ask: how is it affected, and from which points of view?",
+        A('Same technique appears', c('The same technique from the other side. Either way: focus on one thing at a time.', 36)),
+        "It's exactly the same technique, from the other side. And either way it creates focus. When you look only at the state, you can find arguments about it, instead of thinking in general about everyone at once.",
+    ]))
+    c = Col(y=60, gap=26)
+    s.append(dict(mode='concept', active=12, title='Why it works', script=[
         "Look how nice this way of thinking is. Who, what, how.",
         A('Players easy appears', c('Finding the players is not hard: society and the state are almost always there', 38)),
         "Finding the players isn't too hard. Usually society is there. Even if specific people are linked to the issue, society and the state are often involved in a more indirect way.",
@@ -1127,7 +1113,7 @@ def _zoom_in():
         "And we can use both rights and different perspectives to think of the benefits and harms that could happen.",
         A('Possible harm appears', c('Possible, not certain: "there is a risk that details will leak" is still a potential harm', 36)),
         "Again, it doesn't have to happen. It could happen. It isn't certain that details will leak, but there's a risk, so there's a potential harm.",
-        "Let's see another example of this tool, because in my eyes it's very, very effective. By the way, it's the one I use most.",
+        "In my eyes it's very, very effective. By the way, it's the one I use most.",
     ]))
     return s
 
@@ -1135,116 +1121,11 @@ def _zoom_in():
 ZOOM_IN = lesson('vr50-e-zoom-in', 'Way 2: Who Is Involved?',
                  ['An argument = a result', 'Who, what, how', 'Both ways', 'The key sentence', 'The table',
                   'The people', 'Law enforcement', 'Society and the state', 'The offenders',
-                  'Smoking: the task', 'Smoking: both ways', 'Why it works'],
+                  'Smoking: both ways', 'Same field, other side', 'Focus', 'Why it works'],
                  [dict(mode='title', title='Way 2: Who Is Involved?', script=[
                      "The second way to find arguments: who is involved, and how does it affect them?",
                      "We go into the issue itself, player by player, and look for the good and the bad for each of them.",
                  ])] + _zoom_in(), T50)
-
-
-# =====================================================================================================================
-def _tax():
-    s = []
-    it, bottom = box(TAX_PROMPT, TAX_Q, y=60, w=1100)
-    c = Col(y=bottom + 40, gap=16)
-    s.append(dict(mode='concept', active=0, title='The task', script=[
-        "Another example of the second way: who is involved, and how does it affect them? Here's the task.",
-        A('The tax task appears', it),
-        "In your opinion, should the state charge large companies a reduced rate of tax?",
-        A('Who what how appears', c('Who? What? How?  →  player by player', 40)),
-        "Same method. Who, what, how. Player by player.",
-    ]))
-    items, L, R = two_cols('the state and society')
-    s.append(dict(mode='concept', active=1, title='The state: harm', script=[
-        "Let's see. First, again, we have the state and society. What's the benefit or harm?",
-        items[0], items[1], items[2],
-        A('Less tax appears', R('Less tax, less money coming into the state (economic)', 30)),
-        "First the harm. Economic: less tax, less money coming into the state.",
-        A('Inequality appears', R('Inequality: "The richest pay less? That is not fair." (moral, social)', 30)),
-        "There's also a moral side: inequality. What? Why do they pay less tax? And these are large companies with lots of money. So it's the millionaires and the rich who pay less? That's not fair.",
-        "That's also social. It has a social effect.",
-    ]))
-    items, L, R = two_cols('the state and society')
-    s.append(dict(mode='concept', active=2, title='The state: benefit', script=[
-        "And on the benefit side, I can take the same perspective, economic, just from the other side.",
-        items[0], items[1], items[2],
-        A('Less unemployment appears', L('Less unemployment → a stronger state in the long term (economic)', 30)),
-        "Economic: wait, there'll be less unemployment. Less unemployment strengthens the state. In the long term, admittedly, but it strengthens it.",
-        A('Factories abroad appears', L('Without the reduction, the factories go abroad → with it, more tax overall (economic)', 30)),
-        "And I can talk about more economic arguments. If these companies don't get reduced tax, they won't build their factories here. They'll go and do it in another country. If they do it here, in the end I actually collect more tax.",
-        A('Supporting the weak appears', L('Supporting the weak: helping people who need work (moral; social rights)', 30)),
-        "The moral side: supporting the weak. People who need work. As a state I'm committed, I want to help. We said that the social rights include an adequate standard of living and employment conditions, and that includes providing jobs.",
-        A('Development appears', L('Development of the area: shops and services grow around the factories (environmental)', 30)),
-        "And there's an environmental side: development. Once these large companies set up factories, the whole area usually becomes more developed. Shops that serve them, and so on. That's also a contribution to the state.",
-    ]))
-    c = Col(y=60, gap=26)
-    s.append(dict(mode='concept', active=3, title='Same field, other side', script=[
-        "Notice something I did there.",
-        A('Obvious appears', c('The obvious argument: "less tax revenue" (economic, against)', 38)),
-        "Less tax is the obvious one. The argument everyone sees immediately. And it's economic.",
-        A('Other side same field appears', c('An argument from the OTHER side in the SAME field: "less unemployment, factories stay here" (economic, for)', 38)),
-        "But I show you: hop, on the economic side there's actually something that could be better.",
-        A('Critical thinking appears', c('→ this usually signals strong critical thinking', 40)),
-        "When there are very common or obvious arguments in a certain field, if I manage to bring an argument from the other side in the same field, it usually signals high critical thinking.",
-    ]))
-    items, L, R = two_cols('the unemployed')
-    s.append(dict(mode='concept', active=4, title='The unemployed', script=[
-        "Another player: the unemployed. Someone who is unemployed and will now get a job has a very clear benefit.",
-        items[0], items[1], items[2],
-        A('Jobs appears', L('They get jobs in these companies (economic)', 30)),
-        "They'll get jobs in these companies. That's the economic side.",
-        A('Sense of worth appears', L('A sense of worth; out of the stress and depression (psychological)', 30)),
-        "But there's also a psychological side. I told you I really love this perspective, because it isn't common. Not many students use it.",
-        "When an unemployed person starts working, they have a sense of worth. They get out of the stress, out of the depression.",
-        A('Economic feeds psychological appears', L('Less financial pressure → calmer', 30)),
-        "And the economic side affects the psychological side too, of course. Once you're under less financial pressure, you're calmer.",
-    ]))
-    items, L, R = two_cols('other citizens')
-    s.append(dict(mode='concept', active=5, title='Other citizens', script=[
-        "Other citizens. Not the ones who got jobs. The others. What about them?",
-        items[0], items[1], items[2],
-        A('Pay more appears', R('If the companies pay less, we pay more: the state\'s budget must be filled (economic)', 30)),
-        "Wait. If these companies pay less tax, we'll pay more tax. Someone has to pay these taxes in the end. The state has a budget and it has to be filled. From where? From taxes. Who pays them? We do.",
-        "If these companies paid more tax, we'd pay less. But no. Right now we're harmed.",
-        A('Frustration appears', R('A sense of unfairness: anger and frustration (psychological)', 30)),
-        "And psychological: inequality. We talked about inequality as a moral matter, but I think it also has a psychological side.",
-        "I remember it from discussions with friends about large factories that pay little tax: what, they don't pay taxes? They're taking our country's resources. It's not fair. It annoys people, it frustrates them.",
-        A('Tax evasion appears', R('"They do not pay, so why should I?" → more tax evasion', 30)),
-        "And it could make other citizens say: what, they don't pay tax? Then I won't either. Now I'm evading tax.",
-        "Quite a few people use exactly that justification: I evade tax, because they're cheating me here, so I'll cheat back.",
-    ]))
-    items, L, R = two_cols('the companies')
-    s.append(dict(mode='concept', active=6, title='The companies', script=[
-        "And of course we have the companies. Again, I'd mark them in red, because often we won't take the arguments about them. But they have benefit and harm too.",
-        items[0], items[1], items[2],
-        A('Pay less appears', L('They pay less tax', 30)),
-        "The benefit, of course: they pay less tax.",
-        A('Image harm appears', R('Their image: seen as tax dodgers, above everyone else → protests, boycotts', 30)),
-        "And the harm, for example: image. They're seen as avoiding tax, as thinking they're above everyone else. There could be protests against them, or even a boycott of their other businesses.",
-        "See how, when we dig deeper and look each time at a different player and focus on it, we can go deeper and deeper and find more and more potential benefits and harms.",
-    ]))
-    c = Col(y=60, gap=26)
-    s.append(dict(mode='concept', active=7, title='Focus', script=[
-        "What this technique mainly does, I think, is give you focus.",
-        A('General is hard appears', c('"I\'m trying to think of arguments... something general" → hard', 36)),
-        "Often, when students try to think of arguments, they say in their heads: OK, I'm trying to think of arguments, something general. That's hard.",
-        A('Points of view direction appears', c('Points of view: one point of view → who does it affect?  (economic → the state? the unemployed? citizens?)', 34)),
-        "With points of view, the third way, I take one point of view, say economic, and ask: who does it affect? The state? The unemployed? The citizens?",
-        A('Who direction appears', c('Who is involved: one player → how, from which points of view?  (the state → economic? moral? social?)', 34)),
-        "Here, in the second way, we go the other way. I take one player, say the state, and ask: how is it affected, and from which points of view?",
-        A('Same technique appears', c('The same technique from the other side. Either way: focus on one thing at a time.', 36)),
-        "It's exactly the same technique, from the other side. And either way it creates focus. When you look only at the state, you can find arguments about it, instead of thinking in general about everyone at once.",
-    ]))
-    return s
-
-
-TAX = lesson('vr50-e-zoom-in-tax', 'Who Is Involved? Reduced Tax',
-             ['The task', 'The state: harm', 'The state: benefit', 'Same field, other side', 'The unemployed',
-              'Other citizens', 'The companies', 'Focus'],
-             [dict(mode='title', title='Who Is Involved? Reduced Tax', script=[
-                 "Who is involved, a second example: reduced tax for large companies.",
-                 "Player by player, we'll find benefits and harms, and see how deep this technique can go.",
-             ])] + _tax(), T50)
 
 
 # =====================================================================================================================
@@ -1298,7 +1179,7 @@ def _test():
     ]))
     c = Col(y=60, gap=20)
     s.append(dict(mode='concept', active=4, title='Logical links', script=[
-        "Logical links. This doesn't appear in the table either, but I need to make sure in my head that everything fits. So we won't see a paragraph now, just a logical chain.",
+        "Logical links. This doesn't appear in the table either, but I need to make sure in my head that everything fits. So we won't see a paragraph now, just a logical chain: the cause-and-effect steps. The chain gets its own lesson later.",
         A('Wrong chain appears', c('✗ cameras → deterrence → awareness → less crime', 40, gap=10)),
         A('Wrong why appears', c('How can people be deterred before they know the cameras are there?', 32, gap=36)),
         "When there are cameras, the cameras cause deterrence, which causes awareness, which causes less crime.",
@@ -1308,23 +1189,8 @@ def _test():
         A('Check the chain appears', c('Make sure your chain works and is logical, from the decision to the result', 36)),
         "So make sure your chain, your logical sequence, works correctly and makes sense.",
     ]))
-    c = Col(y=60, gap=20)
-    s.append(dict(mode='concept', active=5, title='The chain', script=[
-        "Now let's turn that into a working method. I call it the chain.",
-        A('The chain appears', c('THE CHAIN: before you write, draft each argument as short cause → effect steps', 40)),
-        "For every argument, before you write, draft a chain of short steps. Cause, then effect, then effect.",
-        A('From the task to the result appears', c('from the thing the task asks about  →  ...  →  the final result (benefit or harm)', 36)),
-        "It starts from the exact thing the task asks about, and ends at the final result: the benefit or the harm.",
-        A('About ten words appears', c('About ten words per argument: short notes, but never drop a necessary link to make it shorter', 34)),
-        "About ten words per argument is usually enough. Short notes. But don't drop a link you need just to make the chain shorter.",
-        A('Example chain appears', c('cameras in public spaces → offenders know they are filmed → fear of being identified → fewer offences there', 34)),
-        "For example: cameras in public spaces, offenders know they're filmed, they fear being identified, fewer offences there.",
-        A('Why it helps appears', c('Later you paste the chain into the argument paragraph: nothing is skipped, you do not get lost', 34)),
-        "Later, in the argument paragraph lessons, you'll paste this chain into the paragraph with a template. So nothing is skipped, and you don't get lost in the middle.",
-        "There we'll also learn to test every arrow, and to use the other side's chain to find its weak spot. For now: draft a chain for every argument you find.",
-    ]))
     c = Col(y=60, gap=22)
-    s.append(dict(mode='concept', active=6, title='Summary', script=[
+    s.append(dict(mode='concept', active=5, title='Summary', script=[
         "Let's sum up the three ways to find arguments.",
         A('Way 1 appears', c('1 · From the task: use its arguments, but not only them, not word for word, and explain them well', 34)),
         "One: from the task. Use the arguments it gives you, but not only them, not word for word, and explain them well.",
@@ -1332,8 +1198,8 @@ def _test():
         "Two: who is involved, and how does it affect them? For each player, in both directions.",
         A('Way 3 appears', c('3 · Points of view: social-economic · psychological · educational · moral · democracy · rights · safety · environment · science and progress', 34)),
         "Three: points of view. Go through all nine and force yourself to think in each direction.",
-        A('Test appears', c('Then test each argument: direct link · simple · logical links (the chain)', 34)),
-        "Then test each argument: a direct link, simple, and logical links. Draft its chain.",
+        A('Test appears', c('Then test each argument: direct link · simple · logical links', 34)),
+        "Then test each argument: a direct link, simple, and logical links.",
         "Next, we move on to actually writing the essay. We'll start with paragraphs, and at the end put them all together into a whole essay. Hopefully a perfect one, or almost. But a good one.",
     ]))
     return s
@@ -1341,10 +1207,10 @@ def _test():
 
 TEST = lesson('vr50-e-test', 'Is It a Good Argument?',
               ['What makes it good', 'Direct link: miss 1', 'Direct link: miss 2', 'Simple: one breath',
-               'Logical links', 'The chain', 'Summary'],
+               'Logical links', 'Summary'],
               [dict(mode='title', title='Is It a Good Argument?', script=[
                   "We've found arguments. Now: are they any good?",
-                  "Three tests for every argument, and a planning tool, the chain, that makes the third test easy.",
+                  "Three tests for every argument.",
               ])] + _test(), T50)
 
 
@@ -1370,7 +1236,7 @@ def _from_task():
         A('Not word for word appears', c('2 · Not word for word: say it in your own words', 38)),
         "Two: not word for word. Take the idea, not the sentence.",
         A('Explain well appears', c('3 · Explain it well: the task gives a CLAIM, not the explanation. You add the how: the chain.', 38)),
-        "And three, the most important: explain it well. The task only gives you the claim. It never explains how it happens. That's your job. That's where the chain comes in.",
+        "And three, the most important: explain it well. The task only gives you the claim. It never explains how it happens. That's your job. That's where the chain comes in: the cause-and-effect steps, with their own lesson later.",
     ]))
     c = Col(y=60, gap=20)
     s.append(dict(mode='concept', active=2, title='Copied vs developed', script=[
@@ -1495,7 +1361,7 @@ POV_EX = lesson('vr50-e-pov-example', 'Points of View: An Example',
                     "Should people who don't pay taxes be allowed to vote?",
                 ])] + _pov_example(), T50)
 
-MODULES = [ANALYSE, GATHER, POSITION, ARGS_INTRO, FROM_TASK, ZOOM_IN, TAX, ZOOM_OUT, POV_EX, RIGHTS, TEST]
+MODULES = [ANALYSE, GATHER, POSITION, ARGS_INTRO, FROM_TASK, ZOOM_IN, ZOOM_OUT, POV_EX, RIGHTS, TEST]
 
 MEMORY = [
 dict(id='mem-wr-general', after='vr50-e-pov-example', title='General ideas worth saving',
@@ -1530,9 +1396,10 @@ dict(
             ['Common vs individual good', 'The common good'],
             ['A moral consideration', 'The more moral side (e.g. protecting a vulnerable group)'],
             ['The existing situation', 'Not changing it (but think again about an old law)'],
-            ['Degree tasks', 'No extremes: the flexible end → a complex position with safeguards'],
+            ['Degree tasks', 'No extremes: the flexible end → room for a complex position (optional; keep its limit clear)'],
             ['Rights', 'The right the task explains in detail'],
             ['Three opinions', 'The middle (≈ 80 + 80 instead of 100 / 0)'],
+            ['When', 'Choose a first position (a leaning) now; confirm or change it after finding and testing arguments'],
         ]),
         dict(title='4 · Three ways to find arguments', head=['Way', 'How'], rows=[
             ['1 · From the task', "Use the sides' arguments given in the task - but not only them, not word for word, and explain each one well (a chain)."],
@@ -1543,11 +1410,11 @@ dict(
         dict(title='5 · The argument test', head=['Test', 'Check'], rows=[
             ['Direct link', 'Answers the exact question; does not dispute facts the task gives'],
             ['Simple', 'The key sentence can be said in one breath'],
-            ['Logical links', 'Draft the chain (~10 words): task → ... → result. Ask of every arrow "why would this lead to the next?"; add an explanation or condition; no arrows that just rename a step.'],
-            ['Other side', 'Write the opponent\'s chain; its weakest arrow = your weakening / rebuttal'],
+            ['Logical links', 'Draft the chain (the cause-and-effect steps, taught next) (~10 words): task → ... → result. Ask of every arrow "why would this lead to the next?"; add an explanation or condition; no arrows that just rename a step.'],
+            ['Other side', 'Write the opponent\'s chain; its weakest arrow = your weakening / rebuttal (both taught later)'],
         ]),
     ],
-    tips=['Aim for facts and reasonable assumptions, not only opinions; "in my opinion" goes only where the opinion starts.',
+    tips=['Aim for facts and reasonable assumptions, not only opinions. Every key sentence starts with "In my opinion, ..." (advanced: after a fact, "in my view" in the middle).',
           'Original angles (e.g. psychological) stand out, but only if they are explained as well as any other argument.',
           'Practise finding arguments on published tasks, without always writing the whole essay.'])]
 

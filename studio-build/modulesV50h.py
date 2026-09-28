@@ -122,8 +122,8 @@ OPEN = lesson('vr50-h-opening', 'The Opening Paragraph', SB_OPEN, [
   "The opening should show that you understood the issue. A copied block of text doesn't show that.",
   L("For you: don't get stuck", 'What it means for you: can rewrite well? Great.\nStruggling? Copy the key segments, link them, and get to the body.', 360, 36),
   "What does this mean for you? Don't get stuck. You can rewrite it? Excellent. You can't? Take the key segments, link them in a sentence or two of your own, and move on to the essay.",
-  L("Complex position: here, if you can", 'Tip: if you can, state a complex position here\n(instead of a bridging recommendation later)', 600, 32),
-  "And as I said in the bridging recommendation lesson: if you can, present a complex position here instead of a bridging recommendation in the rebuttal paragraph. If that's too much for you, a simple position is fine.",
+  L("Complex position: here, if you can", 'Option: a complex position here (instead of a bridging recommendation later),\nif you can keep its boundary coherent. Not required; no automatic bonus', 600, 30),
+  "And as we said in the bridging recommendation lesson: a complex position can go here, instead of a bridging recommendation in the rebuttal paragraph. It's a strong option if you can keep its boundary coherent. It's not required, and a simple position is perfectly fine.",
  ]),
  dict(mode='concept', active=7, title='No empty phrases', script=[
   "Avoid sentences that don't move you forward.",
@@ -177,7 +177,7 @@ OPEN = lesson('vr50-h-opening', 'The Opening Paragraph', SB_OPEN, [
 
 # ================================================================= lesson 2: the two opening templates (seg44)
 SB_OTPL = ['Two templates', 'Minimal template', 'Minimal: options', 'Minimal example', 'Rewrite template',
-           'Rewrite: options', 'Rewrite example', 'Cut the filler', 'Why rewrite', 'The downside']
+           'Rewrite: options', 'Rewrite example', 'Why rewrite', 'The downside']
 
 OPEN_TPL = lesson('vr50-h-opening-tpl', 'Opening Paragraph Templates', SB_OTPL, [
  dict(mode='title', title='Opening Paragraph Templates', script=[
@@ -211,9 +211,7 @@ OPEN_TPL = lesson('vr50-h-opening-tpl', 'Opening Paragraph Templates', SB_OTPL, 
   L("Option C", 'However, some oppose this step. In my view, it should [nevertheless] be [adopted].', 250, 32),
   L("Option D", 'Not everyone supports this plan; I believe that it should [not] be [carried out].', 320, 32),
   "Four options. Opposing or supporting, you can always fit your position into the last clause.",
-  L("Avoid these", 'Avoid: "In my opinion I think ..." · "According to me ..." · "I am agree"', 440, 32),
-  D("Cross out the three wrong phrases"),
-  "And three classic mistakes. 'In my opinion I think' says the same thing twice. 'According to me' is not English. And it's 'I agree', never 'I am agree'.",
+  "And careful with the English: it's 'I agree', never 'I am agree'.",
  ]),
  dict(mode='concept', active=3, title='Minimal example', script=[
   "Let's see an example with our running task: face-recognition cameras in public spaces.",
@@ -254,15 +252,7 @@ OPEN_TPL = lesson('vr50-h-opening-tpl', 'Opening Paragraph Templates', SB_OTPL, 
   D("Underline: I agree with the former, although I recognize the need for safeguards"),
   "Who are 'the former'? The supporters. And look: I'm already showing a complex position. I choose this side, but I understand I need some reservations, to protect the other side's concern too.",
  ]),
- dict(mode='concept', active=7, title='Cut the filler', script=[
-  "One more thing. Remember phrases that don't advance the content? Here's how they sneak in.",
-  L("Before", 'I agree with the former, and since this is a problematic issue, I understand the need for safeguards.', 110, 32),
-  D("Strike through: and since this is a problematic issue,"),
-  "'Since this is a problematic issue.' Who cares? It doesn't help, it doesn't move anything forward. I simply delete it.",
-  L("After", 'I agree with the former, although I recognize the need for safeguards.', 260, 32),
-  "Focus means writing concisely and precisely, not spreading words that add nothing.",
- ]),
- dict(mode='concept', active=8, title='Why rewrite', script=[
+ dict(mode='concept', active=7, title='Why rewrite', script=[
   "So one advantage of the rewrite template: no thinking. The task text goes in, whole.",
   L("Advantage 1: no decisions", 'Advantage 1 · No decisions: rewrite everything', 110, 38),
   L("Advantage 2: a richer essay", 'Advantage 2 · A longer, richer essay, with relevant content only', 190, 38),
@@ -274,7 +264,7 @@ OPEN_TPL = lesson('vr50-h-opening-tpl', 'Opening Paragraph Templates', SB_OTPL, 
   L("But length is not the goal", 'But length alone never raises a score: good essays are usually about 30-40 lines', 510, 32),
   "Just remember: extra length only helps when it's relevant content. More writing that drifts is not better. Good essays are usually about thirty to forty lines.",
  ]),
- dict(mode='concept', active=9, title='The downside', script=[
+ dict(mode='concept', active=8, title='The downside', script=[
   "And the downside.",
   L("Not everyone rewrites well", 'Not every student rewrites easily', 110, 40),
   "Not every student can rewrite well. Some try, get stuck, and spend ages on it.",
@@ -348,9 +338,7 @@ CLOSE = lesson('vr50-h-closing', 'The Closing Paragraph', SB_CLOSE, [
   "The closing gives the judgment your essay reached. It must follow from the reasons in the body.",
   L("It can't fix a mismatch", 'If the body argues for keeping a policy, the closing cannot suddenly call for ending it', 210, 34),
   "If your reasons point one way and your closing says the other, no closing sentence can fix that.",
-  L("A polished ending can't rescue a weak essay", 'A polished ending cannot rescue an unfocused essay', 310, 36),
-  L("A missing ending shows", 'A missing or unfinished ending shows a time problem, so always finish', 390, 36),
-  "And a polished ending won't rescue an unfocused essay. But a missing or unfinished ending does show, and it costs points. So always finish. In the next lesson: three templates, including one for when time runs out.",
+  "And a polished ending won't rescue an unfocused essay.",
  ]),
 ], T50)
 
@@ -358,7 +346,7 @@ CLOSE = lesson('vr50-h-closing', 'The Closing Paragraph', SB_CLOSE, [
 # ================================================================= lesson 4: the three closing templates (seg46)
 SB_CTPL = ['Three templates', 'Benefits summary', 'Where the parts are', 'Benefits: options', 'Benefits example',
            'Essay summary', 'Why this order', 'Example: for', 'Example: against', 'Time-pressure line',
-           'Never skip it', 'The bread and filling']
+           'Never skip it']
 
 CLOSE_TPL = lesson('vr50-h-closing-tpl', 'Closing Paragraph Templates', SB_CTPL, [
  dict(mode='title', title='Closing Paragraph Templates', script=[
@@ -400,8 +388,7 @@ CLOSE_TPL = lesson('vr50-h-closing-tpl', 'Closing Paragraph Templates', SB_CTPL,
   L("Cause connectors", 'Cause:  since ... · because ... · as ... · given that ...', 200, 32),
   L("Adding the second", 'Adding the second:  ..., and also because ... · ..., as well as ... · Moreover, ...', 290, 32),
   "The idea is the right connectors: cause and effect, then addition.",
-  L("Watch the English", 'Not: "In conclusion, in my opinion I think ..." (say it once)', 400, 32),
-  "And again: say 'in my view' once. Not 'in my opinion I think'.",
+
  ]),
  dict(mode='concept', active=4, title='Benefits example', script=[
   "Here's an example for the cameras.",
@@ -473,19 +460,12 @@ CLOSE_TPL = lesson('vr50-h-closing-tpl', 'Closing Paragraph Templates', SB_CTPL,
   L("Choose by the clock", 'Time left?  Benefits summary (or essay summary)\nNo time?  The time-pressure line', 320, 38),
   "Not under time pressure? Use the benefits summary, or the essay summary if you want something more advanced. Under time pressure? The one-line template.",
  ]),
- dict(mode='concept', active=11, title='The bread and filling', script=[
-  "That's the end of the opening and the closing: the bread that wraps our sandwich.",
-  L("The body = the 80/20", 'The body is the heart of the essay: the 20% of the writing that earns 80% of the score', 110, 36),
-  "The body of the essay is the heart. It's the eighty-twenty, our Pareto. That's what gives us the score, that's where we show what we can do.",
-  L("Next: putting it all together", 'Next: putting it all together into one essay', 250, 38),
-  "We've learned to write every paragraph. What's left is to put it all together into a full essay. That's our next topic. As always, I'll be waiting for you there.",
- ]),
 ], T50)
 
 
 # ================================================================= lesson 5: the recommended structure (seg47 + findings 21-24)
 SB_STRUCT = ['No required structure', 'It saves time', 'It covers the rubric', 'It keeps the length',
-             'Bowling bumpers', 'Where the score is', 'Basic structure 1', 'One card, one use', 'Basic structure 2',
+             'Bowling bumpers', 'Basic structure 1', 'One card, one use', 'Basic structure 2',
              'Short on time?', 'Plan it first', 'A teaching aid', 'Paragraph jobs']
 
 STRUCT = lesson('vr50-h-structure', 'The Recommended Structure', SB_STRUCT, [
@@ -504,7 +484,7 @@ STRUCT = lesson('vr50-h-structure', 'The Recommended Structure', SB_STRUCT, [
   "A recommended structure has several advantages.",
   L("Advantage 1: it saves time", 'Advantage 1 · It saves time', 110, 42),
   "One: it saves time. You don't have to think, for every essay: which structure fits? Two arguments or one? Rebuttal before or after? Split it?",
-  L("Fixed connectors and phrases", 'Fixed connectors and phrases for every spot:\nFirst, ... · Second, ... · On the other hand, some argue that ... · Admittedly, ..., but ...', 220, 32),
+  L("Fixed connectors and phrases", 'Fixed connectors and phrases for every spot:\nIn my opinion, ... · Moreover, in my opinion, ... · On the other hand, some argue that ... · Admittedly, ..., but ...', 220, 32),
   "More than that: you have fixed connectors for every spot: the start of a paragraph, the middle, the weakening. Even fixed phrases, like 'Admittedly, there is some truth in this, but ...'.",
  ]),
  dict(mode='concept', active=2, title='It covers the rubric', script=[
@@ -529,7 +509,7 @@ STRUCT = lesson('vr50-h-structure', 'The Recommended Structure', SB_STRUCT, [
  ]),
  dict(mode='concept', active=4, title='Bowling bumpers', script=[
   "And maybe the thing I love most about the recommended structure: it simply prevents mistakes. It gives you boundaries.",
-  L("A template with fixed openers", 'A template with fixed openers:  First, ... · Second, ... · On the other hand, ... · Admittedly, ..., but ...', 110, 32),
+  L("A template with fixed openers", 'A template with fixed openers:  In my opinion, ... · Moreover, in my opinion, ... · On the other hand, ... · Admittedly, ..., but ...', 110, 32),
   "You get a template, a real stencil. You pour the content in and move inside those boundaries.",
   L("Bumpers on a children's bowling lane", 'Like the bumpers on a children\'s bowling lane', 230, 38),
   "I compare it to children's bowling. When kids play, so the ball doesn't fall into the gutter, they raise barriers on both sides.",
@@ -538,20 +518,7 @@ STRUCT = lesson('vr50-h-structure', 'The Recommended Structure', SB_STRUCT, [
   L("Maybe no strike, but no gutter", 'Maybe not a strike, but you knock down pins, not a gutter ball', 400, 36),
   "Maybe it won't be a strike in the end. But you'll knock down pins, instead of an essay that misses completely.",
  ]),
- dict(mode='concept', active=5, title='Where the score is', script=[
-  "In principle, every essay has this shape.",
-  L("Opening", 'Opening: "Here is what I am about to discuss, and what I think."', 110, 34),
-  L("Body", 'Body: the discussion itself: arguments, with or without weakenings', 190, 34),
-  L("Closing", 'Closing: "Here is what we discussed, and my conclusion."', 270, 34),
-  "The opening: here's what I'm going to talk about. The body: now I discuss the issue from the right, from the left, from every angle. The closing: here's what we talked about.",
-  L("Content score: mainly from the body", 'Content score: mainly from the body (the opening comes from the task, the closing repeats the body)', 370, 32),
-  "The opening's content comes from the task text; you didn't think of it yourself. The closing's content is yours, but it's nothing new. So the content score comes mainly from the body.",
-  L("Language score: from everything", 'Language score: from every paragraph, including the opening and closing', 470, 32),
-  "Language is judged everywhere, because the rater forms an impression of your writing from the very first paragraph.",
-  L("Opening short, closing from the body", 'So: keep the opening short and efficient (issue + your answer).\nThe closing gives the judgment the body reached. No new claims.', 570, 32),
-  "So once more: run through the opening, no language mistakes, maybe one slightly higher phrase. Don't try to be creative there. Show your creativity in the body. And the closing just follows from what the body established.",
- ]),
- dict(mode='concept', active=6, title='Basic structure 1', script=[
+ dict(mode='concept', active=5, title='Basic structure 1', script=[
   "From this shape we derive the recommended structure. Opening and closing, same as before. The body:",
   L("1 · Opening", '1 · Opening paragraph: background + dispute + your position', 110, 32),
   L("2 · Argument 1", '2 · Argument paragraph 1: the first benefit of your side', 175, 32),
@@ -563,7 +530,7 @@ STRUCT = lesson('vr50-h-structure', 'The Recommended Structure', SB_STRUCT, [
   L("A clear main thread", 'I am for the cameras -> a reason for -> another reason for -> some are against, but ... -> summary', 500, 30),
   "Everything is here: dealing with the opposing view, developed and explained arguments, and a very clear main thread. Let's call it basic structure one.",
  ]),
- dict(mode='concept', active=7, title='One card, one use', script=[
+ dict(mode='concept', active=6, title='One card, one use', script=[
   "Students often tell me: I tried, but my weakening in the rebuttal turned out to be argument two again. Is that okay?",
   L("No: that's repetition", 'No. Once you have used an argument, you do not use it again', 110, 40),
   "No. That's repetition. Once you've used something in the essay, you don't use it again.",
@@ -574,7 +541,7 @@ STRUCT = lesson('vr50-h-structure', 'The Recommended Structure', SB_STRUCT, [
   L("A thrown card is gone", 'Then a king or a queen. But you can\'t pick up the ace and throw it again', 390, 36),
   "Then a king or a queen. And when I get to the rebuttal, I have no good cards left. I can't pick up the ace and throw it again.",
  ]),
- dict(mode='concept', active=8, title='Basic structure 2', script=[
+ dict(mode='concept', active=7, title='Basic structure 2', script=[
   "So what do I do? I simply drop argument paragraph two, and keep argument two for the rebuttal.",
   L("1 · Opening (the longer, rewrite version)", '1 · Opening paragraph (use the longer, rewrite template)', 110, 32),
   L("2 · Argument 1", '2 · Argument paragraph 1', 175, 32),
@@ -586,7 +553,7 @@ STRUCT = lesson('vr50-h-structure', 'The Recommended Structure', SB_STRUCT, [
   "By the way, with one paragraph fewer, you can enrich the opening and the argument paragraph. That's exactly when the longer, rewrite opening is useful.",
   "And again: written in this structure, with good content and language, it can reach the top score. It's not that they give fewer points for it.",
  ]),
- dict(mode='concept', active=9, title='Short on time?', script=[
+ dict(mode='concept', active=8, title='Short on time?', script=[
   "A tip for anyone who struggles to finish, or who's always borderline with time.",
   L("Swap argument 2 and the rebuttal", 'Always short on time? Swap argument 2 and the rebuttal:', 110, 38),
   L("The order", 'Opening -> Argument 1 -> Rebuttal -> (Argument 2, if there is time) -> Closing', 200, 34),
@@ -595,14 +562,14 @@ STRUCT = lesson('vr50-h-structure', 'The Recommended Structure', SB_STRUCT, [
   L("Better than a rushed rebuttal", 'Better than: argument 1, argument 2, and no time for the rebuttal', 300, 34),
   "That's better than argument one, argument two, and no time for the rebuttal, or a rushed weakening.",
  ]),
- dict(mode='concept', active=10, title='Plan it first', script=[
+ dict(mode='concept', active=9, title='Plan it first', script=[
   "But how do I know, when I write the opening, that I need the longer one? I start writing, argument one, argument two, and only at the end discover I'm using the same argument again?",
   L("Plan before the first word", 'You plan the essay before you write the first word', 110, 40),
   "No. Before we start writing, we plan. Before the first word of the opening, I already know exactly what the essay will look like:",
   L("Which paragraphs, which arguments", 'Which paragraphs, which argument in each, which structure, which opening template', 200, 34),
   "which paragraphs, which argument in each paragraph. We do all that in the planning stage: the essay skeleton. That's the next lesson.",
  ]),
- dict(mode='concept', active=11, title='A teaching aid', script=[
+ dict(mode='concept', active=10, title='A teaching aid', script=[
   "One important note about any recommended structure.",
   L("A teaching aid, not an exam rule", 'The recommended structure is a teaching aid, not an exam rule', 110, 38),
   "It's a tool that helps you. It's not a rule of the exam.",
@@ -613,7 +580,7 @@ STRUCT = lesson('vr50-h-structure', 'The Recommended Structure', SB_STRUCT, [
   L("The other side can come early", 'An opposing consideration may also appear early, as long as the direction is clear', 470, 32),
   "Good essays sometimes deal with the other side early. That's fine too, as long as the direction is clear. Structure should help you answer the task and make your reasoning visible.",
  ]),
- dict(mode='concept', active=12, title='Paragraph jobs', script=[
+ dict(mode='concept', active=11, title='Paragraph jobs', script=[
   "And the most useful test of organization.",
   L("Jobs, not counts", 'Organization = the job of each paragraph, not the number of paragraphs', 110, 38),
   "An essay can have an opening, three body paragraphs and a closing, and still repeat one point throughout. Or have a different layout that works, because its direction is clear.",
@@ -628,8 +595,7 @@ STRUCT = lesson('vr50-h-structure', 'The Recommended Structure', SB_STRUCT, [
 
 # ================================================================= lesson 6: the essay skeleton (seg48 + seg49)
 SB_SKEL = ['Plan, then write', 'How to build it', 'What goes in', 'Just a few words', 'Relevance check',
-           'Flow check', 'The task', 'Analyse the task', 'Throw out ideas', 'Find weakenings', 'Skeleton: for',
-           'Skeleton: against']
+           'Flow check', 'The task', 'Analyse, find ideas', 'Skeleton: against']
 
 SKEL = lesson('vr50-h-skeleton', 'The Essay Skeleton', SB_SKEL, [
  dict(mode='title', title='The Essay Skeleton', script=[
@@ -653,8 +619,8 @@ SKEL = lesson('vr50-h-skeleton', 'The Essay Skeleton', SB_SKEL, [
   "How do we build a skeleton?",
   L("Step 1", '1 · Analyse the task and find arguments (from the task, who is involved, points of view)', 110, 34),
   "We start from the analysis of the task, and find arguments in the three ways we learned: from the task, who is involved, and points of view.",
-  L("Step 2", '2 · Choose a side, based on the arguments you found', 190, 34),
-  "Then we choose a side, based on the arguments we found.",
+  L("Step 2", '2 · Confirm your first position, or change it, based on the arguments you found', 190, 34),
+  "Then we confirm the first position we chose, our leaning, or change it, based on the arguments we found.",
   L("Step 3", '3 · Choose: the arguments for your argument paragraphs,\nthe counterargument, and the weakening', 270, 34),
   "Then we build the skeleton: out of all the arguments I found, which ones actually go into my essay? I choose the arguments for my argument paragraphs, the counterargument, and how I'll weaken it.",
   L("Step 4", '4 · Check relevance to the task and the flow of ideas', 390, 34),
@@ -680,12 +646,8 @@ SKEL = lesson('vr50-h-skeleton', 'The Essay Skeleton', SB_SKEL, [
  ]),
  dict(mode='concept', active=4, title='Relevance check', script=[
   "After we've chosen what goes into each paragraph, we check. First: is each argument really relevant to the task?",
-  L("An argument that drifts", '"Law-enforcement officers are people of integrity who can be trusted to do their job honestly."', 110, 32),
-  "For example, in our camera task, someone suggests: law-enforcement officers are people of integrity, so we can trust them.",
-  L("Near, but off the question", 'It is near the topic (maybe they would leak the database?)\nbut it misses the question under discussion', 230, 34),
-  "It's close, because we talk about the risk of the database leaking, and maybe they'd leak it. But it misses the question.",
-  L("The real question", 'The question: a clash of rights, the right to life and security vs. the right to privacy', 360, 34),
-  "The question here is a clash of rights: the right to life and security against the right to privacy. And this argument runs off to whether police officers are honest people.",
+  L("Relevance", 'Is each argument about the exact question? Remember the near miss from the relevance lesson', 110, 36),
+  "Remember the near miss from the relevance lesson: an argument can be close to the topic and still miss the question. Check each one.",
  ]),
  dict(mode='concept', active=5, title='Flow check', script=[
   "Second: the flow of ideas. It shows in two places.",
@@ -705,53 +667,19 @@ SKEL = lesson('vr50-h-skeleton', 'The Essay Skeleton', SB_SKEL, [
   D("Underline: serious harm to privacy and constant tracking"),
   "'Reduce crime or even eliminate it.' And: 'serious harm to privacy'.",
  ]),
- dict(mode='concept', active=7, title='Analyse the task', script=[
-  L("Shared or different interests?", 'Shared interest or clashing interests?  Clashing:', 110, 36),
-  "First question from the analysis: is there a shared interest here, or different ones? Here, a clash of interests.",
-  L("The clash", 'One side protects the right to life and security; the other protects privacy', 190, 34),
-  "One side wants to protect the right to life and security, the other worries about its privacy.",
-  L("Yes/no, or flexible?", 'The most important question: a yes/no task with two extremes, or is there flexibility?', 290, 34),
-  "And the most important question, in my view, when analysing a task: is it yes-or-no, two extremes, or is there some flexibility?",
-  L("No: absolute", '"No cameras": absolute. You cannot be a little against', 390, 34),
-  L("Yes: flexible", '"Yes, cameras": flexible. "Yes, but with safeguards" is possible', 460, 34),
-  "Here there's flexibility. One side is absolute: no cameras, full stop. But the 'yes' side lets me say: yes, but I understand the privacy concern, and I want safeguards.",
-  L("A reason to prefer 'yes'", 'Remember from choosing a side: flexibility (a complex position) is one consideration\nin favour of that side, not a rule', 550, 30),
-  "As you remember from choosing a position, that's one consideration in favour of this side. It doesn't mean we must choose it.",
+ dict(mode='concept', active=7, title='Analyse, find ideas', script=[
+  L("Analysis", 'Analysis: clashing interests (security vs privacy). "No" is absolute; "yes" is the flexible end', 90, 30),
+  "A quick analysis: clashing interests, security against privacy. 'No cameras' is absolute; 'yes' is the flexible end.",
+  L("For", 'For:  deterrence -> less crime  ·  saves resources (catch, convict)  ·  a safe country attracts tourists', 190, 30),
+  L("Against", 'Against:  privacy  ·  a database breach (blackmail)  ·  tracking someone\'s routine  ·  high cost, unproven benefit', 290, 30),
+  "Then I throw out ideas, a word or two each. For: deterrence, saving resources, even tourism. Against: privacy, a database breach, tracking someone's routine, and a high cost.",
+  L("Weakenings", 'Weakenings:  privacy? phones already record where we are (does not hold)  ·  deterrence? offenders move to private spaces (the reversal)', 390, 30),
+  "And weakenings: privacy? Our phones already record where we are. Deterrence? Offenders may just move to private spaces. Some of these take a moment, so give the analysis time.",
+  L("Position", 'Now confirm your first position, or change it', 520, 34),
+  "Now I confirm my first position, or change it. Say I chose: against the cameras.",
  ]),
- dict(mode='concept', active=8, title='Throw out ideas', script=[
-  "Now I start throwing out arguments, just a word or two each, with whatever techniques work for you.",
-  L("For", 'For:  deterrence -> less crime  ·  saves resources (catch, convict)  ·  economy: a safe country\nattracts tourists, fewer thefts', 110, 32),
-  "For: cameras create deterrence, which of course reduces crime in those areas. They save resources, because footage helps catch offenders and put them in prison. Even an economic angle: a safe, monitored country attracts tourism, and there are fewer thefts.",
-  L("Against", 'Against:  privacy  ·  a database breach: personal data, locations, blackmail  ·  tracking\nsomeone\'s routine  ·  high running costs, unproven benefit', 260, 32),
-  "Against: harm to privacy. A breach of the database: it holds personal information about a huge number of people, where they are, whom they met. Someone could blackmail me.",
-  "Someone could follow a shop worker's daily routine: when he opens, when he closes, when he takes cash to the bank, and ambush him in a spot with no camera.",
-  "And economically: running such a system is very expensive, and who says it will work at all?",
- ]),
- dict(mode='concept', active=9, title='Find weakenings', script=[
-  "After the arguments, I also try to think of weakenings.",
-  L("Privacy -> weakened", 'Privacy?  "Our phones already record where we are. Much of this data exists anyway."', 110, 32),
-  "Privacy: I can say our smartphones already track where we are. Much of this information already exists.",
-  L("Deterrence -> weakened", 'Deterrence?  "Offenders won\'t stop; they\'ll move to private spaces. More harm than good."', 220, 32),
-  "Deterrence: yes, it deters, but offenders don't stop. They move to private spaces, and you cause more harm than benefit.",
-  L("It takes time", 'Some of these don\'t come in the first minute. Give the analysis time.', 330, 34),
-  "Some arguments jump out immediately. Others, like 'offenders will move to private spaces', take a moment. It's important to give the analysis that time.",
- ]),
- dict(mode='concept', active=10, title='Skeleton: for', script=[
-  "Now I build the skeleton. Say I chose: for the cameras.",
-  L("Opening and closing: not in the skeleton", 'Opening and closing: not in the skeleton (their content is known)', 90, 30),
-  "In the skeleton I don't deal with the opening or the closing at all. Their content is known: the opening from the task text, the closing from the essay. Only the body.",
-  L("Argument 1", 'Argument 1 · Deterrence:  cameras -> people know -> deterrence -> fewer offences\nSupport (comparison): traffic-light cameras: almost nobody runs a red light', 170, 30),
-  "Argument paragraph one: deterrence. Installing the cameras creates awareness, awareness creates deterrence, and deterrence means fewer offences. I wrote it word, arrow, word, because I understand it.",
-  "And support: a comparison with traffic-light cameras. Since cameras were added at junctions, almost no one runs a red light. Why? Deterrence. The same will happen here.",
-  L("Argument 2", 'Argument 2 · Resources:  helps foil, catch, prove guilt -> saves law-enforcement resources\nSupport (example): airport security: scanners replaced hand searches -> fewer staff, shorter queues', 310, 30),
-  "Argument paragraph two: saving resources. Cameras help foil offences, catch offenders, prove guilt later, which saves law-enforcement resources.",
-  "The example: airport security. We used to have every bag opened and checked by hand. Today machines scan the luggage without it passing through our hands: fewer queues, fewer staff. Technology saves resources.",
-  L("Rebuttal", 'Rebuttal · Counter: tracking, harm to privacy\nWeakening: little privacy today (smartphones) + safeguards: restricted access, a secured database', 460, 30),
-  "Counterargument: tracking and harm to privacy. My weakening: today there's hardly any privacy anyway; phones know where we are at every moment.",
-  "And maybe an addition: I understand the danger of a leak, so I want safeguards. Restricted access: only a small unit with a few officers can reach the database, and everyone must go through it. And a secured database. Once I've written 'restricted access, security', I know what I mean.",
- ]),
- dict(mode='concept', active=11, title='Skeleton: against', script=[
-  "And a skeleton against the cameras, so you don't think we're always for them. Privacy matters to us too.",
+ dict(mode='concept', active=8, title='Skeleton: against', script=[
+  "The skeleton against the cameras. Opening and closing aren't in the skeleton: their content is known. Only the body. In the next lesson we'll see a 'for' skeleton, written as chains.",
   L("Argument 1", 'Argument 1 · Privacy:  tracking = harm to privacy -> a basic right -> harming it needs\na very strong reason -> this reason is not strong enough', 110, 30),
   "Argument one: this is tracking, a harm to privacy. Privacy is a basic right, and harming it needs a very, very good reason. Here the reason isn't good enough.",
   L("Argument 2", 'Argument 2 · The database:  cameras -> a database of sensitive data -> breach or leak\n-> harm, blackmail.  Example: a national population registry has leaked in the past', 240, 30),
@@ -771,17 +699,17 @@ ESSAY_P = [
  ('Opening paragraph (rewrite template, shortened)',
   'In recent years, security authorities have been working to set up a national network of face-recognition cameras in public spaces. These cameras can identify people and objects in real time, provided that their images already appear in a database. Supporters believe that the system will help to prevent crimes, to stop them while they are happening and to catch offenders afterwards, while opponents fear that constant monitoring will seriously harm the privacy of ordinary citizens. In my view, such cameras should be installed, as long as the data they collect is strictly protected.'),
  ('Argument paragraph 1 (deterrence)',
-  'First, face-recognition cameras are likely to deter potential offenders. When people know that a public area is filmed and that they can be identified within seconds, the risk of being caught becomes real to them. As a result, many of those who are considering breaking the law may decide that the risk is not worth taking, which in turn reduces the number of offences in the monitored areas. Traffic-light cameras illustrate this effect: at junctions where drivers know that every car is recorded, few of them run a red light, not because they have become more careful by nature, but because they expect to be fined. In the same way, a network of cameras can prevent crimes before they occur, and thus protect potential victims instead of merely punishing offenders later.'),
+  'In my opinion, face-recognition cameras are likely to deter potential offenders. When people know that a public area is filmed and that they can be identified within seconds, the risk of being caught becomes real to them. As a result, many of those who are considering breaking the law may decide that the risk is not worth taking, which in turn reduces the number of offences in the monitored areas. Traffic-light cameras illustrate this effect: at junctions where drivers know that every car is recorded, few of them run a red light, not because they have become more careful by nature, but because they expect to be fined. In the same way, a network of cameras can prevent crimes before they occur, and thus protect potential victims instead of merely punishing offenders later.'),
  ('Argument paragraph 2 (resources)',
-  'Second, the cameras would allow the police to use their limited resources more efficiently. At present, identifying a suspect may require many officers to collect statements and search through hours of footage. A system that recognizes a face automatically could shorten this process considerably, and once the process is shorter, officers are free to deal with other cases. Moreover, clear footage makes it easier to prove guilt in court. Airport security offers a useful comparison: scanners now check luggage that staff once had to open by hand, so the same level of safety can be maintained with shorter queues and fewer workers.'),
+  'Moreover, in my opinion, the cameras would allow the police to use their limited resources more efficiently. At present, identifying a suspect may require many officers to collect statements and search through hours of footage. A system that recognizes a face automatically could shorten this process considerably, and once the process is shorter, officers are free to deal with other cases. Moreover, clear footage makes it easier to prove guilt in court. Airport security offers a useful comparison: scanners now check luggage that staff once had to open by hand, so the same level of safety can be maintained with shorter queues and fewer workers.'),
  ('Rebuttal paragraph (counterargument + weakening)',
-  'On the other hand, some argue that a national camera network would seriously harm privacy, since the authorities could follow every step that citizens take in public. This concern deserves attention, because a database of faces and locations could be misused. However, a great deal of location data already exists: most people carry smartphones that record where they are at almost every moment. The real question, therefore, is not whether such information exists, but who may access it and under what conditions. If the database were encrypted, and only a small, supervised unit could search it, the risk of misuse would be considerably reduced, while the benefits to public safety would remain.'),
+  'On the other hand, some argue that a national camera network would seriously harm privacy, since the authorities could follow every step that citizens take in public. This concern deserves attention, because a database of faces and locations could be misused. However, a great deal of location data already exists: many people carry smartphones that record where they are at almost every moment. The real question, therefore, is not whether such information exists, but who may access it and under what conditions. If the database were encrypted, and only a small, supervised unit could search it, the risk of misuse would be considerably reduced, while the benefits to public safety would remain.'),
  ('Closing paragraph (benefits summary)',
   'In conclusion, face-recognition cameras should be installed in public spaces, since they would deter offenders and thus reduce crime in the monitored areas, and also because they would save the police valuable resources.'),
 ]
 
 SB_ESSAY = ['Skeleton with chains', 'The 35-minute plan', 'Why 8-10 minutes', 'One sentence ahead', 'Opening',
-            'Argument 1', 'Argument 2', 'Rebuttal', 'Closing', 'On the answer sheet', 'Content, then language']
+            'Argument 1', 'Argument 2', 'Rebuttal', 'Closing', 'On the answer sheet']
 
 
 def essay_slide(i, active, intro, notes):
@@ -798,7 +726,7 @@ ESSAY = lesson('vr50-h-essay', 'From Skeleton to Essay', SB_ESSAY, [
   "We have a skeleton. Now let's turn it into a full essay, within thirty-five minutes.",
  ]),
  dict(mode='concept', active=0, title='Skeleton with chains', script=[
-  "Here's the 'for' skeleton again, this time written as chains: about ten words per argument, from the thing the task asks about to the final result.",
+  "Here's a skeleton for the other side, for the cameras, written as chains: about ten words per argument, from the thing the task asks about to the final result.",
   L("P2 chain", 'P2 · cameras visible -> offenders expect to be identified -> fear of being caught -> fewer offences\n     support: traffic-light cameras', 110, 29),
   "Paragraph two: visible cameras, offenders expect to be identified, they fear being caught, fewer offences. Support: traffic-light cameras.",
   L("P3 chain", 'P3 · automatic identification -> shorter investigations -> officers freed + easier proof -> resources saved\n     support: airport luggage scanners', 230, 29),
@@ -853,7 +781,7 @@ ESSAY = lesson('vr50-h-essay', 'From Skeleton to Essay', SB_ESSAY, [
  ]),
  essay_slide(1, 5, "Argument paragraph one: our ace, deterrence.", [
   D("Underline the key sentence: face-recognition cameras are likely to deter potential offenders"),
-  "The key sentence: position and reason. Then the chain, pasted in: people know, the risk becomes real, they decide it's not worth it, fewer offences.",
+  "The key sentence: in my opinion, plus the reason. Then the chain, pasted in: people know, the risk becomes real, they decide it's not worth it, fewer offences.",
   D("Circle the connectors: When, As a result, which in turn"),
   "Look at the connectors: when, as a result, which in turn. Varied, so it doesn't sound pasted.",
   D("Bracket the comparison and write: support, tied back"),
@@ -890,24 +818,13 @@ ESSAY = lesson('vr50-h-essay', 'From Skeleton to Essay', SB_ESSAY, [
   L("Length is not the goal", 'The length comes from explained reasons, not from padding', 540, 30, x=1070, w=470),
   "The length came from explained reasons, not from padding.",
  ]),
- dict(mode='concept', active=10, title='Content, then language', script=[
-  "Let's sum up the skeleton.",
-  L("Not mandatory", 'You don\'t have to build a skeleton. You could just start writing.', 110, 36),
-  "You don't have to. You can just sit down and write.",
-  L("The huge advantage", 'The huge advantage: it separates content from language, and improves both', 200, 38),
-  "But the huge advantage: it separates the content dimension from the language dimension, and improves your score in both.",
-  L("First content, then wording", 'First: only content, in short notes.  Then: only wording and language.', 320, 36),
-  "First you focus only on content, in short notes, without worrying about wording. Then you focus only on wording, on language.",
-  L("Next", 'Now write essays. Next: proofreading and corrections', 440, 38),
-  "Now that you can build a skeleton and write every paragraph: go, write essays. Then we'll need to proofread and correct them. That's the next video.",
- ]),
 ], T50)
 
 
 # ================================================================= lesson 8: proofreading and corrections (seg50)
 SB_PROOF = ['Three stages', 'A first draft', 'Two to three minutes', 'Language, not content', 'What to check',
             'Cut repetition', 'Focus and cohesion', 'How to correct', 'Handwriting', 'Proofread as you go',
-            'Go to the weak spot', 'It need not be perfect']
+            'Go to the weak spot']
 
 PROOF = lesson('vr50-h-proofread', 'Proofreading and Corrections', SB_PROOF, [
  dict(mode='title', title='Proofreading and Corrections', script=[
@@ -986,15 +903,8 @@ PROOF = lesson('vr50-h-proofread', 'Proofreading and Corrections', SB_PROOF, [
   "And remember: the sheets are scanned. Anything written outside the lines, including the margins, is not read.",
  ]),
  dict(mode='concept', active=8, title='Handwriting', script=[
-  "And while we're on clarity.",
-  L("Legible and neat", 'The instructions: pencil, legible, neat handwriting', 110, 38),
-  "The instructions say: write in pencil, and make sure your handwriting is legible and neat.",
-  L("Illegible = lowest score", 'An illegible essay cannot be rated: it gets the lowest score.\nThe essay is 25% of the Verbal Reasoning score.', 200, 36),
-  "Listen carefully. If the rater can't read your essay, they won't struggle with it. An illegible essay gets the lowest score, and the essay is a quarter of your Verbal score.",
-  L("Practise it", 'Know you have a handwriting problem? Start practising now', 340, 38),
-  "So if you know your handwriting is a problem, start practising now.",
-  L("Language of the essay", 'On the English (Combined) test, the essay may be written in English, Hebrew, Russian,\nGerman, Amharic, Italian, Hungarian, Portuguese or Dutch', 440, 30),
-  "And about language: on the English, or Combined, test, the guide lets you write in English or in one of several other languages, like Hebrew or Russian. In this course we train in English.",
+  L("Illegible = lowest score", 'An illegible essay cannot be rated: it gets the lowest score', 110, 38),
+  "And while we're on clarity: if the rater can't read your essay, it gets the lowest score. If your handwriting is a problem, start practising now.",
  ]),
  dict(mode='concept', active=9, title='Proofread as you go', script=[
   "I talked about leaving two or three minutes at the end. But if you practise and see you're fine with time, there's another option.",
@@ -1011,31 +921,22 @@ PROOF = lesson('vr50-h-proofread', 'Proofreading and Corrections', SB_PROOF, [
   L("Go to the paragraph that felt off", 'Go straight to the paragraph that felt weaker while you wrote it', 210, 38),
   "Often it's even better to go straight to a paragraph that felt a bit off while writing. Usually you can feel which paragraph sat well and which didn't.",
   "If you know you have a problematic paragraph, go and fix it. The rest of the essay is probably fine.",
- ]),
- dict(mode='concept', active=11, title='It need not be perfect', script=[
-  L("A few small mistakes are fine", 'A few small mistakes are accepted: it is a draft', 110, 40),
-  "Again: the raters expect a draft, not a perfect essay. They accept a few small mistakes. As long as they're few and small, it's fine.",
-  L("Then: straight on", 'After the essay, the sheets are collected and you move on to the multiple-choice sections', 210, 34),
-  "Right after the essay, the sheets are collected, and you move on to the multiple-choice sections.",
-  L("Don't carry the stress", 'So don\'t stress: you can still get the score your content deserves', 310, 36),
-  "So don't carry it with you. A few small slips because of time pressure won't hurt you. You can still get the score your content deserves.",
-  L("In practice: review before submitting", 'In the exam you must hand it in. In practice: review it first', 410, 36),
-  "In the exam, we must hand it in. But in practice, in this course, before we submit an essay, we review it, fix it, and only then submit. How? Next lesson.",
+  "That's the exam. When you practise, you'll also review each essay properly afterwards. That's the next lesson.",
  ]),
 ], T50)
 
 
 # ================================================================= lesson 9: reviewing an essay (seg51)
-SB_REV = ['Review, fix, submit', 'Why review yourself', 'Time each stage', 'Read the key lines',
+SB_REV = ['Review, fix, rewrite', 'Why review yourself', 'Time each stage', 'Read the key lines',
           'Paragraph by paragraph', 'Lift the language', 'Wait a day', 'Sample essays', 'Strong samples',
           'Adequate samples', 'Weak samples', 'Write the other side']
 
 REVIEW = lesson('vr50-h-review', 'Reviewing Your Essay', SB_REV, [
  dict(mode='title', title='Reviewing Your Essay', script=[
-  "Before we submit an essay for checking, we review it, fix it, and only then submit.",
+  "When you finish a practice essay, you don't just put it away. You review it, fix it, and rewrite it.",
  ]),
- dict(mode='concept', active=0, title='Review, fix, submit', script=[
-  L("The order", 'Write -> review -> fix -> submit -> learn from the feedback', 110, 40),
+ dict(mode='concept', active=0, title='Review, fix, rewrite', script=[
+  L("The order", 'Write -> wait a day -> review with the checklist -> fix -> rewrite  (-> a second reader, if you have one)', 110, 36),
   "Why? While learning, just like in the quantitative sections, we don't practise under time pressure at first. We look at questions from every angle.",
   L("Learning time vs. exam time", 'While learning: do your best work.  In simulations: 35 minutes, strictly.', 210, 36),
   "The same with the essay. I want to write as well as I can. Yes, the exam gives thirty-five minutes. In simulations I'll limit myself to thirty-five. But right now, I want to learn.",
@@ -1047,8 +948,8 @@ REVIEW = lesson('vr50-h-review', 'Reviewing Your Essay', SB_REV, [
   "If someone just writes the mistakes for me, I only look at them, and I may repeat them or similar ones.",
   L("You go deep", 'You examine each paragraph: its parts, connectors, thread, repetition, language', 310, 36),
   "When I must find my own mistakes, I go much deeper: what parts the paragraph has, are the connectors in place, is the thread clear, is there repetition, is my language high enough?",
-  L("'I could have done that myself'", 'Then the feedback teaches you what you really could not find alone', 420, 36),
-  "You'll say: wow, I could have done that myself. Review, fix, then submit, and the comments you get will teach you the things you really couldn't find.",
+  L("'I could have done that myself'", 'Then, if you can, ask a teacher or a friend to read it: they will add what you could not find alone', 420, 34),
+  "You'll say: wow, I could have done that myself. And if you have a teacher or a friend who can read it, show it to them after your own review. Their comments will then teach you the things you really couldn't find.",
  ]),
  dict(mode='concept', active=2, title='Time each stage', script=[
   "First, we review the timing.",
@@ -1086,13 +987,13 @@ REVIEW = lesson('vr50-h-review', 'Reviewing Your Essay', SB_REV, [
   "Like: 'a lot of' becomes 'considerable'. 'Show' becomes 'demonstrate'. 'So' becomes 'therefore'. 'I mean' becomes 'that is'.",
   L("Only if it is accurate", 'Use a more formal word only when it means exactly what you want', 380, 34),
   "But use it only when it means exactly what you want. A difficult word used inaccurately costs more than a simple one.",
-  L("Rewrite, then submit", 'Fix everything you found, rewrite the essay, and only then submit it', 480, 36),
-  "I fix everything I find, rewrite the essay, and only then submit it. The new comments will push me further.",
+  L("Rewrite it", 'Fix everything you found and rewrite the essay', 480, 36),
+  "I fix everything I find and rewrite the essay. Comparing the two versions shows me how far I've come.",
  ]),
  dict(mode='concept', active=6, title='Wait a day', script=[
   "A few more recommendations.",
   L("Don't review the same day", 'Don\'t review on the same day. Wait at least a night.', 110, 40),
-  "First: don't review on the same day. Even after you write it, don't submit it right away.",
+  "First: don't review on the same day. Even after you write it, don't review it right away.",
   L("You're biased", 'Right after writing, you are too close to it, and less critical', 200, 36),
   "Why wait at least a night? Because right now I'm biased toward the essay I just wrote. An hour or two later, I'm still inside it. I'm less critical.",
   L("A day or two later", 'A day or two later, the mistakes are easier to see', 290, 36),
@@ -1126,7 +1027,7 @@ REVIEW = lesson('vr50-h-review', 'Reviewing Your Essay', SB_REV, [
  dict(mode='concept', active=10, title='Weak samples', script=[
   L("Weak: feel better", 'Weak: mostly, they make you feel better', 110, 40),
   "And the weak samples? The benefit there is mainly to feel good about yourself.",
-  "It sometimes makes me laugh, but it can really help. You submitted an essay, got loads of comments, feel you can't write and you're not improving?",
+  "It sometimes makes me laugh, but it can really help. You reviewed an essay, found loads of mistakes, and feel you can't write and you're not improving?",
   L("'I'm not that bad'", 'Read a few and you will say: "I\'m not as bad as I thought."', 250, 36),
   "Read a few weak essays and you'll say: I'm not as bad as I thought.",
  ]),
@@ -1138,8 +1039,8 @@ REVIEW = lesson('vr50-h-review', 'Reviewing Your Essay', SB_REV, [
   "This improves your critical thinking, because you force yourself to find arguments, and weakenings, from the other side.",
   L("Better than a new topic", 'Even better than moving straight to a new topic', 320, 38),
   "I recommend it even more than writing another essay on a new topic. One task, both sides, and only then the next task.",
-  L("Review, fix, submit", 'Review -> fix -> submit', 420, 44),
-  "So remember: review, fix, and only then submit. That's the end of this whole section on how to write an essay. See you in the next lessons.",
+  L("Review, fix, rewrite", 'Review -> fix -> rewrite', 420, 44),
+  "So remember: review, fix, and rewrite. That's the end of this whole section on how to write an essay. See you in the next lessons.",
  ]),
 ], T50)
 
@@ -1210,7 +1111,7 @@ MEMORY = [
                rows=[[p, ''] for p in _T[k]['paras']] + [[_T[k]['q'], '']]) for i, k in enumerate(PRACTICE)],
   tips=['How to practise: set a timer for 35 minutes. Spend the first 8-10 minutes on the skeleton: draft a chain (~10 words) for each argument and for the opponent\'s main argument, and find its weakest arrow.',
         'Then write on a 50-line sheet (at least 25 lines; about 30-40 is good), and leave 2-3 minutes to check with the proofreading checklist.',
-        'Note the time of every stage. A day later, review the essay (key lines first, then paragraph by paragraph), fix it, and only then submit it.',
+        'Note the time of every stage. A day later, review the essay yourself (key lines first, then paragraph by paragraph), fix it and rewrite it; if you can, ask a teacher or a friend to read it.',
         'Best of all: write the same task again from the other side.']),
 ]
 

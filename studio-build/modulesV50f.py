@@ -71,23 +71,15 @@ CAM_KEY = ("In my opinion, face-recognition cameras should be installed in publi
 MODULES = [
 # ================================================================== 1 · introduction to the argument paragraph (seg29)
 lesson('vr50-f-argument-intro', 'The Argument Paragraph',
-       ['A series of lessons', 'Goal for the essay', 'Goal for the rater', 'How raters read', 'The opening paragraph',
+       ['Goal for the essay', 'Goal for the rater',
         'The first argument', 'Strongest first', 'Three components', 'Key sentence', 'Development', 'Support'], [
  dict(mode='title', title='The Argument Paragraph', script=[
   "The argument paragraph.",
   "We're starting a series of lessons that are all about one paragraph: the argument paragraph.",
   "It's the heart of your essay. This is where you actually argue for your position.",
+  "Before we write a single word, let's understand the goal of this paragraph. Once you know what it's for, you know what to put in it.",
  ]),
- dict(mode='concept', active=0, title='A series of lessons', script=[
-  "Here's what's coming, so you know where we're going.",
-  A("Lesson list appears", t("1 · The key sentence\n2 · Developing the argument\n3 · The chain\n4 · The argument paragraph template\n"
-                             "5 · Supporting the argument\n6 · Support by example\n7 · Support by comparison\n8 · Studies and general knowledge",
-                             110, 36)),
-  "The key sentence. Development. My chain method. A ready-made template. And then support: by example, by comparison, and what to do about studies.",
-  "But before we write a single word, I want us to understand the goal of this paragraph.",
-  "Because once you know what the paragraph is for, you know what to put in it.",
- ]),
- dict(mode='concept', active=1, title='Goal for the essay', script=[
+ dict(mode='concept', active=0, title='Goal for the essay', script=[
   "I'm going to split the goal into two.",
   A("Two goals appears", t("The argument paragraph has two goals:\n(1) for the essay  ·  (2) for the rater", 110, 40)),
   "First, the goal from the essay's point of view. I'm writing an essay. What's this paragraph for?",
@@ -98,7 +90,7 @@ lesson('vr50-f-argument-intro', 'The Argument Paragraph',
   "But we're not just writing an essay. We're writing an exam essay, and we get a score for it.",
   "So there's a second kind of goal: the goal from the rater's point of view.",
  ]),
- dict(mode='concept', active=2, title='Goal for the rater', script=[
+ dict(mode='concept', active=1, title='Goal for the rater', script=[
   A("Official scoring appears", t("Officially: two raters. Each gives content 1-6 and language 1-6.", 110, 34)),
   "Quick reminder of the official scoring. Two raters read your essay. Each one gives a content score from one to six and a language score from one to six.",
   A("Goal 2 appears", t("For the rater: in the first argument paragraph I want the rater to\n"
@@ -106,27 +98,9 @@ lesson('vr50-f-argument-intro', 'The Argument Paragraph',
                         "(b) keep, or even raise, the LANGUAGE impression from the opening", 230, 34)),
   "In the first argument paragraph, my goal is for the rater to form a first content impression of me. As high as possible.",
   "And to keep, or even raise, the language impression they already formed in the opening paragraph.",
-  "Why do I talk about impressions? Let me explain how raters really read.",
+  "Why impressions? Experienced raters form a picture of the score while they read, paragraph by paragraph. The opening mostly shows your language; we'll see why in the opening paragraph lesson.",
  ]),
- dict(mode='concept', active=3, title='How raters read', script=[
-  A("In theory appears", t("In theory: read the whole essay → go through the rubric → score each criterion → 1-6", 110, 34)),
-  "In theory, a rater reads the whole essay, goes through the content rubric, then the language rubric, checks every criterion, and only then gives a score.",
-  A("In practice appears", t("In practice: experienced raters have read hundreds, even thousands, of essays.\nThe score takes shape while they read.", 250, 34)),
-  "In practice, these raters are very experienced. After hundreds or thousands of essays, you don't need to reach the end to have a feeling for the score.",
-  "The score takes shape as they read. Paragraph by paragraph.",
-  A("Not final appears", t("Not a final score yet, but a number that settles in the rater's mind.", 420, 34)),
-  "It's not a final score yet. But a number starts to settle in their mind. And first impressions are hard to shift.",
- ]),
- dict(mode='concept', active=4, title='The opening paragraph', script=[
-  "Let's follow the rater. They start with the opening paragraph.",
-  A("Opening = similar content appears", t("Opening paragraph: almost everyone gives the same background from the task, then a position.\n→ Little to judge on content.", 110, 34)),
-  "The opening paragraph is fairly standard. Everyone gives the same background from the task, because everyone is writing about the same thing. Then a position.",
-  "One writer says yes, another says no. But the content is basically the same. So on content, the rater isn't impressed much either way.",
-  A("Opening = language impression appears", t("What the rater DOES notice: your language.\n'Content: no idea yet. Language: this writer looks like a 4, maybe a 4 or 5.'", 330, 34)),
-  "So what does impress them? Your language. The same background can be written in plain English or in precise, academic English.",
-  "The rater thinks: content, I don't know yet, there's no meat. Language? This writer looks like a four. Maybe four or five.",
- ]),
- dict(mode='concept', active=5, title='The first argument', script=[
+ dict(mode='concept', active=2, title='The first argument', script=[
   "Now the rater moves to the first argument paragraph.",
   A("First content impression appears", t("First argument paragraph = the FIRST time the rater sees your content.\nStrong argument or weak? Real development? Solid support?", 110, 34)),
   "This is the first time they meet your content. They read the argument and think: strong argument, or weak? Great development, or thin? Solid support, or not?",
@@ -136,7 +110,7 @@ lesson('vr50-f-argument-intro', 'The Argument Paragraph',
   "As if to say: in the opening I didn't have room to show you what I can do. Here I do.",
   "Of course, I don't write 'my vocabulary is amazing'. I show it, quietly, in the sentences themselves.",
  ]),
- dict(mode='concept', active=6, title='Strongest first', script=[
+ dict(mode='concept', active=3, title='Strongest first', script=[
   A("Strongest argument first appears", t("So: your STRONGEST argument goes in the first argument paragraph", 110, 42)),
   "And that's exactly why the first argument paragraph gets our strongest argument.",
   A("Strongest = appears", t("Strongest = the one you can develop and support best", 250, 38)),
@@ -144,7 +118,7 @@ lesson('vr50-f-argument-intro', 'The Argument Paragraph',
   A("Two first impressions appears", t("Opening paragraph → first impression of your language\nFirst argument paragraph → first impression of your content", 380, 34)),
   "The first impression of your language was created in the opening. Here, you create the first impression of your content.",
  ]),
- dict(mode='concept', active=7, title='Three components', script=[
+ dict(mode='concept', active=4, title='Three components', script=[
   "So what is an argument paragraph made of?",
   A("Component 1 appears", t("1 · Key sentence: the argument in short: position + reason", 110, 36)),
   "First, the key sentence. The argument in a nutshell: my position, and the reason for it.",
@@ -154,7 +128,7 @@ lesson('vr50-f-argument-intro', 'The Argument Paragraph',
   "Third, support. Strengthening it. Showing it's actually true.",
   "Let's take each one in a sentence now. Each gets its own lesson.",
  ]),
- dict(mode='concept', active=8, title='Key sentence', script=[
+ dict(mode='concept', active=5, title='Key sentence', script=[
   A("Key sentence template appears", t("In my opinion, [we should / should not do X], because it will lead to [a benefit / a harm].", 110, 36)),
   "The key sentence has a template. In my opinion, we should, or should not, do something, because it will lead to some benefit, or some harm.",
   A("Camera example appears", t("In my opinion, face-recognition cameras should be installed in public spaces, because they would deter offenders and reduce crime.", 280, 34)),
@@ -163,14 +137,14 @@ lesson('vr50-f-argument-intro', 'The Argument Paragraph',
   A("= my opinion appears", t("This is my opinion. Now I have to explain it and back it up.", 450, 34)),
   "That's my opinion. That's what I think. Now I need to develop it and support it.",
  ]),
- dict(mode='concept', active=9, title='Development', script=[
+ dict(mode='concept', active=6, title='Development', script=[
   A("Development = logic appears", t("Development = explaining with logic: a chain of steps\nA leads to B, B leads to C, C leads to D → the result", 110, 36)),
-  "Development means explaining with logic. A chain: A leads to B, which leads to C, which leads to D. And finally I reach my result.",
+  "Development means explaining with logic. A chain of steps: A leads to B, which leads to C, which leads to D. And finally I reach my result. The chain gets its own lesson soon.",
   A("Camera development appears", t("If cameras are installed in public spaces → offenders will know the cameras are there → they will be deterred → fewer crimes in these areas", 290, 34)),
   "If cameras are installed, offenders will know they're there. That knowledge deters them. And that reduces crime in these areas.",
   "Something leads to something, which leads to something. Logically.",
  ]),
- dict(mode='concept', active=10, title='Support', script=[
+ dict(mode='concept', active=7, title='Support', script=[
   A("Support = proof appears", t("Support = strengthening: showing the explanation is true, not only logical", 110, 36)),
   "After I've explained my key sentence with logic, I want to support it.",
   "Support means strengthening. As if to say: I explained it, you understood it. Now let me show you it's true.",
@@ -183,7 +157,7 @@ lesson('vr50-f-argument-intro', 'The Argument Paragraph',
 # ================================================================== 2 · the key sentence (seg30)
 lesson('vr50-f-key-sentence', 'The Key Sentence',
        ['The template', 'Part 1: the answer', 'Part 2: the reason', 'First draft', 'What to fix', 'Rewrite 1',
-        'Rewrite 2', 'Rewrite 3', 'Common errors', 'Clear, not fancy', 'Summary'], [
+        'Rewrite 2', 'Rewrite 3', 'Summary'], [
  dict(mode='title', title='The Key Sentence', script=[
   "The key sentence.",
   "The first sentence of every argument paragraph. Let's see how to write it, and then how to raise it.",
@@ -257,30 +231,7 @@ lesson('vr50-f-key-sentence', 'The Key Sentence',
   A("Note: nouns appears", t("'the deterrent effect of public awareness'  →  nouns (deterrence, awareness) suit academic writing", 520, 32)),
   "And notice: the deterrent effect, public awareness. Nouns, not 'so that people know and get scared'. That's the language of academic writing.",
  ]),
- dict(mode='concept', active=8, title='Common errors', script=[
-  "While we're at it, some errors I see all the time in key sentences.",
-  A("Error 1 appears", t("✗ In my opinion, I think that ...   →   ✓ In my opinion, ...  /  ✓ I believe that ...", 110, 32)),
-  "'In my opinion, I think'. That's saying it twice. Choose one: In my opinion. Or: I believe that.",
-  A("Error 2 appears", t("✗ According to me, ...   →   ✓ In my view, ...", 200, 32)),
-  "'According to me' isn't English. In my view.",
-  A("Error 3 appears", t("✗ It will cause to less crime.   →   ✓ It will lead to less crime.", 290, 32)),
-  "'Cause to less crime'. No. Lead to less crime. Or: it will reduce crime.",
-  A("Error 4 appears", t("✗ The people think that cameras are dangerous.   →   ✓ Many people believe that ...", 380, 32)),
-  "'The people think'. In English we don't say 'the people' for people in general. Many people believe.",
-  A("Error 5 appears", t("✗ Cameras should be installed. Because they deter crime.   →   one sentence: ..., because they deter crime.", 470, 32)),
-  "And a 'because' clause can't stand alone as a sentence. That's a fragment. Join it to the main sentence.",
- ]),
- dict(mode='concept', active=9, title='Clear, not fancy', script=[
-  "Another tip about raising the language, specifically in key sentences.",
-  A("Tip appears", t("The key sentence must be clear to ANY reader. Do not overload it with rare words.", 110, 38)),
-  "Try not to use language that's too high in the key sentence. It should be clear to anyone who reads it.",
-  A("OK / too much appears", t("✓ 'since' instead of 'because': fine\n✗ 'perforce', 'heretofore', 'insofar as it were': too much", 280, 34)),
-  "'Since' instead of 'because'? Fine. But words like 'perforce' or 'heretofore'? I wouldn't. They make the sentence harder to read, and the official guide warns against needlessly difficult language.",
-  A("Raise later appears", t("Raise the language in the rest of the paragraph, but never to the point that it clutters the reading.", 450, 34)),
-  "You can raise the language later in the paragraph. That's where you'll earn your language points.",
-  "But not so much that it clutters the reading, just to win a few more points.",
- ]),
- dict(mode='concept', active=10, title='Summary', script=[
+ dict(mode='concept', active=8, title='Summary', script=[
   "So let's sum up the key sentence.",
   A("Step 1 appears", t("Step 1: write it simply and logically:\nIn my opinion, [should / should not ...], because it will lead to [benefit / harm].", 110, 36)),
   "First, write it in this simple form. Answer the question. Give the reason. Logical and clear.",
@@ -422,43 +373,23 @@ lesson('vr50-f-development', 'Developing the Argument',
 
 # ================================================================== 4 · the chain (teacher's method)
 lesson('vr50-f-chain', 'The Chain',
-       ['What a chain is', 'Why draft it', 'Drafting a chain', 'About ten words', 'Test every arrow',
+       ['Why draft it', 'About ten words', 'Test every arrow',
         'Weak arrow: fix it', 'No renaming arrows', "Don't sound pasted", 'Linking phrases', 'Chain the other side',
         'Repair a weak chain', 'Summary'], [
  dict(mode='title', title='The Chain', script=[
   "The chain.",
   "This is my own method. It's how I make sure a development never skips a step, and never gets lost.",
  ]),
- dict(mode='concept', active=0, title='What a chain is', script=[
-  A("Definition appears", t("A chain = a short cause → effect plan for ONE argument:\nfrom the thing the task asks about  →  ...  →  the final result", 110, 38)),
-  "A chain is a short plan of cause and effect, for one argument.",
-  "It starts with the thing the task asks about, and ends with the final result: your benefit or your harm.",
-  A("Example chain appears", t("cameras installed → offenders know they're recorded → deterred → less crime here", 330, 36)),
-  "Like this. Cameras installed. Offenders know they're recorded. They're deterred. Less crime here.",
-  "It's the vertical key sentence from the last lesson, written as quick notes on your scrap paper.",
- ]),
- dict(mode='concept', active=1, title='Why draft it', script=[
-  A("Why appears", t("Before you write, draft the chain. Then 'paste' it into the paragraph with the template.", 110, 38)),
+ dict(mode='concept', active=0, title='Why draft it', script=[
+  A("Why appears", t("The chain = the vertical key sentence from the last lesson, as quick notes. Draft it, then 'paste' it into the paragraph.", 110, 38)),
+  "A chain is the vertical key sentence from the last lesson, written as quick cause-and-effect notes on your scrap paper: from what the task asks about to your result.",
   "Before you write the paragraph, you draft the chain. Then you paste it into the paragraph, using a template.",
   A("Benefits appears", t("✓ nothing is skipped: every arrow becomes a sentence\n✓ you don't get lost in the middle of the paragraph\n✓ you see at once whether the argument really reaches its result", 270, 34)),
   "Why? Nothing gets skipped, because every arrow turns into a sentence.",
   "You don't get lost in the middle of the paragraph. You always know what the next sentence is.",
   "And you see immediately whether your argument really reaches its result, or has a hole in it.",
  ]),
- dict(mode='concept', active=2, title='Drafting a chain', script=[
-  "How to draft it.",
-  A("Step 1 appears", t("1 · Start with the thing the task asks about (the policy, the change)", 110, 34)),
-  "One. Start with the thing the task asks about. The policy, the change. Not with a general idea about society.",
-  A("Step 2 appears", t("2 · End with the final result: the benefit or harm in your key sentence", 200, 34)),
-  "Two. Write the end: the final result. The benefit or harm from your key sentence.",
-  A("Step 3 appears", t("3 · Fill the middle by asking 'and what does that lead to?'", 290, 34)),
-  "Three. Fill the middle with our question: and what does that lead to?",
-  A("Step 4 appears", t("4 · Short notes, not sentences. Arrows between them.", 380, 34)),
-  "Four. Short notes, not full sentences. Arrows between them. This is scrap paper, not the essay.",
-  A("Step 5 appears", t("5 · Test it (the next slides), then write.", 470, 34)),
-  "Five. Test it. That's what the next slides are about. And only then write.",
- ]),
- dict(mode='concept', active=3, title='About ten words', script=[
+ dict(mode='concept', active=1, title='About ten words', script=[
   A("Ten words appears", t("About 10 words per argument", 110, 46)),
   "How long is a chain? About ten words per argument.",
   A("Example appears", t("free buses → cheaper than driving → some drivers switch → fewer cars → less traffic", 220, 34)),
@@ -468,7 +399,7 @@ lesson('vr50-f-chain', 'The Chain',
   "Don't drop a link you need, just to keep it short. And don't pad it with links that say nothing new.",
   "Short enough to write in thirty seconds. Complete enough that nothing is missing.",
  ]),
- dict(mode='concept', active=4, title='Test every arrow', script=[
+ dict(mode='concept', active=2, title='Test every arrow', script=[
   "Now the four checks. They make the difference between a chain and a good chain.",
   A("Check 1 appears", t("Check 1 · Test every arrow: 'Why would this step lead to the next?'", 110, 40)),
   "Check one. Test every arrow. For every arrow, ask: why would this step lead to the next one?",
@@ -477,7 +408,7 @@ lesson('vr50-f-chain', 'The Chain',
   "If it's true only sometimes, add a condition.",
   "And if it doesn't really follow, there's a missing step. Add it. Or, if you can't, this argument isn't strong enough. Choose another one.",
  ]),
- dict(mode='concept', active=5, title='Weak arrow: fix it', script=[
+ dict(mode='concept', active=3, title='Weak arrow: fix it', script=[
   "Let's test the camera chain.",
   A("Tested chain appears", chain_fig(["Cameras installed",
                                        "Offenders know they are recorded",
@@ -491,7 +422,7 @@ lesson('vr50-f-chain', 'The Chain',
   "Deterred, so less crime. In these areas, yes. Some may just move elsewhere. So I keep my claim precise: less crime in these areas.",
   "Each weak arrow got an explanation or a condition. Now the chain is solid.",
  ]),
- dict(mode='concept', active=6, title='No renaming arrows', script=[
+ dict(mode='concept', active=4, title='No renaming arrows', script=[
   A("Check 2 appears", t("Check 2 · No arrows that only rename the same thing", 110, 40)),
   "Check two. No arrows that just rename the same thing.",
   A("Renaming example appears", t("✗ students concentrate → students pay attention → better grades", 220, 36)),
@@ -502,7 +433,7 @@ lesson('vr50-f-chain', 'The Chain',
   A("Test appears", t("Test: can the second box happen WITHOUT the first? If not, and it says nothing new, merge them.", 510, 34)),
   "A quick test: does the second box say something new, something that could have failed to happen? If not, merge the two boxes.",
  ]),
- dict(mode='concept', active=7, title="Don't sound pasted", script=[
+ dict(mode='concept', active=5, title="Don't sound pasted", script=[
   A("Check 3 appears", t("Check 3 · The paragraph must not sound pasted", 110, 40)),
   "Check three. The paragraph must not sound pasted.",
   A("Pasted appears", t("✗ Cameras are installed. This will make offenders know. This will make them deterred. This will make less crime.", 220, 32)),
@@ -511,7 +442,7 @@ lesson('vr50-f-chain', 'The Chain',
   "Instead: once cameras are installed. This, in turn. As a result. Vary the connectors. Vary the sentence structure.",
   "And put the explanation of each arrow inside the sentence, with 'because' or 'since'.",
  ]),
- dict(mode='concept', active=8, title='Linking phrases', script=[
+ dict(mode='concept', active=6, title='Linking phrases', script=[
   "Here's a set of linking phrases for the arrows. Mix them.",
   A("Linkers appears", t("First step:  Once ..., ...  ·  When ..., ...  ·  If ..., ...\n"
                          "Next step:  This, in turn, ...  ·  As a result, ...  ·  Consequently, ...  ·  This means that ...\n"
@@ -525,7 +456,7 @@ lesson('vr50-f-chain', 'The Chain',
   A("Warning appears", t("A connector signals a link. It does not create one: 'therefore' does not make a step follow.", 560, 32)),
   "One warning. A connector signals a link. It doesn't create one. Writing 'therefore' doesn't make a step follow. The arrow has to be sound first.",
  ]),
- dict(mode='concept', active=9, title='Chain the other side', script=[
+ dict(mode='concept', active=7, title='Chain the other side', script=[
   A("Check 4 appears", t("Check 4 · Chain the other side too", 110, 40)),
   "Check four. Use the chain for the other side too.",
   A("Opponent chain appears", t("Opponent: cameras everywhere → every movement recorded → people feel watched → some avoid lawful gatherings → public life suffers", 210, 34)),
@@ -535,7 +466,7 @@ lesson('vr50-f-chain', 'The Chain',
   A("Later appears", t("We will do this fully in the rebuttal lessons.", 540, 32)),
   "We'll do this properly in the lessons on weakening and the rebuttal paragraph. For now, just remember: chains work on both sides.",
  ]),
- dict(mode='concept', active=10, title='Repair a weak chain', script=[
+ dict(mode='concept', active=8, title='Repair a weak chain', script=[
   "Let's repair a weak chain. The task: should phones be banned during lessons?",
   A("Weak chain appears", t("Weak: ban phones → students concentrate → students pay attention → better grades", 110, 34)),
   "Here's a first draft. Ban phones. Students concentrate. Students pay attention. Better grades.",
@@ -546,62 +477,34 @@ lesson('vr50-f-chain', 'The Chain',
   A("What changed appears", t("Mechanism added · renaming removed · the jump filled · the result hedged", 680, 32)),
   "The mechanism is in. The renaming is gone. The jump is filled. And the result is hedged: likely to improve.",
  ]),
- dict(mode='concept', active=11, title='Summary', script=[
+ dict(mode='concept', active=9, title='Summary', script=[
   A("Summary appears", t("THE CHAIN\n1 · Draft: from what the task asks about → ... → the final result (about 10 words)\n"
                          "2 · Test every arrow: why would this lead to that? Add an explanation or a condition\n"
                          "3 · No renaming arrows\n4 · Don't sound pasted: vary the connectors\n"
                          "5 · Chain the other side: its weakest arrow = your weakening", 110, 33)),
   "So. Draft the chain, from what the task asks about to the final result. About ten words.",
   "Test every arrow. No renaming arrows. Write it so it doesn't sound pasted. And chain the other side too.",
-  "Next, we'll do three full chains together, from draft to finished paragraph.",
+  "Next, we'll do two more full chains together, from draft to finished paragraph.",
  ]),
 ], T50),
 
 # ================================================================== 5 · worked chains
 lesson('vr50-f-chain-examples', 'Worked Chains',
-       ['The routine', 'Cameras: draft', 'Cameras: arrows', 'Cameras: paragraph', '4-day week: draft',
+       ['The routine', '4-day week: draft',
         '4-day week: arrows', '4-day week: paragraph', 'Free buses: draft', 'Free buses: arrows',
-        'Free buses: paragraph', 'Your turn'], [
+        'Free buses: paragraph'], [
  dict(mode='title', title='Worked Chains', script=[
   "Worked chains.",
-  "Three topics, three full chains. Each one from the draft, through the arrow tests, to the finished paragraph.",
+  "Two topics, two full chains. Each one from the draft, through the arrow tests, to the finished paragraph.",
  ]),
  dict(mode='concept', active=0, title='The routine', script=[
   A("Routine appears", t("Draft the chain  →  test every arrow  →  write the paragraph", 110, 42)),
   "Every time, the same routine. Draft the chain. Test every arrow. Write the paragraph.",
-  A("Topics appears", t("1 · Face-recognition cameras in public spaces (for)\n2 · A four-day school week (against)\n3 · Free city buses (for)", 260, 36)),
-  "Our running example, the cameras. The four-day school week, from our example task, and I'll argue against it. And a new one: should a city make its buses free?",
+  A("Topics appears", t("1 · A four-day school week (against)\n2 · Free city buses (for)", 260, 36)),
+  "The camera chain we already tested in the last lesson. Now: the four-day school week, from our example task, and I'll argue against it. And a new one: should a city make its buses free?",
   "Pause the video whenever you like and try the next step yourself before I show it.",
  ]),
- dict(mode='concept', active=1, title='Cameras: draft', script=[
-  A("Key sentence appears", t("Key sentence: face-recognition cameras should be installed in public spaces, since they would reduce crime there.", 110, 32)),
-  "Cameras. The key sentence: they should be installed, since they'd reduce crime there.",
-  A("Draft chain appears", chain_fig(["Cameras installed in public spaces",
-                                      "Offenders know they are recorded",
-                                      "Offenders deterred",
-                                      "Less crime in these areas → safer for the public"], size=25, y0=240)),
-  "The draft. Cameras installed. Offenders know they're recorded. Deterred. Less crime in these areas, so they're safer for the public.",
- ]),
- dict(mode='concept', active=2, title='Cameras: arrows', script=[
-  "We tested these arrows in the last lesson. Here's the result again.",
-  A("Tested appears", chain_fig(["Cameras installed in public spaces",
-                                 "Offenders know they are recorded",
-                                 "Offenders deterred",
-                                 "Less crime in these areas → safer for the public"],
-                                [('weak', "Condition: the public is informed that the cameras are there"),
-                                 ('weak', "Explain: identification in real time = a real chance of being caught"),
-                                 ('ok', "Holds, but only for 'these areas': keep the claim precise")], size=24)),
-  "Arrow one needs a condition: the public knows about the cameras.",
-  "Arrow two needs an explanation: real-time identification means a real chance of being caught.",
-  "Arrow three holds, as long as I only claim less crime in these areas.",
- ]),
- dict(mode='concept', active=3, title='Cameras: paragraph', script=[
-  "And the finished paragraph. Watch how every box and every fix becomes part of a sentence.",
-  A("Paragraph appears", t("In my opinion, face-recognition cameras should be installed in public spaces, since they would reduce crime in these areas. Once such cameras are installed and the public is informed of their presence, offenders are likely to realize that any crime they commit there will be recorded. Moreover, because the cameras can identify people in real time, being recorded means a real chance of being stopped and caught. This, in turn, is likely to deter many offenders from acting in the monitored areas. As a result, crime in these areas would decrease, making them safer for the public.", 110, 30)),
-  "Once they're installed and the public is informed: that's the condition. Because they identify people in real time: that's the explanation of arrow two.",
-  "This, in turn. As a result. Varied connectors. And the result stays precise: these areas.",
- ]),
- dict(mode='concept', active=4, title='4-day week: draft', script=[
+ dict(mode='concept', active=1, title='4-day week: draft', script=[
   "Now our example task: should schools move to a four-day week? I'll argue against.",
   A("Key sentence appears", t("Key sentence: schools should not move to a four-day week, since longer school days are likely to harm young children's learning.", 110, 32)),
   "The key sentence: schools should not move to a four-day week, since longer school days are likely to harm young children's learning.",
@@ -612,7 +515,7 @@ lesson('vr50-f-chain-examples', 'Worked Chains',
                                       "Lower achievement"], size=25, y0=240)),
   "The draft. Four-day week. Longer school days. Young children tired in the last lessons. Less learned at the end of the day. Lower achievement.",
  ]),
- dict(mode='concept', active=5, title='4-day week: arrows', script=[
+ dict(mode='concept', active=2, title='4-day week: arrows', script=[
   "Now test every arrow.",
   A("Tested appears", chain_fig(["Four-day week",
                                  "Longer school days",
@@ -628,13 +531,13 @@ lesson('vr50-f-chain-examples', 'Worked Chains',
   "Tired, so they learn less? Yes, but I explain it: tired pupils follow and remember less.",
   "Less learned, so lower achievement? Too strong as a certainty. I hedge it: over a school year, it may lower achievement.",
  ]),
- dict(mode='concept', active=6, title='4-day week: paragraph', script=[
+ dict(mode='concept', active=3, title='4-day week: paragraph', script=[
   "And the paragraph.",
   A("Paragraph appears", t("In my opinion, schools should not move to a four-day week, since longer school days are likely to harm young children's learning. If the number of teaching hours is kept, fitting them into four days means that each school day becomes considerably longer. Young children in particular find it hard to stay focused for so many hours, so by the last lessons of the day many of them are likely to be tired. Tired pupils follow explanations less closely and remember less of what they are taught, which means that the final hours of each day would be used far less effectively. Over a full school year, this loss may lower children's achievement, the opposite of what a change in the school timetable should do.", 110, 30)),
   "If the number of teaching hours is kept: the condition. Young children in particular: precise. So, which means that: varied links.",
   "And the result is hedged: may lower achievement. Then a short closing link back to the position.",
  ]),
- dict(mode='concept', active=7, title='Free buses: draft', script=[
+ dict(mode='concept', active=4, title='Free buses: draft', script=[
   "A new task. Should a city make its public buses free of charge? I'll argue for.",
   A("Key sentence appears", t("Key sentence: the city should make its buses free, since this would reduce traffic and air pollution in the city centre.", 110, 32)),
   A("Draft chain appears", chain_fig(["Buses free of charge",
@@ -644,7 +547,7 @@ lesson('vr50-f-chain-examples', 'Worked Chains',
                                       "Less traffic and air pollution"], size=25, y0=240)),
   "The draft. Free buses. The bus is cheaper than driving. Some drivers switch. Fewer cars in the centre. Less traffic and pollution.",
  ]),
- dict(mode='concept', active=8, title='Free buses: arrows', script=[
+ dict(mode='concept', active=5, title='Free buses: arrows', script=[
   "Test.",
   A("Tested appears", chain_fig(["Buses free of charge",
                                  "Bus cheaper than driving",
@@ -659,19 +562,11 @@ lesson('vr50-f-chain-examples', 'Worked Chains',
   "Cheaper, so drivers switch? Not automatically. Price isn't the only reason people drive. Condition: the buses must be frequent and reliable.",
   "Switch, so fewer cars? Sound. Fewer cars, so less traffic and pollution? Sound.",
  ]),
- dict(mode='concept', active=9, title='Free buses: paragraph', script=[
+ dict(mode='concept', active=6, title='Free buses: paragraph', script=[
   "The paragraph.",
   A("Paragraph appears", t("In my opinion, the city should make its buses free of charge, since this would reduce traffic and air pollution in the city centre. Once travelling by bus costs nothing, it becomes a clearly cheaper option than driving and paying for fuel and parking. Price is not the only reason people choose their car, of course; however, as long as the buses are frequent and reliable, some drivers are likely to leave their cars at home, at least for daily trips into the centre. Each driver who switches means one car fewer on the same crowded streets, which in turn reduces both congestion and exhaust fumes. In this way, free buses would make the city centre easier to move through and healthier to live in.", 110, 30)),
   "The merged step. The condition: as long as the buses are frequent and reliable. And a small concession inside the paragraph: price isn't the only reason.",
   "In this way: the closing link back to the benefit.",
- ]),
- dict(mode='concept', active=10, title='Your turn', script=[
-  "Your turn.",
-  A("Task appears", t("Task: Should supermarkets be required to charge for plastic bags?", 110, 38)),
-  A("Instructions appears", t("1 · Choose a side and write the key sentence\n2 · Draft a chain of about 10 words\n3 · Test every arrow: explanation? condition? renaming?\n4 · Write the paragraph, with varied connectors\n5 · Bonus: chain the other side and find its weakest arrow", 230, 34)),
-  "Choose a side. Write the key sentence. Draft the chain. Test every arrow. Write the paragraph.",
-  "And for a bonus, chain the other side and find its weakest arrow.",
-  "Pause the video and do it now. It takes ten minutes, and it's worth more than watching another hour.",
  ]),
 ], T50),
 
@@ -699,11 +594,11 @@ lesson('vr50-f-template', 'Argument Paragraph Template',
  dict(mode='concept', active=2, title='Slot 1: key sentence', script=[
   A("Options appear", t("In my opinion, [X] should / should not [...], since it would [result].\n"
                         "I believe that [X] should [...], as this is likely to [result].\n"
-                        "[X] should not [...], because it would [harm].\n"
-                        "The main reason to support / oppose [X] is that it would [result].", 110, 34)),
-  "Slot one, the key sentence. Some openings to choose from.",
-  "In my opinion, X should, since it would. I believe that X should, as this is likely to. Or just: X should not, because it would.",
-  "Or: the main reason to support, or oppose, X is that it would lead to this result.",
+                        "In my opinion, the main reason to support / oppose [X] is that it would [result].\n"
+                        "Second paragraph:  Moreover, in my opinion, ...  ·  In addition, I believe that ...", 110, 34)),
+  "Slot one, the key sentence. Some openings to choose from. They all start with in my opinion, or I believe that.",
+  "In my opinion, X should, since it would. I believe that X should, as this is likely to. In my opinion, the main reason to support, or oppose, X is that it would lead to this result.",
+  "And in the second argument paragraph, add a connector before it: moreover, in my opinion. In addition, I believe that.",
   A("Tip appears", t("Use the SAME wording for X as the task (the exact decision, the exact people).", 450, 32)),
   "Whatever you choose, name X exactly as the task does. The exact decision, the exact people.",
  ]),
@@ -796,72 +691,28 @@ lesson('vr50-f-template', 'Argument Paragraph Template',
  ]),
 ], T50),
 
-# ================================================================== 7 · supporting the argument (seg32)
-lesson('vr50-f-support', 'Supporting the Argument',
-       ['What support is', 'Option 1: example', 'Option 2: comparison', 'Support is optional', 'The closing link',
-        'Why a closing link?'], [
- dict(mode='title', title='Supporting the Argument', script=[
-  "Supporting the argument.",
-  "We've seen how to develop the argument: how to explain it logically. Now, support.",
- ]),
- dict(mode='concept', active=0, title='What support is', script=[
-  A("Definition appears", t("Support = strengthening. 'I explained why it should happen. Now let me show you it does.'", 110, 38)),
-  "What is support? A kind of strengthening. As if we're proving the explanation we just gave.",
-  "Before, we explained why it should happen. Now I want to pin it down. Here, let me show you my explanation is right.",
-  A("Two options appears", t("Two main options:  1 · a specific example   2 · a comparison to a similar field", 290, 36)),
-  "There are two main options.",
- ]),
- dict(mode='concept', active=1, title='Option 1: example', script=[
-  A("Example appears", t("1 · A specific example: describe what happens, or would happen, if one of the positions is chosen", 110, 36)),
-  "One: a specific example. It describes what happens, or what would happen, if one of the positions is chosen.",
-  A("General, not personal appears", t("General, not personal: 'a pickpocket who ...', not 'my cousin once ...'", 280, 36)),
-  "And the example must be general, not personal. The official guide says a personal or narrative style is not suited to academic writing.",
- ]),
- dict(mode='concept', active=2, title='Option 2: comparison', script=[
-  A("Comparison appears", t("2 · A comparison to another, similar field: a kind of analogy", 110, 36)),
-  "Two: a comparison to another, similar field. A kind of analogy. A parable and its lesson.",
-  A("The logic appears", t("'Here is a very similar case. There, it works like this.\nSo in our case, it will probably work the same way.'", 260, 36)),
-  "I say: look, here's another case, very similar. There, it works like this. So in our case, it will probably work the same way.",
- ]),
- dict(mode='concept', active=3, title='Support is optional', script=[
-  A("Optional appears", t("Support is OPTIONAL", 110, 50)),
-  "By the way, support is optional. You don't have to include it.",
-  A("Top paragraph appears", t("A top-scoring argument paragraph can have only a key sentence + a full development, if every step is explained.", 240, 36)),
-  "You can write an excellent, top-scoring argument paragraph with just a key sentence and development. Just the logical explanation.",
-  "If you explained every step in detail, you're fine. Support only adds extra strength.",
- ]),
- dict(mode='concept', active=4, title='The closing link', script=[
-  A("Closing link appears", t("If you add support, END with a closing link: a sentence that brings the reader back to YOUR benefit or harm.", 110, 38)),
-  "If you do decide to add support, an example or a comparison, then at the end of the paragraph, after it, you add a closing link.",
-  "Its job: to bring the reader back to the benefit or harm of your argument.",
-  A("Opening words appears", t("In the same way, ...  ·  Similarly, ...  ·  Just as ..., so ...", 330, 36)),
- ]),
- dict(mode='concept', active=5, title='Why a closing link?', script=[
-  "Why do we need it? Think about what just happened in the paragraph.",
-  A("Flow appears", chain_fig(["Your argument: explained step by step, reaching your benefit / harm",
-                               "Support: suddenly another case, another field, with ITS benefit / harm",
-                               "Closing link: 'just as there ..., so here ...' → back to YOUR benefit / harm"], size=25)),
-  "We had an argument. We explained why it's true, what it causes, and what that causes, and reached the benefit or harm.",
-  "And then suddenly we stepped outside. We're telling a story about another case, another field. And there's a benefit or harm there.",
-  "But wait. The benefit or harm in the other case isn't ours. Whether it's an example or a comparison.",
-  "So we have to link back. Just as there's a benefit there, there's likely to be one here too.",
-  "Let's see examples, so this becomes clearer.",
- ]),
-], T50),
-
 # ================================================================== 8 · support by example (seg33)
 lesson('vr50-f-example', 'Support by Example',
-       ['A specific case', 'Invented but likely', 'Not absurd', 'Key sentence', 'Development', 'The example',
-        'The closing link', 'The whole paragraph', 'What it shows'], [
+       ['What support is', 'A specific case', 'Invented but likely', 'Not absurd', 'Key sentence', 'Development',
+        'The example', 'The closing link', 'The whole paragraph', 'What it shows'], [
  dict(mode='title', title='Support by Example', script=[
   "Support by example.",
+  "First, what support is. Then the first kind: an example.",
  ]),
- dict(mode='concept', active=0, title='A specific case', script=[
+ dict(mode='concept', active=0, title='What support is', script=[
+  A("Definition appears", t("Support = strengthening. 'I explained why it should happen. Now let me show you it does.'", 110, 36)),
+  "What is support? A kind of strengthening. Before, we explained why it should happen. Now: let me show you my explanation is right.",
+  A("Two options appears", t("Two options:  1 · a specific example (this lesson)   2 · a comparison to a similar field (next lesson)", 250, 34)),
+  "There are two options: a specific example, in this lesson, and a comparison to a similar field, in the next one.",
+  A("Optional appears", t("Support is OPTIONAL: a key sentence + a full development can already score top marks", 390, 34)),
+  "And support is optional. A key sentence and a full, step-by-step development can already score top marks. Support only adds strength.",
+ ]),
+ dict(mode='concept', active=1, title='A specific case', script=[
   A("Definition appears", t("An example = a specific case that shows what happens, or would happen, if a certain position is chosen", 110, 38)),
   "The example should be a specific case that describes what happens, or will happen, if a certain position is chosen.",
   "Say we decided to install face-recognition cameras. What happens then? I describe some case, and from it I draw a conclusion about my argument: the benefit or harm I claim.",
  ]),
- dict(mode='concept', active=1, title='Invented but likely', script=[
+ dict(mode='concept', active=2, title='Invented but likely', script=[
   A("Hypothetical OK appears", t("It does not have to be a real event you know. A hypothetical case is fine:\n'Suppose cameras are installed. A ... who ... would probably ...'", 110, 36)),
   "The example doesn't have to be something real that you know from life. You can describe a hypothetical case.",
   "Suppose this position is chosen. Suppose there are cameras. Then this could happen, and this, and this.",
@@ -870,7 +721,7 @@ lesson('vr50-f-example', 'Support by Example',
   A("Label it appears", t("Present it as what WOULD probably happen, never as a real event or a real statistic.", 420, 34)),
   "One important point: present it honestly, as what would probably happen. Not as a real event that you're reporting, and not with made-up numbers.",
  ]),
- dict(mode='concept', active=2, title='Not absurd', script=[
+ dict(mode='concept', active=3, title='Not absurd', script=[
   A("Not absurd appears", t("We invent the case, so it must be LIKELY. No absurd examples.", 110, 40)),
   "Even though we're inventing the example a little, it's important not to invent absurd ones.",
   "I remember a task about whether the state should limit the names parents can give their children.",
@@ -878,39 +729,39 @@ lesson('vr50-f-example', 'Support by Example',
   A("Why appears", t("An absurd case proves nothing about real people. Choose a case the rater recognizes as realistic.", 280, 36)),
   "That proves nothing. You need realistic examples. A case the rater reads and thinks: yes, that could easily happen.",
  ]),
- dict(mode='concept', active=3, title='Key sentence', script=[
+ dict(mode='concept', active=4, title='Key sentence', script=[
   "Let's see how it's done. Here's the start of a paragraph.",
   A("Key sentence appears", t("In my opinion, making the public aware that cameras are present is likely to create deterrence and reduce harm to people and property in the monitored areas.", 110, 34)),
   "Up to here, my key sentence.",
  ]),
- dict(mode='concept', active=4, title='Development', script=[
+ dict(mode='concept', active=5, title='Development', script=[
   "Now I develop it. Why would it reduce harm to people and property in the monitored areas?",
   A("Development appears", t("A person who knows that the chance of being caught committing an offence is higher in a certain area is likely to commit it elsewhere, if at all. Since the cameras increase the chance of catching offenders, illegal activity in the filmed areas is likely to decrease, and so is the harm to people and their property.", 110, 32)),
   "Someone who knows the chance of being caught is higher in a certain area will probably act somewhere else, if at all.",
   "Since the cameras raise the chance of catching offenders, illegal activity in these areas is likely to fall, and so is the harm to people and property.",
   "Good. I've explained it logically. Now I want to strengthen it: show that it works in practice.",
  ]),
- dict(mode='concept', active=5, title='The example', script=[
+ dict(mode='concept', active=6, title='The example', script=[
   A("Example appears", t("For example, a pickpocket who usually operates in a particular shopping area and notices that cameras have been installed there would probably prefer to move elsewhere, or at least to act far less often, perhaps only at the busiest hours, when the chance of being caught on camera is lower.", 110, 32)),
   "For example, a pickpocket who usually works a certain shopping area, and notices cameras have been installed, would probably prefer to move elsewhere.",
   "Or at least act much less, maybe only at the busiest hours, when the chance of being caught on camera is lower.",
   A("Note appears", t("A specific, realistic case of what may happen if there are cameras.", 400, 32)),
   "We described one specific case that could well happen if there are cameras.",
  ]),
- dict(mode='concept', active=6, title='The closing link', script=[
+ dict(mode='concept', active=7, title='The closing link', script=[
   "But look. The example is about a pickpocket. My argument is about harm to people too, not only to property.",
   A("Problem appears", t("The example: one pickpocket (property).  The argument: harm to people AND property.", 110, 34)),
-  "So I need to link the example back to my argument, to my general benefit. I add a closing link.",
+  "The example is another case, with its own benefit or harm. So I need to link it back to my argument, to my general benefit. That's the closing link: In the same way, Similarly, Just as ... so ...",
   A("Closing link appears", t("Awareness of the cameras is likely to have a similar effect on those who commit other offences, such as assault or robbery.", 240, 36)),
   "Awareness of the cameras is likely to have a similar effect on people who commit other offences, such as assault or robbery.",
   "With this sentence I show: yes, I talked about one specific case, pickpockets. But I mean every kind of offence. And that brings us back to the benefit of the argument.",
  ]),
- dict(mode='concept', active=7, title='The whole paragraph', script=[
+ dict(mode='concept', active=8, title='The whole paragraph', script=[
   "And here's the whole paragraph together.",
   A("Paragraph appears", t("In my opinion, making the public aware that cameras are present is likely to create deterrence and reduce harm to people and property in the monitored areas. A person who knows that the chance of being caught committing an offence is higher in a certain area is likely to commit it elsewhere, if at all. Since the cameras increase the chance of catching offenders, illegal activity in the filmed areas is likely to decrease, and so is the harm to people and their property. For example, a pickpocket who usually operates in a particular shopping area and notices that cameras have been installed there would probably prefer to move elsewhere, or at least to act far less often. Awareness of the cameras is likely to have a similar effect on those who commit other offences, such as assault or robbery.", 110, 29)),
   "Key sentence. Development. Example. Closing link.",
  ]),
- dict(mode='concept', active=8, title='What it shows', script=[
+ dict(mode='concept', active=9, title='What it shows', script=[
   "One last point about examples, and it's about critical thinking.",
   A("Shows how appears", t("An example shows HOW your mechanism works. It does not prove how COMMON it is.", 110, 38)),
   "An example shows how the mechanism works. It doesn't prove how often it happens.",
@@ -924,7 +775,7 @@ lesson('vr50-f-example', 'Support by Example',
 # ================================================================== 9 · support by comparison (seg34)
 lesson('vr50-f-comparison', 'Support by Comparison',
        ['Another field', 'Similar enough', 'A risky tool', 'The comparison', 'Why it works', 'The closing link',
-        'Linking, not repeating', 'Summary: support'], [
+        'Linking, not repeating'], [
  dict(mode='title', title='Support by Comparison', script=[
   "Support by comparison.",
  ]),
@@ -978,27 +829,16 @@ lesson('vr50-f-comparison', 'Support by Comparison',
   A("Test appears", t("Test: does your closing link mention BOTH the support case and your own case?", 450, 34)),
   "A quick test: does your closing link mention both the support case and your own case? If it only repeats your argument, rewrite it.",
  ]),
- dict(mode='concept', active=7, title='Summary: support', script=[
-  "Let me sum up support.",
-  A("Summary appears", t("• Support is optional: a paragraph with only a full explanation can be excellent\n"
-                         "• Support adds strength: by example or by comparison\n"
-                         "• A comparison takes higher-level critical thinking; if you are not sure, use an example\n"
-                         "• After support: a closing link back to YOUR benefit / harm", 110, 34)),
-  "Optional. It adds strength. By example or comparison. Comparison is harder, so if you stumble in this area, stay with examples.",
-  "And throughout the essay, the same principle: make as few mistakes as possible. Write what's needed, where it's needed. Don't take risks, in language or in content.",
-  A("Next appears", t("Next: may I cite studies? Invent them? Should I?", 520, 36)),
-  "Next lesson: citing studies. Is it allowed to invent them? Is it a good idea? Very intriguing questions. The answers, in the next lesson.",
- ]),
 ], T50),
 
 # ================================================================== 10 · studies and general knowledge (seg35)
 lesson('vr50-f-studies', 'Studies and General Knowledge',
        ['Why cite a study?', 'The problem', 'The official rule', 'General vs specific', 'They want the why',
-        'Chicken and egg', 'Downsides (1)', 'Downsides (2)', 'Upsides', 'What you may say', 'Honest phrasing',
+        'Chicken and egg', 'Downsides', 'What you may say', 'Honest phrasing',
         'Summary'], [
  dict(mode='title', title='Studies and General Knowledge', script=[
   "Studies and general knowledge.",
-  "At the end of the last lesson I left you in suspense. Now, the answers.",
+  "May I cite studies in the essay? May I invent them? Should I? Let's see.",
  ]),
  dict(mode='concept', active=0, title='Why cite a study?', script=[
   A("Goal appears", t("Why cite a study? To prove the argument: to strengthen the explanation.", 110, 38)),
@@ -1049,42 +889,17 @@ lesson('vr50-f-studies', 'Studies and General Knowledge',
   A("Conclusion appears", t("A cited study is just another claim that needs support. It adds nothing to the argument.", 520, 34)),
   "So citing a study doesn't strengthen the argument. It's like making another claim, one that itself needs developing and supporting.",
  ]),
- dict(mode='concept', active=6, title='Downsides (1)', script=[
-  "Let's make a table: disadvantages versus advantages. Disadvantages first, it's easier.",
-  A("Minus 1 appears", t("✗ It does not strengthen the argument (you must explain it anyway)", 110, 34)),
-  "One. It doesn't strengthen the argument. You have to explain it anyway.",
-  A("Minus 2 appears", t("✗ It wastes time: two lines that add nothing", 200, 34)),
-  "Two. It wastes time. Two more lines that don't help.",
-  A("Minus 3 appears", t("✗ It signals an escape from explaining: 'this writer cannot explain, so they cite'", 290, 34)),
-  "Three. It signals an escape from explaining. The rater is trying to read the person behind the essay: their content, their critical thinking, their language.",
-  "When they see a cited study, they think: this writer can't explain, so they're throwing a study at me instead. And that colours the content score, even if the other arguments are fine.",
-  A("Same with stock phrases appears", t("Same with memorized 'fancy' phrases: 'It is widely held that', 'Notwithstanding' stuck into plain English = uneven register", 440, 32)),
-  "It's the same thing I see with memorized fancy phrases. 'It is widely held that', 'notwithstanding', stuck into otherwise plain English. The register is uneven, and it grates.",
-  "To be fair: if your whole essay is written at that level, these phrases fit in, and that's fine. The problem is only when they stand out.",
+ dict(mode='concept', active=6, title='Downsides', script=[
+  A("Minuses appear", t("✗ adds no strength (you must explain it anyway)\n✗ wastes time and may count as padding\n"
+                        "✗ signals an escape from explaining\n✗ academic raters dislike 'a study showed' with no source\n"
+                        "✗ may be wrong, or invented = fabricated information", 110, 34)),
+  "The downsides. It adds no strength, because you must explain it anyway. It wastes time and may count as padding.",
+  "It signals an escape from explaining: this writer can't explain, so they cite. Raters come from academia, where 'a study showed' with no source is a no-no.",
+  "And the rater may know the field. If it's wrong, or invented, it's fabricated information, which the guide explicitly says to avoid.",
+  A("Verdict appears", t("And the upsides? None. From today: no specific studies, no statistics, no invented facts.", 450, 36)),
+  "And the upsides? None. So from today, you don't cite specific studies anymore.",
  ]),
- dict(mode='concept', active=7, title='Downsides (2)', script=[
-  A("Minus 4 appears", t("✗ It may count as padding: lengthening the text without justification", 110, 34)),
-  "Four. It can count as padding. An attempt to lengthen the text. Two lines that contribute nothing. And if you explain the study too, you repeat what you already explained in the development.",
-  A("Minus 5 appears", t("✗ Raters come from academia, where a vague 'a study showed' without a source is a big no-no", 230, 34)),
-  "Five. Raters are academics, or were. In academia there are strict rules about citing: exactly which study, where it's from. Just throwing 'a study showed' into the air is a big no-no.",
-  "It shouldn't affect how they score this essay. But habits are habits.",
-  A("Minus 6 appears", t("✗ The rater may know the topic, and know your 'study' is wrong", 350, 34)),
-  "Six. The rater may know the field. The tasks are about general topics. If they know your study is wrong, it affects them.",
-  A("Minus 7 appears", t("✗ If you invented it: fabricated information, which the guide explicitly says to avoid", 470, 34)),
-  "And seven, the most important: if it's invented, it's fabricated information. The guide says avoid it. Full stop.",
- ]),
- dict(mode='concept', active=8, title='Upsides', script=[
-  "Now, the advantages.",
-  A("Table appears", dict(k='vis', v=dict(type='table', headers=['Disadvantages', 'Advantages'],
-                                         rows=[['Adds no strength', ''], ['Wastes time', ''], ['Signals escape from explaining', ''],
-                                               ['May count as padding', ''], ['Academic raters dislike it', ''],
-                                               ['May be wrong, or fabricated', '']]), x=410, y=110, w=1000, h=500)),
-  "That's it. We've finished the advantages.",
-  "As you can see, there's no advantage in citing a specific study. It can only do damage.",
-  A("Verdict appears", t("From today: no specific studies, no statistics, no invented facts.", 650, 38)),
-  "So from today, you don't cite specific studies anymore.",
- ]),
- dict(mode='concept', active=9, title='What you may say', script=[
+ dict(mode='concept', active=7, title='What you may say', script=[
   "So what can you say? Well-established general knowledge.",
   A("OK appears", t("✓ Facts that are true and widely known:\n'Smoking harms health.'  ·  'Regular exercise is good for health.'", 110, 36)),
   "There are things everyone knows were proven. Smoking harms health. Regular exercise is good for health.",
@@ -1094,7 +909,7 @@ lesson('vr50-f-studies', 'Studies and General Knowledge',
   A("Rule appears", t("If you are not sure it is true, it does not go in the essay.", 470, 38)),
   "The rule: if you're not sure it's true, it doesn't go in.",
  ]),
- dict(mode='concept', active=10, title='Honest phrasing', script=[
+ dict(mode='concept', active=8, title='Honest phrasing', script=[
   "And even for real, well-known facts, I prefer a little trick.",
   A("Trick appears", t("Instead of 'Studies have shown that ...'  →  'It is now well known that ...'", 110, 36)),
   "Instead of 'studies have shown', I write: 'it is now well known that'.",
@@ -1106,7 +921,7 @@ lesson('vr50-f-studies', 'Studies and General Knowledge',
   A("Honest appears", t("Honest phrasing: a known fact is stated as a fact; your prediction is stated as a prediction.", 470, 34)),
   "That's honest phrasing. A known fact, stated as a fact. Your prediction, stated as a prediction. The explanation does the work.",
  ]),
- dict(mode='concept', active=11, title='Summary', script=[
+ dict(mode='concept', active=9, title='Summary', script=[
   A("Summary appears", t("• Do not cite specific studies: they add nothing and can only hurt\n"
                          "• Never invent studies, statistics, experts or numbers (fabricated information)\n"
                          "• Well-known, true facts are fine: 'It is now well known that ...'\n"
@@ -1149,7 +964,7 @@ MEMORY = [
       intro='Key sentence → chain steps → (support) → closing link. Pick one phrase per slot and vary them.',
       tables=[
        dict(title='The slots', head=['Slot', 'Options'], rows=[
-        ['1 · Key sentence', 'In my opinion, [X] should / should not [...], since it would [result].  ·  I believe that [X] should [...], as this is likely to [result].  ·  The main reason to support / oppose [X] is that ...'],
+        ['1 · Key sentence', 'In my opinion, [X] should / should not [...], since it would [result].  ·  I believe that [X] should [...], as this is likely to [result].  ·  In my opinion, the main reason to support / oppose [X] is that ...  ·  2nd paragraph: Moreover, in my opinion, ... / In addition, I believe that ...'],
         ['2 · Chain steps', 'Once / When / If [X], [effect], because [reason].  ·  This, in turn, ...  ·  As a result, ...  ·  Consequently, ...  ·  This means that ...  ·  As long as [condition], ...'],
         ['3 · Support (optional)', 'For example, a [person] who [...] would probably [...].  ·  A similar pattern can be seen in [similar field], where [...].'],
         ['4 · Closing link', 'After support: In the same way, ...  ·  Similarly, ...  ·  Just as [...], so [...].  After development only: In this way, ...  ·  Thus, ...  ·  This is why ...'],

@@ -93,7 +93,7 @@ assign('vr50-c-organize', 3, 'Connectors',
        ['First the relationship, then the connector - never the other way round.'],
        ['Five pairs of sentences', 'Name the relationship', 'Then choose the connector'])
 
-assign('vr50-d-strong', 4, 'The missing link',
+assign('vr50-d-development', 4, 'The missing link',
        'Each paragraph names a result but skips a step. Find the missing link and write the sentence that adds it.',
        [dict(title='Find the missing link', head=['#', 'Paragraph'], rows=[
            ['1', 'Raising the minimum age to 16 will protect teenagers. Therefore, their mental health will improve.'],
@@ -109,7 +109,7 @@ assign('vr50-d-strong', 4, 'The missing link',
 
 assign('vr50-e-gather', 5, 'Analyse three tasks',
        'The workshop starts here. Tasks A, B and C (full texts in the card "Workshop tasks") will follow you through '
-       'the next lessons: at the end you will have written every part of three essays.',
+       'the next lessons: at the end you will have a whole essay for task A, and most parts of B and C.',
        [dict(title='Tasks', head=['Task', 'Question'], rows=ABC),
         dict(title='For each task, write down', head=['#', 'What'], rows=[
             ['1', 'The exact decision, the people affected, the conditions'],
@@ -121,15 +121,16 @@ assign('vr50-e-gather', 5, 'Analyse three tasks',
        ['Tasks A, B, C: read and mark them', 'Decision · people · conditions · type', 'Background vs claims · key words'])
 
 assign('vr50-e-args-intro', 6, 'Choose a position',
-       'For each task, choose the position you can argue best - not necessarily the one you feel strongest about.',
+       'For each task, choose a first position (a leaning): the one you can argue best - not necessarily the one you feel '
+       'strongest about. You may change it after workshop 7, once you have found and tested your arguments.',
        [dict(title='Tasks', head=['Task', 'Question'], rows=ABC),
         dict(title='For each task', head=['#', 'Write'], rows=[
-            ['1', 'Your position in one sentence (simple or complex)'],
+            ['1', 'Your first position in one sentence (simple, or complex if you can keep its limit clear)'],
             ['2', 'The key consideration that decided it'],
             ['3', 'Is your position extreme? If so, soften it'],
         ])],
-       ['Every position can score well if it is well argued.'],
-       ['Tasks A, B, C: choose a position', 'One sentence + the key consideration'])
+       ['Every position can score well if it is well argued.', 'This is a first position: confirm or change it after workshop 7.'],
+       ['Tasks A, B, C: choose a first position', 'One sentence + the key consideration', 'You may change it after workshop 7'])
 
 assign('vr50-e-test', 7, 'Find and test arguments',
        'For each task, find at least three arguments for your side, in the three ways. Then test them and keep the best two.',

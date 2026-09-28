@@ -83,8 +83,7 @@ def below(item, gap=22):
 
 # ======================================================================================= lesson 1: the language rubric
 SB_RUB = ['Technical lessons', 'Tired? Skip ahead', 'The language rubric', 'Clarity', 'Academic style',
-          'Semantic precision', 'Grammar', 'A first draft', 'Sentence structures', 'Organizational tools',
-          'What comes next']
+          'Semantic precision', 'Grammar', 'Sentence structures', 'Organizational tools']
 
 # ======================================================================================= lesson 2: academic writing
 SB_ACAD = ['What is it?', 'Literary vs academic', 'No personal tone', 'The neutral narrator', 'Creativity',
@@ -94,12 +93,12 @@ SB_ACAD = ['What is it?', 'Literary vs academic', 'No personal tone', 'The neutr
 # ======================================================================================= lesson 3: qualified writing
 SB_HEDGE = ['No word lists', 'A guess as a fact', 'Add one word', 'Two absolutes', 'Most or many?',
             'Every driver?', 'Hedge the start', 'Plain, calm words', 'The full fix', 'Hedging words',
-            'Hedge, but take a side', 'Notice as you write']
+            'Hedge, but take a side']
 
 # ======================================================================================= lesson 4: semantic precision
 SB_PREC = ['What it means', 'Does it cost points?', 'Why students slip', 'The wheelie', 'A broken idiom',
            'The wrong word', 'Invented phrases', 'Idiom, wrong place', 'Look-alike words',
-           'Words change the claim', 'One term throughout', 'Hebrew-speaker traps', 'The main lesson']
+           'Words change the claim', 'One term throughout', 'The main lesson']
 
 # --- boxes used below (positions computed so that nothing overlaps)
 # lesson 2
@@ -107,7 +106,7 @@ B_PERS_BAD = box('bad', '[[When I was in high school,]] the cameras in [[my]] ne
 B_PERS_GOOD = box('good', 'Cameras in public places [[may]] give residents a greater sense of safety, which [[in turn]] may encourage them to use parks and streets in the evening.', below(B_PERS_BAD))
 B_EMO_BAD = box('bad', 'It is [[heartbreaking]] to think of [[innocent]] people being [[watched like criminals]] every single day.', 240)
 B_EMO_GOOD = box('good', 'Constant identification of people who are not suspected of any crime [[may limit]] their privacy and their freedom of movement.', below(B_EMO_BAD))
-B_WHO_BAD = box('bad', '[[We]] must understand that [[you]] cannot stop crime without cameras. [[In my opinion, I think]] they are necessary.', 400)
+B_WHO_BAD = box('bad', '[[We]] must understand that [[you]] cannot stop crime without cameras, so [[we]] need them.', 400)
 B_WHO_GOOD = box('good', '[[I believe that]] cameras [[can]] help the police prevent certain crimes. [[In my opinion,]] they are therefore necessary.', below(B_WHO_BAD))
 B_FLOW_BAD = box('bad', 'Like [[a silent guardian of the night]], the camera watches [[over the sleeping city]], [[a shining beacon]] of security.', 250)
 B_FLOW_GOOD = box('good', 'Cameras operate at night, when fewer police officers are on patrol.', below(B_FLOW_BAD))
@@ -233,25 +232,9 @@ lesson('vr50-b-language-rubric', 'The Language Rubric', SB_RUB, [
   A("Grammar appears", T('Grammar: correct language — as few errors as possible', size=40, x=410, y=110, w=1140)),
   "Just like it sounds. The language has to be correct — without mistakes.",
   A("Not a perfect essay appears", T('But NITE does not expect a perfect essay in 35 minutes', size=40, x=410, y=220, w=1140)),
-  "But it's clear that NITE doesn't expect a perfect essay written in thirty-five minutes. The next slide explains why.",
+  "But NITE doesn't expect a perfect essay written in thirty-five minutes. Raters read it as a first draft. We'll see what that means in the proofreading lesson.",
  ]),
- dict(mode='concept', active=7, title='A first draft', script=[
-  "Research on timed writing found something interesting.",
-  A("What suffers most appears", T('When writing time is limited:', size=38, x=410, y=100, w=1140)),
-  A("Most hurt: proofreading appears", T('Hurt the most:  checking and proofreading after writing', size=36, x=450, y=170, w=1100)),
-  "When writing time is limited, the part that suffers most is the checking — the proofreading we're supposed to do after writing.",
-  A("Then planning appears", T('Then:  planning', size=36, x=450, y=240, w=1100)),
-  A("Least hurt: writing appears", T('Hurt the least:  producing the text — the writing itself', size=36, x=450, y=310, w=1100)),
-  "Then planning. And producing the text — the writing itself — is hurt the least.",
-  A("So: a first draft appears", T('So the raters are told to read your essay as a first draft', size=40, x=410, y=410, w=1140)),
-  "What does that mean? NITE understands that proofreading is what suffers most, so they can't expect a perfect essay.",
-  "The official guide says it too: raters view the essay as a first draft.",
-  A("A few small errors: fine appears", T('A few small errors here and there are fine — an essay with some mistakes can still get 6 and 6', size=34, x=410, y=520, w=1140)),
-  "It's fine to have a few small mistakes here and there — grammar mistakes or other small ones. An essay with a few mistakes can still get six and six.",
-  A("Leave a few minutes appears", T('Leave a few minutes at the end to proofread — not ten of your 35', size=34, x=410, y=650, w=1140)),
-  "So we do leave a few minutes at the end for proofreading. But we don't spend ten of our thirty-five minutes on proofreading and corrections.",
- ]),
- dict(mode='concept', active=8, title='Sentence structures', script=[
+ dict(mode='concept', active=7, title='Sentence structures', script=[
   "The next parameter: syntactic structures.",
   A("Sentence structures appears", T('Sentence structures: how you build your sentences and paragraphs', size=40, x=410, y=110, w=1140)),
   "That's basically the way you build the sentences that make up the essay — the sentences and the paragraphs.",
@@ -260,22 +243,14 @@ lesson('vr50-b-language-rubric', 'The Language Rubric', SB_RUB, [
   A("Variety appears", T('Higher scores: varied and complex sentences, used correctly', size=36, x=410, y=370, w=1140)),
   "In the rubric, the high scores go to varied and complex sentence structures — used appropriately. We'll see how in its own lesson.",
  ]),
- dict(mode='concept', active=9, title='Organizational tools', script=[
+ dict(mode='concept', active=8, title='Organizational tools', script=[
   "And the last parameter in the rubric: organizational tools.",
   A("Organizational tools appears", T('Organizational tools:', size=40, x=410, y=100, w=1140)),
   A("Connectors appears", T('· connectors  (because, however, therefore ...)', size=36, x=450, y=170, w=1100)),
   A("Transition sentences appears", T('· transition sentences between ideas and paragraphs', size=36, x=450, y=240, w=1100)),
   A("Paragraphs appears", T('· correct division into paragraphs', size=36, x=450, y=310, w=1100)),
   "Here you're expected to use connectors correctly, write transition sentences, and divide the essay into paragraphs properly.",
-  "Again, we'll expand on this later.",
- ]),
- dict(mode='concept', active=10, title='What comes next', script=[
-  "So that was a general pass over the language rubric.",
-  A("Next lessons appear", T('Next: one lesson for each parameter — what exactly is expected, how to practise, how to improve', size=36, x=410, y=110, w=1140)),
-  "Now we'll move on to specific lessons for each of these parameters.",
-  "We'll understand exactly what's expected of us, how to practise, and how to improve in each one.",
-  A("Goal: 6 and 6 appears", T('The goal: an essay that gets 6 and 6', size=46, x=410, y=270, w=1140)),
-  "Until you manage to write a six-and-six essay. I hope. Until you write a six-and-six essay — I really hope so.",
+  "Again, we'll expand on this later. Each of these parameters gets its own lesson, starting with academic writing.",
  ]),
 ], T50),
 
@@ -289,12 +264,8 @@ lesson('vr50-b-academic', 'Academic Writing', SB_ACAD, [
   "Let's start by explaining what academic writing is.",
   A("Definition appears", T('Academic writing: writing whose goal is to present ideas in an organized and clear way', size=40, x=410, y=110, w=1140)),
   "In a flat, simple definition: academic writing is writing whose goal is to present ideas in an organized, clear way.",
-  A("Why NITE chose it appears", T('Why this type?  It is the writing used at university: research, papers, articles', size=36, x=410, y=260, w=1140)),
-  "Why did NITE choose exactly this type of writing for the exam? Because it's the kind that's actually useful at university. Remember? Research, papers, articles and so on.",
-  "So everything you're learning now, supposedly for the psychometric essay, will serve you very well in your studies afterwards.",
-  A("Skills for life appears", T('And beyond: critical thinking · explaining and supporting arguments · dealing with views different from yours', size=34, x=410, y=390, w=1140)),
-  "And as I said at the beginning, these skills help not only at university but in life in general.",
-  "Mainly the content skills: critical thinking, explaining and supporting arguments properly, and dealing with positions that are different from yours.",
+  A("Why NITE chose it appears", T('It is the writing used at university: research, papers, articles', size=36, x=410, y=260, w=1140)),
+  "As we said in the first lesson, it's the writing you'll use at university: research, papers, articles.",
  ]),
  dict(mode='concept', active=1, title='Literary vs academic', script=[
   "So we don't talk too much in the air, let's compare academic writing with a type you probably do know: literary writing.",
@@ -372,7 +343,7 @@ lesson('vr50-b-academic', 'Academic Writing', SB_ACAD, [
   A("They: fine appears", T('Third person is fine: people, the public, society, they', size=34, x=410, y=280, w=1140)),
   "Third person is fine. I can talk about 'they': people, the population, society, and so on.",
   A("Wrong version appears", B_WHO_BAD),
-  "And a classic mistake in English: 'In my opinion, I think'. That says the same thing twice. Choose one. Same with 'according to me' — say 'in my view'.",
+  "Here: we, and you. The writer talks to the reader, and speaks for everyone.",
   A("Right version appears", B_WHO_GOOD),
  ]),
  dict(mode='concept', active=7, title='No flowery language', script=[
@@ -411,8 +382,6 @@ lesson('vr50-b-academic', 'Academic Writing', SB_ACAD, [
   "And where there's a formal verb, prefer it. Reduce, not cut down on. Improve, not get better.",
   A("Filler appears", T('No spoken fillers or openers:  Well, ... · Basically, ... · Let\'s be honest, ... · like · you know', size=32, x=410, y=470, w=1140)),
   "No spoken fillers: well, basically, let's be honest, like, you know.",
-  A("Not fancy — formal appears", T('Formal does not mean fancy: simple, correct words are perfect', size=38, x=410, y=590, w=1140)),
-  "And notice: formal doesn't mean fancy. Simple, correct words are perfect. We'll talk about fancy words in the semantic precision lesson.",
  ]),
  dict(mode='concept', active=10, title='Absolute claims', script=[
   "How strongly you state things is another difference.",
@@ -590,16 +559,7 @@ lesson('vr50-b-hedging', 'Qualified Writing', SB_HEDGE, [
   "And your position itself stays clear. You qualify how sure you are about a consequence — you don't hide which side you're on.",
   A("A hedge does not fix a weak reason appears", T('And "may" does not repair a weak explanation — the reason still has to make sense', size=34, x=410, y=680, w=1140)),
   "Also: 'may' doesn't rescue a weak explanation. If the reason doesn't make sense, a hedge won't save it. The explanation still has to hold.",
- ]),
- dict(mode='concept', active=11, title='Notice as you write', script=[
-  "So we've seen a few examples that make it clearer what qualified writing means.",
-  A("No lists appears", T("You don't need to memorize endless lists of words and expressions", size=38, x=410, y=110, w=1140)),
-  "And again: you don't need to memorize endless lists of words or expressions.",
-  A("Just notice appears", T('Just notice your wording as you write:  Is this certain?  Is it everyone?  Is it drama?', size=38, x=410, y=230, w=1140)),
-  "Just pay attention to your wording while you write.",
-  A("Next appears", T('Next: semantic precision', size=44, x=410, y=390, w=1140)),
-  "Now we'll move on to the parameters that make up fitting academic writing. We start with the next one: semantic precision.",
-  "As usual, I'll be waiting for you in the next lesson.",
+  "And no need to memorize lists. Just notice your wording as you write: is this certain? Is it everyone? Is it drama?",
  ]),
 ], T50),
 
@@ -745,22 +705,7 @@ lesson('vr50-b-precision', 'Semantic Precision', SB_PREC, [
   A("Repetition inside one sentence appears", T('Repeated word inside one sentence (like "right ... right") can be varied — the key term of the essay stays', size=32, x=410, y=690, w=1140)),
   "Remember the 'moral veto' sentence? There we avoided the same word twice in one short sentence. That's style. The key term of the essay stays the same.",
  ]),
- dict(mode='concept', active=11, title='Hebrew-speaker traps', script=[
-  "A few imprecise phrases that Hebrew speakers write in English essays again and again. Worth checking yourself for these.",
-  A("Trap 1 appears", T('✗ discuss about the issue   →   ✓ discuss the issue', size=34, x=410, y=90, w=1140)),
-  A("Trap 2 appears", T('✗ In my opinion, I think ...   →   ✓ In my opinion, ...  /  I think that ...', size=34, x=410, y=155, w=1140)),
-  A("Trap 3 appears", T('✗ according to me   →   ✓ in my view', size=34, x=410, y=220, w=1140)),
-  "Discuss — without 'about'. 'In my opinion, I think' — choose one. 'According to me' — say 'in my view'.",
-  A("Trap 4 appears", T('✗ The people think that ...   →   ✓ Many people think that ...', size=34, x=410, y=285, w=1140)),
-  A("Trap 5 appears", T('✗ the society, the technology (in general)   →   ✓ society, technology', size=34, x=410, y=350, w=1140)),
-  "No 'the' when you mean people, society or technology in general.",
-  A("Trap 6 appears", T('✗ on the one side ... on the other side   →   ✓ on the one hand ... on the other hand', size=34, x=410, y=415, w=1140)),
-  A("Trap 7 appears", T('✗ a lot of damages   →   ✓ a great deal of damage  /  serious damage', size=34, x=410, y=480, w=1140)),
-  A("Trap 8 appears", T('✗ until today   →   ✓ to this day  /  until now', size=34, x=410, y=545, w=1140)),
-  A("Trap 9 appears", T('✗ the possibility to ...   →   ✓ the opportunity to ...  /  the possibility of ...', size=34, x=410, y=610, w=1140)),
-  "The whole list is in the summary card after this lesson.",
- ]),
- dict(mode='concept', active=12, title='The main lesson', script=[
+ dict(mode='concept', active=11, title='The main lesson', script=[
   "So let's sum up the most important lesson here.",
   A("The rule appears", T('Do not use a word or expression unless you are 100% sure of its meaning and its correct form', size=42, x=410, y=110, w=1140)),
   "Don't use words and expressions if you're not a hundred percent sure of their meaning, or of the correct way to write them. OK?",
@@ -812,17 +757,6 @@ MEMORY = [
     ['Wrong word', 'the elitists → the elites · uniformity → unity'],
     ['Invented phrase', 'sportive time → time set aside for sport · moral veto → legitimate grounds'],
     ['Idiom, wrong place', 'shoot themselves in the foot and publish → publish'],
-   ]),
-   dict(title='Hebrew-speaker traps', head=['Avoid', 'Write'], rows=[
-    ['discuss about the issue', 'discuss the issue'],
-    ['In my opinion, I think', 'In my opinion, ... / I think that ...'],
-    ['according to me', 'in my view'],
-    ['The people think', 'Many people think'],
-    ['the society · the technology (in general)', 'society · technology'],
-    ['on the one side ... on the other side', 'on the one hand ... on the other hand'],
-    ['a lot of damages', 'a great deal of damage'],
-    ['until today', 'to this day · until now'],
-    ['the possibility to', 'the opportunity to · the possibility of'],
    ]),
   ],
   tips=['The same thing gets the same name all through the essay (face-recognition cameras ≠ security cameras).',
