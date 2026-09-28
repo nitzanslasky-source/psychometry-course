@@ -34,7 +34,15 @@ HY_OLD = ("const shown=(b.pre||0)+Math.max(0,step|0);let yL=HY.top;\n"
           " const placed=[];let ctop=900;b.items.forEach((it,i)=>{")
 HY_NEW = ("const shown=(b.pre||0)+Math.max(0,step|0);\n"
           " const _lay=sc=>{let yL=HY.top,o='',bot=0;const placed=[];let ctop=900;b.items.forEach((it0,i)=>{"
-          "const it=sc===1?it0:Object.assign({},it0,{size:(it0.size||(it0.k==='h'?60:46))*sc,y:it0.y!=null?HY.top+(it0.y-HY.top)*sc:it0.y,gap:(it0.gap??44)*sc});")
+          "let it=sc===1?it0:Object.assign({},it0,{size:(it0.size||(it0.k==='h'?60:46))*sc,y:it0.y!=null?HY.top+(it0.y-HY.top)*sc:it0.y,gap:(it0.gap??44)*sc});")
+# keep the camera's corner free: text that starts in the camera's rows wraps before it (camera on, top right only)
+HY_ZONE_OLD = "const x=it.x??HY.x,W=HY.w-(x-HY.x);let y=it.y??yL,r=hyItem(it,x,y,W);"
+HY_ZONE_NEW = ("const x=it.x??HY.x;let W=HY.w-(x-HY.x);let y=it.y??yL,r=hyItem(it,x,y,W);{const z=camZone();if(z&&y<z.y&&z.x-x>300){"
+               "if(it.k==='t'&&x+(it.w||W)>z.x){it=Object.assign({},it,{w:z.x-x});r=hyItem(it,x,y,W)}"
+               "else if((it.k==='q'||it.k==='nl')&&x+W>z.x){const r2=hyItem(it,x,y,z.x-x);if(!CAM_SKIP.includes(v.id)){W=z.x-x;r=r2}}}}")
+CAM_ZONE_FN = ("const CAM_SKIP=['solve-vo-44-005','solve-wp26-g105','solve-wp28-g132','solve-wp28-g142'];function camZone(){try{if(!(window.CAM_TEST||(camStream&&camPos==='tr')))return null;const r=camRect();"
+               "return {x:r.x-24,y:r.y+r.d+16}}catch(e){return null}}\n")
+
 HY_OLD_END = "if(it.y==null)yL=y+r.h+(it.gap??44);if(i<shown)out+=`<g data-i=\"${i}\">${r.svg}</g>`});\n return out+'</svg>'}"
 HY_NEW_END = ("if(it.y==null)yL=y+r.h+(it.gap??44);bot=Math.max(bot,y+r.h);if(i<shown)o+=`<g data-i=\"${i}\">${r.svg}</g>`});return {o,bot}};\n"
               " let best=_lay(1);if(b.items.length&&b.items.every(it=>it.k==='t'||it.k==='h'))for(const sc of [1.25,1.15,1.08]){const t=_lay(sc);if(t.bot<=820){best=t;break}}\n"
@@ -66,4 +74,8 @@ def apply(s, layout=True):
         s = rep(s, T_OLD, T_NEW)
         s = rep(s, HY_OLD, HY_NEW)
         s = rep(s, HY_OLD_END, HY_NEW_END)
+        s = rep(s, HY_ZONE_OLD, HY_ZONE_NEW)
+        s = rep(s, "function hybridSvg(v,bi,step){", CAM_ZONE_FN + "function hybridSvg(v,bi,step){")
+        # redraw the slide when the camera is switched on/off or moved, so the corner is freed at once
+        s = rep(s, "function camAttach(){const el=$('#cam-bubble');", "function camAttach(){setTimeout(()=>{try{updateSlide()}catch(e){}},0);const el=$('#cam-bubble');")
     return s

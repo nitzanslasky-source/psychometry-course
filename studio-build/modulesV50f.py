@@ -512,7 +512,7 @@ lesson('vr50-f-chain-examples', 'Worked Chains',
                                       "Longer school days",
                                       "Young children tired in the last lessons",
                                       "Less learned at the end of the day",
-                                      "Lower achievement"], size=25, y0=240)),
+                                      "Lower achievement"], size=25, y0=290)),
   "The draft. Four-day week. Longer school days. Young children tired in the last lessons. Less learned at the end of the day. Lower achievement.",
  ]),
  dict(mode='concept', active=2, title='4-day week: arrows', script=[
