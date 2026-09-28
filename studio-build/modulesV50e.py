@@ -903,19 +903,26 @@ def _zoom_out():
         "Let's go quickly through the rest of the list, each with an example from our tasks.",
         A('Moral appears', c('Moral: is it right? is it fair? Cameras: is it right to treat every citizen as a suspect? · Tax: is it fair that the richest pay less?', 32)),
         "Moral: is it right, is it fair? Is it right to treat every citizen as a possible suspect? Is it fair that the richest companies pay less tax than the corner shop?",
+        "Let me develop one. Take the reduced tax. The owner of a small shop pays the full rate on every shekel she earns. A company that earns billions pays half. It's not only an economic question. It's a question of fairness: those who can contribute more are asked to contribute less. And a rule that looks unfair to most citizens weakens their willingness to follow it.",
         A('Democracy appears', c('Democracy: power, control, majority and minority. Cameras: a future government could use the network to follow journalists, opponents or demonstrators', 32)),
         "Democracy: who holds power, and who controls it? A camera network built to fight crime could one day be used by a government to follow journalists, political opponents or demonstrators.",
+        "Here's the idea to remember: whenever the state gets a new power, ask who will control it tomorrow. The government that builds the camera network may be one you trust. But the network stays, and the next government inherits it. In a democracy, power has to be limited and supervised, because we can't choose who will hold it next.",
         A('Safety appears', c('Safety: physical safety and security. Cameras: offences stopped while they are taking place, missing people found faster', 32)),
         "Safety: people's physical safety and security. Cameras could stop an offence while it is taking place, or help find a missing child within minutes.",
+        "And safety isn't only about crime. Think of the four-day school week: longer days mean children travel home later, in winter already in the dark. Or anti-smoking laws: less passive smoking, but also fewer fires started by cigarettes in public places. Ask about safety even when the task doesn't look like it's about safety.",
     ]))
     c = Col(y=60, gap=18)
     s.append(dict(mode='concept', active=10, title='Environment, progress', script=[
         A('Rights appears', c('Rights: which rights are at play, and is the harm to them proportionate? (a whole lesson on this soon)', 32)),
-        "Rights, which we'll look at closely soon.",
+        "Rights, which we'll look at closely soon. A quick example: anti-smoking laws. The smoker's freedom to do what he wants with his own body, against the non-smoker's right to health. Both are real rights. The question is whether the harm to the smoker's freedom is proportionate. Banning smoking in a closed restaurant? Probably yes. Banning it in an open park, far from anyone? Much harder to justify.",
         A('Environment appears', c('Environment: land, pollution, resources. Tax: new factories bring jobs, but also pollution and the loss of open land', 32)),
         "Environment: land, pollution, natural resources. A reduced tax brings new factories. Jobs, yes. But also pollution, and open land that is gone.",
-        A('Progress appears', c('Science, medicine and progress: Cameras: developing the technology creates a local tech industry, but the technology also makes mistakes: an innocent person wrongly identified', 32)),
-        "Science, medicine and progress. Developing face-recognition technology can build a whole local industry. But new technology also makes mistakes. What happens to an innocent person who is identified by mistake?",
+        "And it shows up where you don't expect it. The four-day school week: one day less of buses, heating and lighting in every school. Multiply that by all the schools in the country, and that's a real saving of fuel and a real cut in pollution. An environment argument, in a task about education.",
+        A('Progress appears', c('Science, medicine and progress: e.g. taxing big companies to support small local shops → people no longer buy the cheapest, most efficient product → less drive to invent the next cheaper, better thing', 32)),
+        "Science, medicine and progress. Here's an example I like. Say the question is whether we should tax big companies to support small local shops.",
+        "Throughout history, development was based on a simple rule: people buy the most efficient product for its price. That's what encouraged people to develop new things, to make them cheaper and more productive. That's how we got to where we are.",
+        "Now, if you take away that natural rule, if something stops people from buying in the most efficient or cheapest place, you take away the desire to come up with the new cheap thing, or to make something more productive. You slow progress down.",
+        "See? A question about taxes and shops, and the argument is about progress. That's what forcing yourself to look from each point of view does.",
         A('Not all fit appears', c('Not every point of view fits every task: check them all, keep the ones that give you a real argument', 32)),
         "Not all nine will fit every task. Go through them anyway. It takes a minute, and the one you almost skipped is often the original argument.",
     ]))
@@ -1465,12 +1472,24 @@ def _pov_example():
         A('Original appears', c('The unexpected ones, like the toothless penalty or the counterproductive link, are the ones that impress the rater', 32)),
         "And notice which ones are the most original: the toothless penalty, and the counterproductive link. Almost nobody thinks of those. That's what thinking out of the box looks like.",
     ]))
+    c = Col(y=60, gap=18)
+    s.append(dict(mode='concept', active=6, title='Save general ideas', script=[
+        "One last habit, and it's a big one.",
+        A('General appears', c('When an argument has something GENERAL in it, save it: general ideas come back again and again', 38)),
+        "When you find an argument that has something general in it, save it. Because general ideas repeat, from task to task.",
+        A('Example appears', c("e.g. the state's involvement in the economy: taxes, support for small shops, reduced tax for companies, price controls", 32)),
+        "Take the state's involvement in the economy. We met it in the reduced tax. It comes back in taxing big companies to support small shops, in a tax on sweetened drinks, in price controls. Every time, the same idea: when the state steps into the market, it can protect the weak, but it can also block competition and the drive to make things better and cheaper.",
+        A('Others appears', c('Others: who pays? · freedom vs protection · security vs privacy · punishment vs reward · the policy that backfires · can it be enforced? · short vs long term · today\'s power, tomorrow\'s government', 32)),
+        "And there are more. Who pays? Freedom against protection. Security against privacy. Punishment against reward. The policy that backfires. Can it even be enforced? Short term against long term. A power given today, used by tomorrow's government.",
+        A('Notebook appears', c('Keep a list. With every new task, run through it: which of my general ideas fits here?', 36)),
+        "Keep a list. The card after this lesson is a start. With every new task, run through your list: which of my general ideas fits here? You'll be amazed how often one does.",
+    ]))
     return s
 
 
 POV_EX = lesson('vr50-e-pov-example', 'Points of View: An Example',
                 ['The task', 'Social-economic', 'Psychological', 'Educational', 'Democracy · rights',
-                 'Choose the best'],
+                 'Choose the best', 'Save general ideas'],
                 [dict(mode='title', title='Points of View: An Example', script=[
                     "Points of view in action: one task, many directions.",
                     "Should people who don't pay taxes be allowed to vote?",
@@ -1479,6 +1498,10 @@ POV_EX = lesson('vr50-e-pov-example', 'Points of View: An Example',
 MODULES = [ANALYSE, GATHER, POSITION, ARGS_INTRO, FROM_TASK, ZOOM_IN, TAX, ZOOM_OUT, POV_EX, RIGHTS, TEST]
 
 MEMORY = [
+dict(id='mem-wr-general', after='vr50-e-pov-example', title='General ideas worth saving',
+     intro='Arguments with a general idea in them come back from task to task. Save them, and with every new task ask: which of my general ideas fits here?',
+     tables=[dict(title='General ideas', head=['Idea', 'The argument', 'Where it comes up'], rows=[["The state's involvement in the economy", 'Intervention can protect the weak and correct unfairness, but it can also block competition and the drive to make things better and cheaper', 'reduced tax for companies · supporting small shops · sweetened-drink tax · price controls · subsidies'], ['Who pays?', 'The money always comes from somewhere: other taxpayers, other services, the future', 'free buses · camera networks · any subsidy or free service'], ['Freedom vs protection', "May the state limit a person's choices to protect others, or the person himself?", 'smoking laws · sugar tax · social networks age · helmets'], ['Security vs privacy', 'More information can prevent harm, and can also be misused or leak', 'cameras · databases · phones at school · age checks online'], ['Punishment vs reward', 'People change more through encouragement than through punishment; a punishment should connect to the offence', 'fines and fees · paying for grades · voting and taxes'], ['The policy that backfires', 'A measure can cause the opposite of its goal', "voting and taxes ('why pay?') · crime moving to places without cameras · shoppers crossing the border"], ['Can it be enforced?', 'A rule nobody can check teaches people that rules can be ignored', 'age limits online · bans · voluntary rules'], ['Short term vs long term', 'A cost now can bring a gain later, and the other way round', 'reduced tax (less revenue now, jobs later) · education · health'], ["Today's power, tomorrow's government", 'A power given for a good reason stays when the people holding it change', 'cameras · voting rights · emergency laws'], ['Equality and fairness', 'The same rules for everyone, or different rules for different situations?', 'reduced tax · fees · quotas']])],
+     tips=['Add to this list every time you meet a new general idea.', 'A general idea still needs to be applied to THIS task: say how it works here.']),
 dict(id='mem-wr-pov', after='vr50-e-zoom-out', title='The nine points of view: the question to ask',
      intro='Go through all nine for every task. Ask the question, look for effects in BOTH directions, and keep what gives a real argument.',
      tables=[dict(title='Points of view', head=['Point of view', 'Ask yourself'], rows=[['Social-economic', 'How is money involved here? Who pays, who gains, who loses? How does it affect society and the gaps between groups?'], ['Psychological', 'How does it affect the way people feel, think and behave?'], ['Educational', 'What does it teach children and adults? What behaviour does it encourage?'], ['Moral', 'Is it right? Is it fair? To whom?'], ['Democracy', 'How does it affect majority rule, representation, the balance of power, freedom of expression?'], ['Rights', 'Which rights are involved, harmed or protected? Is the harm proportionate?'], ['Safety', "How does it affect people's physical safety and security?"], ['Environment', 'How does it affect nature, pollution, land, resources, the places where people live?'], ['Science, medicine, progress', 'How does it affect health, research, technology and development?']])],
