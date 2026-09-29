@@ -42,15 +42,30 @@ SB_CSS = """<style>
 .board-shell > .sb-prompter.sb-top .hy-step.past,.board-shell > .sb-prompter.sb-top .hy-step.ahead:not(.next-up){display:none}
 .board-shell > .sb-prompter.sb-top .hy-step{border-left:0;padding:2px 0;margin:0}
 .board-shell > .sb-prompter.sb-top .hy-step.live{font-size:1.4em;line-height:1.35;color:#fff;background:none}
-.board-shell > .sb-prompter.sb-top .hy-step.next-up{font-size:.95em;opacity:.55;margin-top:6px}
 .board-shell > .sb-prompter.sb-top .hy-n{display:none}
 .board-shell > .sb-prompter.sb-top .hy-say{justify-content:center}
 /* full screen (draw mode): strip in the first row, the slide shrinks so strip + slide fit the screen */
 body.draw-mode .board-shell.sbtop{grid-template-rows:auto auto minmax(0,1fr) auto}
-body.draw-mode .board-shell.sbtop > .sb-prompter.sb-top{grid-column:1/-1;grid-row:1;max-height:30vh;width:min(100vw,1400px);margin:6px auto;border-radius:12px}
-body.draw-mode .board-shell.sbtop > .board-wrap{grid-row:2;width:min(100vw,calc((100vh - 120px - var(--sbh,0px)) * 16 / 9))}
-@supports (height:100dvh){body.draw-mode .board-shell.sbtop > .board-wrap{width:min(100vw,calc((100dvh - 120px - var(--sbh,0px)) * 16 / 9))}}
+body.draw-mode .board-shell.sbtop > .sb-prompter.sb-top{grid-column:1/-1;grid-row:1;max-height:36vh;width:min(100vw,1400px);margin:6px auto;border-radius:12px}
+body.draw-mode .board-shell.sbtop > .board-wrap{grid-row:2;width:min(100vw,calc((100vh - 150px - var(--sbh,0px)) * 16 / 9))}
+@supports (height:100dvh){body.draw-mode .board-shell.sbtop > .board-wrap{width:min(100vw,calc((100dvh - 150px - var(--sbh,0px)) * 16 / 9))}}
 body.draw-mode.hy-active .board-shell.sbtop{grid-template-rows:auto auto 0 auto}
+/* readability: nothing faded, bigger brighter text, more line spacing (top strip and side panel) */
+.sb-prompter{line-height:1.55;color:#f4f8fb}
+.sb-prompter .hy-step.ahead,.sb-prompter .hy-step.next-up{opacity:1!important}
+.sb-prompter .hy-say{color:#f4f8fb}
+.sb-prompter .hy-step.live .hy-say{color:#ffffff;font-weight:600}
+.sb-prompter .hy-step.next-up{border-top:1px solid #ffffff33;padding-top:6px}
+.sb-prompter .hy-n{color:#b8c7dc}
+.board-shell > .sb-prompter.sb-top .hy-step.live{font-size:1.5em;line-height:1.45}
+.board-shell > .sb-prompter.sb-top .hy-step.next-up{font-size:1.2em;line-height:1.45;opacity:1;color:#e8f0f7;margin-top:8px}
+.board-shell > .sb-prompter.sb-top .hy-cue{font-size:.9em}
+.dm-prompter{font-size:21px;line-height:1.6}
+.dm-prompter .hy-step.ahead,.dm-prompter .hy-step.next-up{opacity:1!important}
+/* the next part (after PRESS NEXT) is shown at full strength everywhere; only lines already said stay dimmed */
+.hy-step.ahead{opacity:1!important}
+.hy-step.next-up .hy-say,.hy-step.next-up .hy-draw,.hy-step.ahead .hy-say,.hy-step.ahead .hy-draw{opacity:1!important}
+.board-shell > .sb-prompter.sb-top .hy-step.next-up .hy-say{color:#e8f0f7}
 </style>"""
 
 SYNC_OLD = "$('#board')?.classList.toggle('sb-on',STUDIO&&hy&&sbOn);"
@@ -100,6 +115,7 @@ def apply(s):
     s = rep(s, "function stopRecording(){", ASK_FN + "function stopRecording(){")
     for o, n in MIC_REPL: s = rep(s, o, n)
     s = rep(s, SBON_OLD, SBON_NEW)
+    s = rep(s, "sb.style.fontSize=Math.round(state.font*.9)+'px';", "sb.style.fontSize=Math.round(state.font*1.15)+'px';")   # bigger script text
     s = rep(s, SYNC_OLD, SYNC_NEW)
     s = s.replace("</head>", SB_CSS + "</head>", 1)   # the first </head> is the page head (a later one is inside a string)
     return s
