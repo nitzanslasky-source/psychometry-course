@@ -61,8 +61,8 @@ body.draw-mode.hy-active .board-shell.sbtop{grid-template-rows:auto auto 0 auto}
 .sb-prompter .hy-step.live .hy-say{color:#ffffff;font-weight:600}
 .sb-prompter .hy-step.next-up{border-top:1px solid #ffffff33;padding-top:6px}
 .sb-prompter .hy-n{color:#b8c7dc}
-.board-shell > .sb-prompter.sb-top .hy-step.live{font-size:1.5em;line-height:1.45}
-.board-shell > .sb-prompter.sb-top .hy-step.next-up{font-size:1.2em;line-height:1.45;opacity:1;color:#e8f0f7;margin-top:8px}
+.board-shell > .sb-prompter.sb-top .hy-step.live{font-size:1.3em;line-height:1.45}
+.board-shell > .sb-prompter.sb-top .hy-step.next-up{font-size:1.1em;line-height:1.45;opacity:1;color:#e8f0f7;margin-top:8px}
 .board-shell > .sb-prompter.sb-top .hy-cue{font-size:.9em}
 .dm-prompter{font-size:21px;line-height:1.6}
 .dm-prompter .hy-step.ahead,.dm-prompter .hy-step.next-up{opacity:1!important}
@@ -90,7 +90,9 @@ SYNC_NEW = ("$('#board')?.classList.toggle('sb-on',STUDIO&&hy&&sbOn);"
             "{const t=$('#sb-toggle');if(t&&!$('#sb-pos')){const bt=document.createElement('button');bt.id='sb-pos';bt.className=t.className;"
             "bt.title='Where the script sits: on the left of the slide, or above the slide under the camera (so you look at the lens)';"
             "t.after(bt);bt.onclick=()=>{sbTop=!sbTop;try{localStorage.setItem('hy-sb-pos',sbTop?'top':'left')}catch{}hySyncDraw()}}"
-            "const bp=$('#sb-pos');if(bp){bp.textContent=sbTop?'⬆ Script: top (camera)':'⬅ Script: left';bp.classList.toggle('active',sbTop)}}")
+            "const bp=$('#sb-pos');if(bp){bp.textContent=sbTop?'⬆ Script: top (camera)':'⬅ Script: left';bp.classList.toggle('active',sbTop)}"
+            "if(bp&&!$('#sb-fminus')){for(const [id,d,lab] of [['sb-fminus',-1,'Text −'],['sb-fplus',1,'Text +']]){const b2=document.createElement('button');b2.id=id;b2.className=bp.className.replace('active','');"
+            "b2.textContent=lab;b2.title=d<0?'Smaller script text (more fits)':'Bigger script text';b2.onclick=()=>{setFont(d);hySyncDraw()};($('#sb-fminus')||bp).after(b2)}}}")
 SBON_OLD = "let sbOn=(()=>{try{return localStorage.getItem('hy-sb')!=='off'}catch{return true}})();"
 SBON_NEW = SBON_OLD + "let sbTop=(()=>{try{return localStorage.getItem('hy-sb-pos')!=='left'}catch{return true}})();"
 
@@ -126,6 +128,9 @@ def apply(s):
     s = rep(s, "function stopRecording(){", ASK_FN + "function stopRecording(){")
     for o, n in MIC_REPL: s = rep(s, o, n)
     s = rep(s, SBON_OLD, SBON_NEW)
+    # script text size: much wider range and bigger steps (was 15-30 px, 1 px per click)
+    s = rep(s, "function setFont(d){state.font=Math.max(15,Math.min(30,state.font+d));", "function setFont(d){state.font=Math.max(8,Math.min(40,state.font+2*d));")
+    s = rep(s, "state.font=Math.max(15,Math.min(30,+b.font||18));", "state.font=Math.max(8,Math.min(40,+b.font||18));")
     s = rep(s, "sb.style.fontSize=Math.round(state.font*.9)+'px';", "sb.style.fontSize=Math.round(state.font*1.15)+'px';")   # bigger script text
     s = rep(s, SYNC_OLD, SYNC_NEW)
     s = s.replace("</head>", SB_CSS + "</head>", 1)   # the first </head> is the page head (a later one is inside a string)
