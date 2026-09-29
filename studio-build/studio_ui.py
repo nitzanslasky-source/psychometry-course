@@ -52,7 +52,7 @@ SYNC_NEW = ("$('#board')?.classList.toggle('sb-on',STUDIO&&hy&&sbOn);$('#board')
             "t.after(bt);bt.onclick=()=>{sbTop=!sbTop;try{localStorage.setItem('hy-sb-pos',sbTop?'top':'left')}catch{}hySyncDraw()}}"
             "const bp=$('#sb-pos');if(bp){bp.textContent=sbTop?'⬆ Script: top (camera)':'⬅ Script: left';bp.classList.toggle('active',sbTop)}}")
 SBON_OLD = "let sbOn=(()=>{try{return localStorage.getItem('hy-sb')!=='off'}catch{return true}})();"
-SBON_NEW = SBON_OLD + "let sbTop=(()=>{try{return localStorage.getItem('hy-sb-pos')==='top'}catch{return false}})();"
+SBON_NEW = SBON_OLD + "let sbTop=(()=>{try{return localStorage.getItem('hy-sb-pos')!=='left'}catch{return true}})();"
 
 
 # ---- microphone: asked for ONCE when the studio opens and kept for every take (asking at each take showed the
