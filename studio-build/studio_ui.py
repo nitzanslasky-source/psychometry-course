@@ -50,6 +50,10 @@ body.draw-mode .board-shell.sbtop > .sb-prompter.sb-top{grid-column:1/-1;grid-ro
 body.draw-mode .board-shell.sbtop > .board-wrap{grid-row:2;width:min(100vw,calc((100vh - 150px - var(--sbh,0px)) * 16 / 9))}
 @supports (height:100dvh){body.draw-mode .board-shell.sbtop > .board-wrap{width:min(100vw,calc((100dvh - 150px - var(--sbh,0px)) * 16 / 9))}}
 body.draw-mode.hy-active .board-shell.sbtop{grid-template-rows:auto auto 0 auto}
+/* resizable strip: drag the bottom edge (height remembered), double-click the edge = automatic size */
+.board-shell.sbsized > .sb-prompter.sb-top{height:var(--sbmax)!important;max-height:var(--sbmax)!important}
+.board-shell > .sb-prompter.sb-top{position:relative;padding-bottom:18px;display:flex!important;flex-direction:column}
+.board-shell > .sb-prompter.sb-top::after{content:'⇕ drag this edge to resize';position:sticky;display:block;bottom:-18px;margin:auto -22px -18px;flex:none;height:16px;line-height:16px;font-size:11px;letter-spacing:.04em;color:#9fb7b2;background:#123331;cursor:ns-resize;border-radius:0 0 12px 12px}
 /* readability: nothing faded, bigger brighter text, more line spacing (top strip and side panel) */
 .sb-prompter{line-height:1.55;color:#f4f8fb}
 .sb-prompter .hy-step.ahead,.sb-prompter .hy-step.next-up{opacity:1!important}
@@ -75,6 +79,13 @@ SYNC_NEW = ("$('#board')?.classList.toggle('sb-on',STUDIO&&hy&&sbOn);"
             "sbp.classList.toggle('sb-top',top);shell.classList.toggle('sbtop',top);"
             "if(top&&sbp.parentElement!==shell)shell.insertBefore(sbp,bw);if(!top&&sbp.parentElement!==bw)bw.insertBefore(sbp,bw.querySelector('.cam-bubble'));"
             "if(!top)sbp.style.display='';else sbp.style.display='block';"
+            "{const hs=(()=>{try{return +localStorage.getItem('hy-sb-h')||0}catch{return 0}})();shell.classList.toggle('sbsized',top&&hs>0);if(hs>0)shell.style.setProperty('--sbmax',hs+'px')}"
+            "if(top&&!sbp.dataset.grip){sbp.dataset.grip='1';"
+            "sbp.addEventListener('pointerdown',e=>{if(!sbp.classList.contains('sb-top'))return;const r=sbp.getBoundingClientRect();if(e.clientY<r.bottom-20)return;e.preventDefault();"
+            "const sh=sbp.parentElement,y0=e.clientY,h0=r.height;sbp.setPointerCapture?.(e.pointerId);"
+            "const mv=ev=>{const h=Math.round(Math.max(70,Math.min(window.innerHeight*.75,h0+ev.clientY-y0)));sh.classList.add('sbsized');sh.style.setProperty('--sbmax',h+'px');sh.style.setProperty('--sbh',(h+12)+'px');try{localStorage.setItem('hy-sb-h',h)}catch{}};"
+            "const up=()=>{sbp.removeEventListener('pointermove',mv);sbp.removeEventListener('pointerup',up)};sbp.addEventListener('pointermove',mv);sbp.addEventListener('pointerup',up)});"
+            "sbp.addEventListener('dblclick',e=>{const r=sbp.getBoundingClientRect();if(e.clientY<r.bottom-20)return;const sh=sbp.parentElement;sh.classList.remove('sbsized');try{localStorage.removeItem('hy-sb-h')}catch{};requestAnimationFrame(()=>sh.style.setProperty('--sbh',(sbp.offsetHeight+12)+'px'))})}"
             "requestAnimationFrame(()=>{shell.style.setProperty('--sbh',top?(sbp.offsetHeight+12)+'px':'0px');const lv=sbp.querySelector('.hy-step.live');if(top&&lv)lv.scrollIntoView({block:'nearest'})})}}"
             "{const t=$('#sb-toggle');if(t&&!$('#sb-pos')){const bt=document.createElement('button');bt.id='sb-pos';bt.className=t.className;"
             "bt.title='Where the script sits: on the left of the slide, or above the slide under the camera (so you look at the lens)';"
