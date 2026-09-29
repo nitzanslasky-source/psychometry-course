@@ -128,6 +128,14 @@ def apply(s):
     s = rep(s, "function stopRecording(){", ASK_FN + "function stopRecording(){")
     for o, n in MIC_REPL: s = rep(s, o, n)
     s = rep(s, SBON_OLD, SBON_NEW)
+    # pause / continue from the toolbar (next to Record/Stop) and with the P key, also in full screen
+    s = rep(s, "document.body.classList.toggle('is-recording',on)}\nsetInterval(syncRec,400);",
+            "document.body.classList.toggle('is-recording',on);"
+            "{let p=$('#qpause');if(!p){p=document.createElement('button');p.id='qpause';p.type='button';p.onclick=()=>{pauseRecording();syncRec()};b.after(p)}"
+            "p.hidden=!on;p.textContent=paused?'▶ Continue':'❚❚ Pause';p.title=paused?'Continue recording (P)':'Pause recording (P)';"
+            "p.style.cssText=paused?'background:#0f766e;color:#fff;border-color:#0f766e;font-weight:700':''}}\nsetInterval(syncRec,400);"
+            "window.addEventListener('keydown',e=>{if(!record||e.metaKey||e.ctrlKey||e.altKey)return;if(['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)||e.target.isContentEditable)return;"
+            "if(e.key==='p'||e.key==='P'){e.preventDefault();pauseRecording();syncRec()}});")
     # script text size: much wider range and bigger steps (was 15-30 px, 1 px per click)
     s = rep(s, "function setFont(d){state.font=Math.max(15,Math.min(30,state.font+d));", "function setFont(d){state.font=Math.max(8,Math.min(40,state.font+2*d));")
     s = rep(s, "state.font=Math.max(15,Math.min(30,+b.font||18));", "state.font=Math.max(8,Math.min(40,+b.font||18));")
