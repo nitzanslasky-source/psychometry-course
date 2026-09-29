@@ -77,5 +77,5 @@ def apply(s, layout=True):
         s = rep(s, HY_ZONE_OLD, HY_ZONE_NEW)
         s = rep(s, "function hybridSvg(v,bi,step){", CAM_ZONE_FN + "function hybridSvg(v,bi,step){")
         # redraw the slide when the camera is switched on/off or moved, so the corner is freed at once
-        s = rep(s, "function camAttach(){const el=$('#cam-bubble');", "function camAttach(){setTimeout(()=>{try{updateSlide()}catch(e){}},0);const el=$('#cam-bubble');")
+        s = rep(s, "function camAttach(){const el=$('#cam-bubble');", "let _camKey='';function camAttach(){{const k=(camStream?1:0)+camPos+camSize;if(k!==_camKey){const first=!_camKey;_camKey=k;if(!first)setTimeout(()=>{try{updateSlide()}catch(e){}},0)}}const el=$('#cam-bubble');")
     return s
