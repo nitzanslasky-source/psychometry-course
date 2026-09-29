@@ -35,20 +35,34 @@ function askKeepTake(blob){return new Promise(res=>{const url=URL.createObjectUR
 
 # ---- script position: left (as before) or top (a teleprompter strip right under the Mac's camera) ----
 SB_CSS = """<style>
-.board-wrap.sb-on.sb-top .sb-prompter{left:50%;right:auto;top:0;bottom:auto;transform:translateX(-50%);width:min(56%,860px);height:auto;max-height:34%;
- border-radius:0 0 16px 16px;box-shadow:0 8px 28px #0006;background:#0b1f1dee;padding:6px 22px 12px;overflow:hidden;text-align:center}
-.board-wrap.sb-on.sb-top .sb-prompter .sb-head{position:static;background:none;border:0;justify-content:center;gap:10px;padding:2px 0 4px;margin:0;opacity:.8}
-.board-wrap.sb-on.sb-top .sb-prompter .hy-step.past,.board-wrap.sb-on.sb-top .sb-prompter .hy-step.ahead:not(.next-up){display:none}
-.board-wrap.sb-on.sb-top .sb-prompter .hy-step.live{font-size:1.45em;line-height:1.35;color:#fff}
-.board-wrap.sb-on.sb-top .sb-prompter .hy-step.next-up{font-size:1em;opacity:.55;margin-top:6px}
-.board-wrap.sb-on.sb-top .sb-prompter .hy-n{display:none}
-.board-wrap.sb-on.sb-top .sb-prompter .hy-say{justify-content:center}
+/* script at the top: its own strip ABOVE the slide (the slide starts under it), full text, scrolls if long */
+.board-shell > .sb-prompter.sb-top{display:block;position:relative;left:auto;top:auto;bottom:auto;transform:none;width:auto;height:auto;
+ max-height:32vh;margin:0 auto 8px;border-radius:12px;box-shadow:none;background:#0b1f1d;color:#eef3fb;padding:4px 22px 10px;overflow:auto;text-align:center}
+.board-shell > .sb-prompter.sb-top .sb-head{position:static;background:none;border:0;justify-content:center;gap:10px;padding:2px 0 4px;margin:0;opacity:.8}
+.board-shell > .sb-prompter.sb-top .hy-step.past,.board-shell > .sb-prompter.sb-top .hy-step.ahead:not(.next-up){display:none}
+.board-shell > .sb-prompter.sb-top .hy-step{border-left:0;padding:2px 0;margin:0}
+.board-shell > .sb-prompter.sb-top .hy-step.live{font-size:1.4em;line-height:1.35;color:#fff;background:none}
+.board-shell > .sb-prompter.sb-top .hy-step.next-up{font-size:.95em;opacity:.55;margin-top:6px}
+.board-shell > .sb-prompter.sb-top .hy-n{display:none}
+.board-shell > .sb-prompter.sb-top .hy-say{justify-content:center}
+/* full screen (draw mode): strip in the first row, the slide shrinks so strip + slide fit the screen */
+body.draw-mode .board-shell.sbtop{grid-template-rows:auto auto minmax(0,1fr) auto}
+body.draw-mode .board-shell.sbtop > .sb-prompter.sb-top{grid-column:1/-1;grid-row:1;max-height:30vh;width:min(100vw,1400px);margin:6px auto;border-radius:12px}
+body.draw-mode .board-shell.sbtop > .board-wrap{grid-row:2;width:min(100vw,calc((100vh - 120px - var(--sbh,0px)) * 16 / 9))}
+@supports (height:100dvh){body.draw-mode .board-shell.sbtop > .board-wrap{width:min(100vw,calc((100dvh - 120px - var(--sbh,0px)) * 16 / 9))}}
+body.draw-mode.hy-active .board-shell.sbtop{grid-template-rows:auto auto 0 auto}
 </style>"""
 
 SYNC_OLD = "$('#board')?.classList.toggle('sb-on',STUDIO&&hy&&sbOn);"
-SYNC_NEW = ("$('#board')?.classList.toggle('sb-on',STUDIO&&hy&&sbOn);$('#board')?.classList.toggle('sb-top',sbTop);"
+SYNC_NEW = ("$('#board')?.classList.toggle('sb-on',STUDIO&&hy&&sbOn);"
+            # move the script out of the slide (above it) when it is at the top, back onto the slide when on the left
+            "{const sbp=$('#sb-prompter'),bw=$('#board'),shell=bw?.parentElement;if(sbp&&bw&&shell){const top=sbTop&&STUDIO&&hy&&sbOn;"
+            "sbp.classList.toggle('sb-top',top);shell.classList.toggle('sbtop',top);"
+            "if(top&&sbp.parentElement!==shell)shell.insertBefore(sbp,bw);if(!top&&sbp.parentElement!==bw)bw.insertBefore(sbp,bw.querySelector('.cam-bubble'));"
+            "if(!top)sbp.style.display='';else sbp.style.display='block';"
+            "requestAnimationFrame(()=>{shell.style.setProperty('--sbh',top?(sbp.offsetHeight+12)+'px':'0px');const lv=sbp.querySelector('.hy-step.live');if(top&&lv)lv.scrollIntoView({block:'nearest'})})}}"
             "{const t=$('#sb-toggle');if(t&&!$('#sb-pos')){const bt=document.createElement('button');bt.id='sb-pos';bt.className=t.className;"
-            "bt.title='Where the script sits: on the left, or at the top under the camera (so you look at the lens)';"
+            "bt.title='Where the script sits: on the left of the slide, or above the slide under the camera (so you look at the lens)';"
             "t.after(bt);bt.onclick=()=>{sbTop=!sbTop;try{localStorage.setItem('hy-sb-pos',sbTop?'top':'left')}catch{}hySyncDraw()}}"
             "const bp=$('#sb-pos');if(bp){bp.textContent=sbTop?'⬆ Script: top (camera)':'⬅ Script: left';bp.classList.toggle('active',sbTop)}}")
 SBON_OLD = "let sbOn=(()=>{try{return localStorage.getItem('hy-sb')!=='off'}catch{return true}})();"
