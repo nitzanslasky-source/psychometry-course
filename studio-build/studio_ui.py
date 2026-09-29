@@ -33,6 +33,28 @@ function askKeepTake(blob){return new Promise(res=>{const url=URL.createObjectUR
 """
 
 
+# ---- script position: left (as before) or top (a teleprompter strip right under the Mac's camera) ----
+SB_CSS = """<style>
+.board-wrap.sb-on.sb-top .sb-prompter{left:50%;right:auto;top:0;bottom:auto;transform:translateX(-50%);width:min(56%,860px);height:auto;max-height:34%;
+ border-radius:0 0 16px 16px;box-shadow:0 8px 28px #0006;background:#0b1f1dee;padding:6px 22px 12px;overflow:hidden;text-align:center}
+.board-wrap.sb-on.sb-top .sb-prompter .sb-head{position:static;background:none;border:0;justify-content:center;gap:10px;padding:2px 0 4px;margin:0;opacity:.8}
+.board-wrap.sb-on.sb-top .sb-prompter .hy-step.past,.board-wrap.sb-on.sb-top .sb-prompter .hy-step.ahead:not(.next-up){display:none}
+.board-wrap.sb-on.sb-top .sb-prompter .hy-step.live{font-size:1.45em;line-height:1.35;color:#fff}
+.board-wrap.sb-on.sb-top .sb-prompter .hy-step.next-up{font-size:1em;opacity:.55;margin-top:6px}
+.board-wrap.sb-on.sb-top .sb-prompter .hy-n{display:none}
+.board-wrap.sb-on.sb-top .sb-prompter .hy-say{justify-content:center}
+</style>"""
+
+SYNC_OLD = "$('#board')?.classList.toggle('sb-on',STUDIO&&hy&&sbOn);"
+SYNC_NEW = ("$('#board')?.classList.toggle('sb-on',STUDIO&&hy&&sbOn);$('#board')?.classList.toggle('sb-top',sbTop);"
+            "{const t=$('#sb-toggle');if(t&&!$('#sb-pos')){const bt=document.createElement('button');bt.id='sb-pos';bt.className=t.className;"
+            "bt.title='Where the script sits: on the left, or at the top under the camera (so you look at the lens)';"
+            "t.after(bt);bt.onclick=()=>{sbTop=!sbTop;try{localStorage.setItem('hy-sb-pos',sbTop?'top':'left')}catch{}hySyncDraw()}}"
+            "const bp=$('#sb-pos');if(bp){bp.textContent=sbTop?'⬆ Script: top (camera)':'⬅ Script: left';bp.classList.toggle('active',sbTop)}}")
+SBON_OLD = "let sbOn=(()=>{try{return localStorage.getItem('hy-sb')!=='off'}catch{return true}})();"
+SBON_NEW = SBON_OLD + "let sbTop=(()=>{try{return localStorage.getItem('hy-sb-pos')==='top'}catch{return false}})();"
+
+
 def rep(s, old, new, n=1):
     assert s.count(old) == n, (s.count(old), old[:60])
     return s.replace(old, new)
@@ -41,4 +63,7 @@ def rep(s, old, new, n=1):
 def apply(s):
     s = rep(s, SAVE_OLD, SAVE_NEW)
     s = rep(s, "function stopRecording(){", ASK_FN + "function stopRecording(){")
+    s = rep(s, SBON_OLD, SBON_NEW)
+    s = rep(s, SYNC_OLD, SYNC_NEW)
+    s = s.replace("</head>", SB_CSS + "</head>", 1)   # the first </head> is the page head (a later one is inside a string)
     return s
