@@ -55,6 +55,27 @@ SBON_OLD = "let sbOn=(()=>{try{return localStorage.getItem('hy-sb')!=='off'}catc
 SBON_NEW = SBON_OLD + "let sbTop=(()=>{try{return localStorage.getItem('hy-sb-pos')==='top'}catch{return false}})();"
 
 
+# ---- microphone: asked for ONCE when the studio opens and kept for every take (asking at each take showed the
+#      browser's permission pop-up, which throws the page out of full screen) ----
+MIC_FN = r"""
+let micStream=null;
+async function getMic(){if(micStream&&micStream.getAudioTracks().some(t=>t.readyState==='live'))return micStream;
+ micStream=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:false,noiseSuppression:true,autoGainControl:false,channelCount:1,sampleRate:48000},video:false});return micStream}
+setTimeout(()=>{try{if(typeof STUDIO!=='undefined'&&STUDIO&&navigator.mediaDevices?.getUserMedia){
+ if(document.getElementById('use-mic')?.checked!==false)getMic().then(()=>{if(document.getElementById('use-camera')?.checked&&!camStream)camOn()}).catch(()=>{});
+ else if(document.getElementById('use-camera')?.checked&&!camStream)camOn()}}catch(e){}},1200);
+"""
+MIC_REPL = [
+    ("if(useMic)input=await navigator.mediaDevices.getUserMedia({audio:useMic?{echoCancellation:false,noiseSuppression:true,autoGainControl:false,channelCount:1,sampleRate:48000}:false,video:false});",
+     "if(useMic)input=await getMic();"),
+    # the recording gets COPIES of the mic tracks, so stopping a take never closes the shared microphone
+    ("if(useMic)input.getAudioTracks().forEach(t=>stream.addTrack(t));", "if(useMic)input.getAudioTracks().forEach(t=>stream.addTrack(t.clone()));"),
+    ("r.input?.getTracks().forEach(t=>t.stop());", ""),
+    ("}catch(e){input?.getTracks().forEach(t=>t.stop());", "}catch(e){"),
+    ("async function startRecording(){", MIC_FN + "async function startRecording(){"),
+]
+
+
 def rep(s, old, new, n=1):
     assert s.count(old) == n, (s.count(old), old[:60])
     return s.replace(old, new)
@@ -63,6 +84,7 @@ def rep(s, old, new, n=1):
 def apply(s):
     s = rep(s, SAVE_OLD, SAVE_NEW)
     s = rep(s, "function stopRecording(){", ASK_FN + "function stopRecording(){")
+    for o, n in MIC_REPL: s = rep(s, o, n)
     s = rep(s, SBON_OLD, SBON_NEW)
     s = rep(s, SYNC_OLD, SYNC_NEW)
     s = s.replace("</head>", SB_CSS + "</head>", 1)   # the first </head> is the page head (a later one is inside a string)
