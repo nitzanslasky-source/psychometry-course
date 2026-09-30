@@ -11,6 +11,7 @@ tag = '-'.join(map(str, topics)) or 'all'
 s, i, j, D = load(os.path.join(HERE, 'base-v18.html'))
 s = renderer_patch.apply(s); s = studio_patch.apply(s)
 M = math_api.apply_patches(D, only=topics or None)
+import terminology; terminology.apply(D)   # NITE official wording, as in build_verbal.py
 T = set(topics or range(1, 39))
 P = []   # problems (must fix)
 W = []   # warnings (review)

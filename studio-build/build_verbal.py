@@ -267,12 +267,16 @@ for card in CARDS:
     flow.insert(k + 1, {'id': fid, 'topic': vf['topic'], 'section': vf['section'], 'type': 'reference', 'ref': card['id']})
     items.insert(ki + 1, fid); PLACED.add(fid)
 
+# ---------- NITE terminology (quantitative topics only) ----------
+import terminology; TERM = terminology.apply(D)
+print('NITE terminology (changes per rule and field type):'); print(terminology.report(TERM))
+
 # ---------- write ----------
 body = json.dumps(D, ensure_ascii=False, separators=(',', ':'))
 s2, i2, j2, _ = load(BASE)   # positions in the base; recompute on the patched html
 k0 = s.find('window.COURSE=') + len('window.COURSE='); k1 = s.find('</script>', k0)
 out = s[:k0] + body + ';' + s[k1:]
-import slide_style, studio_ui; out = studio_ui.apply(slide_style.apply(out))   # slide look: teal theme, bold labels, panels, larger text
+import slide_style, studio_ui, studio_cut; out = studio_cut.apply(studio_ui.apply(slide_style.apply(out)))   # slide look: teal theme, bold labels, panels, larger text
 open(OUT, 'w', encoding='utf-8').write(out)
 print('wrote', OUT, '%.1f MB' % (len(out) / 1e6))
 
