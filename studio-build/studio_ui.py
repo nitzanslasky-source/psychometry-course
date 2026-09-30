@@ -33,6 +33,18 @@ function askKeepTake(blob){return new Promise(res=>{const url=URL.createObjectUR
 """
 
 
+# ---- Option key alone = switch pen <-> pointer ----
+OPT_FN = r"""
+{let optAlone=false;
+ window.addEventListener('keydown',e=>{if(e.key==='Alt'){if(!e.repeat)optAlone=true}else optAlone=false},true);
+ window.addEventListener('pointerdown',()=>{optAlone=false},true);
+ window.addEventListener('keyup',e=>{if(e.key!=='Alt'||!optAlone)return;optAlone=false;
+  if(!STUDIO||!video()||document.getElementById('take-editor')||document.getElementById('cut-panel')||document.querySelector('dialog[open]'))return;
+  if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName))return;
+  e.preventDefault();pen.setTool(pen.getTool()==='pen'?'laser':'pen')},true);}
+"""
+
+
 # ---- script position: left (as before) or top (a teleprompter strip right under the Mac's camera) ----
 SB_CSS = """<style>
 /* script at the top: its own strip ABOVE the slide (the slide starts under it), full text, scrolls if long */
@@ -139,7 +151,9 @@ def apply(s):
     # pen moves from P to D (P = pause / continue while recording; one key was doing both)
     s = rep(s, "if(k==='p')setTool(tool==='pen'?'off':'pen');", "if(k==='d')setTool(tool==='pen'?'off':'pen');")
     s = rep(s, 'title="Pen (P)"', 'title="Pen (D)"')
-    s = rep(s, "<kbd>P</kbd> pen", "<kbd>D</kbd> pen · <kbd>P</kbd> pause")
+    s = rep(s, "<kbd>P</kbd> pen", "<kbd>⌥ Option</kbd> pen ⇄ pointer · <kbd>D</kbd> pen · <kbd>P</kbd> pause")
+    # Option (Alt) pressed and released on its own: switch between pen and pointer (Option+another key is left alone)
+    s = rep(s, "function stopRecording(){", OPT_FN + "function stopRecording(){")
     # script text size: much wider range and bigger steps (was 15-30 px, 1 px per click)
     s = rep(s, "function setFont(d){state.font=Math.max(15,Math.min(30,state.font+d));", "function setFont(d){state.font=Math.max(8,Math.min(40,state.font+2*d));")
     s = rep(s, "state.font=Math.max(15,Math.min(30,+b.font||18));", "state.font=Math.max(8,Math.min(40,+b.font||18));")
