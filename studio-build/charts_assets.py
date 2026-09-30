@@ -54,7 +54,7 @@ def vis(svg, w=820, h=None, x=None, y=None):
 
 # ------------------------------------------------------------------------------------------------ primitives
 def _esc(s):
-    return str(s).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+    return str(s).replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;').replace('"', '&quot;')
 
 
 def _t(x, y, s, size=20, color=INK, anchor='middle', weight=400, italic=False, extra=''):
