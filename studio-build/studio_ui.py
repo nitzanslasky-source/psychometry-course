@@ -136,6 +136,10 @@ def apply(s):
             "p.style.cssText=paused?'background:#0f766e;color:#fff;border-color:#0f766e;font-weight:700':''}}\nsetInterval(syncRec,400);"
             "window.addEventListener('keydown',e=>{if(!record||e.metaKey||e.ctrlKey||e.altKey)return;if(['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)||e.target.isContentEditable)return;"
             "if(e.key==='p'||e.key==='P'){e.preventDefault();pauseRecording();syncRec()}});")
+    # pen moves from P to D (P = pause / continue while recording; one key was doing both)
+    s = rep(s, "if(k==='p')setTool(tool==='pen'?'off':'pen');", "if(k==='d')setTool(tool==='pen'?'off':'pen');")
+    s = rep(s, 'title="Pen (P)"', 'title="Pen (D)"')
+    s = rep(s, "<kbd>P</kbd> pen", "<kbd>D</kbd> pen · <kbd>P</kbd> pause")
     # script text size: much wider range and bigger steps (was 15-30 px, 1 px per click)
     s = rep(s, "function setFont(d){state.font=Math.max(15,Math.min(30,state.font+d));", "function setFont(d){state.font=Math.max(8,Math.min(40,state.font+2*d));")
     s = rep(s, "state.font=Math.max(15,Math.min(30,+b.font||18));", "state.font=Math.max(8,Math.min(40,+b.font||18));")
