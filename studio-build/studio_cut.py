@@ -33,7 +33,7 @@ async function cutAudioCodec(mux,sampleRate,numberOfChannels){
   try{if((await AudioEncoder.isConfigSupported(cfg)).supported)return {cfg,name}}catch{}}return null}
 class CutRecorder{
  constructor(canvas,track,vc){Object.assign(this,{canvas,track,vc,mimeType:vc.mux==='mp4'?'video/mp4':'video/webm',state:'inactive',v:[],a:[],vmeta:null,ameta:null,acfg:null,
-  lastV:-1,lastKey:-1e9,forceKey:true,aBase:null,aSamples:0,aEnd:0,pcm:[],thumbs:[],err:null,cutCount:0,cutSec:0});
+  lastV:-1,lastKey:-1e9,forceKey:true,aBase:null,aSamples:0,aEnd:0,pcm:[],thumbs:[],err:null,cutCount:0,cutSec:0,marks:[0]});
   this.venc=new VideoEncoder({output:(c,m)=>{if(m?.decoderConfig&&!this.vmeta)this.vmeta=m;this.v.push(c)},error:e=>this.fail(e)});this.venc.configure(vc.cfg)}
  fail(e){console.error('recorder',e);if(this.err)return;this.err=e;this.onerror?.(e)}
  start(){this.state='recording';this.timer=setInterval(()=>this.grab(),1000/30);this.thumbTimer=setInterval(()=>this.thumb(),1000);if(this.track)this.readAudio()}
@@ -54,11 +54,11 @@ class CutRecorder{
   const ad=new AudioData({format:'f32-planar',sampleRate:sr,numberOfFrames:n,numberOfChannels:ch,timestamp:ts,data:buf});this.aenc.encode(ad);ad.close();
   const pc=new Int16Array(n);for(let k=0;k<n;k++)pc[k]=Math.max(-1,Math.min(1,buf[k]))*32767;this.pcm.push({t:ts/1e6,sr,d:pc})}
  pause(){if(this.state==='recording')this.state='paused'}
- resume(){if(this.state!=='paused')return;this.forceKey=true;this.aBase=null;this.state='recording'}
+ resume(){if(this.state!=='paused')return;const m=recClock();if(Math.abs(m-this.marks[this.marks.length-1])>.3)this.marks.push(m);this.forceKey=true;this.aBase=null;this.state='recording';cutSnapNow(true)}
  async cutTo(sec){if(this.state!=='paused')return;const us=Math.round(sec*1e6);
   try{await this.venc.flush();if(this.aenc)await this.aenc.flush()}catch{}
   let i=this.v.findIndex(c=>c.timestamp>=us);if(i>=0)this.v.length=i;i=this.a.findIndex(c=>c.timestamp>=us);if(i>=0)this.a.length=i;
-  this.pcm=this.pcm.filter(p=>p.t<sec);this.thumbs=this.thumbs.filter(t=>t.t<sec);
+  this.pcm=this.pcm.filter(p=>p.t<sec);this.marks=this.marks.filter(m=>m<=sec+.01);this.thumbs=this.thumbs.filter(t=>t.t<sec);
   this.lastV=this.v.length?this.v[this.v.length-1].timestamp:-1;const la=this.a[this.a.length-1];this.aEnd=la?la.timestamp+(la.duration||0):0;
   this.lastKey=-1e9;this.forceKey=true;this.aBase=null}
  async stop(){if(this.state==='inactive')return;this.state='inactive';clearInterval(this.timer);clearInterval(this.thumbTimer);
@@ -79,8 +79,9 @@ async function makeRecorder(stream,canvas,mime){
 
 /* slide / step / pen ink over time, so a cut can put the studio back where it was at that moment */
 function cutInkKey(){const v=video();return (v?.beats[state.beat]?.layout==='hybrid'?'hy-':'')+v?.id+':'+state.beat}
-setInterval(()=>{const r=record;if(!r||!r.rec.cutTo||r.rec.state!=='recording')return;const k=cutInkKey(),ink=JSON.stringify(state.ink?.[k]||[]),sig=state.beat+'|'+state.step+'|'+k+'|'+ink;
- if(sig===r.cutSig)return;r.cutSig=sig;(r.snaps=r.snaps||[]).push({t:recClock(),beat:state.beat,step:state.step,k,ink})},200);
+function cutSnapNow(force){const r=record;if(!r||!r.rec.cutTo||r.rec.state!=='recording')return;const k=cutInkKey(),ink=JSON.stringify(state.ink?.[k]||[]),sig=state.beat+'|'+state.step+'|'+k+'|'+ink;
+ if(sig===r.cutSig&&!force)return;r.cutSig=sig;(r.snaps=r.snaps||[]).push({t:recClock(),beat:state.beat,step:state.step,k,ink})}
+setInterval(()=>cutSnapNow(false),200);
 function cutSnapAt(t){let at=null;for(const s of record?.snaps||[])if(s.t<=t)at=s;return at}
 function cutRestore(C){const r=record,S=r.snaps||[],at=cutSnapAt(C);
  for(const k of new Set(S.filter(s=>s.t>C).map(s=>s.k))){let last=null;for(const s of S)if(s.t<=C&&s.k===k)last=s;
@@ -99,10 +100,11 @@ function openCutPanel(){const r=record;if(!r)return;if(!r.rec.cutTo)return toast
  if(T<.5)return toast('Nothing recorded yet to cut.');
  const box=document.createElement('div');box.id='cut-panel';box.setAttribute('role','dialog');box.setAttribute('aria-label','Cut back');
  box.style.cssText='position:fixed;left:50%;top:70px;transform:translateX(-50%);z-index:10000;width:min(760px,94vw);background:#fff;color:#17233c;border:3px solid #b91c1c;border-radius:16px;box-shadow:0 20px 60px #0005;padding:16px 20px;font-family:inherit';
+ const mk=r.rec.marks.filter(m=>m<T-.3).slice(-2).reverse(),rd=mk.map((m,i)=>'<button type="button" data-redo="'+i+'" style="padding:'+(i?'7px 12px':'10px 16px')+';border-radius:10px;border:'+(i?'1px solid #e5c4c4;background:#fff;color:#17233c':'0;background:#17233c;color:#fff')+';font-weight:800;cursor:pointer">↺ Redo from '+fmt(m)+(i?'':' (R)')+' <span style="font-weight:500;opacity:.8">'+(m===0?'· start over':i?'· the time before':'· where you last continued')+' · removes '+dur(T-m)+'</span></button>').join('');
  const q=[3,5,10,20,30,60].filter(x=>x<T+1).map(x=>'<button type="button" data-cut="'+x+'" style="padding:7px 12px;border-radius:9px;border:1px solid #e5c4c4;background:#fff;font-weight:700;cursor:pointer">− '+(x<60?x+' s':'1 min')+'</button>').join('');
  box.innerHTML='<div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px"><div style="font-size:20px;font-weight:800">✂ Cut back</div><div style="color:#5b6b7a;font-size:13px">take length now '+fmt(T)+'</div></div>'
-  +'<div style="color:#5b6b7a;font-size:14px;margin:4px 0 10px">Remove the end of the take, then continue recording from that moment. ← → move ½ s · Enter = cut · Esc = cancel</div>'
-  +'<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">'+q+'</div>'
+  +'<div style="color:#5b6b7a;font-size:14px;margin:4px 0 10px">Remove the end of the take, then continue recording from that moment. R = redo from where you last continued · ← → move ½ s · Enter = cut · Esc = cancel</div>'
+  +(rd?'<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">'+rd+'</div>':'')+'<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">'+q+'</div>'
   +'<input id="cut-range" type="range" min="0" max="'+T.toFixed(1)+'" step="0.1" style="width:100%;accent-color:#b91c1c">'
   +'<div style="display:flex;gap:16px;align-items:flex-start;margin-top:10px"><img id="cut-thumb" alt="" style="width:240px;aspect-ratio:16/9;border-radius:8px;background:#e8eef3;border:1px solid #d8e0e6;flex:none;object-fit:cover">'
   +'<div style="flex:1;min-width:0"><div id="cut-info" style="font-size:15px;line-height:1.5"></div>'
@@ -117,16 +119,17 @@ function openCutPanel(){const r=record;if(!r)return;if(!r.rec.cutTo)return toast
   box.querySelector('#cut-info').innerHTML='Keep <b>0:00 – '+fmt(p)+'</b> · remove the last <b style="color:#b91c1c">'+dur(T-p)+'</b>'
    +(b?'<br>You continue from <b>slide '+(s.beat+1)+'</b>'+(s.step?' · step '+(s.step+1):'')+' · '+esc(b.title||''):'')};
  const set=x=>{rg.value=Math.max(0,Math.min(T,x)).toFixed(1);show()};set(T-Math.min(5,T));
- box.querySelectorAll('[data-cut]').forEach(b=>b.onclick=()=>set(T-+b.dataset.cut));rg.oninput=show;
+ let exact=null;box.querySelectorAll('[data-cut]').forEach(b=>b.onclick=()=>{exact=null;set(T-+b.dataset.cut)});rg.oninput=()=>{exact=null;show()};
+ const redo=i=>{if(mk[i]==null)return;set(mk[i]);exact=mk[i];go()};box.querySelectorAll('[data-redo]').forEach(b=>b.onclick=()=>redo(+b.dataset.redo));
  box.querySelector('#cut-hear-keep').onclick=()=>cutPlay(+rg.value-4,+rg.value);
  box.querySelector('#cut-hear-drop').onclick=()=>cutPlay(+rg.value,Math.min(T,+rg.value+8));
  const close=()=>{document.removeEventListener('keydown',key,true);try{CUT.src?.stop()}catch{}box.remove()};
- const go=async()=>{if(busy)return;busy=true;const C=+rg.value;if(C>=T-.05)return close();box.querySelector('#cut-go').textContent='Cutting…';
+ const go=async()=>{if(busy)return;busy=true;const C=exact??+rg.value;if(C>=T-.05)return close();box.querySelector('#cut-go').textContent='Cutting…';
   await r.rec.cutTo(C);r.pausedMs+=(T-C)*1000;r.rec.cutCount++;r.rec.cutSec+=T-C;cutRestore(C);close();syncRec();
   const ck=$('#rec-clock');if(ck)ck.textContent=timeText(C);
   toast('Cut '+dur(T-C)+'. The take is now '+fmt(C)+'. Press Continue (P) when you are ready.')};
  const key=e=>{if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close()}else if(e.key==='Enter'){e.preventDefault();e.stopPropagation();go()}
-  else if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();e.stopPropagation();set(+rg.value+(e.key==='ArrowLeft'?-.5:.5))}else if(e.key==='p'||e.key==='P'||e.key===' ')e.stopPropagation()};
+  else if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();e.stopPropagation();exact=null;set(+rg.value+(e.key==='ArrowLeft'?-.5:.5))}else if((e.key==='r'||e.key==='R')&&mk.length){e.preventDefault();e.stopPropagation();redo(0)}else if(e.key==='p'||e.key==='P'||e.key===' ')e.stopPropagation()};
  document.addEventListener('keydown',key,true);box.querySelector('#cut-cancel').onclick=close;box.querySelector('#cut-go').onclick=go}
 window.addEventListener('keydown',e=>{if(!record||e.metaKey||e.ctrlKey||e.altKey)return;if(['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)||e.target.isContentEditable)return;
  if(e.key==='x'||e.key==='X'){e.preventDefault();openCutPanel()}});
