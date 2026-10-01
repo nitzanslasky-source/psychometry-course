@@ -42,6 +42,14 @@ OPT_FN = r"""
   if(!STUDIO||!video()||document.getElementById('take-editor')||document.getElementById('cut-panel')||document.querySelector('dialog[open]'))return;
   if(['INPUT','TEXTAREA','SELECT'].includes(document.activeElement?.tagName))return;
   e.preventDefault();pen.setTool(pen.getTool()==='pen'?'laser':'pen')},true);}
+/* "Pen + pointer" mode: with the pen on, the red pointer dot follows the mouse while you are NOT pressing, and the
+   mouse writes while you press (switch on/off with the ✎◉ button; remembered) */
+let penPointer=(()=>{try{return localStorage.getItem('pen-pointer')==='on'}catch{return false}})();
+function comboSync(){const b=document.getElementById('pen-combo');if(b){b.classList.toggle('active',penPointer);b.setAttribute('aria-pressed',String(penPointer))}}
+document.addEventListener('click',e=>{if(!e.target.closest?.('#pen-combo'))return;penPointer=!penPointer;try{localStorage.setItem('pen-pointer',penPointer?'on':'off')}catch{}
+ if(penPointer)pen.setTool('pen');else{laser=null;document.getElementById('laser')?.remove()}comboSync()});
+document.addEventListener('pointerdown',e=>{if(penPointer&&pen.getTool()==='pen'&&e.target.closest?.('#board')){laser=null;document.getElementById('laser')?.remove()}},true);
+setInterval(comboSync,500);
 """
 
 
@@ -154,6 +162,11 @@ def apply(s):
     s = rep(s, "<kbd>P</kbd> pen", "<kbd>⌥ Option</kbd> pen ⇄ pointer · <kbd>D</kbd> pen · <kbd>P</kbd> pause")
     # Option (Alt) pressed and released on its own: switch between pen and pointer (Option+another key is left alone)
     s = rep(s, "function stopRecording(){", OPT_FN + "function stopRecording(){")
+    s = rep(s, "◉ Pointer</button>", "◉ Pointer</button><button type=\"button\" id=\"pen-combo\" aria-pressed=\"false\" "
+            "title=\"Pen + pointer: the red dot follows the mouse, and the mouse writes while you press\">✎◉ Pen + pointer</button>")
+    s = rep(s, "$('#board').onpointermove=e=>{if(!$('#laser-toggle')?.checked)return;",
+            "$('#board').onpointermove=e=>{const combo=penPointer&&pen.getTool()==='pen';if(!$('#laser-toggle')?.checked&&!combo)return;"
+            "if(combo&&e.buttons){laser=null;$('#laser')?.remove();return}")
     # script text size: much wider range and bigger steps (was 15-30 px, 1 px per click)
     s = rep(s, "function setFont(d){state.font=Math.max(15,Math.min(30,state.font+d));", "function setFont(d){state.font=Math.max(8,Math.min(40,state.font+2*d));")
     s = rep(s, "state.font=Math.max(15,Math.min(30,+b.font||18));", "state.font=Math.max(8,Math.min(40,+b.font||18));")
