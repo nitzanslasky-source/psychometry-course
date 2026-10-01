@@ -106,19 +106,6 @@ def fix_lesson(M):
     ])
 
     # new slides (inserted from the bottom up so the original numbers stay valid)
-    M.insert_slides(V, 9, [dict(title='Which numbers?', mode='concept', script=[
-        "Which numbers should you plug in? A few rules.",
-        A('Rule 1 appears', T('1. Legal values only — check every given condition', size=38, gap=16)),
-        "One: legal values only. If x is negative, a positive x proves nothing.",
-        A('Rule 2 appears', T('2. Avoid 0 and 1 — they make many choices equal', size=38, gap=16)),
-        "Two: avoid zero and one. One squared is one, one over one is one. Many choices come out equal — and you learn nothing.",
-        A('Rule 3 appears', T('3. Two choices survive? Plug in a different kind of number: a negative, a fraction, a big number', size=38, gap=40)),
-        "Three: if two choices survive, don't guess. Plug in a different kind of number.",
-        A('"Necessarily true" appears', T('"Necessarily true": true for EVERY legal value — one counterexample kills a choice', size=36, gap=16)),
-        "Read the question word. \"Necessarily true\" means true for every legal value. One counterexample is enough to kill a choice.",
-        A('"Could be true" appears', T('"Could be true": one example is enough', size=36)),
-        "\"Could be true\" is the opposite: one good example is enough.",
-    ])])
     M.insert_slides(V, 8, [dict(title='x, x² or 1/x?', mode='concept', script=[
         "A favorite exam question: x is between zero and one. Which is bigger — x, x squared, root x, or one over x?",
         "Don't memorize blindly. Plug in a number from the range.",
@@ -169,11 +156,17 @@ def fix_lesson(M):
     # sidebar + active index for every slide
     sb = ['Benchmark ½', 'Same top or bottom', 'Make them match', 'Cross-multiply', 'Negatives', 'To decimals',
           'Distance from 1', 'Add to top and bottom', 'Roots? Square it', 'x, x² or 1/x?', 'Plug in numbers',
-          'Which numbers?', 'Flip them', 'Recap']
+          'Flip them', 'Recap']
     M.set_sidebar(V, sb)
     for n in range(2, len(M.video(V)['beats']) + 1):
         M.slide(V, n)['active'] = n - 2
-    assert len(M.video(V)['beats']) == 15
+    # teacher 2026-10-02: "Plug in numbers" stays exactly as in the original (Hebrew) lesson - one worked example;
+    # the general plug-in rules belong to topic 1 (Test numbers), topic 5 and topic 51, not here
+    pb = next(b for b in M.video(V)['beats'] if b['title'] == 'Plug in numbers')
+    if len(pb['items']) == 3 and 'LEGAL' in pb['items'][2]['t']:
+        pb['items'].pop(2)
+        pb['lines'] = [l for l in pb['lines'] if l.get('appear') != 2 and not (l.get('say') or '').startswith('On a real question')]
+    assert len(M.video(V)['beats']) == 14
 
 
 # ------------------------------------------------------------------ memory card
@@ -192,7 +185,7 @@ def fix_card(M):
             ['Add to top and bottom', 'same positive number added: the fraction moves toward 1', r'$\frac35<\frac46<\frac57$;  $\frac75>\frac86$'],
             ['Square them', 'roots in the fractions — both positive only', r'$\frac3{\sqrt{10}}>\frac2{\sqrt5}$ because $\frac9{10}>\frac45$'],
             ['Flip them', 'same sign only — flipping reverses the order', r'$\frac{19}{3}>\frac{25}{4}$, so $\frac3{19}<\frac4{25}$'],
-            ['Plug in numbers', 'letters: legal values, avoid 0 and 1; two survive → a negative or a fraction', '"necessarily" = true for every legal value'],
+            ['Plug in numbers', 'letters: pick legal values and compare the numbers', r'$x$ a fraction, $y>1$: try $x=\frac12$, $y=2$'],
         ]},
         {'title': 'x by range (plug in one number to check)', 'head': ['Range', 'Order (small → big)', 'Try'], 'rows': [
             [r'$0<x<1$', r'$x^2<x<\sqrt{x}<1<\frac1x$', r'$x=\frac14$: $\frac1{16}, \frac14, \frac12, 4$'],
@@ -604,13 +597,9 @@ def add_summary(M):
             A('−1 < x < 0', T(r'$-1<x<0:\quad \frac{1}{x}<x<0<x^2$', size=46)),
             'Not sure? Plug in one number from the range: one quarter, four, or negative one half.']),
         C(7, 'Plug in numbers', [
-            'Letters in the question? Plug in numbers.',
-            A('Rule 1', T('Legal values only — check every condition', size=42)),
-            A('Rule 2', T('Avoid 0 and 1', size=42)),
-            A('Rule 3', T('Two choices survive? Try a negative or a fraction', size=42)),
-            'Legal values only. Avoid zero and one. Two choices survive? Plug in a different kind of number.',
-            A('Necessarily / could be', T('"Necessarily": every legal value · "Could be": one example', size=40)),
-            '"Necessarily true" must work for every legal value. One counterexample kills a choice.']),
+            'Letters in the fractions? Plug in numbers.',
+            A('Example', T(r'$x$ a fraction, $y>1$: try $x=\frac12$, $y=2$ — then compare the two numbers', size=42)),
+            'Pick legal values — a fraction for x, more than one for y. Then compare the numbers you get.']),
         C(8, 'Before you practice', [
             'Before you practice, always ask yourself:',
             A('Check 1', T('1. What are the signs? Negative or positive?', size=42)),
