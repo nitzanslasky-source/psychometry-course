@@ -36,7 +36,7 @@ class CutRecorder{
   lastV:-1,lastKey:-1e9,forceKey:true,aBase:null,aSamples:0,aEnd:0,pcm:[],thumbs:[],err:null,cutCount:0,cutSec:0,marks:[0]});
   this.venc=new VideoEncoder({output:(c,m)=>{if(m?.decoderConfig&&!this.vmeta)this.vmeta=m;this.v.push(c)},error:e=>this.fail(e)});this.venc.configure(vc.cfg)}
  fail(e){console.error('recorder',e);if(this.err)return;this.err=e;this.onerror?.(e)}
- start(){this.state='recording';this.timer=setInterval(()=>this.grab(),1000/30);this.thumbTimer=setInterval(()=>this.thumb(),1000);if(this.track)this.readAudio()}
+ start(){this.state=this.holdStart?'paused':'recording';this.timer=setInterval(()=>this.grab(),1000/30);this.thumbTimer=setInterval(()=>this.thumb(),1000);if(this.track)this.readAudio()}
  grab(){if(this.state!=='recording'||this.venc.state!=='configured')return;const ts=Math.round(recClock()*1e6);if(ts<=this.lastV)return;
   if(this.venc.encodeQueueSize>6&&!this.forceKey)return;let f;try{f=new VideoFrame(this.canvas,{timestamp:ts,duration:33333})}catch{return}
   const key=this.forceKey||ts-this.lastKey>=2e6;if(key){this.lastKey=ts;this.forceKey=false}this.lastV=ts;
@@ -45,14 +45,39 @@ class CutRecorder{
   c.getContext('2d').drawImage(this.canvas,0,0,320,180);this.thumbs.push({t:recClock(),url:c.toDataURL('image/jpeg',.6)})}catch{}}
  async readAudio(){const reader=this.reader=new MediaStreamTrackProcessor({track:this.track}).readable.getReader();
   for(;;){let r;try{r=await reader.read()}catch{break}if(r.done)break;const d=r.value;try{if(this.state==='recording')await this.takeAudio(d)}catch(e){this.fail(e)}finally{d.close()}}}
+ async ensureAenc(sr,nch){if(this.aenc)return true;const pick=await cutAudioCodec(this.vc.mux,sr,nch);if(!pick)return false;
+  this.acfg={...pick.cfg,name:pick.name};this.aenc=new AudioEncoder({output:(c,m)=>{if(m?.decoderConfig&&!this.ameta)this.ameta=m;this.a.push(c)},error:e=>this.fail(e)});this.aenc.configure(pick.cfg);return true}
+ /* encode raw sound (one Float32Array per channel) at timestamp ts (µs), converted to the encoder's channels / rate; returns its length in µs */
+ encodePcm(chs,sr,ts){const C=this.acfg.numberOfChannels,R=this.acfg.sampleRate;let x=chs;
+  if(x.length!==C){const m=new Float32Array(x[0].length);for(const c of x)for(let i=0;i<m.length;i++)m[i]+=c[i]/x.length;x=Array.from({length:C},()=>m)}
+  if(sr!==R){const n=Math.round(x[0].length*R/sr);x=x.map(c=>{const o=new Float32Array(n);for(let i=0;i<n;i++){const p=i*sr/R,j=Math.floor(p),f=p-j;o[i]=(c[j]||0)*(1-f)+(c[Math.min(j+1,c.length-1)]||0)*f}return o})}
+  const n=x[0].length;if(!n)return 0;const buf=new Float32Array(n*C);x.forEach((c,i)=>buf.set(c,i*n));
+  const ad=new AudioData({format:'f32-planar',sampleRate:R,numberOfFrames:n,numberOfChannels:C,timestamp:ts,data:buf});this.aenc.encode(ad);ad.close();
+  const pc=new Int16Array(n);for(let k=0;k<n;k++)pc[k]=Math.max(-1,Math.min(1,x[0][k]))*32767;this.pcm.push({t:ts/1e6,sr:R,d:pc});return Math.round(n/R*1e6)}
  async takeAudio(d){
-  if(!this.aenc){const pick=await cutAudioCodec(this.vc.mux,d.sampleRate,d.numberOfChannels);if(!pick){this.track=null;this.reader?.cancel();toast('This browser cannot encode the microphone; the take will be silent.');return}
-   this.acfg={...pick.cfg,name:pick.name};this.aenc=new AudioEncoder({output:(c,m)=>{if(m?.decoderConfig&&!this.ameta)this.ameta=m;this.a.push(c)},error:e=>this.fail(e)});this.aenc.configure(pick.cfg)}
+  if(!this.aenc&&!(await this.ensureAenc(d.sampleRate,d.numberOfChannels))){this.track=null;this.reader?.cancel();toast('This browser cannot encode the microphone; the take will be silent.');return}
   if(this.aBase===null){this.aBase=Math.max(Math.round(recClock()*1e6),this.aEnd);this.aSamples=0}
-  const n=d.numberOfFrames,ch=d.numberOfChannels,sr=d.sampleRate,ts=this.aBase+Math.round(this.aSamples/sr*1e6);this.aSamples+=n;this.aEnd=ts+Math.round(n/sr*1e6);
-  const buf=new Float32Array(n*ch);for(let i=0;i<ch;i++)d.copyTo(buf.subarray(i*n,(i+1)*n),{planeIndex:i,format:'f32-planar'});
-  const ad=new AudioData({format:'f32-planar',sampleRate:sr,numberOfFrames:n,numberOfChannels:ch,timestamp:ts,data:buf});this.aenc.encode(ad);ad.close();
-  const pc=new Int16Array(n);for(let k=0;k<n;k++)pc[k]=Math.max(-1,Math.min(1,buf[k]))*32767;this.pcm.push({t:ts/1e6,sr,d:pc})}
+  const n=d.numberOfFrames,ch=d.numberOfChannels,chs=[];for(let i=0;i<ch;i++){const b=new Float32Array(n);d.copyTo(b,{planeIndex:i,format:'f32-planar'});chs.push(b)}
+  const R=this.acfg.sampleRate,ts=this.aBase+Math.round(this.aSamples/R*1e6),dur=this.encodePcm(chs,d.sampleRate,ts);
+  this.aSamples+=Math.round(dur*R/1e6);this.aEnd=ts+dur}
+ /* continue a saved take: re-encode its first `cut` seconds (picture + sound) as the start of this take */
+ async seed(blob,cut,onp){const M=Mediabunny,input=new M.Input({source:new M.BlobSource(blob),formats:M.ALL_FORMATS}),vt=await input.getPrimaryVideoTrack(),at=await input.getPrimaryAudioTrack();
+  if(!vt)throw Error('This file has no video in it.');
+  const tc=Object.assign(document.createElement('canvas'),{width:320,height:180}),tg=tc.getContext('2d');let fc=null,fg=null,lastThumb=-9,last=-1,n=0;
+  for await(const s of new M.VideoSampleSink(vt).samples(0,cut)){const t=s.timestamp,ts=Math.round(Math.max(0,t)*1e6);if(t>=cut||ts<=last){s.close();continue}
+   const src=s.toVideoFrame();let fr;
+   if(src.displayWidth===1920&&src.displayHeight===1080)fr=new VideoFrame(src,{timestamp:ts,duration:33333});
+   else{if(!fc){fc=new OffscreenCanvas(1920,1080);fg=fc.getContext('2d')}fg.drawImage(src,0,0,1920,1080);fr=new VideoFrame(fc,{timestamp:ts,duration:33333})}
+   if(t-lastThumb>=2){tg.drawImage(src,0,0,320,180);this.thumbs.push({t,url:tc.toDataURL('image/jpeg',.6)});lastThumb=t}
+   src.close();s.close();
+   while(this.venc.encodeQueueSize>6)await new Promise(r=>setTimeout(r,4));
+   const key=last<0||ts-this.lastKey>=2e6;if(key)this.lastKey=ts;this.venc.encode(fr,{keyFrame:key});fr.close();last=ts;if(++n%15===0)onp?.(Math.min(.85,t/cut*.85))}
+  if(at)for await(const s of new M.AudioSampleSink(at).samples(0,cut)){const t=s.timestamp,f=s.numberOfFrames,sr=s.sampleRate,keep=Math.max(0,Math.min(f,Math.round((cut-t)*sr)));
+   const chs=[];if(keep)for(let c=0;c<s.numberOfChannels;c++){const b=new Float32Array(f);s.copyTo(b,{planeIndex:c,format:'f32-planar'});chs.push(b.slice(0,keep))}s.close();
+   if(!keep||t<0)continue;if(!this.aenc&&!(await this.ensureAenc(sr,chs.length)))break;
+   const ts=Math.max(Math.round(t*1e6),this.aEnd);this.aEnd=ts+this.encodePcm(chs,sr,ts);onp?.(.85+.1*Math.min(1,t/cut))}
+  onp?.(.97);await this.venc.flush();if(this.aenc)await this.aenc.flush();
+  this.lastV=last;this.forceKey=true;this.aBase=null;this.aEnd=Math.max(this.aEnd,Math.round(cut*1e6));this.marks=[0,cut];this.holdStart=true;onp?.(1)}
  pause(){if(this.state==='recording')this.state='paused'}
  resume(){if(this.state!=='paused')return;const m=recClock();if(Math.abs(m-this.marks[this.marks.length-1])>.3)this.marks.push(m);this.forceKey=true;this.aBase=null;this.state='recording';cutSnapNow(true)}
  async cutTo(sec){if(this.state!=='paused')return;const us=Math.round(sec*1e6);
@@ -74,7 +99,9 @@ class CutRecorder{
   m.finalize();return new Blob([m.target.buffer],{type:this.mimeType})}
 }
 async function makeRecorder(stream,canvas,mime){
- if(CUT.ok){try{const vc=await cutVideoCodec();if(vc)return new CutRecorder(canvas,stream.getAudioTracks()[0]||null,vc)}catch(e){console.warn('cut recorder unavailable',e)}}
+ if(CUT.ok){let vc=null;try{vc=await cutVideoCodec()}catch(e){console.warn('cut recorder unavailable',e)}
+  if(vc){const r=new CutRecorder(canvas,stream.getAudioTracks()[0]||null,vc);if(CUT.cont)await r.seed(CUT.cont.blob,CUT.cont.cut,CUT.cont.onp);return r}}
+ if(CUT.cont)throw Error('Continuing a take needs a current desktop Chrome or Edge.');
  return new MediaRecorder(stream,mime?{mimeType:mime,videoBitsPerSecond:8000000,audioBitsPerSecond:160000}:undefined)}
 
 /* slide / step / pen ink over time, so a cut can put the studio back where it was at that moment */
