@@ -162,6 +162,10 @@ def apply(s):
     s = rep(s, "<kbd>P</kbd> pen", "<kbd>⌥ Option</kbd> pen ⇄ pointer · <kbd>D</kbd> pen · <kbd>P</kbd> pause")
     # Option (Alt) pressed and released on its own: switch between pen and pointer (Option+another key is left alone)
     s = rep(s, "function stopRecording(){", OPT_FN + "function stopRecording(){")
+    # smaller pointer dot (about two thirds): on screen and in the recording
+    s = rep(s, ".laser{position:absolute;width:15px;height:15px;border-radius:50%;background:#ee3d59;box-shadow:0 0 0 5px #ee3d592c;",
+            ".laser{position:absolute;width:10px;height:10px;border-radius:50%;background:#ee3d59;box-shadow:0 0 0 3px #ee3d592c;")
+    s = rep(s, "ctx.arc(laser.x*1.2,laser.y*1.2,9,0,Math.PI*2)", "ctx.arc(laser.x*1.2,laser.y*1.2,6,0,Math.PI*2)")
     s = rep(s, "◉ Pointer</button>", "◉ Pointer</button><button type=\"button\" id=\"pen-combo\" aria-pressed=\"false\" "
             "title=\"Pen + pointer: the red dot follows the mouse, and the mouse writes while you press\">✎◉ Pen + pointer</button>")
     s = rep(s, "$('#board').onpointermove=e=>{if(!$('#laser-toggle')?.checked)return;",
