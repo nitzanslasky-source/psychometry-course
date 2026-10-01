@@ -30,11 +30,13 @@ def instructions(q, t):
 
 def main():
     _, _, _, D = load(SRC)
-    lock = json.load(open(os.path.join(HERE, 'question_numbers.json')))
-    qnum = {}   # question id -> locked number (via its worked-solution video)
-    for vid, e in lock.items():
-        v = D['videos'].get(vid)
-        if v and v.get('questionId'): qnum[v['questionId']] = e['n']
+    # guided questions are numbered 1, 2, 3 ... per topic in course order (videos never show the number, so adding or
+    # reordering questions just renumbers them here)
+    qnum, per_topic = {}, {}
+    for f in D['flow']:
+        v = D['videos'].get(f['ref']) if f['type'] == 'video' else None
+        if v and v.get('questionId') and v['questionId'] not in qnum:
+            per_topic[f['topic']] = per_topic.get(f['topic'], 0) + 1; qnum[v['questionId']] = per_topic[f['topic']]
     os.makedirs(os.path.join(OUT, 'topics'), exist_ok=True)
     flow_by_id = {f['id']: f for f in D['flow']}
     outline = {'subjects': [dict(key=k, title=t, topics=[]) for k, t, _ in SUBJECTS]}

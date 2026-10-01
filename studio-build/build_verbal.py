@@ -269,6 +269,11 @@ for card in CARDS:
 
 # ---------- NITE terminology (quantitative topics only) ----------
 import terminology; TERM = terminology.apply(D)
+
+# ---------- no question numbers inside videos (the website numbers questions; see no_question_numbers.py) ----------
+import no_question_numbers; print('question-number title slides removed: %d' % no_question_numbers.apply(D))
+_left = no_question_numbers.report(D)
+assert not _left, 'videos still mention question numbers: %r' % _left[:5]
 print('NITE terminology (changes per rule and field type):'); print(terminology.report(TERM))
 
 # ---------- write ----------

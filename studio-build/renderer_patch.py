@@ -46,6 +46,20 @@ BR_TOK_NEW = "else for(const w of p.split(/(\\s+)/)){if(!w)continue;if(w.include
 BR_ROW_OLD = "for(let t of tokens){if(t.w>width&&t.tex)"
 BR_ROW_NEW = "for(let t of tokens){if(t.br){rows.push({tokens:row,h:rh});row=[];rw=0;rh=size*1.25;continue}if(t.w>width&&t.tex)"
 
+SB_OLD = ("const row=Math.min(58,(880-y)/h.sidebar.length);\n h.sidebar.forEach((name,i)=>{const on=i===b.active,yy=y+i*row,bh=row-10;\n  "
+          "if(on)s+=`<rect x=\"18\" y=\"${yy}\" width=\"${HY.sb-36}\" height=\"${bh}\" rx=\"10\" fill=\"#ffffff\" fill-opacity=\"0.13\"/>"
+          "<rect x=\"18\" y=\"${yy}\" width=\"6\" height=\"${bh}\" rx=\"3\" fill=\"#f0b64a\"/>`;\n  "
+          "s+=`<g opacity=\"${on?1:0.5}\">`+svgText(name,42,yy+bh/2+(on?8:7),on?23:21,on?'#ffffff':'#a9b8d3',on?800:500)+'</g>'});")
+SB_NEW = ("const row=Math.min(58,(880-y)/h.sidebar.length);\n"
+          " const SL=h.sidebar.map((name,i)=>{const on=i===b.active,z=on?23:21,w=on?800:500;let t=wrapText(name,HY.sb-88,z,w),zz=z;"
+          "if(t.length>1){zz=z-3;t=wrapText(name,HY.sb-88,zz,w).slice(0,3)}return {name,on,t,zz,lh:Math.round(zz*1.2)}});\n"
+          " const fit=y+row*SL.length+SL.reduce((a,l)=>a+(l.t.length-1)*l.lh,0)<=880;let yy=y;\n"
+          " SL.forEach(l=>{const on=l.on,multi=fit&&l.t.length>1,add=multi?(l.t.length-1)*l.lh:0,bh=row-10+add;\n  "
+          "if(on)s+=`<rect x=\"18\" y=\"${yy}\" width=\"${HY.sb-36}\" height=\"${bh}\" rx=\"10\" fill=\"#ffffff\" fill-opacity=\"0.13\"/>"
+          "<rect x=\"18\" y=\"${yy}\" width=\"6\" height=\"${bh}\" rx=\"3\" fill=\"#f0b64a\"/>`;\n  "
+          "s+=`<g opacity=\"${on?1:0.5}\">`+(multi?l.t:[l.name]).map((tx,j)=>svgText(tx,42,yy+(row-10)/2+(on?8:7)+j*l.lh,multi?l.zz:(on?23:21),on?'#ffffff':'#a9b8d3',on?800:500)).join('')+'</g>';\n"
+          "  yy+=row+add});")
+
 def apply(html):
     assert html.count(LABEL_OLD) == 1, 'sidebar label not found'
     html = html.replace(LABEL_OLD, LABEL_NEW)
@@ -55,6 +69,9 @@ def apply(html):
     html = html.replace(HOOK_OLD, HOOK_NEW)
     assert html.count(BR_TOK_OLD) == 1 and html.count(BR_ROW_OLD) == 1, 'richSvg tokenizer not found'
     html = html.replace(BR_TOK_OLD, BR_TOK_NEW).replace(BR_ROW_OLD, BR_ROW_NEW)
+    # sidebar: a long name wraps onto a second line (smaller) instead of running onto the slide, when there is room
+    assert html.count(SB_OLD) == 1, 'sidebar renderer not found'
+    html = html.replace(SB_OLD, SB_NEW)
     # slides are drawn into the recording as standalone SVG images (strict XML): a value-less attribute breaks them
     html = html.replace('<g data-sub>', '<g data-sub="">')
     k = html.find('function hyPie(')
