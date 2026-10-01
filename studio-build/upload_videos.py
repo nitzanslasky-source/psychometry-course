@@ -83,7 +83,10 @@ def main():
         chap = re.sub(r'\.(webm|mp4|mov)$', '.chapters.json', path)
         if os.path.exists(chap):
             try:
-                cs = json.load(open(chap, encoding='utf-8'))['chapters']
+                cs = []   # slide changes made while paused land on the same second: keep only the last one, merge repeats
+                for c in json.load(open(chap, encoding='utf-8'))['chapters']:
+                    if cs and int(c['start']) == int(cs[-1]['start']): cs.pop()
+                    if not cs or cs[-1]['title'] != c['title']: cs.append(c)
                 chapters = [{'title': c['title'][:80], 'start': int(c['start']), 'end': int(cs[k + 1]['start']) if k + 1 < len(cs) else int(c['start']) + 7200}
                             for k, c in enumerate(cs)]
                 api('POST', '/library/%s/videos/%s' % (lib, guid), key, data={'chapters': chapters})

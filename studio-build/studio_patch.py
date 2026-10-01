@@ -36,7 +36,7 @@ REPL = [
 
 FUNCS = r"""
 /* ---- chapters: the moment of every slide change during a recording (pauses excluded) ---- */
-function noteChapter(){if(!record||record.lastBeat===state.beat)return;record.lastBeat=state.beat;const now=Date.now(),t=(now-record.started-record.pausedMs-(record.pausedAt?now-record.pausedAt:0))/1000,bt=record.v.beats[state.beat]||{};(record.chapters=record.chapters||[]).push({start:Math.max(0,Math.round(t*10)/10),title:bt.bigTitle||bt.title||('Slide '+(state.beat+1))})}
+function noteChapter(){if(!record||record.lastBeat===state.beat)return;record.lastBeat=state.beat;const now=Date.now(),t=(now-record.started-record.pausedMs-(record.pausedAt?now-record.pausedAt:0))/1000,bt=record.v.beats[state.beat]||{};const ch=record.chapters=record.chapters||[],st=Math.max(0,Math.round(t*10)/10);if(ch.length&&Math.abs(ch[ch.length-1].start-st)<.05)ch.pop();ch.push({start:st,title:bt.bigTitle||bt.title||('Slide '+(state.beat+1))})}
 /* ---- recordings folder (File System Access API, desktop Chrome/Edge) ---- */
 const RF={db:null,handle:null};
 function rfDB(){return RF.db||(RF.db=new Promise((ok,no)=>{const r=indexedDB.open('studio-rec-folder',1);r.onupgradeneeded=()=>r.result.createObjectStore('h');r.onsuccess=()=>ok(r.result);r.onerror=()=>no(r.error)}))}
