@@ -699,6 +699,7 @@ def apply(M):
     three_groups(M)
     fix_card(M)
     fix_practice(M)
+    pairs_given(M)
     M.section_title(ADV, 'More methods and guided examples')
     for qid in ('wp24-g074', 'wp24-g076', 'wp24-p05'):          # stray spaces around the stem
         M.set_q(qid, stem=M.q(qid)['stemRich'].strip())
@@ -773,8 +774,11 @@ def summary(M):
             "Three groups? Count who misses a group. Everyone else MUST be in all three.",
             A("'A + B + C − 2 · total' appears", T('$A+B+C-2\\cdot\\text{total}$: $\\ 25+24+22-2\\cdot30=11$', size=44, gap=40)),
             "In one line: add the three groups and subtract the total twice.",
-            A("'Max in all three = the smallest group' appears", T('Max in all three $=$ the smallest group', size=44)),
-            "And the most in all three? The smallest group."]),
+            A("'Max in all three = the smallest group' appears", T('Max in all three $=$ the smallest group', size=44, gap=30)),
+            "And the most in all three? The smallest group.",
+            A("'Pairs given? Max in all three = the smallest pair overlap' appears",
+              T('Pairs given? Max in all three $=$ the smallest pair overlap', size=42)),
+            "They also give what each pair shares? Then the most in all three is the smallest pair overlap."]),
         S(8, [
             "Before you start, always ask yourself:",
             A('Check 1 appears', T('Range or exact? Is a fact missing?', size=40, gap=30)),
@@ -786,3 +790,58 @@ def summary(M):
     ]
     last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
     M.new_video('r26-t24-summary', TOPIC, 'Summary: Overlapping Groups', sb, slides, ADV, after=last)
+
+
+# =====================================================================================================
+# 2026-10-01 elite comparison: three groups when every PAIR overlap is given -> max in all three = the smallest pair
+# overlap (the "smallest group" rule stays as the first step). Real exam: 2023_autumn_q2_20.
+# =====================================================================================================
+def pairs_given(M):
+    vid = 'r26-t24-three-groups'     # 1 title, 2 count who is missing, 3 can it be zero?, 4 recap
+    M.insert_slides(vid, 3, [dict(mode='concept', title='Pairs given', active=2, script=[
+        "One more step. Sometimes they also tell you what each PAIR of groups shares.",
+        A("'Chess 40 · drama 35 · music 30; pairs 12, 9, 15' appears",
+          T('Chess $40$ · drama $35$ · music $30$\nChess + drama $12$ · chess + music $9$ · drama + music $15$', size=38, gap=40)),
+        "Three clubs: forty in chess, thirty-five in drama, thirty in music.",
+        "Twelve are in both chess and drama. Nine in chess and music. Fifteen in drama and music.",
+        "At most how many are in all three?",
+        "Someone in all three is in every pair too. So the all-three group fits inside each pair.",
+        D('Circle "9"'),
+        "It can't be bigger than the smallest pair: nine.",
+        A("'Pairs given? Max in all three = the smallest pair overlap' appears",
+          T('Pairs given? Max in all three $=$ the smallest pair overlap', size=40, gap=40)),
+        "Not thirty. The smallest group is the ceiling when you know only the groups. The pairs bring it down to nine.",
+        D('Write "12 + 9 = 21 ≤ 40 · 12 + 15 = 27 ≤ 35 · 9 + 15 = 24 ≤ 30 → min 0"'),
+        "And the least? Here it can be zero: the twelve, the nine and the fifteen can all be different people. Every club has room for them.",
+        "So here: from zero to nine.",
+    ])])
+    M.set_slide(vid, 5, active=3, script=[
+        "Let's lock it in.",
+        A("'Min in all three = total − everyone who misses a group, or 0' appears",
+          T('Min in all three $=$ total minus the missing ones — or $0$', size=40)),
+        A("'One line: A + B + C − 2 · total' appears", T('One line: $A+B+C-2\\cdot\\text{total}$', size=40)),
+        A("'Max in all three = the smallest group' appears", T('Max in all three $=$ the smallest group', size=40)),
+        A("'Pairs given? Max = the smallest pair overlap' appears",
+          T('Pairs given? Max $=$ the smallest pair overlap', size=40)),
+        D('Circle "or 0"'),
+        'Your turn — a guided question.'])
+    M.set_sidebar(vid, ['Count who is missing', 'Can it be zero?', 'Pairs given', 'Recap'])
+
+    c = M.card('mem-r26-t24-more')
+    c['tables'][1]['rows'].append(['Max in all three, pairs given', 'the smallest pair overlap',
+                                   'pairs $12, 9, 15\\to9$'])
+
+    qid = 'q-r26-t24-12'
+    M.new_q(qid, TOPIC, 'In a school, 50 students sing in the choir, 45 play in the band, and 40 are in the drama club. '
+                        '14 students are in both the choir and the band, 11 are in both the choir and the drama club, '
+                        'and 16 are in both the band and the drama club. What is the greatest possible number of students '
+                        'who are in all three?',
+            ['40', '11', '41', '16'], 2, [
+        'A student in all three is also in each of the three pairs. Therefore the number in all three is at most the '
+        'smallest pair overlap: $11$.',
+        '$11$ is possible: put the $11$ choir and drama students in the band too. Then choir and band only $=14-11=3$, '
+        'band and drama only $=16-11=5$. Every group has room: choir $11+3=14\\le50$, band $11+3+5=19\\le45$, '
+        'drama $11+5=16\\le40$.',
+        'Traps: $40$ is the smallest group (the ceiling only when the pairs are not given), $16$ is the largest pair, '
+        'and $41=14+11+16$ adds the pairs.'])
+    M.place_q(qid, PRAC, after='wp24-p13')

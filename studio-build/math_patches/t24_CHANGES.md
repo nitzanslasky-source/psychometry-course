@@ -67,3 +67,11 @@ Check: `python3 math_check.py 24` gives 0 problems, 0 warnings and 0 layout prob
 
 **Summary lesson added:** `r26-t24-summary` "Summary: Overlapping Groups" (about 2.8 minutes), at the end of "More methods and guided examples", right before the practice.
 Slides: Summary · Four regions (a full group = its only-region + both) · Count each once (A + B − both + neither = total) · Maximum overlap (the smaller group) · Minimum overlap ((A + B) − total, or 0; fractions and percents) · Other regions (union, neither, A only; "at most / at least" of the thing they ask) · The squares method (strip, exactly one = A + B − 2·both) · Two-way tables (plug in 100, rows/columns, "of the ..." is the whole) · Three groups (min = total − the missing ones, A + B + C − 2·total, max = smallest group) · Before you practice (range or exact?, which region?, what overlap makes THIS big or small?, who is the whole?, plus the common traps).
+
+## 2026-10-01 elite comparison
+Target: real exam 2023_autumn_q2_20 (every pair of three groups shares a given number → range of all three).
+- The rule "Max in all three = the smallest group" stays exactly as taught. It is the ceiling when only the group sizes are known.
+- **Lesson "Three Groups" (r26-t24-three-groups): new slide "Pairs given"** after "Can it be zero?". Clubs of 40, 35 and 30; pairs share 12, 9 and 15. Someone in all three is in every pair, so the maximum is the smallest pair overlap: 9 (not 30). The minimum here can be 0 (12 + 9, 12 + 15 and 9 + 15 all fit in the clubs). Recap has a new line; sidebar updated.
+- **Card mem-r26-t24-more**: new row "Max in all three, pairs given — the smallest pair overlap — pairs 12, 9, 15 → 9".
+- **Summary (r26-t24-summary), slide "Three groups"**: new line "Pairs given? Max in all three = the smallest pair overlap".
+- **New practice question q-r26-t24-12** (last in the practice): choir 50, band 45, drama 40; pairs 14, 11, 16; greatest possible number in all three = 11 (choice 2). Traps: 40 (smallest group), 16 (largest pair), 41 (sum of the pairs).

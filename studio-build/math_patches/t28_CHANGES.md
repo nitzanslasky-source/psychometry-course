@@ -79,3 +79,19 @@ Check: `python3 math_check.py 18 27 28 33` shows 0 problems, 0 warnings and 0 la
 - alg-extra-unit-t18-3-4 comes from T18 (the T18 patch moves it). It is first in the T28 practice order, the easiest question.
 
 **Summary lesson added:** `r26-t28-summary` "Summary" (about 2.2 minutes). It is at the end of "Further guided examples", after the advanced card and right before the practice. Slides: Summary · Stages: multiply · Repetition and rows · Counted twice? · Who stays out · Cases · Objects into boxes · Together and apart · Before you practice (the 5 checklist questions; traps: adding instead of multiplying, dividing without a reason, a zero that leads a number).
+
+## 2026-10-01 elite comparison
+
+Teacher-approved addition: **factorials as algebra**, in the lesson "Factorial Expressions". Targets the 12 real-exam factorial questions found (2020 winter I-19, 2022 autumn I-17, 2020 autumn I-4, 2024 winter II-17, 2019 winter II-16, 2021 autumn II-5, 2021 spring I-5, 2022 winter II-7, 2025 winter I-7, 2025 spring I-14, 2026 spring II-18, 2025 autumn I-17 — the last is solved by the existing "plug in a small legal value").
+
+- Video "Factorial Expressions": four new slides before the recap:
+  - **Know them by sight**: 3! … 7! (120, 720, 5040); example a! = 6 · 20 = 120 → a = 5.
+  - **A run of neighbors**: b!/a! = (a + 1)…b; backwards: b! = 56 · a! → 56 = 7 · 8 → a = 6, b = 8; n!/(n − 1)! = n, n!/(n − 2)! = n(n − 1).
+  - **Sums of factorials**: take out the smaller one: 5! + 6! = 5! · 7, 6! + 8! = 6! · 57, 8! − 7! = 7 · 7!; never subtract inside the "!".
+  - **Factorials and primes**: 7! = 2⁴ · 3² · 5 · 7; divisible by 16 yes, by 32 / 25 no; count the 2s, not the even numbers.
+  - Recap rewritten with the new lines; sidebar updated. The video is now about 4.6 minutes (was 2.1).
+- Advanced memory card: four new rows (Know by sight, Run of neighbors, Sum of factorials, Primes in n!).
+- New guided question **q-r26-t28-28** (right after the lesson, before wp28-g141) with solution video: (10! − 9!)/8! = 81, choice 2 (Method 1 take out 9!, Method 2 everything in 8!).
+- New practice (after wp28-p02): **q-r26-t28-31** (720 + 5040)/6! = 8, choice 2; **q-r26-t28-29** x!/y! = 110 → x + y could be 20, choice 2; **q-r26-t28-30** largest k with 2ᵏ dividing 9! = 7, choice 3.
+- Summary video: new slide "Factorial algebra" after "Repetition and rows"; sidebar updated.
+- All four questions solved by computer: exactly one correct choice each.

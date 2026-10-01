@@ -10,7 +10,35 @@ SB = ['Small picture', 'Pause at the full stop', 'Keep control words', 'Give it 
 
 def C(t, size=40): return T(t, size=size)
 
+def M(t, y, size=34): return T(t, size=size, x=410, y=y, w=1140)
+
 MODULES = [
+# ------------------------------------------------------------------ the verbal section: map and time plan
+# Facts from NITE's official Verbal Reasoning guide (studio-build/nite_verbal_guide.txt, "Multiple-choice sections –
+# general") and the English practice tests Summer 2024 / Summer 2025: 20 questions / 20 minutes per verbal section;
+# order analogies (3-5) → critical reading and inference incl. sentence completions (9-11) → reading comprehension (5-6)
+# last; analogies and inference roughly in ascending difficulty; passage questions in the order of the text;
+# "Each correct answer is worth one point" (score calculation page of the practice tests).
+lesson('vr39-section-map', 'The Verbal Section', ['Map and clock'], [
+ dict(mode='title', title='The Verbal Section', script=[
+  "Before we learn anything - a map of where we're going, and a clock.",
+ ]),
+ dict(mode='concept', active=0, title='Map and clock', script=[
+  A("20 questions · 20 minutes appears", M('A verbal section: 20 questions · 20 minutes  (the exact numbers are at the top of the section)', 110)),
+  "A verbal section: twenty questions, twenty minutes. The exact numbers are printed at the top of the section - glance at them.",
+  A("The order appears", M('Order: analogies (3–5) → critical reading & inference, incl. sentence completions (9–11) → reading passage (5–6), always last', 230)),
+  "Always the same order. Analogies first - three to five. Then critical reading and inference - nine to eleven, sentence completions among them. And the reading passage, always last - five or six questions.",
+  A("Easy → hard; passage in text order appears", M('Analogies and inference: roughly easy → hard · passage questions: in the order of the passage', 380)),
+  "Analogies and inference go roughly from easy to hard. The passage questions don't - they follow the order of the passage.",
+  A("The plan appears", M('Plan: analogies ≈ 3 min · inference ≈ 10 min · keep 6–7 minutes for the passage', 500)),
+  "The plan: about three minutes for the analogies, about ten for inference - and keep six to seven minutes for the passage. You need them to read it carefully.",
+  A("The last inference question appears", M('Trap: the last inference question – usually the hardest. Don’t sink time into it: best guess, on to the passage', 610)),
+  "The trap: the last inference question. It's usually the hardest one. Don't sink your passage minutes into it - mark your best guess and move on.",
+  A("Never leave a blank appears", M('Score: correct answers only (“each correct answer is worth one point”) → never leave a blank', 740)),
+  "And your score counts correct answers - NITE: each correct answer is worth one point. A blank earns nothing. Never leave one.",
+ ]),
+], TOPIC),
+
 lesson('vr39-active-reading', 'Active Reading', SB, [
  dict(mode='title', title='Active Reading', script=[
   "Active reading.",

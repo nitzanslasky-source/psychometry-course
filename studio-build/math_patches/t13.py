@@ -19,7 +19,8 @@ def qid(n): return 'q-r26-t13-%02d' % n
 # New solution videos get 14, 15, 16 in the order they are created below.
 # (Pass 2: guided q-r26-t13-04 'from a range to bars' was removed.)
 SB1 = ['Question %d' % n for n in (1, 2, 3, 4, 5, 14, 15)]
-SB2 = ['Question %d' % n for n in (6, 7, 8, 9, 16, 10, 11, 12, 13)]
+# 2026-10-01: the sign-reading guided question (created last, so number 17) sits right after Q9 (q-366).
+SB2 = ['Question %d' % n for n in (6, 7, 8, 9, 17, 16, 10, 11, 12, 13)]
 
 # number line: |x - 2| < 4  ->  within 4 of 2
 NL_SVG = ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 150" role="img" aria-label="Number line: the numbers less than 4 away from 2">'
@@ -125,7 +126,7 @@ def apply(M):
         "Rule two: for a product, you can take the bars on the whole thing or on each factor. Same result.",
         "The same is true for a fraction: bars on the top, bars on the bottom.",
         A('Rule 3 appears: |a + b| ≤ |a| + |b|', T('$|a+b|\\le|a|+|b|$', size=54)),
-        "Rule three is for a sum — and honestly? If you don't memorize this one, that's fine. Plugging in will get you through.",
+        "Rule three is for a sum. Keep it in mind — in the advanced part it becomes a tool for reading signs.",
     ])
 
     # slide 7: sign clues - add |x| = -x -> x <= 0 (zero works too)
@@ -747,6 +748,11 @@ def apply(M):
         'q-376', 'q-384', 'q-382', 'q-381', 'q-385'])
 
     # =====================================================================================
+    # 8b. 2026-10-01 elite comparison: the sum rule as a sign-reading tool
+    # =====================================================================================
+    elite_signs(M)
+
+    # =====================================================================================
     # 9. Keep video titles and slide notes in sync with the rewritten stems
     # =====================================================================================
     for vid, v in M.D['videos'].items():
@@ -761,6 +767,124 @@ def apply(M):
     # 10. Pass 2: summary lesson right before the independent practice
     # =====================================================================================
     summary(M)
+
+
+def elite_signs(M):
+    """2026-10-01 elite comparison: |a+b| vs |a|+|b| read as a sign tool (same signs add, opposite signs cancel).
+    Real exams: 2021 autumn II-15, 2024 spring II-18, 2025 spring I-19, 2020 autumn II-13."""
+    # --- Exam Tools video: five tools now, two new slides before the recap
+    M.edit_lines(TOOLS, 1, lambda ls: [{'say': "Five tools for the harder absolute-value questions."} if l.get('say', '').startswith('Four tools') else l for l in ls])
+    M.insert_slides(TOOLS, 5, [
+        dict(mode='concept', active=4, title='Add or cancel', script=[
+            "The last tool reads signs. It comes from the sum rule.",
+            A('|−3 + (−5)| = 8 appears', T('$|-3+(-5)|=8=3+5$', size=50, gap=40)),
+            "Same signs: both numbers pull the same way. The sizes add up.",
+            A('|−3 + 5| = 2 appears', T('$|-3+5|=2=5-3$', size=50, gap=40)),
+            "Opposite signs: they pull against each other. They cancel.",
+            "What's left is the bigger size minus the smaller one.",
+            A("'Same signs → add · opposite signs → cancel' appears",
+              T('Same signs $\\to$ add $\\qquad$ Opposite signs $\\to$ cancel', size=44)),
+            D('Write "|x| = 9, |y| = 2:  |x + y| = 11 or 7"'),
+            "Example: x is nine away from zero, y is two away.",
+            "Same signs: eleven. Opposite signs: nine minus two, seven. Only two possible values.",
+        ]),
+        dict(mode='concept', active=5, title='Read the signs', script=[
+            "Now read it backwards: from the sizes to the signs.",
+            "Remember, x minus y is x plus negative y. The minus flips the sign of y.",
+            A('|x + y| < |x − y| → x · y < 0 appears', T('$|x+y|<|x-y| \;\\to\; x\\cdot y<0$', size=48, gap=40)),
+            "In one of these two, the sizes add. In the other one, they cancel.",
+            "The sum is the smaller one? Then the sum is where they cancel. Opposite signs — a negative product.",
+            D('Write "x = 4, y = −1:  |3| < |5| ✓"'),
+            A('|x + y| = |x| − |y| → opposite signs appears',
+              T('$|x+y|=|x|-|y| \;\\to\;$ opposite signs, $|x|\\ge|y|$', size=44, gap=40)),
+            "The sizes subtract? That's cancelling. Opposite signs again.",
+            "And x is the bigger one in size — the left side can't be negative.",
+            A('|a + b| < |a| → opposite signs appears', T('$|a+b|<|a| \;\\to\;$ $b$ has the opposite sign of $a$', size=44)),
+            "The sum is smaller than one of its numbers? Adding b made it smaller. So they cancelled — opposite signs.",
+            "And b is less than twice a in size. A bigger b would overshoot past zero.",
+            "On the exam the numbers are usually not zero. A zero adds nothing and cancels nothing.",
+        ]),
+    ])
+    M.set_slide(TOOLS, 8, script=[
+        "Let's lock it in.",
+        A("'|x|² = x², √(x²) = |x|' appears", T('$|x|^2=x^2$ · $\\sqrt{x^2}=|x|$ · $|a-b|=|b-a|$', size=40)),
+        A("'Bars on both sides → square' appears", T('Bars on both sides $\\to$ square both sides', size=40)),
+        A("'Letter on the right → check' appears", T('Letter on the right $\\to$ check every answer', size=40)),
+        A("'|x − a| = distance' appears", T('$|x-a|$ = distance between $x$ and $a$', size=40)),
+        A("'Same signs add, opposite signs cancel' appears", T('Same signs $\\to$ sizes add · opposite signs $\\to$ cancel', size=40)),
+        "Next: a card with the question wordings. Then the advanced questions.",
+    ])
+    M.set_sidebar(TOOLS, ['Squares and bars', 'Square both sides', 'Letter on the right', 'Distance',
+                          'Add or cancel', 'Read the signs', 'Recap'])
+    M.slide(TOOLS, 8)['active'] = 6
+
+    # --- memory card: the sign-reading rows
+    card = M.card('mem-absolute-value')
+    for t in card['tables']:
+        if t['title'] == 'Rules':
+            for r in t['rows']:
+                if r[0] == '$|a+b|\\le|a|+|b|$':
+                    r[1] = 'Same signs: the sizes add (equal). Opposite signs: they cancel (smaller).'
+        if t['title'] == 'Sign clues':
+            t['rows'] += [
+                ['$|x+y|<|x-y|$', 'opposite signs: $x\\cdot y<0$'],
+                ['$|x+y|=|x|-|y|$', 'opposite signs, and $|x|\\ge|y|$'],
+                ['$|a+b|<|a|$', '$b$ has the opposite sign of $a$, and $|b|<2|a|$'],
+            ]
+
+    # --- guided question: read the signs, then add or cancel the sizes
+    g = qid(13)
+    M.new_q(g, TOPIC, 'Given:\n$\\begin{cases} |a|=7 \\\\ |b|=3 \\\\ |a+b|<|a-b| \\end{cases}$\nWhat is $|a+b|$?',
+            ['$10$', '$4$', '$-4$', 'It cannot be determined from the given information.'], 2, [
+        '$|a+b|<|a-b|$: in one of the two the sizes add, and in the other they cancel. The sum is the smaller one, '
+        'so in the sum they cancel. So $a$ and $b$ have opposite signs.',
+        'Opposite signs cancel: $|a+b|$ is the bigger size minus the smaller one: $7-3=4$.',
+        'Check all four sign options. $a=7$, $b=-3$: $|4|<|10|$ ✓. $a=-7$, $b=3$: $|-4|<|-10|$ ✓. '
+        '$a=7$, $b=3$: $|10|<|4|$ ✗. $a=-7$, $b=-3$: $|-10|<|-4|$ ✗. Both allowed options give $|a+b|=4$.',
+        'Choice 1 ($10$) is the same-signs case, which the third given rules out. Choice 3 forgets that an absolute value '
+        'is never negative. Choice 4 is right only if you ignore the third given.'])
+    M.place_q(g, SEC2, after='solve-q-366')
+    _solution(M, g, 'Advanced Absolute Value', SB2, 38, [
+        "Three givens. The first two give sizes.",
+        "The third one tells you the signs.",
+    ], [
+        ('Method 1 · Read the signs', [
+            "a is seven away from zero. b is three away. The signs — we don't know yet.",
+            "So a plus b is ten — or four. Same signs add, opposite signs cancel.",
+            D('Under the question write "same signs: 10   opposite signs: 4"'),
+            "Now the third given. a plus b, against a minus b.",
+            "In one of them the sizes add. In the other, they cancel.",
+            D('Underline "|a + b| < |a − b|" and write "the sum cancels → opposite signs"'),
+            "The sum is the smaller one. So the sum is where they cancel. a and b have opposite signs.",
+            D('Write "|a + b| = 7 − 3 = 4"'),
+            "Opposite signs: the bigger size minus the smaller. Seven minus three — four.",
+            D('Circle choice 2'),
+            "Choice two.",
+            "Ten is the same-signs case — the third given throws it out. Negative four? Bars are never negative.",
+            "And \"cannot be determined\" is the trap for anyone who skips the third given.",
+        ]),
+        ('Method 2 · Try the four sign cases', [
+            "Not sure about the tool? There are only four sign options. Try them all.",
+            D('Write "a = 7, b = 3:  |10| < |4| ✗"'),
+            "Both positive: ten is not less than four. Out.",
+            D('Write "a = −7, b = −3:  |−10| < |−4| ✗"'),
+            "Both negative: ten and four again. Out.",
+            D('Write "a = 7, b = −3:  |4| < |10| ✓     a = −7, b = 3:  |−4| < |−10| ✓"'),
+            "Opposite signs: four is less than ten. Both work.",
+            D('Circle the two 4s'),
+            "And in both, the absolute value of a plus b is four. Choice two.",
+        ]),
+    ])
+
+    # --- practice question: the minus flips the sign
+    p = qid(14)
+    M.new_q(p, TOPIC, '$a$ and $b$ are numbers different from $0$.\nGiven: $|a-b|=|a|+|b|$.\nWhich of the following is necessarily true?',
+            ['$a>b$', '$|a|>|b|$', '$a\\cdot b<0$', '$a+b>0$'], 3, [
+        '$a-b=a+(-b)$. The sizes add, so $a$ and $-b$ have the same sign.',
+        'So $a$ and $b$ have opposite signs, and $a\\cdot b<0$ (choice 3).',
+        'The others are not necessary. $a=2$, $b=-5$: $|7|=7=2+5$ ✓, but $|a|<|b|$ (choice 2 fails) and $a+b=-3$ (choice 4 fails).',
+        '$a=-2$, $b=5$: $|-7|=7=2+5$ ✓, but $a<b$ (choice 1 fails).'])
+    M.place_q(p, PRACT, after='q-384')
 
 
 SUMMARY_SB = ['Distance from zero', 'The rules', 'Sign clues', 'Equations', 'Inequalities',
@@ -788,7 +912,8 @@ def summary(M):
             A('Product and fraction rules appear', T('$|a\\cdot b|=|a|\\cdot|b| \\qquad \\left|\\frac{a}{b}\\right|=\\frac{|a|}{|b|}$', size=46, gap=30)),
             "A product or a fraction: the bars can go on each part.",
             A('|a + b| ≤ |a| + |b| appears', T('$|a+b|\\le|a|+|b|$', size=46, gap=30)),
-            "A sum: at most the sum of the bars. Not sure? Plug in.",
+            "A sum: same signs — the sizes add. Opposite signs — they cancel, so it's smaller.",
+            "And read it backwards: if the sizes cancelled, the signs were opposite.",
             A('Squares and roots appear', T('$|x|^2=x^2 \\qquad \\sqrt{x^2}=|x| \\qquad |a-b|=|b-a|$', size=44)),
             "A square and the bars both remove the sign. The root of x squared is the absolute value of x — not x.",
         ]),

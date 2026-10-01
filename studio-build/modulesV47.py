@@ -6,13 +6,14 @@ from dsl import *
 T47 = 47
 GT = 'Research Questions'
 SBQ = ['Q1 · Find X and Y', 'Q2 · Assumptions', 'Q3 · Explain findings', 'Q4 · Use conclusions',
-       'Q5 · Combine facts']
+       'Q5 · Combine facts', 'Q6 · Test that decides']
 
 MODULES = [
 # ------------------------------------------------------------------ lesson
 lesson('vr47-research', 'How Research Works',
  ['Where these appear', 'Hypothesis: X → Y', 'Compare groups', 'Everything else equal', 'Link to strengthen',
-  'Control group', 'Two kinds of control', 'Results → conclusion', 'Explaining findings', 'Recap'], [
+  'Control group', 'Two kinds of control', 'Results → conclusion', 'Explaining findings', 'Which test decides?',
+  'Tests to throw out', 'Recap'], [
  dict(mode='title', title='How Research Works', script=[
   "Scientific reasoning.",
   "Hypotheses, experiments, studies, findings, conclusions — before we solve questions, a short introduction to how research works.",
@@ -70,6 +71,8 @@ lesson('vr47-research', 'How Research Works',
   "We run the experiment and get results. They either support the hypothesis — or contradict it.",
   A("Supported hypothesis → conclusion appears", T('Supported → the hypothesis becomes the conclusion', size=40)),
   "When the finding supports it, the hypothesis becomes our conclusion.",
+  A("Conclusion questions: two traps appears", T('Choosing a conclusion: true but not the answer · too strong (all, always, proven) → the most careful choice that still says something', size=32)),
+  "And when a question asks which conclusion follows - two traps. A choice that's true but isn't what the study shows, and a choice that says too much: everyone, always, proven. Take the most careful choice that still says something.",
  ]),
  dict(mode='concept', active=8, title='Explaining findings', src='hebrew', script=[
   A("Explanation of the findings appears", T('Explaining the findings: why did it come out this way?', size=40)),
@@ -77,7 +80,29 @@ lesson('vr47-research', 'How Research Works',
   "Suppose the eight-hour group did better. An explanation: they practiced more types of questions.",
   "And if they did worse? Maybe eight hours a day exhausted them. Explaining findings is a question type too.",
  ]),
- dict(mode='concept', active=9, title='Recap', script=[
+ dict(mode='concept', active=9, title='Which test decides?', script=[
+  "One more question type: two researchers, two explanations for the same finding. Which study could decide between them?",
+  A("Finding + two explanations appears", T('Finding: plants by the window grow bigger.  A: more light.  B: more warmth.', size=36)),
+  "A small example. Plants by the window grow bigger. A says: it's the light. B says: it's the warmth.",
+  A("Step 1: each explanation in one line appears", T('Step 1: write each explanation in one line  (A: light · B: warmth)', size=36)),
+  "Step one: write each explanation in one short line. Light. Warmth.",
+  A("Step 2: a case where they predict different results appears", T('Step 2: find a case where A and B predict different results', size=36)),
+  "Step two: find a case where the two explanations predict different results.",
+  A("A lamp in a cool room appears", T('A lamp in a cool room (light, no warmth) → A says bigger, B says not  ✓ decides', size=36)),
+  "A lamp in a cool room: light, but no warmth. A says the plants grow bigger. B says they don't. Whatever happens - one explanation loses. That test decides.",
+ ]),
+ dict(mode='concept', active=10, title='Tests to throw out', script=[
+  "And the tests that look scientific - but decide nothing.",
+  A("Throw out: a test both explanations agree on appears", T('Throw out: a test both explanations agree on', size=40)),
+  "Throw out any test where both explanations predict the same thing. Whatever the result, nobody loses.",
+  A("Another sunny, warm window appears", T('Plants by another sunny, warm window → A says bigger, B says bigger  ✗', size=36)),
+  "Plants by another sunny, warm window? Both say bigger. Decides nothing.",
+  A("Measuring more precisely appears", T('Measuring the same finding more precisely → both still agree  ✗', size=36)),
+  "And the sneaky one: measuring the same finding more precisely - every plant weighed to the gram. Still both say bigger. Out.",
+  A("For each choice: what does A predict? B? appears", T('For every choice ask: what does A predict? What does B predict? Same → out.', size=36)),
+  "So for every choice ask two questions: what does A predict? What does B predict? Same answer - cross it out.",
+ ]),
+ dict(mode='concept', active=11, title='Recap', script=[
   A("Recap chain appears", T('Hypothesis → experiment (groups, only X differs) → results → support or not', size=36)),
   "Quick recap. I form a hypothesis. I run an experiment: two groups, and only the tested factor differs — everything else equal.",
   "I get results — they support what I supposed, or they don't.",
@@ -231,10 +256,42 @@ guided(4, 'vo-47-005', GT, SBQ,
    A("Chicken and egg again appears", P('In research questions, watch for chicken and egg: cause and effect swapped')),
    "One last thing from strengthen and weaken: in research questions, the chicken-and-egg explanation — cause and effect swapped — comes up a lot.",
   ])], T47),
+
+# ------------------------------------------------------------------ Q6 · (medium): which study decides between two explanations
+# Original vo-47-201 (content/verbal_originals_M.json); type of Summer 2025 §1 Q6 / October 2014 §1 Q14.
+guided(5, 'vo-47-201', GT, SBQ,
+ ["A sample question — medium level.", "Two researchers, two explanations — which study decides?"],
+ [('One line each', [
+   "Birds of a certain species start singing shortly before sunrise. Near a highway, they start much earlier than deep in the forest.",
+   "One researcher: they sing early to be heard before the morning traffic starts. The other: the streetlights make them act as if dawn has already come.",
+   D("Write: A = traffic noise · B = streetlights"),
+   A("A: noise · B: light appears", P('Step 1 — one line each:  A = traffic noise · B = streetlights')),
+   "One line each. A: noise. B: light.",
+   A("Find a case where A and B predict different results appears", P('Step 2 — which study makes A and B predict different results?')),
+   "Now - which study makes them predict different results?",
+  ]),
+  ('Same prediction? Out', [
+   "Choice one: measure more precisely how many minutes before sunrise they start.",
+   "A says: early. B says: early. Measuring it to the minute doesn't change that. Both agree. Out.",
+   D("Cross out choice 1"),
+   "Choice three: birds near another highway - also lit, also busy. A: early. B: early. Same prediction. Out.",
+   D("Cross out choice 3"),
+   "Choice four: forest birds in summer and in winter. Neither explanation is about forest birds. They predict the same - nothing to decide. Out.",
+   D("Cross out choice 4"),
+  ]),
+  ('The test that decides', [
+   "Choice two: a lit stretch with no traffic, against a busy stretch with no lights.",
+   D("Write: lit + quiet → B: early · busy + dark → A: early"),
+   "Light without noise - B says early, A says normal. Noise without light - A says early, B says normal.",
+   A("Different predictions → this test decides appears", P('Different predictions → whatever happens, one explanation loses')),
+   "Different predictions. Whatever the birds do, one explanation loses. That's the test that decides.",
+   D("Circle choice 2"),
+   "Choice two.",
+  ])], T47),
 ]
 
 MEMORY = [
- dict(id='mem-research', after='solve-vo-47-005', title='Scientific reasoning — the words to know',
+ dict(id='mem-research', after='solve-vo-47-201', title='Scientific reasoning — the words to know',
   intro='Every study follows one chain: hypothesis → experiment → results → conclusion.',
   tables=[dict(head=['Term', 'What it means'], rows=[
    ['!Hypothesis', 'Cause and effect: if X changes, Y changes'],
@@ -246,6 +303,8 @@ MEMORY = [
    ['Explaining findings', 'Why the results came out as they did'],
   ])],
   tips=['Two question types: understanding the study · understanding the findings.',
+        'Which test decides? One line per explanation; find a case where they predict different results. A test both agree on (or measuring the same thing more precisely) decides nothing.',
+        'Choosing a conclusion: true but not the answer, too strong (all, always, proven) → the most careful choice that still says something.',
         "Assumptions: flip it — if the opposite would ruin the experiment, it's an assumption.",
         'Conclusions given: work out what must follow before reading the choices.',
         'An explanation must cover every part of the finding.']),

@@ -86,3 +86,19 @@ Guided questions are renumbered automatically. The topic now has 21 guided quest
 **Restored (2):** alg-extra-unit-t19-3-3 ($F(F(2))$ with $F(x)=x^2-3$, answer $-2$) and alg-extra-unit-t19-3-6 ($H(H(4))$ with $H(x)=\frac1x$, answer $4$), cleaned up (TeX, numeric solutions), at the easy end of the practice.
 
 **Summary lesson (1 new video):** `r26-t19-summary` "Summary", at the end of "Defined operations · advanced study", right before the independent practice. Slides: Summary · Read, then substitute · Brackets on every input · One step at a time · Match the whole input · Missing pieces · Conditions · Circular · both sides · Always? Must? · Before you practice. Only content the Topic 19 lessons teach.
+
+## 2026-10-01 elite comparison
+
+Teacher-approved addition: **property questions** — the question gives a property, not a definition, and four candidate rules. Targets the real exams 2020 autumn I-9, 2023 spring I-20, 2024 winter II-20, 2022 autumn II-14, 2024 autumn I-18 (2021 spring I-8 is solved by the existing "set them equal" skill).
+
+- Video "Operation Patterns": three new slides before the recap (type seven):
+  - **Property questions**: put each rule on trial with a test value (not 0 or 1: 1² = 1 fools you). ◆(◆(x)) = x: x² gives 3 → 9 → 81 ✗, 10 − x gives 3 → 7 → 3 ✓. Step property ◆(x + 1) = 3 · ◆(x): test two neighbors (3x: 6, 9 ✗; 3ˣ: 9, 27 ✓).
+  - **Rules that undo themselves**: the families c − x (also −x) and c/x (also 1/x = x⁻¹); never x², √x, 2x, x + 5.
+  - **Inverse operation**: undo the steps in reverse order (◆(x) = 2x + 3 → #(y) = (y − 3)/2), check with a number; the trap undoes them in the wrong order.
+  - Recap: new line "Property? Put each rule on trial · inverse: undo in reverse order". Sidebar updated. The video is now about 6.8 minutes (was 4.5).
+- Memory card: three new rows (Property given, Undoes itself, Inverse operation).
+- New guided question **q-r26-t19-18** (end of the theory section, after q-549) with solution video (Method 1 trial with x = 2, Method 2 know the family). ◆(◆(x)) = x: which rule? Answer: choice 4 (6/x).
+- New practice **q-r26-t19-19** (after q-r26-t19-09): ◆(x + 1) = ◆(x) + 3 → choice 2 (3x); trap x + 3.
+- New practice **q-r26-t19-20** (after -19): inverse of ◆(x) = √x + 4 → choice 2 ((y − 4)²); trap y² − 4 (wrong order).
+- Summary video: new slide "Property questions" after "Missing pieces"; sidebar updated.
+- All three questions solved by computer: exactly one correct choice each.

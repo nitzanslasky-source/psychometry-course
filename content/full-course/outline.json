@@ -130,11 +130,11 @@
     {
      "id": 13,
      "title": "Absolute Value",
-     "videos": 19,
+     "videos": 20,
      "lessons": 3,
-     "questions": 45,
-     "minutes": 38,
-     "steps": 66
+     "questions": 47,
+     "minutes": 41,
+     "steps": 69
     },
     {
      "id": 14,
@@ -184,11 +184,11 @@
     {
      "id": 19,
      "title": "Defining a New Operation",
-     "videos": 23,
+     "videos": 24,
      "lessons": 3,
-     "questions": 58,
-     "minutes": 38,
-     "steps": 82
+     "questions": 61,
+     "minutes": 42,
+     "steps": 86
     },
     {
      "id": 20,
@@ -217,11 +217,11 @@
     {
      "id": 22,
      "title": "General word problems and ratios",
-     "videos": 32,
+     "videos": 33,
      "lessons": 9,
-     "questions": 74,
-     "minutes": 52,
-     "steps": 109
+     "questions": 75,
+     "minutes": 54,
+     "steps": 111
     },
     {
      "id": 23,
@@ -237,18 +237,18 @@
      "title": "Overlapping groups",
      "videos": 17,
      "lessons": 6,
-     "questions": 36,
-     "minutes": 31,
-     "steps": 55
+     "questions": 37,
+     "minutes": 32,
+     "steps": 56
     },
     {
      "id": 25,
      "title": "Averages",
-     "videos": 17,
+     "videos": 18,
      "lessons": 4,
      "questions": 50,
-     "minutes": 25,
-     "steps": 68
+     "minutes": 28,
+     "steps": 69
     },
     {
      "id": 26,
@@ -271,11 +271,11 @@
     {
      "id": 28,
      "title": "Counting possibilities",
-     "videos": 34,
+     "videos": 35,
      "lessons": 11,
-     "questions": 63,
-     "minutes": 46,
-     "steps": 99
+     "questions": 67,
+     "minutes": 50,
+     "steps": 104
     },
     {
      "id": 29,
@@ -369,9 +369,9 @@
      "title": "Geometric reasoning",
      "videos": 19,
      "lessons": 4,
-     "questions": 50,
-     "minutes": 53,
-     "steps": 70
+     "questions": 52,
+     "minutes": 55,
+     "steps": 72
     }
    ]
   },
@@ -397,11 +397,11 @@
     {
      "id": 39,
      "title": "Active reading",
-     "videos": 3,
-     "lessons": 1,
+     "videos": 4,
+     "lessons": 2,
      "questions": 19,
-     "minutes": 8,
-     "steps": 23
+     "minutes": 9,
+     "steps": 24
     },
     {
      "id": 40,
@@ -418,7 +418,7 @@
      "videos": 6,
      "lessons": 2,
      "questions": 71,
-     "minutes": 19,
+     "minutes": 24,
      "steps": 78
     },
     {
@@ -442,11 +442,11 @@
     {
      "id": 44,
      "title": "Understanding paragraphs",
-     "videos": 6,
+     "videos": 7,
      "lessons": 1,
-     "questions": 52,
-     "minutes": 11,
-     "steps": 59
+     "questions": 53,
+     "minutes": 13,
+     "steps": 61
     },
     {
      "id": 45,
@@ -463,17 +463,17 @@
      "videos": 7,
      "lessons": 1,
      "questions": 33,
-     "minutes": 13,
+     "minutes": 14,
      "steps": 41
     },
     {
      "id": 47,
      "title": "Scientific reasoning",
-     "videos": 6,
+     "videos": 7,
      "lessons": 1,
-     "questions": 32,
-     "minutes": 13,
-     "steps": 39
+     "questions": 33,
+     "minutes": 16,
+     "steps": 41
     },
     {
      "id": 48,

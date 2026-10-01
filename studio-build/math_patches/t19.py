@@ -604,6 +604,9 @@ def apply(M):
         ]),
     ])
 
+    # 2026-10-01 elite comparison: property questions (lesson slides, card rows, guided question)
+    elite_property(M)
+
     # solution-video titles follow the rewritten stems
     for f in M.D['flow']:
         if f['topic'] == TOPIC and f['type'] == 'video' and M.video(f['ref']).get('kind') == 'solution':
@@ -726,7 +729,9 @@ def apply(M):
         'q-564', 'q-568', R + '07', R + '12', 'q-571', 'q-572', 'q-570', 'q-575', 'q-567',
         R + '16', R + '17', R + '11', R + '08', R + '13', 'q-573', 'q-574'])
 
+    elite_property_practice(M)
     summary(M)
+    elite_property_summary(M)
 
 
 def _b(label, tex, size=44):
@@ -807,3 +812,161 @@ def summary(M):
             "The traps: minus four squared without brackets, stopping halfway in a nested operation, and putting the number straight into t.",
             "Read the definition, and follow it faithfully. Good luck."]),
     ], ADV, after=last)
+
+
+# =========================================================================================================
+# 2026-10-01 elite comparison: "property" questions (put each rule on trial; rules that undo themselves; inverse)
+# Real exams: 2020 autumn I-9, 2023 spring I-20, 2024 winter II-20, 2022 autumn II-14, 2024 autumn I-18.
+# =========================================================================================================
+def elite_property(M):
+    P = PATTERNS
+    # Operation Patterns: slides 1 title, 2-8 types one to six, 9 recap -> three new slides before the recap
+    M.insert_slides(P, 8, [
+        dict(mode='concept', active=7, title='Property questions', script=[
+            "Type seven: a property question. No definition — only a property the operation has.",
+            A('◆(◆(x)) = x appears', T('$\\blacklozenge(\\blacklozenge(x))=x$ for every $x>0$', size=46, gap=170)),
+            "Do the diamond twice — and you're back where you started. Which rule could it be?",
+            "Put each rule on trial. Plug in a test value, and see if the property holds.",
+            D('Write "x²: 3 → 9 → 81 ✗"'),
+            "x squared: three goes to nine, and nine goes to eighty-one. Not back to three. Out.",
+            D('Write "10 − x: 3 → 7 → 3 ✓"'),
+            "Ten minus x: three goes to seven, and seven goes back to three. It passes.",
+            "Don't test with zero or one. One squared is one — x squared would look fine.",
+            A('◆(x + 1) = 3 · ◆(x) appears', T('$\\blacklozenge(x+1)=3\\cdot\\blacklozenge(x)$', size=46, gap=30)),
+            "A step property: one step up in the input, and the result is three times bigger.",
+            "Test two neighbors: x is two, and x is three.",
+            D('Write "3x: ◆(2) = 6, ◆(3) = 9 ✗     3ˣ: ◆(2) = 9, ◆(3) = 27 ✓"'),
+            "Three x: six, then nine — not three times bigger. Three to the x: nine, then twenty-seven. It passes.",
+        ]),
+        dict(mode='concept', active=8, title='Rules that undo themselves', script=[
+            "Some rules always undo themselves. Two families keep coming up. Know them by sight.",
+            A('c − x appears', T('$c-x$: $\\quad 10-x:\\ \\ 3\\to7\\to3$', size=46, gap=30)),
+            "c minus x, for any number c. Ten minus x: three, seven, three.",
+            "Minus x is in this family too — c is zero.",
+            A('c/x appears', T('$\\frac{c}{x}$: $\\quad \\frac{12}{x}:\\ \\ 3\\to4\\to3$', size=46, gap=30)),
+            "c over x. Twelve over x: three goes to four, and four goes back to three.",
+            "One over x is in this family too — and so is x to the minus one. It's the same thing.",
+            A('Never: x², √x, 2x, x + 5 appears', T('Never: $\\ x^2,\\ \\ \\sqrt{x},\\ \\ 2x,\\ \\ x+5$', size=46)),
+            "Squares, roots, doubling, adding a number: do them twice, and you don't get back.",
+        ]),
+        dict(mode='concept', active=9, title='Inverse operation', script=[
+            "The inverse operation undoes the diamond. Put in the result — get back x.",
+            A('◆(x) = 2x + 3 appears', T('$\\blacklozenge(x)=2x+3$', size=48, gap=30)),
+            "Read the steps of the diamond: first times two, then plus three.",
+            A('Undo in reverse order appears', T('Undo: $-3$, then $\\div2$ $\;\\to\;$ $\\#(y)=\\frac{y-3}{2}$', size=46, gap=110)),
+            "Undo them in reverse order. The last step comes off first: minus three. Then divide by two.",
+            D('Write "x = 4 → ◆(4) = 11 → #(11) = 8 ÷ 2 = 4 ✓"'),
+            "Check with a number: four goes to eleven. Eleven minus three is eight. Over two — four. Back to the start.",
+            "The trap choice undoes the steps in the wrong order: y over two, minus three.",
+            A("'Check: x → ◆(x) → back to x?' appears", T('Check: $\\ x\\to\\blacklozenge(x)\\to$ back to $x$?', size=44)),
+        ]),
+    ])
+    M.set_slide(P, 12, script=[
+        "Let's lock it in.",
+        A("'Expression input? Match the whole input' appears", T('Expression input? Match the whole input', size=34)),
+        A("'Conditions? Check at every step' appears", T('Conditions? Check at every step', size=34)),
+        A("'Result given? Try every rule, then check' appears", T('Result given? Try every rule, then check the answer', size=34)),
+        A("'Circular? Down to the start value, then back up' appears", T('Circular? Down to the start value, then back up', size=34)),
+        A("'Both sides? Isolate the operation' appears", T('Both sides? Isolate the operation', size=34)),
+        A("'Words? Write examples first' appears", T('Definition in words? Write examples first', size=34)),
+        A("'Must be true? Last — plug in 2 or 3' appears", T('Must be true? Last — plug in $2$ or $3$, not $0$ or $1$', size=34)),
+        A("'Property? Put each rule on trial' appears", T('Property? Put each rule on trial · inverse: undo in reverse order', size=34)),
+        D('Tick each line'),
+        "Those are the types that can show up. Now you know what to do with every one.",
+        "Questions next — at least one for each type.",
+    ])
+    M.set_sidebar(P, ['Expression input', 'Conditions', 'Conditions backwards', 'Circular rules', 'Isolate the operation',
+                      'Definition in words', 'Must be true?', 'Property questions', 'Undo themselves', 'Inverse operation',
+                      'Recap'])
+    for n in range(2, 13):
+        M.slide(P, n)['active'] = n - 2
+
+    # guided question: which rule undoes itself
+    g = 'q-r26-t19-18'
+    M.new_q(g, TOPIC, 'The operation $\\blacklozenge$ is defined for every positive number $x$.\n'
+            'It is known that for every positive $x$: $\\blacklozenge(\\blacklozenge(x))=x$.\n'
+            'Which of the following can be the definition of the operation $\\blacklozenge$?',
+            ['$\\blacklozenge(x)=6x$', '$\\blacklozenge(x)=x+6$', '$\\blacklozenge(x)=\\frac{x}{6}$', '$\\blacklozenge(x)=\\frac{6}{x}$'], 4, [
+        'Put each rule on trial with $x=2$: apply it twice and see if you get back to $2$.',
+        '(1) $2\\to12\\to72$ ✗. (2) $2\\to8\\to14$ ✗. (3) $2\\to\\frac13\\to\\frac1{18}$ ✗.',
+        '(4) $2\\to3\\to2$ ✓. In general: $\\blacklozenge(\\blacklozenge(x))=\\frac{6}{\\frac{6}{x}}=x$ for every positive $x$.',
+        '$\\frac{c}{x}$ always undoes itself. $\\frac{x}{6}$ looks similar, but it keeps getting smaller.'])
+    M.place_q(g, THEORY, after='solve-q-549')
+    beats = [dict(mode='title', title='Question %d' % M.next_question_number(TOPIC), script=[
+        "A property question. No definition — just a property.",
+        "So we put each rule on trial."])]
+    for title, script in [
+        ('Method 1 · Put each rule on trial', [
+            "Do the diamond twice — you must get back to x.",
+            "Pick a test value. Not zero, not one. Take two.",
+            D('Next to choice 1 write "2 → 12 → 72 ✗"'),
+            "Six x: two goes to twelve, twelve goes to seventy-two. Not two. Out.",
+            D('Next to choice 2 write "2 → 8 → 14 ✗"'),
+            "x plus six: eight, then fourteen. Out.",
+            D('Next to choice 3 write "2 → 1/3 → 1/18 ✗"'),
+            "x over six: one third, then one eighteenth. Smaller and smaller. Out.",
+            D('Next to choice 4 write "2 → 3 → 2 ✓" and circle choice 4'),
+            "Six over x: two goes to three, three goes back to two. Choice four.",
+        ]),
+        ('Method 2 · Know the family', [
+            "Faster: you know the families that undo themselves. c minus x, and c over x.",
+            D('Write "6 ÷ (6 ÷ x) = x"'),
+            "Six over x is c over x. Six over six-over-x — that's x again. For every x.",
+            "Watch choice three — x over six. It looks close, but the x is on top. It just keeps shrinking.",
+            "So: spot the family — and check with one number to be sure.",
+        ])]:
+        beats.append(dict(mode='question', active=0, title=title, pre=[Q(g)], script=script))
+    v = M.new_video('solve-' + g, TOPIC, 'Operation Questions', [], beats, THEORY, kind='solution', qid=g)
+    v['beats'][0]['title'] = 'Operation Questions'
+    v['hybrid']['num'] = 62
+    v['title'] = v['navLabel'] = M.q(g)['stem']
+
+
+def elite_property_practice(M):
+    # memory card rows
+    rows = M.card(CARD)['tables'][0]['rows']
+    k = next(i for i, r in enumerate(rows) if r[0] == 'Must be true')
+    rows[k:k] = [
+        ['Property given', 'put each rule on trial with a test value (not $0$ or $1$) · a step property: two neighbors',
+         '$\\blacklozenge(\\blacklozenge(x))=x$: $\\ 10-x:\\ 3\\to7\\to3$'],
+        ['Undoes itself', '$c-x$ and $\\frac{c}{x}$ (also $-x$, $\\frac1x=x^{-1}$) · never $x^2$, $\\sqrt x$, $2x$', '$\\frac{12}{x}:\\ 3\\to4\\to3$'],
+        ['Inverse operation', 'undo the steps in reverse order, then check with a number', '$2x+3\\ \\to\\ \\frac{y-3}{2}$'],
+    ]
+
+    R = 'q-r26-t19-'
+    M.new_q(R + '19', TOPIC, 'The operation $\\blacklozenge$ is defined for every positive integer $x$.\n'
+            'It is known that for every positive integer $x$: $\\blacklozenge(x+1)=\\blacklozenge(x)+3$.\n'
+            'Which of the following can be the definition of the operation $\\blacklozenge$?',
+            ['$\\blacklozenge(x)=x+3$', '$\\blacklozenge(x)=3x$', '$\\blacklozenge(x)=3^x$', '$\\blacklozenge(x)=x^3$'], 2, [
+        'A step property: test two neighbors, $x=2$ and $x=3$. The second result must be $3$ more than the first.',
+        '(1) $5$ and $6$: only $1$ more ✗. (2) $6$ and $9$: $3$ more ✓. (3) $9$ and $27$ ✗. (4) $8$ and $27$ ✗.',
+        'In general: $3(x+1)=3x+3$ ✓. The trap is choice 1: "plus $3$" in the property does not mean "plus $3$" in the rule.'])
+    M.new_q(R + '20', TOPIC, 'The operation $\\#$ is the inverse operation of $\\blacklozenge$. For every positive number $x$:\n'
+            '$\\begin{cases} \\blacklozenge(x)=\\sqrt{x}+4 \\\\ \\#(\\blacklozenge(x))=x \\end{cases}$\n'
+            'What is $\\#(y)$?',
+            ['$\\#(y)=y^2-4$', '$\\#(y)=(y-4)^2$', '$\\#(y)=\\sqrt{y}-4$', '$\\#(y)=(y+4)^2$'], 2, [
+        'The steps of $\\blacklozenge$: first take the root, then add $4$.',
+        'Undo them in reverse order: first subtract $4$, then square. $\\#(y)=(y-4)^2$.',
+        'Check with $x=9$: $\\blacklozenge(9)=3+4=7$, and $\\#(7)=(7-4)^2=9$ ✓. The other choices give $45$, $\\sqrt7-4$ and $121$.',
+        'Choice 1 undoes the steps in the wrong order.'])
+    M.place_q(R + '19', PRACTICE, after=R + '09')
+    M.place_q(R + '20', PRACTICE, after=R + '19')
+
+
+def elite_property_summary(M):
+    V = 'r26-t19-summary'
+    # slides: 1 title, 2-5, 6 'Missing pieces', ... -> new slide after 'Missing pieces'
+    M.insert_slides(V, 6, [dict(mode='concept', active=5, title='Property questions', script=[
+        _b('◆(◆(x)) = x: 10 − x: 3 → 7 → 3', '$\\blacklozenge(\\blacklozenge(x))=x$: $\\quad 10-x:\\ 3\\to7\\to3$ ✓', size=42),
+        "Only a property? Put each rule on trial with a test value — not zero or one.",
+        "A step property? Test two neighbors.",
+        _b('Undo themselves: c − x, c/x', 'Undo themselves: $\\ c-x\\ $ and $\\ \\frac{c}{x}$', size=42),
+        "Two families undo themselves: c minus x, and c over x. Squares and doubling never do.",
+        _b('Inverse: undo the steps in reverse order', 'Inverse: undo the steps in reverse order', size=42),
+        "An inverse operation? Undo the steps in reverse order — then check with one number.",
+    ])])
+    sb = ['Read, then substitute', 'Brackets on every input', 'One step at a time', 'Match the whole input',
+          'Missing pieces', 'Property questions', 'Conditions', 'Circular · both sides', 'Always? Must?', 'Before you practice']
+    M.set_sidebar(V, sb)
+    for n in range(2, len(M.video(V)['beats']) + 1):
+        M.slide(V, n)['active'] = n - 2

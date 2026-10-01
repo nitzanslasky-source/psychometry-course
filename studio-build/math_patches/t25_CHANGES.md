@@ -65,3 +65,13 @@ Split into two tables (Basics / Weighted averages). New rows: evenly spaced, bal
 - Practice order: p05 and p25 at the easy start; q-r26-t25-15 next to q-r26-t25-10; q-r26-t25-14 before q-r26-t25-07; p06 before p08.
 
 **Summary lesson (1 new video):** `r26-t25-summary` "Summary", at the end of "Further guided examples", right before the practice. Slides: Summary · The middle · Sum and average · The balance · When values change · Largest value, how many · Weighted averages · The see-saw · Groups · Before you practice. Only content the Topic 25 lessons and guided solutions teach.
+
+## 2026-10-01 elite comparison
+Target: real exam 2023_autumn_q1_03, 2026_spring_q1_04, 2023_winter_q1_04, 2025_winter_q2_16, 2024_autumn_q1_08, 2020_autumn_q2_15 (averages written with letters).
+- **Lesson "Sum from the Average" (wp-081): 3 new slides** before the Recap:
+  - *Averages with letters*: "the average of a and b is m → a + b = 2m", "the average of a, b and c is k → a + b + c = 3k". Example: average of a, b is 7 and of a, b, c is 10 → c = 30 − 14 = 16.
+  - *An average equal to a letter*: average of x, y, z is x → y + z = 2x (y and z also average x). The average of a and b is a − b → a + b = 2(a − b) → a = 3b (watch the brackets).
+  - *The balance with letters*: the average of a, b, c, d is less than 6 and the average of a, b, c is more than 6 → d < 6 (balance, checked with sums). Example a = 2, b = 9, c = 8, d = 1 shows a alone can be below 6. (Changed in review so it does not mirror real question 2026_spring_q1_04.)
+  - Recap: new line "Letters? Every average becomes a sum: a + b + c = 3k". Sidebar updated.
+- **wp25-p18 is now a guided question** (moved from the practice to the end of "Learn and try", after the Kai and Zara question), with a solution video: Method 1 · Averages into sums (sum gap 3 · 3 = 9, b cancels, a − c = 15), Method 2 · Plug in (b = 0, c = 10 → a = 25). The written solution has both methods and the trap (3 = the gap of the averages). Key unchanged: choice 1 (15).
+- Not added: the memory card and the summary lesson were not changed (not part of this request). One "Letters" row on the card would be a small, useful extra if the teacher wants it.

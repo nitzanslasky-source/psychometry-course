@@ -100,3 +100,18 @@ Existing videos now use the new tools:
 **New: summary video** `r26-t13-summary` "Absolute Value — Summary", at the end of the advanced section, right before the independent practice (about 2.6 minutes).
 Slides: Summary · Distance from zero · The rules · Sign clues · Equations · Inequalities · Negative right side · Distance · Plug in · Before you practice.
 It only repeats what the lessons teach. The last slide lists the checks (is the letter positive, negative or zero? both cases? right side negative or zero? letter on the right: checked? which question word?) and the traps (forgetting zero, losing the second case, keeping a fake answer).
+
+## 2026-10-01 elite comparison
+
+Teacher-approved addition: the sum rule |a + b| ≤ |a| + |b| is now taught as a **sign-reading tool** (same signs → the sizes add; opposite signs → they cancel). Targets the real exams 2021 autumn II-15, 2024 spring II-18, 2025 spring I-19, 2020 autumn II-13 (2019 winter II-17 is already covered by |a − b| = |b − a|).
+
+- Main lesson, slide "The rules": the line "if you don't memorize this one, that's fine" now says the rule becomes a sign-reading tool in the advanced part.
+- Video "Absolute Value — Exam Tools" ("Five tools" now), two new slides before the recap:
+  - **Add or cancel**: |−3 + (−5)| = 8 = 3 + 5, |−3 + 5| = 2 = 5 − 3; example |x| = 9, |y| = 2 → |x + y| is 11 or 7.
+  - **Read the signs**: |x + y| < |x − y| → x · y < 0; |x + y| = |x| − |y| → opposite signs and |x| ≥ |y|; |a + b| < |a| → b has the opposite sign of a.
+  - Recap: new line "Same signs → sizes add · opposite signs → cancel". Sidebar updated.
+- Memory card: the |a + b| ≤ |a| + |b| row explains add / cancel; three new sign-clue rows.
+- New guided question **q-r26-t13-13** (advanced section, right after q-366) with solution video (Method 1 read the signs, Method 2 try the four sign cases). |a| = 7, |b| = 3, |a + b| < |a − b| → |a + b| = ? Answer: choice 2 (4).
+- New practice question **q-r26-t13-14** (after q-384): a, b ≠ 0, |a − b| = |a| + |b| → necessarily a · b < 0. Answer: choice 1.
+- Summary video, slide "The rules": the sum line now says "same signs add, opposite signs cancel" and "read it backwards".
+- Both questions solved by computer (all sign cases / a grid of values): exactly one correct choice each.

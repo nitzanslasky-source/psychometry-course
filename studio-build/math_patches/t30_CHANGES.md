@@ -89,3 +89,10 @@ New rows: right angle only if marked, adjacent on a straight line, Z shape, U sh
 **Units-digit shortcut:** the plan removed the card tip ("0 original questions"), but the original Q2 video
 (`solve-geo30-g005`, slide "Units-digit shortcut") teaches it. By the rule it stays: the card tip is back, the Q2 video
 slide and written-solution line stay, and summary 2 ("Crowded figures") has one spoken line about it.
+
+## 2026-10-01 elite comparison
+**Why:** in real geometry questions "It cannot be determined" was offered 18 times and correct 0 times. The course said "Nothing given, nothing proved? Then the answer may be: it cannot be determined", which pushes students toward a choice that is almost never right.
+- Lesson `geo-001`, slide "Parallel or not?": the last line is now "Nothing given? Don't use the parallel rules yet. First look for one of these three rules in the figure. It's often there."
+- Summary `r26-t30-summary`, slide "Parallel or not?": the last line is now "Nothing given? Look for a rule in the figure that proves it — a U that adds up to 180, for example."
+- Memory card tip: "Two lines look parallel, but nothing says so? Look for a rule that proves it: two angles inside a U that add up to 180°, equal small angles, or two lines ⟂ to the same line."
+- Practice q-r26-t30-04 reworked: new figure with two crossing lines t and s. On t, 108° and 72° sit inside a U and add up to 180° → a ∥ b. On s, 55° and x sit inside a U → x = 125° (choice 3; was "cannot be determined"). "It cannot be determined" stays as the trap.

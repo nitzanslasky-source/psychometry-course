@@ -601,6 +601,7 @@ def apply(M):
         'wp25-p11', 'wp25-p09', 'wp25-p10', 'wp25-p17', 'wp25-p20'])
 
     summary(M)
+    letters(M)
 
     # =====================================================================================
     # 9. Solution-video sidebars (one per section, in flow order) and pre-loaded stems
@@ -699,3 +700,106 @@ def summary(M):
             'The traps: the average of two group averages when the groups are not equal, dividing by the wrong number, and counting before instead of after.',
             'Good luck.'])],
         ADV, after=last)
+
+
+# =====================================================================================
+# 2026-10-01 elite comparison: averages written with letters (every "average" -> a sum), the balance with letters,
+# and wp25-p18 becomes a guided question with a solution video.
+# Real exam: 2023_autumn_q1_03, 2026_spring_q1_04, 2023_winter_q1_04, 2025_winter_q2_16, 2024_autumn_q1_08, 2020_autumn_q2_15
+# =====================================================================================
+def letters(M):
+    # lesson 2 "Sum from the Average": 1 title, 2 turn, 3 each, 4 what one can be, 5 largest, 6 new member,
+    # 7 how many were there?, 8 recap  ->  new slides 8, 9, 10; recap becomes 11
+    M.insert_slides(L2, 7, [
+        dict(mode='concept', title='Averages with letters', script=[
+            "Now the same move — with letters. Many hard exam questions look like this.",
+            A("'average of a and b is m → a + b = 2m' appears",
+              T(r'The average of $a$ and $b$ is $m$ $\to$ $a+b=2m$', size=44, gap=30)),
+            A("'average of a, b and c is k → a + b + c = 3k' appears",
+              T(r'The average of $a$, $b$ and $c$ is $k$ $\to$ $a+b+c=3k$', size=44, gap=50)),
+            "Every time you read \"the average\", write a sum instead: the number of values, times the average.",
+            A("'The average of a and b is 7. The average of a, b and c is 10. c = ?' appears",
+              T('The average of $a$ and $b$ is $7$.\nThe average of $a$, $b$ and $c$ is $10$.\n$c=?$', size=42)),
+            D('Write "a + b = 2 · 7 = 14" and under it "a + b + c = 3 · 10 = 30"'),
+            "Two averages — two sums. a plus b is fourteen. a plus b plus c is thirty.",
+            D('Write "c = 30 − 14 = 16"'),
+            "Now subtract. a and b cancel. c is sixteen.",
+            "We never found a or b. We didn't need them.",
+        ]),
+        dict(mode='concept', title='An average equal to a letter', script=[
+            A("'The average of x, y and z is x' appears", T('The average of $x$, $y$ and $z$ is $x$', size=46, gap=60)),
+            "Sometimes the average equals one of the letters. Same move.",
+            D('Write "x + y + z = 3x  →  y + z = 2x"'),
+            "Three values with an average of x: the sum is three x. Take x away from both sides: y plus z is two x.",
+            D('Write "→ the average of y and z is x"'),
+            "So y and z also have an average of x.",
+            A("'The average of a and b is a − b' appears", T('The average of $a$ and $b$ is $a-b$', size=46)),
+            D('Write "a + b = 2(a − b)  →  a + b = 2a − 2b  →  a = 3b"'),
+            "The average equals the difference? Two values: the sum is twice the difference. Open the brackets: a is three b.",
+            "Brackets! Two times the WHOLE difference.",
+        ]),
+        dict(mode='concept', title='The balance with letters', script=[
+            A("'The average of a, b, c and d is less than 6. The average of a, b and c is more than 6.' appears",
+              T('The average of $a$, $b$, $c$ and $d$ is less than $6$.\nThe average of $a$, $b$ and $c$ is more than $6$.',
+                size=42, gap=50)),
+            "Less than, more than — the balance still works.",
+            "Six is the line. a, b and c are above the line on average. Together they have extra.",
+            "But all four together are below the line. Someone must pull them down — by more than that extra.",
+            D('Write "d < 6"'),
+            "Only d is left. So d must be less than six.",
+            D('Write "check: d ≥ 6 → a + b + c + d > 18 + 6 = 24 → average > 6 ✗"'),
+            "Check with sums. a plus b plus c is more than eighteen. If d were six or more, all four would add up to more than twenty-four. The average would be above six. Impossible.",
+            D('Write "a = 2, b = 9, c = 8, d = 1 ✓  →  a < 6"'),
+            "And a alone? It can be below six. Two, nine and eight have an average above six. Add one: the average of all four is five.",
+            "So only d is sure. Necessarily true? Test the other letters with numbers.",
+        ]),
+    ])
+    M.set_slide(L2, 11, script=[
+        A("'sum = number × average' appears", T(r'sum $=$ number $\times$ average', size=44)),
+        A("'Treat every value as the average.' appears", T('Treat every value as the average.', size=42)),
+        A("'Largest one: make the others as small as possible' appears",
+          T('Largest one: make the others as small as possible.', size=42)),
+        A("'How many before? (new value − new average) ÷ (rise of the average)' appears",
+          T(r'How many before? $\dfrac{\text{new value}-\text{new average}}{\text{rise of the average}}$', size=42)),
+        A("'Letters? Every average becomes a sum: a + b + c = 3k' appears",
+          T('Letters? Every average becomes a sum: $a+b+c=3k$', size=42)),
+        D('Underline "number × average"'),
+        "Now let's use it on real exam questions.",
+    ])
+    M.set_sidebar(L2, ['Turn it around', 'Each as the average', 'What one can be', 'Largest possible value',
+                       'A new member', 'How many were there?', 'Averages with letters', 'An average equal to a letter',
+                       'The balance with letters', 'Recap'])
+    _lesson_actives(M, L2)
+
+    # wp25-p18 (practice) -> guided question with a solution video, last guided question of "Learn and try"
+    qid = 'wp25-p18'
+    M.move(qid, LEARN, after='solve-wp25-g085')
+    M.set_q(qid, expl=[
+        'Turn each average into a sum. Three numbers in each group: an average gap of $3$ is a sum gap of $3\\cdot3=9$.',
+        '$(a+b+14)-(b+c+20)=9$. The $b$ cancels: $a-c-6=9$, therefore $a-c=15$.',
+        'Plug in: $b=0$ and $c=10$. The average of $0$, $10$ and $20$ is $10$. Then the average of $a$, $0$ and $14$ is '
+        '$13$: $a+14=39$, $a=25$. $a-c=25-10=15$.',
+        'The trap is $3$: the gap of the averages, not the gap of the sums.'])
+    _solution(M, qid, ["Two averages with letters. Turn each one into a sum."], [
+        ('Method 1 · Averages into sums', [
+            "Each average is a sum of three numbers, divided by three.",
+            "One average is three more than the other. Then its sum is three times three more: nine.",
+            D('Write "(a + b + 14) − (b + c + 20) = 3 · 3 = 9"'),
+            "First sum minus second sum: nine.",
+            D('Write "a − c − 6 = 9"'),
+            "b cancels. Fourteen minus twenty is minus six.",
+            D('Write "a − c = 15"'),
+            "So a minus c is fifteen.",
+            D('Circle choice 1'),
+            "Choice one. Three is the trap: that's the gap of the averages, not of the sums.",
+        ]),
+        ('Method 2 · Plug in', [
+            "Or choose your own numbers. One condition, three letters: pick b and c, and a follows.",
+            D('Write "b = 0, c = 10 → average of 0, 10, 20 = 10"'),
+            "b is zero, c is ten. Zero, ten and twenty: the average is ten.",
+            D('Write "average of a, 0, 14 = 13 → a + 14 = 39 → a = 25"'),
+            "The first average is three more: thirteen. Its sum is thirty-nine. So a is twenty-five.",
+            D('Write "a − c = 25 − 10 = 15"'),
+            "Twenty-five minus ten: fifteen. Choice one again.",
+        ]),
+    ])

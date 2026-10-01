@@ -1,0 +1,77 @@
+{
+ "about": "Method examples added 2026-10-01 (teacher-approved verbal improvements): T41 signs + last blank (lesson demos), T44 summary traps, T47 test that decides. ORIGINAL questions; each mirrors the type and trap of a real NITE item (field mirrors, internal).",
+ "items": [
+  {
+   "id": "vo-41-201",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Summer 2025 §2 Q5",
+   "replaces": "",
+   "stem": "Since the new clinic in Neve Tal ____ a pharmacy of its own, most of its patients ____ to make a second trip to the town center for their medicines; this is why the clinic's director ____ the town council's offer to open a pharmacy in the building next door.",
+   "options": [
+    "lacks / are spared the need / welcomed",
+    "has / are spared the need / declined",
+    "is without / are forced / turned down",
+    "has / are still forced / welcomed"
+   ],
+   "answer": 2,
+   "explanation": "A pharmacy in the clinic means no second trip, and no second trip means no reason for another pharmacy next door (signs Y / N / N). (1) N / N / Y: lacking a pharmacy cannot be why patients are spared the trip; (3) N / Y / N: patients who must travel are a reason to welcome the offer, not to turn it down; (4) Y / Y / Y: a clinic with a pharmacy is no reason for patients to keep traveling.",
+   "feel": 4,
+   "pool": false
+  },
+  {
+   "id": "vo-41-202",
+   "topic": 41,
+   "category": "Sentence Completion",
+   "mirrors": "Summer 2025 §1 Q12",
+   "replaces": "",
+   "stem": "In a study of office workers, those who kept a detailed to-do list finished ____ of their tasks on time than those who kept no list at all. The researchers' explanation for this paradoxical finding was that the workers who kept a list ____ , and therefore ____ .",
+   "options": [
+    "more / could see at a glance what was still waiting / rarely forgot a task",
+    "fewer / spent much of their time updating and rearranging the list / always knew which task was the most urgent",
+    "more / spent much of their time updating and rearranging the list / had less time left for the tasks themselves",
+    "fewer / spent much of their time updating and rearranging the list / had less time left for the tasks themselves"
+   ],
+   "answer": 4,
+   "explanation": "\"Paradoxical\" requires the list to hurt: fewer tasks on time, and an explanation of how the list caused that. (1) and (3) report the expected result. (2) has the paradox but its last part, knowing which task is most urgent, explains finishing more tasks, not fewer.",
+   "feel": 4,
+   "pool": false
+  },
+  {
+   "id": "vo-44-201",
+   "topic": 44,
+   "category": "Paragraph Understanding",
+   "mirrors": "Summer 2020 §1 Q9",
+   "replaces": "",
+   "stem": "When the municipal library of Ramat Eden extended its opening hours into the evening, the number of visits rose by about a third within a year. Most of the evening visitors, however, were people who had previously come in the mornings and had simply changed the time of their visit; the number of residents holding a library card hardly changed. The library's management, which had presented the extension as a way of bringing new readers to the library, should therefore look for other means of achieving this goal. Which of the following best summarizes the paragraph?",
+   "options": [
+    "After the library extended its opening hours into the evening, the number of visits to it rose by about a third within a year",
+    "Extending the opening hours of a library never brings it new readers",
+    "It is hard to know whether extending the library's opening hours had any real effect on the number of its visitors or readers",
+    "The extension of the opening hours increased the number of visits, but it did not bring new readers to the library"
+   ],
+   "answer": 4,
+   "explanation": "The paragraph builds to one point: more visits, but no new readers, so the goal was not achieved. (1) is stated in the paragraph but is only a detail; (2) turns one library and one year into \"never\"; (3) is contradicted by the clear rise in visits.",
+   "feel": 4,
+   "pool": false
+  },
+  {
+   "id": "vo-47-201",
+   "topic": 47,
+   "category": "Scientific Thinking",
+   "mirrors": "Summer 2025 §1 Q6",
+   "replaces": "",
+   "stem": "Birds of a certain species usually begin to sing shortly before sunrise. Researchers found that birds of this species living near a highway begin to sing considerably earlier than birds of the same species living deep in the forest. One researcher believes that the birds near the highway sing early in order to be heard before the heavy morning traffic begins. Another researcher believes that the streetlights along the highway make the birds act as if dawn has already come. Which of the following studies is most likely to determine which of the two explanations is correct?",
+   "options": [
+    "Using more precise recording equipment, the researchers will measure exactly how many minutes before sunrise the birds near the highway begin to sing.",
+    "The researchers will compare when the birds begin to sing near a lit stretch of road that is closed to traffic at night and early in the morning with when they begin to sing near a busy stretch that has no streetlights.",
+    "The researchers will check whether birds of this species living near another highway, which is also lit at night and busy from the early morning, also begin to sing considerably earlier than birds of the same species living deep in the forest.",
+    "The researchers will check whether birds of this species living deep in the forest begin to sing earlier in summer than in winter."
+   ],
+   "answer": 2,
+   "explanation": "Only (2) separates light from noise: the traffic explanation predicts early singing on the busy dark stretch, the light explanation on the lit quiet stretch. (1) measures the same finding more precisely and (3) repeats it elsewhere; both explanations predict the same result for them. (4) is about birds that neither explanation deals with.",
+   "feel": 4,
+   "pool": false
+  }
+ ]
+}

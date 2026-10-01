@@ -68,3 +68,24 @@ Guided questions are renumbered automatically. Below, "Q9" etc. means the **old*
 - geo38-core-p18 (a square and a rectangle with perimeter 32 → the square has the greater area) and geo38-core-p26 (4 vertical and 3 horizontal lines → 12 points). Both are at the easy start of the practice. The solutions now show the numbers ($8\cdot8=64$, and for example $10\cdot6=60$; $4\cdot3=12$).
 
 **Summary lesson (1 new video):** `r26-t38-summary` "Summary" is right after the memory card at the end of "Learn and try", before the practice (about 2.7 min). Slides: Summary · Shape efficiency · Moving the vertex · Angle on a diameter · Two fixed sides · Acute or obtuse? · Must, could, cannot · Test a claim · Slide the apex · Before you practice.
+
+## 2026-10-01 elite comparison
+**Why:** in the 760 real questions, "It cannot be determined" (or "It is impossible to know from the information given") was offered in 18 geometry questions and was the correct answer in none of them. The course had it as the answer of 4 practice questions here. Real exams also ask for the greatest distance (square, rectangle, polygon, cylinder) 5 times; the lesson did not teach it.
+
+**New slides (2):**
+- "Minimum and Maximum" (`geo-175`), new slide 7 **Farthest apart** (after "Greatest area"): polygon → the farthest point is a corner (square / rectangle: the diagonal); circle → the diameter, through the center; cylinder → the right triangle of the height and the DIAMETER ($h=10$, $r=3$: $\sqrt{136}\approx11.7$; a whole-number length is at most 11). Sidebar updated.
+- "Diagrams That Can Change" (`geo-177`), new slide 6 **Cannot be determined?**: in geometry it is almost never the answer. Before choosing it, draw two figures that keep every given and give two different answers. Can't build them? The answer is fixed: find the reason (a height, a parallel line, a symmetry). Sidebar updated.
+- "Push to the extremes" lost its last board item and line ("depends on something free → cannot be determined"); the new slide replaces it.
+- Summary, slide "Test a claim": the same board item/lines now say "'Cannot be determined'? Only with two legal figures and two different answers · in geometry it is almost never the answer".
+- Memory card: new row "Greatest distance"; the row "Cannot be determined?" now gives the two-figures test.
+
+**The 4 practice questions whose answer was "cannot be determined":**
+- geo38-core-p02 (two squares) — reworked. Now asks for the area of triangle CFG: base GF = 2, and C slides on line DC, parallel to GF at distance DG = 2 → area 2 (choice 2). New figure (triangle CFG shaded).
+- geo38-core-p10 (parallelogram with two squares) — reworked. Now compares triangle HCD with triangle ABE: AD = BC gives HD = BE, so the areas are always equal (choice 2). New figure (both triangles shaded).
+- geo38-core-p16 (parallelogram + right isosceles triangle) — reworked. Added "Given: EB ⟂ BC". Legs 6; AE ∥ BC (both ⟂ EB), so the height is 6 → area 5·6 = 30 (choice 1). Choices: 30, 36, 30√2, cannot be determined. New figure.
+- geo38-core-p08 (deltoid, perimeter) — kept as the honest exception (choice 4). The solution now shows the two-figures test: split 5+5 → 4√34 ≈ 23.3; split 1+9 → 8√10 ≈ 25.3. Choices reordered (24, 32, 36, cannot be determined).
+
+**New practice questions (2):**
+- q-r26-t38-12: rectangle 4 × 10, E on BC with BE = 2; greatest EP → check the corners: ED = 4√5 (choice 3; trap: the diagonal 2√29).
+- q-r26-t38-13: a cylinder-shaped can, height 8, radius 3; longest stick → √(8²+6²) = 10 (choice 3; trap: √73 uses the radius).
+Both are in the practice section (easy → hard order kept).

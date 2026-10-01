@@ -141,6 +141,83 @@ def _moving_p():
     return _svg('50 72 580 230', 'Base AB on line m and a point P moving along the parallel line k', body)
 
 
+# ---------- 2026-10-01: "farthest apart" slide: rectangle, circle, cylinder
+def _farthest():
+    body = []
+    # rectangle: opposite corners
+    R0 = (60.0, 110.0); R1 = (250.0, 230.0)
+    body += [_poly([R0, (R1[0], R0[1]), R1, (R0[0], R1[1])], FILL, INK),
+             _ln(R0[0], R1[1], R1[0], R0[1], ORANGE, 3), _dot(R0[0], R1[1], 4.5, ORANGE), _dot(R1[0], R0[1], 4.5, ORANGE),
+             _t(155, 280, 'corner to corner', INK, 19)]
+    # circle: the diameter, through the center
+    cx, cy, r = 400.0, 170.0, 70.0
+    body += ['<circle cx="%.3f" cy="%.3f" r="%.3f" fill="%s" stroke="%s" stroke-width="2.5"/>' % (cx, cy, r, FILL, INK),
+             _ln(cx - r * 0.8, cy + r * 0.6, cx + r * 0.8, cy - r * 0.6, ORANGE, 3), _dot(cx, cy, 3.5),
+             _dot(cx - r * 0.8, cy + r * 0.6, 4.5, ORANGE), _dot(cx + r * 0.8, cy - r * 0.6, 4.5, ORANGE),
+             _t(cx, 280, 'through the center', INK, 19)]
+    # cylinder: height and diameter make a right triangle
+    x0, x1, top, bot, ry = 560.0, 680.0, 70.0, 230.0, 16.0
+    xm = (x0 + x1) / 2
+    body += ['<path d="M %.3f %.3f L %.3f %.3f A %.3f %.3f 0 0 0 %.3f %.3f L %.3f %.3f" fill="%s" stroke="%s" stroke-width="2.5"/>'
+             % (x0, top, x0, bot, (x1 - x0) / 2, ry, x1, bot, x1, top, FILL, INK),
+             '<ellipse cx="%.3f" cy="%.3f" rx="%.3f" ry="%.3f" fill="%s" stroke="%s" stroke-width="2.5"/>' % (xm, top, (x1 - x0) / 2, ry, FILL2, INK),
+             '<path d="M %.3f %.3f A %.3f %.3f 0 0 1 %.3f %.3f" fill="none" stroke="%s" stroke-width="1.6" stroke-dasharray="6 5"/>'
+             % (x0, bot, (x1 - x0) / 2, ry, x1, bot, GRAY),
+             _ln(x0, bot, x1, bot, TEAL, 2.2, '7 5'), _ln(x1, bot, x1, top, TEAL, 2.2),
+             _right(x1, bot, -1, 0, 0, -1, s=12),
+             _ln(x0, bot, x1, top, ORANGE, 3), _dot(x0, bot, 4.5, ORANGE), _dot(x1, top, 4.5, ORANGE),
+             _t(x1 + 14, (top + bot) / 2, 'h', TEAL, 21, '700', 'start'), _t(xm, bot + 30, '2r', TEAL, 21, '700'),
+             _t(xm, 280, 'h and 2r: Pythagoras', INK, 19)]
+    return _svg('30 40 700 260', 'The greatest distance: corner to corner, through the center, and across a cylinder', body)
+
+
+# ---------- 2026-10-01: practice, farthest point of a rectangle from E
+def _rect_e():
+    A_, B_, C_, D_ = (150.0, 110.0), (150.0, 250.0), (500.0, 250.0), (500.0, 110.0)
+    E = (220.0, 250.0)
+    body = [_poly([A_, B_, C_, D_], FILL, INK), _dot(*E, r=4.5),
+            _t(A_[0] - 14, A_[1] - 16, 'A'), _t(B_[0] - 14, B_[1] + 18, 'B'), _t(C_[0] + 14, C_[1] + 18, 'C'),
+            _t(D_[0] + 14, D_[1] - 16, 'D'), _t(E[0], E[1] + 22, 'E')]
+    return _svg('110 76 430 210', 'Rectangle ABCD with point E on side BC', body)
+
+
+# ---------- 2026-10-01: reworked figures (p02, p10, p16)
+def _two_squares():
+    """p02: squares ABCD and DEFG; triangle CFG shaded (C slides on line DC, parallel to GF)."""
+    A_, B_, C_, D_ = (174.0, 75.714), (174.0, 284.286), (382.571, 284.286), (382.571, 75.714)
+    E, F, G = (382.571, 159.143), (466.0, 159.143), (466.0, 75.714)
+    body = [_poly([A_, B_, C_, D_], 'none', INK), _poly([C_, F, G], TFILL, TEAL, 2.2), _poly([D_, E, F, G], 'none', INK),
+            _t(162, 57.714, 'A'), _t(160, 301.286, 'B'), _t(382.571, 306.286, 'C'), _t(369.571, 57.714, 'D'),
+            _t(367.571, 170.143, 'E'), _t(484, 159.143, 'F'), _t(481, 57.714, 'G'), _t(501, 117.429, '2 cm')]
+    return _svg('0 0 640 360', 'Two squares aligned along their top edges, with triangle CFG shaded', body)
+
+
+def _par_squares():
+    """p10: the same parallelogram; triangles ABE and HCD shaded."""
+    A_, B_, C_, D_ = (215.0, 127.5), (75.0, 232.5), (425.0, 232.5), (565.0, 127.5)
+    E, F, G, H = (215.0, 232.5), (320.0, 232.5), (320.0, 127.5), (425.0, 127.5)
+    body = [_poly([A_, B_, C_, D_], 'none', INK),
+            _poly([A_, E, F, G], FILL, INK), _poly([G, F, C_, H], FILL, INK),
+            _poly([A_, B_, E], TFILL, TEAL), _poly([H, C_, D_], TFILL, TEAL),
+            _t(203, 107.5, 'A'), _t(215, 255.5, 'E'), _t(320, 255.5, 'F'), _t(320, 105.5, 'G'), _t(425, 105.5, 'H'),
+            _t(430, 254.5, 'C'), _t(580, 112.5, 'D'), _t(60, 248.5, 'B')]
+    return _svg('0 0 640 360', 'A parallelogram containing two adjacent congruent squares, with two corner triangles shaded', body)
+
+
+def _par_tri():
+    """p16: B(0,0) C(5,0) A(6,6) D(11,6) E(0,6); u = 26 px."""
+    u, ox, oy = 26.0, 150.0, 290.0
+    P = lambda x, y: (ox + u * x, oy - u * y)
+    A_, B_, C_, D_, E = P(6, 6), P(0, 0), P(5, 0), P(11, 6), P(0, 6)
+    tick = lambda p, q, dx, dy: _ln((p[0] + q[0]) / 2 - dx, (p[1] + q[1]) / 2 - dy, (p[0] + q[0]) / 2 + dx, (p[1] + q[1]) / 2 + dy, TEAL, 1.8)
+    body = [_poly([E, A_, B_], FILL, INK), _poly([B_, C_, D_, A_], 'none', INK),
+            _right(E[0], E[1], 1, 0, 0, 1, s=13), _right(B_[0], B_[1], 1, 0, 0, -1, s=13),
+            tick(E, A_, 0, 7), tick(E, B_, 7, 0),
+            _t(A_[0], A_[1] - 20, 'A'), _t(B_[0] - 14, B_[1] + 16, 'B'), _t(C_[0] + 12, C_[1] + 18, 'C'),
+            _t(D_[0] + 14, D_[1] - 14, 'D'), _t(E[0] - 18, E[1] - 12, 'E'), _t((B_[0] + C_[0]) / 2, B_[1] + 24, '5 cm')]
+    return _svg('110 100 440 230', 'A parallelogram with a right isosceles triangle attached to side AB', body)
+
+
 # ------------------------------------------------------------------ small helpers
 _BRIT = [('practise', 'practice'), ('Practise', 'Practice'), ('metre', 'meter'), ('centre', 'center'), ('colour', 'color')]
 
@@ -364,8 +441,24 @@ def apply(M):
         "For example 7, 8 and 10. 100 is less than 113. All the angles are acute.",
         "Always use the LONGEST side as c.",
     ])])
+    # 2026-10-01 elite comparison: the greatest DISTANCE (real exams: square, rectangle, polygon, cylinder)
+    M.insert_slides(MINMAX, 6, [dict(mode='concept', title='Farthest apart', script=[
+        "One more 'greatest': the greatest distance.",
+        A('Farthest-apart figure appears', VIS(_farthest(), w=1000, h=420)),
+        "Two points on a square or a rectangle. How far apart can they be? Push them to the ends: opposite corners. The diagonal.",
+        "And from any point you choose, the farthest point of a square, a rectangle or any polygon is always a corner. Check the corners.",
+        "In a circle, the farthest two points are the ends of a diameter. The line goes through the center.",
+        A("'Polygon: a corner · circle: the diameter' appears",
+          T('Polygon: the farthest point is a corner · circle: the diameter', size=36, x=410, y=590)),
+        "A cylinder: go from the edge of the bottom to the opposite edge of the top. The height and the diameter make a right triangle.",
+        A("'Cylinder: h = 9, r = 4' appears",
+          T('Cylinder $h=9$, $r=4$: $\\sqrt{9^2+8^2}=\\sqrt{145}\\approx12.04$', size=36, x=410, y=660)),
+        "Height 9, radius 4 — so the diameter is 8. 81 plus 64 is 145. The square root is just over 12.",
+        "The trap: use the diameter, not the radius.",
+        "And if the length must be a whole number? The longest is 12. 13 is already too long.",
+    ])])
     M.set_sidebar(MINMAX, ['Min–max in geometry', 'Move the vertex away', 'Stretch the segment', 'Two rods', 'Greatest area',
-                           'Angles on an arc', 'Angle on a diameter', 'Min–max with an anchor', 'Acute or obtuse?'])
+                           'Farthest apart', 'Angles on an arc', 'Angle on a diameter', 'Min–max with an anchor', 'Acute or obtuse?'])
     _lesson_actives(M, MINMAX)
 
     # guided question: greatest area with two fixed sides (after Question 3)
@@ -425,12 +518,25 @@ def apply(M):
             "Two: put it exactly in the middle. The shape becomes symmetric.",
             A("'3 · Find what is free' appears", T('3 · Find what is free: an angle, a side, a split', size=38)),
             "Three: find what the givens don't fix. An angle? A side? Where a segment is split?",
-            A("'Free and the answer depends on it → cannot be determined' appears",
-              T('The answer depends on a free quantity $\\rightarrow$ it cannot be determined', size=38)),
-            "If the answer depends on something free — it cannot be determined.",
-            "And the opposite: if a claim survives all the extremes, it's usually a 'must'. Then look for the reason.",
+            "And if a claim survives all the extremes, it's usually a 'must'. Then look for the reason.",
+        ]),
+        # 2026-10-01 elite comparison: "cannot be determined" is almost never the answer in real geometry questions
+        dict(mode='concept', title='Cannot be determined?', script=[
+            "One choice you'll see a lot: 'It cannot be determined from the information given.'",
+            A("''It cannot be determined': in geometry, almost never the answer' appears",
+              T("'It cannot be determined' — in geometry, almost never the answer", size=38)),
+            "In geometry, it's usually a trap. On real exams, it's almost never the right answer.",
+            A("'Two legal figures, two different answers' appears",
+              T('Before you choose it: draw TWO figures that keep every given and give TWO different answers', size=36)),
+            "So before you choose it, test it. Draw two figures. Both must keep every given.",
+            "If they give two different answers — then, and only then, it cannot be determined.",
+            A("'Can't build them → the answer is fixed' appears",
+              T("Can't build them? The answer is fixed. Find the reason: a height, a parallel line, a symmetry", size=36)),
+            "Can't build two such figures? Then the answer is fixed. Look for the reason.",
+            "Remember the apex that slides: three very different triangles — and always the same area. The height didn't change.",
+            "The reason is usually like that: a height that doesn't change, a parallel line, or a symmetry.",
         ])])
-    M.set_sidebar(DIAG, ['Must or could?', 'How to test a claim', 'Slide the apex', 'Push to the extremes'])
+    M.set_sidebar(DIAG, ['Must or could?', 'How to test a claim', 'Slide the apex', 'Push to the extremes', 'Cannot be determined?'])
     _lesson_actives(M, DIAG)
 
     # guided question: slide the apex in a trapezoid (before Question 4)
@@ -494,11 +600,12 @@ def apply(M):
     rows[k + 1:k + 1] = [
         ['!Two fixed sides, the angle opens', 'the third side gets longer · the height and area grow up to $90°$, then shrink · $\\theta$ and $180°-\\theta$ give the same area'],
         ['Greatest area with sides $a$, $b$', 'at $90°$: triangle $\\frac{ab}{2}$, parallelogram $ab$'],
+        ['!Greatest distance', 'polygon: a corner (square, rectangle: the diagonal) · circle: the diameter · cylinder: $\\sqrt{h^2+(2r)^2}$'],
         ['Acute, right or obtuse?', 'longest side $c$: $c^2=a^2+b^2$ right · $c^2>a^2+b^2$ obtuse · $c^2<a^2+b^2$ acute'],
         ['!Must / could / cannot', 'must = in every allowed case · could = in at least one · cannot = in none'],
         ['!Flexible drawing', 'exaggerate the drawing, but keep every given'],
         ['Extreme cases', '1 · push the free point to the end · 2 · put it in the middle · 3 · find what is free'],
-        ['Cannot be determined?', 'the answer depends on something the givens do not fix (an angle, a side, a split)'],
+        ['!Cannot be determined?', 'only if two figures that keep every given give two different answers · in geometry it is almost never the answer'],
         ['!Slide the apex', 'same base, apex on a parallel line $\\rightarrow$ the same area (the perimeter changes)'],
     ]
     c['tips'] = c['tips'] + ['Before you trust a drawing: which lengths and angles are really given?',
@@ -615,10 +722,72 @@ def apply(M):
     for qid, stem, ch, cor, ex, fig in NEW:
         M.new_q(qid, TOPIC, stem, ch, cor, ex, figure=fig)
         M.place_q(qid, PRACT)
+
+    # ================================================================================
+    # 2026-10-01 elite comparison
+    # (a) "cannot be determined": in real geometry questions it was offered 18 times and correct 0 times.
+    #     p02, p10, p16 now have a real answer ("cannot be determined" stays as the tempting distractor);
+    #     p08 is kept as the honest exception and shows the two-figures test.
+    # ================================================================================
+    CBD = 'It cannot be determined from the information given.'
+    S('geo38-core-p02',
+      stem='ABCD and DEFG are squares. E lies on DC, and their top sides AD and DG lie on one straight line. '
+           'Given: FG = 2 cm. What is the area of triangle CFG (in cm²)?',
+      choices=['$1$', '$2$', '$4$', CBD], correct=2, figure=_two_squares(),
+      expl=['The big square is not given — but test before you choose "cannot be determined". Take GF as the base of triangle CFG: $GF=2$.',
+            'The height is the distance from C to line GF. C lies on line DC. DE is the side of the small square opposite GF, so line DC is parallel to GF. '
+            'The distance between them is $DG=2$, whatever the size of the big square.',
+            'Area $=\\frac{2\\cdot2}{2}=2$ cm². Choice 2.',
+            'Two figures check: big side 5 or big side 8 — C slides along line DC, and the area is 2 both times. The answer is fixed.'])
+    S('geo38-core-p10',
+      stem='ABCD is a parallelogram containing adjacent squares AEFG and GFCH, each with side 3 cm, as shown in the accompanying figure. '
+           'How does the area of triangle HCD compare with the area of triangle ABE?',
+      choices=['It is necessarily smaller.', 'It is necessarily equal.', 'It is necessarily greater.', CBD], correct=2,
+      figure=_par_squares(),
+      expl=['BE and HD are not given — but test before you choose "cannot be determined".',
+            'In a parallelogram, $AD=BC$: $6+HD=BE+6$. Therefore, $HD=BE$.',
+            'Both triangles are right triangles with legs 3 and the same second leg: $S_{ABE}=\\frac{3\\cdot BE}{2}=\\frac{3\\cdot HD}{2}=S_{HCD}$.',
+            'Two figures check: $BE=1$ gives 1.5 and 1.5, $BE=5$ gives 7.5 and 7.5. The areas change, but they are always equal: choice 2.'])
+    S('geo38-core-p16',
+      stem='ABCD is a parallelogram with BC = 5 cm. A right isosceles triangle AEB is constructed externally on AB, '
+           'with right angle E and area 18 cm². Given: EB ⟂ BC. What is the area of the parallelogram (in cm²)?',
+      choices=['$30$', '$36$', '$30\\sqrt2$', CBD], correct=1, figure=_par_tri(),
+      expl=['The triangle: $\\frac{EB\\cdot EA}{2}=18$ and $EB=EA$. So, $EB^2=36$ and $EB=EA=6$.',
+            'AE and BC are both perpendicular to EB. Two lines perpendicular to the same line are parallel: $AE\\parallel BC$. '
+            'So, A is exactly as far from BC as E is: the height of the parallelogram is $EB=6$.',
+            'Area $=BC\\cdot h=5\\cdot6=30$ cm². Choice 1.',
+            'Traps: $30\\sqrt2=5\\cdot AB$ is true only for a rectangle. And the angle is not free here — $EB\\perp BC$ fixes it ($\\angle ABC=45°$).'])
+    S('geo38-core-p08',
+      choices=['$24$ cm', '$32$ cm', '$36$ cm', CBD], correct=4,
+      expl=['AC is the axis of symmetry, so it cuts BD in half at a right angle: each half is 3. But nothing says where AC is cut.',
+            'This is the rare case where the answer really cannot be determined. The two-figures test proves it.',
+            'Figure 1: AC is cut into $5+5$. All four sides are $\\sqrt{5^2+3^2}=\\sqrt{34}$. Perimeter $4\\sqrt{34}\\approx23.3$.',
+            'Figure 2: AC is cut into $1+9$. The sides are $\\sqrt{1^2+3^2}=\\sqrt{10}$ and $\\sqrt{9^2+3^2}=3\\sqrt{10}$. Perimeter $8\\sqrt{10}\\approx25.3$.',
+            'Both figures keep every given, and the perimeters are different. It cannot be determined: choice 4.'])
+
+    # (b) the greatest distance: a corner, the diameter, the cylinder triangle
+    M.new_q('q-r26-t38-12', TOPIC,
+            'ABCD is a rectangle with AB = 4 cm and BC = 10 cm. E lies on BC, and BE = 2 cm. '
+            'Point P moves along the sides of the rectangle. What is the greatest possible length of EP (in cm)?',
+            ['$2\\sqrt5$', '$8$', '$4\\sqrt5$', '$2\\sqrt{29}$'], 3,
+            ['The farthest point of a rectangle from E is one of its corners. Check all four.',
+             '$EB=2$ and $EC=10-2=8$. $EA=\\sqrt{2^2+4^2}=\\sqrt{20}=2\\sqrt5$. $ED=\\sqrt{8^2+4^2}=\\sqrt{80}=4\\sqrt5\\approx8.9$.',
+             'The greatest is $ED=4\\sqrt5$: choice 3.',
+             'Trap: $2\\sqrt{29}$ is the diagonal AC. It joins two corners, but E is not a corner.'], figure=_rect_e())
+    M.place_q('q-r26-t38-12', PRACT)
+    M.new_q('q-r26-t38-13', TOPIC,
+            'A closed can has the shape of a cylinder. Its height is 8 cm, and the radius of its base is 3 cm. '
+            'What is the length of the longest straight stick that fits completely inside the can (in cm)?',
+            ['$8$', '$\\sqrt{73}$', '$10$', '$14$'], 3,
+            ['The longest stick goes from the edge of the bottom base, through the middle, to the opposite edge of the top base.',
+             'It is the hypotenuse of a right triangle. The legs are the height, 8, and the diameter, $2\\cdot3=6$.',
+             '$\\sqrt{8^2+6^2}=\\sqrt{100}=10$. Choice 3.',
+             'Trap: $\\sqrt{73}=\\sqrt{8^2+3^2}$ uses the radius instead of the diameter.'])
+    M.place_q('q-r26-t38-13', PRACT)
     P = lambda n: 'geo38-core-p%02d' % n
     M.practice_order(PRACT, [
-        P(26), P(22), P(18), P(23), P(24), P(21), P(1), P(4), 'q-r26-t38-04', 'q-r26-t38-03', P(5), P(25), 'q-r26-t38-05', P(20),
-        P(13), P(14), 'q-r26-t38-06', P(9), P(6), P(7), 'q-r26-t38-07', P(2), P(10), P(16), P(8),
+        P(26), P(22), P(18), P(23), P(24), P(21), P(1), P(4), 'q-r26-t38-04', 'q-r26-t38-03', 'q-r26-t38-13', P(5), P(25),
+        'q-r26-t38-05', 'q-r26-t38-12', P(20), P(13), P(14), 'q-r26-t38-06', P(9), P(6), P(7), 'q-r26-t38-07', P(2), P(10), P(16), P(8),
         'q-r26-t38-09', 'q-r26-t38-10', 'q-r26-t38-11', P(12), P(11), P(19), P(3), P(15), P(17)])
 
     summary(M)   # Pass 2: summary lesson right before the practice
@@ -702,8 +871,9 @@ def summary(M):
             "The figure isn't necessarily drawn to scale. Trust the givens, not the picture.",
             _b('The end · the middle · what is free?', 'Push to the end · put it in the middle · find what is free'),
             "Exaggerate: push the free point to the end, then put it in the middle.",
-            _b('Depends on something free → cannot be determined', 'Depends on something free $\\rightarrow$ cannot be determined'),
-            "If the answer depends on something the givens don't fix, it cannot be determined."]),
+            _b('Cannot be determined? Two legal figures, two answers', "'Cannot be determined'? Only with two legal figures and two different answers", size=36),
+            "'It cannot be determined'? Only if you can draw two figures that keep every given and give two different answers.",
+            "In geometry, it's almost never the answer. Can't build the two figures? Find the reason the answer is fixed."]),
         dict(title='Slide the apex', active=7, script=[
             _b('Same base, apex on a parallel line → same area', 'Same base, apex on a parallel line $\\rightarrow$ same height $\\rightarrow$ same area', size=38),
             "The apex slides along a line parallel to the base. The height stays the same — so the area stays the same.",

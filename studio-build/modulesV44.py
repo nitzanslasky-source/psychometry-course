@@ -7,7 +7,8 @@ from dsl import *
 T44 = 44
 SBL = ['Where they appear', 'Two kinds', 'Kind 1: it says so', 'Kind 2: understand it']
 GQ = 'Paragraph Questions'
-SBQ = ['Kind 1 · not correct', 'Kind 1 · hard text', 'Kind 2 · not implied', 'Concept in paragraph', 'Apply the idea']
+SBQ = ['Kind 1 · not correct', 'Kind 1 · hard text', 'Kind 2 · not implied', 'Kind 2 · best summary',
+       'Concept in paragraph', 'Apply the idea']
 
 MODULES = [
 # ------------------------------------------------------------------ lesson (Hebrew 2274-2290)
@@ -63,7 +64,7 @@ guided(0, 'vo-44-001', GQ, SBQ, ["A sample question – easy-plus."], [
   A("Not correct → that's our answer appears", P("Not correct → that's our answer", y=120)),
   D("Circle choice 1"),
   "Choice 1.",
-  "In the exam, mark it and move on. Here in the lesson, let's check the others too.",
+  "In the exam: a quick look at the others before you mark. Let's do that look.",
   "Choice two: \"Its area is smaller than the area that was drained.\"",
   D("Underline 'a small part of the drained area was flooded again'"),
   "Only a small part of the drained area was flooded again. Correct, and they asked for not correct. Out.",
@@ -104,7 +105,7 @@ guided(1, 'vo-44-002', GQ, SBQ, ["A sample question – a hard one."], [
   "Group one: no painter can achieve it. Group two: 'nevertheless' as close as possible, 'even though he will never reach it'. Both. That's exactly what's written.",
   D("Circle choice 3"),
   "Choice 3.",
-  "In the exam we mark and move on. In the lesson, the last one:",
+  "Before marking - a quick look at the last one:",
   "Choice four: whether better colors would have made it possible. Neither group raises that question. Out.",
   D("Cross out choice 4"),
   "A kind-one question, and not an easy one at all.",
@@ -141,14 +142,47 @@ guided(2, 'vo-44-003', GQ, SBQ, ["A sample question – medium level."], [
   "Wait. They tried to cultivate about 11,000 years before agriculture became widespread - not when it already was. The timeline is flipped. Not implied.",
   D("Circle choice 3"),
   "Choice 3.",
-  "In the exam we mark and move on. In the lesson, the last one:",
+  "Before marking - a quick look at the last one:",
   "Choice four: some of these weeds grow today in cultivated fields. That's written. Implied. Out.",
   D("Cross out choice 4"),
  ]),
 ], T44),
 
+# ------------------------------------------------------------------ Q · Kind 2, best summary: "true but not the answer" and "too strong"
+# (NITE guide, critical reading: a summary question "may include a response that is implied by the text or that is even
+#  stated explicitly in it, but does not summarize it"). Original question vo-44-201 (content/verbal_originals_M.json).
+guided(3, 'vo-44-201', GQ, SBQ, ["A sample question – medium level.", "A summary question, and its two favorite traps."], [
+ ('Two traps', [
+  "\"Which of the following best summarizes the paragraph?\" Kind two.",
+  D("Underline 'best summarizes'"),
+  "Summary, main idea, conclusion - these questions have two favorite traps.",
+  A("Trap 1: true - but not the answer appears", P("Trap 1: true but not the answer – stated in the text, but only a detail", y=120)),
+  "Trap one: a choice that's true. It's even written in the paragraph. But it's a detail - it doesn't summarize. NITE's own guide warns about exactly this.",
+  A("Trap 2: too strong appears", P("Trap 2: too strong – says more than the text: everyone · always · never · proven", y=200)),
+  "Trap two: a choice that says too much. Everyone, always, never, proven - when the text talked about one case.",
+  A("Pick the most careful choice that still says something appears", P("Pick the most careful choice that still says something", y=280)),
+  "So pick the most careful choice - but one that still says something.",
+ ]),
+ ('Understand, then check', [
+  "First, what does the paragraph build to?",
+  D("Underline 'the number of residents holding a library card hardly changed'"),
+  "Visits went up by a third - but the same people, just at a different hour. New readers? Hardly any.",
+  D("Underline 'should therefore look for other means of achieving this goal'"),
+  "And the ending: the goal - new readers - wasn't achieved.",
+  "Choice one: visits rose by about a third. It's written, word for word. But is that the point? No - it's the detail the paragraph turns against. True, but not the answer.",
+  D("Cross out choice 1"),
+  "Choice two: extending hours never brings any library new readers. One library, one year - and suddenly never? Too strong.",
+  D("Cross out choice 2"),
+  "Choice three: hard to know whether it had any effect. Careful, all right - but wrong. The visits clearly rose. And it says nothing about the point.",
+  D("Cross out choice 3"),
+  "Choice four: more visits - but no new readers. Careful, and it says the whole point.",
+  D("Circle choice 4"),
+  "Choice 4.",
+ ]),
+], T44),
+
 # ------------------------------------------------------------------ Q · concept in the paragraph (Hebrew 2554-2667, medium-plus)
-guided(3, 'vo-44-004', GQ, SBQ, ["A sample question – medium-plus."], [
+guided(4, 'vo-44-004', GQ, SBQ, ["A sample question – medium-plus."], [
  ('Read slowly – once', [
   "A question about a concept from the paragraph: \"Why do these researchers call the nurse 'the last link'?\"",
   D("Circle 'the last link'"),
@@ -175,7 +209,7 @@ guided(3, 'vo-44-004', GQ, SBQ, ["A sample question – medium-plus."], [
   "Exactly what we understood.",
   D("Circle choice 2"),
   "Choice 2.",
-  "In the exam, mark and move on. In the lesson:",
+  "A quick look at the others before marking:",
   "Choice three: a nurse is human, so we can't expect her never to make a mistake. Sounds kind, but that's not their argument. They move the responsibility along the chain; they don't excuse errors. Out.",
   D("Cross out choice 3"),
   "Choice four: the nurse usually discovers others' errors in time and prevents harm. The text says the error is revealed in her hands, not that she prevents it. Out.",
@@ -185,7 +219,7 @@ guided(3, 'vo-44-004', GQ, SBQ, ["A sample question – medium-plus."], [
 ], T44),
 
 # ------------------------------------------------------------------ Q · apply the idea (Hebrew 2668-2770, medium-plus, even hard)
-guided(4, 'vo-44-005', GQ, SBQ, ["A sample question – medium-plus, even hard.",
+guided(5, 'vo-44-005', GQ, SBQ, ["A sample question – medium-plus, even hard.",
                                   "Before we read, remember what we learned: read slowly, and understand."], [
  ('Read, understand', [
   "Let's apply it.",
@@ -227,5 +261,6 @@ MEMORY = [
   tips=['Read slowly the first time and understand. Do not bounce between the choices and the text.',
         'Back to the text only when you are torn between two choices.',
         'Pointer words (even so, the former, the latter, this goal): stop and pin down exactly what is meant.',
-        'In the exam: mark the answer and move on.']),
+        'Summary / main idea / conclusion: a choice can be stated in the text and still not summarize it; a choice can say too much (everyone, always, proven). Pick the most careful choice that still says something.',
+        'In the exam: a quick look at the other choices, then mark the answer and move on.']),
 ]

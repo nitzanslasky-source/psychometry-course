@@ -175,7 +175,7 @@ Q(2, 'vo-42-003', [
   D("Draw '=' between A and B of choice 1"),
  ]),
  ('Why the others fail', [
-  "In the lesson we check the rest. Pair 4.",
+  "Before marking - a quick look at the rest. Pair 4.",
   A("not watered → wilts · wilts → not watered appears", P('A:   not watered → wilts          B:   wilts → not watered', size=34)),
   "A says not watered leads to wilting. B turns the arrow around without negating - result to condition. That's not the same claim.",
   "Pair 3: 'no painter in the group is without a studio' means every painter has a studio. B says there are painters with a studio - something else.",
@@ -361,7 +361,7 @@ Q(8, 'vo-42-009', [
   "Choice 1: all the tiles not made in Portugal are glazed. Not Portugal leads to glazed - the twin of our goal.",
   D("Circle choice 1"),
   "Choice 1.",
-  "On the exam - stop here. For the lesson, a quick look at the rest.",
+  "Before marking - a quick look at the rest.",
   "Choice 2: all the tiles made in Portugal are glazed. Starts with Portugal - that's our result, not what we need. Out.",
   D("Cross out choice 2"),
   "Choice 3: glazed leads to Portugal. Starts with 'glazed' - not our condition. Out.",

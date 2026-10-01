@@ -8,7 +8,8 @@ TOPIC = 28
 LEARN, ADV, PRAC = 'wp28-learn', 'wp28-advanced', 'wp28-practice'
 # New guided questions (all in the advanced section) get 18-23; renumber_guided() keeps course order.
 SB_LEARN = ['Question %d' % n for n in range(1, 13)]
-SB_ADV = ['Question %d' % n for n in range(13, 24)]
+# 2026-10-01: + the factorial-algebra guided question (number 24, right after the Factorial Expressions lesson)
+SB_ADV = ['Question %d' % n for n in range(13, 25)]
 INK, TEAL = '#203344', '#087f83'
 
 
@@ -658,6 +659,9 @@ def apply(M):
         ]),
     ])
 
+    # 2026-10-01 elite comparison: factorials as algebra (lesson slides + guided question)
+    elite_factorials(M)
+
     # advanced card goes to the end of the section, with the new methods
     M.move('mem-counting-advanced', ADV)
 
@@ -844,6 +848,9 @@ def apply(M):
         ]),
     ], ADV, after='mem-counting-advanced')
 
+    # 2026-10-01 elite comparison: factorial practice, card rows, summary slide
+    elite_factorials_late(M)
+
     # =====================================================================================================
     # 9. Keep the slide notes of all guided solution videos in sync (and no "−" inside words)
     # =====================================================================================================
@@ -858,3 +865,167 @@ def apply(M):
         for b in v['beats']:
             if (b.get('canvas') or '').startswith('Pre-loaded — question'):
                 b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, stem)
+
+
+# =========================================================================================================
+# 2026-10-01 elite comparison: factorials as algebra. Real exams: 2020 winter I-19, 2022 autumn I-17,
+# 2020 autumn I-4, 2024 winter II-17, 2019 winter II-16, 2021 autumn II-5, 2021 spring I-5, 2022 winter II-7,
+# 2025 winter I-7, 2025 spring I-14, 2026 spring II-18.
+# =========================================================================================================
+FL = 'wp-140-after'
+
+
+def elite_factorials(M):
+    # Factorial Expressions: 1 title, 2 stop early, 3-4 plug in / math, 5 not one factorial, 6 recap
+    M.insert_slides(FL, 5, [
+        dict(mode='concept', active=4, title='Know them by sight', script=[
+            A('3!, 4!, 5! appear', T('$3!=6 \\qquad 4!=24 \\qquad 5!=120$', size=50, gap=30)),
+            A('6!, 7! appear', T('$6!=720 \\qquad 7!=5040$', size=50, gap=110)),
+            "Know these by sight. Each one is the one before, times the next number.",
+            D('Write "5! × 6 = 720     6! × 7 = 5040"'),
+            "One hundred twenty times six: seven hundred twenty. Times seven: five thousand forty.",
+            "See 120, 720 or 5040 in a question? Think: five, six or seven factorial.",
+            A('a! = 6 · 20 appears', T('$a!=6\\cdot20 \;\\to\; 120=5! \;\\to\; a=5$', size=46)),
+            "Multiply it out — and recognize the number. Six times twenty is one hundred twenty. That's five factorial.",
+        ]),
+        dict(mode='concept', active=5, title='A run of neighbors', script=[
+            A('b!/a! = a run appears', T('$\\dfrac{b!}{a!}=(a+1)(a+2)\\cdots b$', size=50, gap=40)),
+            "A big factorial over a smaller one: everything from a down to one cancels.",
+            "What's left is a run of neighbors — whole numbers in a row, from a plus one up to b.",
+            D('Write "8! ÷ 5! = 8 · 7 · 6 = 336"'),
+            A('b! = 56 · a! appears', T('$b!=56\\cdot a! \;\\to\; \\dfrac{b!}{a!}=56=7\\cdot8$', size=46, gap=60)),
+            "Now backwards. b factorial over a factorial is fifty-six. Split fifty-six into neighbors: seven times eight.",
+            D('Write "a = 6, b = 8"'),
+            "The run starts right after a — so a is six, not seven. It ends at b: b is eight.",
+            "The exam usually limits the numbers — say, below ten — so the run has two or more neighbors.",
+            A('n!/(n − 1)! = n appears', T('$\\dfrac{n!}{(n-1)!}=n \\qquad \\dfrac{n!}{(n-2)!}=n(n-1)$', size=46)),
+            "A run can be short. One step apart: just n. Two steps apart: n times n minus one.",
+        ]),
+        dict(mode='concept', active=6, title='Sums: take out the smaller', script=[
+            "A sum of factorials? Don't calculate. Take out the smaller factorial — like a common factor.",
+            A('5! + 6! = 5! · 7 appears', T('$5!+6!=5!\\cdot(1+6)=5!\\cdot7$', size=48, gap=40)),
+            "Six factorial is six times five factorial. Take out five factorial: one plus six stays inside.",
+            "Don't forget the one. It's the five factorial itself.",
+            A('6! + 8! = 6! · 57 appears', T('$6!+8!=6!\\cdot(1+7\\cdot8)=6!\\cdot57$', size=48, gap=40)),
+            "Two steps apart? Eight factorial is eight times seven times six factorial. One plus fifty-six: fifty-seven.",
+            A('8! − 7! = 7! · 7 appears', T('$8!-7!=7!\\cdot(8-1)=7\\cdot7!$', size=48)),
+            "A minus works the same way. Then it cancels with what's on the other side of the fraction.",
+            "And the trap: eight factorial minus seven factorial is NOT one factorial. We never subtract inside the exclamation mark.",
+        ]),
+        dict(mode='concept', active=7, title='Factorials and primes', script=[
+            "A divisibility question about a factorial? Break every factor into primes.",
+            A('7! written out appears', T('$7!=7\\cdot6\\cdot5\\cdot4\\cdot3\\cdot2$', size=48, gap=110)),
+            D('Under the factors write "7    2·3    5    2²    3    2"'),
+            A('7! = 2⁴ · 3² · 5 · 7 appears', T('$7!=2^4\\cdot3^2\\cdot5\\cdot7$', size=48, gap=40)),
+            "Count the twos: one in six, two in four, one in two. Four twos. Two threes, one five, one seven.",
+            "Is seven factorial divisible by sixteen — two to the fourth? Yes. By thirty-two? No. There are only four twos.",
+            "Divisible by twenty-five? No — there is only one five.",
+            A("'Count the 2s, not the even numbers' appears", T('Count the $2$s — not the even numbers', size=44)),
+            "The trap: counting the even numbers. There are three even numbers — but four twos. Four hides two of them.",
+        ]),
+    ])
+    M.set_slide(FL, 10, script=[
+        "Let's lock it in.",
+        A("'n! = n · (n − 1)!' appears", T('$n!=n\\cdot(n-1)!$ — expand only until you match, then cancel', size=38)),
+        A("'Letters? Plug in a small legal value' appears", T('Letters? Plug in a small legal value', size=38)),
+        A("'Know 5!, 6!, 7!' appears", T('$5!=120 \\quad 6!=720 \\quad 7!=5040$', size=38)),
+        A("'b!/a! = a run of neighbors' appears", T('$\\dfrac{b!}{a!}$ = a run of neighbors, from $a+1$ to $b$', size=38)),
+        A("'Sum: take out the smaller factorial' appears", T('Sum or difference: take out the smaller factorial', size=38)),
+        A("'Divisible? Break into primes' appears", T('Divisible? Break every factor into primes', size=38)),
+        "A factorial is a number times the factorial just below it. Everything on this list comes from that.",
+        D('Circle "Plug in"'),
+        "Plugging in is fast. The math tells you why. Use both.",
+    ])
+    M.set_sidebar(FL, ['Stop early', 'Plug in first', 'The math', 'Not one factorial', 'Know them by sight',
+                       'A run of neighbors', 'Sums of factorials', 'Factorials and primes', 'Recap'])
+    M.slide(FL, 10)['active'] = 8
+
+    # guided question
+    g = 'q-r26-t28-28'
+    M.new_q(g, TOPIC, '$\\dfrac{10!-9!}{8!}=?$', ['$9$', '$81$', '$90$', '$\\frac{1}{8!}$'], 2, [
+        'Take out the smaller factorial: $10!=10\\cdot9!$, so $10!-9!=9!\\cdot(10-1)=9\\cdot9!$.',
+        '$\\frac{9\\cdot9!}{8!}=9\\cdot\\frac{9!}{8!}=9\\cdot9=81$.',
+        'Or write both in terms of $8!$: $10!=90\\cdot8!$ and $9!=9\\cdot8!$. So $\\frac{90\\cdot8!-9\\cdot8!}{8!}=90-9=81$.',
+        'The traps: $90=\\frac{10!}{8!}$ forgets the $-9!$. $\\frac{1}{8!}$ comes from the wrong rule $10!-9!=(10-9)!$.'])
+    M.place_q(g, ADV, after=FL)
+    n = M.next_question_number(TOPIC)
+    beats = [dict(mode='title', title='Question %d' % n, script=[
+        "Factorials with a minus sign. Don't calculate them.",
+        "Take out the smaller one."])]
+    for title, script in [
+        ('Method 1 · Take out the smaller factorial', [
+            "Ten factorial minus nine factorial. The smaller one is nine factorial.",
+            D('Write "10! = 10 · 9!"'),
+            "Ten factorial is ten times nine factorial.",
+            D('Write "10! − 9! = 9! · (10 − 1) = 9 · 9!"'),
+            "Take out nine factorial. Ten minus one stays inside: nine.",
+            D('Write "9 · 9! ÷ 8! = 9 · 9 = 81"'),
+            "Now divide by eight factorial. Nine factorial over eight factorial is just nine. Nine times nine: eighty-one.",
+            D('Circle choice 2'),
+            "Choice two.",
+            "Ninety forgets the minus nine factorial. And one over eight factorial comes from subtracting inside the exclamation mark — never do that.",
+        ]),
+        ('Method 2 · Everything in eight factorials', [
+            "Another way: write everything with eight factorial.",
+            D('Write "10! = 10 · 9 · 8! = 90 · 8!     9! = 9 · 8!"'),
+            "Ten factorial is ninety eight-factorials. Nine factorial is nine of them.",
+            D('Write "(90 − 9) · 8! ÷ 8! = 81"'),
+            "Ninety minus nine: eighty-one eight-factorials. Divide by eight factorial: eighty-one.",
+        ])]:
+        beats.append(dict(mode='question', active=SB_ADV.index('Question %d' % n), title=title, pre=[Q(g)], script=script))
+    v = M.new_video('solve-' + g, TOPIC, 'Advanced Counting', SB_ADV, beats, ADV, kind='solution', qid=g)
+    v['beats'][0]['title'] = 'Advanced Counting'
+    v['hybrid']['num'] = 51
+    v['hybrid']['title'] = 'Advanced Counting'
+    v['title'] = v['navLabel'] = M.q(g)['stem']
+
+
+def elite_factorials_late(M):
+    R = 'q-r26-t28-'
+    M.new_q(R + '31', TOPIC, '$\\dfrac{720+5040}{6!}=?$', ['$7$', '$8$', '$13$', '$42$'], 2, [
+        'Know them by sight: $720=6!$ and $5040=7!=7\\cdot6!$.',
+        'Take out $6!$: $\\frac{6!\\cdot(1+7)}{6!}=1+7=8$.',
+        'The trap $7$ forgets the $1$ (the $6!$ itself).'])
+    M.new_q(R + '29', TOPIC, '$x$ and $y$ are positive integers, and $x>y$.\nGiven: $\\frac{x!}{y!}=110$.\n'
+            'Which of the following could be the value of $x+y$?', ['$21$', '$20$', '$19$', '$22$'], 2, [
+        '$\\frac{x!}{y!}$ is a run of neighbors, from $y+1$ up to $x$.',
+        '$110=10\\cdot11$: the run is $10$, $11$. It starts right after $y$, so $y=9$, and it ends at $x=11$. $x+y=20$.',
+        'Check: $\\frac{11!}{9!}=11\\cdot10=110$ ✓. (A run of one number also works: $x=110$ and $y=109$, but $219$ is not among the choices.)',
+        'The trap $21$ takes $y=10$. The run starts AFTER $y$.'])
+    M.new_q(R + '30', TOPIC, 'What is the largest integer $k$ for which $9!$ is divisible by $2^k$?',
+            ['$4$', '$5$', '$7$', '$8$'], 3, [
+        '$9!=9\\cdot8\\cdot7\\cdot6\\cdot5\\cdot4\\cdot3\\cdot2\\cdot1$. Count the 2s in each factor.',
+        '$8=2^3$: three. $6=2\\cdot3$: one. $4=2^2$: two. $2$: one. In all, $3+1+2+1=7$.',
+        'So $9!=2^7\\cdot2835$, and $2835$ is odd. $9!$ is divisible by $2^7$, but not by $2^8$.',
+        'The trap $4$ counts the even numbers, not the 2s.'])
+    M.place_q(R + '31', PRAC, after='wp28-p02')
+    M.place_q(R + '29', PRAC, after=R + '31')
+    M.place_q(R + '30', PRAC, after=R + '29')
+
+    # advanced card: factorial algebra rows
+    rows = M.card('mem-counting-advanced')['tables'][0]['rows']
+    k = next(i for i, r in enumerate(rows) if r[0] == 'Factorial') + 1
+    rows[k:k] = [
+        ['Know by sight', '$5!=120$, $6!=720$, $7!=5040$', '$a!=6\\cdot20=120\\to a=5$'],
+        ['Run of neighbors', '$\\frac{b!}{a!}=(a+1)\\cdots b$', '$\\dfrac{b!}{a!}=56=7\\cdot8$: $a=6$, $b=8$'],
+        ['Sum of factorials', 'take out the smaller factorial', '$6!+8!=6!\\cdot(1+56)=6!\\cdot57$'],
+        ['Primes in $n!$', 'break every factor into primes, count each prime', '$7!=2^4\\cdot3^2\\cdot5\\cdot7$'],
+    ]
+
+    # summary: one slide after 'Repetition and rows'
+    V = 'r26-t28-summary'
+    M.insert_slides(V, 3, [dict(mode='concept', active=2, title='Factorial algebra', script=[
+        A('5!, 6!, 7! appear', T('$5!=120 \\qquad 6!=720 \\qquad 7!=5040$', size=44, gap=20)),
+        "Know them by sight. See 720? Think six factorial.",
+        A('b!/a! = run appears', T('$\\dfrac{b!}{a!}=(a+1)\\cdots b \\qquad \\dfrac{9!}{6!}=7\\cdot8\\cdot9$', size=44, gap=20)),
+        "A big factorial over a small one: a run of neighbors.",
+        A('Sum appears', T('$7!+8!=7!\\cdot(1+8)=7!\\cdot9$', size=44, gap=20)),
+        "A sum or a difference: take out the smaller factorial. Don't forget the one.",
+        A('Primes appear', T('$6!=2^4\\cdot3^2\\cdot5$', size=44)),
+        "Divisible by? Break every factor into primes, and count.",
+    ])])
+    sb = list(M.video(V)['hybrid']['sidebar'])
+    sb.insert(2, 'Factorial algebra')
+    M.set_sidebar(V, sb)
+    for n in range(2, len(M.video(V)['beats']) + 1):
+        M.slide(V, n)['active'] = n - 2

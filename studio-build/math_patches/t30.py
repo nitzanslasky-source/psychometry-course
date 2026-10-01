@@ -186,8 +186,19 @@ def _transversal(deg, top_label, bot_label, top_arc, bot_arc, title, names=('a',
 
 
 def fig_p04():
-    # lines that LOOK parallel; nothing is given
-    return _transversal(72, '72°', 'x', (0, 72, 46), (0, 72, 46), 'Line t crosses lines a and b')
+    # 2026-10-01: nothing says a || b, but the U on line t (108° + 72° = 180°) proves it; x sits in a U on line s
+    ay, by_ = 110, 250
+    bd = [_ln(100, ay, 580, ay), _ln(100, by_, 580, by_), _tx(86, ay, 'a'), _tx(86, by_, 'b')]
+    arcs = {'t': ((252, 360, 48, '108°'), (0, 72, 46, '72°')), 's': ((305, 360, 50, '55°'), (0, 125, 40, 'x'))}
+    for xb, deg, name in ((230, 72, 't'), (480, 125, 's')):
+        xa = xb + (by_ - ay) / math.tan(math.radians(deg))
+        ext = 40 / math.sin(math.radians(deg))
+        lo = _pt(ext, 180 + deg, xb, by_); hi = _pt(ext, deg, xa, ay)
+        bd += [_ln(lo[0], lo[1], hi[0], hi[1]), _tx(hi[0] + (12 if deg < 90 else -12), hi[1] - 10, name)]
+        (a1, a2, ra, la), (b1, b2, rb, lb) = arcs[name]
+        bd += [_arc(xa, ay, 26, a1, a2), _alab(xa, ay, ra, a1, a2, la),
+               _arc(xb, by_, 26, b1, b2), _alab(xb, by_, rb, b1, b2, lb)]
+    return _svg('Lines t and s cross lines a and b', bd)
 
 
 def fig_p05():
@@ -335,7 +346,7 @@ def apply(M):
         "Now the trap. On the exam, figures are not drawn to scale.",
         "Two lines can LOOK parallel. Don't trust your eyes.",
         "Parallel only if it's given, or one of these rules proves it. Ninety degrees only if it's marked or given.",
-        "Nothing given, nothing proved? Then the answer may be: it cannot be determined.",
+        "Nothing given? Don't assume they're parallel. First look for one of these three rules in the figure. It's often there.",
     ])])
     # --- slide 8 bisector: "÷", not ":" ---
     b = M.slide(L1, 8)
@@ -401,7 +412,7 @@ def apply(M):
         'Overlapping angles: add them and subtract the full turn ($360°$) or the straight angle ($180°$).',
         'A bent line between parallels? Draw a line through each bend, parallel to both. It always works.',
         'Adding angles to $180°$? Use the units digit: $83°+54°+x=180°$ → $3+4=7$. Therefore, $x$ ends in $3$.',
-        'Two lines look parallel, but nothing says so? The answer may be "It cannot be determined".',
+        'Two lines look parallel, but nothing says so? Look for a rule that proves it: two angles inside a U that add up to $180°$, equal small angles, or two lines $\\perp$ to the same line.',
     ]
 
     # =====================================================================================
@@ -625,11 +636,12 @@ def apply(M):
                                     'The parallel lines never meet, so the three crossing points are different: $3$ points.'])
 
     n4 = NEW[4]
-    M.new_q(n4, TOPIC, 'In the accompanying figure, line $t$ crosses lines $a$ and $b$. What is the value of $x$?',
-            ['$72°$', '$108°$', '$18°$', CBD], 4,
-            ['Nothing says $a\\parallel b$, and no rule proves it. The lines only look parallel — figures are not drawn to scale.',
-             'Without parallel lines, the rules for small and large angles don\'t hold. $x$ can have many values.',
-             'Answer: it cannot be determined. Choice 4. (If $a\\parallel b$ were given, $x$ would be $72°$.)'], figure=fig_p04())
+    # 2026-10-01 elite comparison: "cannot be determined" is now the trap, not the answer
+    M.new_q(n4, TOPIC, 'In the accompanying figure, lines $t$ and $s$ cross lines $a$ and $b$. What is the value of $x$?',
+            ['$55°$', '$72°$', '$125°$', CBD], 3,
+            ['Nothing says $a\\parallel b$ — but the angles on line $t$ prove it. $108°$ and $72°$ sit inside a U, and $108°+72°=180°$. Therefore, $a\\parallel b$.',
+             'Now line $s$. The $55°$ angle and $x$ also sit inside a U between the parallel lines: $x=180°-55°=125°$. Choice 3.',
+             'Trap: "It cannot be determined". Before you choose it, check whether the figure proves the lines parallel.'], figure=fig_p04())
     M.place_q(n4, FOUND)
     n5 = NEW[5]
     M.new_q(n5, TOPIC, 'In the accompanying figure, $a\\parallel b$. What is the value of $x$?',
@@ -805,7 +817,7 @@ def summaries(M):
             A("'Not to scale: parallel only if given or proved' appears",
               T('Not to scale: parallel only if given or proved', size=42)),
             "Lines can LOOK parallel. Don't trust your eyes.",
-            "Nothing given, nothing proved? The answer may be: it cannot be determined."]),
+            "Nothing given? Look for a rule in the figure that proves it — a U that adds up to 180, for example."]),
         S(6, [
             A("'AC + BD = AD + BC' appears", T('$AC+BD=AD+BC$', size=50, gap=40)),
             "Four points on a line: AC and BD overlap on BC. Twelve plus nine, minus the whole sixteen: BC is five.",

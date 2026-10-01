@@ -829,6 +829,7 @@ def apply(M):
     # =====================================================================================
     # 12. Whole-topic text pass, sidebars
     # =====================================================================================
+    give_gap(M)
     _cleanup_videos(M)
     _fix_sidebars(M)
     summary(M)
@@ -933,3 +934,90 @@ def summary(M):
     ]
     last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
     M.new_video('r26-t22-summary', TOPIC, 'Summary: Word Problems and Ratios', sb, slides, ADV, after=last)
+
+
+# =====================================================================================
+# 2026-10-01 elite comparison: one person GIVES k to another -> the gap changes by 2k; equal -> give half the gap.
+# Real exam: 2024_spring_q2_03, 2020_spring_q2_07 (their distractors use "the gap changes by k" and miss the flip).
+# =====================================================================================
+GIVE_TABLE = {'k': 'vis', 'v': {'type': 'table', 'headers': ['', 'Dan', 'Noa', 'Gap'],
+                                'rows': [['Start', '30', '20', 'Dan +10'],
+                                         ['Dan gives 3', '27', '23', 'Dan +4'],
+                                         ['Dan gives 5', '25', '25', '0'],
+                                         ['Dan gives 7', '23', '27', 'Noa +4']]},
+              'w': 900, 'h': 250, 'gap': 40}
+
+
+def give_gap(M):
+    # "Build the Equation" (wp-037): 1 title, 2 equations everywhere, 3 choose x, 4 before and after, 5 recap
+    M.insert_slides('wp-037', 4, [dict(mode='concept', title='Giving: the gap changes twice', script=[
+        "One more kind of change: one person GIVES something to another.",
+        "Dan has thirty cards. Noa has twenty. Dan is ten ahead.",
+        A('The table appears: start 30 and 20; Dan gives 3, 5, 7', GIVE_TABLE),
+        "Dan gives Noa three cards. Dan loses three — and Noa gains three.",
+        "So the gap shrinks by three, twice. Ten minus six: four.",
+        A("'A gives k to B → the gap changes by 2k' appears",
+          T('$A$ gives $k$ to $B$ $\\to$ the gap changes by $2k$', size=44, gap=30)),
+        "That's the rule: give k, and the gap changes by two k. Not by k — that's the trap.",
+        A("'To make them equal: give half the gap' appears", T('To make them equal: give half the gap', size=44)),
+        "To make them equal? Give half the gap. Half of ten is five: twenty-five and twenty-five.",
+        D('Circle "Noa +4" in the last row'),
+        "Give more than half — seven — and Noa is now ahead by four. The gap goes past zero and turns around.",
+        "So ask: who is ahead now?",
+    ])])
+    M.set_slide('wp-037', 6, script=[
+        A("'Build it piece by piece — don't run ahead' appears", T("Build it piece by piece — don't run ahead", size=44)),
+        A("'Changes? Write the new amounts first' appears", T('Changes? Write the new amounts first', size=44)),
+        A("'Gives k → the gap changes by 2k' appears", T('Gives $k$ $\\to$ the gap changes by $2k$', size=44)),
+        "Next: a question where a room disappears. Watch the equation build itself.",
+    ])
+    M.set_sidebar('wp-037', ['Equations everywhere', 'Choose x wisely', 'Before and after', 'Giving changes the gap',
+                             'Recap'])
+    k = 0
+    for b in M.video('wp-037')['beats']:
+        if b['mode'] == 'concept': b['active'] = k; k += 1
+
+    # new guided question, right after the rooms question
+    qid = 'q-r26-t22-20'
+    M.new_q(qid, TOPIC, 'Shelf A has 26 more books than shelf B. Some books are moved from shelf A to shelf B. After the '
+                        'move, shelf B has 6 more books than shelf A. How many books were moved?',
+            ['10', '13', '16', '32'], 3, [
+        'Every book that is moved changes the gap by 2: A loses it and B gains it.',
+        'The gap goes from "A ahead by 26" through 0 to "B ahead by 6": it changes by $26+6=32$.',
+        'Books moved: $\\frac{32}{2}=16$.',
+        'Check: B $=x$, A $=x+26$. After the move: A $=x+10$ and B $=x+16$. B has 6 more ✓.',
+        'Traps: 32 forgets that the gap changes twice; 13 only makes them equal; 10 forgets that the gap turns around.'])
+    M.place_q(qid, LEARN, after='solve-wp22-g038')
+    _solution(M, qid, G_LEARN, 12, ["Books move from one shelf to the other. Watch the gap."], [
+        ('Method 1 · The gap', [
+            "Each book that moves: A loses one, B gains one. The gap changes by two.",
+            D('Draw a number line: "A +26" on the right, "0" in the middle, "B +6" on the left'),
+            "At the start, A is twenty-six ahead. At the end, B is six ahead.",
+            "The gap goes down to zero, then turns around and grows to six.",
+            D('Write "26 + 6 = 32"'),
+            "In all, the gap changes by twenty-six plus six: thirty-two.",
+            D('Write "32 ÷ 2 = 16 books"'),
+            "Each book changes it by two. Thirty-two divided by two: sixteen books.",
+            D('Circle choice 3'),
+            "Choice three.",
+        ]),
+        ('Method 2 · Before and after', [
+            "Or build it with a before-and-after table. Give the plain x to the little guy: B.",
+            D('Write "before: B = x, A = x + 26"'),
+            D('Write "after (move k): A = x + 26 − k, B = x + k"'),
+            "Move k books. A loses k, B gains k.",
+            D('Write "(x + k) − (x + 26 − k) = 6  →  2k − 26 = 6  →  k = 16"'),
+            "B is six more than A. The x cancels: two k minus twenty-six is six. k is sixteen.",
+            D('Next to choices 4, 2 and 1 write "gap by k", "equal", "no turn"'),
+            "The traps: thirty-two changes the gap by k, not two k. Thirteen only makes them equal. Ten forgets that B ends up ahead.",
+        ]),
+    ])
+
+    # wp22-p25 (already restored in the practice): add the gap method to its solution
+    M.set_q('wp22-p25', expl=[
+        'The gap: every counter Iris gives changes the gap by 2. She gives 9, therefore the gap moves $2\\cdot9=18$ toward Owen.',
+        'After the transfer Owen is 4 ahead. Before it, Iris was $18-4=14$ ahead.',
+        'Together 30, Iris 14 more: Iris $\\frac{30+14}{2}=22$ and Owen $30-22=8$.',
+        'With an equation: after the transfer Iris $=x$ and Owen $=x+4$. $2x+4=30$, $x=13$: 13 and 17. Before: $13+9=22$ '
+        'and $17-9=8$.',
+        'The ratio is $22:8=11:4$.'])
