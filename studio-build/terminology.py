@@ -395,7 +395,8 @@ def _is_titlecase(s):
 def _manual(D, stats, seen):
     """hand edits that a regex cannot do safely"""
     v = D['videos'].get('geo-042')
-    if v:
+    # (only when geo-042 has its patched layout - a partial build such as `math_check.py 9` leaves it unpatched)
+    if v and len(v['beats']) > 5 and len(v['beats'][4].get('items') or []) > 4 and v['beats'][5].get('items'):
         # "The family" slide: the kite drawing's label gets a second line; "Who is also who?" tree: two lines inside the box
         it = v['beats'][4]['items'][4]['v']
         old = it['svg']

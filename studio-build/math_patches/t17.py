@@ -755,16 +755,16 @@ def summary(M):
         ]),
         C(1, [
             "What do multiplying and dividing do? One is the dividing line.",
-            A("'× more than 1 or ÷ a fraction → bigger' appears", T('$\\times$ more than 1, $\\div$ a fraction $\\to$ bigger:  $12\\div\\frac13=36$', size=42, gap=40)),
-            A("'÷ more than 1 or × a fraction → smaller' appears", T('$\\div$ more than 1, $\\times$ a fraction $\\to$ smaller:  $12\\cdot\\frac13=4$', size=42, gap=40)),
+            A("'× more than 1 or ÷ a fraction → bigger' appears", T('$\\times$ more than 1, $\\div$ a fraction $\\to$ bigger:  $20\\div\\frac14=80$', size=42, gap=40)),
+            A("'÷ more than 1 or × a fraction → smaller' appears", T('$\\div$ more than 1, $\\times$ a fraction $\\to$ smaller:  $20\\cdot\\frac14=5$', size=42, gap=40)),
             "That's for positive numbers. A negative number makes the same moves — away from zero or toward zero.",
-            A("'Times a negative: other side of zero, the order flips' appears", T('Times a negative: other side of zero, the order flips:  $2<5\\Rightarrow-2>-5$', size=40)),
+            A("'Times a negative: other side of zero, the order flips' appears", T('Times a negative: other side of zero, the order flips:  $3<7\\Rightarrow-3>-7$', size=40)),
             "And times a NEGATIVE number? You jump to the other side of zero — and the order flips.",
         ]),
         C(2, [
             "Hierarchy: a number in a higher range stays bigger — after any positive power or root.",
-            A('The fifth root of 9/8 and the square root of 5/6 appear', T('$\\sqrt[5]{\\frac98}>\\sqrt{\\frac56}$  (above 1 against a fraction)', size=46, gap=40)),
-            "Nine eighths is above one; five sixths is a fraction. Don't calculate the roots.",
+            A('The cube root of 7/6 and the square root of 3/4 appear', T('$\\sqrt[3]{\\frac76}>\\sqrt{\\frac34}$  (above 1 against a fraction)', size=46, gap=40)),
+            "Seven sixths is above one; three quarters is a fraction. Don't calculate the roots.",
             "For negative numbers: odd powers and odd roots only.",
             A("'Same operation: ignore it (positive numbers only)' appears", T('Same operation on both? Ignore it — positive numbers only', size=42, gap=40)),
             A("'Strong on strong' appears", T('Strong on strong:  $0<a<b,\\ 0<c<d\\ \\Rightarrow\\ ac<bd$', size=42)),
@@ -772,9 +772,9 @@ def summary(M):
         ]),
         C(3, [
             "Exceptional powers move a number into another range. Handle them first.",
-            A('(−3)² = 9 appears', T('Even power of a negative:  $(-3)^2=9$', size=46, gap=40)),
-            "An even power of a negative number turns positive. Read the brackets: without them, minus three squared is minus nine.",
-            A('(2/5)⁻² = (5/2)² appears', T('Negative exponent:  $\\left(\\frac25\\right)^{-2}=\\left(\\frac52\\right)^2>1$', size=46)),
+            A('(−4)² = 16 appears', T('Even power of a negative:  $(-4)^2=16$', size=46, gap=40)),
+            "An even power of a negative number turns positive. Read the brackets: without them, minus four squared is minus sixteen.",
+            A('(4/7)⁻² = (7/4)² appears', T('Negative exponent:  $\\left(\\frac47\\right)^{-2}=\\left(\\frac74\\right)^2>1$', size=46)),
             "A negative exponent: to compare ranges, flip it first. A fraction became a number above one.",
         ]),
         C(4, [
@@ -791,8 +791,8 @@ def summary(M):
         C(5, [
             "The reciprocal, one over x, keeps the sign — big and small swap.",
             A('0 < x < 1 → 1/x > 1 and x > 1 → 0 < 1/x < 1 appear', T('$0<x<1\\Rightarrow\\frac1x>1\\qquad x>1\\Rightarrow0<\\frac1x<1$', size=46, gap=40)),
-            "A half becomes two. Two becomes a half. The negative side is the mirror.",
-            A('2 < x < 5 → 1/5 < 1/x < 1/2 appears', T('$2<x<5\\ \\Rightarrow\\ \\frac15<\\frac1x<\\frac12$', size=48)),
+            "A quarter becomes four. Four becomes a quarter. The negative side is the mirror.",
+            A('4 < x < 10 → 1/10 < 1/x < 1/4 appears', T('$4<x<10\\ \\Rightarrow\\ \\frac1{10}<\\frac1x<\\frac14$', size=48)),
             "Numbers with the same sign: the reciprocal flips the order.",
         ]),
         C(6, [
@@ -813,8 +813,8 @@ def summary(M):
         ]),
         C(8, [
             "Last: distance and midpoint.",
-            A('Distance = bigger − smaller appears', T('Distance $=$ bigger $-$ smaller:  $5-(-8)=13$', size=46, gap=40)),
-            A('Midpoint = (a + b)/2 appears', T('Midpoint $=\\frac{a+b}{2}$:  $\\frac{-9+3}{2}=-3$', size=46)),
+            A('Distance = bigger − smaller appears', T('Distance $=$ bigger $-$ smaller:  $4-(-11)=15$', size=46, gap=40)),
+            A('Midpoint = (a + b)/2 appears', T('Midpoint $=\\frac{a+b}{2}$:  $\\frac{-13+5}{2}=-4$', size=46)),
             "The midpoint is the average. A third of the way? Take a third of the distance and walk it from the start.",
         ]),
         C(9, [

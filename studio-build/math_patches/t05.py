@@ -694,7 +694,7 @@ def summary(M):
         S(0, [
             A('Expression: = ? appears', T('Expression: something $=\\ ?$ · one side', size=46)),
             "An expression has one side. Something equals a question mark.",
-            A('a/b + b/a = (a² + b²)/ab appears', T('$\\frac{a}{b}+\\frac{b}{a}=\\frac{a^2+b^2}{ab}$', size=56)),
+            A('1/a + 1/b = (a + b)/ab appears', T('$\\frac{1}{a}+\\frac{1}{b}=\\frac{a+b}{ab}$', size=56)),
             "So the denominator stays. You may never just wipe it away.",
             "Only in an equation can you clear a denominator — from both sides."]),
         S(1, [
@@ -702,12 +702,12 @@ def summary(M):
             "A sum on top? You may split it.",
             A('Trap appears', T('$\\frac{c}{a+b}\\ne\\frac{c}{a}+\\frac{c}{b}$ ✗', size=56)),
             "A sum on the bottom? Never.",
-            "Six over one plus two is two. Split it wrongly and you get nine."]),
+            "Twelve over one plus three is three. Split it wrongly and you get sixteen."]),
         S(2, [
             A('Main bar rule appears', T('Main bar first · work from the inside out', size=46)),
             "Many fraction bars? Find the longest one — the main bar.",
             "Then start from the deepest layer and work outward. One layer at a time.",
-            A('Example appears', T('$1\\div\\frac{1}{2}=1\\cdot2=2$', size=50)),
+            A('Example appears', T('$3\\div\\frac{3}{4}=3\\cdot\\frac{4}{3}=4$', size=50)),
             "And dividing by a fraction means multiplying by its reciprocal."]),
         S(3, [
             A('(a − b)/(b − a) = −1 appears', T('$\\frac{a-b}{b-a}=-1$, when $a\\ne b$', size=54)),
@@ -716,19 +716,19 @@ def summary(M):
             "Because b minus a is minus, a minus b.",
             "Watch the minus in front of a bracket. It flips every sign inside."]),
         S(4, [
-            A('Repeated bracket appears', T('$(a+b)(u-4)+(a+b)(u+4)=(a+b)\\cdot2u$', size=44)),
+            A('Repeated bracket appears', T('$(x-y)(m+3)+(x-y)(m-3)=(x-y)\\cdot2m$', size=44)),
             "A bracket that repeats? Treat it as one object and take it out front.",
-            A('Sum and product appears', T('$x^2+9x+20=(x+4)(x+5)$', size=50)),
-            "A trinomial? Sum and product, from Topic 4. Product twenty, sum nine: four and five.",
+            A('Sum and product appears', T('$x^2+11x+28=(x+4)(x+7)$', size=50)),
+            "A trinomial? Sum and product, from Topic 4. Product twenty-eight, sum eleven: four and seven.",
             "Factor first — then cancel what cancels."]),
         S(5, [
-            A('99 · 41 appears', T('$99\\cdot41=100\\cdot41-41=4{,}059$', size=50)),
+            A('99 · 53 appears', T('$99\\cdot53=100\\cdot53-53=5{,}247$', size=50)),
             "No calculator. Look for a round number nearby.",
-            A('96 · 104 appears', T('$96\\cdot104=100^2-4^2=9{,}984$', size=50)),
+            A('93 · 107 appears', T('$93\\cdot107=100^2-7^2=9{,}951$', size=50)),
             "Two numbers the same distance from a round number? Sum times difference."]),
         S(6, [
-            A('Given: x + y = 5 appears', T('Given: $x+y=5$', size=50)),
-            A('3x + 3y + 1 = 3 · 5 + 1 = 16 appears', T('$3x+3y+1=3(x+y)+1=3\\cdot5+1=16$', size=46)),
+            A('Given: x + y = 4 appears', T('Given: $x+y=4$', size=50)),
+            A('5x + 5y − 3 = 5 · 4 − 3 = 17 appears', T('$5x+5y-3=5(x+y)-3=5\\cdot4-3=17$', size=46)),
             "They give you a block? Find it inside the question and put in its value.",
             "Don't hunt for x and y. You can't find them — and you don't need them."]),
         S(7, [

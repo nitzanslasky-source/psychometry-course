@@ -580,23 +580,23 @@ def summary(M):
         dict(mode='concept', active=0, title='Exponents 1, 0, −n', pre=[], script=[
             A('a¹ = a and a⁰ = 1 appear', T(r'$a^1=a \qquad a^0=1\quad(a\ne0)$', size=50, gap=50)),
             "Power of one: the number itself. Power of zero: one — for any number except zero.",
-            A('a⁻ⁿ = 1/aⁿ appears', T(r'$a^{-n}=\frac{1}{a^n} \qquad \left(\frac{2}{5}\right)^{-3}=\left(\frac{5}{2}\right)^3$', size=50)),
+            A('a⁻ⁿ = 1/aⁿ appears', T(r'$a^{-n}=\frac{1}{a^n} \qquad \left(\frac{3}{4}\right)^{-2}=\left(\frac{4}{3}\right)^2$', size=50)),
             "A negative exponent means flip. It does NOT make the number negative.",
         ]),
         dict(mode='concept', active=1, title='The three laws', pre=[], script=[
             A('The three laws appear', T(r'$a^m\cdot a^n=a^{m+n} \qquad \frac{a^m}{a^n}=a^{m-n} \qquad \left(a^m\right)^n=a^{mn}$', size=44, gap=50)),
             "Same base. Multiply: add the exponents. Divide: subtract, top minus bottom. Power of a power: multiply.",
-            A('The trap 3² + 3⁴ ≠ 3⁶ appears', T(r'$3^2+3^4=90\ne3^6$', size=50)),
+            A('The trap 2³ + 2⁴ ≠ 2⁷ appears', T(r'$2^3+2^4=24\ne2^7$', size=50)),
             "A plus sign has no law. Check for the same base AND a multiplication sign.",
         ]),
         dict(mode='concept', active=2, title='Same exponent', pre=[], script=[
             A('(ab)ⁿ = aⁿbⁿ appears', T(r'$(ab)^n=a^n b^n \qquad \left(\frac{a}{b}\right)^n=\frac{a^n}{b^n}$', size=50, gap=50)),
             "Different bases, same exponent? Put them under one exponent.",
-            A('2⁴ · 5⁴ = 10⁴ appears', T(r'$2^4\cdot5^4=10^4 \qquad (a+b)^2\ne a^2+b^2$', size=50)),
-            "Two to the fourth times five to the fourth: ten to the fourth. But never over a plus or a minus.",
+            A('4³ · 25³ = 100³ appears', T(r'$4^3\cdot25^3=100^3 \qquad (a+b)^2\ne a^2+b^2$', size=50)),
+            "Four cubed times twenty-five cubed: a hundred cubed. But never over a plus or a minus.",
         ]),
         dict(mode='concept', active=3, title='Negative bases', pre=[], script=[
-            A('(−3)⁴, (−3)³ and −3² appear', T(r'$(-3)^4=81 \qquad (-3)^3=-27 \qquad -3^2=-9$', size=48, gap=50)),
+            A('(−2)⁴, (−2)³ and −2⁴ appear', T(r'$(-2)^4=16 \qquad (-2)^3=-8 \qquad -2^4=-16$', size=48, gap=50)),
             "Even power: the minus disappears. Odd power: the minus stays.",
             "No brackets? The power comes first, then the minus.",
             A("'Odd keeps the sign, even hides it' appears", T(r'Odd keeps the sign: $x^3<0 \Rightarrow x<0$. Even: $x^2\ge0$', size=40)),
@@ -609,15 +609,15 @@ def summary(M):
             "And one special pair: two and four. Among positive whole numbers, it's the only one.",
         ]),
         dict(mode='concept', active=5, title='Split and count', pre=[], script=[
-            A('2ⁿ⁺³ = 8 · 2ⁿ appears', T(r'$2^{n+3}=2^n\cdot2^3=8\cdot2^n$', size=50, gap=50)),
+            A('3ⁿ⁺² = 9 · 3ⁿ appears', T(r'$3^{n+2}=3^n\cdot3^2=9\cdot3^n$', size=50, gap=50)),
             "A sum in the exponent splits into a product.",
-            A('2ⁿ + 2ⁿ = 2ⁿ⁺¹ appears', T(r'$2^n+2^n=2\cdot2^n=2^{n+1} \qquad \ne 2^{2n}$', size=48)),
+            A('4ⁿ + 4ⁿ + 4ⁿ + 4ⁿ = 4ⁿ⁺¹ appears', T(r'$4^n+4^n+4^n+4^n=4\cdot4^n=4^{n+1} \qquad \ne 4^{4n}$', size=44)),
             "Copies of the same power? Count them, and write the count as a power of the base.",
         ]),
         dict(mode='concept', active=6, title='Compare powers', pre=[], script=[
-            A('4⁴ = 2⁸ < 2¹⁰ appears', T(r'$4^4=\left(2^2\right)^4=2^8<2^{10}$', size=50, gap=50)),
+            A('25³ = 5⁶ < 5⁸ appears', T(r'$25^3=\left(5^2\right)^3=5^6<5^8$', size=50, gap=50)),
             "To compare, make the bases the same — or the exponents the same.",
-            A('0.3² = 0.09 appears', T(r'$0<x<1:\ x^3<x^2<x \qquad 0.3^2=0.09$', size=46)),
+            A('0.4² = 0.16 appears', T(r'$0<x<1:\ x^3<x^2<x \qquad 0.4^2=0.16$', size=46)),
             "Between zero and one, a higher power is SMALLER.",
         ]),
         dict(mode='concept', active=7, title='Before you practice', pre=[], script=[
@@ -627,7 +627,7 @@ def summary(M):
             A("'Brackets: what exactly is the base?' appears", T('Brackets: what exactly is the base?', size=40)),
             A("'A number between 0 and 1?' appears", T('A number between $0$ and $1$?', size=40)),
             A("'Letters in the answers? Check with a number.' appears", T('Letters in the answers? Check with a number.', size=40)),
-            "The classic traps: adding exponents across a plus sign, and reading minus three squared as nine.",
+            "The classic traps: adding exponents across a plus sign, and reading minus two to the fourth as sixteen.",
             "Now go practice.",
         ]),
     ]

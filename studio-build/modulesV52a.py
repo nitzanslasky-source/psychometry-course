@@ -1646,19 +1646,19 @@ def L_summary():
                   "The trap: in percent questions, know who the whole is — what comes after 'of'. And remember that any problem type — averages, overlap — can hide inside."))
     s.append(_sum(sb, 1, car_scatter(4),
                   'each marker (see the legend) sits exactly at its value; check the units',
-                  '"90" may mean 90,000 · a Z on the axis = not to scale there',
+                  '"30" may mean 30,000 · a Z on the axis = not to scale there',
                   "Points on axes: each series has its marker in the legend, and every point sits exactly at its value. Check the units.",
-                  "The trap: thousands on the axis — 90 means 90,000. And a zigzag, a Z, means that part of the axis isn't to scale."))
+                  "The trap: thousands on the axis — 30 means 30,000. And a zigzag, a Z, means that part of the axis isn't to scale."))
     s.append(_sum(sb, 2, car_line(),
                   'values only at the marked points; the slope shows the trend',
-                  'there is no "2010½" — the line between points means nothing',
+                  'there is no "2012½" — the line between points means nothing',
                   "A line graph: the values are only at the marked points; the line shows the trend — steeper means a bigger change.",
-                  "The trap: reading a value between two points. There's no 2010 and a half."))
-    s.append(_sum(sb, 3, stack_chart(highlight=[(1, 2)], marks=[('brace', 2.3, 60, 110, '50')]),
+                  "The trap: reading a value between two points. There's no 2012 and a half."))
+    s.append(_sum(sb, 3, stack_chart(highlight=[(1, 1)], marks=[('brace', 1.3, 55, 80, '25')]),
                   'bar height = value; side by side, one inside another, stacked, or horizontal',
-                  'stacked: a part = the gap (50), not the top (110)',
+                  'stacked: a part = the gap (25), not the top (80)',
                   "A bar chart: the height is the value. Bars can stand side by side, one inside another, stacked, or lie horizontally — just turn the page.",
-                  "The trap: in stacked bars a part is the gap — commercial vehicles are 50, not 110."))
+                  "The trap: in stacked bars a part is the gap — commercial vehicles in 2011 are 25, not 80."))
     s.append(_sum(sb, 4, site_curve(marks=[('seg', 8, 80, 9, 300)]),
                   'every point on the line is a measurement; the steepest slope = the biggest change',
                   'use your eyes before you calculate · relative change = how many times',
@@ -1669,21 +1669,21 @@ def L_summary():
                   'the mean is not the middle · extreme cases: max − min and min − max',
                   "A range chart: the bottom of the bar is the minimum, the top the maximum, and the bold line the mean.",
                   "The trap: the mean isn't necessarily the middle. And for 'what can't it be', check the extreme cases: max minus min, min minus max."))
-    s.append(_sum(sb, 6, ins_chart(marks=[('guide', 174, 100)], hl=[1]),
+    s.append(_sum(sb, 6, ins_chart(marks=[('guide', 160, 130)], hl=[3]),
                   'find the point from both axes → read the number of its area',
-                  'the number is in thousands (6 = 6,000) · always check against the example',
+                  'the number is in thousands (10 = 10,000) · always check against the example',
                   "A regions chart: find the point from both axes, and read the number of the area it falls in.",
-                  "The trap: the units — 6 is 6,000. Always check against the example."))
+                  "The trap: the units — 10 is 10,000. Always check against the example."))
     s.append(_sum(sb, 7, site_circle(highlight_spans=[(1, 18, 20)]),
                   'circles = the value lines; the hours go round; the rings = areas',
                   'dark = where MOST are, not all → "the latest hour" may be unknowable',
                   "A circle chart: it's a coordinate system bent into a circle. The circles are the value lines, the hours go round.",
                   "The trap: the dark area shows where most visitors are — not all. Sometimes the answer is: it can't be known.", w=720))
-    s.append(_sum(sb, 8, pix_chart(hl=[(0, 2)], marks=[('guide', 5, 80, '80')]),
+    s.append(_sum(sb, 8, pix_chart(hl=[(0, 2)], marks=[('guide', 2, 50, '50'), ('brace', 2.15, 20, 50, '+30')]),
                   'each point = the total so far; one month = this point − the previous one',
-                  'the value at May is NOT May\'s income · flat = zero that month · last point = the total',
+                  'the value at March (50) is NOT March\'s income (50 − 20 = 30) · flat = zero that month · last point = the total',
                   "A cumulative graph: each point is the total so far. One month is this point minus the previous one.",
-                  "The trap: reading May's point as May's income. Flat means zero that month; the last point is the grand total."))
+                  "The trap: reading March's point, 50, as March's income — March alone is 50 minus 20, just 30. Flat means zero that month; the last point is the grand total."))
     s.append(_sum(sb, 9, vol_chart(hl=[4, 8, 9]),
                   'each point = the change from the previous period; 0 = no change',
                   'ignore the line — "down" can be a rise, "flat" can be a rise',

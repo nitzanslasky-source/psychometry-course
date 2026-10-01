@@ -901,9 +901,9 @@ def apply(M):
         dict(mode='concept', active=0, title='The formula', script=[
             A('The formula appears', T('$\\text{distance}=\\text{time}\\times\\text{speed}$', size=46)),
             "Distance equals time times speed. Need the time? Distance divided by speed.",
-            A("'Same units, always' appears", T('Same units, always: $20$ minutes $=\\frac13$ hour, $45$ minutes $=\\frac34$ hour', size=38)),
+            A("'Same units, always' appears", T('Same units, always: $36$ minutes $=\\frac35$ hour, $50$ minutes $=\\frac56$ hour', size=38)),
             "Always work in the same units. Minutes are fractions of an hour.",
-            A("'Identical ratios, not 3.6' appears", T('Converting a speed? Identical ratios ($\\times60$, $\\times30$) — not $3.6$', size=38)),
+            A("'Identical ratios, not 3.6' appears", T('Converting a speed? Identical ratios ($\\times60$, $\\times15$) — not $3.6$', size=38)),
             "Converting a speed? Use identical ratios. Forget three point six.",
         ]),
         dict(mode='concept', active=1, title='The table', script=[
@@ -925,7 +925,7 @@ def apply(M):
         dict(mode='concept', active=3, title='What is fixed?', script=[
             A("'Same time → distances follow speeds' appears", T('Same time $\\to$ distances follow the speeds', size=40)),
             A("'Same speed → distances follow times' appears", T('Same speed $\\to$ distances follow the times', size=40)),
-            A("'Same distance → times flip' appears", T('Same distance $\\to$ times flip: speeds $3:4$, times $4:3$', size=40)),
+            A("'Same distance → times flip' appears", T('Same distance $\\to$ times flip: speeds $5:2$, times $2:5$', size=40)),
             "Ratios save calculation. First ask: what is fixed?",
             "Same time: distances follow the speeds. Same distance: the times flip.",
         ]),
@@ -946,8 +946,8 @@ def apply(M):
             "A circular track: they meet once every lap — gained, or covered together.",
         ]),
         dict(mode='concept', active=6, title='Percents and letters', script=[
-            A("'Speed × 5/4 → time × 4/5' appears", T('Speed $\\times\\frac54$ $\\to$ time $\\times\\frac45$: $+25\\%$ speed $=-20\\%$ time', size=38)),
-            "Speed up by a percent? Write it as a fraction and flip it. Twenty-five percent faster: twenty percent less time.",
+            A("'Speed × 3/4 → time × 4/3' appears", T('Speed $\\times\\frac34$ $\\to$ time $\\times\\frac43$: $-25\\%$ speed $=+33\\frac13\\%$ time', size=38)),
+            "The speed changes by a percent? Write it as a fraction and flip it. Twenty-five percent slower: a third more time.",
             A("'Letters: plug in easy numbers' appears", T('Letters in the choices: plug in easy numbers (not $0$ or $1$)', size=38)),
             "Letters in the choices? Plug in easy numbers, find the target, and test every choice.",
         ]),
@@ -957,7 +957,7 @@ def apply(M):
             A('Check 2 appears', T('What is fixed: time, speed or distance?', size=40)),
             A('Check 3 appears', T('Toward each other, or a chase? What is the gap at the start?', size=40)),
             A('Check 4 appears', T('Average speed? Total distance $\\div$ total time', size=40)),
-            "And the traps: twenty minutes is not point two of an hour. The average speed is not the average of the speeds.",
+            "And the traps: fifty minutes is not point five of an hour. The average speed is not the average of the speeds.",
             "In a chase, count only the starting gap. And draw a sketch — every time.",
             "Good luck. Let's practice.",
         ]),

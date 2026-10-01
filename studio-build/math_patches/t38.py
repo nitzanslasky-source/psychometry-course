@@ -665,7 +665,7 @@ def summary(M):
             _b('Same area → the more circle-like shape has less perimeter', 'Same area $\\rightarrow$ the more circle-like shape has LESS perimeter', size=38),
             "The circle is the most efficient shape. The country rule: most land, least border.",
             "So read what is fixed — the perimeter or the area.",
-            _b('P = 24: 1 · 11 = 11, 4 · 8 = 32, 6 · 6 = 36', '$P=24$: $\\ 1\\cdot11=11$, $\\ 4\\cdot8=32$, $\\ 6\\cdot6=36$'),
+            _b('P = 20: 1 · 9 = 9, 3 · 7 = 21, 5 · 5 = 25', '$P=20$: $\\ 1\\cdot9=9$, $\\ 3\\cdot7=21$, $\\ 5\\cdot5=25$'),
             "Rectangles: the closer to a square, the more area. Regular polygons: the more sides, the more like a circle."]),
         dict(title='Moving the vertex', active=1, script=[
             _b('Vertex moves straight away → the angle gets smaller', 'Vertex moves straight away $\\rightarrow$ the angle gets smaller'),
@@ -681,14 +681,14 @@ def summary(M):
         dict(title='Two fixed sides', active=3, script=[
             _b('Wider angle → longer third side', 'Wider angle $\\rightarrow$ longer third side'),
             "Two rods that don't change, and the angle between them opens. The third side always gets longer.",
-            _b('Greatest area at 90°: 5 · 8 ÷ 2 = 20', 'Greatest area at $90°$: $\\ \\frac{5\\cdot8}{2}=20$ · parallelogram $5\\cdot8=40$'),
+            _b('Greatest area at 90°: 6 · 9 ÷ 2 = 27', 'Greatest area at $90°$: $\\ \\frac{6\\cdot9}{2}=27$ · parallelogram $6\\cdot9=54$'),
             "The area is different. It grows only up to 90 degrees. At 90 it's the greatest.",
             _b('θ and 180° − θ: the same area', '$\\theta$ and $180°-\\theta$: the same area'),
-            "Here's the trap: 50 and 130 degrees give the same height — the same area."]),
+            "Here's the trap: 40 and 140 degrees give the same height — the same area."]),
         dict(title='Acute or obtuse?', active=4, script=[
             _b('c² = a² + b² → right · c² > a² + b² → obtuse · c² < a² + b² → acute', '$c^2=a^2+b^2$ right · $c^2>a^2+b^2$ obtuse · $c^2<a^2+b^2$ acute', size=36),
             "The anchor you'll use most: the right angle. Compare with Pythagoras.",
-            _b('7, 8, 10: 100 < 49 + 64 = 113 → acute', '$7,\\ 8,\\ 10$: $\\ 100<49+64=113$ $\\rightarrow$ acute'),
+            _b('6, 7, 9: 81 < 36 + 49 = 85 → acute', '$6,\\ 7,\\ 9$: $\\ 81<36+49=85$ $\\rightarrow$ acute'),
             "The longest side is longer than in the right triangle? Obtuse. Shorter? Acute.",
             "Always use the longest side as c."]),
         dict(title='Must, could, cannot', active=5, script=[

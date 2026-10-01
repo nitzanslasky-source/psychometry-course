@@ -682,19 +682,19 @@ def summary(M):
         dict(mode='concept', active=3, title='Between 0 and 1', script=[
             _b('0 < x < 1: x² < x < √x < 1 < 1/x', '$0<x<1:\\quad x^2<x<\\sqrt{x}<1<\\frac{1}{x}$', size=50),
             "Between zero and one, squaring makes a number smaller, and the root makes it bigger.",
-            _b('Negatives: −5 < −2', 'Negatives: $-5<-2$ — farther from $0$ means smaller', size=40),
+            _b('Negatives: −7 < −3', 'Negatives: $-7<-3$ — farther from $0$ means smaller', size=40),
             "With negatives, the farther from zero, the smaller.",
             "Which is the largest for every x in a range? One easy number from the range decides."]),
         dict(mode='concept', active=4, title='Integer gaps', script=[
-            _b('Integer and < 12 → ≤ 11', 'Integer and $<12\\ \\to\\ \\le11$', size=44),
+            _b('Integer and < 20 → ≤ 19', 'Integer and $<20\\ \\to\\ \\le19$', size=44),
             _b('a > b > c integers → a ≥ c + 2', '$a>b>c$ integers $\\to$ $a\\ge b+1\\ge c+2$', size=44),
             "Integers leave gaps. Bigger means bigger by at least one.",
             "Use the gaps to find the biggest or smallest possible value.",
             "A cannot question with a hidden maximum? Test the most extreme choices first."]),
         dict(mode='concept', active=5, title='Scaling', script=[
-            _b('x² = a³, a × 16 → x × 64', '$x^2=a^3:\\quad a\\times16\\ \\to\\ x\\times16^{\\frac32}=x\\times64$', size=44),
+            _b('x² = a³, a × 4 → x × 8', '$x^2=a^3:\\quad a\\times4\\ \\to\\ x\\times4^{\\frac32}=x\\times8$', size=44),
             "One variable is multiplied — what happens to the other?",
-            "Start from one and one, then put in the new value. Sixteen cubed is four thousand ninety-six. Its root: sixty-four.",
+            "Start from one and one, then put in the new value. Four cubed is sixty-four. Its root: eight.",
             "Or the rule: x changes by the factor to the power three halves."]),
         dict(mode='concept', active=6, title='Connect topics', script=[
             _b('c² = a² + b², all positive → c > a, c > b', '$c^2=a^2+b^2$, all positive $\\to$ $c>a$ and $c>b$', size=42),
@@ -711,7 +711,7 @@ def summary(M):
             "Not sure? Count a small case on your fingers."]),
         dict(mode='concept', active=8, title='Pigeonhole', script=[
             _b('More items than boxes → one box gets two', 'More items than boxes $\\to$ one box gets two', size=42),
-            "Thirteen numbers, but only twelve remainders when you divide by twelve. Two of them share a remainder — and their difference divides by twelve.",
+            "Eight numbers, but only seven remainders when you divide by seven. Two of them share a remainder — and their difference is divisible by seven.",
             _b('To be sure: worst luck, then one more', '"To be sure": worst luck first, then one more', size=42),
             "To be sure? Imagine the worst luck — one in every box. Then one more."]),
         dict(mode='concept', active=9, title='Before you practice', script=[

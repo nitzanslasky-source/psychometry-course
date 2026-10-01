@@ -1004,7 +1004,7 @@ def summary(M):
         S(3, [
             A("'Cone: r² + h² = ℓ²' appears", T('Cone: $r^2+h^2=\\ell^2$ — the slant height is not the height', size=40, gap=30)),
             "Many questions hide a right triangle inside the solid. Find it.",
-            "A cone: radius, height and slant height. Radius 6, slant height 10 — the height is 8.",
+            "A cone: radius, height and slant height. Radius 9, slant height 15 — the height is 12.",
             A("'Pyramid: height, half the diagonal, the edge' appears", T('Pyramid: height $\\cdot$ half the base diagonal $\\cdot$ the slanted edge', size=38, gap=30)),
             "A pyramid with equal edges: the apex is above the center. The height, half the diagonal and the edge.",
             A("'Height < slanted edge' appears", T('The height is shorter than any slanted edge', size=40)),
@@ -1013,7 +1013,7 @@ def summary(M):
             A("'Cube: a√2 and a√3' appears", T('Cube: face diagonal $a\\sqrt2$ · body diagonal $a\\sqrt3$', size=42, gap=30)),
             "In a cube: the face diagonal is a root 2, the body diagonal a root 3.",
             A("'Box: √(a² + b² + c²)' appears", T('Box: body diagonal $=\\sqrt{a^2+b^2+c^2}$', size=42, gap=30)),
-            "In a box: two right triangles, or the root of the three squares. 6, 8, 24 — 26.",
+            "In a box: two right triangles, or the root of the three squares. 2, 3, 6 — 7.",
             A("'90°' appears", T('Edge $+$ diagonal of the face it stands on (same corner): $90°$', size=36, gap=20)),
             A("'45° · 60°' appears", T('Edge $+$ diagonal of the same face: $45°$ · two face diagonals, same corner: $60°$', size=36)),
             "And the angles in a cube — only when the lines meet at the same corner."]),
@@ -1036,7 +1036,7 @@ def summary(M):
             A("'Pyramid: n + 1 · 2n · n + 1' appears", T('Pyramid: $n+1$ faces · $2n$ edges · $n+1$ vertices', size=36, gap=30)),
             "Counting: check the rule on a cube — n is 4: 6 faces, 12 edges, 8 vertices.",
             A("'V = √(ab · bc · ca)' appears", T('Three face areas $\\rightarrow V=\\sqrt{ab\\cdot bc\\cdot ca}$', size=40)),
-            "Three face areas at one corner? Multiply them and take the root. 6, 10, 15 — the volume is 30."]),
+            "Three face areas at one corner? Multiply them and take the root. 12, 15, 20 — the volume is 60."]),
         S(8, [
             "Before you start, always ask yourself:",
             A('Check 1 appears', T('Straight or pointed? (pointed: $\\div3$)', size=38, gap=24)),

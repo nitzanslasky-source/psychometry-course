@@ -782,10 +782,10 @@ def summaries(M):
             "Looks like 90? That's not enough. It must be marked, or given."]),
         S(2, [
             A("'Adjacent on a straight line: sum 180°' appears", T('Adjacent on a straight line: sum $180°$', size=44, gap=40)),
-            "Two angles side by side on one straight line add up to 180. Sixty-five next to x? x is 115.",
+            "Two angles side by side on one straight line add up to 180. Forty-seven next to x? x is 133.",
             A("'Vertical angles: equal' appears", T('Vertical angles: equal', size=44, gap=40)),
             "Two lines cross: the angles facing each other are equal.",
-            A("'Bisector: two equal halves' appears", T('Bisector: $72°\\div2=36°$', size=44)),
+            A("'Bisector: two equal halves' appears", T('Bisector: $64°\\div2=32°$', size=44)),
             "A bisector splits an angle into two equal halves."]),
         S(3, [
             A("'small = small · large = large' appears", T('small $=$ small $\\cdot$ large $=$ large', size=46, gap=40)),
@@ -797,7 +797,7 @@ def summaries(M):
             A("'Z → equal' appears", T('Z $\\to$ the two angles are equal', size=46, gap=40)),
             "See parallel lines? Look for the Z. The two angles in its corners are equal.",
             A("'U → sum 180°' appears", T('U $\\to$ the two angles add up to $180°$', size=46)),
-            "Two angles inside a U — same side, between the lines — add up to 180. Fifty-five and 125."]),
+            "Two angles inside a U — same side, between the lines — add up to 180. Fifty-three and 127."]),
         S(5, [
             A("'⊥ or ∥ to the same line → parallel' appears",
               T('Two lines $\\perp$ or $\\parallel$ to the same line $\\to$ parallel', size=42, gap=40)),
@@ -808,9 +808,9 @@ def summaries(M):
             "Nothing given, nothing proved? The answer may be: it cannot be determined."]),
         S(6, [
             A("'AC + BD = AD + BC' appears", T('$AC+BD=AD+BC$', size=50, gap=40)),
-            "Four points on a line: AC and BD overlap on BC. Nine plus ten, minus the whole fifteen: BC is four.",
+            "Four points on a line: AC and BD overlap on BC. Twelve plus nine, minus the whole sixteen: BC is five.",
             A("'Count the gaps, not the points' appears", T('Equal parts: count the gaps, not the points', size=44)),
-            "Five equally spaced points make four gaps, not five."]),
+            "Seven equally spaced points make six gaps, not seven."]),
         S(7, [
             "Before you start, always ask yourself:",
             A('Check 1 appears', T('Is it really $90°$? Is it marked or given?', size=40, gap=30)),
@@ -835,9 +835,9 @@ def summaries(M):
             A("'One pair of parallel lines at a time' appears", T('Crowded figure: one pair of parallel lines at a time', size=42, gap=40)),
             "Several pairs of lines? Take one pair and its transversal. Ignore the rest.",
             "Move the angle you know to the place you need. Then the next pair.",
-            A("'83° + 54° + x = 180° → x = 43°' appears", T('$83°+54°+x=180°\\ \\to\\ x=43°$', size=46)),
+            A("'76° + 58° + x = 180° → x = 46°' appears", T('$76°+58°+x=180°\\ \\to\\ x=46°$', size=46)),
             "Then build the equation.",
-            "Shortcut: three plus four is seven, so x must end in three. Only forty-three does."]),
+            "Shortcut: six plus eight is fourteen, so x must end in six. Only forty-six does."]),
         S(1, [
             A("'Anchor: a straight angle 180° or a full turn 360°' appears",
               T('Anchor: a straight angle $180°$ or a full turn $360°$', size=42, gap=40)),
@@ -846,9 +846,9 @@ def summaries(M):
             "Every angle gives you its neighbor: 180 minus it."]),
         S(2, [
             A("'Letters? Plug in round numbers' appears", T('Letters? Plug in round numbers that look like the figure', size=40, gap=40)),
-            "Letters instead of numbers? Put numbers back. Looks obtuse? Plug in 150.",
-            A("'p = q = r = 150° → θ = 90°' appears", T('$p=q=r=150°\\ \\to\\ \\theta=90°$', size=46, gap=40)),
-            "Then plug the same numbers into the choices. Cross out every choice that doesn't give ninety.",
+            "Letters instead of numbers? Put numbers back. Looks obtuse? Plug in 130.",
+            A("'p = q = r = 130° → θ = 30°' appears", T('$p=q=r=130°\\ \\to\\ \\theta=30°$', size=46, gap=40)),
+            "Then plug the same numbers into the choices. Cross out every choice that doesn't give thirty.",
             "Check that the four choices come out different. If two tie, plug in again."]),
         S(3, [
             A("'Overlapping angles: add, subtract the full turn' appears",
@@ -860,14 +860,14 @@ def summaries(M):
             A("'A bent line? Draw a parallel line through the bend' appears",
               T('A bent line? Draw a parallel line through the bend', size=42, gap=40)),
             "No straight transversal? Add an auxiliary line: through the bend, parallel to both lines.",
-            A("'x = 38° + 57° = 95°' appears", T('$x=38°+57°=95°$', size=46)),
+            A("'x = 41° + 69° = 110°' appears", T('$x=41°+69°=110°$', size=46)),
             "It splits x into two pieces. Each piece makes a Z with a given angle.",
             "The hard part is seeing that you need a line at all."]),
         S(5, [
             A("'Angles pointing left = angles pointing right' appears",
               T('Zig-zag: angles pointing left $=$ angles pointing right', size=42, gap=40)),
             "The shortcut. Look where each angle's tip points.",
-            A("'40° + 65° = x + 35° → x = 70°' appears", T('$40°+65°=x+35°\\ \\to\\ x=70°$', size=46)),
+            A("'50° + 70° = x + 45° → x = 75°' appears", T('$50°+70°=x+45°\\ \\to\\ x=75°$', size=46)),
             "Two bends? Same rule. Left side equals right side.",
             "Not sure? A parallel line through each bend always works."]),
         S(6, [

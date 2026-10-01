@@ -856,13 +856,13 @@ def summary(M):
         C(1, 'Signs of sums', [
             "Adding has its own rules.",
             A('Two negatives', T('$(-)+(-)\\ \\to\\ -$', size=48)),
-            A('Mixed', T('Mixed signs: the bigger size wins · $-7+3=-4$', size=44)),
-            A('Difference', T('Bigger $-$ smaller $>0$ · $-2-(-5)=3$', size=46)),
+            A('Mixed', T('Mixed signs: the bigger size wins · $-9+4=-5$', size=44)),
+            A('Difference', T('Bigger $-$ smaller $>0$ · $-3-(-8)=5$', size=46)),
             "Bigger minus smaller is positive — even when both are negative."]),
         C(2, 'Never negative', [
             "Find the pieces that are surely positive.",
             A('Even power', T('Even power: $x^2\\ge0$', size=46)),
-            A('Odd power', T('Odd power keeps the sign: $(-2)^3=-8$', size=46)),
+            A('Odd power', T('Odd power keeps the sign: $(-3)^3=-27$', size=46)),
             A('Absolute value', T('$|y|>0$ when $y\\ne0$', size=46)),
             A('Minus x', T('$x<0\\ \\Rightarrow\\ -x>0$', size=46)),
             "Minus x means the opposite of x — not a negative number. And zero is neither positive nor negative."]),
@@ -876,11 +876,11 @@ def summary(M):
             "And \"greater than zero\" doesn't mean the list starts at one."]),
         C(4, 'Sums in a row', [
             "Adding numbers in a row.",
-            A('Count x middle', T('Sum $=$ count $\\times$ middle · $11+\\ldots+15=5\\cdot13=65$', size=42)),
+            A('Count x middle', T('Sum $=$ count $\\times$ middle · $16+\\ldots+20=5\\cdot18=90$', size=42)),
             A('Odd/even count', T('Odd count → divides by the count · even count → never', size=42)),
             A('Counting', T('From $a$ to $b$: $b-a+1$ integers', size=44)),
             A('Neighbors', T('Neighbors $a<b$: $b^2-a^2=a+b$', size=44)),
-            "Three to ten is eight numbers, not seven. Add one."]),
+            "Four to twelve is nine numbers, not eight. Add one."]),
         C(5, 'Even and odd', [
             "Zero is even.",
             A('Add', T('Odd $\\pm$ odd $=$ even · even $\\pm$ odd $=$ odd', size=44)),
@@ -903,10 +903,10 @@ def summary(M):
             "x odd? Then x squared minus one is two consecutive evens — it divides by eight."]),
         C(8, 'Candidates and twos', [
             "Anything else? The smallest case is only a candidate.",
-            A('Odd in a row', T('$1\\cdot3\\cdot5=15$, but $7\\cdot9\\cdot11=693$ → only $3$', size=44)),
+            A('Odd in a row', T('$1\\cdot3\\cdot5=15$, but $9\\cdot11\\cdot13=1287$ → only $3$', size=44)),
             "Cross out, then test a second case that avoids the factor.",
-            A('Count the twos', T('Integer? Count the twos: $\\frac{m^2(n+1)}{8}$ has three', size=44)),
-            "m even, n odd: two twos from m squared, one from n plus one. Enough for eight."]),
+            A('Count the twos', T('Integer? Count the twos: $\\frac{m^3(n+1)}{16}$ has four', size=44)),
+            "m even, n odd: three twos from m cubed, one from n plus one. Enough for sixteen."]),
         C(9, 'Before you practice', [
             "Before each question, always ask yourself:",
             A('Check 1', T('1. Which pieces are surely positive? Which one decides?', size=40)),

@@ -1221,19 +1221,19 @@ def _summaries(M):
             _b('α + β + γ = 180°', '$\\alpha+\\beta+\\gamma=180°$'),
             'The angles of a triangle add up to 180. Always.',
             _b('Exterior angle = the two interior angles not next to it', 'Exterior angle $=$ the two interior angles not next to it'),
-            'An exterior angle equals the two interior angles not next to it. 47 and 68? The exterior angle is 115.',
+            'An exterior angle equals the two interior angles not next to it. 52 and 73? The exterior angle is 125.',
             _b('Larger angle ↔ longer side', 'Larger angle $\\leftrightarrow$ longer side opposite it'),
             'And the larger angle sits opposite the longer side.']),
         ('Sides', [
             _b('big − small < c < big + small', '$\\text{big}-\\text{small}<c<\\text{big}+\\text{small}$'),
             'Any two sides together are longer than the third.',
             'So the third side is between the difference and the sum — never equal to either end.',
-            _b('Sides 7 and 12: 5 < c < 19 → 2 · 7 − 1 = 13 lengths', 'Sides $7$ and $12$: $5<c<19$ $\\Rightarrow$ $2\\cdot7-1=13$ whole lengths', size=38),
-            'Whole-number lengths? Twice the shorter side, minus one. Sides 7 and 12 — 13 lengths.']),
+            _b('Sides 6 and 10: 4 < c < 16 → 2 · 6 − 1 = 11 lengths', 'Sides $6$ and $10$: $4<c<16$ $\\Rightarrow$ $2\\cdot6-1=11$ whole lengths', size=38),
+            'Whole-number lengths? Twice the shorter side, minus one. Sides 6 and 10 — 11 lengths.']),
         ('Special triangles', [
             _b('Isosceles: base angle = (180° − v)/2', 'Isosceles: each base angle $=\\dfrac{180°-v}{2}$'),
             'Isosceles: equal legs, equal base angles — and the other way around.',
-            'Vertex angle 44? Each base angle is 180 minus 44, over 2 — 68.',
+            'Vertex angle 36? Each base angle is 180 minus 36, over 2 — 72.',
             _b('To the base: median = altitude = bisector', 'To the base: median $=$ altitude $=$ bisector'),
             'The line to the base is a median, an altitude and a bisector at once.',
             _b('Equilateral: 60° · median to the hypotenuse = half', 'Equilateral: all $60°$ · Right: median to the hypotenuse $=\\frac12$ hypotenuse', size=36),
@@ -1243,7 +1243,7 @@ def _summaries(M):
             'A side times the height to THAT side, over 2. Any side can be the base.',
             'The height falls outside? Still use only the side itself.',
             _b('leg × leg = hypotenuse × altitude', 'Right triangle: leg $\\times$ leg $=$ hypotenuse $\\times$ altitude'),
-            'In a right triangle, count the area twice. Legs 15 and 20, hypotenuse 25: the altitude is 300 over 25 — 12.',
+            'In a right triangle, count the area twice. Legs 30 and 40, hypotenuse 50: the altitude is 1200 over 50 — 24.',
             _b('area ≤ ab/2 · a median halves the area', 'Sides $a,\\ b$: area $\\le\\dfrac{ab}{2}$ · a median halves the area', size=38),
             'Two sides a and b: the area is at most a times b over 2 — only with a right angle between them.',
             'And a median splits a triangle into two equal areas: same base, same height.']),
@@ -1260,7 +1260,7 @@ def _summaries(M):
             _b('6:8:10 · 15:20:25 · 10:24:26', 'Multiples: $6:8:10$ · $15:20:25$ · $10:24:26$'),
             'Any multiple works too: 6, 8, 10 or 15, 20, 25.',
             _b('The largest number = the hypotenuse', 'The largest number $=$ the hypotenuse'),
-            'Match the positions. Hypotenuse 20 and a leg 15? That is not 15, 20, 25.']),
+            'Match the positions. Hypotenuse 12 and a leg 9? That is not 9, 12, 15.']),
         ('Special right triangles', [
             _b('30°-60°-90°: a, a√3, 2a', '$30°$-$60°$-$90°$: $a,\\ a\\sqrt3,\\ 2a$'),
             'The golden triangle: the short leg, a, is opposite the 30. Double it for the hypotenuse, times root 3 for the long leg.',
@@ -1268,8 +1268,8 @@ def _summaries(M):
             'The silver triangle: legs a and a, hypotenuse a root 2.',
             _b('30°-30°-120°: a, a, a√3 · equilateral: a²√3/4', '$30°$-$30°$-$120°$: $a,\\ a,\\ a\\sqrt3$ · equilateral: $S=\\dfrac{a^2\\sqrt3}{4}$', size=36),
             'The 30-30-120: legs a, base a root 3. And the equilateral triangle: a squared root 3, over 4.',
-            _b('9/√3 = 3√3', '$\\dfrac{9}{\\sqrt3}=3\\sqrt3$'),
-            'Dividing by a root? Ignore the root, divide, attach it back: 9 over root 3 is 3 root 3.']),
+            _b('12/√3 = 4√3', '$\\dfrac{12}{\\sqrt3}=4\\sqrt3$'),
+            'Dividing by a root? Ignore the root, divide, attach it back: 12 over root 3 is 4 root 3.']),
         ('Before you practice', [
             'Before you practice, ask yourself:',
             _b('Where is the right angle? Which side is the hypotenuse?', 'Where is the right angle? Which side is the hypotenuse?', size=36),
@@ -1286,10 +1286,10 @@ def _summaries(M):
         'A quick summary before the advanced practice.',
         'The methods from the last examples — in about three minutes.'], [
         ('Letters in the answers', [
-            _b('Plug in: p = 100 → q = 40 → check every choice', 'Plug in: $p=100$ $\\Rightarrow$ $q=40$ · check every choice', size=38),
+            _b('Plug in: p = 120 → q = 50 → check every choice', 'Plug in: $p=120$ $\\Rightarrow$ $q=50$ · check every choice', size=38),
             'Letters in the answers? Plug in a comfortable number that fits the figure.',
-            'An obtuse p? Try 100. Find q: 40. Put 100 into every answer, and keep only the one that gives 40.',
-            _b('Exterior angle: p = q + 60°', 'Exterior angle: $p=q+60°$'),
+            'An obtuse p? Try 120. Find q: 50. Put 120 into every answer, and keep only the one that gives 50.',
+            _b('Exterior angle: p = q + 70°', 'Exterior angle: $p=q+70°$'),
             'And look for an exterior angle — it cuts the angle-sum equation short.']),
         ('The longest side', [
             _b('Opposite the largest angle: the longest side', 'Opposite the largest angle $\\to$ the longest side'),
@@ -1300,9 +1300,9 @@ def _summaries(M):
         ('Trap it: min and max', [
             'Can\'t calculate it exactly? Trap it between a minimum and a maximum.',
             _b('Minimum: two sides > the third', 'Minimum: two sides together $>$ the third'),
-            'AB is 6. The two other sides together are more than 6 — so the perimeter is more than 12.',
-            _b('Obtuse at C: AC, BC < AB = 6 → P < 18', 'Obtuse at C: $AC,\\ BC<AB=6$ $\\Rightarrow$ $12<P<18$', size=38),
-            'Obtuse at C? AB is the longest side. The other two are each less than 6 — the perimeter is less than 18.',
+            'AB is 8. The two other sides together are more than 8 — so the perimeter is more than 16.',
+            _b('Obtuse at C: AC, BC < AB = 8 → P < 24', 'Obtuse at C: $AC,\\ BC<AB=8$ $\\Rightarrow$ $16<P<24$', size=38),
+            'Obtuse at C? AB is the longest side. The other two are each less than 8 — the perimeter is less than 24.',
             'Answers in order? If a bigger answer fit, every answer between it and the minimum would fit too. Only the smallest one above the minimum can be right.']),
         ('Not necessarily', [
             _b('Two of median, altitude, bisector → isosceles', 'Two of median $\\cdot$ altitude $\\cdot$ bisector $\\to$ isosceles', size=38),
@@ -1320,8 +1320,8 @@ def _summaries(M):
         ('Same height', [
             _b('Same height: area ratio = base ratio', 'Same height: area ratio $=$ base ratio'),
             'Two triangles with the same height? The area ratio is the base ratio.',
-            _b('DC = 3BD, area 32 → 8 and 24', '$DC=3BD$, area $32$ $\\Rightarrow$ $8$ and $24$'),
-            'DC is 3 times BD — so the areas are 1 to 3. 32 is 4 parts of 8: 8 and 24.']),
+            _b('DC = 4BD, area 45 → 9 and 36', '$DC=4BD$, area $45$ $\\Rightarrow$ $9$ and $36$'),
+            'DC is 4 times BD — so the areas are 1 to 4. 45 is 5 parts of 9: 9 and 36.']),
         ('Faster ways', [
             _b('Shared sides cancel in a difference', 'Shared and equal sides cancel in a difference'),
             'A difference of two perimeters? Shared sides and equal sides cancel — you don\'t need their lengths.',
