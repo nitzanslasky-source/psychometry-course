@@ -752,6 +752,514 @@ def summary(M):
     M.new_video('r26-t05-summary', TOPIC, 'Summary: Expressions', sb, slides, ADV, after=last)
 
 
+# ---------------------------------------------------------------------------------------------------------------
+# 7. 2026-10-02: new numbers - the English course is not identical to the Hebrew one (same ideas, same methods)
+# ---------------------------------------------------------------------------------------------------------------
+def _sub(M, vid, n, pairs):
+    """Exact substring replacements on one slide: board items ('t'), item labels, spoken and drawn lines."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = False
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit = True
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit = True
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def new_numbers(M):
+    # recorded by the teacher with the old numbers - question and video stay exactly as recorded (nothing yet)
+    RECORDED = set()
+
+    def S(qid, **kw):
+        if qid in RECORDED: return
+        q = M.set_q(qid, **kw)
+        # set_q keeps a pre-loaded stem in sync, but not a pre-loaded copy of the choices
+        for v in M.D['videos'].values():
+            for b in v.get('beats', []):
+                for it in b.get('items', []):
+                    if it.get('k') == 'q' and it.get('qid') == qid and 'choices' in it:
+                        it['choices'] = list(q['choicesRich']); M.touched_videos.add(v['id'])
+
+    def video(qid, slides, intro=None):
+        if qid in RECORDED: return
+        vid = 'solve-' + qid
+        for n, x in slides.items():
+            title, script = x if isinstance(x, tuple) else (None, x)
+            M.set_slide(vid, n, title=title, script=script)
+        if intro: _sub(M, vid, 1, intro)
+        q, v = M.q(qid), M.video(vid)
+        v['title'] = ' %s ' % q['stem'].strip(); v['navLabel'] = q['navLabel']
+
+    # ---------------- lesson "Working with Expressions" (Hebrew lesson examples -> new examples, same points)
+    if 'q-135' not in RECORDED:
+        L = 'expression-strategy'
+        _sub(M, L, 2, [('Expression: something $=\\ ?$', 'Expression: one side, $\\ldots=\\ ?$'),
+                       ('Equation: something $=$ something', 'Equation: two sides, $\\ldots=\\ldots$'),
+                       ("'Expression: something = ?' appears", "'Expression: one side, … = ?' appears"),
+                       ("'Equation: something = something' appears", "'Equation: two sides, … = …' appears")])
+        _sub(M, L, 3, [('$\\frac{a}{b}+\\frac{b}{a}$', '$\\frac{x}{y}+\\frac{2y}{x}$'),
+                       ('a/b + b/a appears', 'x/y + 2y/x appears'),
+                       ("It's a times b.", "It's x times y."),
+                       ('Write "= (a·a + b·b) / ab"', 'Write "= (x·x + 2y·y) / xy"'),
+                       ('The first fraction needs times a, top and bottom. The second needs times b.',
+                        'The first fraction needs times x, top and bottom. The second needs times y.'),
+                       ('Write "= (a² + b²) / ab"', 'Write "= (x² + 2y²) / xy"'),
+                       ('a squared plus b squared, over a b.', 'x squared plus two y squared, over x y.'),
+                       ('Draw a big ✗ next to the ab', 'Draw a big ✗ next to the xy')])
+        _sub(M, L, 5, [('$\\dfrac{12}{\\dfrac{1}{\\frac{1}{3}+\\frac{1}{6}}}$', '$\\dfrac{10}{\\dfrac{1}{\\frac{1}{2}+\\frac{1}{5}}}$'),
+                       ('12 over 1 over (1/3 + 1/6)', '10 over 1 over (1/2 + 1/5)')])
+        _sub(M, L, 6, [('Fifteen and negative fifteen.', 'Eight and negative eight.'),
+                       ('a equals seven, b equals two.', 'a equals ten, b equals four.'),
+                       ('Write "(7 − 2)/(2 − 7) = 5/−5 = −1"', 'Write "(10 − 4)/(4 − 10) = 6/−6 = −1"'),
+                       ('Top: five. Bottom: negative five.', 'Top: six. Bottom: negative six.')])
+        _sub(M, L, 7, [('$(a+b)(u-4)+(a+b)(u+4)$', '$(x+2)(y-5)+(x+2)(y+5)$'),
+                       ('(a + b)(u − 4) + (a + b)(u + 4) appears', '(x + 2)(y − 5) + (x + 2)(y + 5) appears'),
+                       ('Underline both (a + b) brackets', 'Underline both (x + 2) brackets'),
+                       ('Look — a plus b appears in both parts.', 'Look — x plus two appears in both parts.'),
+                       ('Write "= (a + b)[(u − 4) + (u + 4)]"', 'Write "= (x + 2)[(y − 5) + (y + 5)]"'),
+                       ("What's left: u minus four, plus u plus four.", "What's left: y minus five, plus y plus five."),
+                       ('Cross out the −4 and the +4', 'Cross out the −5 and the +5'),
+                       ('Minus four and plus four cancel.', 'Minus five and plus five cancel.'),
+                       ('Write "= (a + b)(2u)"', 'Write "= (x + 2)(2y)"'),
+                       ("u plus u: two u. So it's a plus b, times two u.", "y plus y: two y. So it's x plus two, times two y.")])
+        _sub(M, L, 8, [('1 · Only an expression ($=\\ ?$) — not an equation.', '1 · Only for $=\\ ?$ (one side) — never for an equation.'),
+                       ('2 · Pick legal, easy values — obey every condition.', '2 · Choose simple values that keep every condition.'),
+                       ("3 · Eliminate three choices — don't stop at the first match.", '3 · Knock out three wrong choices — one match is not enough.'),
+                       ('4 · Two still match? Plug in different numbers.', '4 · Still a tie? New numbers, only for the tied choices.')])
+
+    # ---------------- theory: guided questions 1-4
+    # Q1 main fraction bar. Study guide 12 over 1 over (1/3 + 1/6) = 6; Hebrew video 4 over 1 over (1/2 + 1/4) = 3
+    S('q-135', stem=r'$\dfrac{10}{\dfrac{1}{\frac{1}{2}+\frac{1}{5}}}=\ ?$',
+      choices=[r'$\frac{7}{10}$', r'$\frac{10}{7}$', r'$7$', r'$\frac{100}{7}$'], correct=3, expl=[
+        r'Work from the inside out. Deepest layer: $\frac{1}{2}+\frac{1}{5}=\frac{5}{10}+\frac{2}{10}=\frac{7}{10}$.',
+        r'Next layer: $1\div\frac{7}{10}=1\cdot\frac{10}{7}=\frac{10}{7}$.',
+        r'Main bar: $10\div\frac{10}{7}=10\cdot\frac{7}{10}=7$. The answer is choice 3.',
+        r'The traps: $\frac{10}{7}$ stops one layer too early, and $\frac{100}{7}$ multiplies by $\frac{10}{7}$ instead of dividing.'])
+    video('q-135', {2: [
+        "Fraction on a fraction on a fraction. The main bar is the long one — ten over everything else.",
+        "So we need the bottom first. And inside the bottom — the deepest layer.",
+        D('Next to the question write "1/2 + 1/5 = 5/10 + 2/10 = 7/10"'),
+        "One half is five tenths. One fifth is two tenths. Together: seven tenths.",
+        D('Write "1 ÷ 7/10 = 1 · 10/7 = 10/7"'),
+        "Next layer up: one divided by seven tenths. Multiply by the reciprocal — ten sevenths.",
+        D('Write "10 ÷ 10/7 = 10 · 7/10 = 7" and circle choice 3'),
+        "And the main bar: ten divided by ten sevenths. Ten times seven over ten. The tens cancel — seven. Choice three.",
+        "The traps: stop one floor early and you get ten sevenths. Multiply instead of divide and you get a hundred over seven.",
+        "Deepest level first, then climb out floor by floor. Never all the bars at once.",
+        "A side tip about the exam: there are no visual traps in the choices. When an answer equals a choice NUMBER — say the answer is three — it sits in slot three."]})
+
+    # Q2 opposite brackets. Study guide 7 − (p−q)/(q−p) = 8; Hebrew video 2 − (a−b)/(b−a) = 3
+    S('q-136', stem=r'Given: $x\ne y$.' + '\n' + r'$10-\frac{y-x}{x-y}=\ ?$',
+      choices=[r'$11$', r'$9$', r'$10$', r'$-11$'], correct=1, expl=[
+        r'Since $x-y=-(y-x)$, the fraction $\frac{y-x}{x-y}$ equals $-1$.',
+        r'Therefore the expression is $10-(-1)=10+1=11$. The answer is choice 1.',
+        r'The trap is $9$ (choice 2): that is what you get if you treat the fraction as $+1$.'])
+    video('q-136', {2: [
+        "Look at the fraction: y minus x, over x minus y. Same letters, opposite order — the pattern the exam loves.",
+        "Let's just pick two numbers and plug in: x equals six, y equals one.",
+        D('Write "(1 − 6)/(6 − 1) = −5/5 = −1"'),
+        "Negative five over five. The same number — one negative, one positive. Negative one.",
+        D('Circle the fraction and write "= −1"'),
+        "And that's the rule: swap the order of the two terms and it's ALWAYS negative one — whatever numbers you plug in. x isn't equal to y. Therefore we're safe from zero over zero.",
+        D('Write "10 − (−1) = 10 + 1 = 11"'),
+        "So ten minus negative one. Minus a negative — plus. Eleven.",
+        D('Circle choice 1'),
+        "Choice one.",
+        "Watch the trap: nine is what you get if you treat that fraction as PLUS one."]})
+
+    # Q3 repeated bracket. Study guide (c+d)(t−3) + (c+d)(t+3); Hebrew video (a+b)(x−1) + (a+b)(x+1)
+    S('q-137', stem=r'$(m+2n)(k-6)+(m+2n)(k+6)=\ ?$',
+      choices=[r'$0$', r'$2k(m+2n)$', r'$m+2n+k$', r'$2(m+2n+k)$'], correct=2, expl=[
+        r'Take out the common bracket: $(m+2n)(k-6)+(m+2n)(k+6)=(m+2n)[(k-6)+(k+6)]$.',
+        r'Inside: $-6$ and $+6$ cancel, therefore $(k-6)+(k+6)=2k$.',
+        r'The expression equals $(m+2n)\cdot2k=2k(m+2n)$. The answer is choice 2.',
+        r'Check with $m=n=k=1$: $3\cdot(-5)+3\cdot7=6$. The choices give $0$, $6$, $4$ and $8$ — only choice 2.'])
+    video('q-137', {2: [
+        "m plus two n appears in both parts. That's our common factor.",
+        D('Underline both (m + 2n) brackets'),
+        D('Write "= (m + 2n)[(k − 6) + (k + 6)]"'),
+        "Take it out front. Inside: k minus six, plus k plus six.",
+        D('Cross out the −6 and the +6'),
+        "Minus six and plus six cancel.",
+        D('Write "= (m + 2n)(2k) = 2k(m + 2n)"'),
+        "k plus k: two k. Two k, times m plus two n.",
+        D('Circle choice 2'),
+        "Choice two."],
+        3: [
+        "Letters scary? In an expression you can plug in numbers.",
+        "Why ones? You could use two, five, seven — or eleven, twenty, sixty-four. Nothing says the letters must be different. So pick the easiest: all ones.",
+        D('Write "m = n = k = 1"'),
+        D('Write "3 · (−5) + 3 · 7 = −15 + 21 = 6"'),
+        "m plus two n is three. One minus six is negative five. Three times negative five, plus three times seven. Six.",
+        D('Next to choice 1 write "0" and cross it out'),
+        "Choice one: zero. Out.",
+        D('Next to choice 2 write "2 · 1 · 3 = 6"'),
+        "Choice two: two times one times three — six. A match! But here's the catch: DON'T circle it yet.",
+        "When you plug in, you're not hunting for the right answer. You're knocking out wrong ones.",
+        D('Next to choices 3 and 4 write "4" and "8", and cross them out'),
+        "Choice three: four. Choice four: eight. Both out.",
+        D('Circle choice 2'),
+        "Three knocked out — NOW choice two."]},
+        intro=[('Four letters, two brackets — and it all collapses.', 'Three letters, two brackets — and it all collapses.')])
+
+    # Q4 two blocks. Study guide (a+b+c+d)² − (a+b−c−d)²; Hebrew video (x+y+z+w)² − (x+y−z−w)²
+    S('q-138', stem=r'$(p+q+r+s)^2-(p-q+r-s)^2=\ ?$',
+      choices=[r'$4(p+r)(q+s)$', r'$p^2+r^2$', r'$2(pr-qs)$', r'$q^2+s^2$'], correct=1, expl=[
+        r'Regroup into two blocks: $A=p+r$ and $B=q+s$. Then $p+q+r+s=A+B$ and $p-q+r-s=A-B$.',
+        r'$(A+B)^2-(A-B)^2=(A^2+2AB+B^2)-(A^2-2AB+B^2)=4AB$.',
+        r'Put the blocks back: $4(p+r)(q+s)$. The answer is choice 1.',
+        r'Check with $p=q=r=s=1$: $4^2-0^2=16$, and choice 1 gives $4\cdot2\cdot2=16$; the other choices give $2$, $0$ and $2$.'])
+    video('q-138', {2: [
+        "Strong algebra students might expand this. It takes a minute or more.",
+        "For the rest of us: it's an expression. Plug in numbers.",
+        "Nothing says the letters must be different — so make them all one.",
+        D('Write "p = q = r = s = 1"'),
+        D('Write "4² − 0² = 16 − 0 = 16"'),
+        "One plus one plus one plus one: four. Squared — sixteen. One minus one plus one minus one: zero. Sixteen minus zero — sixteen.",
+        D('Next to choice 1 write "4 · 2 · 2 = 16"'),
+        "Choice one: four times two times two — sixteen. A match! But DON'T circle it yet.",
+        D('Next to choices 2, 3 and 4 write "2", "0" and "2", and cross them out'),
+        "Choice two: one plus one — two. Choice three: zero. Choice four: two. All out.",
+        D('Circle choice 1'),
+        "NOW we've eliminated three. Choice one.",
+        "And if two choices had both given sixteen? Change one number — make s two — and test only those two."],
+        3: [
+        "Want proof it wasn't luck? Same question, different simple numbers: three, zero, one, two.",
+        D('Write "p = 3, q = 0, r = 1, s = 2"'),
+        D('Write "6² − 2² = 36 − 4 = 32"'),
+        "Three plus zero plus one plus two: six. Squared — thirty-six. Three minus zero plus one minus two: two. Squared — four. Thirty-two.",
+        D('Next to the choices write their values: 32, 10, 6, 4'),
+        "Choice one: four times four times two — thirty-two. Choice two: nine plus one — ten. Choice three: two times three minus zero — six. Choice four: zero plus four — four.",
+        D('Circle choice 1'),
+        "Choice one again. Any legal numbers — same winner.",
+        "So when may you plug in? Only in an EXPRESSION — something equals a question mark. Two sides? Not allowed.",
+        "Eliminate three — never grab the first match. A tie? New numbers.",
+        "It's a safety net. What you can solve with algebra, solve with algebra."],
+        4: [
+        "For the algebra fans: it's really just two blocks — once you regroup.",
+        D('Write "A = p + r, B = q + s"'),
+        "Gather p and r: call them A. Gather q and s: call them B.",
+        "The first bracket is A plus B. The second: p plus r, minus q, minus s — that's A minus B.",
+        D('Write "(A + B)² − (A − B)² = 4AB"'),
+        "Then it's A plus B squared, minus A minus B squared. That always collapses to four A B.",
+        D('Write "= 4(p + r)(q + s)" and circle choice 1'),
+        "Swap the blocks back: four, times p plus r, times q plus s. Choice one.",
+        "Know the algebra? Great. Don't? Plugging in got you there just as surely."]},
+        intro=[('This one actually appeared on an exam — and it scares everyone.', 'A real exam favorite — and it scares everyone.')])
+
+    # ---------------- advanced: guided questions 5-12
+    # Q5 four ways. Study guide (18² − 18) − (17² + 17); Hebrew video (15² − 15) − (14² + 14)
+    S('q-125', stem=r'$\left(13^2-13\right)-\left(12^2+12\right)=\ ?$',
+      choices=[r'$12$', r'$1$', r'$0$', r'$13$'], correct=3, expl=[
+        r'Take out a common factor in each bracket: $13^2-13=13(13-1)=13\cdot12$ and $12^2+12=12(12+1)=12\cdot13$.',
+        r'The two brackets are the same number, therefore their difference is $0$. The answer is choice 3.',
+        r'Direct calculation gives the same: $(169-13)-(144+12)=156-156=0$.'])
+    video('q-125', {2: [
+        "Method one: simply calculate. The numbers aren't big.",
+        "And squares like these you should know by heart.",
+        D('Under the first bracket write "169 − 13 = 156"'),
+        "Thirteen squared: one hundred sixty-nine. Minus thirteen: one hundred fifty-six.",
+        D('Under the second bracket write "144 + 12 = 156"'),
+        "Twelve squared: one hundred forty-four. Plus twelve: also one hundred fifty-six.",
+        D('Write "156 − 156 = 0" and circle choice 3'),
+        "One fifty-six minus one fifty-six: zero. Choice three."],
+        3: [
+        "But even the calculation can be shortened — with psychometric thinking: the units digit.",
+        D('Above 13² write "…9"; above 12² write "…4"'),
+        "Thirteen squared ends in nine — three times three is nine. Twelve squared ends in four — two times two.",
+        D('Under the first bracket write "…9 − …3 → ends in 6"'),
+        "Ends in nine, minus thirteen: it ends in six.",
+        D('Under the second bracket write "…4 + …2 → ends in 6"'),
+        "Ends in four, plus twelve: also ends in six.",
+        "Six minus six — the answer ends in zero.",
+        D('Circle choice 3'),
+        "Only one choice ends in zero. Choice three.",
+        "This works because all four choices end in different digits. If they didn't, we'd need another method."],
+        4: [
+        "Method three: pull out a common factor. Yes — you can do that with plain numbers too.",
+        D('Write "13² − 13 = 13(13 − 1) = 13 · 12"'),
+        "Thirteen squared minus thirteen: take out thirteen. Thirteen times twelve.",
+        D('Write "12² + 12 = 12(12 + 1) = 12 · 13"'),
+        "Twelve squared plus twelve: take out twelve. Twelve times thirteen.",
+        D('Write "13 · 12 − 12 · 13 = 0"'),
+        "Same product both times — order doesn't matter in multiplication. So: zero.",
+        D('Circle choice 3'),
+        "Choice three."],
+        5: ('Method 4 · Count the copies', [
+        "And the fastest way — no pen needed.",
+        "Thirteen squared is thirteen thirteens. Take one thirteen away: twelve thirteens.",
+        "Twelve squared is twelve twelves. Add one twelve: thirteen twelves.",
+        "Twelve thirteens minus thirteen twelves — exactly the same thing.",
+        D('Write "= 0" and circle choice 3'),
+        "Zero. Pick whichever route you like on the exam — they're all correct."])})
+
+    # Q6 minus after a bracket. Study guide {[(p−q)−r]−s+q}; Hebrew video {[(a−b)−c]−d+b}
+    S('q-126', stem=r'$\left\{\left[\left(w-x\right)+y\right]-z+x\right\}=\ ?$',
+      choices=[r'$w-y+z$', r'$w+y-z$', r'$w+y+z$', r'$w-2x+y-z$'], correct=2, expl=[
+        r'No minus sign stands right in front of a bracket, therefore the brackets can be dropped without changing any sign: $w-x+y-z+x$.',
+        r'$-x$ and $+x$ cancel, leaving $w+y-z$. The answer is choice 2.',
+        r'Check with $w=20$, $x=3$, $y=4$, $z=5$: $\{[(20-3)+4]-5+3\}=19$, and choice 2 gives $20+4-5=19$ (the others give $21$, $29$ and $13$).'])
+    video('q-126', {2: [
+        "The whole question is about one thing: when does a minus sign affect a bracket?",
+        "Not sure? Always test with numbers.",
+        D('Write "(12 − 2) − 3 = 10 − 3 = 7" and next to it "12 − 2 − 3 = 7"'),
+        "Twelve minus two, in brackets, minus three: ten minus three, seven. Without the brackets: also seven.",
+        "So a minus AFTER a bracket doesn't touch it. Only a minus right in FRONT of a bracket flips the signs inside.",
+        "Look: every minus here is inside a bracket or after one. Nothing sits in front of a bracket.",
+        D('Cross out every bracket'),
+        "So we can simply drop all the brackets.",
+        D('Write "= w − x + y − z + x"'),
+        "w minus x, plus y, minus z, plus x.",
+        D('Cross out −x and +x'),
+        "Minus x and plus x cancel out.",
+        D('Write "= w + y − z" and circle choice 2'),
+        "w plus y minus z. Choice two."],
+        3: [
+        "Not sure about the signs? Plug in numbers. But choose smartly.",
+        "We usually plug in ones — but not here. With all ones, choices one and two both give one. A tie — one substitution can't decide.",
+        "So: w is a round, bigger number — twenty — so we stay with positive numbers. And x, y and z are different small numbers: three, four, five.",
+        D('Write "w = 20, x = 3, y = 4, z = 5"'),
+        D('Next to the choices write their values: 21, 19, 29, 13'),
+        "The choices give twenty-one, nineteen, twenty-nine and thirteen. All different — one substitution is enough.",
+        D('Work the question from the inside out: 20 − 3 = 17, 17 + 4 = 21, 21 − 5 = 16, 16 + 3 = 19'),
+        "Innermost bracket first: twenty minus three, seventeen. Plus four, twenty-one. Minus five, sixteen. Plus three — nineteen.",
+        D('Circle choice 2'),
+        "Nineteen. Choice two.",
+        "Which route? Here the direct method is much shorter. Plugging in always works for expressions with letters — it's your default backup when you're stuck."]})
+
+    # Q7 open the choices. Study guide x² + 11x + 24; Hebrew video x² + 9x + 18
+    S('q-127', stem=r'Which of the following expressions is necessarily equal to $x^2+15x+36$?',
+      choices=[r'$(x+18)(x+2)$', r'$(x+36)(x+1)$', r'$(x+12)(x+3)$', r'$(x+8)(x+4.5)$'], correct=3, expl=[
+        r'Every choice has the form $(x+p)(x+q)=x^2+(p+q)x+pq$. In every choice $pq=36$, therefore the middle term decides: we need $p+q=15$.',
+        r'The sums are $20$, $37$, $15$ and $12.5$. Only $12+3=15$. Therefore $x^2+15x+36=(x+12)(x+3)$. The answer is choice 3.',
+        r'Check with $x=1$: $1+15+36=52$, and choice 3 gives $13\cdot4=52$ (the others give $57$, $74$ and $9\cdot5.5=49.5$ — not a whole number, so choice 4 is out without calculating).'])
+    video('q-127', {2: [
+        "Sum and product would work. But look — the choices help us too. Open them up.",
+        D('Next to choice 1 write "x² + 2x + 18x + 36 = x² + 20x + 36"'),
+        "Choice one: x times x, x squared. x times two, two x. Eighteen times x, eighteen x. Eighteen times two, thirty-six.",
+        "x squared plus twenty x plus thirty-six. The x squared matches, the thirty-six matches — but twenty x doesn't.",
+        D('Cross out choice 1'),
+        "Now notice: every choice starts with x times x — x squared.",
+        D('Next to each choice, multiply the two numbers: 36, 36, 36, 36'),
+        "And the numbers multiply to thirty-six every single time.",
+        "So the only thing that decides it is the middle term: we need fifteen x.",
+        D('Next to each choice write the sum of the two numbers: 20, 37, 15, 12.5'),
+        "Eighteen plus two: twenty x. Thirty-six plus one: thirty-seven x. Twelve plus three: fifteen x. Eight plus four and a half: twelve and a half x.",
+        D('Circle choice 3'),
+        "Fifteen x — choice three."],
+        3: [
+        "Plug-in version. x equals one.",
+        D('Next to the choices write: 19·3 = 57, 37·2 = 74, 13·4 = 52, 9·5.5 → not whole'),
+        "The choices give fifty-seven, seventy-four, fifty-two — and choice four: nine times five and a half.",
+        "Don't calculate that one. Just notice: it's not a whole number. If the expression also comes out not whole, that's our answer. If not — it's out, and we saved the calculation.",
+        "So: all four are different. One plug-in is enough.",
+        D('In the question write "1 + 15 + 36 = 52"'),
+        "The expression: one plus fifteen plus thirty-six — fifty-two.",
+        D('Circle choice 3'),
+        "Fifty-two. Choice three. Here, plugging in is actually the faster route."]})
+
+    # Q8 identical and opposite numbers. Study guide |x|/x + 5; Hebrew video 3 + |x|/x
+    S('q-128', stem=r'If ___ then the value of the expression $\frac{x}{|x|}+8$ equals ___.',
+      choices=[r'$x>0$ ; $7$', r'$x<0$ ; $9$', r'$x<0$ ; $7$', r'$x>0$ ; $10$'], correct=3, expl=[
+        r'If $x<0$, then $|x|=-x$, therefore $\frac{x}{|x|}=\frac{x}{-x}=-1$ and the expression equals $-1+8=7$. This is choice 3.',
+        r'If $x>0$, then $\frac{x}{|x|}=1$ and the expression equals $1+8=9$. No choice with $x>0$ says $9$, therefore choices 1 and 4 are out. Choice 2 pairs $9$ with $x<0$ — out.',
+        r'Check with $x=-2$: $\frac{-2}{|-2|}+8=-1+8=7$ ✓.'])
+    video('q-128', {2: [
+        "A number divided by itself is one. A number divided by its opposite is minus one.",
+        "x over the absolute value of x. If x is positive — say four — the absolute value doesn't change it: four over four, one.",
+        D('Write "x > 0: x/|x| = 1 → 1 + 8 = 9"'),
+        "One. Plus eight — nine.",
+        "Now look at the choices that say x is positive: choice one says seven, choice four says ten.",
+        D('Cross out choices 1 and 4'),
+        "Neither says nine. Both out.",
+        "If x is negative — say negative two — the top stays negative two, and the bottom becomes positive two. Opposite numbers.",
+        D('Write "x < 0: x/|x| = −1 → −1 + 8 = 7"'),
+        "Minus one. Plus eight — seven.",
+        D('Cross out choice 2 and circle choice 3'),
+        "Choice two says nine — out. Choice three says seven with a negative x. That's it.",
+        "Remember this pattern. It also shows up as x minus y over y minus x — opposite numbers again."]})
+
+    # Q9 two claims. Study guide / Hebrew video: (A+B)/A = 1 + B/A (true), A/(A+B) = 1 + A/B (false).
+    # New story: Tom and Dana; a difference instead of a sum, the false claim first, the key moves to choice 2.
+    S('q-129', stem='Tom and Dana each make a claim:\n'
+                    r'$\begin{array}{ll} \text{Tom:} & \dfrac{B}{A-B}=\dfrac{B}{A}-1 \\[8pt] \text{Dana:} & \dfrac{A-B}{B}=\dfrac{A}{B}-1 \end{array}$'
+                    '\nEach claim is about all the values of $A$ and $B$ for which both sides are defined.\nWhich of the following is true?',
+      choices=['Only Tom is right', 'Only Dana is right', 'Both Tom and Dana are wrong', 'Both Tom and Dana are right'], correct=2, expl=[
+        r'Dana: a difference on top may be split: $\frac{A-B}{B}=\frac{A}{B}-\frac{B}{B}=\frac{A}{B}-1$. This is true for every $B\ne0$.',
+        r'Tom: test $A=3$, $B=1$. Left side: $\frac{1}{3-1}=\frac{1}{2}$. Right side: $\frac{1}{3}-1=-\frac{2}{3}$. Not equal, therefore Tom\'s claim is false.',
+        'Only Dana is right. The answer is choice 2.'])
+    video('q-129', {2: [
+        "Tom says: B over A minus B equals B over A, minus one.",
+        "Can we just split that bottom? Let's not guess. Work backwards from the side we know how to handle.",
+        D('Under Tom\'s claim write "B/A − 1 = B/A − A/A = (B − A)/A"'),
+        "B over A minus one: a fraction minus a whole. Write one as A over A — same denominator — subtract the tops. B minus A, over A.",
+        "His left side is B over A minus B. They look different — but different-looking expressions can still be equal. So test numbers.",
+        D('Write "A = 3, B = 1: 1/2 vs −2/3 ✗"'),
+        "A is three, B is one. Left: one over two — one half. Right: one third minus one — negative two thirds. Not equal. Tom is wrong.",
+        D('Cross out choices 1 and 4'),
+        "So \"only Tom\" and \"both right\" are out.",
+        "Dana says: A minus B, over B, equals A over B, minus one.",
+        D('Under Dana\'s claim write "A/B − 1 = A/B − B/B = (A − B)/B ✓"'),
+        "Same move: one is B over B. Subtract the tops: A minus B, over B. Exactly her left side. Dana is right.",
+        D('Circle choice 2'),
+        "Only Dana is right — choice two."],
+        3: [
+        "Could we shorten that? Yes — split the fraction.",
+        "Remember the rule: a sum or a difference on the BOTTOM can't be split. On TOP it can — each term gets its own copy of the bottom.",
+        D('Under Dana\'s claim write "(A − B)/B = A/B − B/B = A/B − 1"'),
+        "A over B, minus B over B. B over B is one. Done — Dana is right.",
+        "Tom's fraction has the difference on the BOTTOM. Splitting it is exactly the classic trap — and the numbers in Method 1 showed he's wrong.",
+        A('(180 − α)/2 = 90 − α/2 appears', T(r'$\frac{180-\alpha}{2}=90-\frac{\alpha}{2}$', size=46, x=410, y=420)),
+        "You already know this from geometry: one-eighty minus alpha, over two, is ninety minus alpha over two. A difference on top — split it.",
+        D('Circle choice 2'),
+        "Split only the top, and the question becomes simple. Only Dana — choice two."],
+        4: [
+        "Plug-in version. A is three, B is one.",
+        D('Write "A = 3, B = 1"'),
+        D('Under Tom\'s claim write "1/2 vs 1/3 − 1 = −2/3 ✗"'),
+        "Tom: one over two is one half. One third minus one is negative two thirds. Not equal.",
+        D('Under Dana\'s claim write "2/1 = 2 and 3 − 1 = 2 ✓"'),
+        "Dana: two over one is two. Three minus one is two. Equal.",
+        D('Circle choice 2'),
+        "One counterexample is enough to prove a claim wrong. Tom fails, Dana holds — only Dana is right. Choice two."]})
+
+    # Q10 opposite brackets on top. Study guide [(p−q) − (q−p)]/(p−q); Hebrew video [(x−y) − (y−x)]/(x−y)
+    S('q-130', stem=r'Given: $m\ne n$.' + '\n' + r'$\frac{3(m-n)-(n-m)}{m-n}=\ ?$',
+      choices=[r'$2$', r'$4m$', r'$4$', r'$4n$'], correct=3, expl=[
+        r'The minus stands in front of the second bracket only: $3(m-n)-(n-m)=3m-3n-n+m=4m-4n=4(m-n)$.',
+        r'Divide by $m-n$ (not zero, because $m\ne n$): $\frac{4(m-n)}{m-n}=4$. The answer is choice 3.',
+        r'The trap is $2$ (choice 1): that is what you get if you read $n-m$ as $m-n$ (then $3-1=2$), or if you forget the 3.'])
+    video('q-130', {2: [
+        "The minus sits in front of the second bracket only. So only the second bracket flips.",
+        D('On top write "3m − 3n − n + m"'),
+        "First open the three: three m minus three n. Then minus n, plus m.",
+        D('Write "= 4m − 4n = 4(m − n)"'),
+        "Four m minus four n. Take out the common factor: four, times m minus n.",
+        D('Cancel (m − n) on top and bottom; write "= 4"'),
+        "m minus n on top and on the bottom — cancel. Four.",
+        D('Circle choice 3'),
+        "Choice three."],
+        3: [
+        "Here's a sharper route. Split the top over the bottom.",
+        D('Write "3(m − n)/(m − n) − (n − m)/(m − n)"'),
+        "The first part: three times m minus n, over m minus n. Three.",
+        "The second part: n minus m over m minus n — the same numbers, reversed. Swap the order and you always get opposites: seven minus four is three, four minus seven is minus three. Minus one.",
+        D('Write "= 3 − (−1) = 4" and circle choice 3'),
+        "Three minus minus one: four. Choice three.",
+        "Read n minus m as if it were m minus n, and you get three minus one — two. Choice one is that trap."],
+        4: [
+        "A third route. The two brackets look alike — just in reverse order.",
+        D('Under (n − m) write "= −(m − n)"'),
+        "Take a minus out of the second one: n minus m is minus, m minus n. Open it and check — same thing.",
+        D('On top write "3(m − n) + (m − n) = 4(m − n)"'),
+        "Minus a minus: plus. So it's three of m minus n, plus one more. Like three basketballs and one more basketball — four of them.",
+        D('Cancel (m − n); write "= 4" and circle choice 3'),
+        "Four, times m minus n, over m minus n. Cancel. Four — choice three.",
+        "Route one is the standard. Routes two and three are the sharper ones."],
+        5: [
+        "Plug in. But careful: m equals one would make four m equal four, the same as choice three.",
+        "So pick m bigger than n, and not one: m is five, n is three.",
+        D('Next to the choices write: 2, 20, 4, 12'),
+        "Choices: two, twenty, four, twelve. All different.",
+        D('In the question write "(3 · 2 − (−2))/2 = 8/2 = 4"'),
+        "Five minus three is two. Three times two: six. Three minus five is minus two. Six minus minus two — eight. Over two: four.",
+        D('Circle choice 3'),
+        "Choice three."]})
+
+    # Q11 factor or combine. Study guide 1 + (4b² + 4ab)/(a² − b²); Hebrew video 1 + (2y² + 2xy)/(x² − y²)
+    S('q-133', stem=r'Given: $a\ne\pm b$.' + '\n' + r'$1+\frac{6b^2+6ab}{a^2-b^2}=\ ?$',
+      choices=[r'$\frac{a+b}{a-b}$', r'$\frac{a-5b}{a+b}$', r'$\frac{a+5b}{a-b}$', r'$\frac{a+5b}{a+b}$'], correct=3, expl=[
+        r'Factor the fraction. Top: $6b^2+6ab=6b(b+a)$. Bottom: $a^2-b^2=(a-b)(a+b)$.',
+        r'Cancel $a+b$ (not zero, because $a\ne-b$): the fraction equals $\frac{6b}{a-b}$.',
+        r'Then $1+\frac{6b}{a-b}=\frac{a-b}{a-b}+\frac{6b}{a-b}=\frac{a+5b}{a-b}$. The answer is choice 3.',
+        r'Check with $a=2$, $b=1$: $1+\frac{6+12}{3}=7$, and choice 3 gives $\frac{7}{1}=7$ (the others give $3$, $-1$ and $\frac{7}{3}$).'])
+    video('q-133', {2: [
+        "Simplify the fraction first.",
+        D('Under the top write "6b(b + a)"'),
+        "The top: six b squared plus six ab. Take out six b: six b, times b plus a.",
+        D('Under the bottom write "(a − b)(a + b)"'),
+        "The bottom: a squared minus b squared — difference of squares. a minus b, times a plus b.",
+        D('Cancel (a + b); write "= 1 + 6b/(a − b)"'),
+        "Cancel a plus b. One plus six b over a minus b.",
+        D('Write "= (a − b + 6b)/(a − b) = (a + 5b)/(a − b)"'),
+        "Write one as a minus b over a minus b, and add the tops. a plus five b, over a minus b.",
+        D('Circle choice 3'),
+        "Choice three."],
+        3: [
+        "Another route: add the one BEFORE simplifying.",
+        D('Write "(a² − b² + 6b² + 6ab)/(a² − b²)"'),
+        "Write one with the same bottom and add the tops.",
+        D('Write "= (a² + 6ab + 5b²)/((a − b)(a + b))"'),
+        "Minus b squared plus six b squared is five b squared.",
+        D('Write "= (a + b)(a + 5b)/((a − b)(a + b)) = (a + 5b)/(a − b)"'),
+        "The top factors to a plus b, times a plus five b. Cancel a plus b. Same answer — choice three."],
+        4: [
+        "Now the route I recommend for most students: plug in.",
+        "a can't equal b or minus b. So: a is two, b is one.",
+        D('Next to the choices write: 3, −1, 7, 7/3'),
+        "The choices give three, minus one, seven and seven thirds. All different.",
+        D('In the question write "1 + (6 + 12)/3 = 1 + 6 = 7"'),
+        "Six b squared is six. Six ab is twelve. Eighteen over three is six. One plus six — seven.",
+        D('Circle choice 3'),
+        "Seven. Choice three."]})
+
+    # Q12 estimate. Study guide 32,004 ÷ 63 = 508; Hebrew video 42,944 ÷ 61 = 704 (units digit eliminates two choices)
+    S('q-134', stem=r'$\frac{33{,}046}{41}=\ ?$',
+      choices=[r'$406$', r'$508$', r'$602$', r'$806$'], correct=4, expl=[
+        r'Estimate with friendly numbers: $\frac{33{,}046}{41}\approx\frac{32{,}000}{40}=800$. Only $806$ is close.',
+        r'Units digit: $41$ ends in 1, so $41\cdot508$ ends in 8 and $41\cdot602$ ends in 2 — but the top ends in 6. And $41\cdot406$ is only about $16{,}000$.',
+        r'Check: $41\cdot806=41\cdot800+41\cdot6=32{,}800+246=33{,}046$ ✓. The answer is choice 4.'])
+    video('q-134', {2: [
+        "No calculator — so how are we meant to do this? Long division works, but it's slow.",
+        "What they're really testing: are you rigid? Like a job interview asking how many gas stations there are in the country. Nobody expects exact — they expect an estimate.",
+        "And look: the choices are far apart.",
+        D('Write "≈ 32,000 ÷ 40 = 800"'),
+        "Round to friendly numbers. Thirty-two divides by four — eight. So thirty-two thousand over forty is eight hundred.",
+        "The real top is a bit bigger, and the real bottom is a bit bigger too. The answer sits around eight hundred.",
+        D('Cross out choices 1, 2 and 3; circle choice 4'),
+        "Four hundred six, five hundred eight, six hundred two — too far. Eight hundred six. Choice four."],
+        3: [
+        "Another way: start from the choices and multiply back.",
+        D('Next to choice 1 write "40 · 400 = 16,000"'),
+        "Forty times four hundred: sixteen thousand. Nowhere near thirty-three thousand. Out.",
+        D('Next to choices 2 and 3 write "8 · 1 = 8 ✗" and "2 · 1 = 2 ✗"'),
+        "Now the units digit. Forty-one ends in one. So five hundred eight times forty-one ends in eight, and six hundred two times forty-one ends in two. But the top ends in six. Both out.",
+        D('Write "41 · 806 = 32,800 + 246 = 33,046 ✓" and circle choice 4'),
+        "Only choice four is left. Check: forty-one times eight hundred six is thirty-three thousand forty-six. Choice four."]})
+
+    # ---------------- self-practice from the Hebrew study guide (+ two letter-only copies of Hebrew video questions)
+    S('q-122', stem=r'$\frac{15}{\frac{1}{\frac{1}{3}+\frac{1}{5}}}=\ ?$',
+      choices=[r'$\frac{8}{15}$', r'$\frac{15}{8}$', r'$8$', r'$\frac{225}{8}$'], correct=3, expl=[
+        r'Inside out: $\frac{1}{3}+\frac{1}{5}=\frac{5}{15}+\frac{3}{15}=\frac{8}{15}$.',
+        r'Next layer: $1\div\frac{8}{15}=\frac{15}{8}$.',
+        r'Main bar: $15\div\frac{15}{8}=15\cdot\frac{8}{15}=8$. The answer is choice 3.'])
+    S('q-123', stem=r'Given: $c\ne d$.' + '\n' + r'$\frac{d-c}{c-d}-4=\ ?$',
+      choices=[r'$-3$', r'$-5$', r'$5$', r'$-4$'], correct=2, expl=[
+        r'$c-d=-(d-c)$, therefore $\frac{d-c}{c-d}=-1$ for every $c\ne d$.',
+        r'The expression is $-1-4=-5$. The answer is choice 2.',
+        r'The trap is $-3$ (choice 1): that is what you get if you treat the fraction as $+1$.'])
+    S('q-124', stem=r'$(3a+b)(z+7)+(3a+b)(z-7)=\ ?$',
+      choices=[r'$0$', r'$2(3a+b+z)$', r'$2z(3a+b)$', r'$3a+b+z$'], correct=3, expl=[
+        r'Take out the common bracket: $(3a+b)[(z+7)+(z-7)]$. Inside, $+7$ and $-7$ cancel: $2z$.',
+        r'The expression is $(3a+b)\cdot2z=2z(3a+b)$. The answer is choice 3.',
+        r'Check with $a=b=z=1$: $4\cdot8+4\cdot(-6)=8$. The choices give $0$, $10$, $8$ and $5$.'])
+    # letters-only copy of the Hebrew video question [(x−y) − (y−x)]/(x−y): new coefficient, reversed bottom
+    S('q-expression-extra-08', stem=r'Given: $x\ne y$.' + '\n' + r'$\frac{(x-y)-2(y-x)}{y-x}=\ ?$',
+      choices=[r'$-3$', r'$-1$', r'$1$', r'$3$'], correct=1, expl=[
+        r'Open the brackets on top: $(x-y)-2(y-x)=x-y-2y+2x=3x-3y=3(x-y)$.',
+        r'The bottom is $y-x=-(x-y)$. Therefore $\frac{3(x-y)}{-(x-y)}=-3$. The answer is choice 1.',
+        r'Or split: $\frac{x-y}{y-x}-\frac{2(y-x)}{y-x}=-1-2=-3$.'])
+    # letters-only copy of the Hebrew video question 1 + (2y² + 2xy)/(x² − y²): now a minus
+    S('q-expression-extra-11', stem=r'Given: $a\ne\pm b$.' + '\n' + r'$1-\frac{2b^2+2ab}{a^2-b^2}=\ ?$',
+      choices=[r'$\frac{a-3b}{a-b}$', r'$\frac{a+3b}{a-b}$', r'$\frac{a-b}{a+b}$', r'$1$'], correct=1, expl=[
+        r'Top: $2b^2+2ab=2b(b+a)$. Bottom: $a^2-b^2=(a-b)(a+b)$. Cancel $a+b$: the fraction is $\frac{2b}{a-b}$.',
+        r'Then $1-\frac{2b}{a-b}=\frac{a-b-2b}{a-b}=\frac{a-3b}{a-b}$. The answer is choice 1.',
+        r'Check with $a=2$, $b=1$: $1-\frac{2+4}{3}=-1$, and choice 1 gives $\frac{-1}{1}=-1$ (the others give $5$, $\frac{1}{3}$ and $1$).'])
+
+
 def apply(M):
     lesson(M)
     guided_fixes(M)
@@ -760,3 +1268,4 @@ def apply(M):
     so_fixes(M)
     restore_moved(M)
     summary(M)
+    new_numbers(M)

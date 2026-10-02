@@ -120,3 +120,30 @@ guided numbering unchanged.
 **Summary video** `r26-t04-summary` "Expressions: Summary" (about 2.2 min), last item of the learn section, right before
 the practice. Slides: Summary · Like terms · Brackets · Common factor · The three formulas · Formula traps ·
 Number shortcuts · Value without x · Trinomials · Before you practice.
+
+## 2026-10-02 new numbers (not identical to the Hebrew course)
+Function `new_numbers(M)` (runs last in `apply`). Every question taken from the Hebrew course gets new numbers, letters,
+coefficients or choice order. The idea, trap, difficulty, answer type and methods stay the same. `RECORDED` is empty
+because nothing in topic 4 has been recorded yet. Add a question id there to keep a recorded question and its video as they are.
+
+Guided (videos rewritten to the new numbers; both methods kept and re-checked):
+- Q1 q-120: (a+b)²−(a−b)² = 4ab (Hebrew video: (x+y)²−(x−y)²) → (m+3n)²−(m−3n)² = 12mn, choice 2. New distractor 4mn (forgetting the 3 in the middle term). Plug-in m=3, n=2 gives 72; the choices give −27, 72, 0, 24.
+- Q2 q-121: (m−2)(m+2)−(n−2)(n+2) (Hebrew video: (a−1)(a+1)−(b−1)(b+1)) → (x−3)(x+3)−(y−3)(y+3) = x²−y², choice 2. Distractor x²−y²−18 (the minus doesn't reach the 9). Plug-in x=4, y=5 gives −9; the choices give 9, −9, −27, 0.
+
+Practice (study guide): q-100 9a+4b−5a−b · q-101 −2√3−5√7+√7+4√3 · q-102 (−2x)·7z·3y · q-103 4·(−a)·a²·(−3a) ·
+q-104 2xy·5x²y·(−3y²) · q-105 −5(2x−3) · q-106 (x−1)(x⁴+x³+x²+x+1) = x⁵−1 · q-107 (2x−y)−(y−2x) · q-108 (5s−2t)−(−2t+5s) ·
+q-109 (−2b+a)−(−a−2b) · q-110 (3r−s)−(−s−(−3r)) · q-111 (5x+2)² · q-112 4(x+2)² · q-113 x²+16x+64 · q-114 (3x−4)² ·
+q-115 (c−d)²−(c+d)² · q-116 25x²+9−30x · q-117 (x−9)(x+9) · q-118 3(x−4)(x+4) · q-119 36−25x². Each item keeps its kind
+of distractors (for example, the missing middle term, a sign not flipped, the power pushed inside), and the choice order changed.
+
+Lesson "Expressions — Fundamentals" (the Hebrew lesson's own examples): (3a)(4b)(2a)=24a²b → (2a)(5b)(3a)=30a²b;
+−3(2x−5) → −2(3x−4) = −6x+8; (x+4)(x+3) → (x+6)(x+2) = x²+8x+12; 2a²−6a+8 = 2(a²−3a+4) and "6 = 2·3, 8 = 2·4" →
+3a²−12a+6 = 3(a²−4a+2) and "15 = 3·5, 12 = 3·4". The spoken lines and draw notes now match the new numbers.
+
+## 2026-10-02 review (new numbers checked against the Hebrew video)
+- q-120: (m+3n)²−(m−3n)² was harder than the Hebrew level (it also squares a coefficient). Now (m+n)²−(m−n)² = 4mn, choice 2;
+  distractors 0 ((m+n)² = m²+n²), 2n² (the minus reaches only m²), m²−n². Plug-in m=3, n=2 → 24; choices 0, 24, 8, 5. The
+  "n = 0 makes three choices zero" line is still true. Not the same as q-r26-t04-14 or q-115. Video, key, solution updated.
+- Lesson slide 8: the factor example now uses the numbers that are in the expression ("Six is three times two. Twelve is
+  three times four") instead of an unrelated 15.
+- q-121, q-100–q-119 and the other lesson examples were re-done by hand: all correct, one key each, same traps. No change.

@@ -98,3 +98,42 @@ Patch: `math_patches/t05.py`. Check: `python3 math_check.py 4 5` gives 0 problem
 **Small fix:** the title slides of the new guided videos now keep the lesson name as the slide label. The big title still shows the number. Before this fix, automatic renumbering could change that label twice (for example "Question 11" on a video whose big title was "Question 13").
 
 Check: `python3 math_check.py 5 6` gives 0 problems and 0 layout problems. The 1 warning is the known exception: Q9 (q-129) states two claims.
+
+## 2026-10-02 new numbers (not identical to the Hebrew course)
+Goal: the English Topic 5 must not look like a copy of the Hebrew course. Every idea, trap, difficulty level and method stays; the numbers, letters, stories and choice order change. Code: `new_numbers(M)` at the end of `apply` (with a `RECORDED` set, empty for now — a question put in it keeps its old version and video).
+
+**Guided questions (question, key, written solution and the whole solution video, incl. board notes, spoken numbers and the video title):**
+| Q | Old (Hebrew / study guide) | New | Key |
+|---|---|---|---|
+| 1 q-135 | 12 over 1 over (1/3 + 1/6) = 6 (Hebrew 4 … 1/2 + 1/4) | 10 over 1 over (1/2 + 1/5) = 7; distractors 7/10, 10/7, 100/7 (stop early / multiply instead of divide) | 3 |
+| 2 q-136 | 7 − (p−q)/(q−p) = 8 | 10 − (y−x)/(x−y) = 11; trap 9 | 1 |
+| 3 q-137 | (c+d)(t−3) + (c+d)(t+3) | (m+2n)(k−6) + (m+2n)(k+6) = 2k(m+2n); ones still give one match | 2 |
+| 4 q-138 | (a+b+c+d)² − (a+b−c−d)² | (p+q+r+s)² − (p−q+r−s)²  = 4(p+r)(q+s); second plug-in 3, 0, 1, 2 (= 32) | 1 |
+| 5 q-125 | (18² − 18) − (17² + 17) | (13² − 13) − (12² + 12) = 0; choices 12, 1, 0, 13 (all units digits differ) | 3 |
+| 6 q-126 | {[(p−q)−r]−s+q} | {[(w−x)+y]−z+x} = w+y−z; all-ones gives a tie (choices 1 and 2) → w=20, x=3, y=4, z=5 | 2 |
+| 7 q-127 | x² + 11x + 24 | x² + 15x + 36 = (x+12)(x+3); every choice multiplies to 36 | 3 |
+| 8 q-128 | abs(x)/x + 5 | x/abs(x) + 8 → x<0 ; 7 | 3 |
+| 9 q-129 | Daniel/Maya, (A+B)/A and A/(A+B) | Tom/Dana with a difference: Tom B/(A−B) = B/A − 1 (false), Dana (A−B)/B = A/B − 1 (true); claims stacked | 2 |
+| 10 q-130 | [(p−q) − (q−p)]/(p−q) = 2 | [3(m−n) − (n−m)]/(m−n) = 4; plug-in m=5, n=3 | 3 |
+| 11 q-133 | 1 + (4b²+4ab)/(a²−b²) | 1 + (6b²+6ab)/(a²−b²) = (a+5b)/(a−b) | 3 |
+| 12 q-134 | 32,004 ÷ 63 = 508 | 33,046 ÷ 41 = 806; choices 406, 508, 602, 806 — the units-digit check now eliminates 508 and 602 again (as in the Hebrew video) | 4 |
+
+**Practice:** q-122 (15 over 1 over (1/3 + 1/5) = 8), q-123 ((d−c)/(c−d) − 4 = −5), q-124 ((3a+b)(z+7) + (3a+b)(z−7)), q-expression-extra-08 (was a letters-only copy of the Hebrew video question; now [(x−y) − 2(y−x)]/(y−x) = −3), q-expression-extra-11 (was a letters-only copy of the Hebrew video question; now 1 − (2b²+2ab)/(a²−b²) = (a−3b)/(a−b)).
+
+**Lesson "Working with Expressions":** new examples a/b + b/a → x/y + 2y/x; the main-bar slide shows the new Question 1; opposite numbers 15/−15 → 8/−8, plug-in 7, 2 → 10, 4; repeated bracket (a+b)(u∓4) → (x+2)(y∓5). Reworded on-screen text: the expression/equation lines and the four plug-in rules.
+
+**Solution videos:** inside the videos the Hebrew's own numeric examples were replaced too ((10−1)−1 → (12−2)−3; "1, 2, 3 or 10, 13, 72" → "2, 5, 7 or 11, 20, 64"; 5 − 2 / 2 − 5 → 7 − 4 / 4 − 7). Method 4 of Q5 is now "Count the copies". Pre-loaded copies of the choices on the slides are kept in sync.
+
+**Not changed:** q-131, q-132 and q-expression-extra-09 (Hebrew Topic 5 originals) now live in Topic 8 — their new numbers belong with the Topic 8 pass. q-r26-t05-* and the newExtension items are unchanged.
+
+Check: `python3 math_check.py 5 32` → 0 problems, 0 warnings (the old q-129 warning is gone), 0 layout problems.
+
+## 2026-10-02 review (new numbers checked against the Hebrew videos)
+- q-127: choice 4 is now (x+8)(x+4.5) (product 36, sum 12.5), like the Hebrew 4.5 choice. The plug-in slide has the Hebrew tip
+  back: a choice giving a non-whole number (9·5.5) needs no calculation — it can only match a non-whole expression.
+- q-135: the Hebrew Q1 side tip is back ("no visual traps: an answer equal to a choice number sits in that slot").
+- q-129: the split-the-top slide has the geometry example back, as a difference: (180−α)/2 = 90 − α/2.
+- q-130: the trap line now names the sign mistake (reading n−m as m−n gives 3−1 = 2), not only "forgot the 3".
+- q-138: the 3 methods (plug in ones, plug in 3, 0, 1, 2 — the Hebrew also used a zero — and two blocks) are correct.
+- Every other changed question, practice item and lesson example was re-done by hand: one correct choice each, the plug-ins
+  leave one survivor (ties where the Hebrew had them), the units digit still decides q-125 and q-134. No change.

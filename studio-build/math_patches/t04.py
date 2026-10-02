@@ -865,6 +865,233 @@ def summary(M):
     M.new_video('r26-t04-summary', TOPIC, 'Expressions: Summary', sb, slides, LEARN, after=last)
 
 
+# ======================================================================================================
+# 9. 2026-10-02: new numbers (not identical to the Hebrew course)
+# Teacher: "I don't want my students to think it's the same exact course as the Hebrew one ... but keep all the content,
+# psychometry style, all the methods". Every question from the Hebrew course (guided q-120, q-121 and the study-guide
+# practice q-100 .. q-119) gets new numbers / letters / coefficients / choice order; the lesson examples that were the
+# Hebrew's own examples get new numbers. Same idea, same trap, same difficulty, same answer type, same methods.
+# ======================================================================================================
+def remap(M, vid, n, lines=None, items=None, labels=None):
+    """Rebuild one slide with exact replacements: lines {old spoken/draw text: new}, items {old item text: new},
+    labels {old appear label: new}. Every key must be found."""
+    lines, items, labels = dict(lines or {}), dict(items or {}), dict(labels or {})
+    b = beat_to_slide(M.slide(vid, n)); hit = set()
+
+    def it_fix(it):
+        it = dict(it)
+        if it.get('t') in items: hit.add(('i', it['t'])); it['t'] = items[it['t']]
+        return it
+    pre = [it_fix(it) for it in b['pre']]; script = []
+    for x in b['script']:
+        if isinstance(x, str):
+            if x in lines: hit.add(('l', x)); x = lines[x]
+        elif x[0] == 'A':
+            lab = x[1]
+            if lab in labels: hit.add(('b', lab)); lab = labels[lab]
+            x = A(lab, it_fix(x[2]))
+        else:
+            if x[1] in lines: hit.add(('l', x[1])); x = D(lines[x[1]])
+        script.append(x)
+    want = {('l', k) for k in lines} | {('i', k) for k in items} | {('b', k) for k in labels}
+    assert hit == want, (vid, n, want - hit)
+    M.set_slide(vid, n, pre=pre, script=script)
+
+
+def new_numbers(M):
+    # already RECORDED by the teacher with the old numbers - question and video stay exactly as recorded.
+    # Nothing in topic 4 is recorded yet (2026-10-02); add ids here (e.g. 'q-120') to protect a recording.
+    RECORDED = set()
+
+    def S(qid, **kw):
+        if qid not in RECORDED: M.set_q(qid, **kw)
+
+    def video(qid, slides):
+        if qid in RECORDED: return
+        vid = 'solve-' + qid
+        for n, x in slides.items():
+            title, script = x if isinstance(x, tuple) else (None, x)
+            M.set_slide(vid, n, title=title, script=script)
+        q, v = M.q(qid), M.video(vid)
+        v['title'] = v['navLabel'] = q['stem']
+
+    # ---------------- lesson "Expressions — Fundamentals": the Hebrew lesson's own examples get new numbers
+    if 'expression-basics' not in RECORDED:
+        # multiplying terms. Hebrew: 4a · 3b · 2a = 24a²b
+        remap(M, LESSON, 4, items={r'$(3a)(4b)(2a)$': r'$(2a)(5b)(3a)$'}, lines={
+            'Write "= 3·4·2 · a·a·b"': 'Write "= 2·5·3 · a·a·b"',
+            'Three times four times two… and a, a, b.': 'Two times five times three… and a, a, b.',
+            'Write "= 24a²b"': 'Write "= 30a²b"',
+            "Twenty-four. Two a's make a squared. Twenty-four a squared b.": "Thirty. Two a's make a squared. Thirty a squared b.",
+            'You could also write twenty-four b a squared. We usually put the powers first — but either way is correct.':
+                'You could also write thirty b a squared. We usually put the powers first — but either way is correct.'})
+        # opening brackets. Hebrew: 3(2x − 5) = 6x − 15
+        remap(M, LESSON, 5, items={r'$-3(2x-5)$': r'$-2(3x-4)$'}, labels={'−3(2x − 5) appears': '−2(3x − 4) appears'}, lines={
+            'Draw arrows from the −3 to each term; write "= −6x + 15"': 'Draw arrows from the −2 to each term; write "= −6x + 8"',
+            'Negative three times two x: negative six x.': 'Negative two times three x: negative six x.',
+            'Negative three times negative five: PLUS fifteen.': 'Negative two times negative four: PLUS eight.'})
+        # two brackets. Hebrew: (x + 4)(3x − 7)
+        remap(M, LESSON, 7, items={r'$(x+4)(x+3)$': r'$(x+6)(x+2)$'}, lines={
+            'Draw the four arcs: x to x, x to 3, 4 to x, 4 to 3': 'Draw the four arcs: x to x, x to 2, 6 to x, 6 to 2',
+            'x times x, x times three. Then four times x, four times three.': 'x times x, x times two. Then six times x, six times two.',
+            'Write "= x² + 3x + 4x + 12"': 'Write "= x² + 2x + 6x + 12"',
+            'x squared, plus three x, plus four x, plus twelve.': 'x squared, plus two x, plus six x, plus twelve.',
+            'Write "= x² + 7x + 12"': 'Write "= x² + 8x + 12"',
+            'Then collect the family: three x plus four x — seven x.': 'Then collect the family: two x plus six x — eight x.'})
+        # common factor. Hebrew: "6 is 2 · 3, 8 is 2 · 4 or 2 · 2 · 2" and 2a² − 6a + 8 = 2(a² − 3a + 4)
+        remap(M, LESSON, 8, items={r'$2a^2-6a+8$': r'$3a^2-12a+6$'}, labels={'2a² − 6a + 8 appears': '3a² − 12a + 6 appears'}, lines={
+            "First: what's a factor? A building block in MULTIPLICATION. Six is two times three. Eight is two times four — or two times two times two.":
+                "First: what's a factor? A building block in MULTIPLICATION. Six is three times two. Twelve is three times four — or three times two times two.",
+            'Now with letters. Break each term into its building blocks: two times a times a. Two times three times a. Two times four.':
+                'Now with letters. Break each term into its building blocks: three times a times a. Three times four times a. Three times two.',
+            "Is a common? It's in the first two terms — but not in the eight. So a can't come out.":
+                "Is a common? It's in the first two terms — but not in the six. So a can't come out.",
+            "Two is in all three. That's our common factor.": "Three is in all three terms. That's our common factor.",
+            'Write "= 2( a² − 3a + 4 )"': 'Write "= 3( a² − 4a + 2 )"',
+            "Two out front. What's left: a squared, minus three a — the minus stays — plus four.":
+                "Three out front. What's left: a squared, minus four a — the minus stays — plus two.",
+            'Draw check arrows from the 2 to each term inside': 'Draw check arrows from the 3 to each term inside',
+            'Check by opening: two a squared, minus six a, plus eight. It works.':
+                'Check by opening: three a squared, minus twelve a, plus six. It works.'})
+
+    # ---------------- guided questions + their solution videos
+    # Q1. Study guide (a+b)² − (a−b)² = 4ab; Hebrew video (x+y)² − (x−y)² = 4xy (easy level: two plain letters).
+    # Review 2026-10-02: (m+3n)² − (m−3n)² was harder than the Hebrew level (it also squares a coefficient).
+    # Now (m+n)² − (m−n)² = 4mn: same level, other letters, new distractors = real mistakes, key in slot 2.
+    S('q-120', stem=r'$(m+n)^2-(m-n)^2=?$',
+      choices=[r'$0$', r'$4mn$', r'$2n^2$', r'$m^2-n^2$'], correct=2, expl=[
+        r'Expand both squares and keep the second one in brackets: $(m^2+2mn+n^2)-(m^2-2mn+n^2)$.',
+        r'The minus flips every sign in the second bracket: $m^2+2mn+n^2-m^2+2mn-n^2=4mn$ (choice 2).',
+        r'Choice 3 ($2n^2$) is what you get when the minus reaches only the $m^2$. Choice 1 ($0$) comes from $(m+n)^2=m^2+n^2$ — a mistake.',
+        r'Check with $m=3$, $n=2$: $5^2-1^2=25-1=24$, and $4\cdot3\cdot2=24$. The other choices give $0$, $8$ and $5$.'])
+    video('q-120', {2: [
+        "Two squares. Two short multiplication formulas.",
+        D('Under (m + n)² write "m² + 2mn + n²"'),
+        "m plus n, squared: m squared, plus two m n, plus n squared.",
+        "Now the second one. And here's where students fall — that minus in front.",
+        D('Write "− ( m² − 2mn + n² )" — keep the brackets'),
+        "Same formula with a minus. Put the whole expansion in brackets. Don't try to save a step.",
+        D('Open the brackets: write "− m² + 2mn − n²"'),
+        "The minus flips every sign: minus m squared, PLUS two m n, minus n squared.",
+        D('Cross out m² with −m², and n² with −n²'),
+        "m squared cancels. n squared cancels.",
+        D('Write "= 4mn" and circle choice 2'),
+        "Two m n plus two m n — four m n. Choice two.",
+        "Choice three is the trap: two n squared. That's what you get when the minus sticks to the m squared only.",
+        "A few extra seconds on the brackets beats a fast wrong answer."],
+        3: [
+        "Check it by plugging in: m equals three, n equals two.",
+        "Why three and two? Choose numbers that are different from each other, and not zero or one.",
+        "With n equal to zero, three of these choices all give zero — and the check proves nothing.",
+        D('Write "(3 + 2)² − (3 − 2)² = 25 − 1 = 24"'),
+        "Three plus two: five. Five squared: twenty-five. Three minus two: one. Squared: one. Twenty-five minus one: twenty-four.",
+        D('Next to the choices write their values: 0, 24, 8, 5'),
+        "The choices: zero. Four times three times two — twenty-four. Two times four — eight. Nine minus four — five.",
+        D('Circle choice 2'),
+        "Only choice two matches. Choice two."]})
+
+    # Q2. Study guide (m−2)(m+2) − (n−2)(n+2); Hebrew video (a−1)(a+1) − (b−1)(b+1). Now with 3 and the letters x, y.
+    S('q-121', stem=r'$(x-3)(x+3)-(y-3)(y+3)=?$',
+      choices=[r'$x+y$', r'$x^2-y^2$', r'$x^2-y^2-18$', r'$0$'], correct=2, expl=[
+        r'Each product is a difference of squares: $(x-3)(x+3)=x^2-9$ and $(y-3)(y+3)=y^2-9$.',
+        r'Subtract, keeping the brackets: $(x^2-9)-(y^2-9)=x^2-9-y^2+9=x^2-y^2$ (choice 2).',
+        r'Choice 3 ($x^2-y^2-18$) forgets that the minus also flips the $-9$.',
+        r'Check with $x=4$, $y=5$: $1\cdot7-2\cdot8=7-16=-9$, and $16-25=-9$.'])
+    video('q-121', {2: [
+        "Two pairs of brackets — and each pair is a difference times a sum.",
+        D('Under (x − 3)(x + 3) write "x² − 9"'),
+        "x minus three times x plus three: x squared minus three squared. x squared minus nine.",
+        D('Next to it write "− ( y² − 9 )"'),
+        "Same pattern for the second pair — and keep it in brackets, because of the minus in front.",
+        D('Write "= x² − 9 − y² + 9"'),
+        "Open the brackets: minus y squared, PLUS nine.",
+        D('Cross out −9 and +9; write "= x² − y²"'),
+        "Minus nine, plus nine — they cancel. x squared minus y squared.",
+        D('Circle choice 2'),
+        "Choice two.",
+        "Choice three is the trap: minus eighteen. That's what you get when the minus doesn't reach the nine."],
+        3: [
+        "Quick check: x equals four, y equals five.",
+        D('Write "(1)(7) − (2)(8) = 7 − 16 = −9"'),
+        "Four minus three, times four plus three: seven. Five minus three, times five plus three: sixteen. Seven minus sixteen: negative nine.",
+        D('Next to the choices write their values: 9, −9, −27, 0'),
+        "Nine. Sixteen minus twenty-five — negative nine. Negative nine minus eighteen — negative twenty-seven. Zero.",
+        D('Circle choice 2'),
+        "Only choice two matches. Choice two."]})
+
+    # ---------------- self-practice from the Hebrew study guide (q-100 .. q-119)
+    S('q-100', stem=r'$9a+4b-5a-b=?$', choices=[r'$4(a+b)$', r'$3a+4b$', r'$4a+5b$', r'$4a+3b$'], correct=4,
+      expl=[r'Collect like terms: $9a-5a=4a$ and $4b-b=3b$ (a plain b is $1b$). The result is $4a+3b$ (choice 4).'])
+    S('q-101', stem=r'$-2\sqrt{3}-5\sqrt{7}+\sqrt{7}+4\sqrt{3}=?$',
+      choices=[r'$2\sqrt{3}-4\sqrt{7}$', r'$2\sqrt{3}-5\sqrt{7}$', r'$6\sqrt{3}-4\sqrt{7}$', r'$2\sqrt{3}+4\sqrt{7}$'], correct=1,
+      expl=[r'Treat $\sqrt{3}$ and $\sqrt{7}$ like two different letters.',
+            r'$\sqrt{3}$ terms: $-2\sqrt{3}+4\sqrt{3}=2\sqrt{3}$. $\sqrt{7}$ terms: $-5\sqrt{7}+\sqrt{7}=-4\sqrt{7}$.',
+            r'Together: $2\sqrt{3}-4\sqrt{7}$ (choice 1).'])
+    S('q-102', stem=r'$(-2x)\cdot7z\cdot3y=?$', choices=[r'$-21xyz$', r'$-42xyz$', r'$-xyz$', r'$-14xyz$'], correct=2,
+      expl=[r'Numbers with numbers: $(-2)\cdot7\cdot3=-42$. Letters with letters: $x\cdot z\cdot y=xyz$.',
+            r'The result is $-42xyz$ (choice 2).'])
+    S('q-103', stem=r'$4\cdot(-a)\cdot a^2\cdot(-3a)=?$', choices=[r'$12a^3$', r'$-12a^4$', r'$-12a^3$', r'$12a^4$'], correct=4,
+      expl=[r'Numbers: $4\cdot(-1)\cdot(-3)=12$. Two minus signs give a plus.',
+            r'Letters: count the factors of $a$. $a\cdot a^2\cdot a$ has $1+2+1=4$ of them. It is $a^4$.',
+            r'The result is $12a^4$ (choice 4).'])
+    S('q-104', stem=r'$2xy\cdot5x^2y\cdot(-3y^2)=?$', choices=[r'$-10x^3y^4$', r'$-30x^3y^4$', r'$-30x^3y^3$', r'$-30x^4y^3$'], correct=2,
+      expl=[r'Numbers: $2\cdot5\cdot(-3)=-30$.',
+            r'Count the factors of $x$: $x\cdot x^2=x^3$. Count the factors of $y$: $y\cdot y\cdot y^2=y^4$.',
+            r'The result is $-30x^3y^4$ (choice 2).'])
+    S('q-105', stem=r'$-5(2x-3)=?$', choices=[r'$10x-15$', r'$-10x-15$', r'$-10x+15$', r'$10x+15$'], correct=3,
+      expl=[r'The $-5$ multiplies every term: $-5\cdot2x=-10x$ and $-5\cdot(-3)=+15$.',
+            r'The result is $-10x+15$ (choice 3).'])
+    S('q-106', stem=r'$(x-1)(x^4+x^3+x^2+x+1)=?$', choices=[r'$x^5$', r'$x^5-1$', r'$1$', r'$x^5+1$'], correct=2,
+      expl=[r'Multiply $x$ by every term: $x^5+x^4+x^3+x^2+x$. Multiply $-1$ by every term: $-x^4-x^3-x^2-x-1$.',
+            r'Add: $x^4$, $x^3$, $x^2$ and $x$ cancel in pairs. What is left is $x^5-1$ (choice 2).',
+            r'Faster: plug in $x=2$. $(2-1)(16+8+4+2+1)=31$. The choices give $32$, $31$, $1$ and $33$. Only choice 2 gives $31$.'])
+    S('q-107', stem=r'$(2x-y)-(y-2x)=?$', choices=[r'$4x$', r'$0$', r'$-2y$', r'$4x-2y$'], correct=4,
+      expl=[r'The minus before the second bracket flips both signs: $2x-y-y+2x$.',
+            r'Collect: $4x-2y$ (choice 4).'])
+    S('q-108', stem=r'$(5s-2t)-(-2t+5s)=?$', choices=[r'$0$', r'$-4t$', r'$10s$', r'$10s-4t$'], correct=1,
+      expl=[r'The two brackets hold the same expression: $-2t+5s$ is $5s-2t$ written in the other order.',
+            r'The minus flips both signs of the second bracket: $5s-2t+2t-5s=0$ (choice 1).'])
+    S('q-109', stem=r'$(-2b+a)-(-a-2b)=?$', choices=[r'$-4b$', r'$2a-4b$', r'$2a$', r'$0$'], correct=3,
+      expl=[r'The minus flips both signs of the second bracket: $-2b+a+a+2b$.',
+            r'The b terms cancel and the a terms add up: $2a$ (choice 3).'])
+    S('q-110', stem=r'$(3r-s)-\big(-s-(-3r)\big)=?$', choices=[r'$6r$', r'$0$', r'$6r-2s$', r'$-2s$'], correct=2,
+      expl=[r'Work from the inside out: $-(-3r)=+3r$. The second bracket is $-s+3r$.',
+            r'Then $(3r-s)-(-s+3r)=3r-s+s-3r=0$ (choice 2).'])
+    S('q-111', stem=r'$(5x+2)^2=?$', choices=[r'$25x^2+10x+4$', r'$25x^2+20x+4$', r'$25x^2+4$', r'$25x^2+40x+4$'], correct=2,
+      expl=[r'Use $(a+b)^2=a^2+2ab+b^2$ with $a=5x$ and $b=2$.',
+            r'$(5x)^2=25x^2$, $2\cdot5x\cdot2=20x$, $2^2=4$. The result is $25x^2+20x+4$ (choice 2).'])
+    S('q-112', stem=r'$4(x+2)^2=?$', choices=[r'$4x^2+16$', r'$16x^2+64$', r'$4x^2+16x+16$', r'$16x^2+64x+64$'], correct=3,
+      expl=[r'Power first: $(x+2)^2=x^2+4x+4$.',
+            r'Then multiply every term by $4$: $4x^2+16x+16$ (choice 3).',
+            r'Choice 4 is $(4x+8)^2$: it puts the $4$ inside the square. That is a mistake.'])
+    S('q-113', stem=r'Which of the following is equal to $x^2+16x+64$?',
+      choices=[r'$(x+8)^2$', r'$(x+4)^2$', r'$(x+16)^2$', r'$8(x+2)^2$'], correct=1,
+      expl=[r'Check the perfect-square pattern: $64=8^2$, and the middle term is $2\cdot x\cdot8=16x$.',
+            r'Both checks pass. Therefore $x^2+16x+64=(x+8)^2$ (choice 1).'])
+    S('q-114', stem=r'$(3x-4)^2=?$', choices=[r'$9x^2-24x+16$', r'$9x^2-16$', r'$9x^2-24x-16$', r'$9x^2+16$'], correct=1,
+      expl=[r'Use $(a-b)^2=a^2-2ab+b^2$ with $a=3x$ and $b=4$.',
+            r'$(3x)^2=9x^2$, $2\cdot3x\cdot4=24x$, $4^2=16$. The result is $9x^2-24x+16$ (choice 1).'])
+    S('q-115', stem=r'$(c-d)^2-(c+d)^2=?$', choices=[r'$-4cd$', r'$2c^2-2d^2$', r'$0$', r'$4cd$'], correct=1,
+      expl=[r'Expand both squares and keep the second in brackets: $(c^2-2cd+d^2)-(c^2+2cd+d^2)$.',
+            r'Open the brackets: $c^2-2cd+d^2-c^2-2cd-d^2=-4cd$ (choice 1).',
+            r'Check with $c=3$, $d=2$: $1-25=-24$, and $-4\cdot3\cdot2=-24$.'])
+    S('q-116', stem=r'Which of the following is equal to $25x^2+9-30x$?',
+      choices=[r'$(-5x-3)^2$', r'$5(x-3)^2$', r'$5(-x-3)^2$', r'$(5x-3)^2$'], correct=4,
+      expl=[r'Put the terms in order: $25x^2-30x+9$.',
+            r'Check: $25x^2=(5x)^2$ and $9=3^2$. The middle term: $2\cdot5x\cdot3=30x$, with a minus.',
+            r'Therefore $25x^2-30x+9=(5x-3)^2$ (choice 4).'])
+    S('q-117', stem=r'$(x-9)(x+9)=?$', choices=[r'$x^2+81$', r'$x^2-81$', r'$x^2-18x-81$', r'$x^2-81x-81$'], correct=2,
+      expl=[r'Difference of squares: $(a-b)(a+b)=a^2-b^2$ with $a=x$ and $b=9$.',
+            r'$x^2-9^2=x^2-81$ (choice 2). There is no middle term.'])
+    S('q-118', stem=r'$3(x-4)(x+4)=?$', choices=[r'$3x^2+48$', r'$3x^2-24x-48$', r'$3x^2-12x-48$', r'$3x^2-48$'], correct=4,
+      expl=[r'Brackets first, with the difference of squares: $(x-4)(x+4)=x^2-16$.',
+            r'Then multiply by $3$: $3x^2-48$ (choice 4).'])
+    S('q-119', stem=r'Which of the following is equal to $36-25x^2$?',
+      choices=[r'$(6-5x)^2$', r'$(6-5x)(6+5x)$', r'$(6+5x)^2$', r'$(6-\sqrt{5}x)(6+\sqrt{5}x)$'], correct=2,
+      expl=[r'A difference of squares: $36=6^2$ and $25x^2=(5x)^2$.',
+            r'Therefore $36-25x^2=(6-5x)(6+5x)$ (choice 2).'])
+
+
 def apply(M):
     fb = fix_lesson(M)
     formulas_video(M, fb)
@@ -875,3 +1102,4 @@ def apply(M):
     practice(M)
     summary(M)
     # the formulas card comes right after the formulas video (it already follows it in the flow)
+    new_numbers(M)
