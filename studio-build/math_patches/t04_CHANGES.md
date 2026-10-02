@@ -147,3 +147,22 @@ Lesson "Expressions — Fundamentals" (the Hebrew lesson's own examples): (3a)(4
 - Lesson slide 8: the factor example now uses the numbers that are in the expression ("Six is three times two. Twelve is
   three times four") instead of an unrelated 15.
 - q-121, q-100–q-119 and the other lesson examples were re-done by hand: all correct, one key each, same traps. No change.
+
+## 2026-10-02 order changes
+Function `order_changes(M)`, which runs after `new_numbers`. It only reorders things and keeps all of today's numbers and review fixes.
+- **Guided questions 3–6.** The new order is 51² − 49², then (a−b)² = (b−a)², then x+y = 6, xy = 5 → x²+y², then x + 1/x = 3.
+  The old order was x+y/xy, 51², (a−b)², x+1/x. Why: the questions now follow the lesson order (number shortcuts come before
+  "value without x"), and they go from easy to harder. The number shortcut sits right after Q2, which is also a difference of squares.
+  The two "value without x" questions now sit side by side. No video points to another question. "Question N", the sidebars and the
+  active marks renumber automatically.
+- **Lesson "Contracted Multiplication Formulas", slide "Formulas backward".** The two examples swapped places: 9x² − 25 = (3x−5)(3x+5)
+  comes first, then x² + 12x + 36 = (x+6)². The two-term case is easier. The trinomial now leads straight into the next slide,
+  "Perfect-square check". One short spoken line was added: "Now three terms."
+- **Rejected:**
+  - Swapping Q1 and Q2. Q1 follows the lesson order, and its video has the first "how to choose numbers" explanation.
+  - Swapping lesson slides. Each slide builds on the one before it (like terms → multiplying, opening brackets → minus before a bracket,
+    common factor → bracket as a factor, value without x 1 → 2).
+  - Swapping examples inside other slides. They already go from easy to hard.
+  - Swapping Q7 and Q8. Q8 needs Q7's factoring.
+  - Reordering the practice section. The review already ordered it easy → hard.
+  - Moving the correct answer in Q1 and Q2. Today's new numbers already moved it away from the Hebrew position.

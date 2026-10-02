@@ -137,3 +137,29 @@ Check: `python3 math_check.py 5 32` → 0 problems, 0 warnings (the old q-129 wa
 - q-138: the 3 methods (plug in ones, plug in 3, 0, 1, 2 — the Hebrew also used a zero — and two blocks) are correct.
 - Every other changed question, practice item and lesson example was re-done by hand: one correct choice each, the plug-ins
   leave one survivor (ties where the Hebrew had them), the units digit still decides q-125 and q-134. No change.
+
+## 2026-10-02 order changes
+Function `order_changes(M)`, which runs after `new_numbers`. It does not change any numbers or review fixes.
+- **Theory.** "Opposite brackets" now comes before "The main fraction bar" in four places: the lesson slides, the lesson recap, the
+  summary video and the guided questions. 10 − (y−x)/(x−y) is now Question 1 and the layered fraction is Question 2. Why: a one-step
+  first question is a gentler start than a three-layer one, and the lesson, recap and summary keep the same order as the questions.
+  Openers: "First guided question." moved to the opposite-brackets video. The lesson line "This exact one is Question 1" now says
+  "You'll meet this exact one in the guided questions" (no number). The sidebars and active marks were updated.
+- **Advanced expressions.** The order now goes easy → hard by the teacher's own Hebrew levels: (13²−13)−(12²+12) (easy+),
+  33,046/41 (easy+), x²+15x+36 (easy+), x/|x| (easy+), 3(m−n)−(n−m) (medium), nested brackets (medium+), Tom and Dana (medium+),
+  1+(6b²+6ab)/(a²−b²) (hard). The Hebrew order mixed these levels. The big division now comes right after the question where the
+  units digit is taught, and its video uses that trick. Its opener "Last question." became "Question six. Plain numbers again."
+  The lesson line "You'll practise that after Question …" still points to the last advanced question. In the build, it becomes
+  "in the questions ahead".
+- **Correct-answer positions** that were still the same as in the Hebrew course:
+  - q-126: the key moved from 2 to 1 (w+y−z, w−y+z, w+y+z, w−2x+y−z). With all ones, choices 1 and 2 still tie. The values for
+    w=20, x=3, y=4, z=5 are now listed as 19, 21, 29, 13.
+  - q-127: the key moved from 3 to 2 ((x+18)(x+2), (x+12)(x+3), (x+36)(x+1), (x+8)(x+4.5)). The sums are 20, 15, 37, 12.5, and the
+    plug-in values are 57, 52, 74 and "not whole".
+  - In both questions the key, the written solution and every "Choice N" or "circle choice N" line in the video were updated.
+    I checked both questions again by hand.
+- **Rejected:**
+  - Reordering the lesson slides "Plug in numbers", "Choosing numbers" and "Pick your method". They build on each other.
+  - Reordering the guided questions in "Exam Shortcuts". They follow that lesson's slide order.
+  - Reordering the practice sections. They are already easy → hard.
+  - Moving the other guided keys. They already differ from the Hebrew course.

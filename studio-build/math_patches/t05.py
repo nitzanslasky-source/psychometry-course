@@ -1260,6 +1260,108 @@ def new_numbers(M):
         r'Check with $a=2$, $b=1$: $1-\frac{2+4}{3}=-1$, and choice 1 gives $\frac{-1}{1}=-1$ (the others give $5$, $\frac{1}{3}$ and $1$).'])
 
 
+# ---------------------------------------------------------------------------------------------------------------
+# 2026-10-02 order changes (less like a copy of the Hebrew course; only where nothing is lost)
+# Spoken "Question N" lines use the numbers from before renumbering; renumber_guided maps them to the new order.
+# ---------------------------------------------------------------------------------------------------------------
+def _script(b):
+    """beat -> script list (same items, lines and appear order)."""
+    out = []
+    for l in b['lines']:
+        if 'say' in l: out.append(l['say'])
+        elif 'appear' in l: out.append(A(l['label'], b['items'][l['appear']]))
+        else: out.append(D(l['draw']))
+    return out
+
+
+def _swap_slides(M, vid, a, b_):
+    """Swap two neighbouring concept slides (a < b_) and their sidebar labels; fix the 'active' indexes."""
+    v = M.video(vid); sb = v['hybrid']['sidebar']
+    x, y = v['beats'][a - 1], v['beats'][b_ - 1]
+    ia, ib = x['active'], y['active']
+    sb[ia], sb[ib] = sb[ib], sb[ia]
+    x['active'], y['active'] = ib, ia
+    M.move_slide(vid, b_, a)
+    M.set_sidebar(vid, sb)
+
+
+def _choices(M, qid, order, expl_pairs):
+    """New choice order (old 1-based positions). expl_pairs: exact substring replacements in the written solution."""
+    q = M.q(qid); old = list(q['choicesRich']); key = q['correct'][0] + 1
+    ex = list(q['explanation'])
+    for o, n in expl_pairs:
+        assert sum(o in e for e in ex) == 1, (qid, o)
+        ex = [e.replace(o, n) for e in ex]
+    q = M.set_q(qid, choices=[old[k - 1] for k in order], correct=order.index(key) + 1, expl=ex)
+    for v in M.D['videos'].values():
+        for b in v.get('beats', []):
+            for it in b.get('items', []):
+                if it.get('k') == 'q' and it.get('qid') == qid and 'choices' in it:
+                    it['choices'] = list(q['choicesRich']); M.touched_videos.add(v['id'])
+
+
+def order_changes(M):
+    L, SUM, TH = 'expression-strategy', 'r26-t05-summary', 'expression-theory'
+    # (1) Theory: opposite brackets (one step) before the layered fraction (three steps) - lesson, guided questions
+    #     and summary in the same new order.
+    assert M.slide(L, 5)['title'] == 'The main fraction bar' and M.slide(L, 6)['title'] == 'Opposite brackets'
+    _replace(M, L, 5, 'This exact one is Question 1 — so try it yourself first.',
+             "You'll meet this exact one in the guided questions — so try it yourself first.")
+    _swap_slides(M, L, 5, 6)
+    rc = _script(M.slide(L, 11))
+    i = next(k for k, x in enumerate(rc) if not isinstance(x, str) and x[0] == 'A' and 'Main bar first' in x[1])
+    assert 'b − a' in rc[i + 1][1]
+    rc[i], rc[i + 1] = rc[i + 1], rc[i]
+    M.set_slide(L, 11, script=rc)
+    assert M.slide(SUM, 4)['title'] == 'The main fraction bar' and M.slide(SUM, 5)['title'] == 'Opposite brackets'
+    _swap_slides(M, SUM, 4, 5)
+    M.move('q-136', TH, before='q-135'); M.move('solve-q-136', TH, after='q-136')
+    _replace(M, 'solve-q-136', 1, 'Question two.', 'First guided question.')
+    _replace(M, 'solve-q-135', 1, 'First guided question.', 'Question one.')
+
+    # (2) Advanced expressions: easy -> hard by the teacher's own levels (easy+, medium, medium+, hard).
+    #     13^2-13 ... (easy+), 33,046/41 (easy+, uses the units digit right after it is taught), x^2+15x+36 (easy+),
+    #     x/|x| (easy+), 3(m-n)-(n-m) (medium), nested brackets (medium+), Tom and Dana (medium+), 1+(6b^2+6ab)/(a^2-b^2) (hard).
+    M.move('q-134', ADV, after='solve-q-125'); M.move('solve-q-134', ADV, after='q-134')
+    M.move('q-130', ADV, after='solve-q-128'); M.move('solve-q-130', ADV, after='q-130')
+    M.move('q-126', ADV, after='solve-q-130'); M.move('solve-q-126', ADV, after='q-126')
+    _replace(M, 'solve-q-134', 1, 'Last question.', 'Question fourteen.')
+    _replace(M, 'solve-q-134', 1, "No calculator, a big division — and they're testing whether you'll get stuck calculating.",
+             "Plain numbers again. No calculator, a big division — and they're testing whether you'll get stuck calculating.")
+    # the "given a block" pointer goes to the tools that now follow the last advanced question (old number 13)
+    _replace(M, L, 7, "And if a question GIVES you the value of a block — say, a plus b equals five — put the number in its place. You'll practise that after Question 14.",
+             "And if a question GIVES you the value of a block — say, a plus b equals five — put the number in its place. You'll practise that after Question 13.")
+
+    # (3) Answer positions that were still the same as in the Hebrew course
+    # q-126: key 2 -> 1 (w+y-z, w-y+z, w+y+z, w-2x+y-z). With all ones choices 1 and 2 still tie.
+    _choices(M, 'q-126', [2, 1, 3, 4], [('The answer is choice 2.', 'The answer is choice 1.'),
+                                         ('and choice 2 gives $20+4-5=19$', 'and choice 1 gives $20+4-5=19$')])
+    _replace(M, 'solve-q-126', 2, 'Write "= w + y − z" and circle choice 2', 'Write "= w + y − z" and circle choice 1')
+    _replace(M, 'solve-q-126', 2, 'w plus y minus z. Choice two.', 'w plus y minus z. Choice one.')
+    _replace(M, 'solve-q-126', 3, 'Next to the choices write their values: 21, 19, 29, 13', 'Next to the choices write their values: 19, 21, 29, 13')
+    _replace(M, 'solve-q-126', 3, 'The choices give twenty-one, nineteen, twenty-nine and thirteen. All different — one substitution is enough.',
+             'The choices give nineteen, twenty-one, twenty-nine and thirteen. All different — one substitution is enough.')
+    _replace(M, 'solve-q-126', 3, 'Circle choice 2', 'Circle choice 1')
+    _replace(M, 'solve-q-126', 3, 'Nineteen. Choice two.', 'Nineteen. Choice one.')
+    # q-127: key 3 -> 2 ((x+18)(x+2), (x+12)(x+3), (x+36)(x+1), (x+8)(x+4.5)); the not-whole choice stays choice 4.
+    _choices(M, 'q-127', [1, 3, 2, 4], [('The sums are $20$, $37$, $15$ and $12.5$.', 'The sums are $20$, $15$, $37$ and $12.5$.'),
+                                         ('The answer is choice 3.', 'The answer is choice 2.'),
+                                         ('choice 3 gives $13\\cdot4=52$', 'choice 2 gives $13\\cdot4=52$')])
+    _replace(M, 'solve-q-127', 2, 'Next to each choice write the sum of the two numbers: 20, 37, 15, 12.5',
+             'Next to each choice write the sum of the two numbers: 20, 15, 37, 12.5')
+    _replace(M, 'solve-q-127', 2, 'Eighteen plus two: twenty x. Thirty-six plus one: thirty-seven x. Twelve plus three: fifteen x. Eight plus four and a half: twelve and a half x.',
+             'Eighteen plus two: twenty x. Twelve plus three: fifteen x. Thirty-six plus one: thirty-seven x. Eight plus four and a half: twelve and a half x.')
+    _replace(M, 'solve-q-127', 2, 'Circle choice 3', 'Circle choice 2')
+    _replace(M, 'solve-q-127', 2, 'Fifteen x — choice three.', 'Fifteen x — choice two.')
+    _replace(M, 'solve-q-127', 3, 'Next to the choices write: 19·3 = 57, 37·2 = 74, 13·4 = 52, 9·5.5 → not whole',
+             'Next to the choices write: 19·3 = 57, 13·4 = 52, 37·2 = 74, 9·5.5 → not whole')
+    _replace(M, 'solve-q-127', 3, 'The choices give fifty-seven, seventy-four, fifty-two — and choice four: nine times five and a half.',
+             'The choices give fifty-seven, fifty-two, seventy-four — and choice four: nine times five and a half.')
+    _replace(M, 'solve-q-127', 3, 'Circle choice 3', 'Circle choice 2')
+    _replace(M, 'solve-q-127', 3, 'Fifty-two. Choice three. Here, plugging in is actually the faster route.',
+             'Fifty-two. Choice two. Here, plugging in is actually the faster route.')
+
+
 def apply(M):
     lesson(M)
     guided_fixes(M)
@@ -1269,3 +1371,4 @@ def apply(M):
     restore_moved(M)
     summary(M)
     new_numbers(M)
+    order_changes(M)

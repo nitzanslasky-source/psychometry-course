@@ -1103,3 +1103,35 @@ def apply(M):
     summary(M)
     # the formulas card comes right after the formulas video (it already follows it in the flow)
     new_numbers(M)
+    order_changes(M)
+
+
+# ======================================================================================================
+# 2026-10-02 order changes (less like a copy of the Hebrew course; only where nothing is lost)
+# ======================================================================================================
+def order_changes(M):
+    # (1) Guided questions follow the lesson order and go easy -> harder:
+    #     Q1 (m+n)^2-(m-n)^2, Q2 (x-3)(x+3)-(y-3)(y+3), then 51^2-49^2 (difference of squares again, number shortcut),
+    #     then (a-b)^2 = (b-a)^2, then the two "value without x" questions (x+y, xy -> x^2+y^2; x+1/x -> x^2+1/x^2).
+    #     The openers say "Question N." with the old numbers; renumber_guided maps them to the new order.
+    M.move('q-r26-t04-02', LEARN, after='solve-q-121')
+    M.move('solve-q-r26-t04-02', LEARN, after='q-r26-t04-02')
+    M.move('q-r26-t04-03', LEARN, after='solve-q-r26-t04-02')
+    M.move('solve-q-r26-t04-03', LEARN, after='q-r26-t04-03')
+    # (2) "Formulas backward": the two-term example (difference of squares) first, then the trinomial
+    #     x^2+12x+36 = (x+6)^2, which leads straight into the next slide, "Perfect-square check".
+    n = next(k for k, b in enumerate(M.video(FORMULAS)['beats'], 1) if b['title'] == 'Formulas backward')
+    b = M.slide(FORMULAS, n)
+    assert [it.get('t') for it in b['items']] == ['$x^2+12x+36$', '$9x^2-25$'], b['items']
+    M.set_slide(FORMULAS, n, pre=[T(r'$9x^2-25$', size=64, gap=150)], script=[
+        'You have to recognize the formulas backward too.',
+        D('Write "= (3x − 5)(3x + 5)"'),
+        'Nine x squared minus twenty-five: three x, squared, minus five squared. Difference of squares.',
+        A('x² + 12x + 36 appears', T(r'$x^2+12x+36$', size=64)),
+        'Now three terms.',
+        "First term: x squared — that's x, squared. Last term: thirty-six — that's six squared.",
+        D('Write "x" under x² and "6" under 36'),
+        'Now check the middle: two times x times six — twelve x. It matches!',
+        D('Write "= (x + 6)²"'),
+        "So it's x plus six, squared.",
+    ])
