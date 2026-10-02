@@ -750,7 +750,7 @@ def hebrew_check(M):
 # same difficulty, same answer type. The solution videos keep every slide and teaching step - only the numbers change.
 def new_numbers(M):
     # already RECORDED by the teacher with the old numbers (2026-10-02) - question and video stay exactly as recorded
-    RECORDED = {'q-091', 'q-092', 'q-093'}
+    RECORDED = {'q-091', 'q-092', 'q-093', 'q-094'}
 
     def S(qid, **kw):
         if qid not in RECORDED: M.set_q(qid, **kw)
@@ -904,47 +904,48 @@ def new_numbers(M):
         "Three choices are out. Only choice one survives.",
         "Which way is better? Understanding the top and the bottom is important. But plugging in is an excellent way too."]})
 
-    # Q7 two kinds of numbers. Study guide 0 < x/y < 1 (x·y = 1, 1 < y/x); Hebrew video 0 < a/b < 1
-    S('q-096', stem=r'Given: $0 < \frac{x}{y} < \frac{1}{3}$. Which of the following is necessarily true?',
-      choices=[r'$y < x$', r'$x < y$', r'$x \cdot y = 3$', r'$3 < \frac{y}{x}$'], correct=4, expl=[
-        r'Plug in $x=1$, $y=4$ (then $\frac{x}{y}=\frac{1}{4}$, less than $\frac{1}{3}$). Choice 1: $4<1$ — false. Choice 3: $1\cdot 4=4\ne 3$ — false. Choices 2 and 4 survive.',
-        r'Plug in a different kind of number: $x=-1$, $y=-4$ (again $\frac{x}{y}=\frac{1}{4}$). Choice 2: $-1<-4$ — false. Choice 4: $\frac{y}{x}=4>3$ — true.',
-        r'Why choice 4 is always true: $\frac{x}{y}$ is positive, therefore $\frac{y}{x}$ is positive too. Flipping two positive numbers reverses their order: $0<\frac{x}{y}<\frac{1}{3} \Rightarrow \frac{y}{x}>3$.',
-        'Choice 4.'])
+    # Q7 two kinds of numbers. Study guide 0 < x/y < 1 (x·y = 1, 1 < y/x); Hebrew video 0 < a/b < 1.
+    # Same condition (0 to 1) and the same four ideas; new letters m, n and a new choice order.
+    S('q-096', stem=r'Given: $0 < \frac{m}{n} < 1$. Which of the following is necessarily true?',
+      choices=[r'$m \cdot n = 1$', r'$n < m$', r'$1 < \frac{n}{m}$', r'$m < n$'], correct=3, expl=[
+        r'Plug in $m=1$, $n=3$ (then $\frac{m}{n}=\frac{1}{3}$, between 0 and 1). Choice 1: $1\cdot 3=3\ne 1$ — false. Choice 2: $3<1$ — false. Choices 3 and 4 survive.',
+        r'Plug in a different kind of number: $m=-1$, $n=-3$ (again $\frac{m}{n}=\frac{1}{3}$). Choice 3: $\frac{n}{m}=3>1$ — true. Choice 4: $-1<-3$ — false.',
+        r'Why choice 3 is always true: $\frac{m}{n}$ is positive, therefore $\frac{n}{m}$ is positive too. Flipping a positive fraction smaller than 1 gives a number bigger than 1: $0<\frac{m}{n}<1 \Rightarrow \frac{n}{m}>1$.',
+        'Choice 3.'])
     video('q-096', {2: [
         "Two ways: plugging in, or understanding. The understanding here is a bit harder. So we start with plugging in.",
-        "Let's plug in. x over y must be less than a third. One quarter works: x equals one, y equals four.",
-        D('Write "x = 1, y = 4"'),
-        "Choice one: is four less than one? No.",
+        "Let's plug in. m over n is one third: m equals one, n equals three.",
+        D('Write "m = 1, n = 3"'),
+        "Choice one: one times three is three — not one.",
         D('Cross out choice 1'),
-        "Choice two: is one less than four? Yes. Can we circle it? No — when you plug in, you must eliminate three.",
-        "Choice three: one times four is four — not three.",
-        D('Cross out choice 3'),
-        "Choice four: four over one is four — more than three. Yes.",
+        "Choice two: is three less than one? No.",
+        D('Cross out choice 2'),
+        "Choice three: three over one is three — more than one. Yes.",
+        "Can we circle it? No — when you plug in, you must eliminate three.",
+        "Choice four: is one less than three? Yes.",
         "Two choices survive. Don't guess! We need another substitution — a DIFFERENT kind of number.",
-        "But which one? One and five? Two and nine? One and ten?",
+        "But which one? Two and five? One and four? Three and seven?",
         "They won't help. They are all positive — the same case we already tested.",
         "A positive ratio can also come from two negatives.",
-        D('Write "x = −1, y = −4"'),
-        "x is negative one, y is negative four. Still one quarter.",
-        D('Cross out choice 2'),
-        "Choice two: is negative one less than negative four? No — negative one is closer to zero. So it's bigger. Out.",
+        D('Write "m = −1, n = −3"'),
+        "m is negative one, n is negative three. Still one third.",
+        "Choice three: negative three over negative one is three. More than one again.",
+        D('Cross out choice 4'),
+        "Choice four: is negative one less than negative three? No — negative one is closer to zero. So it's bigger. Out.",
         "Remember: with negative numbers, the closer to zero, the bigger.",
-        "Choice four: negative four over negative one is four. More than three again.",
-        D('Circle choice 4'),
-        "Choice four survives both. That's the answer."],
+        D('Circle choice 3'),
+        "Choice three survives both. That's the answer."],
         3: [
-        "So why is choice four always true?",
+        "So why is choice three always true?",
         "A positive ratio means the signs match — both positive, or both negative.",
-        "Either way, the bottom is bigger in absolute value — more than three times further from zero than the top.",
-        D('Draw a number line with 0 in the middle: on the right mark x, then y; on the left mark y, then x'),
-        "On a number line: if both are positive, y is to the right of x. If both are negative, y is to the left of x — like negative four and negative one.",
-        'That\'s why "x is less than y" only works when they\'re positive, and "y is less than x" only when they\'re negative. Possible — not necessary.',
-        "And x times y equals three? Our first plug-in gave four. Not necessarily true.",
-        "But flip two positive numbers and the order reverses. x over y is less than a third. Therefore y over x is more than three. Always.",
-        D('Write "0 < x/y < 1/3 → y/x > 3"'),
-        "So y over x is always more than three. Choice four — in every case."]})
-
+        "Either way, the bottom is bigger in absolute value — further from zero than the top.",
+        D('Draw a number line with 0 in the middle: on the right mark m, then n; on the left mark n, then m'),
+        "On a number line: if both are positive, n is to the right of m. If both are negative, n is to the left of m — like negative three and negative one.",
+        'That\'s why "m is less than n" only works when they\'re positive, and "n is less than m" only when they\'re negative. Possible — not necessary.',
+        "And m times n equals one? Our first plug-in gave three. Not necessarily true.",
+        "But flip any positive fraction smaller than one — you get something bigger than one. Always.",
+        D('Write "0 < m/n < 1 → n/m > 1"'),
+        "So n over m is always more than one. Choice three — in every case."]})
     # Q8 largest of four. Study guide 2, 7 over √2, √7; Hebrew video 3, 5 over √3, √5
     S('q-097', choices=[r'$\frac{4}{\sqrt{2}}$', r'$\frac{9}{\sqrt{2}}$', r'$\frac{4}{\sqrt{6}}$', r'$\frac{9}{\sqrt{6}}$'], correct=2, expl=[
         r'All four numbers are positive. Same bottom $\sqrt{2}$: $\frac{9}{\sqrt{2}}>\frac{4}{\sqrt{2}}$. Same bottom $\sqrt{6}$: $\frac{9}{\sqrt{6}}>\frac{4}{\sqrt{6}}$.',
@@ -980,26 +981,48 @@ def new_numbers(M):
         "Choice two. Three seconds.",
         "Three ways. Which one is best? Pick the one that feels comfortable."]})
 
-    # Q9 tournament with letters. Study guide 0 < p < 1 < q; Hebrew video 0 < x < 1 < y. Slide 2 has no numbers - unchanged.
-    S('q-098', stem=r'Given: $1 < p < 2 < q$. Which of the following expressions is the largest?', expl=[
-        r'Given $1<p<2<q$, all the bottoms are positive: $p+q>0$ and $q-p>0$.',
-        r'Choices 1 and 2 have the same bottom, and the top $q+p$ is bigger than $q-p$. Choice 2 wins. Choice 2 is exactly 1.',
-        r'Choices 3 and 4 have the same bottom $q-p$, and $q>p$. Choice 4 wins.',
-        r'Choice 4: the top q is bigger than the bottom $q-p$. Therefore choice 4 is more than 1, and it beats choice 2.',
-        r'Check with $p=1.5$, $q=2.5$: the choices are $\frac{1}{4}$, $1$, $\frac{3}{2}$, $\frac{5}{2}$. Choice 4.'])
-    video('q-098', {3: [
+    # Q9 tournament with letters. Study guide 0 < p < 1 < q; Hebrew video 0 < x < 1 < y.
+    # Same condition (a fraction and a number above 1) and the same tournament; new letters a, b and a new choice order.
+    S('q-098', stem=r'Given: $0 < a < 1 < b$. Which of the following expressions is the largest?',
+      choices=[r'$\frac{a}{b - a}$', r'$\frac{b}{b - a}$', r'$\frac{b - a}{a + b}$', r'$\frac{b + a}{a + b}$'], correct=2, expl=[
+        r'Given $0<a<1<b$, all the bottoms are positive: $b-a>0$ and $a+b>0$.',
+        r'Choices 1 and 2 have the same bottom $b-a$, and $b>a$. Choice 2 wins.',
+        r'Choices 3 and 4 have the same bottom $a+b$, and the top $b+a$ is bigger than $b-a$. Choice 4 wins. Choice 4 is exactly 1.',
+        r'Choice 2: the top b is bigger than the bottom $b-a$. Therefore choice 2 is more than 1, and it beats choice 4.',
+        r'Check with $a=\frac{1}{2}$, $b=\frac{5}{2}$: the choices are $\frac{1}{4}$, $\frac{5}{4}$, $\frac{2}{3}$, $1$. Choice 2.'])
+    video('q-098', {2: [
+        "Four expressions. Tournament time.",
+        "Semi-final one: choices one and two share the bottom — b minus a. b is bigger than a. So that's positive.",
+        "Tops: a against b. b is bigger.",
+        D('Cross out choice 1'),
+        "Choice two goes through.",
+        "Semi-final two: choices three and four share the bottom — a plus b, which is positive.",
+        "The tops are positive too: b is bigger than a, therefore b minus a is positive.",
+        "Tops: b minus a, against b plus a. Adding beats subtracting.",
+        D('Cross out choice 3'),
+        "Choice four goes through.",
+        "The final. Different tops, different bottoms. Now what?",
+        "Open your eyes and look closer.",
+        D('Next to choice 4 write "= 1"'),
+        "Choice four: b plus a over a plus b. The same thing on top and bottom — exactly one.",
+        "Order does not matter when you add: b plus a equals a plus b.",
+        "Now: is choice two bigger or smaller than one?",
+        D('Next to choice 2 write "top > bottom → more than 1"'),
+        "Choice two: the top is b, the bottom is b minus something. The top is bigger. So it's more than one.",
+        D('Circle choice 2'),
+        "More than one beats exactly one. Choice two."],
+        3: [
         "Second way: plug in. Letters in the question? You can always plug in numbers.",
-        "p has to be between one and two. Take one and a half — the easiest number in between.",
-        "For q, we would usually take a whole number, like three.",
-        "But every choice adds p to q, or subtracts p from q. Three plus one and a half is four and a half — messy.",
-        "Choose smart: two and a half. Plus or minus one and a half, it gives whole numbers.",
-        D('Write "p = 1.5, q = 2.5"'),
-        D('Next to the choices write their values: 1/4, 1, 1.5, 2.5'),
-        "Choice one: one over four — a quarter. Choice two: exactly one. Choice three: one and a half over one. Choice four: two and a half over one.",
-        D('Circle choice 4'),
-        "Two and a half is the biggest. Choice four.",
+        "The letter a has to be a fraction between zero and one. Take one half — the easiest fraction.",
+        "For b, we would usually take a whole number, like three.",
+        "But every choice adds a to b, or subtracts a from b. Three plus a half is three and a half — messy.",
+        "Choose smart: two and a half. Plus or minus a half, it gives whole numbers.",
+        D('Write "a = 1/2, b = 2.5"'),
+        D('Next to the choices write their values: 1/4, 5/4, 2/3, 1'),
+        "Choice one: a half over two — a quarter. Choice two: two and a half over two — one and a quarter. Choice three: two over three — two thirds. Choice four: three over three — exactly one.",
+        D('Circle choice 2'),
+        "One and a quarter is the biggest. Choice two.",
         "Two ways — both excellent."]})
-
     # Q10 full order of three. Study guide 5/26, 4/21, 3/16 (toward 1/5); Hebrew video 2/11, 3/17, 4/23
     S('q-099', stem=r'Given: the three fractions $\frac{6}{19}$, $\frac{5}{16}$, $\frac{4}{13}$. Which of the following inequalities is correct?',
       choices=[r'$\frac{4}{13} < \frac{5}{16} < \frac{6}{19}$', r'$\frac{6}{19} < \frac{5}{16} < \frac{4}{13}$',
@@ -1054,19 +1077,23 @@ def new_numbers(M):
       choices=[r'$\frac{1}{2}$', r'$\frac{1}{4}$', r'$\frac{1}{3}$', r'$\frac{3}{4}$'], correct=2, expl=[
         r'Top first: $\frac{1}{6}+\frac{1}{10}=\frac{5}{30}+\frac{3}{30}=\frac{8}{30}=\frac{4}{15}$.',
         r'Dividing by $\frac{16}{15}$ means multiplying by $\frac{15}{16}$: $\frac{4}{15}\cdot\frac{15}{16}=\frac{4}{16}=\frac{1}{4}$.',
+        r'Another way: multiply the top and the bottom of the big fraction by 30. The top becomes $5+3=8$, and the bottom becomes $32$: $\frac{8}{32}=\frac{1}{4}$.',
         'Choice 2.'])
     S('q-082', stem=r'Given: a, b, c and d are nonzero. $\frac{\frac{2b}{d} \cdot \frac{c}{b}}{\frac{d}{a} \cdot \frac{b}{d}} = ?$',
       choices=[r'$\frac{2bc}{ad}$', r'$\frac{2ac}{bd}$', r'$\frac{2c^{2}}{d^{2}}$', r'$\frac{bd}{2ac}$'], correct=2, expl=[
         r"Top: $\frac{2b}{d}\cdot\frac{c}{b}=\frac{2c}{d}$ (the b's cancel).",
         r"Bottom: $\frac{d}{a}\cdot\frac{b}{d}=\frac{b}{a}$ (the d's cancel).",
-        r'Divide: $\frac{2c}{d}\div\frac{b}{a}=\frac{2c}{d}\cdot\frac{a}{b}=\frac{2ac}{bd}$. Choice 2.'])
+        r'Divide: $\frac{2c}{d}\div\frac{b}{a}=\frac{2c}{d}\cdot\frac{a}{b}=\frac{2ac}{bd}$. Choice 2.',
+        r'Another way: dividing by the bottom product means multiplying by its flip: $\frac{2b}{d}\cdot\frac{c}{b}\cdot\frac{a}{d}\cdot\frac{d}{b}$. Cancel one b and one d from the top and the bottom: $\frac{2ac}{bd}$. Choice 2 again.'])
     S('q-083', stem=r'$\frac{1}{8} + \frac{1}{6} - \frac{1}{4} = ?$',
       choices=[r'$\frac{1}{8}$', r'$\frac{1}{12}$', r'$\frac{1}{48}$', r'$\frac{1}{24}$'], correct=4, expl=[
         r'The common denominator of 8, 6 and 4 is 24: $\frac{1}{8}=\frac{3}{24}$, $\frac{1}{6}=\frac{4}{24}$, $\frac{1}{4}=\frac{6}{24}$.',
-        r'$\frac{3}{24}+\frac{4}{24}-\frac{6}{24}=\frac{1}{24}$. Choice 4.'])
+        r'$\frac{3}{24}+\frac{4}{24}-\frac{6}{24}=\frac{1}{24}$. Choice 4.',
+        r'Another way: combine the first and the last fractions first: $\frac{1}{8}-\frac{1}{4}=-\frac{1}{8}$. Then add $\frac{1}{6}$: $\frac{1}{6}-\frac{1}{8}=\frac{4}{24}-\frac{3}{24}=\frac{1}{24}$.'])
     S('q-084', choices=[r'$\frac{16}{17}$', r'$\frac{17}{18}$', r'$\frac{18}{19}$', r'$\frac{19}{20}$'], correct=4, expl=[
         r'Each fraction is 1 minus a small piece: $\frac{16}{17}=1-\frac{1}{17}$, $\frac{17}{18}=1-\frac{1}{18}$, $\frac{18}{19}=1-\frac{1}{19}$, $\frac{19}{20}=1-\frac{1}{20}$.',
-        r'The smallest missing piece is $\frac{1}{20}$. Therefore $\frac{19}{20}$ is the largest. Choice 4.'])
+        r'The smallest missing piece is $\frac{1}{20}$. Therefore $\frac{19}{20}$ is the largest. Choice 4.',
+        r'Another way: put all four fractions over one common bottom and compare the tops. It works, but here the common bottom is 58,140 — far too long without a calculator. The distance from 1 is the smart way.'])
     S('q-085', stem=r'Given: $L = \frac{4}{9} - M$. For which value of M will L be the smallest?',
       choices=[r'$\frac{1}{3}$', r'$\frac{13}{36}$', r'$\frac{7}{18}$', r'$\frac{11}{28}$'], correct=4, expl=[
         'L gets smaller when M gets bigger. We need the largest M.',
@@ -1093,6 +1120,7 @@ def new_numbers(M):
     S('q-089', choices=[r'$\frac{13}{12}$', r'$\frac{11}{9}$', r'$\frac{25}{21}$', r'$\frac{25}{23}$'], correct=1, expl=[
         r'Each number is 1 plus an extra: $\frac{13}{12}=1+\frac{1}{12}$, $\frac{11}{9}=1+\frac{2}{9}$, $\frac{25}{21}=1+\frac{4}{21}$, $\frac{25}{23}=1+\frac{2}{23}$.',
         r'Compare $\frac{1}{12}$ with the other extras by cross-multiplying: $9<24$, $21<48$, $23<24$. Therefore $\frac{1}{12}$ is the smallest extra.',
+        r'Check with decimals: $\frac{13}{12}\approx 1.083$, $\frac{11}{9}\approx 1.222$, $\frac{25}{21}\approx 1.190$, $\frac{25}{23}\approx 1.087$.',
         r'The smallest number is $\frac{13}{12}$. Choice 1.'])
     S('q-090', stem=r'Given: the three fractions $\frac{3}{25}$, $\frac{4}{31}$, $\frac{5}{41}$. Which of the following inequalities is correct?',
       choices=[r'$\frac{3}{25} < \frac{4}{31} < \frac{5}{41}$', r'$\frac{5}{41} < \frac{4}{31} < \frac{3}{25}$',

@@ -155,3 +155,31 @@ q-089 no longer repeats the lesson's 7/6 and 19/16). All new numbers solved from
 
 Check: `python3 math_check.py 3 32` → PROBLEMS 0, WARNINGS 0, LAYOUT problems 0. All nine guided videos rendered
 (`tmp_check/t3new-q-0NN.png`); the student view `tmp_check/view-3-32/t3.md` read for all 19 changed questions.
+
+## 2026-10-02 review: same message
+
+Teacher: "make sure all the new questions really convey the same message; if something has 2 methods, the English
+must have 2 methods too." Each of the 15 renumbered questions (guided q-095 … q-099, practice q-081 … q-090) was
+compared with the Hebrew sample-question video and the base English version (idea, condition, trap, difficulty,
+answer type, and every method re-done with the new numbers). q-091 … q-094 are recorded and were not touched.
+
+| Question | Verdict | Methods (Hebrew / base → English now) |
+|---|---|---|
+| q-095 | same message ✓ (b > 2, top loses 1.5, bottom loses 2 → a > 1) | 2 → 2 (top vs bottom; plug in b = 3, three choices out) |
+| q-096 | **fixed**: "0 < x/y < 1/3" added a new idea (flip → > 3). Back to **0 < m/n < 1**; letters m, n; choices reordered (m·n = 1, n < m, 1 < n/m, m < n), key 3. Plug-ins m = 1, n = 3 (leaves 3 and 4), then m = −1, n = −3 (removes 4) | 2 → 2 (plug in twice incl. both negative; understanding: same sign, bottom bigger in absolute value, number line, flip > 1) |
+| q-097 | same message ✓ (4, 9 over √2, √6) | 3 → 3 (tournament, 3 comparisons; squaring 8, 40.5, < 3, 13.5; biggest top + smallest bottom, tops and bottoms repeat) |
+| q-098 | **fixed**: "1 < p < 2 < q" lost the fraction-vs-above-1 idea. Back to **0 < a < 1 < b**; letters a, b; choices reordered (a/(b−a), b/(b−a), (b−a)/(a+b), (b+a)/(a+b)), key 2 | 2 → 2 (tournament: semi-finals on the shared bottoms, final = exactly 1 vs top > bottom; smart plug-in a = ½, b = 2.5 (not 3) → ¼, 5/4, ⅔, 1) |
+| q-099 | same message ✓ (6/19, 5/16, 4/13) | 3 → 3 + the English extra (same tops 60; cross-multiply with two comparisons + choices; flip; pieces of 1/3) |
+| q-081 | same ✓; **added** base method 2 to the written solution (multiply top and bottom by 30 → 8/32) | 2 → 2 |
+| q-082 | same ✓; **added** base method 2 (multiply by the flip of the bottom product, cancel across) | 2 → 2 |
+| q-083 | same ✓; **added** base method 2 (first and last fractions first: −1/8 + 1/6 = 1/24) | 2 → 2 |
+| q-084 | same ✓; **added** the base "common bottom" method as a note (works, but 58,140 → distance from 1 is the smart way) | 2 → 2 |
+| q-085 | same ✓ (direction of subtraction + compare) | 2 → 2 |
+| q-086 | same ✓ | 1 → 1 |
+| q-087 | same ✓ (m/n ≥ 2 → flip; m − n small or big) | 2 → 2 |
+| q-088 | same ✓ | 1 → 1 (+ check with a = 3) |
+| q-089 | same ✓; **added** a decimals check (the base solution's method) | 2 → 2 |
+| q-090 | same ✓ (cross-multiply pairs + decimals, as in the base) | 1 → 2 |
+
+All numbers re-solved in python. Check: `python3 math_check.py 3 32` → PROBLEMS 0, WARNINGS 0, LAYOUT problems 0.
+Rendered `tmp_check/t3rev-q-096.png` and `tmp_check/t3rev-q-098.png`.
