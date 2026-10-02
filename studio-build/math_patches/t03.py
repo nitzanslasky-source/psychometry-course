@@ -541,72 +541,51 @@ def add_practice(M):
 def add_summary(M):
     """2026-10-02 (teacher): a review of the MAIN ideas of the whole fractions unit (topics 2 and 3) before the mixed
     practice. The basics (r26-t02-summary) are not repeated. One rule + one mini example (fresh numbers) per concept."""
-    sb = ['Calculate smart', 'Letters in fractions', 'Cross-multiply', 'Shortcuts', 'Square or flip',
-          'Top vs bottom', 'Many fractions', 'Plug in numbers', 'Before you practice']
+    # trimmed (teacher: "a bit long — take off what is not so used in the exam"): kept what the real exams use most —
+    # signs / flipping with the same sign, x by range, plug-in with legal values, letters in fractions, quick comparing;
+    # dropped telescoping chains, squaring roots, add-to-top-and-bottom and the many-fractions tournament (rare on the exam)
+    sb = ['Cross-multiply', 'Quick shortcuts', 'Letters in fractions', 'Ranges and signs', 'Plug in numbers',
+          'Before you practice']
     C = lambda i, title, script: dict(title=title, mode='concept', active=i, pre=[], script=script)
     slides = [
         dict(mode='title', title='Fractions: Summary', script=[
             "We've finished fractions. Before the mixed practice, a short review.",
-            'The basic moves you already reviewed. Now: the big ideas, with one quick example each.']),
-        C(0, 'Calculate smart', [
-            A('Complete to 1, cancel in a chain', T(r'Complete to 1, then cancel: $\left(1+\frac{1}{4}\right)\left(1+\frac{1}{5}\right)\left(1+\frac{1}{6}\right)=\frac{5}{4}\cdot\frac{6}{5}\cdot\frac{7}{6}=\frac{7}{4}$', size=38)),
-            'A chain of brackets? Complete each one in your head. Five quarters, six fifths, seven sixths.',
-            "Don't multiply yet. Cancel. The fives go, the sixes go. Seven quarters.",
-            A('Decimals become fractions', T(r'Decimals $\to$ fractions: $1.2\cdot 0.5\div 15=\frac{6}{5}\cdot\frac{1}{2}\cdot\frac{1}{15}=\frac{1}{25}=\frac{4}{100}=0.04$', size=38)),
-            'Decimals in a chain? Turn them into fractions and cancel.',
-            'Decimal choices? Make the bottom one hundred. Four hundredths: zero point zero four.']),
-        C(1, 'Letters in fractions', [
-            A('Cancel, then add the tops', T(r'Cancel, then add the tops: $\frac{a}{c}\cdot\frac{b}{a}+\frac{d}{c}=\frac{b}{c}+\frac{d}{c}=\frac{b+d}{c}$', size=40)),
-            'Letters cancel just like numbers. The a goes. Same bottom, add the tops.',
-            A('Not necessarily equal', T(r'$\frac{x}{y}=\frac{4x}{4y}$ ✓ $\qquad \frac{x^2}{y^2}$, $\frac{x+4}{y+4}$ ✗ $\quad (x=1,\ y=3:\ \frac{1}{3},\ \frac{1}{9},\ \frac{5}{7})$', size=38)),
-            'Same factor on top and bottom: the value stays.',
-            'Squaring, or adding to both? Not necessarily equal. One plug-in proves it.']),
-        C(2, 'Cross-multiply, signs first', [
+            'The basic moves you already reviewed. Now: what the exam asks most, with one quick example each.']),
+        C(0, 'Cross-multiply, signs first', [
             A('Cross-multiply', T(r'$\frac{4}{9}\;?\;\frac{3}{7}\qquad 7\cdot 4=28\;>\;27=9\cdot 3\quad\Rightarrow\quad\frac{4}{9}>\frac{3}{7}$', size=44)),
-            'Our main method: cross-multiply. Each product goes above ITS fraction.',
-            'One condition: both bottoms positive.',
+            'Our main method: cross-multiply. Each product goes above ITS fraction. Both bottoms must be positive.',
             A('Signs first', T(r'Signs first: $\frac{4}{-9}\;?\;-\frac{3}{7}\quad\Rightarrow\quad -\frac{4}{9}<-\frac{3}{7}$ (reverse)', size=42)),
-            'Negative bottom? Move the minus to the top. Two negatives? Compare without the minus, then reverse.']),
-        C(3, 'Shortcuts', [
+            'Negative bottom? Move the minus to the top. Two negatives? Compare without the minus, then reverse.',
+            A('Flip: same sign only', T(r'Flip: $\frac{4}{17}<\frac{5}{21}$ because $\frac{17}{4}>\frac{21}{5}$ — same sign only', size=40)),
+            'Flipping reverses the order. Only when both numbers have the same sign.']),
+        C(1, 'Quick shortcuts', [
             'Sometimes the numbers invite a shortcut.',
             A('Benchmark 1/2', T(r'Benchmark $\frac{1}{2}$: $\frac{6}{13}<\frac{1}{2}<\frac{10}{19}$', size=42)),
-            'Halve the bottom, check the top. One below a half, one above.',
-            A('Make the tops match', T(r'Make them match: $\frac{4}{7}=\frac{8}{14}>\frac{8}{15}$', size=42)),
-            'Same top? The smaller bottom wins.',
-            A('Distance from 1', T(r'Distance from 1: $\frac{20}{21}=1-\frac{1}{21}\;<\;1-\frac{1}{25}=\frac{24}{25}$', size=42)),
-            'Close to one? Look at the missing piece. Missing less means bigger.']),
-        C(4, 'Square or flip', [
-            A('Square', T(r'Square: $\frac{3}{\sqrt{5}}\;?\;\frac{4}{\sqrt{10}}\quad\to\quad\frac{9}{5}=\frac{18}{10}>\frac{16}{10}$', size=42)),
-            'Roots? Square both. The bigger square belongs to the bigger number. Positive numbers only.',
-            A('Flip', T(r'Flip: $\frac{17}{4}=4\frac{1}{4}>4\frac{1}{5}=\frac{21}{5}\quad\Rightarrow\quad\frac{4}{17}<\frac{5}{21}$', size=42)),
-            'Small tops, big bottoms? Flip them, and the order reverses. Same sign only.']),
-        C(5, 'Top vs bottom', [
-            A('Top bigger: more than 1', T(r'$k>3:\quad\frac{k-1}{k-3}>1$ (both positive, top $>$ bottom)', size=42)),
-            'Read the top and the bottom. Both positive, and the top is bigger? More than one.',
-            A('Toward 1', T(r'Add to both: toward 1. $\frac{2}{9}<\frac{2+5}{9+5}=\frac{1}{2}\qquad\frac{9}{4}>\frac{9+1}{4+1}=2$', size=40)),
-            'Add the same positive number to the top and the bottom: the fraction moves toward one.',
-            A('Between 0 and 1', T(r'$0<\frac{p}{q}<1$: same sign, $q$ farther from 0, and $\frac{q}{p}>1$', size=40)),
-            'Between zero and one: same sign, and the bottom is farther from zero. Flip it, and you get more than one.',
+            'One below a half, one above. Done.',
+            A('Same top', T(r'Same top: $\frac{4}{7}=\frac{8}{14}>\frac{8}{15}$', size=42)),
+            'Same top? The smaller bottom wins.']),
+        C(2, 'Letters in fractions', [
+            A('Cancel, then add the tops', T(r'$\frac{a}{c}\cdot\frac{b}{a}+\frac{d}{c}=\frac{b+d}{c}$', size=44)),
+            'Letters cancel just like numbers. Same bottom: add the tops.',
+            A('Not necessarily equal', T(r'$\frac{x}{y}=\frac{4x}{4y}$ ✓ $\qquad \frac{x^2}{y^2}$, $\frac{x+4}{y+4}$ ✗', size=42)),
+            'The same factor on top and bottom keeps the value. Squaring, or adding to both, does not.']),
+        C(3, 'Ranges and signs', [
+            A('x by range', T(r'$0<x<1:\quad x^2<x<1<\frac{1}{x}$', size=44)),
+            'Between zero and one, squaring makes a number smaller, and one over x is bigger than one.',
+            A('Between 0 and 1', T(r'$0<\frac{p}{q}<1$: same sign, $q$ farther from 0', size=42)),
+            'A fraction between zero and one: same sign, and the bottom is farther from zero.',
             A('Negatives', T(r'$p=-2,\ q=-5$: $\;\frac{p}{q}=\frac{2}{5}$, but $q<p$', size=40)),
             'Careful: with two negatives, the bottom is the SMALLER number.']),
-        C(6, 'Many fractions', [
-            A('Tournament', T(r'Tournament: $\frac{3}{10},\ \frac{7}{10}\to\frac{7}{10}\qquad\frac{7}{11},\ \frac{7}{9}\to\frac{7}{9}\qquad$ final: $\frac{7}{9}$', size=40)),
-            'Four fractions? Run a tournament. Easy pairs first, then a final. Three comparisons.',
-            A('Full order: use the choices', T('Full order? Compare two, cross out choices, then one more.', size=40)),
-            "They want the full order? Compare one pair, and cross out every choice that says otherwise."]),
-        C(7, 'Plug in numbers', [
+        C(4, 'Plug in numbers', [
             'Letters in the question? You can always plug in numbers.',
-            A('Legal values', T(r'$0<x<1$: try $x=\frac{1}{3}$: $\;x^2=\frac{1}{9}<x<1<\frac{1}{x}=3$', size=42)),
-            'Only legal values. x between zero and one? Take a fraction.',
-            A('Smart values', T(r'$0<a<1<b$: try $a=\frac{1}{2},\ b=1\frac{1}{2}$: $\;b-a=1,\ b+a=2$', size=42)),
-            'Choose smart: numbers that give whole results.',
-            'Two choices survive? Plug in again, with a different kind of number. A negative, if it is legal.']),
-        C(8, 'Before you practice', [
+            A('Legal values', T(r'$0<x<1$: try $x=\frac{1}{3}$ $\quad$ $-1<x<0$: try $x=-\frac{1}{2}$', size=42)),
+            'Only legal values — the range decides. Three out, mark the fourth.',
+            'Two choices survive? Plug in again, with a different kind of number.']),
+        C(5, 'Before you practice', [
             'Before you practice, ask yourself:',
             A('Check 1', T('1. Signs first: negative or positive?', size=42)),
             A('Check 2', T('2. Both bottoms positive before I cross-multiply?', size=42)),
-            A('Check 3', T('3. Which shortcut do the numbers invite?', size=42)),
-            A('Check 4', T('4. With letters: which values are legal?', size=42)),
+            A('Check 3', T('3. With letters: which values are legal?', size=42)),
             'That is the whole unit. You know this. Go practice.']),
     ]
     last = [f['ref'] for f in M.D['flow'] if f['section'] == LEARN][-1]
