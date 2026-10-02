@@ -31,6 +31,9 @@ REWORD = {
     'Sometimes you must multiply one equation first — by five, say — so the unwanted letter cancels. Question fourteen does exactly that.':
         'Sometimes you must multiply one equation first — by five, say — so the unwanted letter cancels. One of the questions ahead does exactly that.',
     "You'll see a bigger one in question seven.": "You'll see a bigger one in the questions ahead.",
+    'Sometimes you must multiply one equation first — by four, say — so the unwanted letter cancels. Question fourteen does exactly that.':
+        'Sometimes you must multiply one equation first — by four, say — so the unwanted letter cancels. One of the questions ahead does exactly that.',
+    "You'll see a bigger one in question six.": "You'll see a bigger one in the questions ahead.",
     'You will see this in questions fourteen, sixteen, seventeen and eighteen.': 'You will see this in several of the questions ahead.',
     'In question fifteen we do this with a sum and a difference.': 'In one of the questions ahead we do this with a sum and a difference.',
     "Same with division: flip it into a multiplication. We'll do that in question seven.":
