@@ -613,6 +613,137 @@ def add_summary(M):
     M.new_video('r26-t03-summary', TOPIC, 'Comparing Fractions: Summary', sb, slides, LEARN, after=last)
 
 
+# ------------------------------------------------------------------ 2026-10-02: Hebrew check of the solution videos
+# Every method, step and tip of the teacher's original (Hebrew) sample-question videos must also be in the English
+# solution videos. Only what was missing is added here; everything else stays as it is.
+def hebrew_check(M):
+    def edit(vid, n, *ops):
+        s = script_of(M, vid, n)
+        for op, old, new in ops:
+            s = replace_line(s, old, new) if op == 'rep' else insert_after(s, old, new)
+        M.set_slide(vid, n, script=s)
+
+    # (1 - 1/2)(1 - 1/3)(1 - 1/4): the long way first, "shortcut one / shortcut two", how fractions multiply
+    edit('solve-q-091', 2,
+         ('ins', 'Three brackets, each one minus a fraction.', [
+             'The long way: a common denominator. One is three thirds. Three thirds minus one third — two thirds.',
+             "That works. But on the exam we need speed."]),
+         ('rep', "Don't hunt for common denominators. Complete to one in your head.",
+          'Shortcut one: complete to one, in your head. No common denominators.'),
+         ('rep', 'Now multiply — but cancel first.', [
+             'Now multiply. Fractions multiply top times top, bottom times bottom.',
+             "But don't multiply yet. Shortcut two: cancel first."]))
+
+    # 4.5 · 0.2 ÷ 30: decimal places and "a bottom of 100" spelled out, as in the original
+    edit('solve-q-092', 2,
+         ('rep', 'Four point five is nine halves. Zero point two is two tenths — one fifth.', [
+             'Four point five is four and a half — nine halves.',
+             'Zero point two: one place after the point — two tenths. That is one fifth.']),
+         ('rep', 'The choices are decimals, so: zero point zero three. Choice one.', [
+             'The choices are decimals. To turn a fraction into a decimal, make the bottom one hundred.',
+             'Ours already is: three hundredths. Two places after the point — zero point zero three. Choice one.']))
+    edit('solve-q-092', 3,
+         ('rep', 'Ignore the points: forty-five times two, ninety. Two decimal places in total — zero point nine zero. Zero point nine.', [
+             'Ignore the points: forty-five times two is ninety.',
+             'Now count the places after the point: one in four point five, one in zero point two. Two in total.',
+             'Ninety with two places: zero point nine zero. Zero point nine.']))
+
+    # P, Q, R, S: why the choices are checked first; which way is recommended
+    edit('solve-q-093', 3,
+         ('ins', 'But first check that the choices come out DIFFERENT with those values.', [
+             'Why the choices first? If two choices gave the same number, one plug-in could not decide between them.']),
+         ('ins', 'Two — choice one.', [
+             'Two ways. But here the recommended one is the math: cancel, then add.',
+             'Plugging in is for practice, or for a moment of panic. Make sure you master these basics.']))
+
+    # X/Y: "equal only if X = Y", cancel if you don't see the expansion, which way to choose
+    edit('solve-q-094', 2,
+         ('ins', "Choice two: the top gets multiplied by X, the bottom by Y. Two DIFFERENT factors. That's not expanding.", [
+             'Could it still be equal? Only if X equals Y. Possible — but not necessarily.']),
+         ('ins', 'Choice three: X times Y over Y squared — top and bottom both times Y. Equal.', [
+             "Don't see it? Cancel one Y from the top and the bottom. X over Y."]))
+    edit('solve-q-094', 3,
+         ('ins', "They asked for the one that's NOT necessarily equal — and we just found it fail. Choice two.", [
+             "Which way is better? Both are good. Use the one you're comfortable with."]))
+
+    # a = (b - 0.25)/(b - 1): the plug-in goes choice by choice and eliminates three; which way is better
+    s = script_of(M, 'solve-q-095', 3)
+    s = replace_line(s, 'Cross out choices 2, 3 and 4; circle choice 1', [
+        'Choice one: is one point seven five more than one? Yes. We cannot cross it out.',
+        'Choice two: between zero and one? No — it is more than one. Out.',
+        D('Cross out choice 2'),
+        'Choices three and four: negative? No. Out.',
+        D('Cross out choices 3 and 4; circle choice 1')])
+    s = replace_line(s, 'Not between zero and one. Not negative. Only choice one survives.', [
+        'Three choices are out. Only choice one survives.',
+        'Which way is better? Understanding the top and the bottom is important. But plugging in is an excellent way too.'])
+    M.set_slide('solve-q-095', 3, script=s)
+
+    # 0 < x/y < 1: why plug in first, WHICH second plug-in (not 2 and 3 again), number line, choice 3 in method 2
+    s = script_of(M, 'solve-q-096', 2)
+    s = ['Two ways: plugging in, or understanding. The understanding here is a bit harder. So we start with plugging in.'] + s
+    s = insert_after(s, "Two choices survive. Don't guess! We need another substitution — a DIFFERENT kind of number.", [
+        'But which one? Two and three? Three and four? One and three?',
+        "They won't help. They are all positive — the same case we already tested."])
+    s = insert_after(s, "Choice two: is negative one less than negative two? No — negative one is closer to zero. So it's bigger. Out.", [
+        'Remember: with negative numbers, the closer to zero, the bigger.',
+        'Choice four: negative two over negative one is two. More than one again.'])
+    M.set_slide('solve-q-096', 2, script=s)
+    edit('solve-q-096', 3,
+         ('ins', 'Either way, the bottom is bigger in absolute value — further from zero than the top.', [
+             D('Draw a number line with 0 in the middle: on the right mark x, then y; on the left mark y, then x'),
+             'On a number line: if both are positive, y is to the right of x. If both are negative, y is to the left of x — like negative two and negative one.']),
+         ('ins', 'That\'s why "x is less than y" only works when they\'re positive, and "y is less than x" only when they\'re negative. Possible — not necessary.', [
+             'And x times y equals one? Our first plug-in gave two. Not necessarily true.']))
+
+    # largest of four: why a tournament, three comparisons; squaring needs no exact values; which way
+    edit('solve-q-097', 2,
+         ('rep', "Four fractions to compare. Let's run a tournament: two semi-finals, then a final.", [
+             'In the lesson we compared two fractions. Here there are four. What do we do?',
+             'Run a tournament. Find pairs that are easy to compare — here, pairs with the same bottom.',
+             'Two semi-finals, then a final. Three comparisons, and we have the answer.']))
+    edit('solve-q-097', 3,
+         ('ins', 'Two squared over two: two. Forty-nine over two: twenty-four and a half. Four sevenths: under one. Forty-nine over seven: seven.', [
+             'No need for exact values. We only need to see which one is the biggest.']))
+    edit('solve-q-097', 4,
+         ('ins', 'Third approach — understanding. A fraction is biggest with the biggest top and the smallest bottom.', [
+             'Here the tops repeat — two and seven. The bottoms repeat too — root two and root seven.']),
+         ('ins', 'Choice two. Three seconds.', [
+             'Three ways. Which one is best? Pick the one that feels comfortable.']))
+
+    # 0 < p < 1 < q: tops positive too, "order doesn't matter in addition", why not q = 2
+    edit('solve-q-098', 2,
+         ('ins', 'Semi-final one: choices one and two share the bottom — p plus q, which is positive.', [
+             'The tops are positive too: q is bigger than p, therefore q minus p is positive.']),
+         ('rep', 'The final. Different tops, different bottoms. Look closer.', [
+             'The final. Different tops, different bottoms. Now what?',
+             'Open your eyes and look closer.']),
+         ('ins', 'Choice two: q plus p over p plus q. The same thing on top and bottom — exactly one.', [
+             'Order does not matter when you add: q plus p equals p plus q.',
+             'Now: is choice four bigger or smaller than one?']))
+    edit('solve-q-098', 3,
+         ('rep', 'Plug-in version. p has to be a fraction — take one half.', [
+             'Second way: plug in. Letters in the question? You can always plug in numbers.',
+             'p has to be a fraction between zero and one. Take one half — the easiest fraction.']),
+         ('rep', 'For q, choose smart: one and a half. Plus or minus a half, it gives whole numbers.', [
+             'For q, we would usually take a whole number, like two.',
+             'But every choice adds p to q, or subtracts p from q. Two plus a half is two and a half — messy.',
+             'Choose smart: one and a half. Plus or minus a half, it gives whole numbers.']),
+         ('ins', 'One and a half is the biggest. Choice four.', ['Two ways — both excellent.']))
+
+    # 3/16, 4/21, 5/26: the full order is asked; why a common bottom is out; cross-multiplying needs only two checks
+    edit('solve-q-099', 2,
+         ('rep', 'Big, awkward bottoms. But look at the tops: five, four, three. Tiny.', [
+             'Careful: they want the full order — biggest, middle and smallest. Not just the biggest.',
+             'The basic way is a common bottom. But for sixteen, twenty-one and twenty-six it runs into the thousands.',
+             'No calculator on the exam. That way is off the table.',
+             'But look at the tops: five, four, three. Tiny.']))
+    edit('solve-q-099', 3,
+         ('rep', "Cross-multiplication works too. Don't compare every pair — take two fractions, then use the choices.", [
+             'Cross-multiplication works too. But comparing every pair takes three comparisons.',
+             'Smarter: compare any two fractions, then use the choices. Two comparisons may be enough.']))
+
+
 def apply(M):
     fix_lesson(M)
     fix_card(M)
@@ -621,3 +752,4 @@ def apply(M):
     add_guided(M)
     add_practice(M)
     add_summary(M)
+    hebrew_check(M)

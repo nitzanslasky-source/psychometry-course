@@ -88,3 +88,32 @@ The "cross-multiplying always works" wording stays corrected (wrong rule). Pract
 **Summary video** `r26-t03-summary` "Comparing Fractions: Summary" (about 2.4 min), last item of the learn section,
 right before the practice. Slides: Summary · Cross-multiply · Signs first · Quick shortcuts · Distance from 1 ·
 Add to top and bottom · Square or flip · x by range · Plug in numbers · Before you practice.
+
+## 2026-10-02 Hebrew check of the solution videos
+
+Every sample-question video of the original Hebrew course was compared with its English solution video (function
+`hebrew_check` in `t03.py`). Only spoken lines and "Write ..." draw notes were added; no slide, board item, question
+or key changed. The Hebrew has 9 sample-question videos; `solve-q-fraction-compare` (7/15, 1/2, 9/17) has no Hebrew
+video (it repeats the lesson's "compare with ½" method) and was left as it is.
+
+| English video | Hebrew methods / tips | Added to the English |
+|---|---|---|
+| solve-q-091 (1−½)(1−⅓)(1−¼) (Hebrew: 1−⅓, 1−¼, 1−⅕) | complete to 1 = shortcut 1 (the long way with a common denominator shown first); fractions multiply top×top, bottom×bottom; cancel before multiplying = shortcut 2 | the long way (1 = 3/3), "shortcut one / shortcut two", how fractions multiply |
+| solve-q-092 4.5·0.2÷30 (Hebrew: 2.5·0.2÷25) | way A fractions (0.2 = 2/10, one place after the point; ÷ = × reciprocal; to a decimal: make the bottom 100); way B decimals (count the places: 1 + 1 = 2; hundredths ÷ n) | "one place after the point", "make the bottom one hundred", the place count spelled out |
+| solve-q-093 S/Q·P/S + R/Q | math (cancel, add tops) = recommended; plug in all 1s, check the choices are distinct FIRST, one plug-in is enough; the math is recommended, master the basics | why the choices are checked first; closing "recommended: the math; plug-in for practice / panic" |
+| solve-q-094 X/Y | math: each choice expanded or not (squaring = ×X on top, ×Y on the bottom → equal only if X = Y); spot it → mark and move on; or cancel; plug-in X=1, Y=2; "both ways are good" | "equal only if X = Y — possible, not necessary", "don't see it? cancel", "both ways are good" |
+| solve-q-095 a=(b−0.25)/(b−1) (Hebrew: b−½) | understanding top/bottom; plug in b = 2 choice by choice — choice 1 cannot be eliminated, three out → mark the fourth; "understand, but plug-in is excellent too" | the plug-in now goes choice by choice and eliminates three; closing "which way is better" |
+| solve-q-096 0 < x/y < 1 (Hebrew: a/b) | late hard question with a trap; start with plug-in (understanding is harder); must eliminate 3; second plug-in — but which? 2,3 / 3,4 / 1,3 are useless (same case), both negative; closer to zero = bigger; verify choice 4 with negatives; understanding: two cases, bottom bigger in absolute value, number line, each choice possible / not necessary, flip > 1 | why plug-in first; "which second plug-in? not 2 and 3 — same case"; the "closer to zero" rule; choice 4 checked with the negatives; a number-line draw note; choice 3 in the understanding part |
+| solve-q-097 largest of 2/√2, 7/√2, 2/√7, 7/√7 (Hebrew: 3, 5 and √3, √5) | 4 fractions, not 2 as in the lesson → tournament of easy pairs, 3 comparisons; squaring (estimates are enough: "more than 8 is enough"); understanding (tops and bottoms repeat: biggest top + smallest bottom); "pick what is comfortable" | why a tournament, "three comparisons", "no need for exact values", "the tops and bottoms repeat", "pick the one that feels comfortable" |
+| solve-q-098 0 < p < 1 < q (Hebrew: x, y) | tournament (bottoms AND tops positive; final stuck → "open your eyes": order doesn't matter in addition → exactly 1; the other > 1); plug-in: "with letters you can always plug in", ½ is the easiest fraction, 2 for y would give fractions → smart choice 1.5; "both excellent" | tops positive, "now what? open your eyes", "order doesn't matter when you add", why not q = 2, "you can always plug in", "both excellent" |
+| solve-q-099 3/16, 4/21, 5/26 (Hebrew: 2/11, 3/17, 4/23) | the FULL order is asked; common denominator is off the table (big bottoms, no calculator); way 1 same tops; way 2 cross-multiply — every pair = 3 comparisons, smarter: two + the choices; way 3 flip (creative) | "they want the full order", why a common bottom is out (it is 4368), "every pair = three comparisons" |
+
+**The English has more than the Hebrew (kept):** Q1 video (benchmark ½ + cross-multiply check); q-091 "telescoping
+product"; q-092 left-to-right rule and the 0.3 / 0.09 traps; q-095 "+/+" sign check; q-097 explicit "all positive"
+before squaring; q-099 "all positive" before flipping and Method 4 "Pieces of 1/5".
+**Hebrew points changed on purpose (kept):** the numbers of five questions differ from the Hebrew (changed in the
+earlier adaptation) — the Hebrew methods were applied to the current numbers. "Cross-multiplying always works" stays
+corrected to "both bottoms positive".
+
+Check: `python3 math_check.py 3 32` → PROBLEMS 0, WARNINGS 0, LAYOUT problems 0. All nine changed videos rendered
+(`tmp_check/t3sol-solve-q-0NN.png`); boards unchanged.
