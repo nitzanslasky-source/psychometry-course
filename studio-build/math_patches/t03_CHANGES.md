@@ -117,3 +117,41 @@ corrected to "both bottoms positive".
 
 Check: `python3 math_check.py 3 32` → PROBLEMS 0, WARNINGS 0, LAYOUT problems 0. All nine changed videos rendered
 (`tmp_check/t3sol-solve-q-0NN.png`); boards unchanged.
+
+## 2026-10-02 new numbers (not identical to the Hebrew course)
+
+Teacher: "the same concept but with different numbers". Function `new_numbers` in `t03.py` (runs last). Every question
+that comes from the Hebrew course got new numbers: same concept, same method(s), same trap, same difficulty, same
+answer type. Guided questions differ from BOTH the Hebrew study guide and the Hebrew sample-question video. Their
+solution videos keep every slide and every teaching step (including today's Hebrew-check additions); only the numbers
+changed — spoken lines, "Write ..." notes, the q-099 method-4 title, and the video title shown in the list.
+`q-fraction-compare` (source: "New companion question", not from the Hebrew) was left as it is. Not touched:
+`alg-extra-unit-t3-*`, `q-r26-t03-*`.
+
+| Question | Hebrew study guide (and Hebrew video) | New | Key | Still the same concept / trap |
+|---|---|---|---|---|
+| q-091 (guided) | (1−½)(1−⅓)(1−¼) = ¼ (video: (1−⅓)(1−¼)(1−⅕) = ⅖) | (1−¼)(1−⅕)(1−⅙) = ½; choices ½, ⅓, ¾, ⅚ | 1 | complete to 1, then the product telescopes (4s and 5s cancel); distractors = the first / last bracket |
+| q-092 (guided) | 4.5 · 0.2 ÷ 30 = 0.03 (video: 2.5 · 0.2 ÷ 25 = 0.02) | 5.5 · 0.2 ÷ 22 = 0.05; choices 0.05, 0.5, 0.11, 1.1 | 1 | fractions way (11/2 · 1/5 · 1/22 = 1/20, make the bottom 100) and decimals way (55 · 2, two places → 1.1, then ÷ 22); traps one decimal hop away |
+| q-093 (guided) | S/Q · P/S + R/Q = (P+R)/Q (video: D/A · B/D + C/A) | 2z/y · x/z + w/y = (2x+w)/y; choices (2x+w)/y, (2x+w)/(2y), (x+w)/y, (z+w)/(2y) | 1 | cancel, then add tops; all-1s plug-in gives 3, 3/2, 2, 1 — all different, one plug-in is enough |
+| q-094 (guided) | X/Y; 7X/7Y, X²/Y², X·Y/Y², X²/(YX) → X²/Y² (video: A/B, 5A/5B) | m/n; 4m/4n, m·n/n², m²/n², m²/(nm) → m²/n² | 3 (was 2) | "not necessarily equal": squaring = ×m on top, ×n on the bottom; plug-in m = 1, n = 2 gives ¼ |
+| q-095 (guided) | b > 1, a = (b−0.25)/(b−1) (video: b − ½) | b > 2, a = (b−1.5)/(b−2); plug-in b = 3 → 1.5 | 1 | top loses less than the bottom → a > 1; same 4 choices (a > 1, 0 < a < 1, −1 < a < 0, a < −1) |
+| q-096 (guided) | 0 < x/y < 1; y<x, x<y, xy = 1, 1 < y/x (video: a/b) | 0 < x/y < ⅓; y<x, x<y, xy = 3, 3 < y/x | 4 | plug x = 1, y = 4 leaves choices 2 and 4; the second plug-in must be two negatives (−1, −4); flip → y/x > 3 |
+| q-097 (guided) | 2/√2, 7/√2, 2/√7, 7/√7 (video: 3, 5 over √3, √5) | 4/√2, 9/√2, 4/√6, 9/√6; squares 8, 40.5, under 3, 13.5 | 2 | tournament (same bottoms, then same top), squaring, biggest top + smallest bottom |
+| q-098 (guided) | 0 < p < 1 < q (video: 0 < x < 1 < y) | 1 < p < 2 < q; same four expressions; smart plug-in p = 1.5, q = 2.5 (not 3) → ¼, 1, 1.5, 2.5 | 4 | tournament: choice 2 is exactly 1, choice 4 is more than 1; "why not a whole number for q" kept |
+| q-099 (guided) | 5/26, 4/21, 3/16 (video: 2/11, 3/17, 4/23) | 6/19, 5/16, 4/13 | 1 | same tops (60/190, 60/192, 60/195); cross-multiply 64 < 65, 95 < 96 (choices 2 and 4 out, then 3); flip 3⅙, 3⅕, 3¼; "pieces of 1/3" (+1 top, +3 bottom; 4/13 < 1/3) |
+| q-081 | (¼ + ⅙) ÷ 25/12 = ⅕ | (⅙ + 1/10) ÷ 16/15 = ¼; choices ½, ¼, ⅓, ¾ | 2 | add the top, then multiply by the reciprocal; the 15 cancels |
+| q-082 | (a/c · d/a) ÷ (c/b · a/c) = bd/ac | (2b/d · c/b) ÷ (d/a · b/d) = 2ac/bd; choices 2bc/ad, 2ac/bd, 2c²/d², bd/(2ac) | 2 | cancel in the top and the bottom, then divide; traps: multiplying instead of dividing, the upside-down answer |
+| q-083 | ⅙ + ¼ − ⅓ = 1/12 | ⅛ + ⅙ − ¼ = 1/24; choices ⅛, 1/12, 1/48, 1/24 | 4 | least common denominator 24 (not 8 · 6 = 48) |
+| q-084 | largest of 6/7, 7/8, 8/9, 9/10 | 16/17, 17/18, 18/19, 19/20 | 4 | distance from 1 |
+| q-085 | L = 3/7 − M; 2/7, 9/28, 5/14, 13/35 | L = 4/9 − M; 1/3, 13/36, 7/18, 11/28 | 4 | smallest L ↔ largest M; 12/36 < 13/36 < 14/36, then cross-multiply 196 < 198 |
+| q-086 | not equal to ¾: −1 + 7/4, 2 − 5/4, 21/28, 9/16 | not equal to ⅔: −1 + 5/3, 3 − 7/3, 14/21, 4/9 | 4 | the squared fraction (4/9 = (2/3)²) is the one that is not equal |
+| q-087 | m/n integer: 1 < m−n, 0 < m−n < 1, 1 < n/m, 0 < n/m < 1 | 2 < m−n, 0 < m−n < 2, 2 < n/m, 0 < n/m < 1 | 4 | m/n ≥ 2 → 0 < n/m ≤ ½; m − n can be small (1, 0.5) or big (6, 2) |
+| q-088 | a > 1; x = 1, 2/5, −2/5, −4/5 | a > 2; x = 2, 1/3, −1/3, −2/3 | 4 | bottom positive; smaller x → smaller top and bigger bottom; check with a = 3 |
+| q-089 | smallest of 7/6, 9/7, 19/15, 19/16 | 13/12, 11/9, 25/21, 25/23 | 1 | above 1: compare the extras (1/12 vs 2/23 is close: 23 < 24) |
+| q-090 | order of 6/50, 5/38, 4/33 | order of 3/25, 4/31, 5/41 | 3 | cross-multiply pairs (123 < 125, 155 < 164); decimals 0.12, 0.122, 0.129 |
+
+No new question repeats another topic-3 question or a lesson / summary example (q-097 avoids 3/√2 of q-r26-t03-10;
+q-089 no longer repeats the lesson's 7/6 and 19/16). All new numbers solved from scratch (python check).
+
+Check: `python3 math_check.py 3 32` → PROBLEMS 0, WARNINGS 0, LAYOUT problems 0. All nine guided videos rendered
+(`tmp_check/t3new-q-0NN.png`); the student view `tmp_check/view-3-32/t3.md` read for all 19 changed questions.
