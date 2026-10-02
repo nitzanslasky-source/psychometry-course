@@ -1,5 +1,5 @@
 """Topic 8 - Exponent Laws, Fundamentals. Course review 2026-09 fixes (see t08_CHANGES.md)."""
-from math_api import T, H, A, D, Q
+from math_api import T, H, A, D, Q, rich_plain
 
 TOPIC = 8
 VID = 'exponents'
@@ -564,6 +564,8 @@ def apply(M):
     guided_videos(M)                # Question 4-6
     practice(M)
     summary(M)
+    new_numbers(M)                  # 2026-10-02: not identical to the Hebrew course
+    order_changes(M)
 
 
 # ----------------------------------------------------------------------------------------------------------------
@@ -632,3 +634,336 @@ def summary(M):
         ]),
     ]
     M.new_video('r26-t08-summary', TOPIC, 'Exponent Laws: Summary', sb, slides, CORE)
+
+
+# ----------------------------------------------------------------------------------------------------------------
+# 8. 2026-10-02: new numbers - the English course is not identical to the Hebrew one (same ideas, same methods)
+# ----------------------------------------------------------------------------------------------------------------
+def _sub(M, vid, n, pairs):
+    """Exact substring replacements on one slide: board items ('t'), item labels, spoken and drawn lines."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = False
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit = True
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit = True
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def new_numbers(M):
+    # recorded by the teacher with the old numbers - question and video stay exactly as recorded (nothing yet)
+    RECORDED = set()
+
+    def S(qid, **kw):
+        if qid in RECORDED: return
+        q = M.set_q(qid, **kw)
+        # set_q keeps a pre-loaded stem in sync, but not a pre-loaded copy of the choices
+        for v in M.D['videos'].values():
+            for b in v.get('beats', []):
+                for it in b.get('items', []):
+                    if it.get('k') == 'q' and it.get('qid') == qid and 'choices' in it:
+                        it['choices'] = list(q['choicesRich']); M.touched_videos.add(v['id'])
+
+    def video(qid, slides, intro=None, stem_title=False):
+        if qid in RECORDED: return
+        vid = 'solve-' + qid
+        for n, x in slides.items():
+            title, script = x if isinstance(x, tuple) else (None, x)
+            M.set_slide(vid, n, title=title, script=script)
+        if intro: _sub(M, vid, 1, intro)
+        if stem_title:                    # the moved Topic 5 videos are titled with their question's stem
+            v = M.video(vid); v['title'] = v['navLabel'] = rich_plain(M.q(qid)['stemRich'])
+
+    # ---------------- lesson "Exponent Laws": the Hebrew lesson's own examples -> new examples, same points
+    if 'exponents' not in RECORDED:
+        M.set_slide(VID, 1, script=[
+            "Exponents first — roots come right after them.",
+            "We learn the laws, and then we solve real exam questions.",
+            "Exponents appear all over the exam: in algebra, and even inside geometry questions.",
+            "You need to use these laws quickly, without stopping to think. Let's build them step by step.",
+        ])
+        _sub(M, VID, 3, [(r'\left(\frac{3}{7}\right)^0', r'\left(\frac{4}{9}\right)^0'),
+                         ('(−7)⁰ and (3/7)⁰ appear', '(−7)⁰ and (4/9)⁰ appear')])
+        _sub(M, VID, 4, [(r'\left(\frac{2}{5}\right)^{-3}', r'\left(\frac{5}{2}\right)^{-2}'),
+                         ('(2/5)⁻³ appears', '(5/2)⁻² appears'),
+                         ('Write "= (5/2)³ = 125/8"', 'Write "= (2/5)² = 4/25"'),
+                         ('Five cubed over two cubed: a hundred twenty-five eighths. Positive.',
+                          'Two squared over five squared: four twenty-fifths. Positive.')])
+        _sub(M, VID, 5, [('One to any power is one. One times one times one — a million times — still one.',
+                          'One to any power is one. Multiply one by itself as many times as you like — the answer stays one.')])
+        _sub(M, VID, 9, [(r'$(2\cdot3)^3$', r'$(4\cdot5)^2$'),
+                         ('(2·3)³ appears', '(4·5)² appears'),
+                         ('Write "= 2³ · 3³ = 8 · 27 = 216"', 'Write "= 4² · 5² = 16 · 25 = 400"'),
+                         ('Why? Two cubed times three cubed is three twos and three threes. Multiplication lets us reorder them into three pairs of two times three.',
+                          'Why? Four squared times five squared is two fours and two fives. Multiplication lets us reorder them into two pairs of four times five.'),
+                         ('Two times three, cubed — or two cubed times three cubed. Same thing: two hundred sixteen.',
+                          'Four times five, squared — or four squared times five squared. Same thing: four hundred.')])
+        M.set_slide(VID, 10, script=[
+            A('(−2)⁶ appears', T('$(-2)^6$', size=62, gap=50)),
+            D('Write "= 64"'),
+            "A negative base to an EVEN power: the minuses pair off. Positive sixty-four.",
+            A('(−10)³ appears', T('$(-10)^3$', size=62, gap=50)),
+            D('Write "= −1,000"'),
+            "An ODD power: one minus is left over. Negative one thousand.",
+            A('−7² appears', T('$-7^2$', size=62, gap=50)),
+            D('Write "= −(7²) = −49"'),
+            "No brackets? The power comes first — the minus comes after. Seven squared is forty-nine, then the minus: negative forty-nine.",
+            "Brackets decide what the base is. Plugging in a negative number yourself? Always put it in brackets.",
+        ])
+        # the three cases of a^b = 1: on-screen text reworded (it was a word-for-word copy of the Hebrew slide)
+        M.set_slide(VID, 11, script=[
+            "A rule the exam loves. When is a to the b equal to one?",
+            A('aᵇ = 1 appears', T('$a^b=1$', size=62, gap=50)),
+            A('Case 1 appears: base 1', T('Base $1$: $\\ 1^b=1$ for every $b$', size=46)),
+            "Case one: the base is one. Then the exponent can be anything.",
+            A('Case 2 appears: base −1, even whole exponent', T('Base $-1$: $\\ b$ is an even whole number', size=46)),
+            "Case two: the base is negative one — and the exponent is an even whole number. Two, four, minus two...",
+            A('Case 3 appears: exponent 0, base not 0', T('Exponent $0$: $\\ a$ is any number except $0$', size=46)),
+            D('Box all three cases'),
+            "Case three: the exponent is zero. Then the base doesn't matter — anything nonzero to the zero is one.",
+            "When a question says a to the b equals one — check all three cases.",
+        ])
+        c = M.card('powers')
+        c['tips'][1] = r'$(-7)^2=49$ but $-7^2=-49$: brackets decide the base.'
+
+    # ---------------- core questions from the Hebrew study guide (self-practice, no Hebrew video)
+    # q-218: 0^√2 + (√2)^1 = √2 (key 1)
+    S('q-218', stem=r'$\left(\sqrt{3}\right)^{1}+0^{\sqrt{3}}=\ ?$',
+      choices=[r'$0$', r'$1$', r'$\sqrt{3}+1$', r'$\sqrt{3}$'], correct=4, expl=[
+        r'Any number to the power of one is itself: $\left(\sqrt{3}\right)^1=\sqrt{3}$.',
+        r'Zero to any positive power is $0$. The exponent $\sqrt{3}$ is positive, therefore $0^{\sqrt{3}}=0$.',
+        r'The sum: $\sqrt{3}+0=\sqrt{3}$. The answer is choice 4.',
+        r'The trap is choice 3: zero to a power is not $1$. Only an exponent of zero gives $1$.'])
+    # q-219: 1^√5 + (√5)^0 = 2 (key 3)
+    S('q-219', stem=r'$\left(\sqrt{7}\right)^{0}+1^{\sqrt{7}}=\ ?$',
+      choices=[r'$\sqrt{7}+1$', r'$2$', r'$1$', r'$\sqrt{7}$'], correct=2, expl=[
+        r'Any nonzero number to the power of zero is $1$: $\left(\sqrt{7}\right)^0=1$.',
+        r'One to any power is $1$: $1^{\sqrt{7}}=1$.',
+        r'The sum: $1+1=2$. The answer is choice 2.'])
+    # q-220: −(−4)³ = 64 (key 4)
+    S('q-220', stem=r'$-\left(-2\right)^{5}=\ ?$',
+      choices=[r'$10$', r'$-32$', r'$32$', r'$-10$'], correct=3, expl=[
+        r'First the power in the brackets. An odd power keeps the minus: $(-2)^5=(-2)\cdot(-2)\cdot(-2)\cdot(-2)\cdot(-2)=-32$.',
+        r'The minus in front changes the sign: $-(-32)=32$. The answer is choice 3.',
+        r'The traps: $-32$ forgets the minus in front, and $\pm10$ multiplies the base by the exponent.'])
+    # q-221: (2/5)^−3 = 125/8 (key 2)
+    S('q-221', stem=r'$\left(\frac{2}{3}\right)^{-3}=\ ?$',
+      choices=[r'$\frac{8}{27}$', r'$-\frac{27}{8}$', r'$\frac{27}{8}$', r'$-\frac{8}{27}$'], correct=3, expl=[
+        r'A negative exponent means "flip": $\left(\frac{2}{3}\right)^{-3}=\left(\frac{3}{2}\right)^3$.',
+        r'Cube the top and the bottom: $\frac{3^3}{2^3}=\frac{27}{8}$. The answer is positive: choice 3.',
+        r'A negative exponent never makes the number negative, therefore choices 2 and 4 are out.'])
+    # q-222: (−3)^−4 = 1/81 (key 4)
+    S('q-222', stem=r'$\left(-5\right)^{-2}=\ ?$',
+      choices=[r'$\frac{1}{25}$', r'$-25$', r'$-\frac{1}{25}$', r'$25$'], correct=1, expl=[
+        r'A negative exponent means "one over": $(-5)^{-2}=\frac{1}{(-5)^2}$.',
+        r'An even power removes the minus: $(-5)^2=25$.',
+        r'Therefore $(-5)^{-2}=\frac{1}{25}$. The answer is choice 1.'])
+    # q-223: 11^−7 · 11^12 · 11^−3 = 121 (key 3)
+    S('q-223', stem=r'$7^{-5}\cdot7^{9}\cdot7^{-2}=\ ?$',
+      choices=[r'$49$', r'$7^{6}$', r'$7$', r'$1$'], correct=1, expl=[
+        r'Same base, multiplying: add the exponents. $-5+9+(-2)=2$.',
+        r'$7^{-5}\cdot7^{9}\cdot7^{-2}=7^2=49$. The answer is choice 1.',
+        r'The trap is choice 2: losing the minus of $-2$ gives $-5+9+2=6$.'])
+    # q-224 (guided, Question 1): 5^(x+2) = 25 · 5^x (key 3)
+    S('q-224', stem=r'$4^{x+2}=\ ?$',
+      choices=[r'$16\cdot4^{x}$', r'$4+4^{x}$', r'$16+4^{x}$', r'$4\cdot4^{x}$'], correct=1, expl=[
+        r'A sum in the exponent splits into a product: $4^{x+2}=4^x\cdot4^2=16\cdot4^x$. The answer is choice 1.',
+        r'Check with a number: $x=1$ gives $4^{3}=64$. The choices give $16\cdot4=64$, $4+4=8$, $16+4=20$ and $4\cdot4=16$. Only choice 1 gives $64$.'])
+    video('q-224', {
+        2: [
+            "A plus in the exponent. Split it into a product.",
+            D('Write "4ˣ⁺² = 4ˣ · 4²"'),
+            "Four to the x, times four squared.",
+            D('Write "= 16 · 4ˣ"'),
+            "Sixteen times four to the x.",
+            D('Circle choice 1'),
+            "Choice one.",
+        ],
+        3: [
+            "Not sure about the rule? Pick an easy x. Say x equals one.",
+            D('Write "x = 1: 4³ = 64"'),
+            "Four cubed: sixty-four.",
+            "Now put x equals one into every choice.",
+            D('Write "(1) 16 · 4 = 64   (2) 4 + 4 = 8   (3) 16 + 4 = 20   (4) 4 · 4 = 16"'),
+            "Only choice one gives sixty-four.",
+            D('Circle choice 1'),
+            "Choice one. Same answer, no rule needed.",
+        ]})
+    # q-225: 13^9 / 13^7 = 169 (key 3)
+    S('q-225', stem=r'$\frac{12^{8}}{12^{6}}=\ ?$',
+      choices=[r'$\frac{1}{144}$', r'$144$', r'$12^{14}$', r'$12$'], correct=2, expl=[
+        r'Same base, dividing: subtract the exponents, top minus bottom.',
+        r'$\frac{12^8}{12^6}=12^{8-6}=12^2=144$. The answer is choice 2.'])
+    # q-226 (guided, Question 2): 2 · 2^−6 / 2^−10 = 32 (key 3)
+    S('q-226', stem=r'$\frac{3\cdot3^{-5}}{3^{-8}}=\ ?$',
+      choices=[r'$\frac{1}{81}$', r'$3^{-12}$', r'$27$', r'$81$'], correct=4, expl=[
+        r'Write every factor as a power of $3$: $3=3^1$.',
+        r'Top: $3^1\cdot3^{-5}=3^{1+(-5)}=3^{-4}$.',
+        r'Divide: $\frac{3^{-4}}{3^{-8}}=3^{-4-(-8)}=3^{-4+8}=3^4=81$. The answer is choice 4.',
+        r'The traps: choice 2 adds $-8$ instead of subtracting it ($3^{-12}$), and choice 3 forgets the lonely $3$ ($3^{-5-(-8)}=3^3=27$).'])
+    video('q-226', {
+        2: [
+            "Everything is a power of three. Even the lonely three: it's three to the one.",
+            D('Write "3 = 3¹"'),
+            "Top: three to the one times three to the minus five. Multiplying: add the exponents.",
+            D('Write "3¹ · 3⁻⁵ = 3¹⁺⁽⁻⁵⁾ = 3⁻⁴"'),
+            "One plus minus five: minus four.",
+            "Now divide by three to the minus eight. Dividing: subtract. Top minus bottom.",
+            D('Write "3⁻⁴⁻⁽⁻⁸⁾ = 3⁻⁴⁺⁸ = 3⁴"'),
+            "Here's the trap. Minus four, minus minus eight. Two minuses make a plus: minus four plus eight. Four.",
+            D('Write "3⁴ = 81"'),
+            "Three to the fourth: eighty-one.",
+            D('Circle choice 4'),
+            "Choice four.",
+            "Choice two, three to the minus twelve? That's what you get if you add the minus eight instead of subtracting it.",
+            "And choice three, twenty-seven? That's what you get if you forget the lonely three.",
+        ]})
+    # q-231 (guided, Question 3): a^b = 1, which is not possible: a = 0 (key 1)
+    S('q-231', stem='Given: $m^{n}=1$.\nWhich of the following is not possible?',
+      choices=[r'$n=5$', r'$m=-1$', r'$m=0$', r'$n=0$'], correct=3, expl=[
+        r'$m^n=1$ in three cases: $m=1$ (any $n$); $m=-1$ ($n$ an even whole number); $n=0$ (any $m\ne0$).',
+        r'Choice 1, $n=5$: possible, for example $1^5=1$.',
+        r'Choice 2, $m=-1$: possible, for example $(-1)^2=1$.',
+        r'Choice 3, $m=0$: not possible. Zero to a positive power is $0$, and zero to the power of zero or of a negative number is not defined.',
+        r'Choice 4, $n=0$: possible, for example $5^0=1$. The answer is choice 3.'])
+    video('q-231', {
+        2: [
+            "When is m to the n equal to one? Three cases.",
+            D('Write "m = 1 (any n)   ·   m = −1 (n even)   ·   n = 0 (m ≠ 0)"'),
+            "Choice one: n equals five. Take m equals one. One to the fifth is one. Possible.",
+            D('Write "✓" next to choice 1'),
+            "Choice two: m equals minus one. Take n equals two. Minus one squared is one. Possible.",
+            D('Write "✓" next to choice 2'),
+            "Choice three: m equals zero. Zero to a positive power is zero. Zero to the zero, or to a negative power, is not defined.",
+            "It can never be one.",
+            D('Write "✗" next to choice 3'),
+            "Let's still check the last one. Choice four: n equals zero. Any m that is not zero works. Possible.",
+            D('Write "✓" next to choice 4'),
+            D('Circle choice 3'),
+            "Choice three.",
+        ]}, intro=[('Our three options from the lesson do the work.', 'Our three cases from the lesson do the work.')])
+
+    # ---------------- practice from the Hebrew study guide
+    # q-228: 2^4 · 5^4 = 10,000 (key 3)
+    S('q-228', stem=r'$5^{5}\cdot2^{5}=\ ?$',
+      choices=[r'$100{,}000$', r'$10{,}000$', r'$1{,}000{,}000$', r'$1{,}000$'], correct=1, expl=[
+        r'Same exponent, different bases: put them under one exponent.',
+        r'$5^5\cdot2^5=(5\cdot2)^5=10^5=100{,}000$. The answer is choice 1.'])
+    # q-229: 6^4 / 2^4 = 81 (key 2)
+    S('q-229', stem=r'$\frac{12^{3}}{4^{3}}=\ ?$',
+      choices=[r'$64$', r'$3$', r'$1728$', r'$27$'], correct=4, expl=[
+        r'Same exponent on the top and the bottom: divide the bases first.',
+        r'$\frac{12^3}{4^3}=\left(\frac{12}{4}\right)^3=3^3=27$. The answer is choice 4.'])
+    # q-230: 5^3 / 15^3 = 1/27 (key 1)
+    S('q-230', stem=r'$\frac{7^{3}}{14^{3}}=\ ?$',
+      choices=[r'$\frac{1}{2}$', r'$\frac{1}{8}$', r'$\frac{1}{14}$', r'$\frac{1}{4}$'], correct=2, expl=[
+        r'Same exponent on the top and the bottom: divide the bases first.',
+        r'$\frac{7^3}{14^3}=\left(\frac{7}{14}\right)^3=\left(\frac{1}{2}\right)^3=\frac{1}{8}$. The answer is choice 2.'])
+    # q-232: a < b, a^b = b^a, a + b = 6 (key 3). The 2-and-4 fact stays (it is the point); new letters, m > n, asks m·n
+    S('q-232', stem='Given: $m$ and $n$ are positive integers, and\n' + r'$\begin{cases} m>n \\ m^n=n^m \end{cases}$' + '\n$m\\cdot n=\\ ?$',
+      choices=[r'$8$', r'$6$', r'$16$', r'$4$'], correct=1, expl=[
+        r'Among positive whole numbers, the only pair of different numbers with $m^n=n^m$ is $2$ and $4$: $4^2=16=2^4$.',
+        r'$m>n$, therefore $m=4$ and $n=2$.',
+        r'$m\cdot n=4\cdot2=8$. The answer is choice 1.',
+        r'The traps: $6$ is $m+n$, and $16$ is the value of $m^n$.'])
+
+    # ---------------- moved in from Topic 5 (Hebrew Topic 5 video questions)
+    # q-131 (medium). Hebrew video (x^−2 + 2x²/x⁴)·½·(2/x^−2) = 3; study guide (x^−2 + 4x²/x⁴)·⅕·(5/x^−2) = 5
+    S('q-131', stem='Given: $x\\ne0$.\n' + r'$\left(x^{-3}+\frac{2x^3}{x^6}\right)\cdot\frac{1}{3}\cdot\frac{6}{x^{-3}}=\ ?$',
+      choices=[r'$3$', r'$6$', r'$1$', r'$18$'], correct=2, expl=[
+        r'A negative power flips: $x^{-3}=\frac{1}{x^3}$. Cancel $x^3$ in the second fraction: $\frac{2x^3}{x^6}=\frac{2}{x^3}$.',
+        r'The bracket equals $\frac{1}{x^3}+\frac{2}{x^3}=\frac{3}{x^3}$.',
+        r'The negative power in the denominator moves up: $\frac{6}{x^{-3}}=6x^3$.',
+        r'The expression is $\frac{3}{x^3}\cdot\frac{1}{3}\cdot6x^3=6$. The answer is choice 2.',
+        r'Faster: the choices are numbers only. With $x=1$: $(1+2)\cdot\frac{1}{3}\cdot6=6$.'])
+    video('q-131', {
+        2: [
+            "A negative power flips the fraction.",
+            D('Under x⁻³ write "1/x³"'),
+            "x to the minus three is one over x cubed.",
+            D('Under 2x³/x⁶ write "2/x³"'),
+            "Two x cubed over x to the sixth: cancel x cubed — two over x cubed.",
+            D('Under 6/x⁻³ write "6x³"'),
+            "Six over x to the minus three: the negative power jumps upstairs. Six x cubed.",
+            D('Write "= 3/x³ · 1/3 · 6x³"'),
+            "The bracket: one over x cubed plus two over x cubed. Same denominator — add the tops. Three over x cubed.",
+            D('Cancel the 3s and the x³; write "= 6"'),
+            "Cancel everything that cancels. Six.",
+            D('Circle choice 2'),
+            "Choice two.",
+        ],
+        3: [
+            "Look at the choices — only numbers. No letters.",
+            "When that happens, ONE substitution always solves it.",
+            "And the friendliest number for powers is one. One to any power is one.",
+            D('Write "x = 1: (1 + 2) · 1/3 · 6"'),
+            "One plus two is three. Times a third, times six.",
+            D('Write "= 6" and circle choice 2'),
+            "Six. Choice two. Here, plugging in is much shorter — use it.",
+            "Choice one, three, is only the bracket. Choice four, eighteen, forgets the one third.",
+        ]}, stem_title=True)
+    # q-132 (medium+). Hebrew video (a+a)−(a−a), ((a+1)+(a+1)²)/(a+2), a⁰+(−1)^a, (a²−4)/(a+2)−a;
+    # study guide the same with 3a, a+2, a+3, a²−9. New letter n, new numbers, the constant is now choice 3.
+    S('q-132', stem='Given: $n$ is a positive integer.\nWhich of the following expressions is a constant number that does not depend on $n$?',
+      choices=[r'$(n+4n)-(4n-n)$', r'$(-1)^n+n^0$', r'$\dfrac{n^2-25}{n+5}-n$', r'$\dfrac{(n+3)+(n+3)^2}{n+4}$'], correct=3, expl=[
+        r'(1): brackets first: $5n-3n=2n$. It depends on $n$.',
+        r'(2): $n^0=1$, but $(-1)^n$ is $1$ when $n$ is even and $-1$ when $n$ is odd. The expression is $2$ or $0$. It depends on $n$.',
+        r'(4): take out $n+3$ on top: $(n+3)+(n+3)^2=(n+3)(1+n+3)=(n+3)(n+4)$. Cancel $n+4$: $n+3$. It depends on $n$.',
+        r'(3): $\frac{n^2-25}{n+5}=\frac{(n-5)(n+5)}{n+5}=n-5$, therefore the expression is $(n-5)-n=-5$ for every $n$. The answer is choice 3.'])
+    video('q-132', {
+        2: [
+            "We're hunting for the expression where n vanishes.",
+            D('Next to choice 1 write "5n − 3n = 2n"'),
+            "Choice one: brackets first. n plus four n is five n. Four n minus n is three n. Five n minus three n: two n. Still has n — n equals one gives two, n equals two gives four.",
+            D('Cross out choice 1'),
+            "Out.",
+            D('Next to choice 2 write "(±1) + 1 → 0 or 2"'),
+            "Choice two: n to the zero is always one. But minus one to the power n: one if n is even, minus one if n is odd. Zero or two. Depends on n.",
+            D('Cross out choice 2'),
+            "Out. Choice three looks heavier — skip it for now and check choice four first.",
+            D('Next to choice 4 write "(n + 3)(n + 4)/(n + 4) = n + 3"'),
+            "Choice four: n plus three appears twice on top — a common factor. Take it out: n plus three, times one plus n plus three. That's n plus four. Cancel n plus four. n plus three. Out.",
+            D('Cross out choice 4'),
+            "Three out — choice three is our answer. On the exam, mark it and move on. No need to prove it.",
+            D('Next to choice 3 write "(n − 5)(n + 5)/(n + 5) − n = −5"'),
+            "Proof, for the lesson: n squared minus twenty-five is n minus five, times n plus five. Cancel. n minus five, minus n — minus five. Always.",
+            D('Circle choice 3'),
+            "Choice three. Plugging in here would be long: two values of n for every choice, until three choices are out. The direct method wins.",
+        ]}, intro=[("doesn't depend on a? Simplify until the a disappears.",  # review 2026-10-02: the letter is n now
+                    "doesn't depend on n? Simplify until the n disappears.")], stem_title=True)
+    # q-expression-extra-09: a companion of the Hebrew video question, (x^−2 + 2/x²)·x² = 3 (key 3)
+    S('q-expression-extra-09', stem='Given: $x\\ne0$.\n' + r'$x^{3}\cdot\left(x^{-3}+\frac{4}{x^{3}}\right)=\ ?$',
+      choices=[r'$5$', r'$4$', r'$x^{3}$', r'$1$'], correct=1, expl=[
+        r'$x^{-3}=\frac{1}{x^3}$, therefore the bracket equals $\frac{1}{x^3}+\frac{4}{x^3}=\frac{5}{x^3}$.',
+        r'Then $x^3\cdot\frac{5}{x^3}=5$. The answer is choice 1.',
+        r'Or multiply each term by $x^3$: $x^3\cdot x^{-3}+x^3\cdot\frac{4}{x^3}=x^0+4=1+4=5$.'])
+
+
+# ----------------------------------------------------------------------------------------------------------------
+# 9. 2026-10-02 order changes (less like a copy of the Hebrew course; only where nothing is lost)
+# ----------------------------------------------------------------------------------------------------------------
+def _swap_slides(M, vid, a, b_):
+    """Swap two neighbouring concept slides (a < b_) and their sidebar labels; fix the 'active' indexes."""
+    v = M.video(vid); sb = v['hybrid']['sidebar']
+    x, y = v['beats'][a - 1], v['beats'][b_ - 1]
+    ia, ib = x['active'], y['active']
+    sb[ia], sb[ib] = sb[ib], sb[ia]
+    x['active'], y['active'] = ib, ia
+    M.move_slide(vid, b_, a)
+    M.set_sidebar(vid, sb)
+
+
+def order_changes(M):
+    # (1) lesson: "2⁴ = 4²" (a single fact) now comes before "When aᵇ = 1" (the rule the guided Question 3 uses).
+    #     Neither slide refers to the other; aᵇ = 1 still comes after "Negative bases", which it needs.
+    assert M.slide(VID, 11)['title'] == 'When aᵇ = 1' and M.slide(VID, 12)['title'] == '2⁴ = 4²'
+    _swap_slides(M, VID, 11, 12)
+    # (2) core questions in the order the lesson teaches them:
+    #     (√7)⁰ + 1^√7 before (√3)¹ + 0^√3 (same level), (2/3)⁻³ (negative exponent, slide 4) before −(−2)⁵ (negative
+    #     base, slide 10), and the plain division 12⁸/12⁶ before the split exponent 4^(x+2).
+    M.move('q-219', CORE, before='q-218')
+    M.move('q-221', CORE, before='q-220')
+    M.move('q-225', CORE, before='q-224')

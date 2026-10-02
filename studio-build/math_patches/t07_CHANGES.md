@@ -74,3 +74,21 @@ Patch: `math_patches/t07.py`. `python3 math_check.py 7` gives 0 problems, 0 warn
 - `equation-strategy` slide 6: board line "Add, subtract — or divide — the equations" and the two spoken lines (practice, recognize the patterns); the new example stays. Slide 8: "See x minus y, x squared plus y squared, and x times y together? That's this formula…" and "Find the right formula, plug in what you know, and isolate what they ask for." Recap: "Asked for an expression? Build it directly — use the checklist".
 
 **Summary video (new)** `r26-t07-summary` "Equations: Summary", at the end of the Quadratic equations section, right before the practice: Summary · Don't divide by x · Plus AND minus · Quadratics · Fraction = 0 · Build the expression · Hidden formulas · Two unknowns · Plug in or try · Before you practice.
+
+## 2026-10-02 new numbers + order
+Goal: the English topic is clearly not a copy of the Hebrew course. Every method, tip and trap stays, and so does the psychometric style. Nothing in topic 7 is recorded (both functions have a `RECORDED = set()` guard).
+
+**New numbers** (`new_numbers`). Every number was re-checked in python, and every solution video was rewritten to match its question (board, spoken numbers, choice numbers, title).
+- Lesson `equation-strategy`: the Hebrew's own examples are replaced: x³ = x²y → p³ = p²q; x⁴ − 9x² → x⁴ − 49x²; (x − 6)² = 16 → (x − 2)² = 36 (also on the "Try the choices" slide). The mirror coefficients are now 3x + 8y, 8x + 3y, and the slide says "multiply by four" (as in Q14). The plug-in rules now use the new Q17 and Q18. Board text and lines that were word-for-word translations are reworded (slides 5, 6, 8 and 9). The memory card uses the same examples.
+- Guided Q1–Q20 (q-178 … q-197) all have new numbers or letters. Q11 has a story tweak: "square of the difference = sum of the squares". Where the correct choice was in the same position as in the Hebrew course, it has moved. The one exception is q-186: its key stays 4 so the tip "three are gone, so mark the fourth" still works.
+- Self-practice q-198 … q-217 and the variants q-172 … q-177 all have new numbers, and their answer positions are mixed. None of them duplicates a guided question.
+
+**Order** (`order_changes`)
+- Lesson: "Break it apart" now comes before "Hidden formula" (right after the "Which operation?" checklist). Guided q-197 now comes before q-196. The lines "The last type" and "Last question of the set" were updated, and the question numbers update automatically.
+- Advanced A: q-187 (the word problem, medium) now comes before q-186 (the proportion, medium). Both have the same Hebrew level.
+- Rejected: moving q-188 earlier (it starts the 188–189–190 block of equation-combining questions). Swapping q-179 and q-180 in Advanced B (q-180 leads straight into q-181). Swapping q-182 and q-183 (q-183 is the closing "understanding" question). Reordering the first theory questions (each one matches a lesson slide).
+
+## 2026-10-02 review
+- Fixed q-179: the Hebrew has only ONE choice > 1. In the new version, 9 also passed the "x/w > 1" test. Choice 4 is now 1/9, so the brainwave removes choices 1, 3 and 4 and leaves choice 2, as in the Hebrew. The solution and video slide 4 were updated.
+- Judged and kept: q-187 ("square of the difference = sum of the squares"). It has the same message: translate the words, expand a multiplication formula, get 2ab = 0, so one number is 0. It is still medium, with the same choices and the same key idea. Also kept: q-175 (now a < b). It is a variant practice item and the skill is unchanged. Its guided twin q-194 keeps the b < a direction, so both directions are practiced.
+- Checked with no changes needed: all the theory and advanced A/B guided questions against the Hebrew levels and methods (estimation in q-184, three negatives and "mark the fourth" in q-190, the three methods in q-178, and the distinct plug-in values in q-180 and q-181), the lesson back-references (Questions 6, 14, 15, 16–18), and about 30 practice questions.

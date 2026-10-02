@@ -80,3 +80,60 @@ Patch: `math_patches/t08.py`. Check: `python3 math_check.py 8` gives 0 problems,
 - q-131, q-132 and q-expression-extra-09 are moved in by the T5 patch (not by this one).
 
 **Summary video (new)** `r26-t08-summary` "Exponent Laws: Summary", at the end of the core section, right before the practice: Summary · Exponents 1, 0, −n · The three laws · Same exponent · Negative bases · When aᵇ = 1 · Split and count · Compare powers · Before you practice.
+
+## 2026-10-02 new numbers + order
+Goal: the English Topic 8 must not look like a copy of the Hebrew course. Every idea, trap, level and method stays.
+Code: `new_numbers(M)` and `order_changes(M)` at the end of `apply`. There is a `RECORDED` set, empty for now. A question
+or video put in it keeps its old version. The Hebrew Topic 8 has one lesson and 10 study-guide questions with no videos,
+so there are no Hebrew levels for them. q-131 and q-132 come from Hebrew Topic 5 videos: q-131 is medium, q-132 is medium+.
+
+**Questions** (key, written solution and, where there is one, the whole solution video were updated together):
+| Item | Old (Hebrew) | New | Key |
+|---|---|---|---|
+| q-218 | 0^√2 + (√2)¹ | (√3)¹ + 0^√3 = √3 | 1 → 4 |
+| q-219 | 1^√5 + (√5)⁰ | (√7)⁰ + 1^√7 = 2 | 3 → 2 |
+| q-220 | −(−4)³ = 64 | −(−2)⁵ = 32; distractors −32 (forgot the outer minus) and ±10 (base × exponent) | 4 → 3 |
+| q-221 | (2/5)⁻³ | (2/3)⁻³ = 27/8 | 2 → 3 |
+| q-222 | (−3)⁻⁴ | (−5)⁻² = 1/25 | 4 → 1 |
+| q-223 | 11⁻⁷·11¹²·11⁻³ | 7⁻⁵·7⁹·7⁻² = 49; trap 7⁶ (lost minus) | 3 → 1 |
+| q-224 (guided) | 5^(x+2) | 4^(x+2) = 16·4ˣ; x = 1 check gives 64, 8, 20, 16 | 3 → 1 |
+| q-225 | 13⁹/13⁷ | 12⁸/12⁶ = 144 | 3 → 2 |
+| q-226 (guided) | 2·2⁻⁶/2⁻¹⁰ = 32 | 3·3⁻⁵/3⁻⁸ = 81; traps 3⁻¹² (added −8), 1/81, 27 (forgot the lonely 3) | 3 → 4 |
+| q-228 | 2⁴·5⁴ | 5⁵·2⁵ = 100,000 | 3 → 1 |
+| q-229 | 6⁴/2⁴ | 12³/4³ = 27 | 2 → 4 |
+| q-230 | 5³/15³ | 7³/14³ = 1/8 | 1 → 2 |
+| q-231 (guided) | aᵇ = 1, not possible: a = 0 | mⁿ = 1, not possible: m = 0 (n = 5, m = −1, n = 0 possible) | 1 → 3 |
+| q-232 | a<b, aᵇ = bᵃ, a+b = 6 | m>n, mⁿ = nᵐ, m·n = 8 (the 2-and-4 fact stays; traps 6 = m+n, 16 = mⁿ) | 3 → 1 |
+| q-131 (guided) | (x⁻² + 4x²/x⁴)·⅕·5/x⁻² = 5 | (x⁻³ + 2x³/x⁶)·⅓·6/x⁻³ = 6 | 3 → 2 |
+| q-132 (guided) | a: (a+3a)−(3a−a) … (a²−9)/(a+3)−a = −3 | n: (n+4n)−(4n−n), (−1)ⁿ+n⁰, (n²−25)/(n+5)−n = −5, ((n+3)+(n+3)²)/(n+4) | 4 → 3 |
+| q-expression-extra-09 | (x⁻² + 2/x²)·x² = 3 | x³·(x⁻³ + 4/x³) = 5 | 3 → 1 |
+
+Methods kept in the videos: split the exponent and check with x = 1 (q-224); write the lonely base as a power, then add and
+subtract exponents, with the minus-minus trap (q-226); test every choice against the three cases (q-231); simplify step by
+step and plug in x = 1 because the choices are only numbers (q-131); simplify each choice, remove three and mark the
+fourth, then prove it with the difference of squares, and why plugging in is long here (q-132). The q-132 video now
+skips the "heavier" choice 3 and comes back to it. The q-131 and q-132 video titles follow the new stems.
+
+**Lesson "Exponent Laws"** (the Hebrew lesson's own examples): (3/7)⁰ → (4/9)⁰; (2/5)⁻³ (this was q-221) → (5/2)⁻² = 4/25;
+"a million times" → "as many times as you like"; (2·3)³ = 216 → (4·5)² = 400; (−3)⁴ = 81, (−3)³, −3² → (−2)⁶ = 64,
+(−10)³ = −1,000, −7² = −49. The aᵇ = 1 slide was reworded on screen and in speech ("Option 1: a = 1 — any b" →
+"Base 1 / Base −1 / Exponent 0", "cases"). The opening lines of the title slide were reworded. Card tip: (−3)² vs −3² →
+(−7)² = 49 vs −7² = −49. 2⁴ = 4² was kept, because that fact is the point of the slide.
+
+**Order changes**
+- Lesson: "2⁴ = 4²" now comes before "When aᵇ = 1". Both are independent. aᵇ = 1 still comes after "Negative bases",
+  which it needs. The sidebar was updated.
+- Core questions now follow the order in which the lesson teaches them: q-219 before q-218 (same level); q-221 (negative
+  exponent, slide 4) before q-220 (negative base, slide 10); q-225 (plain division) before q-224 (split exponent,
+  slide 13). The guided numbering does not change.
+- Answer positions: every key above moved away from its Hebrew position.
+- Rejected: swapping "Same exponent" and "Negative bases", because it would break up the group of laws. Swapping q-229
+  and q-230, because q-229 (whole-number answer) is easier than q-230. Moving q-131 and q-132, which are already
+  medium → medium+. Reordering the summary video and the practice, which are English-made and already easy → hard.
+
+Check: `python3 math_check.py 8 32` and `python3 math_check.py 5 8 32` → 0 problems, 0 warnings, 0 layout problems.
+
+## 2026-10-02 review
+- Fixed the q-132 video intro: it still said "doesn't depend on a … until the a disappears". The letter is now n.
+- Summary slide "When aᵇ = 1" (it lists aᵇ = 1 and then 2⁴ = 4²): kept. The two facts do not depend on each other, and this summary slide recaps the rule that the guided question uses, so the order does not affect the flow.
+- Checked with no changes needed: all the core and guided questions, which were re-computed (keys, traps and the x = 1 checks), plus the lesson examples and 15 practice questions.

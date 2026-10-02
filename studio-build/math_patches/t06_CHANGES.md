@@ -91,3 +91,68 @@ I solved every new or changed question again with exact arithmetic. Each has exa
 **Small fix:** the title slides of the four new guided videos now keep the lesson name as the slide label. The big title still shows the number. Before this fix, renumbering changed the label twice, so a slide was labeled "Question 4" while its big title said "Question 2".
 
 Check: `python3 math_check.py 5 6` gives 0 problems, 0 warnings for Topic 6 and 0 layout problems.
+
+## 2026-10-02 new numbers + order
+Functions `new_numbers(M)` and `order_changes(M)` run last. `RECORDED = set()` (nothing in Topic 6 is recorded). Same ideas, same traps, same methods. Every item was re-solved in Python, and each has exactly one correct choice.
+
+**Guided questions (the videos were rewritten with the new numbers: board, spoken numbers, circle-choice lines and titles)**
+| Q | Hebrew / study guide | New | Key |
+|---|---|---|---|
+| 1 q-171 | 2/(x−2) = 1/(x−1) → 0; study guide 3/(x−4) = 1/(x−2) → 1 | 4/(x−2) = 3/(x−3) → 6. Choices −1 (straight-across trap), 6, 18 (sign slip), 3 (forbidden). Common denominator, cross-multiply note, test the choices | 2 |
+| 4 q-164 | 6x+3y = 27, x+y = 5; study guide 36 / 7 | 8x+4y = 44, x+y = 9 → x = 2. Isolate y (they ask for x); divide by 4, then subtract. New trap line: 11 is 2x+y | 2 |
+| 5 q-165 | 3x+y = 25, 2x+3y = 33; study guide 2x+y = 19, 3x+2y = 31 | 4x+y = 22, 3x+2y = 24 → x = 4. ×2 to match y; "could match x: ×3 and ×4 → 12x"; substitution check. Trap 20 = 5x | 3 |
+
+**Practice:**
+- q-166: 3x+11 = 2
+- q-167: 5(4−x) = 2(x−4) (both sides are 0 again)
+- q-168: 3(x−2)/7 = 3
+- q-169: (12x+8)/4 = (6x+4)/2 → any number (now choice 4)
+- q-170: 9(x+2)/3 = 3x+4 → no value (now choice 4)
+- q-159: 5x+3y = −1, x = −2
+- q-160: x+2y = 16, x+y = 9, asks for y
+- q-161: 3x−3y = 0, 2x+y = 9
+- q-162: x+y = 30, x−y = 8
+- q-163: 3(x−1)−2y = 6+y, x+y = 7
+- q-139: 3x−8 = 2x+5
+- q-140: 4(x−3) = 20
+- q-141: (x+5)/2 = 7
+- q-142: (5x+10)/5 = 6
+- q-143: (4x+2)/5 − (x+2)/3 = (2x+8)/10 → 4 (sign trap −1)
+- q-144: 5x+y = 38, y = 3
+- q-145: x+3y = 17, 3x = 6
+- q-146: 3x+y = 19, x−y = 1
+- q-147: x+4y = 18, x+y = 6
+- q-148: x+y = 22, x−y = 6
+- q-149: 2x+5y = 24, 3x−y = 2
+- q-150: 3x+5y = 29, 2x+10y = 46
+- q-151: 2x+3y = 4, 3x−2y = 19
+- q-152: (1/x)/4 = 2
+- q-153: xy = 32, x/y = 2
+- q-154: 1/(x+2) = 3/(x+4) → −1
+- q-155: x² = 2y, y = 5x
+- q-156: 4x = 9x (choices: no solution / One / Two / Nine)
+- q-157: (a+1)(b+1) = 6, ab = −4 → 9
+- q-158: ((x−3)−(3−x))/(2+x) = 1 → 8
+
+The new choice sets give correct-answer positions that differ from the original ones. Solutions now name the traps.
+
+**newExtension:** alg-extra-unit-t6-4-1 was 2x−5 = 1, a near-copy of the Hebrew lesson example 2x−5 = 3. It is now 3x−4 = 11.
+
+**Lesson "Equations — Fundamentals":**
+- The Hebrew's own "every x / no solution" pair (2(x+3) = 2x+6 / 2x+9) is now 5(x+2) = 5x+7 (no solution) and 5(x+2) = 5x+10 (every x).
+- The "Fractions & brackets" example (x+3)/4 = 5 was the Hebrew practice q-141. It is now (x−4)/5 = 3 ("not x minus twenty").
+- The memory-card row was updated to match.
+
+**Order changes:**
+- Lesson: "No solution" now comes before "Every x works". The sidebar, the recap line, the summary slide "x cancels" and the card row follow the same order.
+- Guided questions after lesson 1: q-171 (cross-multiply) → q-r26-t06-02 (forbidden answer) → q-r26-t06-01 (minus before a fraction). This is the lesson's own slide order and goes easy → hard. The automatic renumbering makes them Questions 1, 2, 3.
+- Rejected:
+  - Swapping q-164 and q-165. Substitution is taught first, and q-164 is the easier one.
+  - Swapping the substitution and elimination slides. The elimination slide says "same answer as substitution".
+  - Reordering the practice sections. They are already easy → hard.
+
+Check: `python3 math_check.py 6 32` → 0 problems, 0 warnings, 0 layout problems. I rendered the changed videos and checked them.
+
+## 2026-10-02 review
+- Fixed q-169: (12x+8)/4 = (6x+4)/2 is true for every x, so the old number choices 0, 2 and 4 were also correct. The stem is now "Which of the following statements is true?". The choices are: only x = 0 / only x = 2 / no value of x / every value of x (key 4). A trap line was added to the solution.
+- Checked with no changes needed: the guided questions q-171, q-r26-t06-02, q-r26-t06-01, q-164 and q-165 (Hebrew methods plus a second method each, all re-solved), all the lesson examples, the order changes, and more than 25 practice questions. q-157 (a+b = 9 with no whole-number a and b) is fine as an expression question, and the Hebrew/study-guide version had the same property.

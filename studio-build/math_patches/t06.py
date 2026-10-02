@@ -702,6 +702,8 @@ def apply(M):
     }, after=SY)
 
     summaries(M)
+    new_numbers(M)
+    order_changes(M)
 
 
 # =====================================================================================
@@ -796,3 +798,328 @@ def summaries(M):
          'The common traps: a lost minus when you subtract, and forgetting the right side.',
          "Now it's your turn. Good luck!"],
     ], ['Before you practice — a quick summary of systems of equations.', 'Which method, and when.'])
+
+
+# =====================================================================================
+# 10. 2026-10-02: new numbers - the English course is not identical to the Hebrew one (same ideas, same methods)
+# =====================================================================================
+def _sub(M, vid, n, pairs):
+    """Exact substring replacements on one slide: board items ('t'), item labels, spoken and drawn lines."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = False
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit = True
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit = True
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def new_numbers(M):
+    # recorded by the teacher with the old numbers - question and video stay exactly as recorded (nothing yet)
+    RECORDED = set()
+
+    def S(qid, **kw):
+        if qid in RECORDED: return
+        q = M.set_q(qid, **kw)
+        # set_q keeps a pre-loaded stem in sync, but not a pre-loaded copy of the choices
+        for v in M.D['videos'].values():
+            for b in v.get('beats', []):
+                for it in b.get('items', []):
+                    if it.get('k') == 'q' and it.get('qid') == qid and 'choices' in it:
+                        it['choices'] = list(q['choicesRich']); M.touched_videos.add(v['id'])
+
+    def video(qid, slides):
+        if qid in RECORDED: return
+        vid = 'solve-' + qid
+        for n, x in slides.items():
+            title, script = x if isinstance(x, tuple) else (None, x)
+            M.set_slide(vid, n, title=title, script=script)
+        v = M.video(vid)
+        v['title'] = v['navLabel'] = rich_plain(M.q(qid)['stemRich'])
+
+    NA = 'No value of $x$ satisfies the equation'
+
+    # ---------------- lesson "Equations — Fundamentals": the Hebrew's own examples get new numbers
+    # Hebrew: 2x² + 6 = 2(x² + 3) (every x) and 4x − 5 = 2x + 2(x − 3) (no solution); English had 2(x+3) = 2x+6 / 2x+9.
+    # The two slides also swap places (no solution first) - see order_changes; here only the numbers.
+    if 'linear-equations' not in RECORDED:
+        M.set_slide(LE, 3, title='No solution', active=1, pre=[T('$5(x+2)=5x+7$', size=68, gap=40)], script=[
+            'Not every equation gives you one neat answer.',
+            D('Open the bracket: write "5x + 10 = 5x + 7"'),
+            'Open the bracket: five x plus ten equals five x plus seven.',
+            D('Cross out 5x on both sides; write "10 = 7" and a big ✗'),
+            'Take five x off both sides: ten equals seven.',
+            "We know that's false. That's a contradiction.",
+            "No matter which x you try, you'll hit that contradiction. So this equation has NO solution."])
+        M.set_slide(LE, 4, title='Every x works', active=2, pre=[T('$5(x+2)=5x+10$', size=68, gap=40)], script=[
+            'Now the opposite situation. Same left side, one number changed on the right.',
+            D('Open the bracket: write "5x + 10 = 5x + 10"'),
+            'Open the bracket: five x plus ten. And the right side? Five x plus ten. The exact same thing.',
+            D('Cross out 5x on both sides; write "10 = 10"'),
+            'Take five x off both sides: ten equals ten. Always true.',
+            "x disappeared. It doesn't matter what you plug in — the two sides are always equal.",
+            D('Write "infinitely many solutions"'),
+            "That's called infinitely many solutions. x can be any number."])
+        # "Fractions & brackets": (x+3)/4 = 5 was the Hebrew practice question q-141
+        _sub(M, LE, 8, [('$\\frac{x+3}{4}=5$', '$\\frac{x-4}{5}=3$'),
+                        ('(x + 3)/4 = 5 appears', '(x − 4)/5 = 3 appears'),
+                        ('Write "5 = 20/4", then cross out both 4s: "x + 3 = 20"', 'Write "3 = 15/5", then cross out both 5s: "x − 4 = 15"'),
+                        ('Five is twenty quarters. Same denominator on both sides — cancel it. The four divided the WHOLE top, so we get x plus three equals twenty. Not x plus twelve!',
+                         'Three is fifteen fifths. Same denominator on both sides — cancel it. The five divided the WHOLE top, so we get x minus four equals fifteen. Not x minus twenty!'),
+                        ('Write "x = 17"', 'Write "x = 19"'),
+                        ('x equals seventeen.', 'x equals nineteen.')])
+        M.card('mem-r26-t06-single')['tables'][0]['rows'][6] = \
+            ['$x$ cancels', 'false ($10=7$) $\\to$ no solution; true ($10=10$) $\\to$ infinitely many solutions']
+
+    # ---------------- guided Q1 (Hebrew 2/(x−2) = 1/(x−1) → 0; study guide 3/(x−4) = 1/(x−2) → 1)
+    S('q-171', stem='Given: $x \\ne 2$ and $x \\ne 3$.\n$\\frac{4}{x-2}=\\frac{3}{x-3}$\n$x = ?$',
+      choices=['$-1$', '$6$', '$18$', '$3$'], correct=2,
+      expl=['The restrictions are $x \\ne 2$ and $x \\ne 3$.',
+            'One fraction equals one fraction, so cross-multiply: $4(x-3)=3(x-2)$.',
+            '$4x-12=3x-6 \\to x=6$.',
+            '$6$ is not a forbidden value. Check: $\\frac{4}{4}=1$ and $\\frac{3}{3}=1$. The answer is choice 2.',
+            'The traps: multiplying straight across ($4(x-2)=3(x-3)$) gives $-1$, and $3$ is forbidden.'])
+    video('q-171', {
+        2: [
+            'First, look at the conditions: x is not two, and not three.',
+            'Why? Because either one would make a denominator zero — and dividing by zero is undefined.',
+            D('Circle "x ≠ 2, x ≠ 3"'),
+            "Now the method: a common denominator for both sides. Here it's x minus two, times x minus three.",
+            D('Write "4(x − 3)/[(x − 2)(x − 3)] = 3(x − 2)/[(x − 3)(x − 2)]"'),
+            'Left side: four times x minus three on top. Right side: three times x minus two on top.',
+            D('Cross out the common denominator on both sides; write "4(x − 3) = 3(x − 2)"'),
+            "Same denominator on both sides of an equation — cancel it. That's really multiplying both sides by it.",
+            "Notice: we could have jumped straight here with cross-multiplication. When fraction equals fraction, that's allowed.",
+            D('Write "4x − 12 = 3x − 6"'),
+            'Open the brackets: four x minus twelve equals three x minus six.',
+            D('Write "x = 6"'),
+            'x terms left, numbers right: x equals six.',
+            D('Write "6 ≠ 2, 6 ≠ 3 ✓" and circle choice 2'),
+            "Six isn't two and isn't three — allowed. Choice two.",
+            'Careful: multiply straight across — four times x minus two — and you get negative one. That is choice one, the trap.'],
+        3: [
+            'Or test the choices in the original equation.',
+            D('Cross out choice 4'),
+            'Choice four, x equals three? Forbidden — it makes a denominator zero. Out.',
+            D('Next to choice 1 write "4/(−3) ≠ 3/(−4) ✗"'),
+            'Choice one, x equals negative one: four over negative three, against three over negative four. Not equal.',
+            D('Next to choice 2 write "4/4 = 1,  3/3 = 1 ✓"'),
+            'Choice two, x equals six: four over four is one. Three over three is one. Equal!',
+            D('Circle choice 2'),
+            'Choice two. Same answer.']})
+
+    # ---------------- systems guided Q (Hebrew 6x+3y = 27, x+y = 5 → 4; study guide 6x+3y = 36, x+y = 7 → 5)
+    S('q-164', stem=given_sys('8x+4y=44', 'x+y=9'),
+      choices=['$4$', '$2$', '$7$', '$11$'], correct=2,
+      expl=['Divide the first equation by $4$: $2x+y=11$.',
+            'Subtract the second equation: $(2x+y)-(x+y)=11-9$, so $x=2$.',
+            'Check: $y=7$, and $8\\cdot2+4\\cdot7=16+28=44$. The answer is choice 2.',
+            'Or substitute: $y=9-x$, so $8x+4(9-x)=44 \\to 4x+36=44 \\to x=2$.'])
+    video('q-164', {
+        2: [
+            'Two equations, two unknowns — as many equations as unknowns, so we can usually solve it.',
+            "They want x. So isolate the OTHER letter — y. Then y disappears, and we're left with exactly the letter we want.",
+            D('Under x + y = 9 write "y = 9 − x"'),
+            'From the second equation: y equals nine minus x.',
+            D('Write "8x + 4(9 − x) = 44"'),
+            'Plug that into the first equation, in place of y.',
+            D('Write "8x + 36 − 4x = 44 → 4x = 8 → x = 2"'),
+            'Four times nine is thirty-six, minus four x. Four x plus thirty-six is forty-four. Four x is eight. x is two.',
+            D('Circle choice 2'),
+            'Choice two.'],
+        3: [
+            'Now the shortcut. Look at eight, four and forty-four — they all divide by four.',
+            D('Next to the first equation write "÷4 → 2x + y = 11"'),
+            'Divide the whole equation by four: two x plus y equals eleven.',
+            D('Write "(2x + y) − (x + y) = 11 − 9"'),
+            "Now subtract the second equation. The y's cancel.",
+            D('Write "x = 2" and circle choice 2'),
+            'x equals two. Choice two — in two lines.',
+            'Careful: eleven is two x plus y, not x. Stop there, and you pick choice four.']})
+
+    # ---------------- systems guided Q (Hebrew 3x+y = 25, 2x+3y = 33 → 6; study guide 2x+y = 19, 3x+2y = 31 → 7)
+    S('q-165', stem=given_sys('4x+y=22', '3x+2y=24'),
+      choices=['$6$', '$5$', '$4$', '$20$'], correct=3,
+      expl=['They ask for $x$, so match the $y$ terms. Multiply the first equation by $2$: $8x+2y=44$.',
+            'Subtract the second equation: $(8x+2y)-(3x+2y)=44-24$, so $5x=20$ and $x=4$.',
+            'Check: $y=22-16=6$, and $3\\cdot4+2\\cdot6=24$. The answer is choice 3.',
+            'The traps: $20$ is $5x$ (not divided by $5$), and $6$ is $y$.'])
+    video('q-165', {
+        2: [
+            "They want x. So let's make the y's match — and cancel them.",
+            "We could match the x's instead — times three and times four, making twelve x. But they want x, so match the y's.",
+            'The first equation has one y, the second has two. Multiply the first equation by two.',
+            D('Under the first equation write "×2 → 8x + 2y = 44"'),
+            'Every term: eight x plus two y equals forty-four.',
+            D('Write "(8x + 2y) − (3x + 2y) = 44 − 24"'),
+            'Subtract the second equation. Two y minus two y — gone.',
+            D('Write "5x = 20 → x = 4" and circle choice 3'),
+            'Eight x minus three x is five x. Forty-four minus twenty-four is twenty. Five x is twenty, so x equals four. Choice three.',
+            'Stop at twenty, and you pick choice four. Divide by five.'],
+        3: [
+            'Substitution works too. In the first equation, y has coefficient one — easy to isolate.',
+            D('Write "y = 22 − 4x"'),
+            'y equals twenty-two minus four x.',
+            D('Write "3x + 2(22 − 4x) = 24 → 3x + 44 − 8x = 24"'),
+            'Into the second: three x plus forty-four minus eight x equals twenty-four.',
+            D('Write "−5x = −20 → x = 4"'),
+            'Negative five x equals negative twenty. x is four.',
+            D('Write "y = 6: 16 + 6 = 22 ✓, 12 + 12 = 24 ✓"'),
+            'And y is six. Both equations check. Choice three.']})
+
+    # ---------------- single-equation practice (Hebrew self-practice q-166 … q-170)
+    S('q-166', stem=given_eq('3x+11=2'),
+      choices=['$\\frac{13}{3}$', '$3$', '$-3$', '$-9$'], correct=3,
+      expl=['Subtract $11$ from both sides: $3x=-9$.', 'Divide by $3$: $x=-3$. The answer is choice 3.'])
+    S('q-167', stem=given_eq('5(4-x)=2(x-4)'),
+      choices=['$-4$', '$0$', '$2$', '$4$'], correct=4,
+      expl=['Open the brackets: $20-5x=2x-8$.',
+            'Move the $x$ terms to the right and the numbers to the left: $20+8=2x+5x$, so $28=7x$ and $x=4$.',
+            'Check: both brackets are $0$, so both sides are $0$. The answer is choice 4.'])
+    S('q-168', stem=given_eq('\\frac{3(x-2)}{7}=3'),
+      choices=['$3$', '$5$', '$7$', '$9$'], correct=4,
+      expl=['Multiply both sides by $7$: $3(x-2)=21$.', 'Divide by $3$: $x-2=7$, so $x=9$. The answer is choice 4.'])
+    # review 2026-10-02: numeric choices 0 / 2 / 4 all satisfied the identity -> statement choices, exactly one true
+    S('q-169', stem='Given: $\\frac{12x+8}{4}=\\frac{6x+4}{2}$\nWhich of the following statements is true?',
+      choices=['The only solution is $x=0$', 'The only solution is $x=2$', NA, 'Every value of $x$ satisfies the equation'], correct=4,
+      expl=['Simplify each side: $\\frac{12x+8}{4}=3x+2$ and $\\frac{6x+4}{2}=3x+2$.',
+            'The equation is $3x+2=3x+2$. Take $3x$ off both sides: $2=2$, which is always true.',
+            'So every $x$ is a solution (infinitely many solutions). The answer is choice 4.',
+            'The trap: $x=0$ and $x=2$ do work, but they are not the only solutions.'])
+    S('q-170', stem=given_eq('\\frac{9(x+2)}{3}=3x+4'),
+      choices=['$-\\frac{2}{3}$', '$0$', '$2$', NA], correct=4,
+      expl=['Left side: $\\frac{9(x+2)}{3}=3(x+2)=3x+6$.',
+            'The equation becomes $3x+6=3x+4$. Take $3x$ off both sides: $6=4$, which is false.',
+            'So no $x$ satisfies the equation. The answer is choice 4.'])
+    # newExtension near-copy of the Hebrew lesson example 2x − 5 = 3
+    S('alg-extra-unit-t6-4-1', stem=given_eq('3x-4=11'), choices=['$5$', '$4$', '$6$', '$3$'], correct=1,
+      expl=['Add $4$ to both sides: $3x=15$.', 'Divide by $3$: $x=5$. The answer is choice 1.'])
+
+    # ---------------- systems practice (Hebrew self-practice q-159 … q-163)
+    S('q-159', stem=given_sys('5x+3y=-1', 'x=-2', ask='y'),
+      choices=['$4$', '$3$', '$2$', '$1$'], correct=2,
+      expl=['Put $x=-2$ into the first equation: $5\\cdot(-2)+3y=-1$.', '$-10+3y=-1 \\to 3y=9 \\to y=3$. The answer is choice 2.'])
+    S('q-160', stem=given_sys('x+2y=16', 'x+y=9', ask='y'),
+      choices=['$2$', '$5$', '$7$', '$9$'], correct=3,
+      expl=['Same $x$ in both equations, so subtract: $(x+2y)-(x+y)=16-9$.', 'The $x$ terms cancel: $y=7$. The answer is choice 3.'])
+    S('q-161', stem=given_sys('3x-3y=0', '2x+y=9'),
+      choices=['$1$', '$3$', '$\\frac{9}{2}$', '$9$'], correct=2,
+      expl=['From the first equation: $3x=3y$, so $x=y$.',
+            'Put $x$ in place of $y$ in the second equation: $2x+x=9 \\to 3x=9 \\to x=3$. The answer is choice 2.'])
+    S('q-162', stem=given_sys('x+y=30', 'x-y=8', ask='y'),
+      choices=['$19$', '$11$', '$15$', '$8$'], correct=2,
+      expl=['Subtract the second equation from the first. Keep it in brackets: $(x+y)-(x-y)=30-8$.',
+            '$x+y-x+y=22 \\to 2y=22 \\to y=11$. The answer is choice 2.',
+            'Shortcut: $y$ is half the difference: $\\frac{30-8}{2}=11$. ($19$ is $x$.)'])
+    S('q-163', stem=given_sys('3(x-1)-2y=6+y', 'x+y=7'),
+      choices=['$2$', '$3$', '$5$', '$7$'], correct=3,
+      expl=['Tidy the first equation: $3x-3-2y=6+y \\to 3x-3y=9 \\to x-y=3$.',
+            'Add $x+y=7$: $2x=10$, so $x=5$. The answer is choice 3.'])
+
+    # ---------------- mixed practice (Hebrew summary practice q-139 … q-158)
+    S('q-139', stem=given_eq('3x-8=2x+5'), choices=['$13$', '$-13$', '$3$', '$-3$'], correct=1,
+      expl=['Move the $x$ terms to the left and the numbers to the right: $3x-2x=5+8$.', 'So $x=13$. The answer is choice 1.'])
+    S('q-140', stem=given_eq('4(x-3)=20'), choices=['$-2$', '$2$', '$\\frac{23}{4}$', '$8$'], correct=4,
+      expl=['Divide both sides by $4$: $x-3=5$.', 'So $x=8$. The answer is choice 4.'])
+    S('q-141', stem=given_eq('\\frac{x+5}{2}=7'), choices=['$19$', '$14$', '$12$', '$9$'], correct=4,
+      expl=['Multiply both sides by $2$: $x+5=14$.', 'Subtract $5$: $x=9$. The answer is choice 4.'])
+    S('q-142', stem=given_eq('\\frac{5x+10}{5}=6'), choices=['$-4$', '$4$', '$8$', '$20$'], correct=2,
+      expl=['Multiply both sides by $5$: $5x+10=30$.', '$5x=20$, so $x=4$. The answer is choice 2.',
+            'Or divide the whole numerator by $5$ first: $x+2=6$.'])
+    S('q-143', stem=given_eq('\\frac{4x+2}{5}-\\frac{x+2}{3}=\\frac{2x+8}{10}'),
+      choices=['$5$', '$4$', '$2$', '$-1$'], correct=2,
+      expl=['The common denominator of $5$, $3$ and $10$ is $30$. Multiply every term by $30$ and put each numerator in brackets:',
+            '$6(4x+2)-10(x+2)=3(2x+8)$.',
+            'The minus hits the whole bracket: $24x+12-10x-20=6x+24$.',
+            '$14x-8=6x+24 \\to 8x=32 \\to x=4$. The answer is choice 2.',
+            'The trap: writing $-10x+20$ gives $x=-1$.'])
+    S('q-144', stem=given_sys('5x+y=38', 'y=3'), choices=['$8$', '$7$', '$6$', '$5$'], correct=2,
+      expl=['Put $y=3$ into the first equation: $5x+3=38$.', '$5x=35$, so $x=7$. The answer is choice 2.'])
+    S('q-145', stem=given_sys('x+3y=17', '3x=6', ask='y'), choices=['$15$', '$5$', '$3$', '$2$'], correct=2,
+      expl=['From $3x=6$: $x=2$.', 'Put it into the first equation: $2+3y=17 \\to 3y=15 \\to y=5$. The answer is choice 2.'])
+    S('q-146', stem=given_sys('3x+y=19', 'x-y=1'), choices=['$20$', '$9$', '$5$', '$4$'], correct=3,
+      expl=['Opposite $y$ terms, so add the equations: $(3x+y)+(x-y)=19+1$.', '$4x=20$, so $x=5$. The answer is choice 3.'])
+    S('q-147', stem=given_sys('x+4y=18', 'x+y=6', ask='y'), choices=['$4$', '$2$', '$6$', '$12$'], correct=1,
+      expl=['Same $x$ in both, so subtract: $(x+4y)-(x+y)=18-6$.', '$3y=12$, so $y=4$. The answer is choice 1.'])
+    S('q-148', stem=given_sys('x+y=22', 'x-y=6'), choices=['$8$', '$11$', '$14$', '$16$'], correct=3,
+      expl=['Add the two equations: the $y$ terms cancel, and $2x=28$.', 'So $x=14$. The answer is choice 3.',
+            'Shortcut: $x$ is half the sum: $\\frac{22+6}{2}=14$.'])
+    S('q-149', stem=given_sys('2x+5y=24', '3x-y=2'), choices=['$5$', '$4$', '$3$', '$2$'], correct=4,
+      expl=['In the second equation $y$ has coefficient $1$, so isolate it: $y=3x-2$.',
+            'Substitute: $2x+5(3x-2)=24 \\to 2x+15x-10=24 \\to 17x=34$.', 'So $x=2$. The answer is choice 4.'])
+    S('q-150', stem=given_sys('3x+5y=29', '2x+10y=46'), choices=['$3$', '$4$', '$6$', '$12$'], correct=1,
+      expl=['They ask for $x$, so match the $y$ terms. Double the first equation: $6x+10y=58$.',
+            'Subtract the second: $(6x+10y)-(2x+10y)=58-46 \\to 4x=12$.', 'So $x=3$. The answer is choice 1.'])
+    S('q-151', stem=given_sys('2x+3y=4', '3x-2y=19'), choices=['$-2$', '$3$', '$4$', '$5$'], correct=4,
+      expl=['Match the $y$ terms: multiply the first equation by $2$ and the second by $3$.',
+            '$4x+6y=8$ and $9x-6y=57$.',
+            'Add: $13x=65$, so $x=5$. The answer is choice 4.'])
+    S('q-152', stem=given_eq('\\frac{\\frac{1}{x}}{4}=2'),
+      choices=['$\\frac{1}{8}$', '$\\frac{1}{2}$', '$2$', '$8$'], correct=1,
+      expl=['Multiply both sides by $4$: $\\frac{1}{x}=8$.',
+            'If $\\frac{1}{x}=8$, then $x$ is the reciprocal of $8$: $x=\\frac{1}{8}$. The answer is choice 1.',
+            'Check: $\\frac{1}{x}=8$ and $\\frac{8}{4}=2$. The trap is $8$: that is $\\frac{1}{x}$, not $x$.'])
+    S('q-153', stem='Given: $x > 0$ and $y > 0$, and\n' + cases('xy=32', '\\frac{x}{y}=2') + '\n$x+y = ?$',
+      choices=['$32$', '$16$', '$12$', '$10$'], correct=3,
+      expl=['Multiply the two equations: $xy\\cdot\\frac{x}{y}=32\\cdot2$, so $x^2=64$.',
+            '$x$ is positive, so $x=8$. Then $8y=32$, so $y=4$.',
+            '$x+y=12$. The answer is choice 3.',
+            'Or substitute: $\\frac{x}{y}=2$ gives $x=2y$, so $2y\\cdot y=32$, $y^2=16$ and $y=4$.'])
+    S('q-154', stem='Given: $x \\ne -2$ and $x \\ne -4$.\n$\\frac{1}{x+2}=\\frac{3}{x+4}$\n$x = ?$',
+      choices=['$1$', '$-1$', '$-2$', '$-5$'], correct=2,
+      expl=['One fraction equals one fraction, so cross-multiply: $1\\cdot(x+4)=3(x+2)$.',
+            '$x+4=3x+6$, so $-2=2x$ and $x=-1$.',
+            '$-1$ is allowed. Check: $\\frac{1}{1}=1$ and $\\frac{3}{3}=1$. The answer is choice 2.',
+            'The traps: multiplying straight across gives $-5$, and $-2$ is forbidden.'])
+    S('q-155', stem='Given: $x \\ne 0$ and\n' + cases('x^2=2y', 'y=5x') + '\n$x = ?$',
+      choices=['$2$', '$5$', '$10$', '$50$'], correct=3,
+      expl=['Put $y=5x$ into the first equation: $x^2=2\\cdot5x=10x$.',
+            'Do not divide by something that could be $0$. Here we are told $x \\ne 0$, so we may divide by $x$: $x=10$.',
+            'The answer is choice 3. ($50$ is $y$.)'])
+    S('q-156', stem='How many solutions does the equation $4x=9x$ have?',
+      choices=['The equation has no solution', 'One', 'Two', 'Nine'], correct=2,
+      expl=['Move everything to one side: $9x-4x=0$, so $5x=0$ and $x=0$.',
+            'One solution: $x=0$. The answer is choice 2.',
+            'The trap: dividing both sides by $x$ gives $4=9$ and "no solution". But $x$ may be $0$, so we may not divide by it.'])
+    S('q-157', stem='Given:\n' + cases('(a+1)(b+1)=6', 'ab=-4') + '\n$a+b = ?$',
+      choices=['$-9$', '$1$', '$9$', '$10$'], correct=3,
+      expl=['Open the brackets: $(a+1)(b+1)=ab+a+b+1$.',
+            'So $ab+a+b+1=6$. Put in $ab=-4$: $-4+(a+b)+1=6$.',
+            '$a+b-3=6$, so $a+b=9$. The answer is choice 3.',
+            'The traps: forgetting the $+1$ gives $10$, and using $+4$ instead of $-4$ gives $1$.'])
+    S('q-158', stem='Given: $x \\ne -2$ and\n$\\frac{(x-3)-(3-x)}{2+x}=1$\n$x = ?$',
+      choices=['$-8$', '$3$', '$4$', '$8$'], correct=4,
+      expl=['Numerator: $(x-3)-(3-x)=x-3-3+x=2x-6$.',
+            'So $\\frac{2x-6}{2+x}=1$. Multiply both sides by $2+x$: $2x-6=2+x$.',
+            'So $x=8$. It is allowed ($8 \\ne -2$). The answer is choice 4.',
+            'The trap: forgetting that the minus hits the whole bracket $(3-x)$ gives the numerator $-6$ and $x=-8$.'])
+
+
+# =====================================================================================
+# 11. 2026-10-02 order changes (less like a copy of the Hebrew course; only where nothing is lost)
+# =====================================================================================
+def order_changes(M):
+    # (1) Lesson: "No solution" now comes before "Every x works" (the slides themselves are rebuilt in new_numbers;
+    #     here the sidebar, the recap line and the summary video follow the same order).
+    sb = M.video(LE)['hybrid']['sidebar']
+    assert sb[1] == 'Every x works' and sb[2] == 'No solution'
+    sb[1], sb[2] = 'No solution', 'Every x works'
+    M.set_sidebar(LE, sb)
+    _sub(M, LE, 12, [('$x$ cancels: true $\\to$ infinitely many solutions, false $\\to$ none',
+                      '$x$ cancels: false $\\to$ no solution, true $\\to$ infinitely many solutions')])
+    SUM = 'r26-t06-summary'
+    assert M.slide(SUM, 5)['title'] == 'x cancels'
+    M.set_slide(SUM, 5, pre=[], script=[
+        A('False appears', T('$4=7$ → no solution', size=46)),
+        'Sometimes x cancels out. Look at what is left.',
+        'Always false? No x works — no solution.',
+        A('True appears', T('$4=4$ → infinitely many solutions', size=46)),
+        'Always true? Every x works — infinitely many solutions.'])
+
+    # (2) Guided questions after the first lesson, in the lesson's own slide order and easy -> hard:
+    #     cross-multiply (q-171) -> forbidden answer (q-r26-t06-02, short) -> minus before a fraction (q-r26-t06-01, LCD).
+    M.move('q-r26-t06-02', 'single-equation', after='solve-q-171')
+    M.move('solve-q-r26-t06-02', 'single-equation', after='q-r26-t06-02')
