@@ -539,78 +539,78 @@ def add_practice(M):
 
 # ------------------------------------------------------------------ Pass 2: summary video before the practice
 def add_summary(M):
-    sb = ['Cross-multiply', 'Signs first', 'Quick shortcuts', 'Distance from 1', 'Add to top and bottom',
-          'Square or flip', 'x by range', 'Plug in numbers', 'Before you practice']
+    """2026-10-02 (teacher): a review of the MAIN ideas of the whole fractions unit (topics 2 and 3) before the mixed
+    practice. The basics (r26-t02-summary) are not repeated. One rule + one mini example (fresh numbers) per concept."""
+    sb = ['Calculate smart', 'Letters in fractions', 'Cross-multiply', 'Shortcuts', 'Square or flip',
+          'Top vs bottom', 'Many fractions', 'Plug in numbers', 'Before you practice']
     C = lambda i, title, script: dict(title=title, mode='concept', active=i, pre=[], script=script)
     slides = [
-        dict(mode='title', title='Summary', script=[
-            "Before you practice, let's review the whole topic in two minutes.",
-            'Every method, every trap. Short and fast.']),
-        C(0, 'Cross-multiply', [
-            'Method number one: cross-multiply.',
-            A('4/7 ? 6/11 with the products', T(r'$\frac{4}{7}\;?\;\frac{6}{11}\qquad 11\cdot 4=44 \;>\; 42=7\cdot 6$', size=50)),
-            'Each product goes above ITS numerator. Forty-four against forty-two: four sevenths is bigger.',
-            A('The condition appears', T('Condition: both bottoms positive', size=42)),
-            'One condition: both bottoms must be positive.']),
-        C(1, 'Signs first', [
-            'Signs first. Always.',
-            A('Negative < positive', T(r'negative $<$ positive: $\frac{2}{-5}<\frac{1}{6}$', size=46)),
-            'A negative number is smaller than any positive number. No calculation needed.',
-            A('Move the minus to the top', T(r'A negative bottom? $\frac{2}{-5}=-\frac{2}{5}$', size=46)),
-            'A negative bottom? Move the minus to the top. Then cross-multiply.',
-            A('Two negatives', T(r'$\frac{5}{6}<\frac{6}{7}\;\Rightarrow\;-\frac{5}{6}>-\frac{6}{7}$', size=46)),
-            'Two negatives? Compare them without the minus, then reverse.']),
-        C(2, 'Quick shortcuts', [
+        dict(mode='title', title='Fractions: Summary', script=[
+            "We've finished fractions. Before the mixed practice, a short review.",
+            'The basic moves you already reviewed. Now: the big ideas, with one quick example each.']),
+        C(0, 'Calculate smart', [
+            A('Complete to 1, cancel in a chain', T(r'Complete to 1, then cancel: $\left(1+\frac{1}{4}\right)\left(1+\frac{1}{5}\right)\left(1+\frac{1}{6}\right)=\frac{5}{4}\cdot\frac{6}{5}\cdot\frac{7}{6}=\frac{7}{4}$', size=38)),
+            'A chain of brackets? Complete each one in your head. Five quarters, six fifths, seven sixths.',
+            "Don't multiply yet. Cancel. The fives go, the sixes go. Seven quarters.",
+            A('Decimals become fractions', T(r'Decimals $\to$ fractions: $1.2\cdot 0.5\div 15=\frac{6}{5}\cdot\frac{1}{2}\cdot\frac{1}{15}=\frac{1}{25}=\frac{4}{100}=0.04$', size=38)),
+            'Decimals in a chain? Turn them into fractions and cancel.',
+            'Decimal choices? Make the bottom one hundred. Four hundredths: zero point zero four.']),
+        C(1, 'Letters in fractions', [
+            A('Cancel, then add the tops', T(r'Cancel, then add the tops: $\frac{a}{c}\cdot\frac{b}{a}+\frac{d}{c}=\frac{b}{c}+\frac{d}{c}=\frac{b+d}{c}$', size=40)),
+            'Letters cancel just like numbers. The a goes. Same bottom, add the tops.',
+            A('Not necessarily equal', T(r'$\frac{x}{y}=\frac{4x}{4y}$ ✓ $\qquad \frac{x^2}{y^2}$, $\frac{x+4}{y+4}$ ✗ $\quad (x=1,\ y=3:\ \frac{1}{3},\ \frac{1}{9},\ \frac{5}{7})$', size=38)),
+            'Same factor on top and bottom: the value stays.',
+            'Squaring, or adding to both? Not necessarily equal. One plug-in proves it.']),
+        C(2, 'Cross-multiply, signs first', [
+            A('Cross-multiply', T(r'$\frac{4}{9}\;?\;\frac{3}{7}\qquad 7\cdot 4=28\;>\;27=9\cdot 3\quad\Rightarrow\quad\frac{4}{9}>\frac{3}{7}$', size=44)),
+            'Our main method: cross-multiply. Each product goes above ITS fraction.',
+            'One condition: both bottoms positive.',
+            A('Signs first', T(r'Signs first: $\frac{4}{-9}\;?\;-\frac{3}{7}\quad\Rightarrow\quad -\frac{4}{9}<-\frac{3}{7}$ (reverse)', size=42)),
+            'Negative bottom? Move the minus to the top. Two negatives? Compare without the minus, then reverse.']),
+        C(3, 'Shortcuts', [
             'Sometimes the numbers invite a shortcut.',
-            A('Benchmark 1/2', T(r'Benchmark $\frac{1}{2}$: $\frac{4}{9}<\frac{1}{2}<\frac{7}{13}$', size=44)),
-            'Halve the bottom, then check the top.',
-            A('Same top or bottom', T(r'Same bottom: bigger top wins. Same top: $\frac{9}{14}<\frac{9}{11}$', size=40)),
-            'Same bottom: the bigger top wins. Same top: the SMALLER bottom wins.',
-            A('Make them match', T(r'Make them match: $\frac{3}{7}=\frac{12}{28}>\frac{12}{29}$', size=44)),
-            'No match? Expand one fraction until they match.',
-            A('Decimals to know', T(r'$\frac{1}{4}=0.25\quad \frac{1}{8}=0.125\quad \frac{1}{3}\approx 0.33\quad \frac{1}{7}\approx 0.14$', size=40)),
-            'And know the basic decimals by heart.']),
-        C(3, 'Distance from 1', [
-            'Both fractions close to one? Look at what is missing.',
-            A('Below 1', T(r'$\frac{12}{13}=1-\frac{1}{13}\;<\;1-\frac{1}{15}=\frac{14}{15}$', size=48)),
-            'The smaller missing piece wins. Fourteen fifteenths is bigger.',
-            A('Above 1', T(r'$\frac{9}{8}=1+\frac{1}{8}\;<\;1+\frac{2}{13}=\frac{15}{13}$', size=48)),
-            'Above one, compare the extras. The bigger extra wins.']),
-        C(4, 'Add to top and bottom', [
-            'Add the same positive number to the top and the bottom. The fraction moves toward one.',
-            A('Below 1', T(r'Below 1: $\frac{3}{10}<\frac{4}{11}<\frac{5}{12}$ (it grows)', size=46)),
-            'Below one, it grows.',
-            A('Above 1', T(r'Above 1: $\frac{11}{7}>\frac{12}{8}$ (it shrinks)', size=46)),
-            'Above one, it shrinks. Positive numbers only.']),
-        C(5, 'Square or flip', [
-            'Two more tools, and each one has a sign condition.',
-            A('Square', T(r'Roots? Square: $\frac{3}{\sqrt{13}}>\frac{2}{\sqrt{6}}$ because $\frac{9}{13}>\frac{4}{6}$', size=42)),
-            'Roots in the fractions? Square them. Only when both numbers are positive.',
-            A('Flip', T(r'Flip: $\frac{17}{5}>\frac{10}{3}\;\Rightarrow\;\frac{5}{17}<\frac{3}{10}$', size=42)),
-            'Flipping reverses the order. Only when both numbers have the same sign.']),
-        C(6, 'x by range', [
-            'x, x squared, root x, one over x: the order depends on the range.',
-            A('0 < x < 1', T(r'$0<x<1:\quad x^2<x<\sqrt{x}<1<\frac{1}{x}$', size=46)),
-            'Between zero and one, squaring makes a number smaller.',
-            A('x > 1', T(r'$x>1:\quad \frac{1}{x}<1<\sqrt{x}<x<x^2$', size=46)),
-            'Above one, the order flips.',
-            A('−1 < x < 0', T(r'$-1<x<0:\quad \frac{1}{x}<x<0<x^2$', size=46)),
-            'Not sure? Plug in one number from the range: one quarter, four, or negative one half.']),
+            A('Benchmark 1/2', T(r'Benchmark $\frac{1}{2}$: $\frac{6}{13}<\frac{1}{2}<\frac{10}{19}$', size=42)),
+            'Halve the bottom, check the top. One below a half, one above.',
+            A('Make the tops match', T(r'Make them match: $\frac{4}{7}=\frac{8}{14}>\frac{8}{15}$', size=42)),
+            'Same top? The smaller bottom wins.',
+            A('Distance from 1', T(r'Distance from 1: $\frac{20}{21}=1-\frac{1}{21}\;<\;1-\frac{1}{25}=\frac{24}{25}$', size=42)),
+            'Close to one? Look at the missing piece. Missing less means bigger.']),
+        C(4, 'Square or flip', [
+            A('Square', T(r'Square: $\frac{3}{\sqrt{5}}\;?\;\frac{4}{\sqrt{10}}\quad\to\quad\frac{9}{5}=\frac{18}{10}>\frac{16}{10}$', size=42)),
+            'Roots? Square both. The bigger square belongs to the bigger number. Positive numbers only.',
+            A('Flip', T(r'Flip: $\frac{17}{4}=4\frac{1}{4}>4\frac{1}{5}=\frac{21}{5}\quad\Rightarrow\quad\frac{4}{17}<\frac{5}{21}$', size=42)),
+            'Small tops, big bottoms? Flip them, and the order reverses. Same sign only.']),
+        C(5, 'Top vs bottom', [
+            A('Top bigger: more than 1', T(r'$k>3:\quad\frac{k-1}{k-3}>1$ (both positive, top $>$ bottom)', size=42)),
+            'Read the top and the bottom. Both positive, and the top is bigger? More than one.',
+            A('Toward 1', T(r'Add to both: toward 1. $\frac{2}{9}<\frac{2+5}{9+5}=\frac{1}{2}\qquad\frac{9}{4}>\frac{9+1}{4+1}=2$', size=40)),
+            'Add the same positive number to the top and the bottom: the fraction moves toward one.',
+            A('Between 0 and 1', T(r'$0<\frac{p}{q}<1$: same sign, $q$ farther from 0, and $\frac{q}{p}>1$', size=40)),
+            'Between zero and one: same sign, and the bottom is farther from zero. Flip it, and you get more than one.',
+            A('Negatives', T(r'$p=-2,\ q=-5$: $\;\frac{p}{q}=\frac{2}{5}$, but $q<p$', size=40)),
+            'Careful: with two negatives, the bottom is the SMALLER number.']),
+        C(6, 'Many fractions', [
+            A('Tournament', T(r'Tournament: $\frac{3}{10},\ \frac{7}{10}\to\frac{7}{10}\qquad\frac{7}{11},\ \frac{7}{9}\to\frac{7}{9}\qquad$ final: $\frac{7}{9}$', size=40)),
+            'Four fractions? Run a tournament. Easy pairs first, then a final. Three comparisons.',
+            A('Full order: use the choices', T('Full order? Compare two, cross out choices, then one more.', size=40)),
+            "They want the full order? Compare one pair, and cross out every choice that says otherwise."]),
         C(7, 'Plug in numbers', [
-            'Letters in the fractions? Plug in numbers.',
-            A('Example', T(r'$x$ a fraction, $y>1$: try $x=\frac12$, $y=2$ — then compare the two numbers', size=42)),
-            'Pick legal values — a fraction for x, more than one for y. Then compare the numbers you get.']),
+            'Letters in the question? You can always plug in numbers.',
+            A('Legal values', T(r'$0<x<1$: try $x=\frac{1}{3}$: $\;x^2=\frac{1}{9}<x<1<\frac{1}{x}=3$', size=42)),
+            'Only legal values. x between zero and one? Take a fraction.',
+            A('Smart values', T(r'$0<a<1<b$: try $a=\frac{1}{2},\ b=1\frac{1}{2}$: $\;b-a=1,\ b+a=2$', size=42)),
+            'Choose smart: numbers that give whole results.',
+            'Two choices survive? Plug in again, with a different kind of number. A negative, if it is legal.']),
         C(8, 'Before you practice', [
-            'Before you practice, always ask yourself:',
-            A('Check 1', T('1. What are the signs? Negative or positive?', size=42)),
-            A('Check 2', T('2. Are both bottoms positive before I cross-multiply?', size=42)),
-            A('Check 3', T('3. Do the numbers invite a shortcut?', size=42)),
-            A('Check 4', T('4. With letters: which numbers are legal?', size=42)),
-            'And watch the traps: a product written under the wrong fraction, squaring negatives, flipping numbers with different signs.',
-            'You know all of this. Go practice.']),
+            'Before you practice, ask yourself:',
+            A('Check 1', T('1. Signs first: negative or positive?', size=42)),
+            A('Check 2', T('2. Both bottoms positive before I cross-multiply?', size=42)),
+            A('Check 3', T('3. Which shortcut do the numbers invite?', size=42)),
+            A('Check 4', T('4. With letters: which values are legal?', size=42)),
+            'That is the whole unit. You know this. Go practice.']),
     ]
     last = [f['ref'] for f in M.D['flow'] if f['section'] == LEARN][-1]
-    M.new_video('r26-t03-summary', TOPIC, 'Comparing Fractions: Summary', sb, slides, LEARN, after=last)
+    M.new_video('r26-t03-summary', TOPIC, 'Fractions: Summary', sb, slides, LEARN, after=last)
 
 
 # ------------------------------------------------------------------ 2026-10-02: Hebrew check of the solution videos

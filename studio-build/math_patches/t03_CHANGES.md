@@ -183,3 +183,29 @@ answer type, and every method re-done with the new numbers). q-091 … q-094 are
 
 All numbers re-solved in python. Check: `python3 math_check.py 3 32` → PROBLEMS 0, WARNINGS 0, LAYOUT problems 0.
 Rendered `tmp_check/t3rev-q-096.png` and `tmp_check/t3rev-q-098.png`.
+
+## 2026-10-02 Fractions summary
+
+Teacher: the "Comparing Fractions summary" should be a **Fractions summary** — a short review of the main ideas of
+the whole fractions unit before the mixed practice, not the basics (those are in the topic 2 summary). Same video id
+(`r26-t03-summary`) and place (end of the learn section, right before "Independent practice").
+
+- Title: "Fractions: Summary". The title slide points back to the basic moves already reviewed; nothing basic is repeated.
+- 8 concept slides, each one rule + one mini example with fresh numbers (all checked in python):
+  1. Calculate smart — complete to 1 and cancel in a chain: (1+1/4)(1+1/5)(1+1/6) = 7/4; decimals → fractions,
+     bottom 100: 1.2 · 0.5 ÷ 15 = 1/25 = 0.04 (q-091, q-092).
+  2. Letters in fractions — cancel, then add the tops: a/c · b/a + d/c = (b+d)/c; expanding keeps the value,
+     squaring or adding to both does not (x = 1, y = 3) (q-093, q-094).
+  3. Cross-multiply, signs first — 4/9 ? 3/7: 28 > 27; 4/(−9) ? −3/7: −4/9 < −3/7 (lesson slides 5–6, q-r26-t03-01).
+  4. Shortcuts — benchmark ½ (6/13 < ½ < 10/19), make the tops match (4/7 = 8/14 > 8/15), distance from 1
+     (20/21 < 24/25) (lesson slides 2–4, 8).
+  5. Square or flip — 3/√5 > 4/√10 (18/10 > 16/10); 4/17 < 5/21 (flips 4¼ > 4⅕) (lesson slides 10, 13, q-097, q-099).
+  6. Top vs bottom — k > 3: (k−1)/(k−3) > 1; add to both → toward 1 (2/9 < 1/2, 9/4 > 2); 0 < p/q < 1: same sign,
+     q farther from 0, q/p > 1; p = −2, q = −5 shows q < p (q-095, q-096, q-r26-t03-02).
+  7. Many fractions — tournament 3/10, 7/10 | 7/11, 7/9 → 7/9; full order: compare two, cross out choices (q-097–q-099).
+  8. Plug in numbers — legal values (0 < x < 1: x = 1/3 gives 1/9 < 1/3 < 1 < 3), smart values (a = ½, b = 1½ give
+     whole numbers), a second plug-in of a different kind (lesson slides 11–12, q-096, q-098, q-r26-t03-03).
+- "Before you practice": signs first · both bottoms positive before cross-multiplying · which shortcut do the numbers
+  invite · legal values with letters.
+
+Check: `python3 math_check.py 3 32` → PROBLEMS 0, WARNINGS 0, LAYOUT problems 0. Rendered `tmp_check/fracsum.png`.
