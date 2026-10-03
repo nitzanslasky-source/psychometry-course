@@ -92,13 +92,12 @@ SB_ACAD = ['What is it?', 'Literary vs academic', 'No personal tone', 'The neutr
 
 # ======================================================================================= lesson 3: qualified writing
 SB_HEDGE = ['No word lists', 'A guess as a fact', 'Add one word', 'Two absolutes', 'Most or many?',
-            'Every driver?', 'Hedge the start', 'Plain, calm words', 'The full fix', 'Hedging words',
-            'Hedge, but take a side']
+            'Every driver?', 'Hedge the start', 'Plain, calm words', 'The full fix', 'Hedge, but take a side']
 
 # ======================================================================================= lesson 4: semantic precision
 SB_PREC = ['What it means', 'Does it cost points?', 'Why students slip', 'The wheelie', 'A broken idiom',
            'The wrong word', 'Invented phrases', 'Idiom, wrong place', 'Look-alike words',
-           'Words change the claim', 'One term throughout', 'The main lesson']
+           'One term throughout', 'The main lesson']
 
 # --- boxes used below (positions computed so that nothing overlaps)
 # lesson 2
@@ -534,22 +533,7 @@ lesson('vr50-b-hedging', 'Qualified Writing', SB_HEDGE, [
   D("teacher numbers the four changes 1 to 4"),
   "Same idea. Same position. But now nobody can say it's wrong.",
  ]),
- dict(mode='concept', active=9, title='Hedging words', script=[
-  "In English, a handful of ordinary words do almost all the qualifying. You already know them.",
-  A("Verbs appear", T('may · might · can · could · tends to · is likely to', size=40, x=410, y=100, w=1140)),
-  "Verbs that soften: may, might, can, could, tends to, is likely to.",
-  A("How often appears", T('often · in many cases · frequently · in some cases', size=40, x=410, y=190, w=1140)),
-  "How often: often, in many cases, in some cases.",
-  A("How many appears", T('many · some · a large number of · a significant part of', size=40, x=410, y=280, w=1140)),
-  "How many: many, some, a large number of.",
-  A("Openers appear", T('It is likely that ... · It is possible that ... · There is reason to believe that ...', size=34, x=410, y=370, w=1140)),
-  "And openers that qualify the whole sentence.",
-  A("Swap table appears", T('always → often · never → rarely · everyone → many people · no one → few people · will → may / is likely to · certainly, undoubtedly → probably · proves → suggests', size=32, x=410, y=470, w=1140)),
-  "And here are the swaps for the absolute words. Always becomes often. Everyone becomes many people. Proves becomes suggests.",
-  A("See the card appears", T('All of these are in the card "Academic register & hedging" after this lesson', size=30, x=410, y=640, w=1140)),
-  "You'll find all of these in the summary card after this lesson.",
- ]),
- dict(mode='concept', active=10, title='Hedge, but take a side', script=[
+ dict(mode='concept', active=9, title='Hedge, but take a side', script=[
   "One warning. Qualified doesn't mean foggy.",
   A("Over-hedged appears", B_OVER_BAD),
   "Might, perhaps, possibly, could, in some ways, to some extent. Six hedges on one small claim. Now the reader doesn't know what you're saying.",
@@ -560,6 +544,7 @@ lesson('vr50-b-hedging', 'Qualified Writing', SB_HEDGE, [
   A("A hedge does not fix a weak reason appears", T('And "may" does not repair a weak explanation — the reason still has to make sense', size=34, x=410, y=680, w=1140)),
   "Also: 'may' doesn't rescue a weak explanation. If the reason doesn't make sense, a hedge won't save it. The explanation still has to hold.",
   "And no need to memorize lists. Just notice your wording as you write: is this certain? Is it everyone? Is it drama?",
+  "The hedging words, and the swaps for absolute words, are on the card \"Academic register & hedging\" right after this lesson.",
  ]),
 ], T50),
 
@@ -684,18 +669,7 @@ lesson('vr50-b-precision', 'Semantic Precision', SB_PREC, [
   "In English there are many pairs like this — words that look or sound alike but mean different things. Here are some that often appear in essays.",
   "If you're not sure which one is which — use a different, simpler word you are sure of.",
  ]),
- dict(mode='concept', active=9, title='Words change the claim', script=[
-  "Sometimes one word changes the whole claim. That's precision in content, not just in language.",
-  A("Suspect vs criminal appears", T('A suspect is not a criminal: guilt is decided in court, not by a camera', size=36, x=410, y=110, w=1140)),
-  "Our cameras example. A camera can identify a suspect. Whether that person is a criminal is decided in court.",
-  A("Wrong status appears", B_SUS_BAD),
-  A("Right status appears", B_SUS_GOOD),
-  "So 'suspects' is the precise word — and it matters for the argument, especially if you're worried about innocent people.",
-  A("More pairs appear", T('Other pairs that change the claim:  reduce / eliminate · many / most · a right / a privilege · allow / require · some / all', size=32, x=410, y=600, w=1140)),
-  "Reduce crime is not eliminate crime. Allow is not require. A right is not a privilege. Many is not most — remember?",
-  "Before you write the key word of a sentence, ask: is this exactly what I'm claiming?",
- ]),
- dict(mode='concept', active=10, title='One term throughout', script=[
+ dict(mode='concept', active=9, title='One term throughout', script=[
   "Students are often told to vary their words so they don't repeat themselves. With the key term of the essay — that's a trap.",
   A("Same thing, same term appears", T('The same thing gets the same name, all through the essay', size=40, x=410, y=110, w=1140)),
   A("Drifting terms appear", B_TERM_BAD),
@@ -705,7 +679,7 @@ lesson('vr50-b-precision', 'Semantic Precision', SB_PREC, [
   A("Repetition inside one sentence appears", T('Repeated word inside one sentence (like "right ... right") can be varied — the key term of the essay stays', size=32, x=410, y=690, w=1140)),
   "Remember the 'moral veto' sentence? There we avoided the same word twice in one short sentence. That's style. The key term of the essay stays the same.",
  ]),
- dict(mode='concept', active=11, title='The main lesson', script=[
+ dict(mode='concept', active=10, title='The main lesson', script=[
   "So let's sum up the most important lesson here.",
   A("The rule appears", T('Do not use a word or expression unless you are 100% sure of its meaning and its correct form', size=42, x=410, y=110, w=1140)),
   "Don't use words and expressions if you're not a hundred percent sure of their meaning, or of the correct way to write them. OK?",

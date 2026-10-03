@@ -50,7 +50,7 @@ SB_ORG = ['Three tools', 'What connectors do', 'An example', 'Know your connecto
           'Paragraphs have jobs', 'Transition sentences', 'One argument each?', 'On the page']
 
 SB_RICH = ['Not in the rubric?', 'Repetition', 'Referring words', 'The paragraph, fixed',
-           'Raising the register', 'Not flowery', 'Practice']
+           'Raising the register']
 
 
 MODULES = [
@@ -643,36 +643,23 @@ lesson('vr50-c-richness', 'Language Richness', SB_RICH, [
   "'Enough' becomes 'sufficient'. It says the same thing, but signals a higher register. 'Kids' is everyday English; in the essay, 'children'.",
   "Again, these are just a few small examples. You can take almost any sentence and try to raise it with synonyms that keep the same meaning.",
   "With practice, and depending on your vocabulary, you'll gradually be able to take sentences and raise the language, and show more richness.",
- ]),
- dict(mode='concept', active=5, title='Not flowery', script=[
-  "But here's the limit.",
-  S("Guide: avoid needlessly difficult appears", 'Avoid flowery and needlessly difficult language', size=42),
-  "The guide says: avoid flowery and needlessly difficult language. And use only words that accurately convey what you mean.",
-  X('The utilization of surveillance apparatus shall ameliorate the plethora of infractions.', size=30, label='The flowery version appears'),
-  V('Using cameras may reduce the number of offences.', size=30, label='The clear version appears'),
-  "Nobody gets extra points for 'plethora'. The second sentence is shorter, clearer, and more precise. It even adds the careful 'may'.",
-  N("Because is fine appears", '"because", "but" and "if" can express the relationship perfectly well', size=32),
-  "'Because', 'but' and 'if' can express a relationship perfectly well. A more formal word helps only when it says exactly what you mean, and fits the sentence.",
-  S("Use the range you control appears", 'Richness = the range you can control, used precisely', size=40),
-  "So richness means using the range of English you can control, and using it precisely.",
- ]),
- dict(mode='concept', active=6, title='Practice', script=[
-  "A short practice routine.",
-  N("Step 1 appears", '1 · Take a paragraph you wrote. Circle every noun that appears three times or more.', size=32, gap=18),
-  "Take a paragraph from a practice essay. Circle every noun that appears three times or more.",
-  N("Step 2 appears", '2 · Replace some with referring words. Keep the key term.', size=32, gap=18),
-  "Replace some of them with referring words: they, these, such, a synonym. But keep your key term.",
-  N("Step 3 appears", '3 · Find three everyday words (but, get, a lot of) and upgrade them only if the meaning stays exactly the same.', size=32, gap=18),
-  "Find three everyday words and raise them, only where the meaning stays exactly the same.",
-  N("Step 4 appears", '4 · Read it aloud: still clear?  Still in one breath?', size=32),
-  "Then read it aloud. Is it still clear? Can each sentence still be read in one breath?",
-  "That's it for this lesson. See you in the next one.",
+  "Just never at the cost of clarity: use only words you control. A short practice routine is on the card after this lesson. See you in the next one.",
  ]),
 ], T50),
 ]
 
 
 MEMORY = [
+ dict(id='mem-wr-richness', after='vr50-c-richness', title='Language richness: a practice routine',
+  intro='Richness = the range of English you can control, used precisely. Raise the register only where the meaning stays exactly the same.',
+  tables=[dict(title='Practice routine (one paragraph at a time)', head=['Step', 'Do'], rows=[
+    ['1', 'Take a paragraph you wrote. Circle every noun that appears three times or more.'],
+    ['2', 'Replace some with referring words (they, these, such, a synonym). Keep the key term.'],
+    ['3', 'Find three everyday words (but, get, a lot of) and upgrade them only if the meaning stays exactly the same.'],
+    ['4', 'Read it aloud: still clear? Can each sentence still be read in one breath?'],
+   ])],
+  tips=['Not flowery: "Using cameras may reduce the number of offences" beats "The utilization of surveillance apparatus shall ameliorate the plethora of infractions".',
+        '"because", "but" and "if" can express a relationship perfectly well.']),
  dict(id='mem-wr-grammar', after='vr50-c-grammar', title='Grammar that changes meaning',
   intro='Fix these first when you proofread: they change what your sentence says, or sound wrong to an academic reader.',
   tables=[dict(title='Errors and fixes', head=['Problem', 'Wrong', 'Right'], rows=[

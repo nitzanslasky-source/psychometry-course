@@ -1,4 +1,6 @@
 # Verbal Reasoning · Topic 50 · Writing task - summary lesson, right before the practice tasks.
+# CUT from the course (teacher, 2026-10-03): MODULES is empty. Its 'Before you write' questions are now a checklist
+# on the practice-tasks card (mem-wr-practice, modulesV50h). The lesson is kept below as _CUT only for reference.
 # Only what parts A-H teach (the cards of each part are the reference); nothing new.
 from dsl import *
 
@@ -31,7 +33,7 @@ SB = ['The task in numbers', 'The two rubrics', 'Analyse the task', 'Find argume
       'Argument paragraph', 'Rebuttal paragraph', 'Opening & closing', 'Structure & timing', 'Academic English',
       'Before you write']
 
-MODULES = [
+_CUT = [
 lesson('vr50-i-summary', 'Writing Task: Summary', SB, [
  dict(mode='title', title='Summary', script=[
   "Before you start writing practice tasks, a quick review of everything we learned about the writing task.",
@@ -60,11 +62,11 @@ lesson('vr50-i-summary', 'Writing Task: Summary', SB, [
  slide(2, 'Analyse the task', [
   "First, analyse. What exactly is being decided, who is affected, and under what conditions? Answer every part of the question.",
   "Then gather: the background goes to the opening paragraph, the claims of both sides are raw material for arguments.",
-  "Choose a first position you can argue well, not the one you feel strongest about, and confirm or change it after you find your arguments. Every position can score well.",
+  "Choose a first position. Start from what you really think. But if the other side is much easier to explain, switching is completely legitimate: the raters score how well you argue, not what you believe. Confirm or change it after you find your arguments.",
  ], [
   ('Exact question', 'The exact decision · the people affected · the conditions · every part of the question', 34),
   ('Gather', 'Background → opening paragraph · the sides\' claims → material for arguments', 34),
-  ('Position', 'A first position: the side you can argue best. Confirm or change it after finding arguments', 34),
+  ('Position', 'A first position: start from what you think; switch if the other side is much easier to explain. Confirm it after finding arguments', 34),
  ]),
  slide(3, 'Find arguments', [
   "Three ways to find arguments. One: from the task. Use its arguments, but not only them, not word for word, and explain them well.",
@@ -119,7 +121,7 @@ lesson('vr50-i-summary', 'Writing Task: Summary', SB, [
  ]),
  slide(8, 'Structure & timing', [
   "The recommended structure: opening, two argument paragraphs, rebuttal, closing. A tool, not a rule: each paragraph has one job.",
-  "The plan: ten minutes to plan with a skeleton and chains, then write, and two minutes at the end to proofread.",
+  "The plan: ten minutes to plan with a skeleton and chains, then write, and two to three minutes at the end to proofread.",
  ], [
   ('Structure', 'Opening · Argument 1 (your ace) · Argument 2 · Rebuttal · Closing', 36),
   ('Timing', '0-10 plan (skeleton + chains) · 10-13 opening · 13-19 arg. 1 · 19-25 arg. 2 · 25-31 rebuttal · 31-33 closing · 33-35 proofread', 32),
@@ -143,16 +145,17 @@ lesson('vr50-i-summary', 'Writing Task: Summary', SB, [
   "Does every arrow in my chain hold? Why would this lead to that?",
   "Did I give the other side its real reason, and answer its actual worry?",
   "Does every paragraph do one job, and does the closing follow from the body?",
-  "Did I leave two minutes to proofread, especially for a missing 'not'?",
+  "Did I leave two to three minutes to proofread, especially for a missing 'not'?",
   "Now take the practice tasks. Set a timer for 35 minutes, draft your chains first, and check yourself with the cards. Good luck.",
  ], [
   ('Q1', '✓ Am I answering the exact question, every part of it?', 34),
   ('Q2', '✓ Does every arrow hold? "Why would this lead to that?"', 34),
   ('Q3', '✓ Did I state the other side\'s real reason and answer its actual worry?', 34),
   ('Q4', '✓ One job per paragraph? Does the closing follow from the body?', 34),
-  ('Q5', '✓ Two minutes to proofread: punctuation, agreement, a missing "not"', 34),
+  ('Q5', '✓ 2-3 minutes to proofread: punctuation, agreement, a missing "not"', 34),
  ], y=50, gap=14),
 ], T50),
 ]
 
+MODULES = []
 MEMORY = []

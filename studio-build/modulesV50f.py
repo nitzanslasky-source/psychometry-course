@@ -2,8 +2,7 @@
 # Sources: writing_src/seg29-seg35 (teacher's Hebrew lessons: intro to the argument paragraph, the key sentence,
 # developing the argument, supporting it, support by example, support by comparison, citing studies), the teacher's
 # chain method (WRITING_BRIEF.md), the official NITE guide (nite_verbal_guide.txt) and writing_src/findings.md.
-# Running examples: the teacher's face-recognition cameras and criminal-record examples; the course's four-day
-# school week task (writing_assets.EXAMPLE_PROMPT); new neutral examples (free city buses, phones in lessons,
+# Running examples: the teacher's face-recognition cameras and criminal-record examples; new neutral examples (phones in lessons,
 # street trees, calorie counts on menus, plastic bags). No real exam task or sample essay is used.
 from dsl import *
 from writing_assets import vis, _wrap
@@ -484,212 +483,11 @@ lesson('vr50-f-chain', 'The Chain',
                          "5 · Chain the other side: its weakest arrow = your weakening", 110, 33)),
   "So. Draft the chain, from what the task asks about to the final result. About ten words.",
   "Test every arrow. No renaming arrows. Write it so it doesn't sound pasted. And chain the other side too.",
-  "Next, we'll do two more full chains together, from draft to finished paragraph.",
+  "Next: support. How to strengthen the argument with an example or a comparison.",
  ]),
 ], T50),
 
-# ================================================================== 5 · worked chains
-lesson('vr50-f-chain-examples', 'Worked Chains',
-       ['The routine', '4-day week: draft',
-        '4-day week: arrows', '4-day week: paragraph', 'Free buses: draft', 'Free buses: arrows',
-        'Free buses: paragraph'], [
- dict(mode='title', title='Worked Chains', script=[
-  "Worked chains.",
-  "Two topics, two full chains. Each one from the draft, through the arrow tests, to the finished paragraph.",
- ]),
- dict(mode='concept', active=0, title='The routine', script=[
-  A("Routine appears", t("Draft the chain  →  test every arrow  →  write the paragraph", 110, 42)),
-  "Every time, the same routine. Draft the chain. Test every arrow. Write the paragraph.",
-  A("Topics appears", t("1 · A four-day school week (against)\n2 · Free city buses (for)", 260, 36)),
-  "The camera chain we already tested in the last lesson. Now: the four-day school week, from our example task, and I'll argue against it. And a new one: should a city make its buses free?",
-  "Pause the video whenever you like and try the next step yourself before I show it.",
- ]),
- dict(mode='concept', active=1, title='4-day week: draft', script=[
-  "Now our example task: should schools move to a four-day week? I'll argue against.",
-  A("Key sentence appears", t("Key sentence: schools should not move to a four-day week, since longer school days are likely to harm young children's learning.", 110, 32)),
-  "The key sentence: schools should not move to a four-day week, since longer school days are likely to harm young children's learning.",
-  A("Draft chain appears", chain_fig(["Four-day week",
-                                      "Longer school days",
-                                      "Young children tired in the last lessons",
-                                      "Less learned at the end of the day",
-                                      "Lower achievement"], size=25, y0=290)),
-  "The draft. Four-day week. Longer school days. Young children tired in the last lessons. Less learned at the end of the day. Lower achievement.",
- ]),
- dict(mode='concept', active=2, title='4-day week: arrows', script=[
-  "Now test every arrow.",
-  A("Tested appears", chain_fig(["Four-day week",
-                                 "Longer school days",
-                                 "Young children tired in the last lessons",
-                                 "Less learned at the end of the day",
-                                 "Lower achievement"],
-                                [('weak', "Only if the teaching hours stay the same → condition: 'if the hours are kept'"),
-                                 ('ok', "Sound, especially for young children: attention drops late in a long day"),
-                                 ('ok', "Explain: tired pupils follow and remember less"),
-                                 ('weak', "Too strong → hedge: 'over a school year, may lower achievement'")], size=23)),
-  "Four days means longer days? Only if the number of teaching hours stays the same. The task itself raises longer days, but I'll state the condition.",
-  "Longer days, so tired young children? Sound. Attention drops late in a long day, especially for young children.",
-  "Tired, so they learn less? Yes, but I explain it: tired pupils follow and remember less.",
-  "Less learned, so lower achievement? Too strong as a certainty. I hedge it: over a school year, it may lower achievement.",
- ]),
- dict(mode='concept', active=3, title='4-day week: paragraph', script=[
-  "And the paragraph.",
-  A("Paragraph appears", t("In my opinion, schools should not move to a four-day week, since longer school days are likely to harm young children's learning. If the number of teaching hours is kept, fitting them into four days means that each school day becomes considerably longer. Young children in particular find it hard to stay focused for so many hours, so by the last lessons of the day many of them are likely to be tired. Tired pupils follow explanations less closely and remember less of what they are taught, which means that the final hours of each day would be used far less effectively. Over a full school year, this loss may lower children's achievement, the opposite of what a change in the school timetable should do.", 110, 30)),
-  "If the number of teaching hours is kept: the condition. Young children in particular: precise. So, which means that: varied links.",
-  "And the result is hedged: may lower achievement. Then a short closing link back to the position.",
- ]),
- dict(mode='concept', active=4, title='Free buses: draft', script=[
-  "A new task. Should a city make its public buses free of charge? I'll argue for.",
-  A("Key sentence appears", t("Key sentence: the city should make its buses free, since this would reduce traffic and air pollution in the city centre.", 110, 32)),
-  A("Draft chain appears", chain_fig(["Buses free of charge",
-                                      "Bus cheaper than driving",
-                                      "Some drivers switch to the bus",
-                                      "Fewer cars in the city centre",
-                                      "Less traffic and air pollution"], size=25, y0=240)),
-  "The draft. Free buses. The bus is cheaper than driving. Some drivers switch. Fewer cars in the centre. Less traffic and pollution.",
- ]),
- dict(mode='concept', active=5, title='Free buses: arrows', script=[
-  "Test.",
-  A("Tested appears", chain_fig(["Buses free of charge",
-                                 "Bus cheaper than driving",
-                                 "Some drivers switch to the bus",
-                                 "Fewer cars in the city centre",
-                                 "Less traffic and air pollution"],
-                                [('bad', "Renaming? 'free' already means 'cheaper' → merge into one step"),
-                                 ('weak', "Price is not the only reason people drive → condition: frequent, reliable buses"),
-                                 ('ok', "Sound: each driver who switches is one car fewer"),
-                                 ('ok', "Sound: fewer cars in the same streets → less congestion and exhaust")], size=23)),
-  "Free, so cheaper than driving? That's almost a renaming arrow. Free already means cheaper. I merge the two boxes.",
-  "Cheaper, so drivers switch? Not automatically. Price isn't the only reason people drive. Condition: the buses must be frequent and reliable.",
-  "Switch, so fewer cars? Sound. Fewer cars, so less traffic and pollution? Sound.",
- ]),
- dict(mode='concept', active=6, title='Free buses: paragraph', script=[
-  "The paragraph.",
-  A("Paragraph appears", t("In my opinion, the city should make its buses free of charge, since this would reduce traffic and air pollution in the city centre. Once travelling by bus costs nothing, it becomes a clearly cheaper option than driving and paying for fuel and parking. Price is not the only reason people choose their car, of course; however, as long as the buses are frequent and reliable, some drivers are likely to leave their cars at home, at least for daily trips into the centre. Each driver who switches means one car fewer on the same crowded streets, which in turn reduces both congestion and exhaust fumes. In this way, free buses would make the city centre easier to move through and healthier to live in.", 110, 30)),
-  "The merged step. The condition: as long as the buses are frequent and reliable. And a small concession inside the paragraph: price isn't the only reason.",
-  "In this way: the closing link back to the benefit.",
- ]),
-], T50),
-
-# ================================================================== 6 · the argument paragraph template
-lesson('vr50-f-template', 'Argument Paragraph Template',
-       ['Built on the chain', 'The four slots', 'Slot 1: key sentence', 'Slot 2: chain steps', 'Slot 3: support',
-        'Slot 4: closing link', 'Template A', 'A filled in', 'Template B', 'B filled in', 'Template C',
-        'C filled in', 'Checklist'], [
- dict(mode='title', title='Argument Paragraph Template', script=[
-  "The argument paragraph template.",
-  "You have a tested chain. Now let's pour it into a paragraph, with a template you can use on any task.",
- ]),
- dict(mode='concept', active=0, title='Built on the chain', script=[
-  A("Idea appears", t("Chain on scrap paper  →  template  →  finished paragraph", 110, 42)),
-  "The chain is on your scrap paper. The template turns it into a paragraph.",
-  A("Mapping appears", t("first box  →  the key sentence (with the last box as the reason)\neach arrow  →  one sentence, with its explanation or condition\nlast box  →  the result, then the closing link", 240, 34)),
-  "The first box and the last box make the key sentence. Each arrow becomes a sentence, with its explanation or condition. The last box is the result.",
-  "Nothing skipped. Nothing lost.",
- ]),
- dict(mode='concept', active=1, title='The four slots', script=[
-  A("Slots appear", t("1 · Key sentence: position + reason\n2 · Chain steps: one sentence per arrow, varied linking phrases\n3 · Support (optional): example or comparison\n4 · Closing link: back to your benefit / harm and your position", 110, 36)),
-  "Four slots. The key sentence. The chain steps. Support, which is optional. And the closing link.",
-  "Let's see the options for each slot, then three versions of the whole template.",
- ]),
- dict(mode='concept', active=2, title='Slot 1: key sentence', script=[
-  A("Options appear", t("In my opinion, [X] should / should not [...], since it would [result].\n"
-                        "I believe that [X] should [...], as this is likely to [result].\n"
-                        "In my opinion, the main reason to support / oppose [X] is that it would [result].\n"
-                        "Second paragraph:  Moreover, in my opinion, ...  ·  In addition, I believe that ...", 110, 34)),
-  "Slot one, the key sentence. Some openings to choose from. They all start with in my opinion, or I believe that.",
-  "In my opinion, X should, since it would. I believe that X should, as this is likely to. In my opinion, the main reason to support, or oppose, X is that it would lead to this result.",
-  "And in the second argument paragraph, add a connector before it: moreover, in my opinion. In addition, I believe that.",
-  A("Tip appears", t("Use the SAME wording for X as the task (the exact decision, the exact people).", 450, 32)),
-  "Whatever you choose, name X exactly as the task does. The exact decision, the exact people.",
- ]),
- dict(mode='concept', active=3, title='Slot 2: chain steps', script=[
-  A("Options appear", t("First step:  Once / When / If [X happens], [first effect].\n"
-                        "Explaining it:  ..., because / since / as [reason].\n"
-                        "Next step:  This, in turn, [...].  ·  As a result, [...].  ·  Consequently, [...].\n"
-                        "Next step:  This means that [...].  ·  ..., which leads to [...].\n"
-                        "A condition:  As long as / Provided that [condition], [effect].", 110, 32)),
-  "Slot two, the chain steps. One sentence per arrow.",
-  "Start with once, when, or if. Explain inside the sentence with because, since, as.",
-  "Move on with this, in turn. As a result. Consequently. This means that. Which leads to.",
-  "And a condition with as long as, provided that.",
-  A("Tip appears", t("Never the same connector twice in a row.", 470, 34)),
- ]),
- dict(mode='concept', active=4, title='Slot 3: support', script=[
-  A("Options appear", t("Example:  For example, a [person] who [...] would probably [...].\n"
-                        "Example:  For instance, a [typical case] in which [...] is likely to [...].\n"
-                        "Comparison:  A similar pattern can be seen in [similar field], where [...].\n"
-                        "Comparison:  The same principle applies to [similar field]: [...].", 110, 32)),
-  "Slot three, support. It's optional. We'll learn it properly in the next lessons, but here are the openings.",
-  "An example: for example, a person who does this would probably do that.",
-  "A comparison: a similar pattern can be seen in another field, where this happens.",
-  A("Tip appears", t("Never invent studies, statistics or experts. Explain; do not cite.", 420, 34)),
-  "And never invent studies or numbers. We'll see why in the last lesson of this series.",
- ]),
- dict(mode='concept', active=5, title='Slot 4: closing link', script=[
-  A("Options appear", t("After support:  In the same way, [...].  ·  Similarly, [...].  ·  Just as [...], so [...].\n"
-                        "After development only:  In this way, [X] would [result].  ·  Thus, [...].  ·  This is why [...].", 110, 32)),
-  "Slot four, the closing link.",
-  "After support, it brings the reader back from the example or comparison to your own argument: in the same way, similarly, just as.",
-  "Without support, it rounds off the chain: in this way, thus, this is why.",
-  A("Tip appears", t("A closing link LINKS: it is not a copy of the key sentence.", 330, 36)),
-  "A closing link links. It is not a copy of the key sentence.",
- ]),
- dict(mode='concept', active=6, title='Template A', script=[
-  "Template A. Development only. Shorter, and completely enough for a strong paragraph.",
-  A("Template A appears", t("[KEY]  In my opinion, [X] should [...], since it would [result].\n"
-                            "[STEP 1]  Once [X], [effect 1], because [reason].\n"
-                            "[STEP 2]  This, in turn, [effect 2].\n"
-                            "[STEP 3]  As a result, [effect 3].\n"
-                            "[CLOSE]  In this way, [X] would [result], which is why [position].", 110, 34)),
-  "Key. Once. This, in turn. As a result. In this way.",
- ]),
- dict(mode='concept', active=7, title='A filled in', script=[
-  "Template A, filled in. A new task: should cities plant many more trees along their streets?",
-  A("Chain appears", t("Chain: more street trees → shade on streets and buildings → cooler streets in summer → walking and waiting outdoors less exhausting in the heat", 110, 30)),
-  A("Paragraph appears", t("In my opinion, cities should plant many more trees along their streets, since this would make urban summers easier to bear. Once trees line a street, their branches shade both the pavement and the walls of nearby buildings, which would otherwise absorb the sun's heat all day. This, in turn, keeps the street noticeably cooler during the hottest hours. As a result, walking to school or work, or waiting at a bus stop, would become far less exhausting, particularly for older people and young children. In this way, street trees would make the city more pleasant and safer to move around in summer, which is why planting them should be a priority.", 260, 30)),
-  "Key sentence. Once trees line a street: step one, with its explanation. This, in turn. As a result, with the people it matters most for. In this way: the closing link.",
- ]),
- dict(mode='concept', active=8, title='Template B', script=[
-  "Template B. Development plus support by example.",
-  A("Template B appears", t("[KEY]  I believe that [X] should [...], as this is likely to [result].\n"
-                            "[STEPS]  When [X], [effect 1]. Consequently, [effect 2], which means that [effect 3].\n"
-                            "[EXAMPLE]  For example, a [person] who [...] would probably [...].\n"
-                            "[CLOSE]  In the same way, [the example's effect] would apply to [everyone the argument covers].", 110, 33)),
-  "Key. When, consequently, which means that. For example. In the same way.",
-  "The closing link takes the specific person from the example and widens it back to everyone your argument is about.",
- ]),
- dict(mode='concept', active=9, title='B filled in', script=[
-  "Template B, filled in, with our repaired chain: phones banned during lessons.",
-  A("Paragraph appears", t("I believe that phones should be banned during lessons, as this is likely to improve students' learning. When phones are put away, students no longer receive notifications during class, and the temptation to check them disappears. Consequently, they can follow the lesson for longer stretches without interruption, which means that more of the material is understood the first time it is taught. For example, a student who would normally glance at a message every few minutes would probably miss parts of a maths explanation each time and struggle with the exercise that follows; without the phone, the same student is far more likely to follow the whole explanation. In the same way, removing this distraction would help most students make better use of lesson time.", 110, 30)),
-  "Key. When. Consequently. Which means that. The example: one typical student. Then: in the same way, most students.",
- ]),
- dict(mode='concept', active=10, title='Template C', script=[
-  "Template C. Development plus support by comparison.",
-  A("Template C appears", t("[KEY]  [X] should [...], because it would [result].\n"
-                            "[STEPS]  If [X], [effect 1]. As a result, [effect 2].\n"
-                            "[COMPARISON]  A similar pattern can be seen in [similar field], where [...].\n"
-                            "[CLOSE]  Just as [...] in [that field], so [X] would [result].", 110, 34)),
-  "Key. If, as a result. A similar pattern can be seen in. Just as, so.",
- ]),
- dict(mode='concept', active=11, title='C filled in', script=[
-  "Template C, filled in. A new task: should restaurants be required to show the calories of each dish on the menu?",
-  A("Paragraph appears", t("Restaurants should be required to show the calories of each dish on their menus, because this would help diners make healthier choices. If the information appears next to each dish, diners who want to eat more healthily no longer have to guess which option is lighter. As a result, they can compare dishes at a glance and choose accordingly. A similar pattern can be seen in supermarkets, where packaged foods carry nutrition labels that allow shoppers to compare products before buying them. Just as these labels support shoppers who care about their diet, so calorie information on menus would support diners who wish to make healthier choices.", 110, 30)),
-  "The comparison: nutrition labels on packaged food. A familiar, similar case: information at the moment of choice.",
-  "And notice: no numbers, no invented study. Just a comparison anyone can check in the nearest supermarket.",
- ]),
- dict(mode='concept', active=12, title='Checklist', script=[
-  A("Checklist appears", t("Before you move on, check your argument paragraph:\n"
-                           "☐ The key sentence answers the task's exact question and gives a reason\n"
-                           "☐ Every arrow of the chain is a sentence, with its explanation or condition\n"
-                           "☐ No renaming steps; no repeated connectors\n"
-                           "☐ Predictions are hedged (likely to, would, may), not stated as facts\n"
-                           "☐ Support, if any, is plausible and linked back to your argument\n"
-                           "☐ No invented studies, statistics or experts", 110, 32)),
-  "A checklist for the finished paragraph.",
-  "Exact question. Every arrow a sentence. No renaming, no repeated connectors. Hedged predictions. Support linked back. Nothing invented.",
-  "Next: support. How to strengthen the argument.",
- ]),
-], T50),
+# (vr50-f-chain-examples, 'Worked Chains', cut - teacher, 2026-10-03)
 
 # ================================================================== 8 · support by example (seg33)
 lesson('vr50-f-example', 'Support by Example',
@@ -927,14 +725,112 @@ lesson('vr50-f-studies', 'Studies and General Knowledge',
                          "• Well-known, true facts are fine: 'It is now well known that ...'\n"
                          "• Your own claims: explain them with logic, and hedge them honestly", 110, 34)),
   "Bottom line. No specific studies. Nothing invented. Well-known true facts, yes, with 'it is now well known'. And your own claims: explain them, and phrase them honestly.",
-  "That's the argument paragraph. Next, we deal with the other side: weakening, and the rebuttal paragraph. The part that takes the highest level of critical thinking.",
+  "Next: we put it all together, the key sentence, the chain and the support, in one template for the argument paragraph.",
   "As always, I'm waiting for you there.",
  ]),
 ], T50),
+# ================================================================== the argument paragraph template (after the support lessons)
+lesson('vr50-f-template', 'Argument Paragraph Template',
+       ['Built on the chain', 'The four slots', 'Slot 1: key sentence', 'Slot 3: support',
+        'Slot 4: closing link', 'Template A', 'A filled in', 'Template B', 'Template C', 'Checklist'], [
+ dict(mode='title', title='Argument Paragraph Template', script=[
+  "The argument paragraph template.",
+  "You have a tested chain, and you know how to support it. Now let's pour it all into a paragraph, with a template you can use on any task.",
+ ]),
+ dict(mode='concept', active=0, title='Built on the chain', script=[
+  A("Idea appears", t("Chain on scrap paper  →  template  →  finished paragraph", 110, 42)),
+  "The chain is on your scrap paper. The template turns it into a paragraph.",
+  A("Mapping appears", t("first box  →  the key sentence (with the last box as the reason)\neach arrow  →  one sentence, with its explanation or condition\nlast box  →  the result, then the closing link", 240, 34)),
+  "The first box and the last box make the key sentence. Each arrow becomes a sentence, with its explanation or condition. The last box is the result.",
+  "Nothing skipped. Nothing lost.",
+ ]),
+ dict(mode='concept', active=1, title='The four slots', script=[
+  A("Slots appear", t("1 · Key sentence: position + reason\n2 · Chain steps: one sentence per arrow, varied linking phrases\n3 · Support (optional): example or comparison\n4 · Closing link: back to your benefit / harm and your position", 110, 36)),
+  "Four slots. The key sentence. The chain steps. Support, which is optional. And the closing link.",
+  "Slot two needs no new phrases: one sentence per arrow, with the linking phrases from the chain lesson. They're on the chain card.",
+  "Let's see the options for the other slots, then three versions of the whole template.",
+ ]),
+ dict(mode='concept', active=2, title='Slot 1: key sentence', script=[
+  A("Options appear", t("In my opinion, [X] should / should not [...], since it would [result].\n"
+                        "I believe that [X] should [...], as this is likely to [result].\n"
+                        "In my opinion, the main reason to support / oppose [X] is that it would [result].\n"
+                        "Second paragraph:  Moreover, in my opinion, ...  ·  In addition, I believe that ...", 110, 34)),
+  "Slot one, the key sentence. Some openings to choose from. They all start with in my opinion, or I believe that.",
+  "In my opinion, X should, since it would. I believe that X should, as this is likely to. In my opinion, the main reason to support, or oppose, X is that it would lead to this result.",
+  "And in the second argument paragraph, add a connector before it: moreover, in my opinion. In addition, I believe that.",
+  A("Tip appears", t("Use the SAME wording for X as the task (the exact decision, the exact people).", 450, 32)),
+  "Whatever you choose, name X exactly as the task does. The exact decision, the exact people.",
+ ]),
+ dict(mode='concept', active=3, title='Slot 3: support', script=[
+  A("Options appear", t("Example:  For example, a [person] who [...] would probably [...].\n"
+                        "Example:  For instance, a [typical case] in which [...] is likely to [...].\n"
+                        "Comparison:  A similar pattern can be seen in [similar field], where [...].\n"
+                        "Comparison:  The same principle applies to [similar field]: [...].", 110, 32)),
+  "Slot three, support. It's optional. You've just learned it; here are the openings.",
+  "An example: for example, a person who does this would probably do that.",
+  "A comparison: a similar pattern can be seen in another field, where this happens.",
+  A("Tip appears", t("Never invent studies, statistics or experts. Explain; do not cite.", 420, 34)),
+  "And never invent studies or numbers. We saw why in the last lesson.",
+ ]),
+ dict(mode='concept', active=4, title='Slot 4: closing link', script=[
+  A("Options appear", t("After support:  In the same way, [...].  ·  Similarly, [...].  ·  Just as [...], so [...].\n"
+                        "After development only:  In this way, [X] would [result].  ·  Thus, [...].  ·  This is why [...].", 110, 32)),
+  "Slot four, the closing link.",
+  "After support, it brings the reader back from the example or comparison to your own argument: in the same way, similarly, just as.",
+  "Without support, it rounds off the chain: in this way, thus, this is why.",
+  A("Tip appears", t("A closing link LINKS: it is not a copy of the key sentence.", 330, 36)),
+  "A closing link links. It is not a copy of the key sentence.",
+ ]),
+ dict(mode='concept', active=5, title='Template A', script=[
+  "Template A. Development only. Shorter, and completely enough for a strong paragraph.",
+  A("Template A appears", t("[KEY]  In my opinion, [X] should [...], since it would [result].\n"
+                            "[STEP 1]  Once [X], [effect 1], because [reason].\n"
+                            "[STEP 2]  This, in turn, [effect 2].\n"
+                            "[STEP 3]  As a result, [effect 3].\n"
+                            "[CLOSE]  In this way, [X] would [result], which is why [position].", 110, 34)),
+  "Key. Once. This, in turn. As a result. In this way.",
+ ]),
+ dict(mode='concept', active=6, title='A filled in', script=[
+  "Template A, filled in. A new task: should cities plant many more trees along their streets?",
+  A("Chain appears", t("Chain: more street trees → shade on streets and buildings → cooler streets in summer → walking and waiting outdoors less exhausting in the heat", 110, 30)),
+  A("Paragraph appears", t("In my opinion, cities should plant many more trees along their streets, since this would make urban summers easier to bear. Once trees line a street, their branches shade both the pavement and the walls of nearby buildings, which would otherwise absorb the sun's heat all day. This, in turn, keeps the street noticeably cooler during the hottest hours. As a result, walking to school or work, or waiting at a bus stop, would become far less exhausting, particularly for older people and young children. In this way, street trees would make the city more pleasant and safer to move around in summer, which is why planting them should be a priority.", 260, 30)),
+  "Key sentence. Once trees line a street: step one, with its explanation. This, in turn. As a result, with the people it matters most for. In this way: the closing link.",
+ ]),
+ dict(mode='concept', active=7, title='Template B', script=[
+  "Template B. Development plus support by example.",
+  A("Template B appears", t("[KEY]  I believe that [X] should [...], as this is likely to [result].\n"
+                            "[STEPS]  When [X], [effect 1]. Consequently, [effect 2], which means that [effect 3].\n"
+                            "[EXAMPLE]  For example, a [person] who [...] would probably [...].\n"
+                            "[CLOSE]  In the same way, [the example's effect] would apply to [everyone the argument covers].", 110, 33)),
+  "Key. When, consequently, which means that. For example. In the same way.",
+  "The closing link takes the specific person from the example and widens it back to everyone your argument is about.",
+ ]),
+ dict(mode='concept', active=8, title='Template C', script=[
+  "Template C. Development plus support by comparison.",
+  A("Template C appears", t("[KEY]  [X] should [...], because it would [result].\n"
+                            "[STEPS]  If [X], [effect 1]. As a result, [effect 2].\n"
+                            "[COMPARISON]  A similar pattern can be seen in [similar field], where [...].\n"
+                            "[CLOSE]  Just as [...] in [that field], so [X] would [result].", 110, 34)),
+  "Key. If, as a result. A similar pattern can be seen in. Just as, so.",
+ ]),
+ dict(mode='concept', active=9, title='Checklist', script=[
+  A("Checklist appears", t("Before you move on, check your argument paragraph:\n"
+                           "☐ The key sentence answers the task's exact question and gives a reason\n"
+                           "☐ Every arrow of the chain is a sentence, with its explanation or condition\n"
+                           "☐ No renaming steps; no repeated connectors\n"
+                           "☐ Predictions are hedged (likely to, would, may), not stated as facts\n"
+                           "☐ Support, if any, is plausible and linked back to your argument\n"
+                           "☐ No invented studies, statistics or experts", 110, 32)),
+  "A checklist for the finished paragraph.",
+  "Exact question. Every arrow a sentence. No renaming, no repeated connectors. Hedged predictions. Support linked back. Nothing invented.",
+  "That's the argument paragraph. Next, we deal with the other side: weakening, and the rebuttal paragraph.",
+ ]),
+], T50),
+
 ]
 
 MEMORY = [
- dict(id='mem-wr-chain', after='vr50-f-chain-examples', title='The chain',
+ dict(id='mem-wr-chain', after='vr50-f-chain', title='The chain',
       intro='Draft a short cause → effect chain for each argument before you write it, test it, then turn every arrow into a sentence.',
       tables=[
        dict(title='How to draft it', head=['Step', 'What to do'], rows=[

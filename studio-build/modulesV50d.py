@@ -2,8 +2,8 @@
 # Backbone: the teacher's Hebrew lessons seg15-seg19 (content rubric overview, relevance to the task and the central
 # idea, development of ideas, focus and coherence, critical thinking), translated with the teacher's running example
 # (face-recognition cameras in public spaces). Official facts and criteria: nite_verbal_guide.txt (content table).
-# The weak / adequate / strong paragraphs in Development of Ideas come from writing_src/findings.md, shown only with
-# ORIGINAL paragraphs (free city buses) - no real exam task or sample essay is named, quoted or retold.
+# (The weak / adequate / strong free-bus paragraphs were cut from Development of Ideas, 2026-10-03; the comparison
+# stays on the content-rubric card.) No real exam task or sample essay is named, quoted or retold.
 from dsl import *
 from writing_assets import TASK_PAGE, ANSWER_SHEET, task_page, prompt_box, EXAMPLE_PROMPT, EXAMPLE_QUESTION
 
@@ -39,12 +39,11 @@ SB_REL = ['Two terms', 'Say where you stand', 'Read the task closely', 'The back
           'The central idea', 'Inside each paragraph', 'Where it is scored']
 
 SB_DEV = ['Variety', 'Same angle twice', 'A new angle', 'Finding varied reasons',
-          'Too thin', 'What is missing', 'A full argument', 'Step by step', 'Weak version', 'Adequate version',
-          'Strong version', 'The official row']
+          'Too thin', 'What is missing', 'A full argument', 'Step by step']
 
 SB_FOC = ['Two terms', 'A long paragraph', 'Repeated words', 'Repeated ideas', 'Padding', 'Short but focused',
           'A jumpy paragraph', 'Linking, part 1', 'Linking, part 2', 'The fixed version', 'The wrong connector',
-          'The official row']
+          'Two checks']
 
 SB_CRIT = ['Precise issue', 'Near miss: custody', 'Near miss: flights', 'Opinion vs. fact',
            'Why tasks are 50-50', 'Reasonable assumption', 'An opinion-only chain', 'Facts and assumptions',
@@ -182,8 +181,8 @@ lesson('vr50-d-relevance', 'Relevance and the Central Idea', SB_REL, [
   A("With conditions", T('"In my opinion, security authorities should be allowed to install face-recognition cameras in public spaces, but only under certain conditions."  ✓', size=32, x=410, y=360, w=1140)),
   "In my opinion, they should be allowed, but only under certain conditions.",
   "Many students are afraid of this one. They asked yes or no, didn't they? So is it yes or no?",
-  A("That's fine", T('A complex position: fine. A strong option if you can keep its limit clear - not required, and no automatic bonus', size=34, x=410, y=520, w=1140)),
-  "It's fine. It's called a complex position: yes, with a clear limit. It's a strong option if you can keep that limit coherent. But it's not required, and it earns no automatic bonus. Yes, no, or yes-with-conditions: any of them can score high if it is well argued.",
+  A("That's fine", T('A complex position: fine, as long as its limit is clear', size=34, x=410, y=520, w=1140)),
+  "It's fine. It's called a complex position: yes, with a clear limit. Yes, no, or yes-with-conditions: all three answer the question. We'll talk about choosing between them in the lesson on choosing a position.",
  ]),
  dict(mode='concept', active=7, title='The near miss', script=[
   "Now look at this last sentence.",
@@ -316,43 +315,7 @@ lesson('vr50-d-development', 'Development of Ideas', SB_DEV, [
   "Maybe. It's his opinion. But it's an opinion he explained, step by step.",
   A("Notice", T('The stranger the key sentence sounds, the more the reader needs the steps', size=36, x=410, y=520, w=1140)),
   "Notice: the stranger the key sentence sounds at first, the more the reader needs these steps.",
- ]),
- dict(mode='concept', active=8, title='Weak version', script=[
-  "Now let's see the whole difference on one reason, written at three levels. A new topic: should cities make local buses free? First, weak.",
-  A("Weak", para('"In my opinion I think free buses are a great idea because everybody loves free things and everyone will use them. Free buses are the best solution because people will use them more. Everyone knows that pollution is terrible, so the city must do it now!"', y=100, size=30)),
-  A("Problems", T('"In my opinion I think" · "everybody", "everyone" · the same point twice · no route from the fare to the result · emotion instead of explanation', size=32, x=410, y=420, w=1140)),
-  "A doubled opinion phrase. 'Everybody', 'everyone': claims far bigger than the support.",
-  "The same point twice. No route from removing the fare to any result. And emotion, an exclamation mark, pressure on the reader, instead of an explanation.",
- ]),
- dict(mode='concept', active=9, title='Adequate version', script=[
-  "Now adequate.",
-  A("Adequate", para('"Free buses would reduce traffic in the city centre. When the bus is free, more people will choose it. As a result, there will be fewer cars on the roads. This means that traffic will be reduced and the city will be less crowded, and the roads will also be less busy."', y=100, size=30)),
-  A("Better", T('Relevant ✓ · clear position ✓ · a connector for each step ✓', size=34, x=410, y=420, w=1140)),
-  "It's relevant, clear, and it uses connectors. Much better.",
-  A("But", T('But: "free → more people choose it" is assumed, not explained · the last sentence says the same thing three times', size=32, x=410, y=500, w=1140)),
-  "But the key link, why a free bus makes drivers switch, is assumed, not explained. And the last sentence says 'less traffic' three times.",
-  "That's the typical adequate paragraph: a good idea, but the reader has to fill in part of the explanation.",
- ]),
- dict(mode='concept', active=10, title='Strong version', script=[
-  "And now strong.",
-  A("Strong", para('"Making local buses free is likely to reduce traffic in the city centre, provided that the service is frequent enough to be a real alternative. For many short trips, the fare is one of the few costs that a driver compares directly with the price of parking; once it disappears, the bus becomes the cheaper option. Some drivers, especially those whose daily route is already well served, would therefore leave the car at home, and each of them removes a car from the busiest roads at the busiest hours. Fewer cars at peak times, in turn, mean shorter delays for those who still need to drive, including delivery vans and emergency vehicles."', y=90, size=29)),
-  "Look what changed. Each sentence adds a step: why the fare matters, who would switch, where and when it helps, and who else benefits.",
-  A("What makes it strong", T('the missing link is written · a condition on the weak step · a careful claim ("likely", "some drivers") · effects beyond the obvious people', size=31, x=410, y=520, w=1140)),
-  "The missing link is on the page. The weak step has its condition. The claim is careful: 'likely', 'some drivers'. And it follows the effect beyond the bus passenger, to delivery vans and emergency vehicles.",
-  "No invented numbers. No big words. Just the steps.",
- ]),
- dict(mode='concept', active=11, title='The official row', script=[
-  "Here is what the official table says for development at the top levels.",
-  A("Level 4", T('4: explanations mostly adequate · fairly convincing arguments · appropriate examples', size=32, x=410, y=110, w=1140)),
-  "At level four: mostly adequate explanations, fairly convincing arguments, appropriate examples.",
-  A("Level 5", T('5: relevant and detailed · full explanations · convincing arguments', size=32, x=410, y=210, w=1140)),
-  "At five: relevant and detailed, full explanations, convincing arguments.",
-  A("Level 6", T('6: relevant, detailed and insightful · full explanations · convincing and varied arguments', size=32, x=410, y=310, w=1140)),
-  "And at six: insightful, with full explanations and convincing and varied arguments.",
-  A("Low levels", T('Low levels: inadequate explanations · unconvincing arguments · inappropriate examples', size=32, x=410, y=430, w=1140)),
-  "At the low levels the words are: inadequate explanations, unconvincing arguments, inappropriate examples.",
-  D("teacher circles 'full explanations' and 'varied'"),
-  "Our two components, full and varied, are right there in the wording. Next criterion: focus and coherence.",
+  "So development means two things: varied reasons, and full explanations. Next criterion: focus and coherence.",
  ]),
 ], T50),
 
@@ -453,13 +416,8 @@ lesson('vr50-d-focus', 'Focus and Coherence', SB_FOC, [
   D("teacher crosses out 'Likewise' and writes 'However,'"),
   "The link between the parts is wrong. We need contrast: 'However', 'On the other hand'. That's also a break in the line of thought.",
  ]),
- dict(mode='concept', active=11, title='The official row', script=[
-  "Here's how the official table describes focus and coherence.",
-  A("Low", T('Low: jumps from one idea to the next without continuity · unnecessarily repetitive', size=34, x=410, y=110, w=1140)),
-  "At the bottom: jumps from one idea to the next without any continuity, and unnecessary repetition.",
-  A("High", T('High: continuity of thought through the entire essay · explicit connections among the ideas', size=34, x=410, y=230, w=1140)),
-  "At the top: continuity of thought throughout the whole essay, and explicit connections among the ideas.",
-  A("Two checks", T('Check 1: does each sentence add something new?   Check 2: does its connector show the real relationship?', size=34, x=410, y=360, w=1140)),
+ dict(mode='concept', active=11, title='Two checks', script=[
+  A("Two checks", T('Check 1: does each sentence add something new?   Check 2: does its connector show the real relationship?', size=38, x=410, y=110, w=1140)),
   "So when you proofread, two checks: does each sentence add something new? And does the connector show the real relationship?",
   "That's focus and coherence. See you in the next lesson, on critical thinking.",
  ]),

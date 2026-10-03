@@ -3,7 +3,7 @@
 # paragraph with the full camera examples, the bridging recommendation and its example), the official NITE guide,
 # and writing_src/findings.md points 12-15 (plus 17 and 31 where they fit).
 # The teacher's chain method (part F) is applied to the other side: write the opponent's chain, test every arrow,
-# attack the weakest one. Original extra example: collecting students' phones for the school day.
+# attack the weakest one.
 from dsl import *
 from writing_assets import prompt_box
 
@@ -75,7 +75,7 @@ PHONE_PROMPT, PHONE_Q = _T['phones']['paras'], _T['phones']['q']
 
 SB_FIND = ['Why we need them', 'Their chain first', 'Mine matters more', 'Common good vs one', 'A solution',
            'Pay per result', 'What can go wrong?', 'A new problem', 'It will not work', 'Not done, bypassed',
-           'The reversal', 'Reversal: same field', 'Four types, one chain']
+           'The reversal', 'Reversal: same field']
 SB_WEAK = ['The danger', 'The short blanket', 'No money from nowhere', 'Extremism', 'What hides behind it',
            'Slippery slope', 'There is a way out', 'Do not be rigid', "Devil's advocate"]
 SB_PRAC = ['Practice, not exam', 'One per argument', 'On your own chain', 'Weakening ping-pong', 'Ping-pong: cameras',
@@ -83,13 +83,11 @@ SB_PRAC = ['Practice, not exam', 'One per argument', 'On your own chain', 'Weake
 SB_REB = ['Its purpose', 'A real debate', 'Must I write one?', 'A reason, not a side', 'Which argument?',
           'Explain it fully', 'More links to attack', 'The reservation', 'The weakening', 'Support: optional',
           'Connectors', 'Weaken, not refute', 'Phrases by type']
-SB_TPL = ['The four slots', 'Slot 1: their view', 'Slot 2: their chain', 'Slot 3: our answer', 'Slot 4: bridging',
-          'Our task', 'Their chain', 'The weakest arrow', 'The full paragraph', 'Why it works']
+SB_TPL = ['The four slots']
 SB_EX = ['The camera task', 'Their chain', 'Example 1', 'Example 1: the trick', 'Example 2',
          'Example 3', 'Example 3: a solution', 'The other side', 'Example 4', 'Why it impresses', 'Which arrow?']
 SB_BR = ['What it is', 'Why add it', 'Where it goes', 'It must fit', 'Cameras: control body', 'Genuine, not a bone',
-         'Full example', 'A language slip', 'Or: complex position', 'A coherent boundary', 'The template',
-         'Phones: bridging', 'Optional']
+         'Full example', 'A language slip', 'Or: complex position', 'A coherent boundary', 'Optional']
 
 MODULES = [
 # ============================================================== lesson 1: how to find weakenings (seg36)
@@ -256,18 +254,7 @@ lesson('vr50-g-finding-weakenings', 'How to Find Weakenings', SB_FIND, [
   X("Same field", 'Same field = impressive.  A different advantage ≈ just “mine matters more”.', size=33),
   "Notice: it's not just 'but I have a different advantage'. That's close to 'my arguments matter more'.",
   "The advantage must be in the same field they talked about. That's what shows impressive critical thinking.",
- ]),
- dict(mode='concept', active=12, title='Four types, one chain', script=[
-  "Let's sum up the four directions, and where each one hits the other side's chain.",
-  X("Type 1", '1 · Mine matters more → accept their chain; the last box weighs less. Explain why IN THIS CASE.', y=50, size=31),
-  X("Type 2", '2 · A solution → a safeguard cuts one of their arrows.', size=31),
-  X("Type 3", '3 · What can go wrong → a new branch (a new problem), or a broken arrow (not true · not done · bypassed · exploited).', size=31),
-  X("Type 4", '4 · The reversal → their own chain leads to the opposite result, in the same field.', size=31),
-  "One: my arguments matter more. Obvious, but you must explain why, in this specific case.",
-  "Two: I have a solution to the problem. Also fairly obvious: someone raises a problem, you immediately think how to solve it. A very common way to weaken.",
-  "Three and four, what can go wrong and the reversal, need deeper, more creative thinking.",
-  X("Practise", 'Types 3 and 4 need deeper, more creative thinking. Practise them.', size=34),
-  "But that doesn't mean you shouldn't try. In practice, go through all four. It will come.",
+  "Those are the four directions: mine matters more, a solution, what can go wrong, and the reversal. Next: weakenings that look good but hurt you.",
  ]),
 ], T50),
 
@@ -598,11 +585,11 @@ lesson('vr50-g-rebuttal-paragraph', 'The Rebuttal Paragraph', SB_REB, [
  ]),
 ], T50),
 
-# ============================================================== lesson 5: the template + an original full example
+# ============================================================== lesson 5: the template (the four-slot overview; the phrases are on the card)
 lesson('vr50-g-rebuttal-template', 'Rebuttal Paragraph Template', SB_TPL, [
  dict(mode='title', title='Rebuttal Paragraph Template', script=[
   "Let's put everything together into one template for the rebuttal paragraph.",
-  "Four slots. Then we'll fill it in, from the chain to the finished paragraph, on a new task.",
+  "Four slots. The phrase options for each slot are on the card right after this lesson, and in the next lesson we'll see full paragraphs on the camera task.",
  ]),
  dict(mode='concept', active=0, title='The four slots', script=[
   X("Slot 1", 'SLOT 1 · Their view, stated fairly: contrast connector + their REASON', y=60, size=34),
@@ -615,97 +602,7 @@ lesson('vr50-g-rebuttal-template', 'Rebuttal Paragraph Template', SB_TPL, [
   "Slot four, optional: a bridging recommendation, a small step toward the other side that eases their worry.",
   X("Before writing", 'Before writing: draft their chain (about 10 words) and circle the weakest arrow.', size=34),
   "And before you write a word: draft their chain, about ten words, and circle the weakest arrow.",
- ]),
- dict(mode='concept', active=1, title='Slot 1: their view', script=[
-  X("Slot 1 heading", 'SLOT 1 · Their view, stated fairly', y=50, size=40),
-  X("Pattern", '[Contrast connector], [who] [reporting verb] that [their policy] would [their result], because [their reason].', size=32),
-  "The pattern: a contrast connector, who says it, a reporting verb, and their claim with its reason.",
-  X("Options: connector", 'Connector:  On the other hand, · However, · Nevertheless, · In contrast,', size=31, x=450, w=1100),
-  X("Options: who + verb", 'Who + verb:  some argue that · opponents of ... claim that · those who support ... maintain that · it could be argued that', size=31, x=450, w=1100),
-  X("Options: reason", 'The reason:  because ... · since ... · on the grounds that ... · due to the risk that ...', size=31, x=450, w=1100),
-  "Choose one option from each row. Mix them, so your essays don't all sound the same.",
-  X("Avoid", '✗ “Some people think different.”   ✗ “The people think ...”   ✗ “According to me ...”', size=31),
-  "And avoid the classic slips: 'some people think different', 'the people think', 'according to me'.",
- ]),
- dict(mode='concept', active=2, title='Slot 2: their chain', script=[
-  X("Slot 2 heading", 'SLOT 2 · Their chain: the steps behind their worry', y=50, size=40),
-  X("Pattern", '[Step 1], so [step 2]. As a result, [step 3], which in turn [their final result].', size=32),
-  "Take their chain and paste it into sentences, exactly like you do with your own chain. Every arrow becomes a connector.",
-  X("Options", 'Arrow phrases:  since ... · this means that ... · as a result, ... · which in turn ... · consequently, ... · once ..., ...', size=31, x=450, w=1100),
-  "Vary the connectors, so it doesn't sound pasted: since, this means that, as a result, which in turn.",
-  X("Worry", 'Name the worry itself:  In other words, the concern is that ... · For many ..., this is also a matter of ...', size=31, x=450, w=1100),
-  "And name the worry clearly. In other words, the concern is that...",
-  X("Fair", 'Test: would a supporter of the other side sign this description?', size=33),
-  "A good test for fairness: would someone from the other side sign this description of their argument? If yes, you did it right.",
- ]),
- dict(mode='concept', active=3, title='Slot 3: our answer', script=[
-  X("Slot 3 heading", 'SLOT 3 · Our answer at the weak arrow', y=40, size=40),
-  "Slot three. The reservation phrase depends on the type of weakening.",
-  X("Mine matters more", 'Mine matters more:  Admittedly, there is some truth in this; however, ... · Although this concern is justified, ... · Even if this is accepted, ...', size=30, x=450, w=1100),
-  X("Not true", 'Arrow does not hold:  At first glance, this seems convincing; however, it overlooks ... · This argument assumes that ...; in practice, however, ...', size=30, x=450, w=1100),
-  X("Solution", 'A solution:  However, this problem can be addressed by ... · This risk, however, can be greatly reduced if ...', size=30, x=450, w=1100),
-  X("Wrong / reversal", 'What can go wrong / the reversal:  However, ... may well lead to ... · In fact, ... may have the opposite effect: ...', size=30, x=450, w=1100),
-  "Mine matters more: admittedly, there is some truth in this; however. An arrow that doesn't hold: at first glance this seems convincing; however, it overlooks.",
-  "A solution: however, this problem can be addressed by. And for what can go wrong, or the reversal: in fact, this may have the opposite effect.",
-  X("Then", 'Then: explain (This is because ... · Since ...) and close (Therefore, [their worry] does not justify [their conclusion].)', size=30),
-  "Then explain the weakening, and close the answer: therefore, their worry does not justify their conclusion.",
- ]),
- dict(mode='concept', active=4, title='Slot 4: bridging', script=[
-  X("Slot 4 heading", 'SLOT 4 · Bridging recommendation (optional)', y=50, size=40),
-  X("Pattern", '[Concession connector], since [their worry] is a legitimate concern, [a specific measure] could [how it eases that worry].', size=32),
-  "Slot four is optional. A concession connector, the worry, a specific measure, and how that measure eases the worry.",
-  X("Options", 'Openers:  Nevertheless, · That said, · Even so, · At the same time,\nMeasures:  could be introduced · should be accompanied by · it would be advisable to', size=31, x=450, w=1100),
-  X("Must", 'It must answer the SAME worry as slot 1, and say HOW it works.', size=34),
-  "It must answer the same worry you raised in slot one, and say how it works. We'll have a whole lesson on it.",
- ]),
- dict(mode='concept', active=5, title='Our task', script=[
-  "Now let's fill in the template on a new task.",
-  A("The phone task appears", dict(prompt_box(PHONE_PROMPT, PHONE_Q, w=1140), x=410, y=60)),
-  "Should schools collect students' phones for the whole school day?",
-  X("Our position", 'Our position: YES, collect the phones.\nOur two argument paragraphs: concentration in lessons; less online bullying during school hours.', y=380, size=32),
-  "Say our position is yes. Our argument paragraphs are about concentration, and about less online bullying during school hours.",
-  X("Their argument", 'The counter-argument we choose: students are cut off from their parents.\n(It appears in the task, so it is a main argument.)', size=32),
-  "For the rebuttal paragraph we choose a main counter-argument: students are cut off from their parents. It appears in the task, so it's substantial.",
- ]),
- dict(mode='concept', active=6, title='Their chain', script=[
-  "Step one: write their chain.",
-  X("Their chain", 'phones collected → students cannot be reached directly → in an emergency, parents cannot reach their child in time → children less safe, parents worried', y=60, size=33),
-  "Phones collected, so students can't be reached directly. So in an emergency, parents can't reach their child in time. So children are less safe, and parents are worried.",
-  X("Test arrows", 'Test each arrow:', size=36),
-  X("Arrow 1", 'Arrow 1 · collected → cannot be reached directly: holds.', size=31, x=450, w=1100),
-  X("Arrow 2", 'Arrow 2 · cannot be reached directly → cannot reach in TIME: does it hold? Only if the phone is the ONLY link to the child.', size=31, x=450, w=1100),
-  X("Arrow 3", 'Arrow 3 · cannot reach in time → less safe: in an emergency AT school, who acts first?', size=31, x=450, w=1100),
-  "Now test each arrow. The first one holds: a collected phone means the student can't be reached directly.",
-  "The second: does 'not directly' mean 'not in time'? Only if the phone is the only link between the family and the child.",
-  "And the third: in an emergency at school, who actually acts first?",
- ]),
- dict(mode='concept', active=7, title='The weakest arrow', script=[
-  X("Weakest", 'Weakest arrow: “cannot be reached directly → cannot be reached IN TIME”', y=60, size=36),
-  D("teacher circles arrow 2 of their chain"),
-  "Arrow two is the weakest. It hides an assumption.",
-  X("Hidden assumption", 'Hidden assumption: the phone in the pocket is the ONLY link between the family and the child.', size=33),
-  X("Our attack", 'Our answer: the school office has a phone and staff who can find any student within minutes; the collected phones stay in the building; at school, the staff on site act first.', size=32),
-  "But every school has an office with a phone, and staff who can find any student within minutes. The collected phones stay in the building, so they can be handed back at once.",
-  "And in an emergency at school, the adults on the spot act first, not parents who are far away.",
-  X("Types", 'Types used: the arrow does not hold (arrow 2) + a fact about arrow 3. Then an optional solution for what remains of the worry.', size=31),
-  "So our weakening attacks arrow two, and adds a point about arrow three. Then we can add a bridging recommendation for what's left of the worry.",
- ]),
- dict(mode='concept', active=8, title='The full paragraph', script=[
-  "Here's the full paragraph.",
-  X("Paragraph", 'On the other hand, some argue that collecting students\' phones for the entire school day would put their safety at risk. Without a phone, a student cannot be reached directly, so if an emergency occurs, parents may be unable to contact their child in time. For many parents, being able to reach their children at any moment is also an important source of reassurance. Admittedly, this concern deserves serious attention; however, it assumes that a phone in a student\'s pocket is the only link between the family and the child. In fact, every school has an office with a telephone and staff who can locate any student within minutes, and the collected phones remain in the building, so they can be returned immediately if needed. Moreover, in an emergency at school, it is the staff on site, not parents at a distance, who are able to act first. Therefore, collecting phones is unlikely to reduce students\' safety in any significant way. Nevertheless, since the concern is a legitimate one, schools could publish a direct emergency number that is answered throughout the school day.', y=40, size=28),
-  "Read it through once. Then we'll mark the slots.",
- ]),
- dict(mode='concept', active=9, title='Why it works', script=[
-  X("Slot 1", 'Slot 1 · “On the other hand, some argue that ... would put their safety at risk.”  → a reason, not just a side', y=40, size=30),
-  "Slot one: 'On the other hand, some argue that...' and a reason, their safety. Not just 'some people disagree'.",
-  X("Slot 2", 'Slot 2 · “Without a phone ... so if an emergency occurs ... also an important source of reassurance.”  → their chain, told fairly', size=30),
-  "Slot two: their chain, and told fairly. We even added the parents' reassurance, which strengthens their side.",
-  X("Slot 3", 'Slot 3 · “Admittedly ...; however, it assumes that ...”  → the hidden assumption of arrow 2\n“In fact ... Moreover ... Therefore ...”  → the explanation, and the close', size=30),
-  "Slot three: a reservation that names the hidden assumption of arrow two. Then the explanation, 'in fact', 'moreover', and the close, 'therefore'.",
-  X("Slot 4", 'Slot 4 · “Nevertheless, since the concern is a legitimate one, ... a direct emergency number ...”  → eases THEIR worry', size=30),
-  "Slot four: the bridging recommendation eases exactly their worry, reaching a child in an emergency.",
-  X("Language", 'Language: formal (no contractions, no “you”), hedged (“may”, “is unlikely to”), no “I understand them”', size=30),
-  "And the language: formal, no contractions, no 'you'. Hedged: 'may', 'is unlikely to'. And no 'I understand them'.",
+  "The phrases for every slot are on the card. Pick one per slot, and vary them from essay to essay.",
  ]),
 ], T50),
 
@@ -823,7 +720,7 @@ lesson('vr50-g-bridging', 'The Bridging Recommendation', SB_BR, [
   "A bridging recommendation says: okay, I choose my position. But I still see that the other position has some logic, so I move a little toward it.",
   X("80/20", 'Not the golden mean (50/50). It is 80/20: 80% my side, a small step toward theirs.', size=36),
   "It's not the golden mean. The golden mean is in the middle. This isn't in the middle. It's small.",
-  "It's eighty-twenty, not fifty-fifty. Pareto. Eighty percent my side, and I move a little toward the other side.",
+  "It's eighty-twenty, not fifty-fifty. Eighty percent my side, and I move a little toward the other side.",
  ]),
  dict(mode='concept', active=1, title='Why add it', script=[
   X("For the essay", 'For the essay: a possible solution to the problem raised in the counter-argument → it strengthens the weakening', y=70, size=34),
@@ -892,7 +789,7 @@ lesson('vr50-g-bridging', 'The Bridging Recommendation', SB_BR, [
   "What we have here is a complex position. A plain position takes a side: extreme right, or extreme left.",
   "A complex position says: I choose a side, but with some reservations for edge cases or certain situations, to build in safeguards, because I understand the extreme position has disadvantages.",
   X("In the opening", '“In my view, face-recognition cameras should be installed in public spaces; however, in light of the concern about privacy and the risk of a leak from the database, this should be done with protective mechanisms, as I will explain below.”', size=31),
-  "So why leave it for the end? You can present the complex position already in the opening paragraph. It's a strong option if you can keep its boundary coherent. Not required, and no automatic bonus.",
+  "So why leave it for the end? You can present the complex position already in the opening paragraph, if you can keep its boundary coherent.",
   "I took that small recommendation from the end of the rebuttal paragraph and put it in the opening. And throughout the essay, you can refer back to those safeguards.",
  ]),
  dict(mode='concept', active=9, title='A coherent boundary', script=[
@@ -904,35 +801,17 @@ lesson('vr50-g-bridging', 'The Bridging Recommendation', SB_BR, [
   "And if you say you support a complete ban, and then quietly allow exceptions, you've changed the proposal without saying so.",
   X("Say it clearly", '✓ Reject the complete version and defend a narrower one, and SAY so: “... should apply to all students, except those whose medical condition requires a phone.”', size=32),
   "You can reject the complete version and defend a narrower one. But say so clearly, and say exactly where the line is.",
-  X("No bonus", 'A middle position gets no automatic bonus. It must answer the question and fit your arguments.', size=33),
-  "And a middle position gets no automatic bonus, and it's not required. It's only worth it if it answers the question and fits your arguments.",
+  X("Must fit", 'A middle position must answer the question and fit your arguments.', size=33),
+  "And a middle position is only worth it if it answers the question and fits your arguments.",
  ]),
- dict(mode='concept', active=10, title='The template', script=[
-  X("Bridging template", 'BRIDGING RECOMMENDATION TEMPLATE', y=40, size=38),
-  X("Pattern", '[Opener], since [their worry] is a legitimate concern, [a specific measure] could be introduced, so that [how it reduces the worry]. In this way, [my position] would be kept while [the harm they fear] would be reduced.', size=31),
-  "Here's the template. An opener, their worry, a specific measure, and how it reduces the worry. Then, optionally, one sentence showing your position still stands.",
-  X("Openers", 'Openers:  Nevertheless, · That said, · Even so, · At the same time,', size=31, x=450, w=1100),
-  X("Measures", 'Measures:  ... could be introduced · ... should be accompanied by ... · it would be advisable to ... · ... could be limited to ...', size=31, x=450, w=1100),
-  X("How", 'How:  so that ... · which would ensure that ... · in this way, ...', size=31, x=450, w=1100),
-  X("Opening version", 'Opening-paragraph version: “In my view, [position]; however, in light of [their worry], this should be done [with safeguard], as I will explain below.”', size=31),
-  "And the version for the opening paragraph, if you choose a complex position from the start.",
- ]),
- dict(mode='concept', active=11, title='Phones: bridging', script=[
-  "Back to our phone task. The worry: parents reaching a child in an emergency.",
-  X("Fits", '✓ Fits the worry: “Nevertheless, since the concern is a legitimate one, schools could publish a direct emergency number that is answered throughout the school day, so that parents can reach their child within minutes.”', y=60, size=31),
-  "This one fits: a direct emergency number, answered all day. It answers exactly their worry, and says how.",
-  X("Does not fit", '✗ Does not fit: “... students could use their phones during the lunch break.”  (the worry was emergencies, not free time)', size=31),
-  "This one doesn't: phones during the lunch break. The worry was emergencies, not free time.",
-  X("Boundary", 'Coherent boundary: “Phones should be collected from all students, except those whose medical condition requires one, with the school\'s approval.”', size=31),
-  "And if you want an exception, like a student with a medical need, state the boundary clearly, from the opening paragraph.",
- ]),
- dict(mode='concept', active=12, title='Optional', script=[
-  X("Strong", 'A complex position from the opening: a strong option, if you can keep its boundary coherent (not required, no automatic bonus)', y=70, size=34),
-  "To sum up. If you can keep the boundary coherent, a complex position from the opening paragraph is a strong option, instead of a bridging recommendation at the end. It's not required, and it gets no automatic bonus.",
+ dict(mode='concept', active=10, title='Optional', script=[
+  X("Strong", 'A complex position from the opening: a good option, if you can keep its boundary coherent', y=70, size=34),
+  "To sum up. If you can keep the boundary coherent, a complex position from the opening paragraph is a good option, instead of a bridging recommendation at the end.",
   X("Middle", 'Still unsure? Add a bridging recommendation at the end of the rebuttal paragraph', size=34),
   "If you're still somewhere in the middle, and a bit worried, just add a bridging recommendation at the end of the rebuttal paragraph. Done right, it will impress the rater too.",
   X("Optional", 'Either way, it is OPTIONAL. No good idea? Let it go.', size=38),
   "And either way, a bridging recommendation is optional. Finding a good one takes thought. Sometimes it's easy, sometimes it's hard. If you can't find a good one, let it go.",
+  "The template, with phrase options for each part and the opening-paragraph version, is on the card after this lesson.",
   "That's the end of dealing with the opposing view. Next: the two paragraphs that wrap the essay, the opening and the closing.",
  ]),
 ], T50),
@@ -966,7 +845,7 @@ MEMORY = [
         'Weaken, do not refute; hedge (may, is likely to, many). "There is some logic in this", never "I understand them".',
         'Avoid weak weakenings: the short blanket, extremism, the slippery slope.']),
  dict(id='mem-wr-bridging', after='vr50-g-bridging', title='Bridging recommendation',
-  intro='Optional. At the end of the rebuttal paragraph, after the weakening: 80/20, not 50/50. Or a complex position stated in the opening paragraph: a strong option if you can keep its boundary coherent; not required, no automatic bonus.',
+  intro='Optional. At the end of the rebuttal paragraph, after the weakening: 80/20, not 50/50. Or a complex position stated in the opening paragraph, if you can keep its boundary coherent.',
   tables=[
    dict(title='Template', head=['Part', 'Phrase options'], rows=[
     ['Opener', 'Nevertheless, / That said, / Even so, / At the same time,'],
@@ -979,7 +858,7 @@ MEMORY = [
     ['Does it say HOW it works?', 'Cameras: a dedicated body with sole access; every request examined before footage is viewed'],
     ['Is it genuine?', 'It fixes a real weakness of your position, not a bone thrown to the other side'],
     ['Is the boundary coherent?', 'Exceptions stated openly ("all students, except those whose medical condition requires ..."), not a quiet contradiction']])],
-  tips=['A middle position has no automatic bonus: it must answer the question and fit your arguments.',
+  tips=['A middle position is often easier to defend, so it can help you, but the raters don\'t give extra points for it: a clear one-sided essay can score just as high. If you use one, it must answer the question and fit your arguments.',
         '"Both sides have a point" is not an answer.',
         'Two nouns sharing one object need the same preposition: "a break-in to the database or a leak from it".']),
 ]

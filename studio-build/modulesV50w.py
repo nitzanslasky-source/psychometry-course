@@ -121,8 +121,9 @@ assign('vr50-e-gather', 5, 'Analyse three tasks',
        ['Tasks A, B, C: read and mark them', 'Decision · people · conditions · type', 'Background vs claims · key words'])
 
 assign('vr50-e-args-intro', 6, 'Choose a position',
-       'For each task, choose a first position (a leaning): the one you can argue best - not necessarily the one you feel '
-       'strongest about. You may change it after workshop 7, once you have found and tested your arguments.',
+       'For each task, choose a first position (a leaning). Start from what you really think. But if the other side is much '
+       'easier to explain, switching is completely legitimate: the raters score how well you argue, not what you believe. '
+       'You may change it after workshop 7, once you have found and tested your arguments.',
        [dict(title='Tasks', head=['Task', 'Question'], rows=ABC),
         dict(title='For each task', head=['#', 'Write'], rows=[
             ['1', 'Your first position in one sentence (simple, or complex if you can keep its limit clear)'],
@@ -145,7 +146,7 @@ assign('vr50-e-test', 7, 'Find and test arguments',
        ['About 5 minutes per task.', 'Different arguments = different reasons, not the same reason in other words.'],
        ['Tasks A, B, C: 3+ arguments each', 'From the task · who is involved · points of view', 'Test them, keep the best two'])
 
-assign('vr50-f-chain-examples', 8, 'Chains',
+assign('vr50-f-chain', 8, 'Chains',
        'Turn the two arguments you kept for each task into chains: about ten words each, from the thing the task asks about to the final result.',
        [dict(title='Tasks', head=['Task', 'Question'], rows=ABC),
         dict(title='For each chain', head=['#', 'Check'], rows=[
@@ -172,7 +173,7 @@ assign('vr50-f-template', 9, 'Argument paragraphs',
        ['About 6-8 lines per paragraph.', 'Time yourself: about 6 minutes each.'],
        ['Tasks A, B, C: one argument paragraph each', 'Templates A, B and C', 'Check with the card'])
 
-assign('vr50-f-comparison', 10, 'Support',
+assign('vr50-f-template', 10, 'Support',   # after workshop 9: the paragraphs exist by now
        'Go back to your paragraphs. Add support where it helps, and write the second argument paragraph for task A.',
        [dict(title='Write', head=['Task', 'Do'], rows=[
            ['A', 'Write argument 2 (with an example)'],

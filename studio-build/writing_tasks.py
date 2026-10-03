@@ -45,7 +45,22 @@ task('tax', 'Reduced tax for large companies', [
 ], 'In your opinion, should the state charge large companies a reduced rate of tax? Give reasons for your answer.')
 
 # ------------------------------------------------------------------ examples inside the lessons
+# 'fourday' is the opening essay (vr50-a-baseline) and its retake (workshop 19) ONLY - never a worked example in a
+# lesson, so that the before/after comparison stays fair. Lessons use 'lights' instead (original task).
 task('fourday', 'A four-day school week', EXAMPLE_PROMPT, EXAMPLE_QUESTION)
+
+task('lights', 'Street lights at night', [
+    "In most towns, street lights stay on from dusk until dawn, and street lighting is one of the largest items on "
+    "a town's electricity bill. Modern street lamps can be switched on and off remotely, street by street.",
+    "In recent years, several towns have begun to switch off the lights in residential streets between 1 a.m. and "
+    "5 a.m., when few people are outside. Main roads, junctions and pedestrian crossings stay lit all night, and "
+    "the towns report that they save about a third of their lighting costs.",
+    "Supporters argue that the money saved can fund other local services, and that darker nights save energy and "
+    "help residents sleep. Opponents argue that people who come home late, such as night-shift workers, will "
+    "feel unsafe in dark streets, and that unlit pavements may lead to more burglaries and to falls among "
+    "elderly residents.",
+], 'In your opinion, should towns switch off the lights in residential streets in the middle of the night? Give '
+   'reasons for your answer.')
 
 task('bus', 'Free local buses', [
     "In most cities, passengers on local buses pay a fare for each trip or buy a monthly pass. The fares cover part "
