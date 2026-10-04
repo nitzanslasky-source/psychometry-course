@@ -757,6 +757,7 @@ def apply(M):
     new_questions(M)
     place_all(M)
     summary(M)
+    dedupe_examples(M)   # 2026-10-04: runs last
 
 
 def _b(label, tex, size=44):
@@ -839,3 +840,32 @@ def summary(M):
             'The traps: adding tops and bottoms, flipping the wrong fraction, splitting the bottom, and "of the rest."',
             'Good luck.'])],
         'decimals', after=last)
+
+
+# ---------------- 2026-10-04: a question must not be a lesson example the student just watched ----------------
+def _dd_sub(M, vid, n, pairs):
+    """Replace exact text on one slide (board items, spoken lines, draw cues, labels). Every pair must match."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for k in ('say', 'draw', 'label'):
+                if k in l and old in l[k]: l[k] = l[k].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+def dedupe_examples(M):
+    # alg-extra-unit-t2-1-2 was the lesson example 5/6 - 1/4 of "fraction-add" (RECORDED) -> new numbers.
+    M.set_q('alg-extra-unit-t2-1-2', stem=r'Evaluate $\frac{3}{4}-\frac{1}{6}$.',
+            choices=[r'$\frac{7}{12}$', r'$\frac{1}{6}$', r'$\frac{2}{3}$', r'$\frac{1}{5}$'], correct=1,
+            expl=[r'The LCM of 4 and 6 is 12: $\frac{3}{4}=\frac{9}{12}$ and $\frac{1}{6}=\frac{2}{12}$.',
+                  r'$\frac{9}{12}-\frac{2}{12}=\frac{7}{12}$.',
+                  r'The trap: subtracting the tops and adding the bottoms, $\frac{3-1}{4+6}=\frac{1}{5}$.'])
+    # q-069 was the lesson example 4 2/3 - 2 1/4 of "r26-t02-shortcuts" (RECORDED) -> new numbers.
+    M.set_q('q-069', stem=r'$5\,\frac{3}{4} - 2\,\frac{1}{3} = ?$',
+            choices=[r'$3\,\frac{5}{12}$', r'$3\,\frac{1}{2}$', r'$3\,\frac{1}{12}$', r'$3\,\frac{7}{12}$'], correct=1,
+            expl=[r'Convert: $5\frac{3}{4}=\frac{23}{4}$ and $2\frac{1}{3}=\frac{7}{3}$.',
+                  r'Common denominator 12: $\frac{69}{12}-\frac{28}{12}=\frac{41}{12}=3\frac{5}{12}$.',
+                  r'Faster: whole parts $5-2=3$, fraction parts $\frac{9}{12}-\frac{4}{12}=\frac{5}{12}$. Together: $3\frac{5}{12}$.'])

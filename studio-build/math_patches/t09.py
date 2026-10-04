@@ -632,3 +632,30 @@ def apply(M):
     add_practice(M)
     fix_card(M)
     summary(M)
+    dedupe_examples(M)   # 2026-10-04: runs last
+
+
+# ---------------- 2026-10-04: a question must not be a lesson example the student just watched ----------------
+def _dd_sub(M, vid, n, pairs):
+    """Replace exact text on one slide (board items, spoken lines, draw cues, labels). Every pair must match."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for k in ('say', 'draw', 'label'):
+                if k in l and old in l[k]: l[k] = l[k].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+def dedupe_examples(M):
+    # alg-extra-root-practice-2 was the lesson example sqrt72 of "roots" slide 4 -> new numbers.
+    M.set_q('alg-extra-root-practice-2', stem=r'$\sqrt{45} = ?$',
+            choices=[r'$9\sqrt5$', '$15$', r'$3\sqrt5$', r'$5\sqrt3$'], correct=3,
+            expl=[r'Pull out the largest square: $45=9\cdot5$. Therefore, $\sqrt{45}=\sqrt{9}\cdot\sqrt5=3\sqrt5$.'])
+    # alg-extra-root-practice-7 was the lesson example sqrt70 of "r26-t09-traps" slide 3 -> new numbers.
+    M.set_q('alg-extra-root-practice-7', stem=r'Between which two consecutive whole numbers is $\sqrt{55}$?',
+            choices=['$8$ and $9$', '$5$ and $6$', '$7$ and $8$', '$6$ and $7$'], correct=3,
+            expl=[r'Put $55$ between two perfect squares: $49<55<64$.',
+                  r'Therefore $\sqrt{49}<\sqrt{55}<\sqrt{64}$, that is, $7<\sqrt{55}<8$.'])

@@ -805,23 +805,24 @@ def new_numbers(M):
                        ('4 · Two still match? Plug in different numbers.', '4 · Still a tie? New numbers, only for the tied choices.')])
 
     # ---------------- theory: guided questions 1-4
-    # Q1 main fraction bar. Study guide 12 over 1 over (1/3 + 1/6) = 6; Hebrew video 4 over 1 over (1/2 + 1/4) = 3
-    S('q-135', stem=r'$\dfrac{10}{\dfrac{1}{\frac{1}{2}+\frac{1}{5}}}=\ ?$',
-      choices=[r'$\frac{7}{10}$', r'$\frac{10}{7}$', r'$7$', r'$\frac{100}{7}$'], correct=3, expl=[
-        r'Work from the inside out. Deepest layer: $\frac{1}{2}+\frac{1}{5}=\frac{5}{10}+\frac{2}{10}=\frac{7}{10}$.',
-        r'Next layer: $1\div\frac{7}{10}=1\cdot\frac{10}{7}=\frac{10}{7}$.',
-        r'Main bar: $10\div\frac{10}{7}=10\cdot\frac{7}{10}=7$. The answer is choice 3.',
-        r'The traps: $\frac{10}{7}$ stops one layer too early, and $\frac{100}{7}$ multiplies by $\frac{10}{7}$ instead of dividing.'])
+    # Q1 main fraction bar. Study guide 12 over 1 over (1/3 + 1/6) = 6; Hebrew video 4 over 1 over (1/2 + 1/4) = 3;
+    # lesson example (recorded) 10 over 1 over (1/2 + 1/5) = 7; practice q-122 15 over 1 over (1/3 + 1/5) = 8
+    S('q-135', stem=r'$\dfrac{6}{\dfrac{1}{\frac{1}{2}+\frac{1}{3}}}=\ ?$',
+      choices=[r'$\frac{1}{5}$', r'$\frac{6}{5}$', r'$5$', r'$\frac{36}{5}$'], correct=3, expl=[
+        r'Work from the inside out. Deepest layer: $\frac{1}{2}+\frac{1}{3}=\frac{3}{6}+\frac{2}{6}=\frac{5}{6}$.',
+        r'Next layer: $1\div\frac{5}{6}=1\cdot\frac{6}{5}=\frac{6}{5}$.',
+        r'Main bar: $6\div\frac{6}{5}=6\cdot\frac{5}{6}=5$. The answer is choice 3.',
+        r'The traps: $\frac{6}{5}$ stops one layer too early, $\frac{36}{5}$ multiplies by $\frac{6}{5}$ instead of dividing, and $\frac{1}{5}$ turns the main bar upside down ($\frac{6}{5}\div6$).'])
     video('q-135', {2: [
-        "Fraction on a fraction on a fraction. The main bar is the long one — ten over everything else.",
+        "Fraction on a fraction on a fraction. The main bar is the long one — six over everything else.",
         "So we need the bottom first. And inside the bottom — the deepest layer.",
-        D('Next to the question write "1/2 + 1/5 = 5/10 + 2/10 = 7/10"'),
-        "One half is five tenths. One fifth is two tenths. Together: seven tenths.",
-        D('Write "1 ÷ 7/10 = 1 · 10/7 = 10/7"'),
-        "Next layer up: one divided by seven tenths. Multiply by the reciprocal — ten sevenths.",
-        D('Write "10 ÷ 10/7 = 10 · 7/10 = 7" and circle choice 3'),
-        "And the main bar: ten divided by ten sevenths. Ten times seven over ten. The tens cancel — seven. Choice three.",
-        "The traps: stop one floor early and you get ten sevenths. Multiply instead of divide and you get a hundred over seven.",
+        D('Next to the question write "1/2 + 1/3 = 3/6 + 2/6 = 5/6"'),
+        "One half is three sixths. One third is two sixths. Together: five sixths.",
+        D('Write "1 ÷ 5/6 = 1 · 6/5 = 6/5"'),
+        "Next layer up: one divided by five sixths. Multiply by the reciprocal — six fifths.",
+        D('Write "6 ÷ 6/5 = 6 · 5/6 = 5" and circle choice 3'),
+        "And the main bar: six divided by six fifths. Six times five over six. The sixes cancel — five. Choice three.",
+        "The traps: stop one floor early and you get six fifths. Multiply instead of divide and you get thirty-six fifths. Turn the main bar upside down and you get one fifth.",
         "Deepest level first, then climb out floor by floor. Never all the bars at once.",
         "A side tip about the exam: there are no visual traps in the choices. When an answer equals a choice NUMBER — say the answer is three — it sits in slot three."]})
 

@@ -115,3 +115,7 @@ Teacher-approved addition: the sum rule |a + b| ≤ |a| + |b| is now taught as a
 - New practice question **q-r26-t13-14** (after q-384): a, b ≠ 0, |a − b| = |a| + |b| → necessarily a · b < 0. Answer: choice 1.
 - Summary video, slide "The rules": the sum line now says "same signs add, opposite signs cancel" and "read it backwards".
 - Both questions solved by computer (all sign cases / a grid of values): exactly one correct choice each.
+
+
+## 2026-10-04 question = lesson example fixed
+- Lesson "absolute-value" slide 9: example |x + 3| = 8 (same as guided q-359) -> |x + 4| = 6, x = 2 or −10. Question and its video unchanged.

@@ -695,6 +695,7 @@ def apply(M):
         'q-355', 'q-356', 'q-357'])
 
     add_summary(M)
+    dedupe_examples(M)   # 2026-10-04: runs last
 
 
 # ------------------------------------------------------------------ Pass 2: summary video before the practice
@@ -770,3 +771,26 @@ def add_summary(M):
     ]
     last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
     M.new_video('r26-t12-summary', TOPIC, 'Inequalities: Summary', sb, slides, ADV, after=last)
+
+
+# ---------------- 2026-10-04: a question must not be a lesson example the student just watched ----------------
+def _dd_sub(M, vid, n, pairs):
+    """Replace exact text on one slide (board items, spoken lines, draw cues, labels). Every pair must match."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for k in ('say', 'draw', 'label'):
+                if k in l and old in l[k]: l[k] = l[k].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+def dedupe_examples(M):
+    # q-r26-t12-06 was the lesson example -3 < x < 2 of "r26-t12-combining" slide 5 -> new numbers.
+    M.set_q('q-r26-t12-06', stem=r'Given: $-4<x<3$. Which of the following gives all the possible values of $x^2$?',
+            choices=[r'$9<x^2<16$', r'$0\le x^2<16$', r'$0\le x^2<9$', r'$-16<x^2<9$'], correct=2,
+            expl=[r'$0$ is inside the range, so $x^2$ can be $0$ (at $x=0$). That is the smallest value.',
+                  r'The biggest square comes from the end farthest from $0$: when $x$ is close to $-4$, $x^2$ is close to $16$.',
+                  r'Therefore $0\le x^2<16$. Choice (1) is the trap: it only squares the ends.'])

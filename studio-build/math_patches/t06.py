@@ -704,6 +704,7 @@ def apply(M):
     summaries(M)
     new_numbers(M)
     order_changes(M)
+    dedupe_examples(M)   # 2026-10-04: runs last
 
 
 # =====================================================================================
@@ -1123,3 +1124,32 @@ def order_changes(M):
     #     cross-multiply (q-171) -> forbidden answer (q-r26-t06-02, short) -> minus before a fraction (q-r26-t06-01, LCD).
     M.move('q-r26-t06-02', 'single-equation', after='solve-q-171')
     M.move('solve-q-r26-t06-02', 'single-equation', after='q-r26-t06-02')
+
+
+# ---------------- 2026-10-04: a question must not be a lesson example the student just watched ----------------
+def _dd_sub(M, vid, n, pairs):
+    """Replace exact text on one slide (board items, spoken lines, draw cues, labels). Every pair must match."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for k in ('say', 'draw', 'label'):
+                if k in l and old in l[k]: l[k] = l[k].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+def dedupe_examples(M):
+    # alg-extra-unit-t6-2-1 was the lesson example of "systems" slide 6 (2x + 3y = 19, 3x + 2y = 16) -> new numbers.
+    M.set_q('alg-extra-unit-t6-2-1', stem='Given:\n' + r'$\begin{cases} 2x+3y=13 \\ 3x+2y=17 \end{cases}$' + '\n$x = ?$',
+            choices=['$1$', '$5$', '$6$', '$4$'], correct=2,
+            expl=[r'They ask for $x$, so make the $y$ terms cancel: multiply the first equation by $2$ and the second by $3$: $4x+6y=26$ and $9x+6y=51$.',
+                  r'Subtract the first from the second: $5x=25$, therefore $x=5$. The answer is choice 2.',
+                  r'Check: $y=1$ ($2\cdot5+3=13$ ✓, $3\cdot5+2=17$ ✓). Choice 1 is $y$, not $x$.'])
+    # alg-extra-unit-t6-1-6 was the lesson example x(x - 5) = 0 of "linear-equations" slide 10 -> new numbers.
+    M.set_q('alg-extra-unit-t6-1-6', stem='Given: $x(x+4)=0$\nWhat is the sum of all the solutions of the equation?',
+            choices=['$-4$', '$0$', '$4$', '$-8$'], correct=1,
+            expl=[r'A product is $0$ when one of the factors is $0$: $x=0$ or $x+4=0$.',
+                  r'So $x=0$ or $x=-4$. The sum is $0+(-4)=-4$.',
+                  r'The traps: the factor is $x+4$, but the solution is $-4$ (choice 3 forgets the sign). And dividing by $x$ loses the solution $x=0$.'])

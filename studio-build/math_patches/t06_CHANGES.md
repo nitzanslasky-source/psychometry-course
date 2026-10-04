@@ -156,3 +156,8 @@ Check: `python3 math_check.py 6 32` → 0 problems, 0 warnings, 0 layout problem
 ## 2026-10-02 review
 - Fixed q-169: (12x+8)/4 = (6x+4)/2 is true for every x, so the old number choices 0, 2 and 4 were also correct. The stem is now "Which of the following statements is true?". The choices are: only x = 0 / only x = 2 / no value of x / every value of x (key 4). A trap line was added to the solution.
 - Checked with no changes needed: the guided questions q-171, q-r26-t06-02, q-r26-t06-01, q-164 and q-165 (Hebrew methods plus a second method each, all re-solved), all the lesson examples, the order changes, and more than 25 practice questions. q-157 (a+b = 9 with no whole-number a and b) is fine as an expression question, and the Hebrew/study-guide version had the same property.
+
+
+## 2026-10-04 question = lesson example fixed
+- alg-extra-unit-t6-2-1 was the system of "systems" slide 6 -> now 2x + 3y = 13, 3x + 2y = 17; x = 5 (choice 2). The solution makes the y terms cancel, as the lesson advises.
+- alg-extra-unit-t6-1-6 was x(x − 5) = 0 of "linear-equations" slide 10 -> now x(x + 4) = 0; sum of solutions −4 (choice 1).

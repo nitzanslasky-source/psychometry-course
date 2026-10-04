@@ -937,6 +937,7 @@ def apply(M):
     summary(M)
     new_numbers(M)
     order_changes(M)
+    dedupe_examples(M)   # 2026-10-04: runs last
 
 
 # ---------------------------------------------------------------- 7. pass 2: summary video before the practice
@@ -1830,3 +1831,62 @@ def order_changes(M):
     if not RECORDED & {'q-186', 'q-187'}:
         sec = M.section_of('q-186')
         M.move('q-187', sec, before='q-186'); M.move('solve-q-187', sec, after='q-187')
+
+
+# ---------------- 2026-10-04: a question must not be a lesson example the student just watched ----------------
+def _dd_sub(M, vid, n, pairs):
+    """Replace exact text on one slide (board items, spoken lines, draw cues, labels). Every pair must match."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for k in ('say', 'draw', 'label'):
+                if k in l and old in l[k]: l[k] = l[k].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+def dedupe_examples(M):
+    # 1) Lesson "r26-t07-more-tools" slide 3 used x + 1/x = 3, the same as q-r26-t04-04 (solution video RECORDED) and
+    #    q-r26-t07-02. The lesson example becomes x + 1/x = 5, the topic-7 question x + 1/x = 6 (q-r26-t04-10 uses 4).
+    _dd_sub(M, 'r26-t07-more-tools', 3, [
+        (r'$x+\frac{1}{x}=3 \;\to\; 9=x^2+\frac{1}{x^2}+2 \;\to\; x^2+\frac{1}{x^2}=7$',
+         r'$x+\frac{1}{x}=5 \;\to\; 25=x^2+\frac{1}{x^2}+2 \;\to\; x^2+\frac{1}{x^2}=23$'),
+        ('Example x + 1/x = 3 appears', 'Example x + 1/x = 5 appears'),
+        ('Example: x plus one over x is three. Square both sides: nine. Take away two: x squared plus one over x squared is seven.',
+         'Example: x plus one over x is five. Square both sides: twenty-five. Take away two: x squared plus one over x squared is twenty-three.')])
+    M.set_q('q-r26-t07-02', stem=r'Given: $x + \frac{1}{x} = 6$.' + '\n' + r'$x^2 + \frac{1}{x^2} = ?$',
+            choices=['$36$', '$34$', '$38$', '$32$'], correct=2,
+            expl=[r'Square both sides: $\left(x + \frac{1}{x}\right)^2 = 36$.',
+                  r'Expand: $x^2 + 2 \cdot x \cdot \frac{1}{x} + \frac{1}{x^2} = x^2 + 2 + \frac{1}{x^2}$. The middle term is just $2$.',
+                  r'Therefore $x^2 + \frac{1}{x^2} + 2 = 36$, and $x^2 + \frac{1}{x^2} = 34$.'])
+    _dd_sub(M, 'solve-q-r26-t07-02', 2, [
+        ('Write "(x + 1/x)² = 3² = 9"', 'Write "(x + 1/x)² = 6² = 36"'),
+        ('x plus one over x, squared — nine.', 'x plus one over x, squared — thirty-six.'),
+        ('Write "x² + 2 · x · (1/x) + 1/x² = 9"', 'Write "x² + 2 · x · (1/x) + 1/x² = 36"'),
+        ('Write "x² + 2 + 1/x² = 9 → x² + 1/x² = 7"', 'Write "x² + 2 + 1/x² = 36 → x² + 1/x² = 34"'),
+        ('Take away two: seven.', 'Take away two: thirty-four.'),
+        ('That gives nine — choice one.', 'That gives thirty-six — choice one.')])
+    # 2) Lesson "r26-t07-quadratic" slide 6 solved (x + 1)² = (x − 3)², the same as guided q-r26-t07-05 -> new lesson example.
+    _dd_sub(M, 'r26-t07-quadratic', 6, [
+        ('$(x+1)^2=(x-3)^2$', '$(x+3)^2=(x-1)^2$'),
+        ('The example (x + 1)² = (x − 3)² appears', 'The example (x + 3)² = (x − 1)² appears'),
+        ('Example: x plus one, squared, equals x minus three, squared.', 'Example: x plus three, squared, equals x minus one, squared.'),
+        ('Write "x + 1 = x − 3 → 1 = −3 ✗"', 'Write "x + 3 = x − 1 → 3 = −1 ✗"'),
+        ('Case one: x plus one equals x minus three. That says one equals negative three — impossible.',
+         'Case one: x plus three equals x minus one. That says three equals negative one — impossible.'),
+        ('Write "x + 1 = −(x − 3) → 2x = 2 → x = 1 ✓"', 'Write "x + 3 = −(x − 1) → 2x = −2 → x = −1 ✓"'),
+        ('Case two: x plus one equals minus x plus three. Two x equals two — x is one.',
+         'Case two: x plus three equals minus x plus one. Two x equals negative two — x is negative one.')])
+    # 3) q-r26-t07-10 was the lesson example (x² − 9)/(x − 3) = 0 of "r26-t07-quadratic" slide 8 -> new numbers.
+    M.set_q('q-r26-t07-10', stem=r'Given: $\frac{x^2 - 36}{x - 6} = 0$. $x = ?$',
+            choices=['$6$', '$-6$', '$6$ or $-6$', 'No number satisfies the equation.'], correct=2,
+            expl=[r'The numerator must be $0$: $x^2 = 36$. Therefore $x = 6$ or $x = -6$.',
+                  r'The denominator cannot be $0$: $x \ne 6$.',
+                  r'Therefore $x = -6$ only. Check: $\frac{36 - 36}{-6 - 6} = \frac{0}{-12} = 0$ ✓.'])
+    # 4) q-r26-t07-15 was the lesson example xy = 12, yz = 6 of "r26-t07-more-tools" slide 2 -> new numbers.
+    M.set_q('q-r26-t07-15', stem='Given:\n' + r'$\begin{cases} xy = 24 \\ yz = 8 \end{cases}$' + '\n' + r'$\frac{x}{z} = ?$',
+            choices=['$3$', r'$\frac{1}{3}$', '$16$', '$192$'], correct=1,
+            expl=[r'Divide the first equation by the second: $\frac{xy}{yz} = \frac{24}{8}$.',
+                  r'The $y$ cancels ($y \ne 0$, since $xy = 24$): $\frac{x}{z} = 3$.'])

@@ -92,3 +92,11 @@ Goal: the English topic is clearly not a copy of the Hebrew course. Every method
 - Fixed q-179: the Hebrew has only ONE choice > 1. In the new version, 9 also passed the "x/w > 1" test. Choice 4 is now 1/9, so the brainwave removes choices 1, 3 and 4 and leaves choice 2, as in the Hebrew. The solution and video slide 4 were updated.
 - Judged and kept: q-187 ("square of the difference = sum of the squares"). It has the same message: translate the words, expand a multiplication formula, get 2ab = 0, so one number is 0. It is still medium, with the same choices and the same key idea. Also kept: q-175 (now a < b). It is a variant practice item and the skill is unchanged. Its guided twin q-194 keeps the b < a direction, so both directions are practiced.
 - Checked with no changes needed: all the theory and advanced A/B guided questions against the Hebrew levels and methods (estimation in q-184, three negatives and "mark the fourth" in q-190, the three methods in q-178, and the distinct plug-in values in q-180 and q-181), the lesson back-references (Questions 6, 14, 15, 16–18), and about 30 practice questions.
+
+
+## 2026-10-04 question = lesson example fixed
+- Lesson "r26-t07-more-tools" slide 3: the example x + 1/x = 3 (same as q-r26-t04-04, whose video is recorded, and q-r26-t07-02) -> x + 1/x = 5, so x² + 1/x² = 23 (board, spoken line, label).
+- q-r26-t07-02 -> x + 1/x = 6, answer 34 (choice 2); choices 36, 34, 38, 32; solution video "solve-q-r26-t07-02" updated (board, words, draw cues).
+- Lesson "r26-t07-quadratic" slide 6: the example (x + 1)² = (x − 3)² (same as guided q-r26-t07-05) -> (x + 3)² = (x − 1)², x = −1. Question and its video unchanged.
+- q-r26-t07-10 was (x² − 9)/(x − 3) = 0 of the same lesson, slide 8 -> (x² − 36)/(x − 6) = 0, x = −6 (choice 2).
+- q-r26-t07-15 was xy = 12, yz = 6 of "r26-t07-more-tools" slide 2 -> xy = 24, yz = 8, x/z = 3 (choice 1).

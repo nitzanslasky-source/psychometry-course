@@ -140,3 +140,9 @@ Both practice sections are now ordered from easy to hard. q-284 and q-287 come l
 before the practice sections (both practice sections follow one after the other, so there is one summary). Slides:
 Summary · Dividing roots · Same prime base · Adding roots · Power equations · Root equations · Don't divide by x ·
 Sums of powers · Common factor · Before you practice.
+
+
+## 2026-10-04 question = lesson example fixed
+- q-262 was √18, worked on the board in "powers-techniques" slide 6 -> √28 = 2√7 (choice 2).
+- q-r26-t10-06 was 3^x + 3^x + 3^x of "r26-t10-power-traps" slide 2 -> five copies of 5^x = 5^(x+1) (choice 3).
+- q-r26-t10-09 was √(x + 12) = x of "r26-t09-summary" slide 10 -> √(x + 30) = x, x = 6 (choice 2); −5 is the fake solution.

@@ -131,3 +131,8 @@ Topics 8–10 now teach sums of powers, comparing powers, bases between 0 and 1,
 **Summary video (new):** `r26-t11-summary`, "Advanced Exponents & Roots: Summary". It is at the end of Section B, after the memory card and right before the practice. Slides: Summary · Translate first · Hidden formulas · Root of a root · Undo a power · Conjugates · Product = 0 · Power = 1 and "or" · Two routes · Before you practice. About 3 minutes.
 
 Check: `python3 math_check.py 11` gives 0 problems, 0 warnings and 0 layout problems. The same is true for `11 12` together.
+
+
+## 2026-10-04 question = lesson example fixed
+- Lesson "r26-t11-tools" slide 3: example x^(−1/2) = 4 (same as guided q-301) -> x^(−1/2) = 3, x = 1/9.
+- Lesson "r26-t11-tools" slide 5: example √x(√x − 3) = 0 (same as guided q-299) -> √x(√x − 2) = 0, x = 0 or 4. Questions and their videos unchanged.

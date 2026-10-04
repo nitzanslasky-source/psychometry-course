@@ -190,3 +190,8 @@ Finishes the removal of the Topic 4 trinomial lesson (teacher-approved; 0 of 760
 - **Card mem-r26-t05-expressions** ("Pick your method"): "A square, sum × difference or $x^2+bx+c$ → Factor (Topic 4)" split into
   "A square or sum × difference → Factor (Topic 4)" and "$x^2+bx+c$ and factored choices → Check with a number, or sum and product".
 - Topic 5 videos: 37.5 → 36.1 min (1.4 min saved).
+
+## 2026-10-04 q-135 new numbers (it duplicated the recorded lesson example)
+- Guided question q-135 was $\dfrac{10}{\dfrac{1}{\frac{1}{2}+\frac{1}{5}}}$ = 7, the same as the example on the recorded "The main fraction bar" slide of expression-strategy. The lesson stays as recorded.
+- New q-135: $\dfrac{6}{\dfrac{1}{\frac{1}{2}+\frac{1}{3}}}=\ ?$ = 5 (choice 3). Choices: 1/5 (main bar upside down), 6/5 (stopped one layer early), 5, 36/5 (multiplied instead of divided / forgot to flip).
+- Solution video solve-q-135 redone with the new numbers (same steps, same traps talk, same exam tip). solve-q-136 and the lesson are unchanged.

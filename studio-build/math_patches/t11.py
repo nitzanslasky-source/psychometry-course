@@ -547,6 +547,7 @@ def apply(M):
         'q-r26-t11-08', 'q-r26-t11-09', 'q-r26-t11-11'])
 
     add_summary(M)
+    dedupe_examples(M)   # 2026-10-04: runs last
 
 
 # ------------------------------------------------------------------ Pass 2: summary video before the practice
@@ -620,3 +621,37 @@ def add_summary(M):
     ]
     last = [f['ref'] for f in M.D['flow'] if f['section'] == 'power-b'][-1]
     M.new_video('r26-t11-summary', TOPIC, 'Advanced Exponents & Roots: Summary', sb, slides, 'power-b', after=last)
+
+
+# ---------------- 2026-10-04: a question must not be a lesson example the student just watched ----------------
+def _dd_sub(M, vid, n, pairs):
+    """Replace exact text on one slide (board items, spoken lines, draw cues, labels). Every pair must match."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for k in ('say', 'draw', 'label'):
+                if k in l and old in l[k]: l[k] = l[k].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+def dedupe_examples(M):
+    # Lesson "r26-t11-tools" slide 3 solved x^(-1/2) = 4, the same as guided q-301 -> new lesson example x^(-1/2) = 3
+    # (the summary already uses 5).
+    _dd_sub(M, 'r26-t11-tools', 3, [
+        (r'$x^{-\frac12}=4$', r'$x^{-\frac12}=3$'),
+        ('x^(−1/2) = 4 appears', 'x^(−1/2) = 3 appears'),
+        ('Write "(x^(−1/2))^(−2) = 4^(−2)  →  x = 1/16"', 'Write "(x^(−1/2))^(−2) = 3^(−2)  →  x = 1/9"'),
+        ('So x is four to the minus two: one sixteenth.', 'So x is three to the minus two: one ninth.'),
+        ('Write "check: (1/16)^(−1/2) = 16^(1/2) = 4 ✓"', 'Write "check: (1/9)^(−1/2) = 9^(1/2) = 3 ✓"'),
+        ('Check it: the minus flips one sixteenth to sixteen. Sixteen to the half: four. It works.',
+         'Check it: the minus flips one ninth to nine. Nine to the half: three. It works.')])
+    # Lesson "r26-t11-tools" slide 5 solved sqrt(x)(sqrt(x) − 3) = 0, the same as guided q-299 -> new lesson example
+    # (the summary already uses sqrt(x) − 5).
+    _dd_sub(M, 'r26-t11-tools', 5, [
+        (r'$\sqrt{x}\cdot(\sqrt{x}-3)=0$', r'$\sqrt{x}\cdot(\sqrt{x}-2)=0$'),
+        ('√x(√x − 3) = 0 appears', '√x(√x − 2) = 0 appears'),
+        ('Write "√x = 0 → x = 0" and "√x = 3 → x = 9"', 'Write "√x = 0 → x = 0" and "√x = 2 → x = 4"'),
+        ('Root x is zero, or root x is three. So x is zero or nine.', 'Root x is zero, or root x is two. So x is zero or four.')])

@@ -108,3 +108,8 @@ Where they sit: Q1 before q-235, Q2 after q-244, Q3 before q-247, and Q4–Q6 af
 **New: summary lesson** `r26-t09-summary` "Roots — Summary" (about 3.5 min), right before "Extra independent root
 practice". Slides: Summary · What a root is · Simplify roots · Multiply & divide · Roots as powers · Not for sums ·
 Comparing roots · Between 0 and 1 · Conjugates · Root equations · Before you practice.
+
+
+## 2026-10-04 question = lesson example fixed
+- alg-extra-root-practice-2 was √72 of "roots" slide 4 -> √45 = 3√5 (choice 3).
+- alg-extra-root-practice-7 was √70 of "r26-t09-traps" slide 3 -> √55, between 7 and 8 (choice 3).

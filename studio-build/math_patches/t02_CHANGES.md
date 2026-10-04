@@ -75,3 +75,8 @@ Check: `python3 math_check.py 2`. PROBLEMS 0, WARNINGS 0, LAYOUT 0 (62 slides). 
 - q-018 ($200\div 6=33\frac{1}{3}$) arrives from Topic 1 (moved by t01.py) and is ordered after q-044 (mixed numbers).
 
 **Summary lesson (1 new video):** `r26-t02-summary` "Summary", at the end of "4 · Decimal fractions", right before "Mixed fraction practice". Slides: Summary · What a fraction is · Same value · Multiplying · Dividing · Adding & subtracting · Several operations · Shortcuts · Decimals · Before you practice (about 2.6 min). Only content the Topic 2 lessons teach.
+
+
+## 2026-10-04 question = lesson example fixed
+- alg-extra-unit-t2-1-2 was the example 5/6 − 1/4 of "fraction-add" (recorded) -> now 3/4 − 1/6 = 7/12 (choice 1); new distractors 1/6, 2/3, 1/5.
+- q-069 was the example 4 2/3 − 2 1/4 of "r26-t02-shortcuts" (recorded) -> now 5 3/4 − 2 1/3 = 3 5/12 (choice 1); solution also shows the whole-parts shortcut.

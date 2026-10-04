@@ -1119,3 +1119,26 @@ def apply(M):
     add_summary(M)
     hebrew_check(M)
     new_numbers(M)
+    dedupe_examples(M)   # 2026-10-04: runs last
+
+
+# ---------------- 2026-10-04: a question must not be a lesson example the student just watched ----------------
+def _dd_sub(M, vid, n, pairs):
+    """Replace exact text on one slide (board items, spoken lines, draw cues, labels). Every pair must match."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for k in ('say', 'draw', 'label'):
+                if k in l and old in l[k]: l[k] = l[k].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+def dedupe_examples(M):
+    # alg-extra-unit-t3-1-4 was the lesson example 3/sqrt10 vs 2/sqrt5 of "compare-fractions" (RECORDED) -> new numbers.
+    M.set_q('alg-extra-unit-t3-1-4', stem=r'Which is greater: $\frac{3}{\sqrt{6}}$ or $\frac{2}{\sqrt{3}}$?',
+            expl=['Both numbers are positive. Therefore we can square them and keep the order.',
+                  r'$\left(\frac{3}{\sqrt{6}}\right)^2=\frac{9}{6}$ and $\left(\frac{2}{\sqrt{3}}\right)^2=\frac{4}{3}=\frac{8}{6}$.',
+                  r'$\frac{9}{6}>\frac{8}{6}$, therefore $\frac{3}{\sqrt{6}}>\frac{2}{\sqrt{3}}$. The first expression is greater. Choice 2.'])

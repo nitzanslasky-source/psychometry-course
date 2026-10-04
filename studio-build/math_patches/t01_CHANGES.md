@@ -73,3 +73,7 @@ Sidebars were updated for all three lessons that got new slides.
 - `r26-t01-summary` "Summary", at the end of "4 · Order of operations", right before "Mixed arithmetic practice". Slides: Summary · Number words · Opposites · reciprocals · Exam words · Must · could · cannot · Adding signed numbers · Multiplying signs · Calculating by hand · Order of operations · Before you practice (about 2.5 min).
 - `r26-t01-summary-fast` "Summary: Fast Calculation", at the end of "6 · Fast calculation", right before "Fast-calculation practice". Slides: Summary · Sums and differences · Split a factor · Double, halve, ×25 · Near a round number · Pairs and cancelling · Special products · Percent and estimates · Before you practice (about 2 min).
 - Content is only what the Topic 1 lessons teach; the existing recap slides are unchanged.
+
+
+## 2026-10-04 question = lesson example fixed
+- q-r26-t01-14 was the same as the fraction-bar example in "order-of-operations" (recorded): (20 + 8)/4 -> now (24 + 8)/4; answer 24/4 + 8/4 (choice 2).

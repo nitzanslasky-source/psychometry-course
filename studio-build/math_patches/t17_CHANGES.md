@@ -89,3 +89,7 @@ The old Q9 video no longer says "That's the number line done". The sidebars of t
 - New video `r26-t17-summary` "The Number Line: Summary" (about 3.5 minutes). It is the last item of "The number line · advanced study", right before the independent practice (this topic has one practice section, so one summary).
 - Slides: Summary · Four ranges · Multiply & divide · Hierarchy · Exceptions first · The arrows · Reciprocals · Test numbers · Must or could? · Distance & midpoint · Before you practice.
 - Content comes only from the two lessons and "Reading the Number Line". The final slide has these checks: which range, are the borders allowed · any exceptions · positive or negative (mirror, flip for times a negative) · necessarily or could. It also lists the common traps.
+
+
+## 2026-10-04 question = lesson example fixed
+- Lesson "r26-t17-reading-the-line" slide 5 broke "r + q < s + p" for 0 < p < q < 1 < r < s - the answer of guided q-496 -> now 0 < a < b < 1 < c < d, "is d − c < b − a?", broken by a = 0.4, b = 0.5, c = 1.1, d = 3.

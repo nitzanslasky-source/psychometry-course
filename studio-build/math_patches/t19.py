@@ -732,6 +732,7 @@ def apply(M):
     elite_property_practice(M)
     summary(M)
     elite_property_summary(M)
+    dedupe_examples(M)   # 2026-10-04: runs last
 
 
 def _b(label, tex, size=44):
@@ -970,3 +971,31 @@ def elite_property_summary(M):
     M.set_sidebar(V, sb)
     for n in range(2, len(M.video(V)['beats']) + 1):
         M.slide(V, n)['active'] = n - 2
+
+
+# ---------------- 2026-10-04: a question must not be a lesson example the student just watched ----------------
+def _dd_sub(M, vid, n, pairs):
+    """Replace exact text on one slide (board items, spoken lines, draw cues, labels). Every pair must match."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for k in ('say', 'draw', 'label'):
+                if k in l and old in l[k]: l[k] = l[k].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+def dedupe_examples(M):
+    # Lesson "new-operation" slide 5 worked out ◆(x + 1) for ◆(x) = x² − 2x, the same as guided q-r26-t19-01
+    # -> the lesson now puts in x + 2 (same definition, same trap).
+    _dd_sub(M, 'new-operation', 5, [
+        (r'$\blacklozenge(x+1)$', r'$\blacklozenge(x+2)$'),
+        ('◆(x + 1) appears', '◆(x + 2) appears'),
+        ('Next to it write "= (x + 1)² − 2(x + 1)"', 'Next to it write "= (x + 2)² − 2(x + 2)"'),
+        ('Now the input is x plus one.', 'Now the input is x plus two.'),
+        ('Below write "= x² + 2x + 1 − 2x − 2 = x² − 1"', 'Below write "= x² + 4x + 4 − 2x − 4 = x² + 2x"'),
+        ('Open the brackets: x squared plus two x plus one, minus two x, minus two. x squared minus one.',
+         'Open the brackets: x squared plus four x plus four, minus two x, minus four. x squared plus two x.'),
+        ('Next to it write "x + 1² − 2x + 1" and cross it out', 'Next to it write "x + 2² − 2x + 2" and cross it out')])

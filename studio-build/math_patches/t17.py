@@ -730,6 +730,7 @@ def apply(M):
         P[3], P[4], 'q-504',
         'q-508', 'q-509', P[2], P[0], 'q-507', P[7], P[5], 'q-510', 'q-511', P[1], P[8], P[9], P[6]])
     summary(M)
+    dedupe_examples(M)   # 2026-10-04: runs last
 
 
 # =========================================================================================
@@ -831,3 +832,28 @@ def summary(M):
     last = [f['ref'] for f in M.D['flow'] if f['section'] == sec][-1]
     v = M.new_video('r26-t17-summary', TOPIC, 'The Number Line: Summary', sb, slides, sec, after=last)
     v['hybrid']['num'] = M.video(L2)['hybrid']['num']
+
+
+# ---------------- 2026-10-04: a question must not be a lesson example the student just watched ----------------
+def _dd_sub(M, vid, n, pairs):
+    """Replace exact text on one slide (board items, spoken lines, draw cues, labels). Every pair must match."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for k in ('say', 'draw', 'label'):
+                if k in l and old in l[k]: l[k] = l[k].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+def dedupe_examples(M):
+    # Lesson "r26-t17-reading-the-line" slide 5 broke "r + q < s + p" for 0 < p < q < 1 < r < s - exactly the answer of
+    # guided q-496 -> new lesson example with other letters and another claim.
+    _dd_sub(M, 'r26-t17-reading-the-line', 5, [
+        ('$0<p<q<1<r<s$:  is $r+q<s+p$?', '$0<a<b<1<c<d$:  is $d-c<b-a$?'),
+        ('0 < p < q < 1 < r < s: r + q < s + p? appears', '0 < a < b < 1 < c < d: d − c < b − a? appears'),
+        ('Write "p = 0.1, q = 0.9, r = 1.1, s = 1.2 → 2 > 1.3 ✗"', 'Write "a = 0.4, b = 0.5, c = 1.1, d = 3 → 1.9 > 0.1 ✗"'),
+        ("p very small, q almost one, r and s close together. The claim breaks. So it's not necessarily true.",
+         "a and b almost equal, d far to the right of c. Then d minus c is big, and b minus a is tiny. The claim breaks. So it's not necessarily true.")])

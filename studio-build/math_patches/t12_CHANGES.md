@@ -115,3 +115,7 @@ I solved every new and changed question from scratch. Each has exactly one corre
 **Summary video (new):** `r26-t12-summary`, "Inequalities: Summary". It is at the end of the advanced section, after the "Inequality traps" card and right before the practice. Slides: Summary · Same moves · x disappears · Systems · x² inequalities · Test the choices · Signs and fractions · Combining ranges · Must, could, cannot · Before you practice. About 3 minutes.
 
 Check: `python3 math_check.py 12` gives 0 problems, 0 warnings and 0 layout problems. The same is true for `11 12` together.
+
+
+## 2026-10-04 question = lesson example fixed
+- q-r26-t12-06 was −3 < x < 2 of "r26-t12-combining" slide 5 -> −4 < x < 3, so 0 ≤ x² < 16 (choice 2).

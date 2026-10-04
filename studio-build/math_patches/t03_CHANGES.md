@@ -209,3 +209,7 @@ the whole fractions unit before the mixed practice, not the basics (those are in
   invite · legal values with letters.
 
 Check: `python3 math_check.py 3 32` → PROBLEMS 0, WARNINGS 0, LAYOUT problems 0. Rendered `tmp_check/fracsum.png`.
+
+
+## 2026-10-04 question = lesson example fixed
+- alg-extra-unit-t3-1-4 was the example 3/√10 vs 2/√5 of "compare-fractions" (recorded) -> now 3/√6 vs 2/√3 (squares 9/6 > 8/6); answer still choice 2, the first.

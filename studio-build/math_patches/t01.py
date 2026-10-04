@@ -919,6 +919,7 @@ def apply(M):
     # 12. Pass 2: summary lessons right before each practice section
     # ============================================================================================================
     summaries(M)
+    dedupe_examples(M)   # 2026-10-04: runs last
 
 
 def _last_item(M, section):
@@ -1065,3 +1066,26 @@ def summaries(M):
             'The traps: shifting a sum the wrong way, cancelling across a plus, and using the centre trick with unequal gaps.',
             'Nothing looks easier? A clean written calculation is a great answer too.'])],
         'fast-calculation', after=_last_item(M, 'fast-calculation'))
+
+
+# ---------------- 2026-10-04: a question must not be a lesson example the student just watched ----------------
+def _dd_sub(M, vid, n, pairs):
+    """Replace exact text on one slide (board items, spoken lines, draw cues, labels). Every pair must match."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for k in ('say', 'draw', 'label'):
+                if k in l and old in l[k]: l[k] = l[k].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+def dedupe_examples(M):
+    # q-r26-t01-14 was the lesson example (20 + 8)/4 of "order-of-operations" (RECORDED) -> new numbers in the question.
+    M.set_q('q-r26-t01-14', stem=r'Which of the following is equal to $\frac{24+8}{4}$?',
+            choices=[r'$\frac{24}{4}+8$', r'$\frac{24}{4}+\frac{8}{4}$', r'$24+\frac{8}{4}$', r'$\frac{24}{2}+\frac{8}{2}$'], correct=2,
+            expl=['A numerator may be split: every part of the top is divided by the whole bottom.',
+                  r'$\frac{24+8}{4}=\frac{24}{4}+\frac{8}{4}=6+2=8$. Check: $\frac{32}{4}=8$.',
+                  r'The other choices give $6+8=14$, $24+2=26$ and $12+4=16$.'])

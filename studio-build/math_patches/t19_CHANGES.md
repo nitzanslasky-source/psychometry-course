@@ -102,3 +102,8 @@ Teacher-approved addition: **property questions** — the question gives a prope
 - New practice **q-r26-t19-20** (after -19): inverse of ◆(x) = √x + 4 → choice 2 ((y − 4)²); trap y² − 4 (wrong order).
 - Summary video: new slide "Property questions" after "Missing pieces"; sidebar updated.
 - All three questions solved by computer: exactly one correct choice each.
+
+
+## 2026-10-04 question = lesson example fixed
+- Lesson "new-operation" slide 5 worked out ◆(x + 1) for ◆(x) = x² − 2x (same as guided q-r26-t19-01) -> the lesson now does ◆(x + 2) = x² + 2x (same trap). Question and its video unchanged.
+- Checked and left: q-545 and q-542 share a definition with a lesson but ask a different question.

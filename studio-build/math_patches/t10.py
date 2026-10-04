@@ -589,3 +589,37 @@ def apply(M):
         'q-r26-t10-12', 'q-r26-t10-16', 'q-284', 'q-287'])
 
     summary(M)
+    dedupe_examples(M)   # 2026-10-04: runs last
+
+
+# ---------------- 2026-10-04: a question must not be a lesson example the student just watched ----------------
+def _dd_sub(M, vid, n, pairs):
+    """Replace exact text on one slide (board items, spoken lines, draw cues, labels). Every pair must match."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for k in ('say', 'draw', 'label'):
+                if k in l and old in l[k]: l[k] = l[k].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+def dedupe_examples(M):
+    # q-262 (sqrt18) was worked on the board in "powers-techniques" slide 6 -> new numbers.
+    M.set_q('q-262', stem=r'$\sqrt{28} = ?$',
+            choices=[r'$7\,\sqrt{2}$', r'$2\,\sqrt{7}$', r'$4\,\sqrt{7}$', r'$2\,\sqrt{14}$'], correct=2,
+            expl=[r'Pull out the largest square: $28=4\cdot7$, so $\sqrt{28}=\sqrt4\cdot\sqrt7=2\sqrt7$.'])
+    # q-r26-t10-06 was the lesson example 3^x + 3^x + 3^x of "r26-t10-power-traps" slide 2 -> new numbers.
+    M.set_q('q-r26-t10-06', stem=r'$5^x+5^x+5^x+5^x+5^x=?$',
+            choices=[r'$25^x$', r'$5^{5x}$', r'$5^{x+1}$', r'$25^{5x}$'], correct=3,
+            expl=[r'Five equal powers: $5^x+5^x+5^x+5^x+5^x=5\cdot5^x=5^1\cdot5^x=5^{x+1}$.',
+                  r'If you check with a number, avoid $x=1$ (then $25^x=25$ too). With $x=2$: $5\cdot25=125=5^3$, while $25^2=625$.'])
+    # q-r26-t10-09 was the lesson example sqrt(x + 12) = x of "r26-t09-summary" slide 10 -> new numbers
+    # (sqrt(x + 6) = x is q-r26-t09-03 and sqrt(x + 20) = x is in "r26-t10-summary").
+    M.set_q('q-r26-t10-09', stem=r'Given: $\sqrt{x+30}=x$. $x=?$',
+            choices=['$-5$', '$6$', '$-5$ or $6$', '$5$'], correct=2,
+            expl=[r'Square both sides: $x+30=x^2$, so $x^2-x-30=0$ and $(x-6)(x+5)=0$: $x=6$ or $x=-5$.',
+                  r'Check: $x=6$: $\sqrt{36}=6$ ✓. $x=-5$: $\sqrt{25}=5\ne-5$ ✗ (fake solution).',
+                  r'Only $x=6$. Trying the choices gives the same result: $5$ fails too ($\sqrt{35}\ne5$).'])

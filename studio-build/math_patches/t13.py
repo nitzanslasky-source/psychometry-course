@@ -767,6 +767,7 @@ def apply(M):
     # 10. Pass 2: summary lesson right before the independent practice
     # =====================================================================================
     summary(M)
+    dedupe_examples(M)   # 2026-10-04: runs last
 
 
 def elite_signs(M):
@@ -977,3 +978,30 @@ def summary(M):
     v = M.new_video('r26-t13-summary', TOPIC, 'Absolute Value — Summary', SUMMARY_SB, slides,
                     SEC2, after='solve-q-370')
     v['hybrid']['num'] = M.video('solve-q-370')['hybrid']['num']
+
+
+# ---------------- 2026-10-04: a question must not be a lesson example the student just watched ----------------
+def _dd_sub(M, vid, n, pairs):
+    """Replace exact text on one slide (board items, spoken lines, draw cues, labels). Every pair must match."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for k in ('say', 'draw', 'label'):
+                if k in l and old in l[k]: l[k] = l[k].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+def dedupe_examples(M):
+    # Lesson "absolute-value" slide 9 solved |x + 3| = 8, the same as guided q-359 -> new lesson example |x + 4| = 6.
+    _dd_sub(M, 'absolute-value', 9, [
+        ('$|x+3|=8$', '$|x+4|=6$'),
+        ('|x + 3| = 8 appears', '|x + 4| = 6 appears'),
+        ('Underneath write two branches: "x + 3 = 8" and "x + 3 = −8"', 'Underneath write two branches: "x + 4 = 6" and "x + 4 = −6"'),
+        ('Why both? Because if x plus three were negative eight, the bars would still turn it into eight.',
+         'Why both? Because if x plus four were negative six, the bars would still turn it into six.'),
+        ('Solve both: "x = 5" and "x = −11"', 'Solve both: "x = 2" and "x = −10"'),
+        ('First case: x is five. Second case: x is negative eleven. Two solutions.',
+         'First case: x is two. Second case: x is negative ten. Two solutions.')])
