@@ -6,7 +6,6 @@ LEARN = 'expression-foundation'
 PRACTICE = 'unit-t4-1'
 LESSON = 'expression-basics'
 FORMULAS = 'r26-t04-formulas'
-TRINOM = 'r26-t04-trinomials'
 
 
 def G(*lines):
@@ -252,97 +251,9 @@ def formulas_video(M, fb):
 
 
 # ======================================================================================================
-# 3. New lesson video: factoring trinomials (sum-product method)
+# 3. (2026-10-04) The lesson video "Factoring Trinomials" (r26-t04-trinomials) was removed with the teacher's approval:
+#    0 of 760 real exam questions need trinomial factoring. The sum-product rule is now one short slide in the summary.
 # ======================================================================================================
-def trinomial_video(M, after):
-    slides = [
-        dict(mode='title', title='Factoring Trinomials', script=[
-            'One more tool, and the exam uses it a lot.',
-            'Expressions like x squared plus five x plus six. Three terms: a trinomial.',
-            'We will turn it into two brackets.',
-        ]),
-        dict(title='Brackets to trinomial', mode='concept', active=0, pre=[], script=[
-            'Start from two brackets. We know how to open them.',
-            A('(x + 2)(x + 3) appears', T(r'$(x+2)(x+3)$', size=64, gap=170)),
-            D('Write "= x² + 3x + 2x + 6 = x² + 5x + 6"'),
-            'x squared, plus three x, plus two x, plus six. x squared plus five x plus six.',
-            D('Under 5x write "2 + 3"; under 6 write "2 · 3"'),
-            'Look where the numbers went. Five is two PLUS three. Six is two TIMES three.',
-            'The middle number is the sum. The last number is the product.',
-            A('The general rule appears', T(r'$(x+p)(x+q)=x^2+(p+q)x+pq$', size=50)),
-            'In general: p plus q in the middle, p times q at the end.',
-        ]),
-        dict(title='Sum and product', mode='concept', active=1, pre=[], script=[
-            'Now backward. Factor x squared plus seven x plus ten.',
-            A('x² + 7x + 10 appears', T(r'$x^2+7x+10$', size=64, gap=230)),
-            'We need two numbers. Their product: ten. Their sum: seven.',
-            D('List the pairs with product 10: "1 · 10 → sum 11", "2 · 5 → sum 7 ✓"'),
-            'Start from the product. One and ten: sum eleven. Two and five: sum seven. Found them.',
-            D('Write "= (x + 2)(x + 5)"'),
-            'Two and five go into the brackets. x plus two, times x plus five.',
-            D('Write "check: x² + 5x + 2x + 10 = x² + 7x + 10 ✓"'),
-            'Check by opening: x squared, plus seven x, plus ten. It works.',
-            'Always start from the product. A product has only a few pairs. A sum has endless pairs.',
-        ]),
-        dict(title='Signs', mode='concept', active=2, pre=[], script=[
-            'What about minus signs? Same method. The signs belong to the numbers.',
-            A('x² − 7x + 12 appears', T(r'$x^2-7x+12$', size=60, gap=150)),
-            'Product: plus twelve. Sum: minus seven.',
-            D('Write "(−3) · (−4) = 12, (−3) + (−4) = −7" and "= (x − 3)(x − 4)"'),
-            'A positive product with a negative sum: both numbers are negative. Minus three and minus four.',
-            A('x² + x − 12 appears', T(r'$x^2+x-12$', size=60, gap=150)),
-            'Now x squared plus x minus twelve. Product: MINUS twelve. Sum: plus one.',
-            D('Write "4 · (−3) = −12, 4 + (−3) = 1" and "= (x + 4)(x − 3)"'),
-            'A negative product: one number is positive, one is negative. Here they differ by one: four and three.',
-            'The sum is plus one. The bigger one gets the plus. Plus four, minus three.',
-        ]),
-        dict(title='Sign rules', mode='concept', active=3, pre=[], script=[
-            'Here are the sign rules in one place.',
-            A('Rule 1 appears', T(r'Last term $+$, middle term $+$: both numbers are $+$', size=38)),
-            A('Rule 2 appears', T(r'Last term $+$, middle term $-$: both numbers are $-$', size=38)),
-            'A positive last term: the two numbers have the same sign. The middle term tells you which sign.',
-            A('Rule 3 appears', T(r'Last term $-$: one number is $+$, one is $-$', size=38)),
-            A('Rule 4 appears', T('The bigger one gets the sign of the middle term', size=38, gap=90)),
-            'A negative last term: different signs. The bigger number takes the sign of the middle term.',
-            A('x² + 5x − 6 appears', T(r'$x^2+5x-6$', size=56)),
-            D('Write "6 · (−1) = −6, 6 + (−1) = 5" and "= (x + 6)(x − 1)"'),
-            'Product minus six, sum plus five. Six and minus one. x plus six, times x minus one.',
-        ]),
-        dict(title='Common factor first', mode='concept', active=4, pre=[], script=[
-            'If x squared has a number in front, look for a common factor first.',
-            A('2x² + 10x + 12 appears', T(r'$2x^2+10x+12$', size=60, gap=150)),
-            D('Write "= 2(x² + 5x + 6) = 2(x + 2)(x + 3)"'),
-            'Two comes out. Inside: product six, sum five. Two and three.',
-            A('The fraction appears', T(r'$\dfrac{x^2+5x+6}{x+2}$', size=60)),
-            'And here is why we factor: to reduce fractions.',
-            D('Rewrite the top as "(x + 2)(x + 3)", cross out (x + 2) on the top and on the bottom, write "= x + 3"'),
-            'The top is x plus two, times x plus three. Reduce x plus two with the bottom. x plus three is left.',
-            'One condition: x is not negative two. The bottom can never be zero.',
-        ]),
-        dict(title='Check with a number', mode='concept', active=5, pre=[], script=[
-            'Not sure about your brackets? Plug in a number.',
-            A('The claim appears', T(r'$x^2+5x+6\ \overset{?}{=}\ (x+1)(x+6)$', size=54, gap=150)),
-            'Say you wrote x plus one, times x plus six. Is it right?',
-            D('Write "x = 0: 6 and 1 · 6 = 6"'),
-            'x equals zero: both sides give six. Looks fine — but zero hides mistakes in the middle term.',
-            D('Write "x = 2: 4 + 10 + 6 = 20, but 3 · 8 = 24 ✗"'),
-            'x equals two: the left side is twenty, the right side is twenty-four. Wrong brackets.',
-            'The product is right, but the sum is seven, not five. Two and three give the right sum.',
-            'So pick a small number, but not zero and not one.',
-        ]),
-        dict(title='Recap', mode='concept', active=6, pre=[], script=[
-            "Let's lock it in.",
-            A('Line 1 appears', T('Two numbers: product = last term, sum = middle term', size=42)),
-            A('Line 2 appears', T('Start from the pairs of the product', size=42)),
-            A('Line 3 appears', T('Signs: same sign if the last term is $+$, different signs if it is $-$', size=42)),
-            A('Line 4 appears', T('Common factor first · factor to reduce · check with a number', size=42)),
-            'Product and sum. That is the whole method.',
-            'Now try the questions.',
-        ]),
-    ]
-    M.new_video(TRINOM, TOPIC, 'Factoring Trinomials',
-                ['Brackets to trinomial', 'Sum and product', 'Signs', 'Sign rules', 'Common factor first',
-                 'Check with a number', 'Recap'], slides, LEARN, after=after)
 
 
 # ======================================================================================================
@@ -368,23 +279,6 @@ def cards(M):
         r'Perfect square? (1) first and last terms are squares, (2) middle term $=2\cdot$first$\cdot$last, (3) its sign goes into the bracket.',
         r'$a\cdot a^3=a^4$: count the factors of $a$ ($1+3=4$).',
     ]
-    M.new_card('mem-r26-t04-trinomials', TOPIC, LEARN, {
-        'title': 'Factoring trinomials',
-        'intro': r'Find two numbers: product = last term, sum = middle term. $x^2+(p+q)x+pq=(x+p)(x+q)$',
-        'tables': [{'title': '', 'head': ['Trinomial', 'Two numbers', 'Factored'], 'rows': [
-            [r'$x^2+5x+6$', r'$2$ and $3$', r'$(x+2)(x+3)$'],
-            [r'$x^2-7x+12$', r'$-3$ and $-4$', r'$(x-3)(x-4)$'],
-            [r'$x^2+x-12$', r'$4$ and $-3$', r'$(x+4)(x-3)$'],
-            [r'$x^2-x-12$', r'$-4$ and $3$', r'$(x-4)(x+3)$'],
-            [r'$2x^2+10x+12$', r'take out $2$ first', r'$2(x+2)(x+3)$'],
-        ]}],
-        'tips': [
-            r'Last term $+$: both numbers have the sign of the middle term. Last term $-$: one $+$, one $-$; the bigger one gets the sign of the middle term.',
-            'Start from the pairs of the product: there are only a few.',
-            r'Check with a number (not $0$ or $1$): $x=2$ in $x^2+5x+6$ gives $20=4\cdot5$.',
-            r'Factor to reduce: $\frac{x^2+5x+6}{x+2}=x+3$ (for $x\ne-2$).',
-        ],
-    }, after=TRINOM)
 
 
 # ======================================================================================================
@@ -412,7 +306,7 @@ def fix_guided(M):
 
 
 # ======================================================================================================
-# 6. New guided questions Q3-Q8
+# 6. New guided questions Q3-Q6 (Q7, Q8 on trinomials removed 2026-10-04)
 # ======================================================================================================
 def Qslide(qid, act, title, script):
     return dict(mode='question', active=act, title=title, pre=[Q(qid)], script=script)
@@ -530,83 +424,18 @@ def guided_new(M):
         ]),
     ]))
 
-    # ---- Q7: factor x² + x − 12
-    q7 = 'q-r26-t04-05'
-    M.new_q(q7, TOPIC, r'Which of the following is equal to $x^2+x-12$?',
-            [r'$(x-4)(x+3)$', r'$(x+4)(x-3)$', r'$(x+6)(x-2)$', r'$(x-6)(x+2)$'], 2,
-            [r'Find two numbers with product $-12$ and sum $+1$.',
-             r'The product is negative: one number is positive and one is negative. Pairs of $12$: $1\cdot12$, $2\cdot6$, $3\cdot4$. Only $3$ and $4$ differ by $1$.',
-             r'The sum is $+1$. Therefore the bigger one is positive: $4$ and $-3$. Therefore $x^2+x-12=(x+4)(x-3)$ (choice 2).',
-             r'Check by opening: $x^2-3x+4x-12=x^2+x-12$. With $x=2$: $4+2-12=-6$ and $6\cdot(-1)=-6$.'])
-    qs.append((q7, 'Sum and product.', [
-        ('Method 1 · Sum and product', [
-            'Two numbers. Product: minus twelve. Sum: plus one.',
-            D('List the pairs of 12: "1 · 12", "2 · 6", "3 · 4"'),
-            'A negative product: one number is plus, one is minus. They must differ by one. Three and four.',
-            D('Write "4 + (−3) = 1 ✓" and "= (x + 4)(x − 3)"'),
-            'The sum is plus one. The bigger one gets the plus. Plus four, minus three.',
-            D('Circle choice 2'),
-            'x plus four, times x minus three. Choice two.',
-            'Choice one has the signs the other way around. That gives minus x in the middle.',
-        ]),
-        ('Method 2 · Plug in', [
-            'Check with a number. Why not zero? Look.',
-            D('Write "x = 0: every choice gives −12"'),
-            'With x equal to zero, all four choices give minus twelve. Zero cannot tell them apart.',
-            D('Write "x = 2: 4 + 2 − 12 = −6"'),
-            'Take x equals two. The expression: four plus two minus twelve. Minus six.',
-            D('Next to the choices write their values: −10, −6, 0, −16'),
-            'Minus two times five: minus ten. Six times minus one: minus six. Eight times zero: zero. Minus four times four: minus sixteen.',
-            D('Circle choice 2'),
-            'Only choice two gives minus six. Choice two.',
-        ]),
-    ]))
-
-    # ---- Q8: (x² − 9)/(x² + x − 6)
-    q8 = 'q-r26-t04-06'
-    M.new_q(q8, TOPIC, r'Given: $x\ne2$ and $x\ne-3$.' + '\n' + r'Which of the following is equal to $\dfrac{x^2-9}{x^2+x-6}$?',
-            [r'$\dfrac{x+3}{x-2}$', r'$\dfrac{x-3}{x+2}$', r'$\dfrac{x-3}{x-2}$', r'$\dfrac{9}{6-x}$'], 3,
-            [r'Factor the top (difference of squares): $x^2-9=(x-3)(x+3)$.',
-             r'Factor the bottom (product $-6$, sum $+1$: the numbers $3$ and $-2$): $x^2+x-6=(x+3)(x-2)$.',
-             r'Reduce the common factor $x+3$: $\frac{(x-3)(x+3)}{(x+3)(x-2)}=\frac{x-3}{x-2}$ (choice 3).',
-             r'Check with $x=4$: $\frac{16-9}{16+4-6}=\frac{7}{14}=\frac{1}{2}$, and $\frac{4-3}{4-2}=\frac{1}{2}$. Choice 4 comes from crossing out $x^2$, which is not allowed: only factors can be reduced.'])
-    qs.append((q8, 'Factor, then reduce.', [
-        ('Method 1 · Factor, then reduce', [
-            'A fraction with plus and minus signs. You cannot reduce anything yet. First factor.',
-            D('Under the top write "(x − 3)(x + 3)"'),
-            'The top: x squared minus nine. Difference of squares. x minus three, times x plus three.',
-            D('Under the bottom write "(x + 3)(x − 2)"'),
-            'The bottom: product minus six, sum plus one. Three and minus two. x plus three, times x minus two.',
-            D('Cross out (x + 3) on the top and on the bottom; write "= (x − 3)/(x − 2)"'),
-            'Now x plus three is a factor on the top and on the bottom. Reduce it. x minus three over x minus two.',
-            D('Circle choice 3'),
-            'Choice three.',
-            'The trap: choice four crosses out x squared. You can never reduce across a plus or a minus. Only factors.',
-        ]),
-        ('Method 2 · Plug in', [
-            'Check with x equals four.',
-            D('Write "(16 − 9)/(16 + 4 − 6) = 7/14 = 1/2"'),
-            'Top: sixteen minus nine, seven. Bottom: sixteen plus four minus six, fourteen. One half.',
-            D('Next to the choices write their values: 7/2, 1/6, 1/2, 9/2'),
-            'Seven over two. One over six. One over two. Nine over two.',
-            D('Circle choice 3'),
-            'Only choice three gives one half. Choice three.',
-        ]),
-    ]))
     return qs
 
 
 def place_guided(M, qs):
     n0 = M.next_question_number(TOPIC)     # 3
-    total = n0 - 1 + len(qs)
-    side = ['Question %d' % k for k in range(1, total + 1)]
+    # The sidebar stays as RECORDED by the teacher (Questions 1-8), although Questions 7-8 (trinomials) were removed
+    # on 2026-10-04: all six remaining guided videos are recorded and must not change.
+    side = ['Question %d' % k for k in range(1, 9)]
     for vid in ('solve-q-120', 'solve-q-121'): M.set_sidebar(vid, side)
     after = 'solve-q-121'
     for k, (qid, intro, parts) in enumerate(qs):
         n = n0 + k
-        if qid == 'q-r26-t04-05':        # Q7, Q8 come after the trinomial lesson
-            trinomial_video(M, after)
-            after = TRINOM
         M.place_q(qid, LEARN, after=after)
         slides = [dict(mode='title', title='Question %d' % n, script=['Question %s.' % ['three', 'four', 'five', 'six', 'seven', 'eight'][n - 3], intro])]
         slides += [Qslide(qid, n - 1, t, s) for t, s in parts]
@@ -687,9 +516,10 @@ def practice(M):
             r'Collect: $3x-2x=x$ and $12-2=10$. The result is $x+10$ (choice 1).'])
     S('alg-extra-unit-t4-1-3', stem=r'Which of the following is equal to $x^2+8x+15$?',
       choices=[r'$(x+2)(x+6)$', r'$(x-3)(x-5)$', r'$(x+1)(x+15)$', r'$(x+3)(x+5)$'],
-      expl=[r'Find two numbers with product $15$ and sum $8$. Pairs of $15$: $1\cdot15$ (sum $16$), $3\cdot5$ (sum $8$).',
-            r'Both are positive, because the last term and the middle term are positive. $x^2+8x+15=(x+3)(x+5)$ (choice 4).',
-            r'Check by opening: $x^2+5x+3x+15=x^2+8x+15$.'])
+      expl=[r'Open the choices. Each one is $(x+p)(x+q)=x^2+(p+q)x+pq$: the middle number is $p+q$, the last number is $pq$. We need $p+q=8$ and $pq=15$.',
+            r'Choice 1: $2+6=8$, but $2\cdot6=12$. Choice 2: $(-3)+(-5)=-8$. Choice 3: $1+15=16$. Choice 4: $3+5=8$ and $3\cdot5=15$. The answer is choice 4: $x^2+8x+15=(x+3)(x+5)$.',
+            r'Check with a number, $x=1$: $1+8+15=24$. The choices give $3\cdot7=21$, $(-2)(-4)=8$, $2\cdot16=32$ and $4\cdot6=24$. Only choice 4 gives $24$.',
+            r'The quick way (sum and product): two numbers with sum $8$ and product $15$ are $3$ and $5$.'])
     S('alg-extra-unit-t4-1-4', stem=r'Given: $x\ne3$.' + '\n' + r'Which of the following is equal to $\frac{x^2-9}{x-3}$?',
       choices=[r'$x$', r'$2x+3$', r'$x+3$', r'$x-3$'],
       expl=[r'Factor the top: $x^2-9=(x-3)(x+3)$.',
@@ -735,22 +565,7 @@ def practice(M):
          [r'$16$', r'$18$', r'$14$', r'$8$'], 3,
          [r'Square both sides: $x^2+2+\frac{1}{x^2}=16$, because $2\cdot x\cdot\frac{1}{x}=2$.',
           r'Therefore $x^2+\frac{1}{x^2}=16-2=14$ (choice 3).']),
-        (11, r'Which of the following is equal to $x^2-2x-15$?',
-         [r'$(x+5)(x-3)$', r'$(x-5)(x+3)$', r'$(x-5)(x-3)$', r'$(x-15)(x+1)$'], 2,
-         [r'Find two numbers with product $-15$ and sum $-2$.',
-          r'A negative product: one number is positive, one is negative. $3$ and $5$ differ by $2$; the bigger one gets the minus: $-5$ and $3$.',
-          r'Therefore $x^2-2x-15=(x-5)(x+3)$ (choice 2). Check: $x^2+3x-5x-15=x^2-2x-15$.']),
-        (12, r'Which of the following is equal to $x^2-7x+12$?',
-         [r'$(x+3)(x+4)$', r'$(x-2)(x-6)$', r'$(x-3)(x-4)$', r'$(x-1)(x-12)$'], 3,
-         [r'Find two numbers with product $12$ and sum $-7$. Positive product, negative sum: both numbers are negative.',
-          r'Pairs of $12$: $1\cdot12$, $2\cdot6$, $3\cdot4$. Only $3+4=7$. The numbers are $-3$ and $-4$.',
-          r'Therefore $x^2-7x+12=(x-3)(x-4)$ (choice 3).']),
-        (13, r'Given: $x\ne2$ and $x\ne-2$.' + '\n' + r'Which of the following is equal to $\dfrac{x^2+x-6}{x^2-4}$?',
-         [r'$\dfrac{x+3}{x+2}$', r'$\dfrac{x-3}{x+2}$', r'$\dfrac{x+3}{x-2}$', r'$\dfrac{6-x}{4}$'], 1,
-         [r'Top: product $-6$, sum $+1$. The numbers are $3$ and $-2$: $x^2+x-6=(x+3)(x-2)$.',
-          r'Bottom: difference of squares: $x^2-4=(x-2)(x+2)$.',
-          r'Reduce $x-2$: $\frac{(x+3)(x-2)}{(x-2)(x+2)}=\frac{x+3}{x+2}$ (choice 1).',
-          r'Check with $x=3$: $\frac{9+3-6}{9-4}=\frac{6}{5}$, and $\frac{3+3}{3+2}=\frac{6}{5}$.']),
+        # (11, 12, 13: trinomial factoring - removed 2026-10-04, teacher-approved)
         (14, r'$(2a+b)^2-(2a-b)^2=?$', [r'$8ab$', r'$4ab$', r'$2b^2$', r'$8a^2$'], 1,
          [r'Expand: $(4a^2+4ab+b^2)-(4a^2-4ab+b^2)=4ab+4ab=8ab$ (choice 1).',
           r'Check with $a=2$, $b=1$: $5^2-3^2=16$, and $8\cdot2\cdot1=16$. The other choices give $8$, $2$ and $32$.']),
@@ -781,8 +596,8 @@ def practice(M):
     order = ['q-100', 'alg-extra-unit-t4-1-1', 'q-102', 'q-103', 'q-104', 'q-101', 'q-105', 'alg-extra-unit-t4-1-2',
              'q-107', 'q-108', 'q-109', 'q-110', 'q-111', 'q-114', 'q-117', 'q-112', 'q-118', 'q-113', 'q-116', 'q-119', 'alg-extra-unit-t4-1-5',
              'alg-extra-unit-t4-1-6', 'alg-extra-unit-t4-1-7', 'alg-extra-unit-t4-1-4', 'q-115', 'q-106',
-             'alg-extra-unit-t4-1-3', N(12), N(11), N(8), N(9), N(7), N(10), N(14), N(19),
-             N(13), N(16), N(15), N(18), N(17)]
+             'alg-extra-unit-t4-1-3', N(8), N(9), N(7), N(10), N(14), N(19),
+             N(16), N(15), N(18), N(17)]
     M.practice_order(PRACTICE, order)
 
 
@@ -847,17 +662,18 @@ def summary(M):
             'Know x plus one over x? Square it, then subtract two.']),
         C(7, 'Trinomials', [
             'Factoring a trinomial: find two numbers.',
-            A('The rule', T('Product = last term · Sum = middle term', size=44)),
-            A('Example', T(r'$x^2+9x+14=(x+2)(x+7)$', size=50)),
-            'Start from the pairs of the product. Two times seven is fourteen, two plus seven is nine.',
-            A('Signs', T(r'$x^2+x-20=(x+5)(x-4)$', size=50)),
-            'Last term negative: one plus, one minus. Take out a common factor first, if there is one.']),
+            A('The rule', T(r'$(x+p)(x+q)=x^2+(p+q)x+pq$', size=48)),
+            'Open two brackets: the sum of the numbers is the middle number, their product is the last number.',
+            A('Example', T(r'$x^2+11x+30=(x+5)(x+6)$', size=50)),
+            'Sum eleven, product thirty: five and six.',
+            A('Or check with a number', T('Or: open the choices and check with a number', size=42)),
+            'Or simply open the choices and check with a number.']),
         C(8, 'Before you practice', [
             'Before you practice, always ask yourself:',
             A('Check 1', T('1. Is there a common factor to take out first?', size=42)),
             A('Check 2', T('2. Do I see one of the three formulas — forward or backward?', size=42)),
             A('Check 3', T('3. Can I find the value without finding x?', size=42)),
-            A('Check 4', T('4. Check with a number: different numbers, not 0 or 1', size=42)),
+            A('Check 4', T('4. Check with a number — avoid 0 and 1 if two choices come out equal', size=42)),
             'And watch the traps: the lost middle term, a minus before a bracket, and the power that comes first.',
             'You know all of this. Go practice.']),
     ]

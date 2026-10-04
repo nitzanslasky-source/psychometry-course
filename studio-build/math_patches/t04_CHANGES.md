@@ -166,3 +166,27 @@ Function `order_changes(M)`, which runs after `new_numbers`. It only reorders th
   - Swapping Q7 and Q8. Q8 needs Q7's factoring.
   - Reordering the practice section. The review already ordered it easy → hard.
   - Moving the correct answer in Q1 and Q2. Today's new numbers already moved it away from the Hebrew position.
+
+## 2026-10-04 trinomial lesson removed
+
+Teacher-approved. 0 of 760 real exam questions need trinomial factoring.
+- **Removed:** the lesson video "Factoring Trinomials" (r26-t04-trinomials, 3.7 min), its memory card (mem-r26-t04-trinomials),
+  guided Questions 7 and 8 (q-r26-t04-05 $x^2+x-12$, q-r26-t04-06 $\frac{x^2-9}{x^2+x-6}$) with their solution videos (1.1 min each),
+  and the practice questions q-r26-t04-11, -12, -13. Topic 4 videos: 27.5 → 21.6 min (5.9 min saved). Practice: 40 → 37 questions.
+- **Recorded videos unchanged** (expression-basics, r26-t04-formulas, solve-q-120, solve-q-121, solve-q-r26-t04-01 … -04, and their
+  questions): byte-identical in the built data. Their sidebar still lists "Question 1 … Question 8", as recorded.
+- **Summary video, slide "Trinomials"** (keeps the Formulas video's promise "the sum-product method comes later in this topic"):
+  board $(x+p)(x+q)=x^2+(p+q)x+pq$ · $x^2+11x+30=(x+5)(x+6)$ · "Or: open the choices and check with a number".
+  Spoken: "Factoring a trinomial: find two numbers." / "Open two brackets: the sum of the numbers is the middle number, their
+  product is the last number." / "Sum eleven, product thirty: five and six." / "Or simply open the choices and check with a number."
+  (The old signs example $x^2+x-20$ was dropped.)
+- **alg-extra-unit-t4-1-3** ($x^2+8x+15$, your question): the written solution now opens the choices first (middle number $p+q$,
+  last number $pq$), then checks with $x=1$, then mentions sum and product as the quick way. Key and choices unchanged.
+
+## 2026-10-04 sum-product leftovers removed
+
+- **Summary video, slide "Before you practice"**: check 4 "Check with a number: different numbers, not 0 or 1" contradicted the
+  teacher's own method ($x=1$). Now: "4. Check with a number — avoid 0 and 1 if two choices come out equal." (board only; no
+  spoken line changed, no time change).
+- Recorded videos (expression-basics, r26-t04-formulas, solve-q-120, solve-q-121, solve-q-r26-t04-01 … -04) and their questions:
+  identical in the built data before and after.

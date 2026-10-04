@@ -197,22 +197,23 @@ def guided_fixes(M):
 
 
 # ---------------------------------------------------------------------------------------------------------------
-# 3. New lesson video + four guided questions (Questions 15-18) + memory card
+# 3. New lesson video + three guided questions (Questions 15-17) + memory card
 # ---------------------------------------------------------------------------------------------------------------
 def shortcuts(M):
     vid = 'r26-t05-shortcuts'
     M.new_video(vid, TOPIC, 'Exam Shortcuts', ['Sum and product', 'Round numbers', 'Given a block', 'Recap'], [
         dict(mode='title', title='Exam Shortcuts', script=[
             "Exam shortcuts — tools strong students use.",
-            "A quick reminder of sum and product. Then multiplying near a round number. And using a block they give you.",
+            "A quick reminder on factoring x squared plus b x plus c. Then multiplying near a round number. And using a block they give you.",
             "Each one turns a long calculation into one line."]),
         dict(title='Sum and product', mode='concept', active=0, pre=[], script=[
-            "First, a reminder from Topic 4: factoring a trinomial with sum and product.",
+            A('Need to factor x² + bx + c? appears', T('Need to factor $x^2+bx+c$? Open the choices and check with a number', size=40)),
+            "Need to factor x squared plus b x plus c? Open the choices and check with a number.",
+            "Or the quick way: two numbers with that sum and product.",
             A('x² + 9x + 20: product 20, sum 9 → 4 and 5 appears', T('$x^2+9x+20$: product $=20$, sum $=9$ → $4$ and $5$', size=44)),
             "x squared plus nine x plus twenty. Two numbers: product twenty, sum nine. Four and five.",
             A('= (x + 4)(x + 5) appears', T('$=(x+4)(x+5)$', size=50)),
-            "x plus four, times x plus five. Signs, common factors first — all as in Topic 4.",
-            "On the exam it often hides inside a fraction. Factor, then cancel. You'll see it in Question 15.",
+            "x plus four, times x plus five. Open the brackets to check: nine x in the middle, twenty at the end.",
         ]),
         dict(title='Round numbers', mode='concept', active=1, pre=[], script=[
             "No calculator on the exam. So look for a round number nearby.",
@@ -239,16 +240,16 @@ def shortcuts(M):
         ]),
         dict(title='Recap', mode='concept', active=3, pre=[], script=[
             "Let's lock it in.",
-            A("'Trinomial? Sum and product' appears", T('Trinomial? Sum and product (Topic 4)', size=42)),
+            A("'x² + bx + c? Check with a number' appears", T('$x^2+bx+c$? Check with a number, or sum and product', size=42)),
             A("'Near a round number' appears", T('Near a round number? $(100-1)\\cdot41$ · $(100-4)(100+4)$', size=40)),
             A("'Given a block? Put in its value' appears", T('Given a block? Find it and put in its value', size=42)),
             A("'Plug in numbers that obey the given' appears", T('Plugging in? Use numbers that obey the given', size=42)),
-            "Four guided questions next — one for each tool, and one plug-in trap. Try each one first.",
+            "Three guided questions next — round numbers, a given block, and one plug-in trap. Try each one first.",
         ]),
     ], ADV, after='solve-q-134')
 
     qn = M.next_question_number(TOPIC)   # 15
-    sb = ['Question %d' % (qn + k) for k in range(4)]
+    sb = ['Question %d' % (qn + k) for k in range(3)]
     prev = vid
 
     def guided(k, qid, stem, choices, correct, expl, intro, slides):
@@ -263,45 +264,16 @@ def shortcuts(M):
         M.video('solve-' + qid)['beats'][0]['title'] = 'Exam Shortcuts'   # like the base videos; keeps renumbering single-pass
         prev = 'solve-' + qid
 
-    # Question 15 - sum and product
-    guided(0, 'q-r26-t05-01', 'Given: $x\\ne5$.\n$\\dfrac{x^2-2x-15}{x-5}-x=\\ ?$',
-           ['$-3$', '$3$', '$5$', '$2x+3$'], 2,
-           ["Factor the top with sum and product: we need two numbers with product $-15$ and sum $-2$. They are $-5$ and $3$, therefore $x^2-2x-15=(x-5)(x+3)$.",
-            "Cancel $x-5$ (not zero, because $x\\ne5$): $\\frac{(x-5)(x+3)}{x-5}=x+3$.",
-            "Then $x+3-x=3$. The answer is choice 2.",
-            "Check with $x=1$: $\\frac{1-2-15}{1-5}-1=\\frac{-16}{-4}-1=4-1=3$ ✓."],
-           ["Question fifteen.", "A trinomial on top — let's factor it with sum and product."], [
-            ('Method 1 · Sum and product', [
-                "The top is x squared minus two x minus fifteen. We need two numbers: product negative fifteen, sum negative two.",
-                D('Next to the top write "product −15, sum −2 → −5 and 3"'),
-                "Negative five and three. Product: negative fifteen. Sum: negative two ✓.",
-                D('Write "x² − 2x − 15 = (x − 5)(x + 3)"'),
-                "So the top is x minus five, times x plus three.",
-                D('Cancel (x − 5) on top and bottom; write "= x + 3"'),
-                "Cancel x minus five. It isn't zero — x isn't five. We're left with x plus three.",
-                D('Write "x + 3 − x = 3" and circle choice 2'),
-                "Now the minus x at the end: x plus three, minus x. Three. Choice two.",
-                "The trap: adding x instead of subtracting it gives two x plus three — choice four."]),
-            ('Method 2 · Plug in', [
-                "Plug-in version. x can't be five. Zero makes the top easy.",
-                D('Write "x = 0: (−15)/(−5) − 0 = 3"'),
-                "Negative fifteen over negative five: three. Minus zero: three.",
-                D('Next to the choices write: −3, 3, 5, 3'),
-                "Choice two gives three. But choice four — two times zero plus three — also gives three. A tie!",
-                D('Cross out choices 1 and 3'),
-                D('Write "x = 1: (1 − 2 − 15)/(1 − 5) − 1 = 4 − 1 = 3"; next to choice 4 write "5"'),
-                "New number, only for the tied choices: x is one. The question: negative sixteen over negative four is four. Minus one — three. Choice four gives five. Out.",
-                D('Circle choice 2'),
-                "Choice two. See why zero can be a lazy number?"]),
-        ])
+    # (2026-10-04) The old Question 15, q-r26-t05-01 (x^2-2x-15 over x-5, sum and product with signs), and its solution
+    # video were removed: they needed the sign rules of the removed Topic 4 trinomial lesson (0 real exam questions).
 
-    # Question 16 - round numbers
-    guided(1, 'q-r26-t05-02', '$98\\cdot102-99\\cdot101=\\ ?$',
+    # Question 15 - round numbers
+    guided(0, 'q-r26-t05-02', '$98\\cdot102-99\\cdot101=\\ ?$',
            ['$-5$', '$-3$', '$3$', '$5$'], 2,
            ["Both products are sum times difference around $100$: $98\\cdot102=(100-2)(100+2)=100^2-4$ and $99\\cdot101=(100-1)(100+1)=100^2-1$.",
             "Therefore the expression is $(100^2-4)-(100^2-1)=-4+1=-3$. The answer is choice 2.",
             "Check: $98\\cdot102=9{,}996$ and $99\\cdot101=9{,}999$; $9{,}996-9{,}999=-3$ ✓."],
-           ["Question sixteen.", "Two big products — and no calculator. Look for a round number."], [
+           ["Question fifteen.", "Two big products — and no calculator. Look for a round number."], [
             ('Sum × difference', [
                 "Ninety-eight and one hundred two: both are two away from one hundred.",
                 D('Under 98 · 102 write "(100 − 2)(100 + 2) = 100² − 4"'),
@@ -315,14 +287,14 @@ def shortcuts(M):
                 "The trap is the minus before the second bracket. Minus, minus one, is PLUS one. Forget it and you land on minus five — choice one."]),
         ])
 
-    # Question 17 - given a block
-    guided(2, 'q-r26-t05-03', 'Given: $a-b=3$.\n$(b-a)^2+2a-2b=\\ ?$',
+    # Question 16 - given a block
+    guided(1, 'q-r26-t05-03', 'Given: $a-b=3$.\n$(b-a)^2+2a-2b=\\ ?$',
            ['$-3$', '$3$', '$9$', '$15$'], 4,
            ["Use the block $a-b$. Since $b-a=-(a-b)=-3$, we get $(b-a)^2=(-3)^2=9$.",
             "$2a-2b=2(a-b)=2\\cdot3=6$.",
             "Therefore the expression equals $9+6=15$. The answer is choice 4.",
             "Check with numbers that obey the given, $a=3$ and $b=0$: $(0-3)^2+6-0=9+6=15$ ✓."],
-           ["Question seventeen.", "They give you a minus b. Don't hunt for a and b — use the block."], [
+           ["Question sixteen.", "They give you a minus b. Don't hunt for a and b — use the block."], [
             ('Method 1 · Use the block', [
                 "We know a minus b is three. We don't know a or b — and we don't need them.",
                 D('Under (b − a)² write "= (−3)² = 9"'),
@@ -341,13 +313,13 @@ def shortcuts(M):
                 "Choice four again. The choices are only numbers. One legal set of numbers settles it."]),
         ])
 
-    # Question 18 - plug-in trap (tie)
-    guided(3, 'q-r26-t05-04', 'Given:\n' + _cases('a\\ne0', 'b\\ne0') + '\n$\\dfrac{a^2b+ab^2}{ab}=\\ ?$',
+    # Question 17 - plug-in trap (tie)
+    guided(2, 'q-r26-t05-04', 'Given:\n' + _cases('a\\ne0', 'b\\ne0') + '\n$\\dfrac{a^2b+ab^2}{ab}=\\ ?$',
            ['$ab$', '$a+b$', '$2ab$', '$a^2+b^2$'], 2,
            ["Algebra: take out $ab$ on top: $a^2b+ab^2=ab(a+b)$. Cancel $ab$ (not zero): the expression equals $a+b$. The answer is choice 2.",
             "Plug-in trap: with $a=b=1$ the expression is $\\frac{1+1}{1}=2$, and choices 2, 3 and 4 all give $2$ — a tie.",
             "With $a=2$, $b=3$: $\\frac{4\\cdot3+2\\cdot9}{6}=\\frac{30}{6}=5$. Choice 2 gives $5$, choice 3 gives $12$ and choice 4 gives $13$."],
-           ["Question eighteen.", "A plug-in question with a trap. Watch what happens with ones."], [
+           ["Question seventeen.", "A plug-in question with a trap. Watch what happens with ones."], [
             ('Method 1 · Plug in ones', [
                 "Let's try the lazy numbers first: a and b are both one.",
                 D('Write "a = b = 1: (1 + 1)/1 = 2"'),
@@ -387,7 +359,8 @@ def shortcuts(M):
             {'title': 'Pick your method', 'head': ['You see', 'Try'], 'rows': [
                 ['Small numbers', 'Calculate directly'],
                 ['A repeated bracket or a common factor', 'Take it out front'],
-                ['A square, sum × difference or $x^2+bx+c$', 'Factor (Topic 4 cards)'],
+                ['A square or sum × difference', 'Factor (Topic 4)'],
+                ['$x^2+bx+c$ and factored choices', 'Check with a number, or sum and product'],
                 ['Letters in the choices and you are stuck', 'Plug in numbers and eliminate three'],
                 ['Only numbers in the choices', 'One legal substitution is enough'],
                 ['Number choices far apart', 'Estimate'],
@@ -415,9 +388,10 @@ def practice(M):
             "Direct calculation: $(529-23)-(484+22)=506-506=0$."])
     S('q-expression-extra-05', stem='Which of the following expressions is necessarily equal to $x^2+13x+40$?',
       choices=['$(x+4)(x+10)$', '$(x+5)(x+8)$', '$(x+2)(x+20)$', '$(x+1)(x+40)$'],
-      expl=["Sum and product: we need two numbers with product $40$ and sum $13$. They are $5$ and $8$.",
-            "Therefore $x^2+13x+40=(x+5)(x+8)$. The answer is choice 2.",
-            "Check with $x=1$: $1+13+40=54$, and choice 2 gives $6\\cdot9=54$ (the others give $55$, $63$ and $82$)."])
+      expl=["Open the choices. Each one is $(x+p)(x+q)=x^2+(p+q)x+pq$. In every choice $pq=40$, therefore the last number always fits. Compare the middle numbers: we need $p+q=13$.",
+            "The sums are $4+10=14$, $5+8=13$, $2+20=22$ and $1+40=41$. Only choice 2 fits: $x^2+13x+40=(x+5)(x+8)$. The answer is choice 2.",
+            "Check with a number, $x=1$: $1+13+40=54$, and choice 2 gives $6\\cdot9=54$ (the others give $55$, $63$ and $82$).",
+            "The quick way (sum and product): two numbers with sum $13$ and product $40$ are $5$ and $8$."])
     S('q-expression-extra-06', stem='Given: $x<0$.\n$\\frac{|x|}{x}+7=\\ ?$', choices=['$6$', '$7$', '$8$', '$-6$'],
       expl=["$x$ is negative, therefore $|x|=-x$ and $\\frac{|x|}{x}=\\frac{-x}{x}=-1$.",
             "The expression equals $-1+7=6$. The answer is choice 1.",
@@ -477,8 +451,10 @@ def practice(M):
       expl=["Open the brackets (the minus multiplies both terms): $5x+20-4x-4$.",
             "Collect like terms: $x+16$. The answer is choice 3."])
     S('alg-extra-unit-t5-1-3', stem='Which of the following expressions is necessarily equal to $x^2+12x+35$?',
-      expl=["Sum and product: we need two numbers with product $35$ and sum $12$. They are $5$ and $7$.",
-            "Therefore $x^2+12x+35=(x+5)(x+7)$. The answer is choice 2. Check: $(x+5)(x+7)=x^2+7x+5x+35$ ✓."])
+      expl=["Open the choices. Each one is $(x+p)(x+q)=x^2+(p+q)x+pq$: the middle number is $p+q$, the last number is $pq$. We need $p+q=12$ and $pq=35$.",
+            "Choice 1: $1+35=36$. Choice 3: $4+8=12$, but $4\\cdot8=32$. Choice 4: $(-5)+(-7)=-12$. Choice 2: $5+7=12$ and $5\\cdot7=35$. The answer is choice 2: $x^2+12x+35=(x+5)(x+7)$.",
+            "Check with a number, $x=1$: $1+12+35=48$. The choices give $2\\cdot36=72$, $6\\cdot8=48$, $5\\cdot9=45$ and $(-4)(-6)=24$. Only choice 2 gives $48$.",
+            "The quick way (sum and product): two numbers with sum $12$ and product $35$ are $5$ and $7$."])
     S('alg-extra-unit-t5-1-4', stem='Given: $x\\ne5$.\n$\\frac{x^2-25}{x-5}=\\ ?$',
       expl=["Sum times difference: $x^2-25=(x-5)(x+5)$. Cancel $x-5$ (not zero): $x+5$. The answer is choice 3.",
             "Check with $x=6$: $\\frac{36-25}{1}=11$, and choice 3 gives $11$ ✓."])
@@ -503,8 +479,10 @@ def practice(M):
       expl=["Open the brackets (the minus multiplies both terms): $4x+16-3x-3$.",
             "Collect like terms: $x+13$. The answer is choice 2."])
     S('alg-extra-expression-self-3', stem='Which of the following expressions is necessarily equal to $x^2+10x+24$?',
-      expl=["Sum and product: we need two numbers with product $24$ and sum $10$. They are $4$ and $6$.",
-            "Therefore $x^2+10x+24=(x+4)(x+6)$. The answer is choice 3. Check: $(x+4)(x+6)=x^2+6x+4x+24$ ✓."])
+      expl=["Open the choices. Each one is $(x+p)(x+q)=x^2+(p+q)x+pq$: the middle number is $p+q$, the last number is $pq$. We need $p+q=10$ and $pq=24$.",
+            "Choice 1: $(-4)+(-6)=-10$. Choice 2: $1+24=25$. Choice 4: $3+7=10$, but $3\\cdot7=21$. Choice 3: $4+6=10$ and $4\\cdot6=24$. The answer is choice 3: $x^2+10x+24=(x+4)(x+6)$.",
+            "Check with a number, $x=1$: $1+10+24=35$. The choices give $(-3)(-5)=15$, $2\\cdot25=50$, $5\\cdot7=35$ and $4\\cdot8=32$. Only choice 3 gives $35$.",
+            "The quick way (sum and product): two numbers with sum $10$ and product $24$ are $4$ and $6$."])
     S('alg-extra-expression-self-4', stem='Given: $x\\ne4$.\n$\\frac{x^2-16}{x-4}=\\ ?$',
       expl=["Sum times difference: $x^2-16=(x-4)(x+4)$. Cancel $x-4$ (not zero): $x+4$. The answer is choice 3.",
             "Check with $x=5$: $\\frac{25-16}{1}=9$, and choice 3 gives $9$ ✓."])
@@ -543,10 +521,6 @@ def practice(M):
         ('q-r26-t05-09', '$\\frac{101^2-99^2}{4}=\\ ?$', ['$1$', '$50$', '$100$', '$200$'], 3,
          ["Sum times difference: $101^2-99^2=(101-99)(101+99)=2\\cdot200=400$.",
           "Then $\\frac{400}{4}=100$. The answer is choice 3."]),
-        ('q-r26-t05-10', 'Given: $x\\ne2$.\n$\\frac{x^2+4x-12}{x-2}=\\ ?$', ['$x-6$', '$x+2$', '$x+6$', '$x^2+6$'], 3,
-         ["Sum and product: we need two numbers with product $-12$ and sum $4$. They are $6$ and $-2$.",
-          "Therefore $x^2+4x-12=(x+6)(x-2)$. Cancel $x-2$ (not zero): $x+6$. The answer is choice 3.",
-          "Check with $x=3$: $\\frac{9+12-12}{1}=9$, and choice 3 gives $9$ (choice 4 gives $15$). Careful: $x=0$ or $x=1$ makes choices 3 and 4 tie."]),
         ('q-r26-t05-11', 'Given: $x\\ne0$.\n$\\frac{x^3+x^2}{x}=\\ ?$', ['$2x$', '$x+1$', '$x^2+x$', '$2x^2$'], 3,
          ["Take out $x$ on top: $x^3+x^2=x(x^2+x)$. Cancel $x$: $x^2+x$. The answer is choice 3.",
           "Plug-in trap: with $x=1$ the expression is $2$, and ALL four choices give $2$.",
@@ -587,7 +561,7 @@ def practice(M):
         'q-expression-extra-12', 'alg-extra-expression-self-3', 'q-expression-extra-05', 'alg-extra-expression-self-4',
         'q-expression-extra-15', 'q-expression-extra-10', 'q-expression-extra-20', 'q-expression-extra-18', 'q-r26-t05-14',
         'q-r26-t05-13', 'q-r26-t05-11', 'q-r26-t05-12', 'q-expression-extra-13', 'q-expression-extra-14',
-        'q-r26-t05-09', 'q-r26-t05-10', 'q-r26-t05-16', 'q-expression-extra-11', 'q-r26-t05-05',
+        'q-r26-t05-09', 'q-r26-t05-16', 'q-expression-extra-11', 'q-r26-t05-05',
         'q-r26-t05-06', 'q-r26-t05-15', 'q-r26-t05-07'])
     M.practice_order(BANK, ['alg-extra-unit-t5-1-1', 'alg-extra-unit-t5-1-2', 'q-123', 'q-124', 'alg-extra-unit-t5-1-6',
                             'alg-extra-unit-t5-1-7', 'q-122', 'alg-extra-unit-t5-1-5', 'alg-extra-unit-t5-1-4',

@@ -163,3 +163,30 @@ Function `order_changes(M)`, which runs after `new_numbers`. It does not change 
   - Reordering the guided questions in "Exam Shortcuts". They follow that lesson's slide order.
   - Reordering the practice sections. They are already easy → hard.
   - Moving the other guided keys. They already differ from the Hebrew course.
+
+## 2026-10-04 trinomial lesson removed
+
+The Topic 4 trinomial lesson and its card were removed (teacher-approved). Changes here:
+- Written solutions of q-expression-extra-05 ($x^2+13x+40$), alg-extra-unit-t5-1-3 ($x^2+12x+35$) and alg-extra-expression-self-3
+  ($x^2+10x+24$) now lead with your method: open the choices (each is $(x+p)(x+q)$: middle $p+q$, last $pq$), check with $x=1$,
+  then sum and product as the quick way. Keys and choices unchanged. q-127 and its video are unchanged.
+- "Exam Shortcuts" slide "Sum and product": "Signs, common factors first — all as in Topic 4." (that lesson is gone) →
+  "Open the brackets to check: nine x in the middle, twenty at the end."
+- Card mem-r26-t05-expressions: "Factor (Topic 4 cards)" → "Factor (Topic 4)" (there is no trinomial card any more).
+
+## 2026-10-04 sum-product leftovers removed
+
+Finishes the removal of the Topic 4 trinomial lesson (teacher-approved; 0 of 760 real exam questions need trinomial factoring).
+- **Removed guided question** q-r26-t05-01 ($\frac{x^2-2x-15}{x-5}-x$, old Question 15) and its solution video solve-q-r26-t05-01
+  (1.4 min). It needed the sign rules that were only in the removed lesson. The other "Exam Shortcuts" questions renumber
+  automatically (title slides, spoken "Question N", sidebars). Their sidebar now has three entries.
+- **Removed practice question** q-r26-t05-10 ($\frac{x^2+4x-12}{x-2}$, same reason). Practice: 38 → 37 questions.
+- **"Exam Shortcuts", slide "Sum and product"**: the false claim "On the exam it often hides inside a fraction … Question 15"
+  and the "reminder from Topic 4" line were dropped. The slide now makes one point: "Need to factor $x^2+bx+c$? Open the choices
+  and check with a number." / "Or the quick way: two numbers with that sum and product." The example $x^2+9x+20=(x+4)(x+5)$ stays.
+  Title slide: "A quick reminder of sum and product" → "A quick reminder on factoring x squared plus b x plus c".
+- **Recap slide**: "Trinomial? Sum and product (Topic 4)" → "$x^2+bx+c$? Check with a number, or sum and product";
+  "Four guided questions next — one for each tool …" → "Three guided questions next — round numbers, a given block, and one plug-in trap."
+- **Card mem-r26-t05-expressions** ("Pick your method"): "A square, sum × difference or $x^2+bx+c$ → Factor (Topic 4)" split into
+  "A square or sum × difference → Factor (Topic 4)" and "$x^2+bx+c$ and factored choices → Check with a number, or sum and product".
+- Topic 5 videos: 37.5 → 36.1 min (1.4 min saved).
