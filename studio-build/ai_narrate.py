@@ -44,7 +44,10 @@ def main():
     if not args: sys.exit(__doc__)
     vid = args[0]
     spec = json.load(open(os.path.join(HERE, 'ai_scripts', vid + '.json'), encoding='utf-8'))
-    voice = spec['voice']; lines = [l for s in spec['slides'] for l in s]
+    # one shared voice for all videos (ai_scripts/_voice.json); a script file may override it with its own 'voice'
+    voice = spec.get('voice') or json.load(open(os.path.join(HERE, 'ai_scripts', '_voice.json'), encoding='utf-8'))
+    voice = {k: voice[k] for k in ('voice_id', 'model_id', 'stability', 'similarity_boost')}
+    lines = [l for s in spec['slides'] for l in s]
     d = os.path.join(OUT, vid); os.makedirs(d, exist_ok=True)
     mpath = os.path.join(d, 'manifest.json')
     old = json.load(open(mpath)) if os.path.exists(mpath) else {'lines': []}
