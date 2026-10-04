@@ -88,15 +88,36 @@ class CutRecorder{
   this.lastKey=-1e9;this.forceKey=true;this.aBase=null}
  async stop(){if(this.state==='inactive')return;this.state='inactive';clearInterval(this.timer);clearInterval(this.thumbTimer);
   try{await this.venc.flush();if(this.aenc)await this.aenc.flush()}catch{}try{this.reader?.cancel()}catch{}
-  let blob;try{blob=this.mux()}catch(e){console.error('mux',e);toast('Could not assemble the take: '+(e.message||e));blob=new Blob([],{type:this.mimeType})}
+  await this.finishSave()}
+ /* build the file; if that fails the take is NOT thrown away: it stays in memory with a "Try saving again" bar */
+ async finishSave(){let blob;
+  try{blob=this.mux()}catch(e){console.error('mux',e);this.saveFailed(e);return}
+  document.getElementById('save-retry')?.remove();
   try{this.venc.close();this.aenc?.close()}catch{}this.v=[];this.a=[];this.pcm=[];this.thumbs=[];
   this.ondataavailable?.({data:blob});this.onstop?.()}
- mux(){const A=this.a.length&&this.acfg?this.acfg:null,mp4=this.vc.mux==='mp4',m=mp4
-   ?new Mp4Muxer.Muxer({target:new Mp4Muxer.ArrayBufferTarget(),video:{codec:'avc',width:1920,height:1080},audio:A?{codec:A.name,sampleRate:A.sampleRate,numberOfChannels:A.numberOfChannels}:undefined,fastStart:'in-memory',firstTimestampBehavior:'cross-track-offset'})
-   :new WebMMuxer.Muxer({target:new WebMMuxer.ArrayBufferTarget(),video:{codec:'V_VP9',width:1920,height:1080,frameRate:30},audio:A?{codec:'A_OPUS',sampleRate:A.sampleRate,numberOfChannels:A.numberOfChannels}:undefined,firstTimestampBehavior:'offset'});
+ saveFailed(e){const msg='Could not build the video file: '+(e&&(e.message||e.name)||e);
+  const m=document.getElementById('record-message');if(m)m.textContent=msg+' — your recording is still kept. Close other tabs or apps, then press "Try saving again".';
+  toast('Saving failed — the recording is kept. Use "Try saving again".');
+  let bar=document.getElementById('save-retry');if(!bar){bar=document.createElement('div');bar.id='save-retry';
+   bar.style.cssText='position:fixed;left:50%;top:16px;transform:translateX(-50%);z-index:10003;background:#fff;border:3px solid #b91c1c;border-radius:14px;padding:12px 18px;box-shadow:0 12px 40px #0004;font:600 15px system-ui;display:flex;gap:12px;align-items:center;max-width:92vw';
+   (document.fullscreenElement||document.body).append(bar)}
+  bar.innerHTML='<span>⚠ The take was not saved yet ('+String(msg).replace(/</g,'&lt;').slice(0,160)+'). It is still kept here.</span><button type="button" style="padding:8px 14px;border-radius:9px;border:0;background:#b91c1c;color:#fff;font-weight:800;cursor:pointer">Try saving again</button>';
+  bar.querySelector('button').onclick=async()=>{bar.querySelector('button').textContent='Saving…';await new Promise(r=>setTimeout(r,50));this.finishSave()}}
+ mux(){const A=this.a.length&&this.acfg?this.acfg:null,mp4=this.vc.mux==='mp4';
+  // written in 16 MB pieces (no single giant memory block): sequential writes are appended, the few header patches
+  // the muxer writes back at earlier positions are applied to the pieces at the end
+  const parts=[],patches=[];let end=0;
+  const onData=(d,pos)=>{const c=d.slice();if(pos===end){parts.push({pos,d:c});end+=c.length}else patches.push({pos,d:c})};
+  const m=mp4
+   ?new Mp4Muxer.Muxer({target:new Mp4Muxer.StreamTarget({onData,chunked:true,chunkSize:16*1024*1024}),video:{codec:'avc',width:1920,height:1080},audio:A?{codec:A.name,sampleRate:A.sampleRate,numberOfChannels:A.numberOfChannels}:undefined,fastStart:false,firstTimestampBehavior:'cross-track-offset'})
+   :new WebMMuxer.Muxer({target:new WebMMuxer.StreamTarget({onData,chunked:true,chunkSize:16*1024*1024}),video:{codec:'V_VP9',width:1920,height:1080,frameRate:30},audio:A?{codec:'A_OPUS',sampleRate:A.sampleRate,numberOfChannels:A.numberOfChannels}:undefined,firstTimestampBehavior:'offset'});
   let i=0,j=0;const V=this.v,Au=A?this.a:[];
   while(i<V.length||j<Au.length){if(j>=Au.length||(i<V.length&&V[i].timestamp<=Au[j].timestamp)){m.addVideoChunk(V[i],i===0?this.vmeta:undefined);i++}else{m.addAudioChunk(Au[j],j===0?this.ameta:undefined);j++}}
-  m.finalize();return new Blob([m.target.buffer],{type:this.mimeType})}
+  m.finalize();
+  for(const p of patches){let k=0;while(k<p.d.length){const at=p.pos+k,part=parts.find(x=>at>=x.pos&&at<x.pos+x.d.length);
+    if(!part){const tail=p.d.subarray(k);if(at===end){parts.push({pos:at,d:tail});end+=tail.length}break}
+    const off=at-part.pos,n=Math.min(part.d.length-off,p.d.length-k);part.d.set(p.d.subarray(k,k+n),off);k+=n}}
+  return new Blob(parts.map(x=>x.d),{type:this.mimeType})}
 }
 async function makeRecorder(stream,canvas,mime){
  if(CUT.ok){let vc=null;try{vc=await cutVideoCodec()}catch(e){console.warn('cut recorder unavailable',e)}
