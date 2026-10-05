@@ -78,6 +78,18 @@ class CutRecorder{
    const ts=Math.max(Math.round(t*1e6),this.aEnd);this.aEnd=ts+this.encodePcm(chs,sr,ts);onp?.(.85+.1*Math.min(1,t/cut))}
   onp?.(.97);await this.venc.flush();if(this.aenc)await this.aenc.flush();
   this.lastV=last;this.forceKey=true;this.aBase=null;this.aEnd=Math.max(this.aEnd,Math.round(cut*1e6));this.marks=[0,cut];this.holdStart=true;onp?.(1)}
+ /* a short playable clip of the take so far (from the key frame before 'from' up to 'to') — for the Cut back preview */
+ async clip(from,to){try{await this.venc.flush();if(this.aenc)await this.aenc.flush()}catch{}
+  const V=this.v,us=x=>Math.round(x*1e6);if(!V.length)return null;let k=0;
+  for(let i=0;i<V.length&&V[i].timestamp<=us(from);i++)if(V[i].type==='key')k=i;
+  const t0=V[k].timestamp,vs=[];for(let i=k;i<V.length&&V[i].timestamp<=us(to);i++)vs.push(V[i]);
+  const A=this.a.length&&this.acfg?this.acfg:null,as=A?this.a.filter(c=>c.timestamp>=t0&&c.timestamp<=us(to)):[],mp4=this.vc.mux==='mp4';
+  const m=mp4?new Mp4Muxer.Muxer({target:new Mp4Muxer.ArrayBufferTarget(),video:{codec:'avc',width:1920,height:1080},audio:A&&as.length?{codec:A.name,sampleRate:A.sampleRate,numberOfChannels:A.numberOfChannels}:undefined,fastStart:'in-memory',firstTimestampBehavior:'cross-track-offset'})
+   :new WebMMuxer.Muxer({target:new WebMMuxer.ArrayBufferTarget(),video:{codec:'V_VP9',width:1920,height:1080,frameRate:30},audio:A&&as.length?{codec:'A_OPUS',sampleRate:A.sampleRate,numberOfChannels:A.numberOfChannels}:undefined,firstTimestampBehavior:'offset'});
+  let i=0,j=0,lv=-Infinity,la=-Infinity,fv=true,fa=true;
+  while(i<vs.length||j<as.length){if(j>=as.length||(i<vs.length&&vs[i].timestamp<=as[j].timestamp)){const c=vs[i++];if(c.timestamp>lv){m.addVideoChunk(c,fv?this.vmeta:undefined);fv=false;lv=c.timestamp}}
+   else{const c=as[j++];if(c.timestamp>la){m.addAudioChunk(c,fa?this.ameta:undefined);fa=false;la=c.timestamp}}}
+  m.finalize();return {blob:new Blob([m.target.buffer],{type:this.mimeType}),start:Math.min(t0,as.length?as[0].timestamp:t0)/1e6}}
  pause(){if(this.state==='recording')this.state='paused'}
  resume(){if(this.state!=='paused')return;const m=recClock();if(Math.abs(m-this.marks[this.marks.length-1])>.3)this.marks.push(m);this.forceKey=true;this.aBase=null;this.state='recording';cutSnapNow(true)}
  async cutTo(sec){if(this.state!=='paused')return;const us=Math.round(sec*1e6);
@@ -146,40 +158,53 @@ function cutPlay(from,to){const rc=record?.rec;if(!rc?.pcm)return;from=Math.max(
 /* ---- the Cut back panel (opens while paused: toolbar ✂ button or X) ---- */
 function openCutPanel(){const r=record;if(!r)return;if(!r.rec.cutTo)return toast('Cut back needs a current desktop Chrome or Edge. You can still pause, or stop and discard the take.');
  if(r.rec.state==='recording'){pauseRecording();syncRec()}if(document.getElementById('cut-panel'))return;
- const T=recClock(),fmt=s=>{s=Math.max(0,s);const m=Math.floor(s/60),x=s-60*m;return m+':'+(x<10?'0':'')+x.toFixed(1)},dur=d=>d<60?d.toFixed(1)+' s':fmt(d);
+ const T=recClock(),fmt=s=>{s=Math.max(0,s);const m=Math.floor(s/60),x=s-60*m;return m+':'+(x<10?'0':'')+x.toFixed(2)},dur=d=>d<60?d.toFixed(2)+' s':fmt(d);
  if(T<.5)return toast('Nothing recorded yet to cut.');
  const box=document.createElement('div');box.id='cut-panel';box.setAttribute('role','dialog');box.setAttribute('aria-label','Cut back');
- box.style.cssText='position:fixed;left:50%;top:70px;transform:translateX(-50%);z-index:10000;width:min(760px,94vw);background:#fff;color:#17233c;border:3px solid #b91c1c;border-radius:16px;box-shadow:0 20px 60px #0005;padding:16px 20px;font-family:inherit';
+ box.style.cssText='position:fixed;left:50%;top:70px;transform:translateX(-50%);z-index:10000;width:min(900px,96vw);max-height:94vh;overflow:auto;background:#fff;color:#17233c;border:3px solid #b91c1c;border-radius:16px;box-shadow:0 20px 60px #0005;padding:16px 20px;font-family:inherit';
  const mk=r.rec.marks.filter(m=>m<T-.3).slice(-2).reverse(),rd=mk.map((m,i)=>'<button type="button" data-redo="'+i+'" style="padding:'+(i?'7px 12px':'10px 16px')+';border-radius:10px;border:'+(i?'1px solid #e5c4c4;background:#fff;color:#17233c':'0;background:#17233c;color:#fff')+';font-weight:800;cursor:pointer">↺ Redo from '+fmt(m)+(i?'':' (R)')+' <span style="font-weight:500;opacity:.8">'+(m===0?'· start over':i?'· the time before':'· where you last continued')+' · removes '+dur(T-m)+'</span></button>').join('');
  const q=[3,5,10,20,30,60].filter(x=>x<T+1).map(x=>'<button type="button" data-cut="'+x+'" style="padding:7px 12px;border-radius:9px;border:1px solid #e5c4c4;background:#fff;font-weight:700;cursor:pointer">− '+(x<60?x+' s':'1 min')+'</button>').join('');
  box.innerHTML='<div style="display:flex;justify-content:space-between;align-items:baseline;gap:10px"><div style="font-size:20px;font-weight:800">✂ Cut back</div><div style="color:#5b6b7a;font-size:13px">take length now '+fmt(T)+'</div></div>'
-  +'<div style="color:#5b6b7a;font-size:14px;margin:4px 0 10px">Remove the end of the take, then continue recording from that moment. R = redo from where you last continued · ← → move ½ s · Enter = cut · Esc = cancel</div>'
+  +'<div style="color:#5b6b7a;font-size:14px;margin:4px 0 10px">Remove the end of the take, then continue recording from that moment. R = redo from where you last continued · ← → move 0.1 s · Shift ← → 1 s · Option ← → 0.02 s · Enter = cut · Esc = cancel</div>'
   +(rd?'<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:10px">'+rd+'</div>':'')+'<div style="display:flex;gap:6px;flex-wrap:wrap;margin-bottom:10px">'+q+'</div>'
-  +'<input id="cut-range" type="range" min="0" max="'+T.toFixed(1)+'" step="0.1" style="width:100%;accent-color:#b91c1c">'
-  +'<div style="display:flex;gap:16px;align-items:flex-start;margin-top:10px"><img id="cut-thumb" alt="" style="width:240px;aspect-ratio:16/9;border-radius:8px;background:#e8eef3;border:1px solid #d8e0e6;flex:none;object-fit:cover">'
+  +'<input id="cut-range" type="range" min="0" max="'+T.toFixed(1)+'" step="0.01" style="width:100%;accent-color:#b91c1c">'
+  +'<div style="display:flex;gap:16px;align-items:flex-start;margin-top:10px"><div style="flex:none;width:min(440px,50vw)"><video id="cut-vid" controls playsinline style="width:100%;aspect-ratio:16/9;border-radius:8px;background:#0b1f1d"></video><div id="cut-vid-note" style="color:#5b6b7a;font-size:12px;margin-top:2px">Loading the video around this point…</div></div>'
   +'<div style="flex:1;min-width:0"><div id="cut-info" style="font-size:15px;line-height:1.5"></div>'
-  +'<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button type="button" id="cut-hear-keep" style="padding:7px 12px;border-radius:9px;border:1px solid #cfe0dd;background:#f3faf8;cursor:pointer">▶ Last words kept</button>'
-  +'<button type="button" id="cut-hear-drop" style="padding:7px 12px;border-radius:9px;border:1px solid #efd3d3;background:#fdf4f4;cursor:pointer">▶ Part being removed</button></div></div></div>'
+  +'<div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px"><button type="button" id="cut-hear-keep" style="padding:7px 12px;border-radius:9px;border:1px solid #cfe0dd;background:#f3faf8;cursor:pointer">▶ Watch the last part kept</button>'
+  +'<button type="button" id="cut-hear-drop" style="padding:7px 12px;border-radius:9px;border:1px solid #efd3d3;background:#fdf4f4;cursor:pointer">▶ Watch the part being removed</button></div></div></div>'
   +'<div style="display:flex;gap:10px;justify-content:flex-end;margin-top:14px"><button type="button" id="cut-cancel" style="padding:10px 18px;border-radius:10px;border:1px solid #d8e0e6;background:#fff;font-weight:700;cursor:pointer">Cancel</button>'
   +'<button type="button" id="cut-go" style="padding:10px 22px;border-radius:10px;border:0;background:#b91c1c;color:#fff;font-weight:800;font-size:15px;cursor:pointer">✂ Cut</button></div>';
  (document.fullscreenElement||document.body).append(box);
  const rg=box.querySelector('#cut-range'),v=video();let busy=false;
  const show=()=>{const p=+rg.value,s=cutSnapAt(p),b=s&&v?.beats[s.beat],th=[...r.rec.thumbs].reverse().find(x=>x.t<=p+.5)||r.rec.thumbs[0];
-  box.querySelector('#cut-thumb').src=th?th.url:'';
+  const vv=box.querySelector('#cut-vid');if(th&&!vv.src)vv.poster=th.url;refreshClip();
   box.querySelector('#cut-info').innerHTML='Keep <b>0:00 – '+fmt(p)+'</b> · remove the last <b style="color:#b91c1c">'+dur(T-p)+'</b>'
    +(b?'<br>You continue from <b>slide '+(s.beat+1)+'</b>'+(s.step?' · step '+(s.step+1):'')+' · '+esc(b.title||''):'')};
- const set=x=>{rg.value=Math.max(0,Math.min(T,x)).toFixed(1);show()};set(T-Math.min(5,T));
+ let clip=null,clipUrl=null,clipTimer=0,clipStop=null;
+ const vid=()=>box.querySelector('#cut-vid'),note=t=>{const n=box.querySelector('#cut-vid-note');if(n)n.textContent=t};
+ // rebuild the short clip (4 s before → 6 s after the point) a moment after the point stops moving
+ function refreshClip(){clearTimeout(clipTimer);clipTimer=setTimeout(async()=>{const p=+rg.value;
+   if(clip&&p-4>=clip.from-0.01&&Math.min(T,p+6)<=clip.to+0.01){seekTo(p);return}
+   if(!r.rec.clip){note('');return}
+   try{const c=await r.rec.clip(Math.max(0,p-4),Math.min(T,p+6));if(!c)return;if(clipUrl)URL.revokeObjectURL(clipUrl);
+    clip={...c,from:Math.max(0,p-4),to:Math.min(T,p+6)};clipUrl=URL.createObjectURL(c.blob);const v2=vid();v2.src=clipUrl;
+    v2.onloadedmetadata=()=>seekTo(+rg.value)}catch(e){console.warn('cut preview',e);note('Preview not available — use the sound buttons.')}},250)}
+ function seekTo(p){const v2=vid();if(!clip||!v2.src)return;v2.pause();v2.currentTime=Math.max(0,p-clip.start);
+  note('Showing the moment you keep up to ('+fmt(p)+'). Press play to watch around it.')}
+ function playRange(a,b){const v2=vid();if(!clip||!v2.src)return false;clearInterval(clipStop);v2.currentTime=Math.max(0,a-clip.start);v2.play();
+  clipStop=setInterval(()=>{if(v2.currentTime>=b-clip.start||v2.paused){v2.pause();clearInterval(clipStop)}},40);return true}
+ const set=x=>{rg.value=Math.max(0,Math.min(T,x)).toFixed(2);show()};set(T-Math.min(5,T));
  let exact=null;box.querySelectorAll('[data-cut]').forEach(b=>b.onclick=()=>{exact=null;set(T-+b.dataset.cut)});rg.oninput=()=>{exact=null;show()};
  const redo=i=>{if(mk[i]==null)return;set(mk[i]);exact=mk[i];go()};box.querySelectorAll('[data-redo]').forEach(b=>b.onclick=()=>redo(+b.dataset.redo));
- box.querySelector('#cut-hear-keep').onclick=()=>cutPlay(+rg.value-4,+rg.value);
- box.querySelector('#cut-hear-drop').onclick=()=>cutPlay(+rg.value,Math.min(T,+rg.value+8));
- const close=()=>{document.removeEventListener('keydown',key,true);try{CUT.src?.stop()}catch{}box.remove()};
+ box.querySelector('#cut-hear-keep').onclick=()=>{const p=+rg.value;if(!playRange(Math.max(0,p-3),p))cutPlay(p-4,p)};
+ box.querySelector('#cut-hear-drop').onclick=()=>{const p=+rg.value;if(!playRange(p,Math.min(T,p+6)))cutPlay(p,Math.min(T,p+8))};
+ const close=()=>{document.removeEventListener('keydown',key,true);try{CUT.src?.stop()}catch{}clearTimeout(clipTimer);clearInterval(clipStop);try{vid().pause()}catch{}if(clipUrl)URL.revokeObjectURL(clipUrl);box.remove()};
  const go=async()=>{if(busy)return;busy=true;const C=exact??+rg.value;if(C>=T-.05)return close();box.querySelector('#cut-go').textContent='Cutting…';
   await r.rec.cutTo(C);r.pausedMs+=(T-C)*1000;r.rec.cutCount++;r.rec.cutSec+=T-C;cutRestore(C);close();syncRec();
   const ck=$('#rec-clock');if(ck)ck.textContent=timeText(C);
   toast('Cut '+dur(T-C)+'. The take is now '+fmt(C)+'. Press Continue (P) when you are ready.')};
  const key=e=>{if(e.key==='Escape'){e.preventDefault();e.stopPropagation();close()}else if(e.key==='Enter'){e.preventDefault();e.stopPropagation();go()}
-  else if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();e.stopPropagation();exact=null;set(+rg.value+(e.key==='ArrowLeft'?-.5:.5))}else if((e.key==='r'||e.key==='R')&&mk.length){e.preventDefault();e.stopPropagation();redo(0)}else if(e.key==='p'||e.key==='P'||e.key===' ')e.stopPropagation()};
+  else if(e.key==='ArrowLeft'||e.key==='ArrowRight'){e.preventDefault();e.stopPropagation();exact=null;const d=e.altKey?.02:e.shiftKey?1:.1;set(+rg.value+(e.key==='ArrowLeft'?-d:d))}else if((e.key==='r'||e.key==='R')&&mk.length){e.preventDefault();e.stopPropagation();redo(0)}else if(e.key==='p'||e.key==='P'||e.key===' ')e.stopPropagation()};
  document.addEventListener('keydown',key,true);box.querySelector('#cut-cancel').onclick=close;box.querySelector('#cut-go').onclick=go}
 window.addEventListener('keydown',e=>{if(!record||e.metaKey||e.ctrlKey||e.altKey)return;if(['INPUT','TEXTAREA','SELECT'].includes(e.target.tagName)||e.target.isContentEditable)return;
  if(e.key==='x'||e.key==='X'){e.preventDefault();openCutPanel()}});
