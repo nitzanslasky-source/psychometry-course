@@ -100,3 +100,15 @@ Goal: the English topic is clearly not a copy of the Hebrew course. Every method
 - Lesson "r26-t07-quadratic" slide 6: the example (x + 1)² = (x − 3)² (same as guided q-r26-t07-05) -> (x + 3)² = (x − 1)², x = −1. Question and its video unchanged.
 - q-r26-t07-10 was (x² − 9)/(x − 3) = 0 of the same lesson, slide 8 -> (x² − 36)/(x − 6) = 0, x = −6 (choice 2).
 - q-r26-t07-15 was xy = 12, yz = 6 of "r26-t07-more-tools" slide 2 -> xy = 24, yz = 8, x/z = 3 (choice 1).
+
+
+## 2026-10-05 pen vs clicks trial
+"Pen for the thinking, clicks for the copying" (function `pen_or_click`, runs last). Copied / mechanical lines now appear on NEXT as board items at the same moment; the key idea and all marks (circle, underline, tick, cross out, short notes beside an item) stay as pen cues. Where a hand-written line comes before a click line, the board leaves an empty row for it. Spoken lines, math, questions, slide count and sidebars are unchanged.
+- equation-strategy (18 -> 12 by hand, 6 clicks). Clicks: p = 0 or q = p; "Or: check p = 0 separately"; x² = 0 -> x = 0; x² = 49 -> x = 7 or x = −7; x = 8 or x = −4; the xy = 12, yz = 6 -> x/z = 2 example on "Which operation?". By hand: p = 0 -> 0 = 0, p²(p − q) = 0, x²(x² − 49) = 0, circle the three values, x − 2 = ±6, all underlines / brackets / circles / ticks, "b > a in every case", the "+" line under the system.
+- solve-q-191 (5 -> 3 by hand, 2 clicks). Clicks: m = 2: 32 = 16n -> n = 2; m⁴(m − n) = 0 -> m = 0 or n = m. By hand: m = 0: 0 = 0 · n, cross out m⁴ + "only if m ≠ 0", circle choice 4.
+- solve-q-192 (4 -> 2 by hand, 2 clicks). Clicks: x² = 0 -> x = 0; x² = 25 -> x = ±5. By hand: x²(x² − 25) = 0, circle.
+- solve-q-193 (3 -> 2 by hand, 1 click). Click: x = 5 or x = −13. By hand: x + 4 = 9 or x + 4 = −9, circle.
+- solve-q-194 (4 -> 2 by hand, 2 clicks). Clicks: ×5: a − 6b = 5 − 5b; a − b = 5 > 0. By hand: a = 5 + b, circle.
+- solve-q-195 (3 -> 2 by hand, 1 split). By hand: 13x + 13y = 65, 13(x + y) = 65. Split: x + y = 5 is a click, circling choice 2 by hand.
+- solve-q-197 (4 -> 2 by hand, 1 click, 1 split). By hand: (a + b) + (2a + c) + (b + c) + c and the values 4, 7, 8 under the brackets. Click: 4 + 7 + 8 + c = 24. Split: 19 + c = 24 -> c = 5 click, circle by hand.
+- solve-q-196 (4 -> 2 by hand, 2 clicks). Clicks: (x − y)² = x² + y² − 2xy; 2xy = 36 -> xy = 18. By hand: 7² = 85 − 2xy, circle.

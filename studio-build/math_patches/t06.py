@@ -704,7 +704,8 @@ def apply(M):
     summaries(M)
     new_numbers(M)
     order_changes(M)
-    dedupe_examples(M)   # 2026-10-04: runs last
+    dedupe_examples(M)   # 2026-10-04
+    pen_or_click(M)      # 2026-10-05: runs last
 
 
 # =====================================================================================
@@ -1153,3 +1154,59 @@ def dedupe_examples(M):
             expl=[r'A product is $0$ when one of the factors is $0$: $x=0$ or $x+4=0$.',
                   r'So $x=0$ or $x=-4$. The sum is $0+(-4)=-4$.',
                   r'The traps: the factor is $x+4$, but the solution is $-4$ (choice 3 forgets the sign). And dividing by $x$ loses the solution $x=0$.'])
+
+
+# ---------------------------------------------------------------- 2026-10-05 pen vs clicks trial
+# "Pen for the thinking, clicks for the copying": mechanical / copied lines become board items that appear on NEXT;
+# the key idea of each method and all marks (circle, underline) stay as pen cues.
+def _pen_or_click_slide(M, vid, n, repl, room=(), row=106):
+    """repl: pen cue text -> script entries replacing it. room: pen cues kept by hand that need their own row on the
+    board - the item above them gets a bigger gap, so the click items below leave space for the handwriting."""
+    b = M.slide(vid, n); script = []; done = set()
+    for l in b['lines']:
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        elif l['draw'] in repl: script.extend(repl[l['draw']]); done.add(l['draw'])
+        else: script.append(D(l['draw']))
+    missing = (set(repl) - done) | (set(room) - {l.get('draw') for l in b['lines']})
+    assert not missing, '%s #%d: draw cue not found: %s' % (vid, n, missing)
+    M.set_slide(vid, n, script=script)
+    b = M.slide(vid, n); last = b['pre'] - 1
+    for l in b['lines']:
+        if 'appear' in l: last = l['appear']
+        elif l.get('draw') in room: b['items'][last]['gap'] = b['items'][last].get('gap', 44) + row
+
+
+def pen_or_click(M):
+    S = 42
+    # solve-q-r26-t06-03 (x + y from 5x + 3y = 41, 3x + 5y = 39)
+    _pen_or_click_slide(M, 'solve-q-r26-t06-03', 2, {
+        'Write "(5x + 3y) + (3x + 5y) = 41 + 39"':
+            [A('(5x + 3y) + (3x + 5y) = 41 + 39 appears', T(r'$(5x+3y)+(3x+5y)=41+39$', size=S))],
+        'Write "8x + 8y = 80"':
+            [A('8x + 8y = 80 appears', T(r'$8x+8y=80$', size=S))],
+    }, room=['Write "8(x + y) = 80 → x + y = 10"'])
+    _pen_or_click_slide(M, 'solve-q-r26-t06-03', 3, {
+        'Write "×3: 15x + 9y = 123   ×5: 15x + 25y = 195"':
+            [A('×3 and ×5: 15x + 9y = 123, 15x + 25y = 195 appear',
+               T(r'$\begin{aligned} \times3:&\ \ 15x+9y=123 \\ \times5:&\ \ 15x+25y=195 \end{aligned}$', size=38))],
+        'Write "16y = 72 → y = 4.5"':
+            [A('16y = 72 → y = 4.5 appears', T(r'$16y=72 \;\to\; y=4.5$', size=S))],
+        'Write "5x + 13.5 = 41 → x = 5.5 → x + y = 10"':
+            [A('5x + 13.5 = 41 → x = 5.5 → x + y = 10 appears', T(r'$5x+13.5=41 \;\to\; x=5.5 \;\to\; x+y=10$', size=S))],
+    })
+    # solve-q-r26-t06-04 (xy = 20, x/y = 5, x − y)
+    _pen_or_click_slide(M, 'solve-q-r26-t06-04', 2, {
+        'Write "x² = 100 → x = 10"':
+            [A('x² = 100 → x = 10 appears', T(r'$x^2=100 \;\to\; x=10$', size=38, gap=30))],
+        'Write "10y = 20 → y = 2"':
+            [A('10y = 20 → y = 2 appears', T(r'$10y=20 \;\to\; y=2$', size=38, gap=30))],
+        'Write "x − y = 10 − 2 = 8" and circle choice 3':
+            [A('x − y = 10 − 2 = 8 appears', T(r'$x-y=10-2=8$', size=38)), D('Circle choice 3')],
+    }, room=['Write "xy · (x/y) = 20 · 5"'], row=70)
+    _pen_or_click_slide(M, 'solve-q-r26-t06-04', 3, {
+        'Write "5y · y = 20 → y² = 4 → y = 2"':
+            [A('5y · y = 20 → y² = 4 → y = 2 appears', T(r'$5y\cdot y=20 \;\to\; y^2=4 \;\to\; y=2$', size=S))],
+        'Write "x = 10,  x − y = 8" and circle choice 3':
+            [A('x = 10, x − y = 8 appears', T(r'$x=10,\quad x-y=8$', size=S)), D('Circle choice 3')],
+    }, room=['Write "x/y = 5 → x = 5y"'])

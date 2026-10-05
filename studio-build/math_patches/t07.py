@@ -937,7 +937,8 @@ def apply(M):
     summary(M)
     new_numbers(M)
     order_changes(M)
-    dedupe_examples(M)   # 2026-10-04: runs last
+    dedupe_examples(M)   # 2026-10-04
+    pen_or_click(M)      # 2026-10-05: runs last
 
 
 # ---------------------------------------------------------------- 7. pass 2: summary video before the practice
@@ -1890,3 +1891,91 @@ def dedupe_examples(M):
             choices=['$3$', r'$\frac{1}{3}$', '$16$', '$192$'], correct=1,
             expl=[r'Divide the first equation by the second: $\frac{xy}{yz} = \frac{24}{8}$.',
                   r'The $y$ cancels ($y \ne 0$, since $xy = 24$): $\frac{x}{z} = 3$.'])
+
+
+# ---------------------------------------------------------------- 2026-10-05 pen vs clicks trial
+# "Pen for the thinking, clicks for the copying": mechanical / copied lines become board items that appear on NEXT;
+# the key idea of each method and all marks (circle, underline) stay as pen cues.
+def _pen_or_click_slide(M, vid, n, repl, room=(), row=106):
+    """repl: pen cue text -> script entries replacing it. room: pen cues kept by hand that need their own row on the
+    board - the item above them gets a bigger gap, so the click items below leave space for the handwriting."""
+    b = M.slide(vid, n); script = []; done = set()
+    for l in b['lines']:
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        elif l['draw'] in repl: script.extend(repl[l['draw']]); done.add(l['draw'])
+        else: script.append(D(l['draw']))
+    missing = (set(repl) - done) | (set(room) - {l.get('draw') for l in b['lines']})
+    assert not missing, '%s #%d: draw cue not found: %s' % (vid, n, missing)
+    M.set_slide(vid, n, script=script)
+    b = M.slide(vid, n); last = b['pre'] - 1
+    for l in b['lines']:
+        if 'appear' in l: last = l['appear']
+        elif l.get('draw') in room: b['items'][last]['gap'] = b['items'][last].get('gap', 44) + row
+
+
+def pen_or_click(M):
+    S = 42
+    # ---- lesson equation-strategy (only the worked board slides; marks stay by hand)
+    _pen_or_click_slide(M, 'equation-strategy', 2, {
+        'Write "p = 0  or  q = p"':
+            [A('p = 0 or q = p appears', T(r'$p=0 \quad \text{or} \quad q=p$', size=44))],
+        'Under it write "Or: check p = 0 separately"':
+            [A('Or: check p = 0 separately appears', T(r'Or: check $p=0$ separately', size=38))],
+    }, room=['Below write "p²(p − q) = 0"'])
+    _pen_or_click_slide(M, 'equation-strategy', 3, {
+        'Write "x² = 0 → x = 0"':
+            [A('x² = 0 → x = 0 appears', T(r'$x^2=0 \;\to\; x=0$', size=44))],
+        'Write "x² = 49 → x = 7 or x = −7"':
+            [A('x² = 49 → x = 7 or x = −7 appears', T(r'$x^2=49 \;\to\; x=7 \ \text{ or } \ x=-7$', size=44))],
+    }, room=['Write "x²(x² − 49) = 0"'])
+    _pen_or_click_slide(M, 'equation-strategy', 4, {
+        'Write "x = 8  or  x = −4"':
+            [A('x = 8 or x = −4 appears', T(r'$x=8 \quad \text{or} \quad x=-4$', size=44))],
+    }, room=['Write "x − 2 = 6  or  x − 2 = −6"'])
+    _pen_or_click_slide(M, 'equation-strategy', 7, {
+        'Next to this line write "xy = 12, yz = 6 → xy ÷ yz = 12 ÷ 6 → x/z = 2"':
+            [A('Example: xy = 12, yz = 6 → x/z = 2 appears',
+               T(r'$xy=12,\ yz=6 \;\to\; \frac{xy}{yz}=\frac{12}{6} \;\to\; \frac{x}{z}=2$', size=34))],
+    })
+    # ---- guided solutions after the lesson
+    _pen_or_click_slide(M, 'solve-q-191', 2, {
+        'Write "m = 2: 32 = 16n → n = 2"':
+            [A('m = 2: 32 = 16n → n = 2 appears', T(r'$m=2:\ \ 32=16n \;\to\; n=2$', size=S))],
+    })
+    _pen_or_click_slide(M, 'solve-q-191', 3, {
+        'Write "m⁴(m − n) = 0 → m = 0 or n = m"':
+            [A('m⁴(m − n) = 0 → m = 0 or n = m appears', T(r'$m^4(m-n)=0 \;\to\; m=0 \ \text{ or } \ n=m$', size=S))],
+    })
+    _pen_or_click_slide(M, 'solve-q-192', 2, {
+        'Write "x² = 0 → x = 0"':
+            [A('x² = 0 → x = 0 appears', T(r'$x^2=0 \;\to\; x=0$', size=S))],
+        'Write "x² = 25 → x = 5 or x = −5"':
+            [A('x² = 25 → x = 5 or x = −5 appears', T(r'$x^2=25 \;\to\; x=5 \ \text{ or } \ x=-5$', size=S))],
+    }, room=['Write "x²(x² − 25) = 0"'])
+    _pen_or_click_slide(M, 'solve-q-193', 2, {
+        'Write "x = 5  or  x = −13"':
+            [A('x = 5 or x = −13 appears', T(r'$x=5 \quad \text{or} \quad x=-13$', size=S))],
+    }, room=['Write "x + 4 = 9  or  x + 4 = −9"'])
+    _pen_or_click_slide(M, 'solve-q-194', 2, {
+        'Write "×5: a − 6b = 5 − 5b"':
+            [A('×5: a − 6b = 5 − 5b appears', T(r'$\times5:\ \ a-6b=5-5b$', size=S))],
+        'Write "a − b = 5 > 0"':
+            [A('a − b = 5 > 0 appears', T(r'$a-b=5>0$', size=S))],
+    }, room=['Write "a = 5 + b"'])
+    _pen_or_click_slide(M, 'solve-q-195', 2, {
+        'Write "x + y = 5" and circle choice 2':
+            [A('x + y = 5 appears', T(r'$x+y=5$', size=S)), D('Circle choice 2')],
+    }, room=['Write "13x + 13y = 65" under the equations', 'Write "13(x + y) = 65"'])
+    _pen_or_click_slide(M, 'solve-q-197', 2, {
+        'Write "4 + 7 + 8 + c = 24"':
+            [A('4 + 7 + 8 + c = 24 appears', T(r'$4+7+8+c=24$', size=S))],
+        'Write "19 + c = 24 → c = 5" and circle choice 2':
+            [A('19 + c = 24 → c = 5 appears', T(r'$19+c=24 \;\to\; c=5$', size=S)), D('Circle choice 2')],
+    }, room=['Under the big equation write "(a + b) + (2a + c) + (b + c) + c"'])
+    _pen_or_click_slide(M, 'solve-q-196', 2, {
+        'Write "(x − y)² = x² + y² − 2xy"':
+            [A('(x − y)² = x² + y² − 2xy appears', T(r'$(x-y)^2=x^2+y^2-2xy$', size=S))],
+        'Write "2xy = 36 → xy = 18"':
+            [A('2xy = 36 → xy = 18 appears', T(r'$2xy=36 \;\to\; xy=18$', size=S))],
+    }, room=['Under it write "7² = 85 − 2xy"'])
