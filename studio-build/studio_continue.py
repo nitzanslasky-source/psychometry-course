@@ -70,6 +70,25 @@ document.addEventListener('click',e=>{if(e.target.closest?.('#qcont'))continueTa
 """
 
 REPL = [
+    # after Stop: "Keep recording" in the Keep / Discard bar = load the take just stopped back in and continue (nothing saved)
+    ("✎ Edit</button></div></div>';",
+     "✎ Edit</button><button id=\"take-cont\" title=\"Stopped by mistake? Go on recording this take (nothing is saved yet)\" "
+     "style=\"padding:11px 20px;border-radius:10px;border:1px solid #d8e6e3;background:#fff;color:#17233c;font-weight:700;font-size:15px;cursor:pointer\">"
+     "⤴ Keep recording</button></div></div>';"),
+    ("res(keep&&edited?edited:keep)};", "res(keep===true&&edited?edited:keep)};"),
+    ("box.querySelector('#take-discard').onclick=()=>done(false);",
+     "box.querySelector('#take-discard').onclick=()=>done(false);"
+     "box.querySelector('#take-cont').onclick=()=>done({continue:true,blob:edited?edited.blob:null,chapters:edited?edited.chapters:null});"),
+    ("Enter = keep · Esc = discard", "Enter = keep · Esc = discard · Stopped by mistake? Keep recording"),
+    ("const kk=await askKeepTake(blob,r.chapters);",
+     "const kk=await askKeepTake(blob,r.chapters);"
+     "if(kk&&kk.continue){if(kk.blob){blob=kk.blob;r.chapters=kk.chapters}"
+     "if(!CUT.ok||!window.Mediabunny){toast('Continuing needs a current desktop Chrome or Edge. Keep the take and use Continue a take later.');return}"
+     "$('#record-message').textContent='Loading the take back in to continue… (nothing was saved)';"
+     "const f=new File([blob],name,{type:blob.type||'video/mp4'});let dur=0;"
+     "try{dur=await new Mediabunny.Input({source:new Mediabunny.BlobSource(f),formats:Mediabunny.ALL_FORMATS}).computeDuration()}catch(e){console.warn(e)}"
+     "if(!(dur>0)){toast('Could not read the take back. Keep it and use Continue a take.');return}"
+     "await continueFrom(f,v,(r.chapters||[]).map(c=>({start:c.start,title:c.title})),dur);return}"),
     ('<button id="qedit" title="Edit a saved take: cut pieces out, speed parts up">✎ Edit a take</button>',
      '<button id="qedit" title="Edit a saved take: cut pieces out, speed parts up">✎ Edit a take</button>'
      '<button id="qcont" title="Continue recording a saved take, from its end or from an earlier moment">⤴ Continue a take</button>'),

@@ -112,7 +112,9 @@ class CutRecorder{
    ?new Mp4Muxer.Muxer({target:new Mp4Muxer.StreamTarget({onData,chunked:true,chunkSize:16*1024*1024}),video:{codec:'avc',width:1920,height:1080},audio:A?{codec:A.name,sampleRate:A.sampleRate,numberOfChannels:A.numberOfChannels}:undefined,fastStart:false,firstTimestampBehavior:'cross-track-offset'})
    :new WebMMuxer.Muxer({target:new WebMMuxer.StreamTarget({onData,chunked:true,chunkSize:16*1024*1024}),video:{codec:'V_VP9',width:1920,height:1080,frameRate:30},audio:A?{codec:'A_OPUS',sampleRate:A.sampleRate,numberOfChannels:A.numberOfChannels}:undefined,firstTimestampBehavior:'offset'});
   let i=0,j=0;const V=this.v,Au=A?this.a:[];
-  while(i<V.length||j<Au.length){if(j>=Au.length||(i<V.length&&V[i].timestamp<=Au[j].timestamp)){m.addVideoChunk(V[i],i===0?this.vmeta:undefined);i++}else{m.addAudioChunk(Au[j],j===0?this.ameta:undefined);j++}}
+  // a continued take can overlap by a few ms where the old part ends: skip any chunk that would go back in time
+  let lv=-Infinity,la=-Infinity,fv=true,fa=true;
+  while(i<V.length||j<Au.length){if(j>=Au.length||(i<V.length&&V[i].timestamp<=Au[j].timestamp)){const c=V[i++];if(c.timestamp>lv){m.addVideoChunk(c,fv?this.vmeta:undefined);fv=false;lv=c.timestamp}}else{const c=Au[j++];if(c.timestamp>la){m.addAudioChunk(c,fa?this.ameta:undefined);fa=false;la=c.timestamp}}}
   m.finalize();
   for(const p of patches){let k=0;while(k<p.d.length){const at=p.pos+k,part=parts.find(x=>at>=x.pos&&at<x.pos+x.d.length);
     if(!part){const tail=p.d.subarray(k);if(at===end){parts.push({pos:at,d:tail});end+=tail.length}break}
