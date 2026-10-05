@@ -938,7 +938,8 @@ def apply(M):
     new_numbers(M)
     order_changes(M)
     dedupe_examples(M)   # 2026-10-04
-    pen_or_click(M)      # 2026-10-05: runs last
+    pen_or_click(M)      # 2026-10-05
+    hebrew_intro(M)      # 2026-10-05: runs last
 
 
 # ---------------------------------------------------------------- 7. pass 2: summary video before the practice
@@ -1979,3 +1980,59 @@ def pen_or_click(M):
         'Write "2xy = 36 → xy = 18"':
             [A('2xy = 36 → xy = 18 appears', T(r'$2xy=36 \;\to\; xy=18$', size=S))],
     }, room=['Under it write "7² = 85 − 2xy"'])
+
+
+# ---------------------------------------------------------------- 2026-10-05 lesson back to the Hebrew short intro
+# The Hebrew section "Equations - theory" opens with a ~1 minute intro (techniques for the exam's equations; dividing
+# by an unknown only if it is not 0) and then teaches each idea inside its own question video. equation-strategy
+# becomes that short intro (same id, same place); each idea the old lesson slides taught is now stated in its question.
+def _add_rule(M, vid, n, before_say, line, item, label):
+    """Insert one spoken line + one board item right before the spoken line (or item label) containing `before_say`.
+    If the item before it had extra room for handwriting (pen_or_click), that room moves to the new item."""
+    b = M.slide(vid, n); script = []; hit = False
+    prev = b['pre'] - 1
+    for l in b['lines']:
+        if before_say in (l.get('say') or l.get('label') or '') and not hit:
+            script += [A(label, item), line]; hit = True; at = prev
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']])); prev = l['appear'] if not hit else prev
+        else: script.append(D(l['draw']))
+    assert hit, '%s #%d: not found: %s' % (vid, n, before_say)
+    room = b['items'][at].get('gap')
+    M.set_slide(vid, n, script=script)
+    b = M.slide(vid, n)
+    new = next(k for k, it in enumerate(b['items']) if it.get('t') == item['t'])
+    if room and room > 44 and new == at + 1:
+        b['items'][new]['gap'] = room; b['items'][at].pop('gap', None)
+
+
+def hebrew_intro(M):
+    vid = 'equation-strategy'
+    M.remove_slides(vid, list(range(2, len(M.video(vid)['beats']) + 1)))
+    M.set_slide(vid, 1, script=[
+        'In this section: different techniques for solving the equations we get on the exam.',
+        'Each question that follows teaches one of them.'])
+    M.insert_slides(vid, 1, [
+        dict(mode='concept', title='Dividing by an unknown', active=0, pre=[], script=[
+            'The first technique: dividing by an unknown.',
+            A("'Same operation on both sides: allowed' appears", T('Same operation on both sides: allowed', 40)),
+            'We may do the same operation on both sides of an equation.',
+            'So we may also divide both sides by x.',
+            A("'Divide both sides by x? Only if x is not 0' appears", T(r'Divide both sides by $x$? Only if $x \ne 0$', 40)),
+            'But only if x is not zero.',
+            A("'x = 0 → dividing by 0: undefined' appears", T(r'$x=0 \;\to\;$ dividing by $0$: undefined', 40)),
+            'If x is zero, we are dividing by zero — and that is undefined.',
+            "Let's see it in the questions."])])
+    M.set_sidebar(vid, ['Dividing by an unknown'])
+
+    # q-191: the trap is taught; add the rule for powers of two and up (Hebrew video 1 ends with it)
+    _add_rule(M, 'solve-q-191', 3, 'm⁴(m − n) = 0 → m = 0 or n = m appears',
+              'The rule for a power of two and up: take out a common factor. You get a product equal to zero — and then at least one factor is zero.',
+              T(r'Power $2$ and up: common factor $\to$ product $=0$', 38),
+              "'Power 2 and up: common factor → product = 0' appears")
+    _say_replace(M, 'solve-q-191', 3, 'Factor instead: m to the fourth', 'Here: m to the fourth')
+    # q-195: "calculate an expression" (Hebrew intro before video 5)
+    _add_rule(M, 'solve-q-195', 2, "Don't solve for x and y separately",
+              'They ask for an expression? Build it straight from the equations — add them or subtract them.',
+              T('Asked for an expression? Add or subtract the equations', 36),
+              "'Asked for an expression? Add or subtract the equations' appears")
