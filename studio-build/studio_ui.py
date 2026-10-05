@@ -33,6 +33,16 @@ function askKeepTake(blob){return new Promise(res=>{const url=URL.createObjectUR
 """
 
 
+# ---- faded preview of what's still to come (teacher only) + a toggle in the script toolbar ----
+GHOST_FN = r"""
+function ghostOn(){try{return localStorage.getItem('ghost-preview')!=='off'}catch{return true}}
+setInterval(()=>{const t=document.getElementById('sb-fplus')||document.getElementById('sb-pos');if(!t||document.getElementById('ghost-tog'))return;
+ const b=document.createElement('button');b.id='ghost-tog';b.className=(t.className||'').replace('active','');
+ const paint=()=>{b.textContent=ghostOn()?'👁 Preview: on':'👁 Preview: off';b.title='Show what is still to come on this slide, faded — only you see it, not the recording';b.classList.toggle('active',ghostOn())};
+ b.onclick=()=>{try{localStorage.setItem('ghost-preview',ghostOn()?'off':'on')}catch{}paint();try{updateSlide()}catch{}};paint();t.after(b)},800);
+"""
+
+
 # ---- Option key alone = switch pen <-> pointer ----
 OPT_FN = r"""
 {let optAlone=false;
@@ -171,6 +181,13 @@ def apply(s):
     s = rep(s, "$('#board').onpointermove=e=>{if(!$('#laser-toggle')?.checked)return;",
             "$('#board').onpointermove=e=>{const combo=penPointer&&pen.getTool()==='pen';if(!$('#laser-toggle')?.checked&&!combo)return;"
             "if(combo&&e.buttons){laser=null;$('#laser')?.remove();return}")
+    # faded preview (teacher's screen only): items still to come show faded in their final place, so the teacher knows
+    # where not to draw; the recording and the presenter window get only what is revealed (currentSvg is unchanged)
+    s = rep(s, "if(i<shown)o+=`<g data-i=\"${i}\">${r.svg}</g>`",
+            "if(i<shown)o+=`<g data-i=\"${i}\">${r.svg}</g>`;else if(window.__ghost)o+=`<g data-ghost=\"${i}\" opacity=\"0.2\">${r.svg}</g>`")
+    s = rep(s, "$('#board-svg').innerHTML=currentSvg;",
+            "$('#board-svg').innerHTML=(STUDIO&&ghostOn())?(()=>{window.__ghost=true;try{return boardSvg(v,state.beat,state.step)}finally{window.__ghost=false}})():currentSvg;")
+    s = rep(s, "function setFont(d){", GHOST_FN + "function setFont(d){")
     # script text size: much wider range and bigger steps (was 15-30 px, 1 px per click)
     s = rep(s, "function setFont(d){state.font=Math.max(15,Math.min(30,state.font+d));", "function setFont(d){state.font=Math.max(8,Math.min(40,state.font+2*d));")
     s = rep(s, "state.font=Math.max(15,Math.min(30,+b.font||18));", "state.font=Math.max(8,Math.min(40,+b.font||18));")
