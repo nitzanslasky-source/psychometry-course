@@ -7,7 +7,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SRC = os.environ.get('SRC', os.path.expanduser('~/Downloads/Psychometric-Teacher-Studio-v19-hybrid.html'))
 s = open(SRC, encoding='utf-8').read(); k = s.find('window.COURSE=') + len('window.COURSE=')
 D = json.JSONDecoder().raw_decode(s[k:])[0]
-ids = sys.argv[1:] or [os.path.basename(p)[:-5] for p in sorted(glob.glob(os.path.join(HERE, 'ai_scripts', '*.json')) if not os.path.basename(p).startswith('_'))]
+ids = sys.argv[1:] or [os.path.basename(p)[:-5] for p in sorted(glob.glob(os.path.join(HERE, 'ai_scripts', '*.json'))) if not os.path.basename(p).startswith('_')]
 bad = 0
 for vid in ids:
     p = os.path.join(HERE, 'ai_scripts', vid + '.json')
