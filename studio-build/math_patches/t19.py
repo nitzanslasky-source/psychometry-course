@@ -733,6 +733,7 @@ def apply(M):
     summary(M)
     elite_property_summary(M)
     dedupe_examples(M)   # 2026-10-04: runs last
+    cut_repeats(M)       # 2026-10-05: after that
 
 
 def _b(label, tex, size=44):
@@ -999,3 +1000,84 @@ def dedupe_examples(M):
         ('Open the brackets: x squared plus two x plus one, minus two x, minus two. x squared minus one.',
          'Open the brackets: x squared plus four x plus four, minus two x, minus four. x squared plus two x.'),
         ('Next to it write "x + 1² − 2x + 1" and cross it out', 'Next to it write "x + 2² − 2x + 2" and cross it out')])
+
+
+# =====================================================================================
+# 2026-10-05 cut repeats (helpers)
+# =====================================================================================
+def _cr_script(M, vid, n):
+    b = M.slide(vid, n); out = []
+    for l in b['lines']:
+        if 'say' in l: out.append(l['say'])
+        elif 'appear' in l: out.append(A(l['label'], b['items'][l['appear']]))
+        else: out.append(D(l['draw']))
+    return out
+
+
+def _cr_add(M, vid, n, anchor, new, where='after'):
+    """Insert script entries `new` before/after the spoken line containing `anchor` (None = at the end)."""
+    sc = _cr_script(M, vid, n); out = []; hit = anchor is None
+    for x in sc:
+        if not hit and isinstance(x, str) and anchor in x:
+            hit = True
+            out += ([x] + new) if where == 'after' else (new + [x]); continue
+        out.append(x)
+    if anchor is None: out += new
+    assert hit, '%s #%d: not found: %s' % (vid, n, anchor)
+    M.set_slide(vid, n, script=out)
+
+
+def _cr_say(M, vid, n, old, new):
+    """Replace the whole spoken line containing `old` (new=None deletes it)."""
+    def fn(lines):
+        for k, l in enumerate(lines):
+            if 'say' in l and old in l['say']:
+                if new is None: lines.pop(k)
+                else: l['say'] = new
+                return lines
+        raise AssertionError('%s #%d: not found: %s' % (vid, n, old))
+    M.edit_lines(vid, n, fn)
+
+
+def _cr_drop_item(M, vid, n, text):
+    """Remove the pop-in board item whose text contains `text` (and its appear line)."""
+    sc = [x for x in _cr_script(M, vid, n) if not (isinstance(x, tuple) and x[0] == 'A' and text in (x[2].get('t') or ''))]
+    assert len(sc) < len(_cr_script(M, vid, n)), (vid, n, text)
+    M.set_slide(vid, n, script=sc)
+
+
+def _cr_cut(M, vid, titles):
+    """Remove the slides with these titles; drop their sidebar labels and re-point the other slides."""
+    v = M.video(vid); sb = list(v.get('hybrid', {}).get('sidebar') or [])
+    ns = [k + 1 for k, b in enumerate(v['beats']) if b['title'] in titles]
+    assert len(ns) == len(titles), (vid, titles, [b['title'] for b in v['beats']])
+    gone = {v['beats'][n - 1]['active'] for n in ns}
+    M.remove_slides(vid, ns)
+    keep_used = {b['active'] for b in v['beats']}
+    new_sb = [lab for k, lab in enumerate(sb) if not (k in gone and k not in keep_used)]
+    for b in v['beats']:
+        if 0 <= b['active'] < len(sb): b['active'] = new_sb.index(sb[b['active']])
+    M.set_sidebar(vid, new_sb)
+
+
+def cut_repeats(M):
+    # ---- "Operation Patterns": each type is taught by the question right after it -> keep the intro + the inverse
+    #      operation (no question video teaches it). Expression input -> Q6; conditions -> Q7; backwards -> Q8;
+    #      circular -> Q9, Q10; isolate -> Q11; must be true -> Q12; property + undo themselves -> Q13 (+ the step
+    #      property in one line); definition in words -> one line in Q21 (q-556).
+    _cr_cut(M, PATTERNS, ['Operation on an expression', 'Conditions', 'Conditions backwards', 'Circular rules',
+                          'Isolate the operation', 'Definition in words', 'Must be true?', 'Property questions',
+                          'Rules that undo themselves', 'Recap'])
+    M.set_slide(PATTERNS, 1, script=[
+        'Last time we saw what a new operation is — with the basic questions.',
+        'Now: the more advanced types. Still not complicated — just a little different.',
+        'Each question that follows shows one type. First, one type that only the practice has: the inverse operation.'])
+    _cr_add(M, PATTERNS, 2, None, ['Now the questions — one for each of the other types.'])
+    # Q13: the step property (used in the practice)
+    _cr_add(M, 'solve-q-r26-t19-18', 3, 'So: spot the family', [
+        A("'Step property? Test two neighbors' appears", T('Step property, like $\\blacklozenge(x+1)=3\\cdot\\blacklozenge(x)$? Test two neighbors', size=34)),
+        "Other property questions work the same way. A step property — one step up in the input, three times the result? Test two neighbors, like two and three."])
+    # Q21: definitions in words
+    _cr_add(M, 'solve-q-556', 2, 'First, understand the operation through its example', [
+        A("'Definition in words? Write 2–3 examples first' appears", T('Definition in words? Write $2$–$3$ examples first', size=36)),
+        "A definition in words — a remainder, the number of divisors, the sum of the digits — is easy to misread. Write two or three quick examples first."], where='after')

@@ -1105,3 +1105,86 @@ def summary(M):
             "A center at (8, 0) is not a radius of 8. And across the x-axis, it's the y that changes.",
             "Good luck."]),
     ], LEARN, after=last)
+
+
+# ================================================================================================
+# 2026-10-05 cut repeats: a lesson slide that the next question video teaches again is cut
+# (see the CHANGES file). Runs LAST: the original apply() is wrapped below.
+# ================================================================================================
+def _cr_cut(M, vid, ns):
+    """Remove slides ns (1-based) and keep the sidebar and every slide's 'active' consistent."""
+    v = M.video(vid); sb = list(v.get('hybrid', {}).get('sidebar', [])); beats = v['beats']
+    gone = {beats[n - 1].get('active', -1) for n in ns} - {-1}
+    used = {b.get('active', -1) for k, b in enumerate(beats, 1) if k not in ns}
+    gone -= used
+    idx, new = {}, []
+    for i, l in enumerate(sb):
+        if i in gone: continue
+        idx[i] = len(new); new.append(l)
+    M.remove_slides(vid, ns)
+    for b in v['beats']:
+        if b.get('active', -1) >= 0: b['active'] = idx[b['active']]
+    M.set_sidebar(vid, new)
+
+
+def _cr_find(M, vid, n, part):
+    ls = M.slide(vid, n)['lines']
+    k = [i for i, l in enumerate(ls) if part in (l.get('say') or '')]
+    assert len(k) == 1, (vid, n, part, k)
+    return ls, k[0]
+
+
+def _cr_say(M, vid, n, old, new):
+    ls, k = _cr_find(M, vid, n, old)
+    ls[k]['say'] = ls[k]['say'].replace(old, new); M.touched_videos.add(vid)
+
+
+def _cr_drop_say(M, vid, n, part):
+    ls, k = _cr_find(M, vid, n, part)
+    ls.pop(k); M.touched_videos.add(vid)
+
+
+def _cr_drop_item(M, vid, n, k):
+    """Remove board item k of a slide, its 'appears' cue, and renumber the later cues."""
+    b = M.slide(vid, n); b['items'].pop(k)
+    b['lines'] = [l for l in b['lines'] if l.get('appear') != k]
+    for l in b['lines']:
+        if l.get('appear') is not None and l['appear'] > k: l['appear'] -= 1
+    M.touched_videos.add(vid)
+
+
+def _cr_add(M, vid, n, part, say, item, label, before=False, at=None):
+    """Add one spoken line with its board item, right after (or before) the line containing `part`.
+    at = position of the item in the slide's item list (default: last)."""
+    b = M.slide(vid, n)
+    at = len(b['items']) if at is None else at
+    for l in b['lines']:
+        if l.get('appear') is not None and l['appear'] >= at: l['appear'] += 1
+    b['items'].insert(at, item)
+    ls, k = _cr_find(M, vid, n, part)
+    k = k if before else k + 1
+    ls[k:k] = [{'appear': at, 'label': label}, {'say': say}]
+    M.touched_videos.add(vid)
+
+
+def cut_repeats(M):
+    # --- "Area of a Slanted Triangle" (r26-t37-box, a lesson the Hebrew course does not have): every slide
+    #     (box it in, subtract the corners, when to use it) is taught again by the very next video,
+    #     solve-q-r26-t37-10. The lesson leaves the flow; its one extra fact moves into that video.
+    M.unplace('r26-t37-box')
+    _cr_add(M, 'solve-q-r26-t37-10', 3, 'Choice four. The traps',
+            'The box works for a quadrilateral too — as long as every corner touches the box.',
+            T('Works for a quadrilateral too', size=34, x=1060, y=530, w=470),
+            "'Works for a quadrilateral too' appears")
+
+    # --- "Slope": slide 5 (midpoint: repeat the move / the averages) is taught again in solve-q-r26-t37-05,
+    #     slide 13 (where a line cuts the axes) in solve-q-r26-t37-07. Neither is in the Hebrew lesson.
+    _cr_cut(M, 'geo-159', [5, 13])
+
+
+_apply_before_cut = apply
+
+
+def apply(M):
+    _apply_before_cut(M)
+    cut_repeats(M)

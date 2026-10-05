@@ -155,6 +155,7 @@ def apply(M):
     _practice(M)
     _american(M)
     _summary(M)
+    cut_repeats(M)
 
 
 # ------------------------------------------------------------------------------------------------
@@ -784,3 +785,58 @@ def _summary(M):
     ]
     last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
     M.new_video('r26-t29-summary', TOPIC, 'Summary: Probability', sb, slides, ADV, after=last)
+
+
+# =====================================================================================
+# 2026-10-05 cut repeats: a lesson slide whose idea a question video teaches is cut;
+# ideas no question teaches stay, or move as one line + board item into the question video.
+# =====================================================================================
+def _add_line(M, vid, n, before_say, line, item=None, label=None):
+    """Insert one spoken line (+ optional board item) before the line containing `before_say` (None: at the end)."""
+    script = []; hit = False
+    add = ([A(label, item)] if item is not None else []) + ([line] if line else [])
+    for x in _script_of(M, vid, n):
+        if before_say is not None and not hit and before_say in str(x):
+            script += add; hit = True
+        script.append(x)
+    if before_say is None:
+        script += add; hit = True
+    assert hit, (vid, n, before_say)
+    M.set_slide(vid, n, script=script)
+
+
+def cut_repeats(M):
+    LESSONS = ['wp-146', 'wp-147-after', 'wp-151', MORE, 'wp-159']
+    old_sb = list(M.video('wp-146')['hybrid']['sidebar'])
+    # ---- "And · Or": cut "OR with overlap" -> taught in Q12 (soccer or chess) ----------
+    M.remove_slides('wp-151', [3])
+    _replace_say(M, 'wp-151', 2, "If the two cases CAN happen together, adding counts the overlap twice. That's the next slide.",
+                 "If the two cases CAN happen together, adding counts the overlap twice. We'll see that in a question soon.")
+    _add_line(M, 'solve-q-r26-t29-01', 2, 'Subtract them once',
+              None, T(r'OR $=$ first $+$ second $-$ both', 38), "'OR = first + second − both' appears")
+    # the cut slide's other idea: sometimes YOU find "both" (divisible by 4 or 6 -> both = 12, 24)
+    _add_line(M, 'solve-q-r26-t29-01', 3, None,
+              "Sometimes you find the overlap yourself. From one to thirty, divisible by four or by six: twelve and twenty-four are on both lists.",
+              T(r'$1$–$30$, by $4$ or by $6$: $7+5-2=10$', 38), "'1–30, by 4 or by 6: 7 + 5 − 2 = 10' appears")
+
+    # ---- More rules: keep title + "Exactly one" (no question teaches "one order × number of orders") ----
+    M.remove_slides(MORE, [4, 2])          # "Two stages: a tree" -> Q14; "At least one" -> Q13
+    M.set_slide(MORE, 1, title='Exactly One', script=[
+        'More tools for the harder exam questions.',
+        'One of them here: exactly one. The others — OR with overlap, at least one, and two stages — we learn in the questions.'])
+    sc = _script_of(M, MORE, 2)            # "drawn together" is already taught in Q10 (g157)
+    k = next(i for i, x in enumerate(sc) if not isinstance(x, str) and 'Drawn together' in str(x))
+    M.set_slide(MORE, 2, script=sc[:k] + ["Let's see the other tools in the questions."])
+
+    # ---- Dice symmetry: cut the Recap (the card and the summary keep it) ----------------
+    M.remove_slides('wp-159', [3])
+    _add_line(M, 'wp-159', 2, None, "Next question — the symmetry in action.")
+
+    # ---- one shared sidebar for the five lesson parts --------------------------------
+    gone = ['OR with overlap', 'At least one', 'Two stages: a tree', 'Recap']
+    new_sb = [x for x in old_sb if x not in gone]
+    for vid in LESSONS:
+        for b in M.video(vid)['beats']:
+            if b.get('mode') == 'concept':
+                b['active'] = new_sb.index(old_sb[b['active']])
+        M.set_sidebar(vid, new_sb)

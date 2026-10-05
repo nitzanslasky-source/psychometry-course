@@ -76,3 +76,12 @@
 
 **Summary lesson added:** `r26-t35-summary` "Summary: Solid Geometry" (about 3.4 minutes), at the end of "Learn and try", right before the practice.
 Slides: Summary · Straight or pointed · Surface area · Water and units · Right triangles inside · Cube and box facts · Turning a shape · Cubes in a box · Counting and face areas · Before you practice.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last; the old `apply` is wrapped). A lesson slide is cut only where the question video right after it teaches the same idea again. Nothing in topic 35 is recorded.
+- **`r26-t35-water` "Water Level"**: 1.9 → 0.7 min (5 → 2 slides). Cut "Height = volume ÷ base" and "Pouring" (both taught step by step in Q `solve-q-r26-t35-01`: "the volume does not change", 720 ÷ 144, "the height doesn't carry over"), and the recap. Kept: "Liters and cm³" (no question teaches the units); it now ends "Now try a question."
+  - Moved into `solve-q-r26-t35-01` slide 2: the line "The rule: the water's height is the volume divided by the base area." with the board item "Height = volume ÷ base" (first item on the board). 1.1 → 1.2 min.
+- **`r26-t35-cones` "Cones: Slant Height and Turning"**: 2.1 → 1.4 min (5 → 4 slides). Cut "Slant height" (taught again in `solve-q-r26-t35-02`: the radius, height and slant height make a right triangle, the slant height is the hypotenuse, 3-4-5). Title slide now: "Solids you make by turning a flat shape. And then a question on the slant height." Recap: the slant-height item and words removed, ends "Now a question on the slant height." Kept: turning a rectangle / a right triangle (no question teaches it).
+- **`r26-t35-cubefacts` "Cube and Box Facts"**: 3.6 → 2.8 min (7 → 6 slides). Cut "Painted cube" (taught again in `solve-q-r26-t35-03`: corners 8, edges 12 × 3, faces 6 × 9, inside 3³, sum 125). Kept: diagonals, angles in a cube, faces/edges/vertices, three faces → volume, quick checks.
+- Sidebars updated in all three lessons. The summary `r26-t35-summary` is unchanged: everything it mentions is still taught (in the lesson or in the question videos).
+- Saved: about 2.6 min.

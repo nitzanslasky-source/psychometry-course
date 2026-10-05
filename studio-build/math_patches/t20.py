@@ -645,6 +645,7 @@ def apply(M):
         'q-r26-t20-07', 'q-583', 'q-r26-t20-09', 'q-r26-t20-12', 'q-589', 'q-590'])
 
     summary(M)
+    cut_repeats(M)   # 2026-10-05: last
 
 
 def _b(label, tex, size=44):
@@ -724,3 +725,96 @@ def summary(M):
             "The traps: numbers between zero and one, negative numbers, and the forgotten plus one.",
             "Then practice on your own — and you've finished algebra. Good luck."]),
     ], SEC, after=last)
+
+
+# =====================================================================================
+# 2026-10-05 cut repeats (helpers)
+# =====================================================================================
+def _cr_script(M, vid, n):
+    b = M.slide(vid, n); out = []
+    for l in b['lines']:
+        if 'say' in l: out.append(l['say'])
+        elif 'appear' in l: out.append(A(l['label'], b['items'][l['appear']]))
+        else: out.append(D(l['draw']))
+    return out
+
+
+def _cr_add(M, vid, n, anchor, new, where='after'):
+    """Insert script entries `new` before/after the spoken line containing `anchor` (None = at the end)."""
+    sc = _cr_script(M, vid, n); out = []; hit = anchor is None
+    for x in sc:
+        if not hit and isinstance(x, str) and anchor in x:
+            hit = True
+            out += ([x] + new) if where == 'after' else (new + [x]); continue
+        out.append(x)
+    if anchor is None: out += new
+    assert hit, '%s #%d: not found: %s' % (vid, n, anchor)
+    M.set_slide(vid, n, script=out)
+
+
+def _cr_say(M, vid, n, old, new):
+    """Replace the whole spoken line containing `old` (new=None deletes it)."""
+    def fn(lines):
+        for k, l in enumerate(lines):
+            if 'say' in l and old in l['say']:
+                if new is None: lines.pop(k)
+                else: l['say'] = new
+                return lines
+        raise AssertionError('%s #%d: not found: %s' % (vid, n, old))
+    M.edit_lines(vid, n, fn)
+
+
+def _cr_drop_item(M, vid, n, text):
+    """Remove the pop-in board item whose text contains `text` (and its appear line)."""
+    sc = [x for x in _cr_script(M, vid, n) if not (isinstance(x, tuple) and x[0] == 'A' and text in (x[2].get('t') or ''))]
+    assert len(sc) < len(_cr_script(M, vid, n)), (vid, n, text)
+    M.set_slide(vid, n, script=sc)
+
+
+def _cr_cut(M, vid, titles):
+    """Remove the slides with these titles; drop their sidebar labels and re-point the other slides."""
+    v = M.video(vid); sb = list(v.get('hybrid', {}).get('sidebar') or [])
+    ns = [k + 1 for k, b in enumerate(v['beats']) if b['title'] in titles]
+    assert len(ns) == len(titles), (vid, titles, [b['title'] for b in v['beats']])
+    gone = {v['beats'][n - 1]['active'] for n in ns}
+    M.remove_slides(vid, ns)
+    keep_used = {b['active'] for b in v['beats']}
+    new_sb = [lab for k, lab in enumerate(sb) if not (k in gone and k not in keep_used)]
+    for b in v['beats']:
+        if 0 <= b['active'] < len(sb): b['active'] = new_sb.index(sb[b['active']])
+    M.set_sidebar(vid, new_sb)
+
+
+def cut_repeats(M):
+    # ---- "Algebraic Understanding" -> the Hebrew intro (what the topic is + the three tools).
+    #      Must/could/cannot -> Topic 1 + Q1, Q3, Q5 (+ "write the word" in Q1); which numbers -> Q1 (+ equal letters);
+    #      between 0 and 1 -> Q1, Q2; integer gaps -> Q3 (+ the general rule); scaling -> Q4 (its lesson example was
+    #      the same question with x16); connect topics -> Q5 (+ the cycle of ratios).
+    _cr_cut(M, LESSON, ['Must, could, cannot', 'Which numbers?', 'Between 0 and 1', 'Integer gaps', 'Scaling',
+                        'Connect topics', 'Recap'])
+    _cr_say(M, LESSON, 2, 'But this lesson, and the practice after it',
+            'But the questions, and the practice after them, give you tools that open your head for questions like these.')
+    _cr_add(M, LESSON, 2, None, ['As usual, we start with sample questions. Two on plugging in first — then four with more than one way in.'])
+    q1 = 'solve-q-r26-t20-01'
+    _cr_add(M, q1, 2, 'x and y are positive, and x is bigger than y', [
+        D('Write "MUST" in a corner and circle it'),
+        "First habit: write the word — must, could, cannot. Under pressure, the directions flip."])
+    _cr_add(M, q1, 3, 'Both brackets are positive', [
+        A("'Letters may be equal? Try a = b too' appears", T('Letters may be equal? Try equal values too', size=36)),
+        "One more rule for plugging in: if the letters may be equal, try equal values too. Here x is bigger than y — so they can't be."])
+    _cr_add(M, 'solve-q-577', 2, 'Therefore c is at least two below a', [
+        A("'n increasing integers: last ≥ first + (n − 1)' appears", T('$n$ increasing integers: last $\\ge$ first $+\\,(n-1)$', size=36)),
+        "In general: n integers, each bigger than the one before — the last is at least the first, plus n minus one."])
+    _cr_say(M, 'solve-q-578', 3, 'The general rule from the lesson',
+            'The general rule: x changes by the factor to the power three halves. Root nine is three. Three cubed is twenty-seven.')
+    _cr_add(M, 'solve-q-579', 3, None, [
+        A("'x/y · y/z · z/x = 1' appears", T('$\\frac{x}{y}\\cdot\\frac{y}{z}\\cdot\\frac{z}{x}=1$ — not all three can be $>1$', size=36)),
+        "One more structure from another place: a cycle of ratios cancels to one — so the three fractions can't all be bigger than one. Check the givens first: no letter may be zero."])
+
+    # ---- "Counting Integers & Pigeonhole": only odd or even -> Q7; to be sure -> Q8.
+    #      Kept: from a to b, strictly between (+ the letters tip), pigeonhole (the remainder version is not in Q8).
+    _cr_cut(M, COUNT, ['Only odd or even', 'To be sure', 'Recap'])
+    _cr_add(M, COUNT, 3, None, [
+        A("'Letters in the choices? Plug in small numbers and count' appears", T('Letters in the choices? Plug in small numbers and count', size=38)),
+        "And if the answers have letters — plug in small numbers, count by hand, and see which formula gives your count."])
+    _cr_add(M, COUNT, 4, None, ['Two questions next — counting odd numbers, and being sure. Then practice on your own — and you\'ve finished algebra.'])

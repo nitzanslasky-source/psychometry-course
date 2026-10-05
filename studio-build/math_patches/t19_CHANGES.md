@@ -107,3 +107,12 @@ Teacher-approved addition: **property questions** — the question gives a prope
 ## 2026-10-04 question = lesson example fixed
 - Lesson "new-operation" slide 5 worked out ◆(x + 1) for ◆(x) = x² − 2x (same as guided q-r26-t19-01) -> the lesson now does ◆(x + 2) = x² + 2x (same trap). Question and its video unchanged.
 - Checked and left: q-545 and q-542 share a definition with a lesson but ask a different question.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs after `dedupe_examples`). Nothing in topic 19 is recorded. "Defining a New Operation" is unchanged.
+- **`operation-patterns` "Operation Patterns"**: 6.8 → 1.0 min. Each type is taught by the question right after it. Kept: the title (now "Each question that follows shows one type…") and "Inverse operation" (only the practice has it).
+  - Cut "Operation on an expression" → Q6 `solve-q-544`. "Conditions" → Q7 `solve-q-545`. "Conditions backwards" → Q8 `solve-q-r26-t19-03`. "Circular rules" → Q9 `solve-q-546`, Q10 `solve-q-547`. "Isolate the operation" → Q11 `solve-q-548`. "Must be true?" → Q12 `solve-q-549` (skip first, plug in, avoid 0 and 1, second number). "Property questions" and "Rules that undo themselves" → Q13 `solve-q-r26-t19-18`.
+  - The step property (◆(x + 1) = 3 · ◆(x): test two neighbors; used in practice `q-r26-t19-19`) → one line + board item in Q13.
+  - "Definition in words" (write 2–3 examples first; used in practice `q-576`, `q-r26-t19-15`) → one line + board item in Q21 `solve-q-556`.
+  - Cut "Recap".
+- Card `mem-new-operation` unchanged (it still lists every type).

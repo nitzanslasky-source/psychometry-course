@@ -89,3 +89,11 @@ Patch: `math_patches/t37.py`. Check: `python3 math_check.py 37` → 0 problems, 
 - `solve-geo37-g166` slide 3: the original board is back as $\frac{10}{4}=\frac{5}{?}$, and so is the original line "If you prefer an equation: y equals two fifths x plus b. Plug in A: 7 equals 2 plus b. So, b is 5. Same answer."
 
 **Summary lesson (1 new video):** `r26-t37-summary` "Summary" is at the end of "Learn and try", right before the practice (about 3.6 min). Slides: Summary · Points · Reflections · Along an axis · Slanted segments · Slanted triangles · Circles · Slope and midpoint · Through the origin · Lines and axes · Before you practice.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last; the old `apply` is wrapped). A lesson slide is cut only where a question video after it teaches the same idea again. Nothing in topic 37 is recorded.
+- **`r26-t37-box` "Area of a Slanted Triangle"** (1.6 min, not in the Hebrew course): taken out of the flow. Every slide (box it in, subtract the three corner triangles, when to use it) is taught again by the very next video, `solve-q-r26-t37-10` ("A triangle with no horizontal side. Box it in."; box 6 · 6 = 36; corners 6, 6, 8; 36 − 20 = 16).
+  - Moved into `solve-q-r26-t37-10` slide 3: "The box works for a quadrilateral too — as long as every corner touches the box." with the board item "Works for a quadrilateral too". 1.0 → 1.1 min.
+- **`geo-159` "Slope"**: 6.3 → 4.8 min (13 → 11 slides). Cut "Midpoint" (taught again in `solve-q-r26-t37-05`: repeat the move, then check with the averages) and "Cutting the axes" (taught again in `solve-q-r26-t37-07`: put y = 0, then x = 0, then the right triangle). Neither is in the Hebrew lesson. Kept: "The line equation" (y = mx + b, horizontal / vertical lines; no question teaches it) and everything from the Hebrew lesson.
+- Sidebar updated. The summary `r26-t37-summary` is unchanged (the box method, the midpoint and the axis points are still taught in the question videos).
+- Saved: about 3.0 min.

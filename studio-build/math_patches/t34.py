@@ -279,6 +279,7 @@ def apply(M):
     _figures(M)
     _summary(M)
     _text_pass(M)            # new slides too
+    cut_repeats(M)           # 2026-10-05: last
 
 
 # ------------------------------------------------------------------------------------------------
@@ -862,3 +863,85 @@ def _summary(M):
             "You know all of this. Now practice.",
         ]),
     ], LEARN, after=last)
+
+
+# ================================================================================================
+# 2026-10-05 cut repeats: a lesson slide that the next question video teaches again is removed
+# (the teacher: the Hebrew course has a short intro, and each question video teaches its own idea).
+# ================================================================================================
+def _cr_cut(M, vid, ns):
+    """remove slides ns (1-based) and drop their sidebar labels; the other slides' 'active' indexes follow."""
+    v = M.video(vid)
+    gone = {v['beats'][n - 1].get('active') for n in ns}
+    M.remove_slides(vid, ns)
+    side = v.get('hybrid', {}).get('sidebar')
+    if side is None: return
+    used = {b.get('active') for b in v['beats']}
+    drop = sorted(a for a in gone if a is not None and a >= 0 and a not in used)
+    for b in v['beats']:
+        a = b.get('active')
+        if a is not None and a >= 0: b['active'] = a - sum(1 for d in drop if d < a)
+    M.set_sidebar(vid, [l for k, l in enumerate(side) if k not in drop])
+
+
+def _cr_say(M, vid, n, old, new):
+    """replace a spoken line (by its start); new=None deletes it."""
+    def fn(lines):
+        k = next(i for i, l in enumerate(lines) if l.get('say', '').startswith(old))
+        if new is None: lines.pop(k)
+        else: lines[k] = dict(lines[k], say=new)
+        return lines
+    M.edit_lines(vid, n, fn)
+
+
+def _cr_add(M, vid, n, after, says, item=None, label=None):
+    """add spoken lines (and optionally one board item that appears before them) after the line starting with `after`
+    (after=None: at the end of the slide)."""
+    b = M.slide(vid, n)
+    new = []
+    if item is not None:
+        b['items'].append(item)
+        new.append({'appear': len(b['items']) - 1, 'label': label})
+    new += [{'say': s} for s in says]
+    def fn(lines):
+        k = len(lines) if after is None else next(i for i, l in enumerate(lines) if l.get('say', '').startswith(after)) + 1
+        return lines[:k] + new + lines[k:]
+    M.edit_lines(vid, n, fn)
+
+
+def _cr_drop_item(M, vid, n, k):
+    """remove board item k of a slide, its APPEAR line and the spoken line right after it; later APPEARs follow."""
+    b = M.slide(vid, n); b['items'].pop(k)
+    def fn(lines):
+        i = next(i for i, l in enumerate(lines) if l.get('appear') == k)
+        del lines[i:i + 2]
+        return [dict(l, appear=l['appear'] - 1) if l.get('appear') is not None and l['appear'] > k else l for l in lines]
+    M.edit_lines(vid, n, fn)
+
+
+def cut_repeats(M):
+    # --- Polygons (geo-104): slide 5 "How many diagonals" = solve-q-r26-t34-02 (n − 3 from one vertex, n(n − 3),
+    #     halve because each diagonal has two ends); slide 13 "Angle → sides" = solve-q-r26-t34-01 (the formula way and
+    #     the fast way through the exterior angle). Slide 12 "Exterior angles" stays: the definition and the reason
+    #     (walk around = 360) are not taught in a question video. The recap loses the two cut items.
+    _cr_cut(M, MAIN, [5, 13])
+    rec = len(M.video(MAIN)['beats'])
+    k = next(i for i, it in enumerate(M.slide(MAIN, rec)['items']) if 'n-3' in it.get('t', ''))
+    _cr_drop_item(M, MAIN, rec, k)
+    for it in M.slide(MAIN, rec)['items']:
+        if it.get('t', '').startswith('Exterior angles'): it['t'] = r'Exterior angles: $360°$ in all'
+    M.edit_lines(MAIN, rec, lambda L: [dict(l, label='Exterior angles: 360° in all appears')
+                                       if str(l.get('label', '')).startswith('Exterior angles') else l for l in L])
+    _cr_say(M, MAIN, rec, 'And the exterior angles always add up to 360.', 'And the exterior angles always add up to 360.')
+
+    # --- Polygons Meeting at a Point (r26-t34-meet): the whole lesson (hexagon + square: 360 around the point, then
+    #     the isosceles triangle) is taught again right after by solve-q-r26-t34-03 (square + pentagon, same two
+    #     steps). The lesson leaves the flow; its one extra fact (polygons that fill a point: 360, honeycomb) moves
+    #     into the question video as one line.
+    M.unplace('r26-t34-meet')
+    _cr_say(M, 'solve-q-r26-t34-03', 1, 'A square and a pentagon on a common side',
+            'A square and a pentagon on a common side — the exam loves this picture.')
+    _cr_add(M, 'solve-q-r26-t34-03', 2, None,
+            ["The same 360 tells you when regular polygons fill a point with no gaps: three hexagons, 3 times 120 — a honeycomb."],
+            T(r'Fill a point: $3\times120°=360°$', size=30, x=1060, y=330, w=470),
+            "'Fill a point: 3 × 120° = 360°' appears")

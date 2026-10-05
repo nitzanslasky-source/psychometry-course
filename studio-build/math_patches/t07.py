@@ -2036,3 +2036,127 @@ def hebrew_intro(M):
               'They ask for an expression? Build it straight from the equations — add them or subtract them.',
               T('Asked for an expression? Add or subtract the equations', 36),
               "'Asked for an expression? Add or subtract the equations' appears")
+
+
+# ---------------------------------------------------------------- 2026-10-05 cut repeats
+# The teacher: a long lesson that pre-teaches every question, then question videos that teach it again, is
+# repetition. Lessons become a short intro (like the Hebrew course); a lesson slide is cut only where a question
+# video in the same section teaches the same idea. Anything taught nowhere else stays, or moves into the question
+# video where it is used (one spoken line + one board item). Runs last.
+def _cr_script(M, vid, n):
+    b = M.slide(vid, n); out = []
+    for l in b['lines']:
+        if 'say' in l: out.append(l['say'])
+        elif 'appear' in l: out.append(A(l['label'], b['items'][l['appear']]))
+        else: out.append(D(l['draw']))
+    return out
+
+
+def _cr_txt(x):
+    if isinstance(x, str): return x
+    if x[0] == 'A': return x[1] + ' ' + str(x[2].get('t', ''))
+    return x[1]
+
+
+def _cr_find(s, anchor, vid, n):
+    ks = [k for k, x in enumerate(s) if anchor in _cr_txt(x)]
+    assert len(ks) == 1, '%s #%d: anchor %r matches %d lines' % (vid, n, anchor, len(ks))
+    return ks[0]
+
+
+def _cr_insert(M, vid, n, anchor, new, before=False):
+    """Insert script entries right after (or before) the line / item / draw containing `anchor`."""
+    s = _cr_script(M, vid, n); k = _cr_find(s, anchor, vid, n) + (0 if before else 1)
+    M.set_slide(vid, n, script=s[:k] + list(new) + s[k:])
+
+
+def _cr_drop(M, vid, n, anchors):
+    """Remove the lines / items / draws containing each anchor."""
+    s = _cr_script(M, vid, n)
+    for a in anchors: s.pop(_cr_find(s, a, vid, n))
+    M.set_slide(vid, n, script=s)
+
+
+def _cr_replace(M, vid, n, anchor, new):
+    """Replace the entry containing `anchor` with the list `new`."""
+    s = _cr_script(M, vid, n); k = _cr_find(s, anchor, vid, n)
+    M.set_slide(vid, n, script=s[:k] + list(new) + s[k + 1:])
+
+
+def _cr_titles(M, vid, keep):
+    """Keep only the slides whose titles are in `keep` (title slide = slide 1 always kept); set the sidebar to the
+    kept slides' old sidebar labels in order and re-point each kept slide's `active`."""
+    v = M.video(vid); old = v.get('hybrid', {}).get('sidebar') or []
+    drop = [n for n, b in enumerate(v['beats'], 1) if n > 1 and b['title'] not in keep]
+    assert len(v['beats']) - len(drop) == len(keep) + 1, '%s: kept titles not found' % vid
+    M.remove_slides(vid, drop)
+    labels = []
+    for b in v['beats'][1:]:
+        lab = old[b['active']] if 0 <= b['active'] < len(old) else b['title']
+        if lab not in labels: labels.append(lab)
+        b['active'] = labels.index(lab)
+    M.set_sidebar(vid, labels)
+
+
+def _cr_slide_after(M, vid, n, title, script):
+    """A short extra question slide right after slide n (same question on the board, same sidebar item), so a
+    moved board item never lands on the teacher's handwriting."""
+    b = M.slide(vid, n)
+    M.insert_slides(vid, n, [dict(mode=b['mode'], title=title, active=b['active'],
+                                  pre=[dict(it) for it in b['items'][:b['pre']]], script=script)])
+
+
+def _cr_intro_only(M, vid, title_script, ahead_script, label="What's ahead"):
+    """Lesson -> title slide + one short 'what's ahead' slide (the questions teach the rest)."""
+    v = M.video(vid)
+    M.remove_slides(vid, list(range(2, len(v['beats']) + 1)))
+    M.set_slide(vid, 1, script=title_script)
+    M.insert_slides(vid, 1, [dict(mode='concept', title=label, active=0, pre=[], script=ahead_script)])
+    M.set_sidebar(vid, [label])
+
+
+def cut_repeats(M):
+    # --- More Equation Tools: Q21 teaches multiply/divide the equations, Q22 teaches x + 1/x
+    _cr_intro_only(M, 'r26-t07-more-tools', [
+        'Two more tools for equation questions.',
+        'Each one gets its own question — and you learn it right there.'], [
+        A("'Products or ratios? Multiply or divide' appears", T('Products or ratios? Multiply or divide the equations', 40)),
+        'Equations that are products or ratios? We can multiply or divide them.',
+        A("'x + 1/x' appears", T(r'$x+\frac{1}{x}$: a favorite on the exam', 40)),
+        'And x plus one over x — a favorite on the exam.',
+        'Two questions now — one for each tool. Try each one before you watch.'])
+    # moved into Q22 (taught only on the cut slide): the minus version
+    _cr_slide_after(M, 'solve-q-r26-t07-02', 2, 'With a minus', [
+        A("'(x − 1/x)² = x² + 1/x² − 2' appears", T(r'$\left(x-\frac{1}{x}\right)^2=x^2+\frac{1}{x^2}-2$', 40)),
+        'One more thing. With a minus — x minus one over x — the middle term is minus two. Then you add two instead.'])
+
+    # --- Quadratic Equations: Q23 factors and tries the choices, Q24 is the a² = b² trap, Q25 is fraction = 0
+    L = 'r26-t07-quadratic'
+    _cr_titles(M, L, ['What it looks like', 'Special cases'])
+    # slide 2: "everything to one side" is taught in Q23; the example x² − 5x + 6 belonged to the cut factor slide
+    _cr_drop(M, L, 2, ['$x^2-5x+6=0$', 'Our example', 'Step 1: everything', 'Step one, always',
+                       'Why zero? Because a product'])
+    # slide 3 (special cases): the "same two numbers" case no longer leans on the cut factor slide
+    _cr_replace(M, L, 3, 'Same two numbers', [
+        A('x² − 6x + 9 = (x − 3)² = 0 → x = 3 only appears',
+          T(r'A perfect square: $x^2-6x+9=(x-3)^2=0 \to x=3$ only', 40))])
+    _cr_replace(M, L, 3, 'Sometimes both numbers are the same', [
+        'Sometimes it is a perfect square: x minus three, squared, equals zero. Only ONE solution: three.'])
+    _cr_insert(M, L, 3, 'So a quadratic can have two solutions', [
+        'Three questions now. Each one teaches one more tool. Try each one before you watch.'])
+    # moved into Q23: the factor rule (product = c, sum = b) and "a choice that works is one solution"
+    _cr_insert(M, 'solve-q-r26-t07-04', 2, 'Write "x² − 2x − 15 = 0"', [
+        A("'Factor: product = c, sum = b' appears", T(r'One side $=0$, then factor: product $=c$, sum $=b$', 36)),
+        'The method: everything to one side, then factor. Find two numbers: their product is c, the number. Their sum is b, the number in front of x.'],
+        before=True)
+    _cr_insert(M, 'solve-q-r26-t07-04', 3, 'Choice two again.', [
+        A("'A choice that works = ONE solution' appears", T('A choice that works is ONE solution. How many? Factor.', 36)),
+        'But a choice that works is one solution — maybe not the only one. For "how many solutions", factor.'])
+
+
+_apply_before_cut_repeats = apply
+
+
+def apply(M):
+    _apply_before_cut_repeats(M)
+    cut_repeats(M)   # 2026-10-05: runs last

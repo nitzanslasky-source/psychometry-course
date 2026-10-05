@@ -1187,6 +1187,7 @@ def apply(M):
     _cleanup(M)
     _fix_sidebars(M)
     _summaries(M)
+    cut_repeats(M)   # 2026-10-05: runs last
 
 
 # =============================================================================================
@@ -1339,3 +1340,81 @@ def _summaries(M):
             'The traps: a ratio upside down, a perimeter equal to the minimum, and mixing "could be" with "necessarily".',
             'Good luck.']),
     ])
+
+
+# =============================================================================================
+# 2026-10-05 cut repeats: a lesson slide that the next question video teaches again is cut
+# =============================================================================================
+def _slide_no(M, vid, title):
+    for n, b in enumerate(M.video(vid)['beats'], 1):
+        if b.get('title') == title: return n
+    raise KeyError('%s: no slide %r' % (vid, title))
+
+
+def _cut_slides(M, vid, titles):
+    """Remove the slides with these titles, drop their sidebar labels, re-point every slide's 'active'."""
+    v = M.video(vid)
+    M.remove_slides(vid, [_slide_no(M, vid, t) for t in titles])
+    sb = [x for x in v['hybrid']['sidebar'] if x not in titles]
+    M.set_sidebar(vid, sb)
+    for b in v['beats']:
+        if b.get('mode') != 'title': b['active'] = sb.index(b['title'])
+
+
+def _drop_items(M, vid, n, texts):
+    """Remove board items whose text starts with one of `texts`, with their appear lines."""
+    b = M.slide(vid, n)
+    gone = [k for k, it in enumerate(b['items']) if any(it.get('t', '').startswith(x) for x in texts)]
+    assert len(gone) == len(texts), (vid, n, gone)
+    new_idx, lines = {}, []
+    for k in range(len(b['items'])):
+        if k not in gone: new_idx[k] = len(new_idx)
+    for l in b['lines']:
+        if 'appear' in l:
+            if l['appear'] in gone: continue
+            l = dict(l, appear=new_idx[l['appear']])
+        lines.append(l)
+    b['items'] = [it for k, it in enumerate(b['items']) if k not in gone]
+    b['lines'] = lines
+    M.touched_videos.add(vid)
+
+
+def cut_repeats(M):
+    # --- teacher's rule: the lesson example must not use the numbers of the next question (g012: 7 and 12)
+    n = _slide_no(M, V_TRI, 'Between diff and sum')
+    swap = {
+        "The difference is always big minus small. For 7 and 12 it's 12 minus 7 — not 7 minus 12.":
+            "The difference is always big minus small. For 5 and 9 it's 9 minus 5 — not 5 minus 9.",
+        'For sides 7 and 12: more than 5 and less than 19.': 'For sides 5 and 9: more than 4 and less than 14.',
+        "How many whole-number lengths can the third side have? 6, 7, and so on up to 18. That's 13 lengths.":
+            "How many whole-number lengths can the third side have? 5, 6, and so on up to 13. That's 9 lengths.",
+        'Quick count: twice the shorter side, minus 1. Twice 7 is 14, minus 1 — 13.':
+            'Quick count: twice the shorter side, minus 1. Twice 5 is 10, minus 1 — 9.',
+        'Write 2 × 7 − 1 = 13': 'Write 2 × 5 − 1 = 9',
+    }
+    hit = []
+    for l in M.slide(V_TRI, n)['lines']:
+        for k in ('say', 'draw'):
+            if l.get(k) in swap: l[k] = swap[l[k]]; hit.append(1)
+    assert len(hit) == len(swap), hit
+    M.touched_videos.add(V_TRI)
+
+    # --- geo-016 "Area of Triangles": two September slides are taught again, in full, by the next questions
+    #     "Area two ways"         -> solve-q-r26-t31-01 (legs 15, 20, hypotenuse 25: area two ways + leg x leg = hyp x alt)
+    #     "Largest possible area" -> solve-q-r26-t31-02 (sides 6 and 8: height at most 6, area at most 24)
+    _cut_slides(M, V_AREA, ['Area two ways', 'Largest possible area'])
+    _drop_items(M, V_AREA, _slide_no(M, V_AREA, 'Recap'), ['Right triangle: leg $\\times$ leg', 'Sides $a,'])
+
+    # --- geo-019 "The Pythagorean Theorem": "Acute or obtuse?" is taught again by solve-q-r26-t31-03.
+    #     That video only showed the obtuse case, so the full rule moves there as one line + one board item.
+    _cut_slides(M, 'geo-019', ['Acute or obtuse?'])
+    vid = 'solve-q-r26-t31-03'
+    b = M.slide(vid, 2)
+    b['items'].append(T('Longest side $c$:\n$c^2=a^2+b^2$ → right\n$c^2>a^2+b^2$ → obtuse\n$c^2<a^2+b^2$ → acute',
+                        size=32, x=410, y=320, w=900))
+    k = next(i for i, l in enumerate(b['lines']) if l.get('say', '').startswith('No figure and no angles'))
+    b['lines'][k + 1:k + 1] = [
+        {'appear': len(b['items']) - 1, 'label': "'c² = a² + b² right · > obtuse · < acute' appears"},
+        {'say': 'The rule: square the longest side. Compare it with the other two squares, added.'},
+        {'say': 'Equal — a right angle. Bigger — obtuse. Smaller — acute.'}]
+    M.touched_videos.add(vid)

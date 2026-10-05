@@ -646,6 +646,7 @@ def apply(M):
         'wp23-p10', 'q-r26-t23-13', 'q-r26-t23-06', 'wp23-p14', 'wp23-p19', 'wp23-p23', 'q-r26-t23-11',
         'q-r26-t23-12', 'wp23-p20', 'wp23-p16', 'wp23-p18', 'q-r26-t23-14', 'wp23-p03'])
     summary(M)
+    cut_repeats(M)
 
 
 # =====================================================================================
@@ -740,3 +741,61 @@ def summary(M):
     ]
     last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
     M.new_video('r26-t23-summary', TOPIC, 'Summary: Percentages', sb, slides, ADV, after=last)
+
+
+# =====================================================================================
+# 2026-10-05 cut repeats: "Percent Traps and Shortcuts" back to a short intro; every idea a
+# question video right after it teaches is cut; what no question teaches stays or moves as
+# one line + board item into the question video that uses it.
+# =====================================================================================
+def _add_line(M, vid, n, before_say, line, item=None, label=None):
+    """Insert one spoken line (+ optional board item) right before the line containing `before_say`
+    (before_say=None: at the end of the slide)."""
+    b = M.slide(vid, n); script = []; hit = False
+    add = ([A(label, item)] if item is not None else []) + [line]
+    for l in b['lines']:
+        if before_say is not None and not hit and before_say in (l.get('say') or l.get('draw') or l.get('label') or ''):
+            script += add; hit = True
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        else: script.append(D(l['draw']))
+    if before_say is None:
+        script += add; hit = True
+    assert hit, '%s #%d: not found: %s' % (vid, n, before_say)
+    M.set_slide(vid, n, script=script)
+
+
+def cut_repeats(M):
+    vid = 'r26-t23-traps'
+    b5 = M.slide(vid, 5); its = b5['items']
+    q_item = next(it for it in its if 'What percent of' in (it.get('t') or ''))
+    ch_item = next(it for it in its if '28.125' in (it.get('t') or ''))
+    M.remove_slides(vid, [2, 3, 4, 6])
+    M.set_slide(vid, 1, script=[
+        'The exam loves a few percent traps.',
+        "We'll meet them in the questions. First, one shortcut no question shows: estimate."])
+    M.set_slide(vid, 2, title='Estimate', active=0, pre=[], script=[
+        A("'What percent of 320 is 90?' appears", dict(q_item)),
+        A("The four choices appear", dict(ch_item)),
+        "You don't always need the exact number. Estimate.",
+        D('Write "25% of 320 = 80,   30% of 320 = 96"'),
+        'Twenty-five percent of three twenty: a quarter — eighty. Thirty percent: ninety-six.',
+        'Ninety is between eighty and ninety-six. So the answer is between twenty-five and thirty percent.',
+        D('Circle choice 2'),
+        'Only choice two is in that range. Done — no long division.',
+        'Three questions next. Try each one first. Then watch.'])
+    M.set_sidebar(vid, ['Estimate'])
+
+    # "More than or of?" -> taught in Q (desk/table); move the general rule there
+    _add_line(M, 'solve-q-r26-t23-03', 2, 'The table is a hundred fifty percent MORE',
+              'The rule: p percent more than a number is a hundred plus p percent of it.',
+              T(r'$p\%$ more than $=\ (100+p)\%$ of', 36), "'p% more than = (100 + p)% of' appears")
+    # "Mixtures" -> taught in Q (sugar); add the other direction
+    _add_line(M, 'solve-q-r26-t23-04', 2, 'We add sugar. So the sugar changes',
+              'Mixtures: always ask what stays the same. Add water, and the sugar stays. Add sugar, and the water stays.',
+              T('Mixtures: find what stays the same', 36), "'Mixtures: find what stays the same' appears")
+    # "Letters: plug in numbers" -> taught in Q (chess); add the number-choice rules
+    _add_line(M, 'solve-q-r26-t23-05', 2, 'Choose easy numbers',
+              'Easy numbers: not zero, not one, a different number for each letter. If two choices hit the target, pick new numbers and test only those two.',
+              T('Not 0, not 1, different numbers · two hit? new numbers', 34),
+              "'Not 0, not 1, different numbers · two hit? new numbers' appears")

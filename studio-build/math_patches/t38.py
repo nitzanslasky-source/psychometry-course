@@ -813,6 +813,8 @@ def apply(M):
                     if ns != l['say']: l['say'] = ns; ch = True
         if ch: M.touched_videos.add(f['ref'])
 
+    cut_repeats(M)   # 2026-10-05: always last
+
 
 
 def _b(label, tex, size=40):
@@ -888,3 +890,91 @@ def summary(M):
             "The traps: trusting the drawing, and thinking a wider angle always means a bigger area.",
             "Good luck."]),
     ], LEARN, after=last)
+
+
+# ==================================================================================== 2026-10-05 cut repeats
+def _slide_no(M, vid, title):
+    return next(n for n, b in enumerate(M.video(vid)['beats'], 1) if b.get('title') == title)
+
+
+def _add_after(M, vid, n, after, new_items):
+    """Insert DSL items (spoken lines / A(...) board items) right after the spoken line containing `after`."""
+    sc = _script(M, vid, n)
+    k = next(i for i, x in enumerate(sc) if isinstance(x, str) and after in x)
+    sc[k + 1:k + 1] = new_items
+    M.set_slide(vid, n, script=sc)
+
+
+def cut_repeats(M):
+    """Lessons back to the Hebrew length: cut lesson slides whose idea a question video right after teaches again.
+    Where a cut slide had something the question video did not say, ONE short line + board item moves there."""
+
+    # ---- Shape Efficiency (geo-172): Hebrew = slides 1-6. Cut 'Rectangles, P = 24' and 'Fixed P or fixed S?'.
+    closing = [l['say'] for l in M.slide(SHAPE, _slide_no(M, SHAPE, 'Fixed P or fixed S?'))['lines']
+               if 'say' in l and not l['say'].startswith(('Before you answer', 'Same perimeter —', 'And regular polygons'))]
+    assert len(closing) == 4, closing
+    M.remove_slides(SHAPE, [_slide_no(M, SHAPE, 'Rectangles, P = 24'), _slide_no(M, SHAPE, 'Fixed P or fixed S?')])
+    n6 = _slide_no(M, SHAPE, 'Long and thin')
+    M.edit_lines(SHAPE, n6, lambda lines: lines + [{'say': s} for s in closing])
+    M.set_sidebar(SHAPE, ['No calculation', 'The circle wins', 'The country rule', 'Closer to a circle', 'Long and thin'])
+    _lesson_actives(M, SHAPE)
+    # the fixed-perimeter rectangles (24 of edging) move into Question 2's rectangle check
+    q2 = 'solve-geo38-g174'; n = _slide_no(M, q2, 'Same idea with rectangles')
+    _replace_say(M, q2, n, 'A familiar check from the course', "Let's check it with rectangles. Both of these have area 36.")
+    _add_after(M, q2, n, 'Same area, more stretched', [
+        A("'Same P = 24: 1 × 11 → 11, 6 × 6 → 36' appears", R(0, 470, 'Same $P=24$: $1\\times11\\rightarrow11$, $6\\times6\\rightarrow36$', 30)),
+        "And the other way: 24 of edging. 1 by 11 gives area 11. 6 by 6 gives 36."])
+
+    # ---- Minimum and Maximum (geo-175): cut 'Two rods', 'Greatest area', 'Acute or obtuse?'.
+    #      Rods rule: taught in Question 3 (g176) and q-r26-t38-01; greatest area / parallelogram / area toward 0 /
+    #      past 90 the height shrinks: q-r26-t38-01 and Question 9 (g183). c² vs a² + b²: Question 3, slide 4.
+    #      'Farthest apart' stays: no question video teaches it (only practice uses it).
+    M.remove_slides(MINMAX, [_slide_no(M, MINMAX, t) for t in ('Two rods', 'Greatest area', 'Acute or obtuse?')])
+    _replace_say(M, MINMAX, _slide_no(M, MINMAX, 'Farthest apart'), "One more 'greatest'",
+                 "Now a 'greatest' you'll see in practice: the greatest distance.")
+    M.set_sidebar(MINMAX, ['Min–max in geometry', 'Move the vertex away', 'Stretch the segment', 'Farthest apart',
+                           'Angles on an arc', 'Angle on a diameter', 'Min–max with an anchor'])
+    _lesson_actives(M, MINMAX)
+    q3 = 'solve-geo38-g176'
+    _replace_say(M, q3, _slide_no(M, q3, 'The side grew — the angle opened'), 'Remember the rods rule',
+                 "Here's the rods rule: two sides stay the same — the wider the angle between them, the longer the third side.")
+    n = _slide_no(M, q3, 'Check with the squares')
+    _replace_say(M, q3, n, 'A check from the course', 'A check with the squares: 16 squared is 256. 9 squared plus 12 squared is 225.')
+    _add_after(M, q3, n, "The opposite side's square is bigger", [
+        A("'c² < a² + b² → acute (c = the longest side)' appears",
+          R(0, 400, '$c^2<a^2+b^2$ $\\rightarrow$ all acute ($c$ = the longest side)', 30)),
+        "And if the longest side's square is smaller than the sum — all three angles are acute."])
+
+    # ---- Diagrams That Can Change (geo-177): back to the Hebrew short intro.
+    #      Must / could / cannot: topic 1 (and algebra topic 20); the questions here use it.
+    #      Test a claim, push to the extremes: Questions 4-5 (g178, g179), edges: Question 6 (g180), counterexample with
+    #      numbers: Question 10 (g184). Slide the apex: q-r26-t38-02. Cannot be determined: Question 4 (g178).
+    M.remove_slides(DIAG, list(range(2, len(M.video(DIAG)['beats']) + 1)))
+    M.set_slide(DIAG, 1, script=[
+        'In the last lessons we met this topic and its main ideas.',
+        "Now we practice exam questions at a high level. Along the way, we'll learn more fine points."])
+    M.insert_slides(DIAG, 1, [dict(mode='concept', title='Diagrams that can change', active=0, pre=[], script=[
+        A("'A drawing can suggest — not prove' appears", T('A drawing can suggest something — not prove it', 42)),
+        'In these questions the drawing can suggest something — without proving it.',
+        A("'Must, could or cannot?' appears", T('Must be true? Could be true? Cannot be true?', 42)),
+        "And read what they ask: must be true, could be true, or cannot be true.",
+        "Each question that follows teaches a tool for this. Let's start with a sample question."])])
+    M.set_sidebar(DIAG, ['Diagrams that can change'])
+    # q-r26-t38-02 (first question after it): say it is a tool, and keep the perimeter warning from 'Slide the apex'
+    g2 = 'solve-q-r26-t38-02'; n = _slide_no(M, g2, 'Same base, same height')
+    _replace_say(M, g2, n, 'Look for triangles with the same base',
+                 'A tool for areas: look for triangles with the same base and an apex on a parallel line.')
+    _add_after(M, g2, n, 'Same base, same height — the same area', [
+        A("'Apex slides on a parallel line: same area, not same perimeter' appears",
+          R(0, 330, 'Apex slides on a parallel line: same area — but not the same perimeter', 30)),
+        'Careful: only the area stays. Slide the apex along the line, and the sides — the perimeter — change.'])
+    # g178 (Question 4): 'what is free' + the end / the middle; and the test for 'cannot be determined'
+    q4 = 'solve-geo38-g178'
+    _replace_say(M, q4, _slide_no(M, q4, 'What does it depend on?'), "That's the 'find what is free' check",
+                 'Notice: TR is free. Nothing in the givens fixes it. So always ask: what is free? Push it to the end — or to the middle.')
+    n = _slide_no(M, q4, 'All three can happen')
+    _add_after(M, q4, n, 'TR 2 — the triangle is 3', [
+        A("'Cannot be determined? Two legal figures, two answers' appears",
+          R(0, 470, "'Cannot be determined'? Two legal figures, two answers", 30)),
+        "That's the only test for 'none must be true' or 'cannot be determined': two figures that keep every given, and two different answers.",
+        "In geometry it's rare — so test it before you choose it."])

@@ -865,6 +865,7 @@ def apply(M):
         for b in v['beats']:
             if (b.get('canvas') or '').startswith('Pre-loaded — question'):
                 b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, stem)
+    cut_repeats(M)
 
 
 # =========================================================================================================
@@ -1029,3 +1030,125 @@ def elite_factorials_late(M):
     M.set_sidebar(V, sb)
     for n in range(2, len(M.video(V)['beats']) + 1):
         M.slide(V, n)['active'] = n - 2
+
+
+# =========================================================================================================
+# 2026-10-05 cut repeats: each lesson back to a short intro (Hebrew style); every idea a question video
+# right after it already teaches is cut from the lesson; ideas no question teaches stay, or move as one
+# line + board item into the question video that uses them.
+# =========================================================================================================
+def _add_line(M, vid, n, before_say, line, item=None, label=None):
+    """Insert one spoken line (+ optional board item) right before the line containing `before_say`
+    (before_say=None: at the end of the slide)."""
+    b = M.slide(vid, n); script = []; hit = False
+    add = ([A(label, item)] if item is not None else []) + [line]
+    for l in b['lines']:
+        if before_say is not None and not hit and before_say in (l.get('say') or l.get('draw') or l.get('label') or ''):
+            script += add; hit = True
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        else: script.append(D(l['draw']))
+    if before_say is None:
+        script += add; hit = True
+    assert hit, '%s #%d: not found: %s' % (vid, n, before_say)
+    M.set_slide(vid, n, script=script)
+
+
+def _keep_slides(M, vid, keep, sidebar):
+    """Keep only the slides `keep` (1-based); set the sidebar; renumber 'active' of the non-title slides."""
+    v = M.video(vid)
+    M.remove_slides(vid, [k for k in range(1, len(v['beats']) + 1) if k not in keep])
+    a = 0
+    for b in v['beats']:
+        if b.get('mode') != 'title':
+            b['active'] = a; a += 1
+    M.set_sidebar(vid, sidebar)
+
+
+def _short_intro(M, vid, title_lines, title, item, label, lines):
+    """Hebrew-style short intro: title slide with 1-2 framing lines + one concept slide (one board item)."""
+    M.set_slide(vid, 1, script=title_lines)
+    M.insert_slides(vid, 1, [dict(mode='concept', title=title, active=0, pre=[],
+                                  script=[A(label, item)] + lines)])
+    M.set_sidebar(vid, [title])
+
+
+def cut_repeats(M):
+    # ---- Counting Possibilities: title + "Different results" + "Type 1: list it" ---------------
+    _keep_slides(M, 'wp-123', [1, 3, 4], ['Different results', 'Type 1: list it'])
+    # "What is counting?" repeated the title slide; Recap cut.
+
+    # ---- Multiply the Choices: title only (Hebrew teaches it inside the meal question) ----------
+    vid = 'wp-124-after'
+    _keep_slides(M, vid, [1], [])
+    _short_intro(M, vid, [
+        "In most counting questions on the exam we won't list and count.",
+        "We use a faster technique: multiplying the possibilities."],
+        'Stages of choice', T(r'Count the options at each stage $\to$ multiply', 40),
+        "'Count the options at each stage → multiply' appears",
+        ["A stage of choice is simply a moment where you have to pick something.",
+         "Let's see how it works in two questions."])
+    # Stages / why multiply / order doesn't matter -> Q2 meal; dependent choices (x 1) -> Q3 code.
+
+    # ---- With or Without Repetition: title + "The pool" (the Hebrew intro) ---------------------
+    vid = 'wp-127'
+    _keep_slides(M, vid, [1, 2], ['The pool'])
+    _add_line(M, vid, 2, None, "Three questions next: a code with repeats, a code without, and a row.")
+    _add_line(M, 'solve-wp28-g128', 2, None,
+              "Same with numbers: a three-digit number may repeat digits — four four four counts.",
+              T('$444$ is a three-digit number', 36), "'444 is a three-digit number' appears")
+    _add_line(M, 'solve-wp28-g130', 2, 'Six items in a row: six factorial ways',
+              "The exclamation mark is called factorial: the number times every whole number below it, down to one.",
+              T(r'$n!=n\cdot(n-1)\cdots2\cdot1$', 36), "'n! = n · (n − 1) ⋯ 2 · 1' appears")
+
+    # ---- Mutual Action: title only (the Hebrew intro) ----------------------------------------
+    vid = 'wp-131'
+    _keep_slides(M, vid, [1], [])
+    _short_intro(M, vid, [
+        "Mutual action: an action between two things at the same time — like a handshake.",
+        "It's quite common on the exam, so understand it well."],
+        'Mutual action', T(r'$A$–$B$ is the same link as $B$–$A$', 40),
+        "'A–B is the same link as B–A' appears",
+        ["When A shakes B's hand, B shakes A's hand. One handshake — and it's easy to count it twice.",
+         "Let's see it in two questions."])
+    _add_line(M, 'solve-wp28-g132', 2, None,
+              "Spot it on the exam: handshakes, two-way routes, games between two, diagonals.",
+              T('Handshakes · routes · games · diagonals', 36), "'Handshakes · routes · games · diagonals' appears")
+    _add_line(M, 'solve-wp28-g132', 2, None,
+              "But with roles — a president and a secretary — A-then-B and B-then-A really are different. Then don't halve.",
+              T("Different roles? Don't halve", 36), "'Different roles? Don't halve' appears")
+    _add_line(M, 'solve-wp28-g133', 2, 'The simplest way: draw it and count.',
+              "A diagonal joins two vertices that are not next to each other.")
+
+    # ---- Factorial Expressions (elite addition): cut only "Sums" and Recap ----------------------
+    vid = 'wp-140-after'
+    _keep_slides(M, vid, [1, 2, 3, 4, 5, 6, 7, 9],
+                 ['Stop early', 'Plug in first', 'The math', 'Not one factorial', 'Know them by sight',
+                  'A run of neighbors', 'Factorials and primes'])
+    _add_line(M, vid, 8, None, "Next, a question with a minus sign: take out the smaller factorial.")
+    _add_line(M, 'solve-q-r26-t28-28', 2, 'Now divide by eight factorial',
+              "Same with a plus: five factorial plus six factorial is five factorial times one plus six. Don't forget the one.",
+              T(r'$5!+6!=5!\cdot(1+6)$', 36), "'5! + 6! = 5! · (1 + 6)' appears")
+
+    # ---- Forced Digits: the two worked examples stay (no question teaches them); Recap cut ------
+    _keep_slides(M, 'wp-141-after', [1, 2, 3], ['All digits the same', 'First = last'])
+    _add_line(M, 'wp-141-after', 3, None, "Count each free choice once. Give every forced position a one.")
+
+    # ---- Boxes and "At Least One": title + "Quick checks" ---------------------------------------
+    vid = 'r26-t28-cases'
+    _keep_slides(M, vid, [1, 4], ['Quick checks'])
+    _add_line(M, vid, 2, None, "Two questions next — at least once, and objects into boxes.")
+    _add_line(M, 'solve-q-r26-t28-04', 2, 'Write "all: 10',
+              "Why? The opposite of 'at least once' is 'none' — and none is one easy count.")
+
+    # ---- Together, Apart and Repeats: title only -----------------------------------------------
+    vid = 'r26-t28-arrange'
+    _keep_slides(M, vid, [1], [])
+    _short_intro(M, vid, ["Rows with a rule.", "Each rule changes how we count — and each one has its own trick."],
+        'Four rules', T('Together · apart · repeats · round table', 40),
+        "'Together · apart · repeats · round table' appears",
+        ["People who must stand together — or apart. Items that repeat. And a round table.",
+         "Four questions — one for each."])
+    _add_line(M, 'solve-q-r26-t28-09', 2, 'Round table: fix one item',
+              "Why? Turning the whole table changes no one's neighbors. So n items around a table: n minus one, factorial.",
+              T(r'$n$ around a table: $(n-1)!$', 36), "'n around a table: (n − 1)!' appears")

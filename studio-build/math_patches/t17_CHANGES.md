@@ -93,3 +93,12 @@ The old Q9 video no longer says "That's the number line done". The sidebars of t
 
 ## 2026-10-04 question = lesson example fixed
 - Lesson "r26-t17-reading-the-line" slide 5 broke "r + q < s + p" for 0 < p < q < 1 < r < s - the answer of guided q-496 -> now 0 < a < b < 1 < c < d, "is d − c < b − a?", broken by a = 0.4, b = 0.5, c = 1.1, d = 3.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs after `dedupe_examples`). Nothing in topic 17 is recorded. The two first lessons are unchanged.
+- **`r26-t17-reading-the-line` "Reading the Number Line"**: 4.7 → 2.4 min. Kept: times a negative, reciprocals, test numbers + borders (no question video teaches them as rules).
+  - Cut "Must or could?" → taught in Q4 `solve-q-496` (push to the edges to break it), Q9 `solve-q-501`, Q13. Added in Q4 one line + board item: "Necessarily true? One counter-example kills it — push to the edges".
+  - Cut "Picture questions" → taught in Q10 `solve-q-r26-t17-01` (range under each letter; not to scale). Added there one line + pen note: trust only the order, not the distances (a board item did not fit next to the figure).
+  - Cut "Distance & midpoint" → its example "from −7 to 5, a third of the way" WAS question Q14 `solve-q-r26-t17-05`. Q14 now explains the midpoint trap with the formula (+ board item "Midpoint = (a + b)/2"). Card `mem-r26-t17-reading`: the "a third of the way" example changed to −8 + ⅓ · 12 = −4.
+  - "Test numbers": the clean-root numbers (¼, ⅛, 1/32) are taught in Q7 and Q8 → replaced by one line. They stay on the card.
+  - Cut "Recap".

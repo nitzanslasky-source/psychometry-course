@@ -113,3 +113,9 @@ Comparing roots · Between 0 and 1 · Conjugates · Root equations · Before you
 ## 2026-10-04 question = lesson example fixed
 - alg-extra-root-practice-2 was √72 of "roots" slide 4 -> √45 = 3√5 (choice 3).
 - alg-extra-root-practice-7 was √70 of "r26-t09-traps" slide 3 -> √55, between 7 and 8 (choice 3).
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). Nothing in topic 9 is recorded.
+- **Roots — Exam traps** (3.3 → 1.3 min). Cut: "Between 0 and 1" → Question 4; "Different roots" (6th power) → Question 5; "Conjugates" → Question 6; comparing two roots by squaring → Question 2.
+- Kept: "Estimate a root" (√70 between 8 and 9 — used in practice, no question video) with one opening line "Comparing two roots? Square both — like in question two. It works because both numbers are positive." Kept "Square of a sum" whole. Sidebar: Estimate a root · Square of a sum.
+- Moved into Question 4 (new short slide "The rule"): the board rule 0 < x < 1: x² < x < √x (the spoken rule line moved there) and "x > 1: √x < x < x² — above one it's the other way around". 0.6 → 0.7 min.

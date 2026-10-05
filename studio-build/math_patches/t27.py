@@ -982,3 +982,109 @@ def apply(M):
             for b in v['beats']:
                 if b.get('canvas', '').startswith('Pre-loaded — question'):
                     b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, stem)
+    cut_repeats(M)
+
+
+# =====================================================================================
+# 2026-10-05 cut repeats: each lesson back to a short intro (Hebrew style); every idea a
+# question video already teaches is cut from the lesson; ideas no question teaches stay or
+# move as one line + board item into the question video that uses them.
+# =====================================================================================
+def _add_line(M, vid, n, before_say, line, item=None, label=None):
+    """Insert one spoken line (+ optional board item) right before the line containing `before_say`
+    (before_say=None: at the end of the slide). Keeps the slide's loads/canvas text."""
+    b = M.slide(vid, n); keep = (b.get('loads'), b.get('canvas')); script = []; hit = False
+    add = ([A(label, item)] if item is not None else []) + [line]
+    for l in b['lines']:
+        if before_say is not None and not hit and before_say in (l.get('say') or l.get('draw') or l.get('label') or ''):
+            script += add; hit = True
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        else: script.append(D(l['draw']))
+    if before_say is None:
+        script += add; hit = True
+    assert hit, '%s #%d: not found: %s' % (vid, n, before_say)
+    M.set_slide(vid, n, script=script)
+    b = M.slide(vid, n); b['loads'], b['canvas'] = keep
+
+
+def _keep_slides(M, vid, keep, sidebar):
+    """Keep only the slides `keep` (1-based, in order); set the sidebar; renumber 'active'."""
+    v = M.video(vid)
+    M.remove_slides(vid, [k for k in range(1, len(v['beats']) + 1) if k not in keep])
+    a = 0
+    for b in v['beats']:
+        if b.get('mode') == 'concept':
+            b['active'] = a; a += 1
+    M.set_sidebar(vid, sidebar)
+
+
+def cut_repeats(M):
+    # ---- Distance, Speed and Time: kept (= the Hebrew intro); only the recap is cut ---------
+    vid = 'wp-106'
+    _keep_slides(M, vid, [1, 2, 3, 4, 5, 6, 7], ['Motion is work', 'The formula', 'Units', 'Forget 3.6', 'The table', 'Draw a sketch'])
+    _add_line(M, vid, 7, None, 'Two questions next. Then: average speed.')
+
+    # ---- Average Speed: the recap repeats the lesson and Q3 (estimate first, 2ab/(a+b)) ----
+    vid = 'wp-108-after'
+    _keep_slides(M, vid, [1, 2, 3, 4], ['What it means', 'The formula', 'Not the average'])
+    _add_line(M, vid, 4, None, 'One question next — then speed ratios.')
+
+    # ---- Speed Ratios: recap cut (repeats slides 3-6) ---------------------------------------
+    vid = 'wp-110'
+    _keep_slides(M, vid, [1, 2, 3, 4, 5, 6], ['No calculation', 'Same time', 'Same speed', 'Same distance', 'What is fixed?'])
+    _add_line(M, vid, 6, None, 'Two questions next — watch how the ratios do all the work.')
+
+    # ---- Relative Speed: recap cut (the rest is the Hebrew intro, kept) ---------------------
+    vid = 'wp-113'
+    _keep_slides(M, vid, [1, 2, 3, 4, 5], ['What it is', 'Opposite directions', 'Same direction', 'The gap only'])
+    _add_line(M, vid, 5, None, 'Chases are where students slip. Three questions next.')
+
+    # ---- Special Motion Cases: title only; each case is taught in its question -------------
+    vid = 'r26-t27-special'
+    _keep_slides(M, vid, [1], [])
+    M.edit_lines(vid, 1, lambda ls: [
+        {'say': 'Special cases.'},
+        {'say': 'Trains that have a length. Boats on a river. And circular tracks.'},
+        {'say': 'The formula stays the same: distance equals time times speed. Only the distance, or the speed, is different.'},
+        {'say': "Each case has one idea — and we'll learn each one in its question. Try each one first — then watch."}])
+    # Train length -> Q14 (post = its own length, bridge = bridge + train, with the drawing)
+    _add_line(M, 'solve-q-r26-t27-01', 2, 'First the speed.',
+              'Until now, every body was a dot. A train is not a dot — it has a length.',
+              T('A train has a length: past a post $=$ its length · bridge $=$ bridge $+$ train', 34),
+              "'A train has a length: past a post = its length · bridge = bridge + train' appears")
+    # Current -> Q15 (boat + current, boat − current, half the difference); move the wind line
+    _add_line(M, 'solve-q-r26-t27-02', 2, 'First, the two speeds.',
+              'With the current — downstream — add it. Against it — upstream — subtract. A plane with the wind? The same: a tailwind adds, a headwind subtracts.',
+              T(r'Down $=$ boat $+$ current · up $=$ boat $-$ current (wind: the same)', 34),
+              "'Down = boat + current · up = boat − current (wind: the same)' appears")
+    # Circular track -> Q13 (same direction: one extra lap, subtract) and Q16 (opposite: one lap together, add)
+
+    # ---- Percents and Letters: title only; both ideas are taught in Q17 and Q18 ------------
+    vid = 'r26-t27-graphs'
+    _keep_slides(M, vid, [1], [])
+    M.edit_lines(vid, 1, lambda ls: [
+        {'say': 'Two exam favorites.'},
+        {'say': 'Speed changes by a percent. And answers written with letters.'},
+        {'say': 'One warning: a percent faster is NOT the same percent less time.'},
+        {'say': 'Two questions next — one of each.'}])
+    # Speed % -> time %: Q17 teaches "write it as a fraction, flip it"; move the "slower" row there
+    _add_line(M, 'solve-q-r26-t27-05', 2, 'Forty-eight is the trap.',
+              'Slower works the same way: twenty percent slower is speed times four fifths — so the time is times five quarters, twenty-five percent MORE.',
+              T(r'Speed $\times\frac45$ $\to$ time $\times\frac54$: $-20\%$ speed $=+25\%$ time', 34),
+              "'Speed × 4/5 → time × 5/4: −20% speed = +25% time' appears")
+    # Letters: Q18 teaches plug in (not 0 or 1), the target, test every choice; add the remedy
+    _fix_say(M, 'solve-q-r26-t27-06', 2, 'Then choices three and four both give the target.',
+             'Then choices three and four both give the target. Two choices give the target? Try other numbers on those two.')
+
+    # ---- follow-up: nothing lost -------------------------------------------------------------
+    # "+50% speed -> -33 1/3% time" and "twice as fast -> half the time" (from the cut Speed % slide) -> Q17
+    _add_line(M, 'solve-q-r26-t27-05', 2, 'Slower works the same way',
+              'Fifty percent faster: speed times three halves, time times two thirds — thirty-three and a third percent less. Twice as fast: half the time.',
+              T(r'$+50\%$ speed $\to$ time $\times\frac23$: $-33\frac13\%$ · twice as fast $\to$ half the time', 34),
+              "'+50% speed → time × 2/3: −33⅓% · twice as fast → half the time' appears")
+    # "boat in still water = the average of the two speeds" (from the cut Current slide) -> Q15 check
+    _add_line(M, 'solve-q-r26-t27-02', 3, None,
+              'And the boat in still water is the average of the two speeds: twenty-four plus sixteen, over two — twenty.',
+              T(r'Boat $=\frac{\text{down}+\text{up}}{2}=\frac{24+16}{2}=20$', 34),
+              "'Boat = (down + up) ÷ 2 = (24 + 16) ÷ 2 = 20' appears")

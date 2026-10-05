@@ -128,3 +128,26 @@ Check: `python3 math_check.py 18 27 28 33` shows 0 problems, 0 warnings and 0 la
 - "Average Speed", slide 1: the line "Honestly? Rare on the exam." is back, followed by the original "the idea behind it shows up in disguise" line.
 
 **Summary lesson added:** `r26-t27-summary` "Summary" (about 2.4 minutes). It is at the end of "Further guided examples", right before the practice. Slides: Summary · The formula · The table · Average speed · What is fixed? · Relative speed · Special cases (train, river, circle) · Percents and letters · Before you practice (units, what is fixed, toward each other or a chase / the starting gap, average speed = total ÷ total; traps: 20 minutes ≠ 0.2 hour, the average of the speeds, sketch).
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last, after the canvas/text loop; slides it edits keep their canvas text). Each lesson is back to a short intro like the Hebrew course. Every idea that a question video right after it teaches is cut from the lesson; ideas no question teaches stay, or move as one spoken line + one board item into the question video that uses them. Nothing in topic 27 is recorded. Questions, numbers, methods and memory cards are unchanged.
+- **`r26-t27-special` Special Motion Cases**: 5 → 1 slide, 2.3 → 0.3 min. Kept: the title slide ("Trains that have a length. Boats on a river. And circular tracks. Each one has one idea — and we'll learn each one in its question."). Cut: "Train length" → Q14 `solve-q-r26-t27-01` (post = own length, bridge = bridge + train, same drawing); "Current" → Q15 `solve-q-r26-t27-02` (boat ± current, subtract the equations, halve); "Circular track" → Q13 `solve-wp27-g121` (same direction: one extra lap, subtract) and Q16 `solve-q-r26-t27-03` (opposite: one lap together, add); Recap. MOVED into Q14: "Until now, every body was a dot. A train is not a dot — it has a length." + board "A train has a length: past a post = its length · bridge = bridge + train". MOVED into Q15: "With the current — downstream — add it. Against it — upstream — subtract. A plane with the wind? The same: a tailwind adds, a headwind subtracts." + board "Down = boat + current · up = boat − current (wind: the same)".
+- **`r26-t27-graphs` Percents and Letters**: 4 → 1 slide, 1.7 → 0.2 min. Kept: the title slide + "Two questions next — one of each." Cut: "Speed % → time %" → Q17 `solve-q-r26-t27-05` (fraction, flip it, +25% speed = −20% time, the 25% trap); "Answers in letters" → Q18 `solve-q-r26-t27-06` (plug in easy numbers, not 0 or 1, target, test every choice); Recap. MOVED into Q17: "Slower works the same way: twenty percent slower is speed times four fifths — so the time is times five quarters, twenty-five percent MORE." + board "Speed × 4/5 → time × 5/4: −20% speed = +25% time". Q18's warning line now ends "Two choices give the target? Try other numbers on those two." (The +50% → −33⅓% row is gone; the same flip method, and the summary still shows −25% → +33⅓%.)
+- **Recaps only** (the rest of these lessons is the Hebrew intro — speed ratios rules, relative speed with the "gap only" idea, the motion basics — so it stays): `wp-106` Distance, Speed and Time 8 → 7 slides (4.0 min, the recap was almost silent); `wp-108-after` Average Speed 5 → 4 slides, 2.5 → 2.1 (estimate first and 2ab/(a+b) are both in Q3); `wp-110` Speed Ratios 7 → 6, 1.9 → 1.8; `wp-113` Relative Speed 6 → 5, 1.8 → 1.7. Each keeps its "questions next" line at the end of its last slide.
+- Question videos lengthened: Q14 0.6→0.7, Q15 0.6→0.8, Q17 0.9→1.1, Q18 1.0→1.1. **Net: −3.5 min.**
+- No video said "as we saw in the lesson" about a cut idea. AI summary `r26-t27-summary` not edited; everything it recaps is still taught (in lessons kept or in the question videos).
+- **Follow-up (same day).** Two intros and two lost ideas fixed (end of `cut_repeats`):
+  - `r26-t27-special` (0.4 min) now says what the section is about and gives one framing line: "The formula stays the same: distance equals time times speed. Only the distance, or the speed, is different."
+  - `r26-t27-graphs` (0.2 min) adds the warning "a percent faster is NOT the same percent less time."
+  - RESTORED in Q17 `solve-q-r26-t27-05` slide 2: "Fifty percent faster: speed × 3/2, time × 2/3 — 33⅓% less. Twice as fast: half the time." Board item: "+50% speed → time × 2/3: −33⅓% · twice as fast → half the time". Both examples came from the cut "Speed % → time %" slide.
+  - RESTORED in Q15 `solve-q-r26-t27-02` check slide: "the boat in still water is the average of the two speeds — (24 + 16) ÷ 2 = 20". Board item: "Boat = (down + up) ÷ 2". This came from the cut "Current" slide.
+  - Rechecked every other cut idea, and each is taught in a question video:
+    - train post and tunnel/bridge → Q14
+    - "current = half the difference" → Q15 (2c = 8)
+    - circle, same direction → Q13
+    - circle, opposite directions → Q16
+    - flip the fraction, ±20/25% → Q17
+    - letters: plug in, not 0 or 1, target, test every choice, two hits → new numbers → Q18
+    - Average Speed recap (estimate first, 2ab/(a+b)) → Q3
+    - the other recaps only repeated slides that were kept
+  - Net for topic 27 is now −3.0 min.

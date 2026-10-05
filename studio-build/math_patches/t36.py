@@ -1222,3 +1222,103 @@ def summary(M):
     ]
     last = [f['ref'] for f in M.D['flow'] if f['section'] == LEARN][-1]
     M.new_video('r26-t36-summary', TOPIC, 'Summary: Similarity', sb, slides, LEARN, after=last)
+
+
+# ================================================================================================
+# 2026-10-05 cut repeats: a lesson slide that the next question video teaches again is cut
+# (see the CHANGES file). Runs LAST: the original apply() is wrapped below.
+# ================================================================================================
+def _cr_cut(M, vid, ns):
+    """Remove slides ns (1-based) and keep the sidebar and every slide's 'active' consistent."""
+    v = M.video(vid); sb = list(v.get('hybrid', {}).get('sidebar', [])); beats = v['beats']
+    gone = {beats[n - 1].get('active', -1) for n in ns} - {-1}
+    used = {b.get('active', -1) for k, b in enumerate(beats, 1) if k not in ns}
+    gone -= used
+    idx, new = {}, []
+    for i, l in enumerate(sb):
+        if i in gone: continue
+        idx[i] = len(new); new.append(l)
+    M.remove_slides(vid, ns)
+    for b in v['beats']:
+        if b.get('active', -1) >= 0: b['active'] = idx[b['active']]
+    M.set_sidebar(vid, new)
+
+
+def _cr_find(M, vid, n, part):
+    ls = M.slide(vid, n)['lines']
+    k = [i for i, l in enumerate(ls) if part in (l.get('say') or '')]
+    assert len(k) == 1, (vid, n, part, k)
+    return ls, k[0]
+
+
+def _cr_say(M, vid, n, old, new):
+    ls, k = _cr_find(M, vid, n, old)
+    ls[k]['say'] = ls[k]['say'].replace(old, new); M.touched_videos.add(vid)
+
+
+def _cr_drop_say(M, vid, n, part):
+    ls, k = _cr_find(M, vid, n, part)
+    ls.pop(k); M.touched_videos.add(vid)
+
+
+def _cr_drop_item(M, vid, n, k):
+    """Remove board item k of a slide, its 'appears' cue, and renumber the later cues."""
+    b = M.slide(vid, n); b['items'].pop(k)
+    b['lines'] = [l for l in b['lines'] if l.get('appear') != k]
+    for l in b['lines']:
+        if l.get('appear') is not None and l['appear'] > k: l['appear'] -= 1
+    M.touched_videos.add(vid)
+
+
+def _cr_add(M, vid, n, part, say, item, label, before=False, at=None):
+    """Add one spoken line with its board item, right after (or before) the line containing `part`.
+    at = position of the item in the slide's item list (default: last)."""
+    b = M.slide(vid, n)
+    at = len(b['items']) if at is None else at
+    for l in b['lines']:
+        if l.get('appear') is not None and l['appear'] >= at: l['appear'] += 1
+    b['items'].insert(at, item)
+    ls, k = _cr_find(M, vid, n, part)
+    k = k if before else k + 1
+    ls[k:k] = [{'appear': at, 'label': label}, {'say': say}]
+    M.touched_videos.add(vid)
+
+
+def cut_repeats(M):
+    # --- "Similar Triangles and Rectangles": slide 11 (same height: no squaring) is taught again in
+    #     solve-q-r26-t36-01, slide 12 (trapezoid diagonals: a², ab, ab, b²) in solve-q-r26-t36-02.
+    #     Neither is in the Hebrew lesson. The recap line about "same height" goes with them.
+    L = 'geo-139'
+    _cr_cut(M, L, [11, 12])
+    rec = len(M.video(L)['beats'])
+    _cr_drop_item(M, L, rec, 4)
+    _cr_drop_say(M, L, rec, 'Same height but not similar')
+    for it, y in zip(M.slide(L, rec)['items'][4:], (570, 650)): it['y'] = y
+
+    # --- "Volume Changes": slide 8 (percent change: factor, power, back to percent) is taught again in
+    #     solve-q-r26-t36-03. Its "backwards" step (area +44% -> sides +20%) moves into that video.
+    V = 'geo-143'
+    _cr_cut(M, V, [8])
+    rec = len(M.video(V)['beats'])
+    _cr_drop_item(M, V, rec, 3)
+    _cr_drop_say(M, V, rec, 'And with percents: a factor first')
+    _cr_add(M, 'solve-q-r26-t36-03', 3, '44 percent is the AREA of a face',
+            "And backwards: the area grew by 44 percent? That's times 1.44. The square root is 1.2 — so the sides grew by 20 percent.",
+            T(r'Backwards: area $\times1.44$ $\rightarrow$ sides $\times\sqrt{1.44}=1.2$', size=34, x=410, y=190, w=1140),
+            "'Backwards: area × 1.44 → sides × 1.2' appears")
+
+    # --- "Map Scale": slides 3-5 (units ladder, a length example, an area example) are taught again, step by
+    #     step, in solve-q-r26-t36-04 (length, the ladder) and solve-q-r26-t36-05 (area: one map cm first, then
+    #     square). The recap goes too. Kept: the short intro and what a scale 1 : n means.
+    S = 'r26-t36-map-scale'
+    _cr_cut(M, S, [3, 4, 5, 6])
+    _cr_say(M, S, 2, 'And real areas — n squared times the map areas.',
+            "And real areas — n squared times the map areas. Let's see it in the questions.")
+
+
+_apply_before_cut = apply
+
+
+def apply(M):
+    _apply_before_cut(M)
+    cut_repeats(M)

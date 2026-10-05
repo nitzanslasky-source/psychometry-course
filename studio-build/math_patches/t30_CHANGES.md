@@ -96,3 +96,10 @@ slide and written-solution line stay, and summary 2 ("Crowded figures") has one 
 - Summary `r26-t30-summary`, slide "Parallel or not?": the last line is now "Nothing given? Look for a rule in the figure that proves it — a U that adds up to 180, for example."
 - Memory card tip: "Two lines look parallel, but nothing says so? Look for a rule that proves it: two angles inside a U that add up to 180°, equal small angles, or two lines ⟂ to the same line."
 - Practice q-r26-t30-04 reworked: new figure with two crossing lines t and s. On t, 108° and 72° sit inside a U and add up to 180° → a ∥ b. On s, 55° and x sit inside a U → x = 125° (choice 3; was "cannot be determined"). "It cannot be determined" stays as the trap.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). Nothing in topic 30 is recorded. Rule: a lesson slide is cut only if a question video after it teaches the same idea again.
+- **`geo-001` "Lines and Angles"** 12.5 → 12.2 min. Slide 3 "Segments on a line" no longer teaches the overlap rule (AC + BD = AD + BC, the 9 / 10 / 15 example). The Hebrew lesson does not have it, and Question `solve-q-r26-t30-02` slide 3 "The overlap rule" teaches it in full, with its own board (AC + BD = AD + BC; 11 + 14 = 20 + BC). The slide keeps only the gaps trap ("Five points, equally spaced: four gaps, not five"), because no question video teaches that. The figure on that slide (A, B, C, D with AC and BD) is removed; the teacher draws the five dots by hand, as before. Same title and sidebar.
+- Recap board item "Segments: count the gaps · AC + BD = AD + BC" → "Segments: count the gaps, not the points" (the overlap rule now comes after the recap).
+- Kept: "Parallel or not?" (only one of its three rules, "two lines perpendicular to the same line", is in `solve-q-r26-t30-01`; the other two rules and "figures are not drawn to scale" are not taught anywhere else). "The U shape" (no question video teaches it).
+- The AI summary `r26-t30-summary` (slide "Segments on a line") still matches: both ideas are still taught before it.

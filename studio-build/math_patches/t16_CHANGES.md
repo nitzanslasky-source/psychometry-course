@@ -103,3 +103,11 @@ Other corrections:
 **Restored:** q-477 (a, b, c consecutive positive integers, c² − a² = 48, b = 12). Text clean-up only: TeX, a full numeric solution (c² − a² = (c − a)(c + a) = 2(2a + 2) = 4b = 48, check 169 − 121 = 48). Placed in the practice after q-482 (same type, same difficulty).
 
 **Summary video** `r26-t16-summary` "Integers: Summary", the last item of the advanced section, right before the practice. Slides: Summary · Multiply and divide · Signs of sums · Never negative · Consecutive integers · Sums in a row · Even and odd · Parity: plug in · Products in a row · Candidates and twos · Before you practice.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). Nothing in topic 16 is recorded. Only "Sums of Consecutive Integers" was long compared to its questions; the other lessons are unchanged.
+- **`r26-t16-consecutive-sums`**: 2.6 → 1.2 min. Kept: "Counting integers" and "Squares of neighbors" (no question video teaches them). Title slide says the next two questions teach count × middle.
+  - Cut "Count × middle" → taught in Q5 `solve-q-r26-t16-02`; added there the "why" (the numbers pair up around the middle) + board item "Sum = count × middle".
+  - Cut "Even count" (middle ends in .5) → one line + board item in Q6 `solve-q-r26-t16-03` on 1 + 2 + 3 + 4: middle 2.5, 4 · 2.5 = 10.
+  - Cut "Divisible by the count?" → taught in Q6 (4a + 6). "Remember: an odd count…" → "The rule: an odd count…".
+  - Cut "Recap".

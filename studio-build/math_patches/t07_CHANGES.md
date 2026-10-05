@@ -123,3 +123,12 @@ Function `hebrew_intro` (runs last). The Hebrew section "Equations — theory" h
 - "Plug in numbers" and "Try the choices" are not added back (taught in topics 5 and 51). No topic 7 video said "as we saw in the lesson", so no reference needed rewording.
 - Memory card `mem-r26-t07-equations` stays as the written summary (its examples p³ = p²q and (x − 2)² = 36 are now only on the card).
 - For the teacher: the AI summary video `r26-t07-summary` does not mention the lesson by name. Its slides "Build the expression" (mirror coefficients / missing letter / products or ratios) and "Plug in or try" sum up ideas that the removed lesson slides taught. Mirror coefficients, the missing letter, and products or ratios are still taught in Q5, Q12–Q14 and "More Equation Tools". Plug-in and try-the-choices come from topics 5 and 51. No change was made.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last, after `hebrew_intro`). Same approach as equation-strategy: a lesson slide is cut only where a question video in the same section teaches the same idea. Nothing in topic 7 is recorded.
+- **More Equation Tools** (1.8 → 0.4 min): title + one "What's ahead" slide (the two tools named, "try each one before you watch"). Cut: multiply or divide the equations → Q21; x + 1/x → Q22; recap.
+  - Moved into Q22 (new short slide "With a minus"): "(x − 1/x)² = x² + 1/x² − 2 — the middle term is minus two, then add two."
+- **Quadratic Equations** (4.4 → 1.4 min): kept "What it looks like" (standard form, divide out a common number) and "Special cases" (no number term, no x term, a perfect square → one solution, x² = −4 → none). The perfect-square case is now said as "a perfect square: (x − 3)²" (it used to lean on the cut factor slide). Ends with "Three questions now. Each one teaches one more tool."
+  - Cut: factor (product c, sum b) → Q23; two solutions / sign flip → Q23; the trap a² = b² → Q24; try the choices → Q23 method 2; fraction = 0 → Q25; recap.
+  - Moved into Q23: board item "One side = 0, then factor: product = c, sum = b" + one line, before the first written line; and in method 2 "A choice that works is ONE solution. How many? Factor." + one line.
+- Q23 1.2 → 1.6 min, Q22 0.8 → 1.0 min. Card and AI summary unchanged.

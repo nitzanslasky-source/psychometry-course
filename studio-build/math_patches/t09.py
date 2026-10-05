@@ -659,3 +659,102 @@ def dedupe_examples(M):
             choices=['$8$ and $9$', '$5$ and $6$', '$7$ and $8$', '$6$ and $7$'], correct=3,
             expl=[r'Put $55$ between two perfect squares: $49<55<64$.',
                   r'Therefore $\sqrt{49}<\sqrt{55}<\sqrt{64}$, that is, $7<\sqrt{55}<8$.'])
+
+
+# ---------------------------------------------------------------- 2026-10-05 cut repeats
+# The teacher: a long lesson that pre-teaches every question, then question videos that teach it again, is
+# repetition. Lessons become a short intro (like the Hebrew course); a lesson slide is cut only where a question
+# video in the same section teaches the same idea. Anything taught nowhere else stays, or moves into the question
+# video where it is used (one spoken line + one board item). Runs last.
+def _cr_script(M, vid, n):
+    b = M.slide(vid, n); out = []
+    for l in b['lines']:
+        if 'say' in l: out.append(l['say'])
+        elif 'appear' in l: out.append(A(l['label'], b['items'][l['appear']]))
+        else: out.append(D(l['draw']))
+    return out
+
+
+def _cr_txt(x):
+    if isinstance(x, str): return x
+    if x[0] == 'A': return x[1] + ' ' + str(x[2].get('t', ''))
+    return x[1]
+
+
+def _cr_find(s, anchor, vid, n):
+    ks = [k for k, x in enumerate(s) if anchor in _cr_txt(x)]
+    assert len(ks) == 1, '%s #%d: anchor %r matches %d lines' % (vid, n, anchor, len(ks))
+    return ks[0]
+
+
+def _cr_insert(M, vid, n, anchor, new, before=False):
+    """Insert script entries right after (or before) the line / item / draw containing `anchor`."""
+    s = _cr_script(M, vid, n); k = _cr_find(s, anchor, vid, n) + (0 if before else 1)
+    M.set_slide(vid, n, script=s[:k] + list(new) + s[k:])
+
+
+def _cr_drop(M, vid, n, anchors):
+    """Remove the lines / items / draws containing each anchor."""
+    s = _cr_script(M, vid, n)
+    for a in anchors: s.pop(_cr_find(s, a, vid, n))
+    M.set_slide(vid, n, script=s)
+
+
+def _cr_replace(M, vid, n, anchor, new):
+    """Replace the entry containing `anchor` with the list `new`."""
+    s = _cr_script(M, vid, n); k = _cr_find(s, anchor, vid, n)
+    M.set_slide(vid, n, script=s[:k] + list(new) + s[k + 1:])
+
+
+def _cr_titles(M, vid, keep):
+    """Keep only the slides whose titles are in `keep` (title slide = slide 1 always kept); set the sidebar to the
+    kept slides' old sidebar labels in order and re-point each kept slide's `active`."""
+    v = M.video(vid); old = v.get('hybrid', {}).get('sidebar') or []
+    drop = [n for n, b in enumerate(v['beats'], 1) if n > 1 and b['title'] not in keep]
+    assert len(v['beats']) - len(drop) == len(keep) + 1, '%s: kept titles not found' % vid
+    M.remove_slides(vid, drop)
+    labels = []
+    for b in v['beats'][1:]:
+        lab = old[b['active']] if 0 <= b['active'] < len(old) else b['title']
+        if lab not in labels: labels.append(lab)
+        b['active'] = labels.index(lab)
+    M.set_sidebar(vid, labels)
+
+
+def _cr_slide_after(M, vid, n, title, script):
+    """A short extra question slide right after slide n (same question on the board, same sidebar item), so a
+    moved board item never lands on the teacher's handwriting."""
+    b = M.slide(vid, n)
+    M.insert_slides(vid, n, [dict(mode=b['mode'], title=title, active=b['active'],
+                                  pre=[dict(it) for it in b['items'][:b['pre']]], script=script)])
+
+
+def cut_repeats(M):
+    # Roots - Exam traps: "Between 0 and 1" is taught in Question 4, "Different roots" (6th power) in Question 5,
+    # "Conjugates" in Question 6, comparing by squaring in Question 2. Kept: estimating one root between perfect
+    # squares, and the square of a sum of roots (no question video teaches them).
+    L = 'r26-t09-traps'
+    _cr_titles(M, L, ['Compare by squaring', 'Square of a sum'])
+    M.set_slide(L, 1, script=[
+        'Now the traps. The exam loves these.',
+        'Two short ideas first: estimating a root, and squaring a sum of roots. The other traps come inside the questions.'])
+    M.set_slide(L, 2, title='Estimate a root', script=[
+        'Comparing two roots? Square both — like in the earlier question. It works because both numbers are positive: bigger square, bigger number.']
+        + _cr_script(M, L, 2)[_cr_find(_cr_script(M, L, 2), r'$\sqrt{70}$', L, 2):])
+    M.video(L)['hybrid']['sidebar'][0] = 'Estimate a root'
+    # moved into Question 4: the rule on the board, and "above one it's the other way around"
+    Q4 = 'solve-q-r26-t09-04'
+    _cr_drop(M, Q4, 2, ['And the rule: between zero and one'])
+    _cr_slide_after(M, Q4, 2, 'The rule', [
+        A('0 < x < 1: x² < x < √x appears', T(r'$0<x<1:\quad x^2<x<\sqrt x$', 44)),
+        'The rule: between zero and one, powers make it smaller, and the root makes it bigger.',
+        A('x > 1: √x < x < x² appears', T(r'$x>1:\quad \sqrt x<x<x^2$', 44)),
+        "Above one, it's the other way around: root nine is three — smaller than nine."])
+
+
+_apply_before_cut_repeats = apply
+
+
+def apply(M):
+    _apply_before_cut_repeats(M)
+    cut_repeats(M)   # 2026-10-05: runs last

@@ -136,3 +136,9 @@ Check: `python3 math_check.py 11` gives 0 problems, 0 warnings and 0 layout prob
 ## 2026-10-04 question = lesson example fixed
 - Lesson "r26-t11-tools" slide 3: example x^(−1/2) = 4 (same as guided q-301) -> x^(−1/2) = 3, x = 1/9.
 - Lesson "r26-t11-tools" slide 5: example √x(√x − 3) = 0 (same as guided q-299) -> √x(√x − 2) = 0, x = 0 or 4. Questions and their videos unchanged.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). The Hebrew topic 11 has no lesson — only questions. Nothing in topic 11 is recorded.
+- **Advanced Exponents & Roots** (2.5 → 0.5 min): title + "What's ahead" (big powers → prime bases; two routes: the laws or plug in). Cut: prime bases → Q1; (x + y)² inside an exponent question → Q4; the 2-and-4 pattern → Q3 (incl. the fractions warning); counting copies → Q5; two routes + "check the choices differ first" → Q1 method 2; "a claim about every value → counterexample" → Q16; recap. (The "try boundary values" tip is taught in topic 12 Q20 and topic 1.)
+- **Advanced Tools — Roots & Powers** (3.8 → 0.7 min): title + "What's ahead" naming the five tools. Cut: root of a root → Q9 (same example √(x√x)); undo a power → Q14 method 2; conjugates → Q10 and Q11 (same 1/(√5 − 2)); product = 0 → Q12; power = 1 and "or" claims → Q16; recap.
+- Rewording: Q16 (q-290) "It uses two tools from the start of this section" → "It needs two ideas: when a power is one, and claims with the word "or"." Q9 (q-297) "The lesson's favourite is four" → "Four is a favorite".

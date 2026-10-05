@@ -731,6 +731,7 @@ def apply(M):
         'q-508', 'q-509', P[2], P[0], 'q-507', P[7], P[5], 'q-510', 'q-511', P[1], P[8], P[9], P[6]])
     summary(M)
     dedupe_examples(M)   # 2026-10-04: runs last
+    cut_repeats(M)       # 2026-10-05: after that
 
 
 # =========================================================================================
@@ -857,3 +858,96 @@ def dedupe_examples(M):
         ('Write "p = 0.1, q = 0.9, r = 1.1, s = 1.2 → 2 > 1.3 ✗"', 'Write "a = 0.4, b = 0.5, c = 1.1, d = 3 → 1.9 > 0.1 ✗"'),
         ("p very small, q almost one, r and s close together. The claim breaks. So it's not necessarily true.",
          "a and b almost equal, d far to the right of c. Then d minus c is big, and b minus a is tiny. The claim breaks. So it's not necessarily true.")])
+
+
+# =====================================================================================
+# 2026-10-05 cut repeats (helpers)
+# =====================================================================================
+def _cr_script(M, vid, n):
+    b = M.slide(vid, n); out = []
+    for l in b['lines']:
+        if 'say' in l: out.append(l['say'])
+        elif 'appear' in l: out.append(A(l['label'], b['items'][l['appear']]))
+        else: out.append(D(l['draw']))
+    return out
+
+
+def _cr_add(M, vid, n, anchor, new, where='after'):
+    """Insert script entries `new` before/after the spoken line containing `anchor` (None = at the end)."""
+    sc = _cr_script(M, vid, n); out = []; hit = anchor is None
+    for x in sc:
+        if not hit and isinstance(x, str) and anchor in x:
+            hit = True
+            out += ([x] + new) if where == 'after' else (new + [x]); continue
+        out.append(x)
+    if anchor is None: out += new
+    assert hit, '%s #%d: not found: %s' % (vid, n, anchor)
+    M.set_slide(vid, n, script=out)
+
+
+def _cr_say(M, vid, n, old, new):
+    """Replace the whole spoken line containing `old` (new=None deletes it)."""
+    def fn(lines):
+        for k, l in enumerate(lines):
+            if 'say' in l and old in l['say']:
+                if new is None: lines.pop(k)
+                else: l['say'] = new
+                return lines
+        raise AssertionError('%s #%d: not found: %s' % (vid, n, old))
+    M.edit_lines(vid, n, fn)
+
+
+def _cr_drop_item(M, vid, n, text):
+    """Remove the pop-in board item whose text contains `text` (and its appear line)."""
+    sc = [x for x in _cr_script(M, vid, n) if not (isinstance(x, tuple) and x[0] == 'A' and text in (x[2].get('t') or ''))]
+    assert len(sc) < len(_cr_script(M, vid, n)), (vid, n, text)
+    M.set_slide(vid, n, script=sc)
+
+
+def _cr_cut(M, vid, titles):
+    """Remove the slides with these titles; drop their sidebar labels and re-point the other slides."""
+    v = M.video(vid); sb = list(v.get('hybrid', {}).get('sidebar') or [])
+    ns = [k + 1 for k, b in enumerate(v['beats']) if b['title'] in titles]
+    assert len(ns) == len(titles), (vid, titles, [b['title'] for b in v['beats']])
+    gone = {v['beats'][n - 1]['active'] for n in ns}
+    M.remove_slides(vid, ns)
+    keep_used = {b['active'] for b in v['beats']}
+    new_sb = [lab for k, lab in enumerate(sb) if k in keep_used]   # labels no remaining slide uses go
+    for b in v['beats']:
+        if 0 <= b['active'] < len(sb): b['active'] = new_sb.index(sb[b['active']])
+    M.set_sidebar(vid, new_sb)
+
+
+def cut_repeats(M):
+    # ---- "Reading the Number Line". Cut: must or could -> Q4 (q-496), Q9 (q-501), Q13 (+ one line in Q4);
+    #      picture questions -> Q10 (q-r26-t17-01, + one line); distance & midpoint -> Q14 (q-r26-t17-05, + the midpoint
+    #      line; the lesson example "from -7 to 5, a third of the way" WAS that question). Test numbers: the clean-root
+    #      numbers are taught in Q7 and Q8 -> trimmed. Kept: times a negative, reciprocals, test numbers + borders.
+    _cr_cut(M, READ, ['Must or could?', 'Picture questions', 'Distance & midpoint', 'Recap'])
+    M.set_slide(READ, 1, script=[
+        'Reading the number line.',
+        'Before the advanced questions: three short tools — times a negative, reciprocals, and which numbers to test.',
+        'Everything else, the questions teach as we go.'])
+    sc = _cr_script(M, READ, 4); k = next(i for i, x in enumerate(sc) if isinstance(x, tuple) and x[0] == 'A' and 'Roots' in (x[2].get('t') or ''))
+    M.set_slide(READ, 4, script=sc[:k] + ['A root in the choices? Then pick a number with a clean root — the questions show how.',
+                                         'Now the advanced questions. Try each one first — then watch.'])
+    # Q4: the counter-example rule, said once as a rule
+    _cr_add(M, 'solve-q-496', 2, 'So make it fail', [
+        A("'Necessarily true: one counter-example kills it' appears", T('Necessarily true? One counter-example kills it — push to the edges', size=36)),
+        "That's the rule for necessarily true: one example where it fails is enough. Push the values to the edges of their ranges."], where='before')
+    # Q10: not drawn to scale
+    _cr_add(M, 'solve-q-r26-t17-01', 2, 'Choice three: a plus d', [
+        D('Next to the figure write "not to scale → trust the order only"'),
+        "Unless the question says the figure is drawn to scale, trust only the ORDER of the points — not the distances."], where='before')
+    # Q14: the midpoint (was only in the lesson)
+    _cr_say(M, 'solve-q-r26-t17-05', 2, 'The traps: minus one is the midpoint',
+            'The traps: four is the distance, not the point. One is a third of the way from B.')
+    _cr_add(M, 'solve-q-r26-t17-05', 2, 'The traps: four is the distance', [
+        A("'Midpoint = (a + b)/2' appears", T('Midpoint $=\\frac{a+b}{2}$:  $\\frac{-7+5}{2}=-1$ — a trap here', size=38)),
+        "And minus one? That's the midpoint — the average of the two ends: minus seven plus five, over two. Not what they asked."])
+    # card: its example was this very question
+    hit = 0
+    for t in M.card('mem-r26-t17-reading')['tables']:
+        for row in t['rows']:
+            if row[0].startswith('A third of the way'): row[2] = '\\(-8+\\frac13\\cdot12=-4\\)'; hit += 1
+    assert hit == 1

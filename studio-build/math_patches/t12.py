@@ -794,3 +794,151 @@ def dedupe_examples(M):
             expl=[r'$0$ is inside the range, so $x^2$ can be $0$ (at $x=0$). That is the smallest value.',
                   r'The biggest square comes from the end farthest from $0$: when $x$ is close to $-4$, $x^2$ is close to $16$.',
                   r'Therefore $0\le x^2<16$. Choice (1) is the trap: it only squares the ends.'])
+
+
+# ---------------------------------------------------------------- 2026-10-05 cut repeats
+# The teacher: a long lesson that pre-teaches every question, then question videos that teach it again, is
+# repetition. Lessons become a short intro (like the Hebrew course); a lesson slide is cut only where a question
+# video in the same section teaches the same idea. Anything taught nowhere else stays, or moves into the question
+# video where it is used (one spoken line + one board item). Runs last.
+def _cr_script(M, vid, n):
+    b = M.slide(vid, n); out = []
+    for l in b['lines']:
+        if 'say' in l: out.append(l['say'])
+        elif 'appear' in l: out.append(A(l['label'], b['items'][l['appear']]))
+        else: out.append(D(l['draw']))
+    return out
+
+
+def _cr_txt(x):
+    if isinstance(x, str): return x
+    if x[0] == 'A': return x[1] + ' ' + str(x[2].get('t', ''))
+    return x[1]
+
+
+def _cr_find(s, anchor, vid, n):
+    ks = [k for k, x in enumerate(s) if anchor in _cr_txt(x)]
+    assert len(ks) == 1, '%s #%d: anchor %r matches %d lines' % (vid, n, anchor, len(ks))
+    return ks[0]
+
+
+def _cr_insert(M, vid, n, anchor, new, before=False):
+    """Insert script entries right after (or before) the line / item / draw containing `anchor`."""
+    s = _cr_script(M, vid, n); k = _cr_find(s, anchor, vid, n) + (0 if before else 1)
+    M.set_slide(vid, n, script=s[:k] + list(new) + s[k:])
+
+
+def _cr_drop(M, vid, n, anchors):
+    """Remove the lines / items / draws containing each anchor."""
+    s = _cr_script(M, vid, n)
+    for a in anchors: s.pop(_cr_find(s, a, vid, n))
+    M.set_slide(vid, n, script=s)
+
+
+def _cr_replace(M, vid, n, anchor, new):
+    """Replace the entry containing `anchor` with the list `new`."""
+    s = _cr_script(M, vid, n); k = _cr_find(s, anchor, vid, n)
+    M.set_slide(vid, n, script=s[:k] + list(new) + s[k + 1:])
+
+
+def _cr_titles(M, vid, keep):
+    """Keep only the slides whose titles are in `keep` (title slide = slide 1 always kept); set the sidebar to the
+    kept slides' old sidebar labels in order and re-point each kept slide's `active`."""
+    v = M.video(vid); old = v.get('hybrid', {}).get('sidebar') or []
+    drop = [n for n, b in enumerate(v['beats'], 1) if n > 1 and b['title'] not in keep]
+    assert len(v['beats']) - len(drop) == len(keep) + 1, '%s: kept titles not found' % vid
+    M.remove_slides(vid, drop)
+    labels = []
+    for b in v['beats'][1:]:
+        lab = old[b['active']] if 0 <= b['active'] < len(old) else b['title']
+        if lab not in labels: labels.append(lab)
+        b['active'] = labels.index(lab)
+    M.set_sidebar(vid, labels)
+
+
+def _cr_slide_after(M, vid, n, title, script):
+    """A short extra question slide right after slide n (same question on the board, same sidebar item), so a
+    moved board item never lands on the teacher's handwriting."""
+    b = M.slide(vid, n)
+    M.insert_slides(vid, n, [dict(mode=b['mode'], title=title, active=b['active'],
+                                  pre=[dict(it) for it in b['items'][:b['pre']]], script=script)])
+
+
+def cut_repeats(M):
+    # --- Inequalities: "x to the plus side" (5 + x < 13 + 3x) and "Every x works" (4(3 − 2x) − 5 < 9 − 8x) are the
+    # Hebrew lesson's own examples, and Questions 1 and 2 (3 + x < 15 + 3x, 3(4 − 3x) − 7 < 8 − 9x) teach them again.
+    L = 'inequalities'
+    _cr_titles(M, L, ['Four signs', 'Same moves', 'A minus flips it', 'The same with x'])
+    _cr_insert(M, L, 5, 'Same answer. And the sign never had to flip.', [
+        'Now two questions. Try each one first — then watch.'])
+    _cr_replace(M, 'solve-q-322', 1, 'and the tip from the lesson', [
+        'One inequality — and a tip that saves you on the exam.'])
+    _cr_insert(M, 'solve-q-322', 2, 'The right side has three x', [
+        A("'Move x to the side with MORE x' appears", T('Tip: move $x$ to the side with MORE $x$ — it stays positive', 36)),
+        "The tip: move x to the side where there are MORE x's. Then x stays positive, and nothing flips."], before=True)
+    # moved into Question 2 (taught only on the cut slide): x disappears and the result is FALSE
+    _cr_slide_after(M, 'solve-q-323', 2, 'True or false?', [
+        A("'x disappears: true → every x · false → no x' appears", T(r'$x$ disappears: true $\to$ every $x$ $\cdot$ false $\to$ no $x$', 40)),
+        'And if x disappears and you are left with something FALSE — like nine less than two — then no x works.'])
+
+    # --- Systems of Inequalities: the Hebrew intro is one minute: "solve each one, then find where they overlap".
+    # Its six example slides are near-twins of Questions 3-8: overlap (Q3), no overlap (Q4), test the choices
+    # x⁴ < 20 < x⁵ (Q5: x⁴ < 90 < x⁵), chain them (Q6), x² inequalities (Q7), plus an equation (Q8).
+    S = 'inequality-systems'
+    M.remove_slides(S, list(range(2, len(M.video(S)['beats']) + 1)))
+    M.set_slide(S, 1, script=[
+        'Systems of inequalities.',
+        'Now it gets more interesting — more than one inequality at once.',
+        'Some of these questions are simple. Some can eat your time. Each question that follows shows one type — and how to crack it.'])
+    M.insert_slides(S, 1, [dict(mode='concept', title='Solve each, overlap', active=0, pre=[], script=[
+        'Two inequalities — or one double inequality. The same rule.',
+        A("'Solve each one → find the overlap' appears", T(r'Solve each one separately $\to$ find where they overlap', 40)),
+        'Solve each one separately. Then find where they overlap. That overlap is the answer.',
+        'Six questions next. Try each one first — then watch the solution.'])])
+    M.set_sidebar(S, ['Solve each, overlap'])
+    # Question 7: the rule for both sides (the big side was taught only on the cut slide; new numbers, not q-345's)
+    _cr_replace(M, 'solve-q-328', 1, 'Remember the rule.', ['A second-degree inequality — and its rule.'])
+    _cr_slide_after(M, 'solve-q-328', 2, 'Small side, big side', [
+        A("'x² < a → between the roots' appears", T(r'$x^2<a \;\Rightarrow\; -\sqrt a<x<\sqrt a$', 44)),
+        'The rule: x squared on the SMALL side — x is trapped between the roots.',
+        A("'x² > a → outside the roots' appears", T(r'$x^2>a \;\Rightarrow\; x>\sqrt a$ or $x<-\sqrt a$', 44)),
+        'On the BIG side — x is outside them. x squared bigger than nine: x is bigger than three, or less than negative three.'])
+
+    # --- Signs, Fractions & Must-Be-True: the sign table is taught in Question 10; negatives between −1 and 0 in
+    # Question 9 (same numbers); the list of numbers to try is on the board in Question 20.
+    G = 'r26-t12-signs'
+    _cr_titles(M, G, ['Between 0 and 1', 'Reciprocals', 'Must, could, cannot'])
+    M.set_slide(G, 1, script=[
+        'Before the advanced questions — three short tools.',
+        'Numbers between zero and one, reciprocals, and the words must, could and cannot.',
+        'The rest — like the sign table — comes inside the questions.'])
+    _cr_drop(M, G, 2, ["Negative numbers? Don't memorize", 'x = −½:  x² = ¼', 'Negative one half squared'])
+    _cr_drop(M, G, 4, ['Try: $0$', 'Which numbers to try?', 'Most traps hide in the negatives'])
+    _cr_insert(M, G, 4, 'Cannot be true: it contradicts', [
+        'Now the questions. Try each one first — then watch.'])
+
+    # --- Combining Inequalities & Ranges: add (Question 17), never subtract (Question 18), multiply - the corners
+    # (Question 19). Kept: the range of x² (no question video teaches it).
+    C = 'r26-t12-combining'
+    _cr_titles(M, C, ['Range of x²'])
+    M.set_slide(C, 1, script=[
+        'Two inequalities — can we add them? Subtract them? Multiply them?',
+        'The exam loves this. One move is safe. The others are traps. The questions show which is which.',
+        'First, one trap of its own: the range of x squared.'])
+    _cr_insert(M, C, 2, 'So x squared is at least zero and less than nine.', [
+        'Now the questions. Try each one first — then watch.'])
+    # moved: adding ranges part by part -> Question 17; multiplying end by end only when all positive -> Question 19
+    _cr_slide_after(M, 'solve-q-r26-t12-03', 2, 'Ranges add too', [
+        A("'1 < a < 3, 2 < b < 5 → 3 < a + b < 8' appears", T(r'$1<a<3,\ \ 2<b<5 \;\to\; 3<a+b<8$', 44)),
+        'Ranges add the same way, part by part: one plus two is three, three plus five is eight.'])
+    _cr_insert(M, 'solve-q-336', 2, "We'll solve it the psychometric way", [
+        A("'All positive? End by end. Negatives? The corners' appears", T(r'All positive? Multiply end by end. Negatives inside? Check the corners', 34)),
+        'Multiplying ranges end by end works only when everything is positive. With negatives inside, check the corners — and when dividing, make sure the bottom cannot be zero.'])
+
+
+_apply_before_cut_repeats = apply
+
+
+def apply(M):
+    _apply_before_cut_repeats(M)
+    cut_repeats(M)   # 2026-10-05: runs last

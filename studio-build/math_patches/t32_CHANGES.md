@@ -89,3 +89,9 @@ The new guided questions get new numbers automatically. In course order they are
 **Summary lessons (new)**
 - `r26-t32-summary` (end of "Learn and try", before the foundation practice, ~3.6 min): The family · The diagonals · Angles · Area formulas · The height · Drop a height · Scale it up · In questions · Before you practice.
 - `r26-t32-summary-2` (end of "Further guided examples", after the perimeter card, before the advanced practice, ~2.8 min): Not necessarily · Equal halves · Area ratios · Shaded areas · Letters and hidden ratios · Perimeter tricks · Perimeter and diagonal · Before you practice.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). A lesson slide is cut only when the next question video teaches the same idea again. Nothing in topic 32 is recorded.
+- **Perimeter Tricks** (`r26-t32-perimeter`) 1.4 → 0.9 min, 4 → 3 slides. CUT slide 3 "The staircase": the next question video `solve-q-r26-t32-06` teaches it in full (push the steps out, P = 2 × (width + height), no step length needed). Title slide now says "Two here — and one more in the question." The notch slide now opens "A notch: the border goes in, and comes back out." (it said "a notch is different" from the staircase) and ends "Now a question." Sidebar: "A cut counts twice", "A notch adds".
+- KEPT: "A cut counts twice" and "A notch adds" (no question video teaches them). `geo-042` "Quadrilaterals" slide 6 (family tree) is longer than the Hebrew, but the only video that uses it (`solve-geo32-g066`) is far later, in the second section — kept. `geo-067-after` is not a repeat (g068 uses it, does not re-teach it).
+- Summary `r26-t32-summary-2` slide 7 still sums up the staircase (taught in the question video) — no change needed.

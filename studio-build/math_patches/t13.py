@@ -1005,3 +1005,125 @@ def dedupe_examples(M):
         ('Solve both: "x = 5" and "x = −11"', 'Solve both: "x = 2" and "x = −10"'),
         ('First case: x is five. Second case: x is negative eleven. Two solutions.',
          'First case: x is two. Second case: x is negative ten. Two solutions.')])
+
+
+# ---------------------------------------------------------------- 2026-10-05 cut repeats
+# The teacher: a long lesson that pre-teaches every question, then question videos that teach it again, is
+# repetition. Lessons become a short intro (like the Hebrew course); a lesson slide is cut only where a question
+# video in the same section teaches the same idea. Anything taught nowhere else stays, or moves into the question
+# video where it is used (one spoken line + one board item). Runs last.
+def _cr_script(M, vid, n):
+    b = M.slide(vid, n); out = []
+    for l in b['lines']:
+        if 'say' in l: out.append(l['say'])
+        elif 'appear' in l: out.append(A(l['label'], b['items'][l['appear']]))
+        else: out.append(D(l['draw']))
+    return out
+
+
+def _cr_txt(x):
+    if isinstance(x, str): return x
+    if x[0] == 'A': return x[1] + ' ' + str(x[2].get('t', ''))
+    return x[1]
+
+
+def _cr_find(s, anchor, vid, n):
+    ks = [k for k, x in enumerate(s) if anchor in _cr_txt(x)]
+    assert len(ks) == 1, '%s #%d: anchor %r matches %d lines' % (vid, n, anchor, len(ks))
+    return ks[0]
+
+
+def _cr_insert(M, vid, n, anchor, new, before=False):
+    """Insert script entries right after (or before) the line / item / draw containing `anchor`."""
+    s = _cr_script(M, vid, n); k = _cr_find(s, anchor, vid, n) + (0 if before else 1)
+    M.set_slide(vid, n, script=s[:k] + list(new) + s[k:])
+
+
+def _cr_drop(M, vid, n, anchors):
+    """Remove the lines / items / draws containing each anchor."""
+    s = _cr_script(M, vid, n)
+    for a in anchors: s.pop(_cr_find(s, a, vid, n))
+    M.set_slide(vid, n, script=s)
+
+
+def _cr_replace(M, vid, n, anchor, new):
+    """Replace the entry containing `anchor` with the list `new`."""
+    s = _cr_script(M, vid, n); k = _cr_find(s, anchor, vid, n)
+    M.set_slide(vid, n, script=s[:k] + list(new) + s[k + 1:])
+
+
+def _cr_titles(M, vid, keep):
+    """Keep only the slides whose titles are in `keep` (title slide = slide 1 always kept); set the sidebar to the
+    kept slides' old sidebar labels in order and re-point each kept slide's `active`."""
+    v = M.video(vid); old = v.get('hybrid', {}).get('sidebar') or []
+    drop = [n for n, b in enumerate(v['beats'], 1) if n > 1 and b['title'] not in keep]
+    assert len(v['beats']) - len(drop) == len(keep) + 1, '%s: kept titles not found' % vid
+    M.remove_slides(vid, drop)
+    labels = []
+    for b in v['beats'][1:]:
+        lab = old[b['active']] if 0 <= b['active'] < len(old) else b['title']
+        if lab not in labels: labels.append(lab)
+        b['active'] = labels.index(lab)
+    M.set_sidebar(vid, labels)
+
+
+def _cr_slide_after(M, vid, n, title, script):
+    """A short extra question slide right after slide n (same question on the board, same sidebar item), so a
+    moved board item never lands on the teacher's handwriting."""
+    b = M.slide(vid, n)
+    M.insert_slides(vid, n, [dict(mode=b['mode'], title=title, active=b['active'],
+                                  pre=[dict(it) for it in b['items'][:b['pre']]], script=script)])
+
+
+def cut_repeats(M):
+    # --- Absolute Value: the Hebrew lesson ends after the rules, then teaches the sign clues inside its first
+    # question. Cut: sign clues (Question 1, slide 3 has all four), signs of a product (Question 1) and x/|x|
+    # (Question 5), equations (Questions 2 and 6), inequalities - small side / big side (Questions 3 and 4),
+    # negative right side (Question 7), plug in (Question 5), recap.
+    L = 'absolute-value'
+    _cr_titles(M, L, ['Distance from zero', 'Plus or minus inside', 'Whole expression', 'The rules', 'When is it equal?'])
+    _cr_insert(M, L, 6, 'So: same signs — equal. Different signs — smaller.', [
+        'Seven questions next — each one before its own video. Each question teaches one more tool.'])
+    _cr_replace(M, 'solve-q-359', 1, 'You know the move', [
+        'An equation with an absolute value. The move: two cases.'])
+    _cr_replace(M, 'solve-q-362', 1, 'You know what that means', [
+        'They ask what an expression equals. That means we may plug in a number.'])
+    _cr_replace(M, 'solve-q-362', 3, "That's the tool from the lesson", [
+        'A useful fact: x over its absolute value is one for every positive x — and minus one for every negative x.'])
+    # moved into Question 7 (the cut slide said it for equations too)
+    _cr_insert(M, 'solve-q-r26-t13-02', 2, 'Look at choices two and three', [
+        A("'Bars = a negative number → no solution' appears", T(r'Bars $=$ a negative number $\to$ no solution', 38)),
+        'The same for an equation: bars equal to a negative number — no solution.'])
+
+    # --- Absolute Value - Exam Tools: square both sides (Question 15, method 2), letter on the right (Question 13),
+    # add or cancel and |x + y| < |x − y| (Question 12). Kept: squares and bars, and distance (used in the practice,
+    # no question video here teaches it). The other two sign readings move into Question 12.
+    E = 'r26-t13-tools'
+    _cr_titles(M, E, ['Squares and bars', 'Distance'])
+    M.set_slide(E, 1, script=[
+        'A few tools for the harder absolute-value questions.',
+        'Two of them first. The others come inside the questions — right when you need them.'])
+    _cr_insert(M, E, 3, 'Careful with a plus inside', [
+        'Next: a card with the question wordings. Then the advanced questions.'])
+    _cr_insert(M, 'solve-q-368', 3, 'The tool from the lesson', [
+        A("'Bars on both sides → square both sides' appears", T(r'Bars on both sides $\to$ square both sides', 38))], before=True)
+    _cr_replace(M, 'solve-q-368', 3, 'The tool from the lesson', [
+        'A tool for bars on both sides: both sides are zero or positive. So we may square both sides. After squaring, the bars are gone.'])
+    _cr_replace(M, 'solve-q-r26-t13-03', 1, 'Remember the tool', ['The tool: solve — then check every answer.'])
+    _cr_insert(M, 'solve-q-r26-t13-03', 2, 'Choice three is the trap', [
+        'So: a letter on the right side? Check every answer in the original equation.'])
+    _cr_slide_after(M, 'solve-q-r26-t13-13', 2, 'Other wordings', [
+        'Other wordings, same idea.',
+        A("'|x + y| = |x| − |y| → opposite signs' appears", T(r'$|x+y|=|x|-|y| \;\to\;$ opposite signs, $|x|\ge|y|$', 40)),
+        'The sizes subtract? That is cancelling — opposite signs. And x is the bigger one in size.',
+        A("'|a + b| < |a| → opposite signs' appears", T(r'$|a+b|<|a| \;\to\;$ $b$ has the opposite sign of $a$', 40)),
+        'The sum is smaller than one of its numbers? Adding b made it smaller — so they cancelled. Opposite signs.',
+        'And b is less than twice a in size. A bigger b would overshoot past zero.'])
+
+
+_apply_before_cut_repeats = apply
+
+
+def apply(M):
+    _apply_before_cut_repeats(M)
+    cut_repeats(M)   # 2026-10-05: runs last

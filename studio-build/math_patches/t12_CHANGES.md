@@ -119,3 +119,15 @@ Check: `python3 math_check.py 12` gives 0 problems, 0 warnings and 0 layout prob
 
 ## 2026-10-04 question = lesson example fixed
 - q-r26-t12-06 was −3 < x < 2 of "r26-t12-combining" slide 5 -> −4 < x < 3, so 0 ≤ x² < 16 (choice 2).
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). Nothing in topic 12 is recorded.
+- **Inequalities** (4.9 → 3.3 min, Hebrew 3.4). Cut "x to the plus side" and "Every x works" (the Hebrew lesson's own examples; Q1 and Q2 are the same questions with new numbers) and the recap. Slide "The same with x" ends with "Now two questions."
+  - Q1: title "the tip from the lesson" → "a tip that saves you on the exam"; added the board item "Tip: move x to the side with MORE x — it stays positive" + one line before the solving.
+  - Q2: new short slide "True or false?": "x disappears: true → every x · false → no x" + one line (the "false" case was only on the cut slide).
+- **Systems of Inequalities** (5.5 → 0.6 min, Hebrew intro 1.0): title + one slide "solve each one separately → find where they overlap". Cut six near-twins of the questions: overlap → Q3, no overlap → Q4, test the choices x⁴ < 20 < x⁵ → Q5 (x⁴ < 90 < x⁵), chain → Q6, x² inequalities → Q7, plus an equation → Q8; recap.
+  - Q7: "Remember the rule." → "and its rule."; new short slide "Small side, big side" with both rules on the board; the big side (taught only on the cut slide) uses new numbers x² > 9 (the cut slide's −2x² ≤ −32 is practice question q-345).
+- **Signs, Fractions & Must-Be-True** (2.9 → 1.6 min). Cut "Sign table" → Q10; the negative example −½ → Q9 (same numbers); the list "0, 1, −1, ½, a big number" → Q20 (on its board); recap. Kept: between 0 and 1 (with 1/x), reciprocals, must/could/cannot.
+- **Combining Inequalities & Ranges** (2.4 → 0.9 min). Cut "Add them" → Q17, "Never subtract" → Q18, "Multiply" (corners) → Q19, recap. Kept "Range of x²".
+  - Q17: new short slide "Ranges add too": 1 < a < 3, 2 < b < 5 → 3 < a + b < 8 + one line.
+  - Q19: board item "All positive? Multiply end by end. Negatives inside? Check the corners" + one line (also: when dividing, the bottom cannot be zero).

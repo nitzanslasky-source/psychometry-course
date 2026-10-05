@@ -91,3 +91,16 @@ The topic order is unchanged: T15 still comes before T16. For this reason, produ
 - Card "Divisibility signs & remainders": checked against the original. Every true original row is present (the 15 row is covered by "12, 15, 18, 24"); the old 6/15, 11 and "÷4 and ÷5" rules stay fixed.
 
 **Summary video** `r26-t15-summary` "Division & Remainder: Summary" (about 2 minutes), the last item of the advanced section, right before the practice. Slides: Summary · Divisibility signs · Build a divisor · Divisibility stories · Remainder basics · Combine remainders · Change the divisor · Counting and units digits · Numbers in a row · Before you practice.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). Nothing in topic 15 is recorded.
+- **`divisibility` "Division & Remainder"**: 9.3 → 6.8 min. The signs and the remainder basics stay (the Hebrew course has them as theory too).
+  - Cut "Divisibility stories" (the zebras) → taught in Q1 `solve-q-423` (eliminate what can't be; build from the inside k → 4k → 12k). Added in Q1 method 2: "a fraction of a fraction — multiply the denominators. Half of a quarter? It must divide by eight" + board item.
+  - Cut "Algebraic form" (N = 6k + 2) → taught in Q4 `solve-q-426` (3x + 1) and Q14 `solve-q-435` (6k + 3); the hop pattern in Q2 `solve-q-424`.
+  - Cut "Combine remainders" → Q5 `solve-q-r26-t15-01` (difference, negative → add the divisor) now also says "for a sum add, for a product multiply" + board item; the "a and a + b" rule is taught in Q15 `solve-q-436`. The matching recap item was removed.
+  - Q6 `solve-q-427` said "like the zebras" → "like the chess class".
+- **`r26-t15-remainder-tools` "More Remainder Tools"**: 3.7 → 2.2 min. Kept: take away the remainder, units digit (powers repeat), numbers in a row (Q11 teaches only part of it).
+  - Cut "Counting multiples" → taught in Q9 `solve-q-430`; added there "Don't forget the plus one — from three to seven there are five numbers" + board item "Count = last k − first k + 1".
+  - Cut "Plugging in: the rule" → taught in Q4 (never a value that gives 0), Q10 (one failing example is proof), Q11 (avoid 0; try a second value), Q14 (examples that work are not proof).
+  - Cut "Recap".
+- For the teacher: the AI summary script `ai_scripts/r26-t15-summary.json` still says "there's no such thing as a third of a zebra". The zebra example is gone from the lesson (the idea is in Q1). Not edited.

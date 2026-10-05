@@ -65,3 +65,27 @@ Division uses ÷. New rows: rate % → time, pick a job size (LCM), two workers 
 - `solve-wp26-g093` (Question 1): the original "Method 2 · Triple value" slide is back as "Method 2 · Triangle value" (the name the course now uses; "÷" instead of ":"). The added slides follow as "Method 3 · Rate × time" and "Method 4 · Plug in numbers".
 
 **Summary lesson (1 new video):** `r26-t26-summary` "Summary", at the end of "Further guided examples", right before the practice. Slides: Summary · The formula · Three relationships · Rate in percent · One job = 1 · Working together · Two workers · Team questions · Worker-hours · Average rate · Before you practice. Only content the Topic 26 lessons and guided solutions teach.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). Each lesson is back to a short intro like the Hebrew course. If a question video in the same flow already teaches an idea, it is cut from the lesson. Ideas that no question teaches stay, or move into the question video that uses them as one spoken line plus one board item. Nothing in topic 26 is recorded. Questions, numbers, methods and the memory card are unchanged.
+- **`wp-092` Work, Rate and Time**: 8 → 3 slides, 4.4 → 1.8 min. Kept: title, "The formula" (with the triangle) and "Rate has a time unit". The Hebrew theory lesson teaches exactly these two. Added the closing line "Now two questions. Try each one first — then watch the solution." Cut:
+  - "Work = rate × time": the same drill as the triangle. Q1 method 3 does it.
+  - "Three relationships": the direct ones are in Q1 method 1 (same time, triple rate → triple the samples; more time → more work). The inverse one is in Q2, the printer question. MOVED into Q2 `solve-q-r26-t26-01`: "The rule: when the work is fixed, faster means less time — inverse." + board "Work fixed: rate ×2 → time ×½ (inverse)".
+  - "Rate in percent": taught in Q2 method 1. MOVED "the other way" there: "rate down twenty percent is times four fifths — so the time is times five quarters, up twenty-five percent." + board "Rate −20% → time ×5/4 = +25%".
+  - "One job = 1": taught in Q3 `solve-wp26-g095` (one eighth of a tank per hour; method 2 uses the LCM, a 24-unit tank). ADDED there: "We don't know the tank's size — so call the whole tank one job." + board "One job = 1 → 8 hours: 1/8 per hour".
+  - Recap.
+- **`wp-094` Working Together**: 7 → 3 slides, 2.5 → 0.9 min. Kept: title, "Add the rates" and "Working against you" (the Hebrew intro). Added "Let's see it in three questions." Cut:
+  - "Match the times": Q4 method 1 (equalize the times).
+  - "Two-worker shortcut": Q4 method 2 and Q5 method 2 (times over plus). MOVED into Q5 `solve-q-r26-t26-02` method 2: "Two equal workers? Together they need half the time. And this shortcut is for two workers only — three workers, add the rates." + board "Equal workers → half the time · 3 workers → add rates".
+  - "Sense check": Q5 method 1 (less than the fastest, more than half of it), and also Q4.
+  - Recap.
+- **`wp-097` Team Questions**: not cut. "Now remember the three relationships." → "Remember from the first questions:", because that slide is gone.
+- **`wp-099` Worker-Hours**: 7 → 2 slides, 2.3 → 0.6 min. Kept: title and "What worker-hours are" (the Hebrew intro). Added "Let's see it in the questions." Cut:
+  - "Jobs in phases": Q7 path question (18 × 8 + 12 × 7; "thirty workers never worked together").
+  - "Joins or leaves": Q8 pipes (whole − done = left; the "whole pool from the start" trap).
+  - "Average rate": Q11 `solve-q-r26-t26-04` (total work ÷ total time; the slow rate gets more time). This one is in "Further guided examples", the first question that uses it. MOVED there: "It's a weighted average — weighted by TIME. You'll meet the same trap with average speed." + board "Average rate: weighted by time".
+  - "Matching units": Q10 `solve-wp26-g102` (hours become minutes). ADDED there: "Combine only matching units — convert first." + board "Combine only matching units".
+  - Recap.
+- Question videos got longer: q-r26-t26-01 0.8→1.1, g095 1.1→1.2, q-r26-t26-02 0.9→1.1, g102 1.2→1.3, q-r26-t26-04 0.8→0.9. **Net: −5.1 min.**
+- No video said "as we saw in the lesson" about a cut idea. The summary lesson and the AI summary `r26-t26-summary` were not edited. Everything they recap is still taught, in the lesson slides that stayed or in the question videos.
+- **Follow-up check (same day):** every cut idea re-checked against the video that now teaches it; nothing was lost, so no change. Work = rate × time forwards/backwards → the triangle slide (kept) + Q1 method 3. Direct relationships → Q1 method 1; inverse → Q2 (moved line). Rate in percent (+25% → −20% and back) → Q2 method 1 + moved "−20% → +25%" line. One job = 1 / LCM → Q3 (moved line + method 2). Match the times → Q4 method 1. Two-worker shortcut (4 h and 6 h → 2.4 h, the same example) → Q4 method 2 + Q5; equal workers / three workers → Q5 (moved). Sense check (less than the fastest alone, more than half of it, cross out first) → Q5 method 1, also Q4 and Q8. Jobs in phases (don't mix team sizes) → Q7 path. Joins or leaves (whole − done = left, LCM for different rates, "left or whole?" trap) → Q8 pipes. Average rate (total ÷ total, not the plain average, weighted by time) → Q11 (moved line). Matching units → Q10 (moved line).

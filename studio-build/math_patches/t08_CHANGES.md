@@ -137,3 +137,9 @@ Check: `python3 math_check.py 8 32` and `python3 math_check.py 5 8 32` → 0 pro
 - Fixed the q-132 video intro: it still said "doesn't depend on a … until the a disappears". The letter is now n.
 - Summary slide "When aᵇ = 1" (it lists aᵇ = 1 and then 2⁴ = 4²): kept. The two facts do not depend on each other, and this summary slide recaps the rule that the guided question uses, so the order does not affect the flow.
 - Checked with no changes needed: all the core and guided questions, which were re-computed (keys, traps and the x = 1 checks), plus the lesson examples and 15 practice questions.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). Nothing in topic 8 is recorded.
+- **Exponent Traps** (3.2 → 1.8 min). Cut "Signs with letters" → Question 6 (odd keeps the sign, even is never negative; (−x)² and −x² are on the laws lesson's "Negative bases" slide). Cut "Check with a number" → Question 1 method 2, Question 4 (two choices tie → try another n), Question 5 (pick one half).
+- "Between 0 and 1": kept the decimals (0.2³ = 0.008, 0.3² = 0.09 — taught nowhere else, used in practice). Cut the ½, ¼, ⅛ powers and the x³ < x² < x rule (Question 5 teaches them); the last line is now "a power makes a number smaller only between zero and one. Above one, it makes it bigger."
+- "Compare powers" kept whole (no question video teaches it). Title slide: "Two short ideas here. The other traps come inside the questions." Sidebar: Between 0 and 1 · Compare powers.

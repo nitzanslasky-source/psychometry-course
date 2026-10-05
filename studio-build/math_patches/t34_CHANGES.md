@@ -122,3 +122,9 @@ The review found no wrong rules in the videos. Two places taught a shaky method,
 
 **Summary lesson (new)**
 - `r26-t34-summary` "Polygons: Summary", at the end of the learn section, right before the practice. Slides: Summary · Angle sum · One angle · Exterior angles · Diagonals · Triangles inside · Areas · Meeting at a point · Before you practice.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). A lesson slide is cut only when a question video after it teaches the same idea again. Nothing in topic 34 is recorded.
+- **Polygons** (`geo-104`) 12.6 → 10.9 min, 17 → 15 slides (Hebrew 11.3). CUT slide 5 "How many diagonals" → `solve-q-r26-t34-02` (n − 3 from one vertex, n × 7, halve because each diagonal has two ends). CUT slide 13 "Angle → sides" → `solve-q-r26-t34-01` (formula way and the fast way through the exterior angle). Recap: the diagonals-count item and line are gone; the last item is now "Exterior angles: 360° in all" and the line "And the exterior angles always add up to 360." KEPT slide 12 "Exterior angles": the question video uses the facts but does not define the exterior angle or give the reason (walk around = 360). Sidebar: 14 labels.
+- **Polygons Meeting at a Point** (`r26-t34-meet`, 1.7 min) REMOVED from the flow: its whole method (360 around the shared vertex, then the isosceles triangle on the common side) is taught again right after by `solve-q-r26-t34-03` (square + pentagon). MOVED its one extra fact into `solve-q-r26-t34-03` slide 2: "The same 360 tells you when regular polygons fill a point with no gaps: three hexagons, 3 times 120 — a honeycomb." + board item "Fill a point: 3 × 120° = 360°" (1.1 → 1.2 min). Slide 1 "the picture from the lesson" → "the exam loves this picture".
+- Summary `r26-t34-summary` slides 4, 5, 8 still sum up exterior angles, the diagonal count and polygons meeting at a point — all taught in question videos now; no change needed.

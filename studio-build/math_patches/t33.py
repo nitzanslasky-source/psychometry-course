@@ -645,6 +645,7 @@ def apply(M):
     _summaries(M)
     _american(M)
     _sync_canvas(M)
+    cut_repeats(M)          # 2026-10-05: last
 
 
 # ------------------------------------------------------------------------------------------------
@@ -1710,3 +1711,84 @@ def _summaries(M):
             "You know all of this. Now practice.",
         ]),
     ], LEARN2, after=last(LEARN2))
+
+
+# ================================================================================================
+# 2026-10-05 cut repeats: a lesson slide that the next question video teaches again is removed
+# (the teacher: the Hebrew course has a short intro, and each question video teaches its own idea).
+# ================================================================================================
+def _cr_cut(M, vid, ns):
+    """remove slides ns (1-based) and drop their sidebar labels; the other slides' 'active' indexes follow."""
+    v = M.video(vid)
+    gone = {v['beats'][n - 1].get('active') for n in ns}
+    M.remove_slides(vid, ns)
+    side = v.get('hybrid', {}).get('sidebar')
+    if side is None: return
+    used = {b.get('active') for b in v['beats']}
+    drop = sorted(a for a in gone if a is not None and a >= 0 and a not in used)
+    for b in v['beats']:
+        a = b.get('active')
+        if a is not None and a >= 0: b['active'] = a - sum(1 for d in drop if d < a)
+    M.set_sidebar(vid, [l for k, l in enumerate(side) if k not in drop])
+
+
+def _cr_say(M, vid, n, old, new):
+    """replace a spoken line (by its start); new=None deletes it."""
+    def fn(lines):
+        k = next(i for i, l in enumerate(lines) if l.get('say', '').startswith(old))
+        if new is None: lines.pop(k)
+        else: lines[k] = dict(lines[k], say=new)
+        return lines
+    M.edit_lines(vid, n, fn)
+
+
+def _cr_add(M, vid, n, after, says, item=None, label=None):
+    """add spoken lines (and optionally one board item that appears before them) after the line starting with `after`
+    (after=None: at the end of the slide)."""
+    b = M.slide(vid, n)
+    new = []
+    if item is not None:
+        b['items'].append(item)
+        new.append({'appear': len(b['items']) - 1, 'label': label})
+    new += [{'say': s} for s in says]
+    def fn(lines):
+        k = len(lines) if after is None else next(i for i, l in enumerate(lines) if l.get('say', '').startswith(after)) + 1
+        return lines[:k] + new + lines[k:]
+    M.edit_lines(vid, n, fn)
+
+
+def cut_repeats(M):
+    # --- Angles in a Circle (geo-075): slide 9 "Chord and center" is taught again by the next question video,
+    #     solve-q-r26-t33-01 (perpendicular from the center halves the chord; radius as hypotenuse; Pythagoras).
+    _cr_cut(M, 'geo-075', [9])
+    _cr_add(M, 'geo-075', 8, None, ["Now let's solve a sample question."])
+
+    # --- Tangents (geo-077): slide 5 "Circle inside a triangle" = solve-q-r26-t33-02 (equal tangent pieces, the little
+    #     square at the right angle, leg + leg − hypotenuse over 2). Slide 6 "Tangent circles": joining the centers and
+    #     R + r are taught in solve-geo33-g088 (OM = 4 + 4) and solve-geo33-g092; R − r moves there as one line.
+    _cr_cut(M, 'geo-077', [5, 6])
+    _cr_add(M, 'geo-077', 4, None, ["Let's solve a sample question."])
+    _cr_add(M, 'solve-geo33-g088', 3, 'The first part is a radius of circle O.',
+            ["Two circles touch? Join the centers. Outside each other — R plus r. One inside the other — R minus r."],
+            T('Touching circles: outside $R+r$ · inside $R-r$', size=30, x=1060, y=420, w=470),
+            "'Touching circles: outside R + r · inside R − r' appears")
+
+    # --- Area and Circumference (geo-079): slide 8 "Scale the radius" = solve-q-r26-t33-03 (lengths grow like r,
+    #     areas like r squared). Its "backwards" line moves there.
+    _cr_cut(M, 'geo-079', [8])
+    _cr_add(M, 'solve-q-r26-t33-03', 2, 'The area grows like r squared',
+            ["It works backwards too: the area 9 times bigger — the radius only 3 times bigger."],
+            T(r'Backwards: $S\times9\ \Rightarrow\ r\times3$', size=40, x=410, y=460, w=1100),
+            "'Backwards: S × 9 → r × 3' appears")
+
+    # --- More Circle Tools (r26-t33-more-tools): slide 2 "Segment" = solve-q-r26-t33-04 (sector minus triangle);
+    #     slide 4 "Common tangent" = solve-q-r26-t33-05 (same numbers, 8 and 2, same steps, same shortcut).
+    _cr_cut(M, 'r26-t33-more-tools', [2, 4])
+    _cr_say(M, 'r26-t33-more-tools', 1, 'Four more tools', 'Two more tools for the hardest circle questions.')
+    _cr_say(M, 'r26-t33-more-tools', 1, 'Each one shows up', 'Two more come in the questions after this lesson.')
+    _cr_say(M, 'r26-t33-more-tools', 2, 'The shaded region is two equal segments',
+            'The shaded region is two equal pieces. Each one: a 120-degree sector minus the triangle AOB.')
+    b = M.slide('r26-t33-more-tools', 2)
+    b['items'][2]['t'] = r'Common region $=2\times$(sector $-$ triangle)'
+    M.edit_lines('r26-t33-more-tools', 2, lambda L: [dict(l, label='Common region = 2 × (sector − triangle)')
+                                                    if l.get('label') == 'Common region = 2 segments' else l for l in L])

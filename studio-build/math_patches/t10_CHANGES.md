@@ -146,3 +146,10 @@ Sums of powers · Common factor · Before you practice.
 - q-262 was √18, worked on the board in "powers-techniques" slide 6 -> √28 = 2√7 (choice 2).
 - q-r26-t10-06 was 3^x + 3^x + 3^x of "r26-t10-power-traps" slide 2 -> five copies of 5^x = 5^(x+1) (choice 3).
 - q-r26-t10-09 was √(x + 12) = x of "r26-t09-summary" slide 10 -> √(x + 30) = x, x = 6 (choice 2); −5 is the fake solution.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). Nothing in topic 10 is recorded.
+- **Exponents & Roots — Techniques** (9.0 → 2.5 min, Hebrew lesson ≈ 4.6). Kept the Hebrew lesson's two slides: dividing roots, a number over a root (+ "Now the questions. Each one teaches one more technique."). Cut: same prime base and negative exponents → Q1 (q-248); adding roots by splitting and by a common factor → Q2 (q-249); power equations → Q3 (q-250), trying the choices for them → Q8; root equations, the √(x + 2) = x example and "try the choices" → Q4 and Q6 (near-twin √(2x + 3) = x); recap.
+  - Q3 title line "You know the method — equal bases" → "The method: equal bases — then equal exponents."
+  - Moved into Q3 (new short slide "When it works"): "Equal bases → equal exponents: for a positive base that is not 1" + one line. 1.3 → 1.5 min.
+- **Exponent Traps — Sums of Powers** (2.7 → 0.9 min). Cut "Sums of equal powers" → Q7, "Common factor" → Q8, recap. Kept "Same exponent" (aᵡbᵡ = (ab)ᵡ; no question video here). Title slide names what the questions teach.

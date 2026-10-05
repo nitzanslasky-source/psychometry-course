@@ -654,6 +654,7 @@ def apply(M):
     guided_new(M)
     practice(M)
     summary(M)
+    cut_repeats(M)   # 2026-10-05: last
 
 
 # =========================================================================================
@@ -756,3 +757,103 @@ def summary(M):
     last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
     v = M.new_video('r26-t18-summary', TOPIC, 'Letter Puzzles: Summary', sb, slides, ADV, after=last)
     v['hybrid']['num'] = M.video(FACTS)['hybrid']['num'] or M.video(LESSON)['hybrid']['num']
+
+
+# =====================================================================================
+# 2026-10-05 cut repeats (helpers)
+# =====================================================================================
+def _cr_script(M, vid, n):
+    b = M.slide(vid, n); out = []
+    for l in b['lines']:
+        if 'say' in l: out.append(l['say'])
+        elif 'appear' in l: out.append(A(l['label'], b['items'][l['appear']]))
+        else: out.append(D(l['draw']))
+    return out
+
+
+def _cr_add(M, vid, n, anchor, new, where='after'):
+    """Insert script entries `new` before/after the spoken line containing `anchor` (None = at the end)."""
+    sc = _cr_script(M, vid, n); out = []; hit = anchor is None
+    for x in sc:
+        if not hit and isinstance(x, str) and anchor in x:
+            hit = True
+            out += ([x] + new) if where == 'after' else (new + [x]); continue
+        out.append(x)
+    if anchor is None: out += new
+    assert hit, '%s #%d: not found: %s' % (vid, n, anchor)
+    M.set_slide(vid, n, script=out)
+
+
+def _cr_say(M, vid, n, old, new):
+    """Replace the whole spoken line containing `old` (new=None deletes it)."""
+    def fn(lines):
+        for k, l in enumerate(lines):
+            if 'say' in l and old in l['say']:
+                if new is None: lines.pop(k)
+                else: l['say'] = new
+                return lines
+        raise AssertionError('%s #%d: not found: %s' % (vid, n, old))
+    M.edit_lines(vid, n, fn)
+
+
+def _cr_drop_item(M, vid, n, text):
+    """Remove the pop-in board item whose text contains `text` (and its appear line)."""
+    sc = [x for x in _cr_script(M, vid, n) if not (isinstance(x, tuple) and x[0] == 'A' and text in (x[2].get('t') or ''))]
+    assert len(sc) < len(_cr_script(M, vid, n)), (vid, n, text)
+    M.set_slide(vid, n, script=sc)
+
+
+def _cr_cut(M, vid, titles):
+    """Remove the slides with these titles; drop their sidebar labels and re-point the other slides."""
+    v = M.video(vid); sb = list(v.get('hybrid', {}).get('sidebar') or [])
+    ns = [k + 1 for k, b in enumerate(v['beats']) if b['title'] in titles]
+    assert len(ns) == len(titles), (vid, titles, [b['title'] for b in v['beats']])
+    gone = {v['beats'][n - 1]['active'] for n in ns}
+    M.remove_slides(vid, ns)
+    keep_used = {b['active'] for b in v['beats']}
+    new_sb = [lab for k, lab in enumerate(sb) if k in keep_used]   # labels no remaining slide uses go
+    for b in v['beats']:
+        if 0 <= b['active'] < len(sb): b['active'] = new_sb.index(sb[b['active']])
+    M.set_sidebar(vid, new_sb)
+
+
+def cut_repeats(M):
+    # ---- "Exercises with Letters" -> the Hebrew intro: the 4 steps + what the letters mean.
+    #      Worked example -> Q1; carries -> Q10 (+ one line); leading digit -> Q1 (+ why, + the 4-numbers limit);
+    #      special digits -> Q2 (+ the 5 and 6 facts); plug in -> Q3 (+ "choices from the middle" in Q8);
+    #      minus -> plus -> Q5, Q7; algebraic form -> Q3, Q9 (+ ABC in Q3).
+    _cr_cut(M, LESSON, ['The 4 steps in action', 'Carries', 'Leading digit', 'Special digits', 'Plug in numbers',
+                        'Minus → plus', 'Algebraic form', 'Recap'])
+    _cr_say(M, LESSON, 2, "Let's run it on an example", 'Each question that follows uses these steps — and teaches one more tool.')
+    _cr_add(M, LESSON, 3, None, ['Three questions next. Try each one — then watch its solution.'])
+
+    # Q1 (q-512): why the leading digit is one, and its limit
+    _cr_add(M, 'solve-q-512', 2, 'More digits in the sum: the leading digit is one', [
+        A("'Two numbers, more digits → leading digit 1' appears", T('Two numbers, more digits $\\to$ leading digit $1$:  $99+99=198$', size=36)),
+        "Why? Even ninety-nine plus ninety-nine is only one ninety-eight. Careful — that's for TWO numbers. Four three-digit numbers can reach three thousand and more."])
+    # Q2 (q-513): no lesson slide to "remember"; the two extra special-digit facts
+    _cr_say(M, 'solve-q-513', 1, 'Remember the special digits?', 'The special digits — zero, one, five and six.')
+    _cr_add(M, 'solve-q-513', 2, "that's a special digit", [
+        A("'5 × even → 0, 5 × odd → 5, 6 × even keeps it' appears", T('$5\\times$ even $\\to0$ · $5\\times$ odd $\\to5$ · $6\\times$ even keeps its digit', size=34)),
+        "Two more facts about them: five times an even number ends in zero, times an odd number in five. Six times an even digit keeps that digit — six times four, twenty-four."])
+    # Q3 (q-514): three-digit algebraic form
+    _cr_add(M, 'solve-q-514', 3, 'The algebraic form proves it', [
+        A("'AB = 10A + B, ABC = 100A + 10B + C' appears", T('$\\overline{AB}=10A+B \\qquad \\overline{ABC}=100A+10B+C$', size=36)),
+        "The algebraic form: AB is ten A plus B. ABC is a hundred A, plus ten B, plus C."])
+    # Q8 (q-519): plugging in the choices, from the middle
+    _cr_add(M, 'solve-q-519', 2, 'Classic trial and error', [
+        "A tip for any question that asks for one letter: plug in the choices. When they are in order, start from the middle one — too big or too small tells you which way to go."])
+    # Q10 (q-r26-t18-01): carries
+    _cr_add(M, 'solve-q-r26-t18-01', 2, 'B plus one must be ten', [
+        A("'Middle column: ends in the same digit → 0 or 9' appears", T('Middle column: "ends in the same digit" $\\to0$ or $9$', size=36)),
+        "So in a middle column, \"ends in the same digit\" means zero or nine — check the carry. With two numbers a carry is at most one; three or four numbers can carry two or three."])
+
+    # ---- "Number Facts for Letter Puzzles": reversals -> Q11 (+ why); products -> Q12. Kept: repdigits,
+    #      powers' ones digit, largest/smallest (no question video teaches them).
+    _cr_cut(M, FACTS, ['Reversals', 'Products', 'Recap'])
+    _cr_say(M, FACTS, 1, 'A few patterns come back', 'A few patterns come back again and again on the exam. Three of them first — the questions teach the rest.')
+    _cr_say(M, FACTS, 3, 'Fourth: the ones digit of a power.', 'Second: the ones digit of a power.')
+    _cr_add(M, FACTS, 4, None, ['The next questions use these facts — and teach a few more. Try each one first — then watch.'])
+    _cr_add(M, 'solve-q-r26-t18-02', 2, 'ABC minus CBA is ninety-nine times', [
+        A("'ABC − CBA = 99(A − C)' appears", T('$(100A+10B+C)-(100C+10B+A)=99(A-C)$', size=36)),
+        "Why? Write both in algebraic form. The middle digit cancels: ninety-nine A minus ninety-nine C."])

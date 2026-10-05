@@ -833,6 +833,7 @@ def apply(M):
     _cleanup_videos(M)
     _fix_sidebars(M)
     summary(M)
+    cut_repeats(M)
 
 
 # =====================================================================================
@@ -1021,3 +1022,192 @@ def give_gap(M):
         'With an equation: after the transfer Iris $=x$ and Owen $=x+4$. $2x+4=30$, $x=13$: 13 and 17. Before: $13+9=22$ '
         'and $17-9=8$.',
         'The ratio is $22:8=11:4$.'])
+
+
+# =====================================================================================
+# 2026-10-05 cut repeats: each lesson back to a short intro (Hebrew style); every idea a
+# question video right after it already teaches is cut from the lesson; ideas no question
+# teaches stay, or move as one line + board item into the question video that uses them.
+# =====================================================================================
+def _add_line(M, vid, n, before_say, line, item=None, label=None):
+    """Insert one spoken line (+ optional board item) right before the line containing `before_say`
+    (before_say=None: at the end of the slide)."""
+    b = M.slide(vid, n); script = []; hit = False
+    add = ([A(label, item)] if item is not None else []) + [line]
+    for l in b['lines']:
+        if before_say is not None and not hit and before_say in (l.get('say') or l.get('draw') or l.get('label') or ''):
+            script += add; hit = True
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        else: script.append(D(l['draw']))
+    if before_say is None:
+        script += add; hit = True
+    assert hit, '%s #%d: not found: %s' % (vid, n, before_say)
+    M.set_slide(vid, n, script=script)
+
+
+def _set_say(M, vid, n, old, new):
+    """Replace the whole spoken line containing `old`."""
+    def fn(lines):
+        for l in lines:
+            if 'say' in l and old in l['say']:
+                l['say'] = new
+                return lines
+        raise AssertionError('%s #%d: not found: %s' % (vid, n, old))
+    M.edit_lines(vid, n, fn)
+
+
+def _keep_slides(M, vid, keep, sidebar):
+    """Keep only the slides `keep` (1-based); set the sidebar; renumber 'active'."""
+    v = M.video(vid)
+    M.remove_slides(vid, [k for k in range(1, len(v['beats']) + 1) if k not in keep])
+    a = 0
+    for b in v['beats']:
+        if b.get('mode') in ('concept', 'question'):
+            b['active'] = a; a += 1
+    M.set_sidebar(vid, sidebar)
+
+
+def cut_repeats(M):
+    # ---- Equal Ratios: title only (Hebrew: "easiest to just see an example") -------------
+    vid = 'wp-028'
+    _keep_slides(M, vid, [1], [])
+    _set_say(M, vid, 1, "Let's learn it on an easy example.", "The easiest way to learn it: on the questions.")
+    # "The ratio table" (same 6 / 42 / 15 numbers) -> Q1 trays
+    _say(M, 'solve-wp22-g029', 1, 'Equal ratios — straight from the lesson.', 'Equal ratios — we learn it on this question.')
+    _add_line(M, 'solve-wp22-g029', 2, 'Draw an arrow from 6 to 42',
+              "Put the data in a ratio table: trays in one column, biscuits in the other. Six is to forty-two as fifteen is to the missing number.")
+    _set_say(M, 'solve-wp22-g029', 3, 'The triangle value gives the same thing',
+             "The triangle value gives the same thing: multiply along the diagonal, fifteen times forty-two, and divide by what's left, six.")
+    # "Triangle value" + "Cross-multiply" -> Q2 (exercises); keep the other name
+    _set_say(M, 'solve-wp22-g030', 2, 'So: triangle value.',
+             'So: the triangle value — also called "cross-multiply and divide".')
+    # "Inverse proportion" -> Q3 (workers); move the general rule there
+    _add_line(M, 'solve-q-r26-t22-02', 3, None,
+              "The rule: one goes up, the other goes down — the product stays the same. Workers and days, speed and time.",
+              T('One up, one down? The product stays the same', 36),
+              "'One up, one down? The product stays the same' appears")
+
+    # ---- Read, Organize, Calculate: keep title + "Reading, not algebra" (Hebrew intro) --
+    vid = 'wp-031'
+    _keep_slides(M, vid, [1, 2], ['Reading, not algebra'])
+    _add_line(M, vid, 2, None, "Two questions next. They check that you notice every detail.")
+    # "Label every cost" -> Q4 tart (selling price minus cost); move the label rule there
+    _add_line(M, 'solve-wp22-g032', 2, 'Pastry: three hundred grams',
+              "Label every number: a price per hundred grams is not a price per gram, and a fixed fee is paid once.",
+              T('Label every number · per 100 g ≠ per g · a fixed fee is paid once', 34),
+              "'Label every number · per 100 g ≠ per g · a fixed fee is paid once' appears")
+    # "Or part of: round up" -> Q5 hire (or part of a minute / block); move the vans example
+    _add_line(M, 'solve-wp22-g033', 2, None,
+              "Same with people: fifty people, vans of twelve. Four vans and two people left — they need a fifth van.",
+              T(r'$50$ people, vans of $12$ $\to$ $5$ vans (round UP)', 36),
+              "'50 people, vans of 12 → 5 vans (round UP)' appears")
+
+    # ---- Ratios: keep slides 1-7 (the Hebrew ratio lesson); cut 8-11 --------------------
+    vid = 'wp-034'
+    _keep_slides(M, vid, [1, 2, 3, 4, 5, 6, 7], ['What a ratio tells you', 'A ratio is a fraction', 'No amounts!',
+                                                  'Part of a whole', 'Fractions in a ratio', 'Reversed: "costs as"'])
+    _add_line(M, vid, 7, None, "Four questions next. Watch the ratio units do all the work.")
+    # "Units and divisibility" -> Q6 (difference 2x → even; boys ÷3, girls ÷5, class ÷8)
+    # "Three-part ratios" -> Q8 choir; "Changing a ratio" -> Q9 club. Recap cut.
+
+    # ---- Build the Equation: keep title + "Equations everywhere" (Hebrew intro) ----------
+    vid = 'wp-037'
+    _keep_slides(M, vid, [1, 2], ['Equations everywhere'])
+    _add_line(M, vid, 2, None, "Let's see it in the questions.")
+    # "Choose x wisely" -> Q10 rooms (x = what they ask; 18 is the new number = trap)
+    # "Before and after" -> Q10 (total unchanged) + Q11 table; move the moved/removed/added rule
+    _add_line(M, 'solve-wp22-g038', 2, "The number of students didn't change",
+              "Moved between groups? The total stays. Removed? It drops. Added from outside? It grows.",
+              T(r'Moved $\to$ total stays · removed $\to$ drops · added $\to$ grows', 34),
+              "'Moved → total stays · removed → drops · added → grows' appears")
+    # "Giving: the gap changes twice" -> Q11 shelves (gap changes by 2 per book, turns around);
+    # move "to make them equal, give half the gap"
+    _add_line(M, 'solve-q-r26-t22-20', 3, 'The traps: thirty-two',
+              "To make them equal, you give half the gap: thirteen. Here B must end up ahead, so we need more.",
+              T('Equal? Give half the gap', 36), "'Equal? Give half the gap' appears")
+
+    # ---- Give It to the Little Guy: title only (Hebrew teaches it inside the age question) -
+    vid = 'wp-039'
+    _keep_slides(M, vid, [1], [])
+    _add_line(M, vid, 1, None, "Let's see it in two questions: an age question and a budget question.")
+    # "Equal sides" -> Q12 ages ("think of four and eight — you double the four"); move the warning
+    _add_line(M, 'solve-wp22-g039', 2, "Not Iris. Think of four and eight",
+              "Lots of students double the bigger one. That's backwards: the times two goes on the smaller side.",
+              T(r'Twice? The $\times2$ goes on the smaller side', 36),
+              "'Twice? The ×2 goes on the smaller side' appears")
+    # "Ages: gaps stay" -> Q12 (row for each time); move the rule
+    _add_line(M, 'solve-wp22-g039', 2, "Iris was TWICE Leo",
+              "Notice: the gap is still six. Everyone ages the same — the gap stays, only the ratio changes.")
+    # "Test the answers" -> Q12 / Q13 method 2; "Enough, not enough" -> Q13 notebooks. Recap cut.
+
+    # ---- Shortcuts Ahead: title only (Hebrew advanced intro); each shortcut is taught in its question
+    vid = 'r26-t22-shortcuts'
+    _keep_slides(M, vid, [1], [])
+    M.edit_lines(vid, 1, lambda ls: [
+        {'say': "Advanced questions: no single formula here."},
+        {'say': "We build an equation, or we understand and calculate — and each question shows a shortcut."},
+        {'say': "Try each one first — then watch."}])
+
+    # ---- Three Exam Tools: keep title + "One equation, two unknowns" (no question after it teaches it)
+    vid = 'r26-t22-exam-tools'
+    _keep_slides(M, vid, [1, 4], ['Two unknowns'])
+    M.edit_lines(vid, 1, lambda ls: [
+        {'say': "Three more tools the exam loves."},
+        {'say': "First: knowing when you CAN'T find the answer."},
+        {'say': "The other two — letters in the answers, and a fast trick for two kinds of items — we'll learn in the questions."}])
+    _add_line(M, vid, 2, None, "Two questions next.")
+    # "Letters in the choices" -> Q23 pens (choose numbers, not 0/1, test every choice); move the tie-break
+    _add_line(M, 'solve-q-r26-t22-04', 2, 'Only choice two gives twenty-one',
+              "Two choices give the same result? Choose new numbers and test only those two.",
+              T('Two choices tie? New numbers, test only those two', 34),
+              "'Two choices tie? New numbers, test only those two' appears")
+    # "Assume all the same" -> Q24 parking lot (both "all motorcycles" and "the other kind"). Recap cut.
+
+    # ---- follow-up (coordinator): no idea lost; no title-only lessons -----------------------
+    # Equal Ratios: title + one short intro slide (Hebrew B32)
+    vid = 'wp-028'
+    M.edit_lines(vid, 1, lambda ls: [
+        {'say': "Equal ratios. A short lesson — and one of the most important in the whole course."}])
+    M.insert_slides(vid, 1, [dict(mode='concept', title='Same rate, two cases', active=0, pre=[], script=[
+        "This technique follows you everywhere: word problems, geometry, algebra.",
+        A("'Same rate in both cases → equal ratios' appears", T(r'Same rate in both cases $\to$ equal ratios', 40)),
+        "Many questions rest on one idea: the same rate in two cases. The easiest way to learn it: on an example."])])
+    M.set_sidebar(vid, ['Same rate, two cases'])
+    # the name "triangle value" (was in the cut slide) -> Q1 trays, slide 3
+    _add_line(M, 'solve-wp22-g029', 3, 'Write "15 × 42 ÷ 6"',
+              "Diagonal times, divide by the rest. The three numbers make a triangle — hence the name.")
+    # the teacher's preference (was in "Cross-multiply") -> Q2 exercises, method 2
+    _add_line(M, 'solve-wp22-g030', 3, 'Sense check: fourteen minutes',
+              "Triangle value or cross-multiplying — pick whichever feels natural. The triangle value writes the answer straight away, without isolating x.")
+    # inverse examples: add the food supply (was in "Inverse proportion") -> Q3 workers
+    _set_say(M, 'solve-q-r26-t22-02', 3, 'The rule: one goes up, the other goes down',
+             "The rule: one goes up, the other goes down — the product stays the same. Workers and days, speed and time, people and the days a food supply lasts.")
+
+    # Give It to the Little Guy: title + one short intro slide (Hebrew B43: a technique for building equations)
+    vid = 'wp-039'
+    M.edit_lines(vid, 1, lambda ls: [
+        {'say': "A technique that sounds funny — and saves points, even for strong students."},
+        {'say': "We call it: give it to the little guy."}])
+    M.insert_slides(vid, 1, [dict(mode='concept', title='Where it helps', active=0, pre=[], script=[
+        A("'Building an equation: twice · three times · ages' appears", T('Building an equation: twice · three times · ages', 40)),
+        "We use it when we build an equation — with 'twice', 'three times', and in age questions.",
+        "Let's see it in two questions: an age question and a budget question."])])
+    M.set_sidebar(vid, ['Where it helps'])
+    # "A is twice B → B = x, A = 2x: no fractions" (was in "Equal sides") -> Q19 clubs, method 1
+    _set_say(M, 'solve-wp22-g047', 2, 'B is x, A is three x.',
+             "Give the plain x to the little guy: B is x, A is three x. No fractions, no dividing later.")
+
+    # Shortcuts Ahead: title + one short intro slide (Hebrew B45: general problems, no formula)
+    vid = 'r26-t22-shortcuts'
+    M.edit_lines(vid, 1, lambda ls: [{'say': "Advanced questions: general problems."}])
+    M.insert_slides(vid, 1, [dict(mode='concept', title='No formula here', active=0, pre=[], script=[
+        "Not motion, not percents, not work — no formula to guide you.",
+        A("'Build an equation · or understand and calculate' appears", T('Build an equation · or understand and calculate', 40)),
+        "We deal with each question by what's in it. And each question shows a shortcut — try it first, then watch."])])
+    M.set_sidebar(vid, ['No formula here'])
+    # Q14 opened with the same sentence -> keep only its own line
+    M.edit_lines('solve-wp22-g042', 1, lambda ls: [l for l in ls if 'No single formula here' not in (l.get('say') or '')])
+
+    # Three Exam Tools: slide 2 opened with "Last tool:" though it is now the only one here
+    M.edit_lines('r26-t22-exam-tools', 2, lambda ls: [l for l in ls if not (l.get('say') or '').startswith('Last tool:')])

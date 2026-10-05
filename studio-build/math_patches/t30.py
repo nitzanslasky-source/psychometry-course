@@ -766,6 +766,8 @@ def apply(M):
                     qid = pre[0]['qid']
                     b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, M.q(qid)['stem'])
 
+    cut_repeats(M)   # 2026-10-05: runs last
+
 
 # =====================================================================================
 # Pass 2: summary lessons right before each practice section
@@ -893,3 +895,29 @@ def summaries(M):
     ]
     last = [f['ref'] for f in M.D['flow'] if f['section'] == LEARN2][-1]
     M.new_video('r26-t30-summary-2', TOPIC, 'Summary: Harder Line and Angle Questions', sb, slides, LEARN2, after=last)
+
+
+# =====================================================================================
+# 2026-10-05 cut repeats: a lesson slide that the next question video teaches again is cut
+# =====================================================================================
+def _slide_no(M, vid, title):
+    for n, b in enumerate(M.video(vid)['beats'], 1):
+        if b.get('title') == title: return n
+    raise KeyError('%s: no slide %r' % (vid, title))
+
+
+def cut_repeats(M):
+    # geo-001 "Segments on a line": the overlap rule (AC + BD = AD + BC) is taught again, with its own
+    # numbers and board, in solve-q-r26-t30-02 slide 3 ("The overlap rule"). Keep only the gaps trap,
+    # which no question video teaches.
+    n = _slide_no(M, L1, 'Segments on a line')
+    M.set_slide(L1, n, pre=[], script=[
+        "Points on one line make segments. One trap for the exam.",
+        A("'Equal parts: count the gaps, not the points' appears", T('Equal parts: count the gaps, not the points', size=44)),
+        D('Draw 5 equally spaced dots on a line and number the 4 gaps between them'),
+        "Five points, equally spaced. How many gaps? Four, not five.",
+        "Lengths live in the gaps. Count the spaces between the points.",
+    ])
+    r = M.slide(L1, _slide_no(M, L1, 'Recap'))
+    for it in r['items']:
+        if it.get('t', '').startswith('Segments: count the gaps'): it['t'] = 'Segments: count the gaps, not the points'

@@ -119,3 +119,13 @@ Teacher-approved addition: the sum rule |a + b| ≤ |a| + |b| is now taught as a
 
 ## 2026-10-04 question = lesson example fixed
 - Lesson "absolute-value" slide 9: example |x + 3| = 8 (same as guided q-359) -> |x + 4| = 6, x = 2 or −10. Question and its video unchanged.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). Nothing in topic 13 is recorded.
+- **Absolute Value** (8.7 → 3.4 min, Hebrew 6.2 incl. its first sample question). Kept the Hebrew lesson's part: distance from zero, plus or minus inside, whole expression, the rules, when |a + b| = |a| + |b|; ends "Seven questions next … each question teaches one more tool". Cut: sign clues → Q1 (slide 3 shows all four); signs of a product → Q1; x/|x| → Q5; equations (two cases) → Q2 and Q6; inequalities small/big side → Q3 and Q4; negative right side → Q7; plug in (avoid 0, ±1, plug again if two survive) → Q5; recap.
+  - Rewording: Q2 "You know the move" → "The move: two cases."; Q5 "You know what that means — plug in." → "That means we may plug in a number."; Q5 "That's the tool from the lesson: …" → "A useful fact: x over its absolute value is one for every positive x — and minus one for every negative x."
+  - Moved into Q7: "Bars = a negative number → no solution" + one line (the equation version).
+- **Absolute Value — Exam Tools** (4.5 → 1.7 min). Kept "Squares and bars" and "Distance" (used in practice, |x − 1| + |x − 7|; no question video here). Cut: square both sides → Q15 method 2; letter on the right → Q13; add or cancel and |x + y| < |x − y| → Q12; recap.
+  - Q15: "The tool from the lesson" → "A tool for bars on both sides …" + board item "Bars on both sides → square both sides".
+  - Q13: "Remember the tool" → "The tool: solve — then check every answer."; one line at the end "a letter on the right side? Check every answer in the original equation."
+  - Q12: new short slide "Other wordings": |x + y| = |x| − |y| → opposite signs, |x| ≥ |y|; |a + b| < |a| → b has the opposite sign of a, and |b| < 2|a| (both were only on the cut slide; used in practice q-r26-t13-14, q-382, q-384).

@@ -504,6 +504,7 @@ def apply(M):
     _practice(M)
     _american(M)
     _summaries(M)
+    cut_repeats(M)          # 2026-10-05: last
 
 
 def _all_svgs(M):
@@ -1411,3 +1412,58 @@ def _summaries(M):
             'The traps: pairing pieces by eye, "same area" taken as "congruent", and an area answer to a perimeter question.',
             'Good luck.']),
     ])
+
+
+# ================================================================================================
+# 2026-10-05 cut repeats: a lesson slide that the next question video teaches again is removed
+# (the teacher: the Hebrew course has a short intro, and each question video teaches its own idea).
+# ================================================================================================
+def _cr_cut(M, vid, ns):
+    """remove slides ns (1-based) and drop their sidebar labels; the other slides' 'active' indexes follow."""
+    v = M.video(vid)
+    gone = {v['beats'][n - 1].get('active') for n in ns}
+    M.remove_slides(vid, ns)
+    side = v.get('hybrid', {}).get('sidebar')
+    if side is None: return
+    used = {b.get('active') for b in v['beats']}
+    drop = sorted(a for a in gone if a is not None and a >= 0 and a not in used)
+    for b in v['beats']:
+        a = b.get('active')
+        if a is not None and a >= 0: b['active'] = a - sum(1 for d in drop if d < a)
+    M.set_sidebar(vid, [l for k, l in enumerate(side) if k not in drop])
+
+
+def _cr_say(M, vid, n, old, new):
+    """replace a spoken line (by its start); new=None deletes it."""
+    def fn(lines):
+        k = next(i for i, l in enumerate(lines) if l.get('say', '').startswith(old))
+        if new is None: lines.pop(k)
+        else: lines[k] = dict(lines[k], say=new)
+        return lines
+    M.edit_lines(vid, n, fn)
+
+
+def _cr_add(M, vid, n, after, says, item=None, label=None):
+    """add spoken lines (and optionally one board item that appears before them) after the line starting with `after`
+    (after=None: at the end of the slide)."""
+    b = M.slide(vid, n)
+    new = []
+    if item is not None:
+        b['items'].append(item)
+        new.append({'appear': len(b['items']) - 1, 'label': label})
+    new += [{'say': s} for s in says]
+    def fn(lines):
+        k = len(lines) if after is None else next(i for i, l in enumerate(lines) if l.get('say', '').startswith(after)) + 1
+        return lines[:k] + new + lines[k:]
+    M.edit_lines(vid, n, fn)
+
+
+def cut_repeats(M):
+    # --- Perimeter Tricks (r26-t32-perimeter): slide 3 "The staircase" is taught again by the next question video,
+    #     solve-q-r26-t32-06 (push the steps out; P = 2 × (width + height); no step length needed).
+    #     "A cut counts twice" and "A notch adds" stay: no question video teaches them.
+    _cr_cut(M, 'r26-t32-perimeter', [3])
+    _cr_say(M, 'r26-t32-perimeter', 1, 'Three quick rules',
+            'Quick rules that turn long perimeter questions into one line. Two here — and one more in the question.')
+    _cr_say(M, 'r26-t32-perimeter', 3, 'Careful — a notch is different.', 'A notch: the border goes in, and comes back out.')
+    _cr_say(M, 'r26-t32-perimeter', 3, "Let's try one.", "Now a question.")

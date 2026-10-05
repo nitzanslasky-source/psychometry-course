@@ -79,7 +79,7 @@
      "videos": 29,
      "lessons": 4,
      "questions": 78,
-     "minutes": 38,
+     "minutes": 34,
      "steps": 108
     },
     {
@@ -88,7 +88,7 @@
      "videos": 11,
      "lessons": 3,
      "questions": 41,
-     "minutes": 21,
+     "minutes": 20,
      "steps": 53
     },
     {
@@ -97,7 +97,7 @@
      "videos": 9,
      "lessons": 3,
      "questions": 42,
-     "minutes": 19,
+     "minutes": 17,
      "steps": 52
     },
     {
@@ -106,7 +106,7 @@
      "videos": 11,
      "lessons": 3,
      "questions": 65,
-     "minutes": 23,
+     "minutes": 15,
      "steps": 77
     },
     {
@@ -115,7 +115,7 @@
      "videos": 19,
      "lessons": 3,
      "questions": 51,
-     "minutes": 34,
+     "minutes": 28,
      "steps": 71
     },
     {
@@ -124,7 +124,7 @@
      "videos": 25,
      "lessons": 5,
      "questions": 55,
-     "minutes": 40,
+     "minutes": 31,
      "steps": 82
     },
     {
@@ -133,7 +133,7 @@
      "videos": 20,
      "lessons": 3,
      "questions": 47,
-     "minutes": 41,
+     "minutes": 34,
      "steps": 69
     },
     {
@@ -142,7 +142,7 @@
      "videos": 23,
      "lessons": 4,
      "questions": 54,
-     "minutes": 37,
+     "minutes": 33,
      "steps": 80
     },
     {
@@ -151,7 +151,7 @@
      "videos": 18,
      "lessons": 3,
      "questions": 52,
-     "minutes": 33,
+     "minutes": 30,
      "steps": 72
     },
     {
@@ -160,7 +160,7 @@
      "videos": 26,
      "lessons": 6,
      "questions": 58,
-     "minutes": 50,
+     "minutes": 49,
      "steps": 89
     },
     {
@@ -169,7 +169,7 @@
      "videos": 18,
      "lessons": 4,
      "questions": 41,
-     "minutes": 42,
+     "minutes": 40,
      "steps": 61
     },
     {
@@ -178,7 +178,7 @@
      "videos": 15,
      "lessons": 3,
      "questions": 45,
-     "minutes": 28,
+     "minutes": 21,
      "steps": 62
     },
     {
@@ -187,7 +187,7 @@
      "videos": 24,
      "lessons": 3,
      "questions": 61,
-     "minutes": 42,
+     "minutes": 36,
      "steps": 86
     },
     {
@@ -196,7 +196,7 @@
      "videos": 11,
      "lessons": 3,
      "questions": 33,
-     "minutes": 24,
+     "minutes": 19,
      "steps": 46
     }
    ]
@@ -211,7 +211,7 @@
      "videos": 26,
      "lessons": 8,
      "questions": 53,
-     "minutes": 43,
+     "minutes": 34,
      "steps": 81
     },
     {
@@ -220,7 +220,7 @@
      "videos": 33,
      "lessons": 9,
      "questions": 75,
-     "minutes": 54,
+     "minutes": 43,
      "steps": 111
     },
     {
@@ -229,7 +229,7 @@
      "videos": 18,
      "lessons": 4,
      "questions": 49,
-     "minutes": 35,
+     "minutes": 33,
      "steps": 69
     },
     {
@@ -238,7 +238,7 @@
      "videos": 17,
      "lessons": 6,
      "questions": 37,
-     "minutes": 32,
+     "minutes": 30,
      "steps": 56
     },
     {
@@ -247,7 +247,7 @@
      "videos": 18,
      "lessons": 4,
      "questions": 50,
-     "minutes": 28,
+     "minutes": 23,
      "steps": 69
     },
     {
@@ -256,7 +256,7 @@
      "videos": 20,
      "lessons": 5,
      "questions": 50,
-     "minutes": 32,
+     "minutes": 26,
      "steps": 71
     },
     {
@@ -265,7 +265,7 @@
      "videos": 25,
      "lessons": 7,
      "questions": 55,
-     "minutes": 35,
+     "minutes": 32,
      "steps": 82
     },
     {
@@ -274,7 +274,7 @@
      "videos": 35,
      "lessons": 11,
      "questions": 67,
-     "minutes": 50,
+     "minutes": 41,
      "steps": 104
     },
     {
@@ -283,7 +283,7 @@
      "videos": 26,
      "lessons": 6,
      "questions": 51,
-     "minutes": 34,
+     "minutes": 32,
      "steps": 78
     }
    ]
@@ -307,7 +307,7 @@
      "videos": 38,
      "lessons": 12,
      "questions": 89,
-     "minutes": 102,
+     "minutes": 99,
      "steps": 133
     },
     {
@@ -325,17 +325,17 @@
      "videos": 38,
      "lessons": 11,
      "questions": 90,
-     "minutes": 90,
+     "minutes": 87,
      "steps": 132
     },
     {
      "id": 34,
      "title": "Polygons",
-     "videos": 21,
-     "lessons": 6,
+     "videos": 20,
+     "lessons": 5,
      "questions": 49,
-     "minutes": 54,
-     "steps": 74
+     "minutes": 50,
+     "steps": 73
     },
     {
      "id": 35,
@@ -343,7 +343,7 @@
      "videos": 21,
      "lessons": 6,
      "questions": 51,
-     "minutes": 54,
+     "minutes": 52,
      "steps": 74
     },
     {
@@ -352,17 +352,17 @@
      "videos": 25,
      "lessons": 7,
      "questions": 59,
-     "minutes": 72,
+     "minutes": 68,
      "steps": 88
     },
     {
      "id": 37,
      "title": "The coordinate system",
-     "videos": 21,
-     "lessons": 7,
+     "videos": 20,
+     "lessons": 6,
      "questions": 46,
-     "minutes": 56,
-     "steps": 68
+     "minutes": 53,
+     "steps": 67
     },
     {
      "id": 38,
@@ -370,7 +370,7 @@
      "videos": 19,
      "lessons": 4,
      "questions": 52,
-     "minutes": 55,
+     "minutes": 50,
      "steps": 72
     }
    ]

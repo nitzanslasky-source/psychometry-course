@@ -705,6 +705,7 @@ def apply(M):
         M.set_q(qid, stem=M.q(qid)['stemRich'].strip())
     summary(M)
     tidy(M)
+    cut_repeats(M)
 
 
 # =====================================================================================================
@@ -845,3 +846,77 @@ def pairs_given(M):
         'Traps: $40$ is the smallest group (the ceiling only when the pairs are not given), $16$ is the largest pair, '
         'and $41=14+11+16$ adds the pairs.'])
     M.place_q(qid, PRAC, after='wp24-p13')
+
+
+# =====================================================================================================
+# 2026-10-05 cut repeats: the two new lessons back to a short intro; what the guided question right after
+# teaches is cut from the lesson; what no question teaches stays (zero case, pairs given, largest <= smallest group).
+# =====================================================================================================
+def _fix_say(M, vid, n, old, new):
+    def fn(lines):
+        hit = False
+        for l in lines:
+            if 'say' in l and old in l['say']:
+                l['say'] = l['say'].replace(old, new); hit = True
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+        return lines
+    M.edit_lines(vid, n, fn)
+
+
+def _add_line(M, vid, n, before_say, line, item=None, label=None):
+    """Insert one spoken line (+ optional board item) right before the line containing `before_say`."""
+    b = M.slide(vid, n); script = []; hit = False
+    add = ([A(label, item)] if item is not None else []) + [line]
+    for l in b['lines']:
+        if not hit and before_say in (l.get('say') or l.get('draw') or l.get('label') or ''):
+            script += add; hit = True
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        else: script.append(D(l['draw']))
+    assert hit, '%s #%d: not found: %s' % (vid, n, before_say)
+    M.set_slide(vid, n, script=script)
+
+
+def cut_repeats(M):
+    # ---- Two-Way Tables: title + one short "Two traits" slide; the glasses example, "Fill the table",
+    #      "Percent of what?" and the recap are taught by Question 10 (table, plug in 100, "of the walkers").
+    vid = 'r26-t24-two-way'
+    M.remove_slides(vid, [3, 4, 5])
+    M.set_slide(vid, 2, title='Two traits', active=0, pre=[], script=[
+        "Here's the trap with two traits.",
+        A("'Percents of different groups: don't add, don't average' appears",
+          T("Percents of different groups: don't add, don't average", 40)),
+        "Say twenty percent of the women and thirty percent of the men wear glasses.",
+        "These percents are of different groups. You cannot add them. You cannot just average them.",
+        A("'Plug in 100 → a table with totals' appears", T(r'Plug in $100$ $\to$ a table with totals', 40)),
+        "Instead: plug in one hundred, and fill a table — with a total for every row and every column.",
+        "Let's see it in a guided question. Try it first."])
+    M.set_sidebar(vid, ['Two traits'])
+    # "rows add across, columns add down" (cut recap) -> said where Question 10 adds the walk column
+    _fix_say(M, 'solve-q-r26-t24-02', 2, 'Forty-eight students walk.',
+             'Rows add across, columns add down. Add down the walk column: forty-eight students walk.')
+    # follow-up: the recap's board line comes back as a board item at that moment in Question 10
+    b = M.slide('solve-q-r26-t24-02', 2); script = []
+    for l in b['lines']:
+        if 'say' in l and l['say'].startswith('Rows add across'):
+            script.append(A("'Rows add across · columns add down' appears", T('Rows add across · columns add down', 36)))
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        else: script.append(D(l['draw']))
+    M.set_slide('solve-q-r26-t24-02', 2, script=script)
+
+    # ---- Three Groups: the worked 50-employee example = Question 11 (same two methods) -> cut, keep the rule
+    #      in two lines; keep "Can it be zero?" (zero case + max = smallest group) and "Pairs given"
+    #      (teacher-approved, no question video teaches them); cut the recap.
+    vid = 'r26-t24-three-groups'
+    M.remove_slides(vid, [5])
+    M.set_slide(vid, 2, title='Count who is missing', active=0, pre=[], script=[
+        "At least how many are in ALL three? Turn it around: who is NOT in all three?",
+        "Someone who misses at least one group.",
+        A("'Min in all three = total minus everyone who misses a group' appears",
+          T('Min in all three $=$ total minus everyone who misses a group', 38)),
+        "Count the ones missing each group — as if they are all different people. Everyone else MUST be in all three.",
+        A("'Same as: A + B + C − 2 · total' appears", T(r'Same as: $A+B+C-2\cdot\text{total}$', 40)),
+        "Two groups: the sum minus the total once. Three groups: minus the total twice."])
+    _fix_say(M, vid, 4, 'So here: from zero to nine.', "So here: from zero to nine. Now a guided question — try it first.")
+    M.set_sidebar(vid, ['Count who is missing', 'Can it be zero?', 'Pairs given'])

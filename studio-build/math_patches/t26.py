@@ -683,6 +683,8 @@ def apply(M):
                 qid = pre[0]['qid']
                 b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, M.q(qid)['stem'])
 
+    cut_repeats(M)
+
 
 def _b(label, tex, size=42):
     """A board line that pops in (label = what the teacher sees in the script)."""
@@ -760,3 +762,93 @@ def summary(M):
             'The traps: adding times instead of rates, a percent in the rate taken as the same percent in the time, the average of two rates, and mixing minutes with hours.',
             'Good luck.'])],
         'wp26-advanced', after=last)
+
+
+# =====================================================================================
+# 2026-10-05 cut repeats: each lesson back to a short intro (Hebrew style); every idea a
+# question video already teaches is cut from the lesson; ideas no question teaches stay or
+# move as one line + board item into the question video that uses them.
+# =====================================================================================
+def _add_line(M, vid, n, before_say, line, item=None, label=None):
+    """Insert one spoken line (+ optional board item) right before the line containing `before_say`
+    (before_say=None: at the end of the slide)."""
+    b = M.slide(vid, n); script = []; hit = False
+    add = ([A(label, item)] if item is not None else []) + [line]
+    for l in b['lines']:
+        if before_say is not None and not hit and before_say in (l.get('say') or l.get('draw') or l.get('label') or ''):
+            script += add; hit = True
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        else: script.append(D(l['draw']))
+    if before_say is None:
+        script += add; hit = True
+    assert hit, '%s #%d: not found: %s' % (vid, n, before_say)
+    M.set_slide(vid, n, script=script)
+
+
+def _keep_slides(M, vid, keep, sidebar):
+    """Keep only the slides `keep` (1-based, in order); set the sidebar; renumber 'active'."""
+    v = M.video(vid)
+    M.remove_slides(vid, [k for k in range(1, len(v['beats']) + 1) if k not in keep])
+    a = 0
+    for b in v['beats']:
+        if b.get('mode') == 'concept':
+            b['active'] = a; a += 1
+    M.set_sidebar(vid, sidebar)
+
+
+def _say_check(M, vid, n, old, new):
+    assert any(old in (l.get('say') or '') for l in M.slide(vid, n)['lines']), '%s #%d: not found: %s' % (vid, n, old)
+    _fix_say(M, vid, n, old, new)
+
+
+def cut_repeats(M):
+    # ---- Work, Rate and Time: keep title + The formula (triangle) + Rate has a time unit ----
+    # (the Hebrew theory lesson teaches exactly these two)
+    vid = 'wp-092'
+    _keep_slides(M, vid, [1, 2, 3], ['The formula', 'Rate has a time unit'])
+    _add_line(M, vid, 3, None, "Now two questions. Try each one first — then watch the solution.")
+    # "Work = rate x time" forwards/backwards -> the triangle (slide 2) + Q1 method 3.
+    # "Three relationships": direct -> Q1 method 1; inverse -> Q2 (printer). Board item for the inverse:
+    _add_line(M, 'solve-q-r26-t26-01', 2, 'Same job — work fixed',
+              "The rule: when the work is fixed, faster means less time — inverse.",
+              T(r'Work fixed: rate $\times2$ $\to$ time $\times\frac12$ (inverse)', 36),
+              "'Work fixed: rate ×2 → time ×½ (inverse)' appears")
+    # "Rate in percent" -> Q2 method 1; move "the other way" there
+    _add_line(M, 'solve-q-r26-t26-01', 2, None,
+              "It works the other way too: rate down twenty percent is times four fifths — so the time is times five quarters, up twenty-five percent.",
+              T(r'Rate $-20\%$ $\to$ time $\times\frac54$ $=+25\%$', 36),
+              "'Rate −20% → time ×5/4 = +25%' appears")
+    # "One job = 1" -> Q3 (tank: one eighth per hour; method 2: LCM job size). Make "call it one" explicit:
+    _add_line(M, 'solve-wp26-g095', 2, 'Rate is work over time. One tank in eight hours',
+              "We don't know the tank's size — so call the whole tank one job.",
+              T(r'One job $=1$ $\to$ $8$ hours: $\frac18$ per hour', 36),
+              "'One job = 1 → 8 hours: 1/8 per hour' appears")
+
+    # ---- Working Together: keep title + Add the rates + Working against you (the Hebrew intro) ----
+    vid = 'wp-094'
+    _keep_slides(M, vid, [1, 2, 3], ['Add the rates', 'Working against you'])
+    _add_line(M, vid, 3, None, "Let's see it in three questions.")
+    # "Match the times" -> Q4 method 1 (equalize the times); "Two-worker shortcut" -> Q4 method 2 + Q5 method 2;
+    # "Sense check" -> Q5 method 1 (and Q4). Move the two shortcut details into Q5 method 2:
+    _add_line(M, 'solve-q-r26-t26-02', 3, None,
+              "Two equal workers? Together they need half the time. And this shortcut is for two workers only — three workers, add the rates.",
+              T(r'Equal workers $\to$ half the time · $3$ workers $\to$ add rates', 36),
+              "'Equal workers → half the time · 3 workers → add rates' appears")
+
+    # ---- Team Questions (not cut): its "three relationships" slide is gone, reword the reference ----
+    _say_check(M, 'wp-097', 3, 'Now remember the three relationships.', 'Remember from the first questions:')
+
+    # ---- Worker-Hours: keep title + What worker-hours are (the Hebrew intro) ----
+    vid = 'wp-099'
+    _keep_slides(M, vid, [1, 2], ['What worker-hours are'])
+    _add_line(M, vid, 2, None, "Let's see it in the questions.")
+    # "Jobs in phases" -> Q7 (path: 18 x 8 + 12 x 7); "Joins or leaves" -> Q8 (pipe B joins: whole - done = left,
+    # "left or whole" trap). "Average rate" -> Q11 (q-r26-t26-04); move the "weighted by time" line there:
+    _add_line(M, 'solve-q-r26-t26-04', 3, None,
+              "It's a weighted average — weighted by TIME. You'll meet the same trap with average speed.",
+              T('Average rate: weighted by time', 36), "'Average rate: weighted by time' appears")
+    # "Matching units" -> Q10 (g102: hours become minutes); board item there:
+    _add_line(M, 'solve-wp26-g102', 2, 'Hours to minutes: times sixty',
+              "Combine only matching units — convert first.",
+              T('Combine only matching units', 36), "'Combine only matching units' appears")

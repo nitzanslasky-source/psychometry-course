@@ -715,6 +715,7 @@ def apply(M):
         'wp21-p12', P('04'), 'wp21-p13', 'wp21-p17', 'wp21-p18'])
 
     summary(M)
+    cut_repeats(M)
 
 
 # =====================================================================================
@@ -805,3 +806,122 @@ def summary(M):
     ]
     last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
     M.new_video('r26-t21-summary', TOPIC, 'Summary: Trial, Limits and Patterns', sb, slides, ADV, after=last)
+
+
+# =====================================================================================
+# 2026-10-05 cut repeats: each lesson back to a short intro (Hebrew style); every idea a
+# question video already teaches is cut from the lesson; ideas no question teaches stay or
+# move as one line + board item into the question video that uses them.
+# =====================================================================================
+def _add_line(M, vid, n, before_say, line, item=None, label=None):
+    """Insert one spoken line (+ optional board item) right before the line containing `before_say`
+    (before_say=None: at the end of the slide)."""
+    b = M.slide(vid, n); script = []; hit = False
+    add = ([A(label, item)] if item is not None else []) + [line]
+    for l in b['lines']:
+        if before_say is not None and not hit and before_say in (l.get('say') or l.get('draw') or l.get('label') or ''):
+            script += add; hit = True
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        else: script.append(D(l['draw']))
+    if before_say is None:
+        script += add; hit = True
+    assert hit, '%s #%d: not found: %s' % (vid, n, before_say)
+    M.set_slide(vid, n, script=script)
+
+
+def _keep_slides(M, vid, keep, sidebar):
+    """Keep only the slides `keep` (1-based, in order); set the sidebar; renumber 'active'."""
+    v = M.video(vid)
+    M.remove_slides(vid, [k for k in range(1, len(v['beats']) + 1) if k not in keep])
+    a = 0
+    for b in v['beats']:
+        if b.get('mode') == 'concept':
+            b['active'] = a; a += 1
+    M.set_sidebar(vid, sidebar)
+
+
+def cut_repeats(M):
+    # ---- General Problems: keep title + "Try and err" (the Hebrew intro) -------------------
+    vid = 'wp-003'
+    _keep_slides(M, vid, [1, 2], ['Try and err'])
+    _add_line(M, vid, 2, None, "Let's see two questions of this type.")
+    # "Keep an order" + "Every condition" -> one line in Q2 (queue)
+    _add_line(M, 'solve-wp21-g005', 2, 'At least one of each type',
+              "Keep your tries in order, and make every try pass every condition.",
+              T('Tries in order · every try passes every condition', 36),
+              "'Tries in order · every try passes every condition' appears")
+    # "Draw the story / split into routes" -> taught in Q1 (crystals); "test the choices" -> Q2.
+
+    # ---- Minimum & Maximum: keep title + Ranges + recurring motif -------------------------
+    vid = 'wp-006'
+    _keep_slides(M, vid, [1, 2, 3], ['Ranges', 'A recurring motif'])
+    _add_line(M, vid, 3, None, "Let's see a real question of this type.")
+    # "Bold words" -> Q3 already circles the key word; add that it is printed in bold
+    _fix_say(M, 'solve-wp21-g007', 2, 'Find the key word and circle it',
+             'Find the key word — on the exam it is printed in bold — and circle it')
+    # "Cheapest k different": Q3 method 2 gives the formula; move the "why" (pair the ends) there
+    _add_line(M, 'solve-wp21-g007', 3, 'Seven people cost at least',
+              "Why? Pair the ends of one to eight: one plus eight, two plus seven — four pairs of nine. Thirty-six.",
+              T(r'$1+8=2+7=3+6=4+5=9 \;\to\; 4\times9=36$', 36),
+              "'1 + 8 = 2 + 7 = 3 + 6 = 4 + 5 = 9 → 4 × 9 = 36' appears")
+    # "Squeeze the others" -> Q3 ("give each one as little as possible"); "Balance the group" and
+    # the 26 = 1 + 2 + 23 / 7 + 9 + 10 example -> still in "More Minimum & Maximum" (same numbers).
+
+    # ---- Patterns: keep title + one short "two kinds" slide -------------------------------
+    vid = 'wp-008'
+    _keep_slides(M, vid, [1, 2], ['Two kinds'])
+    M.set_slide(vid, 2, title='Two kinds', pre=[], script=[
+        'Patterns come in two kinds.',
+        A("'1 · Step by step → write the items one by one' appears", T(r'$1$ · Step by step $\to$ write the items one by one', 40)),
+        'The first kind: step by step. The simplest, best way: write the items one at a time, exactly as the rule says, until you reach what they ask.',
+        A("'2 · Sequences with n → plug in a number' appears", T(r'$2$ · Sequences with $n$ $\to$ plug in a number', 40)),
+        'The second kind: a sequence with a formula in n. Rarer. We plug in a number and check the answers.',
+        "One question of each kind — let's see them."])
+    # "Keep the rule order" -> one line in Q4 (training rounds)
+    _add_line(M, 'solve-wp21-g009', 2, 'Round two: half of forty-six',
+              "Keep the rule's order: halve first, then subtract. And the drops won't be equal — so apply the rule every round.",
+              T('Halve, then subtract — every round', 36),
+              "'Halve, then subtract — every round' appears")
+    # "Sequences" + "Plug in n = 3" -> taught in Q5 (crates); move "two survive? try n = 4" there
+    _add_line(M, 'solve-wp21-g010', 3, None,
+              "And if two choices still survive n equals three? Plug in four as well.",
+              T(r'Two survive? Also try $n=4$', 36), "'Two survive? Also try n = 4' appears")
+
+    # ---- Smart Trial & Error: keep title + "Why it matters" (the Hebrew motivation) -------
+    vid = 'wp-012'
+    _keep_slides(M, vid, [1, 2], ['Why it matters'])
+    _add_line(M, vid, 2, None, "Now the techniques that make it faster — we'll learn them in the questions.")
+    # "Work in order", "The skip", "Constant step" -> all taught in the token question (Q6)
+    _add_line(M, 'solve-wp21-g013', 2, 'Now swap one four for a nine',
+              "Only how many fours and nines matters — not which toss came first.")
+    _add_line(M, 'solve-wp21-g013', 2, 'Circle choice 3',
+              "Forty-one is inside the range — and still impossible. Inside the range is not enough.",
+              T('Inside the range is NOT enough', 36), "'Inside the range is NOT enough' appears")
+    # "Constant step": its second test (subtract the minimum) -> Q6 method 2
+    _add_line(M, 'solve-wp21-g013', 3, 'Choice three — without listing',
+              "Same test another way: subtract twenty-four. You need zero, five, ten — a multiple of five. Forty-one minus twenty-four is seventeen. Not a multiple of five.",
+              T(r'$41-24=17$ — not a multiple of $5$ ✗', 36), "'41 − 24 = 17 — not a multiple of 5 ✗' appears")
+
+    # ---- More Minimum & Maximum: keep title + the three rules -----------------------------
+    vid = 'wp-016'
+    _keep_slides(M, vid, [1, 2], ['Three min/max rules'])
+    _add_line(M, vid, 2, None, "Now the nuances — in the questions.")
+    # "At least" -> Q10 (quiz); "Worst luck + 1" -> Q9 (socks); "Prove, then build" -> Q9 board item
+    _add_line(M, 'solve-q-r26-t21-01', 2, 'Both halves: six can fail',
+              "That's the rule for every min or max: show nothing more extreme works — and build a real example.",
+              T('Min or max: prove the bound · build an example', 36),
+              "'Min or max: prove the bound · build an example' appears")
+
+    # ---- Patterns & Cycles: keep title + Days and last digits (no question teaches it) ----
+    vid = 'wp-022'
+    _keep_slides(M, vid, [1, 5], ['Days and last digits'])
+    _fix_say(M, vid, 2, 'The same remainder trick solves two exam favorites.',
+             'One remainder trick solves two exam favorites.')
+    _fix_say(M, vid, 2, 'Lamps, days, digits — same tool', 'Days, digits — and the lamps in the questions — same tool')
+    _add_line(M, vid, 2, None, "Let's see patterns in real questions.")
+    # "Term by term" + "Watch the edges" -> Q16 (files); "Repeating cycles" -> Q17 (lamps);
+    # "Meeting times" -> Q18 (lights). "Items vs gaps" -> one line in Q18 (4 flashes = 3 gaps):
+    _add_line(M, 'solve-wp21-g025', 3, 'Write "7:30 → 8:42',
+              "Four flashes have only three gaps between them. Items and gaps are different counts.",
+              T(r'$4$ flashes $\to$ $3$ gaps of $72$ min', 36), "'4 flashes → 3 gaps of 72 min' appears")

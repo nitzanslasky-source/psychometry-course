@@ -623,3 +623,107 @@ def dedupe_examples(M):
             expl=[r'Square both sides: $x+30=x^2$, so $x^2-x-30=0$ and $(x-6)(x+5)=0$: $x=6$ or $x=-5$.',
                   r'Check: $x=6$: $\sqrt{36}=6$ ✓. $x=-5$: $\sqrt{25}=5\ne-5$ ✗ (fake solution).',
                   r'Only $x=6$. Trying the choices gives the same result: $5$ fails too ($\sqrt{35}\ne5$).'])
+
+
+# ---------------------------------------------------------------- 2026-10-05 cut repeats
+# The teacher: a long lesson that pre-teaches every question, then question videos that teach it again, is
+# repetition. Lessons become a short intro (like the Hebrew course); a lesson slide is cut only where a question
+# video in the same section teaches the same idea. Anything taught nowhere else stays, or moves into the question
+# video where it is used (one spoken line + one board item). Runs last.
+def _cr_script(M, vid, n):
+    b = M.slide(vid, n); out = []
+    for l in b['lines']:
+        if 'say' in l: out.append(l['say'])
+        elif 'appear' in l: out.append(A(l['label'], b['items'][l['appear']]))
+        else: out.append(D(l['draw']))
+    return out
+
+
+def _cr_txt(x):
+    if isinstance(x, str): return x
+    if x[0] == 'A': return x[1] + ' ' + str(x[2].get('t', ''))
+    return x[1]
+
+
+def _cr_find(s, anchor, vid, n):
+    ks = [k for k, x in enumerate(s) if anchor in _cr_txt(x)]
+    assert len(ks) == 1, '%s #%d: anchor %r matches %d lines' % (vid, n, anchor, len(ks))
+    return ks[0]
+
+
+def _cr_insert(M, vid, n, anchor, new, before=False):
+    """Insert script entries right after (or before) the line / item / draw containing `anchor`."""
+    s = _cr_script(M, vid, n); k = _cr_find(s, anchor, vid, n) + (0 if before else 1)
+    M.set_slide(vid, n, script=s[:k] + list(new) + s[k:])
+
+
+def _cr_drop(M, vid, n, anchors):
+    """Remove the lines / items / draws containing each anchor."""
+    s = _cr_script(M, vid, n)
+    for a in anchors: s.pop(_cr_find(s, a, vid, n))
+    M.set_slide(vid, n, script=s)
+
+
+def _cr_replace(M, vid, n, anchor, new):
+    """Replace the entry containing `anchor` with the list `new`."""
+    s = _cr_script(M, vid, n); k = _cr_find(s, anchor, vid, n)
+    M.set_slide(vid, n, script=s[:k] + list(new) + s[k + 1:])
+
+
+def _cr_titles(M, vid, keep):
+    """Keep only the slides whose titles are in `keep` (title slide = slide 1 always kept); set the sidebar to the
+    kept slides' old sidebar labels in order and re-point each kept slide's `active`."""
+    v = M.video(vid); old = v.get('hybrid', {}).get('sidebar') or []
+    drop = [n for n, b in enumerate(v['beats'], 1) if n > 1 and b['title'] not in keep]
+    assert len(v['beats']) - len(drop) == len(keep) + 1, '%s: kept titles not found' % vid
+    M.remove_slides(vid, drop)
+    labels = []
+    for b in v['beats'][1:]:
+        lab = old[b['active']] if 0 <= b['active'] < len(old) else b['title']
+        if lab not in labels: labels.append(lab)
+        b['active'] = labels.index(lab)
+    M.set_sidebar(vid, labels)
+
+
+def _cr_slide_after(M, vid, n, title, script):
+    """A short extra question slide right after slide n (same question on the board, same sidebar item), so a
+    moved board item never lands on the teacher's handwriting."""
+    b = M.slide(vid, n)
+    M.insert_slides(vid, n, [dict(mode=b['mode'], title=title, active=b['active'],
+                                  pre=[dict(it) for it in b['items'][:b['pre']]], script=script)])
+
+
+def cut_repeats(M):
+    # Exponents & Roots - Techniques: the Hebrew lesson teaches only dividing roots and a number over a root, then the
+    # questions teach the rest. Cut: same prime base and negative exponents (Question 1), adding roots - split and
+    # common factor (Question 2), power equations (Question 3, try the choices for them: Question 8), root equations,
+    # the worked example and trying the choices (Questions 4 and 6), recap.
+    L = 'powers-techniques'
+    _cr_titles(M, L, ['Dividing roots', 'Number over a root'])
+    _cr_insert(M, L, 3, 'Twenty over root five: no root', [
+        'Now the questions. Each one teaches one more technique. Try it — then watch.'])
+    # Question 3 no longer refers back to the lesson; the restriction from the cut slide moves here
+    _cr_replace(M, 'solve-q-250', 1, 'You know the method', [
+        'The unknown is up in the exponent. The method: equal bases — then equal exponents.'])
+    _cr_slide_after(M, 'solve-q-250', 2, 'When it works', [
+        A("'Positive base, not 1' appears", T('Equal bases $\\to$ equal exponents: for a positive base that is not $1$', 38)),
+        "This works for a positive base that isn't one. One to any power is one — that tells you nothing."])
+
+    # Exponent Traps - Sums of Powers: sums of equal powers -> Question 7; common factor -> Question 8.
+    # Kept: same exponent, a^x b^x = (ab)^x (no question video here teaches it).
+    T2 = 'r26-t10-power-traps'
+    _cr_titles(M, T2, ['Same exponent'])
+    M.set_slide(T2, 1, script=[
+        'Now the exponent traps the exam loves.',
+        'Adding powers and taking out a common factor — the two questions teach those.',
+        'First, one reminder: powers with the same exponent.'])
+    _cr_insert(M, T2, 2, 'Careful: this works only when the EXPONENTS', [
+        'Two questions next. Try each one first — then watch.'])
+
+
+_apply_before_cut_repeats = apply
+
+
+def apply(M):
+    _apply_before_cut_repeats(M)
+    cut_repeats(M)   # 2026-10-05: runs last

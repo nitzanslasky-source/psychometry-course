@@ -95,3 +95,36 @@ Teacher-approved addition: **factorials as algebra**, in the lesson "Factorial E
 - New practice (after wp28-p02): **q-r26-t28-31** (720 + 5040)/6! = 8, choice 2; **q-r26-t28-29** x!/y! = 110 → x + y could be 20, choice 2; **q-r26-t28-30** largest k with 2ᵏ dividing 9! = 7, choice 3.
 - Summary video: new slide "Factorial algebra" after "Repetition and rows"; sidebar updated.
 - All four questions solved by computer: exactly one correct choice each.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). Each lesson is back to a short intro like the Hebrew course; every idea that a question video right after it teaches is cut from the lesson; ideas no question teaches stay, or move as one spoken line (+ board item) into the question video that uses them. Nothing in topic 28 is recorded. Questions, numbers, methods and memory cards are unchanged. Lessons not flagged by the audit ("Add or Subtract Cases", "Choosing a Group") are unchanged.
+- **`wp-123` Counting Possibilities**: 5 → 3 slides, 1.8 → 1.4 min. Kept: title, "Different results" (row / committee / code — no question teaches it), "Type 1: list it" (the Hebrew intro). Cut: "What is counting?" (repeated the title slide), Recap.
+- **`wp-124-after` Multiply the Choices**: 6 → 1 slide, 2.1 → 0.4 min (the Hebrew course teaches this inside the meal question). Title slide + "A stage of choice is simply a moment where you have to pick something. Let's see it in two questions." Cut: Stages of choice, Why we multiply, Order doesn't matter → Q2 meal `solve-wp28-g125` (stages, 6 + 6 + 6 + 6, the grid "drinks first or fillings first", adding counts menu items); Dependent choices (× 1) → Q3 code `solve-wp28-g126`; Recap. Sidebar now empty.
+- **`wp-127` With or Without Repetition**: 7 → 2 slides, 2.2 → 0.6 min. Kept: title + "The pool" (the Hebrew intro) + "Three questions next…". Cut: With repetition → Q4 `solve-wp28-g128`; Without repetition → Q5 `solve-wp28-g129`; A row: n! → Q6 `solve-wp28-g130`; Factorial; Recap. MOVED into Q4: "Same with numbers: a three-digit number may repeat digits — four four four counts." + board "444 is a three-digit number". MOVED into Q6: "The exclamation mark is called factorial: the number times every whole number below it, down to one." + board "n! = n·(n − 1)⋯2·1".
+- **`wp-131` Mutual Action**: 6 → 1 slide, 2.0 → 0.3 min. Title slide (the Hebrew intro) + "Let's see it in two questions." Cut: Mutual action, Count then halve → Q7 islands `solve-wp28-g132`; Diagonals (four ways) → Q8 `solve-wp28-g133`; Recap. MOVED into Q7 (end of method 1): "Spot it on the exam: handshakes, two-way routes, games between two, diagonals." + board, and "But with roles — a president and a secretary — A-then-B and B-then-A really are different. Then don't halve." + board "Different roles? Don't halve". MOVED into Q8: "A diagonal joins two vertices that are not next to each other."
+- **`wp-140-after` Factorial Expressions** (elite addition, mostly content no question teaches): 10 → 8 slides, 4.8 → 3.9 min. Cut only "Sums: take out the smaller" → the next question `solve-q-r26-t28-28` (10! − 9!: take out the smaller, never subtract inside the !), and Recap. MOVED into that question: "Same with a plus: five factorial plus six factorial is five factorial times one plus six. Don't forget the one." + board "5! + 6! = 5!·(1 + 6)". The 6! + 8! example stays on the advanced memory card. Last slide now ends "Next, a question with a minus sign: take out the smaller factorial."
+- **`wp-141-after` Forced Digits**: 4 → 3 slides, 1.3 → 1.3 min. The two worked examples stay (no question teaches them). Recap cut; its line "Count each free choice once. Give every forced position a one." now ends slide 3.
+- **`r26-t28-cases` Boxes and "At Least One"**: 5 → 2 slides, 2.2 → 0.9 min. Kept: title + "Quick checks" (the 210 vs 35 "order matters?" check is in no question). Cut: At least one → Q19 `solve-q-r26-t28-04`; Which is the base? → Q20 `solve-q-r26-t28-05` (same "who chooses?" and trap); Recap. MOVED into Q19: "Why? The opposite of 'at least once' is 'none' — and none is one easy count."
+- **`r26-t28-arrange` Together, Apart and Repeats**: 7 → 1 slide, 2.7 → 0.2 min. Title slide + "Four questions — one for each." Cut: Together: glue → Q21 books; Not together and No two side by side → Q22 (both methods); Identical items → Q23 BANANA; Round table → Q24; Recap. MOVED into Q24 `solve-q-r26-t28-09`: "Why? Turning the whole table changes no one's neighbors. So n items around a table: n minus one, factorial." + board "n around a table: (n − 1)!".
+- Question videos lengthened: g128 0.5→0.6, g130 0.6→0.7, g132 0.8→1.1, g133 1.0→1.1, q-04 1.0→1.1, q-09 0.8→1.0, q-28 0.8→1.0. **Net: −9.0 min.**
+- No video said "as we saw in the lesson" about a cut idea. AI summary `r26-t28-summary` not edited; everything it recaps is still taught (kept lesson slides or the question videos).
+- **Follow-up (same day).**
+  - **The three lessons that were left with only a title slide now each have a short Hebrew-style intro**: a title slide with 1–2 framing lines, plus one concept slide with one board item. The new helper `_short_intro` does this.
+  - `wp-124-after` "Multiply the Choices", 0.3 min:
+    - Title: "In most counting questions on the exam we won't list and count. We use a faster technique: multiplying the possibilities."
+    - Concept slide "Stages of choice": board "Count the options at each stage → multiply", then "A stage of choice is simply a moment where you have to pick something. Let's see how it works in two questions."
+  - `wp-131` "Mutual Action", 0.4 min. This is the Hebrew B135 intro.
+    - Title: "Mutual action: an action between two things at the same time — like a handshake. It's quite common on the exam, so understand it well."
+    - Concept slide "Mutual action": board "A–B is the same link as B–A", then "When A shakes B's hand, B shakes A's hand. One handshake — and it's easy to count it twice. Let's see it in two questions."
+  - `r26-t28-arrange` "Together, Apart and Repeats", 0.3 min:
+    - Title: "Rows with a rule. Each rule changes how we count — and each one has its own trick."
+    - Concept slide "Four rules": board "Together · apart · repeats · round table", then "People who must stand together — or apart. Items that repeat. And a round table. Four questions — one for each."
+  - Each of the three sidebars now has one entry.
+  - **Second check of the cut list**: every cut idea is taught in the question video named above. These small items are covered somewhere else:
+    - The factorial examples 4! = 24, 5! = 120 and 100!: Q6 works out 6! step by step, and 5! = 120 is in "Factorial Expressions" → "Know them by sight".
+    - "Three people together: glue three, × 3!": Q21 glues the 3 math books, × 3!.
+    - "Every link counted from both ends": Q7 says "we counted every route twice".
+    - The Counting Possibilities recap line "most questions won't need a full list": now the title line of "Multiply the Choices".
+    - 6! + 8! (two steps apart): on the advanced memory card.
+  - No idea was lost.
+  - Net saving is now −8.9 min.

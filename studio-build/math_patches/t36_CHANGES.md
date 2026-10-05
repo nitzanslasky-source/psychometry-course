@@ -107,3 +107,12 @@ The Q4 solution group is renamed "Similar Triangles Questions" and now holds 3 q
 
 **Summary lesson added:** `r26-t36-summary` "Summary: Similarity" (about 2.8 minutes), at the end of "Learn and try" (after the map-scale card), right before the practice.
 Slides: Summary · Length, area, volume · Always similar? · Similar triangles · The exam pictures · Same height · Parts and leftovers · Similar solids · Percent change · Map scale · Before you practice.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last; the old `apply` is wrapped). A lesson slide is cut only where a question video after it teaches the same idea again. Nothing in topic 36 is recorded.
+- **`geo-139` "Similar Triangles and Rectangles"**: 13.2 → 11.3 min (15 → 13 slides). Cut "Same height" (taught again in `solve-q-r26-t36-01`: not similar, same height, areas follow the bases, no squaring) and "Trapezoid diagonals" (taught again in `solve-q-r26-t36-02`: hourglass a², b², side triangles a·b, 4-6-6-9). Neither slide is in the Hebrew lesson. The recap item "Same height, not similar → area ratio = base ratio" and its line are removed; the last two recap items move up.
+- **`geo-143` "Volume Changes"**: 5.6 → 4.8 min (9 → 8 slides). Cut "Percent change" (taught again in `solve-q-r26-t36-03`: percent → factor, cube it, back to percent, and "44 percent is the AREA: 1.2 squared"). Recap item "Percent: factor first, then the power" and its line removed. Kept: "Factor vs percent" (×4 = +300%, ×¾ = −25%; the question does not teach it).
+  - Moved into `solve-q-r26-t36-03` slide 3 (the only part of the cut slide the question did not teach): "And backwards: the area grew by 44 percent? That's times 1.44. The square root is 1.2 — so the sides grew by 20 percent." with the board item "Backwards: area × 1.44 → sides × √1.44 = 1.2". 1.0 → 1.2 min.
+- **`r26-t36-map-scale` "Map Scale"**: 2.5 → 0.7 min (6 → 2 slides). Cut "Units ladder", "Length example", "Area example" and the recap: `solve-q-r26-t36-04` teaches the length step and the ladder (÷100, ÷1000), `solve-q-r26-t36-05` teaches the area trick (one map cm into the real unit first, then square; the trap of forgetting to square). Kept: the intro and "Scale 1 : n" (what the scale means, lengths × n, areas × n²), which now ends "Let's see it in the questions."
+- Sidebars updated. The summary `r26-t36-summary` is unchanged (same height, trapezoid diagonals, percent and map scale are all still taught in the question videos).
+- Saved: about 4.3 min.

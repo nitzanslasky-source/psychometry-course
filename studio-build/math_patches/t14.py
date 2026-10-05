@@ -744,6 +744,11 @@ def apply(M):
     # =====================================================================================
     summary(M)
 
+    # =====================================================================================
+    # 14. 2026-10-05 cut repeats: lessons back to a short intro (see t14_CHANGES.md)
+    # =====================================================================================
+    cut_repeats(M)
+
 
 SUMMARY_SB = ['What a prime is', 'Two primes, odd result', 'Is it prime?', 'Break it down', 'GCD and LCM',
               'Counting divisors', 'Squares and equations', 'A prime in a product', 'Before you practice']
@@ -830,3 +835,101 @@ def summary(M):
     v = M.new_video('r26-t14-summary', TOPIC, 'Prime Numbers — Summary', SUMMARY_SB, slides,
                     'primes-advanced', after='solve-q-397')
     v['hybrid']['num'] = M.video('solve-q-397')['hybrid']['num']
+
+
+# =====================================================================================
+# 2026-10-05 cut repeats
+# =====================================================================================
+def _script_of(M, vid, n):
+    b = M.slide(vid, n); out = []
+    for l in b['lines']:
+        if 'say' in l: out.append(l['say'])
+        elif 'appear' in l: out.append(A(l['label'], b['items'][l['appear']]))
+        else: out.append(D(l['draw']))
+    return out
+
+
+def _add_line(M, vid, n, anchor, new, where='after'):
+    """Insert script entries `new` before/after the spoken line containing `anchor` (None = at the end)."""
+    sc = _script_of(M, vid, n); out = []; hit = anchor is None
+    for x in sc:
+        if not hit and isinstance(x, str) and anchor in x:
+            hit = True
+            out += ([x] + new) if where == 'after' else (new + [x]); continue
+        out.append(x)
+    if anchor is None: out += new
+    assert hit, '%s #%d: not found: %s' % (vid, n, anchor)
+    M.set_slide(vid, n, script=out)
+
+
+def _set_say(M, vid, n, old, new):
+    def fn(lines):
+        for l in lines:
+            if 'say' in l and old in l['say']:
+                l['say'] = new; return lines
+        raise AssertionError('%s #%d: not found: %s' % (vid, n, old))
+    M.edit_lines(vid, n, fn)
+
+
+def cut_repeats(M):
+    # ---- "Factor Tools": keep the intro, "Break & build" (the frame of the section) and "Counting divisors"
+    #      (no question video teaches it). GCD, LCM, GCD vs LCM, symmetric divisors -> taught in Q5, Q6, Q11.
+    vid = LESSON_B
+    titles = [b['title'] for b in M.video(vid)['beats']]
+    assert titles[1:] == ['Greatest common (GCD)', 'Greatest guaranteed (LCM)', 'GCD vs LCM', 'Break & build',
+                          'Symmetric divisors', 'Counting divisors', 'Recap'], titles
+    M.remove_slides(vid, [2, 3, 4, 6, 8])
+    M.set_slide(vid, 1, script=[
+        'Factor tools.',
+        'In this section: questions about the factors of a number.',
+        'The greatest common divisor, the greatest guaranteed divisor — and long stories that hide a simple factor question.',
+        'Each question that follows teaches one tool.'])
+    M.set_slide(vid, 2, active=0)
+    M.set_slide(vid, 3, active=1)
+    _set_say(M, vid, 3, 'One more tool: counting ALL', 'One tool no question here uses — but the practice does: counting ALL the divisors.')
+    _add_line(M, vid, 3, None, ['The factor tools card comes right after this video. Then seven questions.'])
+    M.set_sidebar(vid, ['Break & build', 'Counting divisors'])
+
+    # Q5 (q-389): say what the GCD is (was only in the lesson)
+    _set_say(M, 'solve-q-389', 2, 'The GCD: which primes are in BOTH',
+             'The GCD is the biggest number that divides both. Which primes are in BOTH numbers — and at what power?')
+    # Q6 (q-390): the official name LCM + GCD · LCM = a · b (was only in the lesson)
+    _set_say(M, 'solve-q-390', 1, "that's the LCM",
+             'The greatest GUARANTEED divisor. Its official name: the least common multiple — LCM.')
+    _add_line(M, 'solve-q-390', 2, 'Check: twenty-four itself', [
+        A("'GCD · LCM = a · b' appears", T('GCD $\\cdot$ LCM $=a\\cdot b$:  $4\\cdot24=8\\cdot12=96$', size=40)),
+        'A bonus fact: the GCD times the LCM equals the two numbers multiplied. The GCD here is four — four times twenty-four is ninety-six.'])
+    # Q11 (q-402): no lesson slide to point back to; give the general rule in one line
+    _set_say(M, 'solve-q-402', 1, 'Remember the symmetric divisors?', 'Divisors come in pairs — here is where that pays off.')
+    _add_line(M, 'solve-q-402', 2, 'Three divisors means one sits in the middle', [
+        A("'Odd number of divisors → perfect square' appears", T('Odd number of divisors $\\to$ a perfect square', size=40)),
+        'In general: an odd number of divisors means a perfect square — the middle divisor times itself.'])
+
+    # ---- "More Factor Tools": prime equations -> taught in Q12; a prime in a product -> Q17 (one line added).
+    #      Perfect squares stays (no question video teaches it).
+    vid = TRICKS
+    titles = [b['title'] for b in M.video(vid)['beats']]
+    assert titles[1:] == ['Perfect squares', 'Prime equations', 'A prime in a product', 'Recap'], titles
+    M.remove_slides(vid, [3, 4, 5])
+    M.set_slide(vid, 1, script=[
+        'More factor tools.',
+        'In this section: harder prime questions. Almost every one starts the same way: break the number into primes.',
+        "First, one tool that no question here teaches: perfect squares."])
+    # the lesson example must not equal practice question alg-extra-unit-t14-4-6 (18k): use 12k
+    def fn(lines):
+        for l in lines:
+            if l.get('say', '').startswith('Classic question: the smallest k so that eighteen k'):
+                l['say'] = 'Classic question: the smallest k so that twelve k is a perfect square.'
+            if l.get('say', '').startswith('The two is missing one copy.'):
+                l['say'] = 'The three is missing one copy. So k is three. Twelve times three is thirty-six — six squared.'
+            if l.get('draw', '').startswith('Write "18k = 2'):
+                l['draw'] = 'Write "12k = 2² · 3 · k → k = 3 → 36 = 6² ✓"'
+        return lines
+    M.edit_lines(vid, 2, fn)
+    _add_line(M, vid, 2, None, ['There\'s a card with the factor tools right after this video. Then the advanced questions. Try each one first — then watch.'])
+    M.set_sidebar(vid, ['Perfect squares'])
+    M.card('mem-r26-t14-more-tools')['tables'][0]['rows'][0][2] = '$12k$ a square: $12=2^2\\cdot3$ → $k=3$ ($36=6^2$)'
+    # Q17 (q-395): the "prime in a product" rule, at the moment it is used
+    _add_line(M, 'solve-q-395', 2, 'So at least one of them brings the three', [
+        A("'A prime divides a · b → it divides a or b' appears", T('A prime divides a product $\\to$ it divides one of the factors', size=38)),
+        "That's the rule: a prime can't be split between factors — one of them holds it. Fifteen isn't prime, so its three and its five may come from different numbers."], where='after')

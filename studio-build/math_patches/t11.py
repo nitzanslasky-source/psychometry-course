@@ -655,3 +655,118 @@ def dedupe_examples(M):
         ('√x(√x − 3) = 0 appears', '√x(√x − 2) = 0 appears'),
         ('Write "√x = 0 → x = 0" and "√x = 3 → x = 9"', 'Write "√x = 0 → x = 0" and "√x = 2 → x = 4"'),
         ('Root x is zero, or root x is three. So x is zero or nine.', 'Root x is zero, or root x is two. So x is zero or four.')])
+
+
+# ---------------------------------------------------------------- 2026-10-05 cut repeats
+# The teacher: a long lesson that pre-teaches every question, then question videos that teach it again, is
+# repetition. Lessons become a short intro (like the Hebrew course); a lesson slide is cut only where a question
+# video in the same section teaches the same idea. Anything taught nowhere else stays, or moves into the question
+# video where it is used (one spoken line + one board item). Runs last.
+def _cr_script(M, vid, n):
+    b = M.slide(vid, n); out = []
+    for l in b['lines']:
+        if 'say' in l: out.append(l['say'])
+        elif 'appear' in l: out.append(A(l['label'], b['items'][l['appear']]))
+        else: out.append(D(l['draw']))
+    return out
+
+
+def _cr_txt(x):
+    if isinstance(x, str): return x
+    if x[0] == 'A': return x[1] + ' ' + str(x[2].get('t', ''))
+    return x[1]
+
+
+def _cr_find(s, anchor, vid, n):
+    ks = [k for k, x in enumerate(s) if anchor in _cr_txt(x)]
+    assert len(ks) == 1, '%s #%d: anchor %r matches %d lines' % (vid, n, anchor, len(ks))
+    return ks[0]
+
+
+def _cr_insert(M, vid, n, anchor, new, before=False):
+    """Insert script entries right after (or before) the line / item / draw containing `anchor`."""
+    s = _cr_script(M, vid, n); k = _cr_find(s, anchor, vid, n) + (0 if before else 1)
+    M.set_slide(vid, n, script=s[:k] + list(new) + s[k:])
+
+
+def _cr_drop(M, vid, n, anchors):
+    """Remove the lines / items / draws containing each anchor."""
+    s = _cr_script(M, vid, n)
+    for a in anchors: s.pop(_cr_find(s, a, vid, n))
+    M.set_slide(vid, n, script=s)
+
+
+def _cr_replace(M, vid, n, anchor, new):
+    """Replace the entry containing `anchor` with the list `new`."""
+    s = _cr_script(M, vid, n); k = _cr_find(s, anchor, vid, n)
+    M.set_slide(vid, n, script=s[:k] + list(new) + s[k + 1:])
+
+
+def _cr_titles(M, vid, keep):
+    """Keep only the slides whose titles are in `keep` (title slide = slide 1 always kept); set the sidebar to the
+    kept slides' old sidebar labels in order and re-point each kept slide's `active`."""
+    v = M.video(vid); old = v.get('hybrid', {}).get('sidebar') or []
+    drop = [n for n, b in enumerate(v['beats'], 1) if n > 1 and b['title'] not in keep]
+    assert len(v['beats']) - len(drop) == len(keep) + 1, '%s: kept titles not found' % vid
+    M.remove_slides(vid, drop)
+    labels = []
+    for b in v['beats'][1:]:
+        lab = old[b['active']] if 0 <= b['active'] < len(old) else b['title']
+        if lab not in labels: labels.append(lab)
+        b['active'] = labels.index(lab)
+    M.set_sidebar(vid, labels)
+
+
+def _cr_slide_after(M, vid, n, title, script):
+    """A short extra question slide right after slide n (same question on the board, same sidebar item), so a
+    moved board item never lands on the teacher's handwriting."""
+    b = M.slide(vid, n)
+    M.insert_slides(vid, n, [dict(mode=b['mode'], title=title, active=b['active'],
+                                  pre=[dict(it) for it in b['items'][:b['pre']]], script=script)])
+
+
+def _cr_intro_only(M, vid, title_script, ahead_script, label="What's ahead"):
+    """Lesson -> title slide + one short 'what's ahead' slide (the questions teach the rest)."""
+    v = M.video(vid)
+    M.remove_slides(vid, list(range(2, len(v['beats']) + 1)))
+    M.set_slide(vid, 1, script=title_script)
+    M.insert_slides(vid, 1, [dict(mode='concept', title=label, active=0, pre=[], script=ahead_script)])
+    M.set_sidebar(vid, [label])
+
+
+def cut_repeats(M):
+    # The Hebrew topic 11 has no lesson at all - only questions. Both lessons become a short intro.
+    # Section A: prime bases -> Q1; (x+y)^2 inside an exponent question -> Q4; the 2-and-4 pattern -> Q3;
+    # counting copies -> Q5; two routes + "check that the choices differ" -> Q1 (method 2); "or" claims -> Q16.
+    _cr_intro_only(M, 'advanced-powers', [
+        'Advanced exponents and roots.',
+        'Most rules here you already know — from topics eight, nine and ten. These questions combine them.'], [
+        A("'Big powers → prime bases' appears", T(r'Big powers $\to$ prime bases', 40)),
+        'The hard part is choosing the right form. Big powers? Break the bases into primes.',
+        A("'Two routes' appears", T('Two routes: the laws, or plug in numbers', 40)),
+        'And every question gets two routes: the exponent laws, or plugging in numbers.',
+        'Five questions next. Try each one first — then watch its solution.'])
+    # Section B: root of a root -> Q9 (same example); undo a power -> Q14 (method 2); conjugates -> Q10 and Q11
+    # (same example); product = 0 -> Q12; power = 1 and "or" claims -> Q16.
+    _cr_intro_only(M, 'r26-t11-tools', [
+        'Section B: roots and powers together.',
+        'The basics are in topics eight, nine and ten: sums of powers, comparing powers, numbers between zero and one. Look back if you need them.'], [
+        A("'Root of a root · undo a power · conjugates' appears", T(r'Root of a root $\cdot$ undo a power $\cdot$ conjugates', 40)),
+        'A root inside a root. A strange power on x. A root difference at the bottom of a fraction.',
+        A("'Product = 0 · \"or\" claims' appears", T(r'Product $=0$ $\cdot$ "or" claims', 40)),
+        'An equation that is already a product equal to zero. And answer choices with the word "or".',
+        'Each question teaches its tool — right when you need it.',
+        'Eleven questions next. Try each one first — then watch its solution.'])
+    # remaining videos that pointed back to the cut slides
+    _cr_replace(M, 'solve-q-290', 1, 'It uses two tools from the start of this section', [
+        'It needs two ideas: when a power is one, and claims with the word "or".'])
+    _cr_replace(M, 'solve-q-297', 3, "The lesson's favourite is four", [
+        'Four is a favorite — but here four gives root eight at the end. Not clean.'])
+
+
+_apply_before_cut_repeats = apply
+
+
+def apply(M):
+    _apply_before_cut_repeats(M)
+    cut_repeats(M)   # 2026-10-05: runs last

@@ -719,6 +719,7 @@ def apply(M):
                     b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (q['id'], q['stem'])
 
     summary(M)
+    cut_repeats(M)   # 2026-10-05: last
 
 
 # ======================================================================================================
@@ -747,10 +748,10 @@ def summary(M):
             "Four and six share a two. So that check proves nothing."]),
         C(2, 'Divisibility stories', [
             "A fraction of a fraction? Build it from the inside.",
-            A('Zebras', T('$\\frac13$ of $\\frac16$: $k\\to6k\\to18k$', size=48)),
+            A('Fraction of a fraction', T('$\\frac13$ of $\\frac16$: $k\\to6k\\to18k$', size=48)),
             "Multiply the denominators. The number divides by eighteen.",
             A('Eliminate', T('"What could it be?" → eliminate what it can\'t be', size=44)),
-            "There's no such thing as a third of a zebra."]),
+            "There's no such thing as a third of a student."]),
         C(3, 'Remainder basics', [
             "The remainder is always smaller than the divisor.",
             A('Form', T('$N=d\\cdot q+r \\qquad 0\\le r<d$', size=48)),
@@ -800,3 +801,91 @@ def summary(M):
     ]
     last = [f['ref'] for f in M.D['flow'] if f['section'] == ADV][-1]
     M.new_video('r26-t15-summary', TOPIC, 'Division & Remainder: Summary', sb, slides, ADV, after=last)
+
+
+# =====================================================================================
+# 2026-10-05 cut repeats (helpers)
+# =====================================================================================
+def _cr_script(M, vid, n):
+    b = M.slide(vid, n); out = []
+    for l in b['lines']:
+        if 'say' in l: out.append(l['say'])
+        elif 'appear' in l: out.append(A(l['label'], b['items'][l['appear']]))
+        else: out.append(D(l['draw']))
+    return out
+
+
+def _cr_add(M, vid, n, anchor, new, where='after'):
+    """Insert script entries `new` before/after the spoken line containing `anchor` (None = at the end)."""
+    sc = _cr_script(M, vid, n); out = []; hit = anchor is None
+    for x in sc:
+        if not hit and isinstance(x, str) and anchor in x:
+            hit = True
+            out += ([x] + new) if where == 'after' else (new + [x]); continue
+        out.append(x)
+    if anchor is None: out += new
+    assert hit, '%s #%d: not found: %s' % (vid, n, anchor)
+    M.set_slide(vid, n, script=out)
+
+
+def _cr_say(M, vid, n, old, new):
+    """Replace the whole spoken line containing `old` (new=None deletes it)."""
+    def fn(lines):
+        for k, l in enumerate(lines):
+            if 'say' in l and old in l['say']:
+                if new is None: lines.pop(k)
+                else: l['say'] = new
+                return lines
+        raise AssertionError('%s #%d: not found: %s' % (vid, n, old))
+    M.edit_lines(vid, n, fn)
+
+
+def _cr_drop_item(M, vid, n, text):
+    """Remove the pop-in board item whose text contains `text` (and its appear line)."""
+    sc = [x for x in _cr_script(M, vid, n) if not (isinstance(x, tuple) and x[0] == 'A' and text in (x[2].get('t') or ''))]
+    assert len(sc) < len(_cr_script(M, vid, n)), (vid, n, text)
+    M.set_slide(vid, n, script=sc)
+
+
+def _cr_cut(M, vid, titles):
+    """Remove the slides with these titles; drop their sidebar labels and re-point the other slides."""
+    v = M.video(vid); sb = list(v.get('hybrid', {}).get('sidebar') or [])
+    ns = [k + 1 for k, b in enumerate(v['beats']) if b['title'] in titles]
+    assert len(ns) == len(titles), (vid, titles, [b['title'] for b in v['beats']])
+    gone = {v['beats'][n - 1]['active'] for n in ns}
+    M.remove_slides(vid, ns)
+    keep_used = {b['active'] for b in v['beats']}
+    new_sb = [lab for k, lab in enumerate(sb) if k in keep_used]   # labels no remaining slide uses go
+    for b in v['beats']:
+        if 0 <= b['active'] < len(sb): b['active'] = new_sb.index(sb[b['active']])
+    M.set_sidebar(vid, new_sb)
+
+
+def cut_repeats(M):
+    # ---- "Division & Remainder": the signs and the remainder basics stay (Hebrew has them as theory too).
+    #      Cut: divisibility stories -> Q1 (q-423); algebraic form -> Q4 (q-426), Q14 (q-435);
+    #      combine remainders -> Q5 (q-r26-t15-01) + one line, Q15 (q-436).
+    _cr_cut(M, LESSON, ['Divisibility stories', 'Algebraic form', 'Combine remainders'])
+    _cr_drop_item(M, LESSON, len(M.video(LESSON)['beats']), 'Combine remainders')
+    # Q1: the "multiply the denominators" rule, at the moment it is used
+    _cr_add(M, 'solve-q-423', 3, 'Call the piano-players k', [
+        A("'A fraction of a fraction → multiply the denominators' appears", T('A fraction of a fraction $\\to$ multiply the denominators: $3\\cdot4=12$', size=38)),
+        "The rule: a fraction of a fraction — multiply the denominators. Half of a quarter? It must divide by eight, not just by four."])
+    # Q5: sum and product of remainders were only in the lesson
+    _cr_add(M, 'solve-q-r26-t15-01', 2, 'Subtract the remainders', [
+        A("'Sum, product, difference → work with the remainders' appears", T('Sum, product, difference $\\to$ add, multiply, subtract the remainders', size=38)),
+        "Only the leftovers matter. For a sum, add the remainders. For a product, multiply them. For a difference, subtract them."], where='before')
+    # Q6 pointed back to the zebras (lesson slide cut)
+    _cr_say(M, 'solve-q-427', 2, 'like the zebras', "Build it from the inside, like the chess class. Call a fifth of the school k.")
+
+    # ---- "More Remainder Tools": counting multiples -> Q9 (q-430) + one line; plugging in -> Q4, Q10, Q11, Q14.
+    #      Kept: take away the remainder, units digit (powers repeat), numbers in a row (not fully taught in Q11).
+    _cr_cut(M, TOOLS, ['Counting multiples', 'Plugging in: the rule', 'Recap'])
+    M.set_slide(TOOLS, 1, script=["Before the advanced questions: three short tools.",
+                                  "The other tools you'll meet inside the questions themselves."])
+    _cr_say(M, TOOLS, 3, 'Third tool: the units digit.', 'Second tool: the units digit.')
+    _cr_say(M, TOOLS, 4, 'Fourth tool', 'Third tool — the harder questions need it: consecutive integers, numbers in a row.')
+    _cr_add(M, TOOLS, 4, None, ['Now the advanced questions. Try each one first — then watch.'])
+    _cr_add(M, 'solve-q-430', 2, 'Ninety-nine minus ten, plus one', [
+        A("'Count = last k − first k + 1' appears", T('Count $=$ last $k\\,-$ first $k\\,+\\,1$', size=38)),
+        "Don't forget the plus one — both ends count. From three to seven there are five numbers, not four."])

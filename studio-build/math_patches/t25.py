@@ -620,6 +620,7 @@ def apply(M):
             for b in v['beats']:
                 if b.get('canvas', '').startswith('Pre-loaded — question'):
                     b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (q['id'], q['stem'])
+    cut_repeats(M)
 
 
 def _b(label, tex, size=42):
@@ -803,3 +804,80 @@ def letters(M):
             "Twenty-five minus ten: fifteen. Choice one again.",
         ]),
     ])
+
+
+# =====================================================================================
+# 2026-10-05 cut repeats: each lesson back to a short intro (Hebrew style); every idea a
+# question video right after it already teaches is cut from the lesson; ideas no question
+# teaches stay, or move as one line + board item into the question video that uses them.
+# Runs last. Edited solution slides keep their pre-loaded canvas note (stem text).
+# =====================================================================================
+def _add_line(M, vid, n, before_say, line, item=None, label=None):
+    """Insert one spoken line (+ optional board item) right before the line containing `before_say`
+    (None: at the end of the slide). Keeps the slide's loads/canvas notes."""
+    b = M.slide(vid, n); keep = (b.get('loads'), b.get('canvas')); script = []; hit = False
+    add = ([A(label, item)] if item is not None else []) + [line]
+    for l in b['lines']:
+        if before_say is not None and not hit and before_say in (l.get('say') or l.get('draw') or l.get('label') or ''):
+            script += add; hit = True
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        else: script.append(D(l['draw']))
+    if before_say is None:
+        script += add; hit = True
+    assert hit, '%s #%d: not found: %s' % (vid, n, before_say)
+    M.set_slide(vid, n, script=script)
+    b = M.slide(vid, n); b['loads'], b['canvas'] = keep
+
+
+def _fix_say(M, vid, n, old, new):
+    def fn(lines):
+        hit = False
+        for l in lines:
+            if 'say' in l and old in l['say']:
+                l['say'] = l['say'].replace(old, new); hit = True
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+        return lines
+    M.edit_lines(vid, n, fn)
+
+
+def _keep_slides(M, vid, keep, sidebar):
+    v = M.video(vid)
+    M.remove_slides(vid, [k for k in range(1, len(v['beats']) + 1) if k not in keep])
+    M.set_sidebar(vid, sidebar)
+    _lesson_actives(M, vid)
+
+
+def cut_repeats(M):
+    # ---- Sum from the Average: keep title, "Turn it around", and the two letter slides no question teaches
+    vid = L2
+    _keep_slides(M, vid, [1, 2, 9, 10], ['Turn it around', 'An average equal to a letter', 'The balance with letters'])
+    _add_line(M, vid, 2, None, "Every time you read 'the average', write a sum instead. Let's see it in the questions — and then two harder cases with letters.")
+    _fix_say(M, vid, 3, 'Sometimes the average equals one of the letters. Same move.',
+             'Sometimes the average equals one of the letters. Same move: write the sum.')
+    _add_line(M, vid, 4, None, "Now let's use it on real exam questions.")
+    # "Each as the average" -> Q1 (treat each student as eight). "What one can be" -> one line in Q1:
+    _add_line(M, 'solve-wp25-g082', 2, 'The average hands you the total',
+              "So one student alone could solve all seventy-two — but never more than the whole group.",
+              T(r'One value $\le$ the whole sum $72$', 36), "'One value ≤ the whole sum 72' appears")
+    # "Largest possible value" -> Q5 (others as small as possible, the "different" trap).
+    # "A new member" -> one line in Q2 method 2; "How many were there?" -> Q2 (balance, equation, before/after trap).
+    _add_line(M, 'solve-q-r26-t25-01', 3, 'Add ninety-four. That equals the new sum',
+              "A new member changes both parts: the sum and the number of values.",
+              T('New member: update the sum AND the number', 36), "'New member: update the sum AND the number' appears")
+    # "Averages with letters" -> Q10 (wp25-p18: each average into a sum, b cancels).
+
+    # ---- Weighted Averages: keep title + "Different weights" ----------------------------
+    vid = 'wp-086'
+    _keep_slides(M, vid, [1, 2], ['Different weights'])
+    _add_line(M, vid, 2, None, "How to calculate it — the formula and the see-saw — we'll learn in the questions.")
+    # "Repeated copies" -> Q11 (exam = two copies, divide by three); "The formula" -> Q12 method 2, Q13 method 1;
+    # "The see-saw" + "Split the gap" -> Q11 method 2, Q12 method 1 (axis, weights flipped). Board item in Q11:
+    _add_line(M, 'solve-wp25-g087', 3, 'Mark 76, one part above 68',
+              "The heavy side always gets the small part of the gap.",
+              T('The heavy side gets the small part', 36), "'The heavy side gets the small part' appears")
+    # "Groups as weights" -> Q13 (same sizes 6 and 9, reduce to 2 : 3, midpoint trap, closer to the bigger group).
+    # follow-up: the "3 × 5 = 1 × 15" balance check from "The see-saw" -> Q11 method 2 (76: 8 from 68, 16 from 92)
+    _add_line(M, 'solve-wp25-g087', 3, None,
+              "Why does it balance? Weight times distance is the same on both sides: two times eight, one times sixteen.",
+              T(r'Balanced: $2\times8=1\times16$', 36, y=620), "'Balanced: 2 × 8 = 1 × 16' appears")

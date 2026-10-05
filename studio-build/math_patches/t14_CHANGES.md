@@ -158,3 +158,17 @@ Every new or changed answer was checked by hand and by brute force.
 **New: summary video** `r26-t14-summary` "Prime Numbers — Summary", at the end of the advanced section, right before the independent practice (about 2.6 minutes).
 Slides: Summary · What a prime is · Two primes, odd result · Is it prime? · Break it down · GCD and LCM · Counting divisors · Squares and equations · A prime in a product · Before you practice.
 It only repeats what the three lessons teach. The last slide lists the checks (broke it into primes? really prime - tried up to the root and 7? odd sum → one prime is 2? GCD or LCM - lower or higher power?) and the traps (calling 1 a prime, forgetting 2, multiplying instead of taking the LCM).
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). The lessons were teaching each question's idea, and then the question video taught it again. Lessons are now short intros; every idea is still taught, once, inside the question that uses it. Nothing in topic 14 is recorded. "Prime Numbers" (the first lesson) is unchanged.
+- **`prime-tools` "Factor Tools"**: 5.2 → 1.5 min. Kept: the title (now "In this section: questions about the factors of a number…"), "Break & build" (the frame of the section, with "letters as primes? plug in 2, 3, 5, 7") and "Counting divisors" (no question video teaches it; the practice uses it). Sidebar: Break & build · Counting divisors.
+  - Cut "GCD" → taught in Q5 `solve-q-389` (lower power). Added there: "The GCD is the biggest number that divides both."
+  - Cut "LCM" → taught in Q6 `solve-q-390` (higher power, "multiply them? no"). Title line now gives the official name "least common multiple — LCM".
+  - Cut "GCD vs LCM" → the GCD · LCM = a · b fact moved to Q6 as one line + board item ("GCD · LCM = a · b: 4 · 24 = 8 · 12 = 96"). The trap (just multiplying) is already in Q5 and Q6.
+  - Cut "Symmetric divisors" → taught in Q11 `solve-q-402` (pairs, the middle divisor). Added there: "In general: an odd number of divisors means a perfect square" + board item. "Remember the symmetric divisors?" reworded.
+  - Cut "Recap"; its closing line moved to the last kept slide.
+- **`r26-t14-more-tools` "More Factor Tools"**: 2.4 → 1.1 min. Kept: "Perfect squares" (no question video teaches it). Its example 18k was exactly practice question `alg-extra-unit-t14-4-6` → now 12k (k = 3, 36 = 6²); same change on card `mem-r26-t14-more-tools`.
+  - Cut "Prime equations" → taught in Q12 `solve-q-r26-t14-03` (one way to break into primes, match the exponents; swap trap).
+  - Cut "A prime in a product" → Q17 `solve-q-395` now says it as a rule, at the moment it is used (+ board item): a prime can't be split between factors; 15 isn't prime, so its 3 and 5 may come from different numbers.
+  - Cut "Recap".
+- Cards unchanged (except the 12k example). Summary `r26-t14-summary` not affected.

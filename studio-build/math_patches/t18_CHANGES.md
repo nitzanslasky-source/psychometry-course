@@ -95,3 +95,20 @@ New guided questions (end of the advanced section), each with a solution video:
 - New video `r26-t18-summary` "Letter Puzzles: Summary" (about 3 minutes). It is the last item of "Digit puzzles · advanced study", right before the independent practice (one practice section, so one summary).
 - Slides: Summary · Letters are digits · The 4 steps · The ones column · Leading digit & size · Special digits · Plug in · Algebraic form · Products & powers · Largest & smallest · Before you practice.
 - Content comes only from the main lesson and "Number Facts". The final slide has these checks: must the letters be different · which column, is there a carry · how many numbers are added, does the size fit · one letter asked → plug in the choices. It also lists the traps: a forgotten carry, a leading zero, "leading digit 1" used with more than two numbers, and a matching last digit taken as proof.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). Nothing in topic 18 is recorded.
+- **`digit-puzzles` "Exercises with Letters"** → the Hebrew intro: 8.9 → 1.8 min. Kept: title, "The 4 steps", "What letters mean" (the Hebrew intro explains both). Each question then teaches one more tool.
+  - Cut "The 4 steps in action" → Q1 `solve-q-512` runs the same four steps.
+  - Cut "Carries" (its 1X7 + Y5 example was the same as Q10) → Q10 `solve-q-r26-t18-01` teaches the middle-column carry; added "in a middle column: zero or nine; two numbers carry at most one, three or four can carry two or three" + board item.
+  - Cut "Leading digit" → taught in Q1; added the why (99 + 99 = 198) and the limit (only for two numbers) + board item.
+  - Cut "Special digits" → taught in Q2 `solve-q-513`; added the 5 × even / odd and 6 × even facts + board item; "Remember the special digits?" reworded.
+  - Cut "Plug in numbers" → taught in Q3 `solve-q-514` (51, 52; AB ± BA). "Plug in the choices from the middle" → one line in Q8 `solve-q-519`.
+  - Cut "Minus → plus" → taught in Q5 `solve-q-516` and Q7 `solve-q-518`.
+  - Cut "Algebraic form" → taught in Q3 method 2 and Q9; added ABC = 100A + 10B + C in Q3 + board item.
+  - Cut "Recap".
+- **`r26-t18-facts` "Number Facts for Letter Puzzles"**: 3.2 → 2.0 min. Kept: repdigits, powers' ones digit, largest/smallest (no question teaches them).
+  - Cut "Reversals" → taught in Q11 `solve-q-r26-t18-02`; added the why (algebraic form, the middle digit cancels) + board item.
+  - Cut "Products" → taught in Q12 `solve-q-r26-t18-03` (ones digit; 3 or 4 digits).
+  - Cut "Recap".
+- Cards unchanged.

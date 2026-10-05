@@ -128,3 +128,15 @@ The review asked for a medium guided must/could/cannot question before Q1. Q1 an
   - The "Pythagoras in disguise" line stays replaced (it points to a later topic), as the plan says.
 
 **Summary lesson (1 new video):** `r26-t20-summary` "Summary", at the end of "Algebraic understanding" (after the counting card), right before the independent practice. Slides: Summary · Three tools · Must, could, cannot · Which numbers? · Between 0 and 1 · Integer gaps · Scaling · Connect topics · Counting integers · Pigeonhole · Before you practice. Only content the Topic 20 lessons teach.
+
+## 2026-10-05 cut repeats
+Function `cut_repeats` (runs last). Nothing in topic 20 is recorded.
+- **`algebraic-understanding`** → the Hebrew intro ("no repeating principles… we start with sample questions"): 5.8 → 1.3 min. Kept: title + "Three tools".
+  - Cut "Must, could, cannot" (a Topic 1 reminder) → Q1, Q3, Q5 use the words; added in Q1 the habit "write the word" (pen note).
+  - Cut "Which numbers?" → taught in Q1 `solve-q-r26-t20-01` (two regions; a second number); added "letters may be equal? try equal values" + board item.
+  - Cut "Between 0 and 1" → taught in Q1 and Q2 `solve-q-r26-t20-02` (and in topic 17).
+  - Cut "Integer gaps" → taught in Q3 `solve-q-577`; added the general rule "n increasing integers: last ≥ first + (n − 1)" + board item.
+  - Cut "Scaling" (its example was Q4 with ×16 instead of ×9) → taught in Q4 `solve-q-578`; "The general rule from the lesson" → "The general rule".
+  - Cut "Connect topics" → taught in Q5 `solve-q-579` (c² = a² + b²); added the cycle of ratios x/y · y/z · z/x = 1 + board item.
+  - Cut "Recap"; its closing line moved to "Three tools".
+- **`r26-t20-counting`**: 2.7 → 1.9 min. Kept: from a to b, strictly between, pigeonhole (the remainder version is not in Q8). Cut "Only odd or even" → Q7 `solve-q-r26-t20-03`; cut "To be sure" → Q8 `solve-q-r26-t20-04`; cut "Recap". "Letters in the choices? plug in small numbers and count" moved to the "Strictly between" slide.

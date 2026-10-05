@@ -833,6 +833,7 @@ def apply(M):
         M.touched_videos.add(f['ref'])
 
     summary(M)
+    cut_repeats(M)   # 2026-10-05: last
 
 
 # ======================================================================================================
@@ -918,3 +919,83 @@ def summary(M):
     ]
     last = [f['ref'] for f in M.D['flow'] if f['section'] == 'whole-numbers-advanced'][-1]
     M.new_video('r26-t16-summary', TOPIC, 'Integers: Summary', sb, slides, 'whole-numbers-advanced', after=last)
+
+
+# =====================================================================================
+# 2026-10-05 cut repeats (helpers)
+# =====================================================================================
+def _cr_script(M, vid, n):
+    b = M.slide(vid, n); out = []
+    for l in b['lines']:
+        if 'say' in l: out.append(l['say'])
+        elif 'appear' in l: out.append(A(l['label'], b['items'][l['appear']]))
+        else: out.append(D(l['draw']))
+    return out
+
+
+def _cr_add(M, vid, n, anchor, new, where='after'):
+    """Insert script entries `new` before/after the spoken line containing `anchor` (None = at the end)."""
+    sc = _cr_script(M, vid, n); out = []; hit = anchor is None
+    for x in sc:
+        if not hit and isinstance(x, str) and anchor in x:
+            hit = True
+            out += ([x] + new) if where == 'after' else (new + [x]); continue
+        out.append(x)
+    if anchor is None: out += new
+    assert hit, '%s #%d: not found: %s' % (vid, n, anchor)
+    M.set_slide(vid, n, script=out)
+
+
+def _cr_say(M, vid, n, old, new):
+    """Replace the whole spoken line containing `old` (new=None deletes it)."""
+    def fn(lines):
+        for k, l in enumerate(lines):
+            if 'say' in l and old in l['say']:
+                if new is None: lines.pop(k)
+                else: l['say'] = new
+                return lines
+        raise AssertionError('%s #%d: not found: %s' % (vid, n, old))
+    M.edit_lines(vid, n, fn)
+
+
+def _cr_drop_item(M, vid, n, text):
+    """Remove the pop-in board item whose text contains `text` (and its appear line)."""
+    sc = [x for x in _cr_script(M, vid, n) if not (isinstance(x, tuple) and x[0] == 'A' and text in (x[2].get('t') or ''))]
+    assert len(sc) < len(_cr_script(M, vid, n)), (vid, n, text)
+    M.set_slide(vid, n, script=sc)
+
+
+def _cr_cut(M, vid, titles):
+    """Remove the slides with these titles; drop their sidebar labels and re-point the other slides."""
+    v = M.video(vid); sb = list(v.get('hybrid', {}).get('sidebar') or [])
+    ns = [k + 1 for k, b in enumerate(v['beats']) if b['title'] in titles]
+    assert len(ns) == len(titles), (vid, titles, [b['title'] for b in v['beats']])
+    gone = {v['beats'][n - 1]['active'] for n in ns}
+    M.remove_slides(vid, ns)
+    keep_used = {b['active'] for b in v['beats']}
+    new_sb = [lab for k, lab in enumerate(sb) if k in keep_used]   # labels no remaining slide uses go
+    for b in v['beats']:
+        if 0 <= b['active'] < len(sb): b['active'] = new_sb.index(sb[b['active']])
+    M.set_sidebar(vid, new_sb)
+
+
+def cut_repeats(M):
+    # ---- "Sums of Consecutive Integers": count x middle -> Q5 (q-r26-t16-02, + the "why" in one line);
+    #      divisible by the count -> Q6 (q-r26-t16-03); even count (middle .5) -> one line in Q6.
+    #      Kept: counting integers, squares of neighbors (no question video teaches them).
+    _cr_cut(M, SUMS, ['Count × middle', 'Even count', 'Divisible by the count?', 'Recap'])
+    M.set_slide(SUMS, 1, script=[
+        'Adding consecutive numbers.',
+        'The two questions after this video teach the main rule — count times middle.',
+        "First, two short tools they don't use: counting the integers in a range, and squares of neighbors."])
+    _cr_add(M, SUMS, 3, None, ['Two questions next. Try each one first — then watch.'])
+    # Q5: why count x middle works (was the lesson's example)
+    _cr_add(M, 'solve-q-r26-t16-02', 2, 'Sum equals count times middle', [
+        A("'Sum = count × middle' appears", T('Sum $=$ count $\\times$ middle', size=40)),
+        "Why? The numbers pair up around the middle. One below and one above together are like two middles."])
+    # Q6: the even-count middle, and the rule said as a rule (no lesson slide to "remember")
+    _cr_add(M, 'solve-q-r26-t16-03', 3, 'One to four: ten', [
+        A("'Even count: the middle ends in .5' appears", T('Even count: the middle ends in $.5$ $\\to$ $4\\cdot2.5=10$', size=38)),
+        "Count times middle still works: the middle is halfway between two and three — two and a half. Four times two and a half: ten."])
+    _cr_say(M, 'solve-q-r26-t16-03', 3, 'Remember: an odd count',
+            'The rule: an odd count of consecutive integers — the sum divides by the count. An even count — never.')
