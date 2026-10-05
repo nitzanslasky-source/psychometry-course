@@ -1,0 +1,58 @@
+{
+ "videoId": "r26-t12-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "So, before you practice, let's go over the whole topic. About three minutes.",
+   "Every rule, every trap. Short, and quick."
+  ],
+  [
+   "You solve an inequality just like an equation. The same moves, on both sides.",
+   "There's one difference. If you multiply or divide by a negative number, the sign flips.",
+   "Here's my tip: don't divide by a minus at all. Move the terms across, so x stays positive. Then nothing flips."
+  ],
+  [
+   "Now, sometimes x cancels out.",
+   "If what's left is true... every x works.",
+   "And if what's left is false, no x works."
+  ],
+  [
+   "Two inequalities? Solve each one, and then take the overlap.",
+   "It's AND, not OR. So if there's no overlap, there's no solution.",
+   "If they share a side, chain them, and just ignore the middle.",
+   "And if there's an equation too? Substitute. Just like with two equations."
+  ],
+  [
+   "Okay, x squared on one side, and a number on the other.",
+   "If x squared is on the small side, x is between the roots.",
+   "If it's on the big side, x is outside the roots. And don't forget the negative root."
+  ],
+  [
+   "Hard to solve? Well, plug in the choices.",
+   "But first ask, can x be negative? Here, no. A negative x to the fifth is negative.",
+   "Then plug in. Once one choice works, you can move on."
+  ],
+  [
+   "Now, numbers between zero and one behave a bit strangely.",
+   "Squaring makes them smaller. And above one, the order turns around.",
+   "One over a number: if they have the same sign, it flips. Different signs, no flip.",
+   "A product or a fraction, above or below zero? Mark the zeros, and test each part."
+  ],
+  [
+   "Now, two ranges together.",
+   "Adding is safe... when both point the same way.",
+   "But never subtract end from end. It's biggest minus smallest, and smallest minus biggest.",
+   "Multiplying, with a negative inside? Check the four corners.",
+   "And x squared: if zero is inside the range, x squared starts at zero."
+  ],
+  [
+   "Three question words... and three jobs.",
+   "So which numbers do you try? Zero, one, negative one, one half... and a big number."
+  ],
+  [
+   "So, before you practice, always ask yourself:",
+   "And watch the traps. The forgotten flip, the negative root of x squared, and subtracting ranges end from end.",
+   "Well... you know all of this. Go practice."
+  ]
+ ]
+}

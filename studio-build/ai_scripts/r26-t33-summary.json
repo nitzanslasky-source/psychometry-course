@@ -1,0 +1,58 @@
+{
+ "videoId": "r26-t33-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, circles. A quick summary before you practice.",
+   "Everything important from these lessons, one idea at a time."
+  ],
+  [
+   "Rule number one: every radius is equal.",
+   "So two radii and a chord? That's an isosceles triangle. And they hide everywhere inside a circle.",
+   "The diameter is two radii. So a diameter of thirty means the radius is fifteen. Switch to r before you use any formula."
+  ],
+  [
+   "Now, the one big rule. The central angle is twice the inscribed angle that intercepts the same arc.",
+   "So a central angle of a hundred? The inscribed angle is fifty.",
+   "And all the inscribed angles that intercept the same arc are equal.",
+   "So first ask, which arc does the angle intercept? Stand at the vertex. The arc you see is the one."
+  ],
+  [
+   "An inscribed angle on a diameter is ninety.",
+   "And it works backwards too. A right triangle in a circle? Its hypotenuse is a diameter. A rectangle? Its diagonal.",
+   "All four vertices on the circle? Then opposite angles add up to a hundred and eighty. So sixty-five here means a hundred and fifteen across."
+  ],
+  [
+   "Equal chords cut off equal arcs and equal central angles. And backwards too.",
+   "The distance from the center to a chord? Draw the perpendicular. It cuts the chord in half.",
+   "So radius five, distance three: half the chord is four. And the whole chord is eight."
+  ],
+  [
+   "See a tangent? Draw the radius to the point of tangency. Automatically. That's ninety degrees.",
+   "Two tangents from one point are equal. And together with the radii, they make a kite, also called a deltoid.",
+   "The kite has two right angles, so the other two angles add up to a hundred and eighty."
+  ],
+  [
+   "A circle inside a triangle: from each vertex, you get two equal tangent pieces.",
+   "In a right triangle, r is leg plus leg, minus the hypotenuse, over two. So legs twelve and sixteen, hypotenuse twenty... r is four.",
+   "Two circles touch? Join the centers. If they're outside each other, it's R plus r. One inside the other, R minus r."
+  ],
+  [
+   "Area: pi r squared. Circumference: two pi r. And if you're given the area or the circumference, go back to r first.",
+   "Pi is a bit more than three. But if the answers have pi in them, keep the pi.",
+   "Lengths grow like the radius, and areas like the radius squared. So radius plus thirty percent means area plus sixty-nine.",
+   "And a wheel: one turn is one circumference. Just change the units first."
+  ],
+  [
+   "Sectors and arcs. Well, skip the formula. Just ask which part of the circle it is.",
+   "Ninety is a quarter, sixty a sixth, seventy-two a fifth, forty-five an eighth, and a hundred and twenty a third.",
+   "A sector is part of the area. An arc is part of the circumference.",
+   "And the perimeter of a sector is the arc plus two radii."
+  ],
+  [
+   "Okay, before each question, ask yourself these.",
+   "And the common traps: a hundred and eighty minus a central angle when the center isn't on the circle, forgetting that area grows like r squared, and mixing up the radius and the diameter.",
+   "You know all of this. Now go practice."
+  ]
+ ]
+}

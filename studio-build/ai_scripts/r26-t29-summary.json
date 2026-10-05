@@ -1,0 +1,57 @@
+{
+ "videoId": "r26-t29-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, before you practice, here's a quick summary of probability.",
+   "Everything important, one idea at a time."
+  ],
+  [
+   "Probability is wanted over possible. And you count outcomes that are equally likely.",
+   "Three red and seven yellow counters. So three red out of ten... three tenths.",
+   "A probability is always between zero and one. Zero is impossible, one is certain. Got more than one? Then something went wrong."
+  ],
+  [
+   "Always start from the bottom. What can happen?",
+   "A student from the choir is chosen? Then the bottom is the fifteen choir students. Not all thirty-two students.",
+   "Something was already taken out? Count the bag as it is now.",
+   "And past results don't change a fair coin. Four heads in a row... the next toss is still one half."
+  ],
+  [
+   "Now, the complement. Something either happens or it doesn't. Together, that's one.",
+   "Red is five twelfths? Then blue is seven twelfths.",
+   "Sometimes the opposite is easier to count. Late trains are one fifth. So on time is four fifths.",
+   "But answer what they asked. One fifth is the late trap."
+  ],
+  [
+   "AND means multiply. Heads, and a three on a dice? One half times one sixth... one twelfth.",
+   "OR means add. But only for cases that can't happen together. A one or a four? One sixth plus one sixth.",
+   "Can they happen together? Then subtract the overlap once. From one to thirty, divisible by three or five? Ten, plus six, minus two.",
+   "And a second try only happens after a first miss. So it's one fifth, plus four fifths times one quarter... two fifths."
+  ],
+  [
+   "At least one? Too many cases. So count the opposite, none, and subtract it from one.",
+   "Two coins, at least one head? One minus a quarter, three quarters. Not one half plus one half... that counts two heads twice.",
+   "Exactly one head in four tosses? One order is one sixteenth. There are four orders, so four sixteenths... one quarter.",
+   "Two drawn together? Treat it as one after the other, without replacement."
+  ],
+  [
+   "Two stages, first a bag, then a token? Draw a tree.",
+   "Along a branch it's AND, so multiply. Different branches are OR, so add.",
+   "And don't pour the bags together. Different sizes mean different chances.",
+   "Also, watch for stages that depend on each other. Whoever wins the first prize can't win the second."
+  ],
+  [
+   "Three coins all land the same way? Well, the first one can be anything. That's one. The other two must match it. One half times one half... one quarter.",
+   "And you're allowed to choose the order. Start with the stage that can't go wrong.",
+   "One red marble out of nine. Is it first, third, or last? It's always one ninth.",
+   "With two dice, ten and four are the same distance from seven. So they have the same probability. Dice with n faces? Then the top sum, the most likely one, is n plus one.",
+   "Letters in the choices? Plug in small numbers. But first check that the four choices come out different."
+  ],
+  [
+   "So, before you start, always ask yourself these questions.",
+   "And the traps: adding when you should use one minus none, pouring two bags together, and giving the complement instead of what they asked.",
+   "Okay, now it's your turn. Good luck."
+  ]
+ ]
+}

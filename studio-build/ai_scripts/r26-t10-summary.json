@@ -1,0 +1,55 @@
+{
+ "videoId": "r26-t10-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Exponents and roots... a quick summary before you practice.",
+   "All the techniques from this topic, one at a time."
+  ],
+  [
+   "Dividing roots? Put them under one root, or split the top and cancel.",
+   "A number over a root: ignore the root, then put it back.",
+   "So twenty-eight divided by seven is four. Put the root back... four root seven."
+  ],
+  [
+   "Different bases? Break every base down to the smallest prime. Two, not four, not eight.",
+   "A negative exponent means flip. The factor goes to the bottom.",
+   "And subtracting negative exponents? Minus minus is plus."
+  ],
+  [
+   "Method one: split each root so one part comes out whole.",
+   "Method two: take out a common factor. No trial and error.",
+   "Use whichever feels easier. You land in the same place."
+  ],
+  [
+   "The unknown is in the exponent? Make the bases equal, then make the exponents equal.",
+   "So three x plus one is four. x is one.",
+   "Or, put each choice into the exponent and see which one works."
+  ],
+  [
+   "A root is never negative. So the other side can't be negative either.",
+   "Square both sides, solve, and check every answer in the original equation.",
+   "Squaring can sneak in a fake solution. Minus four fails. So only five.",
+   "Faster? Try the choices. Fake solutions fail on their own."
+  ],
+  [
+   "Can you divide by x? Only if the question says x isn't zero.",
+   "If it doesn't, move everything to one side and factor. Then you keep both answers: zero, and seven."
+  ],
+  [
+   "Well, there's no law for adding powers. So count the copies.",
+   "Two copies of two to the x is two times two to the x. That's two to the x plus one. Not four to the x.",
+   "Not sure? Put in a number."
+  ],
+  [
+   "Same base, different exponents? Take out the smallest power.",
+   "Different bases, same exponent? Multiply the bases.",
+   "Same base? Add the exponents. Don't mix up the two laws."
+  ],
+  [
+   "Okay, before each question, ask yourself these questions.",
+   "The common traps: two to the x plus two to the x is not four to the x, and the fake solution of a root equation.",
+   "You know all of this. Now practice."
+  ]
+ ]
+}

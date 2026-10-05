@@ -1,0 +1,54 @@
+{
+ "videoId": "r26-t36-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, before you practice, a quick summary of similarity.",
+   "Everything important, one idea at a time."
+  ],
+  [
+   "Similar shapes: every matching line has the same ratio. Sides, heights, diagonals, perimeters, circumferences.",
+   "For areas, square it. For volumes, cube it.",
+   "And going back from areas to lengths? Take the square root."
+  ],
+  [
+   "Some shapes are always similar. Circles, squares, equilateral triangles, and regular polygons with the same number of sides. Cubes and spheres too.",
+   "Others are not. A rectangle, for example, needs both dimensions to grow by one factor.",
+   "And the man with glasses: the top leftover is exactly one small circle."
+  ],
+  [
+   "Two equal angles are enough. The third one completes to a hundred and eighty.",
+   "Now, match the sides by the angles, not by left and right. Then make the small–big table.",
+   "Stuck on what matches what? Plug in an easy angle, like twenty degrees, and follow it."
+  ],
+  [
+   "A line parallel to the base: part to part is fine. But the parallel segment itself... always against the whole side.",
+   "The altitude to the hypotenuse: with parts four and twenty-five, the altitude squared is a hundred. So it's ten."
+  ],
+  [
+   "Not similar, but the same height? Then the areas follow the bases. No squaring. Three to seven stays three to seven.",
+   "A trapezoid with its diagonals: the hourglass triangles are a squared and b squared. And the side triangles are a times b, each."
+  ],
+  [
+   "Read what they compare. The small circle to the whole big circle, that's one to twenty-five. But to what's left, it's one to twenty-four.",
+   "So work in units. Square the ratio, subtract, and then find what one unit is worth."
+  ],
+  [
+   "Only one dimension changes? Then it's not similar. Multiply the separate factors. So radius times three, height times two... volume times eighteen.",
+   "And a cone filled to a third of its height holds only one twenty-seventh."
+  ],
+  [
+   "Percents. Turn them into a factor first.",
+   "And a factor is not a percent. Times three is an increase of two hundred percent."
+  ],
+  [
+   "A map is a similar copy. Lengths times n, areas times n squared.",
+   "So scale one to thirty thousand: one centimeter is zero point three kilometers. And one square centimeter is zero point zero nine square kilometers."
+  ],
+  [
+   "Okay, before you start, always ask yourself these.",
+   "And the traps: squaring shapes that aren't similar, the parallel segment against a part, and percent versus factor. Times three is plus two hundred percent, not three hundred.",
+   "Now it's your turn. Good luck."
+  ]
+ ]
+}

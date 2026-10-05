@@ -1,0 +1,48 @@
+{
+ "videoId": "r26-t34-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, polygons. A quick summary before you practice.",
+   "Everything important from these lessons, one idea at a time."
+  ],
+  [
+   "The angle sum is a hundred and eighty, times n minus two. Or, you can split the polygon into n minus two triangles.",
+   "So every extra side adds a hundred and eighty.",
+   "And backwards: a sum of eighteen hundred is ten triangles... so twelve sides."
+  ],
+  [
+   "Regular means all the sides and all the angles are equal. Then you just divide the sum by n.",
+   "Don't remember one? Find the central angle, three sixty over n, and complete it to a hundred and eighty. So for an octagon, that's forty-five... so a hundred and thirty-five."
+  ],
+  [
+   "The exterior angles always add up to three hundred and sixty. With any number of sides.",
+   "Now, if you're given an angle of a regular polygon, take a hundred and eighty minus it. That's the exterior angle. Then three sixty over that.",
+   "So a hundred and forty: the exterior angle is forty. Nine sides."
+  ],
+  [
+   "From one vertex, there are n minus three diagonals. And all of them together: n times n minus three, over two. Because each diagonal has two ends.",
+   "In a regular polygon, the diagonals from one vertex split its angle into equal parts. So in a hexagon, a hundred and twenty over four... thirty each."
+  ],
+  [
+   "Draw the radii of a regular polygon, and you get n congruent isosceles triangles.",
+   "Now, the hexagon is special. It's six equilateral triangles. The short diagonal is a root three, and the long one is two a."
+  ],
+  [
+   "Polygons have no area formula. So split them into triangles, rectangles, trapezoids.",
+   "Or surround them. An octagon, for example, is a square minus four corner triangles.",
+   "And in the hexagon, every corner triangle of the star partition is also a sixth of the hexagon."
+  ],
+  [
+   "Polygons meeting at a point: their angles add up to three sixty.",
+   "So a pentagon and a hexagon: three sixty minus a hundred and eight, minus a hundred and twenty... a hundred and thirty-two.",
+   "And on a common side, all the sides are equal. So look for the isosceles triangle."
+  ],
+  [
+   "Okay, before each question, ask yourself these.",
+   "And the common traps: dividing the angle sum by n when the polygon isn't regular, and counting every diagonal twice.",
+   "And, a polygon that fits in a circle is not necessarily regular.",
+   "You know all of this. Now go practice."
+  ]
+ ]
+}

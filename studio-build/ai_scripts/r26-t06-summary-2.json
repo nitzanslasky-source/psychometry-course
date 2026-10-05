@@ -1,0 +1,41 @@
+{
+ "videoId": "r26-t06-summary-2",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, before you practice, a quick summary of systems of equations.",
+   "Which method, and when."
+  ],
+  [
+   "Two unknowns, two equations. We need values that make both of them true.",
+   "As many equations as unknowns... usually, not always, one solution."
+  ],
+  [
+   "A letter with coefficient one? Isolate it, and put it into the other equation.",
+   "Put the whole expression in brackets. The minus hits both terms."
+  ],
+  [
+   "Opposite coefficients? Add the equations. The same coefficients? Subtract.",
+   "x plus y and x minus y: x is half the sum, and y is half the difference.",
+   "Subtracting? Put the whole second equation in brackets."
+  ],
+  [
+   "Nothing cancels? Multiply whole equations to match coefficients.",
+   "Every term gets multiplied... the right side too.",
+   "Match the letter they do not ask for. And use the smallest multipliers."
+  ],
+  [
+   "Circle what they ask for, before you start.",
+   "They ask for x plus y, or x minus y? Add or subtract first. You may not need x and y at all."
+  ],
+  [
+   "A product and a quotient? Multiply or divide the equations.",
+   "x squared is eighty-one. x is positive... so x is nine."
+  ],
+  [
+   "Okay, before you start, always ask yourself these questions.",
+   "The common traps: a lost minus when you subtract, and forgetting the right side.",
+   "Now it's your turn. Good luck."
+  ]
+ ]
+}

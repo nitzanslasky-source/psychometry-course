@@ -1,0 +1,55 @@
+{
+ "videoId": "r26-t35-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, before you practice, a quick summary of solid geometry.",
+   "Everything important, one idea at a time."
+  ],
+  [
+   "So the first question is, is the solid straight or pointed? For a straight solid, it's the base area times the height.",
+   "For a pointed solid, it's the same thing, divided by three. So it's one third of the straight solid with the same base and height.",
+   "Now, the box, cylinder, cone and pyramid are on the formula page. But the general rules... know them by heart."
+  ],
+  [
+   "Lateral surface area is what wraps around. The perimeter of the base, times the height.",
+   "For the total surface area, add the two bases.",
+   "A prism lying on its side? Find the two identical faces first. The height is what joins them."
+  ],
+  [
+   "Water takes the shape of the container. So its height is the volume over the base area.",
+   "Pouring into another container? The volume stays the same, and the height changes. So a wider base means lower water.",
+   "And get the same units first. A liter is a thousand cubic centimeters."
+  ],
+  [
+   "A lot of questions hide a right triangle inside the solid. So find it.",
+   "In a cone, it's the radius, the height and the slant height. So radius nine, slant height fifteen... the height is twelve.",
+   "A pyramid with equal edges: the apex is right above the center. So you've got the height, half the diagonal, and the edge.",
+   "The height goes straight down. So it's always shorter than a slanted edge."
+  ],
+  [
+   "In a cube, the face diagonal is a root two, and the body diagonal is a root three.",
+   "In a box, use two right triangles, or the square root of the three squares. So two, three, six gives seven.",
+   "And the angles in a cube... only when the lines meet at the same corner."
+  ],
+  [
+   "Now, turn a flat shape one full turn. A rectangle makes a cylinder, and a right triangle makes a cone.",
+   "The side on the axis is the height. The other side is the radius. And the radius is squared, so it counts more."
+  ],
+  [
+   "Solids in a box aren't water. So divide each direction, drop the remainder, and then multiply. Never divide the volumes.",
+   "Bricks that aren't cubes? Try each position. The count can change.",
+   "Remove a corner cube, and the volume goes down, but the surface area stays the same.",
+   "A painted cube: three faces, that's the eight corners. Two faces, the edges. One face, the middle of each face. And none, that's the inside."
+  ],
+  [
+   "Counting. Check the rule on a cube. n is four, so six faces, twelve edges, eight vertices.",
+   "Three face areas at one corner? Multiply them, and take the square root. So twelve, fifteen, twenty... the volume is sixty."
+  ],
+  [
+   "Okay, before you start, always ask yourself these.",
+   "And the traps: the slant height is not the height, a pointed solid needs the divide by three, and solids in a box are not water.",
+   "Now it's your turn. Good luck."
+  ]
+ ]
+}

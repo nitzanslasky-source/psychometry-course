@@ -1,0 +1,63 @@
+{
+ "videoId": "r26-t17-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "So, before you practice, let's go over the whole number line in a few minutes.",
+   "Every rule, every trap. Short, and quick."
+  ],
+  [
+   "It all starts with four ranges.",
+   "Below minus one, negative fractions, positive fractions, and above one. Every number in a range behaves the same way.",
+   "Watch the borders. And if they only say x is positive... well, it could be below one, or above one.",
+   "The negative side is a mirror. So look at the positive side, and then mirror the picture."
+  ],
+  [
+   "So what do multiplying and dividing do? One is the dividing line.",
+   "Now, that's for positive numbers. A negative number makes the same moves... away from zero, or toward zero.",
+   "And times a NEGATIVE number? You jump to the other side of zero, and the order flips."
+  ],
+  [
+   "Hierarchy. A number in a higher range stays bigger, after any positive power or root.",
+   "Seven sixths is above one, and three quarters is a fraction. So don't calculate the roots.",
+   "For negative numbers, it's odd powers and odd roots only.",
+   "The same operation on two positive numbers? Ignore it. And weak times weak loses to strong times strong."
+  ],
+  [
+   "Exceptional powers move a number into another range. So handle them first.",
+   "An even power of a negative number turns positive. But read the brackets. Without them, minus four squared is minus sixteen.",
+   "A negative exponent? To compare ranges, flip it first. Here a fraction became a number above one."
+  ],
+  [
+   "The arrows show what a bigger power does in each range.",
+   "Right means bigger, left means smaller. And on the negative side, odd powers only.",
+   "A positive fraction: a bigger power gives a smaller number. And the root goes the other way.",
+   "So, three steps. Exceptions, roots into powers, and then the arrows. With the arrows, you can keep a negative exponent.",
+   "And if they give the order and ask for the range? Use the arrows backwards... or plug in."
+  ],
+  [
+   "The reciprocal, one over x, keeps the sign. Big and small swap.",
+   "A quarter becomes four. Four becomes a quarter. And the negative side is the mirror.",
+   "For numbers with the same sign, the reciprocal flips the order."
+  ],
+  [
+   "Not sure? Plug in. One number from each allowed range.",
+   "A root in the choices? Pick a number with a clean root.",
+   "And change only the unknown. If you change the numbers in the question, you can change the answer."
+  ],
+  [
+   "Read the question word. Necessarily, or could?",
+   "To find a counter-example, push the values to the edges of their ranges.",
+   "A picture of the line? Write the range under each letter. It's not drawn to scale, so trust the order, not the distances."
+  ],
+  [
+   "And last, distance and midpoint.",
+   "The midpoint is the average. A third of the way? Take a third of the distance, and walk it from the start."
+  ],
+  [
+   "So, before you practice, always ask yourself:",
+   "The common traps: ignoring an operation on negative numbers, forgetting that a positive x can be a fraction, and trusting the distances in a picture.",
+   "Well... you know all of this. Go practice."
+  ]
+ ]
+}

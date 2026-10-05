@@ -1,0 +1,64 @@
+{
+ "videoId": "r26-t19-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "So, a quick summary before you practice on your own.",
+   "Everything we learned about new operations... in about three minutes."
+  ],
+  [
+   "A new operation is just a definition. So read it first, and then follow the whole recipe.",
+   "Whatever sits before the symbol goes into a. Whatever sits after it goes into b.",
+   "And don't assume it behaves like plus. If you swap the inputs, you can get a different answer.",
+   "So circle which number goes into which slot."
+  ],
+  [
+   "Whatever goes in, goes in brackets. Every time.",
+   "Minus four, in brackets, squared, is sixteen. Without brackets, you'd get minus sixteen.",
+   "An expression goes in the same way. The whole thing, in brackets... and then you open them."
+  ],
+  [
+   "Inside a longer exercise? First turn every operation into a plain number. Then do the rest.",
+   "An operation inside an operation? You go inside out.",
+   "The result of the inside becomes the input of the outside. And don't stop halfway... the halfway number is waiting for you in the choices."
+  ],
+  [
+   "Now, here the rule works on three t. Not on t.",
+   "So first match the whole input. Three t is eighteen, so t is six. Then the rule gives thirteen.",
+   "If you put eighteen straight into t, you're really calculating F of fifty-four."
+  ],
+  [
+   "No definition at all? Put the given input into each choice. The one that doesn't give the result is out.",
+   "Found it? Mark it, and move on.",
+   "An unknown input? Write the definition... and it's just an ordinary equation.",
+   "Or work back from the answers. Put each choice into the rule."
+  ],
+  [
+   "Only a property? Put each rule on trial with a test value. Not zero or one.",
+   "A step property? Test two neighbors.",
+   "Two families undo themselves: c minus x, and c over x. Squares and doubling never do.",
+   "An inverse operation? Undo the steps in reverse order, and then check with one number."
+  ],
+  [
+   "Two rules? Check the input first. Is it odd, or even?",
+   "And check again at every step. The output of one step is the next input, and it can switch.",
+   "The result is given? Try every rule. But keep an answer only if it fits the rule you used."
+  ],
+  [
+   "The operation inside its own definition? Go down to the start value. Then climb back up with real numbers.",
+   "The operation on both sides? Treat it as the unknown, and isolate it.",
+   "And a definition in words? Write two or three examples first."
+  ],
+  [
+   "To say no, you need one example. To say yes, you need algebra.",
+   "Zero, one, and equal values can make a false rule look true. Two choices left? Try a second number.",
+   "And well... a must-be-true question can eat your time. Skip it, and come back at the end.",
+   "One shortcut from the advanced questions: a number minus its opposite. The even powers cancel."
+  ],
+  [
+   "So, before every question, ask yourself:",
+   "The traps: minus four squared without brackets, stopping halfway in a nested operation, and putting the number straight into t.",
+   "Read the definition, and follow it faithfully. Good luck."
+  ]
+ ]
+}

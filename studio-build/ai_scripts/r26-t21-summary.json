@@ -1,0 +1,57 @@
+{
+ "videoId": "r26-t21-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, before you practice, here's a quick summary of trial, limits and patterns.",
+   "Everything important, one idea at a time."
+  ],
+  [
+   "So, trial and error comes in three types.",
+   "First, general problems. Nothing tells you what to try first... so you just try.",
+   "Then minimum and maximum. Here a little understanding tells you which way to push.",
+   "And patterns. You write it out, or you plug in a number."
+  ],
+  [
+   "Draw the story, and follow it. Can it go two ways? Then split it into two routes.",
+   "And often the fastest try is to test the answer choices, one by one.",
+   "Now, keep your tries in order. No fives, one five, two fives, and so on. That way you know your list is complete.",
+   "And every try has to pass every condition. Including the question itself."
+  ],
+  [
+   "Two values that swap? Start from the minimum. Each swap is a constant step... here it's plus seven.",
+   "Now, thirty is inside the range. But it gets skipped. So being inside the range is not enough.",
+   "Here's how to test it: by remainder. Every possible total leaves the same remainder."
+  ],
+  [
+   "Okay, three rules here. Max of one: give the others the least. Min of the largest: share as equally as you can. And min of one: give the others the most.",
+   "Then you have two jobs. Show that nothing better fits, and build one real example that reaches it."
+  ],
+  [
+   "Everyone gets a different positive amount? Then the cheapest list is one, two, three, up to k.",
+   "Say there are fifty cards. Nine people need at least forty-five, that's fine. Ten people need fifty-five... too many.",
+   "And if everyone has a minimum? Fill everyone up to the minimum first. Then count what's spare."
+  ],
+  [
+   "Now, when they ask you to be sure... imagine the worst luck. Then add one.",
+   "Four pens of one color. Well, the worst luck is three of each color. That's nine pens, and still nothing. So the tenth one must do it.",
+   "It's really a maximum question in disguise. How long can the bad luck last?"
+  ],
+  [
+   "A rule that repeats round after round? Write the items one by one. Halve, then subtract... not the other way round.",
+   "A formula with n in the choices? Plug in three, and test every choice. Because n equals one often leaves two choices standing.",
+   "And check the edges. Does the first step count? What about the last one? Ten posts in a row have only nine gaps."
+  ],
+  [
+   "A repeating cycle? Divide by the length of the cycle, and look at the remainder.",
+   "Days repeat every seven. So Friday plus forty days... forty is five sevens plus five, so it's Wednesday. Last digits of powers repeat too. Write the first few, and find the cycle.",
+   "And if the remainder is zero? Then it's the last one in the cycle.",
+   "Two things meeting again? That's a common multiple. Jump along the bigger number, fourteen, twenty-eight, forty-two, fifty-six. Fifty-six is the first one that divides by eight."
+  ],
+  [
+   "So, before you start, always ask yourself these questions.",
+   "And watch the traps. Inside the range is not enough. n equals one alone is not enough. And \"at least\" is a floor... it's not the answer for a maximum.",
+   "Okay, now it's your turn. Good luck."
+  ]
+ ]
+}

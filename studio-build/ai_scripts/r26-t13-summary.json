@@ -1,0 +1,56 @@
+{
+ "videoId": "r26-t13-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "So, before you practice, here's a quick summary of absolute value.",
+   "Everything important, in a few minutes."
+  ],
+  [
+   "Absolute value is the distance from zero. So it's zero, or positive. Never negative.",
+   "With a plain number, the minus just drops off.",
+   "But a letter hides its sign. So first ask, is it positive or negative?",
+   "And if there's an expression inside the bars? Calculate the whole inside first."
+  ],
+  [
+   "A product, or a fraction? The bars can go on each part.",
+   "A sum is different. Same signs, the sizes add. Opposite signs, they cancel, so it's smaller.",
+   "And you can read it backwards. If the sizes cancelled, the signs were opposite.",
+   "Now, a square and the bars both remove the sign. The square root of x squared is the absolute value of x. Not x."
+  ],
+  [
+   "If you compare a number with its absolute value, you know its sign.",
+   "And don't forget the zero. That's the favorite trap.",
+   "A positive product means same signs. A negative product, opposite signs. And x over its absolute value is one, or minus one."
+  ],
+  [
+   "Bars equal a number? Then you have two cases. Plus, and minus.",
+   "So x is eight, or negative twelve. Keep both.",
+   "A letter on the right side? Well, the right side can't be negative. So check each answer in the original equation.",
+   "Bars on both sides? Both sides are zero or positive, so you're allowed to square them."
+  ],
+  [
+   "Bars on the small side... the answer is trapped in the middle. Between.",
+   "Bars on the big side, you get two ranges. Outside."
+  ],
+  [
+   "Now, look at the right side before you do any algebra.",
+   "The bars less than a negative number? Never. No solution.",
+   "The bars bigger than a negative number? Always. So every x works.",
+   "And the bars at most zero... the inside must be zero. One solution."
+  ],
+  [
+   "The absolute value of x minus a is the distance between x and a.",
+   "But careful with a plus inside. The absolute value of x plus six is the distance from negative six."
+  ],
+  [
+   "Asked what an expression equals? Plug in a number that fits the conditions.",
+   "Avoid the special numbers. Eliminate three choices. And if two survive? Plug in again."
+  ],
+  [
+   "So, before each question, ask yourself:",
+   "The common traps are forgetting the zero, losing the second case, and keeping a fake answer.",
+   "Okay, that's it. Now go practice."
+  ]
+ ]
+}

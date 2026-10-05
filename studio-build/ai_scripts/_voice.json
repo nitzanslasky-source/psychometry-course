@@ -1,2 +1,7 @@
-{"voice_id": "ytnrV8H54RUw5J2TmNG0", "model_id": "eleven_multilingual_v2", "stability": 0.7, "similarity_boost": 0.8,
- "note": "Professional clone 'Nitzan PVC' (trained on ~3h of the teacher's real teaching takes). Stability: teacher to confirm (A=0.55 / B=0.7 test 2026-10-04)."}
+{
+ "voice_id": "ytnrV8H54RUw5J2TmNG0",
+ "model_id": "eleven_multilingual_v2",
+ "stability": 0.7,
+ "similarity_boost": 0.8,
+ "note": "Professional clone 'Nitzan PVC', eleven_multilingual_v2 — teacher picked test B (stability 0.7) on 2026-10-04: 'it sounds correct'."
+}

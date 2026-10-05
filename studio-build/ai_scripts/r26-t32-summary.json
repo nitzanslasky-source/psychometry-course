@@ -1,0 +1,57 @@
+{
+ "videoId": "r26-t32-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, a quick summary before the practice.",
+   "Everything important about quadrilaterals... in about three minutes."
+  ],
+  [
+   "Every quadrilateral, even one that bends inward, has angles that add up to three hundred and sixty.",
+   "Now, a square is a rectangle and a rhombus. A rectangle and a rhombus are both parallelograms. And a rhombus is also a kite, also called a deltoid.",
+   "So going down the tree, a shape only gains properties. But going up... careful. A rectangle is not necessarily a square."
+  ],
+  [
+   "A square: every diagonal property, yes.",
+   "A rectangle: the diagonals are equal, and they bisect each other. A parallelogram: they only bisect each other.",
+   "A rhombus: they're perpendicular, and they bisect the angles. And a kite: the main diagonal is its line of symmetry."
+  ],
+  [
+   "In a parallelogram, opposite angles are equal, and two neighbors add up to a hundred and eighty.",
+   "In a trapezoid, the two angles on the same leg add up to a hundred and eighty. And in an isosceles trapezoid, the base angles are equal.",
+   "And an angle bisector in a parallelogram cuts off an isosceles triangle."
+  ],
+  [
+   "Square: the side squared, or the diagonal squared, over two. So a diagonal of eight? Sixty-four over two... thirty-two.",
+   "Parallelogram: base times height.",
+   "Rhombus and kite: the diagonals multiplied, over two. So diagonals sixteen and five give forty.",
+   "Trapezoid: the sum of the bases, times the height, over two."
+  ],
+  [
+   "Now, the height is perpendicular to the base. The sloping side is not the height.",
+   "With a thirty-degree angle, the height is half the sloping side. So sides nine and eight: the height is four, and the area is thirty-six.",
+   "With forty-five, it's the side over root two. With sixty, half the side, times root three. And an angle of a hundred and fifty? Look at the thirty next to it."
+  ],
+  [
+   "A trapezoid? Drop the heights. You get a rectangle in the middle, and right triangles at the ends.",
+   "Then look for Pythagoras, a triple, or a special triangle.",
+   "Say the bases are six and eighteen, and a sloping leg is fifteen. The piece at the end is twelve, so the height is nine. And the area is twenty-four times nine, over two... a hundred and eight."
+  ],
+  [
+   "Every length times k? Then the area is times k squared.",
+   "So if the diagonal of a square grows by twenty percent, the area grows times one point four four. That's up forty-four percent.",
+   "But if only the base grows, and the height stays the same, then the area grows by the same factor as the base."
+  ],
+  [
+   "In a question, the name of the shape gives you its properties. So write them on the figure.",
+   "Then look for a useful triangle. Like a silver triangle in a square, or an equilateral triangle in a rhombus with a sixty.",
+   "And the diagonals of a parallelogram split it into four triangles of equal area.",
+   "Now, if there are several ways to the answer, learn them all. On the exam, just take the first one you see."
+  ],
+  [
+   "Okay, before you practice, ask yourself these questions.",
+   "And the traps: a sloping side used as the height, forgetting to divide by two in the diagonal formula, and giving a rectangle a property of a square.",
+   "Good luck."
+  ]
+ ]
+}

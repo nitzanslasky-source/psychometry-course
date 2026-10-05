@@ -1,0 +1,51 @@
+{
+ "videoId": "r26-t06-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, before you practice, a quick summary of solving one equation.",
+   "The moves, and the traps."
+  ],
+  [
+   "The golden rule: whatever you do to one side, you do to the other.",
+   "Get x alone. Minus eight on both sides, then divide both sides by three.",
+   "Then check your answer in the original equation."
+  ],
+  [
+   "The number before a bracket multiplies everything inside.",
+   "A number under a fraction? Multiply every term by the common denominator.",
+   "Now, the three divides the whole top. So x plus five is twelve... not x plus fifteen."
+  ],
+  [
+   "A minus before a fraction? Put the numerator in brackets first.",
+   "The minus hits the whole numerator. And minus times minus is plus."
+  ],
+  [
+   "Sometimes x cancels out. So look at what's left.",
+   "Always false? No x works... no solution.",
+   "Always true? Every x works... infinitely many solutions."
+  ],
+  [
+   "x in the denominator? Write the restriction first.",
+   "The denominator can never be zero.",
+   "If the algebra gives a forbidden number, throw it out. And if nothing is left... no solution."
+  ],
+  [
+   "One fraction equals one fraction? Cross-multiply.",
+   "But a plus or a minus outside the fractions? Use a common denominator instead."
+  ],
+  [
+   "Never divide by something that could be zero.",
+   "A product is zero when one of the factors is zero. So keep both solutions."
+  ],
+  [
+   "The choices are numbers? Well, you can test them.",
+   "Start with the easiest one. And skip any forbidden value... it's out without any work."
+  ],
+  [
+   "Okay, before you start, always ask yourself these questions.",
+   "The common traps: a lost minus, a forbidden answer, and dividing by x.",
+   "Now it's your turn. Good luck."
+  ]
+ ]
+}

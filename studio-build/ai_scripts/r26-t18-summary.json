@@ -1,0 +1,60 @@
+{
+ "videoId": "r26-t18-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "So, before you practice, let's go over all of letter puzzles in a few minutes.",
+   "Every rule, every trap. Short, and quick."
+  ],
+  [
+   "First, what do the letters mean?",
+   "A bar on top means these are the digits of ONE number. A B is not A times B.",
+   "The same letter is always the same digit. Different letters? Only if the question says so.",
+   "And the leftmost digit is never zero."
+  ],
+  [
+   "Now, the technique. Four steps, every time.",
+   "Write it vertically. Check the units digit. Check the leftmost digit, and the size. And then plug in."
+  ],
+  [
+   "The ones column is special. Nothing carries into it.",
+   "But in any other column, there may be a carry. Then Y can be nine. Two X nine, plus Y four... Y is nine.",
+   "Two numbers carry zero or one. Three or four numbers can carry more. Seven plus seven plus nine is twenty-three... so you carry two."
+  ],
+  [
+   "Now, the leftmost digit.",
+   "You add TWO numbers and get more digits? Then the leading digit is one.",
+   "But that's only for two numbers. Three numbers can start with two.",
+   "And estimate the size. It throws out choices fast."
+  ],
+  [
+   "The special digits are zero, one, five and six.",
+   "Multiply one of them by itself, and the units digit stays. No other digit does that.",
+   "Five times an even number ends in zero, and times an odd number it ends in five. Six times an even number keeps its units digit. Six times twelve, seventy-two."
+  ],
+  [
+   "Every letter question can be solved by plugging in.",
+   "Two choices survive? Try a third number.",
+   "And flip a subtraction into an addition, and a division into a multiplication. It's easier to see."
+  ],
+  [
+   "The algebraic form gives you facts that come back again and again.",
+   "A number minus its reversal is divisible by nine. With three digits, it's divisible by ninety-nine... and the middle digit is nine.",
+   "Triple digits are divisible by three and by thirty-seven. And B B B B over B B is always one hundred one."
+  ],
+  [
+   "Now, products and powers.",
+   "Two-digit times two-digit gives four digits... or three.",
+   "The units digits of powers repeat in a cycle. So find where you land in the cycle."
+  ],
+  [
+   "Largest or smallest, with a given digit sum.",
+   "For the largest, big digits on the left. For the smallest, one first, then zeros, and the big digits on the right."
+  ],
+  [
+   "So, before you practice, always ask yourself:",
+   "The common traps: forgetting the carry, a leading zero, and using the leading-digit-one rule with more than two numbers.",
+   "And a matching last digit is not a full proof. Check the size too. Okay... go practice."
+  ]
+ ]
+}

@@ -1,0 +1,49 @@
+{
+ "videoId": "r26-t33-summary-2",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, advanced circles. A quick summary before you practice.",
+   "The tools for the hardest circle questions, one at a time."
+  ],
+  [
+   "A shaded region? Don't calculate it directly. Build a scheme: which shape, minus which shape.",
+   "Say a square with an area of sixty-four, minus a quarter circle of sixteen pi. So the shaded part is sixty-four minus sixteen pi.",
+   "Overlapping circles? Split the region into pieces you know. Or add both, and take away the overlap."
+  ],
+  [
+   "The region between a chord and its arc... that's the sector, minus the triangle.",
+   "Radius four, angle sixty: the sector is eight pi over three. And the triangle is equilateral, so it's four root three.",
+   "Two equal circles, each through the other's center: you get two equilateral triangles, a hundred and twenty degrees, and two segments."
+  ],
+  [
+   "Three nested objects to know by heart. A square in a circle in a square, twice. Circle, square, circle, twice. And equilateral triangles, four times.",
+   "Anything else inside a circle? Write every length with r.",
+   "And careful. A length factor is not an area factor. Root two for lengths is two for areas."
+  ],
+  [
+   "Radii and tangents make right triangles all the time.",
+   "A leg that's half of the hypotenuse? That's the thirty, sixty, ninety triangle. Two equal legs? Forty-five, forty-five, ninety.",
+   "And two radii with a sixty-degree angle? An equilateral triangle."
+  ],
+  [
+   "A line touches two touching circles. So draw the radii to the line, join the centers, and cut off a right triangle.",
+   "With radii eighteen and two, that's two root thirty-six... twelve.",
+   "A chord of the big circle that touches the small one? The ring is pi times half the chord, squared."
+  ],
+  [
+   "Two arcs together, two sectors together... often you can't find each one. And you don't need to.",
+   "Four alpha and four beta make a full turn, so alpha plus beta is ninety. And that's all we need."
+  ],
+  [
+   "Letters in the question? Choose easy numbers, solve, and test the choices.",
+   "Estimate sizes to cross out choices. An area can't be negative. And a circle is smaller than the square around it.",
+   "And a ratio of two lengths can't have r in it."
+  ],
+  [
+   "Okay, before each question, ask yourself these.",
+   "And the common traps: treating a triangle as a right triangle when it isn't, taking the wrong fraction of the circle, and using a length factor for an area.",
+   "You know all of this. Now go practice."
+  ]
+ ]
+}

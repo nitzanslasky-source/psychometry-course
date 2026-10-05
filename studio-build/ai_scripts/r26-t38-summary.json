@@ -1,0 +1,54 @@
+{
+ "videoId": "r26-t38-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, a quick summary before you practice.",
+   "The big ideas of geometric understanding... with almost no calculation."
+  ],
+  [
+   "The circle is the most efficient shape. Think of the country rule: the most land, the least border.",
+   "So read what's fixed. The perimeter, or the area.",
+   "With rectangles, the closer to a square, the more area. And with regular polygons, the more sides, the more like a circle."
+  ],
+  [
+   "Move the vertex straight away from the segment, and the angle closes. Bring it closer, and it opens toward a hundred and eighty.",
+   "Now keep the vertex, and stretch the segment. The old angle sits inside the new one. So it's bigger.",
+   "And the farther the vertex is from an arc, the smaller the angle."
+  ],
+  [
+   "An angle lying on a diameter. With the vertex on the circle, it's exactly ninety.",
+   "Inside the circle, the vertex is closer. So the angle opens... more than ninety.",
+   "Outside, it's farther. So the angle closes, less than ninety."
+  ],
+  [
+   "Two rods that don't change, and the angle between them opens. Well, the third side always gets longer.",
+   "But the area is different. It grows only up to ninety degrees. At ninety, it's the greatest.",
+   "And here's the trap. Forty and a hundred and forty degrees give the same height... so the same area."
+  ],
+  [
+   "The anchor you'll use most is the right angle. So compare with Pythagoras.",
+   "The longest side is longer than in the right triangle? Then it's obtuse. Shorter? Acute.",
+   "And always use the longest side as c."
+  ],
+  [
+   "Read which one they're asking, before you look at the choices.",
+   "One allowed case where a claim fails, and \"must be true\" is out."
+  ],
+  [
+   "The figure isn't necessarily drawn to scale. So trust the givens, not the picture.",
+   "Exaggerate. Push the free point to the end, then put it in the middle.",
+   "\"It cannot be determined\"? Only if you can draw two figures that keep every given, and give two different answers.",
+   "In geometry, it's almost never the answer. So if you can't build the two figures, find the reason the answer is fixed."
+  ],
+  [
+   "The apex slides along a line parallel to the base. The height stays the same. So the area stays the same.",
+   "But the perimeter changes. And you'll see this in a trapezoid too."
+  ],
+  [
+   "Okay, before you practice, ask yourself these questions.",
+   "The traps: trusting the drawing, and thinking a wider angle always means a bigger area.",
+   "Good luck."
+  ]
+ ]
+}

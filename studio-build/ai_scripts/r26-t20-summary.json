@@ -1,0 +1,57 @@
+{
+ "videoId": "r26-t20-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "So, a quick summary before you practice on your own.",
+   "Everything from algebraic understanding... in about three minutes."
+  ],
+  [
+   "Now, there's no fixed recipe here. But three tools open almost every question.",
+   "Numbers first, because they're fast and safe. Then the answers. And algebra when the numbers don't decide."
+  ],
+  [
+   "Must: one case that fails, and it's out. Could: one example is enough.",
+   "Write the word down before you touch the choices. Under pressure, the directions flip."
+  ],
+  [
+   "Read the conditions first. And test only numbers they allow.",
+   "Then take one number from each region. For x positive, that's two, and one half.",
+   "Two choices left? Don't guess. Try a number from another region."
+  ],
+  [
+   "Between zero and one, squaring makes a number smaller, and the root makes it bigger.",
+   "With negatives, the farther from zero, the smaller.",
+   "Which one is the largest for every x in a range? Well, one easy number from the range decides."
+  ],
+  [
+   "Integers leave gaps. So bigger means bigger by at least one.",
+   "Use the gaps to find the biggest, or the smallest, possible value.",
+   "A cannot question with a hidden maximum? Test the most extreme choices first."
+  ],
+  [
+   "One variable is multiplied... so what happens to the other?",
+   "Start from one and one, then put in the new value. Four cubed is sixty-four. And its square root is eight.",
+   "Or use the rule. x changes by the factor to the power of three halves."
+  ],
+  [
+   "Sometimes a structure from another topic is the key.",
+   "A cycle of ratios cancels to one. So the three can't all be bigger than one.",
+   "But check the givens before you use it. Positive values, nothing equal to zero."
+  ],
+  [
+   "Both ends in? Plus one. Both ends out? Minus one. One end? Just subtract.",
+   "Only odd, or only even numbers? Find the first and the last that count, and then jump by two.",
+   "Not sure? Count a small case on your fingers."
+  ],
+  [
+   "Eight numbers, but only seven remainders when you divide by seven. So two of them share a remainder... and their difference is divisible by seven.",
+   "To be sure? Imagine the worst luck. One in every box. And then one more."
+  ],
+  [
+   "So, before every question, ask yourself:",
+   "The traps: numbers between zero and one, negative numbers, and the forgotten plus one.",
+   "Then practice on your own... and you've finished algebra. Good luck."
+  ]
+ ]
+}

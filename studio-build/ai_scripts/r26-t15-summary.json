@@ -1,0 +1,53 @@
+{
+ "videoId": "r26-t15-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "So, before you practice, here's a quick review of the whole topic.",
+   "The signs, the remainder rules, the tools... and the traps."
+  ],
+  [
+   "You want to know when a number divides... without actually dividing.",
+   "Now, eleven. You alternate plus and minus, digit by digit."
+  ],
+  [
+   "A bigger divisor? Split it into parts with no common factor.",
+   "Four and six share a two. So that check proves nothing."
+  ],
+  [
+   "A fraction of a fraction? Build it from the inside.",
+   "Multiply the denominators. So the number is divisible by eighteen.",
+   "Because, well... there's no such thing as a third of a zebra."
+  ],
+  [
+   "The remainder is always smaller than the divisor.",
+   "So dividing by nine? The remainder is at most eight.",
+   "Four thousand eight hundred twenty-six. The digit sum is twenty, so it leaves two when you divide by nine."
+  ],
+  [
+   "Only the leftovers matter.",
+   "Add, multiply, or subtract the remainders. If you get a negative? Add the divisor.",
+   "And if you take away the remainder, what's left divides exactly."
+  ],
+  [
+   "A new divisor? Check that it divides the old one.",
+   "Four divides twelve. So keep the remainder... and divide it again if it's too big.",
+   "But four doesn't divide ten. You get two answers, so you can't know."
+  ],
+  [
+   "How many multiples? Look at the first and the last.",
+   "And don't forget the plus one. Both ends count.",
+   "Now, the units digits of the powers of two repeat every four steps."
+  ],
+  [
+   "Numbers in a row hide everywhere.",
+   "But only IN A ROW. n times n plus two is not.",
+   "One value that fails knocks out a choice. But values that work prove nothing."
+  ],
+  [
+   "So, before each question, always ask yourself:",
+   "And the traps. Twenty-four is not four times six, and counting forgets the plus one.",
+   "Well... you know all of this. Go practice."
+  ]
+ ]
+}

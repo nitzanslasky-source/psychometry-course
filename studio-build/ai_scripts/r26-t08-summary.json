@@ -1,0 +1,44 @@
+{
+ "videoId": "r26-t08-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, before you practice, a quick summary of the exponent laws.",
+   "Everything you need... in two minutes."
+  ],
+  [
+   "Power of one: the number itself. Power of zero: one, for any number except zero.",
+   "Now, a negative exponent means flip. It does not make the number negative."
+  ],
+  [
+   "Same base. Multiply? Add the exponents. Divide? Subtract, top minus bottom. Power of a power? Multiply.",
+   "A plus sign has no law. So check for the same base, and a multiplication sign."
+  ],
+  [
+   "Different bases, same exponent? Put them under one exponent.",
+   "So four cubed times twenty-five cubed is a hundred cubed. But never over a plus or a minus."
+  ],
+  [
+   "Even power: the minus disappears. Odd power: the minus stays.",
+   "No brackets? The power comes first, then the minus.",
+   "So, odd keeps the sign. Even hides it."
+  ],
+  [
+   "a to the b is one in three cases. So check all three.",
+   "And one special pair: two and four. Among positive whole numbers, it's the only one."
+  ],
+  [
+   "A sum in the exponent splits into a product.",
+   "Copies of the same power? Count them, and write the count as a power of the base."
+  ],
+  [
+   "To compare, make the bases the same... or the exponents the same.",
+   "Now, between zero and one, a higher power is smaller."
+  ],
+  [
+   "Okay, before every question, ask yourself these questions.",
+   "The classic traps: adding exponents across a plus sign, and reading minus two to the fourth as sixteen.",
+   "Now go practice."
+  ]
+ ]
+}

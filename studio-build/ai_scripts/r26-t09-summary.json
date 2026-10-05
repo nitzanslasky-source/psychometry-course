@@ -1,0 +1,63 @@
+{
+ "videoId": "r26-t09-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Roots... a quick summary before you practice.",
+   "Everything important from this topic, one idea at a time."
+  ],
+  [
+   "A root is never negative. So root one hundred sixty-nine is just thirteen.",
+   "But the equation x squared equals one hundred sixty-nine has two solutions: thirteen, and negative thirteen.",
+   "Now, root of x squared is the absolute value of x. If x is negative, it's minus x.",
+   "And the number inside a square root can't be negative."
+  ],
+  [
+   "Pull out the largest square you can find.",
+   "Then look at what's left inside. Still divisible by four, nine or twenty-five? Keep going.",
+   "Roots add like letters, but only the same root. So simplify first, then add."
+  ],
+  [
+   "Multiplying or dividing? Put everything under one root.",
+   "A number over a root: divide by the number under the root, and keep the root. Twenty-two divided by eleven is two. So, two root eleven.",
+   "To bring a number inside a square root, square it. For a cube root, cube it."
+  ],
+  [
+   "A root is a fractional power. The power inside goes on top. The root index goes on the bottom.",
+   "Take the root first. That way the numbers stay small.",
+   "A root of a root? Multiply the indexes. So a square root of a square root is a fourth root.",
+   "And odd roots of negative numbers exist. Even roots of negative numbers don't."
+  ],
+  [
+   "Now, the big trap. A root does not split over a plus or a minus.",
+   "Root of one hundred is ten. Six plus eight is fourteen. Not equal.",
+   "And when you square a sum of roots, don't forget the middle term."
+  ],
+  [
+   "Positive numbers? Square both. Bigger square, bigger number. It's the same as bringing the numbers inside the root.",
+   "To estimate one root, put it between two perfect squares. Root forty is between six and seven.",
+   "A square root and a cube root? Raise both to the sixth power. That clears both roots."
+  ],
+  [
+   "Between zero and one, squaring makes a number smaller. The root makes it bigger.",
+   "Not sure? Plug in one ninth. Its square is one eighty-first. Its root is one third.",
+   "And above one, it's the other way around."
+  ],
+  [
+   "The partner removes roots. It's the difference of squares.",
+   "A root difference on the bottom? Multiply the top and the bottom by the partner.",
+   "The bottom becomes six minus five... one. No roots left."
+  ],
+  [
+   "Square both sides and solve. Then check every answer in the original equation.",
+   "Squaring can add a fake solution. Negative three fails, because a root is never negative.",
+   "x on both sides? Don't divide by x. Move everything to one side, and factor.",
+   "Or, plug in the four choices. A fake solution fails on its own."
+  ],
+  [
+   "Okay, before each question, ask yourself these questions.",
+   "The common traps: splitting a root over a plus, forgetting the middle term, and keeping a fake solution.",
+   "You know all of this. Now practice."
+  ]
+ ]
+}

@@ -1,0 +1,61 @@
+{
+ "videoId": "r26-t37-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, a quick summary before you practice.",
+   "Everything important about the coordinate plane."
+  ],
+  [
+   "x first, y second. Always. So seven, one and one, seven are different points.",
+   "The four quadrants go counterclockwise, starting from the top right. And a point on an axis is in no quadrant."
+  ],
+  [
+   "A reflection is a mirror. Across the x-axis, only y changes its sign. Across the y-axis, only x.",
+   "And through the origin, both signs change. So three, five goes to minus three, minus five."
+  ],
+  [
+   "Same x? Then the segment is vertical, so use the y values. Same y? It's horizontal, so use the x values.",
+   "Now, on the same side of the axis, subtract. On opposite sides, add the two parts.",
+   "Five minus three is the classic mistake."
+  ],
+  [
+   "A slanted segment? Draw lines parallel to the axes, and close a right triangle.",
+   "Across eight, up fifteen. That's a triple... seventeen. No distance formula needed. It's just Pythagoras.",
+   "And if the answers are roots, don't take the root. Look for across squared plus up squared, under the root."
+  ],
+  [
+   "The area of a triangle on the plane. Is one side horizontal or vertical? Then use it as the base. The height is a straight drop.",
+   "If there's no such side, box it in, and subtract the three corner right triangles. So the box is twenty-four, the corners are fourteen... and the triangle is ten."
+  ],
+  [
+   "With a circle, find the radius first. Then the area, the circumference, whatever they ask.",
+   "Center at the origin? Draw the radius to the point, close a right triangle, and use Pythagoras.",
+   "Tangent to both axes: the distances to the axes, without the signs, are both equal to r.",
+   "And a leg that's half the hypotenuse? That's a thirty, sixty, ninety triangle."
+  ],
+  [
+   "A straight line has a constant slope. So cut it into equal pieces, and every step is the same.",
+   "The slope is up divided by across. And parallel lines have the same step.",
+   "The midpoint: the average of the x values, and the average of the y values.",
+   "Or, just repeat the move from the midpoint."
+  ],
+  [
+   "A line through the origin: every point is one point with both values multiplied by the same number.",
+   "But this works only for a line through the origin. On other lines, compare the steps, not the points.",
+   "Letters in the question? Plug in easy numbers, like a equals three and b equals five."
+  ],
+  [
+   "A whole line that never cuts an axis is parallel to it. And a line that's parallel to neither axis cuts each axis once.",
+   "Now, some questions give a line as an equation. y equals m x plus b.",
+   "Where does it cut the axes? Put y equals zero, and then x equals zero.",
+   "And then it's just ordinary geometry."
+  ],
+  [
+   "Okay, before you practice, ask yourself these questions.",
+   "The traps: five minus three instead of three plus five. And adding the legs instead of using Pythagoras.",
+   "A center at eight, zero is not a radius of eight. And across the x-axis, it's the y that changes.",
+   "Good luck."
+  ]
+ ]
+}

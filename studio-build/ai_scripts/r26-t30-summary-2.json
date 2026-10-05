@@ -1,0 +1,44 @@
+{
+ "videoId": "r26-t30-summary-2",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, before the advanced practice, here's a quick summary of the harder questions.",
+   "Three things make them harder. A crowded figure, letters, and a missing line."
+  ],
+  [
+   "Several pairs of lines? Take one pair and its transversal. Ignore the rest.",
+   "Move the angle you know to the place you need. Then go to the next pair.",
+   "Then build the equation. Seventy-six plus fifty-eight plus x is a hundred eighty. So x is forty-six.",
+   "And a shortcut: six plus eight is fourteen, so x has to end in six. Only forty-six does."
+  ],
+  [
+   "Lost? Look for an anchor. Angles that make a straight line, or a full circle.",
+   "Every angle gives you its neighbor. A hundred eighty minus it."
+  ],
+  [
+   "Letters instead of numbers? Put numbers back. Round numbers that look like the figure. Looks obtuse? Plug in a hundred thirty.",
+   "Then plug the same numbers into the choices. Theta came out thirty, so cross out every choice that doesn't give thirty.",
+   "And check that the four choices come out different. If two of them tie, plug in again."
+  ],
+  [
+   "Angles that overlap count a piece twice.",
+   "p, q and r cover the full turn, and theta one more time. So theta is their sum minus three hundred sixty."
+  ],
+  [
+   "No straight transversal? Add an auxiliary line. Through the bend, parallel to both lines.",
+   "It splits x into two pieces. And each piece makes a Z with a given angle. Forty-one plus sixty-nine, so x is a hundred ten.",
+   "Well, the hard part is seeing that you need a line at all."
+  ],
+  [
+   "Now, the shortcut. Look where each angle's tip points. Angles pointing left equal angles pointing right.",
+   "Two bends? Same rule. Left side equals right side. Fifty plus seventy equals x plus forty-five, so x is seventy-five.",
+   "Not sure? A parallel line through each bend always works."
+  ],
+  [
+   "So, before you start, always ask yourself these questions.",
+   "And the traps: adding only one side of the zig-zag, and forgetting that overlapping angles count a piece twice.",
+   "Okay, now it's your turn. Good luck."
+  ]
+ ]
+}

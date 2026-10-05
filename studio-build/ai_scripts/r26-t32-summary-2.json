@@ -1,0 +1,48 @@
+{
+ "videoId": "r26-t32-summary-2",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, a quick summary before the advanced practice.",
+   "The ideas from the last examples... in about three minutes."
+  ],
+  [
+   "\"Not necessarily true\" questions. Check every statement against the definitions.",
+   "Not sure? Sketch an extreme version of the shape, very wide and very low, and just look."
+  ],
+  [
+   "A diagonal splits a parallelogram, and that includes a rectangle, a rhombus, a square, into two equal halves.",
+   "Now, a triangle on the full base, with its tip on the opposite side, is half the shape. So the white parts are the other half.",
+   "And if it's on a third of the base? Then it's a third of a half... one sixth."
+  ],
+  [
+   "Two triangles with the same height? The area ratio is the base ratio.",
+   "Say a trapezoid with bases three and twelve is cut by a diagonal. The top triangle is seven, so the bottom one is four times as much, twenty-eight. Together, that's thirty-five."
+  ],
+  [
+   "Shaded area? Approach one: take a shape you know, and subtract the white. Like sixty minus twenty-four... thirty-six.",
+   "Approach two: break the shaded area into familiar pieces, by completions or by symmetry.",
+   "Now, with completions, pair only pieces that really complete each other. A guess by eye is not a method."
+  ],
+  [
+   "Angles with letters in the answers? Solve it, or plug in numbers and check every choice.",
+   "Congruent rectangles? Read the hidden ratio off the figure. Then one unknown, x, is enough.",
+   "And you can check from the answers. Plug one back into the figure, and test the number you were given."
+  ],
+  [
+   "When you cut a shape into pieces, the cut belongs to both pieces. So it counts twice.",
+   "A staircase has the perimeter of its rectangle. So nine wide and six tall gives thirty.",
+   "But a notch is different. Its two walls are extra, so add two times its depth."
+  ],
+  [
+   "A rectangle, and you're given the perimeter and the diagonal? Well, you don't need the sides.",
+   "The perimeter is twenty-eight, so a plus b is fourteen. The diagonal is ten, so a squared plus b squared is a hundred. Now, a hundred and ninety-six is a hundred plus two a b... so the area is forty-eight.",
+   "Or try a triple. Six, eight, ten. The perimeter is twenty-eight, so it fits."
+  ],
+  [
+   "Okay, before you practice, ask yourself these questions.",
+   "And the traps: pairing pieces by eye, taking \"same area\" to mean \"congruent\", and giving an area answer to a perimeter question.",
+   "Good luck."
+  ]
+ ]
+}

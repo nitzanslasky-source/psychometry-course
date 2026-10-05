@@ -1,0 +1,53 @@
+{
+ "videoId": "r26-t25-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, a quick summary before the practice.",
+   "Everything important about averages, in about three minutes."
+  ],
+  [
+   "Symmetric numbers? Then the average is the middle. No calculation.",
+   "And evenly spaced numbers are symmetric too. So it's the middle one, or first plus last, over two. Four, ten, sixteen, twenty-two, twenty-eight... the average is sixteen.",
+   "Also, if you add or remove a value equal to the average, nothing changes. And the average always sits between the smallest and the largest value."
+  ],
+  [
+   "Now, the most useful move is to turn it around. Sum equals number times average. Eight values, average seven... the sum is fifty-six.",
+   "You don't know the values? Well, you don't need them. Treat every value as the average.",
+   "A value joins or leaves? Change the sum, and change what you divide by."
+  ],
+  [
+   "The differences from the average always add up to zero. Above the average equals below it.",
+   "Seventy-seven, eighty-five, eighty-six, and one missing, with an average of eighty. That's minus three, plus five, plus six... plus eight too many above. So the missing one is eight below. Seventy-two.",
+   "Numbers near a round number? Work only with the differences. Around sixty, the differences add up to four, over four values is one... so the average is sixty-one."
+  ],
+  [
+   "One value changes? Share the change over all the values. Plus twelve over four values is plus three.",
+   "Every value changes the same way? Then the average changes the same way.",
+   "And both at once? Same order. Times two, then plus five. And with ages, an average of twenty-four now is twenty-seven in three years."
+  ],
+  [
+   "Okay, the largest value. Make the others as small as possible. Six positive integers, average eight, so the sum is forty-eight. Five ones? Only if they're allowed to be equal... then it's forty-three. Different integers? One, two, three, four, five, so it's thirty-three.",
+   "And how many were there before? Compare the new value to the new average. Then share that extra among the old values.",
+   "And check, is it before the new value joined, or after?"
+  ],
+  [
+   "On the exam it just says \"average\". So you have to notice the weights yourself.",
+   "Each value times its weight. Then divide by the sum of the weights... not by the number of values."
+  ],
+  [
+   "Now, the see-saw. The distances are the weights, flipped. Weights four to one, distances one to four.",
+   "Fifty and a hundred. That's a gap of fifty, so five parts of ten. One part from the heavy side... sixty.",
+   "Only two kinds of items? Start everyone at the low value. Then share the extra."
+  ],
+  [
+   "Combining groups? The size of each group is its weight. Reduce the ratio first.",
+   "And before you calculate... the average of forty and sixty is fifty only if the groups are equal. Otherwise, the answer is on the side of the bigger group."
+  ],
+  [
+   "So, before you practice, ask yourself these questions.",
+   "And the traps: taking the average of two group averages when the groups aren't equal, dividing by the wrong number, and counting before instead of after.",
+   "Good luck."
+  ]
+ ]
+}

@@ -1,0 +1,52 @@
+{
+ "videoId": "r26-t31-summary-2",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, a quick summary before the advanced practice.",
+   "The methods from the last examples... in about three minutes."
+  ],
+  [
+   "Letters in the answers? Plug in a comfortable number that fits the figure.",
+   "So if p is obtuse, try a hundred and twenty. Then find q: fifty. Now put a hundred and twenty into every answer, and keep only the one that gives fifty.",
+   "And look for an exterior angle. It cuts the angle-sum equation short."
+  ],
+  [
+   "What if there are no lengths at all? Well, order the angles. The longest side is opposite the largest angle.",
+   "And you don't always need the full order. Only the largest angle.",
+   "An obtuse angle is always the largest. So the side opposite it is the longest."
+  ],
+  [
+   "Now, can't calculate it exactly? Then trap it between a minimum and a maximum.",
+   "Say AB is eight. The two other sides together are more than eight, so the perimeter is more than sixteen.",
+   "And if it's obtuse at C, then AB is the longest side. The other two are each less than eight, so the perimeter is less than twenty-four.",
+   "Now, the answers are in order? If a bigger answer fit, then every answer between it and the minimum would fit too. So only the smallest one above the minimum can be right."
+  ],
+  [
+   "\"Not necessarily\" questions. Go through the answers, and do the quick ones first.",
+   "A line that's two of the three, median, altitude, bisector, is a symmetry line. So the triangle is isosceles.",
+   "But a median alone can lean to one side. Sketch it, and you'll see the two sides come out different.",
+   "Not sure? Sketch a counterexample."
+  ],
+  [
+   "Shaded area? The main way is a shape you know, minus the white.",
+   "But complete the data first. For example, in an equilateral triangle, the altitude is also a median.",
+   "Or, split the shaded part into triangles with a known base and height. And an altitude outside still counts."
+  ],
+  [
+   "Two triangles with the same height? Then the area ratio is the base ratio.",
+   "So if DC is four times BD, the areas are one to four. Forty-five is five parts of nine... so nine and thirty-six."
+  ],
+  [
+   "A difference of two perimeters? Shared sides and equal sides cancel out. You don't need their lengths.",
+   "Out of time? Estimate. Root two is about one point four, root three about one point seven. And a negative length? Eliminate it.",
+   "A ratio? Check which way it goes. a is smaller than b, so a over b is less than one.",
+   "And you can always work back from the answers."
+  ],
+  [
+   "Okay, before you practice, ask yourself these questions.",
+   "And the traps: a ratio upside down, a perimeter that's equal to the minimum, and mixing up \"could be\" with \"necessarily\".",
+   "Good luck."
+  ]
+ ]
+}

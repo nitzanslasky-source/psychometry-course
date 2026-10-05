@@ -1,0 +1,46 @@
+{
+ "videoId": "r26-t01-summary-fast",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, a quick summary of the fast-calculation toolkit.",
+   "Every trick finds an easier calculation, with exactly the same answer."
+  ],
+  [
+   "So, a sum stays the same when you move an amount from one part to the other.",
+   "And a difference stays the same when you add the same amount to both numbers.",
+   "Don't mix them up. That's the trap."
+  ],
+  [
+   "Split one factor into easy pieces.",
+   "Times eleven: that's times ten, plus one copy. Times nine: times ten, minus one copy."
+  ],
+  [
+   "Halve one factor, double the other. The product doesn't move.",
+   "So fourteen halves to seven. Forty-five doubles to ninety. Seven nineties... six thirty.",
+   "Now, divide first, and the numbers stay small."
+  ],
+  [
+   "Round to a hundred, then correct.",
+   "A hundred thirty-sixes is thirty-six hundred. That's two thirty-sixes too many... so, seventy-two.",
+   "Rounded up? The easy product is too big, so subtract. Rounded down? Add."
+  ],
+  [
+   "Look for pairs that make a round number: four and twenty-five, eight and one twenty-five, two and fifty, five and twenty.",
+   "Now, cancel only when the top and the bottom are products. A plus on top? No cancelling."
+  ],
+  [
+   "Evenly around a centre: the centre squared, minus the gap squared. But the gaps must be equal.",
+   "Front digit times the next number, then twenty-five on the end. And this is only for squares."
+  ],
+  [
+   "You may swap the two numbers. So pick the easier one.",
+   "Use exactly as much precision as the choices need. Only one choice left? Stop."
+  ],
+  [
+   "Okay, before you practice, ask yourself these questions.",
+   "The traps: shifting a sum the wrong way, cancelling across a plus, and using the centre trick with unequal gaps.",
+   "And if nothing looks easier... well, a clean written calculation is a great answer too."
+  ]
+ ]
+}

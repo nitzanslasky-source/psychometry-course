@@ -1,0 +1,56 @@
+{
+ "videoId": "ch52-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, let's sum up all the types of charts and tables. How to read each one, and its trap."
+  ],
+  [
+   "A table: cross a row and a column to find a value. It holds a lot of data, so focus only on what you need.",
+   "The trap: in percent questions, know who the whole is. That's what comes after \"of\". And remember, any problem type, averages, overlap, can hide inside."
+  ],
+  [
+   "Points on axes: each series has its marker in the key, and every point sits exactly at its value. Check the units.",
+   "The trap: thousands on the axis. So thirty means thirty thousand. And a zigzag, a Z, means that part of the axis isn't to scale."
+  ],
+  [
+   "A line graph: the values are only at the marked points. The line shows the trend, so steeper means a bigger change.",
+   "The trap: reading a value between two points. There's no twenty twelve and a half."
+  ],
+  [
+   "A bar chart: the height is the value. Bars can stand side by side, one inside another, stacked, or lie horizontally... just turn the page.",
+   "The trap: in stacked bars, a part is the gap. So commercial vehicles in twenty eleven are twenty-five, not eighty."
+  ],
+  [
+   "A continuous line: every point on it is a measurement. Compare the slopes with your eyes.",
+   "The trap: calculating everything. For the biggest relative increase, look for the sharpest slope first."
+  ],
+  [
+   "A range chart: the bottom of the bar is the minimum, the top is the maximum, and the bold line is the mean.",
+   "The trap: the mean isn't necessarily the middle. And for \"what can't it be\", check the extreme cases. Max minus min, and min minus max."
+  ],
+  [
+   "A regions chart: find the point from both axes, and read the number of the area it falls in.",
+   "The trap: the units. Ten is ten thousand. So always check against the example."
+  ],
+  [
+   "A circle chart: well, it's a coordinate system bent into a circle. The circles are the value lines, and the hours go round.",
+   "The trap: the dark area shows where most visitors are. Not all. So sometimes the answer is, it can't be known."
+  ],
+  [
+   "A cumulative graph: each point is the total so far. So one month is this point minus the previous one.",
+   "The trap: reading March's point, fifty, as March's income. March alone is fifty minus twenty, just thirty. Flat means zero that month. And the last point is the grand total."
+  ],
+  [
+   "A change graph: each point is the change from the previous period. Zero means no change.",
+   "The trap: the line. Down can be a rise, and flat can be a rise. So ignore it, and look only at the points."
+  ],
+  [
+   "And before every chart set, always do this.",
+   "Read the explanation, and check the example in the chart. Does it match what you understand?",
+   "Look at the titles, the units, thousands, percent, and every note.",
+   "The questions get harder as you go. The first one usually just pulls out a value.",
+   "And if the example still isn't clear after a slow second reading, skip the set and come back at the end. But a chart at the start of the section... don't skip it. Good luck."
+  ]
+ ]
+}

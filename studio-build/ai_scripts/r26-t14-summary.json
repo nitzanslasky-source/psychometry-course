@@ -1,0 +1,52 @@
+{
+ "videoId": "r26-t14-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "So, before you practice, here's a quick summary of primes and factors.",
+   "Everything important, in a few minutes."
+  ],
+  [
+   "A prime number divides only by one, and by itself.",
+   "One is not prime. Two is... and it's the only even prime.",
+   "Know them by heart. Two, three, five, seven, eleven... up to thirty-seven. And ninety-seven, the largest two-digit prime."
+  ],
+  [
+   "Now, all the other primes are odd. Odd plus odd is even. And odd minus odd is even too.",
+   "So an odd sum, or an odd difference, means one of the primes is two.",
+   "Thirty-nine as a sum of two primes? Two plus thirty-seven."
+  ],
+  [
+   "To test a number, divide it by the primes up to its square root. No further.",
+   "And watch out for the fakes. For three, add the digits. And never forget to try seven."
+  ],
+  [
+   "Break every number into primes. It's divisible by every combination of its prime factors.",
+   "To test a divisor, break it into primes too. And unpack bases like six, or ten squared, first.",
+   "Honestly, most questions are just this. Break a number apart, or build it... and look for the missing prime."
+  ],
+  [
+   "So, forty-eight and sixty. The GCD is twelve, and the LCM is two hundred forty.",
+   "The trap is just multiplying the two numbers. That's too big when they share a prime."
+  ],
+  [
+   "The number of divisors: add one to each exponent, and multiply.",
+   "Divisors come in pairs. Only a perfect square has one without a partner.",
+   "Exactly three divisors? That's a prime squared. Like four, or one hundred twenty-one."
+  ],
+  [
+   "In a perfect square, every exponent is even.",
+   "Twenty is two squared times five, so it needs one more five. k is five.",
+   "Now, a number breaks into primes in only one way. So break it, and then match the exponents."
+  ],
+  [
+   "A prime can't be split between two factors. One of them holds it.",
+   "And when the primes are letters, plug in the smallest primes. Then check every choice."
+  ],
+  [
+   "So, before each question, ask yourself:",
+   "The common traps: calling one a prime, forgetting two, and multiplying instead of taking the LCM.",
+   "Okay, that's it. Now go practice."
+  ]
+ ]
+}

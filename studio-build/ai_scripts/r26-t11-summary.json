@@ -1,0 +1,58 @@
+{
+ "videoId": "r26-t11-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "So, before you practice, let's go over the whole topic. About three minutes.",
+   "Every tool, every trap. Short, and quick."
+  ],
+  [
+   "Now, before you do any arithmetic... translate first.",
+   "A big power? Break the base into primes. Once the bases are equal, things start cancelling.",
+   "A root inside a root? Turn it into a fractional exponent.",
+   "And don't compute giant numbers just because you can."
+  ],
+  [
+   "Some questions hide a pattern you already know.",
+   "You know x plus y, and x times y? Then build x squared plus y squared directly. You don't need to find x and y.",
+   "a to the power of b equals b to the power of a... that only happens with two and four. And only for whole numbers.",
+   "Equal powers added together? Just count the copies."
+  ],
+  [
+   "Okay, a root inside a root: you multiply the indices.",
+   "Two times two... so it's a fourth root.",
+   "And if there's a factor in front of the inner root? Bring it inside first. Squared."
+  ],
+  [
+   "Now, say x has a strange power, and you want x alone.",
+   "Raise both sides to the reciprocal power. Minus a half, times minus two, is one.",
+   "Then check it. One twenty-fifth to the power of minus a half is twenty-five to the power of a half. That's five. So it works."
+  ],
+  [
+   "This one is the difference of squares, but with roots.",
+   "a minus b, over root a minus root b? Split the top, and cancel.",
+   "And a difference of roots at the bottom? Multiply the top and the bottom by the conjugate."
+  ],
+  [
+   "Now, an equation that's already a product equal to zero.",
+   "Each factor can be zero. So root x is zero, or root x is five.",
+   "And never divide by root x. If you do, you lose x equals zero."
+  ],
+  [
+   "So when is a power equal to one?",
+   "Base one. Base minus one, with an even exponent. Or exponent zero... with a base that isn't zero.",
+   "Now, an \"or\" claim is necessarily true if every allowed case makes one part true. To kill it, you just need one case where both parts are false."
+  ],
+  [
+   "Every question has two routes.",
+   "The laws, step by step. Or plug in numbers... or try the choices.",
+   "But before you trust one number, check that the choices give different values. If two of them tie, try another number.",
+   "And pick a number whose roots come out clean. Like eighty-one."
+  ],
+  [
+   "So, before you practice, always ask yourself:",
+   "And watch the traps. Root a plus root b is not the root of a plus b. Two and four, only for whole numbers. And never divide by root x.",
+   "Well... you know all of this. Go practice."
+  ]
+ ]
+}

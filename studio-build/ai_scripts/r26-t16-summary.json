@@ -1,0 +1,56 @@
+{
+ "videoId": "r26-t16-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "So, before you practice, here's a quick review of the whole topic.",
+   "Signs, consecutive numbers, even and odd... and the traps."
+  ],
+  [
+   "Multiplying and dividing follow the same rules.",
+   "Only the minuses matter. Every two of them cancel.",
+   "And a positive product doesn't mean both are positive."
+  ],
+  [
+   "Now, adding has its own rules.",
+   "Bigger minus smaller is positive. Even when both are negative."
+  ],
+  [
+   "Find the pieces that are surely positive.",
+   "Minus x means the opposite of x... it's not necessarily a negative number. And zero is neither positive nor negative."
+  ],
+  [
+   "Consecutive numbers... there are three ways in.",
+   "If you plug in, make sure the choices give different values.",
+   "Even or odd numbers in a row? The gap is two.",
+   "And \"greater than zero\" doesn't mean the list starts at one."
+  ],
+  [
+   "Okay, adding numbers in a row.",
+   "Four to twelve is nine numbers, not eight. You add one."
+  ],
+  [
+   "First of all, zero is even.",
+   "And odd divided by even is always a fraction."
+  ],
+  [
+   "Parity questions? Plug in. Two for even, one or three for odd.",
+   "One example that fails kills \"always\". But examples that work prove nothing."
+  ],
+  [
+   "These rules are proven. So you can trust them.",
+   "Watch for them hidden inside an expression.",
+   "x is odd? Then x squared minus one is two consecutive evens. So it's divisible by eight."
+  ],
+  [
+   "Anything else? Well, the smallest case is only a candidate.",
+   "Cross out, and then test a second case that avoids the factor.",
+   "m even, n odd. Three twos from m cubed, and one from n plus one. That's enough for sixteen."
+  ],
+  [
+   "So, before each question, always ask yourself:",
+   "And the traps. Zero is even, zero is divisible by everything, and minus x isn't always negative.",
+   "Well... you know all of this. Go practice."
+  ]
+ ]
+}

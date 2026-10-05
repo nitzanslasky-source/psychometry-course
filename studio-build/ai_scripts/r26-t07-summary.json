@@ -1,0 +1,52 @@
+{
+ "videoId": "r26-t07-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, before you practice, a quick summary of equations.",
+   "The rules, the shortcuts, and the traps... in three minutes."
+  ],
+  [
+   "Dividing by x? Only if x can't be zero.",
+   "Otherwise, move everything to one side, take out the common factor, and split the product."
+  ],
+  [
+   "Taking a root to solve? Then it's plus and minus.",
+   "Two equal squares: the numbers are equal, or opposite. So check both cases."
+  ],
+  [
+   "Everything to one side, zero on the other. Then two numbers: product c, sum b.",
+   "Each factor equals zero. Now, watch the sign: x minus three equals zero gives x equals three, not minus three.",
+   "You can get two solutions, one, like x minus seven, all squared... or none, like x squared equals minus nine."
+  ],
+  [
+   "A fraction is zero when the top is zero... and the bottom is not.",
+   "Minus five makes the bottom zero. So throw it out."
+  ],
+  [
+   "Don't find every letter. Add, subtract, or divide the equations.",
+   "Mirror coefficients? Add.",
+   "A letter missing from the answers? Make it cancel.",
+   "Products or ratios? Multiply or divide."
+  ],
+  [
+   "x plus or minus y, x squared plus y squared, and x y: know two of them, and you get the third.",
+   "x plus one over x: here the middle term is just two.",
+   "A big equation? Break it into the small ones."
+  ],
+  [
+   "One equation, two unknowns: no values, but a relationship. a plus five equals b means b is bigger.",
+   "Now, one legal counterexample kills a choice.",
+   "And \"cannot be determined\" only when different allowed cases give different answers."
+  ],
+  [
+   "Pick numbers that fit all the givens. Avoid zero and one. And check all four choices.",
+   "A choice that works is a solution... but maybe not the only one."
+  ],
+  [
+   "Okay, before every question, ask yourself these questions.",
+   "The classic traps: losing x equals zero, forgetting the negative root, and keeping a solution that breaks the denominator.",
+   "Now go practice."
+  ]
+ ]
+}

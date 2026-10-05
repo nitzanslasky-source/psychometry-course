@@ -1,0 +1,59 @@
+{
+ "videoId": "r26-t31-summary",
+ "style": "calm, natural hesitations, like explaining to a friend",
+ "slides": [
+  [
+   "Okay, a quick summary before the practice.",
+   "Everything important about triangles... in about three minutes."
+  ],
+  [
+   "So, there are three lines that go out from a vertex. The median goes to the midpoint of the opposite side.",
+   "The altitude meets the opposite side at ninety degrees. And in an obtuse triangle, it can actually fall outside.",
+   "And the angle bisector splits the angle into two equal angles. That's it, nothing more is promised."
+  ],
+  [
+   "The angles of a triangle add up to a hundred and eighty. Always.",
+   "Now, an exterior angle equals the two interior angles that aren't next to it. So if those are fifty-two and seventy-three, the exterior angle is a hundred and twenty-five.",
+   "And the larger angle sits opposite the longer side."
+  ],
+  [
+   "Any two sides together are longer than the third side.",
+   "So the third side is somewhere between the difference and the sum. And it's never equal to either end.",
+   "Now, how many whole-number lengths are there? Twice the shorter side, minus one. So with sides six and ten, that's eleven lengths."
+  ],
+  [
+   "Isosceles: equal legs, equal base angles. And it works the other way around too.",
+   "So if the vertex angle is thirty-six, each base angle is a hundred and eighty minus thirty-six, over two... seventy-two.",
+   "And the line to the base is a median, an altitude and a bisector, all at once.",
+   "Equilateral: every angle is sixty. And in a right triangle, the median to the hypotenuse is half the hypotenuse."
+  ],
+  [
+   "The area is a side, times the altitude to that side, over two. And any side can be the base.",
+   "What if the height falls outside? Well, you still use only the side itself.",
+   "In a right triangle, you can count the area twice. Say the legs are thirty and forty, and the hypotenuse is fifty. Then the altitude is twelve hundred over fifty... twenty-four.",
+   "Now, with two sides, a and b, the area is at most a times b, over two. And you only get that with a right angle between them.",
+   "And a median splits a triangle into two equal areas. Same base, same height."
+  ],
+  [
+   "Pythagoras works only in a right triangle. So find the right angle first. The hypotenuse is opposite it.",
+   "Looking for the hypotenuse? Add the squares. Looking for a leg? Subtract.",
+   "And if there's no right angle? Take the longest side, c. If c squared is bigger than the other two squares, it's obtuse. Smaller, it's acute. And equal, it's right."
+  ],
+  [
+   "Before you calculate anything, look for a triple.",
+   "Any multiple works too. Like six, eight, ten, or fifteen, twenty, twenty-five.",
+   "But match the positions. A hypotenuse of twelve and a leg of nine? Well, that's not nine, twelve, fifteen."
+  ],
+  [
+   "The golden triangle. The short leg, a, is opposite the thirty. Double it for the hypotenuse, and times the square root of three for the long leg.",
+   "The silver triangle: legs a and a, and the hypotenuse is a root two.",
+   "The thirty, thirty, a hundred and twenty triangle: legs a, and the base is a root three. And the equilateral triangle: a squared root three, over four.",
+   "Dividing by a root? Ignore the root, divide, and then attach it back. So twelve over root three is four root three."
+  ],
+  [
+   "Okay, before you practice, ask yourself these questions.",
+   "And watch out for the traps: doubling the long leg instead of the short one, forgetting to divide the area by two, using a sloping side as the height, and a side that's equal to the sum or the difference.",
+   "Good luck."
+  ]
+ ]
+}
