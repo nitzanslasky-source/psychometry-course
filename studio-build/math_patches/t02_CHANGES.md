@@ -80,3 +80,8 @@ Check: `python3 math_check.py 2`. PROBLEMS 0, WARNINGS 0, LAYOUT 0 (62 slides). 
 ## 2026-10-04 question = lesson example fixed
 - alg-extra-unit-t2-1-2 was the example 5/6 − 1/4 of "fraction-add" (recorded) -> now 3/4 − 1/6 = 7/12 (choice 1); new distractors 1/6, 2/3, 1/5.
 - q-069 was the example 4 2/3 − 2 1/4 of "r26-t02-shortcuts" (recorded) -> now 5 3/4 − 2 1/3 = 3 5/12 (choice 1); solution also shows the whole-parts shortcut.
+
+## 2026-10-06 review
+Course-wide duplicate scan: q-r26-t02-22 was the same exercise as q-069 (5 3/4 − 2 1/3, set by dedupe_examples).
+q-r26-t02-22 (September item, unrecorded) now: 7 5/6 − 3 1/4 = 4 7/12 (choices 3 7/12, 4 7/12, 4 1/12, 11 1/12 = added).
+Function `review_dups` at the end of t02.py.

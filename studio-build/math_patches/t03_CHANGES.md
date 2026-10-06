@@ -213,3 +213,8 @@ Check: `python3 math_check.py 3 32` → PROBLEMS 0, WARNINGS 0, LAYOUT problems 
 
 ## 2026-10-04 question = lesson example fixed
 - alg-extra-unit-t3-1-4 was the example 3/√10 vs 2/√5 of "compare-fractions" (recorded) -> now 3/√6 vs 2/√3 (squares 9/6 > 8/6); answer still choice 2, the first.
+
+## 2026-10-06 review
+Course-wide duplicate scan: practice q-r26-t03-11 was identical to guided q-r26-t12-01 (−1 < x < 0, largest of x, x², x³,
+1/x) and close to q-r26-t08-11. It now asks for the SMALLEST of the same four (answer 1/x, choice 4).
+Function `review_dups` at the end of t03.py.

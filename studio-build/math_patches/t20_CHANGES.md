@@ -146,3 +146,62 @@ Function `cut_repeats` (runs last). Nothing in topic 20 is recorded.
 Function `practice_methods` (runs last; append only). 1 practice question.
 - q-r26-t20-10 (x³ = y², y × 8): Method 2 · Given power, asked power — r = 1/3 → x = y^(2/3) → × 8^(2/3) = 4.
 All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 20 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-06 renumber pass
+So the English course does not look like the Hebrew one: every Hebrew-derived question has new numbers, letters or story.
+The idea, the trap, the level and the methods stay the same, and every guided solution video is rewritten to match
+(speech, draw cues, video title, slide description). Nothing in Topic 20 is recorded, so nothing had to be kept as it was.
+Function `renumber_pass(M)` in t20.py runs last (after `cut_repeats` and `practice_methods`).
+
+**Counts:** 4 guided questions renumbered (q-577 … q-580) with their 4 solution videos rewritten; 10 practice questions
+renumbered (q-581 … q-590). Lesson examples: the Hebrew lesson's own examples were already cut (cut_repeats); the card tips
+that still quoted the Hebrew numbers changed ("less than 12 → at most 11" → 20 / 19; "9^(3/2) = 27" → "4^(3/2) = 8"), and the
+counting card's two examples that equalled guided Q7 / Q8 changed (odd 21 to 79 → odd 15 to 41: 14 numbers; 3 colors: 4 socks →
+4 colors: 5 socks). Practice: 25 → 15 (the audit's target).
+The English-made items (guided q-r26-t20-01 … 04, the counting lesson, the summary, kept practice items) keep their numbers.
+
+**Order:** q-580 (the formula question, no calculation) moves from the 4th to the 1st Hebrew guided place, so the guided
+questions go easy → hard: Q1, Q2 plug-in → Q3 formula → Q4 integer gaps → Q5 scaling → Q6 p, q, r → counting lesson → Q7, Q8.
+The lesson's last line now says "Two on plugging in first, then one on reading a formula — and three with more than one way in",
+and "Next: a short lesson on counting whole numbers" moved from the end of the formula video to the end of Q6.
+
+**Practice clean-up (25 → 15):**
+- Copies removed: q-r26-t20-05 (0 < x < 1, which is smallest: the same as Topic 8's q-r26-t08-02), q-r26-t20-09 (the same drawer
+  as guided Q8), alg-extra-unit-t20-2-6 (a² = b² → |a| = |b|).
+- Extra warm-ups kept (3): X5 (4 < n < 9, which cannot be n²), X1 (largest of three numbers with sum 23), X4 (not necessarily true
+  for two different positive integers). Removed X2 (max ab), X3 (x² + y² = 0), X7 (xy from sum and difference).
+- September items kept (2, types the Hebrew practice does not have): -11 (taxi price formula), -12 (x² < x, must be true).
+  Removed -06 (x < y < 0 must: the regions idea of -12 and guided Q1/Q2), -07 and -08 (counting: q-586, q-588, guided Q7),
+  -10 (scaling: q-589, guided Q5).
+
+**Checks:** every key brute-forced in Python (must / could / cannot over wide integer grids, e.g. a, b, c in −30..30; the
+counting formulas over all m odd < n even in −21..30 and n = 1..29; the scaling and power factors numerically; the formula
+question by monotonicity on a grid of C, S, M > 1): exactly one correct choice each, and the traps are still choices (14 just
+above the maximum 13; 8 even and < 10 but impossible; 4^b·b^b; the "forgot the minus one" formulas; z < 8 true for 3-4-5 only).
+Every step in the videos recomputed (15 − 2 = 13; 25³ = 5⁶, √ = 125; 9 + 16 = 25, 36 + 64 = 100). Duplicate check over a build
+of topics 1–20 (stems, choices, lesson boards and lines, cards): no new question equals another question or a lesson/card example.
+`python3 math_check.py 20 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered the 4 solution videos and the lesson and looked at
+them (titles Question 3–6, sidebars highlight the right question). No quadratic trinomial added.
+
+| id | old (Hebrew) | new | answer |
+|---|---|---|---|
+| q-580 (G3, was G6) | plant growth: sunlight S, water W ↑, weeds D ↓; Sᵂ/D, SW − D, S − D + W, SWD | game score: coins C, stars S ↑, mistakes M ↓; C + S − M, CSM, Cˢ/M, CS − M | CSM (2) |
+| q-577 (G4) | c < b < a integers, a + b < 12; b + c cannot be 1, −1, 10, −10 | a + b < 16; 2, −2, −14, 14 (max 13) | 14 (4) |
+| q-578 (G5) | x² = a³, a × 9 → 36, 18, 27, 9 | y² = b³, b × 25 → 125, 50, 100, 25 | 125 (1) |
+| q-579 (G6) | c²/(ab) = a/b + b/a; c < a + b, c < 6, b < c, a < c | r²/(pq) = p/q + q/p; q < r, r < p + q, r < 8, p < r | r < 8 (3) |
+| q-581 | 0 < c < b < a; b = 1 and a = 3 impossible | b = 1 and a = 4 impossible; other choices c = 3, b = 5 … | (2) |
+| q-582 | even a < b < c, c − a < 8, x = b − a: 1, 2, 6, 8 | c − a < 10: 3, 6, 8, 12 | 6 (2) |
+| q-583 | Nadia, 13 numbers → 12 (12, 13, 14, 15) | Yoni, 9 numbers → 8 (8, 9, 10, 11) | 8 (1) |
+| q-584 | a < b < c, sum 12, min c − a | x < y < z, sum 18 | 2 (2) |
+| q-585 | x/y, y/z, z/x; "each > 1" was choice 4 | a/b, b/c, c/a; choices reordered | each > 1 (1) |
+| q-586 | x odd < y even; (y − x − 1)/2 was choice 4 | m odd < n even; choices reordered | (n − m − 1)/2 (1) |
+| q-587 | different integers, sum 25; c ≠ 5 | sum 32; c ≠ 7; choices reordered | b not the average (3) |
+| q-588 | a < x < 3a → 2a − 1 | n < k < 4n → 3n − 1 | 3n − 1 (2) |
+| q-589 | y = aᵃ, a × 3 → 3³ᵃ·a²ᵃ | y = bᵇ, b × 4 → 4⁴ᵇ·b³ᵇ | (1) |
+| q-590 | 13 numbers, begin 5 end 2 | 12 numbers, begin 7 end 4; choices reordered | at most 3 digits (3) |
+| card mem-understanding | integer < 12 → ≤ 11; 9^(3/2) = 27 | < 20 → ≤ 19; 4^(3/2) = 8 | – |
+| card counting | odd 21 to 79: 30; 3 colors: 4 socks | odd 15 to 41: 14; 4 colors: 5 socks | – |
+
+## 2026-10-06 review (of the renumber pass)
+Checked all 14 renumbered items, the reorder, the card changes and the 4 videos. q-584 (sum 18), q-587 (sum 32, c ≠ 7),
+q-590 (12 numbers, 7…4; still 12 > 11) are the same kind as the Hebrew. No changes.

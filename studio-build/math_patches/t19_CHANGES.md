@@ -116,3 +116,89 @@ Function `cut_repeats` (runs after `dedupe_examples`). Nothing in topic 19 is re
   - "Definition in words" (write 2–3 examples first; used in practice `q-576`, `q-r26-t19-15`) → one line + board item in Q21 `solve-q-556`.
   - Cut "Recap".
 - Card `mem-new-operation` unchanged (it still lists every type).
+
+## 2026-10-06 renumber pass
+So the English course does not look like the Hebrew one: every Hebrew-derived question and lesson example has new numbers
+(and, where it fits, a new rule number, prime, digit set or letter). The rule's structure, the kind of question
+(evaluate / nested / find the rule / inverse input / circular / both sides / must be true …), the trap, the level and the
+methods stay the same; every guided solution video is rewritten to match (speech, draw cues, video title, slide description).
+Nothing in Topic 19 is recorded, so nothing had to be kept as it was. Function `renumber_pass(M)` in t19.py runs last
+(after `cut_repeats`).
+
+**Counts:** 16 guided questions renumbered (q-541 … q-556) with their 16 solution videos rewritten; 20 practice questions
+renumbered (q-557 … q-576); lesson "Defining a New Operation": 7 slides of examples renumbered (slides 2, 3, 6, 7, 8, 9, 10);
+memory card: 12 example cells + 1 tip. Practice: 40 → 27.
+Kept on purpose: the English-made items (guided q-r26-t19-01, -02, -03, -05, -18; the brackets slide ◆(x) = x² − 2x; the
+inverse-operation slide; the summary video) keep their numbers. The lesson's "Operation Patterns" Hebrew examples were already
+cut earlier (cut_repeats), so nothing left to renumber there.
+
+**Practice clean-up (40 → 27):**
+- Copies removed: alg-extra-…-3 (F(F(2)), nested-and-stop-halfway = guided Q2, q-559, q-560), alg-extra-…-6 (H(H(4)) with 1/x =
+  the "c/x undoes itself" idea of guided Q13).
+- Extra warm-ups kept (3): X1 (a⋆b = 2a − b), X5 (G(t) = 19, unknown input), X7 ((−2)∘3, brackets on a negative). Removed X2, X4.
+- September items kept (4, types the Hebrew practice does not have): -07 (expression input ◆(x − 1)), -11 (conditions
+  backwards: how many x give 4), -19 (step property), -20 (inverse operation). Removed -06, -08, -09, -10, -12, -13, -15, -16, -17
+  (each type already practised by a Hebrew item or a guided question — see the comments in `rn_practice`).
+- 27 instead of the audit's 25 so that expression input and conditions-backwards each keep one practice item.
+
+**Checks:** every key brute-forced in Python (exactly one correct choice; for must/always questions every wrong choice has a
+counterexample and the right one holds over a range of values); every step and plug-in in the videos recomputed; the original
+traps are still choices (stop halfway, number straight into x, odd rule on an even number, forgetting the outer root, etc.).
+Duplicate scan over a build of topics 1–19 (stems, choices, lesson boards/draw cues/speech, cards): no new question equals
+another question or a lesson/card example (only incidental sub-expressions like x² − 9 in other topics). No new quadratic
+trinomial (q-570 and q-575 keep the original's (a + k)² / product expansion). `python3 math_check.py 19 32` → 0 / 0 / 0.
+Rendered the lesson and the solution videos q-541, -543, -545, -546, -549, -552 … -556 and looked at them.
+
+| id | old (Hebrew) | new | answer |
+|---|---|---|---|
+| q-541 (G1) | ◆(a) = a² − 2a, ◆(5) | ◆(a) = a² − 4a, ◆(6) | 12 (2); traps 36 = a² only, 24, 60 |
+| q-542 (G2) | ◆(x) = x², ◆(◆(2)) | ◆(◆(3)) | 81 (3); trap 9 = stop halfway |
+| q-543 (G3) | ◆(2) = 10, which cannot (x³+2, 4x+3, x(2x+1), 6x−2) | ◆(3) = 21 (x³−6, x(x+4), 5x+5, 8x−3) | 5x + 5 (3) |
+| q-544 (G6) | ◆(3x) = x + 4, ◆(12) | ◆(2x) = x + 5, ◆(14) | 12 (1); trap 19 = 14 straight into x |
+| q-545 (G7) | odd 2x / even x² − 7, ◆◆◆(5) | odd 2x / even x² − 3, ◆◆◆(3) | 66 (3); trap 33 = one step short, 12 = odd rule on 6 |
+| q-546 (G9) | ◆(0) = 0, ◆(x) = 7 − ◆(x−2), ◆(6) | ◆(0) = 2, ◆(x) = 9 − ◆(x−2), ◆(6) | 7 (3); pattern 2, 7, 2, 7 |
+| q-547 (G10) | ◆(1) = 6, ◆(x) = ◆(x−1), ◆(5) | ◆(1) = 9, ◆(7) | 9 (4); trap 7 = the input |
+| q-548 (G11) | 3◆(x) − 4x = 10 + 2◆(x), ◆(3) | 5◆(x) − 3x = 8 + 4◆(x), ◆(4) | 20 (2) |
+| q-549 (G12) | ◆(t) = t², not always: ◆(3x) = 3◆(x) | ◆(5x) = 5◆(x); also ◆(3x) = 9◆(x), ◆(x−2) = ◆(2−x) | (3) |
+| q-550 (G14) | ◆(1, 1, ◆(1, 2, 2)) | ◆(1, 1, ◆(2, 1, 3)) | 20 (3); trap 18 = inner only |
+| q-551 (G15) | #(◆(9, 6), ◆(8, 6)) | #(◆(10, 6), ◆(5, 4)) | 289 (2); choices 16², 17², 18², 19² |
+| q-552 (G17) | √(3x² + y²), √(13/7) | √(8x² + y²) | √(73/17) (3); trap √(17/73) = slots swapped |
+| q-553 (G18) | (x − y)²/(x²y), b/a | (x − y)²/(xy³) | a²/b² (3) |
+| q-554 (G19) | A⁴ + B³ + C², digits 1, 2, 3 | A³ + B² + C, digits 1, 2, 4 | ◆(124) = 9 (4) |
+| q-555 (G20) | ◆(x) = 1/x, ◆(a)·a = ◆(b)·b | ◆(x) = 3/x; ◆(a) < 3, a/b, ◆(a) < ◆(a+1) | ◆(a)·a = ◆(b)·b (2) |
+| q-556 (G21) | number of 3s, ⟦18⟧ = 2 | number of 5s, ⟦50⟧ = 2 | ⟦5x⟧ = ⟦x⟧ + 1 (4) |
+| q-557 | ◆(100, 36)/◆(64, 49) | ◆(169, 16)/◆(36, 25) | 3 (3); trap 9 = outer root forgotten |
+| q-558 | #(◆(9, 6), ◆(10, 3)) min/max | #(◆(8, 5), ◆(12, 2)) | 5 (2) |
+| q-559 | ◆(◆(3, 2), 6) | ◆(◆(4, 1), 8) | 9 (1) |
+| q-560 | x(x − 2), ◆(◆(3)) | x(x − 3), ◆(◆(4)) | 4 (3) |
+| q-561 | a/(a+1), ◆(1)…◆(5) | ◆(2)…◆(7) | 1/4 (2); trap 1/8 |
+| q-562 | x(x − 4)(x + 1) = 0 | x(x + 5)(x − 2) = 0 | 3 (4); trap 2 forgets x = 0 |
+| q-563 | ◆(a²) = \|a\|, ◆(1/9) | ◆(1/16) | 1/4 (3) |
+| q-564 | a⁷ + … + 1, ◆(1) − ◆(−1) | a⁵ + … + 1 | 6 (1); trap 3 = not doubled |
+| q-565 | (4◆2)◆3, (a+b)/(a−b) or 0 | (5◆3)◆4 | 0 (3); trap 4 = inner only |
+| q-566 | ◆(x) + 6 = 8x − ◆(x), ◆(2) | ◆(x) + 2 = 10x − ◆(x), ◆(3) | 14 (2); trap 28 = not halved |
+| q-567 | x~y concatenation, 45~12; x < 5~x, x~1 = 10x + 1 | 36~7; x < 2~x, x~3 = 10x + 3 | x~y = y~x (1) |
+| q-568 | x⁴ + 5x² + 6x − 9, ◆(4) − ◆(−4) | x⁴ + 2x² + 7x − 5, ◆(3) − ◆(−3) | 42 (1) |
+| q-569 | ◆(1) = 4, +2, ◆(6) | ◆(1) = 7, +3, ◆(5) | 19 (3); trap 22 = one step too many |
+| q-570 | ◆ = x + 3, # = x², ◆(#(a)) = #(◆(a)) | ◆ = x + 5 | a = −2 (2) |
+| q-571 | letter x; choices x, x−1, 10−x, x+1 | letter n; order 10−n, n+1, n, n−1 | n (3) |
+| q-572 | a/b − b/a, ◆(−1, 2) = ◆(2, 1) | ◆(−1, 3) | ◆(3, 1) (3) |
+| q-573 | (x − 2)/x, a, b > 2 | (x − 3)/x, a, b > 3 | ◆(a)·◆(b) < 1 (3) |
+| q-574 | x² − 4 | x² − 9 | √(◆(a)+9) = ◆(a)/(a+3) + 3 (2) |
+| q-575 | (x − 3)(x + 2), ◆(a) = ◆(a+5) | (x − 4)(x + 1), ◆(a) = ◆(a+4) | 1 value, a = −1/2 (2) |
+| q-576 | remainders ◆(◆(47, 9), ◆(11, 4)) | ◆(◆(38, 7), ◆(23, 6)) | 3 (3); trap 2 = 5 ÷ 3 |
+| lesson slide 2 | 4 · 6 = 24, 4² = 16 | 3 · 7 = 21, 5² = 25 | – |
+| lesson slide 3 | a♥b = 3(a+b), 6♥2 = 24 (trap 20) | a♥b = 2(a+b), 7♥3 = 20 (trap 17) | – |
+| lesson slide 6 | ◆(3) + ◆(4) = 25 vs ◆(7) = 49 | ◆(5) + ◆(1) = 26 vs ◆(6) = 36 | – |
+| lesson slides 7, 9, 10 | a⋆b = 2a + b²: (2⋆3)⋆1 = 27; 3⋆4 = 22, 4⋆3 = 17; x⋆2 = 18 → 7 | a⋆b = 3a + b²: (1⋆2)⋆3 = 30; 2⋆4 = 22, 4⋆2 = 16; x⋆4 = 25 → 3 | – |
+| lesson slide 8 | ◆(3) = 24, 8x | ◆(5) = 30, 6x | – |
+| card | the lesson's examples, F(4t), 7 − ◆(x−2), 4x + 10, 47 ÷ 9, x⁴ + 6x at 4 | new lesson examples, F(5t), 2·◆(x−1), 2x, 29 ÷ 4, x⁴ + 3x at 5 | – |
+
+## 2026-10-06 review (of the renumber pass)
+Checked all 36 renumbered items (keys, traps, type, level), the lesson/card examples, and rendered the 6 videos the pass
+had not rendered (solve-q-542, -544, -547, -548, -550, -551): all correct.
+- **Fixed:** q-554 had the rule lowered from A⁴ + B³ + C² to A³ + B² + C. Now the Hebrew rule is kept with the new digits
+  1, 2, 4: ◆(214) = 33, ◆(142) = 69, ◆(412) = 261, ◆(124) = 25 → choice 4. Question, explanation and both video methods
+  rewritten; rendered.
+- Judgment calls (kept): q-561 now starts at ◆(2) (adds a "starts at 1" trap, 1/8); q-564 has 6 terms instead of 8;
+  q-556 counts 5s instead of 3s — same kind.

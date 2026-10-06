@@ -844,3 +844,314 @@ _apply_before_practice_methods = apply
 def apply(M):
     _apply_before_practice_methods(M)
     practice_methods(M)   # 2026-10-06 practice: runs last
+
+
+# ======================================================================================================
+# 2026-10-06 renumber pass
+# The English course must not look like the teacher's Hebrew course: every Hebrew-derived question (guided q-577 .. q-580,
+# practice q-581 .. q-590) gets new numbers / letters / story - same concept, same trap, same level, at least the same
+# methods - and every guided solution video is rewritten to match. The Hebrew lesson's own examples were already cut
+# (cut_repeats); the card tips that still quoted the Hebrew numbers (12 -> 11, 9^(3/2) = 27) and the card examples that
+# equalled a guided question get new numbers. q-580 (no calculation) moves before q-577 (easy -> hard).
+# Plus the approved practice clean-up (25 -> 15). Nothing in topic 20 is recorded. Runs last.
+# ======================================================================================================
+RN_RECORDED = set()   # no take of any topic-20 video in ~/Documents/Course.recordings (checked 2026-10-06)
+
+
+def _rn_item(M, vid, n, text):
+    """An existing pop-in board item of a slide (to keep it when the slide's script is rewritten)."""
+    b = M.slide(vid, n)
+    for l in b['lines']:
+        if 'appear' in l and text in (b['items'][l['appear']].get('t') or ''):
+            return A(l['label'], b['items'][l['appear']])
+    raise AssertionError('%s #%d: no item %s' % (vid, n, text))
+
+
+def _rn_q(M, qid, stem, choices, correct, expl):
+    if qid in RN_RECORDED: return
+    M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+
+
+def _rn_video(M, qid, slides):
+    """Rewrite the question slides (2, 3, ...) of a guided question's solution video. The pre-loaded question stays."""
+    vid = 'solve-' + qid
+    if vid in RN_RECORDED: return
+    v = M.video(vid)
+    assert len(v['beats']) == len(slides) + 1, (vid, len(v['beats']))
+    for n, script in enumerate(slides, 2):
+        assert v['beats'][n - 1]['mode'] == 'question', (vid, n)
+        M.set_slide(vid, n, script=script)
+    _sync_video(M, qid)
+
+
+def rn_guided(M):
+    # ---------- q-577: c<b<a integers, a+b<12, b+c cannot be 1, -1, 10, -10 (10)
+    #            ==>  a+b<16, b+c cannot be 2, -2, -14, 14 (14; the maximum is 13)
+    _rn_q(M, 'q-577', 'Given: $a$, $b$ and $c$ are integers, and\n$\\begin{cases} c<b<a \\\\ a+b<16 \\end{cases}$\nWhich of the following cannot be the value of $b+c$?',
+          ['$2$', '$-2$', '$-14$', '$14$'], 4, [
+        'The numbers are integers. Therefore $a+b<16$ means $a+b\\le15$.',
+        'Also $c\\le b-1$ and $b\\le a-1$. Therefore $c\\le a-2$, and $a-c\\ge2$.',
+        '$b+c=(a+b)-(a-c)\\le15-2=13$. The biggest possible value of $b+c$ is $13$ (for example $a=8$, $b=7$, $c=6$). Therefore $b+c=14$ is impossible.',
+        'The other values are possible: $(a,b,c)=(3,2,0)$ gives $2$; $(1,0,-2)$ gives $-2$; $(1,0,-14)$ gives $-14$.'])
+    gap_item = _rn_item(M, 'solve-q-577', 2, 'increasing integers')
+    _rn_video(M, 'q-577', [[
+        "Three integers, c below b below a. And a plus b is less than sixteen.",
+        "They ask what b plus c CANNOT be. So let's find the biggest b plus c can ever be.",
+        D('Under the question write "a + b ≤ 15"'),
+        "a and b are integers. Less than sixteen means at most fifteen.",
+        "Now compare. a plus b is the two biggest numbers. b plus c is the two smallest. The difference between them is a minus c.",
+        D('Write "c ≤ a − 2 → a − c ≥ 2"'),
+        "c is at least one below b, and b is at least one below a. Therefore c is at least two below a.",
+        gap_item,
+        "In general: n integers, each bigger than the one before — the last is at least the first, plus n minus one.",
+        D('Write "b + c = (a + b) − (a − c) ≤ 15 − 2 = 13"'),
+        "b plus c is a plus b, minus the difference a minus c. At most fifteen, minus at least two: at most thirteen.",
+        D('Circle choice 4'),
+        "Fourteen goes past the maximum. It can't happen. Choice four.",
+    ], [
+        "Second way: plug in numbers that make b plus c as big as possible.",
+        "We want b as big as it can be — then c can be big too.",
+        D('Write "a = 8, b = 7 → a + b = 15 ✓"'),
+        "Eight and seven: fifteen, still under sixteen. That's the biggest b we can get.",
+        D('Write "c = 6 → b + c = 13"'),
+        "Push a up to nine, and b drops to six — worse. So the biggest c is six, and the biggest b plus c is thirteen.",
+        D('Circle choice 4'),
+        "Again — fourteen is out of reach. Choice four.",
+    ], [
+        "Third way: test the answers. Which value can't b plus c be?",
+        "A maximum is hidden here. So start with the most extreme choices: fourteen and minus fourteen.",
+        D('Next to choice 4 write "b = 8, c = 6, a ≥ 9 → a + b ≥ 17 ✗"'),
+        "Fourteen: b is bigger than c. The smallest b is eight, with c six. Then a is at least nine — and a plus b is at least seventeen. Too big.",
+        D('Circle choice 4'),
+        "Found it. Choice four.",
+        "Want to be safe? The other choices are easy to make.",
+        D('Next to choice 3 write "(a, b, c) = (1, 0, −14) ✓", next to choice 1 "(3, 2, 0) ✓", next to choice 2 "(1, 0, −2) ✓"'),
+        "Minus fourteen: a one, b zero, c minus fourteen. Two: a three, b two, c zero. Minus two: a one, b zero, c minus two. All allowed.",
+        "Three methods, all excellent. Pick the one that's comfortable for you.",
+    ]])
+
+    # ---------- q-578: x^2 = a^3, a x 9 -> x x 27 (36, 18, 27, 9)  ==>  y^2 = b^3, b x 25 -> y x 125 (125, 50, 100, 25)
+    _rn_q(M, 'q-578', 'Given:\n$\\begin{cases} b>0,\\ y>0 \\\\ y^2=b^3 \\end{cases}$\nIf $b$ is multiplied by $25$, by what factor is $y$ multiplied?',
+          ['$125$', '$50$', '$100$', '$25$'], 1, [
+        'Plug in: $b=1$ gives $y^2=1$ and $y=1$ (because $y>0$).',
+        'Multiply $b$ by $25$: $b=25$ gives $y^2=25^3=(5^2)^3=5^6$ and $y=5^3=125$. $y$ went from $1$ to $125$: it was multiplied by $125$.',
+        'Algebra: $(ky)^2=(25b)^3$ gives $k^2y^2=25^3b^3$. Since $y^2=b^3$, $k^2=25^3=5^6$ and $k=5^3=125$.',
+        'General rule: $y=b^{\\frac32}$. Therefore $y$ is multiplied by $25^{\\frac32}=(\\sqrt{25})^3=5^3=125$.'])
+    _rn_video(M, 'q-578', [[
+        "y squared equals b cubed, both positive. b gets multiplied by twenty-five. What happens to y?",
+        "Plug in two numbers that satisfy the equation. The simplest pair: one and one.",
+        D('Write "b = 1 → y² = 1 → y = 1"'),
+        "Didn't spot it? Put b equal to one: y squared is one. y is plus or minus one — and y is positive. So y is one.",
+        D('Write "b = 25 → y² = 25³ = (5²)³ = 5⁶"'),
+        "Now multiply b by twenty-five. The new b is twenty-five. Twenty-five is five squared — so twenty-five cubed is five to the sixth.",
+        D('Write "y = 5³ = 125"'),
+        "What squared gives five to the sixth? Five cubed: a hundred twenty-five. Positive again.",
+        D('Circle choice 1'),
+        "y went from one to a hundred twenty-five. It grew a hundred twenty-five times. Choice one.",
+    ], [
+        "Now the mathematical solution.",
+        "Multiply b by twenty-five. The right side becomes twenty-five b, all cubed.",
+        "To keep the equation balanced, y must grow too. By how much? Call it k.",
+        D('Write "(ky)² = (25b)³"'),
+        D('Write "k²·y² = 25³·b³"'),
+        "Open the brackets with the power rules: k squared y squared equals twenty-five cubed b cubed.",
+        D('Cross out y² and b³ (they are equal)'),
+        "But y squared equals b cubed. They cancel.",
+        D('Write "k² = 25³ = 5⁶ → k = 5³ = 125"'),
+        "k squared is twenty-five cubed — five to the sixth. k is five cubed: a hundred twenty-five. Choice one.",
+        "Strong algebra students see it in their head: the right side grows twenty-five cubed times. What squared gives that? Twenty-five times five — a hundred twenty-five.",
+        "For most students, though, plugging in is the simpler route here.",
+        D('Write "y = b^(3/2) → 25^(3/2) = (√25)³ = 5³ = 125"'),
+        "The general rule: y changes by the factor to the power three halves. Root twenty-five is five. Five cubed is a hundred twenty-five.",
+    ]])
+
+    # ---------- q-579: c^2/(ab) = a/b + b/a; not necessarily: c<a+b, c<6, b<c, a<c (c<6)
+    #            ==>  r^2/(pq) = p/q + q/p; q<r, r<p+q, r<8, p<r (r<8)
+    _rn_q(M, 'q-579', 'Given: $p$, $q$ and $r$ are different positive integers, and $\\frac{r^2}{pq}=\\frac{p}{q}+\\frac{q}{p}$. Which of the following is not necessarily true?',
+          ['$q<r$', '$r<p+q$', '$r<8$', '$p<r$'], 3, [
+        'Common denominator: $\\frac pq+\\frac qp=\\frac{p^2}{pq}+\\frac{q^2}{pq}=\\frac{p^2+q^2}{pq}$. Therefore $r^2=p^2+q^2$.',
+        '(1) and (4) are always true: $r^2=p^2+q^2>q^2$, and all the numbers are positive. Therefore $r>q$. In the same way, $r>p$.',
+        '(2) is always true: $(p+q)^2=p^2+2pq+q^2=r^2+2pq>r^2$. Therefore $p+q>r$.',
+        '(3) is not necessarily true: $(p,q,r)=(3,4,5)$ fits ($9+16=25$) and gives $r=5<8$. But $(6,8,10)$ also fits ($36+64=100$) and gives $r=10$.'])
+    ratio_item = _rn_item(M, 'solve-q-579', 3, 'frac{x}{y}')
+    _rn_video(M, 'q-579', [[
+        "Step one: simplify the equation.",
+        D('Write "p/q = p²/(pq),  q/p = q²/(pq)"'),
+        "Common denominator: p times q. p over q is p squared over p q. q over p is q squared over p q.",
+        D('Write "r²/(pq) = (p² + q²)/(pq) → r² = p² + q²"'),
+        "Both sides are over p q. So r squared equals p squared plus q squared.",
+        "Read the question carefully: which statement is NOT necessarily true?",
+        "Anything that's always true — we cross out. We're hunting for the one that can fail.",
+    ], [
+        D('Next to choice 1 write "r² = p² + q² > q² → r > q" and cross it out'),
+        "Choice one: r squared is q squared plus something positive. So r squared is bigger than q squared.",
+        "All the numbers are positive. Therefore r is bigger than q. Always. Out.",
+        D('Cross out choice 4'),
+        "Choice four: the same with p. Always. Out.",
+        D('Next to choice 2 write "(p + q)² = r² + 2pq > r²" and cross it out'),
+        "Choice two: p plus q, squared, is p squared plus two p q plus q squared. That's r squared plus two p q — bigger than r squared.",
+        "So p plus q is bigger than r. Always. Out.",
+        "Choice three: r is less than eight. Look for integers that fit.",
+        D('Next to choice 3 write "3, 4, 5: 9 + 16 = 25 → r = 5  |  6, 8, 10: 36 + 64 = 100 → r = 10"'),
+        "Three, four, five: nine plus sixteen is twenty-five. r is five — less than eight.",
+        "Now double them: six, eight, ten. Thirty-six plus sixty-four is a hundred. r is ten — not less than eight.",
+        D('Circle choice 3'),
+        "Sometimes true, sometimes not. Not necessarily true. Choice three.",
+        "In geometry you'll meet r squared equals p squared plus q squared again, as Pythagoras.",
+        "And choice two becomes a rule there: the sum of any two sides of a triangle is longer than the third.",
+        ratio_item,
+        "One more structure from another place: a cycle of ratios cancels to one — so the three fractions can't all be bigger than one. Check the givens first: no letter may be zero.",
+        "Next: a short lesson on counting whole numbers.",
+    ]])
+
+    # ---------- q-580: plant growth: sunlight S, water W up; weeds D down; S^W/D, SW-D, S-D+W, SWD (SWD)
+    #            ==>  game score: coins C, stars S up; mistakes M down; C+S-M, CSM, C^S/M, CS-M (CSM)
+    _rn_q(M, 'q-580', "A player's score in a computer game is given by a formula. The score increases when the player collects more coins ($C$) and more stars ($S$), and decreases when the player makes more mistakes ($M$). $C$, $S$ and $M$ are all greater than $1$. Which of the following expressions cannot give the player's score?",
+          ['$C+S-M$', '$C\\cdot S\\cdot M$', '$\\frac{C^S}{M}$', '$C\\cdot S-M$'], 2, [
+        'A valid formula must grow when $C$ grows, grow when $S$ grows, and shrink when $M$ grows.',
+        '(1) $C+S-M$ and (4) $C\\cdot S-M$: $C$ and $S$ are added or multiplied, and $M$ is subtracted ✓.',
+        'In (3), $\\frac{C^S}{M}$, a bigger $C$ or $S$ makes the top bigger (because $C>1$), and a bigger $M$ makes the fraction smaller ✓.',
+        'In (2), $C\\cdot S\\cdot M$, a bigger $M$ makes the product BIGGER. More mistakes would mean a higher score — the opposite of the rule. Therefore (2) cannot give the score.'])
+    _rn_video(M, 'q-580', [[
+        "Go back to the rule they defined.",
+        D('Under the question write "C↑ → ↑, S↑ → ↑, M↑ → ↓"'),
+        "More coins — the score goes up. More stars — up. More mistakes — down.",
+        "Now test each expression against all three.",
+        D('Next to choice 1 write "✓" and cross it out'),
+        "Choice one: C plus S minus M. C and S add, M subtracts. More mistakes, smaller score. It fits. Out.",
+        "Choice three: C to the power S, over M.",
+        "In a fraction, a bigger top gives a bigger result, a bigger bottom a smaller one.",
+        D('Next to choice 3 write "C ✓ S ✓ M ✓" and cross it out'),
+        "C grows — the top grows. S grows — C times itself more times, and C is above one — the top grows. M grows — the bottom grows, the result shrinks. It fits. Out.",
+        D('Next to choice 4 write "✓" and cross it out'),
+        "Choice four: C times S, minus M. Both positive, multiplied — bigger C or S, bigger result. Minus M — more mistakes, smaller score. Out.",
+        "Three eliminated — you can mark choice two. But let's check it anyway.",
+        D('Next to choice 2 write "M↑ → ↑ ✗" and circle choice 2'),
+        "C times S times M. C and S are fine. The problem is M: more mistakes make the score BIGGER. That's the opposite of the rule. Choice two.",
+    ]])
+
+
+def rn_order(M):
+    """q-580 (no calculation) moves before q-577: easy -> hard. renumber_guided() renumbers the titles."""
+    M.move('q-580', SEC, before='q-577')
+    M.move('solve-q-580', SEC, after='q-580')
+    _cr_say(M, LESSON, 2, 'As usual, we start with sample questions',
+            'As usual, we start with sample questions. Two on plugging in first, then one on reading a formula — and three with more than one way in.')
+
+
+def rn_cards(M):
+    c = M.card('mem-understanding')
+    c['tips'] = [t.replace('An integer less than $12$ is at most $11$.', 'An integer less than $20$ is at most $19$.')
+                  .replace('For example, $9^{\\frac32}=27$.', 'For example, $4^{\\frac32}=8$.') for t in c['tips']]
+    assert any('$20$' in t for t in c['tips']) and any('4^{\\frac32}=8' in t for t in c['tips']), c['tips']
+    c = M.card('mem-r26-t20-counting')
+    rows = c['tables'][0]['rows']
+    for r in rows:
+        if r[2] == 'odd, $21$ to $79$: $30$ numbers': r[2] = 'odd, $15$ to $41$: $14$ numbers'
+        if r[2] == '$3$ colors: $4$ socks': r[2] = '$4$ colors: $5$ socks'
+    assert not any(r[2] in ('odd, $21$ to $79$: $30$ numbers', '$3$ colors: $4$ socks') for r in rows), rows
+
+
+def rn_practice_questions(M):
+    # q-581: 0<c<b<a integers; b=1 and a=3 impossible  ==>  new values, impossible one is choice 2
+    _rn_q(M, 'q-581', 'Given: $a$, $b$ and $c$ are integers, and $0<c<b<a$. Which of the following cannot be true?',
+          ['$c=3$ and $b=5$', '$b=1$ and $a=4$', '$b=5$ and $a=6$', '$c=3$ and $b=5$ and $a=8$'], 2, [
+        '(2) cannot be true: $b=1$ needs an integer $c$ with $0<c<1$, and there is none.',
+        'The others can happen: (1) $c=3$, $b=5$, $a=6$; (3) $c=4$, $b=5$, $a=6$; (4) $0<3<5<8$ ✓.'])
+    # q-582: even a<b<c, c-a<8, x=b-a could be 1, 2, 6, 8 (2)  ==>  c-a<10: 3, 6, 8, 12 (6)
+    _rn_q(M, 'q-582', 'Given: $a$, $b$ and $c$ are different even numbers, and\n$\\begin{cases} a<b<c \\\\ c-a<10 \\end{cases}$\n$x=b-a$. Which of the following could be the value of $x$?',
+          ['$3$', '$6$', '$8$', '$12$'], 2, [
+        'The difference of two even numbers is even. Therefore $x\\ne3$.',
+        'Even numbers leave gaps of $2$: $c\\ge b+2$. Therefore $c-a\\ge x+2$.',
+        'Also $c-a$ is even and less than $10$. Therefore $c-a\\le8$, and $x+2\\le8$ gives $x\\le6$. This rules out $8$ and $12$.',
+        '$x=6$ works: $(a,b,c)=(2,8,10)$ gives $c-a=8<10$ ✓.'])
+    # q-583: 13 numbers -> difference divisible by 12 (12, 13, 14, 15)  ==>  9 numbers -> 8 (8, 9, 10, 11)
+    _rn_q(M, 'q-583', 'Yoni chose $9$ different positive integers. Among them there must be two numbers whose difference is divisible by —',
+          ['$8$', '$9$', '$10$', '$11$'], 1, [
+        'Pigeonhole: when you divide by $8$, there are only $8$ possible remainders ($0$ to $7$). With $9$ numbers, two of them have the same remainder.',
+        'Two numbers with the same remainder have a difference divisible by $8$. For example, $13$ and $45$ both leave remainder $5$, and $45-13=32=4\\cdot8$.',
+        'For $9$, $10$ and $11$ this is not sure: Yoni could choose $1, 2, \\ldots, 9$. Their differences are at most $8$, so none of them is divisible by $9$, $10$ or $11$.'])
+    # q-584: a<b<c distinct positive, sum 12, smallest c-a (2)  ==>  x<y<z, sum 18 (2)
+    _rn_q(M, 'q-584', 'Given: $x$, $y$ and $z$ are different positive integers, and\n$\\begin{cases} x<y<z \\\\ x+y+z=18 \\end{cases}$\nWhat is the smallest possible value of $z-x$?',
+          ['$1$', '$2$', '$3$', '$4$'], 2, [
+        'Test the answers, starting from the smallest. $z-x=1$ is impossible: there is no integer $y$ between $x$ and $x+1$.',
+        '$z-x=2$ means three numbers in a row: $x$, $x+1$, $x+2$. Their sum is $3x+3=18$. Therefore $x=5$, and the numbers are $5$, $6$, $7$ ✓.',
+        'The smallest value of $z-x$ is $2$.'])
+    # q-585: x/y, y/z, z/x (letters only)  ==>  a/b, b/c, c/a; choices reordered
+    _rn_q(M, 'q-585', 'Given: $a$, $b$ and $c$ are different positive integers. Look at the three fractions $\\frac{a}{b}$, $\\frac{b}{c}$ and $\\frac{c}{a}$. Which of the following cannot be true?',
+          ['Each of the three fractions is greater than $1$.', 'Exactly one of the fractions is smaller than $1$.',
+           'The sum of the three fractions is greater than $1$.', 'Exactly two of the fractions are smaller than $1$.'], 1, [
+        'Multiply the three fractions: $\\frac ab\\cdot\\frac bc\\cdot\\frac ca=1$. Everything cancels.',
+        'If each fraction were greater than $1$, their product would be greater than $1$. Therefore (1) cannot be true.',
+        'The others can happen. $a=4$, $b=2$, $c=1$ give $2$, $2$, $\\frac14$: exactly one is smaller than $1$, and the sum is greater than $1$. $a=1$, $b=2$, $c=4$ give $\\frac12$, $\\frac12$, $4$: exactly two are smaller than $1$.'])
+    # q-586: x odd < y even, odd numbers strictly between: (y-x-1)/2  ==>  m odd < n even; choices reordered
+    _rn_q(M, 'q-586', 'Given: $m$ is an odd number, $n$ is an even number, and $m<n$. How many odd numbers are greater than $m$ and smaller than $n$?',
+          ['$\\frac{n-m-1}{2}$', '$\\frac{n-m}{2}$', '$\\frac{n-m+1}{2}+1$', '$\\frac{n-m}{2}-1$'], 1, [
+        'Plug in $m=3$ and $n=10$. The odd numbers between them are $5$, $7$ and $9$: three numbers.',
+        'Put $m=3$, $n=10$ into the choices: (1) $\\frac{10-3-1}{2}=3$ ✓, (2) $\\frac72$ ✗, (3) $\\frac82+1=5$ ✗, (4) $\\frac72-1=\\frac52$ ✗.',
+        'With the counting rule: the first odd number is $m+2$ and the last is $n-1$. Their count is $\\frac{(n-1)-(m+2)}{2}+1=\\frac{n-m-1}{2}$.'])
+    # q-587: three different integers, sum 25; necessarily: b is not the average of a and c  ==>  sum 32, c != 7; reordered
+    _rn_q(M, 'q-587', 'Given: $a$, $b$ and $c$ are three different integers, and $a+b+c=32$. Which of the following is necessarily true?',
+          ['$c\\ne7$', 'The sum of any two of the numbers is greater than the third.',
+           '$b$ is not equal to the average of $a$ and $c$.', 'The smallest of the three numbers is odd.'], 3, [
+        'Break the wrong choices with examples. For (1), $(a,b,c)=(3,22,7)$ has $c=7$ ✗. For (2), $(1,2,29)$ has $1+2<29$ ✗. For (4), $(2,3,27)$ has smallest number $2$, even ✗.',
+        'Why (3) is always true: if $b$ were the average of $a$ and $c$, then $a+c=2b$ and $a+b+c=3b=32$. But $32$ is not divisible by $3$.'])
+    # q-588: a<x<3a, how many x: 2a-1  ==>  n<k<4n: 3n-1
+    _rn_q(M, 'q-588', 'Given: $n$ and $k$ are positive integers, and $n<k<4n$. For a fixed value of $n$, how many different values can $k$ take?',
+          ['$3n$', '$3n-1$', '$n-1$', '$3n+1$'], 2, [
+        'Plug in $n=2$: $2<k<8$. The values of $k$ are $3$, $4$, $5$, $6$ and $7$: five values.',
+        'Only $3n-1$ gives $5$. The others give $3n=6$, $n-1=1$ and $3n+1=7$.',
+        'With the counting rule: strictly between $n$ and $4n$ there are $4n-n-1=3n-1$ integers.'])
+    # q-589: y = a^a, a x 3 -> 3^(3a) a^(2a)  ==>  y = b^b, b x 4 -> 4^(4b) b^(3b)
+    _rn_q(M, 'q-589', 'Given: $b$ is a positive number, and $y=b^b$. If $b$ is multiplied by $4$, by what factor is $y$ multiplied?',
+          ['$4^{4b}\\cdot b^{3b}$', '$b^b$', '$4^b\\cdot b^b$', '$b^4$'], 1, [
+        'The new value is $(4b)^{4b}=4^{4b}\\cdot b^{4b}$.',
+        'Divide by the old value: $\\frac{4^{4b}\\cdot b^{4b}}{b^b}=4^{4b}\\cdot b^{3b}$.',
+        'Check with $b=1$: $y=1$ becomes $4^4=256$. Only (1) gives $256$: $4^4\\cdot1^3=256$. The others give $1$, $4$ and $1$.'])
+    # q-590: 13 numbers, begin with 5 and end with 2  ==>  12 numbers, begin with 7 and end with 4; reordered
+    _rn_q(M, 'q-590', 'On a board there are $12$ different positive integers. Each of them begins with the digit $7$ and ends with the digit $4$. Which of the following cannot be true?',
+          ['All the numbers have at least $5$ digits.', 'All the numbers are divisible by $9$.',
+           'All the numbers have at most $3$ digits.', 'All the numbers use only the digits $7$ and $4$.'], 3, [
+        'Count the numbers with at most $3$ digits that begin with $7$ and end with $4$: $74$, and $704, 714, \\ldots, 794$ (ten numbers). That is only $11$ numbers.',
+        'You cannot choose $12$ different numbers from $11$. Therefore (3) cannot be true.',
+        'The others can happen, because there are endless numbers of each kind. For example: (1) $70004, 70014, 70024, \\ldots$; (2) $774=9\\cdot86$, and $7074$ and $7164$ also have digit sum $18$; (4) $74, 744, 774, 7444, \\ldots$'])
+
+
+def rn_practice(M):
+    """Approved clean-up: copies out, at most 3 extra-bank warm-ups, September items whose type the Hebrew covers out."""
+    X = 'alg-extra-unit-t20-2-'; N = lambda k: 'q-r26-t20-' + k
+    out = [
+        # copies (practice_audit/copies_by_topic.txt, each checked)
+        N('05'),          # 0 < x < 1, which is the smallest: the same question as Topic 8's q-r26-t08-02 (and guided Q2)
+        N('09'),          # the same drawer (5 red, 7 blue, 9 green) as guided Q8
+        X + '6',          # a^2 = b^2 -> |a| = |b|: taught and practised with the roots / absolute value
+        # extra-bank warm-ups beyond 3 (kept: X5 cannot be n^2, X1 largest of three with a fixed sum, X4 not necessarily)
+        X + '3', X + '2', X + '7',
+        # September items of a type the Hebrew practice covers
+        N('06'),          # x < y < 0, must be true: the regions plug-in of N12 and guided Q1 / Q2
+        N('07'),          # count integers with 10 < x^2 < 100: counting, as q-586 / q-588 and guided Q7
+        N('08'),          # count even numbers from 2n to 8n (letters): q-586, q-588
+        N('10'),          # scaling x^3 = y^2: q-589 and guided Q5
+    ]
+    for qid in out:
+        assert M.section_of(qid) == PRAC, qid
+        M.unplace(qid)
+    M.practice_order(PRAC, [
+        X + '5', X + '1', X + '4', 'q-581', 'q-582', 'q-584', 'q-588', 'q-586', N('11'), 'q-587', N('12'), 'q-585',
+        'q-583', 'q-589', 'q-590'])
+
+
+def renumber_pass(M):
+    rn_guided(M)
+    rn_order(M)
+    rn_cards(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last

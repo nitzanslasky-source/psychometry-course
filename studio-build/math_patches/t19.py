@@ -1081,3 +1081,762 @@ def cut_repeats(M):
     _cr_add(M, 'solve-q-556', 2, 'First, understand the operation through its example', [
         A("'Definition in words? Write 2–3 examples first' appears", T('Definition in words? Write $2$–$3$ examples first', size=36)),
         "A definition in words — a remainder, the number of divisors, the sum of the digits — is easy to misread. Write two or three quick examples first."], where='after')
+
+
+# ======================================================================================================
+# 2026-10-06 renumber pass
+# The English course must not look like the teacher's Hebrew course: every Hebrew-derived item (the 36 study-guide
+# questions q-541 .. q-576 and the Hebrew lesson's own examples) gets new numbers / letters - same rule structure,
+# same kind of question, same trap, same level, at least the same methods. Plus the approved practice clean-up.
+# Nothing in topic 19 is recorded (no take in ~/Documents/Course.recordings). Runs last, after cut_repeats.
+# ======================================================================================================
+RN_RECORDED = set()
+
+
+def _rn_sub(M, vid, n, pairs):
+    """Exact substring replacements on one slide: board items, item labels, spoken lines, draw cues."""
+    if vid in RN_RECORDED: return
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def _rn_q(M, qid, stem, choices, correct, expl):
+    if qid not in RN_RECORDED: M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+
+
+def _rn_video(M, qid, slides):
+    """Rewrite the question slides (2, 3, ...) of a guided question's solution video. Titles and the pre-loaded question stay."""
+    vid = 'solve-' + qid
+    if vid in RN_RECORDED: return
+    v = M.video(vid)
+    assert len(v['beats']) == len(slides) + 1, (vid, len(v['beats']))
+    for n, script in enumerate(slides, 2):
+        assert v['beats'][n - 1]['mode'] == 'question', (vid, n)
+        M.set_slide(vid, n, script=script)
+
+
+def rn_lessons(M):
+    L = LESSON
+    # slide 2: 4 · 6 and 4²  ->  3 · 7 and 5²
+    _rn_sub(M, L, 2, [
+        ('$4\\cdot6$', '$3\\cdot7$'), ('4 · 6 appears', '3 · 7 appears'),
+        ("what's four dot six?", "what's three dot seven?"),
+        ('Next to it write "= 4 × 6 = 24"', 'Next to it write "= 3 × 7 = 21"'),
+        ('the dot means times — easy. Twenty-four.', 'the dot means times — easy. Twenty-one.'),
+        ('$4^2$', '$5^2$'), ('4² appears', '5² appears'),
+        ('Next to it write "= 4 × 4 = 16"', 'Next to it write "= 5 × 5 = 25"')])
+    # slide 3: the heart  a ♥ b = 3(a + b), 6 ♥ 2  ->  a ♥ b = 2(a + b), 7 ♥ 3
+    _rn_sub(M, L, 3, [
+        ('$6\\heartsuit2$', '$7\\heartsuit3$'), ('6 ♥ 2 appears', '7 ♥ 3 appears'),
+        ("What's six heart two?", "What's seven heart three?"),
+        ('$a\\heartsuit b=3(a+b)$', '$a\\heartsuit b=2(a+b)$'), ('a ♥ b = 3(a + b)', 'a ♥ b = 2(a + b)'),
+        ('then multiply the sum by three.', 'then multiply the sum by two.'),
+        ('Under 6 ♥ 2 write "= 3(6 + 2) = 3 · 8 = 24"', 'Under 7 ♥ 3 write "= 2(7 + 3) = 2 · 10 = 20"'),
+        ('Six goes into a, two goes into b. Six plus two is eight. Times three: twenty-four.',
+         'Seven goes into a, three goes into b. Seven plus three is ten. Times two: twenty.'),
+        ('Next to it write "6 · 3 + 2 = 20" and cross it out', 'Next to it write "7 · 2 + 3 = 17" and cross it out'),
+        ("Six times three, plus two, is twenty — that's a different rule.",
+         "Seven times two, plus three, is seventeen — that's a different rule.")])
+    # slide 6: operation first  ◆(3) + ◆(4) = 25 vs ◆(7) = 49  ->  ◆(5) + ◆(1) = 26 vs ◆(6) = 36
+    _rn_sub(M, L, 6, [
+        ('$\\blacklozenge(3)+\\blacklozenge(4)$', '$\\blacklozenge(5)+\\blacklozenge(1)$'), ('◆(3) + ◆(4) appears', '◆(5) + ◆(1) appears'),
+        ('Write "= 9 + 16 = 25"', 'Write "= 25 + 1 = 26"'),
+        ('The diamond of three is nine. The diamond of four is sixteen. Now add: twenty-five.',
+         'The diamond of five is twenty-five. The diamond of one is one. Now add: twenty-six.'),
+        ('$\\blacklozenge(3+4)$', '$\\blacklozenge(5+1)$'), ('◆(3 + 4) appears', '◆(5 + 1) appears'),
+        ('So first work out the input: seven.', 'So first work out the input: six.'),
+        ('Write "= ◆(7) = 7² = 49 ≠ 25"', 'Write "= ◆(6) = 6² = 36 ≠ 26"'),
+        ('The diamond of seven is forty-nine — a totally different number.', 'The diamond of six is thirty-six — a totally different number.')])
+    # slide 7: nested  a ⋆ b = 2a + b², (2 ⋆ 3) ⋆ 1 = 27  ->  a ⋆ b = 3a + b², (1 ⋆ 2) ⋆ 3 = 30
+    _rn_sub(M, L, 7, [
+        ('$a\\star b=2a+b^2$', '$a\\star b=3a+b^2$'), ('a ⋆ b = 2a + b²', 'a ⋆ b = 3a + b²'),
+        ('Two times the first, plus the square of the second.', 'Three times the first, plus the square of the second.'),
+        ('$(2\\star3)\\star1$', '$(1\\star2)\\star3$'), ('(2 ⋆ 3) ⋆ 1 appears', '(1 ⋆ 2) ⋆ 3 appears'),
+        ('Under the brackets write "2 ⋆ 3 = 4 + 9 = 13"', 'Under the brackets write "1 ⋆ 2 = 3 + 4 = 7"'),
+        ('Two star three: four plus nine — thirteen.', 'One star two: three plus four — seven.'),
+        ('Write "13 ⋆ 1 = 26 + 1 = 27"', 'Write "7 ⋆ 3 = 21 + 9 = 30"'),
+        ('Put thirteen in its place. Thirteen star one: twenty-six plus one — twenty-seven.',
+         'Put seven in its place. Seven star three: twenty-one plus nine — thirty.')])
+    # slide 8: find the operation  ◆(3) = 24, 8x  ->  ◆(5) = 30, 6x
+    _rn_sub(M, L, 8, [
+        ('$\\blacklozenge(3)=24$', '$\\blacklozenge(5)=30$'), ('◆(3) = 24 appears', '◆(5) = 30 appears'),
+        ('They took three, did the operation, and got twenty-four.', 'They took five, did the operation, and got thirty.'),
+        ('Below write "◆(x) = 8x → 8 · 3 = 24 ✓"', 'Below write "◆(x) = 6x → 6 · 5 = 30 ✓"'),
+        ('For example: eight x. Eight times three is twenty-four.', 'For example: six x. Six times five is thirty.'),
+        ("Put three in each — the one that doesn't give twenty-four is the answer.",
+         "Put five in each — the one that doesn't give thirty is the answer.")])
+    # slide 9: order can matter (same star, now 3a + b²)  3 ⋆ 4 / 4 ⋆ 3  ->  2 ⋆ 4 / 4 ⋆ 2
+    _rn_sub(M, L, 9, [
+        ('$3\\star4\\qquad 4\\star3$', '$2\\star4\\qquad 4\\star2$'), ('3 ⋆ 4 and 4 ⋆ 3 appear', '2 ⋆ 4 and 4 ⋆ 2 appear'),
+        ('Under 3 ⋆ 4 write "6 + 16 = 22"; under 4 ⋆ 3 write "8 + 9 = 17"', 'Under 2 ⋆ 4 write "6 + 16 = 22"; under 4 ⋆ 2 write "12 + 4 = 16"'),
+        ('Three star four: six plus sixteen, twenty-two. Four star three: eight plus nine, seventeen.',
+         'Two star four: six plus sixteen, twenty-two. Four star two: twelve plus four, sixteen.'),
+        ('one counterexample is enough — like three and four.', 'one counterexample is enough — like two and four.'),
+        ('Three star three equals three star three — for every operation.', 'Four star four equals four star four — for every operation.')])
+    # slide 10: unknown input  x ⋆ 2 = 18 -> x = 7  ->  x ⋆ 4 = 25 -> x = 3
+    _rn_sub(M, L, 10, [
+        ('$x\\star2=18$', '$x\\star4=25$'), ('x ⋆ 2 = 18 appears', 'x ⋆ 4 = 25 appears'),
+        ('Write "2x + 4 = 18 → 2x = 14 → x = 7"', 'Write "3x + 16 = 25 → 3x = 9 → x = 3"'),
+        ('Two x plus four equals eighteen. Two x is fourteen. x is seven.', 'Three x plus sixteen equals twenty-five. Three x is nine. x is three.'),
+        ('Write "x = 7: 2 · 7 + 2² = 14 + 4 = 18 ✓"', 'Write "x = 3: 3 · 3 + 4² = 9 + 16 = 25 ✓"'),
+        ("Seven: fourteen plus four, eighteen. That's the one.", "Three: nine plus sixteen, twenty-five. That's the one.")])
+    # memory card: the lesson's examples and the Hebrew questions' numbers
+    c = M.card(CARD)
+    new_ex = {
+        'Basic': '$a\\heartsuit b=2(a+b)$: $7\\heartsuit3=20$',
+        'Inside an exercise': '$\\blacklozenge(5)+\\blacklozenge(1)\\ne\\blacklozenge(6)$',
+        'Nested': '$(1\\star2)\\star3=7\\star3=30$',
+        'Find the operation': '$\\blacklozenge(5)=30$',
+        'Unknown input': '$x\\star4=25\\Rightarrow x=3$',
+        'Always $a\\star b=b\\star a$?': '$2\\star4\\ne4\\star2$',
+        'Input is an expression': '$F(5t)$ with $5t=35$',
+        'Conditions': 'odd $3x$, even $\\frac{x}{2}$: $\\blacklozenge(5)=15$, $\\blacklozenge(8)=4$',
+        'Circular': '$\\blacklozenge(x)=2\\cdot\\blacklozenge(x-1)$, $\\blacklozenge(1)=3$',
+        'Operation on both sides': '$3\\cdot\\blacklozenge(x)=\\blacklozenge(x)+4x\\Rightarrow\\blacklozenge(x)=2x$',
+        'Definition in words': 'remainder of $29\\div4$: $29=7\\cdot4+1$, so $1$',
+        '$\\blacklozenge(k)-\\blacklozenge(-k)$': '$x^4+3x$: $2\\cdot3\\cdot5=30$ for $k=5$',
+    }
+    rows = c['tables'][0]['rows']
+    for r in rows:
+        if r[0] in new_ex: r[2] = new_ex.pop(r[0])
+    assert not new_ex, new_ex
+    c['tips'][0] = 'A new operation need not behave like plus: $2\\star4\\ne4\\star2$.'
+
+
+def rn_guided(M):
+    B = '\\blacklozenge'
+    # ---------- Q1 q-541: ◆(a) = a² − 2a, ◆(5) = 15   ==>   ◆(a) = a² − 4a, ◆(6) = 12
+    _rn_q(M, 'q-541', 'The operation $\\blacklozenge$ is defined for every number $a$: $\\blacklozenge(a)=a^2-4a$. $\\blacklozenge(6)=?$',
+          ['$36$', '$12$', '$60$', '$24$'], 2, [
+        'Substitute $a=6$ into the definition: $\\blacklozenge(6)=6^2-4\\cdot6=36-24=12$.',
+        'Faster: factor first. $a^2-4a=a(a-4)$, so $\\blacklozenge(6)=6\\cdot2=12$.'])
+    _rn_video(M, 'q-541', [[
+        "The diamond of a is: a squared, minus four a.",
+        "Every time we do the diamond on a number — that number takes a's place. Everywhere.",
+        D('Write "◆(6) = 6² − 4 · 6"'),
+        "Same template, six instead of a.",
+        D('Write "= 36 − 24 = 12"'),
+        "Thirty-six minus twenty-four: twelve.",
+        D('Circle choice 2'),
+        "Choice two.",
+    ], [
+        "A quicker route: factor the rule before you substitute.",
+        D('Write "a² − 4a = a(a − 4)"'),
+        "a squared minus four a is a times a minus four.",
+        D('Write "◆(6) = 6 · 2 = 12" and circle choice 2'),
+        "Six times two: twelve. Same answer.",
+    ]])
+
+    # ---------- Q2 q-542: ◆(x) = x², ◆(◆(2)) = 16   ==>   ◆(◆(3)) = 81
+    _rn_q(M, 'q-542', 'The operation $\\blacklozenge$ is defined for every number $x$: $\\blacklozenge(x)=x^2$. $\\blacklozenge(\\blacklozenge(3))=?$',
+          ['$9$', '$27$', '$81$', '$3$'], 3, [
+        'Work from the inside out: $\\blacklozenge(3)=3^2=9$.',
+        'Then $\\blacklozenge(\\blacklozenge(3))=\\blacklozenge(9)=9^2=81$.',
+        'Stopping at $9$ is the trap.'])
+    _rn_video(M, 'q-542', [[
+        "A diamond inside a diamond. Like any brackets — start from the inside.",
+        D('Underline the inner ◆(3)'),
+        "First: the diamond of three.",
+        D('Write "◆(3) = 3² = 9"'),
+        "The diamond squares — three squared is nine.",
+        D('Write "◆(◆(3)) = ◆(9)"'),
+        "Now put nine in its place. The outer diamond works on nine.",
+        D('Write "= 9² = 81" and circle choice 3'),
+        "Nine squared: eighty-one. Choice three.",
+        "Stopping at nine is the trap — and nine is waiting among the choices.",
+    ], [
+        "Or think about the rule itself: squaring, then squaring again.",
+        D('Write "(x²)² = x⁴ → 3⁴ = 81"'),
+        "That's x to the fourth. Three to the fourth: eighty-one.",
+    ]])
+
+    # ---------- Q3 q-543: ◆(2) = 10, which cannot be ◆   ==>   ◆(3) = 21
+    _rn_q(M, 'q-543', 'Given: $\\blacklozenge(3)=21$. Which of the following cannot be the definition of the operation $\\blacklozenge$?',
+          ['$\\blacklozenge(x)=x^3-6$', '$\\blacklozenge(x)=x(x+4)$', '$\\blacklozenge(x)=5x+5$', '$\\blacklozenge(x)=8x-3$'], 3, [
+        'Put $x=3$ into each choice. A choice that does not give $21$ cannot be the definition.',
+        '(1) $3^3-6=27-6=21$ ✓. (2) $3\\cdot(3+4)=3\\cdot7=21$ ✓. (3) $5\\cdot3+5=20$ ✗. (4) $8\\cdot3-3=21$ ✓.',
+        'Only choice (3) fails.'])
+    _rn_video(M, 'q-543', [[
+        "They took three, did the diamond — and got twenty-one. We don't know the rule.",
+        "It could be infinitely many things. Seven x, for example: seven times three is twenty-one.",
+        "So: which definition can NOT be it? Put three into each choice.",
+        D('Next to choice 1 write "27 − 6 = 21 ✓"'),
+        "Choice one: three cubed minus six — twenty-one. It could be the rule. Out.",
+        D('Cross out choice 1'),
+        D('Next to choice 2 write "3 · 7 = 21 ✓"'),
+        "Choice two: three times seven — twenty-one again. Out.",
+        D('Cross out choice 2'),
+        D('Next to choice 3 write "15 + 5 = 20 ✗"'),
+        "Choice three: five times three plus five — twenty. Not twenty-one!",
+        D('Circle choice 3'),
+        "This one can't be the definition. On the exam: mark it and move on.",
+        "Just for practice, let's check the last one.",
+        D('Next to choice 4 write "24 − 3 = 21 ✓"'),
+        "Twenty-four minus three: twenty-one. Possible. Choice three it is.",
+    ]])
+
+    # ---------- Q6 q-544: ◆(3x) = x + 4, ◆(12) = 8   ==>   ◆(2x) = x + 5, ◆(14) = 12
+    _rn_q(M, 'q-544', 'The operation $\\blacklozenge$ is defined for every number $x$: $\\blacklozenge(2x)=x+5$. $\\blacklozenge(14)=?$',
+          ['$12$', '$19$', '$33$', '$7$'], 1, [
+        'The input of $\\blacklozenge$ is $2x$, not $x$. So find the $x$ with $2x=14$: $x=7$.',
+        'Then $\\blacklozenge(14)=x+5=7+5=12$.',
+        'The trap: putting $14$ straight into $x+5$ gives $19$.'])
+    _rn_video(M, 'q-544', [[
+        "Look closely: the diamond works on two x — not on x.",
+        "So fourteen is not x. Fourteen is two x.",
+        D('Write "2x = 14 → x = 7"'),
+        "Two x is fourteen, so x is seven.",
+        D('Write "◆(14) = x + 5 = 7 + 5 = 12"'),
+        "The rule says x plus five. Seven plus five: twelve.",
+        D('Circle choice 1'),
+        "Choice one.",
+        "Put fourteen straight into x plus five? Nineteen — and that trap is waiting in the choices.",
+    ]])
+
+    # ---------- Q7 q-545: odd 2x / even x² − 7, ◆◆◆(5) = 186   ==>   odd 2x / even x² − 3, ◆◆◆(3) = 66
+    _rn_q(M, 'q-545', 'The operation $\\blacklozenge$ is defined for every integer $x$:\n'
+          '$\\blacklozenge(x)=\\begin{cases} 2x, & x \\text{ odd} \\\\ x^2-3, & x \\text{ even} \\end{cases}$\n'
+          '$\\blacklozenge(\\blacklozenge(\\blacklozenge(3)))=?$',
+          ['$33$', '$12$', '$66$', '$6$'], 3, [
+        '$3$ is odd: $\\blacklozenge(3)=2\\cdot3=6$.',
+        '$6$ is even: $\\blacklozenge(6)=6^2-3=33$.',
+        '$33$ is odd: $\\blacklozenge(33)=2\\cdot33=66$.',
+        'Check odd or even again before every step.'])
+    _rn_video(M, 'q-545', [[
+        "Two rules: one for odd x, one for even x.",
+        "Three diamonds — so, as always, start from the inside.",
+        D('Write "◆(3): 3 odd → 2 · 3 = 6"'),
+        "Three is odd. The odd rule: two x. Six.",
+        D('Write "◆(6): 6 even → 6² − 3 = 33"'),
+        "Now six goes in. Six is even — switch rules! Six squared minus three: thirty-three.",
+        D('Write "◆(33): 33 odd → 2 · 33 = 66"'),
+        "Thirty-three is odd again. Times two: sixty-six.",
+        D('Circle choice 3'),
+        "Choice three.",
+        "Check the parity every single time — the output can switch sides.",
+    ]])
+
+    # ---------- Q9 q-546: ◆(0) = 0, ◆(x) = 7 − ◆(x − 2), ◆(6) = 7   ==>   ◆(0) = 2, ◆(x) = 9 − ◆(x − 2), ◆(6) = 7
+    _rn_q(M, 'q-546', 'The operation $\\blacklozenge$ is defined for every even integer $x\\ge0$:\n'
+          '$\\blacklozenge(x)=\\begin{cases} 2, & x=0 \\\\ 9-\\blacklozenge(x-2), & x\\ge2 \\end{cases}$\n$\\blacklozenge(6)=?$',
+          ['$2$', '$6$', '$7$', '$3$'], 3, [
+        'Go down to the start value: $\\blacklozenge(6)=9-\\blacklozenge(4)$, $\\blacklozenge(4)=9-\\blacklozenge(2)$, $\\blacklozenge(2)=9-\\blacklozenge(0)$, and $\\blacklozenge(0)=2$.',
+        'Climb back up: $\\blacklozenge(2)=9-2=7$, $\\blacklozenge(4)=9-7=2$, $\\blacklozenge(6)=9-2=7$.',
+        'The values go $2, 7, 2, 7$ — they switch back and forth.'])
+    _rn_video(M, 'q-546', [[
+        "The diamond of x uses the diamond of x minus two. And they gave us one start value: the diamond of zero is two.",
+        D('Write "◆(6) = 9 − ◆(4)"'),
+        "Diamond of six: nine minus the diamond of four. But we don't know that yet — keep going.",
+        D('Write "◆(4) = 9 − ◆(2)"'),
+        "Diamond of four: nine minus the diamond of two.",
+        D('Write "◆(2) = 9 − ◆(0)"'),
+        "Diamond of two: nine minus the diamond of zero.",
+        D('Write "◆(0) = 2"'),
+        "And the diamond of zero — given. Two. Now only numbers are left.",
+        D('Climb back up: write "◆(2) = 7, ◆(4) = 2, ◆(6) = 7"'),
+        "Nine minus two: seven. Nine minus seven: two. Nine minus two: seven.",
+        D('Circle choice 3'),
+        "Choice three.",
+    ], [
+        "Notice what happened: two, seven, two, seven.",
+        D('Write "2 → 7 → 2 → 7"'),
+        "It flips back and forth. So even the diamond of a hundred would be instant.",
+    ]])
+
+    # ---------- Q10 q-547: ◆(1) = 6, ◆(x) = ◆(x − 1), ◆(5) = 6   ==>   ◆(1) = 9, ◆(7) = 9
+    _rn_q(M, 'q-547', 'The operation $\\blacklozenge$ is defined for every positive integer $x$:\n'
+          '$\\blacklozenge(x)=\\begin{cases} 9, & x=1 \\\\ \\blacklozenge(x-1), & x>1 \\end{cases}$\n$\\blacklozenge(7)=?$',
+          ['$7$', '$1$', '$0$', '$9$'], 4, [
+        '$\\blacklozenge(7)=\\blacklozenge(6)=\\blacklozenge(5)=\\blacklozenge(4)=\\blacklozenge(3)=\\blacklozenge(2)=\\blacklozenge(1)=9$.',
+        'Each value copies the one below it, so the start value $9$ passes all the way up.'])
+    _rn_video(M, 'q-547', [[
+        "If x is bigger than one, the diamond of x is the diamond of x minus one. If x is one — nine.",
+        D('Write "◆(7) = ◆(6)"'),
+        "Seven is bigger than one: the diamond of seven is the diamond of six.",
+        D('Write "= ◆(5) = ◆(4) = ◆(3) = ◆(2) = ◆(1)"'),
+        "Six, five, four, three, two — each one just passes to the one below.",
+        "And now x is one. One is not bigger than one — so the start value applies.",
+        D('Write "◆(1) = 9"'),
+        "The diamond of one is nine.",
+        D('Circle choice 4'),
+        "So the diamond of seven is nine. Choice four.",
+    ]])
+
+    # ---------- Q11 q-548: 3◆(x) − 4x = 10 + 2◆(x), ◆(3) = 22   ==>   5◆(x) − 3x = 8 + 4◆(x), ◆(4) = 20
+    _rn_q(M, 'q-548', 'For every number $x$: $5\\cdot\\blacklozenge(x)-3x=8+4\\cdot\\blacklozenge(x)$. $\\blacklozenge(4)=?$',
+          ['$12$', '$20$', '$4$', '$28$'], 2, [
+        'Treat $\\blacklozenge(x)$ as one unknown and isolate it: $5\\cdot\\blacklozenge(x)-4\\cdot\\blacklozenge(x)=8+3x$, so $\\blacklozenge(x)=3x+8$.',
+        'Then $\\blacklozenge(4)=3\\cdot4+8=20$.'])
+    _rn_video(M, 'q-548', [[
+        "The diamond of x appears on both sides of the equation.",
+        "So treat it exactly like an unknown — and isolate it.",
+        D('Write "5◆(x) − 4◆(x) = 8 + 3x"'),
+        "Move the four diamonds to the left — minus. Move the minus three x to the right — plus.",
+        D('Write "◆(x) = 3x + 8"'),
+        "Five diamonds minus four diamonds: one diamond. Now it's a normal definition.",
+        D('Write "◆(4) = 12 + 8 = 20"'),
+        "Diamond of four: three times four plus eight. Twenty.",
+        D('Circle choice 2'),
+        "Choice two. Once it's isolated, it's a basic question.",
+    ]])
+
+    # ---------- Q12 q-549: ◆(t) = t², not always true: ◆(3x) = 3◆(x)   ==>   ◆(5x) = 5◆(x) (now choice 3)
+    _rn_q(M, 'q-549', 'For every number $t$: $\\blacklozenge(t)=t^2$. In the choices, $x\\ge0$. Which of the following is not always true?',
+          ['$\\blacklozenge(3x)=9\\cdot\\blacklozenge(x)$', '$\\blacklozenge(x)=\\blacklozenge(\\blacklozenge(\\sqrt{x}))$',
+           '$\\blacklozenge(5x)=5\\cdot\\blacklozenge(x)$', '$\\blacklozenge(x-2)=\\blacklozenge(2-x)$'], 3, [
+        '(3) $\\blacklozenge(5x)=(5x)^2=25x^2$, but $5\\cdot\\blacklozenge(x)=5x^2$. With $x=1$: $25\\ne5$. Not always true — this is the answer.',
+        '(1) $\\blacklozenge(3x)=(3x)^2=9x^2=9\\cdot\\blacklozenge(x)$. Always true.',
+        '(2) $\\blacklozenge(\\sqrt x)=(\\sqrt x)^2=x$, so $\\blacklozenge(\\blacklozenge(\\sqrt x))=\\blacklozenge(x)$. Always true.',
+        '(4) Opposite numbers have the same square, so $(x-2)^2=(2-x)^2$. Always true.',
+        'Plugging in? Do not use $x=0$: with $x=0$ every choice looks true.'])
+    _rn_video(M, 'q-549', [[
+        "The diamond appears in every choice — twice! That's lots of work.",
+        "It's a must-be-true question — \"not always true\" means one choice can be broken.",
+        "So on the exam: skip it, solve the rest of the section, and come back at the end.",
+        "Now let's check. The diamond squares its input.",
+        D('Next to choice 1 write "(3x)² = 9x² ✓"'),
+        "Choice one: three x, squared, is nine x squared. Nine times x squared — the same. True.",
+        D('Next to choice 3 write "(5x)² = 25x² vs 5x² ✗"'),
+        "Choice three: five x, squared, is twenty-five x squared. Five times x squared is only five x squared. Not equal!",
+        D('Circle choice 3'),
+        "We solved it mathematically — so we can mark it right away.",
+        "Just to see: choice two: the root, squared — it cancels. True. Choice four: x minus two and two minus x are opposites — squared, they're equal. True.",
+    ], [
+        "The faster way: plug in x equals one.",
+        D('Next to choice 1 write "◆(3) = 9, 9 · ◆(1) = 9 ✓"'),
+        "Choice one: the diamond of three is nine. Nine times the diamond of one: nine. Equal.",
+        D('Next to choice 2 write "1 = 1 ✓"'),
+        "Choice two: one equals one.",
+        D('Next to choice 3 write "◆(5) = 25, 5 · ◆(1) = 5 ✗"'),
+        "Choice three: the diamond of five is twenty-five. Five times the diamond of one is five. Not equal — found it.",
+        D('Next to choice 4 write "1 = 1 ✓"'),
+        "Choice four: one minus two is minus one, two minus one is one — both squared give one.",
+        D('Circle choice 3'),
+        "One warning. Zero or one can make a false rule look true. Here only choice three failed, so we're done.",
+        "If two choices had survived, we'd try a second number, like two.",
+        "So: skip it at first — and when you come back, plug in. Much faster than opening everything.",
+    ]])
+
+    # ---------- Q14 q-550: ◆(1, 1, ◆(1, 2, 2)) = 11   ==>   ◆(1, 1, ◆(2, 1, 3)) = 20
+    _rn_q(M, 'q-550', 'For every three numbers $x$, $y$, $z$: $\\blacklozenge(x, y, z)=x^{yz}+y^{xz}+z^{xy}$. $\\blacklozenge(1, 1, \\blacklozenge(2, 1, 3))=?$',
+          ['$2$', '$18$', '$20$', '$36$'], 3, [
+        'Inner operation first, with $x=2$, $y=1$, $z=3$: $\\blacklozenge(2, 1, 3)=2^{3}+1^{6}+3^{2}=8+1+9=18$.',
+        'Outer operation, with $x=1$, $y=1$, $z=18$: $\\blacklozenge(1, 1, 18)=1^{18}+1^{18}+18^{1}=1+1+18=20$.'])
+    _rn_video(M, 'q-550', [[
+        "A brand-new operation — but only numbers here, no unknowns.",
+        "The diamond appears twice. So we'll run the operation twice.",
+        "Always start with the inner one.",
+        D('Under the inner diamond write "x = 2, y = 1, z = 3"'),
+        "Inner diamond: x is two, y is one, z is three.",
+        "The rule: each number to the power of the product of the other two.",
+        D('Write "2³ + 1⁶ + 3² = 8 + 1 + 9 = 18"'),
+        "Two to the power one-times-three: eight. One to the power two-times-three: one. Three to the power two-times-one: nine. Eighteen.",
+        D('Write "◆(1, 1, 18)" next to the outer diamond'),
+        "Now the outer diamond: one, one, eighteen.",
+        D('Write "1¹⁸ + 1¹⁸ + 18¹ = 1 + 1 + 18 = 20"'),
+        "One to any power is one. One again. Eighteen to the power one-times-one: eighteen.",
+        D('Circle choice 3'),
+        "One plus one plus eighteen: twenty. Choice three.",
+    ], [
+        "Now the psychometric shortcut: look at the OUTER diamond before calculating anything.",
+        "Sometimes a zero in the outer call makes the inner value irrelevant. Here there's no zero — but the two ones do something similar.",
+        D('Under the outer diamond write "1ᶻ + 1ᶻ + z¹ = 2 + z"'),
+        "One to any power is one — twice. And the last number goes to the power one times one: it stays itself.",
+        "So the outer diamond is just two plus whatever sits in the third slot.",
+        D('Write "2 + 18 = 20" and circle choice 3'),
+        "The inner value is eighteen — so two plus eighteen: twenty. Choice three.",
+        "Shorter — but only if you spot it under exam pressure. If not, Method 1 always works.",
+    ]])
+
+    # ---------- Q15 q-551: #(◆(9, 6), ◆(8, 6)) = 169   ==>   #(◆(10, 6), ◆(5, 4)) = 289
+    _rn_q(M, 'q-551', 'For every two numbers $x$ and $y$, two operations are defined:\n'
+          '$\\begin{cases} \\blacklozenge(x, y)=x^2-2xy+y^2 \\\\ \\#(x, y)=x^2+2xy+y^2 \\end{cases}$\n$\\#(\\blacklozenge(10, 6), \\blacklozenge(5, 4))=?$',
+          ['$256$', '$289$', '$324$', '$361$'], 2, [
+        'Recognize the square formulas: $\\blacklozenge(x, y)=(x-y)^2$ and $\\#(x, y)=(x+y)^2$.',
+        '$\\blacklozenge(10, 6)=(10-6)^2=16$ and $\\blacklozenge(5, 4)=(5-4)^2=1$.',
+        '$\\#(16, 1)=(16+1)^2=17^2=289$.'])
+    _rn_video(M, 'q-551', [[
+        "Two definitions: the diamond and the hash.",
+        "The diamond appears twice inside the brackets — left and right. Then the hash acts on both results.",
+        "So three calculations. Start with the left diamond.",
+        D('Under ◆(10, 6) write "100 − 120 + 36 = 16"'),
+        "Ten squared: a hundred. Minus two times ten times six: minus a hundred twenty. Plus six squared: thirty-six. Sixteen.",
+        D('Under ◆(5, 4) write "25 − 40 + 16 = 1"'),
+        "Right diamond: twenty-five, minus forty, plus sixteen. One.",
+        D('Write "#(16, 1) = 256 + 32 + 1 = 289"'),
+        "Now the hash on sixteen and one: two fifty-six, plus two times sixteen times one — thirty-two — plus one.",
+        D('Circle choice 2'),
+        "Two hundred eighty-nine. Choice two.",
+    ], [
+        "The psychometric shortcut: recognize the contracted multiplication formulas.",
+        D('Next to the diamond\'s definition write "= (x − y)²"'),
+        "x squared minus two x y plus y squared — that's x minus y, squared.",
+        D('Next to the hash\'s definition write "= (x + y)²"'),
+        "And the hash is x plus y, squared.",
+        D('Write "◆(10, 6) = 4² = 16,  ◆(5, 4) = 1² = 1"'),
+        "Ten minus six, squared: sixteen. Five minus four, squared: one.",
+        D('Write "#(16, 1) = 17² = 289" and circle choice 2'),
+        "Sixteen plus one, squared: seventeen squared. Two eighty-nine. Choice two.",
+        "Much shorter — and the exam rewards those of you who can see it.",
+    ]])
+
+    # ---------- Q17 q-552: ◆(x, y) = √(3x² + y²), answer √(13/7)   ==>   √(8x² + y²), answer √(73/17)
+    _rn_q(M, 'q-552', 'For every two numbers $x$ and $y$: $\\blacklozenge(x, y)=\\sqrt{8x^2+y^2}$. Given: $a>0$. '
+          '$\\frac{\\blacklozenge(\\blacklozenge(a, a), a)}{\\blacklozenge(a, \\blacklozenge(a, a))}=?$',
+          ['$1$', '$\\sqrt{\\frac{17}{73}}$', '$\\sqrt{\\frac{73}{17}}$', '$\\sqrt{\\frac{9}{8}}$'], 3, [
+        'Inner: $\\blacklozenge(a, a)=\\sqrt{8a^2+a^2}=\\sqrt{9a^2}=3a$.',
+        'Top: $3a$ goes into the FIRST slot: $\\blacklozenge(3a, a)=\\sqrt{8\\cdot9a^2+a^2}=\\sqrt{73a^2}=a\\sqrt{73}$.',
+        'Bottom: $3a$ goes into the SECOND slot: $\\blacklozenge(a, 3a)=\\sqrt{8a^2+9a^2}=\\sqrt{17a^2}=a\\sqrt{17}$.',
+        '$\\frac{a\\sqrt{73}}{a\\sqrt{17}}=\\sqrt{\\frac{73}{17}}$.',
+        'Or plug in $a=1$: $\\frac{\\blacklozenge(3, 1)}{\\blacklozenge(1, 3)}=\\frac{\\sqrt{73}}{\\sqrt{17}}$.'])
+    _rn_video(M, 'q-552', [[
+        "Four diamonds here — but diamond of a, a appears both on top and on the bottom.",
+        "So three calculations. Start with the inner one.",
+        D('Write "◆(a, a) = √(8a² + a²) = √(9a²) = 3a"'),
+        "x is a, y is a: root of eight a squared plus a squared. Root of nine a squared: three a.",
+        D('Top: write "◆(3a, a) = √(72a² + a²) = a√73"'),
+        "Top: three a goes in the FIRST slot. Squared: nine a squared. Times eight: seventy-two a squared. Plus a squared: root of seventy-three a squared — a root seventy-three.",
+        D('Bottom: write "◆(a, 3a) = √(8a² + 9a²) = a√17"'),
+        "Bottom: now three a is in the SECOND slot. Eight a squared plus nine a squared: a root seventeen.",
+        D('Write "a√73 / a√17 = √(73/17)" and circle choice 3'),
+        "Cancel the a's. Root seventy-three over root seventeen — same order of root, so one root: seventy-three seventeenths. Choice three.",
+    ], [
+        "Now the recommended route: plug in a number.",
+        "All the choices are plain numbers — so one substitution is enough. a is positive: take a equals one.",
+        D('Write "◆(1, 1) = √(8 + 1) = 3"'),
+        "Diamond of one, one: root of nine. Three.",
+        D('Top: write "◆(3, 1) = √(72 + 1) = √73"'),
+        "Top: diamond of three and one. Three is in the first slot — it gets squared and multiplied by eight. Seventy-two plus one: root seventy-three.",
+        "Only choice three has seventy-three on top. A strong hint — but one more line makes it sure.",
+        D('Bottom: write "◆(1, 3) = √(8 + 9) = √17"'),
+        "Bottom: diamond of one and three. Now three is in the second slot. Eight plus nine: root seventeen.",
+        D('Write "√73 / √17 = √(73/17)" and circle choice 3'),
+        "Root seventy-three over root seventeen. Choice three.",
+        "In operation questions with unknowns, plugging in is the recommended way.",
+    ]])
+
+    # ---------- Q18 q-553: (x − y)²/(x²y), answer b/a   ==>   (x − y)²/(xy³), answer a²/b²
+    _rn_q(M, 'q-553', 'For every two numbers $x$ and $y$ that are not $0$: $\\blacklozenge(x, y)=\\frac{(x-y)^2}{xy^3}$. '
+          'Given: $a$ and $b$ are two different numbers, and neither of them is $0$. $\\frac{\\blacklozenge(a, b)}{\\blacklozenge(b, a)}=?$',
+          ['$\\frac{a}{b}$', '$1$', '$\\frac{a^2}{b^2}$', '$\\frac{b^2}{a^2}$'], 3, [
+        '$\\blacklozenge(a, b)=\\frac{(a-b)^2}{ab^3}$ and $\\blacklozenge(b, a)=\\frac{(b-a)^2}{ba^3}$.',
+        'The tops are equal, because $(b-a)^2=(a-b)^2$. They cancel:',
+        '$\\frac{(a-b)^2}{ab^3}\\cdot\\frac{ba^3}{(a-b)^2}=\\frac{ba^3}{ab^3}=\\frac{a^2}{b^2}$.',
+        'Check with $a=1$, $b=2$: $\\blacklozenge(1, 2)=\\frac18$ and $\\blacklozenge(2, 1)=\\frac12$, and $\\frac18\\div\\frac12=\\frac14=\\frac{a^2}{b^2}$ ✓.'])
+    _rn_video(M, 'q-553', [[
+        "Top: diamond of a, b. x is a, y is b.",
+        D('Write "◆(a, b) = (a − b)² / (ab³)"'),
+        "a minus b, squared, over a times b cubed.",
+        D('Write "◆(b, a) = (b − a)² / (ba³)"'),
+        "Bottom: diamond of b, a. b minus a, squared, over b times a cubed.",
+        D('Write "= (a − b)²/(ab³) · (ba³)/(b − a)²"'),
+        "Dividing by a fraction: multiply by its reciprocal.",
+        "Tip: don't open the squared brackets yet — they might cancel. And they do.",
+        D('Cancel the squared brackets, one a and one b; write "= a²/b²"'),
+        "The squares match. One a cancels, one b cancels. a squared over b squared.",
+        D('Circle choice 3'),
+        "Choice three.",
+    ], [
+        "For students who see the algebra: the same two letters, just swapped.",
+        "Top of the definition: x minus y, squared. a minus b and b minus a are opposites — and squared, they're equal.",
+        D('Write "(a − b)² = (b − a)²"'),
+        "So the tops cancel completely. Only the bottoms are left — and dividing flips the second one.",
+        D('Write "= (ba³) / (ab³) = a²/b²"'),
+        "b times a cubed, over a times b cubed. One a and one b cancel: a squared over b squared. One line.",
+        D('Circle choice 3'),
+        "Choice three.",
+    ], [
+        "The standard psychometric route: plug in numbers.",
+        "Letters in the answers too — so first make sure the choices come out DIFFERENT.",
+        "a and b can't be equal, and can't be zero. Try a equals one, b equals two.",
+        D('Next to the choices write their values: 1/2, 1, 1/4, 4'),
+        "One half, one, one quarter, four. All different — one substitution is enough.",
+        D('Write "◆(1, 2) = 1/8,  ◆(2, 1) = 1/2"'),
+        "Top: one minus two, squared, is one — over one times two cubed, eight. One eighth. Bottom: one — over two times one. One half.",
+        D('Write "(1/8) ÷ (1/2) = 1/4" and circle choice 3'),
+        "One eighth divided by one half: one eighth times two. One quarter. Choice three.",
+        "Strong at algebra? Use the insight. Everyone else: just plug in.",
+    ]])
+
+    # ---------- Q19 q-554: A⁴ + B³ + C², digits 1, 2, 3   ==>   same rule A⁴ + B³ + C², digits 1, 2, 4
+    # (review 2026-10-06: the renumber pass had lowered the powers to A³ + B² + C; the Hebrew powers 4, 3, 2 are kept now)
+    _rn_q(M, 'q-554', '$A$, $B$ and $C$ are digits from $1$ to $9$. For every three-digit number $ABC$, the operation $\\blacklozenge$ is defined: '
+          '$\\blacklozenge(ABC)=A^4+B^3+C^2$. Which of the following is the smallest?',
+          ['$\\blacklozenge(214)$', '$\\blacklozenge(142)$', '$\\blacklozenge(412)$', '$\\blacklozenge(124)$'], 4, [
+        '$\\blacklozenge(214)=2^4+1^3+4^2=16+1+16=33$.',
+        '$\\blacklozenge(142)=1^4+4^3+2^2=1+64+4=69$.',
+        '$\\blacklozenge(412)=4^4+1^3+2^2=256+1+4=261$.',
+        '$\\blacklozenge(124)=1^4+2^3+4^2=1+8+16=25$.',
+        'The smallest is $\\blacklozenge(124)=25$: the biggest power goes on the smallest digit.'])
+    _rn_video(M, 'q-554', [[
+        "Every choice contains the operation — so we have to evaluate the choices.",
+        "The hundreds digit goes to the fourth power, the tens to the third, the units to the second.",
+        D('Next to choice 1 write "16 + 1 + 16 = 33"'),
+        "Two-one-four: two to the fourth, sixteen. One cubed, one. Four squared, sixteen. Thirty-three.",
+        D('Next to choice 2 write "1 + 64 + 4 = 69"'),
+        "One-four-two: one, sixty-four, four. Sixty-nine. Bigger — choice two is out.",
+        D('Next to choice 3 write "256 + 1 + 4 = 261"'),
+        "Four-one-two: two hundred fifty-six, one, four. Two hundred sixty-one. Out.",
+        D('Next to choice 4 write "1 + 8 + 16 = 25"'),
+        "One-two-four: one, eight, sixteen. Twenty-five. Smaller than thirty-three — so choice one is out too.",
+        D('Circle choice 4'),
+        "Smallest: twenty-five. Choice four.",
+    ], [
+        "The psychometric shortcut: think minimum and maximum.",
+        "Every choice uses the same digits: one, two, four.",
+        "The biggest power — the fourth — goes on the hundreds digit. So that digit must be as small as possible.",
+        D('Cross out choices 1 and 3'),
+        "Only choices two and four start with one.",
+        "Next biggest power — the cube — sits on the tens digit. That one should be the smaller of what's left.",
+        D('Circle choice 4'),
+        "Two in the tens beats four in the tens. One-two-four. Choice four — without a single full calculation.",
+    ]])
+
+    # ---------- Q20 q-555: ◆(x) = 1/x, must be true: ◆(a)·a = ◆(b)·b   ==>   ◆(x) = 3/x, same idea (now choice 2)
+    _rn_q(M, 'q-555', 'For every number $x\\ne0$: $\\blacklozenge(x)=\\frac3x$. Which of the following must be true for all positive $a$ and $b$?',
+          ['$\\blacklozenge(a)<3$', '$\\blacklozenge(a)\\cdot a=\\blacklozenge(b)\\cdot b$',
+           '$\\frac{\\blacklozenge(a)}{\\blacklozenge(b)}=\\frac{a}{b}$', '$\\blacklozenge(a)<\\blacklozenge(a+1)$'], 2, [
+        '(2) $\\blacklozenge(a)\\cdot a=\\frac3a\\cdot a=3$ and $\\blacklozenge(b)\\cdot b=\\frac3b\\cdot b=3$. Both sides are always $3$ ✓.',
+        '(1) $a=\\frac12$ gives $\\blacklozenge(a)=6$, which is not less than $3$ ✗.',
+        '(3) $\\frac{\\blacklozenge(a)}{\\blacklozenge(b)}=\\frac3a\\div\\frac3b=\\frac3a\\cdot\\frac{b}{3}=\\frac{b}{a}$, not $\\frac{a}{b}$ ✗ (for example $a=1$, $b=2$).',
+        '(4) A bigger denominator gives a smaller fraction: $\\frac3a>\\frac3{a+1}$. For example $a=1$: $3>\\frac32$ ✗.'])
+    _rn_video(M, 'q-555', [[
+        "The operation takes a number and gives three over it.",
+        "They ask what MUST be true for every positive a and b. We try to break each choice.",
+        "Choice one: three over a is less than three?",
+        D('Next to choice 1 write "a = 1/2 → 6"'),
+        "Technically: multiply both sides by a — it's positive, no flip — and divide by three. You get one less than a. True only when a is above one.",
+        "Two, three, four — yes: one and a half, one, three quarters. But a equals one gives exactly three. And a could be a half — then three over a is six. Not always true.",
+        D('Cross out choice 1'),
+        "On to the second claim.",
+        D('Next to choice 2 write "(3/a) · a = 3 = (3/b) · b ✓"'),
+        "Choice two: three over a, times a — the a cancels. Three. Three over b, times b — also three. Three equals three, for every a and b. Keep it — and break the others to be sure.",
+        D('Next to choice 3 write "(3/a) ÷ (3/b) = b/a"'),
+        "Choice three: three over a, divided by three over b: b over a — not a over b. Dividing by a fraction is multiplying by its reciprocal.",
+        D('Cross out choice 3'),
+        "Choice four: three over a less than three over a plus one?",
+        D('Next to choice 4 write "a + 1 < a → 1 < 0 ✗"'),
+        "Both sides positive, so cross-multiply without flipping, and divide by three: a plus one less than a. One less than zero — never true.",
+        "Or by understanding: a bigger denominator makes a SMALLER fraction. a equals two: three halves is not less than one.",
+        D('Cross out choice 4 and circle choice 2'),
+        "Three out, and choice two holds every time. Choice two.",
+    ]])
+
+    # ---------- Q21 q-556: ⟦x⟧ = number of 3s in the prime factorization   ==>   number of 5s (key now choice 4)
+    _rn_q(M, 'q-556', 'For every positive integer $x$, ⟦$x$⟧ is the number of times $5$ appears in the prime factorization of $x$. '
+          'For example, $50=2\\cdot5\\cdot5$ has two 5s, so ⟦$50$⟧ is $2$. Which of the following must be true?',
+          ['⟦$5x$⟧ $=$ ⟦$x^2$⟧', '⟦$x+5$⟧ $=$ ⟦$x$⟧ $+1$', '⟦$5x$⟧ $=5\\cdot$ ⟦$x$⟧', '⟦$5x$⟧ $=$ ⟦$x$⟧ $+1$'], 4, [
+        'Multiplying $x$ by $5$ adds exactly one more $5$ to its prime factorization. So ⟦$5x$⟧ $=$ ⟦$x$⟧ $+1$ always ✓.',
+        'For example $x=50$: $250=2\\cdot5^3$, so ⟦$250$⟧ $=3=2+1$.',
+        'The others break: (1) $x=2$: ⟦$10$⟧ $=1$, but ⟦$4$⟧ $=0$ ✗. (2) $x=5$: ⟦$10$⟧ $=1$, but ⟦$5$⟧ $+1=2$ ✗. (3) $x=5$: ⟦$25$⟧ $=2$, but $5\\cdot$ ⟦$5$⟧ $=5$ ✗.'])
+    _rn_video(M, 'q-556', [[
+        "First, understand the operation through its example.",
+        A("'Definition in words? Write 2–3 examples first' appears", T('Definition in words? Write $2$–$3$ examples first', size=36)),
+        "A definition in words — a remainder, the number of divisors, the sum of the digits — is easy to misread. Write two or three quick examples first.",
+        D('Under the example write "50 = 2 · 5 · 5 → two 5s"'),
+        "Fifty breaks into two, five, five. The factor five appears twice. So the answer is two.",
+        "Understanding here isn't simple — so plug in first. The simplest value: x equals one. No fives inside at all.",
+        D('Next to choice 1 write "⟦5⟧ = 1 ≠ ⟦1⟧ = 0"'),
+        "Choice one: five times one is five — one five. One squared is one — no fives. One versus zero. False.",
+        D('Cross out choice 1'),
+        D('Next to choice 2 write "⟦6⟧ = 0 ≠ 1"'),
+        "Choice two: one plus five is six — no fives. Zero. But zero plus one is one. False.",
+        D('Cross out choice 2'),
+        D('Next to choice 3 write "1 ≠ 5 · 0"'),
+        "Choice three: one versus five times zero. False.",
+        D('Next to choice 4 write "⟦5⟧ = 1 = 0 + 1"'),
+        "Choice four: five times one is five — one five. And zero plus one: one. True.",
+        D('Cross out choice 3 and circle choice 4'),
+        "Three eliminated. Choice four.",
+        "One is a risky number — it can make a false rule look true. But here three choices failed and only one survived. Safe.",
+    ], [
+        "Now why choice four is always true.",
+        "Multiply x by five — you add exactly one more five to its factors. So the count goes up by exactly one.",
+        "Choice two ADDS five. Adding doesn't tell you anything about the factors.",
+        "Choice one squares x — squaring DOUBLES the number of fives.",
+        D('Next to choice 3 write "x = 5³: 4 ≠ 15"'),
+        "Choice three multiplies the COUNT by five. Take x as five cubed: times five gives four fives — not fifteen.",
+        D('Circle choice 4'),
+        "Only choice four holds every time.",
+    ]])
+
+
+def rn_practice_questions(M):
+    S = lambda *a: _rn_q(M, *a)
+    S('q-557', 'For all $a$ and $b$ with $a\\ge b\\ge0$: $\\blacklozenge(a, b)=\\sqrt{\\sqrt a-\\sqrt b}$. $\\frac{\\blacklozenge(169, 16)}{\\blacklozenge(36, 25)}=?$',
+      ['$\\sqrt3$', '$9$', '$3$', '$1$'], 3, [
+        '$\\blacklozenge(169, 16)=\\sqrt{\\sqrt{169}-\\sqrt{16}}=\\sqrt{13-4}=\\sqrt9=3$.',
+        '$\\blacklozenge(36, 25)=\\sqrt{\\sqrt{36}-\\sqrt{25}}=\\sqrt{6-5}=\\sqrt1=1$.',
+        '$\\frac31=3$. (Forgetting the outer root gives $9$.)'])
+    S('q-558', 'For every two different numbers $x$ and $y$, two operations are defined:\n'
+      '$\\blacklozenge(x, y)$ = the smaller of $x$ and $y$\n$\\#(x, y)$ = the larger of $x$ and $y$\n'
+      '$\\#(\\blacklozenge(8, 5), \\blacklozenge(12, 2))=?$',
+      ['$2$', '$5$', '$8$', '$12$'], 2, [
+        '$\\blacklozenge(8, 5)=5$ (the smaller) and $\\blacklozenge(12, 2)=2$.',
+        'Then $\\#(5, 2)=5$ (the larger).'])
+    S('q-559', 'For every two numbers $x$ and $y$: $\\blacklozenge(x, y)=\\sqrt{x^2+y^2}$. $\\blacklozenge(\\blacklozenge(4, 1), 8)=?$',
+      ['$9$', '$17$', '$8$', '$5$'], 1, [
+        'Inner: $\\blacklozenge(4, 1)=\\sqrt{16+1}=\\sqrt{17}$.',
+        'Outer: $\\blacklozenge(\\sqrt{17}, 8)=\\sqrt{(\\sqrt{17})^2+8^2}=\\sqrt{17+64}=\\sqrt{81}=9$.'])
+    S('q-560', 'For every number $x$: $\\blacklozenge(x)=x(x-3)$. $\\blacklozenge(\\blacklozenge(4))=?$',
+      ['$1$', '$3$', '$4$', '$16$'], 3, [
+        'Inner: $\\blacklozenge(4)=4\\cdot(4-3)=4\\cdot1=4$.',
+        'Outer: $\\blacklozenge(4)=4$ again. The operation sends $4$ back to $4$.'])
+    S('q-561', 'For every positive integer $a$: $\\blacklozenge(a)=\\frac{a}{a+1}$. '
+      '$\\blacklozenge(2)\\cdot\\blacklozenge(3)\\cdot\\blacklozenge(4)\\cdot\\blacklozenge(5)\\cdot\\blacklozenge(6)\\cdot\\blacklozenge(7)=?$',
+      ['$\\frac{1}{8}$', '$\\frac{1}{4}$', '$\\frac{7}{8}$', '$\\frac{1}{7}$'], 2, [
+        '$\\frac23\\cdot\\frac34\\cdot\\frac45\\cdot\\frac56\\cdot\\frac67\\cdot\\frac78$.',
+        'Each top cancels the bottom before it: $3$, $4$, $5$, $6$ and $7$ all cancel. What is left: $\\frac28=\\frac14$.',
+        'The trap $\\frac18$ forgets that the product starts at $\\blacklozenge(2)$, so the first top is $2$, not $1$.'])
+    S('q-562', 'For every number $x$: $\\blacklozenge(x)=x(x+5)(x-2)$. For how many different values of $x$ is $\\blacklozenge(x)$ equal to $0$?',
+      ['$1$', '$2$', '$0$', '$3$'], 4, [
+        'A product is $0$ exactly when one of its factors is $0$: $x=0$, or $x+5=0$, or $x-2=0$.',
+        'So $x=0$, $x=-5$ or $x=2$. Three values.'])
+    S('q-563', 'For every number $a$: $\\blacklozenge(a^2)=|a|$. $\\blacklozenge\\left(\\frac1{16}\\right)=?$',
+      ['$\\frac{1}{16}$', '$\\frac{1}{32}$', '$\\frac{1}{4}$', '$\\frac{1}{256}$'], 3, [
+        'The input is $a^2$. Find $a$ with $a^2=\\frac1{16}$: $a=\\frac14$ or $a=-\\frac14$.',
+        'Either way $|a|=\\frac14$. So $\\blacklozenge\\left(\\frac1{16}\\right)=\\frac14$.'])
+    S('q-564', 'For every number $a$: $\\blacklozenge(a)=a^5+a^4+a^3+a^2+a+1$. $\\blacklozenge(1)-\\blacklozenge(-1)=?$',
+      ['$6$', '$3$', '$0$', '$1$'], 1, [
+        '$\\blacklozenge(1)$: all $6$ terms are $1$, so $\\blacklozenge(1)=6$.',
+        '$\\blacklozenge(-1)=-1+1-1+1-1+1=0$.',
+        '$6-0=6$.',
+        'Shortcut: in $\\blacklozenge(1)-\\blacklozenge(-1)$ the even powers and the constant cancel. Only the $3$ odd powers are left, doubled: $2\\cdot3=6$.'])
+    S('q-565', 'For every two numbers $a$ and $b$:\n'
+      '$a\\blacklozenge b=\\begin{cases} \\frac{a+b}{a-b}, & a\\ne b \\\\ 0, & a=b \\end{cases}$\n$(5\\blacklozenge3)\\blacklozenge4=?$',
+      ['$4$', '$1$', '$0$', '$-1$'], 3, [
+        'Inner: $5\\ne3$, so $5\\blacklozenge3=\\frac{5+3}{5-3}=\\frac82=4$.',
+        'Outer: $4\\blacklozenge4$ has $a=b$, so the second rule gives $0$.'])
+    S('q-566', 'For every number $x$: $\\blacklozenge(x)+2=10x-\\blacklozenge(x)$. $\\blacklozenge(3)=?$',
+      ['$16$', '$14$', '$28$', '$13$'], 2, [
+        'Collect the $\\blacklozenge(x)$ terms: $2\\cdot\\blacklozenge(x)=10x-2$, so $\\blacklozenge(x)=5x-1$.',
+        '$\\blacklozenge(3)=5\\cdot3-1=14$.'])
+    S('q-567', 'For two positive integers $x$ and $y$, $x\\sim y$ is the number you get when you write the digits of $x$ '
+      'and then the digits of $y$. For example: $36\\sim7=367$. '
+      'Which of the following is not always true for positive integers $x$, $y$ and $z$?',
+      ['$x\\sim y=y\\sim x$', '$x<2\\sim x$', '$x\\sim3=10x+3$', '$(x\\sim y)\\sim z=x\\sim(y\\sim z)$'], 1, [
+        'One counterexample is enough: $36\\sim7=367$, but $7\\sim36=736$. So (1) is not always true.',
+        'The others are always true. (2) $2\\sim x$ has one more digit than $x$, so it is bigger. '
+        '(3) Writing the digit $3$ after $x$ moves every digit of $x$ one place to the left and adds $3$: for example $58\\sim3=583=10\\cdot58+3$. '
+        '(4) Both sides are the digits of $x$, then $y$, then $z$, in that order.'])
+    S('q-568', 'For every number $x$: $\\blacklozenge(x)=x^4+2x^2+7x-5$. $\\blacklozenge(3)-\\blacklozenge(-3)=?$',
+      ['$42$', '$0$', '$230$', '$84$'], 1, [
+        '$\\blacklozenge(3)=81+18+21-5=115$ and $\\blacklozenge(-3)=81+18-21-5=73$.',
+        '$115-73=42$.',
+        'Shortcut: the even powers and the constant are the same for $3$ and $-3$, so they cancel. Only $7x$ is left, doubled: $2\\cdot7\\cdot3=42$.'])
+    S('q-569', 'For every positive integer $n$:\n'
+      '$\\blacklozenge(n)=\\begin{cases} 7, & n=1 \\\\ \\blacklozenge(n-1)+3, & n>1 \\end{cases}$\n$\\blacklozenge(5)=?$',
+      ['$22$', '$16$', '$19$', '$15$'], 3, [
+        'Climb up from the start value: $\\blacklozenge(1)=7$, $\\blacklozenge(2)=10$, $\\blacklozenge(3)=13$, $\\blacklozenge(4)=16$, $\\blacklozenge(5)=19$.',
+        'Or: four steps of $+3$ above the start value: $7+4\\cdot3=19$.'])
+    S('q-570', 'For every number $x$, two operations are defined:\n'
+      '$\\begin{cases} \\blacklozenge(x)=x+5 \\\\ \\#(x)=x^2 \\end{cases}$\nGiven: $\\blacklozenge(\\#(a))=\\#(\\blacklozenge(a))$. $a=?$',
+      ['$2$', '$-2$', '$0$', '$-5$'], 2, [
+        'Left side: $\\blacklozenge(\\#(a))=\\blacklozenge(a^2)=a^2+5$.',
+        'Right side: $\\#(\\blacklozenge(a))=\\#(a+5)=(a+5)^2=a^2+10a+25$.',
+        '$a^2+5=a^2+10a+25$, so $10a=-20$ and $a=-2$.',
+        'Check: $\\blacklozenge(\\#(-2))=\\blacklozenge(4)=9$ and $\\#(\\blacklozenge(-2))=\\#(3)=9$ ✓.'])
+    S('q-571', 'For every integer $n$ from $1$ to $9$, $\\blacklozenge(n)$ is the number of two-digit numbers whose tens digit is $n$ '
+      'and whose units digit is smaller than $n$. $\\blacklozenge(n)=?$',
+      ['$10-n$', '$n+1$', '$n$', '$n-1$'], 3, [
+        'Examples first. $n=4$: the numbers $40$, $41$, $42$, $43$. Four numbers, so $\\blacklozenge(4)=4$.',
+        'In general, the units digit can be $0, 1, \\ldots, n-1$: that is $n$ digits. So $\\blacklozenge(n)=n$.'])
+    S('q-572', 'For every two integers $a$ and $b$ that are not $0$: $\\blacklozenge(a, b)=\\frac{a}{b}-\\frac{b}{a}$. $\\blacklozenge(-1, 3)=?$',
+      ['$\\blacklozenge(1, 3)$', '$\\blacklozenge(-3, 1)$', '$\\blacklozenge(3, 1)$', '$\\blacklozenge(3, -1)$'], 3, [
+        '$\\blacklozenge(-1, 3)=\\frac{-1}{3}-\\frac{3}{-1}=-\\frac13+3=\\frac83$.',
+        'Now the choices: $\\blacklozenge(3, 1)=3-\\frac13=\\frac83$ ✓.',
+        'The others: $\\blacklozenge(1, 3)=\\frac13-3=-\\frac83$, $\\blacklozenge(-3, 1)=-3+\\frac13=-\\frac83$, $\\blacklozenge(3, -1)=-3+\\frac13=-\\frac83$.'])
+    S('q-573', 'For every number $x\\ne0$: $\\blacklozenge(x)=\\frac{x-3}{x}$. Which of the following must be true for all $a>3$ and $b>3$?',
+      ['if $a<b$ then $\\blacklozenge(b)<\\blacklozenge(a)$', '$2\\cdot\\blacklozenge(a)=\\blacklozenge(2a)$',
+       '$\\blacklozenge(a)\\cdot\\blacklozenge(b)<1$', '$(\\blacklozenge(a))^2=\\blacklozenge(a^2)$'], 3, [
+        'Rewrite: $\\blacklozenge(x)=1-\\frac3x$. For $x>3$, $0<\\frac3x<1$, so $0<\\blacklozenge(x)<1$.',
+        '(3) Two numbers between $0$ and $1$ have a product smaller than $1$. Always true ✓.',
+        '(1) As $x$ grows, $\\frac3x$ shrinks, so $\\blacklozenge(x)$ grows: $a<b$ gives $\\blacklozenge(a)<\\blacklozenge(b)$. The claim is the reverse ✗.',
+        '(2) $a=6$: $2\\cdot\\blacklozenge(6)=2\\cdot\\frac12=1$, but $\\blacklozenge(12)=\\frac34$ ✗.',
+        '(4) $a=6$: $(\\blacklozenge(6))^2=\\frac14$, but $\\blacklozenge(36)=\\frac{11}{12}$ ✗.'])
+    S('q-574', 'For every number $x$: $\\blacklozenge(x)=x^2-9$. Given: $a>0$ and $b>0$. Which of the following must be true?',
+      ['$\\blacklozenge(a+b)=\\blacklozenge(a)+\\blacklozenge(b)$', '$\\sqrt{\\blacklozenge(a)+9}=\\frac{\\blacklozenge(a)}{a+3}+3$',
+       '$\\blacklozenge(\\blacklozenge(a))=a$', '$\\blacklozenge(b)=(b-3)\\cdot\\blacklozenge(\\sqrt{b})$'], 2, [
+        '(2) Left side: $\\sqrt{a^2-9+9}=\\sqrt{a^2}=a$ ($a$ is positive). Right side: $\\frac{a^2-9}{a+3}+3=\\frac{(a-3)(a+3)}{a+3}+3=a-3+3=a$. Always equal ✓.',
+        '(1) $a=b=1$: $\\blacklozenge(2)=-5$, but $\\blacklozenge(1)+\\blacklozenge(1)=-16$ ✗.',
+        '(3) $a=4$: $\\blacklozenge(4)=7$ and $\\blacklozenge(7)=40\\ne4$ ✗.',
+        '(4) $b=16$: $\\blacklozenge(16)=247$, but $(16-3)\\cdot\\blacklozenge(4)=13\\cdot7=91$ ✗.'])
+    S('q-575', 'For every number $x$: $\\blacklozenge(x)=(x-4)(x+1)$. For how many values of $a$ is $\\blacklozenge(a)$ equal to $\\blacklozenge(a+4)$?',
+      ['$2$', '$1$', 'Infinitely many', '$3$'], 2, [
+        '$\\blacklozenge(a)=(a-4)(a+1)=a^2-3a-4$.',
+        '$\\blacklozenge(a+4)=(a+4-4)(a+4+1)=a(a+5)=a^2+5a$.',
+        '$a^2-3a-4=a^2+5a$: the $a^2$ cancels, so $-4=8a$ and $a=-\\frac12$. Exactly one value.'])
+    S('q-576', 'For every two positive integers $a$ and $b$, $\\blacklozenge(a, b)$ is the remainder when $a$ is divided by $b$. '
+      '$\\blacklozenge(\\blacklozenge(38, 7), \\blacklozenge(23, 6))=?$',
+      ['$2$', '$0$', '$3$', '$1$'], 3, [
+        '$38=5\\cdot7+3$, so $\\blacklozenge(38, 7)=3$.',
+        '$23=3\\cdot6+5$, so $\\blacklozenge(23, 6)=5$.',
+        '$\\blacklozenge(3, 5)$: $3=0\\cdot5+3$, so the remainder is $3$. (A smaller number divided by a bigger one leaves itself.)'])
+
+
+def rn_practice(M):
+    """Approved clean-up: copies out, at most 3 extra-bank warm-ups, September items whose type the Hebrew covers out."""
+    X = 'alg-extra-unit-t19-3-'; N = lambda k: 'q-r26-t19-' + k
+    out = [
+        # copies (practice_audit/copies_by_topic.txt, each checked)
+        X + '3',            # F(F(2)) with x^2 - 3: nested-and-stop-halfway, as guided Q2 and q-559 / q-560
+        X + '6',            # H(H(4)) with 1/x: "c/x undoes itself", the idea of guided Q13
+        # extra-bank warm-ups beyond 3 (kept: X1 a*b = 2a - b, X5 G(t) = 19 unknown input, X7 (-2)o3 brackets)
+        X + '2',            # a + b + ab at (2, 3): same move as X1
+        X + '4',            # a◇b - b◇a: the swap-the-letters check of guided Q5 and q-567
+        # September items of a type the Hebrew practice (or a kept item) already covers
+        N('06'),            # x^2 + 3x at -2: brackets on a negative input - X7, q-572
+        N('08'),            # (x+1)/(x-1) at 1/x: expression input - kept N('07')
+        N('09'),            # find the operation from two values: guided Q3 (q-543)
+        N('10'),            # nested odd/even rule: q-565, guided Q7
+        N('12'),            # circular rule: q-569, guided Q9 and Q10
+        N('13'),            # nested 1/(1-x) three times: q-559, q-560
+        N('15'),            # sum of the digits (definition in words): q-571, q-576
+        N('16'),            # a*b = ab - a - b, "always" (swap the letters): q-567, guided Q5
+        N('17'),            # must be true with x^3: q-573, q-574
+    ]
+    for qid in out:
+        if qid in M.D['questions'] and any(f['ref'] == qid for f in M.D['flow']) and M.section_of(qid) == PRACTICE:
+            M.unplace(qid)
+    M.practice_order(PRACTICE, [
+        X + '1', X + '7', X + '5', 'q-558', 'q-557', 'q-559', 'q-560', N('07'), 'q-563', 'q-566', 'q-569', 'q-565',
+        'q-561', 'q-562', 'q-576', 'q-571', 'q-564', 'q-568', N('11'), 'q-572', 'q-570', 'q-575', N('19'), N('20'),
+        'q-567', 'q-573', 'q-574'])
+
+
+def rn_titles(M):
+    """Solution videos: title and slide description show the new stems."""
+    for f in M.D['flow']:
+        if f['topic'] != TOPIC or f['type'] != 'video': continue
+        v = M.video(f['ref']); qid = v.get('questionId')
+        if not qid or qid not in M.D['questions'] or f['ref'].startswith('solve-q-r26') or f['ref'] in RN_RECORDED: continue
+        stem = M.q(qid)['stem']
+        v['title'] = v['navLabel'] = stem
+        for b in v['beats']:
+            if b['mode'] == 'question':
+                b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, stem)
+        M.touched_videos.add(f['ref'])
+
+
+def renumber_pass(M):
+    rn_lessons(M)
+    rn_guided(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+    rn_titles(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last

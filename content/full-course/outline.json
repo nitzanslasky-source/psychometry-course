@@ -168,36 +168,36 @@
      "title": "The Number Line",
      "videos": 18,
      "lessons": 4,
-     "questions": 41,
+     "questions": 31,
      "minutes": 40,
-     "steps": 61
+     "steps": 51
     },
     {
      "id": 18,
      "title": "Exercises with Letters",
      "videos": 15,
      "lessons": 3,
-     "questions": 45,
+     "questions": 37,
      "minutes": 22,
-     "steps": 62
+     "steps": 54
     },
     {
      "id": 19,
      "title": "Defining a New Operation",
      "videos": 24,
      "lessons": 3,
-     "questions": 61,
-     "minutes": 36,
-     "steps": 86
+     "questions": 48,
+     "minutes": 37,
+     "steps": 73
     },
     {
      "id": 20,
      "title": "Algebraic Understanding",
      "videos": 11,
      "lessons": 3,
-     "questions": 33,
+     "questions": 23,
      "minutes": 19,
-     "steps": 46
+     "steps": 36
     }
    ]
   },

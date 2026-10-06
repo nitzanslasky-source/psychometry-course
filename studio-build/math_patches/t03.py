@@ -1142,3 +1142,24 @@ def dedupe_examples(M):
             expl=['Both numbers are positive. Therefore we can square them and keep the order.',
                   r'$\left(\frac{3}{\sqrt{6}}\right)^2=\frac{9}{6}$ and $\left(\frac{2}{\sqrt{3}}\right)^2=\frac{4}{3}=\frac{8}{6}$.',
                   r'$\frac{9}{6}>\frac{8}{6}$, therefore $\frac{3}{\sqrt{6}}>\frac{2}{\sqrt{3}}$. The first expression is greater. Choice 2.'])
+
+
+# =========================================================================================
+# 2026-10-06 review (renumber pass, topics 17-20): course-wide duplicate scan
+# =========================================================================================
+def review_dups(M):
+    # q-r26-t03-11 was the same question as guided q-r26-t12-01 (-1<x<0, largest of x, x^2, x^3, 1/x)
+    # and close to q-r26-t08-11 (largest of x..x^4). It now asks for the SMALLEST of the same four.
+    M.set_q('q-r26-t03-11', stem=r'Given: $-1<x<0$. Which of the following is the smallest?',
+            choices=[r'$x$', r'$x^2$', r'$x^3$', r'$\frac{1}{x}$'], correct=4,
+            expl=[r'Plug in $x=-\frac{1}{2}$: $x=-\frac{1}{2}$, $x^2=\frac{1}{4}$, $x^3=-\frac{1}{8}$, $\frac{1}{x}=-2$.',
+                  r'The smallest is $-2$, that is $\frac{1}{x}$. Choice 4.',
+                  r'The rule: for $-1<x<0$, $\frac{1}{x}<x<x^3<0<x^2$.'])
+
+
+_apply_before_review = apply
+
+
+def apply(M):
+    _apply_before_review(M)
+    review_dups(M)

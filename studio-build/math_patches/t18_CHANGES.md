@@ -127,3 +127,72 @@ Function `practice_methods` (runs last; append only). 2 practice questions, Meth
 - alg-extra-unit-t18-3-6: 10A + B = 4(A + B) → B = 2A → tens 2 → ones 4.
 - q-530: 50 + A = 3(10A + 7) → A = 1 → X = 15, digit sum 6 (checked: the only solution).
 All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 18 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-06 renumber pass
+So the English course does not look like the Hebrew one: every Hebrew-derived question has new numbers or letters.
+The idea, the trap, the level and the methods stay the same, and every guided solution video is rewritten to match
+(board, speech, draw cues, video title, slide description). Nothing in Topic 18 is recorded (no take in
+~/Documents/Course.recordings), so nothing had to be kept. Function `renumber_pass(M)` in t18.py runs last.
+
+**Counts:** 9 guided questions renumbered (q-512 … q-520) with their 9 solution videos rewritten; 20 practice questions
+renumbered (q-521 … q-540) + 1 kept warm-up (X6, it was the lesson's own example); lesson examples: "Exercises with
+Letters" slides 1 and 3 (32 + 57 → 46 + 38, 23 → 47), toolkit card (27 → 47), number-facts card (52 ± 25 → 73 ± 37,
+521 − 125 → 412 − 214, tip 24²/27² → 23²/28²). Practice: 33 → 25.
+Kept on purpose: the English-made guided Q10–12, the "Number Facts" lesson and the summary (their examples do not equal
+any question now), September items q-r26-t18-04 (three-number carry) and -07 (units digit of a product) — types the
+Hebrew practice does not have. Letter-only questions (q-512, q-515, q-523, q-531, q-533) got moved letters and a new
+choice order, as allowed.
+
+**Removed from practice (8):** copies alg-extra-…-1 (same 9(A − B) = 27 as q-524) and q-r26-t18-08 (2⁵⁰ = the facts
+lesson's worked example); extra warm-ups beyond 3: alg-extra-…-2 (same type as X6), alg-extra-…-3 (same type as -07);
+September items whose type the Hebrew practice has: -05 (middle column → 9: q-534, q-540), -06 (how many digits:
+q-521), -09 (AAA ÷ 37: q-539 repdigits, and = the lesson's 555 = 37·15), -10 (ABC − CBA: q-532).
+Kept warm-ups: X5 (AAA ÷ 37), X6, X7. Order: easy → hard.
+
+**Old → new (id · old · new · answer)**
+| id | old | new | answer |
+|---|---|---|---|
+| q-512 (G1) | AB + CB = DDB, A+C+D | BA + DA = CCA, B+C+D (check 30 + 80 = 110) | 12, choice 4 |
+| q-513 (G2) | BA × A = CA, A? (16·6 = 96) | CB × B = AB, B? (15·5 = 75); choices 4, 0, 5, 7 | 5, choice 3 |
+| q-514 (G3) | AB + BA divisible by 9/6/11/4; tests 51, 52 | choices 3/11/4/10; tests 71 + 17 = 88, 72 + 27 = 99; algebraic form | 11, choice 2 |
+| q-515 (G4) | ABC + AB = CCC, B? (202 + 20) | BCA + BC = AAA, C? (303 + 30 = 333) | 0, choice 1 |
+| q-516 (G5) | AAA − 37 = BC → 74 | AAA − 46 = BC → 111 − 46 = 65 | B+C = AA, choice 3 |
+| q-517 (G6) | AB² = 6CB, B−A could be (26² = 676) | AB² = 2CB (15² = 225 → 4 not offered, 16² = 256); choices 6, 5, 7, 8; both methods | 5, choice 2 |
+| q-518 (G7) | CBA ÷ AA = 13 → 55·13 = 715 | CBA ÷ AA = 17 → 7A ends in A → A = 5, 55·17 = 935 | 17, choice 1 |
+| q-519 (G8) | primes, AC + CD = BA (52 + 23 = 75), C = 2 | primes, AB + BC = CD (32 + 25 = 57), C? choices 7, 3, 5, 2; plug in + rule out | 5, choice 3 |
+| q-520 (G9) | x = U³ + digit sum → 33 | x = U³ + 4·digit sum → 6T = U³ + 3U → 63; algebra + plug in | 6, choice 4 |
+| q-521 | 2-digit + 4-digit → 4 or 5 digits | 3-digit + 5-digit → 5 or 6 digits | choice 2 |
+| q-522 | AB × 2 = 1B0 | AB × 6 = 4B0 (75 × 6 = 450) | A−B = 2, choice 3 |
+| q-523 | A<B<C, A+B+C = 1B | X<Y<Z, X+Y+Z = 1Y, new choice order | 15, choice 3 |
+| q-524 | AB − BA = 27 | AB − BA = 45 | 5, choice 2 |
+| q-525 | AB × B = B4 (12·2) | AB × B = B9 (13·3; trap B = 7) | 4, choice 2 |
+| q-526 | ABC + CCC = D00 (345 + 555) | ABC + AAA = D00 (456 + 444 = 900) | A = 4, choice 3 |
+| q-527 | four 3-digit numbers → 3 | five 3-digit numbers (≤ 4995) → 4 | choice 3 |
+| q-528 | k = AB + CD + 31 | k = AB + CD + 53 = 11(2A + 7); tests 99, 121 | 11, choice 3 |
+| q-529 | digit sum 8: 800 − 107 | digit sum 9: 900 − 108 | 792, choice 3 |
+| q-530 | ones 5, reversal = 3(X + 2) → 15 | ones 8, reversal = 3(X + 9) → 18 (Method 2 line updated) | 9, choice 2 |
+| q-531 | (AC + CB + BA)/(A+B+C) | (BA + CB + AC)/(A+B+C), new order | 11, choice 3 |
+| q-532 | hundreds 4 more → 396 | 7 more → 693 (841 − 148) | choice 2 |
+| q-533 | BA + A = AB, A = 9 | AB + B = BA, B = 9 (89 + 9 = 98) | choice 2 |
+| q-534 | ABC − BBB = 198 → 4 | ABC − BBB = 297 → 6 (444 + 297 = 741) | choice 2 |
+| q-535 | 1A × B = 9B → 9 | 1A × B = 8B → 7 (17·5 = 85) | choice 3 |
+| q-536 | AA × BB = ACA → 33 | → 44 (44·11 = 484); choices 55, 44, 88, 66 | choice 2 |
+| q-537 | digits 1–7, remainder < 3 → 7 | digits 1–8, remainder < 4 → 8 | choice 2 |
+| q-538 | digit sum = 4 × ones → 31 | = 5 × ones → 41 (82 not prime) | 5, choice 2 |
+| q-539 | BBBB ÷ BB = A0A (101) | BBBBBB ÷ BBB = A00A (1001) | 1, choice 3 |
+| q-540 | 1AB − BA = B3 (147 − 74) | 1AB − BA = B2 (168 − 86 = 82) | 14, choice 2 |
+| alg-extra-…-6 | 4 × digit sum, tens 2 → 24 (= lesson example) | 7 × digit sum, tens 6 → 63 | 3, choice 2 |
+
+**Checks:** every column puzzle brute-forced over all digit assignments (leading digits nonzero, "different" and "prime"
+conditions applied): each "= ?" question has one forced value and exactly one choice matches; each "could be" question has
+exactly one choice among the possible values; "necessarily divides" checked over all digits. Every video step redone
+with the new numbers; no old number left in the solution videos. Duplicate check over topics 1–18: no topic-18 question
+equals another question; no question equals a lesson or card example. `python3 math_check.py 18 32` → PROBLEMS 0,
+WARNINGS 0, LAYOUT 0; all 9 rewritten videos and the lesson rendered and looked at.
+
+## 2026-10-06 review (of the renumber pass)
+Brute-forced all 29 renumbered items over every digit assignment: each key is the only matching choice, traps kept.
+Videos and lesson/card examples checked. No changes. Judgment calls (kept): q-520 now "U³ + 4 × digit sum" (with
+multiplier 1 the only solution is the Hebrew 33, so a new number needs a multiplier; 4 is the only one with a clean
+single answer); q-519 and q-526 changed the letter pattern (the Hebrew patterns have one unique solution each, so new
+numbers need a new pattern); q-538 now has one non-prime candidate (82) instead of two.

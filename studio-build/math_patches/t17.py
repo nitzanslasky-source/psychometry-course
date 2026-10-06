@@ -972,3 +972,529 @@ _apply_before_add_methods = apply
 def apply(M):
     _apply_before_add_methods(M)
     add_methods(M)   # 2026-10-06: runs last
+
+
+# ======================================================================================================
+# 2026-10-06 renumber pass
+# The English course must not look like the teacher's Hebrew course: every Hebrew-derived item (guided q-493 .. q-501,
+# practice q-502 .. q-511, the Hebrew lessons' own examples) gets new numbers / letters / choice order - same concept,
+# same trap, same level, at least the same methods. Plus the approved practice clean-up.
+# Nothing in topic 17 is recorded (no take in ~/Documents/Course.recordings). Runs last, after add_methods.
+# ======================================================================================================
+RN_RECORDED = set()
+
+
+def _rn_sub(M, vid, n, pairs):
+    """Exact substring replacements on one slide: board items, item labels, spoken lines, draw cues."""
+    if vid in RN_RECORDED: return
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def _rn_q(M, qid, stem, choices, correct, expl):
+    if qid not in RN_RECORDED: M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+
+
+def _rn_video(M, qid, slides):
+    """Rewrite the question slides (2, 3, ...) of a guided question's solution video. The pre-loaded question stays."""
+    vid = 'solve-' + qid
+    if vid in RN_RECORDED: return
+    v = M.video(vid)
+    assert len(v['beats']) == len(slides) + 1, (vid, len(v['beats']))
+    for n, script in enumerate(slides, 2):
+        assert v['beats'][n - 1]['mode'] == 'question', (vid, n)
+        M.set_slide(vid, n, script=script)
+    q = M.q(qid); v['title'] = v['navLabel'] = q['stem']
+
+
+def _rn_deep(x, pairs, hits):
+    if isinstance(x, str):
+        for old, new in pairs:
+            if old in x: x = x.replace(old, new); hits[old] = hits.get(old, 0) + 1
+        return x
+    if isinstance(x, list): return [_rn_deep(y, pairs, hits) for y in x]
+    if isinstance(x, dict): return {k: _rn_deep(y, pairs, hits) for k, y in x.items()}
+    return x
+
+
+def _rn_card(M, cid, pairs):
+    c = M.card(cid); hits = {}
+    for k in ('intro', 'tables', 'tips'):
+        if k in c: c[k] = _rn_deep(c[k], pairs, hits)
+    for old, _ in pairs: assert hits.get(old), (cid, old)
+
+
+def rn_lessons(M):
+    # ---- "The Number Line" (Hebrew lesson): mirror, multiply & divide, hierarchy, exceptions, same operation
+    _rn_sub(M, L1, 3, [
+        ('$12\\cdot3=36 \\qquad -12\\cdot3=-36$', '$15\\cdot2=30 \\qquad -15\\cdot2=-30$'),
+        ('$12\\cdot\\frac13=4 \\qquad -12\\cdot\\frac13=-4$', '$15\\cdot\\frac15=3 \\qquad -15\\cdot\\frac15=-3$'),
+        ('12 · 3 and −12 · 3 appear', '15 · 2 and −15 · 2 appear'), ('−12 · ⅓ appears', '−15 · ⅕ appears'),
+        ('Draw an arrow from 12 out to 36, and a mirrored arrow from −12 out to −36',
+         'Draw an arrow from 15 out to 30, and a mirrored arrow from −15 out to −30'),
+        ('Twelve times three moves out to thirty-six. Negative twelve times three moves out to negative thirty-six.',
+         'Fifteen times two moves out to thirty. Negative fifteen times two moves out to negative thirty.'),
+        ('Draw arrows from 12 in to 4, and from −12 in to −4', 'Draw arrows from 15 in to 3, and from −15 in to −3'),
+        ('Times a third: twelve drops to four. Negative twelve goes to negative four — and negative four is BIGGER than negative twelve.',
+         'Times a fifth: fifteen drops to three. Negative fifteen goes to negative three — and negative three is BIGGER than negative fifteen.')])
+    _rn_sub(M, L1, 4, [
+        ('$8\\cdot3=24$', '$9\\cdot2=18$'), ("appears: 8 · 3 = 24", "appears: 9 · 2 = 18"),
+        ('Eight times three is twenty-four.', 'Nine times two is eighteen.'),
+        ('$12\\div3=4$', '$10\\div5=2$'), ("appears: 12 ÷ 3 = 4", "appears: 10 ÷ 5 = 2"),
+        ('Twelve divided by three is four.', 'Ten divided by five is two.'),
+        ('$12\\cdot\\frac13=4$', '$10\\cdot\\frac15=2$'), ("appears: 12 · ⅓ = 4", "appears: 10 · ⅕ = 2"),
+        ("You're only taking a third.", "You're only taking a fifth."),
+        ('$12\\div\\frac13=12\\cdot3=36$', '$10\\div\\frac15=10\\cdot5=50$'), ("appears: 12 ÷ ⅓ = 36", "appears: 10 ÷ ⅕ = 50"),
+        ('dividing by a third is multiplying by three. Thirty-six.', 'dividing by a fifth is multiplying by five. Fifty.')])
+    _rn_sub(M, L1, 5, [
+        ('$\\sqrt[5]{\\frac98}\\quad ? \\quad \\sqrt{\\frac56}$', '$\\sqrt[5]{\\frac{11}{10}}\\quad ? \\quad \\sqrt{\\frac79}$'),
+        ('The fifth root of 9/8 and the square root of 5/6 appear', 'The fifth root of 11/10 and the square root of 7/9 appear'),
+        ('Under 9/8 write "> 1"; under 5/6 write "fraction"', 'Under 11/10 write "> 1"; under 7/9 write "fraction"'),
+        ("Nine eighths isn't really a fraction — the top beats the bottom, so it's more than one. Five sixths is a real fraction, less than one.",
+         "Eleven tenths isn't really a fraction — the top beats the bottom, so it's more than one. Seven ninths is a real fraction, less than one."),
+        ('So the fifth root of nine eighths lives', 'So the fifth root of eleven tenths lives')])
+    _rn_sub(M, L1, 6, [
+        ('$(-3)^2$', '$(-5)^2$'), ('(−3)² appears', '(−5)² appears'),
+        ('$\\left(\\frac25\\right)^{-2}$', '$\\left(\\frac38\\right)^{-2}$'), ('(2/5)⁻² appears', '(3/8)⁻² appears'),
+        ('Write "= 9" and draw', 'Write "= 25" and draw'),
+        ('Negative three squared is nine — it jumped', 'Negative five squared is twenty-five — it jumped'),
+        ('Write "= (5/2)²" and under it "> 1"', 'Write "= (8/3)²" and under it "> 1"'),
+        ('five halves squared', 'eight thirds squared'),
+        ("negative three squared WITH brackets is nine. Without brackets, it's negative nine.",
+         "negative five squared WITH brackets is twenty-five. Without brackets, it's negative twenty-five.")])
+    _rn_sub(M, L1, 7, [
+        ('$7^{-3}\\quad ? \\quad 6^{-3}$', '$5^{-4}\\quad ? \\quad 4^{-4}$'), ('7⁻³ and 6⁻³ appear', '5⁻⁴ and 4⁻⁴ appear'),
+        ('Write "= (1/7)³" and "= (1/6)³" under them', 'Write "= (1/5)⁴" and "= (1/4)⁴" under them'),
+        ('One seventh cubed against one sixth cubed.', 'One fifth to the fourth against one quarter to the fourth.'),
+        ("Who's bigger: one sixth or one seventh? One sixth. So six to the minus three is bigger.",
+         "Who's bigger: one quarter or one fifth? One quarter. So four to the minus four is bigger.")])
+    # ---- "Powers on the Number Line" (Hebrew lesson): the examples of each range and the reverse question
+    _rn_sub(M, L2, 3, [('$3<9<27$', '$5<25<125$'), ('3, 9, 27 appears', '5, 25, 125 appears'),
+                       ('Three, nine, twenty-seven. Bigger and bigger.', 'Five, twenty-five, one hundred twenty-five. Bigger and bigger.')])
+    _rn_sub(M, L2, 4, [
+        ('$\\frac1{64}<\\frac1{16}<\\frac14<\\frac12$', '$\\frac1{729}<\\frac1{81}<\\frac19<\\frac13$'),
+        ('1/64, 1/16, 1/4, 1/2 appears', '1/729, 1/81, 1/9, 1/3 appears'), ('(x = 1/4)', '(x = 1/9)'),
+        ('One quarter squared: one sixteenth. Cubed: one sixty-fourth.', 'One ninth squared: one eighty-first. Cubed: one seven hundred twenty-ninth.'),
+        ('the square root of a quarter is a half.', 'the square root of a ninth is a third.')])
+    _rn_sub(M, L2, 5, [
+        ('$\\left(-\\frac12\\right)^3=-\\frac18$', '$\\left(-\\frac13\\right)^3=-\\frac1{27}$'),
+        ('(−1/2)³ = −1/8 appears', '(−1/3)³ = −1/27 appears'), ('Mark −1/2 and −1/8 on', 'Mark −1/3 and −1/27 on'),
+        ("Negative one half cubed is negative one eighth. That's to the RIGHT of negative one half.",
+         "Negative one third cubed is negative one twenty-seventh. That's to the RIGHT of negative one third.")])
+    _rn_sub(M, L2, 6, [('$(-3)^3=-27$', '$(-2)^3=-8$'), ('(−3)³ = −27 appears', '(−2)³ = −8 appears'),
+                       ('Write "< −3" next to it', 'Write "< −2" next to it'),
+                       ('Negative three cubed is negative twenty-seven. Smaller than negative three.',
+                        'Negative two cubed is negative eight. Smaller than negative two.')])
+    _rn_sub(M, L2, 8, [
+        ('Given: $x<x^3<x^2$', 'Given: $x<x^5<x^4$'), ('x < x³ < x² appears', 'x < x⁵ < x⁴ appears'),
+        ('Left part first: x is less than x cubed.', 'Left part first: x is less than x to the fifth.'),
+        ('Now the right part: x cubed is less than x squared. Above one, x cubed would be BIGGER than x squared.',
+         'Now the right part: x to the fifth is less than x to the fourth. Above one, x to the fifth would be BIGGER than x to the fourth.'),
+        ('Why? x squared is the exception — it turns positive, and a positive beats the negative x cubed.',
+         'Why? x to the fourth is the exception — an even power turns positive, and a positive beats the negative x to the fifth.')])
+    # ---- memory cards: the same examples as the lessons; card examples must not be practice questions
+    _rn_card(M, CARD, [
+        ('$3<9<27$', '$5<25<125$'), ('$\\frac1{64}<\\frac1{16}<\\frac14<\\frac12$', '$\\frac1{729}<\\frac1{81}<\\frac19<\\frac13$'),
+        ('$\\left(-\\frac12\\right)^3=-\\frac18$', '$\\left(-\\frac13\\right)^3=-\\frac1{27}$'), ('$(-3)^3=-27$', '$(-2)^3=-8$'),
+        ('\\(8\\cdot3=24\\)', '\\(9\\cdot2=18\\)'), ('\\(12\\div3=4\\)', '\\(10\\div5=2\\)'),
+        ('\\(12\\cdot\\frac13=4\\)', '\\(10\\cdot\\frac15=2\\)'), ('\\(12\\div\\frac13=36\\)', '\\(10\\div\\frac15=50\\)'),
+        ('\\(12\\div(-3)=-4\\)', '\\(10\\div(-5)=-2\\)'),
+        ('\\(\\left(\\frac25\\right)^{-2}=\\left(\\frac52\\right)^2>1\\)', '\\(\\left(\\frac38\\right)^{-2}=\\left(\\frac83\\right)^2>1\\)'),
+        ('\\(-12\\cdot\\frac13=-4\\)', '\\(-15\\cdot\\frac15=-3\\)')])
+    _rn_card(M, CARD2, [('Tenth root', 'Sixth root'), ('\\(x=\\frac1{1024}\\)', '\\(x=\\frac1{64}\\)'),
+                        ('\\(5-(-8)=13\\)', '\\(7-(-3)=10\\)'), ('\\(\\frac{-9+3}{2}=-3\\)', '\\(\\frac{-10+4}{2}=-3\\)')])
+
+
+def rn_guided(M):
+    # ---------- Q1 q-493: 1<a<b<c<d (letters) ==> 1<p<q<r<s, choices reordered (answer 4 -> 2)
+    _rn_q(M, 'q-493', 'Given: $1<p<q<r<s$. Which of the following statements is not correct?',
+          ['$p\\cdot r<q\\cdot s$', '$p\\cdot s<r$', '$p\\cdot q<r\\cdot s$', '$q<r\\cdot p$'], 2, [
+              'All four numbers are greater than 1.',
+              '(1) $p<q$ and $r<s$, so $p\\cdot r<q\\cdot s$ (weak times weak is less than strong times strong). True.',
+              '(3) $p<r$ and $q<s$, so $p\\cdot q<r\\cdot s$. True.',
+              '(4) $r>q$, and multiplying $r$ by $p>1$ makes it even bigger: $r\\cdot p>r>q$. True.',
+              '(2) $p>1$, so $p\\cdot s>s>r$. The statement $p\\cdot s<r$ is never true. This is the answer.'])
+    _rn_video(M, 'q-493', [[
+        "Everything is above one, and the order is given: p, then q, then r, then s.",
+        "We're hunting for the statement that is NOT correct.",
+        "Choice one: p times r against q times s. Match strong with strong: q beats p, s beats r.",
+        D('Draw lines pairing p with q and r with s'),
+        "Both weaklings are on the left. Correct.",
+        D('Cross out choice 1'),
+        "Choice three: p times q against r times s. p and q are the weaklings; r and s are the strongest two.",
+        D('Draw lines pairing p with r and q with s'),
+        "Weak against strong, weak against strong — strong wins. Correct.",
+        D('Cross out choice 3'),
+        "Choice four: q against r times p. Forget p for a second — r already beats q.",
+        "And multiplying r by p, a number above one? That's like giving r an energy drink. It only gets stronger.",
+        D('Next to choice 4 write "r > q, × p > 1"'),
+        "Correct.",
+        D('Cross out choice 4'),
+        "Three out — so it's choice two. But let's check it.",
+        "p times s against r. s already beats r — and times p, it gets even stronger. So p times s can't be less than r.",
+        D('Circle choice 2'),
+        "Choice two is never true. That's our answer.",
+    ]])
+
+    # ---------- Q2 q-494: -1<t<0; t^6, t^5, cbrt(t), t^-1 ==> -1<m<0; m^3, m^-3, m^8, 5th root of m (answer 4 -> 2)
+    _rn_q(M, 'q-494', 'Given: $-1<m<0$. Which of the following expressions is the smallest?',
+          ['${m}^{3}$', '${m}^{-3}$', '${m}^{8}$', '$\\sqrt[5]{m}$'], 2, [
+              'Step 1, exceptions: $m^8$ is an even power of a negative number, so it is positive. The other three are negative, so $m^8$ is not the smallest.',
+              'Step 2, roots to powers: $\\sqrt[5]{m}=m^{\\frac15}$.',
+              'Step 3, the arrows: for $-1<m<0$ and odd powers (3, $-3$, $\\frac15$), the arrow points right, so the smallest power gives the smallest number. The smallest power is $-3$: $m^{-3}$ is the smallest.',
+              'Check with $m=-\\frac1{32}$ (a clean fifth root): $m^3$ is a tiny negative number, $\\sqrt[5]{m}=-\\frac12$ and $m^{-3}=(-32)^3=-32768$. The smallest is $m^{-3}$.'])
+    _rn_video(M, 'q-494', [[
+        "m is between negative one and zero — a negative fraction. We want the SMALLEST expression.",
+        "Step one: exceptions. Is there a negative number with an even power?",
+        D('Circle m⁸ and write "+" next to it'),
+        "m to the eighth — even power, it turns positive. The others stay negative. We want the smallest, so a positive one is out.",
+        D('Cross out choice 3'),
+        "Step two: roots to powers. The fifth root of m is m to the one fifth.",
+        D('Under choice 4 write "= m^(1/5)"'),
+        "Step three: the line. Negative fractions — the arrow points right.",
+        D('Draw a small number line, mark the range −1 to 0, and draw an arrow pointing right'),
+        "Right means: bigger power, bigger number. So the SMALLEST number has the SMALLEST power.",
+        D('Write the powers 3, −3, 1/5 next to choices 1, 2 and 4'),
+        "Three, minus three, one fifth. The smallest power is minus three.",
+        "And notice — the arrow method already handles the negative exponent. No need to flip it.",
+        D('Circle choice 2'),
+        "m to the minus three. Choice two.",
+        "Check with m equals minus a half: m to the minus three is minus eight — lower than anything else here.",
+    ]])
+
+    # ---------- Q3 q-495: 1<a<b<c (letters) ==> 1<x<y<z, choices reordered (answer 3 -> 4); plug-in 2, 3, 5
+    _rn_q(M, 'q-495', 'Given: $1<x<y<z$. Which of the following expressions is the smallest?',
+          ['$x\\cdot y^2$', '$y^3$', '$y\\cdot z^2$', '$y\\cdot x^2$'], 4, [
+              'Plug in $x=2$, $y=3$, $z=5$: $x\\cdot y^2=2\\cdot9=18$, $y^3=27$, $y\\cdot z^2=3\\cdot25=75$, $y\\cdot x^2=3\\cdot4=12$. The smallest is $y\\cdot x^2$.',
+              'Why: $y\\cdot x^2=x\\cdot y\\cdot x$ and $x\\cdot y^2=x\\cdot y\\cdot y$. Both contain $x\\cdot y$; the third factor is $x$ against $y$, and $x<y$. So $y\\cdot x^2$ is smaller.',
+              'The other two are even bigger: $y^3=y\\cdot y\\cdot y$ and $y\\cdot z^2$ use only larger factors.'])
+    _rn_video(M, 'q-495', [[
+        "Three unknowns — and all of them live in one zone: numbers bigger than one.",
+        "What does multiplying do in that zone? It makes things BIGGER.",
+        "Now look at the choices. Every one is a product of three letters.",
+        D('Under each choice write it as three letters: x·y·y, y·y·y, y·z·z, y·x·x'),
+        "x y squared is x, y, y. y z squared is y times z times z. And so on — three factors each time.",
+        "When is a product of three factors from this zone the smallest? When every factor is as small as possible.",
+        "The smallest letter is x. So the smallest product would be x times x times x.",
+        D('Write "x·x·x" next to the stem and cross it out'),
+        "But x cubed isn't in the choices. So find the next closest thing.",
+        "Two x's and one y — y x squared. y is the next letter up from x.",
+        D('Circle choice 4'),
+        "That's the smallest. Choice four.",
+    ], [
+        "Now the psychometric route: plug in simple numbers.",
+        D('Write "x = 2, y = 3, z = 5"'),
+        "x is two, y is three, z is five. They ask for the smallest — one substitution is enough.",
+        D('Next to choice 1 write "2 · 9 = 18"'),
+        "Choice one: two times three squared — two times nine, eighteen.",
+        D('Next to choice 2 write "27" and cross out choice 2'),
+        "Choice two: three cubed, twenty-seven. More than eighteen. Out.",
+        D('Next to choice 3 write "3 · 25 = 75" and cross out choice 3'),
+        "Choice three: three times five squared — seventy-five. Out.",
+        D('Next to choice 4 write "3 · 4 = 12", cross out choice 1 and circle choice 4'),
+        "Choice four: three times two squared — twelve. Smaller than eighteen, so choice one is out too. Choice four.",
+        "Two approaches, both short. Use whichever you like.",
+    ]])
+
+    # ---------- Q4 q-496: 0<p<q<1<r<s (letters) ==> 0<a<b<1<c<d, choices reordered (answer 4 -> 2); new test numbers
+    _rn_q(M, 'q-496', 'Given: $0<a<b<1<c<d$. Which of the following statements is not necessarily true?',
+          ['$c<\\frac ca$', '$c+b<d+a$', '$b\\cdot d<d$', '$c-b<d-a$'], 2, [
+              '(1) Dividing $c>0$ by a positive fraction makes it bigger: $\\frac ca>c$. Always true.',
+              '(3) $d>0$ and $b$ is a positive fraction. Multiplying by a positive fraction makes $d$ smaller: $b\\cdot d<d$. Always true.',
+              '(4) $c<d$, and $a<b$ means $-b<-a$. Add the two inequalities: $c-b<d-a$. Always true.',
+              '(2) Push the values to the edges: $a=0.2$, $b=0.8$, $c=1.2$, $d=1.3$. Then $c+b=2$ and $d+a=1.5$, so $c+b>d+a$. Not necessarily true.'])
+    _rn_video(M, 'q-496', [[
+        "Before anything else — put the givens on the number line.",
+        A('A number line from 0 to 2 appears', {'k': 'nl', 'min': 0, 'max': 2}),  # review 2026-10-06: restored
+        D('Mark a and b between 0 and 1, and c and d after 1'),
+        "a and b are positive fractions, between zero and one. c and d are bigger than one.",
+        "They want the one that's NOT necessarily true. Three are always true — we hunt for the fourth.",
+        "Choice one: c is less than c over a. Dividing by a positive fraction pushes AWAY from zero — it enlarges.",
+        D('Next to choice 1 write "c = 3, a = ¼ → 12 > 3"'),
+        "Three divided by a quarter is twelve. Bigger. Or multiply across by a, then divide by c: a is less than one. True.",
+        D('Cross out choice 1'),
+        "Choice three: b times d is less than d. d is bigger than one, b is a positive fraction.",
+        "What does multiplying by a positive fraction do? It pulls the number toward zero — it shrinks it.",
+        D('Next to choice 3 write "d = 6, b = ⅓ → 2 < 6"'),
+        "Try it: d is six, b is a third — you get two. Smaller. Or divide both sides by d, positive: b is less than one. True.",
+        D('Cross out choice 3'),
+        "Choice four: c minus b against d minus a. That's a distance against a distance.",
+        "d is further right than c, and a is further left than b — the second gap is bigger. Always.",
+        D('Under choice 4 write "c + a < d + b"'),
+        "Or move the minuses across: c plus a against d plus b. Strong against strong, weak against weak.",
+        D('Draw an arrow c ↔ d and write "right"; draw an arrow a ↔ b and write "right"'),
+        "Strong: d beats c — right side. Weak: b beats a — right side again. Right side wins twice — always true.",
+        D('Cross out choice 4'),
+        "Three always-true choices gone. On the exam: mark the one that's left and move on.",
+        D('Circle choice 2'),
+        "In the lesson, let's check it. c plus b against d plus a.",
+        "Strong: d beats c — right side. Weak: b beats a — LEFT side. One win each — no decision.",
+        D('Next to choice 2 write "c = 1.2, b = 0.8 | d = 1.3, a = 0.2"'),
+        A("'Necessarily true: one counter-example kills it' appears", T('Necessarily true? One counter-example kills it — push to the edges', size=36)),
+        "That's the rule for necessarily true: one example where it fails is enough. Push the values to the edges of their ranges.",
+        "So make it fail: c close to d, and b much bigger than a. c is one point two, b zero point eight; d one point three, a zero point two.",
+        D('Write "2 > 1.5 ✗"'),
+        "Left: two. Right: one point five. The claim breaks. Not necessarily true — choice two.",
+    ]])
+
+    # ---------- Q5 q-497: -1<a<0<b<c<1 (letters) ==> -1<k<0<m<n<1, choices reordered (answer 1 -> 3); new test numbers
+    _rn_q(M, 'q-497', 'Given: $-1<k<0<m<n<1$. Which of the following expressions is the largest?',
+          ['$k\\cdot n$', '$k$', '$k\\cdot m\\cdot n$', '$k\\cdot m$'], 3, [
+              'All four are negative ($k<0$; $m$ and $n$ are positive). On the negative side, the largest number is the one closest to zero.',
+              'Multiplying by a positive fraction pulls a number toward zero. $k\\cdot m\\cdot n$ is $k$ multiplied by two fractions, so it is the closest to zero.',
+              'Check with $k=-\\frac12$, $m=\\frac13$, $n=\\frac12$: $k\\cdot n=-\\frac14$, $k=-\\frac12$, $k\\cdot m\\cdot n=-\\frac1{12}$, $k\\cdot m=-\\frac16$. The largest is $-\\frac1{12}$.'])
+    _rn_video(M, 'q-497', [[
+        "k is a negative fraction. m and n are positive fractions. Which is the LARGEST?",
+        "First move: can signs knock anything out?",
+        D('Next to the choices write "−", "−", "− · + · + = −", "−"'),
+        "k n — negative. k itself — negative. Negative times positive times positive — negative. k m — negative.",
+        "All four are negative. Signs don't help. So we go deeper.",
+        "These are products of fractions — and multiplying by a fraction pulls you toward zero.",
+        "On the positive side, closer to zero means SMALLER. On the negative side it's the mirror image: closer to zero means BIGGER.",
+        A('A number line from −1 to 1 appears', {'k': 'nl', 'min': -1, 'max': 1}),  # review 2026-10-06: restored
+        D('Draw an arrow on the negative side pointing toward 0 and write "bigger"'),
+        "Three fractions multiplied — that's the product pulled closest to zero.",
+        D('Circle choice 3'),
+        "On the negative side, closest to zero is the biggest. k m n — choice three.",
+    ], [
+        "That idea isn't obvious, so let's see it with numbers.",
+        D('Write "k = −½, m = ⅓, n = ½"'),
+        "k is negative a half, m is a third, n is a half.",
+        D('Next to the choices write "−1/4", "−1/2", "−1/12", "−1/6"'),
+        "k n: negative a quarter. k: negative a half. k m n: negative one twelfth. k m: negative a sixth.",
+        A('A number line from −1 to 0 appears', {'k': 'nl', 'min': -1, 'max': 0}),  # review 2026-10-06: restored
+        D('Mark −1/2, −1/4, −1/6 and −1/12 on the line'),
+        "Negative a half is halfway to minus one. A quarter is closer to zero. A sixth — closer still. A twelfth — closest of all.",
+        D('Circle choice 3'),
+        "Negative one twelfth is the largest. Choice three.",
+        "Lock it in: multiplying by a fraction always pulls toward zero. On the positive side that shrinks you. On the negative side it grows you.",
+    ]])
+
+    # ---------- Q6 q-498: x^6<x^5 ==> x^4<x^3 (even power below the odd power one lower), ranges reordered (answer 2 -> 4)
+    _rn_q(M, 'q-498', 'Given: $x^4<x^3$. In which of the following ranges is $x$?',
+          ['$-1<x<0$', '$x>1$', '$x<-1$', '$0<x<1$'], 4, [
+              'If $x<0$, then $x^4>0$ and $x^3<0$, so $x^4<x^3$ is impossible. Therefore $x>0$.',
+              'For $x>1$, a bigger power gives a bigger number: $x^4>x^3$. ✗',
+              'For $0<x<1$, a bigger power gives a smaller number: $x^4<x^3$. ✓',
+              'Check: $x=\\frac12$: $\\frac1{16}<\\frac18$ ✓. $x=2$: $16>8$ ✗.'])
+    _rn_video(M, 'q-498', [[
+        "x to the fourth is less than x cubed. Where does x live?",
+        A('A number line from −2 to 2 appears', {'k': 'nl', 'min': -2, 'max': 2}),  # review 2026-10-06: restored
+        "This is about how powers behave — so we use the axis.",
+        "Remember the exception: a negative number to an EVEN power turns positive.",
+        D('Over the negative side write "x⁴ > 0, x³ < 0"'),
+        "If x were negative, x to the fourth would be positive and x cubed negative. A positive can't be less than a negative.",
+        D('Cross out choices 1 and 3'),
+        "So x is positive. Both negative ranges are out.",
+        D('Over the part above 1 write "power ↑ → bigger"; over 0 to 1 write "power ↑ → smaller"'),
+        "Above one: the higher the power, the bigger the number. Between zero and one: the higher the power, the SMALLER. A fraction times a fraction times a fraction…",
+        D('Cross out choice 2 and circle choice 4'),
+        "We need the higher power to be smaller — that only happens for positive fractions. Choice four.",
+    ], [
+        "Psychometric route: test each range with a simple number.",
+        D('Next to choice 2 write "x = 2: 16 < 8? ✗"'),
+        "Bigger than one — take two. Two to the fourth is sixteen, two cubed is eight. Sixteen isn't less. Out.",
+        D('Next to choice 4 write "x = ½: 1/16 < 1/8 ✓"'),
+        "A positive fraction — take a half. A sixteenth against an eighth. Yes, smaller.",
+        D('Circle choice 4'),
+        "We found a range that works. Choice four — and the negative ranges can't work anyway.",
+    ]])
+
+    # ---------- Q7 q-499: x^5, x, 5th root, x^-5 ==> y^7, y, cube root, y^-7; choices reordered (answer 1 -> 3)
+    _rn_q(M, 'q-499', 'Given: $-1<y<0$. Which of the following orders of $y^7$, $y$, $\\sqrt[3]{y}$ and $y^{-7}$ is correct?',
+          ['$y<\\sqrt[3]{y}<y^7<y^{-7}$', '$y^7<y^{-7}<\\sqrt[3]{y}<y$', '$y^{-7}<\\sqrt[3]{y}<y<y^7$', '$\\sqrt[3]{y}<y^{-7}<y<y^7$'], 3, [
+              'For $-1<y<0$ and odd powers or odd roots, the arrow points right: a bigger power gives a bigger number.',
+              'The powers: $y^{-7}$ (power $-7$), $\\sqrt[3]{y}=y^{\\frac13}$, $y=y^1$, $y^7$. Since $-7<\\frac13<1<7$, the order is $y^{-7}<\\sqrt[3]{y}<y<y^7$.',
+              'Check with a number that has a clean cube root, $y=-\\frac18$: $\\sqrt[3]{y}=-\\frac12$, $y^{-7}=(-8)^7$ (a huge negative number), and $y^7$ is a tiny negative number. So $(-8)^7<-\\frac12<-\\frac18<y^7$.'])
+    _rn_video(M, 'q-499', [[
+        "y is a negative fraction, between minus one and zero. Put four expressions in order.",
+        "They're all powers — the cube root is a power too. So: the axis.",
+        A('A number line from −1 to 0 appears', {'k': 'nl', 'min': -1, 'max': 0}),  # review 2026-10-06: restored
+        "In this range, as long as the powers are ODD, a bigger power gives a bigger number.",
+        D('Next to the stem write "7, 1, ⅓, −7 — all odd ✓"'),
+        "Seventh power — odd. y itself — power one, odd. Cube root — an odd root. Minus seven — odd. The rule holds.",
+        "So the biggest is the one with the biggest power: y to the seventh. It must be last in the chain.",
+        D('Cross out choices 1 and 2'),
+        "Choice one doesn't end with y to the seventh, and choice two doesn't either. Both out.",
+        "And the smallest power, minus seven, gives the smallest number — it must come first.",
+        D('Cross out choice 4 and circle choice 3'),
+        "Choice four starts with the root. Only choice three starts with y to the minus seven. Choice three.",
+    ], [
+        "Plugging in? Negative a half usually works — but not here. The cube root of a half, with no calculator? No thanks.",
+        "So choose smart: a negative fraction with a clean cube root.",
+        D('Write "y = −1/8"'),
+        "Negative one eighth. Its cube root is negative a half.",
+        D('Next to the stem write "y⁷ ≈ 0⁻, y = −1/8, ∛y = −½, y⁻⁷ = (−8)⁷"'),
+        "y to the seventh: a tiny negative, practically zero — no need to calculate. The cube root: negative a half.",
+        "y to the minus seven flips it: negative eight, to the seventh. Hugely negative — by far the smallest.",
+        D('Circle y⁻⁷ at the start of choice 3'),
+        "So the chain must START with y to the minus seven. Only choice three does.",
+        D('Circle choice 3'),
+        "Choice three.",
+    ], [
+        "The clever route. With odd powers and no sign tricks, the powers must go in one steady direction.",
+        D('Under each choice write its powers: (1, ⅓, 7, −7), (7, −7, ⅓, 1), (−7, ⅓, 1, 7), (⅓, −7, 1, 7)'),
+        "Write y as y to the one, and the root as y to the one third. Now just read the powers.",
+        "Choice three: minus seven, a third, one, seven — always going up. Possible.",
+        D('Cross out choices 1, 2 and 4'),
+        "Choice one goes down, up, then down. Choice two — down, then up. Choice four — down, then up. None can happen.",
+        D('Circle choice 3'),
+        "Only choice three is steady. The recommended route is still the axis — but this one's fun.",
+    ]])
+
+    # ---------- Q8 q-500: 0<x<1; x^10, 10th root, 10x, 10/x ==> 0<t<1; 6t, 6/t, t^6, 6th root (answer 4 -> 2)
+    _rn_q(M, 'q-500', 'Given: $0<t<1$. Which of the following expressions is the largest?',
+          ['$6t$', '$\\frac6t$', '$t^6$', '$\\sqrt[6]{t}$'], 2, [
+              'Place each choice: $6t<6$ (multiplying 6 by a fraction makes it smaller). $\\frac6t>6$ (dividing by a fraction makes it bigger). $t^6$ is between $0$ and $t$. $\\sqrt[6]{t}$ is between $t$ and $1$.',
+              'Only $\\frac6t$ is greater than 6, so it is the largest.',
+              'Check with a number that has a clean sixth root, $t=\\frac1{64}=\\left(\\frac12\\right)^6$: $6t=\\frac6{64}<1$, $\\frac6t=384$, $\\sqrt[6]{t}=\\frac12$.'])
+    _rn_video(M, 'q-500', [[
+        "t is a positive fraction. Which expression is the largest?",
+        A('A number line from 0 to 1 appears', {'k': 'nl', 'min': 0, 'max': 1}),  # review 2026-10-06: restored
+        "Choice three: t to the sixth. A fraction multiplied by itself six times keeps shrinking — but stays positive.",
+        D('Next to choice 3 write "between 0 and t"'),
+        "Choice four: the sixth root. If the power shrinks it, the root does the opposite — it grows it. But it can't pass one.",
+        D('Next to choice 4 write "between t and 1"'),
+        "Choice one: six times t. Multiplying by a positive fraction shrinks — so it's less than six.",
+        D('Next to choice 1 write "< 6"'),
+        "Choice two: six divided by t. Dividing by a fraction pushes away from zero — it's MORE than six.",
+        D('Next to choice 2 write "> 6" and circle choice 2'),
+        "Something under one, something under one, something under six — and something over six. Choice two.",
+    ], [
+        "Plug in? A half to the sixth power, the sixth root of a half… no calculator.",
+        "So choose t with a clean sixth root.",
+        D('Write "t = 1/64 = (½)⁶"'),
+        "Two to the sixth is sixty-four. So one over sixty-four is one half, to the sixth.",
+        D('Next to the choices write "6/64, 384, tiny, ½"'),
+        "Six t: six over sixty-four — less than one. Six over t: three hundred eighty-four. t to the sixth: tiny. The sixth root: one half.",
+        D('Circle choice 2'),
+        "By far the biggest. Choice two.",
+        "One warning: change only t. Don't change the numbers in the question to make it easier — that can change the order of the choices.",
+    ]])
+
+    # ---------- Q9 q-501: a^2<a<c·b<b<c (letters) ==> p^2<p<r·q<q<r, choices reordered (answer 3 -> 4); new test numbers
+    _rn_q(M, 'q-501', 'Given: $p^2<p<r\\cdot q<q<r$. Which of the following statements is possible but not necessarily true?',
+          ['$p^2\\cdot q<p\\cdot r$', '$p\\cdot q>1$', '$p\\cdot q<p+q$', '$p+r<1$'], 4, [
+              'Decode the chain. $p^2<p$ happens only for $0<p<1$. So $p>0$, and every letter after it is positive.',
+              '$r\\cdot q<q$: divide by $q>0$: $r<1$. So $0<p<q<r<1$.',
+              '(3) $p\\cdot q<p<p+q$. Always true. (1) Divide by $p>0$: $p\\cdot q<r$. True, since $p\\cdot q<q<r$. (2) A product of two positive fractions is less than 1. Never true.',
+              '(4) $p=0.2$, $q=0.5$, $r=0.6$ (then $r\\cdot q=0.3$, the chain holds): $p+r=0.8<1$ ✓. But $p=0.4$, $q=0.7$, $r=0.8$ (then $r\\cdot q=0.56$): $p+r=1.2>1$ ✗. Possible, but not necessarily true.'])
+    _rn_video(M, 'q-501', [[
+        "Before the choices — decode the chain.",
+        "Start with p squared less than p. A negative p is impossible: its square would be positive and bigger.",
+        D('Under p² < p write "p = positive fraction"'),
+        "So p is positive — and squaring made it smaller. That only happens to positive fractions.",
+        "p is positive, so everything bigger in the chain is positive too. Now: r q is less than q.",
+        D('Under rq < q write "÷ q → r < 1"'),
+        "q is positive — divide both sides by it: r is less than one.",
+        A('A number line from 0 to 1 appears', {'k': 'nl', 'min': 0, 'max': 1}),  # review 2026-10-06: restored
+        D('Mark p, then q, then r on the line, all before 1'),
+        "So all of them are positive fractions: p the smallest, r the biggest.",
+        "Now the question: POSSIBLE but not necessarily. Always-true is out. Never-true is out.",
+        "Choice three: p times q against p plus q. A product of fractions shrinks; a sum grows. Always true.",
+        D('Cross out choice 3'),
+        "Choice one: divide by p — p q against r. p q is smaller than q, and q is smaller than r. Always true.",
+        "Or strong on strong: p squared against p — p wins. q against r — r wins. The right side wins twice.",
+        D('Cross out choice 1'),
+        "Choice four: p plus r less than one. Two fractions — small ones add to less than one, big ones to more.",
+        D('Next to choice 4 write "0.2 + 0.6 = 0.8 ✓ | 0.4 + 0.8 = 1.2 ✗"'),
+        "p zero point two, q zero point five, r zero point six: zero point eight. But p zero point four, q zero point seven, r zero point eight — the chain still holds — and the sum is one point two.",
+        D('Circle choice 4'),
+        "Sometimes true, sometimes not. That's our answer — choice four.",
+        "In the lesson, choice two too: a product of two fractions above one? Never. Out.",
+        D('Cross out choice 2'),
+        "Five more questions — with pictures, reciprocals and distances.",
+    ]])
+    for qid in ['q-493', 'q-494', 'q-495', 'q-496', 'q-497', 'q-498', 'q-499', 'q-500', 'q-501']:
+        v = M.video('solve-' + qid); q = M.q(qid)
+        for b in v['beats']:
+            if b.get('canvas', '').startswith('Pre-loaded — question'):
+                b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, q['stem'])
+
+
+def rn_practice_questions(M):
+    _rn_q(M, 'q-502', 'Given: $0<m<n<1$. Which of the following is necessarily greater than 1?',
+          ['$m+n$', '$m\\cdot n$', '$\\frac nm$', '$m^n$'], 3, [
+              '$\\frac nm$ is a bigger positive number over a smaller one, so $\\frac nm>1$. Always.',
+              'The others: $m\\cdot n<1$ (two positive fractions), $m^n<1$ (a positive fraction to a positive power), and $m+n$ can be less than 1: $m=\\frac13$, $n=\\frac12$ gives $\\frac56$.'])
+    _rn_q(M, 'q-503', 'Which of the following numbers is the largest?',
+          ['$\\left(\\frac15\\right)^{-\\frac12}$', '$\\left(\\frac15\\right)^{-2}$', '$\\left(\\frac15\\right)^2$', '$\\left(\\frac15\\right)^{\\frac12}$'], 2, [
+              'With the arrows: the base $\\frac15$ is between 0 and 1, so the smallest power gives the largest number. The smallest power is $-2$.',
+              'Check by flipping: $\\left(\\frac15\\right)^{-2}=5^2=25$ and $\\left(\\frac15\\right)^{-\\frac12}=\\sqrt5<3$. The other two are less than 1: $\\left(\\frac15\\right)^2=\\frac1{25}$ and $\\left(\\frac15\\right)^{\\frac12}=\\frac1{\\sqrt5}$.'])
+    _rn_q(M, 'q-504', 'Given: $d<c$. Which of the following changes necessarily increases $c-d$, the distance between $c$ and $d$ on the number line?',
+          ['Add 3 to $c$ and add 3 to $d$.', 'Add 3 to $c$ and subtract 3 from $d$.',
+           'Subtract 3 from $c$ and add 3 to $d$.', 'Subtract 3 from $c$ and subtract 3 from $d$.'], 2, [
+              '$d<c$, so $c-d$ is the distance between them. To make it bigger, move $c$ to the right and $d$ to the left.',
+              '(2): $(c+3)-(d-3)=c-d+6$. The distance grows by 6.',
+              '(1) and (4) move both numbers the same way: $(c+3)-(d+3)=c-d$, no change. (3): $(c-3)-(d+3)=c-d-6$, smaller.'])
+    _rn_q(M, 'q-505', 'Given: $1<p<q$. Which of the following expressions is the largest?',
+          ['$p^2\\cdot q$', '$p^3$', '$q^3$', '$p\\cdot q^2$'], 3, [
+              'Plug in $p=2$, $q=5$: $p^2\\cdot q=4\\cdot5=20$, $p^3=8$, $q^3=125$, $p\\cdot q^2=2\\cdot25=50$. The largest is $q^3$.',
+              'Why: all the numbers are greater than 1. $q^3=q\\cdot q\\cdot q$ uses the strongest factor three times (strong on strong). Every other choice has $p<q$ in place of at least one $q$, so it is smaller.'])
+    _rn_q(M, 'q-506', 'Given: $0<|c|<1$ and $k=c^6$. Which of the following is necessarily true?',
+          ['$|c|<k<1$', '$\\frac1{|c|}<k$', '$0<k<|c|$', '$1<k<\\frac1{|c|}$'], 3, [
+              '$k=c^6=|c|^6$, an even power, so $k>0$.',
+              '$|c|$ is a positive fraction, and a bigger power makes a positive fraction smaller: $|c|^6<|c|$. So $0<k<|c|$.',
+              'Check with $c=-\\frac12$: $k=\\frac1{64}$, and $0<\\frac1{64}<\\frac12$ ✓.'])
+    _rn_q(M, 'q-507', 'Given: $0<m<n<\\frac14$. Which of the following expressions is the largest?',
+          ['$4n$', '$\\frac nm$', '$m+n$', '$m^2+n^2$'], 2, [
+              'The other three are less than 1: $4n<4\\cdot\\frac14=1$, $m+n<\\frac14+\\frac14=\\frac12$, $m^2+n^2<\\frac1{16}+\\frac1{16}=\\frac18$.',
+              '$\\frac nm$ is a bigger positive number over a smaller one, so $\\frac nm>1$. It is the largest.',
+              'Check: $m=\\frac1{12}$, $n=\\frac16$: $\\frac nm=2$, while $4n=\\frac23$, $m+n=\\frac14$ and $m^2+n^2=\\frac5{144}$.'])
+    _rn_q(M, 'q-508', 'Given: $-1<k<0$. Which of the following expressions is the largest?',
+          ['$3k$', '$k$', '$k^3$', '$\\frac1k$'], 3, [
+              'All four are negative, so the largest is the one closest to zero.',
+              'For $-1<k<0$ and odd powers, the arrow points right: $k^3$ (power 3) $>k$ (power 1) $>\\frac1k$ (power $-1$).',
+              '$3k$: multiplying by 3 moves $k$ away from zero, so $3k<k$.',
+              'Check with $k=-\\frac12$: $3k=-\\frac32$, $k=-\\frac12$, $k^3=-\\frac18$, $\\frac1k=-2$. The largest is $-\\frac18$.'])
+    _rn_q(M, 'q-509', 'Given: $x^7<x<x^6$. In which of the following ranges must $x$ be?',
+          ['$0<x<1$', '$x<-1$', '$x>1$', '$-1<x<0$'], 2, [
+              'Test one number from each range: $2$, $\\frac12$, $-\\frac12$, $-2$.',
+              '$x=2$: $x^7=128>2$ ✗. $x=\\frac12$: $x^6=\\frac1{64}<\\frac12$, so $x<x^6$ fails ✗. $x=-\\frac12$: $x^7=-\\frac1{128}>-\\frac12$, so $x^7<x$ fails ✗.',
+              '$x=-2$: $x^7=-128$, $x=-2$, $x^6=64$, and $-128<-2<64$ ✓. So $x<-1$.'])
+    _rn_q(M, 'q-510', 'Given: $4b<y<b$. Which of the following expressions is the largest?',
+          ['$(y-b)^3$', '$b^3$', '$y^2$', '$b^2$'], 3, [
+              '$4b<b$: subtract $b$ from both sides: $3b<0$, so $b<0$.',
+              '$y$ is between $4b$ and $b$, so $y<0$ and $y$ is further from zero than $b$. Therefore $y^2>b^2$.',
+              '$y-b<0$, so $(y-b)^3<0$. Also $b^3<0$. Negative numbers are less than any square.',
+              'Check: $b=-1$, $y=-3$ ($-4<-3<-1$): $(y-b)^3=(-2)^3=-8$, $b^3=-1$, $y^2=9$, $b^2=1$. The largest is $y^2$.'])
+    _rn_q(M, 'q-511', 'Given: $-1<M<0<N<1$. Which of the following is the smallest?',
+          ['$M^3\\cdot N^3$', '$0$', '$M^4\\cdot N^4$', '$M\\cdot N$'], 4, [
+              '$M^4\\cdot N^4>0$, so it is not the smallest. $M\\cdot N<0$ and $M^3\\cdot N^3=(M\\cdot N)^3<0$.',
+              '$M\\cdot N$ is a negative fraction. For a negative fraction the arrow points right: the cube is bigger. So $M\\cdot N<(M\\cdot N)^3<0$.',
+              'Check: $M=-\\frac12$, $N=\\frac12$: $M\\cdot N=-\\frac14$, $M^3\\cdot N^3=-\\frac1{64}$, $M^4\\cdot N^4=\\frac1{256}$. The smallest is $-\\frac14$.'])
+
+
+def rn_practice(M):
+    # approved clean-up: copies, extra-bank warm-ups beyond 3, September items whose type the Hebrew practice covers
+    for qid in ['q-r26-t17-10', 'alg-extra-unit-t17-3-1',                                  # copies
+                'alg-extra-unit-t17-3-2', 'alg-extra-unit-t17-3-4', 'alg-extra-unit-t17-3-7',   # extra warm-ups (keep 3)
+                'q-r26-t17-07', 'q-r26-t17-11', 'q-r26-t17-13', 'q-r26-t17-14', 'q-r26-t17-15']:   # Sept, type covered
+        M.unplace(qid)
+    M.practice_order('unit-t17-3', [
+        'alg-extra-unit-t17-3-3', 'alg-extra-unit-t17-3-6', 'alg-extra-unit-t17-3-5',
+        'q-502', 'q-506', 'q-503', 'q-505', 'q-r26-t17-09', 'q-504',
+        'q-508', 'q-509', 'q-r26-t17-08', 'q-r26-t17-06', 'q-507', 'q-510', 'q-511', 'q-r26-t17-12'])
+
+
+def renumber_pass(M):
+    rn_lessons(M)
+    rn_guided(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last

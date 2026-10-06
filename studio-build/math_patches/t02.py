@@ -869,3 +869,24 @@ def dedupe_examples(M):
             expl=[r'Convert: $5\frac{3}{4}=\frac{23}{4}$ and $2\frac{1}{3}=\frac{7}{3}$.',
                   r'Common denominator 12: $\frac{69}{12}-\frac{28}{12}=\frac{41}{12}=3\frac{5}{12}$.',
                   r'Faster: whole parts $5-2=3$, fraction parts $\frac{9}{12}-\frac{4}{12}=\frac{5}{12}$. Together: $3\frac{5}{12}$.'])
+
+
+# =========================================================================================
+# 2026-10-06 review (renumber pass, topics 17-20): course-wide duplicate scan
+# =========================================================================================
+def review_dups(M):
+    # q-r26-t02-22 had exactly the same exercise as q-069 (5 3/4 - 2 1/3, set by dedupe_examples) -> new numbers.
+    M.set_q('q-r26-t02-22', stem=r'$7\frac{5}{6}-3\frac{1}{4} = ?$',
+            choices=[r'$3\frac{7}{12}$', r'$4\frac{7}{12}$', r'$4\frac{1}{12}$', r'$11\frac{1}{12}$'], correct=2,
+            expl=[r'No borrowing is needed ($\frac{5}{6}$ is bigger than $\frac{1}{4}$). Work part by part.',
+                  r'Whole parts: $7-3=4$. Fraction parts: $\frac{5}{6}-\frac{1}{4}=\frac{10}{12}-\frac{3}{12}=\frac{7}{12}$.',
+                  r'Together: $4\frac{7}{12}$.',
+                  r'The safe way gives the same: $\frac{47}{6}-\frac{13}{4}=\frac{94}{12}-\frac{39}{12}=\frac{55}{12}=4\frac{7}{12}$. Choice 4 adds instead of subtracting.'])
+
+
+_apply_before_review = apply
+
+
+def apply(M):
+    _apply_before_review(M)
+    review_dups(M)
