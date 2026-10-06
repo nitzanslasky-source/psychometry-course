@@ -951,3 +951,661 @@ def _pm_add(M, qid, lines):
 def practice_methods(M):
     _pm_add(M, 'wp24-p08', [r'Hidden total: no club size is given, but the whole club is a natural total, $1$ ($100\%$). Spanish $+$ Italian $-$ total: $\frac34+\frac58-1=\frac38$. Everyone speaks at least one of the languages, therefore this overlap is exact, not only a minimum.'])
     _pm_add(M, 'wp24-p05', [r'Hidden total: the size of the town is never given. The whole town is $1$. Under 50 and pet owners overlap by at least $\frac45+\frac25-1=\frac15$ of the town, therefore they surely share residents.'])
+
+
+# ======================================================================================================
+# 2026-10-06 renumber pass
+# The English course must not look like the teacher's Hebrew course: every Hebrew-derived question (guided wp24-g070 ..
+# g078, practice wp24-p01 .. p10) gets a new story (names, groups, setting) and new numbers - same concept, same trap,
+# same level, at least the same methods - and every guided solution video is rewritten to match. The Hebrew lesson
+# examples (pizza 8/5/4, 12 students 8 and 7, 65% and 55%, 2/3 + 1/2, the 18-member club, 1/5 and 1/3) and the card
+# example get new numbers. Order: the two exact questions (g078, g077) move to the start of the advanced group (they
+# continue the exact lesson; the range questions follow). Practice clean-up 26 -> 16. Nothing in topic 24 is recorded.
+# Runs last.
+# ======================================================================================================
+RN_RECORDED = set()   # no take of any topic-24 video in ~/Documents/Course.recordings (checked 2026-10-06)
+
+
+def _rn_strip(cols, row=('', '', '', ''), label='The four-box strip appears'):
+    return A(label, {'k': 'vis', 'v': {'type': 'table', 'headers': list(cols), 'rows': [list(row)]}, 'w': 1000, 'h': 120})
+
+
+def _rn_q(M, qid, stem, choices, correct, expl):
+    if qid in RN_RECORDED: return
+    M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+
+
+def _rn_video(M, qid, slides):
+    """Rewrite the question slides (2, 3, ...) of a guided question's solution video. The pre-loaded question stays."""
+    vid = 'solve-' + qid
+    if vid in RN_RECORDED: return
+    v = M.video(vid)
+    assert len(v['beats']) == len(slides) + 1, (vid, len(v['beats']))
+    for n, script in enumerate(slides, 2):
+        assert v['beats'][n - 1]['mode'] == 'question', (vid, n)
+        M.set_slide(vid, n, script=script)
+
+
+def rn_lessons(M):
+    # ---- wp-067 #4 pizza: 8 slices, mushrooms 5, tomatoes 4 (1 to 4)  ==>  6 slices, mushrooms 4, olives 3 (1 to 3)
+    M.set_slide(L1, 4, script=[
+        "You've all ordered pizza. Six slices.",
+        A('The setup appears: 6 slices, mushrooms on 4, olives on 3', T('6 slices · mushrooms on 4 · olives on 3', size=42, gap=30)),
+        A('Two pizzas appear, each with 4 mushroom slices shaded', {'k': 'pie', 'fr': [[4, 6], [4, 6]], 'r': 110, 'gap2': 140}),
+        'Mushrooms go on four slices — the shaded ones.',
+        'Pizza one: put all three olive toppings on mushroom slices.',
+        D('On the left pizza, write O on three shaded slices'),
+        "Three slices with both. That's the most — there are only three olive toppings.",
+        'Pizza two: someone hates mushrooms. Olives go on the plain slices first.',
+        D('On the right pizza, write O on the two unshaded slices'),
+        'Two used — one olive topping left. And no plain slice is left.',
+        D('Write the last O on a shaded slice'),
+        'It MUST go on a mushroom slice. At least one slice has both — no way around it.',
+        "And a topping is a topping: you can't put olives on the same slice twice.",
+        "So: at least one, at most three. That's a range."])
+
+    # ---- wp-068: 12 students, 8 music, 7 sport  ==>  15 students, 10 art, 9 drama
+    M.set_slide(L2, 2, script=[
+        "In a range question we can't find the exact overlap.",
+        'What we CAN find: the maximum possible — and the minimum that must be.',
+        A('The example appears: 15 students · 10 take art · 9 take drama', T('15 students · 10 take art · 9 take drama', size=46)),
+        'Fifteen students. Ten take art, nine take drama.',
+        "How many could take both? Let's hand things out and see."])
+    grid = {'k': 'grid', 'rows': 1, 'cols': 15, 'tr': 1, 'tc': 10, 'cell': 64}
+    M.set_slide(L2, 3, script=[
+        A('Fifteen boxes appear, the first 10 shaded as art students', dict(grid, gap=90)),
+        'Fifteen students. The ten shaded ones take art.',
+        "Minimum first: we DON'T want drama on art students — so drama goes to the others first.",
+        D('Write D in the 5 unshaded boxes'),
+        'Five used. Four drama students left — and everyone left takes art.',
+        D('Write D in 4 of the shaded boxes'),
+        'No choice: four must take both. Minimum — four.',
+        A('A second row of fifteen boxes appears', dict(grid)),
+        'Now the maximum: make every drama student an art student too.',
+        D('Write D in 9 shaded boxes'),
+        "Nine both. Can't go higher — there are only nine drama students.",
+        'So the overlap is somewhere from four to nine.'])
+    s = _script(M, L2, 4)
+    s = [D('Write "the smaller of 10 and 9 → 9"') if x == D('Write "the smaller of 8 and 7 → 7"') else x for x in s]
+    s = [{'Eight and seven: seven. Nothing to calculate.': 'Ten and nine: nine. Nothing to calculate.',
+          'Equal groups? Five and five — the maximum is five.': 'Equal groups? Six and six — the maximum is six.'}.get(x, x)
+         if isinstance(x, str) else x for x in s]
+    assert D('Write "the smaller of 10 and 9 → 9"') in s and 'Ten and nine: nine. Nothing to calculate.' in s, s
+    M.set_slide(L2, 4, script=s)
+    M.set_slide(L2, 5, script=[
+        A("'Minimum overlap = (A + B) − total' appears", T('Minimum overlap $=(A+B)-\\text{total}$', size=48, gap=80)),
+        'The minimum: how far do the two groups go over the total?',
+        D('Write 10 + 9 = 19'),
+        'Ten plus nine is nineteen.',
+        'But there are only fifteen students.',
+        D('Write 19 − 15 = 4'),
+        'Four too many. Those four have no choice — they must take both.',
+        'Picture nineteen places for fifteen students: four students end up holding two.'])
+    M.set_slide(L2, 6, script=[
+        "What if the groups don't go over the total?",
+        A('6 + 9 = 15 appears', T('$6+9=15$ students', size=50, gap=70)),
+        'Six art, nine drama, fifteen students. Six plus nine — exactly fifteen.',
+        'Hand everything to different students. Nobody has to take both.',
+        D('Next to it write "min = 0"'),
+        'Minimum zero. Not minus anything.',
+        "If the sum doesn't pass the total, no overlap is forced."])
+    M.set_slide(L2, 7, script=[
+        'So far, they asked about both. The exam also asks about the other regions.',
+        'Same fifteen students: ten art, nine drama. The overlap goes from four to nine.',
+        A("'Both: from 4 to 9' appears", T('Both: from $4$ to $9$', size=40)),
+        'Everything else depends on the overlap. So, find its range first.',
+        A("'At least one = A + B − both: from 10 to 15' appears",
+          T('At least one $=A+B-\\text{both}$: from $10$ to $15$', size=40)),
+        'At least one — the union — is A plus B minus both. Big overlap, small union.',
+        D('Write "19 − 9 = 10 · 19 − 4 = 15"'),
+        'Overlap nine: union ten — just the larger group. Overlap four: union fifteen — everyone.',
+        'So, the union goes from the larger group up to A plus B. But never more than the total.',
+        A("'Neither = total − at least one: from 0 to 5' appears",
+          T('Neither $=\\text{total}-\\text{at least one}$: from $0$ to $5$', size=40)),
+        'Neither is the total minus the union. Neither is big when the union is small.',
+        D('Write "15 − 15 = 0 · 15 − 10 = 5"'),
+        A("'Art only = A − both: from 1 to 6' appears", T('Art only $=A-\\text{both}$: from $1$ to $6$', size=40)),
+        'Art only is art minus both. Here it works backwards: the BIGGER the overlap, the SMALLER art only.',
+        D('Write "10 − 9 = 1 · 10 − 4 = 6"'),
+        'Art only: from one to six. Its minimum uses the MAXIMUM overlap.'])
+    def fn8(lines):
+        hit = 0
+        for l in lines:
+            if l.get('say', '').startswith('"At least how many play music only?"'):
+                l['say'] = ('"At least how many take art only?" Art only is small when the overlap is big. '
+                            'So, use the MAXIMUM overlap.'); hit += 1
+            if l.get('draw') == 'Write "at least … music only → max both → 8 − 7 = 1"':
+                l['draw'] = 'Write "at least … art only → max both → 10 − 9 = 1"'; hit += 1
+        assert hit == 2, hit
+        return lines
+    M.edit_lines(L2, 8, fn8)
+    M.set_slide(L2, 9, script=[
+        "Let's run both rules on one example.",
+        A('60% have one property · 50% have another', T('60% have property A · 50% have property B', size=44, gap=70)),
+        D('Write max = 50%'),
+        'Max: the smaller group — fifty percent.',
+        D('Write 60 + 50 − 100 = 10 → min = 10%'),
+        'Min: sixty plus fifty is a hundred ten. Ten percent over — so at least ten percent have both.',
+        "Or reason it out: forty percent don't have A. Give them B first.",
+        D('Write 50 − 40 = 10'),
+        'Fifty minus forty: ten percent left, and they must double up. Same answer.',
+        'Formula or logic — use whichever feels natural. Most students find the formula — sum minus total — the easiest.'])
+    M.set_slide(L2, 10, script=[
+        'Fractions work the same way. The whole is one.',
+        A('3/5 + 2/3 − 1 = 4/15 appears', T('$\\frac35+\\frac23-1=\\frac{4}{15}$', size=56, gap=60)),
+        'Three fifths plus two thirds is nineteen fifteenths — four fifteenths too many. At least four fifteenths are in both.',
+        D('Next to it write "max = 3/5"'),
+        'And the maximum? The smaller group — three fifths.'])
+
+    # ---- wp-069: 18 members, 10 Spanish, 9 French, 4 neither, 5 both  ==>  25 members, 13 tennis, 11 squash, 5 neither, 4 both
+    H4 = ['Neither', 'Tennis only', 'Both', 'Squash only']
+    M.set_slide(L3, 2, script=[
+        A('The club appears: 25 members · 13 tennis · 11 squash · 5 play neither',
+          T('25 members · 13 tennis · 11 squash · 5 play neither', size=44, gap=70)),
+        'Twenty-five members. Thirteen play tennis, eleven play squash — and exactly five play neither.',
+        'That last fact is what makes it exact.',
+        D('Write 25 − 5 = 20'),
+        'Five are outside both groups. So the other twenty play at least one sport.',
+        D('Write 20 − 13 = 7'),
+        'Thirteen of them play tennis. The other seven play no tennis — so they MUST be squash only.',
+        D('Write 11 − 7 = 4'),
+        'Squash is eleven. Seven are squash only — so four play both.',
+        'Four. No choice about it.'])
+    M.set_slide(L3, 3, script=[
+        'With bigger numbers, use the squares method.',
+        "It's the same four regions as the circles — just unrolled into one line.",
+        _rn_strip(H4, label='A strip of four boxes appears: Neither · Tennis only · Both · Squash only'),
+        'One long strip, four boxes: neither, tennis only, both, squash only.',
+        D("Draw a bracket over 'Tennis only' + 'Both' and write 13"),
+        'The tennis bracket covers two boxes: tennis only and both.',
+        D("Draw a bracket under 'Both' + 'Squash only' and write 11"),
+        "Squash covers both and squash only. The two brackets MUST share the middle box — that's the overlap.",
+        'All four boxes together make the total — twenty-five.',
+        D("Write 5 in 'Neither'"),
+        "Now it's sudoku. Neither is five.",
+        D("Write 7 in 'Squash only'"),
+        'Five plus the whole tennis bracket, thirteen, is eighteen. Twenty-five total — so squash only is seven.',
+        D("Write 4 in 'Both' and 9 in 'Tennis only'"),
+        'Squash is eleven: seven only, so four both. Tennis only: thirteen minus four, nine.',
+        'Check: five, nine, four, seven — twenty-five.'])
+    M.set_slide(L3, 4, script=[
+        'Same club — but this time they tell us both, and ask for neither.',
+        A('The data appears: 25 members · 13 tennis · 11 squash · 4 play both',
+          T('25 members · 13 tennis · 11 squash · 4 play both', size=44, gap=40)),
+        _rn_strip(H4),
+        D("Write 4 in 'Both'"),
+        'Both is four.',
+        D("Write 7 in 'Squash only'"),
+        'Squash is eleven — four both, so seven squash only.',
+        'We want neither — so keep moving left.',
+        D("Write 13 + 7 = 20, then 5 in 'Neither'"),
+        'The tennis bracket is thirteen, plus seven — twenty. Twenty-five total: neither is five.',
+        'We never needed tennis only. Fill only the boxes on your path.'])
+    M.set_slide(L3, 5, script=[
+        'You can start from whichever box the question hands you.',
+        A('The data appears: 25 members · 13 tennis · 11 squash · 7 squash only',
+          T('25 members · 13 tennis · 11 squash · 7 squash only', size=44, gap=40)),
+        _rn_strip(H4),
+        D("Write 7 in 'Squash only', then 4 in 'Both'"),
+        'Squash only is seven — so both is eleven minus seven, four.',
+        D("Write 9 in 'Tennis only', then 5 in 'Neither'"),
+        'Tennis only: thirteen minus four, nine. Then nine plus four plus seven is twenty — neither is five.',
+        "Same diagram, different starting box. That's why the strip is so powerful."])
+    M.set_slide(L3, 6, pre=[T('25 members · 13 tennis · 11 squash · 4 both', size=44, gap=40),
+                            {'k': 'vis', 'v': {'type': 'table', 'headers': H4, 'rows': [['5', '9', '4', '7']]},
+                             'w': 1000, 'h': 120}], script=[
+        'One more region the exam loves: exactly one.',
+        'Exactly one means tennis only or squash only — not both.',
+        D("Circle the boxes 'Tennis only' and 'Squash only'"),
+        'From the strip: nine plus seven — sixteen.',
+        A("'Exactly one = A + B − 2 · both' appears", T('Exactly one $=A+B-2\\cdot\\text{both}$', size=46)),
+        'Without the strip: add the two groups, and take both away TWICE — it sits inside each group once.',
+        D('Write "13 + 11 − 2 · 4 = 16"'),
+        'Thirteen plus eleven is twenty-four. Minus eight — sixteen. Same answer.',
+        'Or: twenty play at least one sport, four play both. Twenty minus four — sixteen again.'])
+    M.set_slide(L3, 7, script=[
+        'Now a question that scares a lot of students.',
+        A('The overlap is 1/10 of group A and 1/4 of group B',
+          T('The overlap is $\\frac1{10}$ of group A and $\\frac14$ of group B', size=42, gap=40)),
+        'The overlap is a tenth of group A — and a quarter of group B. How many times bigger is A only than B only?',
+        _rn_strip(['Neither', 'A only', 'Both', 'B only'], label='The strip appears'),
+        D("Write x in 'Both'"),
+        'Call the overlap x. You could even call it one.',
+        D("Write 10x over the A bracket, then 9x in 'A only'"),
+        "It's a tenth of A — so A is ten x. Take away the overlap: A only is nine x.",
+        D("Write 4x under the B bracket, then 3x in 'B only'"),
+        "It's a quarter of B — so B is four x. B only is three x.",
+        'Nine x against three x — three times as big. A ratio of three to one.',
+        'Scary wording. Simple once it\'s in the boxes.'])
+    _fix_say(M, L3, 8, 'show forty DIFFERENT items', 'show sixty DIFFERENT items')
+    _fix_say(M, L3, 8, 'forty is everyone in at least one', 'sixty is everyone in at least one')
+
+    # ---- memory card example (was the lesson's 12 students: 8 and 7)
+    c = M.card('mem-overlap')
+    t0, t1 = c['tables'][0], c['tables'][1]
+    t0['head'][2] = 'Example ($15$ students: $10$ and $9$)'
+    t0['rows'] = [['Maximum overlap', 'the smaller group', '$9$'],
+                  ['Minimum overlap', '$(A+B)-\\text{total}$, or $0$ if that is not positive', '$10+9-15=4$']]
+    t1['rows'][0][2] = '$10$ to $15$'
+    t1['rows'][1][2] = '$0$ to $5$'
+    t1['rows'][2][2] = '$10-9=1$ to $10-4=6$'
+
+
+def rn_guided(M):
+    # ---------- g070: 45 campers, flashlight 28, map 23, both 16 -> neither 10
+    #            ==>  52 hotel guests, pool 31, gym 26, both 17 -> neither 12
+    _rn_q(M, 'wp24-g070', 'Of 52 hotel guests, 31 use the pool, 26 use the gym, and 17 use both. How many use neither?',
+          ['$5$', '$14$', '$12$', '$17$'], 3, [
+        'Both is $17$, therefore gym only is $26-17=9$.',
+        'At least one: the whole pool group plus gym only, $31+9=40$.',
+        'Neither: $52-40=12$.',
+        'In one line: $52-(31+26-17)=52-40=12$.'])
+    _rn_video(M, 'wp24-g070', [[
+        'Two groups — pool and gym — and they tell us how many use both.',
+        _rn_strip(['Neither', 'Pool only', 'Both', 'Gym only']),
+        D("Bracket 'Pool only' + 'Both' → 31; bracket 'Both' + 'Gym only' → 26"),
+        D("Write 17 in 'Both'"),
+        'Seventeen both.',
+        D("Write 9 in 'Gym only'"),
+        'Gym is twenty-six: seventeen both, so nine gym only.',
+        'Neither is on the far side — move left past the whole pool bracket.',
+        D("Write 31 + 9 = 40, then 52 − 40 = 12 in 'Neither'"),
+        'Pool bracket, thirty-one, plus nine — forty use at least one. Fifty-two guests: twelve use neither.',
+        D('Circle choice 3'),
+        'Twelve. Choice three.',
+    ], [
+        'Or all in one line.',
+        D('Write 52 − (31 + 26 − 17) = 12'),
+        'Add both groups: fifty-seven. The seventeen in the middle were counted twice — subtract them once: forty.',
+        'Fifty-two minus forty. Twelve, again.',
+    ]])
+
+    # ---------- g071: 22 machines, cut 14, polish 12, neither 3 -> both 7
+    #            ==>  27 printers, color 16, posters 13, neither 3 -> both 5
+    _rn_q(M, 'wp24-g071', 'A print shop has 27 printers. Of them, 16 print in color, 13 print large posters, and 3 do neither. '
+                          'How many printers both print in color and print large posters?',
+          ['$10$', '$8$', '$2$', '$5$'], 4, [
+        '$3$ printers do neither, therefore $27-3=24$ do at least one job.',
+        'The two jobs add to $16+13=29$. That is $29-24=5$ more than $24$. These $5$ printers were counted twice, '
+        'so $5$ do both.'])
+    _rn_video(M, 'wp24-g071', [[
+        'Neither is given — three. We want both.',
+        D('Write 27 − 3 = 24'),
+        'Three do neither — twenty-four do at least one job.',
+        D('Write 16 + 13 − 24 = 5'),
+        'The two jobs add to twenty-nine — five more than twenty-four. Those five were counted twice: they do both.',
+        D('Circle choice 4'),
+        'Five. Choice four.',
+    ], [
+        'The same answer on the strip.',
+        _rn_strip(['Neither', 'Color only', 'Both', 'Poster only']),
+        D("Write 3 in 'Neither'"),
+        'Three printers do neither.',
+        D("Bracket 'Both' + 'Poster only' → 13"),
+        'The poster bracket is thirteen. Neither plus the whole poster bracket: sixteen.',
+        D("Write 27 − 16 = 11 in 'Color only'"),
+        'Twenty-seven printers, so the last box — color only — is eleven.',
+        D("Write 16 − 11 = 5 in 'Both'"),
+        'Color is sixteen. Eleven color only — so five do both.',
+        'Five again.',
+    ]])
+
+    # ---------- g072: both = 1/6 of photography, 1/4 of volunteers -> 5:3
+    #            ==>  both = 1/9 of the chess club, 1/4 of the robotics club -> 8:3
+    #            (2026-10-06 review: was 1/5 and 1/8 -> 4:7; the Hebrew had 1/5 of the first group -> 4x)
+    _rn_q(M, 'wp24-g072', 'The students who are in both the chess club and the robotics club make up $\\frac19$ of the chess club '
+                          'and $\\frac14$ of the robotics club. What is the ratio of chess club students who are not in the '
+                          'robotics club to robotics club students who are not in the chess club?',
+          ['4:9', '8:3', '9:4', '3:8'], 2, [
+        'Call the overlap $x$. It is $\\frac19$ of the chess club, therefore the chess club has $9x$ students. '
+        'It is $\\frac14$ of the robotics club, therefore the robotics club has $4x$ students.',
+        'Chess only: $9x-x=8x$. Robotics only: $4x-x=3x$.',
+        'The ratio is $8x:3x=8:3$. The group that does neither is not needed.'])
+    _rn_video(M, 'wp24-g072', [[
+        'The students in both are a ninth of the chess club — and a quarter of the robotics club.',
+        _rn_strip(['Neither', 'Chess only', 'Both', 'Robotics only']),
+        D("Write x in 'Both'"),
+        'Call the overlap x.',
+        D("Write 9x over the chess bracket, then 8x in 'Chess only'"),
+        'A ninth of chess — so chess is nine x. Chess only: eight x.',
+        D("Write 4x under the robotics bracket, then 3x in 'Robotics only'"),
+        'A quarter of robotics — so robotics is four x. Robotics only: three x.',
+        'Chess only to robotics only: eight to three.',
+        D('Circle choice 2'),
+        'Choice two. We never needed the neither group at all.',
+        'Watch the trap: nine to four compares the whole clubs — a different question.',
+    ], [
+        'Prefer numbers? Say two students are in both.',
+        D('Write both = 2 → chess 18, robotics 8'),
+        'Then eighteen in chess and eight in robotics.',
+        D('Write 18 − 2 = 16, 8 − 2 = 6 → ratio 16 : 6 = 8 : 3'),
+        'Sixteen chess only, six robotics only. Sixteen to six is eight to three.',
+    ]])
+
+    # ---------- g074: 240 guests, 35% organizer, 80% host -> min 15% = 36
+    #            ==>  360 guests at a gallery opening, 45% artist, 70% gallery owner -> min 15% = 54
+    #            (2026-10-06 review: was a wedding, bride / groom - the Hebrew's own setting)
+    _rn_q(M, 'wp24-g074', 'At a gallery opening with 360 guests, 45% know the artist and 70% know the gallery owner. '
+                          'What is the minimum number of guests who know both?',
+          ['$54$', '$162$', '$108$', '$36$'], 1, [
+        '$45\\%+70\\%=115\\%$, but the guests are only $100\\%$. So, at least $115\\%-100\\%=15\\%$ know both.',
+        '$15\\%$ of $360$: $10\\%$ is $36$ and $5\\%$ is $18$: $36+18=54$.',
+        'This minimum is possible: all $30\\%$ who do not know the owner are in the artist group, and the other '
+        '$45\\%-30\\%=15\\%$ of the artist group know the owner.'])
+    _rn_video(M, 'wp24-g074', [[
+        A('The data appears: total 360 · artist 45% · owner 70%', T('Total 360 · artist 45% · owner 70%', size=42)),
+        'First, tidy up the data.',
+        'Forty-five percent of three sixty: ten percent is thirty-six, five percent is eighteen. Four times thirty-six, plus eighteen — a hundred sixty-two.',
+        D('Write 45% → 144 + 18 = 162'),
+        'Seventy percent? Easier through the complement: thirty percent is a hundred eight — so two fifty-two.',
+        D('Write 70% → 360 − 108 = 252'),
+        'A free reminder: the maximum overlap is the smaller group — a hundred sixty-two. Not needed here, but it costs nothing.',
+        'The minimum: how far do the groups go over the total?',
+        D('Write 162 + 252 = 414 → 414 − 360 = 54'),
+        'Four fourteen against three sixty — fifty-four too many. They must know both.',
+        D('Circle choice 1'),
+        'Fifty-four. Choice one.',
+    ], [
+        'Now step back. Why calculate all those counts?',
+        D('Write 45 + 70 = 115% → 15% too many'),
+        'Forty-five plus seventy: a hundred fifteen percent. Fifteen percent over.',
+        D('Write 15% of 360 = 36 + 18 = 54'),
+        'Ten percent is thirty-six, five percent is eighteen — fifty-four.',
+        'One small calculation. This is the exam way.',
+    ], [
+        "Let's see it — and review ranges on the way.",
+        _rn_strip(['Neither', 'Artist only', 'Both', 'Owner only']),
+        D("Write 15% in 'Both', 30% in 'Artist only', 55% in 'Owner only', 0 in 'Neither'"),
+        'At the minimum: fifteen both, thirty artist only, fifty-five owner only. Exactly a hundred.',
+        "Must it be fifteen? No — that's only the minimum.",
+        D('Below the strip write: both 20% → 25% · 50% · neither 5%'),
+        'Twenty percent both: then twenty-five artist only and fifty owner only — ninety-five. The last five percent know neither of them.',
+        D('Below that write: both 45% → 0% · 25% · neither 30%'),
+        'The maximum: the whole artist group inside the owner group — forty-five percent.',
+        'So the overlap runs from fifteen to forty-five percent. They asked for the minimum.',
+    ]])
+
+    # ---------- g075: 48 students, greenhouse 21, orchard 11, neither could be 14/30/35/18 (18; range 16..27)
+    #            ==>  52 students, library 24, kitchen 13, neither could be 36/13/19/31 (19; range 15..28)
+    _rn_q(M, 'wp24-g075', 'A class has 52 students. Of them, 24 help in the library and 13 help in the kitchen. '
+                          'Which of the following could be the number of students who help in neither place?',
+          ['$36$', '$13$', '$19$', '$31$'], 3, [
+        'Neither $=52-\\text{union}$, where the union is everyone who helps in at least one place.',
+        'Smallest union: all $13$ kitchen helpers also help in the library, therefore the union is $24$. '
+        'Largest union: no overlap, $24+13=37$ (less than $52$, therefore it fits).',
+        'Neither goes from $52-37=15$ to $52-24=28$. Only $19$ is in this range. It happens when the overlap is $4$: '
+        'the union is $24+13-4=33$, and $52-33=19$.'])
+    _rn_video(M, 'wp24-g075', [[
+        'Neither in a range question. Go through the union — the students in at least one place.',
+        D('Write "union: smallest 24 · largest 24 + 13 = 37"'),
+        'Smallest union: all thirteen kitchen helpers also help in the library. Twenty-four.',
+        "Largest union: no overlap at all. Twenty-four plus thirteen — thirty-seven. That's less than fifty-two — it fits.",
+        D('Write "neither = 52 − union: from 52 − 37 = 15 to 52 − 24 = 28"'),
+        'Neither is fifty-two minus the union. Big union, small neither.',
+        'So, neither goes from fifteen to twenty-eight.',
+        D('Cross out choices 1, 2 and 4'),
+        'Thirteen is too small. Thirty-six and thirty-one are too big.',
+        D('Circle choice 3'),
+        'Nineteen. Choice three.',
+    ], [
+        'For strong students — another way to see it.',
+        'Flip it: neither means NOT library and NOT kitchen. An overlap of the two complements.',
+        D('Write not library: 52 − 24 = 28 · not kitchen: 52 − 13 = 39'),
+        'Twenty-eight not in the library. Thirty-nine not in the kitchen.',
+        'Now the range rules — on these two groups.',
+        D('Write max = 28'),
+        'Max: the smaller group — twenty-eight.',
+        D('Cross out choices 1 and 4'),
+        'Thirty-six and thirty-one — too big. Out.',
+        D('Write 28 + 39 − 52 = 15 → min = 15'),
+        'Min: sixty-seven minus fifty-two — fifteen.',
+        D('Cross out choice 2'),
+        'Thirteen — too small. Out.',
+        D('Circle choice 3'),
+        'Nineteen sits between fifteen and twenty-eight. Choice three.',
+    ], [
+        'The fast way. The maximum alone kills two choices.',
+        'Two are left — and only one answer can be right.',
+        'So one of them is inside the range, and the other is too small.',
+        'Which one is too small? The smaller one.',
+        D('Cross out 13 and circle 19'),
+        'Nineteen — without calculating the minimum at all.',
+        'Not trivial — but with practice, it saves you time.',
+    ]])
+
+    # ---------- g076: company 2/5 code, 4/5 remote, 1/5 juniors, 1/2 training; not necessarily: juniors & remote (=1)
+    #            ==>  hospital nurses 3/10 nights, 3/4 drive, 1/4 new, 1/2 part time; not necessarily: new & drive (=1)
+    _rn_q(M, 'wp24-g076', "Of a hospital's nurses, $\\frac{3}{10}$ work night shifts, $\\frac34$ drive to work, $\\frac14$ are new, "
+                          "and $\\frac12$ work part time. Which statement is not necessarily true?",
+          ['At least one nurse who is not new does not work night shifts', 'At least one night-shift nurse drives to work',
+           'At least one new nurse drives to work', 'At least one part-time nurse does not work night shifts'], 3, [
+        '"At least one is in both groups" must be true only when the two groups add up to more than the whole.',
+        'Choice 1: nurses who are not new and nurses who do not work nights, $\\frac34+\\frac{7}{10}=\\frac{29}{20}>1$ — forced. '
+        'Choice 2: $\\frac{3}{10}+\\frac34=\\frac{21}{20}>1$ — forced. '
+        'Choice 4: part time and not nights, $\\frac12+\\frac{7}{10}=\\frac65>1$ — forced.',
+        'Choice 3: new nurses and nurses who drive, $\\frac14+\\frac34=1$ exactly. This does not force an overlap. '
+        'Out of $20$ nurses, the $5$ new nurses can come by bus and the other $15$ drive. '
+        'So, choice 3 is not necessarily true.'])
+    _rn_video(M, 'wp24-g076', [[
+        'Each choice claims an overlap MUST exist. It must — if the two groups add up to more than one whole.',
+        D('Choice 1: not new 3/4 + not nights 7/10 = 29/20'),
+        'Choice one: nurses who are not new are three quarters, no night shifts seven tenths. Twenty-nine twentieths — more than one. Forced.',
+        D('Cross out choice 1'),
+        "That statement is true — so it's not our answer.",
+        D('Choice 2: nights 3/10 + drive 3/4 = 21/20'),
+        'Choice two: three tenths plus three quarters — twenty-one twentieths. More than one. Forced.',
+        D('Cross out choice 2'),
+        D('Choice 3: new 1/4 + drive 3/4 = 1'),
+        'Choice three: a quarter plus three quarters — exactly one.',
+        'Exactly one does NOT force an overlap. The groups can sit side by side.',
+        D('Circle choice 3'),
+        D('Write 20 nurses: 5 new come by bus · 15 not new drive'),
+        'Picture twenty nurses: the five new nurses come by bus, the other fifteen drive. Every fraction holds — and no new nurse drives.',
+        "So choice three is NOT necessarily true. That's the answer.",
+        'And if two groups add up to LESS than one? Even more so — no overlap is forced. The minimum is zero, never negative.',
+        'Just to check: choice four — a half plus seven tenths, forced.',
+    ], [
+        'On the exam, do it in percent. Much faster than adding fractions.',
+        D('Write nights 30 · drive 75 · new 25 · part time 50 · not nights 70 · not new 75'),
+        'Nights thirty, drive seventy-five, new twenty-five, part time fifty. Not nights seventy, not new seventy-five.',
+        D('Choice 1: 75 + 70 = 145 · Choice 2: 30 + 75 = 105 · Choice 3: 25 + 75 = 100'),
+        'Choice one: a hundred forty-five — forced. Choice two: a hundred five — forced. Choice three: exactly a hundred — not forced.',
+        D('Circle choice 3'),
+        'Choice three, again. This is the way to do it on the exam — percent is much faster than fractions.',
+    ]])
+
+    # ---------- g077: staff 2/5 soup, 1/4 salad, 1/10 both = 8 people -> 80, neither 36
+    #            ==>  conference 1/4 morning, 1/6 evening, 1/12 both = 4 people -> 48, neither 32
+    #            (2026-10-06 review: was 1/3, 1/5, 1/12 = 5 -> 60; the Hebrew had 1/3, 1/5 and 60 people)
+    _rn_q(M, 'wp24-g077', 'At a conference, $\\frac14$ of the participants attend the morning workshop, $\\frac16$ attend the '
+                          'evening workshop, and $\\frac1{12}$ attend both. Exactly 4 participants attend both. '
+                          'How many participants attend neither workshop?',
+          ['$16$', '$32$', '$12$', '$28$'], 2, [
+        '$\\frac1{12}$ of the participants is $4$ people, therefore there are $4\\cdot12=48$ participants.',
+        'Morning: $\\frac14\\cdot48=12$. Evening: $\\frac16\\cdot48=8$. At least one: $12+8-4=16$.',
+        'Neither: $48-16=32$.'])
+    _rn_video(M, 'wp24-g077', [[
+        'Squares method, with fractions this time. The whole is one.',
+        _rn_strip(['Neither', 'Morning only', 'Both', 'Evening only']),
+        D("Write 1/12 in 'Both'"),
+        'Both: a twelfth.',
+        D("Write 1/6 − 1/12 = 1/12 in 'Evening only'"),
+        'Evening is a sixth. A sixth minus a twelfth — two twelfths minus one twelfth: one twelfth.',
+        'We want neither, so keep moving left. Not morning is three quarters.',
+        D("Write 3/4 − 1/12 = 8/12 in 'Neither'"),
+        'Three quarters is nine twelfths. Minus one — eight twelfths.',
+        'But the answers are people. A twelfth is four people.',
+        D('Write 1/12 = 4 people → 8/12 = 8 · 4 = 32'),
+        'Eight twelfths: eight times four — thirty-two people.',
+        D('Circle choice 2'),
+        'Thirty-two. Choice two.',
+    ], [
+        'Better: skip the fractions altogether.',
+        D('Write 1/12 = 4 → total 48'),
+        'A twelfth is four people — so there are forty-eight participants.',
+        D('Write morning 12 · evening 8 · not morning 36'),
+        'Morning: a quarter of forty-eight, twelve. Evening: a sixth, eight. Not morning: thirty-six.',
+        D('Write 8 − 4 = 4 evening only · 36 − 4 = 32 neither'),
+        'Evening only: eight minus four, four. Neither: thirty-six minus four — thirty-two.',
+        'This is how I want you working on the exam: find the people, then fill the boxes.',
+    ]])
+
+    # ---------- g078: butterflies 31 and 22, 40 different -> both 13
+    #            ==>  movies 34 and 27, 45 different -> both 16 (2026-10-06 review: was bird species; the Hebrew had owls)
+    _rn_q(M, 'wp24-g078', 'Two friends list the movies they watched this year. One lists 34 movies and the other lists 27. '
+                          'Together, their lists show 45 different movies. How many movies appear on both lists?',
+          ['$16$', '$11$', '$7$', '$18$'], 1, [
+        'The $45$ movies are the ones on at least one list (the union), therefore neither is $0$.',
+        'The first friend has $34$ of the $45$. The other $45-34=11$ appear only on the second list.',
+        'Both: $27-11=16$. Check: $34+27-16=45$.'])
+    _rn_video(M, 'wp24-g078', [[
+        'Forty-five different movies — watched by at least one of them.',
+        "They didn't say forty-five movies came out this year. They said the lists show forty-five.",
+        D('Write neither = 0'),
+        "So no movie is in neither. Neither is zero — it's implied.",
+        D('Write 45 − 34 = 11'),
+        'The first friend covers thirty-four of the forty-five. The other eleven are only on the second list.',
+        D('Write 27 − 11 = 16'),
+        'The second list has twenty-seven: eleven new, so sixteen shared.',
+        D('Circle choice 1'),
+        'Sixteen. Choice one.',
+    ], [
+        'Same thing on the strip.',
+        _rn_strip(['Neither', 'First only', 'Both', 'Second only'], ('0', '', '', ''),
+                  label='The four-box strip appears, neither = 0'),
+        D("Write 45 − 34 = 11 under 'Neither' + 'Second only'"),
+        "Not on the first list: forty-five minus thirty-four — eleven. That's neither plus second only.",
+        D("Write 11 in 'Second only', then 27 − 11 = 16 in 'Both'"),
+        'Neither is zero, so second only is eleven — and both is sixteen.',
+        "When neither is zero, that's the box you start from. Watch for it in the wording.",
+    ]])
+
+
+def rn_order(M):
+    """The two exact questions (g078 reading trap, g077 fractions) open the advanced group: they continue the exact lesson
+    that ends just before; the range questions (g074, g075, the at-least trap, g076) follow. renumber_guided() renumbers."""
+    for ref in ('wp24-g078', 'solve-wp24-g078', 'wp24-g077', 'solve-wp24-g077'):
+        M.move(ref, ADV, before='wp24-g074')
+
+
+def rn_practice_questions(M):
+    # p01: 150 winners, 65% nearby, 55% train -> min 20% = 30  ==>  160 buyers, 72% students, 53% card -> 25% = 40
+    _rn_q(M, 'wp24-p01', 'At a book fair, 160 different visitors each buy one book. Of the buyers, 72% are students and 53% pay '
+                         'by card. What is the minimum number of buyers who are students and pay by card?',
+          ['$16$', '$40$', '$25$', '$48$'], 2, [
+        '$72\\%+53\\%=125\\%$ of the buyers, but there are only $100\\%$. '
+        'So, at least $125\\%-100\\%=25\\%$ are in both groups.', '$25\\%$ of $160$ is $\\frac14\\cdot160=40$.'])
+    # p02: art 26, music 19, both 11, all in at least one -> 34  ==>  basketball 31, volleyball 24, both 13 -> 42
+    _rn_q(M, 'wp24-p02', 'Every member of a sports club plays basketball, volleyball, or both. There are 31 basketball players, '
+                         '24 volleyball players, and 13 members who play both. How many members does the club have?',
+          ['$55$', '$68$', '$42$', '$29$'], 3, [
+        'Adding $31$ and $24$ counts the $13$ members who play both twice. Remove one copy: $31+24-13=42$.',
+        'Or split into separate groups: basketball only $31-13=18$, volleyball only $24-13=11$, both $13$. '
+        'Total: $18+11+13=42$.'])
+    # p03: 3/5 get a company tablet = 72, 1/2 personal -> 120, min 12  ==>  3/4 bus pass = 135, 2/5 bicycle -> 180, min 27
+    _rn_q(M, 'wp24-p03', 'A school gives a free bus pass to $\\frac34$ of its students, using 135 passes. $\\frac25$ of all the '
+                         'students also have a bicycle. What is the minimum number of students who have both a bus pass and '
+                         'a bicycle?',
+          ['$45$', '$0$', '$27$', '$72$'], 3, [
+        '$\\frac34$ of the students is $135$, therefore $\\frac14$ is $135\\div3=45$ and the total is $45\\cdot4=180$.',
+        'Bicycles: $\\frac25\\cdot180=72$.', 'Minimum overlap: $135+72-180=27$.'])
+    # p04: 120 hikers, map 54, compass 82, both 31 -> neither 15  ==>  140 runners, cap 63, sunglasses 88, both 36 -> 25
+    _rn_q(M, 'wp24-p04', 'Of 140 runners in a race, 63 wear a cap, 88 wear sunglasses, and 36 wear both. '
+                         'How many runners wear neither?',
+          ['$27$', '$25$', '$36$', '$11$'], 2, [
+        'At least one item: $63+88-36=115$.', 'Neither: $140-115=25$.'])
+    # p05: town 3/5 cycle, 1/4 vegetables, 2/5 pets, 4/5 under 50; forced: under 50 & pets
+    #      ==>  city 2/3 walk to work, 1/4 own a dog, 1/3 have a garden, 3/4 under 60; forced: under 60 & garden
+    _rn_q(M, 'wp24-p05', 'In a city, $\\frac23$ of the residents walk to work, $\\frac14$ own a dog, $\\frac13$ have a garden, '
+                         'and $\\frac34$ are under 60. Which of the following groups necessarily contains at least one resident?',
+          ['Residents who walk to work and own a dog', 'Residents aged 60 or over who own a dog',
+           'Residents under 60 who have a garden', 'Residents who walk to work and have a garden'], 3, [
+        'Two groups must overlap only when they add up to more than the whole.',
+        'Under 60 and garden owners: $\\frac34+\\frac13=\\frac{13}{12}>1$ — forced.',
+        'The others: walkers and dog owners, $\\frac23+\\frac14=\\frac{11}{12}<1$. '
+        'Aged 60 or over and dog owners, $\\frac14+\\frac14=\\frac12<1$. '
+        'Walkers and garden owners, $\\frac23+\\frac13=1$ — not more than $1$. '
+        'These groups can be separate.',
+        'Hidden total: the size of the city is never given. The whole city is $1$. Under 60 and garden owners overlap by at '
+        'least $\\frac34+\\frac13-1=\\frac1{12}$ of the city, therefore they surely share residents.'])
+    # p06: 60 trainees 0-12; 26 in 9-12, 24 in 7-10, 20 below 7 -> 9-10: 10
+    #      ==>  70 applicants 0-20; 31 in 15-20, 26 in 11-16, 24 below 11 -> 15-16: 11
+    _rn_q(M, 'wp24-p06', 'Each of 70 applicants gets a score from 0 to 20. Of them, 31 score from 15 to 20, 26 score from 11 to 16, '
+                         'and 24 score below 11. How many applicants score from 15 to 16? (All ranges include both ends.)',
+          ['$15$', '$11$', '$9$', '$13$'], 2, [
+        'Together, the bands "15 to 20" and "11 to 16" cover every score from 11 to 20. Everyone who does not score '
+        'below 11 is in at least one band: $70-24=46$.',
+        'The two bands share the scores 15 to 16. That is the overlap: $31+26-46=11$.'])
+    # p07: 250 students, chess 205, instrument 190 -> max neither 45 = 18%
+    #      ==>  300 hotel guests, breakfast 249, pool 216 -> max neither 51 = 17%
+    _rn_q(M, 'wp24-p07', 'Of 300 hotel guests, 249 eat breakfast at the hotel and 216 use the pool. What is the greatest possible '
+                         'percentage of guests who neither eat breakfast at the hotel nor use the pool?',
+          ['$28\\%$', '$17\\%$', '$45\\%$', '$11\\%$'], 2, [
+        'Neither $=300-\\text{union}$. Neither is greatest when the union is smallest.',
+        'The union is at least the larger group, $249$. It is exactly $249$ when all $216$ pool users also eat breakfast.',
+        'Neither: $300-249=51$, and $\\frac{51}{300}=\\frac{17}{100}=17\\%$.'])
+    # p08: Spanish 3/4, Italian 5/8, all in at least one -> 3/8  ==>  pizza 4/5, cake 2/3 -> 7/15
+    _rn_q(M, 'wp24-p08', 'Every guest at a party ate pizza, cake, or both. The guests who ate pizza are $\\frac45$ of the guests, '
+                         'and the guests who ate cake are $\\frac23$. What fraction of the guests ate both?',
+          ['$\\frac{1}{5}$', '$\\frac{8}{15}$', '$\\frac{7}{15}$', '$\\frac{1}{3}$'], 3, [
+        'Everyone is in at least one group, therefore neither is $0$.',
+        'Both: $\\frac45+\\frac23-1=\\frac{12}{15}+\\frac{10}{15}-\\frac{15}{15}=\\frac{7}{15}$.',
+        'Hidden total: the number of guests is not given, but all the guests are a natural total, $1$ ($100\\%$). '
+        'Pizza $+$ cake $-$ total: $\\frac45+\\frac23-1=\\frac{7}{15}$. Everyone ate at least one of them, therefore this '
+        'overlap is exact, not only a minimum.'])
+    # p09: 48 students, swim 28, cycle 24, 3/4 of cyclists swim -> neither 14
+    #      ==>  56 members, hike 30, kayak 25, 3/5 of kayakers hike -> neither 16
+    _rn_q(M, 'wp24-p09', 'A youth group has 56 members. Of them, 30 hike and 25 kayak. Three fifths of the kayakers also hike. '
+                         'How many members do neither activity?',
+          ['$15$', '$10$', '$16$', '$26$'], 3, [
+        'Both: $\\frac35\\cdot25=15$.', 'At least one: $30+25-15=40$. Neither: $56-40=16$.'])
+    # p10: bags 2/3 blue, 3/4 zips, 1/2 both -> 1/6 : 1/4 = 2:3
+    #      ==>  cars 3/5 white, 4/5 four doors, 1/2 both -> 1/10 : 3/10 = 1:3
+    _rn_q(M, 'wp24-p10', 'Of the cars in a parking lot, $\\frac35$ are white, $\\frac45$ have four doors, and $\\frac12$ are white '
+                         'cars with four doors. What is the ratio of white cars without four doors to four-door cars that are '
+                         'not white?',
+          ['3:1', '1:3', '3:4', '1:2'], 2, [
+        'White without four doors: $\\frac35-\\frac12=\\frac1{10}$. Four doors but not white: $\\frac45-\\frac12=\\frac3{10}$.',
+        'The ratio is $\\frac1{10}:\\frac3{10}$. Multiply both parts by $10$: the ratio is $1:3$.'])
+
+
+def rn_practice(M):
+    """Approved clean-up (26 -> 16): no copies in this topic; keep 3 extra-bank items (p13 three groups / zero case,
+    p16 the at-least-only trap, p17 exactly one); keep the September items of a type the Hebrew practice does not have
+    and no guided question already drills (q-05 two-way table with percents, q-09 three groups, q-12 pairs given)."""
+    N = lambda k: 'q-r26-t24-' + k
+    out = [
+        'wp24-p11',   # range of both: the overlap range (p01, p03, guided Q4)
+        'wp24-p12',   # exactly one with neither given: p17 + the lesson's "exactly one"
+        'wp24-p14',   # "of the French pupils": the "of the" whole, guided Q10 and q-05
+        'wp24-p15',   # both from neither in percent: guided Q2 / p04
+        N('04'),      # girls / glasses table by counts: the table, kept in q-05
+        N('06'),      # "of the chess players": the same as guided Q10
+        N('07'),      # greatest neither: the same as p07
+        N('08'),      # greatest exactly one: the range of a region, as p07 / p16
+        N('10'),      # greatest tennis only: the range of an only-region, as p16 and guided q-r26-t24-01
+        N('11'),      # could be the union: the same as guided Q5 (could be neither)
+    ]
+    for qid in out:
+        assert M.section_of(qid) == PRAC, qid
+        M.unplace(qid)
+    M.practice_order(PRAC, [
+        'wp24-p02', 'wp24-p17', 'wp24-p04', 'wp24-p09', 'wp24-p01', 'wp24-p08', 'wp24-p16', 'wp24-p03', 'wp24-p06',
+        'wp24-p07', 'wp24-p10', N('05'), 'wp24-p05', N('09'), 'wp24-p13', N('12')])
+
+
+def renumber_pass(M):
+    rn_lessons(M)
+    rn_guided(M)
+    rn_order(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+    tidy(M)   # video titles and pre-loaded question text follow the new stems
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last

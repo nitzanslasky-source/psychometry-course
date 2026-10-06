@@ -925,3 +925,769 @@ def cut_repeats(M):
     _add_line(M, 'solve-wp21-g025', 3, 'Write "7:30 → 8:42',
               "Four flashes have only three gaps between them. Items and gaps are different counts.",
               T(r'$4$ flashes $\to$ $3$ gaps of $72$ min', 36), "'4 flashes → 3 gaps of 72 min' appears")
+
+
+# ======================================================================================================
+# 2026-10-06 renumber pass
+# The English course must not look like the teacher's Hebrew course: every Hebrew-derived question (guided wp21-g004 ..
+# g025, practice wp21-p01 .. p20) gets a new story (names, objects, setting) and new numbers - same concept, same trap,
+# same level, at least the same methods - and every guided solution video is rewritten to match. wp21-g021 was the same
+# question as wp21-g015 word for word (the Hebrew returns to its planters question); it is now a different question of
+# the same type, so the "shortcut" video teaches the method on new numbers. g017 + g018 (easy) move before the socks
+# question (medium). Practice clean-up: 35 -> 26. Nothing in topic 21 is recorded. Runs last.
+# ======================================================================================================
+RN_RECORDED = set()   # no take of any topic-21 video in ~/Documents/Course.recordings (checked 2026-10-06)
+
+
+def _rn_q(M, qid, stem, choices, correct, expl):
+    if qid in RN_RECORDED: return
+    M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+
+
+def _rn_item(M, vid, n, text):
+    b = M.slide(vid, n)
+    for l in b['lines']:
+        if 'appear' in l and text in (b['items'][l['appear']].get('t') or ''):
+            return A(l['label'], b['items'][l['appear']])
+    raise AssertionError('%s #%d: no item %s' % (vid, n, text))
+
+
+def _rn_video(M, qid, slides, intro=()):
+    """Rewrite the question slides (2, 3, ...) of a guided question's solution video. slides: [script] or
+    [(title, script)]. intro: (old, new) substring swaps in the title slide's spoken lines."""
+    vid = 'solve-' + qid
+    if vid in RN_RECORDED: return
+    v = M.video(vid)
+    assert len(v['beats']) == len(slides) + 1, (vid, len(v['beats']))
+    for old, new in intro:
+        _fix_say(M, vid, 1, old, new)
+        assert any(new in (l.get('say') or '') for l in M.slide(vid, 1)['lines']), (vid, old)
+    for n, sl in enumerate(slides, 2):
+        assert v['beats'][n - 1]['mode'] == 'question', (vid, n)
+        title, script = sl if isinstance(sl, tuple) else (None, sl)
+        M.set_slide(vid, n, title=title, script=script)
+    q = M.q(qid)
+    v['title'] = v['navLabel'] = q['stem']
+
+
+def _seq(values, labels):
+    return {'k': 'vis', 'v': {'type': 'sequence', 'values': values, 'labels': labels}, 'w': 1000, 'h': 230}
+
+
+def _table(headers, rows, **k):
+    d = {'k': 'vis', 'v': {'type': 'table', 'headers': headers, 'rows': rows}}
+    d.update(k)
+    return d
+
+
+def rn_guided_learn(M):
+    # ---------- g004: crystals 2 large, large -> 4 small, 3 breaks -> 7  ==>  bubbles, large -> 5 small, 3 pops -> 9
+    _rn_q(M, 'wp21-g004', 'A phone game starts with 2 large bubbles on the screen. Popping a large bubble splits it into 5 small '
+          'bubbles. Popping a small bubble makes it disappear. After exactly 3 pops, how many bubbles can be on the screen?',
+          ['5', '6', '9', '10'], 3, [
+        'Pop 1 must hit a large bubble (there are no small ones yet): $2-1+5=6$ bubbles ($1$ large, $5$ small).',
+        'Pop 2 on the other large bubble: $6-1+5=10$, all small. Pop 3 removes one small bubble: $10-1=9$.',
+        'The other route: pop 2 on a small bubble gives $6-1=5$. Then pop 3 gives $5-1+5=9$ or $5-1=4$.',
+        'The only possible totals are $4$ and $9$. Of the choices, only $9$ appears. Choice 3.'])
+    lab = ['Start', 'Pop 1', 'Pop 2', 'Pop 3']
+    _rn_video(M, 'wp21-g004', [[
+        "General problem. No hint what to pop first — so we just follow the game.",
+        A('A row of boxes appears: Start 2 · Pop 1 · Pop 2 · Pop 3', _seq(['2', '?', '?', '?'], lab)),
+        "We start with two large bubbles.",
+        "Pop one: there are no small bubbles yet — so it has to hit a large one.",
+        D('Under Pop 1 write 6 (1 large + 5 small)'),
+        "One large disappears, five small appear. One large plus five small: six.",
+        "Now the road splits. Let's take one road: pop the other large bubble.",
+        D('Under Pop 2 write 10'),
+        "It turns into five more small ones. Ten small bubbles.",
+        "Pop three: only small ones left. One disappears.",
+        D('Under Pop 3 write 9, then circle choice 3'),
+        "Nine — and nine is in the choices. Lucky on the first road. That's this type: sometimes the first try just works.",
+    ], [
+        "What if we'd taken the other road?",
+        A('A second row appears: Start 2 · Pop 1 6 · Pop 2 · Pop 3', _seq(['2', '6', '?', '?'], lab)),
+        "Same first pop: six. But now pop a small bubble instead.",
+        D('Under Pop 2 write 5'),
+        "One large, four small: five.",
+        "Pop three: pop the large one — four small plus five new small: nine again.",
+        "Or pop a small one — one large, three small: four.",
+        D('Under Pop 3 write "9 or 4"'),
+        "Four isn't in the choices. If this had been your first road, you'd simply try again. Try — and err.",
+        D('Circle choice 3'),
+        "Every road ends at nine or four. The only one on the list: nine. Choice three.",
+    ], [
+        "One more way to check it — the net change.",
+        "A large pop: lose one, gain five — net plus four. A small pop: minus one.",
+        D('Write 2 + 4 + 4 − 1 = 9'),
+        "Two large pops and one small: two, plus four, plus four, minus one. Nine.",
+    ]], intro=[('a crystal game', 'a bubble game')])
+
+    # ---------- g005: van 5 m, scooter 2 m, gap 1 m -> 10 impossible  ==>  truck 10 m, car 4 m, gap 2 m -> 20 impossible
+    _rn_q(M, 'wp21-g005', 'A line of vehicles waits at a traffic light. It has at least one truck 10 m long and at least one car '
+          '4 m long. There is a 2 m gap between neighboring vehicles, and no gap at either end of the line. '
+          'Which total length of the line is impossible?',
+          ['16', '20', '22', '28'], 2, [
+        'One truck, one car and the gap between them: $10+2+4=16$ m. Therefore $16$ is possible.',
+        'Each extra car adds its length and one more gap: $4+2=6$ m. Each extra truck adds $10+2=12$ m.',
+        'From $16$: $16+6=22$ and $22+6=28$. Both are possible.',
+        'The smallest step is $6$. From $16$ we jump straight to $22$, and $20$ is skipped. Therefore $20$ is impossible. Choice 2.',
+        'Faster: give each vehicle the gap after it (truck $12$, car $6$) and remove the last gap: $L=12t+6c-2$. '
+        'Therefore $L+2$ is always a multiple of $6$, but $20+2=22$ is not.'])
+    _rn_video(M, 'wp21-g005', [[
+        "Again, no shortcut. We build lines and test the answers.",
+        _rn_item(M, 'solve-wp21-g005', 2, 'Tries in order'),
+        "Keep your tries in order, and make every try pass every condition.",
+        "At least one of each type — so we have no choice: start with one truck and one car.",
+        D('Write 10 + 2 + 4 = 16'),
+        "Truck ten meters, gap two, car four. Sixteen.",
+        D('Cross out choice 1'),
+        "Sixteen is possible — and they want the impossible one. Out.",
+        "Quick-calculation tip: group the numbers into convenient chunks instead of adding one by one. "
+        "Here, glue each extra vehicle to its gap. Car plus gap: six. Truck plus gap: twelve.",
+        D('Write "+6" (car) and "+12" (truck)'),
+        "Add a car: sixteen plus six, twenty-two. Possible.",
+        D('Cross out choice 3'),
+        "Twenty-eight: sixteen plus six plus six. Possible too.",
+        D('Cross out choice 4'),
+        "Now twenty. From sixteen, even the smallest addition — a car and its gap — jumps straight to twenty-two. We fly past twenty.",
+        D('Circle choice 2'),
+        "Twenty can't be built. That's our answer.",
+        "Had you tested twenty first, you'd have found it right away — then it's worth checking the others, just to be sure.",
+    ], [
+        "A shorter check.",
+        "Give every vehicle the gap after it: truck twelve, car six. But the last vehicle has no gap after it — minus two.",
+        D('Write L = 12t + 6c − 2'),
+        "So the length plus two is always a multiple of six.",
+        D('Next to choice 2 write "20 + 2 = 22 ✗"'),
+        "Twenty plus two is twenty-two — not a multiple of six. Twenty is impossible. Choice two.",
+    ]], intro=[('a queue of vehicles', 'a line at a traffic light')])
+
+    # ---------- g007: 32 pins, different amounts -> 7  ==>  42 postcards -> 8
+    _rn_q(M, 'wp21-g007', 'Noa shares $42$ postcards among her friends. Each friend receives a different number of postcards '
+          '(a positive integer), and all the postcards are given out. What is the largest possible number of friends?',
+          ['7', '8', '9', '10'], 2, [
+        'To have as many friends as possible, give each one as little as possible: $1, 2, 3, \\ldots$',
+        'Eight friends need at least $1+2+3+4+5+6+7+8=\\frac{8\\cdot9}{2}=36$ postcards. Nine need at least $36+9=45$, '
+        'and $45>42$. Therefore nine is impossible.',
+        'Eight works: $1, 2, 3, 4, 5, 6, 7, 14$. The $42-36=6$ spare postcards go to the one who has the most. '
+        'The sum is $42$, and all the amounts are different. Choice 2.'])
+    pair_item = _rn_item(M, 'solve-wp21-g007', 3, '4\\times9=36')
+    _rn_video(M, 'wp21-g007', [[
+        "Find the key word — on the exam it is printed in bold — and circle it: the LARGEST possible number of friends.",
+        "In theory she could give all forty-two postcards to one friend. Legal — but we want the most people.",
+        "The key: to share among as many as possible, give each one as LITTLE as possible.",
+        A('A table appears: friends 1–9, postcards and running total',
+          _table(['Friend'] + [str(k) for k in range(1, 10)], [['Cards'] + [''] * 9, ['Total'] + [''] * 9], w=1130, h=160)),
+        "Each gets at least one postcard — and all amounts are different.",
+        D('Fill in the cards: 1, 2, 3, 4, 5, 6, 7, 8'),
+        "One to the first. The second would love just one — but amounts must differ. Two. Then three, four, five, six, seven, eight.",
+        D('Fill in the totals: 1, 3, 6, 10, 15, 21, 28, 36'),
+        "Running total: thirty-six. Six postcards left.",
+        "A ninth friend needs at least nine. We only have six. Goodbye, friend number nine.",
+        D('Put ✗ under 9; change the 8 to 14'),
+        "The six leftovers go to someone who already has postcards — the one with eight gets fourteen. Everything still different, everything used.",
+        D('Circle choice 2'),
+        "Eight friends. Choice two.",
+    ], [
+        "A shortcut for the same idea: the cheapest k different amounts cost k times k plus one, over two.",
+        D('Write 8·9/2 = 36 ≤ 42 < 45 = 9·10/2'),
+        pair_item,
+        "Why? Pair the ends of one to eight: one plus eight, two plus seven — four pairs of nine. Thirty-six.",
+        "Eight people cost at least thirty-six. Nine cost at least forty-five. Forty-two sits in between — eight.",
+    ]], intro=[('sharing pins', 'sharing postcards')])
+
+    # ---------- g009: 46 reps, halve then -1, round 4 -> 4  ==>  78 loaves on Monday, Thursday -> 8
+    _rn_q(M, 'wp21-g009', 'A bakery bakes 78 loaves of bread on Monday. On each later day, it bakes half the number of loaves '
+          'of the day before, minus 1. How many loaves does it bake on Thursday?',
+          ['3', '8', '9', '18'], 2, [
+        'Monday is given: $78$. Do not apply the rule to it.',
+        'Tuesday: $78\\div2=39$, then $39-1=38$. Wednesday: $38\\div2=19$, then $19-1=18$. '
+        'Thursday: $18\\div2=9$, then $9-1=8$. Choice 2.',
+        'Keep the order: halve first, then subtract $1$. Don\'t subtract first: $78-1=77$ and then $77\\div2$ is the wrong order.',
+        'From Monday to Thursday there are only three steps. $18$ is Wednesday, and a fourth step would give Friday ($3$).'])
+    _rn_video(M, 'wp21-g009', [[
+        "Patterns — the step-by-step kind. We just write the days.",
+        A('A table appears: Monday to Thursday, 78 loaves on Monday',
+          _table(['Day', 'Mon', 'Tue', 'Wed', 'Thu'], [['Loaves', '78', '', '', '']], w=760, h=110)),
+        "Monday: seventy-eight. That's given — don't apply the rule to it.",
+        D('Under Tue write 38'),
+        A("'Halve, then subtract — every day' appears", T('Halve, then subtract — every day', 36)),
+        "Keep the rule's order: halve first, then subtract. And the drops won't be equal — so apply the rule every day.",
+        "Tuesday: half of seventy-eight is thirty-nine, minus one: thirty-eight.",
+        D('Under Wed write 18'),
+        "Wednesday: half of thirty-eight is nineteen, minus one: eighteen.",
+        D('Under Thu write 8'),
+        "Thursday: half of eighteen is nine, minus one: eight.",
+        D('Circle choice 2'),
+        "Eight loaves. Choice two.",
+        "On the exam — no table. Just write the days and the numbers.",
+    ], [
+        "Want to be sure? Undo the rule in reverse: add one, then double.",
+        D('Write 8 → 18 → 38 → 78'),
+        "Eight, eighteen, thirty-eight, seventy-eight. Back where we started — and exactly three steps from Monday to Thursday.",
+    ]], intro=[('training rounds', "a bakery's bread")])
+
+    # ---------- g010: 3 crates doubling, total through day n -> 3(2^n - 1)  ==>  5 downloads -> 5(2^n - 1)
+    _rn_q(M, 'wp21-g010', 'A new app is downloaded 5 times on day 1. On every later day, it is downloaded twice as many times '
+          'as on the day before. How many times is it downloaded in total through day $n$?',
+          ['$5(2^n-1)$', '$5n^2$', '$2^n+5$', '$5\\times2^n$'], 1, [
+        'Plug in $n=3$. The days give $5$, $10$ and $20$ downloads. Total: $5+10+20=35$.',
+        'Put $n=3$ into each choice: $5(2^3-1)=5\\cdot7=35$, $5\\cdot3^2=45$, $2^3+5=13$, $5\\cdot2^3=40$. Only choice 1 gives $35$.',
+        'With $n=1$ the total is $5$, and both $5(2^n-1)$ and $5n^2$ give $5$. That is why we use $n=3$.'])
+    _rn_video(M, 'wp21-g010', [[
+        "Patterns — the sequence kind. A formula with n in every choice.",
+        "No school formulas. We plug in n equals three.",
+        D('Write 5 + 10 + 20 = 35'),
+        "Day one: five downloads. Day two: twice that, ten. Day three: twenty. Total through day three: thirty-five.",
+        "Now put n equals three into every choice. We're looking for thirty-five.",
+        D('Next to the choices write 35, 45, 13, 40'),
+        "Five times seven: thirty-five. Five times nine: forty-five. Eight plus five: thirteen. Five times eight: forty.",
+        D('Circle choice 1'),
+        "Only choice one gives thirty-five. That's the answer.",
+    ], [
+        "Why three and not one? One is quicker…",
+        D('Write "n = 1: total 5 → 5, 5, 7, 10"'),
+        "With n equals one, the total is five. Choice one gives five — and choice two gives five too. Two survivors.",
+        "That's exactly how these questions are often built.",
+        "Three is small enough to calculate, and big enough to separate the choices.",
+        _rn_item(M, 'solve-wp21-g010', 3, 'Two survive'),
+        "And if two choices still survive n equals three? Plug in four as well.",
+    ]], intro=[('crates that keep doubling', 'downloads that keep doubling')])
+
+
+def rn_guided_adv(M):
+    # ---------- g013: token 4/9, 6 tosses, 41 impossible  ==>  chip 2/6, 7 tosses, 32 impossible
+    _rn_q(M, 'wp21-g013', 'A plastic game chip has 2 written on one side and 6 on the other. It is tossed exactly 7 times, and the '
+          'numbers that land face up are added. Which total is impossible?',
+          ['38', '32', '14', '30'], 2, [
+        'All seven tosses show $2$: $7\\times2=14$. Changing one $2$ to a $6$ adds $4$.',
+        'The possible totals: $14, 18, 22, 26, 30, 34, 38, 42$.',
+        '$14$, $30$ and $38$ are in the list. $32$ is skipped: from $30$ we jump to $34$. Choice 2.',
+        'Faster: every total leaves remainder $2$ when divided by $4$. $32=8\\times4$ leaves remainder $0$.'])
+    vid = 'solve-wp21-g013'
+    inside = _rn_item(M, vid, 2, 'Inside the range')
+    _rn_video(M, 'wp21-g013', [[
+        "They ask what's impossible. So we find the possible totals and eliminate three.",
+        "Work in order. Start from the minimum: all seven tosses show two.",
+        D('Write "2×7 = 14" and cross out choice 3'),
+        "Fourteen. It's possible — so choice three is out.",
+        "Only how many twos and sixes matters — not which toss came first.",
+        "Now swap one two for a six. That's plus four.",
+        D('Write "→ 18 → 22 → 26 → 30" and cross out choice 4'),
+        "Eighteen, twenty-two, twenty-six, thirty. Thirty is possible — so choice four is out.",
+        D('Write "→ 34" and circle the jump from 30 to 34'),
+        "Next swap: thirty-four. We just jumped from thirty to thirty-four — and skipped thirty-two!",
+        inside,
+        "Thirty-two is inside the range — and still impossible. Inside the range is not enough.",
+        D('Circle choice 2'),
+        "That's the skip. Thirty-two can never happen. Choice two — we can stop right here.",
+        "For practice: two more swaps give thirty-eight — choice one — so it really is possible.",
+    ], [
+        "Now the fast way. Every swap adds four, so all the totals follow one pattern.",
+        D('Write "14, 18, 22, 26, 30, 34, 38, 42 → remainder 2 when ÷ 4"'),
+        "Divide any of them by four — remainder two, every time.",
+        D('Next to 32 write "32 ÷ 4 → remainder 0 ✗"'),
+        "Thirty-two leaves remainder zero. It breaks the pattern.",
+        D('Circle choice 2'),
+        A("'32 − 14 = 18 — not a multiple of 4 ✗' appears", T('$32-14=18$ — not a multiple of $4$ ✗', 36)),
+        "Same test another way: subtract fourteen. You need zero, four, eight — a multiple of four. "
+        "Thirty-two minus fourteen is eighteen. Not a multiple of four.",
+        "Choice two — without listing a single toss.",
+    ]])
+
+    # ---------- g014: festival, dancers = 3 x singers, actors > dancers, 70 -> 27  ==>  choir, sopranos = 3 x altos, 63 -> 24
+    _rn_q(M, 'wp21-g014', 'A choir has only sopranos, altos and tenors. There are $3$ times as many sopranos as altos, and there '
+          'are more tenors than sopranos. The choir has $63$ singers in total. Which of the following can be the number of sopranos?',
+          ['27', '30', '24', '26'], 3, [
+        'There are $3$ times as many sopranos as altos. Therefore the number of sopranos must be divisible by $3$. $26$ is not. Choice 4 is out.',
+        'Try $27$ sopranos: $27\\div3=9$ altos and $63-27-9=27$ tenors. The tenors must be MORE than the sopranos, but $27=27$. It fails.',
+        'More sopranos means fewer tenors. Therefore $30$ fails too.',
+        'Try $24$: $24\\div3=8$ altos and $63-24-8=31$ tenors. $31>24$ ✓. Choice 3.'])
+    _rn_video(M, 'wp21-g014', [[
+        "Why 'which number can it be' and not an exact number? Because the data only gives a range.",
+        "Four answers — just test them. But start from the middle, with a convenient one: twenty-seven.",
+        D('Write "27 sopranos → 9 altos → 63 − 36 = 27 tenors"'),
+        "Twenty-seven sopranos means nine altos. That leaves twenty-seven tenors.",
+        "But the tenors must be MORE than the sopranos. Twenty-seven equals twenty-seven — not more. Fails.",
+        D('Cross out choices 1 and 2'),
+        "And more sopranos only means fewer tenors — so thirty fails too. One plug, two answers gone.",
+        "That's why we plug from the middle: it tells us which direction to go.",
+        D('Write "24 → 8 altos → 31 tenors ✓"'),
+        "Try twenty-four: eight altos, thirty-one tenors. Thirty-one is more than twenty-four. It works.",
+        D('Circle choice 3'),
+        "Numbers in the answers? The moment one works, mark it. There can't be two possible answers. Choice three.",
+    ], [
+        "There's an even faster cut.",
+        "Three times as many sopranos as altos — so the number of sopranos MUST be divisible by three.",
+        D('Next to choice 4 write "26 ÷ 3 ✗" and cross it out'),
+        "Twenty-six isn't divisible by three. Gone, without any story.",
+        "If something is twice another number — it must be even. Three times — divisible by three.",
+        D('Circle choice 3'),
+        "Together with the middle plug, that leaves twenty-four. Choice three.",
+    ]])
+
+    # ---------- g015: 24 boxes, 86 markers, >= 3 each -> 9 impossible  ==>  22 baskets, 80 apples -> 7 impossible
+    _rn_q(M, 'wp21-g015', 'Twenty-two baskets hold 80 apples altogether. Every basket holds at least 3 apples. Which number '
+          'cannot be the number of baskets holding exactly 3 apples?',
+          ['8', '11', '15', '7'], 4, [
+        'Test each choice. Put that many baskets at exactly $3$, and check that every other basket can have at least $4$.',
+        '$8$ baskets: $8\\times3=24$. $80-24=56$ apples for $14$ baskets: $14\\times4=56$ ✓.',
+        '$11$ baskets: $11\\times3=33$. $80-33=47$ apples for $11$ baskets: $10\\times4+7=47$ ✓.',
+        '$15$ baskets: $15\\times3=45$. $80-45=35$ apples for $7$ baskets: $6\\times4+11=35$ ✓.',
+        '$7$ baskets: $7\\times3=21$. The other $15$ baskets need at least $15\\times4=60$, and $21+60=81>80$ ✗. Choice 4.'])
+    _rn_video(M, 'wp21-g015', [[
+        "Twenty-two baskets, eighty apples, at least three in each. Where do you even start?",
+        "Some people try and wonder. Some just stare. Don't. Start plugging in the answers.",
+        "They ask what CANNOT be — so we find what can, and eliminate. Start with the easy one: eight.",
+        D('Write "8×3 = 24 → 56 left for 14 baskets = 4 each ✓" and cross out choice 1'),
+        "Eight baskets of three: twenty-four apples. Fifty-six left for fourteen baskets — exactly four each. Works.",
+        D('Write "11×3 = 33 → 47 left for 11 baskets ✓" and cross out choice 2'),
+        "Eleven baskets: thirty-three. Forty-seven left for eleven baskets — that's more than four each. More than four is fine!",
+        "Ten baskets of four, and the last one gets seven. Works.",
+        D('Write "15×3 = 45 → 35 left for 7 baskets ✓" and cross out choice 3'),
+        "Fifteen baskets: forty-five. Thirty-five left for seven baskets — again more than four each. Works.",
+        D('Circle choice 4'),
+        "Three gone — choice four, seven. On the exam you stop here.",
+        "Just to understand it: seven baskets of three is twenty-one. Fifty-nine left for fifteen baskets — LESS than four each.",
+        "So another basket would be forced down to three. Seven can't work.",
+        "Long? A minute or two. That's fine — the quick questions buy you the time. We'll come back to this type with a shortcut.",
+    ]])
+
+    # ---------- g017: quiz 12-20 questions, 16 students, >= 1/4 -> 48 and 320  ==>  test 10-25 words, 14 students, >= 1/5 -> 28 and 350
+    _rn_q(M, 'wp21-g017', 'A spelling test has between $10$ and $25$ words (inclusive). Each of $14$ students spells at least '
+          '$\\frac15$ of the words correctly. What are the smallest and the largest possible totals of correctly spelled words in the class?',
+          ['70 and 350', '28 and 140', '28 and 350', '70 and 140'], 3, [
+        'Smallest: the shortest test ($10$ words) and the smallest share: $\\frac15\\times10=2$ correct words each. $14\\times2=28$.',
+        'Largest: the longest test ($25$ words), and every student spells all $25$ correctly. "At least $\\frac15$" allows more. $14\\times25=350$.',
+        '$28$ and $350$. Choice 3.'])
+    _rn_video(M, 'wp21-g017', [[
+        "Start with one student. Smallest possible number of correct words?",
+        "The shortest test — ten words — and the smallest share, one fifth.",
+        D('Write "10 ÷ 5 = 2 → 14 × 2 = 28"'),
+        "Two correct each. Fourteen students: twenty-eight.",
+        D('Cross out choices 1 and 4'),
+        "Choices one and four start with seventy. Gone.",
+        "Now the maximum: the longest test — twenty-five words. And 'at least a fifth' means they can get ALL of them right.",
+        D('Write "14 × 25 = 350" and circle choice 3'),
+        "Fourteen times twenty-five: three hundred fifty. Choice three.",
+    ], [
+        "The last-digit trick — and where it stops.",
+        D('Write "2 × 4 → ends in 8"'),
+        "Two times fourteen: look only at the last digit. Two times four is eight — it ends in eight.",
+        "Twenty-eight ends in eight. Seventy ends in zero — gone.",
+        D('Cross out choices 1 and 4'),
+        "For the maximum, three hundred fifty and one hundred forty both end in zero. The last digit can't split them.",
+        D('Write "14 × 25 = 350" and circle choice 3'),
+        "So here we simply multiply: fourteen times twenty-five, three hundred fifty. Choice three.",
+        "The trick helps only when the choices end in different digits.",
+    ]])
+
+    # ---------- g018: 9 jars, 6 .. 42, >= 3 more, 5th jar -> 18 to 30  ==>  8 piggy banks, 5 .. 47, >= 4 more, 4th -> 17 to 31
+    _rn_q(M, 'wp21-g018', 'Eight piggy banks stand in a row. The first holds 5 coins and the last holds 47. Each piggy bank holds '
+          'at least 4 more coins than the one before it. What is the exact range for the fourth piggy bank?',
+          ['17 to 31', '21 to 31', '17 to 35', '13 to 31'], 1, [
+        'Smallest fourth piggy bank: from the first one, add the minimum $4$ each time: $5, 9, 13, 17$.',
+        'Largest fourth piggy bank: from the last (eighth) one, go back $4$ each time: $47, 43, 39, 35, 31$.',
+        'Both ends really happen: $5, 9, 13, 17, 21, 25, 29, 47$ and $5, 9, 13, 31, 35, 39, 43, 47$. Choice 1.'])
+    _rn_video(M, 'wp21-g018', [[
+        "For the smallest fourth piggy bank, give every one before it the minimum.",
+        D('Write "5 → 9 → 13 → 17"'),
+        "Five, then at least four more each time: nine, thirteen, seventeen.",
+        "Can it be less? No — every gap needs at least four.",
+        D('Cross out choices 2 and 4'),
+        "Minimum seventeen. Choices two and four don't start with seventeen.",
+        "For the largest, work backwards from the last piggy bank — keep every gap as small as possible.",
+        "From the eighth back to the fourth is four steps.",
+        D('Write "47 → 43 → 39 → 35 → 31"'),
+        "Forty-seven, forty-three, thirty-nine, thirty-five, thirty-one.",
+        D('Cross out choice 3 and circle choice 1'),
+        "Maximum thirty-one. Seventeen to thirty-one — choice one.",
+    ]])
+
+    # ---------- g019: 17 campers, 4-6 + 2-5 - (1-3) -> 51 and 170  ==>  23 children, 3-5 + 2-4 - (1-3) -> 46 and 184
+    _rn_q(M, 'wp21-g019', 'At a fair, each of 23 children gets 3 to 5 tickets at the first booth and 2 to 4 tickets at the second '
+          'booth. Each child then uses 1 to 3 tickets on a ride. What are the smallest and the largest possible numbers of tickets '
+          'left with all the children together?',
+          ['69 and 184', '46 and 184', '46 and 207', '69 and 207'], 2, [
+        'One child gets between $3+2=5$ and $5+4=9$ tickets.',
+        'Fewest left: get the least and use the most: $5-3=2$. Most left: get the most and use the least: $9-1=8$.',
+        'Twenty-three children: $23\\times2=46$ and $23\\times8=184$. Choice 2.'])
+    _rn_video(M, 'wp21-g019', [[
+        "First, what does each child get in total? Three to five, plus two to four.",
+        D('Write "received: 5 to 9"'),
+        "Five to nine tickets.",
+        "Fewest left: get the least, use the most.",
+        D('Write "min: 5 − 3 = 2"'),
+        "Five minus three: two tickets.",
+        "Most left: get the most, use the least.",
+        D('Write "max: 9 − 1 = 8"'),
+        "Nine minus one: eight.",
+        D('Write "23 × 2 = 46" and cross out choices 1 and 4'),
+        "Twenty-three children: forty-six at least. Choices one and four are out.",
+        D('Write "23 × 8 = 184" and circle choice 2'),
+        "And one hundred eighty-four at most. Choice two.",
+    ], [
+        "The last-digit shortcut from before.",
+        D('Write "3 × 2 → ends in 6"'),
+        "Twenty-three times two: three times two is six — ends in six. Forty-six, not sixty-nine.",
+        D('Write "3 × 8 → ends in 4"'),
+        "Twenty-three times eight: three times eight is twenty-four — ends in four. One hundred eighty-four, not two hundred seven.",
+        D('Circle choice 2'),
+        "Choice two — with barely any multiplication. It saves time, and it saves silly mistakes.",
+    ]])
+
+    # ---------- g020: Amir/Beth/Cara, 30 counters -> 11 and 27  ==>  Lior/Maya/Noam, 36 cards -> 13 and 33
+    _rn_q(M, 'wp21-g020', 'Lior, Maya and Noam share 36 cards. Their numbers of cards are different positive integers, with Lior '
+          'having the most and Noam the fewest. What are the smallest and the largest possible numbers of cards Lior has?',
+          ['12 and 34', '12 and 33', '13 and 34', '13 and 33'], 4, [
+        'Largest for Lior: give the others the least. Noam $1$, Maya $2$, Lior $36-1-2=33$. $34$ fails: it leaves $2$ cards, '
+        'and $1+1$ are not different.',
+        'Smallest for Lior: keep the three close. If Lior had $12$, the others could have at most $11$ and $10$: $12+11+10=33<36$ ✗.',
+        'Lior $13$ works: $13+12+11=36$. Choice 4.'])
+    _rn_video(M, 'wp21-g020', [[
+        "The minimum is either twelve or thirteen. They ask for the smallest — so plug in the SMALLER one first.",
+        "If twelve works, it beats thirteen. If it doesn't — the answer is thirteen.",
+        D('Write "Lior 12 → Maya 11, Noam 10 → 33"'),
+        "Lior twelve. The others must be less and different: eleven and ten, at most. That's only thirty-three — not thirty-six.",
+        D('Cross out choices 1 and 2'),
+        "Twelve fails. The minimum is thirteen — choices one and two are gone.",
+        "Maximum: thirty-three or thirty-four. They ask for the largest — so plug in the BIGGER one first.",
+        D('Write "Lior 34 → 2 left → 1 and 1 ✗"'),
+        "Lior thirty-four leaves two cards: one each. But their numbers must be different. Fails.",
+        D('Cross out choice 3 and circle choice 4'),
+        "Choice four.",
+    ], [
+        "Now by understanding. Maximum first — it's easier.",
+        "To maximize Lior, give the others the minimum.",
+        D('Write "Noam 1, Maya 2 → Lior 36 − 3 = 33"'),
+        "Noam one — at least one each. Maya must be more: two. Lior gets the rest: thirty-three.",
+        "Minimum is trickier. The biggest of three must be MORE than a third.",
+        D('Write "12, 12, 12 ✗"'),
+        "Twelve each is exactly a third — but then they're equal. Not allowed.",
+        D('Write "→ 11, 12, 13 ✓"'),
+        "Move one card from Noam to Lior: eleven, twelve, thirteen. Different, and thirty-six in total.",
+        D('Circle choice 4'),
+        "Thirteen to thirty-three. Choice four.",
+    ]])
+
+    # ---------- g021: was a word-for-word copy of g015 (24 boxes, 86 markers). Now the same TYPE with new numbers:
+    #            26 children, 90 stickers, >= 3 each -> at least 14 get exactly 3; 13 impossible
+    _rn_q(M, 'wp21-g021', 'Ninety stickers are shared among 26 children, and every child gets at least 3 stickers. Which number '
+          'cannot be the number of children who get exactly 3 stickers?',
+          ['17', '13', '20', '14'], 2, [
+        'The same type as the apple baskets, now with a shortcut.',
+        'Give every child $3$ stickers: $26\\times3=78$. Spare stickers: $90-78=12$.',
+        'A child gets more than $3$ only with at least one spare sticker. Therefore at most $12$ children get more than $3$, '
+        'and at least $26-12=14$ children get exactly $3$.',
+        '$13$ is below $14$. Therefore $13$ is impossible. Choice 2.',
+        'Every count from $14$ to $25$ is possible: each spare sticker lifts one child, and the count can change by $1$ at a time. '
+        'This is NOT true in every min–max question. When the values change in fixed jumps (the $2$-or-$6$ chip: $+4$ each time), '
+        'there are holes.'])
+    _rn_video(M, 'wp21-g021', [('Method 1 · Count the spare stickers', [
+        "Fill every child to the minimum first.",
+        D('Write "26 × 3 = 78 → 90 − 78 = 12 spare"'),
+        "Three stickers each: seventy-eight. Twelve are spare.",
+        "A child gets more than three only with at least one spare sticker.",
+        D('Write "at most 12 children rise → at least 26 − 12 = 14 stay at 3"'),
+        "Twelve spares can lift at most twelve children. So at least fourteen children get exactly three.",
+        D('Circle choice 2'),
+        "Thirteen is below fourteen. Impossible. Choice two — in one line of work.",
+    ]), [
+        "Now let's see ALL the possible values.",
+        D('Write "possible: 14, 15, 16, …, 25"'),
+        "At least fourteen children with three — we just saw that. At most twenty-five: twenty-five children get three, "
+        "and the last child gets fifteen.",
+        "And every count in between works. Why? Each spare sticker lifts one child. Move one sticker — the count changes by exactly one.",
+        D('Write "changes by 1 at a time → no holes"'),
+        "When the value can change by one at a time, the range has no holes. Then the impossible choice must be at an end.",
+        D('Write "13, 14, 17, 20 → only 13 or 20 can be out"'),
+        "Sort the choices: thirteen, fourteen, seventeen, twenty. Only thirteen or twenty can be outside.",
+        "Twenty works: sixty stickers, and thirty left for six children — at least four each. So it's thirteen.",
+        "But careful! This is NOT a general rule.",
+        D('Write "chip 2 or 6: 14, 18, 22, … → holes!"'),
+        "Remember the chip — two or six? The totals jump by four: fourteen, eighteen, twenty-two. Plenty of holes.",
+        "Fixed jumps leave holes. No holes only when you can move by one.",
+    ]], intro=[('The boxes again — the same question as Question eight, with the same numbers.',
+                'Stickers this time — the same type as Question eight, with new numbers.')])
+
+    # ---------- g023: 58 files, double, -16 at day end, day 3 before deletion -> 368  ==>  40 bacteria, -30 -> 140
+    _rn_q(M, 'wp21-g023', 'A lab dish has 40 bacteria at the start of day 1. During each day the number of bacteria doubles, and at '
+          'the end of each day 30 bacteria are removed for testing. How many bacteria are in the dish on day 3, just before that '
+          'day’s removal?',
+          ['110', '140', '220', '320'], 2, [
+        'Day 1: $40\\times2=80$, then $80-30=50$.',
+        'Day 2: $50\\times2=100$, then $100-30=70$.',
+        'Day 3: $70\\times2=140$. Stop here: they ask for the number BEFORE the day 3 removal. Choice 2.',
+        '$140-30=110$ is the trap: that is the number after the removal.'])
+    _rn_video(M, 'wp21-g023', [[
+        "Pattern questions: no formula. We write it out, day by day.",
+        A('A table appears: Day | Start | After doubling | After removal',
+          _table(['Day', 'Start', 'After doubling', 'After removal'], [['1', '40', '', ''], ['2', '', '', ''], ['3', '', '', '']],
+                 x=410, y=300, w=1000, h=260)),
+        D('Fill day 1: 80, then 50'),
+        "Day one starts with forty. Doubles to eighty. Minus thirty: fifty.",
+        D('Fill day 2: 50, 100, 70'),
+        "Day two: fifty, doubles to one hundred, minus thirty: seventy.",
+        D('Fill day 3: 70, 140'),
+        "Day three: seventy, doubles to one hundred forty.",
+        "Now — careful. The edges are where these questions bite.",
+        "They ask for day three BEFORE the removal. So we don't subtract the thirty.",
+        D('Circle 140 and circle choice 2'),
+        "One hundred forty. Choice two. One hundred ten is the trap — that's after the removal.",
+        "Always ask: does 'start' include this step? Does 'end' include that one?",
+    ]])
+
+    # ---------- g024: 56 lamps, one blue in every 4, lamp 2 blue -> 38  ==>  60 flags, one red in every 5, flag 3 red -> 43
+    _rn_q(M, 'wp21-g024', 'Sixty flags hang in a row along a street. In every group of five neighboring flags, exactly one is red. '
+          'Flag 3 is red. Which flag can also be red?',
+          ['41', '42', '43', '44'], 3, [
+        'Compare flags $1$ to $5$ with flags $2$ to $6$. They share flags $2$ to $5$, and each group has exactly one red flag. '
+        'Therefore flag $6$ is red exactly when flag $1$ is red. The pattern repeats every $5$ flags.',
+        'Flag $3$ is red. Therefore the red flags are $3, 8, 13, 18, \\ldots$: the numbers that leave remainder $3$ when divided by $5$.',
+        '$43=40+3$ leaves remainder $3$ ✓. $41$, $42$ and $44$ leave remainders $1$, $2$ and $4$. Choice 3.'])
+    _rn_video(M, 'wp21-g024', [[
+        "Every five flags in a row contain exactly one red — and that's EVERY five in a row, not separate blocks.",
+        "So flag six must match flag one, flag eight matches flag three — the pattern repeats every five.",
+        "We don't draw flags. A circle for red, a line for not red.",
+        A('The pattern appears: − − ● − −  − − ● − −  …',
+          T('−  −  ●  −  −   −  −  ●  −  −   −  −  ●  −  −   …', size=48, x=410, y=320)),
+        D('Number the circles 3, 8, 13, 18 …'),
+        "Flag three is red — so eight, thirteen, eighteen, and on it goes.",
+        D('Keep counting by fives: 23, 28, 33, 38, 43'),
+        "Twenty-three, twenty-eight, thirty-three, thirty-eight, forty-three.",
+        D('Circle choice 3'),
+        "Forty-three is red. Choice three. Once you get it, it takes ten seconds.",
+    ], [
+        "A fixed cycle means a mathematical pattern.",
+        D('Write "3, 8, 13, 18 … → remainder 3 when ÷ 5"'),
+        "Every red flag leaves remainder three when you divide by five.",
+        D('Write "43 = 40 + 3 ✓"'),
+        "Forty-three is forty plus three. Remainder three.",
+        "Forty-one, forty-two, forty-four — remainders one, two, four.",
+        D('Circle choice 3'),
+        "Choice three — no drawing at all.",
+    ]])
+
+    # ---------- g025: lights every 18 / 24 min from 07:30, 4th joint flash -> 11:06  ==>  buses every 16 / 20 min from 06:40 -> 10:40
+    _rn_q(M, 'wp21-g025', 'Two buses leave a station together at 06:40. Line 5 leaves every 16 minutes and line 9 leaves every '
+          '20 minutes. Counting 06:40 as the first time they leave together, when do they leave together for the fourth time?',
+          ['08:40', '09:20', '10:40', '12:00'], 3, [
+        'The buses leave together at every common multiple of $16$ and $20$. Jump along the bigger number: $20, 40, 60, 80$. '
+        '$80=5\\times16$ ✓. They leave together every $80$ minutes.',
+        '06:40 is the first time. Second: 08:00. Third: 09:20. Fourth: 10:40. Choice 3.',
+        'Four departures have only three gaps: $3\\times80=240$ minutes, which is $4$ hours after 06:40.'])
+    _rn_video(M, 'wp21-g025', [[
+        "Work in order: write both schedules.",
+        D('Write "every 16 min → 6:40, 6:56, 7:12, 7:28 …"'),
+        "Every sixteen minutes: six forty, six fifty-six, seven twelve…",
+        D('Write "every 20 min → 6:40, 7:00, 7:20, 7:40 …"'),
+        "Every twenty: six forty, seven o'clock, seven twenty…",
+        "It works — but it takes forever to find every match. There's a shortcut.",
+    ], [
+        "When do two repeating things meet? At a common multiple of the two gaps.",
+        "The easy way: take the BIGGER number and jump along its multiples.",
+        D('Write "20, 40, 60, 80 ← divisible by 16 ✓"'),
+        "Twenty, forty, sixty, eighty. Eighty is divisible by sixteen. They leave together every eighty minutes.",
+        "Why the bigger one? Fewer jumps.",
+        "Now the edge: six forty already counts as the FIRST time.",
+        A("'4 departures → 3 gaps of 80 min' appears", T('$4$ departures $\\to$ $3$ gaps of $80$ min', 36)),
+        "Four departures have only three gaps between them. Items and gaps are different counts.",
+        D('Write "6:40 → 8:00 → 9:20 → 10:40"'),
+        "Second at eight o'clock, third at nine twenty, fourth at ten forty.",
+        D('Circle choice 3'),
+        "Choice three. Nine twenty is the trap — that's only the third.",
+    ]])
+
+
+def rn_order_and_refs(M):
+    """g017 + g018 (easy+) move before the socks question (medium); renumber_guided() renumbers the titles.
+    Lesson / card lines that named the old lamps follow the new flags."""
+    M.move('wp21-g017', ADV, before='q-r26-t21-01')
+    M.move('solve-wp21-g017', ADV, after='wp21-g017')
+    M.move('wp21-g018', ADV, after='solve-wp21-g017')
+    M.move('solve-wp21-g018', ADV, after='wp21-g018')
+    _fix_say(M, 'wp-022', 2, 'and the lamps in the questions', 'and the flags in the questions')
+    c = M.card('mem-trial-toolkit')
+    n = 0
+    for r in c['tables'][0]['rows']:
+        if r[1].startswith('Use the remainder: lamps'):
+            r[1] = r[1].replace('lamps', 'flags in a row'); n += 1
+    assert n == 1, 'toolkit row'
+
+
+def rn_practice_questions(M):
+    S = _rn_q
+    # p01: 120 pieces, circles = squares > triangles -> 34  ==>  150 beads, red = blue > green -> 46
+    S(M, 'wp21-p01', 'A bag holds 150 beads: red, blue and green only. There are as many red beads as blue beads, and there are '
+      'more red beads than green beads. Which could be the number of green beads?', ['52', '33', '46', '60'], 3, [
+        'Test the choices. With $46$ green beads, $150-46=104$ beads are left: $104\\div2=52$ red and $52$ blue. $52>46$ ✓.',
+        '$33$: $150-33=117$ is odd and cannot split into two equal groups. $52$: $98\\div2=49<52$ ✗. $60$: $90\\div2=45<60$ ✗. Choice 3.'])
+    # p02: Nora / Sam sketchbooks and cases  ==>  Ella / Ben stamps and postcards
+    S(M, 'wp21-p02', 'Ella has 5–11 stamps and fewer than 4 postcards. Ben has fewer than 9 stamps and 2–7 postcards. A count can be '
+      'zero unless a lower bound is given. What are the exact ranges of their stamps together and of their postcards together?',
+      ['5–20 stamps; 2–11 postcards', '5–19 stamps; 2–10 postcards', '6–19 stamps; 3–10 postcards', '5–11 stamps; 2–7 postcards'], 2, [
+        'Fewer than $9$ means at most $8$. Fewer than $4$ means at most $3$.',
+        'Stamps: smallest $5+0=5$, largest $11+8=19$.',
+        'Postcards: smallest $0+2=2$, largest $3+7=10$. Choice 2.'])
+    # p03: four vouchers of 2, 7, 12 -> 31 impossible  ==>  three stamps of 3, 7, 11 cents -> 23 impossible
+    S(M, 'wp21-p03', 'Dan puts exactly three stamps on a letter. Each stamp is worth 3, 7 or 11 cents. Which total postage is impossible?',
+      ['17', '29', '23', '33'], 3, [
+        'Three $3$-cent stamps: $3\\times3=9$. Changing a $3$ to a $7$ adds $4$. Changing a $3$ to an $11$ adds $8$.',
+        'Every total is $9$ plus a multiple of $4$: $9, 13, 17, 21, 25, 29, 33$.',
+        'Check: $17-9=8$ ✓, $29-9=20$ ✓, $33-9=24$ ✓, $23-9=14$ ✗ (not a multiple of $4$). Choice 3.'])
+    # p04: passes 120 / 60 / 30, 8 passes, exactly 3 museum  ==>  tickets 90 / 50 / 20, 7 tickets, exactly 2 theater
+    S(M, 'wp21-p04', 'Concert tickets cost 90 dollars, theater tickets 50 dollars and movie tickets 20 dollars. A club buys seven '
+      'tickets, exactly two of them theater tickets. What are the smallest and the largest possible total costs?',
+      ['140–550 dollars', '350–550 dollars', '200–630 dollars', '200–550 dollars'], 4, [
+        'Two theater tickets: $2\\times50=100$. There are $7-2=5$ more tickets.',
+        'Cheapest: five movie tickets, $5\\times20=100$. Total: $100+100=200$.',
+        'Most expensive: five concert tickets, $5\\times90=450$. Total: $100+450=550$. Choice 4.'])
+    # p05: card shop, sells half, +3 per card sold, 24 -> 192  ==>  pet shop, sells half, +2 per fish sold, 32 -> 108
+    S(M, 'wp21-p05', 'A pet shop sells half of its fish each day. At closing, it adds 2 new fish for every fish sold that day. It '
+      'starts Monday with 32 fish. How many fish does it have at the end of Wednesday?', ['72', '96', '108', '162'], 3, [
+        'Monday: start $32$ → sell $16$, keep $16$ → add $2\\times16=32$ → end $16+32=48$.',
+        'Tuesday: start $48$ → sell $24$, keep $24$ → add $2\\times24=48$ → end $24+48=72$.',
+        'Wednesday: start $72$ → sell $36$, keep $36$ → add $2\\times36=72$ → end $36+72=108$. Choice 3.'])
+    # p06: 1, 1/3, 1/9, 1/27 (each / 3)  ==>  2, 1/2, 1/8, 1/32 (each / 4); choices reordered
+    S(M, 'wp21-p06', 'The sequence is $2,\\ \\frac12,\\ \\frac18,\\ \\frac1{32},\\ldots$ Which of the following statements is NOT true?',
+      ['Some term is negative', 'Every term is four times the following term', 'The gap between neighboring terms gets smaller',
+       'Each term after the first is smaller than the previous term'], 1, [
+        'Each term is the one before it divided by $4$: $2\\div4=\\frac12$, $\\frac12\\div4=\\frac18$, and so on.',
+        'Statement 2: $\\frac12=4\\times\\frac18$ ✓. Statement 4: the terms get smaller ✓. Statement 3: the gaps are '
+        '$\\frac32, \\frac38, \\frac3{32}, \\ldots$, and they get smaller ✓.',
+        'Statement 1: a positive number divided by $4$ stays positive. No term is negative. Statement 1 is not true. Choice 1.'])
+    # p07: 28 badges, n teams, different amounts -> 8 impossible  ==>  21 medals -> 7 impossible
+    S(M, 'wp21-p07', 'Twenty-one medals are shared among $n$ teams. Each team receives a different positive number of medals. '
+      'Which value of $n$ is impossible?', ['$5$', '$7$', '$2$', '$6$'], 2, [
+        '$n$ teams need at least $1+2+\\ldots+n=\\frac{n(n+1)}{2}$ medals.',
+        '$n=7$: $\\frac{7\\cdot8}{2}=28>21$ ✗. $n=6$: $\\frac{6\\cdot7}{2}=21$ ✓ (the teams get $1$ to $6$).',
+        '$n=5$ and $n=2$ also work, for example $1+2+3+4+11$ and $1+20$. Choice 2.'])
+    # p08: seats 1-270, every 6th and every 9th -> 15  ==>  pages 1-240, every 8th and every 12th -> 10
+    S(M, 'wp21-p08', 'A book has 240 pages, numbered 1 to 240. Every eighth page has a picture, and every twelfth page has a puzzle. '
+      'How many pages have both a picture and a puzzle?', ['20', '24', '10', '30'], 3, [
+        'A page with both has a number divisible by $8$ and by $12$. The smallest common multiple of $8$ and $12$ is $24$ '
+        '(jump along $12$: $12, 24$ ✓).',
+        'Pages $24, 48, \\ldots, 240$: $240\\div24=10$ pages. Choice 3.'])
+    # p09: 6 musicians (2 posters) + 8 actors (4), exactly 9 attend -> 24-34  ==>  7 parents (3 cakes) + 5 teachers (1), 10 come -> 20-24
+    S(M, 'wp21-p09', 'A class invites 7 parents and 5 teachers to help at a fair. Exactly 10 of them come. Each parent bakes 3 cakes '
+      'and each teacher bakes 1 cake. What is the exact range of the total number of cakes?', ['10–30', '20–30', '20–24', '22–24'], 3, [
+        'At most $5$ of the $10$ helpers are teachers. Therefore at least $10-5=5$ are parents. At most $7$ are parents, '
+        'and therefore at least $3$ are teachers.',
+        'Fewest cakes: $5$ parents and $5$ teachers: $5\\times3+5\\times1=15+5=20$.',
+        'Most cakes: $7$ parents and $3$ teachers: $7\\times3+3\\times1=21+3=24$. Choice 3.'])
+    # p10: 48 questions, +3 / -2, answers 42 -> 116  ==>  40 questions, +4 / -2, answers 35 -> 128
+    S(M, 'wp21-p10', 'A test has 40 questions. A correct answer earns 4 points, a wrong answer loses 2 points, and a blank earns 0. '
+      'Omer answers exactly 35 questions. Which could be his score?', ['131', '125', '124', '128'], 4, [
+        '$35$ correct answers: $35\\times4=140$. Changing one correct answer to a wrong one: lose $4$, and lose $2$ more: $-6$.',
+        'Possible scores: $140, 134, 128, 122, \\ldots$ They all leave remainder $2$ when divided by $6$.',
+        '$128$ is in the list ✓. $131$, $125$ and $124$ are not. Choice 4.'])
+    # p11: card 5 / 2, seven draws, divisible by 8 -> 32  ==>  spinner 4 / 1, six spins, divisible by 7 -> 21
+    S(M, 'wp21-p11', 'A spinner has two equal parts, marked 4 and 1. It is spun 6 times, and the results are added. The total is '
+      'divisible by 7. What is the total?', ['7', '14', '21', '28'], 3, [
+        'Six $1$s: $6\\times1=6$. Each $4$ instead of a $1$ adds $3$.',
+        'Possible totals: $6, 9, 12, 15, 18, 21, 24$.',
+        'The only one divisible by $7$ is $21=3\\times7$. Choice 3.'])
+    # p12: 18 robots, at least half move, >= 4 blue stay -> 0-14  ==>  24 students, glasses, >= 5 stay -> 0-19
+    S(M, 'wp21-p12', 'There are $24$ students in a classroom, and any of them may wear glasses. At least half of the students go to '
+      'the library. At least $5$ of the students who stay in the classroom wear glasses. What are the smallest and the largest '
+      'possible numbers of students with glasses who go to the library?', ['0–24', '5–19', '0–19', '12–19'], 3, [
+        'Smallest: $0$. Let $12$ students without glasses go to the library. The $12$ students who stay all wear glasses ✓.',
+        'Largest: at least $5$ students with glasses must stay. Therefore at most $24-5=19$ students go, and all $19$ can wear '
+        'glasses ($19\\ge12$ ✓). Choice 3.'])
+    # p13: packages 2/4/6/8 kg at 3/6/8/10, 28 kg in 5 -> 36  ==>  boxes 3/6/9/12 kg at 4/7/10/12, 42 kg in 5 -> 44
+    S(M, 'wp21-p13', 'A shipping company sends boxes of exactly 3, 6, 9 or 12 kg, costing 4, 7, 10 or 12 dollars respectively. '
+      'A store must ship 42 kg in exactly five boxes. What is the lowest possible cost, in dollars?', ['45', '43', '46', '44'], 4, [
+        'List the mixes of $5$ boxes that make $42$ kg, by the number of $12$-kg boxes. Four $12$s already weigh $48$ kg: too much.',
+        'Three $12$s: the other two make $6$ kg: $3+3$. Cost: $3\\times12+2\\times4=44$.',
+        'Two $12$s: the other three make $18$ kg: $3+6+9$ (cost $45$) or $6+6+6$ (cost $45$).',
+        'One $12$: the other four make $30$ kg: $3+9+9+9$ (cost $46$) or $6+6+9+9$ (cost $46$).',
+        'No $12$s: $6+9+9+9+9$ (cost $47$).',
+        'The lowest cost is $44$. Choice 4.'])
+    # p14: 4 players, 5-min rounds, ends at 4 wins -> 65  ==>  5 friends, 4-min rounds, ends at 3 wins -> 44
+    S(M, 'wp21-p14', 'Five friends play a board game. Each round takes 4 minutes and has exactly one winner. The game ends as soon '
+      'as one player has won 3 rounds. What is the longest the game can last, in minutes?', ['44', '40', '60', '48'], 1, [
+        'Worst luck $+\\,1$: the game lasts longest when every player gets as many wins as possible without ending it: $2$ wins each.',
+        '$5\\times2=10$ rounds, and still no one has $3$ wins. Round $11$ must give someone a third win.',
+        '$11\\times4=44$ minutes. Choice 1.'])
+    # p15: 3-9 yellow, 5-8 black -> 9/14  ==>  4-11 red pens, 6-9 blue pens -> 11/17
+    S(M, 'wp21-p15', 'A box contains 4 to 11 red pens and 6 to 9 blue pens, and no other pens. What is the greatest possible '
+      'fraction of the pens that are red?', ['$\\frac{11}{20}$', '$\\frac{2}{5}$', '$\\frac{11}{17}$', '$\\frac{4}{13}$'], 3, [
+        'The red share $\\frac{R}{R+B}$ is largest with the most red and the fewest blue: $R=11$ and $B=6$.',
+        '$\\frac{11}{11+6}=\\frac{11}{17}$. Choice 3.'])
+    # p16: 148-m fence, 3-m stripes, 2-m gaps -> 30  ==>  116-m wall, 4-m stripes, 3-m gaps -> 17
+    S(M, 'wp21-p16', 'A $116$-meter wall is painted in $4$-meter stripes, with $3$-meter unpainted gaps between the stripes. The '
+      'stripes must be complete. What is the greatest possible number of painted stripes?', ['16', '17', '18', '19'], 2, [
+        '$n$ stripes have $n-1$ gaps between them. Length: $4n+3(n-1)=7n-3$.',
+        '$n=17$: $7\\times17-3=116$ ✓. $n=18$: $7\\times18-3=123>116$ ✗. Choice 2.'])
+    # p17: ribbons 18, 10, 5, 3 -> 7 impossible  ==>  ropes 20, 12, 7, 3 -> 8 impossible
+    S(M, 'wp21-p17', 'A sailor has four ropes: $20$, $12$, $7$ and $3$ meters long. Each rope may be used once, either at its full '
+      'length or folded once to half its length. Any of the ropes may be joined together; a joined rope cannot be folded. Which '
+      'length cannot be made?', ['$\\frac{27}{2}$', '20', '32', '8'], 4, [
+        'Check the choices. $32=20+12$ ✓. $20$: the $20$-m rope alone ✓. $\\frac{27}{2}=13.5=12+1.5$ (the $3$-m rope folded) ✓.',
+        '$8$: the $20$-m rope is too long even folded ($10$). The $12$-m rope can only be used folded: $6$.',
+        'Without it, the $7$-m rope ($7$ or $3.5$) and the $3$-m rope ($3$ or $1.5$) give only $1.5$, $3$, $3.5$, $5$, $6.5$, $7$, '
+        '$8.5$ and $10$. No $8$.',
+        'With the $6$ from the $12$-m rope, we need $2$ more, and nothing gives exactly $2$. Therefore $8$ cannot be made. Choice 4.'])
+    # p18: four 7-credit + three 1-credit tokens -> 19  ==>  five 5-cent + three 1-cent coins -> 23
+    S(M, 'wp21-p18', 'A wallet holds five 5-cent coins and three 1-cent coins. How many different positive amounts can be paid '
+      'exactly using some of these coins?', ['24', '23', '18', '28'], 2, [
+        'An amount is $5a+b$, with $a$ from $0$ to $5$ (five-cent coins) and $b$ from $0$ to $3$ (one-cent coins).',
+        'The amounts form blocks: $0$–$3$, $5$–$8$, $10$–$13$, $15$–$18$, $20$–$23$, $25$–$28$. Each block ends before the next '
+        'one starts. No amount is counted twice.',
+        '$6\\times4=24$ amounts, minus the amount $0$: $23$. Choice 2.'])
+    # p19: 27 volunteers, 1/3 remote, remote < editors < translators -> 14-17  ==>  33 workers, 1/3 at night -> 17-21
+    S(M, 'wp21-p19', 'A store has 33 workers, and each of them is either a cashier or a stocker. One third of the workers work at '
+      'night. There are more cashiers than night workers, but fewer cashiers than stockers. What is the exact range of the number '
+      'of stockers?', ['17–21', '12–16', '17–22', '16–21'], 1, [
+        'Night workers: $\\frac13\\times33=11$. Cashiers are more than $11$: at least $12$.',
+        'Cashiers are fewer than stockers, and together they are $33$. $16$ cashiers and $17$ stockers works; $17$ cashiers and '
+        '$16$ stockers does not. Therefore there are at most $16$ cashiers.',
+        'Stockers $=33-$ cashiers: from $33-16=17$ to $33-12=21$. Choice 1.'])
+    # p20: 8 parcels/h alone, +3 per extra volunteer, 7 volunteers -> 182  ==>  12 boxes/h, +2 per extra worker, 6 workers -> 132
+    S(M, 'wp21-p20', 'A worker alone packs 12 boxes per hour. For this job, each additional worker increases every worker’s rate by '
+      '2 boxes per hour. Six workers work together for one hour. How many boxes do they pack?', ['132', '144', '110', '72'], 1, [
+        'Six workers means $5$ ADDITIONAL workers, not $6$.',
+        'Each rate: $12+5\\times2=12+10=22$ boxes per hour.',
+        'Total: $6\\times22=132$. Choice 1.'])
+
+
+def rn_practice(M):
+    """Approved clean-up: copies out, at most 3 extra-bank warm-ups, September items whose type the Hebrew covers out."""
+    N = lambda k: 'q-r26-t21-' + k
+    out = [
+        # copies (practice_audit/copies_by_topic.txt, each checked)
+        'wp21-p26',   # six packs of 4 or 9 markers: the same question as guided Q6 (token 4/9, six tosses)
+        'wp21-p23',   # 36 stickers, different amounts: the same question as guided Q3
+        N('11'),      # units digit of 7^50: the same as Topic 15 (3^25, 7^4) and Topic 18 (2^50)
+        # extra-bank warm-ups beyond 3 (kept: p21 printer, p27 largest of five scores, p25 spare pencils)
+        'wp21-p22',   # lights every 8 and 14 s, 4th joint flash: guided Q18 and the summary's 8-and-14 example
+        'wp21-p24',   # 52 lockers, one red in every 4, locker 2: the same as the old guided lamps question
+        # September items of a type the Hebrew practice covers
+        N('03'), N('04'),   # "to be sure": worst luck + 1, practised by p14 (and guided Q9)
+        N('05'),      # 30 birthdays, must be true: worst luck (p14) + must be true (kept -06)
+        N('09'),      # sum of the first n even numbers: plug in n = 3, as kept -07 and guided Q5
+    ]
+    for qid in out:
+        assert M.section_of(qid) == PRAC, qid
+        M.unplace(qid)
+    N7, N10, N6 = N('07'), N('10'), N('06')
+    M.practice_order(PRAC, [
+        'wp21-p21', 'wp21-p02', 'wp21-p04', 'wp21-p01', 'wp21-p08', 'wp21-p27', 'wp21-p07', 'wp21-p16', 'wp21-p11', 'wp21-p10',
+        N7, N10, 'wp21-p05', 'wp21-p09', 'wp21-p15', 'wp21-p20', 'wp21-p03', 'wp21-p25', 'wp21-p14', 'wp21-p19', 'wp21-p06',
+        N6, 'wp21-p12', 'wp21-p13', 'wp21-p17', 'wp21-p18'])
+
+
+def renumber_pass(M):
+    rn_guided_learn(M)
+    rn_guided_adv(M)
+    rn_order_and_refs(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last

@@ -94,3 +94,80 @@ Function `practice_methods` (runs last in `apply`). One extra line is added at t
 - `wp24-p08` (Spanish 3/4, Italian 5/8, everyone at least one): Hidden total: the whole club = 1 → 3/4 + 5/8 − 1 = 3/8 (exact, since nobody is in neither).
 - `wp24-p05` (which overlap is forced): Hidden total: the whole town = 1 → under 50 and pets overlap by at least 4/5 + 2/5 − 1 = 1/5.
 - Every line checked in python. Check: `math_check.py 24 32` → 0 / 0 / 0.
+
+## 2026-10-06 renumber pass
+So the English course does not look like the Hebrew one: every Hebrew-derived question has a new story (new names, groups
+and setting) and new numbers. The idea, the trap, the level and the methods stay the same (Venn / pizza picture, the
+squares strip, A + B − total, max overlap = the smaller group, the pair-overlap step — all still taught). Every guided
+solution video is rewritten to match (speech, draw cues, strips, video title, pre-loaded question text). Nothing in Topic 24
+is recorded, so nothing had to be kept as it was. Function `renumber_pass(M)` in t24.py runs last (after `cut_repeats`,
+`add_methods` and `practice_methods`; the two "Hidden total" lines that practice_methods added to p05 / p08 are rewritten
+with the new numbers).
+
+**Counts:** 8 guided questions renumbered (wp24-g070 … g078) with their 8 solution videos rewritten; 10 practice questions
+renumbered (wp24-p01 … p10). Lesson examples renumbered: pizza (Overlapping Groups), 6 slides of Overlap Ranges (the
+12-student example, 5 + 7 = 12, 65% / 55%, 2/3 + 1/2), 7 slides of Exact Overlap (the 18-member club on 5 slides,
+1/5 and 1/3, "forty different items"), and the memory card example. Practice: 26 → 16.
+English-made items (guided q-r26-t24-01 … 03, the two-way / three-groups lessons, the summary, kept practice items) keep
+their numbers.
+
+**Order:** the two exact questions (old Q8 fractions + people, old Q9 "different species" reading trap) move to the start of
+the advanced group (now Q4, Q5): they come right after the exact lesson and Q1–Q3, and the range questions follow (Q6 minimum
+in percent, Q7 could-be neither, Q8 at-least trap, Q9 not necessarily true). Correct-answer positions moved in 7 of 8
+guided questions. Practice ordered easy → hard.
+
+**Practice clean-up (26 → 16):** no copies in this topic (copies list empty). Extra-bank items kept (3): p17 exactly one,
+p16 at-least-only trap, p13 three groups / zero case. Removed p11 (range of both: p01, p03, guided), p12 (exactly one: p17),
+p14 ("of the French pupils": guided Q10), p15 (both from neither: guided Q2). September items kept (3, types the Hebrew
+practice does not have): q-05 (two-way table, percents of different groups), q-09 (three groups, minimum), q-12 (pairs
+given — teacher-approved). Removed q-04 (table by counts: q-05), q-06 ("of the chess players" = guided Q10), q-07 (greatest
+neither = p07), q-08 (greatest exactly one), q-10 (greatest only-region: p16 and guided Q8), q-11 (could-be union = guided Q7).
+
+**Checks:** every answer and every method step recomputed in Python (exact fractions); g071 brute-forced over all overlaps;
+g075's possible "neither" values listed (15 … 28, only 19 among the choices); g076 / p05 each pair sum computed (exactly one
+statement not forced / forced); traps still among the choices (smaller-group trap 28% in p07, the whole-group ratio 5:8 in
+g072, the union 27 and "forgot to add back" 28 in g077, the maximum 162 in g074, etc.). Duplicate check over topics 1–24
+(stems, lesson boards and lines, cards): no new question equals another question or a lesson/card example (only incidental
+shared numbers in unrelated topics). Each new question compared side by side with its original: same type, same condition
+kind, same number of steps, same choice kind. `python3 math_check.py 24 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered
+all 3 lessons and the 8 solution videos and looked at them (pizza with 6 slices / 4 shaded, 15-box grids with 10 shaded,
+strips with the new labels, titles Question 1–9 and sidebars correct). No quadratic trinomial added.
+
+| id | old (Hebrew) | new | answer |
+|---|---|---|---|
+| wp24-g070 (Q1) | 45 campers, flashlight 28, map 23, both 16 → neither | 52 hotel guests, pool 31, gym 26, both 17 | 12 (3) |
+| wp24-g071 (Q2) | 22 machines, cut 14, polish 12, neither 3 → both | 27 printers, color 16, posters 13, neither 3 | 5 (4) |
+| wp24-g072 (Q3) | both = 1/6 of photography, 1/4 of volunteers → 5:3 | both = 1/5 of chess club, 1/8 of robotics club | 4:7 (2) |
+| wp24-g078 (Q4, was Q9) | butterflies 31 and 22, 40 different → both 13 | bird species 34 and 27, 45 different | 16 (1) |
+| wp24-g077 (Q5, was Q8) | soup 2/5, salad 1/4, both 1/10 = 8 people → neither 36 | conference morning 1/3, evening 1/5, both 1/12 = 5 people | 33 (2) |
+| wp24-g074 (Q6, was Q4) | 240 guests, 35% organizer, 80% host → min 36 | 360 wedding guests, 45% bride, 70% groom | 54 (1) |
+| wp24-g075 (Q7, was Q5) | 48 students, greenhouse 21, orchard 11; neither could be 14/30/35/18 | 52 students, library 24, kitchen 13; 36/13/19/31 | 19 (3) |
+| wp24-g076 (Q9, was Q7) | company: code 2/5, remote 4/5, juniors 1/5, training 1/2; juniors & remote = 1 | nurses: nights 3/10, drive 3/4, new 1/4, part time 1/2; new & drive = 1 | (3) |
+| wp24-p01 | fair 150, 65% nearby, 55% train → min 30 | book fair 160, 72% students, 53% card | 40 (2) |
+| wp24-p02 | art 26, music 19, both 11, all in one → 34 | basketball 31, volleyball 24, both 13 | 42 (3) |
+| wp24-p03 | 3/5 company tablet = 72, 1/2 personal → min 12 | 3/4 bus pass = 135, 2/5 bicycle | 27 (3) |
+| wp24-p04 | 120 hikers, map 54, compass 82, both 31 → neither 15 | 140 runners, cap 63, sunglasses 88, both 36 | 25 (2) |
+| wp24-p05 | town: cycle 3/5, veg 1/4, pets 2/5, under 50 4/5; forced under 50 & pets | city: walk 2/3, dog 1/4, garden 1/3, under 60 3/4; forced under 60 & garden | (3) |
+| wp24-p06 | 60 trainees 0–12: 9–12: 26, 7–10: 24, below 7: 20 → 9–10 | 70 applicants 0–20: 15–20: 31, 11–16: 26, below 11: 24 → 15–16 | 11 (2) |
+| wp24-p07 | 250 students, chess 205, instrument 190 → max neither 18% | 300 hotel guests, breakfast 249, pool 216 | 17% (2) |
+| wp24-p08 | Spanish 3/4, Italian 5/8, all in one → 3/8 | party: pizza 4/5, cake 2/3 | 7/15 (3) |
+| wp24-p09 | 48 students, swim 28, cycle 24, 3/4 of cyclists swim → neither 14 | 56 members, hike 30, kayak 25, 3/5 of kayakers hike | 16 (3) |
+| wp24-p10 | bags: blue 2/3, zips 3/4, both 1/2 → 2:3 | cars: white 3/5, four doors 4/5, both 1/2 | 1:3 (2) |
+| lesson wp-067 #4 | pizza 8 slices, mushrooms 5, tomatoes 4 → 1 to 4 | 6 slices, mushrooms 4, olives 3 | 1 to 3 |
+| lesson wp-068 #2–#8 | 12 students, music 8, sport 7 (min 3, max 7; union 8–12; neither 0–4; only 1–5); 5 + 7 = 12; "five and five" | 15 students, art 10, drama 9 (min 4, max 9; union 10–15; neither 0–5; only 1–6); 6 + 9 = 15; "six and six" | – |
+| lesson wp-068 #9, #10 | 65% / 55% → 20%–55%; 2/3 + 1/2 − 1 = 1/6 | 60% / 50% → 10%–50%; 3/5 + 2/3 − 1 = 4/15 | – |
+| lesson wp-069 #2–#6 | 18 members, Spanish 10, French 9, neither 4, both 5; exactly one 9 | 25 members, tennis 13, squash 11, neither 5, both 4; exactly one 16 | – |
+| lesson wp-069 #7, #8 | overlap 1/5 of A, 1/3 of B → 2:1; "forty different items" | 1/10 of A, 1/4 of B → 3:1; "sixty" | – |
+| card mem-overlap | 12 students: 8 and 7 | 15 students: 10 and 9 | – |
+
+## 2026-10-06 review (renumber pass)
+Independent review (pre/post build diff, keys recomputed, Hebrew subtitles compared). All keys / traps / methods correct;
+max overlap ≤ smaller group and the pair-overlap step still taught. Fixed four guided questions that landed back on the Hebrew:
+- g074 (Q6): wedding, bride / groom = the Hebrew's own setting → gallery opening, 45% know the artist, 70% the gallery
+  owner (numbers unchanged: min 15% of 360 = 54; strip labels Artist only / Owner only).
+- g077 (Q5): 1/3, 1/5, total 60 = the Hebrew's rice 1/3, mash 1/5, 60 workers → 1/4 morning, 1/6 evening, 1/12 both = 4
+  people → 48 participants; evening only 1/12, neither 3/4 − 1/12 = 8/12 = 32. Choices 16 (union) / 32 / 12 (morning) /
+  28 (forgot to add back). Video rewritten (twelfths; people first: 12, 8, not morning 36, 36 − 4 = 32).
+- g078 (Q4): bird species (the Hebrew: owls photographed) → two friends' lists of movies watched, 34 / 27 / 45 → 16.
+- g072 (Q3): 1/5 of chess (the Hebrew had 1/5 → 4x) → 1/9 of chess, 1/4 of robotics → 8x : 3x = 8 : 3; trap 9 : 4
+  (whole clubs), 3 : 8 inverted; plug-in both = 2 → 18 and 8 → 16 : 6.

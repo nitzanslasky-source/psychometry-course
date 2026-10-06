@@ -126,3 +126,95 @@ Function `practice_methods` (runs last in `apply`). One extra line is added at t
 - `wp22-p29` (brushes, cannot be determined): Pick values that fit: B = 24 and B = 48 both fit → not fixed.
 - `wp22-p18` (2 × 2 grid, rows and columns equal): Pick values that fit: a = 1, b = 2, c = 2, d = 1 rules out choices 1–3.
 - Every line checked in python. Check: `math_check.py 22 32` → 0 / 0 / 0.
+
+## 2026-10-06 renumber pass
+So the English course does not look like the Hebrew one: every Hebrew-derived question and lesson example has new numbers,
+and every word problem a new story (names, objects, setting — everyday things only). The structure, the kind of condition,
+the trap, the level and the methods stay the same; every guided solution video is rewritten to match (speech, draw cues,
+board tables/bar, video title, slide description). Nothing in Topic 22 is recorded, so nothing had to be kept.
+Function `renumber_pass(M)` in t22.py runs last (after `practice_methods`). New numbers were also checked against the
+Hebrew subtitles (02-Word-Problems-Original-Subtitles.txt) so that they do not fall back onto the Hebrew numbers or objects
+(e.g. 2.5 apples / 6 plums, 128 cadets, 410 shekels, motorcycle : car, "3 years ago" were all avoided).
+
+**Counts:** 18 guided questions renumbered + 18 solution videos rewritten; 30 Hebrew practice questions renumbered;
+lessons: "From Words to Equations" (7 slides) and "Ratios" (6 slides) renumbered; cards updated: Words → maths (all 10 rows),
+Ratios (5 example cells), General problems toolkit (7 cells). Practice: 51 → 37.
+Kept on purpose: the English-made guided questions (q-r26-t22-01 … -05, -20), the summary and "Three Exam Tools" lessons,
+the 3 kept extra-bank items and the 4 kept September items keep their numbers (not Hebrew-derived).
+
+**Practice clean-up (51 → 37):**
+- Copy removed: q-r26-t22-17 (same story and structure as q-r26-t22-16).
+- Extra warm-ups kept (3): p34 (ages, "3 times then twice"), p35 (blend: the unchanged part), p37 (4 adult = 7 child tickets).
+  Removed p31, p32, p33, p36 (types covered by p35 / p06 / p13 / p21).
+- September items kept (4, types the Hebrew practice lacks): -06 (two ratios, shared letter), -08 (inverse proportion),
+  -15 ("or part of" → round up), -16 (one equation, two unknowns: cannot be determined).
+  Removed -07, -09, -10, -11, -12, -13, -14, -18, -19 (each type already practised — see comments in `rn_practice`).
+- 37 instead of the audit's ~36 so that "cannot be determined (not a multiple)" keeps one practice item.
+- Practice re-ordered easy → hard.
+
+**Checks:** every key computed in Python (exactly one correct choice; for range / divisibility / estimate questions every
+wrong choice falls outside); every step and plug-in in the videos recomputed; the traps are still choices (cost instead of
+profit, new number per row, Tom 5 years ago, both quarters from the start, compares with one group only, units, inverted
+ratio …). Duplicate scan over topics 1–22 (stems, lesson boards/draw cues, cards): only incidental number overlaps.
+No quadratic trinomial added. `python3 math_check.py 22 32` → 0 / 0 / 0. Rendered all changed videos and looked at them.
+
+| id | old | new | answer |
+|---|---|---|---|
+| wp22-g029 (Q1) | 6 trays 42 biscuits, 15 trays | 8 vases 56 roses, 12 vases | 84 (3) |
+| wp22-g030 (Q2) | 12 exercises / 8 min, 14 min | cook: 18 potatoes / 12 min, 20 min | 30 (1); sense < 36 |
+| wp22-g032 (Q4) | tart 58: pastry, filling, berries | sandwich 47: bread 4/100 g, cheese 8/100 g, 6 olives × ½ | 12 (3); trap 35 = cost |
+| wp22-g033 (Q5) | 3/min vs 14 per 5 min, 11.5 min | bikes: 4/hour vs 17 per 4 h, 9.5 h | 11 (4) |
+| wp22-g035 (Q6) | boys 3/8 of class, difference | swimmers 5/12 of camp, runners − swimmers | 22 (2); 2x even |
+| wp22-g036 (Q7) | scooter : car 3 : 8, +15,000, sum | sofa : piano 3 : 10, +14,000, sum | 26,000 (2) |
+| wp22-g038 (Q10) | 6 rooms → 5, +3 | 8 rows of chairs → 7, +3 | 21 (2); trap 24 |
+| wp22-g039 (Q12) | Iris 6 older, 4 yrs ago twice | Maya 9 older, 5 yrs ago twice | Tom 14 (3); trap 9 |
+| wp22-g040 (Q13) | 84: 5 notebooks not 6 | Dana 105: 6 tickets not 7 | 17 (2); 15 = exactly 7 |
+| wp22-g042 (Q14) | 2 oranges / 3.5 pears / 8 plums | 4 kiwis / 1.5 pineapples / 5 limes; 8, 2, 5 | 13/3 (1); 4 < total < 5 |
+| wp22-g043 (Q15) | 144, 5/6 per round, 2 rounds | video game 160, 3/4 per level | 90 (3); trap 80 |
+| wp22-g044 (Q16) | 3/5 as many apprentices | 5/8 as many coaches as trainees | 5/13 (4); trap 5/8 |
+| wp22-g045 (Q17) | 4×, 1/4 and 1/3 rejected | bakery 2×, 1/2 and 1/5 whole-wheat | 2/5 (1); between 1/5 and 1/2 |
+| wp22-g046 (Q18) | 1/4, 1/6 given; 9 and 20 left | cupcakes 1/3, 1/6 sold; 10 and 14 left | 33 (4); 28.8 ≤ start ≤ 36 |
+| wp22-g047 (Q19) | clubs 3 : 1, 3 move, then 2 : 1 | buses 4 : 1, 6 move, then 2 : 1 | 45 (2); ÷5 and ÷3 |
+| wp22-g048 (Q20) | 10 tasks 320, 6 tasks 208 | plumber 7 h 385, 4 h 250 | 45 (2); fee 70 |
+| wp22-g049 (Q21) | 8 + 12 blocks = 1,000 g → 10 + 15 | 9 + 6 crates = 240 kg → 12 + 8 | 320 (2); × 4/3 |
+| wp22-g050 (Q22) | 60 counters, 9 given, equal | Noa & Eli 70 stickers, 15 given | 5/2 (3); trap 2/5 |
+| wp22-p03 | drone 540 km, 80 g, 4 km/g, 113 g | cargo boat 900 km, 50 t, 6 km/t, 87 t | 678 (2) |
+| wp22-p04 | teams 3, 4, 5 split 660 | families 2, 5, 6 split 780 | 300 (2) |
+| wp22-p08 | x trays × x pots × 2 | n cabinets × n drawers × 3 folders | 3n² (4) |
+| wp22-p12 | crest = 8 sparks = 2/5 crown | gold = 6 silver = 3/4 platinum | 8 (1) |
+| wp22-p07 | donates 1/4, spends 180, 720 left | saves 2/5, jacket 150, 450 left | 1,000 (3) |
+| wp22-p14 | cocoa 120/18, sugar 300/12, 2 + 3 | syrup 50/15, coffee 400/24, 2 + 3 | 0.78 (4) |
+| wp22-p06 | book +18, 4 books = 6 notebooks | large pizza +12, 3 large = 5 small | 30 (3) |
+| wp22-p02 | 3× and 2× → 9x | roses 4× tulips, tulips 3× lilies → 16x | 48 (3) |
+| wp22-p10 | 5 pads = 2 folders + 6 pencils | 4 coats = 3 jackets + 8 scarves, jacket = 4 scarves, 12 coats | 15 (4) |
+| wp22-p22 | 5/6 as many visitors | concert 7/8 as many adults as children | 7/15 (2) |
+| wp22-p16 | dogs 6 apart, 4 : 1, +2 yrs | father 30 older, 6 : 1, +9 yrs | 3 : 1 (3) |
+| wp22-p25 | 30 counters, gives 9, 4 fewer | Gal & Ron 40 marbles, gives 7, 6 fewer | 3 : 2 (3) |
+| wp22-p15 | 6 days × 25 berries, 18 days × 5 | squirrel 8 days × 30 nuts, 16 days × 5 | 20 (2) |
+| wp22-p20 | 48,000/40 vs 3,000/15 | 72,000/60 vs 3,000/20 | 8 (3) |
+| wp22-p21 | 42 stools/carts, 146 | 45 stools/chairs, 158 legs | 23 (2) |
+| wp22-p19 | 1/4 given each of 3 months | tank loses 1/5 each of 3 days | 64/125 (3) |
+| wp22-p13 | 2/5 then 1/3 of rest, 360 | melons 1/4 then 2/3 of rest, 480 | 640 (2) |
+| wp22-p01 | (x² + 32)/x = 3x | bottles (x² + 45)/x = 6x | 3 (2) |
+| wp22-p05 | eats 4, half, 3 → even | cookies: eats 5, half, packs 4 → odd | 15 (3) |
+| wp22-p09 | battery 5/4: 4L4S, 6L2S, 7L, 9S | jug 4/3: 5L3S, 7L, 4L5S, 10S | 4L5S (3) |
+| wp22-p11 | ÷8, −3, ×6, +18 | ÷6, −5, ×4, +20 | 0 (1) |
+| wp22-p23 | 9 a.m., 5 days, 3 one-hour breaks, 32 h | 7 a.m., 4 days, 2 half-hour breaks, 31 h | 3 p.m. (3) |
+| wp22-p17 | silk/cotton: sum 17, diff 5 | coffee/tea: sum 20, diff 4 | 80 (2) |
+| wp22-p29 | brushes, 8 and 24 artists, 3× | tablets, 6 and 30 classes, 5× | cannot be determined (2) |
+| wp22-p26 | 2/5 on rice, 3/4 repaid, 8.40 | 3/8 on flour, 2/3 repaid, 7.50 | 10 (3) |
+| wp22-p28 | beads 1/4, 1/6; 18 and 25 | pencils 1/5, 1/4; 16 and 21 | 48 (3) |
+| wp22-p24 | kites 3/8 and 1/4, 9× | candles' stripes 2/5 and 1/3, 6× | 5 : 1 (2) |
+| wp22-p27 | ×3/5 + 24, score goes down | ×3/4 + 20, grade goes down | greater than 80 (2) |
+| wp22-p18 | a, b / c, d | p, q / r, s (choices reordered) | p = s and q = r (1) |
+| wp22-p30 | n ≥ 5, 2n tokens, gives 2, 5th player | n ≥ 4, 3n stickers, gives 3, 4th child | 21 (3) |
+| wp-027 lesson | ×4 + 18 = 6x; 6 more, 9 less, 3 times, 2/5, ¼ less, diff 12, 2/3, 3N = 5P, 2 : 3 | ×3 + 24 = 7x; 7 more, 4 less, 5 times, 3/5, ⅓ less, diff 15, 3/4, 2N = 5P, 3 : 7 | — |
+| wp-034 lesson | 3 : 5, 12 : 20, 3/8 of all, 1.5 : 2, 3N = 5P | 3 : 7, 12 : 28, 3/10 of all, 2.5 : 3, 2N = 5P | — |
+
+## 2026-10-06 review (renumber pass)
+Independent review of the renumber pass (build with / without `renumber_pass`, every guided + practice item side by side,
+keys recomputed, videos checked against the Hebrew subtitles). All 18 guided, 30 practice and both lessons: keys correct,
+one correct choice each, traps kept, same type / condition / steps, methods work with the new numbers.
+- Fixed: lesson example "2 notebooks cost the same as 5 pens" (wp-027 #8, wp-034 #7, cards mem-word-phrases / mem-ratios)
+  echoed the Hebrew lesson's "for every 2 pens, 5 pencils" → now "2 notebooks cost the same as 7 pens: 2N = 7P → N : P = 7 : 2"
+  (pick 14: notebook 7, pen 2).

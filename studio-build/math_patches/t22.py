@@ -1232,3 +1232,998 @@ def practice_methods(M):
     _pm_add(M, 'q-r26-t22-17', [r'Shortcut · Pick values that fit: one equation and two prices, but the question expects one answer, therefore any prices that fit the equation give it. Take $p=0$: $4n=50$ and $n=12.5$. Then $6n+9p=6\cdot12.5+0=75$ ✓.'])
     _pm_add(M, 'wp22-p29', [r'Shortcut · Pick values that fit: $B=24$ gives $3$ and $1$ brushes per artist ✓, and $B=48$ gives $6$ and $2$ ✓. Two different numbers fit everything, therefore it cannot be determined.'])
     _pm_add(M, 'wp22-p18', [r'Shortcut · Pick values that fit: two equations and four letters, therefore numbers that fit the givens are enough to test the choices. $a=1$, $b=2$, $c=2$, $d=1$: rows $1+2=2+1$ ✓, columns $1+2=2+1$ ✓. Choice 1: $1=2$ ✗. Choice 2: $ad=1$ but $bc=4$ ✗. Choice 3: $a+d=2$ but $b+c=4$ ✗. Only choice 4 is left.'])
+
+
+# ======================================================================================================
+# 2026-10-06 renumber pass
+# The English course must not look like the teacher's Hebrew course: every Hebrew-derived item (the 18 guided
+# wp22-g0NN questions, the 30 Hebrew practice questions wp22-p01 .. p30 and the Hebrew lessons' own examples) gets new
+# numbers, and every word problem a new story (names, objects, setting) - same structure, same kind of condition,
+# same trap, same level, at least the same methods. Plus the approved practice clean-up.
+# Nothing in topic 22 is recorded (no take in ~/Documents/Course.recordings). Runs last, after practice_methods.
+# ======================================================================================================
+RN_RECORDED = set()
+
+
+def _rn_sub(M, vid, n, pairs):
+    """Exact substring replacements on one slide: board items, item labels, spoken lines, draw cues."""
+    if vid in RN_RECORDED: return
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def _rn_q(M, qid, stem, choices, correct, expl):
+    if qid not in RN_RECORDED: M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+
+
+def _rn_video(M, qid, slides, intro=None):
+    """Rewrite the question slides (2, 3, ...) of a guided question's solution video. Titles and the pre-loaded question stay."""
+    vid = 'solve-' + qid
+    if vid in RN_RECORDED: return
+    v = M.video(vid)
+    assert len(v['beats']) == len(slides) + 1, (vid, len(v['beats']))
+    for n, script in enumerate(slides, 2):
+        assert v['beats'][n - 1]['mode'] == 'question', (vid, n)
+        M.set_slide(vid, n, script=script)
+    if intro:
+        old, new = intro
+        _rn_sub(M, vid, 1, [(old, new)])
+
+
+def _tbl(headers, rows, w, h):
+    return dict(k='vis', v={'type': 'table', 'headers': headers, 'rows': rows}, w=w, h=h)
+
+
+def rn_lessons(M):
+    # ---- From Words to Equations (wp-027) ----
+    L = 'wp-027'
+    # slide 3: x4 + 18 = 6x, twice -> 18   ==>   x3 + 24 = 7x, twice -> 12
+    _rn_sub(M, L, 3, [
+        ('A number is multiplied by 4, and then 18 is added. The result is 6 times the original number.',
+         'A number is multiplied by 3, and then 24 is added. The result is 7 times the original number.'),
+        ('"Multiplied by four" — four x. "And then eighteen is added" — plus eighteen.',
+         '"Multiplied by three" — three x. "And then twenty-four is added" — plus twenty-four.'),
+        ('Write "4x + 18"', 'Write "3x + 24"'),
+        ('"Six times the original number" — six x.', '"Seven times the original number" — seven x.'),
+        ('Write "= 6x"', 'Write "= 7x"'),
+        ('a number, times four, plus eighteen, equals six times the number.',
+         'a number, times three, plus twenty-four, equals seven times the number.'),
+        ('Take four x from both sides.', 'Take three x from both sides.'),
+        ('Write "18 = 2x → x = 9"', 'Write "24 = 4x → x = 6"'),
+        ('Eighteen equals two x. x is nine.', 'Twenty-four equals four x. x is six.'),
+        ('write "2x = 18"', 'write "2x = 12"'),
+        ("Eighteen. That's the answer — not nine.", "Twelve. That's the answer — not six.")])
+    # slide 4: 6 more, 9 less  ==>  7 more, 4 less
+    _rn_sub(M, L, 4, [
+        ('A is 6 more than B:  $A=B+6$', 'A is 7 more than B:  $A=B+7$'),
+        ('A is 6 more than B:  A = B + 6', 'A is 7 more than B:  A = B + 7'),
+        ('A is six more than B. Start with B, add six — you reach A. A equals B plus six.',
+         'A is seven more than B. Start with B, add seven — you reach A. A equals B plus seven.'),
+        ('A is 9 less than B:  $A=B-9$', 'A is 4 less than B:  $A=B-4$'),
+        ('A is 9 less than B:  A = B − 9', 'A is 4 less than B:  A = B − 4'),
+        ('A is nine less than B. Start with B, take away nine. A equals B minus nine.',
+         'A is four less than B. Start with B, take away four. A equals B minus four.'),
+        ('write "B = A + 9"', 'write "B = A + 4"'),
+        ('B is A plus nine.', 'B is A plus four.'),
+        ('if B is twenty, A is eleven. Not negative eleven.', 'if B is twenty, A is sixteen. Not negative sixteen.')])
+    # slide 5: three times, B = 7 -> 21 not 10  ==>  five times, B = 4 -> 20 not 9
+    _rn_sub(M, L, 5, [
+        ('A is three times B:  $A=3B$', 'A is five times B:  $A=5B$'),
+        ('A is three times B:  A = 3B', 'A is five times B:  A = 5B'),
+        ('A is three times B: A equals three B.', 'A is five times B: A equals five B.'),
+        ("Don't mix up three TIMES as much with three MORE.", "Don't mix up five TIMES as much with five MORE."),
+        ('Next to A = 3B write "B = 7 → 21, not 10"', 'Next to A = 5B write "B = 4 → 20, not 9"'),
+        ('If B is seven: three times is twenty-one. Three more would be ten.',
+         'If B is four: five times is twenty. Five more would be nine.')])
+    # slide 6: two fifths / one quarter less  ==>  three fifths / one third less
+    _rn_sub(M, L, 6, [
+        ('Two fifths of $n$:  $\\frac25n$', 'Three fifths of $n$:  $\\frac35n$'),
+        ('Two fifths of n:  2/5 n', 'Three fifths of n:  3/5 n'),
+        ('Two fifths of n is two fifths times n.', 'Three fifths of n is three fifths times n.'),
+        ('One quarter less than $n$:  $\\frac34n$', 'One third less than $n$:  $\\frac23n$'),
+        ('One quarter less than n:  3/4 n', 'One third less than n:  2/3 n'),
+        ('One quarter less than n: take all of n, remove a quarter of it — three quarters of n are left.',
+         'One third less than n: take all of n, remove a third of it — two thirds of n are left.'),
+        ('write "n − ¼n = ¾n"', 'write "n − ⅓n = ⅔n"'),
+        ('The quarter is a quarter OF n.', 'The third is a third OF n.')])
+    # slide 7: difference 12  ==>  15
+    _rn_sub(M, L, 7, [
+        ('The difference between A and B is 12:  $|A-B|=12$', 'The difference between A and B is 15:  $|A-B|=15$'),
+        ('The difference between A and B is 12:  |A − B| = 12', 'The difference between A and B is 15:  |A − B| = 15'),
+        ('"The difference between A and B is twelve."', '"The difference between A and B is fifteen."'),
+        ('write "A − B = 12  or  B − A = 12"', 'write "A − B = 15  or  B − A = 15"'),
+        ('If A is bigger, A minus B is twelve. If B is bigger, B minus A is twelve.',
+         'If A is bigger, A minus B is fifteen. If B is bigger, B minus A is fifteen.')])
+    # slide 8: makes up 2/3, 3N = 5P  ==>  makes up 3/4, 2N = 7P (review: 2N = 5P echoed the Hebrew '2 pens : 5 pencils')
+    _rn_sub(M, L, 8, [
+        ('A is (makes up) $\\frac23$ of B:  $A=\\frac23B$', 'A is (makes up) $\\frac34$ of B:  $A=\\frac34B$'),
+        ('A is 2/3 of B:  A = 2/3 B', 'A is 3/4 of B:  A = 3/4 B'),
+        ('"A makes up two thirds of B". Just swap it for "is": A is two thirds of B.',
+         '"A makes up three quarters of B". Just swap it for "is": A is three quarters of B.'),
+        ('3 notebooks cost the same as 5 pens:  $3N=5P$', '2 notebooks cost the same as 7 pens:  $2N=7P$'),
+        ('3 notebooks cost the same as 5 pens:  3N = 5P', '2 notebooks cost the same as 7 pens:  2N = 7P'),
+        ('Three notebooks: three N. Five pens: five P. Three N equals five P.',
+         'Two notebooks: two N. Seven pens: seven P. Two N equals seven P.')])
+    # slide 9: ratio 2 : 3  ==>  3 : 7
+    _rn_sub(M, L, 9, [
+        ('The ratio of A to B is $2:3$', 'The ratio of A to B is $3:7$'),
+        ('The ratio of A to B is 2 : 3', 'The ratio of A to B is 3 : 7'),
+        ('The ratio of A to B is two to three.', 'The ratio of A to B is three to seven.'),
+        ('For every two A, there are three B.', 'For every three A, there are seven B.'),
+        ('Write "A = 2x,  B = 3x"', 'Write "A = 3x,  B = 7x"'),
+        ('So we write them as two x and three x.', 'So we write them as three x and seven x.')])
+    rows = M.card('mem-word-phrases')['tables'][0]['rows']
+    new = [['A is 7 more than B', '$A=B+7$'], ['A is 4 less than B', '$A=B-4$'], ['A is 5 times B', '$A=5B$'],
+           ['Twice / double', 'always $\\times2$'], ['Three fifths of $n$ ("of" = times)', '$\\frac35n$'],
+           ['One third less than $n$', '$\\frac23n$'], ['A is (makes up) $\\frac34$ of B', '$A=\\frac34B$'],
+           ['The difference between A and B is 15', '$|A-B|=15$'], ['2 notebooks cost the same as 7 pens', '$2N=7P$'],
+           ['The ratio of A to B is $3:7$', '$A=3x,\\ B=7x$']]
+    assert len(rows) == len(new) and rows[3][0] == 'Twice / double', rows
+    rows[:] = new
+
+    # ---- Ratios (wp-034): blue : orange 3 : 5  ==>  3 : 7 ----
+    L = 'wp-034'
+    for it in M.slide(L, 2)['items']:
+        if it.get('k') == 'vis' and it['v'].get('type') == 'bars': it['v']['values'] = [3, 7]
+    _rn_sub(M, L, 2, [
+        ('blue 3 units, orange 5 units', 'blue 3 units, orange 7 units'),
+        ('The ratio of blue to orange is three to five. For every three blue, there are five orange.',
+         'The ratio of blue to orange is three to seven. For every three blue, there are seven orange.'),
+        ('five thirds as much. One and two thirds times.', 'seven thirds as much. Two and a third times.')])
+    _rn_sub(M, L, 3, [
+        ('Blue : orange $=3:5=\\frac35$', 'Blue : orange $=3:7=\\frac37$'),
+        ('Blue : orange = 3 : 5 = 3/5', 'Blue : orange = 3 : 7 = 3/7'),
+        ('Three to five is three fifths — three divided by five.', 'Three to seven is three sevenths — three divided by seven.'),
+        ('Blue three, orange five.', 'Blue three, orange seven.'),
+        ('$12:20=3:5$', '$12:28=3:7$'), ('12 : 20 = 3 : 5', '12 : 28 = 3 : 7'),
+        ('under both 12 and 20', 'under both 12 and 28'),
+        ('Twelve to twenty is three to five.', 'Twelve to twenty-eight is three to seven.')])
+    _rn_sub(M, L, 4, [
+        ('$3:5$ could be $3\\ \\&\\ 5$,  $6\\ \\&\\ 10$,  $30\\ \\&\\ 50$, …', '$3:7$ could be $3\\ \\&\\ 7$,  $6\\ \\&\\ 14$,  $30\\ \\&\\ 70$, …'),
+        ('3 : 5 could be 3 & 5, 6 & 10, 30 & 50, …', '3 : 7 could be 3 & 7, 6 & 14, 30 & 70, …'),
+        ('Three and five? Six and ten? Thirty and fifty?', 'Three and seven? Six and fourteen? Thirty and seventy?'),
+        ('Blue $=3x$,  orange $=5x$', 'Blue $=3x$,  orange $=7x$'), ('Blue = 3x,  orange = 5x', 'Blue = 3x,  orange = 7x'),
+        ('three x and five x.', 'three x and seven x.'),
+        ('Write "3x/5x = 3/5"', 'Write "3x/7x = 3/7"'),
+        ('the ratio is still three to five', 'the ratio is still three to seven')])
+    _rn_sub(M, L, 5, [
+        ('Blue is $\\frac38$ of all the items', 'Blue is $\\frac{3}{10}$ of all the items'),
+        ('Blue is 3/8 of all the items', 'Blue is 3/10 of all the items'),
+        ('Blue is three eighths of all the items. Three out of eight.', 'Blue is three tenths of all the items. Three out of ten.'),
+        ('Write "blue = 3x,  all = 8x"', 'Write "blue = 3x,  all = 10x"'),
+        ('ALL of them is eight x.', 'ALL of them is ten x.'),
+        ('Write "orange = 8x − 3x = 5x"', 'Write "orange = 10x − 3x = 7x"'),
+        ("Orange is whatever's left: five x.", "Orange is whatever's left: seven x.")])
+    _rn_sub(M, L, 6, [
+        ('$A:B=1.5:2$', '$A:B=2.5:3$'), ('A : B = 1.5 : 2', 'A : B = 2.5 : 3'),
+        ('one and a half to two.', 'two and a half to three.'),
+        ('Write "×2 → ratio 3 : 4 → A = 3x, B = 4x"', 'Write "×2 → ratio 5 : 6 → A = 5x, B = 6x"'),
+        ('three to four. Three x and four x', 'five to six. Five x and six x')])
+    _rn_sub(M, L, 7, [
+        ('3 notebooks cost the same as 5 pens', '2 notebooks cost the same as 7 pens'),
+        ('Write "3N = 5P"', 'Write "2N = 7P"'),
+        ('Three N equals five P.', 'Two N equals seven P.'),
+        ('Pick a number both sides can reach — fifteen.', 'Pick a number both sides can reach — fourteen.'),
+        ('Write "N = 5,  P = 3 → ratio N : P = 5 : 3"', 'Write "N = 7,  P = 2 → ratio N : P = 7 : 2"'),
+        ('Three notebooks make fifteen if each costs five. Five pens make fifteen if each costs three.',
+         'Two notebooks make fourteen if each costs seven. Seven pens make fourteen if each costs two.'),
+        ('So notebook to pen is five to three', 'So notebook to pen is seven to two')])
+    rows = M.card('mem-ratios')['tables'][1]['rows']
+    fix = {'A ratio is a fraction': '$3:7=\\frac37$', 'Expand / reduce like a fraction': '$12:28=3:7$',
+           'No amounts from a ratio alone': 'write $3x$ and $7x$', 'Part of a whole': '$\\frac{3}{10}$ of all → part $3x$, whole $10x$',
+           '"Costs the same as" is reversed': '$2N=7P \\to N:P=7:2$'}
+    for r in rows:
+        if r[0] in fix: r[1] = fix.pop(r[0])
+    assert not fix, fix
+
+    # ---- toolkit card: the guided questions' new numbers ----
+    rows = M.card('mem-general-advanced')['tables'][0]['rows']
+    fix = {'Same ratios': ('a rate like "1 credit buys 1.5 pineapples"', '$\\frac{2\\cdot1}{1.5}=\\frac{4}{3}$ (expand ×2, not ×10)'),
+           'Write the whole exercise first': (None, '$160\\cdot\\frac34\\cdot\\frac34=160\\cdot\\frac{9}{16}=90$'),
+           'Ratio units': ('"A is $\\frac58$ of B"', 'the ratio $C:T=5:8$, C out of all $=\\frac{5}{13}$'),
+           'Divisibility of the total': (None, 'ratios $4:1$ and $2:1$ → total divides by 5 and by 3'),
+           'Subtract the equations': (None, '3 hours $=135$ → $\\frac{135}{3}=45$ each'),
+           'Scale everything': (None, '$9\\to12$ and $6\\to8$: $\\times\\frac43$'),
+           'Start from the end': (None, 'equal at the end: 35 and 35')}
+    for r in rows:
+        if r[0] in fix:
+            when, ex = fix.pop(r[0])
+            if when: r[1] = when
+            r[2] = ex
+    assert not fix, fix
+
+
+def rn_guided(M):
+    MOVE = A("'Moved → total stays · removed → drops · added → grows' appears",
+             T('Moved $\\to$ total stays · removed $\\to$ drops · added $\\to$ grows', 34))
+    TWICE = A("'Twice? The ×2 goes on the smaller side' appears", T('Twice? The $\\times2$ goes on the smaller side', 36))
+
+    # ---------- Q1 wp22-g029: 6 trays / 42 biscuits, 15 trays -> 105   ==>   8 vases / 56 roses, 12 vases -> 84
+    _rn_q(M, 'wp22-g029', 'Eight vases hold 56 roses. With the same number of roses in each vase, how many roses are in 12 vases?',
+          ['77', '91', '84', '96'], 3, [
+        'Across in the ratio table: $\\frac{56}{8}=7$ roses per vase.',
+        '12 vases: $12\\cdot7=84$ roses.',
+        'Triangle value: $\\frac{12\\cdot56}{8}=12\\cdot7=84$.'])
+    _rn_video(M, 'wp22-g029', [[
+        'Eight vases, fifty-six roses. Twelve vases?',
+        'The same number in every vase — equal ratios. Ratio table.',
+        A('A ratio table appears: Vases | Roses — 8 | 56 and 12 | ?', _tbl(['Vases', 'Roses'], [['8', '56'], ['12', '?']], 520, 170)),
+        'Put the data in a ratio table: vases in one column, roses in the other. Eight is to fifty-six as twelve is to the missing number.',
+        D('Draw an arrow from 8 to 56 and write "×7"'),
+        'Across: eight to fifty-six — times seven.',
+        D('Draw an arrow from 12 to the ? and write "×7 = 84"'),
+        'Twelve times seven: eighty-four.',
+        D('Circle choice 3'),
+        'Choice three.',
+        'Down would be times one and a half — also fine, but across is whole. So, across is easier.',
+    ], [
+        "The triangle value gives the same thing: multiply along the diagonal, twelve times fifty-six, and divide by what's left, eight.",
+        'Diagonal times, divide by the rest. The three numbers make a triangle — hence the name.',
+        D('Write "12 × 56 ÷ 8"'),
+        'Cancel fifty-six with eight: seven.',
+        D('Write "= 12 × 7 = 84"'),
+        'Twelve sevens — eighty-four. Same answer.',
+    ]])
+
+    # ---------- Q2 wp22-g030: 12 exercises in 8 min, 14 min -> 21   ==>   18 potatoes in 12 min, 20 min -> 30
+    _rn_q(M, 'wp22-g030', 'Working at a steady pace, a cook peels 18 potatoes in 12 minutes. How many potatoes does he peel in 20 minutes?',
+          ['30', '36', '24', '27'], 1, [
+        'Across and down are not whole numbers. Triangle value: $\\frac{20\\cdot18}{12}=\\frac{20\\cdot3}{2}=30$.',
+        'Sense check: 20 minutes is less than twice 12 minutes. The answer must be less than $2\\cdot18=36$ ✓.'])
+    _rn_video(M, 'wp22-g030', [[
+        'Twelve minutes, eighteen potatoes. Twenty minutes?',
+        A('A ratio table appears: Minutes | Potatoes — 12 | 18 and 20 | ?', _tbl(['Minutes', 'Potatoes'], [['12', '18'], ['20', '?']], 520, 170)),
+        'Across: twelve to eighteen — one and a half. Down: twelve to twenty — one and two thirds. Neither is whole.',
+        'So: the triangle value — also called "cross-multiply and divide".',
+        D('Draw the diagonal from 20 to 18 and write "20 × 18 ÷ 12"'),
+        'Diagonal: twenty times eighteen. Divide by the rest: twelve.',
+        D('Cancel 18 and 12 by 6 (3 and 2), then write "= 20 × 3 ÷ 2 = 30"'),
+        'Eighteen and twelve share a six: three and two. Twenty times three, over two. Thirty.',
+        D('Circle choice 1'),
+        'Choice one.',
+    ], [
+        'Or cross-multiply: the diagonal products are equal.',
+        D('Write "12x = 20 · 18 = 360 → x = 30"'),
+        'Twelve x equals twenty times eighteen — three hundred and sixty. x is thirty.',
+        'Triangle value or cross-multiplying — pick whichever feels natural. The triangle value writes the answer straight away, without isolating x.',
+        'Sense check: twenty minutes is less than double twelve. So, fewer than thirty-six potatoes. Thirty fits.',
+    ]])
+
+    # ---------- Q4 wp22-g032: tart 58, pastry/filling/berries -> 20   ==>   sandwich 47, bread/cheese/olives -> 12
+    _rn_q(M, 'wp22-g032', 'A café sells a sandwich for 47 credits. Making it uses 200 g of bread at 4 credits per 100 g, 300 g of cheese '
+          'at 8 credits per 100 g, and 6 olives at half a credit each. Ignoring other costs, what is the selling price minus the ingredient cost?',
+          ['15', '35', '12', '9'], 3, [
+        'Bread: $2\\cdot4=8$. Cheese: $3\\cdot8=24$. Olives: $6\\cdot\\frac12=3$.',
+        'Ingredient cost: $8+24+3=35$ credits.',
+        'Selling price minus cost: $47-35=12$ credits. (35 is the cost — not what they asked.)'])
+    _rn_video(M, 'wp22-g032', [[
+        'Step one: what does it cost to make one sandwich?',
+        A("'Label every number · per 100 g ≠ per g · a fixed fee is paid once' appears", T('Label every number · per 100 g ≠ per g · a fixed fee is paid once', 34)),
+        'Label every number: a price per hundred grams is not a price per gram, and a fixed fee is paid once.',
+        'Bread: two hundred grams. A hundred grams costs four.',
+        D('Write "Bread: 100 g → 4,  200 g → ×2 → 8"'),
+        'A hundred to two hundred is times two. So, four times two, eight. Equal ratios again.',
+        D('Write "Cheese: 300 g → ×3 → 24"'),
+        'Cheese: three hundred grams at eight per hundred. Times three — twenty-four.',
+        D('Write "Olives: 6 × ½ = 3"'),
+        'Olives: six at half a credit. Three.',
+        D('Write "Cost = 8 + 24 + 3 = 35"'),
+        'Total cost: thirty-five.',
+        'Step two: what did they ask? Selling price minus ingredient cost.',
+        D('Write "47 − 35 = 12" and circle choice 3'),
+        'Forty-seven minus thirty-five: twelve. Choice three.',
+        "Careful — thirty-five is in the choices too. That's the cost, not what they asked.",
+    ]])
+
+    # ---------- Q5 wp22-g033: 3/min vs 14 per 5-min block, 11.5 min -> 6   ==>   4/hour vs 17 per 4-hour block, 9.5 h -> 11
+    _rn_q(M, 'wp22-g033', 'Bike shop A charges 4 credits for every hour or part of an hour. Bike shop B charges 17 credits for every '
+          '4-hour block or part of a block. What is the difference between the two charges for a 9.5-hour rental?',
+          ['15', '13', '6', '11'], 4, [
+        'Shop A: 9.5 hours are paid as 10 hours ("or part of an hour"): $10\\cdot4=40$ credits.',
+        'Shop B: two blocks cover only 8 hours. 9.5 hours need 3 blocks: $3\\cdot17=51$ credits.',
+        'Difference: $51-40=11$ credits.'])
+    _rn_video(M, 'wp22-g033', [[
+        'The catch is two little words: "or part".',
+        D('Underline both "or part of"'),
+        'Shop A: four credits an hour. Nine hours: thirty-six.',
+        D('Write "A: 9 h → 36"'),
+        "Then there's half an hour left. Half an hour, a quarter, one minute — you still pay the full four.",
+        D('Write "+ ½ h → + 4 = 40"'),
+        'Forty.',
+        D('Write "B: 8 h = 2 blocks → 34"'),
+        'Shop B: seventeen per four-hour block. Eight hours — two blocks, thirty-four.',
+        D('Write "+ 1.5 h → 1 more block → 51"'),
+        "An hour and a half left. That's part of a block. So, it's a whole block. Fifty-one.",
+        D('Write "51 − 40 = 11" and circle choice 4'),
+        'The difference: eleven. Choice four.',
+        A("'50 people, vans of 12 → 5 vans (round UP)' appears", T('$50$ people, vans of $12$ $\\to$ $5$ vans (round UP)', 36)),
+        'Same with people: fifty people, vans of twelve. Four vans and two people left — they need a fifth van.',
+    ]])
+
+    # ---------- Q6 wp22-g035: boys 3/8 of the class, difference -> even (18)   ==>   swimmers 5/12 of the camp -> even (22)
+    _rn_q(M, 'wp22-g035', 'At a sports camp, swimmers make up $\\frac{5}{12}$ of all the campers, and the rest are runners. '
+          'Which could be the difference between the numbers of runners and swimmers?',
+          ['21', '22', '15', '19'], 2, [
+        'Swimmers $=5x$ and all $=12x$. Runners $=12x-5x=7x$.',
+        'Difference: $7x-5x=2x$. It must be even.',
+        'Only 22 is even. Check: $x=11$ gives 55 swimmers and 77 runners, and $77-55=22$ ✓.'])
+    _rn_video(M, 'wp22-g035', [[
+        'Swimmers are five out of twelve.',
+        D('Write "swimmers = 5x,  camp = 12x"'),
+        'So swimmers are five x — and the whole camp is twelve x.',
+        D('Write "runners = 12x − 5x = 7x"'),
+        "The runners are what's left: seven x.",
+        D('Write "difference = 7x − 5x = 2x"'),
+        'The difference between runners and swimmers: two x.',
+        'Two x. So, the difference must divide by two. It has to be even.',
+        D('Cross out choices 1, 3 and 4; circle choice 2'),
+        'Twenty-one, fifteen, nineteen — all odd. Out. Twenty-two. Choice two.',
+        'Bonus: the swimmers divide by five, the runners by seven, and the whole camp by twelve.',
+    ]])
+
+    # ---------- Q7 wp22-g036: scooter : car 3 : 8, 15,000 more -> 33,000   ==>   sofa : piano 3 : 10, 14,000 more -> 26,000
+    _rn_q(M, 'wp22-g036', 'The prices of a sofa and a piano are in the ratio $3:10$. The piano costs 14,000 credits more '
+          'than the sofa. What is their combined price?',
+          ['20,000', '26,000', '14,000', '28,000'], 2, [
+        'Sofa $=3x$, piano $=10x$. Difference: $10x-3x=7x=14{,}000$, therefore $x=2{,}000$.',
+        'Combined: $3x+10x=13x=26{,}000$ credits.'])
+    _rn_video(M, 'wp22-g036', [[
+        'Sofa to piano: three to ten.',
+        D('Write "sofa = 3x,  piano = 10x"'),
+        'Sofa three x, piano ten x.',
+        D('Write "10x − 3x = 7x = 14,000 → x = 2,000"'),
+        'The piano costs seven x more. Seven x is fourteen thousand. So, x is two thousand.',
+        'They want the combined price — the sum: thirteen x.',
+        D('Write "13x = 26,000" and circle choice 2'),
+        'Twenty-six thousand. Choice two.',
+        "Notice: even if you'd mixed up which is three and which is ten — the difference is still seven x and the sum is still thirteen x. Same answer.",
+    ]])
+
+    # ---------- Q10 wp22-g038: 6 rooms, one a storeroom, +3 -> 15   ==>   8 rows of chairs, one removed, +3 -> 21
+    _rn_q(M, 'wp22-g038', 'A hall manager plans to set out the same number of chairs in each of 8 rows. One row must be removed to make '
+          'room for a stage. Each of the 7 remaining rows must then hold 3 more chairs. How many chairs per row were originally planned?',
+          ['24', '21', '18', '27'], 2, [
+        'Planned chairs per row $=x$. The number of chairs does not change: $8x=7(x+3)$.',
+        '$8x=7x+21$, therefore $x=21$.',
+        'They asked for the planned number: 21. (24 is the new number per row.)'])
+    _rn_video(M, 'wp22-g038', [[
+        'They ask how many per row in the plan. So x is exactly that.',
+        D('Write "plan: 8 rows × x = 8x"'),
+        'The plan: eight rows, x chairs each. Eight x.',
+        D('Write "actual: 7 rows × (x + 3) = 7(x + 3)"'),
+        'In reality one row was removed. Seven rows left — and each got three more. Seven times x plus three.',
+        MOVE,
+        'Moved between groups? The total stays. Removed? It drops. Added from outside? It grows.',
+        "The number of chairs didn't change. So the two are equal.",
+        D('Write "8x = 7(x + 3)"'),
+        D('Write "8x = 7x + 21 → x = 21"'),
+        'Eight x equals seven x plus twenty-one. x is twenty-one.',
+        "What's x? Chairs per row in the plan — exactly what they asked.",
+        D('Circle choice 2'),
+        "Choice two. Twenty-four is a trap — that's the NEW number per row.",
+    ]])
+
+    # ---------- Q12 wp22-g039: Iris 6 older, 4 years ago twice -> Leo 10   ==>   Maya 9 older, 5 years ago twice -> Tom 14
+    _rn_q(M, 'wp22-g039', 'Maya is 9 years older than her cousin Tom. Five years ago, Maya was twice Tom’s age. How old is Tom now?',
+          ['9', '12', '14', '18'], 3, [
+        'Tom now $=x$, Maya now $=x+9$. Write a row for each time:',
+        '$\\begin{array}{l|c|c} & \\text{Tom} & \\text{Maya} \\\\ \\hline \\text{now} & x & x+9 \\\\ \\text{5 years ago} & x-5 & x+4 \\end{array}$',
+        'Five years ago Maya was twice Tom. The $\\times2$ goes on the smaller side: $2(x-5)=x+4$.',
+        '$2x-10=x+4$, therefore $x=14$. Check: five years ago they were 9 and 18 ✓.'])
+    _rn_video(M, 'wp22-g039', [[
+        "They ask for Tom's age now. So, Tom is x.",
+        A('An age table appears: Now / 5 years ago for Tom and Maya',
+          _tbl(['', 'Tom', 'Maya'], [['Now', 'x', 'x + 9'], ['5 years ago', '', '']], 700, 170)),
+        'Now: Tom x, Maya x plus nine. Maya is the bigger one. So, no minus signs.',
+        "Here's where lots of students jump straight to the equation. Stop. First fill in the row for five years ago.",
+        D('In the table write "x − 5" and "x + 4"'),
+        'Five years ago: Tom x minus five. Maya x plus nine minus five — x plus four.',
+        'Notice: the gap is still nine. Everyone ages the same — the gap stays, only the ratio changes.',
+        'Maya was TWICE Tom. So who gets the times two?',
+        TWICE,
+        "Lots of students double the bigger one. That's backwards: the times two goes on the smaller side.",
+        'Not Maya. Think of four and eight — you double the four. The little guy. Tom.',
+        D('Write "2(x − 5) = x + 4"'),
+        D('Write "2x − 10 = x + 4 → x = 14"'),
+        'Open the brackets: two x minus ten equals x plus four. x is fourteen.',
+        D('Circle choice 3'),
+        'x is Tom now — exactly what they asked. Choice three.',
+    ], [
+        'You can also test the answers.',
+        D('Next to choice 1 write "4 → 8: gap 4 ✗"'),
+        'Tom nine now: five years ago he was four, Maya double — eight. The gap is four, not nine. Out.',
+        D('Next to choice 2 write "7 → 14: gap 7 ✗"'),
+        'Twelve now: seven then, Maya fourteen. Gap seven. Out.',
+        D('Next to choice 4 write "13 → 26: gap 13 ✗"'),
+        'Eighteen now: thirteen then, Maya twenty-six. Gap thirteen. Out.',
+        D('Next to choice 3 write "9 → 18: gap 9 ✓"'),
+        'Fourteen now: nine then, Maya eighteen. Gap nine. It fits.',
+        'And for the sharp-eyed: a gap of nine AND double — that can only be nine and eighteen. Add five years: Tom is fourteen.',
+        'Careful: nine is Tom five years ago — not now.',
+    ]])
+
+    # ---------- Q13 wp22-g040: 84 credits, 5 but not 6 notebooks -> 16   ==>   105 credits, 6 but not 7 tickets -> 17
+    _rn_q(M, 'wp22-g040', 'Dana has 105 credits. That is enough for 6 identical movie tickets but not enough for 7. '
+          'Which could be the price of one ticket?',
+          ['15', '17', '18', '20'], 2, [
+        'Price $=p$. Enough for 6: $6p\\le105$, therefore $p\\le17.5$.',
+        'Not enough for 7: $7p>105$, therefore $p>15$.',
+        'Only 17 is in $15<p\\le17.5$. Check: $6\\cdot17=102\\le105$ ✓ and $7\\cdot17=119>105$ ✓.'])
+    _rn_video(M, 'wp22-g040', [[
+        'Call the price p.',
+        D('Write "6p ≤ 105"'),
+        'A hundred and five is enough for six tickets. So six p is at most a hundred and five — exactly a hundred and five still counts as enough.',
+        D('Write "p ≤ 17.5" and cross out choices 3 and 4'),
+        'Divide by six: p is at most seventeen and a half. Eighteen and twenty — out.',
+        D('Write "7p > 105 → p > 15" and cross out choice 1'),
+        'Not enough for seven: seven p is more than a hundred and five. p is more than fifteen. Fifteen is out.',
+        D('Circle choice 2'),
+        'Seventeen. Choice two.',
+        "Just like building an equation — we built inequalities and knocked out what didn't fit.",
+    ], [
+        'Or test the answers.',
+        D('Next to choice 1 write "6 × 15 = 90 ✓   7 × 15 = 105 ✗"'),
+        'Fifteen: six cost ninety — fine. But seven cost exactly a hundred and five. So, she CAN buy seven. Out.',
+        D('Next to choice 2 write "6 × 17 = 102 ✓   7 × 17 = 119 ✓"'),
+        'Seventeen: six cost a hundred and two — enough. Seven cost a hundred and nineteen — not enough. Both conditions hold.',
+        'Equation or testing — practice both and use whichever comes more easily.',
+    ]])
+
+    # ---------- Q14 wp22-g042: 2 oranges / 3.5 pears / 8 plums -> 38/7   ==>   4 kiwis / 1.5 pineapples / 5 limes -> 13/3
+    _rn_q(M, 'wp22-g042', 'One credit buys 4 kiwis, 1.5 pineapples, or 5 limes, with costs proportional to quantity. '
+          'What is the cost of 8 kiwis, 2 pineapples, and 5 limes? Fractional credits may be paid.',
+          ['$\\frac{13}{3}$ credits', '3 credits', '5 credits', '6 credits'], 1, [
+        'Kiwis: 1 credit buys 4, therefore 8 kiwis cost 2 credits. Limes: 5 limes cost 1 credit.',
+        'Pineapples: $\\frac{2\\cdot1}{1.5}=\\frac{4}{3}$ credits (multiply top and bottom by 2, not by 10).',
+        'Total: $2+1+\\frac{4}{3}=\\frac{13}{3}$ credits.'])
+    _rn_video(M, 'wp22-g042', [[
+        'Start with the easy groups.',
+        D('Next to "8 kiwis" write "= 2 credits"'),
+        'One credit buys four kiwis. Eight kiwis — two credits.',
+        D('Next to "5 limes" write "= 1 credit"'),
+        'One credit buys five limes. Five limes — exactly one credit.',
+        'Now the awkward one: pineapples.',
+        D('Write "1 credit — 1.5 pineapples" and under it "? — 2 pineapples"'),
+        'One credit, one and a half pineapples. How many credits for two pineapples? Same ratio.',
+        D('Write "? = 2 · 1 / 1.5"'),
+        "Cross-multiply, divide by what's left: two times one, over one and a half.",
+        'A decimal in the bottom — get rid of it. Times ten works… but it just makes the numbers bigger.',
+        D('Write "×2" on top and bottom, then "= 4/3"'),
+        'Times two is enough: four thirds.',
+        D('Write "2 + 4/3 + 1 = 13/3" and circle choice 1'),
+        'Two, plus four thirds, plus one: thirteen thirds. Choice one.',
+    ], [
+        'Now psychometric thinking — a size estimate saves the fraction work.',
+        'Kiwis and limes: three credits. That part is easy.',
+        'Pineapples: one credit buys one and a half. We need two. So more than one credit.',
+        D('Write "total > 4" and cross out choice 2'),
+        'Three plus more than one: more than four. Choice two — three credits — is out.',
+        'Upper limit: two credits already buy three pineapples. We only need two.',
+        D('Write "pineapples < 2  →  total < 5"'),
+        'So the pineapples cost less than two credits, and the total is under five.',
+        D('Cross out choices 3 and 4, circle choice 1'),
+        'Five and six are out. Only thirteen thirds — about four and a third — is left. Choice one.',
+    ]])
+
+    # ---------- Q15 wp22-g043: 144 applicants, 5/6 stay, two rounds -> 100   ==>   160 players, 3/4 stay, two levels -> 90
+    _rn_q(M, 'wp22-g043', 'A video game starts with 160 players. At the end of each level, $\\frac34$ of the players who began that level '
+          'are still in the game. How many players are still in the game after two levels?',
+          ['120', '80', '90', '100'], 3, [
+        'Level 1: $160\\cdot\\frac34=120$. Level 2 acts on 120: $120\\cdot\\frac34=90$.',
+        'Or write it all first: $160\\cdot\\frac34\\cdot\\frac34=160\\cdot\\frac{9}{16}=10\\cdot9=90$.',
+        'The trap 80 takes both quarters from 160.'])
+    _rn_video(M, 'wp22-g043', [[
+        "A hundred sixty start. After each level, three quarters of that level's starters are still in.",
+        A('A bar cut into 4 equal parts appears, 3 shaded', dict(k='bar', n=3, d=4, w=720, h=70, gap=40)),
+        'Picture the group as a bar cut into four equal parts. Three of them stay.',
+        D('Next to the bar write "160 ÷ 4 = 40"'),
+        'One quarter of a hundred sixty. Half is eighty, half again — forty.',
+        D('Write "40 · 3 = 120"'),
+        'Three quarters: a hundred twenty. They start level two.',
+        'Level two acts on a hundred twenty — not on a hundred sixty.',
+        D('Write "120 ÷ 4 = 30 → 30 · 3 = 90"'),
+        'One quarter of a hundred twenty: thirty. Three quarters: ninety.',
+        D('Circle choice 3'),
+        'Ninety. Choice three.',
+        'Eighty is the trap — it takes both quarters from the hundred sixty.',
+    ], [
+        "A small trick for several stages: don't calculate as you go. Write the whole thing first.",
+        D('Write "160 · 3/4 · 3/4"'),
+        'A hundred sixty, times three quarters, times three quarters.',
+        D('Write "= 160 · 9/16"'),
+        'Four times four on the bottom: sixteen. Three times three on top: nine.',
+        D('Write "160 ÷ 16 = 10  →  10 · 9 = 90"'),
+        "And now it's obvious: a hundred sixty over sixteen is ten. Ten times nine — ninety.",
+        'When a question has stages, write the full exercise first. The numbers usually cancel.',
+    ]])
+
+    # ---------- Q16 wp22-g044: 3/5 as many apprentices as supervisors -> 3/8   ==>   5/8 as many coaches as trainees -> 5/13
+    _rn_q(M, 'wp22-g044', 'At a training center, there are $\\frac58$ as many coaches as trainees. What fraction of all the people are coaches?',
+          ['$\\frac{5}{8}$', '$\\frac{3}{8}$', '$\\frac{8}{13}$', '$\\frac{5}{13}$'], 4, [
+        'The ratio of coaches to trainees is $5:8$.',
+        'Plug in: 8 trainees and 5 coaches, 13 people in all.',
+        'Coaches are $\\frac{5}{13}$ of all the people. ($\\frac58$ compares them with the trainees only.)'])
+    _rn_video(M, 'wp22-g044', [[
+        'Coaches equal five eighths of the trainees.',
+        D('Write "C = 5/8 · T"'),
+        'As an equation: C equals five eighths of T.',
+        D('Write "C / T = 5/8"'),
+        'Divide by T: coaches over trainees is five eighths. A ratio is just a fraction.',
+        'Or match the units directly: the numerator goes to the first thing, the denominator to the second.',
+        D('Write the ratio "C : T = 5 : 8"'),
+        'Five coaches for every eight trainees.',
+        "But careful — they didn't ask coaches out of trainees. They asked out of everyone.",
+    ], [
+        'So plug in. Say there are eight trainees.',
+        D('Write "T = 8  →  C = 5"'),
+        'Five eighths of eight: five coaches.',
+        D('Write "total = 13  →  5/13"'),
+        'Everyone together: thirteen. Coaches: five out of thirteen.',
+        D('Circle choice 4'),
+        'Five thirteenths. Choice four.',
+        'Five eighths is sitting there as a trap — that compares coaches with trainees, not with everyone.',
+    ]])
+
+    # ---------- Q17 wp22-g045: 4 times, 1/4 and 1/3 rejected -> 4/15   ==>   twice, 1/2 and 1/5 whole-wheat -> 2/5
+    _rn_q(M, 'wp22-g045', 'A bakery sends twice as many loaves to supermarkets as to cafés. One half of the supermarket loaves and '
+          'one fifth of the café loaves are whole-wheat. What fraction of all the loaves is whole-wheat?',
+          ['$\\frac{2}{5}$', '$\\frac{1}{2}$', '$\\frac{7}{10}$', '$\\frac{1}{6}$'], 1, [
+        'Only a fraction is asked. Plug in: 5 café loaves and $2\\cdot5=10$ supermarket loaves.',
+        'Whole-wheat: $\\frac12\\cdot10=5$ and $\\frac15\\cdot5=1$. In all, 6 out of 15.',
+        'The fraction that is whole-wheat is $\\frac{6}{15}=\\frac25$. Check: it is between $\\frac15$ and $\\frac12$ ✓.'])
+    _rn_video(M, 'wp22-g045', [[
+        'Two groups: supermarkets and cafés. Twice as many to the supermarkets.',
+        'We could write x and two x. But plugging in numbers is more comfortable.',
+        D('Write "cafés 1, supermarkets 2"'),
+        'Try one loaf for the cafés, two for the supermarkets. Twice — good.',
+        'Supermarkets: half are whole-wheat. Half of two is one. Fine.',
+        "Cafés: a fifth are whole-wheat. A fifth of one loaf? That's no good.",
+        "No problem — it's our substitution. We can change it.",
+        'The cafés need a number a fifth can come out of: five.',
+        A('A table appears: Cafés / Supermarkets — loaves, whole-wheat (blank)',
+          _tbl(['', 'Loaves', 'Whole-wheat'], [['Cafés', '', ''], ['Supermarkets', '', ''], ['Total', '', '']], 760, 220)),
+        D('Fill in: cafés 5 → 1 whole-wheat; supermarkets 10 → 5 whole-wheat'),
+        'Cafés five, supermarkets ten — still twice. A fifth of five: one. Half of ten: five.',
+        D('Fill in the total row: 15 loaves, 6 whole-wheat'),
+        'Fifteen loaves, six whole-wheat.',
+        D('Write "6/15 = 2/5" and circle choice 1'),
+        'Six fifteenths — two fifths. Choice one.',
+    ], [
+        'Now psychometric thinking.',
+        'If both groups were half whole-wheat, the whole lot would be a half.',
+        'But one group is only a fifth — less than a half. So overall: less than a half.',
+        D('Write "< 1/2" and cross out choices 2 and 3'),
+        "Seven tenths is more than a half. A half itself isn't possible either. Both out.",
+        'The other end: if both groups were a fifth whole-wheat, the whole would be a fifth.',
+        'But one group is more — a half. So overall: more than a fifth.',
+        D('Write "> 1/5" and cross out choice 4'),
+        'One sixth is less than a fifth. Out.',
+        D('Circle choice 1'),
+        'Only two fifths is between a fifth and a half. Choice one.',
+    ]], intro=('Two groups, two different rejection rates.', 'Two groups, two different fractions.'))
+
+    # ---------- Q18 wp22-g046: 1/4 and 1/6 given away, 9 and 20 left -> 36   ==>   1/3 and 1/6 sold, 10 and 14 left -> 33
+    _rn_q(M, 'wp22-g046', 'A baker has chocolate and vanilla cupcakes. She sells $\\frac13$ of the chocolate cupcakes and $\\frac16$ of the '
+          'vanilla cupcakes, always selling whole cupcakes. The cupcakes left are 10 of one flavor and 14 of the other, in an unknown '
+          'order. How many cupcakes did she have at first?',
+          ['48', '26', '72', '33'], 4, [
+        'Vanilla left $=\\frac56$ of the vanilla cupcakes: 5 times a whole number of sixths, therefore divisible by 5. 10 can be vanilla, 14 cannot.',
+        'Vanilla: $\\frac56V=10$, therefore $V=12$. Chocolate: $\\frac23C=14$, therefore $C=21$.',
+        'At first: $12+21=33$ cupcakes.'])
+    _rn_video(M, 'wp22-g046', [[
+        "Ten and fourteen are left — but which is chocolate and which is vanilla? We'll just test it.",
+        'Suppose fourteen vanilla cupcakes are left.',
+        D('Write "vanilla: 14 = 5/6 → 14 ÷ 5 = ?"'),
+        'She sold a sixth of the vanilla. So, fourteen is five sixths. Each sixth would be fourteen over five.',
+        "Not a whole number. But she sold whole cupcakes. So fourteen can't be the vanilla.",
+        'Swap them: ten vanilla, fourteen chocolate.',
+        D('Write "vanilla: 10 = 5/6 → 1/6 = 2 → 12"'),
+        'Ten is five sixths. One sixth: two cupcakes. Give back the sixth — twelve vanilla.',
+        D('Write "chocolate: 14 = 2/3 → 1/3 = 7 → 21"'),
+        'Fourteen is two thirds. One third: seven cupcakes. Give it back — twenty-one chocolate.',
+        D('Write "12 + 21 = 33" and circle choice 4'),
+        'Twelve plus twenty-one: thirty-three. Choice four.',
+    ], [
+        "Now the psychometric way. We don't even care which pile is which.",
+        D('Write "10 + 14 = 24 left"'),
+        'Twenty-four cupcakes are left.',
+        'Each flavor lost a third or a sixth. All together, she sold at most a third of the cupcakes — and at least a sixth.',
+        D('Write "at most ⅓ gone: 24 ≥ ⅔ · start → start ≤ 24 · 3/2 = 36"'),
+        'At most a third gone: twenty-four is at least two thirds of the start. The start is at most thirty-six.',
+        D('Write "at least ⅙ gone: 24 ≤ ⅚ · start → start ≥ 24 · 6/5 = 28.8"'),
+        'At least a sixth gone: twenty-four is at most five sixths of the start. The start is at least about twenty-nine.',
+        D('Write "29 ≤ start ≤ 36"'),
+        D('Cross out choices 1, 2 and 3'),
+        'Forty-eight, twenty-six and seventy-two are all outside. Only thirty-three is between twenty-nine and thirty-six.',
+        D('Circle choice 4'),
+        'Choice four.',
+    ]], intro=('which leftover belongs to which color.', 'which leftover belongs to which flavor.'))
+
+    # ---------- Q19 wp22-g047: clubs 3 : 1, 3 move, then 2 : 1 -> 36   ==>   buses 4 : 1, 6 move, then 2 : 1 -> 45
+    _rn_q(M, 'wp22-g047', 'A school has two buses. Bus A carries 4 times as many students as bus B. Six students move from bus A to bus B. '
+          'Afterwards, bus B carries half as many students as bus A. How many students are on the two buses altogether?',
+          ['40', '45', '48', '50'], 2, [
+        'B $=x$, A $=4x$. After the move: B has $x+6$, A has $4x-6$.',
+        'B is half of A: $2(x+6)=4x-6$, therefore $2x+12=4x-6$ and $x=9$.',
+        'Total: $x+4x=5x=45$. (The move does not change the total.)'])
+    _rn_video(M, 'wp22-g047', [[
+        'Bus A has four times bus B.',
+        D('Write "B = x,  A = 4x"'),
+        'Give the plain x to the little guy: B is x, A is four x. No fractions, no dividing later.',
+        'Six students move from A to B.',
+        D('Write "B: x + 6,  A: 4x − 6"'),
+        'Take six from A, add six to B.',
+        'Now B is half of A.',
+        D('Write "x + 6 = ½(4x − 6)"'),
+        'x plus six equals half of — brackets! — four x minus six.',
+        D('Write "2x + 12 = 4x − 6  →  x = 9"'),
+        'Times two: two x plus twelve equals four x minus six. x is nine.',
+        "Don't circle nine! That's not what they asked.",
+        D('Write "total = 5x = 45" and circle choice 2'),
+        'Both buses together: x plus four x — five x. Forty-five. Choice two.',
+    ], [
+        'Now the psychometric shortcut — understanding divisibility.',
+        'Four times as many: four parts and one part. Five parts in total.',
+        D('Write "total ÷ 5" and cross out choice 3'),
+        "So the total must divide by five. Forty-eight doesn't. Out.",
+        'After the move: B is half of A. One part and two parts — three parts.',
+        D('Write "total ÷ 3" and cross out choices 1 and 4'),
+        "So the total must also divide by three. Forty doesn't. Fifty doesn't.",
+        D('Circle choice 2'),
+        'Three answers gone without calculating anything. Forty-five. Choice two.',
+    ]])
+
+    # ---------- Q20 wp22-g048: fixed + per task, 10 -> 320, 6 -> 208 -> 28   ==>   fee + per hour, 7 h -> 385, 4 h -> 250 -> 45
+    _rn_q(M, 'wp22-g048', 'A plumber charges a fixed call-out fee plus the same amount for each hour of work. A 7-hour job costs 385 credits, '
+          'and a 4-hour job costs 250 credits. What is the charge per hour?',
+          ['35', '45', '65', '50'], 2, [
+        'What changed? $7-4=3$ more hours and $385-250=135$ more credits.',
+        'Per hour: $\\frac{135}{3}=45$ credits. The fixed fee is the same in both jobs, and it cancels.'])
+    _rn_video(M, 'wp22-g048', [[
+        'Start with the quickest idea.',
+        "What's the difference between the two jobs?",
+        D('Write "7 − 4 = 3 hours"'),
+        'Three more hours.',
+        D('Write "385 − 250 = 135"'),
+        'And a hundred thirty-five more credits.',
+        D('Write "135 ÷ 3 = 45"'),
+        'Three hours earned a hundred thirty-five extra. One hour: forty-five.',
+        D('Circle choice 2'),
+        'Choice two. The fixed fee is the same in both jobs — it just disappears.',
+    ], [
+        'A fixed fee, plus a fixed charge per hour.',
+        D('Write "f + 7h = 385" and under it "f + 4h = 250"'),
+        'Job one: fee plus seven hours, three-eighty-five. Job two: fee plus four hours, two-fifty.',
+        D('Subtract: write "3h = 135"'),
+        'Subtract the equations. The fee cancels. Three h equals a hundred thirty-five.',
+        D('Write "h = 45" and circle choice 2'),
+        'Divide by three: forty-five per hour. Choice two.',
+    ], [
+        "Can't see the equation? Plug in the answers.",
+        'Use the job with fewer hours — four. Easier to calculate.',
+        D('Next to choice 3 write "65 · 4 = 260 > 250" and cross it out'),
+        'Sixty-five an hour: four hours already make two-sixty. But the whole bill was two-fifty. Impossible.',
+        D('Next to choice 4 write "50 · 4 = 200 → fee 50"'),
+        'Fifty: four hours, two hundred. Fee: fifty. Check the other job.',
+        D('Write "50 · 7 = 350 → fee 35" and cross out choice 4'),
+        "Seven hours: three-fifty — fee thirty-five. Thirty-five isn't fifty. Out.",
+        D('Next to choice 2 write "45 · 4 = 180 → fee 70"'),
+        'Forty-five: four hours, one-eighty. Fee: seventy.',
+        D('Write "45 · 7 = 315 → fee 70 ✓" and circle choice 2'),
+        'Seven hours: three-fifteen. Fee: seventy again. Same in both jobs — choice two.',
+    ]])
+
+    # ---------- Q21 wp22-g049: 8 large + 12 small = 1,000 g, 10 + 15 -> 1,250   ==>   9 large + 6 small = 240 kg, 12 + 8 -> 320
+    _rn_q(M, 'wp22-g049', 'Nine large crates and six small crates weigh 240 kg altogether. All large crates weigh the same, and all small '
+          'crates weigh the same. How much do twelve large and eight small crates weigh?',
+          ['300', '320', '280', '360'], 2, [
+        '$9\\to12$ and $6\\to8$: both counts are multiplied by $\\frac43$.',
+        'Every part grows by the same factor. The weight grows the same way: $240\\cdot\\frac43=320$ kg.',
+        'We cannot find one crate alone (one equation, two unknowns), but we do not need to.'])
+    _rn_video(M, 'wp22-g049', [[
+        'If a large and a small crate weigh something together — can we know each one alone? No. Many options.',
+        'But double both of them? Then the weight doubles too. That we can know.',
+        "Change only one of them — then we can't.",
+        'So the question is: did both counts grow by the same factor?',
+        D('Write "9 → 12: ×4/3"'),
+        'Nine to twelve: a third of nine is three. Up by a third — times one and a third.',
+        D('Write "6 → 8: ×4/3"'),
+        'Six to eight: a third of six is two. Same factor.',
+        'Both grew the same way. So, the weight grows the same way.',
+        D('Write "240 · 4/3 = 320" and circle choice 2'),
+        'Two-forty, plus a third of it — eighty more: three-twenty. Choice two.',
+    ], [
+        'Prefer whole numbers? Shrink the equation first — all of it.',
+        D('Write "9L + 6S = 240" then "÷3 → 3L + 2S = 80"'),
+        'Everything divided by three: three large and two small weigh eighty.',
+        D('Write "×4 → 12L + 8S = 320"'),
+        'Times four: twelve large and eight small. Eighty times four — three-twenty.',
+        "Same ratio on both sides. So, it's allowed.",
+    ]])
+
+    # ---------- Q22 wp22-g050: 60 counters, gives 9, equal -> 13/7   ==>   70 stickers, gives 15, equal -> 5/2
+    _rn_q(M, 'wp22-g050', 'Noa and Eli have 70 stickers altogether. Noa gives Eli 15 stickers, and then they have the same number. '
+          'What was Noa’s original number of stickers divided by Eli’s original number?',
+          ['$\\frac{10}{7}$', '$\\frac{2}{5}$', '$\\frac{5}{2}$', '$2$'], 3, [
+        'The total stays 70. Equal at the end: 35 and 35.',
+        'Go back: Noa had $35+15=50$ and Eli had $35-15=20$.',
+        '$\\frac{50}{20}=\\frac52$.'])
+    _rn_video(M, 'wp22-g050', [[
+        'Noa and Eli have seventy together.',
+        D('Write "n + e = 70"'),
+        "Noa gives Eli fifteen — then they're equal.",
+        D('Write "n − 15 = e + 15  →  n − e = 30"'),
+        'Noa minus fifteen equals Eli plus fifteen. Move terms: n minus e is thirty.',
+        D('Add the equations: write "2n = 100 → n = 50, e = 20"'),
+        'Add the two equations: two n is a hundred. Noa: fifty. Eli: twenty.',
+        D('Write "50/20 = 5/2" and circle choice 3'),
+        'Fifty over twenty — divide both by ten: five halves. Choice three.',
+    ], [
+        "Now the psychometric way. It's easier to start from the end.",
+        "What happens at the end? They're equal — and the total is still seventy.",
+        D('Write "end: 35 and 35"'),
+        "So at the end: thirty-five and thirty-five. That's the only way.",
+        'Now go back in time. Give Noa back her fifteen.',
+        D('Write "start: 35 + 15 = 50,  35 − 15 = 20"'),
+        'Noa had fifty. Eli had fifteen fewer: twenty.',
+        D('Write "5/2" and circle choice 3'),
+        'Five halves. Choice three.',
+        'Some questions are easier from the end. When the ending is simple — start there.',
+    ]])
+
+
+def rn_practice_questions(M):
+    S = lambda *a: _rn_q(M, *a)
+    P = lambda n: 'wp22-p%02d' % n
+    S(P(3), 'A cargo boat can sail 900 km while carrying 50 tons. Each extra ton reduces its range by 6 km. '
+      'What is its range when carrying 87 tons?',
+      ['522', '678', '222', '378'], 2, [
+        'Extra load: $87-50=37$ tons.', 'Lost range: $37\\cdot6=222$ km.', 'Range: $900-222=678$ km.'])
+    S(P(4), 'Three families of 2, 5, and 6 people share a 780-credit cabin rental in proportion to family size. '
+      'How much does the five-person family pay?',
+      ['260', '300', '360', '156'], 2, [
+        'Total people: $2+5+6=13$.', 'Per person: $\\frac{780}{13}=60$ credits.',
+        'The five-person family pays $5\\cdot60=300$ credits.'])
+    S(P(8), 'An office has $n$ cabinets. Each cabinet has $n$ drawers, and each drawer holds 3 folders. How many folders are there?',
+      ['$n^3$', '$3n$', '$n^2+3$', '$3n^2$'], 4, [
+        'Drawers: $n\\cdot n=n^2$. Folders: $3\\cdot n^2=3n^2$.',
+        'Check with $n=2$: 2 cabinets of 2 drawers is 4 drawers and 12 folders. $3\\cdot2^2=12$ ✓.'])
+    S(P(12), 'One gold coin equals 6 silver coins. One gold coin is worth $\\frac34$ of a platinum coin. '
+      'How many silver coins are worth one platinum coin?',
+      ['8', '2', '24', '12'], 1, [
+        'One gold coin $=6$ silver coins $=\\frac34$ platinum coin.',
+        '$\\frac14$ platinum coin $=\\frac63=2$ silver coins. One platinum coin $=4\\cdot2=8$ silver coins.'])
+    S(P(7), 'Omer puts $\\frac25$ of his bonus into savings, then spends 150 credits on a jacket. He has 450 credits left. '
+      'What was his bonus?',
+      ['840', '600', '1,000', '1,500'], 3, [
+        'Before buying the jacket he had $450+150=600$ credits.',
+        'That is the $\\frac35$ left after the savings: $\\frac35B=600$, therefore $B=600\\cdot\\frac53=1{,}000$.'])
+    S(P(14), 'A bottle of syrup holds 50 portions and costs 15 credits. A bag of coffee holds 400 portions and costs 24 credits. '
+      'What is the ingredient cost of an iced coffee made with 2 portions of syrup and 3 portions of coffee?',
+      ['1.02 credits', '0.36 credits', '0.66 credits', '0.78 credits'], 4, [
+        'Syrup: $\\frac{15}{50}=0.30$ credits a portion. Coffee: $\\frac{24}{400}=0.06$ credits a portion.',
+        'Drink: $2\\cdot0.30+3\\cdot0.06=0.60+0.18=0.78$ credits.'])
+    S(P(6), 'A large pizza costs 12 credits more than a small pizza. Three large pizzas cost the same as five small pizzas. '
+      'What does one large pizza cost?',
+      ['18', '36', '30', '24'], 3, [
+        'Small pizza $=s$, large pizza $=s+12$.',
+        'Three large pizzas cost the same as five small ones: $3(s+12)=5s$.',
+        '$3s+36=5s$, therefore $2s=36$ and $s=18$. Large pizza: $18+12=30$ credits.'])
+    S(P(2), 'A garden has roses, tulips, and lilies. There are 4 times as many roses as tulips, and 3 times as many tulips as lilies. '
+      'Which could be the total number of flowers?',
+      ['36', '40', '48', '56'], 3, [
+        'Lilies $=x$, tulips $=3x$, roses $=4\\cdot3x=12x$.',
+        'Total: $x+3x+12x=16x$. The total must divide by 16.',
+        'Only $48=16\\cdot3$ works. (40 and 56 come from adding $1+3+4=8$ — the 4 is times the tulips, not times the lilies.)'])
+    S(P(10), 'Four coats cost as much as three jackets and eight scarves. A jacket costs 4 times as much as a scarf. '
+      'How many jackets cost as much as twelve coats?',
+      ['20', '9', '17', '15'], 4, [
+        'Scarf $=1$ unit, jacket $=4$ units.',
+        'Four coats $=3\\cdot4+8\\cdot1=20$ units. Twelve coats $=60$ units.',
+        'Jackets: $\\frac{60}{4}=15$.'])
+    S(P(22), 'At a concert, there are $\\frac78$ as many adults as children. What fraction of the audience are adults?',
+      ['$\\frac{8}{15}$', '$\\frac{7}{15}$', '$\\frac{7}{8}$', '$\\frac{1}{8}$'], 2, [
+        'Plug in: 8 children and $\\frac78\\cdot8=7$ adults.',
+        'The whole audience: $8+7=15$.',
+        'Adults out of the audience: $\\frac{7}{15}$. (The denominator must include both groups.)'])
+    S(P(16), 'A father is 30 years older than his daughter. The ratio of their ages now is $6:1$. '
+      'What will the ratio of the father’s age to the daughter’s age be in 9 years?',
+      ['$6:1$', '$3:2$', '$3:1$', '$4:1$'], 3, [
+        'Father $=6u$, daughter $=u$. The gap: $6u-u=5u=30$, therefore $u=6$.',
+        'Now: 36 and 6. In 9 years: 45 and 15.',
+        'The ratio is $45:15=3:1$.'])
+    S(P(25), 'Gal and Ron have 40 marbles altogether. Gal gives Ron 7 marbles and then has 6 fewer than Ron. '
+      'What was the ratio of Gal’s marbles to Ron’s before the transfer?',
+      ['$17:23$', '$2:3$', '$3:2$', '$5:3$'], 3, [
+        'The gap: every marble Gal gives changes the gap by 2. She gives 7, therefore the gap moves $2\\cdot7=14$ toward Ron.',
+        'After the transfer Ron is 6 ahead. Before it, Gal was $14-6=8$ ahead.',
+        'Together 40, Gal 8 more: Gal $\\frac{40+8}{2}=24$ and Ron $40-24=16$.',
+        'With an equation: after the transfer Gal $=x$ and Ron $=x+6$. $2x+6=40$, $x=17$: 17 and 23. Before: $17+7=24$ and $23-7=16$.',
+        'The ratio is $24:16=3:2$.'])
+    S(P(15), 'For 8 days, a squirrel collects 30 nuts a day and eats $x$ of them each day. The nuts it saves then last 16 days '
+      'at 5 nuts a day. What is $x$?',
+      ['10', '20', '5', '16'], 2, [
+        'Saved nuts: $16\\cdot5=80$.',
+        'Collected: $8\\cdot30=240$. Eaten in 8 days: $240-80=160$.',
+        '$x=\\frac{160}{8}=20$.'])
+    S(P(20), 'A textbook has 72,000 words and 60 pictures. A brochure has 3,000 words and 20 pictures. '
+      'The word-to-picture ratio of the textbook is how many times that of the brochure?',
+      ['3', '24', '8', '6'], 3, [
+        'Textbook: $\\frac{72{,}000}{60}=1{,}200$ words per picture. Brochure: $\\frac{3{,}000}{20}=150$ words per picture.',
+        '$\\frac{1{,}200}{150}=8$.'])
+    S(P(21), 'A furniture shop has 45 three-legged stools and four-legged chairs altogether. Together they have 158 legs. '
+      'How many chairs are there?',
+      ['22', '23', '26', '19'], 2, [
+        'Assume all 45 are stools: $45\\cdot3=135$ legs.',
+        'Missing: $158-135=23$. Each chair adds $4-3=1$.',
+        'Chairs: 23. Check: $22\\cdot3+23\\cdot4=66+92=158$ ✓.'])
+    S(P(19), 'At the end of each of 3 days, a water tank loses $\\frac15$ of the water that is in it. '
+      'What fraction of the starting water is left after the third day?',
+      ['$\\frac{2}{5}$', '$\\frac{16}{25}$', '$\\frac{64}{125}$', '$\\frac{4}{5}$'], 3, [
+        'Each day $\\frac45$ of the water that is there stays.',
+        'After three days: $\\frac45\\cdot\\frac45\\cdot\\frac45=\\frac{64}{125}$.',
+        'Not $1-3\\cdot\\frac15=\\frac25$: each fifth is taken from a smaller amount.'])
+    S(P(13), 'A farmer sells $\\frac14$ of her melons, then $\\frac23$ of the melons left. Every melon has the same price. '
+      'These sales bring in 480 credits. How much would selling all the melons bring in?',
+      ['720', '640', '960', '600'], 2, [
+        'After the first sale, $1-\\frac14=\\frac34$ of the melons are left. Two thirds of them: $\\frac23\\cdot\\frac34=\\frac12$.',
+        'Sold: $\\frac14+\\frac12=\\frac34$ of the melons, for 480 credits.',
+        'All the melons: $480\\cdot\\frac43=640$ credits.'])
+    S(P(1), 'A small bottle costs $x$ credits. A large bottle costs $\\frac{x^2+45}{x}$ credits. The large bottle costs 6 times '
+      'as much as the small one. How much does the small bottle cost?',
+      ['9', '3', '5', '6'], 2, [
+        'Six times the small price is $6x$: $\\frac{x^2+45}{x}=6x$.',
+        'A price is positive. Multiply both sides by $x$: $x^2+45=6x^2$.',
+        'Therefore $5x^2=45$, $x^2=9$ and $x=3$ (a price cannot be $-3$).'])
+    S(P(5), 'Yael has $n$ whole cookies. She eats 5, gives half of the remaining cookies to her brother, and packs 4 whole cookies '
+      'in a lunch box. Which of the following could be the value of $n$?',
+      ['14', '16', '15', '12'], 3, [
+        'After eating 5, she has $n-5$ cookies. Half of them must be a whole number. Therefore $n-5$ is even, and $n$ is odd.',
+        'Only 15 is odd. Check: $15-5=10$. She gives away 5, keeps 5 and packs 4 ✓.'])
+    S(P(9), 'One large jug holds $\\frac43$ as much water as one small jug. Which set of jugs holds the most water?',
+      ['5 large and 3 small', '7 large', '4 large and 5 small', '10 small'], 3, [
+        'Plug in: a small jug holds 3 units, a large jug holds 4 units ($\\frac43$ of 3).',
+        '(1) $5\\cdot4+3\\cdot3=29$. (2) $7\\cdot4=28$. (3) $4\\cdot4+5\\cdot3=31$. (4) $10\\cdot3=30$.',
+        'Choice (3), 4 large and 5 small, holds the most: 31 units.'])
+    S(P(11), 'Tamar chooses a real number $x$, divides it by 6, subtracts 5, multiplies by 4, and adds 20. '
+      'The result is $x$ again. What is $x$?',
+      ['0', '6', '30', '12'], 1, [
+        '$4\\left(\\frac{x}{6}-5\\right)+20=\\frac{4x}{6}-20+20=\\frac23x$.',
+        '$\\frac23x=x$, therefore $\\frac13x=0$ and $x=0$.'])
+    S(P(23), 'Ben starts work at 7 a.m. on each of four days. On two of those days he takes an unpaid half-hour break. '
+      'He finishes at the same time every day and works 31 paid hours in total. When does he finish?',
+      ['2:45 p.m.', '3:15 p.m.', '3 p.m.', '3:30 p.m.'], 3, [
+        'Time at work: $31+1=32$ hours (31 paid hours and two unpaid half-hour breaks).',
+        'Each day: $\\frac{32}{4}=8$ hours.',
+        'Eight hours after 7 a.m. is 3 p.m.'])
+    S(P(17), 'One kilogram of coffee costs $x$ credits, and one kilogram of tea costs $y$ credits. The two prices add up to 20 credits, '
+      'and coffee costs 4 credits more than tea. A shop sells $x$ kilograms of coffee (as many kilograms as the price of one kilogram) '
+      'and buys $y$ kilograms of tea. What is the difference between the money received and the money spent?',
+      ['144', '80', '96', '48'], 2, [
+        'Write the two conditions:\n$\\begin{cases} x+y=20 \\\\ x-y=4 \\end{cases}$\nAdd them: $2x=24$, therefore $x=12$ and $y=8$.',
+        'Received: $12\\cdot12=144$. Spent: $8\\cdot8=64$.',
+        'Difference: $144-64=80$ credits.'])
+    S(P(29), 'Two schools receive the same number of tablets. One school shares its tablets equally among 6 classes, and the other '
+      'among 30 classes. Each class in the first school receives 5 times as many tablets as each class in the second. '
+      'How many tablets does each school receive?',
+      ['60', CANNOT, '30', '150'], 2, [
+        'Call the number of tablets $t$. First school: $\\frac{t}{6}$ per class. Second school: $\\frac{t}{30}$ per class.',
+        '$\\frac{t}{6}=5\\cdot\\frac{t}{30}$ is true for every $t$. The last sentence gives no new information.',
+        'Nothing fixes $t$. It cannot be determined.',
+        'Shortcut · Pick values that fit: $t=30$ gives $5$ and $1$ tablets per class ✓, and $t=60$ gives $10$ and $2$ ✓. '
+        'Two different numbers fit everything, therefore it cannot be determined.'])
+    S(P(26), 'Rina borrows some money and spends $\\frac38$ of it on flour. She repays her lender with $\\frac23$ of that flour at its '
+      'purchase value. She still owes 7.50 credits. How much did she borrow?',
+      ['12', '8', '10', '15'], 3, [
+        'Repaid with flour: $\\frac23\\cdot\\frac38=\\frac14$ of the loan.',
+        'Still owed: $\\frac34$ of the loan $=7.50$.',
+        '$\\frac14$ of the loan $=\\frac{7.50}{3}=2.50$. The loan: $4\\cdot2.50=10$ credits.'])
+    S(P(28), 'A teacher splits a box of pencils between two classes. Class A uses $\\frac15$ of its pencils, and class B uses '
+      '$\\frac14$ of its pencils. The two classes have 16 and 21 pencils left, in an unknown order. How many pencils were in the box?',
+      ['37', '44', '48', '52'], 3, [
+        'What is left in class B is $\\frac34$ of its pencils, therefore it must be divisible by 3. 21 is divisible by 3, 16 is not.',
+        'Class B: $\\frac34B=21$, therefore $B=21\\cdot\\frac43=28$.',
+        'Class A: $\\frac45A=16$, therefore $A=16\\cdot\\frac54=20$.',
+        'In the box: $20+28=48$ pencils.'])
+    S(P(24), 'A tall candle has a red stripe that is $\\frac25$ of its length. A short candle has a red stripe that is $\\frac13$ of '
+      'its length. The tall candle’s stripe is 6 times as long as the short candle’s stripe. What is the ratio of the candles’ lengths?',
+      ['$6:1$', '$5:1$', '$6:5$', '$36:5$'], 2, [
+        'The tall candle is $L$ long and the short one $S$: $\\frac25L=6\\cdot\\frac13S$.',
+        'Multiply by 15: $6L=30S$, therefore $L=5S$.',
+        'The ratio of the lengths is $L:S=5:1$.'])
+    S(P(27), 'A teacher changes every grade by multiplying it by $\\frac34$ and then adding 20. Lior’s grade goes down. '
+      'Which of the following is necessarily true of her original grade?',
+      ['It was less than 80', 'It was greater than 80', 'It was less than 20', 'It was exactly 80'], 2, [
+        'Unchanged grade: $\\frac34x+20=x$, therefore $\\frac14x=20$ and $x=80$.',
+        'Grade goes down: $\\frac34x+20<x$, therefore $20<\\frac14x$ and $x>80$.',
+        'Check: $x=100$ gives $75+20=95<100$ ✓. $x=60$ gives $45+20=65>60$.'])
+    S(P(18), 'Four positive numbers are arranged in a square of two rows and two columns: $p$ and $q$ in the top row, $r$ and $s$ in '
+      'the bottom row, with $p$ above $r$. The two row totals are equal, and the two column totals are equal. '
+      'Which of the following statements is necessarily true?',
+      ['$p=s\\text{ and }q=r$', '$p=q=r=s$', '$ps=qr$', '$p+s=q+r$'], 1, [
+        'Rows equal and columns equal:\n$\\begin{cases} p+q=r+s \\\\ p+r=q+s \\end{cases}$',
+        'Subtract the second equation from the first: $q-r=r-q$, therefore $2q=2r$ and $q=r$.',
+        'Put $q=r$ into $p+q=r+s$: $p=s$.',
+        'Shortcut · Pick values that fit: two equations and four letters, therefore numbers that fit the givens are enough to test '
+        'the choices. $p=1$, $q=2$, $r=2$, $s=1$: rows $1+2=2+1$ ✓, columns $1+2=2+1$ ✓. Choice 2: $1=2$ ✗. '
+        'Choice 3: $ps=1$ but $qr=4$ ✗. Choice 4: $p+s=2$ but $q+r=4$ ✗. Only choice 1 is left.'])
+    S(P(30), 'There are $n$ children in a room, where $n\\ge4$. Each child starts with $3n$ stickers. The children leave the room '
+      'one at a time. Just before leaving, a child gives 3 stickers to every other child still in the room. How many stickers '
+      'does the fourth child to leave have left after giving out his stickers, as he leaves?',
+      ['$3n+9$', '12', '21', '$3n-12$'], 3, [
+        'The first three children each give the fourth child 3 stickers: $+9$. Before he gives, he has $3n+9$.',
+        'When he leaves, $n-4$ other children are still in the room. He gives each of them 3 stickers: $-3(n-4)$.',
+        '$3n+9-3(n-4)=3n+9-3n+12=21$.',
+        'Check with $n=4$: he starts with 12, gets 9, and gives nothing (nobody is left): 21 ✓.'])
+
+
+def rn_practice(M):
+    """Approved clean-up: copies out, at most 3 extra-bank warm-ups, September items whose type the Hebrew covers out."""
+    N = lambda k: 'q-r26-t22-' + k
+    P = lambda n: 'wp22-p%02d' % n
+    out = [
+        # copy (practice_audit/copies_by_topic.txt, checked): same story and structure as the kept N('16') (notebooks and
+        # pens, one equation, asked another combination); the "it is a multiple" case is the lesson's own example (4a + 6p)
+        N('17'),
+        # extra-bank warm-ups beyond 3 (kept: p34 ages "3 times then 2 times", p35 blend - the unchanged part,
+        # p37 "4 adult tickets cost as 7 child tickets" - costs-the-same-as substitution)
+        P(31),              # ratio 5 : 7, 18 added, equal: one part changes - p35 and guided Q9
+        P(32),              # two price plans equal: build an equation - p06, guided Q10
+        P(33),              # tank 3/5 -> 4/5 after 28 L: part of a whole - p13, p07
+        P(36),              # train / bus +7, assume all the same - p21, guided Q24
+        # September items of a type the Hebrew practice (or a kept item) already covers
+        N('07'),            # 5 : 2 and 1.5 times, shared letter - kept N('06'), guided Q8
+        N('09'),            # machines break down: inverse proportion - kept N('08'), guided Q3
+        N('10'),            # letters in the choices (m members) - p08, p30
+        N('11'),            # letters in the choices (n boxes of k) - p08, p30
+        N('12'),            # test scoring, assume all the same - p21
+        N('13'),            # ratio 4 : 3, girls join, equal - p35, guided Q9
+        N('14'),            # buses, round up - kept N('15') ("or part of")
+        N('18'),            # ratio 5 : 6 -> 1 : 2, both parts change - p16, p25
+        N('19'),            # profit shared 6 : 3 : 2 from "times" - p02
+    ]
+    for qid in out:
+        if qid in M.D['questions'] and any(f['ref'] == qid for f in M.D['flow']) and M.section_of(qid) == PRAC:
+            M.unplace(qid)
+    M.practice_order(PRAC, [
+        P(3), P(4), P(8), P(12), P(7), P(14), P(37), N('08'), N('06'), P(6), P(2), P(10), P(22), P(16), P(25),
+        P(15), P(20), P(21), P(19), P(13), P(35), N('15'), P(1), P(5), P(9), P(11), P(23), P(34), P(17), N('16'),
+        P(29), P(26), P(28), P(24), P(27), P(18), P(30)])
+
+
+def rn_titles(M):
+    """Solution videos: title and slide description show the new stems."""
+    for f in M.D['flow']:
+        if f['topic'] != TOPIC or f['type'] != 'video': continue
+        v = M.video(f['ref']); qid = v.get('questionId')
+        if not qid or not qid.startswith('wp22-g') or f['ref'] in RN_RECORDED: continue
+        stem = M.q(qid)['stem']
+        v['title'] = v['navLabel'] = stem
+        for b in v['beats']:
+            if b['mode'] == 'question':
+                b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, stem)
+        M.touched_videos.add(f['ref'])
+
+
+def renumber_pass(M):
+    rn_lessons(M)
+    rn_guided(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+    rn_titles(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last

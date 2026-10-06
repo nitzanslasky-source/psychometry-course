@@ -89,3 +89,68 @@ Function `cut_repeats` (runs last). Each lesson is back to a short intro like th
 
 ## 2026-10-06 practice: new methods
 No change. Every 2026-10-06 method is taught in topic 23 or later (flip rule, arrow map, hidden total, shares as weights, compare by factors, the V in motion, doors) or in topic 51 (pick values that fit), and none of the topic 21 practice questions has more unknowns than equations, so nothing fits without forcing it. Topic 21's own min/max method is already what these questions use. Nothing in topic 21 is recorded.
+
+## 2026-10-06 renumber pass
+The goal is that the English course does not look like the Hebrew one. Every Hebrew-derived question gets a new story (names, objects, setting) and new numbers. The math structure, the trap, the level and the methods stay the same. Every guided solution video is rewritten to match: speech, draw cues, board items, tables and sequence boxes, the video title, and the title-slide line that names the story. Nothing in Topic 21 is recorded (checked ~/Documents/Course.recordings), so nothing had to be kept as it was. Function `renumber_pass(M)` in t21.py runs last (after `summary` and `cut_repeats`; topic 21 has no `practice_methods` lines).
+
+**Counts:** 16 guided questions renumbered with their 16 solution videos rewritten. 20 practice questions renumbered (wp21-p01 … p20). Lesson examples: none are Hebrew-derived (the lessons were cut to their Hebrew intros on 10-05; the remaining examples, such as the summary, "Tuesday + 30 days", 3²² and the 26 = 1 + 2 + 23 board, were made in English), so no new numbers were needed. Two lines that named the old lamps now say "flags" (the Patterns & Cycles lesson and the toolkit card). Practice: **35 → 26**.
+
+**wp21-g015 = wp21-g021 (word for word the same):** In the Hebrew, the teacher solves the planters question by plugging in (advanced trial and error). Later, in the advanced min-max lesson, he comes back to the same question to show the shortcut. Neither one is a stray copy, because each has its own video and method. They are now two different questions of the same type. Q8 (g015): 22 baskets, 80 apples, plugging in → 7. Q14 (g021): 26 children, 90 stickers, the spare-units shortcut plus the "only the ends" range idea → 13. The Q8 video now ends "We'll come back to this type with a shortcut". The Q14 video starts "Stickers this time — the same type as Question eight, with new numbers", and its written solution starts "The same type as the apple baskets, now with a shortcut."
+
+**Order:** Q9 (g017, spelling test) and Q10 (g018, piggy banks) are rated easy+ in the Hebrew. They move before the socks question (medium), right after "More Minimum & Maximum". The socks question is now Q11. Nothing in either video depends on the other (the last-digit trick is still taught in g017 before g019 uses it "from before"). The titles and sidebars are renumbered by the build. The correct-answer positions changed. Guided keys are now 3, 2, 2, 2, 1 | 2, 3, 4, 3, 1, 2, 4, 2, 2, 3, 3 (before: 4, 4, 4, 2, 4, …).
+
+**Practice clean-up (35 → 26):**
+- Copies removed: wp21-p26 (six packs of 4 or 9 markers, the same as the old guided token question), wp21-p23 (36 stickers in different amounts, the same as guided Q3), q-r26-t21-11 (units digit of 7⁵⁰, the same as Topic 15 and Topic 18 items).
+- Extra warm-ups: 3 kept (p21 printer, p27 largest of five scores, p25 spare pencils). Removed p22 (lights every 8 and 14 s, the same as guided Q18 and the summary's 8-and-14 example) and p24 (52 lockers, one red in every 4, locker 2, the same as the old guided lamps question).
+- September items: 3 kept, each a type the Hebrew practice does not have: -07 (n-th term, plug in n = 3), -10 (Monday + 100 days), -06 (must be true, three different shares of 25). Removed -03 and -04 ("to be sure": worst luck + 1 is practised by p14 and guided Q9), -05 (birthdays: worst luck + must), -09 (sum of evens: the same plug-in as -07 and guided Q5).
+- That is one above the audit target of 25, because three September types are not in the Hebrew practice.
+- New order, easy → hard: p21, p02, p04, p01, p08, p27, p07, p16, p11, p10, -07, -10, p05, p09, p15, p20, p03, p25, p14, p19, p06, -06, p12, p13, p17, p18.
+
+**Checks:** every key was brute-forced in Python. This covered all pop routes, all vehicle lines, all chip totals, every distribution for the baskets and stickers, every piggy-bank sequence, every split of 36 cards, every 5-box mix and every rope combination. Each question has exactly one correct choice, and each trap is still a choice: the wrong road (4), the skipped 20 / 32 / 23, n = 1 tie, 27 = 27 tenors, 7 just below the minimum 8, "at least ⅕" as the maximum (70, 140), off-by-one ranges, 34 → 1 + 1, 110 after the removal, 09:20 = third, Wednesday's 18 and Friday's 3, 6 additional workers. Every step in the videos was recomputed. A duplicate check over a build of all topics (stems, choices, lesson boards and lines, cards) found only number coincidences, with no question equal to another question or to a lesson example. The new numbers also differ from the Hebrew transcript (spaceships 3 small, 4 m / 2.5 m cars, 20 hair ties, 30 eggs, 7/11 coin, 50 animals, 20 planters / 70, 9–15 questions ⅓, 7 jars 8/32, 13 kids, 21 marbles, 65 eggs / 20, 40 kids every 3, coffee 12/15).
+- The word "disc" was not used, because the NITE terminology pass turns it into "circle". The game piece is a "plastic game chip".
+- `python3 math_check.py 21 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. All 16 videos were rendered and looked at: the tables and sequence boxes match, and the sidebars highlight the right question.
+
+| id (new Q) | old | new | answer |
+|---|---|---|---|
+| g004 (Q1) | 2 large crystals, large → 4 small, 3 breaks; 4/5/6/7 | phone game, 2 large bubbles, large → 5 small, 3 pops; 5/6/9/10 (totals 4 or 9) | 9 (3) |
+| g005 (Q2) | van 5 m, scooter 2 m, gap 1 m; 8, 11, 14, 10 | truck 10 m, car 4 m, gap 2 m at a traffic light; 16, 20, 22, 28 | 20 (2) |
+| g007 (Q3) | mentor, 32 pins, different amounts | Noa, 42 postcards to friends | 8 (2) |
+| g009 (Q4) | drill 46 reps, halve −1, round 4 | bakery 78 loaves Mon, halve −1, Thursday | 8 (2) |
+| g010 (Q5) | 3 crates doubling, total through day n | app 5 downloads doubling | 5(2ⁿ − 1) (1) |
+| g013 (Q6) | token 4/9, 6 tosses; 41 | game chip 2/6, 7 tosses; 32 | 32 (2) |
+| g014 (Q7) | festival dancers = 3 × singers, actors more, 70 | choir sopranos = 3 × altos, tenors more, 63 | 24 (3) |
+| g015 (Q8) | 24 boxes, 86 markers, ≥ 3 | 22 baskets, 80 apples, ≥ 3 | 7 (4) |
+| g017 (Q9) | quiz 12–20 questions, 16 students, ≥ ¼ | spelling test 10–25 words, 14 students, ≥ ⅕ | 28 and 350 (3) |
+| g018 (Q10) | 9 jars, 6 … 42, ≥ 3 more, 5th | 8 piggy banks, 5 … 47, ≥ 4 more, 4th | 17 to 31 (1) |
+| q-r26-t21-01 (Q11) | socks (English-made, unchanged) | – | 7 (3) |
+| g019 (Q12) | 17 campers, 4–6 + 2–5 − (1–3) | 23 children at a fair, 3–5 + 2–4 tickets − (1–3) | 46 and 184 (2) |
+| g020 (Q13) | Amir/Beth/Cara, 30 counters | Lior/Maya/Noam, 36 cards | 13 and 33 (4) |
+| g021 (Q14) | identical to g015 (24 boxes, 86 markers) | 26 children, 90 stickers, ≥ 3 (spare units + ends) | 13 (2) |
+| q-r26-t21-02 (Q15) | must be true (English-made, unchanged) | – | (4) |
+| g023 (Q16) | 58 files, ×2, −16, day 3 before deletion | 40 bacteria, ×2, −30, day 3 before removal | 140 (2) |
+| g024 (Q17) | 56 lamps, one blue in every 4, lamp 2 | 60 flags, one red in every 5, flag 3 | 43 (3) |
+| g025 (Q18) | lights 18 / 24 min from 07:30, 4th | buses 16 / 20 min from 06:40, 4th | 10:40 (3) |
+| p01 | 120 pieces, circles = squares > triangles | 150 beads, red = blue > green | 46 (3) |
+| p02 | Nora / Sam sketchbooks, cases | Ella / Ben stamps, postcards | 5–19; 2–10 (2) |
+| p03 | 4 vouchers of 2 / 7 / 12 | 3 stamps of 3 / 7 / 11 cents | 23 (3) |
+| p04 | passes 120 / 60 / 30, 8, exactly 3 museum | tickets 90 / 50 / 20, 7, exactly 2 theater | 200–550 (4) |
+| p05 | card shop, half sold, +3 per sold, 24 | pet shop, half sold, +2 per sold, 32 | 108 (3) |
+| p06 | 1, ⅓, ⅑, … (÷ 3) | 2, ½, ⅛, … (÷ 4); reordered | "some term negative" (1) |
+| p07 | 28 badges, n teams | 21 medals | n = 7 (2) |
+| p08 | seats 1–270, every 6th / 9th | pages 1–240, every 8th / 12th | 10 (3) |
+| p09 | 6 musicians (2) + 8 actors (4), 9 attend | 7 parents (3 cakes) + 5 teachers (1), 10 come | 20–24 (3) |
+| p10 | 48 questions, +3 / −2, answers 42 | 40 questions, +4 / −2, answers 35 | 128 (4) |
+| p11 | card 5 / 2, 7 draws, ÷ 8 | spinner 4 / 1, 6 spins, ÷ 7 | 21 (3) |
+| p12 | 18 robots, ≥ half move, ≥ 4 blue stay | 24 students, glasses, ≥ 5 stay | 0–19 (3) |
+| p13 | 2 / 4 / 6 / 8 kg at 3 / 6 / 8 / 10, 28 kg in 5 | 3 / 6 / 9 / 12 kg at 4 / 7 / 10 / 12 dollars, 42 kg in 5 | 44 (4) |
+| p14 | 4 players, 5 min, stop at 4 wins | 5 friends, 4 min, stop at 3 wins | 44 (1) |
+| p15 | 3–9 yellow, 5–8 black | 4–11 red pens, 6–9 blue pens | 11/17 (3) |
+| p16 | 148 m fence, 3 m stripes, 2 m gaps | 116 m wall, 4 m stripes, 3 m gaps | 17 (2) |
+| p17 | ribbons 18, 10, 5, 3; 7 | ropes 20, 12, 7, 3; 8 | 8 (4) |
+| p18 | four 7-credit + three 1-credit tokens | five 5-cent + three 1-cent coins | 23 (2) |
+| p19 | 27 volunteers, ⅓ remote | 33 store workers, ⅓ at night | 17–21 (1) |
+| p20 | 8 parcels/h, +3 per extra, 7 volunteers | 12 boxes/h, +2 per extra, 6 workers | 132 (1) |
+
+## 2026-10-06 review (renumber pass)
+Independent review: all 16 guided (videos step by step), 20 practice items, practice removals, order change and the two
+flag lines checked; keys brute-forced, traps present, same type/steps; nothing matches the Hebrew subtitles. No changes.

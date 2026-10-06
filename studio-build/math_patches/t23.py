@@ -991,3 +991,729 @@ def practice_methods(M):
     _pm_add(M, 'q-r26-t23-10', [r'Method 2 · Arrow map: original → first price $\times1.2$, original → second price $\times1.5$. From the first price to the second: $1.5\div1.2=1.25$, a rise of $25\%$.'])
     _pm_add(M, 'q-r26-t23-09', [r'"Rose BY" or "became"? $300\%$ more means $x$ rose BY $300\%$. It BECAME $100\%+300\%=400\%$ of $y$ (the multiplier $\times4$). The trap $300\%$ mixes up the two.'])
     _pm_add(M, 'q-r26-t23-13', [r'Method 2 · Arrow map: original $\times1.2$, then $\times0.75$, gives $180$. Walk back against the arrows, dividing: $180\div0.75\div1.2=240\div1.2=200$.'])
+
+
+# =====================================================================================
+# 2026-10-06 renumber pass (runs LAST, after practice_methods)
+# The English course must not look like the teacher's Hebrew course: every Hebrew-derived question (guided
+# wp23-g054, g057 .. g065; practice wp23-p01 .. p20) gets new numbers and a new story (names, objects, setting) -
+# same concept, same trap, same level, at least the same methods - and every guided solution video is rewritten to
+# match. The Hebrew lesson examples in "Calculating Percentages" and "Percent of a Percent" get new numbers, and the
+# memory card follows them. g058 (the easiest) moves before g057. Approved practice clean-up: 35 -> 26.
+# Nothing in topic 23 is recorded (no take in ~/Documents/Course.recordings, checked 2026-10-06).
+# =====================================================================================
+RN_RECORDED = set()
+
+
+def _rn_walk(x, mp, used):
+    """Replace exact whole strings (keys of mp) anywhere inside x (str / list / dict)."""
+    if isinstance(x, str):
+        if x in mp: used.add(x); return mp[x]
+        return x
+    if isinstance(x, list): return [_rn_walk(y, mp, used) for y in x]
+    if isinstance(x, dict): return {k: (_rn_walk(v, mp, used) if k not in ('k', 'qid') else v) for k, v in x.items()}
+    return x
+
+
+def _rn_slide(M, vid, n, mp):
+    """Exact whole-string replacement on one slide (spoken lines, draw cues, labels, board items, tables).
+    Every key must be found. Single pass: a replacement never feeds another one."""
+    from math_api import rich_plain
+    if vid in RN_RECORDED: return
+    b = M.slide(vid, n); used = set()
+    b['lines'] = _rn_walk(b['lines'], mp, used)
+    b['items'] = _rn_walk(b['items'], mp, used)
+    miss = set(mp) - used
+    assert not miss, '%s #%d: not found: %s' % (vid, n, sorted(miss))
+    if b['pre'] and (b.get('canvas') or '').startswith('Pre-loaded'):
+        b['canvas'] = 'Pre-loaded — ' + '; '.join(rich_plain(it.get('t', it.get('qid', 'figure'))).replace('\\%', '%') for it in b['items'][:b['pre']])
+    M.touched_videos.add(vid)
+
+
+def _rn_q(M, qid, stem, choices, correct, expl):
+    if qid in RN_RECORDED: return
+    M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+
+
+def _rn_item(M, vid, n, k):
+    b = M.slide(vid, n); return b['items'][k]
+
+
+def _rn_video(M, qid, title_lines, slides):
+    """Rewrite a guided question's solution video: title-slide lines + every question slide (title, script).
+    The pre-loaded question stays."""
+    vid = 'solve-' + qid
+    if vid in RN_RECORDED: return
+    v = M.video(vid)
+    assert len(v['beats']) == len(slides) + 1, (vid, len(v['beats']))
+    if title_lines is not None:
+        # {line index: new text}. Spoken "Question N" uses the BASE numbering (renumber_guided() maps it),
+        # so the first line ("Question six.") is normally kept as it is.
+        b0 = v['beats'][0]; assert b0['mode'] == 'title'
+        for k, t in title_lines.items():
+            assert 'say' in b0['lines'][k], (vid, k)
+            b0['lines'][k] = {'say': t}
+    for n, (title, script) in enumerate(slides, 2):
+        assert v['beats'][n - 1]['mode'] == 'question', (vid, n)
+        M.set_slide(vid, n, title=title, script=script)
+    v['title'] = v['navLabel'] = _plain(M.q(qid)['stem'])
+    M.touched_videos.add(vid)
+
+
+def rn_guided(M):
+    # ---------- G1 wp23-g054: survey, 55% no bicycle; of owners 40% electric, rest ordinary only -> 27%
+    #            ==> students, 35% play no instrument; of players 80% piano, rest guitar only -> 13%
+    g = 'wp23-g054'
+    _rn_q(M, g, 'In a survey, $35\\%$ of the students do not play a musical instrument. Of the students who play an instrument, $80\\%$ play the piano and the rest play only the guitar. What percentage of all the surveyed students play only the guitar?',
+          ['$20\\%$', '$52\\%$', '$13\\%$', '$80\\%$'], 3, [
+              'Plug in $100$ students. $35$ do not play an instrument, so $100-35=65$ play one.',
+              'The $80\\%$ is of the players: $10\\%$ of $65$ is $6.5$, so $80\\%$ of $65$ is $8\\times6.5=52$ play the piano.',
+              'Guitar only: $65-52=13$ students out of $100$, so $13\\%$.',
+              'Percent tree: $20\\%$ of $65\\%$ is $0.2\\times65\\%=13\\%$.'])
+    tree = dict(_rn_item(M, 'solve-' + g, 3, 1))
+    tree['v'] = dict(tree['v'], values=['100%', '65%', '?'], labels=['Everyone', 'Players', 'Guitar only'])
+    _rn_video(M, g, None, [
+        (None, [
+            "The whole is the survey. So: a hundred students.",
+            D('Above "35%" write "35" and next to it "players 65"'),
+            "Thirty-five don't play an instrument. So sixty-five do.",
+            "Now eighty percent — of whom? Of the players. Of sixty-five.",
+            D('Above "80%" write "80% of 65 = 52"'),
+            "Ten percent of sixty-five: six and a half. Eighty percent: eight times that — fifty-two play the piano.",
+            D('Write "65 − 52 = 13" and circle choice 3'),
+            "The rest play only the guitar: sixty-five minus fifty-two — thirteen. We started from a hundred, so that's thirteen percent. Choice three.",
+            "Or skip the subtraction: twenty percent of sixty-five — thirteen directly.",
+            "Notice what I did: I wrote the numbers right on top of the question. Do exactly that in the exam.",
+        ]),
+        (None, [
+            "Second way: a percent tree. More visual — but more writing.",
+            A('The tree path appears: Everyone → Players → Guitar only', tree),
+            "Split the survey: thirty-five percent don't play — the other branch, sixty-five percent players.",
+            "Now split the players. And here's the classic mistake: every time you go down a branch, that group becomes the new hundred percent.",
+            D('Under "Guitar only" write "20% of players"'),
+            "Eighty percent piano — so twenty percent guitar only, of the players. Branches always add up to a hundred.",
+            D('Write "20% × 65% = 13%" and circle choice 3'),
+            "To get a bottom branch, multiply along the path: twenty percent of sixty-five percent. Twenty percent is a fifth — a fifth of sixty-five is thirteen. Thirteen percent.",
+            "Visual, yes. But once you've practiced it, plugging in a hundred is faster.",
+        ])])
+
+    # ---------- G3 wp23-g058: 760 credits, -75% -> 190  ==>  winter coat 680 credits, -75% -> 170
+    g = 'wp23-g058'
+    _rn_q(M, g, 'A winter coat originally costs $680$ credits. In a clearance sale, its price is reduced by $75\\%$. What is the new price?',
+          ['$510$', '$170$', '$605$', '$160$'], 2, [
+              'A $75\\%$ reduction leaves $100\\%-75\\%=25\\%=\\frac14$ of the price.',
+              '$680\\div4=170$.'])
+    # g058 now comes first in the section. Spoken numbers use the OLD numbering: renumber_guided() maps them
+    # (old "three" -> new two for g058, old "two" -> new three for g057).
+    _rn_video(M, g, {0: "Advanced percentages — question three.", 1: "Easy one — but there's a smarter route."}, [
+        (None, [
+            "Start: six eighty. The price drops seventy-five percent.",
+            D('Write "10% = 68"'),
+            "Ten percent of six eighty: sixty-eight.",
+            D('Write "75% = 7·68 + 34 = 476 + 34 = 510"'),
+            "Seventy percent: seven times sixty-eight — four seventy-six. Five percent is half of ten: thirty-four. Seventy-five percent: five ten.",
+            D('Write "680 − 510 = 170" and circle choice 2'),
+            "That's the drop. The new price: six eighty minus five ten — a hundred seventy. Choice two.",
+            "Choice one, five ten, is the trap: that's the drop, not the new price.",
+        ]),
+        (None, [
+            "But in percent questions it's often easier to calculate what's LEFT — the complement.",
+            D('Write "100% − 75% = 25%"'),
+            "A seventy-five percent drop leaves twenty-five percent.",
+            D('Write "680 ÷ 4 = 170" and circle choice 2'),
+            "Twenty-five percent is a quarter. Halve twice: three forty, one seventy. Same answer — much shorter.",
+        ])])
+
+    # ---------- G2 wp23-g057: battery used 72.5% -> 11/40 remains  ==>  ink cartridge used 57.5% -> 17/40
+    g = 'wp23-g057'
+    _rn_q(M, g, 'A printer cartridge has used $57.5\\%$ of its ink. What fraction of the ink remains?',
+          ['$\\frac{23}{40}$', '$\\frac{17}{40}$', '$\\frac{17}{20}$', '$\\frac{2}{5}$'], 2, [
+              'Remaining: $100\\%-57.5\\%=42.5\\%$.',
+              '$42.5\\%=\\frac{42.5}{100}=\\frac{85}{200}$ (top and bottom times $2$). Reduce by $5$: $\\frac{17}{40}$.'])
+    _rn_video(M, g, {0: "Question two.", 1: "The answer choices here hide a shortcut. Watch."}, [
+        (None, [
+            "Fifty-seven point five percent used. So what's left?",
+            D('Write "100 − 57.5 = 42.5%"'),
+            "Forty-two and a half percent remains.",
+            "But the answers are fractions. So convert — put it over a hundred.",
+            D('Write "42.5/100 → ×2 → 85/200"'),
+            "First get rid of the decimal point: expand by two. Eighty-five over two hundred.",
+            D('Write "÷5 → 17/40" and circle choice 2'),
+            "Reduce by five: seventeen fortieths. Choice two.",
+        ]),
+        (None, [
+            "Now psychometric thinking. These choices aren't random.",
+            D('Next to choice 3 write "1/20 = 5% → 17/20 = 85%"'),
+            "Plenty of you know one twentieth is five percent — a hundred over twenty. So seventeen twentieths is seventeen fives: eighty-five percent. Not ours.",
+            D('Next to choice 2 write "half of 85% = 42.5% ✓"'),
+            "But seventeen fortieths is exactly HALF of seventeen twentieths. Half of eighty-five: forty-two and a half. That's it.",
+            D('Next to choice 1 write "57.5% — the ink USED"'),
+            "And choice one, twenty-three fortieths, is fifty-seven and a half percent — the ink that was used. A trap.",
+            D('Circle choice 2'),
+            "The examiners built these choices so the sharp student gets there fast. Choice two.",
+        ])])
+
+    # ---------- G4 wp23-g059: 60 -> 66 -> 72, compare the rises (10% vs 1/11)  ==>  ticket 40 -> 50 -> 60 (25% vs 20%)
+    g = 'wp23-g059'
+    _rn_q(M, g, 'The price of a cinema ticket rises from $40$ credits to $50$ credits, and later to $60$ credits. How do the two percentage increases compare?',
+          ['The increases are equal', 'The second percentage increase is larger', 'The first percentage increase is larger',
+           'Their sizes cannot be compared'], 3, [
+              'Each rise is $10$ credits.',
+              'First rise: $\\frac{10}{40}=\\frac14=25\\%$. Second rise: $\\frac{10}{50}=\\frac15=20\\%$.',
+              'Same top, bigger bottom: $\\frac15<\\frac14$. The first percentage increase is larger.'])
+    _rn_video(M, g, None, [
+        (None, [
+            "Forty to fifty, then fifty to sixty. Ten credits each time.",
+            D('Write "10/40 = 1/4 = 25%"'),
+            "First rise: ten out of forty — a quarter. Twenty-five percent.",
+            D('Write "10/50 = 1/5 = 20%"'),
+            "Second rise: ten out of fifty — one fifth. Twenty percent.",
+            "Bigger or smaller? One cake for four kids — or one cake for five kids? Five kids each get less.",
+            D('Write "1/5 < 1/4" and circle choice 3'),
+            "Same top, bigger bottom — smaller fraction. The first rise is larger. Choice three.",
+        ]),
+        ('Method 2 · Add 25% again', [
+            "Another way. What if the second rise were twenty-five percent too?",
+            D('Write "50 + 12.5 = 62.5 > 60"'),
+            "Twenty-five percent of fifty is twelve and a half — you'd reach sixty-two and a half. But it only reached sixty. Less than twenty-five percent.",
+            D('Circle choice 3'),
+            "Same ten credits — but the whole grew, so the percent shrank. Choice three.",
+        ])])
+
+    # ---------- G5 wp23-g060: gives away 25% of points, bonus 30% of the rest -> 2.5% lower
+    #            ==>  Noa loses 30% of her coins, prize 40% of the rest -> 2% fewer
+    g = 'wp23-g060'
+    _rn_q(M, g, 'In a computer game, Noa loses $30\\%$ of her coins. She then wins a prize equal to $40\\%$ of the coins she has left. Compared with the number of coins she had at the start, how many coins does she have now?',
+          ['$2\\%$ more', '$2\\%$ fewer', '$10\\%$ more', '$12\\%$ fewer'], 2, [
+              'Plug in $100$ coins. Losing $30\\%$ leaves $70$.',
+              'The prize is $40\\%$ of $70$: $4\\times7=28$. Final number: $70+28=98$.',
+              '$98$ out of $100$: $2\\%$ fewer.',
+              'With multipliers: $0.7\\times1.4=0.98$, which is $98\\%$ of the start.'])
+    _rn_video(M, g, {1: "She loses some, then wins some back. Up or down?"}, [
+        (None, [
+            "Let's start with algebra. She has x coins.",
+            D('Write "x − 30% of x = 70% of x"'),
+            "She loses thirty percent OF x. A percent never stands alone — always attach its whole. And x minus thirty percent of x? Take the complement: seventy percent of x.",
+            D('Write "+40% of that → 1.4 × 0.7x = 0.98x"'),
+            "Then a prize of forty percent — of what she has LEFT. Keep all of it and add forty percent: one point four times.",
+            D('Write "98% of x → 2% fewer" and circle choice 2'),
+            "Ninety-eight percent of x. Two percent fewer. Choice two.",
+        ]),
+        (None, [
+            "Now the psychometric way. No numbers given — plug in a hundred. Into the whole: the coins she had at the start.",
+            D('Write "100 → 70"'),
+            "A hundred coins. Lose thirty: seventy.",
+            D('Write "40% of 70 = 28 → 98"'),
+            "Prize: forty percent of seventy — not forty coins! Ten percent is seven; forty percent is twenty-eight. Total: ninety-eight.",
+            D('Circle choice 2'),
+            "Two short of a hundred — two percent fewer. Choice two.",
+            "The trap is choice three: forty minus thirty, ten percent more. But the forty percent is of the smaller amount.",
+            "Would two hundred work? Two hundred, lose sixty: a hundred forty. Plus forty percent: fifty-six. A hundred ninety-six — four out of two hundred. Still two percent.",
+            "So why a hundred? Two reasons. Your final number IS the percent — no converting. And percents of a hundred are the easiest there are.",
+        ])])
+
+    # ---------- G7 wp23-g061: Rae 20% more than Sol, Tia 16 2/3% less than Rae -> 1  (+1/5, -1/6)
+    #            ==>  Dana 50% more than Omer, Lior 33 1/3% less than Dana -> 1  (+1/2, -1/3)
+    g = 'wp23-g061'
+    _rn_q(M, g, 'Dana earns $50\\%$ more than Omer. Lior earns $33\\frac13\\%$ less than Dana. What is Lior’s wage divided by Omer’s wage?',
+          ['$\\frac32$', '$\\frac76$', '$\\frac23$', '$1$'], 4, [
+              'Plug in $100$ for Omer. Dana earns $50\\%$ more: $150$.',
+              '$33\\frac13\\%=\\frac13$. Lior earns $\\frac13$ less than Dana: $150-\\frac{150}{3}=150-50=100$.',
+              'Lior’s wage divided by Omer’s wage: $100\\div100=1$.'])
+    ex = dict(_rn_item(M, 'solve-' + g, 3, 1), t='$+\\frac13$ then $-\\frac14$ $\\qquad$ $+\\frac15$ then $-\\frac16$')  # review: not 1/4, 1/5 (the Hebrew question's +25%, -20%)
+    _rn_video(M, g, {1: "Up fifty percent, down thirty-three and a third. Where do we land?"}, [
+        (None, [
+            "No wages given — plug in a hundred. Into whom? Dana earns more than Omer — so Omer is the whole.",
+            D('Write "Omer 100 → Dana 150"'),
+            "Omer: a hundred. Dana, fifty percent more: a hundred fifty.",
+            D('Write "1/3 of 150 = 50 → Lior 100"'),
+            "Thirty-three and a third percent — that's one third, straight from our table. A third of one fifty is fifty. Lior: a hundred.",
+            D('Write "100 ÷ 100 = 1" and circle choice 4'),
+            "Lior over Omer: a hundred over a hundred. One. Choice four.",
+            "The trap is choice two: fifty minus thirty-three and a third, sixteen and two thirds percent more. But the third is taken from Dana's bigger wage.",
+        ]),
+        (None, [
+            "We added fifty percent, removed thirty-three and a third — and landed right back. Coincidence? No.",
+            D('Write "+1/2, then −1/3"'),
+            "Fifty percent is one half. Thirty-three and a third percent is one third.",
+            A('Two examples appear: +1/3 then −1/4, and +1/5 then −1/6', ex),
+            "A whole is three thirds. Add a third: four thirds. Now remove a quarter — one of those four thirds — and you're back.",
+            "Add a fifth: six fifths. Remove a sixth — one of the six — back again.",
+            D('Write "2 halves → 3 halves → remove 1 of 3 → 2 halves" and circle choice 4'),
+            "Here: two halves, add one — three. Remove a third — one of the three — back to two halves. Consecutive unit fractions always cancel. Choice four.",
+        ])])
+
+    # ---------- G8 wp23-g062: 50% of 15% of x = 12, 22.5% of x? -> 36  ==>  25% of 18% of y = 9, 13.5% of y? -> 27
+    g = 'wp23-g062'
+    _rn_q(M, g, '$25\\%$ of $18\\%$ of $y$ equals $9$. What is $13.5\\%$ of $y$?',
+          ['$18$', '$27$', '$22.5$', '$36$'], 2, [
+              '$25\\%$ of $18\\%$ is a quarter of $18\\%$: $4.5\\%$. So $4.5\\%$ of $y$ is $9$.',
+              '$13.5\\%=3\\times4.5\\%$, so $13.5\\%$ of $y$ is $3\\times9=27$. There is no need to find $y$.'])
+    _rn_video(M, g, None, [
+        (None, [
+            "Twenty-five percent of eighteen percent of y is nine. \"Of\" means times — so it's all one multiplication.",
+            D('Write "1/4 × 9/50 × y = 9"'),
+            "Twenty-five percent: a quarter. Eighteen percent: eighteen hundredths — nine fiftieths.",
+            D('Write "9y/200 = 9 → y = 200"'),
+            "Nine two-hundredths of y is nine. So one two-hundredth of y is one, and y is two hundred.",
+            D('Write "13.5% of 200 = 20 + 6 + 1 = 27" and circle choice 2'),
+            "Thirteen and a half percent of two hundred: ten percent is twenty, three percent is six, half a percent is one. Twenty-seven. Choice two.",
+        ]),
+        (None, [
+            "Now the trick. a percent of b equals b percent of a — you can swap them. It's one multiplication. Thirty-seven percent of sixty-four is sixty-four percent of thirty-seven.",
+            "So twenty-five percent of eighteen: just a quarter of eighteen. Four and a half.",
+            D('Write "4.5% of y = 9"'),
+            "Four and a half percent of y is nine.",
+            D('Write "13.5% = 3 × 4.5% → 3 × 9 = 27" and circle choice 2'),
+            "Thirteen and a half is exactly three times four and a half. So three times nine: twenty-seven. We never even needed y.",
+        ])])
+
+    # ---------- G9 wp23-g063: not equal to 15% of 4x (10% of 6x, 60% of x, 5% of 12x, 30% of 4x)
+    #            ==>  not equal to 16% of 5y (40% of 2y, 8% of 10y, 32% of 5y, 20% of 4y)
+    g = 'wp23-g063'
+    _rn_q(M, g, 'For $y>0$, which expression is not equal to $16\\%$ of $5y$?',
+          ['$40\\%$ of $2y$', '$8\\%$ of $10y$', '$32\\%$ of $5y$', '$20\\%$ of $4y$'], 3, [
+              '$16\\%$ of $5y=\\frac{16\\cdot5y}{100}=\\frac{80y}{100}$.',
+              'Every choice is also over $100$, so compare the tops: $40\\cdot2y=80y$, $8\\cdot10y=80y$, $32\\cdot5y=160y$, $20\\cdot4y=80y$.',
+              'Since $y>0$, $160y\\ne80y$. Only $32\\%$ of $5y$ is not equal.'])
+    _rn_video(M, g, None, [
+        (None, [
+            "Which is NOT equal to sixteen percent of five y?",
+            D('Write "16/100 × 5y = 80y/100"'),
+            "Sixteen over a hundred, times five y: eighty y over a hundred.",
+            "Every choice will also be something over a hundred. So don't reduce — just compare the tops.",
+            D('Next to choices 1, 2 and 4 write "80y"'),
+            "Forty times two y: eighty y. Eight times ten y: eighty y. Twenty times four y: eighty y. All equal — cross them out.",
+            D('Next to choice 3 write "160y" and circle choice 3'),
+            "Thirty-two times five y: a hundred sixty y. Not equal. Choice three.",
+        ]),
+        (None, [
+            "Or think in ratios. Twenty percent of a hundred is twenty. Double the whole to two hundred — you need half the percent, ten, to still get twenty.",
+            D('Write "percent × k  ⟺  whole ÷ k"'),
+            "Percent up, whole down by the same factor — same result.",
+            D('Next to choice 1 write "percent × 5/2,  whole × 2/5"'),
+            "Choice one: forty percent is five halves of sixteen. Two y is two fifths of five y. Five halves times two fifths is one. Balanced.",
+            "Choice two: the percent is halved, the whole is doubled. Balanced. Choice four: the percent times five quarters, the whole times four fifths. Balanced.",
+            D('Circle choice 3'),
+            "Choice three: the percent doubled — and the whole stayed five y. Nothing balances it. Choice three.",
+        ])])
+
+    # ---------- G11 wp23-g064: 80% Monday, rest Tuesday, difference 36 planks -> Tuesday 12
+    #            ==>  70% to a market, rest to a juice factory, difference 48 kg -> factory 36
+    g = 'wp23-g064'
+    _rn_q(M, g, 'A farmer sells $70\\%$ of his apples at a market and all the rest to a juice factory. The market gets $48$ kg more apples than the factory. How many kilograms of apples does the factory get?',
+          ['$24$', '$36$', '$48$', '$84$'], 2, [
+              'Market: $70\\%$. Factory: the rest, $100\\%-70\\%=30\\%$.',
+              'The difference is $70\\%-30\\%=40\\%$, and it equals $48$ kg.',
+              '$40\\%\\to48$, so $10\\%\\to48\\div4=12$ and $30\\%\\to3\\times12=36$ kg.'])
+    tab = dict(_rn_item(M, 'solve-' + g, 2, 1))
+    tab['v'] = dict(tab['v'], headers=['Percent', 'Kilograms'], rows=[['40%', '48'], ['30%', '?']])
+    _rn_video(M, g, {1: "The difference is the key — not the factory's amount."}, [
+        (None, [
+            "Market: seventy percent. The factory: the rest — thirty percent.",
+            D('Write "70% − 30% = 40% ↔ 48"'),
+            "The difference is forty percent — and that difference is forty-eight kilograms.",
+            A('A ratio table appears: 40% → 48, 30% → ?', tab),
+            "Put it in the ratio table.",
+            D('Write "30 × 48 ÷ 40 = 36" and circle choice 2'),
+            "Multiply the diagonal, divide by what's left: thirty times forty-eight, over forty. Thirty-six. Choice two.",
+            "Choice three, forty-eight, is the trap: that's the difference, not the factory's apples.",
+        ]),
+        (None, [
+            "Faster. Forty percent to thirty percent isn't one easy step. So take a middle step: forty percent down to ten percent — divide by four.",
+            D('Write "48 ÷ 4 = 12 → 12 × 3 = 36" and circle choice 2'),
+            "Forty-eight divided by four: twelve. That's ten percent. Thirty percent is three times that: thirty-six. Done.",
+            "The trick: when the ratio isn't obvious, take a middle step — divide by ten, or by the easy number — until it is.",
+        ])])
+
+    # ---------- G12 wp23-g065: each hour 20% removed, 128 L after two hours -> 200
+    #            ==>  each day 10% of a rain barrel used, 243 L after two days -> 300
+    g = 'wp23-g065'
+    _rn_q(M, g, 'At the end of each day, $10\\%$ of the water then in a rain barrel is used to water the garden. After two days, $243$ liters remain. How many liters were in the barrel at the start?',
+          ['$270$', '$324$', '$300$', '$280$'], 3, [
+              'Each day $10\\%$ is used, so $90\\%$ stays: multiply by $0.9$.',
+              'After two days: $0.9\\times0.9=0.81$, so $81\\%$ of the start remains.',
+              '$81\\%=243$ liters, so $1\\%=3$ liters and $100\\%=300$ liters.',
+              'Check: $300\\to270\\to243$ ✓.'])
+    chain = dict(_rn_item(M, 'solve-' + g, 2, 1))
+    chain['v'] = dict(chain['v'], labels=['Start', 'After 1 day', 'After 2 days'])
+    _rn_video(M, g, {0: "A barrel that loses water.", 1: "Water is used every day. Go back two days."}, [
+        (None, [
+            "Ten percent is used every day. After two days: two hundred forty-three liters. How much at the start?",
+            "Plug in a hundred — but careful. We already have a real number here, so we can't say \"a hundred liters\". We plug in a hundred PERCENT.",
+            A('A chain appears: Start → After 1 day → After 2 days', chain),
+            D('Write "90%" in the second box'),
+            "Ten percent used: ninety percent left.",
+            D('Write "81%" in the third box'),
+            "Now ten percent of what's in the barrel NOW — keep ninety percent of ninety: eighty-one percent. With multipliers: zero point nine times zero point nine.",
+            D('Write "81% = 243 L → 1% = 3 L → 100% = 300 L" and circle choice 3'),
+            "Eighty-one percent is two hundred forty-three liters — so every percent is three liters. A hundred percent: three hundred. Choice three.",
+            "Choice one, two seventy, goes back only one day.",
+        ]),
+        (None, [
+            "Or test the choices. Which first? The roundest one — three hundred.",
+            D('Write "300 → 270 → 243 ✓" and circle choice 3'),
+            "Three hundred, keep ninety percent: two hundred seventy. Keep ninety percent again: two hundred forty-three. Bang on. Choice three.",
+            "The round answer isn't always right — but it's usually the smartest one to test first.",
+        ])])
+
+
+def rn_order(M):
+    """g058 (75% off - the easiest) moves before g057 (fraction left). renumber_guided() renumbers the titles."""
+    M.move('wp23-g058', ADV, before='wp23-g057')
+    M.move('solve-wp23-g058', ADV, after='wp23-g058')
+
+
+def rn_lessons(M):
+    """Hebrew-derived lesson examples get new numbers (the English-made slides keep theirs).
+    2026-10-06 review: (10+x)% of 60 = (60-x)% of 40 -> (5+x) / (70-x) (the Hebrew had (10+x)% of 80 = (60-x)% of 60), and
+    15% -> 54 => 35% -> 25% (the Hebrew asked 14% -> 56 => 35%)."""
+    # ---- "Calculating Percentages" (wp-052) ----
+    _rn_slide(M, L1, 2, {
+        '$37\\%=\\frac{37}{100}$': '$29\\%=\\frac{29}{100}$',
+        "'37% = 37/100' appears": "'29% = 29/100' appears",
+        'Thirty-seven percent: thirty-seven hundredths.': 'Twenty-nine percent: twenty-nine hundredths.',
+        "And it's not a count until you know the whole. Thirty-seven percent of a hundred tickets is thirty-seven. Of two hundred tickets — seventy-four.":
+            "And it's not a count until you know the whole. Twenty-nine percent of a hundred tickets is twenty-nine. Of two hundred tickets — fifty-eight.",
+    })
+    _rn_slide(M, L1, 3, {
+        '$20\\%=\\frac{20}{100}$': '$30\\%=\\frac{30}{100}$',
+        "'20% = 20/100' appears": "'30% = 30/100' appears",
+        'Write "= 1/5"': 'Write "= 3/10"',
+        'Twenty percent: twenty hundredths — one fifth.': 'Thirty percent: thirty hundredths — three tenths.',
+        '$\\frac34$': '$\\frac{11}{25}$',
+        '3/4 appears': '11/25 appears',
+        'Write "×25" on top and bottom, then "= 75/100 = 75%"': 'Write "×4" on top and bottom, then "= 44/100 = 44%"',
+        'Four times twenty-five is a hundred. Three times twenty-five: seventy-five. Seventy-five percent.':
+            'Twenty-five times four is a hundred. Eleven times four: forty-four. Forty-four percent.',
+        '$\\frac25$': '$\\frac7{50}$',
+        '2/5 appears': '7/50 appears',
+        'Write "×20" on top and bottom, then "= 40/100 = 40%"': 'Write "×2" on top and bottom, then "= 14/100 = 14%"',
+        'Five times twenty: a hundred. Two times twenty: forty percent.': 'Fifty times two: a hundred. Seven times two: fourteen percent.',
+    })
+    _rn_slide(M, L1, 6, {
+        '$65\\%$ of $80$ = ?': '$45\\%$ of $80$ = ?',
+        'Write "= 65/100 × 80"': 'Write "= 45/100 × 80"',
+        'Sixty-five over a hundred, times eighty.': 'Forty-five over a hundred, times eighty.',
+        'Write "= 65 × 4/5 = 52"': 'Write "= 45 × 4/5 = 36"',
+        'Cancel twenty: four fifths of sixty-five. Fifty-two.': 'Cancel twenty: four fifths of forty-five. Thirty-six.',
+        '$A\\%$ of $60$ is $21$. $\\ A=?$': '$A\\%$ of $75$ is $21$. $\\ A=?$',
+        "'A% of 60 is 21. A = ?' appears": "'A% of 75 is 21. A = ?' appears",
+        'Write "A/100 × 60 = 21 → 60A = 2100 → A = 35"': 'Write "A/100 × 75 = 21 → 75A = 2100 → A = 28"',
+        'A over a hundred, times sixty, is twenty-one. Multiply by a hundred: sixty A is twenty-one hundred. A is thirty-five.':
+            'A over a hundred, times seventy-five, is twenty-one. Multiply by a hundred: seventy-five A is twenty-one hundred. A is twenty-eight.',
+        '$(20+x)\\%$ of $60$ = $(80-x)\\%$ of $40$': '$(5+x)\\%$ of $60$ = $(70-x)\\%$ of $40$',
+        "'(20+x)% of 60 = (80−x)% of 40' appears": "'(5+x)% of 60 = (70−x)% of 40' appears",
+        'Write "(20+x)·60 = (80−x)·40"': 'Write "(5+x)·60 = (70−x)·40"',
+        'Write "÷20: 3(20+x) = 2(80−x) → 5x = 100 → x = 20"': 'Write "÷20: 3(5+x) = 2(70−x) → 5x = 125 → x = 25"',
+        'Cancel twenty: three times twenty plus x equals two times eighty minus x. Sixty plus three x equals a hundred sixty minus two x. Five x is a hundred. x is twenty.':
+            'Cancel twenty: three times five plus x equals two times seventy minus x. Fifteen plus three x equals a hundred forty minus two x. Five x is a hundred twenty-five. x is twenty-five.',
+    })
+    _rn_slide(M, L1, 7, {
+        '65%': '45%', '42': '54', '35%': '25%',      # table cells (exact cells only)
+        'A ratio table appears: 100% → 80, 65% → ?': 'A ratio table appears: 100% → 80, 45% → ?',
+        'Draw the diagonal 65 × 80, then write "÷ 100 = 52"': 'Draw the diagonal 45 × 80, then write "÷ 100 = 36"',
+        'Multiply across the diagonal, divide by what\'s left. Sixty-five times eighty, over a hundred: fifty-two.':
+            'Multiply across the diagonal, divide by what\'s left. Forty-five times eighty, over a hundred: thirty-six.',
+        'A second table appears: 15% → 42, 35% → ?': 'A second table appears: 15% → 54, 25% → ?',
+        "Now the real power. Fifteen percent of some number is forty-two. What's thirty-five percent of it?":
+            "Now the real power. Fifteen percent of some number is fifty-four. What's twenty-five percent of it?",
+        'Write "÷3 → 5% = 14", then "×7 → 35% = 98"': 'Write "÷3 → 5% = 18", then "×5 → 25% = 90"',
+        'Divide both sides by three: five percent is fourteen. Seven of those: ninety-eight.':
+            'Divide both sides by three: five percent is eighteen. Five of those: ninety.',
+    })
+    _rn_slide(M, L1, 8, {
+        '$10\\%$ of $230=23$': '$10\\%$ of $270=27$', '$10\\%$ of $66=6.6$': '$10\\%$ of $48=4.8$',
+        "'10% of 230 = 23' and '10% of 66 = 6.6' appear": "'10% of 270 = 27' and '10% of 48 = 4.8' appear",
+        'Ten percent of two thirty: twenty-three. Ten percent of sixty-six: six point six — the point just hops one place left.':
+            'Ten percent of two seventy: twenty-seven. Ten percent of forty-eight: four point eight — the point just hops one place left.',
+        '$30\\%$ of $230$': '$30\\%$ of $270$', "'30% of 230' appears": "'30% of 270' appears",
+        'Write "= 3 × 23 = 69"': 'Write "= 3 × 27 = 81"',
+        'Thirty percent? Three ten-percent chunks: sixty-nine.': 'Thirty percent? Three ten-percent chunks: eighty-one.',
+        '$35\\%$ of $230$': '$35\\%$ of $270$', "'35% of 230' appears": "'35% of 270' appears",
+        'Write "30% → 69,  5% → 11.5,  total 80.5"': 'Write "30% → 81,  5% → 13.5,  total 94.5"',
+        'Thirty-five percent: split it. Thirty percent is sixty-nine. Five percent is half of ten percent: eleven and a half. Together: eighty and a half.':
+            'Thirty-five percent: split it. Thirty percent is eighty-one. Five percent is half of ten percent: thirteen and a half. Together: ninety-four and a half.',
+    })
+    _rn_slide(M, L1, 9, {
+        '$16\\%$ of $25$ = $25\\%$ of $16$': '$36\\%$ of $25$ = $25\\%$ of $36$',
+        "'16% of 25 = 25% of 16' appears": "'36% of 25 = 25% of 36' appears",
+        'Write "= 4"': 'Write "= 9"',
+        'Swap them: a percent of b equals b percent of a. Sixteen percent of twenty-five equals twenty-five percent of sixteen — a quarter of sixteen. Four.':
+            'Swap them: a percent of b equals b percent of a. Thirty-six percent of twenty-five equals twenty-five percent of thirty-six — a quarter of thirty-six. Nine.',
+        '$30\\%$ of the whole is $54$': '$30\\%$ of the whole is $63$',
+        "'30% of the whole is 54' appears": "'30% of the whole is 63' appears",
+        'Write "10% → 18,  100% → 180"': 'Write "10% → 21,  100% → 210"',
+        'Whole missing? Thirty percent is fifty-four, so ten percent is eighteen — and the whole is a hundred eighty.':
+            'Whole missing? Thirty percent is sixty-three, so ten percent is twenty-one — and the whole is two hundred ten.',
+        'From $80$ to $100$': 'From $50$ to $60$', "'From 80 to 100' appears": "'From 50 to 60' appears",
+        'Write "20/80 × 100 = 25%"': 'Write "10/50 × 100 = 20%"',
+        'Eighty up to a hundred: the change is twenty. Twenty out of the original eighty — a quarter. Twenty-five percent.':
+            'Fifty up to sixty: the change is ten. Ten out of the original fifty — a fifth. Twenty percent.',
+    })
+
+    # ---- "Percent of a Percent" (wp-053) ----
+    _rn_slide(M, L2, 2, {
+        'A price rises $25\\%$, then falls by $20\\%$ of the new price. What is the overall change?':
+            'A price rises $80\\%$, then falls by $25\\%$ of the new price. What is the overall change?',
+        'Write "→ 125"': 'Write "→ 180"',
+        'Up twenty-five percent: a hundred twenty-five.': 'Up eighty percent: a hundred eighty.',
+        'Now careful. The twenty percent is of the NEW price. The hundred is history — the whole is now a hundred twenty-five.':
+            'Now careful. The twenty-five percent is of the NEW price. The hundred is history — the whole is now a hundred eighty.',
+        'Write "20% of 125 = 25 → 100"': 'Write "25% of 180 = 45 → 135"',
+        'Twenty percent of one twenty-five: twenty-five. Back down to a hundred.':
+            'Twenty-five percent of one eighty — a quarter: forty-five. Down to a hundred thirty-five.',
+        'Write "change: 0%"': 'Write "change: +35%"',
+        'Back where we started! Not because twenty equals twenty-five — because the second percent sits on a bigger base.':
+            'Up thirty-five percent — not eighty minus twenty-five, fifty-five! Because the second percent sits on a bigger base.',
+    })
+    _rn_slide(M, L2, 3, {
+        'A stock of material loses $25\\%$, then $20\\%$ of what remains. What percent was lost in total?':
+            'A stock of material loses $30\\%$, then $20\\%$ of what remains. What percent was lost in total?',
+        'After 25% loss': 'After 30% loss',
+        'A chain of three boxes appears: Start → After 25% loss → After 20% more':
+            'A chain of three boxes appears: Start → After 30% loss → After 20% more',
+        'Write "75" in the second box': 'Write "70" in the second box',
+        'Lose twenty-five percent: seventy-five left.': 'Lose thirty percent: seventy left.',
+        'Write "60" in the third box': 'Write "56" in the third box',
+        'Twenty percent of what remains — of seventy-five. Ten percent is seven and a half; twenty percent is fifteen. Sixty left.':
+            'Twenty percent of what remains — of seventy. Ten percent is seven; twenty percent is fourteen. Fifty-six left.',
+        'Under the chain write "lost 40%"': 'Under the chain write "lost 44%"',
+        'A hundred down to sixty: we lost forty. Forty percent.': 'A hundred down to fifty-six: we lost forty-four. Forty-four percent.',
+        'Not forty-five! The second twenty percent came out of a smaller amount.': 'Not fifty! The second twenty percent came out of a smaller amount.',
+        'Shortcut: think about what STAYS. Lose twenty-five percent — keep seventy-five. Lose twenty percent of that — keep eighty percent of seventy-five: sixty. Straight there.':
+            'Shortcut: think about what STAYS. Lose thirty percent — keep seventy. Lose twenty percent of that — keep eighty percent of seventy: fifty-six. Straight there.',
+    })
+    _rn_slide(M, L2, 4, {
+        '$-25\\%$, then $-20\\%$: $\\ 0.75\\times0.8=0.6$': '$-30\\%$, then $-20\\%$: $\\ 0.7\\times0.8=0.56$',
+        "'−25%, then −20%: 0.75 × 0.8 = 0.6' appears": "'−30%, then −20%: 0.7 × 0.8 = 0.56' appears",
+        'Write "→ keep 60%, lost 40%"': 'Write "→ keep 56%, lost 44%"',
+        'The two losses from before: zero point seven five times zero point eight — zero point six. We keep sixty percent, so we lost forty. Same answer, one line.':
+            'The two losses from before: zero point seven times zero point eight — zero point five six. We keep fifty-six percent, so we lost forty-four. Same answer, one line.',
+    })
+    _rn_slide(M, L2, 5, {
+        'Write "+25, −20:  25 − 20 − 5 = 0"': 'Write "+80, −25:  80 − 25 − 20 = 35"',
+        'Up twenty-five, down twenty. Twenty-five minus twenty is five. Twenty-five times minus twenty, over a hundred, is minus five. Five minus five: zero. No change — exactly what we got at the start.':
+            'Up eighty, down twenty-five. Eighty minus twenty-five is fifty-five. Eighty times minus twenty-five, over a hundred, is minus twenty. Fifty-five minus twenty: thirty-five. Up thirty-five percent — exactly what we got at the start.',
+    })
+    _rn_slide(M, L2, 6, {
+        "Lena earns $25\\%$ more than Noor. Ari earns $40\\%$ less than Lena. By what percent is Ari's pay lower than Noor's?":
+            "Tal earns $60\\%$ more than Ben. Eli earns $45\\%$ less than Tal. By what percent is Eli's pay lower than Ben's?",
+        'But this question has several "thans". Lena than Noor. Ari than Lena. Ari than Noor.':
+            'But this question has several "thans". Tal than Ben. Eli than Tal. Eli than Ben.',
+        'Underline "than Noor\'s" in the last sentence': 'Underline "than Ben\'s" in the last sentence',
+        'The one that decides is the "than" in the QUESTION itself — lower than Noor\'s. So Noor is our hundred.':
+            'The one that decides is the "than" in the QUESTION itself — lower than Ben\'s. So Ben is our hundred.',
+        'Write "Noor 100 → Lena 125 → Ari 75"': 'Write "Ben 100 → Tal 160 → Eli 88"',
+        'Noor: a hundred. Lena, twenty-five percent more: a hundred twenty-five. Ari, forty percent less than Lena: keep sixty percent of one twenty-five — seventy-five.':
+            'Ben: a hundred. Tal, sixty percent more: a hundred sixty. Eli, forty-five percent less than Tal: keep fifty-five percent of one sixty — eighty-eight.',
+        'Write "25% lower"': 'Write "12% lower"',
+        'Seventy-five against a hundred: twenty-five percent lower.': 'Eighty-eight against a hundred: twelve percent lower. Not fifteen percent higher!',
+    })
+    _rn_slide(M, L2, 7, {
+        'Rise $20\\%$, then add a fixed $15$ credits': 'Rise $10\\%$, then add a fixed $20$ credits',
+        "'Rise 20%, then add a fixed 15 credits' appears": "'Rise 10%, then add a fixed 20 credits' appears",
+        'Write "100 → 135 (35%)   200 → 255 (27.5%)"': 'Write "100 → 130 (30%)   200 → 240 (20%)"',
+        'Add a fixed fifteen credits, and the answer changes with the real starting price. From a hundred: thirty-five percent up. From two hundred: twenty-seven and a half.':
+            'Add a fixed twenty credits, and the answer changes with the real starting price. From a hundred: thirty percent up. From two hundred: twenty.',
+    })
+    _rn_slide(M, L2, 8, {
+        'After a $20\\%$ loss, $96$ remain. Original?': 'After a $30\\%$ loss, $91$ remain. Original?',
+        "'After a 20% loss, 96 remain. Original?' appears": "'After a 30% loss, 91 remain. Original?' appears",
+        "Going backwards? Ninety-six isn't the whole — it's what STAYED.": "Going backwards? Ninety-one isn't the whole — it's what STAYED.",
+        'Write "96 = 80% → 10% = 12 → 100% = 120"': 'Write "91 = 70% → 10% = 13 → 100% = 130"',
+        'Ninety-six is eighty percent. Ten percent is twelve. The original: a hundred twenty.':
+            'Ninety-one is seventy percent. Ten percent is thirteen. The original: a hundred thirty.',
+        "Don't just add twenty percent of ninety-six — that twenty percent was taken from the original, not from ninety-six.":
+            "Don't just add thirty percent of ninety-one — that thirty percent was taken from the original, not from ninety-one.",
+        'With a multiplier: ninety-six is the start times zero point eight. So the start is ninety-six divided by zero point eight — a hundred twenty.':
+            'With a multiplier: ninety-one is the start times zero point seven. So the start is ninety-one divided by zero point seven — a hundred thirty.',
+    })
+    _rn_slide(M, L2, 10, {   # same fixed amount as "When 100 fails"
+        "The limit: every step must be a percent or a multiple. If a fixed amount is added — plus fifteen credits — it's not one multiplier. Use real numbers.":
+            "The limit: every step must be a percent or a multiple. If a fixed amount is added — plus twenty credits — it's not one multiplier. Use real numbers.",
+    })
+
+
+def rn_cards(M):
+    c = M.card(CARD)
+    new = {
+        'Percent equation': '$45\\%$ of $80=\\frac{45}{100}\\cdot80=36$',
+        'Equal ratios (triangle value)': '$15\\%\\to54 \\Rightarrow 25\\%\\to90$',
+        '$10\\%$ chunks': '$35\\%$ of $270=81+13.5$',
+        'Change in percent': 'change $\\div$ original $\\times100$: $50\\to60$ is $\\frac{10}{50}=20\\%$',
+        'Complement': 'drop $35\\%$ → keep $65\\%$',
+        'Plug in $100$': '$100\\to180\\to135$',
+        'Percent tree': '$70\\%\\times40\\%=28\\%$',
+    }
+    rows = c['tables'][1]['rows']; done = set()
+    for r in rows:
+        if r[0] in new: r[2] = new[r[0]]; done.add(r[0])
+    assert done == set(new), set(new) - done
+    tips = {
+        'Each new percent sits on the NEW amount: $+25\\%$ then $-20\\%$ returns to the start.':
+            'Each new percent sits on the NEW amount: $+80\\%$ then $-25\\%$ gives $+35\\%$, not $+55\\%$.',
+        'Adding $\\frac1n$ and then removing $\\frac1{n+1}$ brings you back: $+20\\%$, $-16\\frac23\\%$.':
+            'Adding $\\frac1n$ and then removing $\\frac1{n+1}$ brings you back: $+33\\frac13\\%$, $-25\\%$.',
+        'Any two changes $a\\%$ and $b\\%$: $a+b+\\frac{ab}{100}$ (a fall is negative). $+25$, $-20$ → $25-20-5=0$.':
+            'Any two changes $a\\%$ and $b\\%$: $a+b+\\frac{ab}{100}$ (a fall is negative). $+80$, $-25$ → $80-25-20=35$.',
+    }
+    assert all(t in c['tips'] for t in tips), [t for t in tips if t not in c['tips']]
+    c['tips'] = [tips.get(t, t) for t in c['tips']]
+
+
+def rn_practice_questions(M):
+    # p01: 75% of 8/9 -> 2/3  ==>  60% of 5/12 -> 1/4
+    _rn_q(M, 'wp23-p01', 'What is $60\\%$ of $\\frac{5}{12}$?', ['$\\frac13$', '$\\frac35$', '$\\frac14$', '$\\frac7{12}$'], 3, [
+        '$60\\%=\\frac35$.', '$\\frac35\\times\\frac5{12}=\\frac{3\\cdot5}{5\\cdot12}=\\frac{15}{60}=\\frac14$.'])
+    # p02: 80 beads, half white, 65% of the rest purple -> 14 orange  ==>  60 pens, a third blue, 45% of the rest black -> 22 red
+    _rn_q(M, 'wp23-p02', 'A box holds $60$ pens, each blue, black, or red. A third of them are blue. Of the pens that are not blue, $45\\%$ are black. How many pens are red?',
+          ['$18$', '$33$', '$22$', '$27$'], 3, [
+              'Blue: a third of $60$ is $20$. Not blue: $60-20=40$.',
+              'Black is $45\\%$ of them, so red is $100\\%-45\\%=55\\%$ of $40$.',
+              '$10\\%$ of $40$ is $4$, so $55\\%$ of $40$ is $5\\times4+2=22$.'])
+    # p03: 96 credits, +50% a year, first not whole after review 6  ==>  stamp 112 credits, first not whole after year 5
+    _rn_q(M, 'wp23-p03', 'A rare stamp is worth $112$ credits. Every year, its value rises by $50\\%$. After which year is its value first not a whole number of credits?',
+          ['$4$', '$6$', '$5$', '$7$'], 3, [
+              'A $50\\%$ rise multiplies the value by $1.5=\\frac32$: times $3$, divided by $2$.',
+              'Each year uses up one factor $2$. $112=2^4\\cdot7$ has four factors $2$.',
+              'So years 1 to 4 give whole numbers: $112\\to168\\to252\\to378\\to567$, and $567=3^4\\cdot7$ has no factor $2$ left.',
+              'Year 5: $567\\times1.5=850.5$. The first value that is not a whole number comes after year 5.'])
+    # p04: 40% of 25% of x = 9, 3/10 x? -> 27  ==>  80% of 12.5% of x = 8, 7/10 x? -> 56
+    _rn_q(M, 'wp23-p04', '$80\\%$ of $12.5\\%$ of $x$ equals $8$. What is $\\frac7{10}x$?', ['$16$', '$28$', '$80$', '$56$'], 4, [
+        '$80\\%$ of $12.5\\%$: $\\frac45\\times\\frac18=\\frac1{10}$. So $\\frac1{10}x=8$.',
+        '$\\frac7{10}x=7\\times8=56$.'])
+    # p05: hits 40%, misses 18 -> 30  ==>  scores on 65%, misses 14 -> 40
+    _rn_q(M, 'wp23-p05', 'A basketball player scores on $65\\%$ of his shots. He misses $14$ shots. How many shots does he take?',
+          ['$28$', '$35$', '$40$', '$54$'], 3, [
+              'He scores on $65\\%$, so he misses $100\\%-65\\%=35\\%$ of his shots.',
+              '$35\\%=14$ shots, so $5\\%=2$ and $100\\%=40$ shots.'])
+    # p06: 15 juniors, 25%..75% -> at most 45 seniors  ==>  12 sopranos, 20%..60% -> at most 48 others
+    _rn_q(M, 'wp23-p06', 'A choir has $12$ sopranos. The sopranos make up at least $20\\%$ and at most $60\\%$ of the choir. What is the greatest possible number of other singers in the choir?',
+          ['$8$', '$60$', '$36$', '$48$'], 4, [
+              'The more singers the choir has, the smaller the sopranos’ share. So use the smallest share: $20\\%$.',
+              '$12$ sopranos $=20\\%=\\frac15$ of the choir, so the choir has $5\\times12=60$ singers.',
+              'Other singers: $60-12=48$.'])
+    # p07: +50%, gives 20% of the new amount -> 120%  ==>  Dina's salary +40%, saves 25% of the new salary -> 105%
+    _rn_q(M, 'wp23-p07', 'Dina’s monthly salary rises by $40\\%$. She then puts $25\\%$ of the new salary into savings. The amount left is what percentage of her original salary?',
+          ['$115\\%$', '$110\\%$', '$105\\%$', '$100\\%$'], 3, [
+              'Plug in $100$. A $40\\%$ rise: $140$.',
+              '$25\\%$ of $140$ is $35$. She has $140-35=105$ left.',
+              '$105$ out of the original $100$: $105\\%$. With multipliers: $1.4\\times0.75=1.05$.'])
+    # p08: a+b=200, a=b+60 -> b is 35%  ==>  x+y=250, x=y+40 -> y is 42%
+    _rn_q(M, 'wp23-p08', 'Given:\n$\\begin{cases} x+y=250 \\\\ x=y+40 \\end{cases}$\nWhat percentage of $x+y$ is $y$?',
+          ['$58\\%$', '$42\\%$', '$16\\%$', '$40\\%$'], 2, [
+              'Put $x=y+40$ into the sum: $(y+40)+y=250$, so $2y=210$ and $y=105$.',
+              '$\\frac{105}{250}=\\frac{42}{100}=42\\%$.'])
+    # p09: 15% of 3x is 18 -> 45% of x  ==>  35% of 2x is 21 -> 70% of x
+    _rn_q(M, 'wp23-p09', '$35\\%$ of $2x$ is $21$. What percentage of $x$ is $21$?', ['$35\\%$', '$70\\%$', '$17.5\\%$', '$105\\%$'], 2, [
+        '$35\\%$ of $2x=\\frac{35\\cdot2x}{100}=\\frac{70x}{100}$, which is $70\\%$ of $x$.',
+        'So $21$ is $70\\%$ of $x$. There is no need to find $x$.'])
+    # p10: +10% two years, 63 above -> 300  ==>  painting +20% two years, 220 above -> 500
+    _rn_q(M, 'wp23-p10', 'A painting’s value rises by $20\\%$ in each of two years. After the second year, its value is $220$ credits above its original value. What was its original value?',
+          ['$1100$', '$550$', '$720$', '$500$'], 4, [
+              'Two $20\\%$ rises: multiply by $1.2\\times1.2=1.44$. In total the value rises by $44\\%$.',
+              '$44\\%$ of the original value is $220$, so $1\\%=5$ and $100\\%=500$.',
+              'Check: $500\\to600\\to720$, and $720-500=220$ ✓.'])
+    # p11: laptop owners 3 to 1, 40% touch-screen -> 70% not  ==>  car owners 3 to 2, 30% electric -> 82% not
+    _rn_q(M, 'wp23-p11', 'In a town, car owners outnumber non-owners by $3$ to $2$. Of the car owners, $30\\%$ own an electric car. What percentage of all the residents do not own an electric car?',
+          ['$70\\%$', '$40\\%$', '$82\\%$', '$60\\%$'], 3, [
+              'Owners to non-owners is $3$ to $2$, so owners are $\\frac35=60\\%$ of the residents.',
+              'Electric-car owners: $30\\%$ of $60\\%$ is $0.3\\times60\\%=18\\%$ of all residents.',
+              'The rest: $100\\%-18\\%=82\\%$.'])
+    # p12: 75% certified, 18 first aid only, coaching = none -> 36  ==>  70% team sport, 24 basketball only, football = none -> 60
+    _rn_q(M, 'wp23-p12', '$70\\%$ of the members of a sports club play a team sport. Twenty-four members play only basketball, and every other team-sport player plays only football. The number who play football equals the number who play no team sport. How many members does the club have?',
+          ['$80$', '$40$', '$60$', '$48$'], 3, [
+              'No team sport: $100\\%-70\\%=30\\%$.',
+              'Football equals no team sport: $30\\%$. Basketball: $70\\%-30\\%=40\\%$.',
+              '$40\\%=24$ members, so $10\\%=6$ and $100\\%=60$.'])
+    # p13: +40%, fall to +12% -> 20%  ==>  laptop +60%, fall to +20% -> 25%
+    _rn_q(M, 'wp23-p13', 'After a price rise, a laptop costs $60\\%$ more than its original price. By what percentage must the new price fall so that it is only $20\\%$ above the original price?',
+          ['$40\\%$', '$25\\%$', '$20\\%$', '$37.5\\%$'], 2, [
+              'Plug in $100$ for the original price. New price: $160$. Target: $120$.',
+              'The drop is $160-120=40$. Measure it against the current price, $160$: $\\frac{40}{160}=\\frac14=25\\%$.',
+              'Method 2 · Arrow map: original → new price is $\\times1.6$, and original → target is $\\times1.2$. From the new price to the target, go against the first arrow and along the second: $1.2\\div1.6=0.75$. The price drops to $75\\%$: a $25\\%$ fall.'])
+    # p14: same balance, p% = 90, q% = 150 -> 5p = 3q  ==>  same shopping budget, a% = 120, b% = 280 -> 7a = 3b
+    _rn_q(M, 'wp23-p14', 'Of the same shopping budget, $a\\%$ is $120$ credits and $b\\%$ is $280$ credits. Which of the following is necessarily true?',
+          ['$3a=7b$', '$b<a$', '$a=b-160$', '$7a=3b$'], 4, [
+              'Percents of the same whole are in the same ratio as their amounts: $\\frac ab=\\frac{120}{280}=\\frac37$.',
+              'Cross-multiply: $7a=3b$.',
+              'Method 2 · Flip rule, same whole → keep: both percents are of the same budget, therefore the bigger percent gives the bigger amount and the order stays. The ratio $a:b=120:280=3:7$, that is, $7a=3b$. (Flipping it, $3a=7b$, is the trap.)'])
+    # p15: equal blue/yellow, half used, 14 blue + 6 yellow left -> 70% of the used were yellow
+    #      ==>  equal red/green marbles, half taken out, 9 red + 15 green left -> 62.5% of the taken were red
+    _rn_q(M, 'wp23-p15', 'A bag begins with equal numbers of red and green marbles. After half of all the marbles are taken out, $9$ red and $15$ green marbles remain. What percentage of the marbles taken out were red?',
+          ['$37.5\\%$', '$60\\%$', '$62.5\\%$', '$75\\%$'], 3, [
+              '$9+15=24$ marbles remain. That is half, so $24$ were taken out and there were $48$ at the start: $24$ of each color.',
+              'Red taken out: $24-9=15$. Out of the $24$ taken out: $\\frac{15}{24}=\\frac58=62.5\\%$.'])
+    # p16: N visitors, b audio guides -> b^2/N  ==>  T students, s in a science club -> s^2/T (choices reordered)
+    _rn_q(M, 'wp23-p16', 'A school has $T$ students, and $s$ of them joined a science club. The fraction of club members who chose robotics equals the fraction of all the students who joined the club. How many students chose robotics?',
+          ['$\\frac{s^2}{T}$', '$\\frac{T^2}{s}$', '$T-s$', '$\\frac{s}{T^2}$'], 1, [
+              'Club members are $\\frac sT$ of all the students.',
+              'The same fraction of the $s$ club members chose robotics: $s\\times\\frac sT=\\frac{s^2}{T}$.',
+              'Check with numbers: $T=25$ and $s=10$. $\\frac{10}{25}$ of $10$ is $4$, and $\\frac{s^2}{T}=\\frac{100}{25}=4$ ✓.'])
+    # p17: 240 -> 174, a in 25..30 (27.5)  ==>  boots 320 -> 248, a in 20..25 (22.5)
+    _rn_q(M, 'wp23-p17', 'A pair of boots is reduced from $320$ credits to $248$ credits. The discount is $a\\%$. Which interval contains $a$?',
+          ['$20<a<25$', '$25<a<30$', '$15<a<20$', '$30<a<35$'], 1, [
+              'The discount is $320-248=72$ credits.',
+              'Estimate: $20\\%$ of $320$ is $64$ and $25\\%$ of $320$ is $80$. $72$ is between them, so $20<a<25$.',
+              'Exact: $\\frac{72}{320}\\times100=22.5$.'])
+    # p18: library p% to A, p% of the rest to B -> 100:(100-p)  ==>  baker q% to a café, q% of the rest to a school
+    _rn_q(M, 'wp23-p18', 'A baker sells $q\\%$ of her loaves to a café, and then sells $q\\%$ of the remaining loaves to a school, where $0<q<100$. What is the ratio of the number of loaves sold to the café to the number sold to the school?',
+          ['$(100-q):100$', '$100:(100-q)$', '$q:100$', '$1:1$'], 2, [
+              'Plug in numbers: $100$ loaves and $q=20$. The café gets $20$, $80$ remain, and the school gets $20\\%$ of $80$, which is $16$. The ratio is $20:16=5:4$.',
+              'Check the choices with $q=20$: only the ratio $100:(100-q)=100:80=5:4$ fits.',
+              'In general, with $L$ loaves: the café gets $\\frac q{100}L$ and the school gets $\\frac q{100}\\cdot\\frac{100-q}{100}L$. Their ratio is $1:\\frac{100-q}{100}=100:(100-q)$.'])
+    # p19: tablet; the ratio alone is not enough (choices reordered)  ==>  bicycle
+    _rn_q(M, 'wp23-p19', 'A bicycle is sold at a discount. Which information alone is not enough to find its original price?',
+          ['The amount saved and the paid price', 'The discount percentage and the amount saved',
+           'The ratio of the paid price to the original price', 'The discount percentage and the paid price'], 3, [
+              'A ratio gives only the relative size, not an amount of credits. Paying $\\frac34$ of the price could be $75$ out of $100$ or $150$ out of $200$.',
+              'Each other choice gives at least one amount in credits, so the price can be found. For example, original price $=$ amount saved $+$ price paid.'])
+    # p20: jacket -36, price x -> 3600/(x+36)  ==>  lamp -45, price y -> 4500/(y+45)
+    _rn_q(M, 'wp23-p20', 'A lamp is discounted by $45$ credits. Its price after the discount is $y$ credits. What is the discount percentage?',
+          ['$\\frac{4500}{y}$', '$\\frac{45y}{100}$', '$\\frac{4500}{y+45}$', '$\\frac{100(y+45)}{45}$'], 3, [
+              'The original price is $y+45$.',
+              'Change divided by the original, times $100$: $\\frac{45}{y+45}\\times100=\\frac{4500}{y+45}$.',
+              'Check with a number: if $y=55$, the original price is $100$ and the discount is $45\\%$. $\\frac{4500}{55+45}=45$ ✓.'])
+
+
+def rn_practice(M):
+    """Approved clean-up: the copy out, at most 3 extra-bank warm-ups, September items whose type the Hebrew covers out."""
+    N = lambda k: 'q-r26-t23-' + k
+    out = [
+        N('15'),        # copy: 28% of 75 (swap) - the same item as p21 and Topic 1's fast-practice-6 (practice_audit)
+        # extra-bank warm-ups beyond 3 (kept: p25 percent increase, p26 "25% more -> ?% less", p24 one discount vs two)
+        'wp23-p21',     # 16% of 25 - the swap example the lesson used (and a copy of q-r26-t23-15)
+        'wp23-p22',     # +20% then -20% - the lesson's own "Up and down" example
+        'wp23-p23',     # add water to salt water - mixtures are practised by q-r26-t23-11 / -12 and guided Q14
+        'wp23-p27',     # 15% off, paid 306 - working backwards, as p05 and guided Q12
+        # September items of a type the Hebrew practice covers
+        N('06'),        # +10% for 3 years: multipliers over years, as p10
+        N('10'),        # 120% then 150% of the original -> second rise: as p13
+        N('13'),        # +20%, -25%, now 180 -> original: working backwards through two changes, as p10
+        N('14'),        # up p% and down p% with letters: letters + p% of the new amount, as p18 / p16 / p20
+    ]
+    for qid in out:
+        assert M.section_of(qid) == PRAC, qid
+        M.unplace(qid)
+    M.practice_order(PRAC, [
+        'wp23-p01', 'wp23-p05', 'wp23-p02', 'wp23-p04', 'wp23-p09', 'wp23-p25', 'wp23-p26', 'wp23-p12', 'wp23-p07',
+        'wp23-p13', 'wp23-p15', 'wp23-p11', 'wp23-p24', 'wp23-p17', 'wp23-p08', 'wp23-p06', N('09'), 'wp23-p10',
+        'wp23-p14', 'wp23-p19', N('11'), N('12'), 'wp23-p20', 'wp23-p16', 'wp23-p18', 'wp23-p03'])
+
+
+def renumber_pass(M):
+    rn_guided(M)
+    rn_order(M)
+    rn_lessons(M)
+    rn_cards(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last
