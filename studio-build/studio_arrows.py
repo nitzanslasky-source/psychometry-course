@@ -39,7 +39,7 @@ move CUTOFF to after them and rebuild.
 import os, re
 import studio_done
 
-CUTOFF = '2026-10-06T07:59:10.000Z'   # takes recorded before this moment freeze their video (old whole-line reveal)
+CUTOFF = '2026-10-06T08:40:00.000Z'   # takes recorded before this moment freeze their video (old whole-line reveal)
 
 # ---------- arrow parser (mirrored exactly by arwCuts in the JS below) ----------
 TEX_ARROWS = {'to', 'rightarrow', 'Rightarrow', 'implies', 'Longrightarrow', 'longrightarrow', 'xrightarrow'}
