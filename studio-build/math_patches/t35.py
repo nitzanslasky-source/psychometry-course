@@ -1144,3 +1144,830 @@ _apply_before_cut = apply
 def apply(M):
     _apply_before_cut(M)
     cut_repeats(M)
+
+
+# ================================================================================================
+# 2026-10-06 renumber pass (runs LAST, after cut_repeats). The English course must not look like the Hebrew one:
+# every Hebrew-derived question (guided geo35-g121 ... g132, practice geo35-core-p01 ... p20) gets new numbers
+# (letter-only questions: new letters and choice order), its solution video is rewritten to match, and every changed
+# figure is redrawn. Hebrew-derived lesson examples get new numbers too. Practice clean-up 36 -> 26.
+# Nothing in topic 35 is recorded (checked ~/Documents/Course.recordings 2026-10-06: only Algebra topics 1-8).
+# Topic 35 has no practice_methods / add_methods / pen_or_click.
+# ================================================================================================
+import math
+RN_RECORDED = set()
+
+
+# --- figures ----------------------------------------------------------------------------------
+def _rn_cone(title, r_px, h_px, h_lab, r_lab, cy=299.455):
+    f = Fig(title)
+    cx, ry = 320.0, r_px * 0.28
+    top = cy - h_px
+    f.poly([(cx - r_px, cy), (cx + r_px, cy), (cx, top)], fill=FILL, stroke='none', sw=2.5)
+    f.half_ellipse(cx, cy, r_px, ry, front=False); f.half_ellipse(cx, cy, r_px, ry, front=True)
+    f.line((cx - r_px, cy), (cx, top)); f.line((cx, top), (cx + r_px, cy))
+    f.line((cx, cy), (cx, top), TEAL, 2.5, dash=True)
+    f.line((cx, cy), (cx + r_px, cy), TEAL, 2.5)
+    f.text(cx - min(20, r_px / 2) - (14 if r_px < 60 else 0) - (r_px / 2 if r_px < 60 else 0), cy - h_px / 2, h_lab)
+    f.text(cx + r_px / 2, cy + ry + 6 if ry > 14 else cy + 20, r_lab)
+    return f
+
+
+def rn_fig_g121():   # radius sqrt6, height 12 (to scale: 12 / 2.449)
+    return _rn_cone('Right circular cone', 239.0 * math.sqrt(6) / 12, 239.0, '12', '√6')
+
+
+def rn_fig_p02():    # radius 3a, height 4a
+    return _rn_cone('Right circular cone', 150.0, 200.0, '4a', '3a', cy=280.0)
+
+
+def rn_fig_g123(svg):
+    """AM : MB = 1 : 3 (was 1 : 2): M and N move to a quarter of AB."""
+    xa, xb = 135.388, 424.975
+    xm = xa + (xb - xa) / 4
+    svg = svg.replace('231.917', '%.3f' % xm)
+    svg = _move_text(svg, 'x', (xa + xm) / 2, 314.736)
+    svg = re.sub(r'(<text x=")[\d.]+(" y="[\d.]+"[^>]*>)2x</text>', lambda m: '%s%.3f%s3x</text>' % (m.group(1), (xm + xb) / 2, m.group(2)), svg)
+    return svg
+
+
+def rn_fig_g124():
+    """Right prism lying on its side: right-triangle bases (legs 9 and 12, hypotenuse 15), height 5."""
+    f = Fig('A right triangular prism with congruent triangular bases')
+    k = 19.0
+    A_ = (240.0, 307.0); B_ = (A_[0] + 9 * k, A_[1]); C_ = (A_[0], A_[1] - 12 * k)
+    dv = (5 * 10.4, -5 * 6.6)
+    D_, E_, F_ = [(p[0] + dv[0], p[1] + dv[1]) for p in (A_, B_, C_)]
+    f.poly([B_, E_, F_, C_], fill=FILL)
+    f.poly([A_, B_, C_], fill=FRONT)
+    f.line(A_, D_, DASH, dash=True); f.line(D_, E_, DASH, dash=True); f.line(D_, F_, DASH, dash=True)
+    f.line(C_, F_); f.line(E_, F_)
+    m = 10
+    f.line((A_[0] + m, A_[1]), (A_[0] + m, A_[1] - m), TEAL, 1.7); f.line((A_[0] + m, A_[1] - m), (A_[0], A_[1] - m), TEAL, 1.7)
+    for (x, y), s in [((A_[0] - 15, A_[1] + 12), 'A'), ((B_[0] + 4, B_[1] + 18), 'B'), ((C_[0] - 15, C_[1] - 15), 'C'),
+                      ((D_[0] - 13, D_[1] - 7), 'D'), ((E_[0] + 18, E_[1] + 8), 'E'), ((F_[0] + 8, F_[1] - 19), 'F')]:
+        f.text(x, y, s)
+    f.text((A_[0] + B_[0]) / 2, A_[1] + 21, '9')
+    f.text(B_[0] + 0.3 * (C_[0] - B_[0]) - 16, B_[1] + 0.3 * (C_[1] - B_[1]) + 2, '15')
+    f.text((B_[0] + E_[0]) / 2 + 12, (B_[1] + E_[1]) / 2 + 14, '5')
+    return f
+
+
+def _rn_block(f, w, d, h, x0, y0, s):
+    """A w (across) x d (deep) x h (up) block of unit cubes; front face bottom-left at (x0, y0), small edge s."""
+    ddx, ddy = s * 0.55, -s * 0.35
+    for k in range(d - 1, -1, -1):          # top face, back rows first
+        for c in range(w):
+            bx, by = x0 + c * s + k * ddx, y0 - h * s + k * ddy
+            f.poly([(bx, by), (bx + s, by), (bx + s + ddx, by + ddy), (bx + ddx, by + ddy)], fill=TOP, sw=1.2)
+    for k in range(d - 1, -1, -1):          # right face
+        for r in range(h):
+            bx, by = x0 + w * s + k * ddx, y0 - r * s + k * ddy
+            f.poly([(bx, by), (bx + ddx, by + ddy), (bx + ddx, by + ddy - s), (bx, by - s)], fill=FILL, sw=1.2)
+    for r in range(h):                      # front face
+        for c in range(w):
+            bx, by = x0 + c * s, y0 - r * s
+            f.poly([(bx, by), (bx + s, by), (bx + s, by - s), (bx, by - s)], fill=FRONT, sw=1.2)
+
+
+def rn_fig_g125():
+    f = Fig('Four rectangular blocks, each made from eighteen unit cubes')
+    s = 11.0
+    for cx, (w, d, h), lab in [(170, (1, 1, 18), '1 × 1 × 18'), (270, (2, 1, 9), '1 × 2 × 9'),
+                               (370, (3, 1, 6), '1 × 3 × 6'), (470, (3, 2, 3), '2 × 3 × 3')]:
+        x0 = cx - (w * s + d * s * 0.55) / 2
+        _rn_block(f, w, d, h, x0, 300, s)
+        f.text(cx, 328, lab, size=16)
+    return f
+
+
+def rn_fig_g128():
+    """Square pyramid: base side 4*sqrt2, lateral edge 7, height sqrt33 (to scale)."""
+    f = Fig('Square pyramid and its perpendicular height')
+    k = 33.0
+    sd = 4 * math.sqrt(2) * k; h = math.sqrt(33) * k
+    dx, dy = sd * 0.55, -sd * 0.35
+    O = (320.0, 268.0)
+    A_ = (O[0] - sd / 2 - dx / 2, O[1] - dy / 2); B_ = (A_[0] + sd, A_[1])
+    C_ = (B_[0] + dx, B_[1] + dy); D_ = (A_[0] + dx, A_[1] + dy); P = (O[0], O[1] - h)
+    f.poly([A_, B_, P], fill=FRONT)
+    f.poly([B_, C_, P], fill=FILL)
+    f.line(A_, D_, DASH, dash=True); f.line(D_, C_, DASH, dash=True); f.line(D_, P, DASH, dash=True)
+    f.line(P, O, ORANGE, 2.5, dash=True)
+    f.raw('<circle cx="%.3f" cy="%.3f" r="3.2" fill="#203344"/>' % O, [O])
+    for (x, y), t in [((A_[0] - 14, A_[1] + 16), 'A'), ((B_[0] + 6, B_[1] + 20), 'B'), ((C_[0] + 18, C_[1] + 6), 'C'),
+                      ((D_[0] - 12, D_[1] - 10), 'D'), ((P[0], P[1] - 20), 'P'), ((O[0] - 20, O[1]), 'O')]:
+        f.text(x, y, t)
+    f.text((A_[0] + B_[0]) / 2, A_[1] + 24, '4√2')
+    f.text((B_[0] + P[0]) / 2 + 16, (B_[1] + P[1]) / 2, '7')
+    return f
+
+
+def rn_fig_g131():
+    """Box 18 x 9 x 11 (length x width x height)."""
+    k = 16.5
+    w, h, d = 18 * k, 11 * k, 9 * k * 0.65 / 0.943
+    x0, y0 = 320 - (w + d * 0.8) / 2, 312
+    return box_fig('Rectangular box with hidden edges shown dashed', x0, y0, w, h, d,
+                   labels=[(x0 + w / 2, y0 + 22, '18'), (x0 + w + d * 0.4 + 14, y0 - d * 0.25 + 14, '9'),
+                           (x0 + w + d * 0.4 + 2, y0 - h / 2 - d * 0.25, '11')])
+
+
+def rn_fig_p01():
+    """Rectangle 7 x 4 turned about one of its 7 cm sides (25 px per cm, as before)."""
+    f = Fig('A rectangle rotated about one of its seven-centimeter sides')
+    x0, y0, w, h = 270.0, 267.5, 100.0, 175.0
+    f.poly([(x0, y0), (x0 + w, y0), (x0 + w, y0 - h), (x0, y0 - h)], fill=FILL)
+    f.line((x0, y0 + 21), (x0, y0 - h - 21), TEAL, 2.5, dash=True)
+    f.text(x0 - 22, y0 - h / 2, '7'); f.text(x0 + w / 2, y0 + 22, '4')
+    f.text(x0 - 42, y0 - h / 2 - 21, '↻', size=35)
+    return f
+
+
+def rn_fig_p03():
+    """Box with two opposite square faces 5 x 5 (front and back) and length 6."""
+    s = 130.0
+    d = s * 1.1
+    return box_fig('Rectangular box with hidden edges shown dashed', 320 - (s + d * 0.8) / 2, 292, s, s, d)
+
+
+def rn_fig_p06():
+    """Box AB = 10, AD = 3, height 8; AM = NC = 4; prism with trapezoid base AMND."""
+    k = 26.0
+    w, h, d = 10 * k, 8 * k, 3 * k * 0.9
+    x0, y0 = 320 - (w + d * 0.8) / 2, 312
+    def ex(f, P):
+        M_ = (P['A'][0] + 0.4 * w, P['A'][1]); N_ = (P['D'][0] + 0.6 * w, P['D'][1])
+        Mt, Nt = (M_[0], M_[1] - h), (N_[0], N_[1] - h)
+        f.poly([P['A'], M_, N_, P['D']], fill=FILL, stroke=TEAL)
+        f.poly([P['E'], Mt, Nt, P['H']], fill=FILL, stroke=TEAL)
+        f.line(M_, Mt, TEAL, 2.5); f.line(N_, Nt, TEAL, 2.5, dash=True)
+        f.text(M_[0], M_[1] + 20, 'M'); f.text(N_[0] + 13, N_[1] - 14, 'N')
+        for key, (ox, oy) in dict(A=(-15, 13), B=(10, 18), C=(18, 7), D=(-16, -3), E=(-15, -15), F=(10, -15), G=(16, -13), H=(-12, -18)).items():
+            f.text(P[key][0] + ox, P[key][1] + oy, key)
+    return box_fig('Rectangular box with hidden edges shown dashed', x0, y0, w, h, d, extra=ex)
+
+
+def rn_fig_p07():
+    """Two hexagonal pyramids joined along their common base."""
+    f = Fig('Two hexagonal pyramids joined along their common base')
+    cx, cy, rx, ry = 320.0, 180.0, 82.0, 26.0
+    top, bot = (cx, 70.5), (cx, 289.5)
+    V = [(cx + rx * math.cos(math.radians(a)), cy + ry * math.sin(math.radians(a))) for a in (10, 70, 130, 190, 250, 310)]
+    back = lambda p: p[1] < cy - 1
+    for i, p in enumerate(V):
+        q = V[(i + 1) % 6]
+        b = back(p) or back(q)
+        f.line(p, q, DASH if b else INK, 2.5, dash=b)
+    for p in V:
+        for apex in (top, bot):
+            f.line(p, apex, TEAL, 2.5, dash=back(p))
+    return f
+
+
+def rn_fig_p08(svg):
+    """AM = AB/4 and DN = 3DC/4 (was 1/3 and 2/3)."""
+    xa, xb, xd, xc = 152.370, 368.667, 271.333, 487.630
+    xm, xn = xa + (xb - xa) / 4, xd + 3 * (xc - xd) / 4
+    return svg.replace('224.469', '%.3f' % xm).replace('415.531', '%.3f' % xn)
+
+
+def rn_fig_p09(svg):
+    """Highlight edge BF (orange) and the top-face diagonal FH (teal), instead of AE and EG."""
+    old_t = '<line x1="197.676" y1="128.703" x2="442.324" y2="73.459" stroke="#087f83" stroke-width="4"/>'
+    old_o = '<line x1="197.676" y1="128.703" x2="197.676" y2="286.541" stroke="#bb6821" stroke-width="4"/>'
+    assert old_t in svg and old_o in svg
+    svg = svg.replace(old_t, '<line x1="355.514" y1="128.703" x2="284.486" y2="73.459" stroke="#087f83" stroke-width="4"/>')
+    return svg.replace(old_o, '<line x1="355.514" y1="128.703" x2="355.514" y2="286.541" stroke="#bb6821" stroke-width="4"/>')
+
+
+def rn_fig_p13():
+    """Cube edge 10 seen from above, a few circular bases of radius 1 in one corner."""
+    f = Fig('The square base of the cube with a few circular bases in one corner')
+    x0, y0, side = 194.857, 305.143, 250.286
+    f.poly([(x0, y0), (x0 + side, y0), (x0 + side, y0 - side), (x0, y0 - side)], fill='none')
+    r = side / 10
+    for i, j in [(0, 0), (1, 0), (0, 1)]:
+        f.raw('<circle cx="%.3f" cy="%.3f" r="%.3f" fill="#d5f1ed" stroke="#203344" stroke-width="1.3"/>' % (x0 + r + 2 * r * i, y0 - r - 2 * r * j, r))
+    f.text(x0 + 4 * r + 30, y0 - r, '…', size=26); f.text(x0 + r, y0 - 4 * r - 22, '⋮', size=26)
+    f.text(x0 + side / 2, y0 + 23, '10'); f.text(x0 + side + 25, y0 - side / 2, '10')
+    return f
+
+
+def rn_fig_p16(svg):
+    """Sector 135 degrees (was 150), radius label 4 (was 3)."""
+    R, c, r = 109.5, (320.0, 180.0), 29.2
+    e = (c[0] + R * math.cos(math.radians(135)), c[1] - R * math.sin(math.radians(135)))
+    ei = (c[0] + r * math.cos(math.radians(135)), c[1] - r * math.sin(math.radians(135)))
+    svg, n1 = re.subn(r'A 109\.500 109\.500 0 0 0 225\.170 125\.250 Z', 'A 109.500 109.500 0 0 0 %.3f %.3f Z' % e, svg)
+    svg, n2 = re.subn(r'A 29\.200 29\.200 0 0 0 294\.712 165\.400', 'A 29.200 29.200 0 0 0 %.3f %.3f' % ei, svg)
+    assert n1 == n2 == 1
+    lx, ly = c[0] + 44.5 * math.cos(math.radians(67.5)), c[1] - 44.5 * math.sin(math.radians(67.5))
+    svg = re.sub(r'<text x="[\d.]+" y="[\d.]+"([^>]*)>150°</text>', lambda m: '<text x="%.3f" y="%.3f"%s>135°</text>' % (lx, ly, m.group(1)), svg)
+    return _relabel_t(svg, {'3': '4'})
+
+
+def _relabel_t(svg, mp):
+    """Change the text of figure labels (exact <text> contents, each must occur once)."""
+    for old in mp:
+        n = len(re.findall('>%s</text>' % re.escape(old), svg))
+        assert n == 1, (old, n)
+    return re.sub(r'>([^<]+)</text>', lambda mo: '>%s</text>' % mp.get(mo.group(1), mo.group(1)), svg)
+
+
+# --- editing helpers --------------------------------------------------------------------------
+def _rn_q(M, qid, stem=None, choices=None, correct=None, expl=None):
+    if qid in RN_RECORDED: return
+    M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+
+
+def _rn_sub(M, vid, n, pairs):
+    """Exact substring replacements in one slide's spoken / drawn lines, labels and board items (each must hit)."""
+    if vid in RN_RECORDED: return
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = False
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit = True
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit = True
+        assert hit, (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def _rn_items(M, vid, n, texts):
+    """Board items by index -> new text (the item must be a text item)."""
+    if vid in RN_RECORDED: return
+    b = M.slide(vid, n)
+    for k, t in texts.items():
+        assert b['items'][k].get('k') == 't', (vid, n, k)
+        b['items'][k]['t'] = t
+    M.touched_videos.add(vid)
+
+
+def _rn_lines(M, vid, n, lines):
+    """Replace all lines of a slide. lines: str = spoken · ('d', text) = draw · (k, label) = item k appears."""
+    if vid in RN_RECORDED: return
+    out = []
+    for l in lines:
+        if isinstance(l, str): out.append({'say': l})
+        elif l[0] == 'd': out.append({'draw': l[1]})
+        else: out.append({'appear': l[0], 'label': l[1]})
+    old = [l['appear'] for l in M.slide(vid, n)['lines'] if 'appear' in l]
+    assert old == [l['appear'] for l in out if 'appear' in l], (vid, n)
+    M.edit_lines(vid, n, lambda ls: out)
+
+
+def _rn_fig(M, qid, fig):
+    """New figure: a Fig (full view for the question, tight crop on slides) or a function svg -> svg."""
+    if qid in RN_RECORDED: return
+    if isinstance(fig, Fig): _set_q_fig_new(M, qid, fig)
+    else: _set_q_figs(M, qid, fig)
+
+
+# --- guided questions + their solution videos ---------------------------------------------------
+def rn_guided(M):
+    # ---------- g121: cone r = sqrt7, h = 9 -> 21pi (Hebrew sqrt5, 6 -> 10pi)  ==>  r = sqrt6, h = 12 -> 24pi ~ 75.4
+    g = 'geo35-g121'; V = 'solve-' + g
+    _rn_q(M, g, stem='A cone-shaped container with base radius $\\sqrt6$ cm and height 12 cm is full of water. Which of the following empty containers can hold all the water? The dimensions given are internal dimensions.',
+          choices=['A cube with edge 4 cm', 'A square pyramid with base edge 6 cm and height 7 cm',
+                   'A box measuring 6 cm × 4 cm × 3 cm', 'A cylinder with base radius $\\sqrt2$ cm and height 10 cm'], correct=2, expl=[
+        'The cone holds $\\frac{\\pi(\\sqrt6)^2\\cdot12}{3}=24\\pi$ cm³ of water, about $24\\times3.14\\approx75.4$.',
+        'Check each container. The cube (choice 1): $4^3=64$, too small. The pyramid (choice 2): $\\frac{6^2\\times7}{3}=84$, big enough. '
+        'The box (choice 3): $6\\times4\\times3=72$, too small. The cylinder (choice 4): $\\pi(\\sqrt2)^2\\times10=20\\pi$, less than $24\\pi$.',
+        'Only the pyramid (84 cm³) can hold all the water. Careful with π: with π = 3 the water would be 72, and the box would look big enough.'])
+    _rn_fig(M, g, rn_fig_g121())
+    _rn_items(M, V, 2, {2: '$\\frac{\\pi\\cdot(\\sqrt6)^2\\cdot12}{3}=24\\pi$', 3: '$24\\pi\\approx24\\times3.14\\approx75.4$'})
+    _rn_sub(M, V, 2, [
+        ('radius root 7, height 9', 'radius root 6, height 12'),
+        ('π · 7 · 9 / 3 = 21π appears', 'π · 6 · 12 / 3 = 24π appears'),
+        ('Root 7 squared is 7. 9 and 3 cancel to 3. 7 times 3 — 21π.', 'Root 6 squared is 6. 12 and 3 cancel to 4. 6 times 4 — 24π.'),
+        ('21π ≈ 21 × 3.14 ≈ 65.9 appears', '24π ≈ 24 × 3.14 ≈ 75.4 appears'),
+        ('21 times 3.14 — 63 plus 2.94. About 65.9.', '24 times 3.14 — 72 plus 3.36. About 75.4.')])
+    _rn_items(M, V, 3, {1: 'Cube: $4^3=64<75.4$', 2: 'Pyramid: $\\frac{6^2\\cdot7}{3}=84$'})
+    _rn_lines(M, V, 3, [
+        'Now the choices. Bigger or equal — we mark it. Smaller — we eliminate and move on.',
+        'The most important thing: straight solid or pointed? Straight — base area times height. Pointed — the same, over 3.',
+        'Choice one: a cube with edge 4. A straight solid. For a cube — just the edge cubed.',
+        (1, 'Cube: 4³ = 64 appears'),
+        '4 cubed — 64. Less than the water.',
+        ('d', 'Cross out choice 1'),
+        'Choice two: a square pyramid — a pyramid whose base is a square. Base edge 6, height 7. Pointed.',
+        (2, 'Pyramid: 6² · 7 / 3 = 84 appears'),
+        'Base area 6 squared, 36. Over 3 — 12. Times the height 7 — 84.',
+        '84 is more than 75.4. This pyramid can hold all the water.',
+        ('d', 'Circle choice 2'),
+        'Choice two. On the exam — we mark and move on.'])
+    _rn_items(M, V, 4, {1: 'Box: $6\\cdot4\\cdot3=72<75.4$', 2: 'Cylinder: $\\pi\\cdot(\\sqrt2)^2\\cdot10=20\\pi<24\\pi$'})
+    _rn_lines(M, V, 4, [
+        "In the lesson, let's check the other two as well.",
+        (1, 'Box: 6 · 4 · 3 = 72 appears'),
+        'The box: a straight solid — just multiply all the dimensions. 6 times 4 times 3 — 72. Just below the water. Eliminated.',
+        "Careful — that one's close. If you round π to 3, the water is 72 and the box suddenly looks big enough. Use 3.14.",
+        (2, 'Cylinder: π · 2 · 10 = 20π appears'),
+        'The cylinder: a straight solid. Root 2 squared is 2, times the height 10 — 20π. Less than 24π. Eliminated.',
+        'So: straight or pointed — those are the two most important principles of volume on the exam.',
+        'Only the pyramid holds all the water. Choice two.'])
+
+    # ---------- g122: cone = 2 x cylinder -> H = 6h (Hebrew: equal volumes -> 3h)  ==>  4 x cylinder -> H = 12h
+    g = 'geo35-g122'; V = 'solve-' + g
+    _rn_q(M, g, stem='A cone and a cylinder have equal base areas. The volume of the cone is four times the volume of the cylinder. If the cylinder’s height is h, what is the cone’s height?',
+          choices=['$4h$', '$3h$', '$\\frac{4h}{3}$', '$12h$'], correct=4, expl=[
+        'Let the common base area be B and the cone height be H. The cone volume is $\\frac{BH}{3}$ and the cylinder volume is $Bh$.',
+        '$\\frac{BH}{3}=4Bh$. Divide by B and multiply by 3: $H=12h$.',
+        'Traps: $3h$ gives equal volumes, not four times the volume; $4h$ forgets that a cone is a third.'])
+    _rn_items(M, V, 2, {1: '$\\frac{\\pi r^2H}{3}=4\\cdot\\pi r^2h$', 2: '$\\frac{H}{3}=4h\\ \\Rightarrow\\ H=12h$'})
+    _rn_sub(M, V, 2, [
+        ("The cone's volume is twice the cylinder's.", "The cone's volume is four times the cylinder's."),
+        ('πr²H / 3 = 2 · πr²h appears', 'πr²H / 3 = 4 · πr²h appears'),
+        ("The cone's volume equals twice the cylinder's volume.", "The cone's volume equals four times the cylinder's volume."),
+        ('H / 3 = 2h → H = 6h appears', 'H / 3 = 4h → H = 12h appears'),
+        ('Multiply by 3: H is 6h.', 'Multiply by 3: H is 12h.'),
+        ('Circle choice 2', 'Circle choice 4'), ('Choice two. Not complicated at all.', 'Choice four. Not complicated at all.')])
+    _rn_sub(M, V, 3, [
+        ('But we want TWICE the cylinder — so double that again: 6h.', 'But we want FOUR TIMES the cylinder — so multiply that by 4: 12h.'),
+        ('Choice two. This principle', 'Choice four. This principle')])
+
+    # ---------- g123: V = 216, AM : MB = 1 : 2 -> 1/6 -> 36 (Hebrew 120, x and x -> 1/4 -> 30)  ==>  320, 1 : 3 -> 1/8 -> 40
+    g = 'geo35-g123'; V = 'solve-' + g
+    _rn_q(M, g, stem='The volume of rectangular box ABCDEFGH is 320 cm³. M lies on AB so that the ratio AM : MB is 1 : 3, and N lies directly above M on EF. What is the volume of triangular prism AMD–ENH (in cm³)?',
+          choices=['$80$', '$160$', '$40$', '$120$'], correct=3, expl=[
+        'AM is $\\frac14$ of AB. The rectangle with sides AM and AD is $\\frac14$ of the base, and triangle AMD is half of that rectangle.',
+        'So the triangle is $\\frac12\\cdot\\frac14=\\frac18$ of the base. The prism and the box have the same height. Therefore the prism is $\\frac18$ of the box: $320\\div8=40$ cm³.'])
+    _rn_fig(M, g, rn_fig_g123)
+    _rn_items(M, V, 2, {1: '$4x\\cdot y\\cdot z=320$', 3: '$xyz=80\\ \\Rightarrow\\ V=40$'})
+    _rn_sub(M, V, 2, [
+        ('A box with volume 216. AM to MB is 1 to 2.', 'A box with volume 320. AM to MB is 1 to 3.'),
+        ("The box's volume is 216", "The box's volume is 320"),
+        ('Write x on AM and 2x on MB', 'Write x on AM and 3x on MB'),
+        ("So AM is x and MB is 2x — the box's length is 3x.", "So AM is x and MB is 3x — the box's length is 4x."),
+        ('3x · y · z = 216 appears', '4x · y · z = 320 appears'),
+        ('xyz = 72 → V = 36 appears', 'xyz = 80 → V = 40 appears'),
+        ('3xyz is 216. So xyz is 72. Half of 72 — 36.', '4xyz is 320. So xyz is 80. Half of 80 — 40.')])
+    _rn_items(M, V, 3, {1: 'Strip $AM$: $\\frac14$ of the base', 2: 'Triangle $=\\frac12\\cdot\\frac14=\\frac18$', 3: '$320\\div8=40$'})
+    _rn_sub(M, V, 3, [
+        ('Strip = ⅓ of the rectangle appears', 'Strip = ¼ of the rectangle appears'),
+        ('cuts the rectangle into x and 2x — three equal parts. The left strip is one third.',
+         'cuts the rectangle into x and 3x — four equal parts. The left strip is one quarter.'),
+        ('Triangle = ½ of the strip → ⅙ appears', 'Triangle = ½ of the strip → ⅛ appears'),
+        ('So the shaded part is half of a third — one sixth.', 'So the shaded part is half of a quarter — one eighth.'),
+        ('216 ÷ 6 = 36 appears', '320 ÷ 8 = 40 appears'),
+        ('One sixth of 216 — 36. Choice three.', 'One eighth of 320 — 40. Choice three.')])
+
+    # ---------- g124: leg 5, hyp 13, h 4 -> 120 (Hebrew 3, 5, h 2 -> 24)  ==>  leg 9, hyp 15, h 5 -> 36 x 5 = 180
+    g = 'geo35-g124'; V = 'solve-' + g
+    _rn_q(M, g, stem='The bases of a right triangular prism are right triangles. Each base has a leg of 9 cm and a hypotenuse of 15 cm. The height of the prism is 5 cm. What is its lateral surface area (in cm²)?',
+          choices=['$180$', '$108$', '$120$', '$288$'], correct=1, expl=[
+        'The prism lies on its side. Its bases are the two right triangles, and its height is the edge between them, 5.',
+        'The missing leg is 12, since $9^2+12^2=15^2$. The base perimeter is $9+12+15=36$.',
+        'Lateral surface area $=36\\times5=180$ cm². (Adding the two triangles, $2\\times54=108$, gives the total surface area, 288.)'])
+    _rn_fig(M, g, rn_fig_g124())
+    _rn_items(M, V, 2, {1: '$9,\\ 12,\\ 15$', 2: '$P=9+12+15=36$', 3: '$S_{\\text{lateral}}=36\\times5=180$'})
+    _rn_sub(M, V, 2, [
+        ('a leg of 5, a hypotenuse of 13, height 4.', 'a leg of 9, a hypotenuse of 15, height 5.'),
+        ('the edge BE, 4.', 'the edge BE, 5.'),
+        ('one side 5, the hypotenuse 13.', 'one side 9, the hypotenuse 15.'),
+        ('5, 12, 13 appears', '9, 12, 15 appears'),
+        ('A right triangle, hypotenuse 13, leg 5 — the other leg is 12. The Pythagorean triple 5, 12, 13.',
+         'A right triangle, hypotenuse 15, leg 9 — the other leg is 12. The Pythagorean triple 3, 4, 5 — times 3: 9, 12, 15.'),
+        ('P = 5 + 12 + 13 = 30 appears', 'P = 9 + 12 + 15 = 36 appears'),
+        ("5 plus 12 plus 13 — 30. Or: the average of the three sides is 10. So it's 3 times 10.",
+         "9 plus 12 plus 15 — 36. Or: the average of the three sides is 12. So it's 3 times 12."),
+        ('30 × 4 = 120 appears', '36 × 5 = 180 appears'),
+        ('The height is given — 4. 30 times 4 — 120.', 'The height is given — 5. 36 times 5 — 180.')])
+    _rn_items(M, V, 3, {1: '$9\\cdot5=45$', 2: '$12\\cdot5=60$', 3: '$15\\cdot5=75$', 4: '$45+60+75=180$'})
+    _rn_sub(M, V, 3, [
+        ('5 · 4 = 20 appears', '9 · 5 = 45 appears'), ('The first face — 5 times the height 4. 20.', 'The first face — 9 times the height 5. 45.'),
+        ('12 · 4 = 48 appears', '12 · 5 = 60 appears'), ('The next one — 12 times 4. 48.', 'The next one — 12 times 5. 60.'),
+        ('13 · 4 = 52 appears', '15 · 5 = 75 appears'), ('The last one — 13 times 4. 52.', 'The last one — 15 times 5. 75.'),
+        ('20 + 48 + 52 = 120 appears', '45 + 60 + 75 = 180 appears'),
+        ('Add it all up: 48 and 52 make 100, plus 20 — 120.', 'Add it all up: 45 and 75 make 120, plus 60 — 180.'),
+        ('adding the two triangle bases gives 180', 'adding the two triangle bases gives 288')])
+
+    # ---------- g125: 12 cubes -> 2 x 2 x 3 = 32 (Hebrew 8 cubes -> 2 x 2 x 2 = 24)  ==>  18 cubes -> 2 x 3 x 3 = 42
+    g = 'geo35-g125'; V = 'solve-' + g
+    _rn_q(M, g, stem='Eighteen identical cubes, each with edge 1 cm, are joined face to face to form a rectangular block. Which of the following block dimensions gives the smallest total surface area?',
+          choices=['1 cm × 2 cm × 9 cm', '2 cm × 3 cm × 3 cm', '1 cm × 1 cm × 18 cm', '1 cm × 3 cm × 6 cm'], correct=2, expl=[
+        'For dimensions a, b, c the total surface area is $2(ab+ac+bc)$.',
+        'Choice 1, $1\\times2\\times9$: $2(2+9+18)=58$. Choice 2, $2\\times3\\times3$: $2(6+6+9)=42$. Choice 3, $1\\times1\\times18$: $2(1+18+18)=74$. Choice 4, $1\\times3\\times6$: $2(3+6+18)=54$.',
+        'The smallest is 42: the block closest to a cube.'])
+    _rn_fig(M, g, rn_fig_g125())
+    _rn_sub(M, V, 2, [
+        ('Twelve identical cubes, edge 1,', 'Eighteen identical cubes, edge 1,'),
+        ('Next to choice 1 write 2(12 + 4 + 3) = 38', 'Next to choice 1 write 2(18 + 2 + 9) = 58'),
+        ('Choice one, 1 by 3 by 4: front 12, top 4, side 3. 19, times 2 — 38. Remember it.',
+         'Choice one, 1 by 2 by 9: front 18, top 2, side 9. 29, times 2 — 58. Remember it.'),
+        ('Next to choice 2 write 2(6 + 6 + 4) = 32', 'Next to choice 2 write 2(9 + 6 + 6) = 42'),
+        ('Choice two, 2 by 2 by 3: 6, 6 and 4 — 16, times 2 — 32.', 'Choice two, 2 by 3 by 3: 9, 6 and 6 — 21, times 2 — 42.'),
+        ('Already smaller than 38.', 'Already smaller than 58.'),
+        ('Next to choice 3 write 2(12 + 12 + 1) = 50 and cross it out', 'Next to choice 3 write 2(18 + 18 + 1) = 74 and cross it out'),
+        ('Choice three, the long stick 1 by 1 by 12: 12, 12 and 1 — 25, times 2 — 50. Bigger. Out.',
+         'Choice three, the long stick 1 by 1 by 18: 18, 18 and 1 — 37, times 2 — 74. Bigger. Out.'),
+        ('Next to choice 4 write 2(12 + 6 + 2) = 40 and cross it out', 'Next to choice 4 write 2(18 + 6 + 3) = 54 and cross it out'),
+        ('Choice four, 1 by 2 by 6: 12, 6 and 2 — 20, times 2 — 40. Also out.', 'Choice four, 1 by 3 by 6: 18, 6 and 3 — 27, times 2 — 54. Also out.'),
+        ('choice two, 32. Not hard.', 'choice two, 42. Not hard.')])
+    _rn_items(M, V, 3, {1: 'Separate: $18\\times6=108$ faces'})
+    _rn_sub(M, V, 3, [
+        ('Separate: 12 × 6 = 72 faces appears', 'Separate: 18 × 6 = 108 faces appears'),
+        ('Twelve cubes lying apart — 72 faces.', 'Eighteen cubes lying apart — 108 faces.'),
+        ('2 by 2 by 3. Choice two', '2 by 3 by 3. Choice two')])
+
+    # ---------- g126 (letters): side 2a, height 3a; choice 3 (Hebrew: side a, height 2a, cylinder part)
+    #            ==>  side 2k, height 5k; choice 4; plug in k = 2 (box 4 x 4 x 10)
+    g = 'geo35-g126'; V = 'solve-' + g
+    _rn_q(M, g, stem='A cylinder is inscribed in a box whose square base has side 2k and whose height is 5k. The cylinder has the same height as the box, and its circular bases are inscribed in the square bases. What fraction of the box’s volume lies outside the cylinder?',
+          choices=['$1-\\frac{\\pi k}{4}$', '$1-\\frac{\\pi}{2}$', '$1-\\frac{\\pi}{4k}$', '$1-\\frac{\\pi}{4}$'], correct=4, expl=[
+        'The box volume is $(2k)^2\\cdot5k=20k^3$.',
+        'The circle is inscribed in the square with side 2k. Therefore its diameter is 2k and its radius is k. The cylinder volume is $\\pi k^2\\cdot5k=5\\pi k^3$.',
+        'The part outside the cylinder: $\\frac{20k^3-5\\pi k^3}{20k^3}=1-\\frac{\\pi}{4}$.'])
+    _rn_fig(M, g, lambda s: _relabel_t(s, {'2a': '2k'}))
+    _rn_items(M, V, 2, {1: '$V_{\\text{cyl}}=\\pi k^2\\cdot5k=5\\pi k^3$', 2: '$V_{\\text{box}}=2k\\cdot2k\\cdot5k=20k^3$',
+                        3: '$\\frac{20k^3-5\\pi k^3}{20k^3}=1-\\frac{\\pi}{4}$'})
+    _rn_lines(M, V, 2, [
+        'A cylinder is inscribed in a box. The square base has side 2k, the height is 5k. What fraction of the box is outside the cylinder?',
+        'Cylinder volume: base area times height. A straight solid.',
+        'We want everything in terms of k — no r. So look at the base.',
+        ('d', 'On the top view, mark the diameter along the side 2k'),
+        'The circle sits inside the square: the side of the square is the diameter. So 2r = 2k — the radius is k.',
+        (1, 'V_cyl = πk² · 5k = 5πk³ appears'),
+        'Pi k squared, times the height 5k: 5 pi k cubed.',
+        (2, 'V_box = 2k · 2k · 5k = 20k³ appears'),
+        'The box — multiply the dimensions: 20k cubed.',
+        (3, 'Outside ÷ box appears'),
+        'Outside is box minus cylinder. Divide by the box — k cubed cancels. 1 minus pi over 4.',
+        ('d', 'Circle choice 4'),
+        "Choice four. That's the full solution — and it's long."])
+    _rn_items(M, V, 3, {1: '$k=1$: choices 1, 3, 4 all become $1-\\frac{\\pi}{4}$',
+                        2: '$k=2$: box $4\\cdot4\\cdot10=160$, cylinder $\\pi\\cdot2^2\\cdot10=40\\pi$'})
+    _rn_lines(M, V, 3, [
+        "We learned it in circles: inscribed–circumscribed? Plug in numbers — don't fight with letters.",
+        "Usually we'd think 1 is the easiest number.",
+        (1, 'k = 1: choices 1, 3 and 4 all become 1 − π/4 appears'),
+        "But look at the answers: with k = 1, choices one, three and four all turn into 1 minus pi over 4. It can't separate them.",
+        "So pick a convenient number that isn't 1. k = 2.",
+        (2, 'k = 2: box 4·4·10 = 160, cylinder π·2²·10 = 40π appears'),
+        'Box: 4 by 4 by 10 — 160. Cylinder: radius 2, height 10 — 40 pi.',
+        ('d', 'Write (160 − 40π)/160 = 1 − π/4'),
+        'Outside over the box: 1 minus pi over 4.',
+        ('d', 'Cross out choice 1 (1 − π/2) and choice 3 (1 − π/8)'),
+        'Now put k = 2 in the answers. Choice one — 1 minus pi over 2. Out. Choice three — 1 minus pi over 8. Out.',
+        ('d', 'Cross out choice 2 and circle choice 4'),
+        'Choice two has no k — 1 minus pi over 2. Not ours. Choice four. The recommended approach — the safest.'])
+    _rn_items(M, V, 4, {1: 'Volume $\\div$ volume: $k$ must cancel'})
+    _rn_lines(M, V, 4, [
+        'Third approach — psychometric thinking, estimating sizes.',
+        'Remember the rule from circles: make the shape bigger or smaller — the ratio stays the same.',
+        (1, 'Volume ÷ volume: k must cancel appears'),
+        "Volume over volume — the k's cancel and we get a fixed number. Same for area over area, perimeter over perimeter.",
+        ('d', 'Cross out choices 1 and 3'),
+        'So any answer with a k in it is a distractor. Choices one and three — out.',
+        (2, '1 − π/2 ≈ 1 − 1.57 < 0 appears'),
+        "Choice two: pi over 2 is about 1.57. 1 minus 1.57 — negative. A part of the box can't be a negative fraction.",
+        ('d', 'Cross out choice 2 and circle choice 4'),
+        'Choice four. And it makes sense: pi over 4 is about three quarters — the cylinder is about three quarters of the box. A quarter is outside.',
+        'Three approaches: full math — not recommended. Plugging in — the safest. Estimating — depends on the answers.',
+        'Here the estimate knocked out all three. Sometimes it only knocks out some.'])
+
+    # ---------- g127: 54 left -> pyramid 27 (Hebrew 18 left -> 9)  ==>  60 left -> pyramid 30 (a³ = 90, a not whole)
+    g = 'geo35-g127'; V = 'solve-' + g
+    _rn_q(M, g, stem='A pyramid is removed from a cube. The pyramid’s base is the entire bottom face of the cube, and its apex lies on the top face. The remaining solid has volume 60 cm³. What was the volume of the pyramid (in cm³)?',
+          choices=['$40$', '$20$', '$30$', '$90$'], correct=3, expl=[
+        'The pyramid has the same base and the same height as the cube. Therefore it is $\\frac13$ of the cube, and the part left is $\\frac23$.',
+        'In ratio units, pyramid : left : cube = 1 : 2 : 3. Two units are 60, so one unit is $60\\div2=30$ cm³.'])
+    _rn_items(M, V, 2, {1: '$V_{\\text{cube}}-V_{\\text{pyramid}}=60$', 2: '$a^3-\\frac{a^3}{3}=60\\ \\Rightarrow\\ \\frac{2a^3}{3}=60$',
+                        3: '$a^3=90\\ \\Rightarrow\\ \\frac{a^3}{3}=30$'})
+    _rn_sub(M, V, 2, [
+        ('54 is left.', '60 is left.'), ('Cube − pyramid = 54 appears', 'Cube − pyramid = 60 appears'),
+        ('a³ − a³/3 = 54 appears', 'a³ − a³/3 = 60 appears'), ('two thirds of a cubed is 54.', 'two thirds of a cubed is 60.'),
+        ('a³ = 81 appears', 'a³ = 90 appears'),
+        ("a cubed is 81. And here — a isn't even a whole number. But we don't need a! The pyramid is a cubed over 3: 27.",
+         "a cubed is 90. And here — a isn't even a whole number. But we don't need a! The pyramid is a cubed over 3: 30."),
+        ('Circle choice 1', 'Circle choice 3'), ('Choice one.', 'Choice three.')])
+    _rn_items(M, V, 3, {2: '$1$ unit $=60\\div2=30$'})
+    _rn_sub(M, V, 3, [
+        ('Write 2 units = 54', 'Write 2 units = 60'), ("What's left is 54. So two units are 54.", "What's left is 60. So two units are 60."),
+        ('1 unit = 54 ÷ 2 = 27 appears', '1 unit = 60 ÷ 2 = 30 appears'), ('One unit — divide by 2. 27. Done.', 'One unit — divide by 2. 30. Done.'),
+        ('Circle choice 1', 'Circle choice 3'), ('Choice one. Simple and easy.', 'Choice three. Simple and easy.')])
+
+    # ---------- g128: side 2sqrt2, edge 5 -> sqrt21 (Hebrew sqrt2, 4 -> sqrt15)  ==>  side 4sqrt2, edge 7 -> OB = 4, h = sqrt33
+    g = 'geo35-g128'; V = 'solve-' + g
+    _rn_q(M, g, stem='A pyramid has a square base with side $4\\sqrt2$ cm. Each lateral edge is 7 cm. What is the height of the pyramid (in cm)?',
+          choices=['$7\\sqrt2$', '$\\sqrt{33}$', '$\\sqrt{65}$', '$5\\sqrt2$'], correct=2, expl=[
+        'All lateral edges are equal. Therefore the apex P is above the center O of the square.',
+        'The base diagonal is $4\\sqrt2\\cdot\\sqrt2=8$ (silver triangle: hypotenuse = leg $\\times\\sqrt2$). Half of it: $OB=4$.',
+        'Triangle POB is right-angled at O: $h^2+4^2=7^2$, $h^2=33$, $h=\\sqrt{33}$.',
+        'Check: the height must be less than the slanted edge, 7. Only $\\sqrt{33}$ is less than $\\sqrt{49}=7$ ($5\\sqrt2=\\sqrt{50}$ is just above it).'])
+    _rn_fig(M, g, rn_fig_g128())
+    _rn_sub(M, V, 2, [
+        ('side 2 root 2. Each lateral edge is 5.', 'side 4 root 2. Each lateral edge is 7.'),
+        ("What's given? The lateral edge, 5.", "What's given? The lateral edge, 7."),
+        ('We have the hypotenuse, 5.', 'We have the hypotenuse, 7.')])
+    _rn_items(M, V, 3, {2: '$4\\sqrt2\\div\\sqrt2=4\\ \\Rightarrow\\ OB=4$', 3: '$h^2+4^2=7^2\\ \\Rightarrow\\ h^2=33$', 4: '$h=\\sqrt{33}$'})
+    _rn_sub(M, V, 3, [
+        ('The base is a square with side 2 root 2.', 'The base is a square with side 4 root 2.'),
+        ('2 root 2 over root 2 — 2. So OB is 2.', '4 root 2 over root 2 — 4. So OB is 4.'),
+        ('Write 2 on OB', 'Write 4 on OB'),
+        ('Leg 2, hypotenuse 5.', 'Leg 4, hypotenuse 7.'),
+        ('h² + 2² = 5² appears', 'h² + 4² = 7² appears'),
+        ('h squared plus 4 is 25. h squared is 21.', 'h squared plus 16 is 49. h squared is 33.'),
+        ('h = √21 appears', 'h = √33 appears'),
+        ('21 has no whole root: h is root 21.', '33 has no whole root: h is root 33.')])
+    _rn_items(M, V, 4, {1: '$h<7=\\sqrt{49}$'})
+    _rn_lines(M, V, 4, [
+        'Now the psychometric solution — estimating sizes.',
+        'Look at the height. If the lateral edge is 7 — must the height be less than 7?',
+        'The height is the SHORTEST distance from the apex to the base. The edge is slanted — longer.',
+        (1, 'h < 7 = √49 appears'),
+        'So the height is less than 7. Our anchor: root 49 is exactly 7.',
+        ('d', 'Cross out choice 1 (7√2 ≈ 9.8)'),
+        '7 root 2 — root 2 is about 1.4. About 9.8. Too big. Out.',
+        ('d', 'Next to choice 2 write √33 < √49 ✓'),
+        "Root 33 — less than root 49. Possible. Not certain yet — but possible. Don't cross it out.",
+        ('d', 'Cross out choice 3 (√65 > √49)'),
+        'Root 65 — more than root 49. More than 7. Out.',
+        ('d', 'Cross out choice 4 (5√2 = √50 > √49)'),
+        "5 root 2 — that's root 50. Just above 7. Out.",
+        ('d', 'Circle choice 2'),
+        'Three out — mark the fourth. Choice two.',
+        'Two ways: full math — and here the psychometric solution was much shorter.'])
+
+    # ---------- g129: edge 3sqrt2 -> side 6 -> 9sqrt3 (Hebrew sqrt2 -> 2 -> sqrt3)  ==>  edge 4sqrt2 -> side 8 -> 16sqrt3
+    g = 'geo35-g129'; V = 'solve-' + g
+    _rn_q(M, g, stem='The edge of cube ABCDEFGH is $4\\sqrt2$ cm. What is the area of triangle BDG (in cm²)?',
+          choices=['$32\\sqrt3$', '$48$', '$16\\sqrt3$', '$16$'], correct=3, expl=[
+        'BD, DG and GB are diagonals of equal square faces. Therefore all three are equal: $4\\sqrt2\\cdot\\sqrt2=8$.',
+        'Triangle BDG is equilateral with side 8. Its area is $\\frac{8^2\\sqrt3}{4}=16\\sqrt3$ cm².'])
+    _rn_fig(M, g, lambda s: _relabel_t(s, {'3√2': '4√2'}))
+    _rn_items(M, V, 2, {1: '$BD=4\\sqrt2\\cdot\\sqrt2=8$', 2: '$GM^2=4^2+(4\\sqrt2)^2=16+32=48$', 3: '$GM=4\\sqrt3$'})
+    _rn_sub(M, V, 2, [
+        ('The edge of the cube is 3 root 2.', 'The edge of the cube is 4 root 2.'),
+        ('BD = 3√2 · √2 = 6 appears', 'BD = 4√2 · √2 = 8 appears'),
+        ('3 root 2 times root 2 — 6.', '4 root 2 times root 2 — 8.'),
+        ('The edge CG — 3 root 2 — stands straight up.', 'The edge CG — 4 root 2 — stands straight up.'),
+        ('CM is half of 6 — 3.', 'CM is half of 8 — 4.'),
+        ('GM² = 3² + (3√2)² = 27 appears', 'GM² = 4² + (4√2)² = 48 appears'),
+        ('Leg 3, leg 3 root 2. Not golden, not silver, not a triple — full Pythagoras. 9 plus 18 — 27.',
+         'Leg 4, leg 4 root 2. Not golden, not silver, not a triple — full Pythagoras. 16 plus 32 — 48.'),
+        ('GM = 3√3 appears', 'GM = 4√3 appears'), ('The height is 3 root 3.', 'The height is 4 root 3.')])
+    _rn_items(M, V, 3, {1: '$S=\\frac{8\\cdot4\\sqrt3}{2}=16\\sqrt3$'})
+    _rn_sub(M, V, 3, [
+        ('S = 6 · 3√3 / 2 = 9√3 appears', 'S = 8 · 4√3 / 2 = 16√3 appears'),
+        ('Base 6, height 3 root 3, over 2: 9 root 3.', 'Base 8, height 4 root 3, over 2: 16 root 3.')])
+    _rn_items(M, V, 4, {1: '$S=\\frac{a^2\\sqrt3}{4}=\\frac{64\\sqrt3}{4}=16\\sqrt3$'})
+    _rn_sub(M, V, 4, [
+        ('BD — a diagonal on the bottom face. 6.', 'BD — a diagonal on the bottom face. 8.'),
+        ('All three sides are 6.', 'All three sides are 8.'),
+        ('S = a²√3/4 = 36√3/4 = 9√3 appears', 'S = a²√3/4 = 64√3/4 = 16√3 appears'),
+        ('36 over 4 — 9 root 3.', '64 over 4 — 16 root 3.')])
+
+    # ---------- g130: edge 2 (Hebrew 1); lesson examples edge 5 / diagonal 18 / box 6 x 8 x 24 (Hebrew 5, 12, 3 x 4 x 12)
+    #            ==>  edge 3 -> 3 + 3sqrt2 + 3sqrt3; edge 8 -> 8sqrt3; diagonal 27 -> 9sqrt3; 14/sqrt2 = 7sqrt2; box 9 x 12 x 8 -> 17
+    g = 'geo35-g130'; V = 'solve-' + g
+    _rn_q(M, g, stem='The edge of cube ABCDEFGH is 3 cm. What is the perimeter of triangle AEG (in cm)?',
+          choices=['$3+6\\sqrt2$', '$9\\sqrt2$', '$3+3\\sqrt3$', '$3+3\\sqrt2+3\\sqrt3$'], correct=4, expl=[
+        'AE = 3. The top-face diagonal is $EG=\\sqrt{3^2+3^2}=3\\sqrt2$. Since AE is perpendicular to the top face, triangle AEG is right at E. '
+        'Thus $AG=\\sqrt{3^2+(3\\sqrt2)^2}=\\sqrt{27}=3\\sqrt3$. Add the three sides: $3+3\\sqrt2+3\\sqrt3$.'])
+    _rn_fig(M, g, lambda s: _relabel_t(s, {'2': '3'}))
+    _rn_items(M, V, 2, {1: '$EG=3\\cdot\\sqrt2=3\\sqrt2$', 2: '$AG^2=3^2+(3\\sqrt2)^2=9+18=27$', 3: '$AG=\\sqrt{27}=3\\sqrt3$', 4: '$P=3+3\\sqrt2+3\\sqrt3$'})
+    _rn_sub(M, V, 2, [
+        ('The edge of the cube is 2.', 'The edge of the cube is 3.'),
+        ('Write 2 on AE', 'Write 3 on AE'), ('The edge is 2.', 'The edge is 3.'),
+        ('EG = 2√2 appears', 'EG = 3√2 appears'),
+        ('EG — a diagonal on a square with side 2. Two silver triangles: leg to hypotenuse, times root 2. 2 root 2.',
+         'EG — a diagonal on a square with side 3. Two silver triangles: leg to hypotenuse, times root 2. 3 root 2.'),
+        ('AG² = 2² + (2√2)² = 12 appears', 'AG² = 3² + (3√2)² = 27 appears'),
+        ('Two legs — Pythagoras: 4 plus 8 — 12.', 'Two legs — Pythagoras: 9 plus 18 — 27.'),
+        ('AG = 2√3 appears', 'AG = 3√3 appears'), ('Root 12 — 2 root 3.', 'Root 27 — 3 root 3.'),
+        ('P = 2 + 2√2 + 2√3 appears', 'P = 3 + 3√2 + 3√3 appears'),
+        ('Perimeter: 2 plus 2 root 2 plus 2 root 3.', 'Perimeter: 3 plus 3 root 2 plus 3 root 3.')])
+    _rn_items(M, V, 3, {2: 'Edge $8\\rightarrow$ diagonal $8\\sqrt3$', 3: 'Diagonal $27\\rightarrow$ edge $\\frac{27}{\\sqrt3}=\\frac{27\\sqrt3}{3}=9\\sqrt3$'})
+    _rn_sub(M, V, 3, [
+        ('Edge 5 → body diagonal 5√3 appears', 'Edge 8 → body diagonal 8√3 appears'),
+        ("edge 5, what's the diagonal? 5 root 3. Instantly.", "edge 8, what's the diagonal? 8 root 3. Instantly."),
+        ('Diagonal 18 → edge 18/√3 = 6√3 appears', 'Diagonal 27 → edge 27/√3 = 9√3 appears'),
+        ('The other way round? Diagonal 18 — divide by root 3. Our method: ignore the root, 18 over 3 is 6, attach the root — 6 root 3.',
+         'The other way round? Diagonal 27 — divide by root 3. Our method: ignore the root, 27 over 3 is 9, attach the root — 9 root 3.'),
+        ('Multiply the top and the bottom by root 3: 18 root 3 over 3. And 18 over 3 is 6.',
+         'Multiply the top and the bottom by root 3: 27 root 3 over 3. And 27 over 3 is 9.'),
+        ('Same with root 2: 18 over root 2 is 18 root 2 over 2 — 9 root 2.', 'Same with root 2: 14 over root 2 is 14 root 2 over 2 — 7 root 2.')])
+    _rn_items(M, V, 4, {1: 'Box $9\\times12\\times8$', 2: 'Base: $9,\\ 12\\rightarrow15$', 3: '$15,\\ 8\\rightarrow17$',
+                        4: 'One step: $\\sqrt{9^2+12^2+8^2}=\\sqrt{289}=17$'})
+    _rn_sub(M, V, 4, [
+        ('Box 6 × 8 × 24 appears', 'Box 9 × 12 × 8 appears'),
+        ('A box: 6 by 8, height 24.', 'A box: 9 by 12, height 8.'),
+        ('Base: 6, 8 → 10 appears', 'Base: 9, 12 → 15 appears'),
+        ('First the diagonal of the base: 6, 8 — the right angle there — a 3-4-5 triple times 2. 10.',
+         'First the diagonal of the base: 9, 12 — the right angle there — a 3-4-5 triple times 3. 15.'),
+        ('10, 24 → 26 appears', '15, 8 → 17 appears'),
+        ('Now with the height, another right triangle: 10 and 24. 5-12-13 times 2 — hamsa, bat mitzvah, bar mitzvah. 26.',
+         'Now with the height, another right triangle: 15 and 8. The triple 8, 15, 17 — 17.'),
+        ('Or in one step: the root of 6 squared plus 8 squared plus 24 squared. Root 676 — 26.',
+         'Or in one step: the root of 9 squared plus 12 squared plus 8 squared. 81 plus 144 plus 64 — root 289. 17.')])
+
+    # ---------- g131: edge 3 into 10 x 7 x 8 -> 12 (Hebrew 2 into 6 x 4 x 5 -> 12)  ==>  edge 4 into 18 x 9 x 11 -> 16
+    g = 'geo35-g131'; V = 'solve-' + g
+    _rn_q(M, g, stem='Identical cubes with edge 4 cm are placed in a box with internal dimensions 18 cm × 9 cm × 11 cm. The cube edges must be parallel to the box edges. What is the greatest number of cubes that can fit entirely inside the box?',
+          choices=['$24$', '$16$', '$20$', '$27$'], correct=2, expl=[
+        'Solid cubes are not water: count each direction and drop the remainder.',
+        'Length: $18\\div4=4$ cubes (remainder 2). Width: $9\\div4=2$ (remainder 1). Height: $11\\div4=2$ (remainder 3).',
+        '$4\\times2\\times2=16$. Trap: dividing volumes, $1782\\div64\\approx27.8$, treats the cubes like water.'])
+    _rn_fig(M, g, rn_fig_g131())
+    _rn_sub(M, V, 2, [('Cubes with edge 3 go into a box 10 by 7 by 8.', 'Cubes with edge 4 go into a box 18 by 9 by 11.')])
+    _rn_items(M, V, 3, {1: '$18\\div4=4$ (remainder 2)', 2: '$9\\div4=2$ (remainder 1)', 3: '$11\\div4=2$ (remainder 3)', 4: '$4\\cdot2\\cdot2=16$'})
+    _rn_sub(M, V, 3, [
+        ('10 ÷ 3 = 3 (+1) appears', '18 ÷ 4 = 4 (+2) appears'), ('3 into 10 — 3 full times.', '4 into 18 — 4 full times.'),
+        ('7 ÷ 3 = 2 (+1) appears', '9 ÷ 4 = 2 (+1) appears'), ('3 into 7 — twice.', '4 into 9 — twice.'),
+        ('8 ÷ 3 = 2 (+2) appears', '11 ÷ 4 = 2 (+3) appears'), ('3 into 8 — twice, with 2 left.', '4 into 11 — twice, with 3 left.'),
+        ('3 · 2 · 2 = 12 appears', '4 · 2 · 2 = 16 appears'), ('Multiply: 3 times 2 times 2 — 12.', 'Multiply: 4 times 2 times 2 — 16.'),
+        ('dividing volumes — 560 over 27 — about 20.7. Choice four, 20, is waiting',
+         'dividing volumes — 1782 over 64 — about 27.8. Choice four, 27, is waiting')])
+
+    # ---------- g132: 27 cubes, edge 2 -> volume -8, faces 4 cm² (Hebrew 8 cubes, edge 1)  ==>  27 cubes, edge 4 -> -64, faces 16 cm²
+    g = 'geo35-g132'; V = 'solve-' + g
+    _rn_q(M, g, stem='Twenty-seven identical cubes, each with edge 4 cm, form a larger cube. One corner cube is removed, as shown in the accompanying figure. How do the volume and total surface area of the remaining solid change?',
+          choices=['The volume is unchanged, and the surface area is unchanged.',
+                   'The volume decreases by 64 cm³, and the surface area is unchanged.',
+                   'The volume decreases by 64 cm³, and the surface area decreases by 48 cm².',
+                   'The volume decreases by 64 cm³, and the surface area increases by 48 cm².'], correct=2, expl=[
+        'The removed cube has volume $4^3=64$ cm³. The volume goes down by 64.',
+        'The corner cube showed 3 faces, each $4\\times4=16$ cm². Removing it loses those 3 faces, but 3 faces of its neighbors appear.',
+        'Lose 3, gain 3: the surface area does not change.'])
+    _rn_sub(M, V, 2, [('27 cubes with edge 2 form a big cube.', '27 cubes with edge 4 form a big cube.'),
+                      ('The others all say it drops by 8, one small cube.', 'The others all say it drops by 64, one small cube.')])
+
+
+# --- practice: new numbers ---------------------------------------------------------------------
+def rn_practice_questions(M):
+    P = lambda k: 'geo35-core-p%02d' % k
+    # p01: rectangle 5 x 3 about the 5 side -> 45pi  ==>  7 x 4 about the 7 side -> r 4, h 7 -> 112pi
+    _rn_q(M, P(1), stem='A rectangle measuring 7 cm × 4 cm is rotated through one full turn about one of its 7 cm sides. What is the volume of the solid formed (in cm³)?',
+          choices=['$224\\pi$', '$112\\pi$', '$28\\pi$', '$196\\pi$'], correct=2, expl=[
+        'A rectangle turned about a side makes a cylinder. The side on the axis, 7, is the height. The other side, 4, is the radius.',
+        'Volume: $\\pi\\cdot4^2\\cdot7=112\\pi$ cm³. Trap: $196\\pi$ swaps the radius and the height.'])
+    _rn_fig(M, P(1), rn_fig_p01())
+    # p02: cone r 2a, h 6a -> 8pi a³  ==>  r 3a, h 4a -> 12pi a³
+    _rn_q(M, P(2), stem='A cone has base radius 3a and height 4a, where a > 0. What is its volume?',
+          choices=['$36\\pi a^3$', '$12\\pi a^2$', '$12\\pi a^3$', '$4\\pi a^3$'], correct=3, expl=[
+        '$V=\\frac{\\pi(3a)^2(4a)}3=\\frac{36\\pi a^3}3=12\\pi a^3$. Square both the 3 and the a in the radius.',
+        'Traps: $36\\pi a^3$ forgets to divide by 3; $4\\pi a^3$ squares only the a.'])
+    _rn_fig(M, P(2), rn_fig_p02())
+    # p03: V 112, square faces 4 -> h 7 -> 28  ==>  V 150, square faces 5 -> h 6 -> 30
+    _rn_q(M, P(3), stem='A box has volume 150 cm³. Two of its faces are squares with side 5 cm, and its other four faces are rectangles that are not squares. What is the area of each rectangular face (in cm²)?',
+          choices=['$25$', '$60$', '$30$', '$36$'], correct=3, expl=[
+        'The two square faces are opposite each other. The edges are 5, 5 and h: $25h=150$, $h=6$.',
+        'Each rectangular face: $5\\times6=30$ cm².'])
+    _rn_fig(M, P(3), rn_fig_p03())
+    # p04: cylinder r 4, h 6 (numbers not needed) -> 2 : 1  ==>  r 5, h 9, new choice order
+    _rn_q(M, P(4), stem='A cone is removed from a cylinder with radius 5 cm and height 9 cm. The cone has the same base and height as the cylinder. What is the ratio of the remaining volume to the removed volume?',
+          choices=['$1:2$', '$3:1$', '$2:3$', '$2:1$'], correct=4, expl=[
+        'The cone is $\\frac13$ of the cylinder. The part left is $\\frac23$.',
+        'The ratio of the remaining volume to the removed volume is $\\frac23:\\frac13=2:1$. (The numbers 5 and 9 are not needed.)'])
+    # p05: cube edge 2 -> 12 + 4sqrt2  ==>  edge 3 -> 27 + 9sqrt2
+    _rn_q(M, P(5), stem='A cube with edge 3 cm is cut into two congruent triangular prisms by a plane through diagonals of two opposite faces. What is the total surface area of one prism (in cm²)?',
+          choices=['$54+9\\sqrt2$', '$27+9\\sqrt2$', '$27+3\\sqrt2$', '$18+9\\sqrt2$'], correct=2, expl=[
+        'The two triangular bases together make one $3\\times3$ square, area 9. Two lateral faces are $3\\times3$ squares, total area 18. '
+        'The cut face is a rectangle with sides 3 and $3\\sqrt2$, area $9\\sqrt2$. Total: $27+9\\sqrt2$.'])
+    # p06: AB 8, AD 4, h 5, AM = NC = 3 -> 80  ==>  AB 10, AD 3, h 8, AM = NC = 4 -> trapezoid (4 + 6) x 3 / 2 = 15 -> 120
+    _rn_q(M, P(6), stem='A box has base ABCD, with AB = 10 cm, AD = 3 cm, and height 8 cm. M lies on AB and N lies on DC, with AM = NC = 4 cm. A prism has base AMND and the same height as the box. What is its volume (in cm³)?',
+          choices=['$240$', '$120$', '$96$', '$144$'], correct=2, expl=[
+        '$DN=DC-NC=10-4=6$. The base AMND is a trapezoid with parallel sides $AM=4$ and $DN=6$ and height $AD=3$.',
+        'Its area: $\\frac{(4+6)\\cdot3}{2}=15$. The volume: $15\\times8=120$ cm³. (Since AM = NC, the prism is exactly half of the box, 240.)'])
+    _rn_fig(M, P(6), rn_fig_p06())
+    # p07: two pentagonal pyramids : cube = 15 : 12  ==>  two hexagonal pyramids : cube = 18 : 12 = 3/2
+    _rn_q(M, P(7), stem='Solid A is formed by joining two hexagonal pyramids along their entire bases. Solid B is a cube. What is the ratio of the number of edges of A to the number of edges of B?',
+          choices=['$1$', '$2$', '$\\frac23$', '$\\frac32$'], correct=4, expl=[
+        'Solid A: 6 edges around the shared hexagon, 6 up to the top apex and 6 down to the bottom apex — 18 edges. A cube has 12 edges.',
+        'The ratio is $\\frac{18}{12}=\\frac32$. Traps: 1 compares the vertices (8 and 8); 2 compares the faces (12 and 6).'])
+    _rn_fig(M, P(7), rn_fig_p07())
+    # p08: AM = AB/3, DN = 2DC/3 -> 2 : 1  ==>  AM = AB/4, DN = 3DC/4 -> 3 : 1
+    _rn_q(M, P(8), stem='The base of a box is square ABCD. M lies on AB and N lies on DC. Given:\n$\\begin{cases} AM=\\frac14AB \\\\ DN=\\frac34DC \\end{cases}$\nVertical planes through AN and MC divide the box into a middle prism with base AMCN and two outer prisms. What is the ratio of the combined outer volumes to the middle volume?',
+          choices=['$1:3$', '$3:1$', '$1:1$', '$4:3$'], correct=2, expl=[
+        '$NC=DC-DN=\\frac14$ of the side, and $AM=\\frac14$ of the side. AMCN is a parallelogram with base AM and height AD.',
+        'Its area is $\\frac14$ of the square. The two outer parts make $\\frac34$.',
+        'All three prisms have the same height. Therefore the ratio of the volumes is $\\frac34:\\frac14=3:1$.'])
+    _rn_fig(M, P(8), rn_fig_p08)
+    # p09 (letters): angle AEG, choice 2  ==>  angle BFH, choice 4
+    _rn_q(M, P(9), stem='In cube ABCDEFGH, FH is a diagonal of the top face EFGH. What is angle BFH?',
+          choices=['$60°$', '$45°$', '$75°$', '$90°$'], correct=4, expl=[
+        'Edge FB is perpendicular to the top face EFGH. So it is perpendicular to every line in that face that passes through F, including the diagonal FH.',
+        'Therefore angle BFH $=90°$.'])
+    _rn_fig(M, P(9), rn_fig_p09)
+    # p10: stepped solid, edge 3 -> 0  ==>  edge 4 -> 0 (faces 16 cm²)
+    _rn_q(M, P(10), stem='Twelve cubes, each with edge 4 cm, form the stepped solid shown in the accompanying figure. The highlighted cube is removed. What is the change in the total surface area (in cm²)?',
+          choices=['$16$', '$32$', '$0$', '$48$'], correct=3, expl=[
+        'The highlighted cube shows 3 faces: front, top and bottom. It touches 3 cubes: left, right and behind.',
+        'Removing it loses its 3 faces and uncovers 3 faces of its neighbors. Each face is $4\\times4=16$ cm²: $-48+48=0$.'])
+    # p11: 9 x 7 x 5 -> 245  ==>  10 x 8 x 6 -> 8 x 8 x 6 = 384
+    _rn_q(M, P(11), stem='A rectangular block measures 10 cm × 8 cm × 6 cm. One straight cut parallel to a face leaves a smaller rectangular block with at least one square face. What is the greatest possible volume of the smaller block (in cm³)?',
+          choices=['$360$', '$288$', '$480$', '$384$'], correct=4, expl=[
+        'Reducing 10 to 8 gives dimensions 8, 8, 6 and volume 384. Reducing 8 to 6 gives 10, 6, 6 and volume 360. Reducing 10 to 6 gives 6, 8, 6 and volume 288. '
+        'Any further reduction gives no larger valid block. The maximum is 384. (480 is the whole block, which is not cut.)'])
+    # p12: product 350, volume 140 -> 5/2  ==>  product 378, volume 108 -> 7/2
+    _rn_q(M, P(12), stem='The product of the numerical areas of two adjacent faces of a box is 378. The volume of the box is 108 cm³. The face areas are measured in cm². What is the length of their common edge (in cm)?',
+          choices=['$3$', '$\\frac72$', '$6$', '$7$'], correct=2, expl=[
+        'Let the common edge be a and the other edges b and c. The two faces are ab and ac: $(ab)(ac)=a^2bc=378$.',
+        'The volume is $abc=108$. Divide: $\\frac{a^2bc}{abc}=a=\\frac{378}{108}=\\frac72$.'])
+    # p13: r 1, h 4 in a cube of 12 -> 6 x 6 x 3 = 108  ==>  r 1, h 5 in a cube of 10 -> 5 x 5 x 2 = 50
+    _rn_q(M, P(13), stem='Cylinders with radius 1 cm and height 5 cm are packed upright in a cube with internal edge 10 cm. In each layer, their bases are arranged in straight rows and columns parallel to the cube’s edges. What is the greatest number of cylinders that can fit?',
+          choices=['$200$', '$25$', '$50$', '$63$'], correct=3, expl=[
+        'Each diameter is 2 cm. Along each 10 cm side: $10\\div2=5$ cylinders. One layer: $5\\times5=25$.',
+        'Height: $10\\div5=2$ layers. Total: $25\\times2=50$. Traps: 200 uses the radius instead of the diameter; 63 divides the volumes ($1000\\div5\\pi\\approx63.7$).'])
+    _rn_fig(M, P(13), rn_fig_p13())
+    # p14: h 12, base 9pi, two cuts -> 4 x 9pi = 36pi  ==>  h 15, base 16pi -> 64pi
+    _rn_q(M, P(14), stem='A cylinder has height 15 cm and base area 16π cm². Two cuts parallel to its bases divide it into three cylinders of equal height. By how much does the sum of their total surface areas exceed the original surface area (in cm²)?',
+          choices=['$96\\pi$', '$64\\pi$', '$32\\pi$', '$48\\pi$'], correct=2, expl=[
+        'The curved lateral surface is divided, but its total area is unchanged. Each of the two cuts creates two new circular faces, giving four new bases.',
+        'The increase is $4\\times16\\pi=64\\pi$.'])
+    # p15: chalk 3 x 2 x 1½ = 9, 3/8 a day -> 24  ==>  4 x 2 x 2½ = 20, 5/8 a day -> 32
+    _rn_q(M, P(15), stem='A rectangular block of drawing chalk measures 4 cm × 2 cm × $2\\frac12$ cm. Each complete day of use removes at least $\\frac58$ cm³ of chalk. For how many complete days, at most, can the block last?',
+          choices=['$25$', '$40$', '$12$', '$32$'], correct=4, expl=[
+        'The volume: $4\\times2\\times\\frac52=20$ cm³. The block lasts longest when only $\\frac58$ cm³ is used each day.',
+        '$20\\div\\frac58=20\\times\\frac85=32$ days.'])
+    # p16: r 3, h 8, 150° sector -> 30pi  ==>  r 4, h 6, 135° sector -> 3/8 of 96pi = 36pi
+    _rn_q(M, P(16), stem='A right cylinder has radius 4 cm and height 6 cm. A solid is formed by extending a 135° sector of its base through the full height. What is the volume of this solid (in cm³)?',
+          choices=['$32\\pi$', '$48\\pi$', '$36\\pi$', '$24\\pi$'], correct=3, expl=[
+        'The full cylinder: $\\pi\\cdot4^2\\cdot6=96\\pi$.',
+        'A 135° sector is $\\frac{135}{360}=\\frac38$ of the circle (as in the circles topic). The solid is the same fraction of the cylinder: $\\frac38\\times96\\pi=36\\pi$ cm³.'])
+    _rn_fig(M, P(16), rn_fig_p16)
+    # p17: cube in a cylinder of radius 5 -> pi/2 - 1  ==>  radius 3 (the ratio does not depend on it), new choice order
+    _rn_q(M, P(17), stem='A cube is inscribed in a cylinder of radius 3 cm. The top and bottom faces of the cube are inscribed in the circular bases of the cylinder. What is the ratio of the volume outside the cube but inside the cylinder to the volume of the cube?',
+          choices=['$\\frac2\\pi$', '$\\frac{\\pi}{2}-1$', '$1-\\frac2\\pi$', '$\\frac{\\pi}{4}-1$'], correct=2, expl=[
+        'The square is inscribed in the circle. Its diagonal is the diameter, 6. Its area: $\\frac{6^2}{2}=18$. The circle area: $9\\pi$.',
+        'Both solids have the same height. Therefore the volume ratio equals the ratio of the base areas: $\\frac{9\\pi-18}{18}=\\frac{\\pi}{2}-1$.'])
+    _rn_fig(M, P(17), lambda s: _relabel_t(s, {'10': '6'}))
+    # p18: two cylinders r 3, h 7 -> 12 x 6 x 7 = 504  ==>  r 4, h 5 -> 16 x 8 x 5 = 640
+    _rn_q(M, P(18), stem='Two cylinders, each of radius 4 cm and height 5 cm, stand side by side, as shown in the accompanying figure. Their bases are tangent, and the box fits tightly around this arrangement. What is the volume of the box (in cm³)?',
+          choices=['$480$', '$1280$', '$640$', '$320$'], correct=3, expl=[
+        'Each diameter is 8. The base of the box is $16\\times8$ and its height is 5.',
+        'Volume: $16\\times8\\times5=640$ cm³.'])
+    _rn_fig(M, P(18), lambda s: _relabel_t(s, {'3': '4'}))
+    # p19: volume = 2/9 edge -> face 2/9  ==>  volume = 3/16 edge -> face 3/16
+    _rn_q(M, P(19), stem='The numerical value of a cube’s volume in cm³ is $\\frac3{16}$ times the numerical value of its edge length in cm. What is the area of one face (in cm²)?',
+          choices=['$\\frac38$', '$\\frac3{16}$', '$\\frac{\\sqrt3}{4}$', '$\\frac34$'], correct=2, expl=[
+        'Let the edge length be a. The numerical relation is $a^3=\\frac3{16}a$. Since a > 0, divide by a to obtain $a^2=\\frac3{16}$. This is already the area of a face.',
+        'Trap: $\\frac{\\sqrt3}{4}$ is the edge, not the face.'])
+    # p20: edge 2x -> E-ABD = 4x³/3  ==>  edge 3y -> 9y³/2
+    _rn_q(M, P(20), stem='The edge of cube ABCDEFGH is 3y cm, where y > 0. What is the volume of triangular pyramid E–ABD (in cm³)?',
+          choices=['$\\frac{27y^3}{2}$', '$9y^3$', '$\\frac{9y^3}{2}$', '$\\frac{9y^3}{4}$'], correct=3, expl=[
+        'Triangle ABD has area $\\frac12(3y)(3y)=\\frac{9y^2}{2}$. The perpendicular height from E is EA = 3y.',
+        'The pyramid volume is $\\frac13\\cdot\\frac{9y^2}{2}\\cdot3y=\\frac{9y^3}{2}$. Trap: $\\frac{27y^3}{2}$ forgets to divide by 3.'])
+    _rn_fig(M, P(20), lambda s: _relabel_t(s, {'2x': '3y'}))
+
+
+def rn_practice(M):
+    """Approved clean-up (36 -> 26): the copies q-09 (= guided q-02, slant height) and q-14 (= guided q-03, painted
+    cube); 3 of the 6 English extras (keep p23 three face areas, p24 painted cube, p25 body diagonal); the September
+    items whose type the Hebrew practice already has or that another kept item drills (q-04 liters: q-13 drills it;
+    q-08 cone -> cylinder pouring: q-05 + p04; q-12 compare volumes: p02 / p04; q-15 prism edges: p07; q-16 turning: p01)."""
+    out = ['q-r26-t35-09', 'q-r26-t35-14',                          # copies
+           'geo35-core-p21', 'geo35-core-p22', 'geo35-core-p26',    # extras: open box (p03 / p05 types), lateral -> volume (p14), cone vs cylinder (p04)
+           'q-r26-t35-04', 'q-r26-t35-08', 'q-r26-t35-12', 'q-r26-t35-15', 'q-r26-t35-16']
+    for qid in out:
+        assert M.section_of(qid) == PRACT, qid
+        M.unplace(qid)
+
+
+def rn_lessons_cards(M):
+    # Lesson "Solids: Surface and Volume": the Hebrew lesson's 330 ml cola can -> a 500 ml bottle of water
+    L1 = 'geo-119'
+    n = next(i for i, b in enumerate(M.video(L1)['beats'], 1) if b['title'] == 'Volume')
+    _rn_sub(M, L1, n, [
+        ('Imagine a can of cola.', 'Imagine a bottle of water.'),
+        ('It always says on the can: 330 milliliters.', 'It always says on the bottle: 500 milliliters.'),
+        ('That can holds 330 cubic centimeters.', 'That bottle holds 500 cubic centimeters.')])
+    # "Cube and Box Facts": the Hebrew box 3 x 4 x 12 -> 13  ==>  2 x 6 x 9 -> 11
+    FV = 'r26-t35-cubefacts'
+    n = next(i for i, b in enumerate(M.video(FV)['beats'], 1) if b['title'] == 'Diagonals')
+    _rn_sub(M, FV, n, [
+        ('Write "3 × 4 × 12: √(9 + 16 + 144) = √169 = 13"', 'Write "2 × 6 × 9: √(4 + 36 + 81) = √121 = 11"'),
+        ('3 by 4 by 12: 9 plus 16 plus 144 — 169. The diagonal is 13.', '2 by 6 by 9: 4 plus 36 plus 81 — 121. The diagonal is 11.')])
+
+
+def _rn_sync(M):
+    """Solution-video titles and 'Pre-loaded' notes follow the (changed) stems."""
+    for v in M.D['videos'].values():
+        if v['topic'] != TOPIC or v.get('kind') != 'solution' or v.get('questionId') not in M.D['questions']: continue
+        v['title'] = v['navLabel'] = M.q(v['questionId'])['stem']
+        for b in v['beats']:
+            pre = b['items'][:b['pre']]
+            if len(pre) == 1 and pre[0].get('k') == 'q' and b.get('canvas', '').startswith('Pre-loaded — question'):
+                qid = pre[0]['qid']
+                b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, M.q(qid)['stem'])
+        M.touched_videos.add(v['id'])
+
+
+def renumber_pass(M):
+    rn_guided(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+    rn_lessons_cards(M)
+    _rn_sync(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last

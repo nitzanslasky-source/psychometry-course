@@ -978,3 +978,721 @@ def cut_repeats(M):
           R(0, 470, "'Cannot be determined'? Two legal figures, two answers", 30)),
         "That's the only test for 'none must be true' or 'cannot be determined': two figures that keep every given, and two different answers.",
         "In geometry it's rare — so test it before you choose it."])
+
+
+# ======================================================================================================
+# 2026-10-06 renumber pass (runs LAST, after cut_repeats). The English course must not look like the Hebrew one:
+# every Hebrew-derived question (guided geo38-g173 ... g187, practice geo38-core-p01 ... p20) gets new numbers
+# (letter-only questions: new letters, names and choice order; stories a bit changed). Idea, trap, level and methods stay.
+# Every changed figure is redrawn / relabelled, every guided solution video is rewritten to match.
+# Practice clean-up (approved): copy p26, extras beyond 3, September items whose type the Hebrew practice covers.
+# Nothing in topic 38 is recorded (checked ~/Documents/Course.recordings 2026-10-06).
+# ======================================================================================================
+RN_RECORDED = set()
+CBD38 = 'It cannot be determined from the information given.'
+
+
+def _rn_letters(t, mp):
+    """Rename point letters: every all-capital token made only of letters in mp (not 'A' used as an article,
+    not the area sign S_)."""
+    def r(mo):
+        tok = mo.group(1)
+        if not all(ch in mp for ch in tok): return tok
+        if tok == 'A' and re.match(r' [a-z]', t[mo.end():mo.end() + 2]): return tok
+        return ''.join(mp[ch] for ch in tok)
+    return re.sub(r'(?<![A-Za-z\\])([A-Z]+)(?![A-Za-z_])', r, t)
+
+
+def _rn_video_text(M, vid, fn):
+    """Apply fn to every text of a video: slide titles, spoken / drawn lines, labels, board items."""
+    if vid in RN_RECORDED: return
+    for b in M.video(vid)['beats']:
+        if b.get('title'): b['title'] = fn(b['title'])
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l: l[key] = fn(l[key])
+        for it in b['items']:
+            if it.get('t'): it['t'] = fn(it['t'])
+    M.touched_videos.add(vid)
+
+
+def _rn_sub(M, vid, n, pairs):
+    """Exact substring replacements in one slide (title, lines, labels, board items); each must hit."""
+    if vid in RN_RECORDED: return
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = False
+        if old in b.get('title', ''): b['title'] = b['title'].replace(old, new); hit = True
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit = True
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit = True
+        assert hit, (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def _rn_lines(M, vid, n, lines):
+    """Replace all lines of a slide (items stay; 'appear' lines must point at the same items)."""
+    if vid in RN_RECORDED: return
+    old = [l['appear'] for l in M.slide(vid, n)['lines'] if 'appear' in l]
+    assert old == [l['appear'] for l in lines if 'appear' in l], (vid, n)
+    M.edit_lines(vid, n, lambda ls: lines)
+
+
+def _rn_q(M, qid, **kw):
+    if qid in RN_RECORDED: return
+    old = (M.q(qid).get('questionVisual') or {}).get('svg')
+    M.set_q(qid, **kw)
+    return old
+
+
+def _rn_slide_figs(M, vid, fn):
+    """fn(svg) -> new svg for every figure shown on the slides of a video (question copies and VIS items)."""
+    if vid in RN_RECORDED: return
+    for b in M.video(vid)['beats']:
+        for it in b['items']:
+            if it.get('fig'): it['fig'] = dict(it['fig'], svg=fn(it['fig']['svg']))
+            if it.get('k') == 'vis': it['v'] = dict(it['v'], svg=fn(it['v']['svg']))
+    M.touched_videos.add(vid)
+
+
+def _relabel(svg, mp):
+    """Change the text of figure labels (exact <text> contents, each must exist)."""
+    for old in mp: assert ('>%s</text>' % old) in svg, old
+    return re.sub(r'>([^<]+)</text>', lambda mo: '>%s</text>' % mp.get(mo.group(1), mo.group(1)), svg)
+
+
+def _rn_same(old, new):
+    """Figure map for solution slides: the copy of the old question figure becomes the new one."""
+    vb = lambda x: re.search(r'viewBox="([^"]+)"', x).group(1)
+
+    def f(s):
+        assert s.replace(vb(s), '') == old.replace(vb(old), ''), 'unexpected figure on a solution slide'
+        return new.replace('viewBox="%s"' % vb(new), 'viewBox="%s"' % vb(s))   # keep the slide's crop
+    return f
+
+
+# ---------------------------------------------------------------- redrawn figures (same style and frames)
+def _rn_reg(cx, base_y, n, side, rot0=None):
+    """Regular n-gon with one side horizontal at the bottom (y = base_y), centered on x = cx."""
+    R = side / (2 * math.sin(math.pi / n)); a = R * math.cos(math.pi / n)
+    cy = base_y - a
+    pts = [(cx + R * math.cos(math.radians(90 + 180.0 / n + 360.0 * k / n)), cy + R * math.sin(math.radians(90 + 180.0 / n + 360.0 * k / n)))
+           for k in range(n)]
+    return pts, (cx, cy, R)
+
+
+def rn_fig_g173():
+    """Perimeter 30 each (drawn with equal perimeters): triangle, square, pentagon, octagon (circle around it)."""
+    P = 320.0; y = 250.0; body = []
+    for cx, n, name in ((73.3, 3, 'triangle'), (216.7, 4, 'square'), (360.0, 5, 'pentagon'), (511.6, 8, 'octagon')):
+        pts, (ox, oy, R) = _rn_reg(cx, y, n, P / n)
+        if n == 8:
+            body.append('<circle cx="%.1f" cy="%.1f" r="%.1f" fill="none" stroke="#c8691c" stroke-width="2" stroke-dasharray="6 5"/>' % (ox, oy, R + 1.5))
+            body.append(_poly(pts, TFILL, TEAL))
+        else: body.append(_poly(pts, 'none', INK))
+        body.append(_t(cx, 276.0, name, size=18))
+    return _svg('-6.0 123.4 595.9 178.6', 'Perimeter 30 each', body)
+
+
+def rn_fig_g176():
+    """Triangle ABC: AB = 8, BC = 15, AC = 18 (alpha at B, about 98 degrees)."""
+    u = 16.5; al = math.degrees(math.acos((8 ** 2 + 15 ** 2 - 18 ** 2) / (2 * 8 * 15)))
+    B = (400.0, 310.0); A_ = (B[0] - 8 * u, B[1]); d = math.radians(180 - al)
+    C_ = (B[0] + 15 * u * math.cos(d), B[1] - 15 * u * math.sin(d))
+    r = 23.0; a0 = math.pi; a1 = d
+    p0 = (B[0] + r * math.cos(a1), B[1] - r * math.sin(a1)); p1 = (B[0] - r, B[1])
+    body = [_poly([A_, B, C_], 'none', INK),
+            _t(A_[0] - 18, A_[1] + 16, 'A'), _t(B[0] + 18, B[1] + 16, 'B'), _t(C_[0], C_[1] - 20, 'C'),
+            '<path d="M %.3f %.3f A %.3f %.3f 0 0 0 %.3f %.3f" fill="none" stroke="%s" stroke-width="2"/>' % (p0[0], p0[1], r, r, p1[0], p1[1], TEAL),
+            _t(B[0] - 22, B[1] - 26, 'α', TEAL, 18),
+            _t((A_[0] + B[0]) / 2, B[1] + 28, '8'), _t((B[0] + C_[0]) / 2 + 24, (B[1] + C_[1]) / 2, '15'),
+            _t((A_[0] + C_[0]) / 2 - 22, (A_[1] + C_[1]) / 2 - 8, '18')]
+    return _svg('0 0 640 360', 'Triangle ABC', body)
+
+
+def _rn_trap(P, S, Q_, R, vb):
+    """The trapezoid of Question 'trapezoid' with the new letters K L M N and F."""
+    T_ = (S[0], Q_[1])
+    body = [_poly([P, Q_, T_, S], FILL, INK), _poly([T_, R, S], TFILL, TEAL),
+            _right(T_[0], T_[1], 0, -1, 1, 0),
+            _t(P[0] - 12, P[1] - 20, 'K'), _t(Q_[0] - 16, Q_[1] + 16, 'L'), _t(R[0] + 16, R[1] + 16, 'M'),
+            _t(S[0] + 12, S[1] - 20, 'N'), _t(T_[0], T_[1] + 23, 'F')]
+    return _svg(vb, 'A trapezoid split by a perpendicular from an upper vertex', body)
+
+
+RN_FIG_Q4 = _rn_trap((190, 110), (350, 110), (130, 250), (410, 250), '70 64 400 235')
+RN_FIG_Q4_STRETCH = _rn_trap((130, 110), (230, 110), (100, 250), (590, 250), '48 64 580 235')
+
+
+def rn_fig_g182():
+    """Sphere of radius 6 (20 px per cm): cut P 9 cm from A, cut Q 7 cm from B."""
+    def ball(cx, cut_x, title, dim_from, dim_to, dim):
+        h = math.sqrt(120 ** 2 - (cut_x - cx) ** 2)
+        return ['<circle cx="%d" cy="150" r="120" fill="%s" stroke="%s" stroke-width="2.5"/>' % (cx, FILL2, INK),
+                '<ellipse cx="%d" cy="150" rx="120" ry="26" fill="none" stroke="%s" stroke-width="1.4" stroke-dasharray="5 5"/>' % (cx, GRAY),
+                _ln(cx - 120, 150, cx + 120, 150, INK, 2.2), _dot(cx, 150, 4), _dot(cx - 120, 150, 4), _dot(cx + 120, 150, 4),
+                _ln(cut_x, 150 - h, cut_x, 150 + h, TEAL, 3.4), _dot(cut_x, 150, 4, TEAL),
+                _t(cx - 136, 150, 'A', size=21), _t(cx + 136, 150, 'B', size=21), _t(cx + (10 if cut_x < cx else -12), 170, 'O', size=19),
+                _ln(cut_x, 150 + h + 4, cut_x, 304, GRAY, 1.2, '3 3'),
+                _ln(dim_from if dim_from != cut_x else dim_to, 154, dim_from if dim_from != cut_x else dim_to, 304, GRAY, 1.2, '3 3'),
+                _ln(dim_from, 296, dim_to, 296, ORANGE, 2.4), _t((dim_from + dim_to) / 2, 314, dim, ORANGE, 19, '700'),
+                _t(cx, 10, title, TEAL, 20, '700')]
+    body = ball(160, 40 + 9 * 20, 'Cut P: 9 cm from A', 40, 220, '9 cm') + \
+        ball(480, 600 - 7 * 20, 'Cut Q: 7 cm from B', 460, 600, '7 cm')
+    return _svg('10 0 620 330', 'Two cuts of a sphere of radius 6 cm', body)
+
+
+def rn_fig_g183():
+    """Parallelograms ABCD (4, 8, 70 degrees) and EFGH (4, 8, 30 degrees), 30 px per cm."""
+    def par(B, ang, L, lab):
+        u = 30.0; a = math.radians(ang)
+        C_ = (B[0] + 8 * u, B[1]); A_ = (B[0] + 4 * u * math.cos(a), B[1] - 4 * u * math.sin(a)); D_ = (A_[0] + 8 * u, A_[1])
+        r = 30.0; p1 = (B[0] + r * math.cos(a), B[1] - r * math.sin(a))
+        return [_poly([B, C_, D_, A_], FILL2, INK, 2.6),
+                '<path d="M %.1f %.1f A 30.0 30.0 0 0 0 %.1f %.1f" fill="none" stroke="%s" stroke-width="2.4"/>' % (B[0] + r, B[1], p1[0], p1[1], TEAL),
+                _t(B[0] + 46 + (4 if ang < 45 else 0), B[1] - 16 + (4 if ang < 45 else 0), '%d°' % ang, TEAL, 18, '700', 'start'),
+                _t(A_[0] - 8, A_[1] - 14, L[0]), _t(B[0] - 12, B[1] + 18, L[1]), _t(C_[0] + 12, C_[1] + 18, L[2]), _t(D_[0] + 12, D_[1] - 12, L[3]),
+                _t((A_[0] + B[0]) / 2 - 14, (A_[1] + B[1]) / 2 - 4, '4', ORANGE, 20, '700'),
+                _t((B[0] + C_[0]) / 2, B[1] + 22, '8', ORANGE, 20, '700')]
+    body = par((30.0, 200.0), 70, 'ABCD', None) + par((350.0, 200.0), 30, 'EFGH', None)
+    return _svg('-14.0 44.1 736.0 203.9', 'Parallelograms ABCD and EFGH', body)
+
+
+def rn_fig_g185():
+    """An equilateral triangle and a regular hexagon inscribed in the same circle."""
+    ox, oy, r = 320.0, 180.0, 116.8
+    hexa = [(ox + r * math.cos(math.radians(90 + 60 * k)), oy - r * math.sin(math.radians(90 + 60 * k))) for k in range(6)]
+    tri = hexa[0::2]
+    body = ['<circle cx="%.3f" cy="%.3f" r="%.3f" fill="none" stroke="%s" stroke-width="2.5"/>' % (ox, oy, r, INK),
+            _poly(hexa, TFILL, TEAL), _poly(tri, FILL, INK)]
+    return _svg('177.2 37.2 285.6 285.6', 'An equilateral triangle and a regular hexagon inscribed in the same circle', body)
+
+
+def rn_fig_g187():
+    """Three rows of three congruent circles, tightly in a rectangle."""
+    r = 45.0; x0, y0 = 320 - 3 * r, 180 - 3 * r
+    body = [_poly([(x0, y0 + 6 * r), (x0 + 6 * r, y0 + 6 * r), (x0 + 6 * r, y0), (x0, y0)], 'none', INK)]
+    for i in range(3):
+        for j in range(3):
+            body.append('<circle cx="%.3f" cy="%.3f" r="%.3f" fill="%s" stroke="%s" stroke-width="2.5"/>'
+                        % (x0 + r + 2 * r * i, y0 + r + 2 * r * j, r, FILL, TEAL))
+    return _svg('0 0 640 360', 'Three rows of congruent tangent circles in a tight rectangle', body)
+
+
+def rn_fig_p01():
+    """Circles of radius 5 (center O) and 3, 3 (centers P, Q), externally tangent."""
+    u = 23.36; O = (226.0, 180.0); d = 8 * u; h = 3 * u
+    P = (O[0] + math.sqrt(d * d - h * h), O[1] - h); Q_ = (P[0], O[1] + h)
+    body = ['<circle cx="%.3f" cy="%.3f" r="%.3f" fill="none" stroke="%s" stroke-width="2.5"/>' % (O[0], O[1], 5 * u, INK),
+            '<circle cx="%.3f" cy="%.3f" r="%.3f" fill="none" stroke="%s" stroke-width="2.5"/>' % (P[0], P[1], 3 * u, INK),
+            '<circle cx="%.3f" cy="%.3f" r="%.3f" fill="none" stroke="%s" stroke-width="2.5"/>' % (Q_[0], Q_[1], 3 * u, INK),
+            _poly([O, P, Q_], 'none', TEAL), _t(O[0] - 15, O[1], 'O'), _t(P[0] + 18, P[1], 'P'), _t(Q_[0] + 18, Q_[1], 'Q')]
+    return _svg('0 0 640 360', 'Three externally tangent circles, two of equal radius', body)
+
+
+def rn_fig_p06():
+    """Right isosceles triangle: K fixed on the line, L to the right of K, M above K (rotates counterclockwise)."""
+    K = (320.0, 277.333); L = (514.667, 277.333); Mx = (320.0, 82.667)
+    body = [_poly([L, K, Mx], FILL, INK), _right(K[0], K[1], 1, 0, 0, -1, s=14.6),
+            _t(K[0], K[1] + 22, 'K'), _t(L[0] + 17, L[1], 'L'), _t(Mx[0], Mx[1] - 22, 'M')]
+    return _svg('0 0 640 360', 'A right isosceles triangle rotating counterclockwise about its right-angle vertex', body)
+
+
+def rn_fig_p13():
+    """Rhombus KLMN with a 50-degree angle at L, and square PQRS with the same side."""
+    B = (125.333, 277.333); s = 194.667; a = math.radians(50)
+    A_ = (B[0] + s * math.cos(a), B[1] - s * math.sin(a)); C_ = (B[0] + s, B[1]); D_ = (A_[0] + s, A_[1])
+    rr = 38.933; p1 = (B[0] + rr * math.cos(a), B[1] - rr * math.sin(a))
+    rh = ['<g transform="translate(0 0) scale(.5)"><title>A rhombus with a fifty-degree angle</title>',
+          _poly([A_, B, C_, D_], 'none', INK), _ln(A_[0], A_[1], C_[0], C_[1], TEAL), _ln(B[0], B[1], D_[0], D_[1], ORANGE),
+          '<path d="M %.3f %.3f A %.3f %.3f 0 0 0 %.3f %.3f" fill="none" stroke="%s" stroke-width="2"/>' % (B[0] + rr, B[1], rr, rr, p1[0], p1[1], TEAL),
+          _t(B[0] + 58, B[1] - 16, '50°', TEAL, 18),
+          _t(A_[0] - 10, A_[1] - 18, 'K'), _t(B[0] - 15, B[1] + 15, 'L'), _t(C_[0], C_[1] + 22, 'M'), _t(D_[0] + 15, D_[1] - 15, 'N'), '</g>',
+          '<text x="160" y="197" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="15" fill="#203344">Rhombus</text>']
+    E, F, G, H = (222.667, 82.667), (222.667, 277.333), (417.333, 277.333), (417.333, 82.667)
+    sq = ['<g transform="translate(320 0) scale(.5)"><title>A square with the same side length as the rhombus</title>',
+          _poly([E, F, G, H], 'none', INK), _ln(E[0], E[1], G[0], G[1], TEAL),
+          _t(E[0] - 15, E[1] - 15, 'P'), _t(F[0] - 15, F[1] + 15, 'Q'), _t(G[0] + 15, G[1] + 15, 'R'), _t(H[0] + 15, H[1] - 15, 'S'), '</g>',
+          '<text x="480" y="197" text-anchor="middle" font-family="DejaVu Sans,Arial" font-size="15" fill="#203344">Square</text>']
+    return _svg('0 0 640 205', 'Compare the figures', rh + sq)
+
+
+def rn_fig_p15():
+    """Four horizontal and nine vertical segments at their maximum number of crossings."""
+    body = []
+    xs = [150.0 + 40.0 * k for k in range(9)]; ys = [120.0 + 40.0 * k for k in range(4)]
+    for y in ys: body.append(_ln(128.0, y, 492.0, y, TEAL))
+    for x in xs: body.append(_ln(x, 98.0, x, 262.0, ORANGE))
+    return _svg('0 0 640 360', 'Four horizontal and nine vertical segments at their maximum number of crossings', body)
+
+
+def rn_fig_p16():
+    """p16: B(0,0) C(7,0) A(4,4) D(11,4) E(0,4); u = 30 px."""
+    u, ox, oy = 30.0, 150.0, 280.0
+    P = lambda x, y: (ox + u * x, oy - u * y)
+    A_, B_, C_, D_, E = P(4, 4), P(0, 0), P(7, 0), P(11, 4), P(0, 4)
+    tick = lambda p, q, dx, dy: _ln((p[0] + q[0]) / 2 - dx, (p[1] + q[1]) / 2 - dy, (p[0] + q[0]) / 2 + dx, (p[1] + q[1]) / 2 + dy, TEAL, 1.8)
+    body = [_poly([E, A_, B_], FILL, INK), _poly([B_, C_, D_, A_], 'none', INK),
+            _right(E[0], E[1], 1, 0, 0, 1, s=13), _right(B_[0], B_[1], 1, 0, 0, -1, s=13),
+            tick(E, A_, 0, 7), tick(E, B_, 7, 0),
+            _t(A_[0], A_[1] - 20, 'A'), _t(B_[0] - 14, B_[1] + 16, 'B'), _t(C_[0] + 12, C_[1] + 18, 'C'),
+            _t(D_[0] + 14, D_[1] - 14, 'D'), _t(E[0] - 18, E[1] - 12, 'E'), _t((B_[0] + C_[0]) / 2, B_[1] + 24, '7 cm')]
+    return _svg('110 120 420 210', 'A parallelogram with a right isosceles triangle attached to side AB', body)
+
+
+# ---------------------------------------------------------------- guided questions and their solution videos
+def rn_guided(M):
+    # --- Question 1 (g173): perimeter 24, triangle / square / hexagon / octagon -> perimeter 30, triangle / square / pentagon / octagon
+    q, v = 'geo38-g173', 'solve-geo38-g173'
+    _rn_q(M, q, stem='An equilateral triangle, a square, a regular pentagon and a regular octagon each have perimeter 30 cm. Which has the greatest area?',
+          choices=['The regular pentagon', 'The square', 'The equilateral triangle', 'The regular octagon'], correct=4,
+          expl=['All four shapes are regular and have the same perimeter. Among regular polygons with equal perimeters, the one with the most sides is the most like a circle. So, it has the greatest area: the octagon.',
+                'Choice 4.'])
+    _rn_slide_figs(M, v, lambda s: rn_fig_g173())
+    _rn_sub(M, v, 2, [('a regular hexagon and a regular octagon. All have perimeter 24.', 'a regular pentagon and a regular octagon. All have perimeter 30.'),
+                      ('Triangle, square, hexagon, octagon', 'Triangle, square, pentagon, octagon'),
+                      ('Circle choice 3', 'Circle choice 4'), ('Choice three.', 'Choice four.')])
+    _rn_sub(M, v, 3, [('the whole boundary is still $24$', 'the whole boundary is still $30$'),
+                      ('the boundary is the same 24', 'the boundary is the same 30'), ('the whole boundary is the same 24.', 'the whole boundary is the same 30.')])
+
+    # --- Question 2 (g174): hexagonal plots, 90 m^2 -> octagonal flower beds, 60 m^2; rectangles area 36 -> area 100
+    q, v = 'geo38-g174', 'solve-geo38-g174'
+    _rn_q(M, q, stem=' Two convex octagonal flower beds have the same area, 60 m². One is regular and the other is not regular. Which statement is correct? ',
+          choices=['The nonregular octagon has the greater perimeter.', 'The regular octagon has the greater perimeter.', 'The perimeters are equal.', CBD38],
+          correct=1, expl=['Both beds are octagons with the same area. The regular octagon is more like a circle. So, it needs less perimeter.',
+                           'The nonregular octagon has the greater perimeter: choice 1.'])
+    M.video(v)['title'] = M.video(v)['navLabel'] = 'Equal areas: which bed needs more edging?'
+
+    def rect(s):
+        for a, b in (('>12</text>', '>20</text>'), ('>6</text>', '>10</text>'), ('>3</text>', '>5</text>'),
+                     ('Area 36; perimeter 24', 'Area 100; perimeter 40'), ('Area 36; perimeter 30', 'Area 100; perimeter 50')):
+            assert a in s, a; s = s.replace(a, b)
+        return s
+    _rn_slide_figs(M, v, rect)
+    _rn_lines(M, v, 2, [
+        {'say': "Two octagonal flower beds with the same area, 60 square meters. One is regular, the other isn't. Which statement is correct?"},
+        {'say': "First of all — area and perimeter. So it's shape efficiency."},
+        {'appear': 1, 'label': 'Who is more like a circle? The regular octagon appears'},
+        {'say': 'Who is more like a circle? The regular octagon, of course.'},
+        {'say': 'A more efficient shape always has more area and less perimeter.'},
+        {'appear': 2, 'label': 'Same area → regular: less perimeter appears'},
+        {'say': 'Both have the same area. So, the regular octagon has less perimeter.'},
+        {'say': 'They asked who has the greater perimeter: the non-regular one. It has more border.'},
+        {'draw': 'Circle choice 1'},
+        {'say': 'Choice one.'}])
+    _rn_sub(M, v, 2, [('The regular hexagon.', 'The regular octagon.')])
+    _rn_lines(M, v, 3, [
+        {'appear': 1, 'label': 'A 10 × 10 square and a 5 × 20 rectangle appear'},
+        {'say': "Let's check it with rectangles. Both of these have area 100."},
+        {'appear': 2, 'label': 'Square: perimeter 40 appears'},
+        {'appear': 3, 'label': 'Rectangle: perimeter 50 appears'},
+        {'say': 'The square — the more circle-like one — needs perimeter 40. The stretched rectangle needs 50.'},
+        {'say': 'Same area, more stretched — more edging.'},
+        {'appear': 4, 'label': "'Same P = 40: 2 × 18 → 36, 10 × 10 → 100' appears"},
+        {'say': 'And the other way: 40 of edging. 2 by 18 gives area 36. 10 by 10 gives 100.'},
+        {'say': 'One condition: this works because both are octagons, one regular, one not. Same number of sides.'}])
+    _rn_sub(M, v, 3, [('Square: $P=24$', 'Square: $P=40$'), ('Rectangle: $P=30$', 'Rectangle: $P=50$'),
+                      ('Same $P=24$: $1\\times11\\rightarrow11$, $6\\times6\\rightarrow36$', 'Same $P=40$: $2\\times18\\rightarrow36$, $10\\times10\\rightarrow100$')])
+
+    # --- Question 3 (g176): 9, 12, 16 (anchor 9-12-15) -> 8, 15, 18 (anchor 8-15-17)
+    q, v = 'geo38-g176', 'solve-geo38-g176'
+    old = _rn_q(M, q, stem=' A triangle has side lengths 8 cm, 15 cm and 18 cm. Angle α is opposite the 18-cm side. Which of the following statements is necessarily true? ',
+                choices=['$\\alpha<90°$', '$\\alpha=90°$', '$\\alpha>90°$', CBD38], correct=3,
+                expl=['Anchor: if $\\alpha$ were $90°$, the side opposite it would be 17, because $8, 15, 17$ is a Pythagorean triple ($64+225=289=17^2$).',
+                      'The side is 18, longer than 17. Two fixed sides (8 and 15) with a longer third side: the angle between them opened. So, $\\alpha>90°$: choice 3.',
+                      'Check: $18^2=324>8^2+15^2=289$.'], figure=rn_fig_g176())
+    _rn_slide_figs(M, v, _rn_same(old, rn_fig_g176()))
+    _rn_sub(M, v, 2, [('A triangle with sides 9, 12 and 16. Angle α is opposite the 16.', 'A triangle with sides 8, 15 and 18. Angle α is opposite the 18.'),
+                      ("what's given: α, 9, 12, 16.", "what's given: α, 8, 15, 18."),
+                      ("9, 12, 15 — that's a right triangle! 3, 4, 5.", "8, 15, 17 — that's a right triangle! A Pythagorean triple."),
+                      ("But it's not 15 — it's 16.", "But it's not 17 — it's 18."),
+                      ('$\\alpha=90°\\ \\rightarrow\\ 9,\\ 12,\\ 15$ $(3,4,5)\\times3$', '$\\alpha=90°\\ \\rightarrow\\ 8,\\ 15,\\ 17$ (a Pythagorean triple)'),
+                      ('α = 90° → 9, 12, 15 (3, 4, 5 × 3) appears', 'α = 90° → 8, 15, 17 (a Pythagorean triple) appears'),
+                      ("it's a right triangle: 9, 12, 15. The triple 3, 4, 5 — times 3.", "it's a right triangle: 8, 15, 17. 8 squared plus 15 squared is 289 — that's 17 squared.")])
+    _rn_sub(M, v, 3, [('$15\\rightarrow16$', '$17\\rightarrow18$'), ('15 → 16: the side', '17 → 18: the side'),
+                      ("isn't 15. It's 16", "isn't 17. It's 18"), ('Think of the 9 and the 12', 'Think of the 8 and the 15'),
+                      ('from 15 apart to 16 apart', 'from 17 apart to 18 apart'), ('Circle choice 2', 'Circle choice 3'), ('Choice two.', 'Choice three.')])
+    _rn_sub(M, v, 4, [('$16^2=256$', '$18^2=324$'), ('$9^2+12^2=81+144=225$', '$8^2+15^2=64+225=289$'),
+                      ('16² = 256, 9² + 12² = 225 appears', '18² = 324, 8² + 15² = 289 appears'), ('81 + 144 = 225 < 256 appears', '64 + 225 = 289 < 324 appears'),
+                      ('16 squared is 256. 9 squared plus 12 squared is 225.', '18 squared is 324. 8 squared plus 15 squared is 289.'),
+                      ("'16 is the longest side'", "'18 is the longest side'")])
+
+    # --- Question 6 (g178): letters PQRS / T -> KLMN / F; numbers of the example 3, 4, 3 / 2, 7, 10 -> 2, 5, 4 / 3, 7, 12
+    q, v = 'geo38-g178', 'solve-geo38-g178'
+    mp = dict(P='K', Q='L', R='M', S='N', T='F')
+    _rn_q(M, q, stem=' KLMN is a trapezoid with KN ∥ LM. F lies on LM, and NF ⟂ LM. Which of the following statements is necessarily true? ',
+          choices=['The area of triangle NFM is less than the area of trapezoid KLFN.', 'The area of triangle NFM is greater than the area of trapezoid KLFN.',
+                   'The area of triangle NFM equals the area of trapezoid KLFN.', 'None of the above is necessarily true.'], correct=4,
+          expl=['Both regions have height NF. Trapezoid KLFN: $\\frac{(KN+LF)\\cdot NF}{2}$. Triangle NFM: $\\frac{FM\\cdot NF}{2}$.',
+                'Compare $FM$ with $KN+LF$. The givens do not fix FM (LM can be stretched to the right).',
+                'Example: $KN=2$, $LF=5$, $NF=4$: the trapezoid is 14. $FM=3$ gives a triangle of 6, $FM=7$ gives 14, $FM=12$ gives 24. '
+                'All three cases happen. So, none of the claims must be true: choice 4.'], figure=RN_FIG_Q4)
+    _rn_slide_figs(M, v, lambda s: RN_FIG_Q4 if s == FIG_Q4 else RN_FIG_Q4_STRETCH if s == FIG_Q4_STRETCH else 1 / 0)
+    _rn_video_text(M, v, lambda t: _rn_letters(t, mp))
+    _rn_sub(M, v, 5, [('Take KN 3, LF 4 and height 3. The trapezoid is 10.5.', 'Take KN 2, LF 5 and height 4. The trapezoid is 14.'),
+                      ('$FM=2$: triangle $3$', '$FM=3$: triangle $6$'), ('$FM=7$: triangle $10.5$', '$FM=7$: triangle $14$'),
+                      ('$FM=10$: triangle $15$', '$FM=12$: triangle $24$'),
+                      ('FM = 2 → triangle 3 appears', 'FM = 3 → triangle 6 appears'), ('FM = 7 → triangle 10.5 appears', 'FM = 7 → triangle 14 appears'),
+                      ('FM = 10 → triangle 15 appears', 'FM = 12 → triangle 24 appears'),
+                      ('FM 2 — the triangle is 3, smaller. FM 7 — 10.5, equal. FM 10 — 15, bigger.', 'FM 3 — the triangle is 6, smaller. FM 7 — 14, equal. FM 12 — 24, bigger.')])
+
+    # --- Question 7 (g179): diameter AB, chord CD, Ava / Noah / Mia -> diameter KL, chord MN, Lily / Ethan / Grace; new choice order
+    q, v = 'geo38-g179', 'solve-geo38-g179'
+    mp = dict(A='K', B='L', C='M', D='N')
+    names = lambda t: t.replace('Ava', 'Lily').replace('Noah', 'Ethan').replace('Mia', 'Grace')
+    _rn_q(M, q, stem=' KL is a diameter of a circle, and chord MN is perpendicular to KL. The four regions are labeled I, II, III and IV, as shown in the accompanying figure. '
+                     'Lily claims I = II in area. Ethan claims II = III. Grace claims I + III = II + IV. Which of the claims are necessarily true? ',
+          choices=['Lily’s only', 'Lily’s and Grace’s only', 'All three', 'Ethan’s and Grace’s only'], correct=2,
+          expl=['KL is a diameter, and a diameter is a line of symmetry. Reflect across KL: I goes onto II, and IV goes onto III. So, I = II and III = IV (Lily is right).',
+                'I + IV is half the circle (above KL). Since IV = III, I + III is also half the circle, and so is II + IV. Grace is right.',
+                'MN is only a chord. Push it toward L: III becomes tiny while II stays large. II = III need not be true. Answer: Lily and Grace only, choice 2.'],
+          figure=_relabel(FIG_Q5, mp))
+    _rn_slide_figs(M, v, lambda s: _relabel(s, mp))
+    _rn_video_text(M, v, lambda t: names(_rn_letters(t, mp)))
+    _rn_sub(M, v, 4, [('Circle choice 3', 'Circle choice 2'), ("Lily's and Grace's only — choice three.", "Lily's and Grace's only — choice two.")])
+
+    # --- Question 8 (g180): 45 degrees and beta < 80 -> 50 degrees and beta < 70 (range 60 .. 130)
+    q, v = 'geo38-g180', 'solve-geo38-g180'
+    old = _rn_q(M, q, stem='ABCD is a parallelogram, and AC is a diagonal. Given: ∠BAC = 50° and 0° < ∠ABC = β < 70°. Let α = ∠CAD. What is the exact range of α?',
+                choices=['$50°<\\alpha<90°$', '$60°\\leq\\alpha\\leq130°$', '$0°<\\alpha<130°$', '$60°<\\alpha<130°$'], correct=4,
+                expl=['At A, the whole angle is α + 50°. Adjacent angles of a parallelogram add up to 180°. So, α + 50° + β = 180° and α = 130° − β.',
+                      'Since 0° < β < 70°, the exact range is 60° < α < 130°: choice 4.'])
+    new = _relabel(old, {'45°': '50°'}); M.set_q(q, figure=new)
+    _rn_slide_figs(M, v, _rn_same(old, new))
+    _rn_sub(M, v, 2, [('Angle BAC is 45. Beta — angle ABC — is between 0 and 80.', 'Angle BAC is 50. Beta — angle ABC — is between 0 and 70.'),
+                      ('$\\beta+45°+\\alpha=180°$', '$\\beta+50°+\\alpha=180°$'), ('β + 45° + α = 180° appears', 'β + 50° + α = 180° appears'),
+                      ('$\\alpha=135°-\\beta$', '$\\alpha=130°-\\beta$'), ('α = 135° − β appears', 'α = 130° − β appears')])
+    _rn_sub(M, v, 3, [('less than 80 — and obviously', 'less than 70 — and obviously'), ('as beta approaches 80?', 'as beta approaches 70?'),
+                      ('plug in 79.999 forever — we plug in 80.', 'plug in 69.999 forever — we plug in 70.'),
+                      ('$\\beta=80°:\\ \\alpha=135°-80°=55°$', '$\\beta=70°:\\ \\alpha=130°-70°=60°$'), ('β = 80° → α = 55° appears', 'β = 70° → α = 60° appears'),
+                      ('80 plus 45 is 125. So alpha is 55.', '70 plus 50 is 120. So alpha is 60.'), ("can't actually be 80", "can't actually be 70"),
+                      ('alpha must be MORE than 55.', 'alpha must be MORE than 60.'), ('$\\alpha>55°$', '$\\alpha>60°$'), ('α > 55° appears', 'α > 60° appears'),
+                      ('push beta up toward 80 — alpha shrinks toward 55', 'push beta up toward 70 — alpha shrinks toward 60'),
+                      ('let alpha go below 55', 'let alpha go below 60'), ('start at 55', 'start at 60')])
+    _rn_sub(M, v, 4, [('$\\beta=0°:\\ \\alpha=135°$', '$\\beta=0°:\\ \\alpha=130°$'), ('β = 0° → α = 135° appears', 'β = 0° → α = 130° appears'),
+                      ('0 plus 45 plus something is 180. That something is 135.', '0 plus 50 plus something is 180. That something is 130.'),
+                      ('a little less than 135.', 'a little less than 130.'), ('alpha grows toward 135.', 'alpha grows toward 130.'),
+                      ('$55°<\\alpha<135°$', '$60°<\\alpha<130°$'), ('55° < α < 135° appears', '60° < α < 130° appears'),
+                      ('could equal 55 or 135. That would need beta to be exactly 80 or 0', 'could equal 60 or 130. That would need beta to be exactly 70 or 0')])
+
+    # --- Question 9 (g181): lines a, b; YZ, WX, UV; VX -> lines c, d; KL, MN, PQ; NQ
+    q, v = 'geo38-g181', 'solve-geo38-g181'
+    mp = dict(Y='K', Z='L', W='M', X='N', U='P', V='Q')
+    _rn_q(M, q, stem='Lines c and d are parallel. Segments KL, MN and PQ join them, making acute angles α, β and γ with line c, respectively. '
+                     'Given: α < β < γ < 90°. Which statement cannot be true?',
+          choices=['$MN<KL$', '$NQ>MN$', '$PQ>MN$', '$PQ<KL$'], correct=3,
+          expl=['All three segments cross the same distance between the parallel lines. A smaller acute angle with the parallel line needs a longer segment. '
+                'Thus KL > MN > PQ. The statement PQ > MN is impossible: choice 3.',
+                'NQ lies along d, and its length depends on how far apart the segments are.'],
+          figure=_relabel(M.q(q)['questionVisual']['svg'], dict(mp, a='c', b='d')))
+    _rn_slide_figs(M, v, lambda s: _relabel(s, dict(mp, a='c', b='d')))
+    _rn_sub(M, v, 2, [('Lines a and b are parallel.', 'Lines c and d are parallel.'), ('gamma with line a.', 'gamma with line c.'),
+                      ('between line a and line b.', 'between line c and line d.')])
+    _rn_video_text(M, v, lambda t: _rn_letters(t, mp).replace('QN', 'NQ'))
+
+    # --- Question 10 (g182): radius 5, P 6 from B, Q 8 from A -> radius 6, P 9 from A, Q 7 from B (now Q is closer)
+    q, v = 'geo38-g182', 'solve-geo38-g182'
+    old = _rn_q(M, q, stem=' A solid sphere has radius 6 cm and diameter AB. Cut P is perpendicular to AB at a point 9 cm from A. Cut Q is perpendicular to AB at a point 7 cm from B. '
+                           'Each cut is considered separately. Which produces the greater total surface area of the two resulting pieces? ',
+                choices=['Cut P', 'The totals are equal.', 'Cut Q', CBD38], correct=3,
+                expl=['The center is 6 cm from A and from B. Cut P is $9-6=3$ cm from the center. Cut Q is $7-6=1$ cm from the center.',
+                      'Each cut keeps the whole sphere surface and adds two flat disks. Closer to the center means a bigger disk: '
+                      '$\\rho^2=36-9=27$ for P, $\\rho^2=36-1=35$ for Q.',
+                      'Cut Q gives the greater total: choice 3.'], figure=rn_fig_g182())
+    _rn_slide_figs(M, v, _rn_same(old, rn_fig_g182()))
+    _rn_sub(M, v, 2, [('A solid sphere, radius 5, diameter AB. Cut P is perpendicular to AB, 6 from B. Cut Q is perpendicular to AB, 8 from A.',
+                       'A solid sphere, radius 6, diameter AB. Cut P is perpendicular to AB, 9 from A. Cut Q is perpendicular to AB, 7 from B.')])
+    _rn_sub(M, v, 3, [('P: $6-5=1$ from O', 'P: $9-6=3$ from O'), ('Q: $8-5=3$ from O', 'Q: $7-6=1$ from O'),
+                      ('P: 6 − 5 = 1 from O appears', 'P: 9 − 6 = 3 from O appears'), ('Q: 8 − 5 = 3 from O appears', 'Q: 7 − 6 = 1 from O appears'),
+                      ('Radius 5. Cut P is 6 from B — 1 past the center. Cut Q is 8 from A — 3 past the center.',
+                       'Radius 6. Cut P is 9 from A — 3 past the center. Cut Q is 7 from B — 1 past the center.'),
+                      ('Cut P is closer to the center', 'Cut Q is closer to the center'), ('Circle choice 2', 'Circle choice 3'), ('Cut P — choice two.', 'Cut Q — choice three.')])
+    _rn_sub(M, v, 4, [('$\\rho^2+d^2=5^2$', '$\\rho^2+d^2=6^2$'), ('ρ² + d² = 25 → P: 24, Q: 16 appears', 'ρ² + d² = 36 → P: 27, Q: 35 appears'),
+                      ('P: $\\rho^2=24$ · Q: $\\rho^2=16$', 'P: $\\rho^2=27$ · Q: $\\rho^2=35$'), ('P: ρ² = 24 · Q: ρ² = 16 appears', 'P: ρ² = 27 · Q: ρ² = 35 appears'),
+                      ("P: 25 minus 1 — 24. Q: 25 minus 9 — 16. P's faces are bigger.", "P: 36 minus 9 — 27. Q: 36 minus 1 — 35. Q's faces are bigger.")])
+
+    # --- Question 11 (g183): 3, 6, 75 and 45 degrees -> 4, 8, 70 and 30 degrees (side 2 : 1 kept for the triangle-inequality method)
+    q, v = 'geo38-g183', 'solve-geo38-g183'
+    old = _rn_q(M, q, stem='ABCD and EFGH are parallelograms. Given: AB = EF = 4 cm, BC = FG = 8 cm, ∠ABC = 70°, and ∠EFG = 30°. Which statement cannot be true?',
+                expl=['Take the 8-cm sides as bases. Then the area is $8\\cdot h$, where $h$ is the height from A (or from E).',
+                      'The side of 4 leans at $70°$ in ABCD and at $30°$ in EFGH. Up to $90°$, a wider angle gives a taller height. '
+                      'With $30°$, the height is half of 4: $h=2$. With $70°$, it is more than that (and less than 4).',
+                      'Same base, taller height: ABCD has the greater area. Equal areas cannot be true: choice 1.',
+                      'The other claims are true: $AC>8-4=4=AB$ (triangle inequality), $AC>EG$ (a wider angle between the same sides), '
+                      'and both perimeters are $2(4+8)=24$.'], figure=rn_fig_g183())
+    _rn_slide_figs(M, v, _rn_same(old, rn_fig_g183()))
+    _rn_sub(M, v, 2, [('AB and EF are 3, BC and FG are 6. Angle ABC is 75, angle EFG is 45.', 'AB and EF are 4, BC and FG are 8. Angle ABC is 70, angle EFG is 30.'),
+                      ('$6-3<AC<6+3$', '$8-4<AC<8+4$'), ('6 − 3 < AC < 6 + 3 appears', '8 − 4 < AC < 8 + 4 appears'),
+                      ('Less than the sum — 9. More than the difference — 3. So AC is between 3 and 9.', 'Less than the sum — 12. More than the difference — 4. So AC is between 4 and 12.'),
+                      ("It can't be 3 — it's definitely more than 3. And AB is 3.", "It can't be 4 — it's definitely more than 4. And AB is 4."),
+                      ('sides 3 and 6 with 60 degrees', 'sides 4 and 8 with 60 degrees'),
+                      ('$60°$ with sides $3, 6$: a $30°$-$60°$-$90°$ triangle, $AC=3\\sqrt3\\approx5.2$', '$60°$ with sides $4, 8$: a $30°$-$60°$-$90°$ triangle, $AC=4\\sqrt3\\approx6.9$'),
+                      ("'60° with sides 3, 6: 30-60-90' appears", "'60° with sides 4, 8: 30-60-90' appears"),
+                      ("6 is twice 3. It's the 30-60-90 triangle: the right angle is at A, and AC is 3 root 3 — about 5.2.",
+                       "8 is twice 4. It's the 30-60-90 triangle: the right angle is at A, and AC is 4 root 3 — about 6.9."),
+                      ('Our angle is 75 — wider than 60. The angle opened, and AC got even longer than 5.2.', 'Our angle is 70 — wider than 60. The angle opened, and AC got even longer than 6.9.')])
+    _rn_sub(M, v, 3, [('AB equals EF — 3. BC equals FG — 6.', 'AB equals EF — 4. BC equals FG — 8.'), ('the angle: 75 against 45.', 'the angle: 70 against 30.')])
+    _rn_sub(M, v, 4, [('Both have base 6.', 'Both have base 8.'), ('The side of 3 leans at 75 in the first one, at 45 in the second.', 'The side of 4 leans at 70 in the first one, at 30 in the second.'),
+                      ('Same base $6$, taller height', 'Same base $8$, taller height'), ('Same base 6, taller height', 'Same base 8, taller height')])
+    _rn_sub(M, v, 5, [('Push 75 up to 80 — close to 90. Pull 45 down to 30.', 'Push 70 up to 85 — close to 90. Pull 30 down to 15.'),
+                      ('max area $6\\cdot3=18$', 'max area $8\\cdot4=32$'), ('max area 6 · 3 = 18 appears', 'max area 8 · 4 = 32 appears'),
+                      ('the maximum area: 6 times 3, 18.', 'the maximum area: 8 times 4, 32.'), ('105 degrees gives the same height as 75', '110 degrees gives the same height as 70')])
+    _rn_sub(M, v, 6, [('$P=2(3+6)=18$ for both', '$P=2(4+8)=24$ for both'), ('P = 2(3 + 6) = 18 for both appears', 'P = 2(4 + 8) = 24 for both appears')])
+
+    # --- Question 12 (g184): letters KLM, N, E -> RST, P, H; plug-in angles 80 / 10 -> 70 / 20
+    q, v = 'geo38-g184', 'solve-geo38-g184'
+    mp = dict(K='R', L='S', M='T', N='P', E='H')
+    Q0 = M.q(q)
+    old = _rn_q(M, q, stem=_rn_letters(Q0['stemRich'], mp), choices=[_rn_letters(c, mp) for c in Q0['choicesRich']],
+                expl=[_rn_letters(e, mp) for e in Q0['explanation']])
+    new = _relabel(old, dict(K='R', L='S', M='T', N='P')).replace('bisector from M', 'bisector from T'); M.set_q(q, figure=new)
+    _rn_slide_figs(M, v, _rn_same(old, new))
+    _rn_video_text(M, v, lambda t: _rn_letters(t, mp))
+    _rn_sub(M, v, 4, [('Say alpha is 80.', 'Say alpha is 70.'),
+                      ('$\\alpha=80°\\Rightarrow\\angle T=10°\\Rightarrow x=5°$', '$\\alpha=70°\\Rightarrow\\angle T=20°\\Rightarrow x=10°$'),
+                      ('α = 80° → x = 5° appears', 'α = 70° → x = 10° appears'), ('80, 90 — angle T is 10. So, x is 5.', '70, 90 — angle T is 20. So, x is 10.'),
+                      ('But alpha could be 10 — a sharper angle.', 'But alpha could be 20 — a sharper angle.'),
+                      ('$\\alpha=10°\\Rightarrow\\angle T=80°\\Rightarrow x=40°$', '$\\alpha=20°\\Rightarrow\\angle T=70°\\Rightarrow x=35°$'),
+                      ('α = 10° → x = 40° appears', 'α = 20° → x = 35° appears'), ('10, 90 — angle T is 80. So, x is 40.', '20, 90 — angle T is 70. So, x is 35.')])
+
+    # --- Question 13 (g185): square and regular octagon -> equilateral triangle and regular hexagon; new choice order
+    q, v = 'geo38-g185', 'solve-geo38-g185'
+    _rn_q(M, q, stem='An equilateral triangle and a regular hexagon are compared under each of the conditions below. Which statement is false?',
+          choices=['If their areas are equal, the triangle has the greater perimeter.', 'If both are inscribed in the same circle, the hexagon has the greater area.',
+                   'If their perimeters are equal, the hexagon has the greater area.', 'If both are inscribed in the same circle, the triangle has the greater perimeter.'],
+          correct=4, expl=['For equal perimeters, a regular hexagon encloses more area than an equilateral triangle. For equal areas, it needs less perimeter.',
+                           'In the same circle, the hexagon has both the greater area and the greater perimeter. So, the claim that the inscribed triangle has the greater perimeter is false: choice 4.'])
+    _rn_slide_figs(M, v, lambda s: rn_fig_g185())
+    _rn_video_text(M, v, lambda t: t.replace('A square and a regular octagon', 'An equilateral triangle and a regular hexagon')
+                   .replace('square', 'triangle').replace('octagon', 'hexagon'))
+    _rn_sub(M, v, 3, [('Cross out choice 4', 'Cross out choice 1')])
+    _rn_sub(M, v, 4, [('Cross out choice 1', 'Cross out choice 2'), ('Circle choice 2', 'Circle choice 4'), ('Choice two.', 'Choice four.')])
+
+    # --- Question 14 (g186): block, answers 10, 11, 12, 15 -> block of cheese, answers 10, 12, 16, 11
+    q, v = 'geo38-g186', 'solve-geo38-g186'
+    _rn_q(M, q, stem='A solid rectangular block of cheese is cut into two pieces by one straight cut (one plane through its interior). '
+                     'Which of the following cannot be the total number of faces of the two pieces?',
+          choices=['$10$', '$12$', '$16$', '$11$'], correct=3,
+          expl=['Each of the six original faces ends up in at most two pieces, so it gives at most two faces. The cut adds exactly two new faces.',
+                'The total is at most $6\\cdot2+2=14$. So, 16 is impossible: choice 3. (10, 11 and 12 are all possible.)'])
+    _rn_sub(M, v, 2, [('A solid block is cut into two pieces', 'A block of cheese is cut into two pieces'), ('Cross out choice 1', 'Cross out choice 2')])
+    _rn_sub(M, v, 3, [('Answers $10, 11, 12, 15$ · the extremes: $10$ and $15$', 'Answers $10, 11, 12, 16$ · the extremes: $10$ and $16$'),
+                      ('Answers 10, 11, 12, 15 → edges 10 and 15 appears', 'Answers 10, 11, 12, 16 → extremes 10 and 16 appears'),
+                      ('Here the extremes are 10 and 15.', 'Here the extremes are 10 and 16.')])
+    _rn_sub(M, v, 4, [('Cross out choice 3', 'Cross out choice 1'), ('So, the insight points to 15.', 'So, the insight points to 16.'),
+                      ('Circle choice 2', 'Circle choice 3'), ('15 — choice two.', '16 — choice three.')])
+    _rn_sub(M, v, 5, [('Why not 15', 'Why not 16'), ('14 at most. 15 is impossible.', '14 at most. 16 is impossible.')])
+
+    # --- Question 15 (g187): two rows (2n + 4, n = 3 -> 10) -> three rows (2n + 6, n = 3 -> 12)
+    q, v = 'geo38-g187', 'solve-geo38-g187'
+    old = _rn_q(M, q, stem=' A rectangle tightly contains three rows of n congruent circles of radius r, where n ≥ 2. The circles are arranged in aligned columns and are tangent to their neighbors, '
+                           'as shown in the accompanying figure. How many points of tangency are there between the circles and the sides of the rectangle? ',
+                choices=['$2n+4$', '$5n$', '$2n+6$', '$n^2+4$'], correct=3,
+                expl=['The top side touches the n circles of the top row, and the bottom side touches the n circles of the bottom row. The middle row touches neither.',
+                      'The left side touches 3 circles (one in each row), and the right side touches 3 circles. Total: $n+n+3+3=2n+6$: choice 3.',
+                      'Contacts between circles are not counted.'], figure=rn_fig_g187())
+    _rn_slide_figs(M, v, _rn_same(old, rn_fig_g187()))
+    _rn_lines(M, v, 2, [
+        {'say': 'A rectangle tightly holds three rows of n equal circles, radius r, each tangent to its neighbors.'},
+        {'say': 'How many tangency points are there between the circles and the sides of the rectangle?'},
+        {'say': 'Start with understanding. The rectangle has 4 sides: the bottom, the top, the left side and the right side.'},
+        {'say': 'Check how many tangency points each side has with the circles. Start with the bottom.'},
+        {'say': 'Each circle in the bottom row touches the bottom once. n circles — n tangency points.'},
+        {'appear': 1, 'label': 'Bottom: n · top: n appears'},
+        {'say': 'And by symmetry the same for the top: the top row — n points. The middle row touches neither.'},
+        {'say': "Now the right side. Here the number doesn't depend on n: one circle from each row touches it — 3 points. The left side too — 3."},
+        {'appear': 2, 'label': 'Left: 3 · right: 3 appears'},
+        {'appear': 3, 'label': 'Total: 2n + 6 appears'},
+        {'say': 'Altogether: 2n plus 6. Careful — with two rows it would be 2n plus 4. Here there are three rows.'},
+        {'draw': 'Circle choice 3'},
+        {'say': 'Choice three. That was the understanding approach.'}])
+    _rn_sub(M, v, 2, [('Left: $2$ · right: $2$', 'Left: $3$ · right: $3$'), ('Total: $2n+4$', 'Total: $2n+6$')])
+    _rn_lines(M, v, 3, [
+        {'say': "Now let's solve it by plugging in. You can plug in any number for n — usually small ones."},
+        {'say': 'But in questions like this, plugging in 1 or 2 usually gives two or more matching answers.'},
+        {'appear': 1, 'label': 'n = 2: 5n = 10 and 2n + 6 = 10 appears'},
+        {'say': 'Look — n equals 2 gives 10 for two different answers.'},
+        {'say': 'So plug in 3: small enough to count easily — and usually only one answer fits.'},
+        {'draw': 'Sketch three rows of 3 circles in a rectangle and mark the tangency points'},
+        {'say': 'Count: 3 on the top, 3 at the bottom, 3 on each side — 12.'},
+        {'appear': 2, 'label': 'n = 3: count = 12 appears'},
+        {'say': "Plug 3 into the answers. Anything that isn't 12 — out."},
+        {'appear': 3, 'label': '10, 15, 12, 13 appears'},
+        {'say': '2n plus 4 — 10, out. 5n — 15, out. n squared plus 4 — 13, out. 2n plus 6 — 12.'},
+        {'draw': 'Circle choice 3'},
+        {'say': 'Choice three.'},
+        {'say': "That's it — we've finished geometric understanding, and in fact we've finished geometry altogether."},
+        {'say': "What can I wish you? That you do as well in the other topics as you do in geometry — and I'm waiting for you there too."},
+        {'say': "Let's go to the summary of this topic."}])
+    _rn_sub(M, v, 3, [('$n=2$: $4n=8$ and $2n+4=8$', '$n=2$: $5n=10$ and $2n+6=10$'), ('$n=3$: count $=10$', '$n=3$: count $=12$'),
+                      ('$8,\\ 12,\\ 11,\\ 10$', '$10,\\ 15,\\ 12,\\ 13$')])
+
+
+# ---------------------------------------------------------------- practice: the 20 Hebrew-derived questions
+def rn_practice_questions(M):
+    P_ = lambda n: 'geo38-core-p%02d' % n
+    fig = lambda n: M.q(P_(n))['questionVisual']['svg']
+    _rn_q(M, P_(1), stem='Three circles are externally tangent to one another. Two have radius 3 cm and the third has radius 5 cm. What type of triangle is formed by joining their centers?',
+          choices=['A right triangle', 'An isosceles triangle', 'An obtuse triangle', 'A scalene triangle'], correct=2,
+          expl=['The distance between the centers of two externally tangent circles is the sum of their radii. The sides are $5+3=8$, $5+3=8$ and $3+3=6$.',
+                'Exactly two sides are equal: the triangle is isosceles. It is not right or obtuse: the longest side is 8, and $8^2=64<8^2+6^2=100$. Choice 2.'],
+          figure=rn_fig_p01())
+    _rn_q(M, P_(2), stem='ABCD and DEFG are squares. E lies on DC, and their top sides AD and DG lie on one straight line. Given: FG = 3 cm. What is the area of triangle CFG (in cm²)?',
+          choices=['$3$', '$4.5$', '$9$', CBD38], correct=2,
+          expl=['The big square is not given — but test before you choose "cannot be determined". Take GF as the base of triangle CFG: $GF=3$.',
+                'The height is the distance from C to line GF. C lies on line DC. DE is the side of the small square opposite GF. So, line DC is parallel to GF. '
+                'The distance between them is $DG=3$, whatever the size of the big square.',
+                'Area $=\\frac{3\\cdot3}{2}=4.5$ cm². Choice 2.',
+                'Two figures check: big side 6 or big side 10 — C slides along line DC, and the area is 4.5 both times. The answer is fixed.'],
+          figure=_relabel(fig(2), {'2 cm': '3 cm'}))
+    _rn_q(M, P_(3), stem=' K, M and P lie on line s. KL, MN and PQ are perpendicular to s, and ∠LNQ = 90°. Which of the following statements is necessarily true? ',
+          choices=['$KM=MP$', '$LN=NQ$', '$KL=PQ$', 'None of the above is necessarily true.'], correct=4,
+          expl=['Try one example with coordinates: $K(0, 9)$, $M(0, 5)$, $P(0, 0)$, $L(3, 9)$, $N(1, 5)$, $Q(11, 0)$. KL, MN and PQ are all horizontal. So, they are perpendicular to s.',
+                'Check the right angle with Pythagoras: $LN^2=2^2+4^2=20$, $NQ^2=10^2+5^2=125$, $LQ^2=8^2+9^2=145=20+125$. So, ∠LNQ = 90°.',
+                'But $KL=3\\ne11=PQ$, $KM=4\\ne5=MP$, and $LN=\\sqrt{20}\\ne\\sqrt{125}=NQ$. None of the claims must be true: choice 4.'],
+          figure=_relabel(fig(3), dict(A='K', B='L', C='M', D='N', E='P', F='Q')))
+    _rn_q(M, P_(4), stem=' P, O and Q lie on one straight line. Given: ∠TOQ = ∠SOR = 90°, with the rays ordered as shown in the accompanying figure. Let α = ∠TOS and β = ∠ROQ. Which of the following is necessarily true? ',
+          choices=['$\\alpha<\\beta$', '$\\alpha=\\beta$', '$\\alpha>\\beta$', CBD38], correct=2,
+          expl=['Let θ = ∠SOQ. Then α + θ = 90° and β + θ = 90°. Subtracting θ gives α = β: choice 2.'],
+          figure=_relabel(fig(4), dict(A='P', B='Q', C='R', D='S', E='T')))
+    _rn_q(M, P_(5), stem=' In acute triangle PQR, S is the point on QR closest to P. Which of the following statements is necessarily true? ',
+          choices=['$PS\\perp QR$', '$PQ=PR$', '$QS=SR$', '$\\angle QPS=\\angle SPR$'], correct=1,
+          expl=['The shortest distance from a point to a line is measured along a perpendicular. The triangle is acute. So, the foot of the perpendicular lies inside QR, and PS ⟂ QR: choice 1.'],
+          figure=_relabel(fig(5), dict(A='P', B='Q', C='R', D='S')))
+    _rn_q(M, P_(6), stem='A right isosceles triangle has its right-angle vertex K fixed on a horizontal line. At first, L lies to the right of K on the line, and M lies directly above K. '
+                         'The triangle rotates counterclockwise through 90°, until M lies to the left of K on the line. What is the combined path traced by L and M?',
+          choices=['A quarter circle', 'Two straight segments', 'A semicircle', 'A full circle'], correct=3,
+          expl=['KL = KM. L traces the upper-right quarter circle, and M traces the upper-left quarter circle. Both have center K and the same radius.',
+                'Together they form the upper semicircle: choice 3.'], figure=rn_fig_p06())
+    _rn_q(M, P_(7), stem='A square napkin with side 15 cm is cut into two pieces by one straight cut. Which pair of shapes cannot be obtained?',
+          choices=['Two rectangles', 'Two non-square rhombi', 'Two triangles', 'Two trapezoids, each with exactly one pair of parallel sides'], correct=2,
+          expl=['A diagonal gives two triangles. A slanted cut joining opposite sides gives two trapezoids. A cut parallel to a side gives two rectangles.',
+                'For two quadrilaterals, the cut must join opposite sides, and each piece keeps two right-angle corners. A rhombus with a right angle is a square. '
+                'So, neither piece can be a non-square rhombus: choice 2.'])
+    _rn_q(M, P_(8), stem='PQRS is a convex kite with PQ = PS and RQ = RS. Its diagonals have lengths PR = 12 cm and QS = 8 cm. What is its perimeter?',
+          choices=['$40$ cm', '$20$ cm', '$32$ cm', CBD38], correct=4,
+          expl=['PR is the axis of symmetry. So, it cuts QS in half at a right angle: each half is 4. But nothing says where PR is cut.',
+                'This is the rare case where the answer really cannot be determined. The two-figures test proves it.',
+                'Figure 1: PR is cut into $6+6$. All four sides are $\\sqrt{6^2+4^2}=\\sqrt{52}$. Perimeter $4\\sqrt{52}\\approx28.8$.',
+                'Figure 2: PR is cut into $2+10$. The sides are $\\sqrt{2^2+4^2}=\\sqrt{20}$ and $\\sqrt{10^2+4^2}=\\sqrt{116}$. Perimeter $2\\sqrt{20}+2\\sqrt{116}\\approx30.5$.',
+                'Both figures keep every given, and the perimeters are different. It cannot be determined: choice 4.'],
+          figure=_relabel(fig(8), dict(A='P', B='Q', C='R', D='S')))
+    _rn_q(M, P_(9), stem=' KLM is right-angled at L. KN bisects ∠LKM, with N on LM. P lies on KM and NP ⟂ KM. Which of the following statements is necessarily true? ',
+          choices=['$KL=KP$ and $LN<NM$', '$KL<KP$ and $LN<NM$', '$KL=KP$ and $LN=NM$', '$KL>KP$ and $LN>NM$'], correct=1,
+          expl=['Right triangles KLN and KPN share the hypotenuse KN and have equal angles at K. So, they are congruent. Thus KL = KP and LN = NP.',
+                'In right triangle NPM, NM is the hypotenuse, and it is longer than NP. So, LN < NM: choice 1.'],
+          figure=_relabel(fig(9), dict(A='K', B='L', C='M', D='N', E='P')))
+    _rn_q(M, P_(10), stem='ABCD is a parallelogram containing adjacent squares AEFG and GFCH, each with side 4 cm, as shown in the accompanying figure. '
+                          'How does the area of triangle HCD compare with the area of triangle ABE?',
+          expl=['BE and HD are not given — but test before you choose "cannot be determined".',
+                'In a parallelogram, $AD=BC$: $8+HD=BE+8$. Therefore, $HD=BE$.',
+                'Both triangles are right triangles with legs 4 and the same second leg: $S_{ABE}=\\frac{4\\cdot BE}{2}=\\frac{4\\cdot HD}{2}=S_{HCD}$.',
+                'Two figures check: $BE=1$ gives 2 and 2, $BE=3$ gives 6 and 6. The areas change, but they are always equal: choice 2.'])
+    _rn_q(M, P_(11), stem=' Two perpendicular chords divide a circle into the four regions shown in the accompanying figure. The center O lies strictly inside region III. Which of the following is necessarily true? ',
+          choices=['Area I > area II', 'Area I = area II', CBD38, 'Area I < area II'], correct=4,
+          expl=['The vertical chord lies to the left of the center. Reflect region I across the vertical diameter through O. Its image lies entirely inside region II, '
+                'and region II also has more area. Hence I < II: choice 4.'],
+          figure=_relabel(fig(11), {'I': 'II', 'II': 'I', 'III': 'IV', 'IV': 'III'}))
+    _rn_q(M, P_(12), stem=' Chords KM and LN of a circle intersect at right angles at P, and KP = PM. Region I is the part of the circle above LN and to the right of KM. '
+                          'Region II is below LN and to the left of KM. Which of the following statements is necessarily true? ',
+          choices=['Area I = area II', 'Area I > area II', 'Area I < area II', 'None of the other statements is necessarily true.'], correct=4,
+          expl=['LN is the perpendicular bisector of KM. So, it passes through the center. But P need not be the center.',
+                'If KM lies to the right of the center, I is smaller than II. If it lies to the left, I is larger. If both chords are diameters, the areas are equal. '
+                'None of them must be true: choice 4.'],
+          figure=_relabel(fig(12), dict(A='K', B='L', C='M', D='N', E='P')))
+    _rn_q(M, P_(13), stem=' KLMN is a rhombus with ∠KLM = 50°. PQRS is a square, and KL = PQ = 6 cm. Which of the following statements is necessarily true? ',
+          choices=['$KM>KL$', '$LN<PR$', 'The square has greater area than the rhombus.', 'The square has greater perimeter than the rhombus.'], correct=3,
+          expl=['The square has base 6 and height 6. The rhombus also has base 6, but its side of 6 leans at $50°$. So, its height is less than 6, and its area is less than 36.',
+                'The square has the greater area: choice 3.'], figure=rn_fig_p13())
+    _rn_q(M, P_(14), stem=' DG is a median of triangle DEF, and H lies strictly between D and G. Let α = ∠EHG and β = ∠EDH. Which of the following is necessarily true? ',
+          choices=['$\\alpha=\\beta$', '$\\alpha<\\beta$', '$\\alpha>\\beta$', CBD38], correct=3,
+          expl=['HG continues DH beyond H. So, α is an exterior angle of triangle DEH, and α = β + ∠DEH. The added angle is positive. So, α > β: choice 3.'],
+          figure=_relabel(fig(14), dict(K='D', L='E', M='F', N='G', P='H')))
+    _rn_q(M, P_(15), stem='A drawing contains 4 horizontal segments on distinct lines and 9 vertical segments on distinct lines. The segments may be placed and given lengths freely. '
+                          'Which describes all possible numbers of intersection points?',
+          choices=['Every integer from 0 to 36, inclusive', 'Only multiples of 4 from 0 to 36', 'Only 36', 'Every integer from 0 to 13, inclusive'], correct=1,
+          expl=['Each of the 4 horizontal segments can meet at most 9 vertical segments. So, the maximum is $4\\cdot9=36$. Separating the groups gives 0.',
+                'For any count $9q+r$ with $0\\le r<9$, let q horizontal segments cross all 9 vertical ones, let one more cross exactly r of them, and let the rest cross none. '
+                'The case 36 uses all 4 full rows. Every integer from 0 to 36 is possible: choice 1.'], figure=rn_fig_p15())
+    _rn_q(M, P_(16), stem='ABCD is a parallelogram with BC = 7 cm. A right isosceles triangle AEB is constructed externally on AB, with right angle E and area 8 cm². '
+                          'Given: EB ⟂ BC. What is the area of the parallelogram (in cm²)?',
+          choices=['$16$', '$28\\sqrt2$', '$28$', CBD38], correct=3,
+          expl=['The triangle: $\\frac{EB\\cdot EA}{2}=8$ and $EB=EA$. So, $EB^2=16$ and $EB=EA=4$.',
+                'AE and BC are both perpendicular to EB. Two lines perpendicular to the same line are parallel: $AE\\parallel BC$. '
+                'So, A is exactly as far from BC as E is: the height of the parallelogram is $EB=4$.',
+                'Area $=BC\\cdot h=7\\cdot4=28$ cm². Choice 3.',
+                'Traps: $28\\sqrt2=7\\cdot AB$ is true only for a rectangle, and 16 is just twice the triangle. The angle is not free here — $EB\\perp BC$ fixes it ($\\angle ABC=45°$).'],
+          figure=rn_fig_p16())
+    _rn_q(M, P_(17), stem=' A, B, C and D lie on one circle. The minor arc CD is 4 times the minor arc AB. P and Q may be any points strictly inside the circle, and need not be distinct. '
+                          'Let α = ∠APB and β = ∠CQD. Which of the following is necessarily true? ',
+          choices=['$\\beta=4\\alpha$', '$\\beta<4\\alpha$', 'None of the other relationships is necessarily true.', '$\\beta>4\\alpha$'], correct=3,
+          expl=['Choose arcs AB = 20° and CD = 80°. With both vertices at the center, α = 20° and β = 80°. So, equality can hold.',
+                'Keep Q at the center and move P close to the midpoint of chord AB: α approaches 180°, and β < 4α.',
+                'Keep P at the center and move Q close to chord CD: β approaches 180°, more than 4α = 80°. All the vertices stay strictly inside the circle. '
+                'None of the relationships must hold: choice 3.'])
+    _rn_q(M, P_(18), stem='A square and a rectangle that is not a square both have perimeter 44 cm. Which of the following statements is necessarily true?',
+          choices=['The square has the greater area.', CBD38, 'Their areas are equal.', 'The rectangle has the greater area.'], correct=1,
+          expl=['The square has side $\\frac{44}{4}=11$ and area $11\\cdot11=121$ cm².',
+                'For a fixed perimeter, the square has the greatest area of all rectangles. The other rectangle is not a square. So, its area is less than 121 (for example, $13\\cdot9=117$).',
+                'The square has the greater area: choice 1.'])
+    _rn_q(M, P_(19), stem='How many mutually noncongruent rhombi have perimeter 36 cm and area 63 cm²?',
+          choices=['$0$', '$2$', '$1$', 'Infinitely many'], correct=3,
+          expl=['Perimeter 36: every side is $\\frac{36}{4}=9$.',
+                'Area = side × height: $h=\\frac{63}{9}=7$. A side of 9 that rises exactly 7 fixes how the rhombus leans. Leaning the other way gives a mirror image — the same rhombus.',
+                'So there is exactly one rhombus: choice 3.'])
+    _rn_q(M, P_(20), stem=' A circle has radius 5 cm. Chord AB does not pass through the center. E lies strictly between A and B, with AE = x cm and EB = 3.5 cm. Which of the following statements is necessarily true? ',
+          choices=['$x<3.5$', '$x>6.5$', '$x<6.5$', '$x=6.5$'], correct=3,
+          expl=['The diameter is 10 cm, and it is the longest chord. AB is not a diameter. So, AB < 10.', 'Thus $x+3.5<10$ and $x<6.5$: choice 3.'],
+          figure=_relabel(fig(20), {'2.5': '3.5'}))
+
+
+# ---------------------------------------------------------------- practice clean-up + order, card, canvases
+def rn_practice(M):
+    # copy: p26 (an easier copy of the lines-crossing type, p15). English warm-ups: keep p21 (chords and the center),
+    # p24 (angles on the same arc), p25 (acute / obtuse with the squares). September items: keep q-04 (angle on a diameter),
+    # q-12 and q-13 (the greatest distance - the lesson's 'Farthest apart' sends students to practice); the others repeat
+    # a type the Hebrew practice already has (03, 09, 10: two fixed sides -> p13; 05: acute / obtuse -> p25; 06: slide the
+    # apex -> p02, p10; 07: one plane cut -> p07; 11: shape efficiency -> p18).
+    for qid in ['geo38-core-p26', 'geo38-core-p22', 'geo38-core-p23', 'geo38-core-p27',
+                'q-r26-t38-03', 'q-r26-t38-05', 'q-r26-t38-06', 'q-r26-t38-07', 'q-r26-t38-09', 'q-r26-t38-10', 'q-r26-t38-11']:
+        M.unplace(qid)
+    P_ = lambda n: 'geo38-core-p%02d' % n
+    M.practice_order(PRACT, [P_(18), P_(24), P_(21), P_(1), P_(4), 'q-r26-t38-04', 'q-r26-t38-13', P_(5), P_(25), 'q-r26-t38-12',
+                             P_(20), P_(13), P_(14), P_(9), P_(6), P_(7), P_(2), P_(10), P_(16), P_(8), P_(12), P_(11), P_(19), P_(3), P_(15), P_(17)])
+
+
+def rn_cards(M):
+    rows = M.card(CARD)['tables'][0]['rows']
+    k = next(i for i, r in enumerate(rows) if r[0] == '!Anchor')
+    assert '9,12,15' in rows[k][1], rows[k]
+    rows[k] = [rows[k][0], rows[k][1].replace('$9,12,15$', '$8,15,17$')]
+
+
+def _rn_sync(M):
+    """'Pre-loaded' notes follow the changed stems."""
+    for v in M.D['videos'].values():
+        if v['topic'] != TOPIC or v['id'] in RN_RECORDED: continue
+        for b in v['beats']:
+            pre = b['items'][:b['pre']]
+            if len(pre) == 1 and pre[0].get('k') == 'q' and b.get('canvas', '').startswith('Pre-loaded — question'):
+                qid = pre[0]['qid']
+                b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, M.q(qid)['stem'])
+                M.touched_videos.add(v['id'])
+
+
+def renumber_pass(M):
+    rn_guided(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+    rn_cards(M)
+    _rn_sync(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last

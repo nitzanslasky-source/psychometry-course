@@ -107,3 +107,83 @@ Function `cut_repeats` (runs last in `apply`). Rule: cut only lesson slides whos
 - **Total: lessons 13.6 → 8.2 min; net saving about 4.6 min** after the moved lines.
 - Unchanged: the summary video `r26-t38-summary` (it recaps rods, acute/obtuse, must/could, test a claim, slide the apex — all still taught in the question videos above) and the memory card. No ai_scripts touched.
 - Check: `python3 math_check.py 38 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered and looked at all changed videos (tmp_check/cut38.png, cut38b.png).
+
+## 2026-10-06 renumber pass
+So the English course does not look like the Hebrew one: every Hebrew-derived question of topic 38 has new numbers
+(letter-only questions: new letters, names and choice order; stories changed a little). Concept, trap, level, kind of
+condition and methods stay the same. Every guided solution video was rewritten to match (spoken lines, draw cues, board
+items, slide titles, "choice N"), and every changed figure was redrawn or relabelled (question figures and the copies on
+the solution slides, which keep their crop). Function `renumber_pass(M)` runs last in `apply()`, after `cut_repeats`.
+Nothing in topic 38 is recorded (checked ~/Documents/Course.recordings), so `RN_RECORDED` is empty.
+
+**Counts:** 13 guided questions renumbered (all Hebrew-derived ones, g173–g187) with 13 solution videos rewritten;
+20 Hebrew practice questions renumbered (p01–p20). Lesson examples: none were Hebrew-derived with numbers (the lessons
+only use figures; "Farthest apart" h = 9, r = 4 and the summary examples are English-made) — the memory card's anchor
+example follows Question 3 (9, 12, 15 → 8, 15, 17). **Practice 37 → 26.**
+
+**Practice clean-up:** copy removed: p26 (4 vertical × 3 horizontal lines = an easy copy of the lines-crossing type p15).
+English warm-ups: kept p21 (chords and the center), p24 (angles on the same arc), p25 (acute / obtuse with the squares);
+removed p22, p23, p27. September items: kept q-04 (angle on a diameter), q-12 and q-13 (greatest distance — the lesson
+"Farthest apart" sends students to practice for it); removed q-03, q-09, q-10 (two fixed sides → Hebrew p13), q-05
+(acute / obtuse → p25), q-06 (slide the apex → p02, p10), q-07 (one plane cut → p07), q-11 (shape efficiency → p18).
+Order easy → hard (same as before, removed items taken out).
+
+**Kept on purpose:** the English-made guided q-r26-t38-01 and -02 and their videos. g180 and g181, g183, g184 keep
+their choice order (the videos go claim by claim and use "out with two, out with three…"); g183 keeps sides in ratio
+1 : 2 (4 and 8) because the triangle-inequality method needs AC > 8 − 4 = AB. g186 keeps the "answer above the maximum"
+form (16; the Hebrew used 9). Figures stay "not drawn to scale" but not misleading (g176 drawn with α ≈ 98°, g183
+redrawn at 70° and 30°, g182 cuts at their true places, g187 now 3 × 3 circles).
+
+**Checks:** every answer recomputed in Python (g176 324 > 289; g180 60–130; g182 ρ² 27 / 35; g183 heights 3.76 / 2,
+AC 4√3 at 60°; g187 n = 2 → 8, 10, 10, 8 (two matches), n = 3 → 10, 15, 12, 13 (one); p03 right angle 20 + 125 = 145;
+p08 perimeters 28.8 / 30.5; p13 KM 5.07 < 6, LN 10.9 > PR 8.5, area 27.6 < 36; p16 EB = 4 → 28). Every video method
+redone with the new numbers (anchor + squares, rods rule, plug-in 70 / 20, edges 70 / 0, triangle-inequality + 60°
+anchor + exaggerate, trial-and-error cuts + extremes insight + the 14 bound, understanding + plug-in 3). Traps still in
+the choices (anchor equality, ≤ ends, 2n + 4 for the wrong number of rows, 28√2 = rectangle, 2(PR + QS) = 40, square
+greater perimeter, NQ "possible"). New numbers checked against the Hebrew subtitles (6-8-11, 60° / β < 90, radius 3 with
+distances 1 / 2, sides 1-2 with 60° / 50°, α = 80 / 10, square vs hexagon, cube with 9, one row 2n + 2, ABCD / DE,
+AB / CD + Tzvia, Shlomi, Erez): none land back. Pythagorean anchor 8-15-17 (not 3-4-5 multiples). Duplicate scan over
+topics 1–38 (questions and lesson lines): no question equals another question or a lesson / card example.
+`python3 math_check.py 38 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered and looked at all 13 changed videos and
+every changed figure. No "Question N" added to spoken lines.
+
+| id | old (English, Hebrew-derived) | new | answer |
+|---|---|---|---|
+| geo38-g173 | triangle, square, hexagon, octagon, P = 24 | triangle, square, pentagon, octagon, P = 30 | octagon (4) |
+| geo38-g174 | hexagonal garden plots 90 m²; video rectangles area 36 (6×6 / 3×12, P 24 / 30) | octagonal flower beds 60 m²; area 100 (10×10 / 5×20, P 40 / 50) | nonregular (1) |
+| geo38-g176 | 9, 12, 16 (anchor 9-12-15) | 8, 15, 18 (anchor 8-15-17) | α > 90° (3) |
+| geo38-g178 | trapezoid PQRS, ST ⟂ QR; example PS 3, QT 4, h 3, TR 2 / 7 / 10 | KLMN, NF ⟂ LM; KN 2, LF 5, h 4, FM 3 / 7 / 12 | none (4) |
+| geo38-g179 | diameter AB, chord CD; Ava, Noah, Mia | diameter KL, chord MN; Lily, Ethan, Grace; new choice order | Lily's and Grace's (2) |
+| geo38-g180 | ∠BAC 45°, β < 80° → 55° < α < 135° | 50°, β < 70° | 60° < α < 130° (4) |
+| geo38-g181 | lines a, b; YZ, WX, UV; VX | lines c, d; KL, MN, PQ; NQ | PQ > MN (3) |
+| geo38-g182 | r 5; P 6 from B, Q 8 from A → P | r 6; P 9 from A, Q 7 from B | Cut Q (3) |
+| geo38-g183 | 3, 6, 75°, 45° | 4, 8, 70°, 30° | equal areas (1) |
+| geo38-g184 | KLM, N, E; plug-in α = 80 / 10 | RST, P, H; α = 70 / 20 | RP > PS (3) |
+| geo38-g185 | square vs regular octagon | equilateral triangle vs regular hexagon; new choice order | inscribed triangle greater perimeter (4) |
+| geo38-g186 | solid block; 12, 15, 10, 11 | block of cheese; 10, 12, 16, 11 | 16 (3) |
+| geo38-g187 | two rows, 2n + 4 (n = 3 → 10) | three rows, 2n + 6 (n = 3 → 12) | 2n + 6 (3) |
+| geo38-core-p01 | radii 2, 2, 4 | radii 3, 3, 5 | isosceles (2) |
+| geo38-core-p02 | FG = 2 → area 2 | FG = 3 | 4.5 (2) |
+| geo38-core-p03 | A, C, E on k; example B(4,7) D(2,3) F(8,0) | K, M, P on s; L(3,9) N(1,5) Q(11,0) | none (4) |
+| geo38-core-p04 | A, O, B; E, D, C | P, O, Q; T, S, R | α = β (2) |
+| geo38-core-p05 | triangle ABC, D | PQR, S | PS ⟂ QR (1) |
+| geo38-core-p06 | C fixed, A left, B up, clockwise | K fixed, L right, M up, counterclockwise (figure redrawn) | semicircle (3) |
+| geo38-core-p07 | square sheet 12 cm | square napkin 15 cm | non-square rhombi (2) |
+| geo38-core-p08 | kite ABCD, AC 10, BD 6 | PQRS, PR 12, QS 8 | cannot be determined (4) |
+| geo38-core-p09 | ABC, AD, DE | KLM, KN, NP | KL = KP and LN < NM (1) |
+| geo38-core-p10 | squares side 3 | side 4 | equal (2) |
+| geo38-core-p11 | O in region IV, I > II | regions relabelled, O in III | I < II (4) |
+| geo38-core-p12 | AC, BD, E | KM, LN, P | none (4) |
+| geo38-core-p13 | rhombus ABCD 40°, side 4; square EFGH | KLMN 50°, side 6; PQRS | square greater area (3) |
+| geo38-core-p14 | median KN, P | median DG, H | α > β (3) |
+| geo38-core-p15 | 5 and 8 segments → 0..40 | 4 and 9 → 0..36 | every integer 0–36 (1) |
+| geo38-core-p16 | BC 5, triangle 18 → 30 | BC 7, triangle 8 | 28 (3) |
+| geo38-core-p17 | arc CD = 3 × AB | 4 × | none (3) |
+| geo38-core-p18 | perimeter 32 (64) | 44 (121) | square greater (1) |
+| geo38-core-p19 | perimeter 28, area 35 | 36, 63 | 1 (3) |
+| geo38-core-p20 | r 4, EB 2.5 → x < 5.5 | r 5, EB 3.5 | x < 6.5 (3) |
+
+## 2026-10-06 review
+Independent review of the renumber pass (built with / without `renumber_pass`, every question, solution video, lesson,
+card and figure compared and rendered; keys and video methods recomputed; Hebrew subtitles and course-wide duplicate
+scan checked). No errors found, no changes made. `math_check.py 34 35 36 37 38 32` and full `math_check.py` → 0 / 0 / 0.

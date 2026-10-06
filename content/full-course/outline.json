@@ -297,81 +297,81 @@
      "title": "Lines and angles",
      "videos": 11,
      "lessons": 4,
-     "questions": 46,
+     "questions": 33,
      "minutes": 35,
-     "steps": 58
+     "steps": 45
     },
     {
      "id": 31,
      "title": "Triangles",
      "videos": 38,
      "lessons": 12,
-     "questions": 89,
-     "minutes": 99,
-     "steps": 133
+     "questions": 74,
+     "minutes": 100,
+     "steps": 118
     },
     {
      "id": 32,
      "title": "Quadrilaterals",
      "videos": 38,
      "lessons": 13,
-     "questions": 87,
+     "questions": 73,
      "minutes": 88,
-     "steps": 129
+     "steps": 115
     },
     {
      "id": 33,
      "title": "Circles",
      "videos": 38,
      "lessons": 11,
-     "questions": 90,
+     "questions": 76,
      "minutes": 87,
-     "steps": 132
+     "steps": 118
     },
     {
      "id": 34,
      "title": "Polygons",
      "videos": 20,
      "lessons": 5,
-     "questions": 49,
+     "questions": 40,
      "minutes": 50,
-     "steps": 73
+     "steps": 64
     },
     {
      "id": 35,
      "title": "Three-dimensional geometry",
      "videos": 21,
      "lessons": 6,
-     "questions": 51,
+     "questions": 41,
      "minutes": 52,
-     "steps": 74
+     "steps": 64
     },
     {
      "id": 36,
      "title": "Similarity and scale",
      "videos": 25,
      "lessons": 7,
-     "questions": 59,
+     "questions": 45,
      "minutes": 68,
-     "steps": 88
+     "steps": 74
     },
     {
      "id": 37,
      "title": "The coordinate system",
      "videos": 20,
      "lessons": 6,
-     "questions": 46,
+     "questions": 40,
      "minutes": 53,
-     "steps": 67
+     "steps": 61
     },
     {
      "id": 38,
      "title": "Geometric reasoning",
      "videos": 19,
      "lessons": 4,
-     "questions": 52,
-     "minutes": 50,
-     "steps": 72
+     "questions": 41,
+     "minutes": 51,
+     "steps": 61
     }
    ]
   },

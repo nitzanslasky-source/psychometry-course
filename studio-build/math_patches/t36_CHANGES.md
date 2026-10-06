@@ -116,3 +116,98 @@ Function `cut_repeats` (runs last; the old `apply` is wrapped). A lesson slide i
 - **`r26-t36-map-scale` "Map Scale"**: 2.5 → 0.7 min (6 → 2 slides). Cut "Units ladder", "Length example", "Area example" and the recap: `solve-q-r26-t36-04` teaches the length step and the ladder (÷100, ÷1000), `solve-q-r26-t36-05` teaches the area trick (one map cm into the real unit first, then square; the trap of forgetting to square). Kept: the intro and "Scale 1 : n" (what the scale means, lengths × n, areas × n²), which now ends "Let's see it in the questions."
 - Sidebars updated. The summary `r26-t36-summary` is unchanged (same height, trapezoid diagonals, percent and map scale are all still taught in the question videos).
 - Saved: about 4.3 min.
+
+## 2026-10-06 renumber pass
+So that the English course does not look like the Hebrew one, every question that came from the Hebrew course now has new
+numbers, and the stories changed a little where there is one (a box and blocks, a glass globe, a sand scoop, new names).
+The idea, the trap, the level and the methods stay the same: perimeter = a length, circles on a diameter, part vs. leftover,
+the whole side, area → edge → volume, full math + part to part, full math + plugging in a special case, plugging in angles +
+h² = p·q + Pythagoras, circles way + similarity way, three ways for the midpoint segment, polygons way + similarity way,
+partial similarity. The function `renumber_pass(M)` runs last (after `cut_repeats`). Topic 36 has no `practice_methods`,
+`add_methods` or `pen_or_click`. Nothing in topic 36 is recorded (checked ~/Documents/Course.recordings: only Algebra).
+
+**Counts:** 13 guided questions renumbered and their 13 solution videos rewritten (speech, draw cues, board items, cue
+labels, choice numbers). 20 practice questions renumbered. Figures redrawn: 9 guided (decagon, six circles, quarter circle,
+DE ∥ BC 4/3, box and block, ED ∥ AB 10/15/4, altitude 3/27, rings 1.3r, globe and ball) + 1 relabeled (square in a
+triangle, AF = 5); practice: 10 redrawn (p02, p07, p08, p09, p11, p14, p15 octagon, p16, p19) + 3 relabeled (p03, p04, p18).
+Lesson examples that used the Hebrew lesson's own numbers: 7 changed (see below). **Practice 41 → 27.**
+
+**Lesson examples changed** (the Hebrew lessons used these exact numbers):
+- "Similarity", Not only sides: square diagonal ×2 → ×3. Square both parts: linear 2:3 → 4:9 became 4:5 → 16:25.
+- "Similarity in Regular Shapes", hexagons: 3:5 → 9:25 (the Hebrew squares example) became 5:6 → 25:36.
+- "Similar Triangles and Rectangles": the 6-8-10 / 9-12-15 triangles (Hebrew 3-4-5 / 6-8-10) became 12-16-20 / 18-24-30
+  (same shape, the three figures relabeled; the table, "turn it around" and "ratios inside" slides follow; 4:5 = 8:10 →
+  4:5 = 16:20). Altitude slide: 6-8-10 → 15-20-25, so BD = 9, AD = 12, DC = 16 (whole numbers now: 12² = 144 = 9·16,
+  15² = 225 = 9·25). Figure relabeled.
+- "Similar Solids", cubes: the 3 × 3 × 3 = 27 count (= the Hebrew volume lesson) became 4 × 4 × 4 = 64 with a redrawn
+  figure. So that it does not repeat, "Volume Changes" slide 2 went from edge ×4 (64) to edge ×5 (125), title and sidebar
+  "Cube edge × 5". "Radius only": "radius ×3 → volume ×9" (Hebrew) → "radius ×5 → volume ×25".
+- Memory cards: "Similarity — lengths and areas" example column 2:3 → 4:5 (16:25), and the leftover tip 1:9 → 1:8 (the
+  old guided numbers) → 1:25 → 1:24. "Similar triangles" tip "an easy number (x = 3)" (old guided plug-in) → "an easy number
+  that makes a special case".
+Kept: the cylinders 2/4 and 4/8 (Hebrew 2:3 and 4:6, only partly the same), the man with glasses and the 1:2 circles (the
+picture forces 1:2), the 1-2 → 4-8 triangle grid, the soda-can idea for height only, and all English-made lessons and
+summaries (part to part, same height, trapezoid, half-height cone, percent, map scale).
+
+**Practice clean-up:** copies removed: q-r26-t36-06, -15, -18 (as listed). September items removed because the Hebrew
+practice or a kept item already drills the type: -07 (segment against the whole side), -09 (same height; -08 stays), -11
+(trapezoid; -10 stays), -13 (cone glass = Hebrew p16), -14 (percent and area = Hebrew p20). Kept September items (types the
+Hebrew practice does not have): -08 same height, -10 trapezoid diagonals, -12 leg² shortcut, -16 find the map scale, -17
+two maps. English extras: kept p26 (warm-up) and p22 (shadow); removed p21, p23, p24, p25, p27 and the box item
+geo35-core-p27 (moved here by t35; removed only if it is in this section). Order easy → hard.
+
+**Checks:** every answer recomputed in Python, and every video step (both ways in g144, the plug-in x = 5 in g145 —
+only x²/5 gives 5 —, h² = 3·27 = 81 and the Pythagoras check 9 + 729 + 162 = 900 in g146, 1.69 − 1 = 0.69 < 1 in g147,
+yh = 14 in g148, sides 10 and 2√5 in g149). Each trap is still a choice: the area factor (25), 2× (36π), the whole circle
+(1:16), forgot to square (4:7), the part instead of the whole (4:3), 36² (1296), EC and BC (6, 25), the leg AB (3√10),
+forgot to subtract (64:1, 64:27), forgot to square the radius (12), 2³ (8). No new number lands on a Hebrew number (subtitles
+checked: pentagon ×3, radius 5 / 3 circles, 1:2, AD 2 DB 1, ×9 → 27, DC 6 BC 8 AE 3, AF 2, 4 / 9 → 6, 1.5r, trapezoid 6,
+12√3 / 6√3, diameter = radius, r/5 h/3). Duplicate scan over topics 30–36: p06 first got 21 like g148's trapezoid, changed
+to 19; no question equals a lesson or card example. `python3 math_check.py 36 32` and `35 36` → PROBLEMS 0, WARNINGS 0,
+LAYOUT 0. All 13 solution videos, the 5 lesson videos and all changed figures were rendered and checked by eye.
+
+| id | old (English base, Hebrew-derived) | new | answer |
+|---|---|---|---|
+| geo36-g136 | regular octagon, side ×4 | regular decagon, side ×5 (redrawn) | ×5 (2) |
+| geo36-g137 | radius 7, four circles on AB | radius 9, six circles (redrawn) | 18π (4) |
+| geo36-g138 | AC = ⅓AB → 1:8 | AC = ¼AB (redrawn) | 1:15 (2) |
+| geo36-g140 | AD 3, DB 2 → ADE : trapezoid | AD 4, DB 3 (redrawn) | 16:33 (3) |
+| geo36-g142 | face area ×16, small cubes | box and blocks, face area ×36 | 216 (2) |
+| geo36-g144 | BD 4, DC 8, AE 5 → AC | BD 10, DC 15, AE 4 (redrawn) | 10 (3) |
+| geo36-g145 | AF = 3 → x²/3, plug in 3 | AF = 5, plug in 5 | x²/5 (3) |
+| geo36-g146 | BD 9, DC 16 → AD | BD 3, DC 27 (redrawn) | 9 (2) |
+| geo36-g147 | r, 1.4r, Liam / Maya | r, 1.3r, Noah / Emma (redrawn) | Noah only (2) |
+| geo36-g148 | midpoints, trapezoid 15 | trapezoid 21 | 7 (4) |
+| geo36-g149 | hexagons 72√3, 24√3 | 150√3, 30√3 | √5:1 (1) |
+| geo36-g150 | display, small diameter = ⅔R | glass globe and ball, small diameter = ½R (redrawn) | 63:1 (4) |
+| geo36-g151 | tank and cup, r/3, h/4 | container and sand scoop, r/2, h/6 | 24 (3) |
+| p01 | a:b = 2:3 → c:d | a:b = 3:5 | 3:5 (2) |
+| p02 | 4 equal parts, CG:EF | 5 equal parts A–F, DH:FG (redrawn) | 3:5 (4) |
+| p03 | AE 3, CF 5 → area | AE 4, CF 6 | 24 (3) |
+| p04 | AE:DE 3:5, AB 6 | 2:3, AB 8 | 12 (2) |
+| p05 | perimeters √5:1 | √7:1 | √7:1 (3) |
+| p06 | DEF perimeter 18 | 19 | 38 (1) |
+| p07 | OA = 4·OB | OA = 5·OB (redrawn) | 9/25 (1) |
+| p08 | arcs ×1.5 | ×2.5 (redrawn) | 25:4 (2) |
+| p09 | AB 3, CD 5, x−2, x+4 | AB 2, CD 3, x−1, x+3 (redrawn) | 9 (1) |
+| p10 | semicircle radius 6 | radius 8 (answer the same by nature) | 1/2 (1) |
+| p11 | areas 5, 20 | 7, 63 (redrawn) | 3:1 (3) |
+| p12 | radius ×4, height halved | radius ×3, height ÷3 | 3:1 (4) |
+| p13 | area ×9x | ×16x | 4√x (3) |
+| p14 | AB 10, BC 12, CD 8 | AB 8, BC 15, CD 6 (redrawn) | 20 (2) |
+| p15 | heptagon side 2 → 5 | octagon side 3 → 7 (redrawn) | 49a/9 (4) |
+| p16 | small cone ⅔ height | ¾ height (redrawn) | 37:27 (2) |
+| p17 | AB:BC 3:2 | 4:3 | 16/49 S (2) |
+| p18 | AD 4 | AD 6 (relabeled) | r + r²/6 (3) |
+| p19 | AJ 5, AB 10, BC 4 | AJ 4, AB 12, BC 6 (redrawn) | 288 (2) |
+| p20 | square area +125% | +96% | +40% (2) |
+
+## 2026-10-06 review
+Independent review of the renumber pass (built with / without `renumber_pass`, compared every question, video, lesson,
+card and figure; keys recomputed; Hebrew subtitles and course-wide duplicate scan checked). Fixed:
+- solve-geo36-g145, slide 4 title still said "Psychometric · plug in x = 3" (the video now plugs in 5) → "x = 5"
+  (`review_fixes`, runs last in `renumber_pass`).
+- geo36-g142 figure: the block was drawn at 1/4 of the box edge, but the edge ratio is now 1 : 6 → block redrawn at
+  165/6 = 27.5 (question figure and slide copies).
+Judgment call left as is: g147 now uses 1.3r (ring 0.69 < 1); the old 1.4r was a deliberate close call (0.96 vs 1). Same
+type and answer, a little less "close". `math_check.py 34 35 36 37 38 32` and full `math_check.py` → 0 / 0 / 0.

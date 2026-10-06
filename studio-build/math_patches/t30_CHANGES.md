@@ -103,3 +103,85 @@ Function `cut_repeats` (runs last). Nothing in topic 30 is recorded. Rule: a les
 - Recap board item "Segments: count the gaps · AC + BD = AD + BC" → "Segments: count the gaps, not the points" (the overlap rule now comes after the recap).
 - Kept: "Parallel or not?" (only one of its three rules, "two lines perpendicular to the same line", is in `solve-q-r26-t30-01`; the other two rules and "figures are not drawn to scale" are not taught anywhere else). "The U shape" (no question video teaches it).
 - The AI summary `r26-t30-summary` (slide "Segments on a line") still matches: both ideas are still taught before it.
+
+## 2026-10-06 renumber pass
+So that the English course does not look like the Hebrew one, every question that came from the Hebrew course now has new
+numbers. Questions that use only letters have new letters and a new choice order. The idea, the trap, the level and the methods
+stay the same: small/large and Z, completing to 180°, the units-digit shortcut, plugging in with distinct choices,
+overlapping angles, the parallel line through the bend, and the zig-zag rule. The function `renumber_pass(M)` runs last,
+after `cut_repeats`. Topic 30 has no `practice_methods`, `add_methods` or `pen_or_click`. Nothing in topic 30 is recorded
+(checked ~/Documents/Course.recordings).
+
+**Counts:** 4 guided questions renumbered, and their 4 solution videos rewritten (speech, draw cues, board items, choice
+numbers). 20 practice questions renumbered. Every changed figure was redrawn to its new angles: 4 guided and 16 practice
+figures (2 of them, g006 and adv p09, were only relabeled). Lesson examples: none in the lessons came from the Hebrew
+(the Hebrew lesson used 30°/150° and 75° → 15°, and the English already uses 40°/140° and a different sample). Two other
+places quoted the old guided numbers or letters, so they were changed: the units-digit tip on the memory card
+(83° + 54° → 64° + 79°, x ends in 7) and summary 2 (p, q, r, θ → m, n, k, x on 3 slides). **Practice 39 → 26.**
+
+**Practice clean-up:** The copy foundation p14 (= guided g007, one bend) was removed. Of the English extras, 4 are kept:
+f-p13 (equal small angles, algebra), f-p17 (ratio 2:3:4), a-p11 (bisectors → 90°) and a-p16 (AC + BD = AD + BC with
+numbers). These were removed: f-p11, f-p12, f-p15, f-p16, a-p12, a-p13, a-p14, a-p15 and a-p17 (their types are already in
+the Hebrew practice or they were too easy). Of the September items, these are kept: q-04 (prove the lines parallel, "cannot
+be determined" trap) and q-07 (two bends), because the Hebrew practice has neither type. These were removed: q-05 (U with
+algebra, the same type as f-p10), q-06 (equal gaps, the same type as a-p03) and q-09 (parallel or not, which q-04 already
+drills). Both sections are ordered easy → hard.
+
+**Kept on purpose:** the English-made guided questions q-r26-t30-01 to 03, the lessons' and summaries' own English examples,
+and the guided order (it already goes easy → hard). In f-p03 and f-p10 the coefficient changed (4x → 2x, 8x → 5x), but the
+kind of question did not: x, a vertical pair, and a straight line; a small angle plus a large angle. In a-p06 the
+coefficient 3u became 4v, and the bound changed to match (0° < v < 45°).
+
+**Checks:** every answer was recomputed in Python, and so was every video step: the g006 plug-in m = n = k = 140 gives
+240, 140, −140 and 60, all different, so only choice 4 fits. The traps are still among the choices: the given angle and
+180° minus it, 133 → "33" (dropping the hundred) and the units digits 3/1/9/7 (only 47 ends in 7), forgetting the vertical
+angle (60), 180 ÷ 5 = 36, counting ticks (11/5), 150 ÷ 6 = 25, and the old "cannot be determined" options. No new number
+lands on a Hebrew number (30/150, 75/15, 86/53/41, 150, 45 + 50 = 95). The old answer 95 is gone (g007 is now 98).
+Duplicate scan over topics 1–30: no question equals another question or a lesson / card example (only a-p01 shares the
+generic choice set 2/3/4/6 with other questions, and its stem is different). `python3 math_check.py 30 32` → PROBLEMS 0,
+WARNINGS 0, LAYOUT 0. All 20 changed figures and the 4 videos plus summary 2 were rendered and checked by eye. No
+"Question N" was added to spoken lines.
+
+| id | old (English base, Hebrew-derived) | new | answer |
+|---|---|---|---|
+| geo30-g002 | 68° at a, right angle at b → x = 22 | 64° → x = 90 − 64 | 26° (2) |
+| geo30-g005 | 83° + 54° + x = 180 → 43 (units 3+4) | 77° + 56° + x = 180 (units 7+6=13) | 47° (4) |
+| geo30-g006 | p, q, r, θ; θ = p+q+r−360 (3); plug 150 | m, n, k, x; x = m+n+k−360 (4); plug 140 → 60 | m+n+k−360° (4) |
+| geo30-g007 | one bend 38° + 57° | 36° + 62° | 98° (2) |
+| f-p01 | 42° next to x | 37° | 143° (2) |
+| f-p02 | 138° = 90° + 48° | 146° = 90° + 56° | 124° (4) |
+| f-p03 | x + 4x + 4x = 180 | x + 2x + 2x = 180 | 36° (3) |
+| f-p04 | 76°, p = 2q, r+s+t | 70°, p = 2q | 305° (2) |
+| f-p05 | 62° → large x | 57° | 123° (1) |
+| f-p06 | 34°: α+β+γ | 38° | 322° (4) |
+| f-p07 | 64°: x − y | 71° | 38° (2) |
+| f-p08 | 124°: β − α + γ | 117° | 63° (4) |
+| f-p09 | 122°: α + β | 128° | 104° (1) |
+| f-p10 | x + 8x = 180 | x + 5x = 180 | 30° (3) |
+| a-p01 | (4α+γ)/β = 5 | (α+3γ)/β | 4 (2) |
+| a-p02 | p∥q, q⊥r, r∥s, s⊥t → p∥t (1) | c∥d, d⊥e, e∥f, f⊥g | c∥g (3) |
+| a-p03 | x = 8 gaps, y = 4 → 2 | x = 10 gaps, y = 4 | 5/2 (1) |
+| a-p04 | x+2x+3x+168 = 360 → 32 | … + 150 = 360 | 35° (1) |
+| a-p05 | 116°, 136° → 72 | 114°, 144° | 78° (2) |
+| a-p06 | α+u, β+3u, 0<u<60 → β<α (1) | γ+v, δ+4v, 0<v<45 | δ<γ (3) |
+| a-p07 | k⊥l⊥m⊥n → k∥m (1) | p⊥q, q⊥r, r⊥s | p∥r (4) |
+| a-p08 | 103°, 48° → α+β = 106 | 109°, 43° (α = 28, β = 71) | 99° (3) |
+| a-p09 | P,Q,R,S; a=PR, b=QS (1) | E,F,G,H; c=EG, d=FH | c+d = EH+FG (2) |
+| a-p10 | p, q overlap on x (2) | u, v overlap on y; lines 0°/60°/130° | u+v−180° (3) |
+
+## 2026-10-06 review
+I reviewed the renumber pass on its own. I built topic 30 with and without `renumber_pass` and compared the two side by side.
+- **What I checked:** all 4 guided questions with their videos, the 20 renumbered practice questions, summary 2 and the
+  memory-card tip.
+- **Answers:** every key was recomputed. Each question has exactly one correct choice and keeps its trap.
+- **Videos:** the methods work with the new numbers. In g006 the plug-in m = n = k = 140 gives 240, 140, −140 and 60. In the
+  drawn figure m ≈ 145°, so "about 140" fits. In g005 the units digits are 7 + 6 = 13, so the answer ends in 7. In g007 the
+  answer is 36 + 62 = 98.
+- **Figures:** all 20 changed figures and the 4 video boards were rendered and checked by eye. They match the new numbers. In
+  a-p03, x covers 10 gaps and y covers 4, and the 11/5 tick-count trap is drawn correctly.
+- **Hebrew:** no new number lands on the Hebrew's (75/15, 86/53/41, 150, 45 + 50 = 95).
+- **Duplicates:** none in topics 1–33.
+- **Other:** nothing in topic 30 is recorded, and no spoken line says "Question N".
+- **Practice:** going from 39 to 26 matches the audit target.
+
+No problems found, so no changes were made. Full `python3 math_check.py`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

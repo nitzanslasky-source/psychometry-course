@@ -97,3 +97,87 @@ Function `cut_repeats` (runs last; the old `apply` is wrapped). A lesson slide i
 - **`geo-159` "Slope"**: 6.3 → 4.8 min (13 → 11 slides). Cut "Midpoint" (taught again in `solve-q-r26-t37-05`: repeat the move, then check with the averages) and "Cutting the axes" (taught again in `solve-q-r26-t37-07`: put y = 0, then x = 0, then the right triangle). Neither is in the Hebrew lesson. Kept: "The line equation" (y = mx + b, horizontal / vertical lines; no question teaches it) and everything from the Hebrew lesson.
 - Sidebar updated. The summary `r26-t37-summary` is unchanged (the box method, the midpoint and the axis points are still taught in the question videos).
 - Saved: about 3.0 min.
+
+## 2026-10-06 renumber pass
+Function `renumber_pass` (runs last, after `cut_repeats`). Goal: the English Topic 37 must not look like the Hebrew
+course. Same idea, trap, level and methods; new numbers (letter-only questions: new letters / axis / choice order).
+`RN_RECORDED` is empty: no Topic 37 take in ~/Documents/Course.recordings (only "1 Algebra" exists).
+Every coordinate figure of a changed question or lesson example was redrawn to the new points at their true positions
+(new helper `RPlane`, same style as the old figures). Numbers were checked against base-v18 and the Hebrew subtitles
+(03-Geometry-Original-Subtitles.txt); triples used are 7-24-25, 8-15-17, 9-12-15, 5-12-13 (step) and 10-24-26, not the
+Hebrew 3-4-5 / 6-8-10. Every answer and trap was re-computed in python. Check: `python3 math_check.py 37 32` and
+`python3 math_check.py 37` → 0 problems, 0 warnings, 0 layout problems. All changed videos rendered and checked.
+
+**Guided questions (all 11 Hebrew-derived; solution videos rewritten: board, speech, draw cues, question figure)**
+| Id | Old | New | Answer · key |
+|---|---|---|---|
+| geo37-g156 | A(4, 7), B(−8, −5), C(13, −5): 12-12 silver + 9-12-15 | A(5, 16), B(−19, −8), C(12, −8): 24-24 silver + 7-24-25; traps 55 + 24√2 (altitude as AC), 80, 31 + 24√2 | 56 + 24√2 · 1 → 3 |
+| geo37-g158 | r = 10, y of A = 5 | r = 8, y of A = 4; "harder version" sector 64π/12 = 16π/3 | 30° · 2 → 3 |
+| geo37-g160 | A(−2a, −2b); (a³, b³), (3a, 3b), (1/b, 1/a), (a/2, b/2) | A(−3p, −3q); (2p, 2q), (1/q, 1/p), (p³, q³), (p/3, q/3); plug-in p = 1, q = 2; cubes 1/2 vs 1/8 | (p³, q³) · 1 → 3 |
+| geo37-g162 | A(3, 4), D(8, 4) → 64 (traps 40, 48, 80) | A(4, 3), D(10, 3): B(−4, −3), BC = 14, h = 6 → 60; traps 36 (rectangle), 48 (BC = 10), 120 (no ÷2) | 60 · 1 → 2 |
+| geo37-g163 | (−2, 1), (3, 9): r 5, h 8 → 200π | (−4, 2), (2, 9): r 6, h 7 → 252π; traps 63π (half width), 294π (swapped), 42π | 252π · 4 → 2 |
+| geo37-g164 | A(6, 6): 36π − 18√2 | A(8, 8): r = 8√2, 64π − 32√2; partial calculation + estimation (8√2 − 4π < 0; > 144) both still work | 64π − 32√2 · 2 → 4 |
+| geo37-g165 | C(3, 0): side 6 → 45√3 | C(4, 0): side 8 → 5 · 16√3 = 80√3 | 80√3 · 3 → 2 |
+| geo37-g166 | C(10, 4), A(5, 7) → B(0, 5) | C(8, 6), A(4, 10) → B(0, 7); both methods (halve the legs / y = ¾x + b) | (0, 7) · 3 → 4 |
+| geo37-g167 | line ∩ y-axis; Infinitely many / 3 / 0 / 1 | line ∩ x-axis; 1 / Infinitely many / 0 / 3 (video: horizontal line instead of vertical) | 3 · 2 → 4 |
+| geo37-g168 | (4, −3) → (4, 7) on a; (−2, 5) on b | (−6, 1) → (−6, −7) on a; (2, −3) on b; video now checks choice 1, it fails, so its twin (choice 2) | choice 2 · 1 → 2 |
+| geo37-g169 | through (−2, 4); impossible (−2, 9) (same x) | through (3, −5); impossible (−1, −5) (same y → horizontal); others (6, 1), (0, 2), (−4, 3) | (−1, −5) · 1 → 2 |
+The three English guided questions (q-r26-t37-05 midpoint, -07 line equation, -10 box method) were not Hebrew and are unchanged.
+
+**Practice (Hebrew study-guide questions p01–p20; figures redrawn where there is one)**
+| Id | Old | New | Answer · key |
+|---|---|---|---|
+| p01 | rhombus A(0, 4), D(5, 0) → 40 | A(0, 6), D(7, 0) → 84; traps 42, 168, 63 | 84 · 4 → 2 |
+| p02 | A(6, 0), B(0, −2) → C(−6, −4) | A(−4, 0), B(0, 3) → C(4, 6) | (4, 6) · 4 → 3 |
+| p03 | (−6, −5) & (12, 10) | (4, −6) & (−6, 9) (× −1.5); others share x or y | key 3 → 2 |
+| p04 | r 6, 60° → A(3, 0) | r 14, 60° → A(7, 0) | (7, 0) · 2 → 4 |
+| p05 | A(5, 12), B(0, 0), C(10, 0) → 36 | A(9, 12), B(0, 0), C(18, 0) → 48 (9-12-15); trap 42 = altitudes | 48 · 2 → 3 |
+| p06 | B(−1, 3), C(5, 3), area 18 → A(5, 9) | B(−2, −1), C(6, −1), area 20 → A(6, 4); trap (6, 9) | (6, 4) · 1 → 3 |
+| p07 | meets y-axis once, not ⟂ y-axis | meets x-axis once, not ⟂ x-axis; choices reordered | right triangle · 2 → 4 |
+| p08 | (−3, 2) & (−3, −5) | (4, −1) & (4, 6); trap (4, −1) & (7, −1) | key 3 → 1 |
+| p09 | center (12, 0), r 13 → y = 5 | center (15, 0), r 17 → y = 8 (8-15-17) | 8 · 4 → 2 |
+| p10 | center on y-axis → tangent x-axis | center on x-axis → tangent y-axis | y-axis · 4 → 2 |
+| p11 | B(6, 0) → radius 4 | B(9, 0) → 3x = 9, side 6 → radius 6 | 6 · 3 → 4 |
+| p12 | b through (0, 3); impossible (0, −2) | b through (4, 0); impossible (−5, 0) | key 4 → 3 |
+| p13 | (a, c); (−2a, −2c) | (m, n); (−3m, −3n); others (1/m, 1/n), (2n, 2m), (m, −n) | key 3 → 2 |
+| p14 | A(0, 3), B(2, 0) → 13 | A(0, 5), B(3, 0) → 34; trap 64 = (3 + 5)² | 34 · 2 → 3 |
+| p15 | B(−2, 2), C(6, 2), area 40 → A(2, 12) | B(−3, −1), C(5, −1), area 24 → A(1, 5); trap (1, 6) | (1, 5) · 1 → 2 |
+| p16 | through (−4, 6), misses y-axis → ⟂ x-axis | through (5, −3), misses x-axis → ⟂ y-axis; trap (5, 3) | key 2 → 3 |
+| p17 | square side 3 → 9π/2 − 9 | side 4 → 8π − 16 | 8π − 16 · 3 → 1 |
+| p18 | A(0, t), C(2t, 0), 60° → (2t + t/√3, t) | A(0, k), C(3k, 0), 60° → (3k + k/√3, k); trap (4k, k) | key 4 → 1 |
+| p19 | A(0, 5), B(6, −1) → √72 | A(0, −3), B(5, 4) → √74 (lesson "like root 72" → "root 74") | √74 · 2 → 3 |
+| p20 | A(n, 6), B(−1, −2), C(1, 0) → 7 | A(n, 7), B(−2, −5), C(0, −1) → 4; trap 8 | 4 · 1 → 3 |
+
+**Lesson examples (Hebrew-derived; board, speech, draw cues and figures changed together)**
+- "The Coordinate Plane": marks 5, 7 / −2, −3 → 3, 6 / −1, −4; A(4, 3), B(−5, 2), C(−3, −3) → A(6, 2), B(−4, 3), C(−2, −4)
+  (same quadrants I, II, III); "(4, 3) and (3, 4)" → "(6, 2) and (2, 6)". Reflection example P(4, 2) (English) kept.
+- "Lengths on the Plane": P(3, 4), Q(3, −2), 4 + 2 = 6 → P(4, 3), Q(4, −5), 3 + 5 = 8; R(2, 3), S(7, 3), 7 − 2 = 5 →
+  R(1, 4), S(7, 4), 7 − 1 = 6; −4 to 6 → −2 to 7 (2 + 7 = 9, not 7 − 2 = 5); U(−1, 0), V(4, 12) 5-12-13 → U(−2, −3), V(6, 12) 8-15-17.
+- "Circles on the Plane": tangent center (4, 4) → (5, 5); (−4, 4) → (−6, 6); C(6, 0), P(8, 0), r = 2 → C(5, 0), P(9, 0), r = 4
+  (memory-card tip changed to "(5, 0) does not mean r = 5"); A(5, 12), r 13, 26π / 169π → A(10, 24), r 26 (5-12-13 × 2), 52π / 676π.
+- "Slope": stairs A(−8, 0), C(0, 6), step 4 across 3 up, AD = 15 → A(−24, 0), C(0, 10), step 12 across 5 up, B(−12, 5),
+  D(12, 15), AD = √1521 = 39 = 3 · 13 (the one-step shortcut is now clearly the easy way); slope 3/4 → 5/12 ("not the
+  length 13; 24 across, 10 up also 5/12"); origin line (2, 3), (4, 6), (6, 9), S(−2, −3) → (3, 2), (6, 4), (9, 6), S(−3, −2).
+- Duplicate check (script, whole course): no question equals a lesson or card example; the only shared point is (4, 0) in
+  g165 and p12 (different questions). English summary examples ((3, 5), (6, 8), box 24 − 14) unchanged.
+
+**Order**
+- Guided: the easy English questions -05 (midpoint) and -07 (line equation) now come before the hard letters question
+  g160 (all three come after the Slope lesson). The cylinder g163 (medium) now comes before the trapezoid g162 (medium-plus).
+  Numbering is redone automatically (Questions 1–14).
+- Practice sorted easy → hard (list `RN_ORDER`). Correct-answer positions moved in almost every question (see tables).
+
+**Practice clean-up (32 → 26)**
+- Copies removed: geo37-core-p22 (midpoint from one end, same as guided q-r26-t37-05), q-r26-t37-11 (slanted-triangle box, same as guided -10).
+- Extra-bank: kept 3 warm-ups p21 (reflection), p23 (circle tangent to an axis), p26 (distance to a horizontal line); removed p24, p25, p27.
+- September items: removed q-r26-t37-06 (midpoint; the Hebrew p02 covers that type). Kept -03 (two reflections + length),
+  -09 (line equation y = mx + b) and -12 (box method for a quadrilateral): the Hebrew practice has none of these types.
+  The result is 26, one above the audit target of 25; the teacher may drop -03 or -09 for exactly 25.
+
+## 2026-10-06 review
+Independent review of the renumber pass (same method as for topics 30–33). Fixed:
+- solve-geo37-g160, slide 4 title still said "Plug in choice 1"; the cubes (p³, q³) are choice 3 now → "Plug in choice 3"
+  (`review_fixes`, called at the end of `renumber_pass`).
+Everything else checked OK (keys, traps, all coordinate figures at their true grid points, lesson boards and figures).
+Note: g169 passes through (3, −5) and p16 through (5, −3) — different questions, but near-mirror points in one topic.
+`math_check.py 34 35 36 37 38 32` and full `math_check.py` → 0 / 0 / 0.

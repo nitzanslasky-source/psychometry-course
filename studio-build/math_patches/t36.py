@@ -1322,3 +1322,893 @@ _apply_before_cut = apply
 def apply(M):
     _apply_before_cut(M)
     cut_repeats(M)
+
+
+# ================================================================================================
+# 2026-10-06 renumber pass (runs LAST). The English course must not look like the Hebrew one: every Hebrew-derived
+# question (guided geo36-g136 ... g151, practice geo36-core-p01 ... p20) gets new numbers (and a slightly changed
+# story where there is one). Idea, trap, level and methods stay. Every changed figure is redrawn, every guided solution
+# video is rewritten to match. Lesson examples that used the Hebrew lesson's own numbers get new numbers.
+# Practice clean-up 41 -> 27. Nothing in topic 36 is recorded (checked ~/Documents/Course.recordings 2026-10-06).
+# ================================================================================================
+import math as _m
+RN_RECORDED = set()
+
+
+def _rn_sub(M, vid, n, pairs):
+    """Exact substring replacements in one slide's spoken / drawn lines, cue labels and board items (each must hit)."""
+    if vid in RN_RECORDED: return
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = False
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit = True
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit = True
+        assert hit, (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def _rn_q(M, qid, stem=None, choices=None, correct=None, expl=None, figure=None, vb=None):
+    if qid in RN_RECORDED: return
+    M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+    if figure is not None: _rn_fig(M, qid, figure, vb)
+
+
+def _rn_fig(M, qid, svg, vb=None):
+    """New question figure; its copies on solution slides get the same drawing (cropped to vb or to their old crop)."""
+    M.set_q(qid, figure=svg)
+    for vid, v in M.D['videos'].items():
+        for b in v.get('beats', []):
+            for it in b.get('items', []):
+                if it.get('k') == 'q' and it.get('qid') == qid and isinstance(it.get('fig'), dict):
+                    old = re.search(r'viewBox="([^"]*)"', it['fig']['svg']).group(1)
+                    it['fig']['svg'] = _crop(svg, vb or old); M.touched_videos.add(vid)
+
+
+def _relabel(svg, mp):
+    """Change the text of figure labels (exact <text> contents, all at once)."""
+    for old in mp:
+        assert re.search('>%s</text>' % re.escape(old), svg), old
+    return re.sub(r'>([^<]+)</text>', lambda mo: '>%s</text>' % mp.get(mo.group(1), mo.group(1)), svg)
+
+
+def _circ(c, r, fill='none', stroke=INK, w=2.5):
+    return '<circle cx="%.3f" cy="%.3f" r="%.3f" fill="%s" stroke="%s" stroke-width="%s"/>' % (c[0], c[1], r, fill, stroke, w)
+
+
+# --- redrawn figures ---------------------------------------------------------------------------------
+def rn_regular(n, label):
+    R, L = 107.353, 123.456
+    pts, labs = [], ''
+    for k in range(n):
+        th = _m.radians(-90 - 360. * k / n)
+        pts.append((320 + R * _m.cos(th), 180 + R * _m.sin(th)))
+        labs += _t(320 + L * _m.cos(th), 180 + L * _m.sin(th), 'ABCDEFGHIJ'[k])
+    return _svg(label, _poly(pts) + labs)
+
+
+def rn_fig_g137():
+    R, n = 127.75, 6; r = R / n
+    b = _circ((320, 180), R) + _line((320 - R, 180), (320 + R, 180), ORANGE, 2.5, dash=True)
+    for k in range(n): b += _circ((320 - R + r + 2 * r * k, 180), r, 'none', TEAL, 4)
+    b += _t(320 - R - 18, 180, 'A') + _t(320 + R + 18, 180, 'B')
+    return _svg('Six equal small circles whose diameters cover the diameter AB of a larger circle', b)
+
+
+def rn_fig_g138():
+    R = 109.5; r = R / 4
+    b = _circ((320, 180), R) + _circ((320 - R + r, 180), r, FILL, TEAL) + _line((320 - R, 180), (320 + R, 180), ORANGE, 2.5, dash=True)
+    b += _t(320 - R - 18, 180, 'A') + _t(320 + R + 18, 180, 'B') + _t(320 - R + 2 * r + 10, 198, 'C')
+    return _svg('A small disk whose diameter AC is one quarter of the larger diameter AB', b)
+
+
+def rn_fig_g142():
+    return _svg('A large cube-shaped box and a small cubic block, each with one face shaded',
+                # 2026-10-06 review: block edge = box edge / 6 (165 / 6 = 27.5), matching the 1 : 6 edge ratio
+                _cube(150, 257.5, 27.5) + _cube(300, 120, 165) + _t(164, 312, 'block') + _t(382, 312, 'box'))
+
+
+def rn_fig_g144():
+    A_, B_, C_ = (267.535, 51.488), (424.929, 308.512), (215.071, 308.512)
+    Dp, Ep = _lerp(C_, B_, 0.6), _lerp(C_, A_, 0.6)
+    b = _poly([A_, B_, C_]) + _line(Ep, Dp, TEAL, 3)
+    b += _t(A_[0], A_[1] - 20, 'A') + _t(B_[0] + 18, B_[1] + 17, 'B') + _t(C_[0] - 18, C_[1] + 17, 'C')
+    b += _t(Dp[0], Dp[1] + 20, 'D') + _t(Ep[0] - 20, Ep[1], 'E')
+    m = _lerp(A_, Ep, 0.5); b += _t(m[0] - 22, m[1], '4')
+    b += _t((C_[0] + Dp[0]) / 2, 343.5, '15') + _t((Dp[0] + B_[0]) / 2, 343.5, '10')
+    return _svg('A segment ED parallel to AB inside triangle ABC', b)
+
+
+def rn_fig_g146():
+    B_, C_ = (91.875, 289.5), (548.125, 289.5)
+    u = (C_[0] - B_[0]) / 30.
+    Dp = (B_[0] + 3 * u, 289.5); A_ = (Dp[0], 289.5 - 9 * u)
+    b = _poly([A_, B_, C_]) + _line(A_, Dp, TEAL) + _right(Dp, A_, C_, 11) + _right(A_, B_, C_, 12)
+    b += _t(A_[0], A_[1] - 20, 'A') + _t(B_[0] - 18, 305.5, 'B') + _t(C_[0] + 18, 305.5, 'C') + _t(Dp[0] + 4, 309.5, 'D')
+    b += _t((B_[0] + Dp[0]) / 2 - 6, 326, '3') + _t((Dp[0] + C_[0]) / 2, 324.5, '27')
+    return _svg('An altitude divides the hypotenuse of a right triangle into lengths 3 and 27', b)
+
+
+def rn_fig_g147():
+    R = 127.75; r = R / 1.3
+    b = _circ((320, 180), R, FILL) + _circ((320, 180), r, 'white')
+    b += _line((320, 180), (320, 180 + r), TEAL) + _line((320, 180), (320 + R, 180), ORANGE) + _dot((320, 180))
+    b += _t(304, 180 + r / 2, 'r') + _t(320 + R / 2 + 8, 164, '1.3r')
+    return _svg('Concentric circles with radii r and 1.3r', b)
+
+
+def rn_fig_g150():
+    R = 109.5; r = R / 4
+    b = _circ((320, 180), R, BLUE) + _circ((372, 180), r, FILL, TEAL) + _line((320 - R, 180), (320 + R, 180), ORANGE, 2.5, dash=True)
+    b += _t(320, 99.7, 'Glass globe') + _t(372, 140, 'Ball', size=16)
+    return _svg('A small ball inside a larger glass globe, shown in cross section', b)
+
+
+def rn_fig_p02():
+    A_, F_ = (174.0, 70.5), (466.0, 70.5); G_ = (466.0, 289.5)
+    Dp = _lerp(A_, F_, 0.6); H_ = _lerp(A_, G_, 0.6)
+    b = _poly([A_, F_, G_]) + _line(Dp, H_, TEAL) + _right(Dp, A_, H_, 11) + _right(F_, A_, G_, 11)
+    b += _t(160, 54.5, 'A')
+    for k, s in enumerate('BCDE', 1): b += _t(174 + 292 * k / 5., 52.5, s)
+    b += _t(482, 54.5, 'F') + _t(482, 304.5, 'G') + _t(Dp[0] - 15, H_[1] + 12, 'H')
+    return _svg('Equal gaps on one line and two perpendicular segments to a ray from A', b)
+
+
+def rn_fig_p07():
+    R = 116.8; r = 0.6 * R; A_ = (320, 180 + R); Oc = (320, 180 + R - r); B_ = (320, 180 + R - 2 * r)
+    b = _circ((320, 180), R) + _circ(Oc, r, FILL, TEAL) + _line(A_, B_, ORANGE) + _dot((320, 180))
+    b += _t(338, 180, 'O') + _t(320, A_[1] + 22, 'A') + _t(320, B_[1] - 20, 'B')
+    return _svg('An internally tangent circle whose diameter AB passes through the center O of the larger circle', b)
+
+
+def _sector(apex, R, th, fill):
+    p = (apex[0] + R, apex[1]); q = (apex[0] + R * _m.cos(_m.radians(th)), apex[1] - R * _m.sin(_m.radians(th)))
+    s = '<path d="M %.3f %.3f L %.3f %.3f A %.3f %.3f 0 0 0 %.3f %.3f Z" fill="%s" stroke="%s" stroke-width="2.2"/>' % (
+        apex[0], apex[1], p[0], p[1], R, R, q[0], q[1], fill, TEAL)
+    a = 0.2 * R if R > 100 else 0.42 * R
+    a = max(a, 22)
+    p2 = (apex[0] + a, apex[1]); q2 = (apex[0] + a * _m.cos(_m.radians(th)), apex[1] - a * _m.sin(_m.radians(th)))
+    s += '<path d="M %.3f %.3f A %.3f %.3f 0 0 0 %.3f %.3f" fill="none" stroke="%s" stroke-width="2"/>' % (p2[0], p2[1], a, a, q2[0], q2[1], TEAL)
+    lab = (apex[0] + (a + 14) * _m.cos(_m.radians(th / 2)), apex[1] - (a + 14) * _m.sin(_m.radians(th / 2)))
+    return s + _t(lab[0], lab[1], 'θ', size=18, color=TEAL)
+
+
+def rn_fig_p08():
+    return _svg('Two circular sectors with the same central angle and different radii',
+                _sector((150, 277.333), 165, 110, FILL) + _sector((450, 277.333), 66, 110, BLUE))
+
+
+def rn_fig_p09():
+    u, H = 28.0, 269.244 / 5     # bases 2u and 3u, heights 2H and 3H
+    top, E_ = 45.378, 45.378 + 2 * H; bot = E_ + 3 * H
+    A_, B_ = (320 - u, top), (320 + u, top); D_, C_ = (320 - 1.5 * u, bot), (320 + 1.5 * u, bot)
+    b = _poly([A_, B_, (320, E_)], FILL, TEAL) + _poly([C_, D_, (320, E_)])
+    b += _t(A_[0] - 17, top - 15, 'A') + _t(B_[0] + 17, top - 15, 'B') + _t(338, E_, 'E')
+    b += _t(C_[0] + 17, bot + 16, 'C') + _t(D_[0] - 17, bot + 16, 'D') + _t(320, top - 28, '2') + _t(320, bot + 29, '3')
+    b += _t(268, (top + E_) / 2, 'x − 1') + _t(374, (E_ + bot) / 2, 'x + 3')
+    return _svg('An hourglass arrangement with bases 2 and 3', b)
+
+
+def rn_fig_p11():
+    C_ = (320, 125.5)
+    b = _poly([(270, 75.5), (370, 75.5), C_], FILL, TEAL) + _poly([C_, (170, 275.5), (470, 275.5)])
+    b += _t(254, 60.5, 'A') + _t(386, 60.5, 'B') + _t(337, 125.5, 'C') + _t(154, 291.5, 'D') + _t(486, 291.5, 'E')
+    return _svg('Similar hourglass triangles ABC and EDC', b)
+
+
+def rn_fig_p14():
+    s = 7.2
+    A_ = (250.0, 40 + 20 * s); E_ = (250.0, 40.0); B_ = (250 + 8 * s, A_[1]); C_ = (B_[0], A_[1] + 15 * s); D_ = (C_[0] + 6 * s, C_[1])
+    b = _poly([E_, A_, B_]) + _poly([B_, C_, D_]) + _right(A_, E_, B_, 9.4) + _right(B_, A_, C_, 9.4) + _right(C_, B_, D_, 9.4)
+    b += _t(A_[0] - 16, A_[1] + 16, 'A') + _t(B_[0] + 16, B_[1] - 12, 'B') + _t(C_[0] - 15, C_[1] + 17, 'C')
+    b += _t(D_[0] + 16, D_[1] + 16, 'D') + _t(E_[0] - 14, E_[1] - 12, 'E')
+    b += _t((A_[0] + B_[0]) / 2, A_[1] + 22, '8') + _t(B_[0] - 18, (B_[1] + C_[1]) / 2, '15') + _t((C_[0] + D_[0]) / 2, C_[1] + 26, '6')
+    return _svg('Two right triangles along one straight line through E, B and D', b)
+
+
+def rn_fig_p16():
+    Vy, by, R, ry = 60.545, 299.455, 79.636, 22.298
+    f = 0.75; cy = Vy + f * (by - Vy)
+    b = _poly([(240.364, by), (399.636, by), (320, Vy)], FILL, 'none', 0)
+    b += '<path d="M 240.364 %.3f A %.3f %.3f 0 0 1 399.636 %.3f" fill="none" stroke="%s" stroke-width="2" stroke-dasharray="6 5"/>' % (by, R, ry, by, GREY)
+    b += '<path d="M 240.364 %.3f A %.3f %.3f 0 0 0 399.636 %.3f" fill="none" stroke="%s" stroke-width="2.5"/>' % (by, R, ry, by, INK)
+    b += _line((240.364, by), (320, Vy)) + _line((320, Vy), (399.636, by)) + _ell(320, cy, f * R, f * ry, FILL, TEAL, 2)
+    return _svg('A cone cut by a plane parallel to its base', b)
+
+
+def rn_fig_p19():
+    s = 12.0; CF = _m.sqrt(288) * s
+    F_ = (380.0, 42 + 6 * s); A_ = (380.0, 42.0); G_ = (380.0, 42 + 4 * s); C_ = (F_[0] - CF, F_[1])
+    B_ = (F_[0] - CF * 2 / 3., G_[1])
+    b = _poly([C_, (C_[0], C_[1] + CF), (F_[0], F_[1] + CF), F_], FILL, TEAL)
+    b += _poly([A_, G_, (G_[0] + 4 * s, G_[1]), (A_[0] + 4 * s, A_[1])]) + _poly([A_, F_, C_])
+    b += _line(B_, G_, ORANGE) + _right(F_, A_, C_, 8.3)
+    b += _t(A_[0] - 15, A_[1] - 14, 'A') + _t(F_[0] + 16, F_[1] - 12, 'F') + _t(C_[0] - 16, C_[1] + 4, 'C')
+    b += _t(C_[0] - 15, C_[1] + CF + 15, 'D') + _t(F_[0] + 15, F_[1] + CF + 15, 'E') + _t(G_[0] - 16, G_[1] - 13, 'G')
+    b += _t(G_[0] + 4 * s + 16, G_[1] + 6, 'H') + _t(A_[0] + 4 * s + 16, A_[1] - 6, 'J') + _t(B_[0] - 14, B_[1] - 14, 'B')
+    b += _t(A_[0] + 2 * s, A_[1] - 16, '4')
+    m1 = _lerp(A_, B_, 0.5); m2 = _lerp(B_, C_, 0.5)
+    b += _t(m1[0] - 12, m1[1] - 14, '12') + _t(m2[0] - 14, m2[1] - 12, '6')
+    return _svg('Squares AGHJ and CDEF in a right triangle ACF, with BG parallel to CF', b)
+
+
+def rn_cubes(n):
+    x0, yb, S, DX, DY = 195.431, 288.495, 160.734, 88.404, -56.256
+    c, dx, dy = S / n, DX / n, DY / n; yt = yb - S
+    b = ''
+    for k in range(n):
+        for i in range(n):
+            p = (x0 + i * c + k * dx, yt + k * dy)
+            b += _poly([p, (p[0] + c, p[1]), (p[0] + c + dx, p[1] + dy), (p[0] + dx, p[1] + dy)], BLUE, INK, 1.7)
+    for k in range(n):
+        for j in range(n):
+            p = (x0 + S + k * dx, yb - j * c + k * dy)
+            b += _poly([p, (p[0] + dx, p[1] + dy), (p[0] + dx, p[1] + dy - c), (p[0], p[1] - c)], FILL, INK, 1.7)
+    for i in range(n):
+        for j in range(n):
+            p = (x0 + i * c, yb - j * c)
+            b += _poly([p, (p[0] + c, p[1]), (p[0] + c, p[1] - c), (p[0], p[1] - c)], '#f8fbfd', INK, 1.7)
+    return _svg('Four small cube edges in each direction give sixty-four equal cubes', b, vb='169.4 45.5 301.1 269.0')
+
+
+def rn_guided(M):
+    S = lambda g: 'solve-' + g
+    # ---------- g136: octagon, side x4 -> 4 (Hebrew: pentagon x3)  ==>  decagon, side x5 -> 5
+    g = 'geo36-g136'
+    _rn_q(M, g, stem='The side length of a regular decagon is multiplied by $5$. By what factor is its perimeter multiplied?',
+          choices=['$25$', '$5$', '$50$', '$10$'], correct=2, expl=[
+              'A regular decagon with side $s$ has perimeter $P=10s$.',
+              'With side $5s$: $P=10\\cdot5s=50s$, and $\\frac{50s}{10s}=5$.',
+              'A perimeter is a length, so it changes like the side: $\\times5$. ($25$ would be the area factor.)'],
+          figure=rn_regular(10, 'Regular 10-sided polygon'))
+    _rn_sub(M, S(g), 2, [
+        ('The side of a regular octagon is multiplied by 4.', 'The side of a regular decagon is multiplied by 5.'),
+        ('Write s on a side of the octagon', 'Write s on a side of the decagon'),
+        ("Let's picture a regular octagon with side s — and a second one whose side is 4 times bigger: 4s.",
+         "Let's picture a regular decagon with side s — and a second one whose side is 5 times bigger: 5s."),
+        ('The perimeter here: 8 sides — 8s.', 'The perimeter here: 10 sides — 10s.'),
+        ('And there: 4s plus 4s plus … eight times — 32s.', 'And there: 5s plus 5s plus … ten times — 50s.'),
+        ('32s against 8s — the perimeter is 4 times bigger.', '50s against 10s — the perimeter is 5 times bigger.'),
+        ('$P=8s$', '$P=10s$'), ('P = 8s', 'P = 10s'),
+        ('$P=8\\cdot4s=32s$', '$P=10\\cdot5s=50s$'), ('P = 8 · 4s = 32s', 'P = 10 · 5s = 50s')])
+    _rn_sub(M, S(g), 3, [
+        ('the side grew 4 times.', 'the side grew 5 times.'),
+        ('so it grew 4 times as well. Linear ratio 1 to 4, the perimeter stays 1 to 4.',
+         'so it grew 5 times as well. Linear ratio 1 to 5, the perimeter stays 1 to 5.'),
+        ('16 would be the AREA', '25 would be the AREA'),
+        ('Side $\\times4$ $\\rightarrow$ perimeter $\\times4$', 'Side $\\times5$ $\\rightarrow$ perimeter $\\times5$'),
+        ('Side ×4 → perimeter ×4', 'Side ×5 → perimeter ×5'),
+        ('Circle choice 3', 'Circle choice 2'), ('The answer, of course: 4. Choice three.', 'The answer, of course: 5. Choice two.')])
+
+    # ---------- g137: radius 7, four circles -> 14pi (Hebrew: radius 5, three circles -> 10pi)  ==>  radius 9, six circles -> 18pi
+    g = 'geo36-g137'
+    _rn_q(M, g, stem='AB is a diameter of a circle with radius $9$ cm. Six congruent smaller circles have their centers on AB. Their diameters cover AB from end to end, as shown in the figure. What is the sum of the circumferences of the six smaller circles (in cm)?',
+          choices=['$36\\pi$', '$108\\pi$', '$9\\pi$', '$18\\pi$'], correct=4, expl=[
+              'Each small diameter is $\\frac16$ of AB, so the ratio of the lengths is $1:6$. A circumference is a length, so each small circumference is $\\frac16$ of the large one.',
+              'Six small circumferences add up to the large circumference: $2\\pi\\cdot9=18\\pi$.',
+              'Check: $AB=18$, the small radius is $\\frac{18}{12}=\\frac32$, and $6\\cdot2\\pi\\cdot\\frac32=18\\pi$.'],
+          figure=rn_fig_g137())
+    _rn_sub(M, S(g), 2, [
+        ('AB is a diameter of a circle with radius 7. Four identical small circles sit on AB',
+         'AB is a diameter of a circle with radius 9. Six identical small circles sit on AB'),
+        ("What's the sum of the circumferences of the four small circles?", "What's the sum of the circumferences of the six small circles?"),
+        ('Honestly, it bugs me that the radius is 7.', 'Honestly, it bugs me that the radius is 9.'),
+        ("From A to B is 14. For one small circle's radius — 14 over 8, 7 quarters.",
+         "From A to B is 18. For one small circle's radius — 18 over 12, 3 halves."),
+        ('with r equals 7 quarters', 'with r equals 3 halves'),
+        ('Small radius $=\\frac{14}{8}=\\frac74$', 'Small radius $=\\frac{18}{12}=\\frac32$'),
+        ('Small radius = 14 : 8 = 7/4', 'Small radius = 18/12 = 3/2')])
+    _rn_sub(M, S(g), 3, [
+        ('Write r on a small radius and 4r on the big radius', 'Write r on a small radius and 6r on the big radius'),
+        ('Small radius r. The big radius — four small diameters — 4r.', 'Small radius r. The big radius — three small diameters — 6r.'),
+        ('Linear ratio 1 to 4. Circumference is a line — so the circumferences are 1 to 4 too.',
+         'Linear ratio 1 to 6. Circumference is a line — so the circumferences are 1 to 6 too.'),
+        ('exactly a quarter of the big one.', 'exactly a sixth of the big one.'),
+        ('And four of them together?', 'And six of them together?'),
+        ('Linear $1:4$ $\\rightarrow$ circumference $1:4$', 'Linear $1:6$ $\\rightarrow$ circumference $1:6$'),
+        ('Linear ratio 1 : 4 → circumference 1 : 4', 'Linear ratio 1 : 6 → circumference 1 : 6'),
+        ('4 small circumferences', '6 small circumferences')])
+    _rn_sub(M, S(g), 4, [
+        ('2π r: 2π times 7 — 14π.', '2π r: 2π times 9 — 18π.'),
+        ('Choice three. See how easy that was with similarity — instead of radius 7 quarters',
+         'Choice four. See how easy that was with similarity — instead of radius 3 halves'),
+        ('The four small disks together cover just a quarter of the big AREA.',
+         'The six small disks together cover just a sixth of the big AREA.'),
+        ('$C=2\\pi\\cdot7=14\\pi$', '$C=2\\pi\\cdot9=18\\pi$'), ('C = 2π · 7 = 14π', 'C = 2π · 9 = 18π'),
+        ('Circle choice 3', 'Circle choice 4')])
+
+    # ---------- g138: AC = AB/3 -> 1:8 (Hebrew: 1:2 -> 1:3)  ==>  AC = AB/4 -> 1:15
+    g = 'geo36-g138'
+    _rn_q(M, g, stem='AB is a diameter of a circle. Point C lies on AB, and $AC=\\frac14AB$. A smaller circle has diameter AC. What is the ratio of the area of the smaller disk to the area inside the larger circle but outside the smaller circle?',
+          choices=['$1:16$', '$1:15$', '$1:4$', '$4:15$'], correct=2, expl=[
+              'The ratio of the diameters is $AC:AB=1:4$, so the ratio of the disk areas is $1^2:4^2=1:16$.',
+              'Say the small disk is $1$ unit. Then the whole large disk is $16$ units, and the region outside the small disk is $16-1=15$ units.',
+              'The requested ratio is $1:15$. ($1:16$ is the trap — it compares the small disk with the whole large disk.)'],
+          figure=rn_fig_g138())
+    _rn_sub(M, S(g), 2, [
+        ('with AC a third of AB.', 'with AC a quarter of AB.'),
+        ('the small diameter AC is a third of the big diameter AB.', 'the small diameter AC is a quarter of the big diameter AB.'),
+        ('Linear ratio 1 to 3. The area ratio — squared — 1 to 9.', 'Linear ratio 1 to 4. The area ratio — squared — 1 to 16.'),
+        ('Linear $1:3$ $\\rightarrow$ area $1:9$', 'Linear $1:4$ $\\rightarrow$ area $1:16$'),
+        ('Linear 1 : 3 → area 1 : 9', 'Linear 1 : 4 → area 1 : 16')])
+    _rn_sub(M, S(g), 3, [
+        ('Like here: 1 to 9 is choice 2.', 'Like here: 1 to 16 is choice 1.'),
+        ('Write 1 in the small disk and 9 next to the big circle', 'Write 1 in the small disk and 16 next to the big circle'),
+        ('The big disk is 9.', 'The big disk is 16.'), ('9 minus 1 — 8.', '16 minus 1 — 15.'),
+        ('Small disk to leftover: 1 to 8.', 'Small disk to leftover: 1 to 15.'),
+        ('Leftover $=9-1=8$', 'Leftover $=16-1=15$'), ('Leftover = 9 − 1 = 8', 'Leftover = 16 − 1 = 15'),
+        ('$1:8$', '$1:15$'), ('1 : 8', '1 : 15'),
+        ('Circle choice 4', 'Circle choice 2'), ('Choice four.', 'Choice two.')])
+    _rn_sub(M, S(g), 4, [
+        ('Small radius 1, big radius 3. Areas π and 9π. Leftover 8π. π to 8π — 1 to 8.',
+         'Small radius 1, big radius 4. Areas π and 16π. Leftover 15π. π to 15π — 1 to 15.'),
+        ('$r=1,\\ R=3$: $\\pi:(9\\pi-\\pi)=1:8$', '$r=1,\\ R=4$: $\\pi:(16\\pi-\\pi)=1:15$'),
+        ('r = 1, R = 3: π : (9π − π) = 1 : 8', 'r = 1, R = 4: π : (16π − π) = 1 : 15')])
+
+    # ---------- g140: AD 3, DB 2 -> 9:16 (Hebrew: 2, 1 -> 4:5)  ==>  AD 4, DB 3 -> 16:33
+    g = 'geo36-g140'
+    _rn_q(M, g, stem='In triangle ABC, point D lies on AB and point E lies on AC, and $DE\\parallel BC$.\nGiven:\n$\\begin{cases} AD=4\\text{ cm} \\\\ DB=3\\text{ cm} \\end{cases}$\nWhat is the ratio of the area of triangle ADE to the area of trapezoid DBCE?',
+          choices=['$16:49$', '$4:3$', '$16:33$', '$4:7$'], correct=3, expl=[
+              '$DE\\parallel BC$, so triangles ADE and ABC are similar. AD matches the WHOLE side AB: $AB=4+3=7$.',
+              'The ratio of the lengths is $4:7$, so the ratio of the areas is $4^2:7^2=16:49$.',
+              'The trapezoid is the whole triangle minus the small one: $49-16=33$ units. The requested ratio is $16:33$.'],
+          figure=_parts_fig(4 / 7., '4', '3', label='In triangle ABC, a segment DE is parallel to BC: AD = 4, DB = 3'),
+          vb='70 10 500 330')
+    _rn_sub(M, S(g), 2, [
+        ('AD is 3, DB is 2.', 'AD is 4, DB is 3.'), ('the length ratio is NOT 3 to 2.', 'the length ratio is NOT 4 to 3.'),
+        ('That 2, DB,', 'That 3, DB,'), ('Cross out choice 1', 'Cross out choice 2'),
+        ('AD is 3. AB is 3 plus 2 — 5.', 'AD is 4. AB is 4 plus 3 — 7.'),
+        ('is 3 to 5 — to the WHOLE AB.', 'is 4 to 7 — to the WHOLE AB.'),
+        ('$AB=3+2=5$', '$AB=4+3=7$'), ('AB = 3 + 2 = 5', 'AB = 4 + 3 = 7'),
+        ('Length ratio $3:5$', 'Length ratio $4:7$'), ('Length ratio 3 : 5', 'Length ratio 4 : 7')])
+    _rn_sub(M, S(g), 3, [
+        ('Length ratio 3 to 5 — area ratio squared: 9 to 25.', 'Length ratio 4 to 7 — area ratio squared: 16 to 49.'),
+        ('Write 9 in the small triangle and 25 beside the whole triangle', 'Write 16 in the small triangle and 49 beside the whole triangle'),
+        ('Say the small triangle is 9. The whole big triangle is 25.', 'Say the small triangle is 16. The whole big triangle is 49.'),
+        ("What's left is the trapezoid: 25 minus 9.", "What's left is the trapezoid: 49 minus 16."),
+        ('16 — so that the big triangle really is 25.', '33 — so that the big triangle really is 49.'),
+        ('Small triangle to trapezoid: 9 to 16.', 'Small triangle to trapezoid: 16 to 33.'),
+        ('9 to 25 is a trap: that\'s small against the whole, not against the trapezoid. And 3 to 5 forgot to square.',
+         '16 to 49 is a trap: that\'s small against the whole, not against the trapezoid. And 4 to 7 forgot to square.'),
+        ('Area ratio $3^2:5^2=9:25$', 'Area ratio $4^2:7^2=16:49$'), ('Area ratio 9 : 25', 'Area ratio 16 : 49'),
+        ('Trapezoid $=25-9=16$', 'Trapezoid $=49-16=33$'), ('Trapezoid = 25 − 9 = 16', 'Trapezoid = 49 − 16 = 33'),
+        ('$9:16$', '$16:33$'), ('9 : 16', '16 : 33'),
+        ('Circle choice 4', 'Circle choice 3'), ('Choice four.', 'Choice three.')])
+
+    # ---------- g142: face area x16 -> 64 cubes (Hebrew: x9 -> 27)  ==>  box and blocks, x36 -> 216
+    g = 'geo36-g142'
+    _rn_q(M, g, stem='A large cube-shaped box is filled completely with small cubic blocks. The area of one face of the box is $36$ times the area of one face of a block. How many blocks fill the box?',
+          choices=['$36$', '$216$', '$1296$', '$72$'], correct=2, expl=[
+              'Cubes are similar. The ratio of the face areas is $1:36$, so the ratio of the edges is $1:\\sqrt{36}=1:6$.',
+              'The ratio of the volumes is $1^3:6^3=1:216$. So $216$ blocks fill the box.',
+              '($36$ is the area ratio, and $1296=36^2$ squares the area ratio.)'],
+          figure=rn_fig_g142(), vb='110 20 470 320')
+    _rn_sub(M, S(g), 2, [
+        ('The area of one face of a big cube is 16 times the area of one face of a small cube.',
+         'The area of one face of the box is 36 times the area of one face of a block.'),
+        ('How many small cubes fill the big cube?', 'How many blocks fill the box?'),
+        ('First: cubes are similar shapes.', 'First: the box and the blocks are cubes — similar shapes.'),
+        ('The area ratio is 1 to 16.', 'The area ratio is 1 to 36.'),
+        ('The edges: 1 to 4.', 'The edges: 1 to 6.'),
+        ('Areas $1:16$', 'Areas $1:36$'), ('Areas 1 : 16', 'Areas 1 : 36'),
+        ('Edges $1:\\sqrt{16}=1:4$', 'Edges $1:\\sqrt{36}=1:6$'), ('Edges 1 : 4 (square root)', 'Edges 1 : 6 (square root)')])
+    _rn_sub(M, S(g), 3, [
+        ('Now that I have the length ratio, 1 to 4', 'Now that I have the length ratio, 1 to 6'),
+        ('1 to 4 cubed: 1 to 64.', '1 to 6 cubed: 1 to 216.'),
+        ('Sketch 4 × 4 in one layer, × 4 layers', 'Sketch 6 × 6 in one layer, × 6 layers'),
+        ('You can see it: a layer of 4 by 4 — 16 — and 4 layers. 64.', 'You can see it: a layer of 6 by 6 — 36 — and 6 layers. 216.'),
+        ("So if the small cube's volume is 1, the big cube's volume is 64. 64 small cubes fit in.",
+         "So if a block's volume is 1, the box's volume is 216. 216 blocks fit in."),
+        ('16 is the area ratio — not the volume. 256 is sixteen squared — someone squared the area ratio instead of going back to the edge.',
+         '36 is the area ratio — not the volume. 1296 is thirty-six squared — someone squared the area ratio instead of going back to the edge.'),
+        ('Volumes $1^3:4^3=1:64$', 'Volumes $1^3:6^3=1:216$'), ('Volumes 1 : 64', 'Volumes 1 : 216'),
+        ('Circle choice 3', 'Circle choice 2'), ('Choice three.', 'Choice two.')])
+
+    # ---------- g144: BD 4, DC 8, AE 5 -> 15 (Hebrew: BD 2, DC 6, AE 3 -> 12)  ==>  BD 10, DC 15, AE 4 -> 10
+    g = 'geo36-g144'
+    _rn_q(M, g, stem='In triangle ABC, point D lies on BC and point E lies on AC, and $ED\\parallel AB$.\nGiven:\n$\\begin{cases} BD=10\\text{ cm} \\\\ DC=15\\text{ cm} \\\\ AE=4\\text{ cm} \\end{cases}$\nWhat is the length of AC (in cm)?',
+          choices=['$6$', '$25$', '$10$', '$\\frac{20}3$'], correct=3, expl=[
+              '$ED\\parallel AB$, so triangles EDC and ABC are similar (corresponding angles, and the angle at C is shared).',
+              'DC matches the whole side BC: $BC=10+15=25$. The ratio of the lengths is $\\frac{DC}{BC}=\\frac{15}{25}=\\frac35$.',
+              'EC matches the whole side AC. Let $EC=x$: $\\frac{x}{x+4}=\\frac35$, so $5x=3x+12$ and $x=6$. Then $AC=6+4=10$.',
+              'Faster (part to part): the parallel line cuts both sides in the same ratio. $BD:DC=10:15=2:3$, so $AE:EC=2:3$ too: $EC=\\frac32\\cdot4=6$ and $AC=10$.'],
+          figure=rn_fig_g144())
+    _rn_sub(M, S(g), 2, [('BD is 4, DC is 8, AE is 5.', 'BD is 10, DC is 15, AE is 4.')])
+    _rn_sub(M, S(g), 3, [
+        ('Write 12 under BC', 'Write 25 under BC'),
+        ('Opposite alpha in the small triangle: DC — 8. Opposite alpha in the big one: the whole side BC — 4 plus 8, 12.',
+         'Opposite alpha in the small triangle: DC — 15. Opposite alpha in the big one: the whole side BC — 10 plus 15, 25.'),
+        ("That's x plus 5.", "That's x plus 4."),
+        ('8 over 12 equals x over x plus 5.', '15 over 25 equals x over x plus 4.'),
+        ('Cross-multiply. 12x equals 8x plus 40.', 'Cross-multiply. 25x equals 15x plus 60.'),
+        ('4x is 40, x is 10.', '10x is 60, x is 6.'),
+        ('They asked for AC: 10 plus 5 — 15.', 'They asked for AC: 6 plus 4 — 10.'),
+        ('$\\frac{8}{12}=\\frac{x}{x+5}$', '$\\frac{15}{25}=\\frac{x}{x+4}$'), ('8/12 = x/(x+5) appears', '15/25 = x/(x+4) appears'),
+        ('$12x=8x+40$', '$25x=15x+60$'), ('12x = 8x + 40 → x = 10 appears', '25x = 15x + 60 → x = 6 appears'),
+        ('$x=10\\ \\Rightarrow\\ AC=15$', '$x=6\\ \\Rightarrow\\ AC=10$'), ('x = 10 → AC = 15 appears', 'x = 6 → AC = 10 appears'),
+        ('Circle choice 1', 'Circle choice 3'), ('Choice one.', 'Choice three.')])
+    _rn_sub(M, S(g), 4, [
+        ('the ratio between the sides is 8 to x. In the big one: 12 to x plus 5.',
+         'the ratio between the sides is 15 to x. In the big one: 25 to x plus 4.'),
+        ('swap the x and the 12 in the first equation', 'swap the x and the 25 in the first equation'),
+        ('the same x equals 10.', 'the same x equals 6.'),
+        ('$\\frac{8}{x}=\\frac{12}{x+5}$', '$\\frac{15}{x}=\\frac{25}{x+4}$'), ('8/x = 12/(x+5) appears', '15/x = 25/(x+4) appears')])
+    _rn_sub(M, S(g), 5, [
+        ('Write "ratio 1 : 2" between BD and DC', 'Write "ratio 2 : 3" between BD and DC'),
+        ('Write "ratio 1 : 2" between AE and EC', 'Write "ratio 2 : 3" between AE and EC'),
+        ('On side CB: BD is 4 and DC is 8 — the ratio 1 to 2.', 'On side CB: BD is 10 and DC is 15 — the ratio 2 to 3.'),
+        ('AE to EC is also 1 to 2.', 'AE to EC is also 2 to 3.'),
+        ('AE is 5 — so EC is 10, and all of AC is 15.', 'AE is 4 — 2 parts, so one part is 2. EC is 3 parts — 6, and all of AC is 10.'),
+        ('$AE=5\\Rightarrow EC=10\\Rightarrow AC=15$', '$AE=4\\Rightarrow EC=6\\Rightarrow AC=10$'),
+        ('AE = 5 → EC = 10 → AC = 15 appears', 'AE = 4 → EC = 6 → AC = 10 appears'),
+        ('Circle choice 1', 'Circle choice 3'), ('Choice one.', 'Choice three.')])
+
+    # ---------- g145: AF = 3 -> x^2/3, plug in 3 (Hebrew: AF = 2, plug in 2)  ==>  AF = 5 -> x^2/5, plug in 5
+    g = 'geo36-g145'
+    q = M.q(g)
+    _rn_q(M, g, stem=q['stemRich'].replace('$AF=3$', '$AF=5$'),
+          choices=['$5x$', '$x^2$', '$\\frac{x^2}{5}$', '$\\frac x5$'], correct=3, expl=[
+              '$DF\\parallel BC$ and $DE\\parallel AC$, so triangles AFD and DEB have the same angles: they are similar.',
+              'Sides opposite equal angles match: AF matches DE, and FD matches EB. $\\frac{AF}{DE}=\\frac{FD}{EB}$: $\\frac5x=\\frac{x}{BE}$.',
+              '$BE=\\frac{x\\cdot x}{5}=\\frac{x^2}{5}$.',
+              'Check by plugging in $x=5$: both small triangles are isosceles right triangles, so $BE=5$. Only $\\frac{x^2}5=\\frac{25}5=5$ fits.'],
+          figure=_relabel(q['questionVisual']['svg'], {'3': '5'}))
+    assert '$AF=5$' in M.q(g)['stemRich']
+    _rn_sub(M, S(g), 2, [('AF is 3,', 'AF is 5,')])
+    _rn_sub(M, S(g), 3, [
+        ('AF — 3.', 'AF — 5.'), ('Plug in: 3 over x equals x over BE.', 'Plug in: 5 over x equals x over BE.'),
+        ('x times x — x squared — divided by 3.', 'x times x — x squared — divided by 5.'),
+        ('$\\frac{3}{x}=\\frac{x}{BE}$', '$\\frac{5}{x}=\\frac{x}{BE}$'), ('3/x = x/BE appears', '5/x = x/BE appears'),
+        ('$BE=\\frac{x\\cdot x}{3}=\\frac{x^2}{3}$', '$BE=\\frac{x\\cdot x}{5}=\\frac{x^2}{5}$'), ('BE = x²/3 appears', 'BE = x²/5 appears'),
+        ('Circle choice 1', 'Circle choice 3'), ('Choice one.', 'Choice three.')])
+    _rn_sub(M, S(g), 4, [
+        ('the legs of the top triangle are 3 and 1', 'the legs of the top triangle are 5 and 1'),
+        ('Simplest: plug in 3 —', 'Simplest: plug in 5 —'),
+        ("x equals 3: now the top triangle's legs are 3 and 3.", "x equals 5: now the top triangle's legs are 5 and 5."),
+        ('Write 3 on all four sides of the square', 'Write 5 on all four sides of the square'),
+        ('Write 3 on BE', 'Write 5 on BE'), ('So BE is 3 as well.', 'So BE is 5 as well.'),
+        ('Now plug 3 into the answers. Which gives 3?', 'Now plug 5 into the answers. Which gives 5?'),
+        ('x squared over 3 — 9 over 3, really 3. Stays. x over 3 — 1, out. 3x — 9, out. x squared — 9, out.',
+         '5x — 25, out. x squared — 25, out. x squared over 5 — 25 over 5, really 5. Stays. x over 5 — 1, out.'),
+        ('Cross out choices 2, 3 and 4', 'Cross out choices 1, 2 and 4'),
+        ('$x=3\\ \\Rightarrow\\ BE=3$', '$x=5\\ \\Rightarrow\\ BE=5$'), ('x = 3 → BE = 3 appears', 'x = 5 → BE = 5 appears'),
+        ("I'd plug in 3.", "I'd plug in 5."),
+        ('Circle choice 1', 'Circle choice 3'), ('Choice one.', 'Choice three.')])
+
+    # ---------- g146: BD 9, DC 16 -> 12 (Hebrew: 4, 9 -> 6)  ==>  BD 3, DC 27 -> 9
+    g = 'geo36-g146'
+    _rn_q(M, g, stem='ABC is a right triangle with the right angle at A. AD is perpendicular to BC.\nGiven:\n$\\begin{cases} BD=3\\text{ cm} \\\\ DC=27\\text{ cm} \\end{cases}$\nWhat is the length of AD (in cm)?',
+          choices=['$15$', '$9$', '$3\\sqrt{10}$', '$6$'], correct=2, expl=[
+              'Triangles ABD and CAD are similar: both have a right angle at D, and the angle BAD equals the angle C (each is $90°$ minus the angle B).',
+              'Matching legs: $\\frac{AD}{BD}=\\frac{DC}{AD}$, so $AD^2=3\\cdot27=81$ and $AD=9$.',
+              'Shortcut: the altitude to the hypotenuse squared equals the product of the two parts: $h^2=p\\cdot q$. ($3\\sqrt{10}$ is the leg AB: $AB^2=3\\cdot30=90$.)'],
+          figure=rn_fig_g146())
+    _rn_sub(M, S(g), 2, [
+        ("BD is 9, DC is 16. What's AD?", "BD is 3, DC is 27. What's AD?"),
+        ('BD is 9, so AD is 9… and so is DC?', 'BD is 3, so AD is 3… and so is DC?')])
+    _rn_sub(M, S(g), 3, [
+        ('We have two numbers: 9 and 16.', 'We have two numbers: 3 and 27.'),
+        ('the long leg, DC, 16.', 'the long leg, DC, 27.'),
+        ('Cross-multiply: AD squared is 144. Take the root: 12.', 'Cross-multiply: AD squared is 81. Take the root: 9.'),
+        ('9 times 16 is 144. The altitude is 12 — in one line.', '3 times 27 is 81. The altitude is 9 — in one line.'),
+        ('$\\frac{AD}{9}=\\frac{16}{AD}$', '$\\frac{AD}{3}=\\frac{27}{AD}$'), ('AD/9 = 16/AD appears', 'AD/3 = 27/AD appears'),
+        ('$AD^2=144\\ \\Rightarrow\\ AD=12$', '$AD^2=81\\ \\Rightarrow\\ AD=9$'), ('AD² = 144 → AD = 12 appears', 'AD² = 81 → AD = 9 appears'),
+        ('$h^2=p\\cdot q=9\\cdot16=144$', '$h^2=p\\cdot q=3\\cdot27=81$'), ("'h² = p · q = 9 · 16' appears", "'h² = p · q = 3 · 27' appears"),
+        ('Circle choice 3', 'Circle choice 2'), ('Choice three.', 'Choice two.')])
+    _rn_sub(M, S(g), 4, [
+        ('they add up to 25 squared — 625.', 'they add up to 30 squared — 900.'),
+        ('2h squared is 288 — h squared 144 — h is 12.', '2h squared is 162 — h squared 81 — h is 9.'),
+        ('$AB^2=h^2+81$', '$AB^2=h^2+9$'), ('$AC^2=h^2+256$', '$AC^2=h^2+729$'),
+        ('$2h^2+337=625$', '$2h^2+738=900$'), ('$h^2=144\\ \\Rightarrow\\ h=12$', '$h^2=81\\ \\Rightarrow\\ h=9$'),
+        ('AB² = h² + 81, AC² = h² + 256 appears', 'AB² = h² + 9, AC² = h² + 729 appears'),
+        ('sum = 25² appears', 'sum = 30² appears'), ('h = 12 appears', 'h = 9 appears'),
+        ('Circle choice 3', 'Circle choice 2'), ('Choice three.', 'Choice two.')])
+
+    # ---------- g147: 1.4r, Liam / Maya (Hebrew: 1.5r)  ==>  1.3r, Noah / Emma (still: the first one only)
+    g = 'geo36-g147'
+    _rn_q(M, g, stem='Two concentric circles have radii $r$ and $1.3r$. Noah claims that the outer circumference is $1.3$ times the inner circumference. Emma claims that the area of the ring between the circles is greater than the area of the inner disk. Who is correct?',
+          choices=['Both Noah and Emma', 'Noah only', 'Neither Noah nor Emma', 'Emma only'], correct=2, expl=[
+              'Circles are similar. The ratio of the radii is $1:1.3=10:13$.',
+              'A circumference is a length, so the ratio of the circumferences is also $10:13$: the outer one is $1.3$ times the inner one. Noah is correct.',
+              'The ratio of the areas is $10^2:13^2=100:169$. The ring is $169-100=69$ units, and the inner disk is $100$ units. $69<100$, so Emma is incorrect.',
+              'Answer: Noah only.'],
+          figure=rn_fig_g147())
+    _rn_sub(M, S(g), 2, [
+        ('Two concentric circles, radii r and 1.4r. Liam: the outer circumference is 1.4 times the inner. Maya: the ring is bigger than the inner disk.',
+         'Two concentric circles, radii r and 1.3r. Noah: the outer circumference is 1.3 times the inner. Emma: the ring is bigger than the inner disk.'),
+        ('We need to decide: Liam, Maya, both, or neither.', 'We need to decide: Noah, Emma, both, or neither.'),
+        ('Outer radius 1.4r — times 2 pi: 2.8 pi r.', 'Outer radius 1.3r — times 2 pi: 2.6 pi r.'),
+        ('2.8 is really 1.4 times 2. Liam is right.', '2.6 is really 1.3 times 2. Noah is right.'),
+        ("'neither' and 'Maya only'", "'neither' and 'Emma only'"),
+        ("Now it's either Liam only, or both of them.", "Now it's either Noah only, or both of them."),
+        ('Cross out choices 2 and 4', 'Cross out choices 3 and 4'),
+        ('$C_{\\text{out}}=2\\pi\\cdot1.4r=2.8\\pi r$', '$C_{\\text{out}}=2\\pi\\cdot1.3r=2.6\\pi r$'),
+        ('C = 2π · 1.4r = 2.8πr appears', 'C = 2π · 1.3r = 2.6πr appears')])
+    _rn_sub(M, S(g), 3, [
+        ('Maya: the ring is bigger than the white disk.', 'Emma: the ring is bigger than the white disk.'),
+        ('Big circle: pi times 1.4r squared.', 'Big circle: pi times 1.3r squared.'),
+        ('1.4 squared is 1.96. Minus 1 — the ring is 0.96 pi r squared.', '1.3 squared is 1.69. Minus 1 — the ring is 0.69 pi r squared.'),
+        ('So 0.96 is LESS than 1.', 'So 0.69 is LESS than 1.'),
+        ("Careful — this is close! With 1.5 the ring would be bigger. With 1.4, it isn't. Maya is wrong.",
+         "Careful — in the figure the ring looks big. With 1.6 the ring would be bigger. With 1.3, it isn't. Emma is wrong."),
+        ('$\\pi(1.4r)^2-\\pi r^2$', '$\\pi(1.3r)^2-\\pi r^2$'), ('π(1.4r)² − πr² appears', 'π(1.3r)² − πr² appears'),
+        ('$=1.96\\pi r^2-\\pi r^2=0.96\\pi r^2$', '$=1.69\\pi r^2-\\pi r^2=0.69\\pi r^2$'),
+        ('= 1.96πr² − πr² = 0.96πr² appears', '= 1.69πr² − πr² = 0.69πr² appears'),
+        ('With $1.5r$ the ring would win: $2.25-1=1.25$', 'With $1.6r$ the ring would win: $2.56-1=1.56$'),
+        ('Hebrew note appears', "'With 1.6r the ring would win' appears"),
+        ('Circle choice 3', 'Circle choice 2'), ('Choice three.', 'Choice two.')])
+    _rn_sub(M, S(g), 4, [
+        ('Liam: in similar shapes the length ratio is kept. Radius times 1.4 — circumference times 1.4. Nothing to calculate. Liam is right.',
+         'Noah: in similar shapes the length ratio is kept. Radius times 1.3 — circumference times 1.3. Nothing to calculate. Noah is right.'),
+        ('Maya: from a length ratio to an area ratio — square it.', 'Emma: from a length ratio to an area ratio — square it.'),
+        ("1 to 1.4 isn't comfortable — we don't like decimals. Expand it: 5 to 7. Same ratio.",
+         "1 to 1.3 isn't comfortable — we don't like decimals. Expand it: 10 to 13. Same ratio."),
+        ('Square it: 25 to 49. The small disk — 25 units. The big one — 49 units.',
+         'Square it: 100 to 169. The small disk — 100 units. The big one — 169 units.'),
+        ('The ring: 49 minus 25 — 24 units. Less than 25. Maya is wrong.', 'The ring: 169 minus 100 — 69 units. Less than 100. Emma is wrong.'),
+        ('$1:1.4=5:7$', '$1:1.3=10:13$'), ('1 : 1.4 = 5 : 7 appears', '1 : 1.3 = 10 : 13 appears'),
+        ('$25:49$', '$100:169$'), ('25 : 49 appears', '100 : 169 appears'),
+        ('Ring $=49-25=24<25$', 'Ring $=169-100=69<100$'), ('Ring = 49 − 25 = 24 < 25 appears', 'Ring = 169 − 100 = 69 < 100 appears'),
+        ('Circle choice 3', 'Circle choice 2'), ('Choice three.', 'Choice two.')])
+
+    # ---------- g148: trapezoid 15 -> 5 (Hebrew: 6 -> 2)  ==>  trapezoid 21 -> 7
+    g = 'geo36-g148'
+    _rn_q(M, g, stem='D and F are the midpoints of sides AB and AC of triangle ABC. The area of trapezoid DBCF is $21$ cm². What is the area of triangle ADF (in cm²)?',
+          choices=['$10.5$', '$5.25$', '$14$', '$7$'], correct=4, expl=[
+              'A segment that joins two midpoints is parallel to the third side, so triangle ADF is similar to triangle ABC. The ratio of the lengths is $AD:AB=1:2$.',
+              'The ratio of the areas is $1^2:2^2=1:4$. Small triangle: $1$ unit. Whole triangle: $4$ units. Trapezoid: $4-1=3$ units.',
+              '$3$ units $=21$, so $1$ unit $=21\\div3=7$. The area of triangle ADF is $7$. ($10.5$ halves the trapezoid, and $5.25$ takes a quarter of it.)'])
+    _rn_sub(M, S(g), 2, [('The trapezoid DBCF has area 15.', 'The trapezoid DBCF has area 21.')])
+    _rn_sub(M, S(g), 3, [
+        ('equals 15.', 'equals 21.'),
+        ('Times 2: 3yh is 30. Divide by 3: yh is 10.', 'Times 2: 3yh is 42. Divide by 3: yh is 14.'),
+        ('10 over 2 is 5.', '14 over 2 is 7.'),
+        ('$\\frac{(y+2y)h}{2}=15$', '$\\frac{(y+2y)h}{2}=21$'), ('(y + 2y)h/2 = 15 appears', '(y + 2y)h/2 = 21 appears'),
+        ('$3yh=30\\Rightarrow yh=10$', '$3yh=42\\Rightarrow yh=14$'), ('3yh = 30 → yh = 10 appears', '3yh = 42 → yh = 14 appears'),
+        ('$S_{ADF}=\\frac{yh}{2}=\\frac{10}{2}=5$', '$S_{ADF}=\\frac{yh}{2}=\\frac{14}{2}=7$'), ('S = yh/2 = 5 appears', 'S = yh/2 = 7 appears'),
+        ('Circle choice 2', 'Circle choice 4'), ('Choice two.', 'Choice four.')])
+    _rn_sub(M, S(g), 4, [
+        ("3 units. And it's 15.", "3 units. And it's 21."),
+        ('So one unit is 5 — and the small triangle is one unit. 5.', 'So one unit is 7 — and the small triangle is one unit. 7.'),
+        ('Trapezoid $=4-1=3$ units $=15$', 'Trapezoid $=4-1=3$ units $=21$'),
+        ('Trapezoid = 4 − 1 = 3 units = 15 appears', 'Trapezoid = 4 − 1 = 3 units = 21 appears'),
+        ('$1$ unit $=5$', '$1$ unit $=7$'), ('1 unit = 5 appears', '1 unit = 7 appears'),
+        ('Circle choice 2', 'Circle choice 4'), ('Choice two. Much shorter', 'Choice four. Much shorter')])
+    _rn_sub(M, S(g), 5, [
+        ('So each is 5 — and the top one too.', 'So each is 7 — and the top one too.'),
+        ('Trapezoid $=3$ triangles: $15\\div3=5$', 'Trapezoid $=3$ triangles: $21\\div3=7$'),
+        ('Trapezoid = 3 triangles → 15 : 3 = 5 appears', 'Trapezoid = 3 triangles → 21 ÷ 3 = 7 appears'),
+        ('Circle choice 2', 'Circle choice 4'), ('Choice two.', 'Choice four.')])
+
+    # ---------- g149: 72√3 and 24√3 -> √3:1 (Hebrew: 12√3 and 6√3 -> √2:1)  ==>  150√3 and 30√3 -> √5:1
+    g = 'geo36-g149'
+    _rn_q(M, g, stem='Two regular hexagons have areas $150\\sqrt3$ cm² and $30\\sqrt3$ cm². What is the ratio of the perimeter of the first hexagon to the perimeter of the second?',
+          choices=['$\\sqrt5:1$', '$25:1$', '$5:1$', '$\\sqrt{10}:1$'], correct=1, expl=[
+              'Regular hexagons are similar. The ratio of the areas is $150\\sqrt3:30\\sqrt3=5:1$.',
+              'Go back from areas to lengths with a square root: the ratio of the sides is $\\sqrt5:1$.',
+              'A perimeter is a length, so the ratio of the perimeters is also $\\sqrt5:1$. (Check: the sides are $10$ and $2\\sqrt5$, and $\\frac{10}{2\\sqrt5}=\\sqrt5$.)'])
+    _rn_sub(M, S(g), 2, [
+        ('areas 72 root 3 and 24 root 3.', 'areas 150 root 3 and 30 root 3.'),
+        ('times 6, equals 72 root 3.', 'times 6, equals 150 root 3.'),
+        ('a squared over 4 is 12 — a squared is 48. a is root 48 — 4 root 3.', 'a squared over 4 is 25 — a squared is 100. a is 10.'),
+        ('b squared over 4 is 4, b squared is 16, b is 4.', 'b squared over 4 is 5, b squared is 20, b is root 20 — 2 root 5.'),
+        ('$6\\cdot\\frac{a^2\\sqrt3}{4}=72\\sqrt3$', '$6\\cdot\\frac{a^2\\sqrt3}{4}=150\\sqrt3$'),
+        ('6 · a²√3/4 = 72√3 appears', '6 · a²√3/4 = 150√3 appears'),
+        ('$a^2=48\\Rightarrow a=4\\sqrt3$', '$a^2=100\\Rightarrow a=10$'), ('a² = 48 → a = 4√3 appears', 'a² = 100 → a = 10 appears'),
+        ('$6\\cdot\\frac{b^2\\sqrt3}{4}=24\\sqrt3\\Rightarrow b=4$', '$6\\cdot\\frac{b^2\\sqrt3}{4}=30\\sqrt3\\Rightarrow b=2\\sqrt5$'),
+        ('b² = 16 → b = 4 appears', 'b² = 20 → b = 2√5 appears')])
+    _rn_sub(M, S(g), 3, [
+        ('First perimeter: 6 times 4 root 3. Second: 6 times 4.', 'First perimeter: 6 times 10. Second: 6 times 2 root 5.'),
+        ('The 6s cancel, the 4s cancel — root 3 to 1.',
+         'The 6s cancel: 10 to 2 root 5. Divide by 2: 5 to root 5. And 5 is root 5 times root 5 — so root 5 to 1.'),
+        ('$6\\cdot4\\sqrt3\\ :\\ 6\\cdot4$', '$6\\cdot10\\ :\\ 6\\cdot2\\sqrt5$'), ('6 · 4√3 : 6 · 4 appears', '6 · 10 : 6 · 2√5 appears'),
+        ('$=\\sqrt3:1$', '$=5:\\sqrt5=\\sqrt5:1$'), ('= √3 : 1 appears', '= √5 : 1 appears'),
+        ('Circle choice 4', 'Circle choice 1'), ('Choice four.', 'Choice one.')])
+    _rn_sub(M, S(g), 4, [
+        ('72 root 3 is three times 24 root 3. Area ratio 3 to 1.', '150 root 3 is five times 30 root 3. Area ratio 5 to 1.'),
+        ('Root 3 to root 1 — root 3 to 1.', 'Root 5 to root 1 — root 5 to 1.'),
+        ('$72\\sqrt3:24\\sqrt3=3:1$', '$150\\sqrt3:30\\sqrt3=5:1$'), ('72√3 : 24√3 = 3 : 1 appears', '150√3 : 30√3 = 5 : 1 appears'),
+        ('$\\sqrt3:\\sqrt1=\\sqrt3:1$', '$\\sqrt5:\\sqrt1=\\sqrt5:1$'), ('√3 : 1 appears', '√5 : 1 appears'),
+        ('Circle choice 4', 'Circle choice 1'), ('Choice four. Much, much shorter', 'Choice one. Much, much shorter')])
+
+    # ---------- g150: small diameter = 2/3 R -> 26:1 (Hebrew: = R -> 7:1)  ==>  glass globe, diameter = R/2 -> 63:1
+    g = 'geo36-g150'
+    _rn_q(M, g, stem='A hollow glass globe contains a small solid ball. The small ball\u2019s diameter is $\\frac12$ of the globe\u2019s radius. What is the ratio of the difference between their volumes to the small ball\u2019s volume?',
+          choices=['$64:1$', '$15:1$', '$16:1$', '$63:1$'], correct=4, expl=[
+              'Spheres are similar. Let the globe\u2019s radius be $R$. The small diameter is $\\frac12R$, so the small radius is $\\frac14R$. The ratio of the radii is $1:4$.',
+              'The ratio of the volumes is $1^3:4^3=1:64$. Small ball: $1$ unit. Globe: $64$ units.',
+              'Difference: $64-1=63$ units. The requested ratio is $63:1$. ($64:1$ forgets to subtract.)'],
+          figure=rn_fig_g150())
+    _rn_sub(M, S(g), 2, [
+        ("A sphere contains a smaller ball. The small ball's diameter is two thirds of the big sphere's radius.",
+         "A glass globe contains a small ball. The small ball's diameter is half of the globe's radius."),
+        ('The small diameter is two thirds of the big radius.', 'The small diameter is half of the big radius.'),
+        ('so the small radius is one third of the big radius. Ratio 1 to 3.', 'so the small radius is one quarter of the big radius. Ratio 1 to 4.'),
+        ('$2r=\\frac23R\\ \\Rightarrow\\ r=\\frac13R$', '$2r=\\frac12R\\ \\Rightarrow\\ r=\\frac14R$'), ('r = ⅓R appears', 'r = ¼R appears')])
+    _rn_sub(M, S(g), 3, [
+        ('1 cubed is 1, 3 cubed is 27.', '1 cubed is 1, 4 cubed is 64.'),
+        ('Small ball — 1 unit. Big sphere — 27 units.', 'Small ball — 1 unit. Globe — 64 units.'),
+        ('The difference: 27 minus 1 — 26 units. Difference over the small ball: 26 to 1.',
+         'The difference: 64 minus 1 — 63 units. Difference over the small ball: 63 to 1.'),
+        ("Watch out for 27 to 1 — that's the whole sphere, before subtracting.", "Watch out for 64 to 1 — that's the whole globe, before subtracting."),
+        ('$1:3\\ \\rightarrow\\ 1:27$', '$1:4\\ \\rightarrow\\ 1:64$'), ('1 : 3 → 1 : 27 appears', '1 : 4 → 1 : 64 appears'),
+        ('$27-1=26\\ \\Rightarrow\\ 26:1$', '$64-1=63\\ \\Rightarrow\\ 63:1$'), ('27 − 1 = 26 → 26 : 1 appears', '64 − 1 = 63 → 63 : 1 appears'),
+        ('Circle choice 3', 'Circle choice 4'), ('Choice three.', 'Choice four.')])
+
+    # ---------- g151: cup r/3, h/4 -> 36 (Hebrew: r/5, h/3 -> 75)  ==>  sand scoop r/2, h/6 -> 24
+    g = 'geo36-g151'
+    _rn_q(M, g, stem='A cone-shaped container with base radius $r$ and height $h$ is filled with sand using a cone-shaped scoop. The scoop\'s radius is $\\frac r2$, and its height is $\\frac h6$. How many full scoops are needed to fill the container? (Assume that no sand is spilled.)',
+          choices=['$12$', '$72$', '$24$', '$8$'], correct=3, expl=[
+              'The cones are not similar (the radius and the height change by different factors), so multiply the separate factors.',
+              'From the scoop to the container, the radius is multiplied by $2$, so the volume is multiplied by $2^2=4$. The height is multiplied by $6$, so the volume is multiplied by $6$.',
+              'Together: $4\\cdot6=24$. So $24$ scoops fill the container. ($12$ forgets to square the radius factor, and $8=2^3$ treats the cones as similar.)'])
+    _rn_sub(M, S(g), 2, [
+        ('A cone tank, radius r, height h. A cone cup: radius r over 3, height h over 4. How many cups fill the tank?',
+         'A cone container, radius r, height h. A cone scoop: radius r over 2, height h over 6. How many scoops fill the container?'),
+        ('The cup: pi times r over 3 squared — r squared over 9 — times h over 4. Over 3.',
+         'The scoop: pi times r over 2 squared — r squared over 4 — times h over 6. Over 3.'),
+        ('pi r squared h — and pi r squared h over 36. The tank is 36 times bigger.',
+         'pi r squared h — and pi r squared h over 24. The container is 24 times bigger.'),
+        ('$V_{\\text{tank}}=\\frac{\\pi r^2h}{3}$', '$V_{\\text{container}}=\\frac{\\pi r^2h}{3}$'), ('V_tank = πr²h/3 appears', 'V_container = πr²h/3 appears'),
+        ('$V_{\\text{cup}}=\\frac{\\pi(\\frac r3)^2\\cdot\\frac h4}{3}=\\frac{\\pi r^2h/36}{3}$', '$V_{\\text{scoop}}=\\frac{\\pi(\\frac r2)^2\\cdot\\frac h6}{3}=\\frac{\\pi r^2h/24}{3}$'),
+        ('V_cup appears', 'V_scoop appears'),
+        ('Circle choice 1', 'Circle choice 3'), ('Choice one.', 'Choice three.')])
+    _rn_sub(M, S(g), 3, [
+        ('the height was divided by 4, the radius by 3.', 'the height was divided by 6, the radius by 2.'),
+        ('height 4 times bigger, volume 4 times bigger.', 'height 6 times bigger, volume 6 times bigger.'),
+        ('The radius is 3 times bigger. Circles are similar — area ratio is the square: 9.',
+         'The radius is 2 times bigger. Circles are similar — area ratio is the square: 4.'),
+        ('Total: times 4, times 9 — times 36.', 'Total: times 6, times 4 — times 24.'),
+        ('Height $\\times4\\ \\rightarrow$ volume $\\times4$', 'Height $\\times6\\ \\rightarrow$ volume $\\times6$'),
+        ('Height × 4 → volume × 4 appears', 'Height × 6 → volume × 6 appears'),
+        ('Radius $\\times3\\ \\rightarrow$ base $\\times9$', 'Radius $\\times2\\ \\rightarrow$ base $\\times4$'),
+        ('Radius × 3 → base × 9 → volume × 9 appears', 'Radius × 2 → base × 4 → volume × 4 appears'),
+        ('$4\\times9=36$', '$6\\times4=24$'), ('4 × 9 = 36 appears', '6 × 4 = 24 appears'),
+        ('Circle choice 1', 'Circle choice 3'), ('Choice one.', 'Choice three.')])
+
+
+def rn_practice_questions(M):
+    P = lambda k: 'geo36-core-p%02d' % k
+    Q = M.q
+    _rn_q(M, P(1), stem='The two right triangles in the figure stand on the same straight line. The marked angle between their neighboring legs is $90°$. The ratio $a:b=3:5$. What is the ratio $c:d$?',
+          choices=['$5:3$', '$3:5$', '$9:25$', '$\\sqrt3:\\sqrt5$'], correct=2, expl=[
+              'Let the angle at the shared point inside the small triangle be $\\theta$. The marked angle is $90°$, so the angle at the shared point inside the large triangle is $180°-90°-\\theta=90°-\\theta$.',
+              'The large triangle has a right angle, so its third angle is $\\theta$. The two triangles have the same angles: they are similar.',
+              'a is opposite $\\theta$ in the small triangle, and c is opposite $\\theta$ in the large one. So a matches c, and b matches d.',
+              'Therefore the ratio $c:d=a:b=3:5$.'])
+    _rn_q(M, P(2), stem='Points A, B, C, D, E and F lie on one straight line, and $AB=BC=CD=DE=EF$. Points G and H lie on a ray from A. FG and DH are perpendicular to AF. What is the ratio $DH:FG$?',
+          choices=['$1:5$', '$2:5$', '$3:2$', '$3:5$'], correct=4, expl=[
+              'Triangles ADH and AFG share the angle at A, and each has a right angle (at D and at F). So they are similar.',
+              'AD is $3$ equal parts and AF is $5$ equal parts, so the ratio of the lengths is $3:5$.',
+              'DH matches FG, so the ratio $DH:FG=3:5$.'], figure=rn_fig_p02())
+    _rn_q(M, P(3), stem='ABCD is a rectangle. E lies on the extension of BA beyond A, F lies on the extension of BC beyond C, and E, D and F lie on one straight line.\nGiven:\n$\\begin{cases} AE=4\\text{ cm} \\\\ CF=6\\text{ cm} \\end{cases}$\nWhat is the area of ABCD (in cm²)?',
+          choices=['$10$', '$30$', '$24$', '$20$'], correct=3, expl=[
+              'Triangles EAD and DCF each have a right angle (at A and at C). $AD\\parallel CF$, so the angle at D in triangle EAD equals the angle at F in triangle DCF (corresponding angles). The triangles are similar.',
+              'Matching legs: $\\frac{AE}{DC}=\\frac{AD}{CF}$, so $AD\\cdot DC=AE\\cdot CF=4\\cdot6=24$.',
+              '$AD\\cdot DC$ is exactly the area of the rectangle: $24$.'],
+          figure=_relabel(Q(P(3))['questionVisual']['svg'], {'3': '4', '5': '6'}))
+    _rn_q(M, P(4), stem='A, B, C and D lie on a circle. Chords AC and BD meet at E. The ratio $AE:DE$ is $2:3$, and $AB=8$ cm. What is the length of DC (in cm)?',
+          choices=['$16$', '$12$', '$\\frac{16}3$', '$10$'], correct=2, expl=[
+              'The angles ABD and ACD are inscribed angles on the same arc AD, so they are equal (see the circles topic). The angles AEB and DEC are vertical angles.',
+              'So triangles AEB and DEC are similar. AE matches DE, and AB matches DC.',
+              '$\\frac{AE}{DE}=\\frac{AB}{DC}$: $\\frac23=\\frac8{DC}$, so $DC=12$. ($\\frac{16}3$ turns the ratio upside down.)'],
+          figure=_relabel(Q(P(4))['questionVisual']['svg'], {'6': '8'}))
+    _rn_q(M, P(5), stem='The ratio of the perimeter of square A to the perimeter of square B is $\\sqrt7:1$. What is the ratio of their side lengths, A to B?',
+          choices=['$7:1$', '$\\frac{\\sqrt7}{4}:1$', '$\\sqrt7:1$', '$2\\sqrt7:1$'], correct=3, expl=[
+              'All squares are similar, and a perimeter is a length.',
+              'So the ratio of the sides equals the ratio of the perimeters: $\\sqrt7:1$.'])
+    _rn_q(M, P(6), stem='D, E and F are the midpoints of the sides of triangle ABC. The perimeter of triangle DEF is $19$ cm. What is the perimeter of triangle ABC (in cm)?',
+          choices=['$38$', '$57$', '$28.5$', '$76$'], correct=1, expl=[
+              'Each side of DEF joins two midpoints, so it is half of a side of ABC.',
+              'So the perimeter of DEF is half the perimeter of ABC, and the perimeter of ABC is $2\\cdot19=38$. ($76$ uses the area factor $4$.)'])
+    _rn_q(M, P(7), stem='A smaller circle is internally tangent at A to a circle with center O. AB is a diameter of the smaller circle, O lies on AB, and $OA=5\\cdot OB$. What is the ratio of the smaller disk\'s area to the larger disk\'s area?',
+          choices=['$\\frac{9}{25}$', '$\\frac35$', '$\\frac1{25}$', '$\\frac{25}{36}$'], correct=1, expl=[
+              'Let $OB=x$. Then $OA=5x$, and the small diameter is $AB=5x+x=6x$.',
+              'The large radius is $OA=5x$, so the large diameter is $10x$. The ratio of the diameters is $6:10=3:5$.',
+              'The ratio of the areas is $3^2:5^2=9:25$, so the answer is $\\frac9{25}$.'], figure=rn_fig_p07())
+    _rn_q(M, P(8), stem='Two circular sectors have equal central angles. The arc length of the larger sector is $2.5$ times that of the smaller. What is the ratio of the larger sector\u2019s area to the smaller sector\u2019s area?',
+          choices=['$5:2$', '$25:4$', '$4:25$', '$2:5$'], correct=2, expl=[
+              'Sectors with equal central angles are similar. The arc lengths give the ratio of the lengths: $2.5:1=5:2$.',
+              'The ratio of the areas is $5^2:2^2=25:4$.'], figure=rn_fig_p08())
+    _rn_q(M, P(9), stem='$AB\\parallel CD$, and segments AC and BD meet at E.\nGiven:\n$\\begin{cases} AB=2\\text{ cm} \\\\ CD=3\\text{ cm} \\\\ AE=(x-1)\\text{ cm} \\\\ EC=(x+3)\\text{ cm} \\end{cases}$\nWhat is the value of $x$?',
+          choices=['$9$', '$6$', '$12$', '$7$'], correct=1, expl=[
+              'Triangles ABE and CDE are similar (an hourglass: Z angles and vertical angles). AE matches EC, and AB matches CD.',
+              '$\\frac{EC}{AE}=\\frac{CD}{AB}$: $\\frac{x+3}{x-1}=\\frac32$.',
+              '$2(x+3)=3(x-1)$, so $2x+6=3x-3$ and $x=9$.',
+              'Check: $AE=8$ and $EC=12$, and $\\frac{12}8=\\frac32$ ✓.'], figure=rn_fig_p09())
+    _rn_q(M, P(10), stem='A disk is inscribed in a semicircle of radius $8$ cm. It is tangent to the diameter at its midpoint O and tangent internally to the semicircular arc. What fraction of the semicircle\u2019s area lies outside the disk?',
+          choices=['$\\frac12$', '$\\frac14$', '$\\frac34$', '$\\frac13$'], correct=1, expl=[
+              'The disk touches the diameter at O, so its center lies directly above O, at a distance equal to its radius $r$.',
+              'It also touches the arc from the inside, so the distance from O to its center is $8-r$. Therefore $r=8-r$, and $r=4$.',
+              'The semicircle: $\\frac{\\pi\\cdot8^2}{2}=32\\pi$. The disk: $\\pi\\cdot4^2=16\\pi$. Outside the disk: $32\\pi-16\\pi=16\\pi$.',
+              'The fraction is $\\frac{16\\pi}{32\\pi}=\\frac12$. (With similarity: the disk\'s radius is half the semicircle\'s, so the disk is $\\frac14$ of the full circle, which is $\\frac12$ of the semicircle.)'])
+    _rn_q(M, P(11), stem='$AB\\parallel DE$, and segments AE and BD meet at C. The areas of triangles ABC and EDC are $7$ cm² and $63$ cm². What is the ratio $CD:CB$?',
+          choices=['$9:1$', '$1:3$', '$3:1$', '$\\sqrt3:1$'], correct=3, expl=[
+              'The hourglass triangles ABC and EDC are similar. CB (in the small triangle) matches CD (in the large triangle).',
+              'The ratio of the areas is $63:7=9:1$, so the ratio of the lengths is $\\sqrt9:1=3:1$.',
+              'So the ratio $CD:CB=3:1$.'], figure=rn_fig_p11())
+    _rn_q(M, P(12), stem='A cone has volume V. Its radius is multiplied by $3$, and its height is divided by $3$. The new cone has volume U. What is the ratio $U:V$?',
+          choices=['$9:1$', '$1:1$', '$27:1$', '$3:1$'], correct=4, expl=[
+              'The radius is multiplied by $3$, so the volume is multiplied by $3^2=9$.',
+              'The height is divided by $3$, so the volume is multiplied by $\\frac13$.',
+              'Together: $9\\cdot\\frac13=3$. The ratio $U:V=3:1$. ($1:1$ forgets to square the radius factor.)'])
+    _rn_q(M, P(13), stem='The area of a disk is multiplied by $16x$, where $x>0$. By what factor is its circumference multiplied?',
+          choices=['$16x$', '$4x$', '$4\\sqrt x$', '$16\\sqrt x$'], correct=3, expl=[
+              'The area is multiplied by $16x$, so every length is multiplied by $\\sqrt{16x}=4\\sqrt x$.',
+              'The circumference is a length, so it is multiplied by $4\\sqrt x$.'])
+    _rn_q(M, P(14), stem='E, B and D lie on one straight line. Angles EAB, ABC and BCD are right angles.\nGiven:\n$\\begin{cases} AB=8\\text{ cm} \\\\ BC=15\\text{ cm} \\\\ CD=6\\text{ cm} \\end{cases}$\nWhat is the length of AE (in cm)?',
+          choices=['$11.25$', '$20$', '$16$', '$24$'], correct=2, expl=[
+              'AE and BC are both perpendicular to AB, so $AE\\parallel BC$. AB and CD are both perpendicular to BC, so $AB\\parallel CD$.',
+              'So triangles EAB and BCD have the same angles (right angles at A and at C, and corresponding angles at E and at B). They are similar.',
+              'AE matches BC, and AB matches CD: $\\frac{AE}{15}=\\frac86$, so $AE=\\frac{120}6=20$. ($11.25$ matches the sides the wrong way round.)'],
+          figure=rn_fig_p14())
+    _rn_q(M, P(15), stem='A regular octagon with side $3$ cm has area $a$ cm². What is the area of a regular octagon with side $7$ cm (in cm²)?',
+          choices=['$7a$', '$\\frac{7a}{3}$', '$49a$', '$\\frac{49a}{9}$'], correct=4, expl=[
+              'Regular octagons are similar. The ratio of the sides is $7:3$, so every length is multiplied by $\\frac73$.',
+              'Areas use the square: $\\left(\\frac73\\right)^2=\\frac{49}{9}$.',
+              'The new area is $\\frac{49}{9}\\cdot a=\\frac{49a}{9}$ cm². ($\\frac{7a}3$ forgets to square.)'],
+          figure=rn_regular(8, 'Regular 8-sided polygon'))
+    _rn_q(M, P(16), stem='A cone is cut by a plane parallel to its base. The smaller cone above the cut has height $\\frac34$ of the original height. What is the ratio of the volume below the cut to the volume of the smaller cone?',
+          choices=['$64:27$', '$37:27$', '$4:3$', '$16:9$'], correct=2, expl=[
+              'The cut is parallel to the base, so the small cone is similar to the whole cone. The ratio of the heights is $3:4$.',
+              'The ratio of the volumes is $3^3:4^3=27:64$. Small cone: $27$ units. Whole cone: $64$ units.',
+              'Below the cut: $64-27=37$ units. The requested ratio is $37:27$. ($64:27$ forgets to subtract.)'], figure=rn_fig_p16())
+    _rn_q(M, P(17), stem='Two rectangles share a corner A, and their sides lie on the same two lines. Their opposite corners B and C lie on the same ray from A, with B between A and C. The ratio $AB:BC=4:3$. The larger rectangle has area S. What is the area of the smaller rectangle?',
+          choices=['$\\frac47S$', '$\\frac{16}{49}S$', '$\\frac{9}{49}S$', '$\\frac{16}{9}S$'], correct=2, expl=[
+              'The corner B of the small rectangle is on the diagonal AC of the large one, so the rectangles are similar (a rectangle on the diagonal).',
+              'AB matches the WHOLE diagonal AC: $AC=4+3=7$ parts. The ratio of the lengths is $4:7$.',
+              'The ratio of the areas is $4^2:7^2=16:49$, so the smaller area is $\\frac{16}{49}S$. ($\\frac{16}9S$ uses the part BC instead of the whole AC.)'])
+    _rn_q(M, P(18), stem='ABC is a right triangle with the right angle at B. A circle with radius r is tangent to AB at D and to BC at E, and its center O lies on AC. $AD=6$ cm. What is the length of BC (in cm)?',
+          choices=['$\\frac{7r}{6}$', '$\\frac{r^2}{6}-r$', '$r+\\frac{r^2}{6}$', '$\\frac{3r}{2}$'], correct=3, expl=[
+              'A radius is perpendicular to a tangent, so $OD\\perp AB$ and $OE\\perp BC$. ODBE is a square with side r, so $AB=6+r$.',
+              '$OD\\parallel BC$, so triangles ADO and ABC are similar: $\\frac{AD}{AB}=\\frac{OD}{BC}$.',
+              '$\\frac6{6+r}=\\frac r{BC}$, so $BC=\\frac{r(6+r)}6=r+\\frac{r^2}6$.'],
+          figure=_relabel(Q(P(18))['questionVisual']['svg'], {'4': '6'}))
+    _rn_q(M, P(19), stem='ACF is a right triangle with the right angle at F. AGHJ and CDEF are squares. G lies on AF, B lies on AC, and $BG\\parallel CF$.\nGiven:\n$\\begin{cases} AJ=4\\text{ cm} \\\\ AB=12\\text{ cm} \\\\ BC=6\\text{ cm} \\end{cases}$\nWhat is the area of square CDEF (in cm²)?',
+          choices=['$36$', '$288$', '$324$', '$144$'], correct=2, expl=[
+              'AGHJ is a square, so $AG=AJ=4$.',
+              '$BG\\parallel CF$, so triangles ABG and ACF are similar. In triangle ABG, $AG=4$ is a third of $AB=12$.',
+              'So in triangle ACF, AF is a third of AC. $AC=12+6=18$, so $AF=6$.',
+              'Pythagoras: $CF^2=18^2-6^2=324-36=288$. The area of the square is $CF^2=288$ (no square root needed).'],
+          figure=rn_fig_p19())
+    _rn_q(M, P(20), stem='The area of a square increases by $96\\%$. By what percent does its side length increase?',
+          choices=['$96\\%$', '$40\\%$', '$48\\%$', '$14\\%$'], correct=2, expl=[
+              'Area $+96\\%$ means an area factor of $1.96$.',
+              'The side is a length: $\\sqrt{1.96}=1.4$, so the side increases by $40\\%$.',
+              'Check with numbers: side $10$, area $100$. New area $196$, new side $14$. That is $4$ more out of $10$: $40\\%$. ($48\\%$ just halves the percent.)'])
+
+
+def rn_practice(M):
+    """Approved clean-up (41 -> 27). Copies: q-r26-t36-06 (= lesson part-to-part), -15 (= the backwards percent step),
+    -18 (= the map-area guided type). September items whose type the Hebrew practice (or a kept item) already drills:
+    -07 (segment vs the whole side: Hebrew p02 / guided), -09 (same height: -08 stays), -11 (trapezoid: -10 stays),
+    -13 (cone glass: Hebrew p16), -14 (percent and area: Hebrew p20). English extras: keep p26 (warm-up) and p22 (shadow);
+    remove p21, p23, p24, p25, p27 and the box item geo35-core-p27 (types in Hebrew p05/p06, p20, p16, guided)."""
+    out = ['q-r26-t36-06', 'q-r26-t36-15', 'q-r26-t36-18', 'q-r26-t36-07', 'q-r26-t36-09', 'q-r26-t36-11',
+           'q-r26-t36-13', 'q-r26-t36-14', 'geo36-core-p21', 'geo36-core-p23', 'geo36-core-p24', 'geo36-core-p25',
+           'geo36-core-p27']
+    if 'geo35-core-p27' in M.D['questions'] and M.section_of('geo35-core-p27') == PRACTICE: out.append('geo35-core-p27')
+    for qid in out:
+        assert M.section_of(qid) == PRACTICE, qid
+        M.unplace(qid)
+    p = lambda n: 'geo36-core-p%02d' % n
+    M.practice_order(PRACTICE, [p(5), p(26), p(6), p(13), p(15), p(8), p(20), p(12), p(22), p(2), p(1), 'q-r26-t36-16',
+                                'q-r26-t36-17', p(11), 'q-r26-t36-08', p(7), p(16), p(4), p(9), p(10), p(14),
+                                'q-r26-t36-10', 'q-r26-t36-12', p(17), p(3), p(18), p(19)])
+
+
+def rn_lessons_cards(M):
+    """Lesson examples that used the Hebrew lesson's own numbers get new ones."""
+    # Similarity: square diagonal x2 (Hebrew) -> x3; linear 2:3 -> 4:9 (Hebrew) -> 4:5 -> 16:25
+    _rn_sub(M, 'geo-134', 6, [
+        ('Square: diagonal $\\times2$ $\\rightarrow$ side $\\times2$', 'Square: diagonal $\\times3$ $\\rightarrow$ side $\\times3$'),
+        ('Square diagonal ×2 → square side ×2', 'Square diagonal ×3 → square side ×3'),
+        ("If the big square's diagonal is twice the small one's — then its side is twice as long too.",
+         "If the big square's diagonal is three times the small one's — then its side is three times as long too.")])
+    _rn_sub(M, 'geo-134', 10, [
+        ('Linear $2:3$ $\\rightarrow$ area $4:9$', 'Linear $4:5$ $\\rightarrow$ area $16:25$'),
+        ('Linear 2 : 3 → area 4 : 9', 'Linear 4 : 5 → area 16 : 25'),
+        ('Linear 2 to 3 — square both parts — areas 4 to 9.', 'Linear 4 to 5 — square both parts — areas 16 to 25.')])
+    # Regular shapes: hexagons 3:5 -> 9:25 (the Hebrew squares example) -> 5:6 -> 25:36
+    _rn_sub(M, 'geo-135', 5, [
+        ('Side $3:5$', 'Side $5:6$'), ('Side 3 : 5', 'Side 5 : 6'), ('Area $9:25$', 'Area $25:36$'), ('Area 9 : 25', 'Area 25 : 36'),
+        ('Linear ratio 3 to 5.', 'Linear ratio 5 to 6.'), ('9 to 25. 3 squared is 9, 5 squared is 25.', '25 to 36. 5 squared is 25, 6 squared is 36.')])
+    # Similar triangles: the 6-8-10 triangles (Hebrew 3-4-5 / 6-8-10) -> 12-16-20 and 18-24-30 (same shape, relabeled)
+    V = 'geo-139'
+    mp = {'6': '12', '8': '16', '10': '20', '9': '18', '12': '24', '15': '30'}
+    for n in (3, 4, 5):
+        for it in M.slide(V, n)['items']:
+            if it.get('k') == 'vis': it['v']['svg'] = _relabel(it['v']['svg'], mp)
+    _rn_sub(M, V, 4, [
+        ('Write 6 → 9, 8 → 12, 10 → 15 in the table', 'Write 12 → 18, 16 → 24, 20 → 30 in the table'),
+        ("6 is opposite α here — what's opposite α in the other triangle? 9. So 6 goes with 9.",
+         "12 is opposite α here — what's opposite α in the other triangle? 18. So 12 goes with 18."),
+        ('8 is opposite β — opposite β over there: 12. And the hypotenuse, 10, goes with the hypotenuse, 15.',
+         '16 is opposite β — opposite β over there: 24. And the hypotenuse, 20, goes with the hypotenuse, 30.')])
+    _rn_sub(M, V, 5, [('9 is still opposite α, and 12 is still opposite β.', '18 is still opposite α, and 24 is still opposite β.')])
+    _rn_sub(M, V, 6, [
+        ('$\\frac68=\\frac9{12}=\\frac34$', '$\\frac{12}{16}=\\frac{18}{24}=\\frac34$'), ('6/8 = 9/12 = 3/4 appears', '12/16 = 18/24 = 3/4 appears'),
+        ('$\\frac8{10}=\\frac{12}{15}=\\frac45$', '$\\frac{16}{20}=\\frac{24}{30}=\\frac45$'), ('8/10 = 12/15 = 4/5 appears', '16/20 = 24/30 = 4/5 appears'),
+        ('A fraction is just a ratio: $4:5=8:10$', 'A fraction is just a ratio: $4:5=16:20$'),
+        ('A fraction is a ratio: 4 : 5 = 8 : 10 appears', 'A fraction is a ratio: 4 : 5 = 16 : 20 appears'),
+        ('6 over 8 — three quarters. 9 over 12 — also three quarters.', '12 over 16 — three quarters. 18 over 24 — also three quarters.'),
+        ('8 over 10 — four fifths. 12 over 15 — four fifths.', '16 over 20 — four fifths. 24 over 30 — four fifths.')])
+    for it in M.slide(V, 9)['items']:
+        if it.get('k') == 'vis': it['v']['svg'] = _relabel(it['v']['svg'], {'6': '15', '8': '20', '10': '25'})
+    _rn_sub(M, V, 9, [
+        ('With 6, 8, 10: the factor is 6 to 10, three fifths — so BD is 3.6 and AD is 4.8.',
+         'With 15, 20, 25: the factor is 15 to 25, three fifths — so BD is 9 and AD is 12.'),
+        ('4.8 squared is 23.04, and 3.6 times 6.4 is also 23.04.', '12 squared is 144, and 9 times 16 is also 144.'),
+        ('AB is 6 — 36. And 3.6 times 10 — 36.', 'AB is 15 — 225. And 9 times 25 — 225.')])
+    # Similar solids: the 3 x 3 x 3 cube (= the Hebrew volume lesson) -> 4 x 4 x 4 (redrawn)
+    V = 'geo-141'
+    for it in M.slide(V, 4)['items']:
+        if it.get('k') == 'vis': it['v']['svg'] = rn_cubes(4)
+    _rn_sub(M, V, 4, [
+        ('A big cube built from 3 × 3 × 3 small cubes appears', 'A big cube built from 4 × 4 × 4 small cubes appears'),
+        ('a big cube whose edge is 3 times longer. Length ratio 1 to 3.', 'a big cube whose edge is 4 times longer. Length ratio 1 to 4.'),
+        ('Count the bottom layer: 9', 'Count the bottom layer: 16'), ('One layer — 3 by 3 — 9 cubes.', 'One layer — 4 by 4 — 16 cubes.'),
+        ('Write × 3 layers = 27', 'Write × 4 layers = 64'), ('And three layers. 27.', 'And four layers. 64.'),
+        ('Length $1:3$ $\\rightarrow$ area $1:9$ $\\rightarrow$ volume $1:27$', 'Length $1:4$ $\\rightarrow$ area $1:16$ $\\rightarrow$ volume $1:64$'),
+        ('1 : 3 → 1 : 9 → 1 : 27 appears', '1 : 4 → 1 : 16 → 1 : 64 appears'),
+        ('Length 1 to 3. Area — squared — 1 to 9. Volume — cubed — 1 to 27.', 'Length 1 to 4. Area — squared — 1 to 16. Volume — cubed — 1 to 64.')])
+    # Volume changes: edge x4 -> x5 (so it does not repeat the cube above); radius x3 -> x9 (Hebrew) -> x5 -> x25
+    V = 'geo-143'
+    k = next(i for i, b in enumerate(M.video(V)['beats'], 1) if b['title'] == 'Cube edge × 4')
+    M.slide(V, k)['title'] = 'Cube edge × 5'
+    sb = M.video(V)['hybrid']['sidebar']; sb[sb.index('Cube edge × 4')] = 'Cube edge × 5'
+    _rn_sub(M, V, k, [
+        ('One layer: $4\\times4=16$ $\\quad$ 4 layers: $64$', 'One layer: $5\\times5=25$ $\\quad$ 5 layers: $125$'),
+        ('One layer: 4 × 4 = 16 · four layers = 64 appears', 'One layer: 5 × 5 = 25 · five layers = 125 appears'),
+        ('$V=a^3\\quad\\rightarrow\\quad(4a)^3=4^3a^3=64a^3$', '$V=a^3\\quad\\rightarrow\\quad(5a)^3=5^3a^3=125a^3$'),
+        ('V = a³ → (4a)³ = 64a³ appears', 'V = a³ → (5a)³ = 125a³ appears'),
+        ('The edge of a cube is made 4 times longer.', 'The edge of a cube is made 5 times longer.'),
+        ('each is now like 4 cubes.', 'each is now like 5 cubes.'),
+        ('One layer: 4 by 4, 16 cubes. And 4 layers — 64 cubes.', 'One layer: 5 by 5, 25 cubes. And 5 layers — 125 cubes.'),
+        ('Make the edge 4a.', 'Make the edge 5a.'), ('the 4 is cubed — 64.', 'the 5 is cubed — 125.'),
+        ('So the original volume grew 64 times. The 4 itself went to the power of three.',
+         'So the original volume grew 125 times. The 5 itself went to the power of three.')])
+    k = next(i for i, b in enumerate(M.video(V)['beats'], 1) if b['title'] == 'Radius only')
+    _rn_sub(M, V, k, [('Radius times 3 — volume times 9.', 'Radius times 5 — volume times 25.')])
+    # memory cards: the linear 2:3 example and the 1:9 -> 1:8 leftover (old guided numbers)
+    c = M.card('mem-similarity')
+    t = c['tables'][0]
+    assert t['head'][2] == 'Example (linear $2:3$)', t['head']
+    t['head'][2] = 'Example (linear $4:5$)'
+    for r in t['rows']:
+        r[2] = {'$2:3$': '$4:5$', '$4:9$': '$16:25$'}.get(r[2], r[2])
+    old = 'Part vs. leftover: whole $-$ part first, then the ratio ($1:9$ whole $\\rightarrow$ $1:8$ leftover).'
+    assert old in c['tips']
+    c['tips'] = [('Part vs. leftover: whole $-$ part first, then the ratio ($1:25$ whole $\\rightarrow$ $1:24$ leftover).' if x == old else x)
+                 for x in c['tips']]
+    c = M.card('mem-similar-triangles')
+    old = [x for x in c['tips'] if 'an easy number (\\(x=3\\))' in x]
+    assert len(old) == 1
+    c['tips'] = [x.replace('an easy number (\\(x=3\\))', 'an easy number that makes a special case') for x in c['tips']]
+
+
+def renumber_pass(M):
+    rn_guided(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+    rn_lessons_cards(M)
+    _sync_stem_copies(M)
+    review_fixes(M)
+
+
+def review_fixes(M):
+    """2026-10-06 review: the slide title still had the old plug-in number (the video now plugs in 5)."""
+    if 'solve-geo36-g145' in RN_RECORDED: return
+    b = M.slide('solve-geo36-g145', 4)
+    assert b.get('title') == 'Psychometric · plug in x = 3', b.get('title')
+    b['title'] = 'Psychometric · plug in x = 5'; M.touched_videos.add('solve-geo36-g145')
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last

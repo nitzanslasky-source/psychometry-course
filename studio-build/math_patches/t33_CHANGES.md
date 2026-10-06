@@ -107,3 +107,134 @@ Function `cut_repeats` (runs last). A lesson slide is cut only when a question v
 - **Area and Circumference** (`geo-079`) 4.8 → 4.2 min. CUT slide 8 "Scale the radius" → `solve-q-r26-t33-03` (lengths grow like r, areas like r²). MOVED its backwards line into `solve-q-r26-t33-03` slide 2: "It works backwards too: the area 9 times bigger — the radius only 3 times bigger." + board item "Backwards: S × 9 → r × 3" (1.0 → 1.1 min). KEPT slide 9 "Wheels" (no question video teaches it).
 - **More Circle Tools** (`r26-t33-more-tools`) 2.5 → 1.3 min, 5 → 3 slides. CUT slide 2 "Segment" → `solve-q-r26-t33-04` (sector minus triangle). CUT slide 4 "Common tangent" → `solve-q-r26-t33-05` (same numbers 8 and 2, same steps, same 2√(Rr) shortcut — the question equaled the lesson example). Title slide: "Two more tools for the hardest circle questions. Two more come in the questions after this lesson." Slide "Two equal circles" no longer uses the word "segment" before it is taught: "The shaded region is two equal pieces. Each one: a 120-degree sector minus the triangle AOB." Board: "Common region = 2 × (sector − triangle)". KEPT "Two equal circles" and "Chord of a ring". Sidebar: 2 labels.
 - Summaries `r26-t33-summary` / `-summary-2` still sum up every cut idea; all are now taught in question videos — no change needed.
+
+## 2026-10-06 renumber pass
+So the English course does not look like the Hebrew one: every Hebrew-derived question in topic 33 has new numbers
+(and new letters / a changed story where there is one). Concept, trap, level and methods stay the same. Every guided
+solution video was rewritten to match (spoken lines, draw cues, board items, slide titles that quote numbers), and every
+changed figure was redrawn or relabelled. Function `renumber_pass(M)` runs last in `apply()`, after `cut_repeats`.
+Nothing in topic 33 is recorded (checked ~/Documents/Course.recordings), so `RN_RECORDED` is empty.
+
+**Counts:** 22 guided questions renumbered, with 22 solution videos rewritten (7 rewritten slide by slide: g083, g092,
+g094, g095, g100, g101, g102; the others by exact number swaps, plus a choice-order map for "choice N"). 40 Hebrew
+practice questions plus wp26-p10 and wp27-p10 (Hebrew word problems that live in this practice) renumbered = 42.
+Lesson / summary / card examples changed: 6 (see below). **Practice 63 → 49** (foundation 24, advanced 25).
+
+**Lesson examples:** Angles in a Circle: "70° at A, 110° at C" (the Hebrew example) → 75° / 105°. Sectors and Arcs,
+"Fifths": "circle 25π → sector 5π" (the Hebrew example) → 40π → 8π. Summary 1: "r = 5, d = 3 → chord 8" (same as
+q-r26-t33-11/12) → "r = 17, d = 8 → half chord 15 → chord 30". Summary 2: "4α + 4β = 360° → α + β = 90°" (the Hebrew
+g091) → "3α + 3β → 120°". More-tools card: "radius 6, 60°: 6π − 9√3" (= guided q-r26-t33-04) → "radius 12: 24π − 36√3";
+"radius 4: 32π/3 − 8√3" (= adv-p27) → "radius 6: 24π − 18√3".
+
+**Practice clean-up:** copies removed: f-p25, q-r26-t33-14, adv-p26 (list verified: ring ratio, radius −10%, incircle 6-8-10
+= guided q-02). September items: kept q-07 (internal tangency), q-09 (incircle tangent lengths), q-10 (chord of a ring),
+q-11 (two parallel chords) – the Hebrew practice has none of these types. Removed q-06 (area ×9 → circumference ×3 is the
+board line "Backwards: S × 9 ⇒ r × 3" in guided q-03's video) and q-12 (same chord-distance type as q-11). English extras:
+kept 3 warm-ups that practise lesson content with no other practice: f-p21 (sector perimeter), adv-p22 (wheel turns),
+adv-p27 (two circles through each other's centers). Removed f-p22, f-p23, f-p24, f-p26, f-p27, adv-p21, adv-p23, adv-p24,
+adv-p25. The order (easy → hard) is unchanged.
+
+**Kept on purpose:** the English-made guided q-r26-t33-01 … 05 and their videos. g087 keeps its statement order (the video
+goes statement by statement, the false one stays choice 4). g096 and g097 are letter-only questions: new letters (K, M, N /
+KLMN, PQRS) and new choice order; the answers ((π + 2)/3 and 1/2) cannot change. g088 keeps 120° (only the radius
+matters) – radius 7 and a new key position. The "angles to know" table (90 = ¼ …) and "72 + 72 = 144" stay: they are
+general facts, not worked examples. f-p03 (140° → 128°), g076 (112° → 104°), g078, g086, f-p07, f-p09, f-p13, adv-p05
+figures were relabelled only (the angle changes by ≤ 16°, the drawings stay not to scale but not misleading). The correct
+answer moved in 17 of 22 guided questions.
+
+**Checks:** every answer recomputed in Python (all keys); every method in each video recomputed with the new numbers
+(g076 three routes, g078 two routes, g086 two routes, g094 subtraction + elimination + estimates 38.5 / 43.7 / 7.7,
+g095 partial calculation + sector, g096 r = 2 plug-in, g099 estimate > 54π, g100 bound BC < 8, g101 plug in 3 then 4,
+g102 θ = 15 plug-in). Traps are still in the choices (180 − angle, half the wrong arc, the central angle, π ≈ 3, diameter
+for radius, arc vs area, wrong sector, double triangle, negative area, answers with r). New numbers checked against the
+Hebrew subtitles (90/135, 40/140/70, r 3 arc 2π, r 4 45°+90°, AB 8, 30°, AO 1, 6π/16π, 5-12-13, √12 with 4+4 angles,
+radii 1-2-3, r 2 / 6 / 1, 20°-55°-90°, CB 4 & 16π): none land back on them; Pythagorean triples are 12-35-37 and
+20-21-29 (not 3-4-5 / 5-12-13 / 6-8-10). Duplicate scan over topics 1–33 (questions and lesson lines): no question equals
+another question or a lesson / card example (adv-p19 moved from r = 4 to r = 8 because "r = 4, 45° → 2π" is a summary
+example). `python3 math_check.py 33 32` and `math_check.py 26 27 33` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered and
+looked at g076, g082, g083, g087, g090, g092, g094, g095, g098, g099, g100, g101, g102 and all changed question figures.
+No "Question N" was added to spoken lines.
+
+| id | old (English, Hebrew-derived) | new | answer |
+|---|---|---|---|
+| geo33-g076 | AOC 112° → ABC 124° | AOC 104° | 128° (2) |
+| geo33-g078 | tangents, DPE 52° → 64° | DPE 68° | 56° (4) |
+| geo33-g080 | area = 3 × circumference → r 6 | 4 × | 8 (1) |
+| geo33-g082 | r 6, arc 3π → 90° | r 10, arc 4π | 72° (3) |
+| geo33-g083 | r 6, sectors 60° + 90° → 15π | r 3, 40° + 120° | 4π (3) |
+| geo33-g085 | AB 12, AOC 120° → 9√3 | AB 20 | 25√3 (4) |
+| geo33-g086 | isosceles, A 40° → ABO 20° | A 56° | 28° (1) |
+| geo33-g087 | 4 equal chords, AO 3, false AC = 3√3 | AO 5, AC = 5√3 | statement 4 (4) |
+| geo33-g088 | tangent congruent circles r 4 → 120° | r 7 | 120° (3) |
+| geo33-g089 | small C 8π, ring 65π → 56–57 | small C 10π, ring 39π | 50–51 (4) |
+| geo33-g090 | sides 7, 24, 25 → 25π | 12, 35, 37 | 37π (2) |
+| geo33-g091 | r √30, six α and six β → 5π | r √35, five each | 7π (2) |
+| geo33-g092 | radii 2, 4, 6 → 3π | radii 6, 14, 15 (20-21-29) | 9π (3) |
+| geo33-g094 | r 4 → 16 − 4π | r 6 | 36 − 9π (2) |
+| geo33-g095 | OE = EC = 12 → 72√3 − 24π | OE = EC = 4 | 8√3 − 8π/3 (3) |
+| geo33-g096 | semicircle O, A, B, OAB 60° | K, M, N, KMN 60°; new order | (π+2)/3 (3) |
+| geo33-g097 | squares ABCD / EFGH | KLMN / PQRS; new order | 1/2 (2) |
+| geo33-g098 | r 9, 26°, 49°, GOE 90° → 3π | r 8, 28°, 57°, GOE 80° | 4π (3) |
+| geo33-g099 | r 4 → 24π + 16 | r 6 | 54π + 36 (3) |
+| geo33-g100 | r 3 → BC 3π/2 | r 4 | 2π (2) |
+| geo33-g101 | CB 6, ring 21π → r 2 | CB 10, ring 65π | 4 (2) |
+| geo33-g102 | A = 2α → πr(1 − α/90) | A = 4θ, 0 < θ < 45 | πr(1 − θ/45) (4) |
+| f-p01 | wire 10 cm → 5/π | string 18 cm | 9/π (3) |
+| f-p10 | AB, OB, small C 6π → 12π | CD, OD, small C 10π | 20π (1) |
+| f-p12 | A, B, areas 50π → 10 | P, Q, areas 72π | 12 (3) |
+| f-p02 | small diameter = big radius = 6 → 27π | = 10 | 75π (1) |
+| wp26-p10 | machine 600 m²/h, halved, floor r 15 → 3π/4 h | robot 480 m²/h, halved on carpet, r 12 | 3π/5 h (3) |
+| f-p06 | COB 5α → β 150° | COB 4α | 144° (4) |
+| f-p14 | α central, β inscribed, 3β − α → β | φ, θ, 5θ − 2φ | θ (1) |
+| f-p07 | BAC 36° → major arc 4/5 | 40° | 7/9 (3) |
+| wp27-p10 | runners, 5 × as fast → 60° | cyclist and walker, 8 × | 40° (3) |
+| f-p19 | r 8, 135° + 90° → arc 6π | r 6, 150° + 90° | 4π (2) |
+| f-p20 | area 25π, AOC 36° → 10π | area 36π, AOC 60° (review fix) | 12π (3) |
+| f-p18 | square perimeter 28 → 14π | 36 | 18π (1) |
+| f-p17 | r 5, area 35 → AB 14 | r 6, area 54 | 18 (3) |
+| f-p05 | area 16π, AC 8 → 90° | area 49π, AC 14 | 90° (2) |
+| f-p04 | AB diameter, BAC = CAD → BC = CD | KL, LKM = MKN; new order | LM = MN (3) |
+| f-p03 | COD 140° → BAD 20° | 128° | 26° (2) |
+| f-p08 | BAD 2α, COD 3β → 4α − 3β | 3α, 2β | 6α − 2β (2) |
+| f-p09 | AMB 72° → AKB 108° | 64° | 116° (1) |
+| f-p11 | BOC 144° → ABC 72° | 136° | 68° (3) |
+| f-p13 | BCA 56° → DOE 112° | 64° | 128° (3) |
+| f-p16 | deltoid 90°/72°, trapezoid 104°, 3 × 40, 11-gon | 90°/84°, 112°, 5 × 36, 13-gon | deltoid (3) |
+| f-p15 | area 25π → AC 10 | 64π | 16 (3) |
+| adv-p01 | four arcs = 2/5 → 36° | four arcs = 4/9 | 40° (3) |
+| adv-p07 | four semicircles, average m → 4πm | five, average k | 5πk (3) |
+| adv-p09 | sector 150°, area = 3 × arc → r 6 | 108°, 5 × | 10 (3) |
+| adv-p08 | garden r 600 m, path 100 m → 0.13π km² | lake r 400 m, walkway 100 m | 0.09π km² (2) |
+| adv-p02 | five equal arcs, E mid-arc → 9° | three equal arcs | 15° (3) |
+| adv-p12 | BAC 45° → r√2 | triangle KLM, LKM 45°, new order (review fix) | r√2 (3) |
+| adv-p13 | r 5, arcs 2 : 1 → 5√3 | r 8 | 8√3 (2) |
+| adv-p03 | r 6, square OACD → 6 − 3√2 | r 8 | 8 − 4√2 (3) |
+| adv-p10 | square 6 − semicircle → 21–22 | square 8 | 38–39 (3) |
+| adv-p14 | sides > 6, sectors r 3 → 9π/2 | sides > 8, r 4 | 8π (2) |
+| adv-p16 | three circles r 6 → 6π | r 9 | 9π (3) |
+| adv-p04 | radii a, 2b, 3c | x, 3y, 4z | π(16z² − 9y² + x²) (1) |
+| adv-p05 | CAD 44°, CDB 24° → 56° | 46°, 20° | 57° (2) |
+| adv-p06 | ACE 2p, EOD 3q → 2p + 3q/2 | 3m, 2n | 3m + n (3) |
+| adv-p11 | ECA 3t → 6t | 2k | 4k (2) |
+| adv-p17 | circumference 12π → 36 | 20π | 100 (3) |
+| adv-p18 | r 4, 45° → 2π − 4 | r 10 (review fix) | 25π/2 − 25 (2) |
+| adv-p19 | r 6, ADC 60° → 6π | r 8, ADC 45° | 8π (2) |
+| adv-p15 | AB 6, BC 10, CD 14 → 10 | 7, 11, 15 | 11 (1) |
+| adv-p20 | radii 9, 4 → perimeter 38 | 16, 9 | 74 (2) |
+
+## 2026-10-06 review
+Independent review of the renumber pass (built with and without `renumber_pass`, compared every question, explanation,
+video line, board item and figure; answers recomputed; Hebrew subtitles checked; duplicate scan over topics 1–33).
+All 22 guided questions and videos, 42 practice questions, 4 lesson videos and the card are correct: keys, one correct
+choice each, traps still present, choice numbers in the videos follow the new order (g094/g096/g100/g101 cross-outs
+re-ordered correctly), no leftover old numbers, no spoken "Question N". Figures: all 42 changed figures rendered; the
+relabelled-only ones (g076, g078, g082, g086, f-p03, f-p07, f-p09, adv-p05) stay acute/obtuse as labelled and are not
+misleading; the redrawn ones match. Fixed:
+- **f-p20** landed back on the Hebrew lesson example (circle 16π, 135° = 3/8 → 6π, the Hebrew sectors example).
+  Now area 36π, AOC 60° → COB 120° = 1/3 → 12π (traps: 6π = sector AOC, 18π = semicircle, 24π). Figure redrawn (60°).
+- **adv-p12** had changed type: 45° (right isosceles BOC, BC = r√2) became 30° (equilateral, BC = r). The 45° is what
+  makes the question, so it is now letters-only: triangle KLM, angle LKM 45°, LM = r√2, new choice order; figure relabelled.
+- **adv-p18** (r 6, 45° sector 9π/2) used the lesson example of Sectors and Arcs ("r = 6 … an eighth: 9π/2").
+  Now r = 10: 25π/2 − 25 (same trap pattern).
+Judgment calls left: g094 (r 6, quarter 9π) shares the quarter-circle step with the same lesson slide, but the
+question and answer (36 − 9π) differ; adv-p02 went from five equal arcs to three (same steps: divide, halve, halve).

@@ -95,3 +95,102 @@ Function `cut_repeats` (runs last). A lesson slide is cut only when the next que
 - **Perimeter Tricks** (`r26-t32-perimeter`) 1.4 → 0.9 min, 4 → 3 slides. CUT slide 3 "The staircase": the next question video `solve-q-r26-t32-06` teaches it in full (push the steps out, P = 2 × (width + height), no step length needed). Title slide now says "Two here — and one more in the question." The notch slide now opens "A notch: the border goes in, and comes back out." (it said "a notch is different" from the staircase) and ends "Now a question." Sidebar: "A cut counts twice", "A notch adds".
 - KEPT: "A cut counts twice" and "A notch adds" (no question video teaches them). `geo-042` "Quadrilaterals" slide 6 (family tree) is longer than the Hebrew, but the only video that uses it (`solve-geo32-g066`) is far later, in the second section — kept. `geo-067-after` is not a repeat (g068 uses it, does not re-teach it).
 - Summary `r26-t32-summary-2` slide 7 still sums up the staircase (taught in the question video) — no change needed.
+
+## 2026-10-06 renumber pass
+So the English course does not look like the Hebrew one: every Hebrew-derived question has new numbers (letter-only items: new letters / names and a new choice order). Idea, trap, level, number of steps and methods stay. Function `renumber_pass(M)` runs last (after `cut_repeats`; t32 has no `add_methods` / `practice_methods` / `pen_or_click`). Nothing in topic 32 is recorded.
+
+**Counts:** 21 guided questions renumbered (20 with new numbers, g066 new choice order), all 21 solution videos rewritten (speech, draw cues, board items, the question-figure copies on the slides, choice numbers). 40 Hebrew practice questions renumbered. Lesson / card examples changed: 2 (summary-2 "1/3 of the base → 1/6" was the Hebrew lesson example → 1/5 → 1/10; the perimeter card tip 12 × 8 / 2(12 + 8) copied guided q-06 → 9 × 5). **Practice 62 → 48.**
+
+**Figures:** relabeled where only the numbers change; redrawn where the shape depends on them: g068 (E, G at 3 : 1), g069 (AD : BC = 1 : 4), g070 (new 8 × 5 grid and pentagon), found. p09 (13 / 7 L-shape), p10 (7 × 5 grid), p16 (24 × 18 rectangle), p17 (ten rhombuses), p18 (3 × 4 array), p19 (kite 5 / 12 / 8), adv. p02 (AE : ED = 14 : 9), p08 (DE = 4EC), p17 (3a / 7a / EF 2a). g061 keeps its drawing with new vertex letters. All rendered and checked.
+
+**Practice clean-up:** copies removed: q-r26-t32-18 (= q-09), adv-p21 (= guided q-07), found-p22 (rhombus from its diagonals = g051 / adv-p23). English extras: kept 4 (found-p23 isosceles trapezoid area, found-p24 only the base grows, adv-p22 octagon, adv-p27 any ⊥ diagonals); removed found-p25 (= the lesson example "diagonal +50% → 125%"), p21, p26, p27, adv-p23, p24, p25, p26. September: kept q-08, q-09, q-12, q-17 (types the Hebrew practice lacks); removed q-13 and q-21 (midpoint quadrilateral = Hebrew found-p16) and q-20 (trapezoid + special triangle: Hebrew adv-p03, and the same drop-a-height type as q-08). Order easy → hard.
+
+**Kept on purpose:** the English-made guided q-r26-t32-01, 02, 06, 07 and the kept English practice items (not Hebrew-derived, no clash found). g061 and g066 are letter-only: same answers, new letters / order. adv-p03 keeps α = 120° (forced by the 30-60-90 idea). The lesson examples (12 → 72 square diagonal, 8 × 3 rectangle, 8 / 6 / 30° parallelogram, 10 and 6 rhombus) are not Hebrew numbers and no question equals them any more (g044 was 12 → 72 = the lesson; now 14 → 98). Guided order unchanged (already easy → hard inside each group).
+
+**Checks:** every key recomputed in Python (one correct choice each, traps still among the choices); every video step recomputed (g059 three ways = 60, g060 five ways = 50√3, g062 three ways = 300, g071 plug-in 110 / 60 gives 90, 155, 40, 105 – only choice 3 = 40; g072 work-back: only 96 ÷ 24 is a square). New numbers checked against the Hebrew subtitles (none land on the Hebrew numbers: e.g. kite 4 → 10, trapezoid 30 / 3 / 3 → 65 / 5 / 10, plug-in 100 / 70 → 110 / 60, B = 90 → 130) and a duplicate scan over topics 1–32 questions and lesson lines (adv-p03 7 / 14 hit the special-triangles lesson "short leg 7, hypotenuse 14" → changed to 11 / 22). `python3 math_check.py 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered g061, g068–g071, g048 videos and all question figures.
+
+| id | old | new | answer (choice) |
+|---|---|---|---|
+| g044 | square diagonal 12 | diagonal 14 | 98 (2) |
+| g046 | rectangle CD 3, ∠BEC 120° | CD 5 | 25√3 (3) |
+| g048 | parts 3α+α, 3β+β | 3α+2α, 3β+2β | 72° (2) |
+| g049 | AD 17, CD 13, EC 12 (5-12-13) | AD 24, CD 17, EC 16 (8-15-17) | 360 (3) |
+| g051 | diagonals sum 34, diff 14 | sum 46, diff 14 (30, 16 → side 17) | 68 (2) |
+| g053 | kite CB = CD = 6 | 10 | 20 + 10√2 (3) |
+| g055 | trapezoid 54, DE 6, triangle 6 | 65, DE 5, triangle 10 | AD 9 (2) |
+| g057 | A 112°, B 104° | 118°, 96° | 146° impossible (4) |
+| g058 | AB 7, AE 3, 64°, 58° | 9, 4, 72°, 54° | 44 (3) |
+| g059 | BC 12, perimeter 25 | BC 24, perimeter 50 (10-24-26) | 60 (2) |
+| g060 | rhombus BD 6, 60° | BD 10 | 50√3 (2) |
+| g061 | AOD equilateral, ∠OBC | BPC equilateral, ∠PAD | 15° (1) |
+| g062 | kite 13 / BO 12 / OC 15 | 17 / 15 / 12 (8-15-17) | 300 (3) |
+| g063 | AB = AD = 5, 30° | 7 | 35 (2) |
+| g066 | statements | new order (false one still last) | parallelogram ⊥ diagonals (4) |
+| g067 | corner areas 5, 13 | 6, 15 | 21 (2) |
+| g068 | AE = 2ED, BG = 2GC | 3 : 1; choices reordered | area of ECD (1) |
+| g069 | AD 4, BC 12, ABD 14 | AD 5, BC 20, ABD 15 | 75 (3) |
+| g070 | 7 × 5 grid | 8 × 5 grid, new pentagon | 26 (3) |
+| g071 | B 110°, plug 100 / 70 | B 130°, plug 110 / 60 | 65° − α/2 + β/2 (3) |
+| g072 | perimeter 50 | perimeter 40 | 96 (3) |
+| f-p01 | square 40, triangles 38 | 48, 34 | 88 (1) |
+| f-p02 | y = x + 32° | y = x + 46° | 67° (2) |
+| f-p03 | ∠ABC = 2t | 3k | 180° − 3k (3) |
+| f-p04 | ∠BCD 124° | 136° | 22° (1) |
+| f-p05 | triangle perimeter 216 | 252 | 21 (1) |
+| f-p06 | α, β, γ | x, y, z; new order | 180° (2) |
+| f-p07 | rhombus perimeter 36 | 44 | 23 impossible (4) |
+| f-p08 | routes | new order | four sides (2) |
+| f-p09 | L: 14 minus 9 | 13 minus 7 | 120 (2) |
+| f-p10 | 30 squares | 35 squares | 27 (3) |
+| f-p11 | — | new order | 90° (3) |
+| f-p12 | 32° | 26° | 64° (3) |
+| f-p13 | perimeter 11, side 4 | 17, 6 | 15 (2) |
+| f-p14 | — | new order | rectangle (3) |
+| f-p15 | 101°, 67° | 104°, 71° | 95° (2) |
+| f-p16 | half-side 5, rhombus 13 | 9, 15 | 84 (4) |
+| f-p17 | 12 rhombuses | 10 | 36° (2) |
+| f-p18 | perimeter 40, 4 × 5 | 48, 3 × 4 | 14 (3) |
+| f-p19 | kite 17 / 8 / 9 | 13 / 5 / 8 | 100 (2) |
+| f-p20 | Leah (square) / Daniel (rhombus) | Maya (rhombus) / Ethan (square) | Ethan only (3) |
+| a-p01 | short side 2 | 3 | 9 (2) |
+| a-p02 | EBC 19, ECD 7 | 23, 9 | 14 (2) |
+| a-p03 | AB 9, BC 18 | 13, 26 (review; was 11, 22) | 120° (2) |
+| a-p04 | square 8 | 12 | 18√3 (1) |
+| a-p05 | ∠DAC = 2t | 2m | 4m (1) |
+| a-p06 | square 3 | 5 | 10√2 (3) |
+| a-p07 | 3t, t | 3n, n | 180° − 2n (1) |
+| a-p08 | DE = 3EC | 4EC | 4 : 1 : 5 (3) |
+| a-p09 | square 7, small 1 | 14, small 2 | 88 (2) |
+| a-p10 | rectangle perimeter 96 | 84 | 112 (2) |
+| a-p11 | perimeter 40 | 52 | each side 13 (1) |
+| a-p12 | 28° | 36° | 27° (1) |
+| a-p13 | 2p, 2q | 2m, 2n | 90° + m + n (1) |
+| a-p14 | perimeter 34, EF 7 | 46, 11 | 34 (3) |
+| a-p15 | +10, CD 14 | +16, CD 13 | 52 (2) |
+| a-p16 | AEC 30 = 3/10 | 42 = 7/24 | 5 (2) |
+| a-p17 | 3a, 5a | 3a, 7a | 2a (2) |
+| a-p18 | AD 12 | 15 | 5 (2) |
+| a-p19 | p, q, r, s | a, b, c, d | 2b + 2c + 4d (2) |
+| a-p20 | widths 6, 4√2 | 5, 3√2 | 30 (3) |
+
+## 2026-10-06 review
+Independent check of the renumber pass (build with and without `renumber_pass`, compare every question, video, card and
+figure). Checked: 21 guided questions + their 21 solution videos, 40 renumbered practice questions, summary 2 and the
+perimeter card, the 14 practice removals. Every key recomputed (one correct choice each, the old traps still among the
+choices), every video step recomputed (incl. g059's three ways, g060's five ways, g062, g070's three approaches, g071's
+plug-in 110 / 60 → 90, 155, 40, 105, g072's work-back), checked against the Hebrew subtitles (no Hebrew numbers), no
+spoken "Question N", no leftover old numbers. All 53 changed question figures and all 21 videos rendered and checked.
+
+Fixed:
+- **adv. p03** — the new 11 / 22 is now the special-triangles lesson example (topic 31's renumber pass changed geo-026 to
+  "Say it's 11 — the hypotenuse is 22"). Changed to AB = 13, BC = 26 (same 30-60-90 idea, answer 120°, choice 2); figure
+  relabeled.
+- **g048** — the figure was the old drawing relabeled (3α = 52.5°, 3β = 82.5°, so it showed x = 45°). Redrawn
+  (`_rn_g048`) to the new split: 3α = 42°, 3β = 66°, x = 72°, labels 3α / 2α / 3β / 2β; the slide copies follow.
+
+Judgment calls (left as is): g071's drawing keeps its B ≈ 110° shape labeled 130° (still obtuse, α still looks obtuse as
+the video says); g055's middle rectangle (9 × 5) still looks like a square, which is exactly what the video warns about;
+adv. p15's rectangle proportions are not to the new EF (not labeled); adv. p09 is the old figure doubled (14 / 2 instead
+of 7 / 1), not a Hebrew number; f-p18 changed 4 × 5 → 3 × 4 so the small sides are now whole numbers (3, 4) instead of
+2 and 2.5 — same steps.
+`python3 math_check.py 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

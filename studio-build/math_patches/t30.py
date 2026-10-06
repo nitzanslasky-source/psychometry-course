@@ -921,3 +921,550 @@ def cut_repeats(M):
     r = M.slide(L1, _slide_no(M, L1, 'Recap'))
     for it in r['items']:
         if it.get('t', '').startswith('Segments: count the gaps'): it['t'] = 'Segments: count the gaps, not the points'
+
+
+# ======================================================================================================
+# 2026-10-06 renumber pass (runs LAST). The English course must not look like the Hebrew one: every Hebrew-derived
+# question (guided geo30-g002, g005, g006, g007; practice foundation p01-p10 and advanced p01-p10) gets new numbers
+# (letter-only questions: new letters and choice order). Idea, trap, level and methods stay. Every figure of a changed
+# question is redrawn to its new angles, and every guided solution video is rewritten to match. Practice clean-up 39 -> 26.
+# Nothing in topic 30 is recorded (checked ~/Documents/Course.recordings 2026-10-06).
+# ======================================================================================================
+RN_RECORDED = set()
+
+
+def _rn_q(M, qid, stem=None, choices=None, correct=None, expl=None, figure=None):
+    if qid in RN_RECORDED: return
+    M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+    if figure is not None: _set_qfig(M, qid, figure)
+
+
+def _rn_sub(M, vid, n, pairs):
+    """Exact substring replacements in one slide's spoken / drawn lines, labels and board items (each must hit)."""
+    if vid in RN_RECORDED: return
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = False
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit = True
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit = True
+        assert hit, (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def _rn_lines(M, vid, n, lines):
+    """Replace all lines of a slide (items stay; 'appear' lines must point at the same items)."""
+    if vid in RN_RECORDED: return
+    old = [l['appear'] for l in M.slide(vid, n)['lines'] if 'appear' in l]
+    assert old == [l['appear'] for l in lines if 'appear' in l], (vid, n)
+    M.edit_lines(vid, n, lambda ls: lines)
+
+
+def _rn_slide_no(M, vid, title):
+    return next(i for i, b in enumerate(M.video(vid)['beats'], 1) if b['title'] == title)
+
+
+def _relabel(svg, mp):
+    """Change the text of figure labels (exact <text> contents)."""
+    for old, new in mp.items():
+        n = len(re.findall('>%s</text>' % re.escape(old), svg))
+        assert n == 1, (old, n)
+    return re.sub(r'>([^<]+)</text>', lambda mo: '>%s</text>' % mp.get(mo.group(1), mo.group(1)), svg)
+
+
+# --- redrawn figures (same frame as the old ones, so the solution-slide crops still fit) ---------------
+def _rn_rays(title, rays, arcs, lines=(), extra=()):
+    """Rays from (320, 180): rays = directions (deg); lines = full lines through the point; arcs = (a1, a2, label, r, rl)."""
+    O = (320.0, 180.0); R = 156.429
+    b = []
+    for d in lines:
+        p, q = _pt(R, d, *O), _pt(R, d + 180, *O); b.append(_ln(p[0], p[1], q[0], q[1]))
+    for d in rays:
+        p = _pt(R, d, *O); b.append(_ln(O[0], O[1], p[0], p[1]))
+    for a1, a2, t, r, rl in arcs: b += [_arc(O[0], O[1], r, a1, a2), _alab(O[0], O[1], rl, a1, a2, t)]
+    return _svg(title, b + list(extra))
+
+
+def _rn_par(title, rows, deg, arcs, ext=107.353):
+    """Horizontal lines rows = [(y, name)], a transversal through (320, 180) at deg; arcs = (y, a1, a2, label)."""
+    b = []
+    for y, nm in rows: b += [_ln(131.059, y, 508.941, y), _tx(120.324, y, nm)]
+    dx = ext / math.tan(math.radians(deg))
+    b.append(_ln(320 - dx, 180 + ext, 320 + dx, 180 - ext))
+    for y, a1, a2, t in arcs:
+        cx = 320 + (180 - y) / math.tan(math.radians(deg))
+        b += [_arc(cx, y, 25.765, a1, a2), _alab(cx, y, 44, a1, a2, t)]
+    return _svg(title, b)
+
+
+AB = [(119.882, 'a'), (240.118, 'b')]
+ABC = [(119.882, 'a'), (180.0, 'b'), (240.118, 'c')]
+
+
+def rn_fig_g002():
+    t = 64; ay, by_ = 121.6, 238.4; xb = 293.0; xa = xb + (by_ - ay) / math.tan(math.radians(t))
+    lo, hi = (xb - (301.667 - by_) / math.tan(math.radians(t)), 301.667), (xb + (by_ - 58.333) / math.tan(math.radians(t)), 58.333)
+    pl, pr = _pt(52.5, t + 90, xb, by_), _pt(126.5, t - 90, xb, by_)
+    b = [_ln(105.867, ay, 534.133, ay), _ln(105.867, by_, 534.133, by_), _ln(lo[0], lo[1], hi[0], hi[1]),
+         _tx(93.7, ay, 'a'), _tx(93.7, by_, 'b'),
+         _arc(xa, ay, 31.633, 0, t), _alab(xa, ay, 52, 0, t, '64°'),
+         _ln(pl[0], pl[1], pr[0], pr[1]), _right(xb, by_, t, t - 90, 13.63),
+         _arc(xb, by_, 46.233, t - 90, 0), _alab(xb, by_, 66, t - 90, 0, 'x')]
+    return _svg('Two parallel lines cut by a transversal', b)
+
+
+def rn_fig_g005():
+    ay, by_ = 137.059, 222.941; c_dir, d_deg = 103, 47
+    X0 = 277.0; Xd = X0 + (by_ - ay) / math.tan(math.radians(d_deg))
+    def steep(x_at, y_at):   # line in direction c_dir through (x_at, y_at), from y=64.059 to y=295.941
+        k = 1 / math.tan(math.radians(c_dir))
+        return _ln(x_at + (y_at - 64.059) * k, 64.059, x_at + (y_at - 295.941) * k, 295.941)
+    k = 1 / math.tan(math.radians(c_dir)); ca = X0 + (by_ - ay) * k
+    lo, hi = _pt(122.0, 180 + d_deg, X0, by_), _pt(115.0, d_deg, Xd, ay)
+    b = [_ln(148.235, ay, 491.765, ay), _ln(148.235, by_, 491.765, by_), steep(X0, by_), steep(Xd, ay),
+         _ln(lo[0], lo[1], hi[0], hi[1]),
+         _tx(135.353, ay, 'a'), _tx(135.353, by_, 'b'),
+         _tx(X0 + (by_ - 64.059) * k - 14, 66.0, 'c'), _tx(Xd + (ay - 64.059) * k + 13, 64.059, 'd'),
+         _arc(ca, ay, 24.906, c_dir, 180), _alab(ca, ay, 43, c_dir, 180, '77°'),
+         _arc(Xd, ay, 24.906, d_deg, c_dir), _alab(Xd, ay, 42, d_deg, c_dir, '56°'),
+         _arc(X0, by_, 30.918, 180, 180 + d_deg), _alab(X0, by_, 47, 180, 180 + d_deg, 'x')]
+    return _svg('Two pairs of parallel lines and a diagonal', b)
+
+
+def rn_fig_g007():
+    ay, by_ = 134.912, 225.088; t1, t2 = 36, 62; h = by_ - ay
+    drop = (h / math.tan(math.radians(t2))) / (1 / math.tan(math.radians(t1)) + 1 / math.tan(math.radians(t2)))
+    X = 320.0; bx, byy = X + drop / math.tan(math.radians(t1)), ay + drop
+    b = [_ln(148.235, ay, 491.765, ay), _ln(148.235, by_, 491.765, by_), _ln(X, ay, bx, byy), _ln(X, by_, bx, byy),
+         _tx(137.5, ay, 'a'), _tx(137.5, by_, 'b'),
+         _arc(X, ay, 30.059, -t1, 0), _alab(X, ay, 49, -t1, 0, '36°'),
+         _arc(X, by_, 30.059, 0, t2), _alab(X, by_, 47, 0, t2, '62°'),
+         _arc(bx, byy, 21.471, 180 - t1, 180 + t2), _alab(bx, byy, 37, 180 - t1, 180 + t2, 'x')]
+    return _svg('Parallel lines and a bent transversal', b)
+
+
+def rn_fig_p01():
+    return _rn_rays('Angles at a point', [0, 37, 180], [(0, 37, '37°', 31.286, 53), (37, 180, 'x', 31.286, 53)])
+
+
+def rn_fig_p02():
+    return _rn_rays('Angles at a point', [0, 56, 180, 270], [(-90, 56, '146°', 31.286, 53), (56, 180, 'x', 31.286, 53)],
+                    extra=[_right(320.0, 180.0, 0, -90, 14.6)])
+
+
+def rn_fig_p03():
+    return _rn_rays('Angles at a point', [], [(180, 216, 'x', 31.286, 53), (36, 108, '2x', 31.286, 53),
+                                              (288, 360, '2x', 31.286, 53)], lines=[0, 36, 108])
+
+
+def rn_fig_p04():
+    y = 180.0; b = [_ln(105.294, y, 534.706, y)]
+    for cx, d in ((221.235, 70), (414.47, 125)):
+        p, q = _pt(85.882 / math.sin(math.radians(d)), d, cx, y), _pt(85.882 / math.sin(math.radians(d)), d + 180, cx, y)
+        b.append(_ln(p[0], p[1], q[0], q[1]))
+    for cx, a1, a2, t in ((221.235, 0, 70, '70°'), (221.235, 70, 180, 'p'), (414.47, 125, 180, 'q'),
+                          (414.47, 0, 125, 'r'), (414.47, 180, 305, 's'), (414.47, 305, 360, 't')):
+        b += [_arc(cx, y, 25.765, a1, a2), _alab(cx, y, 44, a1, a2, t)]
+    return _svg('Two intersections with a given angle ratio', b)
+
+
+def rn_fig_p05():
+    return _rn_par('Parallel lines and a transversal', AB, 57, [(119.882, 0, 57, '57°'), (240.118, 57, 180, 'x')])
+
+
+def rn_fig_p06():
+    return _rn_par('Parallel lines and a transversal', AB, 38, [(119.882, 38, 180, 'α'), (119.882, 218, 360, 'γ'),
+                                                                (240.118, 0, 38, '38°'), (240.118, 180, 218, 'β')])
+
+
+def rn_fig_p07():
+    return _rn_par('Parallel lines and a transversal', ABC, 71, [(119.882, 0, 71, '71°'), (119.882, 180, 251, 'y'),
+                                                                 (240.118, 251, 360, 'x')])
+
+
+def rn_fig_p08():
+    return _rn_par('Parallel lines and a transversal', ABC, 63, [(119.882, 63, 180, '117°'), (119.882, 243, 360, 'γ'),
+                                                                 (180.0, 63, 180, 'α'), (240.118, 180, 243, 'β')])
+
+
+def rn_fig_p09():
+    return _rn_par('Parallel lines and a transversal', AB, 52, [(119.882, 52, 180, '128°'), (119.882, 180, 232, 'α'),
+                                                                (240.118, 0, 52, 'β')])
+
+
+def rn_fig_p10():
+    return _rn_par('Parallel lines and a transversal', AB, 30, [(119.882, 180, 210, 'x'), (240.118, 30, 180, '5x')])
+
+
+def rn_fig_adv03():
+    y = 180.0; x0, u = 126.765, 32.206
+    b = [_ln(113.882, y, 526.118, y)] + [_ln(x0 + u * k, 185.582, x0 + u * k, 174.418) for k in range(13)]
+    b += [_ln(x0 + u * 1, 154.235, x0 + u * 11, 154.235, MARK), _tx(x0 + u * 6, 139.206, 'x'),
+          _ln(x0 + u * 4, 205.765, x0 + u * 8, 205.765, MARK), _tx(x0 + u * 6, 220.794, 'y')]
+    return _svg('Equal segments on a line', b)
+
+
+def rn_fig_adv04():
+    return _rn_rays('Angles at a point', [0, 35, 105, 210], [(0, 35, 'x', 31.286, 53), (35, 105, '2x', 31.286, 53),
+                                                            (105, 210, '3x', 31.286, 53), (210, 360, '150°', 31.286, 53)])
+
+
+def rn_fig_adv05():
+    """Three lines through O: horizontal, 78 and 114 degrees. 114 = 0..114; 144 = 114..258; x = 180..258."""
+    O = (320.0, 180.0); R = 150
+    bd = []
+    for d in (0, 78, 114):
+        p, q = _pt(R, d, *O), _pt(R, d + 180, *O); bd.append(_ln(p[0], p[1], q[0], q[1]))
+    bd += [_arc(O[0], O[1], 58, 0, 114), _alab(O[0], O[1], 78, 0, 114 - 30, '114°'),
+           _arc(O[0], O[1], 40, 114, 258), _alab(O[0], O[1], 58, 125, 165, '144°'),
+           _arc(O[0], O[1], 22, 180, 258), _alab(O[0], O[1], 36, 180, 258, 'x'),
+           _tx(O[0] + 20, O[1] + 12, 'O', INK, 18)]
+    return _svg('Three lines meet at O; angles of 114 and 144 degrees overlap', bd)
+
+
+def rn_fig_adv08():
+    return _rn_rays('Angles at a point', [0, 28, 71, 180], [(0, 28, 'α', 31.286, 53), (28, 71, '43°', 31.286, 55),
+                                                           (71, 180, '109°', 31.286, 55), (0, 71, 'β', 78.214, 96)])
+
+
+def rn_fig_adv10():
+    """Three lines through one point: horizontal, 60 and 130 degrees. u = 0..130, v = 60..180, y = 60..130."""
+    O = (320.0, 190.0); R = 150
+    bd = []
+    for d in (0, 60, 130):
+        p, q = _pt(R, d, *O), _pt(R, d + 180, *O); bd.append(_ln(p[0], p[1], q[0], q[1]))
+    bd += [_arc(O[0], O[1], 36, 0, 130), _alab(O[0], O[1], 52, 0, 40, 'u'),
+           _arc(O[0], O[1], 62, 60, 180), _alab(O[0], O[1], 78, 150, 170, 'v'),
+           _arc(O[0], O[1], 88, 60, 130), _alab(O[0], O[1], 104, 90, 100, 'y')]
+    return _svg('Three lines meet at one point; angles u and v overlap on the angle y', bd)
+
+
+# --- guided questions and their videos ----------------------------------------------------------------
+def rn_guided(M):
+    # ---------- g002: 68 -> x = 22 (Hebrew 75 -> 15)  ==>  64 -> x = 26
+    g = 'geo30-g002'
+    _rn_q(M, g, choices=['$64°$', '$26°$', '$116°$', '$36°$'], correct=2, expl=[
+        '$a\\parallel b$, and small angles are equal. At line $b$, the angle between the transversal and line $b$ (above $b$) is also $64°$.',
+        'The marked right angle is made of this $64°$ angle and $x$: $64°+x=90°$.',
+        'Therefore, $x=90°-64°=26°$. Choice 2.'], figure=rn_fig_g002())
+    _rn_sub(M, 'solve-' + g, 2, [
+        ('write 68° in the small angle', 'write 64° in the small angle'),
+        ('So this angle down here is also 68.', 'So this angle down here is also 64.'),
+        ('And 68 plus x together', 'And 64 plus x together'),
+        ('Write x = 90° − 68° = 22°', 'Write x = 90° − 64° = 26°'),
+        ('So x is 90 minus 68: 22.', 'So x is 90 minus 64: 26.'),
+        ('Circle choice 3', 'Circle choice 2'), ('Choice three.', 'Choice two.')])
+
+    # ---------- g005: 83 + 54 -> x = 43 (Hebrew 86 + 53 -> 41)  ==>  77 + 56 -> x = 47 (units digit 7 + 6 = 13 -> x ends in 7)
+    g = 'geo30-g005'
+    _rn_q(M, g, choices=['$33°$', '$21°$', '$59°$', '$47°$'], correct=4, expl=[
+        '$a\\parallel b$ (line $c$ crosses them): the acute angles are equal. Therefore, the acute angle next to $x$ at the lower left is $77°$.',
+        '$c\\parallel d$ (the diagonal crosses them): the other acute angle next to $x$ is $56°$.',
+        'The three angles make a straight angle: $77°+56°+x=180°$. Therefore, $x=180°-133°=47°$. Choice 4.',
+        'Shortcut: $7+6=13$, which ends in $3$. Therefore, $x$ must end in $7$. Only $47°$ does.'], figure=rn_fig_g005())
+    V = 'solve-' + g
+    _rn_sub(M, V, 2, [
+        ('write 83° in the acute angle next to x', 'write 77° in the acute angle next to x'),
+        ('The angle we want here is also 83', 'The angle we want here is also 77'),
+        ('So this angle is 54.', 'So this angle is 56.'),
+        ('write 54° in the other acute angle next to x', 'write 56° in the other acute angle next to x'),
+        ('Write 83° + 54° + x = 180°', 'Write 77° + 56° + x = 180°'),
+        ('83 plus 54: add the tens — 80 plus 50 is 130. 3 and 4 is 7. 137.',
+         '77 plus 56: add the tens — 70 plus 50 is 120. 7 and 6 is 13. 133.'),
+        ('Write x = 180° − 137° = 43°', 'Write x = 180° − 133° = 47°'),
+        ('137 plus something is 180. 180 minus 137 — 43.', '133 plus something is 180. 180 minus 133 — 47.'),
+        ('Circle choice 2', 'Circle choice 4'), ('Choice two.', 'Choice four.')])
+    _rn_sub(M, V, 3, [
+        ('one angle ends in 3, one ends in 4, plus something.', 'one angle ends in 7, one ends in 6, plus something.'),
+        ('Write 3 + 4 = 7 → x ends in 3', 'Write 7 + 6 = 13 → x ends in 7'),
+        ('3 and 4 is 7, so x has to end in 3.', '7 and 6 is 13 — it ends in 3. So x has to end in 7.'),
+        ('Cross out 51°, 29° and 37°; circle choice 2', 'Cross out 33°, 21° and 59°; circle choice 4'),
+        ('Straight to the choices: 1 — doesn\'t fit. 9 — doesn\'t fit. 7 — doesn\'t fit. 3 fits. Mark it.',
+         'Straight to the choices: 3 — doesn\'t fit. 1 — doesn\'t fit. 9 — doesn\'t fit. 7 fits. Mark it.')])
+
+    # ---------- g006 (letters only): p, q, r, theta; choice 3 (Hebrew alpha, beta, gamma, delta; choice 1; plug in 150)
+    #            ==>  m, n, k, x; choice 4; plug in 140
+    g = 'geo30-g006'
+    _rn_q(M, g, stem='In the accompanying figure, four lines intersect at one point. Which expression equals $x$?',
+          choices=['$m+n+k-180°$', '$m-n+k$', '$m-n-k$', '$m+n+k-360°$'], correct=4, expl=[
+        'The angle next to $m$ is $180°-m$, the angle next to $n$ is $180°-n$, the angle next to $k$ is $180°-k$.',
+        'These three angles and $x$ make a straight angle: $(180°-m)+(180°-n)+(180°-k)+x=180°$.',
+        'Therefore, $540°-(m+n+k)+x=180°$ and $x=m+n+k-360°$. Choice 4.',
+        'Plug in: $m=n=k=140°$ gives $x=180°-3\\cdot40°=60°$. Choices 1, 2 and 3 give $240°$, $140°$ and $-140°$. Only choice 4 gives $60°$.'],
+          figure=_relabel(M.q(g)['questionVisual']['svg'], {'p': 'm', 'q': 'n', 'r': 'k', 'θ': 'x'}))
+    V = 'solve-' + g
+    M.slide(V, 2)['items'][1]['t'] = '$(180°-m)+(180°-n)+(180°-k)+x=180°$'
+    _rn_lines(M, V, 2, [
+        {'say': "In the accompanying figure, four lines meet at one point. Based on the figure — which expression equals x?"},
+        {'say': "What's hard about this question? All the information is given with unknowns — not with numbers."},
+        {'say': "And that's the main way psychometric geometry questions get harder: working with unknowns instead of numbers."},
+        {'say': "We'll solve it three ways: the full mathematical way, the psychometric way — plugging in numbers instead of the unknowns — and a flash of insight, for those who see it."},
+        {'say': "Full math first. Where do we start? We need x, and there are lots of unknowns."},
+        {'say': "Our base has to be some anchor: either a full angle — 360 degrees — or a straight angle — 180."},
+        {'draw': "In the angle next to m, write 180° − m"},
+        {'say': "Start with m, the first given. If this angle is m, the angle next to it is 180 minus m."},
+        {'draw': "In the angle next to n, write 180° − n"},
+        {'say': "Move on to n. The angle next to it is 180 minus n."},
+        {'draw': "In the angle next to k, write 180° − k"},
+        {'say': "Same for k: 180 minus k."},
+        {'say': "Now we have to notice that these three angles and x together make a straight angle — so their sum is 180."},
+        {'say': "Once we see that, we've almost finished the question."},
+        {'appear': 1, 'label': "The equation appears: (180° − m) + (180° − n) + (180° − k) + x = 180°"},
+        {'say': "It's important to be careful with the parentheses. A plus in front doesn't affect the parentheses — but if there were a minus here, it would affect both terms inside."},
+        {'say': "In this case we can simply drop the parentheses, because it's all addition."},
+        {'draw': "Cross out one 180° on each side of the equation"},
+        {'say': "180 and 180 cancel."},
+        {'say': "We want x, so we keep it on the left. Move minus m across as plus — and minus n, and minus k. So on the right we have m plus n plus k."},
+        {'say': "The two 180s left make 360 together — move it across: minus 360."},
+        {'draw': "Write x = m + n + k − 360°"},
+        {'say': "So x equals m plus n plus k minus 360."},
+        {'draw': "Circle choice 4"},
+        {'say': "Choice four."},
+        {'say': "Once it was clear what to do, the solution was simple. The question is how you spot it in advance — and on the last question of the section, that's not simple."},
+    ])
+    _rn_lines(M, V, 3, [
+        {'say': "Method two: plugging in numbers."},
+        {'say': "There's a way to turn these questions into simpler ones. They made the question harder by putting unknowns instead of numbers."},
+        {'say': "So we'll put things back the way they were: numbers instead of unknowns. That turns the question into an easy one."},
+        {'say': "If there were a number instead of m — which number? Whatever's comfortable. But it looks obtuse, so plug in an obtuse angle. And don't make it hard for yourself — use round angles."},
+        {'say': "It looks like about 140 degrees. So I chose m = 140. 130 would be completely fine too."},
+        {'draw': "Write 140° by m, and 40° in the angle next to it"},
+        {'say': "If m is 140, the angle next to it is 40. Numbers roll easily — with numbers I complete automatically. With unknowns it's a bit less natural."},
+        {'say': "Now n. We could choose something else — but we get to pick the case that's easiest for us. So 140 again."},
+        {'say': "Why? Afterwards we'll plug these values into the answers. It's much easier to use the same angle everywhere than to remember: m was 140, n was something else… That could confuse us."},
+        {'draw': "Write 140° by n and by k, and 40° next to each"},
+        {'say': "So n is 140 — its neighbor is 40. And k is 140 — its neighbor is 40."},
+        {'draw': "Write 40° + 40° + 40° = 120°, so x = 180° − 120° = 60°"},
+        {'say': "40, 40 and 40 make 120. Together with x they make a straight angle — so x is 180 minus 120: 60 degrees, in this case."},
+        {'say': "What now? To the answers. Plug in 140 for m, n and k — and look for 60, in the case we chose."},
+        {'say': "Any answer that fits, we can't eliminate. We're hoping to eliminate three answers."},
+        {'draw': "Next to choice 1 write 240 and cross it out"},
+        {'say': "Choice one: three times 140 is 420, minus 180. Some students already see it's too big — no need to calculate. If you do: 420 minus 200 is 220, plus 20 — 240. Eliminated. We need 60."},
+        {'draw': "Next to choice 2 write 140 and cross it out"},
+        {'say': "Choice two: 140 minus 140 is 0, plus 140 — 140. Eliminated."},
+        {'draw': "Next to choice 3 write −140 and cross it out"},
+        {'say': "Choice three: 140 minus 140 is 0, minus 140 — negative. Eliminated."},
+        {'draw': "Next to choice 4 write 60 ✓"},
+        {'say': "Choice four: 420 minus 360 — exactly 60. It fits."},
+        {'say': "And we may mark it only because the other three are already eliminated. That's the rule of plugging in: eliminate three answers first."},
+        {'draw': "Circle choice 4"},
+        {'say': "Three answers eliminated — mark choice four."},
+        {'say': "One warning. The same number for m, n and k is quick — but check that the four answers come out different."},
+        {'say': "Here they did: 240, 140, a negative, and 60. If two answers tie, plug in again with other numbers."},
+    ])
+    M.slide(V, 4)['items'][1]['t'] = '$m+n+k=360°+x$'
+    _rn_lines(M, V, 4, [
+        {'say': "Now the third solution: a flash of insight."},
+        {'say': "Some students — usually very strong students — look at the question and understand in advance that the answer is choice four. How?"},
+        {'draw': "Trace the arcs of m, n and k around the point, and shade x"},
+        {'say': "They see that m plus n plus k is 360 degrees — plus something more: x. The angle x is counted twice here."},
+        {'say': "So if I add m, n and k and subtract 360 from that sum — I'm left with x."},
+        {'say': "Give this idea a name: overlapping angles. Add them, and subtract the full turn."},
+        {'appear': 1, 'label': "m + n + k = 360° + x appears"},
+        {'say': "On one side: m plus n plus k. On the other side — what does it equal? 360 gets us to here, and there's another piece: x."},
+        {'draw': "Write x = m + n + k − 360°"},
+        {'say': "To isolate x, move the 360 across: x equals m plus n plus k minus 360. Choice four."},
+        {'say': "So we've seen three ways. Which one do we choose?"},
+        {'say': "The shortest way is the insight. But the vast majority of students don't see it on the exam, in such a short time."},
+        {'say': "It's the last question — you're under pressure near the end of the section. If you saw it — wonderful, that's the shortest way. There's almost no work here."},
+        {'say': "For most students that leaves two options: mathematical work, or psychometric work with plugging in."},
+        {'say': "If you're very strong in geometry and algebra, the mathematical work is completely fine."},
+        {'say': "For most students, it's much, much simpler to solve this question by plugging in numbers."},
+        {'say': "It turns the question from a very high level into a low one. The completions are almost immediate — and the answer is certain."},
+    ])
+
+    # ---------- g007: 38 + 57 = 95 (Hebrew 45 + 50 = 95)  ==>  36 + 62 = 98
+    g = 'geo30-g007'
+    _rn_q(M, g, choices=['$82°$', '$98°$', '$26°$', '$108°$'], correct=2, expl=[
+        'Draw a line through the bend, parallel to $a$ and $b$. It splits $x$ into two parts.',
+        'The upper part makes a Z with the $36°$ angle. Therefore, it is $36°$. The lower part makes a Z with the $62°$ angle. Therefore, it is $62°$.',
+        '$x=36°+62°=98°$. Choice 2.',
+        'Zig-zag rule: $x$ points right, $36°$ and $62°$ point left. Therefore, $x=36°+62°$.'], figure=rn_fig_g007())
+    V = 'solve-' + g
+    _rn_sub(M, V, 2, [
+        ('Write 38° in the upper part of x', 'Write 36° in the upper part of x'),
+        ('So this angle equals 38.', 'So this angle equals 36.'),
+        ('Write 57° in the lower part of x', 'Write 62° in the lower part of x'),
+        ('the acute angle 57 equals the angle here. So this angle is also 57.', 'the acute angle 62 equals the angle here. So this angle is also 62.'),
+        ('Write x = 38° + 57° = 95°', 'Write x = 36° + 62° = 98°'),
+        ('So x equals 38 plus 57: 95 degrees.', 'So x equals 36 plus 62: 98 degrees.'),
+        ('Circle choice 4', 'Circle choice 2'), ('Choice four.', 'Choice two.')])
+    _rn_sub(M, V, 3, [
+        ('38 points left. 57 points left. x points right.', '36 points left. 62 points left. x points right.'),
+        ("'x = 38° + 57° = 95°' appears", "'x = 36° + 62° = 98°' appears"),
+        ('$x=38°+57°=95°$', '$x=36°+62°=98°$'),
+        ('So x equals 38 plus 57: 95. One step.', 'So x equals 36 plus 62: 98. One step.')])
+
+
+# --- practice: new numbers ------------------------------------------------------------------------------
+def rn_practice_questions(M):
+    F = lambda k: 'geo30-foundation-p%02d' % k
+    Ad = lambda k: 'geo30-advanced-p%02d' % k
+    # f-p01: 42 -> 138  ==>  37 -> 143
+    _rn_q(M, F(1), choices=['$37°$', '$143°$', '$153°$', '$147°$'], correct=2, expl=[
+        '$x$ and $37°$ are adjacent angles on a straight line: $x+37°=180°$.', '$x=180°-37°=143°$.'], figure=rn_fig_p01())
+    # f-p02: 138 = 90 + 48 -> 132  ==>  146 = 90 + 56 -> 124
+    _rn_q(M, F(2), choices=['$34°$', '$146°$', '$56°$', '$124°$'], correct=4, expl=[
+        'The $146°$ angle is the right angle plus the angle above the horizontal line: $146°-90°=56°$.',
+        '$x$ and $56°$ are on a straight line: $x=180°-56°=124°$.'], figure=rn_fig_p02())
+    # f-p03: x + 4x + 4x = 180 -> 20  ==>  x + 2x + 2x = 180 -> 36 (traps: forgot the vertical angle 60, the angle 2x = 72)
+    _rn_q(M, F(3), choices=['$45°$', '$72°$', '$36°$', '$60°$'], correct=3, expl=[
+        'The angle vertical to the upper $2x$ is also $2x$.', 'On the lower straight line: $x+2x+2x=180°$.',
+        '$5x=180°$. Therefore, $x=36°$.'], figure=rn_fig_p03())
+    # f-p04: 76, p = 2q -> 308  ==>  70, p = 2q -> 305
+    _rn_q(M, F(4), choices=['$290°$', '$305°$', '$250°$', '$325°$'], correct=2, expl=[
+        '$p$ and $70°$ are on a straight line: $p=180°-70°=110°$.', '$p=2q$. Therefore, $q=\\frac{110°}{2}=55°$.',
+        '$q$, $r$, $s$ and $t$ make a full circle. Therefore, $r+s+t=360°-55°=305°$.'], figure=rn_fig_p04())
+    # f-p05: 62 -> 118  ==>  57 -> 123
+    _rn_q(M, F(5), choices=['$123°$', '$57°$', '$113°$', '$133°$'], correct=1, expl=[
+        'The small angles are equal. Therefore, the acute angle at line $b$ is $57°$.',
+        '$x$ is a large angle: $x=180°-57°=123°$.'], figure=rn_fig_p05())
+    # f-p06: 34 -> 146 + 34 + 146 = 326  ==>  38 -> 142 + 38 + 142 = 322
+    _rn_q(M, F(6), choices=['$360°$', '$218°$', '$284°$', '$322°$'], correct=4, expl=[
+        '$\\beta$ is a small angle: $\\beta=38°$.', '$\\alpha$ and $\\gamma$ are large angles: $\\alpha=\\gamma=180°-38°=142°$.',
+        '$\\alpha+\\beta+\\gamma=142°+38°+142°=322°$.'], figure=rn_fig_p06())
+    # f-p07: 64 -> 116 - 64 = 52  ==>  71 -> 109 - 71 = 38
+    _rn_q(M, F(7), choices=['$71°$', '$38°$', '$142°$', '$109°$'], correct=2, expl=[
+        '$y$ is vertical to the $71°$ angle: $y=71°$.', '$x$ is a large angle: $x=180°-71°=109°$.',
+        '$x-y=109°-71°=38°$.'], figure=rn_fig_p07())
+    # f-p08: 124 -> beta = 56  ==>  117 -> beta = 63
+    _rn_q(M, F(8), choices=['$117°$', '$54°$', '$180°$', '$63°$'], correct=4, expl=[
+        '$\\alpha$ and $\\gamma$ are both large angles. Therefore, they are equal: $-\\alpha+\\gamma=0$.',
+        'What is left is $\\beta$, a small angle: $\\beta=180°-117°=63°$.'], figure=rn_fig_p08())
+    # f-p09: 122 -> 58 + 58 = 116  ==>  128 -> 52 + 52 = 104
+    _rn_q(M, F(9), choices=['$104°$', '$52°$', '$128°$', '$256°$'], correct=1, expl=[
+        '$\\alpha$ and the $128°$ angle are adjacent on line $a$: $\\alpha=180°-128°=52°$.',
+        '$\\beta$ is a small angle, like $\\alpha$. Small angles are equal: $\\beta=52°$.',
+        '$\\alpha+\\beta=52°+52°=104°$.'], figure=rn_fig_p09())
+    # f-p10: x + 8x = 180 -> 20  ==>  x + 5x = 180 -> 30 (trap 180 / 5 = 36: forgot the x)
+    _rn_q(M, F(10), choices=['$25°$', '$36°$', '$30°$', '$60°$'], correct=3, expl=[
+        '$x$ is a small angle and $5x$ is a large angle: $x+5x=180°$.', '$6x=180°$. Therefore, $x=30°$.'], figure=rn_fig_p10())
+
+    # a-p01: (4 alpha + gamma) / beta = 5  ==>  (alpha + 3 gamma) / beta = 4
+    _rn_q(M, Ad(1), stem='In the accompanying figure, $a\\parallel b$. What is the value of $\\frac{\\alpha+3\\gamma}{\\beta}$?',
+          choices=['$3$', '$4$', '$6$', '$2$'], correct=2, expl=[
+        '$\\alpha$ and $\\beta$ are vertical angles, and $\\beta$ and $\\gamma$ are both small angles: $\\alpha=\\beta=\\gamma$.',
+        '$\\frac{\\alpha+3\\gamma}{\\beta}=\\frac{\\beta+3\\beta}{\\beta}=\\frac{4\\beta}{\\beta}=4$.'])
+    # a-p02 (letters): p, q, r, s, t -> p || t (choice 1)  ==>  c, d, e, f, g -> c || g (choice 3)
+    _rn_q(M, Ad(2), stem='Five different lines are given:\n$\\begin{cases} c\\parallel d \\\\ d\\perp e \\\\ e\\parallel f \\\\ f\\perp g \\end{cases}$\nWhich of the following is necessarily true?',
+          choices=['$c\\perp g$', '$d\\parallel e$', '$c\\parallel g$', '$f\\parallel g$'], correct=3, expl=[
+        '$c\\parallel d$ and $d\\perp e$. Therefore, $c\\perp e$. $e\\parallel f$. Therefore, $c\\perp f$ too.',
+        '$c\\perp f$ and $g\\perp f$: two lines perpendicular to the same line are parallel. Therefore, $c\\parallel g$.'])
+    # a-p03: x = 8 gaps, y = 4 gaps -> 2  ==>  x = 10 gaps, y = 4 gaps -> 5/2 (tick-count trap 11/5)
+    _rn_q(M, Ad(3), choices=['$\\frac52$', '$\\frac{11}{5}$', '$2$', '$3$'], correct=1, expl=[
+        '$x$ covers $10$ equal gaps and $y$ covers $4$. Count the gaps, not the tick marks.',
+        '$\\frac{x}{y}=\\frac{10}{4}=\\frac52$.'], figure=rn_fig_adv03())
+    # a-p04: x + 2x + 3x + 168 = 360 -> 32  ==>  x + 2x + 3x + 150 = 360 -> 35 (trap 150 / 6 = 25)
+    _rn_q(M, Ad(4), choices=['$35°$', '$25°$', '$70°$', '$45°$'], correct=1, expl=[
+        'The four angles make a full circle: $x+2x+3x+150°=360°$.', '$6x=210°$. Therefore, $x=35°$.'], figure=rn_fig_adv04())
+    # a-p05: 116 and 136 -> 72  ==>  114 and 144 -> 78
+    _rn_q(M, Ad(5), choices=['$30°$', '$78°$', '$36°$', '$66°$'], correct=2, expl=[
+        'The $114°$ angle and the angle next to it are on a straight line: that angle is $180°-114°=66°$.',
+        'The $144°$ angle is made of this $66°$ angle and $x$: $66°+x=144°$.', '$x=144°-66°=78°$.'], figure=rn_fig_adv05())
+    # a-p06 (letters): alpha + u, beta + 3u, 0 < u < 60 -> beta < alpha (choice 1)  ==>  gamma + v, delta + 4v, 0 < v < 45 (choice 3)
+    _rn_q(M, Ad(6), stem=GIVEN('\\gamma+v=180°', '\\delta+4v=180°', '0°<v<45°') + 'Which of the following is necessarily true?',
+          choices=['$\\delta>\\gamma$', '$\\delta=\\gamma$', '$\\delta<\\gamma$', CBD], correct=3, expl=[
+        '$\\gamma=180°-v$ and $\\delta=180°-4v$.',
+        'Since $v>0$, $4v>v$: $\\delta$ subtracts more from the same $180°$. Therefore, $\\delta<\\gamma$.',
+        'Plug in to check: $v=10°$ gives $\\gamma=170°$ and $\\delta=140°$.'])
+    # a-p07 (letters): k, l, m, n -> k || m (choice 1)  ==>  p, q, r, s -> p || r (choice 4)
+    _rn_q(M, Ad(7), stem='Four different lines are given:\n$\\begin{cases} p\\perp q \\\\ q\\perp r \\\\ r\\perp s \\end{cases}$\nWhich of the following is necessarily true?',
+          choices=['$q\\perp s$', '$p\\perp r$', '$p\\parallel s$', '$p\\parallel r$'], correct=4, expl=[
+        '$p$ and $r$ are both perpendicular to $q$. Two lines perpendicular to the same line are parallel: $p\\parallel r$.',
+        '(Also $q\\parallel s$, since both are perpendicular to $r$. Therefore, choice 1, $q\\perp s$, is false.)'])
+    # a-p08: 103, 48 -> 29 + 77 = 106  ==>  109, 43 -> 28 + 71 = 99
+    _rn_q(M, Ad(8), choices=['$71°$', '$137°$', '$99°$', '$114°$'], correct=3, expl=[
+        '$\\alpha$, $43°$ and $109°$ make a straight angle: $\\alpha=180°-109°-43°=28°$.',
+        '$\\beta$ is made of $43°$ and $\\alpha$: $\\beta=43°+28°=71°$.', '$\\alpha+\\beta=28°+71°=99°$.'], figure=rn_fig_adv08())
+    # a-p09 (letters): P, Q, R, S; a = PR, b = QS (choice 1)  ==>  E, F, G, H; c = EG, d = FH (choice 2)
+    _rn_q(M, Ad(9), stem='Points $E$, $F$, $G$ and $H$ lie on a line in this order.\n' + GIVEN('c=EG', 'd=FH') + 'Which of the following is necessarily true?',
+          choices=['$c+d>EH+FG$', '$c+d=EH+FG$', '$c+d<EH+FG$', CBD], correct=2, expl=[
+        '$c+d=EG+FH=(EF+FG)+(FG+GH)$.', '$EH+FG=(EF+FG+GH)+FG$.',
+        'Both sums have $EF$ once, $GH$ once and $FG$ twice. They are equal: $c+d=EH+FG$.'],
+          figure=_relabel(M.q(Ad(9))['questionVisual']['svg'], {'P': 'E', 'Q': 'F', 'R': 'G', 'S': 'H'}))
+    # a-p10 (letters): p, q overlap on x (choice 2)  ==>  u, v overlap on y (choice 3); figure redrawn (0, 60, 130)
+    _rn_q(M, Ad(10), stem='In the accompanying figure, three lines meet at one point. The angles $u$ and $v$ overlap on the angle $y$. Which expression equals $y$?',
+          choices=['$v-u$', '$360°-u-v$', '$u+v-180°$', '$\\frac{u+v}{3}$'], correct=3, expl=[
+        '$u$ and $v$ together cover the straight angle once, and $y$ twice: $u+v=180°+y$.',
+        'Therefore, $y=u+v-180°$. Choice 3.',
+        'Plug in to check: $u=130°$, $v=120°$ gives $y=70°$. Choice 1 gives $-10°$, choice 2 $110°$, choice 4 about $83°$.'],
+          figure=rn_fig_adv10())
+
+
+def rn_practice(M):
+    """Approved clean-up (39 -> 26): the copy f-p14 (= guided g007); 9 of the 13 English extras (keep f-p13, f-p17,
+    a-p11, a-p16); the September items whose type the Hebrew practice already has (q-05 U with algebra = f-p10,
+    q-06 equal gaps = a-p03, q-09 parallel or not = q-04, which stays)."""
+    out = ['geo30-foundation-p14',   # copy of guided g007 (one bend, parallel line through the bend)
+           'geo30-foundation-p16',   # distance between parallel lines = 7: too easy
+           'geo30-foundation-p12',   # full circle with numbers: the type is in a-p04
+           'geo30-foundation-p11',   # bisector of the adjacent angle: bisectors stay in a-p11
+           'geo30-foundation-p15',   # three parallel lines and a fourth line: too easy
+           'geo30-advanced-p12',     # obtuse - acute = 46: small + large is in f-p10 / f-p05
+           'geo30-advanced-p13',     # 3 + 2 parallel lines -> 6 points
+           'geo30-advanced-p14',     # straight angle in three parts: the type is in f-p03 / f-p17
+           'geo30-advanced-p15',     # (2x + 11) + (5x + 1) = 180: the type is in f-p10
+           'geo30-advanced-p17',     # four angles of a full turn: the type is in a-p04
+           'q-r26-t30-05',           # U with algebra: Hebrew f-p10
+           'q-r26-t30-06',           # equal gaps on a line: Hebrew a-p03
+           'q-r26-t30-09']           # parallel or not (U = 180): q-r26-t30-04 drills it and stays
+    for qid in out:
+        assert M.section_of(qid) in (FOUND, ADV), qid
+        M.unplace(qid)
+    F = lambda k: 'geo30-foundation-p%02d' % k
+    Ad = lambda k: 'geo30-advanced-p%02d' % k
+    M.practice_order(FOUND, [F(1), F(2), F(17), F(3), F(4), F(5), F(9), F(10), F(13), F(6), F(7), F(8), NEW[4]])
+    M.practice_order(ADV, [Ad(11), Ad(4), Ad(1), Ad(5), Ad(8), Ad(7), Ad(2), Ad(3), Ad(16), Ad(9), Ad(6), Ad(10), NEW[7]])
+
+
+def rn_lessons_cards(M):
+    # card tip quoted the old g005 numbers (83 + 54 -> x ends in 3): a separate example now
+    c = M.card('mem-lines-angles')
+    old = 'Adding angles to $180°$? Use the units digit: $83°+54°+x=180°$ → $3+4=7$. Therefore, $x$ ends in $3$.'
+    assert old in c['tips']
+    c['tips'] = [('Adding angles to $180°$? Use the units digit: $64°+79°+x=180°$ → $4+9=13$. Therefore, $x$ ends in $7$.'
+                  if t == old else t) for t in c['tips']]
+    # summary 2: the letters of guided g006 changed (p, q, r, theta -> m, n, k, x)
+    vid = 'r26-t30-summary-2'
+    _rn_sub(M, vid, _rn_slide_no(M, vid, 'Anchor: 180° or 360°'), [
+        ("'The angle next to p: 180° − p' appears", "'The angle next to m: 180° − m' appears"),
+        ('The angle next to $p$: $\\ 180°-p$', 'The angle next to $m$: $\\ 180°-m$')])
+    _rn_sub(M, vid, _rn_slide_no(M, vid, 'Letters: plug in'), [
+        ("'p = q = r = 130° → θ = 30°' appears", "'m = n = k = 130° → x = 30°' appears"),
+        ('$p=q=r=130°\\ \\to\\ \\theta=30°$', '$m=n=k=130°\\ \\to\\ x=30°$')])
+    _rn_sub(M, vid, _rn_slide_no(M, vid, 'Overlapping angles'), [
+        ("'θ = p + q + r − 360°' appears", "'x = m + n + k − 360°' appears"),
+        ('$\\theta=p+q+r-360°$', '$x=m+n+k-360°$'),
+        ('p, q and r cover the full turn, and theta one more time. So theta is their sum minus 360.',
+         'm, n and k cover the full turn, and x one more time. So x is their sum minus 360.')])
+
+
+def _rn_sync(M):
+    """Solution-video titles and 'Pre-loaded' notes follow the (changed) stems."""
+    for v in M.D['videos'].values():
+        if v['topic'] != TOPIC or v.get('kind') != 'solution' or v.get('questionId') not in M.D['questions']: continue
+        v['title'] = v['navLabel'] = M.q(v['questionId'])['stem']
+        for b in v['beats']:
+            pre = b['items'][:b['pre']]
+            if len(pre) == 1 and pre[0].get('k') == 'q' and b.get('canvas', '').startswith('Pre-loaded — question'):
+                qid = pre[0]['qid']
+                b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, M.q(qid)['stem'])
+        M.touched_videos.add(v['id'])
+
+
+def renumber_pass(M):
+    rn_guided(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+    rn_lessons_cards(M)
+    _rn_sync(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last

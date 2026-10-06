@@ -85,3 +85,87 @@ Function `cut_repeats` (runs last; the old `apply` is wrapped). A lesson slide i
 - **`r26-t35-cubefacts` "Cube and Box Facts"**: 3.6 → 2.8 min (7 → 6 slides). Cut "Painted cube" (taught again in `solve-q-r26-t35-03`: corners 8, edges 12 × 3, faces 6 × 9, inside 3³, sum 125). Kept: diagonals, angles in a cube, faces/edges/vertices, three faces → volume, quick checks.
 - Sidebars updated in all three lessons. The summary `r26-t35-summary` is unchanged: everything it mentions is still taught (in the lesson or in the question videos).
 - Saved: about 2.6 min.
+
+## 2026-10-06 renumber pass
+So that the English course does not look like the Hebrew one, every question that came from the Hebrew course now has new
+numbers (and a slightly different setting where there is one). The one letter-only guided question (g126) got a new
+letter (k) and a new choice order; p09 got new letters (angle BFH instead of AEG). The idea, the trap, the level and the
+methods stay the same: straight vs. pointed, the π-rounding trap, the equation and the volume-ratio shortcut, the
+x / 3x unknowns and the view from above, the perimeter formula and adding up the faces (with the "average side" trick),
+trial-and-error and the "most compact" insight, full math / plugging in / estimating, the inner right triangle and the
+"height < slanted edge" estimate, the equilateral-triangle shortcut, the ×√3 rule, counting each direction, lose 3 / gain 3.
+The function `renumber_pass(M)` runs last, after `cut_repeats`. Topic 35 has no `practice_methods`, `add_methods` or
+`pen_or_click`. Nothing in topic 35 is recorded (checked ~/Documents/Course.recordings: only Algebra topics 1–8).
+
+**Counts:** 12 guided questions renumbered and their 12 solution videos rewritten (speech, draw cues, board items, choice
+numbers). 20 practice questions renumbered. Figures: 15 redrawn — 11 from scratch (g121, g124, g125, g128, g131, p01, p02,
+p03, p06, p07, p13) and 4 with moved points or lines (g123, p08, p09, p16) and 6 relabeled where only a number changed and
+the shape stays (g126, g129, g130, p17, p18, p20). Lesson examples: 3 Hebrew examples changed — the 330 ml cola can
+(now a 500 ml bottle of water), the cube "edge 5 → 5√3" and "diagonal 18 / 12" examples (now edge 8 → 8√3, diagonal 27 →
+9√3, 14/√2 = 7√2), the box 6 × 8 × 24 in Question 12's video (Hebrew 3 × 4 × 12; now 9 × 12 × 8 → 17) and the box
+3 × 4 × 12 → 13 in "Cube and Box Facts" (= the Hebrew example; now 2 × 6 × 9 → 11). **Practice 36 → 26.**
+
+**Practice clean-up:** removed the copies q-r26-t35-09 (cone slant height = guided q-02) and q-r26-t35-14 (painted cube =
+guided q-03). Of the 6 English extras, kept p23 (three face areas → volume), p24 (painted cube, two faces) and p25 (body
+diagonal / longest rod); removed p21 (open box), p22 (lateral area → volume) and p26 (cone vs cylinder), whose types p03 /
+p05, p14 and p04 already practise. Of the September items, kept q-05 (pouring between cylinders), q-10 (bricks — try each
+position) and q-13 (liters + water height), because the Hebrew practice has none of these types; removed q-04 (liters only,
+q-13 drills it), q-08 (cone → cylinder pouring: q-05 + p04), q-12 (compare volumes: p02 / p04), q-15 (prism edges: p07)
+and q-16 (turning a triangle: p01). The practice order stays easy → hard.
+
+**Kept on purpose:** the English-made guided questions q-r26-t35-01 to 03 (not from the Hebrew), the guided order (it already
+goes from basic volume to cube facts), the English lesson / summary examples (2 liters into 20 × 10; 4 × 2 rectangle; legs
+3 and 6; radius 9 / slant 15; 2, 3, 6 → 7; 6, 10, 15 → 30; 12, 15, 20 → 60). g126 / p17 / p04: the answer does not depend on
+the numbers (a ratio), so only the numbers in the stem, the letter and the choice order changed. The Hebrew practice book
+text was not available to compare, so practice numbers were checked against the English base (already a light variant).
+
+**Checks:** every answer recomputed in Python, and every step of every video (g121: 24π ≈ 75.4, only the pyramid (84) is
+big enough, the box (72) equals the water if π = 3 — the trap moved from the cube to the box; g126 with k = 1 three choices
+coincide, with k = 2 only choice 4 fits; g128 √33 < √49 while 7√2, √65, √50 are > 7; g131 1782 ÷ 64 ≈ 27.8 → trap 27).
+The traps are still among the choices (equal-volume height, no ÷3, total vs lateral, dividing volumes, radius as
+diameter, etc.). Pythagorean triples: 9-12-15 and 8-15-17 (Hebrew 3-4-5 / 5-12-13 as such are not reused). No new
+number lands on a Hebrew number from the subtitles (cone √5/6, box 120, 3-4-5 prism, 8 cubes, remaining 18, √2/4
+pyramid, cube √2 / 1, cubes 2 into 6 × 4 × 5, 330 ml, edge 5, diagonal 12, box 3 × 4 × 12). Duplicate scan over topics
+1–35: no question equals another question or a lesson / card example. `python3 math_check.py 35 32` → PROBLEMS 0,
+WARNINGS 0, LAYOUT 0. All changed figures and all 12 videos were rendered and checked by eye. No "Question N" was added to
+spoken lines.
+
+| id | old (English base, Hebrew-derived) | new | answer |
+|---|---|---|---|
+| geo35-g121 | cone r √7, h 9 → 21π; box 7·3·3, pyramid 6/6, cube 4, cyl √5/4 | cone r √6, h 12 → 24π ≈ 75.4; cube 4, pyramid 6/7, box 6·4·3, cyl √2/10 | pyramid, 84 (2) |
+| geo35-g122 | cone = 2 × cylinder → 6h (2) | cone = 4 × cylinder | 12h (4) |
+| geo35-g123 | V 216, AM : MB = 1 : 2 → 1/6 | V 320, 1 : 3 → 1/8 | 40 (3) |
+| geo35-g124 | leg 5, hyp 13, h 4 → 120 | leg 9, hyp 15, h 5 (9-12-15, P = 36) | 180 (1) |
+| geo35-g125 | 12 cubes → 2×2×3 = 32 | 18 cubes: 1×2×9, 2×3×3, 1×1×18, 1×3×6 | 2×3×3 = 42 (2) |
+| geo35-g126 | side 2a, height 3a; 1 − π/4 (3); plug a = 2 | side 2k, height 5k; new order; plug k = 2 | 1 − π/4 (4) |
+| geo35-g127 | 54 left → 27 (1) | 60 left (a³ = 90) | 30 (3) |
+| geo35-g128 | side 2√2, edge 5 → √21 | side 4√2, edge 7 → OB 4 | √33 (2) |
+| geo35-g129 | edge 3√2 → side 6 → 9√3 | edge 4√2 → side 8 | 16√3 (3) |
+| geo35-g130 | edge 2 → 2 + 2√2 + 2√3 | edge 3 | 3 + 3√2 + 3√3 (4) |
+| geo35-g131 | edge 3 into 10 × 7 × 8 → 12 | edge 4 into 18 × 9 × 11 | 16 (2) |
+| geo35-g132 | 27 cubes, edge 2: −8 cm³, faces 4 cm² | 27 cubes, edge 4: −64 cm³, ±48 cm² | −64, unchanged (2) |
+| p01 | rectangle 5 × 3 about 5 → 45π | 7 × 4 about 7 | 112π (2) |
+| p02 | cone r 2a, h 6a → 8πa³ | r 3a, h 4a | 12πa³ (3) |
+| p03 | V 112, squares 4 → 28 | V 150, squares 5 (h 6) | 30 (3) |
+| p04 | cylinder r 4, h 6 → 2 : 1 (3) | r 5, h 9; new order | 2 : 1 (4) |
+| p05 | cube 2 → 12 + 4√2 | cube 3 | 27 + 9√2 (2) |
+| p06 | AB 8, AD 4, h 5, AM = NC = 3 → 80 | AB 10, AD 3, h 8, AM = NC = 4 | 120 (2) |
+| p07 | 2 pentagonal pyramids : cube = 5/4 | 2 hexagonal pyramids : cube | 3/2 (4) |
+| p08 | AM = AB/3, DN = 2DC/3 → 2 : 1 | AM = AB/4, DN = 3DC/4 | 3 : 1 (2) |
+| p09 | angle AEG (2) | angle BFH; new order | 90° (4) |
+| p10 | stepped solid, edge 3 → 0 (1) | edge 4 | 0 (3) |
+| p11 | 9 × 7 × 5 → 245 | 10 × 8 × 6 | 384 (4) |
+| p12 | product 350, V 140 → 5/2 | product 378, V 108 | 7/2 (2) |
+| p13 | r 1, h 4 in cube 12 → 108 | r 1, h 5 in cube 10 | 50 (3) |
+| p14 | h 12, base 9π, 2 cuts → 36π | h 15, base 16π | 64π (2) |
+| p15 | chalk 3 × 2 × 1½, 3/8 a day → 24 | 4 × 2 × 2½, 5/8 a day | 32 (4) |
+| p16 | r 3, h 8, 150° → 30π | r 4, h 6, 135° | 36π (3) |
+| p17 | cube in cylinder r 5 → π/2 − 1 (3) | r 3; new order | π/2 − 1 (2) |
+| p18 | 2 cylinders r 3, h 7 → 504 | r 4, h 5 | 640 (3) |
+| p19 | V = 2/9 · edge → 2/9 | V = 3/16 · edge | 3/16 (2) |
+| p20 | edge 2x → E–ABD = 4x³/3 | edge 3y | 9y³/2 (3) |
+
+## 2026-10-06 review
+Independent review of the renumber pass (built with / without `renumber_pass`, every question, solution video, lesson,
+card and figure compared and rendered; keys and video methods recomputed; Hebrew subtitles and course-wide duplicate
+scan checked). No errors found, no changes made. `math_check.py 34 35 36 37 38 32` and full `math_check.py` → 0 / 0 / 0.

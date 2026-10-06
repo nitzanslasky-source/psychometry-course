@@ -1467,3 +1467,1010 @@ def cut_repeats(M):
             'Quick rules that turn long perimeter questions into one line. Two here — and one more in the question.')
     _cr_say(M, 'r26-t32-perimeter', 3, 'Careful — a notch is different.', 'A notch: the border goes in, and comes back out.')
     _cr_say(M, 'r26-t32-perimeter', 3, "Let's try one.", "Now a question.")
+
+
+# ======================================================================================================
+# 2026-10-06 renumber pass (runs LAST). The English course must not look like the Hebrew one: every Hebrew-derived
+# question (guided geo32-g044 ... g072, practice geo32-foundation-p01 ... p20 and geo32-advanced-p01 ... p20) gets new
+# numbers (letter-only items: new letters / names and a new choice order). Idea, trap, level and methods stay.
+# Every guided solution video is rewritten to match (speech, draw cues, board items, the question figure copies).
+# Figures whose shape depends on the numbers are redrawn; the others get new labels. Practice clean-up 62 -> 48.
+# Nothing in topic 32 is recorded (checked ~/Documents/Course.recordings 2026-10-06).
+# ======================================================================================================
+import copy as _copy
+
+RN_RECORDED = set()
+_RN_W = {'one': 1, 'two': 2, 'three': 3, 'four': 4}
+_RN_N = {1: 'one', 2: 'two', 3: 'three', 4: 'four'}
+
+
+def _rn_relabel(svg, mp, aria=None):
+    """Change the text of figure labels (whole text nodes, all at once - no chained replacements)."""
+    out = re.sub(r'(<text[^>]*>)([^<]*)(</text>)', lambda m: m.group(1) + mp.get(m.group(2), m.group(2)) + m.group(3), svg)
+    for a, b in (aria or []):
+        assert a in out, a
+        out = out.replace(a, b)
+    return out
+
+
+def _rn_vb(svg):
+    return re.search(r'viewBox="([^"]*)"', svg).group(1)
+
+
+def _rn_fig(M, qid, mp=None, aria=None, svg=None):
+    """New question figure: relabel (mp) or replace (svg). The copies on the solution-video slides follow
+    (a replaced figure keeps the copy's own crop, since all figures share the 640 x 360 coordinates)."""
+    q = M.q(qid)
+    old = q['questionVisual']['svg']
+    new = svg if svg is not None else _rn_relabel(old, mp, aria)
+    if svg is not None and mp: new = _rn_relabel(new, mp)
+    M.set_q(qid, figure=new)
+    for v in M.D['videos'].values():
+        for b in v.get('beats', []):
+            for it in b.get('items', []):
+                if it.get('k') == 'q' and it.get('qid') == qid and isinstance(it.get('fig'), dict):
+                    s = it['fig']['svg']
+                    if svg is not None:
+                        s2 = re.sub(r'viewBox="[^"]*"', 'viewBox="%s"' % _rn_vb(s), new, count=1)
+                    else:
+                        s2 = _rn_relabel(s, mp, aria)
+                    it['fig']['svg'] = s2; M.touched_videos.add(v['id'])
+
+
+def _rn_q(M, qid, stem=None, choices=None, correct=None, expl=None):
+    if qid in RN_RECORDED: return
+    M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+
+
+def _rn_choices(M, vid, perm):
+    """Old choice number -> new choice number in every 'choice N' / 'Choice four' / 'choices 1 and 4' of a video."""
+    def tok(m):
+        t = m.group(0)
+        if t.isdigit(): return str(perm[int(t)])
+        w = _RN_N[perm[_RN_W[t.lower()]]]
+        return w.capitalize() if t[0].isupper() else w
+    def fix(s):
+        return re.sub(r'\b([Cc]hoices?)((?:\s*(?:,|and)?\s*\b(?:[1-4]|one|two|three|four|One|Two|Three|Four)\b)+)',
+                      lambda m: m.group(1) + re.sub(r'\b([1-4]|one|two|three|four|One|Two|Three|Four)\b', tok, m.group(2)), s)
+    for b in M.video(vid)['beats']:
+        for l in b['lines']:
+            for k in ('say', 'draw'):
+                if k in l: l[k] = fix(l[k])
+    M.touched_videos.add(vid)
+
+
+def _rn_sub(M, vid, pairs):
+    """Exact substring replacements in a video's spoken / drawn lines, labels and board items (each must hit)."""
+    v = M.video(vid)
+    for old, new in pairs:
+        hit = False
+        for b in v['beats']:
+            for l in b['lines']:
+                for key in ('say', 'draw', 'label'):
+                    if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit = True
+            for it in b['items']:
+                if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit = True
+        assert hit, (vid, old)
+    M.touched_videos.add(vid)
+
+
+def _rn_guided(M, qid, stem, choices, correct, expl, perm, pairs, fig=None, svg=None, aria=None):
+    if qid in RN_RECORDED: return
+    _rn_q(M, qid, stem, choices, correct, expl)
+    if fig is not None or svg is not None: _rn_fig(M, qid, fig, aria, svg)
+    vid = 'solve-' + qid
+    if perm: _rn_choices(M, vid, perm)
+    _rn_sub(M, vid, pairs)
+    _sync_stem_copies(M, [qid])
+
+
+# ---------------- redrawn figures (same style as the base figures: 640 x 360, ink / teal / fill) ----------------
+def _rn_txt(x, y, s, size=20):
+    return _t(x, y, s, size=size)
+
+
+def _rn_g048():
+    """review 2026-10-06: drawn to the new split (B = 5α = 70°, so 3α = 42°; C = 5β = 110°, so 3β = 66°; x = 72°)."""
+    A_, B_, C_, D_ = (291.283, 58.333), (202.717, 301.667), (348.717, 301.667), (437.283, 58.333)
+    E_ = _cross(B_, _pt(B_, 100, -42), C_, _pt(C_, 100, -114))
+    b = _poly([A_, B_, C_, D_]) + _abcd(A_, B_, C_, D_, [(-14, -16), (-14, 16), (14, 16), (14, -16)])
+    b += _line(B_, E_, TEAL) + _line(C_, E_, TEAL) + _lab(E_, 4, -20, 'E')
+    b += _angle(B_, E_, C_, '3α', r=26, dist=50) + _angle(B_, A_, E_, '2α', r=44, dist=64)
+    b += _angle(C_, B_, E_, '3β', r=26, dist=50) + _angle(C_, E_, D_, '2β', r=44, dist=64)
+    b += _angle(E_, B_, C_, 'x', r=20, dist=36)
+    return _svg('Two adjacent parallelogram angles split in a fixed ratio', b)
+
+
+def _rn_g068():
+    A_, B_, C_, D_ = (155.75, 70.5), (155.75, 289.5), (484.25, 289.5), (484.25, 70.5)
+    ex = 155.75 + 0.75 * 328.5          # AE = 3 ED, BG = 3 GC
+    E_, G_, F_ = (ex, 70.5), (ex, 289.5), (155.75, 216.5)
+    b = _poly([A_, B_, C_, D_]) + _abcd(A_, B_, C_, D_, [(-14, -16), (-14, 16), (14, 16), (14, -16)])
+    b += _poly([F_, E_, G_], FILL, TEAL) + _poly([E_, G_, C_], FILL, TEAL) + _line(E_, G_, TEAL)
+    b += _lab(E_, 0, -22, 'E') + _lab(G_, 0, 22, 'G') + _lab(F_, -22, 0, 'F')
+    return _svg('Which extra area would determine all the shading?', b)
+
+
+def _rn_g069():
+    B_, C_ = (125.333, 293.556), (514.667, 293.556)
+    w = (C_[0] - B_[0]) / 4                 # AD : BC = 5 : 20
+    A_, D_ = (320 - w / 2, 66.444), (320 + w / 2, 66.444)
+    b = _poly([A_, B_, C_, D_]) + _abcd(A_, B_, C_, D_, [(-14, -16), (-14, 16), (14, 16), (14, -16)])
+    b += _poly([A_, B_, D_], FILL, TEAL)
+    b += _t(320, 43.444, '5') + _t(320, 316.556, '20') + _t(286, 104, '15 cm²', size=17)
+    return _svg('Area ratio across a trapezoid diagonal', b)
+
+
+def _rn_grid(x0, y0, u, nx, ny, color='#c6d4dd'):
+    b = ''
+    for k in range(1, nx): b += _line((x0 + k * u, y0 + ny * u), (x0 + k * u, y0), color, 1)
+    for k in range(1, ny): b += _line((x0, y0 + k * u), (x0 + nx * u, y0 + k * u), color, 1)
+    return b
+
+
+def _rn_g070():
+    u, nx, ny = 36.5, 8, 5
+    x0, y0 = 320 - nx * u / 2, 180 - ny * u / 2 - 10
+    P = lambda x, y: (x0 + x * u, y0 + (ny - y) * u)     # grid point, y up
+    b = _poly([P(0, 0), P(8, 0), P(8, 5), P(0, 5)]) + _rn_grid(x0, y0, u, nx, ny)
+    b += _poly([P(3, 5), P(8, 3), P(6, 0), P(2, 0), P(0, 3)], FILL, TEAL)
+    b += _t(320, y0 + ny * u + 25, 'Each grid square: 1 cm × 1 cm', size=17)
+    return _svg('A shaded pentagon on a one-centimeter grid', b)
+
+
+def _rn_p09():
+    x0, y0, s = 192.25, 52.25, 255.5
+    c = s * 7 / 13                          # 13 by 13 with a 7 by 7 square missing
+    P = [(x0, y0), (x0 + s, y0), (x0 + s, y0 + s), (x0 + c, y0 + s), (x0 + c, y0 + s - c), (x0, y0 + s - c)]
+    b = _poly(P, FILL, TEAL)
+    b += _t(x0 + s / 2, y0 - 22, '13') + _t(x0 + s + 25, y0 + s / 2 - 7.75, '13')
+    b += _t(x0 + c / 2, y0 + s - c + 23, '7') + _t(x0 + c - 20, y0 + s - c / 2, '7')
+    return _svg('An L-shaped region with right-angle corners', b)
+
+
+def _rn_p10():
+    u, nx, ny = 41.714, 7, 5
+    x0, y0 = 320 - nx * u / 2, 180 - ny * u / 2
+    P = lambda x, y: (x0 + x * u, y0 + (ny - y) * u)
+    b = _poly([P(0, 0), P(7, 0), P(7, 5), P(0, 5)], FILL, TEAL)
+    b += _poly([P(2, 5), P(0, 4), P(2, 3), P(4, 4)], 'white', TEAL) + _poly([P(5, 2), P(3, 1), P(5, 0), P(7, 1)], 'white', TEAL)
+    b += _rn_grid(x0, y0, u, nx, ny, '#b0c4ce')
+    return _svg('Two unshaded kites on a grid', b)
+
+
+def _rn_p16():
+    W, H = 400, 300                          # rectangle 24 by 18 (half-sides 12 and 9), rhombus side 15
+    A_, B_, C_, D_ = (320 - W / 2, 180 - H / 2), (320 - W / 2, 180 + H / 2), (320 + W / 2, 180 + H / 2), (320 + W / 2, 180 - H / 2)
+    b = _poly([A_, B_, C_, D_]) + _abcd(A_, B_, C_, D_, [(-14, -16), (-14, 16), (14, 16), (14, -16)])
+    b += _poly([(320, A_[1]), (D_[0], 180), (320, B_[1]), (A_[0], 180)], FILL, TEAL)
+    b += _t(A_[0] - 20, (A_[1] + 180) / 2, '9') + _t((320 + D_[0]) / 2 + 16, (A_[1] + 180) / 2 - 12, '15')
+    return _svg('A rhombus joining the side midpoints of a rectangle', b)
+
+
+def _rn_p17():
+    n, R, c = 10, 125.356, (320.0, 180.0)
+    ang = 360.0 / n
+    b = ''
+    for k in range(n):
+        a = -90 + k * ang
+        tip = _pt(c, R, a)
+        s = R / 2 / math.cos(math.radians(ang / 2))
+        p1, p2 = _pt(c, s, a - ang / 2), _pt(c, s, a + ang / 2)
+        b += _poly([c, p1, tip, p2], '#e7f4f3', TEAL)
+        if k == 0:
+            b += _angle(tip, p1, p2, '', r=19.5) + _t(tip[0], tip[1] + 36, 'α', size=18, color=TEAL)
+    return _svg('Ten congruent rhombuses around a point', b)
+
+
+def _rn_p18():
+    x0, y0, s = 198.333, 58.333, 243.333     # 3 rows and 4 columns
+    A_, B_, C_, D_ = (x0, y0), (x0, y0 + s), (x0 + s, y0 + s), (x0 + s, y0)
+    b = _poly([A_, B_, C_, D_]) + _abcd(A_, B_, C_, D_, [(-14, -16), (-14, 16), (14, 16), (14, -16)])
+    for k in range(1, 4): b += _line((x0 + k * s / 4, y0 + s), (x0 + k * s / 4, y0), TEAL)
+    for k in range(1, 3): b += _line((x0, y0 + k * s / 3), (x0 + s, y0 + k * s / 3), TEAL)
+    return _svg('A square divided into a three-by-four array of rectangles', b)
+
+
+def _rn_p19():
+    k = 14.0                                  # BO 5, AO 12, OC 8
+    O_ = (320.0, 45.231 + 12 * k)
+    A_, C_, B_, D_ = (320.0, 45.231), (320.0, O_[1] + 8 * k), (320.0 - 5 * k, O_[1]), (320.0 + 5 * k, O_[1])
+    b = _poly([A_, B_, C_, D_]) + _line(A_, C_, TEAL) + _line(B_, D_, TEAL)
+    b += _lab(A_, 0, -20, 'A') + _lab(B_, -21, 0, 'B') + _lab(C_, 0, 20, 'C') + _lab(D_, 21, 0, 'D') + _lab(O_, 15, -15, 'O')
+    b += _t((A_[0] + B_[0]) / 2 - 22, (A_[1] + B_[1]) / 2 - 6, '13') + _t((B_[0] + O_[0]) / 2, O_[1] + 18, '5') + _t(306, (O_[1] + C_[1]) / 2, '8')
+    return _svg('A kite with an unknown upper diagonal piece', b, vb='0 0 640 360')
+
+
+def _rn_a02():
+    A_, B_, C_, D_ = (101, 82.667), (101, 277.333), (539, 277.333), (539, 82.667)
+    E_ = (101 + 438 * 14 / 23, 82.667)       # AE : ED = 14 : 9, as the areas say
+    b = _poly([A_, B_, C_, D_]) + _abcd(A_, B_, C_, D_, [(-14, -16), (-14, 16), (14, 16), (14, -16)])
+    b += _poly([A_, B_, E_], FILL, TEAL) + _line(E_, C_, TEAL) + _lab(E_, 0, -22, 'E')
+    return _svg('Find a corner area from the central triangle', b)
+
+
+def _rn_a08():
+    A_, B_, C_, D_ = (232.4, 63.2), (232.4, 296.8), (407.6, 296.8), (407.6, 63.2)
+    E_ = (407.6, 63.2 + 233.6 * 4 / 5)       # DE = 4 EC
+    b = _poly([A_, B_, C_, D_]) + _abcd(A_, B_, C_, D_, [(-14, -16), (-14, 16), (14, 16), (14, -16)])
+    b += _line(A_, C_, TEAL) + _line(A_, E_, TEAL) + _lab(E_, 22, 0, 'E')
+    b += _t(352, 118, 'x') + _t(352, 214, 'y') + _t(284.96, 223.8, 'z')
+    return _svg('Three triangle areas in a rectangle', b)
+
+
+def _rn_a17():
+    B_, C_ = (86.667, 273.333), (553.333, 273.333)
+    a = (C_[0] - B_[0]) / 7                   # AD = 3a, BC = 7a, EF = 2a
+    A_, D_ = (320 - 1.5 * a, 86.667), (320 + 1.5 * a, 86.667)
+    E_, F_ = (320 - a, 273.333), (320 + a, 273.333)
+    b = _poly([A_, B_, C_, D_]) + _abcd(A_, B_, C_, D_, [(-14, -16), (-14, 16), (14, 16), (14, -16)])
+    b += _poly([A_, B_, E_], FILL, TEAL) + _poly([D_, F_, C_], FILL, TEAL)
+    b += _lab(E_, 0, 22, 'E') + _lab(F_, 0, 22, 'F') + _t(320, 64.667, '3a') + _t(320, 315.333, '7a')
+    return _svg('A smaller trapezoid covers half the total area', b)
+
+
+def rn_guided(M):
+    # ---------- g044: square, diagonal 12 -> 72  ==>  diagonal 14 -> 98 (lesson example stays 12 -> 72; Hebrew 10 -> 50)
+    _rn_guided(M, 'geo32-g044', 'The diagonal of a square is 14 cm long. What is the area of the square (in cm²)?',
+               ['$49$', '$98$', '$196$', '$392$'], 2,
+               ['The area of a square from its diagonal: $S=\\frac{d^2}{2}$.', '$S=\\frac{14^2}{2}=\\frac{196}{2}=98$.'],
+               {1: 1, 2: 3, 3: 4, 4: 2}, [
+        ('The diagonal of a square is 12 centimeters.', 'The diagonal of a square is 14 centimeters.'),
+        ('put 12 on the diagonal', 'put 14 on the diagonal'),
+        ('\\frac{12\\cdot12}{2}=72', '\\frac{14\\cdot14}{2}=98'), ('12 · 12 / 2 = 72', '14 · 14 / 2 = 98'),
+        ('12 times 12 over 2.', '14 times 14 over 2.'),
+        ('Write 144 ÷ 2 = 72', 'Write 196 ÷ 2 = 98'), ('144 over 2 — 72.', '196 over 2 — 98.'),
+        ('s^2+s^2=12^2\\ \\Rightarrow\\ s^2=72', 's^2+s^2=14^2\\ \\Rightarrow\\ s^2=98'),
+        ('s² + s² = 12² → s² = 72', 's² + s² = 14² → s² = 98'),
+        ('s squared plus s squared is 144. So s squared is 72.', 's squared plus s squared is 196. So s squared is 98.'),
+        ("144? That's the diagonal squared", "196? That's the diagonal squared"),
+        ("36? That's half the diagonal squared.", "49? That's half the diagonal squared."),
+        ('72. Choice two.', '98. Choice two.')],
+        fig={'12': '14'}, aria=[('diagonal 12 cm', 'diagonal 14 cm')])
+
+    # ---------- g046: rectangle, CD 3, angle BEC 120 -> 9√3  ==>  CD 5 -> 25√3 (Hebrew CD 2)
+    _rn_guided(M, 'geo32-g046', 'The diagonals of rectangle ABCD intersect at E. Given:\n' + _cases('CD=5' + CM, '\\angle BEC=120°') +
+               '\nWhat is the area of the rectangle (in cm²)?',
+               ['$25$', '$50$', '$25\\sqrt3$', '$50\\sqrt3$'], 3,
+               ['The diagonals of a rectangle are equal and bisect each other, therefore $EB=EC$. Triangle BEC is isosceles, and its base angles are $\\frac{180°-120°}{2}=30°$.',
+                'In right triangle BCD, $\\angle DBC=30°$. CD is opposite the $30°$ angle: it is the short leg, 5. The long leg is $BC=5\\sqrt3$ (the sides are in the ratio $1 : \\sqrt3 : 2$).',
+                '$S=5\\cdot5\\sqrt3=25\\sqrt3$.'],
+               {1: 2, 2: 3, 3: 1, 4: 4}, [
+        ('CD is 3 centimeters.', 'CD is 5 centimeters.'), ('write a = 3', 'write a = 5'), ('So a is 3.', 'So a is 5.'),
+        ('Write BC = 3√3', 'Write BC = 5√3'), ('BC is 3 root 3.', 'BC is 5 root 3.'),
+        ('S=3\\cdot3\\sqrt3=9\\sqrt3', 'S=5\\cdot5\\sqrt3=25\\sqrt3'), ('S = 3 · 3√3 = 9√3', 'S = 5 · 5√3 = 25√3'),
+        ('3 root 3 times 3 — 9 root 3.', '5 root 3 times 5 — 25 root 3.')],
+        fig={'3': '5'})
+
+    # ---------- g048: parallelogram, parts 3α + α and 3β + β -> 45  ==>  3α + 2α and 3β + 2β -> 72 (Hebrew 60)
+    _rn_guided(M, 'geo32-g048', 'In parallelogram ABCD, the marked parts of angle B are $3\\alpha$ and $2\\alpha$, and the marked parts of angle C are '
+               '$3\\beta$ and $2\\beta$. The segments BE and CE meet as in the accompanying figure. What is x?',
+               ['$36°$', '$72°$', '$90°$', '$108°$'], 2,
+               ['Angle B is $3\\alpha+2\\alpha=5\\alpha$, and angle C is $5\\beta$. Adjacent angles of a parallelogram add up to $180°$: $5\\alpha+5\\beta=180°$. Therefore $\\alpha+\\beta=36°$.',
+                'In triangle BCE: $x=180°-3\\alpha-3\\beta=180°-3(\\alpha+\\beta)=180°-108°=72°$.'],
+               {1: 4, 2: 2, 3: 1, 4: 3}, [
+        ('Angle B is split into 3 alpha and alpha. Angle C — into 3 beta and beta.',
+         'Angle B is split into 3 alpha and 2 alpha. Angle C — into 3 beta and 2 beta.'),
+        ('4\\alpha+4\\beta=180°', '5\\alpha+5\\beta=180°'), ('4α + 4β = 180°', '5α + 5β = 180°'),
+        ('4 alpha plus 4 beta equals 180.', '5 alpha plus 5 beta equals 180.'),
+        ('\\alpha+\\beta=45°', '\\alpha+\\beta=36°'), ('α + β = 45°', 'α + β = 36°'),
+        ('Divide by 4: alpha plus beta is 45.', 'Divide by 5: alpha plus beta is 36.'),
+        ('We already know alpha plus beta is 45 — so 3 alpha plus 3 beta is 135.', 'We already know alpha plus beta is 36 — so 3 alpha plus 3 beta is 108.'),
+        ('180°-135°=45°', '180°-108°=72°'), ('180° − 135° = 45°', '180° − 108° = 72°'),
+        ('180 minus 135. 45.', '180 minus 108. 72.'), ("But the angle x — that's 45.", "But the angle x — that's 72.")],
+        svg=_rn_g048())   # review: redrawn to 42° / 66° / 72° (was the old 52.5° / 82.5° / 45° drawing relabeled)
+
+    # ---------- g049: parallelogram, 17 / 13 / EC 12 (5-12-13) -> 204  ==>  AD 24, CD 17, EC 16 (8-15-17) -> 360 (Hebrew 3-4-5)
+    _rn_guided(M, 'geo32-g049', 'ABCD is a parallelogram, and $AE\\perp BC$. Given:\n' + _cases('AD=24' + CM, 'CD=17' + CM, 'EC=16' + CM) +
+               '\nWhat is the area of the parallelogram (in cm²)?',
+               ['$180$', '$255$', '$360$', '$408$'], 3,
+               ['Opposite sides are equal: $BC=AD=24$ and $AB=CD=17$.',
+                '$BE=24-16=8$. In right triangle ABE, the sides are $8, 15, 17$ (a Pythagorean triple). The height is $AE=15$.',
+                '$S=BC\\cdot AE=24\\cdot15=360$.'],
+               {1: 4, 2: 1, 3: 3, 4: 2}, [
+        ('AD is 17, CD is 13, EC is 12.', 'AD is 24, CD is 17, EC is 16.'),
+        ('Write 13 on AB', 'Write 17 on AB'), ('If DC is 13 — AB is also 13.', 'If DC is 17 — AB is also 17.'),
+        ('Write 17 under the whole of BC', 'Write 24 under the whole of BC'), ('If AD is 17 — then all of BC is 17.', 'If AD is 24 — then all of BC is 24.'),
+        ('Write BE = 17 − 12 = 5', 'Write BE = 24 − 16 = 8'), ("And if BC is 17 — what's left, BE, has to be 5.", "And if BC is 24 — what's left, BE, has to be 8."),
+        ('Here I see a right triangle: 5, something, and 13.', 'Here I see a right triangle: 8, something, and 17.'),
+        ('5\\ -\\ 12\\ -\\ 13', '8\\ -\\ 15\\ -\\ 17'), ('5 - 12 - 13', '8 - 15 - 17'),
+        ('5, 12, 13 — a Pythagorean triple!', '8, 15, 17 — a Pythagorean triple!'),
+        ('Write AE = 12', 'Write AE = 15'), ('So the height AE is 12.', 'So the height AE is 15.'),
+        ('S=17\\cdot12=204', 'S=24\\cdot15=360'), ('S = 17 · 12 = 204', 'S = 24 · 15 = 360'), ('17 times 12 — 204.', '24 times 15 — 360.'),
+        ('13 times 17 is 221', '17 times 24 is 408'), ('The base is all of BC, 17.', 'The base is all of BC, 24.')],
+        fig={'17': '24', '13': '17', '12': '16'})
+
+    # ---------- g051: rhombus, diagonals sum 34 / difference 14 -> 52  ==>  sum 46 / difference 14 -> 30, 16 -> side 17 -> 68 (Hebrew 14 / 2)
+    _rn_guided(M, 'geo32-g051', 'The sum of the lengths of the diagonals of a rhombus is 46 cm. The absolute difference between their lengths is 14 cm. '
+               'What is its perimeter (in cm)?',
+               ['$34$', '$68$', '$92$', '$240$'], 2,
+               ['Call the diagonals $a>b$. Then:\n$\\begin{cases} a+b=46 \\\\ a-b=14 \\end{cases}$',
+                'Add the equations: $2a=60$. Therefore $a=30$ and $b=16$.',
+                'The diagonals are perpendicular and bisect each other: the half-diagonals 15 and 8 are the legs of a right triangle. Its hypotenuse, the side, is 17 ($8, 15, 17$).',
+                '$P=4\\cdot17=68$.'],
+               {1: 2, 2: 1, 3: 3, 4: 4}, [
+        ('The sum of the diagonals of a rhombus is 34.', 'The sum of the diagonals of a rhombus is 46.'),
+        ('a+b=34', 'a+b=46'), ('a + b = 34', 'a + b = 46'), ('a plus b is 34.', 'a plus b is 46.'),
+        ('write 2a = 48, a = 24', 'write 2a = 60, a = 30'), ('2a is 48, so a is 24.', '2a is 60, so a is 30.'),
+        ('Write b = 10', 'Write b = 16'), ('And b: 24 minus what gives 14? Minus 10. b is 10.', 'And b: 30 minus what gives 14? Minus 16. b is 16.'),
+        ('Write 12 and 12 on the halves of the long diagonal', 'Write 15 and 15 on the halves of the long diagonal'),
+        ('So I split 24 into 12 and 12.', 'So I split 30 into 15 and 15.'),
+        ('Write 5 and 5 on the halves of the short diagonal', 'Write 8 and 8 on the halves of the short diagonal'),
+        ('And 10 into 5 and 5.', 'And 16 into 8 and 8.'),
+        ('Again — a right triangle here. 5, 12 —', 'Again — a right triangle here. 8, 15 —'),
+        ('5\\ -\\ 12\\ -\\ 13', '8\\ -\\ 15\\ -\\ 17'), ('5 - 12 - 13', '8 - 15 - 17'), ('— 13. A Pythagorean triple.', '— 17. A Pythagorean triple.'),
+        ('Write 13 on each side', 'Write 17 on each side'), ('all the others are 13 too.', 'all the others are 17 too.'),
+        ('P=4\\cdot13=52', 'P=4\\cdot17=68'), ('P = 4 · 13 = 52', 'P = 4 · 17 = 68'), ('4 sides together — 52.', '4 sides together — 68.')])
+
+    # ---------- g053: kite, CB = CD = 6 -> 12 + 6√2  ==>  10 -> 20 + 10√2 (Hebrew 4)
+    _rn_guided(M, 'geo32-g053', 'ABCD is a kite. Given:\n' + _cases('AB=AD', 'CB=CD=10' + CM, '\\angle ABD=45°', '\\angle DBC=60°') +
+               '\nWhat is the perimeter of the kite (in cm)?',
+               ['$20+10\\sqrt3$', '$10+10\\sqrt2$', '$20+10\\sqrt2$', '$10+10\\sqrt3$'], 3,
+               ['Triangle BCD: $CB=CD=10$ and $\\angle DBC=60°$. An isosceles triangle with a $60°$ angle is equilateral, therefore $BD=10$.',
+                'Triangle ABD: $AB=AD$, therefore $\\angle ADB=\\angle ABD=45°$ and $\\angle A=90°$. It is a 45-45-90 triangle with hypotenuse $BD=10$.',
+                'Each leg: $AB=AD=\\frac{10}{\\sqrt2}=5\\sqrt2$.', '$P=10+10+5\\sqrt2+5\\sqrt2=20+10\\sqrt2$.'],
+               {1: 2, 2: 4, 3: 1, 4: 3}, [
+        ('And DC is 6.', 'And DC is 10.'), ('Write 6 on CB', 'Write 10 on CB'), ('This is 6, and this is 6.', 'This is 10, and this is 10.'),
+        ('Write BD = 6', 'Write BD = 10'), ('so BD is 6 as well.', 'so BD is 10 as well.'),
+        ('\\frac{6}{\\sqrt2}=3\\sqrt2', '\\frac{10}{\\sqrt2}=5\\sqrt2'), ('6 ÷ √2 = 3√2', '10 ÷ √2 = 5√2'),
+        ('Ignore the root: 6 divided by 2 is 3. Attach the root: 3 root 2.', 'Ignore the root: 10 divided by 2 is 5. Attach the root: 5 root 2.'),
+        ('Write 3√2 on AB and on AD', 'Write 5√2 on AB and on AD'),
+        ('P=6+6+3\\sqrt2+3\\sqrt2=12+6\\sqrt2', 'P=10+10+5\\sqrt2+5\\sqrt2=20+10\\sqrt2'),
+        ('Write P = 6 + 6 + …', 'Write P = 10 + 10 + …'), ('Now the perimeter: 6 plus 6 is 12.', 'Now the perimeter: 10 plus 10 is 20.'),
+        ('Only two choices start with 12.', 'Only two choices start with 20.'), ('P = 12 + 6√2', 'P = 20 + 10√2'),
+        ('12 plus 6 root 2.', '20 plus 10 root 2.')],
+        fig={'6': '10'})
+
+    # ---------- g055: isosceles trapezoid 54 / DE 6 / triangle 6 -> AD 7  ==>  65 / DE 5 / triangle 10 -> EC 4, AD 9 (Hebrew 30 / 3 / 3 -> 8)
+    _rn_guided(M, 'geo32-g055', 'The area of isosceles trapezoid ABCD is 65 cm². DE is an altitude, $DE=5$ cm, and the area of triangle DEC is 10 cm². '
+               'What is AD (in cm)?',
+               ['$5$', '$9$', '$13$', '$17$'], 2,
+               ['Triangle DEC: $\\frac{5\\cdot EC}{2}=10$, therefore $EC=4$.',
+                'Drop the height AF too. The trapezoid is isosceles, therefore triangle ABF also has area 10.',
+                'The middle rectangle AFED has area $65-10-10=45$ and height 5: $AD=\\frac{45}{5}=9$.'],
+               {1: 4, 2: 2, 3: 1, 4: 3}, [
+        ('ABCD is an isosceles trapezoid with area 54.', 'ABCD is an isosceles trapezoid with area 65.'),
+        ('has area 6. The height DE is 6.', 'has area 10. The height DE is 5.'),
+        ('Triangle DEC has area 6. So', 'Triangle DEC has area 10. So'),
+        ('\\frac{6\\cdot EC}{2}=6\\ \\Rightarrow\\ EC=2', '\\frac{5\\cdot EC}{2}=10\\ \\Rightarrow\\ EC=4'),
+        ('6 · EC / 2 = 6 → EC = 2', '5 · EC / 2 = 10 → EC = 4'),
+        ('6 times EC over 2 equals 6. EC is 2.', '5 times EC over 2 equals 10. EC is 4.'),
+        ('Write BF = 2', 'Write BF = 4'), ('So BF is also 2.', 'So BF is also 4.'),
+        ("x doesn't equal 6.", "x doesn't equal 5."), ('Write 6 in the left triangle', 'Write 10 in the left triangle'),
+        ('has area 6 — so the one on the left also has area 6.', 'has area 10 — so the one on the left also has area 10.'),
+        ('54-6-6=42', '65-10-10=45'), ('54 − 6 − 6 = 42', '65 − 10 − 10 = 45'),
+        ('The whole trapezoid is 54.', 'The whole trapezoid is 65.'), ('the rectangle — is 42.', 'the rectangle — is 45.'),
+        ('6x=42\\ \\Rightarrow\\ x=7', '5x=45\\ \\Rightarrow\\ x=9'), ('6x = 42 → x = 7', '5x = 45 → x = 9'),
+        ('6x equals 42. x is 7.', '5x equals 45. x is 9.'),
+        ('Forget the 6, 42, 6 for a moment.', 'Forget the 10, 45, 10 for a moment.'),
+        ('\\frac{(x+x+4)\\cdot6}{2}=54', '\\frac{(x+x+8)\\cdot5}{2}=65'), ('(x + x + 4) · 6 / 2 = 54', '(x + x + 8) · 5 / 2 = 65'),
+        ('x plus x plus 4. Times 6, the height. Over 2. Equals 54.', 'x plus x plus 8. Times 5, the height. Over 2. Equals 65.'),
+        ('6x+12=54\\ \\Rightarrow\\ x=7', '5x+20=65\\ \\Rightarrow\\ x=9'),
+        ('3(2x + 4) = 54 → 6x + 12 = 54 → x = 7', '5(2x + 8) / 2 = 65 → 5x + 20 = 65 → x = 9'),
+        ("That's 6x plus 12 equals 54. 6x is 42. x is 7.", "That's 5x plus 20 equals 65. 5x is 45. x is 9."),
+        ("if this is 6, that's 6 too — the middle has to be 42.", "if this is 10, that's 10 too — the middle has to be 45.")],
+        fig={'6': '5', '6 cm²': '10 cm²'})
+
+    # ---------- g057: angles 112 + 104 -> α < 144  ==>  118 + 96 -> α < 146 (Hebrew 120 + 100 -> 140)
+    _rn_guided(M, 'geo32-g057', 'The accompanying figure shows quadrilateral ABCD. Given: angle A is 118° and angle B is 96°. '
+               'Which of the following cannot be the value of α?',
+               ['$26°$', '$70°$', '$124°$', '$146°$'], 4,
+               ['Call the fourth angle β. The angles of a quadrilateral add up to $360°$: $\\alpha+\\beta=360°-118°-96°=146°$.',
+                'Both angles are positive, therefore $\\alpha<146°$. If $\\alpha=146°$, then $\\beta=0°$ — impossible.',
+                'The other choices are possible: $26°+120°$, $70°+76°$ and $124°+22°$ all give $146°$.'],
+               {1: 4, 2: 1, 3: 2, 4: 3}, [
+        ('Angle A is 112, angle B is 104.', 'Angle A is 118, angle B is 96.'),
+        ('\\alpha+\\beta+112°+104°=360°', '\\alpha+\\beta+118°+96°=360°'), ('α + β + 112° + 104° = 360°', 'α + β + 118° + 96° = 360°'),
+        ('112 plus 104 is 216. 360 minus 216 — 144.', '118 plus 96 is 214. 360 minus 214 — 146.'),
+        ('\\alpha+\\beta=144°', '\\alpha+\\beta=146°'), ('α + β = 144°', 'α + β = 146°'),
+        ('So alpha plus beta together — 144.', 'So alpha plus beta together — 146.'),
+        ('Together the two angles are 144.', 'Together the two angles are 146.'),
+        ('Could be 72 and 72. Could be 100 and 44.', 'Could be 73 and 73. Could be 100 and 46.'),
+        ('But neither one can be 144 — or more than 144.', 'But neither one can be 146 — or more than 146.'),
+        ('\\alpha=144°\\ \\Rightarrow', '\\alpha=146°\\ \\Rightarrow'), ('α = 144° → β = 0°', 'α = 146° → β = 0°'),
+        ('If alpha is 144, beta is zero. Beta has to be a real angle — so 144 is impossible.',
+         'If alpha is 146, beta is zero. Beta has to be a real angle — so 146 is impossible.'),
+        ('\\alpha=16°\\ \\rightarrow\\ \\beta=128°', '\\alpha=26°\\ \\rightarrow\\ \\beta=120°'), ('α = 16° → β = 128°', 'α = 26° → β = 120°'),
+        ('\\alpha=64°\\ \\rightarrow\\ \\beta=80°', '\\alpha=70°\\ \\rightarrow\\ \\beta=76°'), ('α = 64° → β = 80°', 'α = 70° → β = 76°'),
+        ('\\alpha=128°\\ \\rightarrow\\ \\beta=16°', '\\alpha=124°\\ \\rightarrow\\ \\beta=22°'), ('α = 128° → β = 16°', 'α = 124° → β = 22°'),
+        ('Alpha 16: beta is 128. Together 144 — possible.', 'Alpha 26: beta is 120. Together 146 — possible.'),
+        ('Alpha 64: beta 80 — fine.', 'Alpha 70: beta 76 — fine.'),
+        ("Alpha 128 — some students think: wait, the angle looks acute. It can't be 128.",
+         "Alpha 124 — some students think: wait, the angle looks acute. It can't be 124."),
+        ('Alpha 128, beta 16 — also possible.', 'Alpha 124, beta 22 — also possible.'),
+        ('The only impossible value: 144.', 'The only impossible value: 146.')],
+        fig={'112°': '118°', '104°': '96°'})
+
+    # ---------- g058: parallelogram 7 / 3 / 64° / 58° -> 34  ==>  9 / 4 / 72° / 54° -> 44 (Hebrew 5 / 2 / 70° / 55°)
+    _rn_guided(M, 'geo32-g058', 'ABCD is a parallelogram, and E lies on AD. Given:\n' + _cases('AB=9' + CM, 'AE=4' + CM, '\\angle ABC=72°', '\\angle BCE=54°') +
+               '\nWhat is the perimeter of the parallelogram (in cm)?',
+               ['$26$', '$36$', '$44$', '$50$'], 3,
+               ['Opposite angles are equal: $\\angle D=\\angle B=72°$. Adjacent angles: $\\angle C=180°-72°=108°$, therefore $\\angle ECD=108°-54°=54°$.',
+                'Triangle EDC: $\\angle CED=180°-72°-54°=54°$. Two equal angles, therefore $ED=CD=AB=9$. (An angle bisector in a parallelogram cuts off an isosceles triangle.)',
+                '$AD=4+9=13$ and $P=2(9+13)=44$.'],
+               {1: 2, 2: 4, 3: 1, 4: 3}, [
+        ('Write 7 on CD', 'Write 9 on CD'), ('AB is 7 — so CD is 7 too.', 'AB is 9 — so CD is 9 too.'),
+        ('AE is 3.', 'AE is 4.'), ('Angle B is 64.', 'Angle B is 72.'), ('Write 64° at D', 'Write 72° at D'),
+        ('so angle D is 64 too.', 'so angle D is 72 too.'),
+        ('\\angle A=180°-64°=116°', '\\angle A=180°-72°=108°'), ('∠A = 180° − 64° = 116°', '∠A = 180° − 72° = 108°'),
+        ('So angle A is 180 minus 64 — 116.', 'So angle A is 180 minus 72 — 108.'), ('Write 116° at C', 'Write 108° at C'),
+        ('Either way — 116.', 'Either way — 108.'),
+        ('\\angle ECD=116°-58°=58°', '\\angle ECD=108°-54°=54°'), ('∠ECD = 116° − 58° = 58°', '∠ECD = 108° − 54° = 54°'),
+        ('Angle ECD: 116 minus 58 — 58.', 'Angle ECD: 108 minus 54 — 54.'),
+        ('\\angle CED=180°-64°-58°=58°', '\\angle CED=180°-72°-54°=54°'), ('180° − 64° − 58° = 58°', '180° − 72° − 54° = 54°'),
+        ('64 plus 58 is 122. 180 minus 122 — 58.', '72 plus 54 is 126. 180 minus 126 — 54.'),
+        ('angle CED is 58 right away.', 'angle CED is 54 right away.'), ('Either way — angle E is 58.', 'Either way — angle E is 54.'),
+        ('Write 7 on ED', 'Write 9 on ED'), ('CD is 7 — so ED is 7 too.', 'CD is 9 — so ED is 9 too.'),
+        ('AD=3+7=10', 'AD=4+9=13'), ('AD = 3 + 7 = 10', 'AD = 4 + 9 = 13'), ('All of AD: 3 plus 7 — 10.', 'All of AD: 4 plus 9 — 13.'),
+        ('Write 10 on BC', 'Write 13 on BC'), ('BC is 10 too', 'BC is 13 too'),
+        ('P=7+10+7+10=34', 'P=9+13+9+13=44'), ('P = 7 + 10 + 7 + 10 = 34', 'P = 9 + 13 + 9 + 13 = 44'),
+        ('The perimeter: 7 plus 10 plus 7 plus 10. 14 and 20 — 34.', 'The perimeter: 9 plus 13 plus 9 plus 13. 18 and 26 — 44.')],
+        fig={'7': '9', '3': '4', '64°': '72°', '58°': '54°'})
+
+    # ---------- g059: rectangle, BC 12, perimeter EBC 25 -> 15  ==>  BC 24, perimeter 50 -> AC 26, AB 10 -> 60 (Hebrew 4 / 9)
+    _rn_guided(M, 'geo32-g059', 'The diagonals of rectangle ABCD intersect at E. Given: $BC=24$ cm, and the perimeter of triangle EBC is 50 cm. '
+               'What is the area of triangle ABE (in cm²)?',
+               ['$30$', '$60$', '$120$', '$240$'], 2,
+               ['The diagonals of a rectangle are equal and bisect each other: $EB=EC$. $EB+EC=50-24=26$, therefore each is $13$ and $AC=26$.',
+                'Right triangle ABC: hypotenuse 26 and leg 24, therefore $AB=10$ ($10, 24, 26$ — the triple $5, 12, 13$ doubled). The rectangle is $10\\cdot24=240$.',
+                'The diagonals of any parallelogram (a rectangle too) split it into four triangles of equal area: $S_{ABE}=\\frac{240}{4}=60$.'],
+               {1: 4, 2: 1, 3: 2, 4: 3}, [
+        ('The perimeter of triangle EBC is 25.', 'The perimeter of triangle EBC is 50.'),
+        ('EB+12+EC=25', 'EB+24+EC=50'), ('EB + 12 + EC = 25', 'EB + 24 + EC = 50'),
+        ('The perimeter of EBC is 25: EB plus 12 plus EC.', 'The perimeter of EBC is 50: EB plus 24 plus EC.'),
+        ("So EB and EC together are 13. They're equal — 6.5 each.", "So EB and EC together are 26. They're equal — 13 each."),
+        ('Write 6.5 on EB and on EC', 'Write 13 on EB and on EC'),
+        ('AC=6.5+6.5=13', 'AC=13+13=26'), ('AC = 6.5 + 6.5 = 13', 'AC = 13 + 13 = 26'),
+        ('If each piece is 6.5, then AE and ED are 6.5 too — so the diagonal AC is 13.', 'If each piece is 13, then AE and ED are 13 too — so the diagonal AC is 26.'),
+        ('13,\\ 12\\ \\rightarrow\\ AB=5', '26,\\ 24\\ \\rightarrow\\ AB=10'), ('13, 12 → AB = 5', '26, 24 → AB = 10'),
+        ('Hypotenuse 13, leg 12 — the triple 5, 12, 13. AB is 5.', 'Hypotenuse 26, leg 24 — the triple 5, 12, 13, doubled: 10, 24, 26. AB is 10.'),
+        ('Write 5 on AB', 'Write 10 on AB'),
+        ('\\frac{5\\cdot12}{2}=30\\ \\Rightarrow\\ S_{ABE}=15', '\\frac{10\\cdot24}{2}=120\\ \\Rightarrow\\ S_{ABE}=60'),
+        ('S(ABC) = 30 → S(ABE) = 15', 'S(ABC) = 120 → S(ABE) = 60'),
+        ('Triangle ABC is easy: 5 times 12 over 2 — 30. ABE is half of it: 15.', 'Triangle ABC is easy: 10 times 24 over 2 — 120. ABE is half of it: 60.'),
+        ('S_{ABE}=\\frac{5\\cdot12}{4}=15', 'S_{ABE}=\\frac{10\\cdot24}{4}=60'), ('S(ABE) = 60 ÷ 4 = 15', 'S(ABE) = 240 ÷ 4 = 60'),
+        ('5 times 12 is 60, over 4 — 15.', '10 times 24 is 240, over 4 — 60.'),
+        ('S_{ABE}=\\frac{5\\cdot6}{2}=15', 'S_{ABE}=\\frac{10\\cdot12}{2}=60'), ('S(ABE) = 5·6/2 = 15', 'S(ABE) = 10·12/2 = 60'),
+        ("So one triangle's height is half of 12 — 6.", "So one triangle's height is half of 24 — 12."),
+        ('5 times 6 over 2 — 15.', '10 times 12 over 2 — 60.')],
+        fig={'12': '24'})
+
+    # ---------- g060: rhombus, BD 6, angle 60 -> 18√3  ==>  BD 10 -> 50√3 (Hebrew 4)
+    _rn_guided(M, 'geo32-g060', 'ABCD is a rhombus. Given:\n' + _cases('BD=10' + CM, '\\angle ABD=60°') + '\nWhat is the area of the rhombus (in cm²)?',
+               ['$25\\sqrt3$', '$50\\sqrt3$', '$100$', '$100\\sqrt3$'], 2,
+               ['$AB=AD$ (all the sides of a rhombus are equal), therefore triangle ABD is isosceles with a $60°$ angle. It is equilateral: $AB=AD=BD=10$.',
+                'All the sides are 10, therefore triangle BCD is equilateral too.',
+                '$S=2\\cdot\\frac{10^2\\sqrt3}{4}=2\\cdot25\\sqrt3=50\\sqrt3$.'],
+               {1: 1, 2: 4, 3: 3, 4: 2}, [
+        ('The diagonal BD is 6, and angle ABD is 60.', 'The diagonal BD is 10, and angle ABD is 60.'),
+        ('Write 3 on BO and 3 on OD', 'Write 5 on BO and 5 on OD'), ('— it cuts BD into 3 and 3.', '— it cuts BD into 5 and 5.'),
+        ("3 is opposite the 30 — it's the short leg.", "5 is opposite the 30 — it's the short leg."),
+        ('Write 3√3 on AO', 'Write 5√3 on AO'), ('AO is 3 root 3.', 'AO is 5 root 3.'),
+        ('Write 3√3 on OC', 'Write 5√3 on OC'), ('so the bottom part is 3 root 3 too.', 'so the bottom part is 5 root 3 too.'),
+        ('S=\\frac{6\\cdot6\\sqrt3}{2}=18\\sqrt3', 'S=\\frac{10\\cdot10\\sqrt3}{2}=50\\sqrt3'), ('S = 6 · 6√3 / 2 = 18√3', 'S = 10 · 10√3 / 2 = 50√3'),
+        ('BD is 6. AC is 3 root 3 plus 3 root 3 — 6 root 3.', 'BD is 10. AC is 5 root 3 plus 5 root 3 — 10 root 3.'),
+        ('6 times 6 root 3 over 2. Cancel the 6 with the 2 — 3. 3 times 6 root 3 — 18 root 3.',
+         '10 times 10 root 3 over 2. Cancel the 10 with the 2 — 5. 5 times 10 root 3 — 50 root 3.'),
+        ('4\\cdot\\frac{3\\cdot3\\sqrt3}{2}=18\\sqrt3', '4\\cdot\\frac{5\\cdot5\\sqrt3}{2}=50\\sqrt3'),
+        ('2\\cdot\\frac{6\\cdot3\\sqrt3}{2}=18\\sqrt3', '2\\cdot\\frac{10\\cdot5\\sqrt3}{2}=50\\sqrt3'),
+        ('2\\cdot\\frac{6\\sqrt3\\cdot3}{2}=18\\sqrt3', '2\\cdot\\frac{10\\sqrt3\\cdot5}{2}=50\\sqrt3'),
+        ('base 3, height 3 root 3', 'base 5, height 5 root 3'), ('base 6, height 3 root 3', 'base 10, height 5 root 3'),
+        ('base 6 root 3, height 3', 'base 10 root 3, height 5'),
+        ('Write 6 on AB, AD, BC and CD', 'Write 10 on AB, AD, BC and CD'),
+        ('BD is 6 — so AB and AD are 6. And all the sides of a rhombus are equal: DC and BC are 6 too.',
+         'BD is 10 — so AB and AD are 10. And all the sides of a rhombus are equal: DC and BC are 10 too.'),
+        ('S=2\\cdot\\frac{6^2\\sqrt3}{4}=18\\sqrt3', 'S=2\\cdot\\frac{10^2\\sqrt3}{4}=50\\sqrt3'), ('S = 2 · 6²√3 / 4 = 18√3', 'S = 2 · 10²√3 / 4 = 50√3'),
+        ('Twice: 2 times 36 root 3 over 4 — 18 root 3.', 'Twice: 2 times 100 root 3 over 4 — 50 root 3.'),
+        ('AC=6\\sqrt3', 'AC=10\\sqrt3'), ('AC = 6√3', 'AC = 10√3'),
+        ('Triangle ABC has sides 6 and 6 with 120 between them — so AC is 6 root 3 straight away.',
+         'Triangle ABC has sides 10 and 10 with 120 between them — so AC is 10 root 3 straight away.')],
+        fig={'6': '10'})
+
+    # ---------- g061 (letters only): equilateral AOD in square, angle OBC  ==>  equilateral BPC, angle PAD (same figure, new labels)
+    _rn_guided(M, 'geo32-g061', 'ABCD is a square, and P is a point inside it such that triangle BPC is equilateral. What is angle PAD?',
+               ['$15°$', '$30°$', '$60°$', '$75°$'], 1,
+               ['$BP=BC=AB$ (the sides of the equilateral triangle and of the square).',
+                '$\\angle ABP=90°-60°=30°$. Triangle ABP is isosceles: $\\angle BAP=\\frac{180°-30°}{2}=75°$.',
+                '$\\angle PAD=90°-75°=15°$. (75° is a trap: it is angle BAP.)'],
+               {1: 3, 2: 4, 3: 1, 4: 2}, [
+        ('O is a point inside it, and triangle AOD is equilateral. What is angle OBC?',
+         'P is a point inside it, and triangle BPC is equilateral. What is angle PAD?'),
+        ('O is inside — but', 'P is inside — but'), ('Write 90° at A and at B', 'Write 90° at B and at A'),
+        ('next to the angle we want — A and B.', 'next to the angle we want — B and A.'),
+        ('Next given: AOD is equilateral.', 'Next given: BPC is equilateral.'),
+        ('Mark AO and DO with the same tick', 'Mark BP and CP with the same tick'),
+        ('In an equilateral triangle all sides are equal: DA, OD, AO. AD already has a tick — so DO and AO get the same tick.',
+         'In an equilateral triangle all sides are equal: CB, PC, BP. BC already has a tick — so CP and BP get the same tick.'),
+        ('Write 60° at A inside triangle AOD', 'Write 60° at B inside triangle BPC'),
+        ('Highlight triangle ABO', 'Highlight triangle ABP'),
+        ('Now look at the triangle that holds the angle at B: ABO.', 'Now look at the triangle that holds the angle at A: ABP.'),
+        ('ABO is isosceles: AB equals AO.', 'ABP is isosceles: BA equals BP.'),
+        ('Write α at B and at O inside triangle ABO', 'Write α at A and at P inside triangle ABP'),
+        ('Angle ABO and angle AOB — call both alpha.', 'Angle BAP and angle BPA — call both alpha.'),
+        ('\\angle BAO=90°-60°=30°', '\\angle ABP=90°-60°=30°'), ('∠BAO = 90° − 60° = 30°', '∠ABP = 90° − 60° = 30°'),
+        ('The top angle: 90 minus 60 — 30.', 'The angle at B: 90 minus 60 — 30.'),
+        ('75 is angle ABO', '75 is angle BAP'), ('the question asks for angle OBC.', 'the question asks for angle PAD.'),
+        ('\\angle OBC=90°-75°=15°', '\\angle PAD=90°-75°=15°'), ('∠OBC = 90° − 75° = 15°', '∠PAD = 90° − 75° = 15°'),
+        ("Together they fill the square's corner at B — 90.", "Together they fill the square's corner at A — 90.")],
+        fig={'A': 'B', 'B': 'A', 'C': 'D', 'D': 'C', 'O': 'P'})
+    for b in M.video('solve-geo32-g061')['beats']:
+        b['title'] = b['title'].replace('Solve triangle ABO', 'Solve triangle ABP')
+
+    # ---------- g062: kite 13 / 12 / 15 (5-12-13) -> 240  ==>  AB = AD = 17, BO 15, OC 12 (8-15-17) -> 300 (Hebrew 5 / 4 / 9)
+    _rn_guided(M, 'geo32-g062', 'ABCD is a kite, and its diagonals meet at O. Given:\n' + _cases('AB=AD=17' + CM, 'CB=CD', 'BO=15' + CM, 'OC=12' + CM) +
+               '\nWhat is the area of the kite (in cm²)?',
+               ['$150$', '$180$', '$300$', '$600$'], 3,
+               ['The main diagonal AC bisects BD: $OD=BO=15$, therefore $BD=30$.',
+                'Right triangle AOD: hypotenuse 17 and leg 15, therefore $AO=8$ ($8, 15, 17$). $AC=8+12=20$.',
+                '$S=\\frac{AC\\cdot BD}{2}=\\frac{20\\cdot30}{2}=300$.'],
+               {1: 3, 2: 1, 3: 2, 4: 4}, [
+        ('Write 12 on OD', 'Write 15 on OD'), ('BO is 12 — so OD is 12.', 'BO is 15 — so OD is 15.'),
+        ('13,\\ 12\\ \\rightarrow\\ AO=5', '17,\\ 15\\ \\rightarrow\\ AO=8'), ('13, 12 → AO = 5', '17, 15 → AO = 8'),
+        ('We know the hypotenuse, 13, and a leg, 12. The Pythagorean triple 5, 12, 13 — the other leg is 5.',
+         'We know the hypotenuse, 17, and a leg, 15. The Pythagorean triple 8, 15, 17 — the other leg is 8.'),
+        ('Write 5 on AO', 'Write 8 on AO'),
+        ('S=\\frac{(5+15)(12+12)}{2}=\\frac{20\\cdot24}{2}', 'S=\\frac{(8+12)(15+15)}{2}=\\frac{20\\cdot30}{2}'),
+        ('S = (5 + 15)(12 + 12) / 2', 'S = (8 + 12)(15 + 15) / 2'),
+        ('AC is 5 plus 15 — 20. BD is 12 plus 12 — 24. Over 2.', 'AC is 8 plus 12 — 20. BD is 15 plus 15 — 30. Over 2.'),
+        ('=20\\cdot12=240', '=20\\cdot15=300'), ('= 20 · 12 = 240', '= 20 · 15 = 300'),
+        ('You could do 20 times 24 first — better to cancel first: 24 over 2 is 12. 20 times 12 — 240.',
+         'You could do 20 times 30 first — better to cancel first: 30 over 2 is 15. 20 times 15 — 300.'),
+        ('\\frac{24\\cdot5}{2}+\\frac{24\\cdot15}{2}=60+180', '\\frac{30\\cdot8}{2}+\\frac{30\\cdot12}{2}=120+180'),
+        ('2\\cdot\\frac{12\\cdot5}{2}+2\\cdot\\frac{12\\cdot15}{2}', '2\\cdot\\frac{15\\cdot8}{2}+2\\cdot\\frac{15\\cdot12}{2}'),
+        ('60 + 180 appears', '120 + 180 appears'),
+        ('base 24, height 5 — and triangle CBD — base 24, height 15 —', 'base 30, height 8 — and triangle CBD — base 30, height 12 —'),
+        ('two small ones, 12 by 5 over 2, twice. Two big ones, 12 by 15 over 2, twice.', 'two small ones, 15 by 8 over 2, twice. Two big ones, 15 by 12 over 2, twice.'),
+        ('Lots of ways — all 240.', 'Lots of ways — all 300.')],
+        fig={'13': '17', '12': '15', '15': '12'})
+
+    # ---------- g063: isosceles trapezoid AB = AD = 5, 30° -> 25  ==>  7 -> BC 14 -> 35 (Hebrew 2 -> 10)
+    _rn_guided(M, 'geo32-g063', 'ABCD is an isosceles trapezoid with $AD\\parallel BC$. Given:\n' + _cases('AB=AD=7' + CM, '\\angle ABD=30°') +
+               '\nWhat is its perimeter (in cm)?',
+               ['$28$', '$35$', '$42$', '$21+7\\sqrt3$'], 2,
+               ['$AB=AD$, therefore $\\angle ADB=\\angle ABD=30°$ and $\\angle A=180°-30°-30°=120°$.',
+                'Angles on the same leg add up to $180°$: $\\angle B=60°$, therefore $\\angle DBC=60°-30°=30°$. The trapezoid is isosceles: $\\angle C=\\angle B=60°$.',
+                'Triangle BCD has angles $30°$, $60°$ and $90°$. The short leg is $CD=AB=7$, therefore the hypotenuse is $BC=2\\cdot7=14$.',
+                '$P=7+7+7+14=35$.'],
+               {1: 1, 2: 3, 3: 4, 4: 2}, [
+        ('AB and AD are 5', 'AB and AD are 7'), ('Write 5 on CD', 'Write 7 on CD'), ('so CD equals AB: 5.', 'so CD equals AB: 7.'),
+        ('BC=2\\cdot5=10', 'BC=2\\cdot7=14'), ('BC = 2 · 5 = 10', 'BC = 2 · 7 = 14'), ('BC is 10.', 'BC is 14.'),
+        ('P=5+5+5+10=25', 'P=7+7+7+14=35'), ('P = 5 + 5 + 5 + 10 = 25', 'P = 7 + 7 + 7 + 14 = 35'),
+        ('The perimeter: 5 plus 5 plus 5 plus 10 — 25.', 'The perimeter: 7 plus 7 plus 7 plus 14 — 35.'),
+        ('BD=5\\sqrt3', 'BD=7\\sqrt3'), ('BD = 5√3', 'BD = 7√3'), ('so BD is 5 root 3.', 'so BD is 7 root 3.'),
+        ('times root 3 — 5 root 3.', 'times root 3 — 7 root 3.')],
+        fig={'5': '7'})
+
+    # ---------- g066 (statements only): new choice order; the false statement stays last
+    q = 'geo32-g066'; vid = 'solve-' + q
+    _rn_q(M, q, None, ['Every rhombus is a kite', 'Every square is a rectangle', 'Every rectangle is a parallelogram',
+                       'Every parallelogram has perpendicular diagonals'], 4,
+          ['Every rhombus is a kite, every square is a rectangle, and every rectangle is a parallelogram — all three are true.',
+           'A parallelogram does not necessarily have perpendicular diagonals. Example: a $9\\times4$ rectangle is a parallelogram, and its diagonals are not perpendicular.'])
+    L = M.slide(vid, 2)['lines']
+    says = [l.get('say') or l.get('draw') for l in L]
+    i1, i2, i3 = (says.index(s) for s in ('Statement one: every rectangle is a parallelogram.', 'Statement two: every rhombus is a kite.',
+                                          'Statement three: every square is a rectangle.'))
+    i4 = says.index('Circle choice 4')
+    head, rect, rhom, sq, tail = L[:i1], L[i1:i2], L[i2:i3], L[i3:i4], L[i4:]
+    def ren(block, word, num):
+        out = []
+        for l in block:
+            l = dict(l)
+            if 'say' in l: l['say'] = re.sub(r'^Statement \w+:', 'Statement %s:' % word, l['say'])
+            if 'draw' in l: l['draw'] = re.sub(r'^Cross out choice \d', 'Cross out choice %d' % num, l['draw'])
+            out.append(l)
+        return out
+    M.slide(vid, 2)['lines'] = head + ren(rhom, 'one', 1) + ren(sq, 'two', 2) + ren(rect, 'three', 3) + tail
+    _rn_sub(M, vid, [('take a rectangle 8 by 3', 'take a rectangle 9 by 4')])
+
+    # ---------- g067: rectangle, corner areas 5 and 13 -> 18  ==>  6 and 15 -> 21 (Hebrew 3 and 9)
+    _rn_guided(M, 'geo32-g067', 'ABCD is a rectangle, and E lies on AD. The areas of triangles ABE and ECD are 6 cm² and 15 cm², respectively. '
+               'What is the area of the shaded triangle EBC (in cm²)?',
+               ['$9$', '$21$', '$30$', '$42$'], 2,
+               ['Drop EF perpendicular to BC. ABFE and EFCD are rectangles.',
+                'A diagonal splits a rectangle into two equal triangles: $S_{EBF}=S_{ABE}=6$ and $S_{EFC}=S_{ECD}=15$.',
+                '$S_{EBC}=6+15=21$.'],
+               {1: 4, 2: 2, 3: 1, 4: 3}, [
+        ('Triangle ABE has area 5, triangle ECD has area 13.', 'Triangle ABE has area 6, triangle ECD has area 15.'),
+        ('\\frac{xh}{2}=5\\ \\Rightarrow\\ xh=10', '\\frac{xh}{2}=6\\ \\Rightarrow\\ xh=12'), ('xh/2 = 5 → xh = 10', 'xh/2 = 6 → xh = 12'),
+        ('x times h over 2 is 5. Multiply by 2: xh is 10.', 'x times h over 2 is 6. Multiply by 2: xh is 12.'),
+        ('\\frac{yh}{2}=13\\ \\Rightarrow\\ yh=26', '\\frac{yh}{2}=15\\ \\Rightarrow\\ yh=30'), ('yh/2 = 13 → yh = 26', 'yh/2 = 15 → yh = 30'),
+        ('yh over 2 is 13, so yh is 26.', 'yh over 2 is 15, so yh is 30.'),
+        ('\\frac{10+26}{2}=18', '\\frac{12+30}{2}=21'), ('(10+26)/2 = 18', '(12+30)/2 = 21'),
+        ("That's 10 plus 26 over 2 — 36 over 2 — 18.", "That's 12 plus 30 over 2 — 42 over 2 — 21."),
+        ('Triangle ABE is 5.', 'Triangle ABE is 6.'), ('Write 5 in the left shaded part', 'Write 6 in the left shaded part'),
+        ('So this shaded piece is 5 too.', 'So this shaded piece is 6 too.'),
+        ('Write 13 in the right shaded part', 'Write 15 in the right shaded part'),
+        ('The right rectangle: ECD is 13. Again a rectangle, again a diagonal — the shaded piece is 13.',
+         'The right rectangle: ECD is 15. Again a rectangle, again a diagonal — the shaded piece is 15.'),
+        ('Write 5 + 13 = 18', 'Write 6 + 15 = 21'), ('5 plus 13 — 18.', '6 plus 15 — 21.')],
+        fig={'5 cm²': '6 cm²', '13 cm²': '15 cm²'})
+
+    # ---------- g068: E, G split 2 : 1 -> ECD is enough  ==>  3 : 1 (Hebrew: midpoints); choices reordered
+    _rn_guided(M, 'geo32-g068', 'ABCD is a rectangle. E lies on AD, G lies on BC, and F lies on AB. Given:\n' + _cases('AE=3ED', 'BG=3GC') +
+               '\nTriangles FEG and EGC are shaded. Which of the following additional data is sufficient to determine the total shaded area?',
+               ['The area of triangle ECD', 'The area of triangle AFE', 'The area of triangle FBG', 'None of these data is sufficient'], 1,
+               ['E and G split AD and BC in the same ratio, $3 : 1$. So EG is parallel to AB, and it splits the rectangle into a left part and a right part in the ratio $3 : 1$.',
+                'Let $S_{ECD}=s$. Then $S_{EGC}=s$ (a diagonal halves the right rectangle), the right rectangle is $2s$, and the left rectangle is $6s$.',
+                'FEG stands on the full side EG of the left rectangle, with its tip on AB: $S_{FEG}=3s$. The shaded area is $s+3s=4s$, therefore the area of ECD is enough.',
+                'The area of AFE or of FBG is not enough: F can be anywhere on AB.'],
+               {1: 2, 2: 3, 3: 4, 4: 1}, [
+        ('AE is twice ED, and BG is twice GC.', 'AE is three times ED, and BG is three times GC.'),
+        ('Write the ratio 2 : 1 on AD and on BC', 'Write the ratio 3 : 1 on AD and on BC'),
+        ('E splits AD, 2 to 1. G splits BC the same way, 2 to 1.', 'E splits AD, 3 to 1. G splits BC the same way, 3 to 1.'),
+        ('$=2\\cdot2s=4s$', '$=3\\cdot2s=6s$'), ('Left rectangle = 2 × 2s = 4s', 'Left rectangle = 3 × 2s = 6s'),
+        ("The left rectangle: same height, twice the base — 2 to 1. So it's twice as big: 4s.",
+         "The left rectangle: same height, three times the base — 3 to 1. So it's three times as big: 6s."),
+        ('Write 2s in triangle FEG', 'Write 3s in triangle FEG'), ('half the left rectangle — 2s.', 'half the left rectangle — 3s.'),
+        ('$=s+2s=3s$', '$=s+3s=4s$'), ('Shaded = s + 2s = 3s', 'Shaded = s + 3s = 4s'),
+        ('Total shaded: s plus 2s — 3s.', 'Total shaded: s plus 3s — 4s.'),
+        ('the rectangle is 6s, the shaded part is half of it — and ECD is a sixth.', 'the rectangle is 8s, the shaded part is half of it — and ECD is an eighth.')],
+        svg=_rn_g068())
+
+    # ---------- g069: isosceles trapezoid 4 / 12 / 14 -> 56  ==>  5 / 20 / 15 -> 75 (Hebrew 3 / 6 / 10 -> 30)
+    _rn_guided(M, 'geo32-g069', 'ABCD is an isosceles trapezoid. Given:\n' + _cases('AD\\parallel BC', 'AD=5' + CM, 'BC=20' + CM) +
+               '\nThe shaded triangle ABD has area 15 cm². What is the area of the trapezoid (in cm²)?',
+               ['$30$', '$60$', '$75$', '$150$'], 3,
+               ['Triangles ABD and BCD have the same height (the height of the trapezoid). The ratio of their areas equals the ratio of their bases: $5 : 20=1 : 4$.',
+                '$S_{BCD}=4\\cdot15=60$, and the trapezoid is $15+60=75$.',
+                'Or: $\\frac{5h}{2}=15$ gives $h=6$, and $S=\\frac{(5+20)\\cdot6}{2}=75$.'],
+               {1: 2, 2: 4, 3: 3, 4: 1}, [
+        ('AD is 4, BC is 12, and the shaded triangle ABD has area 14.', 'AD is 5, BC is 20, and the shaded triangle ABD has area 15.'),
+        ('The only base we have is AD — 4.', 'The only base we have is AD — 5.'),
+        ('\\frac{4h}{2}=14\\ \\Rightarrow\\ h=7', '\\frac{5h}{2}=15\\ \\Rightarrow\\ h=6'), ('4h/2 = 14 → h = 7', '5h/2 = 15 → h = 6'),
+        ('4h over 2 is 14 — so h is 7.', '5h over 2 is 15 — so h is 6.'),
+        ('S=\\frac{(4+12)\\cdot7}{2}=56', 'S=\\frac{(5+20)\\cdot6}{2}=75'), ('S = (4+12)·7/2 = 56', 'S = (5+20)·6/2 = 75'),
+        ('4 plus 12 is 16, times 7 over 2 — 8 times 7 — 56.', '5 plus 20 is 25, times 6 over 2 — 25 times 3 — 75.'),
+        ('Shaded base: 4. White base: 12. Three times bigger — so the area is three times bigger: 42.',
+         'Shaded base: 5. White base: 20. Four times bigger — so the area is four times bigger: 60.'),
+        ('Write the ratio 4 : 12 = 1 : 3', 'Write the ratio 5 : 20 = 1 : 4'),
+        ('Split BC into 4, 4, 4 and join the points to D', 'Split BC into 5, 5, 5, 5 and join the points to D'),
+        ('Split BC into three pieces of 4. Now every triangle here has the same base — 4 —', 'Split BC into four pieces of 5. Now every triangle here has the same base — 5 —'),
+        ('Write 14 in each of the four triangles', 'Write 15 in each of the five triangles'),
+        ('So they all have the same area: 14, 14, 14, and the shaded 14.', 'So they all have the same area: 15, 15, 15, 15, and the shaded 15.'),
+        ('S=14+42=4\\times14=56', 'S=15+60=5\\times15=75'), ('S = 4 × 14 = 56', 'S = 5 × 15 = 75'),
+        ('The whole trapezoid: 14 plus 42 — 56. Careful: 42 alone', 'The whole trapezoid: 15 plus 60 — 75. Careful: 60 alone'),
+        ('Base three times bigger, area three times bigger.', 'Base four times bigger, area four times bigger.')],
+        svg=_rn_g069())
+
+    # ---------- g070: 7 x 5 grid -> 22  ==>  8 x 5 grid, new pentagon -> 26 (Hebrew 20 squares -> 12)
+    _rn_guided(M, 'geo32-g070', 'The rectangle in the accompanying figure consists of 40 congruent squares, each with side length 1 cm. '
+               'What is the shaded area (in cm²)?',
+               ['$14$', '$20$', '$26$', '$28$'], 3,
+               ['The rectangle is $8\\cdot5=40$.',
+                'The four white corner triangles have legs 3 and 2, 5 and 2, 2 and 3, and 2 and 3. Their areas are $\\frac{3\\cdot2}{2}=3$, $\\frac{5\\cdot2}{2}=5$, $\\frac{2\\cdot3}{2}=3$ and $3$. Together: $14$.',
+                '$S=40-14=26$.'],
+               {1: 3, 2: 1, 3: 2, 4: 4}, [
+        ('A rectangle made of 35 congruent squares', 'A rectangle made of 40 congruent squares'),
+        ('Rectangle: $7\\times5=35$', 'Rectangle: $8\\times5=40$'), ('Rectangle: 7 × 5 = 35', 'Rectangle: 8 × 5 = 40'),
+        ('The rectangle: 35 squares — area 35.', 'The rectangle: 40 squares — area 40.'),
+        ('Write 1 in the upper-left triangle', 'Write 3 in the upper-left triangle'),
+        ('Upper left: legs 1 and 2. 1 times 2 over 2 — 1.', 'Upper left: legs 3 and 2. 3 times 2 over 2 — 3.'),
+        ('Write 6 in the upper-right triangle', 'Write 5 in the upper-right triangle'),
+        ('Upper right: legs 6 and 2 — 6.', 'Upper right: legs 5 and 2 — 5.'),
+        ('35-(1+6+3+3)=22', '40-(3+5+3+3)=26'), ('35 − (1+6+3+3) = 22', '40 − (3+5+3+3) = 26'),
+        ('All the white together: 13. 35 minus 13 — 22.', 'All the white together: 14. 40 minus 14 — 26.'),
+        ('middle 3-by-3 block', 'middle 4-by-3 block'), ('is 9 whole squares', 'is 12 whole squares'),
+        ('7+9+3+3=22', '8+12+3+3=26'), ('7 + 9 + 3 + 3 = 22', '8 + 12 + 3 + 3 = 26'),
+        ('Write 7 in the top triangle', 'Write 8 in the top triangle'),
+        ('a triangle on the full 7-by-2 rectangle — a triangle on the full base is half. Half of 14 — 7.',
+         'a triangle on the full 8-by-2 rectangle — a triangle on the full base is half. Half of 16 — 8.'),
+        ('Write 9 in the middle 3-by-3 square', 'Write 12 in the middle 4-by-3 rectangle'),
+        ('Below: the middle square, 3 by 3 — 9.', 'Below: the middle rectangle, 4 by 3 — 12.'),
+        ('Add up: 7 plus 9 plus 3 plus 3 — 22.', 'Add up: 8 plus 12 plus 3 plus 3 — 26.')],
+        svg=_rn_g070())
+
+    # ---------- g071: angle B 110, plug 100 / 70  ==>  angle B 130, plug 110 / 60 (Hebrew: B 90, plug 100 / 70); choices reordered
+    q = 'geo32-g071'; vid = 'solve-' + q
+    _rn_guided(M, q, 'In quadrilateral ABCD, angle A is α, angle B is 130° and angle C is β. E lies on AB, and DE bisects angle ADC. '
+               'Which expression equals angle AED?',
+               ['$65°+\\frac\\alpha2-\\frac\\beta2$', '$130°+\\frac\\alpha2-\\frac\\beta2$', '$65°-\\frac\\alpha2+\\frac\\beta2$', '$130°-\\frac\\alpha2+\\frac\\beta2$'], 3,
+               ['Angle sum: $\\angle D=360°-130°-\\alpha-\\beta=230°-\\alpha-\\beta$.',
+                'DE bisects it: $\\angle ADE=115°-\\frac\\alpha2-\\frac\\beta2$.',
+                'Triangle AED: $\\angle AED=180°-\\alpha-\\left(115°-\\frac\\alpha2-\\frac\\beta2\\right)=65°-\\frac\\alpha2+\\frac\\beta2$.',
+                'Check with numbers: $\\alpha=110°$ and $\\beta=60°$ give $\\angle D=60°$, $\\angle ADE=30°$ and $\\angle AED=40°$. Only choice 3 gives $65°-55°+30°=40°$.'],
+               {1: 2, 2: 3, 3: 1, 4: 4}, [
+        ('angle B is 110, angle C is beta.', 'angle B is 130, angle C is beta.'),
+        ('360°-110°-\\alpha-\\beta$ $=250°', '360°-130°-\\alpha-\\beta$ $=230°'), ('360° − 110° − α − β = 250° − α − β', '360° − 130° − α − β = 230° − α − β'),
+        ('Isolate D: 360 minus 110 is 250. D equals 250 minus alpha minus beta.', 'Isolate D: 360 minus 130 is 230. D equals 230 minus alpha minus beta.'),
+        ('\\angle ADE=125°', '\\angle ADE=115°'), ('Half: 125° − α/2 − β/2', 'Half: 115° − α/2 − β/2'),
+        ('Half of 250 is 125', 'Half of 230 is 115'), ('Write 125 − α/2 − β/2', 'Write 115 − α/2 − β/2'),
+        ('\\left(125°', '\\left(115°'), ('x = 180° − α − (125° − α/2 − β/2)', 'x = 180° − α − (115° − α/2 − β/2)'),
+        ('Write 180 − 125 = 55', 'Write 180 − 115 = 65'),
+        ('180 minus 125 — 55. Notice: already choices two and four are out — the number must be 55, not 110.',
+         '180 minus 115 — 65. Notice: already choices two and four are out — the number must be 65, not 130.'),
+        ('55 minus alpha over 2 plus beta over 2.', '65 minus alpha over 2 plus beta over 2.')],
+        fig={'110°': '130°'})
+    b3 = M.slide(vid, 3)
+    item = dict(b3['items'][b3['lines'][[l.get('appear') for l in b3['lines']].index(1)]['appear']])
+    item['t'] = '$\\frac\\alpha2=55,\\ \\ \\frac\\beta2=30$'
+    M.set_slide(vid, 3, script=[
+        "The psychometric solution: plug in numbers.",
+        "Pick some alpha, some beta. Plug them into the drawing AND into the answers. Find the answer that matches.",
+        "That turns a complex question into a simple one — numbers are much easier to work with.",
+        D('Write α = 110°, β = 60°'),
+        "Alpha looks obtuse — I'll take 110. Beta — 60. You can pick others, as long as the drawing still works.",
+        D('Write ∠D = 360 − 130 − 110 − 60 = 60 → 30, 30'),
+        "Angle D: 110 plus 60 plus 130 is 300. 360 minus 300 — 60. Bisected — 30 and 30.",
+        D('Write x = 180 − 110 − 30 = 40'),
+        "Now the question mark is a joke: 110 plus 30 is 140. To 180 — 40 degrees.",
+        "Now plug alpha 110 and beta 60 into every answer — and eliminate anything that isn't 40.",
+        "The drawback of plugging in: to be sure, we have to eliminate the other answers.",
+        A('α/2 = 55, β/2 = 30 appears', item),
+        D('Next to the choices write 90, 155, 40, 105'),
+        "Choice one: 65 plus 55 minus 30 — 90. Out. Choice two: 130 plus 55 minus 30 — 155. Out.",
+        "Choice three: 65 minus 55 plus 30 — 40. It fits!",
+        "Still — don't mark it yet. If you're out of time, it's a very reasonable guess.",
+        "Choice four: 130 minus 55 plus 30 — 105. Out.",
+        D('Cross out choices 1, 2 and 4'),
+        D('Circle choice 3'),
+        "Choice three.",
+        "Two approaches. If you're strong in algebra and do it in under a minute — great, solve it fully.",
+        "For most students the full algebra is hard — especially at the end of a section under time pressure. Plugging in is a wonderful solution for that.",
+    ])
+
+    # ---------- g072: six congruent rectangles, perimeter 50 -> 150  ==>  perimeter 40 -> x 2 -> 96 (Hebrew five, 32 -> 60)
+    _rn_guided(M, 'geo32-g072', 'Rectangle ABCD consists of six congruent rectangles, arranged as in the accompanying figure. The perimeter of ABCD is 40 cm. '
+               'What is its area (in cm²)?',
+               ['$64$', '$80$', '$96$', '$128$'], 3,
+               ['Call the short side of a small rectangle $x$. Four short sides stack up to one long side, therefore the long side is $4x$.',
+                'The big rectangle is $4x$ by $x+4x+x=6x$. $P=2(4x+6x)=20x=40$, therefore $x=2$.',
+                '$S=4x\\cdot6x=8\\cdot12=96$.'],
+               {1: 3, 2: 2, 3: 1, 4: 4}, [
+        ('Its perimeter is 50.', 'Its perimeter is 40.'),
+        ('20x=50$ $\\Rightarrow\\ x=2.5', '20x=40$ $\\Rightarrow\\ x=2'), ('20x = 50 → x = 2.5', '20x = 40 → x = 2'),
+        ("It's 50, so x is 2.5.", "It's 40, so x is 2."),
+        ('10\\times15=150', '8\\times12=96'), ('S = 10 × 15 = 150', 'S = 8 × 12 = 96'),
+        ('4x is 10, 6x is 15. 10 times 15 — 150.', '4x is 8, 6x is 12. 8 times 12 — 96.'),
+        ('Half the perimeter is 25 — five parts, so one part is 5: sides 15 and 10. Same 150.',
+         'Half the perimeter is 20 — five parts, so one part is 4: sides 12 and 8. Same 96.'),
+        ('20x, must be 50.', '20x, must be 40.'),
+        ('150\\div24=6.25=2.5^2', '96\\div24=4=2^2'), ('150 ÷ 24 = 6.25 = 2.5²', '96 ÷ 24 = 4 = 2²'),
+        ("Try choice three, 150. 150 divided by 24 is 6.25 — that's 2.5 squared. So x is 2.5.",
+         "Try choice three, 96. 96 divided by 24 is 4 — that's 2 squared. So x is 2."),
+        ('20\\cdot2.5=50', '20\\cdot2=40'), ('20 · 2.5 = 50', '20 · 2 = 40'),
+        ('the perimeter: 20 times 2.5 — 50.', 'the perimeter: 20 times 2 — 40.'),
+        ('Try 100, 125 or 200: divided by 24, none of them gives a perimeter of 50.',
+         'Try 64, 80 or 128: divided by 24, none of them gives a perimeter of 40.')])
+
+
+def _rn_p(M, qid, stem, choices, correct, expl, fig=None, svg=None, aria=None):
+    if qid in RN_RECORDED: return
+    _rn_q(M, qid, stem, choices, correct, expl)
+    if fig is not None or svg is not None: _rn_fig(M, qid, fig, aria, svg)
+
+
+def rn_practice_questions(M):
+    F = lambda k: 'geo32-foundation-p%02d' % k
+    Ad = lambda k: 'geo32-advanced-p%02d' % k
+    # ---------------- foundation ----------------
+    _rn_p(M, F(1), 'A congruent isosceles triangle is constructed externally on each side of square ABCD. The square has perimeter 48 cm, '
+          'and each triangle has perimeter 34 cm. What is the perimeter of the resulting figure (in cm)?',
+          ['$88$', '$112$', '$136$', '$184$'], 1,
+          ['The four triangles have a total perimeter of $4\\cdot34=136$.',
+           'Their bases are the sides of the square, $48$ in total. They are inside the figure, therefore they are not part of its perimeter.',
+           '$P=136-48=88$.'])
+    _rn_p(M, F(2), 'ABCD is an isosceles trapezoid with $AD\\parallel BC$. Given: $y=x+46°$. What is x?',
+          ['$44°$', '$67°$', '$90°$', '$113°$'], 2,
+          ['In an isosceles trapezoid, opposite angles add up to $180°$ (angles on the same leg add up to $180°$, and the base angles are equal).',
+           '$x+y=180°$: $x+x+46°=180°$, $2x=134°$ and $x=67°$.'])
+    _rn_p(M, F(3), 'ABCD is an isosceles trapezoid with $AD\\parallel BC$. Angle ABC is $3k$. Which expression equals β?',
+          ['$90°-3k$', '$180°-k$', '$180°-3k$', '$90°+3k$'], 3,
+          ['Isosceles trapezoid: the base angles are equal, $\\angle BCD=\\angle ABC=3k$.',
+           'β and angle C sit on the same leg CD: $\\beta=180°-3k$.'], fig={'2t': '3k'})
+    _rn_p(M, F(4), 'ABCD is a parallelogram. BE bisects angle ABC and meets AD at E. Given: angle BCD is 136°. What is angle AEB?',
+          ['$22°$', '$44°$', '$68°$', '$112°$'], 1,
+          ['$\\angle ABC=180°-136°=44°$, and BE bisects it: $\\angle EBC=\\frac{44°}{2}=22°$.',
+           '$AD\\parallel BC$, therefore $\\angle AEB=\\angle EBC=22°$ (Z-angles).'], fig={'124°': '136°'})
+    _rn_p(M, F(5), 'The side length of an equilateral triangle equals the perimeter of a square. The triangle’s perimeter is 252 cm. '
+          'What is the side length of the square (in cm)?',
+          ['$21$', '$28$', '$63$', '$84$'], 1,
+          ['The side of the triangle is $\\frac{252}{3}=84$.',
+           'This is the perimeter of the square, therefore each side of the square is $\\frac{84}{4}=21$.'])
+    _rn_p(M, F(6), 'ABCD is a parallelogram. The two additional lines through A and C are parallel. Based on this information and the information '
+          'in the figure, what is $x+y+z$?',
+          ['$120°$', '$180°$', '$270°$', '$360°$'], 2,
+          ['The two added lines are parallel, and $AB\\parallel DC$. By the parallel-line angles, the angle between CB and the line through C equals x.',
+           'So the whole angle at C is $x+z$, and angle B is y.',
+           'Adjacent angles of a parallelogram add up to $180°$: $x+y+z=180°$.'], fig={'α': 'x', 'β': 'y', 'γ': 'z'})
+    _rn_p(M, F(7), 'A rhombus has perimeter 44 cm. Which of the following lengths cannot be the length of its longer diagonal (in cm)?',
+          ['$16$', '$18$', '$21$', '$23$'], 4,
+          ['Each side is $\\frac{44}{4}=11$.',
+           'A diagonal and two sides make a triangle, therefore the diagonal is shorter than $11+11=22$. 23 is impossible.',
+           'The longer diagonal is at least the diagonal of a square with side 11: $11\\sqrt2\\approx15.6$. So 16, 18 and 21 are all possible.'])
+    _rn_p(M, F(8), None, ['Two side-length segments and two diagonal-length segments', 'Four side-length segments',
+                          'Three side-length segments and one diagonal-length segment', 'One side-length segment and three diagonal-length segments'], 2, None)
+    _rn_p(M, F(9), None, ['$49$', '$120$', '$156$', '$169$'], 2,
+          ['Complete the figure to a $13\\times13$ square, and take away the missing $7\\times7$ square.',
+           '$S=13^2-7^2=169-49=120$.'], svg=_rn_p09())
+    _rn_p(M, F(10), 'The rectangle consists of 35 congruent unit squares. What is the shaded area?',
+          ['$8$', '$19$', '$27$', '$31$'], 3,
+          ['Each white kite has perpendicular diagonals 4 and 2: $S=\\frac{4\\cdot2}{2}=4$. The two kites: $8$.',
+           'The rectangle is 35, therefore the shaded area is $35-8=27$.'], svg=_rn_p10())
+    _rn_p(M, F(11), None, ['$30°$', '$60°$', '$90°$', '$120°$'], 3, None)
+    _rn_p(M, F(12), None, ['$26°$', '$52°$', '$64°$', '$74°$'], 3,
+          ['Both horizontal lines are perpendicular to the right vertical line, therefore they are parallel.',
+           'The downward sloping line makes $26°$ with either horizontal line.',
+           'Its perpendicular therefore makes $90°-26°=64°$ with the horizontal line: $\\alpha=64°$.'], fig={'32°': '26°'})
+    _rn_p(M, F(13), 'The perimeter of a rectangle is 17 cm, and one side is 6 cm long. What is its area (in cm²)?',
+          ['$5$', '$15$', '$30$', '$34$'], 2,
+          ['The other side: $\\frac{17-2\\cdot6}{2}=\\frac52=2.5$.', '$S=6\\cdot2.5=15$.'])
+    _rn_p(M, F(14), None, ['A square', 'A rhombus', 'A rectangle', 'A kite'], 3,
+          ['Square, rhombus and kite: the diagonals are always perpendicular.',
+           'Rectangle: the diagonals are equal and bisect each other, but they are not necessarily perpendicular. Example: a $6\\times2$ rectangle.'])
+    _rn_p(M, F(15), None, ['$85°$', '$95°$', '$109°$', '$119°$'], 2,
+          ['Look at the quadrilateral formed by AB, the two long lines and the perpendicular. Three of its angles are $104°$, $71°$ and $90°$.',
+           'Its angle at A: $360°-104°-71°-90°=95°$.',
+           '$AB\\parallel CD$, so α is the corresponding angle: $\\alpha=95°$.'], fig={'101°': '104°', '67°': '71°'})
+    _rn_p(M, F(16), 'The vertices of the inscribed rhombus are the midpoints of the rectangle’s sides. A half-side of the rectangle is 9 cm and a side '
+          'of the rhombus is 15 cm, as marked. What is the perimeter of the rectangle (in cm)?',
+          ['$42$', '$60$', '$66$', '$84$'], 4,
+          ['Each corner triangle is right-angled: hypotenuse 15 and one leg 9. The other leg is 12 ($9, 12, 15$).',
+           'The rectangle is $2\\cdot9=18$ by $2\\cdot12=24$.', '$P=2(18+24)=84$.'], svg=_rn_p16())
+    _rn_p(M, F(17), 'Ten congruent rhombuses meet at a common vertex with no gaps or overlaps, as in the accompanying figure. What is α?',
+          ['$30°$', '$36°$', '$40°$', '$144°$'], 2,
+          ['10 equal angles meet at the center: each is $\\frac{360°}{10}=36°$.',
+           'Opposite angles of a rhombus are equal: $\\alpha=36°$.'], svg=_rn_p17())
+    _rn_p(M, F(18), 'A square with perimeter 48 cm is divided into 12 congruent rectangles in three rows and four columns. '
+          'What is the perimeter of each small rectangle (in cm)?',
+          ['$7$', '$12$', '$14$', '$16$'], 3,
+          ['The side of the square is $\\frac{48}{4}=12$.',
+           'Each small rectangle is $\\frac{12}{4}=3$ wide and $\\frac{12}{3}=4$ tall.', '$P=2(3+4)=14$.'], svg=_rn_p18())
+    _rn_p(M, F(19), 'ABCD is a kite, and its diagonals intersect at O. Given:\n' +
+          _cases('AB=AD=13' + CM, 'CB=CD', 'BO=5' + CM, 'OC=8' + CM) + '\nWhat is its area (in cm²)?',
+          ['$50$', '$100$', '$130$', '$200$'], 2,
+          ['$OD=BO=5$, therefore $BD=5+5=10$.',
+           'Right triangle ABO: $5, 12, 13$, therefore $AO=12$ and $AC=12+8=20$.',
+           '$S=\\frac{10\\cdot20}{2}=100$.'], svg=_rn_p19())
+    _rn_p(M, F(20), 'Maya says: “Knowing a rhombus’s perimeter is enough to determine its area.” Ethan says: “Knowing a square’s perimeter is '
+          'enough to determine its area.” Which statement is correct?',
+          ['Both are correct', 'Maya is correct and Ethan is incorrect', 'Ethan is correct and Maya is incorrect', 'Both are incorrect'], 3,
+          ['Square: the perimeter gives the side, and the side gives the area. Ethan is correct.',
+           'Rhombus: the perimeter gives the side, but the angles can change. A rhombus with side 6 can be a square (area 36) or very flat '
+           '(area close to 0). Maya is incorrect.'])
+
+    # ---------------- advanced ----------------
+    _rn_p(M, Ad(1), 'All the rectangles in the accompanying figure are congruent. The shorter side of each rectangle is 3 cm. '
+          'What is its longer side (in cm)?',
+          ['$8$', '$9$', '$10$', '$12$'], 2,
+          ['Call the longer side $L$. The upper row is $L+3+L$ wide, and the lower row is $6+L+6$ wide.',
+           '$2L+3=L+12$, therefore $L=9$.'], fig={'2': '3'})
+    _rn_p(M, Ad(2), 'ABCD is a rectangle and E lies on AD. Triangle EBC has area 23 cm², and triangle ECD has area 9 cm². '
+          'What is the shaded area of triangle ABE (in cm²)?',
+          ['$9$', '$14$', '$23$', '$32$'], 2,
+          ['EBC stands on the full base BC, with its tip on AD. It is half the rectangle.',
+           'The two corner triangles make the other half: $S_{ABE}+S_{ECD}=23$.', '$S_{ABE}=23-9=14$.'], svg=_rn_a02())
+    _rn_p(M, Ad(3), 'ABCD is an isosceles trapezoid with $AD\\parallel BC$. Given:\n' + _cases('AB=13' + CM, 'BC=26' + CM, '\\angle BAC=90°') +
+          '\nWhat is α?',
+          ['$60°$', '$120°$', '$135°$', '$150°$'], 2,
+          ['In right triangle ABC, $BC=26=2\\cdot AB$. The hypotenuse is twice a leg, therefore it is a 30-60-90 triangle: $\\angle ACB=30°$ and $\\angle ABC=60°$.',
+           'The angles on leg AB add up to $180°$, and the trapezoid is isosceles: each top angle is $180°-60°=120°$. $\\alpha=120°$.'],
+          fig={'9': '13', '18': '26'})   # review: 11/22 = the t31 lesson example (geo-026) -> 13/26
+    _rn_p(M, Ad(4), 'ABCD is a square with side length 12 cm. Triangle AED is equilateral and lies inside the square. F lies on AB, with '
+          '$EF\\parallel AD$. What is the area of the shaded triangle AFE (in cm²)?',
+          ['$18\\sqrt3$', '$9\\sqrt3$', '$36\\sqrt3$', '$18\\sqrt2$'], 1,
+          ['The height of an equilateral triangle with side 12 is $\\frac{12\\sqrt3}{2}=6\\sqrt3$. So $AF=6\\sqrt3$.',
+           'By symmetry, E is above the middle of AD: $FE=\\frac{12}{2}=6$.', '$S=\\frac{6\\cdot6\\sqrt3}{2}=18\\sqrt3$.'], fig={'8': '12'})
+    _rn_p(M, Ad(5), 'ABCD is an isosceles trapezoid with $AD\\parallel BC$. Given:\n' + _cases('AB=AD=CD', '\\angle DAC=2m') +
+          '\nWhich expression equals β?',
+          ['$4m$', '$180°-4m$', '$2m+45°$', '$2m+60°$'], 1,
+          ['$AD=CD$, therefore triangle ADC is isosceles: $\\angle ACD=\\angle DAC=2m$.',
+           '$AD\\parallel BC$ (Z-angles): $\\angle ACB=\\angle DAC=2m$.',
+           '$\\angle C=2m+2m=4m$, and the base angles are equal: $\\beta=4m$.'], fig={'2t': '2m'})
+    _rn_p(M, Ad(6), 'ABCD is a square with side length 5 cm, and BEFD is a rectangle. Given: angle CBF is 15°. What is BF (in cm)?',
+          ['$5\\sqrt2$', '$10$', '$10\\sqrt2$', '$10\\sqrt3$'], 3,
+          ['$BD=5\\sqrt2$ (the diagonal of the square), and it makes a $45°$ angle with BC.',
+           '$\\angle DBF=45°+15°=60°$. BEFD is a rectangle, therefore $\\angle BDF=90°$.',
+           'Triangle BDF is a 30-60-90 triangle. BD is opposite the $30°$ angle, therefore $BF=2\\cdot BD=10\\sqrt2$.'], fig={'3': '5'})
+    _rn_p(M, Ad(7), 'ABCD is a kite. Given:\n' + _cases('AB=AD', 'CB=CD', '\\angle A=3n', '\\angle C=n') + '\nWhich expression equals angle ADC?',
+          ['$180°-2n$', '$90°-2n$', '$360°-2n$', '$180°-4n$'], 1,
+          ['The kite is symmetric about AC, therefore $\\angle B=\\angle D$.',
+           '$2\\angle D=360°-3n-n=360°-4n$, therefore $\\angle ADC=180°-2n$.'], fig={'3t': '3n', 't': 'n'})
+    _rn_p(M, Ad(8), 'In rectangle ABCD, E lies on CD, and $DE=4EC$. The areas of triangles AED, AEC and ABC are x, y and z, respectively. '
+          'What is the ratio $x:y:z$?',
+          ['$1:4:5$', '$4:1:4$', '$4:1:5$', '$4:5:1$'], 3,
+          ['AED and AEC have the same height from A, and their bases are in the ratio $DE : EC=4 : 1$. So $x : y=4 : 1$.',
+           'The diagonal AC halves the rectangle: $z=x+y$.', 'With $x=4$ and $y=1$: $z=5$. The ratio is $4 : 1 : 5$.'], svg=_rn_a08())
+    _rn_p(M, Ad(9), 'A square of side length 14 cm contains five congruent squares of side length 2 cm, at its corners and center as in the '
+          'accompanying figure. The four remaining regions are congruent under quarter-turns. What is the total area of the two shaded regions (in cm²)?',
+          ['$44$', '$88$', '$98$', '$176$'], 2,
+          ['The four congruent regions: $14^2-5\\cdot2^2=196-20=176$.', 'Two of them: $\\frac{176}{2}=88$.'])
+    _rn_p(M, Ad(10), 'Two congruent rectangles are placed together to form a square, as in the accompanying figure. Each rectangle has perimeter 84 cm. '
+          'What is the square’s perimeter (in cm)?',
+          ['$84$', '$112$', '$126$', '$168$'], 2,
+          ['Each rectangle is $s$ by $\\frac s2$. Its perimeter: $2\\left(s+\\frac s2\\right)=3s=84$, therefore $s=28$.', '$P=4\\cdot28=112$.'])
+    _rn_p(M, Ad(11), 'A quadrilateral is both a parallelogram and a kite. Its perimeter is 52 cm. Which of the following is necessarily true?',
+          ['Each side is 13 cm long', 'Its diagonals have equal lengths', 'Every angle is 90°', 'Its area is 169 cm²'], 1,
+          ['A parallelogram has equal opposite sides. A kite has two pairs of equal adjacent sides.',
+           'Together, all four sides are equal: it is a rhombus. Each side is $\\frac{52}{4}=13$.',
+           'The other statements are true only for a square.'])
+    _rn_p(M, Ad(12), 'ABCD is a rectangle. The two sloping lines meet at C and form an angle of 36°. The two angles marked α are equal. What is α?',
+          ['$27°$', '$36°$', '$54°$', '$63°$'], 1,
+          ['$AD\\parallel BC$: the angle between the shallow line and AD equals the angle between that line and CB at C (Z-angles). That angle at C is α.',
+           'The right angle at C is made of α, $36°$ and α: $2\\alpha+36°=90°$, therefore $\\alpha=27°$.'], fig={'28°': '36°'})
+    _rn_p(M, Ad(13), 'ABCD is a square. Isosceles triangles AFB and AED are constructed outside it. Given:\n' +
+          _cases('FA=FB', 'EA=ED', '\\angle AFB=2m', '\\angle AED=2n') + '\nWhich expression equals the marked angle FAE?',
+          ['$90°+m+n$', '$180°-m-n$', '$90°-m-n$', '$180°+m+n$'], 1,
+          ['Triangle AFB: $\\angle FAB=\\frac{180°-2m}{2}=90°-m$. Triangle AED: $\\angle EAD=90°-n$.',
+           'The angles around A add up to $360°$: $x+(90°-m)+90°+(90°-n)=360°$.', '$x=90°+m+n$.'], fig={'2p': '2m', '2q': '2n'})
+    _rn_p(M, Ad(14), 'ABCD is a rectangle with perimeter 46 cm. E lies on AB, and F lies on CD. Given:\n' + _cases('BE=DF', 'EF=11' + CM) +
+          '\nWhat is the perimeter of quadrilateral AEFD (in cm)?',
+          ['$23$', '$28$', '$34$', '$35$'], 3,
+          ['$BE=DF$, therefore $AE+FD=AE+EB=AB$.', '$AE+FD+AD=AB+AD=\\frac{46}{2}=23$.', 'Add the cut: $P=23+11=34$.'], fig={'7': '11'})
+    _rn_p(M, Ad(15), 'EF divides rectangle ABCD into two smaller rectangles. The sum of their perimeters is 16 cm greater than the perimeter of ABCD. '
+          'Given: $CD=13$ cm. What is the area of the shaded triangle EDC (in cm²)?',
+          ['$26$', '$52$', '$104$', '$208$'], 2,
+          ['The two small perimeters contain every outer side once and the cut EF twice: $2\\cdot EF=16$, therefore $EF=8$.',
+           'EF is the height from E to CD: $S=\\frac{13\\cdot8}{2}=52$.'], fig={'14': '13'})
+    _rn_p(M, Ad(16), 'ABCD is a square. E lies on BC. The shaded triangle AEC has area 42 cm², which is $\\frac7{24}$ of the square’s area. '
+          'What is BE (in cm)?',
+          ['$4$', '$5$', '$6$', '$7$'], 2,
+          ['The square: $\\frac{42\\cdot24}{7}=144$, therefore its side is 12.',
+           'Triangle AEC has height $AB=12$ to the base EC: $\\frac{12\\cdot EC}{2}=42$, therefore $EC=7$.', '$BE=12-7=5$.'])
+    _rn_p(M, Ad(17), 'ABCD is a trapezoid, and $a>0$. Given:\n' + _cases('AD\\parallel BC', 'AD=3a', 'BC=7a') +
+          '\nE and F lie on BC. The area of trapezoid AEFD equals the combined areas of the two shaded triangles. What is EF?',
+          ['$a$', '$2a$', '$3a$', '$4a$'], 2,
+          ['The inner trapezoid is half of the whole area, with the same height. So the sum of its bases is half of $3a+7a=10a$: it is $5a$.',
+           '$3a+EF=5a$, therefore $EF=2a$.'], svg=_rn_a17())
+    _rn_p(M, Ad(18), 'ABCD is a parallelogram, and AECF is a square. Given: $AD=15$ cm. The parallelogram’s area is 3 times as much as the square’s area. '
+          'What is AE (in cm)?',
+          ['$3$', '$5$', '$6$', '$10$'], 2,
+          ['Call $AE=x$. It is the side of the square and also the height of the parallelogram to BC, and $BC=AD=15$.',
+           '$15x=3x^2$. Divide by $3x$ (it is not 0): $x=5$.'], fig={'12': '15'})
+    _rn_p(M, Ad(19), 'Four squares with areas $a^2$, $b^2$, $c^2$ and $d^2$ are arranged as in the accompanying figure, where $0<a<b<c<d$. '
+          'What is the perimeter of the resulting figure?',
+          ['$2a+2b+2c+2d$', '$2b+2c+4d$', '$4a+4b+c+d$', '$3a+2c+3d$'], 2,
+          ['The four squares have a total perimeter of $4(a+b+c+d)$.',
+           'The shared edges ($c$, $b$ and $2a$ in total) are inside the figure, and each was counted twice. Take away $2(c+b+2a)$.',
+           '$4a+4b+4c+4d-2c-2b-4a=2b+2c+4d$.'], fig={'s²': 'd²', 'r²': 'c²', 'q²': 'b²', 'p²': 'a²'})
+    _rn_p(M, Ad(20), 'Two rectangles overlap at an angle of 45°, forming the shaded parallelogram. Their widths are 5 cm and $3\\sqrt2$ cm, as marked. '
+          'What is the shaded area (in cm²)?',
+          ['$15$', '$15\\sqrt2$', '$30$', '$60$'], 3,
+          ['The tilted side inside the vertical strip is the hypotenuse of a 45-45-90 triangle with leg $3\\sqrt2$. Its length is $3\\sqrt2\\cdot\\sqrt2=6$.',
+           'The height to that side is the width of the tilted rectangle: 5.', '$S=6\\cdot5=30$.'], fig={'4√2': '3√2', '6': '5'})
+
+
+def rn_practice(M):
+    """Approved clean-up (62 -> 48): copies, 8 of the 12 English extras (keep 4), 3 September items whose type the Hebrew practice has."""
+    out = ['q-r26-t32-18',          # copy of q-r26-t32-09 (parallelogram with a special angle)
+           'geo32-advanced-p21',    # copy of guided q-r26-t32-07 (perimeter + diagonal -> area)
+           'geo32-foundation-p22',  # copy: rhombus from its diagonals (guided g051 type, adv-p23)
+           'geo32-foundation-p25',  # = the lesson example (diagonal +50% -> area up 125%)
+           'geo32-foundation-p26', 'geo32-foundation-p27', 'geo32-foundation-p21',
+           'geo32-advanced-p26', 'geo32-advanced-p23', 'geo32-advanced-p25', 'geo32-advanced-p24',
+           'q-r26-t32-13',          # midpoint quadrilateral: Hebrew foundation p16
+           'q-r26-t32-21',          # rhombus from rectangle midpoints, a triple: Hebrew foundation p16
+           'q-r26-t32-20']          # trapezoid + special triangle: Hebrew advanced p03 (and = q-08 drop-a-height)
+    for qid in out:
+        assert M.section_of(qid) in (FOUND, ADVP), qid
+        M.unplace(qid)
+    f = lambda *k: ['geo32-foundation-p%02d' % x for x in k]
+    a = lambda *k: ['geo32-advanced-p%02d' % x for x in k]
+    p = lambda *k: ['q-r26-t32-%02d' % x for x in k]
+    M.practice_order(FOUND, f(13, 14, 5, 8, 18, 9, 4, 12, 3, 2, 17, 11) + p(9) + f(24) + p(12) + f(23, 19) + p(8) + f(16, 6, 15, 10, 7, 20, 1))
+    M.practice_order(ADVP, a(9, 27, 16, 2, 7, 11, 3, 5, 12, 13, 4, 6, 10, 1, 15, 14) + p(17) + a(19, 22, 8, 17, 18, 20))
+
+
+def rn_lessons_cards(M):
+    # summary 2: "a third of the base -> a sixth" was the Hebrew lesson example -> a fifth -> a tenth
+    vid = 'r26-t32-summary-2'
+    _rn_sub(M, vid, [('On $\\frac13$ of the base: $\\frac13\\times\\frac12=\\frac16$', 'On $\\frac15$ of the base: $\\frac15\\times\\frac12=\\frac1{10}$'),
+                     ('On a third of the base? A third of a half — one sixth.', 'On a fifth of the base? A fifth of a half — one tenth.')])
+    # the perimeter card copied the staircase question (12 wide, 8 tall)
+    c = M.card('mem-r26-t32-perimeter')
+    c['tips'] = ['Area and perimeter are different questions: $9\\times5$ is an area, $2(9+5)$ is a perimeter.']
+
+
+def renumber_pass(M):
+    rn_guided(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+    rn_lessons_cards(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last
