@@ -12,18 +12,21 @@
 import json, os, re
 
 ROOT = os.path.expanduser('~/Documents/Course.recordings')
-TAKE = re.compile(r'^(.+)-\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z\.(mp4|webm)$')
+TAKE = re.compile(r'^(.+)-(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z)\.(mp4|webm)$')
 
 
-def recorded_ids(root=ROOT):
-    ids = set()
+def takes(root=ROOT):
+    """(videoId, time stamp 'YYYY-MM-DDTHH-MM-SS-mmmZ') of every teacher take in the recordings folder."""
     for dp, dn, fn in os.walk(root):
         dn[:] = [d for d in dn if not d.startswith(('_', '.'))]   # _ai_audio etc. are not teacher takes
         for f in fn:
             m = TAKE.match(f)
             if m:
-                ids.add(m.group(1))
-    return sorted(ids)
+                yield m.group(1), m.group(2)
+
+
+def recorded_ids(root=ROOT):
+    return sorted({vid for vid, ts in takes(root)})
 
 
 JS = r"""

@@ -276,12 +276,21 @@ _left = no_question_numbers.report(D)
 assert not _left, 'videos still mention question numbers: %r' % _left[:5]
 print('NITE terminology (changes per rule and field type):'); print(terminology.report(TERM))
 
+# ---------- arrow chains reveal one part per click (studio_arrows.py); videos recorded before its CUTOFF stay frozen ----------
+import studio_arrows
+ARW_FROZEN, ARW_LATE = studio_arrows.frozen_ids()
+ARW = studio_arrows.apply_data(D, ARW_FROZEN)
+print('arrow parts: %d items in %d videos (%d beats, %d extra clicks); %d recorded videos frozen (%d of them have arrow lines, kept whole)'
+      % (ARW['items'], len(ARW['videos']), ARW['beats'], ARW['cues'], len(ARW_FROZEN), len(ARW['frozen_skipped'])))
+_late = sorted({vid for vid, ts in ARW_LATE if vid in ARW['videos']})
+if _late: print('  WARNING: takes recorded after CUTOFF %s for videos that now reveal arrows in parts: %s — if they were made with an older studio file, move CUTOFF later and rebuild' % (studio_arrows.CUTOFF, _late))
+
 # ---------- write ----------
 body = json.dumps(D, ensure_ascii=False, separators=(',', ':'))
 s2, i2, j2, _ = load(BASE)   # positions in the base; recompute on the patched html
 k0 = s.find('window.COURSE=') + len('window.COURSE='); k1 = s.find('</script>', k0)
 out = s[:k0] + body + ';' + s[k1:]
-import slide_style, studio_ui, studio_cut, studio_edit, studio_continue, studio_ai, studio_done; out = studio_done.apply(studio_ai.apply(studio_continue.apply(studio_edit.apply(studio_cut.apply(studio_ui.apply(slide_style.apply(out)))))))   # slide look: teal theme, bold labels, panels, larger text
+import slide_style, studio_ui, studio_cut, studio_edit, studio_continue, studio_ai, studio_done; out = studio_arrows.apply(studio_done.apply(studio_ai.apply(studio_continue.apply(studio_edit.apply(studio_cut.apply(studio_ui.apply(slide_style.apply(out))))))), ARW_FROZEN)   # slide look: teal theme, bold labels, panels, larger text
 open(OUT, 'w', encoding='utf-8').write(out)
 print('wrote', OUT, '%.1f MB' % (len(out) / 1e6))
 
