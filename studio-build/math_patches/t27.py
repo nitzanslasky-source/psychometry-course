@@ -983,6 +983,7 @@ def apply(M):
                 if b.get('canvas', '').startswith('Pre-loaded — question'):
                     b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, stem)
     cut_repeats(M)
+    add_methods(M)   # 2026-10-06 new exam methods (runs last)
 
 
 # =====================================================================================
@@ -1088,3 +1089,113 @@ def cut_repeats(M):
               'And the boat in still water is the average of the two speeds: twenty-four plus sixteen, over two — twenty.',
               T(r'Boat $=\frac{\text{down}+\text{up}}{2}=\frac{24+16}{2}=20$', 34),
               "'Boat = (down + up) ÷ 2 = (24 + 16) ÷ 2 = 20' appears")
+
+
+# =====================================================================================
+# 2026-10-06 new exam methods (teacher-approved). Nothing in topic 27 is recorded.
+# 1. Product in the middle: every motion table is Speed · Distance · Time (like Team · Work · Time), so the V works.
+# 2. Speed Ratios: one slide "Two things change? The V" + one guided question with a solution video.
+# 3. Card: the V row and "x times slower / smaller = ÷ x".
+# =====================================================================================
+def _reorder_tables(M):
+    """Every Distance/Speed/Time table in topic 27 -> Speed, Distance, Time (other columns keep their place)."""
+    done = []
+    for f in M.D['flow']:
+        if f['topic'] != TOPIC or f['type'] != 'video': continue
+        v = M.video(f['ref'])
+        for n, b in enumerate(v['beats'], 1):
+            for it in b['items']:
+                tv = it.get('v') or {}
+                if tv.get('type') != 'table': continue
+                h = tv['headers']
+                if not {'Distance', 'Speed', 'Time'} <= set(h): continue
+                pos = sorted(h.index(x) for x in ('Distance', 'Speed', 'Time'))
+                src = [h.index('Speed'), h.index('Distance'), h.index('Time')]
+                perm = list(range(len(h)))
+                for p, s_ in zip(pos, src): perm[p] = s_
+                tv['headers'] = [h[k] for k in perm]
+                tv['rows'] = [[r[k] for k in perm] for r in tv['rows']]
+                M.touched_videos.add(v['id']); done.append((v['id'], n))
+    return done
+
+
+def add_methods(M):
+    # ---- 1. the table order -------------------------------------------------------------
+    done = _reorder_tables(M)
+    assert len(done) >= 6, done
+    _fix_say(M, L1, 6, 'Three columns: distance, speed, time.',
+             'Three columns: speed, distance, time. Distance in the middle — because distance is speed times time, just like work in Team, Work, Time.')
+    _fix_say(M, 'solve-wp27-g119', 2, 'A distance–time–speed table.', 'A speed–distance–time table.')
+    c = M.card('mem-motion')
+    c['tips'] = [t.replace('Make a distance–speed–time table: one row each.',
+                           'Make a speed–distance–time table (distance in the middle): one row each.') for t in c['tips']]
+    assert any('distance in the middle' in t for t in c['tips'])
+
+    # ---- 2. Speed Ratios: "Two things change? The V" ---------------------------------------
+    vid = L3   # wp-110
+    last = len(M.video(vid)['beats'])
+    M.edit_lines(vid, last, lambda ls: [l for l in ls if l.get('say') != 'Two questions next — watch how the ratios do all the work.'])
+    M.insert_slides(vid, last, [dict(mode='concept', active=5, title='Two things change? The V', script=[
+        'One more tool. What if TWO things change at once — the speed and the time — and you get only relations?',
+        A("'A and B' appears", T(r'A is $3$ times as fast as B and drives half as long. A covers $90$ km. How far does B drive?', size=36, gap=40)),
+        'Make the table like a team table: speed, distance, time. Distance in the middle — it is speed times time, like work is team times time.',
+        A("'Speed · Distance · Time table' appears", TABLE(['', 'Speed', 'Distance', 'Time'], [['A', '3', '90', '1'], ['B', '1', '?', '2']], w=720, h=170)),
+        'No real speeds or times? Put in the relations. A: speed three, time one. B: speed one — and time two, because A drives half as long as B.',
+        'The question row goes second. The blank is in the middle column — so the V turns upside down: bottom-left, top-middle, bottom-right.',
+        D('Draw an upside-down V through 1, 90 and 2; write "? = (1 · 90 · 2) ÷ (3 · 1) = 60"'),
+        'One times ninety times two, divided by the other two — three times one. Sixty kilometers.',
+        'Why it works: B is three times slower — a third of the distance — but drives twice as long — twice the distance. Ninety times a third times two: sixty.',
+        A("'Two things change → the V, distance in the middle' appears", T(r'Two things change? The V, distance in the middle', size=40, gap=50)),
+        'So: two things change? The V, with distance in the middle.',
+        'Three questions next — watch how the ratios do all the work.'])])
+    sb = M.video(vid)['hybrid']['sidebar']
+    M.set_sidebar(vid, sb + ['Two things change'])
+
+    # ---- guided question right after Q5 (wp27-g112) -----------------------------------------
+    qid = 'q-r26-t27-31'
+    M.new_q(qid, TOPIC,
+            "A delivery van travels 3 times as far as a scooter, at 1.5 times the scooter's speed. "
+            "The scooter's trip takes 40 minutes. How many minutes does the van's trip take?",
+            ['20', '80', '120', '180'], 2,
+            ['Table Speed · Distance · Time. Scooter: $1$, $1$, $40$. Van: $1.5$, $3$, $?$.',
+             'The blank is in the Time column, so the V: top-left $\\times$ bottom-middle $\\times$ top-right, divided by the other two: '
+             '$\\frac{1\\cdot3\\cdot40}{1\\cdot1.5}=\\frac{120}{1.5}=80$ minutes.',
+             'Or by factors: time $=$ distance $\\div$ speed. Distance $\\times3$ (same way), speed $\\times1.5$ (opposite way, flip): '
+             '$40\\times3\\times\\frac23=80$.',
+             'Traps: $180=40\\times3\\times1.5$ (speed not flipped); $120$ ignores the speed.'])
+    M.place_q(qid, M.section_of('wp27-g112'), after='solve-wp27-g112')
+    group_sb = list(M.video('solve-wp27-g112')['hybrid']['sidebar'])
+    n = M.next_question_number(TOPIC)
+    lab = 'Question %d' % n
+    new_sb = group_sb + [lab]
+    for v in M.D['videos'].values():
+        if v['topic'] == TOPIC and v.get('kind') == 'solution' and v.get('hybrid', {}).get('sidebar') == group_sb:
+            M.set_sidebar(v['id'], new_sb)
+    group = M.video('solve-wp27-g112')['beats'][0]['title']
+    _solution(M, qid, group, new_sb, ['Two things change at once — the distance and the speed. The V.'], [
+        ('Method 1 · The V', [
+            'No real distances, no real speed. Only relations — and one real time.',
+            A("'Speed · Distance · Time table' appears", TABLE(['', 'Speed', 'Distance', 'Time'], [['Scooter', '1', '1', '40'], ['Van', '1.5', '3', '?']], w=720, h=170)),
+            'Speed, distance, time — distance in the middle. Scooter: speed one, distance one, forty minutes.',
+            'Van: speed one and a half, distance three. The time is the question — row two.',
+            'The blank is in the Time column. A normal V: top-left, bottom-middle, top-right.',
+            D('Draw a V through 1, 3 and 40; write "? = (1 · 3 · 40) ÷ (1 · 1.5) = 120 ÷ 1.5 = 80"'),
+            'One times three times forty: a hundred twenty. Divided by the other two, one times one and a half: eighty.',
+            D('Circle choice 2'),
+            'Eighty minutes. Choice two.']),
+        ('Method 2 · Compare by factors', [
+            'The same thing without a table. Time equals distance divided by speed.',
+            D('Write "distance × 3 → time × 3 (same way)"'),
+            'Three times as far: more distance, more time. Same way — times three.',
+            D('Write "speed × 3/2 → time × 2/3 (opposite way)"'),
+            'One and a half times as fast: more speed, LESS time. Opposite way — flip three halves to two thirds.',
+            D('Write "40 × 3 × 2/3 = 80"'),
+            'Forty times three times two thirds: eighty.',
+            'A hundred eighty is the trap: the speed was not flipped. A hundred twenty forgot the speed. A faster van with three times the road — more than forty, less than a hundred twenty.']),
+    ])
+
+    # ---- 3. memory card ------------------------------------------------------------------------
+    rows = next(t for t in c['tables'] if t.get('title', '').startswith('Ratios'))['rows']
+    rows.append(['Two things change', 'table Speed · Distance · Time, distance in the middle $\\to$ the V',
+                 'A: $3$, $90$, $1$ · B: $1$, $?$, $2$ $\\to$ $\\frac{1\\cdot90\\cdot2}{3\\cdot1}=60$'])
+    c['tips'].insert(1, '"$x$ times slower / smaller" $=\\div x$: A is $3$ times slower than B $\\to$ A\'s speed $=$ B\'s $\\div3$.')

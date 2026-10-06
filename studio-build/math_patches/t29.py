@@ -156,6 +156,7 @@ def apply(M):
     _american(M)
     _summary(M)
     cut_repeats(M)
+    add_methods(M)   # 2026-10-06 new exam methods (runs last)
 
 
 # ------------------------------------------------------------------------------------------------
@@ -840,3 +841,40 @@ def cut_repeats(M):
             if b.get('mode') == 'concept':
                 b['active'] = new_sb.index(old_sb[b['active']])
         M.set_sidebar(vid, new_sb)
+
+
+# =====================================================================================
+# 2026-10-06 new exam methods (teacher-approved). Nothing in topic 29 is recorded.
+# "Which door?" — COUNT / PATH / SYMMETRY: a table at the top of the memory card + one summary slide.
+# =====================================================================================
+def add_methods(M):
+    c = M.card('mem-probability')
+    c['tables'].insert(0, {'title': 'Which door? Decide first', 'head': ['Door', 'When', 'Do', 'Example'], 'rows': [
+        ['COUNT', 'equally likely outcomes you can list (dice, a bag)', 'wanted $\\div$ all',
+         'two dice, sum $7$: $\\frac{6}{36}=\\frac16$'],
+        ['PATH', 'the story happens in steps (draws one after another, rounds)', 'multiply along the path, add the paths',
+         '3 red, 2 blue, 2 red in a row: $\\frac35\\cdot\\frac24=\\frac{3}{10}$'],
+        ['SYMMETRY', 'nothing makes one person or place special', 'everyone has the same chance: $\\frac1n$',
+         '5 people in a random line, Dana last: $\\frac15$']]})
+
+    vid = 'r26-t29-summary'
+    v = M.video(vid)
+    k = next(i for i, b in enumerate(v['beats'], 1) if b['title'] == 'Before you practice')
+    M.insert_slides(vid, k - 1, [dict(mode='concept', active=k - 2, title='Which door?', script=[
+        'Before you practice — pick the door first.',
+        A("'COUNT' appears", T(r'COUNT: equally likely outcomes $\to$ wanted $\div$ all', size=36, gap=40)),
+        'Door one, count: every outcome is equally likely and easy to list — dice, a bag. Wanted over all.',
+        A("'two dice, sum 7' appears", T(r'two dice, sum $7$: $\frac{6}{36}=\frac16$', size=32, gap=20)),
+        'Two dice, sum seven: six pairs out of thirty-six.',
+        A("'PATH' appears", T(r'PATH: the story in steps $\to$ multiply along the path, add the paths', size=36, gap=40)),
+        'Door two, path: the story happens in steps. Multiply along the path. Several paths to what you want? Add them.',
+        A("'3 red, 2 blue' appears", T(r'3 red, 2 blue, two reds in a row: $\frac35\cdot\frac24=\frac{3}{10}$', size=32, gap=20)),
+        'Three fifths, then two quarters — one red is already gone. Three tenths.',
+        A("'SYMMETRY' appears", T(r'SYMMETRY: everyone has the same chance $\to$ $\frac1n$', size=36, gap=40)),
+        'Door three, symmetry: nobody is special, so the chance splits equally.',
+        A("'Dana last' appears", T(r'5 people in a random line, Dana last: $\frac15$', size=32, gap=20)),
+        'Dana is last with chance one fifth. First or third — the same. No counting at all.',
+        'Three doors — and most of the exam\'s probability questions go through one of them.'])])
+    sb = list(v['hybrid']['sidebar'])
+    M.set_sidebar(vid, sb[:k - 2] + ['Which door?'] + sb[k - 2:])
+    v['beats'][k]['active'] = k - 1   # "Before you practice" moves down one

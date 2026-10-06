@@ -262,6 +262,13 @@ mk('pt-q15', 15, 6, r'Orit and Batya decided to go on a trip and to share the ex
    ['5 : 3', '2 : 1', '3 : 1', '5 : 1'], 1, [
     r'Say each of them undertook to pay 3 (6 in all). Orit paid $\frac{1}{3}\cdot3=1$, so Batya paid 5.',
     r'What Batya paid to what she undertook to pay: 5 : 3.'])
+# ---- Picking values that fit (added 2026-10-06; original question, not from the book) ----
+mk('pt-q24', 15, 7, r'Given: $x\ne-5$' '\n' r'$xy+5y=2x+10$' '\n' r'$y=?$',
+   [r'$-5$', r'$-2$', '2', 'It cannot be determined from the given information'], 3, [
+    r'One equation with two letters, and they ask for one value, so the answer is the same for every legal x. Pick $x=0$ (allowed, since $x\ne-5$): $5y=10$, so $y=2$.',
+    r'Check with $x=1$: $y+5y=2+10$, $6y=12$, $y=2$ again, so y does not depend on x and "cannot be determined" is out.',
+    r'Algebra: $xy+5y-2x-10=y(x+5)-2(x+5)=(x+5)(y-2)=0$. Since $x\ne-5$, $y-2=0$ and $y=2$.'])
+QUESTIONS['pt-q24']['source'] = 'Original question (method: picking values that fit)'
 
 # ---- Order-of-magnitude estimation (book p. 16-17) ----
 mk('pt-q16', 16, 1, 'AOB is a sector of a circle with center O and a radius of 2 cm.\n'
@@ -331,7 +338,7 @@ def G(i, qid, group, intro, slides, fig=False):
 
 
 GI, GA, GN, GE, GH = 'First Examples', 'Plugging In Answers', 'Plugging In Numbers', 'Estimation', 'Insight Questions'
-SBN = {GI: 5, GA: 4, GN: 6, GE: 4, GH: 4}
+SBN = {GI: 5, GA: 4, GN: 7, GE: 4, GH: 4}
 
 
 # =====================================================================================================================
@@ -847,7 +854,8 @@ G(3, 'pt-q09', GA,
 # ------------------------------------------------------------------ lesson: plugging in numbers (seg3)
 lesson('pt51-plug-numbers', 'Plugging In Numbers',
  ['The #1 technique', 'When: an expression', 'Expression ≠ equation', 'When: unknown choices', 'When: ratios',
-  'Eliminate 3', 'Not 3? Plug again', 'Distinct results', 'Convenient numbers', 'Keep the conditions', 'It flattens the exam'], [
+  'Case 4: pick values', 'Pick values: watch out', 'Eliminate 3', 'Distinct results', 'Convenient numbers',
+  'Nothing-changes value', 'Keep the conditions', 'It flattens the exam'], [
  dict(mode='title', title='Plugging In Numbers', script=[
   "Psychometric thinking — plugging in numbers.",
   "The most common technique of all our super-methods.",
@@ -861,7 +869,7 @@ lesson('pt51-plug-numbers', 'Plugging In Numbers',
   "That gives us a double advantage: in the difficulty of the question, and in the time it takes to solve.",
  ]),
  dict(mode='concept', active=1, title='When: an expression', script=[
-  "When are we allowed to use it? There are three cases.",
+  "When are we allowed to use it? There are four cases.",
   A("Case 1 appears", T('Case 1: an expression with an unknown — and numerical answers', size=40)),
   "The first case: an expression with an unknown. x can be any number, as long as it meets the conditions of the question.",
   "And if the answers are numbers, then whatever value I plug in for x, I'll always get the same answer.",
@@ -871,8 +879,10 @@ lesson('pt51-plug-numbers', 'Plugging In Numbers',
  dict(mode='concept', active=2, title='Expression ≠ equation', script=[
   A("Expression appears", T('Expression: something = ?  → you may plug in', size=42)),
   "Just notice: an expression means I have something equals question mark.",
-  A("Equation appears", T('Equation: something = something  → do not plug in', size=42)),
-  "An equation is something equals something — and then I may not plug in. There, x has one specific value; I can't choose it.",
+  A("Equation appears", T('An equation with ONE unknown → do not invent its value — plug in the answer choices instead', size=38)),
+  "An equation is something equals something. If it has only one unknown — like 3x plus 5 equals 20 — then x has one specific value. I can't choose it.",
+  "So there I don't invent a value for x. If the answers are numbers, I plug in the answer choices instead — that's the method from the last lesson.",
+  "But careful — that's only when the equation has one unknown. When it has more letters than equations, the story changes. That's case four, in a minute.",
  ]),
  dict(mode='concept', active=3, title='When: unknown choices', script=[
   A("Case 2 appears", T('Case 2: an unknown in the answers', size=42)),
@@ -886,26 +896,55 @@ lesson('pt51-plug-numbers', 'Plugging In Numbers',
   "Why? Because in a ratio the numbers don't matter. The ratio 1 to 2, 2 to 4, 10 to 20 — it's the same ratio.",
   "And if the numbers don't matter, we can choose numbers that are convenient to work with, instead of working with unknowns.",
  ]),
- dict(mode='concept', active=5, title='Eliminate 3', script=[
+ dict(mode='concept', active=5, title='Case 4: pick values', script=[
+  A("Case 4 appears", T('Case 4: more letters than equations — and they ask for ONE value', size=40)),
+  "The fourth case — and it's a very common one on the exam. We call it picking values that fit.",
+  "The cue: you get an equation — something equals something — but it has more letters than equations. Say one equation with x and y. And they ask for one number.",
+  "Think about what that means. One equation with two letters has many, many solutions. x equals this and y equals that, or x equals something else and y equals something else.",
+  "But the question says the answer is one number. So the answer must come out the same for every one of those solutions. It can't depend on which solution I take.",
+  "So I'm allowed to take the easiest solution there is. I give one letter a value I like, I solve the equation for the other letter, and I calculate what they ask.",
+  A("Example appears", T(r'$4x+6y=18$.  $6x+9y=?$', size=46)),
+  "Example. 4x plus 6y equals 18. What is 6x plus 9y?",
+  A("y = 0 appears", T(r'$y=0$:  $4x=18$ → $x=4.5$', size=42)),
+  "Which value do I pick? The best one is 0 — because 0 kills a whole term. Let y equal 0. Then 4x equals 18, so x is 4.5.",
+  A("Answer appears", T(r'$6x+9y=6\cdot4.5+0=27$', size=42)),
+  "Now what they ask: 6 times 4.5, plus 9 times 0. That's 27.",
+  A("Why appears", T(r'Why: $6x+9y=1.5\,(4x+6y)=1.5\cdot18=27$', size=40)),
+  "Why does it work? Because 6x plus 9y is exactly one and a half times 4x plus 6y. So it's one and a half times 18 — 27 — for every x and y. The algebra hides that; picking a value finds it without seeing it.",
+  A("Order appears", T('Pick: 0 first (it kills terms) · then 1 or 2 · solve for the other letter · check the choices', size=36)),
+  "So the order: try 0 first, because it kills terms. If 0 isn't allowed, or it makes a mess, try 1 or 2. Solve for the other letter. Then go to the answer choices.",
+ ]),
+ dict(mode='concept', active=6, title='Pick values: watch out', script=[
+  A("Conditions appears", T(r'Your values must obey EVERY condition ($y\ne-2$, positive, integer…) — and the equation', size=36)),
+  "Three things to watch out for. First: the values you pick must obey every condition in the question — y is not minus 2, x is positive, an integer — and of course the equation itself.",
+  "That's why we pick one letter and SOLVE for the other. We don't pick both — then the equation probably won't hold.",
+  A("Tie appears", T('1 often makes two choices give the same number → pick a second set of values', size=38)),
+  "Second: when you go to the choices, 1 often makes two of them tie. Then pick a second set of values and check only the choices that are left.",
+  A("Changes appears", T('The answer changes when your value changes → it cannot be determined', size=38)),
+  "Third: if you pick two different values and the thing they ask comes out different — then it really does depend on your choice. That means the answer is 'cannot be determined from the information'.",
+  A("Rule appears", T('More letters than equations, one value asked → give a letter an easy value, solve the rest', size=36)),
+  "The rule to remember: more letters than equations, and they ask for one value — give one letter an easy value, solve for the rest, and check.",
+ ]),
+ dict(mode='concept', active=7, title='Eliminate 3', script=[
   "What are our rules?",
   A("Eliminate appears", T('We do not look for the right answer — we must eliminate 3', size=40)),
   "We must eliminate three answers. We're not looking for the correct answer — we eliminate the ones that aren't correct.",
   A("Mark the 4th appears", T('Eliminated 3 → mark the 4th without checking', size=42)),
   "If we eliminated three answers, we can mark the fourth without checking.",
- ]),
- dict(mode='concept', active=6, title='Not 3? Plug again', script=[
   A("Plug again appears", T('Could not eliminate 3 → do another plug-in', size=42)),
   "If we didn't eliminate three answers, we need to do another plug-in — check another particular case.",
   A("Do not recheck appears", T('Answers already eliminated → do not check them again', size=40)),
   "And the answers we already eliminated — we don't need to check them again. We've already proven they're not the correct answer.",
  ]),
- dict(mode='concept', active=7, title='Distinct results', script=[
+ dict(mode='concept', active=8, title='Distinct results', script=[
   A("Distinct appears", T('Choose values that give distinct results', size=42)),
   "When we plug in, we try to choose values that will give distinct answers.",
   A("1 appears", T('1 is convenient — but in powers, products and quotients it changes nothing', size=38)),
   "We like small numbers, often 1. But with powers, multiplication and division, 1 has no effect — and every answer may come out the same.",
+  A("0 appears", T('0 is fine too — when it kills terms or makes the answer obvious. Two choices left? Plug a second number', size=36)),
+  "And 0? 0 is fine when it kills terms, or when it makes the answer obvious. If it leaves two choices, just plug in a second number.",
  ]),
- dict(mode='concept', active=8, title='Convenient numbers', script=[
+ dict(mode='concept', active=9, title='Convenient numbers', script=[
   A("Convenient appears", T('Choose a number that is convenient to calculate with', size=42)),
   "We try to plug in a number that's convenient for the calculation.",
   A("100 appears", T('Percent questions: plug in 100 — at the whole', size=42)),
@@ -913,13 +952,25 @@ lesson('pt51-plug-numbers', 'Plugging In Numbers',
   A("Change it appears", T('You chose the number → you may change it', size=42)),
   "And if along the way we see that it isn't convenient — we can change the plug-in. We chose it.",
  ]),
- dict(mode='concept', active=9, title='Keep the conditions', script=[
+ dict(mode='concept', active=10, title='Nothing-changes value', script=[
+  A("Nothing changes appears", T('The best value is often the one where NOTHING changes', size=42)),
+  "One more trick for choosing the number. In a story with letters, look for the value where nothing happens — where the answer is obvious without any formula.",
+  A("Bus appears", T('n friends rent a boat for P shekels; k more join. How much less does each pay?', size=36)),
+  "Example. n friends rent a boat for P shekels and split the cost. Then k more friends join, and they split it again. By how much less does each one pay?",
+  A("k = 0 appears", T('k = 0: nobody joins → each pays 0 less → every choice that is not 0 at k = 0 is out', size=36)),
+  "Plug in k equals 0. Nobody joined, so nobody pays less — the answer must be 0. Now go to the choices with k equals 0: every choice that doesn't give 0 is out. No calculation at all.",
+  A("Average appears", T('Averages: a new value EQUAL to the average → the average does not change', size=38)),
+  "The same in averages: if the new person's grade is exactly the average, the average doesn't change. That's often the fastest value to plug in.",
+  A("Second appears", T('Two choices left? Plug in a second, ordinary number (k = 1, n = 2)', size=38)),
+  "The limit: the nothing-changes value often leaves two choices. Then plug in a second, ordinary number — k equals 1, n equals 2 — and check only those two.",
+ ]),
+ dict(mode='concept', active=11, title='Keep the conditions', script=[
   A("Conditions appears", T('Never break a condition of the question (x ≥ 4, a positive integer, …)', size=38)),
   "Whatever we plug in must not break the conditions written in the question.",
   A("Figure appears", T('In a figure: choose a value that looks logical in the drawing', size=40)),
   "And in a figure, we plug in a number that looks logical from the drawing — not something that contradicts it.",
  ]),
- dict(mode='concept', active=10, title='It flattens the exam', script=[
+ dict(mode='concept', active=12, title='It flattens the exam', script=[
   A("Letters to numbers appears", T('The same question with numbers instead of letters = an easy question', size=40)),
   "Plugging in numbers lowers the difficulty of the question. If the question came with numbers instead of letters, it would be an easy one, somewhere at the beginning of the section.",
   A("Flattens appears", T('Plugging in numbers flattens the difficulty of the exam', size=42)),
@@ -951,8 +1002,9 @@ G(0, 'pt-q10', GN,
    "So what did we have here? An algebraic expression — and we decided to solve it by plugging in numbers. How did we know we could?",
    A("Case 1 appears", P('Case 1: we are given an expression with an unknown')),
    "The first case where we're allowed to: when we're given an expression with an unknown. Here we have an expression with an unknown inside.",
-   A("Not an equation appears", P('Expression: something = ? · Equation: something = something → do not plug in')),
-   "Just notice: an expression means I have something equals question mark. An equation is something equals something — and then I may not plug in.",
+   A("Not an equation appears", P('Expression: something = ? → plug in · An equation with ONE unknown → plug in the answers instead')),
+   "Just notice: an expression means I have something equals question mark. An equation is something equals something. If it has only one unknown, x has one specific value — I may not invent it. There I plug in the answer choices instead.",
+   "And when an equation has more letters than equations? Then I may pick values again — we'll see that as case four.",
    "An expression — something equals question mark: I can plug in a number instead of the unknown, and solve much more easily. Let's see another example.",
   ])]),
 
@@ -1157,14 +1209,59 @@ G(5, 'pt-q15', GN,
   ('What we learned', [
    "So let's sum up. First, we saw that plugging in numbers works like magic. It takes hard questions and crumbles them — turns them into beginning-of-section questions.",
    "That gives us a double advantage: in the difficulty of the question, and in the solving time.",
-   A("When appears", P('When: an expression with an unknown · unknowns in the answers · ratio problems')),
-   "When are we allowed to use it? When we have an expression with an unknown, when we have an unknown in the answers, and in ratio problems.",
+   A("When appears", P('When: an expression with an unknown · unknowns in the answers · ratio problems · more letters than equations')),
+   "When are we allowed to use it? When we have an expression with an unknown, when we have an unknown in the answers, in ratio problems — and when an equation has more letters than equations and they ask for one value.",
    A("Rules appears", P('Eliminate 3 · 3 out → mark the 4th · not 3 → plug in again')),
    "What are our rules? We must eliminate three answers — we're not looking for the correct answer, we eliminate the ones that aren't correct. If we eliminated three, we mark the fourth without checking.",
    "If we didn't eliminate three, we need to do another plug-in.",
    A("Choose well appears", P('Distinct results · convenient numbers · you may change your number')),
    "When we plug in, we try to choose plug-ins that give distinct answers, and a number that's convenient to calculate with. And if along the way we see it isn't convenient — we can change the plug-in.",
    "One last thing: plugging in numbers is the most important technique on the psychometric exam. Practice it as much as you can — it will help you a lot on the exam.",
+  ])]),
+
+G(6, 'pt-q24', GN,
+ ["One more question — case four: picking values that fit.", "One equation, two letters — and they ask for one value."],
+ [('Read the question', [
+   "Given: x is not equal to minus 5. And an equation: x y plus 5y equals 2x plus 10. They ask: what does y equal?",
+   "Look at what we have. One equation — and two letters, x and y. But they ask for one number.",
+   "The school way: move everything to one side, group the terms and factor. It works — but most students don't see the grouping, and get stuck.",
+   "Some students say: one equation, two unknowns — it can't be solved. And they mark 'cannot be determined'. That's the trap.",
+  ]),
+  ('Case 4: pick x = 0', [
+   A("Case 4 appears", P('More letters than equations, one value asked → pick a value for one letter, solve for the other')),
+   "This is case four. More letters than equations, and they ask for one value.",
+   "If y really has one value, it must be the same for every x that's allowed. So I may choose x myself — any x that obeys the conditions.",
+   "Which x? 0 — because 0 kills every term that has x in it. Is 0 allowed? The only condition is x is not minus 5. So yes.",
+   A("x = 0 appears", P(r'$x=0$:  $0+5y=0+10$ → $5y=10$ → $y=2$')),
+   "x equals 0: x y is 0, 2x is 0. We're left with 5y equals 10. So y is 2.",
+   "Notice what I did: I picked only x — and I solved for y from the equation. I didn't pick y too. If I picked both, the equation would probably not hold.",
+   "Choices one and two give minus 5 and minus 2 — not 2. Cross them out.",
+   D('Cross out choice 1'),
+   D('Cross out choice 2'),
+  ]),
+  ('Check with x = 1', [
+   "Two choices are left: 2, and 'cannot be determined'. How do I decide between them?",
+   "If y depended on x, then a different x would give a different y. So let's pick a second value and see.",
+   A("x = 1 appears", P(r'$x=1$:  $y+5y=2+10$ → $6y=12$ → $y=2$')),
+   "x equals 1: y plus 5y is 6y. 2 plus 10 is 12. 6y equals 12 — y is 2 again.",
+   "Same answer. y doesn't change when x changes — so it can be determined, and it's 2. Cross out choice four.",
+   D('Cross out choice 4'),
+   D('Circle choice 3'),
+   "Choice three. Two small plug-ins — maybe 20 seconds.",
+  ]),
+  ('Why it works', [
+   "Let's see why — so you trust it. Move everything to one side and group.",
+   A("Factor appears", P(r'$xy+5y-2x-10=y(x+5)-2(x+5)=(x+5)(y-2)=0$')),
+   "x y plus 5y is y times x plus 5. Minus 2x minus 10 is minus 2 times x plus 5. So we get x plus 5, times y minus 2, equals 0.",
+   A("Condition appears", P(r'$x\ne-5$ → $x+5\ne0$ → $y-2=0$ → $y=2$')),
+   "A product is 0 only when one of the factors is 0. x plus 5 can't be 0 — they told us x is not minus 5. So y minus 2 is 0, and y is 2, for every allowed x.",
+   "And now you see why they gave the condition. If x were minus 5, the equation would become 0 equals 0, and y could be anything. A condition like 'x is not minus 5' is a hint that the answer doesn't depend on x.",
+  ]),
+  ('What we learned', [
+   A("Rule appears", P('More letters than equations, one value asked → easy value (0 first), solve the rest, check the choices')),
+   "So the rule: more letters than equations, and they ask for one value — give one letter an easy value, 0 first, solve for the rest, and check the choices.",
+   A("Watch appears", P('Obey every condition · two choices left → a second value · the answer changes → cannot be determined')),
+   "Watch out: your value must obey every condition. If two choices are left, pick a second value. And if the answer changes when your value changes — that's when the answer is 'cannot be determined'.",
   ])]),
 
 # ------------------------------------------------------------------ lesson: order-of-magnitude estimation (seg4)
@@ -1576,12 +1673,14 @@ lesson('pt51-summary', 'Summary: The Super-Methods',
   "The traps: the round answer is usually right — not always. If it fails, just keep going. And after three are out, don't check the fourth.",
  ]),
  dict(mode='concept', active=2, title='Plug in numbers: when', script=[
-  A("Case 1 appears", T('1 · An expression with an unknown and numerical answers (not an equation)', size=38)),
-  "Plugging in numbers — when? One: an expression with an unknown — something equals question mark — and numerical answers. Not an equation.",
+  A("Case 1 appears", T('1 · An expression with an unknown and numerical answers (an equation with ONE unknown → plug in the answers instead)', size=36)),
+  "Plugging in numbers — when? One: an expression with an unknown — something equals question mark — and numerical answers. An equation with one unknown is different: x has one value, so don't invent it — plug in the answer choices instead.",
   A("Case 2 appears", T('2 · Unknowns in the answers', size=42)),
   "Two: unknowns in the answers.",
   A("Case 3 appears", T('3 · Ratio problems', size=42)),
   "Three: ratio problems — in a ratio the numbers don't matter.",
+  A("Case 4 appears", T('4 · More letters than equations, one value asked → pick values that fit (0 first), solve the rest', size=36)),
+  "Four: more letters than equations, and they ask for one value. The answer can't depend on your choice — so give one letter an easy value, 0 first, solve for the rest. Keep the conditions; if the answer changes with your choice, it cannot be determined.",
  ]),
  dict(mode='concept', active=3, title='Plug in numbers: rules', script=[
   A("Eliminate appears", T('Do not look for the right answer — eliminate 3 · 3 out → mark the 4th', size=38)),
@@ -1590,6 +1689,8 @@ lesson('pt51-summary', 'Summary: The Super-Methods',
   "Two left? Plug in another number — and don't recheck what you already eliminated.",
   A("Choose appears", T('Distinct results (1 fails with powers and products) · 100 at the whole in percents · keep the conditions', size=36)),
   "Choose numbers that give distinct results — 1 often fails with powers and products. In percents, put 100 at the whole. Keep the conditions of the question.",
+  A("Nothing appears", T('0 or the nothing-changes value (k = 0, a value equal to the average) is fine — two left → a second number', size=36)),
+  "0 is fine too — and so is the value where nothing changes: nobody joins, or the new value equals the average. If two choices survive, plug in a second number.",
   A("Change appears", T('You chose it → you can change it', size=42)),
   "And the trap: you're stuck with an ugly number. You aren't — you chose it, you can change it.",
  ]),
@@ -1623,7 +1724,7 @@ lesson('pt51-summary', 'Summary: The Super-Methods',
   "Before every question, always ask yourself:",
   A("Q1 appears", T('1 · Where is it in the section — does it look too hard for its place?', size=38)),
   A("Q2 appears", T('2 · Can I plug in the answers — starting from the round one?', size=38)),
-  A("Q3 appears", T('3 · Is there a letter I can replace with a number?', size=38)),
+  A("Q3 appears", T('3 · Is there a letter I can replace with a number — even in an equation with more letters?', size=36)),
   A("Q4 appears", T('4 · How big must the answer be? Which answers are impossible?', size=38)),
   A("Q5 appears", T('5 · Is part of it negligible, shared, or symmetric?', size=38)),
   "Where is it in the section? Can I plug in the answers? Is there a letter I can replace with a number? How big must the answer be? Is part of it negligible, shared or symmetric?",
@@ -1642,9 +1743,12 @@ MEMORY = [
    ['!Plugging in the answers', 'Numerical answers; a question you would solve with an equation',
     'Start from the most convenient, round answer; check it against all the data; it works → mark it',
     'Round answer fails → just keep going; 3 out → mark the 4th without checking'],
-   ['!Plugging in numbers', 'An expression with an unknown (not an equation); unknowns in the answers; ratio problems',
-    'Choose small, convenient numbers (100 at the whole in percents); eliminate 3 answers',
+   ['!Plugging in numbers', 'An expression with an unknown; unknowns in the answers; ratio problems (an equation with ONE unknown → plug in the answers instead)',
+    'Choose small, convenient numbers (100 at the whole in percents; 0 or the nothing-changes value when it makes the answer obvious); eliminate 3 answers',
     '1 gives the same result everywhere (powers, products) → plug in again; keep the conditions'],
+   ['!Plugging in numbers, case 4: picking values that fit', 'More letters than equations, and they ask for ONE value (e.g. 4x + 6y = 18, 6x + 9y = ?)',
+    'Give one letter an easy value (0 first, then 1 or 2), solve the equation for the rest, check the choices (y = 0 → x = 4.5 → 27)',
+    'Obey every condition (x ≠ −5, positive, integer); two choices tie → a second set; the answer changes with your choice → cannot be determined'],
    ['!Order-of-magnitude estimation', 'Areas, volumes, roots, π; answers far apart',
     'π ≈ 3, √2 ≈ 1.4, √3 ≈ 1.7; where is the π; negative area → out; partial calculation; drop negligible parts',
     'Only eliminates; figures: most are accurate, regular shapes always'],
@@ -1655,5 +1759,6 @@ MEMORY = [
   tips=['Too hard for its position in the section? There is a shortcut.',
         'Plugging in numbers: you do not look for the right answer — you eliminate 3.',
         'You chose the number, so you can change it.',
+        'More letters than equations and one value asked? The answer cannot depend on your choice: pick an easy value and solve the rest.',
         'At home, solve every question both ways: math and psychometric.']),
 ]

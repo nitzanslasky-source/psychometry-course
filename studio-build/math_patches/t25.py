@@ -621,6 +621,7 @@ def apply(M):
                 if b.get('canvas', '').startswith('Pre-loaded — question'):
                     b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (q['id'], q['stem'])
     cut_repeats(M)
+    add_methods(M)
 
 
 def _b(label, tex, size=42):
@@ -881,3 +882,47 @@ def cut_repeats(M):
     _add_line(M, 'solve-wp25-g087', 3, None,
               "Why does it balance? Weight times distance is the same on both sides: two times eight, one times sixteen.",
               T(r'Balanced: $2\times8=1\times16$', 36, y=620), "'Balanced: 2 × 8 = 1 × 16' appears")
+
+
+# =====================================================================================
+# 2026-10-06 new exam methods (teacher-approved): percent shares as weights (board slide in Q13
+# + card row), group totals "in t years", and the plug-in tip for "not necessarily equal". Runs last.
+# =====================================================================================
+def add_methods(M):
+    # ---- 1. Percent shares as weights: one slide at the end of Q13 (groups as weights) ------------
+    vid = 'solve-wp25-g089'
+    act = M.slide(vid, 3)['active']
+    M.insert_slides(vid, 3, [dict(mode='concept', active=act, title='Shares as weights', script=[
+        "One more case the exam loves: the group sizes are given as PERCENTS.",
+        A("'70% at 30, the rest at 50. Average?' appears",
+          T(r'$70\%$ of the items cost $30$, the rest cost $50$. Average?', size=42, gap=40)),
+        "The percents are the weights. Seventy percent at thirty, thirty percent at fifty.",
+        A("'average = cheap + (share of the expensive) × gap' appears",
+          T(r'Average $=$ cheap $+$ (share of the expensive) $\times$ gap', size=42, gap=40)),
+        "Here's the fast way. Start at the cheap value. The average moves toward the expensive value — exactly by the share of the expensive ones.",
+        D('Write "30 + 0.3 · 20 = 30 + 6 = 36"'),
+        "The gap is fifty minus thirty: twenty. The expensive share is thirty percent. Thirty percent of twenty is six. Thirty plus six: thirty-six.",
+        "Why? It's the see-saw again. Thirty percent of the weight sits at fifty, so the average goes thirty percent of the way from thirty to fifty.",
+        D('Write "balance: 70 × 6 = 30 × 14 = 420 ✓"'),
+        "Check the balance. Thirty-six is six above the cheap side and fourteen below the expensive side. Seventy times six, thirty times fourteen: four hundred twenty both. Balanced.",
+        "And the heavy side — seventy percent — got the small part of the gap, as always.",
+        "The trap is forty, the plain middle. That's only right when the shares are fifty-fifty.",
+        A("'Percent shares = weights' appears", T('Percent shares $=$ weights', size=46)),
+        "The rule: percent shares are weights. Cheap value, plus the expensive share times the gap.",
+    ])])
+
+    # ---- 2. Memory card -----------------------------------------------------------------------------
+    c = M.card('mem-averages')
+    basics = c['tables'][0]['rows']
+    k = next(i for i, r in enumerate(basics) if r[0].startswith('Every value')) + 1
+    basics.insert(k, ['Groups of different sizes, "in $t$ years"',
+                      'each group\'s TOTAL grows by $t\\times$ its head-count: $5$ boys, $3$ girls, $4$ years → '
+                      'boys $+20$, girls $+12$, the gap between the totals grows by $8$'])
+    weighted = c['tables'][1]['rows']
+    k = next(i for i, r in enumerate(weighted) if r[0] == 'Two groups') + 1
+    weighted.insert(k, ['Percent shares as weights',
+                        'average $=$ cheap value $+$ (share of the expensive) $\\times$ gap: $70\\%$ at $30$, the rest at $50$ → '
+                        '$30+0.3\\cdot20=36$ (the see-saw: $70\\cdot6=30\\cdot14$)'])
+    k = next(i for i, t in enumerate(c['tips']) if t.startswith('Letter answers? Plug in all values equal'))
+    c['tips'].insert(k + 1, '"Not necessarily equal to the average"? Equal numbers catch nothing — every choice '
+                            'equals the average. Use uneven numbers, like $0, 0, 0, 4$ (average $1$).')

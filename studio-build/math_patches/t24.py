@@ -706,6 +706,7 @@ def apply(M):
     summary(M)
     tidy(M)
     cut_repeats(M)
+    add_methods(M)
 
 
 # =====================================================================================================
@@ -920,3 +921,13 @@ def cut_repeats(M):
         "Two groups: the sum minus the total once. Three groups: minus the total twice."])
     _fix_say(M, vid, 4, 'So here: from zero to nine.', "So here: from zero to nine. Now a guided question — try it first.")
     M.set_sidebar(vid, ['Count who is missing', 'Can it be zero?', 'Pairs given'])
+
+
+# =====================================================================================================
+# 2026-10-06 new exam methods (teacher-approved): the hidden total. Card line only. Runs last.
+# =====================================================================================================
+def add_methods(M):
+    c = M.card('mem-overlap')
+    k = next(i for i, t in enumerate(c['tips']) if t.startswith('Percents? Stay in percent'))
+    c['tips'].insert(k + 1, 'No total given? Look for a natural one: $24$ hours, $7$ days, $100\\%$. '
+                            'Awake $18$ hours, at work $10$ hours → both for at least $18+10-24=4$ hours.')

@@ -102,3 +102,6 @@ Function `cut_repeats` (runs after `dedupe_examples`). Nothing in topic 17 is re
   - Cut "Distance & midpoint" → its example "from −7 to 5, a third of the way" WAS question Q14 `solve-q-r26-t17-05`. Q14 now explains the midpoint trap with the formula (+ board item "Midpoint = (a + b)/2"). Card `mem-r26-t17-reading`: the "a third of the way" example changed to −8 + ⅓ · 12 = −4.
   - "Test numbers": the clean-root numbers (¼, ⅛, 1/32) are taught in Q7 and Q8 → replaced by one line. They stay on the card.
   - Cut "Recap".
+
+## 2026-10-06 new exam methods
+Function `add_methods` (runs last). Card "The number line — ranges and arrows": new table "Signs hidden in the given" (second table, after the powers table): x² < x → 0 < x < 1; x < 2x → x > 0; x/3 > x → x < 0; a < b < 3a → a > 0, so b > 0 — each with the reason. No video changed.

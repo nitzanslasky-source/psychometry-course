@@ -951,3 +951,24 @@ def cut_repeats(M):
         for row in t['rows']:
             if row[0].startswith('A third of the way'): row[2] = '\\(-8+\\frac13\\cdot12=-4\\)'; hit += 1
     assert hit == 1
+
+
+# =====================================================================================
+# 2026-10-06 new exam methods: a letter compared with a multiple of itself fixes its sign (card only)
+# =====================================================================================
+def add_methods(M):
+    c = M.card(CARD)
+    c['tables'].insert(1, {'title': 'Signs hidden in the given', 'head': ['Given', 'So', 'Why'], 'rows': [
+        ['$x^2<x$', '$0<x<1$', 'only between 0 and 1 does squaring make a number smaller'],
+        ['$x<2x$', '$x>0$', 'subtract $x$: $0<x$ (doubling made it bigger)'],
+        ['$\\frac{x}{3}>x$', '$x<0$', 'a third of it is bigger: only for a negative $x$ ($-6\\to-2$)'],
+        ['$a<b<3a$', '$a>0$, so $b>0$', '$a<3a$ means $a>0$; $b$ is bigger than $a$'],
+    ]})
+
+
+_apply_before_add_methods = apply
+
+
+def apply(M):
+    _apply_before_add_methods(M)
+    add_methods(M)   # 2026-10-06: runs last

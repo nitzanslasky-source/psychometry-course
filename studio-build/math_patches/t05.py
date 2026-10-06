@@ -1347,3 +1347,222 @@ def apply(M):
     summary(M)
     new_numbers(M)
     order_changes(M)
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# 2026-10-06: new exam methods (found by solving real exams). Topic 5 is recorded: everything here is NEW and
+# placed after the last recorded video of "Advanced expressions" (solve-q-r26-t05-04); only the card, and the
+# summary video (not recorded), change.
+# ---------------------------------------------------------------------------------------------------------------
+def add_methods(M):
+    vid = 'r26-t05-power-count'
+    sb = ['What is a power?', 'Multiply and divide', 'Plus and minus', 'The rule', 'Example 1', 'Example 2',
+          'When it does not help', 'Recap']
+    C = lambda k, script, title=None: dict(title=title or sb[k], mode='concept', active=k, pre=[], script=script)
+    M.new_video(vid, TOPIC, 'Count the Powers', sb, [
+        dict(mode='title', title='Count the Powers', script=[
+            "Count the powers — a five-second check before you plug in.",
+            "When do you use it? When the question is an expression with letters, and the answer choices have letters too.",
+            "It often knocks out three choices without one calculation. And when plugging in gives a tie, it breaks the tie."]),
+        C(0, [
+            "First, what do I mean by the power of a piece?",
+            A('Power = number of letters multiplied appears', T('Power of a piece $=$ how many letters are multiplied in it', size=40)),
+            "Every piece has a power: the number of letters multiplied in it.",
+            A('x → 1 · xy → 2 · x²y → 3 appears', T('$x \\to 1 \\qquad xy \\to 2 \\qquad x^2y \\to 3$', size=52)),
+            "x alone: one letter. Power one. x times y: two letters. Power two.",
+            "x squared y is x times x times y. Three letters. Power three.",
+            A('5x² → 2 · 7 → 0 appears', T('$5x^2 \\to 2 \\qquad 7 \\to 0$', size=52)),
+            "A number in front doesn't count. Five x squared still has two letters: power two.",
+            "Why? The number only makes the piece bigger or smaller. It doesn't add a letter.",
+            "And a number alone, like seven, has no letters at all. Power zero."]),
+        C(1, [
+            A('Multiply → add appears', T('Multiply $\\to$ ADD the powers: $\\ x\\cdot y \\to 1+1=2$', size=44)),
+            "Multiplying letters? Add the powers. x times y: one plus one, two. You just count all the letters.",
+            A('Divide → subtract appears', T('Divide $\\to$ SUBTRACT: $\\ \\frac{x^2}{y}\\to 2-1=1$', size=44)),
+            "Dividing? Subtract. x squared over y: two minus one. Power one.",
+            "Why subtract? A letter on the bottom works against a letter on top. Think of x squared over x: one x cancels, and x is left. Two minus one.",
+            A('y/x → 0 · 1/x → −1 appears', T('$\\frac{y}{x}\\to 1-1=0 \\qquad \\frac{1}{x}\\to 0-1=-1$', size=48)),
+            "y over x: one minus one. Power zero.",
+            "One over x: nothing on top, one letter on the bottom. Zero minus one: power minus one."]),
+        C(2, [
+            A('Plus or minus → do NOT add appears', T('Plus or minus $\\to$ do NOT add: check each piece', size=44)),
+            "Now plus and minus. Here you do NOT add the powers.",
+            "A plus doesn't multiply anything. It just puts pieces side by side. So check each piece on its own.",
+            A('x² + y² → 2 and 2 → power 2 appears', T('$x^2+y^2$: $\\ 2$ and $2$ $\\to$ power $2$', size=48)),
+            "x squared plus y squared: the first piece has power two, the second has power two.",
+            "All the pieces have the same power? Then it's a clean expression, and that's its power. Two.",
+            A('x + 1 → 1 and 0 → mixed appears', T('$x+1$: $\\ 1$ and $0$ $\\to$ mixed', size=48)),
+            "x plus one: power one and power zero. Different powers. I call that mixed.",
+            A('(x + y)² → 2 · 1/(x+y) → −1 appears', T('$(x+y)^2 \\to 2 \\qquad \\frac{1}{x+y} \\to -1$', size=48)),
+            "A clean bracket acts like one piece. x plus y has power one. Squared: one plus one, power two.",
+            "One over x plus y: zero minus one. Power minus one."]),
+        C(3, [
+            A('Simplifying never changes the power appears', T('Simplifying never changes the power', size=46)),
+            "Here is why this works.",
+            "Factoring, cancelling, opening brackets — every legal step keeps the same number of letters in every piece.",
+            "So the expression you start with and the simplified answer have the same power.",
+            A('Right answer = same power as the question appears', T('Right answer $=$ the question\'s power', size=46)),
+            A('Different or mixed → out appears', T('A different power, or mixed $\\to$ cross it out', size=46)),
+            "The rule: count the power of the question. A choice with a different power is out. A mixed choice is out too.",
+            "No numbers, no plugging in. Just counting letters."]),
+        C(4, [
+            A('Example 1 appears', T('$\\frac{x^2-y^2}{x+y}+y=\\ ?$', size=56)),
+            A('Choices appear', T('(1) $x^2$ $\\qquad$ (2) $x+1$ $\\qquad$ (3) $x$ $\\qquad$ (4) $\\frac1x$', size=46)),
+            "Let's try it. x squared minus y squared, over x plus y, plus y.",
+            D('Under x² − y² write "2", under x + y write "1"'),
+            "The top: both pieces have power two. The bottom: both have power one.",
+            D('Write "2 − 1 = 1" and under + y write "1"'),
+            "Dividing: two minus one, power one. Then plus y: also power one. Clean. The question has power one.",
+            D('Next to the choices write: 2, mixed, 1, −1'),
+            "x squared: power two. Out. x plus one: mixed. Out. One over x: minus one. Out.",
+            D('Circle choice 3'),
+            "Only x is left. Choice three — and we didn't simplify anything.",
+            "Check: the top is x minus y, times x plus y. Cancel x plus y: x minus y, plus y. x. ✓"]),
+        C(5, [
+            A('Example 2 appears', T('$x(x+2y)+y^2=\\ ?$', size=56)),
+            A('Choices appear', T('(1) $(x+y)^2$ $\\quad$ (2) $x+y$ $\\quad$ (3) $\\frac{x^2+y^2}{x}$ $\\quad$ (4) $x+y^2$', size=42)),
+            "One more. x times x plus two y, plus y squared.",
+            D('Write "x · x → 2,  x · 2y → 2,  y² → 2"'),
+            "Open it in your head: x times x, power two. x times two y, power two — the two doesn't count. y squared, power two.",
+            "All twos. The question has power two.",
+            D('Next to the choices write: 2, 1, 1, mixed'),
+            "x plus y, squared: one plus one, two. Keep it.",
+            "x plus y: power one. Out.",
+            "x squared plus y squared, over x: two minus one, power one. Out.",
+            "x plus y squared: power one and power two. Mixed. Out.",
+            D('Circle choice 1'),
+            "Choice one. Check: x squared plus two x y plus y squared is exactly x plus y, squared. ✓"]),
+        C(6, [
+            "When doesn't it help?",
+            A('All choices same power → plug in appears', T('All the choices have the same power $\\to$ plug in', size=42)),
+            "One: all four choices have the question's power. Then counting kills nothing. Plug in numbers, as usual.",
+            A('Question mixed → plug in appears', T('The question itself is mixed, like $x^2+3$ $\\to$ plug in', size=42)),
+            "Two: the question itself is mixed — like x squared plus three. There's no single power to compare. Plug in.",
+            A('Tie? Check the powers appears', T('A plug-in tie? Check the powers of the tied choices', size=42)),
+            "And a bonus. You plugged in, and two choices gave the same number? Before you plug in again, count their powers.",
+            "Often only one of them has the question's power."]),
+        C(7, [
+            "Let's lock it in.",
+            A('Recap 1 appears', T('Power $=$ letters multiplied · numbers count $0$', size=42)),
+            A('Recap 2 appears', T('Multiply: add · divide: subtract · plus: each piece', size=42)),
+            A('Recap 3 appears', T('Different or mixed power $\\to$ out', size=42)),
+            "Letters in the choices? Count the powers first. The right answer has the question's power.",
+            "Two guided questions next. Try each one first — then watch."]),
+    ], ADV, after='solve-q-r26-t05-04')
+
+    n0 = M.next_question_number(TOPIC)
+    qsb = ['Question %d' % (n0 + k) for k in range(2)]
+    prev = vid
+
+    def guided(k, qid, stem, choices, correct, expl, intro, slides):
+        nonlocal prev
+        M.new_q(qid, TOPIC, stem, choices, correct, expl)
+        M.place_q(qid, ADV, after=prev)
+        n = M.next_question_number(TOPIC)
+        beats = [dict(mode='title', title='Question %d' % n, script=intro)]
+        for title, script in slides:
+            beats.append(dict(mode='question', active=k, title=title, pre=[Q(qid)], script=script))
+        M.new_video('solve-' + qid, TOPIC, 'Count the Powers', qsb, beats, ADV, kind='solution', qid=qid)
+        M.video('solve-' + qid)['beats'][0]['title'] = 'Count the Powers'
+        prev = 'solve-' + qid
+
+    # Question A - the power count decides alone (a plug-in with x = 2, y = 1 would tie choices 2 and 3)
+    guided(0, 'q-r26-t05-17', 'Given: $x\\ne -y$.\n$\\dfrac{x^3+x^2y}{x+y}-xy=\\ ?$',
+           ['$x-y$', '$x^2-x$', '$x(x-y)$', '$\\frac{x^2}{y}$'], 3,
+           ["Count the powers. The top: $x^3$ and $x^2y$ both have power $3$. The bottom $x+y$ has power $1$. The fraction has power $3-1=2$, and $xy$ has power $2$. So the question has power $2$.",
+            "Choices: $x-y$ has power $1$, $x^2-x$ is mixed ($2$ and $1$), $x(x-y)$ has power $1+1=2$, $\\frac{x^2}{y}$ has power $2-1=1$. Only choice 3 has power $2$.",
+            "Algebra: $x^3+x^2y=x^2(x+y)$, so the fraction is $x^2$, and $x^2-xy=x(x-y)$. The answer is choice 3.",
+            "Plug-in note: $x=2$, $y=1$ gives $\\frac{12}{3}-2=2$, and both choice 2 and choice 3 give $2$ — a tie. The power count breaks it."],
+           ["Question %s." % _qword(n0), "Letters in the question, letters in the choices. Count the powers first."], [
+            ('Method 1 · Count the powers', [
+                "Start with the question. The top: x cubed, three letters. x squared y, three letters. The top has power three.",
+                D('Under the top write "3", under x + y write "1"'),
+                "The bottom, x plus y: power one. Dividing: three minus one. Two.",
+                D('Under xy write "2"'),
+                "Minus x y: two letters, power two. Every piece is two. The question has power two.",
+                D('Next to the choices write: 1, mixed, 2, 1'),
+                "Choice one, x minus y: power one. Out.",
+                "Choice two, x squared minus x: two and one. Mixed. Out.",
+                "Choice three, x times x minus y: one plus one, two. Keep it.",
+                "Choice four, x squared over y: two minus one, one. Out.",
+                D('Circle choice 3'),
+                "Choice three. Three choices gone, and I didn't simplify anything."]),
+            ('Method 2 · The algebra', [
+                "Let's check it with the algebra.",
+                D('Write "x³ + x²y = x²(x + y)"'),
+                "Both pieces on top contain x squared. Take it out: x squared, times x plus y.",
+                D('Cancel x + y; write "x² − xy = x(x − y)"'),
+                "Cancel x plus y — it isn't zero. x squared minus x y. Take out x: x times x minus y. Choice three. ✓",
+                "And a warning. If you plug in x equals two, y equals one, choices two and three both give two. A tie.",
+                "The powers break that tie at once: choice two is mixed."]),
+        ])
+
+    # Question B - plugging in ones gives a three-way tie; the powers break it
+    guided(1, 'q-r26-t05-18', 'Given: $a\\ne0$.\n$\\dfrac{(a+b)^2-(a-b)^2}{2a}=\\ ?$',
+           ['$2$', '$2b$', '$2ab$', '$b^2$'], 2,
+           ["Plugging in $a=b=1$: $\\frac{4-0}{2}=2$. Choices 1, 2 and 3 all give $2$ — a three-way tie (choice 4 gives $1$).",
+            "Count the powers. The top has power $2$ (each square is $1+1$). The bottom $2a$ has power $1$ (the $2$ doesn't count). The question has power $2-1=1$.",
+            "Choice 1 ($2$) has power $0$, choice 2 ($2b$) has power $1$, choice 3 ($2ab$) has power $2$. Only choice 2 is left.",
+            "Algebra: $(a+b)^2-(a-b)^2=(a^2+2ab+b^2)-(a^2-2ab+b^2)=4ab$, and $\\frac{4ab}{2a}=2b$. The answer is choice 2."],
+           ["Question %s." % _qword(n0 + 1), "We'll plug in first — and hit a tie. Then the powers finish it."], [
+            ('Method 1 · Plug in, then count', [
+                "Lazy numbers first: a is one, b is one.",
+                D('Write "a = b = 1: (4 − 0)/2 = 2"'),
+                "One plus one, squared: four. One minus one, squared: zero. Four over two: two.",
+                D('Next to the choices write: 2, 2, 2, 1'),
+                "Choice one: two. Choice two: two. Choice three: two. Choice four: one. A three-way tie.",
+                D('Cross out choice 4'),
+                "Before we plug in again, count the powers.",
+                D('Under the top write "2", under 2a write "1"'),
+                "The top: a bracket of power one, squared — power two. Both squares. The bottom: two a. The two doesn't count. Power one.",
+                "Two minus one: the question has power one.",
+                D('Next to choices 1, 2 and 3 write: 0, 1, 2'),
+                "Choice one, the number two: power zero. Out. Choice three, two a b: power two. Out.",
+                D('Circle choice 2'),
+                "Two b — power one. Choice two."]),
+            ('Method 2 · The algebra', [
+                "And the algebra, to be sure.",
+                D('Write "(a² + 2ab + b²) − (a² − 2ab + b²) = 4ab"'),
+                "Open both squares. a squared cancels, b squared cancels. Two a b minus minus two a b: four a b.",
+                D('Write "4ab / 2a = 2b"'),
+                "Four a b over two a: two b. Choice two. ✓",
+                "Tie? Check the powers first. It's faster than a new round of numbers."]),
+        ])
+
+    # ---- card
+    c = M.card('mem-r26-t05-expressions')
+    c['tables'][0]['rows'].append(
+        ['Power count: letters multiplied in a piece (× adds, ÷ subtracts, a number in front counts $0$; with $+$/$-$ check each piece)',
+         '$5x^2\\to2$, $\\frac{x^2}{y}\\to1$, $\\frac1x\\to-1$, $x+1$ mixed'])
+    rows = c['tables'][1]['rows']
+    k = next(i for i, r in enumerate(rows) if r[0].startswith('Letters in the choices'))
+    rows.insert(k, ['Letters in the choices', 'Count the powers first: a different or mixed power is out'])
+    c['tips'] = [t for t in c['tips'] if not t.startswith('A tie?')] + [
+        'Tie? Check the powers first. Still tied? Keep only the tied choices and plug in new numbers.']
+
+    # ---- summary video (not recorded): one slide before "Before you practice"
+    S = 'r26-t05-summary'
+    labels = list(M.video(S)['hybrid']['sidebar'])
+    k = labels.index('Before you practice')
+    labels.insert(k, 'Count the powers')
+    M.set_sidebar(S, labels)
+    last = len(M.video(S)['beats'])
+    M.slide(S, last)['active'] = k + 1
+    M.insert_slides(S, last - 1, [dict(title='Count the powers', mode='concept', active=k, pre=[], script=[
+        A('Power count appears', T('Power $=$ letters multiplied · $\\times$ add · $\\div$ subtract', size=42)),
+        "Letters in the choices? Count the powers first. Multiplying adds, dividing subtracts, and a number in front counts zero.",
+        A('Different or mixed → out appears', T('A different or mixed power $\\to$ out · a tie? check the powers', size=40)),
+        "The answer has the question's power. A different power, or a mixed one, is out. And a plug-in tie? Check the powers first."])])
+
+
+def _qword(n):
+    from math_api import _word
+    return _word(n)
+
+
+_apply_before_add_methods = apply
+
+
+def apply(M):
+    _apply_before_add_methods(M)
+    add_methods(M)   # 2026-10-06: runs last

@@ -7,11 +7,11 @@
     {
      "id": 51,
      "title": "Psychometric Thinking",
-     "videos": 30,
+     "videos": 31,
      "lessons": 7,
-     "questions": 23,
-     "minutes": 102,
-     "steps": 54
+     "questions": 24,
+     "minutes": 113,
+     "steps": 56
     }
    ]
   },
@@ -58,11 +58,11 @@
     {
      "id": 5,
      "title": "Expressions",
-     "videos": 18,
-     "lessons": 3,
-     "questions": 62,
-     "minutes": 36,
-     "steps": 81
+     "videos": 21,
+     "lessons": 4,
+     "questions": 64,
+     "minutes": 45,
+     "steps": 86
     },
     {
      "id": 6,
@@ -112,29 +112,29 @@
     {
      "id": 11,
      "title": "Laws of Exponents & Roots — Advanced",
-     "videos": 19,
+     "videos": 20,
      "lessons": 3,
-     "questions": 51,
-     "minutes": 28,
-     "steps": 71
+     "questions": 52,
+     "minutes": 30,
+     "steps": 73
     },
     {
      "id": 12,
      "title": "Inequalities",
-     "videos": 25,
+     "videos": 26,
      "lessons": 5,
-     "questions": 55,
-     "minutes": 31,
-     "steps": 82
+     "questions": 56,
+     "minutes": 35,
+     "steps": 84
     },
     {
      "id": 13,
      "title": "Absolute Value",
-     "videos": 20,
-     "lessons": 3,
-     "questions": 47,
-     "minutes": 34,
-     "steps": 69
+     "videos": 22,
+     "lessons": 4,
+     "questions": 48,
+     "minutes": 40,
+     "steps": 72
     },
     {
      "id": 14,
@@ -148,11 +148,11 @@
     {
      "id": 15,
      "title": "Division & Remainder",
-     "videos": 18,
+     "videos": 19,
      "lessons": 3,
-     "questions": 52,
-     "minutes": 30,
-     "steps": 72
+     "questions": 53,
+     "minutes": 33,
+     "steps": 74
     },
     {
      "id": 16,
@@ -178,7 +178,7 @@
      "videos": 15,
      "lessons": 3,
      "questions": 45,
-     "minutes": 21,
+     "minutes": 22,
      "steps": 62
     },
     {
@@ -226,11 +226,11 @@
     {
      "id": 23,
      "title": "Percentages",
-     "videos": 18,
+     "videos": 19,
      "lessons": 4,
-     "questions": 49,
-     "minutes": 33,
-     "steps": 69
+     "questions": 50,
+     "minutes": 40,
+     "steps": 71
     },
     {
      "id": 24,
@@ -247,35 +247,35 @@
      "videos": 18,
      "lessons": 4,
      "questions": 50,
-     "minutes": 23,
+     "minutes": 25,
      "steps": 69
     },
     {
      "id": 26,
      "title": "Work and rates",
-     "videos": 20,
-     "lessons": 5,
-     "questions": 50,
-     "minutes": 26,
-     "steps": 71
+     "videos": 22,
+     "lessons": 6,
+     "questions": 51,
+     "minutes": 32,
+     "steps": 74
     },
     {
      "id": 27,
      "title": "Motion",
-     "videos": 25,
+     "videos": 26,
      "lessons": 7,
-     "questions": 55,
-     "minutes": 32,
-     "steps": 82
+     "questions": 56,
+     "minutes": 35,
+     "steps": 84
     },
     {
      "id": 28,
      "title": "Counting possibilities",
      "videos": 35,
      "lessons": 11,
-     "questions": 67,
-     "minutes": 41,
-     "steps": 104
+     "questions": 68,
+     "minutes": 42,
+     "steps": 105
     },
     {
      "id": 29,

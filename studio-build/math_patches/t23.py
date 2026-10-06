@@ -647,6 +647,7 @@ def apply(M):
         'q-r26-t23-12', 'wp23-p20', 'wp23-p16', 'wp23-p18', 'q-r26-t23-14', 'wp23-p03'])
     summary(M)
     cut_repeats(M)
+    add_methods(M)
 
 
 # =====================================================================================
@@ -799,3 +800,170 @@ def cut_repeats(M):
               'Easy numbers: not zero, not one, a different number for each letter. If two choices hit the target, pick new numbers and test only those two.',
               T('Not 0, not 1, different numbers · two hit? new numbers', 34),
               "'Not 0, not 1, different numbers · two hit? new numbers' appears")
+
+
+# =====================================================================================
+# 2026-10-06 new exam methods (teacher-approved): the flip rule, the arrow map, fee on top,
+# "rose by" vs "became", and a softer plug-in rule (0 / "nothing changes" can be the best number).
+# Runs last.
+# =====================================================================================
+def add_methods(M):
+    # ---- 1. The flip rule: two new slides in "Calculating Percentages", before the recap -----------
+    M.insert_slides(L1, 9, [
+        dict(mode='concept', active=8, title='Same part: flip', script=[
+            "Here's a question type the exam loves.",
+            A("'40% of A = 15% of B. Ratio A : B?' appears", T(r'$40\%$ of $A\ =\ 15\%$ of $B$. $\quad$ Ratio $A:B\ =\ ?$', size=42, gap=40)),
+            "The cue: one amount, written as a percent of two different things. Forty percent of A and fifteen percent of B are the same number.",
+            "First, think. Which one is bigger, A or B?",
+            "To get the same amount, a big percent needs only a small whole. A small percent needs a big whole.",
+            "So A, with the big percent, is the smaller one.",
+            A("'Same part → flip: ratio A : B = 15 : 40 = 3 : 8' appears", T(r'Same part $\to$ flip: $\ $ ratio $A:B=15:40=3:8$', size=42, gap=40)),
+            "And that's the rule: the ratio is the percents — flipped. A to B is fifteen to forty. Divide both by five: three to eight.",
+            D('Write "0.4A = 0.15B  →  A/B = 0.15/0.4 = 15/40"'),
+            "Why does it flip? Write it as an equation: zero point four A equals zero point one five B. Divide both sides by B, and by zero point four. A over B is zero point one five over zero point four — fifteen over forty.",
+            D('Write "check A = 3, B = 8:  0.4 · 3 = 1.2,  0.15 · 8 = 1.2 ✓"'),
+            "Check it. A is three, B is eight. Forty percent of three: one point two. Fifteen percent of eight: one point two. Equal.",
+            "You know this from ratios: four mugs cost the same as three plates — so mug to plate is three to four. Reversed. It's the same idea.",
+            D('Write "2/3 of A = 4/5 of B  →  ratio A : B = 4/5 : 2/3 = 6 : 5"'),
+            "It works with fractions too. Two thirds of A equals four fifths of B: A to B is four fifths to two thirds. Times fifteen: twelve to ten. Six to five.",
+            "One warning. The two amounts must be EQUAL. If forty percent of A is six MORE than fifteen percent of B, there's no flip — write the equation.",
+        ]),
+        dict(mode='concept', active=9, title='Same whole: keep', script=[
+            "Now the opposite case.",
+            A("'a = 50% of b,  c = 125% of b. Ratio c : a?' appears", T(r'$a=50\%$ of $b$, $\ c=125\%$ of $b$. $\quad$ Ratio $c:a\ =\ ?$', size=42, gap=40)),
+            "Here the two amounts are percents of the SAME whole, b.",
+            "Same whole — then the bigger percent gives the bigger amount. The amounts are in the same ratio as the percents. No flip.",
+            D('Write "b = 100  →  a = 50,  c = 125"'),
+            "See it with a hundred. b is a hundred: a is fifty, c is a hundred twenty-five.",
+            A("'Same whole → keep: ratio c : a = 125 : 50 = 5 : 2' appears", T(r'Same whole $\to$ keep: $\ $ ratio $c:a=125:50=5:2$', size=42, gap=40)),
+            "c to a: a hundred twenty-five to fifty. Divide by twenty-five: five to two. So c is two hundred fifty percent of a.",
+            A("'Same PART → flip · Same WHOLE → keep' appears", T('Same PART $\\to$ flip $\\ \\cdot\\ $ Same WHOLE $\\to$ keep', size=46)),
+            "So ask one question: what is shared?",
+            "The same part — flip the percents. The same whole — keep their order.",
+        ]),
+    ])
+    M.set_sidebar(L1, ['What a percent is', 'Percent ↔ fraction', 'Fractions to know', 'Thirds and families',
+                       'The percent equation', 'Equal ratios', 'The 10% method', 'More tools', 'Same part: flip',
+                       'Same whole: keep', 'Recap'])
+    _set_active(M, L1, {12: 10})
+
+    # ---- 2. The arrow map: two new slides in "Percent of a Percent", after "Working backwards" -------
+    M.insert_slides(L2, 8, [
+        dict(mode='concept', active=7, title='The arrow map', script=[
+            "One more picture, for chains of comparisons: the arrow map.",
+            "The cue: sentences like \"x is twenty percent more than y\", or \"P is forty percent of Q\".",
+            A("'x is 20% more than y:  y → x, ×1.2' appears", T(r'$x$ is $20\%$ more than $y$: $\quad y\xrightarrow{\ \times1.2\ }x$', size=46, gap=40)),
+            "Each sentence is one arrow. It starts at the whole — the word after \"than\" or \"of\" — and points to the other one.",
+            "On the arrow, write the multiplier. Twenty percent more than y: from y to x, times one point two.",
+            A("'Along the arrow: × · Against it: ÷' appears", T(r'Along the arrow: $\times$ $\quad\cdot\quad$ Against it: $\div$', size=46, gap=40)),
+            "Along the arrow, multiply. Against the arrow, divide.",
+            "Now: what percent of x is y? We go from x to y — against the arrow. So we divide.",
+            D('Write "y = x ÷ 1.2 = x · 5/6 → 83⅓% of x"'),
+            "x divided by one point two. One point two is six fifths, and dividing by six fifths is multiplying by five sixths. Five sixths: eighty-three and a third percent.",
+            D('Next to it write "not 80%!"'),
+            "The trap is eighty percent. Twenty percent more one way is NOT twenty percent less the other way — the whole has changed.",
+        ]),
+        dict(mode='concept', active=8, title='Walk the path', script=[
+            A("'P = 40% of Q,  R is 25% more than Q. R is what % of P?' appears",
+              T(r'$P=40\%$ of $Q$, $\ R$ is $25\%$ more than $Q$. $\ R$ is what $\%$ of $P$?', size=40, gap=40)),
+            "A longer one. Two sentences, and both start at Q.",
+            A("'P ← ×0.4 — Q — ×1.25 → R' appears", T(r'$P\xleftarrow{\ \times0.4\ }Q\xrightarrow{\ \times1.25\ }R$', size=50, gap=40)),
+            "P is forty percent of Q: an arrow from Q to P, times zero point four. R is twenty-five percent more than Q: an arrow from Q to R, times one point two five.",
+            "We need R compared with P. So walk from P to R.",
+            "P back to Q — against the arrow: divide by zero point four. Then Q to R — along the arrow: times one point two five.",
+            D('Write "R/P = 1.25 ÷ 0.4 = 3.125 = 312.5%"'),
+            "One point two five divided by zero point four: three point one two five. R is three hundred twelve and a half percent of P.",
+            D('Write "check Q = 100:  P = 40,  R = 125,  125/40 = 3.125 ✓"'),
+            "Check with a hundred. Q is a hundred, P is forty, R is a hundred twenty-five. A hundred twenty-five over forty: three point one two five. The same.",
+            "So plugging in a hundred still works. The map is a second picture — it helps when the chain is long, or when the hundred doesn't land on the right person.",
+            "The limit: every step must be a percent or a multiple. If a fixed amount is added — plus fifteen credits — it's not one multiplier. Use real numbers.",
+            A("'Answer = the product along the path' appears", T('Answer $=$ the product along the path', size=46)),
+            "The rule: along the arrow, multiply. Against it, divide. The answer is the product along your path.",
+        ]),
+    ])
+    M.set_sidebar(L2, ['Plug in 100', 'Two losses', 'Multipliers', 'Up and down', 'Who is the 100?',
+                       'When 100 fails', 'Working backwards', 'The arrow map', 'Walk the path', 'Recap'])
+    _set_active(M, L2, {11: 9})
+
+    # ---- 3. Guided question: the flip rule (after Q9 "not equal to 15% of 4x", the inverse-ratio question) ---
+    qs2 = ['Question %d' % n for n in range(2, 16)]
+    for v in M.D['videos'].values():
+        if v['topic'] == TOPIC and v.get('kind') == 'solution' and (v.get('hybrid') or {}).get('sidebar') == QSIDEBAR:
+            M.set_sidebar(v['id'], qs2)
+    g = 'q-r26-t23-16'
+    M.new_q(g, TOPIC, 'A library has only novels and textbooks, $600$ books in all. $45\\%$ of the novels is the same number of books as $30\\%$ of the textbooks. How many novels does the library have?',
+            ['$360$', '$240$', '$300$', '$180$'], 2, [
+                'The same amount is $45\\%$ of the novels $N$ and $30\\%$ of the textbooks $T$: $0.45N=0.3T$.',
+                'Same part, so flip the percents: the ratio $N:T=30:45=2:3$.',
+                '$2+3=5$ parts $=600$ books, so $1$ part $=120$ and $N=2\\cdot120=240$.',
+                'Check: $45\\%$ of $240$ is $108$, and $30\\%$ of $600-240=360$ is $108$ ✓.'])
+    M.place_q(g, ADV, after='solve-wp23-g063')
+    n = M.next_question_number(TOPIC)
+    beats = [dict(mode='title', title='Question %d' % n, script=[
+        "Two percents, one amount. There's a shortcut for this.", "Try it first. Then let's solve it together."])]
+    for title, script in [
+        ('Method 1 · The flip rule', [
+            "Forty-five percent of the novels and thirty percent of the textbooks are the SAME number of books. One part, two different wholes. That's the cue for the flip rule.",
+            D('Write "45% of N = 30% of T"'),
+            "Which pile is bigger? To get the same amount, the smaller percent needs the bigger whole. Thirty is the smaller percent — so there are more textbooks.",
+            D('Write "0.45N = 0.3T  →  N/T = 0.3/0.45"'),
+            "As an equation: zero point four five N equals zero point three T. Divide both sides by T and by zero point four five: N over T is zero point three over zero point four five. The percents, flipped.",
+            D('Write "ratio N : T = 30 : 45 = 2 : 3"'),
+            "Novels to textbooks: thirty to forty-five. Divide both by fifteen: two to three.",
+            D('Write "5 parts = 600  →  1 part = 120  →  N = 2 · 120 = 240"'),
+            "Two plus three: five parts. Six hundred books over five parts: a hundred twenty in a part. The novels get two parts: two hundred forty.",
+            D('Circle choice 2'),
+            "Choice two.",
+        ]),
+        ('Check and the traps', [
+            D('Write "45% of 240 = 108,   30% of 360 = 108 ✓"'),
+            "Always check. Textbooks: six hundred minus two forty — three sixty. Forty-five percent of two forty: a hundred eight. Thirty percent of three sixty: a hundred eight. Equal.",
+            D('Next to choice 1 write "no flip"'),
+            "Choice one, three sixty, is the trap: the ratio forty-five to thirty, with no flip. It gives the novels the bigger pile — but the bigger percent belongs to the SMALLER pile.",
+            D('Next to choice 4 write "30% of 600"'),
+            "Choice four is thirty percent of all six hundred. But each percent is of its own pile, not of the total.",
+            "The rule: the same part — flip the percents. The same whole — keep them.",
+        ])]:
+        beats.append(dict(mode='question', active=qs2.index('Question %d' % n), title=title, pre=[Q(g)], script=script))
+    v = M.new_video('solve-' + g, TOPIC, 'Advanced Percentages', qs2, beats, ADV, kind='solution', qid=g)
+    v['beats'][0]['title'] = 'Advanced Percentages'
+    v['hybrid']['num'] = 21
+    v['title'] = v['navLabel'] = _plain(M.q(g)['stem'])
+
+    # ---- 4. Memory cards ---------------------------------------------------------------------------
+    c = M.card(CARD)
+    meth = c['tables'][1]['rows']
+    k = next(i for i, r in enumerate(meth) if r[0] == 'Multiplier') + 1
+    meth[k:k] = [
+        ['Flip rule', 'the same amount is a percent of two things',
+         '$40\\%$ of $A=15\\%$ of $B$ → ratio $A:B=15:40=3:8$. Same WHOLE → keep the order: $a=50\\%$ of $b$, $c=125\\%$ of $b$ → $c:a=125:50$'],
+        ['Arrow map', 'a chain of "is $p\\%$ of" / "$p\\%$ more (less) than"',
+         'each sentence is an arrow with its multiplier; along it $\\times$, against it $\\div$: $x=1.2y$ → $y=x\\div1.2=83\\frac13\\%$ of $x$ (not $80\\%$)'],
+    ]
+    c2 = M.card(CARD2)
+    c2['intro'] = 'Traps the exam loves, and shortcuts that save time.'
+    c2['tables'][0]['rows'] += [
+        ['Fee or tax on top: divide, don\'t take $75\\%$', 'paid $100$ with a $25\\%$ tax → before tax $100\\div1.25=80$, not $75$ (check: $80\\cdot1.25=100$)'],
+        ['"Rose BY" or "became"?', '$\\times3.75$: it became $375\\%$ of the start — it rose BY $275\\%$'],
+    ]
+    c2['tips'] = [
+        'Plugging in numbers: usually avoid $0$ and $1$, and use a different number for each letter. But if $0$ (or "nothing changes") makes the answer obvious, use it. Example: $k$ new students join — when $k=0$ the change must be $0$, so only a choice that gives $0$ at $k=0$ survives. If two choices survive, plug in a second number.',
+        'If two choices give your target, choose new numbers and test only those two.']
+    # the same softer rule where it is spoken (Q "N students, g girls" and the summary)
+    vid = 'solve-q-r26-t23-05'
+    for b in M.video(vid)['beats']:
+        for it in b['items']:
+            if (it.get('t') or '').startswith('Not 0, not 1'):
+                it['t'] = 'Usually not 0 or 1, different numbers · two hit? new numbers'
+        for l in b['lines']:
+            if l.get('label', '').startswith("'Not 0, not 1"):
+                l['label'] = "'Usually not 0 or 1, different numbers · two hit? new numbers' appears"
+            if 'say' in l and l['say'].startswith('Easy numbers: not zero, not one,'):
+                l['say'] = l['say'].replace('Easy numbers: not zero, not one,', 'Easy numbers: usually not zero or one, and')
+    M.touched_videos.add(vid)
+    vid = 'r26-t23-summary'
+    for b in M.video(vid)['beats']:
+        for l in b['lines']:
+            if l.get('say') == 'Not zero, not one, and a different number for each letter.':
+                l['say'] = 'Usually not zero or one, and a different number for each letter.'
+    M.touched_videos.add(vid)

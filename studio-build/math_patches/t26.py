@@ -684,6 +684,7 @@ def apply(M):
                 b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, M.q(qid)['stem'])
 
     cut_repeats(M)
+    add_methods(M)   # 2026-10-06 new exam methods (runs last)
 
 
 def _b(label, tex, size=42):
@@ -852,3 +853,130 @@ def cut_repeats(M):
     _add_line(M, 'solve-wp26-g102', 2, 'Hours to minutes: times sixty',
               "Combine only matching units — convert first.",
               T('Combine only matching units', 36), "'Combine only matching units' appears")
+
+
+# =====================================================================================
+# 2026-10-06 new exam methods (teacher-approved): compare by factors (the V made general)
+# and catching up = gap ÷ difference in rates. Nothing in topic 26 is recorded.
+# =====================================================================================
+def add_methods(M):
+    # ---- 1. Concept video "Compare by Factors" at the end of the learning sequence (before the summary) ----
+    sb = ['Two things change', 'The rule', 'The V is one case', 'When it fails', 'Remember']
+    q6 = M.video('solve-wp26-g098')['beats'][0]['bigTitle']   # old number; renumber_guided maps it to the final one
+    M.new_video('r26-t26-factors', TOPIC, 'Compare by Factors', sb, [
+        dict(mode='title', title='Compare by Factors', script=[
+            'Compare by factors.',
+            'The V handles one table. But many exam questions change two things at once — and give only relations: "three quarters as many", "twice as fast".',
+            'For those there is one general tool. No equations.']),
+        dict(mode='concept', active=0, title='Two things change', script=[
+            A("'Lia and Ben' appears", T(r'Lia works $\frac34$ as many hours a day as Ben. Per hour she does $\frac23$ of what he does. Ben finishes a job in $8$ days. How many days does Lia need?', size=36, gap=40)),
+            'Two things are different for Lia: her hours a day, and her work per hour.',
+            'What does a day of work depend on? Hours a day, times work per hour.',
+            A("'Work per day = hours a day × work per hour' appears", T(r'Work per day $=$ hours a day $\times$ work per hour', size=40, gap=40)),
+            D('Write "Lia per day: 3/4 · 2/3 = 1/2 of Ben"'),
+            'Her hours: times three quarters. Each hour: times two thirds. Three quarters times two thirds — one half.',
+            'Why multiply, not add? Each change scales what is already there. Fewer hours — and less in each of them. A fraction of a fraction.',
+            D('Write "same job, half per day → 8 · 2 = 16 days"'),
+            'Same job, half as much each day — twice as many days. Sixteen.',
+            'We never knew Ben\'s real hours or his real rate. We didn\'t need them.']),
+        dict(mode='concept', active=1, title='The rule', script=[
+            A("'New = old × every factor that changed' appears", T(r'New value $=$ old value $\times$ every factor that changed', size=40, gap=50)),
+            A("'Same way → as is · opposite way → flip it' appears", T(r'Pushes the same way $\to$ as is · pushes the opposite way $\to$ flip it', size=40, gap=50)),
+            'The rule: start from the old value and multiply by every factor that changed.',
+            'For each factor ask: when this grows, does my answer grow too? Yes — as it is. No — flip it.',
+            D('Write "days = 8 × 4/3 × 3/2 = 16"'),
+            'We want days. More hours a day means fewer days — opposite. Three quarters flips to four thirds. More per hour — opposite too. Two thirds flips to three halves.',
+            'Eight times four thirds times three halves: sixteen. One line.',
+            A("'Anything shared cancels' appears", T(r'Anything that is the same for both $\to$ cancels', size=40, gap=50)),
+            'And the size of the job? The same for both — it cancels. You never need it.']),
+        dict(mode='concept', active=2, title='The V is one case', script=[
+            A("'Team · Work · Time table' appears", TABLE(['Team', 'Work', 'Time'], [['5', '30', '4'], ['8', '72', '?']])),
+            'Remember the question with five workers, thirty boards, four hours? Then eight workers, seventy-two boards.',
+            D('Write "4 × 72/30 × 5/8 = 6"'),
+            'Its first method was exactly this rule. More work pushes the time the same way — as is. More workers — the opposite way, flipped.',
+            A("'V = factors for a 3-column table' appears", T(r'The V $=$ compare by factors for a $3$-column table', size=40, gap=50)),
+            'The V is the same rule drawn as a picture, for a table where the middle is the product of the other two. It just does the flipping for you.',
+            'Compare by factors works everywhere else too: price times quantity, three things multiplied, or a formula they give you.']),
+        dict(mode='concept', active=3, title='When it fails', script=[
+            A("'+k is not a factor → equation' appears", T(r'A fixed amount added ($+k$) is not a factor $\to$ write an equation', size=40, gap=50)),
+            'One limit: every change must be a TIMES change.',
+            A("'Lia packs 2 more boxes an hour than Ben' appears", T(r'"Lia packs $2$ more boxes an hour than Ben."', size=40, gap=50)),
+            'Two more than ten is twenty percent more. Two more than four is fifty percent more. The factor depends on Ben\'s real number — which we don\'t have.',
+            D('Write "Ben: x per hour · Lia: x + 2 → equation"'),
+            'Here, give Ben\'s rate a letter and write an equation.',
+            'The cue is in the words: "times", "as many as", "a fraction of", "percent of" — factors. "More than" by a number — an equation.']),
+        dict(mode='concept', active=4, title='Remember', script=[
+            A("'Two or more things change → multiply the factors' appears", T(r'Two or more things change, only relations given $\to$ multiply the factors', size=40, gap=50)),
+            A("'Same way as is · opposite way flipped · shared cancels' appears", T(r'Same way: as is · opposite way: flipped · shared: cancels', size=40, gap=50)),
+            'New value equals old value times every factor that changed. Same way — as is. Opposite — flipped. Shared — gone.',
+            'Then a sense check: should the answer go up or down?',
+            'One question next. Try it first.'])],
+        'wp26-advanced', after='solve-wp26-g105b')
+
+    # ---- guided question: budget ÷ price (two factors, one flipped) ----
+    qid = 'q-r26-t26-21'
+    M.new_q(qid, TOPIC,
+            'Last month Dana spent her whole budget on notebooks and bought 30 of them. This month her budget is 20% larger, '
+            'and each notebook costs 1.5 times as much as last month. How many notebooks can she buy this month with her whole budget?',
+            ['54', '20', '24', '21'], 3,
+            ['Notebooks $=$ budget $\\div$ price. Two things change, so multiply by both factors.',
+             'Budget $+20\\%$ $=\\times\\frac65$. A larger budget buys more notebooks (same way): $\\times\\frac65$ as it is.',
+             'Price $\\times\\frac32$. A higher price buys fewer notebooks (opposite way): flip it, $\\times\\frac23$.',
+             '$30\\times\\frac65\\times\\frac23=24$ notebooks.',
+             'Traps: $54=30\\times\\frac65\\times\\frac32$ (the price was not flipped); $21$ adds the percents ($+20\\%$ and $-50\\%$).'])
+    M.place_q(qid, 'wp26-advanced', after='r26-t26-factors')
+    n = M.next_question_number(TOPIC)
+    lab = 'Question %d' % n
+    v = M.new_video('solve-' + qid, TOPIC, 'Advanced Work & Rate', [lab], [
+        dict(mode='title', title=lab, script=[
+            'Question %s.' % ['zero', 'one', 'two', 'three', 'four', 'five', 'six', 'seven', 'eight', 'nine', 'ten', 'eleven', 'twelve', 'thirteen', 'fourteen', 'fifteen', 'sixteen', 'seventeen', 'eighteen'][n],
+            'No workers this time — a budget and a price. The same tool.']),
+        dict(mode='question', active=0, title='Method 1 · Compare by factors', pre=[Q(qid)], script=[
+            'Two things change: the budget and the price. And we get no real budget, no real price. Only relations — compare by factors.',
+            'First, what does the number of notebooks depend on? The budget divided by the price.',
+            A("'Notebooks = budget ÷ price' appears", T(r'Notebooks $=$ budget $\div$ price', size=36)),
+            'Budget twenty percent larger: times six fifths. A bigger budget buys MORE notebooks — the same way. As it is.',
+            D('Write "budget: × 6/5 (same way)"'),
+            'Price one and a half times: times three halves. A higher price buys FEWER notebooks — the opposite way. Flip it: two thirds.',
+            D('Write "price: × 3/2 → flip → × 2/3"'),
+            D('Write "30 × 6/5 × 2/3 = 24"'),
+            'Thirty times six fifths is thirty-six. Times two thirds: twenty-four.',
+            D('Circle choice 3'),
+            'Twenty-four. Choice three.']),
+        dict(mode='question', active=0, title='The traps', pre=[Q(qid)], script=[
+            'Look at the wrong choices — each one is a real mistake.',
+            D('Next to choice 1 write "price not flipped: 30 × 6/5 × 3/2"'),
+            'Fifty-four: multiplying by the price as it is. A higher price can\'t give you MORE notebooks. Sense check kills it.',
+            D('Next to choice 4 write "+20% − 50% = −30%"'),
+            'Twenty-one: adding percents. Plus twenty, minus fifty. Changes multiply — never add them.',
+            D('Next to choice 2 write "forgot the budget: 30 × 2/3"'),
+            'Twenty: forgetting that the budget changed too. Every factor that changed goes in.',
+            'Check the answer: last month, say, a budget of thirty dollars at one dollar each. Now thirty-six dollars at a dollar fifty: twenty-four notebooks.'])],
+        'wp26-advanced', kind='solution', qid=qid)
+    v['beats'][0]['title'] = 'Advanced Work & Rate'
+    v['title'] = v['navLabel'] = M.q(qid)['stem']
+
+    # ---- 2. Catching up = gap ÷ difference in rates: one slide in the queue question (Q10, g102) ----
+    vid = 'solve-wp26-g102'
+    act = M.slide(vid, 2)['active']
+    M.insert_slides(vid, 3, [dict(mode='question', active=act, title='Same idea: catching up', pre=[], script=[
+        'One more tool from the same idea: one rate against another. Only the difference counts.',
+        A("'Catching up: days = gap ÷ difference in rates' appears", T(r'Catching up: time $=$ gap $\div$ difference in rates', size=40, gap=50)),
+        A("'Printer example' appears", T(r'A printer normally prints $6$ hours a day. It was down for $5$ days. Now it prints $16$ hours a day. How many days until it catches up?', size=36, gap=40)),
+        D('Write "behind: 5 × 6 = 30 hours"'),
+        'Five days down, six hours a day: it is thirty hours of work behind. That is the gap.',
+        'Now it runs sixteen hours a day. But each day it still owes its normal six.',
+        D('Write "gains: 16 − 6 = 10 hours a day → 30 ÷ 10 = 3 days"'),
+        'So it gains only ten extra hours a day. Thirty hours behind, ten a day: three days.',
+        'Why the difference? The normal work keeps coming every day. Only the extra part closes the gap.',
+        'The trap is thirty divided by sixteen. And in motion you\'ll meet the same idea as a chase: the gap divided by the difference in speeds.'])])
+
+    # ---- memory card rows ----
+    c = M.card('mem-work-rate')
+    rows = next(t for t in c['tables'] if t.get('title') == 'Question types')['rows']
+    k = next(i for i, r in enumerate(rows) if r[0].startswith('Team')) + 1
+    rows.insert(k, ['Two or more things change (only relations)',
+                    'compare by factors: new $=$ old $\\times$ every factor; same way as is, opposite way flipped, shared cancels. '
+                    '$\\frac34$ the hours, $\\frac23$ per hour, $8$ days $\\to$ $8\\times\\frac43\\times\\frac32=16$'])
+    rows.append(['Catching up', 'gap $\\div$ difference in rates: $30$ h behind, $16-6=10$ more a day $\\to$ $3$ days'])
+    c['tips'].append('A fixed amount more ("2 more an hour") is not a factor: give it a letter and write an equation.')

@@ -77,3 +77,7 @@ Sidebars were updated for all three lessons that got new slides.
 
 ## 2026-10-04 question = lesson example fixed
 - q-r26-t01-14 was the same as the fraction-bar example in "order-of-operations" (recorded): (20 + 8)/4 -> now (24 + 8)/4; answer 24/4 + 8/4 (choice 2).
+
+## 2026-10-06 new exam methods
+Function `add_methods` (runs last). Topic 1 is recorded, so only the memory card changes.
+- Card "Number words" (mem-definitions): new row after "Integer": **"Number" (the word "integer" is missing)** = any number, fractions included; only "integer" means a whole number. Example: numbers x with 4 < x < 6 and 3x whole → 3x = 13, 14, 15, 16, 17 → five numbers (4⅓, 4⅔, 5, 5⅓, 5⅔), not just 5. (Helps on 1 real exam question; new numbers, not the exam's.)

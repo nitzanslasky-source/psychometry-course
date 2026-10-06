@@ -104,3 +104,10 @@ Function `cut_repeats` (runs last). Nothing in topic 15 is recorded.
   - Cut "Plugging in: the rule" → taught in Q4 (never a value that gives 0), Q10 (one failing example is proof), Q11 (avoid 0; try a second value), Q14 (examples that work are not proof).
   - Cut "Recap".
 - For the teacher: the AI summary script `ai_scripts/r26-t15-summary.json` still says "there's no such thing as a third of a zebra". The zebra example is gone from the lesson (the idea is in Q1). Not edited.
+
+## 2026-10-06 new exam methods
+Function `add_methods` (runs last, after `cut_repeats`). Nothing in topic 15 is recorded.
+- **"More Remainder Tools"**: new slide 5 "Tag it" (sidebar item added; video 2.2 → 4.1 min); slide 1 now says "four short tools"; the closing line moved to the new slide. Teaches: write each condition as a tag (a = 6k, b = 10m; k and m are unknown, they guarantee nothing); multiply → tags multiply (60km → 60); add → only the shared factor (6k + 10m = 2(3k + 5m) → 2, why: 3k + 5m can be 8 or 11); divide → every factor of the bottom must be in the tags (ab/15 = 4km ✓, a/4 = 3k/2 ✗); "by 4 and by 6" → tag 12k (LCM), not 24k; plugging in → different values for different letters (a = b = 30 gives a false 60; 6 + 10 = 16).
+- **New guided question q-r26-t15-15** (after Question 10, now Question 11): x divisible by 6, y divisible by 9, largest number x + y is necessarily divisible by: 18 · 15 · 9 · 3 → 3. Traps: 18 (equal values x = y = 18 → 36), 15 (smallest values 6 + 9), 9. Solution video `solve-q-r26-t15-15` (1.4 min): Method 1 tag it (6k + 9m = 3(2k + 3m)), then "The trap · Equal values". Checked by computer: gcd of all 6k + 9m is 3.
+  - The teacher's suggested example (x, y multiples of 3, choices 3/6/9/12) is a real exam question (2025 autumn), so an original pair was used instead; the slide example (multiple of 6 + multiple of 10) avoids the real "multiple of 4 + even" question too.
+- Card "More remainder tools": new row "Necessarily divisible by…? → Tag it" (rules + example).

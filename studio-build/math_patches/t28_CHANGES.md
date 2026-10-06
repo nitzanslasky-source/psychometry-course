@@ -128,3 +128,10 @@ Function `cut_repeats` (runs last). Each lesson is back to a short intro like th
     - 6! + 8! (two steps apart): on the advanced memory card.
   - No idea was lost.
   - Net saving is now −8.9 min.
+
+## 2026-10-06 new exam methods
+Function `add_methods` (runs last). Nothing in topic 28 is recorded. Check: `python3 math_check.py 28 32` → 0 problems, 0 warnings, 0 layout problems.
+- **Intro `wp-123` "Counting Possibilities"**: new slide 3 "At most? At least?" (sidebar entry added; 1.4 → 2.1 min): questions that say "at most / at least / necessarily / impossible" are the Topic 21 min/max method, not counting (about half of the real "counting" questions). Example: 8 friends, 30 candies, each at least 2 → others get 7 × 2 = 14 → one friend at most **16**.
+- **Groups with no names** — card `mem-counting`, "Which rule?" table, new row after "A group, order does not matter": count as if the groups had names, then ÷ (number of groups)!; pairs: fix one person, choose her partner; 4 girls → 2 pairs = 6 ÷ 2! = 3 (not 6); 6 players → 3 pairs = 5·3·1 = 15.
+- **New practice question `q-r26-t28-41`** (after wp28-p27, the "named teams" question): 8 runners into 4 unnamed pairs → 7·5·3·1 = **105** (choice 2); check 2,520 ÷ 4! = 105. Traps 2,520 (pairs treated as named), 420, 28.
+- Note for the teacher: Pass 2 (2026-09-27) removed an earlier "Groups with no names" lesson slide, guided question and card row. Only the card row and one practice question are added back now, as requested — no slide, no guided question.

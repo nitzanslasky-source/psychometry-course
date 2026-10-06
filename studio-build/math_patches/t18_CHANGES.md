@@ -112,3 +112,11 @@ Function `cut_repeats` (runs last). Nothing in topic 18 is recorded.
   - Cut "Products" → taught in Q12 `solve-q-r26-t18-03` (ones digit; 3 or 4 digits).
   - Cut "Recap".
 - Cards unchanged.
+
+## 2026-10-06 new exam methods
+Function `add_methods` (runs last, after `cut_repeats`). Nothing in topic 18 is recorded.
+- Digit WORD equations join the 4-step routine: "Words, no columns? Write 10A + B and collect: 10A + B = 4(A + B) → 6A = 3B → B = 2A: 12, 24, 36, 48" (checked: exactly these four two-digit numbers).
+  - Lesson "Exercises with Letters", slide 2: board line + 4 spoken lines after step 4 (1.8 → 2.4 min).
+  - Summary, slide "The 4 steps": the same board line + one spoken line.
+  - Card "Exercises with letters — toolkit", table "The four steps": new row "Words, no columns".
+  - Question 9 (q-520, already solved with 10T + U): one line naming the move before "Cancel U from both sides".

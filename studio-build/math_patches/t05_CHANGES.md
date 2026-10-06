@@ -195,3 +195,12 @@ Finishes the removal of the Topic 4 trinomial lesson (teacher-approved; 0 of 760
 - Guided question q-135 was $\dfrac{10}{\dfrac{1}{\frac{1}{2}+\frac{1}{5}}}$ = 7, the same as the example on the recorded "The main fraction bar" slide of expression-strategy. The lesson stays as recorded.
 - New q-135: $\dfrac{6}{\dfrac{1}{\frac{1}{2}+\frac{1}{3}}}=\ ?$ = 5 (choice 3). Choices: 1/5 (main bar upside down), 6/5 (stopped one layer early), 5, 36/5 (multiplied instead of divided / forgot to flip).
 - Solution video solve-q-135 redone with the new numbers (same steps, same traps talk, same exam tip). solve-q-136 and the lesson are unchanged.
+
+## 2026-10-06 new exam methods
+Function `add_methods` (runs last). Topic 5 is recorded: nothing recorded changes. All new items sit after the last recorded video of "Advanced expressions" (solve-q-r26-t05-04), before the memory card.
+- **New lesson video `r26-t05-power-count` "Count the Powers"** (5.4 min, 9 slides): power of a piece = letters multiplied; numbers in front count 0; multiply → add, divide → subtract (x²/y → 1, y/x → 0, 1/x → −1); plus/minus → each piece separately, clean vs mixed (x + 1); a clean bracket acts like one piece ((x + y)² → 2); why simplifying never changes the power; the rule (different or mixed → out). Example 1: (x² − y²)/(x + y) + y → power 1 → x. Example 2: x(x + 2y) + y² → power 2 → (x + y)². When it doesn't help (all choices same power; the question itself mixed, like x² + 3) + bonus: a plug-in tie → check the powers. Recap.
+- **Guided q-r26-t05-17** (Question 16 after renumbering) + solve video: Given x ≠ −y, (x³ + x²y)/(x + y) − xy = ? Choices x − y · x² − x · x(x − y) · x²/y → **3**. The power count alone decides (power 2; the others are 1, mixed, 1). Method 2: the algebra + the warning that x = 2, y = 1 ties choices 2 and 3.
+- **Guided q-r26-t05-18** (Question 17) + solve video: Given a ≠ 0, ((a + b)² − (a − b)²)/(2a) = ? Choices 2 · 2b · 2ab · b² → **2**. Plugging in ones gives a three-way tie (2, 2, 2, 1); the powers (0, 1, 2) finish it. Method 2: the algebra (4ab/2a = 2b).
+- Card "Expressions — rules and methods": Rules row "Power count …"; "Pick your method" row "Letters in the choices → Count the powers first: a different or mixed power is out"; the tie tip is now "Tie? Check the powers first. Still tied? Keep only the tied choices and plug in new numbers."
+- Summary video `r26-t05-summary` (not recorded): new slide "Count the powers" before "Before you practice" (sidebar updated).
+- Answers verified by exact computation with random values.

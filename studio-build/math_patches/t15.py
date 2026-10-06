@@ -889,3 +889,91 @@ def cut_repeats(M):
     _cr_add(M, 'solve-q-430', 2, 'Ninety-nine minus ten, plus one', [
         A("'Count = last k − first k + 1' appears", T('Count $=$ last $k\\,-$ first $k\\,+\\,1$', size=38)),
         "Don't forget the plus one — both ends count. From three to seven there are five numbers, not four."])
+
+
+# =====================================================================================
+# 2026-10-06 new exam methods: TAG IT (guaranteed factors). Real exams: helps on 15 questions
+# ("necessarily divisible", "largest certain divisor", "necessarily an integer"). One slide in "More Remainder
+# Tools", one guided question with its solution video (after Question 10, letters and factors), one card row.
+# =====================================================================================
+def add_methods(M):
+    v = M.video(TOOLS); n = len(v['beats'])
+    assert v['beats'][n - 1]['title'] == 'Numbers in a row', [b['title'] for b in v['beats']]
+    _cr_say_drop = [x for x in _cr_script(M, TOOLS, n) if not (isinstance(x, str) and x.startswith('Now the advanced questions'))]
+    M.set_slide(TOOLS, n, script=_cr_say_drop)
+    M.set_slide(TOOLS, 1, script=["Before the advanced questions: four short tools.",
+                                  "The other tools you'll meet inside the questions themselves."])
+    sb = list(v['hybrid']['sidebar']) + ['Tag it']
+    M.insert_slides(TOOLS, n, [dict(mode='concept', active=len(sb) - 1, title='Tag it', script=[
+        "Fourth tool: tag it. Use it when they ask \"necessarily divisible by\", \"the largest number it must divide\", or \"necessarily an integer\".",
+        A("'a multiple of 6 → 6k · b multiple of 10 → 10m' appears", T('$a$ multiple of $6\\to a=6k$;  $b$ multiple of $10\\to b=10m$', size=36, gap=16)),
+        "Write each condition as a tag. a is a multiple of six: a is six k. b is a multiple of ten: b is ten m.",
+        "k and m are unknown whole numbers — one, seven, a hundred. They guarantee nothing. Only the numbers in front are certain.",
+        A("'Multiply: 6k · 10m = 60km → 60' appears", T('Multiply: $6k\\cdot10m=60km\\ \\to\\ 60$', size=36, gap=16)),
+        "Multiply: the tags multiply. Six k times ten m is sixty k m. Always divisible by sixty.",
+        A("'Add: 6k + 10m = 2(3k + 5m) → only 2' appears", T('Add: $6k+10m=2(3k+5m)\\ \\to$ only $2$', size=36, gap=16)),
+        "Add: only the shared factor comes out. Take two out of six k plus ten m. Inside: three k plus five m.",
+        "Why not more? Three k plus five m is unknown — it can be eight, or eleven. So nothing inside is certain. Only the two.",
+        A("'Divide: ab/15 = 4km ✓ · a/4 = 3k/2 ✗' appears", T('Divide: $\\frac{ab}{15}=\\frac{60km}{15}=4km$ ✓;  $\\frac{a}{4}=\\frac{6k}{4}=\\frac{3k}{2}$ ✗', size=36, gap=16)),
+        "Divide: every factor of the bottom must be in the tags on top. a b over fifteen: sixty over fifteen is four — a whole number. a over four: six k has only one two. Three k over two — not always whole.",
+        A("'By 4 and by 6 → tag 12k (LCM), not 24k' appears", T('Divisible by $4$ and by $6\\to$ tag $12k$ (the LCM), not $24k$', size=36, gap=16)),
+        "Divisible by four and by six? The tag is the smallest number both go into: twelve. Not twenty-four — twelve itself isn't divisible by twenty-four.",
+        A("'Plug in? Different values for different letters' appears", T('Plugging in? Different values for different letters', size=36)),
+        "Prefer to plug in? Give different letters different values. a and b both thirty: the sum is sixty — and sixty looks certain. But six plus ten is sixteen.",
+        "The rule: tag each condition, do the operation, read the number in front.",
+        "Now the advanced questions. Try each one first — then watch.",
+    ])])
+    M.set_sidebar(TOOLS, sb)
+
+    # --- guided question (a different pair than the slide)
+    g = 'q-r26-t15-15'
+    M.new_q(g, TOPIC, '$x$ and $y$ are positive integers. $x$ is divisible by $6$, and $y$ is divisible by $9$.\n'
+                      'What is the largest number that $x+y$ is necessarily divisible by?',
+            ['$18$', '$15$', '$9$', '$3$'], 4, [
+        'Tag each condition: $x=6k$ and $y=9m$, where $k$ and $m$ are unknown positive integers.',
+        'Add: $x+y=6k+9m=3(2k+3m)$. Only the shared factor $3$ comes out. $2k+3m$ is unknown, so it guarantees nothing more.',
+        'So $x+y$ is always divisible by $3$. Nothing bigger is certain: $x=6$, $y=9$ gives $15$ (not divisible by $9$ or $18$), '
+        'and $x=12$, $y=9$ gives $21$ (not divisible by $15$).',
+        'Trap: $x=y=18$ gives $36$, which is divisible by $18$ and by $9$. Different letters need different values.'])
+    M.place_q(g, ADV, after='solve-q-431')
+    _solution(M, g, ADV, ["A sum of two multiples — and the largest certain divisor."], [
+        ('Method 1 · Tag it', [
+            "Tag each condition. x is divisible by six: x is six k. y is divisible by nine: y is nine m.",
+            D('Write "x = 6k,  y = 9m"'),
+            "k and m are unknown whole numbers. They guarantee nothing.",
+            D('Write "x + y = 6k + 9m = 3(2k + 3m)"'),
+            "We add — so only the shared factor comes out. Six and nine share a three. Take it out: three times two k plus three m.",
+            "Two k plus three m? Unknown. It can be five, or seven. So the only certain number is the three in front.",
+            D('Circle choice 4'),
+            "Choice four: three.",
+            D('Write "x = 6, y = 9 → 15: not by 9, not by 18.   x = 12, y = 9 → 21: not by 15"'),
+            "Nothing bigger is certain. Six plus nine is fifteen — not divisible by nine or eighteen. Twelve plus nine is twenty-one — not by fifteen.",
+        ]),
+        ('The trap · Equal values', [
+            "Here's how students fall into choice one.",
+            D('Write "x = y = 18 → 36 → divisible by 18?"'),
+            "They take one number that fits both: eighteen and eighteen. The sum is thirty-six — divisible by eighteen. Looks certain.",
+            "But x and y are different letters. Nothing says they're equal. Equal values hide the trap.",
+            D('Write "different letters → different values"'),
+            "Plugging in? Give each letter its own value. Better still: tag it, and read the number in front.",
+        ]),
+    ])
+    q = M.q(g)
+    for b in M.video('solve-' + g)['beats']:
+        if b.get('canvas', '').startswith('Pre-loaded — question'):
+            b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (g, q['stem'])
+
+    # --- card row
+    M.card('mem-r26-t15-tools')['tables'][0]['rows'].append([
+        'Necessarily divisible by…?',
+        'Tag it: write each condition as $d\\cdot k$. Multiply → tags multiply; add → only the shared factor; '
+        'divide → every factor of the bottom must be in the tags; "by $a$ and by $b$" → the LCM. $k$, $m$ guarantee nothing.',
+        '$6k\\cdot10m=60km$; $\\ 6k+10m=2(3k+5m)\\to2$'])
+
+
+_apply_before_add_methods = apply
+
+
+def apply(M):
+    _apply_before_add_methods(M)
+    add_methods(M)   # 2026-10-06: runs last

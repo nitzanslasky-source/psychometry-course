@@ -942,3 +942,114 @@ _apply_before_cut_repeats = apply
 def apply(M):
     _apply_before_cut_repeats(M)
     cut_repeats(M)   # 2026-10-05: runs last
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# 2026-10-06: new exam methods (found by solving real exams). Topic 12 is not recorded.
+#   (a) RANGES IN TWO MOVES: endpoint (pretend "=", solve), then direction (test one easy legal number);
+#       for "the most precise range": test a number inside one choice and outside another.
+#   (b) range of a/b (positive ranges) on the traps card.
+# ---------------------------------------------------------------------------------------------------------------
+def add_methods(M):
+    global ADV_SIDEBAR
+    # ---- (a) one named slide in lesson 1, after "The same with x"
+    L = L1
+    _replace_say(M, L, 5, 'Now two questions. Try each one first', None)
+    sb = list(M.video(L)['hybrid']['sidebar']) + ['Ranges in two moves']
+    M.set_sidebar(L, sb)
+    M.insert_slides(L, 5, [dict(mode='concept', title='Ranges in two moves', active=len(sb) - 1, pre=[], script=[
+        "One more tool. It works on almost every \"for which values of x\" question — and you never have to think about flipping.",
+        "I call it ranges in two moves.",
+        A("'1. Endpoint: pretend = and solve' appears", T('1. Endpoint: pretend it is $=$ and solve', size=44)),
+        "Move one: the endpoint. Pretend the inequality sign is an equals sign, and solve.",
+        A('5 − 2x = x − 4 → x = 3 appears', T('$5-2x>x-4$: $\\ 5-2x=x-4 \\Rightarrow x=3$', size=46)),
+        "Five minus two x, greater than x minus four. As an equation: nine equals three x. x is three.",
+        "Why? The two sides swap which one is bigger only where they are equal. So three is the border of the answer.",
+        A("'2. Direction: test one easy legal number' appears", T('2. Direction: test one easy legal number, like $0$', size=44)),
+        "Move two: the direction. Which side of three? Test one easy number. Zero is the easiest.",
+        A('x = 0: 5 > −4 ✓ → x < 3 appears', T('$x=0$: $\\ 5>-4$ ✓ $\\ \\Rightarrow\\ x<3$', size=46)),
+        "x equals zero: five is greater than negative four. True. So zero is in the answer — and zero is below three. x is less than three.",
+        "No sign flipping at all. The test number tells you the direction.",
+        A("'Most precise range? test one number' appears", T('Most precise range? Test a number inside one choice and outside another', size=36)),
+        "And when the choices are ranges, and they ask for the most precise one, test a number that some choices contain and others don't.",
+        "It works? Then the answer must contain it. Every choice that leaves it out is wrong.",
+        "It fails? Then the answer can't contain it. Every choice that contains it is wrong.",
+        "Two limits. Test only legal numbers. And if x is in a denominator, the number that makes the bottom zero is a border too — so test a number on each side.",
+        "The rule: endpoint first, then one test number for the direction.",
+        "Now two questions. Try each one first — then watch."])])
+
+    # ---- guided Question 1 (q-322) shows the two moves: its "Quick check" slide becomes Method 2
+    M.set_slide('solve-q-322', 3, title='Method 2 · Two moves', script=[
+        "Now the same question in two moves — the way that works on every range question.",
+        D('Write "Endpoint: 3 + x = 15 + 3x → −12 = 2x → x = −6"'),
+        "Move one, the endpoint. Pretend it's an equals sign: three plus x equals fifteen plus three x. Negative twelve equals two x. x is negative six.",
+        "The answer must start at negative six. Choices one, two and four start at twelve, six and three. They're already out.",
+        D('Write "Direction: x = 0: 3 < 15 ✓ → −6 < x"'),
+        "Move two, the direction. Test zero: three is less than fifteen. True. So zero is in the answer — and zero is above negative six.",
+        D('Circle choice 3'),
+        "x is greater than negative six. Choice three — and nothing ever had to flip."])
+
+    q = M.q('q-322')
+    M.set_q('q-322', expl=list(q['explanation']) + [
+        'Two moves: endpoint $3+x=15+3x$ gives $x=-6$; direction: $x=0$ works, and $0$ is above $-6$, so $-6<x$.'])
+
+    # ---- new guided question: the most precise range, by testing numbers
+    ADV_SB = ADV_SIDEBAR + ['Question %d' % (int(ADV_SIDEBAR[-1].split()[1]) + 1)]
+    for v in M.D['videos'].values():
+        if v['topic'] == TOPIC and (v.get('hybrid') or {}).get('sidebar') == ADV_SIDEBAR:
+            M.set_sidebar(v['id'], ADV_SB)
+    g = 'q-r26-t12-13'
+    M.new_q(g, TOPIC, 'Given: $x^2+3x<10$. Which of the following is the most precise range for $x$?',
+            ['$x<2$', '$-2<x<5$', '$-5<x<2$', '$x>-5$'], 3, [
+        'Test numbers that some choices contain and others leave out.',
+        '$x=3$: $9+9=18<10$ ✗. $3$ fails, so every choice that contains $3$ is wrong: choices 2 and 4 are out.',
+        '$x=-6$: $36-18=18<10$ ✗. $-6$ fails, so choice 1 (it contains $-6$) is out. The answer is choice 3.',
+        'Two moves: the endpoints solve $x^2+3x=10$, that is $(x+5)(x-2)=0$, so $x=-5$ or $x=2$. $x=0$ gives $0<10$ ✓, so the answer is the part between them: $-5<x<2$.'])
+    M.place_q(g, ADV, after='solve-q-r26-t12-02')
+    _old, ADV_SIDEBAR = ADV_SIDEBAR, ADV_SB
+    _solution(M, g, ["Question twenty-one.", "Choices that are ranges, and they want the most precise one. Test numbers."], [
+        ('Method 1 · Test a number', [
+            "The cue: four ranges in the choices, and the words \"most precise range\".",
+            "The rule: a number that works must be inside the answer. A number that fails must be outside it.",
+            "So pick numbers where the choices disagree. Three: choices two and four contain it, choices one and three don't.",
+            D('Write "x = 3: 9 + 9 = 18 < 10 ✗"'),
+            "Three squared is nine, plus nine: eighteen. Less than ten? No. Three fails.",
+            D('Cross out choices 2 and 4'),
+            "So the answer can't contain three. Choices two and four contain it. Both out.",
+            "Choices one and three disagree about negative six: choice one contains it, choice three doesn't.",
+            D('Write "x = −6: 36 − 18 = 18 < 10 ✗"'),
+            "Negative six squared: thirty-six. Minus eighteen: eighteen. Less than ten? No. It fails.",
+            D('Cross out choice 1 and circle choice 3'),
+            "Choice one contains negative six — out. Choice three. We never solved anything."]),
+        ('Method 2 · Two moves', [
+            "The two-move way gives the same answer.",
+            D('Write "x² + 3x = 10 → (x + 5)(x − 2) = 0 → x = −5, x = 2"'),
+            "Endpoints: pretend it's equals. Two numbers with product negative ten and sum three: five and negative two. x is negative five or two.",
+            D('Write "x = 0: 0 < 10 ✓ → −5 < x < 2"'),
+            "Direction: test zero. Zero is less than ten — it works. Zero is between the endpoints, so the answer is the part between them.",
+            "Negative five less than x less than two. Choice three.",
+            "Choice two is the trap: the endpoints with the wrong signs."]),
+    ])
+    ADV_SIDEBAR = _old
+
+    # ---- cards
+    rows = M.card('mem-inequalities')['tables'][1]['rows']
+    rows.insert(0, ['"For which values of $x$?" (ranges in two moves)',
+                    'Endpoint: pretend it is $=$ and solve. Direction: test one easy legal number (like $0$). '
+                    'Example: $5-2x>x-4$: endpoint $3$; $x=0$ works, so $x<3$'])
+    rows.insert(1, ['"The most precise range" (choices are ranges)',
+                    'Test a number inside one choice and outside another. Works: every choice that leaves it out is wrong. '
+                    'Fails: every choice that contains it is wrong'])
+    rows = M.card('mem-r26-t12-traps')['tables'][0]['rows']
+    k = next(i for i, r in enumerate(rows) if r[0] == 'Range of $ab$')
+    rows.insert(k + 1, ['Range of $\\frac{a}{b}$ (all positive)',
+                        'smallest $=$ smallest top $\\div$ largest bottom; largest $=$ largest top $\\div$ smallest bottom',
+                        '$2<a<6$, $1<b<3 \\Rightarrow \\frac23<\\frac ab<6$'])
+
+
+_apply_before_add_methods = apply
+
+
+def apply(M):
+    _apply_before_add_methods(M)
+    add_methods(M)   # 2026-10-06: runs last

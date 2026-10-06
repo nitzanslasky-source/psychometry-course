@@ -866,6 +866,7 @@ def apply(M):
             if (b.get('canvas') or '').startswith('Pre-loaded — question'):
                 b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, stem)
     cut_repeats(M)
+    add_methods(M)   # 2026-10-06 new exam methods (runs last)
 
 
 # =========================================================================================================
@@ -1152,3 +1153,48 @@ def cut_repeats(M):
     _add_line(M, 'solve-q-r26-t28-09', 2, 'Round table: fix one item',
               "Why? Turning the whole table changes no one's neighbors. So n items around a table: n minus one, factorial.",
               T(r'$n$ around a table: $(n-1)!$', 36), "'n around a table: (n − 1)!' appears")
+
+
+# =====================================================================================
+# 2026-10-06 new exam methods (teacher-approved). Nothing in topic 28 is recorded.
+# 1. Pointer slide in the intro: "at most / at least / necessarily / impossible" = the Topic 21 min/max method.
+# 2. Groups with no names (pairs): card row + one practice question. (The Pass-2 slide/guided question stay removed.)
+# =====================================================================================
+def add_methods(M):
+    vid = 'wp-123'
+    M.insert_slides(vid, 2, [dict(mode='concept', active=1, title='At most? At least?', script=[
+        'Before we start — a warning that saves time.',
+        A("'At most · at least · necessarily · impossible → Topic 21' appears",
+          T(r'"At most", "at least", "necessarily", "impossible" $\to$ the Topic 21 min/max method', size=40, gap=50)),
+        'About half of the exam\'s counting questions ask: at most how many? At least how many? What must be true? What is impossible?',
+        'Those are not counting. They are the minimum and maximum questions from Topic 21: push to the extreme.',
+        A("'8 friends, 30 candies' appears", T(r'$8$ friends share $30$ candies. Each gets at least $2$. At most how many can one friend get?', size=38, gap=50)),
+        'To make one share as big as possible, give the others as little as possible.',
+        D('Write "others: 7 × 2 = 14 → one friend: 30 − 14 = 16"'),
+        'Seven friends get two each — fourteen. Sixteen are left for one friend.',
+        'See those words? Use the Topic 21 method. Everything else — we count.'])])
+    sb = M.video(vid)['hybrid']['sidebar']
+    M.set_sidebar(vid, [sb[0], 'At most? At least?'] + sb[1:])
+    for b in M.video(vid)['beats'][3:]:
+        if b['mode'] == 'concept': b['active'] += 1
+
+    # ---- groups with no names: card row ----
+    c = M.card('mem-counting')
+    rows = next(t for t in c['tables'] if t.get('title') == 'Which rule?')['rows']
+    k = next(i for i, r in enumerate(rows) if r[0].startswith('A group, order')) + 1
+    rows.insert(k, ['Groups with no names (pairs, unnamed teams)',
+                    'count as if the groups had names, then $\\div$ (number of groups)$!$ · pairs: fix one person, choose her partner',
+                    '4 girls into 2 pairs: $\\frac{6}{2!}=3$ (not $6$) · 6 players into 3 pairs: $5\\cdot3\\cdot1=15$'])
+
+    # ---- practice question ----
+    qid = 'q-r26-t28-41'
+    M.new_q(qid, TOPIC,
+            'A coach splits 8 runners into 4 pairs for training. The pairs have no names and no order. '
+            'In how many different ways can the coach split the runners?',
+            ['28', '105', '420', '2,520'], 2,
+            ['Fix one runner and choose her partner: $7$ options. Take the next runner without a partner: $5$ options. Then $3$, then $1$.',
+             '$7\\times5\\times3\\times1=105$.',
+             'Check: with names (pair 1, pair 2, pair 3, pair 4): $\\frac{8\\times7}{2}\\times\\frac{6\\times5}{2}\\times\\frac{4\\times3}{2}\\times1=28\\times15\\times6=2{,}520$. '
+             'The pairs have no names, so divide by $4!=24$: $\\frac{2{,}520}{24}=105$.',
+             'Traps: $2{,}520$ treats the pairs as named; $28$ counts only one pair.'])
+    M.place_q(qid, 'wp28-practice', after='wp28-p27')

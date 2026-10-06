@@ -857,3 +857,43 @@ def cut_repeats(M):
     _cr_add(M, 'solve-q-r26-t18-02', 2, 'ABC minus CBA is ninety-nine times', [
         A("'ABC − CBA = 99(A − C)' appears", T('$(100A+10B+C)-(100C+10B+A)=99(A-C)$', size=36)),
         "Why? Write both in algebraic form. The middle digit cancels: ninety-nine A minus ninety-nine C."])
+
+
+# =====================================================================================
+# 2026-10-06 new exam methods: digit WORD equations ("the number is k times the sum of its digits") join the routine
+# =====================================================================================
+WORDS_T = T('Words, no columns? Write $10A+B$ and collect:  $10A+B=4(A+B)\\to6A=3B\\to B=2A$:  $12,\\ 24,\\ 36,\\ 48$', 36)
+
+
+def add_methods(M):
+    words = [
+        A("'Words, no columns → write 10A + B and collect' appears", WORDS_T),
+        "One more case: the puzzle comes in words, with no columns. \"The number is four times the sum of its digits.\"",
+        "Then write the number as ten A plus B, and collect the A's on one side and the B's on the other.",
+        "Ten A plus B equals four A plus four B. So six A equals three B — B is twice A.",
+        "That ratio is the whole answer: twelve, twenty-four, thirty-six, forty-eight. Check one: twelve is four times three.",
+    ]
+    # lesson slide 2: after step 4, before the bracket
+    _cr_add(M, LESSON, 2, 'Four: plug in numbers', words)
+    # summary slide "The 4 steps"
+    v = M.video('r26-t18-summary'); n = next(k for k, b in enumerate(v['beats'], 1) if b['title'] == 'The 4 steps')
+    _cr_add(M, 'r26-t18-summary', n, None, [
+        A("'Words, no columns → write 10A + B and collect' appears", WORDS_T),
+        "Words, no columns? Write ten A plus B, and collect into a digit ratio."])
+    # card
+    for t in M.card('mem-letters')['tables']:
+        if t['title'] == 'The four steps':
+            t['rows'].append(['Words, no columns', 'Write $10A+B$ and collect into a digit ratio: '
+                              '$10A+B=4(A+B)\\to6A=3B\\to B=2A$: $12,\\ 24,\\ 36,\\ 48$'])
+    # Q9 (q-520) already uses it: name the move
+    _cr_add(M, 'solve-q-520', 2, 'Cancel U from both sides', [
+        "This is the move for digit puzzles in words: write the number as ten T plus U, then collect the letters on each side."],
+        where='before')
+
+
+_apply_before_add_methods = apply
+
+
+def apply(M):
+    _apply_before_add_methods(M)
+    add_methods(M)   # 2026-10-06: runs last

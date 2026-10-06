@@ -1127,3 +1127,154 @@ _apply_before_cut_repeats = apply
 def apply(M):
     _apply_before_cut_repeats(M)
     cut_repeats(M)   # 2026-10-05: runs last
+
+
+# ---------------------------------------------------------------- 2026-10-06 new exam methods
+# THE MIRROR TEST (symmetry). Real exams: helps on 9 questions (2 solved with no numbers). Short lesson video right
+# after Question 12 (reading the signs, "Other wordings"), then one guided question with its solution video.
+MIRROR = 'r26-t13-mirror'
+
+
+def add_methods(M):
+    C = lambda k, title, script: dict(mode='concept', active=k, title=title, script=script)
+    M.new_video(MIRROR, TOPIC, 'The Mirror Test', ['The idea', 'Flip all signs', 'Swap the letters', 'Limits'], [
+        dict(mode='title', title='The Mirror Test', script=[
+            "A tool for \"necessarily true\" questions with letters.",
+        ]),
+        C(0, 'The idea', [
+            "Look at the given. Now change it in one of two ways.",
+            A("'Flip all signs: x → −x, y → −y' appears", T('Flip all signs: $x\\to-x,\\ y\\to-y$', size=42, gap=24)),
+            "One: flip every sign. x becomes minus x, and y becomes minus y.",
+            A("'Swap the letters: x ↔ y' appears", T('Swap the letters: $x\\leftrightarrow y$', size=42, gap=40)),
+            "Two: swap the letters. x becomes y, and y becomes x.",
+            "If the given looks exactly the same after the change, the given is a mirror.",
+            "Why does that help? Any numbers that fit the given — their mirror fits it too. So whatever is necessarily true stays necessarily true in the mirror.",
+            A("'A choice that turns into its opposite → out' appears",
+              T('A choice that turns into its opposite $\\to$ it can\'t be necessarily true', size=40)),
+            "Now look at a choice. If the mirror turns it into its opposite, both can't always be true. Cross it out.",
+            "The cue: a \"necessarily\" question, letters, and a given that looks balanced.",
+        ]),
+        C(1, 'Flip all signs', [
+            A("'Given: |a + b| < |a| + |b|. Necessarily negative?' appears",
+              T('Given: $|a+b|<|a|+|b|$. Which is necessarily negative?', size=40, gap=20)),
+            A('The four choices appear', T('$a \\qquad b-a \\qquad a\\cdot b \\qquad a+b$', size=44, gap=40)),
+            "An example. Which of these is necessarily negative?",
+            "Step one: is the given a mirror? Flip all signs.",
+            D('Write "a → −a, b → −b:  |−a − b| < |−a| + |−b|"'),
+            "Minus a minus b has the same absolute value as a plus b. Bars on minus a and minus b give the same sizes. The given is the same — a mirror.",
+            D('Write "a → −a ✗    b − a → a − b ✗    a + b → −(a + b) ✗"'),
+            "a turns into minus a. If a were always negative, minus a would be always negative too. Impossible. Out.",
+            "b minus a turns into a minus b. a plus b turns into its minus. Opposites — out.",
+            D('Write "a · b → (−a)(−b) = a · b ✓"'),
+            "a times b: minus times minus is plus. It doesn't change. The only survivor — that's the answer.",
+            D('Write "a = 2, b = −1: |1| < 2 + 1 ✓, a · b = −2"'),
+            "A quick check: a two, b minus one. One is less than three, and a times b is minus two. Negative.",
+        ]),
+        C(2, 'Swap the letters', [
+            A("'Given: x² + y² = 13. Necessarily true?' appears",
+              T('Given: $x^2+y^2=13$. Which is necessarily true?', size=40, gap=20)),
+            A('The four choices appear', T('$x>0 \\qquad x<y \\qquad x+y>0 \\qquad x^2\\le13$', size=44, gap=40)),
+            "Here both mirrors work. Flip the signs: minus x, squared, is x squared. The given doesn't change.",
+            D('Write "flip:  x > 0 → x < 0 ✗    x + y > 0 → x + y < 0 ✗"'),
+            "x positive turns into x negative. x plus y positive turns into x plus y negative. Both out.",
+            "Now swap: y squared plus x squared is thirteen. The same given again.",
+            D('Write "swap:  x < y → y < x ✗"'),
+            "x less than y turns into y less than x. Opposites. Out.",
+            "One choice is left: x squared is at most thirteen. And it's true: y squared is never negative, so x squared can't pass thirteen.",
+            D('Write "x² ≤ 13 → y² ≤ 13: a twin, not an opposite"'),
+            "Careful: in the swap it turns into y squared at most thirteen. That's a twin — not the opposite. Twins stay. Only opposites go out.",
+        ]),
+        C(3, 'Limits', [
+            A("'No mirror in the given → no test' appears", T('The given changes in the mirror $\\to$ no test', size=40, gap=24)),
+            "First, always check the given. Absolute a plus b, bigger than two b? Swap: bigger than two a. A different given. No mirror — no test.",
+            A("'Simplify first: x − y + 2y = x + y' appears", T('Simplify first: $x-y+2y=x+y$', size=40, gap=24)),
+            "Second: simplify a choice before you mirror it. x minus y plus two y looks lopsided — it's just x plus y. In \"which is NOT equal\" questions, equal choices often look lopsided like this.",
+            A("'A formula for a quantity the mirror keeps → must not change' appears",
+              T('Asked for a quantity the mirror keeps? A formula that changes isn\'t it', size=38, gap=24)),
+            "The same idea works for formulas. If the mirror doesn't change what they ask for, a formula that changes can't be the answer.",
+            "And if every choice survives the mirror, the test doesn't help. Go back to plugging in numbers.",
+            A("'The rule' appears", T('Given unchanged in the mirror $\\to$ cross out every choice that turns into its opposite', size=36)),
+            "The rule: if the given doesn't change in the mirror, a choice that turns into its opposite is not necessarily true.",
+        ]),
+    ], SEC2, after='solve-q-r26-t13-13')
+
+    # --- guided question: a different given (a sum of squares), both mirrors
+    g = qid(15)
+    M.new_q(g, TOPIC, 'Given: $a^2+b^2=2ab+9$.\nWhich of the following is necessarily true?',
+            ['$a-b=3$', '$a>b$', '$|a-b|=3$', '$a+b=3$'], 3, [
+        'The mirror test. Swap $a$ and $b$: $b^2+a^2=2ba+9$, the same given. Flip all signs: $(-a)^2+(-b)^2=2(-a)(-b)+9$, '
+        'also the same given. So the mirror of every pair that fits the given also fits it.',
+        'Swap: $a-b=3$ turns into $b-a=3$, its opposite, so choice 1 is out. $a>b$ turns into $b>a$, so choice 2 is out.',
+        'Flip: $a+b=3$ turns into $-a-b=3$, that is $a+b=-3$, so choice 4 is out.',
+        '$|a-b|$ does not change in either mirror: $|b-a|=|a-b|$ and $|-a+b|=|a-b|$. Choice 3.',
+        'Check with algebra: $a^2-2ab+b^2=9$, so $(a-b)^2=9$, and $a-b=3$ or $a-b=-3$. In both cases $|a-b|=3$.',
+        'Choice 1 forgets the case $-3$: $a=0$, $b=3$ gives $0+9=0+9$ ✓ but $a-b=-3$.'])
+    M.place_q(g, SEC2, after=MIRROR)
+    n = M.next_question_number(TOPIC)
+    old = 'Question %d' % (n - 1)            # q-r26-t13-13 (sign reading) - the new one comes right after it
+    sb = None
+    for v in M.D['videos'].values():
+        s = (v.get('hybrid') or {}).get('sidebar') or []
+        if v['topic'] == TOPIC and v.get('kind') == 'solution' and old in s:
+            s.insert(s.index(old) + 1, 'Question %d' % n)
+            for b in v['beats']:
+                if b['mode'] == 'question' and b['active'] >= s.index('Question %d' % n): b['active'] += 1
+            sb = s
+    assert sb, 'sidebar with %s not found' % old
+    _solution(M, g, 'Advanced Absolute Value', list(sb), 38, [
+        "One given, two letters — and \"necessarily true\".",
+        "A balanced given. A job for the mirror test.",
+    ], [
+        ('Method 1 · The mirror test', [
+            "First: is the given a mirror? Swap a and b.",
+            D('Write "swap: b² + a² = 2ba + 9 → the same given"'),
+            "b squared plus a squared equals two b a plus nine. Exactly the same given.",
+            "So for every pair that fits the given, the swapped pair fits it too.",
+            D('Next to choice 1 write "b − a = 3 ✗"'),
+            "Choice one: a minus b is three. Swap it: b minus a is three. That's the opposite sign. Both can't always be true. Out.",
+            D('Next to choice 2 write "b > a ✗"'),
+            "Choice two: a bigger than b. Swapped: b bigger than a. Opposites. Out.",
+            "Now the second mirror: flip all signs. a to minus a, b to minus b.",
+            D('Write "flip: (−a)² + (−b)² = 2(−a)(−b) + 9 → the same given"'),
+            "Squares don't care about the sign. And minus a times minus b is a b. The same given again.",
+            D('Next to choice 4 write "a + b = −3 ✗"'),
+            "Choice four: a plus b is three. Flipped: minus a minus b is three. So a plus b is minus three. Opposite. Out.",
+            D('Next to choice 3 write "swap ✓  flip ✓"'),
+            "Choice three: the absolute value of a minus b. Swap or flip — the bars give the same number. It survives.",
+            D('Circle choice 3'),
+            "Choice three. And we didn't solve anything.",
+        ]),
+        ('Method 2 · Check with algebra', [
+            "Want proof? Move the two a b to the left side.",
+            D('Write "a² − 2ab + b² = 9 → (a − b)² = 9"'),
+            "a squared minus two a b plus b squared — a shortcut formula. It's a minus b, squared. So that square is nine.",
+            D('Write "a − b = 3  or  a − b = −3 → |a − b| = 3"'),
+            "A square of nine: a minus b is three, or minus three. Either way, its absolute value is three.",
+            D('Write "a = 0, b = 3: 0 + 9 = 0 + 9 ✓, a − b = −3"'),
+            "Choice one is the trap. It forgets the minus three. a zero, b three: nine equals nine — and a minus b is minus three.",
+            "The mirror test found it in seconds. The algebra proves it.",
+        ]),
+    ])
+    q = M.q(g); v = M.video('solve-' + g)
+    for b in v['beats']:
+        if (b.get('canvas') or '').startswith('Pre-loaded — question'):
+            b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (g, q['stem'])
+
+    # --- q-368 (|x + 3y| = |3x + y|) is a swap mirror: one line at the end of its plug-in method
+    _cr_insert(M, 'solve-q-368', len(M.video('solve-q-368')['beats']), 'Pick what suits you', [
+        "And the mirror test sees part of it with no numbers: swap x and y — the given doesn't change. x less than y turns into y less than x. Choices three and four are out."],
+        before=True)
+
+    # --- memory card: one row
+    for t in M.card('mem-absolute-value')['tables']:
+        if t['title'] == 'Sign clues':
+            t['rows'].append(['The given does not change when you flip all signs or swap the letters',
+                              'mirror test: a choice that turns into its opposite is not necessarily true'])
+
+
+_apply_before_add_methods = apply
+
+
+def apply(M):
+    _apply_before_add_methods(M)
+    add_methods(M)   # 2026-10-06: runs last

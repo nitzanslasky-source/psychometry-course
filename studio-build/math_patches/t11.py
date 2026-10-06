@@ -770,3 +770,68 @@ _apply_before_cut_repeats = apply
 def apply(M):
     _apply_before_cut_repeats(M)
     cut_repeats(M)   # 2026-10-05: runs last
+
+
+# ---------------------------------------------------------------------------------------------------------------
+# 2026-10-06: new exam method (found by solving real exams): GIVEN POWER -> ASKED POWER.
+# Generalizes "raise both sides to the reciprocal power" (Question 14, q-301): one card row + one guided question.
+# ---------------------------------------------------------------------------------------------------------------
+def add_methods(M):
+    g = 'q-r26-t11-13'
+    M.new_q(g, TOPIC, 'Given:\n$\\begin{cases} x>0 \\\\ \\sqrt[4]{x^3}=8 \\end{cases}$\n$\\sqrt{x^3}=\\ ?$',
+            ['$16$', '$32$', '$64$', '$512$'], 3, [
+        'Write both as powers of $x$: the given is $x^{\\frac34}=8$, and the question asks for $x^{\\frac32}$.',
+        'Asked exponent ÷ given exponent: $\\frac32\\div\\frac34=\\frac32\\cdot\\frac43=2$. So raise the given to the power $2$.',
+        '$\\left(x^{\\frac34}\\right)^2=x^{\\frac32}$, so $\\sqrt{x^3}=8^2=64$. The answer is choice 3.',
+        'Check the long way: $x=8^{\\frac43}=16$, and $\\sqrt{16^3}=\\sqrt{4{,}096}=64$ ✓. ($16$ is the trap: it is $x$ itself.)'])
+    M.place_q(g, 'power-b', after='solve-q-r26-t11-02')
+    _solution(M, g, ["They give one power of x and ask for a different one. Don't find x — jump from power to power."], [
+        ('Method 1 · Given power to asked power', [
+            "The cue: they give you something about x, and they ask about a DIFFERENT power of x. Not x itself.",
+            "First, write both as powers.",
+            D('Write "given: x^(3/4) = 8     asked: x^(3/2)"'),
+            "The fourth root of x cubed is x to the three quarters. The square root of x cubed is x to the three halves.",
+            "Now one question: what power turns three quarters into three halves?",
+            D('Write "r = (3/2) ÷ (3/4) = 2"'),
+            "Divide the asked exponent by the given exponent. Three halves divided by three quarters: three halves times four thirds. Two.",
+            D('Write "(x^(3/4))² = x^(3/2)  →  8² = 64"'),
+            "So square both sides of the given. Power of a power: multiply. Three quarters times two is three halves — exactly what they asked.",
+            "And the right side: eight squared, sixty-four.",
+            D('Circle choice 3'),
+            "Choice three. We never found x.",
+            "Why does it work? Raising both sides of an equation to the same power keeps them equal. We just choose the power that lands on the question.",
+        ]),
+        ('Method 2 · The long way', [
+            "The long way, to compare: find x first.",
+            D('Write "x = 8^(4/3) = 2⁴ = 16"'),
+            "Reciprocal power, four thirds. The cube root of eight is two, to the fourth: sixteen. That's x.",
+            D('Next to choice 1 write "x — trap"'),
+            "Sixteen is choice one — the trap. It's x, not what they asked.",
+            D('Write "√(16³) = √4,096 = 64"'),
+            "Sixteen cubed is four thousand ninety-six. Its root: sixty-four. Same answer — with much bigger numbers.",
+            "The rule: asked exponent divided by given exponent. Raise the given to that power. It doesn't work when the unknown is IN the exponent and you must solve for it — then use equal bases or try the choices.",
+        ]),
+    ])
+    # the sidebar of every guided solution video gets one more question
+    qsb = ['Question %d' % k for k in range(1, NQ + 2)]
+    for f in [f for f in M.D['flow'] if f['topic'] == TOPIC and f['type'] == 'video']:
+        if M.video(f['ref']).get('kind') == 'solution':
+            M.set_sidebar(f['ref'], qsb)
+    _cr_replace(M, 'r26-t11-tools', 2, 'Eleven questions next.', [
+        'Twelve questions next. Try each one first — then watch its solution.'])
+
+    # card row, right after "x with a fractional power"
+    rows = M.card('mem-r26-t11-advanced')['tables'][0]['rows']
+    k = next(i for i, r in enumerate(rows) if r[0].startswith('$x$ with a fractional power'))
+    rows.insert(k + 1, ['Given one power of $b$, asked a DIFFERENT power of $b$',
+                        "don't find $b$: $r=$ asked exponent $\\div$ given exponent; raise the given to $r$ "
+                        "(not when the unknown is in the exponent and must be solved)",
+                        '$\\sqrt[3]b=5\\Rightarrow b^{\\frac23}=\\left(b^{\\frac13}\\right)^2=25$'])
+
+
+_apply_before_add_methods = apply
+
+
+def apply(M):
+    _apply_before_add_methods(M)
+    add_methods(M)   # 2026-10-06: runs last

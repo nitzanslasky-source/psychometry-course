@@ -1089,3 +1089,22 @@ def dedupe_examples(M):
             expl=['A numerator may be split: every part of the top is divided by the whole bottom.',
                   r'$\frac{24+8}{4}=\frac{24}{4}+\frac{8}{4}=6+2=8$. Check: $\frac{32}{4}=8$.',
                   r'The other choices give $6+8=14$, $24+2=26$ and $12+4=16$.'])
+
+
+# ---------------- 2026-10-06: new exam methods (found by solving real exams) ----------------
+def add_methods(M):
+    # "number" (no "integer") = any number, fractions included. Card only: topic 1 is recorded.
+    rows = M.card('mem-definitions')['tables'][0]['rows']
+    k = next(i for i, r in enumerate(rows) if r[0] == 'Integer')
+    rows.insert(k + 1, ['"Number" (the word "integer" is missing)',
+                        'any number, fractions included; only "integer" means a whole number',
+                        'numbers $x$ with $4<x<6$ and $3x$ whole: $3x=13,\\ 14,\\ 15,\\ 16,\\ 17$, so five numbers '
+                        '($4\\frac13,\\ 4\\frac23,\\ 5,\\ 5\\frac13,\\ 5\\frac23$), not just $5$'])
+
+
+_apply_before_add_methods = apply
+
+
+def apply(M):
+    _apply_before_add_methods(M)
+    add_methods(M)   # 2026-10-06: runs last

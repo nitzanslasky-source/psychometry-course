@@ -131,3 +131,11 @@ Function `cut_repeats` (runs last). Nothing in topic 12 is recorded.
 - **Combining Inequalities & Ranges** (2.4 → 0.9 min). Cut "Add them" → Q17, "Never subtract" → Q18, "Multiply" (corners) → Q19, recap. Kept "Range of x²".
   - Q17: new short slide "Ranges add too": 1 < a < 3, 2 < b < 5 → 3 < a + b < 8 + one line.
   - Q19: board item "All positive? Multiply end by end. Negatives inside? Check the corners" + one line (also: when dividing, the bottom cannot be zero).
+
+## 2026-10-06 new exam methods
+Function `add_methods` (runs last).
+- **RANGES IN TWO MOVES** (about 15 real exam questions): new named slide 6 "Ranges in two moves" in the lesson "Inequalities" (sidebar item added): endpoint (pretend "=", solve) → direction (test one easy legal number). Example 5 − 2x > x − 4: endpoint 3, x = 0 works → x < 3. Plus "most precise range": a number that works kills every choice that leaves it out; a number that fails kills every choice that contains it. Limits (legal numbers; a zero denominator is a border too). The line "Now two questions…" moved from slide 5 to the end of the new slide.
+- Question 1 (solve-q-322): slide 3 "Quick check" → "Method 2 · Two moves" (endpoint −6 kills choices 1, 2, 4; x = 0 gives the direction). q-322 written solution gets the two-moves line.
+- **New guided q-r26-t12-13** (Question 11; the old 11–20 become 12–21) after the sign-table question: Given x² + 3x < 10, the most precise range? Choices x < 2 · −2 < x < 5 · −5 < x < 2 · x > −5 → **3**. x = 3 fails → 2 and 4 out; x = −6 fails → 1 out. Method 2: two moves (endpoints −5 and 2, x = 0 works). Advanced sidebar extended to 13 questions.
+- Card "Inequality rules", Types: two new first rows ("For which values of x?" two moves; "The most precise range" test rule).
+- Card "Inequality traps": new row "Range of a/b (all positive)": smallest top ÷ largest bottom, largest top ÷ smallest bottom; 2 < a < 6, 1 < b < 3 ⇒ 2/3 < a/b < 6.
