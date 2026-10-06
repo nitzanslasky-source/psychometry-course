@@ -143,3 +143,14 @@ Function `cut_repeats` (runs last). Nothing in topic 8 is recorded.
 - **Exponent Traps** (3.2 → 1.8 min). Cut "Signs with letters" → Question 6 (odd keeps the sign, even is never negative; (−x)² and −x² are on the laws lesson's "Negative bases" slide). Cut "Check with a number" → Question 1 method 2, Question 4 (two choices tie → try another n), Question 5 (pick one half).
 - "Between 0 and 1": kept the decimals (0.2³ = 0.008, 0.3² = 0.09 — taught nowhere else, used in practice). Cut the ½, ¼, ⅛ powers and the x³ < x² < x rule (Question 5 teaches them); the last line is now "a power makes a number smaller only between zero and one. Above one, it makes it bigger."
 - "Compare powers" kept whole (no question video teaches it). Title slide: "Two short ideas here. The other traps come inside the questions." Sidebar: Between 0 and 1 · Compare powers.
+
+## 2026-10-06 pen or click
+Function `pen_or_click` (runs last, after `cut_repeats`). The teacher's approved split: in lessons the content appears by click and the pen only marks (arrow, circle, underline, box, cross out); in solution videos the setup and mechanical lines appear by click, and only the key step (plus the marks on the choices) is written by hand. Where a hand-written line comes before click lines, the board leaves an empty row for it. Spoken lines, math, questions and slide count are unchanged. No topic 8 video is recorded. Topic total: 63 pen cues -> 24 by hand, 37 by click, 2 split (26 pen cues left).
+- exponents (31 -> 9 by hand, 20 clicks, 2 split). Every written line is a click now (= 4·4·4, = 64, 5⁰ = 1, "Both = 1", the = ... results of each law, the n = 3 check). By hand: the arrows to base/exponent, the "÷ 5" arrows, underlines, the "≠ 3⁶" cross-out, crossing out the fives in 5⁷/5³, circle the +, the box, circle 64. Split: circle "2 ·" by hand + "2 = 2¹" click; cross out 2²ⁿ by hand + "n = 3: 8 + 8 = 16, but 2⁶ = 64" click. Slides 6, 8, 13: the big empty gap under the first line is closed (it was room for handwriting). Slide 7 is a bit smaller so it fits.
+- solve-q-224 (6 -> 3 by hand, 3 clicks). By hand: 4ˣ⁺² = 4ˣ · 4², circles. Clicks: = 16 · 4ˣ, x = 1: 4³ = 64, the four choices at x = 1.
+- solve-q-226 (5 -> 2 by hand, 3 clicks). By hand: 3 = 3¹, circle. Clicks: 3¹ · 3⁻⁵ = 3⁻⁴, 3⁻⁴⁻⁽⁻⁸⁾ = 3⁴, 3⁴ = 81.
+- solve-q-231 (6 -> 5 by hand, 1 click). Click: the three cases. By hand: the ✓/✗ marks on the choices and the circle.
+- r26-t08-traps (4 -> 0 by hand, 4 clicks): "3 places / 2 places", 2¹⁰ > 2⁸, 2³⁰ < 3²⁰, x = 3. Slide 3 is a bit smaller and closer (8 lines).
+- solve-q-r26-t08-01 (5 -> 2 by hand, 3 clicks). By hand: = 4 · 2ⁿ, circle. Clicks: = 2² · 2ⁿ = 2ⁿ⁺², the n = 1 and n = 2 checks.
+- solve-q-r26-t08-02 (3 -> 1 by hand, 2 clicks). Clicks: x = ½, the four choices at x = ½. By hand: circle.
+- solve-q-r26-t08-05 (3 -> 2 by hand, 1 click). By hand: x³ < 0 -> x < 0, circle. Click: y² > 0.

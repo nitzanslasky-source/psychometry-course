@@ -2209,3 +2209,215 @@ _apply_before_practice_methods = apply
 def apply(M):
     _apply_before_practice_methods(M)
     practice_methods(M)   # 2026-10-06 practice: runs last
+
+
+# =====================================================================================
+# 2026-10-06 pen or click: the rest of topic 7 (all unrecorded videos). Same approved rule as the trial above:
+# setup and mechanical lines appear on click; by hand only the one or two key steps + marks on the choices; no long
+# text by hand. Runs last (after cut_repeats / practice_methods, which add items to Q21-Q25).
+# =====================================================================================
+def pen_or_click_rest(M):
+    S = 42; s = 38   # s: crowded boards
+    P = _pen_or_click_slide
+    # ---- Q8 solve-q-184 (33 − 2/3 x = 1/4 x)
+    P(M, 'solve-q-184', 2, {
+        'Write "33·12 − 8x = 3x"': [A('33·12 − 8x = 3x appears', T(r'$33\cdot12-8x=3x$', size=S))],
+        'Write "33·12 = 11x"': [A('33·12 = 11x appears', T(r'$33\cdot12=11x$', size=S))],
+        'Cancel 33 with 11 (3 and 1); write "x = 3·12 = 36"':
+            [D('Cancel 33 with 11 (3 and 1)'), A('x = 3·12 = 36 appears', T(r'$x=3\cdot12=36$', size=S))],
+    })
+    P(M, 'solve-q-184', 3, {
+        'Write "33 = 1/4 x + 2/3 x = 11/12 x"':
+            [A('33 = 1/4 x + 2/3 x = 11/12 x appears', T(r'$33=\frac14x+\frac23x=\frac{11}{12}x$', size=S))],
+        'Write "33 ÷ 11/12 = 33 · 12/11 = 36"':
+            [A('33 ÷ 11/12 = 33 · 12/11 = 36 appears', T(r'$33\div\frac{11}{12}=33\cdot\frac{12}{11}=36$', size=S))],
+    })
+    # ---- Q9 solve-q-185 (x³ + 3x² = πx²)
+    P(M, 'solve-q-185', 2, {
+        'Cross out x² on both sides; write "x + 3 = π"':
+            [D('Cross out x² on both sides'), A('x + 3 = π appears', T(r'$x+3=\pi$', size=S))],
+        'Write "x = π − 3" and circle choice 2':
+            [A('x = π − 3 appears', T(r'$x=\pi-3$', size=S)), D('Circle choice 2')],
+    }, room=['Write "x²(x + 3) = πx²"'])
+    P(M, 'solve-q-185', 3, {
+        'Write "x + 3 = π → x = π − 3"': [A('x + 3 = π → x = π − 3 appears', T(r'$x+3=\pi \;\to\; x=\pi-3$', size=S))],
+    })
+    # ---- Q10 solve-q-187 (square of the difference = sum of the squares)
+    P(M, 'solve-q-187', 2, {
+        'Expand: write "a² − 2ab + b² = a² + b²"':
+            [A('a² − 2ab + b² = a² + b² appears', T(r'$a^2-2ab+b^2=a^2+b^2$', size=S))],
+        'Cross out a² and b² on both sides; write "−2ab = 0"':
+            [D('Cross out a² and b² on both sides'), A('−2ab = 0 appears', T(r'$-2ab=0$', size=S))],
+        'Write "a = 0 or b = 0" and circle choice 2':
+            [A('a = 0 or b = 0 appears', T(r'$a=0 \ \text{ or } \ b=0$', size=S)), D('Circle choice 2')],
+    }, room=['Write "(a − b)²"'])
+    # ---- Q11 solve-q-186 (p/q = r/s, not necessarily true)
+    P(M, 'solve-q-186', 2, {
+        'Next to choice 1 write "ps = qr ✓" and cross it out':
+            [A('Choice 1: sp = qr ✓ appears', T(r'(1) $\ sp=qr$ ✓', size=34, gap=16)), D('Cross out choice 1')],
+        'Next to choice 2 write "ps = qr ✓" and cross it out':
+            [A('Choice 2: sp = rq ✓ appears', T(r'(2) $\ sp=rq$ ✓', size=34, gap=16)), D('Cross out choice 2')],
+        'Next to choice 3 write "ps = qr ✓" and cross it out':
+            [A('Choice 3: qr = ps ✓ appears', T(r'(3) $\ qr=ps$ ✓', size=34, gap=16)), D('Cross out choice 3')],
+        'Next to choice 4 write "pr = qs ✗" and circle choice 4':
+            [A('Choice 4: pr = qs ✗ appears', T(r'(4) $\ pr=qs$ ✗', size=34)), D('Circle choice 4')],
+    })
+    P(M, 'solve-q-186', 3, {
+        'Next to choices 1 and 3 write "diagonal ÷ leftover ✓"':
+            [A("'Isolate a letter: diagonal ÷ leftover' appears", T(r'Isolate a letter: diagonal product $\div$ the one left', size=34)),
+             D('Tick choices 1 and 3')],
+    })
+    # ---- Q12 solve-q-188 (three equations, x = ?)
+    P(M, 'solve-q-188', 2, {
+        'Write "− (3x + 3z = 18)" and "x = 4"':
+            [A('− (3x + 3z = 18) → x = 4 appears', T(r'$-\,(3x+3z=18) \;\to\; x=4$', size=S))],
+    }, room=['Write "eq1 + eq2: 4x + 3z = 22"'])
+    # ---- Q13 solve-q-189 (mixed-number coefficients, x + y)
+    P(M, 'solve-q-189', 2, {
+        'Write "8x + 8y = 2a + 2b"': [A('8x + 8y = 2a + 2b appears', T(r'$8x+8y=2a+2b$', size=s))],
+        'Write "8(x + y) = 2(a + b) → x + y = (a + b)/4"':
+            [A('8(x + y) = 2(a + b) → x + y = (a + b)/4 appears', T(r'$8(x+y)=2(a+b) \;\to\; x+y=\frac{a+b}{4}$', size=s))],
+    })
+    # ---- Q14 solve-q-190 (a + 2b in x and z)
+    P(M, 'solve-q-190', 2, {
+        'Subtract the second equation; write "a + 2b = 4x − z"':
+            [A('a + 2b = 4x − z appears', T(r'$a+2b=4x-z$', size=S))],
+    }, room=['Write "4a + 4b + 4c = 4x"'])
+    P(M, 'solve-q-190', 3, {
+        'Write "a = b = c = 1 → x = 3, z = 9"':
+            [A('a = b = c = 1 → x = 3, z = 9 appears', T(r'$a=b=c=1 \;\to\; x=3,\ z=9$', size=S))],
+        'Write "a + 2b = 3"': [A('a + 2b = 3 appears', T(r'$a+2b=3$', size=S))],
+    })
+    # ---- Q15 solve-q-178 (difference 5, difference of squares 65)
+    P(M, 'solve-q-178', 2, {
+        'Write "a − b = 5" and "a² − b² = 65"':
+            [A('a − b = 5, a² − b² = 65 appears', T(r'$a-b=5 \qquad a^2-b^2=65$', size=S))],
+        'Replace (a − b) with 5: write "5(a + b) = 65"': [A('5(a + b) = 65 appears', T(r'$5(a+b)=65$', size=S))],
+        'Write "a + b = 13" and circle choice 3':
+            [A('a + b = 13 appears', T(r'$a+b=13$', size=S)), D('Circle choice 3')],
+    }, room=['Write "(a − b)(a + b) = 65"'])
+    P(M, 'solve-q-178', 3, {
+        'Write "7, 2 → 49 − 4 = 45"': [A('7, 2 → 49 − 4 = 45 appears', T(r'$7,\,2 \;\to\; 49-4=45$', size=s))],
+        'Write "8, 3 → 64 − 9 = 55"': [A('8, 3 → 64 − 9 = 55 appears', T(r'$8,\,3 \;\to\; 64-9=55$', size=s))],
+        'Write "9, 4 → 81 − 16 = 65 ✓"': [A('9, 4 → 81 − 16 = 65 ✓ appears', T(r'$9,\,4 \;\to\; 81-16=65$ ✓', size=s))],
+    })
+    P(M, 'solve-q-178', 4, {
+        'Next to choice 1 write "11 → 8, 3: 64 − 9 = 55 ✗"':
+            [A('Choice 1: 11 → 8, 3: 55 ✗ appears', T(r'(1) $\ 11 \;\to\; 8,\,3:\ 64-9=55$ ✗', size=s)), D('Cross out choice 1')],
+        'Next to choice 2 write "15 → 10, 5: 100 − 25 = 75 ✗"':
+            [A('Choice 2: 15 → 10, 5: 75 ✗ appears', T(r'(2) $\ 15 \;\to\; 10,\,5:\ 100-25=75$ ✗', size=s)), D('Cross out choice 2')],
+        'Next to choice 3 write "13 → 9, 4: 81 − 16 = 65 ✓"':
+            [A('Choice 3: 13 → 9, 4: 65 ✓ appears', T(r'(3) $\ 13 \;\to\; 9,\,4:\ 81-16=65$ ✓', size=s))],
+    })
+    # ---- Q16 solve-q-179 (x/y = 3, y/z = 4, z/w = 2)
+    P(M, 'solve-q-179', 2, {
+        'Write "x = 3y"': [A('x = 3y appears', T(r'$x=3y$', size=36, gap=24))],
+        'Write "z = 2w → x = 24w"': [A('z = 2w → x = 24w appears', T(r'$z=2w \;\to\; x=24w$', size=36, gap=24))],
+        'Write "x/w = 24" and circle choice 2':
+            [A('x/w = 24 appears', T(r'$\frac{x}{w}=24$', size=36)), D('Circle choice 2')],
+    }, room=['Write "y = 4z → x = 12z"'], row=70)
+    P(M, 'solve-q-179', 3, {
+        'Write "w = 1 → z = 2 → y = 8 → x = 24"':
+            [A('w = 1 → z = 2 → y = 8 → x = 24 appears', T(r'$w=1 \;\to\; z=2 \;\to\; y=8 \;\to\; x=24$', size=S))],
+    })
+    P(M, 'solve-q-179', 4, {
+        'Write "(x/y)·(y/z)·(z/w) = x/w" and cancel y and z':
+            [A('(x/y)·(y/z)·(z/w) = x/w appears', T(r'$\frac{x}{y}\cdot\frac{y}{z}\cdot\frac{z}{w}=\frac{x}{w}$', size=S)),
+             D('Cancel y and z')],
+        'Write "= 3 · 4 · 2 = 24"': [A('= 3 · 4 · 2 = 24 appears', T(r'$=3\cdot4\cdot2=24$', size=S))],
+    })
+    # ---- Q17 solve-q-180 (pq = 1, q/p)
+    P(M, 'solve-q-180', 2, {
+        'Write "q/p = (1/p) ÷ p = (1/p) · (1/p) = 1/p²"':
+            [A('q/p = (1/p) ÷ p = (1/p)·(1/p) = 1/p² appears',
+               T(r'$\frac{q}{p}=\frac1p\div p=\frac1p\cdot\frac1p=\frac{1}{p^2}$', size=S))],
+    }, room=['Write "q = 1/p"'])
+    P(M, 'solve-q-180', 3, {
+        'Write "q/p = 1/2 ÷ 2 = 1/4"': [A('q/p = 1/2 ÷ 2 = 1/4 appears', T(r'$\frac{q}{p}=\frac12\div2=\frac14$', size=S))],
+    })
+    # ---- Q18 solve-q-181 (2x = y + 3)
+    P(M, 'solve-q-181', 2, {
+        'Write "4x² = y² + 6y + 9"': [A('4x² = y² + 6y + 9 appears', T(r'$4x^2=y^2+6y+9$', size=s))],
+        'Write "4x² − y² = 6y + 9"': [A('4x² − y² = 6y + 9 appears', T(r'$4x^2-y^2=6y+9$', size=s))],
+        'Divide by 2: write "2x² − ½y² = 3y + 4.5"':
+            [A('÷2: 2x² − ½y² = 3y + 4.5 appears', T(r'$\div2:\ \ 2x^2-\frac12y^2=3y+4.5$', size=s))],
+    }, room=['Write "(2x)² = (y + 3)²"'], row=90)
+    P(M, 'solve-q-181', 3, {
+        'Write "y = 1 → 2x = 4 → x = 2"': [A('y = 1 → 2x = 4 → x = 2 appears', T(r'$y=1 \;\to\; 2x=4 \;\to\; x=2$', size=S))],
+        'Write "2·4 − ½·1 = 7.5"': [A('2·4 − ½·1 = 7.5 appears', T(r'$2\cdot4-\frac12\cdot1=7.5$', size=S))],
+    })
+    # ---- Q19 solve-q-182 ((ax + by)² = 9x² + y² − 6xy)
+    P(M, 'solve-q-182', 2, {
+        'Write "a²x² + 2abxy + b²y²"': [A('a²x² + 2abxy + b²y² appears', T(r'$(ax+by)^2=a^2x^2+2abxy+b^2y^2$', size=s, gap=30))],
+        'Write "a² = 9 → a = ±3"': [A('a² = 9 → a = ±3 appears', T(r'$a^2=9 \;\to\; a=\pm3$', size=s, gap=30))],
+        'Write "b² = 1 → b = ±1"': [A('b² = 1 → b = ±1 appears', T(r'$b^2=1 \;\to\; b=\pm1$', size=s, gap=30))],
+        'Write "(3, −1) or (−3, 1) → |a − b| = 4"':
+            [A('(3, −1) or (−3, 1) → |a − b| = 4 appears', T(r'$(3,-1)$ or $(-3,1) \;\to\; |a-b|=4$', size=s))],
+    }, room=['Write "2ab = −6 → ab = −3"'], row=70)
+    P(M, 'solve-q-182', 3, {
+        'Write "a = 3, b = −1 → |3 − (−1)| = 4"':
+            [A('a = 3, b = −1 → |3 − (−1)| = 4 appears', T(r'$a=3,\ b=-1 \;\to\; |3-(-1)|=4$', size=S))],
+    }, room=['Write "9x² − 6xy + y² = (3x − y)²"'])
+    # ---- Q20 solve-q-183 (a² + 2b² = ¼a²)
+    P(M, 'solve-q-183', 2, {
+        'Write "4a² + 8b² = a²"': [A('4a² + 8b² = a² appears', T(r'$4a^2+8b^2=a^2$', size=S))],
+        'Write "3a² + 8b² = 0"': [A('3a² + 8b² = 0 appears', T(r'$3a^2+8b^2=0$', size=S))],
+        'Write "a = 0, b = 0" and circle choice 1':
+            [A('a = 0, b = 0 appears', T(r'$a=0,\ \ b=0$', size=S)), D('Circle choice 1')],
+    }, room=['Under the terms write "≥ 0" and "≥ 0"'], row=60)
+    # ---- Q21 solve-q-r26-t07-01 (divide the equations)
+    P(M, 'solve-q-r26-t07-01', 2, {
+        'Cancel one x and one y; write "x/y = 18/12 = 3/2"':
+            [D('Cancel one x and one y'), A('x/y = 18/12 = 3/2 appears', T(r'$\frac{x}{y}=\frac{18}{12}=\frac32$', size=S))],
+    }, room=['Write "x²y ÷ xy² = 18 ÷ 12"'])
+    P(M, 'solve-q-r26-t07-01', 3, {
+        'Write "x = 3, y = 2: 9 · 2 = 18 ✓, 3 · 4 = 12 ✓"':
+            [A('x = 3, y = 2: 9·2 = 18 ✓, 3·4 = 12 ✓ appears', T(r'$x=3,\ y=2:\ \ 9\cdot2=18$ ✓$,\ \ 3\cdot4=12$ ✓', size=S))],
+    })
+    # ---- Q22 solve-q-r26-t07-02 (x + 1/x = 6)
+    P(M, 'solve-q-r26-t07-02', 2, {
+        'Write "x² + 2 · x · (1/x) + 1/x² = 36"':
+            [A('x² + 2·x·(1/x) + 1/x² = 36 appears', T(r'$x^2+2\cdot x\cdot\frac1x+\frac{1}{x^2}=36$', size=s))],
+        'Write "x² + 2 + 1/x² = 36 → x² + 1/x² = 34"':
+            [A('x² + 2 + 1/x² = 36 → x² + 1/x² = 34 appears', T(r'$x^2+2+\frac{1}{x^2}=36 \;\to\; x^2+\frac{1}{x^2}=34$', size=s))],
+    }, room=['Write "(x + 1/x)² = 6² = 36"'])
+    # ---- Q23 solve-q-r26-t07-04 (x(x − 2) = 15)
+    P(M, 'solve-q-r26-t07-04', 2, {
+        'Write "x² − 2x − 15 = 0"': [A('x² − 2x − 15 = 0 appears', T(r'$x^2-2x-15=0$', size=s, gap=30))],
+        'Write "(x − 5)(x + 3) = 0"': [A('(x − 5)(x + 3) = 0 appears', T(r'$(x-5)(x+3)=0$', size=s, gap=30))],
+        'Write "x = 5 or x = −3"': [A('x = 5 or x = −3 appears', T(r'$x=5 \ \text{ or } \ x=-3$', size=s))],
+    }, room=['Write "(−5) · 3 = −15,  (−5) + 3 = −2"'], row=70)
+    # ---- Q24 solve-q-r26-t07-05 ((x + 1)² = (x − 3)²)
+    P(M, 'solve-q-r26-t07-05', 2, {
+        'Write "x + 1 = x − 3 → 1 = −3 ✗"':
+            [A('x + 1 = x − 3 → 1 = −3 ✗ appears', T(r'$x+1=x-3 \;\to\; 1=-3$ ✗', size=s, gap=26))],
+        'Write "a² = b² → a = b or a = −b"':
+            [A('a² = b² → a = b or a = −b appears', T(r'$a^2=b^2 \;\to\; a=b \ \text{ or } \ a=-b$', size=s, gap=26))],
+        'Write "x + 1 = −(x − 3) = −x + 3 → 2x = 2 → x = 1"':
+            [D('Write "x + 1 = −(x − 3)"'),
+             A('x + 1 = −x + 3 → 2x = 2 → x = 1 appears', T(r'$x+1=-x+3 \;\to\; 2x=2 \;\to\; x=1$', size=s, gap=26))],
+        'Write "x = 1: 2² = 4, (−2)² = 4 ✓"':
+            [A('x = 1: 2² = 4, (−2)² = 4 ✓ appears', T(r'$x=1:\ \ 2^2=4,\ \ (-2)^2=4$ ✓', size=s))],
+    })
+    # the hand-written second case needs its own row: the item above it gets the room
+    b = M.slide('solve-q-r26-t07-05', 2)
+    k = next(l['appear'] for l in b['lines'] if l.get('label') == 'a² = b² → a = b or a = −b appears')
+    b['items'][k]['gap'] = b['items'][k].get('gap', 44) + 64
+    P(M, 'solve-q-r26-t07-05', 3, {
+        'Write "x² + 2x + 1 = x² − 6x + 9"':
+            [A('x² + 2x + 1 = x² − 6x + 9 appears', T(r'$x^2+2x+1=x^2-6x+9$', size=S))],
+    }, room=['Write "8x = 8 → x = 1"'])
+    # ---- Q25 solve-q-r26-t07-06 ((x² − 7x + 12)/(x − 3) = 0)
+    P(M, 'solve-q-r26-t07-06', 2, {
+        'Write "x² − 7x + 12 = 0"': [A('x² − 7x + 12 = 0 appears', T(r'$x^2-7x+12=0$', size=S))],
+        'Write "(x − 3)(x − 4) = 0 → x = 3 or x = 4"':
+            [A('(x − 3)(x − 4) = 0 → x = 3 or x = 4 appears', T(r'$(x-3)(x-4)=0 \;\to\; x=3 \ \text{ or } \ x=4$', size=S))],
+    })
+
+
+_apply_before_pen_or_click_rest = apply
+
+
+def apply(M):
+    _apply_before_pen_or_click_rest(M)
+    pen_or_click_rest(M)   # 2026-10-06 pen or click: runs last

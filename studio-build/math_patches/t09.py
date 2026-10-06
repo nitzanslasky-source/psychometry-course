@@ -758,3 +758,165 @@ _apply_before_cut_repeats = apply
 def apply(M):
     _apply_before_cut_repeats(M)
     cut_repeats(M)   # 2026-10-05: runs last
+
+
+# ---------------------------------------------------------------- 2026-10-06 pen or click
+# Teacher-approved split (2026-10-04/06): lessons - content appears by click, the pen only marks (circle, underline,
+# box, cross out); solution videos - setup and mechanical lines by click, by hand only the one or two key steps plus
+# the marks on the choices. Helper copied from t07.py (same behaviour).
+def _pen_or_click_slide(M, vid, n, repl, room=(), row=106):
+    """repl: pen cue text -> script entries replacing it. room: pen cues kept by hand that need their own row on the
+    board - the item above them gets a bigger gap, so the click items below leave space for the handwriting."""
+    b = M.slide(vid, n); script = []; done = set()
+    for l in b['lines']:
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        elif l['draw'] in repl: script.extend(repl[l['draw']]); done.add(l['draw'])
+        else: script.append(D(l['draw']))
+    missing = (set(repl) - done) | (set(room) - {l.get('draw') for l in b['lines']})
+    assert not missing, '%s #%d: draw cue not found: %s' % (vid, n, missing)
+    M.set_slide(vid, n, script=script)
+    b = M.slide(vid, n); last = b['pre'] - 1
+    for l in b['lines']:
+        if 'appear' in l: last = l['appear']
+        elif l.get('draw') in room: b['items'][last]['gap'] = b['items'][last].get('gap', 44) + row
+
+
+def _tighten(M, vid, n, size, gap):
+    """more lines on the board now: every item a bit smaller and closer, so nothing runs off."""
+    for it in M.slide(vid, n)['items']:
+        it['size'] = min(it.get('size', 46), size); it['gap'] = min(it.get('gap', 44), gap)
+
+
+def pen_or_click(M):
+    L, S = 50, 42
+    # ---- lesson: roots (every written line becomes a click item; circles and the box stay by hand)
+    V = 'roots'
+    _pen_or_click_slide(M, V, 2, {
+        'Write "= 7" and, underneath, "7² = 49"': [A('= 7, since 7² = 49 appears', T(r'$=7 \qquad \text{since } 7^2=49$', size=L))],
+        'Write "x = 7 or x = −7"': [A('x = 7 or x = −7 appears', T(r'$x=7 \ \text{ or } \ x=-7$', size=L))],
+        'Write "x − 3 ≥ 0 → x ≥ 3"': [A('x − 3 ≥ 0 → x ≥ 3 appears', T(r'$x-3\ge0 \;\to\; x\ge3$', size=L))],
+    })
+    _pen_or_click_slide(M, V, 3, {
+        'Write "= √64 = 8"': [A('= √64 = 8 appears', T(r'$=\sqrt{64}=8$', size=L))],
+        'Write "x = −3: √((−3)²) = √9 = 3 = −x"': [A('x = −3: √((−3)²) = 3 = −x appears',
+                                                    T(r'$x=-3:\ \ \sqrt{(-3)^2}=\sqrt9=3=-x$', size=46))],
+    })
+    _pen_or_click_slide(M, V, 4, {
+        'Write "= √(36 · 2)"': [A('= √(36 · 2) appears', T(r'$=\sqrt{36\cdot2}$', size=46))],
+        'Write "= √36 · √2 = 6√2"': [A('= √36 · √2 = 6√2 appears', T(r'$=\sqrt{36}\cdot\sqrt2=6\sqrt2$', size=46))],
+        'Write "= √(100 · 2) = 10√2"': [A('= √(100 · 2) = 10√2 appears', T(r'$=\sqrt{100\cdot2}=10\sqrt2$', size=46))],
+        'Under √72 write "√72 = √(4 · 18) = 2√18"': [A('√72 = √(4 · 18) = 2√18 appears', T(r'$\sqrt{72}=\sqrt{4\cdot18}=2\sqrt{18}$', size=46))],
+        'Write "2√18 = 2 · 3√2 = 6√2"': [A('2√18 = 2 · 3√2 = 6√2 appears', T(r'$2\sqrt{18}=2\cdot3\sqrt2=6\sqrt2$', size=46))],
+    })
+    M.slide(V, 4)['items'][0]['gap'] = 40
+    _tighten(M, V, 2, 46, 24); _tighten(M, V, 7, 56, 14); _tighten(M, V, 10, 50, 12); _tighten(M, V, 4, 60, 30)
+    _pen_or_click_slide(M, V, 5, {
+        'Write "= √9 · √7 = √63"': [A('= √9 · √7 = √63 appears', T(r'$=\sqrt9\cdot\sqrt7=\sqrt{63}$', size=L))],
+        'Write "= ∛8 · ∛5 = ∛40"': [A('= ∛8 · ∛5 = ∛40 appears', T(r'$=\sqrt[3]8\cdot\sqrt[3]5=\sqrt[3]{40}$', size=L))],
+        'Write "3√7 = √63 < √64 = 8"': [A('3√7 = √63 < √64 = 8 appears', T(r'$3\sqrt7=\sqrt{63}<\sqrt{64}=8$', size=L))],
+    })
+    _pen_or_click_slide(M, V, 6, {
+        'Write "= 5√5"': [A('= 5√5 appears', T(r'$=5\sqrt5$', size=56))],
+        'Write "= 6√2 + 4√2 = 10√2"': [A('= 6√2 + 4√2 = 10√2 appears', T(r'$=6\sqrt2+4\sqrt2=10\sqrt2$', size=56))],
+    })
+    _pen_or_click_slide(M, V, 7, {
+        'Write "= √(75 ÷ 3) = √25 = 5"': [A('= √(75 ÷ 3) = √25 = 5 appears', T(r'$=\sqrt{75\div3}=\sqrt{25}=5$', size=46))],
+        'Write "6 ÷ 3 = 2 → 2√3"': [A('6 ÷ 3 = 2 → 2√3 appears', T(r'$6\div3=2 \;\to\; 2\sqrt3$', size=46))],
+        'Write "6/√3 = (2 · √3 · √3) ÷ √3 = 2√3"': [A('6/√3 = (2 · √3 · √3) ÷ √3 = 2√3 appears',
+                                                    T(r'$\frac{6}{\sqrt3}=\frac{2\cdot\sqrt3\cdot\sqrt3}{\sqrt3}=2\sqrt3$', size=46))],
+    })
+    _pen_or_click_slide(M, V, 8, {
+        'Write "= −4" and, underneath, "(−4)³ = −64"': [A('= −4, since (−4)³ = −64 appears',
+                                                          T(r'$=-4 \qquad \text{since } (-4)^3=-64$', size=L))],
+    })
+    _pen_or_click_slide(M, V, 9, {
+        'Under √a write "(a^½)² = a"': [A('(a^½)² = a appears', T(r'$\left(a^{\frac12}\right)^2=a$', size=56))],
+    })
+    _pen_or_click_slide(M, V, 10, {
+        'Write "= 3^(8/4) = 3² = 9"': [A('= 3^(8/4) = 3² = 9 appears', T(r'$=3^{\frac84}=3^2=9$', size=46))],
+        'Write "= (∛8)² = 2² = 4"': [A('= (∛8)² = 2² = 4 appears', T(r'$=\left(\sqrt[3]8\right)^2=2^2=4$', size=46))],
+        'Write "√(√81) = √9 = 3"': [A('√(√81) = √9 = 3 appears', T(r'$\sqrt{\sqrt{81}}=\sqrt9=3$', size=46))],
+    })
+    _pen_or_click_slide(M, V, 11, {
+        'Write "√(9 + 16) = √25 = 5" and "√9 + √16 = 3 + 4 = 7"': [
+            A('√(9 + 16) = √25 = 5 appears', T(r'$\sqrt{9+16}=\sqrt{25}=5$', size=L)),
+            A('√9 + √16 = 3 + 4 = 7 appears', T(r'$\sqrt9+\sqrt{16}=3+4=7$', size=L))],
+    })
+    _pen_or_click_slide(M, V, 12, {
+        'Write "x − 2 = 16 → x = 18"': [A('x − 2 = 16 → x = 18 appears', T(r'$x-2=16 \;\to\; x=18$', size=46))],
+        'Write "Check: √(18 − 2) = √16 = 4 ✓"': [A('Check: √(18 − 2) = 4 ✓ appears', T(r'Check: $\sqrt{18-2}=\sqrt{16}=4$ ✓', size=46))],
+        'Write "x² = 3x → x² − 3x = 0 → x(x − 3) = 0"': [A('x² = 3x → x² − 3x = 0 → x(x − 3) = 0 appears',
+                                                         T(r'$x^2=3x \;\to\; x^2-3x=0 \;\to\; x(x-3)=0$', size=46))],
+        'Write "x = 0 or x = 3"': [A('x = 0 or x = 3 appears', T(r'$x=0 \ \text{ or } \ x=3$', size=46))],
+    })
+    # ---- Question 1: q-r26-t09-01 - by hand: ⁴√(9⁶) = 9^(6/4) (method 1 key) and 9⁶ = (3²)⁶ = 3¹² (method 2 key), circle
+    _pen_or_click_slide(M, 'solve-q-r26-t09-01', 2, {
+        'Write "9^(3/2) = (√9)³ = 3³ = 27"': [A('9^(3/2) = (√9)³ = 3³ = 27 appears', T(r'$9^{\frac32}=\left(\sqrt9\right)^3=3^3=27$', size=S))],
+    }, room=['Write "⁴√(9⁶) = 9^(6/4) = 9^(3/2)"'])
+    _pen_or_click_slide(M, 'solve-q-r26-t09-01', 3, {
+        'Write "⁴√(3¹²) = 3^(12/4) = 3³ = 27"': [A('⁴√(3¹²) = 3^(12/4) = 3³ = 27 appears', T(r'$\sqrt[4]{3^{12}}=3^{\frac{12}{4}}=3^3=27$', size=S))],
+    }, room=['Write "9⁶ = (3²)⁶ = 3¹²"'])
+    # ---- Question 2: q-r26-t09-02 - by hand: the first square (3√3)² = 27 (the move), circle
+    _pen_or_click_slide(M, 'solve-q-r26-t09-02', 2, {
+        'Write "(2√7)² = 4 · 7 = 28"': [A('(2√7)² = 28 appears', T(r'$(2\sqrt7)^2=4\cdot7=28$', size=40))],
+        'Write "(√26)² = 26"': [A('(√26)² = 26 appears', T(r'$(\sqrt{26})^2=26$', size=40))],
+        'Write "5.2² = 27.04"': [A('5.2² = 27.04 appears', T(r'$5.2^2=27.04$', size=40))],
+    }, room=['Write "(3√3)² = 9 · 3 = 27"'], row=90)
+    # ---- Question 3: q-r26-t09-03 - tries by click; by hand: why −2 sneaks in (x + 6 = x²), circle
+    _pen_or_click_slide(M, 'solve-q-r26-t09-03', 2, {
+        'Write "x = −2: √4 = 2 ≠ −2 ✗"': [A('x = −2: √4 = 2 ≠ −2 ✗ appears', T(r'$x=-2:\ \ \sqrt4=2\ne-2$ ✗', size=S))],
+        'Write "x = 3: √9 = 3 ✓"': [A('x = 3: √9 = 3 ✓ appears', T(r'$x=3:\ \ \sqrt9=3$ ✓', size=S))],
+        'Write "x = 6: √12 ≠ 6 ✗"': [A('x = 6: √12 ≠ 6 ✗ appears', T(r'$x=6:\ \ \sqrt{12}\ne6$ ✗', size=S))],
+    })
+    _pen_or_click_slide(M, 'solve-q-r26-t09-03', 3, {}, room=['Write "x + 6 = x²  →  (−2)² = 4 = −2 + 6"'])
+    # ---- lesson: Root Traps
+    _pen_or_click_slide(M, 'r26-t09-traps', 2, {
+        'Write "√64 < √70 < √81 → 8 < √70 < 9"': [A('√64 < √70 < √81 → 8 < √70 < 9 appears',
+                                                   T(r'$\sqrt{64}<\sqrt{70}<\sqrt{81} \;\to\; 8<\sqrt{70}<9$', size=50))],
+    })
+    _pen_or_click_slide(M, 'r26-t09-traps', 3, {
+        'Write "(√2 + √3)² = 2 + 3 + 2√6 = 5 + 2√6"': [A('(√2 + √3)² = 5 + 2√6 appears',
+                                                       T(r'$(\sqrt2+\sqrt3)^2=2+3+2\sqrt6=5+2\sqrt6$', size=46))],
+        'Write "8 + 2√15  vs  15 → 2√15 vs 7 → √60 vs √49"': [A('8 + 2√15 vs 15 → 2√15 vs 7 → √60 vs √49 appears',
+                                                               T(r'$8+2\sqrt{15}$ vs $15 \;\to\; 2\sqrt{15}$ vs $7 \;\to\; \sqrt{60}$ vs $\sqrt{49}$', size=44))],
+    })
+    # ---- Question 4: q-r26-t09-04 - the four values by click, circle by hand
+    _pen_or_click_slide(M, 'solve-q-r26-t09-04', 2, {
+        'Write "x² = 1/16,  x = 1/4,  √x = 1/2,  x³ = 1/64"': [A('x² = 1/16, x = 1/4, √x = 1/2, x³ = 1/64 appears',
+            T(r'$x^2=\frac1{16},\quad x=\frac14,\quad \sqrt x=\frac12,\quad x^3=\frac1{64}$', size=S))],
+    })
+    # ---- Question 5: q-r26-t09-05 - by hand: the first one, (√3)⁶ = 3³ = 27 (the idea), circle
+    _pen_or_click_slide(M, 'solve-q-r26-t09-05', 2, {
+        'Write "(∛5)⁶ = 5² = 25"': [A('(∛5)⁶ = 5² = 25 appears', T(r'$\left(\sqrt[3]5\right)^6=5^2=25$', size=S))],
+        'Write "(⁶√28)⁶ = 28,  (⁶√26)⁶ = 26"': [A('(⁶√28)⁶ = 28, (⁶√26)⁶ = 26 appears',
+                                                T(r'$\left(\sqrt[6]{28}\right)^6=28,\quad \left(\sqrt[6]{26}\right)^6=26$', size=S))],
+    }, room=['Write "(√3)⁶ = 3³ = 27"'])
+    # ---- Question 6: q-r26-t09-06 - by hand: the bottom times its partner = 1 (the idea), circle
+    _pen_or_click_slide(M, 'solve-q-r26-t09-06', 2, {
+        'Write "Top: 1 · (√3 + √2) = √3 + √2"': [A('Top: √3 + √2 appears', T(r'Top: $1\cdot(\sqrt3+\sqrt2)=\sqrt3+\sqrt2$', size=S))],
+    }, room=['Write "Bottom: (√3 − √2)(√3 + √2) = 3 − 2 = 1"'])
+    _pen_or_click_slide(M, 'solve-q-r26-t09-06', 3, {
+        'Write "(√3 + √2)(√3 − √2) = 3 − 2 = 1 ✓"': [A('(√3 + √2)(√3 − √2) = 1 ✓ appears',
+                                                      T(r'$(\sqrt3+\sqrt2)(\sqrt3-\sqrt2)=3-2=1$ ✓', size=S))],
+    })
+    # ---- lesson: Summary
+    _pen_or_click_slide(M, 'r26-t09-summary', 6, {
+        'Write "√(36 + 64) = √100 = 10, but √36 + √64 = 6 + 8 = 14"': [A('√(36 + 64) = 10, but √36 + √64 = 14 appears',
+            T(r'$\sqrt{36+64}=\sqrt{100}=10$, but $\sqrt{36}+\sqrt{64}=6+8=14$', size=42))],
+    })
+    _pen_or_click_slide(M, 'r26-t09-summary', 8, {
+        'Write "x = 1/9:  1/81 < 1/9 < 1/3"': [A('x = 1/9: 1/81 < 1/9 < 1/3 appears', T(r'$x=\frac19:\quad \frac1{81}<\frac19<\frac13$', size=50))],
+    })
+    _pen_or_click_slide(M, 'r26-t09-summary', 10, {
+        'Write "x = 4: √16 = 4 ✓    x = −3: √9 = 3 ≠ −3 ✗"': [A('x = 4 ✓, x = −3 ✗ appears',
+            T(r'$x=4:\ \sqrt{16}=4$ ✓ $\qquad x=-3:\ \sqrt9=3\ne-3$ ✗', size=44))],
+    })
+
+
+_apply_before_pen_or_click = apply
+
+
+def apply(M):
+    _apply_before_pen_or_click(M)
+    pen_or_click(M)   # 2026-10-06 pen or click: runs last

@@ -153,3 +153,16 @@ Function `cut_repeats` (runs last). Nothing in topic 10 is recorded.
   - Q3 title line "You know the method — equal bases" → "The method: equal bases — then equal exponents."
   - Moved into Q3 (new short slide "When it works"): "Equal bases → equal exponents: for a positive base that is not 1" + one line. 1.3 → 1.5 min.
 - **Exponent Traps — Sums of Powers** (2.7 → 0.9 min). Cut "Sums of equal powers" → Q7, "Common factor" → Q8, recap. Kept "Same exponent" (aᵡbᵡ = (ab)ᵡ; no question video here). Title slide names what the questions teach.
+
+## 2026-10-06 pen or click
+Function `pen_or_click` (runs last, after `cut_repeats`). The teacher's approved split: in lessons the content appears by click and the pen only marks; in solution videos the setup and mechanical lines appear by click, and only the key step (plus the marks on the choices) is written by hand. Where a hand-written line comes before click lines, the board leaves an empty row for it. Spoken lines, math, questions and slide count are unchanged. No topic 10 video is recorded. Topic total: 64 pen cues -> 15 by hand, 40 by click, 9 split (24 pen cues left).
+- powers-techniques (8 -> 0 by hand, 6 clicks, 2 split). Every written line is a click. Split: cross out √3 top and bottom by hand (both slides). Slide 3 now has 9 lines, so it is smaller and closer; the two shortcut lines no longer repeat the fraction.
+- solve-q-248 (8 -> 3 by hand, 5 clicks). By hand: 9⁶ = (3²)⁶ = 3¹² (method 1), (9⁶ / 3⁸) · (8/4)⁻² (method 2), circle. Clicks: 8⁻² and 4⁻² in base 2, the two exponent subtractions, = 3⁴ · 2⁻².
+- solve-q-249 (9 -> 3 by hand, 5 clicks, 1 split). By hand: √27 = √9 · √3 = 3√3 (method 1), bottom = √3(√16 − √4) = 2√3 (method 2), circle. Clicks: top, √48 and √12, bottom, top = 2√27, the last division. Split: 6√3 / 2√3 = 3 click + circle by hand.
+- solve-q-250 (5 -> 1 by hand, 3 clicks, 1 split). By hand: 4x = −12 + 6x (same base -> equal exponents). Clicks: 4^(2x) = 2^(4x), (1/8)^(4−2x) = 2^(−12+6x) (written in full, not "under"), the check (two lines). Split: 12 = 2x -> x = 6 click + circle.
+- solve-q-251 (4 -> 1 by hand, 2 clicks, 1 split). By hand: (√(x − 7))² = 3². Clicks: x − 7 = 9, x = 16. Split: check click + circle.
+- solve-q-252 (7 -> 1 by hand, 5 clicks, 1 split). By hand: (x√5)² = x² · 5. Clicks: (5√x)² = 25x; "5x² = 25x -> x² = 5x" (one arrow line, the second part on the next click); check; the "no x ≠ 0?" chain. Split: x = 5 click + circle. Lines are smaller (32) so the question still fits.
+- solve-q-r26-t10-01 (9 -> 2 by hand, 4 clicks, 3 split). By hand: x ≥ 0, circle. Clicks: the squaring, the factoring, the two checks. Split (method 2): each try is a click line "(1) x = −1: √1 = 1 ≠ −1" etc.; crossing out / circling the choices by hand.
+- solve-q-r26-t10-02 (4 -> 2 by hand, 2 clicks). By hand: = 4 · 2¹⁰, circle. Clicks: 4 = 2² -> 2¹², the small check.
+- solve-q-r26-t10-03 (5 -> 2 by hand, 3 clicks). By hand: 3ˣ(9 − 1) = 72 -> 8 · 3ˣ = 72, circle. Clicks: 3ˣ⁺² = 9 · 3ˣ, 3ˣ = 9 -> x = 2, the x = 2 check.
+- r26-t10-summary (5 -> 0 by hand, 5 clicks).

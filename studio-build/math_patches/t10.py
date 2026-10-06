@@ -727,3 +727,171 @@ _apply_before_cut_repeats = apply
 def apply(M):
     _apply_before_cut_repeats(M)
     cut_repeats(M)   # 2026-10-05: runs last
+
+
+# ---------------------------------------------------------------- 2026-10-06 pen or click
+# Teacher-approved split (2026-10-04/06): lessons - content appears by click, the pen only marks (circle, cross out);
+# solution videos - setup and mechanical lines by click, by hand only the one or two key steps plus the marks on the
+# choices. Helper copied from t07.py (same behaviour).
+def _pen_or_click_slide(M, vid, n, repl, room=(), row=106):
+    """repl: pen cue text -> script entries replacing it. room: pen cues kept by hand that need their own row on the
+    board - the item above them gets a bigger gap, so the click items below leave space for the handwriting."""
+    b = M.slide(vid, n); script = []; done = set()
+    for l in b['lines']:
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        elif l['draw'] in repl: script.extend(repl[l['draw']]); done.add(l['draw'])
+        else: script.append(D(l['draw']))
+    missing = (set(repl) - done) | (set(room) - {l.get('draw') for l in b['lines']})
+    assert not missing, '%s #%d: draw cue not found: %s' % (vid, n, missing)
+    M.set_slide(vid, n, script=script)
+    b = M.slide(vid, n); last = b['pre'] - 1
+    for l in b['lines']:
+        if 'appear' in l: last = l['appear']
+        elif l.get('draw') in room: b['items'][last]['gap'] = b['items'][last].get('gap', 44) + row
+
+
+def _tighten(M, vid, n, size, gap):
+    """more lines on the board now: every item a bit smaller and closer, so nothing runs off."""
+    for it in M.slide(vid, n)['items']:
+        it['size'] = min(it.get('size', 46), size); it['gap'] = min(it.get('gap', 44), gap)
+
+
+def pen_or_click(M):
+    S = 40
+    # ---- lesson: powers-techniques (written lines become click items; the cross-outs stay by hand)
+    V = LESSON
+    _pen_or_click_slide(M, V, 2, {
+        'Write "= √(48 ÷ 3) = √16 = 4"': [A('= √(48 ÷ 3) = √16 = 4 appears', T(r'$=\sqrt{48\div3}=\sqrt{16}=4$', size=50))],
+        'Below, write "√48 = √16 · √3"; cross out √3 top and bottom; write "= √16 = 4"': [
+            A('√48 = √16 · √3 appears', T(r'$\sqrt{48}=\sqrt{16}\cdot\sqrt3$', size=50)),
+            D('Cross out √3 top and bottom'),
+            A('= √16 = 4 appears', T(r'$=\sqrt{16}=4$', size=50))],
+    })
+    _pen_or_click_slide(M, V, 3, {
+        'Write "= (2 · 3) / √3"': [A('= (2 · 3) / √3 appears', T(r'$=\frac{2\cdot3}{\sqrt3}$', size=56))],
+        'Write "= (2 · √3 · √3) / √3"': [A('= (2 · √3 · √3) / √3 appears', T(r'$=\frac{2\cdot\sqrt3\cdot\sqrt3}{\sqrt3}$', size=56))],
+        'Cross out one √3 on top and the √3 on the bottom; write "= 2√3"': [
+            D('Cross out one √3 on top and the √3 on the bottom'), A('= 2√3 appears', T(r'$=2\sqrt3$', size=50))],
+        'Write "= (4 · √5 · √5) / √5 = 4√5"': [A('= (4 · √5 · √5) / √5 = 4√5 appears',
+                                               T(r'$=\frac{4\cdot\sqrt5\cdot\sqrt5}{\sqrt5}=4\sqrt5$', size=56))],
+        'Next to the question write "6 ÷ 3 = 2 → 2√3"': [A('6 ÷ 3 = 2 → 2√3 appears', T(r'$6\div3=2 \;\to\; 2\sqrt3$', size=42))],
+        'Next to 20/√5 write "20 ÷ 5 = 4 → 4√5"': [A('20 ÷ 5 = 4 → 4√5 appears', T(r'$20\div5=4 \;\to\; 4\sqrt5$', size=42))],
+    })
+    _tighten(M, V, 3, 44, 4)
+    # ---- Question 1: q-248 - by hand: 9⁶ = (3²)⁶ = 3¹² (method 1 key), the pairing (method 2 key), circle
+    _pen_or_click_slide(M, 'solve-q-248', 2, {
+        'Write "8⁻² = (2³)⁻² = 2⁻⁶"': [A('8⁻² = 2⁻⁶ appears', T(r'$8^{-2}=\left(2^3\right)^{-2}=2^{-6}$', size=36))],
+        'Write "4⁻² = (2²)⁻² = 2⁻⁴"': [A('4⁻² = 2⁻⁴ appears', T(r'$4^{-2}=\left(2^2\right)^{-2}=2^{-4}$', size=36))],
+        'Write "3: 12 − 8 = 4"': [A('3: 12 − 8 = 4 appears', T(r'$3:\ \ 12-8=4$', size=36))],
+        'Write "2: −6 − (−4) = −2"': [A('2: −6 − (−4) = −2 appears', T(r'$2:\ \ -6-(-4)=-2$', size=36))],
+    }, room=['Under the fraction write "9⁶ = (3²)⁶ = 3¹²"'], row=80)
+    _pen_or_click_slide(M, 'solve-q-248', 3, {
+        'Write "= 3⁴ · 2⁻²"': [A('= 3⁴ · 2⁻² appears', T(r'$=3^4\cdot2^{-2}$', size=S))],
+    }, room=['Write "(9⁶ / 3⁸) · (8/4)⁻²"'])
+    # ---- Question 2: q-249 - by hand: √27 = √9 · √3 (method 1 key), the common factor √3 (method 2 key), circles
+    _pen_or_click_slide(M, 'solve-q-249', 2, {
+        'Write "top: 3√3 + 3√3 = 6√3"': [A('top: 6√3 appears', T(r'top: $3\sqrt3+3\sqrt3=6\sqrt3$', size=36))],
+        'Write "√48 = √16·√3 = 4√3,  √12 = √4·√3 = 2√3"': [A('√48 = 4√3, √12 = 2√3 appears',
+            T(r'$\sqrt{48}=\sqrt{16}\cdot\sqrt3=4\sqrt3,\ \ \sqrt{12}=\sqrt4\cdot\sqrt3=2\sqrt3$', size=36))],
+        'Write "bottom: 4√3 − 2√3 = 2√3"': [A('bottom: 2√3 appears', T(r'bottom: $4\sqrt3-2\sqrt3=2\sqrt3$', size=36))],
+        'Write "6√3 / 2√3 = 3" and circle choice 3': [A('6√3 / 2√3 = 3 appears', T(r'$\frac{6\sqrt3}{2\sqrt3}=3$', size=36)),
+                                                     D('Circle choice 3')],
+    }, room=['Write "√27 = √9 · √3 = 3√3"'], row=80)
+    for it in M.slide('solve-q-249', 2)['items'][2:]: it['gap'] = 16
+    _pen_or_click_slide(M, 'solve-q-249', 3, {
+        'Write "top = 2√27"': [A('top = 2√27 appears', T(r'top $=2\sqrt{27}$', size=S))],
+        'Write "2√27 / 2√3 = √(27 ÷ 3) = √9 = 3"': [A('2√27 / 2√3 = √9 = 3 appears',
+                                                    T(r'$\frac{2\sqrt{27}}{2\sqrt3}=\sqrt{27\div3}=\sqrt9=3$', size=S))],
+    }, room=['Write "bottom = √3(√16 − √4) = √3(4 − 2) = 2√3"'])
+    # ---- Question 3: q-250 - by hand: 4x = −12 + 6x (same base -> equal exponents), circle
+    _pen_or_click_slide(M, 'solve-q-250', 2, {
+        'Under 4^(2x) write "= (2²)^(2x) = 2^(4x)"': [A('4^(2x) = 2^(4x) appears', T(r'$4^{2x}=\left(2^2\right)^{2x}=2^{4x}$', size=S))],
+        'Under (1/8)^(4−2x) write "= (2⁻³)^(4−2x) = 2^(−12+6x)"': [A('(1/8)^(4−2x) = 2^(−12+6x) appears',
+            T(r'$\left(\frac18\right)^{4-2x}=\left(2^{-3}\right)^{4-2x}=2^{-12+6x}$', size=S))],
+        'Write "12 = 2x → x = 6" and circle choice 3': [A('12 = 2x → x = 6 appears', T(r'$12=2x \;\to\; x=6$', size=S)),
+                                                       D('Circle choice 3')],
+    }, room=['Write "4x = −12 + 6x"'])
+    _pen_or_click_slide(M, 'solve-q-250', 4, {
+        'Write "4¹² = 2²⁴" and "(1/8)⁻⁸ = 8⁸ = 2²⁴"': [
+            A('4¹² = 2²⁴ appears', T(r'$4^{12}=2^{24}$', size=S)),
+            A('(1/8)⁻⁸ = 8⁸ = 2²⁴ appears', T(r'$\left(\frac18\right)^{-8}=8^8=2^{24}$', size=S))],
+    })
+    # ---- Question 4: q-251 - by hand: (√(x − 7))² = 3² (square both sides), circle
+    _pen_or_click_slide(M, 'solve-q-251', 2, {
+        'Write "x − 7 = 9"': [A('x − 7 = 9 appears', T(r'$x-7=9$', size=S))],
+        'Write "x = 16"': [A('x = 16 appears', T(r'$x=16$', size=S))],
+        'Write "check: √(16 − 7) = √9 = 3 ✓" and circle choice 4': [
+            A('check: √(16 − 7) = 3 ✓ appears', T(r'check: $\sqrt{16-7}=\sqrt9=3$ ✓', size=S)), D('Circle choice 4')],
+    }, room=['Write "(√(x − 7))² = 3²"'])
+    # ---- Question 5: q-252 - by hand: (x√5)² = x² · 5 (square both sides), circle
+    _pen_or_click_slide(M, 'solve-q-252', 2, {
+        'Write "(5√x)² = 25x"': [A('(5√x)² = 25x appears', T(r'$(5\sqrt x)^2=25x$', size=32))],
+        'Write "5x² = 25x"': [A('5x² = 25x → x² = 5x appears', T(r'$5x^2=25x \;\to\; x^2=5x$', size=32))],
+        'Write "x² = 5x"': [],          # now the second part of the line above
+        'Write "x = 5" and circle choice 2': [A('x = 5 appears', T(r'$x=5$', size=32)), D('Circle choice 2')],
+        'Write "check: 5√5 = 5√5 ✓"': [A('check: 5√5 = 5√5 ✓ appears', T(r'check: $5\sqrt5=5\sqrt5$ ✓', size=32))],
+        'Write "no x ≠ 0?  x² = 5x → x² − 5x = 0 → x(x − 5) = 0 → x = 0 or x = 5"': [
+            A('No x ≠ 0? x² − 5x = 0 → x(x − 5) = 0 → x = 0 or 5 appears',
+              T(r'No $x\ne0$? $\ x^2-5x=0 \;\to\; x(x-5)=0 \;\to\; x=0$ or $x=5$', size=30))],
+    }, room=['Write "(x√5)² = x² · 5"'], row=60)
+    for it in M.slide('solve-q-252', 2)['items'][1:]: it['gap'] = 6
+    # ---- Question 6: q-r26-t10-01 - by hand: x ≥ 0 (a root is never negative); the tries on the choices are clicks,
+    #      the cross-outs and circle by hand
+    _pen_or_click_slide(M, 'solve-q-r26-t10-01', 2, {
+        'Write "2x + 3 = x²  →  x² − 2x − 3 = 0"': [A('2x + 3 = x² → x² − 2x − 3 = 0 appears', T(r'$2x+3=x^2 \;\to\; x^2-2x-3=0$', size=36))],
+        'Write "(x − 3)(x + 1) = 0  →  x = 3 or x = −1"': [A('(x − 3)(x + 1) = 0 → x = 3 or x = −1 appears',
+            T(r'$(x-3)(x+1)=0 \;\to\; x=3 \ \text{ or } \ x=-1$', size=36))],
+        'Write "x = 3: √9 = 3 ✓"': [A('x = 3: √9 = 3 ✓ appears', T(r'$x=3:\ \ \sqrt9=3$ ✓', size=36))],
+        'Write "x = −1: √1 = 1 ≠ −1 ✗"': [A('x = −1: √1 = 1 ≠ −1 ✗ appears', T(r'$x=-1:\ \ \sqrt1=1\ne-1$ ✗', size=36))],
+    }, room=['Write "x ≥ 0"'], row=96)
+    for it in M.slide('solve-q-r26-t10-01', 2)['items'][2:]: it['gap'] = 14
+    _pen_or_click_slide(M, 'solve-q-r26-t10-01', 3, {
+        'Next to choice 1 write "√1 = 1 ≠ −1" and cross out choices 1 and 4': [
+            A('(1) −1: √1 = 1 ≠ −1 appears', T(r'(1) $x=-1$: $\ \sqrt1=1\ne-1$', size=S)), D('Cross out choices 1 and 4')],
+        'Next to choice 2 write "√5 ≠ 1" and cross it out': [
+            A('(2) 1: √5 ≠ 1 appears', T(r'(2) $x=1$: $\ \sqrt5\ne1$', size=S)), D('Cross out choice 2')],
+        'Next to choice 3 write "√9 = 3 ✓" and circle it': [
+            A('(3) 3: √9 = 3 ✓ appears', T(r'(3) $x=3$: $\ \sqrt9=3$ ✓', size=S)), D('Circle choice 3')],
+    })
+    # ---- Question 7: q-r26-t10-02 - by hand: = 4 · 2¹⁰ (count the copies), circle
+    _pen_or_click_slide(M, 'solve-q-r26-t10-02', 2, {
+        'Write "4 = 2²  →  2² · 2¹⁰ = 2¹²"': [A('4 = 2² → 2² · 2¹⁰ = 2¹² appears', T(r'$4=2^2 \;\to\; 2^2\cdot2^{10}=2^{12}$', size=S))],
+    }, room=['Write "= 4 · 2¹⁰"'])
+    _pen_or_click_slide(M, 'solve-q-r26-t10-02', 3, {
+        'Write "2¹ + 2¹ + 2¹ + 2¹ = 8 = 2³"': [A('2¹ + 2¹ + 2¹ + 2¹ = 8 = 2³ appears', T(r'$2^1+2^1+2^1+2^1=8=2^3$', size=S))],
+    })
+    # ---- Question 8: q-r26-t10-03 - by hand: 3ˣ(9 − 1) = 72 (take out the common factor), circle
+    _pen_or_click_slide(M, 'solve-q-r26-t10-03', 2, {
+        'Write "3ˣ⁺² = 3ˣ · 3² = 9 · 3ˣ"': [A('3ˣ⁺² = 3ˣ · 3² = 9 · 3ˣ appears', T(r'$3^{x+2}=3^x\cdot3^2=9\cdot3^x$', size=S))],
+        'Write "3ˣ = 9 = 3²  →  x = 2"': [A('3ˣ = 9 = 3² → x = 2 appears', T(r'$3^x=9=3^2 \;\to\; x=2$', size=S))],
+    }, room=['Write "3ˣ(9 − 1) = 72  →  8 · 3ˣ = 72"'])
+    _pen_or_click_slide(M, 'solve-q-r26-t10-03', 3, {
+        'Write "x = 2: 3⁴ − 3² = 81 − 9 = 72 ✓"': [A('x = 2: 3⁴ − 3² = 72 ✓ appears', T(r'$x=2:\ \ 3^4-3^2=81-9=72$ ✓', size=S))],
+    })
+    # ---- lesson: Summary
+    _pen_or_click_slide(M, 'r26-t10-summary', 2, {
+        'Write "28 ÷ 7 = 4 → 4√7"': [A('28 ÷ 7 = 4 → 4√7 appears', T(r'$28\div7=4 \;\to\; 4\sqrt7$', size=50))],
+    })
+    _pen_or_click_slide(M, 'r26-t10-summary', 5, {
+        'Write "3x + 1 = 4 → x = 1"': [A('3x + 1 = 4 → x = 1 appears', T(r'$3x+1=4 \;\to\; x=1$', size=50))],
+    })
+    _pen_or_click_slide(M, 'r26-t10-summary', 6, {
+        'Write "x = 5: √25 = 5 ✓    x = −4: √16 = 4 ≠ −4 ✗"': [A('x = 5 ✓, x = −4 ✗ appears',
+            T(r'$x=5:\ \sqrt{25}=5$ ✓ $\qquad x=-4:\ \sqrt{16}=4\ne-4$ ✗', size=44))],
+    })
+    _pen_or_click_slide(M, 'r26-t10-summary', 7, {
+        'Write "x² − 7x = 0 → x(x − 7) = 0 → x = 0 or x = 7"': [A('x² − 7x = 0 → x(x − 7) = 0 → x = 0 or 7 appears',
+            T(r'$x^2-7x=0 \;\to\; x(x-7)=0 \;\to\; x=0 \ \text{ or } \ x=7$', size=46))],
+    })
+    _pen_or_click_slide(M, 'r26-t10-summary', 8, {
+        'Write "x = 2: 4 + 4 = 8, but 4² = 16"': [A('x = 2: 4 + 4 = 8, but 4² = 16 appears', T(r'$x=2:\ \ 4+4=8$, but $4^2=16$', size=46))],
+    })
+
+
+_apply_before_pen_or_click = apply
+
+
+def apply(M):
+    _apply_before_pen_or_click(M)
+    pen_or_click(M)   # 2026-10-06 pen or click: runs last

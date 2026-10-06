@@ -119,3 +119,15 @@ Function `cut_repeats` (runs last). Nothing in topic 9 is recorded.
 - **Roots — Exam traps** (3.3 → 1.3 min). Cut: "Between 0 and 1" → Question 4; "Different roots" (6th power) → Question 5; "Conjugates" → Question 6; comparing two roots by squaring → Question 2.
 - Kept: "Estimate a root" (√70 between 8 and 9 — used in practice, no question video) with one opening line "Comparing two roots? Square both — like in question two. It works because both numbers are positive." Kept "Square of a sum" whole. Sidebar: Estimate a root · Square of a sum.
 - Moved into Question 4 (new short slide "The rule"): the board rule 0 < x < 1: x² < x < √x (the spoken rule line moved there) and "x > 1: √x < x < x² — above one it's the other way around". 0.6 → 0.7 min.
+
+## 2026-10-06 pen or click
+Function `pen_or_click` (runs last, after `cut_repeats`). The teacher's approved split: in lessons the content appears by click and the pen only marks; in solution videos the setup and mechanical lines appear by click, and only the key step (plus the marks on the choices) is written by hand. Where a hand-written line comes before click lines, the board leaves an empty row for it. Spoken lines, math, questions and slide count are unchanged. No topic 9 video is recorded. Topic total: 61 pen cues -> 14 by hand, 47 by click (14 pen cues left).
+- roots (30 -> 2 by hand, 28 clicks). Every written line is a click now. By hand: circle the absolute-value bars, box the last rule. "= 7 and 7² = 49" and "= −4 and (−4)³ = −64" are one line each ("= 7  since 7² = 49"). Slides 2, 4, 7, 10 are a bit smaller and closer so they fit; slide 4's empty gap under √72 is closed.
+- solve-q-r26-t09-01 (5 -> 3 by hand, 2 clicks). By hand: ⁴√(9⁶) = 9^(6/4) = 9^(3/2) (method 1), 9⁶ = (3²)⁶ = 3¹² (method 2), circle. Clicks: 9^(3/2) = 27, ⁴√(3¹²) = 27.
+- solve-q-r26-t09-02 (5 -> 2 by hand, 3 clicks). By hand: (3√3)² = 9 · 3 = 27 (the move), circle. Clicks: the other three squares.
+- solve-q-r26-t09-03 (5 -> 2 by hand, 3 clicks). Clicks: the three tries (x = −2, 3, 6). By hand: x + 6 = x² -> (−2)² = 4 = −2 + 6 (why −2 is a trap), circle.
+- r26-t09-traps (3 -> 0 by hand, 3 clicks): the √70 estimate, (√2 + √3)², the √3 + √5 vs √15 chain.
+- solve-q-r26-t09-04 (2 -> 1 by hand, 1 click). Click: the four values at x = 1/4. By hand: circle.
+- solve-q-r26-t09-05 (4 -> 2 by hand, 2 clicks). By hand: (√3)⁶ = 3³ = 27, circle. Clicks: (∛5)⁶ = 25, the sixth roots.
+- solve-q-r26-t09-06 (4 -> 2 by hand, 2 clicks). By hand: Bottom: (√3 − √2)(√3 + √2) = 1, circle. Clicks: Top line, the method 2 check.
+- r26-t09-summary (3 -> 0 by hand, 3 clicks).

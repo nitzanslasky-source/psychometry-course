@@ -139,3 +139,26 @@ Function `practice_methods` (runs last, after `cut_repeats`; append only). 8 pra
 - Method 2 · Power count: q-212 (x + y in terms of a, c): choice 1 power −1, choice 4 mixed → out; x = y = 1 (a = c = 11) decides → 2.
 - Shortcut: pick values that fit: q-206 (y = 2 → x = 3 → 3/2), q-175 (a = 0 → b = 6; one fitting pair knocks out choices 2–4), q-202 (m = 1 → n = 0), q-172 (a = 1 ties choices 1, 2, 4; second set a = 0, b = 7 → cannot be determined), q-r26-t07-15 (y = 1 → 24/8 = 3), q-199 (x = 1 → x + y = 1/4), q-204 (a = 1 → x = 1/2).
 All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 7 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-06 pen or click
+Function `pen_or_click_rest` (new, runs LAST via a final `apply` wrapper, after `cut_repeats` and `practice_methods`, because `cut_repeats` adds board items to Q21–Q25). The earlier `pen_or_click` (equation-strategy, solve-q-191..197, all recorded) is left exactly where it was, before `hebrew_intro`, since `_add_rule` relies on the room it leaves. Approved rule: setup and mechanical lines appear on click; by hand only the one or two key steps + marks on the choices; no long text by hand. Spoken lines unchanged (none said "write …"). The 18 unrecorded solution videos with pen cues: 120 pen cues → 54 by hand, 48 by click, 18 split (click line + hand mark). Lessons more-tools / quadratic / summary had no pen cues.
+- Q8 solve-q-184 (10 → 5 hand, 4 click, 1 split). By hand: "×12" next to each side, cancel 33 with 11, cross out 2 and 3, "too big" on 4, circles. Clicks: 33·12 − 8x = 3x, 33·12 = 11x, x = 3·12 = 36, 33 = ¼x + ⅔x = 11/12 x, 33 ÷ 11/12 = 36.
+- Q9 solve-q-185 (5 → 2 hand, 1 click, 2 split). By hand: x²(x + 3) = πx² (with room), cross out x², "x, 3, π" under the terms. Clicks: x + 3 = π, x = π − 3, x + 3 = π → x = π − 3.
+- Q10 solve-q-187 (5 → 2 hand, 1 click, 2 split). By hand: the translation (a − b)² = a² + b², cross out a² and b². Clicks: the expansion, −2ab = 0, a = 0 or b = 0.
+- Q11 solve-q-186 (8 → 3 hand, 5 split). By hand: ps = qr next to the question, the diagonal arrows on 2/3 = 4/6, circles. The four choice checks ("sp = qr ✓"… "pr = qs ✗") are now click lines (1)–(4) on the board + cross out / circle by hand (no more writing ps = qr three times). "diagonal ÷ leftover" is a click line "Isolate a letter: diagonal product ÷ the one left" + tick choices 1 and 3 by hand.
+- Q12 solve-q-188 (3 → 2 hand, 1 click). By hand: eq1 + eq2: 4x + 3z = 22. Click: −(3x + 3z = 18) → x = 4.
+- Q13 solve-q-189 (5 → 3 hand, 2 click). By hand: the coefficient sums 3⅕ + 4⅘ = 8 and 5¼ + 2¾ = 8 under the terms. Clicks: 8x + 8y = 2a + 2b, 8(x + y) = 2(a + b) → (a + b)/4.
+- Q14 solve-q-190 (7 → 4 hand, 3 click). By hand: 4a + 4b + 4c = 4x, the choice signs, circles. Clicks: a + 2b = 4x − z, a = b = c = 1 → x = 3, z = 9, a + 2b = 3.
+- Q15 solve-q-178 (12 → 3 hand, 6 click, 3 split). By hand: (a − b)(a + b) = 65, circles. Clicks: a − b = 5, a² − b² = 65; 5(a + b) = 65; a + b = 13; the three trials 7,2 / 8,3 / 9,4; the three choice checks (1)–(3) (were long notes next to the choices) + cross out 1 and 2 by hand.
+- Q16 solve-q-179 (9 → 3 hand, 4 click, 2 split). By hand: y = 4z → x = 12z, cancel y and z, cross out / circles. Clicks: x = 3y, z = 2w → x = 24w, x/w = 24, the chain w = 1 → … → x = 24, the product of the ratios, = 3·4·2 = 24. (Slide 2 in size 36: the stem is tall.)
+- Q17 solve-q-180 (6 → 4 hand, 2 click). By hand: q = 1/p, the choice values, circles. Clicks: q/p = (1/p) ÷ p = 1/p², q/p = ½ ÷ 2 = ¼.
+- Q18 solve-q-181 (9 → 4 hand, 5 click). By hand: (2x)² = (y + 3)², the choice values, circles. Clicks: 4x² = y² + 6y + 9, 4x² − y² = 6y + 9, ÷2 line, y = 1 → x = 2, 2·4 − ½·1 = 7.5.
+- Q19 solve-q-182 (9 → 4 hand, 5 click). By hand: 2ab = −6 → ab = −3 (opposite signs), 9x² − 6xy + y² = (3x − y)², circles. Clicks: the expansion, a = ±3, b = ±1, the two pairs → 4, a = 3, b = −1 → 4.
+- Q20 solve-q-183 (4 → 1 hand, 2 click, 1 split). By hand: "≥ 0" under the two terms. Clicks: 4a² + 8b² = a², 3a² + 8b² = 0, a = 0, b = 0 (+ circle).
+- Q21 solve-q-r26-t07-01 (4 → 2 hand, 1 click, 1 split). By hand: x²y ÷ xy² = 18 ÷ 12, cancel x and y, circle. Clicks: x/y = 18/12 = 3/2, the number check.
+- Q22 solve-q-r26-t07-02 (4 → 2 hand, 2 click). By hand: (x + 1/x)² = 36, circle. Clicks: the expansion, x² + 2 + 1/x² = 36 → 34.
+- Q23 solve-q-r26-t07-04 (6 → 3 hand, 3 click). By hand: the two numbers (−5)·3 = −15, (−5) + 3 = −2; the choice values; circle. Clicks: x² − 2x − 15 = 0, (x − 5)(x + 3) = 0, x = 5 or x = −3.
+- Q24 solve-q-r26-t07-05 (7 → 2 hand, 4 click, 1 split). By hand: the second case "x + 1 = −(x − 3)" (with room), 8x = 8 → x = 1 (method 2), circle. Clicks: the trap line, a² = b² → a = b or a = −b, x + 1 = −x + 3 → 2x = 2 → x = 1, the check, the expansion.
+- Q25 solve-q-r26-t07-06 (7 → 5 hand, 2 click). By hand: "bottom = 0 ✗" next to x = 3, the three short notes next to the choices, circle. Clicks: x² − 7x + 12 = 0, (x − 3)(x − 4) = 0 → x = 3 or 4.
+`math_check.py 7 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. All 18 videos rendered and looked at.

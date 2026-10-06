@@ -1059,3 +1059,146 @@ _apply_before_cut_repeats = apply
 def apply(M):
     _apply_before_cut_repeats(M)
     cut_repeats(M)   # 2026-10-05: runs last
+
+
+# ---------------------------------------------------------------- 2026-10-06 pen or click
+# Teacher-approved split (2026-10-04/06): lessons - content appears by click, the pen only marks (circle, underline,
+# arrow, cross out); solution videos - setup and mechanical lines by click, by hand only the one or two key steps
+# plus the marks on the choices. Helper copied from t07.py (same behaviour).
+def _pen_or_click_slide(M, vid, n, repl, room=(), row=106):
+    """repl: pen cue text -> script entries replacing it. room: pen cues kept by hand that need their own row on the
+    board - the item above them gets a bigger gap, so the click items below leave space for the handwriting."""
+    b = M.slide(vid, n); script = []; done = set()
+    for l in b['lines']:
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        elif l['draw'] in repl: script.extend(repl[l['draw']]); done.add(l['draw'])
+        else: script.append(D(l['draw']))
+    missing = (set(repl) - done) | (set(room) - {l.get('draw') for l in b['lines']})
+    assert not missing, '%s #%d: draw cue not found: %s' % (vid, n, missing)
+    M.set_slide(vid, n, script=script)
+    b = M.slide(vid, n); last = b['pre'] - 1
+    for l in b['lines']:
+        if 'appear' in l: last = l['appear']
+        elif l.get('draw') in room: b['items'][last]['gap'] = b['items'][last].get('gap', 44) + row
+
+
+def _pre_gap(M, vid, n, gap):
+    """the item already on the slide kept a big gap for handwriting under it; that line is now a click item."""
+    M.slide(vid, n)['items'][0]['gap'] = gap
+
+
+def pen_or_click(M):
+    L, S = 52, 42
+    # ---- lesson: exponents (every written line becomes a click item; arrows, circles, underlines, boxes,
+    #      cross-outs stay by hand)
+    V = 'exponents'
+    _pen_or_click_slide(M, V, 2, {
+        'Write "= 4 · 4 · 4"': [A('= 4 · 4 · 4 appears', T(r'$=4\cdot4\cdot4$', size=56))],
+        'Write "= 64"': [A('= 64 appears', T(r'$=64$', size=56))],
+    })
+    _pen_or_click_slide(M, V, 3, {
+        'Write "1" in place of the question mark': [A('5⁰ = 1 appears', T(r'$5^0=1$', size=50))],
+        'Write "= 1" after each one': [A('Both = 1 appears', T(r'Both $=1$', size=50))],
+    })
+    _pen_or_click_slide(M, V, 4, {
+        'Write "= 1/2³ = 1/8"': [A('= 1/2³ = 1/8 appears', T(r'$=\frac{1}{2^3}=\frac{1}{8}$', size=56))],
+        'Write "= (2/5)² = 4/25"': [A('= (2/5)² = 4/25 appears', T(r'$=\left(\frac{2}{5}\right)^2=\frac{4}{25}$', size=56))],
+    })
+    _pen_or_click_slide(M, V, 6, {
+        'Under it write "(3·3)·(3·3·3·3)"': [A('(3·3)·(3·3·3·3) appears', T(r'$=(3\cdot3)\cdot(3\cdot3\cdot3\cdot3)$', size=L))],
+        'Write "= 3²⁺⁴ = 3⁶"': [A('= 3²⁺⁴ = 3⁶ appears', T(r'$=3^{2+4}=3^6$', size=L))],
+    })
+    _pre_gap(M, V, 6, 50)
+    _pen_or_click_slide(M, V, 7, {      # the cross-out of the fives stays by hand (a smaller gap under 5⁷/5³ stays)
+        'Write "= 5⁷⁻³ = 5⁴"': [A('= 5⁷⁻³ = 5⁴ appears', T(r'$=5^{7-3}=5^4$', size=46))],
+        'Write "= 1/5³ = 5⁻³"': [A('= 1/5³ = 5⁻³ appears', T(r'$=\frac{1}{5^3}=5^{-3}$', size=46))],
+        'Write "= 1"; then write "= 5³⁻³ = 5⁰"': [A('= 1, and = 5³⁻³ = 5⁰ appears',
+                                                    T(r'$=1 \qquad\text{and also}\qquad =5^{3-3}=5^0$', size=42))],
+    })
+    _pre_gap(M, V, 7, 90)
+    for it in M.slide(V, 7)['items'][1:]: it['gap'] = min(it.get('gap', 44), 30)
+    _pen_or_click_slide(M, V, 8, {
+        'Under it write "2³ · 2³ · 2³ · 2³"': [A('2³ · 2³ · 2³ · 2³ appears', T(r'$=2^3\cdot2^3\cdot2^3\cdot2^3$', size=L))],
+        'Write "= 2³ˣ⁴ = 2¹²"': [A('= 2³ˣ⁴ = 2¹² appears', T(r'$=2^{3\cdot4}=2^{12}$', size=L))],
+        'Write "= 2⁷"': [A('= 2⁷ appears', T(r'$=2^7$', size=L))],
+    })
+    _pre_gap(M, V, 8, 50)
+    _pen_or_click_slide(M, V, 9, {
+        'Write "= 4² · 5² = 16 · 25 = 400"': [A('= 4² · 5² = 16 · 25 = 400 appears', T(r'$=4^2\cdot5^2=16\cdot25=400$', size=50))],
+    })
+    _pen_or_click_slide(M, V, 10, {
+        'Write "= 64"': [A('= 64 appears', T(r'$=64$', size=50))],
+        'Write "= −1,000"': [A('= −1,000 appears', T(r'$=-1{,}000$', size=50))],
+        'Write "= −(7²) = −49"': [A('= −(7²) = −49 appears', T(r'$=-(7^2)=-49$', size=50))],
+    })
+    _pen_or_click_slide(M, V, 13, {
+        'Write "= 2ⁿ · 2³ = 8 · 2ⁿ"': [A('= 2ⁿ · 2³ = 8 · 2ⁿ appears', T(r'$=2^n\cdot2^3=8\cdot2^n$', size=L))],
+        'Write "= 8 · 2ⁿ − 1 · 2ⁿ = 7 · 2ⁿ"': [A('= 8 · 2ⁿ − 1 · 2ⁿ = 7 · 2ⁿ appears', T(r'$=8\cdot2^n-1\cdot2^n=7\cdot2^n$', size=L))],
+    })
+    _pre_gap(M, V, 13, 50)
+    _pen_or_click_slide(M, V, 14, {
+        'Circle the "2 ·" and write "2 = 2¹" above it': [D('Circle the "2 ·"'), A('2 = 2¹ appears', T(r'$2=2^1$', size=46))],
+        'Cross out 2²ⁿ and write "n = 3: 8 + 8 = 16, but 2⁶ = 64"': [
+            D('Cross out 2²ⁿ'), A('n = 3: 8 + 8 = 16, but 2⁶ = 64 appears', T(r'$n=3:\ \ 8+8=16$, but $2^6=64$', size=44))],
+    })
+    # ---- Question 1: q-224 - by hand: the split 4ˣ⁺² = 4ˣ · 4² (the idea), circles
+    _pen_or_click_slide(M, 'solve-q-224', 2, {
+        'Write "= 16 · 4ˣ"': [A('= 16 · 4ˣ appears', T(r'$=16\cdot4^x$', size=S))],
+    }, room=['Write "4ˣ⁺² = 4ˣ · 4²"'])
+    _pen_or_click_slide(M, 'solve-q-224', 3, {
+        'Write "x = 1: 4³ = 64"': [A('x = 1: 4³ = 64 appears', T(r'$x=1:\ \ 4^3=64$', size=S))],
+        'Write "(1) 16 · 4 = 64   (2) 4 + 4 = 8   (3) 16 + 4 = 20   (4) 4 · 4 = 16"': [
+            A('The four choices at x = 1 appear', T(r'(1) $16\cdot4=64$ $\quad$ (2) $4+4=8$ $\quad$ (3) $16+4=20$ $\quad$ (4) $4\cdot4=16$', size=34))],
+    })
+    # ---- Question 2: q-226 - by hand: 3 = 3¹ (the lonely three), circle
+    _pen_or_click_slide(M, 'solve-q-226', 2, {
+        'Write "3¹ · 3⁻⁵ = 3¹⁺⁽⁻⁵⁾ = 3⁻⁴"': [A('3¹ · 3⁻⁵ = 3⁻⁴ appears', T(r'$3^1\cdot3^{-5}=3^{1+(-5)}=3^{-4}$', size=S))],
+        'Write "3⁻⁴⁻⁽⁻⁸⁾ = 3⁻⁴⁺⁸ = 3⁴"': [A('3⁻⁴⁻⁽⁻⁸⁾ = 3⁴ appears', T(r'$3^{-4-(-8)}=3^{-4+8}=3^4$', size=S))],
+        'Write "3⁴ = 81"': [A('3⁴ = 81 appears', T(r'$3^4=81$', size=S))],
+    }, room=['Write "3 = 3¹"'])
+    # ---- Question 3: q-231 - the three cases by click; ticks, cross and circle on the choices by hand
+    _pen_or_click_slide(M, 'solve-q-231', 2, {
+        'Write "m = 1 (any n)   ·   m = −1 (n even)   ·   n = 0 (m ≠ 0)"': [
+            A('The three cases appear', T(r'$m=1$ (any $n$) $\ \cdot\ $ $m=-1$ ($n$ even) $\ \cdot\ $ $n=0$ ($m\ne0$)', size=36))],
+    })
+    # ---- lesson: Exponent Traps
+    _pen_or_click_slide(M, 'r26-t08-traps', 2, {
+        'Write "3 places" under 0.008 and "2 places" under 0.09': [
+            A('3 places · 2 places appears', T(r'$0.008$: 3 places $\qquad 0.09$: 2 places', size=40))],
+    })
+    _pen_or_click_slide(M, 'r26-t08-traps', 3, {
+        'Write "2¹⁰ > 2⁸"': [A('2¹⁰ > 2⁸ appears', T(r'$2^{10}>2^8$', size=46))],
+        'Write "2³⁰ < 3²⁰"': [A('2³⁰ < 3²⁰ appears', T(r'$2^{30}<3^{20}$', size=46))],
+        'Write "x = 3"': [A('x = 3 appears', T(r'$x=3$', size=46))],
+    })
+    for it in M.slide('r26-t08-traps', 3)['items']:      # 8 lines now: a bit smaller and closer
+        it['size'] = min(it.get('size', 46), 44); it['gap'] = min(it.get('gap', 44), 16)
+    # ---- Question 4: q-r26-t08-01 - by hand: = 4 · 2ⁿ (count the copies), circle
+    _pen_or_click_slide(M, 'solve-q-r26-t08-01', 2, {
+        'Write "= 2² · 2ⁿ = 2ⁿ⁺²"': [A('= 2² · 2ⁿ = 2ⁿ⁺² appears', T(r'$=2^2\cdot2^n=2^{n+2}$', size=S))],
+    }, room=['Write "= 4 · 2ⁿ"'])
+    _pen_or_click_slide(M, 'solve-q-r26-t08-01', 3, {
+        'Write "n = 1: 8   (1) 16   (2) 8   (3) 8   (4) 32"': [
+            A('n = 1: the sum and the four choices appear', T(r'$n=1$: $\ 8$ $\qquad$ (1) $16$ $\quad$ (2) $8$ $\quad$ (3) $8$ $\quad$ (4) $32$', size=38))],
+        'Write "n = 2: 16   (2) 64   (3) 16"': [
+            A('n = 2: the sum, choices 2 and 3 appear', T(r'$n=2$: $\ 16$ $\qquad$ (2) $64$ $\quad$ (3) $16$', size=38))],
+    })
+    # ---- Question 5: q-r26-t08-02 - plug-in lines by click, circle by hand
+    _pen_or_click_slide(M, 'solve-q-r26-t08-02', 2, {
+        'Write "x = ½"': [A('x = ½ appears', T(r'$x=\frac12$', size=S))],
+        'Write "(1) ½   (2) ¼   (3) ⅛   (4) 2² = 4"': [
+            A('The four choices at x = ½ appear', T(r'(1) $\frac12$ $\quad$ (2) $\frac14$ $\quad$ (3) $\frac18$ $\quad$ (4) $2^2=4$', size=S))],
+    })
+    # ---- Question 6: q-r26-t08-05 - by hand: x³ < 0 → x < 0 (the odd power keeps the sign), circle
+    _pen_or_click_slide(M, 'solve-q-r26-t08-05', 2, {
+        'Write "y² > 0"': [A('y² > 0 appears', T(r'$y^2>0$', size=S))],
+    }, room=['Write "x³ < 0 → x < 0"'])
+
+
+_apply_before_pen_or_click = apply
+
+
+def apply(M):
+    _apply_before_pen_or_click(M)
+    pen_or_click(M)   # 2026-10-06 pen or click: runs last
