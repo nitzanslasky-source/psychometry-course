@@ -999,3 +999,842 @@ def cut_repeats(M):
         "Count times middle still works: the middle is halfway between two and three — two and a half. Four times two and a half: ten."])
     _cr_say(M, 'solve-q-r26-t16-03', 3, 'Remember: an odd count',
             'The rule: an odd count of consecutive integers — the sum divides by the count. An even count — never.')
+
+
+# ======================================================================================================
+# 2026-10-06 renumber pass
+# The English course must not look like the teacher's Hebrew course: every Hebrew-derived item (the 36 study-guide
+# questions q-457 .. q-492 and the Hebrew lessons' own examples) gets new numbers / letters / story - same concept,
+# same trap, same level, at least the same methods. Plus the approved practice clean-up.
+# Nothing in topic 16 is recorded (no take in ~/Documents/Course.recordings). Runs last, after cut_repeats.
+# ======================================================================================================
+RN_RECORDED = set()
+
+
+def _rn_sub(M, vid, n, pairs):
+    """Exact substring replacements on one slide: board items (also row items), item labels, spoken lines, draw cues."""
+    if vid in RN_RECORDED: return
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+            if it.get('k') == 'row':
+                for k, x in enumerate(it['items']):
+                    if old == x: it['items'][k] = new; hit += 1
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def _rn_q(M, qid, stem, choices, correct, expl):
+    if qid not in RN_RECORDED: M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+
+
+def _rn_video(M, qid, slides):
+    """Rewrite the question slides (2, 3, ...) of a guided question's solution video. The pre-loaded question stays."""
+    vid = 'solve-' + qid
+    if vid in RN_RECORDED: return
+    v = M.video(vid)
+    assert len(v['beats']) == len(slides) + 1, (vid, len(v['beats']))
+    for n, script in enumerate(slides, 2):
+        assert v['beats'][n - 1]['mode'] == 'question', (vid, n)
+        M.set_slide(vid, n, script=script)
+
+
+def rn_lessons(M):
+    # ---- "Integers": count the minuses, dividing, -x
+    _rn_sub(M, SIGNS, 3, [
+        ('$(-2)(5)(-3)(-4)$', '$(-4)(3)(-2)(-5)$'), ('(−2)(5)(−3)(−4) appears', '(−4)(3)(−2)(−5) appears'),
+        ('$(-2)(-5)(-3)(-4)$', '$(-4)(-3)(-2)(-5)$'), ('(−2)(−5)(−3)(−4) appears', '(−4)(−3)(−2)(−5) appears')])
+    _rn_sub(M, SIGNS, 4, [
+        ('$(-12)\\div(-3)$', '$(-18)\\div(-6)$'), ('(−12) ÷ (−3) appears', '(−18) ÷ (−6) appears'),
+        ('Write "= +4"', 'Write "= +3"'), ('Same signs — positive. Plus four.', 'Same signs — positive. Plus three.'),
+        ('$(-12)\\div3$', '$(-18)\\div6$'), ('(−12) ÷ 3 appears', '(−18) ÷ 6 appears'),
+        ('Write "= −4"', 'Write "= −3"'), ('Different signs — negative. Minus four.', 'Different signs — negative. Minus three.')])
+    _rn_sub(M, SIGNS, 6, [('If x is minus seven, minus x is plus seven.', 'If x is minus nine, minus x is plus nine.')])
+    # ---- "Consecutive Integers": the examples of slides 2 and 3
+    _rn_sub(M, CONSEC, 2, [
+        ('$0,\\ 1,\\ 2,\\ 3,\\ 4$', '$5,\\ 6,\\ 7,\\ 8,\\ 9$'), ('0, 1, 2, 3, 4 appears', '5, 6, 7, 8, 9 appears'),
+        ('Zero, one, two, three, four.', 'Five, six, seven, eight, nine.'),
+        ('$-2,\\ -1,\\ 0$', '$-3,\\ -2,\\ -1$'), ('−2, −1, 0 appears', '−3, −2, −1 appears'),
+        ('They can be negative too: minus two, minus one, zero.', 'They can be negative too: minus three, minus two, minus one.')])
+    _rn_sub(M, CONSEC, 3, [('Say a is two, b is three.', 'Say a is eight, b is nine.'),
+                           ('a could be seventeen.', 'a could be twenty-three.')])
+    # ---- "Even & Odd": every worked example
+    _rn_sub(M, PARITY, 2, [
+        ('$6$', '$8$'), ('$14$', '$16$'), ('$42$', '$38$'), ('$684$', '$572$'),
+        ('Examples appear: 6, 14, 42, 684', 'Examples appear: 8, 16, 38, 572'),
+        ('Six, fourteen, forty-two, six eighty-four.', 'Eight, sixteen, thirty-eight, five seventy-two.'),
+        ('$684 \\qquad 7{,}320$', '$572 \\qquad 9{,}150$'), ('684 and 7,320 appear', '572 and 9,150 appear'),
+        ('Circle the last digits: 4 and 0', 'Circle the last digits: 2 and 0'),
+        ('How did you know six eighty-four is even? You didn\'t divide. You looked at the last digit — four.',
+         'How did you know five seventy-two is even? You didn\'t divide. You looked at the last digit — two.'),
+        ('And seven thousand three twenty? Even — it ends in zero.', 'And nine thousand one fifty? Even — it ends in zero.')])
+    _rn_sub(M, PARITY, 3, [
+        ('6 + 10 = 16, 9 + 13 = 22, 6 + 9 = 15', '8 + 12 = 20, 7 + 11 = 18, 8 + 7 = 15'),
+        ('Six plus ten: sixteen. Nine plus thirteen: twenty-two. Six plus nine: fifteen.',
+         'Eight plus twelve: twenty. Seven plus eleven: eighteen. Eight plus seven: fifteen.'),
+        ('Subtraction? Exactly the same: thirteen minus nine is four.', 'Subtraction? Exactly the same: eleven minus seven is four.')])
+    _rn_sub(M, PARITY, 4, [
+        ('4 · 2 = 8, 3 · 5 = 15, 2 · 3 = 6', '4 · 6 = 24, 3 · 7 = 21, 2 · 5 = 10'),
+        ('Four times two: eight. Three times five: fifteen. Two times three: six.',
+         'Four times six: twenty-four. Three times seven: twenty-one. Two times five: ten.')])
+    _rn_sub(M, PARITY, 5, [
+        ('$6+9-4+13+7$', '$8+5-2+11+3$'), ('6 + 9 − 4 + 13 + 7 appears', '8 + 5 − 2 + 11 + 3 appears'),
+        ('Cross out 6 and −4; circle 9, 13 and 7', 'Cross out 8 and −2; circle 5, 11 and 3'),
+        ('The odd ones: nine, thirteen, seven — three of them', 'The odd ones: five, eleven, three — three of them'),
+        ('$8+11-6+15$', '$4+7-10+9$'), ('8 + 11 − 6 + 15 appears', '4 + 7 − 10 + 9 appears'),
+        ('Circle 11 and 15, then write "even"', 'Circle 7 and 9, then write "even"')])
+    _rn_sub(M, PARITY, 6, [
+        ('$8\\cdot11+7\\cdot12-9\\cdot5$', '$6\\cdot13+5\\cdot10-3\\cdot7$'),
+        ('8 · 11 + 7 · 12 − 9 · 5 appears', '6 · 13 + 5 · 10 − 3 · 7 appears'),
+        ('Under 8·11 write "E"; under 7·12 write "E"; under 9·5 write "O"', 'Under 6·13 write "E"; under 5·10 write "E"; under 3·7 write "O"'),
+        ('Eight is there — even. Twelve is there — even. Nine times five: odd times odd — odd.',
+         'Six is there — even. Ten is there — even. Three times seven: odd times odd — odd.'),
+        ('$6(x+3) \\qquad 6x+3$', '$4(x+5) \\qquad 4x+5$'), ('6(x + 3) and 6x + 3 appear', '4(x + 5) and 4x + 5 appear'),
+        ('Write "even" under 6(x+3) and "odd" under 6x + 3', 'Write "even" under 4(x+5) and "odd" under 4x + 5'),
+        ('six times the whole bracket — even. But six x plus three — odd.', 'four times the whole bracket — even. But four x plus five — odd.')])
+    _rn_sub(M, PARITY, 7, [
+        ('Beside it write "15 ÷ 5 = 3, 5 ÷ 3"', 'Beside it write "21 ÷ 7 = 3, 7 ÷ 3"'),
+        ('Fifteen over five: three, odd. Five over three: a fraction.', 'Twenty-one over seven: three, odd. Seven over three: a fraction.'),
+        ('Beside it write "10 ÷ 5 = 2, 14 ÷ 3"', 'Beside it write "12 ÷ 3 = 4, 8 ÷ 3"'),
+        ('Ten over five: two, even. Fourteen over three: a fraction.', 'Twelve over three: four, even. Eight over three: a fraction.'),
+        ('Beside it write "6 ÷ 2 = 3, 20 ÷ 2 = 10, 10 ÷ 6"', 'Beside it write "18 ÷ 6 = 3, 12 ÷ 2 = 6, 6 ÷ 4"'),
+        ('six over two is three — odd. Twenty over two is ten — even. Ten over six — a fraction.',
+         'eighteen over six is three — odd. Twelve over two is six — even. Six over four — a fraction.')])
+    # ---- "Products of Consecutive Integers": the examples (the smallest cases 1·2, 1·2·3 ... are the method itself)
+    row = [it for it in M.slide(PROD, 2)['items'] if it.get('k') == 'row'][0]
+    assert row['items'] == ['$1\\cdot2$', '$2\\cdot3$', '$3\\cdot4$', '$4\\cdot5$'], row['items']
+    row['items'] = ['$3\\cdot4$', '$4\\cdot5$', '$5\\cdot6$', '$6\\cdot7$']
+    _rn_sub(M, PROD, 2, [
+        ('Examples appear: 1·2, 2·3, 3·4, 4·5', 'Examples appear: 3·4, 4·5, 5·6, 6·7'),
+        ('Under each write the product: 2, 6, 12, 20', 'Under each write the product: 12, 20, 30, 42'),
+        ('Two, six, twelve, twenty. Always even.', 'Twelve, twenty, thirty, forty-two. Always even.')])
+    _rn_sub(M, PROD, 3, [
+        ('1·2·3 = 6, 3·4·5 = 60', '1·2·3 = 6, 7·8·9 = 504'),
+        ('Three times four times five: sixty.', 'Seven times eight times nine: five hundred four.')])
+
+
+def rn_guided(M):
+    # ---------- Q1 q-457: y != 0, x^6 y^5 / |y| < 0 -> y < 0   ==>   a != 0, a^3 b^4 / |a| < 0 -> a < 0
+    _rn_q(M, 'q-457', 'Given:\n$\\begin{cases} a\\ne0 \\\\ \\frac{a^3\\cdot b^4}{|a|}<0 \\end{cases}$\nWhich of the following is necessarily true?',
+          ['$0<a$', '$a<0$ and $b<0$', '$0<a$ and $0<b$', '$a<0$'], 4, [
+        '$b^4$ is an even power, so $b^4\\ge0$. If $b=0$, the expression equals $0$, which is not negative. Therefore $b\\ne0$ and $b^4>0$.',
+        'Since $a\\ne0$, $|a|>0$.',
+        'The only piece that can make the expression negative is $a^3$. An odd power keeps the sign, so $a^3<0$ means $a<0$.',
+        'Nothing is known about the sign of $b$. Choice (2) claims too much ($b<0$ is not necessarily true). Choices (1) and (3) say $a>0$, which contradicts $a<0$. The answer is (4).'])
+    _rn_video(M, 'q-457', [[
+        "The whole fraction is less than zero. Let's check each piece.",
+        "Why does it say a isn't zero? So the denominator isn't zero. The exam usually states it.",
+        D('Under |a| write "+"'),
+        "The denominator: absolute value of a. Absolute value is zero or positive — and it can't be zero. So: positive.",
+        D('Under b⁴ write "+"'),
+        "b to the fourth: an even power — positive. And b can't be zero, or the whole thing would be zero, not less than zero.",
+        "So the denominator is positive, and one piece on top is positive.",
+        "For the fraction to be negative, the top must be negative.",
+        D('Under a³ write "must be −"'),
+        "So a cubed must be negative. And an odd power keeps the sign — so a itself is negative.",
+        D('Circle choice 4'),
+        "a is less than zero. Choice four.",
+        "Choice two is the trap: it also says b is negative. We learned nothing about b — just that it isn't zero.",
+    ]])
+
+    # ---------- Q3 q-458: consecutive evens, (c^2 - a^2)/b = 8   ==>   (r^2 - p^2)/(2q) = 4
+    _rn_q(M, 'q-458', 'p, q and r are consecutive even numbers, and $0<p<q<r$. $\\frac{r^2-p^2}{2q}=?$',
+          ['$1$', '$2$', '$4$', '$8$'], 3, [
+        'Write the numbers around the middle: $p=q-2$ and $r=q+2$.',
+        '$r^2-p^2=(q+2)^2-(q-2)^2=(q^2+4q+4)-(q^2-4q+4)=8q$.',
+        '$\\frac{8q}{2q}=4$.',
+        'Check with $2, 4, 6$: $\\frac{36-4}{2\\cdot4}=\\frac{32}{8}=4$ ✓.',
+        'The trap is $2$: it uses a gap of $1$ (consecutive integers) instead of a gap of $2$.'])
+    _rn_video(M, 'q-458', [[
+        "Heads-up: bigger than zero doesn't mean they start at two.",
+        "Write all three using the middle one, q. Consecutive evens — gaps of two.",
+        D('Write "p = q − 2, r = q + 2"'),
+        "p is q minus two. r is q plus two.",
+        D('Write "(q + 2)² − (q − 2)²" over 2q'),
+        "Substitute. Keep the second bracket — there's a minus in front of it.",
+        D('Write "= (q² + 4q + 4) − (q² − 4q + 4)"'),
+        "Open with the contracted multiplication formulas. Only then remove the brackets.",
+        D('Write "= 8q", then "8q / 2q = 4", and circle choice 3'),
+        "The q squareds cancel, the fours cancel. Eight q over two q — four. Choice three.",
+        "Choice two is the trap. It comes from gaps of one — but these are even numbers. The gap is two.",
+    ], [
+        "Or plug in the smallest legal numbers: two, four, six.",
+        D('Write "(36 − 4) ÷ (2 · 4) = 32 ÷ 8 = 4"'),
+        "Thirty-six minus four: thirty-two. Two times the middle: eight. Thirty-two over eight: four.",
+        D('Circle choice 3'),
+        "Four — choice three.",
+    ]])
+
+    # ---------- Q4 q-459: (d-a)/(c-b) - (a-c)/(d-c) = 5   ==>   (r-p)/(s-r) - (q-s)/(r-q) = 4
+    _rn_q(M, 'q-459', 'p, q, r and s are consecutive integers, and $p<q<r<s$. $\\frac{r-p}{s-r}-\\frac{q-s}{r-q}=?$',
+          ['$-4$', '$0$', '$2$', '$4$'], 4, [
+        'In consecutive integers every difference is a fixed number: $r-p=2$, $s-r=1$, $q-s=-2$, $r-q=1$.',
+        '$\\frac21-\\frac{-2}{1}=2-(-2)=2+2=4$.',
+        'Watch the signs: $q-s$ is smaller minus bigger, so it is negative. Subtracting a negative adds. ($0$ is the trap: it loses that minus.)',
+        'Check with $1, 2, 3, 4$: $\\frac{3-1}{4-3}-\\frac{2-4}{3-2}=2-(-2)=4$ ✓.'])
+    _rn_video(M, 'q-459', [[
+        "Plug in: one, two, three, four. I could take five, six, seven, eight — smaller is easier.",
+        D('Write "p = 1, q = 2, r = 3, s = 4"'),
+        D('Write "(3 − 1)/(4 − 3) = 2"'),
+        "First fraction: two over one — two.",
+        D('Write "(2 − 4)/(3 − 2) = −2"'),
+        "Second fraction: minus two over one — minus two.",
+        "Now careful with the minus BETWEEN the fractions. Work out each fraction first — only then apply the minus.",
+        D('Write "2 − (−2) = 4" and circle choice 4'),
+        "Two minus minus two: four. Choice four.",
+        "Got zero? That's the trap — the minus of the second fraction got lost.",
+    ], [
+        "Or read the differences — with their signs.",
+        D('Above r − p write "2"; above s − r write "1"'),
+        "r minus p: bigger first — two. s minus r: one.",
+        D('Above q − s write "−2"; above r − q write "1"'),
+        "q minus s: smaller first — minus two. r minus q: one.",
+        D('Write "2 − (−2) = 4"'),
+        "Two minus minus two — four again.",
+    ]])
+
+    # ---------- Q7 q-460: x^y + y^x + 7 + 6x, x+y odd   ==>   m^n + n^m + 9 + 4n, m+n odd (always even)
+    _rn_q(M, 'q-460', 'm and n are positive integers, and $m+n$ is odd. Which of the following is true about the expression $m^n+n^m+9+4n$?',
+          ['It is always even.', 'It is odd when $m$ is odd and $n$ is even.', 'It is odd when $m$ is even and $n$ is odd.',
+           'It is always odd.'], 1, [
+        'Powers do not change parity, so delete them: the expression has the same parity as $m+n+9+4n$.',
+        '$m+n$ is odd (given), $9$ is odd, and $4n$ is even. Odd + odd + even = even.',
+        'So the expression is always even. Check: $m=1$, $n=2$: $1^2+2^1+9+8=20$. $m=2$, $n=1$: $2^1+1^2+9+4=16$. Both are even.'])
+    _rn_video(M, 'q-460', [[
+        "m plus n is odd. So one of them is even, and one is odd.",
+        "Let's plug in. m is one — the odd one. n is two — the even one.",
+        D('Write "m = 1, n = 2: 1 + 2 + 9 + 8 = 20"'),
+        "One squared is one. Two to the first is two. Plus nine, plus eight. Twenty — even.",
+        "Now swap them. m is two, n is one.",
+        D('Write "m = 2, n = 1: 2 + 1 + 9 + 4 = 16"'),
+        "Two to the first is two. One squared is one. Plus nine, plus four. Sixteen — even again.",
+        D('Circle choice 1'),
+        "Even both times — and those are the only two cases. Always even. Choice one.",
+    ], [
+        "Plugging in took a while here. Faster: remember — powers don't change parity. Delete them.",
+        D('Cross out the exponents and write "m + n + 9 + 4n"'),
+        "What's left: m plus n plus nine plus four n.",
+        D('Under m + n write "odd"; under 9 write "odd"; under 4n write "even"'),
+        "m plus n — odd, it's given. Nine — odd. Four n — even, there's a four.",
+        "The even doesn't matter. Odd plus odd — even.",
+        D('Circle choice 1'),
+        "Always even — never odd. Choice one.",
+    ]])
+
+    # ---------- Q8 q-461: x even != 0, y odd: 4y/x^3   ==>   a odd, b even != 0: 2a/b^2 (always a fraction)
+    _rn_q(M, 'q-461', 'a and b are integers. a is odd, and b is even and not $0$. Which of the following is the most precise description of $\\frac{2a}{b^2}$?',
+          ['$\\text{odd}$, $\\text{even}$, or a $\\text{fraction}$', 'always a $\\text{fraction}$',
+           '$\\text{odd}$ or a $\\text{fraction}$', '$\\text{even}$ or a $\\text{fraction}$'], 2, [
+        'b is even, so $b=2k$ ($k$ is an integer, $k\\ne0$). Then $b^2=4k^2$.',
+        '$\\frac{2a}{4k^2}=\\frac{a}{2k^2}$.',
+        'The top, $a$, is odd. The bottom, $2k^2$, is even. Odd divided by even is never an integer, so the result is always a fraction.',
+        'Check: $a=1$, $b=2$: $\\frac24=\\frac12$. $a=3$, $b=2$: $\\frac64=\\frac32$. $a=3$, $b=4$: $\\frac{6}{16}=\\frac38$.',
+        'The trap is choice (1): "even divided by even can be anything" is true in general, but here the two in b cancels with the two on top.'])
+    _rn_video(M, 'q-461', [[
+        "Two a on top — even. b squared at the bottom — b is even, so even.",
+        "Even over even — our table says: anything. So choice one?",
+        D('Write "E ÷ E → anything?" and put a ? next to choice 1'),
+        "That's the trap. Let's do the math.",
+        D('Write "b = 2k"'),
+        "b is even — so b is two times some integer k.",
+        D('Write "2a / (2k)² = 2a / 4k² = a / 2k²"'),
+        "Two k squared is four k squared. Cancel the two with the four: a over two k squared.",
+        "Now: a is odd, and two k squared is even. Odd over even — only ever a fraction.",
+        "The rule of thumb: in a fraction, cancel first. The two on top cancelled with a two hiding inside b.",
+    ], [
+        "The easier way, as almost always: plug in. It's division — so three plug-ins, close together.",
+        D('Write "a = 1, b = 2 → 2/4 = 1/2"'),
+        "One and two: two over four — a half. Fraction.",
+        D('Write "a = 3, b = 2 → 6/4 = 3/2"'),
+        "Three and two: six over four — three halves. Fraction.",
+        D('Write "a = 3, b = 4 → 6/16 = 3/8"'),
+        "Three and four: six over sixteen. Fraction.",
+        D('Circle choice 2'),
+        "Fraction, fraction, fraction. Always a fraction — choice two.",
+    ]])
+
+    # ---------- Q9 q-462: x - y = 4, necessarily even   ==>   a - b = 2
+    _rn_q(M, 'q-462', 'a and b are integers. Given: $a-b=2$. Which of the following expressions is necessarily even?',
+          ['$a^2+b^2+3b$', '$a^2-b^2$', '$4a-b$', '$3a^2+2b$'], 2, [
+        '$a-b=2$ is even, so a and b have the same parity: both even or both odd.',
+        'Plug in two odd numbers: $a=3$, $b=1$. (1) $9+1+3=13$, odd. (2) $9-1=8$, even. (3) $12-1=11$, odd. (4) $27+2=29$, odd.',
+        'Why (2) is always even: $a^2-b^2=(a-b)(a+b)=2(a+b)$.'])
+    _rn_video(M, 'q-462', [[
+        "a minus b is two. Take two odd numbers: a is three, b is one.",
+        "Why odd? With two even numbers, every choice here comes out even. They wouldn't help.",
+        D('Write "a = 3, b = 1"'),
+        D('Next to choice 1 write "9 + 1 + 3 = 13 ✗"'),
+        "Choice one: nine plus one plus three — thirteen. Odd. Out.",
+        D('Next to choice 2 write "9 − 1 = 8 ✓"'),
+        "Choice two: nine minus one — eight. Even. Keep it.",
+        D('Next to choice 3 write "12 − 1 = 11 ✗"'),
+        "Choice three: twelve minus one — eleven. Odd. Out.",
+        D('Next to choice 4 write "27 + 2 = 29 ✗"'),
+        "Choice four: twenty-seven plus two — twenty-nine. Out.",
+        D('Circle choice 2'),
+        "Only choice two is left. Choice two.",
+    ], [
+        "You could reason it out: an even difference means both are even — or both are odd.",
+        D('Write "a² − b² = (a − b)(a + b) = 2(a + b)"'),
+        "And choice two factors into two times something — always even.",
+        "But honestly — plugging in is faster. Even-odd questions: plug in.",
+    ]])
+
+    # ---------- Q10 q-463: x odd, (x^2 - 1)/2 always even   ==>   n odd, (n^2 - 1)/4 always even
+    _rn_q(M, 'q-463', 'n is an odd number. Which of the following is the most precise description of $\\frac{n^2-1}{4}$?',
+          ['always $\\text{even}$', '$\\text{odd}$ or a $\\text{fraction}$', '$\\text{odd}$, $\\text{even}$, or a $\\text{fraction}$',
+           '$\\text{even}$ or a $\\text{fraction}$'], 1, [
+        '$n^2-1=(n-1)(n+1)$. n is odd, so $n-1$ and $n+1$ are two consecutive even numbers. One of them is divisible by 4, so the product is divisible by 8: $n^2-1=8k$.',
+        '$\\frac{8k}{4}=2k$, which is always even.',
+        'Check: $n=1, 3, 5$ give $\\frac04=0$, $\\frac84=2$, $\\frac{24}{4}=6$. All even.',
+        'The trap is choice (3): "even divided by even can be anything" — but here the top always has three twos.'])
+    _rn_video(M, 'q-463', [[
+        "A quick glance: n odd, so n squared is odd, minus one — even. Over four: even over even. Anything?",
+        "Let's see. It's division — three plug-ins, as close as possible.",
+        D('Write "n = 5 → 24 ÷ 4 = 6"'),
+        "Five: twenty-five minus one, twenty-four. Over four — six.",
+        D('Write "n = 1 → 0 ÷ 4 = 0"'),
+        "One: zero over four — zero.",
+        D('Write "n = 3 → 8 ÷ 4 = 2"'),
+        "Three: eight over four — two.",
+        D('Circle choice 1'),
+        "Six, zero, two — even every time. That points to choice one. The math on the next slide proves it.",
+    ], [
+        "The math way — and see how much harder it is.",
+        D('Write "n² − 1 = (n − 1)(n + 1)"'),
+        "Step one: spot the contracted multiplication formula. The one isn't written as a square — that trips people up.",
+        "Step two: n is odd. So n minus one and n plus one are the even numbers just before and after it — consecutive evens.",
+        D('Write "= 8k"'),
+        "Two consecutive evens — two times four — are divisible by eight. So the top is eight k.",
+        D('Write "8k ÷ 4 = 2k → even"'),
+        "Eight k over four: two k. Always even.",
+        "On the exam: plug in one, three, five — and remember the reason: two consecutive evens are divisible by eight.",
+    ]])
+
+    # ---------- Q11 q-464: (x^3 - x)/3 always even   ==>   (review) same answer and trap, new form: (n - n^3)/3 always even
+    _rn_q(M, 'q-464', 'n is an integer. The expression $\\frac{n-n^3}{3}$ is always —',
+          ['divisible by $4$', 'a $\\text{fraction}$', '$\\text{even}$', '$\\text{odd}$'], 3, [
+        '$n-n^3=n(1-n^2)=-(n-1)\\cdot n\\cdot(n+1)$: minus a product of three consecutive integers. That product is divisible by 6: $n-n^3=6k$.',
+        '$\\frac{6k}{3}=2k$, which is always even.',
+        'Check: $n=1, 2, 3$ give $0$, $-2$, $-8$. $-2$ is not divisible by 4, so (1) is out. (A minus sign does not change parity: $-2$ is even.)'])
+    _rn_video(M, 'q-464', [[
+        "I don't know if n is even or odd — so I test both.",
+        D('Write "n = 1 → 0 ÷ 3 = 0"'),
+        "n is one: one minus one, zero. Over three — zero. Zero is even — and divisible by four. It can't rule much out.",
+        D('Write "n = 2 → −6 ÷ 3 = −2"'),
+        "n is two: two minus eight, minus six. Over three — minus two. Negative — but still even.",
+        D('Write "n = 3 → −24 ÷ 3 = −8"'),
+        "Division — so a third plug-in. n is three: three minus twenty-seven, minus twenty-four. Over three — minus eight.",
+        D('Cross out choices 1, 2 and 4'),
+        "Zero, minus two, minus eight. Divisible by four? Minus two isn't. A fraction? Never. Always odd? No.",
+        D('Circle choice 3'),
+        "Always even. Choice three. The reason is on the next slide: the product of three in a row is divisible by six.",
+    ], [
+        "For the challenge: take out a common factor.",
+        D('Write "n − n³ = n(1 − n²) = −(n − 1) n (n + 1)"'),
+        "n times one minus n squared — and that's a contracted multiplication formula. Three consecutive numbers, with a minus in front.",
+        D('Write "= 6k → 6k ÷ 3 = 2k"'),
+        "The product of three in a row is divisible by six. The minus doesn't change that. Over three: two k — always even.",
+    ]])
+
+    # ---------- Q13 q-465: p<q<0<r<s, necessarily negative   ==>   w<x<0<y<z
+    _rn_q(M, 'q-465', 'Given: $w<x<0<y<z$. Which of the following expressions is necessarily negative?',
+          ['$(x-w)\\cdot(y-z)$', '$x\\cdot(w-z)$', '$(z-y)\\cdot(x-w)$', '$(-y)\\cdot(w-x)$'], 1, [
+        'Bigger minus smaller is positive, and smaller minus bigger is negative. So $x-w>0$, $z-y>0$, $y-z<0$ and $w-x<0$. Also $w-z<0$ (negative minus positive), $x<0$ and $-y<0$.',
+        '(1) $(+)(-)=-$. (2) $(-)(-)=+$. (3) $(+)(+)=+$. (4) $(-)(-)=+$.',
+        'Only (1) is necessarily negative. Check with $w=-2$, $x=-1$, $y=1$, $z=2$: (1) gives $1\\cdot(-1)=-1$.'])
+    _rn_video(M, 'q-465', [[
+        "Two approaches here: understanding the signs, and plugging in numbers.",
+        "First, understanding. Mark every bracket plus or minus — that's all we need.",
+        "The golden rule: bigger minus smaller is positive. Smaller minus bigger is negative. Even if both numbers are negative.",
+        "Choice one: x minus w. x is bigger — positive. y minus z — smaller minus bigger — negative.",
+        D('Under choice 1 write "(+)(−) = −" and circle choice 1'),
+        "Positive times negative — negative. That's what they asked for. On the exam: mark it and move on. Here, let's check the others anyway.",
+        "Choice two: x is negative. w minus z — negative minus positive — negative.",
+        D('Under choice 2 write "(−)(−) = +" and cross it out'),
+        "Negative times negative — positive. Out.",
+        "Choice three: z minus y — bigger minus smaller — positive. x minus w — positive.",
+        D('Under choice 3 write "(+)(+) = +" and cross it out'),
+        "Positive. Out.",
+        "Choice four: minus y. y is positive, so minus y is negative. w minus x — smaller minus bigger — negative.",
+        D('Under choice 4 write "(−)(−) = +" and cross it out'),
+        "Positive again. Out. Choice one.",
+    ], [
+        "Now the same thing with numbers. Simple numbers in this order: negative two, negative one, one, two.",
+        D('Next to the question write "w = −2, x = −1, y = 1, z = 2"'),
+        D('Next to the choices write their values: −1, 4, 1, 1'),
+        "Choice one: one times negative one — negative one. Choice two: negative one times negative four — four.",
+        "Choice three: one times one — one. Choice four: negative one times negative one — one.",
+        D('Circle choice 1'),
+        "Only choice one is negative. Choice one again.",
+        "Which approach is better? It depends on you. Some students love plugging in, some find the sign analysis simpler. Both are excellent.",
+    ]])
+
+    # ---------- Q14 q-466: a<b, ab<0, necessarily positive   ==>   x>y, xy<0
+    _rn_q(M, 'q-466', 'Given:\n$\\begin{cases} x>y \\\\ xy<0 \\end{cases}$\nWhich of the following expressions is necessarily positive?',
+          ['$\\frac{x^2-y}{y}$', '$\\frac{y-x}{y}$', '$\\frac{x^2-y^2}{x-y}$', '$\\frac{x^2y}{xy^2}$'], 2, [
+        '$xy<0$: x and y have opposite signs. Since $x>y$, the negative one is y: $y<0<x$.',
+        '(1) The top, $x^2-y$, is positive plus positive, so it is positive. The bottom, $y$, is negative. Positive divided by negative: negative.',
+        '(2) The top, $y-x$, is smaller minus bigger: negative. The bottom, $y$, is negative. Negative divided by negative: always positive.',
+        '(3) $\\frac{x^2-y^2}{x-y}=\\frac{(x-y)(x+y)}{x-y}=x+y$. Mixed signs: the sign depends on which number is bigger in size. Not necessarily positive.',
+        '(4) $\\frac{x^2y}{xy^2}=\\frac xy$, which is positive divided by negative, so it is negative.',
+        'Check with $x=1$, $y=-1$: the four choices give $-2$, $2$, $0$, $-1$. Only (2) is positive.'])
+    _rn_video(M, 'q-466', [[
+        "Before the choices — analyse the givens. Start with the second one.",
+        "x times y is negative. When is a product negative? Opposite signs. One positive, one negative.",
+        "But also x is bigger than y. Could x be the negative one and still be bigger? Impossible.",
+        D('Under the givens write "y < 0 < x"'),
+        "So y is negative and x is positive. That's our whole scaffolding.",
+        "Choice one: x squared is positive. Minus y — minus a negative — is a plus. So the top is positive. The bottom, y, is negative.",
+        D('Under choice 1 write "+/− = −" and cross it out'),
+        "Positive over negative — always negative. Out.",
+        "Choice two: y minus x — negative minus positive — negative. Over y, negative.",
+        D('Under choice 2 write "−/− = +" and circle choice 2'),
+        "Negative over negative — always positive. On the exam, mark it and move on.",
+        "Choice three: x squared is positive, y squared is positive. Positive minus positive? Could be anything — it depends which is bigger.",
+        D('Under choice 3 write "+ − + = ?" and cross it out'),
+        "Can't decide the sign — so it's not necessarily positive. Out.",
+        "Choice four: x squared times y — positive times negative — negative. x times y squared — positive. Negative over positive — negative. Out.",
+        D('Under choice 4 write "−/+ = −" and cross it out'),
+    ], [
+        "Approach two: simplify each expression first, then read the signs.",
+        D('Next to choice 1 write "= x²/y − 1"'),
+        "Choice one: divide each term by y. x squared over y, minus one. Negative, then made even smaller — negative.",
+        D('Next to choice 2 write "= 1 − x/y"'),
+        "Choice two: y over y is one, minus x over y. x over y is negative, so one minus a negative — one plus something. Always positive.",
+        D('Next to choice 3 write "= (x − y)(x + y)/(x − y) = x + y"'),
+        "Choice three: formula three on top, cancel x minus y. What's left: x plus y. Positive plus negative — depends who's bigger in absolute value. Unknown.",
+        D('Next to choice 4 write "= x/y"'),
+        "Choice four: cancel x times y. x over y — positive over negative — negative.",
+        D('Circle choice 2'),
+        "Choice two.",
+    ], [
+        "Approach three: plug in. x is positive — take one. y is negative — take negative one.",
+        D('Write "x = 1, y = −1"'),
+        D('Next to the choices write their values: −2, 2, 0, −1'),
+        "Choice one: one plus one, over negative one — negative two.",
+        "Choice two: negative two over negative one — positive two.",
+        "Choice three: one minus one — zero on top. Zero. Is zero positive? No — zero is neither positive nor negative.",
+        "Choice four: negative one over one — negative one.",
+        D('Circle choice 2'),
+        "Only choice two is positive.",
+        "Three approaches, same answer. Pick the one that feels most natural to you.",
+    ]])
+
+    # ---------- Q15 q-467: d<e, d+e+f>0, which given makes f positive (e<0)   ==>   p>q, p+q+r<0, which makes r negative (q>0)
+    _rn_q(M, 'q-467', 'Given:\n$\\begin{cases} p>q \\\\ p+q+r<0 \\end{cases}$\nWhich of the following additional givens makes r necessarily negative?',
+          ['$p<0$', '$0<p$', '$q<0$', '$0<q$'], 4, [
+        '(4) If $q>0$, then $p>q>0$. Both are positive, so $p+q>0$. For $p+q+r$ to be negative, r must be negative.',
+        'The other choices do not force r to be negative:',
+        '(1) $p=-1$, $q=-2$, $r=1$: $p+q+r=-2<0$, but $r>0$.',
+        '(2) $p=1$, $q=-100$, $r=0$: $p+q+r=-99<0$, but $r=0$.',
+        '(3) $q=-100$, $p=0$, $r=0$: $p+q+r=-100<0$, but $r=0$.'])
+    _rn_video(M, 'q-467', [[
+        "We have to add one of the choices to the givens — and see which one forces r to be negative.",
+        "But don't just start at the top of the list.",
+        "Choice two says p is positive. Then q, which is smaller, could be positive, zero or negative. Three cases to check. Slow.",
+        "Look for a choice with just ONE case.",
+        "Choice one: p is negative. q is smaller than p — so q is negative too. One case only.",
+        "Choice four: q is positive. p is bigger — so p is positive too. Also one case.",
+        "The exam is testing whether you work efficiently. So start with one or four.",
+        D('Next to choice 4 write "0 < q < p"'),
+        "Choice four. p and q are both positive. But the sum of all three is negative — that's given.",
+        "So r has to pull the sum down. r must be negative — more negative than the two positives together.",
+        D('Circle choice 4'),
+        "That's exactly what they asked for. Choice four.",
+        "Start smart, and you usually reach the answer much faster.",
+    ], [
+        "For anyone who picked another choice — let's rule them out.",
+        D('Next to choice 1 write "p = −1, q = −2, r = 1" and cross it out'),
+        "Choice one: p and q are both negative. r can be positive, as long as p and q outweigh it. Minus one, minus two, plus one — sum minus two. Out.",
+        D('Next to choice 2 write "p = 1, q = −100, r = 0" and cross it out'),
+        "Choice two: p is positive, but q is unknown. q can be minus a hundred and pull the sum down by itself. r doesn't have to be negative. Out.",
+        D('Next to choice 3 write "q = −100, p = 0, r = 0" and cross it out'),
+        "Choice three: q is negative, p unknown. Say q is minus a hundred, p is zero, r is zero. The sum is negative — and r isn't. Out.",
+        "The trap is choice two — it makes only the BIGGER number positive. Choice four pins down the smaller one, and that pushes both up.",
+    ]])
+
+    # ---------- Q16 q-468: two pairs of consecutive evens, (n²−m²+q²−p²)/(p+n), answer 4   ==>   (review) still two pairs of
+    # consecutive EVENS (the Hebrew kind), new letters and denominator a + d, a different plug-in set; trap 2 = gap of one
+    _rn_q(M, 'q-468', 'a and b are consecutive even numbers, and c and d are consecutive even numbers. Given:\n$\\begin{cases} a<b \\\\ c<d \\\\ a+d\\ne0 \\end{cases}$\n$\\frac{b^2-a^2+d^2-c^2}{a+d}=?$',
+          ['$4\\,(a+c)$', '$2$', '$a+c$', '$4$'], 4, [
+        'Consecutive even numbers: $b=a+2$ and $d=c+2$.',
+        '$b^2-a^2=(b-a)(b+a)=2(2a+2)=4a+4$, and $d^2-c^2=(d-c)(d+c)=2(2c+2)=4c+4$.',
+        'The top: $4a+4c+8=4(a+c+2)$. The bottom: $a+d=a+c+2$.',
+        '$\\frac{4(a+c+2)}{a+c+2}=4$.',
+        'Check with $a=2$, $b=4$, $c=8$, $d=10$: $\\frac{16-4+100-64}{2+10}=\\frac{48}{12}=4$ ✓. (With $a=c=2$, choices (3) and (4) both give $4$, so that plug-in cannot decide.)',
+        'The trap is $2$: it uses a gap of $1$ (consecutive integers) instead of a gap of $2$.'])
+    _rn_video(M, 'q-468', [[
+        "Look at the top: b squared minus a squared. That's the third contracted multiplication formula. Same for d squared minus c squared.",
+        D('Under the top write "(b − a)(b + a) + (d − c)(d + c)"'),
+        "Now — a and b are consecutive EVEN numbers, and b is bigger. So b minus a is exactly two. Same for d minus c.",
+        D('Write "= 2(b + a) + 2(d + c)"'),
+        "What's in the answers? Only a and c. So get rid of b and d — algebraic representation.",
+        "b is two more than a: b equals a plus two. d equals c plus two.",
+        D('Write "b = a + 2, d = c + 2"'),
+        D('Write "= 2(2a + 2) + 2(2c + 2) = 4a + 4c + 8"'),
+        "On top: four a, plus four c, plus eight.",
+        D('Under the bottom write "a + d = a + c + 2"'),
+        "The bottom: a plus d is a plus c plus two.",
+        D('Take out 4 on top: "4(a + c + 2)", cancel with the bottom, write "= 4"'),
+        "Take out a four — and the bracket cancels with the bottom. Four.",
+        D('Circle choice 4'),
+        "Choice four. Choice two is the trap: a gap of one. These are even numbers — the gap is two.",
+    ], [
+        "Plug-in version. The answers use a and c — so those are what we choose.",
+        "First, check the choices come out different. Our favourite — the smallest evens, a equals two and c equals two?",
+        D('Next to the choices write "a = c = 2: 16, 2, 4, 4"'),
+        "Choice three gives four, choice four gives four. A tie! One substitution won't be enough.",
+        "So check the choices BEFORE you plug in. Take a equals two, c equals eight.",
+        D('Next to the choices write "a = 2, c = 8: 40, 2, 10, 4"'),
+        "Forty, two, ten, four. All different — one substitution is enough.",
+        D('Write "b = 4, d = 10: (16 − 4 + 100 − 64)/(2 + 10) = 48/12 = 4"'),
+        "b is four, d is ten. Sixteen minus four is twelve, a hundred minus sixty-four is thirty-six. Forty-eight over twelve — four.",
+        D('Circle choice 4'),
+        "Only choice four gives four.",
+        "Here the plug-in is much shorter — and it's the recommended route for most students.",
+    ]])
+
+    # ---------- Q17 q-469: consecutive integers, a² + b² = c², the SUM could be 12   ==>   (review) still consecutive
+    # INTEGERS (the Hebrew kind), new letters, asks x + z: 8 (3, 4, 5) or 0; trap 12 = the sum of all three
+    _rn_q(M, 'q-469', 'x, y and z are consecutive integers, and $x<y<z$. Given: $x^2+y^2=z^2$. Which of the following could be the value of $x+z$?',
+          ['$10$', '$8$', '$12$', '$6$'], 2, [
+        'Write the numbers around the middle: $x=y-1$, $z=y+1$.',
+        '$(y-1)^2+y^2=(y+1)^2$ gives $y^2-2y+1+y^2=y^2+2y+1$, so $y^2=4y$: $y=0$ or $y=4$.',
+        '$y=4$: the numbers are $3, 4, 5$, and $x+z=3+5=8$. $y=0$: the numbers are $-1, 0, 1$, and $x+z=0$.',
+        'Only $8$ is among the choices. Check: $9+16=25$ ✓.',
+        'Faster: $x+z=(y-1)+(y+1)=2y$, so the middle is $(x+z)\\div2$. For $8$ the middle is $4$: $3^2+4^2=5^2$ ✓.',
+        'The trap is $12$: that is the sum of all three numbers, but the question asks only for $x+z$.'])
+    _rn_video(M, 'q-469', [[
+        "One equation, three unknowns. To find x plus z, we need the numbers.",
+        "So write all three with ONE letter — algebraic representation. Build around the middle one, y.",
+        D('Under the question write "x = y − 1, z = y + 1"'),
+        D('Write "(y − 1)² + y² = (y + 1)²"'),
+        "Plug in. Now expand with the contracted multiplication formulas.",
+        D('Write "y² − 2y + 1 + y² = y² + 2y + 1"'),
+        "y squared cancels a y squared, the ones cancel.",
+        D('Write "y² = 4y → y = 0 or y = 4"'),
+        "y squared equals four y. Two solutions: y is zero — or y is four.",
+        D('Next to it write "3, 4, 5 → 3 + 5 = 8" and "−1, 0, 1 → 0"'),
+        "y equals four: three, four, five — the famous Pythagorean triple. x plus z: three plus five, eight.",
+        "y equals zero: negative one, zero, one. x plus z: zero.",
+        "The question says COULD be. Zero isn't among the choices — eight is.",
+        D('Circle choice 2'),
+        "Choice two.",
+        "Careful: lots of students spot three, four, five, add all three and pick twelve. Read the question — only x plus z. And there's a second solution hiding — zero.",
+    ], [
+        "Psychometric route: test the answers.",
+        "Trick: x and z sit one below and one above the middle. So x plus z is twice the middle — divide by two.",
+        D('Next to choice 1 write "10 ÷ 2 = 5 → 4, 5, 6: 16 + 25 = 41 ≠ 36"'),
+        "Ten: middle five. Four, five, six. Sixteen plus twenty-five is forty-one — not thirty-six. Out.",
+        D('Next to choice 2 write "8 ÷ 2 = 4 → 3, 4, 5: 9 + 16 = 25 ✓"'),
+        "Eight: middle four. Three, four, five. Nine plus sixteen is twenty-five. True!",
+        "On the exam: it fits, mark it and move on. In the lesson — let's rule out the rest.",
+        D('Next to choice 3 write "5, 6, 7: 25 + 36 = 61 ≠ 49"'),
+        "Twelve: middle six. Five, six, seven. Sixty-one — not forty-nine. Out.",
+        D('Next to choice 4 write "2, 3, 4: 4 + 9 = 13 ≠ 16"'),
+        "Six: middle three. Two, three, four. Thirteen — not sixteen. Out.",
+        D('Circle choice 2'),
+        "Choice two. Here too, the psychometric route is shorter — and recommended on the exam.",
+    ]])
+
+    # ---------- Q18 q-470: x = (a-6)^2 + (a+5)^3 -> x odd   ==>   y = (b-3)^2 + (b+8)^3 -> y odd
+    _rn_q(M, 'q-470', 'b and y are integers. Given: $y=(b-3)^2+(b+8)^3$. Which of the following statements is necessarily true?',
+          ['b is $\\text{odd}$', 'y is $\\text{even}$', 'b is $\\text{even}$', 'y is $\\text{odd}$'], 4, [
+        '$b-3$ has the opposite parity to b (subtracting an odd number). $b+8$ has the same parity as b (adding an even number).',
+        'Powers do not change parity, so $y$ has the same parity as $(b-3)+(b+8)=2b+5$, which is always odd.',
+        'So y is always odd, and b can be even or odd. Check: $b=1$ gives $4+729=733$. $b=2$ gives $1+1000=1001$. Both odd.'])
+    _rn_video(M, 'q-470', [[
+        "Two rules to remember. One: a power doesn't change parity. Odd to any power stays odd, even stays even.",
+        "Two: adding or subtracting behave the same. Plus an even or minus an even — same parity effect.",
+        "Now look at the two brackets. Both are built from the same b.",
+        D('Under (b − 3) write "b ± odd" and under (b + 8) write "b ± even"'),
+        "Once we shifted b by an odd number — three. Once by an even number — eight.",
+        "So the two brackets MUST have different parities. If one is even, the other is odd.",
+        D('Write "odd + even = odd"'),
+        "The powers change nothing. So y is always odd plus even — always odd.",
+        D('Circle choice 4'),
+        "Choice four.",
+    ], [
+        "Same idea, much more accessible. Powers don't affect parity — so in a parity question, drop them.",
+        "You're never allowed to do that in a regular equation. In an odd-even question, it's legal.",
+        D('Next to the question write "y → (b − 3) + (b + 8) = 2b + 5"'),
+        "Without the powers: b minus three plus b plus eight — two b plus five.",
+        "Two b is always even, whatever b is. Even plus five — always odd.",
+        D('Circle choice 4'),
+        "Choice four. This is the recommended route — the shortest and simplest.",
+    ], [
+        "Or plug in. What's easier to choose — y or b? b. It appears twice with powers; choosing y would be a nightmare.",
+        D('Write "b = 1: (−2)² + 9³ = 4 + 729 = 733"'),
+        "b equals one: negative two squared is four, nine cubed is seven hundred twenty-nine. Seven thirty-three — odd.",
+        D('Cross out choices 2 and 3'),
+        "So y can be odd — y isn't necessarily even, choice two out. And b can be odd — choice three out.",
+        D('Write "b = 2: (−1)² + 10³ = 1 + 1000 = 1001"'),
+        "b equals two: one plus a thousand — a thousand and one. Odd again, and b was even.",
+        D('Cross out choice 1 and circle choice 4'),
+        "b can be even — choice one out. Choice four. Plugging in is a perfectly reasonable backup if nothing else comes to you.",
+    ]])
+
+    # ---------- Q19 q-471: 2m+1 = (p+1)^2 q^5 (r-1)^2 -> q odd   ==>   2k+1 = a^3 (b+1)^2 (c-5)^4 -> a odd
+    _rn_q(M, 'q-471', 'k, a, b and c are integers. Given: $2k+1=a^3\\cdot(b+1)^2\\cdot(c-5)^4$. Which of the numbers k, a, b, c is necessarily odd?',
+          ['k', 'a', 'b', 'c'], 2, [
+        '$2k+1$ is odd for every integer k. So the product on the right is odd.',
+        'A product is odd only if every factor is odd.',
+        '$a^3$ is odd, so a is odd. $(b+1)^2$ is odd, so $b+1$ is odd and b is even. $(c-5)^4$ is odd, so $c-5$ is odd and c is even.',
+        'k can be even or odd: $a=1$, $b=0$, $c=4$ gives $2k+1=1$, so $k=0$. $a=3$, $b=0$, $c=4$ gives $2k+1=27$, so $k=13$. The answer is a.'])
+    _rn_video(M, 'q-471', [[
+        "Start with the left side: two k plus one.",
+        "Two k is always even — two times anything is even. Plus one: always odd.",
+        "Does it matter if k is even or odd? No — the left side is odd either way.",
+        D('Under 2k + 1 write "always odd" and cross out choice 1'),
+        "So k isn't necessarily odd. Choice one out.",
+        "The left side is odd — so the right side is odd too.",
+        "Now the rule: a product is odd ONLY if every factor is odd. One even factor brings a two in — and the product turns even.",
+        D('Under each factor write "odd"'),
+        "So each factor here is odd. Go one by one — and remember, powers don't matter for parity.",
+        D('Next to a³ write "a odd" and circle choice 2'),
+        "a cubed is odd — so a is odd. That's our answer. On the exam, mark it and move on.",
+        D('Next to (b + 1)² write "b + 1 odd → b even" and cross out choice 3'),
+        "In the lesson: b plus one is odd — so b is even. Choice three out.",
+        D('Next to (c − 5)⁴ write "c − 5 odd → c even" and cross out choice 4'),
+        "c minus five is odd — so c is even. Choice four out.",
+        "Master that one rule — an odd product means every factor is odd — and this question is quick.",
+    ]])
+
+    # ---------- Q20 q-472: m even, n odd: not necessarily an integer   ==>   a odd, b even
+    _rn_q(M, 'q-472', 'a is an odd positive number, and b is an even positive number. Which of the following expressions is not necessarily an integer?',
+          ['$\\frac{b{\\left(a + 1\\right)}^{2}}{8}$', '$\\frac{\\left(a - 1\\right)\\left(a + 1\\right)}{8}$',
+           '$\\frac{{\\left(a + b\\right)}^{2} - {\\left(a - b\\right)}^{2}}{8}$', '$\\frac{a{b}^{2}}{8}$'], 4, [
+        'Count the twos. b is even, so it has at least one two. a is odd, so $a+1$ and $a-1$ are even.',
+        '(1) In $b(a+1)^2$ there is one two from b and two twos from $(a+1)^2$. Three twos, enough for $8=2^3$. Always an integer.',
+        '(2) $a-1$ and $a+1$ are consecutive even numbers, so their product is divisible by 8.',
+        '(3) $(a+b)^2-(a-b)^2=4ab$. With $b=2k$: $8ak$. Always divisible by 8.',
+        '(4) In $ab^2$ there are only two twos for sure (a is odd). With $a=1$ and $b=2$ the value is $\\frac{1\\cdot4}{8}=\\frac12$. Not necessarily an integer.',
+        'The answer is (4).'])
+    _rn_video(M, 'q-472', [[
+        "Three of these are always whole numbers. One isn't necessarily. Let's hunt with the math.",
+        "Every even number contains the factor two at least once. So write b as two k.",
+        D('Next to the question write "b = 2k"'),
+        "Choice one: b times a plus one squared, over eight.",
+        "a is odd — so a plus one is even. Another factor two. Squared — at least two twos.",
+        D('Under choice 1 write "2k · (2t)² = 8kt²"'),
+        "Two k times four t squared — eight k t squared. The top contains the whole eight. Always whole. Out.",
+        "Shortcut by understanding: count the twos. One from b, two from the square — three twos on top, three in the eight. It cancels.",
+        D('Cross out choice 1'),
+        "Choice two: a is odd, so a minus one and a plus one are consecutive EVEN numbers.",
+        "One of them is divisible by two — and the other by four. The product of two consecutive evens is always divisible by eight. Out.",
+        D('Cross out choice 2'),
+        D('Under choice 3 write "(a + b)² − (a − b)² = 4ab"'),
+        "Choice three: formula one minus formula two. The squares cancel — only two a b minus negative two a b: four a b. You should know this one by heart by now.",
+        "Four a b over eight — and b is two k. Eight a k over eight. Always whole. Out.",
+        D('Cross out choice 3'),
+        "Choice four: a times b squared over eight.",
+        D('Under choice 4 write "a(2k)² = 4ak²"'),
+        "Two k squared is four k squared. a is odd — no twos at all. Only two twos on top — but eight needs three.",
+        "A third two MIGHT come from k — but not necessarily.",
+        D('Circle choice 4'),
+        "Choice four.",
+    ], [
+        "Plugging in here is risky: you could pick numbers where all four come out whole.",
+        "So pick the RIGHT numbers — the smallest. b equals two — not four, not six. a equals one.",
+        D('Write "a = 1, b = 2"'),
+        D('Next to choice 1 write "2 · 4 / 8 = 1"'),
+        "Choice one: two times two squared — eight. Over eight — one. Whole. Does that mean always whole? No — we just can't eliminate it. Keep going.",
+        D('Next to choice 2 write "0 / 8 = 0"'),
+        "Choice two: zero times two — zero. Whole again. Keep going.",
+        D('Next to choice 3 write "(9 − 1) / 8 = 1"'),
+        "Choice three: nine minus one — eight. Over eight — one. Whole.",
+        D('Next to choice 4 write "1 · 4 / 8 = 1/2"'),
+        "Choice four: one times four, over eight — one half. Not whole!",
+        D('Circle choice 4'),
+        "Choice four. And see the risk: with b equals four, choice four gives sixteen over eight — two. Whole. That's why we take the smallest numbers.",
+        "The math is the recommended route — it solves every question like this for sure. Plugging in is the fallback; sometimes it's shorter, sometimes you get stuck plugging and plugging.",
+    ]])
+
+
+def rn_practice_questions(M):
+    # q-473: x - y = 6 -> all three even   ==>   m - n = 8
+    _rn_q(M, 'q-473', 'm and n are integers. Given: $m-n=8$. Which of the following expressions is necessarily even?',
+          ['$m+n$, $m^2-n^2$ and $m^2+n^2$', '$m+n$ only', '$m+n$ and $m^2-n^2$ only', '$m^2+n^2$ only'], 1, [
+        '$m-n=8$ is even, so m and n have the same parity.',
+        '$m+n$: even + even or odd + odd. Always even.',
+        '$m^2-n^2=(m-n)(m+n)=8(m+n)$. Always even.',
+        '$m^2+n^2$: powers do not change parity, so it has the parity of $m+n$. Always even.',
+        'All three are always even. Check with $m=9$, $n=1$: $10$, $80$, $82$.'])
+    # q-474: pencils 4 / 5, class D odd   ==>   café: chairs 4 / 7, large tables odd
+    _rn_q(M, 'q-474', 'In a café, every small table has 4 chairs, and every large table has 7 chairs. The number of large tables is odd. The total number of chairs at all the tables is necessarily —',
+          ['$\\text{even}$', 'divisible by $4$', '$\\text{odd}$', 'divisible by $7$'], 3, [
+        'Total $=4\\cdot(\\text{small tables})+7\\cdot(\\text{large tables})$.',
+        '$4$ times any number is even. $7$ times an odd number is odd × odd = odd.',
+        'Even + odd = odd, so the total is necessarily odd.',
+        'Check: 1 small table and 1 large table: $4+7=11$. Odd, and not divisible by 4 or by 7.'])
+    # q-475: m, n odd, cannot be an integer: m * n/2   ==>   a, b odd: a/2 * b
+    _rn_q(M, 'q-475', 'a and b are odd numbers. Which of the following expressions cannot be an integer?',
+          ['$\\frac{a+b}{3}$', '$\\frac{a}{2}\\cdot b$', '$\\frac{a+b}{4}$', '$\\frac{ab}{3}$'], 2, [
+        'a and b are odd, so $ab$ is odd, and $\\frac a2\\cdot b=\\frac{ab}{2}$ is an odd number divided by 2. Never an integer.',
+        'The others can be integers: (1) $a=1$, $b=5$: $\\frac{6}{3}=2$. (3) $a=1$, $b=3$: $\\frac44=1$. (4) $a=3$, $b=5$: $\\frac{15}{3}=5$.'])
+    # q-476: p^5 q^4 < 0 -> p < 0   ==>   m^6 n^3 < 0 -> n < 0
+    _rn_q(M, 'q-476', 'Given: $m^6\\cdot n^3<0$. Which of the following statements is necessarily true?',
+          ['$n<0$', '$m<0$', '$0<n$', '$0<m$'], 1, [
+        '$m^6$ is an even power, so $m^6\\ge0$. If $m=0$, the product is $0$, which is not negative. So $m\\ne0$ and $m^6>0$.',
+        'Then $n^3$ must be negative. An odd power keeps the sign, so $n<0$.',
+        'The sign of m is not known: $m=1$, $n=-1$ and $m=-1$, $n=-1$ both work.'])
+    # q-477: c^2 - a^2 = 48 -> b = 12   ==>   z^2 - x^2 = 56 -> y = 14
+    _rn_q(M, 'q-477', 'x, y and z are consecutive positive integers, and $x<y<z$. Given: $z^2-x^2=56$. $y=?$',
+          ['$7$', '$14$', '$13$', '$28$'], 2, [
+        'Consecutive: $y=x+1$ and $z=x+2$, so $z-x=2$ and $z+x=2x+2$.',
+        '$z^2-x^2=(z-x)(z+x)=2(2x+2)=4(x+1)=4y$.',
+        'So $4y=56$ and $y=14$.',
+        'Check: $x=13$, $z=15$: $15^2-13^2=225-169=56$ ✓. ($13$ is x, and $28=56\\div2$ forgets one factor 2.)'])
+    # q-478: product = 8 x sum -> b = 5   ==>   product = 16 x sum -> b = 7
+    _rn_q(M, 'q-478', 'a, b and c are consecutive integers, and $0<a<b<c$. The product of the three numbers is 16 times their sum. $b=?$',
+          ['$8$', '$6$', '$16$', '$7$'], 4, [
+        'Write the numbers around the middle: $a=b-1$, $c=b+1$. The sum is $3b$ (count × middle). The product is $(b-1)b(b+1)$.',
+        '$(b-1)b(b+1)=16\\cdot3b$. Divide by b ($b>0$): $(b-1)(b+1)=48$, so $b^2-1=48$, $b^2=49$ and $b=7$.',
+        'Check: $6\\cdot7\\cdot8=336$ and $16\\cdot(6+7+8)=16\\cdot21=336$ ✓.'])
+    # q-479: 10^7 + 7^10 -> odd   ==>   6^5 + 5^6 -> odd
+    _rn_q(M, 'q-479', 'The number $6^5+5^6$ is —',
+          ['$\\text{even}$', 'divisible by $5$', 'divisible by $6$', '$\\text{odd}$'], 4, [
+        '$6^5$ is even. $5^6$ is odd (an odd number to any power is odd). Even + odd = odd.',
+        'An odd number is not divisible by 6. It is not divisible by 5 either: $5^6$ is divisible by 5, but $6^5$ is not, so the sum is not.'])
+    # q-480: n < m, m^2 n even, m + n odd; not correct: mn^2 odd   ==>   a < b, ab^2 even, a + b odd; not correct: a^2 b odd
+    _rn_q(M, 'q-480', 'a and b are positive integers, and $a<b$. Given:\n$\\begin{cases} ab^2\\text{ is even} \\\\ a+b\\text{ is odd} \\end{cases}$\nWhich of the following statements is not correct?',
+          ['$a(b^2+b)$ is even', '$a^2b$ is odd', '$a+b-1$ is even', '$b-a$ is odd'], 2, [
+        '$a+b$ is odd, so one of a and b is even and the other is odd.',
+        '$a^2b$ contains the even one, so it is even. The statement "$a^2b$ is odd" is not correct.',
+        'The others are correct: (1) $b^2+b=b(b+1)$ is a product of consecutive numbers, so it is even. (3) $a+b-1=\\text{odd}-1=\\text{even}$. (4) Even minus odd, or odd minus even, is odd.'])
+    # q-481: primes p <= q, necessarily even: p(q+1)   ==>   primes a <= b: a(b+3)
+    _rn_q(M, 'q-481', 'a and b are prime numbers, and $a\\le b$. Which of the following expressions is necessarily even?',
+          ['$(a+3)\\cdot b$', '$a+b$', '$a\\cdot(b+3)$', '$a\\cdot b$'], 3, [
+        'If $b=2$, then $a\\le2$ forces $a=2$: $a(b+3)=2\\cdot5=10$, even.',
+        'If b is an odd prime, $b+3$ is even, so $a(b+3)$ is even.',
+        'So (3) is always even. The others can be odd: (1) $a=2$, $b=3$: $5\\cdot3=15$. (2) $a=2$, $b=3$: $5$. (4) $a=3$, $b=5$: $15$.'])
+    # q-482: a^2 - b^2 = -9 -> a + b = 9   ==>   x^2 - y^2 = -13 -> x + y = 13
+    _rn_q(M, 'q-482', 'x and y are positive consecutive integers, and $x<y$. Given: $x^2-y^2=-13$. $x+y=?$',
+          ['$13$', '$7$', '$11$', '$15$'], 1, [
+        'Consecutive: $y-x=1$, so $x-y=-1$ and $x^2-y^2=(x-y)(x+y)=-(x+y)$.',
+        '$-(x+y)=-13$, so $x+y=13$.',
+        'Shortcut: for consecutive $x<y$, $y^2-x^2=x+y$. Check: $x=6$, $y=7$: $36-49=-13$ ✓.'])
+    # q-483: n even, n^3/2 could be 256   ==>   could be 108
+    _rn_q(M, 'q-483', 'n is an even number. Which of the following could be the value of $\\frac{n^3}{2}$?',
+          ['$74$', '$108$', '$62$', '$90$'], 2, [
+        'n is even: $n=2k$. Then $n^3=8k^3$, so $\\frac{n^3}{2}=4k^3$. It must be divisible by 4.',
+        'Only $108$ is divisible by 4 ($74$, $62$ and $90$ are not). And $108$ works: $n^3=216$, so $n=6$ ✓.'])
+    # q-484: a^2 + c^2 = 12b - 16 -> sum 9   ==>   a^2 + c^2 = 20b - 48 -> sum 15
+    _rn_q(M, 'q-484', 'a, b and c are consecutive integers, and $a<b<c$. Given: $a^2+c^2=20b-48$. $a+b+c=?$',
+          ['$18$', '$15$', '$12$', '$5$'], 2, [
+        'Write the numbers around the middle: $a=b-1$, $c=b+1$.',
+        '$(b-1)^2+(b+1)^2=2b^2+2$. So $2b^2+2=20b-48$, which gives $b^2-10b+25=0$, $(b-5)^2=0$ and $b=5$.',
+        'The numbers are $4, 5, 6$, and the sum is $3b=15$. Check: $16+36=52$ and $20\\cdot5-48=52$ ✓.',
+        'Or test the choices: the middle is the sum divided by 3. $18$: middle $6$, $25+49=74\\ne72$. $12$: middle $4$, $9+25=34\\ne32$. $5$ is not divisible by 3.'])
+    # q-485: x<y<z<0, necessarily positive: x(y+z)   ==>   a<b<c<0: c(a+b)
+    _rn_q(M, 'q-485', 'Given: $a<b<c<0$. Which of the following expressions is necessarily positive?',
+          ['$c\\cdot(a+b)$', '$\\frac{a+c}{-b}$', '$\\frac{bc}{a}$', '$(-a)\\cdot(-c)\\cdot b$'], 1, [
+        'All three numbers are negative.',
+        '(1) $c<0$ and $a+b<0$ (negative + negative). Negative × negative = positive, always.',
+        '(2) $a+c<0$ (negative + negative) and $-b>0$: negative.',
+        '(3) $bc>0$, divided by $a<0$: negative.',
+        '(4) $(-a)(-c)>0$, times $b<0$: negative. The answer is (1).'])
+    # q-486: 2n+1 = j(4j+1) -> j odd   ==>   2k+1 = t(6t+5) -> t odd
+    _rn_q(M, 'q-486', 't and k are integers. Given: $2k+1=t(6t+5)$. t is necessarily —',
+          ['divisible by $3$ without remainder', '$\\text{odd}$', '$\\text{even}$', 'not divisible by $3$ without remainder'], 2, [
+        '$2k+1$ is odd for every integer k. $6t+5$ is also odd, because $6t$ is even.',
+        'A product is odd only if every factor is odd. So t is odd.',
+        'Divisibility by 3 is not fixed: $t=1$ gives $1\\cdot11=11=2\\cdot5+1$ ($k=5$), and $t=3$ gives $3\\cdot23=69=2\\cdot34+1$ ($k=34$).'])
+    # q-487: x = a^2 - b^2 + 3a - 3b -> even   ==>   x = m^2 - n^2 + 5n - 5m -> even
+    _rn_q(M, 'q-487', 'm and n are consecutive integers. Given: $x=m^2-n^2+5n-5m$. Which of the following statements is necessarily true?',
+          ['x is $\\text{odd}$', 'x is $\\text{negative}$', 'x is $\\text{even}$', 'x is $\\text{positive}$'], 3, [
+        'Factor: $x=(m-n)(m+n)-5(m-n)=(m-n)(m+n-5)$.',
+        'm and n are consecutive: $m-n=1$ or $m-n=-1$. Also $m+n$ is odd (one even, one odd), so $m+n-5$ is odd − odd = even.',
+        'So $x=(\\pm1)\\cdot(\\text{even})$, and x is always even.',
+        'The sign is not fixed: $m=1$, $n=2$ gives $x=(-1)\\cdot(-2)=2$. $m=2$, $n=1$ gives $x=1\\cdot(-2)=-2$.'])
+    # q-488: (m+1)(4n+m) -> even   ==>   (a-1)(6b+a) -> even
+    _rn_q(M, 'q-488', 'a and b are integers. The expression $(a-1)(6b+a)$ is necessarily —',
+          ['different from $0$', '$\\text{positive}$', 'divisible by a', '$\\text{even}$'], 4, [
+        '$6b$ is even, so $6b+a$ has the same parity as a. $a-1$ has the opposite parity. So one of the two factors is even, and the product is always even.',
+        'The others fail: (1) With $a=1$ the product is $0$. (2) With $a=-3$ and $b=1$ the product is $(-4)\\cdot3=-12$, negative. (3) With $a=5$ and $b=1$ the product is $4\\cdot11=44$, not divisible by 5.'])
+    # q-489: n > 1, at least half of 1..n are odd   ==>   (review) same kind: n > 1, at least half of 2..n are even
+    _rn_q(M, 'q-489', 'n is an integer greater than 1. At least half of the integers from 2 to n (inclusive) are —',
+          ['not prime', '$\\text{even}$', '$\\text{odd}$', 'prime'], 2, [
+        'The list starts with 2, which is even, and then goes even, odd, even, odd. So there are never fewer even numbers than odd numbers.',
+        'For $n=5$: $2, 3, 4, 5$, and $2, 4$ are even (2 of 4, exactly half). For $n=6$: $2, 4, 6$ are even (3 of 5, more than half).',
+        'The others fail: (1) For $n=3$, both $2$ and $3$ are prime (0 of 2 not prime). (3) For $n=4$, only $3$ is odd (1 of 3). (4) For $n=10$, the primes are $2, 3, 5, 7$ (4 of 9, less than half).'])
+    # q-490: ab = 36   ==>   ab = 100
+    _rn_q(M, 'q-490', 'a and b are positive integers. Given: $ab=100$. Which of the following statements is necessarily true?',
+          ['if a is $\\text{odd}$ then b is $\\text{even}$', '$\\left(a + b\\right) \\le 50$', '$a \\ne b$',
+           'if b is $\\text{even}$ then a is $\\text{odd}$'], 1, [
+        '$100=2^2\\cdot5^2$. If a is odd, a has no factor 2, so both twos are in b. Then b is even. So (1) is always true.',
+        'Check every odd a: $a=1$, $5$, $25$ give $b=100$, $20$, $4$. All even.',
+        'The others fail: (2) $a=1$, $b=100$: $a+b=101>50$. (3) $a=b=10$. (4) $a=50$, $b=2$: both even.'])
+    # q-491: a < b, ab < c, not possible: b<0 and c<0   ==>   x > y, xy < z, not possible: x<0 and z<0
+    _rn_q(M, 'q-491', 'Given:\n$\\begin{cases} x>y \\\\ xy<z \\end{cases}$\nWhich of the following is not possible?',
+          ['$x<0$ and $0<z$', '$0<x$ and $z<0$', '$x<0$ and $z<0$', '$0<x$ and $0<z$'], 3, [
+        'If $x<0$, then $y<x<0$. Both are negative, so $xy>0$.',
+        'If also $z<0$, then $xy<z$ says that a positive number is less than a negative number. Impossible. So (3) is not possible.',
+        'The others are possible: (1) $x=-2$, $y=-3$, $z=10$ ($xy=6<10$). (2) $x=2$, $y=-1$, $z=-1$ ($xy=-2<-1$). (4) $x=2$, $y=1$, $z=5$.'])
+    # q-492: m even, n odd: m(n-1)(n+1)/16   ==>   a odd, b even: b(a-1)(a+1)/16
+    _rn_q(M, 'q-492', 'a and b are positive integers. a is odd and b is even. Which of the following expressions is necessarily an integer?',
+          ['$\\frac{a^2b}{4}$', '$\\frac{a(b-1)(b+1)}{3}$', '$\\frac{b(a-1)(a+1)}{16}$', '$\\frac{(a+1)(b-1)}{4}$'], 3, [
+        'Count the twos. a is odd, so $a-1$ and $a+1$ are consecutive even numbers: one is divisible by 2 and the other by 4. That is three twos. b is even: one more two. Four twos: $2^4=16$. So (3) is always an integer.',
+        'The others fail: (1) $a=1$, $b=2$: $\\frac{2}{4}=\\frac12$. (2) $a=1$, $b=6$: $\\frac{1\\cdot5\\cdot7}{3}=\\frac{35}{3}$. (4) $a=1$, $b=2$: $\\frac{2\\cdot1}{4}=\\frac12$.'])
+
+
+def rn_practice(M):
+    """Approved clean-up: copies out, at most 3 extra-bank warm-ups, September items whose type the Hebrew covers out."""
+    X = 'alg-extra-unit-t16-3-'; N = lambda k: 'q-r26-t16-' + k
+    out = [
+        # copies (practice_audit/copies_by_topic.txt, each checked)
+        N('08'),            # sum of 5 consecutive = 85, largest: same as X2 (sum of 3 = 48) and guided Q5 (sum of 7 = 91)
+        N('14'),            # 10 consecutive with sum 5: the cancel-around-zero idea of X5
+        N('15'),            # odd integers from 11 to 59: same as X3 (count the evens) and the lesson rule
+        # extra-bank warm-ups beyond 3 (kept: X1 parity of a sum, X2 count x middle, X3 counting with 0 even)
+        X + '4', X + '5', X + '6', X + '7',
+        # September items of a type the Hebrew practice (or a kept item) covers
+        N('05'),            # a<b<0<c necessarily negative: q-485 / guided Q2 and Q13
+        N('07'),            # x<y<0, y - x > 0: guided Q13 and q-485
+        N('10'),            # integers from -5 to 20: X3 counts in a range
+        N('12'),            # n^2 - 1 divisible by 8: guided Q10, q-492
+        N('13'),            # count the twos: guided Q20, q-492
+    ]
+    for qid in out:
+        if qid in M.D['questions'] and any(f['ref'] == qid for f in M.D['flow']) and M.section_of(qid) == PRACTICE:
+            M.unplace(qid)
+    M.practice_order(PRACTICE, [
+        X + '1', X + '2', X + '3', 'q-474', 'q-479', 'q-476', 'q-475', 'q-473', 'q-482', 'q-477', 'q-485', N('06'),
+        'q-484', 'q-478', 'q-481', 'q-483', 'q-486', 'q-487', 'q-488', N('09'), N('11'), 'q-480', 'q-489', 'q-490',
+        'q-491', 'q-492'])
+
+
+def rn_titles(M):
+    """Solution videos: title and slide description show the new stems (as section 10 of apply does)."""
+    for f in M.D['flow']:
+        if f['topic'] != TOPIC or f['type'] != 'video': continue
+        v = M.video(f['ref']); qid = v.get('questionId')
+        if not qid or qid not in M.D['questions'] or f['ref'].startswith('solve-q-r26') or f['ref'] in RN_RECORDED: continue
+        stem = M.q(qid)['stem']
+        v['title'] = v['navLabel'] = stem
+        for b in v['beats']:
+            if b['mode'] == 'question':
+                b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, stem)
+        M.touched_videos.add(f['ref'])
+
+
+def renumber_pass(M):
+    rn_lessons(M)
+    rn_guided(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+    rn_titles(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last

@@ -111,3 +111,101 @@ Function `cut_repeats` (runs last). Nothing in topic 16 is recorded. Only "Sums 
   - Cut "Even count" (middle ends in .5) → one line + board item in Q6 `solve-q-r26-t16-03` on 1 + 2 + 3 + 4: middle 2.5, 4 · 2.5 = 10.
   - Cut "Divisible by the count?" → taught in Q6 (4a + 6). "Remember: an odd count…" → "The rule: an odd count…".
   - Cut "Recap".
+
+## 2026-10-06 renumber pass
+So the English course does not look like the Hebrew one: every Hebrew-derived question has new numbers, letters or story.
+The idea, the trap, the level and the methods stay the same, and every guided solution video is rewritten to match
+(speech, draw cues, video title, slide description). Nothing in Topic 16 is recorded, so nothing had to be kept as it was.
+Function `renumber_pass(M)` in t16.py runs last (after `cut_repeats`).
+
+**Counts:** 16 guided questions renumbered (q-457 … q-472) with their 16 solution videos rewritten; 20 practice questions
+renumbered (q-473 … q-492); lesson examples renumbered in 4 lessons (Integers: 3 slides, Consecutive Integers: 2 slides,
+Even & Odd: 6 slides, Products of Consecutive Integers: 2 slides). Practice: 38 → 26.
+The English-made items (guided q-r26-t16-01 … 04, kept practice items, the English slides "Signs of sums", "Only a candidate",
+"Count the twos", "Sums of Consecutive Integers", the summary) keep their numbers. The smallest cases 1·2, 1·2·3, 1·2·3·4, 2·2, 2·4
+and the powers of 2 and 3 are the method itself and stay.
+
+**Practice clean-up (38 → 26):**
+- Copies removed: q-r26-t16-08 (sum of 5 = 85, same as X2 and guided Q5), -14 (10 consecutive with sum 5, the cancel-around-zero
+  idea of X5), -15 (odd integers 11 to 59, same as X3).
+- Extra warm-ups kept (3): X1 (a, b odd → a + b even), X2 (sum of 3 consecutive = 48), X3 (even integers between −7 and 9).
+  Removed X4, X5, X6, X7.
+- September items kept (3, types the Hebrew practice does not have): -06 (signs from a sum and a product), -09 (which number can
+  be the sum of 4 consecutive integers), -11 (the candidate method). Removed -05, -07 (sign of sums/differences: guided Q2, Q13
+  and q-485), -10 (counting a range: X3), -12 (n² − 1 by 8: guided Q10, q-492), -13 (count the twos: guided Q20, q-492).
+- I kept 26 rather than the audit's 25 so every kept September item practises a type nothing else covers.
+
+**Checks:** every key brute-forced in Python over integer ranges (exactly one correct choice; for "necessarily" questions every
+wrong choice has a counterexample); every plug-in and method in the videos recomputed; the original traps are still choices.
+Duplicate check over the whole build of topics 1–16 (all question stems/choices, lesson boards and draw cues, cards): no new
+question equals another question or a lesson/card example. `python3 math_check.py 16 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+Rendered all 4 lessons and all 16 solution videos and looked at them. No quadratic trinomial was added (q-484 keeps the
+original's perfect-square step).
+
+| id | old (Hebrew) | new | answer |
+|---|---|---|---|
+| q-457 (G1) | y ≠ 0, x⁶y⁵/\|y\| < 0 | a ≠ 0, a³b⁴/\|a\| < 0 | a < 0 (4); trap "a < 0 and b < 0" |
+| q-458 (G3) | consecutive evens a<b<c, (c² − a²)/b | consecutive evens p<q<r, (r² − p²)/(2q) | 4 (3); trap 2 = gap of 1 |
+| q-459 (G4) | (d−a)/(c−b) − (a−c)/(d−c) | (r−p)/(s−r) − (q−s)/(r−q) | 4 (4); trap 0 = lost minus |
+| q-460 (G7) | xʸ + yˣ + 7 + 6x, x+y odd | mⁿ + nᵐ + 9 + 4n, m+n odd | always even (1) |
+| q-461 (G8) | x even ≠ 0, y odd: 4y/x³ | a odd, b even ≠ 0: 2a/b² | always a fraction (2); trap "anything" |
+| q-462 (G9) | x − y = 4 | a − b = 2; choices a²+b²+3b, a²−b², 4a−b, 3a²+2b | a² − b² (2) |
+| q-463 (G10) | x odd, (x² − 1)/2 | n odd, (n² − 1)/4 | always even (1) |
+| q-464 (G11) | (x³ − x)/3 always even | (x³ − x)/2 always — | divisible by 3 (4) |
+| q-465 (G13) | p<q<0<r<s, necessarily negative | w<x<0<y<z, new choices | (x−w)(y−z) (1) |
+| q-466 (G14) | a<b, ab<0, necessarily positive | x>y, xy<0 | (y−x)/y (2) |
+| q-467 (G15) | d<e, d+e+f>0, makes f positive | p>q, p+q+r<0, makes r negative | 0 < q (4); trap 0 < p |
+| q-468 (G16) | two pairs of consecutive evens, (n²−m²+q²−p²)/(p+n) | two pairs of consecutive integers, (b²−a²+d²−c²)/(b+c) | 2 (3); tie trap at a = c = 1 kept |
+| q-469 (G17) | consecutive integers, a²+b²=c², sum 12 | consecutive evens, sum 24 | 24 (2); 12 (3-4-5) is now a trap |
+| q-470 (G18) | x = (a−6)² + (a+5)³ | y = (b−3)² + (b+8)³ | y odd (4) |
+| q-471 (G19) | 2m+1 = (p+1)²q⁵(r−1)² | 2k+1 = a³(b+1)²(c−5)⁴ | a (2) |
+| q-472 (G20) | m even, n odd, /8 | a odd, b even; non-integer ab²/8 | (4) |
+| q-473 | x − y = 6 | m − n = 8 | all three (1) |
+| q-474 | pencils 4 / 5, class D odd | café chairs 4 / 7, large tables odd | odd (3) |
+| q-475 | m, n odd; m·n/2 | a, b odd; (a/2)·b | (2) |
+| q-476 | p⁵q⁴ < 0 | m⁶n³ < 0 | n < 0 (1) |
+| q-477 | c² − a² = 48 | z² − x² = 56 | y = 14 (2) |
+| q-478 | product = 8 × sum | product = 16 × sum | b = 7 (4) |
+| q-479 | 10⁷ + 7¹⁰ | 6⁵ + 5⁶ | odd (4) |
+| q-480 | n<m, m²n even, m+n odd; mn² odd | a<b, ab² even, a+b odd; a²b odd | (2) |
+| q-481 | primes p ≤ q; p(q+1) | primes a ≤ b; a(b+3) | (3) |
+| q-482 | a² − b² = −9 | x² − y² = −13 | 13 (1) |
+| q-483 | n³/2: 54, 66, 86, 256 | n³/2: 74, 108, 62, 90 | 108 (2) |
+| q-484 | a² + c² = 12b − 16, sum 9 | a² + c² = 20b − 48 | 15 (2) |
+| q-485 | x<y<z<0; x(y+z) | a<b<c<0; c(a+b) | (1) |
+| q-486 | 2n+1 = j(4j+1) | 2k+1 = t(6t+5) | odd (2) |
+| q-487 | x = a²−b²+3a−3b | x = m²−n²+5n−5m | even (3) |
+| q-488 | (m+1)(4n+m) | (a−1)(6b+a) | even (4) |
+| q-489 | at least half of 1..n (n>1) | more than half of 1..2n+1 | odd (4) |
+| q-490 | ab = 36 | ab = 100 | if a odd then b even (1) |
+| q-491 | a<b, ab<c; b<0 and c<0 impossible | x>y, xy<z; x<0 and z<0 impossible | (3) |
+| q-492 | m even, n odd; m(n−1)(n+1)/16 | a odd, b even; b(a−1)(a+1)/16 | (3) |
+| lesson Integers | (−2)(5)(−3)(−4), (−2)(−5)(−3)(−4); (−12)÷(−3), (−12)÷3; x = −7 | (−4)(3)(−2)(−5), (−4)(−3)(−2)(−5); (−18)÷(−6), (−18)÷6; x = −9 | – |
+| lesson Consecutive | 0…4; −2, −1, 0; a = 2, b = 3; "a could be 17" | 5…9; −3, −2, −1; a = 8, b = 9; 23 | – |
+| lesson Even & Odd | 6, 14, 42, 684, 7,320; 6+10, 9+13, 6+9, 13−9; 4·2, 3·5, 2·3; 6+9−4+13+7, 8+11−6+15; 8·11+7·12−9·5, 6(x+3); 15÷5, 5÷3, 10÷5, 14÷3, 6÷2, 20÷2, 10÷6 | 8, 16, 38, 572, 9,150; 8+12, 7+11, 8+7, 11−7; 4·6, 3·7, 2·5; 8+5−2+11+3, 4+7−10+9; 6·13+5·10−3·7, 4(x+5); 21÷7, 7÷3, 12÷3, 8÷3, 18÷6, 12÷2, 6÷4 | – |
+| lesson Products | 1·2 … 4·5 (2, 6, 12, 20); 3·4·5 = 60 | 3·4 … 6·7 (12, 20, 30, 42); 7·8·9 = 504 | – |
+
+## 2026-10-06 review
+Independent check of the renumber pass (16 guided + 20 practice, 16 solution videos, 4 lessons, practice removals), built with
+and without `renumber_pass` and compared. Every key recomputed in Python (brute force; exactly one correct choice, traps still
+choices), every video step redone with the new numbers, no old numbers left; lesson examples re-checked (sign counts, parity
+counts, division examples). Duplicate check over a build of topics 1–16: no question equals another question or a lesson/card
+example. Nothing in topic 16 is recorded. No quadratic trinomial added.
+Fixed (the kind of condition had changed from the Hebrew; restored with new numbers):
+- q-468: the pass changed consecutive EVENS to consecutive integers (answer 2). Back to two pairs of consecutive even numbers,
+  new letters and denominator: a<b and c<d consecutive evens, a + d ≠ 0, (b² − a² + d² − c²)/(a + d). Choices 4(a+c), 2, a+c, 4 ·
+  key 4; 2 is the gap-of-one trap. Video keeps both methods: formula three (gaps of two → 4(a+c+2)/(a+c+2) = 4), and the plug-in
+  with the tie check (a = c = 2 gives 16, 2, 4, 4 → tie; a = 2, c = 8 gives 40, 2, 10, 4; b = 4, d = 10: 48/12 = 4).
+- q-469: the pass changed consecutive integers to consecutive EVENS. Back to consecutive integers x<y<z with x² + y² = z²; it now
+  asks which could be x + z: choices 10, 8, 12, 6 · key 2 (3, 4, 5 → 8; −1, 0, 1 → 0 not a choice). Trap 12 = the sum of all three
+  (the Hebrew's answer). Video keeps both methods: one unknown (y² = 4y, two solutions), and testing the answers (middle =
+  (x + z) ÷ 2).
+- q-489 (practice): the pass made it "more than half of 1 … 2n+1" (only odd-length lists, easier). Back to the Hebrew kind with new
+  numbers: n > 1, at least half of the integers from 2 to n are — not prime / even / odd / prime · key 2 (brute force n = 2…299:
+  even never below half; odd fails n = 4, prime fails n = 10, not prime fails n = 3).
+`python3 math_check.py 16 32` → 0 / 0 / 0. Rendered solve-q-468, -469, -472.
+- q-464 (follow-up, teacher: same message): back to the Hebrew answer "always even" with the trap "divisible by 4", new form
+  (n − n³)/3 = −(n − 1)n(n + 1)/3 = −6k/3 = −2k. Choices divisible by 4 / a fraction / even / odd · key 3 (Python, n = −50…50:
+  always an even integer, not always divisible by 4). Video keeps both methods: plug in n = 1, 2, 3 → 0, −2, −8 (−2 rules out
+  "divisible by 4"; a minus doesn't change parity), and the math way (common factor, contracted formula, three in a row → 6k).
+  Written solution rewritten. `math_check.py 16 32` → 0 / 0 / 0; rendered solve-q-464.

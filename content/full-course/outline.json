@@ -132,36 +132,36 @@
      "title": "Absolute Value",
      "videos": 22,
      "lessons": 4,
-     "questions": 48,
+     "questions": 38,
      "minutes": 40,
-     "steps": 72
+     "steps": 62
     },
     {
      "id": 14,
      "title": "Prime Numbers",
      "videos": 23,
      "lessons": 4,
-     "questions": 54,
+     "questions": 45,
      "minutes": 33,
-     "steps": 80
+     "steps": 71
     },
     {
      "id": 15,
      "title": "Division & Remainder",
      "videos": 19,
      "lessons": 3,
-     "questions": 53,
-     "minutes": 33,
-     "steps": 74
+     "questions": 41,
+     "minutes": 34,
+     "steps": 62
     },
     {
      "id": 16,
      "title": "Integers",
      "videos": 26,
      "lessons": 6,
-     "questions": 58,
-     "minutes": 49,
-     "steps": 89
+     "questions": 46,
+     "minutes": 50,
+     "steps": 77
     },
     {
      "id": 17,

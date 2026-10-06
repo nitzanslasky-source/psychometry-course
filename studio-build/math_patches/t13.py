@@ -1311,3 +1311,654 @@ _apply_before_practice_methods = apply
 def apply(M):
     _apply_before_practice_methods(M)
     practice_methods(M)   # 2026-10-06 practice: runs last
+
+
+# =====================================================================================================================
+# 2026-10-06 renumber pass: the English course must not look like the Hebrew one. Every Hebrew-derived question
+# (guided q-358 ... q-370, practice q-371 ... q-385) gets new numbers / letters - same idea, same trap, same difficulty,
+# same methods - and every guided solution video is rewritten to match. The Hebrew lesson's own examples get new
+# numbers too (and the card / tools rows that came from the Hebrew lesson). Practice clean-up: 30 -> 20.
+# Nothing in topic 13 is recorded (checked ~/Documents/Course.recordings on 2026-10-06). Runs last.
+# =====================================================================================================================
+def _nl_svg(c, r):
+    """Number line -4 ... 8: the numbers less than r away from c (same style as NL_SVG)."""
+    X = lambda n: 50 + (n + 4) * 45
+    lo, hi = c - r, c + r
+    f = 'font-family="DejaVu Sans,Arial,sans-serif"'
+    return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 150" role="img" aria-label="Number line: the numbers less than %d away from %d">'
+            '<title>Within %d of %d</title>' % (r, c, r, c) +
+            '<line x1="30" y1="95" x2="610" y2="95" stroke="#203344" stroke-width="2.5"/>'
+            '<path d="M 612 95 l -10 -6 l 0 12 Z M 28 95 l 10 -6 l 0 12 Z" fill="#203344"/>'
+            '<rect x="%d" y="88" width="%d" height="14" fill="#d5f1ed" stroke="#087f83" stroke-width="2"/>' % (X(lo), X(hi) - X(lo))
+            + ''.join('<line x1="%d" y1="89" x2="%d" y2="101" stroke="#203344" stroke-width="2"/>'
+                      '<text x="%d" y="128" text-anchor="middle" fill="#203344" %s font-size="18"%s>%s</text>'
+                      % (X(n), X(n), X(n), f, ' font-weight="bold"' if n in (lo, c, hi) else '', ('−%d' % -n) if n < 0 else str(n))
+                      for n in range(-4, 9))
+            + '<circle cx="%d" cy="95" r="6" fill="#ffffff" stroke="#087f83" stroke-width="2.5"/>' % X(lo)
+            + '<circle cx="%d" cy="95" r="6" fill="#ffffff" stroke="#087f83" stroke-width="2.5"/>' % X(hi)
+            + '<circle cx="%d" cy="95" r="6" fill="#203344"/>' % X(c)
+            + '<line x1="%d" y1="55" x2="%d" y2="55" stroke="#087f83" stroke-width="2.5"/><path d="M %d 55 l -12 -6 l 0 12 Z" fill="#087f83"/>' % (X(c), X(hi) - 4, X(hi))
+            + '<text x="%d" y="42" text-anchor="middle" fill="#087f83" %s font-size="20" font-weight="bold">%d</text>' % ((X(c) + X(hi)) // 2, f, r)
+            + '<line x1="%d" y1="55" x2="%d" y2="55" stroke="#087f83" stroke-width="2.5"/><path d="M %d 55 l 12 -6 l 0 12 Z" fill="#087f83"/>' % (X(c), X(lo) + 4, X(lo))
+            + '<text x="%d" y="42" text-anchor="middle" fill="#087f83" %s font-size="20" font-weight="bold">%d</text>' % ((X(c) + X(lo)) // 2, f, r)
+            + '<line x1="%d" y1="55" x2="%d" y2="89" stroke="#203344" stroke-width="1.5" stroke-dasharray="4 4"/>' % (X(c), X(c))
+            + '</svg>')
+
+
+def renumber(M):
+    from math_api import rich_plain
+    RECORDED = set()
+
+    def S(qid_, **kw):
+        if qid_ in RECORDED: return
+        q = M.set_q(qid_, **kw)
+        for v in M.D['videos'].values():   # keep any pre-loaded copy of the choices in sync
+            for b in v.get('beats', []):
+                for it in b.get('items', []):
+                    if it.get('k') == 'q' and it.get('qid') == qid_ and 'choices' in it:
+                        it['choices'] = list(q['choicesRich']); M.touched_videos.add(v['id'])
+
+    def video(qid_, slides):
+        if qid_ in RECORDED: return
+        vid = 'solve-' + qid_
+        for n, x in slides.items():
+            title, script = x if isinstance(x, tuple) else (None, x)
+            M.set_slide(vid, n, title=title, script=script)
+        M.touched_videos.add(vid)
+
+    def item(vid, n, k, t=None):
+        it = dict(M.slide(vid, n)['items'][k])
+        if t is not None: it['t'] = t
+        return it
+
+    # ---------------- lesson "Absolute Value": the Hebrew lesson's own examples -> new numbers, same points
+    L = LESSON
+    if L not in RECORDED:
+        _dd_sub(M, L, 2, [('Draw an arc from 0 to 5 and write "5 units"', 'Draw an arc from 0 to 4 and write "4 units"'),
+                          ('Five is five units away from zero.', 'Four is four units away from zero.'),
+                          ('Draw an arc from 0 to −7 and write "7 units"', 'Draw an arc from 0 to −6 and write "6 units"'),
+                          ('Negative seven? The number is negative — but its distance from zero is seven units.',
+                           'Negative six? The number is negative — but its distance from zero is six units.'),
+                          ("isn't minus three kilometers. It's three kilometers.", "isn't minus two kilometers. It's two kilometers.")])
+        _dd_sub(M, L, 3, [('$|6|=6$', '$|8|=8$'), ('|6| = 6 appears', '|8| = 8 appears'),
+                          ('Six is six units from zero.', 'Eight is eight units from zero.'),
+                          ('$|-9|=9$', '$|-4|=4$'), ('|−9| = 9 appears', '|−4| = 4 appears'),
+                          ('Negative nine is nine units away.', 'Negative four is four units away.'),
+                          ('Circle the minus sign in −9 and cross it out', 'Circle the minus sign in −4 and cross it out')])
+        _dd_sub(M, L, 4, [('$|5-11|$', '$|4-13|$'), ('|5 − 11| appears', '|4 − 13| appears'),
+                          ('Write "= |−6| = 6"', 'Write "= |−9| = 9"'),
+                          ('Five minus eleven is negative six. Its absolute value: six.', 'Four minus thirteen is negative nine. Its absolute value: nine.'),
+                          ('Below, write "5 + 11 = 16" and cross it out', 'Below, write "4 + 13 = 17" and cross it out'),
+                          ("turn the eleven positive first and add. That's sixteen", "turn the thirteen positive first and add. That's seventeen")])
+        _dd_sub(M, L, 6, [('$|-2+(-5)| \\qquad |-2|+|-5|$', '$|-3+(-6)| \\qquad |-3|+|-6|$'),
+                          ('|−2 + (−5)| and |−2| + |−5| appear', '|−3 + (−6)| and |−3| + |−6| appear'),
+                          ('Under each, write "= 7" and put "=" between them', 'Under each, write "= 9" and put "=" between them'),
+                          ('Same signs: negative two plus negative five is negative seven — absolute value seven. Separately: two plus five, seven. Equal.',
+                           'Same signs: negative three plus negative six is negative nine — absolute value nine. Separately: three plus six, nine. Equal.'),
+                          ('$|-2+5| \\qquad |-2|+|5|$', '$|-3+6| \\qquad |-3|+|6|$'),
+                          ('|−2 + 5| and |−2| + |5| appear', '|−3 + 6| and |−3| + |6| appear'),
+                          ('Under each, write "= 3" and "= 7", and put "<" between them', 'Under each, write "= 3" and "= 9", and put "<" between them'),
+                          ('Different signs: negative two plus five is three. Separately: two plus five, seven.',
+                           'Different signs: negative three plus six is three. Separately: three plus six, nine.')])
+        for n in (2, 3, 4, 6): M.slide(L, n)['loads'] = ''
+    # Exam Tools "Distance": the example |x - 2| < 4 came from the Hebrew lesson -> |x - 3| < 4 (new figure)
+    if TOOLS not in RECORDED:
+        b = M.slide(TOOLS, 3)
+        vis = next(it for it in b['items'] if it.get('k') == 'vis'); vis['v'] = dict(vis['v'], svg=_nl_svg(3, 4))
+        _dd_sub(M, TOOLS, 3, [('Number line: within 4 of 2 appears', 'Number line: within 4 of 3 appears'),
+                              ('So the absolute value of x minus two, less than four, reads: x is less than four steps from two.',
+                               'So the absolute value of x minus three, less than four, reads: x is less than four steps from three.'),
+                              ('Start at two. Four steps left: negative two. Four steps right: six.',
+                               'Start at three. Four steps left: negative one. Four steps right: seven.'),
+                              ('Write "|x − 2| < 4 → −2 < x < 6"', 'Write "|x − 3| < 4 → −1 < x < 7"'),
+                              ('x is between negative two and six.', 'x is between negative one and seven.'),
+                              ('below negative two, or above six.', 'below negative one, or above seven.'),
+                              ('$|x+5|=|x-(-5)|$ $\\to$ distance from $-5$', '$|x+6|=|x-(-6)|$ $\\to$ distance from $-6$'),
+                              ('|x + 5| = distance from −5 appears', '|x + 6| = distance from −6 appears'),
+                              ('x plus five is x minus negative five. So it\'s the distance from NEGATIVE five.',
+                               'x plus six is x minus negative six. So it\'s the distance from NEGATIVE six.')])
+    # memory card rows with the Hebrew lesson / question numbers
+    for t in M.card('mem-absolute-value')['tables']:
+        for r in t['rows']:
+            if r[0] == '$|x+3|=8$': r[:] = ['$|x-4|=5$', '$x-4=5$ or $x-4=-5$']
+            elif r[0] == '$|x-2|<4$ (small side)': r[:] = ['$|x-3|<4$ (small side)', '$-4<x-3<4$ → between: $-1<x<7$']
+            elif r[0] == '$|x-2|>4$ (big side)': r[:] = ['$|x-3|>4$ (big side)', '$x-3>4$ or $x-3<-4$ → outside: $x>7$ or $x<-1$']
+            elif r[0] == '$|x-a|$': r[1] = 'the distance between $x$ and $a$ ($|x+6|$: distance from $-6$)'
+
+    # ============================== guided questions, Questions 1-7 (section 1)
+    # q-358: ab < 0, a < |a| -> |b| = b   =>   xy < 0, y < |y| -> |x| = x (key 4)
+    S('q-358', stem='Given:\n$\\begin{cases} x\\cdot y<0 \\\\ y<|y| \\end{cases}$\nWhich of the following is necessarily true?',
+      choices=['$x<0$', '$\\left|x\\right| < \\left|y\\right|$', '$\\left|\\frac{y}{x}\\right| < 1$', '$\\left|x\\right| = x$'], correct=4, expl=[
+        '$y<|y|$: a number is smaller than its absolute value only when it is negative. So $y<0$.',
+        '$x\\cdot y<0$: the product is negative, so $x$ and $y$ have opposite signs. $y$ is negative, so $x>0$.',
+        '$x$ is positive, so $|x|=x$ (choice 4). Choice 1 ($x<0$) is false.',
+        'Choices 2 and 3 compare sizes, and the givens say nothing about sizes. $y=-3$, $x=8$: $|x|=8$ is bigger than $|y|=3$, so choice 2 fails. '
+        '$y=-6$, $x=2$: $\\left|\\frac{y}{x}\\right|=3$, not less than $1$, so choice 3 fails.'])
+    video('q-358', {2: [
+        "Take the givens one at a time.",
+        D('Underline "x · y < 0" and write "opposite signs"'),
+        "x times y is negative. So they have opposite signs — one positive, one negative. We don't know which yet.",
+        "If both were positive — or both negative — the product would be positive.",
+        D('Underline "y < |y|" and write "y < 0"'),
+        "Second given: y is smaller than its own absolute value. That means y is NEGATIVE.",
+        "If y were positive, they'd be equal. Negative five is smaller than its absolute value, five.",
+        D('Write "→ x > 0"'),
+        "y is negative, and they have opposite signs. So x is the positive one.",
+        D('Cross out choice 1'),
+        "Choice one says x is negative. Out.",
+        "Choice two: is x's absolute value smaller than y's? We don't know. y could be negative three and x could be eight — then it's bigger.",
+        D('Cross out choice 2'),
+        "Choice three has the same problem. y equals negative six, x equals two — the ratio is three, not less than one.",
+        D('Cross out choice 3'),
+        "Choice four: x is positive — and the absolute value of a positive number is the number itself.",
+        D('Circle choice 4'),
+        "Choice four."]})
+
+    # q-359: |x + 3| = 8 -> -11   =>   |x + 7| = 9 -> -16 (key 3; trap -2)
+    S('q-359', stem='Given: $|x+7|=9$. Which of the following could be the value of $x$?',
+      choices=['$16$', '$-2$', '$-16$', '$6$'], correct=3, expl=[
+        'Two cases. $x+7=9$, so $x=2$. Or $x+7=-9$, so $x=-16$.',
+        'Only $-16$ is among the choices. Check: $|-16+7|=|-9|=9$ ✓.',
+        'Choice 2 ($-2$) is a trap: it is not $2$.'])
+    video('q-359', {2: [
+        "Absolute value equation? Split it in two.",
+        "The inside equals nine — or the inside equals negative nine. Either way, the bars give nine.",
+        D('Write "x + 7 = 9 → x = 2"'),
+        "First case: x plus seven equals nine. x is two.",
+        D('Write "x + 7 = −9 → x = −16"'),
+        "Second case: x plus seven equals negative nine. x is negative sixteen.",
+        "Now the choices. Is two there? No. Negative two is there — careful, that's a trap. Not the same number.",
+        D('Circle choice 3'),
+        "Negative sixteen is choice three.",
+        "Look at the wording: which could be the value of x. Two values work — two and negative sixteen. Only one of them is offered.",
+        D('Next to it write "|−16 + 7| = |−9| = 9 ✓"'),
+        "Quick check: negative sixteen plus seven is negative nine. Absolute value: nine. ✓"]})
+
+    # q-360: |x + 5| < 8 -> 2   =>   |x + 3| < 7 -> 3 (key 3; trap 5 fits |x| < 7 but not the range)
+    S('q-360', stem='Given: $|x+3|<7$. Which of the following could be the value of $x$?',
+      choices=['$5$', '$-25$', '$3$', '$11$'], correct=3, expl=[
+        'The bars are on the small side, so $x+3$ is between $-7$ and $7$: $-7<x+3<7$.',
+        'Subtract $3$ from all three parts: $-10<x<4$.',
+        'Only $3$ is in this range ($5$ and $11$ are too big, and $-25$ is too small). Check: $|3+3|=6<7$ ✓.',
+        'With the distance picture: $|x+3|=|x-(-3)|$ is the distance from $x$ to $-3$. Less than $7$ from $-3$ means from $-10$ to $4$.'])
+    video('q-360', {2: [
+        "Where's the absolute value? On the SMALL side of the inequality.",
+        "Small side means a closed range — x is trapped between two numbers.",
+        D('Write "−7 < x + 3 < 7"'),
+        "Put the seven on the right, and negative seven on the left.",
+        D('Subtract 3 from all three parts: "−10 < x < 4"'),
+        "Take three off everywhere. x is between negative ten and four.",
+        "Now scan the choices. Three — inside the range. Five and eleven — too big. Negative twenty-five — too small.",
+        D('Cross out choices 1, 2 and 4; circle choice 3'),
+        "Only one choice fits. Choice three.",
+        D('Next to it write "|3 + 3| = 6 < 7 ✓"'),
+        "Check: three plus three is six, and six is less than seven. ✓",
+        "Another way to see it — a distance picture. x plus three is x minus negative three.",
+        D('Draw a number line: a dot at −3, arrows of 7 to −10 and to 4'),
+        "So x is less than seven steps from negative three. Seven steps left: negative ten. Seven steps right: four."]})
+
+    # q-361: 6 < |x + 3| cannot -> 2   =>   5 < |x + 2| cannot -> 1 (key 2; trap 5 fails |x| > 5 but fits)
+    S('q-361', stem='Given: $5<|x+2|$. Which of the following cannot be the value of $x$?',
+      choices=['$7$', '$1$', '$-8$', '$5$'], correct=2, expl=[
+        'The bars are on the big side, so there are two cases. $x+2>5$, so $x>3$. Or $x+2<-5$, so $x<-7$.',
+        '$7$ and $5$ are greater than $3$ ✓, and $-8$ is less than $-7$ ✓.',
+        '$1$ is in neither range: $|1+2|=3$, and $3$ is not greater than $5$. So $x$ cannot be $1$.'])
+    video('q-361', {2: [
+        "The absolute value is on the BIG side. So the range is open — two separate cases.",
+        D('Write "x + 2 > 5 → x > 3"'),
+        "Either the inside is bigger than five — x is bigger than three.",
+        D('Write "x + 2 < −5 → x < −7"'),
+        "Or the inside is smaller than negative five — x is smaller than negative seven.",
+        "They ask what x CANNOT be. So find the one that fits neither range.",
+        D('Tick choices 1 and 4 (above 3) and choice 3 (below −7)'),
+        "Seven — above three, fine. Five — above three, fine. Negative eight — below negative seven, fine.",
+        D('Circle choice 2'),
+        "One? It's not above three, and it's not below negative seven. It's stuck in the forbidden middle. Choice two.",
+        "Check: one plus two is three — and three is not bigger than five.",
+        "The distance picture says the same. x plus two: the distance from negative two.",
+        D('Draw a number line: a dot at −2, marks at −7 and 3, shade outside them'),
+        "More than five steps from negative two: beyond three, or below negative seven. One is only three steps away."]})
+
+    # q-362: x < 0, 5 + 2x/|x| = 3   =>   10 + 4x/|x| = 6 (key 2; the first plug-in ties with -x)
+    S('q-362', stem='Given: $x<0$. What is $10+\\frac{4x}{|x|}$?',
+      choices=['$14$', '$6$', '$-x$', '$10-x$'], correct=2, expl=[
+        '$x<0$, so $|x|=-x$.',
+        '$\\frac{4x}{|x|}=\\frac{4x}{-x}=-4$ for every negative $x$.',
+        'So $10+\\frac{4x}{|x|}=10-4=6$.',
+        'Plugging in: $x=-2$ gives $10+\\frac{-8}{2}=6$. The choices at $x=-2$: $14$, $6$, $-x=2$ and $10-x=12$. Only choice 2 gives $6$.'])
+    video('q-362', {
+        2: ["It's an expression. So we're allowed to plug in a number. x just has to be negative.",
+            D('Write "x = −6"'),
+            "Take x equals negative six. Any negative number works — just not zero, one or minus one.",
+            D('Write "10 + 4(−6)/|−6| = 10 + (−24)/6 = 10 − 4 = 6"'),
+            "Four times negative six is negative twenty-four. Over six: negative four. Ten minus four — six.",
+            D('Next to the choices write their values: 14, 6, 6, 16'),
+            "Now the choices at x equals negative six. Fourteen — no. Six — yes. Negative x is… six. Yes too! Ten minus x is sixteen — no.",
+            "Two survive. With other numbers, one plug-in would have killed three choices. Here negative six happens to make negative x equal six.",
+            "So plug in again — a different negative.",
+            D('Write "x = −2: 10 + (−8)/2 = 6"'),
+            "x equals negative two: ten plus negative eight over two. Six again.",
+            D('Next to choice 3 write "−x = 2 ✗" and circle choice 2'),
+            "But negative x is now two. Out. Choice two."],
+        3: ["The algebra is short too.",
+            D('Write "x < 0 → |x| = −x"'),
+            "x is negative. So its absolute value is negative x.",
+            D('Write "4x / (−x) = −4"'),
+            "Four x over negative x — the x's cancel. Negative four, whatever the negative number is.",
+            "A useful fact: x over its absolute value is one for every positive x — and minus one for every negative x.",
+            D('Write "10 − 4 = 6" and circle choice 2'),
+            "Ten minus four: six. And that's why choices with an x in them can't be right — the x disappears. Choice two."]})
+
+    # ============================== advanced guided questions (section 2)
+    # q-363: |b| = a, b != a, 3c = a -> b < c < a   =>   |n| = m, n != m, 4k = m -> n < k < m (key 2)
+    S('q-363', stem='Given:\n$\\begin{cases} |n|=m \\\\ n\\ne m \\\\ 4k=m \\end{cases}$\nWhich of the following is necessarily true?',
+      choices=['$m<k<n$', '$n<k<m$', '$n<m<k$', '$k<n<m$'], correct=2, expl=[
+        '$|n|=m$, so $n=m$ or $n=-m$. Since $n\\ne m$, $n=-m$.',
+        '$m=|n|\\ge0$. If $m=0$, then $n=0=m$, which is not allowed. So $m>0$ and $n=-m<0$.',
+        '$k=\\frac{m}{4}$: positive, but smaller than $m$. So $0<k<m$.',
+        'The order is $n<k<m$. With numbers: $m=4$, $n=-4$, $k=1$.'])
+    video('q-363', {
+        2: ["Two approaches today: understanding first, then plugging in numbers.",
+            "Given one: the absolute value of n equals m. Same distance from zero.",
+            "Given two: but n and m are NOT equal.",
+            D('Under the question write "|n| = m → m ≥ 0"'),
+            "An absolute value is never negative. So m is zero or positive.",
+            "Could m be zero? Then n is zero too — and they'd be equal. Not allowed.",
+            D('Write "m > 0, n < 0"'),
+            "So m is positive, and n is the negative number the same distance from zero.",
+            D('Draw a number line: n left of 0, m right of 0, same distance'),
+            "Given three: four k equals m. So k is a quarter of m.",
+            D('Mark k between 0 and m'),
+            "m is positive. So k is positive too, but smaller. It sits between zero and m.",
+            "Biggest: m. Smallest: n. In the middle: k.",
+            D('Circle choice 2'),
+            "n, then k, then m. Choice two."],
+        3: ["Now plug in numbers that obey every given.",
+            D('Write "m = 4, n = 4"'),
+            "Try m four, n four. The absolute value of n is m — fine.",
+            "But they have to be different. Bad substitution. So change it.",
+            D('Change it to "m = 4, n = −4"'),
+            "n negative four. Absolute value four, equals m — and they're different. Now both givens work.",
+            D('Write "4k = 4 → k = 1"'),
+            "Four k equals four — k is one.",
+            D('Circle choice 2'),
+            "Negative four, one, four: n, k, m. Choice two again.",
+            "Which way is better? I prefer understanding — but plugging in is an excellent backup."]})
+
+    # q-364: p < q < 0 < r < s -> |q| < |p|   =>   a < b < 0 < c < d -> |b| < |a| (key 2)
+    S('q-364', stem='Given: $a<b<0<c<d$. Which of the following is necessarily true?',
+      choices=['$\\left|c\\right| < \\left|a\\right|$', '$\\left|b\\right| < \\left|a\\right|$',
+               '$\\left|a\\right| < \\left|d\\right|$', '$\\left|b\\right| < \\left|d\\right|$'], correct=2, expl=[
+        'The absolute value is the distance from $0$. $a$ and $b$ are both negative, and $a$ is farther left. So $a$ is farther from $0$: $|b|<|a|$ always.',
+        'The other choices compare a negative number with a positive one, and the givens say nothing about that.',
+        '$a=-3$, $b=-1$, $c=6$, $d=8$: $|c|>|a|$, so choice 1 fails. $a=-20$, $b=-10$, $c=1$, $d=2$: choices 3 and 4 fail.'])
+    video('q-364', {2: [
+        "Let's place the givens on the number line.",
+        D('Draw a number line: a and b left of 0 (a further), c and d right of 0 (d further)'),
+        "a and b are negative — a is further from zero. c and d are positive — d is further.",
+        "Notice: every answer uses absolute value. Absolute value means distance from zero.",
+        "So the question is really: who is further from zero?",
+        "Two positives — d is always further than c. We don't know by how much, but always.",
+        "Same for the negatives: a is always further than b.",
+        "But a negative against a positive? The givens say nothing about that.",
+        "Choice one: c against a — positive versus negative. c could be twenty. Out.",
+        D('Cross out choice 1'),
+        "Choice two compares two negatives. Leave it for the end.",
+        D('Next to choice 3 write "a = −2, d = 2 → equal"'),
+        "Choice three: a against d. a could be negative two and d two — equal. Or a could be negative twenty — bigger. Not necessarily.",
+        D('Cross out choice 3'),
+        "Choice four: b against d — again negative versus positive. b could be negative twenty. Out.",
+        D('Cross out choice 4'),
+        "Three out — on the exam, mark the one that's left and move on.",
+        D('Circle choice 2'),
+        "Here we'll check it anyway: b and a are both negative, same side of zero. a is further. Always. Choice two."]})
+
+    # q-365: d < c < b, |b| < |c| -> not necessarily b != |b|   =>   z < y < x, |x| < |y| (key 3)
+    S('q-365', stem='Given:\n$\\begin{cases} z<y<x \\\\ |x|<|y| \\end{cases}$\nWhich of the following is not necessarily true?',
+      choices=['$\\left|y\\right| < \\left|z\\right|$', '$z \\ne  \\left|z\\right|$', '$x \\ne  \\left|x\\right|$',
+               '$\\left|x\\right| < \\left|z\\right|$'], correct=3, expl=[
+        '$y<x$, but $|y|>|x|$. If $y$ were $0$ or positive, then $x>y\\ge0$ and $|x|>|y|$. So $y<0$.',
+        '$z<y<0$, so $z$ is negative too and farther from $0$: $|z|>|y|>|x|$. Choices 1, 2 and 4 are always true.',
+        'The sign of $x$ is not fixed. $y=-4$, $z=-5$, $x=2$: all the givens hold, and $x=|x|$. So choice 3 ($x\\ne|x|$) is not necessarily true.'])
+    video('q-365', {2: [
+        "Given one: z is less than y, which is less than x. We don't know any signs yet.",
+        "Given two: the absolute value of x is LESS than the absolute value of y.",
+        "Look at that. Without bars, x is bigger than y. With bars, y suddenly jumps above x.",
+        D('Under the question write "y < x but |y| > |x| → y < 0"'),
+        "Only a negative number changes when you put bars on it. So y must be negative.",
+        D('Write "z < y < 0 → z < 0"'),
+        "z is even smaller than y. So z is negative too, and further from zero.",
+        "And x? The givens can't pin it down. x could be negative, closer to zero than y — or x could be positive, as long as it's closer to zero than y.",
+        D('Write "x = −2 or x = 2 (y = −4, z = −5)"'),
+        "Example: y negative four, z negative five — x could be negative two, or x could be two.",
+        "They want the statement that is NOT necessarily true.",
+        "Choice three: x is not equal to its absolute value. That claims x must be negative.",
+        "But x could be positive — then x equals its absolute value. Not necessarily true!",
+        D('Circle choice 3'),
+        "That's our answer — choice three. On the exam, mark it and move on.",
+        "Let's check the others anyway — all must be always true.",
+        "Choice one: y and z are both negative, z further left. So z is further from zero. Always true.",
+        D('Cross out choice 1'),
+        "Choice two: z is negative. So z is not equal to its absolute value. Always true.",
+        D('Cross out choice 2'),
+        "Choice four: z is further from zero than y, and y is further than x. So z is further than x. Always.",
+        D('Cross out choice 4'),
+        "Choice three it is."]})
+
+    # q-366: 2 < |a + b|, possible but not necessarily -> |a+b| < |a|+|b|   =>   3 < |x + y| (key 2)
+    S('q-366', stem='$x$ and $y$ are integers. Given: $3<|x+y|$. Which of the following is possible but not necessarily true?',
+      choices=['$9 < {\\left(x + y\\right)}^{2}$', '$\\left|x + y\\right| < \\left|x\\right| + \\left|y\\right|$',
+               '$\\left|x \\cdot  y\\right| < \\left|x\\right| \\cdot  \\left|y\\right|$', '$\\left|x + y\\right| < \\left|5\\,x + 5\\,y\\right|$'],
+      correct=2, expl=[
+        'Choice 1 is always true. Both sides of $3<|x+y|$ are positive, so we may square: $9<|x+y|^2=(x+y)^2$.',
+        'Choice 3 is never true: $|x\\cdot y|=|x|\\cdot|y|$ always, so it is never smaller.',
+        'Choice 4 is always true: $|5x+5y|=5|x+y|$, and $|x+y|<5|x+y|$ because $|x+y|>0$.',
+        'Choice 2 is sometimes true. $x=6$, $y=-2$ gives $4<8$ ✓. But $x=4$, $y=1$ gives $5=5$, not "less than". So it is possible but not necessarily true.'])
+    rule = item('solve-q-366', 2, 1, '$|x+y|\\le|x|+|y|$')
+    video('q-366', {2: [
+        "Read the question carefully: POSSIBLE, but NOT NECESSARILY true.",
+        "So anything that's never true — out. Anything that's always true — out.",
+        "We want the one that's sometimes true, sometimes not.",
+        "Choice one looks like the given — brackets instead of bars, and a square.",
+        D('Next to choice 1 write "|x+y| > 3 → |x+y|² > 9"'),
+        "The technical way: both sides are positive. So square both sides. Three squared is nine.",
+        D('Below it write "|x+y|² = (x+y)²  →  (x+y)² > 9"'),
+        "And the absolute value of x plus y, squared, is the same as x plus y squared. A square doesn't care about the sign.",
+        "So choice one is always true. Out.",
+        D('Cross out choice 1'),
+        "And a much simpler way to see it: absolute value behaves like an even power. What's true with bars is true with a square.",
+        "Choice two — leave it for the end.",
+        "Choice three: the absolute value of x times y.",
+        "You can split bars over multiplication: the absolute value of x y IS the absolute value of x times the absolute value of y.",
+        D('Next to choice 3 write "|xy| = |x|·|y|"'),
+        "Always EQUAL — never less. Never true. Out.",
+        D('Cross out choice 3'),
+        "Choice four: take out the common factor five inside the bars.",
+        D('Next to choice 4 write "|5(x+y)| = 5|x+y|"'),
+        "Split the bars: five times the absolute value of x plus y.",
+        "So it says: something is less than five times itself. That something is positive — divide it away: one is less than five. Always true. Out.",
+        D('Cross out choice 4'),
+        "Three out — on the exam, mark two. Here, let's see why it's right.",
+        A('The rule appears: |x + y| ≤ |x| + |y|', rule),
+        "That's a rule: the absolute value of a sum is less than or EQUAL to the sum of absolute values.",
+        D('Write "x = 4, y = 1: 5 = 5"'),
+        "Same signs — four and one: five equals five. Equal, not less.",
+        D('Write "x = 6, y = −2: 4 < 8"'),
+        "Opposite signs — six and negative two: four against eight. Less!",
+        D('Circle choice 2'),
+        "Sometimes true, sometimes not. Choice two.",
+        "Know that rule, and you can mark this one instantly."]})
+
+    # q-367: 3|x| + 6|y| = 27, x + 2|y| = 3 -> -3   =>   4|x| + 12|y| = 44, x + 3|y| = 1 -> -5 (key 2)
+    S('q-367', stem='Given:\n$\\begin{cases} 4|x|+12|y|=44 \\\\ x+3|y|=1 \\end{cases}$\nWhat is $x$?',
+      choices=['$-2$', '$-5$', '$5$', '$3$'], correct=2, expl=[
+        'Divide the first equation by $4$: $|x|+3|y|=11$.',
+        'Subtract the second equation: $|x|-x=11-1=10$, so $|x|=10+x$.',
+        'Case $x=10+x$: $0=10$, impossible. Case $x=-(10+x)$: $2x=-10$, so $x=-5$.',
+        'Check: $|-5|=5=10+(-5)$ ✓. Then $3|y|=1-(-5)=6$, so $|y|=2$, and $4\\cdot5+12\\cdot2=44$ ✓.'])
+    video('q-367', {
+        2: ["Method one: full algebra.",
+            D('Under the first equation write "÷4: |x| + 3|y| = 11"'),
+            "The first equation can be divided by four: absolute x plus three absolute y equals eleven.",
+            "They want x. So we need to get rid of y. Subtract the equations.",
+            D('Write "|x| − x = 11 − 1 = 10"'),
+            "Three absolute y cancels. Absolute x minus x equals ten.",
+            D('Write "|x| = 10 + x"'),
+            "Move the x across: absolute x equals ten plus x.",
+            "An absolute-value equation has two options: the sides are equal, or one is the opposite of the other.",
+            D('Write "x = 10 + x → 0 = 10 ✗"'),
+            "Option one: x equals ten plus x. Zero equals ten. False — no solution here.",
+            D('Write "x = −(10 + x) → 2x = −10 → x = −5"'),
+            "Option two: x equals minus ten minus x. Two x is negative ten. x is negative five.",
+            "A letter on the right side. So check it. Ten plus negative five is five. Not negative. It works.",
+            D('Circle choice 2'),
+            "Choice two."],
+        3: ["Method two: same algebra — until we reach the absolute-value equation.",
+            D('Write "|x| = 10 + x"'),
+            "Then, instead of solving it — plug in the answers. They're all numbers.",
+            D('Next to choice 1 write "2 = 8? ✗"'),
+            "x equals negative two: absolute value two. Ten plus negative two is eight. No.",
+            D('Next to choice 2 write "5 = 5 ✓"'),
+            "x equals negative five: absolute value five. Ten plus negative five: five. Yes!",
+            D('Circle choice 2'),
+            "Much quicker at that stage than finishing the algebra."],
+        4: ["Method three: plug in the answers from the very start.",
+            D('Next to choice 1 write "x = −2: −2 + 3|y| = 1 → |y| = 1"'),
+            "Choice one, x equals negative two. Into the second equation: negative two plus three absolute y equals one. Absolute y is one.",
+            D('Write "4·2 + 12·1 = 20 ≠ 44 ✗"'),
+            "Check the first equation: eight plus twelve is twenty. Not forty-four. Out.",
+            D('Next to choice 2 write "x = −5: −5 + 3|y| = 1 → |y| = 2"'),
+            "Choice two, x is negative five. Negative five plus three absolute y equals one — absolute y is two.",
+            D('Write "4·5 + 12·2 = 44 ✓"'),
+            "First equation: twenty plus twenty-four — forty-four. It works!",
+            D('Circle choice 2'),
+            "Choice two. My picks: the shortened algebra, or plugging in the answers right away."]})
+
+    # q-368: |x + 3y| = |3x + y| -> |x| = |y|   =>   |x + 4y| = |4x + y| (key 3)
+    S('q-368', stem='Given: $|x+4y|=|4x+y|$. Which of the following is necessarily true?',
+      choices=['$y < x$', '$x = y$', '$\\left|x\\right| = \\left|y\\right|$', '$x < y$'], correct=3, expl=[
+        'Equal absolute values: the insides are equal or opposite.',
+        'Equal: $x+4y=4x+y$, so $3y=3x$ and $x=y$.',
+        'Opposite: $x+4y=-(4x+y)$, so $5x+5y=0$ and $x=-y$.',
+        'In both cases $|x|=|y|$. But $x=y$ is not necessary: $x=2$, $y=-2$ gives $|-6|=|6|$ ✓ with $x\\ne y$.'])
+    sq = item('solve-q-368', 3, 1)
+    video('q-368', {
+        2: ["An absolute-value equation: either the insides are equal, or one is the opposite of the other.",
+            D('Write "x + 4y = 4x + y → y = x"'),
+            "Option one: equal. Move terms across — y equals x.",
+            D('Write "x + 4y = −4x − y → 5x = −5y → x = −y"'),
+            "Option two: opposite. Open the bracket, move terms — x equals negative y.",
+            "So x equals y, or x equals negative y.",
+            D('Cross out choice 2'),
+            "Choice two, x equals y — only partly true. x could be negative y. Not necessarily.",
+            D('Circle choice 3'),
+            "Choice three: equal or opposite — either way, same absolute value. Always true. Choice three."],
+        3: [A("'Bars on both sides → square both sides' appears", sq),
+            "A tool for bars on both sides: both sides are zero or positive. So we may square both sides. After squaring, the bars are gone.",
+            D('Write "(x + 4y)² = (4x + y)²"'),
+            D('Write "x² + 8xy + 16y² = 16x² + 8xy + y²"'),
+            "Open with the first shortcut formula.",
+            D('Cross out the two 8xy terms'),
+            "Eight x y on both sides — cancel it.",
+            D('Write "15y² = 15x² → y² = x²"'),
+            "Move terms and divide by fifteen: y squared equals x squared.",
+            "Remember: absolute value and an even power are basically the same. True with squares — true with bars.",
+            D('Circle choice 3'),
+            "Absolute x equals absolute y. Choice three."],
+        4: ["Plugging in here isn't obvious — but it's the shortest.",
+            D('Write "x = y = 2: |10| = |10| ✓"'),
+            "Equal numbers — x two, y two. Ten on both sides. Works.",
+            D('Cross out choices 1 and 4'),
+            "So y less than x — no. x less than y — no. Choices one and four are out.",
+            "Two and three both survive. The answers hint: equal, or equal in absolute value. Let's split them.",
+            D('Write "x = 2, y = −2: |−6| = |6| ✓"'),
+            "Opposite numbers: two and negative two. Absolute six equals absolute six. Works!",
+            D('Cross out choice 2 and circle choice 3'),
+            "So they don't have to be equal. Choice three.",
+            "And the mirror test sees part of it with no numbers: swap x and y — the given doesn't change. y less than x turns into x less than y. Choices one and four are out.",
+            "Three approaches. The third is hardest to spot — but shortest. Pick what suits you."]})
+
+    # q-369: 11 < |2x + 1| < 13 -> -7 < x < -6   =>   7 < |2x - 1| < 9 -> -4 < x < -3 (key 3; traps: wrong-way +-1)
+    S('q-369', stem='Given: $7<|2x-1|<9$. Which of the following ranges is possible for $x$?',
+      choices=['$3 < x < 4$', '$5 < x < 6$', '$-4 < x < -3$', '$-5 < x < -4$'], correct=3, expl=[
+        'Positive inside: $7<2x-1<9$. Add $1$: $8<2x<10$. Divide by $2$: $4<x<5$.',
+        'Negative inside: $-9<2x-1<-7$. Add $1$: $-8<2x<-6$. Divide by $2$: $-4<x<-3$.',
+        'Only $-4<x<-3$ is among the choices. Check $x=-3.5$: $|2\\cdot(-3.5)-1|=|-8|=8$ ✓.',
+        'Choice 1 ($3<x<4$) is what you get if you subtract $1$ instead of adding it.'])
+    video('q-369', {
+        2: ["We've seen absolute-value inequalities before. A double one has an elegant route.",
+            D('Draw a number line: shade 7 to 9 and −9 to −7'),
+            "Two x minus one, in bars. If it's positive, it's between seven and nine. If negative — symmetrically, between negative nine and negative seven.",
+            D('Write "7 < 2x − 1 < 9"'),
+            "Positive band first. The unknown is in the middle — work on all three parts.",
+            D('Write "8 < 2x < 10 → 4 < x < 5"'),
+            "Add one: eight to ten. Halve: x between four and five.",
+            "Peek at the choices — it isn't there. So on to the negative band.",
+            D('Write "−9 < 2x − 1 < −7 → −8 < 2x < −6 → −4 < x < −3"'),
+            "Negative nine to negative seven. Add one, halve: x between negative four and negative three.",
+            D('Circle choice 3'),
+            "Choice three.",
+            "Three to four is the bait. That's what you get if you SUBTRACT the one instead of adding it."],
+        3: ["Or — trial and error. Pick a convenient number inside each range.",
+            D('Next to choice 1 write "x = 3.5: |6| = 6 ✗"'),
+            "Choice one: three and a half. Two times it is seven, minus one — six. Not more than seven. Out.",
+            D('Next to choice 2 write "x = 5.5: |10| = 10 ✗"'),
+            "Choice two: five and a half. Eleven minus one — ten. Not less than nine. Out.",
+            D('Next to choice 3 write "x = −3.5: |−8| = 8 ✓"'),
+            "Choice three: negative three and a half. Negative seven minus one — negative eight. Absolute value eight. Between seven and nine!",
+            D('Circle choice 3'),
+            "Possible — choice three. No doubt: this way is much shorter."]})
+
+    # q-370: x + |x| < 14 -> x < 7   =>   x + |x| < 12 -> x < 6 (key 3)
+    S('q-370', stem='Given: $x+|x|<12$. What is the most precise domain for $x$?',
+      choices=['$-6 < x < 6$', '$x < 0$', '$x < 6$', '$0 < x$'], correct=3, expl=[
+        'Case $x\\ge0$: $|x|=x$, so $2x<12$ and $x<6$. This gives $0\\le x<6$.',
+        'Case $x<0$: $|x|=-x$, so $x+|x|=x-x=0$, and $0<12$ is always true. Every negative $x$ works.',
+        'Together: $x<6$.'])
+    video('q-370', {
+        2: ["As usual with absolute value — two cases.",
+            "Case one: x is positive or zero. Then the bars do nothing.",
+            D('Write "x ≥ 0: 2x < 12 → x < 6"'),
+            "x plus x is less than twelve. Two x under twelve — x under six.",
+            "Case two: x is negative.",
+            D('Write "x = −4: −4 + 4 = 0"'),
+            "Then the bars turn it into its opposite. Negative four plus four — zero. Negative one plus one — zero. Always zero.",
+            D('Write "x < 0: 0 < 12 ✓ always"'),
+            "Zero is less than twelve — always true. Every negative number works.",
+            "So: every negative number, and positives only below six.",
+            D('Circle choice 3'),
+            "x less than six. Choice three."],
+        3: ["Now plug numbers into the choices.",
+            D('Next to choice 4 write "x = 1: 2 < 12 ✓, x = 10: 20 ✗"'),
+            "Choice four says every positive works. One: two, fine. But ten: twenty — not less than twelve. Out.",
+            D('Cross out choice 4'),
+            "Choice two says only negatives. But one worked. So not only negatives. Out.",
+            D('Cross out choice 2'),
+            "One and three both stop at six on top. The difference is the bottom: negative six, or no limit.",
+            D('Write "x = −10: −10 + 10 = 0 < 12 ✓"'),
+            "A smart substitution to split them: negative ten. Zero — less than twelve. It works!",
+            D('Cross out choice 1 and circle choice 3'),
+            "So x doesn't stop at negative six. Choice three.",
+            "Both approaches are excellent — pick what suits you."]})
+
+    # ============================== practice (Hebrew study-guide questions)
+    S('q-371', stem='Given:\n$\\begin{cases} q\\ne0 \\\\ |p+q|=|p-q| \\end{cases}$\nWhat is $p$?',
+      choices=['$2\\,q$', '$0$', '$-q$', '$\\frac{-q}{2}$'], correct=2, expl=[
+        'Equal absolute values: the insides are equal or opposite.',
+        'Equal: $p+q=p-q$, so $2q=0$ and $q=0$. Not allowed, because $q\\ne0$.',
+        'Opposite: $p+q=-(p-q)=-p+q$, so $2p=0$ and $p=0$.',
+        'Check with $q=4$: $|0+4|=|0-4|=4$ ✓.'])
+    S('q-372', stem='Given: $|x+4|<|x-4|$. Which of the following numbers satisfies the inequality?',
+      choices=['$\\frac{1}{4}$', '$4$', '$-5$', '$0$'], correct=3, expl=[
+        '$|x+4|=|x-(-4)|$ is the distance from $x$ to $-4$. $|x-4|$ is the distance from $x$ to $4$.',
+        'So $x$ is closer to $-4$ than to $4$. The point in the middle is $0$, so $x<0$.',
+        'Check $x=-5$: $|-1|=1$ and $|-9|=9$, and $1<9$ ✓.',
+        'The others fail: $x=0$ gives $4<4$ ✗. $x=4$ gives $8<0$ ✗. $x=\\frac14$ gives $4.25<3.75$ ✗.'])
+    S('q-373', stem='Given:\n$\\begin{cases} a>0 \\\\ b<0 \\end{cases}$\nWhat is $|a\\cdot b|$?',
+      choices=['$b \\cdot  \\left|a\\right|$', '$a \\cdot  b$', '$a \\cdot  \\left|b\\right|$', '$-a \\cdot  \\left|b\\right|$'], correct=3, expl=[
+        '$a\\cdot b$ is negative (positive times negative), so $|a\\cdot b|=-a\\cdot b$.',
+        'Choice 3: $b<0$, so $|b|=-b$, and $a\\cdot|b|=a\\cdot(-b)=-a\\cdot b$. A match.',
+        'Or plug in $a=3$, $b=-4$: $|a\\cdot b|=12$. Choice 1: $-4\\cdot3=-12$. Choice 2: $-12$. Choice 3: $3\\cdot4=12$ ✓. Choice 4: $-3\\cdot4=-12$.'])
+    S('q-374', stem='Given: $|m+n|=|m-n|$. What is $m\\cdot n$?',
+      choices=['$2$', '$0$', '$1$', 'It cannot be determined from the information given.'], correct=2, expl=[
+        'Both sides are zero or positive, so we may square both sides: $(m+n)^2=(m-n)^2$.',
+        'Expand: $m^2+2mn+n^2=m^2-2mn+n^2$, so $4mn=0$ and $m\\cdot n=0$.',
+        'Check: $m=0$, $n=6$: $|6|=|-6|$ ✓.'])
+    q = M.q('q-375'); extra = list(q['explanation'][3:])   # practice_methods line, rewritten below
+    S('q-375', stem='$x$ is a negative number. Given:\n$\\begin{cases} |x|+3=y \\\\ y>10 \\end{cases}$\nWhat is the most precise range for $x$?',
+      choices=['$-13 < x < 0$', '$x < -7$', '$x < -13$', '$-7 < x < 0$'], correct=2, expl=[
+        'Put $y$ into the inequality: $|x|+3>10$, so $|x|>7$.',
+        '$x$ is negative, so $|x|=-x$. Then $-x>7$, so $x<-7$.',
+        'Check: $x=-8$ gives $y=11>10$ ✓. $x=-6$ gives $y=9$ ✗.',
+        'Method 2 · The most precise range: $x=-8$ works ($y=11>10$), so choices 3 and 4 (which leave $-8$ out) are out. '
+        '$x=-20$ works too ($y=23$), so choice 1 (which stops at $-13$) is out. The answer is choice 2.'])
+    assert len(extra) == 1 and extra[0].startswith('Method 2'), extra
+    S('q-376', stem='Given: $a^n\\ne|a|^n$, where $n$ is an integer. Which of the following is necessarily true?',
+      choices=['$a>0$ or $n$ is even', '$a<0$ and $n<0$', '$a>0$ or $n<0$', '$a<0$ and $n$ is odd'], correct=4, expl=[
+        'If $a\\ge0$, then $|a|=a$ and the two powers are equal. So $a<0$.',
+        'If $a<0$ and $n$ is even, the even power hides the sign: $(-3)^2=9=|-3|^2$. So $n$ is odd.',
+        'Check: $a=-3$, $n=3$: $(-3)^3=-27$, but $|-3|^3=27$ ✓. Choice 2 is not necessary: here $n=3$ is positive.'])
+    S('q-377', stem='Given:\n$\\begin{cases} x<-3 \\\\ |x|=|y| \\end{cases}$\nWhich of the following is necessarily true?',
+      choices=['$x + y = 0$', '$-3 < y$', '$9 < {y}^{2}$', '$\\frac{x}{y} = 1$'], correct=3, expl=[
+        '$x<-3$, so $|x|>3$. Then $|y|=|x|>3$, and $y^2=|y|^2>9$. Choice 3 is always true.',
+        '$y$ can be $x$ or $-x$. Take $x=-4$.',
+        '$y=-4$: then $x+y=-8$ (choice 1 fails), and $y<-3$ (choice 2 fails).',
+        '$y=4$: then $\\frac{x}{y}=-1$ (choice 4 fails).'])
+    S('q-378', stem='Given:\n$\\begin{cases} |x|\\ne x \\\\ |-3x|\\ne-3x \\end{cases}$\nWhat is $x$?',
+      choices=['$\\frac13$', '$0$', '$-\\frac13$', 'No number $x$ satisfies the conditions.'], correct=4, expl=[
+        '$|x|\\ne x$ only when $x<0$.',
+        '$|-3x|\\ne-3x$ only when $-3x<0$, so $x>0$.',
+        'No number is both negative and positive. No number satisfies the conditions.',
+        'For example, $x=-\\frac13$ gives $-3x=1$ and $|1|=1$, so the second condition fails.'])
+    S('q-379', stem='Given: $(x-y)^2<9$. Which of the following is necessarily true?',
+      choices=['$9 < {\\left(x + y\\right)}^{2}$', '$3 < \\left|x - y\\right|$', '$\\left|x - y\\right| < 3$', '${\\left(x + y\\right)}^{2} < 9$'],
+      correct=3, expl=[
+        '$(x-y)^2=|x-y|^2$. Both sides of $|x-y|^2<9$ are zero or positive, so take the root: $|x-y|<3$. Choice 2 is the opposite, so it is never true.',
+        'The sum $x+y$ can be anything. $x=y=50$: $(x-y)^2=0<9$, but $(x+y)^2=10{,}000$, so choice 4 fails. $x=y=0$: $(x+y)^2=0$, so choice 1 fails.'])
+    S('q-380', stem='Given:\n$\\begin{cases} |6x+9|=21 \\\\ |2x+3|=-2x-3 \\end{cases}$\nWhat is $x$?',
+      choices=['$2$', '$-5$', '$5$', '$-2$'], correct=2, expl=[
+        'First equation: $6x+9=21$, so $x=2$. Or $6x+9=-21$, so $x=-5$.',
+        'Second equation: the right side is $-(2x+3)$. $|A|=-A$ only when $A\\le0$. So $2x+3\\le0$, and $x\\le-\\frac32$.',
+        'Only $x=-5$ fits. Check: $|6\\cdot(-5)+9|=|-21|=21$ ✓ and $|2\\cdot(-5)+3|=|-7|=7=-2\\cdot(-5)-3$ ✓.'])
+    S('q-381', stem='Given:\n$\\begin{cases} s\\cdot t<0 \\\\ \\frac{s}{t}<\\frac{t}{s} \\end{cases}$\nWhich of the following is necessarily true?',
+      choices=['$s + t < 0$', '$t < 0 < s$', '$\\left|t\\right| < \\left|s\\right|$', '$0 < s + t$'], correct=3, expl=[
+        'Move everything to one side: $\\frac{s}{t}-\\frac{t}{s}<0$, so $\\frac{s^2-t^2}{s\\cdot t}<0$.',
+        'The bottom $s\\cdot t$ is negative. A fraction with a negative bottom is negative only when its top is positive: $s^2-t^2>0$.',
+        'So $s^2>t^2$, which means $|s|>|t|$.',
+        'Choices 1, 2 and 4 are not necessary. $s=-4$, $t=1$: $-4<-\\frac14$ ✓, but $t<0<s$ fails, and $s+t=-3$ (choice 4 fails). '
+        '$s=4$, $t=-1$: $-4<-\\frac14$ ✓, and $s+t=3$ (choice 1 fails).',
+        'Method 2 · Mirror test: flip all signs. $(-s)(-t)=s\\cdot t$ and $\\frac{-s}{-t}=\\frac st$, so the given stays the same.',
+        'Choice 1 ($s+t<0$) turns into $0<s+t$, choice 2 ($t<0<s$) into $s<0<t$, and choice 4 ($0<s+t$) into $s+t<0$. '
+        'All three turn into their opposites, so they are out. Choice 3 ($|t|<|s|$) does not change: it is the answer.'])
+    S('q-382', stem='Given:\n$\\begin{cases} x\\ne y \\\\ x-y=|x+y| \\end{cases}$\nWhich of the following is necessarily true?',
+      choices=['$x=-y$', '$x>0$ and $y>0$', '$x<0$ and $y<0$', '$x=0$ or $y=0$'], correct=4, expl=[
+        'Case $x+y\\ge0$: $x-y=x+y$, so $2y=0$ and $y=0$.',
+        'Case $x+y<0$: $x-y=-(x+y)=-x-y$, so $2x=0$ and $x=0$.',
+        'Either way, $x=0$ or $y=0$.',
+        'Check: $x=6$, $y=0$: $6-0=6=|6|$ ✓. This example also rules out choices 1, 2 and 3.'])
+    S('q-383', stem='$x$ is an integer. Given: $|x+8|<5$. How many different values can $x$ have?',
+      choices=['$10$', '$6$', '$9$', '$8$'], correct=3, expl=[
+        '$-5<x+8<5$. Subtract $8$: $-13<x<-3$.',
+        'The integers: $-12$, $-11$, $-10$, $-9$, $-8$, $-7$, $-6$, $-5$, $-4$. That is $9$ values.',
+        'With the distance picture: less than $5$ from $-8$. The ends $-13$ and $-3$ are not included.'])
+    S('q-384', stem='In which of the following cases is $|m|+|n|=|m+n|$ not necessarily true?',
+      choices=['$m$ and $n$ are both negative', '$m$ and $n$ are integers', '$n=0$ or $m=0$', '$m$ and $n$ are both positive'], correct=2, expl=[
+        '$|m+n|=|m|+|n|$ when $m$ and $n$ do not have opposite signs.',
+        'Both positive ✓, both negative ✓, one of them $0$ ✓. In these cases it is always true.',
+        '"Integers" says nothing about the signs: $m=5$, $n=-2$ gives $|5|+|-2|=7$, but $|5+(-2)|=3$. So choice 2.'])
+    S('q-385', stem='Given: $a<b<|a\\cdot b\\cdot c|<c$. Which of the following is necessarily true?',
+      choices=['$a < 0$', '$1 < c$', '$\\left|a \\cdot  b\\right| < 1$', '$\\left|a\\right| < \\left|c\\right|$'], correct=3, expl=[
+        '$|a\\cdot b\\cdot c|\\ge0$ and $|a\\cdot b\\cdot c|<c$, so $c>0$ and $|c|=c$.',
+        '$|a\\cdot b\\cdot c|=|a\\cdot b|\\cdot c<c$. Divide by the positive $c$: $|a\\cdot b|<1$.',
+        'The others are not necessary. $a=-0.8$, $b=-0.5$, $c=0.4$: $|a\\cdot b\\cdot c|=0.16$, and $-0.8<-0.5<0.16<0.4$. Here $c<1$ (choice 2 fails) and $|a|>|c|$ (choice 4 fails).',
+        '$a=0.02$, $b=0.03$, $c=100$: $|a\\cdot b\\cdot c|=0.06$, and $0.02<0.03<0.06<100$. Here $a>0$ (choice 1 fails).'])
+
+    # ============================== practice clean-up (30 -> 20) and order easy -> hard
+    E = 'alg-extra-unit-t13-3-%d'
+    # extra warm-ups: keep 3 (|3 - 8|, |x| < 3, |x| = -x). Removed: |x - 3| = 5 sum (Questions 2, 6), x < 0: |x| - x
+    # (Question 5), min |x - 3| + |x - 5| (q-r26-t13-10 keeps the distance-sum type), integers in |x - 3| <= 2 (q-383).
+    # September items: keep q-r26-t13-10 (sum of distances) and -11 (bars <= 0) - types the Hebrew practice lacks.
+    # Removed: -05 (true for every x; Question 7), -07 (x/|x|; Question 5), -08 (|2 - x| + |x|; q-373 type),
+    # -09 (letter on the right; q-380), -12 (|x| = -x, |y| = y; q-378), -14 (|a - b| = |a| + |b|; q-384, mirror in q-381).
+    for r in [E % 2, E % 3, E % 5, E % 7, qid(5), qid(7), qid(8), qid(9), qid(12), qid(14)]:
+        M.unplace(r)
+    M.practice_order(PRACT, [E % 1, E % 4, E % 6, qid(11), 'q-383', 'q-375', 'q-373', 'q-371', 'q-374', 'q-378',
+                             'q-379', 'q-372', 'q-380', 'q-377', qid(10), 'q-376', 'q-384', 'q-382', 'q-381', 'q-385'])
+
+    # video titles and canvas notes follow the new stems
+    for vid, v in M.D['videos'].items():
+        if v['topic'] != TOPIC or v.get('kind') != 'solution' or not v.get('questionId'): continue
+        q = M.q(v['questionId'])
+        v['title'] = v['navLabel'] = q['stem']
+        for b in v['beats']:
+            if (b.get('canvas') or '').startswith('Pre-loaded — question'):
+                b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (q['id'], q['stem'])
+        M.touched_videos.add(vid)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber(M)   # 2026-10-06 renumber pass: runs last

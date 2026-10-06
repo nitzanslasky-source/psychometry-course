@@ -1007,3 +1007,740 @@ _apply_before_practice_methods = apply
 def apply(M):
     _apply_before_practice_methods(M)
     practice_methods(M)   # 2026-10-06 practice: runs last
+
+
+# =====================================================================================================================
+# 2026-10-06 renumber pass: the English course must not look like the Hebrew one. Every Hebrew-derived question
+# (guided q-423 ... q-436, practice q-437 ... q-456) gets new numbers (and a changed story where there is one) - same
+# idea, same trap, same methods - and every guided solution video is rewritten to match. The Hebrew lesson examples
+# (376, 330, 2,745, 417, 765, 3,524, 6,320, 162, 715, 121/132, 4 ÷ 7, the bottle shop, x ÷ 5) get new numbers too.
+# Practice clean-up: copies removed, extra warm-ups down to 3, September items kept only where the Hebrew practice
+# lacks the type. Nothing in topic 15 is recorded (checked ~/Documents/Course.recordings on 2026-10-06). Runs last.
+# =====================================================================================================================
+def renumber(M):
+    from math_api import rich_plain
+    RECORDED = set()
+
+    def S(qid, **kw):
+        if qid in RECORDED: return
+        q = M.set_q(qid, **kw)
+        for v in M.D['videos'].values():   # keep any pre-loaded copy of the choices in sync
+            for b in v.get('beats', []):
+                for it in b.get('items', []):
+                    if it.get('k') == 'q' and it.get('qid') == qid and 'choices' in it:
+                        it['choices'] = list(q['choicesRich']); M.touched_videos.add(v['id'])
+
+    def video(qid, slides):
+        if qid in RECORDED: return
+        vid = 'solve-' + qid
+        for n, x in slides.items():
+            title, script = x if isinstance(x, tuple) else (None, x)
+            M.set_slide(vid, n, title=title, script=script)
+        v = M.video(vid); v['title'] = v['navLabel'] = rich_plain(M.q(qid)['stemRich']).replace('\n', ' ')
+        M.touched_videos.add(vid)
+
+    def item(vid, n, k):
+        return dict(M.slide(vid, n)['items'][k])
+
+    def intro(qid, line):   # title slide: keep "Question N." (renumbered at build), replace the second spoken line
+        if qid in RECORDED: return
+        def fn(lines):
+            says = [l for l in lines if 'say' in l]; assert len(says) == 2, (qid, says)
+            says[1]['say'] = line; return lines
+        M.edit_lines('solve-' + qid, 1, fn)
+
+    def lesson_slide(vid, title):
+        ns = [k for k, b in enumerate(M.video(vid)['beats'], 1) if b['title'] == title]
+        assert len(ns) == 1, (vid, title); return ns[0]
+
+    # ================================================================ lesson "Division & Remainder"
+    L = 'divisibility'
+    n = lesson_slide(L, 'By 2, 5 and 10')
+    M.set_slide(L, n, pre=[], script=[
+        "Start with the obvious ones — the ones you already know.",
+        A("'Divisible by 2: the last digit is even' appears", T('Divisible by $2$: the last digit is even', size=44)),
+        A('538 appears', T('$538$', size=60, gap=40)),
+        D('Circle the 8'),
+        "Five thirty-eight ends in eight. Even. Divisible by two.",
+        A("'Divisible by 5: the last digit is 0 or 5' appears", T('Divisible by $5$: the last digit is $0$ or $5$', size=44)),
+        A('460 and 3,815 appear', dict(k='row', items=['$460$', '$3{,}815$'], sp=320, below=40)),
+        D('Circle the 0 in 460 and the 5 in 3,815'),
+        "Four sixty ends in zero. Three thousand eight hundred fifteen ends in five. Both are divisible by five.",
+        A("'Divisible by 10: the last digit is 0' appears", T('Divisible by $10$: the last digit is $0$', size=44)),
+        "And ten? Ends in zero. That's it.",
+    ])
+    n = lesson_slide(L, 'By 3 and 9')
+    M.set_slide(L, n, pre=[], script=[
+        "Now the new ones.",
+        A("'Divisible by 3: the digit sum is divisible by 3' appears", T('Divisible by $3$: the digit sum is divisible by $3$', size=44)),
+        A('942 appears', T('$942$', size=60, gap=70)),
+        D('Under it write "9 + 4 + 2 = 15"'),
+        "Add the digits. Nine plus four is thirteen, plus two — fifteen.",
+        D('Next to 15 write "÷3 ✓"'),
+        "Fifteen is divisible by three — so the whole number, nine forty-two, is divisible by three.",
+        A("'Divisible by 9: the digit sum is divisible by 9' appears", T('Divisible by $9$: the digit sum is divisible by $9$', size=44)),
+        A('846 appears', T('$846$', size=60, gap=70)),
+        D('Under it write "8 + 4 + 6 = 18 ✓"'),
+        "Nine — exactly the same idea. Eight plus four is twelve, plus six — eighteen. Eighteen is divisible by nine. So is eight forty-six.",
+    ])
+    n = lesson_slide(L, 'By 4 and 8')
+    M.set_slide(L, n, pre=[], script=[
+        "Four and eight are a bit trickier.",
+        A("'Divisible by 4: check the last two digits' appears", T('Divisible by $4$: check the last two digits', size=44)),
+        A('2,716 appears', T('$2{,}716$', size=60, gap=70)),
+        D('Underline the 16'),
+        "Look only at the last two digits: sixteen. Sixteen is divisible by four — so the whole number is.",
+        D('Under it write "= 2,700 + 16"'),
+        "Why? Split it: two thousand seven hundred, plus sixteen. A hundred is divisible by four — so every hundred, every thousand is too.",
+        "Only the tens and the ones are left to check.",
+        A("'Divisible by 8: check the last three digits' appears", T('Divisible by $8$: check the last three digits', size=44)),
+        A('7,240 appears', T('$7{,}240$', size=60, gap=40)),
+        D('Underline the 240 and write "7,000 + 240"'),
+        "Eight: the same idea with the last three digits. Two-forty is divisible by eight — thirty eights. A thousand is divisible by eight, so the thousands don't matter.",
+        "Honestly? Division by eight is rare on the exam. When it shows up, the numbers are friendly — one-sixty, two-forty, five-sixty.",
+    ])
+    n = lesson_slide(L, 'Build a divisor')
+    M.set_slide(L, n, pre=[], script=[
+        "Six is a strange bird. It has no sign of its own.",
+        A('Divisible by 6: by 2 AND by 3 appears', T('Divisible by $6$: by $2$ AND by $3$', size=44)),
+        "But six is two times three. So a number that is divisible by two AND by three is divisible by six.",
+        A('234 appears', T('$234$', size=60, gap=50)),
+        D('Under it write "even ✓   2 + 3 + 4 = 9 ✓"'),
+        "Two thirty-four: even — two ✓. Digit sum nine — three ✓. So it is divisible by six.",
+        "Same trick for bigger numbers — with one condition.",
+        A('Split into parts with no common factor appears', T('Bigger divisors: split into parts with no common factor', size=42)),
+        A('12 = 3·4, 15 = 3·5, 18 = 2·9, 24 = 3·8 appears',
+          T('$12=3\\cdot4\\qquad15=3\\cdot5\\qquad18=2\\cdot9\\qquad24=3\\cdot8$', size=46)),
+        "Twelve is three times four. Fifteen: three times five. Eighteen: two times nine. Twenty-four: three times eight.",
+        A('Trap: 12 = 2·6 appears', T('Trap: $12=2\\cdot6$ ✗', size=46)),
+        "Why not two times six? Look at six itself.",
+        D('Write "6: ÷2 ✓  ÷6 ✓  but ÷12 ✗"'),
+        "Six is divisible by two, and by six — but not by twelve. Two and six share a two, so the check fails.",
+        "So the parts must share no factor. Three and four share nothing — that works.",
+    ])
+    n = lesson_slide(L, 'By 11')
+    M.set_slide(L, n, pre=[], script=[
+        "Eleven — the hardest one.",
+        "Two-digit? No wisdom needed: twenty-two, thirty-three, fifty-five, ninety-nine.",
+        A('Alternate + − + − appears', T('Alternate $+\\ -\\ +\\ -$ → a multiple of $11$ ($0$, $11$, $-11$)', size=42)),
+        "Longer numbers: go digit by digit — plus, minus, plus, minus.",
+        A('836 appears', T('$836$:  $8-3+6=11$ ✓', size=50)),
+        "Eight thirty-six: eight, minus three, plus six — eleven. So it is divisible by eleven.",
+        "For three digits, that's just the outer digits minus the middle one.",
+        A('1,331 appears', T('$1{,}331$:  $1-3+3-1=0$ ✓', size=50)),
+        "Four digits, same idea. One thousand three hundred thirty-one: one, minus three, plus three, minus one — zero.",
+        "Zero counts. Zero is divisible by eleven — so the number is.",
+        A('482 appears', T('$482$:  $4-8+2=-2$ ✗', size=50)),
+        "Four eighty-two: four, minus eight, plus two — minus two.",
+        "A negative result is fine to get. But minus two isn't zero, eleven or minus eleven. So four eighty-two isn't divisible by eleven.",
+        "Most exam numbers are simple — one forty-three, one sixty-five. But be ready.",
+    ])
+    n = lesson_slide(L, 'The remainder trap')
+    M.set_slide(L, n, pre=[], script=[
+        "Here's where students go wrong.",
+        A('5 ÷ 8 appears', T('$5\\div8$', size=60, gap=40)),
+        "What's the remainder of five divided by eight?",
+        D('Next to it write "r = 5" (not 3!)'),
+        "Five. NOT three. It's not the difference between them.",
+        "Picture a bakery. Every sandwich costs eight shekels.",
+        A("'35 shekels, sandwiches cost 8' appears", T('$35$ shekels · sandwiches cost $8$', size=46, gap=40)),
+        D('Write "8, 16, 24, 32 → 3 left"'),
+        "Thirty-five shekels: eight, sixteen, twenty-four, thirty-two — four sandwiches. Three shekels stay in your hand. That's the remainder.",
+        A("'5 shekels, sandwiches cost 8' appears", T('$5$ shekels · sandwiches cost $8$', size=46, gap=40)),
+        D('Write "0 sandwiches → 5 left"'),
+        "Now walk in with five shekels. Not enough for a single sandwich. Zero sandwiches — and five shekels still in your hand.",
+        "The remainder is what's left in your hand after buying as many as you can.",
+    ])
+    n = lesson_slide(L, 'Biggest remainder')
+    M.set_slide(L, n, pre=[], script=[
+        "What's the remainder of x divided by four? We don't know x — so let's try.",
+        A('A row of x values appears: 1 to 6', dict(k='row', items=['$1$', '$2$', '$3$', '$4$', '$5$', '$6$'], sp=150, below=100)),
+        D('Under each write its remainder when divided by 4: 1, 2, 3, 0, 1, 2'),
+        "One shekel, a four-shekel drink: remainder one. Two: two. Three: three.",
+        "Four? Divides exactly — no remainder. Five? Back to one. Six: two.",
+        A("'Biggest remainder = divisor − 1' appears", T('Biggest remainder $=$ divisor $-\\ 1$', size=48)),
+        "So the biggest remainder is always one less than what you divide by. One more — and it divides again.",
+        "Divide by twelve? The biggest remainder is eleven.",
+    ])
+    n = lesson_slide(L, 'Change the divisor')
+    M.set_slide(L, n, pre=[], script=[
+        "What if the question changes the divisor?",
+        A('x leaves 4 when divided by 15. By 5? appears', T('$x$ leaves $4$ when divided by $15$. By $5$?', size=44)),
+        D('Write "x = 15k + 4 = 5 · 3k + 4 → r4"'),
+        "x is fifteen k plus four. Fifteen k is five times three k — full fives. So x divided by five leaves four.",
+        A('x leaves 13 when divided by 15. By 5? appears', T('$x$ leaves $13$ when divided by $15$. By $5$?', size=44)),
+        D('Write "13 = 10 + 3 → r3"'),
+        "If the old remainder is too big, divide it again. Thirteen divided by five leaves three.",
+        A('x leaves 2 when divided by 8. By 6? appears', T('$x$ leaves $2$ when divided by $8$. By $6$?', size=44)),
+        D('Write "x = 2 → r2,   x = 10 → r4   → can\'t know"'),
+        "By six? Try: two leaves two. Ten leaves four. Two different answers — you can't know.",
+        A('Only if the new divisor divides the old one appears', T('Works only if the new divisor divides the old one', size=42)),
+        "The rule: five divides fifteen, so it works. Six doesn't divide eight — so it doesn't.",
+    ])
+    for b in M.video(L)['beats']: b['loads'] = ''   # canvas descriptions are rebuilt from the new items
+
+    c = M.card('mem-divisibility')
+    c['tables'][0]['rows'] = [
+        ['$2$', 'last digit is even', '$538$'],
+        ['$5$', 'last digit is $0$ or $5$', '$460$, $3{,}815$'],
+        ['$10$', 'last digit is $0$', '$460$'],
+        ['$3$', 'digit sum is divisible by $3$', '$942 \\to 15$'],
+        ['$9$', 'digit sum is divisible by $9$', '$846 \\to 18$'],
+        ['$4$', 'last two digits are divisible by $4$', '$2{,}716 \\to 16$'],
+        ['$8$', 'last three digits are divisible by $8$', '$7{,}240 \\to 240$'],
+        ['$6$', 'divisible by $2$ AND by $3$', '$234$'],
+        ['$12$, $15$, $18$, $24$', 'split into parts with no common factor: $3\\cdot4$, $3\\cdot5$, $2\\cdot9$, $3\\cdot8$',
+         'NOT $12=2\\cdot6$: $6$ is divisible by $2$ and by $6$, but not by $12$'],
+        ['$11$', 'alternate $+\\,-\\,+\\,-$; the result is $0$ or $\\pm11$', '$836$: $8-3+6=11$; $1{,}331$: $1-3+3-1=0$'],
+    ]
+    rows = c['tables'][1]['rows']
+    for r in rows:
+        if r[0] == '$0 \\le r < d$': r[1] = '$5\\div8$ leaves $5$ (not $3$)'
+        if r[0] == 'Biggest remainder $= d - 1$': r[1] = 'dividing by $4$: at most $3$'
+        if r[0].startswith('New divisor'): r[1] = 'leaves $13$ by $15$ → leaves $3$ by $5$; by $8$ → by $6$: unknown'
+    c['tables'][2]['rows'] = [['A fraction of a fraction', 'build from the inside and multiply the denominators',
+                               '$\\frac12$ of $\\frac17$: $k\\to7k\\to14k$; $\\frac12$ of $\\frac14$: divisible by $8$']]
+
+    # ---- "More Remainder Tools": the units-digit example was the old q-433 (12a, a = 286)
+    def tools_fix(lines):
+        for l in lines:
+            if l.get('draw', '').startswith('Write "12 · 286'): l['draw'] = 'Write "16 · 327 → 6 · 7 = 42 → ends in 2"'
+            if l.get('say', '').startswith('Twelve times two eighty-six'):
+                l['say'] = "Sixteen times three twenty-seven. You don't need the full product. Six times seven is forty-two — so it ends in two."
+        return lines
+    M.edit_lines(TOOLS, lesson_slide(TOOLS, 'Units digit'), tools_fix)
+    assert not M.find_text('286', [TOPIC]) or all(x[1] != TOOLS for x in M.find_text('286', [TOPIC]))
+    tc = M.card('mem-r26-t15-tools')
+    for r in tc['tables'][0]['rows']:
+        if r[0] == 'How many multiples of $d$?':
+            r[2] = 'three-digit multiples of $16$: $112=16\\cdot7$ to $992=16\\cdot62$ → $56$'
+    tc['tips'] = [t.replace('$A(A+4)(A+8)$ with $A=2$ gives $120$', '$A(A+4)(A+20)$ with $A=2$ gives $264$') for t in tc['tips']]
+    assert any('264' in t for t in tc['tips'])
+
+    # ================================================================ guided questions 1-4 (Remainder Questions)
+    # q-423: chess girls 1/3, piano 1/4 of those -> 12k; now basketball boys 1/5, guitar 1/3 of those -> 15k
+    S('q-423', stem='In Daniel\'s class, $\\frac{1}{5}$ of the students are boys who play basketball, and among those, $\\frac{1}{3}$ also play the guitar. What could be the number of students in the class?',
+      choices=['$35$', '$45$', '$42$', '$32$'], correct=2, expl=[
+        'A fifth of the class are basketball boys, so the class is divisible by 5. A third of the basketball boys play the guitar, so the basketball group is divisible by 3.',
+        'Build it from the inside: guitar players $k$, basketball boys $3k$, the class $5\\cdot3k=15k$. The class is divisible by 15.',
+        'Only $45=15\\cdot3$ works: $45\\div5=9$ and $9\\div3=3$ ✓.',
+        '$35\\div5=7$, but 7 is not divisible by 3. 42 and 32 are not divisible by 5.'])
+    rule = item('solve-q-423', 3, 1); rule['t'] = 'A fraction of a fraction $\\to$ multiply the denominators: $5\\cdot3=15$'
+    video('q-423', {
+        2: ['"What COULD be the number?" We can\'t know it exactly. So we eliminate what it can\'t be.',
+            "A fifth of the class are basketball boys. There's no such thing as a fifth of a kid — so the class is divisible by five.",
+            D('Next to each choice write "÷5": 35 ✓, 45 ✓, 42 ✗, 32 ✗'),
+            "Thirty-five ends in five ✓. Forty-five ends in five ✓. Forty-two and thirty-two don't ✗.",
+            D('Cross out choices 3 and 4'),
+            "And a third of those play the guitar. So the basketball group is divisible by three — together, the class is divisible by fifteen.",
+            D('Write "35 ÷ 5 = 7 → 7 ÷ 3 ✗"'),
+            "Thirty-five gives seven basketball boys. A third of seven? Doesn't exist.",
+            D('Write "45 ÷ 5 = 9 → 9 ÷ 3 = 3 ✓" and circle choice 2'),
+            "Forty-five gives nine — and a third of nine is three. Choice two."],
+        3: ["Quick check from the inside out.",
+            D('Write "k → 3k → 15k"'),
+            "Call the guitar players k. The basketball boys are three k. The class is five times that — fifteen k.",
+            A("'A fraction of a fraction → multiply the denominators' appears", rule),
+            "The rule: a fraction of a fraction — multiply the denominators. Half of a quarter? It must be divisible by eight, not just by four.",
+            D('Circle choice 2'),
+            "A multiple of fifteen. Only forty-five. Choice two."]})
+
+    # q-424: rows of 4 -> 3 left, rows of 5 -> 2 left (27); now rows of 5 -> 4 left, rows of 3 -> 1 left (34)
+    S('q-424', stem='Tamar is putting her stamps into an album. If she arranges them in rows of 5 with an equal number in each row, 4 stamps are left over. If she arranges them in rows of 3 with an equal number in each row, 1 stamp is left over. What could be the number of stamps Tamar has?',
+      choices=['$28$', '$40$', '$34$', '$16$'], correct=3, expl=[
+        'We need a number that leaves remainder 4 when divided by 5 and remainder 1 when divided by 3. Test the choices.',
+        '$28=5\\cdot5+3$: remainder 3, not 4 ✗. $40=5\\cdot8$: remainder 0 ✗.',
+        '$34=5\\cdot6+4$ ✓ and $34=3\\cdot11+1$ ✓. Both conditions hold.',
+        '$16=5\\cdot3+1$ ✗.'])
+    video('q-424', {
+        2: ['"What could it be?" — so we test the answers.',
+            "We need: divided by five, remainder four. Divided by three, remainder one.",
+            D('Next to choice 1 write "28 ÷ 5 = 5 r3 ✗"'),
+            "Twenty-eight: five fits five times, up to twenty-five. Remainder three. Not four — out.",
+            D('Cross out choice 1'),
+            D('Next to choice 2 write "40 ÷ 5 = 8 r0 ✗"'),
+            "Forty: five fits exactly eight times. No remainder at all — out.",
+            D('Cross out choice 2'),
+            D('Next to choice 3 write "34 ÷ 5 = 6 r4 ✓"'),
+            "Thirty-four: six fives are thirty. Remainder four ✓.",
+            D('Next to it write "34 ÷ 3 = 11 r1 ✓"'),
+            "Now the second condition. Eleven threes are thirty-three. Remainder one ✓.",
+            D('Circle choice 3'),
+            "Both fit — mark it and move on. There's only one correct answer, so no need to check the rest. Choice three."],
+        3: ["Another way: list the numbers that leave one when divided by three.",
+            D('Write "1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34, 37, 40, …"'),
+            "One, four, seven, ten, thirteen, sixteen… a hop of three each time.",
+            D('Circle 16, 28, 34 and 40 in the list'),
+            "Sixteen, twenty-eight, thirty-four, forty are all on it. So test them against the five.",
+            D('Circle choice 3'),
+            "Only thirty-four leaves four when divided by five. Choice three."]})
+
+    # q-425: remainders by 7 and by 4 -> 6 · 3 = 18 (trap 28); now by 8 and by 3 -> 7 · 2 = 14 (trap 24)
+    S('q-425', stem='$a$ and $b$ are positive integers. $x$ is the remainder when $a$ is divided by 8, and $y$ is the remainder when $b$ is divided by 3. What is the greatest possible value of $x\\cdot y$?',
+      choices=['$7$', '$2$', '$14$', '$24$'], correct=3, expl=[
+        'The biggest remainder is one less than the divisor: $x\\le8-1=7$ and $y\\le3-1=2$.',
+        'Both are possible, for example $a=7$ and $b=2$. So the greatest value is $7\\cdot2=14$.',
+        '24 is the trap: $8\\cdot3$. A remainder is always smaller than the divisor.'])
+    video('q-425', {
+        2: ["x is the remainder of a divided by eight. y is the remainder of b divided by three.",
+            "We want x times y as big as possible — so each one as big as possible.",
+            D('Write "max x = 8 − 1 = 7"'),
+            "Dividing by eight, the biggest remainder is seven. Eight would already divide again.",
+            D('Write "max y = 3 − 1 = 2"'),
+            "Dividing by three, the biggest remainder is two.",
+            D('Write "7 · 2 = 14" and circle choice 3'),
+            "Seven times two: fourteen. Choice three.",
+            "Twenty-four is the trap — that's eight times three, the divisors themselves. A remainder never reaches the divisor."]})
+
+    # q-426: remainder 1 by 3 -> (3x + 4)²; now remainder 4 by 5 -> (5x + 2)²
+    S('q-426', stem='A number leaves a remainder of 4 when divided by 5. Which of the following expressions could represent the number ($x$ is an integer)?',
+      choices=['$5x+7$', '$(5x+2)^2$', '$10x+8$', '$(5x+5)^2$'], correct=2, expl=[
+        'A multiple of 5 plus a number: only that number decides the remainder.',
+        '(1) $5x+7=5(x+1)+2$, so the remainder is 2 ✗.',
+        '(2) $(5x+2)^2=25x^2+20x+4=5(5x^2+4x)+4$, so the remainder is 4 ✓.',
+        '(3) $10x+8=5(2x+1)+3$, so the remainder is 3 ✗.',
+        '(4) $(5x+5)^2=25(x+1)^2$, so the remainder is 0 ✗.',
+        'Faster: plug in $x=0$: $7$, $4$, $8$, $25$ leave $2$, $4$, $3$, $0$. Here $x=0$ is safe, because each expression leaves the same remainder for every $x$.'])
+    video('q-426', {
+        2: ["Remainder four when divided by five — call it five x plus four. But the choices are written differently. So check each.",
+            D('Next to choice 1 write "5x ✓, 7 → r2 ✗"'),
+            "Five x plus seven: five x is always divisible by five. Seven leaves two. Out.",
+            D('Next to choice 2 write "= 25x² + 20x + 4"'),
+            "Five x plus two, squared — open the formula: twenty-five x squared, plus twenty x, plus four.",
+            D('Underline 25x² and 20x; write "4 → r4 ✓"'),
+            "Twenty-five x squared and twenty x are both divisible by five. Four leaves four ✓.",
+            "Shortcut: the five x part already divides — so everything built from it divides too. Just check two squared.",
+            D('Next to choice 3 write "10x ✓, 8 → r3 ✗"'),
+            "Ten x plus eight: ten x is divisible by five. Eight leaves three. Out.",
+            D('Next to choice 4 write "5² = 25 → r0 ✗"'),
+            "Choice four — five squared is twenty-five. No remainder. Out.",
+            D('Circle choice 2'),
+            "Choice two."],
+        3: ["Even faster: x is any whole number — so plug one in. Zero is the most convenient.",
+            D('Next to the choices write "x = 0: 7, 4, 8, 25"'),
+            "Seven, four, eight, twenty-five.",
+            D('Write their remainders: r2, r4, r3, r0'),
+            "Divided by five: two, four, three, zero.",
+            D('Circle choice 2'),
+            "Only four leaves four. Choice two. For this type, plugging in is usually the quickest route.",
+            "And here zero is safe: each choice leaves the same remainder for every x.",
+            "In a \"necessarily divisible\" question it's different — zero is divisible by everything, so never plug in a value that gives zero."]})
+
+    # ================================================================ advanced guided questions
+    # q-427: 60% French -> 3k (480); now 30% tennis -> 3k (540)
+    S('q-427', stem='$30\\%$ of the members of a sports club play tennis. Which of the following numbers could be the number of members who play tennis?',
+      choices=['$530$', '$540$', '$550$', '$560$'], correct=2, expl=[
+        '$30\\%=\\frac{30}{100}=\\frac{3}{10}$. Build it from the inside: the club has $10k$ members, and $3k$ of them play tennis.',
+        'So the number of tennis players is divisible by 3. Digit sums: $530\\to8$ ✗, $540\\to9$ ✓, $550\\to10$ ✗, $560\\to11$ ✗.',
+        'Only 540 (for example, a club of 1,800 members).'])
+    video('q-427', {
+        2: ("Percent → fraction → divisible by 3", [
+            "This is a divisibility story. First, turn the percentage into a fraction.",
+            D('Next to the question write "30% = 30/100 = 3/10"'),
+            "Thirty percent is thirty over a hundred — three tenths.",
+            "Build it from the inside, like the basketball class. Call a tenth of the club k.",
+            D('Write "club = 10k → tennis = 3k"'),
+            "The club has ten k members. Three k of them play tennis. So the number of tennis players must be divisible by three.",
+            "How do we test for three? The digit sum must be divisible by three.",
+            D('Next to the choices write the digit sums: 8, 9, 10, 11'),
+            "Five thirty: eight — no.",
+            "Five forty: nine — nine is divisible by three.",
+            D('Circle choice 2'),
+            "Choice two. In the exam, circle it and move on. Five fifty and five sixty? Ten and eleven — out anyway."])})
+
+    # q-428: 85X, 15 shekels (by 2 and by 3) -> X = 2, 8; now 61X, 12 tokens -> X = 2, 8 (612, 618)
+    S('q-428', stem='A game machine shows a three-digit number. Its hundreds digit is 6, its tens digit is 1, and its units digit is $X$.\nThe machine pays:\n4 tokens if the number is divisible by 2 but not by 3;\n8 tokens if it is divisible by 3 but not by 2;\n12 tokens if it is divisible by both 2 and 3.\nNoa played once and won 12 tokens. How many different values can $X$ have?',
+      choices=['$3$', '$1$', '$2$', '$0$'], correct=3, expl=[
+        '12 tokens means the number is divisible by 2 and by 3.',
+        'By 3: the digit sum $6+1+X=7+X$ is divisible by 3, so $X=2$, $5$ or $8$.',
+        'By 2: $X$ is even, so $X=2$ or $X=8$ (612 and 618). Two values.'])
+    video('q-428', {
+        2: ["Noa won twelve tokens. What does twelve mean? Divisible by two AND by three.",
+            "Start with three: the digit sum must be divisible by three.",
+            D('Write "6 + 1 = 7"'),
+            "Six plus one is seven. Together with X, we need a multiple of three.",
+            "The first multiple of three above seven is nine — so X can be two.",
+            D('Write "612" and tick it'),
+            "Six one two: divisible by three — and it's even, so it is divisible by two. That fits.",
+            "Next multiple of three? Just add three: six one five.",
+            D('Write "615" and cross it out'),
+            "Divisible by three — but it ends in five. Odd. Not divisible by two. Out.",
+            "Add three again: six one eight.",
+            D('Write "618" and tick it'),
+            "Even, and divisible by three. That fits too.",
+            "Two values: two and eight.",
+            D('Circle choice 3'),
+            "Choice three."]})
+
+    intro('q-428', "A game machine — and a digit we have to find.")
+
+    # q-429: not divisible by 12 (3,224); new numbers, answer 3,152
+    S('q-429', stem='Which of the following numbers is not divisible by 12?',
+      choices=['$1{,}428$', '$3{,}152$', '$5{,}172$', '$2{,}316$'], correct=2, expl=[
+        '$12=3\\cdot4$, and 3 and 4 have no common factor. So check 4 (last two digits) and 3 (digit sum). Not $2\\cdot6$: 6 is divisible by 2 and by 6, but not by 12.',
+        'Last two digits: 28, 52, 72 and 16 are all divisible by 4.',
+        'Digit sums: $1{,}428\\to15$ ✓, $3{,}152\\to11$ ✗, $5{,}172\\to15$ ✓, $2{,}316\\to12$ ✓.',
+        'Only $3{,}152$ is not divisible by 3, so it is not divisible by 12.'])
+    video('q-429', {
+        2: ["If they asked about three or four, this would be easy — we have a sign for each.",
+            "There's no sign for twelve. Option one: long-divide every choice. Slow.",
+            "Option two — the one the question wants: build twelve from signs we know. Remember six? Two and three.",
+            "Try twelve as two times six.",
+            D('Write "2 · 6 ?"'),
+            "But is every number divisible by two and by six divisible by twelve? Six is. Eighteen is. Thirty is. None of them are divisible by twelve.",
+            D('Cross out "2 · 6"'),
+            "It fails because six already contains a two. The two parts must not share a prime factor.",
+            D('Write "3 · 4 ✓"'),
+            "Three and four share nothing. Divisible by three AND four means divisible by twelve.",
+            "Four first: look at the last two digits. Twenty-eight, fifty-two, seventy-two, sixteen — all are divisible by four.",
+            D('Next to the choices write the digit sums: 15, 11, 15, 12'),
+            "Now three: digit sums. Fifteen — yes. Eleven — no!",
+            D('Circle choice 2'),
+            "Three thousand one hundred fifty-two is divisible by four — but not by three. Not by twelve. Choice two.",
+            "In the lesson, check the other two: digit sums fifteen and twelve — both divisible by three. So those two are divisible by twelve.",
+            "Same trick for fifteen: check five and three."]})
+
+    # q-430: 10 vs 11, 12 vs 14 (both right); now 15 vs 17, 18 vs 20 (both right, as in the Hebrew)
+    S('q-430', stem='Yoav claims: "There are more three-digit numbers divisible by both 3 and 5 than three-digit numbers divisible by 17."\nMichal claims: "There are more three-digit numbers divisible by both 2 and 9 than three-digit numbers divisible by both 4 and 5."\nWhich of the following is correct?',
+      choices=['Only Yoav is right.', 'Only Michal is right.', 'Both are right.', 'Both are wrong.'], correct=3, expl=[
+        'Count the multiples: write the first and the last as $d\\cdot k$, then count $=$ last $k-$ first $k+1$.',
+        'By 3 and 5, that is by 15: from $105=15\\cdot7$ to $990=15\\cdot66$, so $66-7+1=60$ numbers. By 17: from $102=17\\cdot6$ to $986=17\\cdot58$, so $58-6+1=53$. Since $60>53$, Yoav is right.',
+        'By 2 and 9, that is by 18: from $108=18\\cdot6$ to $990=18\\cdot55$, so $55-6+1=50$. By 4 and 5, that is by 20: from $100=20\\cdot5$ to $980=20\\cdot49$, so $49-5+1=45$. Since $50>45$, Michal is right too.',
+        'Both are right.'])
+    cnt = item('solve-q-430', 2, 1)
+    video('q-430', {
+        2: ["Two claims about how many numbers are divisible by something. Let's count — first and last multiple.",
+            "Yoav first. Divisible by both three and five: they have no common factor, so that's divisible by fifteen.",
+            D('Under Yoav write "15: 105 = 15·7 … 990 = 15·66 → 66 − 7 + 1 = 60"'),
+            "The first three-digit multiple of fifteen is fifteen times seven. The last is fifteen times sixty-six. Sixty-six minus seven, plus one: sixty.",
+            A("'Count = last k − first k + 1' appears", cnt),
+            "Don't forget the plus one — both ends count. From three to seven there are five numbers, not four.",
+            D('Write "17: 102 = 17·6 … 986 = 17·58 → 58 − 6 + 1 = 53"'),
+            "Seventeen: from seventeen times six to seventeen times fifty-eight. Fifty-three.",
+            "Sixty beats fifty-three. Yoav is right.",
+            D('Cross out choices 2 and 4'),
+            "Michal. Two and nine — no common factor — so divisible by eighteen. Four and five — divisible by twenty.",
+            D('Under Michal write "18: 108 = 18·6 … 990 = 18·55 → 55 − 6 + 1 = 50"'),
+            "Eighteen: from eighteen times six to eighteen times fifty-five. Fifty-five minus six, plus one: fifty.",
+            D('Write "20: 100 = 20·5 … 980 = 20·49 → 49 − 5 + 1 = 45"'),
+            "Twenty: from twenty times five to twenty times forty-nine. Forty-five.",
+            "Fifty beats forty-five. Michal is right too.",
+            D('Circle choice 3'),
+            "Both are right. Choice three."],
+        3: ["On the exam, there's a faster way to compare.",
+            D('Write "1/15 > 1/17    1/18 > 1/20"'),
+            "Every fifteenth number is divisible by fifteen. Every seventeenth is divisible by seventeen. One fifteenth is more than one seventeenth.",
+            "Same for Michal: one eighteenth beats one twentieth.",
+            "The smaller the number, the more numbers are divisible by it.",
+            "But be careful: this works here because the range is long — nine hundred numbers. In a short range the estimate can be off by one. Then count exactly."]})
+
+    # q-431: c = 5a, a = b/3 (5, 3, 9; 16 fails); now c = 4a, a = b/5 (4, 5, 10; 12 fails)
+    S('q-431', stem='Given:\n$\\begin{cases} c=4a \\\\ a=\\frac{b}{5} \\end{cases}$\n$a$, $b$ and $c$ are positive integers. Which claim is not necessarily true?',
+      choices=['$c$ is divisible by $4$', '$b$ is divisible by $5$', '$a+b$ is divisible by $12$', '$a+b+c$ is divisible by $10$'], correct=3, expl=[
+        'Write everything with $a$: $b=5a$ and $c=4a$.',
+        '$c=4a$ is divisible by 4 ✓. $b=5a$ is divisible by 5 ✓. $a+b+c=a+5a+4a=10a$ is divisible by 10 ✓.',
+        '$a+b=6a$. For $a=1$: $a+b=6$, which is not divisible by 12. So claim (3) is not necessarily true.'])
+    video('q-431', {
+        2: ["Claim one: c is divisible by four. c equals four times a — four is one of its factors. Always true.",
+            D('Cross out choice 1'),
+            "Claim two: a equals b over five. b divided by five gives a positive integer — so b is divisible by five.",
+            D('Write "b = 5a" and cross out choice 2'),
+            "Multiply by five and you see it: b is five times a.",
+            "Claim three: write the sum with one letter only.",
+            D('Write "a + b = a + 5a = 6a"'),
+            "a plus five a — six a. Always divisible by six — but twelve? Not necessarily.",
+            "Claim four, to be sure: all three letters.",
+            D('Write "a + 5a + 4a = 10a" and cross out choice 4'),
+            "a plus five a plus four a — ten a. Always divisible by ten.",
+            D('Circle choice 3'),
+            "Choice three."],
+        3: ["Now the psychometric way: plug in numbers. Start with the tricky one.",
+            "b over five must be whole — so b must be divisible by five. Take b equals five.",
+            D('Write "b = 5 → a = 1 → c = 4"'),
+            "Then a is one, and c is four times one — four.",
+            D('Next to the choices write: 4 ✓, 5 ✓, 6 ✗, 10 ✓'),
+            "c is divisible by four — yes. b by five — yes. a plus b is six — not by twelve. The sum of all three is ten — divisible by ten.",
+            D('Circle choice 3'),
+            "Choice three. Here plugging in is perfect: we look for the claim that can fail, and one example where it fails is proof.",
+            "The three claims that worked with b equals five? One example doesn't prove them — the algebra does."]})
+
+    # q-432: 3a³ − 3a -> 18; now 5a³ − 5a -> 30
+    S('q-432', stem='Given: $x=5a^3-5a$ ($a$ is a positive integer). $x$ is necessarily divisible by:',
+      choices=['$60$', '$40$', '$30$', '$20$'], correct=3, expl=[
+        'Factor: $x=5a(a^2-1)=5(a-1)a(a+1)$.',
+        '$(a-1)a(a+1)$ is three numbers in a row, so it is divisible by 6. Therefore $x$ is divisible by $5\\cdot6=30$.',
+        'Check with $a=2$: $x=5\\cdot8-5\\cdot2=30$. It is not divisible by 60, 40 or 20, so only 30 is certain.'])
+    video('q-432', {
+        2: ["Take out the common factor: five a.",
+            D('Write "x = 5a(a² − 1)"'),
+            "a squared minus one — that's the third contracted multiplication formula.",
+            D('Write "= 5(a − 1)a(a + 1)"'),
+            "Reorder it: a minus one, a, a plus one. Three consecutive integers!",
+            D('Underline (a − 1)a(a + 1)'),
+            "Three numbers in a row: one is divisible by three, and at least one is even. So the product is divisible by six.",
+            D('Write "5 · 6 = 30"'),
+            "Times the five in front — x is always divisible by thirty.",
+            D('Circle choice 3'),
+            "Choice three."],
+        3: ["Plug-in version. Careful — don't plug in one.",
+            "a equals one gives zero. Zero is divisible by everything — no answer can be eliminated.",
+            D('Write "a = 2: x = 5·8 − 5·2 = 30"'),
+            "So take a equals two. Five times eight is forty, minus ten — thirty.",
+            D('Next to the choices write: ✗, ✗, ✓, ✗'),
+            "Divisible by sixty? No. Forty? No. Thirty? Yes. Twenty? No.",
+            D('Circle choice 3'),
+            "Only choice three survives — so it must be the answer.",
+            "If two choices had survived, we'd try a second value, like a equals three."]})
+
+    # q-433: 12a + 8 divisible by 10 -> a = 286; now 14a + 6 -> a = 346
+    S('q-433', stem='Given: $x=14a+6$ ($a$ is a positive integer), and $x$ is divisible by 10. Which of the following could be the value of $a$?',
+      choices=['$343$', '$344$', '$345$', '$346$'], correct=4, expl=[
+        '$x$ is divisible by 10, so $x$ ends in 0. Since $x=14a+6$, $14a$ ends in 4.',
+        'The units digit of $14a$ depends only on $4\\cdot$(the units digit of $a$): $4\\cdot3=12$, $4\\cdot4=16$, $4\\cdot5=20$, $4\\cdot6=24$ ✓.',
+        'So $a=346$. Check: $14\\cdot346+6=4{,}844+6=4{,}850$ ✓.'])
+    video('q-433', {
+        2: ["x is divisible by ten with no remainder. So x must end in zero.",
+            D('Write "x ends in 0"'),
+            "Now the equation: fourteen a plus six. Some product, plus six, must end in zero.",
+            "So fourteen a must end in four — four plus six is ten.",
+            D('Write "14a ends in 4"'),
+            "Now test the choices — and only the units digits matter: four times a's last digit.",
+            D('Next to the choices write: 4·3 = 12 ✗, 4·4 = 16 ✗, 4·5 = 20 ✗, 4·6 = 24 ✓'),
+            "Three forty-three: four times three ends in two — add six, x ends in eight. Out.",
+            "Three forty-four: four times four ends in six — plus six, x ends in two. Out.",
+            "Three forty-five: four times five ends in zero — plus six, x ends in six. Out.",
+            "Three forty-six: four times six ends in four — plus six, zero. That works!",
+            D('Circle choice 4'),
+            "Choice four.",
+            "Check: fourteen times three forty-six plus six is four thousand eight hundred fifty. Ends in zero."]})
+
+    # q-434: casino, 500 tokens, lost x, 2x, 3x -> 20 left; now amusement-park card, 700 points -> 40 left
+    S('q-434', stem='Yael loaded 700 points onto an amusement-park card. The first ride cost $x$ points, the second ride cost $2x$ points, and the third ride cost $3x$ points. Which of the following could be the number of points left on her card after the three rides?',
+      choices=['$25$', '$40$', '$20$', '$50$'], correct=2, expl=[
+        'She paid $x+2x+3x=6x$ points, so the number of points she paid is divisible by 6 (by 2 and by 3).',
+        'For each choice, find what she paid: $700-25=675$ (digit sum 18, but odd ✗), $700-40=660$ (even ✓, digit sum 12 ✓), $700-20=680$ (digit sum 14 ✗), $700-50=650$ (digit sum 11 ✗).',
+        'So 40 points are left, and $x=660\\div6=110$.'])
+    video('q-434', {
+        2: ("Build the expression, then test", [
+            "Write what's left as an expression.",
+            D('Write "paid: x + 2x + 3x = 6x"'),
+            "She paid x, then two x, then three x — six x in total. Left: seven hundred minus six x.",
+            "Could that be twenty-five? Seven hundred minus twenty-five is six seventy-five — that must equal six x.",
+            "x is a whole number of points, so six seventy-five must be divisible by six.",
+            "Divisible by six means divisible by two AND three.",
+            D('Next to choice 1 write "675: sum 18 ✓, odd ✗"'),
+            "Digit sum eighteen — three is fine. But it's odd — not divisible by two. Out. That's the trap: checking only the three.",
+            "Faster: for each choice, just ask how much she PAID — complete it to seven hundred.",
+            D('Next to choice 2 write "660: even ✓, sum 12 ✓"'),
+            "Forty left means she paid six sixty. Even, digit sum twelve — divisible by six. x is one hundred ten.",
+            D('Circle choice 2'),
+            "Choice two. In the lesson: twenty left means six eighty paid — digit sum fourteen. Fifty left means six fifty — digit sum eleven. Both out."])})
+
+    intro('q-434', "An amusement park, points on a card — and a divisibility test.")
+
+    # q-435: x leaves 3 by 6; 2x by 6, x by 3, x by 9 -> only Gal wrong; now x leaves 4 by 8; 2x by 8, x by 4, x by 12
+    S('q-435', stem='When $x$ is divided by 8, the remainder is 4.\nYuval claims: "$2x$ is necessarily divisible by 8."\nNoga claims: "$x$ is necessarily divisible by 4."\nItay claims: "$x$ is necessarily divisible by 12."\nWhich of the following is correct?',
+      choices=['Only Yuval is right.', 'Only Itay is wrong.', 'All three are right.', 'All three are wrong.'], correct=2, expl=[
+        'Write $x=8k+4$.',
+        'Yuval: $2x=16k+8=8(2k+1)$ is divisible by 8 ✓.',
+        'Noga: $x=8k+4=4(2k+1)$ is divisible by 4 ✓. (4 divides 8, so a remainder by 8 also gives the remainder by 4.)',
+        'Itay: $k=0$ gives $x=4$, which is not divisible by 12 ✗. (12 does not divide 8, so a remainder by 8 says nothing about 12.)',
+        'Only Itay is wrong.'])
+    video('q-435', {
+        2: ["Write the given as an expression: x equals eight k plus four.",
+            D('Write "x = 8k + 4"'),
+            "Eight times some whole number, plus the remainder four.",
+            "Yuval: two x is divisible by eight?",
+            D('Write "2x = 16k + 8"'),
+            "Sixteen k is divisible by eight, eight is divisible by eight. No remainder — Yuval is right.",
+            "Faster with understanding: the question and the claim both talk about eight. So only look at the remainder: four times two is eight. Divisible by eight.",
+            "Noga: x is divisible by four? Four is contained in eight — whatever is divisible by eight is divisible by four. So only check the remainder: four over four, no remainder. Noga is right.",
+            "Itay: x is divisible by twelve? Twelve does NOT divide eight. From a remainder by eight, you can't know the remainder by twelve.",
+            D('Write "k = 0 → x = 4"'),
+            "Proof: k zero gives x equals four. Four isn't divisible by twelve. Itay is wrong.",
+            D('Circle choice 2'),
+            "Only Itay is wrong — choice two."],
+        3: ["Plugging in works — but remember what it can prove.",
+            "Two numbers with remainder four when divided by eight: twelve, and four.",
+            D('Write "x = 12, x = 4"'),
+            "Yuval: twenty-four and eight — both are divisible by eight. Probably right.",
+            "Noga: twelve and four — both are divisible by four. Probably right.",
+            "Itay: twelve is divisible by twelve… but four isn't. Itay is wrong.",
+            D('Circle choice 2'),
+            "Choice two. The example x equals four proves Itay wrong.",
+            "For Yuval and Noga, two examples that work are not proof. Method one proves them."]})
+
+    # q-436: sum of three integers divisible by 3 (Hebrew: 1+4+7, 6+4+2); still by 3, new numbers and claim order
+    S('q-436', stem='The sum of three integers is divisible by 3. Which of the following statements is not necessarily true?',
+      choices=['When one of the numbers is divided by $3$, the greatest possible remainder is $2$.',
+               'If one of the numbers is divisible by $3$, then the other two are too.',
+               'All three numbers can leave remainder $2$ when divided by $3$.',
+               'If two of the numbers are divisible by $3$, then the third is too.'], correct=2, expl=[
+        'Think in remainders: the remainders of the three numbers must add up to a multiple of 3.',
+        '(1) True: dividing by 3, the remainder is 0, 1 or 2.',
+        '(2) Not necessarily: $9+5+7=21$. 9 is divisible by 3, but 5 and 7 are not.',
+        '(3) Possible: $5+8+11=24$, and each number leaves remainder 2.',
+        '(4) True: two numbers leave 0 and the sum leaves 0, so the third leaves 0.'])
+    video('q-436', {
+        2: ["When you add numbers, you can just add their remainders.",
+            "Claim one: the largest remainder when dividing by three is two. Always true — the largest remainder is one less than the divisor.",
+            D('Cross out choice 1'),
+            "Three leaves zero, four leaves one, five leaves two, six leaves zero again. A remainder of three? Then three would fit in again.",
+            "Claim two: one of them is divisible by three — so the other two must be too?",
+            D('Next to choice 2 write "9 + 5 + 7 = 21"'),
+            "Nine, five, seven. The sum is twenty-one — divisible by three. Nine is divisible by three — but five and seven aren't. Their remainders, two and one, add up to three.",
+            D('Circle choice 2'),
+            "That claim can fail — choice two. In the exam, mark it and move on. In the lesson, let's check the other two.",
+            "Claim three: all three leave remainder two? Two plus two plus two is six — divisible by three. Possible.",
+            D('Next to choice 3 write "5 + 8 + 11 = 24 ✓"'),
+            "Five, eight, eleven — each leaves remainder two — sum twenty-four.",
+            "Claim four: two of them are divisible by three — then the third must be too. Those two add no remainder, the total has none — so the third can't bring one.",
+            D('Cross out choice 4'),
+            "Choice two. And that's division and remainder — done!"]})
+
+    intro('q-436', "Three integers, a sum divisible by three — which claim can fail?")
+
+    # ================================================================ practice (Hebrew-derived): new numbers / stories
+    S('q-437', stem='A guide splits a group of hikers into teams of 4. Then she splits them into teams of 5. Each time, there is exactly one team with only 3 hikers. Which of the following could be the number of hikers in the group?',
+      choices=['$27$', '$43$', '$38$', '$29$'], correct=2, expl=[
+        'The number leaves remainder 3 when divided by 4 and when divided by 5.',
+        'Take away the remainder: $n-3$ is divisible by 4 and by 5, so by 20.',
+        'Only $43-3=40$ works. ($27-3=24$, $38-3=35$ and $29-3=26$ are not divisible by 20.)'])
+    S('q-438', stem='A grandmother has $x$ stickers. She divides them equally among her 3 grandchildren. The eldest grandchild divides her share equally among 2 friends, and the second grandchild divides her share equally among 7 friends, with nothing left over. What is the smallest possible value of $x$?',
+      choices=['$21$', '$42$', '$14$', '$84$'], correct=2, expl=[
+        'Each grandchild gets $\\frac{x}{3}$ stickers. This share is divisible by 2 and by 7. They have no common factor, so it is divisible by 14.',
+        'So $x=3\\cdot14k=42k$. The smallest value is $x=42$: each grandchild gets 14, and $14\\div2=7$, $14\\div7=2$ ✓.',
+        '14 and 21 fail: $\\frac{14}{3}$ is not a whole number, and $\\frac{21}{3}=7$ is not divisible by 2. 84 works, but it is not the smallest.'])
+    S('q-439', stem='$75\\%$ of the employees of a certain company come to work by train. Which of the following could be the total number of employees in the company?',
+      choices=['$238$', '$412$', '$326$', '$315$'], correct=2, expl=[
+        '$75\\%=\\frac34$. Build it from the inside: the company has $4k$ employees, and $3k$ of them come by train. So the total is divisible by 4.',
+        'Last two digits: $238\\to38$ ✗, $412\\to12$ ✓, $326\\to26$ ✗, and $315$ is odd ✗.',
+        'So 412 ($\\frac34\\cdot412=309$ come by train).'])
+    S('q-440', stem='Which of the following numbers is divisible by 11?',
+      choices=['$562$', '$719$', '$374$', '$948$'], correct=3, expl=[
+        'Alternate plus and minus: $3-7+4=0$, so 374 is divisible by 11 ($374=11\\cdot34$).',
+        'The others: $562$: $5-6+2=1$ ✗; $719$: $7-1+9=15$ ✗; $948$: $9-4+8=13$ ✗.'])
+    S('q-441', stem='When the positive integer $x$ is divided by 14, the remainder is 4. What will be the remainder if $x$ is divided by 7?',
+      choices=['$0$', '$3$', '$4$', 'It cannot be determined from the information given.'], correct=3, expl=[
+        '$x=14k+4=7\\cdot2k+4$. The part $14k$ is made of full sevens.',
+        'So the remainder by 7 is 4. (7 divides 14, so the remainder carries over.)',
+        'Trap: $7-4=3$ is a difference, not a remainder.'])
+    S('q-442', stem='$x$ is a positive integer. $18+6x$ is not necessarily divisible by:',
+      choices=['$2$', '$4$', '$6$', '$3$'], correct=2, expl=[
+        '$18+6x=6(3+x)$, so it is always divisible by 6, and therefore by 2 and by 3.',
+        'By 4? Try $x=2$: $18+12=30$, and 30 is not divisible by 4. So 4 is not necessarily a divisor.'])
+    S('q-443', stem='When the positive integer $x$ is divided by 8, the remainder is 5. What will be the remainder if $3x$ is divided by 8?',
+      choices=['$5$', '$7$', '$3$', '$0$'], correct=2, expl=[
+        'Multiply the remainder: $3\\cdot5=15$, and 15 divided by 8 leaves 7.',
+        'With algebra: $3x=3(8k+5)=24k+15=8(3k+1)+7$. Check: $x=5$ gives $3x=15=8+7$ ✓.'])
+    S('q-444', stem='$A$ is an even positive integer. Given: $n=A^3+24A^2+80A$. $n$ is necessarily divisible by:',
+      choices=['$132$', '$16$', '$48$', '$24$'], correct=4, expl=[
+        'Factor: $n=A(A^2+24A+80)=A(A+4)(A+20)$.',
+        'Write $A=2m$: $n=2m(2m+4)(2m+20)=8\\cdot m(m+2)(m+10)$.',
+        'One of $m$, $m+2$, $m+10$ is divisible by 3: if $m$ leaves 0, it is $m$; if $m$ leaves 1, then $m+2$ leaves $1+2=3$, that is 0; if $m$ leaves 2, then $m+10$ leaves $2+10=12$, that is 0. So $n$ is divisible by $8\\cdot3=24$.',
+        'Knock out the others with examples: $A=2$ gives $n=2\\cdot6\\cdot22=264$, which is not divisible by 16 or 48. $A=4$ gives $n=4\\cdot8\\cdot24=768$, which is not divisible by 132.',
+        'Trap: the smallest case (264) is not the answer. It only gives the biggest possible divisor.'])
+    S('q-445', stem='Ron has 90 light bulbs, numbered 1 to 90, and all of them are off. In round 1 he turns on every bulb. In round 2 he changes the state of every second bulb (2, 4, 6, …): a bulb that is on is turned off, and a bulb that is off is turned on. In round 3 he changes the state of every third bulb, and so on, up to round 90 (in which he changes only bulb 90). Which of the following bulbs is on at the end?',
+      choices=['$50$', '$72$', '$64$', '$88$'], correct=3, expl=[
+        'Bulb $k$ changes state once in every round $d$ where $d$ divides $k$. So it changes state as many times as $k$ has divisors.',
+        'It starts off, so it ends on only after an odd number of changes.',
+        'Divisors come in pairs ($d$ and $\\frac{k}{d}$), except when $d\\cdot d=k$. So only perfect squares have an odd number of divisors.',
+        '$64=8^2$ (divisors 1, 2, 4, 8, 16, 32, 64: seven changes, so it ends on). 50, 72 and 88 are not squares, so they end off.'])
+    S('q-446', stem='Gil, Hila and Ido each have the same number $N$ of toy bricks. Gil built 7 towers of equal height, using all his bricks. Hila built 2 towers whose heights differ by exactly 1, using all her bricks. Ido built 3 towers of different heights, using all his bricks, and his tallest tower has 9 bricks. What is the value of $N$?',
+      choices=['$15$', '$21$', '$28$', '$35$'], correct=2, expl=[
+        'Gil: $N$ is divisible by 7. Hila: $N=h+(h+1)=2h+1$, so $N$ is odd. That leaves 21 and 35.',
+        'Ido: $N=a+b+9$ with $a<b<9$. The most is $7+8+9=24$, so $N\\ne35$.',
+        '$N=21$ works: for example, $4+8+9=21$.'])
+    S('q-447', stem='$n$ is a two-digit positive integer, and $n^2-n$ is divisible by 10. What could be the units digit of $n$?',
+      choices=['$4$', '$2$', '$0$', '$9$'], correct=3, expl=[
+        '$n^2-n=n(n-1)$: two numbers in a row, so it is always even.',
+        'For 10 it also needs a 5: $n$ or $n-1$ is divisible by 5. So $n$ ends in 0 or 5, or $n-1$ ends in 0 or 5 ($n$ ends in 1 or 6).',
+        'Among the choices, only 0. Check: $n=30$: $900-30=870$ ✓. (Trap: 4 makes $n+1$ a multiple of 5, but the expression has $n-1$.)'])
+    S('q-448', stem='Given: $y=17x+3$ ($x$ is a positive integer), and $y$ is divisible by 10. Which of the following could be the value of $x$?',
+      choices=['$248$', '$263$', '$251$', '$239$'], correct=3, expl=[
+        '$y$ ends in 0, so $17x$ ends in 7 (because $7+3=10$).',
+        'The units digit of $17x$ depends only on $7\\cdot$(the units digit of $x$). $7\\cdot1=7$ ends in 7, so $x$ ends in 1.',
+        'Only 251 ends in 1. Check: $17\\cdot251+3=4{,}267+3=4{,}270$ ✓.'])
+    S('q-449', stem='$n$ is a positive integer divisible by 3. What is the greatest number that necessarily divides $n(n+3)$?',
+      choices=['$9$', '$18$', '$27$', '$36$'], correct=2, expl=[
+        'Write $n=3k$: $n(n+3)=3k(3k+3)=9\\cdot k(k+1)$.',
+        '$k$ and $k+1$ are two numbers in a row, so $k(k+1)$ is even. Therefore $n(n+3)$ is divisible by $9\\cdot2=18$.',
+        'Nothing bigger is certain: $n=3$ gives $3\\cdot6=18$, which is not divisible by 27 or 36.'])
+    S('q-450', stem='A coach has $x$ balls. He tries to divide them equally among 5 teams, but 2 balls are left over. Then he decides that one team will get exactly twice as many balls as each of the other four teams. This time all the balls are given out. What is the smallest possible value of $x$?',
+      choices=['$42$', '$12$', '$30$', '$22$'], correct=2, expl=[
+        'First condition: $x$ leaves remainder 2 when divided by 5.',
+        'Second condition: four teams get $s$ balls each and the fifth gets $2s$, so $x=s+s+s+s+2s=6s$. $x$ is divisible by 6.',
+        'Multiples of 6: $6=5+1$ leaves 1 ✗; $12=10+2$ leaves 2 ✓. So $x=12$ (shares 2, 2, 2, 2 and 4).',
+        '42 also works, but it is not the smallest. 30 leaves 0, and 22 is not divisible by 6.'])
+    S('q-451', stem='Given:\n$\\begin{cases} b=2a \\\\ c=2b \\\\ d=2c \\end{cases}$\n($a$ is a positive integer). $a+b+c+d$ is necessarily divisible by:',
+      choices=['$2$', '$15$', '$8$', '$4$'], correct=2, expl=[
+        'Write everything with $a$: $b=2a$, $c=4a$, $d=8a$.',
+        '$a+b+c+d=a+2a+4a+8a=15a$, so it is always divisible by 15.',
+        'It is not necessarily divisible by 2, 4 or 8: for $a=1$ the sum is 15.'])
+    S('q-452', stem="A pizzeria's phone number has 7 identical digits (for example, 5555555). Its delivery line is the phone number plus 1. What will be the remainder if the sum of the digits of the delivery-line number is divided by 7?",
+      choices=['$0$', '$6$', '$1$', '$2$'], correct=3, expl=[
+        'Call the repeated digit $d$.',
+        'If $d\\le8$, adding 1 changes only the last digit: the digits are $d$ six times and then $d+1$. Their sum is $7d+1$, which leaves remainder 1.',
+        'If $d=9$: $9{,}999{,}999+1=10{,}000{,}000$. The digit sum is 1, so the remainder is 1 again.',
+        'Example: $5{,}555{,}555\\to5{,}555{,}556$, digit sum $36=7\\cdot5+1$ ✓.'])
+    S('q-453', stem='When the positive integer $a$ is divided by 9, the remainder is 2. What will be the remainder if $a+1$ is divided by 6?',
+      choices=['$3$', '$0$', '$1$', 'It cannot be determined from the information given.'], correct=4, expl=[
+        '6 does not divide 9, so the remainder by 9 does not give the remainder by 6. Check with numbers.',
+        '$a=2$: $a+1=3$, remainder 3. $a=11$: $a+1=12$, remainder 0.',
+        'Two different remainders, so it cannot be determined. (Trap: $2+1=3$ keeps the old remainder.)',
+        'Method 2 · Tag it: $a=9k+2$, so $a+1=9k+3$. The tag $9k$ is not always a multiple of $6$ ($9$, $18$, $27$, …), so the remainder by $6$ moves.',
+        '$k=0$ gives $3$, remainder $3$. $k=1$ gives $12$, remainder $0$. So it cannot be determined (choice 4).'])
+    S('q-454', stem='How many odd numbers between 0 and 80 leave a remainder of 3 when divided by 5?',
+      choices=['$16$', '$7$', '$8$', '$15$'], correct=3, expl=[
+        'The numbers that leave 3: $3, 8, 13, 18, \\ldots, 78$. They go up by 5, so they alternate odd, even.',
+        'The odd ones end in 3: $3, 13, 23, 33, 43, 53, 63, 73$. That is 8 numbers.',
+        'Trap: 16 counts all the numbers that leave 3, odd and even.'])
+    S('q-455', stem='Given: $y=\\frac{\\sqrt2\\cdot x}{3}$, and $y$ is an integer divisible by 4. What is the greatest number that necessarily divides $x^2$?',
+      choices=['$18$', '$72$', '$8$', '$36$'], correct=2, expl=[
+        'Solve for $x$: $x=\\frac{3y}{\\sqrt2}$, so $x^2=\\frac{9y^2}{2}$.',
+        'Write $y=4k$: $x^2=\\frac{9\\cdot16k^2}{2}=72k^2$. So $x^2$ is always divisible by 72.',
+        'Nothing bigger is certain: $k=1$ gives $x^2=72$.'])
+    S('q-456', stem='$x$, $y$ and $z$ are integers, and $x+y+z$ is divisible by 4. Which of the following statements is necessarily not correct?',
+      choices=['$x$ and $y$ each leave remainder $1$ when divided by $4$, and $z$ leaves remainder $2$.',
+               '$x$, $y$ and $z$ are all even.',
+               '$x$ leaves remainder $3$ when divided by $4$, and $y+z$ leaves remainder $1$ when divided by $4$.',
+               '$x+y$ leaves remainder $3$ when divided by $4$, and $z$ is divisible by $4$.'], correct=4, expl=[
+        'Add the remainders. In (4): $3+0=3$, so $x+y+z$ would leave 3. That contradicts the given, so (4) is never correct.',
+        'The others can happen: (1) $1+5+2=8$ ✓; (2) $2+4+6=12$ ✓; (3) $x=3$, $y=2$, $z=3$: $y+z=5$ leaves 1, and $3+2+3=8$ ✓.'])
+
+    # ================================================================ practice clean-up (37 -> 25)
+    # copies: q-r26-t15-07 (= guided Q5, a - b remainders), q-r26-t15-13 (units digit of a power = warm-up 3-2),
+    # warm-up 3-4 (= guided Q2, two leftover conditions). Warm-ups kept (3): 3-7 (N = dq + r), 3-3 (digit sum ->
+    # remainder by 9), 3-2 (units digit of a power). September items kept where the Hebrew practice lacks the type:
+    # 06 (count the multiples in a range) and 09 (18 = 2·9, not 3·6).
+    for qid in ['q-r26-t15-07', 'q-r26-t15-13', 'alg-extra-unit-t15-3-4',
+                'alg-extra-unit-t15-3-1', 'alg-extra-unit-t15-3-5', 'alg-extra-unit-t15-3-6',
+                'q-r26-t15-05', 'q-r26-t15-08', 'q-r26-t15-10', 'q-r26-t15-11', 'q-r26-t15-12', 'q-r26-t15-14']:
+        M.unplace(qid)
+    X = 'alg-extra-unit-t15-3-'
+    M.practice_order(PRACTICE, [
+        X + '7', 'q-441', 'q-439', X + '3', X + '2', 'q-454', 'q-442', 'q-443', 'q-437', 'q-440',
+        'q-r26-t15-09', 'q-r26-t15-06', 'q-438', 'q-450', 'q-451', 'q-452', 'q-453', 'q-448', 'q-447', 'q-446',
+        'q-456', 'q-449', 'q-444', 'q-455', 'q-445'])
+
+    # ================================================================ sidebars, titles, canvas notes in sync
+    for sec in (THEORY, ADV):
+        vids = [f['ref'] for f in M.D['flow'] if f['section'] == sec and f['type'] == 'video'
+                and M.video(f['ref']).get('kind') == 'solution']
+        nums = [int(M.video(v)['beats'][0]['bigTitle'].split()[1]) for v in vids]
+        for v, k in zip(vids, nums):
+            M.set_sidebar(v, ['Question %d' % j for j in nums])
+            V = M.video(v); q = M.q(V['questionId'])
+            V['title'] = V['navLabel'] = rich_plain(q['stemRich']).replace('\n', ' ')
+            for b in V['beats']:
+                if b['mode'] == 'question': b['active'] = nums.index(k)
+                if b.get('canvas', '').startswith('Pre-loaded — question'):
+                    b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (q['id'], q['stem'])
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber(M)   # 2026-10-06 renumber pass: runs last

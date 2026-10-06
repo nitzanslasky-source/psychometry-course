@@ -933,3 +933,691 @@ def cut_repeats(M):
     _add_line(M, 'solve-q-395', 2, 'So at least one of them brings the three', [
         A("'A prime divides a · b → it divides a or b' appears", T('A prime divides a product $\\to$ it divides one of the factors', size=38)),
         "That's the rule: a prime can't be split between factors — one of them holds it. Fifteen isn't prime, so its three and its five may come from different numbers."], where='after')
+
+
+# =====================================================================================================================
+# 2026-10-06 renumber pass: the English course must not look like the Hebrew one. Every Hebrew-derived question
+# (guided q-386 ... q-402, practice q-403 ... q-422) gets new numbers / letters / a tweaked story - same idea, same
+# trap, same methods - and every guided solution video is rewritten to match. The Hebrew lesson examples get new
+# numbers too (lesson "Prime Numbers", lesson "Factor Tools", the two memory cards).
+# Order: theory A easy -> hard (q-387, q-r26-t14-01, q-388, q-386); advanced: q-396 before q-394.
+# Practice clean-up: the copy alg-extra-unit-t14-4-5 out, extra warm-ups down to 2, September items kept only where
+# the Hebrew practice lacks the type. Nothing in topic 14 is recorded (checked ~/Documents/Course.recordings
+# 2026-10-06). Runs last. See t14_CHANGES.md ("2026-10-06 renumber pass") for the old -> new table.
+# =====================================================================================================================
+def _sub(M, vid, n, pairs):
+    """Replace exact text on one slide (board items, row items, spoken lines, draw cues, labels). Every pair must hit."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+            if it.get('items'):
+                for k, x in enumerate(it['items']):
+                    if old in x: it['items'][k] = x.replace(old, new); hit += 1
+        for l in b['lines']:
+            for k in ('say', 'draw', 'label'):
+                if k in l and old in l[k]: l[k] = l[k].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    b['loads'] = ''; b['canvas'] = ''
+    M.touched_videos.add(vid)
+
+
+def renumber(M):
+    RECORDED = set()   # nothing in topic 14 is recorded
+
+    def S(qid, **kw):
+        if qid in RECORDED: return
+        M.set_q(qid, **kw)
+
+    def video(qid, slides):
+        if qid in RECORDED: return
+        vid = 'solve-' + qid
+        b0 = M.slide(vid, 1); keep = (b0['title'], b0['bigTitle'])
+        for n, script in slides.items(): M.set_slide(vid, n, script=script)
+        b0 = M.slide(vid, 1); b0['title'], b0['bigTitle'] = keep   # group name stays the slide title
+        v = M.video(vid); v['title'] = v['navLabel'] = M.q(qid)['stem']
+        M.touched_videos.add(vid)
+
+    def qword(vid):   # the spoken "Question N" uses the video's current number; renumber_guided maps it at build
+        return _word(int(M.video(vid)['beats'][0]['bigTitle'].split()[1]))
+
+    # ============================== lesson "Prime Numbers": the Hebrew lesson's own examples -> new numbers
+    L = LESSON_A
+    _sub(M, L, 2, [('$13$', '$17$'), ('$14$', '$15$'), ('13 and 14', '17 and 15'),
+                   ('Under 13 write "can\'t break"; under 14 write "= 2 · 7"', 'Under 17 write "can\'t break"; under 15 write "= 3 · 5"'),
+                   ('Thirteen? You can\'t break it. Prime.', 'Seventeen? You can\'t break it. Prime.'),
+                   ('Fourteen? Two times seven. It breaks — not prime.', 'Fifteen? Three times five. It breaks — not prime.'),
+                   ('Same with ten — two times five. Eight — two times four, or two times two times two. Six — two times three. They all break.',
+                    'Same with nine — three times three. Twelve — three times four, or two times two times three. Four — two times two. They all break.'),
+                   ('Seven, five, three, two — none of them break either. All prime.',
+                    'Thirteen, eleven, seven — none of them break either. All prime.')])
+    _sub(M, L, 4, [('the primes between thirty and forty', 'the primes between twenty and thirty'),
+                   ('Next to 31 and 37, tick them; write "32–36, 38, 39 ✗"', 'Next to 23 and 29, tick them; write "21, 22, 24–28 ✗"'),
+                   ('Thirty-one yes. Thirty-two, three, four, five, six — no. Thirty-seven yes. Thirty-eight, thirty-nine — no.',
+                    'Twenty-one, twenty-two — no. Twenty-three yes. Twenty-four up to twenty-eight — no. Twenty-nine yes.')])
+    _sub(M, L, 6, [('$20 \\div 4 = 5$', '$24 \\div 3 = 8$'), ('$30 \\div 6 = 5$', '$35 \\div 7 = 5$'),
+                   ("'20 divides by 4' appears", "'24 divides by 3' appears"), ("'30 divides by 6' appears", "'35 divides by 7' appears"),
+                   ('"4 is a factor of 20"', '"3 is a factor of 24"'), ('"6 is a factor of 30"', '"7 is a factor of 35"'),
+                   ('Twenty divides by four — so four is a factor of twenty. A divisor of twenty.',
+                    'Twenty-four divides by three — so three is a factor of twenty-four. A divisor of twenty-four.'),
+                   ('Thirty divides by six — six is a factor of thirty.', 'Thirty-five divides by seven — seven is a factor of thirty-five.')])
+    b = M.slide(L, 7)
+    assert b['items'][1]['items'] == ['$2$', '$3$', '$4$', '$6$', '$12$'], b['items'][1]
+    b['items'][1]['items'] = ['$2$', '$3$', '$6$', '$9$', '$18$']
+    _sub(M, L, 7, [('$12=2\\cdot2\\cdot3$', '$18=2\\cdot3\\cdot3$'), ('12 = 2 · 2 · 3 appears', '18 = 2 · 3 · 3 appears'),
+                   ('The divisors of 12 appear: 2, 3, 4, 6, 12', 'The divisors of 18 appear: 2, 3, 6, 9, 18'),
+                   ('Twelve breaks into two times two times three.', 'Eighteen breaks into two times three times three.'),
+                   ('But twelve also divides by four, by six, by twelve.', 'But eighteen also divides by six, by nine, by eighteen.'),
+                   ('Under 4 write "2·2"; under 6 write "2·3"; under 12 write "2·2·3"', 'Under 6 write "2·3"; under 9 write "3·3"; under 18 write "2·3·3"'),
+                   ('Four is two times two. Six is two times three. Twelve is all of them.', 'Six is two times three. Nine is three times three. Eighteen is all of them.')])
+    _sub(M, L, 8, [('$126$', '$150$'), ('126 appears', '150 appears'), ('Take one hundred twenty-six.', 'Take one hundred fifty.'),
+                   ('126 → 2 and 63; 63 → 3 and 21; 21 → 3 and 7', '150 → 2 and 75; 75 → 3 and 25; 25 → 5 and 5'),
+                   ('Two times sixty-three. Sixty-three is three times twenty-one. Twenty-one is three times seven.',
+                    'Two times seventy-five. Seventy-five is three times twenty-five. Twenty-five is five times five.'),
+                   ("Twenty-one isn't a leaf yet — seven is.", "Twenty-five isn't a leaf yet — five is."),
+                   ('"126 = 2 · 3² · 7"', '"150 = 2 · 3 · 5²"'),
+                   ('So one hundred twenty-six is two, times three squared, times seven.', 'So one hundred fifty is two, times three, times five squared.'),
+                   ('Start with six times twenty-one instead?', 'Start with ten times fifteen instead?')])
+    b = M.slide(L, 9)
+    assert b['items'][1]['items'] == ['$18=2\\cdot3^2$', '$12=2^2\\cdot3$'], b['items'][1]
+    b['items'][1]['items'] = ['$50=2\\cdot5^2$', '$20=2^2\\cdot5$']
+    _sub(M, L, 9, [('$126=2\\cdot3^2\\cdot7$', '$150=2\\cdot3\\cdot5^2$'), ('126 = 2 · 3² · 7 appears', '150 = 2 · 3 · 5² appears'),
+                   ('18 = 2 · 3² and 12 = 2² · 3', '50 = 2 · 5² and 20 = 2² · 5'), ('Tick 18; cross 12 and circle the 2²', 'Tick 50; cross 20 and circle the 2²'),
+                   ('Eighteen needs one two and two threes — all in stock.', 'Fifty needs one two and two fives — all in stock.'),
+                   ('Twelve needs TWO twos. One twenty-six has only one. Twelve does not divide it.',
+                    'Twenty needs TWO twos. One fifty has only one. Twenty does not divide it.')])
+    M.card('mem-primes')['tips'][0] = ('A number divides by every combination of its prime factors: $18=2\\cdot3\\cdot3$, therefore $2$, $3$, '
+                                       '$6$, $9$ and $18$ divide it.')
+
+    # ============================== lesson "Factor Tools" + its card
+    _sub(M, LESSON_B, 3, [('$n=2^3\\cdot5^2$', '$n=3^3\\cdot5^2$'), ('n = 2³ · 5² appears', 'n = 3³ · 5² appears'),
+                          ('how many twos and how many fives', 'how many threes and how many fives'),
+                          ('"2: 0, 1, 2, 3 → 4 options"', '"3: 0, 1, 2, 3 → 4 options"'),
+                          ('Twos: zero, one, two or three — four options.', 'Threes: zero, one, two or three — four options.')])
+    c = M.card('mem-factor-tools')
+    rows = c['tables'][0]['rows']
+    assert rows[0][2].startswith('$72=') and rows[1][2].startswith('$72,') and rows[2][2] == '$18\\cdot360=72\\cdot90$', rows
+    rows[0][2] = '$45=3^2\\cdot5$, $75=3\\cdot5^2$ → $3\\cdot5=15$'
+    rows[1][2] = '$45,\\ 75$ → $3^2\\cdot5^2=225$'
+    rows[2][2] = '$15\\cdot225=45\\cdot75$'
+    rows[4][2] = 'divisors of $4$: $1$, $2$, $4$'
+    rows[5][2] = '$3^3\\cdot5^2$ → $4\\cdot3=12$'
+    c['tips'][0] = 'Divisible by $3$ and $7$ → by $21$. Divisible by $3$ and $9$ → only $9$ is sure (the $3$ is inside the $9$).'
+    c['tips'][1] = 'Trap: multiplying the two numbers. $6\\cdot10=60$, but the LCM of $6$ and $10$ is $30$, because they share the prime $2$.'
+
+    # ============================== theory A guided questions
+    # q-387: x^5 two-digit, 7x (x = 2, 14) -> x^6 two-digit, 9x (x = 2, 18)
+    S('q-387', stem='Given: $x$ is a prime number, and $x^6$ is a two-digit number. $9x=?$',
+      choices=['$27$', '$18$', '$63$', '$45$'], correct=2, expl=[
+        'Test the smallest primes.', '$x=2$: $2^6=64$, two digits ✓.',
+        '$x=3$: $3^6=729$, three digits ✗. Bigger primes give even bigger sixth powers.',
+        'So $x=2$ and $9x=9\\cdot2=18$.'])
+    video('q-387', {
+        1: ['Question %s.' % qword('solve-q-387'), "Prime questions can be solved by trial and error."],
+        2: ["Just check numbers against the conditions — and see what fits.",
+            "Start with the smallest prime: two.",
+            D('Write "2⁶ = 64 ✓ two digits"'),
+            "Two to the sixth is sixty-four. Two digits — it fits.",
+            D('Write "3⁶ = 729 ✗"'),
+            "Three to the sixth: seven hundred twenty-nine. Three digits. Too big.",
+            "And every bigger prime only gets bigger. So x must be two.",
+            D('Write "9x = 9 · 2 = 18" and circle choice 2'),
+            "Nine times two: eighteen. Choice two."]})
+
+    # q-388: x = 3·2³·10², not a divisor 21 -> x = 5·3²·6², not a divisor 35
+    S('q-388', stem='Given: $x=5\\cdot3^2\\cdot6^2$. Which of the following numbers does not divide $x$?',
+      choices=['$12$', '$35$', '$45$', '$18$'], correct=2, expl=[
+        'Break the non-prime factor into primes: $6^2=(2\\cdot3)^2=2^2\\cdot3^2$. Therefore $x=2^2\\cdot3^4\\cdot5$.',
+        'Check each choice: $12=2^2\\cdot3$ ✓, $45=3^2\\cdot5$ ✓, $18=2\\cdot3^2$ ✓.',
+        '$35=5\\cdot7$, and $x$ has no $7$. So $35$ does not divide $x$.'])
+    video('q-388', {
+        2: ["Not a divisor means: it's not a factor of x. You can't build it from x's primes.",
+            "So check each answer: does it need a prime that x doesn't have?",
+            "But first — six isn't a prime. Unpack it.",
+            D('Under x write "6² = 2² · 3²  →  x = 2² · 3⁴ · 5"'),
+            "Six squared is two squared times three squared. So x has two twos, four threes, and a five.",
+            D('Next to choice 1 write "2² · 3 ✓"'),
+            "Twelve: two twos and a three. In stock.",
+            D('Next to choice 3 write "3² · 5 ✓"'),
+            "Forty-five: two threes and a five. All there.",
+            D('Next to choice 4 write "2 · 3² ✓"'),
+            "Eighteen: a two and two threes. It divides.",
+            D('Next to choice 2 write "5 · 7 — no 7!" and circle choice 2'),
+            "Thirty-five: five times seven. There's no seven anywhere in x. Choice two."]})
+
+    # q-386: around 20 (x 14-16, y = 30, 420) -> around 40 (x = 30, y 44-46, 1320)
+    S('q-386', stem='$x$ and $y$ are integers that are not prime, and $x<40<y$. Between $x$ and $40$ there are exactly $2$ prime numbers (not including $x$). Between $40$ and $y$ there are exactly $2$ prime numbers (not including $y$). What is the smallest possible value of $x\\cdot y$?',
+      choices=['$1200$', '$1276$', '$1320$', '$1380$'], correct=3, expl=[
+        'The primes near $40$: $29$, $31$, $37$, $41$, $43$, $47$.',
+        'Below $40$: the two primes must be $31$ and $37$, and $29$ must stay out. Therefore $29\\le x<31$. $x=29$ is prime (not allowed), therefore $x=30$.',
+        'Above $40$: the two primes must be $41$ and $43$, and $47$ must stay out. Therefore $43<y\\le47$. $y=47$ is prime (not allowed), therefore $y$ is $44$, $45$ or $46$.',
+        'The smallest product: $30\\cdot44=1320$.'])
+    nl = dict(M.slide('solve-q-386', 2)['items'][1]); assert nl.get('k') == 'nl', nl
+    nl['min'], nl['max'] = 26, 48
+    video('q-386', {
+        1: ['Question %s.' % qword('solve-q-386'), "The trick: draw it on a number line."],
+        2: ["First — which primes are near forty? Write out the whole numbers.",
+            A('A number line from 26 to 48 appears', nl),
+            D('Circle the primes on the line: 29, 31, 37, 41, 43, 47'),
+            "Twenty-nine, thirty-one, thirty-seven… then forty-one, forty-three, forty-seven.",
+            "Between x and forty: exactly two primes. So thirty-one and thirty-seven are in — twenty-nine must stay out.",
+            D('Shade 30 on the left, and cross out 29'),
+            "x can't be below twenty-nine — then there'd be three primes. So x is twenty-nine or thirty.",
+            "And twenty-nine is prime. Not allowed. x is thirty.",
+            "Between forty and y: exactly two primes — forty-one and forty-three. Forty-seven must stay out.",
+            D('Shade 44, 45, 46 on the right'),
+            "So y is forty-four, forty-five or forty-six. Forty-seven is prime — not allowed anyway.",
+            "We want the SMALLEST product. Take the smallest x and the smallest y.",
+            D('Write "30 · 44 = 1320" and circle choice 3'),
+            "Thirty times forty-four: one thousand three hundred twenty. Choice three.",
+            "If they'd asked for the largest — take the largest y: thirty times forty-six."]})
+
+    # order: easy -> hard, in the order the lesson teaches (trial and error, root test, divisors, number line)
+    G0 = 'q-r26-t14-01'
+    M.move('q-387', 'primes-a', after='mem-primes'); M.move('solve-q-387', 'primes-a', after='q-387')
+    M.move(G0, 'primes-a', after='solve-q-387'); M.move('solve-' + G0, 'primes-a', after=G0)
+    M.move('q-388', 'primes-a', after='solve-' + G0); M.move('solve-q-388', 'primes-a', after='q-388')
+    M.move('q-386', 'primes-a', after='solve-q-388'); M.move('solve-q-386', 'primes-a', after='q-386')
+
+    # ============================== theory B guided questions
+    # q-389: GCD of a²·b·c⁴·d and a³·c²·d² -> letters p, q, r, s with new powers; LCM trap kept
+    S('q-389', stem='$p$, $q$, $r$, $s$ are different prime numbers.\nGiven:\n$\\begin{cases} x=p^3\\cdot q^2\\cdot s \\\\ y=p\\cdot q^5\\cdot r\\cdot s^2 \\end{cases}$\nWhat is the greatest common divisor (GCD) of $x$ and $y$?',
+      choices=['$p\\cdot q\\cdot r\\cdot s$', '$p^3\\cdot q^5\\cdot r\\cdot s^2$', '$p\\cdot q^2\\cdot s$', '$p\\cdot q\\cdot s$'], correct=3, expl=[
+        'GCD: take each prime that is in both numbers, at its LOWER power.',
+        '$p$: $p^3$ and $p$ → $p$. $q$: $q^2$ and $q^5$ → $q^2$. $s$: $s$ and $s^2$ → $s$.',
+        '$r$ is only in $y$, therefore it is not in the GCD.',
+        'GCD $=p\\cdot q^2\\cdot s$. (Choice (2) takes the higher powers: that is the LCM.)'])
+    video('q-389', {
+        2: ["The GCD is the biggest number that divides both. Which primes are in BOTH numbers — and at what power?",
+            "Each shared prime, at its LOWER power.",
+            D('Circle p in both x and y'),
+            "p: x has p cubed, y has just p. The lower power: p.",
+            D('Circle q² in both'),
+            "q: q squared and q to the fifth. The lower: q squared.",
+            D('Cross out r'),
+            "r: only in y. Not shared. Out.",
+            D('Circle s in both'),
+            "s: s and s squared. The lower: s.",
+            D('Write "p · q² · s" and circle choice 3'),
+            "p, q squared, s. Choice three.",
+            "Choice two is the trap — every prime at its HIGHER power. That's the LCM, not the GCD."]})
+
+    # q-390: divisible by 8 and 12 -> 24 (trap 96) -> divisible by 10 and 25 -> 50 (trap 250)
+    S('q-390', stem='A number is divisible without remainder by both $10$ and $25$. What is the greatest number that is guaranteed to divide it?',
+      choices=['$25$', '$100$', '$50$', '$250$'], correct=3, expl=[
+        'Break into primes: $10=2\\cdot5$ and $25=5^2$.',
+        'The number is divisible by both, therefore it is divisible by their least common multiple (LCM): every prime at its HIGHER power. $2\\cdot5^2=50$.',
+        'Nothing bigger is guaranteed: the number could be $50$ itself, and $100$ does not divide $50$.',
+        'The trap: $10\\cdot25=250$. The two numbers share the prime $5$, therefore their product is too big.'])
+    video('q-390', {
+        2: ["The number is divisible by ten and by twenty-five. What can we be SURE divides it?",
+            "Break both into primes.",
+            D('Write "10 = 2 · 5" and "25 = 5²"'),
+            "Ten is two times five. Twenty-five is five squared.",
+            "Multiply them? Two hundred fifty? No! The five in ten may be the very same five that is in twenty-five.",
+            "Take every prime at its HIGHER power.",
+            D('Write "2: only 2¹ → 2;   5: 5¹ and 5² → 5²"'),
+            "Twos: only in ten — take one. Fives: one and two — take two.",
+            D('Write "2 · 5² = 50" and circle choice 3'),
+            "Two times five squared: fifty. Choice three.",
+            "Check: fifty itself is divisible by ten and by twenty-five. And a hundred doesn't divide fifty. So we can't promise more.",
+            A("'GCD · LCM = a · b' appears", T('GCD $\\cdot$ LCM $=a\\cdot b$:  $5\\cdot50=10\\cdot25=250$', size=40)),
+            "A bonus fact: the GCD times the LCM equals the two numbers multiplied. The GCD here is five — five times fifty is two hundred fifty."]})
+
+    # q-398: three-digit number, digits 1, 2, 3, product cannot be 10 -> lock code, digits 1, 3, 5, cannot be 30
+    S('q-398', stem='A lock code has three digits, and each digit is $1$, $3$ or $5$ (a digit may repeat). Which of the following cannot be the product of the three digits?',
+      choices=['$45$', '$30$', '$25$', '$15$'], correct=2, expl=[
+        'Each digit is $1$, $3$ or $5$, therefore the product is built only from the primes $3$ and $5$.',
+        '$45=3\\cdot3\\cdot5$ (digits $3$, $3$, $5$) ✓. $25=1\\cdot5\\cdot5$ ✓. $15=1\\cdot3\\cdot5$ ✓.',
+        '$30=2\\cdot3\\cdot5$ needs the prime $2$, and no digit gives it. So $30$ is impossible.'])
+    video('q-398', {
+        2: ["Each digit of the code is one, three or five. Multiply the three digits.",
+            "Check each answer: can it be built from ones, threes and fives? Or does it need another prime?",
+            D('Next to choice 1 write "3 · 3 · 5 → 335 ✓"'),
+            "Forty-five: three, three, five. The code could be three-three-five.",
+            D('Next to choice 3 write "1 · 5 · 5 → 155 ✓"'),
+            "Twenty-five: one, five, five. One-five-five works.",
+            D('Next to choice 4 write "1 · 3 · 5 → 135 ✓"'),
+            "Fifteen: one, three, five. One-three-five.",
+            D('Next to choice 2 write "2 · 3 · 5 — no 2!" and circle choice 2'),
+            "Thirty: two times three times five. Two isn't one of the digits. It can't be the product. Choice two."]})
+
+    # q-399: x·y = 36 -> x·y = 100 (answer 48; trap 33 = forgetting 10·10)
+    S('q-399', stem='$x$ and $y$ are positive integers, and neither of them is $1$.\nGiven:\n$\\begin{cases} x\\cdot y=100 \\\\ A=|x-y| \\end{cases}$\nWhat is the difference between the greatest possible value of $A$ and the smallest possible value of $A$?',
+      choices=['$33$', '$21$', '$48$', '$15$'], correct=3, expl=[
+        'Break $100$ into pairs of factors (without $1$): $2\\cdot50$, $4\\cdot25$, $5\\cdot20$, $10\\cdot10$.',
+        'The values of $A$: $50-2=48$, $25-4=21$, $20-5=15$, $10-10=0$.',
+        'Greatest $A=48$, smallest $A=0$. The difference: $48-0=48$. (Forgetting $10\\cdot10$ gives $48-15=33$ — the trap.)'])
+    video('q-399', {
+        2: ["x times y is a hundred. A is the difference between them.",
+            "So take a hundred and break it into every pair you can. One isn't allowed.",
+            D('Write the pairs: 2·50 → 48, 4·25 → 21, 5·20 → 15, 10·10 → 0'),
+            "Two and fifty: difference forty-eight. Four and twenty-five: twenty-one. Five and twenty: fifteen. Ten and ten: zero.",
+            "The biggest difference: forty-eight. The smallest: zero.",
+            D('Write "48 − 0 = 48" and circle choice 3'),
+            "Forty-eight minus zero: forty-eight. Choice three.",
+            "Forgot ten times ten? You'd take fifteen as the smallest and get thirty-three — it's right there in the choices.",
+            "All the rest — the max of A, the min of A — is just reading comprehension to make it look harder."]})
+
+    # q-400: products of 2, 3, 7 (83, trap 41) -> Dan's cards 2, 5, 7 (129, trap 59)
+    S('q-400', stem='Dan has three cards with the numbers $2$, $5$ and $7$. He picks two or more of the cards and multiplies their numbers. What is the sum of all the different products he can get?',
+      choices=['$129$', '$70$', '$14$', '$59$'], correct=1, expl=[
+        'Products of two cards: $2\\cdot5=10$, $2\\cdot7=14$, $5\\cdot7=35$.',
+        'Product of all three: $2\\cdot5\\cdot7=70$.',
+        'Sum: $10+14+35+70=129$. (Forgetting $70$ gives $59$ — the trap.)'])
+    video('q-400', {
+        2: ["Two or more of the cards two, five and seven. Build every product.",
+            D('Write "2 · 5 = 10", "2 · 7 = 14", "5 · 7 = 35"'),
+            "Two times five: ten. Two times seven: fourteen. Five times seven: thirty-five.",
+            D('Write "2 · 5 · 7 = 70"'),
+            "And don't forget — he can take all three cards. Seventy.",
+            "Now add them. It's easier starting from the big one.",
+            D('Write "70 + 35 + 14 + 10 = 129" and circle choice 1'),
+            "Seventy plus thirty-five: a hundred five. Plus fourteen: a hundred nineteen. Plus ten: a hundred twenty-nine. Choice one.",
+            "Forgot the seventy? You'd get fifty-nine — and it's sitting right there in the choices."]})
+
+    # q-401: y² prime -> m² prime (letters + choice order; both methods kept)
+    S('q-401', stem='Given: $m^2$ is a prime number. Which of the following is necessarily true?',
+      choices=['$m$ is prime', '$m$ is not an integer', '$m$ is even', '$m$ is odd'], correct=2, expl=[
+        'If $m$ were an integer with $|m|>1$, then $m^2=m\\cdot m$ would break into two factors bigger than $1$. It would not be prime.',
+        'If $m$ were $0$, $1$ or $-1$, then $m^2$ would be $0$ or $1$. These are not prime either.',
+        'So $m$ is not an integer. Example: $m=\\sqrt5$ gives $m^2=5$, a prime.'])
+    video('q-401', {
+        2: ["m squared is prime. A prime can't be broken into anything.",
+            "So m can't be a whole number — a whole m would make m squared equal m times m. That breaks.",
+            D('Write "m² = m · m → breaks"'),
+            "Zero and one? Their squares are zero and one — not prime either.",
+            D('Circle choice 2'),
+            "m is not an integer. Choice two."],
+        3: ["Hard to see? Plug in numbers.",
+            "m squared is prime — take five.",
+            D('Write "m² = 5 → m = √5"'),
+            "Then m is root five. Not a whole number.",
+            D('Write "m² = 2 → m = √2"'),
+            "Take two: m is root two. Not whole either.",
+            D('Circle choice 2'),
+            "Choice two. The trap: seeing \"prime\" and deciding m is prime too. It's m SQUARED that's prime — m is its square root."]})
+
+    # q-402: n with 3 divisors, B = √n -> k with 3 divisors, C = √k (example 25 instead of 49)
+    S('q-402', stem='$k$ is a positive integer with exactly $3$ different divisors (including $1$ and $k$).\nGiven: $C=\\sqrt{k}$.\nHow many divisors does $C$ have (including $1$ and $C$)?',
+      choices=['$1$', '$k$', '$0$', '$2$'], correct=4, expl=[
+        'Exactly $3$ divisors means $k=p^2$ for a prime $p$. Its divisors are $1$, $p$ and $p^2$.',
+        '$C=\\sqrt{p^2}=p$, a prime.',
+        'A prime has exactly $2$ divisors: $1$ and itself. Example: $k=25$, $C=5$, and the divisors of $5$ are $1$ and $5$.'])
+    video('q-402', {
+        2: ["k has exactly three divisors.",
+            "Most numbers have divisors in pairs — an even count. Three is odd.",
+            D('Write "3 divisors → k = p²"'),
+            "Three divisors means one sits in the middle with no partner. So k is a prime squared.",
+            A("'Odd number of divisors → perfect square' appears", T('Odd number of divisors $\\to$ a perfect square', size=40)),
+            "In general: an odd number of divisors means a perfect square — the middle divisor times itself.",
+            D('Write "C = √k = p → prime"'),
+            "C is the root of k — so C is that prime.",
+            D('Write "divisors of C: 1, p → 2" and circle choice 4'),
+            "A prime has exactly two divisors: one and itself. Choice four.",
+            "Example: k is twenty-five — one, five, twenty-five. C is five: one and five. Two."]})
+
+    # ============================== advanced guided questions
+    # q-391: which cannot be a+b (25, 27, 33, 45 -> 27) -> p+q (15, 31, 51, 43 -> 51); "25 = 2 + 23" is a lesson example
+    S('q-391', stem='$p$ and $q$ are prime numbers. Which of the following numbers cannot be $p+q$?',
+      choices=['$15$', '$31$', '$51$', '$43$'], correct=3, expl=[
+        'All four choices are odd. An odd sum of two primes needs one even prime, and the only even prime is $2$.',
+        'So check whether the choice minus $2$ is prime.',
+        '$15=2+13$ ✓. $31=2+29$ ✓. $43=2+41$ ✓ ($41$ is prime: $\\sqrt{41}<7$, and $2$, $3$, $5$ do not divide it).',
+        '$51=2+49$, and $49=7^2$ is not prime ✗. So the sum cannot be $51$.'])
+    video('q-391', {
+        2: ["Two primes, and a sum. Which choice can NOT be their sum?",
+            "Trial and error? Split fifteen into two primes, then thirty-one… that takes forever.",
+            "On the psychometric there's almost always one simple idea. Once it clicks, the answer falls out.",
+            "Look at the choices. Every single one is odd.",
+            D('Write "odd" next to each choice'),
+            "When is a sum odd? Even plus even — even. Odd plus odd — even.",
+            "Only one even and one odd give an odd sum.",
+            "And the primes are almost all odd — except one. Two. The only even prime. We saw this rule at the start of the topic.",
+            D('Write "= 2 + ?" next to the stem'),
+            "So one of the primes MUST be two. Take two off each choice and check what's left.",
+            D('Next to 15 write "2 + 13 ✓"'),
+            "Fifteen: two plus thirteen. Thirteen is prime. Possible.",
+            D('Next to 31 write "2 + 29 ✓"'),
+            "Thirty-one: two plus twenty-nine. Twenty-nine is prime. Possible too.",
+            D('Cross out choices 1 and 2'),
+            D('Next to 51 write "2 + 49 = 7 · 7 ✗"'),
+            "Fifty-one: two plus forty-nine. Forty-nine is seven times seven — not prime.",
+            D('Circle choice 3'),
+            "So fifty-one can't be the sum. On the exam — mark it and move on.",
+            "In the lesson we check the last one. Forty-three: two plus forty-one — prime.",
+            D('Cross out choice 4'),
+            "The whole question was one fact: two is the only even prime. The exam loves it."]})
+
+    # q-392: 10, 15, 7 / 22, 15, 30 -> a·b = 55  ->  14, 21, 5 / 26, 21, 42 -> a·b = 91
+    S('q-392', stem='$a$ and $b$ are prime numbers.\nExactly two of the numbers $14$, $21$, $5$ are divisible by $a$.\nExactly one of the numbers $26$, $21$, $42$ is divisible by $b$.\n$a\\cdot b=?$',
+      choices=['$39$', '$26$', '$91$', '$21$'], correct=3, expl=[
+        'Break into primes: $14=2\\cdot7$, $21=3\\cdot7$, $5=5$. Only the prime $7$ is in exactly two of them. So $a=7$.',
+        '$26=2\\cdot13$, $21=3\\cdot7$, $42=2\\cdot3\\cdot7$. The primes $2$, $3$ and $7$ are each in two of them. Only $13$ is in exactly one. So $b=13$.',
+        '$a\\cdot b=7\\cdot13=91$.'])
+    video('q-392', {
+        2: ["The idea: break every number into its prime factors.",
+            D('Under 14, 21 and 5 write "2·7", "3·7", "5"'),
+            "Fourteen is two times seven. Twenty-one is three times seven. Five is prime.",
+            "Exactly two of them are divisible by a. Which prime shows up in exactly two?",
+            D('Circle both 7s'),
+            "Seven. So a equals seven.",
+            D('Under 26, 21 and 42 write "2·13", "3·7", "2·3·7"'),
+            "Second group. Twenty-six: two times thirteen. Twenty-one: three times seven. Forty-two: two, three and seven.",
+            "Only ONE of these is divisible by b. Two appears twice. Three — twice. Seven — twice. Thirteen — only once.",
+            D('Circle the 13'),
+            "So b is thirteen.",
+            D('Write "a · b = 7 · 13 = 91" and circle choice 3'),
+            "Seven times thirteen: ninety-one. Choice three. This is the recommended route."],
+        3: ["Some students plug in the answers instead.",
+            "Choice one: thirty-nine is three times thirteen. Could a be three? Only twenty-one is divisible by three — not two numbers.",
+            "Could a be thirteen? None of fourteen, twenty-one, five is divisible by thirteen.",
+            D('Cross out choice 1'),
+            "Choice two: twenty-six is two times thirteen. a equals two? Only fourteen. a equals thirteen? None.",
+            D('Cross out choice 2'),
+            "Choice three: ninety-one is seven times thirteen. a equals seven — fourteen and twenty-one, exactly two. b equals thirteen — only twenty-six. It fits.",
+            D('Circle choice 3'),
+            "On the exam — mark it. In the lesson, check twenty-one too: twenty-one is three times seven. a would have to be seven — and then b is three. But three divides twenty-one AND forty-two. Out.",
+            D('Cross out choice 4'),
+            "Two approaches. The recommended one: break the numbers into primes. Stuck? Plugging in answers works too."]})
+
+    # q-393: a·b + 2a = 36 (cannot be 15) -> a·b + 4a = 48 (cannot be 17)
+    S('q-393', stem='$a$ and $b$ are positive integers.\nGiven:\n$\\begin{cases} a<b \\\\ a\\cdot b+4a=48 \\end{cases}$\nWhich of the following cannot be the value of $a+b$?',
+      choices=['$45$', '$15$', '$17$', '$12$'], correct=3, expl=[
+        'Take out the common factor $a$: $a(b+4)=48$.',
+        'Go over the factor pairs of $48$. $a=1$: $b+4=48$, $b=44$, $a+b=45$. $a=2$: $b+4=24$, $b=20$, $a+b=22$.',
+        '$a=3$: $b+4=16$, $b=12$, $a+b=15$. $a=4$: $b+4=12$, $b=8$, $a+b=12$.',
+        '$a=6$: $b+4=8$, $b=4<a$ ✗. A bigger $a$ gives an even smaller $b$ ✗.',
+        'The possible sums are $45$, $22$, $15$ and $12$. $17$ is not possible.'])
+    video('q-393', {
+        2: ["We've got an equation. And a appears in both terms — so take it out as a common factor.",
+            D('Under the stem write "a(b + 4) = 48"'),
+            "a times b-plus-four equals forty-eight. A product of two things.",
+            "So break forty-eight into two factors — not necessarily primes. a is the smaller one.",
+            D('Write "1 × 48 → b = 44, a + b = 45"'),
+            "a equals one: the bracket is forty-eight, so b is forty-four. Sum: forty-five.",
+            D('Cross out choice 1'),
+            D('Write "2 × 24 → b = 20, a + b = 22"'),
+            "a equals two: the bracket is twenty-four, b is twenty. Sum twenty-two — not a choice. Keep going.",
+            D('Write "3 × 16 → b = 12, a + b = 15"'),
+            "a equals three: the bracket is sixteen, b is twelve. Sum fifteen.",
+            D('Cross out choice 2'),
+            D('Write "4 × 12 → b = 8, a + b = 12"'),
+            "a equals four: the bracket is twelve, b is eight. Still bigger than a. Sum twelve.",
+            D('Cross out choice 4'),
+            "Three choices eliminated — mark the one that's left.",
+            D('Circle choice 3'),
+            "Seventeen can't be the sum. Choice three.",
+            "The tools: take out a common factor, then break the number into factors that aren't necessarily prime."]})
+
+    # q-394: y = a^d·b^c (a<b<c<d) -> z = p^r·q^s (p<q<r<s); new letters, new choice order, both methods kept
+    S('q-394', stem='$p$, $q$, $r$, $s$ are prime numbers, and $p<q<r<s$.\nGiven: $z=p^r\\cdot q^s$.\nWhich of the following necessarily divides $z$?',
+      choices=['$r$', '$p^q\\cdot q^r$', '$p^s$', '$s^q$'], correct=2, expl=[
+        '$z$ is built from the prime $p$ ($r$ times) and the prime $q$ ($s$ times).',
+        '$p^q$: $q<r$, therefore $z$ has enough $p$s ✓. $q^r$: $r<s$, therefore $z$ has enough $q$s ✓. So $p^q\\cdot q^r$ divides $z$.',
+        '$p^s$: $z$ has only $r$ copies of $p$, and $r<s$ ✗. $r$ and $s^q$: the primes $r$ and $s$ are not factors of $z$ at all ✗.',
+        'With the smallest primes: $p=2$, $q=3$, $r=5$, $s=7$ give $z=2^5\\cdot3^7$, and of the four choices only $2^3\\cdot3^5$ divides it.'])
+    video('q-394', {
+        2: ["This is a factors question. What is z actually built from?",
+            D('Under z write "p … r times, q … s times"'),
+            "z contains the prime p — r times. And the prime q — s times.",
+            "Is z divisible by p? Of course. By q? Of course. By r or s? No — those primes aren't in z at all.",
+            "First look at the choices — what can we kill fast?",
+            D('Cross out choice 1'),
+            "Choice one, r. Out immediately. r only shows up as an exponent — it's how MANY times p appears, not a factor of z.",
+            D('Cross out choice 4'),
+            "Choice four, s to the q. z has no factor s. Out.",
+            "Choice three: p to the s. z has p only r times — and s is bigger than r. Not enough p's.",
+            D('Cross out choice 3'),
+            "Three are out — on the exam, mark the one that's left.",
+            D('Circle choice 2'),
+            "In the lesson — why it works. p to the q: z has p r times, and q is less than r. Enough. q to the r: z has q s times, and r is less than s. Enough. Choice two."],
+        3: ["Hard to follow with letters? Same idea — with numbers.",
+            "Smallest primes, in order: p is two, q is three, r is five, s is seven.",
+            D('Write "z = 2⁵ · 3⁷"'),
+            "z is two to the fifth times three to the seventh.",
+            D('Next to choice 1 write "5 ✗"'),
+            "Choice one: five. z is built only from twos and threes. Out.",
+            D('Next to choice 2 write "2³ · 3⁵ ✓"'),
+            "Choice two: two cubed times three to the fifth. Two three times — z has five. Three five times — z has seven. It fits.",
+            "But we're plugging in — so we must knock out three choices before marking. It might only work for these numbers.",
+            D('Next to choice 3 write "2⁷ ✗"'),
+            "Choice three: two to the seventh. z only has two five times. Too many. Out.",
+            D('Next to choice 4 write "7³ ✗"'),
+            "Choice four: seven cubed. No seven in z at all. Out.",
+            D('Circle choice 2'),
+            "Choice two. Strong without numbers? Great. If not — plugging in is an excellent route."]})
+
+    # q-395: a·b·c divisible by 15, x² (answer 4) -> divisible by 35, x² (review: kept x² as in the Hebrew), statements reordered (answer 2)
+    S('q-395', stem='$a$, $b$, $c$ are different positive integers.\nGiven: $x=a\\cdot b\\cdot c$ is divisible by $35$ without remainder.\nWhich of the following statements is not necessarily true?',
+      choices=['It is possible that exactly one of $a$, $b$, $c$ is divisible by $35$.',
+               'The number of different prime divisors of $x^2$ is greater than that of $x$.',
+               'If $b$ and $c$ are not divisible by $7$, then $a^2$ is divisible by $49$.',
+               'At least one of $a$, $b$, $c$ is divisible by $5$.'], correct=2, expl=[
+        '(1) Possible: $a=35$, $b=1$, $c=2$ ✓.',
+        '(2) Never true: squaring doubles the exponents but adds no new prime. For example, $35=5\\cdot7$ and $35^2=1225=5^2\\cdot7^2$ have the same two primes.',
+        '(3) Always true: $7$ is prime and divides $a\\cdot b\\cdot c$. It does not divide $b$ or $c$, therefore it divides $a$. Then $a^2$ is divisible by $7^2=49$.',
+        '(4) Always true: $5$ is prime and divides $a\\cdot b\\cdot c$, therefore it divides one of the factors.',
+        'Never true is also "not necessarily true", therefore the answer is (2).'])
+    video('q-395', {
+        2: ["First, the given. x is divisible by thirty-five — so x must contain the primes five and seven.",
+            D('Next to the stem write "35 = 5 · 7"'),
+            "x is a times b times c. So at least one of them brings the five, and at least one brings the seven.",
+            A("'A prime divides a · b → it divides a or b' appears", T('A prime divides a product $\\to$ it divides one of the factors', size=38)),
+            "That's the rule: a prime can't be split between factors — one of them holds it. Thirty-five isn't prime, so its five and its seven may come from different numbers.",
+            "Statement four: at least one of them is divisible by five. Someone had to bring the five. True for sure.",
+            "Maybe one number brings both — thirty-five, one, two. Maybe they split the job — five, seven, one. Either way, someone holds the five.",
+            D('Cross out choice 4'),
+            "Statement one: it's possible that exactly one is divisible by thirty-five. Sure — thirty-five, one and two.",
+            D('Write "35, 1, 2 ✓" and cross out choice 1'),
+            "Possible. Out.",
+            "Statement three: if b and c aren't divisible by seven — who brought the seven? a must have.",
+            D('Next to choice 3 write "7 | a → 49 | a²"'),
+            "Square a, and the seven appears twice. So a squared is divisible by forty-nine.",
+            "Numbers: seven, five, one — a squared is forty-nine. Or fourteen, five, one — a hundred ninety-six. Both are divisible by forty-nine.",
+            D('Cross out choice 3'),
+            "Three statements out — on the exam you mark the one that's left. This is probably the last question in the section anyway.",
+            D('Circle choice 2'),
+            "In the lesson, let's learn from statement two. Notice the word: DIFFERENT prime divisors.",
+            D('Write "35 = 5·7 → 35² = 5²·7²"'),
+            "Square x, and the same primes just appear twice as often. No NEW prime shows up.",
+            "So the number of different prime divisors stays exactly the same — never greater. Choice two.",
+            "One more word. Statement two is NEVER true.",
+            "Never true is also \"not necessarily true\". So it's the answer."]})
+
+    # q-396: a from {2, 5}, b from {2, 7} -> 8 (trap 4) -> a from {3, 5}, b from {3, 7} -> 27 (trap 9)
+    S('q-396', stem='$a$ and $b$ are positive integers. $a$ has exactly two prime factors: $3$ and $5$. $b$ has exactly two prime factors: $3$ and $7$.\nGiven: $b<a$.\nWhat is the smallest possible value of $\\frac{a\\cdot b}{35}$?',
+      choices=['$27$', '$9$', '$81$', '$45$'], correct=1, expl=[
+        'Numbers with exactly the prime factors $3$ and $5$: $15$, $45$, $75$, … Numbers with exactly the prime factors $3$ and $7$: $21$, $63$, …',
+        'The expression is smallest when $a$ and $b$ are smallest. The smallest $b$ is $21$. Since $b<a$, $a=15$ is too small. The smallest $a$ above $21$ is $45$.',
+        '$\\frac{a\\cdot b}{35}=\\frac{45\\cdot21}{35}=\\frac{945}{35}=27$. (With $a=15$, ignoring $b<a$, you get $9$ — the trap.)'])
+    video('q-396', {
+        2: ["When is the expression smallest? When a is smallest and b is smallest.",
+            "a is built from threes and fives only — but from BOTH. Smallest: one three, one five.",
+            D('Write "a = 3 · 5 = 15"'),
+            "Fifteen.",
+            D('Write "b = 3 · 7 = 21"'),
+            "b is built from threes and sevens. Smallest: twenty-one.",
+            "But wait — a must be bigger than b. Fifteen isn't bigger than twenty-one.",
+            "So we have to grow a. By how much? a may only contain threes and fives — so times three, or times five.",
+            D('Write "a = 3² · 5 = 45"'),
+            "Keep it as small as possible: times three. a becomes forty-five. Bigger than twenty-one — good.",
+            D('Write "(3² · 5)(3 · 7) / (5 · 7)"'),
+            "Now plug in. Forty-five times twenty-one, over thirty-five.",
+            D('Cancel the 5s and the 7s; write "= 3³ = 27"'),
+            "The five and the seven cancel with thirty-five. Three cubed — twenty-seven.",
+            D('Circle choice 1'),
+            "Choice one."]})
+
+    # q-397: 1 < a < 150 with 3 divisors (5 values) -> 1 < a < 200 (6 values)
+    S('q-397', stem='$a$ is an integer.\nGiven: $1<a<200$, and $a$ has exactly $3$ different divisors (including $1$ and $a$).\nHow many different values can $a$ have?',
+      choices=['$5$', '$7$', '$6$', '$4$'], correct=3, expl=[
+        'A number with exactly $3$ divisors is a prime squared: its divisors are $1$, $p$ and $p^2$.',
+        'Prime squares below $200$: $2^2=4$, $3^2=9$, $5^2=25$, $7^2=49$, $11^2=121$, $13^2=169$. The next one, $17^2=289$, is too big.',
+        'So there are $6$ values.'])
+    video('q-397', {
+        2: ["Which numbers have exactly three different divisors?",
+            D('Write "prime → 2 divisors"'),
+            "A prime has exactly two: itself and one. Two has one and two.",
+            D('Write "6 = 2 · 3 → 1, 2, 3, 6"'),
+            "Two different primes multiplied — like six — give four: one, two, three and six.",
+            D('Write "4 = 2² → 1, 2, 4"'),
+            "Three divisors? A prime squared. Four has one, two and four — only one prime built it.",
+            "So a is a prime, squared. And a is less than two hundred.",
+            D('Write "p² < 200 → p ≤ 14"'),
+            "Then the prime must be fourteen or less — fifteen squared is already two hundred twenty-five.",
+            D('Write "2, 3, 5, 7, 11, 13 → 4, 9, 25, 49, 121, 169"'),
+            "Primes up to fourteen: two, three, five, seven, eleven, thirteen. Six of them.",
+            D('Circle choice 3'),
+            "Six values. Choice three. If you know this principle, the question is simple."],
+        3: ["Don't remember the principle? Then trial and error: run through the numbers, and find the pattern.",
+            D('Write "1 → 1", "2, 3 → 2 divisors"'),
+            "One has one divisor. Two and three are prime — two divisors each.",
+            D('Write "4 → 1, 2, 4 ✓"'),
+            "Four: one, two, four. The first that fits!",
+            "Five is prime. Six has four divisors. Seven is prime. Eight: one, two, four, eight — four.",
+            D('Write "9 → 1, 3, 9 ✓"'),
+            "Nine: one, three, nine. Fits.",
+            "Stop and look for the pattern. Four is two squared. Nine is three squared.",
+            D('Write "25, 49, 121, 169"'),
+            "So the next ones are prime squares: twenty-five, forty-nine, a hundred twenty-one, a hundred sixty-nine — all under two hundred.",
+            D('Circle choice 3'),
+            "Six numbers. Choice three. That's primes — on to the summary."]})
+
+    # order: the minimum question (q-396) before the two hard letter questions (q-394, q-395)
+    M.move('q-396', 'primes-advanced', after='solve-q-393'); M.move('solve-q-396', 'primes-advanced', after='q-396')
+    grp = [f['ref'] for f in M.D['flow'] if f['section'] == 'primes-advanced' and f['type'] == 'video'
+           and M.video(f['ref']).get('kind') == 'solution']
+    labels = [M.video(v)['beats'][0]['bigTitle'] for v in grp]
+    for k, vid in enumerate(grp):
+        M.set_sidebar(vid, labels)
+        for b in M.video(vid)['beats']:
+            if b['mode'] != 'title': b['active'] = k
+    grpA = [f['ref'] for f in M.D['flow'] if f['section'] == 'primes-a' and f['type'] == 'video'
+            and M.video(f['ref']).get('kind') == 'solution']
+    labels = [M.video(v)['beats'][0]['bigTitle'] for v in grpA]
+    for k, vid in enumerate(grpA):
+        M.set_sidebar(vid, labels)
+        for b in M.video(vid)['beats']:
+            if b['mode'] != 'title': b['active'] = k
+
+    # ============================== practice: Hebrew-derived questions -> new numbers / letters / stories
+    S('q-403', choices=['$57$', '$17$', '$70$', '$65$'], correct=3, expl=[
+        '$17$ is prime: $2$ divisors.',
+        '$70=2\\cdot5\\cdot7$: $(1+1)(1+1)(1+1)=8$ divisors.',
+        '$65=5\\cdot13$: $2\\cdot2=4$ divisors. $57=3\\cdot19$ (a fake prime: $5+7=12$ is divisible by $3$): $4$ divisors.',
+        'The answer is $70$.'])
+    S('q-404', stem='$a$ and $b$ are prime numbers smaller than $30$, and $b<a$. What is the greatest possible value of $a-b$?',
+      choices=['$26$', '$27$', '$22$', '$24$'], correct=2, expl=[
+        'Take the greatest prime below $30$ and the smallest prime: $a=29$ and $b=2$.',
+        '$a-b=29-2=27$. (Forgetting that $2$ is prime gives $29-3=26$.)'])
+    S('q-405', stem='A machine shows the number $1$. It has two buttons: one multiplies the number on the screen by $2$, and the other multiplies it by $5$. You may press them as many times as you like. Which of the following numbers can the machine not show?',
+      choices=['$50$', '$30$', '$80$', '$40$'], correct=2, expl=[
+        'Every number the machine can show is built only from the primes $2$ and $5$.',
+        '$50=2\\cdot5^2$ ✓, $80=2^4\\cdot5$ ✓, $40=2^3\\cdot5$ ✓.',
+        '$30=2\\cdot3\\cdot5$ needs the prime $3$ ✗. So $30$ cannot be shown.'])
+    S('q-406', stem='What is the difference between the greatest two-digit prime number and the greatest one-digit prime number?',
+      choices=['$88$', '$92$', '$90$', '$86$'], correct=3, expl=[
+        'The greatest two-digit prime is $97$ ($98$ is even and $99=9\\cdot11$).',
+        'The greatest one-digit prime is $7$ ($8$ is even and $9=3\\cdot3$).',
+        '$97-7=90$. (Taking $9$ as a prime gives $88$; taking $99$ gives $92$.)'])
+    S('q-407', stem='Given: $x>74$. There are exactly $2$ prime numbers between $74$ and $x$ (not including $x$). Which of the following cannot be the value of $x$?',
+      choices=['$86$', '$90$', '$84$', '$88$'], correct=2, expl=[
+        'The primes above $74$: $79$, $83$, $89$. ($77=7\\cdot11$, $81=9^2$ and $87=3\\cdot29$ are not prime.)',
+        'Exactly two primes: $79$ and $83$ are in, and $89$ is out. Therefore $83<x\\le89$.',
+        '$84$, $86$ and $88$ work. $x=90$ puts $89$ inside too: three primes ✗.'])
+    S('q-408', stem='$k$, $m$, $n$ are different positive integers, and $x=k\\cdot m^2\\cdot n^3$. Which of the following cannot be the value of $x$?',
+      choices=['$36$', '$56$', '$54$', '$15$'], correct=4, expl=[
+        'One of the numbers may be $1$.',
+        '$36=9\\cdot2^2\\cdot1^3$ ✓ ($k=9$, $m=2$, $n=1$). $56=7\\cdot1^2\\cdot2^3$ ✓. $54=2\\cdot1^2\\cdot3^3$ ✓.',
+        '$15=3\\cdot5$: if $n\\ge2$, then $n^3\\ge8$ must divide $15$ — impossible. So $n=1$.',
+        'Then $m\\ne1$ (the numbers are different). $m^2$ must be $4$ or $9$ (bigger squares are more than $15$), and neither of them divides $15$ ✗.',
+        'So $x$ cannot be $15$.'])
+    S('q-409', stem='$a$ is an odd one-digit prime, and $b$ is a two-digit prime smaller than $40$.\nGiven: $x=a\\cdot b$.\nWhich of the following gives the most precise range for $x$?',
+      choices=['$22\\le x\\le259$', '$33\\le x\\le259$', '$3\\le x\\le37$', '$33\\le x\\le333$'], correct=2, expl=[
+        'Odd one-digit primes: $3$, $5$, $7$. Two-digit primes smaller than $40$: $11$, $13$, $17$, $19$, $23$, $29$, $31$, $37$.',
+        'Smallest $x=3\\cdot11=33$. Greatest $x=7\\cdot37=259$.', 'So $33\\le x\\le259$.'])
+    S('q-410', stem='$a$, $b$, $c$ are different prime numbers.\nGiven:\n$\\begin{cases} K=a^3\\cdot b^2\\cdot c^4 \\\\ L=a^2\\cdot b^5\\cdot c \\end{cases}$\nWhat is the greatest common divisor (GCD) of $K$ and $L$?',
+      choices=['$a^2\\cdot b^5\\cdot c^4$', '$a\\cdot b\\cdot c$', '$a^3\\cdot b^5\\cdot c^4$', '$a^2\\cdot b^2\\cdot c$'], correct=4, expl=[
+        'GCD: take each prime that is in both numbers, at its LOWER power.',
+        '$a$: $a^3$ and $a^2$ → $a^2$. $b$: $b^2$ and $b^5$ → $b^2$. $c$: $c^4$ and $c$ → $c$.',
+        'GCD $=a^2\\cdot b^2\\cdot c$. (Choice 3 takes the higher powers: that is the LCM.)'])
+    S('q-411', stem='Given: $x=3^2\\cdot5^3$. Which of the following numbers divides $x$ without remainder?',
+      choices=['$45$', '$27$', '$675$', '$30$'], correct=1, expl=[
+        '$45=3^2\\cdot5$: $x$ has $3^2$ and $5^3$ ✓.', '$27=3^3$: $x$ has only $3^2$ ✗.',
+        '$675=3^3\\cdot5^2$: it needs $3^3$ ✗.', '$30=2\\cdot3\\cdot5$: $x$ has no $2$ ✗.'])
+    S('q-412', stem='$m$ and $n$ are different prime numbers. Which of the following cannot be the difference between them?',
+      choices=['$17$', '$33$', '$27$', '$39$'], correct=2, expl=[
+        'All four choices are odd. An odd difference of two primes needs one even prime: $2$. So the bigger prime is the choice plus $2$.',
+        '$17+2=19$ ✓, $27+2=29$ ✓, $39+2=41$ ✓ — all prime.',
+        '$33+2=35=5\\cdot7$ is not prime ✗. So the difference cannot be $33$.'])
+    S('q-413', stem='A number is called "lucky" if the sum of all the prime numbers from $2$ up to that number (including it) is a prime number. Which of the following numbers is "lucky"?',
+      choices=['$12$', '$9$', '$6$', '$18$'], correct=2, expl=[
+        '$6$: $2+3+5=10$, not prime ✗.', '$9$: $2+3+5+7=17$, prime ✓.',
+        '$12$: $2+3+5+7+11=28$, not prime ✗.', '$18$: $28+13+17=58$, not prime ✗.', 'Only $9$ is "lucky".'])
+    S('q-414', stem='$a$ and $b$ are integers.\nGiven: $a\\cdot b=98$.\nWhich of the following cannot be the value of $a-b$?',
+      choices=['$47$', '$7$', '$97$', '$14$'], correct=4, expl=[
+        'Pairs of factors of $98$: $1\\cdot98$, $2\\cdot49$, $7\\cdot14$.',
+        'Their differences: $98-1=97$, $49-2=47$, $14-7=7$ (or the same numbers with a minus sign, if you swap the order).',
+        'So $a-b$ can be $97$, $47$ or $7$, but not $14$.'])
+    S('q-415', stem='$r$ and $s$ are prime numbers, and $s<r$. $r+s$ is also a prime number. Which of the following is necessarily true?',
+      choices=['$r+s=19$', '$s+5<r$', '$s=2$', 'No such prime numbers exist.'], correct=3, expl=[
+        'If $r$ and $s$ were both odd, $r+s$ would be even and bigger than $2$. It would not be prime.',
+        'So one of them is the even prime $2$. Since $s<r$, $s=2$.',
+        'Example: $s=2$, $r=3$, $r+s=5$. This rules out choice (1) ($5\\ne19$), choice (2) ($2+5>3$) and choice (4).'])
+    S('q-416', stem='Given: $w>1$, and $w^2$ is a prime number. Which of the following is necessarily true about $w$?',
+      choices=['$w$ is less than $6$', '$w$ is odd', '$w$ is even', '$w$ is not an integer'], correct=4, expl=[
+        'If $w$ were an integer greater than $1$, then $w^2=w\\cdot w$ would break into two factors greater than $1$. It would not be prime.',
+        'So $w$ is not an integer. Example: $w=\\sqrt3$ gives $w^2=3$, a prime.',
+        '$w$ does not have to be small: $w=\\sqrt{89}$ gives $w^2=89$, a prime, and $\\sqrt{89}>9$. So choice 1 is not necessarily true.'])
+    S('q-417', stem='$k$ is a positive integer. The number of different positive divisors of $k$ (including $1$ and $k$) is odd. Which of the following is necessarily true?',
+      choices=['$\\sqrt{k}$ is odd', '$k$ is odd', '$k$ is prime', '$\\sqrt{k}$ is an integer'], correct=4, expl=[
+        'Divisors come in pairs: $d$ and $\\frac{k}{d}$. The count is odd only if one divisor is its own partner: $d=\\frac{k}{d}$, that is, $k=d^2$.',
+        'So $k$ is a perfect square, and $\\sqrt{k}$ is an integer.',
+        'The others are not necessarily true: $k=4$ has $3$ divisors, but $4$ is not prime, not odd, and $\\sqrt{4}=2$ is even.'])
+    S('q-418', stem='Maya reads a book for $5$ days. On the first day she reads $30$ pages. On each of the other days she reads the smallest prime number of pages that is greater than the number of pages she read the day before. How many pages does she read on the fifth day?',
+      choices=['$41$', '$37$', '$43$', '$47$'], correct=3, expl=[
+        'Day 1: $30$ pages. Day 2: the next prime after $30$ is $31$.',
+        'Day 3: $37$ ($32$, $34$, $36$ are even, $33=3\\cdot11$ and $35=5\\cdot7$). Day 4: $41$ ($38$ and $40$ are even, and $39=3\\cdot13$).',
+        'Day 5: $43$ ($42$ is even).'])
+    S('q-419', stem='$n$ is a positive integer. The fraction $\\frac{n}{20}$ is in lowest terms (it cannot be reduced), and it is less than $1$. How many different values can $n$ have?',
+      choices=['$7$', '$8$', '$9$', '$10$'], correct=2, expl=[
+        'Less than $1$: $n<20$.',
+        'Cannot be reduced: $n$ shares no prime with $20=2^2\\cdot5$. So $n$ is not divisible by $2$ or by $5$.',
+        'From $1$ to $19$: $1$, $3$, $7$, $9$, $11$, $13$, $17$, $19$. That is $8$ values.'])
+    S('q-420', stem='$t$ is a positive integer. $t$ has exactly three different divisors (including $1$ and $t$). Which of the following is necessarily true about $\\sqrt{t}$?',
+      choices=['$\\sqrt{t}$ is odd', '$\\sqrt{t}$ is not an integer', '$\\sqrt{t}$ is prime', '$\\sqrt{t}$ is divisible by $3$'], correct=3, expl=[
+        'Exactly three divisors means $t=p^2$ for a prime $p$. Its divisors are $1$, $p$ and $p^2$.',
+        'Then $\\sqrt{t}=\\sqrt{p^2}=p$, a prime ✓.',
+        'The others are not necessarily true: $t=4$ gives $\\sqrt{t}=2$, which is even and not divisible by $3$. And $\\sqrt{t}=p$ is always an integer.'])
+    S('q-421', stem='$n$ is a positive integer. $n^2$ has a divisor that is greater than $3n$ and different from $n^2$. What is the smallest possible value of $n$?',
+      choices=['$9$', '$6$', '$10$', '$8$'], correct=4, expl=[
+        'Check the choices, starting from the smallest.',
+        '$n=6$: the divisors of $36$ are $1$, $2$, $3$, $4$, $6$, $9$, $12$, $18$, $36$. Only $36$ itself is greater than $18$ ✗.',
+        '$n=8$: the divisors of $64$ include $32$, and $32>24$ ✓. ($n=1$ to $5$ and $n=7$ fail too: for example, the divisors of $49$ are only $1$, $7$ and $49$.)',
+        'So the smallest $n$ is $8$.'])
+    S('q-422', stem='Tom says: "Every number that is divisible by both $6$ and $9$ is also divisible by $54$."\nRina says: "Every number that is divisible by both $6$ and $9$ is also divisible by $18$."\nWhich of the following is correct?',
+      choices=['Both are right.', 'Only Tom is right.', 'Only Rina is right.', 'Both are wrong.'], correct=3, expl=[
+        '$6=2\\cdot3$ and $9=3^2$. The LCM takes every prime at its higher power: $2\\cdot3^2=18$. So every such number is divisible by $18$: Rina is right.',
+        'Tom is wrong: $18$ is divisible by $6$ and by $9$, but not by $54$.',
+        '$54$ is just $6\\cdot9$. The product is too big because $6$ and $9$ share a factor of $3$.'])
+
+    # ============================== practice clean-up (approved): copy out, 2 warm-ups, September items only for new types
+    E = 'alg-extra-unit-t14-4-%d'
+    for qid in [E % 5,                              # copy of the guided "which is prime" question
+                E % 3, E % 4, E % 6, E % 7,         # extra warm-ups beyond the kept ones
+                P(5), P(6), P(9), P(13)]:           # September items whose type the practice already has
+        M.unplace(qid)
+    M.practice_order('unit-t14-4', [
+        E % 1, E % 2, 'q-404', 'q-406', 'q-411', 'q-405', 'q-409', 'q-413', 'q-418', 'q-403', 'q-412', 'q-410',
+        P(10), P(12), 'q-414', 'q-419', 'q-407', P(15), 'q-415', 'q-416', 'q-420', 'q-417', 'q-422', P(7),
+        'q-408', 'q-421'])
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber(M)   # 2026-10-06 renumber pass: runs last

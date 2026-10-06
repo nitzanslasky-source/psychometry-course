@@ -145,3 +145,56 @@ Function `practice_methods` (runs last; append only). 3 practice questions.
 - Method 2 · The most precise range: q-375 (a = −5 kills 2, 3; a = −20 kills 4).
 - Not used: q-374/q-371 (only a one-letter flip leaves the given unchanged — not one of the two taught mirrors), q-382 (given not a mirror), q-379 (every choice survives).
 All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 13 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-06 renumber pass
+This pass makes sure the English course does not look like the Hebrew one. Every Hebrew-derived question now has new numbers or letters. The idea, the trap, the difficulty, the kind of condition and the methods all stay the same. Every guided solution video is rewritten to match: board, speech, draw cues, video title and canvas notes. Nothing in Topic 13 is recorded, so no question had to stay as it was.
+The function `renumber(M)` in t13.py runs last.
+
+**Counts:** 13 guided questions renumbered (q-358 … q-370), with their 13 videos rewritten. 15 practice questions renumbered (q-371 … q-385). 4 slides of the "Absolute Value" lesson got new examples. The "Exam Tools" distance example has new numbers and a new number-line figure, and 3 card rows have new numbers. Practice: 30 → 20.
+
+**Practice clean-up (30 → 20):** all 15 Hebrew questions are kept, with new numbers.
+- Extra warm-ups: 3 of 7 kept: |3 − 8|, |x| < 3, and |x| = −x (the zero trap). Removed: the sum of the solutions of |x − 3| = 5 (Questions 2 and 6 cover it), x < 0: |x| − x (Question 5), the minimum of |x − 3| + |x − 5| (q-r26-t13-10 keeps the distance-sum type), and the integers in |x − 3| ≤ 2 (q-383).
+- September items: 2 of 8 kept, because the Hebrew practice does not cover their types: -10 (sum of distances) and -11 (bars ≤ 0). Removed: -05 (Question 7 covers it), -07 x/|x| (Question 5), -08 |2 − x| + |x| (the q-373 type), -09 letter on the right (q-380), -12 (q-378), and -14 (q-384; the mirror-test practice stays in q-381).
+- Order: warm-ups first, then easy → hard.
+
+**Lesson and card (Hebrew lesson examples):** 5 and −7 → 4 and −6 (2 km instead of 3 km); |6|, |−9| → |8|, |−4|; |5 − 11| = 6 (the trap was 16) → |4 − 13| = 9 (the trap is 17); |−2 + (−5)| and |−2 + 5| → |−3 + (−6)| and |−3 + 6|. In Exam Tools, |x − 2| < 4 → |x − 3| < 4 (−1 < x < 7, with a new figure), and the "plus inside" example |x + 5| → |x + 6|. Card rows: |x + 3| = 8 → |x − 4| = 5, and |x − 2| ≶ 4 → |x − 3| ≶ 4.
+
+**Checks:** every key was brute-forced in Python with random and grid samples. Each question has exactly one correct choice, every original trap is still a choice, and every number in the videos was recomputed. A duplicate scan over all questions, videos and cards in Topics 1–13 found no question equal to another question or to a lesson or card example. One near-match came up: q-362 first became "8 + 3x/|x|", which looked close to Topic 5's q-128 (x/|x| + 8). It is now 10 + 4x/|x|. No quadratic trinomial was introduced. `math_check.py 13 32` gives PROBLEMS 0, WARNINGS 0 and LAYOUT 0. All 15 changed videos were rendered and checked by eye.
+
+| id | old (Hebrew) | new | answer |
+|---|---|---|---|
+| q-358 (G1) | ab < 0, a < \|a\| | xy < 0, y < \|y\| | \|x\| = x (4) |
+| q-359 (G2) | \|x+3\| = 8, could be | \|x+7\| = 9 | −16 (3); trap −2 |
+| q-360 (G3) | \|x+5\| < 8 | \|x+3\| < 7 | 3 (3); trap 5 |
+| q-361 (G4) | 6 < \|x+3\|, cannot | 5 < \|x+2\| | 1 (2); trap 5 |
+| q-362 (G5) | x<0: 5 + 2x/\|x\| | x<0: 10 + 4x/\|x\| | 6 (2); the first plug-in x = −6 ties with −x |
+| q-363 (G8) | \|b\| = a, b ≠ a, 3c = a | \|n\| = m, n ≠ m, 4k = m | n < k < m (2) |
+| q-364 (G9) | p<q<0<r<s | a<b<0<c<d | \|b\| < \|a\| (2) |
+| q-365 (G10) | d<c<b, \|b\|<\|c\| | z<y<x, \|x\|<\|y\| | x ≠ \|x\| not nec. (3) |
+| q-366 (G11) | 2 < \|a+b\|, factor 3 | 3 < \|x+y\|, factor 5 | \|x+y\| < \|x\|+\|y\| (2) |
+| q-367 (G15) | 3\|x\|+6\|y\|=27, x+2\|y\|=3 | 4\|x\|+12\|y\|=44, x+3\|y\|=1 | −5 (2) |
+| q-368 (G16) | \|x+3y\| = \|3x+y\| | \|x+4y\| = \|4x+y\| | \|x\| = \|y\| (3) |
+| q-369 (G17) | 11 < \|2x+1\| < 13 | 7 < \|2x−1\| < 9 | −4<x<−3 (3); traps 3<x<4, −5<x<−4 |
+| q-370 (G18) | x+\|x\| < 14 | x+\|x\| < 12 | x < 6 (3) |
+| q-371 | d≠0, \|c+d\|=\|c−d\| | q≠0, \|p+q\|=\|p−q\| | p = 0 (2) |
+| q-372 | \|x+2\| < \|x−2\| | \|x+4\| < \|x−4\| | −5 (3) |
+| q-373 | m<0, n>0: \|mn\| | a>0, b<0: \|ab\| | a·\|b\| (3) |
+| q-374 | \|a+b\| = \|a−b\| | \|m+n\| = \|m−n\| | mn = 0 (2) |
+| q-375 | \|a\|+5=b, b>9 | \|x\|+3=y, y>10 | x < −7 (2); Method 2 line rewritten |
+| q-376 | b^m ≠ \|b\|^m | a^n ≠ \|a\|^n | a<0 and n odd (4) |
+| q-377 | x<−2, \|x\|=\|y\| | x<−3, \|x\|=\|y\| | 9 < y² (3) |
+| q-378 | \|x\|≠x, \|−5x\|≠−5x | \|x\|≠x, \|−3x\|≠−3x | no number (4) |
+| q-379 | (a−b)² < 4 | (x−y)² < 9 | \|x−y\| < 3 (3) |
+| q-380 | \|4x+2\|=10, \|2x+1\|=−2x−1 | \|6x+9\|=21, \|2x+3\|=−2x−3 | −5 (2) |
+| q-381 | PQ<0, P/Q<Q/P | st<0, s/t<t/s | \|t\| < \|s\| (3); mirror Method 2 rewritten |
+| q-382 | a≠b, a−b=\|a+b\| | x≠y, x−y=\|x+y\| | x=0 or y=0 (4) |
+| q-383 | \|x+6\| < 4, integers | \|x+8\| < 5 | 9 (3); trap 10 |
+| q-384 | \|c\|+\|d\|=\|c+d\| | \|m\|+\|n\|=\|m+n\| | "integers" (2) |
+| q-385 | p<q<\|pqr\|<r | a<b<\|abc\|<c | \|ab\| < 1 (3) |
+
+The English-made guided questions (q-r26-t13-01, -02, -03, -13, -15) and the kept warm-up and September items keep their numbers.
+
+## 2026-10-06 review
+Independent check of the renumber pass (13 guided + 15 practice, 13 videos, lesson "Absolute Value", "Exam Tools", card). Every key recomputed (exactly one correct choice, Hebrew trap still a choice), every video step redone with the new numbers (no old numbers left in board/speech/draw), explanations and Method 2 lines match, practice removals valid (only English extras/September items; 3 warm-ups kept). Nothing recorded, no trinomial added. Duplicate scan topics 1–16: no clash. Rendered solve-q-367, -369, r26-t13-tools. No changes needed.
+- Note for the teacher: the kept warm-up alg-extra-unit-t13-3-6 (|x| = −x → x ≤ 0) is the same as a "Sign clues" row on the memory card (it was like that before this pass).
+- `python3 math_check.py 13 32` and the full `python3 math_check.py` → 0 / 0 / 0.
