@@ -648,6 +648,7 @@ def apply(M):
     summary(M)
     cut_repeats(M)
     add_methods(M)
+    practice_methods(M)   # 2026-10-06 practice: new methods (runs last)
 
 
 # =====================================================================================
@@ -967,3 +968,26 @@ def add_methods(M):
             if l.get('say') == 'Not zero, not one, and a different number for each letter.':
                 l['say'] = 'Usually not zero or one, and a different number for each letter.'
     M.touched_videos.add(vid)
+
+
+# =====================================================================================
+# 2026-10-06 practice: new methods (runs LAST). Extra method lines appended to practice
+# explanations, using the course names of the 2026-10-06 methods.
+# =====================================================================================
+
+def _pm_add(M, qid, lines):
+    """Append extra-method lines to a PRACTICE question explanation (existing lines kept)."""
+    sec = M.section_of(qid)
+    assert sec.endswith("-practice"), (qid, sec)
+    ex = list(M.q(qid).get("explanation") or [])
+    if any(l in ex for l in lines): return
+    M.set_q(qid, expl=ex + list(lines))
+
+
+def practice_methods(M):
+    _pm_add(M, 'wp23-p26', [r'Method 2 · Arrow map: trainee → worker is the arrow $\times1.25$. Going back against the arrow, divide: $\div1.25=\times0.8$. The trainee earns $80\%$ of the worker’s wage: $20\%$ lower.'])
+    _pm_add(M, 'wp23-p14', [r'Method 2 · Flip rule, same whole → keep: both percents are of the same balance, therefore the bigger percent gives the bigger amount and the order stays. The ratio $p:q=90:150=3:5$, that is, $5p=3q$. (Flipping it, $3p=5q$, is the trap.)'])
+    _pm_add(M, 'wp23-p13', [r'Method 2 · Arrow map: original → new price is $\times1.4$, and original → target is $\times1.12$. From the new price to the target, go against the first arrow and along the second: $1.12\div1.4=0.8$. The price drops to $80\%$: a $20\%$ fall.'])
+    _pm_add(M, 'q-r26-t23-10', [r'Method 2 · Arrow map: original → first price $\times1.2$, original → second price $\times1.5$. From the first price to the second: $1.5\div1.2=1.25$, a rise of $25\%$.'])
+    _pm_add(M, 'q-r26-t23-09', [r'"Rose BY" or "became"? $300\%$ more means $x$ rose BY $300\%$. It BECAME $100\%+300\%=400\%$ of $y$ (the multiplier $\times4$). The trap $300\%$ mixes up the two.'])
+    _pm_add(M, 'q-r26-t23-13', [r'Method 2 · Arrow map: original $\times1.2$, then $\times0.75$, gives $180$. Walk back against the arrows, dividing: $180\div0.75\div1.2=240\div1.2=200$.'])

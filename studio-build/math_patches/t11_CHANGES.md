@@ -148,3 +148,11 @@ Function `add_methods` (runs last). GIVEN POWER → ASKED POWER (helps on 6 real
 - **Guided q-r26-t11-13** (Question 16; old Question 16 q-290 becomes 17), placed after solve-q-r26-t11-02: Given x > 0 and ⁴√(x³) = 8, √(x³) = ? Choices 16 · 32 · 64 · 512 → **3 (64)**. r = (3/2) ÷ (3/4) = 2, so square the given: 8² = 64. Trap 16 = x itself. Solve video: method 1 given power → asked power (cue, why it works), method 2 the long way (x = 16, √4,096 = 64) + the limit (unknown in the exponent).
 - Sidebar of every guided solution video now has 17 questions; "Advanced Tools" intro says "Twelve questions next".
 - Card "Advanced exponents and roots": new row after "x with a fractional power": given one power of b, asked a different power → r = asked ÷ given exponent, raise the given to r (not when the unknown is in the exponent and must be solved); ∛b = 5 ⇒ b^(2/3) = 25.
+
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last; append only). 2 practice questions, Method 2 · Power count (a root halves the power).
+- q-302 (√(13a)·√(13b)): power 1; choices 1, 2, 4 power 2 → 13√(ab).
+- q-314: each fraction power 1 − ½ → product power 1; choices 1 (2) and 2 (½) out; x = 3, y = 5 → −4 decides choice 4.
+- Given power → asked power: q-307 and q-319 already solve this way in their existing lines, so nothing added.
+All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 11 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

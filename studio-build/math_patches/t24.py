@@ -707,6 +707,7 @@ def apply(M):
     tidy(M)
     cut_repeats(M)
     add_methods(M)
+    practice_methods(M)   # 2026-10-06 practice: new methods (runs last)
 
 
 # =====================================================================================================
@@ -931,3 +932,22 @@ def add_methods(M):
     k = next(i for i, t in enumerate(c['tips']) if t.startswith('Percents? Stay in percent'))
     c['tips'].insert(k + 1, 'No total given? Look for a natural one: $24$ hours, $7$ days, $100\\%$. '
                             'Awake $18$ hours, at work $10$ hours → both for at least $18+10-24=4$ hours.')
+
+
+# =====================================================================================
+# 2026-10-06 practice: new methods (runs LAST). Extra method lines appended to practice
+# explanations, using the course names of the 2026-10-06 methods.
+# =====================================================================================
+
+def _pm_add(M, qid, lines):
+    """Append extra-method lines to a PRACTICE question explanation (existing lines kept)."""
+    sec = M.section_of(qid)
+    assert sec.endswith("-practice"), (qid, sec)
+    ex = list(M.q(qid).get("explanation") or [])
+    if any(l in ex for l in lines): return
+    M.set_q(qid, expl=ex + list(lines))
+
+
+def practice_methods(M):
+    _pm_add(M, 'wp24-p08', [r'Hidden total: no club size is given, but the whole club is a natural total, $1$ ($100\%$). Spanish $+$ Italian $-$ total: $\frac34+\frac58-1=\frac38$. Everyone speaks at least one of the languages, therefore this overlap is exact, not only a minimum.'])
+    _pm_add(M, 'wp24-p05', [r'Hidden total: the size of the town is never given. The whole town is $1$. Under 50 and pet owners overlap by at least $\frac45+\frac25-1=\frac15$ of the town, therefore they surely share residents.'])

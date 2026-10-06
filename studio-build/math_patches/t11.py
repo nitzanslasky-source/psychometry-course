@@ -835,3 +835,33 @@ _apply_before_add_methods = apply
 def apply(M):
     _apply_before_add_methods(M)
     add_methods(M)   # 2026-10-06: runs last
+
+
+# =====================================================================================
+# 2026-10-06 practice: the new exam methods as an extra method in PRACTICE explanations
+# (append only; the existing worked solution stays as it is). Runs last.
+# =====================================================================================
+PRACTICE_METHODS = {
+    'q-302': [
+        'Method 2 · Power count: under the roots, $a\\cdot b$ has power $2$, and a root halves it. So the question has power $1$.',
+        'Choices 1, 2 and 4 have power $2$, so they are out. Choice 3, $13\\sqrt{ab}$, has power $1$.',
+    ],
+    'q-314': [
+        'Method 2 · Power count: each fraction has power $1-\\frac12=\\frac12$, so the product has power $1$. Choice 1 (power $2$) and choice 2 (power $\\frac12$) are out.',
+        'Choices 3 and 4 both have power $1$. With $x=3$, $y=5$ the question gives $-4$. Choice 3 gives $-2$, and choice 4 gives $-4$. The answer is choice 4.',
+    ],
+}
+
+
+def practice_methods(M):
+    for qid, lines in PRACTICE_METHODS.items():
+        q = M.q(qid)
+        M.set_q(qid, expl=list(q['explanation']) + lines)
+
+
+_apply_before_practice_methods = apply
+
+
+def apply(M):
+    _apply_before_practice_methods(M)
+    practice_methods(M)   # 2026-10-06 practice: runs last

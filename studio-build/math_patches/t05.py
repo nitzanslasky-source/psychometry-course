@@ -1566,3 +1566,29 @@ _apply_before_add_methods = apply
 def apply(M):
     _apply_before_add_methods(M)
     add_methods(M)   # 2026-10-06: runs last
+
+
+# =====================================================================================
+# 2026-10-06 practice: the new exam methods as an extra method in PRACTICE explanations
+# (append only; the existing worked solution stays as it is). Runs last.
+# =====================================================================================
+PRACTICE_METHODS = {
+    'q-expression-extra-07': [
+        'Method 2 · Power count: the question $\\frac{a+4b}{a}$ has power $1-1=0$. Choice 1 ($1+4b$) and choice 3 ($a+\\frac{4b}{a}$) are mixed, so they are out.',
+        'Choices 2 and 4 both have power $0$. The check with $a=2$, $b=1$ (value $3$) keeps only choice 2.',
+    ],
+}
+
+
+def practice_methods(M):
+    for qid, lines in PRACTICE_METHODS.items():
+        q = M.q(qid)
+        M.set_q(qid, expl=list(q['explanation']) + lines)
+
+
+_apply_before_practice_methods = apply
+
+
+def apply(M):
+    _apply_before_practice_methods(M)
+    practice_methods(M)   # 2026-10-06 practice: runs last

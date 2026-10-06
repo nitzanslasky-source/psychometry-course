@@ -97,3 +97,14 @@ Function `add_methods` (runs last, after `cut_repeats`). Nothing in topic 26 is 
 - **Catching up = gap ÷ difference in rates**: new slide 4 "Same idea: catching up" in the Q10 video `solve-wp26-g102` (queue question; 1.3 → 2.1 min): printer normally 6 h/day, down 5 days → 30 h behind; now 16 h/day = 10 more a day → 3 days; trap 30 ÷ 16; linked to chases in Topic 27.
 - **Card `mem-work-rate`**: new row "Two or more things change (only relations)" after the Team row; new row "Catching up"; new tip "A fixed amount more is not a factor → equation".
 - Nothing that the 2026-10-05 cut removed was re-added (the Summary lesson is unchanged; its "Two changes multiply" line already matches).
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last in `apply`). One extra line is added at the end of each written solution; the existing lines are kept. Nothing is recorded. "Catching up = gap ÷ difference in rates" did not fit any practice question (none has a fixed gap followed by a faster rate). Questions whose written solution already is the factor rule (q-r26-t26-05, q-r26-t26-09, wp26-p25) were not given a duplicate line.
+- `wp26-p05` (4 clerks, 18 in 6 min → 3 clerks, 27): Method 2 · Compare by factors: 6 · 3/2 · 4/3 = 12.
+- `wp26-p27` (8 machines, 960 in 3 h → 1,600 in 4 h): Compare by factors: 8 · 5/3 · 3/4 = 10.
+- `wp26-p17` (M scanners, L pages → D scanners, 3 hours): Compare by factors: L · D/M · 3.
+- `wp26-p12` (p envelopes in q min → 2q envelopes): Compare by factors: q · 2q/p.
+- `wp26-p13` (5 workers, 8 crates, 2 h → 1 worker, 1 crate): Compare by factors: 120 · 1/8 · 5 = 75.
+- `wp26-p16` (4 slow flashes = 7 fast flashes): Compare by factors: 3/5 · 4/7 = 12/35.
+- `q-r26-t26-11` (2 h at 30, 3 h at 40): Method 2 · Percent shares as weights (by hours): 30 + 0.6 · 10 = 36.
+- Every line checked in python. Check: `math_check.py 26 32` → 0 / 0 / 0.

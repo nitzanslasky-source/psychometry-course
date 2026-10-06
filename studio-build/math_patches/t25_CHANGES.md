@@ -95,3 +95,15 @@ Function `add_methods` (runs last, after `cut_repeats`). Nothing in topic 25 is 
 - **Card `mem-averages`**: Weighted table, new row "Percent shares as weights" (30 + 0.3 · 20 = 36; see-saw 70 · 6 = 30 · 14). Basics table, new row after "Every value +k": 'Groups of different sizes, "in t years"' — each group's TOTAL grows by t × its head-count: 5 boys, 3 girls, 4 years → +20, +12, the gap between the totals grows by 8.
 - **Plug-in tip fixed**: after "Letter answers? Plug in all values equal…", new tip '"Not necessarily equal to the average"? Equal numbers catch nothing — every choice equals the average. Use uneven numbers, like 0, 0, 0, 4 (average 1).'
 - Check: `math_check.py 25 32` → 0 / 0 / 0; new slide rendered and looked at.
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last in `apply`). One extra line is added at the end of each written solution; the existing lines are kept. Pick values that fit (topic 51 Case 4) comes later, so it is written as a self-contained "Shortcut" with its one-line reason. Nothing is recorded.
+- `wp25-p23` (test weight 3, project 1): Method 2 · Percent shares as weights: 68 + 1/4 · 24 = 74.
+- `wp25-p27` (4- and 9-credit notebooks, average 6): shares as weights backwards: share = 2/5 → 12.
+- `wp25-p19` (tea 84 / 54, blend 72): shares as weights: expensive share 18/30 = 3/5 → ratio 3 : 2.
+- `wp25-p02` (teams 64 / 82, combined 70): shares as weights: B is 1/3 → A has more members.
+- `q-r26-t25-11` (in 3 years average 15, baby born): "In t years": total 60 − 3 · 4 = 48 → 9.6.
+- `wp25-p20` (which information fixes the combined average): shares as weights: the share y/(x + y) depends only on x/y.
+- `wp25-p16` (Ella and Finn vs Finn and Grace): Shortcut · Pick values that fit: Finn = Grace = 0 → Ella = 22.
+- `wp25-p04` (average of u and v): Shortcut · Pick values that fit: a = b = c = d = 1 → 1 = S/4.
+- Every line checked in python. Check: `math_check.py 25 32` → 0 / 0 / 0.

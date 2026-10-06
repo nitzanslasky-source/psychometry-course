@@ -1278,3 +1278,36 @@ _apply_before_add_methods = apply
 def apply(M):
     _apply_before_add_methods(M)
     add_methods(M)   # 2026-10-06: runs last
+
+
+# =====================================================================================
+# 2026-10-06 practice: the new exam methods as an extra method in PRACTICE explanations
+# (append only; the existing worked solution stays as it is). Runs last.
+# =====================================================================================
+PRACTICE_METHODS = {
+    'q-r26-t13-14': [
+        'Method 2 · Mirror test: swap $a$ and $b$. $|b-a|=|b|+|a|$ is the same given. Choice 1 ($a>b$) turns into $b>a$, and choice 2 ($|a|>|b|$) turns into $|b|>|a|$. Both turn into their opposites, so they are out.',
+        'Flip all signs: $|-a+b|=|-a|+|-b|$ is the same given too. Choice 4 ($a+b>0$) turns into $a+b<0$, so it is out. Only choice 3 is left, with no numbers at all.',
+    ],
+    'q-381': [
+        'Method 2 · Mirror test: flip all signs. $(-P)(-Q)=P\\cdot Q$ and $\\frac{-P}{-Q}=\\frac PQ$, so the given stays the same.',
+        'Choice 2 ($Q<0<P$) turns into $P<0<Q$, choice 3 ($0<P+Q$) into $P+Q<0$, and choice 4 into $0<P+Q$. All three turn into their opposites, so they are out. Choice 1 ($|Q|<|P|$) does not change: it is the answer.',
+    ],
+    'q-375': [
+        'Method 2 · The most precise range: $a=-5$ works ($b=10>9$), so choices 2 and 3 (which leave $-5$ out) are out. $a=-20$ works too ($b=25$), so choice 4 (which stops at $-14$) is out. The answer is choice 1.',
+    ],
+}
+
+
+def practice_methods(M):
+    for qid, lines in PRACTICE_METHODS.items():
+        q = M.q(qid)
+        M.set_q(qid, expl=list(q['explanation']) + lines)
+
+
+_apply_before_practice_methods = apply
+
+
+def apply(M):
+    _apply_before_practice_methods(M)
+    practice_methods(M)   # 2026-10-06 practice: runs last

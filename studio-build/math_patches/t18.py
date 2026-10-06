@@ -897,3 +897,32 @@ _apply_before_add_methods = apply
 def apply(M):
     _apply_before_add_methods(M)
     add_methods(M)   # 2026-10-06: runs last
+
+
+# =====================================================================================
+# 2026-10-06 practice: the new exam methods as an extra method in PRACTICE explanations
+# (append only; the existing worked solution stays as it is). Runs last.
+# =====================================================================================
+PRACTICE_METHODS = {
+    'alg-extra-unit-t18-3-6': [
+        'Method 2 · Words, no columns: write the number as $10A+B$ and collect. $10A+B=4(A+B)$, so $6A=3B$ and $B=2A$. The tens digit is $2$, so the ones digit is $4$.',
+    ],
+    'q-530': [
+        'Method 2 · Words, no columns: $X=10A+5$, and the reversed number is $50+A$. So $50+A=3(10A+5+2)=30A+21$, which gives $29A=29$ and $A=1$.',
+        '$X=15$, and the sum of its digits is $6$.',
+    ],
+}
+
+
+def practice_methods(M):
+    for qid, lines in PRACTICE_METHODS.items():
+        q = M.q(qid)
+        M.set_q(qid, expl=list(q['explanation']) + lines)
+
+
+_apply_before_practice_methods = apply
+
+
+def apply(M):
+    _apply_before_practice_methods(M)
+    practice_methods(M)   # 2026-10-06 practice: runs last

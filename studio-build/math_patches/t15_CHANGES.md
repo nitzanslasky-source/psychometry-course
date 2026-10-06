@@ -111,3 +111,11 @@ Function `add_methods` (runs last, after `cut_repeats`). Nothing in topic 15 is 
 - **New guided question q-r26-t15-15** (after Question 10, now Question 11): x divisible by 6, y divisible by 9, largest number x + y is necessarily divisible by: 18 · 15 · 9 · 3 → 3. Traps: 18 (equal values x = y = 18 → 36), 15 (smallest values 6 + 9), 9. Solution video `solve-q-r26-t15-15` (1.4 min): Method 1 tag it (6k + 9m = 3(2k + 3m)), then "The trap · Equal values". Checked by computer: gcd of all 6k + 9m is 3.
   - The teacher's suggested example (x, y multiples of 3, choices 3/6/9/12) is a real exam question (2025 autumn), so an original pair was used instead; the slide example (multiple of 6 + multiple of 10) avoids the real "multiple of 4 + even" question too.
 - Card "More remainder tools": new row "Necessarily divisible by…? → Tag it" (rules + example).
+
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last; append only). 2 practice questions, Method 2 · Tag it.
+- q-r26-t15-07: a = 9k + 3, b = 9m + 7 (different letters) → a − b = 9(k − m − 1) + 5 → 5.
+- q-453: a + 2 = 6k + 5; the tag 6k is not always a multiple of 4 → k = 0 gives remainder 1, k = 1 gives 3 → cannot be determined.
+- The other necessarily-divisible questions (q-442, q-451, q-449, q-444, q-455, q-438) already solve with tags, so nothing added there.
+All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 15 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

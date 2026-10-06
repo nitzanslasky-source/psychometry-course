@@ -135,3 +135,9 @@ Function `add_methods` (runs last). Nothing in topic 28 is recorded. Check: `pyt
 - **Groups with no names** — card `mem-counting`, "Which rule?" table, new row after "A group, order does not matter": count as if the groups had names, then ÷ (number of groups)!; pairs: fix one person, choose her partner; 4 girls → 2 pairs = 6 ÷ 2! = 3 (not 6); 6 players → 3 pairs = 5·3·1 = 15.
 - **New practice question `q-r26-t28-41`** (after wp28-p27, the "named teams" question): 8 runners into 4 unnamed pairs → 7·5·3·1 = **105** (choice 2); check 2,520 ÷ 4! = 105. Traps 2,520 (pairs treated as named), 420, 28.
 - Note for the teacher: Pass 2 (2026-09-27) removed an earlier "Groups with no names" lesson slide, guided question and card row. Only the card row and one practice question are added back now, as requested — no slide, no guided question.
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last in `apply`). One extra line is added at the end of each written solution; the existing lines are kept. Nothing is recorded. Few questions fit: almost all practice questions are true counting questions. `q-r26-t28-41` already teaches groups with no names.
+- `wp28-p13` (at most how many key tests): "At most" → the Topic 21 min/max method, worst luck: 6 + 5 + 4 + 3 + 2 + 1 = 21.
+- `wp28-p27` (named teams Cedar and Maple): Groups with no names? Here they have names → no division; unnamed would be 20 ÷ 2! = 10 (the trap choice).
+- Every line checked in python. Check: `math_check.py 28 32` → 0 / 0 / 0.

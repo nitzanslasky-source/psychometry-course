@@ -685,6 +685,7 @@ def apply(M):
 
     cut_repeats(M)
     add_methods(M)   # 2026-10-06 new exam methods (runs last)
+    practice_methods(M)   # 2026-10-06 practice: new methods (runs last)
 
 
 def _b(label, tex, size=42):
@@ -980,3 +981,27 @@ def add_methods(M):
                     '$\\frac34$ the hours, $\\frac23$ per hour, $8$ days $\\to$ $8\\times\\frac43\\times\\frac32=16$'])
     rows.append(['Catching up', 'gap $\\div$ difference in rates: $30$ h behind, $16-6=10$ more a day $\\to$ $3$ days'])
     c['tips'].append('A fixed amount more ("2 more an hour") is not a factor: give it a letter and write an equation.')
+
+
+# =====================================================================================
+# 2026-10-06 practice: new methods (runs LAST). Extra method lines appended to practice
+# explanations, using the course names of the 2026-10-06 methods.
+# =====================================================================================
+
+def _pm_add(M, qid, lines):
+    """Append extra-method lines to a PRACTICE question explanation (existing lines kept)."""
+    sec = M.section_of(qid)
+    assert sec.endswith("-practice"), (qid, sec)
+    ex = list(M.q(qid).get("explanation") or [])
+    if any(l in ex for l in lines): return
+    M.set_q(qid, expl=ex + list(lines))
+
+
+def practice_methods(M):
+    _pm_add(M, 'wp26-p05', [r'Method 2 · Compare by factors: from $18$ to $27$ applications the work is $\times\frac32$ (time goes the same way). From $4$ to $3$ clerks the team is $\times\frac34$ (time goes the opposite way → flip to $\frac43$). $6\cdot\frac32\cdot\frac43=12$ minutes.'])
+    _pm_add(M, 'wp26-p27', [r'Method 2 · Compare by factors: the items are $\times\frac{1{,}600}{960}=\frac53$ (more work, more machines: same way). The hours are $\times\frac43$ (more time, fewer machines → flip to $\frac34$). $8\cdot\frac53\cdot\frac34=10$ machines.'])
+    _pm_add(M, 'wp26-p17', [r'Method 2 · Compare by factors: scanners $\times\frac DM$ and hours $\times3$. Both push the pages the same way: $L\cdot\frac DM\cdot3=\frac{3DL}{M}$.'])
+    _pm_add(M, 'wp26-p12', [r'Method 2 · Compare by factors: the work goes from $p$ to $2q$ envelopes, $\times\frac{2q}{p}$, and the time goes the same way: $q\cdot\frac{2q}{p}=\frac{2q^2}{p}$.'])
+    _pm_add(M, 'wp26-p13', [r'Method 2 · Compare by factors, starting from $120$ minutes: crates $\times\frac18$ (same way); workers $\times\frac15$ (fewer workers, more time → flip to $5$). $120\cdot\frac18\cdot5=75$ minutes.'])
+    _pm_add(M, 'wp26-p16', [r'Method 2 · Compare by factors: in the same time the fast signal makes $\frac74$ as many cycles. A cycle goes the opposite way → flip to $\frac47$: $\frac35\cdot\frac47=\frac{12}{35}$ second.'])
+    _pm_add(M, 'q-r26-t26-11', [r'Method 2 · Percent shares as weights (the weights are the hours): $3$ of the $5$ hours ($60\%$) are at $40$. Average $=30+0.6\cdot10=36$.'])

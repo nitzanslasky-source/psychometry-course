@@ -867,6 +867,7 @@ def apply(M):
                 b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, stem)
     cut_repeats(M)
     add_methods(M)   # 2026-10-06 new exam methods (runs last)
+    practice_methods(M)   # 2026-10-06 practice: new methods (runs last)
 
 
 # =========================================================================================================
@@ -1198,3 +1199,22 @@ def add_methods(M):
              'The pairs have no names, so divide by $4!=24$: $\\frac{2{,}520}{24}=105$.',
              'Traps: $2{,}520$ treats the pairs as named; $28$ counts only one pair.'])
     M.place_q(qid, 'wp28-practice', after='wp28-p27')
+
+
+# =====================================================================================
+# 2026-10-06 practice: new methods (runs LAST). Extra method lines appended to practice
+# explanations, using the course names of the 2026-10-06 methods.
+# =====================================================================================
+
+def _pm_add(M, qid, lines):
+    """Append extra-method lines to a PRACTICE question explanation (existing lines kept)."""
+    sec = M.section_of(qid)
+    assert sec.endswith("-practice"), (qid, sec)
+    ex = list(M.q(qid).get("explanation") or [])
+    if any(l in ex for l in lines): return
+    M.set_q(qid, expl=ex + list(lines))
+
+
+def practice_methods(M):
+    _pm_add(M, 'wp28-p13', [r'"At most" → this is the Topic 21 min/max method, not a counting formula. Worst luck: every cupboard opens only with the last key still possible: $6+5+4+3+2+1=21$ tests.'])
+    _pm_add(M, 'wp28-p27', [r'Groups with no names? Here the teams DO have names (Cedar and Maple), therefore we do not divide. With two unnamed teams it would be $20\div2!=10$, the trap in choice 4.'])

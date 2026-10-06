@@ -132,3 +132,10 @@ Function `cut_repeats` (runs last, after `hebrew_intro`). Same approach as equat
   - Cut: factor (product c, sum b) → Q23; two solutions / sign flip → Q23; the trap a² = b² → Q24; try the choices → Q23 method 2; fraction = 0 → Q25; recap.
   - Moved into Q23: board item "One side = 0, then factor: product = c, sum = b" + one line, before the first written line; and in method 2 "A choice that works is ONE solution. How many? Factor." + one line.
 - Q23 1.2 → 1.6 min, Q22 0.8 → 1.0 min. Card and AI summary unchanged.
+
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last, after `cut_repeats`; append only). 8 practice questions.
+- Method 2 · Power count: q-212 (x + y in terms of a, c): choice 1 power −1, choice 4 mixed → out; x = y = 1 (a = c = 11) decides → 2.
+- Shortcut: pick values that fit: q-206 (y = 2 → x = 3 → 3/2), q-175 (a = 0 → b = 6; one fitting pair knocks out choices 2–4), q-202 (m = 1 → n = 0), q-172 (a = 1 ties choices 1, 2, 4; second set a = 0, b = 7 → cannot be determined), q-r26-t07-15 (y = 1 → 24/8 = 3), q-199 (x = 1 → x + y = 1/4), q-204 (a = 1 → x = 1/2).
+All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 7 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

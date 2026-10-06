@@ -190,3 +190,8 @@ Teacher-approved. 0 of 760 real exam questions need trinomial factoring.
   spoken line changed, no time change).
 - Recorded videos (expression-basics, r26-t04-formulas, solve-q-120, solve-q-121, solve-q-r26-t04-01 … -04) and their questions:
   identical in the built data before and after.
+
+
+## 2026-10-06 practice: new methods
+Nothing added. Power count is taught only in topic 5; the one place pick values fits (q-r26-t04-17, x − y = 5) already checks with x = 5, y = 0.
+All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 4 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

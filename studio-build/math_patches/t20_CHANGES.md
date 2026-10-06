@@ -140,3 +140,9 @@ Function `cut_repeats` (runs last). Nothing in topic 20 is recorded.
   - Cut "Connect topics" → taught in Q5 `solve-q-579` (c² = a² + b²); added the cycle of ratios x/y · y/z · z/x = 1 + board item.
   - Cut "Recap"; its closing line moved to "Three tools".
 - **`r26-t20-counting`**: 2.7 → 1.9 min. Kept: from a to b, strictly between, pigeonhole (the remainder version is not in Q8). Cut "Only odd or even" → Q7 `solve-q-r26-t20-03`; cut "To be sure" → Q8 `solve-q-r26-t20-04`; cut "Recap". "Letters in the choices? plug in small numbers and count" moved to the "Strictly between" slide.
+
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last; append only). 1 practice question.
+- q-r26-t20-10 (x³ = y², y × 8): Method 2 · Given power, asked power — r = 1/3 → x = y^(2/3) → × 8^(2/3) = 4.
+All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 20 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

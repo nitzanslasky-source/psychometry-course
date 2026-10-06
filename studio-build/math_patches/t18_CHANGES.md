@@ -120,3 +120,10 @@ Function `add_methods` (runs last, after `cut_repeats`). Nothing in topic 18 is 
   - Summary, slide "The 4 steps": the same board line + one spoken line.
   - Card "Exercises with letters — toolkit", table "The four steps": new row "Words, no columns".
   - Question 9 (q-520, already solved with 10T + U): one line naming the move before "Cancel U from both sides".
+
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last; append only). 2 practice questions, Method 2 · Words, no columns (10A + B, collect).
+- alg-extra-unit-t18-3-6: 10A + B = 4(A + B) → B = 2A → tens 2 → ones 4.
+- q-530: 50 + A = 3(10A + 7) → A = 1 → X = 15, digit sum 6 (checked: the only solution).
+All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 18 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

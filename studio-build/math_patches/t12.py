@@ -1053,3 +1053,44 @@ _apply_before_add_methods = apply
 def apply(M):
     _apply_before_add_methods(M)
     add_methods(M)   # 2026-10-06: runs last
+
+
+# =====================================================================================
+# 2026-10-06 practice: the new exam methods as an extra method in PRACTICE explanations
+# (append only; the existing worked solution stays as it is). Runs last.
+# =====================================================================================
+PRACTICE_METHODS = {
+    'alg-extra-unit-t12-3-1': [
+        'Method 2 · Two moves: endpoint $-3x=9$ gives $x=-3$. Direction: $x=0$ gives $0>9$, which is false. So the answer is the side without $0$: $x<-3$. Nothing had to flip.',
+    ],
+    'q-346': [
+        'Method 2 · Two moves: endpoint $a+4=\\frac a2$ gives $a=-8$. Direction: $a=0$ gives $4<0$, which is false. $0$ is above $-8$, so the answer is below it: $a<-8$.',
+    ],
+    'q-355': [
+        'Method 2 · The most precise range: test numbers where the choices disagree. $x=2$: $\\frac23$ is between $\\frac14$ and $\\frac34$ ✓. A number that works kills every choice that leaves it out: choices 1 and 3.',
+        '$x=\\frac12$: $\\frac{1/2}{3/2}=\\frac13$ ✓. Choice 4 leaves $\\frac12$ out, so it is out too. The answer is choice 2.',
+    ],
+    'q-354': [
+        'Method 2 · The most precise range: $n=1$ gives $\\frac42=2>0$ ✓, so choices 2 and 4 (which leave $1$ out) are out. $n=-1$ gives $\\frac24>0$ ✓, so choice 1 is out. The answer is choice 3.',
+    ],
+    'q-353': [
+        'Method 2 · The most precise range: test $x=-4$. $16-6=10$, and $3<10<19$ ✓. A number that works kills every choice that leaves it out: choices 1, 2 and 3. The answer is choice 4.',
+    ],
+    'q-r26-t12-06': [
+        'Method 2 · The most precise range: test values. $x=0$ gives $x^2=0$, so choice 1 (which leaves $0$ out) is out. $x=-3.5$ gives $x^2=12.25$, so choices 3 and 4 (both stop at $9$) are out. The answer is choice 2.',
+    ],
+}
+
+
+def practice_methods(M):
+    for qid, lines in PRACTICE_METHODS.items():
+        q = M.q(qid)
+        M.set_q(qid, expl=list(q['explanation']) + lines)
+
+
+_apply_before_practice_methods = apply
+
+
+def apply(M):
+    _apply_before_practice_methods(M)
+    practice_methods(M)   # 2026-10-06 practice: runs last

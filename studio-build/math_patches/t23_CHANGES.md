@@ -125,3 +125,13 @@ Function `add_methods` (runs last, after `cut_repeats`). Teacher-approved method
 - **Card `mem-r26-t23-traps`**: new rows "Fee or tax on top: divide, don't take 75%" (paid 100 with 25% tax → 100 ÷ 1.25 = 80, not 75; check 80 · 1.25 = 100) and '"Rose BY" or "became"?' (×3.75: became 375%, rose by 275%). Intro now "Traps the exam loves, and shortcuts that save time." Tip "not 0, not 1" softened: usually avoid 0 and 1, but if 0 / "nothing changes" makes the answer obvious use it (k new students join → at k = 0 the change must be 0 → only that choice survives); if two survive, plug in a second number.
 - Same softer wording where it was spoken: Q15 (was Q14) `solve-q-r26-t23-05` slide 2 ("Easy numbers: usually not zero or one, and a different number…" + board "Usually not 0 or 1, different numbers · two hit? new numbers") and the summary `r26-t23-summary` ("Usually not zero or one, and a different number for each letter.").
 - Nothing that `cut_repeats` cut was re-added. Check: `math_check.py 23 32` → 0 / 0 / 0; new slides rendered and looked at.
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last in `apply`). One extra line is added at the end of each written solution; the existing lines are kept. Nothing is recorded.
+- `wp23-p26` (worker 25% more than trainee → trainee ?% lower): Method 2 · Arrow map: ÷1.25 = ×0.8 → 20% lower.
+- `wp23-p14` (p% = 90, q% = 150 of the same balance): Method 2 · Flip rule, same whole → keep: p : q = 3 : 5 → 5p = 3q (flip is the trap).
+- `wp23-p13` (+40%, then down to +12%): Method 2 · Arrow map: 1.12 ÷ 1.4 = 0.8 → 20% fall.
+- `q-r26-t23-10` (120% then 150% of the original): Method 2 · Arrow map: 1.5 ÷ 1.2 = 1.25 → 25%.
+- `q-r26-t23-09` (300% more → what percent): "Rose BY" or "became"? → became 400%.
+- `q-r26-t23-13` (+20%, −25%, now 180): Method 2 · Arrow map backwards: 180 ÷ 0.75 ÷ 1.2 = 200.
+- Every line checked in python. Check: `math_check.py 23 32` → 0 / 0 / 0.

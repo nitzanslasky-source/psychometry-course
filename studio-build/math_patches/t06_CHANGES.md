@@ -167,3 +167,10 @@ Check: `python3 math_check.py 6 32` → 0 problems, 0 warnings, 0 layout problem
 "Pen for the thinking, clicks for the copying" (function `pen_or_click`, runs last). Copied / mechanical lines that the teacher used to write by hand now appear on NEXT as board items, in the same place in the script. The key idea and all marks (circle, underline) stay as pen cues. Where a hand-written line comes before a click line, the board leaves an empty row for it. Spoken lines, math, questions and slide count are unchanged.
 - solve-q-r26-t06-03 (9 pen cues -> 4 by hand, 5 clicks). By hand: circle "x + y", 8(x + y) = 80 -> x + y = 10, circle choice 3 (twice). Clicks: (5x + 3y) + (3x + 5y) = 41 + 39, 8x + 8y = 80, the ×3 / ×5 equations (stacked), 16y = 72 -> y = 4.5, 5x + 13.5 = 41 -> x = 5.5 -> x + y = 10.
 - solve-q-r26-t06-04 (7 pen cues -> 2 by hand, 3 clicks, 2 split). By hand: xy · (x/y) = 20 · 5 (method 1 key), x/y = 5 -> x = 5y (method 2 key). Clicks: x² = 100 -> x = 10, 10y = 20 -> y = 2, 5y · y = 20 -> y² = 4 -> y = 2. Split: "x − y = 10 − 2 = 8" and "x = 10, x − y = 8" are clicks; circling choice 3 stays by hand. Slide 2 items are a bit smaller (size 38) so the board is not crowded.
+
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last; append only). 2 practice questions, "Shortcut: pick values that fit" (taught later in topic 51, so phrased as a shortcut with a one-line why).
+- q-r26-t06-16 (3x − 2y = 5, 6x − 4y + 1): y = 0 → x = 5/3 → 11; second set x = 1, y = −1 → 11 again, so "cannot be determined" is out.
+- q-r26-t06-14 ((x + y)/(x − y) = 3, x/y): y = 1 (y ≠ 0) → x = 2 → 2.
+All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 6 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

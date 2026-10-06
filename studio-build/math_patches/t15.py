@@ -977,3 +977,33 @@ _apply_before_add_methods = apply
 def apply(M):
     _apply_before_add_methods(M)
     add_methods(M)   # 2026-10-06: runs last
+
+
+# =====================================================================================
+# 2026-10-06 practice: the new exam methods as an extra method in PRACTICE explanations
+# (append only; the existing worked solution stays as it is). Runs last.
+# =====================================================================================
+PRACTICE_METHODS = {
+    'q-r26-t15-07': [
+        'Method 2 · Tag it, with different letters for different numbers: $a=9k+3$ and $b=9m+7$. Then $a-b=9(k-m)-4=9(k-m-1)+5$, so the remainder is $5$.',
+        'With the same letter for both ($9k+3$ and $9k+7$), $a$ would be smaller than $b$. Different numbers need different letters.',
+    ],
+    'q-453': [
+        'Method 2 · Tag it: $a=6k+3$, so $a+2=6k+5$. The tag $6k$ is not always a multiple of $4$ ($6$, $12$, $18$, …), so the remainder by $4$ moves.',
+        '$k=0$ gives $5$, remainder $1$. $k=1$ gives $11$, remainder $3$. So it cannot be determined (choice 4).',
+    ],
+}
+
+
+def practice_methods(M):
+    for qid, lines in PRACTICE_METHODS.items():
+        q = M.q(qid)
+        M.set_q(qid, expl=list(q['explanation']) + lines)
+
+
+_apply_before_practice_methods = apply
+
+
+def apply(M):
+    _apply_before_practice_methods(M)
+    practice_methods(M)   # 2026-10-06 practice: runs last

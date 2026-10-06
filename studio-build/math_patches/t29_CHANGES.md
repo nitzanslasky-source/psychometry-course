@@ -122,3 +122,13 @@ Function `cut_repeats` (runs last). A lesson slide is cut only where a question 
 Function `add_methods` (runs last). Nothing in topic 29 is recorded. Check: `python3 math_check.py 29 32` → 0 problems, 0 warnings, 0 layout problems.
 - **Card `mem-probability`**: new first table "Which door? Decide first" — COUNT (equally likely outcomes you can list → wanted ÷ all; two dice sum 7 → 6/36 = 1/6), PATH (story in steps → multiply along the path, add the paths; 3 red 2 blue, 2 red in a row → 3/5 · 2/4 = 3/10), SYMMETRY (nobody special → 1/n; 5 people in a random line, Dana last → 1/5).
 - **Summary `r26-t29-summary`**: new slide "Which door?" right before "Before you practice" (sidebar entry added; 3.6 → 4.4 min). The three doors with the same three examples, one board line + one example line each. Covers 17 of the 24 real probability questions.
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last in `apply`). One extra line is added at the end of each written solution, starting with a "Door:" tag; the existing lines are kept. Lines were added only where the door gives a second route or explains a trap, not where they would only repeat the solution. Nothing is recorded.
+- `q-r26-t29-11` (Dana and Tal both on a committee of 3 of 10): Door: SYMMETRY — 3 of the 45 pairs → 1/15.
+- `wp29-p22` (two tokens, different colors): Door: COUNT — 20 mixed pairs of 36 → 5/9.
+- `q-r26-t29-08` (at least one winning ticket): Door: COUNT — 10 pairs, 3 with no winner → 7/10.
+- `wp29-p21` (at least one six with two dice): Door: COUNT — 6 + 6 − 1 = 11 of 36.
+- `wp29-p10` (choose a bag, then a token): Door: PATH, not COUNT — tokens in A have 1/24, in B 1/20, so pouring the bags together (5/11) is wrong.
+- `wp29-p16` (coin sum greater than the dice): Door: COUNT — 64 equally likely outcomes, 3 + 2 good → 5/64.
+- Every line checked in python (p16 by listing all 64 outcomes). Check: `math_check.py 29 32` → 0 / 0 / 0.

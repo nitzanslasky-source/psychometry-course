@@ -16,14 +16,16 @@
    "The traps: the round answer is usually right, but not always. If it fails, just keep going. And after three are out, don't check the fourth."
   ],
   [
-   "Plugging in numbers. When? One: an expression with an unknown, something equals question mark, and numerical answers. Not an equation.",
+   "Plugging in numbers. When? One: an expression with an unknown, something equals question mark, and numerical answers. Now, an equation with one unknown is different. x has just one value, so don't invent it... plug in the answer choices instead.",
    "Two: unknowns in the answers.",
-   "Three: ratio problems. Because in a ratio, the numbers don't matter."
+   "Three: ratio problems. Because in a ratio, the numbers don't matter.",
+   "Four: more letters than equations, and they ask for one value. Well, the answer can't depend on your choice. So give one letter an easy value, zero first, and solve for the rest. Keep the conditions. And if the answer changes with your choice, then it cannot be determined."
   ],
   [
    "Now, the rules. We don't look for the correct answer. We eliminate three. Three out, mark the fourth.",
    "Two left? Plug in another number. And don't recheck what you already eliminated.",
    "Choose numbers that give distinct results. One often fails with powers and products. In percents, put a hundred at the whole. And keep the conditions of the question.",
+   "Zero is fine too. And so is the value where nothing changes... nobody joins, or the new value equals the average. If two choices survive, plug in a second number.",
    "And the trap: you think you're stuck with an ugly number. Well, you aren't. You chose it, so you can change it."
   ],
   [

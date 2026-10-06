@@ -818,3 +818,29 @@ def cut_repeats(M):
         A("'Letters in the choices? Plug in small numbers and count' appears", T('Letters in the choices? Plug in small numbers and count', size=38)),
         "And if the answers have letters — plug in small numbers, count by hand, and see which formula gives your count."])
     _cr_add(M, COUNT, 4, None, ['Two questions next — counting odd numbers, and being sure. Then practice on your own — and you\'ve finished algebra.'])
+
+
+# =====================================================================================
+# 2026-10-06 practice: the new exam methods as an extra method in PRACTICE explanations
+# (append only; the existing worked solution stays as it is). Runs last.
+# =====================================================================================
+PRACTICE_METHODS = {
+    'q-r26-t20-10': [
+        'Method 2 · Given power, asked power: the given is $x^3=y^2$, and the asked power of $x$ is $1$. So $r=\\frac13$: raise both sides to $\\frac13$, and $x=y^{\\frac23}$.',
+        'Multiply $y$ by $8$, and $x$ is multiplied by $8^{\\frac23}=\\left(\\sqrt[3]{8}\\right)^2=4$.',
+    ],
+}
+
+
+def practice_methods(M):
+    for qid, lines in PRACTICE_METHODS.items():
+        q = M.q(qid)
+        M.set_q(qid, expl=list(q['explanation']) + lines)
+
+
+_apply_before_practice_methods = apply
+
+
+def apply(M):
+    _apply_before_practice_methods(M)
+    practice_methods(M)   # 2026-10-06 practice: runs last

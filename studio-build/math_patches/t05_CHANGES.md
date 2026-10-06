@@ -204,3 +204,10 @@ Function `add_methods` (runs last). Topic 5 is recorded: nothing recorded change
 - Card "Expressions — rules and methods": Rules row "Power count …"; "Pick your method" row "Letters in the choices → Count the powers first: a different or mixed power is out"; the tie tip is now "Tie? Check the powers first. Still tied? Keep only the tied choices and plug in new numbers."
 - Summary video `r26-t05-summary` (not recorded): new slide "Count the powers" before "Before you practice" (sidebar updated).
 - Answers verified by exact computation with random values.
+
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last; appends to the written solution only). 1 practice question.
+- q-expression-extra-07 ((a + 4b)/a): Method 2 · Power count — power 0; choices 1 and 3 mixed → out; the existing a = 2, b = 1 check decides 2 vs 4.
+- Looked at but not added: the other letter-choice questions are either all the same power (q-r26-t05-12, q-expression-extra-20, -11, -13, q-r26-t05-13) or the question itself is mixed (q-r26-t05-11, -15, q-124); q-r26-t05-05/-06 already plug in fitting values.
+All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 5 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

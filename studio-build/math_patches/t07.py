@@ -2160,3 +2160,52 @@ _apply_before_cut_repeats = apply
 def apply(M):
     _apply_before_cut_repeats(M)
     cut_repeats(M)   # 2026-10-05: runs last
+
+
+# =====================================================================================
+# 2026-10-06 practice: the new exam methods as an extra method in PRACTICE explanations
+# (append only; the existing worked solution stays as it is). Runs last.
+# =====================================================================================
+PRACTICE_METHODS = {
+    'q-212': [
+        'Method 2 · Power count: $x+y$ has power $1$, and so do $a$ and $c$ ($a=6x+5y$). Choice 1 has power $-1$ and choice 4 ($a+c-11$) is mixed, so both are out.',
+        'Choices 2 and 3 are left. Pick $x=y=1$: $a=c=11$ and $x+y=2$. Choice 2 gives $\\frac{22}{11}=2$ and choice 3 gives $0$. The answer is choice 2.',
+    ],
+    'q-206': [
+        'Shortcut: pick values that fit. Three letters, two equations, one value asked. $y\\ne0$, so set $y=2$: $k=x-\\frac23$, and $x+4=3k=3x-2$, so $x=3$. Then $\\frac xy=\\frac32$. One value is asked, so every set of values that fits the given gives that same value. Take the easiest one.',
+    ],
+    'q-175': [
+        'Shortcut: pick values that fit. Set $a=0$: $\\frac b3=2$, so $b=6$. Test the choices with $a=0$, $b=6$: $0<6$ ✓, $6<0$ ✗, $0=6$ ✗, $6=0$ ✗. Only choice 1 is left.',
+        'Why one pair is enough here: a "necessarily true" choice holds for every pair that fits, so a choice that fails for one fitting pair is out.',
+    ],
+    'q-202': [
+        'Shortcut: pick values that fit. $m\\ne0$, so set $m=1$: $1+n^2=1+2n+n^2$, so $n=0$. With $m=1$ and $n=0$, choices 1, 2 and 3 fail ($1\\ne0$, $0\\ne-1$, $1\\ne5$). Only choice 4 holds.',
+    ],
+    'q-172': [
+        'Shortcut: pick values that fit. $a=1$ gives $1=b$. Choice 3 is out, but choices 1 and 2 also give $1$: a tie.',
+        'Tie, so take a second set: $a=0$ gives $0=0$, true for every $b$ (say $b=7$), while choices 1 and 2 give $0$. Two fitting sets give different values of $b$, so $b$ cannot be determined (choice 4).',
+    ],
+    'q-r26-t07-15': [
+        'Shortcut: pick values that fit. $y$ cannot be $0$ (because $xy=24$), so set $y=1$: $x=24$ and $z=8$. Then $\\frac xz=\\frac{24}{8}=3$. One value is asked, so every set of values that fits the given gives that same value. Take the easiest one.',
+    ],
+    'q-199': [
+        'Shortcut: pick values that fit. Set $x=1$ ($x\\ne0$): $\\frac{1}{1+y}=4$, so $1+y=\\frac14$. That is exactly $x+y$, so $x+y=\\frac14$. One value is asked, so every set of values that fits the given gives that same value. Take the easiest one.',
+    ],
+    'q-204': [
+        'Shortcut: pick values that fit. $a$ is any positive number, so set $a=1$: $\\frac{9}{x+4}=\\frac1x$, so $9x=x+4$ and $x=\\frac12$. One value is asked, so every set of values that fits the given gives that same value. Take the easiest one.',
+    ],
+}
+
+
+def practice_methods(M):
+    for qid, lines in PRACTICE_METHODS.items():
+        q = M.q(qid)
+        M.set_q(qid, expl=list(q['explanation']) + lines)
+
+
+_apply_before_practice_methods = apply
+
+
+def apply(M):
+    _apply_before_practice_methods(M)
+    practice_methods(M)   # 2026-10-06 practice: runs last

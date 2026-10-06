@@ -105,3 +105,8 @@ Function `cut_repeats` (runs after `dedupe_examples`). Nothing in topic 17 is re
 
 ## 2026-10-06 new exam methods
 Function `add_methods` (runs last). Card "The number line — ranges and arrows": new table "Signs hidden in the given" (second table, after the powers table): x² < x → 0 < x < 1; x < 2x → x > 0; x/3 > x → x < 0; a < b < 3a → a > 0, so b > 0 — each with the reason. No video changed.
+
+
+## 2026-10-06 practice: new methods
+Nothing added. The one fitting question for "signs hidden in the given" (q-510, 3a < x < a) already uses it as its first step; the range questions already test one number per choice.
+All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 17 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

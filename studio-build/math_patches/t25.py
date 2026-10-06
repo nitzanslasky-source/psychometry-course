@@ -466,7 +466,7 @@ def apply(M):
     # p05: the original "average of 2/3 and 1/6" (restored, Pass 2); the "how many at first" version is q-r26-t25-14
     S('wp25-p05', expl=['$\\frac23=\\frac46$, therefore $\\frac23+\\frac16=\\frac46+\\frac16=\\frac56$.',
                         'The average is half of the sum: $\\frac56\\div2=\\frac5{12}$.'])
-    S('wp25-p07', expl=['Adding Chen did not change the average. Therefore Chen\'s score equals that average: $84$.',
+    S('wp25-p07', expl=['Adding Chen did not change the average. Therefore Chen’s score equals that average: $84$.',
                         'Ava and Ben average $84$, therefore they total $2\\cdot84=168$. Ava: $168-72=96$.'])
     S('wp25-p08', expl=['The middle temperature equals the average: its difference is $0$.',
                         'The differences add up to zero. Therefore the upper temperature is as far above the average as '
@@ -492,8 +492,8 @@ def apply(M):
                         'October and November have $0$.'])
     S('wp25-p16', expl=['Both pairs contain Finn. The two-person averages differ by $11$, therefore the pair totals differ '
                         'by $2\\cdot11=22$.', '$(E+F)-(F+G)=E-G=22$. Ella has $22$ more stickers than Grace.'])
-    S('wp25-p17', expl=['A\'s average: $\\frac{6+6+8+12}{4}=8$. B\'s average: $\\frac{11+13+15+17}{4}=14$.',
-                        'Leaving lowers A\'s average only if the score is above $8$. Joining lowers B\'s average only if the '
+    S('wp25-p17', expl=['A’s average: $\\frac{6+6+8+12}{4}=8$. B’s average: $\\frac{11+13+15+17}{4}=14$.',
+                        'Leaving lowers A’s average only if the score is above $8$. Joining lowers B’s average only if the '
                         'score is below $14$. The only score of A between $8$ and $14$ is $12$.'])
     S('wp25-p18', expl=['Three numbers in each group: an average gap of $3$ is a sum gap of $3\\cdot3=9$.',
                         '$(a+b+14)-(b+c+20)=9$, therefore $a-c-6=9$ and $a-c=15$.'])
@@ -565,7 +565,7 @@ def apply(M):
     P['11'] = ('In 3 years, the average age of four siblings will be 15. Today a baby is born into the family. What is '
                'the average age of the five children today?', ['$9$', '$9.6$', '$12$', '$12.6$'], 2, [
         'In $3$ years every sibling is $3$ years older. Therefore today their average is $15-3=12$.',
-        'Today\'s total: $4\\cdot12=48$. The baby adds $0$: $\\frac{48}{5}=9.6$.',
+        'Today’s total: $4\\cdot12=48$. The baby adds $0$: $\\frac{48}{5}=9.6$.',
         'The trap: $\\frac{4\\cdot15}{5}=12$ forgets that the ages are given for 3 years from now.'])
     P['12'] = ('In a class, 10 students have an average score of 60, 15 students have an average of 80, and 25 students '
                'have an average of 72. What is the average score of the whole class?',
@@ -622,6 +622,7 @@ def apply(M):
                     b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (q['id'], q['stem'])
     cut_repeats(M)
     add_methods(M)
+    practice_methods(M)   # 2026-10-06 practice: new methods (runs last)
 
 
 def _b(label, tex, size=42):
@@ -926,3 +927,28 @@ def add_methods(M):
     k = next(i for i, t in enumerate(c['tips']) if t.startswith('Letter answers? Plug in all values equal'))
     c['tips'].insert(k + 1, '"Not necessarily equal to the average"? Equal numbers catch nothing — every choice '
                             'equals the average. Use uneven numbers, like $0, 0, 0, 4$ (average $1$).')
+
+
+# =====================================================================================
+# 2026-10-06 practice: new methods (runs LAST). Extra method lines appended to practice
+# explanations, using the course names of the 2026-10-06 methods.
+# =====================================================================================
+
+def _pm_add(M, qid, lines):
+    """Append extra-method lines to a PRACTICE question explanation (existing lines kept)."""
+    sec = M.section_of(qid)
+    assert sec.endswith("-practice"), (qid, sec)
+    ex = list(M.q(qid).get("explanation") or [])
+    if any(l in ex for l in lines): return
+    M.set_q(qid, expl=ex + list(lines))
+
+
+def practice_methods(M):
+    _pm_add(M, 'wp25-p23', [r'Method 2 · Percent shares as weights: the project has $1$ of the $4$ weights ($25\%$). Average $=$ low $+$ share $\times$ difference $=68+\frac14\cdot24=74$.'])
+    _pm_add(M, 'wp25-p27', [r'Method 2 · Percent shares as weights, backwards: $6=4+\text{share}\cdot(9-4)$, therefore the share of 9-credit notebooks is $\frac25$. $\frac25\cdot30=12$.'])
+    _pm_add(M, 'wp25-p19', [r'Method 2 · Percent shares as weights: $72=54+\text{share}\cdot(84-54)$, therefore the expensive share is $\frac{18}{30}=\frac35$ and the cheap share is $\frac25$. The ratio is $3:2$.'])
+    _pm_add(M, 'wp25-p02', [r'Method 2 · Percent shares as weights: $70=64+(\text{share of B})\cdot18$, therefore Team B is $\frac13$ of all the members and Team A is $\frac23$. Team A has more members.'])
+    _pm_add(M, 'q-r26-t25-11', [r'"In $t$ years": in $3$ years the four siblings total $4\cdot15=60$. A group’s total grows by $t\times$ the number of people: $3\cdot4=12$. Today they total $60-12=48$. With the baby: $\frac{48}{5}=9.6$.'])
+    _pm_add(M, 'wp25-p20', [r'Method 2 · Percent shares as weights: average $=76+(\text{share of the }y\text{ members})\cdot15$, and that share is $\frac{y}{x+y}=\frac{1}{\frac xy+1}$. It depends only on $\frac xy$.'])
+    _pm_add(M, 'wp25-p16', [r'Shortcut · Pick values that fit: one fact and three unknown counts. The question expects one answer, therefore any counts that fit give it. Finn $=0$ and Grace $=0$: Finn and Grace average $0$, therefore Ella and Finn average $11$, and Ella $=22$. $22-0=22$.'])
+    _pm_add(M, 'wp25-p04', [r'Shortcut · Pick values that fit: the answer must work for all values, therefore take $a=b=c=d=1$. Then $S=4$ and $u=v=1$, with average $1=\frac S4$. The other choices give $\frac12$, $2$ and $8$.'])

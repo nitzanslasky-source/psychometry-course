@@ -1210,3 +1210,32 @@ def pen_or_click(M):
         'Write "x = 10,  x − y = 8" and circle choice 3':
             [A('x = 10, x − y = 8 appears', T(r'$x=10,\quad x-y=8$', size=S)), D('Circle choice 3')],
     }, room=['Write "x/y = 5 → x = 5y"'])
+
+
+# =====================================================================================
+# 2026-10-06 practice: the new exam methods as an extra method in PRACTICE explanations
+# (append only; the existing worked solution stays as it is). Runs last.
+# =====================================================================================
+PRACTICE_METHODS = {
+    'q-r26-t06-16': [
+        'Shortcut: pick values that fit. One equation, two letters, one value asked. Set $y=0$: $3x=5$, so $x=\\frac53$, and $6\\cdot\\frac53+1=11$.',
+        'A second set, $x=1$ and $y=-1$, gives $6+4+1=11$ again. So the value does not depend on the choice, and "cannot be determined" is out. One value is asked, so every set of values that fits the given gives that same value. Take the easiest one.',
+    ],
+    'q-r26-t06-14': [
+        'Shortcut: pick values that fit. $y\\ne0$, so set $y=1$ and solve: $\\frac{x+1}{x-1}=3$, so $x+1=3x-3$ and $x=2$. Then $\\frac xy=2$. One value is asked, so every set of values that fits the given gives that same value. Take the easiest one.',
+    ],
+}
+
+
+def practice_methods(M):
+    for qid, lines in PRACTICE_METHODS.items():
+        q = M.q(qid)
+        M.set_q(qid, expl=list(q['explanation']) + lines)
+
+
+_apply_before_practice_methods = apply
+
+
+def apply(M):
+    _apply_before_practice_methods(M)
+    practice_methods(M)   # 2026-10-06 practice: runs last

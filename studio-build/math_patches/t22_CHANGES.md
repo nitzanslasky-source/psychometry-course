@@ -119,3 +119,10 @@ Function `cut_repeats` (runs last). Each lesson is back to a short intro like th
   - `r26-t22-shortcuts` Shortcuts Ahead (0.3 min): title "Advanced questions: general problems." + slide "No formula here": "Not motion, not percents, not work — no formula to guide you."; board "Build an equation · or understand and calculate"; each question shows a shortcut — try it first. (Hebrew B45.) Q14 `solve-wp22-g042` lost its now-duplicate opening line "Advanced general problems. No single formula here…".
   - `r26-t22-exam-tools`: removed the slide-2 line "Last tool: knowing when you CAN'T find the answer." (the title already says it, and it is now the only tool in the lesson).
 - After the follow-up: **net −11.6 min** for topic 22 (was −12.3).
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last in `apply`). One extra line is added at the end of each written solution; the existing lines are kept. The flip rule, arrow map and other new methods are taught in topic 23 and later, so they are not used here. Pick values that fit (topic 51 Case 4) comes later, so it is written as a self-contained "Shortcut" with its one-line reason. Nothing is recorded.
+- `q-r26-t22-17` (4n + 6p = 50 → 6n + 9p): Shortcut · Pick values that fit: p = 0 → n = 12.5 → 6 · 12.5 = 75.
+- `wp22-p29` (brushes, cannot be determined): Pick values that fit: B = 24 and B = 48 both fit → not fixed.
+- `wp22-p18` (2 × 2 grid, rows and columns equal): Pick values that fit: a = 1, b = 2, c = 2, d = 1 rules out choices 1–3.
+- Every line checked in python. Check: `math_check.py 22 32` → 0 / 0 / 0.

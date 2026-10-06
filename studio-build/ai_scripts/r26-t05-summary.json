@@ -46,6 +46,10 @@
    "And only numbers in the choices? Then one legal substitution is enough."
   ],
   [
+   "Letters in the choices? Count the powers first. Multiplying adds, dividing subtracts, and a number in front counts as zero.",
+   "The answer has the question's power. So a different power, or a mixed one, is out. And a plug-in tie? Check the powers first."
+  ],
+  [
    "Okay, before you start, always ask yourself these questions.",
    "And the traps: cancelling a denominator, splitting a sum on the bottom, and a lost minus before a bracket.",
    "Now it's your turn. Good luck."

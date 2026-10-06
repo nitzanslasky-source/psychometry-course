@@ -157,6 +157,7 @@ def apply(M):
     _summary(M)
     cut_repeats(M)
     add_methods(M)   # 2026-10-06 new exam methods (runs last)
+    practice_methods(M)   # 2026-10-06 practice: new methods (runs last)
 
 
 # ------------------------------------------------------------------------------------------------
@@ -878,3 +879,26 @@ def add_methods(M):
     sb = list(v['hybrid']['sidebar'])
     M.set_sidebar(vid, sb[:k - 2] + ['Which door?'] + sb[k - 2:])
     v['beats'][k]['active'] = k - 1   # "Before you practice" moves down one
+
+
+# =====================================================================================
+# 2026-10-06 practice: new methods (runs LAST). Extra method lines appended to practice
+# explanations, using the course names of the 2026-10-06 methods.
+# =====================================================================================
+
+def _pm_add(M, qid, lines):
+    """Append extra-method lines to a PRACTICE question explanation (existing lines kept)."""
+    sec = M.section_of(qid)
+    assert sec.endswith("-practice"), (qid, sec)
+    ex = list(M.q(qid).get("explanation") or [])
+    if any(l in ex for l in lines): return
+    M.set_q(qid, expl=ex + list(lines))
+
+
+def practice_methods(M):
+    _pm_add(M, 'q-r26-t29-11', [r'Door: SYMMETRY — no pair of students is special. There are $\frac{10\cdot9}{2}=45$ pairs, the committee holds $3$ of them, and every pair has the same chance: $\frac{3}{45}=\frac1{15}$.'])
+    _pm_add(M, 'wp29-p22', [r'Door: COUNT — every pair of tokens is equally likely: $\frac{9\cdot8}{2}=36$ pairs, and $5\cdot4=20$ of them have one red and one blue token. $\frac{20}{36}=\frac59$.'])
+    _pm_add(M, 'q-r26-t29-08', [r'Door: COUNT — all $\frac{5\cdot4}{2}=10$ pairs of tickets are equally likely. Pairs with no winner: $\frac{3\cdot2}{2}=3$. Pairs with a winner: $10-3=7$. $P=\frac7{10}$.'])
+    _pm_add(M, 'wp29-p21', [r'Door: COUNT — $36$ equally likely pairs. A six on the first dice: $6$ pairs. A six on the second: $6$ pairs. The pair (6, 6) is in both: $6+6-1=11$. $P=\frac{11}{36}$.'])
+    _pm_add(M, 'wp29-p10', [r'Door: PATH, not COUNT — the $22$ tokens are not equally likely. Each token in bag A has $\frac12\cdot\frac1{12}=\frac1{24}$, and each token in bag B has $\frac12\cdot\frac1{10}=\frac1{20}$. That is why pouring the bags together ($\frac5{11}$) is wrong.'])
+    _pm_add(M, 'wp29-p16', [r'Door: COUNT — $8$ dice results times $8$ coin sequences: $64$ equally likely outcomes. Good ones: coin sum $2$ ($3$ sequences) with dice $1$: $3$. Coin sum $3$ ($1$ sequence) with dice $1$ or $2$: $2$. $P=\frac{3+2}{64}=\frac5{64}$.'])

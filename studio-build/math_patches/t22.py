@@ -834,6 +834,7 @@ def apply(M):
     _fix_sidebars(M)
     summary(M)
     cut_repeats(M)
+    practice_methods(M)   # 2026-10-06 practice: new methods (runs last)
 
 
 # =====================================================================================
@@ -1211,3 +1212,23 @@ def cut_repeats(M):
 
     # Three Exam Tools: slide 2 opened with "Last tool:" though it is now the only one here
     M.edit_lines('r26-t22-exam-tools', 2, lambda ls: [l for l in ls if not (l.get('say') or '').startswith('Last tool:')])
+
+
+# =====================================================================================
+# 2026-10-06 practice: new methods (runs LAST). Extra method lines appended to practice
+# explanations. Pick values that fit is taught later (topic 51 Case 4) -> self-contained shortcut with its why.
+# =====================================================================================
+
+def _pm_add(M, qid, lines):
+    """Append extra-method lines to a PRACTICE question explanation (existing lines kept)."""
+    sec = M.section_of(qid)
+    assert sec.endswith("-practice"), (qid, sec)
+    ex = list(M.q(qid).get("explanation") or [])
+    if any(l in ex for l in lines): return
+    M.set_q(qid, expl=ex + list(lines))
+
+
+def practice_methods(M):
+    _pm_add(M, 'q-r26-t22-17', [r'Shortcut · Pick values that fit: one equation and two prices, but the question expects one answer, therefore any prices that fit the equation give it. Take $p=0$: $4n=50$ and $n=12.5$. Then $6n+9p=6\cdot12.5+0=75$ ✓.'])
+    _pm_add(M, 'wp22-p29', [r'Shortcut · Pick values that fit: $B=24$ gives $3$ and $1$ brushes per artist ✓, and $B=48$ gives $6$ and $2$ ✓. Two different numbers fit everything, therefore it cannot be determined.'])
+    _pm_add(M, 'wp22-p18', [r'Shortcut · Pick values that fit: two equations and four letters, therefore numbers that fit the givens are enough to test the choices. $a=1$, $b=2$, $c=2$, $d=1$: rows $1+2=2+1$ ✓, columns $1+2=2+1$ ✓. Choice 1: $1=2$ ✗. Choice 2: $ad=1$ but $bc=4$ ✗. Choice 3: $a+d=2$ but $b+c=4$ ✗. Only choice 4 is left.'])

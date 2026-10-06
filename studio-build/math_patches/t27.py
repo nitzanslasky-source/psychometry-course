@@ -984,6 +984,7 @@ def apply(M):
                     b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, stem)
     cut_repeats(M)
     add_methods(M)   # 2026-10-06 new exam methods (runs last)
+    practice_methods(M)   # 2026-10-06 practice: new methods (runs last)
 
 
 # =====================================================================================
@@ -1199,3 +1200,23 @@ def add_methods(M):
     rows.append(['Two things change', 'table Speed · Distance · Time, distance in the middle $\\to$ the V',
                  'A: $3$, $90$, $1$ · B: $1$, $?$, $2$ $\\to$ $\\frac{1\\cdot90\\cdot2}{3\\cdot1}=60$'])
     c['tips'].insert(1, '"$x$ times slower / smaller" $=\\div x$: A is $3$ times slower than B $\\to$ A\'s speed $=$ B\'s $\\div3$.')
+
+
+# =====================================================================================
+# 2026-10-06 practice: new methods (runs LAST). Extra method lines appended to practice
+# explanations, using the course names of the 2026-10-06 methods.
+# =====================================================================================
+
+def _pm_add(M, qid, lines):
+    """Append extra-method lines to a PRACTICE question explanation (existing lines kept)."""
+    sec = M.section_of(qid)
+    assert sec.endswith("-practice"), (qid, sec)
+    ex = list(M.q(qid).get("explanation") or [])
+    if any(l in ex for l in lines): return
+    M.set_q(qid, expl=ex + list(lines))
+
+
+def practice_methods(M):
+    _pm_add(M, 'wp27-p02', [r'Method 2 · The V in motion: table Speed · Distance · Time, rows $(1, d, t)$ and $(3, ?, 2t)$. The blank is in the middle → upside-down V: $?=\frac{3\cdot2t\cdot d}{1\cdot t}=6d$.'])
+    _pm_add(M, 'wp27-p12', [r'Method 2 · Compare by factors, evening against morning: distance $\times\frac{2.4}{1.8}=\frac43$ (same way); speed $\times\frac12$ (opposite → flip to $2$). Evening: $30\cdot\frac43\cdot2=80$ minutes, and $30+80=110$.'])
+    _pm_add(M, 'wp27-p21', [r'Method 2 · Percent shares as weights (the weights are the hours): $3$ of the $5$ hours ($60\%$) are at $8$ kph and $40\%$ at $12$ kph. Average $=8+0.4\cdot4=9.6$ kph.'])

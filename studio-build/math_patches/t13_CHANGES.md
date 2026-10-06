@@ -137,3 +137,11 @@ Function `add_methods` (runs last, after `cut_repeats`). Nothing in topic 13 is 
 - **New guided question q-r26-t13-15** (now Question 13): a² + b² = 2ab + 9, necessarily true? a − b = 3 · a > b · |a − b| = 3 · a + b = 3 → choice 3. Solution video `solve-q-r26-t13-15` (2.1 min): Method 1 mirror test (swap kills 1, 2; flip kills 4), Method 2 algebra (a − b)² = 9, trap a = 0, b = 3. Checked by computer over a grid of values: only choice 3 always holds. Later guided questions shift by one (renumbered automatically); the "Question N" sidebars of the advanced group now include it.
 - Question 16 (q-368, |x + 3y| = |3x + y|): one line at the end of its plug-in method — the swap mirror kills choices 3 and 4 with no numbers.
 - Card "Absolute value — rules to know", Sign clues: new row "the given does not change when you flip all signs or swap the letters → a choice that turns into its opposite is not necessarily true".
+
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last; append only). 3 practice questions.
+- Method 2 · Mirror test: q-r26-t13-14 (|a − b| = |a| + |b|: swap kills 1, 2; flip kills 4 → ab < 0, no numbers), q-381 (PQ < 0, P/Q < Q/P: flip kills 2, 3, 4 → |Q| < |P|). Both checked by computer over a grid of values.
+- Method 2 · The most precise range: q-375 (a = −5 kills 2, 3; a = −20 kills 4).
+- Not used: q-374/q-371 (only a one-letter flip leaves the given unchanged — not one of the two taught mirrors), q-382 (given not a mirror), q-379 (every choice survives).
+All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 13 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

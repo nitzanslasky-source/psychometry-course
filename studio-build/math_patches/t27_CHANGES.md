@@ -158,3 +158,10 @@ Function `add_methods` (runs last). Nothing in topic 27 is recorded (checked ~/D
 - **Speed Ratios (`wp-110`)**: new slide 7 "Two things change? The V" (sidebar "Two things change"): A 3× as fast as B for half as long, A covers 90 km → rows (3, 90, 1) and (1, ?, 2) → upside-down V → 1·90·2 ÷ (3·1) = 60 km, with the "why" and a sense check. The closing line moved to the new slide and now says "Three questions next". Video 1.8 → 3.0 min.
 - **New guided question `q-r26-t27-31`** (Question 6, right after Q5; later guided questions renumber automatically) + solution video `solve-q-r26-t27-31` (1.4 min): van goes 3× as far at 1.5× the speed, scooter 40 min → V: 1·3·40 ÷ (1·1.5) = **80** (choice 2); Method 2 by factors 40 × 3 × 2/3. Traps 180 (speed not flipped), 120 (speed ignored), 20. The "Question N" sidebar of the learn guided group now has one more entry.
 - **Card `mem-motion`**: Ratios table row "Two things change → table Speed · Distance · Time, distance in the middle → the V (A: 3, 90, 1 · B: 1, ?, 2 → 60)"; new tip "\"x times slower / smaller\" = ÷ x: A is 3 times slower than B → A's speed = B's ÷ 3".
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last in `apply`). One extra line is added at the end of each written solution; the existing lines are kept. Nothing is recorded. Most one-change questions (wp27-p05, p06, q-r26-t27-15, q-r26-t27-16) already say "same distance: the times flip", and the chases already use gap ÷ difference, so they were not given a duplicate line. No practice question says "x times slower".
+- `wp27-p02` (d in t hours → 3× speed, 2t hours): Method 2 · The V in motion: rows (1, d, t), (3, ?, 2t) → 3 · 2t · d ÷ (1 · t) = 6d.
+- `wp27-p12` (swimmer, evening at half speed): Method 2 · Compare by factors: 30 · 4/3 · 2 = 80 → 110 minutes.
+- `wp27-p21` (2 h at 12 kph, 3 h at 8 kph): Method 2 · Percent shares as weights (by hours): 8 + 0.4 · 4 = 9.6.
+- Every line checked in python. Check: `math_check.py 27 32` → 0 / 0 / 0.

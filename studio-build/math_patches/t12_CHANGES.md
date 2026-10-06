@@ -139,3 +139,10 @@ Function `add_methods` (runs last).
 - **New guided q-r26-t12-13** (Question 11; the old 11–20 become 12–21) after the sign-table question: Given x² + 3x < 10, the most precise range? Choices x < 2 · −2 < x < 5 · −5 < x < 2 · x > −5 → **3**. x = 3 fails → 2 and 4 out; x = −6 fails → 1 out. Method 2: two moves (endpoints −5 and 2, x = 0 works). Advanced sidebar extended to 13 questions.
 - Card "Inequality rules", Types: two new first rows ("For which values of x?" two moves; "The most precise range" test rule).
 - Card "Inequality traps": new row "Range of a/b (all positive)": smallest top ÷ largest bottom, largest top ÷ smallest bottom; 2 < a < 6, 1 < b < 3 ⇒ 2/3 < a/b < 6.
+
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last; append only). 6 practice questions.
+- Method 2 · Two moves: alg-extra-unit-t12-3-1 (−3x > 9 → endpoint −3, x = 0 false → x < −3), q-346 (a + 4 < a/2 → endpoint −8, a = 0 false → a < −8).
+- Method 2 · The most precise range: q-355 (x = 2 kills 1, 3; x = ½ kills 4), q-354 (n = 1 kills 2, 4; n = −1 kills 1), q-353 (x = −4 alone kills 1–3), q-r26-t12-06 (x² = 0 kills 1; x² = 12.25 kills 3, 4).
+All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 12 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

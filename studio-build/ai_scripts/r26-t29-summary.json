@@ -49,6 +49,16 @@
    "Letters in the choices? Plug in small numbers. But first check that the four choices come out different."
   ],
   [
+   "So, before you practice... pick the door first.",
+   "Door one, count. Every outcome is equally likely and easy to list, like dice, or a bag. Wanted over all.",
+   "Two dice, sum seven? Six pairs out of thirty-six.",
+   "Door two, path. The story happens in steps. You multiply along the path. And several paths to what you want? Add them.",
+   "Three fifths, then two quarters, because one red is already gone. That's three tenths.",
+   "Door three, symmetry. Nobody is special, so the chance splits equally.",
+   "Dana is last with a chance of one fifth. First, or third... it's the same. No counting at all.",
+   "Three doors. And well, most of the exam's probability questions go through one of them."
+  ],
+  [
    "So, before you start, always ask yourself these questions.",
    "And the traps: adding when you should use one minus none, pouring two bags together, and giving the complement instead of what they asked.",
    "Okay, now it's your turn. Good luck."

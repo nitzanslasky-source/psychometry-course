@@ -88,3 +88,9 @@ Function `cut_repeats` (runs last). The two lessons added this month go back to 
 Function `add_methods` (runs last). Card only, no video change.
 - **Card `mem-overlap`**, new tip after "Percents? Stay in percent…": "No total given? Look for a natural one: 24 hours, 7 days, 100%. Awake 18 hours, at work 10 hours → both for at least 18 + 10 − 24 = 4 hours." (the hidden total; 1 real exam question). Teacher guide: scratchpad `guide/t23-t25.md`.
 - Check: `math_check.py 24 32` → 0 / 0 / 0.
+
+## 2026-10-06 practice: new methods
+Function `practice_methods` (runs last in `apply`). One extra line is added at the end of each written solution; the existing lines are kept. Nothing is recorded. Few questions fit: most practice questions give the total, and the topic 23 methods do not fit overlap questions.
+- `wp24-p08` (Spanish 3/4, Italian 5/8, everyone at least one): Hidden total: the whole club = 1 → 3/4 + 5/8 − 1 = 3/8 (exact, since nobody is in neither).
+- `wp24-p05` (which overlap is forced): Hidden total: the whole town = 1 → under 50 and pets overlap by at least 4/5 + 2/5 − 1 = 1/5.
+- Every line checked in python. Check: `math_check.py 24 32` → 0 / 0 / 0.
