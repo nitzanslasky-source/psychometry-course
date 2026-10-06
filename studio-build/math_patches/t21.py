@@ -1408,7 +1408,7 @@ def rn_guided_adv(M):
         "Remember the chip — two or six? The totals jump by four: fourteen, eighteen, twenty-two. Plenty of holes.",
         "Fixed jumps leave holes. No holes only when you can move by one.",
     ]], intro=[('The boxes again — the same question as Question eight, with the same numbers.',
-                'Stickers this time — the same type as Question eight, with new numbers.')])
+                'Stickers this time — the same type as the apple baskets, with new numbers.')])
 
     # ---------- g023: 58 files, double, -16 at day end, day 3 before deletion -> 368  ==>  40 bacteria, -30 -> 140
     _rn_q(M, 'wp21-g023', 'A lab dish has 40 bacteria at the start of day 1. During each day the number of bacteria doubles, and at '
