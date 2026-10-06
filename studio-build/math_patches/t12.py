@@ -999,36 +999,39 @@ def add_methods(M):
         if v['topic'] == TOPIC and (v.get('hybrid') or {}).get('sidebar') == ADV_SIDEBAR:
             M.set_sidebar(v['id'], ADV_SB)
     g = 'q-r26-t12-13'
-    M.new_q(g, TOPIC, 'Given: $x^2+3x<10$. Which of the following is the most precise range for $x$?',
-            ['$x<2$', '$-2<x<5$', '$-5<x<2$', '$x>-5$'], 3, [
+    # review 2026-10-06: no trinomial (teacher: quadratic trinomials are not worth it) -> a two-sided linear range
+    M.new_q(g, TOPIC, 'Given: $-7\\le3-2x<5$. Which of the following is the most precise range for $x$?',
+            ['$x\\le5$', '$-5\\le x<1$', '$-1<x\\le5$', '$x>-1$'], 3, [
         'Test numbers that some choices contain and others leave out.',
-        '$x=3$: $9+9=18<10$ ✗. $3$ fails, so every choice that contains $3$ is wrong: choices 2 and 4 are out.',
-        '$x=-6$: $36-18=18<10$ ✗. $-6$ fails, so choice 1 (it contains $-6$) is out. The answer is choice 3.',
-        'Two moves: the endpoints solve $x^2+3x=10$, that is $(x+5)(x-2)=0$, so $x=-5$ or $x=2$. $x=0$ gives $0<10$ ✓, so the answer is the part between them: $-5<x<2$.'])
+        '$x=-3$: $3-2\\cdot(-3)=9$, and $9<5$ ✗. $-3$ fails, so every choice that contains $-3$ is wrong: choices 1 and 2 are out.',
+        '$x=6$: $3-12=-9$, and $-7\\le-9$ ✗. $6$ fails, so choice 4 (it contains $6$) is out. The answer is choice 3.',
+        'Two moves: the endpoints solve $3-2x=5$ and $3-2x=-7$, so $x=-1$ and $x=5$. $x=0$ gives $-7\\le3<5$ ✓, so the answer is the part between them: $-1<x\\le5$ ($x=5$ gives $-7\\le-7$ ✓, $x=-1$ gives $5<5$ ✗).',
+        'Choice 2 is the trap: the right endpoints with the wrong signs ($-2x<2$ gives $x>-1$, not $x<1$).'])
     M.place_q(g, ADV, after='solve-q-r26-t12-02')
     _old, ADV_SIDEBAR = ADV_SIDEBAR, ADV_SB
     _solution(M, g, ["Question twenty-one.", "Choices that are ranges, and they want the most precise one. Test numbers."], [
         ('Method 1 · Test a number', [
             "The cue: four ranges in the choices, and the words \"most precise range\".",
             "The rule: a number that works must be inside the answer. A number that fails must be outside it.",
-            "So pick numbers where the choices disagree. Three: choices two and four contain it, choices one and three don't.",
-            D('Write "x = 3: 9 + 9 = 18 < 10 ✗"'),
-            "Three squared is nine, plus nine: eighteen. Less than ten? No. Three fails.",
-            D('Cross out choices 2 and 4'),
-            "So the answer can't contain three. Choices two and four contain it. Both out.",
-            "Choices one and three disagree about negative six: choice one contains it, choice three doesn't.",
-            D('Write "x = −6: 36 − 18 = 18 < 10 ✗"'),
-            "Negative six squared: thirty-six. Minus eighteen: eighteen. Less than ten? No. It fails.",
-            D('Cross out choice 1 and circle choice 3'),
-            "Choice one contains negative six — out. Choice three. We never solved anything."]),
+            "So pick numbers where the choices disagree. Negative three: choices one and two contain it, choices three and four don't.",
+            D('Write "x = −3: 3 + 6 = 9 < 5 ✗"'),
+            "Three minus two times negative three: three plus six, nine. Less than five? No. Negative three fails.",
+            D('Cross out choices 1 and 2'),
+            "So the answer can't contain negative three. Choices one and two contain it. Both out.",
+            "Choices three and four disagree about six: choice four contains it, choice three doesn't.",
+            D('Write "x = 6: 3 − 12 = −9 ≥ −7 ✗"'),
+            "Three minus twelve: negative nine. Is it at least negative seven? No. It fails.",
+            D('Cross out choice 4 and circle choice 3'),
+            "Choice four contains six — out. Choice three. We never solved anything."]),
         ('Method 2 · Two moves', [
             "The two-move way gives the same answer.",
-            D('Write "x² + 3x = 10 → (x + 5)(x − 2) = 0 → x = −5, x = 2"'),
-            "Endpoints: pretend it's equals. Two numbers with product negative ten and sum three: five and negative two. x is negative five or two.",
-            D('Write "x = 0: 0 < 10 ✓ → −5 < x < 2"'),
-            "Direction: test zero. Zero is less than ten — it works. Zero is between the endpoints, so the answer is the part between them.",
-            "Negative five less than x less than two. Choice three.",
-            "Choice two is the trap: the endpoints with the wrong signs."]),
+            D('Write "3 − 2x = 5 → x = −1;  3 − 2x = −7 → x = 5"'),
+            "Endpoints: pretend each side is equals. Three minus two x is five: x is negative one. Three minus two x is negative seven: x is five.",
+            D('Write "x = 0: −7 ≤ 3 < 5 ✓ → −1 < x ≤ 5"'),
+            "Direction: test zero. Negative seven, three, five — it works. Zero is between the endpoints, so the answer is the part between them.",
+            "Five is allowed — three minus ten is exactly negative seven. Negative one isn't — five is not less than five.",
+            "Negative one less than x, x at most five. Choice three.",
+            "Choice two is the trap: the endpoints with the wrong signs. Minus two x less than two means x is greater than negative one."]),
     ])
     ADV_SIDEBAR = _old
 
@@ -1094,3 +1097,661 @@ _apply_before_practice_methods = apply
 def apply(M):
     _apply_before_practice_methods(M)
     practice_methods(M)   # 2026-10-06 practice: runs last
+
+
+# =====================================================================================================================
+# 2026-10-06 renumber pass: the English course must not look like the Hebrew one. Every Hebrew-derived question
+# (guided q-322 ... q-337, practice q-338 ... q-357) gets new numbers / letters - same idea, same trap, same methods -
+# and every guided solution video is rewritten to match. The Hebrew lesson examples get new numbers too.
+# Practice clean-up: extra warm-ups down to 3, September items kept only where the Hebrew practice lacks the type.
+# Nothing in topic 12 is recorded (checked ~/Documents/Course.recordings on 2026-10-06). Runs last.
+# =====================================================================================================================
+def renumber(M):
+    from math_api import rich_plain
+    RECORDED = set()
+
+    def S(qid, **kw):
+        if qid in RECORDED: return
+        q = M.set_q(qid, **kw)
+        for v in M.D['videos'].values():   # keep any pre-loaded copy of the choices in sync
+            for b in v.get('beats', []):
+                for it in b.get('items', []):
+                    if it.get('k') == 'q' and it.get('qid') == qid and 'choices' in it:
+                        it['choices'] = list(q['choicesRich']); M.touched_videos.add(v['id'])
+
+    def video(qid, slides):
+        if qid in RECORDED: return
+        vid = 'solve-' + qid
+        for n, x in slides.items():
+            title, script = x if isinstance(x, tuple) else (None, x)
+            M.set_slide(vid, n, title=title, script=script)
+        v = M.video(vid); v['title'] = v['navLabel'] = rich_plain(M.q(qid)['stemRich']).replace('\n', ' ')
+        M.touched_videos.add(vid)
+
+    def item(vid, n, k):
+        return dict(M.slide(vid, n)['items'][k])
+
+    # ---------------- lesson "Inequalities": the Hebrew lesson's own examples -> new numbers, same points
+    if 'inequalities' not in RECORDED:
+        L = 'inequalities'
+        _dd_sub(M, L, 2, [('$x\\le5$', '$x\\le4$'), ('x ≤ 5 appears', 'x ≤ 4 appears'),
+                          ('x less than or equal to five: x can be five itself', 'x less than or equal to four: x can be four itself'),
+                          ('Next to x ≤ 5 write "5, 4.5, 3, −7 ✓"', 'Next to x ≤ 4 write "4, 3.5, 1, −6 ✓"'),
+                          ('Five. Four and a half. Three. Negative seven. All fine.', 'Four. Three and a half. One. Negative six. All fine.'),
+                          ('Put dots on −8 and −3, and write "−8 < −3" above them', 'Put dots on −7 and −2, and write "−7 < −2" above them'),
+                          ("Negative eight is less than negative three — it's farther left.", "Negative seven is less than negative two — it's farther left.")])
+        _dd_sub(M, L, 3, [('$x+5<14$', '$x+6<11$'), ('Write "−5" under both sides', 'Write "−6" under both sides'),
+                          ('Take five from both sides.', 'Take six from both sides.'), ('Write "x < 9"', 'Write "x < 5"'),
+                          ("x is less than nine. The sign didn't move.", "x is less than five. The sign didn't move.")])
+        _dd_sub(M, L, 4, [('$-12<-4$', '$-10<-2$'),
+                          ("Negative twelve is less than negative four. True — it's farther left.",
+                           "Negative ten is less than negative two. True — it's farther left."),
+                          ('Write "÷(−4)" under both sides, then "3 > 1"', 'Write "÷(−2)" under both sides, then "5 > 1"'),
+                          ("Divide both sides by negative four: three and one.", "Divide both sides by negative two: five and one."),
+                          ('Move each number to the other side: write "4 < 12"', 'Move each number to the other side: write "2 < 10"'),
+                          ('Negative four goes left and becomes four. Negative twelve goes right and becomes twelve.',
+                           'Negative two goes left and becomes two. Negative ten goes right and becomes ten.'),
+                          ('−12 < −4 appears again below', '−10 < −2 appears again below'),
+                          ('Write "÷4" and then "1 < 3"', 'Write "÷2" and then "1 < 5"'),
+                          ('Divide by four: one is less than three. Same answer — three greater than one',
+                           'Divide by two: one is less than five. Same answer — five greater than one')])
+        for it in M.slide(L, 4)['items']: assert '-12' not in it.get('t', '')
+        for n in (3, 4): M.slide(L, n)['loads'] = ''   # the canvas description is rebuilt from the new items
+    # cards: examples that were the Hebrew questions' numbers
+    rows = M.card('mem-inequalities')['tables'][1]['rows']
+    k = next(i for i, r in enumerate(rows) if r[0] == '$x^2>a$')
+    rows[k] = ['$x^2>a$', '$x>\\sqrt a$ or $x<-\\sqrt a$ (outside the roots). Example: $x^2\\ge81 \\Rightarrow x\\ge9$ or $x\\le-9$']
+    rows = M.card('mem-r26-t12-traps')['tables'][1]['rows']
+    k = next(i for i, r in enumerate(rows) if r[0].startswith('Product or fraction'))
+    rows[k][2] = '$x(2-x)>0 \\Rightarrow 0<x<2$'
+
+    # ============================== guided questions (Questions 1-8, then the advanced set)
+    # q-322: 3 + x < 15 + 3x -> -6 < x (key 3)
+    S('q-322', stem='Given: $4+x<18+3x$. For which values of $x$ does the inequality hold?',
+      choices=['$7<x$', '$-7<x$', '$14<x$', '$4<x$'], correct=2, expl=[
+        'Move the $x$ terms to the side with more $x$ (the right): $4-18<3x-x$, so $-14<2x$.',
+        'Divide by $2$ (positive, so no flip): $-7<x$.',
+        'Check: $x=0$ gives $4<18$ ✓, and only choice (2) includes $0$.',
+        'Two moves: endpoint $4+x=18+3x$ gives $x=-7$; direction: $x=0$ works, and $0$ is above $-7$, so $-7<x$.'])
+    tip = item('solve-q-322', 2, 1)
+    video('q-322', {
+        2: ["Same moves as an equation. But I want x to stay positive.",
+            A("'Move x to the side with MORE x' appears", tip),
+            "The tip: move x to the side where there are MORE x's. Then x stays positive, and nothing flips.",
+            "The right side has three x, the left has one x. So the x's go RIGHT.",
+            D('Write "4 − 18 < 3x − x"'),
+            "x moves right, eighteen moves left.",
+            D('Write "−14 < 2x"'),
+            "Negative fourteen is less than two x.",
+            D('Write "÷ 2" and then "−7 < x"'),
+            "Divide by two — positive, nothing flips. x is greater than negative seven.",
+            D('Circle choice 2'),
+            "Choice two.",
+            "The other way, you'd get negative two x, divide by a minus and flip. Same answer — just more chances to slip."],
+        3: ["Now the same question in two moves — the way that works on every range question.",
+            D('Write "Endpoint: 4 + x = 18 + 3x → −14 = 2x → x = −7"'),
+            "Move one, the endpoint. Pretend it's an equals sign: four plus x equals eighteen plus three x. Negative fourteen equals two x. x is negative seven.",
+            "The answer must start at negative seven. Choices one, three and four start at seven, fourteen and four. They're already out.",
+            D('Write "Direction: x = 0: 4 < 18 ✓ → −7 < x"'),
+            "Move two, the direction. Test zero: four is less than eighteen. True. So zero is in the answer — and zero is above negative seven.",
+            D('Circle choice 2'),
+            "x is greater than negative seven. Choice two — and nothing ever had to flip."]})
+
+    # q-323: 3(4 - 3x) - 7 < 8 - 9x -> 5 < 8, any value (key 4)
+    S('q-323', stem='Given: $5(2-3x)-4<7-15x$. For which values of $x$ does the inequality hold?',
+      choices=['$0$', '$6$', 'Any value', '$1$'], correct=3, expl=[
+        'Open the brackets: $10-15x-4<7-15x$, so $6-15x<7-15x$.',
+        'Add $15x$ to both sides: $6<7$. The $x$ is gone, and $6<7$ is always true.',
+        'Therefore the inequality holds for every value of $x$.'])
+    video('q-323', {
+        2: ["First, open the brackets.",
+            D('Write "10 − 15x − 4 < 7 − 15x"'),
+            "Five times two is ten. Five times negative three x is negative fifteen x. Then minus four.",
+            D('Cross out −15x on both sides, then write "6 < 7"'),
+            "Minus fifteen x on both sides — they cancel. Ten minus four is six. Six less than seven.",
+            "Is six less than seven? Always. x is gone — it doesn't matter.",
+            D('Circle choice 3'),
+            "So any value works. Choice three."]})
+
+    # q-324: 2x - 5 < x + 3 < 3x - 9 -> 6 < x < 8 (key 4)
+    S('q-324', stem='Given: $3x-4<2x+5<4x-5$. Which of the following is the most precise range for $x$?',
+      choices=['$3<x<5$', '$5<x<9$', '$6<x$', '$x<10$'], correct=2, expl=[
+        'Split the chain into two inequalities.',
+        'Left part: $3x-4<2x+5$, so $x<9$.',
+        'Right part: $2x+5<4x-5$. Move the $x$ terms right: $10<2x$, so $5<x$.',
+        'Both must hold: $5<x<9$.'])
+    video('q-324', {
+        2: ["One thing we know right away: the right expression is bigger than the left one — it's bigger than the middle, which is bigger than the left.",
+            "Now split it and solve each part separately.",
+            D('Under the left half write "3x − 4 < 2x + 5 → x < 9"'),
+            "Left part: three x minus four less than two x plus five. x's left, numbers right: x less than nine.",
+            D('Under the right half write "10 < 2x → 5 < x"'),
+            "Right part: two x plus five less than four x minus five. The x's go to the side with MORE x — the right. Ten less than two x. x greater than five.",
+            D('Write "5 < x < 9"'),
+            "x is greater than five and less than nine. The overlap: between five and nine.",
+            D('Circle choice 2'),
+            "Choice two."]})
+
+    # q-325: 3x + 30 < 12 + 6x < 30 -> no x (key 3)
+    S('q-325', stem='Given: $2x+28<8+6x<20$. For which values of $x$ does the inequality hold?',
+      choices=['$5<x$', 'For no value of $x$', '$x<2$', '$0<x$'], correct=2, expl=[
+        'Left part: $2x+28<8+6x$, so $20<4x$ and $x>5$.',
+        'Right part: $8+6x<20$, so $6x<12$ and $x<2$.',
+        'No number is both greater than $5$ and less than $2$. Therefore no value of $x$ satisfies the inequality.'])
+    video('q-325', {
+        2: ["Split it in two.",
+            D('Under the left part write "20 < 4x → 5 < x"'),
+            "First part: two x plus twenty-eight less than eight plus six x. x's to the right: twenty less than four x. x greater than five.",
+            D('Under the right part write "6x < 12 → x < 2"'),
+            "Second part: eight plus six x less than twenty. Six x less than twelve. x less than two.",
+            "Now: x greater than five — AND less than two.",
+            "It's not OR. It has to be both at the same time. There's no such number.",
+            D('Circle choice 2'),
+            "No overlap — no solution. The empty set. Choice two."]})
+
+    # q-326: x^4 < 90 < x^5 -> 3 (key 2)
+    S('q-326', stem='$x$ is an integer, and $x^4<300<x^5$. What is $x$?',
+      choices=['$-4$', '$3$', '$4$', '$-3$'], correct=3, expl=[
+        'If $x<0$, then $x^5<0$, and a negative number cannot be greater than $300$. Choices (1) and (4) are out.',
+        '$x=4$: $4^4=256<300$ ✓ and $4^5=1{,}024>300$ ✓.',
+        '$x=3$: $3^5=243$, and $243>300$ is false ✗.',
+        'Therefore $x=4$.'])
+    video('q-326', {
+        2: ["First: can x be negative?",
+            "A negative number to an odd power is negative. x to the fifth would be negative — and it can't be bigger than three hundred.",
+            D('Cross out choices 1 and 4'),
+            "So negative four and negative three are out.",
+            "Two left: three and four. Plug in.",
+            D('Next to choice 3 write "256 < 300 < 1,024 ✓"'),
+            "Four to the fourth is two hundred fifty-six — less than three hundred. Four to the fifth is one thousand twenty-four — more. It works.",
+            D('Circle choice 3'),
+            "Only one answer is right — so you can mark it and move on. Choice three.",
+            D('Next to choice 2 write "81 < 300 < 243 ✗"'),
+            "Just for the exercise: three to the fifth is two hundred forty-three — not more than three hundred. No good.",
+            "Another way: x to the fourth is less than x to the fifth. Divide by x to the fourth — it's positive — and x is bigger than one. That kills the negatives in one step."]})
+
+    # q-327: x < y + 2, 2y - 2 < x -> y < 4 (key 3)
+    S('q-327', stem=given(['a<b+5', '3b-1<a'], 'Which of the following is necessarily true?'),
+      choices=['$b<a$', '$b<3$', '$3<b$', '$a<b$'], correct=2, expl=[
+        'Chain the two inequalities through $a$: $3b-1<a<b+5$.',
+        'Ignore the middle: $3b-1<b+5$, so $2b<6$ and $b<3$.',
+        '$a<b$ and $b<a$ are both possible. With $b=0$ the givens say $-1<a<5$: $a=-0.5$ gives $a<b$, and $a=4$ gives $b<a$.'])
+    video('q-327', {
+        1: ["Question six.", "Two inequalities that share an a. Chain them."],
+        2: ["a is less than something, and something is less than a. They share a.",
+            D('Write "3b − 1 < a < b + 5"'),
+            "Chain them: three b minus one, less than a, less than b plus five.",
+            "Now ignore the middle.",
+            D('Cross out the a, then write "3b − 1 < b + 5"'),
+            "a is gone. One unknown.",
+            D('Write "2b < 6 → b < 3"'),
+            "b's to the left, numbers to the right: two b less than six. b less than three.",
+            D('Circle choice 2'),
+            "Choice two. And a less than b, or b less than a? Nothing forces either one."]})
+
+    # q-328: (5x^2 - 2)/3 < (2x^2 + 20)/2 -> -4 < x < 4 (key 4)
+    S('q-328', stem='Given: $\\frac{4x^2-9}{5}<\\frac{x^2+18}{2}$. Which of the following is correct?',
+      choices=['$-6<x<6$', '$6<x$', '$36<x$', '$x<-36$'], correct=1, expl=[
+        'Multiply both sides by $10$ (positive, so no flip): $2(4x^2-9)<5(x^2+18)$.',
+        'Open the brackets: $8x^2-18<5x^2+90$, so $3x^2<108$ and $x^2<36$.',
+        '$x^2$ is on the small side, so $x$ is between the roots: $-6<x<6$.'])
+    video('q-328', {
+        2: ('Multiply by 10, then the rule', [
+            "Fractions first. Multiply both sides by ten — positive, so no flip.",
+            D('Write "2(4x² − 9) < 5(x² + 18)"'),
+            "Ten over five is two, ten over two is five. Two times the left top, five times the right top.",
+            D('Write "8x² − 18 < 5x² + 90"'),
+            "Open the brackets: eight x squared minus eighteen, less than five x squared plus ninety.",
+            D('Write "3x² < 108 → x² < 36"'),
+            "x's left, numbers right: three x squared less than a hundred and eight. x squared less than thirty-six.",
+            "x squared is on the SMALL side — so x is trapped between the roots.",
+            D('Write "−6 < x < 6"'),
+            "Root of thirty-six is six. x is between negative six and six.",
+            D('Circle choice 1'),
+            "Choice one. Don't write just x less than six — negative seven squared is forty-nine. Too big. It's symmetric."])})
+
+    # q-329: a + b = c, a < c < b -> ab < 0 (key 1)
+    S('q-329', stem=given(['p+q=r', 'q<r<p'], 'Which of the following is necessarily true?'),
+      choices=['$0<r$', '$pq<0$', '$r<0$', '$pq=0$'], correct=2, expl=[
+        'Substitute $r=p+q$: $q<p+q<p$.',
+        'Left part: $q<p+q$, so $0<p$. Right part: $p+q<p$, so $q<0$.',
+        '$p$ is positive and $q$ is negative, so $pq<0$.',
+        'The sign of $r$ is not fixed: $p=3$, $q=-1$ gives $r=2$, and $p=1$, $q=-3$ gives $r=-2$.'])
+    video('q-329', {
+        2: ["We're given that r is p plus q. So put p plus q where r is.",
+            D('Write "q < p + q < p"'),
+            "Now it's a double inequality. Split it.",
+            D('Write "q < p + q → p > 0"'),
+            "First part: q less than p plus q. Cancel the q — p is greater than zero.",
+            D('Write "p + q < p → q < 0"'),
+            "Second part: p plus q less than p. Cancel the p — q is less than zero.",
+            D('Write "p positive, q negative → pq < 0"'),
+            "p positive, q negative — their product is negative.",
+            D('Circle choice 2'),
+            "Choice two. And r? We know nothing about its sign. And the product can't be zero — neither of them is zero."]})
+
+    # q-330: 40/80 < x/(x+1) < 70/80 -> 5 values (key 2)
+    S('q-330', stem='$x$ is a positive integer, and $\\frac{60}{90}<\\frac{x}{x+1}<\\frac{81}{90}$. How many values can $x$ have?',
+      choices=['$5$', '$7$', '$6$', '$0$'], correct=3, expl=[
+        'Simplify: $\\frac{60}{90}=\\frac23$ and $\\frac{81}{90}=\\frac{9}{10}$.',
+        '$x$ is positive, so $x+1$ is positive. We can multiply by it without flipping.',
+        'Left part: $\\frac23<\\frac{x}{x+1}$ gives $2(x+1)<3x$, so $2<x$.',
+        'Right part: $\\frac{x}{x+1}<\\frac{9}{10}$ gives $10x<9x+9$, so $x<9$.',
+        'Therefore $2<x<9$: $x=3, 4, 5, 6, 7, 8$. That is six values.'])
+    video('q-330', {
+        2: ["x is a positive integer. How many values fit between these two fractions?",
+            "First — simplify. Sixty ninetieths reduces by thirty: two thirds.",
+            D('Under 60/90 write "= 2/3"'),
+            "Eighty-one ninetieths reduces by nine: nine tenths.",
+            D('Under 81/90 write "= 9/10"'),
+            "A double inequality is really two inequalities. Split it into a left part and a right part.",
+            D('Write "2/3 < x/(x+1)" and "x/(x+1) < 9/10" on two lines'),
+            "Now we want to multiply by x plus one — an unknown. Careful!",
+            "Multiply by a negative and the sign flips. So ask: is x plus one positive?",
+            "x is a positive integer — so x plus one is positive too. No flip.",
+            D('Multiply both sides by 3(x + 1): write "2x + 2 < 3x → 2 < x"'),
+            "Multiply both sides by three times x plus one — a positive number. Two x plus two is less than three x. So x is bigger than two.",
+            D('Multiply both sides by 10(x + 1): write "10x < 9x + 9 → x < 9"'),
+            "Second one: ten x is less than nine x plus nine. So x is less than nine.",
+            D('Write "2 < x < 9 → 3, 4, 5, 6, 7, 8"'),
+            "Bigger than two, smaller than nine, positive integers: three, four, five, six, seven, eight.",
+            D('Circle choice 3'),
+            "Six values. Choice three."],
+        3: ["Now the psychometric flash of insight.",
+            "After simplifying, look closely: in x over x plus one, the bottom is one more than the top. Consecutive numbers.",
+            "And x over x plus one grows as x grows: one half, two thirds, three quarters — each one closer to one.",
+            "Two thirds and nine tenths are built exactly the same way: two over three, nine over ten.",
+            "So just try values. x equals two gives two thirds — equal, not bigger. Out.",
+            D('Next to the question write "3/4, 4/5, 5/6, 6/7, 7/8, 8/9"'),
+            "Three: three quarters. Four: four fifths. Then five sixths, six sevenths, seven eighths, eight ninths — all fit.",
+            "Nine gives nine tenths — equal again, not smaller. Out.",
+            D('Circle choice 3'),
+            "Six values — choice three.",
+            "The shortcut is faster. But the technique from method one — check the sign before you multiply by an unknown — you'll need again and again."]})
+
+    # q-331: (ab)^2 < ab^2 -> 0 < a < 1 (key 3)
+    S('q-331', stem='Given: $(xy)^2<x^2y$. Which of the following is the most precise range for $y$?',
+      choices=['$0<x<1$', '$-1<y<1$', '$-1<x<1$', '$0<y<1$'], correct=4, expl=[
+        '$(xy)^2=x^2y^2$, so $x^2y^2<x^2y$.',
+        'If $x=0$, both sides are $0$, and $0<0$ is false. Therefore $x\\ne0$ and $x^2>0$.',
+        'Divide both sides by $x^2$ (positive, so no flip): $y^2<y$.',
+        '$y^2\\ge0$ and $y>y^2$, so $y>0$. Divide by $y$ (positive): $y<1$.',
+        'Therefore $0<y<1$.'])
+    video('q-331', {
+        2: ["Step one: simplify the left side. x y, squared, is x squared times y squared.",
+            D('Under the question write "x²y² < x²y"'),
+            "Step two: we'd like to cancel x squared from both sides. But that's dividing by an unknown.",
+            "Is x squared positive, zero, or negative? It can't be negative — it's a square.",
+            "Could it be zero? Then both sides would be zero — equal. But the question says less than. So x squared is positive.",
+            D('Cross out x² on both sides; write "y² < y"'),
+            "Cancel it — no flip. y squared is less than y.",
+            "Now we'd like to cancel y. So: what's the sign of y?",
+            "y squared is zero or positive. And y is bigger than it. So y must be positive.",
+            D('Write "y > 0"'),
+            "Positive — so we cancel without flipping.",
+            D('Write "y < 1"'),
+            "y is less than one.",
+            D('Write "0 < y < 1" and circle choice 4'),
+            "Positive and less than one: between zero and one. Choice four.",
+            "And x? Anything but zero — that's why the x choices are traps."]})
+
+    # q-332: (x - 3)/(9 - x) < 0 -> not satisfied on 3 < x < 9 (key 2)
+    S('q-332', stem='Given: $\\frac{x+1}{7-x}<0$, and $x\\ne7$. Which of the following ranges does not satisfy the inequality?',
+      choices=['$-5<x<-1$', '$7<x<10$', '$-1<x<7$', '$10<x<14$'], correct=3, expl=[
+        'Try one number from each range.',
+        'Choice (1), $x=-2$: $\\frac{-1}{9}<0$ ✓.',
+        'Choice (2), $x=8$: $\\frac{9}{-1}=-9<0$ ✓.',
+        'Choice (3), $x=0$: $\\frac{1}{7}$, which is not negative ✗.',
+        'Choice (4), $x=12$: $\\frac{13}{-5}<0$ ✓.',
+        'With a sign table: the top is $0$ at $x=-1$ and the bottom is $0$ at $x=7$. The fraction is negative for $x<-1$ or $x>7$. Therefore the range $-1<x<7$ does not satisfy it.'])
+    video('q-332', {
+        2: ["We'd love to get rid of the denominator — but we don't know if it's positive or negative.",
+            "And unlike the last questions, nothing here tells us the sign of x.",
+            "So think: when is a fraction negative? Two situations.",
+            D('Under the question write "top + / bottom −" and "top − / bottom +"'),
+            "Top positive and bottom negative — or exactly the reverse.",
+            "Case one: top positive, bottom negative.",
+            D('Write "x + 1 > 0 → x > −1" and "7 − x < 0 → x > 7"'),
+            "x plus one positive: x bigger than negative one. Seven minus x negative: x bigger than seven.",
+            D('Write "→ x > 7"'),
+            "Both together: x bigger than seven.",
+            D('Cross out choices 2 and 4'),
+            "Every number above seven satisfies it. Choices two and four — out.",
+            "Case two: top negative, bottom positive.",
+            D('Write "x < −1" and "x < 7 → x < −1"'),
+            "x less than negative one, and x less than seven. Together: x less than negative one.",
+            D('Cross out choice 1'),
+            "Choice one lies below negative one — it satisfies. Out.",
+            D('Circle choice 3'),
+            "What's left: between negative one and seven. Choice three.",
+            "That works. But it's long and exhausting.",
+            "A shorter way to write it: the sign table. Mark negative one and seven on the line, and test one number in each part."],
+        3: ["The psychometric way: trial and error. Plug in a number from each range.",
+            "Choice one: pick a comfortable number between negative five and negative one. Negative two.",
+            D('Next to choice 1 write "x = −2: −1/9 < 0 ✓"'),
+            "Negative two plus one, over seven minus negative two: negative one ninth. Negative — it satisfies. Out.",
+            D('Cross out choice 1'),
+            "Choice two: eight is comfortable.",
+            D('Next to choice 2 write "x = 8: 9/(−1) = −9 ✓"'),
+            "Eight plus one, over seven minus eight: nine over negative one. Negative nine — it satisfies. Out.",
+            D('Cross out choice 2'),
+            "Choice three: zero is comfortable.",
+            D('Next to choice 3 write "x = 0: 1/7"'),
+            "Zero plus one, over seven minus zero: one seventh. Not negative!",
+            D('Circle choice 3'),
+            "That range does NOT satisfy it. Choice three — no need to check the rest.",
+            "On the exam, this is the route I recommend."]})
+
+    # q-333: (x + y)^2 = 100, x - 3 > 0 -> 0 < y < 7 (key 1)
+    S('q-333', stem=given(['(x+y)^2=144', 'x-4>0'], 'Which of the following is necessarily true?',
+                          pre='$x$ and $y$ are positive integers.\n'),
+      choices=['$4<x<8$', '$0<y<8$', '$8<y<12$', '$8<x<12$'], correct=2, expl=[
+        '$x$ and $y$ are positive, so $x+y>0$. From $(x+y)^2=144$: $x+y=12$.',
+        'From $x-4>0$: $x>4$.',
+        'Substitute $x=12-y$: $12-y>4$, so $y<8$. Also $y>0$.',
+        'Therefore $0<y<8$.',
+        'Choices (1) and (4) are not necessary: $x=11$, $y=1$ breaks (1), and $x=5$, $y=7$ breaks (4).'])
+    video('q-333', {
+        2: ["x and y are positive integers. We get an equation and an inequality.",
+            "Simplify the equation first. Take the square root.",
+            D('Write "x + y = ±12"'),
+            "x plus y is plus or minus twelve. But both are positive — together they can't be negative twelve.",
+            D('Cross out the minus, leaving "x + y = 12"'),
+            "So x plus y is twelve.",
+            D('Write "x > 4"'),
+            "Now simplify the inequality: move the four across. x is bigger than four.",
+            "Combine them. The inequality has x — so isolate x from the equation and plug it in.",
+            D('Write "x = 12 − y → 4 < 12 − y → y < 8"'),
+            "x is twelve minus y. So four is less than twelve minus y. Move things across: y is less than eight.",
+            "And y is positive.",
+            D('Write "0 < y < 8" and circle choice 2'),
+            "Between zero and eight. Choice two."],
+        3: ["Same idea — in your head.",
+            "Simplify the inequality first: x is bigger than four.",
+            "Both numbers are positive and add up to twelve — so y completes x to twelve.",
+            D('Write "x = 5 → y = 7, x = 6 → y = 6"'),
+            "x is five? y is seven. x is six? y is six. The bigger x gets, the smaller y gets.",
+            "x is more than four — so y is less than eight. And it's positive.",
+            D('Circle choice 2'),
+            "Choice two. If you can think it this way, do — it saves the writing."]})
+
+    # q-334: c + b < a, a < c < b -> not necessarily: 0 < c + b (key 4)
+    S('q-334', stem=given(['z+y<x', 'x<z<y'], 'Which of the following is not necessarily true?'),
+      choices=['$y<0$', '$0<z+y$', '$x<0$', '$z<0$'], correct=2, expl=[
+        'Chain: $z+y<x<z<y$.',
+        'From $z+y<z$: $y<0$. From $z+y<y$: $z<0$. From $x<z$: $x<0$.',
+        'So (1), (3) and (4) are all true.',
+        '$z+y$ is a sum of two negative numbers, so it is negative. Therefore $0<z+y$ is never true — it is the answer.'])
+    video('q-334', {
+        2: ["They ask which statement is NOT necessarily true.",
+            "One side: z plus y is less than x. The other: x is less than z, less than y.",
+            "x sits in both — so chain them.",
+            D('Under the question write "z + y < x < z < y"'),
+            "One long chain: z plus y, less than x, less than z, less than y.",
+            D('Draw a number line and mark, from left to right: z + y, x, z, y'),
+            "Put it on a number line: z plus y, then x, then z, then y. Left to right.",
+            "How do you work a chain with lots of letters? Find two spots with the same letter.",
+            D('Draw an arc linking "z + y" and "z"'),
+            "z plus y is less than z. The z's cancel…",
+            D('Write "y < 0"'),
+            "…so y is negative.",
+            "The other pair works too: z plus y is less than y — cancel the y's, and z is negative.",
+            "And x is less than z — so x is negative as well.",
+            D('Write "z < 0, x < 0"'),
+            "z plus y: negative plus negative — negative.",
+            D('Cross out choices 1, 3 and 4'),
+            "Now the choices. y negative? True — out. x negative? True — out. z negative? True — out.",
+            D('Circle choice 2'),
+            "z plus y positive? No — it's negative. That's the one. Choice two."]})
+
+    # q-335: 2 <= x^2 - 2 <= 34 -> 10 integers (key 2)
+    S('q-335', stem='$x$ is an integer, and $5\\le x^2-4\\le60$. How many values can $x$ have?',
+      choices=['$6$', '$10$', '$12$', '$17$'], correct=3, expl=[
+        'Add $4$ to all three parts: $9\\le x^2\\le64$.',
+        'For positive $x$: $3\\le x\\le8$. The negatives are a mirror image: $-8\\le x\\le-3$.',
+        'The integers: $\\pm3, \\pm4, \\pm5, \\pm6, \\pm7, \\pm8$. That is $12$ values.'])
+    nl = dict(item('solve-q-335', 2, 1), min=-9, max=9)
+    video('q-335', {
+        2: ["x is an integer. How many values satisfy the double inequality?",
+            "We could split it into a left part and a right part. But here there's a much simpler way.",
+            "The unknown sits only in the middle. So we can isolate it in one move.",
+            D('Write "+4" under all three parts, then "9 ≤ x² ≤ 64"'),
+            "Add four to every part: nine, x squared, sixty-four.",
+            "Now it's a second-degree inequality. Take the root — but first assume x is positive.",
+            D('Write "3 ≤ x ≤ 8"'),
+            "Root of nine: three. Root of sixty-four: eight. x between three and eight — both included.",
+            A('A number line from −9 to 9 appears', nl),
+            D('On the number line, mark 3 to 8, then mirror it: −8 to −3'),
+            "If it's true for the positives, it's true for the negatives — like a mirror. Negative eight to negative three.",
+            "But they asked how many VALUES — and x is an integer.",
+            D('Write "±3, ±4, ±5, ±6, ±7, ±8"'),
+            "Three, four, five, six, seven, eight — six values. Mirror them — six more.",
+            D('Circle choice 3'),
+            "Twelve values. Choice three."]})
+
+    # q-336: -4 < x < 10, -30 < y < 6 -> -300 < xy < 120 (key 2)
+    S('q-336', stem=given(['-5<x<8', '-20<y<4'], 'What is the range of the product $xy$?'),
+      choices=['$-160<xy<32$', '$-100<xy<100$', '$-100<xy<32$', '$-160<xy<100$'], correct=4, expl=[
+        'Negative numbers are involved, so check all four corners: $(-5)(-20)=100$, $(-5)\\cdot4=-20$, $8\\cdot(-20)=-160$, $8\\cdot4=32$.',
+        'The largest is $100$ and the smallest is $-160$.',
+        'Therefore $-160<xy<100$.'])
+    corners = item('solve-q-336', 2, 1)
+    video('q-336', {
+        2: ["We'll solve it the psychometric way: plug in the edge numbers.",
+            A("'All positive? End by end. Negatives? The corners' appears", corners),
+            "Multiplying ranges end by end works only when everything is positive. With negatives inside, check the corners — and when dividing, make sure the bottom cannot be zero.",
+            "x can't actually be eight — but treat it as eight, and remember the real value is just under.",
+            "When is the product biggest? When it's positive. Two ways: both positive, or both negative.",
+            D('Write "8 · 4 = 32" and "(−5)(−20) = 100"'),
+            "Both positive: eight times four, thirty-two. Both negative: negative five times negative twenty — a hundred.",
+            "So the maximum is a hundred.",
+            D('Cross out choices 1 and 3'),
+            "Choices one and three stop at thirty-two. Out.",
+            "Now the minimum. A negative product: one positive, one negative.",
+            D('Write "8 · (−20) = −160"'),
+            "x positive, y negative: eight times negative twenty. Negative one hundred sixty.",
+            "That's already smaller than negative one hundred.",
+            D('Cross out choice 2 and circle choice 4'),
+            "So choice two is too narrow. Choice four.",
+            "To finish the job: x negative, y positive — negative five times four, negative twenty. Not the smallest.",
+            "A hard question — but all it took was the cases and the edges."]})
+
+    # q-337: x < y -> x < y + 5 (key 4)
+    S('q-337', stem='Given: $a<b$. Which of the following is necessarily true?',
+      choices=['$a<b+3$', '$3a<b$', '$a<3b$', '$a+3<b$'], correct=1, expl=[
+        '$b<b+3$, so $a<b<b+3$. Therefore $a<b+3$ always.',
+        'Counterexamples for the others:',
+        '(2) $a=1$, $b=2$: $3a=3$, and $3<2$ is false.',
+        '(3) $a=-4$, $b=-3$: $3b=-9$, and $-4<-9$ is false.',
+        '(4) $a=1$, $b=2$: $a+3=4$, and $4<2$ is false.'])
+    video('q-337', {
+        2: ["a is less than b. Which statement MUST be true?",
+            "Look at choice one: b plus three is even bigger than b.",
+            D('Write "a < b < b + 3"'),
+            "a is below b, and b is below b plus three. So a is below b plus three — always.",
+            D('Circle choice 1'),
+            "Choice one."],
+        3: ["Now knock out the others — one counterexample each.",
+            D('Next to choice 4 write "a = 1, b = 2: 4 < 2 ✗"'),
+            "Choice four: a is one, b is two. One plus three is four — not less than two. Out.",
+            D('Next to choice 2 write "3 < 2 ✗"'),
+            "Choice two: three times one is three — not less than two. Out.",
+            "Choice three looks safe with positive numbers. So try negatives.",
+            D('Next to choice 3 write "a = −4, b = −3: −4 < −9 ✗"'),
+            "a is negative four, b is negative three. Three b is negative nine. Is negative four less than that? No. Out.",
+            D('Circle choice 1'),
+            "Only choice one survives. Negatives are the classic trap — always try them.",
+            D('Write "Try: 0, 1, −1, ½, a big number"'),
+            "Your list for these questions: zero, one, negative one, one half, and a big number."]})
+
+    # ============================== practice from the Hebrew study guide
+    # q-338: m = x + y - 8, m negative integer -> x + y < 8 (key 1)
+    S('q-338', stem='$k$ is a negative integer, and $k=a+b-6$. Which of the following is necessarily true about $a+b$?',
+      choices=['It is an integer greater than $6$.', 'It is an integer smaller than $0$.',
+               'It is an integer smaller than $6$.', 'It is an integer greater than $0$.'], correct=3, expl=[
+        '$a+b=k+6$.',
+        '$k$ is a negative integer, so $k\\le-1$. Therefore $a+b\\le5$, which is smaller than $6$. An integer plus $6$ is an integer.',
+        '$a+b$ does not have to be negative: $k=-1$ gives $a+b=5$. It does not have to be positive: $k=-10$ gives $a+b=-4$.'])
+    # q-339: 2x + 5 < 0, x^2 < 15 -> -3 (key 2)
+    S('q-339', stem=given(['2x+7<0', 'x^2<20'], 'What is $x$?', pre='$x$ is an integer.\n'),
+      choices=['$-3$', '$-5$', '$0$', '$-4$'], correct=4, expl=[
+        'From $2x+7<0$: $x<-3.5$.',
+        'From $x^2<20$: $-\\sqrt{20}<x<\\sqrt{20}$. Since $4^2=16<20<25=5^2$, the integer $x$ is between $-4$ and $4$.',
+        'The only integer that is less than $-3.5$ and not less than $-4$ is $x=-4$.',
+        'Check: $2(-4)+7=-1<0$ ✓ and $(-4)^2=16<20$ ✓.'])
+    # q-340: x^2 < 25, 3x + 9 < 0 -> -4 (key 3)
+    S('q-340', stem=given(['x^2<36', '2x+8<0'], 'What is $x$?', pre='$x$ is an integer.\n'),
+      choices=['$-6$', '$-5$', '$-4$', '$-3$'], correct=2, expl=[
+        'From $x^2<36$: $-6<x<6$.',
+        'From $2x+8<0$: $2x<-8$, so $x<-4$.',
+        'The integers that satisfy both are strictly between $-6$ and $-4$: $x=-5$.',
+        'Check: $(-5)^2=25<36$ ✓ and $2(-5)+8=-2<0$ ✓.'])
+    # q-341: x^3 < x^2 < 3 -> -1 (key 3)
+    S('q-341', stem='$x$ is an integer, and $x^3<x^2<4$. What is $x$?',
+      choices=['$1$', '$0$', '$-2$', '$-1$'], correct=4, expl=[
+        'Try the choices.',
+        '$x=-1$: $x^3=-1$ and $x^2=1$, and $-1<1<4$ ✓.',
+        '$x=0$: $0<0$ is false. $x=1$: $1<1$ is false.',
+        '$x=-2$: $x^2=4$, and $4<4$ is false.',
+        'Therefore $x=-1$.'])
+    # review 2026-10-06: "< 7" let both -1 and -2 fit (the question asks for one x); "< 4" keeps -1 the only integer, like the Hebrew
+    # q-342: 6 < x < 7 -> x + 6 < 2x (key 1)
+    S('q-342', stem='Given: $8<x<9$. Which of the following is necessarily true?',
+      choices=['$17<2x$', '$x+8<2x$', '$18<2x$', '$x+9<2x$'], correct=2, expl=[
+        'Simplify each choice.',
+        '(1) $17<2x$ means $8.5<x$: not always (take $x=8.2$).',
+        '(2) $x+8<2x$ means $8<x$. This is given, so it is always true.',
+        '(3) $18<2x$ means $9<x$: never true here.',
+        '(4) $x+9<2x$ means $9<x$: never true here.'])
+    # q-343: p < q, r < s, q < s -> s < p cannot be true (key 4)
+    S('q-343', stem=given(['a<b', 'c<d', 'b<d'], 'Which of the following cannot be true?'),
+      choices=['$c<a$', '$d<a$', '$b<c$', '$c<b$'], correct=2, expl=[
+        'Chain: $a<b<d$, so $a<d$ always. Therefore $d<a$ cannot be true.',
+        'The others can be true, because $c$ only has to be below $d$. Take $a=1$, $b=2$, $d=5$: $c=3$ gives $b<c$, and $c=0$ gives $c<b$ and $c<a$.'])
+    # q-344: x - 3 < 6 -> 8 positive integers (key 4)
+    S('q-344', stem='Given: $x-2<5$. How many positive integers $x$ satisfy the inequality?',
+      choices=['$7$', '$3$', '$6$', '$5$'], correct=3, expl=[
+        'Add $2$: $x<7$.',
+        'The positive integers below $7$ are $1, 2, 3, 4, 5, 6$. That is $6$ numbers.'])
+    # q-345: -2x^2 <= -32 -> -2 does not satisfy (key 1)
+    S('q-345', stem='Given: $-4x^2\\le-100$. Which of the following values of $x$ does not satisfy the inequality?',
+      choices=['$-7$', '$5$', '$-3$', '$60$'], correct=3, expl=[
+        'Divide by $-4$ and flip the sign: $x^2\\ge25$. (Or move the terms across with no flip: $100\\le4x^2$, so $25\\le x^2$.)',
+        '$x^2$ is on the big side, so $x$ is outside the roots: $x\\le-5$ or $x\\ge5$.',
+        '$-7$, $5$ and $60$ satisfy it. $x=-3$ gives $x^2=9<25$, so $-3$ does not.'])
+    # q-346: a + 4 < a/2 -> a < -8 (key 4)
+    S('q-346', stem='Given: $a+6<\\frac{a}{3}$. Which of the following is correct?',
+      choices=['$a<-9$', '$-9<a<0$', '$6<a$', '$0<a<6$'], correct=1, expl=[
+        'Multiply both sides by $3$ (positive, so no flip): $3a+18<a$.',
+        'Subtract $a$: $2a+18<0$, so $2a<-18$ and $a<-9$.',
+        'Check: $a=-12$ gives $-6<-4$ ✓.',
+        'Method 2 · Two moves: endpoint $a+6=\\frac a3$ gives $a=-9$. Direction: $a=0$ gives $6<0$, which is false. $0$ is above $-9$, so the answer is below it: $a<-9$.'])
+    # q-347: 0 < x < 1, 5y = 2x -> y^2 < 1 (key 4)
+    S('q-347', stem=given(['0<x<1', '4y=3x'], 'Which of the following is correct?'),
+      choices=['$1<y$', '$y^2<1$', '$y<0$', '$2<y^2$'], correct=2, expl=[
+        '$y=\\frac{3x}{4}$. Since $0<x<1$: $0<y<\\frac34$.',
+        'The square of a number between $0$ and $1$ is even smaller: $0<y^2<\\frac{9}{16}$, and $\\frac{9}{16}<1$.',
+        'Therefore $y^2<1$.'])
+    # q-348: a + b = 17, b < a -> b < 9 (key 3)
+    S('q-348', stem=given(['a+b=21', 'b<a'], 'Which of the following is necessarily true?',
+                          pre='$a$ and $b$ are positive integers.\n'),
+      choices=['$14<a$', '$b<11$', '$a<20$', '$6<b$'], correct=2, expl=[
+        '$b<a$, so $2b<a+b=21$ and $b<10.5$. $b$ is an integer, so $b\\le10<11$.',
+        'Counterexamples for the others: $a=11$, $b=10$ breaks (1). $a=20$, $b=1$ breaks (3) and (4).'])
+    # q-349: 3y < x < -3y -> y < 0 (key 1)
+    S('q-349', stem='Given: $4m<n<-4m$. Which of the following is correct?',
+      choices=['$m=0$', '$0<m<1$', '$m<0$', '$1<m$'], correct=3, expl=[
+        'Ignore the middle: $4m<-4m$.',
+        'Add $4m$: $8m<0$, so $m<0$.',
+        'Check: $m=-1$ gives $-4<n<4$, which has solutions. $m=0$ gives $0<n<0$, which is impossible.'])
+    # q-350: 0 < a - b, a + b < 0 -> b < 0 (key 4)
+    S('q-350', stem=given(['0<y-x', 'x+y<0'], 'Which of the following is necessarily true?'),
+      choices=['$x<0$', '$0<y$', '$y<0$', '$0<x$'], correct=1, expl=[
+        'From the first: $x<y$. From the second: $y<-x$.',
+        'Chain: $x<y<-x$, so $x<-x$ and $2x<0$. Therefore $x<0$.',
+        'Or add two inequalities in the same direction: $x-y<0$ and $x+y<0$ give $2x<0$.',
+        'The sign of $y$ is not fixed: $x=-2$, $y=1$ and $x=-2$, $y=-1$ both fit.'])
+    # q-351: 5x + 2y = 0, x > 2 -> y < -5 (key 1)
+    S('q-351', stem=given(['3x+2y=0', 'x>4'], 'Which of the following is necessarily true?'),
+      choices=['$6<y$', '$-12<y<-4$', '$y<-6$', '$4<y<12$'], correct=3, expl=[
+        '$2y=-3x$.',
+        '$x>4$, so $3x>12$. Multiply by $-1$ and flip: $-3x<-12$.',
+        'Therefore $2y<-12$ and $y<-6$.',
+        'Check: $x=10$ gives $y=-15$, which is less than $-6$ ✓ and is outside choice (2).'])
+    # q-352: 0 < 3x - 9x^2 -> 0 < x < 1/3 (key 3)
+    S('q-352', stem='Given: $0<2x-8x^2$. Which of the following is necessarily true?',
+      choices=['$-\\frac14<x<0$', '$0<x<\\frac14$', '$x<-\\frac14$', '$\\frac14<x$'], correct=2, expl=[
+        'Take out a common factor: $2x-8x^2=2x(1-4x)$.',
+        'Sign table: the product is $0$ at $x=0$ and at $x=\\frac14$. Test one number in each part.',
+        '$x=-1$: $2(-1)(1+4)=-10<0$ ✗. $x=\\frac18$: $\\frac14\\cdot\\frac12=\\frac18>0$ ✓. $x=1$: $2\\cdot(-3)=-6<0$ ✗.',
+        'Therefore $0<x<\\frac14$.'])
+    # q-353: x < 0, 3 < x^2 - 6 < 19 -> -5 < x < -3 (key 4)
+    S('q-353', stem=given(['x<0', '5<x^2-11<38'], 'Which of the following is correct?'),
+      choices=['$-7<x<-4$', 'No $x$ satisfies the given conditions', '$-4<x$', '$x<-7$'], correct=1, expl=[
+        'Add $11$ to all three parts: $16<x^2<49$.',
+        'For positive $x$: $4<x<7$. For negative $x$: $-7<x<-4$.',
+        '$x<0$, so $-7<x<-4$.',
+        'Method 2 · The most precise range: test $x=-5$. $25-11=14$, and $5<14<38$ ✓. A number that works kills every choice that leaves it out: choices 2, 3 and 4. The answer is choice 1.'])
+    # q-354: (3 + n)/(3 - n) > 0 -> -3 < n < 3 (key 3)
+    S('q-354', stem='Given: $\\frac{2+n}{6-n}>0$, and $n\\ne6$. What is the most precise range for $n$?',
+      choices=['$-2<n<0$', '$6<n$', '$0<n$', '$-2<n<6$'], correct=4, expl=[
+        'Sign table: the top is $0$ at $n=-2$, and the bottom is $0$ at $n=6$.',
+        '$n=-3$: $\\frac{-1}{9}<0$ ✗. $n=0$: $\\frac26>0$ ✓. $n=7$: $\\frac{9}{-1}=-9<0$ ✗.',
+        'Therefore $-2<n<6$.',
+        'Method 2 · The most precise range: $n=1$ gives $\\frac35>0$ ✓, so choices 1 and 2 (which leave $1$ out) are out. $n=-1$ gives $\\frac17>0$ ✓, so choice 3 is out. The answer is choice 4.'])
+    # q-355: x > 0, 1/4 < x/(x+1) < 3/4 -> 1/3 < x < 3 (key 2)
+    S('q-355', stem=given(['x>0', '\\frac13<\\frac{x}{x+1}<\\frac45'], 'What is the most precise range for $x$?'),
+      choices=['$\\frac13<x<\\frac45$', '$0<x<1$', '$\\frac12<x<4$', '$\\frac32<x<5$'], correct=3, expl=[
+        '$x>0$, so $x+1>0$. We can multiply by it without flipping.',
+        'Left part: $\\frac13<\\frac{x}{x+1}$ gives $x+1<3x$, so $1<2x$ and $x>\\frac12$.',
+        'Right part: $\\frac{x}{x+1}<\\frac45$ gives $5x<4x+4$, so $x<4$.',
+        'Therefore $\\frac12<x<4$.',
+        'Method 2 · The most precise range: test numbers where the choices disagree. $x=2$: $\\frac23$ is between $\\frac13$ and $\\frac45$ ✓. A number that works kills every choice that leaves it out: choices 1 and 2.',
+        '$x=1$: $\\frac12$ is between $\\frac13$ and $\\frac45$ ✓. Choice 4 leaves $1$ out, so it is out too. The answer is choice 3.'])
+    # q-356: x^2y^2 = (xy - 2)^2, x > 1 -> 0 < y < 1 (key 1)
+    S('q-356', stem=given(['a^2b^2=(ab-6)^2', 'a>3'], 'Which of the following is necessarily true?'),
+      choices=['$b<-1$', '$0<b<1$', '$\\frac12<b$', '$3<b$'], correct=2, expl=[
+        '$a^2b^2=(ab)^2$. Two numbers with equal squares are equal or opposite.',
+        'Equal: $ab=ab-6$ gives $0=-6$, which is impossible.',
+        'Opposite: $ab=-(ab-6)$, so $2ab=6$ and $ab=3$.',
+        'Therefore $b=\\frac3a$. Since $a>3$: $0<b<1$.',
+        'Check with $a=6$, $b=\\frac12$: $a^2b^2=9$ and $(3-6)^2=9$ ✓.'])
+    # q-357: y^2a + y^2c < (a + c)^2, a + c = y -> y cannot be 2 (key 1)
+    S('q-357', stem=given(['k^2m+k^2n<(m+n)^2', 'm+n=k'], 'Which of the following cannot be the value of $k$?'),
+      choices=['$-3$', '$\\frac12$', '$3$', '$-\\frac12$'], correct=3, expl=[
+        'Take out $k^2$: $k^2(m+n)<(m+n)^2$.',
+        'Substitute $m+n=k$: $k^3<k^2$.',
+        'So $k^2(k-1)<0$. This needs $k\\ne0$, and then $k^2>0$, so $k-1<0$ and $k<1$.',
+        '$-3$, $\\frac12$ and $-\\frac12$ are all less than $1$. But $k=3$ gives $27<9$, which is false. Therefore $k$ cannot be $3$.'])
+
+    # ============================== order: the chain question (two inequalities sharing a side) right after the two
+    # double inequalities; the plug-in question x^4 < 300 < x^5 follows it. Neither video refers to the other.
+    if not RECORDED & {'q-326', 'q-327'}:
+        sec = M.section_of('q-326')
+        M.move('q-327', sec, before='q-326'); M.move('solve-q-327', sec, after='q-327')
+        # (title slides and the spoken "Question five / six" are renumbered in course order at build)
+
+    # ============================== practice clean-up (35 -> 27)
+    # extra warm-ups: keep 3 (the flip, the overlap with <= ends, reciprocals); drop the plain 2x + 3 <= 13 and the
+    # integer count (q-344 practises both), 0 < x < 1 -> x^2 < x (the lesson board itself; q-347), and a < b < 0
+    # reciprocals (a copy of the Topic 3 question q-r26-t03-06).
+    for qid in ['alg-extra-unit-t12-3-4', 'alg-extra-unit-t12-3-2', 'alg-extra-unit-t12-3-3', 'alg-extra-unit-t12-3-7']:
+        M.unplace(qid)
+    # September items: keep the types the Hebrew practice lacks (range of a - b, range of x^2, "could be true", range
+    # of ab); drop adding inequalities (q-350), x > 1 powers order (q-341 / q-347; also a copy of q-r26-t03-05),
+    # fraction sign (q-354) and reciprocals "cannot be true" (warm-up 3-5, q-343 / q-357).
+    for k in ['07', '08', '09', '12']:
+        M.unplace('q-r26-t12-' + k)
+    X = 'alg-extra-unit-t12-3-'
+    M.practice_order(PRACTICE, [
+        X + '6', X + '1', 'q-344', 'q-346', 'q-342', X + '5', 'q-338', 'q-341', 'q-339', 'q-340',
+        'q-345', 'q-347', 'q-348', 'q-343', 'q-349', 'q-351', 'q-r26-t12-05', 'q-r26-t12-06',
+        'q-353', 'q-354', 'q-352', 'q-350', 'q-r26-t12-10', 'q-r26-t12-11', 'q-355', 'q-356', 'q-357'])
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber(M)   # 2026-10-06 renumber pass: runs last

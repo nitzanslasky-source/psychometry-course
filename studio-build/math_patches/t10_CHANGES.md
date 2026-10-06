@@ -166,3 +166,77 @@ Function `pen_or_click` (runs last, after `cut_repeats`). The teacher's approved
 - solve-q-r26-t10-02 (4 -> 2 by hand, 2 clicks). By hand: = 4 · 2¹⁰, circle. Clicks: 4 = 2² -> 2¹², the small check.
 - solve-q-r26-t10-03 (5 -> 2 by hand, 3 clicks). By hand: 3ˣ(9 − 1) = 72 -> 8 · 3ˣ = 72, circle. Clicks: 3ˣ⁺² = 9 · 3ˣ, 3ˣ = 9 -> x = 2, the x = 2 check.
 - r26-t10-summary (5 -> 0 by hand, 5 clicks).
+
+## 2026-10-06 renumber pass
+Goal: the English topic 10 must not look like the Hebrew course. Every idea, trap, level and method stays the same; only the numbers, letters and names change.
+Code: `renumber(M)` runs last in `apply`, after `pen_or_click`, so the click items and the hand cues are rewritten together. There is a `RECORDED` set, which is empty: no topic 10 video is in ~/Documents/Course.recordings.
+Counts: 5 guided questions renumbered (and their videos rewritten), 34 Hebrew practice questions renumbered (q-262 already had new numbers from 2026-10-04 and was kept), and 3 Hebrew lesson examples renumbered. 1 English practice item was also changed (q-r26-t10-11). Practice: 57 → 40.
+
+**Guided questions + solution videos** (board, spoken lines, hand cues and circles all use the new numbers; the methods are unchanged)
+| Item | Old (Hebrew) | New | Answer | Key |
+|---|---|---|---|---|
+| q-248 (Q1) | (9⁶·8⁻²)/(3⁸·4⁻²) = 3⁴·2⁻² | (4⁵·27⁻²)/(2⁷·9⁻²) | 2³·3⁻²; trap 2³/3¹⁰ (−6 + (−4)) | 1 → 2 |
+| q-249 (Q2) | (√27+√27)/(√48−√12) = 3 | (√50+√50)/(√32−√8) | 5 | 3 → 4 |
+| q-250 (Q3) | 4^(2x) = (1/8)^(4−2x), x = 6 | 9^(3x) = (1/27)^(2−3x) | x = 2; trap 2/5 (forgot the minus of the fraction) | 3 → 4 |
+| q-251 (Q4) | √(x−7) = 3, x = 16 | √(x−6) = 5 | 31; traps 11, 25, 19 | 4 → 3 |
+| q-252 (Q5) | x√5 = 5√x, x ≠ 0 → 5 | x√6 = 6√x, x ≠ 0 | 6; "no x ≠ 0 → 0 or 6" | 2 → 4 |
+Methods kept: Q1 smallest prime base + pair the families; Q2 split + common factor; Q3 equal bases + plug back in (9⁶ = 3¹² = 27⁴); Q4 square + check; Q5 square, divide by x only because x ≠ 0, factor otherwise. One new spoken line each in Q1 and Q3 names the trap choice.
+
+**Lesson "Exponents & Roots — Techniques"** (Hebrew examples): √48/√3 = 4 → √98/√2 = 7 (both ways); 6/√3 = 2√3 → 10/√2 = 5√2; 20/√5 = 4√5 → 18/√6 = 3√6 ("nine times two or three times six"). 6/√3 is also the topic 9 lesson's example. Memory card: example 6/√3 → 10/√2; the "pair the families" tip now shows the new Q1; the tip x² = 5x is now x² = 6x.
+
+**Practice (Hebrew study guide)**
+| Item | Old | New | Answer | Key |
+|---|---|---|---|---|
+| q-253 | 3⁵/15² | 2⁷/6² | 32/9 (trap 32/3) | 3 → 4 |
+| q-254 | 3²·9³ | 2³·4⁴ | 2¹¹ (trap 2⁷) | 1 → 3 |
+| q-255 | (16³·8²)/(4⁴·2⁶) | (9⁴·27²)/(81·3⁶) | 3⁴ | 1 → 1 |
+| q-256 | 7² = 7^(x+6) | 5³ = 5^(x+8) | −5 | 1 → 1 |
+| q-257 | 2⁸ = 4^(x−1) | 3¹⁰ = 9^(x−2) | 7 (traps 12, 6, 5) | 4 → 2 |
+| q-258 | 8⁵ = 4⁴·2ˣ | 27⁴ = 9³·3ˣ | 6 | 4 → 3 |
+| q-259 | (1/5)³ = 5^(x−7) | (1/3)⁴ = 3^(x−6) | 2 (trap 10) | 1 → 4 |
+| q-260 | 10/√5 | 21/√3 | 7√3 | 1 → 2 |
+| q-261 | 5√3/√15 | 7√2/√14 | √7 | 2 → 4 |
+| q-262 | √18 | √28 (kept from 2026-10-04) | 2√7 | 2 |
+| q-263 | √63 (the reverse of the T9 lesson's 3√7 = √63) | √45 | 3√5 (trap 9√5) | 4 → 4 |
+| q-264 | √3 + √27 | √2 + √32 | 5√2 | 2 → 3 |
+| q-265 | √80 − √20 (the T9 summary has √80 + √20) | √75 − √12 | 3√3 (trap √63) | 3 → 4 |
+| q-266 | √(2x+9) = 5 | √(3x+1) = 4 | 5 (trap 1) | 1 → 3 |
+| q-267 | √(4x+6) = √70 | √(5x−4) = √66 | 14 | 3 → 1 |
+| q-268 | x>0, x^(x+3)·x^(−x−2) | y>0, y^(y+4)·y^(−y−5) | 1/y (check y = 2) | 2 → 2 |
+| q-269 | √(x²) = 5 | √(x²) = 7 | −7 | 3 → 4 |
+| q-270 | a^(a+2)/a² (a = 2 ties) | b^(b+3)/b³; choices bᵇ, (b+3)ᵇ, 2b, b^(b+6) (b = 2 ties bᵇ and 2b → try b = 3) | bᵇ | 3 → 1 |
+| q-271 | 16ˣ·4ˣ·2ˣ | 27ˣ·9ˣ·3ˣ | 3^(6x) | 3 → 2 |
+| q-272 | (9³·3⁴)/81 | (8³·2⁵)/32 | 2⁹ | 3 → 4 |
+| q-273 | 36⁴ (216², (6²)⁸, 72²) | 25⁴ (125², (5²)⁸, 50²) | 5⁸ | 4 → 3 |
+| q-274 | 2^(n+1) = 64 | 3^(n+2) = 243 | 3 (trap 5) | 4 → 3 |
+| q-275 | (5^(−√3))^(−√3) | (2^(−√5))^(−√5) | 32 | 4 → 3 |
+| q-276 | 7ˣ·7⁻ˣ | 6ˣ·6⁻ˣ | 1 | 4 → 1 |
+| q-277 | x = y = 8 | m = n = 6, m^(n−m)·n^(m−n) | 1 | 4 → 2 |
+| q-278 | 5a⁸c⁶/(a²c³) | 3x⁹y⁴/(x³y²) | 3x⁶y² (trap 3x³y² = divided exponents) | 2 → 1 |
+| q-279 | (3⁴)³·3⁻¹⁴ | (2³)⁴·2⁻¹⁵ | 1/8 (traps 1/256, −1/8, −8) | 1 → 3 |
+| q-280 | x^(3/4)·x^(4/3) | x^(2/5)·x^(5/2) | x^(29/10) (traps x, flipped) | 4 → 1 |
+| q-281 | 3ˣ·4ˣ·5ˣ = ∛60 | 2ˣ·3ˣ·7ˣ = √42 | 1/2 | 2 → 4 |
+| q-282 | x+y+z = 5, 3ˣ3ʸ3ᶻ | a+b+c = 4, 2ᵃ2ᵇ2ᶜ | 16 (traps 8, 64) | 4 → 2 |
+| q-283 | √98 | √112 | 4√7 | 1 → 4 |
+| q-284 | letters a, b | letters m, n; choices reordered | m·n = m+n | 2 → 3 |
+| q-285 | ⁴√(5⁶) | ⁴√(7⁶) | 7√7 | 2 → 2 |
+| q-286 | x>0, √(48x) = √3·x | x>0, √(50x) = √2·x | 25 | 4 → 1 |
+| q-287 | Dana 7 > √5+√20 (right), Yoav 4√3 > 5√2 (wrong) | Noa 8 > √7+√28 (63 < 64, right), Ethan 3√5 > 4√3 (45 < 48, wrong) | Only Noa | 1 → 3 |
+| q-r26-t10-11 (English) | (5ⁿ⁺¹−5ⁿ)/4, nearly the summary example 5ˣ⁺¹−5ˣ = 4·5ˣ | (7ⁿ⁺¹−7ⁿ)/6 | 7ⁿ | 2 |
+
+**Practice clean-up (57 → 40)**
+- Removed the copies (14 extra-bank items alg-extra-unit-t10-2-1…7 and -3-1…7, which repeat each other and the topic 8/9 extras). Also removed q-r26-t10-09, which is the same type as guided Q6. No extra-bank warm-ups are left.
+- Removed 2 September items whose type the Hebrew practice already covers: q-r26-t10-07 0.2ˣ = 25 (q-259) and q-r26-t10-08 4ˣ·25ˣ = 10⁶ (q-281).
+- Kept the September items for types the Hebrew practice lacks: 06 (count the copies), 10 (don't divide by x), 11 (common factor), 12 (2ˣ+2ˣ = 4ˣ trap), 16 (sum of powers = 9ⁿ).
+- Order in "Expressions and equations": simplify one root (q-262, q-263) → add roots → a number over a root → root equations → power equations → fractions of powers. "Mixed practice" keeps its easy → hard order. The answer keys are now spread over all four positions.
+- Guided order kept: Q4 is the easiest, but it starts the root equations right before Q5 and Q6, and moving it would break that run.
+
+Check: every answer and trap was recomputed in Python (sympy). No question equals a lesson example from topics 1–10, and no question stem duplicates another question in the course. `python3 math_check.py 10 32` → 0 problems, 0 warnings, 0 layout problems. Rendered powers-techniques and solve-q-248…252 and checked them by eye (tmp_check/ren10.png).
+
+## 2026-10-06 review
+- Lesson "Exponents & Roots — Techniques" slide 2: √98/√2 = 7 was the same as topic 9 guided q-240 (√98/√2) and split
+  √98 = √49·√2, the Hebrew q-283. Changed to √150/√6 = √25 = 5, both ways (board, click labels, draw cue "Cross out √6",
+  speech). √150 is not used anywhere else.
+- q-263: √45 was the same question as the topic 9 warm-up alg-extra-root-practice-2 (√45, nearly the same choices).
+  Changed to √117 = 3√13 (still a factor 9): choices 13√3, 4√3, 9√13 (trap: forgot the root of 9), 3√13 · key 4.
+- Everything else checked (keys, traps, all 5 videos step by step, no old numbers left): no other problems.

@@ -76,11 +76,11 @@
     {
      "id": 7,
      "title": "Equations",
-     "videos": 29,
-     "lessons": 4,
-     "questions": 54,
-     "minutes": 34,
-     "steps": 84
+     "videos": 26,
+     "lessons": 3,
+     "questions": 51,
+     "minutes": 30,
+     "steps": 78
     },
     {
      "id": 8,
@@ -96,36 +96,36 @@
      "title": "Roots — Fundamentals",
      "videos": 9,
      "lessons": 3,
-     "questions": 42,
+     "questions": 32,
      "minutes": 17,
-     "steps": 52
+     "steps": 42
     },
     {
      "id": 10,
      "title": "Laws of Exponents & Roots — Fundamentals",
      "videos": 11,
      "lessons": 3,
-     "questions": 65,
+     "questions": 48,
      "minutes": 15,
-     "steps": 77
+     "steps": 60
     },
     {
      "id": 11,
      "title": "Laws of Exponents & Roots — Advanced",
      "videos": 20,
      "lessons": 3,
-     "questions": 52,
-     "minutes": 30,
-     "steps": 73
+     "questions": 42,
+     "minutes": 31,
+     "steps": 63
     },
     {
      "id": 12,
      "title": "Inequalities",
      "videos": 26,
      "lessons": 5,
-     "questions": 56,
-     "minutes": 35,
-     "steps": 84
+     "questions": 48,
+     "minutes": 36,
+     "steps": 76
     },
     {
      "id": 13,

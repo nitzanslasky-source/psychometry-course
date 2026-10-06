@@ -920,3 +920,262 @@ _apply_before_pen_or_click = apply
 def apply(M):
     _apply_before_pen_or_click(M)
     pen_or_click(M)   # 2026-10-06 pen or click: runs last
+
+
+# ---------------------------------------------------------------- 2026-10-06 renumber pass
+# The English course must not look like the teacher's Hebrew course: every Hebrew-derived item (the 15 study-guide
+# questions q-233..q-247, q-227 moved here from topic 8, the Hebrew lesson's own examples and card tips) gets new
+# numbers - same concept, same trap, same level, same method. Plus a safe reorder and the approved practice clean-up.
+# Nothing in topic 9 is recorded (no take in ~/Documents/Course.recordings). Runs last, after pen_or_click.
+RN_RECORDED = set()
+
+
+def _rn_sub(M, vid, n, pairs):
+    """Exact substring replacements on one slide: board items, item labels, spoken lines, draw cues. Each must hit."""
+    if vid in RN_RECORDED: return
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for k in ('say', 'draw', 'label'):
+                if k in l and old in l[k]: l[k] = l[k].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def _rn_q(M, qid, **kw):
+    if qid not in RN_RECORDED: M.set_q(qid, **kw)
+
+
+def rn_lesson(M):
+    V = 'roots'
+    # slide 2: root of 49 -> root of 36
+    _rn_sub(M, V, 2, [
+        (r'$\sqrt{49}$', r'$\sqrt{36}$'),
+        (r'$=7 \qquad \text{since } 7^2=49$', r'$=6 \qquad \text{since } 6^2=36$'),
+        ('= 7, since 7² = 49 appears', '= 6, since 6² = 36 appears'),
+        ('Seven squared is forty-nine. So the root of forty-nine is seven.', 'Six squared is thirty-six. So the root of thirty-six is six.'),
+        ('But wait — negative seven squared is also forty-nine.', 'But wait — negative six squared is also thirty-six.'),
+        ('So root forty-nine is just seven.', 'So root thirty-six is just six.'),
+        (r'$x^2=49$', r'$x^2=36$'), ('x² = 49 appears', 'x² = 36 appears'),
+        (r'$x=7 \ \text{ or } \ x=-7$', r'$x=6 \ \text{ or } \ x=-6$'), ('x = 7 or x = −7 appears', 'x = 6 or x = −6 appears'),
+        ('x squared equals forty-nine has TWO solutions. Seven and negative seven.',
+         'x squared equals thirty-six has TWO solutions. Six and negative six.')])
+    # slide 3: root of (-8)^2 -> root of (-10)^2
+    _rn_sub(M, V, 3, [
+        (r'$\sqrt{(-8)^2}$', r'$\sqrt{(-10)^2}$'),
+        (r'$=\sqrt{64}=8$', r'$=\sqrt{100}=10$'), ('= √64 = 8 appears', '= √100 = 10 appears'),
+        ('Root of negative eight, squared. Careful.', 'Root of negative ten, squared. Careful.'),
+        ('Negative eight squared is sixty-four. Root sixty-four: positive eight.',
+         'Negative ten squared is one hundred. Root one hundred: positive ten.')])
+    # slide 4: sqrt72 = 6 sqrt2, sqrt200 -> sqrt48 = 4 sqrt3, sqrt300; the "largest square" tip with 48 = 4 * 12
+    _rn_sub(M, V, 4, [
+        (r'$\sqrt{72}=\sqrt{4\cdot18}=2\sqrt{18}$', r'$\sqrt{48}=\sqrt{4\cdot12}=2\sqrt{12}$'),
+        ('√72 = √(4 · 18) = 2√18 appears', '√48 = √(4 · 12) = 2√12 appears'),
+        (r'$2\sqrt{18}=2\cdot3\sqrt2=6\sqrt2$', r'$2\sqrt{12}=2\cdot2\sqrt3=4\sqrt3$'),
+        ('2√18 = 2 · 3√2 = 6√2 appears', '2√12 = 2 · 2√3 = 4√3 appears'),
+        (r'$\sqrt{72}$', r'$\sqrt{48}$'),
+        (r'$=\sqrt{36\cdot2}$', r'$=\sqrt{16\cdot3}$'), ('= √(36 · 2) appears', '= √(16 · 3) appears'),
+        (r'$=\sqrt{36}\cdot\sqrt2=6\sqrt2$', r'$=\sqrt{16}\cdot\sqrt3=4\sqrt3$'), ('= √36 · √2 = 6√2 appears', '= √16 · √3 = 4√3 appears'),
+        ('Seventy-two is thirty-six times two. And thirty-six is a perfect square.',
+         'Forty-eight is sixteen times three. And sixteen is a perfect square.'),
+        ('Root thirty-six is six. The two stays inside. Six root two.', 'Root sixteen is four. The three stays inside. Four root three.'),
+        (r'$\sqrt{200}$', r'$\sqrt{300}$'), ('√200 appears', '√300 appears'),
+        (r'$=\sqrt{100\cdot2}=10\sqrt2$', r'$=\sqrt{100\cdot3}=10\sqrt3$'), ('= √(100 · 2) = 10√2 appears', '= √(100 · 3) = 10√3 appears'),
+        ('Two hundred is a hundred times two. Ten root two.', 'Three hundred is a hundred times three. Ten root three.'),
+        ('If you pull out only four, you get two root eighteen.', 'If you pull out only four, you get two root twelve.'),
+        ("Look at what's left inside: eighteen. It is still divisible by nine. Not done yet.",
+         "Look at what's left inside: twelve. It is still divisible by four. Not done yet.")])
+    # slide 5 (bring a number inside): 3 sqrt7 = sqrt63 was the Hebrew question q-243 word for word -> 5 sqrt2 = sqrt50 vs 7
+    _rn_sub(M, V, 5, [
+        (r'$3\sqrt7=\sqrt{63}<\sqrt{64}=8$', r'$5\sqrt2=\sqrt{50}>\sqrt{49}=7$'),
+        ('3√7 = √63 < √64 = 8 appears', '5√2 = √50 > √49 = 7 appears'),
+        (r'$3\sqrt7\quad ?\quad 8$', r'$5\sqrt2\quad ?\quad 7$'), ('3√7 ? 8 appears', '5√2 ? 7 appears'),
+        (r'$3\sqrt7$', r'$5\sqrt2$'), ('3√7 appears', '5√2 appears'),
+        (r'$=\sqrt9\cdot\sqrt7=\sqrt{63}$', r'$=\sqrt{25}\cdot\sqrt2=\sqrt{50}$'), ('= √9 · √7 = √63 appears', '= √25 · √2 = √50 appears'),
+        ('Three is root nine. Root nine times root seven — root sixty-three.', 'Five is root twenty-five. Root twenty-five times root two — root fifty.'),
+        ('Three root seven is root sixty-three. Eight is root sixty-four. So eight is bigger.',
+         'Five root two is root fifty. Seven is root forty-nine. So five root two is bigger.')])
+    # slide 6: 3 sqrt5 + 2 sqrt5, sqrt72 + sqrt32 -> 4 sqrt7 + 2 sqrt7, sqrt48 + sqrt75
+    _rn_sub(M, V, 6, [
+        (r'$3\sqrt5+2\sqrt5$', r'$4\sqrt7+2\sqrt7$'), ('3√5 + 2√5 appears', '4√7 + 2√7 appears'),
+        (r'$=5\sqrt5$', r'$=6\sqrt7$'), ('= 5√5 appears', '= 6√7 appears'),
+        ('Three x plus two x is five x — three root five plus two root five is five root five.',
+         'Four x plus two x is six x — four root seven plus two root seven is six root seven.'),
+        ('But root five plus root three? Different roots.', 'But root seven plus root three? Different roots.'),
+        (r'$\sqrt{72}+\sqrt{32}$', r'$\sqrt{48}+\sqrt{75}$'), ('√72 + √32 appears', '√48 + √75 appears'),
+        (r'$=6\sqrt2+4\sqrt2=10\sqrt2$', r'$=4\sqrt3+5\sqrt3=9\sqrt3$'), ('= 6√2 + 4√2 = 10√2 appears', '= 4√3 + 5√3 = 9√3 appears'),
+        ('Root seventy-two is six root two. Root thirty-two is four root two. Same root — ten root two.',
+         'Root forty-eight is four root three. Root seventy-five is five root three. Same root — nine root three.')])
+    # slide 7: sqrt75 / sqrt3, 6 / sqrt3 -> sqrt108 / sqrt3, 12 / sqrt6 (review: 10/√5 was the Hebrew q-260)
+    _rn_sub(M, V, 7, [
+        (r'$\frac{\sqrt{75}}{\sqrt3}$', r'$\frac{\sqrt{108}}{\sqrt3}$'), ('√75 / √3 appears', '√108 / √3 appears'),
+        (r'$=\sqrt{75\div3}=\sqrt{25}=5$', r'$=\sqrt{108\div3}=\sqrt{36}=6$'), ('= √(75 ÷ 3) = √25 = 5 appears', '= √(108 ÷ 3) = √36 = 6 appears'),
+        ('Root seventy-five over root three: root of seventy-five over three — root twenty-five. Five.',
+         'Root one hundred eight over root three: root of one hundred eight over three — root thirty-six. Six.'),
+        (r'$\frac{6}{\sqrt3}=\frac{2\cdot\sqrt3\cdot\sqrt3}{\sqrt3}=2\sqrt3$', r'$\frac{12}{\sqrt6}=\frac{2\cdot\sqrt6\cdot\sqrt6}{\sqrt6}=2\sqrt6$'),
+        ('6/√3 = (2 · √3 · √3) ÷ √3 = 2√3 appears', '12/√6 = (2 · √6 · √6) ÷ √6 = 2√6 appears'),
+        (r'$\frac{6}{\sqrt3}$', r'$\frac{12}{\sqrt6}$'), ('6/√3 appears', '12/√6 appears'),
+        (r'$6\div3=2 \;\to\; 2\sqrt3$', r'$12\div6=2 \;\to\; 2\sqrt6$'), ('6 ÷ 3 = 2 → 2√3 appears', '12 ÷ 6 = 2 → 2√6 appears'),
+        ("six divided by three is two. Then keep the root. Two root three.", "twelve divided by six is two. Then keep the root. Two root six."),
+        ('Why? Three is root three times root three. One root three cancels. One stays.',
+         'Why? Six is root six times root six. One root six cancels. One stays.')])
+    # slide 8: cube root of -64 -> cube root of -125
+    _rn_sub(M, V, 8, [
+        (r'$\sqrt[3]{-64}$', r'$\sqrt[3]{-125}$'), ('∛(−64) appears', '∛(−125) appears'),
+        (r'$=-4 \qquad \text{since } (-4)^3=-64$', r'$=-5 \qquad \text{since } (-5)^3=-125$'),
+        ('= −4, since (−4)³ = −64 appears', '= −5, since (−5)³ = −125 appears'),
+        ('Negative four cubed is negative sixty-four — so the cube root of negative sixty-four is negative four.',
+         'Negative five cubed is negative one hundred twenty-five — so the cube root of negative one hundred twenty-five is negative five.')])
+    # slide 11: sqrt(9 + 16) -> sqrt(25 + 144)
+    _rn_sub(M, V, 11, [
+        ('Check with numbers: a nine, b sixteen.', 'Check with numbers: a twenty-five, b one hundred forty-four.'),
+        (r'$\sqrt{9+16}=\sqrt{25}=5$', r'$\sqrt{25+144}=\sqrt{169}=13$'), ('√(9 + 16) = √25 = 5 appears', '√(25 + 144) = √169 = 13 appears'),
+        (r'$\sqrt9+\sqrt{16}=3+4=7$', r'$\sqrt{25}+\sqrt{144}=5+12=17$'), ('√9 + √16 = 3 + 4 = 7 appears', '√25 + √144 = 5 + 12 = 17 appears'),
+        ('Root of twenty-five is five. Three plus four is seven. Not equal.',
+         'Root of one hundred sixty-nine is thirteen. Five plus twelve is seventeen. Not equal.')])
+    # memory card: the Hebrew tips (sqrt72, 6/sqrt3) and the old Hebrew questions used as examples
+    c = M.card('roots'); rows = c['tables'][0]['rows']
+    rows[4][1] = rows[4][1].replace('\\(\\sqrt[3]{5^6}=5^2\\)', '\\(\\sqrt[4]{3^8}=3^2\\)')
+    rows[5][1] = rows[5][1].replace('\\(3\\sqrt7=\\sqrt{63}\\)', '\\(5\\sqrt2=\\sqrt{50}\\)')
+    c['tips'][0] = 'Pull out the largest square: \\(\\sqrt{48}=\\sqrt{16\\cdot3}=4\\sqrt3\\).'
+    c['tips'][1] = 'Number over a root: divide by the number under the root, keep the root. \\(\\frac{12}{\\sqrt6}=(12\\div6)\\sqrt6=2\\sqrt6\\).'
+    assert '5^2' not in rows[4][1] and '63' not in rows[5][1]
+
+
+def rn_questions(M):
+    # q-233: cbrt8 - cbrt0 - cbrt(-1) = 3 (key 3)
+    _rn_q(M, 'q-233', stem=r'$\sqrt[3]{27}-\sqrt[3]{-1}-\sqrt[3]{0} = ?$', choices=['$3$', '$-4$', '$2$', '$4$'], correct=4, expl=[
+        r'Find each cube root: $\sqrt[3]{27}=3$, $\sqrt[3]{-1}=-1$ (odd roots of negative numbers exist) and $\sqrt[3]{0}=0$.',
+        r'Then $3-(-1)-0=3+1=4$.',
+        r'The traps: $2$ forgets that minus a negative is plus, and $3$ treats $\sqrt[3]{-1}$ as if it did not exist.'])
+    # q-234: 6th root of -64 (key 1)
+    _rn_q(M, 'q-234', stem=r'$\sqrt[4]{-81} = ?$', choices=['$3$', '$-3$', 'No real value', '$-9$'], correct=3, expl=[
+        r'A $4$th root is an even root. Any real number to the $4$th power is zero or positive. Therefore, no number to the $4$th power gives $-81$.',
+        r'So, $\sqrt[4]{-81}$ has no real value. (Careful: $(-3)^4=81$, not $-81$.)'])
+    # q-235: cbrt(5^6) = 25 (key 1)
+    _rn_q(M, 'q-235', stem=r'$\sqrt[3]{7^{6}} = ?$', choices=['$7$', r'$\sqrt{7}$', '$49$', '$343$'], correct=3, expl=[
+        r'The power inside goes on top, the root index on the bottom: $\sqrt[3]{7^6}=7^{\frac63}=7^2=49$.',
+        r'The trap is $343=7^3$: it subtracts $6-3$ instead of dividing $6\div3$.'])
+    # q-236: 81^(1/4) = 3 (key 3)
+    _rn_q(M, 'q-236', stem=r'$256^{\frac{1}{4}} = ?$', choices=['$64$', '$16$', '$2$', '$4$'], correct=4, expl=[
+        r'A power of $\frac14$ is a fourth root: $256^{\frac14}=\sqrt[4]{256}=4$, because $4^4=256$.',
+        r'Or take the square root twice: $\sqrt{256}=16$ and $\sqrt{16}=4$.',
+        r'The traps: $64$ is $256\cdot\frac14$ (a power is not a product), and $16$ is only the square root.'])
+    # q-237: sqrt27 * sqrt3 = 9 (key 4)
+    _rn_q(M, 'q-237', stem=r'$\sqrt{20}\cdot\sqrt{5} = ?$', choices=['$5$', '$10$', '$100$', '$25$'], correct=2, expl=[
+        r'Put the product under one root: $\sqrt{20}\cdot\sqrt{5}=\sqrt{20\cdot5}=\sqrt{100}=10$.'])
+    # q-238: sqrt31 * sqrt31 = 31 (key 2)
+    _rn_q(M, 'q-238', stem=r'$\sqrt{23}\cdot\sqrt{23} = ?$', choices=['$1$', '$0$', '$23$', '$46$'], correct=3, expl=[
+        r'A square root times itself gives the number under the root: $\sqrt{23}\cdot\sqrt{23}=\sqrt{23\cdot23}=23$.'])
+    # q-239: cbrt9 * cbrt9 * cbrt9 = 9 (key 1)
+    _rn_q(M, 'q-239', stem=r'$\sqrt[3]{6}\cdot\sqrt[3]{6}\cdot\sqrt[3]{6} = ?$', choices=['$216$', '$6$', '$18$', '$2$'], correct=2, expl=[
+        r'Three copies of a cube root multiply back to the number under it: $\sqrt[3]{6}\cdot\sqrt[3]{6}\cdot\sqrt[3]{6}=\left(\sqrt[3]{6}\right)^3=6$.',
+        r'Or put everything under one root: $\sqrt[3]{6\cdot6\cdot6}=\sqrt[3]{216}=6$, because $6^3=216$.'])
+    # q-240: sqrt50 / sqrt2 = 5 (key 1)
+    _rn_q(M, 'q-240', stem=r'$\frac{\sqrt{98}}{\sqrt{2}} = ?$', choices=['$49$', '$14$', '$2$', '$7$'], correct=4, expl=[
+        r'Put the quotient under one root: $\frac{\sqrt{98}}{\sqrt2}=\sqrt{\frac{98}{2}}=\sqrt{49}=7$.'])
+    # q-241: sqrt3 / sqrt48 = 1/4 (key 3)
+    _rn_q(M, 'q-241', stem=r'$\frac{\sqrt{2}}{\sqrt{72}} = ?$',
+          choices=[r'$\frac{1}{6}$', r'$\frac{1}{12}$', r'$\frac{1}{36}$', r'$\frac{1}{3}$'], correct=1, expl=[
+        r'Put the quotient under one root: $\frac{\sqrt2}{\sqrt{72}}=\sqrt{\frac{2}{72}}=\sqrt{\frac{1}{36}}=\frac16$.',
+        r'The trap is $\frac1{36}$: it forgets the root at the end.'])
+    # q-242: index 2.5 over sqrt243 = 3 (key 3)
+    _rn_q(M, 'q-242', stem='$\\sqrt[1.5]{\\sqrt{125}} = ?$\n(The root index $1.5$ means the power $\\frac{1}{1.5}$: '
+          '$\\sqrt[1.5]{\\sqrt{125}}=\\left(\\sqrt{125}\\right)^{\\frac{1}{1.5}}$.)',
+          choices=['$5$', '$25$', '$125$', '$1$'], correct=1, expl=[
+        r'Write both roots as powers: $\sqrt{125}=125^{\frac12}$, and the root index $1.5$ is the power $\frac{1}{1.5}=\frac23$.',
+        r'Power of a power: multiply the exponents. $\left(125^{\frac12}\right)^{\frac23}=125^{\frac12\cdot\frac23}=125^{\frac13}=\sqrt[3]{125}$.',
+        r'$125=5^3$, therefore $\sqrt[3]{125}=5$.'])
+    # q-243: 3 sqrt7 = sqrt63 (key 1)
+    _rn_q(M, 'q-243', stem=r'$2\cdot\sqrt{13} = ?$',
+          choices=[r'$\sqrt{26}$', r'$\sqrt{338}$', r'$\sqrt{52}$', r'$\sqrt{15}$'], correct=3, expl=[
+        r'Bring the $2$ inside the root by squaring it: $2\sqrt{13}=\sqrt4\cdot\sqrt{13}=\sqrt{4\cdot13}=\sqrt{52}$.',
+        r'The traps: $\sqrt{26}$ forgets to square the $2$, and $\sqrt{338}=\sqrt{2\cdot169}$ squares the wrong number.'])
+    # q-244: 3 cbrt2 = cbrt54 (key 1)
+    _rn_q(M, 'q-244', stem=r'$3\cdot\sqrt[3]{4} = ?$',
+          choices=[r'$\sqrt[3]{36}$', r'$\sqrt[3]{108}$', r'$\sqrt[3]{12}$', r'$\sqrt[3]{7}$'], correct=2, expl=[
+        r'To go inside a cube root, the $3$ is cubed: $3\sqrt[3]{4}=\sqrt[3]{27}\cdot\sqrt[3]{4}=\sqrt[3]{27\cdot4}=\sqrt[3]{108}$.',
+        r'The trap is $\sqrt[3]{36}=\sqrt[3]{9\cdot4}$: it squares the $3$, as for a square root.'])
+    # q-245: smallest of pi, 3, cbrt30, sqrt7 (key 4)
+    _rn_q(M, 'q-245', stem='Which of the following is the smallest?',
+          choices=[r'$\sqrt{10}$', r'$\sqrt[3]{25}$', '$3$', r'$\pi$'], correct=2, expl=[
+        r'Estimate each number. $\sqrt[3]{25}$ is between $\sqrt[3]{8}=2$ and $\sqrt[3]{27}=3$, a little less than $3$: about $2.9$.',
+        r'$\sqrt{10}$ is a little more than $\sqrt9=3$: about $3.16$. And $\pi\approx3.14$.',
+        r'Order: $\sqrt[3]{25}<3<\pi<\sqrt{10}$. The smallest is $\sqrt[3]{25}$.'])
+    # q-246: closest to sqrt3 among 1.6-1.9 (key 2)
+    _rn_q(M, 'q-246', stem=r'Which of the following is closest to $\sqrt{5}$?',
+          choices=['$2.1$', '$2.2$', '$2.3$', '$2.4$'], correct=2, expl=[
+        r'$\sqrt5\approx2.24$. The distance to $2.2$ is about $0.04$, and the distance to $2.3$ is about $0.06$. The closest is $2.2$.',
+        r'Check without the estimate: the middle between $2.2$ and $2.3$ is $2.25$, and $2.25^2=5.0625>5$. Therefore, $\sqrt5<2.25$, closer to $2.2$.'])
+    # q-247: x = sqrt(5x), number of solutions = 2 (key 3)
+    _rn_q(M, 'q-247', stem=r'How many solutions does the equation $\sqrt{7x}=x$ have?', choices=['$1$', '$2$', '$0$', '$4$'], correct=2, expl=[
+        r'Square both sides: $7x=x^2$. Do not divide by $x$ ($x$ can be $0$). Move everything to one side and factor: $x^2-7x=0$, $x(x-7)=0$.',
+        r'Therefore $x=0$ or $x=7$.',
+        r'Check both in the original equation: $\sqrt0=0$ and $\sqrt{49}=7$. Both work. Therefore, there are $2$ solutions.',
+        r'The trap is $1$: dividing by $x$ loses the solution $x=0$.'])
+    # q-227 (Hebrew topic 8 study guide, moved to this practice by the T8 patch): (7^3)^(2/3) = 49 (key 1)
+    _rn_q(M, 'q-227', stem=r'$\left(6^{3}\right)^{\frac{2}{3}} = ?$', choices=['$6$', '$216$', '$1296$', '$36$'], correct=4, expl=[
+        r'A power of a power: multiply the exponents. $3\cdot\frac{2}{3}=2$.',
+        r'$\left(6^3\right)^{\frac{2}{3}}=6^2=36$.'])
+    # alg-extra-root-practice-3 (extra bank) asked sqrt(x^2) for x < 0 - the rule itself, written on the Summary board
+    _rn_q(M, 'alg-extra-root-practice-3', stem='Given: $x<0$\n$\\sqrt{9x^2} = ?$',
+          choices=['$3x$', '$-3x$', '$-9x$', '$3x^2$'], correct=2, expl=[
+        r'Split the root: $\sqrt{9x^2}=\sqrt9\cdot\sqrt{x^2}=3|x|$.',
+        r'For $x<0$, $|x|=-x$. Therefore, $\sqrt{9x^2}=-3x$.',
+        r'Example: $x=-2$. $\sqrt{9\cdot4}=\sqrt{36}=6$, and $-3x=-3\cdot(-2)=6$. The trap $3x$ gives $-6$: a root is never negative.'])
+    # q-r26-t09-19 (September review) was the "Square of a sum" lesson example word for word (sqrt3 + sqrt5 vs sqrt15)
+    _rn_q(M, 'q-r26-t09-19', stem='Which of the following is true?',
+          choices=[r'$\sqrt{5}+\sqrt{7}>\sqrt{35}$', r'$\sqrt{5}+\sqrt{7}=\sqrt{35}$', r'$\sqrt{5}+\sqrt{7}<\sqrt{35}$', r'$\sqrt{5}+\sqrt{7}=\sqrt{12}$'],
+          correct=3, expl=[
+        'Both sides are positive. Compare their squares.',
+        r'Left: $(\sqrt5+\sqrt7)^2=5+7+2\sqrt{35}=12+2\sqrt{35}$. Right: $(\sqrt{35})^2=35$.',
+        r'Subtract $12$ from both: $2\sqrt{35}$ against $23$. Bring the $2$ inside: $\sqrt{140}$ against $\sqrt{529}$.',
+        r'$\sqrt{140}<\sqrt{529}$. Therefore $\sqrt5+\sqrt7<\sqrt{35}$.',
+        r'Choice 4 is the trap: a root does not split over a plus.'])
+
+
+def rn_order(M):
+    # guided Question 1 (4th root of 9^6, fraction 3/2) after the two easy power questions q-235, q-236
+    M.move('q-r26-t09-01', CORE, after='q-236')
+    M.move('solve-q-r26-t09-01', CORE, after='q-r26-t09-01')
+    # the easiest product first: sqrt23 * sqrt23 before sqrt20 * sqrt5
+    M.move('q-238', CORE, before='q-237')
+
+
+def rn_practice(M):
+    """Approved clean-up: copies out, at most 3 extra-bank warm-ups, September items whose type the Hebrew covers out."""
+    out = [
+        # copies (practice_audit/copies_by_topic.txt, each checked)
+        'alg-extra-root-practice-6',    # sqrt12 * sqrt27: same as core q-237 (product under one root)
+        'q-r26-t09-13',                 # sqrt(2x + 3) = 3: same as alg-extra-root-practice-5
+        'alg-extra-exponent-extra-2',   # 27^(2/3): same as q-r26-t09-10 and the Summary example 27^(2/3) = 9
+        'q-r26-t09-14',                 # largest of 2 sqrt11, 3 sqrt5, sqrt43, 6.5: same as guided Question 2
+        # extra-bank warm-ups beyond 3 (kept: -3 |x|, -2 pull out a square, exponent-extra-7 simplify and add)
+        'alg-extra-root-practice-1', 'alg-extra-root-practice-4', 'alg-extra-root-practice-5', 'alg-extra-root-practice-7',
+        # September items of a type the Hebrew study guide covers
+        'q-r26-t09-10',                 # 8^(2/3): q-236 / q-242, and it was the lesson example 8^(2/3) = 4
+        'q-r26-t09-11',                 # 4th root of x^8: q-235
+    ]
+    for qid in out:
+        if qid in M.D['questions'] and any(f['ref'] == qid for f in M.D['flow']) and M.section_of(qid) == PRAC:
+            M.unplace(qid)
+    M.practice_order(PRAC, ['q-r26-t09-12', 'alg-extra-root-practice-3', 'alg-extra-root-practice-2', 'alg-extra-exponent-extra-7',
+                            'q-227', 'q-r26-t09-09', 'q-r26-t09-16', 'q-r26-t09-17', 'q-r26-t09-18', 'q-r26-t09-15', 'q-r26-t09-19'])
+
+
+def renumber_pass(M):
+    rn_lesson(M)
+    rn_questions(M)
+    rn_order(M)
+    rn_practice(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last

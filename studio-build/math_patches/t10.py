@@ -895,3 +895,402 @@ _apply_before_pen_or_click = apply
 def apply(M):
     _apply_before_pen_or_click(M)
     pen_or_click(M)   # 2026-10-06 pen or click: runs last
+
+
+# ---------------------------------------------------------------- 2026-10-06 renumber pass
+# The English course must not look like the teacher's Hebrew course: every Hebrew-derived question (guided q-248..252,
+# practice q-253..287) and the Hebrew lesson's own examples get new numbers - same concept, same trap, same level, same
+# methods; solution videos rewritten to match (after pen_or_click, so the click items are rewritten here too). Practice
+# clean-up: copies removed, September-review items whose type the Hebrew practice already covers removed.
+RECORDED = set()     # nothing in topic 10 is recorded (checked ~/Documents/Course.recordings on 2026-10-06)
+
+
+def _rn_slide(M, vid, n, script, pre=None, room=(), row=None):
+    """Rebuild one slide (pre items kept unless given). room: {hand cue: gap} - the item right above a hand-written
+    line keeps an empty row for the handwriting (same as pen_or_click)."""
+    if vid in RECORDED: return
+    M.set_slide(vid, n, script=script, pre=pre)
+    b = M.slide(vid, n); last = b['pre'] - 1
+    for l in b['lines']:
+        if 'appear' in l: last = l['appear']
+        elif l.get('draw') in dict(room or {}) and last >= 0: b['items'][last]['gap'] = dict(room)[l['draw']]
+
+
+def renumber(M):
+    from math_api import rich_plain
+
+    def S(qid, **kw):
+        if qid in RECORDED: return
+        q = M.set_q(qid, **kw)
+        for v in M.D['videos'].values():
+            for b in v.get('beats', []):
+                for it in b.get('items', []):
+                    if it.get('k') == 'q' and it.get('qid') == qid and 'choices' in it:
+                        it['choices'] = list(q['choicesRich']); M.touched_videos.add(v['id'])
+        v = M.D['videos'].get('solve-' + qid)
+        if v: v['title'] = v['navLabel'] = rich_plain(q['stemRich'])
+
+    # ============ lesson "Exponents & Roots — Techniques": the Hebrew lesson's examples -> new examples, same points
+    L = LESSON
+    _rn_slide(M, L, 2, pre=[T(r'$\frac{\sqrt{150}}{\sqrt6}$', size=76, gap=60)], script=[
+        'Root one hundred fifty over root six. Two ways — both by the root rules.',
+        'Way one: put them under the same root.',
+        A('= √(150 ÷ 6) = √25 = 5 appears', T(r'$=\sqrt{150\div6}=\sqrt{25}=5$', size=50)),
+        'One hundred fifty over six is twenty-five. Root twenty-five: five.',
+        'Way two: split the top.',
+        A('√150 = √25 · √6 appears', T(r'$\sqrt{150}=\sqrt{25}\cdot\sqrt6$', size=50)),
+        D('Cross out √6 top and bottom'),
+        A('= √25 = 5 appears', T(r'$=\sqrt{25}=5$', size=50)),
+        'Root one hundred fifty is root twenty-five times root six. Now cancel root six, top and bottom. Five again.',
+        'Same answer, of course. Personally? I prefer splitting.',
+        'When a question has several roots and different terms to cancel, splitting is usually the easier road.',
+    ])
+    s = dict(size=44, gap=4)
+    _rn_slide(M, L, 3, pre=[T(r'$\frac{10}{\sqrt2}$', **s)], script=[
+        "Now a whole number over a root. The ten isn't under a root — so how do we cancel?",
+        'Actually, you could put it under one: ten is root one hundred. Root one hundred over root two — one big root. That works.',
+        "But it's easier to split the ten: ten is five times two.",
+        A('= (5 · 2) / √2 appears', T(r'$=\frac{5\cdot2}{\sqrt2}$', **s)),
+        'And two is root two times root two.',
+        A('= (5 · √2 · √2) / √2 appears', T(r'$=\frac{5\cdot\sqrt2\cdot\sqrt2}{\sqrt2}$', **s)),
+        'Because root two times root two is root two squared — and the square cancels the root.',
+        D('Cross out one √2 on top and the √2 on the bottom'),
+        A('= 5√2 appears', T(r'$=5\sqrt2$', **s)),
+        'Cancel. Five root two.',
+        A('18/√6 appears', T(r'$\frac{18}{\sqrt6}$', **s)),
+        'Another one. Eighteen could be nine times two — or three times six.',
+        "There's a six underneath, so choose three times six. Then six is root six times root six.",
+        A('= (3 · √6 · √6) / √6 = 3√6 appears', T(r'$=\frac{3\cdot\sqrt6\cdot\sqrt6}{\sqrt6}=3\sqrt6$', **s)),
+        'Cancel root six with root six: three root six.',
+        'This comes up a LOT — especially in geometry, with the special right triangles, where you divide by root two or root three.',
+        "So here's the one-second shortcut.",
+        A('The shortcut appears: 1) ignore the root  2) add the root to the answer',
+          T('Shortcut: ① ignore the root  ② put the root on the answer', size=42, gap=4)),
+        A('10 ÷ 2 = 5 → 5√2 appears', T(r'$10\div2=5 \;\to\; 5\sqrt2$', size=42, gap=4)),
+        "Pretend the root isn't there: ten over two is five. Then put the root back on the answer: five root two. Done — zero mistakes.",
+        A('18 ÷ 6 = 3 → 3√6 appears', T(r'$18\div6=3 \;\to\; 3\sqrt6$', size=42, gap=4)),
+        'Eighteen over root six: no root — eighteen over six is three. Add the root: three root six. Simple — worth mastering.',
+        'Now the questions. Each one teaches one more technique. Try it — then watch.',
+    ])
+
+    # ============ guided Question 1: q-248  (9⁶·8⁻²)/(3⁸·4⁻²) = 3⁴·2⁻²  ->  (4⁵·27⁻²)/(2⁷·9⁻²) = 2³·3⁻²
+    S('q-248', stem=r'$\frac{4^{5}\cdot27^{-2}}{2^{7}\cdot9^{-2}}=?$',
+      choices=[r'$2^{-2}\cdot3^{3}$', r'$2^{3}\cdot3^{-2}$', r'$\frac{3^{2}}{2^{3}}$', r'$\frac{2^{3}}{3^{10}}$'], correct=2, expl=[
+        r'Write every base as a prime: $4^5=(2^2)^5=2^{10}$, $27^{-2}=(3^3)^{-2}=3^{-6}$, $9^{-2}=(3^2)^{-2}=3^{-4}$.',
+        r'The fraction becomes $\frac{2^{10}\cdot3^{-6}}{2^7\cdot3^{-4}}=2^{10-7}\cdot3^{-6-(-4)}=2^3\cdot3^{-2}$.',
+        r'The trap is choice 4: $-6-(-4)$ is $-2$, not $-10$ (minus minus is plus).'])
+    if 'q-248' not in RECORDED:
+        V = 'solve-q-248'
+        _rn_slide(M, V, 1, script=['Question one.',
+                                   "Powers everywhere — four, twenty-seven, two, nine. Let's make them talk to each other."])
+        _rn_slide(M, V, 2, script=[
+            'Different bases. So break every base down to its primes — the smallest base possible.',
+            D('Under the fraction write "4⁵ = (2²)⁵ = 2¹⁰"'),
+            'Four is two squared. Two squared to the fifth: multiply the exponents — two to the tenth.',
+            A('27⁻² = 3⁻⁶ appears', T(r'$27^{-2}=\left(3^3\right)^{-2}=3^{-6}$', size=36)),
+            'Twenty-seven is three cubed. Times negative two: three to the minus six.',
+            A('9⁻² = 3⁻⁴ appears', T(r'$9^{-2}=\left(3^2\right)^{-2}=3^{-4}$', size=36)),
+            'On the bottom, two to the seventh stays. Nine is three squared: three to the minus four.',
+            A('2: 10 − 7 = 3 appears', T(r'$2:\ \ 10-7=3$', size=36)),
+            'Now subtract exponents, top minus bottom. Twos: ten minus seven — two cubed.',
+            A('3: −6 − (−4) = −2 appears', T(r'$3:\ \ -6-(-4)=-2$', size=36)),
+            'Threes: minus six, minus minus four. Minus minus is plus — minus two. Three to the minus two.',
+            D('Circle choice 2'),
+            'Two cubed times three to the minus two. Choice two.',
+            'Careful — this could also show up in the choices as two cubed over three squared. The negative exponent just moves it to the bottom.',
+            'And choice four is the trap: minus six plus minus four. Minus minus is plus.',
+        ])
+        _rn_slide(M, V, 3, script=[
+            'A quick second look: pair up the families.',
+            D('Write "(4⁵ / 2⁷) · (27/9)⁻²"'),
+            'Fours with twos, twenty-sevens with nines.',
+            A('= 2³ · 3⁻² appears', T(r'$=2^3\cdot3^{-2}$', size=40)),
+            'Four to the fifth is two to the tenth, over two to the seventh: two cubed. Twenty-seven over nine is three — to the minus two.',
+            'Same answer. Choice two.',
+        ])
+
+    # ============ guided Question 2: q-249  (√27+√27)/(√48−√12) = 3  ->  (√50+√50)/(√32−√8) = 5
+    S('q-249', stem=r'$\frac{\sqrt{50}+\sqrt{50}}{\sqrt{32}-\sqrt{8}}=?$',
+      choices=[r'$5\sqrt2$', r'$25$', r'$\sqrt5$', r'$5$'], correct=4, expl=[
+        r'Simplify each root: $\sqrt{50}=5\sqrt2$, $\sqrt{32}=4\sqrt2$, $\sqrt8=2\sqrt2$.',
+        r'Numerator: $5\sqrt2+5\sqrt2=10\sqrt2$. Denominator: $4\sqrt2-2\sqrt2=2\sqrt2$.',
+        r'$\frac{10\sqrt2}{2\sqrt2}=5$.',
+        r'Or with a common factor: the top is $2\sqrt{50}$, the bottom is $\sqrt2(\sqrt{16}-\sqrt4)=2\sqrt2$, and $\frac{2\sqrt{50}}{2\sqrt2}=\sqrt{25}=5$.'])
+    if 'q-249' not in RECORDED:
+        V = 'solve-q-249'
+        _rn_slide(M, V, 2, script=[
+            "We can't cancel yet — there's adding and subtracting. So first, simplify every root.",
+            D('Write "√50 = √25 · √2 = 5√2"'),
+            'Root fifty: root twenty-five times root two. Why twenty-five? Because it comes out whole. Five root two.',
+            A('top: 10√2 appears', T(r'top: $5\sqrt2+5\sqrt2=10\sqrt2$', size=36)),
+            'Top: five root two plus five root two — ten root two.',
+            A('√32 = 4√2, √8 = 2√2 appears', T(r'$\sqrt{32}=\sqrt{16}\cdot\sqrt2=4\sqrt2,\ \ \sqrt{8}=\sqrt4\cdot\sqrt2=2\sqrt2$', size=36, gap=16)),
+            'Root thirty-two: sixteen times two — four root two. Root eight: four times two — two root two.',
+            A('bottom: 2√2 appears', T(r'bottom: $4\sqrt2-2\sqrt2=2\sqrt2$', size=36, gap=16)),
+            'Bottom: four root two minus two root two — two root two. Like four x minus two x.',
+            A('10√2 / 2√2 = 5 appears', T(r'$\frac{10\sqrt2}{2\sqrt2}=5$', size=36, gap=16)),
+            D('Circle choice 4'),
+            'Root two cancels. Ten over two: five. Choice four.',
+        ])
+        _rn_slide(M, V, 3, script=[
+            'Now with a common factor.',
+            A('top = 2√50 appears', T(r'top $=2\sqrt{50}$', size=40, gap=150)),
+            'The top is root fifty plus root fifty. Like x plus x: two root fifty.',
+            D('Write "bottom = √2(√16 − √4) = √2(4 − 2) = 2√2"'),
+            'Bottom: thirty-two and eight share a two. Take out root two — inside, root sixteen minus root four. Four minus two: two. Two root two.',
+            A('2√50 / 2√2 = √25 = 5 appears', T(r'$\frac{2\sqrt{50}}{2\sqrt2}=\sqrt{50\div2}=\sqrt{25}=5$', size=40)),
+            'The twos cancel. Root fifty over root two: root twenty-five. Five.',
+            D('Circle choice 4'),
+            'Same answer — choice four. Pick whichever method feels easier.',
+        ])
+
+    # ============ guided Question 3: q-250  4^(2x) = (1/8)^(4−2x), x = 6  ->  9^(3x) = (1/27)^(2−3x), x = 2
+    S('q-250', stem=r'Given: $9^{3x}=\left(\frac{1}{27}\right)^{2-3x}$. $x=?$',
+      choices=[r'$1$', r'$\frac25$', r'$3$', r'$2$'], correct=4, expl=[
+        r'Write both sides with base 3: $9^{3x}=(3^2)^{3x}=3^{6x}$, and $\frac1{27}=3^{-3}$, so $\left(\frac1{27}\right)^{2-3x}=3^{-3(2-3x)}=3^{-6+9x}$.',
+        r'Equal bases, so the exponents are equal: $6x=-6+9x$. Therefore $3x=6$ and $x=2$.',
+        r'Check: $9^6=3^{12}$ and $\left(\frac1{27}\right)^{-4}=27^4=3^{12}$ ✓. The trap $\frac25$ forgets the minus of the fraction.'])
+    if 'q-250' not in RECORDED:
+        V = 'solve-q-250'
+        _rn_slide(M, V, 2, room={'Write "6x = −6 + 9x"': 150}, script=[
+            'An exponential equation. Step one: make the bases equal.',
+            'Nine and one twenty-seventh — both are powers of three.',
+            A('9^(3x) = 3^(6x) appears', T(r'$9^{3x}=\left(3^2\right)^{3x}=3^{6x}$', size=40)),
+            'Nine is three squared. Times three x: three to the six x.',
+            "One twenty-seventh? Quick tip: ignore that it's a fraction — twenty-seven is three cubed. And because it's a fraction, add a minus.",
+            A('(1/27)^(2−3x) = 3^(−6+9x) appears', T(r'$\left(\frac{1}{27}\right)^{2-3x}=\left(3^{-3}\right)^{2-3x}=3^{-6+9x}$', size=40)),
+            'Three to the minus three. Multiply exponents: minus three times two — minus six. Minus three times minus three x — plus nine x.',
+            D('Write "6x = −6 + 9x"'),
+            'Same base on both sides. So the exponents are equal.',
+            A('6 = 3x → x = 2 appears', T(r'$6=3x \;\to\; x=2$', size=40)),
+            D('Circle choice 4'),
+            'Move the six x across: six equals three x. x is two. Choice four.',
+            'Forget the minus of the fraction, and you get two fifths — choice two, the trap.',
+            'And always go to the SMALLEST base. Three — not nine, not twenty-seven.',
+        ])
+        _rn_slide(M, V, 4, script=[
+            'Want to be sure? Plug two back in.',
+            A('9⁶ = 3¹² appears', T(r'$9^{6}=3^{12}$', size=40)),
+            A('(1/27)⁻⁴ = 27⁴ = 3¹² appears', T(r'$\left(\frac{1}{27}\right)^{-4}=27^4=3^{12}$', size=40)),
+            'Left: nine to the sixth — three to the twelfth. Right: one twenty-seventh to the minus four — twenty-seven to the fourth — also three to the twelfth.',
+            'They match. Two it is.',
+        ])
+
+    # ============ guided Question 4: q-251  √(x − 7) = 3, x = 16  ->  √(x − 6) = 5, x = 31
+    S('q-251', stem=r'Given: $\sqrt{x-6}=5$. $x=?$', choices=[r'$11$', r'$19$', r'$31$', r'$25$'], correct=3, expl=[
+        r'Square both sides: $x-6=25$, so $x=31$.', r'Check: $\sqrt{31-6}=\sqrt{25}=5$ ✓.',
+        r'The traps: $11$ forgets to square the $5$, and $25$ forgets to move the $6$.'])
+    if 'q-251' not in RECORDED:
+        _rn_slide(M, 'solve-q-251', 2, script=[
+            "Don't overthink it. Square both sides.",
+            D('Write "(√(x − 6))² = 5²"'),
+            'The square cancels the root.',
+            A('x − 6 = 25 appears', T(r'$x-6=25$', size=40)),
+            'Left: just x minus six. Right: five squared is twenty-five.',
+            A('x = 31 appears', T(r'$x=31$', size=40)),
+            'Move the six across: x is thirty-one.',
+            A('check: √(31 − 6) = 5 ✓ appears', T(r'check: $\sqrt{31-6}=\sqrt{25}=5$ ✓', size=40)),
+            D('Circle choice 3'),
+            'Check in the original: root twenty-five is five. It works. Choice three.',
+        ])
+
+    # ============ guided Question 5: q-252  x√5 = 5√x, x ≠ 0 -> 5  ->  x√6 = 6√x, x ≠ 0 -> 6
+    S('q-252', stem='Given:\n$\\begin{cases} x\\ne0 \\\\ x\\sqrt6=6\\sqrt x \\end{cases}$\n$x=?$',
+      choices=[r'$\sqrt6$', r'$1$', r'$36$', r'$6$'], correct=4, expl=[
+        r'Square both sides: $(x\sqrt6)^2=(6\sqrt x)^2$, so $6x^2=36x$.',
+        r'Divide by 6: $x^2=6x$. Since $x\ne0$, divide by $x$: $x=6$.',
+        r'Check: $6\sqrt6=6\sqrt6$ ✓.',
+        r'If $x\ne0$ were not given, factor instead of dividing: $x(x-6)=0$, so $x=0$ or $x=6$.'])
+    if 'q-252' not in RECORDED:
+        s = dict(size=32, gap=6)
+        _rn_slide(M, 'solve-q-252', 2, script=[
+            "A lot of students rush to push the numbers INSIDE the roots. That works — but it's easier to just square both sides.",
+            D('Write "(x√6)² = x² · 6"'),
+            'Left side squared: x squared, times root six squared — which is just six. Six x squared.',
+            A('(6√x)² = 36x appears', T(r'$(6\sqrt x)^2=36x$', **s)),
+            'Right side: six squared is thirty-six, root x squared is x. Thirty-six x.',
+            A('6x² = 36x → x² = 6x appears', T(r'$6x^2=36x \;\to\; x^2=6x$', **s)),
+            'Now step by step. Divide both sides by six.',
+            'x squared equals six x.',
+            "Now divide by x — allowed, because the question tells us x isn't zero.",
+            A('x = 6 appears', T(r'$x=6$', **s)),
+            D('Circle choice 4'),
+            'x is six. Choice four.',
+            A('check: 6√6 = 6√6 ✓ appears', T(r'check: $6\sqrt6=6\sqrt6$ ✓', **s)),
+            'Check: six root six on both sides. Perfect.',
+            "One warning. We divided by x only because the question says x isn't zero.",
+            A('No x ≠ 0? x² − 6x = 0 → x(x − 6) = 0 → x = 0 or 6 appears',
+              T(r'No $x\ne0$? $\ x^2-6x=0 \;\to\; x(x-6)=0 \;\to\; x=0$ or $x=6$', size=30, gap=6)),
+            "If that's NOT given, don't divide — factor. Then you keep both answers: zero and six.",
+        ])
+
+    # ============ memory card: examples that quoted the Hebrew lesson / Hebrew guided questions
+    c = M.card('mem-r26-t10-techniques')
+    c['tables'][0]['rows'][0][2] = r'$\frac{10}{\sqrt2}=5\sqrt2$'
+    c['tips'][1] = (r'Mixed bases in a fraction? Pair the families: '
+                    r'$\frac{4^5\cdot27^{-2}}{2^7\cdot9^{-2}}=\frac{4^5}{2^7}\cdot\left(\frac{27}{9}\right)^{-2}$.')
+    c['tips'][3] = r"If $x\ne0$ is NOT given, factor — don't divide by $x$: $x^2=6x\Rightarrow x(x-6)=0$."
+
+    # ============ practice from the Hebrew study guide: new numbers (same idea, trap and level)
+    P = {
+        # old: 3⁵/15² = 27/25
+        'q-253': (r'$\frac{2^7}{6^2}=?$', [r'$\frac{32}{3}$', r'$\frac{16}{9}$', r'$\frac{16}{3}$', r'$\frac{32}{9}$'], 4, [
+            r'$6^2=(2\cdot3)^2=2^2\cdot3^2$.', r'$\frac{2^7}{2^2\cdot3^2}=\frac{2^5}{3^2}=\frac{32}{9}$.']),
+        # old: 3²·9³ = 3⁸
+        'q-254': (r'$2^3\cdot4^4=?$', [r'$2^{7}$', r'$2^{9}$', r'$2^{11}$', r'$2^{12}$'], 3, [
+            r'$4^4=(2^2)^4=2^8$, so $2^3\cdot2^8=2^{3+8}=2^{11}$.']),
+        # old: (16³·8²)/(4⁴·2⁶) = 2⁴
+        'q-255': (r'$\frac{9^4\cdot27^2}{81\cdot3^6}=?$', [r'$3^{4}$', r'$3^{5}$', r'$3^{3}$', r'$3^{6}$'], 1, [
+            r'All bases are powers of 3: $9^4=3^8$, $27^2=3^6$, $81=3^4$.',
+            r'Numerator: $3^8\cdot3^6=3^{14}$. Denominator: $3^4\cdot3^6=3^{10}$.',
+            r'$\frac{3^{14}}{3^{10}}=3^{14-10}=3^4$.']),
+        # old: 7² = 7^(x+6), x = −4
+        'q-256': (r'Given: $5^3=5^{x+8}$. $x=?$', [r'$-5$', r'$5$', r'$-11$', r'$11$'], 1, [
+            r'Equal bases, so the exponents are equal: $x+8=3$. Therefore $x=-5$.']),
+        # old: 2⁸ = 4^(x−1), x = 5
+        'q-257': (r'Given: $3^{10}=9^{x-2}$. $x=?$', [r'$12$', r'$7$', r'$6$', r'$5$'], 2, [
+            r'$9=3^2$, so $9^{x-2}=3^{2(x-2)}=3^{2x-4}$.', r'Equal exponents: $2x-4=10$, so $2x=14$ and $x=7$.']),
+        # old: 8⁵ = 4⁴·2ˣ, x = 7
+        'q-258': (r'Given: $27^4=9^3\cdot3^x$. $x=?$', [r'$1$', r'$3$', r'$6$', r'$12$'], 3, [
+            r'Base 3 everywhere: $27^4=3^{12}$ and $9^3=3^6$.', r'$3^{12}=3^6\cdot3^x=3^{6+x}$, so $6+x=12$ and $x=6$.']),
+        # old: (1/5)³ = 5^(x−7), x = 4
+        'q-259': (r'Given: $\left(\frac13\right)^4=3^{x-6}$. $x=?$', [r'$10$', r'$-2$', r'$-10$', r'$2$'], 4, [
+            r'$\frac13=3^{-1}$, so $\left(\frac13\right)^4=3^{-4}$.', r'Equal exponents: $x-6=-4$, so $x=2$.']),
+        # old: 10/√5 = 2√5
+        'q-260': (r'$\frac{21}{\sqrt3}=?$', [r'$3\sqrt7$', r'$7\sqrt3$', r'$7\sqrt7$', r'$3\sqrt3$'], 2, [
+            r'Ignore the root: $21\div3=7$. Put the root back on the answer: $7\sqrt3$.',
+            r'Why it works: $21=7\cdot\sqrt3\cdot\sqrt3$, so $\frac{7\cdot\sqrt3\cdot\sqrt3}{\sqrt3}=7\sqrt3$.']),
+        # old: 5√3/√15 = √5
+        'q-261': (r'$\frac{7\sqrt2}{\sqrt{14}}=?$', [r'$\sqrt2$', r'$1$', r'$7$', r'$\sqrt7$'], 4, [
+            r'Split the denominator: $\sqrt{14}=\sqrt2\cdot\sqrt7$.',
+            r'Cancel $\sqrt2$: $\frac{7\sqrt2}{\sqrt2\cdot\sqrt7}=\frac7{\sqrt7}$.',
+            r'Number over a root: $7\div7=1$, then put the root back: $\sqrt7$.']),
+        # q-262: √18 already became √28 = 2√7 on 2026-10-04 (kept)
+        # old: √63 = 3√7 (also the reverse of the Topic 9 lesson example 3√7 = √63)
+        'q-263': (r'$\sqrt{117}=?$', [r'$13\sqrt3$', r'$4\sqrt3$', r'$9\sqrt{13}$', r'$3\sqrt{13}$'], 4, [
+            r'$117=9\cdot13$, therefore $\sqrt{117}=\sqrt9\cdot\sqrt{13}=3\sqrt{13}$.']),  # review: √45 was the T9 warm-up alg-extra-root-practice-2
+        # old: √3 + √27 = 4√3
+        'q-264': (r'$\sqrt2+\sqrt{32}=?$', [r'$3\sqrt2$', r'$4\sqrt2$', r'$5\sqrt2$', r'$6\sqrt2$'], 3, [
+            r'$\sqrt{32}=\sqrt{16}\cdot\sqrt2=4\sqrt2$.', r'$\sqrt2+4\sqrt2=5\sqrt2$.']),
+        # old: √80 − √20 = 2√5
+        'q-265': (r'$\sqrt{75}-\sqrt{12}=?$', [r'$7\sqrt3$', r'$\sqrt{63}$', r'$2\sqrt3$', r'$3\sqrt3$'], 4, [
+            r'$\sqrt{75}=\sqrt{25}\cdot\sqrt3=5\sqrt3$ and $\sqrt{12}=\sqrt4\cdot\sqrt3=2\sqrt3$.',
+            r'$5\sqrt3-2\sqrt3=3\sqrt3$.',
+            r'The trap $\sqrt{63}$ subtracts under the root, but $\sqrt{75}-\sqrt{12}\ne\sqrt{75-12}$.']),
+        # old: √(2x + 9) = 5, x = 8
+        'q-266': (r'Given: $\sqrt{3x+1}=4$. $x=?$', [r'$1$', r'$\frac{17}{3}$', r'$5$', r'$3$'], 3, [
+            r'Square both sides: $3x+1=16$, so $3x=15$ and $x=5$.', r'Check: $\sqrt{3\cdot5+1}=\sqrt{16}=4$ ✓.']),
+        # old: √(4x + 6) = √70, x = 16
+        'q-267': (r'Given: $\sqrt{5x-4}=\sqrt{66}$. $x=?$', [r'$14$', r'$12$', r'$15$', r'$13$'], 1, [
+            r'Square both sides: $5x-4=66$, so $5x=70$ and $x=14$.']),
+        # old: x^(x+3)·x^(−x−2) = x
+        'q-268': (r'Given: $y>0$. $y^{y+4}\cdot y^{-y-5}=?$', [r'$1$', r'$\frac1y$', r'$y$', r'$0$'], 2, [
+            r'Same base: add the exponents. $(y+4)+(-y-5)=-1$, so the product is $y^{-1}=\frac1y$.',
+            r'Faster: choose an easy value, $y=2$: $2^6\cdot2^{-7}=2^{-1}=\frac12$. Only choice (2) gives $\frac12$ (the others are $1$, $2$ and $0$).']),
+        # old: √(x²) = 5, could be −5
+        'q-269': (r'Given: $\sqrt{x^2}=7$. Which of the following could be the value of $x$?',
+                  [r'$49$', r'$\frac17$', r'$-1$', r'$-7$'], 4, [
+            r'$\sqrt{x^2}=|x|$, so $|x|=7$: $x=7$ or $x=-7$.', r'Only $-7$ is among the choices.']),
+        # old: a^(a+2)/a² = aᵃ (with a = 2 two choices tie)
+        'q-270': (r'Given: $b>0$. $\frac{b^{b+3}}{b^3}=?$', [r'$b^b$', r'$(b+3)^b$', r'$2b$', r'$b^{b+6}$'], 1, [
+            r'Same base: subtract the exponents. $\frac{b^{b+3}}{b^3}=b^{b+3-3}=b^b$.',
+            r'With easy values: $b=2$ gives $\frac{2^5}{2^3}=4$, but two choices give $4$ ($b^b$ and $2b$). Try another number: $b=3$ gives $\frac{3^6}{3^3}=27$, and only $b^b=27$ fits.']),
+        # old: 16ˣ·4ˣ·2ˣ = 2^(7x)
+        'q-271': (r'$27^x\cdot9^x\cdot3^x=?$', [r'$3^{4x}$', r'$3^{6x}$', r'$3^{3x}$', r'$27^{3x}$'], 2, [
+            r'Write every base as a power of 3: $27^x=3^{3x}$, $9^x=3^{2x}$.',
+            r'Add the exponents: $3x+2x+x=6x$, so the product is $3^{6x}$.']),
+        # old: (9³·3⁴)/81 = 3⁶
+        'q-272': (r'$\frac{8^3\cdot2^5}{32}=?$', [r'$2$', r'$2^{4}$', r'$2^{14}$', r'$2^{9}$'], 4, [
+            r'Base 2 everywhere: $8^3=2^9$ and $32=2^5$.', r'$\frac{2^9\cdot2^5}{2^5}=2^9$.']),
+        # old: 36⁴ = 6⁸ (216², (6²)⁸, 72²)
+        'q-273': (r'$25^4=?$', [r'$125^{2}$', r'$50^{2}$', r'$5^{8}$', r'$\left(5^2\right)^{8}$'], 3, [
+            r'$25=5^2$, so $25^4=(5^2)^4=5^8$.',
+            r'The others: $125^2=(5^3)^2=5^6$, $(5^2)^8=5^{16}$, and $50^2=(2\cdot25)^2=4\cdot5^4$. None of them is $5^8$.']),
+        # old: 2^(n+1) = 64, n = 5
+        'q-274': (r'Given: $3^{n+2}=243$. $n=?$', [r'$5$', r'$1$', r'$3$', r'$7$'], 3, [
+            r'$243=3^5$, so $n+2=5$ and $n=3$.']),
+        # old: (5^(−√3))^(−√3) = 125
+        'q-275': (r'$\left(2^{-\sqrt5}\right)^{-\sqrt5}=?$', [r'$2^{\sqrt5}$', r'$2$', r'$32$', r'$4^{\sqrt5}$'], 3, [
+            r'Power of a power: multiply the exponents. $(-\sqrt5)\cdot(-\sqrt5)=(\sqrt5)^2=5$.',
+            r'So the expression is $2^5=32$.']),
+        # old: 7ˣ·7⁻ˣ = 1
+        'q-276': (r'$6^x\cdot6^{-x}=?$', [r'$1$', r'$36$', r'$\frac16$', r'$6$'], 1, [
+            r'Add the exponents: $x+(-x)=0$, so the product is $6^0=1$.']),
+        # old: x = y = 8, x^(y−x)·y^(x−y) = 1
+        'q-277': (r'Given: $m=n=6$. $m^{n-m}\cdot n^{m-n}=?$', [r'$36$', r'$1$', r'$0$', r'$6$'], 2, [
+            r'Since $m=n=6$, both exponents are zero: $n-m=6-6=0$ and $m-n=6-6=0$.',
+            r'Therefore the product is $6^0\cdot6^0=1\cdot1=1$.']),
+        # old: 5a⁸c⁶/(a²c³) = 5a⁶c³
+        'q-278': (r'Given: $x>0$ and $y>0$. $\frac{3x^9y^4}{x^3y^2}=?$',
+                  [r'$3x^6y^2$', r'$3x^3y^2$', r'$3x^{12}y^6$', r'$3x^9y^4$'], 1, [
+            r'Handle each base on its own and subtract the exponents: $x^{9-3}=x^6$ and $y^{4-2}=y^2$.',
+            r'The 3 does not change: $3x^6y^2$.']),
+        # old: (3⁴)³·3⁻¹⁴ = 1/9
+        'q-279': (r'$\left(2^3\right)^4\cdot2^{-15}=?$', [r'$-8$', r'$\frac{1}{256}$', r'$\frac{1}{8}$', r'$-\frac{1}{8}$'], 3, [
+            r'Power of a power: multiply the exponents. $(2^3)^4=2^{12}$.',
+            r'$2^{12}\cdot2^{-15}=2^{-3}=\frac1{2^3}=\frac18$.',
+            r'The traps: adding $3+4$ gives $2^{-8}=\frac1{256}$, and a negative exponent never makes the number negative.']),
+        # old: x^(3/4)·x^(4/3) = x^(25/12)
+        'q-280': (r'Given: $x>0$. $x^{\frac25}\cdot x^{\frac52}=?$',
+                  [r'$x^{\frac{29}{10}}$', r'$1$', r'$x^{\frac{10}{29}}$', r'$x$'], 1, [
+            r'Same base: add the exponents. $\frac25+\frac52=\frac4{10}+\frac{25}{10}=\frac{29}{10}$.',
+            r'So the product is $x^{\frac{29}{10}}$. (Multiplying the exponents gives $x^1=x$ — the trap.)']),
+        # old: 3ˣ·4ˣ·5ˣ = ∛60, x = 1/3
+        'q-281': (r'Given: $2^x\cdot3^x\cdot7^x=\sqrt{42}$. $x=?$', [r'$2$', r'$\frac13$', r'$1$', r'$\frac12$'], 4, [
+            r'Same exponent, so multiply the bases: $2^x\cdot3^x\cdot7^x=(2\cdot3\cdot7)^x=42^x$.',
+            r'$\sqrt{42}=42^{\frac12}$. Equal bases, so $x=\frac12$.']),
+        # old: x + y + z = 5, 3ˣ·3ʸ·3ᶻ = 243
+        'q-282': (r'Given: $a+b+c=4$. $2^a\cdot2^b\cdot2^c=?$',
+                  [r'$8$', r'$16$', r'$64$', 'It cannot be determined from the information given.'], 2, [
+            r'$2^a\cdot2^b\cdot2^c=2^{a+b+c}=2^4=16$.',
+            r'We do not need $a$, $b$ and $c$ one by one — only their sum, and it is given.']),
+        # old: √98 = 7√2
+        'q-283': (r'$\sqrt{112}=?$', [r'$16\sqrt7$', r'$7\sqrt2$', r'$2\sqrt{14}$', r'$4\sqrt7$'], 4, [
+            r'$112=16\cdot7$, therefore $\sqrt{112}=\sqrt{16}\cdot\sqrt7=4\sqrt7$.']),
+        # old: letters a, b; key a·b = a + b in position 2
+        'q-284': (r'The numbers $m$ and $n$ are such that $x^m\cdot x^n=x^{mn}$ for every $x>1$. Which of the following is necessarily true?',
+                  [r'$m+n=0$', r'$m^n=m+n$', r'$m\cdot n=m+n$', 'None of the above is necessarily true.'], 3, [
+            r'Same base: $x^m\cdot x^n=x^{m+n}$ always.',
+            r'This equals $x^{mn}$ for every $x>1$, so the exponents are equal: $m+n=mn$.',
+            r'Choices (1) and (2) are not necessarily true. For example, $m=3$ and $n=\frac32$: $m+n=mn=4.5$, but $m+n\ne0$ and $3^{1.5}\approx5.2\ne4.5$.']),
+        # old: ⁴√(5⁶) = 5√5
+        'q-285': (r'$\sqrt[4]{7^6}=?$', [r'$7^2$', r'$7\sqrt7$', r'$\sqrt7$', r'$\sqrt[4]7$'], 2, [
+            r'$\sqrt[4]{7^6}=7^{\frac64}=7^{\frac32}=7^1\cdot7^{\frac12}=7\sqrt7$.']),
+        # old: x > 0, √(48x) = √3·x, x = 16
+        'q-286': ('Given:\n$\\begin{cases} x>0 \\\\ \\sqrt{50x}=\\sqrt2\\cdot x \\end{cases}$\n$x=?$',
+                  [r'$25$', r'$5$', r'$\sqrt2$', r'$2$'], 1, [
+            r'Square both sides: $50x=2x^2$.', r'Since $x>0$, divide by $2x$: $25=x$.',
+            r'Check: $\sqrt{50\cdot25}=\sqrt{625\cdot2}=25\sqrt2$ and $\sqrt2\cdot25=25\sqrt2$ ✓.']),
+        # old: Dana 7 > √5 + √20 (right), Yoav 4√3 > 5√2 (wrong)
+        'q-287': ('Noa says: $8>\\sqrt7+\\sqrt{28}$.\nEthan says: $3\\sqrt5>4\\sqrt3$.\nWhich of the following is correct?',
+                  ['Both are right.', 'Only Ethan is right.', 'Only Noa is right.', 'Both are wrong.'], 3, [
+            r'Noa: $\sqrt{28}=2\sqrt7$, so $\sqrt7+\sqrt{28}=3\sqrt7$. Square both: $(3\sqrt7)^2=63$ and $8^2=64$. Since $63<64$, Noa is right.',
+            r'Ethan: square both: $(3\sqrt5)^2=45$ and $(4\sqrt3)^2=48$. Since $45<48$, $3\sqrt5<4\sqrt3$ and Ethan is wrong.',
+            'Only Noa is right.']),
+        # English item, but (5^(n+1) − 5ⁿ)/4 was nearly the summary lesson's example 5^(x+1) − 5ˣ = 4·5ˣ
+        'q-r26-t10-11': (r'$\frac{7^{n+1}-7^n}{6}=?$', [r'$7$', r'$7^n$', r'$7^{n-1}$', r'$\frac76$'], 2, [
+            r'Take out the smallest power: $7^{n+1}-7^n=7^n(7-1)=6\cdot7^n$.', r'$\frac{6\cdot7^n}{6}=7^n$.']),
+    }
+    for qid, (stem, ch, cor, ex) in P.items():
+        S(qid, stem=stem, choices=ch, correct=cor, expl=ex)
+
+    # ============ practice clean-up (teacher-approved 2026-10-06)
+    # copies: the two extra banks repeat each other and Topic 8/9 extras; q-r26-t10-09 repeats guided Question 6
+    for qid in (['alg-extra-unit-t10-2-%d' % k for k in range(1, 8)] + ['alg-extra-unit-t10-3-%d' % k for k in range(1, 8)]
+                + ['q-r26-t10-09']):
+        M.unplace(qid)
+    # September-review items whose type the Hebrew practice already covers: 0.2ˣ = 25 (q-259, a reciprocal base),
+    # 4ˣ·25ˣ = 10⁶ (q-281, same exponent -> multiply the bases)
+    for qid in ['q-r26-t10-07', 'q-r26-t10-08']:
+        M.unplace(qid)
+    # order: one root first, then adding roots, a number over a root, root equations, then power equations
+    M.practice_order('unit-t10-2', ['q-254', 'q-256', 'q-262', 'q-263', 'q-264', 'q-265', 'q-260', 'q-261',
+                                    'q-266', 'q-267', 'q-257', 'q-258', 'q-259', 'q-253', 'q-255', 'q-r26-t10-06'])
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber(M)   # 2026-10-06 renumber pass: runs last

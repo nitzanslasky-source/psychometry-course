@@ -191,3 +191,37 @@ Function `trim_practice` (runs LAST, after `pen_or_click_rest`). Practice was 53
 
 For the teacher: the global `meta.changes` note "Duplicate equation and expression variants remain in additional practice" (base data, not topic 7) is no longer true for topic 7.
 `math_check.py 7 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-06 quadratics removed
+Function `remove_quadratics` (runs LAST, after `trim_practice`). Teacher-approved. Across about 1,000 real exam questions, x² + bx + c = 0 solved by factoring the trinomial appears about once, and that one is faster by plugging in the choices. Topic 4 dropped "Factoring Trinomials" for the same reason. The common types stay: x² = k → ±, common factor → product = 0, difference of squares, a² = b².
+
+**Removed from the course flow** (about 4.2 min of video, about 3.9 min after the summary's 0.3):
+- Lesson `r26-t07-quadratic` "Quadratic Equations" (1.4 min). **It was already recorded** (`r26-t07-quadratic-2026-10-06T14-08-15-985Z.mp4`, 17:08). The teacher decided to remove it anyway. The recording file stays in the folder; nothing was deleted or moved. The video is also dropped from the data.
+- Guided Q23 `q-r26-t07-04` (x² − 2x = 15, factor the trinomial) + `solve-q-r26-t07-04` (1.6 min). Not recorded.
+- Guided Q25 `q-r26-t07-06` ((x² − 7x + 12)/(x − 3) = 0) + `solve-q-r26-t07-06` (0.9 min). Not recorded.
+- Practice `q-r26-t07-11` (x² − 10x + 25 = 0, "how many values"): a trinomial = 0, and its solution uses product/sum. Spotting (x − 5)² is the square-of-a-difference formula, but the question type itself is the one missing from the exams. Practice is now 28 questions.
+
+**Kept**
+- `q-r26-t07-10`: `dedupe_examples` already changed it to (x² − 36)/(x − 6) = 0, a difference of squares, not a trinomial.
+- `q-r26-t07-08` (2x² = 8x) and `q-r26-t07-12` ((2x − 1)² = (x + 4)²).
+
+**Moved**
+- Q24 `q-r26-t07-05` ((x + 1)² = (x − 3)², the a² = b² trap) + `solve-q-r26-t07-05` are now at the end of "Advanced study B", after Q22. The build renumbers it to **Question 23** (title slide, "Question twenty-three." spoken).
+- Its video title and sidebar now match the Q21/Q22 group: "More Equation Tools", with Question 21 / 22 / 23 and its own item highlighted. Q21/Q22 are recorded and their videos are unchanged, so their sidebars still show only 21 and 22.
+- The script did not lean on the lesson. Method 2 opens both squares and cancels x², with no trinomial factoring, so no text changed.
+- The summary `r26-t07-summary` moves right after it, still before the practice.
+- The empty section "Quadratic equations" is removed from the topic, by hand (the API cannot remove sections).
+
+**References fixed**
+- Summary: slide 4 "Quadratics" (x² − 8x + 15 = (x − 3)(x − 5), product c / sum b) is removed, along with the "Quadratics" sidebar label (active indexes re-pointed). The video goes from 2.2 to 1.9 min, 10 to 9 slides. The matching slide (3 lines) is removed from `ai_scripts/r26-t07-summary.json`.
+- "Fraction = 0" (numerator 0, denominator not 0, (x² − 25)/(x + 5) = 0 → x = 5) **stays** as summary slide 4. With Q25 gone, the summary and the memory card's Traps row now teach it before practice question -10.
+- Memory card `mem-r26-t07-equations`: the "Quadratic equations" table (one side = 0 / product, sum / factor / sign flips) is removed. The tip "x² = 9 has two solutions, (x − 5)² = 0 has one, x² = −4 none" stays, since none of it needs factoring.
+- None of the `practice_methods` lines pointed to the removed items. A text search of topic 7 for quadratic / trinomial / product c / sum b / Question 24–29 finds only common-factor and difference-of-squares uses.
+
+**Untouched (diff of the full topic-7 build before and after this pass):**
+- Only `solve-q-r26-t07-05` and `r26-t07-summary` changed; the three removed videos are gone.
+- q-178 … q-183, Q21/Q22 and every other recorded video are byte-identical.
+- Q24 and the summary are not recorded.
+
+`math_check.py 7 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. `SRC=tmp_check/check-7-32.html python3 ai_check.py r26-t07-summary`: OK (by default ai_check reads ~/Downloads, so it was pointed at the check build). Q24 and the summary rendered and looked at.

@@ -2468,3 +2468,52 @@ _apply_before_trim_practice = apply
 def apply(M):
     _apply_before_trim_practice(M)
     trim_practice(M)   # 2026-10-06 practice trimmed: runs last
+
+
+# =====================================================================================
+# 2026-10-06 quadratics removed (teacher): real exams (~1,000 questions checked) have essentially no x² + bx + c = 0
+# solved by factoring a trinomial (topic 4 dropped "Factoring Trinomials" for the same reason). What is common stays:
+# x² = k → ±, common factor → product = 0, difference of squares, a² = b². Runs last.
+# The lesson r26-t07-quadratic was already recorded (17:08); the teacher decided to remove it anyway (file stays).
+# =====================================================================================
+def remove_quadratics(M):
+    adv = 'equation-b'; old = 'r26-t07-quadratic'
+    # 1) out of the course: the lesson, guided Q23 (x² − 2x = 15) and Q25 ((x² − 7x + 12)/(x − 3) = 0) with their
+    #    videos, and practice q-r26-t07-11 (x² − 10x + 25 = 0, a trinomial = 0). unplace() drops a question's video.
+    M.unplace(old); M.D['videos'].pop(old, None)
+    for qid in ('q-r26-t07-04', 'q-r26-t07-06', 'q-r26-t07-11'):
+        M.unplace(qid)
+    # 2) Q24 ((x + 1)² = (x − 3)², the a² = b² trap) and the summary move to the end of Advanced study B, after Q22
+    M.move('q-r26-t07-05', adv, after='solve-q-r26-t07-02')
+    M.move('solve-q-r26-t07-05', adv, after='q-r26-t07-05')
+    M.move('r26-t07-summary', adv, after='solve-q-r26-t07-05')
+    v = M.video('solve-q-r26-t07-05')   # same group title as Q21/Q22 (their videos are recorded: not touched)
+    v['title'] = v['navLabel'] = v['hybrid']['title'] = 'More Equation Tools'
+    M.set_sidebar('solve-q-r26-t07-05', ['Question 21', 'Question 22', 'Question 24'])   # renumber_guided -> 23
+    for b in v['beats'][1:]: b['active'] = 2
+    # the empty section goes (the API cannot remove sections)
+    assert not M.sections[old]['items'], M.sections[old]['items']
+    M.D['sections'] = [s for s in M.D['sections'] if s['id'] != old]
+    M.sections.pop(old)
+    next(t for t in M.D['topics'] if t['id'] == TOPIC)['sections'].remove(old)
+    # 3) summary: the "Quadratics" slide (x² − 8x + 15 = (x − 3)(x − 5)) goes; "Fraction = 0" stays
+    S = 'r26-t07-summary'
+    assert M.slide(S, 4)['title'] == 'Quadratics' and M.slide(S, 5)['title'] == 'Fraction = 0'
+    M.remove_slides(S, [4])
+    sb = M.video(S)['hybrid']['sidebar']; q = sb.index('Quadratics')
+    M.set_sidebar(S, sb[:q] + sb[q + 1:])
+    for b in M.video(S)['beats']:
+        if b['active'] > q: b['active'] -= 1
+    # 4) memory card: the "Quadratic equations" table (product c, sum b, factor)
+    c = M.card('mem-r26-t07-equations')
+    c['tables'] = [t for t in c['tables'] if t['title'] != 'Quadratic equations']
+    got = [f['ref'] for f in M.D['flow'] if f['section'] == adv]
+    assert got[-5:] == ['q-r26-t07-02', 'solve-q-r26-t07-02', 'q-r26-t07-05', 'solve-q-r26-t07-05', 'r26-t07-summary'], got
+
+
+_apply_before_remove_quadratics = apply
+
+
+def apply(M):
+    _apply_before_remove_quadratics(M)
+    remove_quadratics(M)   # 2026-10-06 quadratics removed: runs last

@@ -131,3 +131,70 @@ Function `pen_or_click` (runs last, after `cut_repeats`). The teacher's approved
 - solve-q-r26-t09-05 (4 -> 2 by hand, 2 clicks). By hand: (√3)⁶ = 3³ = 27, circle. Clicks: (∛5)⁶ = 25, the sixth roots.
 - solve-q-r26-t09-06 (4 -> 2 by hand, 2 clicks). By hand: Bottom: (√3 − √2)(√3 + √2) = 1, circle. Clicks: Top line, the method 2 check.
 - r26-t09-summary (3 -> 0 by hand, 3 clicks).
+
+## 2026-10-06 renumber pass
+Function `renumber_pass` (runs last, after `pen_or_click`). Goal: the English Topic 9 must not look like the Hebrew
+course. Same ideas, traps, levels and methods. `RN_RECORDED` is empty: no topic 9 take in ~/Documents/Course.recordings.
+The Hebrew Topic 9 is one lesson plus 15 study-guide questions (q-233..q-247) with no videos. The 6 guided questions
+with videos (q-r26-t09-01..06) were written in English, so they and their videos are unchanged.
+Check: `python3 math_check.py 9 32` and `python3 math_check.py 8 9 32` → 0 problems, 0 warnings, 0 layout problems.
+Every answer and trap below was re-computed in python. The lesson was rendered and checked.
+
+**Questions** (stem, choices, key and written solution changed together; the solutions now name the trap where there is one)
+| Id | Old (Hebrew) | New | Answer · key |
+|---|---|---|---|
+| q-233 | ∛8 − ∛0 − ∛(−1) = 3 | ∛27 − ∛(−1) − ∛0; traps 2 (sign), 3 (ignores ∛−1) | 4 · 3 → 4 |
+| q-234 | ⁶√(−64) | ⁴√(−81) | no real value · 1 → 3 |
+| q-235 | ∛(5⁶) = 25 | ∛(7⁶); trap 343 (6 − 3) | 49 · 1 → 3 |
+| q-236 | 81^(1/4) = 3 | 256^(1/4); traps 64 (= 256 · ¼), 16 (square root only); 2nd way: root twice | 4 · 3 → 4 |
+| q-237 | √27 · √3 = 9 | √20 · √5; trap 100 | 10 · 4 → 2 |
+| q-238 | √31 · √31 = 31 | √23 · √23 | 23 · 2 → 3 |
+| q-239 | ∛9 · ∛9 · ∛9 = 9 | ∛6 · ∛6 · ∛6 (both methods kept: (∛6)³, ∛216) | 6 · 1 → 2 |
+| q-240 | √50 / √2 = 5 | √98 / √2; traps 49, 14 | 7 · 1 → 4 |
+| q-241 | √3 / √48 = 1/4 | √2 / √72; trap 1/36 | 1/6 · 3 → 1 |
+| q-242 | index 2.5 over √243 = 3 | index 1.5 over √125: (125^½)^(2/3) = 125^(1/3) | 5 · 3 → 1 |
+| q-243 | 3·√7 = √63 | 2·√13; traps √26, √338 | √52 · 1 → 3 |
+| q-244 | 3·∛2 = ∛54 | 3·∛4; trap ∛36 (squared instead of cubed) | ∛108 · 1 → 2 |
+| q-245 | smallest of π, 3, ∛30, √7 | smallest of √10, ∛25, 3, π (one root a bit under 3, one a bit over) | ∛25 · 4 → 2 |
+| q-246 | closest to √3: 1.6/1.7/1.8/1.9 | closest to √5: 2.1/2.2/2.3/2.4 (same check: 2.25² = 5.0625 > 5) | 2.2 · 2 → 2 |
+| q-247 | x = √(5x): how many solutions | √(7x) = x; trap 1 (divided by x) | 2 · 3 → 2 |
+| q-227 (Hebrew T8, now T9 practice) | (7³)^(2/3) = 49 | (6³)^(2/3) | 36 · 1 → 4 |
+| q-r26-t09-19 (practice) | √3 + √5 vs √15: was the "Square of a sum" lesson example word for word | √5 + √7 vs √35: squares 12 + 2√35 vs 35 → √140 vs √529 (now "<") | < · 1 → 3 |
+| alg-extra-root-practice-3 (practice) | √(x²), x < 0: the rule written on the Summary board | √(9x²), x < 0; trap 3x | −3x · 3 → 2 |
+
+**Lesson "Roots — Fundamentals"** (the Hebrew lesson's examples; board item, click label and spoken line changed together):
+√49 / x² = 49 → √36 / x² = 36 · √((−8)²) = 8 → √((−10)²) = 10 · √72 = 6√2, √200 = 10√2 → √48 = 4√3, √300 = 10√3, and
+the "largest square" tip √72 = 2√18 → √48 = 2√12 = 4√3 ("12 is still divisible by four") · 3√5 + 2√5, √72 + √32 →
+4√7 + 2√7 = 6√7, √48 + √75 = 9√3 · √75/√3 = 5 → √108/√3 = 6 · 6/√3 = 2√3 → 10/√5 = 2√5 · ∛(−64) → ∛(−125) = −5 ·
+√(9 + 16) vs √9 + √16 → √(25 + 144) = 13 vs 5 + 12 = 17. "Bring a number inside": 3√7 = √63 < 8 was the Hebrew question
+q-243 → 5√2 = √50 > √49 = 7.
+Memory card: tips √72 → √48 = 4√3 and 6/√3 → 10/√5 = 2√5; examples ∛(5⁶) = 5² (the old q-235) → ⁴√(3⁸) = 3², 3√7 = √63 → 5√2 = √50.
+No question in topic 9 is now the same as a lesson example in topics 1–9 (checked with a script). One question looks
+close to a lesson rule but was kept: guided Q4 (0 < x < 1, which is largest). It applies the rule and is not a copy of an example.
+
+**Order**
+- Guided Question 1 (⁴√(9⁶), the fraction 3/2) moved to after q-235 and q-236. Those two are the easy "power over index" and
+  "fourth root" items, so the order is now easy → hard. It is still Question 1.
+- q-238 (√23 · √23) now comes before q-237 (√20 · √5): the easiest product comes first.
+- Answer positions: every Hebrew key moved except q-246's (its choices go up in order, and the key is still choice 2).
+- The practice is sorted from easy to hard.
+- Not changed: the solution videos (written in English) and the traps and summary videos.
+
+**Practice clean-up** (full build, with the T8 patch: 21 → 11 questions)
+- Copies removed (each one checked): alg-extra-root-practice-6 (√12·√27, same as q-237), q-r26-t09-13 (√(2x+3) = 3, same as
+  -5), alg-extra-exponent-extra-2 (27^(2/3), same as q-r26-t09-10 and the Summary example), q-r26-t09-14 (same as guided Q2).
+- Extra-bank warm-ups: 3 kept: -3 (|x|), -2 (√45, pull out a square), exponent-extra-7 (√50 + √8, simplify and add). Removed: -1, -4, -5, -7.
+- September items of a type the Hebrew already covers, removed: q-r26-t09-10 (8^(2/3); it was also the lesson example) and
+  q-r26-t09-11 (⁴√(x⁸), same type as q-235).
+- Kept, because the Hebrew does not cover these types: q-r26-t09-09 (between 0 and 1), -12 (where a root is defined), -15 (6th power),
+  -16 (partner product), -17 (square of a sum), -18 (partner on the bottom), -19 (sum against a root). Plus q-227 (Hebrew).
+  The result is 11 questions, one more than the target of 10. -16 is the warm-up for -18. It could go if the teacher wants exactly 10.
+
+## 2026-10-06 review
+- Lesson "Roots — Fundamentals" slide 7 and the memory card tip: the renumber pass used 10/√5 = 2√5, but that is the Hebrew
+  question q-260 word for word. Changed to 12/√6 = 2√6 (board, click labels, speech: "twelve divided by six is two … Six is
+  root six times root six"). Not used anywhere else in the course or the Hebrew base.
+- (q-240 √98/√2 also clashed with the topic 10 lesson example; that was fixed in t10.py, q-240 stays.)
+- Checked: every renumbered question's key, traps and explanation (python); lesson diff; practice removals. Note for the
+  teacher: after the clean-up the topic 9 practice has no "√(ax+b) = c" root equation (q-r26-t09-13 and the extra -5 were
+  both removed); topic 10 practice covers it (q-266, q-267).

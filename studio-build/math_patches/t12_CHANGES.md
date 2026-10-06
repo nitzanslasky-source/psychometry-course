@@ -146,3 +146,87 @@ Function `practice_methods` (runs last; append only). 6 practice questions.
 - Method 2 · Two moves: alg-extra-unit-t12-3-1 (−3x > 9 → endpoint −3, x = 0 false → x < −3), q-346 (a + 4 < a/2 → endpoint −8, a = 0 false → a < −8).
 - Method 2 · The most precise range: q-355 (x = 2 kills 1, 3; x = ½ kills 4), q-354 (n = 1 kills 2, 4; n = −1 kills 1), q-353 (x = −4 alone kills 1–3), q-r26-t12-06 (x² = 0 kills 1; x² = 12.25 kills 3, 4).
 All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 12 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-06 renumber pass
+So the English course does not look like the Hebrew one: every Hebrew-derived question has new numbers or letters.
+The idea, the trap and the methods stay the same, and every guided solution video is rewritten to match (board,
+speech, draw cues, video title). Nothing in Topic 12 is recorded, so nothing had to be kept as it was.
+Function `renumber(M)` in t12.py runs last.
+
+**Counts:** 16 guided questions renumbered (q-322 … q-337) with their 16 videos rewritten; 20 practice questions
+renumbered (q-338 … q-357); 4 lesson examples renumbered (lesson "Inequalities": x ≤ 5, −8 < −3, x + 5 < 14,
+−12 < −4); 2 card examples that used Hebrew question numbers changed (x² ≥ 16 → x² ≥ 81; 3x(1 − 3x) > 0 → x(2 − x) > 0).
+Practice: 35 → 27.
+
+**Order:** the chain question (now Question 5, a < b + 5 and 3b − 1 < a) comes before the plug-in question
+x⁴ < 300 < x⁵ (now Question 6). Neither video refers to the other. The correct-answer position moved in 35 of the 36 questions.
+
+**Practice clean-up (35 → 27):**
+- Extra warm-ups kept (3): −3x > 9 (the flip), x > 3 and x ≤ 5 (overlap), x > 2 → 1/x < 1/2 (reciprocals).
+  Removed: 2x + 3 ≤ 13 and "integers in −3 < x < 5" (q-344 covers both), 0 < x < 1 → x² < x (this is the lesson
+  board itself; q-347 covers it), a < b < 0 reciprocals (a copy of Topic 3's q-r26-t03-06).
+- September items kept (4, their types are not in the Hebrew practice): range of a − b (05), range of x² (06),
+  "could be true" (10), range of ab (11). Removed: adding inequalities (07, covered by q-350), x > 1 smallest power
+  (08, covered by q-341/q-347, and a copy of Topic 3's q-r26-t03-05), fraction sign count (09, covered by q-354),
+  reciprocals "cannot be true" (12, covered by the warm-up and q-343/q-357).
+- I kept 27 rather than the audit's 25 on purpose, so that every kept September item practises a type nothing else covers.
+
+**Checks:** every answer, distractor and method computed in Python (brute force over many values); `math_check.py 12 32`
+gives PROBLEMS 0, WARNINGS 0, LAYOUT 0; all 17 changed videos rendered and looked at.
+
+| id | old (Hebrew numbers) | new | answer |
+|---|---|---|---|
+| q-322 (G) | 3 + x < 15 + 3x | 4 + x < 18 + 3x | −7 < x (choice 2) |
+| q-323 (G) | 3(4 − 3x) − 7 < 8 − 9x | 5(2 − 3x) − 4 < 7 − 15x | any value (3) |
+| q-324 (G) | 2x − 5 < x + 3 < 3x − 9 | 3x − 4 < 2x + 5 < 4x − 5 | 5 < x < 9 (2) |
+| q-325 (G) | 3x + 30 < 12 + 6x < 30 | 2x + 28 < 8 + 6x < 20 | no value (2) |
+| q-326 (G, now Q6) | x⁴ < 90 < x⁵ | x⁴ < 300 < x⁵ | 4 (3) |
+| q-327 (G, now Q5) | x < y + 2, 2y − 2 < x | a < b + 5, 3b − 1 < a | b < 3 (2) |
+| q-328 (G) | (5x² − 2)/3 < (2x² + 20)/2 | (4x² − 9)/5 < (x² + 18)/2 | −6 < x < 6 (1) |
+| q-329 (G) | a + b = c, a < c < b | p + q = r, q < r < p | pq < 0 (2) |
+| q-330 (G) | 40/80 < x/(x+1) < 70/80 | 60/90 < x/(x+1) < 81/90 | 6 values (3) |
+| q-331 (G) | (ab)² < ab², range of a | (xy)² < x²y, range of y | 0 < y < 1 (4) |
+| q-332 (G) | (x − 3)/(9 − x) < 0 | (x + 1)/(7 − x) < 0 | −1 < x < 7 fails (3) |
+| q-333 (G) | (x + y)² = 100, x − 3 > 0 | (x + y)² = 144, x − 4 > 0 | 0 < y < 8 (2) |
+| q-334 (G) | c + b < a, a < c < b | z + y < x, x < z < y | 0 < z + y (2) |
+| q-335 (G) | 2 ≤ x² − 2 ≤ 34 | 5 ≤ x² − 4 ≤ 60 | 12 (3) |
+| q-336 (G) | −4 < x < 10, −30 < y < 6 | −5 < x < 8, −20 < y < 4 | −160 < xy < 100 (4) |
+| q-337 (G) | x < y; x < y + 5 | a < b; a < b + 3 | a < b + 3 (1) |
+| q-338 | m = x + y − 8, m < 0 | k = a + b − 6, k < 0 | integer smaller than 6 (3) |
+| q-339 | 2x + 5 < 0, x² < 15 | 2x + 7 < 0, x² < 20 | −4 (4) |
+| q-340 | x² < 25, 3x + 9 < 0 | x² < 36, 2x + 8 < 0 | −5 (2) |
+| q-341 | x³ < x² < 3 | x³ < x² < 7 | −2 (3) |
+| q-342 | 6 < x < 7 | 8 < x < 9 | x + 8 < 2x (2) |
+| q-343 | p < q, r < s, q < s | a < b, c < d, b < d | d < a cannot (2) |
+| q-344 | x − 3 < 6 | x − 2 < 5 | 6 (3) |
+| q-345 | −2x² ≤ −32 | −4x² ≤ −100 | −3 fails (3) |
+| q-346 | a + 4 < a/2 | a + 6 < a/3 | a < −9 (1) |
+| q-347 | 0 < x < 1, 5y = 2x | 0 < x < 1, 4y = 3x | y² < 1 (2) |
+| q-348 | a + b = 17, b < a | a + b = 21, b < a | b < 11 (2) |
+| q-349 | 3y < x < −3y | 4m < n < −4m | m < 0 (3) |
+| q-350 | 0 < a − b, a + b < 0 | 0 < y − x, x + y < 0 | x < 0 (1) |
+| q-351 | 5x + 2y = 0, x > 2 | 3x + 2y = 0, x > 4 | y < −6 (3) |
+| q-352 | 0 < 3x − 9x² | 0 < 2x − 8x² | 0 < x < 1/4 (2) |
+| q-353 | x < 0, 3 < x² − 6 < 19 | x < 0, 5 < x² − 11 < 38 | −7 < x < −4 (1) |
+| q-354 | (3 + n)/(3 − n) > 0 | (2 + n)/(6 − n) > 0 | −2 < n < 6 (4) |
+| q-355 | 1/4 < x/(x+1) < 3/4 | 1/3 < x/(x+1) < 4/5 | 1/2 < x < 4 (3) |
+| q-356 | x²y² = (xy − 2)², x > 1 | a²b² = (ab − 6)², a > 3 | 0 < b < 1 (2) |
+| q-357 | y²a + y²c < (a + c)², a + c = y | k²m + k²n < (m + n)², m + n = k | k cannot be 3 (3) |
+| lesson | x ≤ 5 (5, 4.5, 3, −7); −8 < −3 | x ≤ 4 (4, 3.5, 1, −6); −7 < −2 | – |
+| lesson | x + 5 < 14 → x < 9 | x + 6 < 11 → x < 5 | – |
+| lesson | −12 < −4, ÷(−4) → 3 > 1 | −10 < −2, ÷(−2) → 5 > 1 | – |
+
+The "Method 2" lines in practice (q-346, q-353, q-354, q-355) are rewritten with the new numbers. The guided
+questions added in 2026-09/10 (q-r26-t12-01 … 04, 13) and the kept practice items are English-made, so they keep
+their numbers. No question equals a lesson example from this topic or earlier.
+
+## 2026-10-06 review
+Independent check of the renumber pass (all 36 Hebrew-derived questions, 16 solution videos, lesson "Inequalities", 2 cards, practice removals). Keys re-computed in Python (brute force); traps, kind of condition and methods compared with the pre-renumber version.
+- q-341: $x^3<x^2<7$ let both $-1$ and $-2$ fit ($-1$ was not a choice, but the question asks "What is $x$?" — one value, as in the Hebrew). Now $x^3<x^2<4$, choices $1, 0, -2, -1$, key 4: only $-1$ fits, and $-2$ is the boundary trap ($4<4$ false), like the Hebrew's $-2$ ($4<3$ false).
+- Lesson "Inequalities" slide 4: the click label still said "−12 < −4 appears again below" → "−10 < −2 appears again below".
+`python3 math_check.py 12 32` → 0 problems, 0 warnings, 0 layout. Rendered inequalities, solve-q-327, -332, -335, -336.
+- (review, teacher decision: no quadratic trinomials) q-r26-t12-13 was x² + 3x < 10 (a hidden trinomial). Replaced by a
+  two-sided linear most-precise-range question: −7 ≤ 3 − 2x < 5. Choices x ≤ 5 / −5 ≤ x < 1 (trap: endpoints with wrong
+  signs) / −1 < x ≤ 5 / x > −1 · key 3 (brute force on a 0.01 grid: only choice 3 matches). Video keeps both methods:
+  test x = −3 (fails → choices 1, 2 out) and x = 6 (fails → choice 4 out); two moves (endpoints −1 and 5, test 0, which
+  end is included). Written solution rewritten. The card row "most precise range" had no trinomial wording (unchanged).

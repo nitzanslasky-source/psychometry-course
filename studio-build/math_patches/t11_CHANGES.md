@@ -156,3 +156,95 @@ Function `practice_methods` (runs last; append only). 2 practice questions, Meth
 - q-314: each fraction power 1 − ½ → product power 1; choices 1 (2) and 2 (½) out; x = 3, y = 5 → −4 decides choice 4.
 - Given power → asked power: q-307 and q-319 already solve this way in their existing lines, so nothing added.
 All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 11 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-06 renumber pass
+Function `renumber_pass` (runs last, after `practice_methods`). Goal: the English topic 11 must not look like the Hebrew course.
+Same concept, trap, level and methods for every question, with new numbers, letters or story. Nothing in topic 11 is
+recorded (checked ~/Documents/Course.recordings), so `RECORDED` is empty. Topic 11 has no `pen_or_click`, so no click maps had to change.
+Check: `python3 math_check.py 11 32` gives PROBLEMS 0, WARNINGS 0, LAYOUT 0. Every key and distractor was checked in Python (sympy). All 14 changed solution videos were rendered and checked.
+
+**Counts:** 14 guided questions renumbered, with their solution videos rewritten. 20 practice questions renumbered. 6 memory-card examples changed (1 tip and 5 table examples that came from Hebrew questions). The lessons are short intros with no worked examples, so no lesson example changed. Practice: 35 → 25 (target 25).
+**Kept on purpose:** the guided q-r26-t11-01, -02 and -13 (our own questions, not Hebrew). The summary-video examples (ours; none equals a question). September practice -04, -06, -08, -10 and -11: they practise types the Hebrew practice does not have (conjugates, (√a + √b)², 0 < x < 1 with negative or fractional powers, product = 0 and a telescoping sum). -08 has the same stem as alg-extra-unit-t3-1-5 but different choices, so it is not a copy.
+**Removed:**
+- The 7 extra-bank items alg-extra-unit-t11-3-1 … -7. Each is a copy of the T8/T10 extra sets (same templates with other numbers).
+- September items whose type the Hebrew practice already has:
+  - q-r26-t11-05 (9ˣ·27ˣ = 1/3; equal bases are already in q-316, q-319 and q-315)
+  - q-r26-t11-09 (aᵇ = 1 "or"; near-copy of q-312 and guided q-290)
+  - q-r26-t11-12 (√(2√(2√2)); nested roots are already in q-309)
+
+**Order:**
+- Section A is now easy → hard. The keys (shown in the table) all moved away from their Hebrew positions.
+  - Q1 = q-289 (negative exponents with letters, the easiest).
+  - Q2 = q-288.
+  - Q3 = q-293 (counting copies).
+  - Q4 = q-292.
+  - Q5 = q-291 (the 2-and-4 system, the longest).
+  None of these questions uses another one's method.
+- Section B keeps its order.
+- Practice is re-sorted easy → hard.
+
+### Guided (old → new)
+| Q | id | Old (Hebrew) | New | Answer (key) | Video methods kept |
+|---|---|---|---|---|---|
+| 1 | q-289 | a⁻²b³/(c⁴d⁻⁵) | p³q⁻⁴/(r⁻²s⁵) | p³r²/(q⁴s⁵) (1 → 3) | standard way; switch floors; wrong-letters trap = choice 4 |
+| 2 | q-288 | (3x)⁴(5x)³/(15x²)³·⅓x | (2x)⁴(7x)³/(14x²)³·½x | x² (4 → 2) | laws (split 14 = 2·7); plug x = 1 (choices 2, 1, ½, 7/2) |
+| 3 | q-293 | 2ˣ = 4 copies of 2ʸ, x − y = 2 | 4ˣ = 4 copies of 4ʸ | 1 (2 → 3); trap 4 = number of copies | count copies; plug y = 1 (16 → x = 2) |
+| 4 | q-292 | 5ˣ5ʸ = 125, 2xy = 4 → 5 | 3ˣ3ʸ = 81, 2xy = 6 | 10 (1 → 2) | exponents, then (x + y)² |
+| 5 | q-291 | x = y², x^y = y^x, find y = 2 | y = x², y^x = x^y, find x | 2 (2 → 3) | substitute; 2-and-4 pattern (test 4 → y = 16, out) |
+| 6 | q-294 | √½·√40·⁸√(2⁴)/√10 = 2 | √⅓·√45·⁶√(3³)/√5 | 3 (2 → 3) | match the root orders, merge, divide |
+| 7 | q-295 | √39, 2π, √23 + √5, 3√5 | 2π, 2√11, √41, √21 + √6 | √21 + √6 ≈ 7.03 (3 → 4) | estimate with perfect squares; 2√11 = √44 < 7 |
+| 8 | q-296 | 3/(2√2) + √2/4 = √2 | 5/(2√3) + √3/6 | √3 (2 → 4) | clear the root; match denominators (6 = 2·√3·√3); multiply denominators |
+| 9 | q-297 | √(x√x) = ⁴√x³ | √(x·∛x) | ∛(x²) (4 → 1) | bring inside (cubed), root of a root (6th root, simplify); plug x = 8 |
+| 10 | q-298 | (a − b)/(√a − √b), a ≠ b | (m − n)/(√m + √n), m, n > 0 | √m − √n (4 → 1) | difference of squares; plug m = 4, n = 1 (1, 5, 3, 0) |
+| 12 | q-299 | √x(√x − 3) = 0, how many | √x(√x − 6) = 0 | 2 solutions, x = 0 or 36 (2 → 3) | open brackets; product = 0; never divide by √x |
+| 13 | q-300 | 2x + y = √108, x − y = √27 | 2x + y = √180, x − y = √45 | 3√5 (2 → 4); trap 5 (√225/3) | add + split roots (180 = 4·45); estimate (6.7 vs √42 ≈ 6.5) |
+| 14 | q-301 | x^(−½) = 4 → 1/16 | x^(−⅓) = 2 | 1/8 (4 → 3) | flip then cube; reciprocal power −3; test a choice (8 gives ½ → try 1/8) |
+| 17 | q-290 | x ≠ 1, x^(y+2) = 1 → y = −2 or x = −1 | m ≠ 1, m^(n−3) = 1 | n = 3 or m = −1 (2 → 3) | power = 1 cases; "or" claims killed by m = −1, n = 5 and m = 5, n = 3 |
+
+### Practice (old → new)
+| id | Old | New | Answer (key) |
+|---|---|---|---|
+| q-302 | √(13a)·√(13b) | √(5a)·√(20b) | 10√(ab) (3 → 1); Method 2 · power count updated |
+| q-303 | (xᵃ)ᵃ = 3 copies of xᵃ → 3 | 4 copies → a² = 4a | 4 (3 → 2) |
+| q-304 | 3ⁿ/(3n) | 5ⁿ/(5n) | 5ⁿ⁻¹/n (3 → 1) |
+| q-305 | 10ˣ/(2ˣ⁺¹·5ˣ⁻¹) = 5/2 | 6ˣ/(2ˣ⁻¹·3ˣ⁺¹) | 2/3 (3 → 2); x = 1 ties with (2/3)ˣ, x = 2 decides |
+| q-306 | 0 < a < c, aᶜ = cᵃ, c − a | 0 < k < m, kᵐ = mᵏ, kᵐ = ? | 16 (3 → 2); trap 8 = k·m |
+| q-307 | square, area √5 cm² | square garden bed, area √6 m² | 6^¼ (4 → 2); trap √6 |
+| q-308 | (√18 + √2)/(√18 − √2) = 2 | (√50 + √2)/(√50 − √2) | 3/2 (3 → 3) |
+| q-309 | √(3√3) | √(7√7) | 7^¾ (2 → 4) |
+| q-310 | when √a + √b = √(a + b) (a = 0 or b = 0) | a ≥ b ≥ 0: when √a − √b = √(a − b) | b = 0 or a = b (3 → 2) |
+| q-311 | 3ⁿ − 3ⁿ⁻¹ | 4ⁿ⁺¹ − 4ⁿ | 3·4ⁿ (3 → 2) |
+| q-312 | aᵇ = −1 | pᑫ = −1 (choices reordered) | p = −1 (1 → 3) |
+| q-313 | ratio not equal to 3:√3 | ratio not equal to 5:√5 | √5:5 (upside down) (4 → 3) |
+| q-314 | 0 < x < y, (x − y)/√(y + x)·(x + y)/√(y − x) | 0 < n < m, (n − m)/√(m + n)·(m + n)/√(m − n) | −√(m² − n²) (4 → 2); power-count method uses m = 5, n = 4 → −3 |
+| q-315 | (3^(2b)/3ˣ)ˣ = 3^(b²) → b | (2^(4b)/2ˣ)ˣ = 2^(4b²) | 2b (2 → 2) |
+| q-316 | √2·√5/2 = (5/2)^(3x) → 1/6 | √3·√7/3 = (7/3)^(2x) | 1/4 (1 → 2) |
+| q-317 | 36²·6⁴/(3⁹·2⁷) = 2/3 | 100²·10³/(2⁸·5⁶) | 5/2 (2 → 1) |
+| q-318 | x^(3y) = x^y, y^x = ? → y | a^(5b) = a^(2b), aᵇ + bᵃ = ? | b + 1 (1 → 2) |
+| q-319 | 2√x = 4⁻² → 4⁻⁵ | 3√x = 9⁻¹ | 9⁻³ (1 → 3) |
+| q-320 | ((5⁴ − 5³)/4)² = 5⁶ | ((3⁵ − 3⁴)/2)² | 3⁸ (2 → 1) |
+| q-321 | (xⁿ − x^(2n/3))/(x^(n/3) − 1) | (xⁿ − x^(3n/4))/(x^(n/4) − 1) | x^(3n/4) (4 → 1) |
+
+**Memory card `mem-r26-t11-advanced`:**
+- Factor inside: √(x√x) → √(x³√x) = ⁴√(x⁷).
+- Fractional power: x^(−½) = 4 → x^(−½) = 6 ⇒ 1/36.
+- Product = 0: √x(√x − 3) → √x(√x − 7).
+- Power = 1: x^(y+2) → a^(b+1).
+- "Or" counterexample: → a = 3, b = −1.
+- Tip: √39 → √52.
+No question equals a lesson, summary or card example in topics 1–11 (checked by search).
+
+## 2026-10-06 review
+Independent check of the renumber pass (14 guided + 20 practice + card). Every key recomputed in sympy (exactly one correct
+choice each), every video step redone with the new numbers, videos grepped for old numbers (none left), sample videos rendered
+(solve-q-290, -291, -297, -300). `python3 math_check.py 11 32` → 0 / 0 / 0.
+- Fixed q-313: the Hebrew odd-one-out was 81:√81 (the "number : its root" pattern, which only looks equal). The renumber
+  had replaced it with √5:5 (an upside-down ratio, a different trap). Now 25:√25 (= 5 ≠ √5), still choice 3; the written
+  solution line (3) updated.
+- (review, teacher decision: same message AND same difficulty as the Hebrew) q-297: √(x·∛x) = ∛(x²) was harder than the
+  Hebrew √(x√x). Now √(x²·√x) = ⁴√(x⁵): x² goes in squared → √(x⁵), root of a root → 4th root; plug in 16 (1 useless, 4 gives
+  √32, 16 gives √1024 = 32 = 2⁵). Choices x², x√x, ⁴√(x⁵), ∛(x²) (values at 16: 256, 64, 32, not whole) · key 3. Video
+  (both methods), written solution rewritten; checked in sympy and rendered.
+- q-310: back to the Hebrew "+" form with new letters: p, q ≥ 0, when is √p + √q = √(p+q)? Choices Always / p = 0 or q = 0 /
+  pq > 0 / p − q = 0 · key 2 (brute force 0…29: equal exactly when pq = 0). Practice item, no video.
