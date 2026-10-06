@@ -276,6 +276,9 @@ _left = no_question_numbers.report(D)
 assert not _left, 'videos still mention question numbers: %r' % _left[:5]
 print('NITE terminology (changes per rule and field type):'); print(terminology.report(TERM))
 
+# ---------- "x = ?" on its own line under the given (stem_lines.py); recorded videos keep their old board ----------
+import stem_lines; STEM = stem_lines.apply(D); print(stem_lines.report(STEM))
+
 # ---------- arrow chains reveal one part per click (studio_arrows.py); videos recorded before its CUTOFF stay frozen ----------
 import studio_arrows
 ARW_FROZEN, ARW_LATE = studio_arrows.frozen_ids()

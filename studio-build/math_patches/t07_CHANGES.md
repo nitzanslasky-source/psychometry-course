@@ -162,3 +162,32 @@ Function `pen_or_click_rest` (new, runs LAST via a final `apply` wrapper, after 
 - Q24 solve-q-r26-t07-05 (7 → 2 hand, 4 click, 1 split). By hand: the second case "x + 1 = −(x − 3)" (with room), 8x = 8 → x = 1 (method 2), circle. Clicks: the trap line, a² = b² → a = b or a = −b, x + 1 = −x + 3 → 2x = 2 → x = 1, the check, the expansion.
 - Q25 solve-q-r26-t07-06 (7 → 5 hand, 2 click). By hand: "bottom = 0 ✗" next to x = 3, the three short notes next to the choices, circle. Clicks: x² − 7x + 12 = 0, (x − 3)(x − 4) = 0 → x = 3 or 4.
 `math_check.py 7 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. All 18 videos rendered and looked at.
+
+
+## 2026-10-06 practice trimmed
+Function `trim_practice` (runs LAST, after `pen_or_click_rest`). Practice was 53 questions (Independent practice 40 + "Additional source-bank variants" 13); the Hebrew course has 20. Now **29 questions in one section, "Independent practice"**, still ordered easy → hard (same order as before, removed items taken out). The empty section "Additional source-bank variants" (`unit-t7-1`) is removed from the topic (by hand: the API cannot remove sections). No guided question, video or card changed; no topic 7 video or card states a practice count, so no text needed updating.
+
+| Source | Before | After |
+|---|---|---|
+| Hebrew self-practice q-198 … q-217 | 20 | 20 (all kept) |
+| alg-extra-unit-t7-1-1 … 7 | 7 | 0 |
+| alg-extra-unit-t7-5-1 … 7 | 7 | 3 |
+| Review questions q-r26-t07-07 … 21 | 13 | 6 |
+| q-172 … q-177 ("retry set") | 6 | 0 |
+| **Total** | **53** | **29** |
+
+**Removed**
+- alg-extra-unit-t7-1-1 … 7: the same 7 templates as t7-5-1 … 7 with every number shifted (7x + 9 = 86 vs 6x + 8 = 68, x + y = 17 / x − y = 3 vs 15 / 3, … (7 − k)x = 9 vs (6 − k)x = 8). All 7 checked: none is a different type.
+- alg-extra-unit-t7-5-1 (6x + 8 = 68) and -5-2 (x + y, x − y → x): topic 6 level. -5-5 ((x − 6)/(x + 8) = 1/2): cross-multiplying, practised by q-201 and q-204. -5-7 ((6 − k)x = 8, no solution): same idea as q-205.
+- q-172 … q-177: guided theory Q1–Q6 again, one for one, with other numbers (x⁴ = x³b ↔ Q1, x³ − 16x ↔ Q2, (x − 3)² = 64 ↔ Q3, (b − 4a)/3 = 2 − a ↔ Q4, 2x + 5y / 5x + 2y ↔ Q5, x − y = 2, x² + y² = 34 ↔ Q6). They are not in the Hebrew course: the Hebrew topic 7 is 7 + 7 + 6 guided + 20 self-practice = 40 = q-178 … q-217 exactly, and topic 6 (1 + 5 + 2 + 5 + 20 = 33 = q-139 … q-171) is complete too, so they belong to no other topic. They are the old English version's retry items. (q-172 and q-175 had "Shortcut" lines from `practice_methods`; those lines go with them.)
+- q-r26-t07-07 (solutions of x² − 6x + 8): same task as guided Q23; factoring is practised by -11.
+- q-r26-t07-09 (x² = y² → |x| = |y|): a² = b² is practised by -12 (more exam-like).
+- q-r26-t07-13 (x − 1/x = 4): x ± 1/x is practised by -14; the minus case is in the Q22 video.
+- q-r26-t07-16 (xyz from three products): multiply/divide equations is practised by -15.
+- q-r26-t07-19 (4y from x = 2y + 3) and -20 (xy in terms of k): letter answers / plug-in are practised by q-212 and q-217 (Hebrew).
+- q-r26-t07-21 (19/20 x = 38, estimation): estimation is taught in guided Q8; not a type from the list.
+
+**Kept** (order): alg-extra-unit-t7-5-3 (mirror coefficients, numbers), -5-6 (product = 0), -5-4 (hidden formula, numbers) · q-198, q-212, q-199, q-r26-t07-15 (dividing equations, has a Shortcut line), q-r26-t07-08 (2x² = 8x: don't divide by x), q-r26-t07-10 (fraction = 0, extraneous root), q-200, q-210, q-211, q-201, q-202, q-204, q-205, q-206, q-209, q-203, q-207, q-213, q-216, q-217, q-r26-t07-11 (perfect-square quadratic), q-r26-t07-14 (x + 1/x from x² + 1/x², sign), q-r26-t07-12 ((2x − 1)² = (x + 4)², a² = b²), q-215, q-208, q-214.
+
+For the teacher: the global `meta.changes` note "Duplicate equation and expression variants remain in additional practice" (base data, not topic 7) is no longer true for topic 7.
+`math_check.py 7 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

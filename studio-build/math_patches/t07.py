@@ -2421,3 +2421,50 @@ _apply_before_pen_or_click_rest = apply
 def apply(M):
     _apply_before_pen_or_click_rest(M)
     pen_or_click_rest(M)   # 2026-10-06 pen or click: runs last
+
+
+# ---------------------------------------------------------------- 2026-10-06 practice trimmed
+# Practice was 53 questions (Independent practice 40 + "Additional source-bank variants" 13); the Hebrew course has 20.
+# Keep all 20 Hebrew self-practice questions (q-198 ... q-217), 3 warm-ups and 6 review questions that practise a type
+# the Hebrew 20 do not cover. Remove clones and the old English "retry" set. One practice section is left.
+TRIM_REMOVE = (
+    # alg-extra t7-1-x: same 7 templates as t7-5-x, only the numbers shifted (clones)
+    ['alg-extra-unit-t7-1-%d' % k for k in range(1, 8)]
+    # alg-extra t7-5-x warm-ups that are topic-6 level or repeat a Hebrew practice question
+    + ['alg-extra-unit-t7-5-1', 'alg-extra-unit-t7-5-2', 'alg-extra-unit-t7-5-5', 'alg-extra-unit-t7-5-7']
+    # q-172 ... q-177: Q1-Q6 of the theory section again with other numbers (old English retry set, not in the Hebrew course)
+    + ['q-%d' % n for n in range(172, 178)]
+    # review questions whose type is already practised by a kept question
+    + ['q-r26-t07-' + s for s in ('07', '09', '13', '16', '19', '20', '21')])
+
+TRIM_ORDER = [
+    'alg-extra-unit-t7-5-3', 'alg-extra-unit-t7-5-6', 'alg-extra-unit-t7-5-4',
+    'q-198', 'q-212', 'q-199', 'q-r26-t07-15', 'q-r26-t07-08', 'q-r26-t07-10',
+    'q-200', 'q-210', 'q-211', 'q-201', 'q-202', 'q-204', 'q-205', 'q-206',
+    'q-209', 'q-203', 'q-207', 'q-213', 'q-216', 'q-217',
+    'q-r26-t07-11', 'q-r26-t07-14', 'q-r26-t07-12',
+    'q-215', 'q-208', 'q-214']
+
+
+def trim_practice(M):
+    for qid in TRIM_REMOVE:
+        M.unplace(qid)
+    sec = 'unit-t7-5'
+    M.practice_order(sec, TRIM_ORDER)
+    # the second practice section is now empty: drop it (the API cannot remove sections)
+    old = 'unit-t7-1'
+    assert not M.sections[old]['items'], M.sections[old]['items']
+    M.D['sections'] = [s for s in M.D['sections'] if s['id'] != old]
+    M.sections.pop(old)
+    top = next(t for t in M.D['topics'] if t['id'] == TOPIC)
+    top['sections'].remove(old)
+    got = [f['ref'] for f in M.D['flow'] if f['section'] == sec and f['type'] == 'question']
+    assert got == TRIM_ORDER, got
+
+
+_apply_before_trim_practice = apply
+
+
+def apply(M):
+    _apply_before_trim_practice(M)
+    trim_practice(M)   # 2026-10-06 practice trimmed: runs last
