@@ -1433,3 +1433,106 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ======================================================================================================
+# 2026-10-06 Hebrew back-check. The renumber pass compared only with base-v18; the teacher's Hebrew VIDEO subtitles
+# (01-Algebra-Original-Subtitles.txt, letters = lines 18204-18764) showed that q-517 had landed exactly on the Hebrew
+# sample question (AB·AB = 2CB, B−A = 5, 16² = 256) and q-513 was the Hebrew lesson example with the letters renamed
+# (BA·A = CA). New versions (same type, trap, level and methods). Card / summary examples that were the Hebrew
+# lesson's own examples get other numbers. Nothing in topic 18 is recorded.
+# ======================================================================================================
+def _hb_deep(x, pairs, hits):
+    if isinstance(x, str):
+        for old, new in pairs:
+            if old in x: x = x.replace(old, new); hits[old] = hits.get(old, 0) + 1
+        return x
+    if isinstance(x, list): return [_hb_deep(y, pairs, hits) for y in x]
+    if isinstance(x, dict): return {k: _hb_deep(y, pairs, hits) for k, y in x.items()}
+    return x
+
+
+def hebrew_backcheck(M):
+    # ---------- q-513: CB × B = AB (= Hebrew BA × A = CA, letters renamed)   ==>   CB × B = ACB, B = 5 (25 × 5 = 125)
+    _rn_q(M, 'q-513', 'A, B and C represent digits. Given: $\\overline{CB}\\times B=\\overline{ACB}$\nWhich of the following could be B?',
+          ['$7$', '$5$', '$0$', '$4$'], 2, [
+        'Ones column: $B\\times B$ ends in $B$. Only the special digits do this: $0, 1, 5, 6$ ($0\\cdot0=0$, $1\\cdot1=1$, $5\\cdot5=25$, $6\\cdot6=36$).',
+        'Choices (1) and (4) fail: $7\\cdot7=49$ and $4\\cdot4=16$.',
+        'Choice (3) fails: $B=0$ makes the product $0$, not a three-digit number.',
+        'Choice (2): $B=5$ and $C=2$ give $25\\times5=125$ ✓.'])
+    _rn_video(M, 'q-513', [[
+        "Step one: vertically.",
+        A('The vertical layout appears: CB × B = ACB', T(ARR('CB', '\\times\\ \\ \\ B', 'ACB'), 50, **VERT)),
+        "Step two: the ones. B times B ends in B.",
+        D('Circle the B in the ones column of every line'),
+        "A digit times itself that keeps its ones digit — that's a special digit. Zero, one, five or six.",
+        A("'5 × even → 0, 5 × odd → 5, 6 × even keeps it' appears", SPECIAL_T),
+        "Two more facts about them: five times an even number ends in zero, times an odd number in five. Six times an even number keeps its ones digit — six times fourteen, eighty-four.",
+        D('Write "B ∈ {0, 1, 5, 6}"'),
+        D('Cross out choices 1 and 4'),
+        "Seven and four aren't special. Seven times seven is forty-nine. Four times four is sixteen. Out.",
+        "From the choices, that leaves five — or zero.",
+        D('Cross out choice 3'),
+        "Zero? Zero times anything is zero — not a three-digit number. Out.",
+        D('Circle choice 2'),
+        "So B is five. Choice two.",
+    ], [
+        "Quick check by plugging in. B is five — try C as two.",
+        D('Write "25 · 5 = 125"'),
+        "Twenty-five times five: one hundred twenty-five. A is one, C is two, and it ends in five. It works.",
+        D('Circle choice 2'),
+        "Choice two.",
+    ]])
+
+    # ---------- q-517: AB·AB = 2CB, B − A could be 5 (= the Hebrew sample question)   ==>   CA·CA = 6BA, A − C could be 4
+    _rn_q(M, 'q-517', 'A, B and C represent digits. Given: $\\overline{CA}\\times\\overline{CA}=\\overline{6BA}$\nWhich of the following could be $A-C$?',
+          ['$6$', '$2$', '$4$', '$5$'], 3, [
+        'Size first: $24^2=576$ is too small, and $27^2=729$ is too big. So $\\overline{CA}$ is 25 or 26, and $C=2$.',
+        'Ones column: $A\\times A$ ends in $A$, so A is a special digit. Here $A=5$ or $A=6$.',
+        '$25^2=625$ ✓ gives $A-C=5-2=3$, which is not a choice. $26^2=676$ ✓ gives $A-C=6-2=4$.'])
+    _rn_video(M, 'q-517', [[
+        "Method one: the full math. First — estimate the size.",
+        "CA times CA is CA squared, and it's six hundred and something.",
+        D('Write "24² = 576, 25² = 625, 26² = 676, 27² = 729"'),
+        "Twenty-four squared is five seventy-six — too small. Twenty-seven squared, seven twenty-nine — too big.",
+        "So CA is twenty-five or twenty-six. C is two.",
+        "Now the ones: A times A ends in A — a special digit. Zero, one, five or six.",
+        "Both fit: twenty-five squared ends in five, twenty-six squared ends in six.",
+        D('Next to 625 write "A − C = 3"'),
+        "A is five: twenty-five squared, six twenty-five. A minus C is three — not offered. They asked what COULD be.",
+        D('Next to 676 write "A − C = 4" and circle choice 3'),
+        "A is six: twenty-six squared, six seventy-six. Six minus two: four. Choice three.",
+    ], [
+        "Method two — the insight. A times A ends in A, so A is zero, one, five or six.",
+        "Every choice is positive, and C is a leading digit — at least one. So A can't be zero or one.",
+        D('Write "A ≠ 0, 1 → A = 5 or 6"'),
+        "And C? Twenty squared is four hundred, thirty squared is nine hundred. Six hundred and something is in between.",
+        D('Write "20² = 400, 30² = 900 → C = 2"'),
+        "So CA is in the twenties: C is two.",
+        "A minus C is five minus two or six minus two: three or four. Only four is offered.",
+        D('Write "26² = 676 ✓" and circle choice 3'),
+        "Check: twenty-six squared, six seventy-six. Six hundred and something, ending in six. It fits. Choice three.",
+    ]])
+    for qid in ['q-513', 'q-517']:
+        v = M.video('solve-' + qid); q = M.q(qid)
+        v['title'] = v['navLabel'] = q['stem']
+        for b in v['beats']:
+            if b.get('canvas', '').startswith('Pre-loaded — question'):
+                b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, q['stem'])
+
+    # ---------- card examples that were the Hebrew lesson's own (08, 5 + 0, 5·4 = 20, 5·7 = 35, 6·8 = 48)
+    c = M.card('mem-letters'); hits = {}
+    pairs = [('we write $8$, not $08$', 'we write $7$, not $07$'), ('$5+0=5$', '$4+0=4$'),
+             ('$5\\cdot4=20,\\ 5\\cdot7=35$', '$5\\cdot8=40,\\ 5\\cdot9=45$'), ('$6\\cdot8=48$', '$6\\cdot14=84$')]
+    c['tables'] = _hb_deep(c['tables'], pairs, hits)
+    for old, _ in pairs: assert hits.get(old), old
+    # ---------- summary: 15² = 225, 16² = 256 are the Hebrew sample question's squares
+    _rn_lines(M, 'r26-t18-summary', 6, [('$15\\cdot15=225$, $16\\cdot16=256$', '$35\\cdot35=1225$, $46\\cdot46=2116$')])
+
+
+_apply_before_hebrew_backcheck = apply
+
+
+def apply(M):
+    _apply_before_hebrew_backcheck(M)
+    hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last

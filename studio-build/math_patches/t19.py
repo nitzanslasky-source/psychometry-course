@@ -1840,3 +1840,148 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ======================================================================================================
+# 2026-10-06 Hebrew back-check: the renumber pass above was compared with base-v18 only. Checked again against the
+# teacher's Hebrew VIDEO subtitles (01-Algebra-Original-Subtitles.txt, lines 18765-19911): these items had landed
+# back on the Hebrew videos' numbers / definitions, so they get new numbers once more (same type, trap, level,
+# methods). Nothing in topic 19 is recorded. Runs LAST.
+# ======================================================================================================
+def hebrew_backcheck(M):
+    B = '\\blacklozenge'
+    # ---------- lesson slide 3: heart a ♥ b = 2(a + b) (= the Hebrew definition)  ==>  a ♥ b = 5(a + b), 7 ♥ 3 = 50
+    _rn_sub(M, LESSON, 3, [
+        ('$a\\heartsuit b=2(a+b)$', '$a\\heartsuit b=5(a+b)$'), ('a ♥ b = 2(a + b)', 'a ♥ b = 5(a + b)'),
+        ('then multiply the sum by two.', 'then multiply the sum by five.'),
+        ('Under 7 ♥ 3 write "= 2(7 + 3) = 2 · 10 = 20"', 'Under 7 ♥ 3 write "= 5(7 + 3) = 5 · 10 = 50"'),
+        ('Seven plus three is ten. Times two: twenty.', 'Seven plus three is ten. Times five: fifty.'),
+        ('Next to it write "7 · 2 + 3 = 17" and cross it out', 'Next to it write "7 · 5 + 3 = 38" and cross it out'),
+        ("Seven times two, plus three, is seventeen — that's a different rule.",
+         "Seven times five, plus three, is thirty-eight — that's a different rule.")])
+    for r in M.card(CARD)['tables'][0]['rows']:
+        if r[0] == 'Basic': r[2] = '$a\\heartsuit b=5(a+b)$: $7\\heartsuit3=50$'
+
+    # ---------- q-542: ◆(x) = x², ◆(◆(3)) = 81 (= the Hebrew lesson example)  ==>  ◆(◆(5)) = 625
+    _rn_q(M, 'q-542', 'The operation $\\blacklozenge$ is defined for every number $x$: $\\blacklozenge(x)=x^2$. $\\blacklozenge(\\blacklozenge(5))=?$',
+          ['$25$', '$125$', '$625$', '$5$'], 3, [
+        'Work from the inside out: $\\blacklozenge(5)=5^2=25$.',
+        'Then $\\blacklozenge(\\blacklozenge(5))=\\blacklozenge(25)=25^2=625$.',
+        'Stopping at $25$ is the trap.'])
+    _rn_video(M, 'q-542', [[
+        "A diamond inside a diamond. Like any brackets — start from the inside.",
+        D('Underline the inner ◆(5)'),
+        "First: the diamond of five.",
+        D('Write "◆(5) = 5² = 25"'),
+        "The diamond squares — five squared is twenty-five.",
+        D('Write "◆(◆(5)) = ◆(25)"'),
+        "Now put twenty-five in its place. The outer diamond works on twenty-five.",
+        D('Write "= 25² = 625" and circle choice 3'),
+        "Twenty-five squared: six hundred twenty-five. Choice three.",
+        "Stopping at twenty-five is the trap — and twenty-five is waiting among the choices.",
+    ], [
+        "Or think about the rule itself: squaring, then squaring again.",
+        D('Write "(x²)² = x⁴ → 5⁴ = 625"'),
+        "That's x to the fourth. Five to the fourth: six hundred twenty-five.",
+    ]])
+
+    # ---------- q-545: odd 2x / even x² − 3, ◆◆◆(3) = 66 (Hebrew: 2x / x² − 5 from 3)  ==>  odd 4x / even x² − 9, ◆◆◆(1) = 28
+    _rn_q(M, 'q-545', 'The operation $\\blacklozenge$ is defined for every integer $x$:\n'
+          '$\\blacklozenge(x)=\\begin{cases} 4x, & x \\text{ odd} \\\\ x^2-9, & x \\text{ even} \\end{cases}$\n'
+          '$\\blacklozenge(\\blacklozenge(\\blacklozenge(1)))=?$',
+          ['$7$', '$16$', '$28$', '$4$'], 3, [
+        '$1$ is odd: $\\blacklozenge(1)=4\\cdot1=4$.',
+        '$4$ is even: $\\blacklozenge(4)=4^2-9=7$.',
+        '$7$ is odd: $\\blacklozenge(7)=4\\cdot7=28$.',
+        'Check odd or even again before every step.'])
+    _rn_video(M, 'q-545', [[
+        "Two rules: one for odd x, one for even x.",
+        "Three diamonds — so, as always, start from the inside.",
+        D('Write "◆(1): 1 odd → 4 · 1 = 4"'),
+        "One is odd. The odd rule: four x. Four.",
+        D('Write "◆(4): 4 even → 4² − 9 = 7"'),
+        "Now four goes in. Four is even — switch rules! Four squared minus nine: seven.",
+        D('Write "◆(7): 7 odd → 4 · 7 = 28"'),
+        "Seven is odd again. Times four: twenty-eight.",
+        D('Circle choice 3'),
+        "Choice three.",
+        "Check the parity every single time — the output can switch sides.",
+    ]])
+
+    # ---------- q-549: choices ◆(3x) = 9◆(x), ◆(x) = ◆(◆(√x)) (= the Hebrew choices)  ==>  ◆(6x) = 36◆(x), ◆(√x)·◆(√x) = ◆(x),
+    #            ◆(x − 7) = ◆(7 − x); the answer ◆(5x) = 5◆(x) stays choice 3
+    _rn_q(M, 'q-549', 'For every number $t$: $\\blacklozenge(t)=t^2$. In the choices, $x\\ge0$. Which of the following is not always true?',
+          ['$\\blacklozenge(6x)=36\\cdot\\blacklozenge(x)$', '$\\blacklozenge(\\sqrt{x})\\cdot\\blacklozenge(\\sqrt{x})=\\blacklozenge(x)$',
+           '$\\blacklozenge(5x)=5\\cdot\\blacklozenge(x)$', '$\\blacklozenge(x-7)=\\blacklozenge(7-x)$'], 3, [
+        '(3) $\\blacklozenge(5x)=(5x)^2=25x^2$, but $5\\cdot\\blacklozenge(x)=5x^2$. With $x=1$: $25\\ne5$. Not always true — this is the answer.',
+        '(1) $\\blacklozenge(6x)=(6x)^2=36x^2=36\\cdot\\blacklozenge(x)$. Always true.',
+        '(2) $\\blacklozenge(\\sqrt x)=(\\sqrt x)^2=x$, so $\\blacklozenge(\\sqrt x)\\cdot\\blacklozenge(\\sqrt x)=x\\cdot x=x^2=\\blacklozenge(x)$. Always true.',
+        '(4) Opposite numbers have the same square, so $(x-7)^2=(7-x)^2$. Always true.',
+        'Plugging in? Do not use $x=0$: with $x=0$ every choice looks true.'])
+    _rn_video(M, 'q-549', [[
+        "The diamond appears in every choice — two or three times! That's lots of work.",
+        "It's a must-be-true question — \"not always true\" means one choice can be broken.",
+        "So on the exam: skip it, solve the rest of the section, and come back at the end.",
+        "Now let's check. The diamond squares its input.",
+        D('Next to choice 1 write "(6x)² = 36x² ✓"'),
+        "Choice one: six x, squared, is thirty-six x squared. Thirty-six times x squared — the same. True.",
+        D('Next to choice 3 write "(5x)² = 25x² vs 5x² ✗"'),
+        "Choice three: five x, squared, is twenty-five x squared. Five times x squared is only five x squared. Not equal!",
+        D('Circle choice 3'),
+        "We solved it mathematically — so we can mark it right away.",
+        "Just to see: choice two: the root, squared, is x — and x times x is x squared. True. Choice four: x minus seven and seven minus x are opposites — squared, they're equal. True.",
+    ], [
+        "The faster way: plug in x equals one.",
+        D('Next to choice 1 write "◆(6) = 36, 36 · ◆(1) = 36 ✓"'),
+        "Choice one: the diamond of six is thirty-six. Thirty-six times the diamond of one: thirty-six. Equal.",
+        D('Next to choice 2 write "1 · 1 = 1 ✓"'),
+        "Choice two: one times one equals one.",
+        D('Next to choice 3 write "◆(5) = 25, 5 · ◆(1) = 5 ✗"'),
+        "Choice three: the diamond of five is twenty-five. Five times the diamond of one is five. Not equal — found it.",
+        D('Next to choice 4 write "◆(−6) = 36 = ◆(6) ✓"'),
+        "Choice four: one minus seven is minus six, seven minus one is six — both squared give thirty-six.",
+        D('Circle choice 3'),
+        "One warning. Zero or one can make a false rule look true. Here only choice three failed, so we're done.",
+        "If two choices had survived, we'd try a second number, like two.",
+        "So: skip it at first — and when you come back, plug in. Much faster than opening everything.",
+    ]])
+
+    # ---------- q-550: inner ◆(2, 1, 3) = 18 (= the Hebrew inner value, digits 1, 2, 3)  ==>  ◆(1, 1, ◆(2, 1, 4)) = 35
+    _rn_q(M, 'q-550', 'For every three numbers $x$, $y$, $z$: $\\blacklozenge(x, y, z)=x^{yz}+y^{xz}+z^{xy}$. $\\blacklozenge(1, 1, \\blacklozenge(2, 1, 4))=?$',
+          ['$2$', '$33$', '$35$', '$66$'], 3, [
+        'Inner operation first, with $x=2$, $y=1$, $z=4$: $\\blacklozenge(2, 1, 4)=2^{4}+1^{8}+4^{2}=16+1+16=33$.',
+        'Outer operation, with $x=1$, $y=1$, $z=33$: $\\blacklozenge(1, 1, 33)=1^{33}+1^{33}+33^{1}=1+1+33=35$.'])
+    _rn_video(M, 'q-550', [[
+        "A brand-new operation — but only numbers here, no unknowns.",
+        "The diamond appears twice. So we'll run the operation twice.",
+        "Always start with the inner one.",
+        D('Under the inner diamond write "x = 2, y = 1, z = 4"'),
+        "Inner diamond: x is two, y is one, z is four.",
+        "The rule: each number to the power of the product of the other two.",
+        D('Write "2⁴ + 1⁸ + 4² = 16 + 1 + 16 = 33"'),
+        "Two to the power one-times-four: sixteen. One to the power two-times-four: one. Four to the power two-times-one: sixteen. Thirty-three.",
+        D('Write "◆(1, 1, 33)" next to the outer diamond'),
+        "Now the outer diamond: one, one, thirty-three.",
+        D('Write "1³³ + 1³³ + 33¹ = 1 + 1 + 33 = 35"'),
+        "One to any power is one. One again. Thirty-three to the power one-times-one: thirty-three.",
+        D('Circle choice 3'),
+        "One plus one plus thirty-three: thirty-five. Choice three.",
+    ], [
+        "Now the psychometric shortcut: look at the OUTER diamond before calculating anything.",
+        "Sometimes a zero in the outer call makes the inner value irrelevant. Here there's no zero — but the two ones do something similar.",
+        D('Under the outer diamond write "1ᶻ + 1ᶻ + z¹ = 2 + z"'),
+        "One to any power is one — twice. And the last number goes to the power one times one: it stays itself.",
+        "So the outer diamond is just two plus whatever sits in the third slot.",
+        D('Write "2 + 33 = 35" and circle choice 3'),
+        "The inner value is thirty-three — so two plus thirty-three: thirty-five. Choice three.",
+        "Shorter — but only if you spot it under exam pressure. If not, Method 1 always works.",
+    ]])
+    rn_titles(M)   # video titles / slide descriptions show the new stems
+
+
+_apply_before_hebrew = apply
+
+
+def apply(M):
+    _apply_before_hebrew(M)
+    hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last

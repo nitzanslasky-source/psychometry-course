@@ -1220,3 +1220,687 @@ def practice_methods(M):
     _pm_add(M, 'wp27-p02', [r'Method 2 · The V in motion: table Speed · Distance · Time, rows $(1, d, t)$ and $(3, ?, 2t)$. The blank is in the middle → upside-down V: $?=\frac{3\cdot2t\cdot d}{1\cdot t}=6d$.'])
     _pm_add(M, 'wp27-p12', [r'Method 2 · Compare by factors, evening against morning: distance $\times\frac{2.4}{1.8}=\frac43$ (same way); speed $\times\frac12$ (opposite → flip to $2$). Evening: $30\cdot\frac43\cdot2=80$ minutes, and $30+80=110$.'])
     _pm_add(M, 'wp27-p21', [r'Method 2 · Percent shares as weights (the weights are the hours): $3$ of the $5$ hours ($60\%$) are at $8$ kph and $40\%$ at $12$ kph. Average $=8+0.4\cdot4=9.6$ kph.'])
+
+
+# =====================================================================================
+# 2026-10-06 renumber pass (runs LAST). Every Hebrew-derived question (guided wp27-g107…g121,
+# practice wp27-p01…p20) gets a new story and new numbers; the concept, the trap, the level and
+# the methods stay the same. Solution videos rewritten to match. Hebrew-derived lesson examples
+# (seeds 20 per hour, walker 5 m/s for half an hour, walkers 4 + 6) get new numbers.
+# Practice clean-up: copies, extra warm-ups beyond 3, September items whose type the Hebrew covers.
+# Nothing in topic 27 is recorded (~/Documents/Course.recordings has only algebra takes).
+# =====================================================================================
+from math_api import rich_plain
+
+RN_RECORDED = set()   # no take of any topic-27 video (checked 2026-10-06)
+
+
+def _rn_q(M, qid, stem, choices, correct, expl):
+    if qid in RN_RECORDED: return
+    M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+
+
+def _rn_video(M, qid, slides):
+    """Rewrite the question slides (2, 3, ...) of a guided question's solution video. The pre-loaded question stays."""
+    vid = 'solve-' + qid
+    if vid in RN_RECORDED: return
+    v = M.video(vid)
+    assert len(v['beats']) == len(slides) + 1, (vid, len(v['beats']))
+    for n, script in enumerate(slides, 2):
+        assert v['beats'][n - 1]['mode'] == 'question', (vid, n)
+        M.set_slide(vid, n, script=script)
+
+
+def _vis(v, w, h): return dict(k='vis', v=v, w=w, h=h)
+
+
+def rn_lessons(M):
+    # ---- wp-106 #1-#2: "20 seeds per hour / 20 km per hour" (the Hebrew's own example) -> 25 boxes / 25 km
+    _fix_say(M, L1, 1, 'Instead of cracking seeds, you\'re covering distance.', 'Instead of packing boxes, you\'re covering distance.')
+    M.set_slide(L1, 2, script=[
+        'In work problems, you packed twenty-five boxes an hour.',
+        A("'Work: 25 boxes per hour' appears", T('Work: $25$ boxes per hour', size=48)),
+        'In motion, you cover twenty-five kilometers an hour.',
+        A("'Motion: 25 km per hour' appears", T('Motion: $25$ km per hour', size=48)),
+        D('Draw an equals sign between the two lines'),
+        "Exactly the same idea. You'll keep seeing the parallels.",
+        "A few things ARE different — and that's what this lesson is about."])
+    # ---- wp-106 #5: walker 5 m/s, half an hour -> 9 km (Hebrew) ==> cyclist 8 m/s, 25 minutes -> 12 km
+    M.set_slide(L1, 5, script=[
+        'Some books teach: meters per second to kilometers per hour — multiply by three point six.',
+        'Forget it. It almost never appears on the exam — and nobody remembers whether to multiply or divide.',
+        'Instead: identical ratios. Watch.',
+        A('The example appears: 8 meters per second — how many km in 25 minutes?',
+          T('A cyclist rides at $8$ meters per second. How many km does she cover in $25$ minutes?', size=38)),
+        A('A time–distance table appears with two blank rows',
+          TABLE(['Time', 'Distance'], [['1 second', '8 m'], ['1 minute', ''], ['25 minutes', '']], w=700, h=190)),
+        D('Write "×60" beside the rows and fill in 480 m'),
+        'One second to one minute: times sixty. So the distance times sixty too — four hundred eighty meters.',
+        D('Write "×25" and fill in 12,000 m = 12 km'),
+        'One minute to twenty-five minutes: times twenty-five. Twelve thousand meters — twelve kilometers.',
+        'Easy — and you never have to memorize a conversion factor.'])
+    # ---- wp-113 #3: walkers 4 + 6 = 10 (the Hebrew's 6 and 4) ==> 3 + 5 = 8
+    M.set_slide(L4, 3, script=[
+        A("'Toward each other: add the speeds' appears", T('Toward each other: add the speeds', size=46)),
+        'Two bodies coming toward each other? Add the speeds.',
+        'Picture a head-on crash — the crash hits at both speeds combined.',
+        A("'3 + 5 = 8 km per hour' appears", T('$3+5=8$ km per hour', size=50)),
+        D('Draw two arrows pointing at each other above the sum'),
+        'Walkers at three and five kilometers an hour, coming together: the gap shrinks eight kilometers every hour.',
+        'Moving apart in opposite directions? Same thing — add. The gap GROWS eight kilometers an hour.'])
+    # ---- memory card: its examples were the guided questions' numbers (0.8/12, 288/5, 72 and 48)
+    c = M.card('mem-motion')
+    for t in c['tables']:
+        for r in t['rows']:
+            for k, x in enumerate(r):
+                r[k] = (x.replace('$\\frac{0.8}{12}=\\frac1{15}$ hour', '$\\frac{1.5}{9}=\\frac16$ hour')
+                         .replace('$\\frac{288}{5}=57.6$ kph', '$\\frac{240}{8}=30$ kph')
+                         .replace('$72$ and $48\\to57.6$', '$40$ and $24\\to30$'))
+    flat = repr(c['tables'])
+    assert '57.6' not in flat and '0.8' not in flat and '$40$ and $24' in flat, flat[:300]
+
+
+def rn_guided(M):
+    # ---------- g107: cart 4 m/s, 25 min -> 6 km (Hebrew: walker 5 m/s, half an hour -> 9 km)
+    #            ==>  electric scooter 6 m/s, 50 min -> 18 km
+    _rn_q(M, 'wp27-g107', 'An electric scooter moves at 6 meters per second. How many kilometers does it travel in 50 minutes?',
+          ['$0.3$', '$1.8$', '$18$', '$30$'], 3, [
+        'In $1$ second the scooter covers $6$ meters. In $1$ minute ($60$ seconds) it covers $6\\times60=360$ meters.',
+        'In $50$ minutes: $360\\times50=18{,}000$ meters $=18$ km.',
+        'Trap: $6\\times50=300$ meters $=0.3$ km mixes seconds with minutes.'])
+    _rn_video(M, 'wp27-g107', [[
+        'Meters per second — but the answer is in kilometers, after fifty minutes.',
+        'No three point six. Identical ratios.',
+        A('A time–distance table appears', TABLE(['Time', 'Distance'], [['1 second', '6 m'], ['1 minute', ''], ['50 minutes', '']], w=700, h=190)),
+        D('Write "×60" and fill in 360 m'),
+        'One second to one minute: times sixty. Six meters becomes three hundred sixty.',
+        D('Write "×50" and fill in 18,000 m'),
+        'One minute to fifty minutes: times fifty. Eighteen thousand meters.',
+        D('Write "= 18 km" and circle choice 3'),
+        'A thousand meters in a kilometer — eighteen kilometers. Choice three.',
+        'Notice the trap: six times fifty — three hundred meters — mixes seconds with minutes.',
+    ]])
+
+    # ---------- g108: drone 390 kph, 2 min, ground 12 -> height 5 (Hebrew: plane 300 kph, 1 min, ground 4 -> 3)
+    #            ==>  gondola lift 17 kph, 6 min, ground 1.5 km -> height 0.8 km (8-15-17)
+    _rn_q(M, 'wp27-g108', 'A gondola lift climbs along a straight cable at 17 kph. After 6 minutes, its horizontal distance from the bottom station is 1.5 kilometers. How high above the bottom station is it, in kilometers?',
+          ['$1.7$', '$0.8$', '$1.5$', '$0.2$'], 2, [
+        '$6$ minutes $=\\frac{6}{60}=\\frac1{10}$ hour. The gondola travels $17\\times\\frac1{10}=1.7$ km along its sloping cable.',
+        'Sketch a right triangle: the ground ($1.5$ km) and the height are the two short sides. The path along the cable ($1.7$ km) is the long side.',
+        'Pythagoras: $h^2=1.7^2-1.5^2=2.89-2.25=0.64$. Therefore $h=0.8$ km. (In tenths of a km: $17^2-15^2=289-225=64$, root $8$.)',
+        'Trap: $1.7$ is the length of the path, not the height.'])
+    _rn_video(M, 'wp27-g108', [[
+        'Motion plus geometry. First: how far did the gondola actually travel?',
+        'Seventeen kilometers an hour — and we need six minutes.',
+        D('Write "17 km — 60 min" and below it "1.7 km — 6 min", with "÷10" beside it'),
+        'An hour is sixty minutes. Sixty to six: divide by ten. Seventeen over ten: one point seven kilometers.',
+        'Now draw it — the sketch shows a right triangle.',
+        A('A right triangle appears: ground 1.5 km, height and slope unknown',
+          _vis({'type': 'rightTriangle', 'base': '1.5 km', 'height': '?', 'hypotenuse': '?'}, 900, 250)),
+        D('Write 1.7 on the sloping side'),
+        'One point seven is the sloping path — the distance it really traveled.',
+        'One point five along the ground. Drop a perpendicular — the height is the missing side.',
+        D('Write 0.8 for the height and circle choice 2'),
+        'Count in tenths of a kilometer: fifteen and seventeen. Eight, fifteen, seventeen. The height is eight tenths — zero point eight kilometers. Choice two.',
+        "Don't know that triple? Pythagoras: seventeen squared minus fifteen squared — two eighty-nine minus two twenty-five, sixty-four. Root: eight. Eight tenths of a kilometer.",
+    ]])
+
+    # ---------- g109: 72 / 48 -> 57.6 (Hebrew: 60 / 40 -> 48, 120 km)  ==>  105 / 70 -> 84 (210 km)
+    _rn_q(M, 'wp27-g109', 'A car drives from a city to the coast at 105 kph and returns along the same road at 70 kph, without stopping. What is its average speed for the whole round trip?',
+          ['$90$ kph', '$84$ kph', '$87.5$ kph', '$80$ kph'], 2, [
+        'Estimate first: the plain average is $\\frac{105+70}2=87.5$. The slow part takes more time. Therefore the answer is below $87.5$: choices (1) and (3) are out.',
+        'Choose a distance that both speeds divide: $210$ km each way. There: $\\frac{210}{105}=2$ hours. Back: $\\frac{210}{70}=3$ hours.',
+        'Average speed $=\\frac{\\text{total distance}}{\\text{total time}}=\\frac{420}{5}=84$ kph.',
+        'Check (equal distances only): $\\frac{2\\cdot105\\cdot70}{105+70}=\\frac{14{,}700}{175}=84$.'])
+    _rn_video(M, 'wp27-g109', [[
+        'Average speed. First — what it is NOT.',
+        D('Write "≠ 87.5" next to the question'),
+        "It's not eighty-seven and a half, the plain average of a hundred five and seventy.",
+        'Going there is faster. So it takes less time. Coming back slow takes more time.',
+        'More time at seventy. So the answer sits closer to seventy. Below eighty-seven and a half.',
+        D('Cross out choices 1 and 3'),
+        'Ninety and eighty-seven and a half are out.',
+        'Now calculate. No distance given? Pick a friendly one — something both speeds divide.',
+        'Two hundred ten: a hundred five and seventy both go into it.',
+        A('A trip table appears', TABLE(['Leg', 'Speed', 'Distance', 'Time'], [['There', '105', '210 km', ''], ['Back', '70', '210 km', ''], ['Total', '', '', '']], w=1000, h=210)),
+        D('Fill in the times 2 and 3, then the totals 420 and 5'),
+        'There: two hours. Back: three hours. In total: four hundred twenty kilometers in five hours.',
+        D('Write "420 ÷ 5 = 84" and circle choice 2'),
+        'Total distance over total time: eighty-four. Choice two.',
+        D('Write "2 × 105 × 70 ÷ (105 + 70) = 84"'),
+        'A check for strong students, for equal distances only: two times a hundred five times seventy, over a hundred seventy-five. Eighty-four again.',
+    ]])
+
+    # ---------- g111: toward each other, 1.75 times -> 4/11 (Hebrew: Danny and Dina, 1.5 -> 2/5)
+    #            ==>  Maya and Theo on a bike trail, 1.25 times -> 4/9
+    _rn_q(M, 'wp27-g111', 'Maya and Theo start at the same time from opposite ends of a bike trail and ride toward each other. Theo rides at 1.25 times Maya’s speed. What fraction of the trail does Maya cover before they meet?',
+          ['$\\frac14$', '$\\frac49$', '$\\frac12$', '$\\frac59$'], 2, [
+        'They start together and stop at the meeting: equal times. With equal times, the distances have the same ratio as the speeds.',
+        'Speed ratio Maya : Theo $=1:1.25=4:5$ (multiply by $4$).',
+        'The trail is $4+5=9$ parts. Maya covers $\\frac49$ of it.',
+        'Check by elimination: Theo is faster, therefore Maya covers less than $\\frac12$. If Theo were twice as fast, Maya would cover $\\frac13$. Theo is slower than that, therefore Maya covers more than $\\frac13$. Only $\\frac49$ fits.'])
+    _rn_video(M, 'wp27-g111', [[
+        "No distance. No time. No real speeds. Just 'one point two five times'.",
+        'They start together and stop when they meet. So the time is equal. Distances follow the speeds.',
+        D('Write the ratio "1 : 1.25 = 4 : 5"'),
+        'One to one point two five. Multiply by four: four to five.',
+        A('Two bars appear: Maya 4 parts, Theo 5 parts', _vis({'type': 'bars', 'labels': ['Maya', 'Theo'], 'values': [4, 5]}, 700, 260)),
+        'Maya rides four parts, Theo rides five. The whole trail: nine parts.',
+        D('Write "4/9" and circle choice 2'),
+        'Maya covers four out of nine. Choice two.',
+    ], [
+        'Ratios not your thing? Missing data — plug in friendly numbers.',
+        D('Write "Maya 16 km/h, Theo 20 km/h, 1 hour"'),
+        'Maya at sixteen kilometers an hour, Theo at twenty — one and a quarter times sixteen. Say they meet after one hour — the simplest.',
+        'Maya rides sixteen kilometers, Theo twenty. The trail is thirty-six.',
+        D('Write "16/36 = 4/9"'),
+        'Sixteen out of thirty-six: four ninths — the same answer.',
+    ], [
+        'And the psychometric way — pure logic.',
+        'Theo is faster. So Maya covers LESS than half.',
+        D('Cross out choices 3 and 4'),
+        'One half is out. Five ninths is more than half — out.',
+        'Now imagine Theo were exactly twice as fast. Then Maya would cover one third.',
+        'But Theo is only one point two five times as fast. So Maya covers MORE than a third.',
+        D('Cross out choice 1 and circle choice 2'),
+        'One quarter is less than a third — out. Four ninths is left.',
+    ]])
+
+    # ---------- g112: B 3.5 times as fast, B covers it all -> 2/7 (Hebrew: two planes, 2.5 -> 2/5)
+    #            ==>  rowboat and motorboat on a lake, 4.5 times -> 2/9 (trap 2/11)
+    _rn_q(M, 'wp27-g112', 'A rowboat and a motorboat leave opposite ends of a lake at the same time, each heading for the other end. The motorboat is 4.5 times as fast as the rowboat. By the time the motorboat reaches the far end, what fraction of the length of the lake has the rowboat traveled?',
+          ['$\\frac2{11}$', '$\\frac79$', '$\\frac29$', '$\\frac9{11}$'], 3, [
+        'Equal times: from the start until the motorboat arrives. Speed ratio rowboat : motorboat $=1:4.5=2:9$. Therefore in that time the ratio of their distances is also $2:9$.',
+        'The whole lake is the motorboat’s $9$ parts, because the motorboat travels the full length alone. The rowboat covers $\\frac29$ of the lake.',
+        'Trap: $\\frac2{11}$ adds $2+9$, as in a meeting question. Here the question does not stop at the meeting.'])
+    _rn_video(M, 'wp27-g112', [[
+        'Careful — this time the question does NOT stop when they meet.',
+        'The motorboat travels the whole lake. The rowboat is still somewhere on the way.',
+        D('Write the ratio "1 : 4.5 = 2 : 9"'),
+        'Speed ratio one to four point five. Double it: two to nine.',
+        'Same time. So the distances are two to nine.',
+        "But the WHOLE lake is only the motorboat's nine parts. Not two plus nine.",
+        D('Write "2/9" and circle choice 3'),
+        'The rowboat covers two parts out of nine. Choice three.',
+        'Two elevenths would be a meeting question. Here, the motorboat covers the whole length alone.',
+    ], [
+        'Now plug in numbers.',
+        D('Write "rowboat 4 km/h, motorboat 18 km/h, 1 hour"'),
+        'The rowboat at four kilometers an hour, the motorboat at eighteen — four and a half times four.',
+        'The motorboat reaches the far end after one hour. So the lake is eighteen kilometers long.',
+        D('Write "4/18 = 2/9"'),
+        'In that hour the rowboat covers four. Four out of eighteen: two ninths.',
+    ]])
+
+    # ---------- g114: 5 + 7, 800 m -> 4 min (Hebrew: 6 + 4, 500 m -> 3 min)  ==>  runners 8 + 10, 1,800 m -> 6 min
+    _rn_q(M, 'wp27-g114', 'Two runners leave the same gate at the same time and run in opposite directions along a straight path. Their speeds are 8 and 10 kph. After how many minutes are they 1,800 meters apart?',
+          ['$6$', '$10$', '$54$', '$3$'], 1, [
+        'Opposite directions: the gap grows at $8+10=18$ kph.',
+        'Same units: $1{,}800$ m $=1.8$ km.',
+        'Time $=\\frac{1.8}{18}=\\frac1{10}$ hour $=\\frac{60}{10}=6$ minutes.',
+        'Traps: $\\frac1{10}$ hour is not $10$ minutes. And $54$ minutes uses $10-8=2$ kph, as if they ran in the same direction.'])
+    _rn_video(M, 'wp27-g114', [[
+        'Two runners, opposite directions — moving apart. Add the speeds.',
+        D('Write "8 + 10 = 18 km/h"'),
+        'Eight plus ten: the gap grows eighteen kilometers every hour.',
+        'The distance is in meters, the speed in kilometers. Same units!',
+        D('Write "1,800 m = 1.8 km"'),
+        A('A distance–speed–time table appears', TABLE(['Speed', 'Distance', 'Time'], [['18 km/h', '1.8 km', '']], w=800, h=110)),
+        'Time is distance over speed: one point eight over eighteen.',
+        D('Write "1.8 ÷ 18 = 1/10 hour"'),
+        'One tenth of an hour.',
+        D('Write "60 ÷ 10 = 6 minutes" and circle choice 1'),
+        'They asked for minutes. Sixty divided by ten: six minutes. Choice one.',
+        'Ten is the trap — a tenth of an hour is not ten minutes.',
+    ]])
+
+    # ---------- g115: 08:00 van 60, 08:30 car 90, 105 km -> 09:00 (Hebrew: 6:00 truck 80, 6:30 car 100, 130 km -> 7:00)
+    #            ==>  09:00 bus 72, 09:20 car 108, 204 km -> 10:20 (trap 10:08)
+    _rn_q(M, 'wp27-g115', 'At 09:00 a bus leaves Oakton for Bayside at 72 kph. At 09:20 a car leaves Bayside for Oakton at 108 kph. The towns are 204 kilometers apart. When do they meet?',
+          ['10:08', '10:20', '10:40', '10:00'], 2, [
+        'From 09:00 to 09:20 only the bus moves: $20$ minutes $=\\frac13$ hour, $72\\times\\frac13=24$ km.',
+        'When the car starts, the gap is $204-24=180$ km. They drive toward each other: the gap closes at $72+108=180$ kph.',
+        'Time $=\\frac{180}{180}=1$ hour. They meet one hour after the car starts, at 10:20.',
+        'Trap: $\\frac{204}{180}=1\\frac2{15}$ hours $=68$ minutes after 09:00 (choice 1) counts the car as driving before it left.'])
+    _rn_video(M, 'wp27-g115', [[
+        'Step by step. Stage one: the bus drives alone.',
+        D('Write "first ⅓ hour: 72 × ⅓ = 24 km"'),
+        'From nine to nine twenty, only the bus moves. Twenty minutes is a third of an hour. Seventy-two for a third of an hour: twenty-four kilometers.',
+        A('The route appears: Oakton, the bus at 09:20, Bayside',
+          _vis({'type': 'route', 'labels': ['Oakton', 'Bus', 'Bayside'], 'positions': [0, 24, 204], 'arrows': ['→', '→', '←']}, 1000, 210)),
+        D('Write "204 − 24 = 180" over the gap'),
+        'The whole distance is two hundred four. So a hundred eighty kilometers are left.',
+        'Stage two: the car starts, heading toward the bus. Add the speeds — a hundred eighty.',
+        D('Write "180 ÷ 180 = 1 hour"'),
+        'The distance that matters is the gap between them: a hundred eighty. Over a hundred eighty: one hour.',
+        D('Write "9:20 + 1 h = 10:20" and circle choice 2'),
+        'One hour after nine twenty: ten twenty. Choice two.',
+        'Always draw it — the sketch makes the two stages obvious.',
+    ]])
+
+    # ---------- g116: Mina 3 kph, 20 min ahead, caught after 40 min -> 4.5 (Hebrew: Miki 4 kph, 15 min, 30 min -> 6)
+    #            ==>  Zoe 15 kph by bike, 12 min ahead, caught after 20 min -> 24 (trap 9 = the difference)
+    _rn_q(M, 'wp27-g116', 'Zoe rides her bike from home at 15 kph. Twelve minutes later, her brother Sam leaves home along the same route and catches up with Zoe 20 minutes after he starts. What is Sam’s speed?',
+          ['$9$ kph', '$20$ kph', '$24$ kph', '$18$ kph'], 3, [
+        '$12$ minutes $=\\frac15$ hour. Zoe’s head start: $15\\times\\frac15=3$ km.',
+        'Sam closes the $3$ km gap in $20$ minutes $=\\frac13$ hour. The gap closes at $3\\div\\frac13=3\\times3=9$ kph. This is the difference between the speeds.',
+        'Sam’s speed $=15+9=24$ kph.',
+        'Check: Zoe rides $12+20=32$ minutes in total: $15\\times\\frac{32}{60}=8$ km. Sam rides the same $8$ km in $\\frac13$ hour: $8\\div\\frac13=24$ kph.',
+        'Trap: $9$ kph is only how much faster Sam is.'])
+    _rn_video(M, 'wp27-g116', [[
+        'A chase. First: how far ahead is Zoe when Sam leaves?',
+        D('Write "15 × ⅕ = 3 km"'),
+        'Twelve minutes is a fifth of an hour. At fifteen kilometers an hour: three kilometers ahead.',
+        'Now the chase. The ONLY distance that matters: that three-kilometer gap. Not the whole way they ride.',
+        A('A gap table appears', TABLE(['Gap', 'Time', 'Speed difference'], [['3 km', '⅓ hour', '']], w=900, h=110)),
+        'Sam closes it in twenty minutes — one third of an hour.',
+        D('Write "3 ÷ ⅓ = 3 × 3 = 9"'),
+        'Three divided by one third. Dividing by a fraction is multiplying by its reciprocal: three times three — nine.',
+        "Careful — that's not Sam's speed. That's how much FASTER he is than Zoe.",
+        D('Write "15 + 9 = 24" and circle choice 3'),
+        "Zoe's fifteen plus nine: twenty-four kilometers an hour. Choice three.",
+        "At nine he'd never catch her — she's faster!",
+    ], [
+        'Quick check. Zoe rides twelve plus twenty minutes — thirty-two minutes.',
+        'Fifteen kilometers an hour is a quarter of a kilometer every minute. Thirty-two quarters: eight kilometers.',
+        'Sam covers the same eight kilometers in twenty minutes.',
+        D('Write "8 ÷ ⅓ = 8 × 3 = 24"'),
+        'Eight over one third: twenty-four. Same answer.',
+    ]])
+
+    # ---------- g117: 9 km in 12 min vs 12 km in 9 min -> 35 (Hebrew: 8 km / 10 min vs 10 km / 8 min -> 27)
+    #            ==>  motorbike 9 km in 15 min, train 15 km in 9 min -> 36 and 100 -> 64
+    #            (review 2026-10-06: was 6 km / 10 min vs 10 km / 6 min — "10 min = 1/6 h, ×6" was the Hebrew's own step)
+    _rn_q(M, 'wp27-g117', 'A motorbike travels 9 kilometers in 15 minutes. A train travels 15 kilometers in 9 minutes. What is the difference between their speeds, in kph?',
+          ['$46$', '$64$', '$74$', '$136$'], 2, [
+        'Motorbike: $60$ minutes is $4$ times $15$ minutes. In an hour it covers $9\\times4=36$ km: $36$ kph.',
+        'Train: $15$ km in $9$ minutes is $5$ km in $3$ minutes. An hour is $20$ times $3$ minutes: $5\\times20=100$ kph.',
+        'Difference: $100-36=64$ kph. (Quick: $104-40=64$.)',
+        'Trap: $136$ adds the speeds.'])
+    _rn_video(M, 'wp27-g117', [[
+        'Kilometers per hour — but the times are in minutes. Convert to hours first.',
+        D('Write "15 min = 15/60 h = ¼ h"'),
+        'Fifteen minutes is fifteen sixtieths of an hour — one quarter.',
+        D('Write "9 ÷ ¼ = 9 × 4 = 36"'),
+        'Distance over time: nine divided by one quarter. Dividing by a fraction is multiplying by its reciprocal: nine times four — thirty-six.',
+        D('Write "15 ÷ 9/60 = 15 × 60/9 = 100"'),
+        'The train: fifteen divided by nine sixtieths. Fifteen times sixty over nine: a hundred.',
+        'Now a hundred minus thirty-six. Before any long subtraction — two quick tricks.',
+        D('Write "104 − 40 = 64"'),
+        'One: add four to both, to reach a round forty. A hundred four minus forty: sixty-four.',
+        D('Write "36 → 40 → 100: 4 + 60 = 64"'),
+        "Two: walk from thirty-six to a round anchor — forty — that's four. Then forty to a hundred — sixty. Sixty-four.",
+        D('Circle choice 2'),
+        'Choice two.',
+    ], [
+        'Now the faster way — identical ratios. This is the one I recommend.',
+        A('A time–distance table appears', TABLE(['Vehicle', 'Time', 'Distance'], [['Motorbike', '15 min', '9 km'], ['Motorbike', '60 min', ''], ['Train', '9 min', '15 km'], ['Train', '60 min', '']], w=900, h=250)),
+        D('Write "×4" and fill in 36'),
+        'The motorbike: fifteen minutes to sixty is times four. Nine times four — thirty-six kilometers an hour.',
+        D('Write "3 min → 5 km", then "×20", and fill in 100'),
+        'The train: fifteen kilometers in nine minutes. Divide by three — five kilometers every three minutes. An hour is twenty of those: a hundred.',
+        'A hundred minus thirty-six: sixty-four. Same answer — far less work.',
+    ]])
+
+    # ---------- g118: cable car 180 m, 12 s, double / half -> 15 (Hebrew: zip line 120 m, 10 s -> 12.5)
+    #            ==>  elevator 60 m, 20 s -> 25
+    _rn_q(M, 'wp27-g118', 'An elevator normally rises 60 meters in 20 seconds, at a constant speed. On one trip, it rises the first half of the way at twice its normal speed and the second half at half its normal speed. How many seconds does this trip take?',
+          ['$20$', '$25$', '$10$', '$15$'], 2, [
+        'At the normal speed, each half takes $\\frac{20}2=10$ seconds.',
+        'First half at twice the speed: half the time, $5$ seconds. Second half at half the speed: twice the time, $20$ seconds.',
+        'Total: $5+20=25$ seconds.',
+        'Trap: "double, then half — they cancel" gives $20$. The two speeds apply to equal distances, not to equal times. The slow half adds $10$ seconds, and the fast half saves only $5$.'])
+    _rn_video(M, 'wp27-g118', [[
+        "Instinct says: double speed, then half speed — they cancel. Twenty seconds. Wrong. Let's see why.",
+        D('Write "60 ÷ 20 = 3 m/s"'),
+        'Normal speed: sixty meters in twenty seconds — three meters per second.',
+        A('A half-by-half table appears', TABLE(['Half', 'Speed', 'Distance', 'Time'], [['First', '6 m/s', '30 m', ''], ['Second', '1.5 m/s', '30 m', '']], w=1000, h=160)),
+        'Each half is thirty meters. First half at double speed: six. Second half at half speed: one point five.',
+        D('Fill in the times 5 and 20, and write "= 25"'),
+        'Thirty over six: five seconds. Thirty over one point five: twenty. Total: twenty-five.',
+        D('Circle choice 2'),
+        'Twenty-five seconds. Choice two.',
+    ], [
+        'Faster: ratios. Double the speed — half the time. Half the speed — double the time.',
+        D('Write "10 + 10" above the question'),
+        'On a normal trip, each half takes ten seconds.',
+        D('Write "5 + 20 = 25" below it'),
+        'First half twice as fast: five seconds. Second half half as fast: twenty. Twenty-five — with no speeds at all.',
+    ], [
+        'And the spark of insight.',
+        'The slow half alone takes twenty seconds — the whole normal trip!',
+        'Plus the fast half on top. So the answer is MORE than twenty.',
+        D('Cross out choices 1, 3 and 4'),
+        'Twenty, ten and fifteen are out. Only twenty-five is left.',
+        'Which should you use? Ratios. The insight is great — if you happen to see it.',
+    ]])
+
+    # ---------- g119: midpoint, 24 kph vs 20 min + 18 kph -> 24 (Hebrew: 30 kph vs 30 min + 20 kph -> 60)
+    #            ==>  motorcyclists, 48 kph vs 20 min + 36 kph -> x = 24, AC = 48 (trap 24 = x)
+    _rn_q(M, 'wp27-g119', 'B is the midpoint of a straight road from A to C. One motorcyclist rides from A to C at 48 kph. Another takes 20 minutes from A to B, then rides from B to C at 36 kph. Their total travel times are equal. How many kilometers long is AC?',
+          ['$24$', '$36$', '$48$', '$72$'], 3, [
+        'Let each half be $x$ km. Then AC $=2x$.',
+        'First rider: $\\frac{2x}{48}=\\frac{x}{24}$ hours. Second rider: $20$ minutes $=\\frac13$ hour, plus $\\frac{x}{36}$ hours.',
+        'Equal times: $\\frac{x}{24}=\\frac13+\\frac{x}{36}$. Multiply by $72$, the smallest number that $24$, $3$ and $36$ divide: $3x=24+2x$. Therefore $x=24$.',
+        'AC $=2x=48$ km. Check: $\\frac{48}{48}=1$ hour, and $\\frac13+\\frac{24}{36}=\\frac13+\\frac23=1$ hour.',
+        'Faster: work back from the answers. Start with a friendly one, like $48$. Trap: $24$ is only $x$, half of the road.'])
+    _rn_video(M, 'wp27-g119', [[
+        'A speed–distance–time table. B is the midpoint. So call each HALF x. No x over two.',
+        A('A table for both riders appears', TABLE(['Rider', 'Speed', 'Distance', 'Time'], [['First: A→C', '48', '2x', ''], ['Second: A→B', '', 'x', '20 min'], ['Second: B→C', '36', 'x', '']], w=1000, h=210)),
+        D('Fill in 2x/48 and x/36, and write "20 min = ⅓ h"'),
+        'First rider: two x over forty-eight. Second rider: a third of an hour, then x over thirty-six.',
+        "Stay in hours — we're in kilometers per hour.",
+        'The times are equal. So build the equation.',
+        D('Write "2x/48 = x/24  →  x/24 = ⅓ + x/36"'),
+        D('Multiply by 72: write "3x = 24 + 2x → x = 24"'),
+        'Two x over forty-eight is x over twenty-four. Multiply everything by seventy-two — the smallest number that twenty-four, three and thirty-six all go into. Three x equals twenty-four plus two x. x is twenty-four.',
+        D('Write "AC = 2x = 48" and circle choice 3'),
+        'But x is only half the road. The whole thing: forty-eight. Choice three.',
+        'Twenty-four is the trap — that is only x, half the road.',
+    ], [
+        'Or plug in the answers. Start with the friendliest one.',
+        'Forty-eight: halves of twenty-four — easy with forty-eight and thirty-six.',
+        D('Write "48 ÷ 48 = 1 h"'),
+        'First rider: forty-eight kilometers at forty-eight — one hour.',
+        D('Write "20 min + 24/36 h = 20 + 40 = 60 min"'),
+        'Second: twenty minutes, then twenty-four kilometers at thirty-six — two thirds of an hour, forty minutes. Sixty in total. Equal!',
+        'Not luck. Start with the round, friendly choice. Working back from the answers saves time in many motion questions.',
+    ]])
+
+    # ---------- g120: 1,350 km, 9 h, 80% faster -> 5 (Hebrew: train 1,600 km, 6 h, 50% faster -> 4)
+    #            ==>  ferry 360 km, 12 h, 60% faster -> 7.5 (estimate 6 < t < 8)
+    _rn_q(M, 'wp27-g120', 'A ferry covers a route of 360 kilometers in 12 hours. A new ferry travels 60% faster. How many hours does the new ferry take on the same route?',
+          ['$6$', '$8$', '$19.2$', '$7.5$'], 4, [
+        '60% faster: the new speed is $1.6$ times the old speed.',
+        'Same distance: the time is divided by $1.6$. $12\\div1.6=\\frac{120}{16}=7.5$ hours.',
+        'Estimate: twice as fast would take $\\frac{12}2=6$ hours. One and a half times as fast would take $12\\div1.5=8$ hours. $1.6$ is between $1.5$ and $2$. Therefore the time is between $6$ and $8$ hours: only $7.5$ fits.',
+        'Trap: 60% faster does not mean 60% less time. The time is multiplied by $\\frac1{1.6}=\\frac58$. And $19.2=12\\times1.6$ multiplies instead of dividing.'])
+    _rn_video(M, 'wp27-g120', [[
+        D('Write "360 ÷ 12 = 30"'),
+        'The old speed: three sixty over twelve — thirty kilometers an hour.',
+        'Sixty percent faster. Adding sixty percent means multiplying by one point six.',
+        D('Write "30 × 1.6 = 48"'),
+        D('Write "360 ÷ 48 = 7.5" and circle choice 4'),
+        'Three sixty at forty-eight: seven and a half hours. Choice four.',
+    ], [
+        'Ratios: the speed goes up — the time comes down, in the same ratio.',
+        'Twice as fast — half the time. Three times as fast — a third of the time.',
+        'One point six times as fast? Divide the time by one point six.',
+        D('Write "12 ÷ 1.6 = 120 ÷ 16 = 7.5"'),
+        'Twelve over one point six — times ten: a hundred twenty over sixteen. Seven and a half.',
+    ], [
+        'Now the quick estimate. If it were twice as fast — half the time: six hours.',
+        D('Cross out choice 1'),
+        "But it's not quite twice as fast. It takes MORE than six. Out.",
+        D('Cross out choice 3'),
+        'And a faster ferry taking more than twelve hours? Nineteen point two — out.',
+        'Eight or seven and a half? Try one more easy speed: one and a half times as fast.',
+        D('Write "12 ÷ 1.5 = 8 hours"'),
+        'One and a half times as fast: twelve divided by one point five — eight hours.',
+        D('Write "1.5 < 1.6 < 2  →  6 < time < 8"'),
+        'One point six is faster than one point five. So the time is LESS than eight hours — and more than six.',
+        D('Cross out choice 2 and circle choice 4'),
+        'Eight is out. Only seven and a half is left. Choice four — and no exact division at all.',
+    ]])
+
+    # ---------- g121: circle 600 m, 30 / 24 -> 6 min (Hebrew: karts, 500 m, 60 / 50 -> 3 min)
+    #            ==>  runners, 400 m track, 12 / 9 -> 8 min (fast 4 laps, slow 3 laps)
+    _rn_q(M, 'wp27-g121', 'Two runners start together from the same point of a circular track, running in the same direction. The track is 400 meters long. Their speeds are 12 and 9 kph. How many minutes pass between consecutive meetings?',
+          ['$2$', '$4$', '$8$', '$16$'], 3, [
+        'Same direction on a circle: the faster runner gains on the slower one at $12-9=3$ kph.',
+        'They meet again each time the faster one has gained one full lap: $400$ m $=0.4$ km.',
+        'Time $=\\frac{0.4}{3}=\\frac2{15}$ hour $=\\frac2{15}\\times60=8$ minutes.',
+        'Check with an equation: $12t=9t+0.4$. Therefore $3t=0.4$ and $t=\\frac2{15}$ hour $=8$ minutes.'])
+    _rn_video(M, 'wp27-g121', [[
+        "First — what do 'consecutive meetings' mean?",
+        A('The track appears: 400 m, speeds 12 and 9 km/h',
+          _vis({'type': 'circularMotion', 'circumference': '400 m', 'fast': '12 km/h', 'slow': '9 km/h', 'lapsFast': 4, 'lapsSlow': 3}, 1100, 300)),
+        'They start together. The faster one pulls away — then chases the slower one from behind.',
+        'It meets the slower one again exactly when it has gained one full lap.',
+        D('Circle "1 extra lap"'),
+        'Same direction — a chase. Subtract the speeds.',
+        D('Write "12 − 9 = 3 km/h"'),
+        'Tell the slow one: you stand still. The fast one moves at the difference — three kilometers an hour.',
+        D('Write "3 km — 60 min", below it "1 km — 20 min", and below that "0.4 km — 8 min"'),
+        'One lap: four hundred meters, zero point four kilometers. Three kilometers take sixty minutes — so one kilometer takes twenty. Zero point four of twenty: eight minutes.',
+        D('Circle choice 3'),
+        'Eight minutes. Choice three.',
+    ], [
+        'Want to check? Write an equation.',
+        'Same time t for both. The fast one covers one extra lap: zero point four kilometers.',
+        D('Write "12t = 9t + 0.4"'),
+        'Twelve t equals nine t plus zero point four.',
+        D('Write "3t = 0.4 → t = 2/15 h = 8 min"'),
+        'Three t is zero point four. t is two fifteenths of an hour — sixty times two fifteenths: eight minutes. The same answer.',
+        'On a circle, imagine one of them standing still — the other just needs one lap.',
+    ]])
+
+
+def rn_order(M):
+    # Further guided group: the Hebrew levels say g120 (medium) before g119 (medium plus) -> easy -> hard.
+    # Nothing in g120's video uses g119. renumber_guided renumbers the titles and the sidebar.
+    sec = M.section_of('wp27-g120')
+    assert M.section_of('wp27-g119') == sec
+    M.move('wp27-g120', sec, before='wp27-g119')
+    M.move('solve-wp27-g120', sec, after='wp27-g120')
+
+
+def rn_practice_questions(M):
+    P = {}
+    # p01 cyclist: 1 lap / 2 min, 3 laps / 8 min, 24 min each -> 21  ==>  runner 1 lap / 3 min, 2 laps / 5 min, 30 min each -> 22
+    P['wp27-p01'] = ('A runner completes one lap every 3 minutes at pace A, and two laps every 5 minutes at pace B. She runs for 30 minutes at each pace. How many laps does she complete in total?',
+        ['16', '22', '25', '20'], 2, [
+        'At pace A: $\\frac{30}{3}=10$ laps.',
+        'At pace B: $30$ minutes are $\\frac{30}{5}=6$ blocks of $5$ minutes, with $2$ laps in each: $6\\times2=12$ laps.',
+        'Total: $10+12=22$ laps.',
+        'Trap: $10+6=16$ counts only one lap in each block of $5$ minutes.'])
+    # p02 ferry d km in t h, 3x speed, 2t h -> 6d  ==>  bus a km in b h, 2x speed, 4b h -> 8a
+    P['wp27-p02'] = ('A bus travels $a$ kilometers in $b$ hours. At twice that speed, how many kilometers does it travel in $4b$ hours?',
+        ['$2a$', '$6a$', '$\\frac{a}{2}$', '$8a$'], 4, [
+        'Speed $=\\frac{a}{b}$. Twice that speed: $\\frac{2a}{b}$.',
+        'Distance $=\\frac{2a}{b}\\cdot4b=8a$.',
+        'Or plug in numbers: $a=10$, $b=1$. The speed is $10$, the new speed $20$, and in $4$ hours the bus travels $80=8\\cdot10$.',
+        'Method 2 · The V in motion: table Speed · Distance · Time, rows $(1, a, b)$ and $(2, ?, 4b)$. The blank is in the middle → upside-down V: $?=\\frac{2\\cdot4b\\cdot a}{1\\cdot b}=8a$.'])
+    # p03 robot x h at 2x, y h at 3y -> 2x^2 + 3y^2  ==>  drone a h at 3a, b h at 4b -> 3a^2 + 4b^2
+    P['wp27-p03'] = ('A drone flies for $a$ hours at $3a$ kph, and then for $b$ hours at $4b$ kph. What is its total distance, in kilometers?',
+        ['$3a+4b$', '$3a^2+4b^2$', '$7(a+b)$', '$(3a+4b)^2$'], 2, [
+        'First part: $a\\cdot3a=3a^2$. Second part: $b\\cdot4b=4b^2$. Total: $3a^2+4b^2$.',
+        'Or plug in numbers: $a=2$, $b=1$. The drone flies $2\\cdot6=12$ km and then $1\\cdot4=4$ km: $16$ km. Only $3a^2+4b^2=12+4=16$ fits (the others give $10$, $21$ and $100$).',
+        'Do not choose $a=1$ and $b=1$: then two choices both give $7$.'])
+    # p04 bus 64 kph x 3 h, +48 km, 80 kph -> 3  ==>  train 75 kph x 4 h, +60 km, 90 kph -> 4
+    P['wp27-p04'] = ('A train travels from A to B at 75 kph for 4 hours. The route from B to C is 60 km longer than the route from A to B. How many hours does the trip from B to C take at 90 kph?',
+        ['$3\\frac13$', '$4.5$', '$4$', '$5$'], 3, [
+        'A to B: $75\\times4=300$ km.',
+        'B to C: $300+60=360$ km.',
+        'Time: $\\frac{360}{90}=4$ hours.',
+        'Trap: $\\frac{300}{90}=3\\frac13$ forgets the extra $60$ km.'])
+    # p05 taxi 72 kph in 1 h 20 min, back at 48 -> 2 h  ==>  cyclist 20 kph in 1 h 40 min, back at 16 -> 2 h 5 min
+    P['wp27-p05'] = ('A cyclist rides from home to a lake at 20 kph in 1 hour 40 minutes. She returns along the same route at 16 kph. How long does the return take?',
+        ['1 hour 20 minutes', '1 hour 50 minutes', '2 hours 5 minutes', '2 hours 30 minutes'], 3, [
+        '$1$ hour $40$ minutes $=100$ minutes.',
+        'Same distance: the times flip. The speed ratio is $20:16=5:4$, therefore the ratio of the times is $4:5$.',
+        'Return time: $100\\times\\frac54=125$ minutes $=2$ hours $5$ minutes.',
+        'Trap: $100\\times\\frac45=80$ minutes ($1$ hour $20$ minutes) does not flip the ratio.'])
+    # p06 4 h at 1.6x -> 2 h 30 min  ==>  6 h at 1.6x -> 3 h 45 min
+    P['wp27-p06'] = ('A truck trip takes 6 hours at a constant speed. How long would the same trip take at 1.6 times that speed?',
+        ['3 hours 36 minutes', '9 hours 36 minutes', '3 hours 45 minutes', '4 hours'], 3, [
+        'Same distance: the time is divided by $1.6$.',
+        '$6\\div1.6=\\frac{60}{16}=3.75$ hours $=3$ hours $45$ minutes ($0.75$ hour $=45$ minutes).',
+        'Traps: $3$ hours $36$ minutes is $3.6$ hours, not $3.75$. And $9$ hours $36$ minutes $=6\\times1.6$ multiplies instead of dividing.'])
+    # p07 cyclists 12 / 30, gap 9 km -> 30 min  ==>  truck 75, police car 100, gap 5 km -> 12 min
+    P['wp27-p07'] = ('A police car chases a truck along a straight highway. The truck drives at 75 kph, and the police car at 100 kph. At the start, the gap between them is 5 km. How long does it take the police car to catch up?',
+        ['3 minutes', '12 minutes', '20 minutes', '1 hour'], 2, [
+        'A chase: the gap closes at $100-75=25$ kph.',
+        'Time $=\\frac{5}{25}=\\frac15$ hour $=12$ minutes.',
+        'Trap: $\\frac{5}{100}$ hour $=3$ minutes ignores the speed of the truck.'])
+    # p08 walker 08:00-11:00 at 4, other at 6 -> 09:00  ==>  cyclist 07:00-09:00 at 15, other at 20 -> 07:30
+    P['wp27-p08'] = ('A cyclist leaves at 07:00, rides at 15 kph, and arrives at 09:00. Another cyclist rides the same route at 20 kph. When should the second cyclist leave to arrive at 09:00?',
+        ['07:20', '07:45', '07:30', '08:00'], 3, [
+        'From 07:00 to 09:00 is $2$ hours. The route: $15\\times2=30$ km.',
+        'At $20$ kph: $\\frac{30}{20}=1.5$ hours.',
+        'The second cyclist leaves $1.5$ hours before 09:00, at 07:30.'])
+    # p09 van 360: 120 at 60, 1/4 of rest at 120, rest at 30 -> 8.5  ==>  bus 400: 100 at 50, 1/3 of rest at 100, rest at 40 -> 8
+    P['wp27-p09'] = ('A bus travels 400 km. It covers the first 100 km at 50 kph, then one third of the remaining distance at 100 kph, and the rest at 40 kph. How many hours does the whole trip take?',
+        ['7', '9', '8', '7.5'], 3, [
+        'First part: $\\frac{100}{50}=2$ hours.',
+        'Remaining: $400-100=300$ km. One third of it: $\\frac{300}{3}=100$ km at $100$ kph, $1$ hour.',
+        'The rest: $300-100=200$ km at $40$ kph, $\\frac{200}{40}=5$ hours.',
+        'Total: $2+1+5=8$ hours.'])
+    # p11 buses 180 km, 15 kph faster -> cannot  ==>  trains 240 km, 20 kph faster -> cannot
+    P['wp27-p11'] = ('Two trains start together and travel the same route of 240 km. Train A is 20 kph faster than train B. How much earlier does train A arrive?',
+        ['20 minutes', '40 minutes', '1 hour', 'It cannot be determined from the information given.'], 4, [
+        'Plug in two pairs of speeds that differ by $20$ kph.',
+        'Speeds $60$ and $40$: times $\\frac{240}{60}=4$ and $\\frac{240}{40}=6$ hours. A arrives $2$ hours earlier.',
+        'Speeds $120$ and $100$: times $\\frac{240}{120}=2$ and $\\frac{240}{100}=2.4$ hours. A arrives $0.4$ hour $=24$ minutes earlier.',
+        'Two different answers: it cannot be determined.'])
+    # p12 swimmer 1.8 / 2.4 km, 60 m/min, evening half -> 110  ==>  rower 1.5 / 2.4 km, 150 m/min, evening half -> 42
+    P['wp27-p12'] = ('A rower covers 1.5 km each morning and 2.4 km each evening. Her morning speed is 150 meters per minute; her evening speed is half as great. How many minutes does she row in a day?',
+        ['26', '42', '36', '52'], 2, [
+        'Morning: $1.5$ km $=1{,}500$ m at $150$ m per minute: $\\frac{1{,}500}{150}=10$ minutes.',
+        'Evening speed: $\\frac{150}{2}=75$ m per minute. $2{,}400$ m take $\\frac{2{,}400}{75}=32$ minutes.',
+        'Total: $10+32=42$ minutes.',
+        'Method 2 · Compare by factors, evening against morning: distance $\\times\\frac{2.4}{1.5}=\\frac85$ (same way); speed $\\times\\frac12$ (opposite → flip to $2$). Evening: $10\\cdot\\frac85\\cdot2=32$ minutes, and $10+32=42$.'])
+    # p13 signal 2e8 m/s x 3e-9 s -> 0.6 m  ==>  light 3e8 m/s x 4e-9 s -> 1.2 m
+    P['wp27-p13'] = ('Light travels through the air at $300{,}000{,}000$ meters per second. How far does it travel in $4\\times10^{-9}$ seconds?',
+        ['12 meters', '1.2 meters', '0.12 meter', '120 meters'], 2, [
+        '$300{,}000{,}000=3\\times10^8$.',
+        'Distance $=3\\times10^8\\cdot4\\times10^{-9}=12\\times10^{-1}=1.2$ meters.'])
+    # p14 3 km circle, 15 / 9 -> 30 min  ==>  2 km circular road, 28 / 20 -> 15 min
+    P['wp27-p14'] = ('Two cyclists start together and ride in the same direction on a circular road 2 km long. Their speeds are 28 and 20 kph. After how many minutes does the faster rider first lap the slower one?',
+        ['6', '2.5', '15', '30'], 3, [
+        'Lapping means gaining one full lap: $2$ kilometers.',
+        'The gain rate is $28-20=8$ kph.',
+        '$2$ kilometers at that rate take $\\frac28=\\frac14$ hour $=15$ minutes.',
+        'Trap: $\\frac{2}{48}$ hour $=2.5$ minutes adds the speeds, as if they rode in opposite directions.'])
+    # p15 vans 90 / 60, stop at 180 km for 1.5 h -> 3  ==>  trucks 80 / 60, stop at 240 km for 2 h -> 4
+    P['wp27-p15'] = ('Two trucks leave the same depot together and drive along the same road. One drives at 80 kph, the other at 60 kph. When the faster truck has driven 240 km, it stops for 2 hours. How many hours after they leave does the slower truck reach the stopped truck?',
+        ['3', '5', '4', '6'], 3, [
+        'The faster truck reaches $240$ km after $\\frac{240}{80}=3$ hours. It stays there until $3+2=5$ hours.',
+        'The slower truck reaches $240$ km after $\\frac{240}{60}=4$ hours.',
+        '$4$ hours is before $5$ hours: the faster truck is still stopped. The answer is $4$ hours.'])
+    # p16 road 140, 08:00 / 09:00, meet 30 km from B -> 80  ==>  road 170, 07:00 / 08:00, meet 50 km from B -> 70
+    P['wp27-p16'] = ('A road from A to B is 170 km long. At 07:00 a car leaves A toward B. At 08:00 another car leaves B toward A at the same speed. They meet 50 km from B. What is their common speed, in kph?',
+        ['50', '60', '70', '85'], 3, [
+        'The second car drives $50$ km. The first drives $170-50=120$ km.',
+        'Same speed, but the first car drove $1$ hour longer. That extra hour gave it $120-50=70$ km more.',
+        'Therefore the speed is $70$ kph.',
+        'Or work back from the answers: at $70$ kph, the first car drives $70$ km by 08:00. The gap is $100$ km, closed at $140$ kph in $\\frac{100}{140}=\\frac57$ hour. The second car drives $70\\times\\frac57=50$ km. It fits.'])
+    # p17 D in 4 h, halves at v and 3v -> 6  ==>  D in 5 h, halves at v and 4v -> 8
+    P['wp27-p17'] = ('A train travels a distance $D$ in 5 hours. It covers half of the distance at speed $v$ and the other half at speed $4v$. How many hours would the whole distance take at speed $v$?',
+        ['10', '8', '7', '6'], 2, [
+        'Let $T$ be the time for the whole distance at speed $v$. The first half, at speed $v$, takes $\\frac{T}{2}$.',
+        'The second half at four times the speed takes a quarter of that: $\\frac{T}{8}$.',
+        '$\\frac{T}{2}+\\frac{T}{8}=\\frac{4T+T}{8}=\\frac{5T}{8}=5$. Therefore $T=8$ hours.',
+        'Or work back from the answers: $T=8$ gives $4+1=5$ hours.'])
+    # p18 robot 40 jumps / min at 18 kph -> 7.5 m  ==>  horse 120 strides / min at 36 kph -> 5 m
+    P['wp27-p18'] = ('A horse takes 120 equal strides per minute and moves at 36 kph. How long is each stride?',
+        ['3 meters', '5 meters', '6 meters', '0.3 meter'], 2, [
+        '$36$ kph means $36{,}000$ m in $60$ minutes: $\\frac{36{,}000}{60}=600$ m per minute.',
+        'Each stride: $\\frac{600}{120}=5$ m.',
+        'Trap: $\\frac{36}{120}=0.3$ forgets to change the units.'])
+    # p19 500 m track, 3,750 m each, opposite, same speed -> 15  ==>  cyclists, 400 m, 2,600 m each -> 13
+    P['wp27-p19'] = ('Two cyclists start together from the same point of a circular track 400 meters long. They ride in opposite directions at the same speed, and each rides exactly 2,600 meters. How many times do they meet after the start? (Count a meeting at the finish, if there is one.)',
+        ['12', '26', '13', '6'], 3, [
+        'Opposite directions: they meet each time their total distance grows by one lap, $400$ m.',
+        'Together they ride $2\\times2{,}600=5{,}200$ m. $\\frac{5{,}200}{400}=13$ meetings.',
+        'The $13$th meeting happens exactly at the finish, and it counts: $13$.',
+        'Traps: $12$ forgets the meeting at the finish; $6$ counts the laps of one cyclist ($\\frac{2{,}600}{400}=6.5$).'])
+    # p20 walkers 10:00 at 6 / 9, halfway at 10:45 -> 15  ==>  cyclists 14:00 at 16 / 24, halfway at 15:30 -> 30
+    P['wp27-p20'] = ('At 14:00, a cyclist leaves A toward B at 16 kph. A second cyclist leaves B later at 24 kph. They meet halfway between A and B at 15:30. How many minutes later did the second cyclist start?',
+        ['20', '30', '45', '60'], 2, [
+        'The first cyclist rides from 14:00 to 15:30: $1.5$ hours. Distance: $16\\times1.5=24$ km, half of the road.',
+        'The second cyclist also covers $24$ km, at $24$ kph: $\\frac{24}{24}=1$ hour.',
+        'The second cyclist started $1$ hour before 15:30, at 14:30: $30$ minutes after the first.'])
+    # September item q-r26-t27-21: 2 h at 60 + 2 h at 90 -> 75 was the Average Speed lesson's own example -> new numbers
+    P['q-r26-t27-21'] = ('A car drives for 2 hours at 70 kph and then for 2 more hours at 30 kph. What is its average speed for the whole trip, in kph?',
+        ['$42$', '$50$', '$45$', '$56$'], 2, [
+        'Total distance: $2\\times70+2\\times30=140+60=200$ km, in $4$ hours.',
+        'Average speed $=\\frac{200}{4}=50$ kph.',
+        'Equal times, therefore the plain average of $70$ and $30$ is right. Trap: $42=\\frac{2\\cdot70\\cdot30}{100}$ is for equal distances.'])
+    for qid, (stem, ch, k, ex) in P.items():
+        _rn_q(M, qid, stem, ch, k, ex)
+    # wp27-p21 (removed, a copy of Q3) carried the "percent shares as weights" line: it moves to q-r26-t27-22
+    _pm_add(M, 'q-r26-t27-22', [r'Method 2 · Percent shares as weights (the weights are the hours): $1$ of the $2$ hours ($50\%$) at each speed. Average $=30+0.5\cdot30=45$ kph.'])
+
+
+RN_REMOVE = [
+    'wp27-p23', 'wp27-p21',                    # copies (practice_audit/copies_by_topic.txt): p23 = Q1 (m/s for 25 min), p21 = Q3 (there and back)
+    'wp27-p25', 'wp27-p26',                    # extra warm-ups beyond 3 (p25 = the Q15 train idea, p26 = the Q9 head-start chase)
+    'q-r26-t27-15', 'q-r26-t27-16',            # September: speed change -> time (Hebrew p05, p06)
+    'q-r26-t27-17', 'q-r26-t27-18',            # September: letters (Hebrew p02, p03)
+    'q-r26-t27-23', 'q-r26-t27-12',            # September: circular track (Hebrew p14, p19)
+    'q-r26-t27-11',                            # September: river current (kept: p24 warm-up, q-r26-t27-10)
+]
+RN_ORDER = ['wp27-p13', 'wp27-p18', 'wp27-p01', 'wp27-p04', 'wp27-p27', 'wp27-p22', 'wp27-p12', 'wp27-p08', 'wp27-p09',
+            'wp27-p05', 'wp27-p06', 'wp27-p07', 'wp27-p11', 'wp27-p20', 'q-r26-t27-21', 'q-r26-t27-22', 'wp27-p24',
+            'wp27-p14', 'wp27-p15', 'wp27-p16', 'wp27-p02', 'wp27-p03', 'q-r26-t27-10', 'wp27-p19', 'wp27-p17',
+            'q-r26-t27-09']
+
+
+def rn_practice(M):
+    sec = 'wp27-practice'
+    for qid in RN_REMOVE:
+        assert M.section_of(qid) == sec, qid
+        M.unplace(qid)
+    left = [f['ref'] for f in M.D['flow'] if f['section'] == sec and f['type'] == 'question']
+    assert sorted(left) == sorted(RN_ORDER), (sorted(set(left) ^ set(RN_ORDER)))
+    M.practice_order(sec, RN_ORDER)
+
+
+def rn_tidy(M):
+    for vid, v in M.D['videos'].items():
+        if v['topic'] != TOPIC: continue
+        for b in v['beats']:
+            qs = [it for it in b['items'][:b['pre']] if it.get('k') == 'q']
+            if b['mode'] == 'question' and qs:
+                qid = qs[0]['qid']
+                sb = v.get('hybrid', {}).get('sidebar', [])
+                lab = sb[b['active']] if 0 <= b['active'] < len(sb) else b['title']
+                b['loads'] = 'Sidebar with "%s" highlighted; the items listed are already on the canvas.' % lab
+                b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, rich_plain(M.q(qid)['stemRich']))
+        if v.get('kind') == 'solution' and v.get('questionId') in M.D['questions']:
+            v['title'] = v['navLabel'] = rich_plain(M.q(v['questionId'])['stemRich'])
+        M.touched_videos.add(vid)
+
+
+def rn_visuals(M):
+    """Review 2026-10-06: the questions' stored solutionVisual data still had the old numbers / names."""
+    V = {
+        'wp27-g108': {'type': 'rightTriangle', 'base': '1.5 km', 'height': '0.8 km', 'hypotenuse': '1.7 km'},
+        'wp27-g109': {'type': 'table', 'headers': ['Leg', 'Distance', 'Speed', 'Time'],
+                      'rows': [['Outward', '210 km', '105 kph', '2 hours'], ['Return', '210 km', '70 kph', '3 hours'],
+                               ['Total', '420 km', '', '5 hours']]},
+        'wp27-g111': {'type': 'bars', 'labels': ['Maya', 'Theo'], 'values': [4, 5]},
+        'wp27-g115': {'type': 'route', 'labels': ['Oakton', 'Bus', 'Bayside'], 'positions': [0, 24, 204],
+                      'arrows': ['→', '→', '←']},
+        'wp27-g118': {'type': 'table', 'headers': ['Half', 'Normal time', 'Speed multiplier', 'Actual time'],
+                      'rows': [['First', '10 seconds', '2', '5 seconds'], ['Second', '10 seconds', 'one half', '20 seconds']]},
+        'wp27-g119': {'type': 'route', 'labels': ['A', 'B · midpoint', 'C'], 'positions': [0, 24, 48]},
+        'wp27-g121': {'type': 'circularMotion', 'circumference': '400 m', 'fast': '12 kph', 'slow': '9 kph',
+                      'lapsFast': 4, 'lapsSlow': 3},
+        'wp27-p09': {'type': 'table', 'headers': ['Stage', 'Distance (km)', 'Speed (kph)', 'Time (hours)'],
+                     'rows': [['1', '100', '50', '2'], ['2', '100', '100', '1'], ['3', '200', '40', '5']]},
+    }
+    for qid, vis in V.items():
+        if qid in RN_RECORDED: continue
+        q = M.q(qid)
+        assert q.get('solutionVisual'), qid
+        q['solutionVisual'] = vis
+
+
+def renumber_pass(M):
+    rn_lessons(M)
+    rn_guided(M)
+    rn_order(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+    rn_visuals(M)
+    rn_tidy(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last

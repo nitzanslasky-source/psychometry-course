@@ -1294,3 +1294,105 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ---------------------------------------------------------------- 2026-10-06 Hebrew back-check
+# The renumber pass compared only with base-v18. Checked again against the teacher's Hebrew VIDEO subtitles
+# (01-Algebra-Original-Subtitles.txt, lines 5359-6607): three places had landed back on the Hebrew numbers.
+#   q-249: (√50+√50)/(√32−√8) - the Hebrew sample question is (√18+√18)/(√50−√8): √8 in the same place, √50 too
+#   q-250: 9^(3x) = (1/27)^(2−3x) - the Hebrew is 4^(3x) = (1/8)^(5−3x): the same exponents 3x and …−3x
+#   memory card: 3⁴·2⁻³ = 3⁴/2³ (the Hebrew lesson's answer) and √8 + √18 = 5√2 (the Hebrew lesson's example)
+def hebrew_backcheck(M):
+    from math_api import rich_plain
+
+    def S(qid, **kw):
+        if qid in RECORDED: return
+        q = M.set_q(qid, **kw)
+        for v in M.D['videos'].values():
+            for b in v.get('beats', []):
+                for it in b.get('items', []):
+                    if it.get('k') == 'q' and it.get('qid') == qid and 'choices' in it:
+                        it['choices'] = list(q['choicesRich']); M.touched_videos.add(v['id'])
+        v = M.D['videos'].get('solve-' + qid)
+        if v: v['title'] = v['navLabel'] = rich_plain(q['stemRich'])
+
+    # ============ guided q-249: (√50+√50)/(√32−√8) = 5  ->  (√72+√72)/(√98−√32) = 4
+    S('q-249', stem=r'$\frac{\sqrt{72}+\sqrt{72}}{\sqrt{98}-\sqrt{32}}=?$',
+      choices=[r'$4\sqrt2$', r'$16$', r'$2$', r'$4$'], correct=4, expl=[
+        r'Simplify each root: $\sqrt{72}=6\sqrt2$, $\sqrt{98}=7\sqrt2$, $\sqrt{32}=4\sqrt2$.',
+        r'Numerator: $6\sqrt2+6\sqrt2=12\sqrt2$. Denominator: $7\sqrt2-4\sqrt2=3\sqrt2$.',
+        r'$\frac{12\sqrt2}{3\sqrt2}=4$.',
+        r'Or with a common factor: the top is $2\sqrt{72}$, the bottom is $\sqrt2(\sqrt{49}-\sqrt{16})=3\sqrt2$, and $\frac{2\sqrt{72}}{3\sqrt2}=\frac23\sqrt{36}=\frac23\cdot6=4$.'])
+    if 'q-249' not in RECORDED:
+        V = 'solve-q-249'
+        _rn_slide(M, V, 2, script=[
+            "We can't cancel yet — there's adding and subtracting. So first, simplify every root.",
+            D('Write "√72 = √36 · √2 = 6√2"'),
+            'Root seventy-two: root thirty-six times root two. Why thirty-six? Because it comes out whole. Six root two.',
+            A('top: 12√2 appears', T(r'top: $6\sqrt2+6\sqrt2=12\sqrt2$', size=36)),
+            'Top: six root two plus six root two — twelve root two.',
+            A('√98 = 7√2, √32 = 4√2 appears', T(r'$\sqrt{98}=\sqrt{49}\cdot\sqrt2=7\sqrt2,\ \ \sqrt{32}=\sqrt{16}\cdot\sqrt2=4\sqrt2$', size=36, gap=16)),
+            'Root ninety-eight: forty-nine times two — seven root two. Root thirty-two: sixteen times two — four root two.',
+            A('bottom: 3√2 appears', T(r'bottom: $7\sqrt2-4\sqrt2=3\sqrt2$', size=36, gap=16)),
+            'Bottom: seven root two minus four root two — three root two. Like seven x minus four x.',
+            A('12√2 / 3√2 = 4 appears', T(r'$\frac{12\sqrt2}{3\sqrt2}=4$', size=36, gap=16)),
+            D('Circle choice 4'),
+            'Root two cancels. Twelve over three: four. Choice four.',
+        ])
+        _rn_slide(M, V, 3, script=[
+            'Now with a common factor.',
+            A('top = 2√72 appears', T(r'top $=2\sqrt{72}$', size=40, gap=150)),
+            'The top is root seventy-two plus root seventy-two. Like x plus x: two root seventy-two.',
+            D('Write "bottom = √2(√49 − √16) = √2(7 − 4) = 3√2"'),
+            'Bottom: ninety-eight and thirty-two share a two. Take out root two — inside, root forty-nine minus root sixteen. Seven minus four: three. Three root two.',
+            A('2√72 / 3√2 = (2/3)√36 = 4 appears', T(r'$\frac{2\sqrt{72}}{3\sqrt2}=\frac23\sqrt{72\div2}=\frac23\sqrt{36}=\frac23\cdot6=4$', size=40)),
+            'Root seventy-two over root two: root thirty-six — six. Two thirds of six: four.',
+            D('Circle choice 4'),
+            'Same answer — choice four. Pick whichever method feels easier.',
+        ])
+
+    # ============ guided q-250: 9^(3x) = (1/27)^(2−3x), x = 2  ->  9^(2x) = (1/27)^(2−2x), x = 3
+    S('q-250', stem=r'Given: $9^{2x}=\left(\frac{1}{27}\right)^{2-2x}$. $x=?$',
+      choices=[r'$1$', r'$\frac35$', r'$-3$', r'$3$'], correct=4, expl=[
+        r'Write both sides with base 3: $9^{2x}=(3^2)^{2x}=3^{4x}$, and $\frac1{27}=3^{-3}$, so $\left(\frac1{27}\right)^{2-2x}=3^{-3(2-2x)}=3^{-6+6x}$.',
+        r'Equal bases, so the exponents are equal: $4x=-6+6x$. Therefore $2x=6$ and $x=3$.',
+        r'Check: $9^6=3^{12}$ and $\left(\frac1{27}\right)^{-4}=27^4=3^{12}$ ✓. The trap $\frac35$ forgets the minus of the fraction.'])
+    if 'q-250' not in RECORDED:
+        V = 'solve-q-250'
+        _rn_slide(M, V, 2, room={'Write "4x = −6 + 6x"': 150}, script=[
+            'An exponential equation. Step one: make the bases equal.',
+            'Nine and one twenty-seventh — both are powers of three.',
+            A('9^(2x) = 3^(4x) appears', T(r'$9^{2x}=\left(3^2\right)^{2x}=3^{4x}$', size=40)),
+            'Nine is three squared. Times two x: three to the four x.',
+            "One twenty-seventh? Quick tip: ignore that it's a fraction — twenty-seven is three cubed. And because it's a fraction, add a minus.",
+            A('(1/27)^(2−2x) = 3^(−6+6x) appears', T(r'$\left(\frac{1}{27}\right)^{2-2x}=\left(3^{-3}\right)^{2-2x}=3^{-6+6x}$', size=40)),
+            'Three to the minus three. Multiply exponents: minus three times two — minus six. Minus three times minus two x — plus six x.',
+            D('Write "4x = −6 + 6x"'),
+            'Same base on both sides. So the exponents are equal.',
+            A('6 = 2x → x = 3 appears', T(r'$6=2x \;\to\; x=3$', size=40)),
+            D('Circle choice 4'),
+            'Move the four x across: six equals two x. x is three. Choice four.',
+            'Forget the minus of the fraction, and you get three fifths — choice two, the trap.',
+            'And always go to the SMALLEST base. Three — not nine, not twenty-seven.',
+        ])
+        _rn_slide(M, V, 4, script=[
+            'Want to be sure? Plug three back in.',
+            A('9⁶ = 3¹² appears', T(r'$9^{6}=3^{12}$', size=40)),
+            A('(1/27)⁻⁴ = 27⁴ = 3¹² appears', T(r'$\left(\frac{1}{27}\right)^{-4}=27^4=3^{12}$', size=40)),
+            'Left: nine to the sixth — three to the twelfth. Right: one twenty-seventh to the minus four — twenty-seven to the fourth — also three to the twelfth.',
+            'They match. Three it is.',
+        ])
+
+    # ============ memory card: two examples were the Hebrew lesson's own
+    c = M.card('mem-r26-t10-techniques'); rows = c['tables'][0]['rows']
+    assert rows[2][0] == 'Negative exponent' and rows[3][0] == 'Adding roots'
+    rows[2][2] = r'$7^2\cdot2^{-5}=\frac{7^2}{2^5}$'
+    rows[3][2] = r'$\sqrt{44}+\sqrt{99}=5\sqrt{11}$'
+
+
+_apply_before_hebrew_backcheck = apply
+
+
+def apply(M):
+    _apply_before_hebrew_backcheck(M)
+    hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last

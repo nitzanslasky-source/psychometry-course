@@ -60,8 +60,15 @@ SB_NEW = ("const row=Math.min(58,(880-y)/h.sidebar.length);\n"
           "s+=`<g opacity=\"${on?1:0.5}\">`+(multi?l.t:[l.name]).map((tx,j)=>svgText(tx,42,yy+(row-10)/2+(on?8:7)+j*l.lh,multi?l.zz:(on?23:21),on?'#ffffff':'#a9b8d3',on?800:500)).join('')+'</g>';\n"
           "  yy+=row+add});")
 
+DICE_LBL_OLD = "v.diagonal?'Matching faces':"
+DICE_LBL_NEW = "v.diagonal?(v.label||'Matching faces'):"
+
+
 def apply(html):
     assert html.count(LABEL_OLD) == 1, 'sidebar label not found'
+    # dice/spinner grid: an item may carry its own label (e.g. spinners: 'Matching sections')
+    assert html.count(DICE_LBL_OLD) == 1, 'dice grid label not found'
+    html = html.replace(DICE_LBL_OLD, DICE_LBL_NEW)
     html = html.replace(LABEL_OLD, LABEL_NEW)
     assert html.count(PLACE_OLD) == 1, 'placement code not found'
     html = html.replace(PLACE_OLD, PLACE_NEW).replace("const placed=[];b.items.forEach(", "const placed=[];let ctop=900;b.items.forEach(")

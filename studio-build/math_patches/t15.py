@@ -1744,3 +1744,124 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber(M)   # 2026-10-06 renumber pass: runs last
+
+
+# =====================================================================================================================
+# 2026-10-06 Hebrew back-check: three questions had landed back on the numbers of the teacher's Hebrew VIDEOS
+# (01-Algebra-Original-Subtitles.txt). New numbers - same type, trap, level and methods. Nothing in topic 15 is recorded.
+def hebrew_backcheck(M):
+    from math_api import rich_plain
+
+    def S(qid, **kw):
+        q = M.set_q(qid, **kw)
+        for v in M.D['videos'].values():   # keep any pre-loaded copy of the choices in sync
+            for b in v.get('beats', []):
+                for it in b.get('items', []):
+                    if it.get('k') == 'q' and it.get('qid') == qid and 'choices' in it:
+                        it['choices'] = list(q['choicesRich']); M.touched_videos.add(v['id'])
+
+    def sync(qid):   # video title and slide descriptions show the new stem
+        V = M.video('solve-' + qid); q = M.q(qid)
+        V['title'] = V['navLabel'] = rich_plain(q['stemRich']).replace('\n', ' ')
+        for b in V['beats']:
+            if b.get('canvas', '').startswith('Pre-loaded — question'):
+                b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, q['stem'])
+        M.touched_videos.add('solve-' + qid)
+
+    def sub(vid, n, pairs):
+        b = M.slide(vid, n)
+        for old, new in pairs:
+            hit = 0
+            for l in b['lines']:
+                for key in ('say', 'draw', 'label'):
+                    if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit += 1
+            assert hit, (vid, n, old)
+        M.touched_videos.add(vid)
+
+    # ---- q-430: Michal's claim was the Hebrew's "2 and 9 (18) vs 4 and 5 (20)"; now "3 and 7 (21) vs 2 and 13 (26)"
+    S('q-430', stem='Yoav claims: "There are more three-digit numbers divisible by both 3 and 5 than three-digit numbers divisible by 17."\nMichal claims: "There are more three-digit numbers divisible by both 3 and 7 than three-digit numbers divisible by both 2 and 13."\nWhich of the following is correct?',
+      choices=['Only Yoav is right.', 'Only Michal is right.', 'Both are right.', 'Both are wrong.'], correct=3, expl=[
+        'Count the multiples: write the first and the last as $d\\cdot k$, then count $=$ last $k-$ first $k+1$.',
+        'By 3 and 5, that is by 15: from $105=15\\cdot7$ to $990=15\\cdot66$, so $66-7+1=60$ numbers. By 17: from $102=17\\cdot6$ to $986=17\\cdot58$, so $58-6+1=53$. Since $60>53$, Yoav is right.',
+        'By 3 and 7, that is by 21: from $105=21\\cdot5$ to $987=21\\cdot47$, so $47-5+1=43$. By 2 and 13, that is by 26: from $104=26\\cdot4$ to $988=26\\cdot38$, so $38-4+1=35$. Since $43>35$, Michal is right too.',
+        'Both are right.'])
+    sub('solve-q-430', 2, [
+        ('Michal. Two and nine — no common factor — so divisible by eighteen. Four and five — divisible by twenty.',
+         'Michal. Three and seven — no common factor — so divisible by twenty-one. Two and thirteen — divisible by twenty-six.'),
+        ('18: 108 = 18·6 … 990 = 18·55 → 55 − 6 + 1 = 50', '21: 105 = 21·5 … 987 = 21·47 → 47 − 5 + 1 = 43'),
+        ('Eighteen: from eighteen times six to eighteen times fifty-five. Fifty-five minus six, plus one: fifty.',
+         'Twenty-one: from twenty-one times five to twenty-one times forty-seven. Forty-seven minus five, plus one: forty-three.'),
+        ('20: 100 = 20·5 … 980 = 20·49 → 49 − 5 + 1 = 45', '26: 104 = 26·4 … 988 = 26·38 → 38 − 4 + 1 = 35'),
+        ('Twenty: from twenty times five to twenty times forty-nine. Forty-five.',
+         'Twenty-six: from twenty-six times four to twenty-six times thirty-eight. Thirty-five.'),
+        ('Fifty beats forty-five. Michal is right too.', 'Forty-three beats thirty-five. Michal is right too.')])
+    sub('solve-q-430', 3, [
+        ('1/15 > 1/17    1/18 > 1/20', '1/15 > 1/17    1/21 > 1/26'),
+        ('Same for Michal: one eighteenth beats one twentieth.', 'Same for Michal: one twenty-first beats one twenty-sixth.')])
+    sync('q-430')
+
+    # ---- q-434: was the Hebrew's 700 with x, 2x, 3x and 25/40/20/50 left; now 900 points and 15/24/26/32 left
+    S('q-434', stem='Yael loaded 900 points onto an amusement-park card. The first ride cost $x$ points, the second ride cost $2x$ points, and the third ride cost $3x$ points. Which of the following could be the number of points left on her card after the three rides?',
+      choices=['$15$', '$24$', '$26$', '$32$'], correct=2, expl=[
+        'She paid $x+2x+3x=6x$ points, so the number of points she paid is divisible by 6 (by 2 and by 3).',
+        'For each choice, find what she paid: $900-15=885$ (digit sum 21, but odd ✗), $900-24=876$ (even ✓, digit sum 21 ✓), $900-26=874$ (digit sum 19 ✗), $900-32=868$ (digit sum 22 ✗).',
+        'So 24 points are left, and $x=876\\div6=146$.'])
+    M.set_slide('solve-q-434', 2, script=[
+        "Write what's left as an expression.",
+        D('Write "paid: x + 2x + 3x = 6x"'),
+        "She paid x, then two x, then three x — six x in total. Left: nine hundred minus six x.",
+        "Could that be fifteen? Nine hundred minus fifteen is eight eighty-five — that must equal six x.",
+        "x is a whole number of points, so eight eighty-five must be divisible by six.",
+        "Divisible by six means divisible by two AND three.",
+        D('Next to choice 1 write "885: sum 21 ✓, odd ✗"'),
+        "Digit sum twenty-one — three is fine. But it's odd — not divisible by two. Out. That's the trap: checking only the three.",
+        "Faster: for each choice, just ask how much she PAID — complete it to nine hundred.",
+        D('Next to choice 2 write "876: even ✓, sum 21 ✓"'),
+        "Twenty-four left means she paid eight seventy-six. Even, digit sum twenty-one — divisible by six. x is one hundred forty-six.",
+        D('Circle choice 2'),
+        "Choice two. In the lesson: twenty-six left means eight seventy-four paid — digit sum nineteen. Thirty-two left means eight sixty-eight — digit sum twenty-two. Both out."])
+    sync('q-434')
+
+    # ---- q-436: was the Hebrew's question itself (sum divisible by 3, the same four claims); now divisible by 6
+    S('q-436', stem='The sum of three integers is divisible by 6. Which of the following statements is not necessarily true?',
+      choices=['When one of the numbers is divided by $6$, the greatest possible remainder is $5$.',
+               'If one of the numbers is divisible by $6$, then the other two are too.',
+               'All three numbers can leave remainder $4$ when divided by $6$.',
+               'If two of the numbers are divisible by $6$, then the third is too.'], correct=2, expl=[
+        'Think in remainders: the remainders of the three numbers must add up to a multiple of 6.',
+        '(1) True: dividing by 6, the remainder is 0, 1, 2, 3, 4 or 5.',
+        '(2) Not necessarily: $12+5+7=24$. 12 is divisible by 6, but 5 and 7 are not.',
+        '(3) Possible: $10+16+22=48$, and each number leaves remainder 4.',
+        '(4) True: two numbers leave 0 and the sum leaves 0, so the third leaves 0.'])
+    M.set_slide('solve-q-436', 2, script=[
+        "When you add numbers, you can just add their remainders.",
+        "Claim one: the largest remainder when dividing by six is five. Always true — the largest remainder is one less than the divisor.",
+        D('Cross out choice 1'),
+        "Six leaves zero, seven leaves one, and so on up to eleven, which leaves five. Twelve leaves zero again. A remainder of six? Then six would fit in again.",
+        "Claim two: one of them is divisible by six — so the other two must be too?",
+        D('Next to choice 2 write "12 + 5 + 7 = 24"'),
+        "Twelve, five, seven. The sum is twenty-four — divisible by six. Twelve is divisible by six — but five and seven aren't. Their remainders, five and one, add up to six.",
+        D('Circle choice 2'),
+        "That claim can fail — choice two. In the exam, mark it and move on. In the lesson, let's check the other two.",
+        "Claim three: all three leave remainder four? Four plus four plus four is twelve — divisible by six. Possible.",
+        D('Next to choice 3 write "10 + 16 + 22 = 48 ✓"'),
+        "Ten, sixteen, twenty-two — each leaves remainder four — sum forty-eight.",
+        "Claim four: two of them are divisible by six — then the third must be too. Those two add no remainder, the total has none — so the third can't bring one.",
+        D('Cross out choice 4'),
+        "Choice two. And that's division and remainder — done!"])
+    def fn(lines):
+        for l in lines:
+            if l.get('say') == "Three integers, a sum divisible by three — which claim can fail?":
+                l['say'] = "Three integers, a sum divisible by six — which claim can fail?"
+        return lines
+    assert any(l.get('say') == "Three integers, a sum divisible by three — which claim can fail?" for l in M.slide('solve-q-436', 1)['lines'])
+    M.edit_lines('solve-q-436', 1, fn)
+    sync('q-436')
+
+
+_apply_before_hebrew_backcheck = apply
+
+
+def apply(M):
+    _apply_before_hebrew_backcheck(M)
+    hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last

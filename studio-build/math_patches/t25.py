@@ -952,3 +952,593 @@ def practice_methods(M):
     _pm_add(M, 'wp25-p20', [r'Method 2 · Percent shares as weights: average $=76+(\text{share of the }y\text{ members})\cdot15$, and that share is $\frac{y}{x+y}=\frac{1}{\frac xy+1}$. It depends only on $\frac xy$.'])
     _pm_add(M, 'wp25-p16', [r'Shortcut · Pick values that fit: one fact and three unknown counts. The question expects one answer, therefore any counts that fit give it. Finn $=0$ and Grace $=0$: Finn and Grace average $0$, therefore Ella and Finn average $11$, and Ella $=22$. $22-0=22$.'])
     _pm_add(M, 'wp25-p04', [r'Shortcut · Pick values that fit: the answer must work for all values, therefore take $a=b=c=d=1$. Then $S=4$ and $u=v=1$, with average $1=\frac S4$. The other choices give $\frac12$, $2$ and $8$.'])
+
+
+# ======================================================================================================
+# 2026-10-06 renumber pass
+# The English course must not look like the teacher's Hebrew course: every Hebrew-derived question (guided wp25-g082 ..
+# g090 and wp25-p18, practice wp25-p01 .. p20) gets new numbers and, where there is a story, a new story (names, objects,
+# setting) - same concept, same trap, same level, at least the same methods (balance / balance point, sum = number x
+# average, plug in, the see-saw, extra per item, percent shares as weights). Every guided solution video is rewritten to
+# match. Hebrew-derived lesson examples get new numbers (the middle, adding the average, the towers + the formula,
+# "8 / 2 = 4", the 5-unit matriculation example), and the summary's weighted example (50 / 100 with weights 4 : 1 =
+# the Hebrew lesson's numbers) too. Order: Q3 heights (easy, the balance point) moves up to Q2; the balance with five
+# scores follows; "how many were there?" after them. Practice clean-up 36 -> 26. Nothing in topic 25 is recorded.
+# Runs last.
+# ======================================================================================================
+RN_RECORDED = set()   # no take of any topic-25 video in ~/Documents/Course.recordings (checked 2026-10-06)
+
+
+def _rn_q(M, qid, stem, choices, correct, expl):
+    if qid in RN_RECORDED: return
+    M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+
+
+def _rn_video(M, qid, slides):
+    """Rewrite the question slides (2, 3, ...) of a guided solution video. The pre-loaded question stays; the slide's
+    loads / canvas notes are kept (canvas: the new stem)."""
+    vid = 'solve-' + qid
+    if vid in RN_RECORDED: return
+    v = M.video(vid)
+    for n, script in slides.items():
+        b = v['beats'][n - 1]
+        assert b['mode'] == 'question', (vid, n)
+        keep = (b.get('loads'), b.get('canvas'))
+        M.set_slide(vid, n, script=script)
+        b = M.slide(vid, n); b['loads'], b['canvas'] = keep
+    q = M.q(qid)
+    v['title'] = v['navLabel'] = q['stem']
+    for b in v['beats']:
+        c = b.get('canvas') or ''
+        if c.startswith('Pre-loaded — question'):
+            b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, q['stem'])
+
+
+def _rn_lines(M, vid, n, pairs):
+    """Replace text in the spoken lines, draw notes, labels and board items of one slide. Every pair must hit."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = False
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l and old in l[key]:
+                    l[key] = l[key].replace(old, new); hit = True
+        for it in b['items']:
+            if isinstance(it.get('t'), str) and old in it['t']:
+                it['t'] = it['t'].replace(old, new); hit = True
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def rn_lessons(M):
+    # ---- wp-080 #2 the middle: 12, 28 -> 20; 4, 8, 12, 16 -> 10  ==>  16, 30 -> 23; 6, 10, 14, 18 -> 12
+    _rn_lines(M, L1, 2, [
+        ('$12,\\quad 28$', '$16,\\quad 30$'), ('12 and 28 appear', '16 and 30 appear'),
+        ('Twelve and twenty-eight.', 'Sixteen and thirty.'), ('Write "→ 20" next to them', 'Write "→ 23" next to them'),
+        ('Twenty. Eight below it, eight above it.', 'Twenty-three. Seven below it, seven above it.'),
+        ('$4,\\quad 8,\\quad 12,\\quad 16$', '$6,\\quad 10,\\quad 14,\\quad 18$'),
+        ('4, 8, 12, 16 appear', '6, 10, 14, 18 appear'),
+        ('Pair 4 with 16 and 8 with 12 using two arcs; write "→ 10"', 'Pair 6 with 18 and 10 with 14 using two arcs; write "→ 12"'),
+        ("Four with sixteen, eight with twelve. Each pair's middle is ten. So the average is ten.",
+         "Six with eighteen, ten with fourteen. Each pair's middle is twelve. So the average is twelve."),
+    ])
+    # ---- wp-080 #4 adding the average: 4, 6, 8 (+6) -> 6  ==>  3, 5, 7 (+5) -> 5
+    _rn_lines(M, L1, 4, [
+        ('$4,\\quad 6,\\quad 8$', '$3,\\quad 5,\\quad 7$'), ('$4,\\quad 6,\\quad 6,\\quad 8$', '$3,\\quad 5,\\quad 5,\\quad 7$'),
+        ('4, 6, 8 appear', '3, 5, 7 appear'), ('4, 6, 6, 8 appear', '3, 5, 5, 7 appear'),
+        ('Write "avg 6" under the list', 'Write "avg 5" under the list'),
+        ('Write "avg 6" under the new list', 'Write "avg 5" under the new list'),
+        ('Four, six, eight. The average is six — and notice, six is also one of the numbers.',
+         'Three, five, seven. The average is five — and notice, five is also one of the numbers.'),
+        ('Now add another six.', 'Now add another five.'), ('Still six.', 'Still five.'),
+    ])
+    # ---- wp-080 #5 towers 3, 8, 4, 10, 5 -> 6  ==>  4, 9, 3, 11, 8 -> 7 ; #7 the formula 30 / 5 = 6  ==>  35 / 5 = 7
+    b = M.slide(L1, 5)
+    b['items'][0]['v']['values'] = [4, 9, 3, 11, 8]
+    b['items'][1]['v']['values'] = [7, 7, 7, 7, 7]
+    _rn_lines(M, L1, 5, [
+        ('Five block towers appear: 3, 8, 4, 10, 5', 'Five block towers appear: 4, 9, 3, 11, 8'),
+        ('Circle the tallest tower (10) and the shortest (3)', 'Circle the tallest tower (11) and the shortest (3)'),
+        ('five towers of 6', 'five towers of 7'),
+        ('Five towers of blocks: three, eight, four, ten, five.', 'Five towers of blocks: four, nine, three, eleven, eight.'),
+        ('no tower can end up taller than ten, or shorter than three.', 'no tower can end up taller than eleven, or shorter than three.'),
+        ('every tower is six.', 'every tower is seven.'), ('Six is the average.', 'Seven is the average.'),
+    ])
+    _rn_lines(M, L1, 7, [
+        ('$\\dfrac{3+8+4+10+5}{5}$', '$\\dfrac{4+9+3+11+8}{5}$'), ('3 + 8 + 4 + 10 + 5 appears', '4 + 9 + 3 + 11 + 8 appears'),
+        ('Write "= 30/5 = 6"', 'Write "= 35/5 = 7"'), ('Thirty blocks, five towers. Six.', 'Thirty-five blocks, five towers. Seven.'),
+    ])
+    # ---- wp-081 #2: "8 / 2 = 4 -> 8 = 2 · 4" (the Hebrew's own example)  ==>  "12 / 3 = 4 -> 12 = 3 · 4"
+    _rn_lines(M, L2, 2, [
+        ('Under it write "8/2 = 4 → 8 = 2 · 4"', 'Under it write "12/3 = 4 → 12 = 3 · 4"'),
+        ('Eight divided by two is four — so eight is two times four.',
+         'Twelve divided by three is four — so twelve is three times four.'),
+    ])
+    # ---- wp-086 #2: 5-unit vs 1-unit matriculation exam (the Hebrew's example)  ==>  4-unit vs 2-unit
+    _rn_lines(M, LW, 2, [
+        ('Matriculation: a 5-unit math exam counts 5 times as much as a 1-unit exam',
+         'Matriculation: a 4-unit exam counts twice as much as a 2-unit exam'),
+        ("'5-unit math vs 1-unit language' appears", "'4-unit exam vs 2-unit exam' appears"),
+        ('a five-unit exam counts five times as much as a one-unit exam.', 'a four-unit exam counts twice as much as a two-unit exam.'),
+    ])
+    # ---- summary: 50 / 100 with weights 4 : 1 (= the Hebrew lesson's 100 / 50, weights 4 : 1, gap 50)  ==>  30 / 90 -> 42
+    sv = 'r26-t25-summary'
+    _rn_lines(M, sv, 7, [
+        ('$50, 50, 50, 50, 100\\ \\to\\ \\frac{300}{5}=60$', '$30, 30, 30, 30, 90\\ \\to\\ \\frac{210}{5}=42$'),
+        ('$\\dfrac{v_1w_1+v_2w_2}{w_1+w_2}=\\dfrac{50\\cdot4+100\\cdot1}{4+1}=60$',
+         '$\\dfrac{v_1w_1+v_2w_2}{w_1+w_2}=\\dfrac{30\\cdot4+90\\cdot1}{4+1}=42$'),
+    ])
+    _rn_lines(M, sv, 8, [
+        ('Fifty and one hundred: a gap of fifty. Five parts of ten. One part from the heavy side: sixty.',
+         'Thirty and ninety: a gap of sixty. Five parts of twelve. One part from the heavy side: forty-two.'),
+    ])
+    # ---- memory card: the examples that quote a renumbered lesson example / question
+    c = M.card('mem-averages')
+    rows = {r[0]: r for t in c['tables'] for r in t['rows']}
+    rows['Average'][1] = '$\\frac{\\text{sum}}{\\text{number of values}}$: $\\frac{4+9+3+11+8}{5}=7$'
+    rows['Symmetric group'][1] = 'the middle: $16,\\ 30\\to23$'
+    rows['Groups'][1] = 'group size is the weight; reduce the ratio first ($8:12=2:3$)'
+    rows['Extra per item'][1] = 'start everyone at the low value, count the extra: $\\frac{6{,}800-6{,}000}{2}=400$'
+
+
+def rn_guided(M):
+    # ---- g082 (Q1): 9 students, average 8 puzzles -> 72  ==>  12 volunteers, average 7 bags -> 84
+    _rn_q(M, 'wp25-g082', 'Twelve volunteers clean a beach. On average, each volunteer fills 7 bags of litter. How many bags '
+                          'do they fill altogether?', ['84', '91', '96', '72'], 1, [
+        'Sum $=$ number $\\times$ average: $12\\times7=84$.',
+        'The volunteers do not each need to fill exactly $7$ bags. The average gives only their total.'])
+    _rn_video(M, 'wp25-g082', {2: [
+        "Twelve volunteers, seven bags each on average. How many altogether?",
+        "We don't know what each volunteer filled — and we don't need to.",
+        "Treat each volunteer as filling exactly seven.",
+        D('Write "12 × 7 = 84"'),
+        "Twelve times seven: eighty-four.",
+        D('Circle choice 1'),
+        "Choice one.",
+        A("'One value ≤ the whole sum 84' appears", T(r'One value $\le$ the whole sum $84$', 36)),
+        "So one volunteer alone could fill all eighty-four — but never more than the whole group.",
+        "The average hands you the total — without a single individual count.",
+    ]})
+
+    # ---- g083: Leo 176, average 171, Noor = Mina + 13 -> 179  (Hebrew: 171, 168, +16 -> 181)
+    #      ==>  Ethan 169, average 164, Ryan = Chloe + 18 -> 177
+    _rn_q(M, 'wp25-g083', 'Ethan is 169 cm tall. The average height of Ethan and Chloe is 164 cm. Ryan is 18 cm taller than '
+                          'Chloe. How tall is Ryan?', ['182', '172', '187', '177'], 4, [
+        'The balance point: the average of two numbers is exactly halfway between them. Ethan is $169-164=5$ cm above '
+        'the average, therefore Chloe is $5$ cm below it: $164-5=159$ cm.',
+        'Ryan: $159+18=177$ cm.',
+        'With the formula: $169+C=2\\cdot164=328$, therefore $C=159$.'])
+    # 2026-10-06 review: the question's own number line still showed Mina 166 / Mean 171 / Leo 176 / Noor 179
+    M.q('wp25-g083')['solutionVisual'] = {'type': 'numberline', 'min': 155, 'max': 180, 'points': [159, 164, 169, 177],
+                                          'labels': ['Chloe 159', 'Mean 164', 'Ethan 169', 'Ryan 177']}
+    _rn_video(M, 'wp25-g083', {
+        2: ["The average of Ethan and Chloe is one sixty-four. Put it into the formula.",
+            D('Write "(169 + C) / 2 = 164"'),
+            "Ethan plus Chloe, over two, is one sixty-four.",
+            D('Write "169 + C = 328"'),
+            "Multiply by two: three twenty-eight.",
+            D('Write "C = 159"'),
+            "Take away Ethan's one sixty-nine: Chloe is one fifty-nine.",
+            D('Write "Ryan = 159 + 18 = 177"'),
+            "Ryan is eighteen taller than Chloe: one seventy-seven.",
+            D('Circle choice 4'),
+            "Choice four."],
+        3: ["Faster: the average of two numbers is exactly in the middle between them.",
+            A('A number line from 155 to 180 appears', {'k': 'nl', 'min': 155, 'max': 180, 'y': 330}),
+            D('Mark 164 (average) and 169 (Ethan) on the line'),
+            "Ethan is one sixty-nine — five above the average.",
+            D('Mark 159 (Chloe) five below 164'),
+            "So Chloe must be five below it. One fifty-nine.",
+            D('Mark 177 (Ryan), 18 above Chloe'),
+            "Add eighteen for Ryan: one seventy-seven. Choice four — and almost no calculation."],
+    })
+
+    # ---- g084 (letter-only): four numbers, sum of the six pair averages = 6 x the average.
+    #      Letters a, b, c, d  ==>  p, q, r, s; choice order 4, 6, 2, 3 (key 2)  ==>  4, 2, 6, 3 (key 3)
+    _rn_q(M, 'wp25-g084', 'Four numbers are given. Take the average of each of the six different pairs, then add those six '
+                          'averages. The result equals which of the following?',
+          ['$4$ times the average of the four numbers', '$2$ times the average of the four numbers',
+           '$6$ times the average of the four numbers', '$3$ times the average of the four numbers'], 3, [
+        'Call the numbers $p, q, r, s$. Each number appears in $3$ of the $6$ pairs, and each pair average is half of the '
+        'pair sum.',
+        'The sum of the six pair averages is therefore $\\frac{3(p+q+r+s)}{2}$.',
+        'The average of the four numbers is $\\frac{p+q+r+s}{4}$, and $\\frac32=\\frac64$. Therefore the sum of the pair '
+        'averages is $6$ times the average.',
+        'Faster: plug in $p=q=r=s=1$. Each pair average is $1$, the sum is $6$ and the average is $1$. Only choice (3) gives $6$.'])
+    _rn_video(M, 'wp25-g084', {
+        2: ["Call the four numbers p, q, r, s. There are six pairs.",
+            D('List the pairs: pq, pr, ps, qr, qs, rs'),
+            "Each pair's average is the two numbers over two.",
+            "Add all six — the same denominator, so just add the tops.",
+            D('Write "p appears 3 times → 3(p+q+r+s)/2"'),
+            "Every number appears in three pairs. So the sum is three times p plus q plus r plus s, over two.",
+            D('Write "average = (p+q+r+s)/4"'),
+            "The overall average is the sum over four.",
+            D('Write "3/2 = 6/4 → 6 × average"'),
+            "Three halves is six quarters. So the sum is six times the average.",
+            D('Circle choice 3'),
+            "Choice three."],
+        3: ["Now the psychometric way. Plug in numbers.",
+            "Nothing says the numbers must be different. So make them all one.",
+            D('Write "p = q = r = s = 1"'),
+            "Every pair average is one. Six pairs: the sum is six. The overall average is one.",
+            D('Next to the choices write: 4, 2, 6, 3'),
+            "Four times the average: four. Out. Twice: two. Out. Six times: six — matches. Three times: three. Out.",
+            D('Cross out choices 1, 2 and 4; circle choice 3'),
+            "Three eliminated — only now we mark choice three.",
+            "A hard question, solved in seconds.",
+            "One warning. With all the numbers equal, two choices can give the same result. Then try other numbers — like one, two, three, four."],
+    })
+
+    # ---- g085: art / science, Zara +5, Kai's average +3 -> 11  (Hebrew: history / chemistry, +3, +4 -> 11)
+    #      ==>  geography / music, Lena +6, Omar's average +5 -> 16
+    _rn_q(M, 'wp25-g085', 'Omar and Lena take two tests, geography and music. Lena’s geography score is 6 points higher than '
+                          'Omar’s. Omar’s two-test average is 5 points higher than Lena’s. How much higher is Omar’s music '
+                          'score than Lena’s?', ['11', '4', '16', '10'], 3, [
+        'Two tests: an average lead of $5$ points is a total lead of $2\\cdot5=10$ points for Omar.',
+        'In geography Omar is $6$ points behind. To finish $10$ points ahead, he must lead in music by $6+10=16$ points.',
+        'Plug in: Omar $70$ and $70$ (average $70$). Lena: geography $76$, average $65$, total $130$, music $130-76=54$. '
+        '$70-54=16$.'])
+    _rn_video(M, 'wp25-g085', {
+        2: ["Two people, two tests. Let's make a table.",
+            A('A table appears: Omar and Lena × geography, music',
+              {'k': 'vis', 'v': {'type': 'table', 'headers': ['', 'Geography', 'Music'],
+                                 'rows': [['Omar', '', ''], ['Lena', '', '']]}, 'w': 900, 'h': 180, 'y': 330}),
+            "Omar's geography score — unknown. Call it g.",
+            D('Fill in: Omar geography = g, Lena geography = g + 6'),
+            "Lena scored six more in geography: g plus six.",
+            D('Fill in: Omar music = m, Lena music = n'),
+            "Music isn't given — two more unknowns.",
+            D('Write "(g + m)/2 = (g + 6 + n)/2 + 5"'),
+            "Omar's average is five more than Lena's.",
+            D('Write "g + m = g + 6 + n + 10"'),
+            "Multiply by two. The g's cancel.",
+            D('Write "m = n + 16"'),
+            "Omar's music is sixteen more.",
+            D('Circle choice 3'),
+            "Choice three. Eleven is the trap: six plus five forgets that an average lead of five is a total lead of ten."],
+        3: ["Now the psychometric way: plug in numbers.",
+            A('The same table appears',
+              {'k': 'vis', 'v': {'type': 'table', 'headers': ['', 'Geography', 'Music', 'Average'],
+                                 'rows': [['Omar', '', '', ''], ['Lena', '', '', '']]}, 'w': 1000, 'h': 180, 'y': 330}),
+            D('Fill in: Omar geography 70, Lena geography 76'),
+            "Say Omar got seventy in geography. Lena got six more: seventy-six.",
+            D('Fill in: Omar music 70, Omar average 70'),
+            "Omar's music? Pick seventy too — then his average is simply seventy.",
+            D('Fill in: Lena average 65'),
+            "Omar's average is five higher than Lena's. So Lena averages sixty-five.",
+            D('Fill in: Lena music 54'),
+            "Balance point: her seventy-six is eleven above sixty-five, so her music is eleven below. Fifty-four.",
+            D('Write "70 − 54 = 16"'),
+            "Seventy minus fifty-four: sixteen. Choice three — no equations."],
+    })
+
+    # ---- p18 (guided): avg(a, b, 14) = avg(b, c, 20) + 3 -> a - c = 15  ==>  avg(x, y, 11) = avg(y, z, 17) + 4 -> x - z = 18
+    _rn_q(M, 'wp25-p18', 'The average of $x$, $y$ and $11$ is $4$ greater than the average of $y$, $z$ and $17$. What is $x-z$?',
+          ['$12$', '$4$', '$18$', '$6$'], 3, [
+        'Turn each average into a sum. Three numbers in each group: an average gap of $4$ is a sum gap of $3\\cdot4=12$.',
+        '$(x+y+11)-(y+z+17)=12$. The $y$ cancels: $x-z-6=12$, therefore $x-z=18$.',
+        'Plug in: $y=0$ and $z=10$. The average of $0$, $10$ and $17$ is $9$. Then the average of $x$, $0$ and $11$ is '
+        '$13$: $x+11=39$, $x=28$. $x-z=28-10=18$.',
+        'The traps: $4$ is the gap of the averages, not the gap of the sums. $12$ forgets the $11$ and the $17$, and $6$ '
+        'subtracts the $6$ instead of adding it.'])
+    _rn_video(M, 'wp25-p18', {
+        2: ["Each average is a sum of three numbers, divided by three.",
+            "One average is four more than the other. Then its sum is three times four more: twelve.",
+            D('Write "(x + y + 11) − (y + z + 17) = 3 · 4 = 12"'),
+            "First sum minus second sum: twelve.",
+            D('Write "x − z − 6 = 12"'),
+            "y cancels. Eleven minus seventeen is minus six.",
+            D('Write "x − z = 18"'),
+            "So x minus z is eighteen.",
+            D('Circle choice 3'),
+            "Choice three. Four is the trap: that's the gap of the averages, not of the sums."],
+        3: ["Or choose your own numbers. One condition, three letters: pick y and z, and x follows.",
+            D('Write "y = 0, z = 10 → average of 0, 10, 17 = 9"'),
+            "y is zero, z is ten. Zero, ten and seventeen: the average is nine.",
+            D('Write "average of x, 0, 11 = 13 → x + 11 = 39 → x = 28"'),
+            "The first average is four more: thirteen. Its sum is thirty-nine. So x is twenty-eight.",
+            D('Write "x − z = 28 − 10 = 18"'),
+            "Twenty-eight minus ten: eighteen. Choice three again."],
+    })
+
+    # ---- g087: exam twice the project, 68 / 92 -> 76  ==>  written exam twice the oral exam, 61 / 97 -> 73
+    _rn_q(M, 'wp25-g087', 'A final grade counts the written exam twice as much as the oral exam. Sara scores 61 on the written '
+                          'exam and 97 on the oral exam. What is her final grade?', ['79', '70', '85', '73'], 4, [
+        'The written exam counts twice: $\\frac{61+61+97}{3}=\\frac{219}{3}=73$.',
+        'See-saw: weight ratio $2:1$, distance ratio $1:2$. The gap $97-61=36$ splits into $3$ parts of $12$. '
+        'One part above $61$: $73$.',
+        'The trap is $79$, the plain middle: it treats both exams as equal.'])
+    _rn_video(M, 'wp25-g087', {
+        2: ["The written exam counts twice — so treat it as two copies.",
+            D('Write "(61 + 61 + 97) / 3"'),
+            "Sixty-one, sixty-one, ninety-seven — divided by three weights, not two.",
+            D('Write "= 219 / 3 = 73"'),
+            "Two nineteen over three: seventy-three.",
+            D('Circle choice 4'),
+            "Choice four."],
+        3: ["Now the see-saw. Weights two to one — so distances one to two.",
+            A('An axis appears: 61 (weight 2) and 97 (weight 1)',
+              {'k': 'vis', 'v': {'type': 'numberline', 'min': 59, 'max': 99, 'points': [61, 97],
+                                 'labels': ['61 · w2', '97 · w1']}, 'w': 1000, 'h': 250, 'y': 330}),
+            D('Split the gap 61→97 into 3 parts; write "36 ÷ 3 = 12"'),
+            "The gap is thirty-six. Three parts of twelve.",
+            A("'The heavy side gets the small part' appears", T('The heavy side gets the small part', 36)),
+            "The heavy side always gets the small part of the gap.",
+            D('Mark 73, one part above 61'),
+            "One part from the heavy side: seventy-three. Choice four.",
+            A("'Balanced: 2 × 12 = 1 × 24' appears", T(r'Balanced: $2\times12=1\times24$', 36, y=620)),
+            "Why does it balance? Weight times distance is the same on both sides: two times twelve, one times twenty-four."],
+    })
+
+    # ---- g088: weight 5 / 1, exam 94, presentation 64 -> 89  ==>  lab report 5 / quiz 1, 91 / 55 -> 85
+    _rn_q(M, 'wp25-g088', 'A lab report has weight 5 and a quiz has weight 1. A student scores 91 on the lab report and 55 on '
+                          'the quiz. What is the weighted course score?', ['73', '85', '61', '79'], 2, [
+        'See-saw: weight ratio $5:1$, distance ratio $1:5$. The gap $91-55=36$ splits into $6$ parts of $6$.',
+        'The course score is one part below the heavy side: $91-6=85$.',
+        'Check with the formula: $\\frac{5\\cdot91+55}{6}=\\frac{510}{6}=85$.'])
+    _rn_video(M, 'wp25-g088', {
+        2: ["Draw the axis: the scores on top, the weights underneath.",
+            A('An axis appears: 55 (weight 1) and 91 (weight 5)',
+              {'k': 'vis', 'v': {'type': 'numberline', 'min': 53, 'max': 93, 'points': [55, 91],
+                                 'labels': ['55 · w1', '91 · w5']}, 'w': 1000, 'h': 250, 'y': 330}),
+            "The lab report weighs five times as much — the average is five times closer to it.",
+            D('Write "weight ratio 1 : 5 → distance ratio 5 : 1"'),
+            D('Split the gap into 6 parts; write "36 ÷ 6 = 6"'),
+            "The gap is thirty-six. Six parts of six.",
+            D('Mark 85, one part below 91'),
+            "One part down from ninety-one: eighty-five.",
+            D('Circle choice 2'),
+            "Choice two."],
+        3: ["Check with the formula.",
+            D('Write "(5·91 + 55) / 6 = (455 + 55) / 6 = 510 / 6 = 85"'),
+            "Five ninety-ones and one fifty-five: five hundred ten. Over six: eighty-five. Same answer."],
+    })
+
+    # ---- g089: 6 numbers avg 62, 9 numbers avg 82 -> 74  (Hebrew: 5 / 70, 10 / 85 -> 80)
+    #      ==>  8 numbers avg 58, 12 numbers avg 78 -> 70 (midpoint 68; flipped 66)
+    _rn_q(M, 'wp25-g089', 'Eight numbers have an average of 58, and twelve other numbers have an average of 78. What is the '
+                          'average of all twenty numbers?', ['70', '68', '72', '66'], 1, [
+        'The group sizes are the weights. Size ratio $8:12=2:3$.',
+        '$\\frac{2\\cdot58+3\\cdot78}{5}=\\frac{116+234}{5}=\\frac{350}{5}=70$.',
+        'Check: the bigger group is at $78$, therefore the answer must be above the midpoint $68$.'])
+    _rn_video(M, 'wp25-g089', {
+        2: ["The values are the averages. The weights are the group sizes.",
+            D('Write "(8·58 + 12·78) / 20"'),
+            "Eight times fifty-eight, plus twelve times seventy-eight, over twenty.",
+            "Make it easier: reduce the weights first. Eight to twelve is two to three.",
+            D('Write "= (2·58 + 3·78) / 5 = (116 + 234) / 5 = 70"'),
+            "Two fifty-eights and three seventy-eights: three hundred fifty. Over five: seventy.",
+            D('Circle choice 1'),
+            "Choice one. Reducing the weights always gives the same average — it's just a common factor."],
+        3: ["Now without calculating. The midpoint of fifty-eight and seventy-eight is sixty-eight.",
+            "The bigger group is at seventy-eight — so the average must be above sixty-eight.",
+            D('Cross out choices 2 and 4'),
+            "Sixty-eight and sixty-six are out.",
+            "Sometimes that alone settles it. Here two choices survive — seventy and seventy-two — so we finish with ratios.",
+            A('An axis appears: 58 (weight 2) and 78 (weight 3)',
+              {'k': 'vis', 'v': {'type': 'numberline', 'min': 56, 'max': 80, 'points': [58, 78],
+                                 'labels': ['58 · w2', '78 · w3']}, 'w': 1000, 'h': 250, 'y': 330}),
+            D('Write "weight ratio 2 : 3 → distance ratio 3 : 2"; split 20 into 5 parts of 4'),
+            "Weights two to three, distances three to two. Twenty into five parts of four.",
+            D('Mark 70, three parts above 58'),
+            "Three parts up from fifty-eight: seventy. Choice one."],
+    })
+
+    # ---- g090: 1,200 lines, 4 or 6 words, average 4.5 -> 300  (Hebrew: 1,000 lines, 6 or 7 words, 6.25 -> 250)
+    #      ==>  2,000 boxes, 3 kg or 5 kg, average 3.4 kg -> 400 (traps: 500 = four parts, 800 = extra not halved, 1,600)
+    _rn_q(M, 'wp25-g090', 'A delivery company ships 2,000 boxes. Every box weighs either 3 kg or 5 kg, and the average weight '
+                          'is 3.4 kg per box. How many boxes weigh 5 kg?', ['500', '1,600', '400', '800'], 3, [
+        'Extra per item: if every box weighed $3$ kg, the boxes would weigh $2{,}000\\cdot3=6{,}000$ kg.',
+        'The real total is $2{,}000\\cdot3.4=6{,}800$ kg: $800$ kg extra. Each $5$-kg box adds $2$ extra kg: '
+        '$800\\div2=400$ boxes.',
+        'See-saw: $3.4$ is $0.4$ from $3$ and $1.6$ from $5$. Therefore the $3$-kg group is $4$ times bigger: $5$ parts, '
+        '$2{,}000\\div5=400$ five-kg boxes.'])
+    _rn_video(M, 'wp25-g090', {
+        2: ["The values are three and five kilograms. Each value counts as many times as there are boxes of it.",
+            "How many five-kilogram boxes? Unknown — call it x.",
+            D('Write "x boxes of 5 kg, (2,000 − x) boxes of 3 kg"'),
+            "The rest — two thousand minus x — weigh three kilograms.",
+            D('Write "(5x + 3(2,000 − x)) / 2,000 = 3.4"'),
+            "Divide by all two thousand boxes, and that equals three point four.",
+            D('Write "5x + 6,000 − 3x = 6,800 → 2x = 800 → x = 400"'),
+            "Multiply by two thousand: two x is eight hundred. x is four hundred.",
+            D('Circle choice 3'),
+            "Choice three."],
+        3: ["Now with ratios. Put three, five and the average on the axis.",
+            A('An axis appears: 3, 3.4 (average) and 5',
+              {'k': 'vis', 'v': {'type': 'numberline', 'min': 2.5, 'max': 5.5, 'points': [3, 3.4, 5],
+                                 'labels': ['3', '3.4', '5']}, 'w': 1000, 'h': 250, 'y': 330}),
+            D('Mark the distances: 0.4 (from 3) and 1.6 (to 5)'),
+            "Three point four is zero point four from three, one point six from five.",
+            "Four times closer to three — so the three-kilogram group is four times bigger.",
+            D('Write "2,000 ÷ 5 = 400"'),
+            "Four parts and one part: five parts. Two thousand over five is four hundred. Five-kilogram boxes: one part. Four hundred.",
+            "Careful: not two thousand over four. Five hundred is the trap.",
+            "Choice three again — almost no calculation."],
+        4: ["A third way: start everyone at the low value, then count the extra.",
+            D('Write "all boxes 3 kg: 2,000 × 3 = 6,000"'),
+            "Pretend every box weighs three kilograms: six thousand kilograms.",
+            D('Write "real: 2,000 × 3.4 = 6,800  →  800 extra"'),
+            "The real total is six thousand eight hundred. Eight hundred kilograms are extra.",
+            D('Write "each 5-kg box adds 2  →  800 ÷ 2 = 400"'),
+            "Each five-kilogram box has two extra kilograms. Eight hundred over two: four hundred boxes. Choice three."],
+    })
+
+
+def rn_order(M):
+    """Q3 heights (easy, Hebrew Q4 'easy', the balance point) moves up right after Q1; then the balance with five scores;
+    then 'how many were there?' (harder). Nothing is used before it is taught (the balance is in lesson 1)."""
+    M.move('wp25-g083', LEARN, after='solve-wp25-g082')
+    M.move('solve-wp25-g083', LEARN, after='wp25-g083')
+    M.move('q-r26-t25-02', LEARN, after='solve-wp25-g083')
+    M.move('solve-q-r26-t25-02', LEARN, after='q-r26-t25-02')
+    # q-r26-t25-01 and its video now follow solve-q-r26-t25-02 (they kept their place before q-r26-t25-03)
+
+
+def rn_practice_questions(M):
+    # p01: average = difference, 5 and 15  ==>  7 and 21
+    _rn_q(M, 'wp25-p01', 'Two positive integers have an average equal to their difference. Which pair could they be?',
+          ['6 and 16', '9 and 25', '7 and 21', '8 and 20'], 3, [
+        'For $7$ and $21$: average $\\frac{7+21}{2}=14$, difference $21-7=14$ ✓.',
+        'The others: $6$ and $16$ give average $11$, difference $10$. $9$ and $25$ give $17$ and $16$. '
+        '$8$ and $20$ give $14$ and $12$.'])
+    # p02: teams 64 / 82, combined 70 -> A bigger  ==>  morning / evening classes 66 / 81, combined 71 -> morning bigger
+    _rn_q(M, 'wp25-p02', 'The morning class has an average score of 66, and the evening class has an average score of 81. The '
+                         'average of both classes together is 71. Which of the following statements is necessarily true?',
+          ['The morning class has more students', 'The classes have equal sizes', 'The evening class has more students',
+           'The sizes cannot be compared'], 1, [
+        '$71-66=5$ and $81-71=10$. The combined average is closer to the morning class.',
+        'Distance ratio $5:10=1:2$, therefore the size ratio of morning to evening is $2:1$. The morning class has more students.',
+        'Method 2 · Percent shares as weights: $71=66+(\\text{share of the evening class})\\cdot15$, therefore the evening '
+        'class is $\\frac13$ of all the students and the morning class is $\\frac23$. The morning class has more students.'])
+    # p03 (letters): triples (a,b,c), (d,e,f)  ==>  (p,q,r), (x,y,z); choices reordered
+    _rn_q(M, 'wp25-p03', 'The averages of the triples $(p,q,r)$ and $(x,y,z)$ are equal. What is $(p+q+r)-(x+y+z)$?',
+          ['$p-x$', 'It cannot be determined from the information given.', '$0$', '$1$'], 3, [
+        'Both groups have three numbers, and sum $=3\\times$ average. Equal averages give equal sums.',
+        'The difference of the sums is $0$.'])
+    # p04 (letters): u, v, a..d, S  ==>  m, n, p..s, T; choices reordered
+    _rn_q(M, 'wp25-p04', '$m$ is the average of $p$ and $q$, and $n$ is the average of $r$ and $s$. Given: $T=p+q+r+s$. '
+                         'What is the average of $m$ and $n$?',
+          ['$2T$', '$\\frac T2$', '$\\frac T4$', '$\\frac T8$'], 3, [
+        'First $m=\\frac{p+q}{2}$ and $n=\\frac{r+s}{2}$. Their average is $\\frac{m+n}{2}=\\frac{p+q+r+s}{4}=\\frac T4$.',
+        'Shortcut · Pick values that fit: the answer must work for all values, therefore take $p=q=r=s=1$. Then $T=4$ and '
+        '$m=n=1$, with average $1=\\frac T4$. The other choices give $8$, $2$ and $\\frac12$.'])
+    # p05: average of 2/3 and 1/6 -> 5/12  ==>  3/4 and 1/8 -> 7/16
+    _rn_q(M, 'wp25-p05', 'What is the average of $\\frac34$ and $\\frac18$?',
+          ['$\\frac{1}{3}$', '$\\frac{7}{8}$', '$\\frac{3}{8}$', '$\\frac{7}{16}$'], 4, [
+        '$\\frac34=\\frac68$, therefore $\\frac34+\\frac18=\\frac68+\\frac18=\\frac78$.',
+        'The average is half of the sum: $\\frac78\\div2=\\frac7{16}$.'])
+    # p06: two rope lengths, average = one of them -> 1:1  ==>  two package weights; choices reordered
+    _rn_q(M, 'wp25-p06', 'Two packages have positive weights, and the average of the two weights equals one of the weights. '
+                         'What is the ratio of the two weights?',
+          ['$1:2$', '$1:1$', '$3:4$', '$2:3$'], 2, [
+        'If the two weights were different, their average would lie strictly between them: above the lighter weight and '
+        'below the heavier one. For example, $2$ and $8$ have the average $5$.',
+        'The average equals one of the weights only if both weights are equal. The ratio is $1:1$.'])
+    # p07: Ava, Ben, Chen; Ben 72, Chen 84 -> Ava 96  ==>  Mia, Leo, Sam; Leo 69, Sam 78 -> Mia 87
+    _rn_q(M, 'wp25-p07', 'The average of Mia’s, Leo’s and Sam’s scores equals the average of Mia’s and Leo’s scores. Leo scored '
+                         '69 and Sam scored 78. What did Mia score?', ['93', '78', '81', '87'], 4, [
+        'Adding Sam did not change the average. Therefore Sam’s score equals that average: $78$.',
+        'Mia and Leo average $78$, therefore they total $2\\cdot78=156$. Mia: $156-69=87$.'])
+    # p08: three temperatures, average = middle -> gaps 1:1  ==>  three prices; choices reordered
+    _rn_q(M, 'wp25-p08', 'Three different prices have an average equal to the middle price. What is the ratio of the gap '
+                         'between the highest and the middle price to the gap between the middle and the lowest price?',
+          ['$1:1$', '$1:2$', 'It cannot be determined from the information given.', '$2:1$'], 1, [
+        'The middle price equals the average: its difference is $0$.',
+        'The differences add up to zero. Therefore the highest price is as far above the average as the lowest one is '
+        'below it. The gaps are equal: ratio $1:1$.'])
+    # p09: avg(18, a, b) > avg(24, a) -> a < 2b - 36  ==>  avg(14, a, b) > avg(22, a) -> a < 2b - 38
+    _rn_q(M, 'wp25-p09', 'The average of $14$, $a$ and $b$ is greater than the average of $22$ and $a$. Which of the following '
+                         'inequalities is necessarily true?',
+          ['$a<2b-38$', '$a>2b-38$', '$b<a-8$', '$a>2b+38$'], 1, [
+        '$\\frac{14+a+b}{3}>\\frac{22+a}{2}$. Multiply by $6$: $28+2a+2b>66+3a$.',
+        'Therefore $2b-38>a$, that is, $a<2b-38$.'])
+    # p10 (letters): M avg of x, y, z; x < M < z  ==>  A avg of p, q, r; p < A < r; choices reordered
+    _rn_q(M, 'wp25-p10', '$A$ is the average of $p$, $q$ and $r$. Given: $p<A<r$. Which of the following statements is '
+                         'necessarily true?',
+          ['$q=A$', '$\\frac{p+r}{2}<q$', '$\\frac{q+r}{2}<p$', '$\\frac{p+q}{2}<r$'], 4, [
+        '$A<r$ means $\\frac{p+q+r}{3}<r$. Multiply by $3$: $p+q+r<3r$.',
+        'Therefore $p+q<2r$, and $\\frac{p+q}{2}<r$.'])
+    # p11: b = a + 2, average 3a -> 3b/5  ==>  b = a + 3, average 4a -> 4b/7 (trap 4b/3: a + b = 4a)
+    _rn_q(M, 'wp25-p11', 'The numbers $a$ and $b$ satisfy $b=a+3$, and their average is $4a$. What is their average in terms of $b$?',
+          ['$\\frac{4b}{3}$', '$\\frac b2$', '$\\frac{4b}{7}$', '$2b$'], 3, [
+        '$\\frac{a+b}{2}=4a$, therefore $a+b=8a$ and $b=7a$, that is, $a=\\frac b7$.',
+        'The average is $4a=4\\cdot\\frac b7=\\frac{4b}{7}$. (The condition $b=a+3$ is not needed for this. It gives '
+        '$a=\\frac12$ and $b=\\frac72$, and indeed $\\frac{4}{7}\\cdot\\frac72=2=4\\cdot\\frac12$.)'])
+    # p12 (letters): r <= s <= t, average t  ==>  x <= y <= z, average z; choices reordered
+    _rn_q(M, 'wp25-p12', 'Given: $x\\le y\\le z$. The average of $x$, $y$ and $z$ is $z$. Which of the following is necessarily true?',
+          ['$x+y=z$', '$x=y=z$', '$x<0$', '$z=0$'], 2, [
+        'An average cannot equal the largest value if any value is smaller: the balance would have only values below it.',
+        'Therefore $x=y=z$.'])
+    # p13: spinner, all three 5, first two 4, last two 6 -> 5  ==>  darts, all three 6, first two 5, last two 8 -> 8
+    _rn_q(M, 'wp25-p13', 'Emma throws three darts. The average score of all three darts is 6. The first two darts average 5, '
+                         'and the last two average 8. What is the score of the second dart?', ['7', '6', '8', '10'], 3, [
+        'The first two total $2\\cdot5=10$. The last two total $2\\cdot8=16$. Together: $26$, with the second dart counted twice.',
+        'All three total $3\\cdot6=18$. The second dart is $26-18=8$. (The darts score $2$, $8$ and $8$.)'])
+    # p14: five positive integers, average at most 12 -> 56  ==>  average at most 14 -> 66
+    _rn_q(M, 'wp25-p14', 'Five positive integers have an average of at most 14. What is the largest possible value of one of them?',
+          ['$65$', '$70$', '$66$', '$60$'], 3, [
+        'The sum is at most $5\\cdot14=70$. The other four are at least $1$ each: $4$.',
+        'The largest possible value is $70-4=66$. ($60$ would be right only if the integers had to be different.)'])
+    # p15: charity, 140 per month, first 8 months 180 -> 240  ==>  library, 150 per month, first 8 months 170 -> 440
+    _rn_q(M, 'wp25-p15', 'A library lends an average of 150 books per month over a year. In the first eight months, the average '
+                         'is 170 books per month. At most how many books could it lend in December, assuming monthly totals '
+                         'are nonnegative?', ['110', '600', '440', '170'], 3, [
+        'Year total: $12\\cdot150=1{,}800$. First eight months: $8\\cdot170=1{,}360$.',
+        'The last four months total $1{,}800-1{,}360=440$. December can have all $440$ if September, October and November '
+        'have $0$.'])
+    # p16: Ella & Finn vs Finn & Grace, +11 -> 22  ==>  Nina & Paul vs Paul & Rosa, +9 stamps -> 18
+    _rn_q(M, 'wp25-p16', 'The average of Nina’s and Paul’s stamp counts is 9 greater than the average of Paul’s and Rosa’s '
+                         'counts. How many more stamps does Nina have than Rosa?', ['$9$', '$27$', '$18$', '$36$'], 3, [
+        'Both pairs contain Paul. The two-person averages differ by $9$, therefore the pair totals differ by $2\\cdot9=18$.',
+        '$(N+P)-(P+R)=N-R=18$. Nina has $18$ more stamps than Rosa.',
+        'Shortcut · Pick values that fit: one fact and three unknown counts. The question expects one answer, therefore '
+        'any counts that fit give it. Paul $=0$ and Rosa $=0$: Paul and Rosa average $0$, therefore Nina and Paul average '
+        '$9$, and Nina $=18$. $18-0=18$.'])
+    # p17: A 6, 6, 8, 12 / B 11, 13, 15, 17 -> 12  ==>  team A 4, 9, 9, 14 / team B 12, 16, 18, 22 -> 14
+    _rn_q(M, 'wp25-p17', 'In a game, the players of Team A scored 4, 9, 9 and 14 points, and the players of Team B scored 12, '
+                         '16, 18 and 22 points. One player moves from Team A to Team B, and both team averages fall. What is '
+                         'that player’s score?', ['9', '14', 'Impossible', '4'], 2, [
+        'Team A’s average: $\\frac{4+9+9+14}{4}=9$. Team B’s average: $\\frac{12+16+18+22}{4}=17$.',
+        'Leaving lowers A’s average only if the score is above $9$. Joining lowers B’s average only if the score is below '
+        '$17$. The only score of A between $9$ and $17$ is $14$.'])
+    # p19: tea 84 / 54, blend 72 -> 3:2  ==>  coffee 100 / 60, blend 85 -> 5:3 (trap 3:5 flipped, 5:8 the share)
+    _rn_q(M, 'wp25-p19', 'Coffee costing 100 credits per kilogram is mixed with coffee costing 60 credits per kilogram. The '
+                         'blend costs 85 credits per kilogram. What is the expensive-to-cheap weight ratio?',
+          ['$3:5$', '$2:1$', '$5:3$', '$5:8$'], 3, [
+        'Expensive coffee: $100-85=15$ above the blend price. Cheap coffee: $85-60=25$ below it.',
+        'Balance: $15E=25C$. Weight ratio $E:C=25:15=5:3$.',
+        'Method 2 · Percent shares as weights: $85=60+\\text{share}\\cdot(100-60)$, therefore the expensive share is '
+        '$\\frac{25}{40}=\\frac58$ and the cheap share is $\\frac38$. The ratio is $5:3$.'])
+    # p20: x members at 76, y at 91 -> x/y  ==>  m adults at 42, n children at 11 -> m/n; choices reordered
+    _rn_q(M, 'wp25-p20', 'A club has $m$ adults with an average age of 42 and $n$ children with an average age of 11 ($m>0$ and '
+                         '$n>0$). Which piece of information is always enough to find the average age of the whole club?',
+          ['$m+n$', '$mn$', '$\\frac mn$', '$m-n$'], 3, [
+        'The average age is $\\frac{42m+11n}{m+n}$. Divide the top and the bottom by $n$: $\\frac{42\\cdot\\frac mn+11}{\\frac mn+1}$.',
+        'Therefore the ratio $\\frac mn$ is enough. Knowing only $m+n$, $m-n$ or $mn$ does not fix the ratio.',
+        'Method 2 · Percent shares as weights: average $=11+(\\text{share of the adults})\\cdot31$, and that share is '
+        '$\\frac{m}{m+n}=\\frac{\\frac mn}{\\frac mn+1}$. It depends only on $\\frac mn$.'])
+
+
+def rn_practice(M):
+    """Approved clean-up (36 -> 26). Copy: q-r26-t25-15 (= p25 with "largest"). Extra-bank items kept (3): p21 (a value
+    joins), p23 (weights 3 : 1, percent shares), p27 (extra per item / shares backwards). September items kept (4, types
+    the Hebrew practice does not have): q-06 (the balance, missing value), q-07 (how many were there), q-09 (evenly
+    spaced), q-11 (every value changes, "in t years")."""
+    N = lambda k: 'q-r26-t25-' + k
+    out = [
+        N('15'),      # copy of p25 (seven consecutive integers, average 23)
+        'wp25-p22',   # extra: a value leaves (sum, then divide) - p21 / q-07 keep the type
+        'wp25-p24',   # extra: every value x3 - 4 - guided Q7 and q-11
+        'wp25-p25',   # extra: sum of consecutive integers = number x average - guided Q1
+        'wp25-p26',   # extra: a group joins - p21 / p15 (sum from the average)
+        N('08'),      # smallest possible largest value: the Hebrew practice has "largest possible" (p14)
+        N('10'),      # average of 13 ... 57: evenly spaced, kept in q-09
+        N('12'),      # three groups, weighted: the Hebrew practice has weighted groups (p02, p19, p20)
+        N('13'),      # base number: the balance, kept in q-06
+        N('14'),      # a value leaves, how many at first: kept in q-07
+    ]
+    for qid in out:
+        assert M.section_of(qid) == PRACT, qid
+        M.unplace(qid)
+    M.practice_order(PRACT, [
+        'wp25-p05', 'wp25-p21', N('06'), 'wp25-p01', 'wp25-p03', 'wp25-p04', 'wp25-p07', N('09'), 'wp25-p23', 'wp25-p27',
+        'wp25-p19', 'wp25-p02', 'wp25-p13', N('07'), 'wp25-p14', 'wp25-p15', N('11'), 'wp25-p16', 'wp25-p06', 'wp25-p08',
+        'wp25-p12', 'wp25-p11', 'wp25-p09', 'wp25-p10', 'wp25-p17', 'wp25-p20'])
+
+
+def renumber_pass(M):
+    rn_lessons(M)
+    rn_guided(M)
+    rn_order(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last

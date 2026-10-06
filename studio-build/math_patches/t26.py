@@ -1005,3 +1005,710 @@ def practice_methods(M):
     _pm_add(M, 'wp26-p13', [r'Method 2 · Compare by factors, starting from $120$ minutes: crates $\times\frac18$ (same way); workers $\times\frac15$ (fewer workers, more time → flip to $5$). $120\cdot\frac18\cdot5=75$ minutes.'])
     _pm_add(M, 'wp26-p16', [r'Method 2 · Compare by factors: in the same time the fast signal makes $\frac74$ as many cycles. A cycle goes the opposite way → flip to $\frac47$: $\frac35\cdot\frac47=\frac{12}{35}$ second.'])
     _pm_add(M, 'q-r26-t26-11', [r'Method 2 · Percent shares as weights (the weights are the hours): $3$ of the $5$ hours ($60\%$) are at $40$. Average $=30+0.6\cdot10=36$.'])
+
+
+# ======================================================================================================
+# 2026-10-06 renumber pass (teacher-approved): the English course must not look like the Hebrew one.
+# Every Hebrew-derived question (guided wp26-g093 ... g105b, practice wp26-p01 ... p20) gets a new story and new
+# numbers - same concept, same trap, same level, same methods (V method, adding rates, equalize the times, worker-hours,
+# compare by factors) - and every guided solution video is rewritten to match. Hebrew-derived lesson examples
+# (wp-092 rate, wp-094 add / subtract the rates, wp-099 worker-hours) get new numbers; the factors lesson slide that quotes
+# the team question, the memory-card tip and the "Method 2" practice lines are updated. Practice clean-up 35 -> 25.
+# Nothing in topic 26 is recorded. Runs last.
+# ======================================================================================================
+RN_RECORDED = set()   # no take of any topic-26 video in ~/Documents/Course.recordings (checked 2026-10-06)
+
+
+def _rn_sub(M, vid, n, pairs):
+    """Exact substring replacements on one slide: board items, item labels, spoken lines, draw cues."""
+    if vid in RN_RECORDED: return
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def _rn_q(M, qid, stem, choices, correct, expl):
+    if qid in RN_RECORDED: return
+    M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+
+
+def _rn_video(M, qid, slides):
+    """Rewrite the question slides 2, 3, ... of a guided solution video (None = keep that slide). Pre-loaded items stay."""
+    vid = 'solve-' + qid
+    if vid in RN_RECORDED: return
+    v = M.video(vid)
+    assert len(v['beats']) >= len(slides) + 1, (vid, len(v['beats']))
+    for n, script in enumerate(slides, 2):
+        if script is None: continue
+        assert v['beats'][n - 1]['mode'] == 'question', (vid, n)
+        M.set_slide(vid, n, script=script)
+
+
+def _tab(headers, rows, w=720, h=170):
+    return dict(k='vis', v={'type': 'table', 'headers': list(headers), 'rows': [list(r) for r in rows]}, w=w, h=h)
+
+
+def rn_lessons(M):
+    # wp-092 #3: 18 labels in 3 minutes -> 6 per minute (Hebrew: 8 in 2 -> 4)  ==>  45 bottles in 5 minutes -> 9
+    _rn_sub(M, 'wp-092', 3, [
+        ('A machine prints 18 labels in 3 minutes', 'A machine fills 45 bottles in 5 minutes'),
+        ('Eighteen labels — everything it did. The time? Three minutes.', 'Forty-five bottles — everything it did. The time? Five minutes.'),
+        ('rate = 18 ÷ 3', 'rate = 45 ÷ 5'),
+        ('Eighteen over three…', 'Forty-five over five…'),
+        ('= 6 labels PER MINUTE', '= 9 bottles PER MINUTE'),
+        ('…six. But careful — it\'s not "six". It\'s six labels PER MINUTE.', '…nine. But careful — it\'s not "nine". It\'s nine bottles PER MINUTE.'),
+        ('Six labels is nobody\'s rate. Six labels per minute — that\'s a rate.', 'Nine bottles is nobody\'s rate. Nine bottles per minute — that\'s a rate.'),
+        ('Even six over one is still a fraction.', 'Even nine over one is still a fraction.'),
+        ('And eighteen in three minutes is the same rate as six in one.', 'And forty-five in five minutes is the same rate as nine in one.'),
+    ])
+    # wp-094 #2: 4 + 7 = 11 per minute (Hebrew 3 + 2 = 5)  ==>  5 + 8 = 13
+    _rn_sub(M, 'wp-094', 2, [
+        ('4 per minute $+$ 7 per minute $=$ 11 per minute', '5 per minute $+$ 8 per minute $=$ 13 per minute'),
+        ('4 per minute + 7 per minute = 11 per minute', '5 per minute + 8 per minute = 13 per minute'),
+        ('One makes four items a minute, the other seven.', 'One makes five items a minute, the other eight.'),
+        ('Underline "11"', 'Underline "13"'),
+        ('Together: eleven a minute.', 'Together: thirteen a minute.'),
+        ('four hours and seven hours together is NOT eleven hours', 'five hours and eight hours together is NOT thirteen hours'),
+    ])
+    # wp-094 #3: 9 liters in, 4 out -> +5 (Hebrew: wash 5, dirty 2 -> 3)  ==>  12 in, 5 out -> +7
+    _rn_sub(M, 'wp-094', 3, [
+        ('9 liters in, 4 liters out — every minute', '12 liters in, 5 liters out — every minute'),
+        ('9 − 4 = +5 per minute', '12 − 5 = +7 per minute'),
+        ('Nine in, four out: the tank gains five liters a minute.', 'Twelve in, five out: the tank gains seven liters a minute.'),
+    ])
+    # wp-099 #2: 3 workers x 4 hours = 12 (Hebrew 2 x 3 = 6)  ==>  5 workers x 6 hours = 30
+    _rn_sub(M, 'wp-099', 2, [
+        ('Three workers, each working four hours.', 'Five workers, each working six hours.'),
+        ('3 × 4 = 12 worker-hours', '5 × 6 = 30 worker-hours'),
+        ('Only four hours pass on the clock. But there are twelve hours of work in there.',
+         'Only six hours pass on the clock. But there are thirty hours of work in there.'),
+        ('So one worker alone would need twelve hours.', 'So one worker alone would need thirty hours.'),
+    ])
+    # Compare by Factors #4 quotes the team question (old Q6 numbers) -> the new numbers
+    M.set_slide('r26-t26-factors', 4, script=[
+        A("'Team · Work · Time table' appears", TABLE(['Team', 'Work', 'Time'], [['3', '40', '5'], ['4', '96', '?']])),
+        'Remember the question with three gardeners, forty trees, five hours? Then four gardeners, ninety-six trees.',
+        D('Write "5 × 96/40 × 3/4 = 9"'),
+        'Its first method was exactly this rule. More work pushes the time the same way — as is. More workers — the opposite way, flipped.',
+        A("'V = factors for a 3-column table' appears", T(r'The V $=$ compare by factors for a $3$-column table', size=40, gap=50)),
+        'The V is the same rule drawn as a picture, for a table where the middle is the product of the other two. It just does the flipping for you.',
+        'Compare by factors works everywhere else too: price times quantity, three things multiplied, or a formula they give you.'])
+    # memory card: the unit tip quoted the queue question (75 minutes)
+    c = M.card('mem-work-rate')
+    k = c['tips'].index('Minutes → hours: divide by 60. 75 minutes = 1.25 hours.')
+    c['tips'][k] = 'Minutes → hours: divide by 60. 40 minutes = ⅔ hour (not 0.4).'
+
+
+def rn_guided(M):
+    # ---------- Q1 g093: robot, x in y minutes, rate x3, 4y minutes -> 12x (Hebrew: x in y, x2, 3y -> 6x)
+    #            ==>  volunteer folds x flyers in y minutes, rate x3, 5y minutes -> 15x
+    q = 'wp26-g093'
+    _rn_q(M, q, 'A volunteer folds $x$ flyers in $y$ minutes at a constant rate, where $x$ and $y$ are positive. '
+                'How many flyers will she fold in $5y$ minutes if her rate becomes 3 times as great?',
+          ['$8x$', '$\\frac{5x}{3}$', '$15x$', '$3x$'], 3, [
+        'Two changes, and each one multiplies the output: rate $\\times3$, and time $\\times5$ (from $y$ to $5y$).',
+        'Flyers: $x\\cdot3\\cdot5=15x$. The factors multiply; they do not add up to $8x$.',
+        'Check with numbers: $x=4$, $y=2$. The old rate is 2 per minute, the new rate is 6 per minute, and in 10 minutes she folds $6\\times10=60=15\\cdot4$ flyers ✓.'])
+    _rn_video(M, q, [[
+        "The table: flyers and minutes. Row one is what they give us: x flyers in y minutes. Now the rate triples.",
+        A('A table appears: flyers and minutes, three rows', _tab(['', 'Flyers', 'Minutes'], [['Now', 'x', 'y'], ['Rate × 3', '', 'y'], ['Rate × 3, longer', '', '5y']], h=190)),
+        "Same time, triple the rate — triple the flyers.",
+        D('In the row "Rate × 3" write "3x"'),
+        "So: 3x flyers in y minutes.",
+        "Now the time goes from y to 5y. That's times five.",
+        D('Draw an arrow "×5" down the minutes column'),
+        "More time, same rate — the work grows by the same factor.",
+        D('In the last row write "15x"'),
+        "Times five on the flyers too: fifteen x.",
+        "Read it across instead? Same thing: 5y minutes at 3x per y minutes — fifteen x.",
+        D('Circle choice 3'),
+        "Fifteen x. Choice three.",
+    ], [
+        "Ratios not your thing? Use the triangle value: multiply along the diagonal and divide by what's left.",
+        D('Write "? = (5y · 3x) ÷ y"'),
+        "Five y times three x, divided by y.",
+        D('Cancel the y\'s and write "= 15x"'),
+        "The y's cancel. Fifteen x.",
+        "Careful: the two changes multiply — three times five. Don't add them to eight.",
+        D('Circle choice 3'),
+    ], [
+        "Or use the formula. Rate is work over time.",
+        D('Write "rate = x/y flyers per minute"'),
+        "x flyers in y minutes: x over y per minute.",
+        D('Write "new rate = 3x/y"'),
+        "Three times as fast: three x over y.",
+        D('Write "work = 3x/y × 5y = 15x"'),
+        "Work is rate times time. The time is five y. The y's cancel: fifteen x.",
+        "Careful: the two changes multiply — three times five. Don't add them to eight.",
+        D('Circle choice 3'),
+    ], [
+        "Letters in the answers? Plug in easy numbers.",
+        D('Write "x = 4, y = 2 → 2 per minute"'),
+        "Say four flyers in two minutes. That's two a minute.",
+        D('Write "× 3 → 6 per minute · 5y = 10 minutes → 6 × 10 = 60"'),
+        "Three times as fast: six a minute. Five y is ten minutes. Sixty flyers.",
+        D('Write "8x = 32 · 5x/3 = 20/3 · 15x = 60 ✓ · 3x = 12"'),
+        "Now put x equals four into each choice. Only fifteen x gives sixty.",
+        D('Circle choice 3'),
+        "Pick numbers that are not zero or one, and not equal to each other. Then only one choice survives.",
+    ]])
+
+    # ---------- Q3 g095: 2 inlets 8 h, drain 12 h, 9 a.m. -> 3 p.m. (Hebrew: 6 h / 9 h, 8:00 -> 12:30)
+    #            ==>  2 hoses fill a pond in 15 h each, outlet empties it in 20 h, 7 a.m. -> 7 p.m.
+    q = 'wp26-g095'
+    _rn_q(M, q, 'Two identical hoses each fill a pond in 15 hours. An outlet pipe empties a full pond in 20 hours. '
+                'At 7 a.m. the pond is empty, and both hoses and the outlet pipe are opened. At what time is the pond full?',
+          ['2:30 p.m.', '7 p.m.', '5 p.m.', '9 p.m.'], 2, [
+        'Rates in ponds per hour: $\\frac1{15}+\\frac1{15}-\\frac1{20}=\\frac4{60}+\\frac4{60}-\\frac3{60}=\\frac5{60}=\\frac1{12}$.',
+        'One pond at $\\frac1{12}$ of a pond per hour takes 12 hours. 7 a.m. plus 12 hours is 7 p.m.',
+        'Trap: without the outlet, $\\frac2{15}$ of a pond per hour gives 7.5 hours (2:30 p.m.).'])
+    _rn_sub(M, 'solve-' + q, 1, [('Two pumps fill, one empties.', 'Two hoses fill, one pipe empties.')])
+    _rn_video(M, q, [[
+        "Find the combined rate of all three.",
+        A("'One job = 1 → 15 hours: 1/15 per hour' appears", T(r'One job $=1$ $\to$ $15$ hours: $\frac1{15}$ per hour', 36)),
+        "We don't know the pond's size — so call the whole pond one job.",
+        "Rate is work over time. One pond in fifteen hours — one fifteenth of a pond per hour.",
+        D('Write "1/15 + 1/15"'),
+        "Two identical hoses: one fifteenth plus one fifteenth.",
+        "The outlet works against them — so it gets a minus.",
+        D('Write "− 1/20"'),
+        "It empties a pond in twenty hours: minus one twentieth.",
+        D('Write "= 4/60 + 4/60 − 3/60 = 5/60 = 1/12"'),
+        "Common denominator: sixty. Together: five sixtieths — one twelfth.",
+        "What does one twelfth mean? Work over time — one pond in twelve hours.",
+        D('Write "1 pond in 12 hours"'),
+        "They started at seven in the morning.",
+        D('Write "7 a.m. + 12 h = 7 p.m." and circle choice 2'),
+        "Seven plus twelve hours: seven in the evening. Choice two.",
+        "They asked for a clock time — don't stop at twelve hours.",
+        "And the trap: forget the outlet, and you get seven and a half hours — two thirty, the trap in choice one.",
+    ], [
+        "Fractions bothering you? Choose a pond of sixty units — the LCM of fifteen and twenty.",
+        D('Write "hose 4/h · hose 4/h · outlet −3/h"'),
+        "Each hose adds four units an hour. The outlet takes three.",
+        D('Write "4 + 4 − 3 = 5 per hour → 60 ÷ 5 = 12 h"'),
+        "Net five an hour. Sixty units: twelve hours. Same answer.",
+        D('Circle choice 2'),
+    ]])
+
+    # ---------- Q4 g096: machines 4 h and 6 h -> 144 min (Hebrew: 3 h and 2 h -> 72 min)
+    #            ==>  printers 6 h and 10 h -> 225 min
+    q = 'wp26-g096'
+    _rn_q(M, q, 'Printer A prints one batch of catalogs in 6 hours, while printer B prints the same batch in 10 hours. '
+                'If they work together at their usual constant rates, how many minutes do they need for one batch?',
+          ['180', '225', '480', '240'], 2, [
+        'Equalize the times: in 30 hours A prints $30\\div6=5$ batches and B prints $30\\div10=3$. Together: 8 batches in 30 hours.',
+        'One batch: $\\frac{30}{8}=\\frac{15}{4}$ hours $=\\frac{15}{4}\\times60=225$ minutes.',
+        'Shortcut for two workers: $\\frac{6\\cdot10}{6+10}=\\frac{60}{16}=3.75$ hours $=225$ minutes.'])
+    _rn_sub(M, 'solve-' + q, 1, [('Two machines, two different times.', 'Two printers, two different times.')])
+    _rn_video(M, q, [[
+        "Printer A: one batch in six hours. Printer B: one batch in ten.",
+        "Different times — so I can't just add them.",
+        "Equalize the times first. A time that works for both: thirty — a common multiple of six and ten.",
+        A('A table appears: A and B over 30 hours', _tab(['Printer', 'Batches', 'Hours'],
+          [['A', '1', '6'], ['B', '1', '10'], ['A', '', '30'], ['B', '', '30'], ['Together', '', '30']], h=250)),
+        D('Fill in A: 5, B: 3'),
+        "Six hours to thirty is times five: A prints five batches. Ten to thirty is times three: B prints three.",
+        D('Fill in Together: 8'),
+        "Now I can add. Eight batches in the same thirty hours — they work side by side, so we add batches, not hours.",
+        "They want ONE batch. Eight down to one — divide by eight. Same for the time.",
+        D('Write "1 batch in 30/8 = 15/4 hours"'),
+        "Thirty eighths — that's fifteen quarters of an hour. They want minutes — times sixty.",
+        D('Write "15/4 × 60 = 225" and circle choice 2'),
+        "Two hundred twenty-five minutes. Choice two.",
+    ], [
+        "Same thing with rates: a sixth of a batch an hour, plus a tenth.",
+        D('Write "1/6 + 1/10 = 8/30 = 4/15 → 15/4 h = 225 min"'),
+        "Four fifteenths per hour. One batch: fifteen quarters of an hour — two hundred twenty-five minutes.",
+        "Sense check: together must beat A's six hours — and two printers as fast as A would need three. Three hours forty-five sits right in between.",
+        D('Write "shortcut: (6 · 10)/(6 + 10) = 60/16 = 3.75 h"'),
+        "Or the two-worker shortcut: six times ten over six plus ten. Three point seven five hours. Same answer.",
+        D('Circle choice 2'),
+    ]])
+
+    # ---------- Q6 g098: 5 workers 30 boards 4 h; 8 workers 72 boards -> 6 (Hebrew: 4 / 20 / 3; 6 / 60 -> 6)
+    #            ==>  3 gardeners 40 trees 5 h; 4 gardeners 96 trees -> 9
+    q = 'wp26-g098'
+    _rn_q(M, q, 'Three identical gardeners plant 40 trees in 5 hours. How many hours do four such gardeners need to plant 96 trees?',
+          ['16', '9', '12', '7.2'], 2, [
+        'Table (team, work, time). Row 1: 3, 40, 5. Row 2: 4, 96, ?.',
+        'More work means more time ($\\times\\frac{96}{40}$); more workers means less time ($\\times\\frac34$): $5\\times\\frac{96}{40}\\times\\frac34=5\\times\\frac{12}5\\times\\frac34=9$ hours.',
+        'Or worker-hours: $3\\times5=15$ worker-hours plant 40 trees, so 96 trees need $15\\times\\frac{96}{40}=36$ worker-hours, and $36\\div4=9$ hours.'])
+    TBL = TABLE(['Team', 'Work', 'Time'], [['3', '40', '5'], ['4', '96', '?']])
+    _rn_video(M, q, [[
+        "Identical workers, a group of them — team question. Into the table.",
+        A('The table appears: 3 · 40 · 5 and 4 · 96 · ?', TBL),
+        "We want the time. So ask: what does each change do to the time?",
+        "Work went from forty to ninety-six trees. More work — more time, same factor.",
+        D('Write "5 × 96/40"'),
+        "The team went from three to four. More workers — LESS time. So flip it.",
+        D('Write "× 3/4"'),
+        "Same factor for the work, the opposite factor for the team.",
+        D('Write "= 5 × 12/5 × 3/4 = 9"'),
+        "Ninety-six over forty is twelve fifths. The fives cancel. Twelve times three over four — nine hours.",
+        D('Circle choice 2'),
+        "Nine. Choice two.",
+    ], [
+        "Now the method that solves these in seconds — no thinking about directions at all.",
+        A('The same table appears', TBL),
+        "The blank is in row two, in the Time column.",
+        D('Draw a V through 3, 96 and 5'),
+        "Draw a V: top-left, down to the bottom-middle, up to the top-right. Three, ninety-six, five.",
+        "Multiply the three numbers on the V. Divide by the other two.",
+        D('Write "? = (3 · 96 · 5) ÷ (40 · 4)"'),
+        "Three times ninety-six times five, over forty times four.",
+        D('Cancel, then write "= 9"'),
+        "Cancel before you multiply: nine hours.",
+        D('Circle choice 2'),
+        "Nine. Choice two.",
+    ], [
+        A('The V rule appears', T('Blank in Team or Time: V = top-left $\\times$ bottom-middle $\\times$ top-right, $\\div$ the other two', size=38, gap=40)),
+        "Here's the general rule. Always put the question row second.",
+        "Blank in the Team column or the Time column? Same V. Top-left, bottom-middle, top-right. Divide by the other two numbers.",
+        A('The upside-down V rule appears', T('Blank in Work: upside-down V = bottom-left $\\times$ top-middle $\\times$ bottom-right, $\\div$ the other two', size=38, gap=40)),
+        "Blank in the Work column? Turn the V upside down. Bottom-left, top-middle, bottom-right.",
+        A('An example table appears', TABLE(['Team', 'Work', 'Time'], [['3', '40', '5'], ['4', '?', '6']])),
+        "Example: three gardeners plant forty trees in five hours. How many trees do four gardeners plant in six hours?",
+        D('Draw an upside-down V through 4, 40 and 6; write "? = (4 · 40 · 6) ÷ (3 · 5) = 960 ÷ 15 = 64"'),
+        "Four, forty, six on the upside-down V. Divide by three and five. Sixty-four trees.",
+        "Sense check: more gardeners AND more hours — so more than forty trees. Good.",
+    ], [
+        "One more view. Three gardeners for five hours: fifteen worker-hours planted forty trees.",
+        D('Write "15 → 40 trees · 96 trees → 36 worker-hours → 36 ÷ 4 = 9"'),
+        "Ninety-six trees need thirty-six worker-hours. Four gardeners share them: nine hours.",
+        D('Circle choice 2'),
+    ]])
+
+    # ---------- Q7 g100: path 18 x 8 + 12 x 7 = 228 (Hebrew: road 20 x 10 + 15 x 10 = 350)
+    #            ==>  fence 14 x 9 + 6 x 11 = 192
+    q = 'wp26-g100'
+    _rn_q(M, q, 'A fence around a park is completed by 14 workers working for 9 days, followed by 6 workers working for 11 days. '
+                'All work at the same constant rate. How many days would one worker need to complete the whole fence alone?',
+          ['126', '400', '192', '200'], 3, [
+        'Worker-days: $14\\times9=126$ and $6\\times11=66$. Total: $126+66=192$ worker-days.',
+        'One worker does one worker-day each day, so alone the fence takes 192 days.'])
+    _rn_video(M, q, [[
+        "How long would one worker need for the whole fence? Count the worker-days.",
+        "Think like the contractor: how many days of wages do I pay?",
+        D('Write "14 × 9 = 126"'),
+        "First phase: fourteen workers, nine days each — a hundred twenty-six worker-days.",
+        D('Write "6 × 11 = 66"'),
+        "Second phase: six workers, eleven days each — sixty-six.",
+        D('Write "126 + 66 = 192" and circle choice 3'),
+        "Together a hundred ninety-two worker-days. That's how long one worker alone would need. Choice three.",
+        "Don't add fourteen and six and multiply by twenty — twenty workers never worked together.",
+    ]])
+
+    # ---------- A1 g101: 3 fast = 2 x 9 standard -> 6 (Hebrew: 4 fast = 2 x 6 slow -> 3)
+    #            ==>  5 large dishwashers = 2 x 10 small -> 4
+    q = 'wp26-g101'
+    _rn_q(M, q, 'The combined rate of 5 large dishwashers is twice the combined rate of 10 small dishwashers. '
+                'Dishwashers of the same type are identical. How many times as fast is one large dishwasher as one small dishwasher?',
+          ['1', '4', '2', '10'], 2, [
+        'Let $L$ be the rate of one large dishwasher and $S$ the rate of one small dishwasher.',
+        'The large team is twice as fast, so the 2 goes on the smaller side: $5L=2\\cdot10S=20S$, therefore $L=4S$.',
+        'Trap: doubling the larger side gives $2\\cdot5L=10S$, so $L=S$ (choice 1).'])
+    _rn_video(M, q, [[
+        "Call a large dishwasher L. A small one, S.",
+        D('Write "5L" and "10S"'),
+        "Five large dishwashers: 5L. Ten small: 10S.",
+        "I want them equal — but they're not. The large team is TWICE as fast.",
+        "So who gets multiplied by two? Many students double the bigger side. That only makes it bigger.",
+        "Rule: the times two goes on the SMALLER side. Then both sides are equal.",
+        D('Write "5L = 2 · 10S"'),
+        D('Write "5L = 20S → L = 4S"'),
+        "Five L equals twenty S. Divide by five: one large dishwasher equals four small ones.",
+        D('Circle choice 2'),
+        "Four. Choice two.",
+        "Double the wrong side, and you get ten L equals ten S — one. That's the trap in choice one.",
+    ], [
+        "Not sure how to build the equation? Plug in and start rolling.",
+        "Say one small dishwasher washes one plate a minute.",
+        D('Write "1 small: 1 → 10 small: 10"'),
+        "Ten of them: ten plates a minute.",
+        D('Write "5 large: 2 × 10 = 20 → 1 large: 4"'),
+        "The large team does twice that — twenty. Five large dishwashers, twenty plates: four each.",
+        "Four times the small one. You didn't need to know where to start — you just started.",
+        D('Circle choice 2'),
+    ]])
+
+    # ---------- A2 g102: +24/h, 35 per 75 min, 50 at start, 5 h -> 30 (Hebrew: mole 20/h, gardener 30 per 75 min, 40, 5 h -> 20)
+    #            ==>  bakery queue: +18 orders/h, baker 15 per 40 min, 60 at start, 4 h -> 42
+    q = 'wp26-g102'
+    _rn_q(M, q, 'Customers add 18 orders to a bakery’s queue each hour. The baker completes 15 orders every 40 minutes. '
+                'There are initially 60 orders in the queue. At these constant rates, how many orders are in the queue after 4 hours?',
+          ['72', '24', '42', '12'], 3, [
+        'Customers: $18\\times4=72$ orders added.',
+        '4 hours $=240$ minutes $=6\\times40$ minutes, so the baker completes $6\\times15=90$ orders.',
+        'In the queue: $60+72-90=42$ orders.',
+        'Trap: taking "15 every 40 minutes" as 15 per hour gives $60+72-60=72$.'])
+    _rn_video(M, q, [[
+        "Start with some order. Customers add eighteen orders an hour.",
+        D('Write "customers: 18 per hour × 4 = 72"'),
+        "Four hours — times four: seventy-two new orders.",
+        "The baker: fifteen orders in forty minutes. That's minutes — so the four hours must become minutes too.",
+        D('Write "4 hours = 4 × 60 = 240 minutes"'),
+        A("'Combine only matching units' appears", T('Combine only matching units', 36)),
+        "Combine only matching units — convert first.",
+        "Hours to minutes: times sixty. Two hundred forty minutes.",
+        D('Write "40 → 240 is × 6 → 15 × 6 = 90"'),
+        "Forty to two hundred forty is exactly times six. So ninety orders completed.",
+        "Don't see the six? Cross-multiply: fifteen times two hundred forty over forty. Reduce by forty first.",
+        D('Write "60 + 72 − 90 = 42" and circle choice 3'),
+        "Sixty waiting, plus seventy-two, minus ninety: forty-two. Choice three.",
+    ], [
+        "Or turn the minutes into hours. Minutes to hours: divide by sixty.",
+        D('Write "40 min = 40/60 h = 2/3 h"'),
+        "Forty minutes is forty sixtieths — two thirds of an hour. Not zero point four!",
+        D('Write "2/3 × 6 = 4 → 15 × 6 = 90"'),
+        "Two thirds of an hour, times six, is four hours. Times six again: ninety.",
+        "Same order as before: forty-two left.",
+        D('Circle choice 3'),
+    ]])   # slide 4 (catching up) stays
+
+    # ---------- A4 g103: 360 m2 / 3 h, 40 m2 / 2 h, 140 m2 -> 60 min (Hebrew: 300 / 2 h, 50 / 3 h, 100 -> 36 min)
+    #            ==>  polishers 200 m2 / 4 h, 30 m2 / 6 h, 110 m2 -> 120 min
+    q = 'wp26-g103'
+    _rn_q(M, q, 'Polisher A polishes 200 m² of floor in 4 hours. Polisher B polishes 30 m² in 6 hours. '
+                'Working together at these constant rates, how many minutes do they need for 110 m²?',
+          ['120', '66', '132', '150'], 1, [
+        'Equalize to 12 hours: A polishes $200\\times3=600$ m², B polishes $30\\times2=60$ m². Together: 660 m² in 12 hours.',
+        '$110=\\frac{660}6$, so the time is $12\\div6=2$ hours $=120$ minutes.',
+        'Sense check: A alone does 50 m² per hour, so 110 m² takes it 2.2 hours = 132 minutes. Together is less than 132 and more than $132\\div2=66$. Only 120 fits.'])
+    _rn_video(M, q, [[
+        "A: two hundred square meters in four hours. B: thirty in six hours.",
+        "To add them, the times must match. Common multiple of four and six: twelve hours.",
+        A('A table appears: A and B over 12 hours', _tab(['Polisher', 'm²', 'Hours'],
+          [['A', '200', '4'], ['B', '30', '6'], ['A', '', '12'], ['B', '', '12'], ['Together', '', '12']], h=250)),
+        D('Fill in A: 600, B: 60, Together: 660'),
+        "A: times three — six hundred. B: times two — sixty. Together, six hundred sixty in the same twelve hours.",
+        "They want a hundred ten. That's one sixth of six hundred sixty — so one sixth of the time.",
+        D('Write "12 h ÷ 6 = 2 h = 120 min" and circle choice 1'),
+        "Two hours. In minutes: a hundred twenty. Choice one.",
+    ], [
+        "Now the psychometric way — estimate the size.",
+        D('Write "A alone: 110 at 50/h → 2.2 h = 132 min"'),
+        "A alone does fifty an hour. A hundred ten takes it two point two hours — a hundred thirty-two minutes.",
+        "B helps — so together it's LESS than a hundred thirty-two.",
+        D('Cross out choices 3 and 4'),
+        "A hundred thirty-two and a hundred fifty are out.",
+        "Two polishers as fast as A would take half — sixty-six minutes. But B is much slower. B helps, but only a little.",
+        "Like the elephant and the mouse walking along — and the mouse says: look how much dust WE'RE making.",
+        D('Cross out choice 2 and circle choice 1'),
+        "So more than sixty-six, less than a hundred thirty-two. Only a hundred twenty fits.",
+    ]])
+
+    # ---------- A5 g104: all three 8 h, two of them 16 h -> 1/16 (Hebrew: 6 h, 12 h -> 1/12)
+    #            ==>  Omar, Priya and Sam: 9 h, 18 h -> 1/18
+    q = 'wp26-g104'
+    _rn_q(M, q, 'Omar, Priya and Sam each work at a constant rate. Together they complete a job in 9 hours. '
+                'Omar and Priya together complete it in 18 hours. What fraction of the job does Sam complete in one hour?',
+          ['$\\frac19$', '$\\frac1{27}$', '$\\frac1{18}$', '$\\frac16$'], 3, [
+        'All three: 1 job in 9 hours, so 2 jobs in 18 hours. Omar and Priya: 1 job in 18 hours.',
+        'Sam does the difference: $2-1=1$ job in 18 hours, which is $\\frac1{18}$ of the job per hour. (With rates: $\\frac19-\\frac1{18}=\\frac1{18}$.)'])
+    _rn_video(M, q, [[
+        "Omar, Priya and Sam. All three: one job in nine hours. Omar and Priya: one job in eighteen.",
+        "I don't know how Omar and Priya split the work. And I don't care.",
+        "Maybe they share it equally. Maybe Priya sits with a coffee while Omar does everything. Together they do one job in eighteen hours.",
+        D('Bracket "Omar and Priya" and write "one worker"'),
+        "So merge them into one worker — call it Omar-Priya. Now it's a normal two-worker question.",
+        "Equalize the times: eighteen hours.",
+        D('Write "all three: 2 jobs in 18 h"'),
+        "All three in eighteen hours: two jobs.",
+        D('Write "Omar-Priya: 1 job in 18 h → Sam: 1 job in 18 h"'),
+        "Omar-Priya does one of them. So Sam does the other — one job in eighteen hours.",
+        D('Write "1/18 per hour" and circle choice 3'),
+        "In one hour: one eighteenth. Choice three.",
+    ], [
+        "Here's the flash of insight.",
+        "All three work for nine hours. Omar-Priya needs eighteen for a whole job — so in nine hours they do half.",
+        D('Write "9 h: Omar-Priya = ½ → Sam = ½"'),
+        "So Sam does the other half. Sam alone works exactly as fast as Omar and Priya together.",
+        "Half a job in nine hours: a whole job in eighteen. One eighteenth per hour.",
+        D('Circle choice 3'),
+    ]])
+
+    # ---------- A6 g105: 8 makers cabinet 6 h, 9 makers bench 8 h, both in 24 h -> 5 (Hebrew: 10 table 3 h, 9 chair 5 h, 15 h -> 5)
+    #            ==>  event crew: 12 workers stage 2 h, 14 workers seating 4 h, both in 8 h -> 10
+    q = 'wp26-g105'
+    _rn_q(M, q, 'Twelve identical workers can set up one stage in 2 hours. Fourteen such workers can set up the seating in 4 hours. '
+                'How many workers are needed to set up one stage and the seating in 8 hours?',
+          ['26', '10', '13', '7'], 2, [
+        'Worker-hours: the stage needs $12\\times2=24$, the seating needs $14\\times4=56$. Total: $24+56=80$.',
+        'In 8 hours: $80\\div8=10$ workers (3 on the stage, 7 on the seating).'])
+    _rn_video(M, q, [[
+        '"Identical workers" — a team question. But two teams: one on the stage, one on the seating, working at the same time.',
+        A('Two tables appear: stage and seating', _tab(['', 'Team', 'Work', 'Time'],
+          [['Stage', '12', '1', '2'], ['', '?', '1', '8'], ['Seating', '14', '1', '4'], ['', '?', '1', '8']], w=760, h=250)),
+        D('Draw a V through 12, 1, 2 and write "(12 · 1 · 2) ÷ (1 · 8) = 3"'),
+        "Stage: V through twelve, one, two. Multiply, divide by what's left: three workers.",
+        D('Draw a V through 14, 1, 4 and write "(14 · 1 · 4) ÷ (1 · 8) = 7"'),
+        "Seating: fourteen times one times four, over eight: seven workers.",
+        D('Write "3 + 7 = 10" and circle choice 2'),
+        "Three on the stage, seven on the seating, both working the same eight hours. Ten. Choice two.",
+    ], [
+        "Faster here: ratios. The job didn't change — only the time.",
+        "More time — fewer workers.",
+        D('Write "2 → 8 h: × 4 → 12 ÷ 4 = 3"'),
+        "Stage: four times the time — so a quarter of the workers. Three.",
+        D('Write "4 → 8 h: × 2 → 14 ÷ 2 = 7"'),
+        "Seating: twice the time — half the workers. Seven. Send the rest home.",
+        "Only ONE thing changes? Ratios. Two things change? The V method.",
+        D('Circle choice 2'),
+    ], [
+        "And the boss paying salaries.",
+        D('Write "12 × 2 = 24 · 14 × 4 = 56"'),
+        "The stage takes twenty-four worker-hours. The seating, fifty-six.",
+        D('Write "24 + 56 = 80 → 80 ÷ 8 = 10"'),
+        "Eighty worker-hours, done in eight hours: ten workers.",
+        D('Circle choice 2'),
+    ]])
+
+    # ---------- A7 g105b: feed for 240 animals 6 days -> 90 animals 16 days (Hebrew: water, 220 dunam 5 days -> 100 dunam 11)
+    #            ==>  hay for 200 sheep 9 days -> 150 sheep 12 days
+    q = 'wp26-g105b'
+    _rn_q(M, q, 'A supply of hay is enough for 200 identical sheep for 9 days. Each sheep eats the same constant amount per day. '
+                'For how many days would that supply feed 150 sheep?',
+          ['12', '18', '6.75', '15'], 1, [
+        'Sheep-days (like worker-days): $200\\times9=1{,}800$.',
+        '150 sheep: $1{,}800\\div150=12$ days.'])
+    _rn_sub(M, 'solve-' + q, 1, [('Last question.', 'The last team question.')])   # (a factors question follows it)
+    _rn_video(M, q, [[
+        "This time let's start the psychometric way — estimate.",
+        "Fewer sheep — the same hay lasts LONGER. More than nine days.",
+        D('Cross out choice 3'),
+        "Six point seven five is out — that's fewer days.",
+        D('Write "200 → 100 sheep: 9 → 18 days"'),
+        "Half of two hundred is a hundred. Half the sheep — double the days: eighteen.",
+        D('Cross out choice 2'),
+        "But a hundred fifty is more than a hundred — so FEWER than eighteen days. Eighteen is out.",
+        D('Write "150 = 3/2 of 100 → 18 × 2/3 = 12"'),
+        "A hundred fifty is three halves of a hundred — so two thirds of the time. Twelve.",
+        D('Circle choice 1'),
+    ], [
+        "Plug in. Say each sheep eats one unit a day.",
+        D('Write "200 × 9 = 1,800 units"'),
+        "Two hundred sheep, nine days: one thousand eight hundred units of hay.",
+        D('Write "1,800 ÷ 150 = 12"'),
+        "A hundred fifty sheep eat a hundred fifty a day. Eighteen hundred over a hundred fifty: twelve days.",
+        D('Circle choice 1'),
+    ], [
+        "It's even a team question — once you see who the team is.",
+        "The sheep are the workers. Their job — eating. The hay is the work, and it never changes.",
+        A('The table appears: 200 · 1 · 9 and 150 · 1 · ?', TABLE(['Team', 'Work', 'Time'], [['200', '1', '9'], ['150', '1', '?']])),
+        D('Draw a V through 200, 1, 9 and write "(200 · 1 · 9) ÷ (150 · 1) = 12"'),
+        "V method: two hundred times one times nine, over a hundred fifty. Twelve.",
+        D('Circle choice 1'),
+        "The hard part was seeing who the team is. If you can't — estimate or plug in.",
+    ]])
+
+
+def rn_practice_questions(M):
+    S = _rn_q
+    # p01: Eva 4 boxes / 6 min, Max 5 / 8 min, 24 min -> 31  ==>  Nora 3 gifts / 5 min, Theo 7 / 10 min, 30 min -> 39
+    S(M, 'wp26-p01', 'Nora wraps 3 gifts in 5 minutes. Theo ties ribbons on 7 gifts in 10 minutes. Each of them works for 30 minutes '
+                     'at these constant rates. What is the total number of gifts wrapped by Nora and gifts tied by Theo?',
+      ['36', '42', '39', '33'], 3, [
+        'Nora: $30=6\\times5$, so she wraps $6\\times3=18$ gifts. Theo: $30=3\\times10$, so he ties $3\\times7=21$ gifts.',
+        'Total: $18+21=39$.'])
+    # p02: A x posters/h, B 3x as fast, 4 h -> 12x  ==>  oven A x loaves/h, B 4x as fast, 5 h -> 20x
+    S(M, 'wp26-p02', 'Oven A bakes $x$ loaves per hour. Oven B is 4 times as fast. How many loaves does B bake in 5 hours?',
+      ['$9x$', '$\\frac{x}{20}$', '$20x$', '$\\frac{5x}{4}$'], 3, [
+        'B bakes $4x$ loaves per hour.', 'In 5 hours: $5\\cdot4x=20x$ loaves.'])
+    # p03: 6 small/h or 4 large/h, 3 small + 5 large -> 1 h 45  ==>  tailor 12 pants/h or 2 coats/h, 8 pants + 3 coats -> 2 h 10
+    S(M, 'wp26-p03', 'A tailor hems 12 pairs of pants per hour or 2 coats per hour. How long does it take to hem 8 pairs of pants '
+                     'and 3 coats, one after another?',
+      ['1 hour 50 minutes', '2 hours 10 minutes', '2 hours 30 minutes', '2 hours 20 minutes'], 2, [
+        'Pants: $8\\div12=\\frac23$ hour $=40$ minutes. Coats: $3\\div2=1\\frac12$ hours $=90$ minutes.',
+        'Total: $40+90=130$ minutes $=$ 2 hours 10 minutes.'])
+    # p04: 7 packers make 96 more than 3 -> 24  ==>  9 sewing machines make 140 more than 4 -> 28
+    S(M, 'wp26-p04', 'Identical sewing machines work at a constant rate. Nine machines sew 140 more shirts in a day than four machines do. '
+                     'How many shirts does one machine sew per day?',
+      ['20', '35', '28', '14'], 3, [
+        'Nine machines sew 140 more shirts than four machines because of the $9-4=5$ extra machines.',
+        'One machine: $140\\div5=28$ shirts per day.'])
+    # p05: 4 clerks 18 / 6 min; 3 clerks 27 -> 12  ==>  6 cashiers 45 customers / 10 min; 4 cashiers 54 -> 18
+    S(M, 'wp26-p05', 'Six cashiers serve 45 customers in 10 minutes. At the same individual rate, how many minutes do four cashiers '
+                     'need to serve 54 customers?',
+      ['12', '18', '8', '27'], 2, [
+        'V method (team, work, time). Row 1: 6, 45, 10. Row 2: 4, 54, ?.',
+        '$?=\\frac{6\\cdot54\\cdot10}{45\\cdot4}=\\frac{3240}{180}=18$ minutes.',
+        'Method 2 · Compare by factors: from $45$ to $54$ customers the work is $\\times\\frac65$ (time goes the same way). '
+        'From $6$ to $4$ cashiers the team is $\\times\\frac23$ (time goes the opposite way → flip to $\\frac32$). $10\\cdot\\frac65\\cdot\\frac32=18$ minutes.'])
+    # p06: machine 480 parts/h, person 1 per 12 min -> 96  ==>  machine 360 jars/h, worker 1 per 4 min -> 24
+    S(M, 'wp26-p06', 'A machine seals 360 jars per hour. One worker seals one jar every 4 minutes. How many workers working together '
+                     'match the machine’s rate?',
+      ['90', '6', '24', '30'], 3, [
+        'One worker: $60\\div4=15$ jars per hour.', '$360\\div15=24$ workers.'])
+    # p07: 4 pumps 9 h + a pump twice as fast -> 6  ==>  5 printers 8 h + a printer three times as fast -> 5
+    S(M, 'wp26-p07', 'Five identical printers finish a print run in 8 hours. A sixth printer works three times as fast as one of the '
+                     'original printers. How many hours do all six printers need together?',
+      ['$6\\frac23$', '5', '4', '6'], 2, [
+        'The job: $5\\times8=40$ printer-hours (ordinary printers). The fast printer counts as 3 ordinary printers, so the team is worth $5+3=8$ printers.',
+        '$40\\div8=5$ hours. (Trap: counting the fast printer as an ordinary one gives $40\\div6=6\\frac23$.)'])
+    # p08: 5 x 8 + 6 x 10 = 100 worker-days, 10 workers -> 10  ==>  4 x 9 + 8 x 6 = 84 painter-days, 12 painters -> 7
+    S(M, 'wp26-p08', 'Four painters finish house A in 9 days. Eight equally fast painters finish house B in 6 days. '
+                     'How many days do twelve such painters need to finish both houses?',
+      ['15', '6', '7', '8'], 3, [
+        'House A: $4\\times9=36$ painter-days. House B: $8\\times6=48$ painter-days. Total: 84.',
+        'Twelve painters: $84\\div12=7$ days.'])
+    # p09: 24 plain or 8 decorated mugs a day, 48 each -> 12 (not 16)  ==>  20 small or 5 large bowls, 40 each -> 8 (not 12.5)
+    S(M, 'wp26-p09', 'A potter can make 20 small bowls or 5 large bowls in one day. She makes 40 of each kind. '
+                     'What is her average number of bowls made per working day?',
+      ['12.5', '8', '10', '6'], 2, [
+        'Small: $40\\div20=2$ days. Large: $40\\div5=8$ days.',
+        'Average rate $=$ total work $\\div$ total time $=80\\div10=8$ bowls per day (not the average of 20 and 5, which is 12.5).'])
+    # p11: pipes 6 h and 12 h -> 4  ==>  pumps 5 h and 20 h -> 4 hours
+    S(M, 'wp26-p11', 'Pump A fills a small reservoir in 5 hours, and pump B fills it in 20 hours. How many hours do they take together, '
+                     'starting with the reservoir empty?',
+      ['12.5', '2.5', '4', '10'], 3, [
+        'A: $\\frac15$ of the reservoir per hour. B: $\\frac1{20}$. Together: $\\frac4{20}+\\frac1{20}=\\frac5{20}=\\frac14$, so 4 hours.',
+        'Shortcut: $\\frac{5\\cdot20}{5+20}=\\frac{100}{25}=4$.'])
+    # p12: p envelopes in q minutes, 2q envelopes -> 2q^2/p  ==>  m bottles in n minutes, 3n bottles -> 3n^2/m
+    S(M, 'wp26-p12', 'A machine labels $m$ bottles in $n$ minutes at a constant rate. How many minutes does it need to label $3n$ bottles?',
+      ['$\\frac{3m^2}{n}$', '$\\frac{3n^2}{m}$', '$\\frac{3m}{n}$', '$\\frac{n^2}{3m}$'], 2, [
+        'One bottle takes $\\frac nm$ minutes. For $3n$ bottles: $3n\\cdot\\frac nm=\\frac{3n^2}{m}$ minutes.',
+        'Check with numbers: $m=3$, $n=6$. One bottle takes $2$ minutes, and $3n=18$ bottles take $36$ minutes. $\\frac{3\\cdot6^2}{3}=36$ ✓.',
+        'Method 2 · Compare by factors: the work goes from $m$ to $3n$ bottles, $\\times\\frac{3n}{m}$, and the time goes the same way: $n\\cdot\\frac{3n}{m}=\\frac{3n^2}{m}$.'])
+    # p13: 5 workers 8 crates 2 h -> one crate 75 min  ==>  3 workers 12 boxes 3 h -> 45 min
+    S(M, 'wp26-p13', 'Three identical workers pack 12 boxes in 3 hours. How many minutes does one worker need to pack one box?',
+      ['15', '5', '45', '60'], 3, [
+        'The team works $3\\times3=9$ worker-hours for 12 boxes. One box: $9\\div12=0.75$ worker-hours.',
+        'One worker needs 0.75 hours $=45$ minutes.',
+        'Method 2 · Compare by factors, starting from $180$ minutes: boxes $\\times\\frac1{12}$ (same way); workers $\\times\\frac13$ '
+        '(fewer workers, more time → flip to $3$). $180\\cdot\\frac1{12}\\cdot3=45$ minutes.'])
+    # p14: 3 hoses 5 h, 2 of them 10 h -> 1/10  ==>  3 sprinklers 4 h, 2 of them 12 h -> 1/6
+    S(M, 'wp26-p14', 'Three sprinklers together water a field in 4 hours. Two of those sprinklers together water the same field in 12 hours. '
+                     'What fraction of the field does the third sprinkler water in one hour?',
+      ['$\\frac{1}{4}$', '$\\frac{1}{6}$', '$\\frac{1}{3}$', '$\\frac{1}{12}$'], 2, [
+        'The three sprinklers water $\\frac14$ of the field per hour. The two sprinklers water $\\frac1{12}$ per hour.',
+        'The third sprinkler waters the difference: $\\frac14-\\frac1{12}=\\frac3{12}-\\frac1{12}=\\frac2{12}=\\frac16$ of the field per hour.'])
+    # p15: 3 experts = 2 x 4 trainees -> 8/3  ==>  5 senior cooks = 2 x 3 junior cooks -> 6/5
+    S(M, 'wp26-p15', 'Five senior cooks prepare twice as many meals per hour as three junior cooks. '
+                     'What is one senior cook’s rate divided by one junior cook’s rate?',
+      ['$\\frac{5}{6}$', '$\\frac{6}{5}$', '$\\frac{3}{10}$', '$\\frac{10}{3}$'], 2, [
+        'Let $s$ be the rate of one senior cook and $j$ the rate of one junior cook.',
+        'The seniors are twice as fast as a team, so the 2 goes on the smaller side: $5s=2\\cdot3j=6j$. Divide by $5j$: $\\frac sj=\\frac65$.'])
+    # p16: slow signal 4 cycles = fast 7 cycles, slow cycle 3/5 s -> 12/35  ==>  drummers 5 beats = 8 beats, slow beat 2/3 s -> 5/12
+    #      (review 2026-10-06: first version 3 beats / 8 beats -> 1/4 made the slow total a whole number - easier than the original)
+    S(M, 'wp26-p16', 'In the time a slow drummer plays 5 beats, a fast drummer plays 8 beats. Each slow beat takes $\\frac23$ of a second. '
+                     'How long is one fast beat?',
+      ['$\\frac{16}{15}$ seconds', '$\\frac{8}{5}$ seconds', '$\\frac{5}{12}$ second', '$\\frac{5}{8}$ second'], 3, [
+        'Five slow beats: $5\\times\\frac23=\\frac{10}3$ seconds.',
+        'Eight fast beats take the same time, therefore one fast beat takes $\\frac{10}3\\div8=\\frac{10}{24}=\\frac5{12}$ second.',
+        'Method 2 · Compare by factors: in the same time the fast drummer plays $\\frac85$ as many beats. A beat goes the opposite way → '
+        'flip to $\\frac58$: $\\frac23\\cdot\\frac58=\\frac{10}{24}=\\frac5{12}$ second.'])
+    # p17: M scanners L pages/h, D scanners 3 h -> 3DL/M  ==>  K printers P pages/h, N printers 5 h -> 5NP/K
+    S(M, 'wp26-p17', '$K$ identical printers print $P$ pages in one hour. How many pages do $N$ such printers print in 5 hours?',
+      ['$\\frac{5NP}{K}$', '$\\frac{5KP}{N}$', '$\\frac{NP}{5K}$', '$\\frac{5NK}{P}$'], 1, [
+        'One printer: $\\frac PK$ pages per hour. $N$ printers: $\\frac{NP}K$ pages per hour.',
+        'In 5 hours: $\\frac{5NP}K$. (Check: $K=3$, $P=12$, $N=6$: one printer does 4 per hour, six do 24 per hour, 120 in 5 hours, and $\\frac{5\\cdot6\\cdot12}3=120$ ✓.)',
+        'Method 2 · Compare by factors: printers $\\times\\frac NK$ and hours $\\times5$. Both push the pages the same way: $P\\cdot\\frac NK\\cdot5=\\frac{5NP}{K}$.'])
+    # p18: 4 painters 6 h, with a 5th 4 h -> 12  ==>  3 cleaners 8 h, with a 4th 6 h -> 24
+    S(M, 'wp26-p18', 'Three identical cleaners clean an office in 8 hours. With a fourth cleaner, who works at a different rate, '
+                     'the office takes 6 hours. How many hours would the fourth cleaner need alone?',
+      ['14', '2', '24', '48'], 3, [
+        'Three cleaners: $\\frac18$ of the office per hour. Four cleaners: $\\frac16$.',
+        'The fourth cleaner adds $\\frac16-\\frac18=\\frac4{24}-\\frac3{24}=\\frac1{24}$ per hour, therefore alone she needs 24 hours.'])
+    # p19: tap 10 h, 3 drains 4 h, 4 taps x 15 h -> 72  ==>  pipe 8 h, 2 drains 5 h, 3 pipes x 16 h -> 60
+    S(M, 'wp26-p19', 'A pipe fills a cistern in 8 hours. Two identical drains empty a full cistern in 5 hours. How many hours does one drain '
+                     'need to remove the amount of water that three such pipes supply in 16 hours?',
+      ['30', '60', '120', '48'], 2, [
+        'Three pipes for 16 hours: $3\\times16=48$ pipe-hours. One cistern needs 8 pipe-hours, so they supply $48\\div8=6$ cisterns.',
+        'Two drains empty a cistern in 5 hours, so one drain needs $2\\times5=10$ hours per cistern. Six cisterns: $6\\times10=60$ hours.'])
+    # p20: fast 3x slow, together 12 h -> slow 48  ==>  new robot 4x old, together 10 h -> old 50
+    S(M, 'wp26-p20', 'A new robot works four times as fast as an old robot. Together they finish an order in 10 hours. '
+                     'How many hours would the old robot need alone?',
+      ['40', '12.5', '25', '50'], 4, [
+        'Rates: old = 1 part, new = 4 parts, together = 5 parts.',
+        'The old robot alone has $\\frac15$ of the team rate, so it needs 5 times as long: $5\\times10=50$ hours.'])
+
+
+def rn_practice(M):
+    """Approved clean-up (35 -> 25): no copies in this topic. Keep 3 extra-bank warm-ups (p24 add the rates, p25 rate in
+    percent, p23 workers leave) and 3 September items of types the Hebrew practice does not have (q-07 a worker with a
+    different rate leaves, q-08 together then one stops - find its rate, q-09 two percent changes multiply)."""
+    P = 'wp26-practice'
+    N = lambda k: 'q-r26-t26-' + k
+    out = [
+        'wp26-p21',   # pump + leak: guided Q3 and p19 (working against)
+        'wp26-p22',   # equal worker joins: guided Q8 (joins midway) and p23
+        'wp26-p26',   # one drain, then a second joins: guided Q8 (same type)
+        'wp26-p27',   # V method, blank in the team: p05 and guided Q14 (stage / seating)
+        N('05'),      # rate -20%: p25 (rate in percent) and guided Q2
+        N('06'),      # find B from together: p18 (find the extra worker)
+        N('10'),      # ab/(a+b) with letters: guided Q4 / Q5 shortcut
+        N('11'),      # average rate, time weights: p09 and guided Q11
+        N('12'),      # workers join, whole job: p23 and guided Q8 ("left or whole" trap)
+        N('13'),      # average-rate trap, half smooth / half rough: p09
+    ]
+    for qid in out:
+        assert M.section_of(qid) == P, qid
+        M.unplace(qid)
+    M.practice_order(P, [
+        # easy
+        'wp26-p06', 'wp26-p02', 'wp26-p24', 'wp26-p11', 'wp26-p03', 'wp26-p01', 'wp26-p04', 'wp26-p12', 'wp26-p17', 'wp26-p13', 'wp26-p25',
+        # medium
+        'wp26-p05', 'wp26-p08', 'wp26-p09', 'wp26-p16', 'wp26-p20', 'wp26-p18', 'wp26-p15', 'wp26-p14', 'wp26-p23',
+        # exam-hard
+        'wp26-p07', 'wp26-p19', N('07'), N('09'), N('08'),
+    ])
+
+
+def rn_titles(M):
+    """Solution videos: title and the pre-loaded-question note follow the new stems."""
+    for f in M.D['flow']:
+        if f['topic'] != TOPIC or f['type'] != 'video': continue
+        v = M.video(f['ref']); qid = v.get('questionId')
+        if not qid or qid not in M.D['questions'] or f['ref'] in RN_RECORDED: continue
+        stem = M.q(qid)['stem']
+        v['title'] = v['navLabel'] = stem
+        for b in v['beats']:
+            pre = b['items'][:b['pre']]
+            if len(pre) == 1 and pre[0].get('k') == 'q':
+                if not b['loads']:   # (finish() would otherwise overwrite the canvas note of a rebuilt slide)
+                    sb = v.get('hybrid', {}).get('sidebar', [])
+                    lab = sb[b['active']] if 0 <= b['active'] < len(sb) else b['title']
+                    b['loads'] = 'Sidebar with "%s" highlighted; the items listed are already on the canvas.' % lab
+                b['canvas'] ='Pre-loaded — question %s with its four answer choices — "%s"' % (pre[0]['qid'], M.q(pre[0]['qid'])['stem'])
+        M.touched_videos.add(f['ref'])
+
+
+def rv_fixes(M):
+    """2026-10-06 review: leftovers of the old stories outside the stems/videos."""
+    def tab(headers, rows): return {'type': 'table', 'headers': headers, 'rows': rows}
+    M.q('wp26-g093')['solutionVisual'] = tab(['Situation', 'Time', 'Output'], [
+        ['Original', 'y', 'x'], ['Triple rate', 'y', '3x'], ['Triple rate, five times longer', '5y', '15x']])
+    M.q('wp26-g096')['solutionVisual'] = tab(['Printer', 'Batches in 30 hours'], [['A', '5'], ['B', '3'], ['Together', '8']])
+    M.q('wp26-g098')['solutionVisual'] = tab(['Gardeners', 'Trees', 'Hours'], [['3', '40', '5'], ['4', '96', '?']])
+    M.q('wp26-g105')['solutionVisual'] = tab(['Job', 'Original team', 'Hours', 'Worker-hours'], [
+        ['Stage', '12', '2', '24'], ['Seating', '14', '4', '56'], ['Together', '', '', '80']])
+    # g095 is about a pond now
+    b = M.video('solve-wp26-g095')['beats'][2]
+    assert b['title'] == 'Method 2 · Pick a tank size', b['title']
+    b['title'] = 'Method 2 · Pick a pond size'
+    M.touched_videos.add('solve-wp26-g095')
+
+
+def renumber_pass(M):
+    rn_lessons(M)
+    rn_guided(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+    rn_titles(M)
+    rv_fixes(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last

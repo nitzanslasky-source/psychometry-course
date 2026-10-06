@@ -198,3 +198,20 @@ The English-made guided questions (q-r26-t13-01, -02, -03, -13, -15) and the kep
 Independent check of the renumber pass (13 guided + 15 practice, 13 videos, lesson "Absolute Value", "Exam Tools", card). Every key recomputed (exactly one correct choice, Hebrew trap still a choice), every video step redone with the new numbers (no old numbers left in board/speech/draw), explanations and Method 2 lines match, practice removals valid (only English extras/September items; 3 warm-ups kept). Nothing recorded, no trinomial added. Duplicate scan topics 1–16: no clash. Rendered solve-q-367, -369, r26-t13-tools. No changes needed.
 - Note for the teacher: the kept warm-up alg-extra-unit-t13-3-6 (|x| = −x → x ≤ 0) is the same as a "Sign clues" row on the memory card (it was like that before this pass).
 - `python3 math_check.py 13 32` and the full `python3 math_check.py` → 0 / 0 / 0.
+
+## 2026-10-06 Hebrew back-check
+Every guided and practice question, lesson slide and card of topic 13 was compared with the teacher's Hebrew video
+subtitles (01-Algebra-Original-Subtitles.txt, lines 11081–13680: lesson + 8 sample questions). Nothing in topic 13 is
+recorded. Fixes are in `hebrew_backcheck(M)` in t13.py (runs last). Keys brute-forced; `python3 math_check.py 13 32` → 0/0/0;
+changed videos rendered and checked.
+
+| id | matched the Hebrew video | new | answer |
+|---|---|---|---|
+| q-361 (+ video) | $5<\|x+2\|$, ranges $x>3$ / $x<-7$, choices 7, −8, 5 — the Hebrew question exactly | $8<\|x+1\|$ → $x>7$ or $x<-9$; choices 9, 2, −10, 11 | 2 (choice 2) |
+| q-364 (+ video) | $a<b<0<c<d$ (Hebrew letters and choices); video examples −2/2, −20/20 (Hebrew's) | $p<q<0<r<s$; examples −5/5, −40/40 | $\|q\|<\|p\|$ (choice 2) |
+| solve-q-370 | plug-ins 1, 10, −10 and "−1 + 1 = 0" (Hebrew video's) | plug-ins 2, 9, −8 and "−9 + 9" | unchanged (choice 3) |
+| lesson absolute-value #2, #3 | "friend's house" distance story; $\|8\|=8$ | "walk to the bus stop"; $\|11\|=11$ | — |
+
+Left on purpose (only one number shared, different equation): q-359 $\|x+7\|=9$ (Hebrew $\|x+4\|=9$), q-360 $\|x+3\|<7$
+(Hebrew $\|x+4\|<7$), q-367 ($4\|x\|+12\|y\|=44$, $x+3\|y\|=1$; Hebrew $4\|x\|+8\|y\|=20$, $x+2\|y\|=1$). Letters-only
+questions q-358, q-363, q-365, q-366, q-368 already differ (letters / numbers / examples). Practice: no matches.

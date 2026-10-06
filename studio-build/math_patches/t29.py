@@ -902,3 +902,774 @@ def practice_methods(M):
     _pm_add(M, 'wp29-p21', [r'Door: COUNT — $36$ equally likely pairs. A six on the first dice: $6$ pairs. A six on the second: $6$ pairs. The pair (6, 6) is in both: $6+6-1=11$. $P=\frac{11}{36}$.'])
     _pm_add(M, 'wp29-p10', [r'Door: PATH, not COUNT — the $22$ tokens are not equally likely. Each token in bag A has $\frac12\cdot\frac1{12}=\frac1{24}$, and each token in bag B has $\frac12\cdot\frac1{10}=\frac1{20}$. That is why pouring the bags together ($\frac5{11}$) is wrong.'])
     _pm_add(M, 'wp29-p16', [r'Door: COUNT — $8$ dice results times $8$ coin sequences: $64$ equally likely outcomes. Good ones: coin sum $2$ ($3$ sequences) with dice $1$: $3$. Coin sum $3$ ($1$ sequence) with dice $1$ or $2$: $2$. $P=\frac{3+2}{64}=\frac5{64}$.'])
+
+
+# ======================================================================================================
+# 2026-10-06 renumber pass (runs LAST). The English course must not look like the Hebrew one: every Hebrew-derived
+# question (guided wp29-g147 … g165, practice wp29-p01 … p20) gets new numbers and a new story; idea, trap, level and
+# methods stay. Every guided solution video is rewritten to match. 8-sided dice are gone (dice are always 6-sided):
+# where the old item needed other numbers it uses a spinner with equal sections or numbered cards. The summary, the
+# card and the dice-symmetry lesson lose the examples that landed on the Hebrew numbers (heads and a 3 = 1/12, five
+# doors 1/5 + 4/5 · 1/4, sums 10 and 4, four heads in a row, pass 2/3 / fail 1/3). Practice clean-up 31 -> 24.
+# Nothing in topic 29 is recorded (checked ~/Documents/Course.recordings 2026-10-06).
+# ======================================================================================================
+RN_RECORDED = set()
+
+
+def _rn_q(M, qid, stem, choices, correct, expl):
+    if qid in RN_RECORDED: return
+    M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+
+
+def _rn_video(M, qid, slides, titles=None):
+    """Rewrite the question slides (2, 3, ...) of a guided question's solution video. The pre-loaded question stays."""
+    vid = 'solve-' + qid
+    if vid in RN_RECORDED: return
+    v = M.video(vid)
+    assert len(v['beats']) == len(slides) + 1, (vid, len(v['beats']))
+    for n, script in enumerate(slides, 2):
+        assert v['beats'][n - 1]['mode'] == 'question', (vid, n)
+        t = (titles or {}).get(n)
+        M.set_slide(vid, n, script=script, title=t)
+
+
+def _rn_item(M, vid, n, k):
+    return copy.deepcopy(M.slide(vid, n)['items'][k])
+
+
+def _rn_sub(M, vid, n, pairs):
+    """Exact substring replacements in one slide's spoken / drawn lines, labels and board items (each must hit)."""
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = False
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit = True
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit = True
+        assert hit, (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def _rn_slide_no(M, vid, title):
+    return next(i for i, b in enumerate(M.video(vid)['beats'], 1) if b['title'] == title)
+
+
+def rn_guided(M):
+    # ---------- g147: 8-sided die, even -> 1/2  ==>  spinner with 10 equal sections, even -> 5/10 = 1/2
+    g = 'wp29-g147'
+    _rn_q(M, g, 'A spinner is divided into 10 equal sections numbered 1 through 10. The spinner is spun once. '
+                'What is the probability that it stops on an even number?',
+          ['$\\frac1{10}$', '$\\frac12$', '$\\frac25$', '$\\frac35$'], 2, [
+        'Possible: the spinner has 10 equally likely sections.',
+        'Wanted: the even numbers 2, 4, 6, 8 and 10 — that is 5 sections.',
+        '$P=\\frac5{10}=\\frac12$.'])
+    _rn_video(M, g, [[
+        "Possible first. Ten equal sections: ten results.",
+        D('Write "possible = 10"'),
+        "So the bottom is ten.",
+        "Now the wanted: an even number.",
+        D('Write "wanted: 2, 4, 6, 8, 10 → 5"'),
+        "Two, four, six, eight, ten. Five good results.",
+        D('Write "5/10 = 1/2" and circle choice 2'),
+        "Five out of ten — reduce it: one half. Choice two.",
+        "A question this easy won't be on the exam. But the routine — possible, then wanted — is exactly what you'll use.",
+    ], [
+        "A quick extra way to see it.",
+        D('Pair the sections: (1, 2) (3, 4) (5, 6) (7, 8) (9, 10)'),
+        "Pair the numbers. Every pair has one odd and one even.",
+        "So exactly half the sections are even. One half.",
+    ]])
+
+    # ---------- g148: 5 green, 4 orange -> 5/9  ==>  7 green, 4 yellow marbles (review: the Hebrew had 5 blue, 4 white) -> 7/11 (trap: wanted = 1)
+    g = 'wp29-g148'
+    _rn_q(M, g, 'A box contains 7 green marbles and 4 yellow marbles. One marble is drawn at random. '
+                'What is the probability that it is green?',
+          ['$\\frac4{11}$', '$\\frac1{11}$', '$\\frac7{11}$', '$\\frac74$'], 3, [
+        'Possible: $7+4=11$ marbles, all equally likely.',
+        'Wanted: any of the 7 green marbles (not 1 — every green marble is good).',
+        '$P(\\text{green})=\\frac7{11}$.'])
+    _rn_video(M, g, [[
+        "Possible first: all the marbles. Seven plus four — eleven.",
+        D('Write "possible = 11"'),
+        "Now the wanted: green.",
+        "Here's the classic mistake. Students say: we're drawing ONE marble, so the wanted is one.",
+        D('Write "wanted = 1" and cross it out'),
+        "No! We draw one marble — but there are seven green marbles, and every one of them is good for us.",
+        D('Write "wanted = 7"'),
+        "Picture all eleven marbles. Any of the seven green ones — success.",
+        D('Write "7/11" and circle choice 3'),
+        "Seven out of eleven. Choice three.",
+    ]])
+
+    # ---------- g149: 8 purple, 5 white, 3 purple out -> 5/10  ==>  11 orange, 7 white, 4 orange out -> 7/14 = 1/2
+    g = 'wp29-g149'
+    _rn_q(M, g, 'A bag initially contains 11 orange beads and 7 white beads. Four orange beads have already been removed '
+                'and not replaced. What is the probability that the next bead drawn at random is orange?',
+          ['$\\frac12$', '$\\frac{11}{14}$', '$\\frac7{18}$', '$\\frac{11}{18}$'], 1, [
+        'The four orange beads are already out, so update the bag first.',
+        'Possible: $18-4=14$ beads. Wanted: $11-4=7$ orange beads.',
+        '$P=\\frac7{14}=\\frac12$. Do not multiply by the chance of the earlier draws — they already happened.'])
+    _rn_video(M, g, [[
+        "Possible first. There were eighteen beads — but four were already taken out.",
+        D('Write "possible = 18 − 4 = 14"'),
+        "Fourteen beads left in the bag. That's the bottom.",
+        "The wanted: orange. There were eleven — four already came out.",
+        D('Write "wanted = 11 − 4 = 7"'),
+        "That already happened. It's the past — it doesn't interest us. Seven orange left.",
+        D('Write "7/14 = 1/2" and circle choice 1'),
+        "Seven out of fourteen. One half. Choice one.",
+        "Don't multiply by the chance of those first four draws — they're a given fact, not part of the question.",
+    ], [
+        "Quick check.",
+        D('Write "7 orange · 7 white"'),
+        "Seven orange, seven white. Equal groups — so each color has half the chance.",
+    ]])
+
+    # ---------- g150: 28 tokens, gold 3/7 -> silver 16  ==>  36 tokens, red 4/9 -> blue 20 (trap: red 16)
+    g = 'wp29-g150'; vid = 'solve-' + g
+    rule = _rn_item(M, vid, 2, 1)
+    _rn_q(M, g, 'A box contains 36 tokens. Each token is either red or blue. When a token is drawn at random, the '
+                'probability that it is red is $\\frac49$. How many blue tokens are in the box?',
+          ['24', '16', '30', '20'], 4, [
+        'Complement: $P(\\text{blue})=1-\\frac49=\\frac59$.',
+        'Blue tokens out of 36: $\\frac x{36}=\\frac59$, so $9x=5\\cdot36$ and $x=20$.',
+        'Or find the red first: $\\frac49\\cdot36=16$ red, so $36-16=20$ blue.'])
+    _rn_video(M, g, [[
+        A('The complement rule appears', rule),
+        "All the probabilities together always make one.",
+        "If my chance of passing an exam is three quarters, my chance of failing is one quarter. Pass or fail — there's no third option.",
+        "A coin: heads one half, tails one half. Together — one.",
+        "Now the question. Red has probability four ninths.",
+        D('Write "blue = 1 − 4/9 = 5/9"'),
+        "So blue completes it to one: five ninths.",
+        "And what is that probability? Blue tokens out of all thirty-six tokens.",
+        D('Write "x/36 = 5/9"'),
+        "x blue out of thirty-six equals five ninths.",
+        D('Cross-multiply: write "9x = 5 · 36 → x = 20"'),
+        "Cross-multiply: nine x equals five times thirty-six. x is twenty.",
+        D('Circle choice 4'),
+        "Twenty blue tokens. Choice four.",
+    ], [
+        "Or find the red first.",
+        D('Write "4/9 of 36 = 16 → 36 − 16 = 20"'),
+        "Four ninths of thirty-six: sixteen red. Thirty-six minus sixteen — twenty blue.",
+        "Careful: sixteen is the red count. They asked for blue.",
+    ]], titles={3: 'Method 2 · Red first'})
+
+    # ---------- g152: coin + 8-sided die, heads and 5 -> 1/16  ==>  coin + spinner (5 sections), tails and 4 -> 1/10
+    g = 'wp29-g152'
+    _rn_q(M, g, 'A fair coin is tossed, and a spinner divided into 5 equal sections numbered 1 through 5 is spun. '
+                'What is the probability of getting tails and a 4?',
+          ['$\\frac7{10}$', '$\\frac15$', '$\\frac1{10}$', '$\\frac12$'], 3, [
+        '$P(\\text{tails})=\\frac12$ and $P(4)=\\frac15$.',
+        'We need both (AND), so multiply: $\\frac12\\cdot\\frac15=\\frac1{10}$.',
+        'Check by counting: $2\\cdot5=10$ equally likely pairs, and only one of them is tails with a 4.'])
+    _replace_say(M, 'solve-' + g, 1, "Two events: a coin and a die.", "Two events: a coin and a spinner.")
+    _rn_video(M, g, [[
+        "We want tails AND a four. \"And\" — multiply.",
+        D('Write "P(tails) = 1/2"'),
+        "Tails: one half.",
+        D('Write "P(4) = 1/5"'),
+        "A four on a spinner with five equal sections: one good result out of five.",
+        D('Write "1/2 · 1/5 = 1/10" and circle choice 3'),
+        "One half times one fifth: one tenth. Choice three.",
+    ], [
+        "Check it by counting.",
+        D('Write "2 · 5 = 10 pairs, 1 good"'),
+        "Two coin results times five spinner results — ten equally likely pairs. Exactly one is tails-and-four.",
+    ]])
+
+    # ---------- g153: 4 tosses, all tails -> 1/16  ==>  5 tosses, all tails -> 1/32
+    g = 'wp29-g153'
+    _rn_q(M, g, 'A fair coin is tossed five times. What is the probability of getting tails on all five tosses?',
+          ['$\\frac1{16}$', '$\\frac1{32}$', '$\\frac12$', '$\\frac18$'], 2, [
+        'Each toss gives tails with probability $\\frac12$.',
+        'Tails AND tails AND tails AND tails AND tails: $\\left(\\frac12\\right)^5=\\frac1{32}$.'])
+    _rn_video(M, g, [[
+        "Tails on the first toss — one half.",
+        "Tails on the second — also one half. The third, the fourth, the fifth — one half each.",
+        D('Write "1/2 · 1/2 · 1/2 · 1/2 · 1/2"'),
+        "We want tails on the first AND the second AND the third AND the fourth AND the fifth. \"And\" — multiply.",
+        D('Write "= 1/32" and circle choice 2'),
+        "One thirty-second. Choice two.",
+    ], [
+        D('Write "2⁵ = 32 sequences, only TTTTT"'),
+        "Two times two times two times two times two: thirty-two sequences. Only one is all tails.",
+    ]])
+
+    # ---------- g154: two dice, sum 8 -> 5/36  ==>  sum 5 -> 4/36 = 1/9 (traps: 1/18 unordered, 1/6 sum 7)
+    g = 'wp29-g154'; vid = 'solve-' + g
+    grid = _rn_item(M, vid, 3, 1); grid['v'] = dict(grid['v'], target=5); grid.update(x=660, w=900)
+    _rn_q(M, g, 'A fair six-sided dice is tossed twice. What is the probability that the sum of the two results is 5?',
+          ['$\\frac1{18}$', '$\\frac16$', '$\\frac19$', '$\\frac5{36}$'], 3, [
+        'Possible: $6\\cdot6=36$ ordered pairs.',
+        'Wanted: a sum of 5 — $(1, 4)$, $(2, 3)$, $(3, 2)$, $(4, 1)$. That is 4 pairs: $\\frac4{36}=\\frac19$. '
+        '$(1, 4)$ and $(4, 1)$ are different results.',
+        'Toss by toss: the first toss must be 1, 2, 3 or 4 ($\\frac46$), and then exactly one number works on the second '
+        'toss ($\\frac16$): $\\frac46\\cdot\\frac16=\\frac4{36}=\\frac19$.'])
+    _rn_video(M, g, [[
+        "Let's lay it out so we can see it. When is the sum five?",
+        D('Write "1+4, 2+3, 3+2, 4+1"'),
+        "First die one — second must be four. Two — three. Three — two. Four — one.",
+        "Four options. Two dice give six times six — thirty-six possibilities. Four out of thirty-six — we could stop here.",
+        "But let's practice the method we'll use on harder questions: each die on its own, then multiply.",
+    ], [
+        "First die: what can it show? One, two, three or four. A five or a six is already too big.",
+        D('Write "first die: 4/6"'),
+        "Four good results out of six.",
+        "Second die: careful. It looks like four options — but only one number works with the first die.",
+        "Got a one first? You MUST get a four. Got a three? You MUST get a two. Only one good result.",
+        D('Write "second die: 1/6"'),
+        "One out of six — a forced choice: only one number works.",
+        D('Write "4/6 · 1/6 = 4/36 = 1/9" and circle choice 3'),
+        "We want the first AND the second: multiply. Four thirty-sixths — one ninth. Choice three.",
+        A('The grid of 36 pairs appears, sum 5 highlighted', grid),
+        "And here's the full grid — four highlighted cells out of thirty-six.",
+        "One eighteenth is the trap: it counts one-four and four-one as one result. They are two different results.",
+    ]])
+
+    # ---------- g155: Rosa / Sam, six in a row  ==>  Omar / Kate, seven in a row (still equal)
+    g = 'wp29-g155'
+    _rn_q(M, g, 'Omar has tossed a fair coin and obtained tails seven times in a row. Kate has tossed another fair coin and '
+                'obtained heads seven times in a row. All tosses are independent. How do their probabilities of heads '
+                'on the next toss compare?',
+          ['They are equal', 'Kate’s probability is greater', 'Omar’s probability is greater',
+           'The probabilities cannot be compared'], 1, [
+        'A fair coin has no memory. Each new toss gives heads with probability $\\frac12$.',
+        'Omar: $\\frac12$. Kate: $\\frac12$. The probabilities are equal.'])
+    _rn_video(M, g, [[
+        "At first glance it looks like Omar should get heads now. Seven tails in a row — heads has to come!",
+        "And Kate? Seven heads already — an eighth head in a row? What are the chances?",
+        "It only looks that way. What happened in the past doesn't affect the future.",
+        D('Write "Omar: 1/2 · Kate: 1/2"'),
+        "The coin doesn't know what came before. Every toss: heads one half, tails one half.",
+        "Think of a roulette table. People wait for eight reds in a row — then bet on black. It means nothing. Still one half.",
+        "And someone who just walked up to the table doesn't know the history. The chance can't be different for them.",
+        D('Circle choice 1'),
+        "The chances are equal. Choice one.",
+        "This one is rare on the exam — but when it shows up, it's meant to trick you.",
+    ]])
+
+    # ---------- g156: two 8-sided dice match -> 1/8  ==>  two spinners with 5 equal sections match -> 1/5
+    g = 'wp29-g156'; vid = 'solve-' + g
+    grid = _rn_item(M, vid, 3, 1); grid['v'] = dict(grid['v'], sides=5); grid.update(x=660, y=300, w=900)
+    _rn_q(M, g, 'Two spinners are each divided into 5 equal sections numbered 1 through 5. Both spinners are spun, '
+                'independently. What is the probability that they show the same number?',
+          ['$\\frac45$', '$\\frac15$', '$\\frac1{25}$', '$\\frac25$'], 2, [
+        'The first spinner can show anything: probability $\\frac55=1$.',
+        'The second spinner must show the same number: 1 good section out of 5, so $\\frac15$.',
+        '$1\\cdot\\frac15=\\frac15$. Check by counting: 5 matching pairs out of $5\\cdot5=25$ pairs, and $\\frac5{25}=\\frac15$.'])
+    _replace_say(M, vid, 1, "A double — the same number on both dice.", "A match — the same number on both spinners.")
+    _rn_video(M, g, [[
+        "First spinner: the result doesn't matter. One, three, five — whatever.",
+        D('Write "first spinner: 5/5 = 1"'),
+        "All five results are good. Five out of five — one.",
+        "Second spinner: it has to match the first. A forced choice again.",
+        "Got a four? You need a four. Got a two? You need a two. One good result.",
+        D('Write "second spinner: 1/5"'),
+        D('Write "1 · 1/5 = 1/5" and circle choice 2'),
+        "One times one fifth — one fifth. Choice two.",
+    ], [
+        A('The 5 × 5 grid appears with its diagonal highlighted', grid),
+        D('Write "5 matches / 25 = 1/5"'),
+        "You could count directly: five matching pairs out of twenty-five. One fifth.",
+        "But my tip: work out each event separately, like we did first. Counting everything at once is where mistakes happen.",
+    ]], titles={2: "First spinner doesn't matter", 3: 'Method 2 · Count the matches'})
+
+    # ---------- g157: 4 red, 4 yellow, different colors -> 4/7  ==>  6 green, 6 white -> 6/11 (trap 5/11 = same color)
+    g = 'wp29-g157'
+    _rn_q(M, g, 'A bag contains 6 green counters and 6 white counters. Two counters are drawn at random, without '
+                'replacement. What is the probability that they are different colors?',
+          ['$\\frac12$', '$\\frac5{11}$', '$\\frac6{11}$', '$\\frac14$'], 3, [
+        'The first counter can be any color: probability 1.',
+        'Without replacement, 11 counters are left, and 6 of them are the other color: $\\frac6{11}$.',
+        '$1\\cdot\\frac6{11}=\\frac6{11}$. Check with the two orders: green then white, OR white then green: '
+        '$\\frac6{12}\\cdot\\frac6{11}+\\frac6{12}\\cdot\\frac6{11}=\\frac3{11}+\\frac3{11}=\\frac6{11}$.'])
+    _rn_video(M, g, [[
+        "Remember from combinations: with or without replacement? Here — without. A counter that comes out stays out.",
+        "And we draw one at a time — first counter, then second.",
+        "Even when a question says two are drawn together — think of them one after the other, without replacement.",
+        "First counter: its color doesn't matter. We just need the second to be different.",
+        D('Write "first: 12/12 = 1"'),
+        "Second counter: now only eleven are left in the bag.",
+        D('Write "possible = 11"'),
+        "Drew a green first? Six whites are still there. Drew a white? Six greens are still there.",
+        D('Write "wanted = 6 → 6/11"'),
+        D('Write "1 · 6/11 = 6/11" and circle choice 3'),
+        "One times six elevenths. Choice three.",
+    ], [
+        D('Write "6/12 · 6/11 + 6/12 · 6/11 = 6/11"'),
+        "Green then white, or white then green. Two separate orders — add them. Same six elevenths.",
+    ]])
+
+    # ---------- g158: 7 lockers, open 2 -> 2/7  ==>  8 boxes, open 2 -> 2/8 = 1/4 (trap 1/8 + 1/7 = 15/56)
+    g = 'wp29-g158'
+    _rn_q(M, g, 'A prize is equally likely to be in any of 8 closed boxes. You may open 2 different boxes, choosing '
+                'without any extra information. What is the probability that you find the prize?',
+          ['$\\frac18$', '$\\frac{15}{56}$', '$\\frac14$', '$\\frac2{15}$'], 3, [
+        'Possible: the prize is in one of 8 equally likely boxes. Wanted: it is in one of the 2 boxes you open.',
+        '$P=\\frac28=\\frac14$.',
+        'Check with two separate cases: the prize is in the first box, $\\frac18$, OR the first is empty and the second '
+        'has it, $\\frac78\\cdot\\frac17=\\frac18$. Add: $\\frac18+\\frac18=\\frac14$.'])
+    _rn_video(M, g, [[
+        "Possible first: the prize can be in any of eight boxes. Eight equally likely places.",
+        D('Write "possible = 8"'),
+        "Wanted: the prize is in one of the two boxes you open. Two good places.",
+        D('Write "wanted = 2 → 2/8 = 1/4"'),
+        "Two out of eight — one quarter.",
+        D('Circle choice 3'),
+        "Choice three.",
+    ], [
+        "Let's check it step by step — an OR of two separate cases.",
+        "Case one: the prize is in the first box you open.",
+        D('Write "case 1: 1/8"'),
+        "One out of eight.",
+        "Case two: the first box is empty, AND the second one has it.",
+        D('Write "case 2: 7/8 · 1/7 = 1/8"'),
+        "Miss the first: seven eighths. Then seven boxes are left, and one has it: one seventh. Multiply — one eighth.",
+        "The two cases can't happen together. So add them.",
+        D('Write "1/8 + 1/8 = 2/8 = 1/4"'),
+        "One quarter — the same answer.",
+        "The trap: \"one eighth on the first try, one seventh on the second\" — that's choice two. But you only get a second try after you miss the first.",
+        "Think of a driving test. You can't walk in and say: I'm here for my second test. First you have to fail the first one.",
+    ], [
+        D('Write "miss both: 7/8 · 6/7 = 6/8 = 3/4 → 1 − 3/4 = 1/4"'),
+        "Or: missing both is seven eighths times six sevenths — three quarters. The complement: one quarter.",
+    ]], titles={2: 'Method 1 · Count the boxes'})
+
+    # ---------- g160: sums 9 and 5  ==>  sums 8 and 6 (same distance from 7 -> A = B)
+    g = 'wp29-g160'
+    _rn_q(M, g, 'Two fair six-sided dice are tossed. $A$ is the probability that the sum is 8, and $B$ is the probability '
+                'that the sum is 6. Which of the following is correct?',
+          ['$A>B$', '$A=B$', '$A<B$', 'It cannot be determined from the information given.'], 2, [
+        'A sum of 8: $(2, 6)$, $(3, 5)$, $(4, 4)$, $(5, 3)$, $(6, 2)$ — 5 pairs. A sum of 6: $(1, 5)$, $(2, 4)$, $(3, 3)$, '
+        '$(4, 2)$, $(5, 1)$ — 5 pairs.',
+        'Both probabilities are $\\frac5{36}$, so $A=B$.',
+        'Faster: 8 and 6 are the same distance from 7. Swap every face $x$ for $7-x$: each pair with sum 8 becomes a pair '
+        'with sum 6.'])
+    _rn_video(M, g, [[
+        "They're asking which probability is bigger: a sum of eight, or a sum of six.",
+        "Sometimes it's a story — one friend bets on a sum of six, another on eight. Same question.",
+        D('Write "7 + 1 = 8 · 7 − 1 = 6"'),
+        "Eight is one above seven. Six is one below seven.",
+        "Same distance from seven — so by symmetry, the same probability.",
+        D('Circle choice 2'),
+        "A equals B. Choice two. No counting needed — and no chance to get confused counting.",
+    ], [
+        D('Write "8: (2,6)(3,5)(4,4)(5,3)(6,2) · 6: (1,5)(2,4)(3,3)(4,2)(5,1)"'),
+        "If you want proof: five ways each. Five out of thirty-six for both.",
+    ]])
+
+    # ---------- g161: 26 letters / NOAH -> 1/26  ==>  7 days of the week / the 2 weekend days -> 1/7 (trap 2/7)
+    g = 'wp29-g161'
+    _rn_q(M, g, 'Ella chooses one of the 7 days of the week at random. Independently, Omar chooses one of the 2 weekend '
+                'days, Saturday or Sunday, at random. What is the probability that they choose the same day?',
+          ['$\\frac27$', '$\\frac1{14}$', '$\\frac12$', '$\\frac17$'], 4, [
+        'Let Omar choose first. Either of his 2 days is fine (both are days of the week): probability 1.',
+        'Ella must then choose that one day out of 7: $\\frac17$.',
+        'The long way gives the same: Ella picks Saturday or Sunday ($\\frac27$), and then Omar matches it ($\\frac12$): '
+        '$\\frac27\\cdot\\frac12=\\frac17$.'])
+    _rn_video(M, g, [[
+        "Start with the regular math. Let Ella choose first.",
+        "Seven days. Which ones are good for us? Only Omar's two days — Saturday and Sunday.",
+        D('Write "Ella: 2/7"'),
+        "So Ella picks a good day with probability two out of seven.",
+        "Now Omar. Is every one of his days good? No! Only the day Ella already chose.",
+        "Say Ella picked Sunday. Now Omar must pick Sunday — one day out of his two.",
+        D('Write "Omar: 1/2"'),
+        "One half. And it doesn't matter which of the two Ella picked — Omar always needs that one.",
+        "Ella AND Omar — an \"and\" connection means multiply.",
+        D('Write "2/7 · 1/2", cancel the 2s, write "= 1/7"'),
+        "Cancel the twos: one seventh.",
+        D('Circle choice 4'),
+        "Choice four. And careful — two sevenths is only Ella's step. It's sitting there as a trap.",
+    ], [
+        "Now a small psychometric flash. Faster — almost no calculation.",
+        "The order doesn't matter. They just need the same day. So let Omar go first.",
+        "Which of Omar's days are good for us? Both of them! Saturday and Sunday are on Ella's list too.",
+        D('Write "Omar: 2/2 = 1"'),
+        "Two out of two. Probability one. Omar's choice doesn't interest us at all.",
+        "Say he picks Saturday. Now Ella must pick Saturday — one day out of seven.",
+        D('Write "Ella: 1/7" and circle choice 4'),
+        "One seventh. That's already the answer. Choice four.",
+        "When one stage can't go wrong — skip it. Look straight at the stage that can.",
+    ]], titles={2: 'Method 1 · Ella first', 3: 'Method 2 · Omar first'})
+
+    # ---------- g162: r groups of s, oldest -> s^(-r), plug r = 2, s = 3  ==>  m rounds of n envelopes -> n^(-m),
+    #            plug m = 3, n = 2 (the Hebrew plugged 2 classes / 3 students)
+    g = 'wp29-g162'
+    _rn_q(M, g, 'A game has $m$ rounds. In each round there are $n$ closed envelopes, and exactly one of them holds a prize. '
+                'In each round the player opens one envelope at random. What is the probability that the player wins a '
+                'prize in every round?',
+          ['$\\frac mn$', '$m^{-n}$', '$n^{-m}$', '$\\frac1{mn}$'], 3, [
+        'In each round exactly one envelope holds a prize: probability $\\frac1n$.',
+        'All $m$ rounds must succeed (AND): $\\left(\\frac1n\\right)^m=\\frac1{n^m}=n^{-m}$.',
+        'Check with numbers: $m=3$ and $n=2$ give $\\frac12\\cdot\\frac12\\cdot\\frac12=\\frac18$. Only $n^{-m}=2^{-3}=\\frac18$ '
+        'fits (the others give $\\frac32$, $\\frac19$ and $\\frac16$).'])
+    _rn_video(M, g, [[
+        "We don't know how many rounds — m of them. We don't know how many envelopes — n in each round.",
+        "But in every round, only ONE envelope holds a prize.",
+        D('Next to the question write "one round: 1/n"'),
+        "So in each round, the chance of opening the prize envelope is one out of n.",
+        "We want a prize in this round AND this one AND this one — all m rounds.",
+        D('Write "1/n · 1/n · … (m times) = (1/n)^m"'),
+        "\"And\" means multiply. One over n, m times: one over n, to the power m.",
+        "Is that in the choices? Not in that form. They added some exponent technique.",
+        D('Write "= 1/n^m = n^(−m)"'),
+        "A fraction to a power: one to the m is just one, and n to the m goes underneath. One over n to the m — and a negative exponent flips it: n to the minus m.",
+        D('Circle choice 3'),
+        "Choice three.",
+    ], [
+        "The psychometric way: the choices have letters — so plug in easy numbers.",
+        "Try one round with one envelope? The prize is found for sure.",
+        "But look at the choices: with ones, every choice becomes one. Useless.",
+        "Two and two? Check the choices first: three of them come out one quarter. Useless again.",
+        "So here's the rule: when you plug in, check the choices FIRST — make sure they're all different. You'd have to plug into them anyway.",
+        D('Write "m = 3, n = 2" and next to the choices write 3/2, 1/9, 1/8, 1/6'),
+        "Three rounds, two envelopes each: three halves, one ninth, one eighth, one sixth. All different — good numbers.",
+        D('Write "1/2 · 1/2 · 1/2 = 1/8"'),
+        "Now the question: one half in each of the three rounds. Multiply — one eighth.",
+        D('Circle choice 3'),
+        "One eighth — choice three. Plugging in makes a letters question a numbers question.",
+    ]])
+
+    # ---------- g163: buttons 800/40 + 400/110 -> 7/8  ==>  eggs 600/25 + 300/50 -> 825/900 = 11/12
+    g = 'wp29-g163'
+    _rn_q(M, g, 'Farm A packs 600 eggs a day, and 25 of them are cracked. Farm B packs 300 eggs a day, and 50 of them are '
+                'cracked. One egg is chosen at random from the eggs both farms pack in one day. What is the probability '
+                'that it is not cracked?',
+          ['$\\frac1{12}$', '$\\frac{43}{48}$', '$\\frac{11}{12}$', '$\\frac56$'], 3, [
+        'Total: $600+300=900$ eggs. Cracked: $25+50=75$.',
+        '$P(\\text{cracked})=\\frac{75}{900}=\\frac1{12}$, so $P(\\text{not cracked})=1-\\frac1{12}=\\frac{11}{12}$.',
+        'Directly: not cracked $=575+250=825$, and $\\frac{825}{900}=\\frac{11}{12}$.'])
+    _rn_video(M, g, [[
+        "Probability: what we want, over everything there is.",
+        "The egg comes from BOTH farms together. Picture one big basket with all the eggs of both farms.",
+        D('Under the question write "total: 600 + 300 = 900"'),
+        "Six hundred plus three hundred: nine hundred eggs. That's the bottom.",
+        "What do we want? NOT cracked.",
+        D('Write "A: 600 − 25 = 575" and "B: 300 − 50 = 250"'),
+        "Farm A: five seventy-five not cracked. Farm B: two fifty not cracked.",
+        D('Write "575 + 250 = 825", then "825/900 = 11/12"'),
+        "Eight twenty-five out of nine hundred. Divide both by seventy-five — eleven twelfths.",
+        D('Circle choice 3'),
+        "Choice three.",
+    ], [
+        "Now let's shorten the calculation with the complementary probability.",
+        "Same basket, nine hundred eggs. But instead of counting the good ones — count the cracked ones.",
+        D('Write "cracked: 25 + 50 = 75", then "75/900 = 1/12"'),
+        "Twenty-five plus fifty: seventy-five. Seventy-five out of nine hundred — one twelfth. That's easy.",
+        "But one twelfth is the chance of CRACKED. Cracked and not cracked must add up to one.",
+        D('Write "1 − 1/12 = 11/12" and circle choice 3'),
+        "So not cracked is eleven twelfths. Choice three.",
+        "It's like percentages: sometimes the complement is simpler — then subtract it from the whole.",
+        "And one twelfth is choice one — the cracked trap. Answer the question they asked.",
+    ]])
+
+    # ---------- g164: 5 genres, Mon jazz -> Wed folk 3/16  ==>  6 gym classes, Thu yoga -> Sat boxing 4/5 · 1/5 = 4/25
+    g = 'wp29-g164'
+    _rn_q(M, g, 'A gym offers six types of classes. Each day, Ben chooses at random one of the five types he did not choose '
+                'the day before. On Thursday he chose yoga. What is the probability that he chooses boxing on Saturday?',
+          ['$\\frac15$', '$\\frac1{25}$', '$\\frac4{25}$', '$\\frac16$'], 3, [
+        'Thursday (yoga) is given, so it has probability 1.',
+        'Friday: 5 types are allowed (not yoga). Boxing on Friday would block boxing on Saturday, so Friday must be one '
+        'of the other 4: $\\frac45$.',
+        "Saturday: 5 types are allowed (all but Friday's type), and boxing is one of them: $\\frac15$.",
+        '$\\frac45\\cdot\\frac15=\\frac4{25}$.'])
+    _rn_video(M, g, [[
+        "Thursday he chose yoga. We want boxing on Saturday.",
+        "Do we calculate anything for Thursday? No. It's given — it already happened. Its probability is one.",
+        D('Under the question write "Thu: yoga = 1"'),
+        "Now Friday. He can't repeat yoga, so he has five options.",
+        "But wait — are all five good for us? No! If he picks boxing on Friday, he can't pick boxing on Saturday.",
+        D('Write "Fri: 4/5 (not boxing)"'),
+        "So four good options out of five: four fifths. Two neighboring days depend on each other.",
+        "Saturday. Yoga is back in the pool — it's not the day before anymore. Boxing is allowed.",
+        D('Write "Sat: boxing = 1/5"'),
+        "Five allowed types, we want boxing: one fifth.",
+        D('Write "4/5 · 1/5 = 4/25" and circle choice 3'),
+        "Friday AND Saturday — multiply. Four twenty-fifths. Choice three.",
+        "What matters here: one stage's choice changes the next stage's options. Take the dependence into account.",
+    ]])
+
+    # ---------- g165: 6 red + 1 blue, fifth is blue -> 1/7  ==>  7 blank + 1 prize ticket, sixth is the prize -> 1/8 (review: candies were the Hebrew object)
+    g = 'wp29-g165'
+    _rn_q(M, g, 'A hat contains 7 blank tickets and 1 prize ticket. The tickets are drawn at random one at a time, '
+                'without replacement, until the hat is empty. What is the probability that the sixth ticket drawn is '
+                'the prize ticket?',
+          ['$\\frac16$', '$\\frac18$', '$\\frac38$', '$\\frac1{56}$'], 2, [
+        'The first five tickets must be blank, and then the prize ticket comes: '
+        '$\\frac78\\cdot\\frac67\\cdot\\frac56\\cdot\\frac45\\cdot\\frac34\\cdot\\frac13$.',
+        'Everything cancels: $\\frac18$.',
+        'Faster (symmetry): the prize ticket is equally likely to be in any of the 8 places, so $P(\\text{sixth})=\\frac18$.'])
+    _rn_video(M, g, [[
+        "For the sixth ticket to be the prize, the first five must all be blank.",
+        D('Write "7/8"'),
+        "First ticket blank: seven blank out of eight.",
+        D('Write "· 6/7 · 5/6 · 4/5 · 3/4"'),
+        "Second blank: six out of seven. Third: five out of six. Fourth: four out of five. Fifth: three out of four.",
+        "Now three tickets are left — two blank, one prize. We want the prize.",
+        D('Write "· 1/3"'),
+        "One out of three.",
+        "Blank five times AND then the prize — multiply. But before you calculate, look how it cancels.",
+        D('Cancel the diagonal pairs and write "= 1/8"'),
+        "Seven with seven, six with six, five with five, four with four, three with three. One eighth.",
+        D('Circle choice 2'),
+        "Choice two.",
+    ], [
+        "Now the flash — no calculation. Symmetry.",
+        "In Denmark there's the \"law of Jante\" — nobody is better than anybody else. Everyone's equal.",
+        "Easy question first: what's the chance the FIRST ticket is the prize? One out of eight. Everyone knows that.",
+        "Why? One of the eight must come out first — and no ticket has priority over another.",
+        "The last one? Same logic. One of them must stay last. All equal — one out of eight.",
+        D('Next to the question write "any position: 1/8"'),
+        "And the sixth? One of the eight must be sixth. The prize ticket has the same chance as every other ticket.",
+        D('Circle choice 2'),
+        "One eighth — choice two. First, sixth, last — it doesn't matter.",
+        "Symmetry comes back in hard questions: three players, who wins round three? All equal.",
+    ]])
+
+    # review 2026-10-06: the questions' own solutionVisual still had the old grids (sum 8; 8 × 8)
+    M.q('wp29-g154')['solutionVisual'] = {'type': 'dice', 'sides': 6, 'target': 5}
+    M.q('wp29-g156')['solutionVisual'] = {'type': 'dice', 'sides': 5, 'diagonal': True}
+    _sync_stem_copies(M, [q for q in M.D['questions'] if q.startswith('wp29-g')])
+
+
+def rn_practice_questions(M):
+    S = _rn_q
+    # p01: 12 red 8 blue, one red out -> 11/19  ==>  15 yellow 9 green -> 14/23
+    S(M, 'wp29-p01', 'A bag contains 15 yellow tokens and 9 green tokens. A yellow token is removed and not replaced. What is '
+                     'the probability that the next token drawn at random is yellow?',
+      ['$\\frac58$', '$\\frac{14}{23}$', '$\\frac{15}{23}$', '$\\frac7{12}$'], 2, [
+        'After one yellow token is removed: $15-1=14$ yellow tokens and $24-1=23$ tokens in all.',
+        '$P(\\text{yellow})=\\frac{14}{23}$.'])
+    # p02: 14 tokens, white = black -> orange even (6)  ==>  20 balls, red = green -> yellow even (8)
+    S(M, 'wp29-p02', 'A bag has 20 balls colored red, green, or yellow. The probabilities of drawing red and green are equal. '
+                     'Which number of yellow balls is possible?',
+      ['7', '11', '8', '9'], 3, [
+        'Equal probabilities mean equal numbers of red and green balls, say $r$ of each.',
+        'Yellow $=20-2r$. This is an even number, so it can be 8 (with $r=6$), but not 7, 9 or 11.'])
+    # p04: bulbs 200/20 + 100/25 -> 17/20  ==>  phones 300/20 + 100/12 -> 23/25 (trap: averaging the two rates 68/75)
+    S(M, 'wp29-p04', 'Warehouse A holds 300 phones, and 20 of them are faulty. Warehouse B holds 100 phones, and 12 of them are '
+                     'faulty. One phone is chosen at random from all the phones in both warehouses. What is the probability '
+                     'that it is not faulty?',
+      ['$\\frac2{25}$', '$\\frac{68}{75}$', '$\\frac{21}{25}$', '$\\frac{23}{25}$'], 4, [
+        'Total: $300+100=400$ phones. Faulty: $20+12=32$.',
+        '$P(\\text{faulty})=\\frac{32}{400}=\\frac2{25}$, so $P(\\text{not faulty})=1-\\frac2{25}=\\frac{23}{25}$.'])
+    # p05: two 8-sided dice, most likely sum 9  ==>  two boxes of cards 1-10, most likely sum 11 (trap 7)
+    S(M, 'wp29-p05', 'Two boxes each contain 10 cards numbered 1 through 10. One card is drawn at random from each box. Which '
+                     'of the following sums of the two cards is the most likely?',
+      ['11', '7', '3', '19'], 1, [
+        'For one card from each of two sets numbered 1 through $n$, the most likely sum is $n+1$. Here $10+1=11$.',
+        'Count: a sum of 11 has 10 pairs, from $(1, 10)$ to $(10, 1)$. A sum of 7 has 6 pairs, and sums of 3 and 19 have '
+        '2 pairs each.',
+        '11 is the most likely. (7 is the trap — it is the top only for two dice.)'])
+    # p06: 30 tokens, 1/5 and 1/3 -> 14  ==>  36 tokens, 1/4 and 1/3 -> 15
+    S(M, 'wp29-p06', 'A bag has 36 tokens. The probability of red is $\\frac14$, and the probability of white is $\\frac13$. '
+                     'All other tokens are black. How many black tokens are there?',
+      ['12', '15', '21', '18'], 2, [
+        'Red: $\\frac14\\cdot36=9$. White: $\\frac13\\cdot36=12$.', 'Black: $36-9-12=15$.'])
+    # p07: 6 of each of 3 colors, 4 out -> 2/14  ==>  7 of each of 4 colors, 3 out -> 4/25
+    S(M, 'wp29-p07', 'A bag contains 7 tokens of each of four colors. Three tokens of one color are removed and not returned. '
+                     'What is the probability that the next token drawn at random is of that same color?',
+      ['$\\frac4{25}$', '$\\frac17$', '$\\frac14$', '$\\frac3{25}$'], 1, [
+        'That color has $7-3=4$ tokens left. The bag has $28-3=25$ tokens left.',
+        '$P=\\frac4{25}$. It does not matter which color was removed.'])
+    # p08: odd, odd, even, odd  ==>  even, even, odd, even (still four tosses -> 1/16)
+    S(M, 'wp29-p08', 'A fair six-sided dice is tossed four times. What is the probability that the results are even, even, '
+                     'odd, even in that order?',
+      ['$\\frac14$', '$\\frac3{16}$', '$\\frac1{16}$', '$\\frac18$'], 3, [
+        'Each toss is even or odd with probability $\\frac12$.',
+        'Four results in a fixed order (AND): $\\left(\\frac12\\right)^4=\\frac1{16}$.'])
+    # p09: 5 colors, 4 draws with replacement all blue -> 1/625  ==>  3 colors, all green -> 1/81
+    S(M, 'wp29-p09', 'A bag has the same number of tokens in each of three colors. A token is drawn at random and returned to '
+                     'the bag. This is done four times. What is the probability that all four tokens drawn are green?',
+      ['$\\frac1{12}$', '$\\frac1{81}$', '$\\frac1{27}$', '$\\frac23$'], 2, [
+        'Each draw is green with probability $\\frac13$, and the token is returned each time.',
+        '$\\left(\\frac13\\right)^4=\\frac1{81}$.'])
+    # p10: A 8r 4b, B 2r 8b -> 13/30  ==>  A 3 white 6 black, B 6 white 2 black -> 13/24 (pour trap 9/17)
+    S(M, 'wp29-p10', 'Bag A contains 3 white balls and 6 black balls. Bag B contains 6 white balls and 2 black balls. One of '
+                     'the bags is chosen at random (each with probability $\\frac12$), and then one ball is drawn at random '
+                     'from it. What is the probability that the ball is white?',
+      ['$\\frac12$', '$\\frac{11}{24}$', '$\\frac{13}{24}$', '$\\frac9{17}$'], 3, [
+        'Tree: bag A OR bag B, $\\frac12$ each. Multiply along each branch, then add the branches.',
+        'A and white: $\\frac12\\cdot\\frac39=\\frac16$. B and white: $\\frac12\\cdot\\frac68=\\frac38$.',
+        '$\\frac16+\\frac38=\\frac4{24}+\\frac9{24}=\\frac{13}{24}$. (Pouring both bags together, $\\frac9{17}$, is the trap.)',
+        'Door: PATH, not COUNT — the $17$ balls are not equally likely. Each ball in bag A has $\\frac12\\cdot\\frac19=\\frac1{18}$, '
+        'and each ball in bag B has $\\frac12\\cdot\\frac18=\\frac1{16}$. That is why pouring the bags together ($\\frac9{17}$) is wrong.'])
+    # p11: 4 people, Nina six, others not -> 125/1296  ==>  5 friends, Maya a 1, others not -> 625/7776
+    S(M, 'wp29-p11', 'Five friends each toss a fair six-sided dice once. What is the probability that Maya gets a 1 and the '
+                     'other four do not?',
+      ['$\\frac16$', '$\\frac{625}{7776}$', '$\\frac{3125}{7776}$', '$\\frac1{7776}$'], 2, [
+        'Maya gets a 1: $\\frac16$. Each of the other four does not: $\\frac56$ each.',
+        'AND: $\\frac16\\cdot\\left(\\frac56\\right)^4=\\frac16\\cdot\\frac{625}{1296}=\\frac{625}{7776}$.'])
+    # p12: socks 4, shoes 3 -> 1/4  ==>  cups 6, plates 4 -> 1/6
+    S(M, 'wp29-p12', 'A child chooses a cup color at random from 6 colors and, independently, a plate color at random from 4 '
+                     'colors. Each of the 4 plate colors is also one of the 6 cup colors. What is the probability that the cup '
+                     'and the plate are the same color?',
+      ['$\\frac14$', '$\\frac1{24}$', '$\\frac16$', '$\\frac25$'], 3, [
+        'There are $6\\cdot4=24$ equally likely cup-and-plate pairs.',
+        'Each of the 4 plate colors matches exactly one cup color: 4 matching pairs.',
+        '$P=\\frac4{24}=\\frac16$. Faster: choose the plate first (any plate is fine), and then the cup must match it: $\\frac16$.'])
+    # p13: 8-sided die until an 8, exactly five rolls  ==>  six-sided die until a 6, exactly four tosses -> 125/1296
+    S(M, 'wp29-p13', 'A fair six-sided dice is tossed again and again until a 6 appears. What is the probability that exactly '
+                     'four tosses are needed?',
+      ['$\\frac{125}{1296}$', '$\\frac14$', '$\\frac1{1296}$', '$\\frac16$'], 1, [
+        'The first three tosses are not 6: $\\frac56$ each. The fourth toss is 6: $\\frac16$.',
+        '$\\left(\\frac56\\right)^3\\cdot\\frac16=\\frac{125}{1296}$.'])
+    # p14: 0-11, <6 add 2 else -2, first 5 / second not 5 -> 5/36  ==>  0-15, <8 add 3 else -3, 7 / not 7 -> 7/64
+    S(M, 'wp29-p14', 'A device chooses an integer from 0 through 15 at random (all equally likely). If the number is less than '
+                     '8, the device adds 3 to it; otherwise, it subtracts 3 from it. Then it displays the result. The device '
+                     'runs twice, independently. What is the probability that the first result is 7 and the second result is not 7?',
+      ['$\\frac1{64}$', '$\\frac18$', '$\\frac{49}{64}$', '$\\frac7{64}$'], 4, [
+        'The result is 7 for the number 4 ($4+3$) or the number 10 ($10-3$): 2 numbers out of 16, so $P(7)=\\frac2{16}=\\frac18$.',
+        'Not 7: $1-\\frac18=\\frac78$.',
+        'First 7 AND second not 7: $\\frac18\\cdot\\frac78=\\frac7{64}$.'])
+    # p15: 4 badges (3 allowed), blue Mon -> red Wed 2/9  ==>  7 soups (6 allowed), tomato Mon -> lentil Wed 5/36
+    S(M, 'wp29-p15', 'A cook knows seven different soups. Each day he cooks at random one of the six soups he did not cook the '
+                     'day before. On Monday he cooks tomato soup. What is the probability that he cooks lentil soup on Wednesday?',
+      ['$\\frac17$', '$\\frac1{36}$', '$\\frac5{36}$', '$\\frac16$'], 3, [
+        'Tree. Tuesday: 6 soups are allowed (not tomato), each with probability $\\frac16$.',
+        'If Tuesday is lentil, Wednesday cannot be lentil — this branch gives 0.',
+        'If Tuesday is one of the other five soups ($\\frac56$), lentil is one of the 6 allowed soups on Wednesday ($\\frac16$).',
+        '$\\frac56\\cdot\\frac16=\\frac5{36}$.'])
+    # p16: 8-sided die + 0/1 coin three times -> 5/64  ==>  six-sided die + 0/1 coin three times -> 5/48
+    S(M, 'wp29-p16', 'A fair six-sided dice is tossed once. A fair coin with 0 on one side and 1 on the other is tossed three '
+                     'times. What is the probability that the sum of the three coin results is greater than the dice result?',
+      ['$\\frac1{16}$', '$\\frac5{48}$', '$\\frac1{12}$', '$\\frac18$'], 2, [
+        'The coin sum is 0, 1, 2 or 3. Sums 0 and 1 can never be greater than the dice result (it is at least 1).',
+        'Coin sum 2: 3 of the 8 coin sequences ($\\frac38$). It is greater only than a dice result of 1 ($\\frac16$): '
+        '$\\frac38\\cdot\\frac16=\\frac3{48}$.',
+        'Coin sum 3: 1 sequence ($\\frac18$). It is greater than dice results 1 and 2 ($\\frac26$): $\\frac18\\cdot\\frac26=\\frac2{48}$.',
+        'Add the separate cases: $\\frac3{48}+\\frac2{48}=\\frac5{48}$.',
+        'Door: COUNT — $6$ dice results times $8$ coin sequences: $48$ equally likely outcomes. Good ones: coin sum $2$ '
+        '($3$ sequences) with dice $1$: $3$. Coin sum $3$ ($1$ sequence) with dice $1$ or $2$: $2$. $P=\\frac{3+2}{48}=\\frac5{48}$.'])
+    # p17: 5 gifts, 2 books, Ada & Ben -> 1/10  ==>  6 prizes, 2 movie tickets, Noa & Eli -> 1/15
+    S(M, 'wp29-p17', 'Six different prizes, two of them movie tickets, are given out at random to six friends, one prize each. '
+                     'What is the probability that two particular friends, Noa and Eli, both receive movie tickets?',
+      ['$\\frac16$', '$\\frac1{15}$', '$\\frac13$', '$\\frac1{30}$'], 2, [
+        'Noa gets a ticket: $\\frac26$. Then 1 ticket is left among 5 prizes, so Eli gets it: $\\frac15$.',
+        '$\\frac26\\cdot\\frac15=\\frac2{30}=\\frac1{15}$.',
+        'Door: SYMMETRY — the two tickets go to 2 of the 6 friends, and all $\\frac{6\\cdot5}2=15$ pairs of friends are '
+        'equally likely. Only 1 pair is Noa and Eli: $\\frac1{15}$.'])
+    # p18: heads = 2/5 of tails -> 2/7  ==>  tails = 3/4 of heads -> 3/7
+    S(M, 'wp29-p18', 'For a biased coin, the probability of tails is $\\frac34$ of the probability of heads. What is the '
+                     'probability of tails?',
+      ['$\\frac47$', '$\\frac34$', '$\\frac37$', '$\\frac14$'], 3, [
+        'Tails and heads are in the ratio $3:4$. Together they make $3+4=7$ parts, and together the probabilities make 1.',
+        'Tails: $\\frac37$. Check: heads is $\\frac47$, and $\\frac34\\cdot\\frac47=\\frac37$ ✓.'])
+    # p19: coin 2/3, five tosses, total even -> 1/2  ==>  coin 4/7, six tosses, total even -> 1/2
+    S(M, 'wp29-p19', 'A fair coin has 4 on one side and 7 on the other. It is tossed six times, and the results are added. '
+                     'What is the probability that the total is even?',
+      ['$\\frac1{64}$', '$\\frac12$', '$\\frac14$', '$\\frac5{16}$'], 2, [
+        'Look at the last toss. Whatever the first five tosses add up to, adding 4 keeps the total even or odd, and adding 7 changes it.',
+        'Exactly one of the two faces of the last toss makes the total even: $P=\\frac12$.'])
+    # p20: k boxes, cards 1..m, all 2 -> 1/m^k (plug k = 2, m = 3)  ==>  k bags, balls 1..t, all 1 -> 1/t^k (plug k = 3, t = 4)
+    S(M, 'wp29-p20', 'There are $k$ bags, and each bag contains balls numbered 1 through $t$ ($t\\ge2$). One ball is drawn at '
+                     'random from each bag, independently. What is the probability that every ball drawn is numbered 1?',
+      ['$\\frac1{kt}$', '$\\frac kt$', '$\\frac1{k^t}$', '$\\frac1{t^k}$'], 4, [
+        'In each bag exactly one ball is numbered 1: probability $\\frac1t$.',
+        'All $k$ bags must succeed (AND): $\\left(\\frac1t\\right)^k=\\frac1{t^k}$.',
+        'Check with numbers: $k=3$ and $t=4$ give $\\frac14\\cdot\\frac14\\cdot\\frac14=\\frac1{64}$. Only '
+        '$\\frac1{t^k}=\\frac1{4^3}=\\frac1{64}$ fits (the others give $\\frac1{12}$, $\\frac34$ and $\\frac1{81}$).'])
+
+
+def rn_practice(M):
+    """Approved clean-up (31 -> 24): the copy p03 (= guided g156); 4 of the 7 English extras (keep p22, p23, p25);
+    the September items whose type the Hebrew practice already has (q-09 tree = p10 / p15, q-11 both chosen = p17)."""
+    out = ['wp29-p03',    # copy of guided g156 (two dice show the same number)
+           'wp29-p21',    # at least one six: the card example; at least one is in q-08 and guided q-02
+           'wp29-p24',    # 1-30 divisible by 4 or 6: the example on the guided q-01 video board and the card
+           'wp29-p26',    # 40 students, 18 music: the lesson "Possible first" example
+           'wp29-p27',    # at least one fails (percent): q-08 and guided q-02 drill at least one
+           'q-r26-t29-09',  # tree (rain / walk): Hebrew p10 and p15
+           'q-r26-t29-11']  # both on a committee: Hebrew p17
+    for qid in out:
+        assert M.section_of(qid) == PRACTICE, qid
+        M.unplace(qid)
+    N = lambda k: 'q-r26-t29-' + k
+    M.practice_order(PRACTICE, [
+        'wp29-p01', 'wp29-p06', 'wp29-p07', 'wp29-p09', 'wp29-p08', 'wp29-p04', 'wp29-p02', 'wp29-p12', 'wp29-p05',
+        'wp29-p18', 'wp29-p22', 'wp29-p25', 'wp29-p23', N('10'), N('08'), 'wp29-p10', 'wp29-p15', 'wp29-p11',
+        'wp29-p20', 'wp29-p14', 'wp29-p19', 'wp29-p17', 'wp29-p13', 'wp29-p16'])
+
+
+def rn_lessons_cards(M):
+    # ---- dice-symmetry lesson: no n-sided dice (dice are always 6-sided) -> two boxes of cards numbered 1 to n
+    _rn_sub(M, 'wp-159', 2, [
+        ("Other dice? For two dice with n faces, the most likely sum is n plus one.",
+         "Not dice? One card from each of two boxes, cards numbered 1 to n: the most likely sum is n plus one."),
+        ('n faces → top sum n + 1 (6 → 7, 8 → 9)', 'cards 1 to n → top sum n + 1 (1–6 → 7, 1–8 → 9)'),
+        ("Six faces: seven. Eight faces: nine — not seven.", "Numbers one to six: seven. One to eight: nine — not seven."),
+    ])
+    # ---- summary: examples that landed on the Hebrew numbers
+    vid = 'r26-t29-summary'
+    _rn_sub(M, vid, _rn_slide_no(M, vid, 'Possible first'), [
+        ("Four heads in a row — the next toss is still one half.", "Five heads in a row — the next toss is still one half.")])
+    n = _rn_slide_no(M, vid, 'AND · OR')
+    _rn_sub(M, vid, n, [
+        ("Heads and a three on a dice: one half times one sixth — one twelfth.",
+         "Tails, and a number above four on a dice: one half times two sixths — one sixth."),
+        ('Second try: $\\frac15+\\frac45\\cdot\\frac14=\\frac25$', 'Second try: $\\frac16+\\frac56\\cdot\\frac15=\\frac13$'),
+        ('Second try: 1/5 + 4/5 · 1/4 = 2/5', 'Second try: 1/6 + 5/6 · 1/5 = 1/3')])
+    n = _rn_slide_no(M, vid, 'Shortcuts')
+    _rn_sub(M, vid, n, [
+        ('Two dice: symmetric around $7$ · $n$ faces: top sum $n+1$', 'Two dice: symmetric around $7$ · cards $1$ to $n$: top sum $n+1$'),
+        ('n faces → n + 1', 'cards 1 to n → n + 1'),
+        ("Ten and four are the same distance from seven — same probability. Dice with n faces? The top sum is n plus one.",
+         "Eleven and three are the same distance from seven — same probability. Cards numbered one to n, one from each of two boxes? The top sum is n plus one.")])
+
+    # ---- memory card: examples were the old questions' numbers (and two Hebrew ones)
+    c = M.card('mem-probability')
+    rules = next(t for t in c['tables'] if t['title'] == 'Rules')
+    new = {
+        '\\(P=\\frac{\\text{wanted}}{\\text{possible}}\\)': '2 red, 5 green: \\(P(\\text{red})=\\frac27\\)',
+        'Complement': 'win \\(\\frac38\\) → lose \\(\\frac58\\)',
+        'AND': 'tails and a number above 4: \\(\\frac12\\cdot\\frac26=\\frac16\\)',
+        'OR, separate cases': 'a 2 or a 5 on a dice: \\(\\frac16+\\frac16=\\frac13\\) · second try: \\(\\frac16+\\frac56\\cdot\\frac15=\\frac13\\)',
+        "First pick doesn't matter": 'three coins land the same: \\(1\\cdot\\frac12\\cdot\\frac12=\\frac14\\)',
+        'Without replacement': '9 counters → 8 left',
+    }
+    for row in rules['rows']:
+        if row[0] in new: row[2] = new.pop(row[0])
+    assert not new, new
+    c['tips'] = [t.replace('Two dice with \\(n\\) faces: the most likely sum is \\(n+1\\) (8 faces: 9).',
+                           'One card from each of two sets numbered 1 to \\(n\\): the most likely sum is \\(n+1\\) (1 to 8: 9).')
+                 for t in c['tips']]
+    assert any('1 to 8: 9' in t for t in c['tips'])
+
+
+def renumber_pass(M):
+    rn_guided(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+    rn_lessons_cards(M)
+
+
+_apply_before_renumber = apply
+
+
+def apply(M):
+    _apply_before_renumber(M)
+    renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+def spinner_label(M):
+    """g156 is about two spinners: its grid says 'Matching sections', not the dice default 'Matching faces'."""
+    q = M.q('wp29-g156')
+    if isinstance(q.get('solutionVisual'), dict) and q['solutionVisual'].get('type') == 'dice':
+        q['solutionVisual']['label'] = 'Matching sections'
+    for b in M.D['videos']['solve-wp29-g156']['beats']:
+        for it in b.get('items', []):
+            v = it.get('v') if isinstance(it, dict) else None
+            if isinstance(v, dict) and v.get('type') == 'dice' and v.get('diagonal'):
+                v['label'] = 'Matching sections'
+
+
+_apply_before_spinner_label = apply
+
+
+def apply(M):
+    _apply_before_spinner_label(M)
+    spinner_label(M)

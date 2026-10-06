@@ -230,3 +230,19 @@ Independent check of the renumber pass (all 36 Hebrew-derived questions, 16 solu
   signs) / −1 < x ≤ 5 / x > −1 · key 3 (brute force on a 0.01 grid: only choice 3 matches). Video keeps both methods:
   test x = −3 (fails → choices 1, 2 out) and x = 6 (fails → choice 4 out); two moves (endpoints −1 and 5, test 0, which
   end is included). Written solution rewritten. The card row "most precise range" had no trinomial wording (unchanged).
+
+## 2026-10-06 Hebrew back-check
+Function `hebrew_backcheck` (runs last). Every guided and practice question, lesson, summary and card example was compared
+with the Hebrew video subtitles (lines 8730–11078: 9 lesson examples, 7 sample questions). Nothing in topic 12 is recorded.
+Keys brute-forced / recomputed in Python; videos rendered and checked. `python3 math_check.py 12 32` → 0 / 0 / 0.
+
+| id | Hebrew video | ours before | new | answer |
+|---|---|---|---|---|
+| lesson `inequalities` slide 4 | −10 < −6, ÷(−2) → 5 > 3 | −10 < −2, ÷(−2) → 5 > 1 | −18 < −3, ÷(−3) → 6 > 1; move: 3 < 18, ÷3 → 1 < 6 | — |
+| q-334 (guided) | z+y < x, x < z < y; y+z > 0 false | the same letters and givens | m+n < p, p < n < m; choices n<0, p<0, 0<m+n, m<0 | 0 < m+n (3) |
+| q-336 (guided) | −5 < x < 10, −20 < y < 5 → −200 < xy < 100 | −5 < x < 8, −20 < y < 4 → −160 < xy < 100 | −6 < x < 9, −15 < y < 3 → corners 90, −18, −135, 27 | −135 < xy < 90 (4) |
+
+Videos rewritten to match: solve-q-334, solve-q-336, lesson slide 4.
+**Left on purpose (partial overlaps only):** q-324 (3x−4 < 2x+5 < 4x−5 → 5 < x < 9; Hebrew 3x−8 < 2x+3 < 5x−12 → 5 < x < 11:
+only the 3x / 2x and the bound 5 shared); q-331 ((xy)² < x²y asks y; the Hebrew (xy)² < xy² asks x — letter question,
+letters already swapped); q-329 (p+q = r, q < r < p — letters already changed, key moved). Practice: no match.

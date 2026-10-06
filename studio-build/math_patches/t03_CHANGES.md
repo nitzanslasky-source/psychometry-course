@@ -218,3 +218,23 @@ Check: `python3 math_check.py 3 32` → PROBLEMS 0, WARNINGS 0, LAYOUT problems 
 Course-wide duplicate scan: practice q-r26-t03-11 was identical to guided q-r26-t12-01 (−1 < x < 0, largest of x, x², x³,
 1/x) and close to q-r26-t08-11. It now asks for the SMALLEST of the same four (answer 1/x, choice 4).
 Function `review_dups` at the end of t03.py.
+
+## 2026-10-06 Hebrew back-check
+Every topic-3 question (guided + practice), lesson slide and card example compared with the teacher's Hebrew video subtitles
+(01-Algebra-Original-Subtitles.txt, lines 1438–2270 "השוואת שברים" + "שברים" sample questions; 632–1435 glanced).
+Function `hebrew_backcheck(M)` runs last in t03.py.
+
+Fixed (not recorded):
+| item | old (= Hebrew) | new | answer |
+|---|---|---|---|
+| q-fraction-compare + solve-q-fraction-compare | 7/15 < ½ < **9/17** ("half of 17 is 8.5, 9 > 8.5" = Hebrew lesson's benchmark example 5/11 vs 9/17) | 7/15 < ½ < **11/21** (half of 21 is 10.5, 11 > 10.5; check 2·11 = 22 > 21) | choice 1 (unchanged); video speech + draw cue + board question rewritten |
+| card "Comparing fractions" → Square them | 3/√10 > 2/√5 because 9/10 > 4/5 (the Hebrew lesson example) | 4/√19 > 3/√11 because 16/19 > 9/11 (176 > 171) | — |
+
+Recorded (listed only, not changed): lesson `compare-fractions` uses Hebrew lesson examples 5/11 vs 15/34 (→15/33), 2/5 vs 3/8
+(0.4 / 0.375), 3/√10 vs 2/√5, plug-in x = ½, y = 2 with y/(y−x) vs (y−x)/(y+x) (4/3 vs 3/5); guided q-091 (1−½)(1−⅓)(1−¼)
+shares two factors with the Hebrew (1−⅓)(1−¼)(1−⅕); q-093 = Hebrew D/A·B/D + C/A with letters changed; q-094 = Hebrew
+A/B question with letters changed; q-096 = Hebrew 0 < a/b < 1 question with letters changed; summary `r26-t03-summary`
+slide 4 shows the same letter pattern. Left: card "plug in x = ½, y = 2" (standard values, mirrors the recorded lesson);
+practice q-084 (16/17 … 19/20) shares only 16/17 with the Hebrew distance-from-1 example (16/17 vs 12/13) — not a match.
+Checks: keys recomputed (7/15 < ½ < 11/21; 16/19 > 9/11); 11/21 and 4/√19, 3/√11 appear nowhere else in topics 1–3 nor
+in the Hebrew. `python3 math_check.py 3 32` → 0 / 0 / 0. Rendered solve-q-fraction-compare (tmp_check/hbc3.png).

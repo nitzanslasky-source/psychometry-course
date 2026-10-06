@@ -1962,3 +1962,113 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber(M)   # 2026-10-06 renumber pass: runs last
+
+
+# =====================================================================================================================
+# 2026-10-06 Hebrew back-check: the renumbered questions / examples were compared with the teacher's HEBREW VIDEO
+# subtitles (01-Algebra-Original-Subtitles.txt, lines 11081-13680). Where a new version had landed back on the Hebrew
+# video's own numbers / letters / story, it gets new ones here (same type, trap, difficulty and methods).
+# Nothing in topic 13 is recorded. Runs last. See t13_CHANGES.md ("2026-10-06 Hebrew back-check").
+# =====================================================================================================================
+def hebrew_backcheck(M):
+    def S(qid_, **kw):
+        q = M.set_q(qid_, **kw)
+        v = M.video('solve-' + qid_)
+        v['title'] = v['navLabel'] = q['stem']
+        for b in v['beats']:
+            if (b.get('canvas') or '').startswith('Pre-loaded — question'):
+                b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (q['id'], q['stem'])
+        M.touched_videos.add(v['id'])
+
+    # lesson: |8| = 8 and the "friend's house" distance story were the Hebrew lesson's own -> |11| = 11, bus stop
+    _dd_sub(M, LESSON, 2, [("The way to my friend's house isn't minus two kilometers. It's two kilometers.",
+                            "The walk to the bus stop isn't minus two kilometers. It's two kilometers.")])
+    _dd_sub(M, LESSON, 3, [('$|8|=8$', '$|11|=11$'), ('|8| = 8 appears', '|11| = 11 appears'),
+                           ('Eight is eight units from zero.', 'Eleven is eleven units from zero.')])
+
+    # q-361: 5 < |x + 2| (x > 3 or x < -7; choices 7, 1, -8, 5) = the Hebrew video exactly -> 8 < |x + 1|
+    S('q-361', stem='Given: $8<|x+1|$. Which of the following cannot be the value of $x$?',
+      choices=['$9$', '$2$', '$-10$', '$11$'], correct=2, expl=[
+        'The bars are on the big side, so there are two cases. $x+1>8$, so $x>7$. Or $x+1<-8$, so $x<-9$.',
+        '$9$ and $11$ are greater than $7$ ✓, and $-10$ is less than $-9$ ✓.',
+        '$2$ is in neither range: $|2+1|=3$, and $3$ is not greater than $8$. So $x$ cannot be $2$.'])
+    M.set_slide('solve-q-361', 2, script=[
+        "The absolute value is on the BIG side. So the range is open — two separate cases.",
+        D('Write "x + 1 > 8 → x > 7"'),
+        "Either the inside is bigger than eight — x is bigger than seven.",
+        D('Write "x + 1 < −8 → x < −9"'),
+        "Or the inside is smaller than negative eight — x is smaller than negative nine.",
+        "They ask what x CANNOT be. So find the one that fits neither range.",
+        D('Tick choices 1 and 4 (above 7) and choice 3 (below −9)'),
+        "Nine — above seven, fine. Eleven — above seven, fine. Negative ten — below negative nine, fine.",
+        D('Circle choice 2'),
+        "Two? It's not above seven, and it's not below negative nine. It's stuck in the forbidden middle. Choice two.",
+        "Check: two plus one is three — and three is not bigger than eight.",
+        "The distance picture says the same. x plus one: the distance from negative one.",
+        D('Draw a number line: a dot at −1, marks at −9 and 7, shade outside them'),
+        "More than eight steps from negative one: beyond seven, or below negative nine. Two is only three steps away."])
+
+    # q-364: a < b < 0 < c < d (the Hebrew letters and choices; video examples -2/2, -20/20 = the Hebrew video's)
+    #        -> p < q < 0 < r < s, examples -5/5 and -40/40
+    S('q-364', stem='Given: $p<q<0<r<s$. Which of the following is necessarily true?',
+      choices=['$\\left|r\\right| < \\left|p\\right|$', '$\\left|q\\right| < \\left|p\\right|$',
+               '$\\left|p\\right| < \\left|s\\right|$', '$\\left|q\\right| < \\left|s\\right|$'], correct=2, expl=[
+        'The absolute value is the distance from $0$. $p$ and $q$ are both negative, and $p$ is farther left. So $p$ is farther from $0$: $|q|<|p|$ always.',
+        'The other choices compare a negative number with a positive one, and the givens say nothing about that.',
+        '$p=-3$, $q=-1$, $r=6$, $s=8$: $|r|>|p|$, so choice 1 fails. $p=-40$, $q=-30$, $r=1$, $s=2$: choices 3 and 4 fail.'])
+    M.set_slide('solve-q-364', 2, script=[
+        "Let's place the givens on the number line.",
+        D('Draw a number line: p and q left of 0 (p further), r and s right of 0 (s further)'),
+        "p and q are negative — p is further from zero. r and s are positive — s is further.",
+        "Notice: every answer uses absolute value. Absolute value means distance from zero.",
+        "So the question is really: who is further from zero?",
+        "Two positives — s is always further than r. We don't know by how much, but always.",
+        "Same for the negatives: p is always further than q.",
+        "But a negative against a positive? The givens say nothing about that.",
+        "Choice one: r against p — positive versus negative. r could be forty. Out.",
+        D('Cross out choice 1'),
+        "Choice two compares two negatives. Leave it for the end.",
+        D('Next to choice 3 write "p = −5, s = 5 → equal"'),
+        "Choice three: p against s. p could be negative five and s five — equal. Or p could be negative forty — bigger. Not necessarily.",
+        D('Cross out choice 3'),
+        "Choice four: q against s — again negative versus positive. q could be negative forty. Out.",
+        D('Cross out choice 4'),
+        "Three out — on the exam, mark the one that's left and move on.",
+        D('Circle choice 2'),
+        "Here we'll check it anyway: q and p are both negative, same side of zero. p is further. Always. Choice two."])
+
+    # q-370: the video's plug-ins 1, 10, -10 and "negative one plus one" were the Hebrew video's -> 2, 9, -8, -9
+    M.set_slide('solve-q-370', 2, script=[
+        "As usual with absolute value — two cases.",
+        "Case one: x is positive or zero. Then the bars do nothing.",
+        D('Write "x ≥ 0: 2x < 12 → x < 6"'),
+        "x plus x is less than twelve. Two x under twelve — x under six.",
+        "Case two: x is negative.",
+        D('Write "x = −4: −4 + 4 = 0"'),
+        "Then the bars turn it into its opposite. Negative four plus four — zero. Negative nine plus nine — zero. Always zero.",
+        D('Write "x < 0: 0 < 12 ✓ always"'),
+        "Zero is less than twelve — always true. Every negative number works.",
+        "So: every negative number, and positives only below six.",
+        D('Circle choice 3'),
+        "x less than six. Choice three."])
+    M.set_slide('solve-q-370', 3, script=[
+        "Now plug numbers into the choices.",
+        D('Next to choice 4 write "x = 2: 4 < 12 ✓, x = 9: 18 ✗"'),
+        "Choice four says every positive works. Two: four, fine. But nine: eighteen — not less than twelve. Out.",
+        D('Cross out choice 4'),
+        "Choice two says only negatives. But two worked. So not only negatives. Out.",
+        D('Cross out choice 2'),
+        "One and three both stop at six on top. The difference is the bottom: negative six, or no limit.",
+        D('Write "x = −8: −8 + 8 = 0 < 12 ✓"'),
+        "A smart substitution to split them: negative eight. Zero — less than twelve. It works!",
+        D('Cross out choice 1 and circle choice 3'),
+        "So x doesn't stop at negative six. Choice three.",
+        "Both approaches are excellent — pick what suits you."])
+
+
+_apply_before_hebrew_backcheck = apply
+
+
+def apply(M):
+    _apply_before_hebrew_backcheck(M)
+    hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last

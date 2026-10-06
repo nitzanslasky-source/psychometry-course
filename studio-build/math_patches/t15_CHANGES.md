@@ -231,3 +231,21 @@ quadratic trinomial (q-444 keeps its inherited one: A(A+8)(A+16)). No question e
   - q-450: two tries, as in the Hebrew: 5 teams, 2 balls left; one team gets twice each of the other four → x = 6s;
     6 leaves 1 ✗, 12 leaves 2 ✓. Choices 42 (works, not smallest), 12, 30 (leaves 0), 22 (not by 6) · key 2.
   `python3 math_check.py 15 32` → 0 / 0 / 0. Rendered solve-q-430 and solve-q-436.
+
+## 2026-10-06 Hebrew back-check
+Compared every guided and practice question, every lesson slide and both cards with the teacher's Hebrew video subtitles
+(01-Algebra-Original-Subtitles.txt, lines 14769–15737: divisibility signs, remainder lessons and the 10 sample questions).
+Nothing in topic 15 is recorded. Three questions had landed back on the Hebrew videos' numbers; fixed in
+`hebrew_backcheck(M)` (runs last). Same type, trap, level and methods; solution videos rewritten (speech, draw cues, title).
+
+| id | Hebrew video | was | new | answer |
+|---|---|---|---|---|
+| q-430 (G9) | Shira: 2 and 9 vs 4 and 5 | Michal: 2 and 9 (18) vs 4 and 5 (20) | Michal: 3 and 7 (21: 43 numbers) vs 2 and 13 (26: 35 numbers) | both right (3) |
+| q-434 (G14) | 700 coins, x, 2x, 3x; 50/20/30/40 left | 700 points; 25/40/20/50 left | 900 points; 15/24/26/32 left (885 odd trap, 876 = 6·146, 874, 868) | 24 (2) |
+| q-436 (G16) | sum of 3 integers divisible by 3, same 4 claims | same, by 3 | sum divisible by 6: max remainder 5; one divisible → others (12+5+7); all leave 4 (10+16+22); two divisible → third | (2) |
+
+Left on purpose (not the same key numbers): q-433 (14a + 6 vs the Hebrew's 18a + 6 — only the "+6, divisible by 10"
+frame is shared), q-427 (30% / 540 vs 60% / 630), q-428 (6, 1, X; 4/8/12 vs 9, 7, x; 5/10/15), q-431 (c = 4a, a = b/5 vs
+c = 7a, a = b/4), q-432 (5a³ − 5a vs 2a³ − 2a), q-435 (remainder 4 by 8 vs 4 by 6), lesson (sandwiches 8 / 35 shekels vs
+bottles 7 / 30). Keys brute-forced in Python; duplicate check over topics 1–38 (no new number equals another question or
+lesson/card example). `python3 math_check.py 15 32` → 0 / 0 / 0. Rendered solve-q-430, -434, -436.

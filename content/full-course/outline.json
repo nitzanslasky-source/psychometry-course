@@ -160,7 +160,7 @@
      "videos": 26,
      "lessons": 6,
      "questions": 46,
-     "minutes": 50,
+     "minutes": 51,
      "steps": 77
     },
     {
@@ -246,45 +246,45 @@
      "title": "Averages",
      "videos": 18,
      "lessons": 4,
-     "questions": 50,
+     "questions": 40,
      "minutes": 25,
-     "steps": 69
+     "steps": 59
     },
     {
      "id": 26,
      "title": "Work and rates",
      "videos": 22,
      "lessons": 6,
-     "questions": 51,
-     "minutes": 32,
-     "steps": 74
+     "questions": 41,
+     "minutes": 33,
+     "steps": 64
     },
     {
      "id": 27,
      "title": "Motion",
      "videos": 26,
      "lessons": 7,
-     "questions": 56,
-     "minutes": 35,
-     "steps": 84
+     "questions": 45,
+     "minutes": 36,
+     "steps": 73
     },
     {
      "id": 28,
      "title": "Counting possibilities",
      "videos": 35,
      "lessons": 11,
-     "questions": 68,
+     "questions": 54,
      "minutes": 42,
-     "steps": 105
+     "steps": 91
     },
     {
      "id": 29,
      "title": "Probability",
      "videos": 26,
      "lessons": 6,
-     "questions": 51,
-     "minutes": 32,
-     "steps": 78
+     "questions": 44,
+     "minutes": 33,
+     "steps": 71
     }
    ]
   },

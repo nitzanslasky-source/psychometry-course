@@ -141,3 +141,108 @@ Function `practice_methods` (runs last in `apply`). One extra line is added at t
 - `wp28-p13` (at most how many key tests): "At most" → the Topic 21 min/max method, worst luck: 6 + 5 + 4 + 3 + 2 + 1 = 21.
 - `wp28-p27` (named teams Cedar and Maple): Groups with no names? Here they have names → no division; unnamed would be 20 ÷ 2! = 10 (the trap choice).
 - Every line checked in python. Check: `math_check.py 28 32` → 0 / 0 / 0.
+
+## 2026-10-06 renumber pass
+So the English Topic 28 does not look like the Hebrew course: every Hebrew-derived question has new numbers and a new
+story (objects, names, setting); concept, trap, level, condition kind and methods stay. Every guided solution video is
+rewritten to match (speech, draw cues, board items, grids / polygon / network / dice / tables, choice numbers, video
+title, pre-loaded question). Function `renumber_pass(M)` in t28.py runs last (after `cut_repeats`, `add_methods`,
+`practice_methods`; the "At most" method line that practice_methods added to p13 is rewritten with the new numbers).
+Nothing in Topic 28 is recorded (`RN_RECORDED` is empty). New title-slide lines no longer say "Question N".
+Checked against the Hebrew subtitles (02-Word-Problems): no new version lands on the Hebrew numbers or objects
+(Hebrew: digits 1–4, salad 3 × drinks 5, employee number sum 10, digits 1–5 → 125 / 60, 5 books, 4 countries, hexagon,
+cola/snack 16, dice ≠ 4, 6 children 3 + 3, 5 of 6, 6!/4!, sum 5 → 50, digits 1–4 square, 28 games, 6 students → 6).
+
+**Counts:** 17 guided questions renumbered (all wp28-g…) with 17 solution videos rewritten; 20 practice questions
+renumbered (wp28-p01 … p20); lesson examples renumbered in 4 lessons (Choosing a Group #2 and #4, Forced Digits #2 and #3,
+Factorial Expressions #2 first line, Summary #2 and #3) + both memory cards. Practice 44 → 30.
+English-made items keep their numbers (guided q-r26-t28-04 … 09 and 28, kept practice extras and September items).
+
+**Order:** Learn: "11 of 12" (easy, was Q12) now comes before the hard group split (was Q11) — both are taught in the
+lesson right before them. Advanced, after the Forced Digits lesson: games (medium+) → heights (medium+/hard) → the digit
+square (hard, was Q16, now Q18). Correct-answer positions moved in all 17 guided questions.
+
+**Practice clean-up (44 → 30; audit target ≈ 25 — the 5 above target are September items of types the Hebrew practice
+does not have, kept by the rule):** all 20 Hebrew-derived kept (renumbered). Copies removed: p25 (LEVEL = guided BANANA),
+alg-extra-unit-t18-3-4 (moved in by the T18 patch; removed only if present). Extra-bank kept (3): p23 together/glue,
+p24 even numbers (most restricted first), p26 round table. Extra-bank removed: p21 (= guided Q9 method), p22 (= the
+Quick-checks lesson "7 choose 3"), p27 (named teams 3 + 3 of 6 = the Hebrew lesson numbers; named/unnamed still practised
+by q-41 and guided Q12). September kept (types the Hebrew practice lacks): q-14 at least one, q-16 objects into boxes,
+q-19 not together, q-21 repeated items, q-29 run of neighbors, q-31 sum of factorials, q-41 unnamed pairs. September
+removed: q-15, q-27 (at least one again), q-17 (pool stays full = p05), q-18 (together = p23), q-20 (gaps = p15),
+q-22 (repeats = q-21; near-copy), q-23 (round table = p26; near-copy of guided Q24), q-26 (who stays out = p17),
+q-30 (primes in n! = p02). Practice ordered easy → hard.
+
+**Checks:** every answer brute-forced in Python by enumeration (permutations / combinations / products — script
+t28_verify.py in the scratchpad): all 37 keys match, exactly one correct choice each, every "Choice N" / "Circle choice N"
+in the videos matches the key, no spoken "Question N" in the rewritten videos. Every method in each video recomputed with
+the new numbers (e.g. octagon: draw 20, 28 − 8, 7+…+1 − 8, 8·5/2; square: 2·2·2·1, trial table, 12 − 4; games: formula,
+test 13 → 78 / 12 → 66 / 11 → 55, growing table to 66). Traps kept among the choices (add instead of multiply,
+"5 options then 5 again" = 25, ÷6 = 84, the rule-both-ways 21, unordered 33, unnamed ÷2 = 126, start-with-0 = 90,
+9², 9 + 7, 7!, …). Duplicate check over topics 1–28 (stems, lesson boards and spoken lines): no new question equals
+another question or a lesson / card example. Each new question compared side by side with its original: same type, same
+condition kind, same number of steps. p18 now uses ordinary 6-sided dice (was 8-sided). `python3 math_check.py 28 32` →
+PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered all 17 solution videos and the changed lessons and looked at them (the games
+table is now horizontal, n = 2 … 12, so it fits above the choices).
+
+| id | old (Hebrew-derived) | new | answer (choice) |
+|---|---|---|---|
+| wp28-g124 (Q1) | digits 2, 4, 6, 8 increasing | digits 3, 5, 6, 9 increasing | 4 (3) |
+| wp28-g125 (Q2) | café 4 fillings × 6 drinks | food truck 7 soups × 3 breads | 21 (2) |
+| wp28-g126 (Q3) | 2-digit code, digit sum 12 | locker number, digit sum 14 | 5 (3) |
+| wp28-g128 (Q4) | symbols A–F, 3 positions, repeats | suitcase lock, digits 1–9, 3 wheels, repeats | 729 (2) |
+| wp28-g129 (Q5) | same, no repeats → 120 | same lock, no repeats | 504 (4) |
+| wp28-g130 (Q6) | 6 photographs in a row | 7 trophies in a glass cabinet | 5040 (2) |
+| wp28-g132 (Q7) | 5 islands, ferry routes | 6 towns, bus lines | 15 (1) |
+| wp28-g133 (Q8) | heptagon diagonals | octagon diagonals | 20 (2) |
+| wp28-g135 (Q9) | 5 drinks, 4 snacks, cocoa → biscuit | 6 hot drinks, 5 pastries, espresso → croissant | 26 (3) |
+| wp28-g136 (Q10) | red/blue dice, sum ≠ 5 | green/yellow dice, sum ≠ 8 | 31 (3) |
+| wp28-g139 (Q11, was Q12) | committee 7 of 8 | team 11 of a squad of 12 | 12 (2) |
+| wp28-g138 (Q12, was Q11) | 8 children, teachers Maya/Alex, 4 + 4 | 10 hikers, guides Lena/Omar, 5 + 5 | 252 (2) |
+| wp28-g140 (Q13) | 7! / 5! | 9! / 7! | 72 (2) |
+| wp28-g141 (Q15) | hundreds + units = 7 | hundreds + units = 8 | 80 (2) |
+| wp28-g143 (Q16, was Q17) | chess, 45 games | table-tennis league, 66 matches | 12 (3) |
+| wp28-g144 (Q17, was Q18) | 7 students, 6 tallest → shortest | 8 children, photographer, 7 shortest → tallest | 8 (3) |
+| wp28-g142 (Q18, was Q16) | 3, 4, 7, 8; B even, C×D even | 2, 5, 6, 9; A even, C×D even | 8 (3) |
+| wp28-p01 | 6 teams, all play once | 7 chess clubs | 21 (1) |
+| wp28-p02 | 2!·3!·5! prime form | 3!·4!·5! | 2⁷·3³·5 (2) |
+| wp28-p03 | 4 green + 3 red vegetables, salads of 2 | 5 white + 4 yellow flowers, bouquets of 2 | 16 (1) |
+| wp28-p04 | 6-digit IDs from 1–6 | locker codes from A–E | 120 (2) |
+| wp28-p05 | 5 symbols, 3 in order, repeats | 3 flags, 7 colors, repeats | 343 (3) |
+| wp28-p06 | n performers, 120 orders | n dancers, 24 orders | 4 (2) |
+| wp28-p07 | 4 prizes to 4 finalists | 6 awards to 6 volunteers | 720 (3) |
+| wp28-p08 | hat/shirt/trousers, 4 colors, all different | cap/jersey/socks, 5 colors | 60 (3) |
+| wp28-p09 | 1 of 5 symbols + 3 different digits of 1–7 | 1 of 4 letters + 3 different digits of 1–8 | 1344 (2) |
+| wp28-p10 | 5 swimmers, podium | 6 cyclists, podium | 120 (3) |
+| wp28-p11 | trousers 3, shirts 2, dresses 2, shoes 3 | lunch: 4 mains, 3 sides, 3 soups, 2 drinks | 30 (4) |
+| wp28-p12 | 55 handshakes | 36 handshakes at a reunion | 9 (2) |
+| wp28-p13 | 6 keys, 6 cupboards, at most | 7 keys, 7 gym lockers | 28 (3) |
+| wp28-p14 | 4 actors left, 3 musicians right | 5 singers left, 3 drummers right | 720 (1) |
+| wp28-p15 | 4 identical blue + 5 distinct red beads, gaps | 5 identical white + 6 colored beads | 720 (4) |
+| wp28-p16 | digits 1–9, 9ˣ = 3⁴ⁿ | 4 lamp colors, 4ˣ = 2⁶ⁿ | 3n (3) |
+| wp28-p17 | 5-digit code starts 4, increasing | 6-digit code starts 3, increasing | 6 (3) |
+| wp28-p18 | two 8-sided dice, sums that tell the pair | two ordinary dice | 4 (2) |
+| wp28-p19 | no zero, first = last, third = 2 × second | third = 3 × second | 27 (3) |
+| wp28-p20 | 8 digits, 2 digits × 4, sum ÷ 10 | 6 digits, 2 digits × 3, sum ÷ 12 | 10 (3) |
+| lesson wp-137 #2 | 4 children out of 10, Danny / Yossi (the Hebrew's) | 3 children out of 9, Lior / Sam | – |
+| lesson wp-137 #4 | 9 out of 10 → 10 (the Hebrew's) | 14 out of 15 → 15 | – |
+| lesson wp-141-after #2, #3 | 4-digit all same (9), 4-digit palindromes (90) (Hebrew: 3-digit) | 5-digit all same (9), 5-digit mirror numbers (900); slide "Mirror digits" | – |
+| lesson wp-140-after #2 | "7! = 7 · 6 · 5!" (old Q13) | "9! = 9 · 8 · 7!" (new Q13) | – |
+| summary #2, #3 | 3 × 5 = 15 shirts/hats (the Hebrew salad numbers); 9!/7! = 72 (now Q13) | 5 × 4 = 20; 8!/6! = 56 | – |
+| cards | examples of the old questions | examples of the new questions; pairs table to n = 12 | – |
+
+## 2026-10-06 review
+Independent review of the renumber pass (built with / without `renumber_pass`, compared every question, explanation,
+solutionVisual, solution video, lesson video, card and summary). `renumber_pass(M)` is the last call in `apply()`.
+All 37 keys re-computed by enumeration (itertools): every key correct, exactly one correct choice, traps still present.
+Type / condition / difficulty match the originals; nothing lands back on the Hebrew subtitles' numbers or objects
+(the Hebrew's dice answer 33 only remains as the unordered-trap distractor in g136). No recorded videos in Topic 28.
+No spoken "Question N"; no leftover old numbers or objects in boards, speech, draw cues, titles or figures.
+Fixed:
+- wp28-g136 stem: "A green die and a yellow die" → "A green dice and a yellow dice" (course / NITE style uses "dice"
+  for one die, as the original stem did).
+- solve-wp28-g144: "Choice seven is too few" → "Seven is too few" (sounded like a choice number; there are 4 choices).
+`python3 math_check.py 28 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+Judgment calls left for the teacher: practice removals q-15 / q-27 (at least one), q-22 (repeats with 0), q-23 (round
+table with a restriction) and q-18 (together) remove September items whose type the Hebrew practice does not cover —
+they repeat a kept item (q-14, q-21, p26, p23) rather than a Hebrew one; three practice answers are 720 (p07, p14, p15).

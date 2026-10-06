@@ -1592,3 +1592,31 @@ _apply_before_practice_methods = apply
 def apply(M):
     _apply_before_practice_methods(M)
     practice_methods(M)   # 2026-10-06 practice: runs last
+
+
+# =====================================================================================
+# 2026-10-06 Hebrew back-check: compared with the teacher's Hebrew video subtitles. Two practice items still
+# sat on the Hebrew video's numbers -> new numbers (same type, same trap, same methods). Runs last.
+# =====================================================================================
+def hebrew_backcheck(M):
+    # Hebrew video: 1 + (2y² + 2xy)/(x² − y²). Ours kept the coefficients 2 and 2 (only the sign changed).
+    # New coefficient 3 (not 2 = Hebrew video, not 4 = study guide, not 6 = q-133).
+    M.set_q('q-expression-extra-11', stem=r'Given: $a\ne\pm b$.' + '\n' + r'$1-\frac{3b^2+3ab}{a^2-b^2}=\ ?$',
+            choices=[r'$\frac{a-4b}{a-b}$', r'$\frac{a+4b}{a-b}$', r'$\frac{a-b}{a+b}$', r'$1$'], correct=1, expl=[
+                r'Top: $3b^2+3ab=3b(b+a)$. Bottom: $a^2-b^2=(a-b)(a+b)$. Cancel $a+b$: the fraction is $\frac{3b}{a-b}$.',
+                r'Then $1-\frac{3b}{a-b}=\frac{a-b-3b}{a-b}=\frac{a-4b}{a-b}$. The answer is choice 1.',
+                r'Check with $a=2$, $b=1$: $1-\frac{3+6}{3}=-2$, and choice 1 gives $\frac{-2}{1}=-2$ (the others give $6$, $\frac{1}{3}$ and $1$).'])
+    # Hebrew video: 42,944 ÷ 61, choices 404 / 508 / 608 / 704. Ours had 508 and 608 among its choices.
+    # Same division (answer 408); new wrong choices, still far apart and each with a wrong units digit.
+    M.set_q('q-expression-extra-12', choices=[r'$306$', r'$408$', r'$512$', r'$604$'], correct=2, expl=[
+        r'Estimate from a round choice: $63\cdot400=25{,}200$, a little less than $25{,}704$.',
+        r'The rest is $25{,}704-25{,}200=504=63\cdot8$, therefore the answer is $400+8=408$. The answer is choice 2.',
+        r'Units digit check: $63$ ends in $3$. $3\cdot6=18$, $3\cdot2=6$ and $3\cdot4=12$ end in $8$, $6$ and $2$, but $3\cdot8=24$ ends in $4$, like $25{,}704$.'])
+
+
+_apply_before_hebrew_backcheck = apply
+
+
+def apply(M):
+    _apply_before_hebrew_backcheck(M)
+    hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last

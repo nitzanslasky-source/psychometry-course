@@ -1621,3 +1621,176 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber(M)   # 2026-10-06 renumber pass: runs last
+
+
+# =====================================================================================================================
+# 2026-10-06 Hebrew back-check: the renumbered questions / examples were compared with the teacher's HEBREW VIDEO
+# subtitles (01-Algebra-Original-Subtitles.txt, lines 13683-14768). Where a new version had landed back on the Hebrew
+# video's own numbers / letters / wording, it gets new ones here (same type, trap, difficulty and methods).
+# Nothing in topic 14 is recorded. Runs last. See t14_CHANGES.md ("2026-10-06 Hebrew back-check").
+# =====================================================================================================================
+def hebrew_backcheck(M):
+    def S(qid, **kw):
+        q = M.set_q(qid, **kw)
+        v = M.D['videos'].get('solve-' + qid)
+        if v:
+            v['title'] = v['navLabel'] = q['stem']; M.touched_videos.add(v['id'])
+
+    # lesson "Prime Numbers": "twenty, eighteen" (even, not prime) was the Hebrew lesson's pair
+    _sub(M, LESSON_A, 3, [('twenty, eighteen…', 'fourteen, thirty…')])
+    # summary: "39 = 2 + 37" was a choice of the Hebrew sample question (31, 37, 33, 39)
+    _sub(M, 'r26-t14-summary', 3, [('Write "39 = 2 + 37"', 'Write "73 = 2 + 71"'),
+                                    ('Thirty-nine as a sum of two primes? Two plus thirty-seven.',
+                                     'Seventy-three as a sum of two primes? Two plus seventy-one.')])
+
+    # q-388: x = 5·3²·6², "35 does not divide" = the Hebrew video's answer (x = 2·5³·6², 35) -> x = 3·5²·10², 22
+    S('q-388', stem='Given: $x=3\\cdot5^2\\cdot10^2$. Which of the following numbers does not divide $x$?',
+      choices=['$20$', '$22$', '$75$', '$60$'], correct=2, expl=[
+        'Break the non-prime factor into primes: $10^2=(2\\cdot5)^2=2^2\\cdot5^2$. Therefore $x=2^2\\cdot3\\cdot5^4$.',
+        'Check each choice: $20=2^2\\cdot5$ ✓, $75=3\\cdot5^2$ ✓, $60=2^2\\cdot3\\cdot5$ ✓.',
+        '$22=2\\cdot11$, and $x$ has no $11$. So $22$ does not divide $x$.'])
+    M.set_slide('solve-q-388', 2, script=[
+        "Not a divisor means: it's not a factor of x. You can't build it from x's primes.",
+        "So check each answer: does it need a prime that x doesn't have?",
+        "But first — ten isn't a prime. Unpack it.",
+        D('Under x write "10² = 2² · 5²  →  x = 2² · 3 · 5⁴"'),
+        "Ten squared is two squared times five squared. So x has two twos, a three, and four fives.",
+        D('Next to choice 1 write "2² · 5 ✓"'),
+        "Twenty: two twos and a five. Both twos come from the ten squared. In stock.",
+        D('Next to choice 3 write "3 · 5² ✓"'),
+        "Seventy-five: a three and two fives. All there.",
+        D('Next to choice 4 write "2² · 3 · 5 ✓"'),
+        "Sixty: two twos, a three and a five. It divides.",
+        D('Next to choice 2 write "2 · 11 — no 11!" and circle choice 2'),
+        "Twenty-two: two times eleven. The two is there — but there's no eleven anywhere in x. Choice two."])
+
+    # q-391: choice 31 (= 2 + 29) was a choice of the Hebrew video, with the same split -> 21 (= 2 + 19)
+    S('q-391', choices=['$15$', '$21$', '$51$', '$43$'], correct=3, expl=[
+        'All four choices are odd. An odd sum of two primes needs one even prime, and the only even prime is $2$.',
+        'So check whether the choice minus $2$ is prime.',
+        '$15=2+13$ ✓. $21=2+19$ ✓. $43=2+41$ ✓ ($41$ is prime: $\\sqrt{41}<7$, and $2$, $3$, $5$ do not divide it).',
+        '$51=2+49$, and $49=7^2$ is not prime ✗. So the sum cannot be $51$.'])
+    _sub(M, 'solve-q-391', 2, [('Split fifteen into two primes, then thirty-one…', 'Split fifteen into two primes, then twenty-one…'),
+                               ('Next to 31 write "2 + 29 ✓"', 'Next to 21 write "2 + 19 ✓"'),
+                               ('Thirty-one: two plus twenty-nine. Twenty-nine is prime. Possible too.',
+                                'Twenty-one: two plus nineteen. Nineteen is prime. Possible too.')])
+
+    # q-394: z = p^r·q^s with p, q, r, s = 2, 3, 5, 7 gave z = 2⁵·3⁷, 2³·3⁵, 7 ... = the Hebrew video's numbers
+    #        -> z = p^s·q^r (z = 2⁷·3⁵), answer p^r·q^q (2⁵·3³)
+    S('q-394', stem='$p$, $q$, $r$, $s$ are prime numbers, and $p<q<r<s$.\nGiven: $z=p^s\\cdot q^r$.\nWhich of the following necessarily divides $z$?',
+      choices=['$r$', '$p^r\\cdot q^q$', '$q^s$', '$s^q$'], correct=2, expl=[
+        '$z$ is built from the prime $p$ ($s$ times) and the prime $q$ ($r$ times).',
+        '$p^r$: $r<s$, therefore $z$ has enough $p$s ✓. $q^q$: $q<r$, therefore $z$ has enough $q$s ✓. So $p^r\\cdot q^q$ divides $z$.',
+        '$q^s$: $z$ has only $r$ copies of $q$, and $r<s$ ✗. $r$ and $s^q$: the primes $r$ and $s$ are not factors of $z$ at all ✗.',
+        'With the smallest primes: $p=2$, $q=3$, $r=5$, $s=7$ give $z=2^7\\cdot3^5$, and of the four choices only $2^5\\cdot3^3$ divides it.'])
+    M.set_slide('solve-q-394', 2, script=[
+        "This is a factors question. What is z actually built from?",
+        D('Under z write "p … s times, q … r times"'),
+        "z contains the prime p — s times. And the prime q — r times.",
+        "Is z divisible by p? Of course. By q? Of course. By r or s? No — those primes aren't in z at all.",
+        "First look at the choices — what can we kill fast?",
+        D('Cross out choice 1'),
+        "Choice one, r. Out immediately. r only shows up as an exponent — it's how MANY times q appears, not a factor of z.",
+        D('Cross out choice 4'),
+        "Choice four, s to the q. z has no factor s. Out.",
+        "Choice three: q to the s. z has q only r times — and s is bigger than r. Not enough q's.",
+        D('Cross out choice 3'),
+        "Three are out — on the exam, mark the one that's left.",
+        D('Circle choice 2'),
+        "In the lesson — why it works. p to the r: z has p s times, and r is less than s. Enough. q to the q: z has q r times, and q is less than r. Enough. Choice two."])
+    M.set_slide('solve-q-394', 3, script=[
+        "Hard to follow with letters? Same idea — with numbers.",
+        "Smallest primes, in order: p is two, q is three, r is five, s is seven.",
+        D('Write "z = 2⁷ · 3⁵"'),
+        "z is two to the seventh times three to the fifth.",
+        D('Next to choice 1 write "5 ✗"'),
+        "Choice one: five. z is built only from twos and threes. Out.",
+        D('Next to choice 2 write "2⁵ · 3³ ✓"'),
+        "Choice two: two to the fifth times three cubed. Two five times — z has seven. Three three times — z has five. It fits.",
+        "But we're plugging in — so we must knock out three choices before marking. It might only work for these numbers.",
+        D('Next to choice 3 write "3⁷ ✗"'),
+        "Choice three: three to the seventh. z only has three five times. Too many. Out.",
+        D('Next to choice 4 write "7³ ✗"'),
+        "Choice four: seven cubed. No seven in z at all. Out.",
+        D('Circle choice 2'),
+        "Choice two. Strong without numbers? Great. If not — plugging in is an excellent route."])
+
+    # q-395: statement (4) "at least one of a, b, c is divisible by 5" was word for word the Hebrew video's statement
+    #        -> the 5 and the 7 swap roles in statements (3) and (4)
+    S('q-395', choices=['It is possible that exactly one of $a$, $b$, $c$ is divisible by $35$.',
+                        'The number of different prime divisors of $x^2$ is greater than that of $x$.',
+                        'If $b$ and $c$ are not divisible by $5$, then $a^2$ is divisible by $25$.',
+                        'At least one of $a$, $b$, $c$ is divisible by $7$.'], correct=2, expl=[
+        '(1) Possible: $a=35$, $b=1$, $c=2$ ✓.',
+        '(2) Never true: squaring doubles the exponents but adds no new prime. For example, $35=5\\cdot7$ and $35^2=1225=5^2\\cdot7^2$ have the same two primes.',
+        '(3) Always true: $5$ is prime and divides $a\\cdot b\\cdot c$. It does not divide $b$ or $c$, therefore it divides $a$. Then $a^2$ is divisible by $5^2=25$.',
+        '(4) Always true: $7$ is prime and divides $a\\cdot b\\cdot c$, therefore it divides one of the factors.',
+        'Never true is also "not necessarily true", therefore the answer is (2).'])
+    M.set_slide('solve-q-395', 2, script=[
+        "First, the given. x is divisible by thirty-five — so x must contain the primes five and seven.",
+        D('Next to the stem write "35 = 5 · 7"'),
+        "x is a times b times c. So at least one of them brings the five, and at least one brings the seven.",
+        A("'A prime divides a · b → it divides a or b' appears", T('A prime divides a product $\\to$ it divides one of the factors', size=38)),
+        "That's the rule: a prime can't be split between factors — one of them holds it. Thirty-five isn't prime, so its five and its seven may come from different numbers.",
+        "Statement four: at least one of them is divisible by seven. Someone had to bring the seven. True for sure.",
+        "Maybe one number brings both — thirty-five, one, two. Maybe they split the job — five, seven, one. Either way, someone holds the seven.",
+        D('Cross out choice 4'),
+        "Statement one: it's possible that exactly one is divisible by thirty-five. Sure — thirty-five, one and two.",
+        D('Write "35, 1, 2 ✓" and cross out choice 1'),
+        "Possible. Out.",
+        "Statement three: if b and c aren't divisible by five — who brought the five? a must have.",
+        D('Next to choice 3 write "5 | a → 25 | a²"'),
+        "Square a, and the five appears twice. So a squared is divisible by twenty-five.",
+        "Numbers: five, seven, one — a squared is twenty-five. Or ten, seven, one — a hundred. Both are divisible by twenty-five.",
+        D('Cross out choice 3'),
+        "Three statements out — on the exam you mark the one that's left. This is probably the last question in the section anyway.",
+        D('Circle choice 2'),
+        "In the lesson, let's learn from statement two. Notice the word: DIFFERENT prime divisors.",
+        D('Write "35 = 5·7 → 35² = 5²·7²"'),
+        "Square x, and the same primes just appear twice as often. No NEW prime shows up.",
+        "So the number of different prime divisors stays exactly the same — never greater. Choice two.",
+        "One more word. Statement two is NEVER true.",
+        "Never true is also \"not necessarily true\". So it's the answer."])
+
+    # q-396: primes {3, 5} / {3, 7}, b < a, ab/35 -> 27 = the Hebrew video exactly -> {2, 3} / {2, 5}, ab/15 -> 8
+    S('q-396', stem='$a$ and $b$ are positive integers. $a$ has exactly two prime factors: $2$ and $3$. $b$ has exactly two prime factors: $2$ and $5$.\nGiven: $b<a$.\nWhat is the smallest possible value of $\\frac{a\\cdot b}{15}$?',
+      choices=['$8$', '$4$', '$16$', '$12$'], correct=1, expl=[
+        'Numbers with exactly the prime factors $2$ and $3$: $6$, $12$, $18$, $24$, … Numbers with exactly the prime factors $2$ and $5$: $10$, $20$, $40$, …',
+        'The expression is smallest when $a$ and $b$ are smallest. The smallest $b$ is $10$. Since $b<a$, $a=6$ is too small. The smallest $a$ above $10$ is $12$.',
+        '$\\frac{a\\cdot b}{15}=\\frac{12\\cdot10}{15}=\\frac{120}{15}=8$. (With $a=6$, ignoring $b<a$, you get $4$ — the trap.)'])
+    M.set_slide('solve-q-396', 2, script=[
+        "When is the expression smallest? When a is smallest and b is smallest.",
+        "a is built from twos and threes only — but from BOTH. Smallest: one two, one three.",
+        D('Write "a = 2 · 3 = 6"'),
+        "Six.",
+        D('Write "b = 2 · 5 = 10"'),
+        "b is built from twos and fives. Smallest: ten.",
+        "But wait — a must be bigger than b. Six isn't bigger than ten.",
+        "So we have to grow a. By how much? a may only contain twos and threes — so times two, or times three.",
+        D('Write "a = 2² · 3 = 12"'),
+        "Keep it as small as possible: times two. a becomes twelve. Bigger than ten — good.",
+        D('Write "(2² · 3)(2 · 5) / (3 · 5)"'),
+        "Now plug in. Twelve times ten, over fifteen.",
+        D('Cancel the 3s and the 5s; write "= 2³ = 8"'),
+        "The three and the five cancel with fifteen. Two cubed — eight.",
+        D('Circle choice 1'),
+        "Choice one."])
+
+    # practice q-412: 17, 33, 27, 39 -> 33 (33 + 2 = 35) shared 33, 39 and the key 35 with the Hebrew video -> 85 (87)
+    S('q-412', choices=['$17$', '$85$', '$27$', '$45$'], correct=2, expl=[
+        'All four choices are odd. An odd difference of two primes needs one even prime: $2$. So the bigger prime is the choice plus $2$.',
+        '$17+2=19$ ✓, $27+2=29$ ✓, $45+2=47$ ✓ — all prime.',
+        '$85+2=87=3\\cdot29$ is not prime (a fake prime: $8+7=15$ is divisible by $3$) ✗. So the difference cannot be $85$.'])
+    # practice q-416: same choices / answer position / example (√3) as the Hebrew video -> new order, example √13
+    S('q-416', choices=['$w$ is even', '$w$ is not an integer', '$w$ is odd', '$w$ is less than $6$'], correct=2, expl=[
+        'If $w$ were an integer greater than $1$, then $w^2=w\\cdot w$ would break into two factors greater than $1$. It would not be prime.',
+        'So $w$ is not an integer. Example: $w=\\sqrt{13}$ gives $w^2=13$, a prime.',
+        '$w$ does not have to be small: $w=\\sqrt{89}$ gives $w^2=89$, a prime, and $\\sqrt{89}>9$. So choice 4 is not necessarily true.'])
+
+
+_apply_before_hebrew_backcheck = apply
+
+
+def apply(M):
+    _apply_before_hebrew_backcheck(M)
+    hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last

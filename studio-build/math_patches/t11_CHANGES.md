@@ -248,3 +248,21 @@ choice each), every video step redone with the new numbers, videos grepped for o
   (both methods), written solution rewritten; checked in sympy and rendered.
 - q-310: back to the Hebrew "+" form with new letters: p, q ≥ 0, when is √p + √q = √(p+q)? Choices Always / p = 0 or q = 0 /
   pq > 0 / p − q = 0 · key 2 (brute force 0…29: equal exactly when pq = 0). Practice item, no video.
+
+## 2026-10-06 Hebrew back-check
+Function `hebrew_backcheck` (runs last). The renumber pass was compared only with base-v18; now every guided and practice
+question, lesson, summary and card example was compared with the Hebrew video subtitles (lines 6610–8727, 14 sample
+questions). Nothing in topic 11 is recorded. Keys checked in sympy (one correct choice each); videos rendered and checked.
+`python3 math_check.py 11 32` → 0 / 0 / 0.
+
+| id | Hebrew video | ours before | new | answer |
+|---|---|---|---|---|
+| q-288 (guided) | (2x)⁴(7x)³/(14x²)³·½x = x² | the same expression, word for word | (5x)⁴(2x)³/(10x²)³·⅕x; choices 5x², x², ⅕x, 2x/5 (x = 1: 5, 1, ⅕, ⅖) | x² (2) |
+| q-294 (guided) | √⅓·√54·⁸√(3⁴)/√6 = 3 | √⅓·√45·⁶√(3³)/√5 = 3 | √⅕·√176·⁶√(5³)/√11; choices √5, 4, √11, 16 | 4 (2) |
+| q-298 (guided) | (a−b)/(√a+√b), plug 4 and 1 (1, 0, 5, 3), key 1 | same form, plug 4 and 1, key 1 | same form (letter question); choices reordered, plug m = 9, n = 1 (10, 0, 2, 4) | √m − √n (3) |
+| card "Power = 1" | x^(y+1) = 1, x ≠ 1 | a^(b+1) = 1 | a^(b+4) = 1 ⇒ b = −4 or a = −1; "or" row: a = 3, b = −4 | — |
+
+Videos rewritten to match: solve-q-288 (both methods), solve-q-294, solve-q-298 (both methods). Title slides untouched.
+**Left on purpose (partial overlaps only):** q-300 (Hebrew √72 + √18 → 3√2; ours √180 + √45 → 3√5: same 36k/9k structure
+as base-v18, different numbers); q-292 (only the base 3 is shared: 81 / 6 / 10 vs 9 / 3 / 1); q-295 (only the choice 2π);
+q-296 (only √3); q-291 (the 2-and-4 pattern always gives 2 and 4); card 2⁴ = 4² = 16 (the fact itself). Practice: no match.

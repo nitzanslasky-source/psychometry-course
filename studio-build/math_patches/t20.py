@@ -1155,3 +1155,40 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ======================================================================================================
+# 2026-10-06 Hebrew back-check: compared with the teacher's Hebrew VIDEO subtitles (01-Algebra-Original-Subtitles.txt,
+# lines 19912-20234). The summary's scaling example (x² = a³, a × 4 → x × 8) and the card tip (4^(3/2) = 8) were
+# exactly the Hebrew sample question's numbers  ==>  a × 9 → x × 27. Nothing in topic 20 is recorded. Runs LAST.
+# ======================================================================================================
+def _hb_sub(M, vid, n, pairs):
+    b = M.slide(vid, n)
+    for old, new in pairs:
+        hit = 0
+        for it in b['items']:
+            if it.get('t') and old in it['t']: it['t'] = it['t'].replace(old, new); hit += 1
+        for l in b['lines']:
+            for key in ('say', 'draw', 'label'):
+                if key in l and old in l[key]: l[key] = l[key].replace(old, new); hit += 1
+        assert hit, '%s #%d: not found: %s' % (vid, n, old)
+    M.touched_videos.add(vid)
+
+
+def hebrew_backcheck(M):
+    _hb_sub(M, 'r26-t20-summary', 7, [
+        ('$x^2=a^3:\\quad a\\times4\\ \\to\\ x\\times4^{\\frac32}=x\\times8$', '$x^2=a^3:\\quad a\\times9\\ \\to\\ x\\times9^{\\frac32}=x\\times27$'),
+        ('x² = a³, a × 4 → x × 8', 'x² = a³, a × 9 → x × 27'),
+        ('Four cubed is sixty-four. Its root: eight.', 'Nine cubed is three to the sixth. Its root: three cubed — twenty-seven.')])
+    c = M.card('mem-understanding')
+    i = [k for k, t in enumerate(c['tips']) if t.startswith('Scaling:')]
+    assert len(i) == 1
+    c['tips'][i[0]] = 'Scaling: $x^2=a^3$, so $x$ changes by $(\\text{factor})^{\\frac32}$. For example, $9^{\\frac32}=27$.'
+
+
+_apply_before_hebrew = apply
+
+
+def apply(M):
+    _apply_before_hebrew(M)
+    hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last

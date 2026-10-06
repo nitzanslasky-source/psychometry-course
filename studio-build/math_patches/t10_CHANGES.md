@@ -240,3 +240,25 @@ Check: every answer and trap was recomputed in Python (sympy). No question equal
 - q-263: √45 was the same question as the topic 9 warm-up alg-extra-root-practice-2 (√45, nearly the same choices).
   Changed to √117 = 3√13 (still a factor 9): choices 13√3, 4√3, 9√13 (trap: forgot the root of 9), 3√13 · key 4.
 - Everything else checked (keys, traps, all 5 videos step by step, no old numbers left): no other problems.
+
+## 2026-10-06 Hebrew back-check
+Checked every guided + practice question, the lesson, the summary and the memory card against the teacher's Hebrew
+VIDEO subtitles (01-Algebra-Original-Subtitles.txt, lines 5359–6607 = the Hebrew "expressions and equations with powers
+and roots" lesson and its sample questions; 6610–8727 glanced at). Nothing in topic 10 is recorded.
+Function `hebrew_backcheck(M)` in t10.py runs last.
+
+Hebrew examples: √12/√3 = 2 · 6/√2 = 3√2, 20/√5 = 4√5 · 9⁸·8⁻³/(3¹²·4⁻³) = 3⁴·2⁻³ · √8+√18 = 5√2, √12+√48 = 6√3 ·
+sample (√18+√18)/(√50−√8) = 2 · 4^(3x) = (1/8)^(5−3x), x = 5 · √(x−5) = 2, x = 9 · x√3 = 3√x, x = 3.
+
+| where | was (landed on the Hebrew) | now | answer |
+|---|---|---|---|
+| q-249 + solve-q-249 (both methods) | (√50+√50)/(√32−√8) = 5 — Hebrew (√18+√18)/(√50−√8): √8 in the same place, √50 too | (√72+√72)/(√98−√32): 12√2 / 3√2; common factor √2(√49−√16) = 3√2, (2/3)√36 | 4 (choice 4); distractors 4√2, 16, 2 |
+| q-250 + solve-q-250 | 9^(3x) = (1/27)^(2−3x) — Hebrew exponents 3x and 5−3x | 9^(2x) = (1/27)^(2−2x): 4x = −6 + 6x | 3 (choice 4); trap 3/5 (forgot the minus of the fraction); check 9⁶ = 27⁴ = 3¹² |
+| memory card, "Negative exponent" | 3⁴·2⁻³ = 3⁴/2³ (the Hebrew lesson's answer) | 7²·2⁻⁵ = 7²/2⁵ | — |
+| memory card, "Adding roots" | √8+√18 = 5√2 (the Hebrew lesson's example) | √44+√99 = 5√11 (as in the summary lesson) | — |
+
+Left on purpose: q-251 √(x−6)=5 and q-252 x√6=6√x (same type as the Hebrew, different numbers); q-248 (different bases);
+lesson 150/√6, 10/√2, 18/√6 (different numbers); practice q-r26-t10-10 x√3 = √(3x) (an English-made question: the left
+side looks like the Hebrew x√3 = 3√x, but the equation and answer differ). Keys brute-forced (one correct choice each);
+duplicate scan over all topics: no question or lesson uses these expressions. `python3 math_check.py 8 9 10 32` → 0/0/0;
+solve-q-249 and solve-q-250 rendered and checked.

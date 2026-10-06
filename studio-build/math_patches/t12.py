@@ -1755,3 +1755,98 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber(M)   # 2026-10-06 renumber pass: runs last
+
+
+# =====================================================================================================================
+# 2026-10-06 Hebrew back-check: the renumber pass compared with base-v18 only. Compared again with the teacher's Hebrew
+# VIDEO subtitles (01-Algebra-Original-Subtitles.txt, lines 8730-11078). Clear matches get new numbers / letters (same
+# type, trap, level and methods). Nothing in topic 12 is recorded. Runs last.
+# =====================================================================================================================
+def hebrew_backcheck(M):
+    from math_api import rich_plain
+
+    def video(qid, slides):
+        vid = 'solve-' + qid
+        for n, script in slides.items():
+            M.set_slide(vid, n, title=None, script=script)
+        v = M.video(vid); v['title'] = v['navLabel'] = rich_plain(M.q(qid)['stemRich']).replace('\n', ' ')
+        M.touched_videos.add(vid)
+
+    # lesson "Inequalities" slide 4: -10 < -2, divide by -2 kept the Hebrew's -10 and -2 -> -18 < -3, divide by -3
+    _dd_sub(M, L1, 4, [('$-10<-2$', '$-18<-3$'),
+                       ("Negative ten is less than negative two. True — it's farther left.",
+                        "Negative eighteen is less than negative three. True — it's farther left."),
+                       ('Write "÷(−2)" under both sides, then "5 > 1"', 'Write "÷(−3)" under both sides, then "6 > 1"'),
+                       ("Divide both sides by negative two: five and one.", "Divide both sides by negative three: six and one."),
+                       ('Move each number to the other side: write "2 < 10"', 'Move each number to the other side: write "3 < 18"'),
+                       ('Negative two goes left and becomes two. Negative ten goes right and becomes ten.',
+                        'Negative three goes left and becomes three. Negative eighteen goes right and becomes eighteen.'),
+                       ('−10 < −2 appears again below', '−18 < −3 appears again below'),
+                       ('Write "÷2" and then "1 < 5"', 'Write "÷3" and then "1 < 6"'),
+                       ('Divide by two: one is less than five. Same answer — five greater than one',
+                        'Divide by three: one is less than six. Same answer — six greater than one')])
+    M.slide(L1, 4)['loads'] = ''
+
+    # q-334: the Hebrew's own letters and givens (z + y < x, x < z < y) -> m + n < p, p < n < m; key 2 -> 3
+    M.set_q('q-334', stem=given(['m+n<p', 'p<n<m'], 'Which of the following is not necessarily true?'),
+            choices=['$n<0$', '$p<0$', '$0<m+n$', '$m<0$'], correct=3, expl=[
+                'Chain: $m+n<p<n<m$.',
+                'From $m+n<n$: $m<0$. From $m+n<m$: $n<0$. From $p<n$: $p<0$.',
+                'So (1), (2) and (4) are all true.',
+                '$m+n$ is a sum of two negative numbers, so it is negative. Therefore $0<m+n$ is never true — it is the answer.'])
+    video('q-334', {
+        2: ["They ask which statement is NOT necessarily true.",
+            "One side: m plus n is less than p. The other: p is less than n, less than m.",
+            "p sits in both — so chain them.",
+            D('Under the question write "m + n < p < n < m"'),
+            "One long chain: m plus n, less than p, less than n, less than m.",
+            D('Draw a number line and mark, from left to right: m + n, p, n, m'),
+            "Put it on a number line: m plus n, then p, then n, then m. Left to right.",
+            "How do you work a chain with lots of letters? Find two spots with the same letter.",
+            D('Draw an arc linking "m + n" and "n"'),
+            "m plus n is less than n. The n's cancel…",
+            D('Write "m < 0"'),
+            "…so m is negative.",
+            "The other pair works too: m plus n is less than m — cancel the m's, and n is negative.",
+            "And p is less than n — so p is negative as well.",
+            D('Write "n < 0, p < 0"'),
+            "m plus n: negative plus negative — negative.",
+            D('Cross out choices 1, 2 and 4'),
+            "Now the choices. n negative? True — out. p negative? True — out. m negative? True — out.",
+            D('Circle choice 3'),
+            "m plus n positive? No — it's negative. That's the one. Choice three."]})
+
+    # q-336: kept the Hebrew's -5 and -20 (and its maximum 100) -> -6 < x < 9, -15 < y < 3
+    M.set_q('q-336', stem=given(['-6<x<9', '-15<y<3'], 'What is the range of the product $xy$?'),
+            choices=['$-135<xy<27$', '$-90<xy<90$', '$-90<xy<27$', '$-135<xy<90$'], correct=4, expl=[
+                'Negative numbers are involved, so check all four corners: $(-6)(-15)=90$, $(-6)\\cdot3=-18$, $9\\cdot(-15)=-135$, $9\\cdot3=27$.',
+                'The largest is $90$ and the smallest is $-135$.',
+                'Therefore $-135<xy<90$.'])
+    corners = dict(M.slide('solve-q-336', 2)['items'][1])
+    video('q-336', {
+        2: ["We'll solve it the psychometric way: plug in the edge numbers.",
+            A("'All positive? End by end. Negatives? The corners' appears", corners),
+            "Multiplying ranges end by end works only when everything is positive. With negatives inside, check the corners — and when dividing, make sure the bottom cannot be zero.",
+            "x can't actually be nine — but treat it as nine, and remember the real value is just under.",
+            "When is the product biggest? When it's positive. Two ways: both positive, or both negative.",
+            D('Write "9 · 3 = 27" and "(−6)(−15) = 90"'),
+            "Both positive: nine times three, twenty-seven. Both negative: negative six times negative fifteen — ninety.",
+            "So the maximum is ninety.",
+            D('Cross out choices 1 and 3'),
+            "Choices one and three stop at twenty-seven. Out.",
+            "Now the minimum. A negative product: one positive, one negative.",
+            D('Write "9 · (−15) = −135"'),
+            "x positive, y negative: nine times negative fifteen. Negative one hundred thirty-five.",
+            "That's already smaller than negative ninety.",
+            D('Cross out choice 2 and circle choice 4'),
+            "So choice two is too narrow. Choice four.",
+            "To finish the job: x negative, y positive — negative six times three, negative eighteen. Not the smallest.",
+            "A hard question — but all it took was the cases and the edges."]})
+
+
+_apply_before_hebrew_backcheck = apply
+
+
+def apply(M):
+    _apply_before_hebrew_backcheck(M)
+    hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last

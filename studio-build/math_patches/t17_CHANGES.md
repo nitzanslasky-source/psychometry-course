@@ -178,3 +178,24 @@ level), the lesson/card examples, and all 9 rewritten videos.
   nothing. The 7 number lines (0–2; −1–1 and −1–0 in Q5; −2–2; −1–0; 0–1; 0–1) are back in `rn_guided`, at the same
   places as before. Rendered and looked at.
 - Everything else is correct; no other change.
+
+## 2026-10-06 Hebrew back-check
+Every guided/practice question, lesson slide and card of Topic 17 was compared with the teacher's Hebrew video subtitles
+(01-Algebra-Original-Subtitles.txt, lines 17363–18203). Nothing in Topic 17 is recorded. Fixes in `hebrew_backcheck(M)`
+(runs last). Keys brute-forced; traps and methods kept; `python3 math_check.py 17 32` → 0 / 0 / 0; videos rendered.
+
+| id | Hebrew (subtitles) | was | new | answer |
+|---|---|---|---|---|
+| q-493 (lesson question) | w>z>y>x>1: xy<zw, xz<yw, y<zx, xw<z | same four claims, letters renamed | $1<p<q<r<s$: $pq<r^2$, $q<sp$, $rp<q$, $p^2<qs$ (2 strong-on-strong, 1 "energy drink", 1 never true) | $rp<q$ (3) |
+| q-495 | z>y>x>1: yz², xy², x²y, y³; plug 2, 3, 4 | same four expressions, same letters, plug 2, 3, 5 | $1<a<b<c$: $a^2c$, $a^2b$, $abc$, $b^2c$; plug 2, 4, 5 (20, 16, 40, 80) | $a^2b$ (2) |
+| q-496 | counter-example 1.1 + 0.9 = 2 vs 1.2 + 0.1 | 1.2 + 0.8 = 2 vs 1.3 + 0.2 | c = 1.4, b = 0.9, d = 1.5, a = 0.1: 2.3 > 1.6 | unchanged (2) |
+| q-497 | plug −½, ¼, ½ → −1/16, −1/4, −1/8, −1/2 | plug −½, ⅓, ½ (−1/4, −1/2 …) | plug −⅓, ¼, ½ → −1/6, −1/3, −1/24, −1/12 | unchanged (3) |
+| q-498 | x³ > x⁴; tests 2 → 16, 8 and ½ → 1/16, 1/8 | x⁴ < x³ with the same tests (exact match) | $x^8<x^7$; tests 256 > 128, 1/256 < 1/128 | $0<x<1$ (4) |
+| q-501 | tests x = 0.2, z = 0.4 / 0.9 | 0.2, 0.5, 0.6 / 0.4, 0.7, 0.8 | 0.1, 0.3, 0.5 (sum 0.6) / 0.3, 0.75, 0.9 (sum 1.2) | unchanged (4) |
+| summary #4 | ⁵√(7/6) vs √(7/8) | ∛(7/6) > √(3/4) | ∛(9/8) > √(4/5) | — |
+| summary #5 | 4/7 vs (3/5)⁻³ | (4/7)⁻² = (7/4)² | (5/9)⁻² = (9/5)² | — |
+
+Left on purpose: q-494 (Hebrew lesson example, exponent −1 → ours −3), q-499 (Hebrew x³, x, ∛x, x⁻³ → ours 7th powers;
+the test value −1/8 is the natural clean cube root), q-500 (20 → 6), lesson "find the range" (x<x³<x² → x<x⁵<x⁴): already
+different numbers. q-496 / q-497 / q-501 keep the Hebrew claim structure with renamed letters (letter-only questions;
+the renumber rules allow letters/order changes) — only their test numbers were changed; teacher may want new structures.

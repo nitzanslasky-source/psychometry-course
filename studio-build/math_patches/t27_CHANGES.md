@@ -165,3 +165,102 @@ Function `practice_methods` (runs last in `apply`). One extra line is added at t
 - `wp27-p12` (swimmer, evening at half speed): Method 2 · Compare by factors: 30 · 4/3 · 2 = 80 → 110 minutes.
 - `wp27-p21` (2 h at 12 kph, 3 h at 8 kph): Method 2 · Percent shares as weights (by hours): 8 + 0.4 · 4 = 9.6.
 - Every line checked in python. Check: `math_check.py 27 32` → 0 / 0 / 0.
+
+## 2026-10-06 renumber pass
+So the English course does not look like the Hebrew one: every Hebrew-derived question has a new story (people, vehicles,
+setting) and new numbers. Concept, trap, level, condition kind and methods are the same (identical ratios instead of 3.6,
+Pythagoras with a known triple, estimate-then-friendly-distance and 2ab/(a+b), ratio / plug-in / elimination, add or
+subtract the speeds, starting gap, reciprocal, the two subtraction tricks, ratios + insight, equation + work back,
+calculate / ratio / estimate between 1.5 and 2, relative speed on a circle + equation check). Every guided solution video is
+rewritten to match (speech, draw cues, tables, bars, route, right triangle, circular-track figure, pre-loaded stem text,
+video titles). Nothing in topic 27 is recorded (RN_RECORDED is empty). Function `renumber_pass(M)` runs last (after
+`cut_repeats`, `add_methods`, `practice_methods`). The two practice_methods lines on p02 / p12 are rewritten with the new
+numbers; the p21 line ("percent shares as weights") moves to q-r26-t27-22 because p21 is removed. No spoken line says
+"Question N" (only the existing title slides, which renumber_guided keeps right).
+
+**Counts:** 13 guided questions renumbered with their 13 solution videos; 19 practice questions renumbered (p01–p20; p10
+lives in T33 and is not touched here); 1 September item renumbered (q-r26-t27-21: it equalled the Average Speed lesson's
+own example 60 / 90 → 75). Lesson examples: 3 slides (`wp-106` #1–#2 "20 seeds / 20 km per hour" and #5 "walker 5 m/s,
+half an hour → 9 km" were the Hebrew's own; `wp-113` #3 "4 + 6 = 10" were the Hebrew's 6 and 4 walkers) plus the
+`mem-motion` card (its examples were Q3 / Q7's numbers). Practice: 37 → 26.
+
+**Order:** in "Further guided examples" the ferry (old Q13, Hebrew level medium) now comes before the midpoint question
+(old Q12, medium plus): Q12 = g120, Q13 = g119. Nothing in g120 uses g119. Correct-answer positions moved in 9 of 13.
+
+**Practice clean-up (37 → 26):** copies removed: p23 (= Q1, m/s for 25 minutes), p21 (= Q3, there and back). Extra-bank
+warm-ups kept (3): p27 (halves in 2 h / 3 h), p22 (toward each other), p24 (downstream). Removed p25 (= the Q15 train
+idea), p26 (= the Q9 head-start chase). September items kept (4, types the Hebrew practice does not have): -21 (equal
+times → plain average), -22 (first third, weighted by time), -10 (plane and wind, trap 480 = average speed), -09 (train
+length from two passes). Removed: -15, -16 (speed change → time: Hebrew p05, p06), -17, -18 (letters: p02, p03), -23,
+-12 (circular track: p14, p19), -11 (current: p24 and -10 stay). Order easy → hard (units warm-ups, basics, ratios, chases,
+meetings, average speed, river, circle, stop / meeting puzzles, letters, wind, meetings count, halves, train length).
+Kept on purpose: all English-made guided questions (q-r26-t27-01 … 06, -31) and their numbers.
+
+**Checks:** every answer recomputed in Python with exact fractions (`verify27.py` in the scratchpad), each key the only
+hit; letter questions brute-forced on several value pairs (p03 with a = b = 1 still gives two hits, as its warning line
+says). Traps still among the choices (0.3 seconds/minutes, 1.7 the path, 87.5 the plain average, 5/9, 2/11 the meeting,
+10 = a tenth of an hour, 54 subtracting, 10:08 car driving early, 9 the speed difference, 136 the sum, 20 "cancel",
+19.2 multiplying, 24 = x only, 3⅓ forgot +60, 80 min not flipped, 3 h 36 / 9 h 36, 3 min ignores the truck, 2.5 min
+adds, 12 forgets the finish, 0.3 m units, 42 equal-distance formula). Compared with the Hebrew subtitles
+(02-Word-Problems 6984–8288): no new question lands on the Hebrew numbers, objects or names. Duplicate check against all
+questions, lessons and cards of topics 1–27: no question equals another question or a lesson / card example (only stray
+shared numbers in unrelated topics). `python3 math_check.py 27 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. All 13 solution
+videos and the two changed lessons rendered and checked (the route label on Q8 shortened to "Bus" so it does not overlap
+"Oakton"). Sidebars Question 1–9 / 10–14 correct after the swap.
+
+| id | old (base / Hebrew) | new | answer |
+|---|---|---|---|
+| wp27-g107 (Q1) | cart 4 m/s, 25 min (Heb: walker 5 m/s, ½ h → 9) | e-scooter 6 m/s, 50 min | 18 km (3) |
+| wp27-g108 (Q2) | drone 390 kph, 2 min, ground 12 (Heb: plane 300, 1 min, 4 → 3) | gondola lift 17 kph, 6 min, ground 1.5 km | 0.8 km (2) |
+| wp27-g109 (Q3) | shuttle 72 / 48 → 57.6 (Heb: 60 / 40 → 48) | car city ↔ coast 105 / 70, friendly 210 km | 84 kph (2) |
+| wp27-g111 (Q4) | Noor & Eli, 1.75× → 4/11 (Heb: Danny & Dina 1.5×) | Maya & Theo on a bike trail, 1.25×; plug in 16 / 20 | 4/9 (2) |
+| wp27-g112 (Q5) | boats in a canal, 3.5× → 2/7 (Heb: planes 2.5×) | rowboat & motorboat on a lake, 4.5×; plug in 4 / 18 | 2/9 (3) |
+| wp27-g114 (Q7) | walkers 5 + 7, 800 m → 4 min (Heb: 6 + 4, 500 m → 3) | runners 8 + 10, 1,800 m | 6 min (1) |
+| wp27-g115 (Q8) | 08:00 van 60, 08:30 car 90, 105 km → 09:00 (Heb: 6:00 80, 6:30 100, 130) | 09:00 bus 72, 09:20 car 108, 204 km | 10:20 (2) |
+| wp27-g116 (Q9) | Mina 3 kph, 20 min, caught after 40 → 4.5 (Heb: Miki 4, 15, 30 → 6) | Zoe bikes 15 kph, 12 min, brother Sam catches after 20 | 24 kph (3) |
+| wp27-g117 (Q10) | 9 km/12 min vs 12 km/9 min → 35 (Heb: 8/10 vs 10/8 → 27) | motorbike 6 km/10 min vs train 10 km/6 min | 64 (2) |
+| wp27-g118 (Q11) | cable car 180 m, 12 s → 15 (Heb: zip line 120 m, 10 s → 12.5) | elevator 60 m, 20 s | 25 s (2) |
+| wp27-g120 (Q12, was Q13) | train 1,350 km, 9 h, 80% → 5 (Heb: 1,600 km, 6 h, 50% → 4) | ferry 360 km, 12 h, 60% faster | 7.5 h (4) |
+| wp27-g119 (Q13, was Q12) | midpoint 24 kph vs 20 min + 18 → 24 (Heb: 30 vs 30 min + 20 → 60) | motorcyclists 48 vs 20 min + 36 (×72) | 48 km (3) |
+| wp27-g121 (Q14) | circle 600 m, 30 / 24 → 6 min (Heb: karts 500 m, 60 / 50 → 3) | runners, 400 m track, 12 / 9 (4 laps vs 3) | 8 min (3) |
+| wp27-p01 | cyclist 1 lap/2 min, 3 laps/8 min, 24 min each → 21 | runner 1 lap/3 min, 2 laps/5 min, 30 min each | 22 (2) |
+| wp27-p02 | ferry d in t, 3× speed, 2t → 6d | bus a in b, 2× speed, 4b | 8a (4) |
+| wp27-p03 | robot x h at 2x, y h at 3y | drone a h at 3a, b h at 4b | 3a²+4b² (2) |
+| wp27-p04 | bus 64 × 3 h, +48, at 80 → 3 | train 75 × 4 h, +60, at 90 | 4 (3) |
+| wp27-p05 | taxi 72 kph 1 h 20, back at 48 → 2 h | cyclist 20 kph 1 h 40, back at 16 | 2 h 5 min (3) |
+| wp27-p06 | 4 h, 1.6× → 2 h 30 | truck 6 h, 1.6× | 3 h 45 min (3) |
+| wp27-p07 | cyclists 12 / 30, gap 9 → 30 min | truck 75, police car 100, gap 5 km | 12 min (2) |
+| wp27-p08 | walker 08:00–11:00 at 4, other at 6 → 09:00 | cyclist 07:00–09:00 at 15, other at 20 | 07:30 (3) |
+| wp27-p09 | van 360: 120 at 60, ¼ rest at 120, rest at 30 → 8.5 | bus 400: 100 at 50, ⅓ rest at 100, rest at 40 | 8 (3) |
+| wp27-p11 | buses 180 km, +15 kph → cannot | trains 240 km, +20 kph | cannot (4) |
+| wp27-p12 | swimmer 1.8 / 2.4 km, 60 m/min, half → 110 | rower 1.5 / 2.4 km, 150 m/min, half | 42 (2) |
+| wp27-p13 | signal 2×10⁸ × 3×10⁻⁹ → 0.6 m | light 3×10⁸ × 4×10⁻⁹ | 1.2 m (2) |
+| wp27-p14 | 3 km circle, 15 / 9 → 30 | 2 km circular road, 28 / 20 | 15 min (3) |
+| wp27-p15 | vans 90 / 60, stop at 180 km 1.5 h → 3 | trucks 80 / 60, stop at 240 km 2 h | 4 (3) |
+| wp27-p16 | road 140, 08:00 / 09:00, 30 km from B → 80 | road 170, 07:00 / 08:00, 50 km from B | 70 (3) |
+| wp27-p17 | D in 4 h, halves v / 3v → 6 | train D in 5 h, halves v / 4v | 8 (2) |
+| wp27-p18 | robot 40 jumps/min, 18 kph → 7.5 m | horse 120 strides/min, 36 kph | 5 m (2) |
+| wp27-p19 | runners 500 m, 3,750 m each → 15 | cyclists 400 m, 2,600 m each | 13 (3) |
+| wp27-p20 | walkers 10:00, 6 / 9, halfway 10:45 → 15 | cyclists 14:00, 16 / 24, halfway 15:30 | 30 min (2) |
+| q-r26-t27-21 | 2 h at 60 + 2 h at 90 → 75 (= lesson example) | 2 h at 70 + 2 h at 30 | 50 (2) |
+| lesson wp-106 #1–#2 | cracking 20 seeds / 20 km per hour | packing 25 boxes / 25 km per hour | – |
+| lesson wp-106 #5 | walker 5 m/s, half an hour → 9 km | cyclist 8 m/s, 25 minutes → 480 m → 12 km | – |
+| lesson wp-113 #3 | walkers 4 + 6 = 10 | 3 + 5 = 8 | – |
+| card mem-motion | 0.8/12 = 1/15 h; 288/5 = 57.6; 72 and 48 → 57.6 | 1.5/9 = 1/6 h; 240/8 = 30; 40 and 24 → 30 | – |
+
+## 2026-10-06 review
+Independent review of the renumber pass (built with / without `renumber_pass`, compared all 13 guided questions + videos,
+19 practice items, q-r26-t27-21, lessons wp-106 / wp-113, card mem-motion, the practice removals). All keys recomputed;
+each key unique, traps still among the choices; type / condition / difficulty unchanged; videos step-by-step correct.
+Fixed in t27.py:
+- **g117**: 6 km / 10 min vs 10 km / 6 min landed back on the Hebrew's own first step ("10 minutes = 1/6 hour, ×6") and its
+  "10 km in … minutes" car. Now motorbike 9 km in 15 min (36 kph) vs train 15 km in 9 min (100 kph) → 64 (choice 2, same
+  choices 46 / 64 / 74 / 136). Video rewritten: "15 min = ¼ h, 9 × 4", "15 × 60/9 = 100", the same two subtraction tricks
+  (104 − 40, 36 → 40 → 100), and identical ratios with the old "divide by 3 → 5 km every 3 minutes, ×20" step.
+- **g119 video**: the first spoken line ("A speed–distance–time table … call each HALF x") came after the table and the
+  fill-in draw cue; moved back before them, as in the original.
+- **solutionVisual data** (new `rn_visuals`): g108, g109, g111 (Noor / Eli), g115 (Pine / van), g118, g119, g121 and p09
+  still stored the old numbers / names; rewritten to the new ones.
+Judgment calls (left): g115's combined speed 72 + 108 = 180 happens to equal the Hebrew's 80 + 100 = 180 (the question's own
+numbers all differ); g109 keeps the 3 : 2 speed ratio (2 h + 3 h) of the base and Hebrew — it is the method's structure.
+`python3 math_check.py 27 32` → 0 / 0 / 0; g117, g119, g121 rendered and checked.

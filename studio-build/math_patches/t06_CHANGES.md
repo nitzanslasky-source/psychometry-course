@@ -174,3 +174,10 @@ Function `practice_methods` (runs last; append only). 2 practice questions, "Sho
 - q-r26-t06-16 (3x − 2y = 5, 6x − 4y + 1): y = 0 → x = 5/3 → 11; second set x = 1, y = −1 → 11 again, so "cannot be determined" is out.
 - q-r26-t06-14 ((x + y)/(x − y) = 3, x/y): y = 1 (y ≠ 0) → x = 2 → 2.
 All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 6 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-06 Hebrew back-check
+All guided and practice questions, the two lessons, the cards and both summaries of Topic 6 were compared with the
+teacher's Hebrew video subtitles (lines 3666–3894: 2x − 5 = 3, 2x² + 6 = 2(x² + 3), 4x − 5 = 2x + 2(x − 3),
+2/(x − 2) = 1/(x − 1), 6x + 3y = 27 & x + y = 5, 3x + y = 25 & 2x + 3y = 33; also skimmed the equation sample questions
+in lines 3895–4790 for practice look-alikes). No matches (recorded or not): every item already uses other numbers.
+Nothing changed. `python3 math_check.py 6 32` → 0 / 0 / 0.

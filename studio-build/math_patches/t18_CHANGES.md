@@ -196,3 +196,22 @@ Videos and lesson/card examples checked. No changes. Judgment calls (kept): q-52
 multiplier 1 the only solution is the Hebrew 33, so a new number needs a multiplier; 4 is the only one with a clean
 single answer); q-519 and q-526 changed the letter pattern (the Hebrew patterns have one unique solution each, so new
 numbers need a new pattern); q-538 now has one non-prime candidate (82) instead of two.
+
+## 2026-10-06 Hebrew back-check
+Every guided/practice question, lesson slide and card of Topic 18 was compared with the teacher's Hebrew video subtitles
+(01-Algebra-Original-Subtitles.txt, lines 18204–18764). Nothing in Topic 18 is recorded. Fixes in `hebrew_backcheck(M)`
+(runs last). Keys brute-forced; traps and methods kept; `python3 math_check.py 18 32` → 0 / 0 / 0; videos rendered.
+
+| id | Hebrew (subtitles) | was | new | answer |
+|---|---|---|---|---|
+| q-517 | AB·AB = 2CB, B−A? choices 5–8, 15² = 225 / 16² = 256 | identical (renumber had moved base 6CB onto it) | $\overline{CA}\cdot\overline{CA}=\overline{6BA}$, $A-C$? choices 6, 2, 4, 5; 25² = 625 gives 3 (not offered), 26² = 676 gives 4; insight method: A ∈ {5, 6}, 20² < 6xx < 30² → C = 2 | 4 (3) |
+| q-513 | lesson example BA·A = CA, value of A (5) | CB·B = AB (letters renamed), 15·5 = 75 | $\overline{CB}\cdot B=\overline{ACB}$, choices 7, 5, 0, 4; 25·5 = 125; "six times fourteen, eighty-four" in the video | 5 (2) |
+| card mem-letters | "08 → 8", 5 + 0 = 5, 5·4 = 20, 5·7 = 35, 6·8 = 48 | same examples | 07 → 7, 4 + 0 = 4, 5·8 = 40, 5·9 = 45, 6·14 = 84 | — |
+| summary #6 | 15² = 225, 16² = 256 (Hebrew sample question) | same | 35·35 = 1225, 46·46 = 2116 | — |
+
+Left: q-512 (AB+AD=CDB → BA+DA=CCA, other answer), q-514 (AB−BA → AB+BA, tests 71/72), q-515 (ABC−AB=CC → BCA+BC=AAA),
+q-516 (AAA−55=BC → AAA−46=BC; B+C = AA = 11 is forced by the letter choices), q-518 (÷15 → ÷17), q-519 (Hebrew
+AC+CB=DA, 52+23=75, A = 5 → ours AB+BC=CD, 32+25=57, C = 5; the digits 2, 3, 5, 7 are forced by "prime digits"),
+q-520 (tens³ + digit sum → units³ + 4·digit sum, tens digit 6): numbers or layout already different.
+Note: new q-517 is close to base-v18's own version (6CB, B−A, 25/26) with other letters and choices — hundreds digit 6 is
+the only one besides 2 where two special-digit squares exist.

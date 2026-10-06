@@ -107,3 +107,100 @@ Function `practice_methods` (runs last in `apply`). One extra line is added at t
 - `wp25-p16` (Ella and Finn vs Finn and Grace): Shortcut · Pick values that fit: Finn = Grace = 0 → Ella = 22.
 - `wp25-p04` (average of u and v): Shortcut · Pick values that fit: a = b = c = d = 1 → 1 = S/4.
 - Every line checked in python. Check: `math_check.py 25 32` → 0 / 0 / 0.
+
+## 2026-10-06 renumber pass
+So the English course does not look like the Hebrew one: every Hebrew-derived question gets new numbers and, where there is a
+story, a new story (names, objects, setting). The idea, the trap, the level and the methods stay the same (balance / balance
+point, sum = number × average, plug in, the see-saw with flipped weights, extra per item, percent shares as weights — the
+"Method 2" lines added today by `practice_methods` are rewritten with the new numbers). Every guided solution video is
+rewritten to match (speech, draw cues, axes, tables, board items, video title, pre-loaded question text). No spoken line names
+a question number. Nothing in Topic 25 is recorded (no take in ~/Documents/Course.recordings), so nothing had to be kept.
+Function `renumber_pass(M)` in t25.py runs last (after `cut_repeats`, `add_methods`, `practice_methods`).
+
+**Counts:** 9 guided questions renumbered (wp25-g082 … g085, g087 … g090, wp25-p18) with their 9 solution videos rewritten;
+19 practice questions renumbered (wp25-p01 … p17, p19, p20). Lesson examples renumbered: "Averages" (`wp-080`) slides 2, 4,
+5 (towers + bar figures), 7 (the formula); "Sum from the Average" #2 (8 ÷ 2 = 4 was the Hebrew's own example); "Weighted
+Averages" #2 (the Hebrew's 5-unit vs 1-unit exam); the summary's weighted example (50 / 100 with weights 4 : 1, gap 50 =
+the Hebrew lesson's 100 / 50, weights 4 : 1); the memory card rows that quote them (Average, Symmetric group, Groups, Extra
+per item). English-made items (guided q-r26-t25-01 … 05, the lesson slides added in September, the summary's other
+examples, the kept extra / September practice items) keep their numbers. **Practice: 36 → 26.**
+
+**Hebrew subtitles checked:** the Hebrew lesson / video numbers (10 & 20, 2-4-6-8, 2-4-6 + 4s, towers 12, 5, 4, 8, 5, 3, 6, 5
+→ 6, 8 ÷ 2 = 4, 3 × 5 = 15, 8 pupils × 6 riddles = 48, Dani 171 / 168 / +16 → 181, x, y, z pairs, history / chemistry
++3 / +4 → 11 with 80 / 83 / 76 / 69, biology 3 units 60 / 100 → 70, 4 units 100 / 50 → 90, 5 numbers at 70 + 10 at 85 →
+80, 1,000 lines of 6 / 7 words, 6¼ → 250) — no new question or example lands on them. Two old English versions DID: g085
+(answer 11, plug-in 80 → 69 exactly as in the Hebrew video) and the summary (50 / 100, weights 4 : 1); both are new now.
+
+**Order:** Q3 heights (the Hebrew's "easy" question, the balance point) moves up to Q2, right after Q1; the balance with five
+scores (q-r26-t25-02) follows as Q3; "how many were there?" (q-r26-t25-01, harder) is now Q4. Nothing used before taught
+(the balance is in lesson 1). The weighted group (Q11–Q14) was already easy → hard. Correct-answer positions moved in 8 of 9
+guided questions (keys now 1, 4, 2, 2, 1, 2, 2, 3, 3, 3 | 4, 2, 1, 3). Practice ordered easy → hard.
+
+**Practice clean-up (36 → 26):** copy removed: q-r26-t25-15 (= p25 with "largest"). Extra-bank items kept (3): p21 (a value
+joins), p23 (weights 3 : 1, percent shares), p27 (extra per item / shares backwards); removed p22 (a value leaves), p24 (every
+value × 3 − 4: guided Q7 + q-11), p25 (sum of consecutive integers: guided Q1), p26 (a group joins). September items kept (4,
+types the Hebrew practice does not have): q-06 (the balance, missing value), q-07 (how many were there?), q-09 (evenly
+spaced), q-11 (every value changes, "in t years"); removed q-08 (smallest largest value: p14 has "largest possible"), q-10
+(evenly spaced: q-09), q-12 (three weighted groups: p02, p19, p20), q-13 (base number: the balance, q-06), q-14 (how many at
+first: q-07). All 19 Hebrew-derived practice questions kept.
+
+**Checks:** every answer and every method step recomputed in Python (exact fractions); brute force: g085 (every score set →
+only 16), p18 (only 18), g084 (random numbers → always 6 × the average), p09 / p10 / p12 (exactly one choice necessarily
+true), p16 (only 18), p17 (only 14 qualifies; 9 = A's average, 4 the lowest). Traps still among the choices: 4 = gap of the
+averages, 12 = sums without the constants, 6 = sign (p18); 11 = forgot to double the average lead, 10 = total lead (g085);
+the plain middle (g087: 79), 70 = four parts instead of three (g087), flipped see-saw (g087: 85, g088: 61, g089: 66), midpoint 68 (g089), 500 = four parts
+instead of five, 800 = extra not halved, 1,600 = the 3-kg boxes (g090); 4b/3 = forgot the 2 (p11); 3 : 5 flipped and 5 : 8
+the share (p19); 70 = no subtraction, 60 = "different" (p14). Video keys: every "Circle choice N" / "Choice N" matches the
+key. Duplicate check over topics 1–25 (question stems, lesson boards and lines, cards): no new question equals another
+question or a lesson / card example (only incidental shared small numbers). Each new question compared side by side with its
+original: same type, same condition kind, same number of steps, same choice kind. No quadratic trinomial.
+`python3 math_check.py 25 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered all 9 changed solution videos, the 3 lessons and
+the summary and looked at them.
+
+| id | old | new | answer |
+|---|---|---|---|
+| wp25-g082 (Q1) | 9 students, average 8 puzzles → total | 12 beach volunteers, average 7 bags of litter | 84 (1) |
+| wp25-g083 (Q2, was Q3) | Leo 176, average with Mina 171, Noor = Mina + 13 | Ethan 169, average with Chloe 164, Ryan = Chloe + 18 | 177 (4) |
+| wp25-g084 (Q8) | four numbers a, b, c, d; choices 4×, 6×, 2×, 3× (key 2) | letters p, q, r, s; choices 4×, 2×, 6×, 3× | 6 × average (3) |
+| wp25-g085 (Q9) | Kai / Zara, art / science, Zara +5, Kai's average +3; plug-in 80, 85, 77, 69 | Omar / Lena, geography / music, Lena +6, Omar's average +5; plug-in 70, 76, 65, 54 | 16 (3) |
+| wp25-p18 (Q10) | avg(a, b, 14) = avg(b, c, 20) + 3 → a − c | avg(x, y, 11) = avg(y, z, 17) + 4 → x − z; plug-in y = 0, z = 10 → x = 28 | 18 (3) |
+| wp25-g087 (Q11) | exam twice the project, 68 / 92 → 76 | written exam twice the oral exam, Sara 61 / 97 (36 = 3 × 12; 2 × 12 = 1 × 24) | 73 (4) |
+| wp25-g088 (Q12) | exam weight 5, presentation 1, 94 / 64 → 89 | lab report weight 5, quiz 1, 91 / 55 (36 = 6 × 6) | 85 (2) |
+| wp25-g089 (Q13) | 6 numbers at 62, 9 at 82 → 74 | 8 numbers at 58, 12 at 78 (2 : 3, midpoint 68) | 70 (1) |
+| wp25-g090 (Q14) | 1,200 lines, 4 or 6 words, average 4.5 → 300 | 2,000 boxes, 3 kg or 5 kg, average 3.4 kg (0.4 / 1.6 → 4 : 1) | 400 (3) |
+| wp25-p01 | average = difference: 5 and 15 | 7 and 21 (6 & 16, 9 & 25, 8 & 20 near misses) | 7 and 21 (3) |
+| wp25-p02 | teams 64 / 82, combined 70 → A bigger | morning / evening class 66 / 81, combined 71 | morning bigger (1) |
+| wp25-p03 | triples (a, b, c), (d, e, f) | triples (p, q, r), (x, y, z); choices reordered | 0 (3) |
+| wp25-p04 | u, v of a, b, c, d; S | m, n of p, q, r, s; T; choices reordered | T/4 (3) |
+| wp25-p05 | average of 2/3 and 1/6 | average of 3/4 and 1/8 | 7/16 (4) |
+| wp25-p06 | two rope lengths, average = one of them | two package weights | 1 : 1 (2) |
+| wp25-p07 | Ava, Ben 72, Chen 84 → Ava 96 | Mia, Leo 69, Sam 78 | 87 (4) |
+| wp25-p08 | three temperatures, average = middle | three prices | 1 : 1 (1) |
+| wp25-p09 | avg(18, a, b) > avg(24, a) → a < 2b − 36 | avg(14, a, b) > avg(22, a) | a < 2b − 38 (1) |
+| wp25-p10 | M avg of x, y, z; x < M < z | A avg of p, q, r; p < A < r; choices reordered | (p + q)/2 < r (4) |
+| wp25-p11 | b = a + 2, average 3a → 3b/5 | b = a + 3, average 4a | 4b/7 (3) |
+| wp25-p12 | r ≤ s ≤ t, average t | x ≤ y ≤ z, average z; choices reordered | x = y = z (2) |
+| wp25-p13 | spinner ×3: all 5, first two 4, last two 6 → 5 | Emma's three darts: all 6, first two 5, last two 8 (2, 8, 8) | 8 (3) |
+| wp25-p14 | five positive integers, average at most 12 → 56 | average at most 14 | 66 (3) |
+| wp25-p15 | charity, 140 boxes / month, first 8 months 180 → 240 | library, 150 books / month, first 8 months 170 | 440 (3) |
+| wp25-p16 | Ella & Finn vs Finn & Grace, +11 stickers → 22 | Nina & Paul vs Paul & Rosa, +9 stamps | 18 (3) |
+| wp25-p17 | A 6, 6, 8, 12 / B 11, 13, 15, 17 → 12 | Team A 4, 9, 9, 14 / Team B 12, 16, 18, 22 (averages 9 / 17) | 14 (2) |
+| wp25-p19 | tea 84 / 54, blend 72 → 3 : 2 | coffee 100 / 60, blend 85 (share 5/8) | 5 : 3 (3) |
+| wp25-p20 | x members at 76, y at 91 → x/y | m adults at 42, n children at 11; choices reordered | m/n (3) |
+| lesson wp-080 #2 | 12, 28 → 20; 4, 8, 12, 16 → 10 | 16, 30 → 23; 6, 10, 14, 18 → 12 | – |
+| lesson wp-080 #4 | 4, 6, 8 (+ 6) → 6 | 3, 5, 7 (+ 5) → 5 | – |
+| lesson wp-080 #5, #7 | towers 3, 8, 4, 10, 5 → 30 / 5 = 6 | towers 4, 9, 3, 11, 8 → 35 / 5 = 7 (both bar figures) | – |
+| lesson wp-081 #2 | 8 / 2 = 4 → 8 = 2 · 4 | 12 / 3 = 4 → 12 = 3 · 4 | – |
+| lesson wp-086 #2 | 5-unit math exam = 5 × a 1-unit exam | 4-unit exam = twice a 2-unit exam | – |
+| summary #7, #8 | 50, 50, 50, 50, 100 → 60 (gap 50, parts of 10) | 30, 30, 30, 30, 90 → 42 (gap 60, parts of 12) | – |
+| card mem-averages | towers → 6; 12, 28 → 20; 6 : 9 = 2 : 3; (5,400 − 4,800) / 2 = 300 | towers → 7; 16, 30 → 23; 8 : 12 = 2 : 3; (6,800 − 6,000) / 2 = 400 | – |
+
+## 2026-10-06 review
+Independent review of the renumber pass (built with / without `renumber_pass`, compared every question, video, lesson,
+summary and card). All 9 guided + 19 practice keys recomputed / brute-forced (g085 → only 16, p18 → only 18, p13 → only
+2, 8, 8, p17 → only 14, p09 / p10 random checks → exactly one choice always true, p01 → only 7 & 21); traps still present;
+same type / condition / difficulty as before; no Hebrew numbers or objects (checked against the averages part of the Hebrew
+subtitles); every video step works with the new numbers; Method 2 / Shortcut lines match; no duplicate of another question
+or lesson example in topics 1–29; practice removals as logged (26 left, target ≈ 25).
+**Fixed:** wp25-g083 kept its old `solutionVisual` number line (Mina 166, Mean 171, Leo 176, Noor 179) → now Chloe 159,
+Mean 164, Ethan 169, Ryan 177 (155–180). `python3 math_check.py 25 32` → 0 / 0 / 0.

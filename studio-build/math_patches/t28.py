@@ -868,6 +868,7 @@ def apply(M):
     cut_repeats(M)
     add_methods(M)   # 2026-10-06 new exam methods (runs last)
     practice_methods(M)   # 2026-10-06 practice: new methods (runs last)
+    renumber_pass(M)   # 2026-10-06 renumber pass (runs last)
 
 
 # =========================================================================================================
@@ -1218,3 +1219,919 @@ def _pm_add(M, qid, lines):
 def practice_methods(M):
     _pm_add(M, 'wp28-p13', [r'"At most" → this is the Topic 21 min/max method, not a counting formula. Worst luck: every cupboard opens only with the last key still possible: $6+5+4+3+2+1=21$ tests.'])
     _pm_add(M, 'wp28-p27', [r'Groups with no names? Here the teams DO have names (Cedar and Maple), therefore we do not divide. With two unnamed teams it would be $20\div2!=10$, the trap in choice 4.'])
+
+
+# =====================================================================================
+# 2026-10-06 renumber pass (runs LAST). The English course must not look like the Hebrew one:
+# every Hebrew-derived question (guided wp28-g124 ... g144, practice wp28-p01 ... p20) gets new
+# numbers and a new story; idea, trap, level and methods stay. Solution videos rewritten to match.
+# Hebrew-derived lesson examples renumbered. Safe reorder. Practice clean-up (copies, extras, Sept).
+# Nothing in Topic 28 is recorded (checked ~/Documents/Course.recordings 2026-10-06).
+# =====================================================================================
+RN_RECORDED = set()   # recorded question / video ids would go here and keep their old version
+
+
+def _rn_q(M, qid, stem, choices, correct, expl):
+    if qid in RN_RECORDED or qid not in M.D['questions']:
+        return
+    M.set_q(qid, stem=stem, choices=choices, correct=correct, expl=expl)
+
+
+def _rn_video(M, qid, intro, slides):
+    """Rewrite a guided solution video: title-slide lines + every question slide (2, 3, ...)."""
+    vid = 'solve-' + qid
+    if vid in RN_RECORDED or qid in RN_RECORDED:
+        return
+    v = M.video(vid)
+    assert len(v['beats']) == len(slides) + 1, (vid, len(v['beats']), len(slides))
+    t0 = v['beats'][0]['title']
+    M.set_slide(vid, 1, script=list(intro))
+    v['beats'][0]['title'] = t0
+    for n, (title, script) in enumerate(slides, 2):
+        assert v['beats'][n - 1]['mode'] == 'question', (vid, n)
+        M.set_slide(vid, n, title=title, script=script)
+
+
+def _grid(rows, cols):
+    return {'k': 'vis', 'v': {'type': 'choiceGrid', 'rows': rows, 'cols': cols}, 'w': 1000, 'h': 300, 'y': 300}
+
+
+def rn_guided(M):
+    S = lambda qid, stem, ch, cor, ex: _rn_q(M, qid, stem, ch, cor, ex)
+    V = lambda qid, intro, slides: _rn_video(M, qid, intro, slides)
+    Q_ = lambda qid: M.q(qid)
+
+    # ---- g124: digits 2, 4, 6, 8 increasing  ==>  3, 5, 6, 9 increasing (4)
+    S('wp28-g124', 'How many three-digit numbers can be made from the digits 3, 5, 6 and 9 if the hundreds digit is '
+                   'smaller than the tens digit and the tens digit is smaller than the units digit?',
+      ['6', '24', '4', '12'], 3, [
+          'List in order, smallest first. Hundreds digit $3$: $356$, $359$, $369$. Hundreds digit $5$: $569$. '
+          'Hundreds digit $6$ or $9$: there are not enough bigger digits left.',
+          'Total: $4$ numbers.',
+          'Check: each number uses $3$ of the $4$ digits, in increasing order. So we only choose the $1$ digit that is '
+          'left out: $4$ ways.'])
+    V('wp28-g124', ["Our first counting question.", "Trial and error. Let's list."], [
+        ('Method 1 · List and check', [
+            "No formula needed. We simply check.",
+            "We only have the digits three, five, six and nine — and each digit must be bigger than the one before.",
+            D('Write "356"'),
+            "Start with three in front. Three five six: five is bigger than three, six bigger than five. Works.",
+            D('Write "359" and "369"'),
+            "Three five nine. Three six nine. Both work.",
+            D('Write "569"'),
+            "Five in front: only five six nine.",
+            "Six or nine in front? Not enough bigger digits left to finish.",
+            D('Circle choice 3'),
+            "Four numbers. Choice three. What did we do? We counted and checked.",
+        ]),
+        ('Method 2 · Leave one digit out', [
+            "Here's a neat check. Any three of the four digits can go up in exactly one way.",
+            "So choosing the number is the same as choosing the one digit that's left out.",
+            D('Write "4 digits to leave out → 4"'),
+            "Four digits to leave out — four numbers.",
+        ]),
+    ])
+
+    # ---- g125: café 4 fillings x 6 drinks  ==>  food truck 7 soups x 3 breads (21)
+    S('wp28-g125', 'A food truck offers 7 soups and 3 kinds of bread. A lunch contains one soup and one kind of bread. '
+                   'How many different lunches are possible?',
+      ['10', '21', '49', '9'], 2, [
+          'Two stages: a soup ($7$ options) and a bread ($3$ options).',
+          'Multiply: $7\\times3=21$ lunches.',
+          'Adding, $7+3=10$, counts menu items, not lunches.'])
+    Q_('wp28-g125')['solutionVisual'] = {'type': 'choiceGrid', 'rows': 7, 'cols': 3, 'rowLabel': 'Soup', 'colLabel': 'Bread'}
+    V('wp28-g125', ["Stages of choice — then multiply."], [
+        ('Method 1 · Multiply the stages', [
+            "Two stages of choice. Stage one: a soup.",
+            D('Write "soup: 7"'),
+            "Seven soups — seven options. Write the number of options for each stage.",
+            D('Write "bread: 3"'),
+            "Stage two: the bread — three options.",
+            D('Write "7 × 3 = 21"'),
+            "Multiply: twenty-one.",
+            "Why multiply? Pick the first soup — it goes with any of the three breads: three lunches. "
+            "The second soup, three more. Three for each of the seven soups.",
+            D('Circle choice 2'),
+            "Twenty-one. Choice two.",
+        ]),
+        ('Method 2 · The grid', [
+            "The same count as a picture: one row per soup, one column per bread.",
+            A('A 7 × 3 choice grid appears', _grid(7, 3)),
+            "Every lunch is exactly one cell — one soup, one bread.",
+            D('Shade one cell and write "1 lunch"'),
+            "Seven rows of three — or three columns of seven. Soup first or bread first, the order doesn't matter. Twenty-one.",
+            "Adding seven plus three would count menu items, not lunches.",
+        ]),
+    ])
+
+    # ---- g126: two-digit code, digit sum 12 (7)  ==>  locker number, digit sum 14 (5)
+    S('wp28-g126', 'A locker number has two digits, each from 0 to 9. The sum of the two digits must be 14. '
+                   'How many locker numbers are possible?',
+      ['10', '25', '5', '4'], 3, [
+          'First digit: it must be at least $5$ (otherwise the second digit would have to be more than $9$). '
+          'So $5, 6, 7, 8, 9$: $5$ options.',
+          'Second digit: it must be $14$ minus the first digit. It is forced: $1$ option.',
+          '$5\\times1=5$ locker numbers: $59$, $68$, $77$, $86$, $95$.'])
+    V('wp28-g126', ["Careful — here one choice depends on another."], [
+        ('Method 1 · Stages, with dependence', [
+            "Two stages: a first digit and a second digit. Digits zero to nine, and they must add up to fourteen.",
+            "First digit: can it be zero? Zero plus what makes fourteen? Fourteen — that's not a digit, it's a number.",
+            D('Write "0 ✗  1 ✗  2 ✗  3 ✗  4 ✗"'),
+            "One would need thirteen. Two, twelve. Three, eleven. Four, ten. Not digits. "
+            "So the first digit is five up to nine.",
+            D('Write "first: 5 options"'),
+            "Five options.",
+            "Now say we picked six. What completes it to fourteen? Only eight. Picked nine? Only five.",
+            D('Write "second: 1 option"'),
+            "Whatever we picked first, exactly one digit completes it. The second choice depends on the first.",
+            D('Write "5 × 1 = 5"'),
+            "Five times one: five.",
+            D('Circle choice 3'),
+            "Choice three.",
+            "This is where people slip: they say five options, then five again — twenty-five. "
+            "No — the second stage has one option.",
+        ]),
+        ('Method 2 · List them', [
+            "Short enough to check by listing.",
+            D('Write "59, 68, 77, 86, 95"'),
+            "Fifty-nine and ninety-five are different locker numbers — position matters. "
+            "Seventy-seven is allowed and counted once.",
+            "Five locker numbers.",
+        ]),
+    ])
+
+    # ---- g128 / g129: symbols A-F, 3 positions (216 / 120)  ==>  suitcase lock, digits 1-9, 3 wheels (729 / 504)
+    S('wp28-g128', 'A suitcase lock has three wheels. Each wheel shows one of the digits 1 to 9, and digits may repeat. '
+                   'How many codes are possible?',
+      ['504', '729', '27', '81'], 2, [
+          'Digits may repeat, so the pool stays the same: $9$ options for each wheel.',
+          '$9\\times9\\times9=729$. Codes like $777$ and $373$ are included.'])
+    V('wp28-g128', ["With repetition — or without?"], [
+        ('Method 1 · The pool stays full', [
+            "The pool: nine digits, one to nine. And digits may repeat.",
+            D('Under the question write "9 × 9 × 9"'),
+            "First wheel: nine options. Say we picked four. It goes right back into the pool.",
+            "Second wheel: nine options again. Third: nine again.",
+            D('Write "= 729"'),
+            "Nine times nine is eighty-one, times nine — seven hundred twenty-nine.",
+            D('Circle choice 2'),
+            "Choice two. And codes like seven-seven-seven are included.",
+            A("'444 is a three-digit number' appears", T('$444$ is a three-digit number', size=36)),
+            "Same with numbers: a three-digit number may repeat digits — four four four counts.",
+        ]),
+    ])
+    S('wp28-g129', 'A suitcase lock has three wheels. Each wheel shows one of the digits 1 to 9, and no digit may '
+                   'appear twice. How many codes are possible?',
+      ['729', '84', '27', '504'], 4, [
+          'No digit may repeat, so the pool shrinks: $9$, then $8$, then $7$.',
+          '$9\\times8\\times7=504$.',
+          'Compare with the previous question: the same digits, but $9\\times9\\times9$ became $9\\times8\\times7$.',
+          'We do not divide by anything: $123$ and $213$ are different codes ($\\frac{504}{6}=84$ is the trap).'])
+    V('wp28-g129', ["The same question — with one change."], [
+        ('Method 1 · The pool shrinks', [
+            "Exactly the same lock — but now no digit may appear twice.",
+            "First wheel: nine options. Say we picked four. Four is out — it doesn't come back.",
+            D('Under the question write "9 × 8 × 7"'),
+            "Second wheel: eight left. Third wheel: seven left.",
+            D('Write "= 504"'),
+            "Nine times eight is seventy-two, times seven — five hundred four.",
+            D('Circle choice 4'),
+            "Choice four.",
+            "Compare with the last question: same digits, but here the pool shrinks after every pick. "
+            "Nine-nine-nine became nine-eight-seven.",
+            "And we don't divide by anything — one-two-three and two-one-three are different codes.",
+        ]),
+    ])
+
+    # ---- g130: 6 photographs in a row (720)  ==>  7 trophies in a glass cabinet (5040)
+    S('wp28-g130', 'In how many different ways can 7 different trophies be placed in a row in a glass cabinet?',
+      ['720', '5040', '2520', '49'], 2, [
+          '$7$ trophies in a row: $7!=7\\times6\\times5\\times4\\times3\\times2\\times1=5040$.',
+          'The last place has only $1$ trophy left: it is forced.'])
+    V('wp28-g130', ["Items in a row."], [
+        ('Method 1 · Stage by stage', [
+            "Seven trophies, seven places in the row — seven stages.",
+            D('Under the question write "7 × 6 × 5 × 4 × 3 × 2 × 1"'),
+            "First place: any of the seven. That trophy is placed — it's out. Second place: six left. "
+            "Then five, four, three, two.",
+            "The last place: one trophy left. No choice at all.",
+            D('Write "= 5040"'),
+            "Seven times six, forty-two. Times five, two hundred ten. Times four, eight hundred forty. "
+            "Times three, two thousand five hundred twenty. Times two, five thousand forty.",
+            D('Next to it write "= 7!"'),
+            A("'n! = n · (n − 1) ⋯ 2 · 1' appears", T('$n!=n\\cdot(n-1)\\cdots2\\cdot1$', size=36)),
+            "The exclamation mark is called factorial: the number times every whole number below it, down to one.",
+            "That's seven factorial. Seven items in a row: seven factorial ways.",
+            D('Circle choice 2'),
+            "Choice two.",
+        ]),
+    ])
+
+    # ---- g132: 5 islands, ferry routes (10)  ==>  6 towns, bus lines (15)
+    S('wp28-g132', 'Six towns are connected so that every pair of towns has exactly one direct two-way bus line. '
+                   'How many bus lines are there?',
+      ['15', '30', '12', '6'], 1, [
+          'Count in order: the line leaves from one of $6$ towns and goes to one of the $5$ others: $6\\times5=30$.',
+          'A line from A to B is the same line as from B to A, so every line was counted twice: $\\frac{30}{2}=15$.',
+          'Check: $5+4+3+2+1=15$.'])
+    Q_('wp28-g132')['solutionVisual'] = {'type': 'network', 'nodes': 6}
+    V('wp28-g132', ["Mutual action."], [
+        ('Method 1 · Count, then halve', [
+            "A bus line is two-way. Let's count as usual.",
+            "Stage one: the town it leaves from — six options.",
+            D('Write "from: 6"'),
+            "Stage two: where it arrives — not the same town. Five options.",
+            D('Write "to: 5" and "6 × 5 = 30"'),
+            "Thirty. It's even among the choices — but something's off.",
+            "A to B and B to A — that's the same line, just there and back. We counted every line twice.",
+            D('Write "30 ÷ 2 = 15"'),
+            "Mutual action: divide by two. Fifteen.",
+            D('Circle choice 1'),
+            "Choice one.",
+            A("'Handshakes · routes · games · diagonals' appears", T('Handshakes · routes · games · diagonals', size=36)),
+            "Spot it on the exam: handshakes, two-way routes, games between two, diagonals.",
+            A("'Different roles? Don't halve' appears", T("Different roles? Don't halve", size=36)),
+            "But with roles — a president and a secretary — A-then-B and B-then-A really are different. Then don't halve.",
+        ]),
+        ('Method 2 · Descending list', [
+            "A check. Draw all the lines between towns A to F.",
+            A('A six-town network appears', {'k': 'vis', 'v': {'type': 'network', 'nodes': 6}, 'w': 1000, 'h': 380, 'y': 250}),
+            D('Next to the picture write "5 + 4 + 3 + 2 + 1"'),
+            "A has five lines. B adds four new ones — its line to A is already counted. C adds three, D two, E one.",
+            D('Write "= 15"'),
+            "Fifteen lines again.",
+        ]),
+    ])
+
+    # ---- g133: heptagon (14)  ==>  octagon (20)
+    S('wp28-g133', 'How many diagonals does an eight-sided polygon have?',
+      ['28', '20', '8', '40'], 2, [
+          'From each vertex: $8-3=5$ diagonals (not to itself and not to its two neighbors).',
+          'Every diagonal is counted from both of its ends: $\\frac{8\\times5}{2}=20$.',
+          'Or: all lines between the vertices, $\\frac{8\\times7}{2}=28$, minus the $8$ sides: $28-8=20$.'])
+    Q_('wp28-g133')['solutionVisual'] = {'type': 'polygon', 'sides': 8, 'diagonals': True}
+    V('wp28-g133', ["Diagonals — four ways."], [
+        ('Method 1 · Draw and count', [
+            "A diagonal joins two vertices that are not next to each other.",
+            "The simplest way: draw it and count.",
+            A('An eight-sided polygon with its diagonals appears',
+              {'k': 'vis', 'v': {'type': 'polygon', 'sides': 8, 'diagonals': True}, 'w': 1000, 'h': 380, 'y': 230}),
+            D('Number the gold diagonals one by one'),
+            "Twenty. With eight sides it's already crowded — so let's see faster ways.",
+        ]),
+        ('Method 2 · All lines minus sides', [
+            "Eight vertices. Lines between them are a mutual action.",
+            D('Write "8 × 7 ÷ 2 = 28"'),
+            "Pick a vertex — eight options. Draw a line to another — seven options. Divide by two: twenty-eight lines.",
+            "But eight of those lines are the sides of the polygon, not diagonals.",
+            D('Write "28 − 8 = 20"'),
+            "Twenty-eight minus eight: twenty.",
+        ]),
+        ('Method 3 · Descending sum', [
+            "From the first vertex: seven lines. From the next: six new ones. Then five, four, three, two, one.",
+            D('Write "7 + 6 + 5 + 4 + 3 + 2 + 1 = 28"'),
+            "Each time one fewer — that line already came from the vertex before. Twenty-eight.",
+            D('Write "28 − 8 = 20"'),
+            "Minus the eight sides: twenty again.",
+        ]),
+        ('Method 4 · The formula', [
+            "And the formula: n times n minus three, over two.",
+            D('Write "8 × (8 − 3) ÷ 2 = 8 × 5 ÷ 2 = 20"'),
+            "Eight times five is forty. Over two: twenty.",
+            "Forty is the trap — it counts every diagonal from both of its ends.",
+            D('Circle choice 2'),
+            "Four ways, one answer. Choice two.",
+        ]),
+    ])
+
+    # ---- g135: 5 drinks, 4 snacks, cocoa -> biscuit (17)  ==>  6 hot drinks, 5 pastries, espresso -> croissant (26)
+    S('wp28-g135', 'A breakfast stand offers 6 hot drinks and 5 pastries. A customer chooses one of each. If the drink '
+                   'is espresso, the pastry must be a croissant; with any other drink, any pastry is allowed. '
+                   'How many choices are possible?',
+      ['25', '21', '26', '30'], 3, [
+          'Case 1, espresso: the pastry must be a croissant. $1\\times1=1$.',
+          'Case 2, another drink: $5\\times5=25$.',
+          'The cases do not overlap, so add them: $1+25=26$.',
+          'Check: all pairs, $6\\times5=30$, minus the forbidden pairs (espresso with the $4$ other pastries): $30-4=26$.'])
+    V('wp28-g135', ["Adding possibilities — split into cases."], [
+        ('Method 1 · Two cases, then add', [
+            "Espresso forces a croissant. Any other drink — any pastry. So split into two cases.",
+            D('Write "Case 1: espresso"'),
+            "Case one: espresso. One option for the drink. And then the pastry must be a croissant — one option.",
+            D('Write "1 × 1 = 1"'),
+            "One possibility.",
+            D('Write "Case 2: not espresso"'),
+            "Case two: any other drink. Six drinks, minus espresso — five options. "
+            "And any pastry — croissant included — five options.",
+            D('Write "5 × 5 = 25"'),
+            "Twenty-five.",
+            D('Write "1 + 25 = 26"'),
+            "Add the cases: twenty-six.",
+            D('Circle choice 3'),
+            "Choice three.",
+            "Careful: the rule works one way. Espresso needs a croissant — but a croissant still goes with any other drink.",
+        ]),
+        ('Method 2 · All minus forbidden', [
+            "Check it the other way. With no rule: six times five, thirty.",
+            D('Write "6 × 5 = 30"'),
+            "Forbidden: espresso with any of the four pastries that aren't croissants.",
+            D('Write "30 − 4 = 26"'),
+            "Thirty minus four: twenty-six.",
+        ]),
+    ])
+
+    # ---- g136: red/blue dice, sum not 5 (32)  ==>  green/yellow dice, sum not 8 (31)
+    S('wp28-g136', 'A green dice and a yellow dice each show a number from 1 to 6. How many ordered outcomes have a sum '
+                   'different from 8?',
+      ['33', '32', '31', '30'], 3, [
+          'All outcomes: $6\\times6=36$.',
+          'Sum $8$: $(2,6)$, $(3,5)$, $(4,4)$, $(5,3)$, $(6,2)$. That is $5$ outcomes. The colors make $(2,6)$ and '
+          '$(6,2)$ different; $(4,4)$ is one outcome.',
+          'All minus forbidden: $36-5=31$.'])
+    V('wp28-g136', ["Subtracting possibilities."], [
+        ('Method 1 · All minus forbidden', [
+            "We could list every outcome whose sum isn't eight — long and messy. Much easier to work backwards.",
+            D('Write "6 × 6 = 36"'),
+            "All outcomes: six for the green die, six for the yellow. Thirty-six.",
+            "Forbidden: sum eight. Two-six, three-five, four-four, five-three, six-two.",
+            A('The dice grid appears with sum 8 highlighted',
+              {'k': 'vis', 'v': {'type': 'dice', 'sides': 6, 'target': 8}, 'w': 1000, 'h': 300, 'y': 290}),
+            D('Circle the five highlighted cells'),
+            "Five outcomes. The colors matter: two on green, six on yellow is different from six on green, two on yellow. "
+            "Four-four is just one outcome.",
+            D('Write "36 − 5 = 31"'),
+            "All minus forbidden: thirty-one allowed.",
+            D('Circle choice 3'),
+            "Choice three.",
+        ]),
+        ('Method 2 · Count directly', [
+            "A direct check. Green one: no yellow value makes eight — all six are fine.",
+            D('Write "1 × 6 + 5 × 5 = 31"'),
+            "Green two to six: exactly one yellow value makes eight — so five good ones each. Six plus twenty-five: thirty-one.",
+        ]),
+    ])
+
+    # ---- g138: 8 children, teachers Maya / Alex, 4 each (70)  ==>  10 hikers, guides Lena / Omar, 5 each (252)
+    S('wp28-g138', 'Ten hikers are split between two guides, Lena and Omar, with five hikers assigned to each guide. '
+                   'How many different splits are possible?',
+      ['126', '252', '504', '30,240'], 2, [
+          'Choose Lena\'s $5$ hikers as if order mattered: $10\\times9\\times8\\times7\\times6$.',
+          'The order inside the group does not matter, so divide by $5!=5\\times4\\times3\\times2\\times1$.',
+          'Cancel: $\\frac{10\\times9\\times8\\times7\\times6}{5\\times4\\times3\\times2\\times1}=3\\times2\\times7\\times6=252$ '
+          '($10$ cancels with $5\\times2$, $9\\div3=3$ and $8\\div4=2$).',
+          'The other $5$ hikers go to Omar: $1$ option. The guides have names, so we do not divide by $2$ again '
+          '($126$ is that trap).'])
+    V('wp28-g138', ["Choosing a group — order doesn't matter.", "The last question of the set."], [
+        ('Method 1 · Choose, then divide by 5!', [
+            "Split ten hikers into two groups of five — each group with a different guide.",
+            "Choose Lena's five as usual — as if order mattered.",
+            D('Write "10 × 9 × 8 × 7 × 6"'),
+            "First hiker: ten options. Then nine, eight, seven, six.",
+            "But picking Rita first and Ben second — or Ben first — it's the same group.",
+            "So divide by the internal arrangements of five hikers: five factorial.",
+            D('Write the fraction "(10 × 9 × 8 × 7 × 6) / (5 × 4 × 3 × 2 × 1)"'),
+            "Put it as a fraction. Now cancel — one step at a time.",
+            D('Cross out 10 on top and 5 × 2 on the bottom'),
+            "Five times two is ten. Ten over ten is one. Cross them out.",
+            D('Cross out 9 on top and 3 on the bottom; write 3 above the 9'),
+            "Nine over three is three.",
+            D('Cross out 8 on top and 4 on the bottom; write 2 above the 8'),
+            "Eight over four is two.",
+            D('Write "= 3 × 2 × 7 × 6 = 252"'),
+            "What's left: three times two times seven times six. Two hundred fifty-two.",
+            "And Omar's group? No choice left — the five remaining hikers go to Omar.",
+            D('Circle choice 2'),
+            "Two hundred fifty-two. Choice two.",
+        ]),
+        ('Method 2 · No extra ÷2', [
+            "Should we divide by two again? No.",
+            "The guides have names. Hikers one to five with Lena is different from hikers one to five with Omar.",
+            D('Write "named guides → keep 252"'),
+            "Only if the two groups had no labels would swapping them change nothing — and then we'd halve, "
+            "to one hundred twenty-six.",
+        ]),
+    ])
+
+    # ---- g139: 7 of 8 (8)  ==>  11 of 12 (12)
+    S('wp28-g139', 'In how many different ways can a team of 11 players be chosen from a squad of 12 players?',
+      ['1', '12', '11', '66'], 2, [
+          'Choosing $11$ of $12$ is the same as choosing the $1$ player who stays out: $12$ ways.',
+          'The long way gives the same: $\\frac{12\\times11\\times10\\times\\cdots\\times2}{11!}=12$.'])
+    V('wp28-g139', ["Choosing almost everyone.", "Complementary choice."], [
+        ('Method 1 · Choose who stays out', [
+            "Eleven out of twelve — that's n minus one out of n.",
+            "Instead of choosing eleven players, choose the one who stays out.",
+            D('Write "who stays out: 12 options"'),
+            "Twelve players — twelve ways to leave one out. Each gives a different team.",
+            D('Circle choice 2'),
+            "Twelve. Choice two.",
+        ]),
+        ('Method 2 · The long way', [
+            "The group method gives the same thing.",
+            D('Write "12 × 11 × 10 × … × 2 ÷ 11!"'),
+            "Choose eleven the usual way, then divide by eleven factorial — the internal arrangements.",
+            D('Cancel 11 × 10 × … × 2 with 11! and write "= 12"'),
+            "Everything from eleven down cancels. Twelve.",
+            "Once you spot n minus one out of n, skip all this: the answer is n.",
+        ]),
+    ])
+
+    # ---- g140: 7! / 5! (42)  ==>  9! / 7! (72)
+    S('wp28-g140', 'What is the ratio of the number of row arrangements of 9 distinct objects to the number of row '
+                   'arrangements of 7 distinct objects?',
+      ['81', '72', '16', '63'], 2, [
+          'The ratio is $\\frac{9!}{7!}=\\frac{9\\times8\\times7!}{7!}=9\\times8=72$.',
+          'There is no need to calculate $9!=362{,}880$ and $7!=5040$ first.'])
+    V('wp28-g140', ["The first advanced counting question.", "An easy one — and a quick refresh on factorials."], [
+        ('Method 1 · Write it all out', [
+            "Rows of nine objects, over rows of seven objects.",
+            "How many ways to arrange n objects in a row? n factorial. We remember that.",
+            D('Under the question write "9! / 7!"'),
+            "So it's nine factorial over seven factorial.",
+            "A factorial starts at the number and goes down by one each time, all the way to one.",
+            D('Write "9·8·7·6·5·4·3·2·1" on top and "7·6·5·4·3·2·1" underneath'),
+            "Nine, eight, seven, and on down to one — over seven, six, and on down to one.",
+            D('Cross out 7·6·5·4·3·2·1 on top and bottom'),
+            "Cancel everything the two share.",
+            D('Write "= 9 · 8 = 72" and circle choice 2'),
+            "Left with nine times eight: seventy-two. Choice two.",
+        ]),
+        ('Method 2 · Expand only as far as needed', [
+            "Some students don't write all that. They shorten it — by understanding what a factorial is.",
+            "Seven, six, five, and on down to one — that tail is just seven factorial.",
+            D('Write "9! = 9 · 8 · 7!"'),
+            "So nine factorial is nine, times eight, times seven factorial. Stop there.",
+            D("Cross out the two 7!'s"),
+            "Now the seven factorials cancel in one move.",
+            D('Write "= 72" and circle choice 2'),
+            "Nine times eight. Seventy-two — no need to calculate three hundred sixty-two thousand eight hundred eighty.",
+        ]),
+    ])
+
+    # ---- g141: hundreds + units = 7 (70)  ==>  = 8 (80)
+    S('wp28-g141', 'How many three-digit numbers have a hundreds digit and a units digit whose sum is 8?',
+      ['90', '80', '8', '72'], 2, [
+          'Most restricted position first: the hundreds digit. It is not $0$ and not more than $8$: $1$ to $8$, '
+          'so $8$ options.',
+          'Units digit: forced ($8$ minus the hundreds digit): $1$ option.',
+          'Tens digit: free, $0$ to $9$: $10$ options.',
+          '$8\\times10\\times1=80$.',
+          'Check: the (hundreds, units) pairs are $(1,7)$, $(2,6)$, $(3,5)$, $(4,4)$, $(5,3)$, $(6,2)$, $(7,1)$, '
+          '$(8,0)$. That is $8$ pairs, each with $10$ possible middle digits. ($90$ wrongly lets the number start with $0$.)'])
+    V('wp28-g141', ["A digits question — and a really important idea hiding inside it."], [
+        ('Method 1 · Option counts per digit', [
+            "Three-digit numbers — so three positions: hundreds, tens, units.",
+            "Tip: above each position write how many options it has; below, list what they are. Keeps you organized.",
+            "Most restricted position first. The condition talks about the hundreds and the units. Start with the hundreds digit.",
+            "Can it be anything? No. Hundreds plus units must be eight, so it can't go above eight.",
+            "And it can't be zero — a number can't start with zero. There's no such number as zero-five-eight.",
+            D('Above the hundreds position write "8" and below it "1–8"'),
+            "So one to eight: eight options.",
+            "Now the units digit. Here's the important idea: dependency.",
+            "Once the hundreds digit is chosen, the units digit is already decided. It has to complete the sum to eight.",
+            D('Above the units position write "1"'),
+            "Hundreds is eight — units must be zero. Hundreds is three — units must be five. One option every time.",
+            "And the tens digit? The condition doesn't mention it. It's free: zero to nine. Ten options.",
+            D('Above the tens position write "10"'),
+            D('Write "8 × 10 × 1 = 80" and circle choice 2'),
+            "Eight times ten times one: eighty. Choice two.",
+            "These questions aren't simple — and understanding that dependency is the key. More on it in a moment.",
+        ]),
+        ('Method 2 · List the outside pairs', [
+            "Quick check from the other side.",
+            D('Write the pairs "(1,7) (2,6) (3,5) (4,4) (5,3) (6,2) (7,1) (8,0)"'),
+            "Hundreds and units pairs: one-seven, two-six, three-five, four-four, five-three, six-two, seven-one, "
+            "eight-zero. Eight pairs.",
+            "Zero-eight is out — it would only be a two-digit number. Counting it gives the trap, ninety.",
+            D('Write "8 × 10 = 80"'),
+            "Put any of ten digits in the middle of each pair. Eighty again.",
+        ]),
+    ])
+
+    # ---- g142: 3, 4, 7, 8; B even  ==>  2, 5, 6, 9; A even (8)
+    S('wp28-g142', 'The digits 2, 5, 6 and 9 go once each into a square: A and B on top, C and D below.\n'
+                   'A is even.\n$C\\times D$ is even.\nHow many arrangements are possible?',
+      ['12', '4', '8', '16'], 3, [
+          'Most restricted first. A is even: $2$ or $6$, so $2$ options.',
+          '$C\\times D$ is even only if C or D is even. The only other even digit must go to the bottom row, '
+          'so B must be odd: $5$ or $9$, so $2$ options.',
+          'The last two digits go into C and D in $2\\times1=2$ orders.',
+          '$2\\times2\\times2\\times1=8$.',
+          'Check: with A even there are $2\\times3!=12$ arrangements. The bad ones have the other even digit in B: '
+          '$2\\times1\\times2=4$. $12-4=8$.'])
+    Q_('wp28-g142')['solutionVisual'] = {'type': 'table', 'headers': ['A · even', 'B · odd'],
+                                        'rows': [['C', 'D · bottom product even']]}
+    V('wp28-g142', ["A hard one: digits in a square, with two conditions."], [
+        ('Method 1 · Options per position', [
+            A('The square appears: A B on top, C D underneath',
+              {'k': 'vis', 'v': {'type': 'table', 'headers': ['A', 'B'], 'rows': [['C', 'D']]}, 'w': 520, 'h': 150}),
+            "Four digits — two, five, six, nine — each used once.",
+            "A is even. How many even digits do we have? Two: two and six.",
+            D('Next to A write "2"'),
+            "Two options for A.",
+            "The bottom product can't be odd. When is a product odd? Only when BOTH factors are odd.",
+            "So at least one of C and D must be even. And the other even digit is already up in A.",
+            "Some students get stuck here — which bottom square gets the even one?",
+            "Easier conclusion: B must be odd.",
+            D('Next to B write "2"'),
+            "B is odd: five or nine. Two options.",
+            D('Next to C write "2" and next to D write "1"'),
+            "Two digits left — no more restrictions. Two options, then one.",
+            D('Write "2 × 2 × 2 × 1 = 8" and circle choice 3'),
+            "Two times two times two times one: eight. Choice three.",
+            "Notice: it's a square, not a row. Doesn't matter. Count the options at each stage and multiply.",
+        ]),
+        ('Method 2 · Trial and error', [
+            "Not sure what to do? Try, and list — in an organized way.",
+            A('An arrangements table appears with A = 2 filled in',
+              {'k': 'vis', 'v': {'type': 'table', 'headers': ['A', 'B', 'C', 'D'],
+                                 'rows': [['2', '', '', ''], ['2', '', '', ''], ['2', '', '', ''], ['2', '', '', '']]},
+               'w': 640, 'h': 260}),
+            "Anchor A at two. B must be odd.",
+            D('Fill row 1: 2, 5, 6, 9 — row 2: 2, 5, 9, 6'),
+            "B is five: six-nine, or swap to nine-six. Change as little as possible each time.",
+            D('Fill row 3: 2, 9, 5, 6 — row 4: 2, 9, 6, 5'),
+            "B is nine: five-six, or six-five. Four arrangements.",
+            D('Next to the table write "A = 6 → 4 more"'),
+            "Now swap A to six — exactly the same four patterns again. No need to draw them.",
+            D('Write "4 × 2 = 8" and circle choice 3'),
+            "Four plus four: eight.",
+        ]),
+        ('Method 3 · Subtract the failures', [
+            "One more route: count with A even, then remove what breaks the bottom rule.",
+            D('Write "2 × 3! = 12"'),
+            "A in two ways, the other three digits in six orders: twelve.",
+            D('Write "bad: other even in B → 2 × 2 = 4"'),
+            "It fails only when the other even digit sits in B — then both bottom digits are odd. That's four arrangements.",
+            D('Write "12 − 4 = 8"'),
+            "Twelve minus four: eight. Same answer.",
+        ]),
+    ])
+
+    # ---- g143: chess, 45 games (10)  ==>  table-tennis league, 66 matches (12)
+    S('wp28-g143', 'In a table-tennis league, each pair of players plays exactly one match. There are 66 matches '
+                   'altogether. How many players take part?',
+      ['11', '13', '12', '9'], 3, [
+          'With $n$ players, each pair plays once: $\\frac{n(n-1)}{2}=66$.',
+          'Multiply by $2$: $n(n-1)=132$. Two consecutive numbers with product $132$: $12\\times11$. Therefore $n=12$.',
+          'Check the other choices: $\\frac{13\\times12}{2}=78$, $\\frac{11\\times10}{2}=55$, $\\frac{9\\times8}{2}=36$.'])
+    tot = [1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66]
+    Q_('wp28-g143')['solutionVisual'] = {'type': 'table', 'headers': ['Players', 'Matches'],
+                                        'rows': [[str(k), str(t)] for k, t in zip(range(2, 13), tot)]}
+    V('wp28-g143', ["Three ways to solve this one."], [
+        ('Method 1 · The mutual-action formula', [
+            "Each pair of players plays once. Does that remind you of something? Mutual action.",
+            "Two teams playing each other, two people shaking hands — it's the same action seen from both sides.",
+            "Choose the first player: n options. The opponent: n minus one.",
+            "But when red plays black, black is playing red at the same time — same match, counted twice. So divide by two.",
+            D('Write "n(n−1)/2 = 66"'),
+            "Here we go backwards: they give the matches and ask for the players.",
+            D('Write "n(n−1) = 132"'),
+            "Multiply by two: n times n minus one is one hundred thirty-two.",
+            "n and n minus one are consecutive. Which consecutive numbers multiply to one hundred thirty-two?",
+            D('Write "12 · 11 = 132 → n = 12" and circle choice 3'),
+            "Twelve and eleven. So twelve players. Choice three.",
+        ]),
+        ('Method 2 · Test the answers', [
+            "The psychometric way: plug in the answers — still with the mutual-action formula.",
+            D('Next to 13 write "13·12/2 = 78 ✗"'),
+            "Thirteen players: thirteen times twelve over two — seventy-eight. Too many.",
+            D('Next to 12 write "12·11/2 = 66 ✓" and circle choice 3'),
+            "Twelve players: twelve times eleven over two — sixty-six. That's it.",
+            "By the way, you can start from the middle to save a test: eleven gives fifty-five — too few — "
+            "so nine is out too.",
+            "But with numbers this friendly, just test them.",
+        ]),
+        ('Method 3 · A growing sequence', [
+            "A less-known way — but it really shows what mutual action means.",
+            A("A table appears: players 2 to 12, with 'new matches' and 'total' to fill",
+              {'k': 'vis', 'v': {'type': 'table', 'headers': ['n'] + [str(k) for k in range(2, 13)],
+                                 'rows': [['New'] + [''] * 11, ['Total'] + [''] * 11]}, 'w': 1000, 'h': 160}),
+            "The top row, n, is the number of players. One player alone? No matches. Two players: one match.",
+            D('Fill the table: new matches 1, 2, 3 … 11 and totals 1, 3, 6, 10, 15, 21, 28, 36, 45, 55, 66'),
+            "A third player adds two matches — one against each player already there. Total three.",
+            "A fourth adds three: total six. Every newcomer plays everyone who was there before.",
+            "Keep going… the twelfth player adds eleven matches. Total sixty-six.",
+            D('Circle the 12 in the last column'),
+            "Careful: the last added number is eleven, but it comes from the TWELFTH player. Twelve players. Choice three.",
+            "On the exam, just write one plus two plus three… across the page. Whatever's comfortable for you.",
+        ]),
+    ])
+
+    # ---- g144: 7 students, 6 tallest-to-shortest (7)  ==>  8 children, 7 shortest-to-tallest (8)
+    S('wp28-g144', 'Eight children all have different heights. A photographer chooses seven of them and places them '
+                   'in a row from shortest to tallest. How many different rows can be formed?',
+      ['7', '5040', '8', '56'], 3, [
+          'Choose the $1$ child who stays out: $8$ options.',
+          'The other $7$ stand from shortest to tallest: only $1$ order.',
+          '$8\\times1=8$. We do not multiply by $7!$: the height order is forced.'])
+    V('wp28-g144', ["Medium-plus, maybe even hard. Two ways in."], [
+        ('Method 1 · Trial and error', [
+            "Label the heights one to eight — one the shortest.",
+            "Now build rows of seven, always shortest to tallest. Work in order: only change the right end.",
+            D('Write "1 2 3 4 5 6 7" and underneath "1 2 3 4 5 6 8"'),
+            "One, two, three, four, five, six, seven. Then swap the seven for an eight.",
+            "Keep moving the gap one place left each time…",
+            A('The full list appears', T('$1234567,\\ 1234568,\\ 1234578,\\ 1234678,\\ 1235678,\\ 1245678,\\ '
+                                         '1345678,\\ 2345678$', size=30)),
+            D('Number the rows 1 to 8'),
+            "No more options. Eight rows.",
+            "We found eight. Seven is too few. Fifty-six and five thousand forty would need many more rows — "
+            "and there are no more.",
+            D('Circle choice 3'),
+            "Eight. Choice three.",
+        ]),
+        ('Method 2 · Choose who stays out', [
+            "There's a smarter way — a flash of insight: the complementary event.",
+            "You're the photographer. Instead of choosing seven children and arranging them…",
+            "…choose the ONE who stays out.",
+            "\"You stay — everyone else, come here.\" And they line up shortest to tallest. Only one way.",
+            D('Write "who stays out? 8 options"'),
+            "Any of the eight children can be the one left out. Eight options.",
+            D('Circle choice 3'),
+            "Eight. Choice three.",
+            "Complementary events aren't magic — they're a technique worth knowing. They'll help in plenty of questions.",
+        ]),
+    ])
+
+
+def rn_lessons(M):
+    # ---- Choosing a Group (wp-137) #2: "4 children out of 10, Danny / Yossi" (the Hebrew's) ==> 3 of 9, Lior / Sam
+    M.set_slide('wp-137', 2, script=[
+        "Choosing a group — first, know these are edge questions. Very hard, and very rare.",
+        "We pick a smaller group from a bigger one. Three children out of nine, say.",
+        "Picked Lior first and Sam second — or Sam first? They're both in the group either way.",
+        A('The six orders of A, B, C appear', T('$ABC,\\ ACB,\\ BAC,\\ BCA,\\ CAB,\\ CBA$', size=50, gap=60)),
+        D('Bracket all six and write "= 1 group"'),
+        "Six different picking orders — one and the same group. That's a doubling we must remove.",
+    ])
+    # #4: "9 out of 10 -> 10 ways" (the Hebrew's) ==> 14 out of 15 -> 15 ways
+    b = M.slide('wp-137', 4)
+    assert '$9$ out of $10' in b['items'][1]['t'], b['items'][1]
+    M.set_slide('wp-137', 4, script=[
+        "The second type is simpler than it looks: choose who stays OUT.",
+        A("'Choose n − 1 out of n → n ways' appears", T('Choose $n-1$ out of $n$ $\\to$ $n$ ways', size=46)),
+        A("'14 out of 15 → 15 ways' appears", T('$14$ out of $15\\ \\to\\ 15$ ways', size=46)),
+        "Choose all but one — and the answer is simply the total.",
+        D('Next to it write "pick who stays OUT"'),
+        "Why? Instead of choosing fourteen, choose the one who stays out. Fifteen people — fifteen choices.",
+        A("'Choose k of n = choose the n − k who stay out' appears",
+          T('Choose $k$ of $n$ = choose the $n-k$ who stay out', size=42)),
+        "And it works for any number. Choosing eight of ten is the same as choosing the two who stay out.",
+        D('Write "8 of 10 = 2 of 10 = (10 × 9) ÷ 2 = 45"'),
+        "Two of ten: ten times nine, over two. Forty-five. Much faster than dividing by eight factorial.",
+        "Always count the smaller side.",
+    ])
+
+    # ---- Forced Digits (wp-141-after): the Hebrew's "all digits the same" / "units = hundreds" ==> five-digit versions
+    M.set_slide('wp-141-after', 2, pre=[T('Five-digit numbers whose digits are all the same: how many?', size=42, gap=80)],
+                script=[
+        "Five-digit numbers whose digits are all identical. How many?",
+        "First digit: nine options. Anything but zero.",
+        D('Above the first position write "9"'),
+        "Second digit — nine options too? Well, it could be one in one-one-one-one-one, two in two-two-two-two-two…",
+        "But that's not really true. Once the first digit is chosen, the rest MUST match it.",
+        D('Above the other four positions write "1", "1", "1", "1"'),
+        "Pick five first — the rest are five, five, five, five. One option each.",
+        D('Write "9 × 1 × 1 × 1 × 1 = 9"'),
+        "Nine numbers: one-one-one-one-one, two-two-two-two-two, up to nine-nine-nine-nine-nine. Not nine to the fifth.",
+    ])
+    M.set_slide('wp-141-after', 3, title='Mirror digits',
+                pre=[T('Five-digit numbers that read the same both ways (first = last, second = fourth): how many?',
+                       size=40, gap=80)],
+                script=[
+        "One more. The first digit equals the last, and the second equals the fourth. The middle digit is free.",
+        D('Above the positions write "9", "10", "10", "1", "1"'),
+        "First digit: nine. Second digit: no restriction at all — ten, including zero. The middle digit: ten more.",
+        "The fourth must copy the second. The fifth must copy the first. One option each.",
+        "Choosing the first digit really chooses two digits at once.",
+        D('Write "9 × 10 × 10 × 1 × 1 = 900"'),
+        "Nine hundred. And one-zero-zero-zero-one counts — so don't drop zero from the middle.",
+        "Count each free choice once. Give every forced position a one.",
+    ])
+    M.set_sidebar('wp-141-after', ['All digits the same', 'Mirror digits'])
+
+    # ---- Factorial Expressions: the first line quoted the old Q13 (7! = 7 · 6 · 5!) ==> the new one (9! = 9 · 8 · 7!)
+    _say(M, 'wp-140-after', 2, 'seven factorial is seven times six times five factorial',
+         'nine factorial is nine times eight times seven factorial')
+
+    # ---- Summary: "3 x 5 = 15, shirts and hats" (the Hebrew's 3 salads x 5 drinks) ==> 5 x 4 = 20;
+    #      "9!/7! = 72" is now Q13's answer ==> 8!/6! = 56 (the run-of-neighbors lesson example)
+    V = 'r26-t28-summary'
+    b = M.slide(V, 2)
+    assert '3\\times5=15' in b['items'][0]['t']
+    b['items'][0]['t'] = 'Stages of choice $\\to$ multiply: $5\\times4=20$'
+    _say(M, V, 2, "Three shirts and five hats: fifteen outfits. Not eight",
+         "Five shirts and four hats: twenty outfits. Not nine")
+    b = M.slide(V, 3)
+    assert '\\frac{9!}{7!}=9\\times8=72' in b['items'][2]['t']
+    b['items'][2]['t'] = '$n$ items in a row: $n!$ $\\quad\\frac{8!}{6!}=8\\times7=56$'
+
+    # ---- memory cards: examples follow the new numbers
+    c = M.card('mem-counting')
+    new_ex = {
+        'Short list, no pattern': '$356,\\ 359,\\ 369,\\ 569$',
+        'Stages of choice': '$7\\times3=21$',
+        'Later choice depends on an earlier one': '$5\\times1=5$',
+        'With repetition': '$9\\times9\\times9=729$',
+        'Without repetition': '$9\\times8\\times7=504$',
+        '$n$ items in a row': '$7!=5040$',
+        'Mutual action (handshakes, routes, games)': '$\\frac{6\\times5}{2}=15$',
+        'Diagonals of an $n$-gon': '$\\frac{8\\times5}{2}=20$',
+        'Separate cases': '$1+25=26$',
+        'A small forbidden set': '$36-5=31$',
+        'A group, order does not matter': '$\\frac{10\\times9\\times8\\times7\\times6}{5!}=252$',
+        '$n-1$ out of $n$': '$11$ of $12\\to12$',
+    }
+    rows = next(t for t in c['tables'] if t.get('title') == 'Which rule?')['rows']
+    hit = set()
+    for r in rows:
+        if r[0] in new_ex:
+            r[2] = new_ex[r[0]]; hit.add(r[0])
+    assert hit == set(new_ex), set(new_ex) - hit
+    c = M.card('mem-counting-advanced')
+    new_ex = {
+        'Factorial': '$\\frac{9!}{7!}=9\\cdot8=72$',
+        'Forced position': 'digit sum 8: $8\\times10\\times1=80$',
+        'Mutual action': '$12$ players $\\to66$ matches',
+        'Complement': '7 of 8 in height order: $8$',
+    }
+    hit = set()
+    for r in c['tables'][0]['rows']:
+        if r[0] in new_ex:
+            r[2] = new_ex[r[0]]; hit.add(r[0])
+    assert hit == set(new_ex), set(new_ex) - hit
+    t = next(t for t in c['tables'] if t.get('title', '').startswith('Pairs among n'))
+    t['head'] = ['$n$'] + [str(k) for k in range(2, 13)]
+    t['rows'] = [['Pairs'] + [str(k * (k - 1) // 2) for k in range(2, 13)]]
+
+
+def rn_order(M):
+    # Learn: the easy "11 of 12" before the hard group split (both taught in the lesson right before them).
+    M.move('wp28-g139', LEARN, before='wp28-g138')
+    M.move('solve-wp28-g139', LEARN, after='wp28-g139')
+    # Advanced, after the Forced Digits lesson: medium-plus (games), medium-plus (heights), then the hard square.
+    M.move('wp28-g143', ADV, before='wp28-g142')
+    M.move('solve-wp28-g143', ADV, after='wp28-g143')
+    M.move('wp28-g144', ADV, before='wp28-g142')
+    M.move('solve-wp28-g144', ADV, after='wp28-g144')
+
+
+def rn_practice_questions(M):
+    S = lambda qid, stem, ch, cor, ex: _rn_q(M, qid, stem, ch, cor, ex)
+    S('wp28-p01', 'Seven chess clubs hold a league. Each club plays every other club once. How many games are played?',
+      ['21', '42', '14', '28'], 1, [
+          'Each of the $7$ clubs has $6$ opponents: $7\\times6=42$.',
+          'Every game was counted twice (once from each club): $\\frac{42}{2}=21$.'])
+    S('wp28-p02', 'What is the prime-factor form of $3!\\times4!\\times5!$?',
+      ['$2^6\\times3^3\\times5$', '$2^7\\times3^3\\times5$', '$2^7\\times3^2\\times5$', '$2^8\\times3^3$'], 2, [
+          '$3!=2\\times3$, $4!=2^3\\times3$, $5!=2^3\\times3\\times5$.',
+          'Add the exponents of each prime: $2^{1+3+3}\\times3^{1+1+1}\\times5=2^7\\times3^3\\times5$.'])
+    S('wp28-p03', 'A florist has 5 kinds of white flower and 4 kinds of yellow flower. A bouquet uses two different '
+                  'kinds of the same color. How many bouquets are possible?',
+      ['16', '20', '36', '9'], 1, [
+          'Two white kinds: $\\frac{5\\times4}{2}=10$. Two yellow kinds: $\\frac{4\\times3}{2}=6$.',
+          'A bouquet is white or yellow (two separate cases), so add: $10+6=16$.'])
+    S('wp28-p04', 'A gym gives each locker a different code made from the letters A, B, C, D and E, using each letter '
+                  'exactly once. At most how many lockers can receive a code?',
+      ['3125', '120', '60', '25'], 2, [
+          'The first position has $5$ options, then $4$ remain, then $3$, $2$ and $1$.',
+          'Multiply: $5\\times4\\times3\\times2\\times1=120$.'])
+    S('wp28-p05', 'A signal is made of 3 flags in a row. Each flag is one of 7 colors, and colors may repeat. '
+                  'How many signals are possible?',
+      ['21', '210', '343', '2187'], 3, [
+          'Colors may repeat: $7\\times7\\times7=343$.'])
+    S('wp28-p06', 'A group of $n$ different dancers can line up in 24 different orders. What is $n$?',
+      ['3', '4', '6', '12'], 2, [
+          '$n$ dancers in a row: $n!$ orders.', '$4!=4\\times3\\times2\\times1=24$, so $n=4$.'])
+    S('wp28-p07', 'Six different awards are given to six volunteers, one award per volunteer. In how many different '
+                  'ways can this be done?',
+      ['36', '30', '720', '120'], 3, [
+          'The first award has $6$ possible volunteers. $5$ remain for the next award, then $4$, $3$, $2$ and $1$.',
+          'The product is $6\\times5\\times4\\times3\\times2\\times1=720$.'])
+    S('wp28-p08', 'A sports kit has a cap, a jersey and socks. Each item comes in 5 colors. A player chooses one of '
+                  'each, with all three items in different colors. How many kits are possible?',
+      ['15', '125', '60', '20'], 3, [
+          'Cap: $5$ colors. Jersey: a different color, $4$ options. Socks: $3$ colors left.',
+          '$5\\times4\\times3=60$.'])
+    S('wp28-p09', 'A ticket code is one of 4 letters, followed by 3 different digits chosen from 1 to 8, in order. '
+                  'How many ticket codes are possible?',
+      ['336', '1344', '2048', '224'], 2, [
+          'Letter: $4$ options. Three different digits in order: $8\\times7\\times6=336$.',
+          'Total: $4\\times336=1344$.'])
+    S('wp28-p10', 'Six cyclists finish a race with no ties. How many different ordered podiums of first, second and '
+                  'third place are possible?',
+      ['720', '20', '120', '216'], 3, [
+          'First place: $6$ options, second: $5$, third: $4$. $6\\times5\\times4=120$.',
+          'The order of the other three cyclists does not matter.'])
+    S('wp28-p11', 'A lunch is either a main course, a side dish and a drink, or a soup and a drink. There are 4 main '
+                  'courses, 3 side dishes, 3 soups and 2 drinks. How many different lunches are possible?',
+      ['24', '144', '12', '30'], 4, [
+          'Two separate cases. Main-course lunches: $4\\times3\\times2=24$. Soup lunches: $3\\times2=6$.',
+          'Add: $24+6=30$.'])
+    S('wp28-p12', 'At a reunion, every two guests shake hands once. There are 36 handshakes. How many guests are there?',
+      ['8', '9', '18', '10'], 2, [
+          'With $n$ guests: $\\frac{n(n-1)}{2}=36$, so $n(n-1)=72=9\\times8$. Therefore $n=9$.',
+          'Check the other choices: $8$ guests give $28$, $10$ give $45$, $18$ give $153$.'])
+    S('wp28-p13', 'Seven different keys each open exactly one of seven lockers in a gym. The matches are unknown. Using '
+                  'information from failed tests and putting each used key aside, at most how many key tests are '
+                  'needed to open every locker, counting each successful opening as a test?',
+      ['21', '49', '28', '27'], 3, [
+          'The first locker may need $7$ tests before it opens.',
+          'Then $6$ unmatched keys remain for the next locker, then $5$, $4$, $3$, $2$ and $1$.',
+          'Add them: $7+6+5+4+3+2+1=28$.',
+          '"At most" → this is the Topic 21 min/max method, not a counting formula. Worst luck: every locker opens '
+          'only with the last key still possible: $7+6+5+4+3+2+1=28$ tests.'])
+    S('wp28-p14', 'Five singers must stand in the left part of a row, and three drummers in the right part. Everyone '
+                  'is different. How many orders are possible?',
+      ['720', '120', '1440', '40320'], 1, [
+          'Singers in the left part: $5!=120$ orders. Drummers in the right part: $3!=6$ orders.',
+          'The parts cannot change sides, so $120\\times6=720$.'])
+    S('wp28-p15', 'Five identical white beads and six different colored beads are strung in a row. No two colored '
+                  'beads may be next to each other. How many arrangements are possible?',
+      ['120', '1440', '360', '720'], 4, [
+          'Gaps: place the $5$ white beads first. They make $6$ gaps: before, between and after them.',
+          'No two colored beads may touch, so each colored bead needs its own gap. $6$ colored beads and $6$ gaps: '
+          'every gap gets one colored bead.',
+          'The white beads are identical, so the only freedom is the order of the colored beads: $6!=720$.'])
+    S('wp28-p16', 'A light signal has $x$ lamps in a row. Each lamp shows one of 4 colors, and colors may repeat. The '
+                  'number of possible signals is $2^{6n}$. What is $x$?',
+      ['$6n$', '$2n$', '$3n$', '$n+4$'], 3, [
+          'Each lamp has $4$ options, so there are $4^x$ signals.',
+          '$4^x=(2^2)^x=2^{2x}$. So $2^{2x}=2^{6n}$, $2x=6n$ and $x=3n$.'])
+    S('wp28-p17', 'A six-digit code begins with 3. Each following digit is strictly larger than the previous one. '
+                  'How many codes are possible?',
+      ['5', '15', '6', '720'], 3, [
+          'The $5$ digits after the 3 must be bigger than $3$ and all different: they come from $4$, $5$, $6$, $7$, '
+          '$8$, $9$. Once they are chosen, the increasing order is forced.',
+          'Choosing $5$ of $6$ is the same as choosing the $1$ digit that stays out: $6$ ways.'])
+    S('wp28-p18', 'Two ordinary dice are rolled, and you are told only the sum of the two results. For how many of the '
+                  'possible sums can you know exactly which two numbers came up (in any order)?',
+      ['2', '4', '11', '6'], 2, [
+          'Sum $2$: only $1+1$. Sum $3$: only $1+2$. Sum $11$: only $5+6$. Sum $12$: only $6+6$.',
+          'Every sum from $4$ to $10$ can be made in at least two ways, for example $4=1+3=2+2$ and $10=4+6=5+5$.',
+          'So there are $4$ such sums.'])
+    S('wp28-p19', 'A four-digit door code uses no zero. Its first and last digits are equal, and its third digit is '
+                  'three times its second. How many codes are possible?',
+      ['81', '36', '27', '18'], 3, [
+          'First digit: $9$ options. It forces the last digit: $1$ option.',
+          'Second digit: $1$, $2$ or $3$ (three times it must still be a digit from $1$ to $9$): $3$ options. '
+          'It forces the third digit: $1$ option.',
+          '$9\\times3\\times1\\times1=27$.'])
+    S('wp28-p20', 'A six-digit code uses exactly two different digits, and each of them appears three times. The code '
+                  'may start with 0. The sum of its digits must be divisible by 12. How many different pairs of digits '
+                  'can be used? (The order of the two digits does not matter.)',
+      ['14', '4', '10', '9'], 3, [
+          'If the digits are $a$ and $b$, the sum is $3a+3b=3(a+b)$. It is divisible by $12$ only if $a+b$ is '
+          'divisible by $4$.',
+          '$a+b=4$: $0$ and $4$, $1$ and $3$ ($2$ pairs; $2$ and $2$ are not two different digits).',
+          '$a+b=8$: $0$ and $8$, $1$ and $7$, $2$ and $6$, $3$ and $5$ ($4$ pairs).',
+          '$a+b=12$: $3$ and $9$, $4$ and $8$, $5$ and $7$ ($3$ pairs).',
+          '$a+b=16$: $7$ and $9$ ($1$ pair).',
+          'Total: $2+4+3+1=10$.'])
+
+
+def rn_practice(M):
+    # copies (practice_audit): LEVEL = the guided BANANA question; t18-3-4 = a copy (moved in by the T18 patch)
+    # extra-bank items beyond 3: p21 (= guided Q9 method), p22 (= the Quick-checks lesson 7 choose 3),
+    # p27 (named teams of 3 = the Hebrew's 6 children / 3 + 3 lesson numbers; q-41 + guided Q12 cover named/unnamed)
+    # September items whose type the Hebrew practice already covers (or that repeat a guided question):
+    #   15, 27 (at least one: q-14 kept) · 17 (pool stays full: p05) · 18 (together: p23 kept) · 20 (gaps: p15)
+    #   22 (repeats: q-21 kept) · 23 (round table: p26 kept) · 26 (who stays out: p17) · 30 (primes in n!: p02)
+    cut = ['wp28-p25', 'alg-extra-unit-t18-3-4', 'wp28-p21', 'wp28-p22', 'wp28-p27'] + \
+          ['q-r26-t28-%02d' % k for k in (15, 17, 18, 20, 22, 23, 26, 27, 30)]
+    for qid in cut:
+        if qid in M.D['questions'] and any(f['ref'] == qid and f['section'] == PRAC for f in M.D['flow']):
+            M.unplace(qid)
+    n = lambda k: 'q-r26-t28-' + k
+    p = lambda k: 'wp28-p' + k
+    M.practice_order(PRAC, [
+        p('07'), p('05'), p('06'), p('04'), p('01'), p('08'), p('10'), p('24'), p('14'), p('09'), p('11'), p('03'),
+        p('12'), n('16'), p('16'), p('02'), n('31'), n('29'), p('17'), p('19'), p('23'), n('19'), n('21'), p('13'),
+        n('14'), p('26'), n('41'), p('15'), p('18'), p('20')])
+
+
+def rn_sync(M):
+    """Video titles, pre-loaded question text and slide notes follow the new stems."""
+    for vid, v in M.D['videos'].items():
+        if v.get('topic') != TOPIC or v.get('kind') != 'solution' or not v.get('questionId'):
+            continue
+        qid = v['questionId']
+        if qid not in M.D['questions']:
+            continue
+        stem = rich_plain(M.q(qid)['stemRich']).replace('\\times', '×')
+        v['title'] = v['navLabel'] = stem
+        for b in v['beats']:
+            if b['mode'] == 'question' and b['pre']:
+                b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, stem)
+                if not b.get('loads'):
+                    b['loads'] = 'The question with its four answer choices is already on the canvas.'
+
+
+def renumber_pass(M):
+    rn_guided(M)
+    rn_lessons(M)
+    rn_order(M)
+    rn_practice_questions(M)
+    rn_practice(M)
+    rn_sync(M)

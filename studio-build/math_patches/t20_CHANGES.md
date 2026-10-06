@@ -205,3 +205,19 @@ them (titles Question 3–6, sidebars highlight the right question). No quadrati
 ## 2026-10-06 review (of the renumber pass)
 Checked all 14 renumbered items, the reorder, the card changes and the 4 videos. q-584 (sum 18), q-587 (sum 32, c ≠ 7),
 q-590 (12 numbers, 7…4; still 12 > 11) are the same kind as the Hebrew. No changes.
+
+## 2026-10-06 Hebrew back-check
+Every guided / practice question, the lessons, the summary and the cards were compared with the teacher's Hebrew VIDEO
+subtitles (01-Algebra-Original-Subtitles.txt, lines 19912–20234). Nothing in topic 20 is recorded. Function
+`hebrew_backcheck(M)` in t20.py runs last.
+
+| where | Hebrew video | before | new |
+|---|---|---|---|
+| Summary video, slide 7 (Scaling) | x² = a³, a × 4 → x × 8 | x² = a³, a × 4 → x × 4^(3/2) = x × 8 (exact Hebrew numbers) | a × 9 → x × 9^(3/2) = x × 27 ("Nine cubed is three to the sixth. Its root: three cubed — twenty-seven.") |
+| Card "Algebraic understanding", scaling tip | same | 4^(3/2) = 8 | 9^(3/2) = 27 |
+
+Left on purpose: q-580 (Hebrew Q/W/L student-success question) — story, letters and choice order were already changed;
+the four expression forms are the question's logic. q-577 (a + b < 16, choices ±2, ±14 vs Hebrew < 10, ±1, ±8), q-578
+(×25 → ×125 vs ×4 → ×8), q-579 (r < 8, "not necessarily true" vs Hebrew c < 5) — numbers already differ. The 3-4-5 / 6-8-10
+triples in solve-q-579 are standard examples. Practice and the English-made questions: no match.
+Checks: `python3 math_check.py 20 32` → 0 / 0 / 0; rendered r26-t20-summary and looked.

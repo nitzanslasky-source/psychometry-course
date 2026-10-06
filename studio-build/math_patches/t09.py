@@ -1179,3 +1179,50 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ---------------------------------------------------------------- 2026-10-06 Hebrew back-check
+# The renumber pass compared only with base-v18. Checked again against the teacher's Hebrew VIDEO subtitles
+# (01-Algebra-Original-Subtitles.txt 5357-6607; topic 9's own Hebrew lesson is a table video with no subtitles, so the
+# comparison is with the Hebrew roots-techniques lesson and its sample question). Landed back on the Hebrew:
+#   lesson slide 4: √48 = 4√3 and "pull out only four: 2√12, still divisible by four" - the Hebrew lesson's √48 = √4·√12
+#     (stuck) vs √16·√3; card tip √48 = √16·3 = 4√3; slide 6 √48 + √75 (Hebrew: √12 + √48 = 2√3 + 4√3)
+#   practice alg-extra-exponent-extra-7: √50 + √8 = 5√2 + 2√2 - the Hebrew sample question's √50 − √8 = 5√2 − 2√2
+def hebrew_backcheck(M):
+    V = 'roots'
+    _rn_sub(M, V, 4, [
+        (r'$\sqrt{48}=\sqrt{4\cdot12}=2\sqrt{12}$', r'$\sqrt{96}=\sqrt{4\cdot24}=2\sqrt{24}$'),
+        ('√48 = √(4 · 12) = 2√12 appears', '√96 = √(4 · 24) = 2√24 appears'),
+        (r'$2\sqrt{12}=2\cdot2\sqrt3=4\sqrt3$', r'$2\sqrt{24}=2\cdot2\sqrt6=4\sqrt6$'),
+        ('2√12 = 2 · 2√3 = 4√3 appears', '2√24 = 2 · 2√6 = 4√6 appears'),
+        (r'$\sqrt{48}$', r'$\sqrt{96}$'),
+        (r'$=\sqrt{16\cdot3}$', r'$=\sqrt{16\cdot6}$'), ('= √(16 · 3) appears', '= √(16 · 6) appears'),
+        (r'$=\sqrt{16}\cdot\sqrt3=4\sqrt3$', r'$=\sqrt{16}\cdot\sqrt6=4\sqrt6$'), ('= √16 · √3 = 4√3 appears', '= √16 · √6 = 4√6 appears'),
+        ('Forty-eight is sixteen times three. And sixteen is a perfect square.',
+         'Ninety-six is sixteen times six. And sixteen is a perfect square.'),
+        ('Root sixteen is four. The three stays inside. Four root three.', 'Root sixteen is four. The six stays inside. Four root six.'),
+        ('If you pull out only four, you get two root twelve.', 'If you pull out only four, you get two root twenty-four.'),
+        ("Look at what's left inside: twelve. It is still divisible by four. Not done yet.",
+         "Look at what's left inside: twenty-four. It is still divisible by four. Not done yet.")])
+    _rn_sub(M, V, 6, [
+        (r'$\sqrt{48}+\sqrt{75}$', r'$\sqrt{27}+\sqrt{75}$'), ('√48 + √75 appears', '√27 + √75 appears'),
+        (r'$=4\sqrt3+5\sqrt3=9\sqrt3$', r'$=3\sqrt3+5\sqrt3=8\sqrt3$'), ('= 4√3 + 5√3 = 9√3 appears', '= 3√3 + 5√3 = 8√3 appears'),
+        ('Root forty-eight is four root three. Root seventy-five is five root three. Same root — nine root three.',
+         'Root twenty-seven is three root three. Root seventy-five is five root three. Same root — eight root three.')])
+    c = M.card('roots')
+    assert '48' in c['tips'][0]
+    c['tips'][0] = 'Pull out the largest square: \\(\\sqrt{96}=\\sqrt{16\\cdot6}=4\\sqrt6\\).'
+    # practice: √50 + √8 = 7√2  ->  √54 + √24 = 5√6 (same idea: two roots, pull out the squares, add like roots)
+    _rn_q(M, 'alg-extra-exponent-extra-7', stem=r'$\sqrt{54}+\sqrt{24}=?$',
+          choices=[r'$4\sqrt6$', r'$5\sqrt6$', r'$\sqrt{78}$', r'$6\sqrt6$'], correct=2,
+          expl=[r'Take out the square factors: $\sqrt{54}=\sqrt{9\cdot6}=3\sqrt{6}$ and $\sqrt{24}=\sqrt{4\cdot6}=2\sqrt{6}$.',
+                r'Add like roots: $3\sqrt{6}+2\sqrt{6}=5\sqrt{6}$.',
+                r'The trap $\sqrt{78}$ adds under the root, but $\sqrt{54}+\sqrt{24}\ne\sqrt{54+24}$.'])
+
+
+_apply_before_hebrew_backcheck = apply
+
+
+def apply(M):
+    _apply_before_hebrew_backcheck(M)
+    hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last

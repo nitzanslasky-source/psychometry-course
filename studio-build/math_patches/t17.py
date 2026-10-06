@@ -1498,3 +1498,168 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ======================================================================================================
+# 2026-10-06 Hebrew back-check. The renumber pass compared only with base-v18; the teacher's Hebrew VIDEO subtitles
+# (01-Algebra-Original-Subtitles.txt, number line = lines 17363-18203) showed some items had landed back on the Hebrew
+# numbers / expression sets. New versions here (same type, trap, level and methods). Nothing in topic 17 is recorded.
+# ======================================================================================================
+def _hb_canvas(M, qids):
+    for qid in qids:
+        v = M.video('solve-' + qid); q = M.q(qid)
+        for b in v['beats']:
+            if b.get('canvas', '').startswith('Pre-loaded — question'):
+                b['canvas'] = 'Pre-loaded — question %s with its four answer choices — "%s"' % (qid, q['stem'])
+
+
+def hebrew_backcheck(M):
+    # ---------- q-493 (Hebrew lesson example w>z>y>x>1: xy<zw, xz<yw, y<zx, xw<z - ours was the same set, renamed)
+    # New choice set, same kinds: two strong-on-strong (true), one "energy drink" (true), one never true.
+    _rn_q(M, 'q-493', 'Given: $1<p<q<r<s$. Which of the following statements is not correct?',
+          ['$p\\cdot q<r^2$', '$q<s\\cdot p$', '$r\\cdot p<q$', '$p^2<q\\cdot s$'], 3, [
+              'All four numbers are greater than 1.',
+              '(1) $r^2=r\\cdot r$. $p<r$ and $q<r$, so $p\\cdot q<r\\cdot r$ (weak times weak is less than strong times strong). True.',
+              '(4) $p^2=p\\cdot p$. $p<q$ and $p<s$, so $p\\cdot p<q\\cdot s$. True.',
+              '(2) $s>q$, and multiplying $s$ by $p>1$ makes it even bigger: $s\\cdot p>s>q$. True.',
+              '(3) $p>1$, so $r\\cdot p>r>q$. The statement $r\\cdot p<q$ is never true. This is the answer.'])
+    _rn_video(M, 'q-493', [[
+        "Everything is above one, and the order is given: p, then q, then r, then s.",
+        "We're hunting for the statement that is NOT correct.",
+        "Choice one: p times q against r squared — that's r times r. Match strong with strong: r beats p, and r beats q.",
+        D('Draw lines pairing p with r and q with r'),
+        "Both weaklings are on the left. Correct.",
+        D('Cross out choice 1'),
+        "Choice four: p squared — p times p — against q times s. q beats p, and s beats p.",
+        D('Draw lines pairing p with q and p with s'),
+        "Weak against strong, weak against strong — strong wins. Correct.",
+        D('Cross out choice 4'),
+        "Choice two: q against s times p. Forget p for a second — s already beats q.",
+        "And multiplying s by p, a number above one? That's like giving s an energy drink. It only gets stronger.",
+        D('Next to choice 2 write "s > q, × p > 1"'),
+        "Correct.",
+        D('Cross out choice 2'),
+        "Three out — so it's choice three. But let's check it.",
+        "r times p against q. r already beats q — and times p, it gets even stronger. So r times p can't be less than q.",
+        D('Circle choice 3'),
+        "Choice three is never true. That's our answer.",
+    ]])
+
+    # ---------- q-495 (Hebrew: z>y>x>1, yz², xy², x²y, y³, plug 2, 3, 4 -> 18, 12, 27 - ours had the same four
+    # expressions, the same letters and the plug-in 2, 3). New letters, new distractors, new plug-in.
+    _rn_q(M, 'q-495', 'Given: $1<a<b<c$. Which of the following expressions is the smallest?',
+          ['$a^2\\cdot c$', '$a^2\\cdot b$', '$a\\cdot b\\cdot c$', '$b^2\\cdot c$'], 2, [
+              'Plug in $a=2$, $b=4$, $c=5$: $a^2\\cdot c=4\\cdot5=20$, $a^2\\cdot b=4\\cdot4=16$, $a\\cdot b\\cdot c=40$, $b^2\\cdot c=16\\cdot5=80$. The smallest is $a^2\\cdot b$.',
+              'Why: every choice is a product of three factors above 1, so the smallest factors give the smallest product. $a\\cdot a\\cdot a$ is not offered; the next closest is two $a$\'s and one $b$.',
+              '$a^2\\cdot c$ also has two $a$\'s, but its third factor is $c>b$. And $a\\cdot b\\cdot c$, $b^2\\cdot c$ use bigger factors.'])
+    _rn_video(M, 'q-495', [[
+        "Three unknowns — and all of them live in one zone: numbers bigger than one.",
+        "What does multiplying do in that zone? It makes things BIGGER.",
+        "Now look at the choices. Every one is a product of three letters.",
+        D('Under each choice write it as three letters: a·a·c, a·a·b, a·b·c, b·b·c'),
+        "a squared c is a, a, c. b squared c is b times b times c. And so on — three factors each time.",
+        "When is a product of three factors from this zone the smallest? When every factor is as small as possible.",
+        "The smallest letter is a. So the smallest product would be a times a times a.",
+        D('Write "a·a·a" next to the stem and cross it out'),
+        "But a cubed isn't in the choices. So find the next closest thing.",
+        "Two a's and one more letter. Choices one and two both have two a's.",
+        "The third letter decides: b is the next letter up from a. c is bigger. So a squared b wins.",
+        D('Circle choice 2'),
+        "That's the smallest. Choice two.",
+    ], [
+        "Now the psychometric route: plug in simple numbers.",
+        D('Write "a = 2, b = 4, c = 5"'),
+        "a is two, b is four, c is five. They ask for the smallest — one substitution is enough.",
+        D('Next to choice 1 write "4 · 5 = 20"'),
+        "Choice one: two squared times five — four times five, twenty.",
+        D('Next to choice 2 write "4 · 4 = 16"'),
+        "Choice two: two squared times four — sixteen.",
+        D('Next to choice 3 write "2 · 4 · 5 = 40" and cross out choice 3'),
+        "Choice three: two times four times five — forty. Out.",
+        D('Next to choice 4 write "16 · 5 = 80", cross out choices 1 and 4 and circle choice 2'),
+        "Choice four: four squared times five — eighty. Out. And twenty loses to sixteen too. Choice two.",
+        "Two approaches, both short. Use whichever you like.",
+    ]])
+
+    # ---------- q-496: test numbers (Hebrew counter-example 1.1 + 0.9 = 2 against 1.2 + 0.1) -> new ones
+    _rn_q(M, 'q-496', M.q('q-496')['stemRich'], M.q('q-496')['choicesRich'], M.q('q-496')['correct'][0] + 1,
+          M.q('q-496')['explanation'][:3] + [
+              '(2) Push the values to the edges: $a=0.1$, $b=0.9$, $c=1.4$, $d=1.5$. Then $c+b=2.3$ and $d+a=1.6$, so $c+b>d+a$. Not necessarily true.'])
+    _rn_sub(M, 'solve-q-496', 2, [
+        ('c = 1.2, b = 0.8 | d = 1.3, a = 0.2', 'c = 1.4, b = 0.9 | d = 1.5, a = 0.1'),
+        ('c is one point two, b zero point eight; d one point three, a zero point two.',
+         'c is one point four, b zero point nine; d one point five, a zero point one.'),
+        ('Write "2 > 1.5 ✗"', 'Write "2.3 > 1.6 ✗"'),
+        ('Left: two. Right: one point five.', 'Left: two point three. Right: one point six.')])
+
+    # ---------- q-497: test numbers (Hebrew plug-in -1/2, 1/4, 1/2 -> -1/16, -1/4, -1/8, -1/2) -> new ones
+    q = M.q('q-497')
+    _rn_q(M, 'q-497', q['stemRich'], q['choicesRich'], q['correct'][0] + 1, q['explanation'][:2] + [
+        'Check with $k=-\\frac13$, $m=\\frac14$, $n=\\frac12$: $k\\cdot n=-\\frac16$, $k=-\\frac13$, $k\\cdot m\\cdot n=-\\frac1{24}$, $k\\cdot m=-\\frac1{12}$. The largest is $-\\frac1{24}$.'])
+    _rn_sub(M, 'solve-q-497', 3, [
+        ('Write "k = −½, m = ⅓, n = ½"', 'Write "k = −⅓, m = ¼, n = ½"'),
+        ('k is negative a half, m is a third, n is a half.', 'k is negative a third, m is a quarter, n is a half.'),
+        ('"−1/4", "−1/2", "−1/12", "−1/6"', '"−1/6", "−1/3", "−1/24", "−1/12"'),
+        ('k n: negative a quarter. k: negative a half. k m n: negative one twelfth. k m: negative a sixth.',
+         'k n: negative a sixth. k: negative a third. k m n: negative one twenty-fourth. k m: negative one twelfth.'),
+        ('Mark −1/2, −1/4, −1/6 and −1/12 on the line', 'Mark −1/3, −1/6, −1/12 and −1/24 on the line'),
+        ('Negative a half is halfway to minus one. A quarter is closer to zero. A sixth — closer still. A twelfth — closest of all.',
+         'Negative a third is a third of the way to minus one. A sixth is closer to zero. A twelfth — closer still. A twenty-fourth — closest of all.'),
+        ('Negative one twelfth is the largest.', 'Negative one twenty-fourth is the largest.')])
+
+    # ---------- q-498 (Hebrew: x³ > x⁴, test 2 and ½ -> 16, 8, 1/16, 1/8 - ours was exactly that) -> x^8 < x^7
+    _rn_q(M, 'q-498', 'Given: $x^8<x^7$. In which of the following ranges is $x$?',
+          ['$-1<x<0$', '$x>1$', '$x<-1$', '$0<x<1$'], 4, [
+              'If $x<0$, then $x^8>0$ and $x^7<0$, so $x^8<x^7$ is impossible. Therefore $x>0$.',
+              'For $x>1$, a bigger power gives a bigger number: $x^8>x^7$. ✗',
+              'For $0<x<1$, a bigger power gives a smaller number: $x^8<x^7$. ✓',
+              'Check: $x=\\frac12$: $\\frac1{256}<\\frac1{128}$ ✓. $x=2$: $256>128$ ✗.'])
+    _rn_video(M, 'q-498', [[
+        "x to the eighth is less than x to the seventh. Where does x live?",
+        A('A number line from −2 to 2 appears', {'k': 'nl', 'min': -2, 'max': 2}),
+        "This is about how powers behave — so we use the axis.",
+        "Remember the exception: a negative number to an EVEN power turns positive.",
+        D('Over the negative side write "x⁸ > 0, x⁷ < 0"'),
+        "If x were negative, x to the eighth would be positive and x to the seventh negative. A positive can't be less than a negative.",
+        D('Cross out choices 1 and 3'),
+        "So x is positive. Both negative ranges are out.",
+        D('Over the part above 1 write "power ↑ → bigger"; over 0 to 1 write "power ↑ → smaller"'),
+        "Above one: the higher the power, the bigger the number. Between zero and one: the higher the power, the SMALLER. A fraction times a fraction times a fraction…",
+        D('Cross out choice 2 and circle choice 4'),
+        "We need the higher power to be smaller — that only happens for positive fractions. Choice four.",
+    ], [
+        "Psychometric route: test each range with a simple number.",
+        D('Next to choice 2 write "x = 2: 256 < 128? ✗"'),
+        "Bigger than one — take two. Two to the eighth is two hundred fifty-six, two to the seventh is one hundred twenty-eight. Not less. Out.",
+        D('Next to choice 4 write "x = ½: 1/256 < 1/128 ✓"'),
+        "A positive fraction — take a half. One over two hundred fifty-six against one over one hundred twenty-eight. Yes, smaller.",
+        D('Circle choice 4'),
+        "We found a range that works. Choice four — and the negative ranges can't work anyway.",
+    ]])
+
+    # ---------- q-501: test numbers (Hebrew 0.2 + 0.4 and 0.9) -> new ones
+    q = M.q('q-501')
+    _rn_q(M, 'q-501', q['stemRich'], q['choicesRich'], q['correct'][0] + 1, q['explanation'][:3] + [
+        '(4) $p=0.1$, $q=0.3$, $r=0.5$ (then $r\\cdot q=0.15$, the chain holds): $p+r=0.6<1$ ✓. But $p=0.3$, $q=0.75$, $r=0.9$ (then $r\\cdot q=0.675$): $p+r=1.2>1$ ✗. Possible, but not necessarily true.'])
+    _rn_sub(M, 'solve-q-501', 2, [
+        ('0.2 + 0.6 = 0.8 ✓ | 0.4 + 0.8 = 1.2 ✗', '0.1 + 0.5 = 0.6 ✓ | 0.3 + 0.9 = 1.2 ✗'),
+        ('p zero point two, q zero point five, r zero point six: zero point eight. But p zero point four, q zero point seven, r zero point eight',
+         'p zero point one, q zero point three, r zero point five: zero point six. But p zero point three, q zero point seven five, r zero point nine')])
+    _hb_canvas(M, ['q-493', 'q-495', 'q-496', 'q-497', 'q-498', 'q-501'])
+
+    # ---------- summary: hierarchy example 7/6 (the Hebrew lesson's 5th root of 7/6) and 4/7 (Hebrew lesson example)
+    _rn_sub(M, 'r26-t17-summary', 4, [
+        ('$\\sqrt[3]{\\frac76}>\\sqrt{\\frac34}$', '$\\sqrt[3]{\\frac98}>\\sqrt{\\frac45}$'),
+        ('The cube root of 7/6 and the square root of 3/4 appear', 'The cube root of 9/8 and the square root of 4/5 appear'),
+        ('Seven sixths is above one; three quarters is a fraction.', 'Nine eighths is above one; four fifths is a fraction.')])
+    _rn_sub(M, 'r26-t17-summary', 5, [
+        ('\\left(\\frac47\\right)^{-2}=\\left(\\frac74\\right)^2', '\\left(\\frac59\\right)^{-2}=\\left(\\frac95\\right)^2'),
+        ('(4/7)⁻² = (7/4)² appears', '(5/9)⁻² = (9/5)² appears')])
+
+
+_apply_before_hebrew_backcheck = apply
+
+
+def apply(M):
+    _apply_before_hebrew_backcheck(M)
+    hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last

@@ -209,3 +209,24 @@ Fixed (the kind of condition had changed from the Hebrew; restored with new numb
   always an even integer, not always divisible by 4). Video keeps both methods: plug in n = 1, 2, 3 → 0, −2, −8 (−2 rules out
   "divisible by 4"; a minus doesn't change parity), and the math way (common factor, contracted formula, three in a row → 6k).
   Written solution rewritten. `math_check.py 16 32` → 0 / 0 / 0; rendered solve-q-464.
+
+## 2026-10-06 Hebrew back-check
+Compared every guided and practice question, every lesson slide and the cards with the teacher's Hebrew video subtitles
+(01-Algebra-Original-Subtitles.txt, lines 15738–17362). Nothing in topic 16 is recorded. Five guided questions and one lesson
+example had landed back on the Hebrew videos' numbers (mostly the Hebrew expression with the letters swapped); fixed in
+`hebrew_backcheck(M)` (runs last). Same type, trap, level and methods; solution videos rewritten (speech, draw cues, titles).
+
+| id | Hebrew video | was | new | answer |
+|---|---|---|---|---|
+| q-457 (G1) | a⁴b³/\|b\| < 0 → b < 0 | a³b⁴/\|a\| < 0 | a⁵b²/\|a\| < 0 | a < 0 (4); trap "a < 0 and b < 0" |
+| q-461 (G8) | x even, y odd: 2y/x² | a odd, b even: 2a/b² | 6a/b² (= 3a/2k²); plug-ins 3/2, 9/2, 9/8 | always a fraction (2) |
+| q-462 (G9) | x − y = 2; 2x−y, x²+y²+3x, 3x²+2y, x²−y²; plug 3, 1 | a − b = 2; same choices; plug 3, 1 | a − b = 6; a²+b²+5b, b²+ab, 6a−b, 5a²+4b; plug 7, 1 (55, 8, 41, 249) | b² + ab = b(a+b) (2) |
+| q-463 (G10) | x odd, (x² − 1)/4; plug 5, 1, 3 | (n² − 1)/4; plug 5, 1, 3 | (9n² − 1)/4 = (3n−1)(3n+1)/4; plug 1, 3, 5 → 2, 20, 56 | always even (1) |
+| q-472 (G20) | a(b+1)²/8, a²b²/8, ((a+b)²−(a−b)²)/8, (b−1)(b+1)/8 | b(a+1)²/8, (a−1)(a+1)/8, ((a+b)²−(a−b)²)/8, ab²/8 | b³(a+2)/8, (a+1)(a+3)/8, ((a+b)²+(a−b)²−2a²)/8, ab²/8 | ab²/8 (4) |
+| lesson Even & Odd, slide 6 | 6·13 + 5·14 − 7·9; 4x + 5y − 8 | 6·13 + 5·10 − 3·7; 4(x+5), 4x+5 | 4·15 + 9·8 − 7·3; 2(x+7), 2x+7 | – |
+
+Left on purpose: q-465, q-466, q-467 (letter-only sign questions — letters, given and choice order already differ from the
+Hebrew; no numbers to change), q-460 (mⁿ + nᵐ + 9 + 4n vs 4y + xʸ + yˣ + 5: only the 4 is shared), q-458/459/464/468/469/470/471
+(different numbers or condition), the lesson demos 6 ÷ 2 = 3 and 2 · 3 = 6 and the smallest cases 1·2·3 etc. (the method
+itself). Keys brute-forced in Python (exactly one correct choice; traps still choices); duplicate check over topics 1–38.
+`python3 math_check.py 16 32` → 0 / 0 / 0. Rendered the Even & Odd lesson and solve-q-457, -461, -462, -463, -472.

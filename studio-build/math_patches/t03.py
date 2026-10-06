@@ -1163,3 +1163,47 @@ _apply_before_review = apply
 def apply(M):
     _apply_before_review(M)
     review_dups(M)
+
+
+# =========================================================================================
+# 2026-10-06 Hebrew back-check: items that had landed on the numbers of the teacher's Hebrew VIDEOS
+# =========================================================================================
+def hebrew_backcheck(M):
+    # q-fraction-compare (solution video NOT recorded): 9/17 "half of 17 is 8.5, 9 > 8.5" is the Hebrew lesson's own
+    # benchmark-1/2 example (5/11 vs 9/17). 9/17 -> 11/21 (half of 21 is 10.5, 11 > 10.5). Same type, same trap.
+    A_, B_ = r'\frac{7}{15}', r'\frac{11}{21}'
+    ch = ['$%s<\\frac{1}{2}<%s$' % (A_, B_), '$%s<\\frac{1}{2}<%s$' % (B_, A_),
+          '$\\frac{1}{2}<%s<%s$' % (A_, B_), '$%s<%s<\\frac{1}{2}$' % (A_, B_)]
+    M.set_q('q-fraction-compare', choices=ch, correct=1, expl=[
+        r'Half of 15 is 7.5, and $7<7.5$. Therefore $\frac{7}{15}<\frac{1}{2}$.',
+        r'Half of 21 is 10.5, and $11>10.5$. Therefore $\frac{11}{21}>\frac{1}{2}$.',
+        r'Check by cross-multiplying with $\frac{1}{2}$: $2\cdot 7=14<15$ and $2\cdot 11=22>21$.',
+        r'The order is $\frac{7}{15}<\frac{1}{2}<\frac{11}{21}$. Choice 1.'])
+    vid = 'solve-q-fraction-compare'
+    for b in M.video(vid)['beats']:
+        for it in b['items']:
+            if it.get('k') == 'q' and it.get('qid') == 'q-fraction-compare': it['choices'] = list(ch)
+    _dd_sub(M, vid, 2, [
+        ('one half, nine seventeenths.', 'one half, eleven twenty-firsts.'),
+        ('½ of 17 = 8.5 → 9 > 8.5', '½ of 21 = 10.5 → 11 > 10.5'),
+        ('Half of seventeen is eight and a half. Nine is more.', 'Half of twenty-one is ten and a half. Eleven is more.'),
+        ('then one half, then nine seventeenths.', 'then one half, then eleven twenty-firsts.'),
+        ('Two times nine is eighteen — more than seventeen.', 'Two times eleven is twenty-two — more than twenty-one.')])
+
+    # Memory card "Square them": 3/sqrt10 vs 2/sqrt5 is exactly the Hebrew lesson example -> 4/sqrt19 vs 3/sqrt11
+    # (squares 16/19 > 9/11, since 16*11 = 176 > 171 = 9*19). The recorded lesson slide keeps its numbers.
+    for cid, c in M.D['references'].items():
+        for tb in c.get('tables') or []:
+            for row in tb.get('rows') or []:
+                for k, cell in enumerate(row):
+                    if isinstance(cell, str) and r'\frac3{\sqrt{10}}>\frac2{\sqrt5}' in cell:
+                        row[k] = r'$\frac4{\sqrt{19}}>\frac3{\sqrt{11}}$ because $\frac{16}{19}>\frac9{11}$'
+                        M.log.append('card %s: square-them example renumbered' % cid)
+
+
+_apply_before_hebrew = apply
+
+
+def apply(M):
+    _apply_before_hebrew(M)
+    hebrew_backcheck(M)

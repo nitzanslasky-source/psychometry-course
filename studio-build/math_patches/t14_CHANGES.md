@@ -235,3 +235,24 @@ Independent check of the renumber pass (17 guided + 20 practice, 17 solution vid
 - (review follow-up) q-395: back to the Hebrew x² (with 35): statement (2) "the number of different prime divisors of $x^2$ is greater than that of $x$" — never true, key still 2. Explanation ($35^2=1225=5^2\cdot7^2$) and video (board "35 = 5·7 → 35² = 5²·7²", "Square x, and the same primes just appear twice as often") updated. Rendered.
 - q-r26-t14-13 ($6^x\cdot5^y=1080$) stays cut: its type (break into primes, match exponents) is the guided q-r26-t14-03 ($2^a\cdot3^b=108$), and practice keeps q-r26-t14-12 ($p^2q=75$).
 `python3 math_check.py 14 32` → 0 / 0 / 0.
+
+## 2026-10-06 Hebrew back-check
+Every guided and practice question, lesson slide and card of topic 14 was compared with the teacher's Hebrew video
+subtitles (01-Algebra-Original-Subtitles.txt, lines 13683–14768: lessons + 7 sample questions). Nothing in topic 14 is
+recorded. Fixes are in `hebrew_backcheck(M)` in t14.py (runs last). Keys brute-forced (q-394 over all prime quadruples up to 13);
+`python3 math_check.py 14 32` → 0/0/0; changed videos rendered and checked.
+
+| id | matched the Hebrew video | new | answer |
+|---|---|---|---|
+| q-396 (+ video) | primes {3, 5} / {3, 7}, $b<a$, $\frac{ab}{35}$ → 27 — the Hebrew question exactly | {2, 3} / {2, 5}, $\frac{ab}{15}$; $a=12$, $b=10$ | 8 (choice 1); trap 4 |
+| q-388 (+ video) | $x=5\cdot3^2\cdot6^2$, "35 = 5·7, no 7" (Hebrew $2\cdot5^3\cdot6^2$, answer 35) | $x=3\cdot5^2\cdot10^2$; choices 20, 22, 75, 60 | 22 (choice 2) |
+| q-394 (+ video) | plug-in $z=2^5\cdot3^7$, $2^3\cdot3^5$ = Hebrew video's numbers | $z=p^s\cdot q^r$ ($2^7\cdot3^5$); answer $p^r\cdot q^q$ ($2^5\cdot3^3$); trap $q^s$ | choice 2 |
+| q-395 (+ video) | statement "at least one of a, b, c is divisible by 5" word for word | 5 and 7 swap roles: (3) "not divisible by 5 → $a^2$ divisible by 25", (4) "divisible by 7" | choice 2 |
+| q-391 (+ video) | choice 31 = 2 + 29 (Hebrew choice, same split) | 21 = 2 + 19 | 51 (choice 3) |
+| q-412 (practice) | 33 (33 + 2 = 35) with 39 — Hebrew's 33, 39 and key 35 | choices 17, 85, 27, 45; 85 + 2 = 87 = 3·29 | 85 (choice 2) |
+| q-416 (practice) | choices / answer position / example $\sqrt3$ as the Hebrew video | new order; example $\sqrt{13}$ | not an integer (choice 2) |
+| lesson primes #3 | "twenty, eighteen" (even, not prime) | "fourteen, thirty" | — |
+| r26-t14-summary #3 | "39 = 2 + 37" (Hebrew choice) | "73 = 2 + 71" | — |
+
+Left on purpose: q-392 (14, 21, 5 / 26, 21, 42 → 91; Hebrew 6, 21, 55 / 14, 15, 30 → 21 — two numbers shared in other roles),
+q-402 / q-401 (letters-only, already new letters and examples), "primes up to 40" and "97" (standard facts).

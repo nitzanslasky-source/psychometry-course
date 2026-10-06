@@ -198,3 +198,18 @@ close to a lesson rule but was kept: guided Q4 (0 < x < 1, which is largest). It
 - Checked: every renumbered question's key, traps and explanation (python); lesson diff; practice removals. Note for the
   teacher: after the clean-up the topic 9 practice has no "√(ax+b) = c" root equation (q-r26-t09-13 and the extra -5 were
   both removed); topic 10 practice covers it (q-266, q-267).
+
+## 2026-10-06 Hebrew back-check
+The Hebrew topic-9 lesson is a table video with no subtitles, so topic 9 was compared with the Hebrew roots-techniques
+lesson and sample question (01-Algebra-Original-Subtitles.txt 5357–6607). Nothing in topic 9 is recorded.
+Function `hebrew_backcheck(M)` in t09.py runs last.
+
+| where | was (landed on the Hebrew) | now |
+|---|---|---|
+| lesson "Roots — Fundamentals" slide 4 | √48 = √16·3 = 4√3; "pull out only four: 2√12, still divisible by four" — the Hebrew lesson splits √48 as √4·√12 (stuck) vs √16·√3 | √96 = √16·6 = 4√6; "pull out only four: 2√24, still divisible by four" (√300 unchanged) |
+| lesson slide 6 | √48 + √75 = 4√3 + 5√3 = 9√3 (Hebrew √12 + √48 = 2√3 + 4√3) | √27 + √75 = 3√3 + 5√3 = 8√3 |
+| memory card tip | √48 = √16·3 = 4√3 | √96 = √16·6 = 4√6 |
+| practice alg-extra-exponent-extra-7 | √50 + √8 = 7√2 (the Hebrew sample question's √50 − √8 = 5√2 − 2√2) | √54 + √24 = 3√6 + 2√6 = 5√6 (choice 2; traps 4√6, √78 adds under the root, 6√6) |
+
+Left: card trap row 4√3 = √48 < √50 = 5√2 (a comparison; the Hebrew has no such comparison). No other matches.
+Keys brute-forced; duplicate scan over all topics clean. `python3 math_check.py 8 9 10 32` → 0/0/0; the lesson rendered and checked.

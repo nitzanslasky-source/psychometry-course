@@ -211,3 +211,22 @@ Function `practice_methods` (runs last; appends to the written solution only). 1
 - q-expression-extra-07 ((a + 4b)/a): Method 2 · Power count — power 0; choices 1 and 3 mixed → out; the existing a = 2, b = 1 check decides 2 vs 4.
 - Looked at but not added: the other letter-choice questions are either all the same power (q-r26-t05-12, q-expression-extra-20, -11, -13, q-r26-t05-13) or the question itself is mixed (q-r26-t05-11, -15, q-124); q-r26-t05-05/-06 already plug in fitting values.
 All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 5 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-06 Hebrew back-check
+Every guided and practice question, both lesson videos, the card and the summary of Topic 5 were compared with the
+teacher's Hebrew video subtitles (01-Algebra-Original-Subtitles.txt, lines 2551–3663: theory examples a/b + b/a,
+4 ÷ (1 ÷ (½ + ¼)), 2 − (a−b)/(b−a), (a+b)(x−1) + (a+b)(x+1), (x+y+z+w)² − (x+y−z−w)², and the 10 sample questions
+15² − 15 − (14² + 14), nested brackets, x² + 9x + 18, 3 + |x|/x, Aviatar/Yael, [(x−y) − (y−x)]/(x−y), x⁻² expression,
+"constant, not depending on a", 1 + (2y² + 2xy)/(x² − y²), 42,944 ÷ 61).
+- Recorded (guided q-125 … q-138, q-r26-t05-02 … -04, lesson "Working with Expressions", "Exam Shortcuts"): no
+  matches — all already use other numbers. (q-134's choice 508 equals one Hebrew choice; recorded, left.)
+- Fixed (practice, function `hebrew_backcheck(M)`, runs last):
+
+| id | old | new | answer |
+|---|---|---|---|
+| q-expression-extra-11 | $1-\frac{2b^2+2ab}{a^2-b^2}$ (same coefficients 2, 2 as the Hebrew video) | $1-\frac{3b^2+3ab}{a^2-b^2}$ | $\frac{a-4b}{a-b}$ (1) |
+| q-expression-extra-12 | $25{,}704\div63$, choices 308 / 408 / 508 / 608 (508, 608 = Hebrew video choices) | same division, choices 306 / 408 / 512 / 604 (+ units-digit check line) | 408 (2) |
+
+Keys brute-forced (a, b from −6 to 6: only choice 1 equals the expression; 63·408 = 25,704 and the three wrong choices
+have wrong units digits and are far off). No duplicates in topics 1–38 (3 is not the Hebrew 2, the study-guide 4 or
+q-133's 6). `python3 math_check.py 5 32` → 0 / 0 / 0. No video changed.

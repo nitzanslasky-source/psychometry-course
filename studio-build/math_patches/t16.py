@@ -1838,3 +1838,191 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# =====================================================================================================================
+# 2026-10-06 Hebrew back-check: five guided questions and one lesson example had landed back on the numbers of the
+# teacher's Hebrew VIDEOS (01-Algebra-Original-Subtitles.txt). New numbers - same type, trap, level and methods.
+# Nothing in topic 16 is recorded.
+def hebrew_backcheck(M):
+    # ---- lesson "Even & Odd", slide 6: 6·13 + 5·10 − 3·7 and 4(x+5) / 4x+5 were the Hebrew's 6·13 + 5·14 − 7·9, 4x + 5y
+    _rn_sub(M, PARITY, 6, [
+        ('$6\\cdot13+5\\cdot10-3\\cdot7$', '$4\\cdot15+9\\cdot8-7\\cdot3$'),
+        ('6 · 13 + 5 · 10 − 3 · 7 appears', '4 · 15 + 9 · 8 − 7 · 3 appears'),
+        ('Under 6·13 write "E"; under 5·10 write "E"; under 3·7 write "O"', 'Under 4·15 write "E"; under 9·8 write "E"; under 7·3 write "O"'),
+        ('Six is there — even. Ten is there — even. Three times seven: odd times odd — odd.',
+         'Four is there — even. Eight is there — even. Seven times three: odd times odd — odd.'),
+        ('$4(x+5) \\qquad 4x+5$', '$2(x+7) \\qquad 2x+7$'), ('4(x + 5) and 4x + 5 appear', '2(x + 7) and 2x + 7 appear'),
+        ('Write "even" under 4(x+5) and "odd" under 4x + 5', 'Write "even" under 2(x+7) and "odd" under 2x + 7'),
+        ('four times the whole bracket — even. But four x plus five — odd.', 'two times the whole bracket — even. But two x plus seven — odd.')])
+
+    # ---- q-457: a³b⁴/|a| was the Hebrew's a⁴b³/|b| with the letters swapped; now a⁵b²/|a|
+    _rn_q(M, 'q-457', 'Given:\n$\\begin{cases} a\\ne0 \\\\ \\frac{a^5\\cdot b^2}{|a|}<0 \\end{cases}$\nWhich of the following is necessarily true?',
+          ['$0<a$', '$a<0$ and $b<0$', '$0<a$ and $0<b$', '$a<0$'], 4, [
+        '$b^2$ is an even power, so $b^2\\ge0$. If $b=0$, the expression equals $0$, which is not negative. Therefore $b\\ne0$ and $b^2>0$.',
+        'Since $a\\ne0$, $|a|>0$.',
+        'The only piece that can make the expression negative is $a^5$. An odd power keeps the sign, so $a^5<0$ means $a<0$.',
+        'Nothing is known about the sign of $b$. Choice (2) claims too much ($b<0$ is not necessarily true). Choices (1) and (3) say $a>0$, which contradicts $a<0$. The answer is (4).'])
+    _rn_video(M, 'q-457', [[
+        "The whole fraction is less than zero. Let's check each piece.",
+        "Why does it say a isn't zero? So the denominator isn't zero. The exam usually states it.",
+        D('Under |a| write "+"'),
+        "The denominator: absolute value of a. Absolute value is zero or positive — and it can't be zero. So: positive.",
+        D('Under b² write "+"'),
+        "b squared: an even power — positive. And b can't be zero, or the whole thing would be zero, not less than zero.",
+        "So the denominator is positive, and one piece on top is positive.",
+        "For the fraction to be negative, the top must be negative.",
+        D('Under a⁵ write "must be −"'),
+        "So a to the fifth must be negative. And an odd power keeps the sign — so a itself is negative.",
+        D('Circle choice 4'),
+        "a is less than zero. Choice four.",
+        "Choice two is the trap: it also says b is negative. We learned nothing about b — just that it isn't zero.",
+    ]])
+
+    # ---- q-461: 2a/b² was the Hebrew's 2y/x² with the letters swapped; now 6a/b²
+    _rn_q(M, 'q-461', 'a and b are integers. a is odd, and b is even and not $0$. Which of the following is the most precise description of $\\frac{6a}{b^2}$?',
+          ['$\\text{odd}$, $\\text{even}$, or a $\\text{fraction}$', 'always a $\\text{fraction}$',
+           '$\\text{odd}$ or a $\\text{fraction}$', '$\\text{even}$ or a $\\text{fraction}$'], 2, [
+        'b is even, so $b=2k$ ($k$ is an integer, $k\\ne0$). Then $b^2=4k^2$.',
+        '$\\frac{6a}{4k^2}=\\frac{3a}{2k^2}$.',
+        'The top, $3a$, is odd (odd times odd). The bottom, $2k^2$, is even. Odd divided by even is never an integer, so the result is always a fraction.',
+        'Check: $a=1$, $b=2$: $\\frac64=\\frac32$. $a=3$, $b=2$: $\\frac{18}{4}=\\frac92$. $a=3$, $b=4$: $\\frac{18}{16}=\\frac98$.',
+        'The trap is choice (1): "even divided by even can be anything" is true in general, but here the two in b cancels with a two in the six.'])
+    _rn_video(M, 'q-461', [[
+        "Six a on top — even. b squared at the bottom — b is even, so even.",
+        "Even over even — our table says: anything. So choice one?",
+        D('Write "E ÷ E → anything?" and put a ? next to choice 1'),
+        "That's the trap. Let's do the math.",
+        D('Write "b = 2k"'),
+        "b is even — so b is two times some integer k.",
+        D('Write "6a / (2k)² = 6a / 4k² = 3a / 2k²"'),
+        "Two k squared is four k squared. Cancel a two from the six and from the four: three a over two k squared.",
+        "Now: three a is odd times odd — odd. And two k squared is even. Odd over even — only ever a fraction.",
+        "The rule of thumb: in a fraction, cancel first. The two inside the six cancelled with a two hiding inside b.",
+    ], [
+        "The easier way, as almost always: plug in. It's division — so three plug-ins, close together.",
+        D('Write "a = 1, b = 2 → 6/4 = 3/2"'),
+        "One and two: six over four — three halves. Fraction.",
+        D('Write "a = 3, b = 2 → 18/4 = 9/2"'),
+        "Three and two: eighteen over four — nine halves. Fraction.",
+        D('Write "a = 3, b = 4 → 18/16 = 9/8"'),
+        "Three and four: eighteen over sixteen. Fraction.",
+        D('Circle choice 2'),
+        "Fraction, fraction, fraction. Always a fraction — choice two.",
+    ]])
+
+    # ---- q-462: a − b = 2 with a² + b² + 3b, a² − b², 3a² + 2b was the Hebrew's x − y = 2 question; now a − b = 6
+    _rn_q(M, 'q-462', 'a and b are integers. Given: $a-b=6$. Which of the following expressions is necessarily even?',
+          ['$a^2+b^2+5b$', '$b^2+ab$', '$6a-b$', '$5a^2+4b$'], 2, [
+        '$a-b=6$ is even, so a and b have the same parity: both even or both odd.',
+        'Plug in two odd numbers: $a=7$, $b=1$. (1) $49+1+5=55$, odd. (2) $1+7=8$, even. (3) $42-1=41$, odd. (4) $245+4=249$, odd.',
+        'Why (2) is always even: $b^2+ab=b(a+b)$, and $a+b$ is even, because a and b have the same parity.'])
+    _rn_video(M, 'q-462', [[
+        "a minus b is six. Take two odd numbers: a is seven, b is one.",
+        "Why odd? With two even numbers, every choice here comes out even. They wouldn't help.",
+        D('Write "a = 7, b = 1"'),
+        D('Next to choice 1 write "49 + 1 + 5 = 55 ✗"'),
+        "Choice one: forty-nine plus one plus five — fifty-five. Odd. Out.",
+        D('Next to choice 2 write "1 + 7 = 8 ✓"'),
+        "Choice two: one plus seven — eight. Even. Keep it.",
+        D('Next to choice 3 write "42 − 1 = 41 ✗"'),
+        "Choice three: forty-two minus one — forty-one. Odd. Out.",
+        D('Next to choice 4 write "245 + 4 = 249 ✗"'),
+        "Choice four: two hundred forty-five plus four — two hundred forty-nine. Out.",
+        D('Circle choice 2'),
+        "Only choice two is left. Choice two.",
+    ], [
+        "You could reason it out: an even difference means both are even — or both are odd.",
+        D('Write "b² + ab = b(a + b)"'),
+        "Choice two factors into b times a plus b. Two even numbers, or two odd numbers, add up to an even number — so it's always even.",
+        "But honestly — plugging in is faster. Even-odd questions: plug in.",
+    ]])
+
+    # ---- q-463: (n² − 1)/4 was exactly the Hebrew's (x² − 1)/4 (plug-ins 5, 1, 3); now (9n² − 1)/4
+    _rn_q(M, 'q-463', 'n is an odd number. Which of the following is the most precise description of $\\frac{9n^2-1}{4}$?',
+          ['always $\\text{even}$', '$\\text{odd}$ or a $\\text{fraction}$', '$\\text{odd}$, $\\text{even}$, or a $\\text{fraction}$',
+           '$\\text{even}$ or a $\\text{fraction}$'], 1, [
+        '$9n^2-1=(3n-1)(3n+1)$. n is odd, so $3n$ is odd, and $3n-1$ and $3n+1$ are two consecutive even numbers. One of them is divisible by 4, so the product is divisible by 8: $9n^2-1=8k$.',
+        '$\\frac{8k}{4}=2k$, which is always even.',
+        'Check: $n=1, 3, 5$ give $\\frac84=2$, $\\frac{80}{4}=20$, $\\frac{224}{4}=56$. All even.',
+        'The trap is choice (3): "even divided by even can be anything" — but here the top always has three twos.'])
+    _rn_video(M, 'q-463', [[
+        "A quick glance: n odd, so nine n squared is odd, minus one — even. Over four: even over even. Anything?",
+        "Let's see. It's division — three plug-ins, as close as possible.",
+        D('Write "n = 1 → 8 ÷ 4 = 2"'),
+        "One: nine minus one, eight. Over four — two.",
+        D('Write "n = 3 → 80 ÷ 4 = 20"'),
+        "Three: nine times nine is eighty-one, minus one — eighty. Over four — twenty.",
+        D('Write "n = 5 → 224 ÷ 4 = 56"'),
+        "Five: nine times twenty-five is two hundred twenty-five, minus one — two twenty-four. Over four — fifty-six.",
+        D('Circle choice 1'),
+        "Two, twenty, fifty-six — even every time. That points to choice one. The math on the next slide proves it.",
+    ], [
+        "The math way — and see how much harder it is.",
+        D('Write "9n² − 1 = (3n − 1)(3n + 1)"'),
+        "Step one: spot the contracted multiplication formula. Nine n squared is three n, squared. And the one isn't written as a square — that trips people up.",
+        "Step two: n is odd, so three n is odd too. So three n minus one and three n plus one are the even numbers just before and after it — consecutive evens.",
+        D('Write "= 8k"'),
+        "Two consecutive evens — two times four — are divisible by eight. So the top is eight k.",
+        D('Write "8k ÷ 4 = 2k → even"'),
+        "Eight k over four: two k. Always even.",
+        "On the exam: plug in one, three, five — and remember the reason: two consecutive evens are divisible by eight.",
+    ]])
+
+    # ---- q-472: three of the four choices were the Hebrew's (b(a+1)²/8, (a−1)(a+1)/8, ((a+b)² − (a−b)²)/8); new choices
+    _rn_q(M, 'q-472', 'a is an odd positive number, and b is an even positive number. Which of the following expressions is not necessarily an integer?',
+          ['$\\frac{b^3(a+2)}{8}$', '$\\frac{(a+1)(a+3)}{8}$', '$\\frac{(a+b)^2+(a-b)^2-2a^2}{8}$', '$\\frac{ab^2}{8}$'], 4, [
+        'Count the twos. b is even, so it has at least one two. a is odd, so $a+1$ and $a+3$ are even, and $a+2$ is odd.',
+        '(1) $b^3$ has at least three twos, enough for $8=2^3$. Always an integer.',
+        '(2) $a+1$ and $a+3$ are consecutive even numbers, so their product is divisible by 8.',
+        '(3) $(a+b)^2+(a-b)^2=2a^2+2b^2$, so the top is $2b^2$. With $b=2k$: $8k^2$. Always divisible by 8.',
+        '(4) In $ab^2$ there are only two twos for sure (a is odd). With $a=1$ and $b=2$ the value is $\\frac{1\\cdot4}{8}=\\frac12$. Not necessarily an integer.',
+        'The answer is (4).'])
+    _rn_video(M, 'q-472', [[
+        "Three of these are always whole numbers. One isn't necessarily. Let's hunt with the math.",
+        "Every even number contains the factor two at least once. So write b as two k.",
+        D('Next to the question write "b = 2k"'),
+        "Choice one: b cubed times a plus two, over eight.",
+        D('Under choice 1 write "(2k)³ = 8k³"'),
+        "Two k, cubed — eight k cubed. The top contains the whole eight. Always whole. Out.",
+        "Shortcut by understanding: count the twos. b has one two — cubed, that's three twos. Eight needs three. It cancels.",
+        D('Cross out choice 1'),
+        "Choice two: a is odd, so a plus one and a plus three are consecutive EVEN numbers.",
+        "One of them is divisible by two — and the other by four. The product of two consecutive evens is always divisible by eight. Out.",
+        D('Cross out choice 2'),
+        D('Under choice 3 write "(a + b)² + (a − b)² = 2a² + 2b²"'),
+        "Choice three: formula one plus formula two. The middle terms cancel — two a b and minus two a b. Left: two a squared plus two b squared.",
+        "Take away two a squared — only two b squared is left on top. And b is two k: two times four k squared — eight k squared. Always whole. Out.",
+        D('Cross out choice 3'),
+        "Choice four: a times b squared over eight.",
+        D('Under choice 4 write "a(2k)² = 4ak²"'),
+        "Two k squared is four k squared. a is odd — no twos at all. Only two twos on top — but eight needs three.",
+        "A third two MIGHT come from k — but not necessarily.",
+        D('Circle choice 4'),
+        "Choice four.",
+    ], [
+        "Plugging in here is risky: you could pick numbers where all four come out whole.",
+        "So pick the RIGHT numbers — the smallest. b equals two — not four, not six. a equals one.",
+        D('Write "a = 1, b = 2"'),
+        D('Next to choice 1 write "8 · 3 / 8 = 3"'),
+        "Choice one: two cubed is eight, times three — twenty-four. Over eight — three. Whole. Does that mean always whole? No — we just can't eliminate it. Keep going.",
+        D('Next to choice 2 write "2 · 4 / 8 = 1"'),
+        "Choice two: two times four — eight. Over eight — one. Whole again. Keep going.",
+        D('Next to choice 3 write "(9 + 1 − 2) / 8 = 1"'),
+        "Choice three: nine plus one minus two — eight. Over eight — one. Whole.",
+        D('Next to choice 4 write "1 · 4 / 8 = 1/2"'),
+        "Choice four: one times four, over eight — one half. Not whole!",
+        D('Circle choice 4'),
+        "Choice four. And see the risk: with b equals four, choice four gives sixteen over eight — two. Whole. That's why we take the smallest numbers.",
+        "The math is the recommended route — it solves every question like this for sure. Plugging in is the fallback; sometimes it's shorter, sometimes you get stuck plugging and plugging.",
+    ]])
+
+    rn_titles(M)   # video titles and slide descriptions show the new stems
+
+
+_apply_before_hebrew_backcheck = apply
+
+
+def apply(M):
+    _apply_before_hebrew_backcheck(M)
+    hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last

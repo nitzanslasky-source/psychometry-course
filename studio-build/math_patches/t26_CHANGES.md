@@ -108,3 +108,107 @@ Function `practice_methods` (runs last in `apply`). One extra line is added at t
 - `wp26-p16` (4 slow flashes = 7 fast flashes): Compare by factors: 3/5 · 4/7 = 12/35.
 - `q-r26-t26-11` (2 h at 30, 3 h at 40): Method 2 · Percent shares as weights (by hours): 30 + 0.6 · 10 = 36.
 - Every line checked in python. Check: `math_check.py 26 32` → 0 / 0 / 0.
+
+## 2026-10-06 renumber pass
+So the English course does not look like the Hebrew one: every Hebrew-derived question has a new story (new objects,
+names and setting) and new numbers. The idea, the trap, the level and the methods stay the same (V method and upside-down V,
+ratios, adding / subtracting rates, one job = 1, pick a job size (LCM), equalize the times, two-worker shortcut, sense
+check, worker-hours, merge two workers, plug in numbers, estimate, compare by factors). Every guided solution video is
+rewritten to match (speech, draw cues, tables, title-slide lines, video titles, pre-loaded question notes). Nothing in
+Topic 26 is recorded (checked ~/Documents/Course.recordings), so nothing had to be kept. Function `renumber_pass(M)` in
+t26.py runs last (after `cut_repeats`, `add_methods`, `practice_methods`); the "Method 2 · Compare by factors" lines that
+practice_methods added (p05, p12, p13, p16, p17) are rewritten with the new numbers, the "One job = 1" board item that
+cut_repeats put into old Q3 now says 15 hours, and the Compare-by-Factors lesson slide "The V is one case" quotes the new
+team question (3 gardeners, 40 trees, 5 hours → 4 gardeners, 96 trees: 5 × 96/40 × 3/4 = 9).
+
+**Counts:** 11 guided questions renumbered (all Hebrew-derived: wp26-g093 … g105b) with their 11 solution videos rewritten;
+19 practice questions renumbered (wp26-p01 … p09, p11 … p20; p10 lives in topic 33 and was not touched). Lesson examples
+renumbered: 4 slides (wp-092 #3 rate example, wp-094 #2 add the rates, wp-094 #3 working against, wp-099 #2 worker-hours)
+plus the factors-lesson slide and the memory-card tip (75 minutes = 1.25 h → 40 minutes = ⅔ hour, not 0.4).
+Practice: 35 → 25. English-made items (guided q-r26-t26-01 … 04 and -21, the summary, the factors lesson, the catching-up
+slide, the kept extras and September items) keep their numbers.
+
+**Order:** unchanged on purpose. The learn order follows the lessons (Q3 tank-with-outlet teaches "one job = 1", which Q4's
+fraction method uses — swapping them would be "used before taught"); the advanced order already goes medium → high as in
+the Hebrew. Correct-answer positions moved in 9 of 11 guided questions.
+
+**Practice clean-up (35 → 25):** no copies in this topic (copies list empty). Extra-bank kept (3): p24 (add the rates,
+warm-up), p25 (rate +25% → time −20%), p23 (workers leave, worker-days). Removed extras: p21 (pump + leak = guided Q3 /
+p19), p22 (equal worker joins = guided Q8), p26 (drain A, then B joins = guided Q8), p27 (V with the team blank = p05 /
+guided Q14). September items kept (3, types the Hebrew practice does not have): q-07 (a worker with a different rate
+leaves), q-08 (together, then one stops — find its rate), q-09 (two percent changes multiply). Removed: q-05 (rate −20% =
+p25), q-06 (find B from together = p18), q-10 (ab/(a+b) with letters = guided Q4/Q5 shortcut), q-11 and q-13 (average-rate
+trap = p09 and guided Q11), q-12 (workers join, whole job = p23 and guided Q8). Order easy → medium → exam-hard.
+
+**Also:** old Q4 title line "Two machines" → "Two printers"; old Q3 "Two pumps fill" → "Two hoses fill, one pipe empties";
+Q15 title line "Last question." → "The last team question." (a factors question follows it). New trap lines in Q3 (forgot
+the outlet → 2:30 p.m.) and Q9 (doubling the wrong side → 1).
+
+**Checks:** every key recomputed in Python with exact fractions (all match); letter questions (g093, p02, p12, p17)
+brute-checked with numbers — exactly one choice fits; every "circle choice" / "Choice N" in the 16 solution videos agrees
+with the key; traps still among the choices (8x added factors; 2:30 p.m. no outlet; 12 forgot the team and 16 team not
+flipped; 400 = (14 + 6) × 20; 1 doubled wrong side; 72 units mix-up; 132 = A alone and 66 = half; 1/9 all three; 26 = all
+workers; 18 = half the sheep and 6.75 wrong direction; 12.5 average of rates; 6⅔ fast printer as ordinary; 48 pipe-hours;
+3/10 wrong side). Compared with base-v18 AND the Hebrew subtitles: no new question lands back on the old or the Hebrew
+numbers / objects (e.g. Hebrew pool 6 h / 9 h at 8:00, beer 3 h / 2 h, carpenters 4 / 20 / 3, road 20 × 10 + 15 × 10,
+scanners 4 / 6, mole and gardener 75 minutes, mowers 2 h / 3 h, 6 h / 12 h, carpenters table / chair, water tower);
+p03 and p13 were changed again after the duplicate check (first versions shared numbers with base). Duplicate check
+against all questions, lesson boards and cards of topics 1–38: only incidental shared small numbers, no equal question.
+Each new question compared side by side with its original: same type, same condition kind ("twice" stays a multiple,
+"x and y positive" kept, two-phase, two-team, leaves/joins unchanged), same number of steps. No quadratic trinomial.
+`python3 math_check.py 26 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered all 11 solution videos, the factors lesson
+and the three changed lessons and looked at them.
+
+| id | old (base / Hebrew-derived) | new | answer |
+|---|---|---|---|
+| wp26-g093 (Q1) | robot x samples / y min, rate ×3, 4y min | volunteer x flyers / y min, rate ×3, 5y min | 15x (3) |
+| wp26-g095 (Q3) | 2 inlets 8 h, drain 12 h, 9 a.m. | 2 hoses fill a pond in 15 h, outlet 20 h, 7 a.m. | 7 p.m. (2) |
+| wp26-g096 (Q4) | machines 4 h and 6 h → minutes | printers 6 h and 10 h → minutes | 225 (2) |
+| wp26-g098 (Q6) | 5 workers 30 boards 4 h; 8 workers 72 | 3 gardeners 40 trees 5 h; 4 gardeners 96 | 9 (2) |
+| wp26-g100 (Q7) | path 18 × 8 + 12 × 7 | park fence 14 × 9 + 6 × 11 | 192 (3) |
+| wp26-g101 (Q9) | 3 fast = 2 × 9 standard scanners | 5 large = 2 × 10 small dishwashers | 4 (2) |
+| wp26-g102 (Q10) | +24/h, 35 per 75 min, 50, 5 h | bakery: +18 orders/h, 15 per 40 min, 60, 4 h | 42 (3) |
+| wp26-g103 (Q12) | cleaners 360 m²/3 h, 40 m²/2 h, 140 m² | polishers 200 m²/4 h, 30 m²/6 h, 110 m² | 120 (1) |
+| wp26-g104 (Q13) | Ava, Ben, Cleo 8 h; two 16 h | Omar, Priya, Sam 9 h; two 18 h | 1/18 (3) |
+| wp26-g105 (Q14) | 8 makers cabinet 6 h, 9 bench 8 h, 24 h | 12 workers stage 2 h, 14 seating 4 h, 8 h | 10 (2) |
+| wp26-g105b (Q15) | feed 240 animals 6 days → 90 | hay 200 sheep 9 days → 150 | 12 (1) |
+| wp26-p01 | Eva 4/6 min, Max 5/8 min, 24 min | Nora 3 gifts/5 min, Theo 7/10 min, 30 min | 39 (3) |
+| wp26-p02 | printer x/h, B ×3, 4 h | oven x loaves/h, B ×4, 5 h | 20x (3) |
+| wp26-p03 | 6 small or 4 large/h; 3 + 5 | tailor 12 pants or 2 coats/h; 8 + 3 | 2 h 10 min (2) |
+| wp26-p04 | 7 packers 96 more than 3 | 9 sewing machines 140 more than 4 | 28 (3) |
+| wp26-p05 | 4 clerks 18 in 6 min; 3 clerks 27 | 6 cashiers 45 in 10 min; 4 cashiers 54 | 18 (2) |
+| wp26-p06 | machine 480/h, person 1 per 12 min | machine 360 jars/h, worker 1 per 4 min | 24 (3) |
+| wp26-p07 | 4 pumps 9 h + one twice as fast | 5 printers 8 h + one three times as fast | 5 (2) |
+| wp26-p08 | 5 × 8 + 6 × 10 worker-days, 10 workers | 4 × 9 + 8 × 6 painter-days, 12 painters | 7 (3) |
+| wp26-p09 | 24 plain or 8 decorated mugs, 48 each | 20 small or 5 large bowls, 40 each | 8 (2) |
+| wp26-p11 | pipes 6 h and 12 h | pumps 5 h and 20 h (reservoir) | 4 (3) |
+| wp26-p12 | p envelopes / q min, 2q envelopes | m bottles / n min, 3n bottles | 3n²/m (2) |
+| wp26-p13 | 5 workers 8 crates 2 h → one crate | 3 workers 12 boxes 3 h → one box | 45 (3) |
+| wp26-p14 | 3 hoses 5 h, two 10 h | 3 sprinklers 4 h, two 12 h | 1/6 (2) |
+| wp26-p15 | 3 experts = 2 × 4 trainees | 5 senior cooks = 2 × 3 junior cooks | 6/5 (2) |
+| wp26-p16 | signals 4 vs 7 cycles, 3/5 s | drummers 3 vs 8 beats, 2/3 s | 1/4 s (3) |
+| wp26-p17 | M scanners L pages, D scanners 3 h | K printers P pages, N printers 5 h | 5NP/K (1) |
+| wp26-p18 | 4 painters 6 h, with 5th 4 h | 3 cleaners 8 h, with 4th 6 h | 24 (3) |
+| wp26-p19 | tap 10 h, 3 drains 4 h, 4 taps × 15 h | pipe 8 h, 2 drains 5 h, 3 pipes × 16 h | 60 (2) |
+| wp26-p20 | fast ×3, together 12 h | new robot ×4, together 10 h | 50 (4) |
+| lesson wp-092 #3 | 18 labels in 3 min → 6 per minute | 45 bottles in 5 min → 9 per minute | – |
+| lesson wp-094 #2, #3 | 4 + 7 = 11 per minute; 9 in, 4 out → +5 | 5 + 8 = 13; 12 in, 5 out → +7 | – |
+| lesson wp-099 #2 | 3 workers × 4 h = 12 | 5 workers × 6 h = 30 | – |
+| factors lesson #4 / g098 V-rule example | 5 · 30 · 4 → 8 · 72; upside-down V 8 · ? · 6 = 72 | 3 · 40 · 5 → 4 · 96; upside-down V 4 · ? · 6 = 64 | – |
+| card tip | 75 minutes = 1.25 hours | 40 minutes = ⅔ hour (not 0.4) | – |
+
+## 2026-10-06 review
+Independent review of the renumber pass (built with and without `renumber_pass`, compared every changed question, video,
+lesson slide and card; keys recomputed; Hebrew subtitles work section checked: pool 6 h / 9 h at 8:00, beer 3 h / 2 h,
+carpenters 4·20·3 → 6·60, road 20×10 + 15×10, scanners 4 = 2×6, mole 20/h + gardener 30 per 75 min, mowers 300/2 h + 50/3 h,
+Aviva–Batya 12 h / all 6 h, table 10/3 h + chair 9/5 h in 15 h, 220 for 5 days → 100 — no new question lands on them).
+All 11 guided + 19 practice keys correct, one correct choice each, traps still among the choices; V method, upside-down V,
+compare-by-factors and catching-up content work with the new numbers. Practice removals (35 → 25) checked.
+Fixed (new function `rv_fixes`, runs at the end of `renumber_pass`):
+- `solutionVisual` tables of g093, g096, g098, g105 still had the old stories/numbers (×4 → 12x; machines 3/2/5 in 12 h;
+  workers 5·30·4 → 8·72 "Boards"; "Cabinet"/"Bench" 48 + 72 = 120) → rewritten to the new questions.
+- g095 video slide 3 title "Method 2 · Pick a tank size" → "Pick a pond size" (the question is about a pond now).
+- p16 (in `rn_practice_questions`): 3 slow beats / 8 fast beats / 2/3 s → 1/4 made the slow total a whole number (2 s),
+  easier than the original 4 × 3/5 = 12/5 → 12/35. Now 5 beats / 8 beats / 2/3 s → 10/3 ÷ 8 = 5/12; distractors 16/15
+  (wrong flip), 8/5, 5/8; Method 2 line updated.
+`python3 math_check.py 26 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered g095 and g098 videos and looked.

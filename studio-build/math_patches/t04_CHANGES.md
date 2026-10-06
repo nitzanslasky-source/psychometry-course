@@ -195,3 +195,12 @@ Teacher-approved. 0 of 760 real exam questions need trinomial factoring.
 ## 2026-10-06 practice: new methods
 Nothing added. Power count is taught only in topic 5; the one place pick values fits (q-r26-t04-17, x − y = 5) already checks with x = 5, y = 0.
 All new lines verified numerically (python: fitting values, choice values, power by scaling). `math_check.py 4 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-06 Hebrew back-check
+Compared every topic-4 question, lesson slide and card example with the Hebrew subtitles (lines 2273–2550, "איברים אלגבריים").
+No unrecorded item lands on the Hebrew numbers, so t04.py is unchanged.
+Recorded (listed only): guided q-120 (m+n)² − (m−n)² = Hebrew (x+y)² − (x−y)² with letters changed; q-121
+(x−3)(x+3) − (y−3)(y+3) has the Hebrew (a−1)(a+1) − (b−1)(b+1) structure with 3 instead of 1. Lessons
+`expression-basics` / `r26-t04-formulas` use their own numbers (5x+6y−2x−2y−3x²+7x², (2a)(5b)(3a), 3a²−12a+6 …), not the Hebrew ones.
+Left: practice q-115 (c−d)² − (c+d)² is the reverse of the Hebrew sample (answer −4cd, not 4xy) — different question;
+q-100 9a+4b−5a−b shares only "4b − b" with the Hebrew 3x+4y−2x−y — not a match.

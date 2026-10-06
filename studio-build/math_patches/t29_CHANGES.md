@@ -132,3 +132,106 @@ Function `practice_methods` (runs last in `apply`). One extra line is added at t
 - `wp29-p10` (choose a bag, then a token): Door: PATH, not COUNT — tokens in A have 1/24, in B 1/20, so pouring the bags together (5/11) is wrong.
 - `wp29-p16` (coin sum greater than the dice): Door: COUNT — 64 equally likely outcomes, 3 + 2 good → 5/64.
 - Every line checked in python (p16 by listing all 64 outcomes). Check: `math_check.py 29 32` → 0 / 0 / 0.
+
+## 2026-10-06 renumber pass
+So the English course does not look like the Hebrew one: every Hebrew-derived question has new numbers and a new story.
+The idea, the trap, the level and the methods stay the same (possible first, complement, AND → multiply, a first stage
+that can't go wrong, the forced second die, separate OR cases + complement, symmetry around 7, plug-in with distinct
+choices, the jante symmetry flash). Every guided solution video was rewritten to match (speech, draw cues, the dice grids,
+slide titles where they name objects, video titles / pre-loaded text). Function `renumber_pass(M)` runs last, after
+`cut_repeats`, `add_methods` and `practice_methods`. The door lines that `practice_methods` added are rewritten with the new
+numbers (p10 PATH, p16 COUNT). p17's "by symmetry" line is now tagged "Door: SYMMETRY" because q-11 (the only other one) is
+gone. Nothing in topic 29 is recorded.
+
+**Dice are 6-sided (teacher rule):** the old English used 8-sided dice in g147, g152, g156, p03, p05, p13 and p16. Where a
+6-sided die would land back on the Hebrew numbers, the item now uses a spinner with equal sections or numbered cards.
+The "n faces → top sum n + 1" rule (lesson wp-159, card tip, summary Shortcuts) became "one card from each of two sets
+numbered 1 to n → top sum n + 1".
+
+**Counts:** 17 guided questions renumbered, with 17 solution videos rewritten. 19 practice questions renumbered.
+Lesson / summary / card examples changed: the wp-159 n-sided-dice lines; in the summary, "four heads in a row" → five,
+"heads and a three = 1/12" (the Hebrew lesson example) → "tails and a number above four = 1/6", "second try 1/5 + 4/5 · 1/4"
+(the Hebrew five doors) → "1/6 + 5/6 · 1/5 = 1/3", and "ten and four" (the Hebrew) → "eleven and three"; g150's "pass 2/3, fail
+1/3" (the Hebrew) → 3/4 and 1/4; and 6 example cells on the memory card that copied the questions or the Hebrew.
+**Practice 31 → 24.**
+
+**Practice clean-up:** copy removed: p03 (= guided g156). English extras: kept 3 (p22 two colors drawn together, p23 exactly
+two heads, p25 exactly one red). Removed p21 (= the card example), p24 (= the board example in guided q-01's video), p26
+(= the lesson example "40 students, 18 music"), and p27 (at least one, already drilled in q-08 and guided q-02). September items:
+kept q-08 (at least one) and q-10 (overlap from "neither"), because the Hebrew practice has neither type. Removed q-09
+(a tree, already in p10 / p15) and q-11 (both chosen, already in p17). Order: easy → hard.
+
+**Kept on purpose:** the English-made guided q-r26-t29-01 to 03 and the lessons' own English examples. p08 keeps four tosses
+(only the pattern changed, so the answer is still 1/16). Its type and length stay the same, because changing the number of
+tosses would change the question. The guided order is unchanged (it already goes easy → hard). The correct-answer position
+moved in 15 of 17 guided questions.
+
+**Checks:** every answer was enumerated exactly in Python with fractions (dice / coin / spinner product spaces, all 8!
+candy orders, all 12·11 counter pairs, all 6! prize assignments, the device over 16², the day-by-day chains). Every video step and
+method was recomputed: g158 by all three methods, the g162 plug-ins (1, 1 → all 1; 2, 2 → three choices = 1/4; 3, 2 → 3/2,
+1/9, 1/8, 1/6 all different), and p20 with k = 3, t = 4 (all different). The traps are still among the choices: wanted = 1 (1/11,
+1/10), complement / red count (16, 1/12, 2/25), adding instead of multiplying (7/10), unordered pairs (1/18), 1/8 + 1/7 =
+15/56, the first step only (2/7), pouring the bags (9/17), sum 7 for card sums, and averaging the two farm rates (43/48).
+The new numbers were checked against the Hebrew subtitles: none land on a Hebrew number, object or day (Sunday → Tuesday,
+the 22 letters, the 5 doors, 4 desserts, etc.). Duplicate scan over topics 1–29 (questions, lesson lines, boards):
+no question equals another question or a lesson / card example. `python3 math_check.py 29 32` → PROBLEMS 0, WARNINGS 0,
+LAYOUT 0. Rendered g150, g154, g156, g161, g162, g165, wp-159 and the summary and looked at them (the 6×6 grid highlights
+sum 5 and the 5×5 grid its diagonal; both grids were moved so they no longer touch the stem or label). No "Question N" was added
+to spoken lines.
+
+| id | old (English base, Hebrew-derived) | new | answer |
+|---|---|---|---|
+| wp29-g147 | 8-sided die, even | spinner 10 equal sections, even | 1/2 (2) |
+| wp29-g148 | 5 green, 4 orange counters | 7 blue, 4 white marbles | 7/11 (3) |
+| wp29-g149 | 8 purple 5 white, 3 purple out | 11 orange 7 white, 4 orange out | 1/2 (1) |
+| wp29-g150 | 28 tokens, gold 3/7 → silver | 36 tokens, red 4/9 → blue | 20 (4) |
+| wp29-g152 | coin + 8-sided die: heads and 5 | coin + spinner 1–5: tails and 4 | 1/10 (3) |
+| wp29-g153 | 4 tosses all tails | 5 tosses all tails | 1/32 (2) |
+| wp29-g154 | two dice, sum 8 | two dice, sum 5 (first die 4/6, then 1/6) | 1/9 (3) |
+| wp29-g155 | Rosa / Sam, 6 in a row | Omar / Kate, 7 in a row | equal (1) |
+| wp29-g156 | two 8-sided dice match | two spinners 1–5 match | 1/5 (2) |
+| wp29-g157 | 4 red 4 yellow, different colors | 6 green 6 white | 6/11 (3) |
+| wp29-g158 | prize in 7 lockers, open 2 | prize in 8 boxes, open 2 | 1/4 (3) |
+| wp29-g160 | sums 9 vs 5 | sums 8 vs 6 | A = B (2) |
+| wp29-g161 | 26 letters / NOAH | 7 weekdays / 2 weekend days (Ella, Omar) | 1/7 (4) |
+| wp29-g162 | r groups of s, oldest; plug 2, 3 | m rounds of n envelopes, prize; plug 3, 2 | n^(−m) (3) |
+| wp29-g163 | buttons 800/40 + 400/110 | eggs 600/25 + 300/50 cracked | 11/12 (3) |
+| wp29-g164 | 5 genres, Mon jazz → Wed folk | 6 gym classes, Thu yoga → Sat boxing | 4/25 (3) |
+| wp29-g165 | 6 red + 1 blue, 5th blue | 7 lemon + 1 mint, 6th mint | 1/8 (2) |
+| wp29-p01 | 12 red 8 blue, 1 red out | 15 yellow 9 green, 1 yellow out | 14/23 (2) |
+| wp29-p02 | 14 tokens, white = black | 20 balls, red = green | 8 (3) |
+| wp29-p04 | bulbs 200/20 + 100/25 | phones 300/20 + 100/12 | 23/25 (4) |
+| wp29-p05 | two 8-sided dice, top sum | two boxes of cards 1–10, top sum | 11 (1) |
+| wp29-p06 | 30 tokens, 1/5 and 1/3 | 36 tokens, 1/4 and 1/3 | 15 (2) |
+| wp29-p07 | 6 each of 3 colors, 4 out | 7 each of 4 colors, 3 out | 4/25 (1) |
+| wp29-p08 | die 4×: odd, odd, even, odd | die 4×: even, even, odd, even | 1/16 (3) |
+| wp29-p09 | 5 colors, 4 draws all blue | 3 colors, 4 draws all green | 1/81 (2) |
+| wp29-p10 | A 8r 4b, B 2r 8b | A 3 white 6 black, B 6 white 2 black | 13/24 (3) |
+| wp29-p11 | 4 people, Nina six, others not | 5 friends, Maya a 1, others not | 625/7776 (2) |
+| wp29-p12 | socks 4, shoes 3 | cups 6, plates 4 | 1/6 (3) |
+| wp29-p13 | 8-sided until 8, exactly 5 rolls | die until 6, exactly 4 tosses | 125/1296 (1) |
+| wp29-p14 | 0–11, ±2, first 5 / second not | 0–15, ±3, first 7 / second not | 7/64 (4) |
+| wp29-p15 | 4 badges, Mon blue → Wed red | 7 soups, Mon tomato → Wed lentil | 5/36 (3) |
+| wp29-p16 | 8-sided die vs 0/1 coin ×3 | 6-sided die vs 0/1 coin ×3 | 5/48 (2) |
+| wp29-p17 | 5 gifts 2 books, Ada & Ben | 6 prizes 2 tickets, Noa & Eli | 1/15 (2) |
+| wp29-p18 | heads = 2/5 of tails | tails = 3/4 of heads | 3/7 (3) |
+| wp29-p19 | coin 2/3, 5 tosses, even | coin 4/7, 6 tosses, even | 1/2 (2) |
+| wp29-p20 | k boxes, cards 1–m, all 2 | k bags, balls 1–t, all 1 (plug 3, 4) | 1/t^k (4) |
+| lesson wp-159 | two n-faced dice → n + 1 (6 → 7, 8 → 9) | cards 1 to n → n + 1 (1–6 → 7, 1–8 → 9) | – |
+| summary | four heads; heads & 3 = 1/12; 1/5 + 4/5·1/4; ten and four; n faces | five heads; tails & above 4 = 1/6; 1/6 + 5/6·1/5 = 1/3; eleven and three; cards 1 to n | – |
+| card mem-probability | 5 green 4 orange; gold 3/7; heads & 5 (8-sided); 1/7 + 6/7·1/6; double 1·1/8; 8 → 7 left; 8 faces: 9 | 2 red 5 green; win 3/8; tails & above 4; 1/6 + 5/6·1/5; three coins 1·½·½; 9 → 8 left; cards 1 to 8: 9 | – |
+
+## 2026-10-06 review
+Independent review of the renumber pass (built with and without `renumber_pass`, compared every changed question and video).
+Checked: 17 guided questions + their videos, 19 renumbered practice questions, the lesson / summary / card changes, the 7
+practice removals. Every key was enumerated with exact fractions (one correct choice each; traps still among the choices);
+every video step recomputed; type / condition / difficulty match the old versions; nothing in topic 29 is recorded.
+Fixed (in `rn_guided`):
+- g148: "7 blue, 4 white" landed on the Hebrew's colors (the Hebrew bag had 5 blue and 4 white) → 7 green, 4 yellow marbles
+  (question, explanation and video). Answer still 7/11, choice 3.
+- g165: the object was still candies (the Hebrew jar of candies) → a hat with 7 blank tickets and 1 prize ticket; the sixth
+  ticket drawn is the prize (question, explanation, all spoken lines). Answer still 1/8, choice 2; both methods unchanged.
+- g154 / g156: the questions' own `solutionVisual` still held the old grids (sum 8; 8 × 8) → sum 5; 5 × 5 diagonal.
+Open: g156's grid label is the renderer's fixed text "Matching faces" (base renderer: `v.diagonal ? 'Matching faces' : …`,
+no per-item label), so it stays for the spinners — needs a renderer option, not a t29 change.
+`python3 math_check.py 29 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered g156 and g165 and looked.

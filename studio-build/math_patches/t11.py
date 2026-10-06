@@ -1500,3 +1500,132 @@ _apply_before_renumber_pass = apply
 def apply(M):
     _apply_before_renumber_pass(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# =====================================================================================================================
+# 2026-10-06 Hebrew back-check: the renumber pass compared with base-v18 only. Compared again with the teacher's Hebrew
+# VIDEO subtitles (01-Algebra-Original-Subtitles.txt, lines 6610-8727). Clear matches get new numbers (same type, trap,
+# level and methods). Nothing in topic 11 is recorded. Runs last.
+# =====================================================================================================================
+def hebrew_backcheck(M):
+    from math_api import rich_plain
+
+    def S(qid, **kw):
+        q = M.set_q(qid, **kw) or M.q(qid)
+        for v in M.D['videos'].values():
+            for b in v.get('beats', []):
+                for it in b.get('items', []):
+                    if it.get('k') == 'q' and it.get('qid') == qid and 'choices' in it:
+                        it['choices'] = list(q['choicesRich']); M.touched_videos.add(v['id'])
+
+    def V(qid, slides):
+        vid = 'solve-' + qid
+        for n, script in slides.items():
+            M.set_slide(vid, n, title=None, script=script)
+        v = M.video(vid); v['title'] = v['navLabel'] = rich_plain(M.q(qid)['stemRich'])
+        M.touched_videos.add(vid)
+
+    # q-288: was exactly the Hebrew video question (2x)^4 (7x)^3 / (14x^2)^3 * x/2 -> 5, 2, 10
+    S('q-288', stem='Given: $x\\ne0$. $\\frac{(5x)^4\\cdot(2x)^3}{(10x^2)^3}\\cdot\\left(\\frac{1}{5}\\right)x=\\ ?$',
+      choices=['$5x^2$', '$x^2$', '$\\left(\\frac{1}{5}\\right)x$', '$\\frac{2x}{5}$'], correct=2, expl=[
+        'Write $10$ as $5\\cdot2$ before expanding: $(10x^2)^3=5^3\\cdot2^3\\cdot x^6$.',
+        'Top: $(5x)^4\\cdot(2x)^3=5^4\\cdot2^3\\cdot x^7$.',
+        '$\\frac{5^4\\cdot2^3\\cdot x^7}{5^3\\cdot2^3\\cdot x^6}=5x$. Then $5x\\cdot\\frac15x=x^2$.',
+        'Check with $x=1$: $\\frac{5^4\\cdot2^3}{10^3}\\cdot\\frac15=5\\cdot\\frac15=1$. The choices give $5$, $1$, $\\frac15$ and $\\frac25$, so only $x^2$ fits.'])
+    V('q-288', {
+        2: ["Numerator first. Every factor inside a bracket gets the power.",
+            D('Under (5x)⁴ write "5⁴x⁴"; under (2x)³ write "2³x³"'),
+            "Five to the fourth, x to the fourth. Two cubed, x cubed. Don't multiply them out.",
+            "Now the bottom. Ten is five times two — split it first.",
+            D('Under the denominator write "(5 · 2 · x²)³ = 5³ · 2³ · x⁶"'),
+            "Each factor gets the cube. And x squared, cubed — multiply the powers: x to the sixth.",
+            "Now cancel. Two cubed on top, two cubed underneath — gone.",
+            D('Cross out 2³ on top and on the bottom'),
+            "Five to the fourth over five cubed — one five is left.",
+            D('Cross out 5³ and leave one 5 on top'),
+            "x to the fourth times x cubed is x to the seventh. Over x to the sixth — one x is left.",
+            D('Write "= 5x"'),
+            "So the big fraction is five x. Times one fifth x…",
+            D('Write "5x · (1/5)x = x²" and circle choice 2'),
+            "…five times a fifth is one. x squared. Choice two."],
+        3: ["Now the psychometric route: plug in a number.",
+            "With powers, the friendliest number is one — one to any power stays one.",
+            "But first, check that the choices come out different when x is one.",
+            D('Next to the choices write their values: 5, 1, 1/5, 2/5'),
+            "Five, one, one fifth, two fifths. All different — so one substitution is enough.",
+            D('In the question write "5⁴ · 2³ / 10³ · 1/5"'),
+            "The question becomes: five to the fourth times two cubed, over ten cubed, times a fifth.",
+            "Split ten cubed into five cubed times two cubed — same move as before.",
+            D('Write "= 5 · 1/5 = 1"'),
+            "Two cubed cancels, one five is left. Five times a fifth: one.",
+            D('Circle choice 2'),
+            "Only choice two gives one.",
+            "Which route is better? If the exponent laws feel slow, plug in — it's usually the quicker one."]})
+
+    # q-294: kept the Hebrew's sqrt(1/3), base 3 and answer 3 -> base 5, sqrt 176 / sqrt 11, answer 4
+    S('q-294', stem='$\\frac{\\sqrt{\\frac{1}{5}}\\cdot\\sqrt{176}\\cdot\\sqrt[6]{5^3}}{\\sqrt{11}}=\\ ?$',
+      choices=['$\\sqrt5$', '$4$', '$\\sqrt{11}$', '$16$'], correct=2, expl=[
+        'Write the sixth root as a power: $\\sqrt[6]{5^3}=5^{\\frac36}=5^{\\frac12}=\\sqrt5$.',
+        'Now every root is a square root. Top: $\\sqrt{\\frac15\\cdot176\\cdot5}=\\sqrt{176}$.',
+        '$\\frac{\\sqrt{176}}{\\sqrt{11}}=\\sqrt{\\frac{176}{11}}=\\sqrt{16}=4$.'])
+    V('q-294', {
+        2: ["Look at the roots. Square roots on top, a square root underneath — and one sixth root.",
+            "Before anything else, make every root the same order.",
+            D('Under the sixth root write "= 5^(3/6)"'),
+            "Turn the root into a power. The base stays five. The power goes on top, the root goes underneath: three over six.",
+            "Little memory trick: the power is up in the sky, the root is down in the ground.",
+            D('Write "= 5^(1/2) = √5"'),
+            "Three sixths is a half. Five to the half — that's just root five.",
+            "Shortcut: you're allowed to cancel the root's index with the power. Divide both by three — square root of five to the one.",
+            "Now the whole top is square roots. Multiply them under ONE root.",
+            D('Write "√(1/5 · 176 · 5)" over the top'),
+            "Root of a fifth, times a hundred seventy-six, times five.",
+            D('Cancel the 1/5 with the 5; write "= √176"'),
+            "A fifth and a five cancel. Root one seventy-six on top.",
+            "Some students spot it even earlier — root a fifth and root five cancel straight away. Same result.",
+            D('Write "√176 / √11 = √(176/11) = √16 = 4"'),
+            "Same order on top and bottom — divide first, then take the root. A hundred seventy-six over eleven is sixteen. Root sixteen: four.",
+            D('Circle choice 2'),
+            "Four. Choice two."]})
+
+    # q-298: the Hebrew form (+ in the bottom), key 1 and the plug-in 4 and 1 (values 1, 5, 3, 0) -> plug 9 and 1, key 3
+    S('q-298', stem='Given: $m>0$ and $n>0$. $\\dfrac{m-n}{\\sqrt{m}+\\sqrt{n}}=\\ ?$',
+      choices=['$m+n$', '$0$', '$\\sqrt{m}-\\sqrt{n}$', '$\\sqrt{m}+\\sqrt{n}$'], correct=3, expl=[
+        'Write the top as a difference of squares of roots: $m-n=(\\sqrt m+\\sqrt n)(\\sqrt m-\\sqrt n)$.',
+        'Cancel $\\sqrt m+\\sqrt n$ (it is positive, so it is not 0). The result is $\\sqrt m-\\sqrt n$.',
+        'Check with $m=9$, $n=1$: $\\frac{9-1}{3+1}=2$, and $\\sqrt9-\\sqrt1=2$ ✓.'])
+    V('q-298', {
+        2: ["The choices have no denominator. So we need to get rid of it.",
+            "No common factor on top. So what can we do? Spot the third contracted multiplication formula.",
+            D('Write "m − n = (√m + √n)(√m − √n)"'),
+            "m minus n is root m plus root n, times root m minus root n.",
+            "Check: root m times root m is m. Root n times minus root n is minus n. The middle terms cancel.",
+            "We're used to this formula with squares. It works just as well with square roots.",
+            D('Cancel (√m + √n) top and bottom'),
+            "Now the root m plus root n cancels with the denominator.",
+            D('Circle choice 3'),
+            "What's left: root m minus root n. Choice three."],
+        3: ["Plug in. Pick numbers with clean roots: nine and one.",
+            "And plug in smart — m is nine, n is one, so the top stays positive.",
+            D('Next to the choices write: 10, 0, 2, 4'),
+            "Check the choices: nine plus one is ten. Zero. Three minus one is two. Three plus one is four. All different — one substitution is enough.",
+            D('In the question write "(9 − 1)/(3 + 1) = 2"'),
+            "The question: nine minus one is eight. Root nine plus root one: three plus one, four. Eight over four: two.",
+            D('Circle choice 3'),
+            "Two — choice three. The plug-in is the easy route for most students."]})
+
+    # memory card: a^(b+1) = 1 was the Hebrew x^(y+1) = 1 -> a^(b+4) = 1
+    rows = M.card('mem-r26-t11-advanced')['tables'][0]['rows']
+    new_ex = {'Power $=1$': '$a^{b+4}=1$, $a\\ne1\\Rightarrow b=-4$ or $a=-1$',
+              '"A or B" necessarily true?': '$a=3$, $b=-4$ kills "$a=0$ or $b\\ne-4$"'}
+    for r in rows:
+        if r[0] in new_ex: r[2] = new_ex.pop(r[0])
+    assert not new_ex, new_ex
+
+
+_apply_before_hebrew_backcheck = apply
+
+
+def apply(M):
+    _apply_before_hebrew_backcheck(M)
+    hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last

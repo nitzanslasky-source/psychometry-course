@@ -202,3 +202,27 @@ had not rendered (solve-q-542, -544, -547, -548, -550, -551): all correct.
   rewritten; rendered.
 - Judgment calls (kept): q-561 now starts at ◆(2) (adds a "starts at 1" trap, 1/8); q-564 has 6 terms instead of 8;
   q-556 counts 5s instead of 3s — same kind.
+
+## 2026-10-06 Hebrew back-check
+The renumber pass was compared with base-v18 only. Every guided / practice question, the lessons, the summary and the card
+were now compared with the teacher's Hebrew VIDEO subtitles (01-Algebra-Original-Subtitles.txt, lines 18765–19911).
+Five items had landed back on the Hebrew videos' numbers or definitions; they get new numbers once more (same type, trap,
+level and methods; solution videos rewritten; keys brute-forced; no duplicate in topics 1–20). Nothing in topic 19 is
+recorded. Function `hebrew_backcheck(M)` in t19.py runs last.
+
+| id | Hebrew video | ours before | new | answer |
+|---|---|---|---|---|
+| lesson slide 3 + card "Basic" | x ♥ y = 2(x + y), 8 ♥ 5 | a ♥ b = 2(a + b), 7 ♥ 3 = 20 | a ♥ b = 5(a + b), 7 ♥ 3 = 50 (trap 7 · 5 + 3 = 38) | 50 |
+| q-542 (guided) | $(x) = x², $($(3)) = 81 | ◆(◆(3)) = 81 | ◆(◆(5)) | 625 (3); trap 25 |
+| q-545 (guided) | odd 2x / even x² − 5, $$$(3) = 62 | odd 2x / even x² − 3, ◆◆◆(3) = 66 | odd 4x / even x² − 9, ◆◆◆(1): 1 → 4 → 7 → 28 | 28 (3); traps 7, 16, 4 |
+| q-549 (guided) | choices $(3x) = 9$x, $x = $($√x), $(x−4) = $(4−x) | ◆(3x) = 9◆(x), ◆(x) = ◆(◆(√x)), ◆(x−2) = ◆(2−x) | ◆(6x) = 36◆(x), ◆(√x)·◆(√x) = ◆(x), ◆(x−7) = ◆(7−x); answer ◆(5x) = 5◆(x) kept | choice 3 |
+| q-550 (guided) | inner $(1, 2, 3) = 18 | inner ◆(2, 1, 3) = 18, answer 20 | ◆(1, 1, ◆(2, 1, 4)): inner 16 + 1 + 16 = 33 | 35 (3); traps 2, 33, 66 |
+
+Partial overlaps left on purpose (only one number or the question's structure is shared; the Hebrew numbers are gone):
+q-541 (answer 12 like the Hebrew $4 = 12, but a different rule and input), q-543 (input 3 like the Hebrew $3 = 24; result
+and all choices differ), q-544 (◆(2x) structure; numbers differ), q-546 (circular, input 6 and step x − 2 as in Hebrew;
+constants 9 and 2 instead of 5 and 0), q-548 (input 4; coefficients differ), q-551 (the two square-formula definitions are
+the trick itself; all numbers differ), q-552 / q-553 / q-554 / q-555 / q-556 (Hebrew types with changed coefficients,
+powers, factor 5 instead of 2). Practice: no match (the Hebrew practice is not in the subtitles; no practice item equals a
+Hebrew video example).
+Checks: `python3 math_check.py 19 32` → 0 / 0 / 0; rendered new-operation, solve-q-542, -545, -549, -550 and looked.
