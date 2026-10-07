@@ -11,7 +11,10 @@ the next listed part of the same topic (cards / workshops / questions in between
 exist is skipped; topics missing from the list are added at the end (subject order of the student site).
 
 Studio UI only (never the board / canvas that is recorded, never file names or recorded marks):
-- Sidebar, under "Jump to a subject": "Order: By topic | By study plan" (remembered in localStorage).
+- Top bar (the studio hides the sidebar behind ☰) and sidebar, under "Jump to a subject": "Order: By topic | By study
+  plan" (remembered in localStorage). Switching opens the sidebar, scrolls the current topic's / plan group's header to
+  the top and flashes it. In plan order a sticky teal label sits at the top of the nav: "📅 Study-plan order · Days 15–20
+  · #32 of 62: 11 Laws of …" with buttons to the previous / next plan group. By topic shows nothing extra.
   By topic = the navigation exactly as before. By study plan = the same nav items, grouped by plan entry (writing-task
   and chart parts are separate groups, e.g. 50b / 52c), with day headers from the plan comments and "plan #n" on each
   group; the green recorded counts (studio_done) and "N new" tags (studio_added) count each group's own videos.
@@ -99,11 +102,20 @@ function ordPlan(){return typeof STUDIO!=='undefined'&&STUDIO&&ordMode()==='plan
 function ordIdx(d){const i=state.index+d;if(!ordPlan())return i;const O=ordBuild(),p=O.pos.get(state.index);if(p==null)return i;const j=O.seq[p+d];return j==null?(d<0?-1:D.flow.length):j}
 (()=>{const st=document.createElement('style');st.textContent=`
 .ord-toggle{display:flex;align-items:center;gap:0;margin:10px 0 2px;font-size:12px}
-.ord-toggle .ord-lab{color:var(--muted);font-weight:700;margin-right:8px}
-.nav-top .ord-toggle button{width:auto;flex:1;text-align:center;border:1px solid var(--line);background:#fff;color:var(--ink);padding:6px 6px;font:inherit;font-size:12px;font-weight:700;cursor:pointer;border-radius:0}
-.nav-top .ord-toggle button:first-of-type{border-radius:8px 0 0 8px}.nav-top .ord-toggle button:last-of-type{border-radius:0 8px 8px 0;border-left:0}
-.nav-top .ord-toggle button.on{background:#0f766e;border-color:#0f766e;color:#fff}
-body:not(.studio-body) .ord-toggle{display:none}
+.ord-toggle .ord-lab{color:var(--muted);font-weight:700;margin-right:8px;white-space:nowrap}
+.ord-toggle>button,.nav-top .ord-toggle>button{width:auto;flex:1 0 auto;text-align:center;border:1px solid var(--line);background:#fff;color:var(--ink);padding:6px 10px;font:inherit;font-size:12px;font-weight:700;cursor:pointer;border-radius:0;white-space:nowrap;line-height:1.2}
+.ord-toggle>button:first-of-type{border-radius:8px 0 0 8px}.ord-toggle>button:last-of-type{border-radius:0 8px 8px 0;border-left:0}
+.ord-toggle>button.on,.nav-top .ord-toggle>button.on{background:#0f766e;border-color:#0f766e;color:#fff}
+.ord-toggle.ord-top{margin:0 14px 0 0}.ord-toggle.ord-top>button{flex:none;padding:6px 11px}
+@media(max-width:1000px){.ord-toggle.ord-top{display:none}}
+body:not(.studio-body) .ord-toggle{display:none!important}
+.ord-sticky{position:sticky;top:-20px;z-index:3;margin:0 0 6px;padding:8px 10px;background:#0f766e;color:#fff;border-radius:9px;font-size:.75rem;line-height:1.4;box-shadow:0 4px 10px #0f766e33}
+.ord-sticky b{font-weight:800}.ord-sticky .ord-st-pos{display:block;font-weight:700;color:#ccfbf1}
+.ord-sticky .ord-st-nav{display:flex;gap:6px;margin-top:5px}
+.ord-sticky button{flex:1 1 0;min-width:0;border:1px solid #5eead4;background:#115e59;color:#fff;border-radius:6px;padding:3px 6px;font:inherit;font-size:.6875rem;font-weight:700;text-align:left;cursor:pointer;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.ord-sticky button:hover{background:#134e4a}.ord-sticky button[disabled]{opacity:.45;cursor:default}
+@keyframes ordFlash{0%,35%{background:#fde68a;box-shadow:inset 4px 0 0 #f59e0b}100%{background:transparent;box-shadow:inset 4px 0 0 transparent}}
+.topic-group>summary.ord-flash{animation:ordFlash 2.2s ease-out;border-radius:8px}
 .ord-dayhead{margin:14px 6px 2px;padding:3px 9px;font-size:.6875rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#0f766e;background:#ecfdf5;border-radius:6px}
 .ord-pos{display:block;font-size:.6875rem;font-weight:700;color:#8390a5;margin-top:1px}.ord-pos>span{white-space:nowrap}
 .topic-group.ord-part .topic-number{color:#0f766e}
@@ -117,7 +129,13 @@ body:not(.studio-body) .ord-toggle{display:none}
 .ord-line li{break-inside:avoid}.ord-line li .n{font-weight:800;color:#334155;margin-right:5px}.ord-line li .d{color:#94a3b8;margin-left:4px}
 .ord-line .ord-next{white-space:nowrap}.ord-line .ord-next b{color:#334155}`;document.head.append(st)})();
 function ordBtn(rid){__ORD_BTN__}
-function ordNavHtml(){const O=ordBuild(),cur=O.grp.get(state.index);let day=null,h='';
+function ordGName(x){return (x.k?x.num:String(x.t).padStart(2,'0'))+' '+x.name}
+function ordSticky(O,cur){const g=O.groups[cur];if(!g)return `<div class="ord-sticky">📅 <b>Study-plan order</b><span class="ord-st-pos">${O.groups.length} plan steps · topics in the order students learn them</span></div>`;
+ const pv=O.groups[cur-1],nx=O.groups[cur+1];
+ return `<div class="ord-sticky" title="Topics are listed in the order students learn them (src/lib/planData.ts). Switch back with Order: By topic.">📅 <b>Study-plan order</b><span class="ord-st-pos">${g.day?esc(g.day)+' · ':''}#${g.n} of ${O.groups.length}: ${esc(short(ordGName(g),46))}</span>`
+  +`<span class="ord-st-nav"><button type="button" ${pv?'data-ordgo="'+pv.a+'" title="Previous in the plan: '+esc(ordGName(pv))+'"':'disabled'}>← ${pv?esc(ordGName(pv)):'start'}</button>`
+  +`<button type="button" ${nx?'data-ordgo="'+nx.a+'" title="Next in the plan: '+esc(ordGName(nx))+'"':'disabled'}>${nx?esc(ordGName(nx)):'end'} →</button></span></div>`}
+function ordNavHtml(){const O=ordBuild(),cur=O.grp.get(state.index);let day=null,h=ordSticky(O,cur);
  O.groups.forEach((g,gi)=>{if(g.day&&g.day!==day){day=g.day;h+=`<div class="ord-dayhead">${esc(day)}</div>`}
   const tp=D.topics.find(z=>z.id===g.t);
   h+=`<details class="topic-group${g.p?' ord-part':''}" data-og="${gi}" ${gi===cur?'open':''}><summary><span class="topic-number">${g.k?g.num:String(g.t).padStart(2,'0')}</span><span>${esc(g.p?g.name:tp.title)}<span class="ord-pos" title="Position in the study plan"><span>#${g.n}</span>${g.day?' · <span>'+esc(g.day)+'</span>':''}</span></span></summary>`
@@ -129,10 +147,18 @@ function ordGroups(nav){const gs=[...nav.querySelectorAll('.topic-group')];
  if(!gs.length||gs[0].dataset.og==null)return gs.map((g,k)=>[g,D.topics[k],()=>true]).filter(x=>x[1]);   // by topic: exactly as before
  const O=ordBuild();return gs.map(g=>{const G=O.groups[+g.dataset.og];return [g,D.topics.find(z=>z.id===G.t),r=>{const i=flowMap.get(r.id);return i>=G.a&&i<G.b&&O.grp.get(i)===+g.dataset.og}]})}
 function ordPaintToggle(){const m=ordMode();document.querySelectorAll('.ord-toggle [data-ord]').forEach(b=>{b.classList.toggle('on',b.dataset.ord===m);b.setAttribute('aria-pressed',b.dataset.ord===m)})}
-function ordSet(m){try{localStorage.setItem('studio-nav-order',m)}catch{}
+/* the current topic's (plan group's) header at the top of the open sidebar, briefly highlighted */
+function ordReveal(){const sb=$('#sidebar'),nav=$('#course-nav');if(!sb||!nav)return;
+ const g=ordPlan()?nav.querySelector(`.topic-group[data-og="${ordBuild().grp.get(state.index)}"]`):[...nav.querySelectorAll('.topic-group')][D.topics.findIndex(t=>t.id===item()?.topic)];
+ const sum=g&&g.querySelector('summary');if(!sum)return;const st=nav.querySelector('.ord-sticky');
+ sb.scrollTop+=sum.getBoundingClientRect().top-sb.getBoundingClientRect().top-(st?st.offsetHeight+4:8);
+ sum.classList.remove('ord-flash');void sum.offsetWidth;sum.classList.add('ord-flash')}
+function ordSet(m,open){try{localStorage.setItem('studio-nav-order',m)}catch{}
  if(record)renderNav();else render();
- setTimeout(()=>$('#course-nav .nav-item.active')?.scrollIntoView({block:'center'}),30)}
-document.addEventListener('click',e=>{const b=e.target.closest&&e.target.closest('.ord-toggle [data-ord]');if(b)ordSet(b.dataset.ord)});
+ if(open)$('#sidebar')?.classList.add('open');
+ requestAnimationFrame(()=>requestAnimationFrame(ordReveal))}
+document.addEventListener('click',e=>{if(!e.target.closest)return;const b=e.target.closest('.ord-toggle [data-ord]');if(b)return ordSet(b.dataset.ord,!!b.closest('.ord-top'));
+ const j=e.target.closest('.ord-sticky [data-ordgo]');if(j){go(+j.dataset.ordgo);$('#sidebar')?.classList.add('open');requestAnimationFrame(()=>requestAnimationFrame(ordReveal))}});
 /* teacher-only line under the current video's title: what the students learned before it, what comes next */
 function ordLine(r){if(typeof STUDIO==='undefined'||!STUDIO||!r||r.type!=='video')return '';const O=ordBuild(),gi=O.grp.get(state.index);if(gi==null)return '';
  const g=O.groups[gi],prev=O.groups.slice(0,gi),next=O.groups[gi+1];
@@ -152,6 +178,9 @@ TOGGLE = ('<div class="ord-toggle" role="group" aria-label="Navigation order"><s
 REPL = [
     # sidebar header: the toggle under "Jump to a subject"
     ('<option value="39">Verbal reasoning</option></select>', '<option value="39">Verbal reasoning</option></select>' + TOGGLE),
+    # the same switch in the top bar (the studio hides the sidebar behind ☰): switching there also opens the sidebar
+    ('<div class="row"><span class="pill top-meta">All lessons open</span>',
+     '<div class="row">' + TOGGLE.replace('class="ord-toggle"', 'class="ord-toggle ord-top"') + '<span class="pill top-meta">All lessons open</span>'),
     # nav: plan order (same buttons) or the topics as before
     ("$('#course-nav').innerHTML=D.topics.map(t=>", "ordPaintToggle();$('#course-nav').innerHTML=ordPlan()?ordNavHtml():D.topics.map(t=>"),
     # green recorded counts (studio_done) and "N new" counts (studio_added) per nav group

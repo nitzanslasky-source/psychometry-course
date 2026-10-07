@@ -39,6 +39,8 @@ var ADDED_GUIDE='real_exam/method_search/TEACHER_GUIDE.md';
 .add-tag+.rec-tag{margin-left:5px}
 .add-count{margin-left:auto;flex:none;font-size:.6875rem;font-weight:700;color:#9a3412;padding:2px 7px;border-radius:999px;background:#ffedd5;white-space:nowrap;align-self:center}
 .add-count+.rec-count{margin-left:6px}
+.topic-group>summary:has(.add-count){flex-wrap:wrap;row-gap:5px}.topic-group>summary:has(.add-count)>span:nth-child(2){flex:1 1 200px;min-width:0}   /* the chips go on their own row, under the title */
+.topic-group>summary>.add-count{margin-left:36px}
 .add-chip{display:inline-block;vertical-align:middle;margin-left:12px;font-size:.8125rem;font-weight:800;color:#9a3412;background:#ffedd5;border:1px solid #fdba74;border-radius:999px;padding:3px 10px;letter-spacing:0}
 .add-chip.new{color:#fff;background:#ea580c;border-color:#ea580c}
 .add-banner{margin:12px 20px 4px;padding:10px 14px;border-radius:10px;background:#fff7ed;border:2px solid #fb923c;color:#7c2d12;font-size:15px;line-height:1.4;font-weight:600}
@@ -96,7 +98,7 @@ function addPaint(){if(!ADDED||typeof STUDIO==='undefined'||!STUDIO)return;const
  const groups=nav.querySelectorAll('.topic-group');D.topics.forEach((tp,k)=>{const g=groups[k];if(!g)return;const sum=g.querySelector('summary');
   const ids=[...new Set(D.flow.filter(r=>r.type==='video'&&r.topic===tp.id&&addVid(r.ref)).map(r=>r.ref))];let c=sum.querySelector('.add-count');
   if(!ids.length){c?.remove();return}if(!c){c=document.createElement('span');const rc=sum.querySelector('.rec-count');rc?sum.insertBefore(c,rc):sum.append(c)}
-  const nv=ids.filter(id=>ADDED[id].a).length;c.textContent=ids.length+' new';c.title=nv+' added videos, '+(ids.length-nv)+' of your videos with added slides or lines'});
+  const nv=ids.filter(id=>ADDED[id].a).length;c.className='add-count';c.textContent=ids.length+' new';c.title=nv+' added videos, '+(ids.length-nv)+' of your videos with added slides or lines'});
  }
 function addChip(r){const m=typeof STUDIO!=='undefined'&&STUDIO&&r&&r.type==='video'?addVid(r.ref):null;if(!m)return '';
  return `<span class="add-chip${m.a?' new':''}" title="${m.a&&m.n?'What it adds: '+esc(m.n)+' — ':''}${esc(m.l)}${m.g?' · '+esc(m.g):''} · read the script carefully">${m.a?'NEW · '+esc(m.l):(m.p?'+ new slides':'+ new lines')}</span>`}
