@@ -184,3 +184,9 @@ Note: g169 passes through (3, −5) and p16 through (5, −3) — different ques
 
 ## 2026-10-07 methods spread
 - spread_methods() runs last. Shortcut · Pick values that fit line in geo37-core-p13 (m = 1, n = 2). Nothing recorded.
+
+
+## 2026-10-07 study-plan order
+Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
+- geo37-core-p13: "Shortcut · Pick values that fit" → "Method 2 · Pick values that fit" (topic 51 is day 6).
+`python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

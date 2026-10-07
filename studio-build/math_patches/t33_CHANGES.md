@@ -241,3 +241,10 @@ question and answer (36 − 9π) differ; adv-p02 went from five equal arcs to th
 
 ## 2026-10-07 methods spread
 - spread_methods() runs last. Q19 (geo33-g096): Method 2 · Power count line (it replaces the sentence "A ratio of two perimeters cannot contain r."), and one spoken line on video slide 4 names it as the power count. Shortcut · Pick values that fit lines in geo33-advanced-p07 (with the power-count tie-break), q-r26-t33-10, geo33-advanced-p15 and geo33-foundation-p04. No new slides. Nothing recorded.
+
+
+## 2026-10-07 study-plan order
+Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
+- geo33-g096: "Method 2 · Power count" → self-contained "Shortcut · Power count" (count the lengths; a ratio of perimeters cannot depend on r). geo33-advanced-p07: "(power count)" tie-break rewritten as counting lengths.
+- Video solve-geo33-g096 (not recorded) slide 4: "That's the power count from algebra…" → "Count the lengths: a perimeter is one length, so perimeter over perimeter is one length over one length — they cancel. No r can stay." Rendered, checked.
+`python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

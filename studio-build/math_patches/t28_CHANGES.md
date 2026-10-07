@@ -253,3 +253,9 @@ methods. Most topic-28 questions are pure counting; the "groups with no names" a
 carry their line (wp28-g138, q-r26-t28-41, wp28-p13). The doors (topic 29) are not used here. Nothing in topic 28 is recorded.
 - **wp28-p16** (practice, 4^x = 2^(6n)): Shortcut · Pick values that fit (self-contained, topic 51 comes later): n = 1 → 4^x = 64 → x = 3; only 3n gives 3 (others 6, 2, 5).
 Total: 1 written line, no slides. Recorded: none.
+
+
+## 2026-10-07 study-plan order
+Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
+- wp28-p16: "Shortcut · Pick values that fit" → "Method 2 · Pick values that fit" (topic 51 is day 6).
+`python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

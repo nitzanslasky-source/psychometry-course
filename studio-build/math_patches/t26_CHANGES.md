@@ -224,3 +224,9 @@ each line was verified with numbers. Questions that already show the method (Q1,
 - **Practice p09 (potter)** — "Method 2 · Percent shares as weights" (the days are the weights): 5 + 0.2 · 15 = 8.
 - **Practice p23 (two workers leave)** — "Method 2 · Compare by factors": 10 · 3/2 = 15.
 - **Practice p07 (fast sixth printer)** — "Method 2 · Compare by factors": team × 8/5 → flip → 8 · 5/8 = 5.
+
+
+## 2026-10-07 study-plan order
+Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
+- wp26-g105b: "Method 2 · Compare by factors" → self-contained shortcut with the why (it comes before the lesson r26-t26-factors inside this topic).
+`python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

@@ -2426,3 +2426,51 @@ _apply_before_spread = apply
 def apply(M):
     _apply_before_spread(M)
     spread_methods(M)   # 2026-10-07 methods spread: runs last
+
+
+# =====================================================================================
+# 2026-10-07 study-plan order: students meet the topics in the STUDY PLAN order (src/lib/planData.ts ORDER), not
+# by topic number. A named method used before the topic that teaches it (in the plan) becomes a self-contained
+# "Shortcut · <name>: <why>" line; a "Shortcut" whose method the plan already taught becomes a normal
+# "Method N · <name>" line. Unrecorded videos only. Runs LAST.
+# =====================================================================================
+
+def _po_line(M, qid, start, new):
+    ex = list(M.q(qid)['explanation'])
+    k = [i for i, l in enumerate(ex) if l.startswith(start)]
+    assert len(k) == 1, (qid, start, k)
+    ex[k[0]] = new
+    M.set_q(qid, expl=ex)
+
+
+def _po_relabel(M, qid, old, name):
+    import re as _re
+    ex = list(M.q(qid)['explanation'])
+    k = [i for i, l in enumerate(ex) if l.startswith(old)]
+    assert len(k) == 1, (qid, old, k)
+    used = [int(n) for l in ex for n in _re.findall(r'^Method (\d+) ·', l)]
+    rest = ex[k[0]][len(old):].lstrip()
+    if _re.match(r'[A-Z][a-z]', rest): rest = rest[0].lower() + rest[1:]
+    ex[k[0]] = 'Method %d · %s: %s' % (max(used) + 1 if used else 2, name, rest)
+    M.set_q(qid, expl=ex)
+
+
+def _po_say(M, vid, n, old, new):
+    """Replace the spoken line `old` (exact) on slide n with `new` (a string, or a list of strings)."""
+    b = M.slide(vid, n)
+    k = [i for i, l in enumerate(b['lines']) if l.get('say') == old]
+    assert len(k) == 1, (vid, n, old)
+    M.edit_lines(vid, n, lambda ls: ls[:k[0]] + [{'say': s} for s in ([new] if isinstance(new, str) else new)] + ls[k[0] + 1:])
+
+
+def plan_order_fix(M):
+    # "Pick values that fit" is taught in topic 51 (day 6), before topic 37: a normal method line.
+    _po_relabel(M, 'geo37-core-p13', 'Shortcut · Pick values that fit:', 'Pick values that fit')
+
+
+_apply_before_plan_order_fix = apply
+
+
+def apply(M):
+    _apply_before_plan_order_fix(M)
+    plan_order_fix(M)   # 2026-10-07 study-plan order: runs last

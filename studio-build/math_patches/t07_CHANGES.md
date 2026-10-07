@@ -233,3 +233,9 @@ Function `spread_methods` (runs last; append only). 5 questions, Shortcut: pick 
 - q-216 (practice): A = 4, B = 2, C = 1 → ratio 4 : 1 → choice 1. q-217 (practice): k = 1, t = 3 → x = −1, y = −2, y/x = 2 → choice 2 (t = 1 would tie). q-201 (practice): x = 2 → y = −1 → choice 1.
 Checked, not added: q-203 (same expansion as the algebra, not faster), q-210/q-185 (one division is as fast), q-191 (the case split already is the two-sets idea), power count on q-189/q-190 (cuts one choice or none). No slides: every solution video in this topic is recorded (unchanged).
 All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-07 study-plan order
+Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
+- "Shortcut: pick values that fit." → "Method 2 · Pick values that fit:" on q-187, q-194, q-199, q-201, q-202, q-204, q-206, q-216, q-217, q-r26-t07-15 (topic 51, day 6, teaches it before topic 7, day 15).
+`python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

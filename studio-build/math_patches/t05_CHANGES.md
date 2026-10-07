@@ -277,3 +277,9 @@ Function `spread_methods` (runs last; append only). 2 questions, both with recor
 - Method 2 · Power count: q-r26-t05-04 ((a²b + ab²)/(ab): power 1; choices 2, 1, 2, 2 → decides alone and breaks the a = b = 1 tie); q-130 ((3(m − n) − (n − m))/(m − n): power 0; 4m and 4n out; m = 1, n = 0 gives 4 → choice 3).
 Checked, not added: q-137, q-138, q-126, q-133, q-expression-extra-13/-11/-20, q-r26-t05-13 (every choice has the question's power) and the mixed ones. The unrecorded videos solve-q-r26-t05-17/-18 already teach the power count. No slides.
 All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-07 study-plan order
+Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
+- q-130, q-r26-t05-04: "Method 2 · Power count" → self-contained "Shortcut · Power count" (+ what a power is and why simplifying keeps it): both guided questions come before the lesson r26-t05-power-count inside this topic. Their videos are recorded and unchanged.
+`python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

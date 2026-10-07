@@ -188,3 +188,9 @@ No problems found, so no changes were made. Full `python3 math_check.py`: PROBLE
 
 ## 2026-10-07 methods spread
 - spread_methods() runs last. Written lines: Q5 (geo30-g006) Method 3 · Mirror test (m, n, k play the same role, so choices 2 and 3 are out); advanced practice geo30-advanced-p09 Shortcut · Pick values that fit. No slides (Q5's video already plugs in numbers and is 7.7 min). Nothing recorded.
+
+
+## 2026-10-07 study-plan order
+Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
+- geo30-g006: "Method 3 · Mirror test" → self-contained "Shortcut · Mirror test" with the why (topic 30 is day 1; topic 13 is day 24).
+`python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

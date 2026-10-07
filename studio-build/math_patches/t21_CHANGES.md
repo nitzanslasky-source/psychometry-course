@@ -162,3 +162,11 @@ Function `spread_methods(M)` in t21.py runs last (after `renumber_pass`). Every 
   - wp21-p09 (cakes): written line. 20 ✓ → choice 4 out; 26 needs 8 parents ✗ → choices 1, 2 out.
   - wp21-p19 (stockers): written line. 22 ✗ → choice 3 out; 16 ✗ → choices 2, 4 out.
 - Not added (checked): g017, g019, g020, p02, p04, p12 — testing the ends is the same work as the existing min/max solution. The remainder / LCM questions (g005, g013, g025, p03, p08, p10) already use the tag-it idea. No letter-answer question fits the power count (Q29 and Q5 choices are mixed or exponential).
+
+
+## 2026-10-07 study-plan order
+Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
+- wp21-p09, wp21-p19, wp21-g018: "Method 2 · The most precise range" → "Shortcut · The most precise range" + why (the right range holds every possible value and no impossible one). Topic 21 (day 8) is before topic 12 (day 20).
+- Video solve-wp21-g018 (not recorded) slide 3: title → "Shortcut · The most precise range", one spoken why-line added. Rendered, checked.
+- Video solve-q-r26-t21-01 (not recorded) slides 2–3: dropped "as in / the socks question from Algebraic Understanding" (topic 20 is near the END of the plan); the pair trap is now explained in place. wp-001 (not recorded) slide 4: "from Topics 1 and 20" → "from Topic 1". Cards: mem-trial-toolkit ("see Algebraic Understanding" → self-contained worst-luck row; "Topics 1 and 20" → "Topic 1"), mem-trial-error tip (same).
+`python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

@@ -2269,3 +2269,55 @@ _apply_before_spread = apply
 def apply(M):
     _apply_before_spread(M)
     spread_methods(M)   # 2026-10-07 methods spread: runs last
+
+
+# =====================================================================================
+# 2026-10-07 study-plan order: students meet the topics in the STUDY PLAN order (src/lib/planData.ts ORDER), not
+# by topic number. A named method used before the topic that teaches it (in the plan) becomes a self-contained
+# "Shortcut · <name>: <why>" line; a "Shortcut" whose method the plan already taught becomes a normal
+# "Method N · <name>" line. Unrecorded videos only. Runs LAST.
+# =====================================================================================
+
+def _po_line(M, qid, start, new):
+    ex = list(M.q(qid)['explanation'])
+    k = [i for i, l in enumerate(ex) if l.startswith(start)]
+    assert len(k) == 1, (qid, start, k)
+    ex[k[0]] = new
+    M.set_q(qid, expl=ex)
+
+
+def _po_relabel(M, qid, old, name):
+    import re as _re
+    ex = list(M.q(qid)['explanation'])
+    k = [i for i, l in enumerate(ex) if l.startswith(old)]
+    assert len(k) == 1, (qid, old, k)
+    used = [int(n) for l in ex for n in _re.findall(r'^Method (\d+) ·', l)]
+    rest = ex[k[0]][len(old):].lstrip()
+    if _re.match(r'[A-Z][a-z]', rest): rest = rest[0].lower() + rest[1:]
+    ex[k[0]] = 'Method %d · %s: %s' % (max(used) + 1 if used else 2, name, rest)
+    M.set_q(qid, expl=ex)
+
+
+def _po_say(M, vid, n, old, new):
+    """Replace the spoken line `old` (exact) on slide n with `new` (a string, or a list of strings)."""
+    b = M.slide(vid, n)
+    k = [i for i, l in enumerate(b['lines']) if l.get('say') == old]
+    assert len(k) == 1, (vid, n, old)
+    M.edit_lines(vid, n, lambda ls: ls[:k[0]] + [{'say': s} for s in ([new] if isinstance(new, str) else new)] + ls[k[0] + 1:])
+
+
+def plan_order_fix(M):
+    # Topic 22 (day 12) comes before topic 5 (power count, day 13) and topic 12 (two moves, day 20) in the plan.
+    _po_line(M, 'wp22-p08', 'Method 2 · Power count:', "Shortcut · Power count: the power of an expression is how many letters are multiplied in it (a number in front counts $0$). The answer is the same expression as the story, so it must have the story's power. $n$ cabinets times $n$ drawers times $3$ folders has power $2$. The choices: $n^3$ has power $3$, $3n$ power $1$, and $n^2+3$ is mixed (powers $2$ and $0$). Only $3n^2$ has power $2$.")
+    _po_line(M, 'wp22-p27', 'Method 2 · Two moves:', "Shortcut · Two moves: an inequality's answer is everything on one side of a point. Find the point (where the two sides are equal), then test one easy number to see which side. Point: $\\frac34x+20=x$ gives $x=80$. Side: the grade goes down means $\\frac34x+20<x$. Test $x=0$: $20<0$ is false, therefore the answer is the side without $0$: $x>80$.")
+    # "Pick values that fit" is taught in topic 51 (day 6), before topic 22: a normal method line.
+    _po_relabel(M, 'wp22-p18', 'Shortcut · Pick values that fit:', 'Pick values that fit')
+    _po_relabel(M, 'wp22-p29', 'Shortcut · Pick values that fit:', 'Pick values that fit')
+
+
+_apply_before_plan_order_fix = apply
+
+
+def apply(M):
+    _apply_before_plan_order_fix(M)
+    plan_order_fix(M)   # 2026-10-07 study-plan order: runs last

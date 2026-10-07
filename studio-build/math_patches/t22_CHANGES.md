@@ -227,3 +227,10 @@ Function `spread_methods(M)` in t22.py runs last (after `renumber_pass`). Writte
 - **Shortcut · Flip rule** (topic 23): wp22-p24 (candle stripes) — $\frac25L=2S$ → $L:S=2:\frac25=5:1$.
 - **Shortcut · Compare by factors** (topic 26): wp22-p20 (words per picture) — words $\times24$, pictures $\times3$ → $24\div3=8$.
 - Not added (checked): q-r26-t22-02 / -08 (worker-days already flips), g049 (already "both counts × 4/3"), p37 (the substitution is faster than the flip), q-r26-t22-04 (power count cuts only choice 1), q-r26-t22-16 / p29 / p18 (pick values that fit is already shown).
+
+
+## 2026-10-07 study-plan order
+Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
+- wp22-p08: "Method 2 · Power count" → self-contained shortcut (topic 22, day 12, before topic 5, day 13). wp22-p27: "Method 2 · Two moves" → self-contained "Shortcut · Two moves" (topic 12 is day 20).
+- wp22-p18, wp22-p29: "Shortcut · Pick values that fit" → "Method 2 · Pick values that fit" (topic 51 is day 6).
+`python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

@@ -240,3 +240,9 @@ Fixed:
 
 ## 2026-10-07 methods spread
 - spread_methods() runs last. Q2 (geo31-g011): a Shortcut · Pick values that fit line (k = 60°, an equilateral triangle) and a new slide 3 in its video "Shortcut · Pick values that fit" (about 0.4 min). Q15 (geo31-g018): Method 2 · Compare by factors line (half the side → a quarter of the area); the video already shows it on slide 3. Nothing recorded.
+
+
+## 2026-10-07 study-plan order
+Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
+- geo31-g018: "Method 2 · Compare by factors" → self-contained shortcut (area = length × length, so sides × k → area × k²); topic 26 is day 26.
+`python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

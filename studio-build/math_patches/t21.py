@@ -1743,3 +1743,81 @@ _apply_before_spread = apply
 def apply(M):
     _apply_before_spread(M)
     spread_methods(M)   # 2026-10-07 methods spread: runs last
+
+
+# =====================================================================================
+# 2026-10-07 study-plan order: students meet the topics in the STUDY PLAN order (src/lib/planData.ts ORDER), not
+# by topic number. A named method used before the topic that teaches it (in the plan) becomes a self-contained
+# "Shortcut · <name>: <why>" line; a "Shortcut" whose method the plan already taught becomes a normal
+# "Method N · <name>" line. Unrecorded videos only. Runs LAST.
+# =====================================================================================
+
+def _po_line(M, qid, start, new):
+    ex = list(M.q(qid)['explanation'])
+    k = [i for i, l in enumerate(ex) if l.startswith(start)]
+    assert len(k) == 1, (qid, start, k)
+    ex[k[0]] = new
+    M.set_q(qid, expl=ex)
+
+
+def _po_relabel(M, qid, old, name):
+    import re as _re
+    ex = list(M.q(qid)['explanation'])
+    k = [i for i, l in enumerate(ex) if l.startswith(old)]
+    assert len(k) == 1, (qid, old, k)
+    used = [int(n) for l in ex for n in _re.findall(r'^Method (\d+) ·', l)]
+    rest = ex[k[0]][len(old):].lstrip()
+    if _re.match(r'[A-Z][a-z]', rest): rest = rest[0].lower() + rest[1:]
+    ex[k[0]] = 'Method %d · %s: %s' % (max(used) + 1 if used else 2, name, rest)
+    M.set_q(qid, expl=ex)
+
+
+def _po_say(M, vid, n, old, new):
+    """Replace the spoken line `old` (exact) on slide n with `new` (a string, or a list of strings)."""
+    b = M.slide(vid, n)
+    k = [i for i, l in enumerate(b['lines']) if l.get('say') == old]
+    assert len(k) == 1, (vid, n, old)
+    M.edit_lines(vid, n, lambda ls: ls[:k[0]] + [{'say': s} for s in ([new] if isinstance(new, str) else new)] + ls[k[0] + 1:])
+
+
+def plan_order_fix(M):
+    # Topic 21 (day 8) comes before topic 12 (the most precise range, day 20) in the plan.
+    old = 'Method 2 · The most precise range: test a number inside one choice and outside another.'
+    new = 'Shortcut · The most precise range: the right range holds every value that can happen and no value that cannot. So test a number inside one choice and outside another: a choice that holds an impossible value, or leaves out a possible one, is out.'
+    for qid in ('wp21-p09', 'wp21-p19', 'wp21-g018'):
+        line = next(l for l in M.q(qid)['explanation'] if l.startswith(old))
+        _po_line(M, qid, old, new + line[len(old):])
+    v = 'solve-wp21-g018'   # not recorded
+    assert M.slide(v, 3)['title'] == 'Method 2 · The most precise range'
+    M.slide(v, 3)['title'] = 'Shortcut · The most precise range'
+    _po_say(M, v, 3, "The choices are ranges. So test a number that some choices contain and others don't.", [
+        "A faster way. The choices are ranges — and the right range holds every value that can happen, and nothing that can't.",
+        "So test a number that some choices contain and others don't."])
+    # solve-q-r26-t21-01 (not recorded): "Algebraic Understanding" is topic 20, near the END of the plan.
+    v = 'solve-q-r26-t21-01'
+    _po_say(M, v, 2, "They ask what she must take to be SURE. So we imagine the worst luck, then add one — as in Algebraic Understanding.",
+            "They ask what she must take to be SURE. So we imagine the worst luck, then add one.")
+    _po_say(M, v, 3, "Four is the answer for a PAIR — the socks question from Algebraic Understanding.",
+            "Four is the answer for a PAIR: one sock of each color, then one more.")
+    # the toolkit card pointed to topic 20 (Algebraic Understanding), which comes near the END of the plan
+    c = M.card('mem-trial-toolkit'); hit = 0
+    for tb in c['tables']:
+        for r in tb['rows']:
+            if r[1] == 'Worst luck + 1 (see Algebraic Understanding)':
+                r[1] = 'Worst luck + 1: build the worst case that still fails, then add one'; hit += 1
+            if r[0] == '"Must be true" (Topics 1 and 20)':
+                r[0] = '"Must be true" (Topic 1)'; hit += 1
+    assert hit == 2, hit
+    mc = M.card('mem-trial-error')
+    k = [i for i, t in enumerate(mc['tips']) if '(Topics 1 and 20)' in t]
+    assert len(k) == 1, k
+    mc['tips'][k[0]] = mc['tips'][k[0]].replace('(Topics 1 and 20)', '(Topic 1)')
+    _po_say(M, 'wp-001', 4, 'One reminder from Topics 1 and 20: must, could, cannot.', 'One reminder from Topic 1: must, could, cannot.')   # not recorded
+
+
+_apply_before_plan_order_fix = apply
+
+
+def apply(M):
+    _apply_before_plan_order_fix(M)
+    plan_order_fix(M)   # 2026-10-07 study-plan order: runs last

@@ -284,3 +284,9 @@ Function `spread_methods` (runs last; append only). 1 practice question:
 - Method 2 · Power count: q-278 (3x⁹y⁴/(x³y²): power 13 − 5 = 8; choices 8, 5, 18, 13 → choice 1).
 Checked, not added: given power → asked power (taught in topic 11) has no question here; exponent-in-letter items (q-268, q-270) are not power-count questions. No slides: every solution video in this topic is recorded (unchanged).
 All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-07 study-plan order
+Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
+- q-278: "Method 2 · Power count" → self-contained "Shortcut · Power count" (topic 10, days 1–5, comes before topic 5, day 13).
+`python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

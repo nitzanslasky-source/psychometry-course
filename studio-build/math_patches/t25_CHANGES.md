@@ -215,3 +215,9 @@ see-saw, which is the same picture as "shares as weights", and Q13 already has t
 - **Q14 `wp25-g090`** — "Method 2 · Percent shares as weights, backwards": 3.4 = 3 + share · 2 → share ⅕ → 400 boxes.
 - Practice already has the weights / pick-values / "in t years" lines from 2026-10-06; no other question fits a new method
   (power count: no letter-answer question has choices of different powers).
+
+
+## 2026-10-07 study-plan order
+Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
+- wp25-p04, wp25-p16: "Shortcut · Pick values that fit" → "Method 2 · Pick values that fit" (topic 51 is day 6).
+`python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
