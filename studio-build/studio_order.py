@@ -5,23 +5,26 @@ Teacher request (2026-10-07): "Maybe the studio should have two set-ups: one by 
 one by the order in which students learn it - so when I record I'll have in mind what they already learned."
 
 The study order is NOT copied here: it is parsed at build time from ORDER in ../src/lib/planData.ts (the student site's
-plan), with the "day N" comments. The build fails if that list cannot be parsed. As in getPlanData(): [t] = the whole
-topic; [t, "prefix"] = a PART of the topic, from its first item whose id starts with the prefix up to the first item of
-the next listed part of the same topic (cards / workshops / questions in between go with it); a part that does not
-exist is skipped; topics missing from the list are added at the end (subject order of the student site).
+plan). The build fails if that list cannot be parsed. Teacher (2026-10-07): "order by when they learn it for the FIRST
+time - if they learn it on day 4 and practise on day 7, it should only be at day 4. The days themselves don't matter, the
+order does." So each topic appears ONCE, at its first entry in ORDER; the writing task (50) and charts (52), which the
+plan splits into parts, sit whole at the position of their first part. Topics missing from the list are added at the end
+(subject order of the student site).
 
 Studio UI only (never the board / canvas that is recorded, never file names or recorded marks):
 - Top bar (the studio hides the sidebar behind ☰) and sidebar, under "Jump to a subject": "Order: By topic | By study
-  plan" (remembered in localStorage). Switching opens the sidebar, scrolls the current topic's / plan group's header to
-  the top and flashes it. In plan order a sticky teal label sits at the top of the nav: "📅 Study-plan order · Days 15–20
-  · #32 of 62: 11 Laws of …" with buttons to the previous / next plan group. By topic shows nothing extra.
-  By topic = the navigation exactly as before. By study plan = the same nav items, grouped by plan entry (writing-task
-  and chart parts are separate groups, e.g. 50b / 52c), with day headers from the plan comments and "plan #n" on each
-  group; the green recorded counts (studio_done) and "N new" tags (studio_added) count each group's own videos.
-- Under the title of the current video: "Study plan #n · Day d · Students learned before this (k): 1, 30, 2 ..." (a
-  drop-down lists them with titles) and "Comes next in the plan: <topic>".
+  plan". The mode lives in memory (so it works even where localStorage is blocked) and is saved to localStorage when
+  possible; on load the stored mode is used ('topic' when nothing is stored). Every nav render (renderNav, called on
+  every navigation / save / search / subject jump) builds the chosen order. Switching opens the sidebar, scrolls the
+  current topic's header to the top and flashes it.
+- By topic = the navigation exactly as before. By study plan = the same nav items and topic groups in plan order, each
+  header with "#n"; a sticky teal label at the top of the nav: "📅 Study-plan order · #32 of 52: 11 Laws of …" with
+  buttons to the previous / next topic in the plan. Green recorded counts (studio_done) and "N new" counts
+  (studio_added) work as before.
+- Under the title of the current video: "Study plan #n · Students learned before this (k): 1, 30, 2 ..." (a drop-down
+  lists them with titles) and "Comes next in the plan: <topic>".
 - "By study plan" also makes Previous / Next item, the Previous / Next strip and the studio's "Next video" preview
-  follow the plan (inside a topic the order is the same; only the jumps between topics change).
+  follow the plan (inside a topic the topic's own order; only the jumps between topics change).
 """
 import json, os, re
 
@@ -33,47 +36,37 @@ ENTRY = re.compile(r'\[\s*(\d+)\s*(?:,\s*"([^"]+)"\s*)?\]')
 
 
 def parse_plan(path=PLAN):
-    """[(topic, part or None, day label or None)] from `const ORDER ... = [ ... ];` in planData.ts. Raises on anything odd."""
+    """[(topic, part or None)] from `const ORDER ... = [ ... ];` in planData.ts, in order. Raises on anything odd."""
     src = open(path, encoding='utf-8').read()
     m = re.search(r'const ORDER\s*:[^=]*=\s*\[\s*\n(.*?)\n\];', src, re.S)
     if not m:
         raise SystemExit('studio_order: cannot find "const ORDER ... = [ ... ];" in %s' % path)
     out = []
     for ln in m.group(1).split('\n'):
-        code, _, com = ln.partition('//')
-        if not code.strip():
-            if com.strip(): continue          # comment-only line
-            continue
+        code = ln.partition('//')[0]
+        if not code.strip(): continue
         rest = ENTRY.sub('', code).replace(',', '').strip()
         if rest:
             raise SystemExit('studio_order: cannot parse ORDER line in %s: %r (left over: %r)' % (path, ln, rest))
-        d = re.search(r'\b(days?)\s+(\d+(?:\s*[-–]\s*\d+)?)', com, re.I)
-        day = ('Days ' if d.group(1).lower() == 'days' else 'Day ') + re.sub(r'\s*[-–]\s*', '–', d.group(2)) if d else None
-        pd = re.search(r'\([^)]*:\s*day\s+(\d+)\s*\)', com, re.I)   # "(charts lessons + units 1-5: day 24)" -> the line's parts
-        for e in ENTRY.finditer(code):
-            t, part = int(e.group(1)), e.group(2)
-            out.append((t, part, ('Day ' + pd.group(1)) if (part and pd) else day))
+        out += [(int(e.group(1)), e.group(2)) for e in ENTRY.finditer(code)]
     if len(out) < 10:
         raise SystemExit('studio_order: only %d entries parsed from ORDER in %s' % (len(out), path))
     return out
 
 
 def plan_spec(D, path=PLAN):
-    """The plan as [[topic, part|null, day|null], ...] for the studio, checked against the course; + warnings."""
+    """Topic ids in study-plan order, each once at its FIRST appearance; + warnings."""
     tids = [t['id'] for t in D['topics']]
     warn, spec = [], []
-    for t, part, day in parse_plan(path):
+    for t, part in parse_plan(path):
         if t not in tids:
             warn.append('topic %d (in the plan) is not in the studio' % t); continue
-        if part and not any(r['topic'] == t and r['ref'].startswith(part) for r in D['flow']):
-            warn.append('part [%d, "%s"] matches no item - skipped (as on the site)' % (t, part)); continue
-        spec.append([t, part, day])
-    listed = {t for t, _, _ in spec}
+        if t not in spec: spec.append(t)
     for grp in SUBJECT_ORDER:
         for t in grp:
-            if t in tids and t not in listed: spec.append([t, None, None]); listed.add(t)
+            if t in tids and t not in spec: spec.append(t); warn.append('topic %d is not in the plan - added at the end' % t)
     for t in tids:
-        if t not in listed: spec.append([t, None, None])
+        if t not in spec: spec.append(t); warn.append('topic %d is not in the plan - added at the end' % t)
     return spec, warn
 
 
@@ -83,20 +76,13 @@ var ORD_SPEC=__ORD_SPEC__;
 var ORD=null;
 function ordBuild(){if(ORD)return ORD;const groups=[],range={};
  D.flow.forEach((r,i)=>{const x=range[r.topic];if(!x)range[r.topic]=[i,i+1];else x[1]=i+1});
- const parts={};ORD_SPEC.forEach(([t,p])=>{if(p)(parts[t]=parts[t]||[]).push(p)});
- const at=(t,p)=>{const x=range[t];if(!x)return -1;for(let i=x[0];i<x[1];i++)if(D.flow[i].ref.startsWith(p))return i;return -1};
- ORD_SPEC.forEach(([t,p,day])=>{const x=range[t];if(!x)return;let a=x[0],b=x[1],k='';
-  if(p){a=at(t,p);if(a<0)return;const ps=parts[t],later=ps.slice(ps.indexOf(p)+1).map(q=>at(t,q)).filter(j=>j>a);if(later.length)b=Math.min(...later);
-   k=String.fromCharCode(97+ps.indexOf(p))}
-  const tp=D.topics.find(z=>z.id===t);let name=tp.title;
-  if(p){const vs=[],sets=[];for(let i=a;i<b;i++){const r=D.flow[i];if(r.type==='video'&&!D.videos[r.ref].questionId&&D.videos[r.ref].kind!=='solution')vs.push(D.videos[r.ref].title);
-    const m=r.type==='question'&&sectionMap.get(r.section)?.kind==='practice'&&r.ref.match(/(\d+)-q\d+$/);if(m)sets.push(+m[1])}
-   const bits=[];if(vs.length)bits.push(vs[0]+(vs.length>1?' … '+vs[vs.length-1]:''));if(sets.length)bits.push('practice sets '+Math.min(...sets)+'–'+Math.max(...sets));
-   name=tp.title+' · '+(bits.join(' + ')||'part '+k.toUpperCase())}
-  groups.push({t,p,k,day,a,b,num:t+k,name,n:groups.length+1})});
+ ORD_SPEC.forEach(t=>{const x=range[t],tp=D.topics.find(z=>z.id===t);if(!x||!tp)return;groups.push({t,a:x[0],b:x[1],num:String(t).padStart(2,'0'),name:tp.title,n:groups.length+1})});
  const seq=[],pos=new Map(),grp=new Map();groups.forEach((g,gi)=>{for(let i=g.a;i<g.b;i++){if(pos.has(i))continue;pos.set(i,seq.length);seq.push(i);grp.set(i,gi)}});
+ D.flow.forEach((r,i)=>{if(!pos.has(i)){pos.set(i,seq.length);seq.push(i)}});   // (nothing should be left over)
  return ORD={groups,seq,pos,grp}}
-function ordMode(){try{return localStorage.getItem('studio-nav-order')==='plan'?'plan':'topic'}catch{return 'topic'}}
+/* the chosen order lives in memory (works even where localStorage is blocked); stored when possible */
+var ORD_MODE=(()=>{try{return localStorage.getItem('studio-nav-order')==='plan'?'plan':'topic'}catch{return 'topic'}})();
+function ordMode(){return ORD_MODE==='plan'?'plan':'topic'}
 function ordPlan(){return typeof STUDIO!=='undefined'&&STUDIO&&ordMode()==='plan'}
 /* the flow index d steps away (d = -1 / 1) in the chosen order; by topic = state.index + d, exactly as before */
 function ordIdx(d){const i=state.index+d;if(!ordPlan())return i;const O=ordBuild(),p=O.pos.get(state.index);if(p==null)return i;const j=O.seq[p+d];return j==null?(d<0?-1:D.flow.length):j}
@@ -116,9 +102,7 @@ body:not(.studio-body) .ord-toggle{display:none!important}
 .ord-sticky button:hover{background:#134e4a}.ord-sticky button[disabled]{opacity:.45;cursor:default}
 @keyframes ordFlash{0%,35%{background:#fde68a;box-shadow:inset 4px 0 0 #f59e0b}100%{background:transparent;box-shadow:inset 4px 0 0 transparent}}
 .topic-group>summary.ord-flash{animation:ordFlash 2.2s ease-out;border-radius:8px}
-.ord-dayhead{margin:14px 6px 2px;padding:3px 9px;font-size:.6875rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:#0f766e;background:#ecfdf5;border-radius:6px}
 .ord-pos{display:block;font-size:.6875rem;font-weight:700;color:#8390a5;margin-top:1px}.ord-pos>span{white-space:nowrap}
-.topic-group.ord-part .topic-number{color:#0f766e}
 .ord-line{flex-basis:100%;margin:2px 0 0;font-size:.8125rem;line-height:1.45;color:#475569;display:flex;flex-wrap:wrap;gap:4px 16px;align-items:baseline}
 .ord-line .ord-where{font-weight:800;color:#0f766e;white-space:nowrap}
 .ord-line details{flex:1 1 380px;min-width:0}.ord-line summary{cursor:pointer;list-style:none}.ord-line summary::-webkit-details-marker{display:none}
@@ -129,16 +113,15 @@ body:not(.studio-body) .ord-toggle{display:none!important}
 .ord-line li{break-inside:avoid}.ord-line li .n{font-weight:800;color:#334155;margin-right:5px}.ord-line li .d{color:#94a3b8;margin-left:4px}
 .ord-line .ord-next{white-space:nowrap}.ord-line .ord-next b{color:#334155}`;document.head.append(st)})();
 function ordBtn(rid){__ORD_BTN__}
-function ordGName(x){return (x.k?x.num:String(x.t).padStart(2,'0'))+' '+x.name}
-function ordSticky(O,cur){const g=O.groups[cur];if(!g)return `<div class="ord-sticky">📅 <b>Study-plan order</b><span class="ord-st-pos">${O.groups.length} plan steps · topics in the order students learn them</span></div>`;
+function ordGName(x){return x.num+' '+x.name}
+function ordSticky(O,cur){const g=O.groups[cur];if(!g)return `<div class="ord-sticky">📅 <b>Study-plan order</b><span class="ord-st-pos">${O.groups.length} topics in the order students learn them</span></div>`;
  const pv=O.groups[cur-1],nx=O.groups[cur+1];
- return `<div class="ord-sticky" title="Topics are listed in the order students learn them (src/lib/planData.ts). Switch back with Order: By topic.">📅 <b>Study-plan order</b><span class="ord-st-pos">${g.day?esc(g.day)+' · ':''}#${g.n} of ${O.groups.length}: ${esc(short(ordGName(g),46))}</span>`
+ return `<div class="ord-sticky" title="Topics are listed in the order students learn them (src/lib/planData.ts). Switch back with Order: By topic.">📅 <b>Study-plan order</b><span class="ord-st-pos">#${g.n} of ${O.groups.length}: ${esc(short(ordGName(g),46))}</span>`
   +`<span class="ord-st-nav"><button type="button" ${pv?'data-ordgo="'+pv.a+'" title="Previous in the plan: '+esc(ordGName(pv))+'"':'disabled'}>← ${pv?esc(ordGName(pv)):'start'}</button>`
   +`<button type="button" ${nx?'data-ordgo="'+nx.a+'" title="Next in the plan: '+esc(ordGName(nx))+'"':'disabled'}>${nx?esc(ordGName(nx)):'end'} →</button></span></div>`}
-function ordNavHtml(){const O=ordBuild(),cur=O.grp.get(state.index);let day=null,h=ordSticky(O,cur);
- O.groups.forEach((g,gi)=>{if(g.day&&g.day!==day){day=g.day;h+=`<div class="ord-dayhead">${esc(day)}</div>`}
-  const tp=D.topics.find(z=>z.id===g.t);
-  h+=`<details class="topic-group${g.p?' ord-part':''}" data-og="${gi}" ${gi===cur?'open':''}><summary><span class="topic-number">${g.k?g.num:String(g.t).padStart(2,'0')}</span><span>${esc(g.p?g.name:tp.title)}<span class="ord-pos" title="Position in the study plan"><span>#${g.n}</span>${g.day?' · <span>'+esc(g.day)+'</span>':''}</span></span></summary>`
+function ordNavHtml(){const O=ordBuild(),cur=O.grp.get(state.index);let h=ordSticky(O,cur);
+ O.groups.forEach((g,gi)=>{const tp=D.topics.find(z=>z.id===g.t);
+  h+=`<details class="topic-group" data-og="${gi}" ${gi===cur?'open':''}><summary><span class="topic-number">${g.num}</span><span>${esc(tp.title)}<span class="ord-pos" title="Position in the study plan">#${g.n} in the plan</span></span></summary>`
    +tp.sections.map(id=>{const s=sectionMap.get(id);const its=s.items.filter(rid=>{const i=flowMap.get(rid);return i>=g.a&&i<g.b&&O.grp.get(i)===gi});
     return its.length?`<div class="section-label">${esc(s.title)}</div>`+its.map(ordBtn).join(''):''}).join('')+'</details>'});
  return h}
@@ -153,22 +136,23 @@ function ordReveal(){const sb=$('#sidebar'),nav=$('#course-nav');if(!sb||!nav)re
  const sum=g&&g.querySelector('summary');if(!sum)return;const st=nav.querySelector('.ord-sticky');
  sb.scrollTop+=sum.getBoundingClientRect().top-sb.getBoundingClientRect().top-(st?st.offsetHeight+4:8);
  sum.classList.remove('ord-flash');void sum.offsetWidth;sum.classList.add('ord-flash')}
-function ordSet(m,open){try{localStorage.setItem('studio-nav-order',m)}catch{}
+function ordSet(m,open){ORD_MODE=m==='plan'?'plan':'topic';try{localStorage.setItem('studio-nav-order',ORD_MODE)}catch{}
  if(record)renderNav();else render();
  if(open)$('#sidebar')?.classList.add('open');
  requestAnimationFrame(()=>requestAnimationFrame(ordReveal))}
 document.addEventListener('click',e=>{if(!e.target.closest)return;const b=e.target.closest('.ord-toggle [data-ord]');if(b)return ordSet(b.dataset.ord,!!b.closest('.ord-top'));
- const j=e.target.closest('.ord-sticky [data-ordgo]');if(j){go(+j.dataset.ordgo);$('#sidebar')?.classList.add('open');requestAnimationFrame(()=>requestAnimationFrame(ordReveal))}});
+ const j=e.target.closest('.ord-sticky [data-ordgo]');if(j){go(+j.dataset.ordgo);$('#sidebar')?.classList.add('open');requestAnimationFrame(()=>requestAnimationFrame(ordReveal))}},true);
 /* teacher-only line under the current video's title: what the students learned before it, what comes next */
 function ordLine(r){if(typeof STUDIO==='undefined'||!STUDIO||!r||r.type!=='video')return '';const O=ordBuild(),gi=O.grp.get(state.index);if(gi==null)return '';
  const g=O.groups[gi],prev=O.groups.slice(0,gi),next=O.groups[gi+1];
- const lab=x=>x.k?x.num:String(x.t),full=x=>(x.k?x.num:String(x.t).padStart(2,'0'))+' · '+x.name+(x.day?' ('+x.day+')':'');
- const where=`<span class="ord-where" title="Position of this ${g.p?'part':'topic'} in the students' study plan (src/lib/planData.ts)">Study plan #${g.n}${g.day?' · '+esc(g.day):''}</span>`;
- const before=prev.length?`<details class="ord-before"><summary title="${esc(prev.map(full).join('\n'))}"><b>Students learned before this (${prev.length}):</b> <span class="ord-nums">${esc(prev.map(lab).join(', '))}</span> <span class="ord-more">▾ names</span></summary><ol>${prev.map(x=>`<li><span class="p">${x.n}.</span><span class="n">${esc(x.k?x.num:String(x.t).padStart(2,'0'))}</span>${esc(x.name)}${x.day?'<span class="d">'+esc(x.day)+'</span>':''}</li>`).join('')}</ol></details>`
+ const lab=x=>String(x.t),full=x=>x.num+' · '+x.name;
+ const where=`<span class="ord-where" title="Position of this topic in the students' study plan (src/lib/planData.ts), by when they first learn it">Study plan #${g.n} of ${O.groups.length}</span>`;
+ const before=prev.length?`<details class="ord-before"><summary title="${esc(prev.map(full).join('\n'))}"><b>Students learned before this (${prev.length}):</b> <span class="ord-nums">${esc(prev.map(lab).join(', '))}</span> <span class="ord-more">▾ names</span></summary><ol>${prev.map(x=>`<li><span class="p">${x.n}.</span><span class="n">${esc(x.num)}</span>${esc(x.name)}</li>`).join('')}</ol></details>`
   :'<span><b>First in the study plan</b> — students have learned nothing before this.</span>';
- const nx=next?`<span class="ord-next" title="${esc(full(next))}">Comes next in the plan: <b>${esc(next.k?next.num:String(next.t).padStart(2,'0'))} · ${esc(short(next.name,60))}</b></span>`:'<span class="ord-next">Last in the study plan.</span>';
+ const nx=next?`<span class="ord-next" title="${esc(full(next))}">Comes next in the plan: <b>${esc(next.num)} · ${esc(short(next.name,60))}</b></span>`:'<span class="ord-next">Last in the study plan.</span>';
  return `<div class="ord-line">${where}${before}${nx}</div>`}
-window.studioNavOrder=()=>ordBuild();   // (handy from the console)
+window.studioNavOrder=()=>ordBuild();
+setTimeout(()=>{try{if(ordPlan()&&!record&&!document.querySelector('#course-nav [data-og]'))renderNav()}catch(e){console.warn('nav order',e)}},1000);   // safety: stored plan order always shows   // (handy from the console)
 """
 
 TOGGLE = ('<div class="ord-toggle" role="group" aria-label="Navigation order"><span class="ord-lab">Order:</span>'
@@ -214,8 +198,7 @@ def apply(s, D, path=PLAN):
         s = s.replace(old, new)
     k = s.find('async function startRecording(){')
     assert k > 0
-    print('studio_order: study plan from %s - %d entries (%d parts), first: %s' % (
-        os.path.relpath(path, os.path.dirname(os.path.dirname(os.path.dirname(path)))), len(spec), sum(1 for x in spec if x[1]),
-        ', '.join(str(t) + ('/' + p if p else '') for t, p, _ in spec[:8])))
+    print('studio_order: study plan from %s - %d topics (first appearance), first: %s' % (
+        os.path.relpath(path, os.path.dirname(os.path.dirname(os.path.dirname(path)))), len(spec), ', '.join(map(str, spec[:12]))))
     js = JS.replace('__ORD_SPEC__', json.dumps(spec, ensure_ascii=False)).replace('__ORD_BTN__', body)
     return s[:k] + js.lstrip() + s[k:]
