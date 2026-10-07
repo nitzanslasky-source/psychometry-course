@@ -1850,3 +1850,234 @@ _apply_before_hebrew_backcheck = apply
 def apply(M):
     _apply_before_hebrew_backcheck(M)
     hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last
+
+
+# ---------------------------------------------------------------- 2026-10-07 pen or click
+# Teacher-approved split (2026-10-04/06): lessons - content appears by click, the pen only marks (circle, cross out,
+# dots); solution videos - setup and mechanical lines by click, by hand only the one or two key steps plus the marks on
+# the choices. Helper copied from t10.py / t07.py (same behaviour). Works on the FINAL text (after add_methods,
+# renumber and hebrew_backcheck). No topic 12 video is recorded.
+def _pen_or_click_slide(M, vid, n, repl, room=(), row=106):
+    """repl: pen cue text -> script entries replacing it. room: pen cues kept by hand that need their own row on the
+    board - the item above them gets a bigger gap, so the click items below leave space for the handwriting."""
+    b = M.slide(vid, n); script = []; done = set()
+    for l in b['lines']:
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        elif l['draw'] in repl: script.extend(repl[l['draw']]); done.add(l['draw'])
+        else: script.append(D(l['draw']))
+    missing = (set(repl) - done) | (set(room) - {l.get('draw') for l in b['lines']})
+    assert not missing, '%s #%d: draw cue not found: %s' % (vid, n, missing)
+    M.set_slide(vid, n, script=script)
+    b = M.slide(vid, n); last = b['pre'] - 1
+    for l in b['lines']:
+        if 'appear' in l: last = l['appear']
+        elif l.get('draw') in room: b['items'][last]['gap'] = b['items'][last].get('gap', 44) + row
+
+
+def _fit(M, vid, n, size, gap, start=1):
+    """more lines on the board now: click items a bit smaller and closer (rows kept for handwriting stay)."""
+    for it in M.slide(vid, n)['items'][start:]:
+        if it.get('k') != 't': continue
+        it['size'] = min(it.get('size', 46), size)
+        if it.get('gap', 44) <= 60: it['gap'] = min(it.get('gap', 44), gap)
+
+
+def pen_or_click(M):
+    P = _pen_or_click_slide
+    S = 40
+    # ---- lesson: inequalities - every written line is a click; the dots on the number line stay by hand
+    P(M, L1, 2, {
+        'Next to x ≤ 4 write "4, 3.5, 1, −6 ✓"': [A('4, 3.5, 1, −6 ✓ appears', T(r'$4,\ \ 3.5,\ \ 1,\ \ -6$ ✓', size=46, gap=60))],
+        'Put dots on −7 and −2, and write "−7 < −2" above them': [
+            D('Put dots on −7 and −2'), A('−7 < −2 appears', T(r'$-7<-2$', size=50))],
+    })
+    M.slide(L1, 2)['items'][1]['gap'] = 24
+    P(M, L1, 3, {
+        'Write "−6" under both sides': [A('x + 6 − 6 < 11 − 6 appears', T(r'$x+6-6<11-6$', size=56))],
+        'Write "x < 5"': [A('x < 5 appears', T(r'$x<5$', size=64))],
+    })
+    P(M, L1, 4, {
+        'Write "÷(−3)" under both sides, then "6 > 1"': [A('÷(−3): 6 > 1 appears', T(r'$\div(-3):\quad 6>1$', size=56, gap=70))],
+        'Move each number to the other side: write "3 < 18"': [A('3 < 18 appears', T(r'$3<18$', size=56))],
+        'Write "÷3" and then "1 < 6"': [A('÷3: 1 < 6 appears', T(r'$\div3:\quad 1<6$', size=56))],
+    })
+    M.slide(L1, 4)['items'][0]['gap'] = 30
+    P(M, L1, 5, {
+        'Write "÷(−2):  x > −3"': [A('÷(−2): x > −3 appears', T(r'$\div(-2):\quad x>-3$', size=56))],
+        'Write "−6 < 2x", then "−3 < x"': [A('−6 < 2x → −3 < x appears', T(r'$-6<2x \;\to\; -3<x$', size=56))],
+        'Write "x = 0: 0 < 6 ✓"': [A('x = 0: 0 < 6 ✓ appears', T(r'$x=0$: $\ 0<6$ ✓', size=56))],
+    })
+    # ---- lesson: signs - the rule line is a click
+    P(M, SIGNS, 3, {
+        'Write "same sign → flip;  different signs → no flip"': [
+            A('same sign → flip; different signs → no flip appears', T(r'same sign $\to$ flip; $\ $ different signs $\to$ no flip', size=44))],
+    })
+    # ---- Q1 q-322 - by hand: 4 − 18 < 3x − x (x to the side with more x), circles
+    P(M, 'solve-q-322', 2, {
+        'Write "−14 < 2x"': [A('−14 < 2x appears', T(r'$-14<2x$', size=S))],
+        'Write "÷ 2" and then "−7 < x"': [A('÷2: −7 < x appears', T(r'$\div2:\quad -7<x$', size=S))],
+    }, room=['Write "4 − 18 < 3x − x"'])
+    P(M, 'solve-q-322', 3, {
+        'Write "Endpoint: 4 + x = 18 + 3x → −14 = 2x → x = −7"': [
+            A('Endpoint: x = −7 appears', T(r'Endpoint: $4+x=18+3x \;\to\; -14=2x \;\to\; x=-7$', size=36))],
+        'Write "Direction: x = 0: 4 < 18 ✓ → −7 < x"': [
+            A('Direction: x = 0 ✓ → −7 < x appears', T(r'Direction: $x=0$: $\ 4<18$ ✓ $\;\to\; -7<x$', size=36))],
+    })
+    # ---- Q2 q-323 - by hand: cross out −15x on both sides, circle
+    P(M, 'solve-q-323', 2, {
+        'Write "10 − 15x − 4 < 7 − 15x"': [A('10 − 15x − 4 < 7 − 15x appears', T(r'$10-15x-4<7-15x$', size=S))],
+        'Cross out −15x on both sides, then write "6 < 7"': [D('Cross out −15x on both sides'), A('6 < 7 appears', T(r'$6<7$', size=S))],
+    })
+    # ---- Q3 q-324 - by hand: 5 < x < 9 (the overlap), circle
+    P(M, 'solve-q-324', 2, {
+        'Under the left half write "3x − 4 < 2x + 5 → x < 9"': [A('left: x < 9 appears', T(r'left: $3x-4<2x+5 \;\to\; x<9$', size=S))],
+        'Under the right half write "10 < 2x → 5 < x"': [A('right: 10 < 2x → 5 < x appears', T(r'right: $10<2x \;\to\; 5<x$', size=S))],
+    })
+    # ---- Q4 q-325 - the two halves by click; circle by hand
+    P(M, 'solve-q-325', 2, {
+        'Under the left part write "20 < 4x → 5 < x"': [A('left: 20 < 4x → 5 < x appears', T(r'left: $20<4x \;\to\; 5<x$', size=S))],
+        'Under the right part write "6x < 12 → x < 2"': [A('right: 6x < 12 → x < 2 appears', T(r'right: $6x<12 \;\to\; x<2$', size=S))],
+    })
+    # ---- Q5 q-327 - by hand: 3b − 1 < a < b + 5 (chain), cross out the a, circle
+    P(M, 'solve-q-327', 2, {
+        'Cross out the a, then write "3b − 1 < b + 5"': [D('Cross out the a'), A('3b − 1 < b + 5 appears', T(r'$3b-1<b+5$', size=S))],
+        'Write "2b < 6 → b < 3"': [A('2b < 6 → b < 3 appears', T(r'$2b<6 \;\to\; b<3$', size=S))],
+    }, room=['Write "3b − 1 < a < b + 5"'])
+    # ---- Q6 q-326 - by hand: the cross-out and circle; the two tries are clicks
+    P(M, 'solve-q-326', 2, {
+        'Next to choice 3 write "256 < 300 < 1,024 ✓"': [A('(3) x = 4: 256 < 300 < 1,024 ✓ appears', T(r'(3) $x=4$: $\ 256<300<1{,}024$ ✓', size=S))],
+        'Next to choice 2 write "81 < 300 < 243 ✗"': [A('(2) x = 3: 81 < 300 < 243 ✗ appears', T(r'(2) $x=3$: $\ 81<300<243$ ✗', size=S))],
+    })
+    # ---- Q7 q-328 - by hand: −6 < x < 6 (between the roots), circle
+    P(M, 'solve-q-328', 2, {
+        'Write "2(4x² − 9) < 5(x² + 18)"': [A('2(4x² − 9) < 5(x² + 18) appears', T(r'$2(4x^2-9)<5(x^2+18)$', size=S))],
+        'Write "8x² − 18 < 5x² + 90"': [A('8x² − 18 < 5x² + 90 appears', T(r'$8x^2-18<5x^2+90$', size=S))],
+        'Write "3x² < 108 → x² < 36"': [A('3x² < 108 → x² < 36 appears', T(r'$3x^2<108 \;\to\; x^2<36$', size=S))],
+    })
+    # ---- Q8 q-329 - by hand: q < p + q < p (substitute), circle
+    P(M, 'solve-q-329', 2, {
+        'Write "q < p + q → p > 0"': [A('q < p + q → p > 0 appears', T(r'$q<p+q \;\to\; p>0$', size=S))],
+        'Write "p + q < p → q < 0"': [A('p + q < p → q < 0 appears', T(r'$p+q<p \;\to\; q<0$', size=S))],
+        'Write "p positive, q negative → pq < 0"': [A('p positive, q negative → pq < 0 appears', T(r'$p$ positive, $q$ negative $\;\to\; pq<0$', size=S))],
+    }, room=['Write "q < p + q < p"'], row=70)
+    _fit(M, 'solve-q-329', 2, 34, 12)
+    # ---- Q9 q-r26-t12-01 - by hand: x = −½ (the number we pick), circle
+    P(M, 'solve-q-r26-t12-01', 2, {
+        'Next to the choices write "−½,  ¼,  −⅛,  −2"': [
+            A('choices −½, ¼, −⅛, −2 appears', T(r'(1) $-\frac12\quad$(2) $\frac14\quad$(3) $-\frac18\quad$(4) $-2$', size=S))],
+    }, room=['Write "x = −½"'])
+    # ---- Q10 q-r26-t12-02 - by hand: the number line with −5 and 2 (sign table), circle
+    P(M, 'solve-q-r26-t12-02', 2, {
+        'Write "x − 2 = 0 → x = 2;   x + 5 = 0 → x = −5"': [
+            A('zeros: x = 2, x = −5 appears', T(r'$x-2=0 \;\to\; x=2;\qquad x+5=0 \;\to\; x=-5$', size=36))],
+        'Write "x = −6: (−8)(−1) = 8 ✗"': [A('x = −6: 8 ✗ appears', T(r'$x=-6$: $\ (-8)(-1)=8$ ✗', size=36))],
+        'Write "x = 0: (−2)(5) = −10 ✓"': [A('x = 0: −10 ✓ appears', T(r'$x=0$: $\ (-2)(5)=-10$ ✓', size=36))],
+        'Write "x = 3: (1)(8) = 8 ✗"': [A('x = 3: 8 ✗ appears', T(r'$x=3$: $\ (1)(8)=8$ ✗', size=36))],
+    }, room=['Draw a number line and mark −5 and 2'], row=90)
+    _fit(M, 'solve-q-r26-t12-02', 2, 36, 12)
+    # ---- Q11 q-r26-t12-13 - by hand: the cross-outs and circle; the tests and the two moves are clicks
+    P(M, 'solve-q-r26-t12-13', 2, {
+        'Write "x = −3: 3 + 6 = 9 < 5 ✗"': [A('x = −3: 9 < 5 ✗ appears', T(r'$x=-3$: $\ 3+6=9<5$ ✗', size=S))],
+        'Write "x = 6: 3 − 12 = −9 ≥ −7 ✗"': [A('x = 6: −9 ≥ −7 ✗ appears', T(r'$x=6$: $\ 3-12=-9\ge-7$ ✗', size=S))],
+    })
+    P(M, 'solve-q-r26-t12-13', 3, {
+        'Write "3 − 2x = 5 → x = −1;  3 − 2x = −7 → x = 5"': [
+            A('endpoints x = −1, x = 5 appears', T(r'$3-2x=5 \;\to\; x=-1;\qquad 3-2x=-7 \;\to\; x=5$', size=36))],
+        'Write "x = 0: −7 ≤ 3 < 5 ✓ → −1 < x ≤ 5"': [
+            A('x = 0 ✓ → −1 < x ≤ 5 appears', T(r'$x=0$: $\ -7\le3<5$ ✓ $\;\to\; -1<x\le5$', size=36))],
+    })
+    # ---- Q12 q-330 - by hand: = 2/3 and = 9/10 under the fractions, 2x + 2 < 3x (multiply by the positive 3(x + 1)), circles
+    P(M, 'solve-q-330', 2, {
+        'Write "2/3 < x/(x+1)" and "x/(x+1) < 9/10" on two lines': [
+            A('2/3 < x/(x+1) and x/(x+1) < 9/10 appears', T(r'$\frac23<\frac{x}{x+1}\qquad$ and $\qquad\frac{x}{x+1}<\frac9{10}$', size=36))],
+        'Multiply both sides by 10(x + 1): write "10x < 9x + 9 → x < 9"': [
+            A('10x < 9x + 9 → x < 9 appears', T(r'$\cdot10(x+1)$: $\ 10x<9x+9 \;\to\; x<9$', size=36))],
+        'Write "2 < x < 9 → 3, 4, 5, 6, 7, 8"': [A('2 < x < 9 → 3, …, 8 appears', T(r'$2<x<9 \;\to\; 3,4,5,6,7,8$', size=36))],
+    }, room=['Under 60/90 write "= 2/3"', 'Multiply both sides by 3(x + 1): write "2x + 2 < 3x → 2 < x"'], row=50)
+    _fit(M, 'solve-q-330', 2, 36, 14)
+    P(M, 'solve-q-330', 3, {
+        'Next to the question write "3/4, 4/5, 5/6, 6/7, 7/8, 8/9"': [
+            A('3/4, 4/5, …, 8/9 appears', T(r'$\frac34,\ \frac45,\ \frac56,\ \frac67,\ \frac78,\ \frac89$', size=S))],
+    })
+    # ---- Q13 q-331 - by hand: cross out x², y > 0 (the sign of y), circle
+    P(M, 'solve-q-331', 2, {
+        'Under the question write "x²y² < x²y"': [A('x²y² < x²y appears', T(r'$x^2y^2<x^2y$', size=S))],
+        'Cross out x² on both sides; write "y² < y"': [D('Cross out x² on both sides'), A('y² < y appears', T(r'$y^2<y$', size=S))],
+        'Write "y < 1"': [A('y < 1 appears', T(r'$y<1$', size=S))],
+        'Write "0 < y < 1" and circle choice 4': [A('0 < y < 1 appears', T(r'$0<y<1$', size=S)), D('Circle choice 4')],
+    }, room=['Write "y > 0"'], row=60)
+    _fit(M, 'solve-q-331', 2, 36, 12)
+    # ---- Q14 q-332 - by hand: "top + / bottom −" and "top − / bottom +" (the two cases), cross-outs, circles
+    P(M, 'solve-q-332', 2, {
+        'Write "x + 1 > 0 → x > −1" and "7 − x < 0 → x > 7"': [
+            A('x > −1 and x > 7 appears', T(r'$x+1>0 \;\to\; x>-1;\qquad 7-x<0 \;\to\; x>7$', size=34))],
+        'Write "→ x > 7"': [A('→ x > 7 appears', T(r'$\to\; x>7$', size=34))],
+        'Write "x < −1" and "x < 7 → x < −1"': [A('x < −1 and x < 7 → x < −1 appears', T(r'$x<-1$ and $x<7 \;\to\; x<-1$', size=34))],
+    }, room=['Under the question write "top + / bottom −" and "top − / bottom +"'], row=70)
+    _fit(M, 'solve-q-332', 2, 34, 12)
+    P(M, 'solve-q-332', 3, {
+        'Next to choice 1 write "x = −2: −1/9 < 0 ✓"': [A('(1) x = −2: −1/9 < 0 ✓ appears', T(r'(1) $x=-2$: $\ -\frac19<0$ ✓', size=S))],
+        'Next to choice 2 write "x = 8: 9/(−1) = −9 ✓"': [A('(2) x = 8: −9 ✓ appears', T(r'(2) $x=8$: $\ \frac9{-1}=-9$ ✓', size=S))],
+        'Next to choice 3 write "x = 0: 1/7"': [A('(3) x = 0: 1/7 appears', T(r'(3) $x=0$: $\ \frac17$', size=S))],
+    })
+    # ---- Q15 q-333 - by hand: x + y = ±12 and crossing out the minus, circles
+    P(M, 'solve-q-333', 2, {
+        'Write "x > 4"': [A('x > 4 appears', T(r'$x>4$', size=S))],
+        'Write "x = 12 − y → 4 < 12 − y → y < 8"': [A('x = 12 − y → 4 < 12 − y → y < 8 appears', T(r'$x=12-y \;\to\; 4<12-y \;\to\; y<8$', size=S))],
+        'Write "0 < y < 8" and circle choice 2': [A('0 < y < 8 appears', T(r'$0<y<8$', size=S)), D('Circle choice 2')],
+    }, room=['Write "x + y = ±12"'])
+    _fit(M, 'solve-q-333', 2, 36, 16)
+    P(M, 'solve-q-333', 3, {
+        'Write "x = 5 → y = 7, x = 6 → y = 6"': [A('x = 5 → y = 7, x = 6 → y = 6 appears', T(r'$x=5 \;\to\; y=7,\qquad x=6 \;\to\; y=6$', size=S))],
+    })
+    # ---- Q16 q-334 - by hand: the chain m + n < p < n < m, the number line, the arc, cross-outs, circle
+    P(M, 'solve-q-334', 2, {
+        'Write "m < 0"': [A('m < 0 appears', T(r'$m<0$', size=36))],
+        'Write "n < 0, p < 0"': [A('n < 0, p < 0 appears', T(r'$n<0,\ \ p<0$', size=36))],
+    }, room=['Under the question write "m + n < p < n < m"', 'Draw a number line and mark, from left to right: m + n, p, n, m'], row=60)
+    # ---- Q17 q-335 - by hand: the marks on the number line, circle
+    P(M, 'solve-q-335', 2, {
+        'Write "+4" under all three parts, then "9 ≤ x² ≤ 64"': [A('+4: 9 ≤ x² ≤ 64 appears', T(r'$+4$:$\quad 9\le x^2\le64$', size=36))],
+        'Write "3 ≤ x ≤ 8"': [A('3 ≤ x ≤ 8 appears', T(r'$3\le x\le8$', size=36))],
+        'Write "±3, ±4, ±5, ±6, ±7, ±8"': [A('±3, …, ±8 appears', T(r'$\pm3,\ \pm4,\ \pm5,\ \pm6,\ \pm7,\ \pm8$', size=36))],
+    })
+    for it in M.slide('solve-q-335', 2)['items']:
+        if it.get('k') == 'nl': it.pop('y', None)   # the number line now follows the two click lines
+    _fit(M, 'solve-q-335', 2, 34, 10)
+    # ---- Q18 q-r26-t12-03 - by hand: a + c > b + d (add - the safe move), circle; the counterexamples are clicks
+    P(M, 'solve-q-r26-t12-03', 4, {
+        'Next to choice 2 write "a = 2, b = 1, c = 5, d = 0:  −3 > 1 ✗"': [
+            A('(2) a = 2, b = 1, c = 5, d = 0: −3 > 1 ✗ appears', T(r'(2) $a=2,\ b=1,\ c=5,\ d=0$: $\ -3>1$ ✗', size=36))],
+        'Next to choice 3 write "a = −1, b = −2, c = −1, d = −2:  1 > 4 ✗"': [
+            A('(3) a = −1, b = −2, c = −1, d = −2: 1 > 4 ✗ appears', T(r'(3) $a=-1,\ b=-2,\ c=-1,\ d=-2$: $\ 1>4$ ✗', size=36))],
+        'Next to choice 4 write "a = 2, b = 1, c = 4, d = 1:  ½ > 1 ✗"': [
+            A('(4) a = 2, b = 1, c = 4, d = 1: ½ > 1 ✗ appears', T(r'(4) $a=2,\ b=1,\ c=4,\ d=1$: $\ \frac12>1$ ✗', size=36))],
+    })
+    # ---- Q19 q-r26-t12-04 - by hand: biggest: 5 − 1 = 4 (biggest minus smallest), circle
+    P(M, 'solve-q-r26-t12-04', 2, {
+        'Write "smallest: −2 − 4 = −6"': [A('smallest: −2 − 4 = −6 appears', T(r'smallest: $-2-4=-6$', size=S))],
+        'Write "−6 < x − y < 4"': [A('−6 < x − y < 4 appears', T(r'$-6<x-y<4$', size=S))],
+        'Write "−4 < −y < −1  →  add"': [A('−4 < −y < −1 → add appears', T(r'check: $-4<-y<-1 \;\to\;$ add', size=S))],
+    }, room=['Write "biggest: 5 − 1 = 4"'], row=60)
+    _fit(M, 'solve-q-r26-t12-04', 2, 34, 12)
+    # ---- Q20 q-336 - the corners by click; the cross-outs and circle by hand
+    P(M, 'solve-q-336', 2, {
+        'Write "9 · 3 = 27" and "(−6)(−15) = 90"': [A('9 · 3 = 27, (−6)(−15) = 90 appears', T(r'$9\cdot3=27,\qquad (-6)(-15)=90$', size=S))],
+        'Write "9 · (−15) = −135"': [A('9 · (−15) = −135 appears', T(r'$9\cdot(-15)=-135$', size=S))],
+    })
+    # ---- Q21 q-337 - by hand: a < b < b + 3 (method 1), circles; the counterexamples and the list are clicks
+    P(M, 'solve-q-337', 3, {
+        'Next to choice 4 write "a = 1, b = 2: 4 < 2 ✗"': [A('(4) a = 1, b = 2: 4 < 2 ✗ appears', T(r'(4) $a=1,\ b=2$: $\ 4<2$ ✗', size=S))],
+        'Next to choice 2 write "3 < 2 ✗"': [A('(2) 3 < 2 ✗ appears', T(r'(2) $3<2$ ✗', size=S))],
+        'Next to choice 3 write "a = −4, b = −3: −4 < −9 ✗"': [A('(3) a = −4, b = −3: −4 < −9 ✗ appears', T(r'(3) $a=-4,\ b=-3$: $\ -4<-9$ ✗', size=S))],
+        'Write "Try: 0, 1, −1, ½, a big number"': [A('Try: 0, 1, −1, ½, a big number appears', T(r'Try: $0,\ 1,\ -1,\ \frac12,$ a big number', size=S))],
+    })
+
+
+_apply_before_pen_or_click = apply
+
+
+def apply(M):
+    _apply_before_pen_or_click(M)
+    pen_or_click(M)   # 2026-10-07 pen or click: runs last

@@ -246,3 +246,39 @@ Videos rewritten to match: solve-q-334, solve-q-336, lesson slide 4.
 **Left on purpose (partial overlaps only):** q-324 (3x−4 < 2x+5 < 4x−5 → 5 < x < 9; Hebrew 3x−8 < 2x+3 < 5x−12 → 5 < x < 11:
 only the 3x / 2x and the bound 5 shared); q-331 ((xy)² < x²y asks y; the Hebrew (xy)² < xy² asks x — letter question,
 letters already swapped); q-329 (p+q = r, q < r < p — letters already changed, key moved). Practice: no match.
+
+## 2026-10-06 pen or click
+(Done 2026-10-07.) Function `pen_or_click(M)` in t12.py runs last (after `add_methods`, `renumber` and
+`hebrew_backcheck`), on the final text. The teacher's approved split: lessons - content by click, the pen only marks;
+solution videos - setup and mechanical lines by click, by hand only the one or two key steps plus the marks on the
+choices. Where a hand-written line comes before click lines, the board leaves an empty row for it. Spoken lines, math,
+questions and slide count are unchanged. No topic 12 video is recorded. inequality-systems, r26-t12-combining and the
+summary have no pen cues.
+Topic total: 128 pen cues -> 53 by hand, 69 by click, 6 split (59 pen cues left, most of them circles / cross-outs).
+
+- inequalities (lesson, 10 -> 0 by hand, 9 clicks, 1 split). Every written line is a click: 4, 3.5, 1, −6 ✓; x + 6 − 6 < 11 − 6 (was "−6 under both sides"); x < 5; ÷(−3): 6 > 1; 3 < 18; ÷3: 1 < 6; ÷(−2): x > −3; −6 < 2x → −3 < x; x = 0 check. Split: the dots on −7 and −2 by hand, "−7 < −2" click.
+- r26-t12-signs (1 -> 1 click): "same sign → flip; different signs → no flip".
+- solve-q-322 (7 -> 3 by hand, 4 clicks). By hand: 4 − 18 < 3x − x (x to the side with more x), circles. Method 2 endpoint / direction lines are clicks.
+- solve-q-323 (3 -> 1 by hand, 1 click, 1 split). Split: cross out −15x by hand, 6 < 7 click.
+- solve-q-324 (4 -> 2 by hand, 2 clicks). By hand: 5 < x < 9 (the overlap), circle. Clicks: the two halves ("left:", "right:").
+- solve-q-325 (3 -> 1 by hand, 2 clicks). The two halves are clicks; circle by hand.
+- solve-q-327 (4 -> 2 by hand, 1 click, 1 split). By hand: the chain 3b − 1 < a < b + 5, circle. Split: cross out the a, 3b − 1 < b + 5 click.
+- solve-q-326 (4 -> 2 by hand, 2 clicks). The tries are clicks labelled (3) x = 4 and (2) x = 3.
+- solve-q-328 (5 -> 2 by hand, 3 clicks). By hand: −6 < x < 6 (between the roots), circle.
+- solve-q-329 (5 -> 2 by hand, 3 clicks). By hand: q < p + q < p (substitute), circle. Lines 34.
+- solve-q-r26-t12-01 (3 -> 2 by hand, 1 click). By hand: x = −½, circle. Click: the four choice values.
+- solve-q-r26-t12-02 (6 -> 2 by hand, 4 clicks). By hand: the number line with −5 and 2 (sign table), circle. Clicks: the zeros, the three tests.
+- solve-q-r26-t12-13 (6 -> 2 by hand, 4 clicks). By hand: the cross-outs and circle. Clicks: the two tests, the two moves.
+- solve-q-330 (9 -> 5 by hand, 4 clicks). By hand: "= 2/3" and "= 9/10" under the fractions, 2x + 2 < 3x → 2 < x (multiply by the positive 3(x + 1)), circles. Clicks: the split into two inequalities (one line), 10x < 9x + 9 → x < 9, 2 < x < 9 → 3…8, the fractions 3/4 … 8/9.
+- solve-q-331 (5 -> 1 by hand, 2 clicks, 2 split). By hand: y > 0. Split: cross out x² + y² < y; 0 < y < 1 + circle.
+- solve-q-332 (13 -> 7 by hand, 6 clicks). By hand: "top + / bottom −" and "top − / bottom +" (the two cases), the cross-outs, circles. Clicks: the case lines; method 2 tries labelled (1), (2), (3).
+- solve-q-333 (7 -> 3 by hand, 3 clicks, 1 split). By hand: x + y = ±12 and crossing out the minus, circle.
+- solve-q-334 (7 -> 5 by hand, 2 clicks). By hand: the chain m + n < p < n < m, the number line, the arc, cross-outs, circle. Clicks: m < 0; n < 0, p < 0.
+- solve-q-335 (5 -> 2 by hand, 3 clicks). By hand: the marks on the number line, circle. Clicks: +4: 9 ≤ x² ≤ 64; 3 ≤ x ≤ 8; ±3 … ±8. The number line now follows the click lines (its fixed position was removed); lines 34.
+- solve-q-r26-t12-03 (5 -> 2 by hand, 3 clicks). By hand: a + c > b + d ✓ (add), circle. Clicks: the three counterexamples.
+- solve-q-r26-t12-04 (5 -> 2 by hand, 3 clicks). By hand: biggest: 5 − 1 = 4, circle. Lines 34.
+- solve-q-336 (4 -> 2 by hand, 2 clicks). The corners are clicks; cross-outs and circle by hand.
+- solve-q-337 (7 -> 3 by hand, 4 clicks). By hand: a < b < b + 3, circles. Clicks: the three counterexamples, the "Try:" list.
+
+Check: `python3 math_check.py 12 32` -> 0 problems, 0 warnings, 0 layout problems. All 23 videos rendered and checked by
+eye (tmp_check/pen12a–e.png).
