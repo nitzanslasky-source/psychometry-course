@@ -2165,3 +2165,29 @@ _apply_before_no_decimal_estimates = apply
 def apply(M):
     _apply_before_no_decimal_estimates(M)
     no_decimal_estimates(M)   # 2026-10-07 no decimal estimates: runs last
+
+
+# 2026-10-07 teacher: in q-r26-t11-13 take off the long way (find x first) — too long. Keep its two useful points as
+# lines at the end of Method 1: 16 is x itself (the trap), and when the rule doesn't work.
+def t11_13_no_long_way(M):
+    vid = 'solve-q-r26-t11-13'
+    beats = M.D['videos'][vid]['beats']
+    ns = [i for i, b in enumerate(beats, 1) if (b.get('title') or '').startswith('Method 2')]
+    if not ns: return
+    M.remove_slides(vid, ns)
+    m1 = [b for b in beats if (b.get('title') or '').startswith('Method 1')][0]
+    m1['lines'] += [
+        {'say': "Careful with choice one, sixteen: that's x itself — what you get if you solve for x. They didn't ask for x."},
+        {'say': "One limit: this works when the unknown is the base. If the unknown is IN the exponent and you must solve for it, use the usual rules."},
+    ]
+    for b in beats:
+        if b.get('title', '').startswith('Method 1'):
+            b['title'] = 'Given power to asked power'
+
+
+_apply_before_t11_13_no_long_way = apply
+
+
+def apply(M):
+    _apply_before_t11_13_no_long_way(M)
+    t11_13_no_long_way(M)   # runs last
