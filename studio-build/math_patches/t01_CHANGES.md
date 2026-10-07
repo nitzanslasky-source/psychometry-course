@@ -161,3 +161,8 @@ or with base-v18, and nothing taken from the Hebrew subtitles. None of them equa
 | q-038 | m, n opposites: m + n | x, y opposites: x + y (choices reordered) | 0 · 3 → 4 |
 | q-039 | smallest two-digit prime ÷ 4: remainder | smallest two-digit prime ÷ 3: remainder (trap 1 = uses 10) | 2 · 1 → 2 |
 | q-040 | p, q reciprocals: p·q | a, b reciprocals: a·b (choices reordered) | 1 · 1 → 3 |
+
+
+## 2026-10-07 methods spread
+Nothing added. Checked all 65 questions against every new method: no letter-expression questions (power count), the must/could/cannot items already plug in or use the tag form (q-r26-t01-06 writes q = 2k, q-r26-t01-19 uses 6k), and the mirror test cuts only one choice in q-r26-t01-09. The one unrecorded solution video (solve-q-r26-t01-11, brackets) has no fitting method, so no slide.
+All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

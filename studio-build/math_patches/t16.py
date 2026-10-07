@@ -2026,3 +2026,70 @@ _apply_before_hebrew_backcheck = apply
 def apply(M):
     _apply_before_hebrew_backcheck(M)
     hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last
+
+
+# =====================================================================================================================
+# 2026-10-07 methods spread: the 2026-10-06 exam methods shown wherever they genuinely help (teacher: "I don't want the
+# students to miss out on it"). (a) a written line appended to the explanation, (b) for a few UNRECORDED solution
+# videos one short extra slide at the end. A recorded video is never changed: any video with a file in
+# ~/Documents/Course.recordings is skipped at build time (its written line is still added). Runs LAST.
+# =====================================================================================================================
+import glob as _sp_glob, os as _sp_os, re as _sp_re
+
+
+def _sp_recorded():
+    out = set()
+    for f in _sp_glob.glob(_sp_os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = _sp_re.match(r'(.+)-\d{4}-\d\d-\d\dT[\d-]+Z\.(mp4|webm)$', _sp_os.path.basename(f))
+        if m: out.add(m.group(1))
+    return out
+
+# Mirror test (topic 13), the one-letter form: a letter that appears only in an even power can flip its sign and the
+# given stays the same, so a choice that fixes its sign is out. q-457 and q-476 (lines only; the q-457 video already
+# says "we learned nothing about b", so no extra slide). Tag it: the parity / divisibility questions here already
+# write the tags (b = 2k, n = 2k, 4a + 6, 9n² − 1 = 8k); products of consecutive numbers are outside its use.
+SPREAD_LINES = {
+    'q-457': [
+        'Method 2 · Mirror test: flip the sign of $b$ only. $b$ appears only as $b^2$, and $(-b)^2=b^2$, so the given stays the same. '
+        'Choice 2 ($b<0$) and choice 3 ($0<b$) turn into the opposite about $b$, so they are out.',
+        'Choices 1 and 4 are left. The top, $a^5$, must be negative, so $a<0$: choice 4.',
+    ],
+    'q-476': [
+        'Method 2 · Mirror test: flip the sign of $m$ only. $(-m)^6=m^6$, so the given stays the same. '
+        'Choice 2 ($m<0$) turns into $0<m$, and choice 4 turns into $m<0$: both turn into their opposites, so they are out.',
+        'Choices 1 and 3 are left. $n^3$ must be negative, so $n<0$: choice 1.',
+    ],
+}
+
+SPREAD_SLIDES = {}
+
+SPREAD_SAY = {}
+
+
+def spread_methods(M):
+    for qid, lines in SPREAD_LINES.items():
+        q = M.q(qid)
+        if all(l not in q['explanation'] for l in lines):
+            M.set_q(qid, expl=list(q['explanation']) + lines)
+    rec = _sp_recorded()
+    for vid, (after, title, script) in SPREAD_SLIDES.items():
+        if vid in rec: continue   # recorded: never change it
+        beats = M.video(vid)['beats']
+        n = next(i for i, b in enumerate(beats, 1) if b['title'] == after)
+        b = beats[n - 1]
+        M.insert_slides(vid, n, [dict(mode='question', active=b['active'], title=title,
+                                      pre=[dict(it) for it in b['items'][:b['pre']]], script=script)])
+        for k, old, new in SPREAD_SAY.get(vid, []):
+            sl = M.slide(vid, k)
+            assert any(l.get('say') == old for l in sl['lines']), (vid, k, old)
+            for l in sl['lines']:
+                if l.get('say') == old: l['say'] = new
+            M.touched_videos.add(vid)
+
+
+_apply_before_spread_methods = apply
+
+
+def apply(M):
+    _apply_before_spread_methods(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

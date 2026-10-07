@@ -225,3 +225,11 @@ Function `remove_quadratics` (runs LAST, after `trim_practice`). Teacher-approve
 - Q24 and the summary are not recorded.
 
 `math_check.py 7 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. `SRC=tmp_check/check-7-32.html python3 ai_check.py r26-t07-summary`: OK (by default ai_check reads ~/Downloads, so it was pointed at the check build). Q24 and the summary rendered and looked at.
+
+
+## 2026-10-07 methods spread
+Function `spread_methods` (runs last; append only). 5 questions, Shortcut: pick values that fit (same wording as the 2026-10-06 practice lines):
+- q-194 (recorded): b = 0 → a = 5 → only choice 4 holds. q-187 (recorded): a = 0, b = 5 fits → only choice 2. Both with the line 'why one set is enough' for necessarily-true questions.
+- q-216 (practice): A = 4, B = 2, C = 1 → ratio 4 : 1 → choice 1. q-217 (practice): k = 1, t = 3 → x = −1, y = −2, y/x = 2 → choice 2 (t = 1 would tie). q-201 (practice): x = 2 → y = −1 → choice 1.
+Checked, not added: q-203 (same expansion as the algebra, not faster), q-210/q-185 (one division is as fast), q-191 (the case split already is the two-sets idea), power count on q-189/q-190 (cuts one choice or none). No slides: every solution video in this topic is recorded (unchanged).
+All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

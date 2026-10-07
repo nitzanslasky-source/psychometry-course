@@ -211,3 +211,6 @@ card and figure; keys recomputed; Hebrew subtitles and course-wide duplicate sca
   165/6 = 27.5 (question figure and slide copies).
 Judgment call left as is: g147 now uses 1.3r (ring 0.69 < 1); the old 1.4r was a deliberate close call (0.96 vs 1). Same
 type and answer, a little less "close". `math_check.py 34 35 36 37 38 32` and full `math_check.py` → 0 / 0 / 0.
+
+## 2026-10-07 methods spread
+- Checked every question for the 2026-10-06 methods: scaling (compare by factors) is already the method in every written solution. Power count is not used in geo36-g145 / core-p18 because a given number there is a length, so the power count would mislead. No change.

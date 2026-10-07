@@ -212,3 +212,15 @@ Fixed (new function `rv_fixes`, runs at the end of `renumber_pass`):
   easier than the original 4 × 3/5 = 12/5 → 12/35. Now 5 beats / 8 beats / 2/3 s → 10/3 ÷ 8 = 5/12; distractors 16/15
   (wrong flip), 8/5, 5/8; Method 2 line updated.
 `python3 math_check.py 26 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered g095 and g098 videos and looked.
+
+## 2026-10-07 methods spread
+Function `spread_methods(M)` in t26.py runs last (after `renumber_pass`). Every question and every guided video was checked;
+each line was verified with numbers. Questions that already show the method (Q1, Q2, Q6, Q16, and the practice lines added
+2026-10-06 on p05, p12, p13, p16, p17, p25 …) are not touched. Nothing in topic 26 is recorded.
+- **Q10 `wp26-g102` (bakery queue)** — "Method 3 · Catching up (difference in rates)": 22.5 − 18 = 4.5 fewer an hour, 4 hours → 60 − 18 = 42. Written line only (the video already has the catching-up slide).
+- **Q11 `q-r26-t26-04` (average rate)** — "Method 3 · Percent shares as weights" (the hours are the weights): 20 + 0.4 · 10 = 24.
+  Written line + new video slide 4 "Method 3 · Shares as weights" (+0.35 min; it finishes the "weighted by time" estimate of Method 2 exactly).
+- **Q15 `wp26-g105b` (hay)** — "Method 2 · Compare by factors": sheep × ¾ → flip → 9 · 4/3 = 12. Written line only.
+- **Practice p09 (potter)** — "Method 2 · Percent shares as weights" (the days are the weights): 5 + 0.2 · 15 = 8.
+- **Practice p23 (two workers leave)** — "Method 2 · Compare by factors": 10 · 3/2 = 15.
+- **Practice p07 (fast sixth printer)** — "Method 2 · Compare by factors": team × 8/5 → flip → 8 · 5/8 = 5.

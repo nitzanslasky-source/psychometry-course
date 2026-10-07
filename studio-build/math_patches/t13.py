@@ -2306,3 +2306,62 @@ _apply_before_pen_or_click = apply
 def apply(M):
     _apply_before_pen_or_click(M)
     pen_or_click(M)   # 2026-10-07 pen or click: runs last
+
+
+
+# =====================================================================================================================
+# 2026-10-07 methods spread: the 2026-10-06 exam methods shown wherever they genuinely help (teacher: "I don't want the
+# students to miss out on it"). (a) a written line appended to the explanation, (b) for a few UNRECORDED solution
+# videos one short extra slide at the end. A recorded video is never changed: any video with a file in
+# ~/Documents/Course.recordings is skipped at build time (its written line is still added). Runs LAST.
+# =====================================================================================================================
+import glob as _sp_glob, os as _sp_os, re as _sp_re
+
+
+def _sp_recorded():
+    out = set()
+    for f in _sp_glob.glob(_sp_os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = _sp_re.match(r'(.+)-\d{4}-\d\d-\d\dT[\d-]+Z\.(mp4|webm)$', _sp_os.path.basename(f))
+        if m: out.add(m.group(1))
+    return out
+
+
+SPREAD_LINES = {
+    'q-368': ['Method 2 · Mirror test: swap $x$ and $y$: $|y+4x|=|4y+x|$ is the same given. $y<x$ turns into $x<y$, its opposite, and $x<y$ turns into $y<x$, so choices 1 and 4 are out. Between 2 and 3: $x=2$, $y=-2$ fits ($|-6|=|6|$) with $x\\ne y$, so choice 2 is out. The answer is choice 3.'],
+    'q-370': ['Method 2 · The most precise range: $x=-8$ works ($-8+8=0<12$), so choices 1 and 4 (which leave $-8$ out) are out. $x=2$ works ($4<12$), so choice 2 is out. The answer is choice 3.'],
+    'q-371': ['Method 2 · Pick values that fit: $q\\ne0$, so take $q=4$ and solve $|p+4|=|p-4|$. $p$ is as far from $-4$ as from $4$, so $p=0$. The choices at $q=4$: $8$, $0$, $-4$, $-2$. Only choice 2 gives $0$.'],
+    'q-374': ['Method 2 · Pick values that fit: take $n=1$. $|m+1|=|m-1|$ gives $m=0$, so $m\\cdot n=0$: choices 1 and 3 are out. Take $n=2$: again $m=0$ and $m\\cdot n=0$. The value does not change, so choice 4 is out too. The answer is choice 2.'],
+}
+
+SPREAD_SLIDES = {}
+
+SPREAD_SAY = {}
+
+
+def spread_methods(M):
+    for qid, lines in SPREAD_LINES.items():
+        q = M.q(qid)
+        if all(l not in q['explanation'] for l in lines):
+            M.set_q(qid, expl=list(q['explanation']) + lines)
+    rec = _sp_recorded()
+    for vid, (after, title, script) in SPREAD_SLIDES.items():
+        if vid in rec: continue   # recorded: never change it
+        beats = M.video(vid)['beats']
+        n = next(i for i, b in enumerate(beats, 1) if b['title'] == after)
+        b = beats[n - 1]
+        M.insert_slides(vid, n, [dict(mode='question', active=b['active'], title=title,
+                                      pre=[dict(it) for it in b['items'][:b['pre']]], script=script)])
+        for k, old, new in SPREAD_SAY.get(vid, []):
+            sl = M.slide(vid, k)
+            assert any(l.get('say') == old for l in sl['lines']), (vid, k, old)
+            for l in sl['lines']:
+                if l.get('say') == old: l['say'] = new
+            M.touched_videos.add(vid)
+
+
+_apply_before_spread_methods = apply
+
+
+def apply(M):
+    _apply_before_spread_methods(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

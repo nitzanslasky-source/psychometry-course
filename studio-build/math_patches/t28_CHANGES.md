@@ -246,3 +246,10 @@ Fixed:
 Judgment calls left for the teacher: practice removals q-15 / q-27 (at least one), q-22 (repeats with 0), q-23 (round
 table with a restriction) and q-18 (together) remove September items whose type the Hebrew practice does not cover —
 they repeat a kept item (q-14, q-21, p26, p23) rather than a Hebrew one; three practice answers are 720 (p07, p14, p15).
+
+## 2026-10-07 methods spread
+Function `spread_methods(M)` in t28.py runs last. Every guided and practice question was checked against the 2026-10-06
+methods. Most topic-28 questions are pure counting; the "groups with no names" and "at most → topic 21" cases already
+carry their line (wp28-g138, q-r26-t28-41, wp28-p13). The doors (topic 29) are not used here. Nothing in topic 28 is recorded.
+- **wp28-p16** (practice, 4^x = 2^(6n)): Shortcut · Pick values that fit (self-contained, topic 51 comes later): n = 1 → 4^x = 64 → x = 3; only 3n gives 3 (others 6, 2, 5).
+Total: 1 written line, no slides. Recorded: none.

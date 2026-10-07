@@ -181,3 +181,10 @@ No guided question, lesson, video or card changed.
 | q-r26-t08-20 | review: (x − 2)^(x + 3) = 1 = guided q-231 (mⁿ = 1) |
 
 `python3 math_check.py 3 4 5 6 8 32` → 0 / 0 / 0.
+
+
+## 2026-10-07 methods spread
+Function `spread_methods` (runs last; append only). 1 question:
+- Shortcut: the mirror test: q-r26-t08-05 (x³y² < 0, recorded video unchanged). y → −y keeps the given; choices 2, 3, 4 turn into their opposites → out with no numbers → choice 1.
+Checked, not added: power count on alg-extra-exponent-extra-5 and q-expression-extra-09 (cuts one choice). No slides: every solution video in this topic is recorded (unchanged).
+All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

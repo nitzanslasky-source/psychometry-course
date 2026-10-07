@@ -185,3 +185,6 @@ I reviewed the renumber pass on its own. I built topic 30 with and without `renu
 - **Practice:** going from 39 to 26 matches the audit target.
 
 No problems found, so no changes were made. Full `python3 math_check.py`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-07 methods spread
+- spread_methods() runs last. Written lines: Q5 (geo30-g006) Method 3 · Mirror test (m, n, k play the same role, so choices 2 and 3 are out); advanced practice geo30-advanced-p09 Shortcut · Pick values that fit. No slides (Q5's video already plugs in numbers and is 7.7 min). Nothing recorded.

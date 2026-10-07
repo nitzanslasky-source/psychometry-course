@@ -1712,3 +1712,49 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ======================================================================================================
+# 2026-10-07 methods spread (runs last). The 2026-10-06 methods are added where they really solve a question and
+# the solution does not show them yet: a "Method N" line at the end of the written solution, and one extra slide in
+# the clearest solution video. Nothing in topic 26 is recorded (checked 2026-10-07).
+# ======================================================================================================
+def _sp_line(M, qid, line):
+    ex = list(M.q(qid).get('explanation') or [])
+    if line in ex: return
+    M.set_q(qid, expl=ex + [line])
+
+
+def _sp_slide(M, qid, after_n, title, script):
+    vid = 'solve-' + qid
+    assert M.video(vid)['questionId'] == qid, vid
+    act = M.slide(vid, 2)['active']
+    M.insert_slides(vid, after_n, [dict(mode='question', active=act, title=title, pre=[Q(qid)], script=script)])
+
+
+def spread_methods(M):
+    # Q10 bakery queue: one rate against another -> only the difference counts
+    _sp_line(M, 'wp26-g102', r'Method 3 · Catching up (difference in rates): the baker completes $15$ orders in $40$ minutes $=22.5$ an hour, and $18$ come in. The queue shrinks by $22.5-18=4.5$ orders an hour. In $4$ hours: $4\cdot4.5=18$ fewer, and $60-18=42$.')
+    # Q11 average rate: the hours are the weights (topic 25)
+    _sp_line(M, 'q-r26-t26-04', r'Method 3 · Percent shares as weights (the weights are the hours): $3$ of the $5$ hours are at $20$ and $2$ of the $5$ ($40\%$) at $30$. Average $=20+0.4\cdot10=24$.')
+    _sp_slide(M, 'q-r26-t26-04', 3, 'Method 3 · Shares as weights', [
+        'Weighted by time — so the hours are the weights. Two of the five hours are at thirty.',
+        A("'Share at 30: 2 of 5 h = 40%' appears", T(r'Share at $30$: $\ 2$ of $5$ hours $=40\%$', size=40, gap=50)),
+        A("'20 + 0.4 · 10 = 24' appears", T(r'$20+0.4\cdot(30-20)=24$', size=44, gap=50)),
+        'Start at the slow rate, twenty. Add forty percent of the gap of ten: four. Twenty-four.',
+        D('Circle choice 2'),
+        'Choice two — exact, with no division by the total time.'])
+    # Q15 hay: compare by factors (the V made general)
+    _sp_line(M, 'wp26-g105b', r'Method 2 · Compare by factors: the sheep are $\times\frac{150}{200}=\times\frac34$. Fewer sheep, more days (opposite way) → flip to $\frac43$: $9\cdot\frac43=12$ days.')
+    # practice
+    _pm_add(M, 'wp26-p09', [r'Method 2 · Percent shares as weights (the weights are the days): $2$ of the $10$ days ($20\%$) are at $20$ bowls a day, the rest at $5$. Average $=5+0.2\cdot15=8$ bowls a day.'])
+    _pm_add(M, 'wp26-p23', [r'Method 2 · Compare by factors: after $4$ days, six workers would need $14-4=10$ more days. The team is $\times\frac46=\frac23$; fewer workers, more days (opposite way) → flip to $\frac32$: $10\cdot\frac32=15$ days.'])
+    _pm_add(M, 'wp26-p07', [r'Method 2 · Compare by factors: the team grows from $5$ to $5+3=8$ ordinary printers, $\times\frac85$. More printers, less time (opposite way) → flip to $\frac58$: $8\cdot\frac58=5$ hours.'])
+
+
+_apply_before_spread = apply
+
+
+def apply(M):
+    _apply_before_spread(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

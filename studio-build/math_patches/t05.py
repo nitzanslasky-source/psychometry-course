@@ -1690,3 +1690,34 @@ _apply_before_practice_cleanup = apply
 def apply(M):
     _apply_before_practice_cleanup(M)
     practice_cleanup(M)   # 2026-10-07 practice clean-up: runs last
+
+
+# =====================================================================================
+# 2026-10-07 methods spread: the 2026-10-06 exam methods added as an extra written line wherever they genuinely
+# solve the question (append only; the existing solution stays). Methods taught in a later topic are phrased as a
+# self-contained shortcut with a one-line why. No video changes. Runs LAST.
+# =====================================================================================
+SPREAD_METHODS = {
+    'q-r26-t05-04': [
+        'Method 2 · Power count: the top pieces $a^2b$ and $ab^2$ have power $3$ and the bottom $ab$ has power $2$, so the question has power $3-2=1$.',
+        'Choices 1, 3 and 4 ($ab$, $2ab$, $a^2+b^2$) have power $2$. Only choice 2 ($a+b$) has power $1$. The power count decides alone, and it breaks the $a=b=1$ tie at once.',
+    ],
+    'q-130': [
+        'Method 2 · Power count: every piece on top ($3m$, $3n$, $n$, $m$) has power $1$, and the bottom $m-n$ has power $1$, so the question has power $1-1=0$. Choices 2 ($4m$) and 4 ($4n$) have power $1$, so they are out.',
+        'Choices 1 and 3 are plain numbers. Plug in $m=1$, $n=0$: $\\frac{3\\cdot1-(0-1)}{1}=4$. The answer is choice 3.',
+    ],
+}
+
+
+def spread_methods(M):
+    for qid, lines in SPREAD_METHODS.items():
+        q = M.q(qid)
+        M.set_q(qid, expl=list(q['explanation']) + lines)
+
+
+_apply_before_spread_methods = apply
+
+
+def apply(M):
+    _apply_before_spread_methods(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

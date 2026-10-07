@@ -2517,3 +2517,46 @@ _apply_before_remove_quadratics = apply
 def apply(M):
     _apply_before_remove_quadratics(M)
     remove_quadratics(M)   # 2026-10-06 quadratics removed: runs last
+
+
+# =====================================================================================
+# 2026-10-07 methods spread: the 2026-10-06 exam methods added as an extra written line wherever they genuinely
+# solve the question (append only; the existing solution stays). Methods taught in a later topic are phrased as a
+# self-contained shortcut with a one-line why. No video changes. Runs LAST.
+# =====================================================================================
+SPREAD_METHODS = {
+    'q-194': [
+        'Shortcut: pick values that fit. Set $b=0$: $\\frac a5=1$, so $a=5$. Test the choices with $a=5$, $b=0$: $5=0$ ✗, $5<0$ ✗, $5=0$ ✗, $0<5$ ✓. Only choice 4 is left.',
+        'Why one set is enough here: a necessarily true choice holds for every set of values that fits, so a choice that fails for one fitting set is out.',
+    ],
+    'q-187': [
+        'Shortcut: pick values that fit. Try $0$ first: $a=0$, $b=5$ gives $(0-5)^2=25=0^2+5^2$ ✓. With this pair the numbers are not equal, their sum is $5$, and $0\\cdot5\\ne1$, so choices 1, 3 and 4 are out. Only choice 2 is left.',
+        'Why one set is enough here: a necessarily true choice holds for every set of values that fits, so a choice that fails for one fitting set is out.',
+    ],
+    'q-216': [
+        'Shortcut: pick values that fit. $A=4$, $B=2$, $C=1$ fit the given (the ratio $4:2$ equals the ratio $2:1$). Then the ratio $A:C$ is $4:1$.',
+        'With these values the choices give the ratios $4:1$, $1:1$, $1:4$ and $2:1$. Only choice 1. The right choice must be true for every set of values that fits, so one set is enough to knock out the others.',
+    ],
+    'q-217': [
+        'Shortcut: pick values that fit. Set $k=1$ and $t=3$ (both allowed): $x=2-3=-1$ and $y=-1+2-3=-2$, so $\\frac yx=2$.',
+        'With $k=1$, $t=3$ the choices give $\\frac23$, $2$, $0$ and $0$. Only choice 2. The right choice equals $\\frac yx$ for every allowed $k$ and $t$, so it must give $2$ here. (Avoid $t=1$: then choices 1 and 2 tie.)',
+    ],
+    'q-201': [
+        'Shortcut: pick values that fit. Set $x=2$: $\\frac{2}{y+2}=\\frac42=2$, so $y+2=1$ and $y=-1$.',
+        'With $x=2$ the choices give $-1$, $\\frac12$, $2$ and $2$. Only choice 1. The right choice gives $y$ for every allowed $x$, so it must give $-1$ at $x=2$.',
+    ],
+}
+
+
+def spread_methods(M):
+    for qid, lines in SPREAD_METHODS.items():
+        q = M.q(qid)
+        M.set_q(qid, expl=list(q['explanation']) + lines)
+
+
+_apply_before_spread_methods = apply
+
+
+def apply(M):
+    _apply_before_spread_methods(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

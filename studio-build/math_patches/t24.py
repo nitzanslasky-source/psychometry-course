@@ -1609,3 +1609,45 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ======================================================================================================
+# 2026-10-07 methods spread (runs last). The 2026-10-06 methods are added where they really solve a question:
+# a "Method N" line at the end of the written solution, and one extra slide in the clearest solution video.
+# Nothing in topic 24 is recorded (no take in ~/Documents/Course.recordings, checked 2026-10-07).
+# ======================================================================================================
+def _sp_line(M, qid, line):
+    ex = list(M.q(qid).get('explanation') or [])
+    if line in ex: return
+    M.set_q(qid, expl=ex + [line])
+
+
+def _sp_slide(M, qid, after_n, title, script):
+    vid = 'solve-' + qid
+    assert M.video(vid)['questionId'] == qid, vid
+    act = M.slide(vid, 2)['active']
+    M.insert_slides(vid, after_n, [dict(mode='question', active=act, title=title, pre=[Q(qid)], script=script)])
+
+
+def spread_methods(M):
+    # Q3 (chess and robotics): the overlap is 1/9 of one club and 1/4 of the other -> flip rule (topic 23)
+    _sp_line(M, 'wp24-g072', r'Method 3 · Flip rule: the same students are $\frac19$ of chess and $\frac14$ of robotics. Same part → flip: the ratio chess : robotics $=\frac14:\frac19=9:4$. The overlap is $1$ of the $9$ chess parts: chess only $9-1=8$, robotics only $4-1=3$. The ratio is $8:3$.')
+    _sp_slide(M, 'wp24-g072', 3, 'Method 3 · Flip rule', [
+        'One more way — the flip rule. The same students are a ninth of one club and a quarter of the other.',
+        A("'Same part → flip: chess : robotics = 9 : 4' appears", T(r'Same part $\to$ flip: $\ $ chess : robotics $=\frac14:\frac19=9:4$', size=40, gap=50)),
+        'Same part, so flip: the bigger fraction belongs to the smaller club. Chess to robotics — nine to four.',
+        A("'Both = 1 part → 9 − 1 = 8 and 4 − 1 = 3' appears", T(r'Both $=1$ part $\ \to\ \ 9-1=8$, $\ \ 4-1=3$', size=40, gap=50)),
+        'The students in both are one of chess\'s nine parts. Take it out of each club: eight and three.',
+        D('Circle choice 2'),
+        'Eight to three. Choice two. And nine to four is the trap — the whole clubs.'])
+
+    # Q23 (day and night shift): the shift shares are the weights -> percent shares as weights (topic 25, later)
+    _sp_line(M, 'q-r26-t24-05', r'Shortcut · Percent shares as weights: the shift shares are the weights. $30\%$ of the workers are at $40\%$ new, the rest at $10\%$, therefore the total is $10\%+0.3\cdot(40\%-10\%)=10\%+9\%=19\%$ — the night share of the gap.')
+
+
+_apply_before_spread = apply
+
+
+def apply(M):
+    _apply_before_spread(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

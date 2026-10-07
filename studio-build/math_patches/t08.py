@@ -1253,3 +1253,30 @@ _apply_before_practice_cleanup = apply
 def apply(M):
     _apply_before_practice_cleanup(M)
     practice_cleanup(M)   # 2026-10-07 practice clean-up: runs last
+
+
+# =====================================================================================
+# 2026-10-07 methods spread: the 2026-10-06 exam methods added as an extra written line wherever they genuinely
+# solve the question (append only; the existing solution stays). Methods taught in a later topic are phrased as a
+# self-contained shortcut with a one-line why. No video changes. Runs LAST.
+# =====================================================================================
+SPREAD_METHODS = {
+    'q-r26-t08-05': [
+        'Shortcut: the mirror test. Put $-y$ in place of $y$: $x^3(-y)^2=x^3y^2$, so the given stays exactly the same, and anything necessarily true must stay true in the mirror.',
+        "Choice 2 ($y<0$) turns into $y>0$, choice 3 ($xy<0$) into $xy>0$, and choice 4 ($x^2y>0$) into $x^2y<0$. Each turns into its opposite, and a statement and its opposite can't both always be true. All three are out with no numbers. Choice 1 doesn't change: it is the answer.",
+    ],
+}
+
+
+def spread_methods(M):
+    for qid, lines in SPREAD_METHODS.items():
+        q = M.q(qid)
+        M.set_q(qid, expl=list(q['explanation']) + lines)
+
+
+_apply_before_spread_methods = apply
+
+
+def apply(M):
+    _apply_before_spread_methods(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

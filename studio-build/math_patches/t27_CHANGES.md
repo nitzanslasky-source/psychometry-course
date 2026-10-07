@@ -264,3 +264,14 @@ Fixed in t27.py:
 Judgment calls (left): g115's combined speed 72 + 108 = 180 happens to equal the Hebrew's 80 + 100 = 180 (the question's own
 numbers all differ); g109 keeps the 3 : 2 speed ratio (2 h + 3 h) of the base and Hebrew — it is the method's structure.
 `python3 math_check.py 27 32` → 0 / 0 / 0; g117, g119, g121 rendered and checked.
+
+## 2026-10-07 methods spread
+Function `spread_methods(M)` in t27.py runs last (after `renumber_pass`). Every guided and practice question was checked
+against the 2026-10-06 methods; a method is added only where it gives the key at least as fast as the existing solution
+(each one checked numerically). Questions that already show the method are skipped (Q6 V/factors, chase/lap questions with
+gap ÷ difference, wp27-p02/p12/p21 and q-r26-t27-22 from the 2026-10-06 practice lines). Nothing in topic 27 is recorded.
+- **Q3 `wp27-g109`** (average speed 105/70): written line + new slide 3 "Method 2 · Shares as weights" (0.4 min): same distance → the times flip (2 : 3), so 2/5 of the time is at 105: 70 + 2/5 · 35 = 84. Slide 2 renamed "Method 1 · Logic, then a table". Board lines by click, pen only circles choice 2.
+- **Q19 `q-r26-t27-06`** (d km in t hours, minutes for k km): written line + new slide 4 "Method 3 · Power count with units" (0.5 min): k, d are km, t is hours, the answer is a time → choices 2 (1/hours) and 4 (km²/hours) out; minutes = hours × 60 → 60 on top → choice 3. Pen only crosses out 2 and 4 and circles 3.
+- **wp27-p08** (practice): Method 2 · Compare by factors: speed × 4/3 → time × 3/4: 2 · 3/4 = 1.5 h → 07:30.
+- **wp27-p03** (practice): Method 2 · Power count: each part a·3a, b·4b has power 2 → choices 1, 3 out; choice 4 opens to 9a² + 24ab + 16b² → choice 2.
+Total: 4 written lines, 2 slides (+0.9 min). Recorded: none.

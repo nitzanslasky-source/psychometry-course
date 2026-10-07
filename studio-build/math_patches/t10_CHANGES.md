@@ -277,3 +277,10 @@ Recorded and untouched: powers-techniques, solve-q-248…252.
 | q-r26-t10-01 explanation | square, factor (x−3)(x+1), check | same two methods in writing, no factoring; trap explained |
 
 Same answer (choice 3), same trap (choice 4). `python3 math_check.py 10 32` → 0/0/0; video rendered and checked.
+
+
+## 2026-10-07 methods spread
+Function `spread_methods` (runs last; append only). 1 practice question:
+- Method 2 · Power count: q-278 (3x⁹y⁴/(x³y²): power 13 − 5 = 8; choices 8, 5, 18, 13 → choice 1).
+Checked, not added: given power → asked power (taught in topic 11) has no question here; exponent-in-letter items (q-268, q-270) are not power-count questions. No slides: every solution video in this topic is recorded (unchanged).
+All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

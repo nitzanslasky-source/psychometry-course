@@ -1904,3 +1904,71 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ======================================================================================================
+# 2026-10-07 methods spread (runs last)
+# The 2026-10-06 exam methods, shown wherever they genuinely help: one extra written line on the question
+# (guided or practice; existing lines kept), and on the clearest guided videos one extra "Method N" slide.
+# Nothing in topics 21-29 is recorded (checked ~/Documents/Course.recordings 2026-10-07).
+# ======================================================================================================
+SPREAD_RECORDED = set()
+
+
+def _sp_line(M, qid, line):
+    """Append one method line to a question's written solution (existing lines kept)."""
+    ex = list(M.q(qid).get("explanation") or [])
+    if line in ex: return
+    M.set_q(qid, expl=ex + [line])
+
+
+def _sp_slide(M, qid, after_n, title, script):
+    """One extra method slide in the guided solution video of qid, after slide after_n. Sidebar unchanged."""
+    vid = "solve-" + qid
+    if vid in SPREAD_RECORDED: return
+    assert M.video(vid)["questionId"] == qid, vid
+    act = M.slide(vid, 2)["active"]
+    M.insert_slides(vid, after_n, [dict(mode="question", active=act, title=title, pre=[Q(qid)], script=script)])
+
+
+def spread_methods(M):
+    # ---- Q3 average speed: percent shares as weights (the times flip) - line + slide ----
+    qid = 'wp27-g109'
+    _sp_line(M, qid, r'Method 2 · Percent shares as weights (the weights are the hours): same distance, therefore the times flip. The speed ratio is $105:70=3:2$, and the time ratio is $2:3$. So $\frac25$ of the time is at $105$: average $=70+\frac25\cdot35=70+14=84$ kph.')
+    vid = 'solve-' + qid
+    M.slide(vid, 2)['title'] = 'Method 1 · Logic, then a table'
+    _sp_slide(M, qid, 2, 'Method 2 · Shares as weights', [
+        'Another way, with no distance at all. The hours are the weights.',
+        A("'Same distance → the times flip: time ratio 2 : 3' appears", T(r'Same distance $\to$ the times flip: time ratio $2:3$', size=40, gap=40)),
+        'Same road both ways, so the times flip. Speeds three to two — times two to three.',
+        A("'70 + 2/5 · 35 = 84' appears", T(r'$\frac25$ of the time at $105$: $\ 70+\frac25\cdot35=70+14=84$', size=40, gap=40)),
+        'Two fifths of the time is at a hundred five. Start at seventy and move two fifths of the gap of thirty-five: fourteen.',
+        D('Circle choice 2'),
+        'Eighty-four. Choice two.'])
+
+    # ---- Q19 letters in the choices: power count with units - line + slide ----
+    qid = 'q-r26-t27-06'
+    _sp_line(M, qid, r'Method 3 · Power count with units: $k$ and $d$ are kilometers, $t$ is hours, and the answer is a time. Choice 2 gives $\frac{1}{\text{hours}}$ and choice 4 gives $\frac{\text{km}^2}{\text{hours}}$: both are out. Minutes are $60$ times the hours, therefore the $60$ goes on top: choice 3.')
+    _sp_slide(M, qid, 3, 'Method 3 · Power count with units', [
+        'One more check, with no numbers: count the units.',
+        A("'k, d: km · t: hours · the answer is a time' appears", T(r'$k$, $d$: km $\ \cdot\ $ $t$: hours $\ \cdot\ $ the answer is a time', size=40, gap=40)),
+        'k and d are kilometers, t is hours. The answer is a time — so the kilometers must cancel.',
+        A("'(2) 1/hours ✗ · (4) km²/hours ✗' appears", T(r'(2) $\frac{1}{\text{hours}}$ ✗ $\quad$ (4) $\frac{\text{km}^2}{\text{hours}}$ ✗', size=40, gap=40)),
+        D('Cross out choices 2 and 4'),
+        'Choice two gives one over hours. Choice four gives kilometers squared over hours. Not times — out.',
+        A("'minutes = hours × 60 → 60 on top' appears", T(r'minutes $=$ hours $\times60$ $\to$ $60$ on top', size=40, gap=40)),
+        'Choices one and three are both times. Minutes are sixty times the hours, so the sixty goes on top.',
+        D('Circle choice 3'),
+        'Choice three.'])
+
+    # ---- practice: written lines only ----
+    _sp_line(M, 'wp27-p08', r'Method 2 · Compare by factors: the same route, and the speed is $\times\frac{20}{15}=\frac43$. Time goes the opposite way → flip to $\frac34$: $2\cdot\frac34=1.5$ hours. $1.5$ hours before 09:00 is 07:30.')
+    _sp_line(M, 'wp27-p03', r'Method 2 · Power count: each part is hours $\times$ speed, $a\cdot3a$ and $b\cdot4b$, power $2$. Choices 1 and 3 have power $1$: out. Choice 4 opens to $9a^2+24ab+16b^2$, not $3a^2+4b^2$: choice 2.')
+
+
+_apply_before_spread = apply
+
+
+def apply(M):
+    _apply_before_spread(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

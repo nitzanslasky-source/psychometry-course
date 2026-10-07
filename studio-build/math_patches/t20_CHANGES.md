@@ -221,3 +221,7 @@ the four expression forms are the question's logic. q-577 (a + b < 16, choices �
 (×25 → ×125 vs ×4 → ×8), q-579 (r < 8, "not necessarily true" vs Hebrew c < 5) — numbers already differ. The 3-4-5 / 6-8-10
 triples in solve-q-579 are standard examples. Practice and the English-made questions: no match.
 Checks: `python3 math_check.py 20 32` → 0 / 0 / 0; rendered r26-t20-summary and looked.
+
+
+## 2026-10-07 methods spread
+Every question checked against the 2026-10-06 methods; nothing added (no code). Already shown in the explanations: signs hidden in the given (q-r26-t20-12 starts with x² < x → 0 < x < 1), given power → asked power (q-578 "y = b^(3/2)", q-r26-t20-10 from the 2026-10-06 practice pass), at most / at least (q-577, alg-extra-unit-t20-2-1, q-584 already push the others to the extreme). Mirror test does not fit (q-579: the swap p ↔ q turns choices 1 and 4 into each other, twins, not opposites). Nothing in topic 20 is recorded.

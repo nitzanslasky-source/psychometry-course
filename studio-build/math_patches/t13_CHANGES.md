@@ -241,3 +241,11 @@ questions q-358, q-363, q-365, q-366, q-368 already differ (letters / numbers / 
 - solve-q-370 Q18 (9 -> 6 hand, 3 click). By hand: x < 0: 0 < 12 always, x = −8 check, marks. Clicks: x ≥ 0 case, x = −4 line, the choice-4 try.
 - r26-t13-summary (2 -> 1 hand, 1 click): x = 8 or x = −12. The circle stays.
 `math_check.py 13 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. All changed videos rendered and looked at.
+
+## 2026-10-07 methods spread
+Function `spread_methods` (runs last, after `pen_or_click`). Every guided and practice question checked; each line verified in Python (grid brute force). Nothing in topic 13 is recorded. Written lines only — no extra slides: the two videos where a method fits already show it (solve-q-368 ends with the swap mirror; solve-q-370 Method 2 already tests numbers).
+- **Method 2 · Mirror test**: q-368 (swap x, y: given unchanged; y < x and x < y turn into each other → 1, 4 out; x = 2, y = −2 kills 2). The video had it; the written solution did not.
+- **Method 2 · The most precise range**: q-370 (x = −8 ✓ kills 1, 4; x = 2 ✓ kills 2).
+- **Method 2 · Pick values that fit**: q-371 (q = 4 → p = 0; only choice 2 gives 0), q-374 (n = 1 → m = 0 → mn = 0; n = 2 gives 0 again, so not "cannot be determined").
+- Skipped: q-366 and q-379 (every choice survives the mirror), q-382 / q-377 (given is not a two-letter mirror), questions with number choices (plug in already) and the ones whose explanation already shows the method.
+`math_check.py 12 13 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

@@ -295,3 +295,13 @@ Topic total: 125 pen cues -> 57 by hand, 61 by click, 7 split (64 pen cues left,
 
 Check: `python3 math_check.py 11 32` -> 0 problems, 0 warnings, 0 layout problems. All 17 videos rendered and checked by
 eye (tmp_check/pen11a–e.png).
+
+
+## 2026-10-07 methods spread
+Function `spread_methods` (runs last, after `pen_or_click`). Every topic-11 question checked for the 2026-10-06 methods; each new line verified in python (sympy: power by scaling the letters, choice powers, fitting values).
+- **Power count** (a root halves the power): written lines in q-289 (decides: −4 vs 0, −14, −4, 2), q-288 (cuts to 2 choices, x = 1 decides), q-297 (decides: 5/4), q-298 (cuts to 2, m = n decides).
+- **Pick values that fit**: written line in practice q-315 (b = 1 → x = 2; only choice 2 gives 2).
+- **Extra slides** "Method 3 · Power count" at the end of solve-q-289 and solve-q-297 (about 0.4 min each; board by click, pen only to circle). solve-q-297's intro now says "Three ways: algebra, plugging in, and counting the powers."
+- A build-time guard skips the extra slide (and the intro edit) for any video that has a recording in ~/Documents/Course.recordings. At the time of editing only the lesson advanced-powers was recorded (unchanged; no slides go into lessons).
+- Not added: q-302, q-314 (power count already there); given power → asked power is already shown in q-301, q-307, q-319, q-r26-t11-02, q-r26-t11-13. The other questions are numbers only, have the letter in the exponent, or are determined systems.
+Check: `python3 math_check.py 11 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Both extended videos rendered and looked at.

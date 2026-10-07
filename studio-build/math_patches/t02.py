@@ -1082,3 +1082,34 @@ _apply_before_renumber_lessonq = apply
 def apply(M):
     _apply_before_renumber_lessonq(M)
     renumber_lesson_questions(M)   # 2026-10-07 (2): runs last
+
+
+# =====================================================================================
+# 2026-10-07 methods spread: the 2026-10-06 exam methods added as an extra written line wherever they genuinely
+# solve the question (append only; the existing solution stays). Methods taught in a later topic are phrased as a
+# self-contained shortcut with a one-line why. No video changes. Runs LAST.
+# =====================================================================================
+SPREAD_METHODS = {
+    'q-r26-t02-23': [
+        'Shortcut for the tie: count the powers. The power of a piece is the number of letters multiplied in it, and dividing subtracts. $\\frac1a$ and $\\frac1b$ have power $0-1=-1$, so the question has power $-1$.',
+        "Choice 2 ($\\frac{2}{ab}$) has power $0-2=-2$, and choice 4 ($\\frac{a+b}{ab}$) has power $1-2=-1$. Only choice 4 matches, with no second plug-in. Why it works: simplifying (common denominator, cancelling) never changes the power, so the right answer has the question's power.",
+    ],
+    'q-r26-t02-24': [
+        "Shortcut: shares as weights. Girls wear glasses at a rate of $\\frac14$, boys at $\\frac12$, and the shares $\\frac35$ and $\\frac25$ are the weights. Start from $\\frac14$ and add the boys' share of the gap: $\\frac14+\\frac25\\cdot\\left(\\frac12-\\frac14\\right)=\\frac14+\\frac1{10}=\\frac{7}{20}$.",
+        'Sense check: there are more girls, so the answer is closer to $\\frac14$ than to $\\frac12$, below the middle $\\frac38$. Only $\\frac{7}{20}$ fits.',
+    ],
+}
+
+
+def spread_methods(M):
+    for qid, lines in SPREAD_METHODS.items():
+        q = M.q(qid)
+        M.set_q(qid, expl=list(q['explanation']) + lines)
+
+
+_apply_before_spread_methods = apply
+
+
+def apply(M):
+    _apply_before_spread_methods(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

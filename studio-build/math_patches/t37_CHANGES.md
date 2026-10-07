@@ -181,3 +181,6 @@ Independent review of the renumber pass (same method as for topics 30–33). Fix
 Everything else checked OK (keys, traps, all coordinate figures at their true grid points, lesson boards and figures).
 Note: g169 passes through (3, −5) and p16 through (5, −3) — different questions, but near-mirror points in one topic.
 `math_check.py 34 35 36 37 38 32` and full `math_check.py` → 0 / 0 / 0.
+
+## 2026-10-07 methods spread
+- spread_methods() runs last. Shortcut · Pick values that fit line in geo37-core-p13 (m = 1, n = 2). Nothing recorded.

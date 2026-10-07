@@ -171,3 +171,14 @@ max overlap ≤ smaller group and the pair-overlap step still taught. Fixed four
 - g078 (Q4): bird species (the Hebrew: owls photographed) → two friends' lists of movies watched, 34 / 27 / 45 → 16.
 - g072 (Q3): 1/5 of chess (the Hebrew had 1/5 → 4x) → 1/9 of chess, 1/4 of robotics → 8x : 3x = 8 : 3; trap 9 : 4
   (whole clubs), 3 : 8 inverted; plug-in both = 2 → 18 and 8 → 16 : 6.
+
+## 2026-10-07 methods spread
+Function `spread_methods(M)` in t24.py runs last (after `renumber_pass`). Every question and every guided video was checked
+against the 2026-10-06 methods; each line was verified with numbers. Nothing in topic 24 is recorded.
+- **Q3 `wp24-g072` (chess and robotics)** — Flip rule (topic 23): the overlap is 1/9 of chess and 1/4 of robotics → same
+  part, flip → chess : robotics = 9 : 4; take the 1 shared part out of each → 8 : 3 (choice 2). Written line "Method 3 · Flip
+  rule" + new video slide 4 "Method 3 · Flip rule" (+0.6 min; 2 board lines by click, circle by hand; names 9 : 4 as the trap).
+- **Q23 `q-r26-t24-05` (day and night shift)** — Percent shares as weights (taught in topic 25, therefore written as a
+  self-contained "Shortcut"): 10% + 0.3 · 30% = 19% (choice 2). Written line only.
+- Checked, no fit: the other overlap questions use totals/ranges (min/max overlap, hidden total already added); Q10 is a
+  "percent of what?" table question, where the method lines would not be faster.

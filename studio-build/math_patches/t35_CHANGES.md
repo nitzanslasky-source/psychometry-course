@@ -169,3 +169,6 @@ spoken lines.
 Independent review of the renumber pass (built with / without `renumber_pass`, every question, solution video, lesson,
 card and figure compared and rendered; keys and video methods recomputed; Hebrew subtitles and course-wide duplicate
 scan checked). No errors found, no changes made. `math_check.py 34 35 36 37 38 32` and full `math_check.py` → 0 / 0 / 0.
+
+## 2026-10-07 methods spread
+- spread_methods() runs last. Method 2 · Compare by factors lines in Q3 (geo35-g122) and q-r26-t35-05; Method 2 · Power count lines in Q7 (geo35-g126) and geo35-core-p02. One spoken line on slide 4 of the Q7 video names the power count. No new slides (both videos already show the idea). Nothing recorded.

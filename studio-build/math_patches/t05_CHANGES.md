@@ -270,3 +270,10 @@ Trinomial scan of topics 1–8 practice and explanations ("p + q / pq"): the onl
 (q-113, q-116, q-expression-extra-15) stay: they are the (a ± b)² formula, not sum/product factoring. Lessons and guided
 videos that mention sum and product (topic 4 `r26-t04-formulas`, topic 5 q-127) are recorded and not touched.
 `python3 math_check.py 3 4 5 6 8 32` → 0 / 0 / 0.
+
+
+## 2026-10-07 methods spread
+Function `spread_methods` (runs last; append only). 2 questions, both with recorded videos (unchanged):
+- Method 2 · Power count: q-r26-t05-04 ((a²b + ab²)/(ab): power 1; choices 2, 1, 2, 2 → decides alone and breaks the a = b = 1 tie); q-130 ((3(m − n) − (n − m))/(m − n): power 0; 4m and 4n out; m = 1, n = 0 gives 4 → choice 3).
+Checked, not added: q-137, q-138, q-126, q-133, q-expression-extra-13/-11/-20, q-r26-t05-13 (every choice has the question's power) and the mixed ones. The unrecorded videos solve-q-r26-t05-17/-18 already teach the power count. No slides.
+All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

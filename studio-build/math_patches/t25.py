@@ -1542,3 +1542,36 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ======================================================================================================
+# 2026-10-07 methods spread (runs last). Percent shares as weights (taught in Q13 "Shares as weights") is added as
+# a written line to the other guided weighted-average questions. No slide: each of these videos already shows the
+# see-saw, which is the same picture. Nothing in topic 25 is recorded (checked 2026-10-07).
+# ======================================================================================================
+def _sp_line(M, qid, line):
+    ex = list(M.q(qid).get('explanation') or [])
+    if line in ex: return
+    M.set_q(qid, expl=ex + [line])
+
+
+def _sp_slide(M, qid, after_n, title, script):
+    vid = 'solve-' + qid
+    assert M.video(vid)['questionId'] == qid, vid
+    act = M.slide(vid, 2)['active']
+    M.insert_slides(vid, after_n, [dict(mode='question', active=act, title=title, pre=[Q(qid)], script=script)])
+
+
+def spread_methods(M):
+    _sp_line(M, 'wp25-g087', r'Shortcut · Percent shares as weights: the weights $2$ and $1$ are shares $\frac23$ and $\frac13$. Start at the low score and add the share of the high one times the gap: $61+\frac13\cdot36=61+12=73$.')
+    _sp_line(M, 'wp25-g088', r'Shortcut · Percent shares as weights: the lab report has $5$ of the $6$ weights. Start at the quiz score: $55+\frac56\cdot36=55+30=85$.')
+    _sp_line(M, 'wp25-g089', r'Method 2 · Percent shares as weights: the $12$ numbers are $\frac{12}{20}=60\%$ of all the numbers. Average $=58+0.6\cdot(78-58)=58+12=70$.')
+    _sp_line(M, 'wp25-g090', r'Method 2 · Percent shares as weights, backwards: $3.4=3+\text{share}\cdot(5-3)$, therefore the share of $5$-kg boxes is $\frac{0.4}{2}=\frac15$. $\frac15\cdot2{,}000=400$.')
+
+
+_apply_before_spread = apply
+
+
+def apply(M):
+    _apply_before_spread(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

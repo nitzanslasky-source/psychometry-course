@@ -235,3 +235,11 @@ Fixed (in `rn_guided`):
 Open: g156's grid label is the renderer's fixed text "Matching faces" (base renderer: `v.diagonal ? 'Matching faces' : …`,
 no per-item label), so it stays for the spinners — needs a renderer option, not a t29 change.
 `python3 math_check.py 29 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered g156 and g165 and looked.
+
+## 2026-10-07 methods spread
+Function `spread_methods(M)` in t29.py runs last (after `spinner_label`). Every guided and practice question was checked
+for "which door?" (COUNT / PATH / SYMMETRY) and the other 2026-10-06 methods. Almost every question already shows its door
+in the solution (count the pairs, tree, symmetry) or got a "Door:" line on 2026-10-06; those are skipped. No video slide:
+the guided videos already show both routes where two exist. Nothing in topic 29 is recorded.
+- **Q10 `wp29-g157`** (6 green, 6 white, two drawn, different colors): Shortcut · Which door? COUNT (self-contained, because Q10 comes before the card that names the doors): 66 equally likely pairs, 36 with two colors → 6/11.
+Total: 1 written line, no slides. Recorded: none.

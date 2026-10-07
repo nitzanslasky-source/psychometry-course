@@ -249,3 +249,12 @@ frame is shared), q-427 (30% / 540 vs 60% / 630), q-428 (6, 1, X; 4/8/12 vs 9, 7
 c = 7a, a = b/4), q-432 (5a³ − 5a vs 2a³ − 2a), q-435 (remainder 4 by 8 vs 4 by 6), lesson (sandwiches 8 / 35 shekels vs
 bottles 7 / 30). Keys brute-forced in Python; duplicate check over topics 1–38 (no new number equals another question or
 lesson/card example). `python3 math_check.py 15 32` → 0 / 0 / 0. Rendered solve-q-430, -434, -436.
+
+
+## 2026-10-07 methods spread
+Function `spread_methods` (runs last). Went through all 41 questions (16 guided + 25 practice) for the 2026-10-06 methods.
+- **Tag it** — 1 question, `q-r26-t15-01` (remainder of a − b): written line "Method 2 · Tag it: a = 7k + 2, b = 7m + 5 → a − b = 7(k − m − 1) + 4 → always 4, so 'cannot be determined' is out". Solution video `solve-q-r26-t15-01` (not recorded) gets one extra slide **"Method 3 · Tag it"** after "Method 2 · Check with numbers" (2 click lines, circle choice 2; ~0.4 min). Checked by computer: every a ≡ 2, b ≡ 5 (mod 7), a > b, gives a − b ≡ 4.
+- Not added (the explanation already writes the tags or the build-from-inside k): q-423, q-426, q-427, q-431, q-434, q-435, q-441, q-443, q-437, q-438, q-450, q-451, q-449, q-444, q-455, q-r26-t15-15; q-r26-t15-07 and q-453 got their Tag it line on 2026-10-06. Products of numbers in a row (q-432, q-447), digit / units-digit and counting questions: the method does not apply.
+- Other new methods (power count, mirror test, pick values, ranges): no question in this topic fits them.
+- Recorded videos: none in topic 15. A build-time guard skips the slide if `solve-q-r26-t15-01` is ever recorded.
+`python3 math_check.py 14 15 16 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0; the extended video was rendered and checked.

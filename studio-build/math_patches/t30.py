@@ -1468,3 +1468,52 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ======================================================================================================
+# 2026-10-07 methods spread (runs last). The 2026-10-06 methods (power count, compare by factors, mirror test, pick
+# values that fit) are added where they really solve a question: a "Method N" line (a "Shortcut" line for pick values
+# that fit, which is taught later, in topic 51) at the end of the written solution, and one extra slide in the
+# clearest solution videos. Geometry is not recorded (checked ~/Documents/Course.recordings 2026-10-07).
+# ======================================================================================================
+def _sp_line(M, qid, line, drop=None):
+    """Append one method line to a written solution (drop = a sentence the new line replaces)."""
+    ex = list(M.q(qid).get('explanation') or [])
+    if line in ex: return
+    if drop:
+        assert any(drop in e for e in ex), (qid, drop)
+        ex = [e.replace(drop, '') for e in ex]
+    M.set_q(qid, expl=ex + [line])
+
+
+def _sp_slide(M, qid, after_n, title, script):
+    """One extra method slide in a solution video; the question (with its figure) is pre-loaded as on slide 2."""
+    vid = 'solve-' + qid
+    assert M.video(vid)['questionId'] == qid, vid
+    s2 = M.slide(vid, 2)
+    M.insert_slides(vid, after_n, [dict(mode='question', active=s2['active'], title=title,
+                                        pre=[dict(it) for it in s2['items'][:s2['pre']]], script=script)])
+
+
+def _sp_say_after(M, vid, n, start, line):
+    """Insert one spoken line after the spoken line that starts with `start` (slide n)."""
+    def fn(ls):
+        k = next(j for j, l in enumerate(ls) if (l.get('say') or '').startswith(start))
+        return ls[:k + 1] + [{'say': line}] + ls[k + 1:]
+    if any(l.get('say') == line for l in M.slide(vid, n)['lines']): return
+    M.edit_lines(vid, n, fn)
+
+
+def spread_methods(M):
+    # Q5 (four lines, x from m, n, k): m, n and k play the same role -> mirror test (topic 13), formulas too
+    _sp_line(M, 'geo30-g006', r'Method 3 · Mirror test: $m$, $n$ and $k$ play the same role in the figure (three overlapping angles around one point), so swapping $m$ and $n$ cannot change $x$. Swap them: choices 1 and 4 stay the same, but choice 2 becomes $n-m+k$ and choice 3 becomes $n-m-k$. They change, so they are out. One plug-in ($m=n=k=140°$, $x=60°$) decides between 1 and 4: choice 4.')
+    # advanced practice (c + d vs EH + FG): the points are free -> pick values that fit (topic 51, later)
+    _sp_line(M, 'geo30-advanced-p09', r'Shortcut · Pick values that fit: the points can be anywhere in this order, and a "necessarily" answer must hold for every such line. So test easy lengths. $EF=1$, $FG=2$, $GH=3$: $c+d=3+5=8$ and $EH+FG=6+2=8$. Equal, so choices 1 and 3 are out. A second set ($1$, $1$, $1$) gives $4=4$ again: choice 2.')
+
+
+_apply_before_spread = apply
+
+
+def apply(M):
+    _apply_before_spread(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

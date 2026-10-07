@@ -194,3 +194,6 @@ adv. p15's rectangle proportions are not to the new EF (not labeled); adv. p09 i
 of 7 / 1), not a Hebrew number; f-p18 changed 4 × 5 → 3 × 4 so the small sides are now whole numbers (3, 4) instead of
 2 and 2.5 — same steps.
 `python3 math_check.py 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-07 methods spread
+- spread_methods() runs last. Q3 (geo32-g048): a Shortcut · Pick values that fit line (α = β = 18°, a rectangle) and a new slide 4 in its video "Shortcut · Pick values that fit" (about 0.4 min). Shortcut · Pick values that fit lines in geo32-advanced-p05 (half a regular hexagon) and geo32-advanced-p13 (both triangles equilateral). Nothing recorded.

@@ -2081,3 +2081,83 @@ _apply_before_pen_or_click = apply
 def apply(M):
     _apply_before_pen_or_click(M)
     pen_or_click(M)   # 2026-10-07 pen or click: runs last
+
+
+# =====================================================================================================================
+# 2026-10-07 methods spread: the 2026-10-06 exam methods shown wherever they genuinely help (teacher: "I don't want the
+# students to miss out on it"). (a) a written line appended to the explanation, (b) for a few UNRECORDED solution
+# videos one short extra slide at the end. A recorded video is never changed: any video with a file in
+# ~/Documents/Course.recordings is skipped at build time (its written line is still added). Runs LAST.
+# =====================================================================================================================
+import glob as _sp_glob, os as _sp_os, re as _sp_re
+
+
+def _sp_recorded():
+    out = set()
+    for f in _sp_glob.glob(_sp_os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = _sp_re.match(r'(.+)-\d{4}-\d\d-\d\dT[\d-]+Z\.(mp4|webm)$', _sp_os.path.basename(f))
+        if m: out.add(m.group(1))
+    return out
+
+
+SPREAD_LINES = {
+    'q-324': ['Method 2 · The most precise range: test numbers where the choices disagree. $x=7$: $17<19<23$ ✓, so choice 1 (which leaves $7$ out) is out. $x=0$: $-4<5<-5$ ✗, so choice 4 (it contains $0$) is out. $x=10$: $26<25$ ✗, so choice 3 is out. The answer is choice 2.'],
+    'q-325': ['Method 2 · The most precise range: $x=6$ gives $40<44$, but $44<20$ ✗. $6$ fails, so choices 1 and 4 (they contain $6$) are out. $x=0$ gives $28<8$ ✗, so choice 3 is out too. Only choice 2 is left.'],
+    'q-328': ['Method 2 · The most precise range: test $x=0$: $-\\frac95<9$ ✓. $0$ works, so every choice that leaves $0$ out (choices 2, 3 and 4) is out. The answer is choice 1, with no algebra.'],
+    'q-r26-t12-02': ['Method 2 · The most precise range: $x=0$ works ($-10<0$), so choice 1 (which leaves $0$ out) is out. $x=3$ fails ($8$ is not negative), so choice 3 is out. $x=-6$ fails ($8$ again), so choice 4 is out. The answer is choice 2.'],
+    'q-331': ['Method 2 · The most precise range: $x=2$, $y=\\frac12$ fits ($1<2$), so choices 1 and 3 (they keep $x$ below $1$) are out. $y=-\\frac12$ never fits: $\\frac{x^2}4<-\\frac{x^2}2$ is false for every $x$. So choice 2 (it contains $-\\frac12$) is out. The answer is choice 4.'],
+    'q-347': ['Method 2 · Pick values that fit: $x=\\frac12$ gives $y=\\frac38$ and $y^2=\\frac{9}{64}$. Choices 1, 3 and 4 fail for these values, so they are not necessarily true. Only choice 2 is left.'],
+    'q-349': ['Method 2 · The most precise range: $m=-1$ works ($n=0$: $-4<0<4$ ✓). So every choice that leaves $-1$ out (choices 1, 2 and 4) is out. The answer is choice 3.'],
+    'q-352': ['Method 2 · The most precise range: $x=\\frac18$ works ($\\frac14-\\frac18=\\frac18>0$). Every choice that leaves $\\frac18$ out (choices 1, 3 and 4) is out. The answer is choice 2.'],
+}
+
+SPREAD_SLIDES = {
+    'solve-q-325': ('Split — and no overlap', 'Method 2 · Test a number', [
+        "Or don't solve at all — test numbers. Six is in choices one and four.",
+        A('x = 6 test appears', T(r'$x=6$: $\ 40<44<20$ ✗', size=40)),
+        "Forty is less than forty-four. But forty-four less than twenty? No. Six fails — so every choice that contains six is out.",
+        D('Cross out choices 1 and 4'),
+        A('x = 0 test appears', T(r'$x=0$: $\ 28<8$ ✗', size=40)),
+        "Zero is in choice three. Twenty-eight less than eight? No. Out as well.",
+        D('Cross out choice 3 and circle choice 2'),
+        "Only choice two is left: no value works.",
+    ]),
+    'solve-q-328': ('Multiply by 10, then the rule', 'Method 2 · Test a number', [
+        "And a shortcut with no algebra: test one number. Zero is the easiest.",
+        A('x = 0 test appears', T(r'$x=0$: $\ -\frac95<\frac{18}{2}=9$ ✓', size=40)),
+        "Minus nine over five is negative. Less than nine. True — so zero must be in the answer.",
+        D('Cross out choices 2, 3 and 4'),
+        "Choices two, three and four leave zero out. Only choice one is left.",
+    ]),
+}
+
+SPREAD_SAY = {}
+
+
+def spread_methods(M):
+    for qid, lines in SPREAD_LINES.items():
+        q = M.q(qid)
+        if all(l not in q['explanation'] for l in lines):
+            M.set_q(qid, expl=list(q['explanation']) + lines)
+    rec = _sp_recorded()
+    for vid, (after, title, script) in SPREAD_SLIDES.items():
+        if vid in rec: continue   # recorded: never change it
+        beats = M.video(vid)['beats']
+        n = next(i for i, b in enumerate(beats, 1) if b['title'] == after)
+        b = beats[n - 1]
+        M.insert_slides(vid, n, [dict(mode='question', active=b['active'], title=title,
+                                      pre=[dict(it) for it in b['items'][:b['pre']]], script=script)])
+        for k, old, new in SPREAD_SAY.get(vid, []):
+            sl = M.slide(vid, k)
+            assert any(l.get('say') == old for l in sl['lines']), (vid, k, old)
+            for l in sl['lines']:
+                if l.get('say') == old: l['say'] = new
+            M.touched_videos.add(vid)
+
+
+_apply_before_spread_methods = apply
+
+
+def apply(M):
+    _apply_before_spread_methods(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

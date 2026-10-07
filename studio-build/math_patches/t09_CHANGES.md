@@ -213,3 +213,8 @@ Function `hebrew_backcheck(M)` in t09.py runs last.
 
 Left: card trap row 4√3 = √48 < √50 = 5√2 (a comparison; the Hebrew has no such comparison). No other matches.
 Keys brute-forced; duplicate scan over all topics clean. `python3 math_check.py 8 9 10 32` → 0/0/0; the lesson rendered and checked.
+
+
+## 2026-10-07 methods spread
+Nothing added. The only letter-choice item (alg-extra-root-practice-3) loses just one choice to the power count. No slides: every solution video in this topic is recorded (unchanged).
+All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

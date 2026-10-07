@@ -204,3 +204,14 @@ subtitles); every video step works with the new numbers; Method 2 / Shortcut lin
 or lesson example in topics 1–29; practice removals as logged (26 left, target ≈ 25).
 **Fixed:** wp25-g083 kept its old `solutionVisual` number line (Mina 166, Mean 171, Leo 176, Noor 179) → now Chloe 159,
 Mean 164, Ethan 169, Ryan 177 (155–180). `python3 math_check.py 25 32` → 0 / 0 / 0.
+
+## 2026-10-07 methods spread
+Function `spread_methods(M)` in t25.py runs last (after `renumber_pass`). Every question and every guided video was checked;
+each line was verified with numbers. Nothing in topic 25 is recorded. No video slide: each of these videos already shows the
+see-saw, which is the same picture as "shares as weights", and Q13 already has the "Shares as weights" slide.
+- **Q11 `wp25-g087`** — "Shortcut · Percent shares as weights" (the method is taught two questions later, in Q13): 61 + ⅓ · 36 = 73.
+- **Q12 `wp25-g088`** — "Shortcut · Percent shares as weights": 55 + ⅚ · 36 = 85.
+- **Q13 `wp25-g089`** — "Method 2 · Percent shares as weights" in the written solution (the video already has it): 58 + 0.6 · 20 = 70.
+- **Q14 `wp25-g090`** — "Method 2 · Percent shares as weights, backwards": 3.4 = 3 + share · 2 → share ⅕ → 400 boxes.
+- Practice already has the weights / pick-values / "in t years" lines from 2026-10-06; no other question fits a new method
+  (power count: no letter-answer question has choices of different powers).

@@ -1673,3 +1673,42 @@ _apply_before_spinner_label = apply
 def apply(M):
     _apply_before_spinner_label(M)
     spinner_label(M)
+
+
+# ======================================================================================================
+# 2026-10-07 methods spread (runs last)
+# The 2026-10-06 exam methods, shown wherever they genuinely help: one extra written line on the question
+# (guided or practice; existing lines kept), and on the clearest guided videos one extra "Method N" slide.
+# Nothing in topics 21-29 is recorded (checked ~/Documents/Course.recordings 2026-10-07).
+# ======================================================================================================
+SPREAD_RECORDED = set()
+
+
+def _sp_line(M, qid, line):
+    """Append one method line to a question's written solution (existing lines kept)."""
+    ex = list(M.q(qid).get("explanation") or [])
+    if line in ex: return
+    M.set_q(qid, expl=ex + [line])
+
+
+def _sp_slide(M, qid, after_n, title, script):
+    """One extra method slide in the guided solution video of qid, after slide after_n. Sidebar unchanged."""
+    vid = "solve-" + qid
+    if vid in SPREAD_RECORDED: return
+    assert M.video(vid)["questionId"] == qid, vid
+    act = M.slide(vid, 2)["active"]
+    M.insert_slides(vid, after_n, [dict(mode="question", active=act, title=title, pre=[Q(qid)], script=script)])
+
+
+def spread_methods(M):
+    # Most topic-29 questions already show their door (COUNT / PATH / SYMMETRY), several via the 2026-10-06
+    # practice lines. Q10 comes before the card that names the doors, therefore its line is a self-contained shortcut.
+    _sp_line(M, 'wp29-g157', r'Shortcut · Which door? COUNT — every pair of counters is equally likely, therefore $P=$ good pairs $\div$ all pairs. All pairs: $\frac{12\cdot11}{2}=66$. Pairs with two colors: $6\cdot6=36$. $P=\frac{36}{66}=\frac6{11}$.')
+
+
+_apply_before_spread = apply
+
+
+def apply(M):
+    _apply_before_spread(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

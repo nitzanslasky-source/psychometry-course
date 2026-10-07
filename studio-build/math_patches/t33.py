@@ -2862,3 +2862,61 @@ def renumber_pass(M):
     rn_practice(M)
     rn_lessons_cards(M)
     _sync_canvas(M)
+
+
+# ======================================================================================================
+# 2026-10-07 methods spread (runs last). The 2026-10-06 methods (power count, compare by factors, mirror test, pick
+# values that fit) are added where they really solve a question: a "Method N" line (a "Shortcut" line for pick values
+# that fit, which is taught later, in topic 51) at the end of the written solution, and one extra slide in the
+# clearest solution videos. Geometry is not recorded (checked ~/Documents/Course.recordings 2026-10-07).
+# ======================================================================================================
+def _sp_line(M, qid, line, drop=None):
+    """Append one method line to a written solution (drop = a sentence the new line replaces)."""
+    ex = list(M.q(qid).get('explanation') or [])
+    if line in ex: return
+    if drop:
+        assert any(drop in e for e in ex), (qid, drop)
+        ex = [e.replace(drop, '') for e in ex]
+    M.set_q(qid, expl=ex + [line])
+
+
+def _sp_slide(M, qid, after_n, title, script):
+    """One extra method slide in a solution video; the question (with its figure) is pre-loaded as on slide 2."""
+    vid = 'solve-' + qid
+    assert M.video(vid)['questionId'] == qid, vid
+    s2 = M.slide(vid, 2)
+    M.insert_slides(vid, after_n, [dict(mode='question', active=s2['active'], title=title,
+                                        pre=[dict(it) for it in s2['items'][:s2['pre']]], script=script)])
+
+
+def _sp_say_after(M, vid, n, start, line):
+    """Insert one spoken line after the spoken line that starts with `start` (slide n)."""
+    def fn(ls):
+        k = next(j for j, l in enumerate(ls) if (l.get('say') or '').startswith(start))
+        return ls[:k + 1] + [{'say': line}] + ls[k + 1:]
+    if any(l.get('say') == line for l in M.slide(vid, n)['lines']): return
+    M.edit_lines(vid, n, fn)
+
+
+def spread_methods(M):
+    # Q19 (semicircle perimeter : triangle perimeter): power count (topic 5) cuts the two choices with r
+    _sp_line(M, 'geo33-g096', r'Method 2 · Power count: a perimeter has power 1, so perimeter $\div$ perimeter has power $1-1=0$. Choice 2, $\frac{\pi+2}{3r}$, has power $-1$, and choice 4, $\frac{r(\pi+2)}{3}$, has power $1$: both are out. Choice 1 leaves out the diameter $2r$ of the semicircle: choice 3.',
+             drop=' A ratio of two perimeters cannot contain r.')
+    _sp_say_after(M, 'solve-geo33-g096', 4, 'But if we enlarge or shrink the whole figure',
+                  "That's the power count from algebra: a perimeter has power 1, so perimeter over perimeter has power 1 minus 1 — zero. No r can stay.")
+    # advanced practice (five semicircular arcs, average radius k): all radii k -> pick values that fit; tie -> powers
+    _sp_line(M, 'geo33-advanced-p07', r'Shortcut · Pick values that fit: only the average is given, so take all five radii equal to $k$. Each arc is $\pi k$, and five arcs are $5\pi k$. Tie? Check the powers (power count): with $k=1$, $5\pi k^2$ is $5\pi$ too, but a length has power 1, and $5\pi k^2$ has power 2 — out.')
+    # advanced practice (ring between concentric circles, tangent chord 16): radii free -> pick values that fit
+    _sp_line(M, 'q-r26-t33-10', r'Shortcut · Pick values that fit: the radii are not given, and the question expects one answer, so any pair that fits will do. Take the small radius $6$: half the chord is $8$, so $R=10$ ($6, 8, 10$). Ring: $100\pi-36\pi=64\pi$.')
+    # advanced practice (four tangent circles): one radius free -> pick values that fit
+    _sp_line(M, 'geo33-advanced-p15', r'Shortcut · Pick values that fit: only the distances are given, so choose one radius and the rest follow. $a=1$: $b=7-1=6$, $c=11-6=5$, $d=15-5=10$. $AD=a+d=1+10=11$.')
+    # foundation practice (equal inscribed angles at K): one figure that fits knocks out three choices
+    _sp_line(M, 'geo33-foundation-p04', r'Shortcut · Pick values that fit: draw one figure that fits — arcs $LM=MN=30°$, so arc $NK=120°$. Then $\angle LOM=30°$ but $2\angle MON=60°$ (choice 4 out), chord KM (on an arc of $150°$) is longer than KN (on $120°$) (choice 1 out), and $\angle KML=90°$, an angle on the diameter (choice 2 out). Choice 3 is left.')
+
+
+_apply_before_spread = apply
+
+
+def apply(M):
+    _apply_before_spread(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

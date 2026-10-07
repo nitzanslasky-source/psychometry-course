@@ -199,3 +199,10 @@ Left on purpose: q-494 (Hebrew lesson example, exponent −1 → ours −3), q-4
 the test value −1/8 is the natural clean cube root), q-500 (20 → 6), lesson "find the range" (x<x³<x² → x<x⁵<x⁴): already
 different numbers. q-496 / q-497 / q-501 keep the Hebrew claim structure with renamed letters (letter-only questions;
 the renumber rules allow letters/order changes) — only their test numbers were changed; teacher may want new structures.
+
+
+## 2026-10-07 methods spread
+Function `spread_methods` (runs last; append only; a recorded video is skipped at build time). Every guided and practice question checked against the 2026-10-06 methods. Nothing in topic 17 is recorded.
+- **Method 2 · The most precise range** (one allowed value kills every choice that leaves it out) — written line in 4 questions, each decided by ONE test value (checked in python): q-498 (x = ½ → choice 4), q-r26-t17-03 (x = −3 → 6/x = −2 → choice 3), q-r26-t17-09 (x = −1 → 1/x = −1 → choice 2), q-506 (c = −½ → k = 1/64 → choice 3).
+- No extra video slide: solve-q-498 already tests the ranges (Method 2 · Plug in the answers), and solve-q-r26-t17-03 already tests the ends.
+- Not added: signs hidden in the given (q-501, q-510 already start with it; q-498 already argues the signs); power count (q-495, q-505: every choice has the same power); mirror test (no symmetric given in this topic); q-509 already tests one number per range.

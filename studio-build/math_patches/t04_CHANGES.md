@@ -228,3 +228,8 @@ lesson, video or card changed (the recorded lesson `r26-t04-formulas` is untouch
 | q-r26-t04-17 | review: x − y = 5 → (x − y)² − 2(x − y) = topic 5 guided q-r26-t05-03 |
 
 `python3 math_check.py 3 4 5 6 8 32` → 0 / 0 / 0.
+
+
+## 2026-10-07 methods spread
+Nothing added. Power count only cuts one choice where it applies (q-120, q-107, q-115) and the rest are mixed expressions; the pick-values checks (q-r26-t04-01, q-r26-t04-07) are already there. No slides: every solution video in this topic is recorded (unchanged).
+All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

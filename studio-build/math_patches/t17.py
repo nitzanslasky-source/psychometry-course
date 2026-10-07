@@ -1663,3 +1663,65 @@ _apply_before_hebrew_backcheck = apply
 def apply(M):
     _apply_before_hebrew_backcheck(M)
     hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last
+
+
+# =====================================================================================================================
+# 2026-10-07 methods spread: the 2026-10-06 exam methods shown wherever they genuinely help (teacher: "I don't want the
+# students to miss out on it"). (a) a written line appended to the explanation, (b) for a few UNRECORDED solution
+# videos one short extra slide at the end. A recorded video is never changed: any video with a file in
+# ~/Documents/Course.recordings is skipped at build time (its written line is still added). Runs LAST.
+# =====================================================================================================================
+import glob as _sp_glob, os as _sp_os, re as _sp_re
+
+
+def _sp_recorded():
+    out = set()
+    for f in _sp_glob.glob(_sp_os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = _sp_re.match(r'(.+)-\d{4}-\d\d-\d\dT[\d-]+Z\.(mp4|webm)$', _sp_os.path.basename(f))
+        if m: out.add(m.group(1))
+    return out
+
+SPREAD_LINES = {
+    # The most precise range (topic 12): a value that really happens kills every choice that leaves it out.
+    'q-498': [
+        'Method 2 · The most precise range: test $x=\\frac12$ first. $\\frac1{256}<\\frac1{128}$ ✓, so $x=\\frac12$ is allowed, and every choice that leaves it out is out: choices 1, 2 and 3. The answer is choice 4.'],
+    'q-r26-t17-03': [
+        'Method 2 · The most precise range: take one allowed value, $x=-3$. Then $\\frac6x=-2$, and the right range must contain $-2$. Only choice 3 does, so choices 1, 2 and 4 are out.'],
+    'q-r26-t17-09': [
+        'Method 2 · The most precise range: $x=-1$ is allowed and gives $\\frac1x=-1$. Every choice that leaves $-1$ out is out: choices 1, 3 and 4. The answer is choice 2.'],
+    'q-506': [
+        'Method 2 · The most precise range: $c=-\\frac12$ is allowed and gives $k=\\frac1{64}$. Only choice 3 contains it ($0<\\frac1{64}<\\frac12$), so choices 1, 2 and 4 are out.'],
+}
+
+SPREAD_SLIDES = {}
+
+SPREAD_SAY = {}
+
+
+def spread_methods(M):
+    for qid, lines in SPREAD_LINES.items():
+        q = M.q(qid)
+        if all(l not in q['explanation'] for l in lines):
+            M.set_q(qid, expl=list(q['explanation']) + lines)
+    rec = _sp_recorded()
+    for vid, (after, title, script) in SPREAD_SLIDES.items():
+        if vid in rec: continue   # recorded: never change it
+        beats = M.video(vid)['beats']
+        n = next(i for i, b in enumerate(beats, 1) if b['title'] == after)
+        b = beats[n - 1]
+        M.insert_slides(vid, n, [dict(mode='question', active=b['active'], title=title,
+                                      pre=[dict(it) for it in b['items'][:b['pre']]], script=script)])
+        for k, old, new in SPREAD_SAY.get(vid, []):
+            sl = M.slide(vid, k)
+            assert any(l.get('say') == old for l in sl['lines']), (vid, k, old)
+            for l in sl['lines']:
+                if l.get('say') == old: l['say'] = new
+            M.touched_videos.add(vid)
+
+
+_apply_before_spread_methods = apply
+
+
+def apply(M):
+    _apply_before_spread_methods(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

@@ -237,3 +237,6 @@ Fixed:
 - **Summary "Area":** the altitude example gave 28.8 (1728 / 60), an awkward decimal → legs 45, 60, hypotenuse 75: 2700 / 75 = 36.
 
 `python3 math_check.py 31 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-07 methods spread
+- spread_methods() runs last. Q2 (geo31-g011): a Shortcut · Pick values that fit line (k = 60°, an equilateral triangle) and a new slide 3 in its video "Shortcut · Pick values that fit" (about 0.4 min). Q15 (geo31-g018): Method 2 · Compare by factors line (half the side → a quarter of the area); the video already shows it on slide 3. Nothing recorded.

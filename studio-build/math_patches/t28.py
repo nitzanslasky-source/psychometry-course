@@ -2135,3 +2135,42 @@ def renumber_pass(M):
     rn_practice_questions(M)
     rn_practice(M)
     rn_sync(M)
+
+
+# ======================================================================================================
+# 2026-10-07 methods spread (runs last)
+# The 2026-10-06 exam methods, shown wherever they genuinely help: one extra written line on the question
+# (guided or practice; existing lines kept), and on the clearest guided videos one extra "Method N" slide.
+# Nothing in topics 21-29 is recorded (checked ~/Documents/Course.recordings 2026-10-07).
+# ======================================================================================================
+SPREAD_RECORDED = set()
+
+
+def _sp_line(M, qid, line):
+    """Append one method line to a question's written solution (existing lines kept)."""
+    ex = list(M.q(qid).get("explanation") or [])
+    if line in ex: return
+    M.set_q(qid, expl=ex + [line])
+
+
+def _sp_slide(M, qid, after_n, title, script):
+    """One extra method slide in the guided solution video of qid, after slide after_n. Sidebar unchanged."""
+    vid = "solve-" + qid
+    if vid in SPREAD_RECORDED: return
+    assert M.video(vid)["questionId"] == qid, vid
+    act = M.slide(vid, 2)["active"]
+    M.insert_slides(vid, after_n, [dict(mode="question", active=act, title=title, pre=[Q(qid)], script=script)])
+
+
+def spread_methods(M):
+    # Few topic-28 questions fit the new methods: most are pure counting, and the "no names" and "at most" cases
+    # already carry their line (wp28-g138, q-r26-t28-41, wp28-p13). Practice: one written line.
+    _sp_line(M, 'wp28-p16', r'Shortcut · Pick values that fit: one equation with two letters, and the question expects one answer, therefore any values that fit give it. Take $n=1$: $4^x=2^6=64$, therefore $x=3$. Only $3n$ gives $3$ (the others give $6$, $2$ and $5$).')
+
+
+_apply_before_spread = apply
+
+
+def apply(M):
+    _apply_before_spread(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

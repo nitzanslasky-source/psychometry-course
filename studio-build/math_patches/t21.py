@@ -1691,3 +1691,55 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ======================================================================================================
+# 2026-10-07 methods spread (runs last). The 2026-10-06 exam methods are added wherever they genuinely solve a
+# question: one written line at the end of the solution (existing lines kept), and on the clearest guided videos
+# one extra "Method N" slide (board lines by click, pen only for marks). Methods taught in a later topic are
+# written as a self-contained "Shortcut · <name>" line. Nothing in this topic is recorded (checked 2026-10-07).
+# ======================================================================================================
+SPREAD_RECORDED = set()
+
+
+def _sp_line(M, qid, line):
+    ex = list(M.q(qid).get('explanation') or [])
+    if line in ex: return
+    M.set_q(qid, expl=ex + [line])
+
+
+def _sp_slide(M, qid, after_n, title, script):
+    vid = 'solve-' + qid
+    if vid in SPREAD_RECORDED: return
+    assert M.video(vid)['questionId'] == qid, vid
+    act = M.slide(vid, 2)['active']
+    M.insert_slides(vid, after_n, [dict(mode='question', active=act, title=title, pre=[Q(qid)], script=script)])
+
+
+def spread_methods(M):
+    # ---- The most precise range (topic 12): test a number inside one choice and outside another ----
+    _sp_line(M, 'wp21-g018', r'Method 2 · The most precise range: test a number inside one choice and outside another. $13$: the fourth holds at least $5+3\cdot4=17$ ✗, therefore choice 4 is out. $35$: four more steps need at least $35+4\cdot4=51>47$ ✗, therefore choice 3 is out. $17$: $5, 9, 13, 17, 21, 25, 29, 47$ ✓, therefore choice 2, which leaves $17$ out, is out. Choice 1.')
+    _sp_line(M, 'wp21-p09', r'Method 2 · The most precise range: test a number inside one choice and outside another. $20$ cakes: $5$ parents and $5$ teachers ✓, therefore choice 4 (from $22$) is out. $26$ cakes: $p$ parents bake $3p+(10-p)=2p+10=26$, therefore $p=8$, but only $7$ parents were invited ✗. Choices 1 and 2 contain $26$, therefore they are out. Choice 3.')
+    _sp_line(M, 'wp21-p19', r'Method 2 · The most precise range: test a number inside one choice and outside another. $22$ stockers leave $11$ cashiers, not more than the $11$ night workers ✗: choice 3 is out. $16$ stockers leave $17$ cashiers, more than the stockers ✗: choices 2 and 4 are out. Choice 1.')
+    vid = 'solve-wp21-g018'
+    if vid not in SPREAD_RECORDED:
+        M.set_slide(vid, 2, title='Method 1 · Min front, max back')
+    _sp_slide(M, 'wp21-g018', 2, 'Method 2 · The most precise range', [
+        "The choices are ranges. So test a number that some choices contain and others don't.",
+        A("'13? at least 5 + 3 · 4 = 17 ✗' appears", T(r'$13$? The fourth is at least $5+3\cdot4=17$ ✗', size=40)),
+        D('Cross out choice 4'),
+        'Thirteen? The fourth holds at least seventeen. Choice four is out.',
+        A("'35? 35 + 4 · 4 = 51 > 47 ✗' appears", T(r'$35$? Then the last needs $35+4\cdot4=51>47$ ✗', size=40)),
+        D('Cross out choice 3'),
+        'Thirty-five? Four more steps would need fifty-one. Too many. Choice three is out.',
+        A("'17? 5, 9, 13, 17, …, 47 ✓' appears", T(r'$17$? $\ 5, 9, 13, 17, 21, 25, 29, 47$ ✓', size=40)),
+        D('Cross out choice 2 and circle choice 1'),
+        'Seventeen works. Choice two leaves it out, so it goes too. Choice one.'])
+
+
+_apply_before_spread = apply
+
+
+def apply(M):
+    _apply_before_spread(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

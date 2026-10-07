@@ -2379,3 +2379,50 @@ _apply_before_rn = apply
 def apply(M):
     _apply_before_rn(M)
     renumber_pass(M)
+
+
+# ======================================================================================================
+# 2026-10-07 methods spread (runs last). The 2026-10-06 methods (power count, compare by factors, mirror test, pick
+# values that fit) are added where they really solve a question: a "Method N" line (a "Shortcut" line for pick values
+# that fit, which is taught later, in topic 51) at the end of the written solution, and one extra slide in the
+# clearest solution videos. Geometry is not recorded (checked ~/Documents/Course.recordings 2026-10-07).
+# ======================================================================================================
+def _sp_line(M, qid, line, drop=None):
+    """Append one method line to a written solution (drop = a sentence the new line replaces)."""
+    ex = list(M.q(qid).get('explanation') or [])
+    if line in ex: return
+    if drop:
+        assert any(drop in e for e in ex), (qid, drop)
+        ex = [e.replace(drop, '') for e in ex]
+    M.set_q(qid, expl=ex + [line])
+
+
+def _sp_slide(M, qid, after_n, title, script):
+    """One extra method slide in a solution video; the question (with its figure) is pre-loaded as on slide 2."""
+    vid = 'solve-' + qid
+    assert M.video(vid)['questionId'] == qid, vid
+    s2 = M.slide(vid, 2)
+    M.insert_slides(vid, after_n, [dict(mode='question', active=s2['active'], title=title,
+                                        pre=[dict(it) for it in s2['items'][:s2['pre']]], script=script)])
+
+
+def _sp_say_after(M, vid, n, start, line):
+    """Insert one spoken line after the spoken line that starts with `start` (slide n)."""
+    def fn(ls):
+        k = next(j for j, l in enumerate(ls) if (l.get('say') or '').startswith(start))
+        return ls[:k + 1] + [{'say': line}] + ls[k + 1:]
+    if any(l.get('say') == line for l in M.slide(vid, n)['lines']): return
+    M.edit_lines(vid, n, fn)
+
+
+def spread_methods(M):
+    # core practice (line through the origin and (m, n)): pick values that fit (topic 51, later)
+    _sp_line(M, 'geo37-core-p13', r'Shortcut · Pick values that fit: any $m\ne n$ that are positive will do. Take $m=1$, $n=2$: the line goes through $(1,\ 2)$, so $y=2x$. Only $(-3,\ {-}6)$ fits: $-6=2\cdot(-3)$. $\left(1,\ \frac12\right)$, $(4,\ 2)$ and $(1,\ {-}2)$ do not.')
+
+
+_apply_before_spread = apply
+
+
+def apply(M):
+    _apply_before_spread(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

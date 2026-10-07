@@ -1,0 +1,2861 @@
+{
+ "_about": "What each added item teaches - shown in the studio (studio_added.py) and in Added-Content-List.md. Written 2026-10-07 from each item's board items and spoken lines. Keys: videos = added video id; slides = \"<video id>#<slide index, 0-based>\" of an added slide in one of the teacher's videos; lines = \"<video id>#<slide index>\" of a teacher's slide with added lines. t = slide title (used when the index moved), d = the note. The build warns about any added item without a note.",
+ "videos": {
+  "r26-t01-exam-words": {
+   "t": "Exam Words",
+   "d": "the English exam words — sum, difference, product, quotient, multiple/divisor, digit, distinct, at least/at most, consecutive even/odd (steps of 2)"
+  },
+  "r26-t01-must-could": {
+   "t": "Must, Could, Cannot",
+   "d": "must / could / cannot questions — one failing example kills must, one working example proves could; test 0, 1, −1, ½, 10"
+  },
+  "r26-t01-summary": {
+   "t": "Summary",
+   "d": "recap of topic 1 — number words, opposites/reciprocals, exam words, must/could/cannot, sign rules, calculating by hand, order of operations"
+  },
+  "r26-t01-summary-fast": {
+   "t": "Summary: Fast Calculation",
+   "d": "recap of the fast-calculation tricks — move/shift for sums and differences, split a factor, ×9/×11, double-halve, ×25, round numbers, special products"
+  },
+  "r26-t02-shortcuts": {
+   "t": "Fraction Shortcuts",
+   "d": "fraction shortcuts for speed — estimate with 0, ½, 1; test a rule with easy numbers; cross shortcut ad+bc/bd; mixed numbers by parts"
+  },
+  "r26-t02-summary": {
+   "t": "Summary",
+   "d": "recap of all fraction rules — reducing, splitting the top, negatives, multiplying, of the rest, dividing, common denominator, order, shortcuts, decimals"
+  },
+  "r26-t03-summary": {
+   "t": "Fractions: Summary",
+   "d": "recap of comparing fractions — cross-multiply with positive bottoms, signs first, flip, benchmark ½, letters, ranges, plugging in"
+  },
+  "r26-t04-formulas": {
+   "t": "Contracted Multiplication Formulas",
+   "d": "the three contracted multiplication formulas — (a±b)², (a−b)(a+b) — forward, backward, number shortcuts, perfect-square check, values without x"
+  },
+  "r26-t04-summary": {
+   "t": "Expressions: Summary",
+   "d": "recap of expressions — like terms, brackets, common factor, the three formulas and their traps, number shortcuts, values without x, trinomials"
+  },
+  "r26-t05-power-count": {
+   "t": "Count the Powers",
+   "d": "the power-count method — count letters multiplied in each piece (multiply adds, divide subtracts); choices with a different or mixed power are out; also breaks plug-in ties"
+  },
+  "r26-t05-shortcuts": {
+   "t": "Exam Shortcuts",
+   "d": "three exam shortcuts: factor x²+bx+c by sum and product, multiply near a round number (96·104 = 100²−4²), use a given block (x+y=5)"
+  },
+  "r26-t05-summary": {
+   "t": "Summary: Expressions",
+   "d": "recaps expressions: expression vs equation, splitting a fraction (top only), opposite brackets = −1, main fraction bar, factoring, round numbers, given block, plugging in, power count"
+  },
+  "r26-t06-summary": {
+   "t": "Summary: One Equation",
+   "d": "recaps solving one equation: same on both sides, brackets and fractions, minus before a fraction, x cancels, restrictions, cross-multiply, don't divide by x, test the choices"
+  },
+  "r26-t06-summary-2": {
+   "t": "Summary: Systems of Equations",
+   "d": "recaps systems of equations: substitution, add or subtract (half the sum / half the difference), matching coefficients, building what they ask for, multiplying or dividing equations"
+  },
+  "r26-t07-more-tools": {
+   "t": "More Equation Tools",
+   "d": "short intro to two more equation tools: multiply or divide equations that are products or ratios, and the x + 1/x pattern"
+  },
+  "r26-t07-summary": {
+   "t": "Equations: Summary",
+   "d": "recaps equations: don't divide by x, plus and minus roots, fraction = 0, building the expression, hidden formulas, two unknowns, plugging in or trying the choices"
+  },
+  "r26-t08-summary": {
+   "t": "Exponent Laws: Summary",
+   "d": "recaps exponents: exponents 1, 0, −n, the three laws, same exponent, negative bases, when aᵇ = 1, splitting and counting copies, comparing powers"
+  },
+  "r26-t08-traps": {
+   "t": "Exponent Traps",
+   "d": "exponent traps: powers of numbers between 0 and 1 get smaller (0.3² = 0.09), and comparing powers by making the bases or the exponents the same"
+  },
+  "r26-t09-summary": {
+   "t": "Roots — Summary",
+   "d": "recaps roots: never negative, √(x²) = |x|, simplifying, multiply/divide, fractional powers, no splitting over sums, comparing, 0–1 order, conjugates, root equations"
+  },
+  "r26-t09-traps": {
+   "t": "Roots — Exam traps",
+   "d": "roots traps — estimate a root between perfect squares (8 < √70 < 9) and square a sum of roots with the middle term 2√(ab)"
+  },
+  "r26-t10-power-traps": {
+   "t": "Exponent Traps — Sums of Powers",
+   "d": "same exponent, different bases — multiply the bases: 2ˣ · 5ˣ = 10ˣ, 6ˣ/3ˣ = 2ˣ (not the same-base add-exponents law)"
+  },
+  "r26-t10-summary": {
+   "t": "Exponents & Roots — Summary",
+   "d": "recaps exponents and roots: dividing roots, prime bases, negative exponents, adding roots, power and root equations, not dividing by x, sums of powers, common factor"
+  },
+  "r26-t11-summary": {
+   "t": "Advanced Exponents & Roots: Summary",
+   "d": "recaps advanced roots and powers: prime bases, hidden formulas, root of a root, undoing a power, conjugates, product = 0, power = 1, \"or\" claims, two routes"
+  },
+  "r26-t11-tools": {
+   "t": "Advanced Tools — Roots & Powers",
+   "d": "intro to section B: lists the tools ahead — root of a root, undoing a power, conjugates, product = 0, \"or\" claims"
+  },
+  "r26-t12-combining": {
+   "t": "Combining Inequalities & Ranges",
+   "d": "the range of x² trap: −3 < x < 2 gives 0 ≤ x² < 9, not 4 < x² < 9 (zero is inside the range)"
+  },
+  "r26-t12-signs": {
+   "t": "Signs, Fractions & Must-Be-True",
+   "d": "three tools: order of x², x, √x, 1/x between 0 and 1; reciprocals (same sign flip, different signs no flip); must/could/cannot"
+  },
+  "r26-t12-summary": {
+   "t": "Inequalities: Summary",
+   "d": "recaps inequalities: the flip, x disappearing, systems, x² inequalities, testing choices, signs and fractions, combining ranges, must/could/cannot"
+  },
+  "r26-t13-mirror": {
+   "t": "The Mirror Test",
+   "d": "the mirror test — if the given stays the same after flipping all signs or swapping letters, any choice that turns into its opposite is out"
+  },
+  "r26-t13-summary": {
+   "t": "Absolute Value — Summary",
+   "d": "recaps absolute value: distance from zero, the rules, sign clues, equations, inequalities, negative right side, distance, plugging in"
+  },
+  "r26-t13-tools": {
+   "t": "Absolute Value — Exam Tools",
+   "d": "absolute value tools — |x|² = x², √(x²) = |x|, |a−b| = |b−a|, and |x − a| as the distance between x and a"
+  },
+  "r26-t14-more-tools": {
+   "t": "More Factor Tools",
+   "d": "intro to the harder prime questions plus the perfect-square rule: every exponent even, e.g. smallest k with 12k a square → k = 3"
+  },
+  "r26-t14-summary": {
+   "t": "Prime Numbers — Summary",
+   "d": "recaps primes: definition, only even prime 2, odd sum → one prime is 2, test up to √n, GCD/LCM, counting divisors, perfect squares"
+  },
+  "r26-t15-remainder-tools": {
+   "t": "More Remainder Tools",
+   "d": "four tools: take away the remainder, units digit of products and powers (cycles of 4), numbers in a row (÷2, ÷6), tag it (x = 6k)"
+  },
+  "r26-t15-summary": {
+   "t": "Division & Remainder: Summary",
+   "d": "recaps divisibility signs, building divisors from coprime parts, fraction-of-fraction stories, remainder rules, changing the divisor, units digits, numbers in a row"
+  },
+  "r26-t16-consecutive-sums": {
+   "t": "Sums of Consecutive Integers",
+   "d": "counting integers from a to b (b − a + 1) and squares of neighbors (b² − a² = a + b), before the sum questions"
+  },
+  "r26-t16-summary": {
+   "t": "Integers: Summary",
+   "d": "recaps sign rules for products and sums, never-negative pieces, consecutive integers, sums in a row, parity, products in a row, candidates"
+  },
+  "r26-t17-reading-the-line": {
+   "t": "Reading the Number Line",
+   "d": "three tools: times a negative (other side of zero, order flips), reciprocals by range, and test numbers 2, ½, −½, −2 plus borders"
+  },
+  "r26-t17-summary": {
+   "t": "The Number Line: Summary",
+   "d": "recaps the four ranges, multiply/divide moves, hierarchy, exceptions, the arrows, reciprocals, test numbers, must vs could, distance and midpoint"
+  },
+  "r26-t18-facts": {
+   "t": "Number Facts for Letter Puzzles",
+   "d": "three number facts: repdigits (AA = 11A, AAA = 111A, BBBB ÷ BB = 101), units-digit cycles of powers, largest/smallest number with a digit sum"
+  },
+  "r26-t18-summary": {
+   "t": "Letter Puzzles: Summary",
+   "d": "recaps letter puzzles: letters as digits, the 4 steps, carries, leading digit and size, special digits, plugging in, algebraic-form facts, power cycles"
+  },
+  "r26-t19-summary": {
+   "t": "Summary",
+   "d": "recaps new operations: slots and order, brackets on every input, inside-out nesting, matching the input, conditions, circular rules, always/must questions"
+  },
+  "r26-t20-counting": {
+   "t": "Counting Integers & Pigeonhole",
+   "d": "counting integers from a to b (b − a + 1; strictly between b − a − 1) and the pigeonhole principle with remainders"
+  },
+  "r26-t20-summary": {
+   "t": "Summary",
+   "d": "recaps algebraic understanding: three tools, must/could/cannot, which numbers to plug in, 0–1 and negatives, integer gaps, scaling, counting, pigeonhole"
+  },
+  "r26-t21-summary": {
+   "t": "Summary: Trial, Limits and Patterns",
+   "d": "recaps trial and error: three types, trying in order, the constant-step skip, min/max push rules, 1+…+k, worst luck + 1, patterns and cycles"
+  },
+  "r26-t22-exam-tools": {
+   "t": "Three Exam Tools",
+   "d": "one equation, two unknowns: 2a + 3p = 13 gives only multiples like 4a + 6p = 26; anything else cannot be determined"
+  },
+  "r26-t22-shortcuts": {
+   "t": "Shortcuts Ahead",
+   "d": "intro to the advanced general word problems: no formula, build an equation or understand and calculate; try each shortcut first"
+  },
+  "r26-t22-summary": {
+   "t": "Summary: Word Problems and Ratios",
+   "d": "recaps word problems and ratios: three stages, words to math, equal ratios, inverse proportion, ratios with x, the part that stays, rounding, shortcuts"
+  },
+  "r26-t23-summary": {
+   "t": "Summary: Percentages",
+   "d": "recaps percentages: the percent formula, key fractions, equal ratios, the 10% method, change in percent, what is my 100%, multipliers, traps"
+  },
+  "r26-t23-traps": {
+   "t": "Percent Traps and Shortcuts",
+   "d": "estimating a percent instead of calculating: 90 of 320 lies between 25% (80) and 30% (96), so pick the choice in that range"
+  },
+  "r26-t24-summary": {
+   "t": "Summary: Overlapping Groups",
+   "d": "recaps overlapping groups: four regions, A+B−both+neither, max/min overlap, other regions, squares method, two-way tables, three groups"
+  },
+  "r26-t24-three-groups": {
+   "t": "Three Groups",
+   "d": "three groups — least in all three = total minus those missing a group (A+B+C − 2·total, or 0); most = smallest group or smallest pair"
+  },
+  "r26-t24-two-way": {
+   "t": "Two-Way Tables",
+   "d": "two-way tables — two yes/no traits; percents of different groups can't be added or averaged, so plug in 100 and fill a table with totals"
+  },
+  "r26-t25-summary": {
+   "t": "Summary",
+   "d": "recaps averages: middle of evenly spaced numbers, sum = number × average, the balance, values changing, largest value, weighted averages, see-saw"
+  },
+  "r26-t26-factors": {
+   "t": "Compare by Factors",
+   "d": "compare by factors — new value = old value × every factor that changed; same way as is, opposite way flipped, shared cancels"
+  },
+  "r26-t26-summary": {
+   "t": "Summary",
+   "d": "recaps work and rate: rate × time = work, direct/inverse, rate in percent, job = 1, working together, two-worker shortcut, V rule, worker-hours, average rate"
+  },
+  "r26-t27-graphs": {
+   "t": "Percents and Letters",
+   "d": "intro to two exam favorites — speed changing by a percent (a percent faster is not the same percent less time) and letter answers"
+  },
+  "r26-t27-special": {
+   "t": "Special Motion Cases",
+   "d": "intro to special motion cases — trains with a length, boats on a river, circular tracks; same formula, only distance or speed changes"
+  },
+  "r26-t27-summary": {
+   "t": "Summary",
+   "d": "recaps motion: the formula and units, the table, average speed, what is fixed, relative speed, special cases, percents and letter answers"
+  },
+  "r26-t28-arrange": {
+   "t": "Together, Apart and Repeats",
+   "d": "intro to rows with a rule: together, apart, repeats and a round table — one question for each"
+  },
+  "r26-t28-cases": {
+   "t": "Boxes and \"At Least One\"",
+   "d": "two quick checks: test a formula on a small case you can draw; choices differing by k! → ask if order matters"
+  },
+  "r26-t28-summary": {
+   "t": "Summary",
+   "d": "recaps counting: stages multiply, repeats, factorial algebra, ÷2 or ÷k!, who stays out, cases, all minus forbidden, boxes, together/apart, round table"
+  },
+  "r26-t29-more-rules": {
+   "t": "Probability",
+   "d": "exactly one: add the orders (RB + BR); exactly k = one order × number of orders, e.g. 3 coins, one head = 3/8"
+  },
+  "r26-t29-summary": {
+   "t": "Summary: Probability",
+   "d": "recaps probability: wanted/possible, possible first, complement, AND/OR with overlap, at least one, exactly k, trees, symmetry shortcuts, the three doors"
+  },
+  "r26-t30-summary": {
+   "t": "Summary: Lines and Angles",
+   "d": "recaps lines and angles: 360°/180°, right angle only if marked, adjacent/vertical, parallel lines, Z and U, proving parallel, segments"
+  },
+  "r26-t30-summary-2": {
+   "t": "Summary: Harder Line and Angle Questions",
+   "d": "recaps harder angle questions: one parallel pair at a time, 180°/360° anchors, plugging in letters, overlapping angles, auxiliary line, zig-zag rule"
+  },
+  "r26-t31-summary": {
+   "t": "Summary",
+   "d": "recaps triangles: median/altitude/bisector, angle sum, exterior angle, side limits, special triangles, area, Pythagoras, triples, 30-60-90 and 45-45-90"
+  },
+  "r26-t31-summary-2": {
+   "t": "Summary",
+   "d": "recaps advanced triangle methods: plug in for letters, longest side opposite largest angle, min/max perimeter, not necessarily, shaded areas, same height ratios"
+  },
+  "r26-t32-perimeter": {
+   "t": "Perimeter Tricks",
+   "d": "perimeter tricks: a cut counts twice (pieces = original + 2 × cut) and a notch adds 2 × its depth"
+  },
+  "r26-t32-summary": {
+   "t": "Summary",
+   "d": "recaps quadrilaterals: the family tree, diagonal properties, angles, area formulas, the height vs sloping side, dropping heights, scaling area by k²"
+  },
+  "r26-t32-summary-2": {
+   "t": "Summary",
+   "d": "recaps advanced quadrilateral ideas: not necessarily, equal halves, area ratios, shaded areas, hidden ratios, perimeter tricks, perimeter + diagonal"
+  },
+  "r26-t33-more-tools": {
+   "t": "More Circle Tools",
+   "d": "two equal circles through each other's centers (120°, common region = 2 × (sector − triangle)) and the ring chord (ring = πh²)"
+  },
+  "r26-t33-summary": {
+   "t": "Circles: Summary",
+   "d": "recaps circles: equal radii, central = 2× inscribed, diameter angle, inscribed quad, chords, tangents, inscribed circle, area/circumference scaling, sectors"
+  },
+  "r26-t33-summary-2": {
+   "t": "Advanced Circles: Summary",
+   "d": "recaps advanced circles: shaded areas (what minus what), segments, nested shapes, special triangles, common tangent, ring, totals, plugging numbers/estimates"
+  },
+  "r26-t34-summary": {
+   "t": "Polygons: Summary",
+   "d": "recaps polygons: angle sum 180(n−2), one regular angle, exterior angles 360°, diagonals n(n−3)/2, hexagon triangles, areas, angles around a point"
+  },
+  "r26-t35-cones": {
+   "t": "Cones: Slant Height and Turning",
+   "d": "solids made by turning — rectangle about a side → cylinder, right triangle about a leg → cone; the side on the axis is the height"
+  },
+  "r26-t35-cubefacts": {
+   "t": "Cube and Box Facts",
+   "d": "cube and box facts — diagonals a√2, a√3, √(a²+b²+c²); cube angles 90/45/60; counting faces/edges/vertices; V = √(ab·bc·ca)"
+  },
+  "r26-t35-summary": {
+   "t": "Summary: Solid Geometry",
+   "d": "recaps solids: straight vs pointed volume, surface area, water and units, right triangles inside, cube/box facts, turning shapes, cubes in a box, counting"
+  },
+  "r26-t35-water": {
+   "t": "Water Level",
+   "d": "water in containers — 1 ml = 1 cm³, 1 liter = 1000 cm³; water height = volume ÷ base (2 L in 20×10 → 10 cm)"
+  },
+  "r26-t36-map-scale": {
+   "t": "Map Scale",
+   "d": "map scale as similarity — scale 1:n means real lengths × n and real areas × n²"
+  },
+  "r26-t36-summary": {
+   "t": "Summary: Similarity",
+   "d": "recaps similarity: k, k², k³, always-similar shapes, similar triangles, exam pictures, same height, leftovers, similar solids, percent change, map scale"
+  },
+  "r26-t37-summary": {
+   "t": "Summary",
+   "d": "recaps the coordinate plane: points, quadrants, reflections, lengths along axes, Pythagoras, box method, circles, slope, midpoint, lines and axes"
+  },
+  "r26-t38-summary": {
+   "t": "Summary",
+   "d": "recaps geometric understanding: shape efficiency, moving the vertex, angle on a diameter, rods rule, acute/obtuse test, must/could/cannot, sliding apex"
+  },
+  "solve-pt-q24": {
+   "t": "Plugging In Numbers",
+   "d": "x ≠ −5, xy + 5y = 2x + 10, find y (pick x = 0 → y = 2; check x = 1; factoring explains why)"
+  },
+  "solve-q-224": {
+   "t": "Exponent Questions",
+   "d": "4^(x+2) = ? (split the exponent: 4ˣ·4² = 16·4ˣ; or check with x = 1)"
+  },
+  "solve-q-226": {
+   "t": "Exponent Questions",
+   "d": "(3·3⁻⁵)/3⁻⁸ = ? (lonely 3 is 3¹; add then subtract exponents, minus minus is plus → 3⁴ = 81; traps explained)"
+  },
+  "solve-q-231": {
+   "t": "Exponent Questions",
+   "d": "mⁿ = 1, which is not possible? (test each choice against the three cases: m=1, m=−1 with n even, n=0 → m=0 impossible)"
+  },
+  "solve-q-r26-t01-01": {
+   "t": "Question 1",
+   "d": "sum of the digits of the smallest 3-digit number with distinct digits (build 102 from the left; trap: the number itself)"
+  },
+  "solve-q-r26-t01-05": {
+   "t": "Question 2",
+   "d": "x negative integer, y positive → which must be true (break choices with x = −1, y = ½ or 5; x − y < 0 survives)"
+  },
+  "solve-q-r26-t01-06": {
+   "t": "Question 3",
+   "d": "p prime, q even → which cannot be true (examples knock choices out; p·q is always even; trap: 0 is even)"
+  },
+  "solve-q-r26-t01-11": {
+   "t": "Question 5",
+   "d": "20 − (8−3+6) − (4−9) = ? (brackets first, or open brackets flipping every sign; trap: flipping only the first)"
+  },
+  "solve-q-r26-t01-15": {
+   "t": "Question 4",
+   "d": "23·47 = ? (last digit first: ends in 1; then estimate 20·47 and 25·50 to kill choices)"
+  },
+  "solve-q-r26-t02-01": {
+   "t": "Split the top",
+   "d": "(−6+15)/(−3) = ? (top first, or split the top; trap: dividing only the −6 → 17)"
+  },
+  "solve-q-r26-t02-05": {
+   "t": "Of the remaining",
+   "d": "240 L tank, 3/8 used, then 2/5 of the remaining → left (of means times; of the rest; trap 54)"
+  },
+  "solve-q-r26-t02-10": {
+   "t": "Fraction bar = brackets",
+   "d": "(2/3 − 1/2)/(1/4 + 1/3) = ? (fraction bar = brackets: top, bottom, then divide; trap: flipping the wrong one)"
+  },
+  "solve-q-r26-t02-15": {
+   "t": "Divide by 0.25",
+   "d": "3.6/0.25 = ? (÷0.25 = ×4 → 14.4; trap: multiplying by 0.25)"
+  },
+  "solve-q-r26-t02-19": {
+   "t": "Estimate with ½",
+   "d": "5/11 + 8/15 + 4/9 is closest to (estimate each ≈ ½ → 1½; no common denominator)"
+  },
+  "solve-q-r26-t03-01": {
+   "t": "Fraction Questions",
+   "d": "a < 0 < b → which is necessarily true (signs first: 1/a negative < 1/b; or plug in a = −3, b = 2)"
+  },
+  "solve-q-r26-t03-02": {
+   "t": "Fraction Questions",
+   "d": "0 < a < b → largest of a/b, (a+1)/(b+1), (a+5)/(b+5), 5a/5b (adding to top and bottom moves toward 1; plug in 1, 2)"
+  },
+  "solve-q-r26-t03-03": {
+   "t": "Fraction Questions",
+   "d": "0 < x < 1 → order of x², x, √x, 1/x (plug in x = ¼; or know the range table)"
+  },
+  "solve-q-r26-t04-01": {
+   "t": "Given: \\begin{cases} x+y=6 \\\\ xy=5 \\end{cases} What is the value of x^2+y^2?",
+   "d": "x + y = 6, xy = 5, find x² + y² (square the sum, subtract 2xy → 26; or spot 1 and 5)"
+  },
+  "solve-q-r26-t04-02": {
+   "t": "51^2-49^2=?",
+   "d": "51² − 49² = ? (difference of squares: 2·100 = 200; or the long way; trap: (51−49)² = 4)"
+  },
+  "solve-q-r26-t04-03": {
+   "t": "Which of the following expressions is equal to (a-b)^2 for all values of a and b?",
+   "d": "which equals (a−b)² for all a, b ((b−a)² = (a−b)², the square kills the minus; or plug in 5, 2)"
+  },
+  "solve-q-r26-t04-04": {
+   "t": "Given: x+\\frac{1}{x}=3 (x\\ne0). What is the value of x^2+\\frac{1}{x^2}?",
+   "d": "x + 1/x = 3, find x² + 1/x² (square both sides, middle term is 2 → 7; trap 9)"
+  },
+  "solve-q-r26-t05-02": {
+   "t": "Exam Shortcuts",
+   "d": "98·102 − 99·101 = ? (sum times difference around 100; 100² cancels → −4 + 1 = −3; trap: lost minus gives −5)"
+  },
+  "solve-q-r26-t05-03": {
+   "t": "Exam Shortcuts",
+   "d": "given a−b=3, (b−a)²+2a−2b = ? (use the block: 9+6 = 15; or plug in a=3, b=0)"
+  },
+  "solve-q-r26-t05-04": {
+   "t": "Exam Shortcuts",
+   "d": "(a²b+ab²)/ab = ? (ones give a three-way tie → new numbers a=2, b=3; or take out ab → a+b)"
+  },
+  "solve-q-r26-t05-17": {
+   "t": "Count the Powers",
+   "d": "(x³ + x²y)/(x + y) − xy = ? (count the powers: power 2 → only x(x − y); then factor and cancel to confirm)"
+  },
+  "solve-q-r26-t05-18": {
+   "t": "Count the Powers",
+   "d": "((a + b)² − (a − b)²)/2a = ? (plug in ones → three-way tie, broken by counting powers → 2b; then the algebra: 4ab/2a)"
+  },
+  "solve-q-r26-t06-01": {
+   "t": "Given: \\frac{x+2}{3}-\\frac{x-4}{6}=\\frac{x}{2} x = ?",
+   "d": "(x+2)/3 − (x−4)/6 = x/2 (multiply by 6, minus hits the whole numerator → x=4; or test the choices; trap gives 0)"
+  },
+  "solve-q-r26-t06-02": {
+   "t": "Given: \\frac{2x+1}{x-2}=\\frac{x+3}{x-2} x = ?",
+   "d": "(2x + 1)/(x − 2) = (x + 3)/(x − 2) (restriction first: algebra gives forbidden x = 2 → no solution; or test the choices)"
+  },
+  "solve-q-r26-t06-03": {
+   "t": "Given: \\begin{cases} 5x+3y=41 \\\\ 3x+5y=39 \\end{cases} x+y = ?",
+   "d": "5x+3y=41, 3x+5y=39, find x+y (add the equations: 8(x+y) = 80 → 10; the long way shown for contrast)"
+  },
+  "solve-q-r26-t06-04": {
+   "t": "Given: x > 0 and y > 0, and \\begin{cases} xy=20 \\\\ \\frac{x}{y}=5 \\end{cases} x-y = ?",
+   "d": "x, y > 0, xy = 20, x/y = 5, find x − y (multiply the equations: x² = 100 → 8; or substitution x = 5y)"
+  },
+  "solve-q-r26-t07-01": {
+   "t": "More Equation Tools",
+   "d": "x²y = 18, xy² = 12, find x/y (divide the equations → 18/12 = 3/2; check with x = 3, y = 2; trap: upside-down 2/3)"
+  },
+  "solve-q-r26-t07-02": {
+   "t": "More Equation Tools",
+   "d": "x+1/x = 6, find x²+1/x² (square both sides, middle term is 2 → 34; trap 36; with a minus it is −2)"
+  },
+  "solve-q-r26-t07-05": {
+   "t": "More Equation Tools",
+   "d": "(x + 1)² = (x − 3)², find x (equal squares → equal or opposite: x = 1; or expand both; trap: 'no solution')"
+  },
+  "solve-q-r26-t08-01": {
+   "t": "Exponent Questions",
+   "d": "2ⁿ+2ⁿ+2ⁿ+2ⁿ = ? (count the copies: 4·2ⁿ = 2^(n+2); check n=1, tie → n=2; bases never add)"
+  },
+  "solve-q-r26-t08-02": {
+   "t": "Exponent Questions",
+   "d": "0 < x < 1, which is smallest: x, x², x³, x⁻²? (plug in 1/2 → x³; x⁻² flips to 4)"
+  },
+  "solve-q-r26-t08-05": {
+   "t": "Exponent Questions",
+   "d": "x³y² < 0, what is necessarily true? (even power hides the sign, odd keeps it → x < 0)"
+  },
+  "solve-q-r26-t09-01": {
+   "t": "Roots Questions",
+   "d": "⁴√(9⁶) = ? (power over index: 9^(6/4) = 9^(3/2) = 27; or write 9 = 3² → 3¹²; trap: subtracting 6 − 4)"
+  },
+  "solve-q-r26-t09-02": {
+   "t": "Roots Questions",
+   "d": "which is largest: 5.2, 3√3, 2√7, √26 (square each / bring numbers inside the root: 27.04, 27, 28, 26)"
+  },
+  "solve-q-r26-t09-03": {
+   "t": "Roots Questions",
+   "d": "√(x+6) = x, find x (plug in the choices; −2 is a fake solution from squaring, a root is never negative)"
+  },
+  "solve-q-r26-t09-04": {
+   "t": "Roots Questions",
+   "d": "0 < x < 1, largest of x², x, √x, x³ (plug in x = 1/4; rule: between 0 and 1 powers shrink, the root grows)"
+  },
+  "solve-q-r26-t09-05": {
+   "t": "Roots Questions",
+   "d": "largest of √3, ⁶√28, ³√5, ⁶√26 (raise all to the 6th power to clear every root: 27, 28, 25, 26)"
+  },
+  "solve-q-r26-t09-06": {
+   "t": "Roots Questions",
+   "d": "1/(√3 − √2) = ? (multiply by the partner √3 + √2, bottom becomes 1; or check: choice × bottom = 1)"
+  },
+  "solve-q-r26-t10-01": {
+   "t": "Given: \\sqrt{2x+3}=x. x=?",
+   "d": "√(2x+3) = x, find x (x ≥ 0 rules out −1, then try choices; or square and check in the original — −1 is fake)"
+  },
+  "solve-q-r26-t10-02": {
+   "t": "2^{10}+2^{10}+2^{10}+2^{10}=?",
+   "d": "2¹⁰ + 2¹⁰ + 2¹⁰ + 2¹⁰ = ? (count the copies: 4 · 2¹⁰ = 2¹²; check with small numbers; traps 2⁴⁰, 8¹⁰)"
+  },
+  "solve-q-r26-t10-03": {
+   "t": "Given: 3^{x+2}-3^x=72. x=?",
+   "d": "3^(x+2) − 3ˣ = 72, find x (take out the smallest power: 8 · 3ˣ = 72; or try the choices from the middle)"
+  },
+  "solve-q-r26-t11-01": {
+   "t": "\\dfrac{1}{\\sqrt5-2}-\\dfrac{1}{\\sqrt5+2}=?",
+   "d": "1/(√5 − 2) − 1/(√5 + 2) = ? (conjugates: each bottom becomes 1 → 4; or estimate with √5 ≈ 2.24)"
+  },
+  "solve-q-r26-t11-02": {
+   "t": "Given: \\begin{cases} x>0 \\\\ \\sqrt[3]{x\\sqrt{x}}=2 \\end{cases} x=?",
+   "d": "x > 0, ³√(x√x) = 2, find x (write roots as powers: x^(1/2) = 2 → x = 4; or try the choices)"
+  },
+  "solve-q-r26-t11-13": {
+   "t": "Given: \\begin{cases} x>0 \\\\ \\sqrt[4]{x^3}=8 \\end{cases} \\sqrt{x^3}=\\ ?",
+   "d": "⁴√(x³) = 8, find √(x³) (given power → asked power: (3/2) ÷ (3/4) = 2, so square the given → 64; never find x)"
+  },
+  "solve-q-r26-t12-01": {
+   "t": "Given: -1<x<0. Which of the following is the greatest?",
+   "d": "−1 < x < 0, greatest of x, x², x³, 1/x (plug in x = −1/2; an even power kills the minus)"
+  },
+  "solve-q-r26-t12-02": {
+   "t": "Given: (x-2)(x+5)<0. Which of the following is correct?",
+   "d": "(x − 2)(x + 5) < 0 (sign table: mark zeros −5 and 2, test a number in each part → −5 < x < 2)"
+  },
+  "solve-q-r26-t12-03": {
+   "t": "Given: \\begin{cases} a>b \\\\ c>d \\end{cases} Which of the following is necessarily true?",
+   "d": "a > b, c > d, which is necessarily true (adding is the only safe move; counterexamples kill subtract, multiply, divide)"
+  },
+  "solve-q-r26-t12-04": {
+   "t": "Given: \\begin{cases} -2<x<5 \\\\ 1<y<4 \\end{cases} What is the range of x-y?",
+   "d": "−2 < x < 5, 1 < y < 4, range of x − y (biggest minus smallest: −6 to 4; never end from end)"
+  },
+  "solve-q-r26-t12-13": {
+   "t": "Given: -7\\le3-2x<5. Which of the following is the most precise range for x?",
+   "d": "−7 ≤ 3 − 2x < 5, most precise range (test numbers where choices disagree; or two moves: endpoints, then test 0)"
+  },
+  "solve-q-r26-t13-01": {
+   "t": "Given: |2x-1|=7. Which of the following gives all the possible values of x?",
+   "d": "|2x − 1| = 7, all values of x (two cases: inside = 7 or −7 → x = 4 or −3; check both)"
+  },
+  "solve-q-r26-t13-02": {
+   "t": "Which of the following has no solution?",
+   "d": "which has no solution: |x+2| < −1 etc. (look at the right side: bars are never below a negative number)"
+  },
+  "solve-q-r26-t13-03": {
+   "t": "Given: |x+4|=3x. Which of the following gives all the possible values of x?",
+   "d": "|x + 4| = 3x, all values of x (two cases, then check: −1 is fake; or 3x ≥ 0 so x ≥ 0 → only 2)"
+  },
+  "solve-q-r26-t13-13": {
+   "t": "Given: \\begin{cases} |a|=7 \\\\ |b|=3 \\\\ |a+b|<|a-b| \\end{cases} What is |a+b|?",
+   "d": "|a| = 7, |b| = 3, |a+b| < |a−b|, find |a+b| (smaller sum → opposite signs → 7 − 3 = 4; or try 4 sign cases)"
+  },
+  "solve-q-r26-t13-15": {
+   "t": "Given: a^2+b^2=2ab+9. Which of the following is necessarily true?",
+   "d": "a² + b² = 2ab + 9, necessarily true? (mirror test: swap and flip leave only |a − b| = 3; algebra: (a − b)² = 9)"
+  },
+  "solve-q-r26-t14-01": {
+   "t": "Which of the following numbers is prime?",
+   "d": "which is prime: 91, 119, 113, 133 (divide by primes up to √n; three fakes split by 7, so 113 is prime)"
+  },
+  "solve-q-r26-t14-03": {
+   "t": "a and b are positive integers. Given: 2^a\\cdot3^b=108. a-b=?",
+   "d": "2^a·3^b = 108, find a − b (break 108 into primes 2²·3³ and match exponents; trap swaps a and b)"
+  },
+  "solve-q-r26-t15-01": {
+   "t": "a and b are positive integers, and a>b. When a is divided by 7, the remainder is 2. When b is divided by 7, the remainder is 5. What will be the remainder if a-b is divided by 7?",
+   "d": "a leaves 2, b leaves 5 when divided by 7, find remainder of a − b (subtract remainders, add 7 if negative; check with numbers)"
+  },
+  "solve-q-r26-t15-15": {
+   "t": "x and y are positive integers. x is divisible by 6, and y is divisible by 9. What is the largest number that x+y is necessarily divisible by?",
+   "d": "x divisible by 6, y by 9, largest sure divisor of x + y (tag it: 6k + 9m = 3(2k + 3m); trap: equal values)"
+  },
+  "solve-q-r26-t16-01": {
+   "t": "Given: \\begin{cases} x<0<y \\\\ x+y>0 \\end{cases} Which of the following is necessarily true?",
+   "d": "x < 0 < y, x + y > 0, what is surely true (mixed signs: the bigger size wins → |y| > |x|; check with numbers)"
+  },
+  "solve-q-r26-t16-02": {
+   "t": "The sum of seven consecutive integers is 91. What is the largest of them?",
+   "d": "7 consecutive integers sum to 91, find the largest (sum = count × middle → middle 13; or algebra 7b = 91)"
+  },
+  "solve-q-r26-t16-03": {
+   "t": "The sum of four consecutive integers is always —",
+   "d": "sum of 4 consecutive integers is always — (write 4a + 6: even, not divisible by 4; counterexample for 3)"
+  },
+  "solve-q-r26-t16-04": {
+   "t": "n is a positive odd number. The product n(n+2)(n+4) is necessarily divisible by —",
+   "d": "n odd, n(n+2)(n+4) surely divisible by (smallest case 15 is only a candidate; test 7·9·11 avoiding 5 → 3)"
+  },
+  "solve-q-r26-t17-01": {
+   "t": "The figure shows the numbers a, b, c and d on a number line (the figure is not drawn to scale). Which of the following is necessarily negative?",
+   "d": "letters on a number line, which is surely negative (write each letter's range; not to scale → trust order only)"
+  },
+  "solve-q-r26-t17-02": {
+   "t": "The figure shows the number x and the points K, L, M and N on a number line (the figure is not drawn to scale). Which of the points could represent the number \\sqrt{x}?",
+   "d": "x between 0 and 1 on a line, where can √x be (root of a positive fraction is bigger, still below 1)"
+  },
+  "solve-q-r26-t17-03": {
+   "t": "Given: -4<x<-2. Which of the following is necessarily true?",
+   "d": "−4 < x < −2, range of 6/x (flip with reciprocal then ×6, or plug in the two ends)"
+  },
+  "solve-q-r26-t17-04": {
+   "t": "Given: x<-1<y<0. Which of the following is necessarily true?",
+   "d": "x < −1 < y < 0, which is surely true (test at the edges x = −2, y = −½)"
+  },
+  "solve-q-r26-t17-05": {
+   "t": "On a number line, point A is at -7 and point B is at 5. Point C is between A and B, and its distance from A is one third of the distance AB. What number is at point C?",
+   "d": "A = −7, B = 5, C is ⅓ of the way from A (distance 12, walk 4 from A → −3; midpoint −1 is a trap)"
+  },
+  "solve-q-r26-t18-01": {
+   "t": "A and B represent digits. Given: \\overline{2A6}+\\overline{B8}=\\overline{3A4} B=?",
+   "d": "2A6 + B8 = 3A4, find B (carry into the tens: same ending in a middle column → 0 or 9; plug in to check)"
+  },
+  "solve-q-r26-t18-02": {
+   "t": "A, B and C represent digits, and A>C>0. Which of the following could be the value of \\overline{ABC}-\\overline{CBA}?",
+   "d": "possible value of ABC − CBA (it equals 99(A − C): middle digit 9, outer digits sum to 9 → 495)"
+  },
+  "solve-q-r26-t18-03": {
+   "t": "A and B represent digits. Which of the following could be the value of \\overline{A3}\\times\\overline{B7}?",
+   "d": "possible value of A3 × B7 (units digit 3·7 → ends in 1; size between 13·17 and 93·97 → 851)"
+  },
+  "solve-q-r26-t19-01": {
+   "t": "For every number x: \\blacklozenge(x)=x^2-2x. \\blacklozenge(x+1)=?",
+   "d": "◆(x) = x² − 2x, find ◆(x+1) (put the whole input in brackets and expand; or plug in x = 0, then x = 2)"
+  },
+  "solve-q-r26-t19-02": {
+   "t": "For which of the following operations is a\\star b=b\\star a for all numbers a and b?",
+   "d": "which operation has a⋆b = b⋆a always? (one counterexample with a = 1, b = 2 kills a choice; swap the letters to prove 'always')"
+  },
+  "solve-q-r26-t19-03": {
+   "t": "The operation \\blacklozenge is defined for every positive integer x: \\blacklozenge(x)=\\begin{cases} 3x, & x \\text{ odd} \\\\ x^2-12, & x \\text{ even} \\end{cases} Given: \\blacklozenge(x)=24. x=?",
+   "d": "◆(x) = 3x if odd, x² − 12 if even; ◆(x) = 24, find x (try both rules and check parity; or work back from the choices)"
+  },
+  "solve-q-r26-t19-05": {
+   "t": "For every number x: \\blacklozenge(x)=x^5+3x^4-2x^3+x^2+4x-7. \\blacklozenge(2)-\\blacklozenge(-2)=?",
+   "d": "◆(x) = x⁵ + 3x⁴ − … − 7, find ◆(2) − ◆(−2) (full calculation; or only the odd powers survive, doubled)"
+  },
+  "solve-q-r26-t19-18": {
+   "t": "The operation \\blacklozenge is defined for every positive number x. It is known that for every positive x: \\blacklozenge(\\blacklozenge(x))=x. Which of the following can be the definition of the operation \\blacklozenge?",
+   "d": "◆(◆(x)) = x, which definition fits? (put each rule on trial with x = 2; know the self-undoing families c − x and c/x)"
+  },
+  "solve-q-r26-t20-01": {
+   "t": "Given: x and y are positive numbers, and x>y. Which of the following must be true?",
+   "d": "x > y > 0, which must be true? (plug in 3 and 2, then ½ and ¼ from the other region; write MUST down)"
+  },
+  "solve-q-r26-t20-02": {
+   "t": "Given: -1<x<0. Which of the following is the smallest?",
+   "d": "−1 < x < 0, which is smallest: x³, x, −x², 1/x? (plug in x = −½; with negatives, farther from 0 is smaller)"
+  },
+  "solve-q-r26-t20-03": {
+   "t": "How many odd numbers are there between 20 and 80?",
+   "d": "how many odd numbers between 20 and 80? (first 21, last 79: (79 − 21)/2 + 1 = 30; or half of the 60 numbers)"
+  },
+  "solve-q-r26-t20-04": {
+   "t": "A drawer holds 5 red socks, 7 blue socks and 9 green socks. Dana takes socks out of the drawer without looking. What is the smallest number of socks she must take out to be sure she has two socks of the same color?",
+   "d": "5 red, 7 blue, 9 green socks, how many to be sure of a pair? (worst luck + 1 = 4; pigeonhole)"
+  },
+  "solve-q-r26-t21-01": {
+   "t": "A drawer holds 10 red, 8 blue and 6 green socks. In the dark, Dana takes out socks one at a time. What is the smallest number of socks she must take out to be sure she has 3 socks of the same color?",
+   "d": "10 red, 8 blue, 6 green socks, how many to be sure of 3 of one color? (worst luck 2+2+2, then +1 = 7; spot the traps)"
+  },
+  "solve-q-r26-t21-02": {
+   "t": "Five different positive integers have a sum of 20. Which of the following must be true?",
+   "d": "5 different positive integers sum to 20, which must be true? (counterexamples from 1+2+3+4+5 = 15 plus 5 spare; prove the survivor)"
+  },
+  "solve-q-r26-t22-01": {
+   "t": "In a choir, the ratio of sopranos to altos is 2:3, and the ratio of altos to tenors is 4:5. There are 30 tenors. How many singers are in the choir?",
+   "d": "S:A = 2:3, A:T = 4:5, 30 tenors, total singers? (make the shared altos equal: 8:12:15 → 35x = 70)"
+  },
+  "solve-q-r26-t22-02": {
+   "t": "Six workers paint a hall in 10 days. All the workers work at the same rate. How many days would 4 workers need to paint the same hall?",
+   "d": "6 workers paint a hall in 10 days, how many days for 4? (more or less first; inverse proportion: workers × days = 60 → 15)"
+  },
+  "solve-q-r26-t22-03": {
+   "t": "In a club, the ratio of boys to girls is 5:4. Then 10 boys leave the club, and the ratio of boys to girls becomes 5:6. How many members did the club have at first?",
+   "d": "boys:girls 5:4, 10 boys leave → 5:6, members at first? (keep the girls fixed: 15:12 and 10:12 → 54; or an equation)"
+  },
+  "solve-q-r26-t22-04": {
+   "t": "A pen costs x credits. A notebook costs 3 credits more than a pen. How much do y pens and y notebooks cost altogether?",
+   "d": "pen x, notebook x + 3, cost of y of each? (choose numbers x = 2, y = 3 and test choices; or build y(2x + 3))"
+  },
+  "solve-q-r26-t22-05": {
+   "t": "A parking lot has 30 vehicles: cars and motorcycles. Each car has 4 wheels, and each motorcycle has 2 wheels. There are 96 wheels in total. How many motorcycles are in the parking lot?",
+   "d": "30 cars and motorcycles, 96 wheels, how many motorcycles? (assume all the same kind, then fix the difference ÷ 2)"
+  },
+  "solve-q-r26-t22-20": {
+   "t": "Shelf A has 26 more books than shelf B. Some books are moved from shelf A to shelf B. After the move, shelf B has 6 more books than shelf A. How many books were moved?",
+   "d": "shelf A has 26 more than B; after moving, B has 6 more, books moved? (each book changes the gap by 2: 32 ÷ 2 = 16)"
+  },
+  "solve-q-r26-t23-01": {
+   "t": "A price rises by 25%. Later, the new price falls by 12%. By what percent is the final price higher than the original price?",
+   "d": "price +25% then −12%, overall change? (multipliers 1.25 × 0.88 = 1.1 → 10%; or plug in 100)"
+  },
+  "solve-q-r26-t23-03": {
+   "t": "The price of a desk is 150% of the price of a chair. The price of a table is 150% more than the price of the chair. By what percent is the price of the table higher than the price of the desk?",
+   "d": "desk = 150% of chair, table = 150% more than chair, table vs desk? (plug in chair = 100; 'p% more' = (100+p)%)"
+  },
+  "solve-q-r26-t23-04": {
+   "t": "A 300-gram mixture of sugar and water is 20% sugar. How many grams of sugar must be added to make the mixture 40% sugar?",
+   "d": "300 g mixture 20% sugar, how much sugar to reach 40%? (the water stays: 240 g = 60% → 400 g; or test the choices)"
+  },
+  "solve-q-r26-t23-05": {
+   "t": "A school has N students, and g of them are girls. 25% of the girls play chess. What percent of all the students are girls who play chess?",
+   "d": "N students, g girls, 25% of girls play chess, what percent of all? (plug in N = 200, g = 80; or build 25g/N)"
+  },
+  "solve-q-r26-t23-16": {
+   "t": "A library has only novels and textbooks, 600 books in all. 45% of the novels is the same number of books as 30% of the textbooks. How many novels does the library have?",
+   "d": "600 books, 45% of novels = 30% of textbooks, how many novels? (flip rule: N:T = 30:45 = 2:3 → 240; check and traps)"
+  },
+  "solve-q-r26-t24-01": {
+   "t": "A club has 50 members. Of them, 32 swim and 27 run. At least how many members swim but do not run?",
+   "d": "50 members, 32 swim, 27 run → at least how many swim only (make both as big as possible: 32 − 27; check on the strip)"
+  },
+  "solve-q-r26-t24-02": {
+   "t": "In a school, 40% of the students are in the upper grades and the rest are in the lower grades. 30% of the upper-grade students and 60% of the lower-grade students walk to school. What percent of the students who walk to school are in the upper grades?",
+   "d": "40% upper grades, 30%/60% walk → what % of walkers are upper grade (plug in 100, two-way table; 12 of 48; traps = wrong whole)"
+  },
+  "solve-q-r26-t24-03": {
+   "t": "In a survey, 80% of the people own a phone, 75% own a laptop, and 70% own a tablet. At least what percent of the people own all three?",
+   "d": "80%, 75%, 70% own phone/laptop/tablet → at least % owning all three (count who's missing: 100 − 75; or sum − 2·100)"
+  },
+  "solve-q-r26-t25-01": {
+   "t": "The average score of the students in a class was 70. A new student with a score of 94 joined the class, and the class average rose to 73. How many students were in the class before the new student joined?",
+   "d": "class average 70, new 94 raises it to 73 → students before (balance: 21 ÷ 3 = 7; or equation 70n + 94 = 73(n+1))"
+  },
+  "solve-q-r26-t25-02": {
+   "t": "Dana took five tests. Her scores on four of them were 78, 85, 91 and 88. The average of all five scores is 85. What was her score on the fifth test?",
+   "d": "scores 78, 85, 91, 88, average of five is 85 → fifth score (the balance: differences −7, 0, +6, +3; or the sum formula)"
+  },
+  "solve-q-r26-t25-03": {
+   "t": "Six different positive integers have an average of 9. What is the largest possible value of one of them?",
+   "d": "six different positive integers, average 9 → largest possible value (sum 54, others smallest: 1 to 5 → 39)"
+  },
+  "solve-q-r26-t25-04": {
+   "t": "The average of nine consecutive even numbers is 30. What is the largest of them?",
+   "d": "nine consecutive even numbers, average 30 → largest (evenly spaced: middle = 30, count up by 2 → 38)"
+  },
+  "solve-q-r26-t25-05": {
+   "t": "The average of a, b and c is 20. What is the average of 3a+2, 3b+2 and 3c+2?",
+   "d": "average of a, b, c is 20 → average of 3a+2, 3b+2, 3c+2 (×3 then +2 to the average; or plug in 20s)"
+  },
+  "solve-q-r26-t26-01": {
+   "t": "A printer finishes a job in 60 minutes. Its speed increases by 20%. How many minutes does the same job take now?",
+   "d": "printer takes 60 min, speed +20% → new time (flip the fraction: ×6/5 → time ×5/6 = 50; or pick a job size)"
+  },
+  "solve-q-r26-t26-02": {
+   "t": "Worker A can do a job alone in 10 hours. Worker B can do the same job alone in 15 hours. How many hours do they need if they work together?",
+   "d": "workers 10 h and 15 h together → time (sense check: between 5 and 10; times over plus: 150/25 = 6)"
+  },
+  "solve-q-r26-t26-03": {
+   "t": "Pipe A fills a pool in 12 hours. Pipe B fills the same pool in 6 hours. Pipe A runs alone for 3 hours, and then pipe B is also opened. How many more hours are needed to fill the pool?",
+   "d": "pipes 12 h and 6 h, A runs alone 3 h first → more hours needed (pick a job size of 12 units; or fractions)"
+  },
+  "solve-q-r26-t26-04": {
+   "t": "A machine makes 60 parts at a rate of 30 parts per hour, and then 60 more parts at a rate of 20 parts per hour. What is its average rate for all 120 parts, in parts per hour?",
+   "d": "60 parts at 30/h then 60 at 20/h → average rate (total work ÷ total time = 24; estimate: weighted by time, not 25)"
+  },
+  "solve-q-r26-t26-21": {
+   "t": "Last month Dana spent her whole budget on notebooks and bought 30 of them. This month her budget is 20% larger, and each notebook costs 1.5 times as much as last month. How many notebooks can she buy this month with her whole budget?",
+   "d": "30 notebooks, budget +20%, price ×1.5 → how many now (compare by factors: 30 × 6/5 × 2/3 = 24; traps explained)"
+  },
+  "solve-q-r26-t27-01": {
+   "t": "A train 300 meters long travels at a constant speed. It passes a signal post in 15 seconds. How many seconds does it take to cross a bridge 500 meters long completely?",
+   "d": "300 m train passes a post in 15 s → time to cross a 500 m bridge (bridge + train = 800 m)"
+  },
+  "solve-q-r26-t27-02": {
+   "t": "A boat travels 48 km downstream in 2 hours. The return trip upstream, along the same route, takes 3 hours. The boat’s speed in still water does not change. What is the speed of the current, in kph?",
+   "d": "boat 48 km down in 2 h, up in 3 h → current (down = boat + current, up = boat − current; half the difference)"
+  },
+  "solve-q-r26-t27-03": {
+   "t": "Two cyclists start together from the same point of a circular track 1.2 km long and ride in opposite directions. Their speeds are 20 kph and 16 kph. After how many minutes do they meet for the first time?",
+   "d": "1.2 km circular track, 20 and 16 kph opposite directions → first meeting (add speeds: 36 kph, one lap → 2 min)"
+  },
+  "solve-q-r26-t27-05": {
+   "t": "A cyclist rides from home to work at a constant speed. If she rode 25% faster, the trip would take 12 minutes less. How many minutes does the trip take at her usual speed?",
+   "d": "25% faster saves 12 min → usual trip time (flip the fraction: speed ×5/4 → time ×4/5, 20% = 12 → 60; check with numbers)"
+  },
+  "solve-q-r26-t27-06": {
+   "t": "A car travels d kilometers in t hours. At the same speed, how many minutes does it take to travel k kilometers?",
+   "d": "d km in t hours → minutes for k km, letter answers (plug in d = 40, t = 2, k = 10; or algebra)"
+  },
+  "solve-q-r26-t27-31": {
+   "t": "A delivery van travels 3 times as far as a scooter, at 1.5 times the scooter's speed. The scooter's trip takes 40 minutes. How many minutes does the van's trip take?",
+   "d": "van goes 3× as far at 1.5× the speed, scooter 40 min → van's time (the V in a speed table; or compare by factors → 80)"
+  },
+  "solve-q-r26-t28-04": {
+   "t": "A code has 4 digits. Each digit is from 0 to 9, digits may repeat, and the code may start with 0. How many codes contain the digit 5 at least once?",
+   "d": "4-digit codes 0–9 with the digit 5 at least once (all minus none: 10⁴ − 9⁴ = 3439)"
+  },
+  "solve-q-r26-t28-05": {
+   "t": "Five different letters are put into 3 mailboxes. A mailbox may get any number of letters, or none. In how many different ways can the letters be put into the mailboxes?",
+   "d": "5 different letters into 3 mailboxes (each letter chooses a box: 3⁵; check a small case)"
+  },
+  "solve-q-r26-t28-06": {
+   "t": "Six different books are placed on a shelf in a row. The 3 math books among them must stand together, in any order. How many arrangements are possible?",
+   "d": "6 books in a row, 3 math books together (glue into a block: 4! × 3! = 144)"
+  },
+  "solve-q-r26-t28-07": {
+   "t": "Three boys and two girls stand in a row. All five are different people. The two girls may not stand next to each other. How many orders are possible?",
+   "d": "3 boys, 2 girls in a row, girls not side by side (gaps between the boys; or all minus together: 120 − 48)"
+  },
+  "solve-q-r26-t28-08": {
+   "t": "How many different arrangements of all the letters of the word BANANA are there? (An arrangement does not have to be a real word.)",
+   "d": "arrangements of BANANA (6! divided by each repeat's factorial: 720 ÷ (3!·2!) = 60)"
+  },
+  "solve-q-r26-t28-09": {
+   "t": "Six people sit around a round table. Two arrangements are the same if one is a rotation of the other. Dana and Eli must sit next to each other. How many arrangements are possible?",
+   "d": "6 people at a round table, Dana and Eli together (glue, then (n−1)!: 4!·2 = 48; or fix Dana)"
+  },
+  "solve-q-r26-t28-28": {
+   "t": "\\dfrac{10!-9!}{8!}=?",
+   "d": "(10! − 9!)/8! (take out the smaller factorial: 9!·(10 − 1); or write all in 8!s: 90 − 9 = 81)"
+  },
+  "solve-q-r26-t29-01": {
+   "t": "In a class of 30 students, 12 play soccer, 10 play chess, and 4 play both. One student is chosen at random. What is the probability that the student plays soccer or chess?",
+   "d": "30 students, 12 soccer, 10 chess, 4 both → P(soccer or chess) (add, subtract the overlap; or two circles)"
+  },
+  "solve-q-r26-t29-02": {
+   "t": "Dan answers 3 multiple-choice questions by guessing. Each question has 4 choices, and exactly one of them is correct. What is the probability that Dan answers at least one question correctly?",
+   "d": "guessing 3 questions with 4 choices, P(at least one correct) (1 minus none: 1 − 27/64)"
+  },
+  "solve-q-r26-t29-03": {
+   "t": "Box A contains 2 red balls and 3 white balls. Box B contains 3 red balls and 1 white ball. A fair coin is tossed: on heads, a ball is drawn at random from box A; on tails, a ball is drawn at random from box B. What is the probability that the ball is red?",
+   "d": "coin picks box A (2R,3W) or box B (3R,1W), P(red) (tree: multiply along branches, add; don't pour boxes together)"
+  },
+  "solve-q-r26-t30-01": {
+   "t": "In the accompanying figure, lines a and b are both perpendicular to line c. Line d crosses lines a and b. What is the value of x?",
+   "d": "a ⊥ c and b ⊥ c, transversal with 50°, find x (prove a ∥ b, then small + large = 180° → 130°)"
+  },
+  "solve-q-r26-t30-02": {
+   "t": "Points A, B, C and D lie on a line in this order, as shown in the accompanying figure. Given: \\begin{cases} AC=11 \\\\ BD=14 \\\\ AD=20 \\end{cases} What is the length of BC?",
+   "d": "4 points on a line, AC = 11, BD = 14, AD = 20 → BC (step by step; or AC + BD = AD + BC)"
+  },
+  "solve-q-r26-t30-03": {
+   "t": "In the accompanying figure, a\\parallel b. What is the value of x?",
+   "d": "zig-zag with two bends between parallel lines, find x (left angles = right angles: 40 + 65 = x + 35; or parallel lines through bends)"
+  },
+  "solve-q-r26-t31-01": {
+   "t": "Triangle ABC is right at C, and CD is the altitude to AB. Given: \\begin{cases} AC=15\\text{ cm} \\\\ BC=20\\text{ cm} \\\\ AB=25\\text{ cm} \\end{cases} What is CD (in cm)?",
+   "d": "right triangle 15-20-25, altitude CD to hypotenuse (area two ways: leg × leg = hypotenuse × altitude → 12)"
+  },
+  "solve-q-r26-t31-02": {
+   "t": "In triangle ABC: \\begin{cases} AB=6\\text{ cm} \\\\ BC=8\\text{ cm} \\end{cases} Which of the following could be the area of the triangle (in cm²)?",
+   "d": "sides 6 and 8, no angle: which could be the area? (height ≤ 6, so area ≤ 24 → 20)"
+  },
+  "solve-q-r26-t31-03": {
+   "t": "In triangle ABC: \\begin{cases} AB=6\\text{ cm} \\\\ BC=7\\text{ cm} \\\\ AC=10\\text{ cm} \\end{cases} Which of the following is true?",
+   "d": "sides 6, 7, 10: acute, right or obtuse? (compare 10² with 6² + 7²; obtuse angle is opposite the longest side)"
+  },
+  "solve-q-r26-t32-01": {
+   "t": "A parallelogram with a 150° angle",
+   "d": "parallelogram, sides 10 and 14, angle 150°, area (extend the base, 30° next to it → height = half of 10 → 70)"
+  },
+  "solve-q-r26-t32-02": {
+   "t": "A right trapezoid: one height, one triple",
+   "d": "right trapezoid, bases 9 and 15, leg 10, area (drop a height: 6-8-10 triple → height 8 → 96)"
+  },
+  "solve-q-r26-t32-06": {
+   "t": "A staircase has the perimeter of its rectangle",
+   "d": "staircase figure 12 wide, 8 tall, all right angles → perimeter (push the steps out: 2(12 + 8) = 40)"
+  },
+  "solve-q-r26-t32-07": {
+   "t": "Perimeter and diagonal give the area",
+   "d": "rectangle with perimeter 34 and diagonal 13 → area ((a + b)² = a² + b² + 2ab → 60; or try the 5-12-13 triple)"
+  },
+  "solve-q-r26-t33-01": {
+   "t": "A chord, its distance and the radius",
+   "d": "chord 16, distance from center 6 → circumference (perpendicular halves the chord; Pythagoras 6-8-10 → r = 10)"
+  },
+  "solve-q-r26-t33-02": {
+   "t": "A circle inside a right triangle",
+   "d": "circle inside a right triangle with legs 8, 15 → radius (equal tangent pieces; shortcut r = (a+b−c)/2)"
+  },
+  "solve-q-r26-t33-03": {
+   "t": "Scaling a circle: lengths and areas",
+   "d": "circumference up 50% → area up by? (r×1.5 → area×1.5² = 2.25 → +125%; check with numbers r = 2→3)"
+  },
+  "solve-q-r26-t33-04": {
+   "t": "A segment: sector minus triangle",
+   "d": "radius 6, central angle 60° → segment area (sector − equilateral triangle = 6π − 9√3; traps: negative area, right triangle)"
+  },
+  "solve-q-r26-t33-05": {
+   "t": "The common tangent of two touching circles",
+   "d": "touching circles, radii 8 and 2 → common tangent DC (radii, join centers, right triangle 6-8-10; shortcut 2√(Rr))"
+  },
+  "solve-q-r26-t34-01": {
+   "t": "From one angle to the number of sides",
+   "d": "regular polygon, each angle 160° → number of sides (formula 180 − 360/n; fast way: exterior 20°, 360/20 = 18)"
+  },
+  "solve-q-r26-t34-02": {
+   "t": "Counting the diagonals of a polygon",
+   "d": "7 diagonals from one vertex → total diagonals (n − 3 = 7 → n = 10; 10·7/2 = 35, not 70 or 45)"
+  },
+  "solve-q-r26-t34-03": {
+   "t": "A square and a pentagon on a common side",
+   "d": "square and regular pentagon on a common side → angle ADG (360 − 90 − 108 = 162; isosceles triangle → 9°)"
+  },
+  "solve-q-r26-t35-01": {
+   "t": "Water in a box-shaped container with a base of 10 cm × 8 cm reaches a height of 9 cm. All the water is poured into an empty cube-shaped container with an internal edge of 12 cm. How high is the water in the cube (in cm)?",
+   "d": "water in a 10×8 box, 9 cm high, poured into a 12 cm cube → height (volume stays: 720 ÷ 144 = 5; trap 9)"
+  },
+  "solve-q-r26-t35-02": {
+   "t": "A cone has a base radius of 6 cm and a slant height of 10 cm. What is its volume (in cm³)?",
+   "d": "cone, radius 6, slant height 10 → volume (right triangle gives h = 8; πr²h/3 = 96π; traps: 10 as height, no ÷3)"
+  },
+  "solve-q-r26-t35-03": {
+   "t": "A wooden cube is painted on all six faces. Then it is cut into 125 identical small cubes, 5 along each edge. How many small cubes have paint on exactly one face?",
+   "d": "painted cube cut into 5×5×5 → cubes with exactly one painted face (face middles 6 × 3² = 54; check 8+36+54+27 = 125)"
+  },
+  "solve-q-r26-t36-01": {
+   "t": "Same height: area ratio without squaring",
+   "d": "D on BC, BD:DC = 2:3, triangle 40 → area ABD (same height, not similar → area ratio = base ratio, no squaring = 16)"
+  },
+  "solve-q-r26-t36-02": {
+   "t": "A trapezoid and its diagonals: four triangles",
+   "d": "trapezoid bases 4 and 6, top diagonal triangle 8 → trapezoid area (hourglass 4, 9 units; side triangles 6 each; 25 units = 50)"
+  },
+  "solve-q-r26-t36-03": {
+   "t": "A cube grows by 20%: the volume in percent",
+   "d": "cube edges +20% → volume up by? (percent → factor 1.2³ = 1.728 → +72.8%; check with edge 10; traps 60%, 44%)"
+  },
+  "solve-q-r26-t36-04": {
+   "t": "Map scale: a real distance",
+   "d": "scale 1:20,000, 7.5 cm on the map → real km (× 20,000 = 150,000 cm; units ladder ÷100, ÷1000 = 1.5 km)"
+  },
+  "solve-q-r26-t36-05": {
+   "t": "Map scale: a real area",
+   "d": "scale 1:40,000, lake 5 cm² on the map → real km² (1 cm = 0.4 km first, then square: 5 × 0.16 = 0.8)"
+  },
+  "solve-q-r26-t37-05": {
+   "t": "From one end and the midpoint to the other end",
+   "d": "midpoint M(2,−1), end A(−4,3) → other end B (repeat the move A→M; check with averages = (8,−5))"
+  },
+  "solve-q-r26-t37-07": {
+   "t": "Where a line cuts the axes",
+   "d": "line 4x + 3y = 24 meets the axes at A, B → AB (put y = 0, x = 0 → 6, 8; Pythagoras: 10)"
+  },
+  "solve-q-r26-t37-10": {
+   "t": "The area of a slanted triangle: the box method",
+   "d": "triangle A(−2,1), B(4,−1), C(2,5) → area (box method: box 36 minus corner triangles 20 = 16)"
+  },
+  "solve-q-r26-t38-01": {
+   "t": "Two sides of a triangle are 6 cm and 10 cm long. The angle between them can change. What is the greatest possible area of the triangle?",
+   "d": "two sides 6 and 10, free angle → greatest area (fix base 10, angle 90° gives height 6 → 30; trap 24 from 6-8-10)"
+  },
+  "solve-q-r26-t38-02": {
+   "t": "ABCD is a trapezoid with AD ∥ BC. Its diagonals AC and BD meet at E. Which of the following statements is necessarily true?",
+   "d": "trapezoid with diagonals → which must be true (same base, apex on parallel line → equal areas; minus shared EBC → ABE = DCE)"
+  },
+  "solve-wp25-p18": {
+   "t": "The average of x, y and 11 is 4 greater than the average of y, z and 17. What is x-z?",
+   "d": "average of x, y, 11 is 4 more than of y, z, 17 → x − z (sums differ by 12; or plug in)"
+  }
+ },
+ "slides": {
+  "compare-fractions#5": {
+   "t": "Negatives",
+   "d": "negative bottoms break cross-multiplying — move the minus to the top; two negatives: compare without minus, then reverse"
+  },
+  "compare-fractions#8": {
+   "t": "Add to top and bottom",
+   "d": "adding the same number to top and bottom moves a positive fraction toward 1 — below 1 grows, above 1 shrinks"
+  },
+  "compare-fractions#10": {
+   "t": "x, x² or 1/x?",
+   "d": "x, x², √x or 1/x — the order for 0<x<1, x>1, −1<x<0; plug in a number from the range"
+  },
+  "consecutive-products#4": {
+   "t": "Only a candidate",
+   "d": "the smallest case is only a candidate — 1·3·5 = 15 but 7·9·11 isn't divisible by 5; test a second case avoiding the factor"
+  },
+  "decimals#9": {
+   "t": "÷0.5, ÷0.25, ÷0.2",
+   "d": "÷0.5 = ×2, ÷0.25 = ×4, ÷0.2 = ×5, ÷0.125 = ×8 — e.g. 3.5 ÷ 0.25 = 14"
+  },
+  "divisibility#10": {
+   "t": "Change the divisor",
+   "d": "changing the divisor — leaves 4 by 15 → leaves 4 by 5; works only if the new divisor divides the old one"
+  },
+  "exponents#13": {
+   "t": "Adding equal powers",
+   "d": "adding equal powers — copies are counting: 2ⁿ+2ⁿ = 2·2ⁿ = 2^(n+1), not 2^(2n) (check n=3: 16 ≠ 64)"
+  },
+  "expression-strategy#3": {
+   "t": "Splitting a fraction",
+   "d": "splitting a fraction — a sum on top may be split, a sum on the bottom never: 6/(1+2) = 2, not 6/1 + 6/2 = 9"
+  },
+  "expression-strategy#8": {
+   "t": "Choosing numbers",
+   "d": "choosing numbers to plug in — different small values (2, 3, 5), avoid 0 and 1, obey every condition, and a tie means new numbers"
+  },
+  "fast-calculation#4": {
+   "t": "×9 and ×11",
+   "d": "×11 and ×9 — times 10 plus or minus one copy: 47·11 = 470 + 47, 47·9 = 470 − 47"
+  },
+  "fraction-add#7": {
+   "t": "Fraction bar = brackets",
+   "d": "fraction bar = brackets — (1 + ½)/(2 − ¼): work out top and bottom first, then divide → 6/7"
+  },
+  "fraction-add#8": {
+   "t": "Mixed operations",
+   "d": "mixed operations — × and ÷ before + and −: ¾ − ½·⅔ = 5/12, not 1/6"
+  },
+  "fraction-basics#10": {
+   "t": "Splitting the top",
+   "d": "splitting the top — (12+8)/4 = 12/4 + 8/4; never split the bottom"
+  },
+  "fraction-basics#11": {
+   "t": "Negative fractions",
+   "d": "negative fractions — one minus can sit in front, top or bottom; two cancel; a front minus flips the whole top"
+  },
+  "fraction-multiply#2": {
+   "t": "\"Of\" means times",
+   "d": "\"of\" means times — 2/3 of 36 = 24; spend 1/3, then 1/4 of the rest → ¾·⅔ = ½ left"
+  },
+  "geo-001#2": {
+   "t": "Segments on a line",
+   "d": "segments on a line: equally spaced points — count the gaps, not the points (5 points → 4 gaps)"
+  },
+  "geo-001#11": {
+   "t": "Parallel or not?",
+   "d": "when lines are parallel: both ⊥ or both ∥ to the same line, or parallel-line angles; never trust the picture"
+  },
+  "geo-009#5": {
+   "t": "Angle bisector",
+   "d": "the angle bisector: only two equal angles — no equal side pieces, no right angle (vs median and altitude)"
+  },
+  "geo-042#5": {
+   "t": "Who is also who?",
+   "d": "the quadrilateral family tree: down the tree gains all properties; up the tree is only \"not necessarily\""
+  },
+  "geo-043#6": {
+   "t": "Scale it up",
+   "d": "scaling: every length × k → area × k²; diagonal +50% → area × 2.25 (up 125%)"
+  },
+  "geo-047#7": {
+   "t": "Special angles",
+   "d": "parallelogram with a 30°/45°/60° angle: the height from a special triangle, e.g. sides 8, 6, 30° → h = 3, area 24"
+  },
+  "geo-079#7": {
+   "t": "Wheels",
+   "d": "wheels — one turn rolls one circumference; turns = distance ÷ circumference, same units first (10π m ÷ 20π cm = 50)"
+  },
+  "geo-104#10": {
+   "t": "Exterior angles",
+   "d": "exterior angles — exterior = 180° − angle; all of them add up to 360°; regular: each = 360°/n (the central angle)"
+  },
+  "geo-119#3": {
+   "t": "Lying down",
+   "d": "a prism lying on its side — bases = the two identical faces (even standing up), height = the edge joining them"
+  },
+  "geo-119#14": {
+   "t": "On the formula page",
+   "d": "the exam formula page — what is on it (box, cube, cylinder, cone, pyramid) and what to know by heart"
+  },
+  "geo-139#7": {
+   "t": "Part to part",
+   "d": "parallel to the base — part to part is fine (AD:DB = AE:EC = 3:2), but DE matches the WHOLE side (DE:BC = 3:5)"
+  },
+  "geo-141#5": {
+   "t": "Half-height cone",
+   "d": "the half-height cone trap — a cone glass filled to half its height holds only (1/2)³ = 1/8 of the volume"
+  },
+  "geo-154#7": {
+   "t": "Four quadrants",
+   "d": "the four quadrants and their signs — I (+,+), II (−,+), III (−,−), IV (+,−); a point on an axis is in none"
+  },
+  "geo-154#8": {
+   "t": "Reflections",
+   "d": "reflections — across the x-axis (x, −y), across the y-axis (−x, y), through the origin (−x, −y); trap: x-axis flips y"
+  },
+  "geo-159#10": {
+   "t": "The line equation",
+   "d": "the line equation y = mx + b — m = slope, b = where it cuts the y-axis; y = −2 horizontal, x = 4 vertical"
+  },
+  "geo-175#4": {
+   "t": "Farthest apart",
+   "d": "greatest distance — polygon: a corner (diagonal); circle: the diameter; cylinder: √(h² + d²), use the diameter not the radius"
+  },
+  "geo-177#1": {
+   "t": "Diagrams that can change",
+   "d": "diagrams that can change — the drawing suggests, doesn't prove; read must / could / cannot be true"
+  },
+  "inequalities#5": {
+   "t": "Ranges in two moves",
+   "d": "ranges in two moves — solve as an equation for the endpoint, then test 0 for the direction (no sign flipping)"
+  },
+  "linear-equations#5": {
+   "t": "Cross-multiply",
+   "d": "cross-multiply — only when one fraction equals one fraction: 3/(x+1) = 2/(x−1) → 3(x − 1) = 2(x + 1), x = 5; restriction first"
+  },
+  "linear-equations#6": {
+   "t": "Forbidden answer",
+   "d": "the forbidden answer — x/(x−2) = 2/(x−2) gives x = 2, which is forbidden, so no solution; 2 is the trap choice"
+  },
+  "linear-equations#8": {
+   "t": "Minus before a fraction",
+   "d": "minus before a fraction — put each numerator in brackets; −2(x − 3) = −2x + 6, so x = 3 (writing −6 gives the trap 7)"
+  },
+  "linear-equations#10": {
+   "t": "Test the choices",
+   "d": "test the choices — put each number choice into 6/(x−1) = x − 2; skip forbidden x = 1, x = 4 works"
+  },
+  "multiply-divide#8": {
+   "t": "Last digit",
+   "d": "last digit trick — 8·47 must end in 6 (8·7 = 56); then estimate 8·50 − 3·8 to find 376"
+  },
+  "new-operation#4": {
+   "t": "Brackets on every input",
+   "d": "brackets on every input — ◆(−3) = (−3)² − 2(−3) = 15 and ◆(x+2) = (x+2)² − 2(x+2); without brackets is the trap"
+  },
+  "operation-patterns#1": {
+   "t": "Inverse operation",
+   "d": "the inverse operation — undo the steps in reverse order: ◆(x) = 2x + 3 → #(y) = (y − 3)/2, then check with a number"
+  },
+  "order-of-operations#4": {
+   "t": "Minus before brackets",
+   "d": "minus before brackets — flip every sign inside: 10 − (3+4−1) = 10 − 3 − 4 + 1"
+  },
+  "primes#4": {
+   "t": "Is it prime?",
+   "d": "testing if a number is prime — divide by primes up to √n (91: try 2, 3, 5, 7), plus fake primes like 51, 91, 119"
+  },
+  "pt51-plug-numbers#6": {
+   "t": "Case 4: pick values",
+   "d": "case 4, pick values that fit — more letters than equations: give one letter 0 (4x + 6y = 18 → 6x + 9y = 27)"
+  },
+  "pt51-plug-numbers#7": {
+   "t": "Pick values: watch out",
+   "d": "pick values: watch out — obey every condition, pick one letter and solve the other, ties → second set, answer changes → cannot be determined"
+  },
+  "pt51-plug-numbers#11": {
+   "t": "Nothing-changes value",
+   "d": "the nothing-changes value — e.g. k = 0 friends join → each pays 0 less; cross out choices not giving 0"
+  },
+  "roots#4": {
+   "t": "Bring a number inside",
+   "d": "bringing a number inside a root — square it for √, cube it for ³√ (5√2 = √50); used to compare 5√2 with 7"
+  },
+  "roots#9": {
+   "t": "Powers inside roots",
+   "d": "powers inside roots — ⁿ√(aᵐ) = a^(m/n), e.g. 8^(2/3) = (³√8)² = 4; take the root first; a root of a root is a 4th root"
+  },
+  "roots#11": {
+   "t": "Root equations",
+   "d": "root equations — square both sides, then check in the original (fake solutions); don't divide by x, factor instead; or plug in the choices"
+  },
+  "solve-geo30-g007#1": {
+   "t": "The zig-zag rule",
+   "d": "the zig-zag rule — angles pointing left = angles pointing right: x = 36° + 62° = 98°"
+  },
+  "solve-geo31-g011#1": {
+   "t": "Shortcut · Pick values that fit",
+   "d": "pick values that fit — k isn't fixed, so take k = 60° (equilateral): m = 120°, n = 120° → 180°"
+  },
+  "solve-geo32-g048#2": {
+   "t": "Shortcut · Pick values that fit",
+   "d": "pick values that fit — only α + β = 36° is fixed, so take 18° each (a rectangle): x = 72°"
+  },
+  "solve-geo32-g072#1": {
+   "t": "Check from the answers",
+   "d": "checking from the answers: area 24x², try 96 → x = 2 → perimeter 20x = 40 fits"
+  },
+  "solve-geo37-g160#1": {
+   "t": "Plug in numbers",
+   "d": "plug in numbers — p = 1, q = 2 gives the line y = 2x; only (p³, q³) = (1, 8) is off the line"
+  },
+  "solve-q-099#3": {
+   "t": "Method 4 · Pieces of 1/3",
+   "d": "a fourth way — each step adds a piece worth 1/3, so 4/13 < 5/16 < 6/19 climbs toward 1/3"
+  },
+  "solve-q-289#2": {
+   "t": "Method 3 · Power count",
+   "d": "count the powers — multiply adds, divide subtracts: 3 − 4 + 2 − 5 = −4; only one choice has power −4"
+  },
+  "solve-q-296#0": {
+   "t": "Method 1 · Clear the root",
+   "d": "clearing the root from the denominator — 5/(2√3) · √3/√3 = 5√3/6, then add the fractions → √3"
+  },
+  "solve-q-297#2": {
+   "t": "Method 3 · Power count",
+   "d": "count the powers — a root halves the power: (2 + ½) ÷ 2 = 5/4; only one choice has power 5/4"
+  },
+  "solve-q-299#1": {
+   "t": "Method 2 · Product equals zero",
+   "d": "product equals zero — √x(√x − 6) = 0 means √x = 0 or √x = 6, so x = 0 or 36"
+  },
+  "solve-q-322#1": {
+   "t": "Method 2 · Two moves",
+   "d": "the two-move method on 4 + x < 18 + 3x — endpoint x = −7, test 0 → −7 < x"
+  },
+  "solve-q-323#1": {
+   "t": "True or false?",
+   "d": "when x disappears — a true statement means every x works, a false one means no x works"
+  },
+  "solve-q-325#1": {
+   "t": "Method 2 · Test a number",
+   "d": "test numbers instead of solving — x = 6 and x = 0 both fail, so every choice containing them is out → no solution"
+  },
+  "solve-q-328#1": {
+   "t": "Method 2 · Test a number",
+   "d": "test one number — x = 0 works, so every choice that leaves 0 out is crossed off"
+  },
+  "solve-q-430#1": {
+   "t": "Method 2 · Estimate",
+   "d": "a faster estimate — 1/15 > 1/17, so more numbers divide by 15; safe only in a long range"
+  },
+  "solve-q-579#1": {
+   "t": "Test each choice",
+   "d": "r² = p² + q²: r > q, r > p and p + q > r always; r < 8 fails for 6, 8, 10"
+  },
+  "solve-wp21-g018#1": {
+   "t": "Method 2 · The most precise range",
+   "d": "the most precise range — test a number some choices contain and others don't: 13 and 35 fail, 17 works → choice 1"
+  },
+  "solve-wp23-g061#2": {
+   "t": "Method 3 · Arrow map",
+   "d": "the arrow map — Omer ×1.5 → Dana ×2/3 → Lior; walk both arrows: 1.5 · 2/3 = 1"
+  },
+  "solve-wp24-g072#2": {
+   "t": "Method 3 · Flip rule",
+   "d": "the flip rule — 1/9 of chess = 1/4 of robotics → chess : robotics = 9 : 4; take out the shared part → 8 : 3"
+  },
+  "solve-wp24-g075#0": {
+   "t": "Method 1 · Through the union",
+   "d": "neither in a range question — go through the union: union 24 to 37, so neither = 52 − union, from 15 to 28"
+  },
+  "solve-wp25-g089#2": {
+   "t": "Shares as weights",
+   "d": "percent shares as weights — average = cheap + (expensive share × gap): 70% at 30, 30% at 50 → 30 + 0.3·20 = 36"
+  },
+  "solve-wp25-g090#2": {
+   "t": "Method 3 · Extra per item",
+   "d": "extra per item — start every box at the low value, count the extra: 800 kg extra ÷ 2 per box = 400"
+  },
+  "solve-wp26-g093#2": {
+   "t": "Method 3 · Rate × time",
+   "d": "rate × time — new rate 3x/y times 5y minutes = 15x; the two changes multiply, don't add"
+  },
+  "solve-wp26-g093#3": {
+   "t": "Method 4 · Plug in numbers",
+   "d": "plug in numbers — x = 4, y = 2 gives 60, only 15x matches; pick numbers not 0/1 and not equal"
+  },
+  "solve-wp26-g098#2": {
+   "t": "The V rule",
+   "d": "the general V rule — blank in Team or Time: the V; blank in Work: the V upside down (4 gardeners → 64 trees)"
+  },
+  "solve-wp26-g102#2": {
+   "t": "Same idea: catching up",
+   "d": "catching up — time = gap ÷ difference in rates: 30 hours behind, gains 16 − 6 = 10 a day → 3 days"
+  },
+  "solve-wp27-g109#1": {
+   "t": "Method 2 · Shares as weights",
+   "d": "shares as weights — same distance, so the times flip (2 : 3); 2/5 of the time at 105 → 70 + 2/5·35 = 84"
+  },
+  "systems#4": {
+   "t": "Add and subtract",
+   "d": "add and subtract the equations — x+y=10, x−y=4: x is half the sum (7), y half the difference (3); brackets when subtracting"
+  },
+  "systems#7": {
+   "t": "Get x + y directly",
+   "d": "get x+y directly — add 3x+y=17 and x+3y=11 → 4(x+y) = 28; subtract for x−y"
+  },
+  "systems#8": {
+   "t": "Multiply equations",
+   "d": "multiply or divide equations — xy = 12, x/y = 3 → x² = 36, x = 6 (x positive); dividing gives y² = 4"
+  },
+  "whole-numbers#4": {
+   "t": "Signs of sums",
+   "d": "signs of sums — two negatives give negative, mixed signs: the bigger size wins (−7 + 3 = −4); bigger − smaller > 0"
+  },
+  "wp-022#1": {
+   "t": "Days and last digits",
+   "d": "cycles with remainders — Tuesday + 30 days (30 = 28 + 2 → Thursday) and last digit of 3²² (cycle 3, 9, 7, 1 → 9)"
+  },
+  "wp-052#4": {
+   "t": "Thirds and families",
+   "d": "thirds and fraction families — 1/3 = 33⅓%, 1/6 = 16⅔%, then multiply a basic fraction: 3/8 = 37.5%, 3/5 = 60%"
+  },
+  "wp-052#9": {
+   "t": "Same part: flip",
+   "d": "the flip rule — 40% of A = 15% of B → A:B = 15:40 = 3:8; works with fractions; only when the amounts are equal"
+  },
+  "wp-052#10": {
+   "t": "Same whole: keep",
+   "d": "same whole → keep: a = 50% of b, c = 125% of b → c:a = 125:50 = 5:2; same part flip, same whole keep"
+  },
+  "wp-053#3": {
+   "t": "Multipliers",
+   "d": "multipliers — +20% is ×1.2, −15% is ×0.85; two changes multiply: +10% twice = 1.21 (+21%), −30% then −20% = 0.56"
+  },
+  "wp-053#4": {
+   "t": "Up and down",
+   "d": "up and down — +20% then −20% = 0.96 (4% loss); up and down p% loses p²/100%; any two changes a + b + ab/100"
+  },
+  "wp-053#8": {
+   "t": "The arrow map",
+   "d": "the arrow map — 'x is 20% more than y' = arrow y → x (×1.2); along multiply, against divide; y = 83⅓% of x"
+  },
+  "wp-053#9": {
+   "t": "Walk the path",
+   "d": "walking the arrow-map path — P = 40% of Q, R = 125% of Q → R/P = 1.25 ÷ 0.4 = 312.5%"
+  },
+  "wp-068#6": {
+   "t": "Other regions",
+   "d": "other regions in range questions — find the overlap range first; union, neither and A only follow (big overlap → small A only)"
+  },
+  "wp-069#5": {
+   "t": "Exactly one",
+   "d": "exactly one region — A only + B only, or A + B − 2·both: 13 + 11 − 2·4 = 16"
+  },
+  "wp-080#2": {
+   "t": "Evenly spaced",
+   "d": "evenly spaced numbers — the average is the middle number, or (first + last) ÷ 2: 3, 7, …, 19 → 11"
+  },
+  "wp-080#5": {
+   "t": "The balance",
+   "d": "the balance — differences above the average equal those below: 86, 93, 95, ? with average 90 → ? = 86"
+  },
+  "wp-080#7": {
+   "t": "A base number",
+   "d": "a base number — pick a round number near the values and average only the differences: 97, 102, 104, 99 → 100.5"
+  },
+  "wp-080#9": {
+   "t": "Every value changes",
+   "d": "every value changes — add k → average +k, multiply by k → average ×k; e.g. average age 30 → 35 in five years"
+  },
+  "wp-081#2": {
+   "t": "An average equal to a letter",
+   "d": "an average equal to a letter — write the sum: average of x, y, z is x → y + z = 2x"
+  },
+  "wp-081#3": {
+   "t": "The balance with letters",
+   "d": "the balance with letters (inequalities) — average of a, b, c above 6 but of all four below 6 → only d < 6 is sure"
+  },
+  "wp-106#5": {
+   "t": "The table",
+   "d": "the motion table — rows per person/part, columns speed · distance · time (distance in the middle); totals add distances and times, not speeds"
+  },
+  "wp-110#5": {
+   "t": "What is fixed?",
+   "d": "what is fixed? — practice spotting fixed time, distance or speed in four situations before using a ratio rule"
+  },
+  "wp-110#6": {
+   "t": "Two things change? The V",
+   "d": "the V in motion — two things change: speed · distance · time table with relations; 3× as fast, half as long → 60 km"
+  },
+  "wp-123#2": {
+   "t": "At most? At least?",
+   "d": "at most / at least / necessarily / impossible questions are not counting → use the Topic 21 min/max method"
+  },
+  "wp-137#4": {
+   "t": "The checklist",
+   "d": "the 5-step counting checklist: order? repetition? restriction? counted twice? cases or all minus forbidden?"
+  },
+  "wp-140-after#5": {
+   "t": "Know them by sight",
+   "d": "factorials to know by sight (5! = 120, 6! = 720, 7! = 5040) and recognizing them, e.g. a! = 6·20 → a = 5"
+  },
+  "wp-140-after#6": {
+   "t": "A run of neighbors",
+   "d": "b!/a! is a run of neighbors (a+1)…b; backwards: b!/a! = 56 = 7·8 → a = 6, b = 8"
+  },
+  "wp-140-after#7": {
+   "t": "Factorials and primes",
+   "d": "divisibility of a factorial: break factors into primes and count the 2s (7! has four 2s, not three)"
+  }
+ },
+ "lines": {
+  "absolute-value#2": {
+   "t": "Plus or minus inside",
+   "d": "careful with letters — a letter hides its sign, the minus doesn't just drop"
+  },
+  "absolute-value#4": {
+   "t": "The rules",
+   "d": "bars split over a fraction too; the sum rule becomes a sign-reading tool later"
+  },
+  "add-subtract#0": {
+   "t": "Addition & Subtraction",
+   "d": "a skip-ahead tip for students who are already fast"
+  },
+  "add-subtract#3": {
+   "t": "Two negatives",
+   "d": "minus-minus becomes plus only when the two signs touch"
+  },
+  "algebraic-understanding#1": {
+   "t": "Three tools",
+   "d": "tool two (test the answers), the order numbers → answers → algebra, and what questions come next"
+  },
+  "compare-fractions#4": {
+   "t": "Cross-multiply",
+   "d": "why cross-multiplying works, and the condition: both bottoms positive"
+  },
+  "compare-fractions#6": {
+   "t": "To decimals",
+   "d": "decimals to know by heart; cross-multiplying also works here"
+  },
+  "compare-fractions#7": {
+   "t": "Distance from 1",
+   "d": "distance from 1 above one: compare the extras (7/6 vs 19/16)"
+  },
+  "compare-fractions#12": {
+   "t": "Flip them",
+   "d": "flipping reverses the order only when both have the same sign"
+  },
+  "compare-fractions#13": {
+   "t": "Recap",
+   "d": "recap: all shortcuts listed, and signs first with letters"
+  },
+  "consecutive-integers#3": {
+   "t": "Way 2 · Plug in",
+   "d": "check the choices give different values when plugging in"
+  },
+  "consecutive-products#3": {
+   "t": "Smallest case",
+   "d": "smallest product equals the divisor: a memory trick, not a way to find rules"
+  },
+  "consecutive-products#5": {
+   "t": "Even products",
+   "d": "never plug in zero — it is divisible by everything"
+  },
+  "consecutive-products#8": {
+   "t": "Recap",
+   "d": "recap: proven rules, smallest case only a candidate, count the twos"
+  },
+  "digit-puzzles#1": {
+   "t": "The 4 steps",
+   "d": "puzzles in words: write 10A + B and collect (B = 2A → 12, 24, 36, 48)"
+  },
+  "digit-puzzles#2": {
+   "t": "What letters mean",
+   "d": "the bar over letters means digits of one number"
+  },
+  "divisibility#4": {
+   "t": "Build a divisor",
+   "d": "split bigger divisors into parts with no common factor (12 = 3·4)"
+  },
+  "divisibility#5": {
+   "t": "By 11",
+   "d": "a negative result is fine; −2 isn't 0 or ±11, so 482 fails"
+  },
+  "divisibility#9": {
+   "t": "Digit sum → remainder",
+   "d": "digit sum gives the remainder only for 3 and 9"
+  },
+  "divisibility#11": {
+   "t": "Recap",
+   "d": "recap line: bigger divisors as parts with no common factor"
+  },
+  "equation-strategy#0": {
+   "t": "Solving Equations Smarter",
+   "d": "intro: different techniques, each taught by one question"
+  },
+  "equation-strategy#1": {
+   "t": "Dividing by an unknown",
+   "d": "the rule: same operation on both sides is allowed"
+  },
+  "exponents#0": {
+   "t": "Exponent Laws",
+   "d": "intro: exponents then roots; learn the laws to use them fast"
+  },
+  "exponents#2": {
+   "t": "Exponent 1 and 0",
+   "d": "the stairs: each step down divides by 5, down to 5⁰"
+  },
+  "exponents#3": {
+   "t": "Negative exponents",
+   "d": "keep walking down: 5⁰ = 1, then 1/5 = 5⁻¹"
+  },
+  "exponents#4": {
+   "t": "Bases 1 and 0",
+   "d": "why 1 to any power is 1"
+  },
+  "exponents#6": {
+   "t": "Dividing powers",
+   "d": "lead-in to a second way to see 5⁰ = 1"
+  },
+  "exponents#10": {
+   "t": "2⁴ = 4²",
+   "d": "only positive whole pair is 2 and 4; exam says 'positive integers'"
+  },
+  "exponents#11": {
+   "t": "When aᵇ = 1",
+   "d": "exponent 0 works for any a except 0"
+  },
+  "exponents#14": {
+   "t": "The rules table",
+   "d": "pointer to the short exam-traps video next"
+  },
+  "expression-basics#2": {
+   "t": "Like terms",
+   "d": "roots are like terms too (√5 one family, √2 another)"
+  },
+  "expression-basics#3": {
+   "t": "Multiplying terms",
+   "d": "a³·a = a⁴ — just count the a's; power rules come later"
+  },
+  "expression-basics#7": {
+   "t": "Common factor",
+   "d": "equal terms cancel to zero; a common factor is reduced — needs a product"
+  },
+  "expression-strategy#4": {
+   "t": "Opposite brackets",
+   "d": "a quick check: open the bracket to see it is the same"
+  },
+  "expression-strategy#6": {
+   "t": "A repeated bracket",
+   "d": "a given block value (a + b = 5) can be put in its place"
+  },
+  "expression-strategy#7": {
+   "t": "Plug in numbers",
+   "d": "plugging in only for an expression (= ?), never for an equation"
+  },
+  "expression-strategy#10": {
+   "t": "Recap",
+   "d": "recap lines: split a sum on top only; plug in, a tie means new numbers"
+  },
+  "fraction-add#4": {
+   "t": "Common denominator",
+   "d": "the LCM name for the smallest common denominator (24 for 8 and 12)"
+  },
+  "fraction-add#9": {
+   "t": "Recap",
+   "d": "recap: × ÷ first, fraction bar is brackets; pointer to shortcuts and decimals"
+  },
+  "fraction-basics#12": {
+   "t": "Recap",
+   "d": "recap line: one minus anywhere, two minus signs cancel"
+  },
+  "fraction-multiply#10": {
+   "t": "Recap",
+   "d": "recap line: of → times; of the rest → of what is left"
+  },
+  "geo-001#0": {
+   "t": "Lines and Angles",
+   "d": "which slides a student who knows the basics may skip, and which not"
+  },
+  "geo-001#4": {
+   "t": "Right angle",
+   "d": "the exam rule: 90° only if marked or given, not by looks"
+  },
+  "geo-001#15": {
+   "t": "Recap",
+   "d": "recap lines for proving parallel and counting gaps not points"
+  },
+  "geo-009#12": {
+   "t": "Between diff and sum",
+   "d": "difference is big − small; counting whole-number lengths: 2 × shorter side − 1"
+  },
+  "geo-009#13": {
+   "t": "Recap",
+   "d": "the recap rule: big − small < side < sum"
+  },
+  "geo-013#1": {
+   "t": "Isosceles triangle",
+   "d": "the isosceles rule works backwards too"
+  },
+  "geo-013#6": {
+   "t": "Median to hypotenuse",
+   "d": "why it matters: less common, but it returns in circles"
+  },
+  "geo-017-after#0": {
+   "t": "Equilateral Triangle Area",
+   "d": "a link back to the golden triangle"
+  },
+  "geo-017-after#1": {
+   "t": "Two golden halves",
+   "d": "why the altitude splits it into two 30-60-90 halves"
+  },
+  "geo-017-after#2": {
+   "t": "Check with Pythagoras",
+   "d": "taking the root: a√3/2, same height as the golden triangle gives"
+  },
+  "geo-018-after#2": {
+   "t": "Height outside",
+   "d": "vertex moving on a line parallel to the base keeps the area"
+  },
+  "geo-024#5": {
+   "t": "8-15-17: less common",
+   "d": "how common 8-15-17 is, and a pointer to the next question"
+  },
+  "geo-026#9": {
+   "t": "Using 30°-30°-120°",
+   "d": "pointer: this formula is also the equilateral triangle area"
+  },
+  "geo-042#4": {
+   "t": "The family",
+   "d": "a bridge to the new family-tree slide"
+  },
+  "geo-045#2": {
+   "t": "The diagonals",
+   "d": "a square does both, but don't assume it in a general rectangle"
+  },
+  "geo-047#4": {
+   "t": "The diagonals",
+   "d": "equal diagonals → rectangle, ⊥ diagonals → rhombus; general: only bisect each other"
+  },
+  "geo-047#5": {
+   "t": "Area: base × height",
+   "d": "where the height lands; from D you must extend BC first"
+  },
+  "geo-052#0": {
+   "t": "The Kite (Deltoid)",
+   "d": "the other name: deltoid"
+  },
+  "geo-054#5": {
+   "t": "Isosceles trapezoid",
+   "d": "opposite angles also add up to 180°"
+  },
+  "geo-054#6": {
+   "t": "Right trapezoid",
+   "d": "the question tip: drop a height from D → rectangle + right triangle, then Pythagoras"
+  },
+  "geo-075#3": {
+   "t": "Angle on a diameter",
+   "d": "the converse: right triangle in a circle → hypotenuse = diameter; rectangle → diagonal = diameter"
+  },
+  "geo-097-after#3": {
+   "t": "Triangle · circle · tri.",
+   "d": "why: the inner triangle's corners touch the outer sides at their midpoints"
+  },
+  "geo-104#5": {
+   "t": "Regular",
+   "d": "a non-convex polygon: one angle over 180°, the formula 180(n−2) still works"
+  },
+  "geo-119#10": {
+   "t": "Volume",
+   "d": "1 ml = 1 cm³, so the 500 ml bottle holds 500 cm³"
+  },
+  "geo-119#15": {
+   "t": "Recap",
+   "d": "the basic solid formulas are on the formula page"
+  },
+  "geo-120#1": {
+   "t": "What's ahead",
+   "d": "the new topics ahead: water level, units, cone slant height, volume ratios, cube facts"
+  },
+  "geo-135#1": {
+   "t": "Always similar",
+   "d": "shapes NOT always similar: rectangles, rhombuses, isosceles and right triangles — check angles or one factor"
+  },
+  "geo-139#6": {
+   "t": "Parallel to the base",
+   "d": "pointer to the next slide: a rule for the parts AD and DB"
+  },
+  "geo-139#8": {
+   "t": "Altitude to hypotenuse",
+   "d": "two shortcuts: altitude² = product of hypotenuse parts; leg² = its part × hypotenuse"
+  },
+  "geo-139#11": {
+   "t": "Rectangle on diagonal",
+   "d": "the worked numbers: AR = 6 from AR/9 = 8/12, leftovers both 1/3"
+  },
+  "geo-139#12": {
+   "t": "Recap",
+   "d": "recap line: parallel line — part to part ok, the segment against the whole side"
+  },
+  "geo-141#2": {
+   "t": "Similar solids",
+   "d": "spheres are always similar, like circles"
+  },
+  "geo-155#7": {
+   "t": "No formula needed",
+   "d": "roots in the answers: compare across² + up² with the number under the root"
+  },
+  "geo-175#2": {
+   "t": "Move the vertex away",
+   "d": "'straight away' matters — a point off to the side is different"
+  },
+  "geo-177#0": {
+   "t": "Diagrams That Can Change",
+   "d": "intro: now high-level exam practice, with more fine points along the way"
+  },
+  "linear-equations#3": {
+   "t": "Every x works",
+   "d": "a lead-in to the opposite case: one number changed on the right"
+  },
+  "linear-equations#11": {
+   "t": "Recap",
+   "d": "recap lines: cross-multiply, and numerator in brackets after a minus"
+  },
+  "multiply-divide#2": {
+   "t": "Zero",
+   "d": "division can also be written with a colon (24 : 6)"
+  },
+  "new-operation#5": {
+   "t": "Operation first",
+   "d": "turn every operation into a number first; brackets on the exam show what comes first"
+  },
+  "new-operation#8": {
+   "t": "Order can matter",
+   "d": "is a⋆b = b⋆a always? one counterexample for no, letters for yes; never test equal numbers"
+  },
+  "new-operation#9": {
+   "t": "Unknown input",
+   "d": "work back from the answers: put each choice into the rule"
+  },
+  "new-operation#10": {
+   "t": "Recap",
+   "d": "recap lines: every input in brackets; turn each operation into a number first"
+  },
+  "number-line#3": {
+   "t": "Multiply & divide",
+   "d": "times a negative jumps to the other side of zero (preview)"
+  },
+  "number-line#4": {
+   "t": "Hierarchy",
+   "d": "for negatives the hierarchy holds only with odd powers and roots"
+  },
+  "number-line#5": {
+   "t": "Exceptional powers",
+   "d": "comparing by ranges: flip first; arrows (next lesson) can keep the minus"
+  },
+  "number-line#6": {
+   "t": "Same operation",
+   "d": "with negatives squaring flips the order; use the arrows"
+  },
+  "number-line#8": {
+   "t": "Recap",
+   "d": "recap line: higher range → bigger (positive powers and roots)"
+  },
+  "numbers#4": {
+   "t": "Positive & negative",
+   "d": "what nonzero means (any number except 0, positive or negative)"
+  },
+  "numbers#12": {
+   "t": "Recap",
+   "d": "the exam prints these facts; pointer to Exam Words and Must/Could/Cannot next"
+  },
+  "operation-patterns#0": {
+   "t": "Operation Patterns",
+   "d": "intro: each question shows one type, plus the inverse operation first"
+  },
+  "order-of-operations#6": {
+   "t": "Recap",
+   "d": "recap line: minus before brackets flips every sign inside"
+  },
+  "parity#7": {
+   "t": "What a plug-in proves",
+   "d": "parity depends only on input parities; a plug-in can disprove 'always', not prove it"
+  },
+  "powers-on-number-line#4": {
+   "t": "Negative fractions",
+   "d": "what counts as odd: odd powers, their negatives and odd roots"
+  },
+  "powers-on-number-line#6": {
+   "t": "Three steps",
+   "d": "without arrows flip first; both ways agree"
+  },
+  "powers-on-number-line#8": {
+   "t": "Recap",
+   "d": "recap line: negative side odd powers only; negative exponent may stay"
+  },
+  "prime-tools#0": {
+   "t": "Factor Tools",
+   "d": "intro: GCD, guaranteed divisor and story questions, one tool per question"
+  },
+  "prime-tools#1": {
+   "t": "Break & build",
+   "d": "primes as letters: plug in 2, 3, 5, 7 and check every choice"
+  },
+  "prime-tools#2": {
+   "t": "Counting divisors",
+   "d": "note that counting all divisors is used in practice, not in these questions"
+  },
+  "primes#2": {
+   "t": "0, 1 and 2",
+   "d": "0, 1, negatives not prime; odd sum or difference of two primes → one is 2"
+  },
+  "primes#3": {
+   "t": "Know them by heart",
+   "d": "pointer to the prime test for numbers above 40"
+  },
+  "primes#9": {
+   "t": "Recap",
+   "d": "recap line: odd sum or difference of two primes → one is 2"
+  },
+  "roots#3": {
+   "t": "Pull out squares",
+   "d": "pull out the largest square; check if what is left is still divisible by 4, 9, 25"
+  },
+  "roots#12": {
+   "t": "The rules table",
+   "d": "pointer to the practice questions and their solution videos"
+  },
+  "solve-geo30-g006#1": {
+   "t": "Method 2 · Plug in numbers",
+   "d": "plug-in rules: eliminate three answers first; check the choices come out different"
+  },
+  "solve-geo30-g006#2": {
+   "t": "Method 3 · A flash of insight",
+   "d": "a name for the idea: overlapping angles (add, subtract the full turn)"
+  },
+  "solve-geo31-g012#1": {
+   "t": "What to take from here",
+   "d": "the long way works, but the rule saves time"
+  },
+  "solve-geo31-g032#1": {
+   "t": "Biggest angle, longest side",
+   "d": "why choice two (AC) is eliminated"
+  },
+  "solve-geo31-g034#1": {
+   "t": "Go through the answers",
+   "d": "a quick sketch of a leaning median showing unequal sides"
+  },
+  "solve-geo31-g035#0": {
+   "t": "Triples, then two areas",
+   "d": "the trap in choice two: 52 is the hypotenuse, not a height (→ 616)"
+  },
+  "solve-geo31-g040#1": {
+   "t": "Method 2 · Plug in answers",
+   "d": "the 1/3 trap explained (forgetting to subtract the small side: 3b = 9a)"
+  },
+  "solve-geo32-g058#2": {
+   "t": "Triangle EDC",
+   "d": "the pattern: a bisector in a parallelogram cuts off an isosceles triangle"
+  },
+  "solve-geo33-g076#3": {
+   "t": "One more route · Radii",
+   "d": "naming the equal base angles x and y in the two isosceles triangles"
+  },
+  "solve-geo33-g088#1": {
+   "t": "Join the centers",
+   "d": "touching circles: distance between centers = R + r outside, R − r inside"
+  },
+  "solve-geo33-g096#2": {
+   "t": "Method 3 · Estimate",
+   "d": "the power count from algebra: perimeter ÷ perimeter has power 0, so no r can stay"
+  },
+  "solve-geo33-g102#2": {
+   "t": "Method 2 · Plug in numbers",
+   "d": "pointer to the next lesson: more tools for the hardest circle questions"
+  },
+  "solve-geo34-g112#1": {
+   "t": "The golden triangle",
+   "d": "the hexagon's long diagonal through the center = twice the side"
+  },
+  "solve-geo34-g114#1": {
+   "t": "Plug in numbers",
+   "d": "the plug-in numbers worked on the board: KT = 1, KM = √2, perimeter 2 + √2"
+  },
+  "solve-geo34-g114#2": {
+   "t": "Know the octagon",
+   "d": "the hypotenuse is the longest side, so LT > 2KT"
+  },
+  "solve-geo34-g117#1": {
+   "t": "The understanding way",
+   "d": "the trap answer: hexagon — 6 is the number of extra sides, not the answer"
+  },
+  "solve-geo35-g124#0": {
+   "t": "The formula",
+   "d": "the prism lies on its side: bases are front and back, height is the flat edge BE"
+  },
+  "solve-geo35-g126#2": {
+   "t": "Approach 3 · Estimate",
+   "d": "the power count from algebra: volume ÷ volume has power 0; 1 − πk/4 mixes powers"
+  },
+  "solve-geo35-g129#3": {
+   "t": "Three angles in a cube",
+   "d": "warning: the cube angle rules work only when edge and diagonal meet at one corner"
+  },
+  "solve-geo36-g138#1": {
+   "t": "Read the question again",
+   "d": "a trap answer can appear at any level, easy or hard"
+  },
+  "solve-geo36-g144#3": {
+   "t": "Psychometric · parts of sides",
+   "d": "the parallel line rule: sides cut in the same ratio, but ED against a whole side"
+  },
+  "solve-geo36-g146#1": {
+   "t": "Same-triangle ratio",
+   "d": "the shortcut from the lesson: altitude² = 3 × 27 = 81 → altitude 9"
+  },
+  "solve-geo37-g156#3": {
+   "t": "Add the three sides",
+   "d": "the traps explained: using the altitude 24 instead of AC, and AB as 24"
+  },
+  "solve-geo37-g160#2": {
+   "t": "Plug in choice 3",
+   "d": "cubing doesn't keep the ratio when p ≠ q; explained at the end"
+  },
+  "solve-geo38-g176#1": {
+   "t": "The side grew — the angle opened",
+   "d": "the rods rule: two fixed sides, wider angle → longer third side"
+  },
+  "solve-geo38-g176#2": {
+   "t": "Check with the squares",
+   "d": "longest side² < sum of squares → all angles acute; pointer to the next question"
+  },
+  "solve-geo38-g178#1": {
+   "t": "Exaggerate the drawing",
+   "d": "pointing at the stretched base LM and long leg NM"
+  },
+  "solve-geo38-g178#2": {
+   "t": "What does it depend on?",
+   "d": "find what is free (FM); same height → compare FM with KN + LF"
+  },
+  "solve-geo38-g178#3": {
+   "t": "All three can happen",
+   "d": "'cannot be determined' only with two legal figures giving two answers; rare in geometry"
+  },
+  "solve-geo38-g181#0": {
+   "t": "Match the drawing to the givens",
+   "d": "the board line KL > MN > PQ"
+  },
+  "solve-geo38-g181#1": {
+   "t": "Go through the claims",
+   "d": "the board line PQ < MN always"
+  },
+  "solve-geo38-g183#0": {
+   "t": "AC against AB",
+   "d": "4 and 8 with 60° is not equilateral; at 70° AC is even longer"
+  },
+  "solve-geo38-g183#1": {
+   "t": "Angle opening",
+   "d": "naming the rods rule: wider angle → longer third side"
+  },
+  "solve-geo38-g183#2": {
+   "t": "Equal areas?",
+   "d": "up to 90°, a wider angle gives a taller height"
+  },
+  "solve-geo38-g183#3": {
+   "t": "Exaggerate",
+   "d": "past 90° the height shrinks: 110° gives the same area as 70°"
+  },
+  "solve-geo38-g184#1": {
+   "t": "RT against TP",
+   "d": "the two Pythagoras equations for TP and RT"
+  },
+  "solve-geo38-g184#3": {
+   "t": "RP against PS",
+   "d": "the board line RP > PH = PS"
+  },
+  "solve-geo38-g187#1": {
+   "t": "Plugging in",
+   "d": "a closing goodbye: good luck in the other topics"
+  },
+  "solve-q-091#0": {
+   "t": "Complete to one, then cancel",
+   "d": "the long way (common denominator) before the fast way"
+  },
+  "solve-q-092#0": {
+   "t": "Method 1 · Fractions",
+   "d": "to get a decimal, make the bottom 100"
+  },
+  "solve-q-093#1": {
+   "t": "Method 2 · Plug in",
+   "d": "why check choices first; cancelling is the recommended way, plugging in is backup"
+  },
+  "solve-q-094#0": {
+   "t": "Method 1 · Spot the expansion",
+   "d": "equal only if X = Y — possible but not necessarily"
+  },
+  "solve-q-094#1": {
+   "t": "Method 2 · Plug in",
+   "d": "both ways are good; pick the comfortable one"
+  },
+  "solve-q-095#0": {
+   "t": "Method 1 · Top vs bottom",
+   "d": "why top and bottom are both positive when b > 2"
+  },
+  "solve-q-095#1": {
+   "t": "Method 2 · Plug in",
+   "d": "choice one can't be crossed out (1.5 > 1); both ways are good"
+  },
+  "solve-q-096#0": {
+   "t": "Method 1 · Plug in twice",
+   "d": "why start with plugging in; all-positive tries won't help"
+  },
+  "solve-q-096#1": {
+   "t": "Method 2 · Why it works",
+   "d": "number line for two positives vs two negatives; mn = 1 not necessarily true"
+  },
+  "solve-q-097#0": {
+   "t": "Method 1 · Semi-finals, final",
+   "d": "the tournament idea: compare easy pairs with the same bottom"
+  },
+  "solve-q-097#1": {
+   "t": "Method 2 · Square them",
+   "d": "no exact values needed, only which is biggest"
+  },
+  "solve-q-097#2": {
+   "t": "Method 3 · Biggest top, smallest bottom",
+   "d": "tops and bottoms repeat; pick the comfortable way of the three"
+  },
+  "solve-q-098#0": {
+   "t": "Method 1 · Tournament",
+   "d": "look closer: order doesn't matter in addition (b + a = a + b)"
+  },
+  "solve-q-098#1": {
+   "t": "Method 2 · Plug in",
+   "d": "a second way: plug in, and why b = 3 gets messy"
+  },
+  "solve-q-099#0": {
+   "t": "Method 1 · Same tops",
+   "d": "they want the full order; a common bottom is too big without a calculator"
+  },
+  "solve-q-120#0": {
+   "t": "Method 1 · Expand both",
+   "d": "the trap answer explained (2n² — minus only on m²)"
+  },
+  "solve-q-120#1": {
+   "t": "Method 2 · Plug in",
+   "d": "choosing numbers: different, not 0 or 1 (n = 0 proves nothing)"
+  },
+  "solve-q-121#0": {
+   "t": "Method 1 · Difference of squares",
+   "d": "the trap answer explained (−18 — minus not reaching the 9)"
+  },
+  "solve-q-125#0": {
+   "t": "Method 1 · Just calculate",
+   "d": "method 1 is plain calculation; fast students can skip to methods 3 and 4"
+  },
+  "solve-q-127#0": {
+   "t": "Method 1 · Open the choices",
+   "d": "sum and product would work, but opening the choices is faster"
+  },
+  "solve-q-127#1": {
+   "t": "Method 2 · Plug in",
+   "d": "spot a non-whole value and skip the calculation"
+  },
+  "solve-q-129#0": {
+   "t": "Method 1 · Add the fractions",
+   "d": "test Tom's claim with numbers A = 3, B = 1 → not equal"
+  },
+  "solve-q-129#1": {
+   "t": "Method 2 · Split the fraction",
+   "d": "Tom split a difference on the bottom — the classic trap"
+  },
+  "solve-q-130#0": {
+   "t": "Method 1 · Open the brackets",
+   "d": "method 1 is the standard route; skip to method 2 if you know it"
+  },
+  "solve-q-132#0": {
+   "t": "Simplify each choice",
+   "d": "skip the heavier choice 3 and check choice 4 first"
+  },
+  "solve-q-135#0": {
+   "t": "Inside out",
+   "d": "the three trap answers explained (6/5, 36/5, 1/5)"
+  },
+  "solve-q-171#0": {
+   "t": "Method 1 · Common denominator",
+   "d": "the trap: multiplying straight across gives −1, choice 1"
+  },
+  "solve-q-178#1": {
+   "t": "Method 2 · Plug in",
+   "d": "a middle try: 8 and 3 give 55, each step adds ten"
+  },
+  "solve-q-180#0": {
+   "t": "Method 1 · Write q with p",
+   "d": "the upside-down trap p² (that is p/q)"
+  },
+  "solve-q-181#0": {
+   "t": "Method 1 · Square both sides",
+   "d": "the trap 4.5 from a wrong square that loses the 6y"
+  },
+  "solve-q-182#0": {
+   "t": "Method 1 · Match coefficients",
+   "d": "the trap 2 (3 − 1) forgets the signs must be opposite"
+  },
+  "solve-q-183#0": {
+   "t": "Two squares that add to zero",
+   "d": "why not 'cannot be determined': every case gives b = 0"
+  },
+  "solve-q-184#1": {
+   "t": "Method 2 · Add the fractions",
+   "d": "estimation leaves only 36"
+  },
+  "solve-q-185#0": {
+   "t": "Method 1 · Factor, then cancel",
+   "d": "the sign trap 3 − π explained; π ≈ 3.14 so x is small positive"
+  },
+  "solve-q-186#0": {
+   "t": "Method 1 · Clear the denominators",
+   "d": "each choice marked: (1)–(3) true, (4) pr = qs false"
+  },
+  "solve-q-186#1": {
+   "t": "Method 2 · Two quick tools",
+   "d": "method 2 is a bonus for fast students"
+  },
+  "solve-q-190#0": {
+   "t": "Method 1 · Get rid of c",
+   "d": "the trap z − 4x: subtraction done the wrong way round"
+  },
+  "solve-q-190#1": {
+   "t": "Method 2 · Plug in",
+   "d": "plugging in ones worked here because all four choices differed"
+  },
+  "solve-q-191#1": {
+   "t": "Method 2 · Why cancelling fails",
+   "d": "divide only by non-zero; power 2 and up → common factor, product = 0"
+  },
+  "solve-q-192#0": {
+   "t": "Common factor",
+   "d": "the trap: dividing by x² finds only two solutions"
+  },
+  "solve-q-193#0": {
+   "t": "Plus and minus",
+   "d": "√81 means just 9, but solving by a root takes both signs"
+  },
+  "solve-q-194#0": {
+   "t": "Simplify, then compare",
+   "d": "the trap choice a = 5b explained (5 is added, not multiplied)"
+  },
+  "solve-q-195#0": {
+   "t": "Add the equations",
+   "d": "build the asked expression by adding/subtracting; subtracting gives x − y trap"
+  },
+  "solve-q-196#0": {
+   "t": "Hidden formula",
+   "d": "the traps: not squaring the 7 gives 39, not halving gives 36"
+  },
+  "solve-q-197#0": {
+   "t": "Break it apart",
+   "d": "the trap 19: stopping before the last c"
+  },
+  "solve-q-248#1": {
+   "t": "Method 2 · Pair the families",
+   "d": "which bases pair up: fours with twos, twenty-sevens with nines"
+  },
+  "solve-q-252#0": {
+   "t": "Square both sides",
+   "d": "if x ≠ 0 is not given, factor instead of dividing — keep both answers 0 and 6"
+  },
+  "solve-q-288#1": {
+   "t": "Method 2 · Plug in x = 1",
+   "d": "which route is better — plugging in is usually quicker than the exponent laws"
+  },
+  "solve-q-290#0": {
+   "t": "When is a power 1?",
+   "d": "the two ideas needed: when a power equals 1, and \"or\" claims"
+  },
+  "solve-q-291#1": {
+   "t": "Method 2 · The 2 and 4 pattern",
+   "d": "why the 2 and 4 pattern works here, and that it holds only for whole numbers"
+  },
+  "solve-q-326#0": {
+   "t": "Rule out, then plug in",
+   "d": "another way: divide x⁴ < x⁵ by x⁴ → x > 1, ruling out negatives"
+  },
+  "solve-q-328#0": {
+   "t": "Multiply by 10, then the rule",
+   "d": "clear the fractions first: multiply both sides by 10 (positive, no flip)"
+  },
+  "solve-q-330#0": {
+   "t": "Method 1 · Solve it",
+   "d": "the algebra step: multiply by 3(x + 1), get x > 2"
+  },
+  "solve-q-330#1": {
+   "t": "Method 2 · Spot the pattern",
+   "d": "why x/(x+1) grows toward 1 as x grows (1/2, 2/3, 3/4)"
+  },
+  "solve-q-332#0": {
+   "t": "Method 1 · Two cases",
+   "d": "a shorter way: the sign table with −1 and 7 marked"
+  },
+  "solve-q-334#0": {
+   "t": "Chain the inequalities",
+   "d": "a number line picture of the chain: m + n, p, n, m"
+  },
+  "solve-q-336#0": {
+   "t": "Plug in the edges",
+   "d": "when multiplying ranges end by end works (all positive) and when to check corners"
+  },
+  "solve-q-337#1": {
+   "t": "Method 2 · Counterexamples",
+   "d": "the list of numbers to try: 0, 1, −1, 1/2, a big number"
+  },
+  "solve-q-360#0": {
+   "t": "Small side: closed range",
+   "d": "a distance picture: number line from −3, 7 steps each way to −10 and 4"
+  },
+  "solve-q-361#0": {
+   "t": "Big side: open range",
+   "d": "a distance picture: more than 8 steps from −1, so beyond 7 or below −9"
+  },
+  "solve-q-362#1": {
+   "t": "Method 2 · Replace |x|",
+   "d": "the fact x/|x| = 1 for positive x and −1 for negative x"
+  },
+  "solve-q-364#0": {
+   "t": "Method 1 · Put it on the number line",
+   "d": "tip to leave choice two (two negatives compared) for the end"
+  },
+  "solve-q-366#0": {
+   "t": "Method 1 · Test each choice",
+   "d": "tip to leave choice two for the end"
+  },
+  "solve-q-367#0": {
+   "t": "Method 1 · Full algebra",
+   "d": "check the answer since there is a letter on the right side"
+  },
+  "solve-q-368#1": {
+   "t": "Method 2 · Square both sides",
+   "d": "why we may square: both sides with bars are ≥ 0, so the bars disappear"
+  },
+  "solve-q-368#2": {
+   "t": "Method 3 · Plug in",
+   "d": "the mirror test shortcut: swapping x and y rules out choices one and four"
+  },
+  "solve-q-389#0": {
+   "t": "Lower power",
+   "d": "GCD defined: shared primes at the lower power; trap choice is the LCM"
+  },
+  "solve-q-390#0": {
+   "t": "Higher power",
+   "d": "the LCM name, step-by-step solve (2·5² = 50) and GCD · LCM = a · b"
+  },
+  "solve-q-395#0": {
+   "t": "Test each statement",
+   "d": "a prime dividing a product divides one factor; never true counts as not necessarily"
+  },
+  "solve-q-399#0": {
+   "t": "Break it every way",
+   "d": "the trap if you forget 10 × 10 (answer 33)"
+  },
+  "solve-q-402#0": {
+   "t": "Three divisors → prime squared",
+   "d": "divisors come in pairs: odd number of divisors → a perfect square"
+  },
+  "solve-q-423#0": {
+   "t": "Method 1 · Eliminate what can't be",
+   "d": "the ends-in-5 check for each choice"
+  },
+  "solve-q-423#1": {
+   "t": "Method 2 · Build it from the smallest group",
+   "d": "fraction of a fraction → multiply the denominators (5·3 = 15)"
+  },
+  "solve-q-426#1": {
+   "t": "Method 2 · Plug in",
+   "d": "why 0 is safe here, but never in a necessarily-divisible question"
+  },
+  "solve-q-427#0": {
+   "t": "Percent → fraction → divisible by 3",
+   "d": "build from inside: club = 10k → tennis = 3k, divisible by 3"
+  },
+  "solve-q-430#0": {
+   "t": "Method 1 · Count exactly",
+   "d": "exact count with first and last multiple, plus one (60 and 43)"
+  },
+  "solve-q-431#0": {
+   "t": "Method 1 · Algebra",
+   "d": "checking claim four with all three letters"
+  },
+  "solve-q-431#1": {
+   "t": "Method 2 · Plug in",
+   "d": "one failing example proves 'not necessarily'; working examples prove nothing"
+  },
+  "solve-q-432#0": {
+   "t": "Method 1 · Factor it",
+   "d": "three in a row: divisible by 3 and by 2 → by 6"
+  },
+  "solve-q-432#1": {
+   "t": "Method 2 · Plug in",
+   "d": "if two choices survive, try a second value like a = 3"
+  },
+  "solve-q-434#0": {
+   "t": "Build the expression, then test",
+   "d": "story intro and the trap: checking only 3, not 2"
+  },
+  "solve-q-435#1": {
+   "t": "Method 2 · Plug in",
+   "d": "two working examples are not proof; method 1 proves it"
+  },
+  "solve-q-458#0": {
+   "t": "Way 1 · From the middle",
+   "d": "the trap choice explained (gaps of one, but evens have gap two)"
+  },
+  "solve-q-458#1": {
+   "t": "Way 2 · Plug in",
+   "d": "the plug-in arithmetic spelled out: 32 ÷ 8 = 4"
+  },
+  "solve-q-460#0": {
+   "t": "Way 1 · Plug in",
+   "d": "both parity cases give even → always even, choice one"
+  },
+  "solve-q-462#0": {
+   "t": "Plug in",
+   "d": "why plug in odd numbers: evens make every choice even"
+  },
+  "solve-q-463#0": {
+   "t": "Plug in three times",
+   "d": "results 2, 20, 56 point to choice one; proof follows"
+  },
+  "solve-q-463#1": {
+   "t": "The math way",
+   "d": "exam tip: plug in 1, 3, 5; two consecutive evens divisible by 8"
+  },
+  "solve-q-464#0": {
+   "t": "Plug in three times",
+   "d": "plug-ins n = 1 and n = 2 worked out → always even"
+  },
+  "solve-q-464#1": {
+   "t": "The math way",
+   "d": "why: three in a row divisible by 6, over 3 gives 2k"
+  },
+  "solve-q-469#1": {
+   "t": "Method 2 · Plug in the answers",
+   "d": "trick: x + z is twice the middle"
+  },
+  "solve-q-472#1": {
+   "t": "Method 2 · Plug in — carefully",
+   "d": "the risk with b = 4 and why take the smallest numbers"
+  },
+  "solve-q-495#0": {
+   "t": "Method 1 · Understanding",
+   "d": "spotting the two choices that both have two a's"
+  },
+  "solve-q-496#0": {
+   "t": "Place them, then test",
+   "d": "necessarily true: one counter-example kills it, push values to the edges"
+  },
+  "solve-q-497#1": {
+   "t": "Method 2 · Plug in",
+   "d": "ordering −1/3, −1/6, −1/12, −1/24 by closeness to zero"
+  },
+  "solve-q-500#1": {
+   "t": "Method 2 · A smart plug-in",
+   "d": "warning: change only t, never the numbers in the question"
+  },
+  "solve-q-501#0": {
+   "t": "Decode, then test",
+   "d": "pointer to five more questions (pictures, reciprocals, distances)"
+  },
+  "solve-q-512#0": {
+   "t": "Four steps",
+   "d": "the vertical layout of BA + DA = CCA on the board"
+  },
+  "solve-q-513#0": {
+   "t": "Special digits",
+   "d": "5 × even ends in 0, × odd in 5; 6 × even keeps its units digit"
+  },
+  "solve-q-515#0": {
+   "t": "Units digit",
+   "d": "the vertical layout of BCA + BC = AAA on the board"
+  },
+  "solve-q-517#1": {
+   "t": "Method 2 · Insight",
+   "d": "so CA is in the twenties: C = 2"
+  },
+  "solve-q-519#0": {
+   "t": "Plug in the choices",
+   "d": "plug in choices from the middle; tens reasoning gives A, B = 2, 3"
+  },
+  "solve-q-519#1": {
+   "t": "Why not the others",
+   "d": "why C can't be 2 or 3: two different primes sum to at least 5"
+  },
+  "solve-q-520#0": {
+   "t": "Method 1 · Algebraic form",
+   "d": "write 10T + U and collect; trying U = 1 to 4"
+  },
+  "solve-q-520#1": {
+   "t": "Method 2 · Plug in the choices",
+   "d": "checking each choice: only U = 3 works"
+  },
+  "solve-q-549#0": {
+   "t": "Method 1 · Check each choice",
+   "d": "it is a must-be-true question: 'not always true' means one choice breaks"
+  },
+  "solve-q-549#1": {
+   "t": "Method 2 · Plug in x = 1",
+   "d": "warning: 0 or 1 can make a false rule look true; two survive → try 2"
+  },
+  "solve-q-552#1": {
+   "t": "Method 2 · Plug in a = 1",
+   "d": "73 on top is a strong hint, but one more line makes it sure"
+  },
+  "solve-q-553#1": {
+   "t": "Method 2 · The insight",
+   "d": "the tops cancel; dividing flips the second bottom"
+  },
+  "solve-q-555#0": {
+   "t": "Choice by choice",
+   "d": "choice two checked: 3/a · a = 3 = 3/b · b, keep it and break the others"
+  },
+  "solve-q-556#0": {
+   "t": "Method 1 · Plug in x = 1",
+   "d": "definition in words? write 2–3 examples first; why plugging in 1 is safe here"
+  },
+  "solve-q-577#0": {
+   "t": "Method 1 · Find the maximum",
+   "d": "general rule: n increasing integers → last ≥ first + (n − 1)"
+  },
+  "solve-q-577#2": {
+   "t": "Method 3 · Test the answers",
+   "d": "hidden maximum: test the extreme choices (14, −14) first; examples for the other choices"
+  },
+  "solve-q-578#1": {
+   "t": "Method 2 · Scale factor k",
+   "d": "general rule: y changes by the factor to the power 3/2 (√25 = 5, 5³ = 125)"
+  },
+  "solve-q-580#0": {
+   "t": "Check each variable",
+   "d": "a one-line intro: a question about a formula"
+  },
+  "solve-wp21-g005#0": {
+   "t": "Method 1 · Build and test",
+   "d": "intro, plus: keep tries in order and every try passes every condition"
+  },
+  "solve-wp21-g009#0": {
+   "t": "Method 1 · Step by step",
+   "d": "keep the rule's order (halve, then subtract) and apply it every day"
+  },
+  "solve-wp21-g010#1": {
+   "t": "Method 2 · Why not n = 1?",
+   "d": "if two choices survive n = 3, also plug in n = 4"
+  },
+  "solve-wp21-g013#0": {
+   "t": "Method 1 · In order, from the minimum",
+   "d": "only the count of 2s and 6s matters; 32 is inside the range yet impossible"
+  },
+  "solve-wp21-g013#1": {
+   "t": "Method 2 · The pattern",
+   "d": "second test: subtract 14, the rest must be a multiple of 4 (18 is not)"
+  },
+  "solve-wp21-g017#1": {
+   "t": "Method 2 · Last digit — and its limit",
+   "d": "the last-digit trick works only when choices end in different digits"
+  },
+  "solve-wp21-g018#0": {
+   "t": "Method 1 · Min front, max back",
+   "d": "counting steps: from the 8th back to the 4th is four steps"
+  },
+  "solve-wp21-g021#0": {
+   "t": "Method 1 · Count the spare stickers",
+   "d": "fill every child to the minimum, count spares: 12 spares lift at most 12 → at least 14"
+  },
+  "solve-wp21-g021#1": {
+   "t": "Method 2 · Only the ends?",
+   "d": "range 14–25 has no holes (moves by 1); not a general rule — the chip has holes"
+  },
+  "solve-wp21-g025#1": {
+   "t": "Method 2 · Common multiple",
+   "d": "items ≠ gaps: 4 departures have only 3 gaps of 80 min"
+  },
+  "solve-wp22-g029#0": {
+   "t": "Ratio table",
+   "d": "intro and setting up the ratio table: 8 vases : 56 roses = 12 : ?"
+  },
+  "solve-wp22-g029#1": {
+   "t": "Triangle value",
+   "d": "why it is called the triangle value: diagonal times, divide by the rest"
+  },
+  "solve-wp22-g030#0": {
+   "t": "Triangle value",
+   "d": "the other name: 'cross-multiply and divide'"
+  },
+  "solve-wp22-g030#1": {
+   "t": "Cross-multiply",
+   "d": "pick triangle value or cross-multiplying; the triangle skips isolating x"
+  },
+  "solve-wp22-g032#0": {
+   "t": "Step by step",
+   "d": "label every number: per 100 g ≠ per g, a fixed fee is paid once"
+  },
+  "solve-wp22-g033#0": {
+   "t": "Every detail counts",
+   "d": "rounding up with people: 50 people, vans of 12 → 5 vans"
+  },
+  "solve-wp22-g038#0": {
+   "t": "Build the equation",
+   "d": "moved between groups → total stays; removed → drops; added → grows"
+  },
+  "solve-wp22-g039#0": {
+   "t": "Give it to the little guy",
+   "d": "the age gap stays the same; the ×2 goes on the smaller side"
+  },
+  "solve-wp22-g043#0": {
+   "t": "Method 1 · Stage by stage",
+   "d": "the trap answer 80 explained (both quarters taken from 160)"
+  },
+  "solve-wp22-g044#0": {
+   "t": "Method 1 · Ratio units",
+   "d": "reading the ratio: five coaches for every eight trainees"
+  },
+  "solve-wp22-g045#0": {
+   "t": "Method 1 · Plug in, then fix it",
+   "d": "fixing the plug-in: cafés 1 gives a fifth of a loaf, so use cafés 5, supermarkets 10"
+  },
+  "solve-wp22-g046#0": {
+   "t": "Method 1 · Check each option",
+   "d": "also check the swapped option: ten vanilla, fourteen chocolate"
+  },
+  "solve-wp22-g046#1": {
+   "t": "Method 2 · Size estimate",
+   "d": "the size estimate worked out: start between 24·6/5 ≈ 29 and 24·3/2 = 36 → 33"
+  },
+  "solve-wp22-g047#0": {
+   "t": "Method 1 · Build an equation",
+   "d": "give the plain x to the little guy: B = x, A = 4x"
+  },
+  "solve-wp23-g060#1": {
+   "t": "Method 2 · Plug in 100",
+   "d": "the trap answer explained: the 40% is of the smaller amount, not +10%"
+  },
+  "solve-wp23-g061#0": {
+   "t": "Method 1 · Plug in 100",
+   "d": "the trap answer explained: the third is taken from Dana's bigger wage"
+  },
+  "solve-wp23-g062#0": {
+   "t": "Method 1 · Calculate",
+   "d": "finishing the calculation: 9/200 of y = 9 → y = 200"
+  },
+  "solve-wp23-g064#0": {
+   "t": "Method 1 · Equal ratios",
+   "d": "the trap answer 48 explained: that is the difference, not the factory's apples"
+  },
+  "solve-wp23-g065#0": {
+   "t": "Method 1 · Plug in 100%",
+   "d": "intro, go back two days, a table row, and the trap 270 (only one day back)"
+  },
+  "solve-wp24-g071#1": {
+   "t": "Method 2 · The squares",
+   "d": "a lead-in: the same answer on the strip"
+  },
+  "solve-wp24-g072#0": {
+   "t": "Method 1 · Boxes with x",
+   "d": "restates the data: both is 1/9 of chess and 1/4 of robotics"
+  },
+  "solve-wp24-g072#1": {
+   "t": "Method 2 · Plug in",
+   "d": "the resulting club sizes: 18 in chess, 8 in robotics"
+  },
+  "solve-wp24-g074#0": {
+   "t": "Method 1 · Counts",
+   "d": "the data on the board: total 360, artist 45%, owner 70%"
+  },
+  "solve-wp24-g075#1": {
+   "t": "Method 2 · Complements",
+   "d": "marks the complements method as an extra for strong students"
+  },
+  "solve-wp24-g076#0": {
+   "t": "Method 1 · Add the fractions",
+   "d": "why choice one is forced, and a 20-nurse example where no new nurse drives"
+  },
+  "solve-wp24-g076#1": {
+   "t": "Method 2 · Percent",
+   "d": "all the fractions written as percents (nights 30, drive 75, new 25…)"
+  },
+  "solve-wp24-g077#1": {
+   "t": "Method 2 · People first",
+   "d": "the people counts drawn: morning 12, evening 8, not morning 36"
+  },
+  "solve-wp24-g078#0": {
+   "t": "Method 1 · Read it right",
+   "d": "explains 45 different movies = watched by at least one"
+  },
+  "solve-wp25-g082#0": {
+   "t": "Sum = number × average",
+   "d": "one value can be at most the whole sum, 84"
+  },
+  "solve-wp25-g084#0": {
+   "t": "Method 1 · The formula",
+   "d": "a skip-to-method-two hint for weak students, and the six pairs listed"
+  },
+  "solve-wp25-g084#1": {
+   "t": "Method 2 · Plug in",
+   "d": "warning: if two choices tie with equal numbers, try 1, 2, 3, 4"
+  },
+  "solve-wp25-g085#0": {
+   "t": "Method 1 · Table and formula",
+   "d": "the trap answer 11 explained (average lead 5 = total lead 10)"
+  },
+  "solve-wp25-g087#1": {
+   "t": "Method 2 · Ratios",
+   "d": "heavy side gets the small part of the gap; why: weight × distance balances"
+  },
+  "solve-wp25-g090#0": {
+   "t": "Method 1 · The formula",
+   "d": "explains the weights (box counts) and sets up x boxes of 5 kg"
+  },
+  "solve-wp26-g095#0": {
+   "t": "Method 1 · Combined rate",
+   "d": "call the whole pond one job; the trap of forgetting the outlet (7.5 h)"
+  },
+  "solve-wp26-g095#1": {
+   "t": "Method 2 · Pick a pond size",
+   "d": "the per-hour rates drawn: hoses 4/h each, outlet −3/h"
+  },
+  "solve-wp26-g096#1": {
+   "t": "Method 2 · Add the rates",
+   "d": "a second way: the two-worker shortcut 6·10/(6+10) = 3.75 h"
+  },
+  "solve-wp26-g098#1": {
+   "t": "Method 2 · The V method",
+   "d": "how to draw the V: top-left, bottom-middle, top-right (3, 96, 5)"
+  },
+  "solve-wp26-g101#0": {
+   "t": "Method 1 · Build an equation",
+   "d": "letters L and S set up, and the trap of doubling the wrong side"
+  },
+  "solve-wp26-g101#1": {
+   "t": "Method 2 · Plug in numbers",
+   "d": "the chosen number: one small dishwasher washes one plate a minute"
+  },
+  "solve-wp26-g102#0": {
+   "t": "Method 1 · Ratios in minutes",
+   "d": "combine only matching units — convert first"
+  },
+  "solve-wp27-g108#0": {
+   "t": "Distance, then Pythagoras",
+   "d": "counting in tenths: 8-15-17 triangle → height 0.8 km"
+  },
+  "solve-wp27-g109#0": {
+   "t": "Method 1 · Logic, then a table",
+   "d": "a check for strong students: 2·105·70/175 = 84 (equal distances only)"
+  },
+  "solve-wp27-g116#0": {
+   "t": "Method 1 · The starting gap",
+   "d": "dividing by a fraction: 3 ÷ 1/3 = 3 × 3 = 9"
+  },
+  "solve-wp27-g116#1": {
+   "t": "Method 2 · A quick check",
+   "d": "15 kph = 1/4 km a minute, so 32 minutes → 8 km"
+  },
+  "solve-wp27-g119#0": {
+   "t": "Method 1 · Equation",
+   "d": "the full algebra steps: multiply by 72, x = 24"
+  },
+  "solve-wp27-g119#1": {
+   "t": "Method 2 · Plug in answers",
+   "d": "why plug in answers works: start with the round, friendly choice"
+  },
+  "solve-wp27-g120#2": {
+   "t": "Method 3 · Estimate",
+   "d": "finishing the estimate: 8 is out, only 7.5 left"
+  },
+  "solve-wp27-g121#0": {
+   "t": "Method 1 · Relative speed",
+   "d": "the unit work: one lap 0.4 km at 3 kph relative → 8 minutes"
+  },
+  "solve-wp28-g128#0": {
+   "t": "Method 1 · The pool stays full",
+   "d": "the same idea with numbers: digits may repeat, e.g. 444"
+  },
+  "solve-wp28-g130#0": {
+   "t": "Method 1 · Stage by stage",
+   "d": "the name factorial for the exclamation mark, and what it means"
+  },
+  "solve-wp28-g132#0": {
+   "t": "Method 1 · Count, then halve",
+   "d": "how to spot it (handshakes, routes, games, diagonals); with roles, don't halve"
+  },
+  "solve-wp28-g133#0": {
+   "t": "Method 1 · Draw and count",
+   "d": "the definition of a diagonal"
+  },
+  "solve-wp28-g133#3": {
+   "t": "Method 4 · The formula",
+   "d": "the trap answer 40 explained (each diagonal counted from both ends)"
+  },
+  "solve-wp28-g138#0": {
+   "t": "Method 1 · Choose, then divide by 5!",
+   "d": "cancelling the fraction step by step, with cross-outs"
+  },
+  "solve-wp28-g143#2": {
+   "t": "Method 3 · A growing sequence",
+   "d": "what n means in the table: players, with 1 player → 0 matches"
+  },
+  "solve-wp29-g154#1": {
+   "t": "Die by die",
+   "d": "the forced choice (1/6) and the 1/18 trap (1-4 and 4-1 are different)"
+  },
+  "solve-wp29-g157#0": {
+   "t": "First pick doesn't matter",
+   "d": "drawn together = one after the other, without replacement"
+  },
+  "solve-wp29-g158#0": {
+   "t": "Method 1 · Count the boxes",
+   "d": "a short intro line: two tries, start the simple way"
+  },
+  "solve-wp29-g158#1": {
+   "t": "Method 2 · Two cases",
+   "d": "the two cases can't overlap so add; the 1/8 + 1/7 trap explained"
+  },
+  "solve-wp29-g161#1": {
+   "t": "Method 2 · Omar first",
+   "d": "both of Omar's days are also on Ella's list"
+  },
+  "solve-wp29-g162#0": {
+   "t": "Method 1 · Multiply",
+   "d": "a reminder: only one envelope per round holds a prize"
+  },
+  "solve-wp29-g162#1": {
+   "t": "Method 2 · Plug in",
+   "d": "a quick check: one round, one envelope → prize found for sure"
+  },
+  "solve-wp29-g163#0": {
+   "t": "Method 1 · Wanted over total",
+   "d": "picture one big basket of both farms; simplify 825/900 to 11/12"
+  },
+  "solve-wp29-g163#1": {
+   "t": "Method 2 · Complement",
+   "d": "the final answer: not cracked = 11/12, choice 3"
+  },
+  "solve-wp29-g165#0": {
+   "t": "Method 1 · Multiply",
+   "d": "the first step said aloud: first ticket blank, 7/8"
+  },
+  "systems#1": {
+   "t": "Two equations",
+   "d": "usually one solution, not always — pointer to no / endless solutions next topic"
+  },
+  "systems#9": {
+   "t": "Recap",
+   "d": "recap line: xy and x/y → multiply or divide the equations"
+  },
+  "whole-numbers#5": {
+   "t": "Never negative",
+   "d": "odd power keeps the sign ((−2)³ = −8); zero is neither sign"
+  },
+  "whole-numbers#6": {
+   "t": "Recap",
+   "d": "recap: count minuses for ×/÷, sizes for sums; odd powers keep sign"
+  },
+  "wp-001#3": {
+   "t": "Must or could",
+   "d": "reminder: must, could, cannot — read which one they ask first"
+  },
+  "wp-008#1": {
+   "t": "Two kinds",
+   "d": "intro: patterns come in two kinds, one question each"
+  },
+  "wp-012#1": {
+   "t": "Why it matters",
+   "d": "pointer: the speed-up techniques come in the questions"
+  },
+  "wp-016#1": {
+   "t": "Three min/max rules",
+   "d": "the three min/max rules with examples (1 + 2 + 23, share equally, 10 + 10 + 6)"
+  },
+  "wp-028#1": {
+   "t": "Same rate, two cases",
+   "d": "intro: same rate in two cases → equal ratios"
+  },
+  "wp-034#2": {
+   "t": "A ratio is a fraction",
+   "d": "match names to numbers in order; swapping them is a trap answer"
+  },
+  "wp-039#1": {
+   "t": "Where it helps",
+   "d": "where 'little guy' helps: building equations with twice, three times, ages"
+  },
+  "wp-052#5": {
+   "t": "The percent equation",
+   "d": "exam version with a letter inside the percent; come back after the guided questions"
+  },
+  "wp-052#8": {
+   "t": "More tools",
+   "d": "the rule: change ÷ original × 100"
+  },
+  "wp-053#7": {
+   "t": "Working backwards",
+   "d": "working backwards with a multiplier: 91 ÷ 0.7 = 130"
+  },
+  "wp-068#1": {
+   "t": "Missing data → range",
+   "d": "the story numbers: 15 students, 10 art, 9 drama"
+  },
+  "wp-068#2": {
+   "t": "Place them one by one",
+   "d": "the step to the maximum: every drama student also takes art"
+  },
+  "wp-068#7": {
+   "t": "Spot the wording",
+   "d": "at most/at least of WHAT they ask — choose the overlap that makes it big or small"
+  },
+  "wp-068#10": {
+   "t": "Recap",
+   "d": "recap lines: find the overlap range first; at most/at least of the thing asked"
+  },
+  "wp-069#1": {
+   "t": "One more fact",
+   "d": "the data on the board: 25 members, 13 tennis, 11 squash, 5 neither"
+  },
+  "wp-069#2": {
+   "t": "The squares method",
+   "d": "the strip is the same four regions as the circles, unrolled"
+  },
+  "wp-069#3": {
+   "t": "Given both → neither",
+   "d": "the data on the board: 25 members, 13 tennis, 11 squash, 4 both"
+  },
+  "wp-080#10": {
+   "t": "Recap",
+   "d": "recap line: symmetric or evenly spaced → the average is the middle"
+  },
+  "wp-081#1": {
+   "t": "Turn it around",
+   "d": "average → write a sum; pointer to the questions and two harder letter cases"
+  },
+  "wp-086#1": {
+   "t": "Different weights",
+   "d": "pointer: the formula and see-saw come in the questions"
+  },
+  "wp-099#1": {
+   "t": "What worker-hours are",
+   "d": "worker-hours measure the job size; worker-days is the same idea"
+  },
+  "wp-106#3": {
+   "t": "Units",
+   "d": "minutes as fractions of an hour — learn the row by heart"
+  },
+  "wp-106#4": {
+   "t": "Forget 3.6",
+   "d": "an example question: 8 m/s for 25 minutes, how many km"
+  },
+  "wp-106#6": {
+   "t": "Draw a sketch",
+   "d": "Pythagoras in one line (a² + b² = c²) and: always sketch motion problems"
+  },
+  "wp-108-after#0": {
+   "t": "Average Speed",
+   "d": "why it matters: the idea appears in disguise and is a classic trap"
+  },
+  "wp-108-after#3": {
+   "t": "Not the average",
+   "d": "equal times → the plain average is right; ask: equal distances or equal times?"
+  },
+  "wp-113#4": {
+   "t": "The gap only",
+   "d": "sketch every time — dots, arrows, and mark the 2 km gap"
+  },
+  "wp-134#1": {
+   "t": "Rare and hard",
+   "d": "reassurance, plus a pointer: probability uses this idea a lot"
+  },
+  "wp-134#3": {
+   "t": "Subtracting",
+   "d": "the signal words \"not\" and \"at least one\" → all minus forbidden"
+  },
+  "wp-137#3": {
+   "t": "Who stays out",
+   "d": "a worked example (2 of 10 = 10·9/2 = 45) and: count the smaller side"
+  },
+  "wp-141-after#2": {
+   "t": "Mirror digits",
+   "d": "an extra practice: five-digit numbers that read the same both ways"
+  },
+  "wp-146#3": {
+   "t": "Possible first",
+   "d": "possible = only the smaller group chosen from (music students: 18, not 40)"
+  },
+  "wp-151#1": {
+   "t": "And · Or",
+   "d": "add only cases that can't happen together; overlap is counted twice"
+  },
+  "wp-159#1": {
+   "t": "Dice symmetry",
+   "d": "why dice sums are symmetric; cards 1 to n: top sum n + 1"
+  }
+ }
+}

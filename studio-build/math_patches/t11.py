@@ -1852,3 +1852,101 @@ _apply_before_pen_or_click = apply
 def apply(M):
     _apply_before_pen_or_click(M)
     pen_or_click(M)   # 2026-10-07 pen or click: runs last
+
+
+# =====================================================================================================================
+# 2026-10-07 methods spread: the 2026-10-06 exam methods shown wherever they genuinely help (teacher: "I don't want the
+# students to miss out on it"). (a) a written line appended to the explanation, (b) for a few UNRECORDED solution
+# videos one short extra slide at the end. A recorded video is never changed: any video with a file in
+# ~/Documents/Course.recordings is skipped at build time (its written line is still added). Runs LAST.
+# Topic 11: power count (a root halves the power) in q-289, q-288, q-297, q-298; pick values that fit in q-315.
+# Already shown before: q-302, q-314 (power count), q-307, q-319, q-301, q-r26-t11-02, q-r26-t11-13 (given power).
+# =====================================================================================================================
+import glob as _sp_glob, os as _sp_os, re as _sp_re
+
+
+def _sp_recorded():
+    out = set()
+    for f in _sp_glob.glob(_sp_os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = _sp_re.match(r'(.+)-\d{4}-\d\d-\d\dT[\d-]+Z\.(mp4|webm)$', _sp_os.path.basename(f))
+        if m: out.add(m.group(1))
+    return out
+
+
+SPREAD_LINES = {
+    'q-289': [
+        'Method 2 · Power count: multiplying adds the powers, dividing subtracts them. The question has power '
+        '$3-4-(-2)-5=-4$.',
+        'The choices have powers $0$, $-14$, $-4$ and $2$. Only choice 3 has power $-4$.'],
+    'q-288': [
+        'Method 3 · Power count: the numbers don\'t count. The question has power $4+3-6+1=2$. Choices 3 and 4 have '
+        'power $1$, so they are out. $x=1$ then decides between $5x^2$ (gives $5$) and $x^2$ (gives $1$): choice 2.'],
+    'q-297': [
+        'Method 2 · Power count: a root halves the power. Inside, $x^2\\cdot\\sqrt x$ has power $2+\\frac12=\\frac52$, '
+        'and the outer root halves it: $\\frac54$.',
+        'The choices have powers $2$, $\\frac32$, $\\frac54$ and $\\frac23$. Only choice 3 has power $\\frac54$.'],
+    'q-298': [
+        'Method 2 · Power count: the top has power $1$, the bottom $\\frac12$, so the question has power $\\frac12$. '
+        'Choice 1 (power $1$) and choice 2 (a number, power $0$) are out.',
+        'Choices 3 and 4 both have power $\\frac12$. Take $m=n$: the top is $0$, so the question gives $0$. '
+        'Only $\\sqrt m-\\sqrt n$ gives $0$. The answer is choice 3.'],
+    'q-315': [
+        'Method 2 · Pick values that fit: take $b=1$. Then $\\left(\\frac{2^4}{2^x}\\right)^x=2^4$, so '
+        '$(4-x)\\cdot x=4$ and $x=2$.',
+        'With $b=1$ the choices give $1$, $2$, $4$ and $1$. Only choice 2 gives $2$.'],
+}
+
+SPREAD_SLIDES = {
+    'solve-q-289': ('Method 2 · Switch floors', 'Method 3 · Power count', [
+        "One more way — count the powers. Multiplying adds them, dividing subtracts them.",
+        A('question power appears', T(r'$3-4+2-5=-4$', size=40)),
+        "On top: three, and minus four. Underneath, r to the minus two divides — so plus two. s to the fifth divides — minus five. Total: minus four.",
+        A('choice powers appear', T(r'(1) $0\quad$(2) $-14\quad$(3) $-4\quad$(4) $2$', size=40)),
+        "Now the choices: zero, minus fourteen, minus four, two. Only one has minus four.",
+        D('Circle choice 3'),
+        "Choice three — without moving a single letter.",
+    ]),
+    'solve-q-297': ('Method 2 · Plug in', 'Method 3 · Power count', [
+        "A third way: count the powers. A root halves the power.",
+        A('question power appears', T(r'$\left(2+\frac12\right)\div2=\frac54$', size=40)),
+        "Inside, x squared is two, root x is a half: two and a half. The outer root halves it: five quarters.",
+        A('choice powers appear', T(r'(1) $2\quad$(2) $\frac32\quad$(3) $\frac54\quad$(4) $\frac23$', size=40)),
+        "The choices: two, three halves, five quarters, two thirds.",
+        D('Circle choice 3'),
+        "Only choice three has five quarters. No numbers at all.",
+    ]),
+}
+
+SPREAD_SAY = {
+    'solve-q-297': [(1, 'A root inside a root. Two ways: algebra, then plugging in.',
+                     'A root inside a root. Three ways: algebra, plugging in, and counting the powers.')],
+}
+
+
+def spread_methods(M):
+    for qid, lines in SPREAD_LINES.items():
+        q = M.q(qid)
+        if all(l not in q['explanation'] for l in lines):
+            M.set_q(qid, expl=list(q['explanation']) + lines)
+    rec = _sp_recorded()
+    for vid, (after, title, script) in SPREAD_SLIDES.items():
+        if vid in rec: continue   # recorded: never change it
+        beats = M.video(vid)['beats']
+        n = next(i for i, b in enumerate(beats, 1) if b['title'] == after)
+        b = beats[n - 1]
+        M.insert_slides(vid, n, [dict(mode='question', active=b['active'], title=title,
+                                      pre=[dict(it) for it in b['items'][:b['pre']]], script=script)])
+        for k, old, new in SPREAD_SAY.get(vid, []):
+            sl = M.slide(vid, k)
+            assert any(l.get('say') == old for l in sl['lines']), (vid, k, old)
+            for l in sl['lines']:
+                if l.get('say') == old: l['say'] = new
+            M.touched_videos.add(vid)
+
+
+_apply_before_spread_methods = apply
+
+
+def apply(M):
+    _apply_before_spread_methods(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

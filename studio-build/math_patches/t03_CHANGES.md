@@ -260,3 +260,10 @@ No guided question, lesson, video or card changed; no topic-3 text states a prac
 | q-r26-t03-04 | review, type covered: (7 + x)/(9 + x) = guided q-r26-t03-02 with other numbers |
 
 `python3 math_check.py 3 4 5 6 8 32` → 0 / 0 / 0.
+
+
+## 2026-10-07 methods spread
+Function `spread_methods` (runs last; append only). 1 question:
+- Shortcut: the mirror test: q-096 (0 < m/n < 1, recorded video solve-q-096 unchanged). (m, n) → (−m, −n) keeps the given; choices 2 and 4 turn into each other's opposite → out; m = 1, n = 3 kills choice 1 → choice 3.
+Checked, not added: power count on q-093, q-094, q-082, q-098 (all choices have the question's power 0). The unrecorded video solve-q-fraction-compare (compare with ½) has no fitting method, so no slide.
+All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

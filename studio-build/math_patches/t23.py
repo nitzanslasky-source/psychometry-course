@@ -1717,3 +1717,58 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ======================================================================================================
+# 2026-10-07 methods spread (runs last). The 2026-10-06 exam methods are added wherever they genuinely solve a
+# question: one written line at the end of the solution (existing lines kept), and on the clearest guided videos
+# one extra "Method N" slide (board lines by click, pen only for marks). Methods taught in a later topic are
+# written as a self-contained "Shortcut · <name>" line. Nothing in this topic is recorded (checked 2026-10-07).
+# ======================================================================================================
+SPREAD_RECORDED = set()
+
+
+def _sp_line(M, qid, line):
+    ex = list(M.q(qid).get('explanation') or [])
+    if line in ex: return
+    M.set_q(qid, expl=ex + [line])
+
+
+def _sp_slide(M, qid, after_n, title, script):
+    vid = 'solve-' + qid
+    if vid in SPREAD_RECORDED: return
+    assert M.video(vid)['questionId'] == qid, vid
+    act = M.slide(vid, 2)['active']
+    M.insert_slides(vid, after_n, [dict(mode='question', active=act, title=title, pre=[Q(qid)], script=script)])
+
+
+def spread_methods(M):
+    # ---- Arrow map (this topic, "Percent of a Percent") ----
+    _sp_line(M, 'wp23-g061', r'Method 2 · Arrow map: Omer → Dana is $\times1.5$, and Dana → Lior is $\times\frac23$ ($33\frac13\%$ less leaves $\frac23$). From Omer to Lior, walk along both arrows: $1.5\cdot\frac23=1$. Lior earns exactly what Omer earns.')
+    _sp_line(M, 'q-r26-t23-03', r'Method 2 · Arrow map: chair → desk is $\times1.5$ ($150\%$ OF), and chair → table is $\times2.5$ ($150\%$ MORE). From the desk to the table, go against the first arrow and along the second: $2.5\div1.5=\frac53$. The table is $\frac53$ of the desk: $66\frac23\%$ higher.')
+    # ---- Percent shares as weights (topic 25), written as a self-contained shortcut ----
+    _sp_line(M, 'q-r26-t23-12', r'Shortcut · Percent shares as weights: $30$ of the $50$ liters ($60\%$) are the $20\%$ drink. The mix moves $60\%$ of the way from $10\%$ toward $20\%$: $10\%+0.6\cdot10\%=16\%$. The simple average, $15\%$, is right only for a $50$–$50$ mix.')
+    _sp_slide(M, 'wp23-g061', 3, 'Method 3 · Arrow map', [
+        'Or the arrow map. Each sentence is one arrow, starting at the word after "than".',
+        A("'Omer → Dana ×1.5 → Lior ×2/3' appears", T(r'Omer $\xrightarrow{\ \times1.5\ }$ Dana $\xrightarrow{\ \times\frac23\ }$ Lior', size=44)),
+        'Fifty percent more: times one point five. A third less leaves two thirds: times two thirds.',
+        A("'1.5 · 2/3 = 1' appears", T(r'$1.5\cdot\frac23=1$', size=44)),
+        'From Omer to Lior we walk along both arrows. One point five times two thirds: one.',
+        D('Circle choice 4'),
+        'Choice four.'])
+    _sp_slide(M, 'q-r26-t23-03', 2, 'Method 2 · Arrow map', [
+        'Or the arrow map. Both sentences start at the chair.',
+        A("'desk ← ×1.5 chair ×2.5 → table' appears", T(r'desk $\xleftarrow{\ \times1.5\ }$ chair $\xrightarrow{\ \times2.5\ }$ table', size=44)),
+        'A hundred fifty percent OF the chair: times one point five. A hundred fifty percent MORE: times two point five.',
+        A("'2.5 ÷ 1.5 = 5/3 → 66⅔% higher' appears", T(r'desk $\to$ table: $\ 2.5\div1.5=\frac53$ $\ \to\ 66\frac23\%$ higher', size=44)),
+        'From the desk, back to the chair against the arrow: divide. Then on to the table: multiply. Five thirds — sixty-six and two thirds percent higher.',
+        D('Circle choice 2'),
+        'Choice two.'])
+
+
+_apply_before_spread = apply
+
+
+def apply(M):
+    _apply_before_spread(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

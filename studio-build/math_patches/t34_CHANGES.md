@@ -213,3 +213,6 @@ Judgment calls (left as is): g111 octagon → regular 9-sided polygon: same mess
 same elimination method and level (40°/70° instead of 45°/67.5°); the video and figure match. p03 now has
 "a polygon with 11 sides" choices instead of polygon names (same concept, sum → n). p04 4 octagons → 6 hexagons around
 an opening (same counting idea, ratio 1/2).
+
+## 2026-10-07 methods spread
+- Checked every question for the 2026-10-06 methods: none is faster or new here (the plug-in questions already plug in). No change.

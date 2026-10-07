@@ -230,3 +230,14 @@ Hebrew; no numbers to change), q-460 (mⁿ + nᵐ + 9 + 4n vs 4y + xʸ + yˣ + 5
 (different numbers or condition), the lesson demos 6 ÷ 2 = 3 and 2 · 3 = 6 and the smallest cases 1·2·3 etc. (the method
 itself). Keys brute-forced in Python (exactly one correct choice; traps still choices); duplicate check over topics 1–38.
 `python3 math_check.py 16 32` → 0 / 0 / 0. Rendered the Even & Odd lesson and solve-q-457, -461, -462, -463, -472.
+
+
+## 2026-10-07 methods spread
+Function `spread_methods` (runs last). Went through all 46 questions (20 guided + 26 practice) for the 2026-10-06 methods.
+- **Mirror test** (topic 13), one-letter form: a letter that appears only in an even power can change sign and the given stays the same, so any choice that fixes its sign is out. Written lines only:
+  - `q-457` (a⁵b²/|a| < 0): flip b → choices 2 and 3 (they fix b's sign) are out; a⁵ < 0 → a < 0 (choice 4).
+  - `q-476` (m⁶n³ < 0): flip m → choices 2 (m < 0) and 4 (0 < m) are out; n³ < 0 → n < 0 (choice 1).
+  Checked by computer (grid of values: the given is unchanged by the flip; only the key is always true). No extra slide: the q-457 video already says "we learned nothing about b", and the one-letter flip is a small step beyond the lesson's two mirrors (flip all signs / swap).
+- Not added: the mirror test does not fit q-465, q-466, q-467, q-485, q-491, q-r26-t16-01 (the given changes in every mirror); q-r26-t16-06 (it would only remove one choice, slower than the existing line). Tag it: the parity / divisibility questions already write the tags (q-461 b = 2k, q-483 n = 2k, q-r26-t16-03 / -09 4a + 6, q-463 8k, q-472 / q-492 count the twos); products of consecutive numbers (q-r26-t16-04, -11) are outside its use. Power count: q-458 / q-468 have letters in the choices but "consecutive even" adds numbers (b = a + 2), so the powers don't count — not used. Pick values: the consecutive-number questions already check with values.
+- Recorded videos: none in topic 16.
+`python3 math_check.py 14 15 16 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

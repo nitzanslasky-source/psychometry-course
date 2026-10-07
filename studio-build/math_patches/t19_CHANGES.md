@@ -226,3 +226,7 @@ the trick itself; all numbers differ), q-552 / q-553 / q-554 / q-555 / q-556 (He
 powers, factor 5 instead of 2). Practice: no match (the Hebrew practice is not in the subtitles; no practice item equals a
 Hebrew video example).
 Checks: `python3 math_check.py 19 32` → 0 / 0 / 0; rendered new-operation, solve-q-542, -545, -549, -550 and looked.
+
+
+## 2026-10-07 methods spread
+Every question checked against the 2026-10-06 methods; nothing added (no code). Power count does not separate the choices where letters appear (q-553: every choice has power 0; q-r26-t19-01/-07 and q-r26-t19-20 are mixed expressions; q-571 is a count, not an expression). The "flip all signs" idea is already the shortcut in q-r26-t19-05, q-564 and q-568. Nothing in topic 19 is recorded.

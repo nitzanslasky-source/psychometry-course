@@ -213,3 +213,8 @@ q-r26-t06-16, -14) stay with them. No guided question, lesson, video or card cha
 | q-r26-t06-15 | review: (x − 1)/(x − 1) = 1, how many solutions = Hebrew q-156 / q-169, guided q-r26-t06-02 |
 
 `python3 math_check.py 3 4 5 6 8 32` → 0 / 0 / 0.
+
+
+## 2026-10-07 methods spread
+Nothing added. Pick values that fit is already in q-r26-t06-16 and q-r26-t06-14; the systems are fully determined. No slides: every solution video in this topic is recorded (unchanged).
+All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

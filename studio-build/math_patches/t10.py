@@ -1453,3 +1453,30 @@ _apply_before_no_trinomial = apply
 def apply(M):
     _apply_before_no_trinomial(M)
     no_trinomial(M)   # 2026-10-07 no trinomial factoring: runs last
+
+
+# =====================================================================================
+# 2026-10-07 methods spread: the 2026-10-06 exam methods added as an extra written line wherever they genuinely
+# solve the question (append only; the existing solution stays). Methods taught in a later topic are phrased as a
+# self-contained shortcut with a one-line why. No video changes. Runs LAST.
+# =====================================================================================
+SPREAD_METHODS = {
+    'q-278': [
+        "Method 2 · Power count: the top $x^9y^4$ has $9+4=13$ letters multiplied and the bottom $x^3y^2$ has $5$, so the question has power $13-5=8$ (the $3$ in front doesn't count).",
+        'The choices have powers $8$, $5$, $18$ and $13$. Only choice 1 has power $8$.',
+    ],
+}
+
+
+def spread_methods(M):
+    for qid, lines in SPREAD_METHODS.items():
+        q = M.q(qid)
+        M.set_q(qid, expl=list(q['explanation']) + lines)
+
+
+_apply_before_spread_methods = apply
+
+
+def apply(M):
+    _apply_before_spread_methods(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

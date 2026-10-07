@@ -187,3 +187,6 @@ every changed figure. No "Question N" added to spoken lines.
 Independent review of the renumber pass (built with / without `renumber_pass`, every question, solution video, lesson,
 card and figure compared and rendered; keys and video methods recomputed; Hebrew subtitles and course-wide duplicate
 scan checked). No errors found, no changes made. `math_check.py 34 35 36 37 38 32` and full `math_check.py` → 0 / 0 / 0.
+
+## 2026-10-07 methods spread
+- Checked every question for the 2026-10-06 methods: the written solutions already use the same ideas (two-figures test, extremes, symmetry). No change.

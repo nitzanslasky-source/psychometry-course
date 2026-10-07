@@ -154,3 +154,11 @@ The goal is that the English course does not look like the Hebrew one. Every Heb
 ## 2026-10-06 review (renumber pass)
 Independent review: all 16 guided (videos step by step), 20 practice items, practice removals, order change and the two
 flag lines checked; keys brute-forced, traps present, same type/steps; nothing matches the Hebrew subtitles. No changes.
+
+## 2026-10-07 methods spread
+Function `spread_methods(M)` in t21.py runs last (after `renumber_pass`). Every guided and practice question was checked against the 2026-10-06 methods; a method is added only where it really solves the question, checked with numbers. Nothing in topic 21 is recorded (checked ~/Documents/Course.recordings).
+- **The most precise range** (topic 12: test a number inside one choice and outside another), for "exact range" questions where the choices are ranges:
+  - wp21-g018 (piggy banks, Q10): written line + **new slide 3 "Method 2 · The most precise range"** (+0.4 min): test 13 ✗ (choice 4 out), 35 ✗ (choice 3 out), 17 ✓ (choice 2 out) → choice 1. Slide 2 renamed "Method 1 · Min front, max back". Board lines by click, the pen only crosses out / circles.
+  - wp21-p09 (cakes): written line. 20 ✓ → choice 4 out; 26 needs 8 parents ✗ → choices 1, 2 out.
+  - wp21-p19 (stockers): written line. 22 ✗ → choice 3 out; 16 ✗ → choices 2, 4 out.
+- Not added (checked): g017, g019, g020, p02, p04, p12 — testing the ends is the same work as the existing min/max solution. The remainder / LCM questions (g005, g013, g025, p03, p08, p10) already use the tag-it idea. No letter-answer question fits the power count (Q29 and Q5 choices are mixed or exponential).

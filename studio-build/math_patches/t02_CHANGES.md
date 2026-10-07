@@ -159,3 +159,11 @@ It is now 1 1/5 · 10/36 = 1/3 (key 3).
 | q-063 | 12.3 − 4.15 | 15.4 − 6.25 (add a zero, line up the points) | 9.15 · 1 → 2 |
 | q-064 | 18/0.6 | 28/0.4 | 70 · 2 → 3 |
 | q-065 | 0.9 · 0.9 | 0.7 · 0.7 | 0.49 · 2 → 3 |
+
+
+## 2026-10-07 methods spread
+Function `spread_methods` (runs last; append only). 2 practice questions, phrased as self-contained shortcuts (the methods are taught later):
+- Shortcut for the tie: count the powers: q-r26-t02-23 (1/a + 1/b). The a = b = 1 plug-in ties choices 2 and 4; powers −2 and −1 against the question's −1 → choice 4, no second plug-in.
+- Shortcut: shares as weights: q-r26-t02-24 (glasses, 3/5 girls). 1/4 + 2/5·(1/2 − 1/4) = 7/20; sense check: more girls → below the middle 3/8 → only 7/20.
+No slides (no unrecorded solution videos).
+All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

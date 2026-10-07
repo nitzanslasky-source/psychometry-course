@@ -215,3 +215,11 @@ AC+CB=DA, 52+23=75, A = 5 → ours AB+BC=CD, 32+25=57, C = 5; the digits 2, 3, 5
 q-520 (tens³ + digit sum → units³ + 4·digit sum, tens digit 6): numbers or layout already different.
 Note: new q-517 is close to base-v18's own version (6CB, B−A, 25/26) with other letters and choices — hundreds digit 6 is
 the only one besides 2 where two special-digit squares exist.
+
+
+## 2026-10-07 methods spread
+Function `spread_methods` (runs last; append only; a recorded video is skipped at build time). Nothing in topic 18 is recorded.
+- **Method 2 · Write 10A + B and collect** (the "Words, no columns" move, used here on column puzzles where it is as fast or faster) — written line in 6 questions, each checked by brute force over all digits:
+  q-r26-t18-01 (10A cancels → 10B = 90 → B = 9), q-533 (9A = 8B → A = 8, B = 9), q-535 (B(A + 9) = 80 → A = 7; A = 1 also fits but is not a choice), q-r26-t18-04 (20A = 80 → A = 4), alg-extra-unit-t18-3-7 (2A = 10 + B → A ≥ 5), q-526 (222A + 12 is a whole hundred → A = 4).
+- **Video solve-q-r26-t18-01** (Question 10): new last slide 4 "Method 2 · Write 10A + B and collect" — two click lines (206 + 10A + 10B + 8 = 304 + 10A; 10B = 90 → B = 9), pen only to circle choice 4. About +0.3 min.
+- Skipped (already shown): q-520, q-530, alg-extra-unit-t18-3-6 (words, no columns), q-514, q-524, q-531, q-532, q-528, q-r26-t18-02, q-523 (already algebraic). Power count / tag it: no fitting question.

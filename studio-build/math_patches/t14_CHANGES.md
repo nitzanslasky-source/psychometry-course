@@ -283,3 +283,11 @@ q-402 / q-401 (letters-only, already new letters and examples), "primes up to 40
 - solve-q-397 Q19 (11 -> 4 hand, 7 click). By hand: 4 = 2² -> 1, 2, 4 (method 1), 25, 49, 121, 169 (the pattern, method 2), circles. Clicks: prime -> 2 divisors, 6 -> 4 divisors, p² < 200 -> p ≤ 14, the list of prime squares, and method 2's 1 / 2, 3 / 4 / 9 lines. Slide 2 in size 32.
 - r26-t14-summary (3 -> 0 hand, 3 clicks): 73 = 2 + 71, the GCD/LCM example, the 20k example.
 `math_check.py 14 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. All changed videos rendered and looked at.
+
+
+## 2026-10-07 methods spread
+Went through all 45 questions (19 guided + 26 practice) for the 2026-10-06 methods. **Nothing added, no code change.**
+- Tag it / prime bag: every divisibility question here already solves by breaking into primes or by the LCM (q-388, q-390, q-422, q-395, q-r26-t14-15, q-411, q-405, q-398), which is the tag-it rule itself ("divisible by a and by b → tag is the LCM"); a written "Tag it" line would repeat the explanation.
+- Power count: the letter-choice questions are GCDs (q-389, q-410) — not homogeneous expressions, so the method does not apply.
+- Test a number (ranges): q-409 could be done by testing 22 / 259 / 333, but computing the smallest and largest product is faster. Mirror test / pick values: no question fits.
+- Recorded videos: none in topic 14.

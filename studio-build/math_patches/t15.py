@@ -1865,3 +1865,73 @@ _apply_before_hebrew_backcheck = apply
 def apply(M):
     _apply_before_hebrew_backcheck(M)
     hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last
+
+
+# =====================================================================================================================
+# 2026-10-07 methods spread: the 2026-10-06 exam methods shown wherever they genuinely help (teacher: "I don't want the
+# students to miss out on it"). (a) a written line appended to the explanation, (b) for a few UNRECORDED solution
+# videos one short extra slide at the end. A recorded video is never changed: any video with a file in
+# ~/Documents/Course.recordings is skipped at build time (its written line is still added). Runs LAST.
+# =====================================================================================================================
+import glob as _sp_glob, os as _sp_os, re as _sp_re
+
+
+def _sp_recorded():
+    out = set()
+    for f in _sp_glob.glob(_sp_os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = _sp_re.match(r'(.+)-\d{4}-\d\d-\d\dT[\d-]+Z\.(mp4|webm)$', _sp_os.path.basename(f))
+        if m: out.add(m.group(1))
+    return out
+
+# Tag it: q-r26-t15-01 (line + slide). The other remainder / divisibility questions already solve with tags
+# (q-423, q-427, q-431, q-434, q-435, q-441, q-443, q-438, q-450, q-451, q-449, q-444, q-455, q-r26-t15-15) or got
+# their Tag it line on 2026-10-06 (q-r26-t15-07, q-453).
+SPREAD_LINES = {
+    'q-r26-t15-01': [
+        'Method 2 · Tag it: $a=7k+2$ and $b=7m+5$ (different letters, because $a$ and $b$ are different numbers). '
+        '$a-b=7k-7m-3=7(k-m-1)+4$. Whatever $k$ and $m$ are, the remainder is $4$, so choice 4 ("cannot be determined") is out too.',
+    ],
+}
+
+SPREAD_SLIDES = {
+    'solve-q-r26-t15-01': ('Method 2 · Check with numbers', 'Method 3 · Tag it', [
+        "Two examples can't cover every pair. Tag it, and you know for sure.",
+        A('a = 7k + 2, b = 7m + 5 appears', T(r'$a=7k+2,\qquad b=7m+5$', size=40)),
+        "a is a multiple of seven, plus two. b is a multiple of seven, plus five. Different letters — they're different numbers.",
+        A('a − b = 7(k − m) − 3 = 7(k − m − 1) + 4 appears', T(r'$a-b=7(k-m)-3=7(k-m-1)+4$', size=40)),
+        "Subtract: sevens, minus three. Borrow one seven from the sevens — sevens, plus four.",
+        D('Circle choice 2'),
+        "Every pair leaves four. Choice two — and choice four, cannot be determined, is out.",
+    ]),
+}
+
+SPREAD_SAY = {}
+
+
+def spread_methods(M):
+    for qid, lines in SPREAD_LINES.items():
+        q = M.q(qid)
+        if all(l not in q['explanation'] for l in lines):
+            M.set_q(qid, expl=list(q['explanation']) + lines)
+    rec = _sp_recorded()
+    for vid, (after, title, script) in SPREAD_SLIDES.items():
+        if vid in rec: continue   # recorded: never change it
+        beats = M.video(vid)['beats']
+        n = next(i for i, b in enumerate(beats, 1) if b['title'] == after)
+        b = beats[n - 1]
+        M.insert_slides(vid, n, [dict(mode='question', active=b['active'], title=title,
+                                      pre=[dict(it) for it in b['items'][:b['pre']]], script=script)])
+        for k, old, new in SPREAD_SAY.get(vid, []):
+            sl = M.slide(vid, k)
+            assert any(l.get('say') == old for l in sl['lines']), (vid, k, old)
+            for l in sl['lines']:
+                if l.get('say') == old: l['say'] = new
+            M.touched_videos.add(vid)
+
+
+_apply_before_spread_methods = apply
+
+
+def apply(M):
+    _apply_before_spread_methods(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

@@ -218,3 +218,12 @@ one correct choice each, traps kept, same type / condition / steps, methods work
 - Fixed: lesson example "2 notebooks cost the same as 5 pens" (wp-027 #8, wp-034 #7, cards mem-word-phrases / mem-ratios)
   echoed the Hebrew lesson's "for every 2 pens, 5 pencils" → now "2 notebooks cost the same as 7 pens: 2N = 7P → N : P = 7 : 2"
   (pick 14: notebook 7, pen 2).
+
+## 2026-10-07 methods spread
+Function `spread_methods(M)` in t22.py runs last (after `renumber_pass`). Written lines only (no guided video gets a slide: the methods that fit the guided questions are taught in later topics). Methods from later topics are written as a self-contained "Shortcut · <name>" line with its one-line reason. Every line was checked with numbers. Nothing in topic 22 is recorded.
+- **Power count** (topic 5): wp22-p08 (cabinets, drawers, folders) — power 2; $n^3$, $3n$, $n^2+3$ are out → $3n^2$.
+- **Two moves** (topic 12): wp22-p27 (grade goes down) — endpoint $x=80$, test $x=0$ fails → $x>80$.
+- **Shortcut · Percent shares as weights** (topic 25): wp22-g045 (whole-wheat loaves, guided Q17) — $\frac15+\frac23\cdot\frac3{10}=\frac25$.
+- **Shortcut · Flip rule** (topic 23): wp22-p24 (candle stripes) — $\frac25L=2S$ → $L:S=2:\frac25=5:1$.
+- **Shortcut · Compare by factors** (topic 26): wp22-p20 (words per picture) — words $\times24$, pictures $\times3$ → $24\div3=8$.
+- Not added (checked): q-r26-t22-02 / -08 (worker-days already flips), g049 (already "both counts × 4/3"), p37 (the substitution is faster than the flip), q-r26-t22-04 (power count cuts only choice 1), q-r26-t22-16 / p29 / p18 (pick values that fit is already shown).

@@ -238,3 +238,6 @@ misleading; the redrawn ones match. Fixed:
   Now r = 10: 25π/2 − 25 (same trap pattern).
 Judgment calls left: g094 (r 6, quarter 9π) shares the quarter-circle step with the same lesson slide, but the
 question and answer (36 − 9π) differ; adv-p02 went from five equal arcs to three (same steps: divide, halve, halve).
+
+## 2026-10-07 methods spread
+- spread_methods() runs last. Q19 (geo33-g096): Method 2 · Power count line (it replaces the sentence "A ratio of two perimeters cannot contain r."), and one spoken line on video slide 4 names it as the power count. Shortcut · Pick values that fit lines in geo33-advanced-p07 (with the power-count tie-break), q-r26-t33-10, geo33-advanced-p15 and geo33-foundation-p04. No new slides. Nothing recorded.

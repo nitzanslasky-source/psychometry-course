@@ -3188,3 +3188,62 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ======================================================================================================
+# 2026-10-07 methods spread (runs last). The 2026-10-06 methods (power count, compare by factors, mirror test, pick
+# values that fit) are added where they really solve a question: a "Method N" line (a "Shortcut" line for pick values
+# that fit, which is taught later, in topic 51) at the end of the written solution, and one extra slide in the
+# clearest solution videos. Geometry is not recorded (checked ~/Documents/Course.recordings 2026-10-07).
+# ======================================================================================================
+def _sp_line(M, qid, line, drop=None):
+    """Append one method line to a written solution (drop = a sentence the new line replaces)."""
+    ex = list(M.q(qid).get('explanation') or [])
+    if line in ex: return
+    if drop:
+        assert any(drop in e for e in ex), (qid, drop)
+        ex = [e.replace(drop, '') for e in ex]
+    M.set_q(qid, expl=ex + [line])
+
+
+def _sp_slide(M, qid, after_n, title, script):
+    """One extra method slide in a solution video; the question (with its figure) is pre-loaded as on slide 2."""
+    vid = 'solve-' + qid
+    assert M.video(vid)['questionId'] == qid, vid
+    s2 = M.slide(vid, 2)
+    M.insert_slides(vid, after_n, [dict(mode='question', active=s2['active'], title=title,
+                                        pre=[dict(it) for it in s2['items'][:s2['pre']]], script=script)])
+
+
+def _sp_say_after(M, vid, n, start, line):
+    """Insert one spoken line after the spoken line that starts with `start` (slide n)."""
+    def fn(ls):
+        k = next(j for j, l in enumerate(ls) if (l.get('say') or '').startswith(start))
+        return ls[:k + 1] + [{'say': line}] + ls[k + 1:]
+    if any(l.get('say') == line for l in M.slide(vid, n)['lines']): return
+    M.edit_lines(vid, n, fn)
+
+
+def spread_methods(M):
+    # Q2 (m + n/2, angles at A and C equal): the figure is free -> pick values that fit (topic 51, later) + slide
+    _sp_line(M, 'geo31-g011', r'Shortcut · Pick values that fit: the figure does not fix $k$, and the question expects one number, so any $k$ that fits will do. Take $k=60°$ (an equilateral triangle): $m=180°-60°=120°$ and $n=60°+60°=120°$. $m+\frac n2=120°+60°=180°$.')
+    _sp_slide(M, 'geo31-g011', 2, 'Shortcut · Pick values that fit', [
+        "One more way. The figure doesn't fix k — and the question expects one number. So any k that fits gives the same answer.",
+        A("'k = 60°: an equilateral triangle' appears", T(r'$k=60°$: an equilateral triangle', size=34, x=1060, y=250, w=470)),
+        "Take the easiest: k is 60. Then all three angles are 60 — an equilateral triangle.",
+        A("'m = 120°, n = 120°' appears", T(r'$m=180°-60°=120°$, $\ n=60°+60°=120°$', size=30, x=1060, y=330, w=470)),
+        "m is next to the 60 at A — 120. n is the outside angle at B: 60 plus 60 — 120 too.",
+        A("'m + n/2 = 120° + 60° = 180°' appears", T(r'$m+\frac n2=120°+60°=180°$', size=34, x=1060, y=410, w=470)),
+        "120, plus half of 120 — 180.",
+        D('Circle choice 3'),
+        "Choice three. Same answer — and no letters at all."])
+    # Q15 (ADEC in an equilateral triangle): DBE is ABC at half size -> compare by factors (area x 1/4)
+    _sp_line(M, 'geo31-g018', r'Method 2 · Compare by factors: DBE is ABC with every side $\times\frac12$, so its area is $\times\left(\frac12\right)^2=\frac14$. ADEC is the other $\frac34$: $\frac34\cdot\frac{100\sqrt3}{4}=\frac{75\sqrt3}{4}$.')
+
+
+_apply_before_spread = apply
+
+
+def apply(M):
+    _apply_before_spread(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

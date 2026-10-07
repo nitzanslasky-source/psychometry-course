@@ -228,3 +228,12 @@ methods correct, traps kept. Fixed four places that landed back on the Hebrew:
   too); card tip "+25%, −20%" → "+33⅓%, −25%".
 Open (judgment): "35% of 270" in the 10% method keeps the Hebrew's 35% (= 30% + 5% split, whole differs, builds on the 30%
 line just before).
+
+## 2026-10-07 methods spread
+Function `spread_methods(M)` in t23.py runs last (after `renumber_pass`). Every line was checked with numbers. Nothing in topic 23 is recorded.
+- **Arrow map** (taught in "Percent of a Percent", before both questions):
+  - wp23-g061 (Dana, Omer, Lior; Q7): written line + **new slide 4 "Method 3 · Arrow map"** (+0.4 min): Omer ×1.5 → Dana ×2/3 → Lior, product 1 → choice 4.
+  - q-r26-t23-03 (desk, chair, table; Q13): written line + **new slide 3 "Method 2 · Arrow map"** before "The traps" (+0.45 min): desk ← ×1.5 chair ×2.5 → table, 2.5 ÷ 1.5 = 5/3 → 66⅔% → choice 2.
+- **Shortcut · Percent shares as weights** (topic 25): q-r26-t23-12 (juice mix) — 60% of the liters at 20%: 10% + 0.6 · 10% = 16%. Line only (taught later).
+- Not added (checked): g060, q-r26-t23-01, g065, p07, p10, p24 (multipliers already shown — the same as the arrow map); p13, p26, p14, q-r26-t23-16, q-r26-t23-09 (method already there); q-r26-t23-05, p16, p20 (letter choices: power count leaves all four or three choices).
+- Slides: 2, about +0.85 min in total.

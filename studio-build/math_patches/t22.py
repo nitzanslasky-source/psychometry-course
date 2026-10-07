@@ -2227,3 +2227,45 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ======================================================================================================
+# 2026-10-07 methods spread (runs last). The 2026-10-06 exam methods are added wherever they genuinely solve a
+# question: one written line at the end of the solution (existing lines kept), and on the clearest guided videos
+# one extra "Method N" slide (board lines by click, pen only for marks). Methods taught in a later topic are
+# written as a self-contained "Shortcut · <name>" line. Nothing in this topic is recorded (checked 2026-10-07).
+# ======================================================================================================
+SPREAD_RECORDED = set()
+
+
+def _sp_line(M, qid, line):
+    ex = list(M.q(qid).get('explanation') or [])
+    if line in ex: return
+    M.set_q(qid, expl=ex + [line])
+
+
+def _sp_slide(M, qid, after_n, title, script):
+    vid = 'solve-' + qid
+    if vid in SPREAD_RECORDED: return
+    assert M.video(vid)['questionId'] == qid, vid
+    act = M.slide(vid, 2)['active']
+    M.insert_slides(vid, after_n, [dict(mode='question', active=act, title=title, pre=[Q(qid)], script=script)])
+
+
+def spread_methods(M):
+    # ---- Power count (topic 5) ----
+    _sp_line(M, 'wp22-p08', r'Method 2 · Power count: $n$ cabinets times $n$ drawers times $3$ folders has power $2$ (the number $3$ does not count). The choices: $n^3$ has power $3$, $3n$ power $1$, and $n^2+3$ is mixed. Only $3n^2$ has power $2$.')
+    # ---- Two moves (topic 12) ----
+    _sp_line(M, 'wp22-p27', r'Method 2 · Two moves: endpoint $\frac34x+20=x$ gives $x=80$. Direction: the grade goes down means $\frac34x+20<x$. Test $x=0$: $20<0$ is false, therefore the answer is the side without $0$: $x>80$.')
+    # ---- later-topic methods, written as self-contained shortcuts ----
+    _sp_line(M, 'wp22-g045', r'Shortcut · Percent shares as weights: $\frac23$ of the loaves (the supermarket ones) are $\frac12$ whole-wheat, and $\frac13$ are $\frac15$ whole-wheat. The mix moves $\frac23$ of the way from $\frac15$ toward $\frac12$: $\frac15+\frac23\cdot\left(\frac12-\frac15\right)=\frac15+\frac15=\frac25$.')
+    _sp_line(M, 'wp22-p24', r'Shortcut · Flip rule: $\frac25$ of $L$ is the same length as $6\cdot\frac13=2$ times $S$. The same part, therefore the wholes are in the flipped ratio: $L:S=2:\frac25=5:1$. A small fraction needs a big whole.')
+    _sp_line(M, 'wp22-p20', r'Shortcut · Compare by factors: the textbook has $\frac{72{,}000}{3{,}000}=24$ times the words (the words-per-picture grows the same way) and $\frac{60}{20}=3$ times the pictures (the opposite way, therefore divide). $24\div3=8$.')
+
+
+_apply_before_spread = apply
+
+
+def apply(M):
+    _apply_before_spread(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

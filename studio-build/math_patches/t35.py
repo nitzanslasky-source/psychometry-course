@@ -1971,3 +1971,58 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ======================================================================================================
+# 2026-10-07 methods spread (runs last). The 2026-10-06 methods (power count, compare by factors, mirror test, pick
+# values that fit) are added where they really solve a question: a "Method N" line (a "Shortcut" line for pick values
+# that fit, which is taught later, in topic 51) at the end of the written solution, and one extra slide in the
+# clearest solution videos. Geometry is not recorded (checked ~/Documents/Course.recordings 2026-10-07).
+# ======================================================================================================
+def _sp_line(M, qid, line, drop=None):
+    """Append one method line to a written solution (drop = a sentence the new line replaces)."""
+    ex = list(M.q(qid).get('explanation') or [])
+    if line in ex: return
+    if drop:
+        assert any(drop in e for e in ex), (qid, drop)
+        ex = [e.replace(drop, '') for e in ex]
+    M.set_q(qid, expl=ex + [line])
+
+
+def _sp_slide(M, qid, after_n, title, script):
+    """One extra method slide in a solution video; the question (with its figure) is pre-loaded as on slide 2."""
+    vid = 'solve-' + qid
+    assert M.video(vid)['questionId'] == qid, vid
+    s2 = M.slide(vid, 2)
+    M.insert_slides(vid, after_n, [dict(mode='question', active=s2['active'], title=title,
+                                        pre=[dict(it) for it in s2['items'][:s2['pre']]], script=script)])
+
+
+def _sp_say_after(M, vid, n, start, line):
+    """Insert one spoken line after the spoken line that starts with `start` (slide n)."""
+    def fn(ls):
+        k = next(j for j, l in enumerate(ls) if (l.get('say') or '').startswith(start))
+        return ls[:k + 1] + [{'say': line}] + ls[k + 1:]
+    if any(l.get('say') == line for l in M.slide(vid, n)['lines']): return
+    M.edit_lines(vid, n, fn)
+
+
+def spread_methods(M):
+    # Q3 (cone 4 times a cylinder with the same base): compare by factors (topic 26)
+    _sp_line(M, 'geo35-g122', r'Method 2 · Compare by factors: the base is the same, so only the height matters. With the same height a cone is $\frac13$ of the cylinder, so to hold as much it needs $\times3$ the height, and four times as much needs $\times4$ more: $h\cdot3\cdot4=12h$.')
+    # Q7 (fraction of the box outside the cylinder): power count (topic 5) cuts the two mixed choices
+    _sp_line(M, 'geo35-g126', r'Method 2 · Power count: a fraction of the box is volume $\div$ volume, power $3-3=0$ — a plain number. Choices 1 and 3 are mixed ($1$ has power 0, $\frac{\pi k}{4}$ power 1, $\frac{\pi}{4k}$ power $-1$): out. Choice 2 is negative ($\frac{\pi}{2}>1$): choice 4.')
+    _sp_say_after(M, 'solve-geo35-g126', 4, 'Volume over volume',
+                  "It's the power count from algebra: volume over volume is power 3 minus 3 — zero. And 1 minus pi k over 4 mixes power 0 with power 1.")
+    # core practice (cone 3a, 4a): power count cuts the a² choice
+    _sp_line(M, 'geo35-core-p02', r'Method 2 · Power count: a volume has power 3 ($3a\cdot3a\cdot4a$). Choice 2, $12\pi a^2$, has power 2 — out at once.')
+    # core practice (water into a cylinder with twice the radius): compare by factors
+    _sp_line(M, 'q-r26-t35-05', r'Method 2 · Compare by factors: the volume stays the same. The radius is $\times2$, so the base is $\times2^2=4$, and the height must be $\div4$: $\frac84=2$ cm.')
+
+
+_apply_before_spread = apply
+
+
+def apply(M):
+    _apply_before_spread(M)
+    spread_methods(M)   # 2026-10-07 methods spread: runs last

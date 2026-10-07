@@ -282,3 +282,11 @@ Topic total: 128 pen cues -> 53 by hand, 69 by click, 6 split (59 pen cues left,
 
 Check: `python3 math_check.py 12 32` -> 0 problems, 0 warnings, 0 layout problems. All 23 videos rendered and checked by
 eye (tmp_check/pen12a–e.png).
+
+## 2026-10-07 methods spread
+Function `spread_methods` (runs last, after `pen_or_click`). Every guided and practice question was checked for the new methods; each line verified in Python (brute force on a grid). Nothing in topic 12 is recorded (checked ~/Documents/Course.recordings); the build also skips any video that gets recorded later.
+- **Method 2 · The most precise range** (written line, 7 questions): q-324 (x = 7 ✓ kills 1; x = 0 ✗ kills 4; x = 10 ✗ kills 3), q-325 (x = 6 ✗ kills 1, 4; x = 0 ✗ kills 3 → "no value"), q-328 (x = 0 ✓ alone kills 2, 3, 4), q-r26-t12-02 (0 ✓, 3 ✗, −6 ✗), q-331 (x = 2, y = ½ fits → 1, 3 out; y = −½ never fits → 2 out), q-349 (m = −1 ✓ alone kills 1, 2, 4), q-352 (x = ⅛ ✓ alone kills 1, 3, 4).
+- **Method 2 · Pick values that fit** (written line, 1 question): q-347 (x = ½ → y = ⅜ kills 1, 3, 4).
+- **Extra video slides** "Method 2 · Test a number" (2 slides, ≈ 0.8 min): solve-q-325 (after "Split — and no overlap": x = 6 and x = 0 by click, cross-outs by pen) and solve-q-328 (after "Multiply by 10, then the rule", before the rule slide "Small side, big side": x = 0 by click, cross out 2–4).
+- Skipped: already shown (q-322, q-r26-t12-13, practice lines of 2026-10-06), counterexample / plug-in questions that already list the fitting values (q-327, q-329, q-333, q-r26-t12-03, q-337, q-350, q-351…), counting and integer questions, corner-range questions (the four-corner check is the method).
+`math_check.py 12 13 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Both extended videos rendered and checked.
