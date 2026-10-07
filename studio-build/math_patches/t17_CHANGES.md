@@ -206,3 +206,9 @@ Function `spread_methods` (runs last; append only; a recorded video is skipped a
 - **Method 2 · The most precise range** (one allowed value kills every choice that leaves it out) — written line in 4 questions, each decided by ONE test value (checked in python): q-498 (x = ½ → choice 4), q-r26-t17-03 (x = −3 → 6/x = −2 → choice 3), q-r26-t17-09 (x = −1 → 1/x = −1 → choice 2), q-506 (c = −½ → k = 1/64 → choice 3).
 - No extra video slide: solve-q-498 already tests the ranges (Method 2 · Plug in the answers), and solve-q-r26-t17-03 already tests the ends.
 - Not added: signs hidden in the given (q-501, q-510 already start with it; q-498 already argues the signs); power count (q-495, q-505: every choice has the same power); mirror test (no symmetric given in this topic); q-509 already tests one number per range.
+
+## 2026-10-07 shaded number lines
+Function `number_lines` (runs last; figure helper `math_patches/_shaded_nl.py`). A video recorded before
+`_shaded_nl.CUTOFF` is skipped; it was not recorded when this was made.
+- solve-q-498 · "Method 2 · Plug in the answers": closing picture - x only between 0 and 1, open circles (+≈5 s).
+`math_check.py 12 13 17 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Render: tmp_check/numlines/t13-t17.png.

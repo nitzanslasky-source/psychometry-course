@@ -1727,3 +1727,35 @@ _apply_before_spread_methods = apply
 def apply(M):
     _apply_before_spread_methods(M)
     spread_methods(M)   # 2026-10-07 methods spread: runs last
+
+
+# =====================================================================================================================
+# 2026-10-07 shaded number lines (teacher idea): the answer range as a shaded number line - one figure + one short
+# spoken line. Method, numbers, answers unchanged. Recorded videos are never touched (_shaded_nl.recorded).
+# =====================================================================================================================
+def _snl():
+    import importlib.util, os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_shaded_nl.py')
+    spec = importlib.util.spec_from_file_location('_shaded_nl', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); return m
+
+
+def number_lines(M):
+    S = _snl()
+    # q-498: x⁸ < x⁷ - x lives between 0 and 1 (closing picture of method 2)
+    v = 'solve-q-498'
+    if not S.recorded(v):
+        n = [i for i, b in enumerate(M.video(v)['beats'], 1) if b['title'] == 'Method 2 · Plug in the answers']
+        assert len(n) == 1, n
+        S.add(M, v, n[0], 'We found a range that works.',
+              S.fig(-2, 2, [(-1, '−1'), (0, '0'), (1, '1')], [(0, 1, False, False)], title='x⁸ < x⁷: 0 < x < 1'),
+              'Number line: 0 < x < 1 shaded appears',
+              "On the number line: x lives only between zero and one — open circles at both ends.")
+
+
+_apply_before_number_lines = apply
+
+
+def apply(M):
+    _apply_before_number_lines(M)
+    number_lines(M)   # 2026-10-07 shaded number lines: runs last

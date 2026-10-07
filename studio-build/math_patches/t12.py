@@ -2163,3 +2163,71 @@ _apply_before_spread_methods = apply
 def apply(M):
     _apply_before_spread_methods(M)
     spread_methods(M)   # 2026-10-07 methods spread: runs last
+
+
+# =====================================================================================================================
+# 2026-10-07 shaded number lines (teacher idea): in a few videos the answer range appears as a shaded number line -
+# one figure + one short spoken line, right after the range is found. Method, numbers and answers unchanged.
+# Recorded videos are never touched (_shaded_nl.recorded: takes from before the cutoff keep the old video).
+# =====================================================================================================================
+def _snl():
+    import importlib.util, os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_shaded_nl.py')
+    spec = importlib.util.spec_from_file_location('_shaded_nl', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); return m
+
+
+def _snl_n(M, vid, title):
+    ns = [i for i, b in enumerate(M.video(vid)['beats'], 1) if b['title'] == title]
+    assert len(ns) == 1, (vid, title, ns); return ns[0]
+
+
+def number_lines(M):
+    S = _snl(); fig = S.fig
+    todo = [
+        # q-325: x > 5 AND x < 2 - two rays that never meet
+        ('solve-q-325', 'Split — and no overlap', "It's not OR. It has to be both at the same time.",
+         fig(-2, 9, [(0, '0'), (2, '2'), (5, '5')], [], bars=[(None, 2, False, False, 'x < 2'), (5, None, False, False, 'x > 5')],
+             title='x less than 2 and x greater than 5: no overlap'),
+         'Number line: x < 2 and x > 5, no overlap appears',
+         "On the number line: one ray goes left from two, the other goes right from five. They never meet.", 900),
+        # q-328: x² < 36 - a segment between the roots
+        ('solve-q-328', 'Multiply by 10, then the rule', 'Root of thirty-six is six.',
+         fig(-9, 9, [(-6, '−6'), (0, '0'), (6, '6')], [(-6, 6, False, False)], title='x squared less than 36: between −6 and 6'),
+         'Number line: −6 < x < 6 shaded appears',
+         "On the number line: one segment, from negative six to six. Open circles — six itself doesn't work.", 900),
+        # q-r26-t12-13: the most precise range -1 < x <= 5
+        ('solve-q-r26-t12-13', 'Method 2 · Two moves', 'Negative one less than x, x at most five.',
+         fig(-4, 8, [(-1, '−1'), (0, None), (5, '5')], [(-1, 5, False, True)], title='−1 < x ≤ 5'),
+         'Number line: −1 < x ≤ 5 shaded appears',
+         "On the number line: an open circle at negative one, a full circle at five — five is included.", 900),
+        # q-331: 0 < y < 1
+        ('solve-q-331', 'Check the sign, then cancel', 'Positive and less than one: between zero and one.',
+         fig(-2, 2, [(-1, '−1'), (0, '0'), (1, '1')], [(0, 1, False, False)], title='0 < y < 1'),
+         'Number line: 0 < y < 1 shaded appears',
+         "On the number line: y lives in the short segment between zero and one.", 800),
+        # q-332: the sign table - minus, plus, minus; the fraction is negative on the two outer rays
+        ('solve-q-332', 'Method 1 · Two cases', 'A shorter way to write it: the sign table.',
+         fig(-4, 10, [(-1, '−1'), (0, None), (7, '7')], [(None, -1, False, False), (7, None, False, False)],
+             signs=[(-2.7, '−'), (3, '+'), (8.7, '−')], title='(x + 1)/(7 − x) < 0: x < −1 or x > 7'),
+         'Number line: sign table − + −, x < −1 or x > 7 shaded appears',
+         "Minus, plus, minus. The fraction is negative on the two outer rays — the middle is what does NOT satisfy it.", 900),
+        # summary: x² < 25 a segment, x² >= 49 two rays
+        ('r26-t12-summary', 'x² inequalities', "On the big side: x is outside the roots.",
+         S.two(dict(lo=-10, hi=10, ticks=[(-5, '−5'), (0, '0'), (5, '5')], segs=[(-5, 5, False, False)], cap='x² < 25'),
+               dict(lo=-10, hi=10, ticks=[(-7, '−7'), (0, '0'), (7, '7')], segs=[(None, -7, False, True), (7, None, True, False)], cap='x² ≥ 49'),
+               title='x² < 25: a segment; x² ≥ 49: two rays'),
+         'Number lines: x² < 25 segment, x² ≥ 49 two rays appear',
+         "On the number line: small side — one segment between the roots. Big side — two rays going outward.", 1000),
+    ]
+    for vid, title, after, svg, label, say, w in todo:
+        if S.recorded(vid): continue   # recorded: never change it
+        S.add(M, vid, _snl_n(M, vid, title), after, svg, label, say, w=w)
+
+
+_apply_before_number_lines = apply
+
+
+def apply(M):
+    _apply_before_number_lines(M)
+    number_lines(M)   # 2026-10-07 shaded number lines: runs last

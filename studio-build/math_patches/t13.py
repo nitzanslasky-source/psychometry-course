@@ -2367,3 +2367,67 @@ _apply_before_spread_methods = apply
 def apply(M):
     _apply_before_spread_methods(M)
     spread_methods(M)   # 2026-10-07 methods spread: runs last
+
+
+# =====================================================================================================================
+# 2026-10-07 shaded number lines (teacher idea): in a few videos the answer range appears as a shaded number line -
+# one figure + one short spoken line. |x - a| < r is a band, |x - a| > r two rays. Method, numbers, answers unchanged.
+# q-360 / q-361: the figure replaces the hand-drawn distance sketch the teacher already talks through.
+# Recorded videos are never touched (_shaded_nl.recorded: takes from before the cutoff keep the old video).
+# =====================================================================================================================
+def _snl():
+    import importlib.util, os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_shaded_nl.py')
+    spec = importlib.util.spec_from_file_location('_shaded_nl', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); return m
+
+
+def _snl_n(M, vid, title):
+    ns = [i for i, b in enumerate(M.video(vid)['beats'], 1) if b['title'] == title]
+    assert len(ns) == 1, (vid, title, ns); return ns[0]
+
+
+def number_lines(M):
+    S = _snl(); fig = S.fig
+    # q-360: |x + 3| < 7 - within 7 of −3: one band from −10 to 4 (the hand sketch becomes a click)
+    v = 'solve-q-360'
+    if not S.recorded(v):
+        S.swap(M, v, _snl_n(M, v, 'Small side: closed range'), 'Draw a number line: a dot at −3, arrows of 7 to −10 and to 4',
+               fig(-13, 7, [(-10, '−10'), (-3, '−3'), (0, '0'), (4, '4')], [(-10, 4, False, False)], center=(-3, 7),
+                   title='|x + 3| < 7: within 7 of −3, between −10 and 4'),
+               'Number line: within 7 of −3, −10 < x < 4 shaded appears', 'So x is less than seven steps from negative three.',
+               "Small side: one band, shaded in between. Three is inside it.")
+    # q-361: 8 < |x + 1| - more than 8 from −1: two rays going outward (the hand sketch becomes a click)
+    v = 'solve-q-361'
+    if not S.recorded(v):
+        S.swap(M, v, _snl_n(M, v, 'Big side: open range'), 'Draw a number line: a dot at −1, marks at −9 and 7, shade outside them',
+               fig(-13, 11, [(-9, '−9'), (-1, '−1'), (7, '7')], [(None, -9, False, False), (7, None, False, False)], center=(-1, 8),
+                   title='|x + 1| > 8: more than 8 from −1, x < −9 or x > 7'),
+               'Number line: x < −9 or x > 7 shaded (two rays) appears', 'More than eight steps from negative one:',
+               "Big side: two rays going outward — and a forbidden gap in the middle.")
+        it = M.slide(v, _snl_n(M, v, 'Big side: open range'))['items'][1]
+        assert it['t'].startswith('$x+1>8'), it
+        it['gap'] = 96   # room under x > 7 for the hand-written second case (x + 1 < −8 → x < −9), above the figure
+    # q-369: 7 < |2x − 1| < 9 - two small bands, one on each side
+    v = 'solve-q-369'
+    if not S.recorded(v):
+        S.add(M, v, _snl_n(M, v, 'Method 1 · Two symmetric bands'), 'Choice three.',
+              fig(-5, 6, [(-4, '−4'), (-3, '−3'), (0, '0'), (4, '4'), (5, '5')], [(-4, -3, False, False), (4, 5, False, False)],
+                  title='7 < |2x − 1| < 9: −4 < x < −3 or 4 < x < 5'),
+              'Number line: −4 < x < −3 and 4 < x < 5 shaded appears',
+              "On the number line: two small bands, one on each side — negative four to negative three, and four to five.", w=1000)
+    # q-370: x + |x| < 12 - one ray going left from 6
+    v = 'solve-q-370'
+    if not S.recorded(v):
+        S.add(M, v, _snl_n(M, v, 'Method 1 · Two cases'), 'So: every negative number, and positives only below six.',
+              fig(-6, 9, [(0, '0'), (6, '6')], [(None, 6, False, False)], title='x + |x| < 12: x < 6'),
+              'Number line: x < 6 shaded (a ray) appears',
+              "On the number line: one ray, going left from six — open circle at six. No stop at negative six.")
+
+
+_apply_before_number_lines = apply
+
+
+def apply(M):
+    _apply_before_number_lines(M)
+    number_lines(M)   # 2026-10-07 shaded number lines: runs last

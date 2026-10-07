@@ -249,3 +249,17 @@ Function `spread_methods` (runs last, after `pen_or_click`). Every guided and pr
 - **Method 2 · Pick values that fit**: q-371 (q = 4 → p = 0; only choice 2 gives 0), q-374 (n = 1 → m = 0 → mn = 0; n = 2 gives 0 again, so not "cannot be determined").
 - Skipped: q-366 and q-379 (every choice survives the mirror), q-382 / q-377 (given is not a two-letter mirror), questions with number choices (plug in already) and the ones whose explanation already shows the method.
 `math_check.py 12 13 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-07 shaded number lines
+Function `number_lines` (runs last; figure helper `math_patches/_shaded_nl.py`, same look as the "within 4 of 2"
+figure). ONE click figure + ONE short spoken line per video; method, numbers and answers unchanged. A video recorded
+before `_shaded_nl.CUTOFF` is skipped; none of these was recorded when this was made.
+- solve-q-360 · "Small side: closed range": |x + 3| < 7 - the hand-drawn distance sketch is now the click figure (dot at
+  −3, 7 each way, band −10 to 4) + "Small side: one band, shaded in between. Three is inside it." (+≈4 s).
+- solve-q-361 · "Big side: open range": 8 < |x + 1| - the hand sketch is now the click figure (dot at −1, 8 each way, two
+  rays outward from −9 and 7) + "Big side: two rays going outward — and a forbidden gap in the middle." (+≈4 s). Room
+  kept under "x > 7" for the hand-written second case.
+- solve-q-369 · "Method 1 · Two symmetric bands": the two answer bands −4 < x < −3 and 4 < x < 5 (+≈6 s). The teacher's
+  early hand sketch (shade 7 to 9 and −9 to −7) can go to the right of the first lines; the figure appears at the bottom.
+- solve-q-370 · "Method 1 · Two cases": x < 6 as one ray, open circle at 6 (+≈6 s).
+`math_check.py 12 13 17 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Renders: tmp_check/numlines/t13-t17.png.

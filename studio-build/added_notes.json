@@ -107,7 +107,7 @@
   },
   "r26-t12-summary": {
    "t": "Inequalities: Summary",
-   "d": "recaps inequalities: the flip, x disappearing, systems, x² inequalities, testing choices, signs and fractions, combining ranges, must/could/cannot"
+   "d": "recaps inequalities: the flip, x disappearing, systems, x² inequalities, testing choices, signs and fractions, combining ranges, must/could/cannot; x² rule on shaded number lines (segment / two rays)"
   },
   "r26-t13-mirror": {
    "t": "The Mirror Test",
@@ -539,7 +539,7 @@
   },
   "solve-q-r26-t12-13": {
    "t": "Given: -7\\le3-2x<5. Which of the following is the most precise range for x?",
-   "d": "−7 ≤ 3 − 2x < 5, most precise range (test numbers where choices disagree; or two moves: endpoints, then test 0)"
+   "d": "−7 ≤ 3 − 2x < 5, most precise range (test numbers where choices disagree; or two moves: endpoints, then test 0); closing number line −1 < x ≤ 5 (open / full circle)"
   },
   "solve-q-r26-t13-01": {
    "t": "Given: |2x-1|=7. Which of the following gives all the possible values of x?",
@@ -2155,7 +2155,7 @@
   },
   "solve-q-328#0": {
    "t": "Multiply by 10, then the rule",
-   "d": "clear the fractions first: multiply both sides by 10 (positive, no flip)"
+   "d": "clear the fractions first: multiply both sides by 10 (positive, no flip); shaded number line: x² < 36 → one segment from −6 to 6, open circles"
   },
   "solve-q-330#0": {
    "t": "Method 1 · Solve it",
@@ -2167,7 +2167,7 @@
   },
   "solve-q-332#0": {
    "t": "Method 1 · Two cases",
-   "d": "a shorter way: the sign table with −1 and 7 marked"
+   "d": "a shorter way: the sign table with −1 and 7 marked; shaded number line with the signs − + −: the fraction is negative on the two outer rays, the middle does not satisfy it"
   },
   "solve-q-334#0": {
    "t": "Chain the inequalities",
@@ -2183,11 +2183,11 @@
   },
   "solve-q-360#0": {
    "t": "Small side: closed range",
-   "d": "a distance picture: number line from −3, 7 steps each way to −10 and 4"
+   "d": "a distance picture: number line from −3, 7 steps each way to −10 and 4; the distance picture is now a click figure: one shaded band from −10 to 4 around −3"
   },
   "solve-q-361#0": {
    "t": "Big side: open range",
-   "d": "a distance picture: more than 8 steps from −1, so beyond 7 or below −9"
+   "d": "a distance picture: more than 8 steps from −1, so beyond 7 or below −9; the distance picture is now a click figure: two shaded rays going outward from −9 and 7"
   },
   "solve-q-362#1": {
    "t": "Method 2 · Replace |x|",
@@ -2912,6 +2912,26 @@
   "solve-geo37-g164#3": {
    "t": "Estimating sizes",
    "d": "no decimals: 8√2 = √128 < 12 < 4π; 16π < 56; 32π < 128 and 64√2 < 96 are under 144"
+  },
+  "solve-q-325#0": {
+   "t": "Split — and no overlap",
+   "d": "shaded number line: x < 2 and x > 5 as two rays that never meet — no overlap, no solution"
+  },
+  "solve-q-331#0": {
+   "t": "Check the sign, then cancel",
+   "d": "shaded number line: 0 < y < 1, the short segment between 0 and 1"
+  },
+  "solve-q-369#0": {
+   "t": "Method 1 · Two symmetric bands",
+   "d": "shaded number line: two small bands, −4 < x < −3 and 4 < x < 5"
+  },
+  "solve-q-370#0": {
+   "t": "Method 1 · Two cases",
+   "d": "shaded number line: x < 6 as one ray going left from 6 (no stop at −6)"
+  },
+  "solve-q-498#1": {
+   "t": "Method 2 · Plug in the answers",
+   "d": "shaded number line: x only between 0 and 1, open circles"
   }
  }
 }

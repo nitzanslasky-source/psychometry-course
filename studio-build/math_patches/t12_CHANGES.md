@@ -290,3 +290,19 @@ Function `spread_methods` (runs last, after `pen_or_click`). Every guided and pr
 - **Extra video slides** "Method 2 · Test a number" (2 slides, ≈ 0.8 min): solve-q-325 (after "Split — and no overlap": x = 6 and x = 0 by click, cross-outs by pen) and solve-q-328 (after "Multiply by 10, then the rule", before the rule slide "Small side, big side": x = 0 by click, cross out 2–4).
 - Skipped: already shown (q-322, q-r26-t12-13, practice lines of 2026-10-06), counterexample / plug-in questions that already list the fitting values (q-327, q-329, q-333, q-r26-t12-03, q-337, q-350, q-351…), counting and integer questions, corner-range questions (the four-corner check is the method).
 `math_check.py 12 13 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Both extended videos rendered and checked.
+
+## 2026-10-07 shaded number lines
+Function `number_lines` (runs last; figure helper `math_patches/_shaded_nl.py`, same look as the topic-13 "within 4 of 2"
+figure: teal band, open circle for < / >, full circle for ≤ / ≥, teal arrow for a ray). In each video: ONE click figure
++ ONE short spoken line, right after the range is found. Method, numbers and answers unchanged. A video recorded before
+the cutoff in `_shaded_nl.CUTOFF` is skipped (never changed); none of these was recorded when this was made.
+- solve-q-325 · "Split — and no overlap": the two rays x < 2 and x > 5 above the line, never meeting (+≈6 s).
+- solve-q-328 · "Multiply by 10, then the rule": x² < 36 → one segment −6 to 6, open circles (+≈6 s).
+- solve-q-r26-t12-13 · "Method 2 · Two moves": −1 < x ≤ 5, open circle at −1, full circle at 5 (+≈6 s).
+- solve-q-331 · "Check the sign, then cancel": 0 < y < 1 (+≈4 s).
+- solve-q-332 · "Method 1 · Two cases": the sign table − + − on the line, the two outer rays shaded (+≈7 s) - it
+  shows the "sign table" the last spoken line already names.
+- r26-t12-summary · "x² inequalities": two lines - x² < 25 (segment), x² ≥ 49 (two rays, full circles) (+≈6 s).
+- Not added: solve-q-r26-t12-02 (the teacher already draws the sign-table line by hand there, and the slide is full),
+  solve-q-335 (already has a number line), recorded videos (inequalities, inequality-systems, q-322 … q-324).
+`math_check.py 12 13 17 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Renders: tmp_check/numlines/t12.png.
