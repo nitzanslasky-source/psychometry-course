@@ -215,3 +215,29 @@ changed videos rendered and checked.
 Left on purpose (only one number shared, different equation): q-359 $\|x+7\|=9$ (Hebrew $\|x+4\|=9$), q-360 $\|x+3\|<7$
 (Hebrew $\|x+4\|<7$), q-367 ($4\|x\|+12\|y\|=44$, $x+3\|y\|=1$; Hebrew $4\|x\|+8\|y\|=20$, $x+2\|y\|=1$). Letters-only
 questions q-358, q-363, q-365, q-366, q-368 already differ (letters / numbers / examples). Practice: no matches.
+
+## 2026-10-06 pen or click
+(Done 2026-10-07.) Function `pen_or_click` runs LAST, after renumbering, review, add_methods and `hebrew_backcheck`, so it works on the final text. The teacher's approved split: in lessons the content appears by click and the pen only marks (arc, circle, box, star, cross out); in solution videos the setup and the mechanical lines appear by click, and only the one or two key steps (plus the marks on the choices) are written by hand. Very short notes next to a choice ("never", "x = 3", "5 = 5 ✓") count as marks. Number-line sketches stay by hand. Where a hand-written line comes before click lines, the board leaves an empty row for it. Spoken lines, math, questions and slide count are unchanged. No topic 13 video is recorded. Topic total: 165 pen cues -> 96 by hand, 66 by click, 3 split (99 pen cues left).
+- absolute-value (8 -> 5 by hand, 2 clicks, 1 split). Clicks: = |−9| = 9; "Same signs: 9 = 9" and "Different signs: 3 < 9" (were written under each side). Split: 4 + 13 = 17 click + cross it out by hand. By hand: the two arcs on the number line, circle/cross out the minus, the box. Empty handwriting rows closed.
+- solve-q-358 Q1 (8 -> 6 hand, 1 click, 1 split). By hand: y < |y| -> y < 0, the marks on the choices. Clicks: "x · y < 0 -> opposite signs" (+ underline by hand), "y < 0 and opposite signs -> x > 0".
+- solve-q-359 Q2 (4 -> 2 hand, 2 click). By hand: the second case x + 7 = −9 -> x = −16, circle. Clicks: first case, the check.
+- solve-q-360 Q3 (5 -> 3 hand, 2 click). By hand: −7 < x + 3 < 7, cross-outs/circle, the number-line sketch. Clicks: −10 < x < 4, the check.
+- solve-q-361 Q4 (5 -> 4 hand, 1 click). Click: the first case x > 7. By hand: the second case x < −9, ticks, circle, number line.
+- solve-q-362 Q5 (8 -> 4 hand, 3 click, 1 split). By hand: x = −6 (method 1), x < 0 -> |x| = −x (method 2), the values next to the choices, "−x = 2 ✗" + circle. Clicks: the long substitution, the x = −2 line, 4x/(−x) = −4. Split: 10 − 4 = 6 click + circle.
+- solve-q-r26-t13-01 Q6 (4 -> 2 hand, 2 click). By hand: the second case 2x − 1 = −7, circle. Clicks: the first case, the double check.
+- solve-q-r26-t13-02 Q7: unchanged (only the short notes on the choices and the marks).
+- r26-t13-tools (5 -> 0 hand, 5 clicks). Every written line is a click; empty rows closed.
+- solve-q-363 Q8 (9 -> 7 hand, 2 click). By hand: |n| = m -> m ≥ 0, the number-line sketch and k on it, the bad try m = 4, n = 4 and its fix (method 2), circles. Clicks: m > 0, n < 0; 4k = 4 -> k = 1.
+- solve-q-364 Q9: unchanged (number-line sketch, the counterexample on choice 3, marks).
+- solve-q-365 Q10 (7 -> 5 hand, 2 click). By hand: y < x but |y| > |x| -> y < 0, marks. Clicks: z < 0, the x = ±2 example.
+- solve-q-366 Q11 (10 -> 7 hand, 3 click). By hand: the short notes on choices 3 and 4, x = 6, y = −2: 4 < 8 (the key example), marks. Clicks: the two choice-1 lines, x = 4, y = 1: 5 = 5. The rule item was at a fixed spot; it now follows the click lines.
+- solve-q-r26-t13-13 Q12 (8 -> 3 hand, 5 click). By hand: underline the third given + "the sum cancels -> opposite signs" (method 1), circle the two 4s (method 2), circle. Clicks: "same signs: 10, opposite signs: 4", |a + b| = 7 − 3 = 4, the four sign cases.
+- r26-t13-mirror (7 -> 0 hand, 7 clicks).
+- solve-q-r26-t13-15 Q13 (10 -> 7 hand, 3 click). By hand: the swap line (method 1), (a − b)² = 9 (method 2), the short notes on the choices, circle. Clicks: the flip line, a − b = ±3 -> |a − b| = 3, the a = 0, b = 3 check.
+- solve-q-r26-t13-03 Q14 (8 -> 5 hand, 3 click). By hand: the check that kills x = −1, 3x ≥ 0 (method 2), marks. Clicks: the two cases, the x = 2 check.
+- solve-q-367 Q15 (15 -> 7 hand, 8 click). By hand: |x| − x = 10 (subtract the equations), the notes "2 = 8? ✗" / "5 = 5 ✓", 4·5 + 12·2 = 44 ✓, circles. Clicks: ÷4 line, |x| = 10 + x (twice), the two options, the choice-1 lines and choice-2 line of method 3. Slide 2 in size 32.
+- solve-q-368 Q16 (13 -> 9 hand, 4 click). By hand: the opposite case x = −y, (x + 4y)² = (4x + y)², x = 2, y = −2, cross out 8xy, marks. Clicks: the equal case, the expansion, y² = x², x = y = 2.
+- solve-q-369 Q17 (9 -> 3 hand, 6 click). By hand: the two bands on the number line, circles. Clicks: the three band lines, the three tries on the choices (1)-(3).
+- solve-q-370 Q18 (9 -> 6 hand, 3 click). By hand: x < 0: 0 < 12 always, x = −8 check, marks. Clicks: x ≥ 0 case, x = −4 line, the choice-4 try.
+- r26-t13-summary (2 -> 1 hand, 1 click): x = 8 or x = −12. The circle stays.
+`math_check.py 13 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. All changed videos rendered and looked at.

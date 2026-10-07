@@ -256,3 +256,30 @@ recorded. Fixes are in `hebrew_backcheck(M)` in t14.py (runs last). Keys brute-f
 
 Left on purpose: q-392 (14, 21, 5 / 26, 21, 42 → 91; Hebrew 6, 21, 55 / 14, 15, 30 → 21 — two numbers shared in other roles),
 q-402 / q-401 (letters-only, already new letters and examples), "primes up to 40" and "97" (standard facts).
+
+## 2026-10-06 pen or click
+(Done 2026-10-07.) Function `pen_or_click` runs LAST, after `renumber` and `hebrew_backcheck`, so it works on the final text. The teacher's approved split: in lessons the content appears by click and the pen only marks (circle, tick, box, underline, cross out); in solution videos the setup and the mechanical lines appear by click, and only the one or two key steps (plus the marks on the choices) are written by hand. Very short notes next to a choice ("5 ✗", "3⁷ ✗") count as marks. The factor tree and the marks on the number line stay by hand. Where a hand-written line comes before click lines, the board leaves an empty row for it. Spoken lines, math, questions and slide count are unchanged. No topic 14 video is recorded. Topic total: 127 pen cues -> 67 by hand, 51 by click, 9 split (76 pen cues left).
+- primes (12 -> 4 hand, 7 clicks, 1 split). Clicks: "can't break / = 3 · 5" under 17 and 15 (a second row), 25 = 2 + 23, 91 = 7 · 13 ✗, "3 is a factor of 24", "7 is a factor of 35", 2·3 / 3·3 / 2·3·3 under 6, 9, 18 (a second row), 150 = 2 · 3 · 5². Split: tick 23 and 29 by hand + "Between 20 and 30: 23, 29 (21, 22, 24–28 ✗)" click. By hand: circle "only even", the factor tree (now with room for the whole tree), ticks/cross on 50 and 20, underline.
+- solve-q-387 Q1 (3 -> 1 hand, 1 click, 1 split). By hand: 3⁶ = 729 ✗. Clicks: 2⁶ = 64, 9x = 18 (+ circle).
+- solve-q-r26-t14-01 Q2 (6 -> 2 hand, 4 click). By hand: √113 < 11 -> try 2, 3, 5, 7 (next to choice 3), circle. Clicks: the three fakes (1), (2), (4), the long divisibility line for 113.
+- solve-q-388 Q3 (5 -> 2 hand, 3 click). By hand: 10² = 2² · 5² -> x = 2² · 3 · 5⁴, "2 · 11 — no 11!" + circle. Clicks: (1) 20, (3) 75, (4) 60 with their primes.
+- solve-q-386 Q4 (4 -> 3 hand, 1 split). By hand: circle the primes, shade, cross out 29. Split: 30 · 44 = 1320 click + circle.
+- prime-tools (3 -> 1 hand, 2 clicks): the options lines (two clicks), 4 · 3 = 12 divisors. The box stays.
+- solve-q-389 Q5 (5 -> 4 hand, 1 split). By hand: the circles on the shared primes, cross out r. Split: p · q² · s click + circle.
+- solve-q-390 Q6 (3 -> 1 hand, 1 click, 1 split). By hand: each prime at its higher power. Clicks: 10 = 2 · 5, 25 = 5²; 2 · 5² = 50 (+ circle).
+- solve-q-398 Q7 (4 -> 1 hand, 3 click). By hand: "2 · 3 · 5 — no 2!" + circle. Clicks: (1), (3), (4) with their codes.
+- solve-q-399 Q8 (2 -> 1 hand, 1 click). Click: the four pairs as differences (50 − 2 = 48 … 10 − 10 = 0, one line). By hand: 48 − 0 = 48 + circle.
+- solve-q-400 Q9 (3 -> 1 hand, 1 click, 1 split). By hand: 2 · 5 · 7 = 70 (don't forget all three cards). Clicks: the three pair products; the sum = 129 (+ circle).
+- solve-q-401 Q10 (5 -> 4 hand, 1 click). By hand: m² = m · m -> breaks, m² = 5 -> m = √5, circles. Click: m² = 2 -> m = √2.
+- solve-q-402 Q11 (3 -> 1 hand, 1 click, 1 split). By hand: 3 divisors -> k = p². Clicks: C = √k = p -> prime; divisors of C (+ circle). Lines a bit smaller so the choices stay clear.
+- r26-t14-more-tools (1 -> 0 hand, 1 click): 12k = 2² · 3 · k -> k = 3 -> 36 = 6² ✓.
+- solve-q-r26-t14-03 Q12 (4 -> 2 hand, 2 click). By hand: 108 = 4 · 27 = 2² · 3³, circle. Clicks: the matching line, a − b = −1.
+- solve-q-391 Q13 (8 -> 5 hand, 3 click). By hand: "odd" next to each choice, "= 2 + ?" next to the stem, cross-outs, circle. Clicks: (1) 15 = 2 + 13 ✓, (2) 21 = 2 + 19 ✓, (3) 51 = 2 + 49, 49 = 7 · 7 ✗.
+- solve-q-392 Q14 (9 -> 8 hand, 1 split). By hand: the primes written under the numbers of the stem, the circles; method 2 unchanged. Split: a · b = 91 click + circle.
+- solve-q-393 Q15 (9 -> 5 hand, 4 click). By hand: a(b + 4) = 48, cross-outs, circle. Clicks: the four factor-pair lines.
+- solve-q-396 Q16 (6 -> 2 hand, 3 click, 1 split). By hand: a = 2² · 3 = 12 (grow a), circle. Clicks: a = 6, b = 10, the fraction. Split: cancel the 3s and 5s by hand + "= 2³ = 8" click.
+- solve-q-394 Q17 (11 -> 10 hand, 1 click). Click: z = 2⁷ · 3⁵. By hand: what z is built from (method 1), the short marks on the choices, circles.
+- solve-q-395 Q18 (7 -> 5 hand, 2 click). By hand: "35, 1, 2 ✓", 5 | a -> 25 | a², cross-outs, circle. Clicks: 35 = 5 · 7, 35² = 5² · 7².
+- solve-q-397 Q19 (11 -> 4 hand, 7 click). By hand: 4 = 2² -> 1, 2, 4 (method 1), 25, 49, 121, 169 (the pattern, method 2), circles. Clicks: prime -> 2 divisors, 6 -> 4 divisors, p² < 200 -> p ≤ 14, the list of prime squares, and method 2's 1 / 2, 3 / 4 / 9 lines. Slide 2 in size 32.
+- r26-t14-summary (3 -> 0 hand, 3 clicks): 73 = 2 + 71, the GCD/LCM example, the 20k example.
+`math_check.py 14 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. All changed videos rendered and looked at.

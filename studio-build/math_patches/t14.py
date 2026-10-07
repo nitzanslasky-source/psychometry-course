@@ -1794,3 +1794,227 @@ _apply_before_hebrew_backcheck = apply
 def apply(M):
     _apply_before_hebrew_backcheck(M)
     hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last
+
+
+# ---------------------------------------------------------------- 2026-10-07 pen or click
+# Teacher-approved split (2026-10-04/06): lessons - content appears by click, the pen only marks (circle, tick, box,
+# underline, cross out); solution videos - setup and mechanical lines by click, by hand only the one or two key steps
+# plus the marks on the choices (very short notes next to a choice count as marks). The factor tree and the marks on
+# the number line stay by hand. Runs LAST (after renumber and hebrew_backcheck), on the final text. No topic 14 video
+# is recorded. Helper copied from t10.py (same behaviour).
+def _pen_or_click_slide(M, vid, n, repl, room=(), row=106):
+    """repl: pen cue text -> script entries replacing it. room: pen cues kept by hand that need their own row on the
+    board - the item above them gets a bigger gap, so the click items below leave space for the handwriting."""
+    b = M.slide(vid, n); script = []; done = set()
+    for l in b['lines']:
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        elif l['draw'] in repl: script.extend(repl[l['draw']]); done.add(l['draw'])
+        else: script.append(D(l['draw']))
+    missing = (set(repl) - done) | (set(room) - {l.get('draw') for l in b['lines']})
+    assert not missing, '%s #%d: draw cue not found: %s' % (vid, n, missing)
+    M.set_slide(vid, n, script=script)
+    b = M.slide(vid, n); last = b['pre'] - 1
+    for l in b['lines']:
+        if 'appear' in l: last = l['appear']
+        elif l.get('draw') in room: b['items'][last]['gap'] = b['items'][last].get('gap', 44) + row
+
+
+def _gaps(M, vid, n, gap):
+    """the board no longer needs the empty rows that were kept for handwriting: close them."""
+    for it in M.slide(vid, n)['items']:
+        if it.get('k') == 't' and it.get('gap', 0) > gap: it['gap'] = gap
+
+
+def pen_or_click(M):
+    S = 38
+    # ---- lesson: Prime Numbers (written lines -> clicks; circle, ticks, factor tree, underline by hand)
+    V = LESSON_A
+    _pen_or_click_slide(M, V, 2, {
+        'Under 17 write "can\'t break"; under 15 write "= 3 · 5"': [A('can\'t break / = 3 · 5 appear under 17 and 15',
+            dict(k='row', items=["can't break", '$=3\\cdot5$'], sp=300, size=40, below=40))],
+    })
+    M.slide(V, 2)['items'][1]['below'] = 16
+    _pen_or_click_slide(M, V, 3, {
+        'Write "25 = 2 + 23"': [A('25 = 2 + 23 appears', T(r'$25=2+23$', size=46))],
+    })
+    _pen_or_click_slide(M, V, 4, {
+        'Next to 23 and 29, tick them; write "21, 22, 24–28 ✗"': [
+            D('Tick 23 and 29'), A('Between 20 and 30: 23, 29 appears',
+                                   T(r'Between $20$ and $30$: $\ 23,\ 29$ $\quad$ ($21,\ 22,\ 24$–$28$ ✗)', size=42))],
+    })
+    _gaps(M, V, 4, 30)
+    _pen_or_click_slide(M, V, 5, {
+        'Write "91 ÷ 7 = 13  →  91 = 7 · 13  ✗"': [A('91 ÷ 7 = 13 → 91 = 7 · 13 ✗ appears', T(r'$91\div7=13 \;\to\; 91=7\cdot13$ ✗', size=46))],
+    })
+    _pen_or_click_slide(M, V, 6, {
+        'Next to it write "3 is a factor of 24"': [A('3 is a factor of 24 appears', T(r'$3$ is a factor of $24$', size=44))],
+        'Next to it write "7 is a factor of 35"': [A('7 is a factor of 35 appears', T(r'$7$ is a factor of $35$', size=44))],
+    })
+    _gaps(M, V, 6, 24)
+    _pen_or_click_slide(M, V, 7, {
+        'Under 6 write "2·3"; under 9 write "3·3"; under 18 write "2·3·3"': [A('2·3, 3·3, 2·3·3 appear under 6, 9, 18',
+            dict(k='row', items=['', '', '$2\\cdot3$', '$3\\cdot3$', '$2\\cdot3\\cdot3$'], sp=180, size=38, below=30))],
+    })
+    M.slide(V, 7)['items'][1]['below'] = 12
+    _pen_or_click_slide(M, V, 8, {
+        'Next to the tree write "150 = 2 · 3 · 5²"': [A('150 = 2 · 3 · 5² appears', T(r'$150=2\cdot3\cdot5^2$', size=50))],
+    })
+    M.slide(V, 8)['items'][0]['gap'] = 330    # the whole factor tree fits above the click line
+    # ---- Q: q-387 - by hand: 3⁶ = 729 ✗ (every bigger prime is too big), circle
+    _pen_or_click_slide(M, 'solve-q-387', 2, {
+        'Write "2⁶ = 64 ✓ two digits"': [A('2⁶ = 64 ✓ two digits appears', T(r'$2^6=64$ ✓ two digits', size=S))],
+        'Write "9x = 9 · 2 = 18" and circle choice 2': [A('9x = 9 · 2 = 18 appears', T(r'$9x=9\cdot2=18$', size=S)), D('Circle choice 2')],
+    }, room=['Write "3⁶ = 729 ✗"'], row=70)
+    # ---- Q: q-r26-t14-01 - by hand: √113 < 11 -> try 2, 3, 5, 7 (next to choice 3), circle
+    _pen_or_click_slide(M, 'solve-q-r26-t14-01', 2, {
+        'Next to choice 1 write "91 = 7 · 13 ✗"': [A('(1) 91 = 7 · 13 ✗ appears', T(r'(1) $91=7\cdot13$ ✗', size=S))],
+        'Next to choice 2 write "119 = 7 · 17 ✗"': [A('(2) 119 = 7 · 17 ✗ appears', T(r'(2) $119=7\cdot17$ ✗', size=S))],
+        'Next to choice 4 write "133 = 7 · 19 ✗"': [A('(4) 133 = 7 · 19 ✗ appears', T(r'(4) $133=7\cdot19$ ✗', size=S))],
+        'Write "odd · 1 + 1 + 3 = 5 · no 0 or 5 · 113 = 7 · 16 + 1"': [A('113: odd, digit sum 5, no 0 or 5, 7 · 16 + 1 appears',
+            T(r'$113$: odd $\cdot\ 1+1+3=5\ \cdot$ no $0$ or $5$ $\cdot\ 113=7\cdot16+1$', size=34))],
+    })
+    # ---- Q: q-388 - by hand: unpack 10² (x = 2² · 3 · 5⁴), "2 · 11 — no 11!" on choice 2, circle
+    _pen_or_click_slide(M, 'solve-q-388', 2, {
+        'Next to choice 1 write "2² · 5 ✓"': [A('(1) 20 = 2² · 5 ✓ appears', T(r'(1) $20=2^2\cdot5$ ✓', size=S))],
+        'Next to choice 3 write "3 · 5² ✓"': [A('(3) 75 = 3 · 5² ✓ appears', T(r'(3) $75=3\cdot5^2$ ✓', size=S))],
+        'Next to choice 4 write "2² · 3 · 5 ✓"': [A('(4) 60 = 2² · 3 · 5 ✓ appears', T(r'(4) $60=2^2\cdot3\cdot5$ ✓', size=S))],
+    }, room=['Under x write "10² = 2² · 5²  →  x = 2² · 3 · 5⁴"'], row=70)
+    # ---- Q: q-386 - by hand: circle the primes, shade, cross out on the number line, circle
+    _pen_or_click_slide(M, 'solve-q-386', 2, {
+        'Write "30 · 44 = 1320" and circle choice 3': [A('30 · 44 = 1320 appears', T(r'$30\cdot44=1320$', size=S)), D('Circle choice 3')],
+    })
+    # ---- lesson: Factor Tools (written lines -> clicks; the box by hand)
+    V = LESSON_B
+    _pen_or_click_slide(M, V, 3, {
+        'Write "3: 0, 1, 2, 3 → 4 options" and "5: 0, 1, 2 → 3 options"': [
+            A('3: 0, 1, 2, 3 → 4 options appears', T(r'$3$: $\ 0,\ 1,\ 2,\ 3 \;\to\; 4$ options', size=46)),
+            A('5: 0, 1, 2 → 3 options appears', T(r'$5$: $\ 0,\ 1,\ 2 \;\to\; 3$ options', size=46))],
+        'Write "4 · 3 = 12 divisors"': [A('4 · 3 = 12 divisors appears', T(r'$4\cdot3=12$ divisors', size=46))],
+    })
+    _gaps(M, V, 3, 24)
+    # ---- Q: q-389 - by hand: the circles on the shared primes, cross out r, circle
+    _pen_or_click_slide(M, 'solve-q-389', 2, {
+        'Write "p · q² · s" and circle choice 3': [A('p · q² · s appears', T(r'$p\cdot q^2\cdot s$', size=S)), D('Circle choice 3')],
+    })
+    # ---- Q: q-390 - by hand: each prime at its HIGHER power, circle
+    _pen_or_click_slide(M, 'solve-q-390', 2, {
+        'Write "10 = 2 · 5" and "25 = 5²"': [A('10 = 2 · 5, 25 = 5² appears', T(r'$10=2\cdot5 \qquad 25=5^2$', size=S))],
+        'Write "2 · 5² = 50" and circle choice 3': [A('2 · 5² = 50 appears', T(r'$2\cdot5^2=50$', size=S)), D('Circle choice 3')],
+    }, room=['Write "2: only 2¹ → 2;   5: 5¹ and 5² → 5²"'], row=64)
+    # ---- Q: q-398 - by hand: "2 · 3 · 5 — no 2!" on choice 2, circle
+    _pen_or_click_slide(M, 'solve-q-398', 2, {
+        'Next to choice 1 write "3 · 3 · 5 → 335 ✓"': [A('(1) 45 = 3 · 3 · 5 → 335 ✓ appears', T(r'(1) $45=3\cdot3\cdot5 \;\to\; 335$ ✓', size=S))],
+        'Next to choice 3 write "1 · 5 · 5 → 155 ✓"': [A('(3) 25 = 1 · 5 · 5 → 155 ✓ appears', T(r'(3) $25=1\cdot5\cdot5 \;\to\; 155$ ✓', size=S))],
+        'Next to choice 4 write "1 · 3 · 5 → 135 ✓"': [A('(4) 15 = 1 · 3 · 5 → 135 ✓ appears', T(r'(4) $15=1\cdot3\cdot5 \;\to\; 135$ ✓', size=S))],
+    })
+    # ---- Q: q-399 - by hand: 48 − 0 = 48 (the 10 · 10 pair gives 0), circle
+    _pen_or_click_slide(M, 'solve-q-399', 2, {
+        'Write the pairs: 2·50 → 48, 4·25 → 21, 5·20 → 15, 10·10 → 0': [A('The four pairs and their differences appear',
+            T(r'$50-2=48 \qquad 25-4=21 \qquad 20-5=15 \qquad 10-10=0$', size=S))],
+    })
+    # ---- Q: q-400 - by hand: 2 · 5 · 7 = 70 (don't forget all three cards), circle
+    _pen_or_click_slide(M, 'solve-q-400', 2, {
+        'Write "2 · 5 = 10", "2 · 7 = 14", "5 · 7 = 35"': [A('2 · 5 = 10, 2 · 7 = 14, 5 · 7 = 35 appear',
+            T(r'$2\cdot5=10 \qquad 2\cdot7=14 \qquad 5\cdot7=35$', size=S))],
+        'Write "70 + 35 + 14 + 10 = 129" and circle choice 1': [A('70 + 35 + 14 + 10 = 129 appears',
+            T(r'$70+35+14+10=129$', size=S)), D('Circle choice 1')],
+    }, room=['Write "2 · 5 · 7 = 70"'], row=70)
+    # ---- Q: q-401 - by hand: m² = m · m -> breaks (method 1, unchanged), m² = 5 -> m = √5 (method 2), circles
+    _pen_or_click_slide(M, 'solve-q-401', 3, {
+        'Write "m² = 2 → m = √2"': [A('m² = 2 → m = √2 appears', T(r'$m^2=2 \;\to\; m=\sqrt2$', size=S))],
+    }, room=['Write "m² = 5 → m = √5"'], row=70)
+    # ---- Q: q-402 - by hand: 3 divisors -> k = p², circle
+    _pen_or_click_slide(M, 'solve-q-402', 2, {
+        'Write "C = √k = p → prime"': [A('C = √k = p → prime appears', T(r'$C=\sqrt k=p \;\to\;$ prime', size=S))],
+        'Write "divisors of C: 1, p → 2" and circle choice 4': [A('divisors of C: 1, p → 2 appears',
+            T(r'divisors of $C$: $\ 1,\ p \;\to\; 2$', size=S)), D('Circle choice 4')],
+    }, room=['Write "3 divisors → k = p²"'], row=50)
+    its = M.slide('solve-q-402', 2)['items']          # (+ the row for k = p²) the rule, C = √k, divisors of C
+    for it, g in zip(its[0:], (44 + 50, 10, 10, 10)): it['gap'] = g
+    for it in its[1:]: it['size'] = min(it.get('size', 46), 34)
+    # ---- lesson: More Factor Tools
+    _pen_or_click_slide(M, TRICKS, 2, {
+        'Write "12k = 2² · 3 · k → k = 3 → 36 = 6² ✓"': [A('12k = 2² · 3 · k → k = 3 → 36 = 6² ✓ appears',
+            T(r'$12k=2^2\cdot3\cdot k \;\to\; k=3 \;\to\; 36=6^2$ ✓', size=44))],
+    })
+    # ---- Q: q-r26-t14-03 - by hand: 108 = 4 · 27 = 2² · 3³ (break it), circle
+    _pen_or_click_slide(M, 'solve-q-r26-t14-03', 2, {
+        'Write "2ᵃ · 3ᵇ = 2² · 3³ → a = 2, b = 3"': [A('2ᵃ · 3ᵇ = 2² · 3³ → a = 2, b = 3 appears', T(r'$2^a\cdot3^b=2^2\cdot3^3 \;\to\; a=2,\ b=3$', size=S))],
+        'Write "a − b = 2 − 3 = −1"': [A('a − b = 2 − 3 = −1 appears', T(r'$a-b=2-3=-1$', size=S))],
+    }, room=['Write "108 = 4 · 27 = 2² · 3³"'], row=70)
+    # ---- Q: q-391 - by hand: "odd" next to each choice, "= 2 + ?" next to the stem, cross-outs, circle
+    _pen_or_click_slide(M, 'solve-q-391', 2, {
+        'Next to 15 write "2 + 13 ✓"': [A('(1) 15 = 2 + 13 ✓ appears', T(r'(1) $15=2+13$ ✓', size=S))],
+        'Next to 21 write "2 + 19 ✓"': [A('(2) 21 = 2 + 19 ✓ appears', T(r'(2) $21=2+19$ ✓', size=S))],
+        'Next to 51 write "2 + 49 = 7 · 7 ✗"': [A('(3) 51 = 2 + 49, 49 = 7 · 7 ✗ appears', T(r'(3) $51=2+49$, $\ 49=7\cdot7$ ✗', size=S))],
+    })
+    # ---- Q: q-392 - by hand: the primes written under the numbers of the stem, the circles; method 2 unchanged
+    _pen_or_click_slide(M, 'solve-q-392', 2, {
+        'Write "a · b = 7 · 13 = 91" and circle choice 3': [A('a · b = 7 · 13 = 91 appears', T(r'$a\cdot b=7\cdot13=91$', size=S)), D('Circle choice 3')],
+    })
+    # ---- Q: q-393 - by hand: a(b + 4) = 48 (common factor), cross-outs, circle
+    _pen_or_click_slide(M, 'solve-q-393', 2, {
+        'Write "1 × 48 → b = 44, a + b = 45"': [A('1 × 48 → b = 44, a + b = 45 appears', T(r'$1\times48 \;\to\; b=44,\ a+b=45$', size=34))],
+        'Write "2 × 24 → b = 20, a + b = 22"': [A('2 × 24 → b = 20, a + b = 22 appears', T(r'$2\times24 \;\to\; b=20,\ a+b=22$', size=34))],
+        'Write "3 × 16 → b = 12, a + b = 15"': [A('3 × 16 → b = 12, a + b = 15 appears', T(r'$3\times16 \;\to\; b=12,\ a+b=15$', size=34))],
+        'Write "4 × 12 → b = 8, a + b = 12"': [A('4 × 12 → b = 8, a + b = 12 appears', T(r'$4\times12 \;\to\; b=8,\ a+b=12$', size=34))],
+    }, room=['Under the stem write "a(b + 4) = 48"'], row=60)
+    for it in M.slide('solve-q-393', 2)['items'][2:]: it['gap'] = 10
+    # ---- Q: q-396 - by hand: grow a: a = 2² · 3 = 12, cancel, circle
+    _pen_or_click_slide(M, 'solve-q-396', 2, {
+        'Write "a = 2 · 3 = 6"': [A('a = 2 · 3 = 6 appears', T(r'$a=2\cdot3=6$', size=S))],
+        'Write "b = 2 · 5 = 10"': [A('b = 2 · 5 = 10 appears', T(r'$b=2\cdot5=10$', size=S))],
+        'Write "(2² · 3)(2 · 5) / (3 · 5)"': [A('(2² · 3)(2 · 5) / (3 · 5) appears', T(r'$\frac{(2^2\cdot3)(2\cdot5)}{3\cdot5}$', size=S))],
+        'Cancel the 3s and the 5s; write "= 2³ = 8"': [D('Cancel the 3s and the 5s'), A('= 2³ = 8 appears', T(r'$=2^3=8$', size=S))],
+    }, room=['Write "a = 2² · 3 = 12"'], row=64)
+    its = M.slide('solve-q-396', 2)['items']          # a = 6, b = 10 (+ the row for a = 12), the fraction, = 8
+    for it, g in zip(its[1:], (12, 12 + 64, 12, 12)): it['gap'] = g
+    # ---- Q: q-394 - by hand: what z is built from (method 1, unchanged), the short marks on the choices, circles
+    _pen_or_click_slide(M, 'solve-q-394', 3, {
+        'Write "z = 2⁷ · 3⁵"': [A('z = 2⁷ · 3⁵ appears', T(r'$z=2^7\cdot3^5$', size=S))],
+    })
+    # ---- Q: q-395 - by hand: "35, 1, 2 ✓" on choice 1, 5 | a -> 25 | a² on choice 3 (the key), cross-outs, circle
+    _pen_or_click_slide(M, 'solve-q-395', 2, {
+        'Next to the stem write "35 = 5 · 7"': [A('35 = 5 · 7 appears', T(r'$35=5\cdot7$', size=S))],
+        'Write "35 = 5·7 → 35² = 5²·7²"': [A('35 = 5·7 → 35² = 5²·7² appears', T(r'$35=5\cdot7 \;\to\; 35^2=5^2\cdot7^2$', size=S))],
+    })
+    # ---- Q: q-397 - by hand: 4 = 2² -> 1, 2, 4 (method 1), the pattern 25, 49, 121, 169 (method 2), circles
+    _pen_or_click_slide(M, 'solve-q-397', 2, {
+        'Write "prime → 2 divisors"': [A('prime → 2 divisors appears', T(r'prime $\;\to\; 2$ divisors', size=34))],
+        'Write "6 = 2 · 3 → 1, 2, 3, 6"': [A('6 = 2 · 3 → 1, 2, 3, 6 appears', T(r'$6=2\cdot3 \;\to\; 1,\ 2,\ 3,\ 6$', size=34))],
+        'Write "p² < 200 → p ≤ 14"': [A('p² < 200 → p ≤ 14 appears', T(r'$p^2<200 \;\to\; p\le14$', size=34))],
+        'Write "2, 3, 5, 7, 11, 13 → 4, 9, 25, 49, 121, 169"': [A('2, 3, 5, 7, 11, 13 → 4, 9, 25, 49, 121, 169 appears',
+            T(r'$2,\ 3,\ 5,\ 7,\ 11,\ 13 \;\to\; 4,\ 9,\ 25,\ 49,\ 121,\ 169$', size=34))],
+    }, room=['Write "4 = 2² → 1, 2, 4"'], row=48)
+    its = M.slide('solve-q-397', 2)['items']          # prime, 6 (+ the row for 4 = 2²), p² < 200, the list
+    for it, g in zip(its[1:], (6, 6 + 48, 6, 6)): it['gap'] = g; it['size'] = 32
+    _pen_or_click_slide(M, 'solve-q-397', 3, {
+        'Write "1 → 1", "2, 3 → 2 divisors"': [A('1 → 1, 2 and 3 → 2 divisors appears', T(r'$1 \;\to\; 1 \qquad 2,\ 3 \;\to\; 2$ divisors', size=S))],
+        'Write "4 → 1, 2, 4 ✓"': [A('4 → 1, 2, 4 ✓ appears', T(r'$4 \;\to\; 1,\ 2,\ 4$ ✓', size=S))],
+        'Write "9 → 1, 3, 9 ✓"': [A('9 → 1, 3, 9 ✓ appears', T(r'$9 \;\to\; 1,\ 3,\ 9$ ✓', size=S))],
+    })
+    # ---- lesson: Summary
+    V = 'r26-t14-summary'
+    _pen_or_click_slide(M, V, 3, {
+        'Write "73 = 2 + 71"': [A('73 = 2 + 71 appears', T(r'$73=2+71$', size=44))],
+    })
+    _gaps(M, V, 3, 30)
+    _pen_or_click_slide(M, V, 6, {
+        'Write "48 = 2⁴ · 3, 60 = 2² · 3 · 5 → GCD = 12, LCM = 240"': [A('48 and 60: GCD = 12, LCM = 240 appears',
+            T(r'$48=2^4\cdot3,\ \ 60=2^2\cdot3\cdot5 \;\to\;$ GCD $=12$, LCM $=240$', size=40))],
+    })
+    _gaps(M, V, 6, 30)
+    _pen_or_click_slide(M, V, 8, {
+        'Write "20k a square: 20 = 2² · 5 → k = 5 → 100 = 10²"': [A('20k a square → k = 5 appears',
+            T(r'$20k$ a square: $\ 20=2^2\cdot5 \;\to\; k=5 \;\to\; 100=10^2$', size=40))],
+    })
+    _gaps(M, V, 8, 30)
+
+
+_apply_before_pen_or_click = apply
+
+
+def apply(M):
+    _apply_before_pen_or_click(M)
+    pen_or_click(M)   # 2026-10-07 pen or click: runs last

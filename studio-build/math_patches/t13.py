@@ -2072,3 +2072,237 @@ _apply_before_hebrew_backcheck = apply
 def apply(M):
     _apply_before_hebrew_backcheck(M)
     hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last
+
+
+# ---------------------------------------------------------------- 2026-10-07 pen or click
+# Teacher-approved split (2026-10-04/06): lessons - content appears by click, the pen only marks (arc, circle, box,
+# cross out, star); solution videos - setup and mechanical lines by click, by hand only the one or two key steps plus
+# the marks on the choices (short notes next to a choice count as marks). Drawings (number-line sketches) stay by hand.
+# Runs LAST (after renumbering, review, add_methods and hebrew_backcheck), on the final text. No topic 13 video is
+# recorded. Helper copied from t10.py (same behaviour).
+def _pen_or_click_slide(M, vid, n, repl, room=(), row=106):
+    """repl: pen cue text -> script entries replacing it. room: pen cues kept by hand that need their own row on the
+    board - the item above them gets a bigger gap, so the click items below leave space for the handwriting."""
+    b = M.slide(vid, n); script = []; done = set()
+    for l in b['lines']:
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        elif l['draw'] in repl: script.extend(repl[l['draw']]); done.add(l['draw'])
+        else: script.append(D(l['draw']))
+    missing = (set(repl) - done) | (set(room) - {l.get('draw') for l in b['lines']})
+    assert not missing, '%s #%d: draw cue not found: %s' % (vid, n, missing)
+    M.set_slide(vid, n, script=script)
+    b = M.slide(vid, n); last = b['pre'] - 1
+    for l in b['lines']:
+        if 'appear' in l: last = l['appear']
+        elif l.get('draw') in room: b['items'][last]['gap'] = b['items'][last].get('gap', 44) + row
+
+
+def _gaps(M, vid, n, gap):
+    """the board no longer needs the empty rows that were kept for handwriting: close them."""
+    for it in M.slide(vid, n)['items']:
+        if it.get('k') == 't' and it.get('gap', 0) > gap: it['gap'] = gap
+
+
+def pen_or_click(M):
+    S = 38
+    # ---- lesson: Absolute Value (written lines -> clicks; the arcs on the number line, circles, box, cross-out by hand)
+    V = LESSON
+    _pen_or_click_slide(M, V, 4, {
+        'Write "= |−9| = 9"': [A('= |−9| = 9 appears', T(r'$=|-9|=9$', size=60))],
+        'Below, write "4 + 13 = 17" and cross it out': [
+            A('4 + 13 = 17 appears', T(r'$4+13=17$', size=52)), D('Cross out "4 + 13 = 17"')],
+    })
+    _gaps(M, V, 4, 24)
+    _pen_or_click_slide(M, V, 6, {
+        'Under each, write "= 9" and put "=" between them': [
+            A('Same signs: 9 = 9 appears', T(r'Same signs: $\ 9=9$', size=46))],
+        'Under each, write "= 3" and "= 9", and put "<" between them': [
+            A('Different signs: 3 < 9 appears', T(r'Different signs: $\ 3<9$', size=46))],
+    })
+    _gaps(M, V, 6, 24)
+    # ---- Q: q-358 - by hand: y < |y| -> y < 0 (the key), the marks on the choices
+    _pen_or_click_slide(M, 'solve-q-358', 2, {
+        'Underline "x · y < 0" and write "opposite signs"': [
+            D('Underline "x · y < 0"'), A('x · y < 0 → opposite signs appears', T(r'$x\cdot y<0 \;\to\;$ opposite signs', size=S))],
+        'Write "→ x > 0"': [A('y < 0 and opposite signs → x > 0 appears', T(r'$y<0$ and opposite signs $\;\to\; x>0$', size=S))],
+    })
+    # ---- Q: q-359 - by hand: the second case x + 7 = −9, circle
+    _pen_or_click_slide(M, 'solve-q-359', 2, {
+        'Write "x + 7 = 9 → x = 2"': [A('x + 7 = 9 → x = 2 appears', T(r'$x+7=9 \;\to\; x=2$', size=S))],
+        'Next to it write "|−16 + 7| = |−9| = 9 ✓"': [A('check: |−16 + 7| = 9 ✓ appears', T(r'check: $|-16+7|=|-9|=9$ ✓', size=S))],
+    }, room=['Write "x + 7 = −9 → x = −16"'], row=70)
+    # ---- Q: q-360 - by hand: −7 < x + 3 < 7 (the closed range), marks, the number-line sketch
+    _pen_or_click_slide(M, 'solve-q-360', 2, {
+        'Subtract 3 from all three parts: "−10 < x < 4"': [A('−10 < x < 4 appears', T(r'$-3$ everywhere: $\ -10<x<4$', size=S))],
+        'Next to it write "|3 + 3| = 6 < 7 ✓"': [A('check: |3 + 3| = 6 < 7 ✓ appears', T(r'check: $|3+3|=6<7$ ✓', size=S))],
+    }, room=['Write "−7 < x + 3 < 7"'], row=70)
+    # ---- Q: q-361 - by hand: the second case x + 1 < −8, ticks, circle, the number-line sketch
+    _pen_or_click_slide(M, 'solve-q-361', 2, {
+        'Write "x + 1 > 8 → x > 7"': [A('x + 1 > 8 → x > 7 appears', T(r'$x+1>8 \;\to\; x>7$', size=S))],
+    })
+    # ---- Q: q-362 - by hand: x = −6 (method 1), x < 0 -> |x| = −x (method 2), the values next to the choices, circles
+    _pen_or_click_slide(M, 'solve-q-362', 2, {
+        'Write "10 + 4(−6)/|−6| = 10 + (−24)/6 = 10 − 4 = 6"': [A('10 + 4(−6)/|−6| = 10 − 4 = 6 appears',
+            T(r'$10+\frac{4(-6)}{|-6|}=10+\frac{-24}{6}=10-4=6$', size=S))],
+        'Write "x = −2: 10 + (−8)/2 = 6"': [A('x = −2: 10 + (−8)/2 = 6 appears', T(r'$x=-2:\ \ 10+\frac{-8}{2}=6$', size=S))],
+    }, room=['Write "x = −6"'], row=70)
+    _pen_or_click_slide(M, 'solve-q-362', 3, {
+        'Write "4x / (−x) = −4"': [A('4x / (−x) = −4 appears', T(r'$\frac{4x}{-x}=-4$', size=S))],
+        'Write "10 − 4 = 6" and circle choice 2': [A('10 − 4 = 6 appears', T(r'$10-4=6$', size=S)), D('Circle choice 2')],
+    }, room=['Write "x < 0 → |x| = −x"'], row=70)
+    # ---- Q: q-r26-t13-01 - by hand: the second case 2x − 1 = −7, circle
+    _pen_or_click_slide(M, 'solve-q-r26-t13-01', 2, {
+        'Write "2x − 1 = 7 → 2x = 8 → x = 4"': [A('2x − 1 = 7 → 2x = 8 → x = 4 appears', T(r'$2x-1=7 \;\to\; 2x=8 \;\to\; x=4$', size=S))],
+        'Write "|2 · 4 − 1| = 7 ✓   |2 · (−3) − 1| = |−7| = 7 ✓"': [A('check: both work appears',
+            T(r'check: $|2\cdot4-1|=7$ ✓ $\qquad |2\cdot(-3)-1|=|-7|=7$ ✓', size=34))],
+    }, room=['Write "2x − 1 = −7 → 2x = −6 → x = −3"'], row=70)
+    # ---- lesson: Exam Tools (every written line -> click)
+    V = TOOLS
+    _pen_or_click_slide(M, V, 2, {
+        'Write "x = −3: |−3|² = 9, (−3)² = 9"': [A('x = −3: |−3|² = 9, (−3)² = 9 appears', T(r'$x=-3:\ \ |-3|^2=9,\ \ (-3)^2=9$', size=40))],
+        'Write "x = −3: √9 = 3 = |−3|"': [A('x = −3: √9 = 3 = |−3| appears', T(r'$x=-3:\ \ \sqrt9=3=|-3|$', size=40))],
+        'Write "|2 − 7| = 5 = |7 − 2|"': [A('|2 − 7| = 5 = |7 − 2| appears', T(r'$|2-7|=5=|7-2|$', size=40))],
+    })
+    _gaps(M, V, 2, 16)
+    _pen_or_click_slide(M, V, 3, {
+        'Write "|7 − 2| = 5: from 2 to 7 is 5 steps"': [A('|7 − 2| = 5: from 2 to 7 is 5 steps appears', T(r'$|7-2|=5$: from $2$ to $7$ is $5$ steps', size=40))],
+        'Write "|x − 3| < 4 → −1 < x < 7"': [A('|x − 3| < 4 → −1 < x < 7 appears', T(r'$|x-3|<4 \;\to\; -1<x<7$', size=40))],
+    })
+    _gaps(M, V, 3, 16)
+    # ---- Q: q-363 - by hand: |n| = m -> m ≥ 0 (method 1), the bad try m = 4, n = 4 and its fix (method 2), the
+    #      number-line sketch, marks
+    _pen_or_click_slide(M, 'solve-q-363', 2, {
+        'Write "m > 0, n < 0"': [A('m > 0, n < 0 appears', T(r'$m>0,\ \ n<0$', size=S))],
+    }, room=['Under the question write "|n| = m → m ≥ 0"'], row=70)
+    _pen_or_click_slide(M, 'solve-q-363', 3, {
+        'Write "4k = 4 → k = 1"': [A('4k = 4 → k = 1 appears', T(r'$4k=4 \;\to\; k=1$', size=S))],
+    }, room=['Write "m = 4, n = 4"'], row=70)
+    # ---- Q: q-364 - unchanged: the number-line sketch, the counterexample next to choice 3 and the marks stay by hand
+    # ---- Q: q-365 - by hand: y < x but |y| > |x| -> y < 0 (the key), marks
+    _pen_or_click_slide(M, 'solve-q-365', 2, {
+        'Write "z < y < 0 → z < 0"': [A('z < y < 0 → z < 0 appears', T(r'$z<y<0 \;\to\; z<0$', size=S))],
+        'Write "x = −2 or x = 2 (y = −4, z = −5)"': [A('x = −2 or x = 2 appears', T(r'$x=-2$ or $x=2$ $\ (y=-4,\ z=-5)$', size=S))],
+    }, room=['Under the question write "y < x but |y| > |x| → y < 0"'], row=70)
+    # ---- Q: q-366 - by hand: the short notes on choices 3 and 4, x = 6, y = −2: 4 < 8 (the key example), marks
+    _pen_or_click_slide(M, 'solve-q-366', 2, {
+        'Next to choice 1 write "|x+y| > 3 → |x+y|² > 9"': [A('(1) |x+y| > 3 → |x+y|² > 9 appears', T(r'(1) $|x+y|>3 \;\to\; |x+y|^2>9$', size=34))],
+        'Below it write "|x+y|² = (x+y)²  →  (x+y)² > 9"': [A('|x+y|² = (x+y)² → (x+y)² > 9 appears', T(r'$|x+y|^2=(x+y)^2 \;\to\; (x+y)^2>9$', size=34))],
+        'Write "x = 4, y = 1: 5 = 5"': [A('x = 4, y = 1: 5 = 5 appears', T(r'$x=4,\ y=1:\ \ 5=5$', size=34))],
+    })
+    b = M.slide('solve-q-366', 2)        # the rule was placed at a fixed spot - now it follows the click lines
+    for it in b['items'][1:]:
+        it.pop('x', None); it.pop('y', None); it['gap'] = 14
+    b['items'][-2]['size'] = 38
+    # ---- Q: q-r26-t13-13 - by hand: the third given -> opposite signs (method 1), circle the two 4s (method 2), circles
+    _pen_or_click_slide(M, 'solve-q-r26-t13-13', 2, {
+        'Under the question write "same signs: 10   opposite signs: 4"': [A('same signs: 10, opposite signs: 4 appears',
+            T(r'same signs: $10 \qquad$ opposite signs: $4$', size=S))],
+        'Write "|a + b| = 7 − 3 = 4"': [A('|a + b| = 7 − 3 = 4 appears', T(r'$|a+b|=7-3=4$', size=S))],
+    }, room=['Underline "|a + b| < |a − b|" and write "the sum cancels → opposite signs"'], row=70)
+    _pen_or_click_slide(M, 'solve-q-r26-t13-13', 4, {
+        'Write "a = 7, b = 3:  |10| < |4| ✗"': [A('a = 7, b = 3: |10| < |4| ✗ appears', T(r'$a=7,\ b=3:\ \ |10|<|4|$ ✗', size=S))],
+        'Write "a = −7, b = −3:  |−10| < |−4| ✗"': [A('a = −7, b = −3: |−10| < |−4| ✗ appears', T(r'$a=-7,\ b=-3:\ \ |-10|<|-4|$ ✗', size=S))],
+        'Write "a = 7, b = −3:  |4| < |10| ✓     a = −7, b = 3:  |−4| < |−10| ✓"': [A('opposite signs: both ✓ appears',
+            T(r'$a=7,\ b=-3:\ \ |4|<|10|$ ✓ $\qquad a=-7,\ b=3:\ \ |-4|<|-10|$ ✓', size=32))],
+    })
+    # ---- lesson: The Mirror Test (every written line -> click)
+    V = 'r26-t13-mirror'
+    _pen_or_click_slide(M, V, 3, {
+        'Write "a → −a, b → −b:  |−a − b| < |−a| + |−b|"': [A('flip: |−a − b| < |−a| + |−b| appears',
+            T(r'$a\to-a,\ b\to-b:\ \ |-a-b|<|-a|+|-b|$', size=38))],
+        'Write "a → −a ✗    b − a → a − b ✗    a + b → −(a + b) ✗"': [A('a, b − a, a + b flip → out appears',
+            T(r'$a\to-a$ ✗ $\qquad b-a\to a-b$ ✗ $\qquad a+b\to-(a+b)$ ✗', size=36))],
+        'Write "a · b → (−a)(−b) = a · b ✓"': [A('a · b → (−a)(−b) = a · b ✓ appears', T(r'$a\cdot b\to(-a)(-b)=a\cdot b$ ✓', size=38))],
+        'Write "a = 2, b = −1: |1| < 2 + 1 ✓, a · b = −2"': [A('a = 2, b = −1 check appears',
+            T(r'$a=2,\ b=-1:\ \ |1|<2+1$ ✓, $\ a\cdot b=-2$', size=38))],
+    })
+    _pen_or_click_slide(M, V, 4, {
+        'Write "flip:  x > 0 → x < 0 ✗    x + y > 0 → x + y < 0 ✗"': [A('flip: x > 0, x + y > 0 out appears',
+            T(r'flip: $\ x>0\to x<0$ ✗ $\qquad x+y>0\to x+y<0$ ✗', size=36))],
+        'Write "swap:  x < y → y < x ✗"': [A('swap: x < y → y < x ✗ appears', T(r'swap: $\ x<y\to y<x$ ✗', size=38))],
+        'Write "x² ≤ 13 → y² ≤ 13: a twin, not an opposite"': [A('x² ≤ 13 → y² ≤ 13: a twin appears',
+            T(r'$x^2\le13\to y^2\le13$: a twin, not an opposite', size=38))],
+    })
+    # ---- Q: q-r26-t13-15 - by hand: the swap (method 1), (a − b)² = 9 (method 2), the short notes on the choices, circle
+    _pen_or_click_slide(M, 'solve-q-r26-t13-15', 2, {
+        'Write "flip: (−a)² + (−b)² = 2(−a)(−b) + 9 → the same given"': [A('flip: the same given appears',
+            T(r'flip: $\ (-a)^2+(-b)^2=2(-a)(-b)+9 \;\to\;$ the same given', size=32))],
+    }, room=['Write "swap: b² + a² = 2ba + 9 → the same given"'], row=64)
+    _pen_or_click_slide(M, 'solve-q-r26-t13-15', 3, {
+        'Write "a − b = 3  or  a − b = −3 → |a − b| = 3"': [A('a − b = ±3 → |a − b| = 3 appears',
+            T(r'$a-b=3$ or $a-b=-3 \;\to\; |a-b|=3$', size=S))],
+        'Write "a = 0, b = 3: 0 + 9 = 0 + 9 ✓, a − b = −3"': [A('a = 0, b = 3 check appears',
+            T(r'$a=0,\ b=3:\ \ 0+9=0+9$ ✓, $\ a-b=-3$', size=S))],
+    }, room=['Write "a² − 2ab + b² = 9 → (a − b)² = 9"'], row=70)
+    # ---- Q: q-r26-t13-03 - by hand: the check that kills x = −1 (method 1), 3x ≥ 0 (method 2, unchanged), marks
+    _pen_or_click_slide(M, 'solve-q-r26-t13-03', 2, {
+        'Write "x + 4 = 3x → 4 = 2x → x = 2"': [A('x + 4 = 3x → x = 2 appears', T(r'$x+4=3x \;\to\; 4=2x \;\to\; x=2$', size=S))],
+        'Write "x + 4 = −3x → 4x = −4 → x = −1"': [A('x + 4 = −3x → x = −1 appears', T(r'$x+4=-3x \;\to\; 4x=-4 \;\to\; x=-1$', size=S))],
+        'Write "x = 2: |6| = 6 = 3 · 2 ✓"': [A('x = 2: |6| = 6 = 3 · 2 ✓ appears', T(r'$x=2:\ \ |6|=6=3\cdot2$ ✓', size=S))],
+    })
+    # ---- Q: q-367 - by hand: |x| − x = 10 (subtract the equations, method 1), the notes on choices 1 and 2 (method 2),
+    #      4·5 + 12·2 = 44 ✓ (method 3), circles
+    _pen_or_click_slide(M, 'solve-q-367', 2, {
+        'Under the first equation write "÷4: |x| + 3|y| = 11"': [A('÷4: |x| + 3|y| = 11 appears', T(r'$\div4:\ \ |x|+3|y|=11$', size=34))],
+        'Write "|x| = 10 + x"': [A('|x| = 10 + x appears', T(r'$|x|=10+x$', size=34))],
+        'Write "x = 10 + x → 0 = 10 ✗"': [A('x = 10 + x → 0 = 10 ✗ appears', T(r'$x=10+x \;\to\; 0=10$ ✗', size=34))],
+        'Write "x = −(10 + x) → 2x = −10 → x = −5"': [A('x = −(10 + x) → x = −5 appears', T(r'$x=-(10+x) \;\to\; 2x=-10 \;\to\; x=-5$', size=34))],
+    }, room=['Write "|x| − x = 11 − 1 = 10"'], row=52)
+    for k, it in enumerate(M.slide('solve-q-367', 2)['items'][1:]):
+        it['size'] = 32
+        if k: it['gap'] = 8
+        else: it['gap'] = 8 + 52
+    _pen_or_click_slide(M, 'solve-q-367', 3, {
+        'Write "|x| = 10 + x"': [A('|x| = 10 + x appears', T(r'$|x|=10+x$', size=S))],
+    })
+    _pen_or_click_slide(M, 'solve-q-367', 4, {
+        'Next to choice 1 write "x = −2: −2 + 3|y| = 1 → |y| = 1"': [A('(1) x = −2 → |y| = 1 appears', T(r'(1) $x=-2:\ \ -2+3|y|=1 \;\to\; |y|=1$', size=34))],
+        'Write "4·2 + 12·1 = 20 ≠ 44 ✗"': [A('4·2 + 12·1 = 20 ≠ 44 ✗ appears', T(r'$4\cdot2+12\cdot1=20\ne44$ ✗', size=34))],
+        'Next to choice 2 write "x = −5: −5 + 3|y| = 1 → |y| = 2"': [A('(2) x = −5 → |y| = 2 appears', T(r'(2) $x=-5:\ \ -5+3|y|=1 \;\to\; |y|=2$', size=34))],
+    })
+    # ---- Q: q-368 - by hand: the opposite case (method 1), (x + 4y)² = (4x + y)² (method 2), x = 2, y = −2 (method 3), marks
+    _pen_or_click_slide(M, 'solve-q-368', 2, {
+        'Write "x + 4y = 4x + y → y = x"': [A('x + 4y = 4x + y → y = x appears', T(r'$x+4y=4x+y \;\to\; y=x$', size=S))],
+    })
+    _pen_or_click_slide(M, 'solve-q-368', 3, {
+        'Write "x² + 8xy + 16y² = 16x² + 8xy + y²"': [A('x² + 8xy + 16y² = 16x² + 8xy + y² appears', T(r'$x^2+8xy+16y^2=16x^2+8xy+y^2$', size=36))],
+        'Write "15y² = 15x² → y² = x²"': [A('15y² = 15x² → y² = x² appears', T(r'$15y^2=15x^2 \;\to\; y^2=x^2$', size=36))],
+    }, room=['Write "(x + 4y)² = (4x + y)²"'], row=64)
+    _pen_or_click_slide(M, 'solve-q-368', 4, {
+        'Write "x = y = 2: |10| = |10| ✓"': [A('x = y = 2: |10| = |10| ✓ appears', T(r'$x=y=2:\ \ |10|=|10|$ ✓', size=S))],
+    })
+    # ---- Q: q-369 - by hand: the two bands on the number line (the idea), circles
+    _pen_or_click_slide(M, 'solve-q-369', 2, {
+        'Write "7 < 2x − 1 < 9"': [A('7 < 2x − 1 < 9 appears', T(r'$7<2x-1<9$', size=S))],
+        'Write "8 < 2x < 10 → 4 < x < 5"': [A('8 < 2x < 10 → 4 < x < 5 appears', T(r'$8<2x<10 \;\to\; 4<x<5$', size=S))],
+        'Write "−9 < 2x − 1 < −7 → −8 < 2x < −6 → −4 < x < −3"': [A('−9 < 2x − 1 < −7 → −4 < x < −3 appears',
+            T(r'$-9<2x-1<-7 \;\to\; -8<2x<-6 \;\to\; -4<x<-3$', size=S))],
+    })
+    _pen_or_click_slide(M, 'solve-q-369', 3, {
+        'Next to choice 1 write "x = 3.5: |6| = 6 ✗"': [A('(1) x = 3.5: |6| = 6 ✗ appears', T(r'(1) $x=3.5:\ \ |6|=6$ ✗', size=S))],
+        'Next to choice 2 write "x = 5.5: |10| = 10 ✗"': [A('(2) x = 5.5: |10| = 10 ✗ appears', T(r'(2) $x=5.5:\ \ |10|=10$ ✗', size=S))],
+        'Next to choice 3 write "x = −3.5: |−8| = 8 ✓"': [A('(3) x = −3.5: |−8| = 8 ✓ appears', T(r'(3) $x=-3.5:\ \ |-8|=8$ ✓', size=S))],
+    })
+    # ---- Q: q-370 - by hand: x < 0: 0 < 12 always (method 1), x = −8 (method 2), marks
+    _pen_or_click_slide(M, 'solve-q-370', 2, {
+        'Write "x ≥ 0: 2x < 12 → x < 6"': [A('x ≥ 0: 2x < 12 → x < 6 appears', T(r'$x\ge0:\ \ 2x<12 \;\to\; x<6$', size=S))],
+        'Write "x = −4: −4 + 4 = 0"': [A('x = −4: −4 + 4 = 0 appears', T(r'$x=-4:\ \ -4+4=0$', size=S))],
+    })
+    _pen_or_click_slide(M, 'solve-q-370', 3, {
+        'Next to choice 4 write "x = 2: 4 < 12 ✓, x = 9: 18 ✗"': [A('(4) x = 2 ✓, x = 9 ✗ appears',
+            T(r'(4) $x=2:\ \ 4<12$ ✓, $\ x=9:\ \ 18$ ✗', size=S))],
+    })
+    # ---- lesson: Summary
+    _pen_or_click_slide(M, 'r26-t13-summary', 5, {
+        'Write "x = 8 or x = −12"': [A('x = 8 or x = −12 appears', T(r'$x=8$ or $x=-12$', size=44))],
+    })
+    _gaps(M, 'r26-t13-summary', 5, 30)
+
+
+_apply_before_pen_or_click = apply
+
+
+def apply(M):
+    _apply_before_pen_or_click(M)
+    pen_or_click(M)   # 2026-10-07 pen or click: runs last
