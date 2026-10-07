@@ -951,3 +951,50 @@ def order_changes(M):
         D('Write "= (x + 6)²"'),
         "So it's x plus six, squared.",
     ])
+
+
+# =====================================================================================
+# 2026-10-07 practice clean-up (teacher-approved). Practice was 37: the 20 Hebrew self-practice questions
+# (q-100 ... q-119), 7 extra-bank warm-ups and 10 September-review items. Copies out, at most 3 warm-ups, review
+# items whose type the Hebrew / guided questions already practise out, and the trinomial factoring warm-up
+# (x² + bx + c by sum and product is not exam material). Kept: all 20 Hebrew, 3 warm-ups, 2 review items. Runs LAST.
+# =====================================================================================
+CLEANUP_REMOVE = [
+    # copy (practice_audit/copies_by_topic.txt, checked)
+    'alg-extra-unit-t4-1-7',   # (3x² + 15x)/(3x): same as warm-up alg-extra-unit-t4-1-4 (cancel a common factor)
+    # trinomial factoring (teacher: not exam material)
+    'alg-extra-unit-t4-1-3',   # x² + 8x + 15 = (x + 3)(x + 5) by sum and product
+    # warm-ups beyond the kept ones
+    'alg-extra-unit-t4-1-1',   # 3x + 5y - 2x - 3y: Hebrew q-100 with other numbers
+    'alg-extra-unit-t4-1-6',   # (u + v)(w - 3) + (u + v)(w + 3): topic 5 guided q-137 / practice q-expression-extra-03
+    # September items of a type the Hebrew / guided questions already practise
+    'q-r26-t04-08',            # x + y, x - y given -> x² - y²: guided q-r26-t04-01 type; q-r26-t04-18 kept (harder)
+    'q-r26-t04-09',            # 1001² - 999²: guided q-r26-t04-02 (51² - 49²) with other numbers
+    'q-r26-t04-10',            # x + 1/x = 4 -> x² + 1/x²: guided q-r26-t04-04 with other numbers
+    'q-r26-t04-14',            # (2a + b)² - (2a - b)²: Hebrew q-115 / guided q-120
+    'q-r26-t04-19',            # (x + 3)² - (x - 3)(x + 3): Hebrew q-111 ... q-118 (open both formulas)
+    'q-r26-t04-16',            # (2021² - 2019²)/2020: numeric difference of squares = guided q-r26-t04-02, warm-up 97 · 103
+    'q-r26-t04-15',            # (a + b)² = 49, (a - b)² = 9 -> ab: the identity of Hebrew q-115 / guided q-120
+    'q-r26-t04-17',            # x - y = 5 -> (x - y)² - 2(x - y): topic 5 guided q-r26-t05-03
+]
+CLEANUP_ORDER = [
+    'q-100', 'q-102', 'q-103', 'q-104', 'q-101', 'q-105', 'alg-extra-unit-t4-1-2',
+    'q-107', 'q-108', 'q-109', 'q-110', 'q-111', 'q-114', 'q-117', 'q-112', 'q-118', 'q-113', 'q-116', 'q-119',
+    'alg-extra-unit-t4-1-5', 'alg-extra-unit-t4-1-4', 'q-115', 'q-106', 'q-r26-t04-07', 'q-r26-t04-18']
+
+
+def practice_cleanup(M):
+    for qid in CLEANUP_REMOVE:
+        assert M.section_of(qid) == PRACTICE, qid
+        M.unplace(qid)
+    M.practice_order(PRACTICE, CLEANUP_ORDER)
+    got = [f['ref'] for f in M.D['flow'] if f['section'] == PRACTICE and f['type'] == 'question']
+    assert got == CLEANUP_ORDER, got
+
+
+_apply_before_practice_cleanup = apply
+
+
+def apply(M):
+    _apply_before_practice_cleanup(M)
+    practice_cleanup(M)   # 2026-10-07 practice clean-up: runs last

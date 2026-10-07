@@ -230,3 +230,43 @@ teacher's Hebrew video subtitles (01-Algebra-Original-Subtitles.txt, lines 2551�
 Keys brute-forced (a, b from −6 to 6: only choice 1 equals the expression; 63·408 = 25,704 and the three wrong choices
 have wrong units digits and are far off). No duplicates in topics 1–38 (3 is not the Hebrew 2, the study-guide 4 or
 q-133's 6). `python3 math_check.py 5 32` → 0 / 0 / 0. No video changed.
+
+## 2026-10-07 practice clean-up
+Function `practice_cleanup` (runs LAST, after `hebrew_backcheck`). Teacher-approved. Practice **47 → 25** in **one**
+section, "Independent practice" (`expression-self`), easy → hard. The section "Additional examples from the source bank"
+(`unit-t5-1`) became empty and is removed from the topic by hand (the API cannot remove sections), as in topic 7.
+Kept: the 19 Hebrew self-practice slots that live in topic 5 (q-expression-extra-01 … 20 without -09, which the T5
+patch moved to topic 8 and stays there) with slot -05 replaced (below), and 6 review items of types the Hebrew practice
+does not have: q-r26-t05-14 (x < 0 < y, sign), -13 (6/(x + y) — the denominator does not split), -05 (x − 2y = 4,
+substitute), -06 (a/b = 3 → (a − b)/(a + b)), -15 (1/(1 + 1/x)), -07 (x − 1/x = 3 → x² + 1/x²). No extra-bank warm-up is
+kept: every one repeats topic 4 practice or a kept question. Guided q-127 (x² + 15x + 36, recorded) is NOT changed.
+
+**New question (Hebrew slot of q-expression-extra-05, same place, after q-expression-extra-12):**
+`q-expression-extra-21`: $67\cdot73-69\cdot71=?$ — choices −10 / **−8** / 8 / 10, key choice 2. Type of guided
+q-r26-t05-02 (products around a round number = difference of squares): 67 · 73 = 70² − 9 = 4,891, 69 · 71 = 70² − 1 =
+4,899, difference −8 (brute-forced; only choice 2). Traps: 8 (sign), ±10 (9 + 1). 67, 69, 71, 73 around 70 appear in no
+other product in topics 1–8 nor in the Hebrew subtitles (guided uses 98 · 102 − 99 · 101 → −3; topic 4 uses 51² − 49²).
+
+| removed | why |
+|---|---|
+| alg-extra-unit-t5-1-1 … -1-7 | the source-bank section: clones of alg-extra-expression-self-1 … 7 (-1-3 is a trinomial) |
+| q-122, q-123, q-124 | old English source-bank retry set: guided q-135 / q-136 / q-137 again with other numbers (not Hebrew) |
+| alg-extra-expression-self-1 | warm-up: 4x + 6y − 2x − 3y = topic 4 q-100 |
+| alg-extra-expression-self-2 | warm-up: 4(x + 4) − 3(x + 1) = topic 4 warm-up alg-extra-unit-t4-1-2 |
+| alg-extra-expression-self-3 | trinomial x² + 10x + 24 by sum and product (not exam material) |
+| alg-extra-expression-self-4 | warm-up: (x² − 16)/(x − 4) = topic 4 warm-up (x² − 9)/(x − 3), q-expression-extra-10 |
+| alg-extra-expression-self-5 | warm-up: 96 · 104 = topic 4 warm-up 97 · 103 |
+| alg-extra-expression-self-6 | copy of q-expression-extra-03 |
+| alg-extra-expression-self-7 | copy of q-expression-extra-17 |
+| q-expression-extra-05 | trinomial x² + 13x + 40 by sum and product (not exam material) → replaced by q-expression-extra-21 |
+| q-r26-t05-08 | review: 999 · 25 = q-expression-extra-19 (near-round product) |
+| q-r26-t05-11 | review: (x³ + x²)/x = q-expression-extra-17 |
+| q-r26-t05-12 | review: (a² − b²)/(a − b) − 2b = q-expression-extra-20 / -10 |
+| q-r26-t05-09 | review: (101² − 99²)/4 = numeric difference of squares (topic 4, new q-expression-extra-21) |
+| q-r26-t05-16 | review: (a² + 2a)/a − (a² − 4)/(a − 2) = q-expression-extra-17 + -10 |
+
+Trinomial scan of topics 1–8 practice and explanations ("p + q / pq"): the only other hits were alg-extra-unit-t4-1-3
+(removed in topic 4) and q-r26-t06-07 (12/x = x + 1, a quadratic in disguise; removed in topic 6). Perfect squares
+(q-113, q-116, q-expression-extra-15) stay: they are the (a ± b)² formula, not sum/product factoring. Lessons and guided
+videos that mention sum and product (topic 4 `r26-t04-formulas`, topic 5 q-127) are recorded and not touched.
+`python3 math_check.py 3 4 5 6 8 32` → 0 / 0 / 0.

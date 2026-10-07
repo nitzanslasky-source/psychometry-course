@@ -1620,3 +1620,73 @@ _apply_before_hebrew_backcheck = apply
 def apply(M):
     _apply_before_hebrew_backcheck(M)
     hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last
+
+
+# =====================================================================================
+# 2026-10-07 practice clean-up (teacher-approved). Practice was 47 in two sections: "Independent practice" (the 20
+# Hebrew self-practice slots q-expression-extra-01 ... 20, 7 extra-bank warm-ups, 10 September-review items) and
+# "Additional examples from the source bank" (7 extra-bank clones + q-122 ... q-124, the old English retry set:
+# guided q-135 / q-136 / q-137 again with other numbers, not in the Hebrew course). Copies out, warm-ups out (all
+# repeat topic 4 practice or a kept question), review items whose type the Hebrew practice already covers out, the
+# trinomial factoring items out (teacher: x² + bx + c by sum and product is not exam material). The Hebrew slot of
+# q-expression-extra-05 (x² + 13x + 40) is filled by a NEW question of a type taught in this topic (guided
+# q-r26-t05-02: products around a round number = difference of squares). One practice section is left. Runs LAST.
+# =====================================================================================
+CLEANUP_NEW = 'q-expression-extra-21'
+CLEANUP_REMOVE = (
+    # the whole source-bank section: clones of the warm-ups below, the retry set, a trinomial
+    ['alg-extra-unit-t5-1-%d' % k for k in range(1, 8)] + ['q-122', 'q-123', 'q-124']
+    # warm-ups
+    + ['alg-extra-expression-self-1',   # 4x + 6y - 2x - 3y: topic 4 practice q-100 / its warm-up
+       'alg-extra-expression-self-2',   # 4(x + 4) - 3(x + 1): topic 4 warm-up alg-extra-unit-t4-1-2
+       'alg-extra-expression-self-3',   # x² + 10x + 24 by sum and product: trinomial factoring
+       'alg-extra-expression-self-4',   # (x² - 16)/(x - 4): topic 4 warm-up (x² - 9)/(x - 3), q-expression-extra-10
+       'alg-extra-expression-self-5',   # 96 · 104: topic 4 warm-up 97 · 103
+       'alg-extra-expression-self-6',   # (u + v)(w - 4) + (u + v)(w + 4): copy of q-expression-extra-03
+       'alg-extra-expression-self-7']   # (4x² + 24x)/(4x): copy of q-expression-extra-17
+    # the Hebrew slot with a trinomial (replaced by CLEANUP_NEW)
+    + ['q-expression-extra-05']         # x² + 13x + 40 = (x + 5)(x + 8)
+    # September items of a type the Hebrew practice already covers
+    + ['q-r26-t05-08',                  # 999 · 25: near-round product = q-expression-extra-19 (99 · 41)
+       'q-r26-t05-11',                  # (x³ + x²)/x: q-expression-extra-17
+       'q-r26-t05-12',                  # (a² - b²)/(a - b) - 2b: q-expression-extra-20 / -10
+       'q-r26-t05-09',                  # (101² - 99²)/4: numeric difference of squares, topic 4 + the new question
+       'q-r26-t05-16'])                 # (a² + 2a)/a - (a² - 4)/(a - 2): q-expression-extra-17 + -10
+CLEANUP_ORDER = [
+    'q-expression-extra-16', 'q-expression-extra-06', 'q-expression-extra-02', 'q-expression-extra-17',
+    'q-expression-extra-07', 'q-expression-extra-03', 'q-expression-extra-08', 'q-expression-extra-04',
+    'q-expression-extra-01', 'q-expression-extra-19', 'q-expression-extra-12', CLEANUP_NEW,
+    'q-expression-extra-15', 'q-expression-extra-10', 'q-expression-extra-20', 'q-expression-extra-18',
+    'q-r26-t05-14', 'q-r26-t05-13', 'q-expression-extra-13', 'q-expression-extra-14', 'q-expression-extra-11',
+    'q-r26-t05-05', 'q-r26-t05-06', 'q-r26-t05-15', 'q-r26-t05-07']
+
+
+def practice_cleanup(M):
+    for qid in CLEANUP_REMOVE:
+        assert M.section_of(qid) in (SELF, BANK), qid
+        M.unplace(qid)
+    # the new Hebrew-slot question, where q-expression-extra-05 stood (after the division q-expression-extra-12)
+    # 67 · 73 = 70² - 9 = 4,891 and 69 · 71 = 70² - 1 = 4,899 -> -8. Traps: 8 (sign), 10 / -10 (9 + 1 instead of 9 - 1).
+    M.new_q(CLEANUP_NEW, TOPIC, r'$67\cdot73-69\cdot71=\ ?$',
+            [r'$-10$', r'$-8$', r'$8$', r'$10$'], 2, [
+                r'Both products are sum times difference around $70$: $67\cdot73=(70-3)(70+3)=70^2-9$ and $69\cdot71=(70-1)(70+1)=70^2-1$.',
+                r'The $70^2$ cancels: $(70^2-9)-(70^2-1)=-9+1=-8$. The answer is choice 2.',
+                r'The first product is the smaller one ($9$ is taken off, not $1$), so the answer is negative: $8$ is a trap.',
+                r'Check the slow way: $67\cdot73=4{,}891$ and $69\cdot71=4{,}899$, and $4{,}891-4{,}899=-8$.'])
+    M.place_q(CLEANUP_NEW, SELF, after='q-expression-extra-12')
+    M.practice_order(SELF, CLEANUP_ORDER)
+    # the source-bank section is now empty: drop it (the API cannot remove sections)
+    assert not M.sections[BANK]['items'], M.sections[BANK]['items']
+    M.D['sections'] = [s for s in M.D['sections'] if s['id'] != BANK]
+    M.sections.pop(BANK)
+    next(t for t in M.D['topics'] if t['id'] == TOPIC)['sections'].remove(BANK)
+    got = [f['ref'] for f in M.D['flow'] if f['section'] == SELF and f['type'] == 'question']
+    assert got == CLEANUP_ORDER, got
+
+
+_apply_before_practice_cleanup = apply
+
+
+def apply(M):
+    _apply_before_practice_cleanup(M)
+    practice_cleanup(M)   # 2026-10-07 practice clean-up: runs last

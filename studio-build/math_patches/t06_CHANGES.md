@@ -181,3 +181,35 @@ teacher's Hebrew video subtitles (lines 3666–3894: 2x − 5 = 3, 2x² + 6 = 2(
 2/(x − 2) = 1/(x − 1), 6x + 3y = 27 & x + y = 5, 3x + y = 25 & 2x + 3y = 33; also skimmed the equation sample questions
 in lines 3895–4790 for practice look-alikes). No matches (recorded or not): every item already uses other numbers.
 Nothing changed. `python3 math_check.py 6 32` → 0 / 0 / 0.
+
+## 2026-10-07 practice clean-up
+Function `practice_cleanup` (runs LAST, after `practice_methods`). Teacher-approved. Practice **64 → 36**, still three
+sections, each easy → hard: Single-equation practice 18 → 5 (q-166 … q-170), Systems practice 15 → 7 (q-159 … q-163 +
+alg-extra-unit-t6-2-3 x + y, -2-4 x − y by adding/subtracting the equations), Mixed equation practice 31 → 24 (the other
+20 Hebrew + alg-extra-unit-t6-1-7 (5 − k)x = 7 no solution + review q-r26-t06-16 (3x − 2y = 5 → 6x − 4y + 1), -14
+((x + y)/(x − y) = 3 → x/y), -17 (xy, yz, xz → xyz)). All 30 Hebrew kept. Their "Method 2" lines (PRACTICE_METHODS:
+q-r26-t06-16, -14) stay with them. No guided question, lesson, video or card changed.
+
+| removed | why |
+|---|---|
+| alg-extra-unit-t6-4-1, -4-2, -4-5, -1-1 | copies: one-step linear equations = Hebrew q-166 / q-140 / q-141 / q-139 |
+| alg-extra-unit-t6-4-7 | copy of alg-extra-unit-t6-1-5 (= Hebrew q-154) |
+| alg-extra-unit-t6-1-2 | copy: x + y = 13, x − y = 3 = Hebrew q-148 |
+| alg-extra-unit-t6-1-3 | copy of alg-extra-unit-t6-2-3 |
+| alg-extra-unit-t6-2-1, -2-2, -2-5, -2-6, -2-7 | copies: the same 2x + 3y / 3x + 2y system five more times |
+| q-r26-t06-11 | copy: x + y = 15, x − y = −3 = Hebrew q-162 |
+| alg-extra-unit-t6-4-3, -4-4, -4-6 | extra over 3: linear equations = Hebrew q-141 / q-139 / q-140 |
+| alg-extra-unit-t6-1-4 | extra over 3: x + y, xy → x² + y² = topic 4 guided q-r26-t04-01 |
+| alg-extra-unit-t6-1-5 | extra over 3: (x − 5)/(x + 7) = 1/2 = Hebrew q-154 |
+| alg-extra-unit-t6-1-6 | extra over 3: x(x + 4) = 0 is topic 7 (product = 0) |
+| q-r26-t06-05 | review: 5/(x + 2) = 3/(x − 2) = Hebrew q-154 / guided q-171 |
+| q-r26-t06-06 | review: x/2 − (x − 6)/4 = 3 = Hebrew q-143 / guided q-r26-t06-01 |
+| q-r26-t06-07 | review: 12/x = x + 1 is a quadratic in disguise (x² + x − 12 = 0, not exam material) |
+| q-r26-t06-08 | review: parameter, infinitely many solutions = Hebrew q-169 / q-170 (kept (5 − k)x = 7) |
+| q-r26-t06-09 | review: no solution (domain) = guided q-r26-t06-02, Hebrew q-170 |
+| q-r26-t06-10 | review: three-fraction equation = Hebrew q-143 |
+| q-r26-t06-12 | review: 2x + y from a system = kept alg-extra-unit-t6-2-3 / -2-4, guided q-r26-t06-03 |
+| q-r26-t06-13 | review: divide the equations = Hebrew q-153, guided q-r26-t06-04 |
+| q-r26-t06-15 | review: (x − 1)/(x − 1) = 1, how many solutions = Hebrew q-156 / q-169, guided q-r26-t06-02 |
+
+`python3 math_check.py 3 4 5 6 8 32` → 0 / 0 / 0.

@@ -238,3 +238,25 @@ slide 4 shows the same letter pattern. Left: card "plug in x = ½, y = 2" (stand
 practice q-084 (16/17 … 19/20) shares only 16/17 with the Hebrew distance-from-1 example (16/17 vs 12/13) — not a match.
 Checks: keys recomputed (7/15 < ½ < 11/21; 16/19 > 9/11); 11/21 and 4/√19, 3/√11 appear nowhere else in topics 1–3 nor
 in the Hebrew. `python3 math_check.py 3 32` → 0 / 0 / 0. Rendered solve-q-fraction-compare (tmp_check/hbc3.png).
+
+## 2026-10-07 practice clean-up
+Function `practice_cleanup` (runs LAST, after `hebrew_backcheck`). Teacher-approved. Practice **25 → 15** (one section,
+"Independent practice", easy → hard): all 10 Hebrew self-practice questions (q-081 … q-090), 2 warm-ups
+(alg-extra-unit-t3-1-1, -1-3) and 3 review items of types the Hebrew practice does not have (q-r26-t03-05 x > 1 powers —
+topic 12 dropped its own copy of it, so it stays here; q-r26-t03-06 a < b < 0 reciprocals; q-r26-t03-08 a/b < c/d with b < 0 < d).
+No guided question, lesson, video or card changed; no topic-3 text states a practice count.
+
+| removed | why |
+|---|---|
+| alg-extra-unit-t3-1-6 | copy: 3/5 vs 4/6 = warm-up alg-extra-unit-t3-1-1 |
+| alg-extra-unit-t3-1-2 | copy: largest of 15/16 … 10/11 = Hebrew q-084 |
+| q-r26-t03-09 | copy: smallest of 22/20 … 24/22 = Hebrew q-089 |
+| q-r26-t03-10 | copy: largest of k/√m = guided q-097 |
+| q-r26-t03-11 | copy: −1 < x < 0 powers = guided q-r26-t12-01 / q-r26-t08-02 |
+| alg-extra-unit-t3-1-4 | warm-up over 3: 3/√6 vs 2/√3 = guided q-097 type |
+| alg-extra-unit-t3-1-7 | warm-up over 3: (c + x)/(c − x) smallest = Hebrew q-088 |
+| alg-extra-unit-t3-1-5 | warm-up over 3: 0 < x < 1 powers = guided q-r26-t03-03 |
+| q-r26-t03-07 | review, type covered: comparing fractions (Hebrew q-084 / q-089 / q-090) |
+| q-r26-t03-04 | review, type covered: (7 + x)/(9 + x) = guided q-r26-t03-02 with other numbers |
+
+`python3 math_check.py 3 4 5 6 8 32` → 0 / 0 / 0.

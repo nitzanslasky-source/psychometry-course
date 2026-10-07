@@ -1239,3 +1239,69 @@ _apply_before_practice_methods = apply
 def apply(M):
     _apply_before_practice_methods(M)
     practice_methods(M)   # 2026-10-06 practice: runs last
+
+
+# =====================================================================================
+# 2026-10-07 practice clean-up (teacher-approved). Practice was 64 in three sections: the 30 Hebrew self-practice
+# questions (q-139 ... q-170), 21 extra-bank warm-ups and 13 September-review items. Copies out, at most 3 warm-ups,
+# review items whose type the Hebrew / guided questions already practise out. Kept: all 30 Hebrew, 3 extra-bank
+# items, 3 review items of types the Hebrew does not have. Runs LAST.
+# =====================================================================================
+CLEANUP_REMOVE = [
+    # copies (practice_audit/copies_by_topic.txt, each checked against the current build)
+    'alg-extra-unit-t6-4-1',   # 3x - 4 = 11: Hebrew q-166 / q-139 type
+    'alg-extra-unit-t6-4-2',   # 3(x - 2) = 6: Hebrew q-140
+    'alg-extra-unit-t6-4-5',   # x/2 + 9 = 25/2: Hebrew q-141
+    'alg-extra-unit-t6-4-7',   # (x - 7)/(x + 2) = 2/11: same as alg-extra-unit-t6-1-5, Hebrew q-154
+    'alg-extra-unit-t6-1-1',   # 5x + 7 = 52: Hebrew q-139 / q-166
+    'alg-extra-unit-t6-1-2',   # x + y = 13, x - y = 3: Hebrew q-148
+    'alg-extra-unit-t6-1-3',   # 2x + 3y = 31, 3x + 2y = 29 -> x + y: same as alg-extra-unit-t6-2-3
+    'alg-extra-unit-t6-2-1',   # 2x + 3y = 13, 3x + 2y = 17 -> x: the same system again (Hebrew q-150 / q-151)
+    'alg-extra-unit-t6-2-2',   # ... -> y: the same system again
+    'alg-extra-unit-t6-2-5',   # ... -> 2x + y: the same system again
+    'alg-extra-unit-t6-2-6',   # ... -> xy: the same system again
+    'alg-extra-unit-t6-2-7',   # ... -> x² + y²: the same system again
+    'q-r26-t06-11',            # x + y = 15, x - y = -3: Hebrew q-162
+    # extra-bank items beyond the kept ones
+    'alg-extra-unit-t6-4-3',   # (x + 7)/4 = 12/4: Hebrew q-141
+    'alg-extra-unit-t6-4-4',   # 3x + 8 = x + 20: Hebrew q-139
+    'alg-extra-unit-t6-4-6',   # 5(x + 1) - 2x = 29: Hebrew q-140
+    'alg-extra-unit-t6-1-4',   # x + y = 12, xy = 35 -> x² + y²: topic 4 guided q-r26-t04-01 / practice q-r26-t04-07
+    'alg-extra-unit-t6-1-5',   # (x - 5)/(x + 7) = 1/2: Hebrew q-154
+    'alg-extra-unit-t6-1-6',   # x(x + 4) = 0: product = 0 is topic 7 material
+    # September items of a type the Hebrew / guided questions already practise
+    'q-r26-t06-05',            # 5/(x + 2) = 3/(x - 2): Hebrew q-154, guided q-171
+    'q-r26-t06-06',            # x/2 - (x - 6)/4 = 3: Hebrew q-143, guided q-r26-t06-01
+    'q-r26-t06-07',            # 12/x = x + 1: a quadratic in disguise (x² + x - 12 = 0, not exam material)
+    'q-r26-t06-08',            # 3(x + a) = 3x + 12, infinitely many: Hebrew q-169 / q-170, kept (5 - k)x = 7
+    'q-r26-t06-09',            # x/(x - 3) = 2 + 3/(x - 3), no solution: guided q-r26-t06-02, Hebrew q-170
+    'q-r26-t06-10',            # three-fraction equation: Hebrew q-143
+    'q-r26-t06-12',            # 3x + 2y = 20, x + y = 7 -> 2x + y: kept alg-extra-unit-t6-2-3 / -2-4, guided q-r26-t06-03
+    'q-r26-t06-13',            # x(y + 2) = 24, x(y - 1) = 12: divide the equations = Hebrew q-153, guided q-r26-t06-04
+    'q-r26-t06-15',            # (x - 1)/(x - 1) = 1, how many solutions: Hebrew q-156 / q-169, guided q-r26-t06-02
+]
+CLEANUP_ORDER = {
+    'unit-t6-4': ['q-166', 'q-167', 'q-168', 'q-169', 'q-170'],
+    'unit-t6-2': ['q-159', 'q-160', 'q-162', 'q-161', 'q-163', 'alg-extra-unit-t6-2-3', 'alg-extra-unit-t6-2-4'],
+    'unit-t6-1': ['q-139', 'q-140', 'q-141', 'q-142', 'q-144', 'q-145', 'q-146', 'q-147', 'q-148', 'q-149', 'q-150',
+                  'q-151', 'q-156', 'q-152', 'q-154', 'q-155', 'q-158', 'q-r26-t06-16', 'q-157', 'q-153',
+                  'q-r26-t06-14', 'alg-extra-unit-t6-1-7', 'q-143', 'q-r26-t06-17'],
+}
+
+
+def practice_cleanup(M):
+    for qid in CLEANUP_REMOVE:
+        assert M.section_of(qid) in CLEANUP_ORDER, qid
+        M.unplace(qid)
+    for sec, order in CLEANUP_ORDER.items():
+        M.practice_order(sec, order)
+        got = [f['ref'] for f in M.D['flow'] if f['section'] == sec and f['type'] == 'question']
+        assert got == order, (sec, got)
+
+
+_apply_before_practice_cleanup = apply
+
+
+def apply(M):
+    _apply_before_practice_cleanup(M)
+    practice_cleanup(M)   # 2026-10-07 practice clean-up: runs last

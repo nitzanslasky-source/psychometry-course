@@ -890,3 +890,195 @@ _apply_before_review = apply
 def apply(M):
     _apply_before_review(M)
     review_dups(M)
+
+
+# =========================================================================================
+# 2026-10-07: practice renumber + clean-up
+# =========================================================================================
+# The Hebrew-derived practice q-041..q-060 still had the Hebrew numbers. New numbers, same concept, same trap, same
+# level, same methods (q-054 keeps both methods). Practice is never recorded; guided questions and lessons are untouched.
+# q-018 (in this practice, a Topic 1 question) is renumbered in t01.py.
+RN_PRACTICE = {
+    'q-041': (r'$\frac{4}{7} = \frac{36}{?}$', ['$39$', '$56$', '$63$', '$70$'], 3,
+              ['The numerator went from 4 to 36: it was multiplied by 9.',
+               r"To keep the fraction's value, multiply the denominator by 9 too: $7\cdot9=63$. The answer is 63.",
+               'The trap 39 adds 32 to the bottom because 32 was added to the top. Adding the same number changes the value.']),
+    'q-042': (r'$\frac{6}{16} = \frac{?}{40}$', ['$12$', '$15$', '$18$', '$10$'], 2,
+              [r'First reduce (divide top and bottom by 2): $\frac{6}{16}=\frac{3}{8}$.',
+               r'Then expand $\frac{3}{8}$ to a denominator of 40: $40\div8=5$. Multiply top and bottom by 5: $\frac{3\cdot5}{8\cdot5}=\frac{15}{40}$. The answer is 15.']),
+    'q-043': (r'$\frac{28}{49} = ?$', [r'$\frac{4}{7}$', r'$\frac{7}{12}$', r'$\frac{2}{3}$', r'$\frac{3}{7}$'], 1,
+              ['The greatest common divisor of 28 and 49 is 7.',
+               r'Divide both: $28\div7=4$ and $49\div7=7$. The result is $\frac{28}{49}=\frac{4}{7}$.']),
+    'q-045': (r'$6\,\frac{2}{7} = ?$', [r'$\frac{48}{7}$', r'$\frac{20}{7}$', r'$\frac{42}{7}$', r'$\frac{44}{7}$'], 4,
+              [r'Mixed to improper: multiply the whole part by the denominator and add the numerator: $6\cdot7+2=44$.',
+               r'Keep the same denominator: $6\frac{2}{7}=\frac{44}{7}$.',
+               r'The trap $\frac{20}{7}$ multiplies the wrong pair: $6+2\cdot7=20$.']),
+    'q-044': (r'$\frac{34}{8} = ?$', [r'$4\,\frac{1}{8}$', r'$4\,\frac{1}{4}$', r'$4\,\frac{1}{2}$', r'$4\,\frac{3}{4}$'], 2,
+              [r'$34\div8=4$ remainder 2. That gives $\frac{34}{8}=4\frac{2}{8}$.',
+               r'Reduce the fraction part: $\frac{2}{8}=\frac{1}{4}$. The answer is $4\frac{1}{4}$.']),
+    'q-056': (r'$0.400 = ?$', [r'$\frac{2}{5}$', r'$\frac{1}{4}$', r'$\frac{4}{100}$', r'$\frac{1}{400}$'], 1,
+              [r'The trailing zeros change nothing: $0.400=0.4=\frac{4}{10}=\frac{2}{5}$.',
+               r'The trap $\frac{1}{4}$ reads the digit 4 as "a fourth". But $\frac{1}{4}=0.25$.']),
+    'q-057': (r'$\frac{9}{150} = ?$', ['$0.6$', '$0.09$', '$0.006$', '$0.06$'], 4,
+              [r'Reduce first (divide top and bottom by 3): $\frac{9}{150}=\frac{3}{50}$.',
+               r'Then expand to hundredths: $\frac{3}{50}=\frac{6}{100}=0.06$.']),
+    'q-060': (r'$0.4 \cdot 0.7 = ?$', ['$2.8$', '$0.28$', '$0.028$', '$1.1$'], 2,
+              [r'Multiply the digits: $4\cdot7=28$.',
+               r'One decimal place in each factor makes two in the product: $0.4\cdot0.7=0.28$.']),
+    'q-051': (r'$\frac{1}{3} + \frac{4}{9} = ?$', [r'$\frac{5}{12}$', r'$\frac{4}{27}$', r'$\frac{7}{9}$', r'$\frac{8}{9}$'], 3,
+              [r'Common denominator 9: $\frac{1}{3}=\frac{3}{9}$.',
+               r'Then $\frac{3}{9}+\frac{4}{9}=\frac{7}{9}$.',
+               r'The trap $\frac{5}{12}$ adds the tops and the bottoms.']),
+    'q-052': (r'$\frac{11}{12} - \frac{1}{3} = ?$', [r'$\frac{10}{9}$', r'$\frac{2}{3}$', r'$\frac{7}{12}$', r'$\frac{5}{12}$'], 3,
+              [r'Common denominator 12: $\frac{1}{3}=\frac{4}{12}$.',
+               r'Then $\frac{11}{12}-\frac{4}{12}=\frac{7}{12}$.',
+               r'The trap $\frac{10}{9}$ subtracts the tops and the bottoms.']),
+    'q-046': (r'$\frac{6}{14} \cdot \frac{7}{9} = ?$', [r'$\frac{1}{2}$', r'$\frac{1}{6}$', r'$\frac{2}{3}$', r'$\frac{1}{3}$'], 4,
+              [r'Reduce before multiplying: $\frac{6}{14}=\frac{3}{7}$.',
+               r'Then $\frac{3}{7}\cdot\frac{7}{9}$: the 7s cancel, leaving $\frac{3}{9}=\frac{1}{3}$.']),
+    'q-050': (r'$\frac{3}{\frac{1}{6}} = ?$', ['$18$', r'$\frac{1}{2}$', '$9$', '$6$'], 1,
+              [r'The main bar means division. Dividing by $\frac{1}{6}$ is multiplying by 6: $3\cdot6=18$.',
+               r'The distractor $\frac{1}{2}$ comes from multiplying by $\frac{1}{6}$ instead of by its reciprocal.']),
+    'q-058': (r'$40.15 - 7.75 = ?$', ['$31.9$', '$33.4$', '$32.4$', '$32.5$'], 3,
+              [r'Compensate: 7.75 is 0.25 less than 8. Subtract 8: $40.15-8=32.15$.',
+               r'We took away 0.25 too much. Add it back: $32.15+0.25=32.40=32.4$.',
+               r'The trap 31.9 takes the 0.25 away again instead of adding it back.']),
+    'q-059': (r'$\frac{21}{1.4} = ?$', ['$13$', '$15$', '$14$', '$16$'], 2,
+              [r'Clear the decimal: multiply top and bottom by 10: $\frac{21}{1.4}=\frac{210}{14}=15$.']),
+    'q-047': (r'$1\,\frac{2}{3} \cdot \frac{6}{40} = ?$', [r'$\frac{1}{5}$', r'$\frac{1}{4}$', r'$\frac{1}{3}$', r'$\frac{2}{5}$'], 2,
+              [r'Convert the mixed number: $1\frac{2}{3}=\frac{5}{3}$.',
+               r'Reduce first: $\frac{6}{40}=\frac{3}{20}$. Then $\frac{5}{3}\cdot\frac{3}{20}$: the 3s cancel, leaving $\frac{5}{20}=\frac{1}{4}$.']),
+    'q-048': (r'$\frac{10}{27} \div \frac{5}{9} = ?$', [r'$\frac{1}{3}$', r'$\frac{50}{243}$', r'$\frac{2}{3}$', r'$\frac{3}{2}$'], 3,
+              [r'Keep, change, flip: $\frac{10}{27}\div\frac{5}{9}=\frac{10}{27}\cdot\frac{9}{5}$.',
+               r'Cancel first: 10 and 5 share a 5 (they become 2 and 1). 9 and 27 share a 9 (they become 1 and 3).',
+               r'$\frac{2}{3}\cdot\frac{1}{1}=\frac{2}{3}$.',
+               r'The distractor $\frac{50}{243}$ comes from multiplying without flipping.']),
+    'q-049': (r'$\frac{\frac{3}{10}}{\frac{9}{5}} = ?$', [r'$\frac{27}{50}$', r'$\frac{1}{6}$', '$6$', r'$\frac{1}{3}$'], 2,
+              [r'The main bar means division: $\frac{3}{10}\div\frac{9}{5}=\frac{3}{10}\cdot\frac{5}{9}$.',
+               r'Cancel 3 into 9 (1 and 3) and 5 into 10 (1 and 2): $\frac{1}{2}\cdot\frac{1}{3}=\frac{1}{6}$.',
+               r'The distractor $\frac{27}{50}$ comes from multiplying instead of dividing. The distractor 6 flips the wrong fraction.']),
+    'q-053': (r'$\frac{3}{10} + \frac{4}{15} = ?$', [r'$\frac{7}{25}$', r'$\frac{1}{2}$', r'$\frac{19}{30}$', r'$\frac{17}{30}$'], 4,
+              ['The LCM of 10 and 15 is 30 (multiples of 15: 15 no, 30 yes).',
+               r'$\frac{3}{10}=\frac{9}{30}$ and $\frac{4}{15}=\frac{8}{30}$. The sum is $\frac{9}{30}+\frac{8}{30}=\frac{17}{30}$.']),
+    'q-055': (r'$\frac{5}{12} + \frac{2}{3} - \frac{3}{4} = ?$', [r'$\frac{2}{3}$', r'$\frac{1}{4}$', r'$\frac{3}{4}$', r'$\frac{1}{3}$'], 4,
+              [r'The LCM of 12, 3 and 4 is 12: $\frac{2}{3}=\frac{8}{12}$ and $\frac{3}{4}=\frac{9}{12}$.',
+               r'Then $\frac{5}{12}+\frac{8}{12}-\frac{9}{12}=\frac{4}{12}=\frac{1}{3}$.']),
+    'q-054': (r'$4\,\frac{1}{3} - \frac{5}{7} = ?$', [r'$3\,\frac{2}{3}$', r'$3\,\frac{13}{21}$', r'$3\,\frac{3}{10}$', r'$3\,\frac{5}{7}$'], 2,
+              [r'Method 1: convert $4\frac{1}{3}=\frac{13}{3}$. The LCM of 3 and 7 is 21: $\frac{13}{3}=\frac{91}{21}$ and $\frac{5}{7}=\frac{15}{21}$.',
+               r'Subtract: $\frac{91-15}{21}=\frac{76}{21}=3\frac{13}{21}$.',
+               r"Method 2 (estimate and eliminate): $\frac{5}{7}$ is a little more than $\frac{2}{3}$. The answer is a little less than $4\frac{1}{3}-\frac{2}{3}=3\frac{2}{3}$.",
+               r'That kills $3\frac{2}{3}$ and $3\frac{5}{7}$ (it is more than $3\frac{2}{3}$). A denominator of 10 is impossible: 3 and 7 lead to 21. Only $3\frac{13}{21}$ is left.']),
+}
+
+RN_REMOVE = [
+    # copies
+    'alg-extra-unit-t2-1-1', 'alg-extra-unit-t2-1-2', 'alg-extra-unit-t2-1-3', 'alg-extra-unit-t2-1-4', 'q-r26-t02-25', 'q-r26-t02-17',
+    # extra-bank warm-up of the same type as q-056 (decimal -> fraction)
+    'alg-extra-unit-t2-1-5',
+    # September items of a type the Hebrew practice already covers
+    'q-r26-t02-04', 'q-r26-t02-12', 'q-r26-t02-13',
+]
+
+
+def renumber_practice(M):
+    for qq, (stem, ch, key, ex) in RN_PRACTICE.items():
+        M.set_q(qq, stem=stem, choices=ch, correct=key, expl=ex)
+    for qq in RN_REMOVE: M.unplace(qq)
+    X = 'alg-extra-unit-t2-1-%d'
+    M.practice_order('unit-t2-1', [
+        'q-041', 'q-042', 'q-043', 'q-045', 'q-044', 'q-018', 'q-056', 'q-057', 'q-060', 'q-051', 'q-052', 'q-046', 'q-050', X % 7,
+        'q-058', 'q-059', 'q-047', 'q-048', 'q-049', X % 6, 'q-053', 'q-055', 'q-054', 'q-r26-t02-24', 'q-r26-t02-08', 'q-r26-t02-23'])
+
+
+_apply_before_renumber_practice = apply
+
+
+def apply(M):
+    _apply_before_renumber_practice(M)
+    renumber_practice(M)   # 2026-10-07: runs last
+
+
+# =========================================================================================
+# 2026-10-07 (2): lesson-section questions q-061..q-080 (no solution videos; the recorded lessons before them
+# do not quote their numbers). q-069 already had new numbers (2026-10-04) and stays.
+# =========================================================================================
+RN_LESSONQ = {
+    # What a fraction means
+    'q-076': (r'$\frac{2}{5} = \frac{?}{35}$', ['$16$', '$14$', '$12$', '$10$'], 2,
+              [r'The denominator went from 5 to 35: it was multiplied by 7. Multiply the numerator by 7 as well: $2\cdot7=14$.',
+               r'$\frac{2}{5}=\frac{14}{35}$. The answer is 14.']),
+    'q-077': (r'$\frac{70}{350} = ?$', [r'$\frac{1}{4}$', r'$\frac{1}{5}$', r'$\frac{1}{6}$', r'$\frac{1}{7}$'], 2,
+              [r'$350\div70=5$: 70 fits into 350 exactly five times.',
+               r'Divide top and bottom by 70: $\frac{70}{350}=\frac{1}{5}$.']),
+    'q-078': (r'$\frac{14}{21} = \frac{?}{6}$', ['$2$', '$3$', '$4$', '$5$'], 3,
+              [r'Reduce first (divide top and bottom by 7): $\frac{14}{21}=\frac{2}{3}$.',
+               r'Then expand to sixths (multiply top and bottom by 2): $\frac{2}{3}=\frac{4}{6}$. The missing numerator is 4.']),
+    'q-079': (r'$\frac{33}{7} = ?$', [r'$4\,\frac{5}{7}$', r'$4\,\frac{2}{7}$', r'$5\,\frac{5}{7}$', r'$5\,\frac{2}{7}$'], 1,
+              [r'$33\div7=4$ remainder 5 ($7\cdot4=28$ and $33-28=5$).',
+               r'The whole part is 4, and the remainder goes on top: $\frac{33}{7}=4\frac{5}{7}$.']),
+    'q-080': (r'$8\,\frac{3}{4} = ?$', [r'$\frac{33}{4}$', r'$\frac{35}{4}$', r'$\frac{36}{4}$', r'$\frac{38}{4}$'], 2,
+              [r'Mixed to improper: $8\cdot4+3=35$, over the same denominator: $8\frac{3}{4}=\frac{35}{4}$.']),
+    # Multiplying and dividing
+    'q-071': (r'$\frac{5}{10} \cdot \frac{3}{9} = ?$', [r'$\frac{1}{6}$', r'$\frac{1}{9}$', r'$\frac{1}{5}$', r'$\frac{1}{3}$'], 1,
+              [r'Reduce each factor first: $\frac{5}{10}=\frac{1}{2}$ and $\frac{3}{9}=\frac{1}{3}$.',
+               r'Then $\frac{1}{2}\cdot\frac{1}{3}=\frac{1}{6}$.']),
+    'q-072': (r'$\frac{12}{11} \cdot 3\,\frac{2}{3} = ?$', ['$6$', '$3$', '$4$', '$5$'], 3,
+              [r'Convert the mixed number: $3\frac{2}{3}=\frac{3\cdot3+2}{3}=\frac{11}{3}$.',
+               r'Then $\frac{12}{11}\cdot\frac{11}{3}$: the 11s cancel, leaving $\frac{12}{3}=4$.']),
+    'q-073': (r'$\frac{5}{8} \div \frac{1}{2} = ?$', [r'$\frac{5}{16}$', r'$1\,\frac{1}{4}$', r'$\frac{4}{5}$', r'$1\,\frac{3}{4}$'], 2,
+              [r'Keep, change, flip: $\frac{5}{8}\div\frac{1}{2}=\frac{5}{8}\cdot\frac{2}{1}$.',
+               r'Cancel 2 into 8 (1 and 4): $\frac{5}{4}\cdot\frac{1}{1}=\frac{5}{4}=1\frac{1}{4}$.',
+               r'The distractor $\frac{5}{16}$ comes from multiplying by $\frac{1}{2}$ without flipping.']),
+    'q-074': (r'$\frac{\frac{9}{7}}{\frac{4}{7}} = ?$', [r'$1\,\frac{1}{4}$', r'$2\,\frac{1}{4}$', r'$1\,\frac{3}{4}$', r'$2\,\frac{3}{4}$'], 2,
+              [r'The main fraction bar means division: $\frac{9}{7}\div\frac{4}{7}=\frac{9}{7}\cdot\frac{7}{4}$.',
+               r'The 7s cancel, leaving $\frac{9}{4}=2\frac{1}{4}$.']),
+    'q-075': (r'$10 \div 2\,\frac{2}{3} = ?$', [r'$3\,\frac{1}{4}$', r'$3\,\frac{3}{4}$', r'$4\,\frac{1}{3}$', r'$3\,\frac{1}{3}$'], 2,
+              [r'Convert: $2\frac{2}{3}=\frac{2\cdot3+2}{3}=\frac{8}{3}$.',
+               r'Then $10\div\frac{8}{3}=\frac{10}{1}\cdot\frac{3}{8}$. Cancel 2 into 10 and 8 (5 and 4): $\frac{5}{1}\cdot\frac{3}{4}=\frac{15}{4}=3\frac{3}{4}$.']),
+    # Adding and subtracting
+    'q-066': (r'$\frac{4}{11} + \frac{5}{11} = ?$', [r'$\frac{9}{22}$', r'$\frac{10}{11}$', r'$\frac{9}{11}$', r'$\frac{1}{11}$'], 3,
+              [r'Same denominators: add the numerators and keep the denominator: $\frac{4}{11}+\frac{5}{11}=\frac{9}{11}$.',
+               r'The distractor $\frac{9}{22}$ comes from also adding the denominators.']),
+    'q-067': (r'$\frac{1}{3} - \frac{1}{6} = ?$', ['$0$', r'$\frac{1}{6}$', r'$\frac{1}{3}$', r'$\frac{1}{2}$'], 2,
+              [r'Convert to sixths: $\frac{1}{3}=\frac{2}{6}$.',
+               r'Then $\frac{2}{6}-\frac{1}{6}=\frac{1}{6}$.',
+               r'The trap $0$ subtracts the tops and the bottoms: $\frac{1-1}{3-6}=0$.']),
+    'q-068': (r'$\frac{1}{4} + \frac{1}{7} = ?$', [r'$\frac{1}{28}$', r'$\frac{2}{11}$', r'$\frac{11}{28}$', r'$\frac{9}{28}$'], 3,
+              [r'The common denominator is 28, the LCM (least common multiple) of 4 and 7: $\frac{1}{4}=\frac{7}{28}$ and $\frac{1}{7}=\frac{4}{28}$.',
+               r'The sum is $\frac{7}{28}+\frac{4}{28}=\frac{11}{28}$.',
+               r'The trap $\frac{2}{11}$ adds the tops and the bottoms.']),
+    'q-070': (r'$\frac{3}{4} - \frac{3}{8} + \frac{5}{8} = ?$', [r'$\frac{7}{8}$', '$1$', r'$1\,\frac{1}{8}$', r'$\frac{3}{4}$'], 2,
+              [r'Convert to eighths: $\frac{3}{4}=\frac{6}{8}$.',
+               r'Then $\frac{6}{8}-\frac{3}{8}+\frac{5}{8}=\frac{8}{8}=1$.']),
+    # Decimals
+    'q-061': (r'$0.35 = ?$', [r'$\frac{1}{35}$', r'$\frac{3}{5}$', r'$\frac{5}{7}$', r'$\frac{7}{20}$'], 4,
+              [r'Two decimal places: $0.35=\frac{35}{100}$.',
+               r'Divide top and bottom by 5: $\frac{35}{100}=\frac{7}{20}$.']),
+    'q-062': (r'$\frac{11}{25} = ?$', ['$0.44$', '$0.11$', '$0.25$', '$0.22$'], 1,
+              [r'Expand to hundredths (multiply top and bottom by 4): $\frac{11}{25}=\frac{44}{100}=0.44$.']),
+    'q-063': (r'$15.4 - 6.25 = ?$', ['$9.25$', '$9.15$', '$8.85$', '$9.05$'], 2,
+              [r'Write 15.4 as 15.40 and subtract with the points lined up: $15.40-6.25=9.15$.']),
+    'q-064': (r'$\frac{28}{0.4} = ?$', ['$7$', '$700$', '$70$', '$14$'], 3,
+              [r'Multiply top and bottom by 10: $\frac{28}{0.4}=\frac{280}{4}=70$.']),
+    'q-065': (r'$0.7 \cdot 0.7 = ?$', ['$0.049$', '$4.9$', '$0.49$', '$49$'], 3,
+              [r'Multiply the digits: $7\cdot7=49$.',
+               r'One decimal place in each factor makes two in the product: $0.7\cdot0.7=0.49$.']),
+}
+
+
+def renumber_lesson_questions(M):
+    for qq, (stem, ch, key, ex) in RN_LESSONQ.items():
+        M.set_q(qq, stem=stem, choices=ch, correct=key, expl=ex)
+    # practice q-047 was 1 2/3 * 6/40: the same mixed number as the recorded lesson example 1 2/3 * 3/5 -> new numbers
+    M.set_q('q-047', stem=r'$1\,\frac{1}{5} \cdot \frac{10}{36} = ?$',
+            choices=[r'$\frac{1}{5}$', r'$\frac{1}{4}$', r'$\frac{1}{3}$', r'$\frac{2}{5}$'], correct=3,
+            expl=[r'Convert the mixed number: $1\frac{1}{5}=\frac{6}{5}$.',
+                  r'Reduce first: $\frac{10}{36}=\frac{5}{18}$. Then $\frac{6}{5}\cdot\frac{5}{18}$: the 5s cancel, leaving $\frac{6}{18}=\frac{1}{3}$.'])
+
+
+_apply_before_renumber_lessonq = apply
+
+
+def apply(M):
+    _apply_before_renumber_lessonq(M)
+    renumber_lesson_questions(M)   # 2026-10-07 (2): runs last

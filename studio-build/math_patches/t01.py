@@ -1108,3 +1108,211 @@ _apply_before_add_methods = apply
 def apply(M):
     _apply_before_add_methods(M)
     add_methods(M)   # 2026-10-06: runs last
+
+
+# ---------------- 2026-10-07: practice renumber + clean-up ----------------
+# The practice questions q-001..q-020 (Hebrew "summary practice") were still the Hebrew numbers. New numbers, same
+# concept, same trap, same level, same methods. Practice is never recorded. Guided questions and lessons are untouched.
+RN_PRACTICE = {
+    # id: (stem, choices, key, solution)
+    'q-001': ('$29 + 56 = ?$', ['$85$', '$75$', '$87$', '$81$'], 1,
+              ['Ones: $9+6=15$. Write $5$ and carry $1$.',
+               'Tens: $2+5+1=8$. The sum is $85$.',
+               'The trap $75$ forgets the carried $1$.']),
+    'q-003': ('$72 - 45 = ?$', ['$33$', '$37$', '$27$', '$23$'], 3,
+              ['Ones: $5$ is bigger than $2$. Borrow a ten: $12-5=7$.',
+               'Tens: the $7$ became $6$, and $6-4=2$. The answer is $27$. Check: $27+45=72$.',
+               'The trap $33$ takes the smaller digit from the bigger one in each column ($5-2$ and $7-4$).']),
+    'q-006': ('$34 - 71 = ?$', ['$-43$', '$37$', '$43$', '$-37$'], 4,
+              ['A bigger number is subtracted from a smaller one. The answer is negative.',
+               'The difference is $71-34=37$. Therefore $34-71=-37$.',
+               'The trap $37$ forgets the minus sign.']),
+    'q-002': ('$64 - \\left(-29\\right) = ?$', ['$35$', '$93$', '$-93$', '$29$'], 2,
+              ['Two minus signs touching become a plus: $64-(-29)=64+29=93$.',
+               'The trap $35$ comes from $64-29$: the sign flip was ignored.']),
+    'q-004': ('$83 + \\left(-47\\right) = ?$', ['$46$', '$36$', '$130$', '$-36$'], 2,
+              ['Adding a negative number is the same as subtracting: $83+(-47)=83-47=36$.',
+               'The trap $130$ comes from adding $47$ instead of subtracting it. The trap $46$ forgets the borrowed ten.']),
+    'q-005': ('$-54 - 28 = ?$', ['$-26$', '$26$', '$-82$', '$82$'], 3,
+              ['Both parts are negative. They pile up on the negative side of zero.',
+               'Add the sizes: $54+28=82$. The answer is $-82$.',
+               'The trap $-26$ comes from $-54+28$.']),
+    'q-007': ('$376 + 57 = ?$', ['$423$', '$443$', '$433$', '$333$'], 3,
+              ['Ones: $6+7=13$. Write $3$ and carry $1$.',
+               'Tens: $7+5+1=13$. Write $3$ and carry $1$.',
+               'Hundreds: $3+1=4$. The sum is $433$. Estimate: $376+57\\approx 380+55=435$.']),
+    'q-008': ('$888 + 444 = ?$', ['$1{,}332$', '$1{,}222$', '$1{,}322$', '$1{,}232$'], 1,
+              ['Ones: $8+4=12$. Write $2$ and carry $1$.',
+               'Tens: $8+4+1=13$. Write $3$ and carry $1$.',
+               'Hundreds: $8+4+1=13$. Write $3$ and carry $1$.',
+               'The last carry is the thousands digit $1$. Total: $1{,}332$.',
+               'The trap $1{,}222$ forgets the carries.']),
+    'q-009': ('$6{,}002 - 997 = ?$', ['$4{,}999$', '$5{,}005$', '$5{,}095$', '$5{,}115$'], 2,
+              ['$997$ is $3$ less than $1{,}000$. Subtract $1{,}000$, then give the $3$ back.',
+               '$6{,}002-1{,}000=5{,}002$, and $5{,}002+3=5{,}005$.',
+               'The trap $4{,}999$ takes the $3$ away again instead of giving it back.']),
+    'q-010': ('$7{,}003 - 405 = ?$', ['$6{,}608$', '$6{,}588$', '$6{,}698$', '$6{,}598$'], 4,
+              ['Subtract in two pieces, $405=400+5$.',
+               '$7{,}003-400=6{,}603$, then $6{,}603-5=6{,}598$.',
+               'The trap $6{,}608$ adds the $5$ instead of subtracting it.']),
+    'q-011': ('$\\left(-54\\right) \\div \\left(-6\\right) = ?$', ['$-9$', '$6$', '$9$', '$-6$'], 3,
+              ['Same signs give a positive answer.', 'Sizes: $54\\div 6=9$. The answer is $9$.']),
+    'q-015': ('$435 \\div 5 = ?$', ['$86$', '$87$', '$77$', '$78$'], 2,
+              ['Split $435$ into $400+35$: $400\\div 5=80$ and $35\\div 5=7$.', 'Then $435\\div 5=80+7=87$.']),
+    'q-016': ('$276 \\div 4 = ?$', ['$69$', '$79$', '$64$', '$66$'], 1,
+              ['Split $276$ into $240+36$. Both parts divide by $4$: $240\\div 4=60$ and $36\\div 4=9$.',
+               'Then $276\\div 4=60+9=69$.']),
+    'q-012': ('$7 \\cdot 16 = ?$', ['$114$', '$106$', '$112$', '$92$'], 3,
+              ['Split $16$ into $10+6$: $7\\cdot 10=70$ and $7\\cdot 6=42$.',
+               'Then $7\\cdot 16=70+42=112$.',
+               'Faster check: the last digit comes from $7\\cdot 6=42$. The answer ends in $2$, and only $112$ and $92$ are left. '
+               'Also $7\\cdot 16$ is more than $7\\cdot 15=105$. That rules out $92$.']),
+    'q-013': ('$13 \\cdot 14 = ?$', ['$182$', '$172$', '$192$', '$162$'], 1,
+              ['Split $14$ into $10+4$: $13\\cdot 10=130$ and $13\\cdot 4=52$.',
+               'Then $13\\cdot 14=130+52=182$.']),
+    'q-017': ('$3{,}232 \\div 16 = ?$', ['$212$', '$222$', '$232$', '$202$'], 4,
+              ['Split $3{,}232$ into $3{,}200+32$: $3{,}200\\div 16=200$ and $32\\div 16=2$.',
+               'The answer is $202$. Check: $16\\cdot 202=3{,}200+32=3{,}232$.']),
+    'q-019': ('$24 \\div \\left(9 - 5\\right) - \\left(-2\\right) \\cdot 4 = ?$', ['$-2$', '$14$', '$32$', '$2$'], 2,
+              ['Parentheses first: $9-5=4$.',
+               'Then divide and multiply: $24\\div 4=6$ and $(-2)\\cdot 4=-8$.',
+               'Last, subtract: $6-(-8)=6+8=14$.',
+               'The trap $32$ works from left to right: $6-(-2)=8$, then $8\\cdot 4=32$. '
+               'The trap $-2$ forgets that the two minus signs make a plus.']),
+    'q-020': ('$20 \\div \\left(-5\\right) - \\left(-3\\right) \\cdot \\left(-4\\right) = ?$', ['$16$', '$8$', '$-16$', '$-8$'], 3,
+              ['Divide and multiply first: $20\\div(-5)=-4$ and $(-3)\\cdot(-4)=12$.',
+               'Then subtract: $-4-12=-16$.',
+               'The trap $8$ treats the product as $-12$: $-4-(-12)=8$. But two negatives multiply to a positive.']),
+    'q-014': ('$534 \\times 11 = ?$', ['$5{,}864$', '$5{,}774$', '$5{,}874$', '$5{,}884$'], 3,
+              ['Times $11$ is times $10$ plus one more copy.',
+               '$534\\times 10=5{,}340$, and $5{,}340+534=5{,}874$.']),
+    # in the Topic 2 practice (moved there by this patch), but a Topic 1 question
+    'q-018': ('$250 \\div 6 = ?$', ['$41\\,\\frac{1}{6}$', '$41\\,\\frac{1}{3}$', '$41\\,\\frac{2}{3}$', '$41\\,\\frac{5}{6}$'], 3,
+              ['$6\\cdot 41=246$, therefore $250\\div 6=41$ with remainder $4$.',
+               'The remainder becomes the fraction $\\frac{4}{6}$, which reduces to $\\frac{2}{3}$. The answer is $41\\,\\frac{2}{3}$.']),
+    # extra-bank drill: was 98 x 37, one away from the summary example 98 x 36
+    'fast-practice-1': ('$98 \\times 43 = ?$', ['$4{,}114$', '$4{,}314$', '$4{,}254$', '$4{,}214$'], 4,
+              ['$98$ is $2$ less than $100$. $100\\times 43=4{,}300$.',
+               'That is two copies of $43$ too many: $4{,}300-86=4{,}214$.']),
+}
+
+RN_REMOVE = [
+    # copies
+    'alg-extra-unit-t1-1-1', 'alg-extra-unit-t1-1-2', 'alg-extra-unit-t1-1-5', 'fast-practice-3', qid(25), qid(18),
+    # extra-bank drills: the same trick as a lesson / summary example or another practice item
+    'alg-extra-unit-t1-1-3', 'alg-extra-unit-t1-1-4', 'fast-practice-6', 'fast-practice-7',
+    # September items of a type the Hebrew practice already covers
+    qid(22), qid(17), qid(23),
+]
+
+
+def renumber_practice(M):
+    for q, (stem, ch, key, ex) in RN_PRACTICE.items():
+        M.set_q(q, stem=stem, choices=ch, correct=key, expl=ex)
+    for q in RN_REMOVE: M.unplace(q)
+    E, F = 'alg-extra-unit-t1-1-%d', 'fast-practice-%d'
+    M.practice_order('unit-t1-1', ['q-001', 'q-003', 'q-006', 'q-002', 'q-004', 'q-005', E % 6, 'q-007', 'q-008', 'q-009', 'q-010',
+                                   'q-011', 'q-015', 'q-016', 'q-012', 'q-013', 'q-017', E % 7, 'q-019', 'q-020',
+                                   qid(21), qid(20), qid(19)])
+    M.practice_order('fast-practice', ['q-014', F % 1, F % 2, F % 4, F % 5, qid(24)])
+
+
+_apply_before_renumber_practice = apply
+
+
+def apply(M):
+    _apply_before_renumber_practice(M)
+    renumber_practice(M)   # 2026-10-07: runs last
+
+
+# ---------------- 2026-10-07 (2): lesson-section questions q-021..q-040 ----------------
+# Hebrew study questions inside the lesson sections (no solution videos, so nothing recorded depends on them).
+# The recorded lessons before them do not quote their numbers ("Questions next" only).
+RN_LESSONQ = {
+    # Order of operations
+    'q-021': ('$7 + 3 \\cdot 6 = ?$', ['$60$', '$16$', '$25$', '$21$'], 3,
+              ['Multiplication comes before addition: $3\\cdot 6=18$. Then $7+18=25$.',
+               'The trap $60$ comes from adding first: $(7+3)\\cdot 6=60$.']),
+    'q-022': ('$4 \\cdot \\left(3 - 8\\right) \\div \\left(-2\\right) = ?$', ['$-10$', '$10$', '$5$', '$-5$'], 2,
+              ['Parentheses first: $3-8=-5$.',
+               'Then left to right: $4\\cdot(-5)=-20$, and $-20\\div(-2)=10$.',
+               'The trap $-10$ loses a sign: a negative divided by a negative is positive.']),
+    'q-023': ('$3 - \\left(12 - 10 \\div 5\\right) = ?$', ['$-11$', '$-7$', '$7$', '$13$'], 2,
+              ['Inside the parentheses, division comes first: $10\\div 5=2$. The bracket is $12-2=10$.',
+               'Then $3-10=-7$.',
+               'Or open the brackets. The minus in front flips every sign inside: $3-12+2=-7$.',
+               'The trap $-11$ flips only the first sign: $3-12-2$.']),
+    'q-024': ('$\\left[15 + \\left(-9\\right)\\right] \\cdot \\left[\\left(-4\\right) - \\left(-4\\right)\\right] - \\left(-3\\right) = ?$',
+              ['$-45$', '$3$', '$-3$', '$51$'], 2,
+              ['First bracket: $15+(-9)=6$. Second bracket: $(-4)-(-4)=-4+4=0$.',
+               'The product is $6\\cdot 0=0$, and $0-(-3)=0+3=3$.',
+               'The trap $-45$ reads $(-4)-(-4)$ as $-8$: $6\\cdot(-8)+3=-45$.']),
+    'q-025': ('$36 \\div \\left[3 \\cdot \\left(8 - 2\\right) \\div 9\\right] = ?$', ['$8$', '$2$', '$18$', '$36$'], 3,
+              ['Innermost parentheses first: $8-2=6$.',
+               'Inside the square brackets, left to right: $3\\cdot 6=18$, then $18\\div 9=2$.',
+               'Finally $36\\div 2=18$.',
+               'The trap $8$ ignores the square brackets: $36\\div 3\\cdot 6\\div 9=8$.']),
+    # Multiplication and division
+    'q-026': ('$\\left(-72\\right) \\div 8 = ?$', ['$9$', '$-9$', '$8$', '$-8$'], 2,
+              ['Different signs give a negative answer.', 'Sizes: $72\\div 8=9$. The answer is $-9$.']),
+    'q-027': ('$15 \\cdot 7 = ?$', ['$95$', '$105$', '$115$', '$85$'], 2,
+              ['Split $15$ into $10+5$: $10\\cdot 7=70$ and $5\\cdot 7=35$.', 'Then $15\\cdot 7=70+35=105$.']),
+    'q-028': ('$84 \\div 6 = ?$', ['$12$', '$13$', '$14$', '$16$'], 3,
+              ['Split $84$ into $60+24$: $60\\div 6=10$ and $24\\div 6=4$.', 'Then $84\\div 6=10+4=14$.']),
+    'q-029': ('$85 \\div 5 = ?$', ['$15$', '$16$', '$18$', '$17$'], 4,
+              ['Split $85$ into $50+35$: $50\\div 5=10$ and $35\\div 5=7$.', 'Then $85\\div 5=10+7=17$.']),
+    'q-030': ('$4{,}856 \\div 8 = ?$', ['$617$', '$607$', '$597$', '$627$'], 2,
+              ['Split $4{,}856$ into $4{,}800+56$: $4{,}800\\div 8=600$ and $56\\div 8=7$.',
+               'The answer is $607$. Check: $8\\cdot 607=4{,}800+56=4{,}856$.']),
+    # Addition and subtraction
+    'q-031': ('$81 - 37 = ?$', ['$44$', '$54$', '$56$', '$34$'], 1,
+              ['Ones: $1-7$ does not work. Borrow a ten: $11-7=4$.',
+               'Tens: the $8$ became $7$, and $7-3=4$. The answer is $44$. Check: $44+37=81$.']),
+    'q-032': ('$57 + \\left(-34\\right) = ?$', ['$91$', '$23$', '$81$', '$13$'], 2,
+              ['Adding a negative is subtracting: $57+(-34)=57-34=23$.', 'The trap $91$ comes from adding $34$.']),
+    'q-033': ('$52 - 18 = ?$', ['$46$', '$24$', '$44$', '$34$'], 4,
+              ['Ones: $2-8$ does not work. Borrow a ten: $12-8=4$.',
+               'Tens: the $5$ became $4$, and $4-1=3$. The answer is $34$. Check: $34+18=52$.']),
+    'q-034': ('$3{,}762 + 57 = ?$', ['$3{,}809$', '$3{,}819$', '$3{,}829$', '$3{,}719$'], 2,
+              ['Ones: $2+7=9$. Tens: $6+5=11$. Write $1$ and carry $1$.',
+               'Hundreds: $7+1=8$. Thousands: $3$. Total: $3{,}819$.']),
+    'q-035': ('$652 - 267 = ?$', ['$375$', '$385$', '$395$', '$415$'], 2,
+              ['Ones: borrow, $12-7=5$.',
+               'Tens: the $5$ became $4$. Borrow again: $14-6=8$.',
+               'Hundreds: the $6$ became $5$, and $5-2=3$. The answer is $385$. Check: $385+267=652$.',
+               'The trap $415$ takes the smaller digit from the bigger one in each column.']),
+    # Language of algebra
+    'q-036': ('What is the product of the two largest one-digit prime numbers?', ['$35$', '$49$', '$63$', '$21$'], 1,
+              ['The one-digit primes are $2$, $3$, $5$ and $7$.',
+               'The two largest are $5$ and $7$. Their product is $5\\cdot 7=35$.',
+               'The trap $49=7\\cdot 7$ uses the same prime twice. The question asks for two different primes. '
+               'The trap $63=7\\cdot 9$ uses $9$, which is not prime ($9=3\\cdot 3$).']),
+    'q-037': ('Which of the following statements about the number 1 is false?',
+              ['It is a natural number', 'It is a divisor of every integer', 'It is an odd number', 'It is a prime number'], 4,
+              ['$1$ is a natural number: true. $1$ divides every integer: true. $1$ is odd: true.',
+               'But $1$ is not prime. A prime has exactly two different divisors, and $1$ has only one.',
+               'The false statement is choice 4.']),
+    'q-038': ('$x$ and $y$ are opposite numbers. $x + y = ?$', ['$-1$', '$1$', '$2$', '$0$'], 4,
+              ['Opposite numbers add up to zero. For example, $x=6$ and $y=-6$: $6+(-6)=0$.',
+               'This is true for every pair of opposites. The answer is $0$.']),
+    'q-039': ('What is the remainder when the smallest two-digit prime number is divided by 3?', ['$1$', '$2$', '$0$', '$3$'], 2,
+              ['The smallest two-digit prime is $11$ ($10=2\\cdot 5$ is not prime).',
+               '$11=3\\cdot 3+2$. The remainder is $2$.',
+               'The trap $1$ uses $10$, which is not prime: $10=3\\cdot 3+1$.']),
+    'q-040': ('$a$ and $b$ are reciprocal numbers. $a \\cdot b = ?$', ['$0$', '$-1$', '$1$', '$2$'], 3,
+              ['Reciprocal numbers multiply to one. For example, $a=4$ and $b=\\frac{1}{4}$: $4\\cdot\\frac{1}{4}=1$.',
+               'This is true for every pair of reciprocals. The answer is $1$.']),
+}
+
+
+def renumber_lesson_questions(M):
+    for q, (stem, ch, key, ex) in RN_LESSONQ.items():
+        M.set_q(q, stem=stem, choices=ch, correct=key, expl=ex)
+
+
+_apply_before_renumber_lessonq = apply
+
+
+def apply(M):
+    _apply_before_renumber_lessonq(M)
+    renumber_lesson_questions(M)   # 2026-10-07 (2): runs last

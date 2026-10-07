@@ -81,3 +81,83 @@ Sidebars were updated for all three lessons that got new slides.
 ## 2026-10-06 new exam methods
 Function `add_methods` (runs last). Topic 1 is recorded, so only the memory card changes.
 - Card "Number words" (mem-definitions): new row after "Integer": **"Number" (the word "integer" is missing)** = any number, fractions included; only "integer" means a whole number. Example: numbers x with 4 < x < 6 and 3x whole → 3x = 13, 14, 15, 16, 17 → five numbers (4⅓, 4⅔, 5, 5⅓, 5⅔), not just 5. (Helps on 1 real exam question; new numbers, not the exam's.)
+
+## 2026-10-07 practice renumber + clean-up
+Function `renumber_practice` (runs last). Goal: the English practice must not look like the Hebrew course. Same concept,
+trap, level and method; only numbers and choice order change. Practice is never recorded. Recorded and left exactly as
+they are: every Topic 1 lesson except Fast Calculation and the two summaries, and the guided solution videos -01, -05, -06 and -15.
+Not recorded: guided q-r26-t01-11 (solve-q-r26-t01-11). It was written in English, so it is not changed. Lesson questions
+q-021..q-040 (sections 2–4, no videos) are not practice and were not changed in this pass.
+Check: `python3 math_check.py 1 2 32` → 0 problems, 0 warnings, 0 layout. Every key was brute-forced in python (exactly one
+correct choice). Every trap was recomputed. No new stem equals a stem, lesson board item or card example in topics 1–38, a base-v18 stem
+or a number pair in the Hebrew subtitles.
+
+| Id | Old (Hebrew) | New | Answer · key old → new |
+|---|---|---|---|
+| q-001 | 34 + 48 | 29 + 56 (trap 75 = no carry) | 85 · 1 → 1 |
+| q-003 | 84 − 36 | 72 − 45 (traps 33 = smaller from bigger, 37) | 27 · 3 → 3 |
+| q-006 | 31 − 58 | 34 − 71 (trap 37 = sign lost) | −37 · 2 → 4 |
+| q-002 | 73 − (−46) | 64 − (−29) (trap 35 = sign flip ignored) | 93 · 4 → 2 |
+| q-004 | 95 + (−38) | 83 + (−47) (traps 130, 46 = no borrow) | 36 · 2 → 2 |
+| q-005 | −62 − 25 | −54 − 28 (trap −26) | −82 · 1 → 3 |
+| q-007 | 468 + 85 | 376 + 57 (two carries; traps 423, 333; estimate kept) | 433 · 2 → 3 |
+| q-008 | 666 + 555 | 888 + 444 (three carries; trap 1,222 = no carries) | 1,332 · 2 → 1 |
+| q-009 | 8,003 − 994 | 6,002 − 997 (subtract 1,000, give 3 back; trap 4,999) | 5,005 · 3 → 2 |
+| q-010 | 5,005 − 606 | 7,003 − 405 (two pieces; trap 6,608) | 6,598 · 2 → 4 |
+| q-011 | (−64) ÷ (−8) | (−54) ÷ (−6) | 9 · 1 → 3 |
+| q-015 | 320 ÷ 5 | 435 ÷ 5 (split 400 + 35) | 87 · 1 → 2 |
+| q-016 | 192 ÷ 4 | 276 ÷ 4 (split 240 + 36) | 69 · 4 → 1 |
+| q-012 | 9 · 13 | 7 · 16 (split; 2nd way kept: last digit 2 leaves 112/92, more than 7 · 15 = 105) | 112 · 1 → 3 |
+| q-013 | 12 · 14 | 13 · 14 (split 10 + 4) | 182 · 4 → 1 |
+| q-017 | 3,618 ÷ 18 | 3,232 ÷ 16 (split 3,200 + 32; check by multiplying) | 202 · 4 → 4 |
+| q-019 | 18 ÷ (8 − 2) − (−4) · 3 | 24 ÷ (9 − 5) − (−2) · 4 (traps 32 = left to right, −2) | 14 · 1 → 2 |
+| q-020 | 12 ÷ (−4) − (−6) · (−2) | 20 ÷ (−5) − (−3) · (−4) (trap 8) | −16 · 4 → 3 |
+| q-014 (Fast practice) | 666 × 11 | 534 × 11 (×10 plus one copy) | 5,874 · 4 → 3 |
+| q-018 (in the Topic 2 practice) | 200 ÷ 6 = 33⅓ | 250 ÷ 6: remainder 4 → 4/6 = 2/3 (choices in sixths/thirds as before) | 41⅔ · 2 → 3 |
+| fast-practice-1 (extra) | 98 × 37 (one away from the summary example 98 × 36) | 98 × 43 | 4,214 · 4 → 4 |
+
+**Practice clean-up (42 → 29: Mixed practice 30 → 23, Fast-calculation practice 12 → 6)**
+- Copies removed (checked against the current build): alg-extra-1 (297 + 68) and -2 (804 − 297), the same "move across / shift"
+  tricks as the Fast Calculation examples; alg-extra-5 (72 ÷ 12, a times-table copy of the lesson questions);
+  fast-practice-3 (702 − 398, the same as the summary 802 − 395); q-r26-t01-25 (200 ÷ 6 quotient and remainder, the same
+  sum as q-018); q-r26-t01-18 (−1 < x < 0 largest, the same question in topics 3, 8, 12, 17).
+- Extra-bank drills: 2 warm-ups kept in Mixed practice (alg-extra-6 signs, alg-extra-7 brackets). 4 kept in Fast practice,
+  one per trick (near a round number, friendly ×125, around a centre, cancel). This is the only practice for that lesson. Removed: alg-extra-3 (25 × 28)
+  and -4 (48 × 15), the same as the lesson/summary examples 44 × 25, 36 × 25, 36 × 15 and 28 × 15; fast-practice-6 (16% of 75, the lesson uses 24% of 75);
+  fast-practice-7 (85², the lesson uses 65² and the summary 35²).
+- September items of a type the Hebrew practice covers, removed: q-r26-t01-22 (signs and brackets: q-002, q-019, q-020),
+  q-r26-t01-17 (must be true; section 1 has four of these), q-r26-t01-23 (86 × 9, the same slide and type as q-014 ×11).
+- Kept (types the Hebrew practice does not have): q-r26-t01-21 (fraction bar), -20 (distinct factors), -19 (cannot be prime), -24 (estimate).
+- Order easy → hard: + − with carries/borrows → signs → bigger sums → ÷ and × → long division → order of operations → exam-level.
+  Fast practice: ×11 → near round → ×125 → around a centre → cancel → estimate. The target was about 28. The result is 29,
+  because the fast-calculation lesson needs its own drills.
+
+### 2026-10-07 (2) lesson-section questions q-021..q-040
+Function `renumber_lesson_questions` (runs last). These are the Hebrew study questions inside sections 1–4, with no solution videos.
+The recorded lessons before them only say "Questions next". No spoken line quotes their numbers, so nothing recorded refers to
+them. Same checks as above: keys brute-forced, traps recomputed, no duplicate with any question, lesson board item or card in topics 1–38
+or with base-v18, and nothing taken from the Hebrew subtitles. None of them equals the recorded lesson examples (17·8, 576÷8, 12·9, 398+57,
+602−198, 703−286, 24÷6·2, 5−(9−2), 12/(2+4) …).
+
+| Id | Old (Hebrew) | New | Answer · key old → new |
+|---|---|---|---|
+| q-021 | 4 + 6·5 | 7 + 3·6 (trap 60 = add first) | 25 · 3 → 3 |
+| q-022 | 6·(2 − 5) ÷ (−3) | 4·(3 − 8) ÷ (−2) (trap −10 = sign) | 10 · 3 → 2 |
+| q-023 | 5 − (9 − 6 ÷ 3) | 3 − (12 − 10 ÷ 5); both ways kept (÷ first / open the brackets); trap −11 | −7 · 2 → 2 |
+| q-024 | [12 + (−7)]·[(−6) − (−6)] − (−2) | [15 + (−9)]·[(−4) − (−4)] − (−3); zero bracket; trap −45 | 3 · 1 → 2 |
+| q-025 | 24 ÷ [2·(7 − 4) ÷ 3] | 36 ÷ [3·(8 − 2) ÷ 9]; trap 8 = no brackets | 18 · 1 → 3 |
+| q-026 | (−63) ÷ 9 | (−72) ÷ 8 | −9 · 2 → 2 |
+| q-027 | 14·6 | 15·7 (split 10 + 5) | 105 · 1 → 2 |
+| q-028 | 91 ÷ 7 | 84 ÷ 6 (split 60 + 24) | 14 · 2 → 3 |
+| q-029 | 75 ÷ 5 | 85 ÷ 5 (split 50 + 35) | 17 · 2 → 4 |
+| q-030 | 3,366 ÷ 11 | 4,856 ÷ 8 (split 4,800 + 56; check) | 607 · 1 → 2 |
+| q-031 | 93 − 46 | 81 − 37 (borrow) | 44 · 1 → 1 |
+| q-032 | 68 + (−25) | 57 + (−34) (trap 91) | 23 · 4 → 2 |
+| q-033 | 63 − 27 | 52 − 18 (borrow; traps 46, 44) | 34 · 4 → 4 |
+| q-034 | 4,853 + 76 | 3,762 + 57 (one carry) | 3,819 · 3 → 2 |
+| q-035 | 743 − 347 | 652 − 267 (two borrows; trap 415) | 385 · 4 → 2 |
+| q-036 | product of the two smallest two-digit primes (trap 11·11) | product of the two largest one-digit primes (traps 7·7, 7·9) | 35 · 2 → 1 |
+| q-037 | which statement about 1 is not correct | same idea, reworded, choices reordered | "prime" · 2 → 4 |
+| q-038 | m, n opposites: m + n | x, y opposites: x + y (choices reordered) | 0 · 3 → 4 |
+| q-039 | smallest two-digit prime ÷ 4: remainder | smallest two-digit prime ÷ 3: remainder (trap 1 = uses 10) | 2 · 1 → 2 |
+| q-040 | p, q reciprocals: p·q | a, b reciprocals: a·b (choices reordered) | 1 · 1 → 3 |

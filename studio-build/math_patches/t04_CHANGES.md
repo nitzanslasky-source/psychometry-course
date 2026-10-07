@@ -204,3 +204,27 @@ Recorded (listed only): guided q-120 (m+n)² − (m−n)² = Hebrew (x+y)² − 
 `expression-basics` / `r26-t04-formulas` use their own numbers (5x+6y−2x−2y−3x²+7x², (2a)(5b)(3a), 3a²−12a+6 …), not the Hebrew ones.
 Left: practice q-115 (c−d)² − (c+d)² is the reverse of the Hebrew sample (answer −4cd, not 4xy) — different question;
 q-100 9a+4b−5a−b shares only "4b − b" with the Hebrew 3x+4y−2x−y — not a match.
+
+## 2026-10-07 practice clean-up
+Function `practice_cleanup` (runs LAST). Teacher-approved. Practice **37 → 25** (one section, easy → hard): all 20 Hebrew
+self-practice questions (q-100 … q-119), 3 warm-ups (alg-extra-unit-t4-1-2 3(x + 4) − 2(x + 1), -1-5 97 · 103,
+-1-4 (x² − 9)/(x − 3)) and 2 review items (q-r26-t04-07 a − b, ab → a² + b²; q-r26-t04-18 x² − y² = 24, x + y = 6 → x).
+Trinomial factoring by sum and product (teacher: not exam material) is gone from the practice. No guided question,
+lesson, video or card changed (the recorded lesson `r26-t04-formulas` is untouched).
+
+| removed | why |
+|---|---|
+| alg-extra-unit-t4-1-7 | copy: (3x² + 15x)/(3x) = warm-up alg-extra-unit-t4-1-4 |
+| alg-extra-unit-t4-1-3 | trinomial x² + 8x + 15 by sum and product (not exam material) |
+| alg-extra-unit-t4-1-1 | warm-up over 3: 3x + 5y − 2x − 3y = Hebrew q-100 |
+| alg-extra-unit-t4-1-6 | warm-up over 3: (u + v)(w − 3) + (u + v)(w + 3) = topic 5 guided q-137 |
+| q-r26-t04-08 | review: x + y, x − y → x² − y² (guided q-r26-t04-01 type; harder q-r26-t04-18 kept) |
+| q-r26-t04-09 | review: 1001² − 999² = guided q-r26-t04-02 with other numbers |
+| q-r26-t04-10 | review: x + 1/x = 4 = guided q-r26-t04-04 with other numbers |
+| q-r26-t04-14 | review: (2a + b)² − (2a − b)² = Hebrew q-115 / guided q-120 |
+| q-r26-t04-19 | review: (x + 3)² − (x − 3)(x + 3) = Hebrew q-111 … q-118 |
+| q-r26-t04-16 | review: (2021² − 2019²)/2020 = numeric difference of squares (guided q-r26-t04-02, warm-up 97 · 103) |
+| q-r26-t04-15 | review: (a + b)² = 49, (a − b)² = 9 → ab = identity of Hebrew q-115 |
+| q-r26-t04-17 | review: x − y = 5 → (x − y)² − 2(x − y) = topic 5 guided q-r26-t05-03 |
+
+`python3 math_check.py 3 4 5 6 8 32` → 0 / 0 / 0.

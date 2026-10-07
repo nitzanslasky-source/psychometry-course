@@ -154,3 +154,30 @@ Function `pen_or_click` (runs last, after `cut_repeats`). The teacher's approved
 - solve-q-r26-t08-01 (5 -> 2 by hand, 3 clicks). By hand: = 4 · 2ⁿ, circle. Clicks: = 2² · 2ⁿ = 2ⁿ⁺², the n = 1 and n = 2 checks.
 - solve-q-r26-t08-02 (3 -> 1 by hand, 2 clicks). Clicks: x = ½, the four choices at x = ½. By hand: circle.
 - solve-q-r26-t08-05 (3 -> 2 by hand, 1 click). By hand: x³ < 0 -> x < 0, circle. Click: y² > 0.
+
+## 2026-10-07 practice clean-up
+Function `practice_cleanup` (runs LAST, after `pen_or_click`). Teacher-approved. Practice **26 → 13** (one section,
+easy → hard): the 4 Hebrew self-practice questions (q-228, q-229, q-230, q-232) + q-expression-extra-09 (Hebrew topic-5
+original moved here by the T5 patch; kept after the negative-exponent warm-ups), 3 warm-ups (alg-extra-exponent-extra-4
+2⁻³ + 2⁻², -5 (2x)³/(4x²), -3 3^(x+1) = 3⁴) and one review item per type the Hebrew does not have: q-r26-t08-09 (0.3²),
+-12 (largest of 16², 8³, 2¹², 4⁵), -07 (5¹² five times ÷ 5¹⁰), -14 (4^x = 8⁴), -23 (9⁴ · 27² / 3¹²).
+(Checked alone, `math_check.py 8`, topic 8 has 12: q-expression-extra-09 arrives only with the T5 patch.)
+No guided question, lesson, video or card changed.
+
+| removed | why |
+|---|---|
+| alg-extra-exponent-extra-1 | copy: 2⁶/2³ = guided q-225 |
+| q-r26-t08-06 | copy: 3ⁿ + 3ⁿ + 3ⁿ = guided q-r26-t08-01 |
+| q-r26-t08-11 | copy: −1 < x < 0 powers = guided q-r26-t08-02 |
+| q-r26-t08-19 | copy: x³y⁵ < 0 = guided q-r26-t08-05 |
+| alg-extra-exponent-extra-6 | warm-up over 3: 2¹⁰ vs 4⁴ = kept q-r26-t08-12 (same-base comparison) |
+| q-r26-t08-17 | review: x⁵ < 0 = guided q-r26-t08-05 |
+| q-r26-t08-18 | review: −x² negative = Hebrew q-220 / q-222 |
+| q-r26-t08-21 | review: (2³)² · 2⁻⁴ / 2² = Hebrew q-223 / q-226 |
+| q-r26-t08-22 | review: 6⁵/(2⁵ · 3³) = Hebrew q-228 … q-230 |
+| q-r26-t08-15 | review: 2³ · 5⁶ = Hebrew q-228 |
+| q-r26-t08-10 | review: 0.2³ · 10⁴ = kept q-r26-t08-09 (decimal power) |
+| q-r26-t08-08 | review: 2ⁿ⁺¹ + 2ⁿ⁺¹ = 32 = kept q-r26-t08-07 + q-r26-t08-14 |
+| q-r26-t08-20 | review: (x − 2)^(x + 3) = 1 = guided q-231 (mⁿ = 1) |
+
+`python3 math_check.py 3 4 5 6 8 32` → 0 / 0 / 0.

@@ -1202,3 +1202,54 @@ _apply_before_pen_or_click = apply
 def apply(M):
     _apply_before_pen_or_click(M)
     pen_or_click(M)   # 2026-10-06 pen or click: runs last
+
+
+# =====================================================================================
+# 2026-10-07 practice clean-up (teacher-approved). Practice was 25: 4 Hebrew self-practice questions (q-228, q-229,
+# q-230, q-232), 6 extra-bank warm-ups and 15 September-review items. Copies out, at most 3 warm-ups, review items
+# whose type the Hebrew / guided questions already practise out (one of each other type kept). Kept: 4 Hebrew,
+# 3 warm-ups, 5 review items. Runs LAST.
+# =====================================================================================
+CLEANUP_REMOVE = [
+    # copies (practice_audit/copies_by_topic.txt, each checked against the current build)
+    'alg-extra-exponent-extra-1',   # 2⁶/2³: guided q-225 (12⁸/12⁶)
+    'q-r26-t08-06',                 # 3ⁿ + 3ⁿ + 3ⁿ: guided q-r26-t08-01 (2ⁿ four times)
+    'q-r26-t08-11',                 # -1 < x < 0, largest of x ... x⁴: guided q-r26-t08-02
+    'q-r26-t08-19',                 # x³y⁵ < 0: guided q-r26-t08-05 (x³y² < 0)
+    # warm-up beyond the kept three
+    'alg-extra-exponent-extra-6',   # 2¹⁰ vs 4⁴: kept q-r26-t08-12 is the same comparison (same base)
+    # September items of a type the Hebrew / guided questions already practise
+    'q-r26-t08-17',                 # x⁵ < 0 -> x < 0: guided q-r26-t08-05
+    'q-r26-t08-18',                 # -x² necessarily negative: Hebrew q-220 / q-222 (signs of powers)
+    'q-r26-t08-21',                 # (2³)² · 2⁻⁴ / 2²: Hebrew q-223 / q-226 (same base)
+    'q-r26-t08-22',                 # 6⁵/(2⁵ · 3³): Hebrew q-228 ... q-230 (aⁿbⁿ = (ab)ⁿ)
+    'q-r26-t08-15',                 # 2³ · 5⁶: Hebrew q-228 (5⁵ · 2⁵)
+    'q-r26-t08-10',                 # 0.2³ · 10⁴: kept q-r26-t08-09 (decimal power)
+    'q-r26-t08-08',                 # 2ⁿ⁺¹ + 2ⁿ⁺¹ = 32: kept q-r26-t08-07 (sum of equal powers) + q-r26-t08-14
+    'q-r26-t08-20',                 # (x - 2)^(x + 3) = 1: guided q-231 (mⁿ = 1)
+]
+CLEANUP_ORDER = [
+    'q-228', 'q-229', 'q-230', 'q-r26-t08-09', 'alg-extra-exponent-extra-4', 'alg-extra-exponent-extra-5',
+    'alg-extra-exponent-extra-3', 'q-r26-t08-12', 'q-r26-t08-07', 'q-r26-t08-14', 'q-r26-t08-23', 'q-232']
+
+
+def practice_cleanup(M):
+    for qid in CLEANUP_REMOVE:
+        assert M.section_of(qid) == PRACTICE, qid
+        M.unplace(qid)
+    order = list(CLEANUP_ORDER)
+    # q-expression-extra-09 (Hebrew topic-5 original, x³(x⁻³ + 4/x³)) is moved here by the T5 patch: keep it,
+    # after the other negative-exponent items
+    if any(f['ref'] == 'q-expression-extra-09' and f['section'] == PRACTICE for f in M.D['flow']):
+        order.insert(order.index('alg-extra-exponent-extra-5') + 1, 'q-expression-extra-09')
+    M.practice_order(PRACTICE, order)
+    got = [f['ref'] for f in M.D['flow'] if f['section'] == PRACTICE and f['type'] == 'question']
+    assert got == order, got
+
+
+_apply_before_practice_cleanup = apply
+
+
+def apply(M):
+    _apply_before_practice_cleanup(M)
+    practice_cleanup(M)   # 2026-10-07 practice clean-up: runs last

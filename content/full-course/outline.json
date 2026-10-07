@@ -24,54 +24,54 @@
      "title": "Algebraic Fundamentals",
      "videos": 14,
      "lessons": 9,
-     "questions": 78,
+     "questions": 65,
      "minutes": 51,
-     "steps": 98
+     "steps": 85
     },
     {
      "id": 2,
      "title": "Fractions — Fundamentals",
      "videos": 11,
      "lessons": 6,
-     "questions": 73,
+     "questions": 63,
      "minutes": 35,
-     "steps": 88
+     "steps": 78
     },
     {
      "id": 3,
      "title": "Fractions",
      "videos": 15,
      "lessons": 2,
-     "questions": 38,
+     "questions": 28,
      "minutes": 33,
-     "steps": 54
+     "steps": 44
     },
     {
      "id": 4,
      "title": "Expressions — Fundamentals",
      "videos": 9,
      "lessons": 3,
-     "questions": 43,
+     "questions": 31,
      "minutes": 22,
-     "steps": 53
+     "steps": 41
     },
     {
      "id": 5,
      "title": "Expressions",
      "videos": 21,
      "lessons": 4,
-     "questions": 64,
+     "questions": 42,
      "minutes": 45,
-     "steps": 86
+     "steps": 64
     },
     {
      "id": 6,
      "title": "Equations — Fundamentals",
      "videos": 11,
      "lessons": 4,
-     "questions": 71,
+     "questions": 43,
      "minutes": 26,
-     "steps": 84
+     "steps": 56
     },
     {
      "id": 7,
@@ -87,9 +87,9 @@
      "title": "Exponent Laws — Fundamentals",
      "videos": 11,
      "lessons": 3,
-     "questions": 41,
+     "questions": 28,
      "minutes": 20,
-     "steps": 53
+     "steps": 40
     },
     {
      "id": 9,

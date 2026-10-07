@@ -1207,3 +1207,46 @@ _apply_before_hebrew = apply
 def apply(M):
     _apply_before_hebrew(M)
     hebrew_backcheck(M)
+
+
+# =====================================================================================
+# 2026-10-07 practice clean-up (teacher-approved). Practice was 25: the 10 Hebrew self-practice questions
+# (q-081 ... q-090), 7 extra-bank warm-ups and 8 September-review items. Copies out, at most 3 warm-ups, review
+# items whose type the Hebrew / guided questions already practise out. Kept: all 10 Hebrew, 2 warm-ups, 3 review
+# items of types the Hebrew does not have. Runs LAST.
+# =====================================================================================
+CLEANUP_REMOVE = [
+    # copies (practice_audit/copies_by_topic.txt, each checked against the current build)
+    'alg-extra-unit-t3-1-6',   # 3/5 vs 4/6: same as warm-up alg-extra-unit-t3-1-1 (two plain fractions)
+    'alg-extra-unit-t3-1-2',   # largest of 15/16, 4/5, 7/8, 10/11: same as Hebrew q-084 (distance from 1)
+    'q-r26-t03-09',            # smallest of 22/20 ... 24/22: same as Hebrew q-089 (fractions above 1)
+    'q-r26-t03-10',            # largest of k/sqrt(m): same as guided q-097
+    'q-r26-t03-11',            # -1 < x < 0, smallest of x, x², x³, 1/x: guided q-r26-t12-01 / q-r26-t08-02 type
+    # warm-ups beyond the kept ones
+    'alg-extra-unit-t3-1-4',   # 3/sqrt6 vs 2/sqrt3: guided q-097 type (square them)
+    'alg-extra-unit-t3-1-7',   # (c + x)/(c - x) smallest: same as Hebrew q-088
+    'alg-extra-unit-t3-1-5',   # 0 < x < 1, largest of x, x², 1, 1/x: guided q-r26-t03-03 type
+    # September items of a type the Hebrew / guided questions already practise
+    'q-r26-t03-07',            # largest of four negative fractions: comparing fractions = Hebrew q-084 / q-089 / q-090
+    'q-r26-t03-04',            # (7 + x)/(9 + x) vs 7/9: guided q-r26-t03-02 with other numbers
+]
+CLEANUP_ORDER = [
+    'q-083', 'q-086', 'q-081', 'q-082', 'alg-extra-unit-t3-1-1', 'q-084', 'alg-extra-unit-t3-1-3',
+    'q-085', 'q-089', 'q-r26-t03-05', 'q-090', 'q-087', 'q-088', 'q-r26-t03-06', 'q-r26-t03-08']
+
+
+def practice_cleanup(M):
+    for qid in CLEANUP_REMOVE:
+        assert M.section_of(qid) == PRACTICE, qid
+        M.unplace(qid)
+    M.practice_order(PRACTICE, CLEANUP_ORDER)
+    got = [f['ref'] for f in M.D['flow'] if f['section'] == PRACTICE and f['type'] == 'question']
+    assert got == CLEANUP_ORDER, got
+
+
+_apply_before_practice_cleanup = apply
+
+
+def apply(M):
+    _apply_before_practice_cleanup(M)
+    practice_cleanup(M)   # 2026-10-07 practice clean-up: runs last

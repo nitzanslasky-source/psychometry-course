@@ -85,3 +85,77 @@ Check: `python3 math_check.py 2`. PROBLEMS 0, WARNINGS 0, LAYOUT 0 (62 slides). 
 Course-wide duplicate scan: q-r26-t02-22 was the same exercise as q-069 (5 3/4 − 2 1/3, set by dedupe_examples).
 q-r26-t02-22 (September item, unrecorded) now: 7 5/6 − 3 1/4 = 4 7/12 (choices 3 7/12, 4 7/12, 4 1/12, 11 1/12 = added).
 Function `review_dups` at the end of t02.py.
+
+## 2026-10-07 practice renumber + clean-up
+Function `renumber_practice` (runs last). Goal: the English practice must not look like the Hebrew course. Same concept,
+trap, level and method (q-054 keeps both methods: the LCM and "estimate and eliminate"). Only numbers and choice order change. Practice is never recorded.
+Recorded and left exactly as they are: all four lessons, Fraction Shortcuts, and the guided solution videos -01, -05, -10, -15 and -19.
+Not recorded: the summary `r26-t02-summary`, which was not changed. Lesson questions q-061..q-080 (sections 1–4, no videos) are not practice and were not changed.
+q-018 (200 ÷ 6, in this practice) belongs to Topic 1. It is renumbered in t01.py to 250 ÷ 6 = 41⅔.
+Check: `python3 math_check.py 1 2 32` → 0/0/0. Every key was brute-forced in python, and every trap was recomputed. No new stem equals a stem,
+lesson board item or card example in topics 1–38, a base-v18 stem or a number pair in the Hebrew subtitles.
+
+| Id | Old (Hebrew) | New | Answer · key old → new |
+|---|---|---|---|
+| q-041 | 5/6 = 35/? | 4/7 = 36/? (trap 39 = added instead of multiplied) | 63 · 3 → 3 |
+| q-042 | 4/12 = ?/27 | 6/16 = ?/40 (reduce first to 3/8, then ×5) | 15 · 1 → 2 |
+| q-043 | 27/45 | 28/49 (GCD 7) | 4/7 · 3 → 1 |
+| q-045 | 7 1/6 | 6 2/7 (trap 20/7 = 6 + 2 · 7) | 44/7 · 2 → 4 |
+| q-044 | 52/10 | 34/8 (remainder 2 → 2/8 = 1/4) | 4 1/4 · 2 → 2 |
+| q-056 | 0.250 | 0.400 (trailing zeros; trap 1/4 = "the digit 4") | 2/5 · 4 → 1 |
+| q-057 | 6/120 | 9/150 (reduce, then hundredths) | 0.06 · 1 → 4 |
+| q-060 | 0.3 · 0.6 | 0.4 · 0.7 (count the decimal places) | 0.28 · 1 → 2 |
+| q-051 | 1/4 + 3/8 | 1/3 + 4/9 (one denominator is a multiple of the other; trap 5/12) | 7/9 · 1 → 3 |
+| q-052 | 5/9 − 1/3 | 11/12 − 1/3 (same kind; trap 10/9) | 7/12 · 3 → 3 |
+| q-046 | 6/15 · 5/8 | 6/14 · 7/9 (reduce first, then cancel) | 1/3 · 2 → 4 |
+| q-050 | 4 / (1/8) | 3 / (1/6) (trap 1/2 = multiplied by 1/6) | 18 · 3 → 1 |
+| q-058 | 30.25 − 8.85 | 40.15 − 7.75 (compensate: −8, + 0.25; trap 31.9) | 32.4 · 2 → 3 |
+| q-059 | 12 / 1.5 | 21 / 1.4 (clear the decimal: 210/14) | 15 · 2 → 2 |
+| q-047 | 2 1/2 · 7/35 | 1 2/3 · 6/40 (mixed → improper, reduce, cancel) | 1/4 · 2 → 2 |
+| q-048 | 6/25 ÷ 9/5 | 10/27 ÷ 5/9 (keep-change-flip, cancel; trap 50/243 = no flip) | 2/3 · 1 → 3 |
+| q-049 | (2/9)/(8/3) | (3/10)/(9/5) (trap 27/50 = multiplied; 6 = wrong flip) | 1/6 · 4 → 2 |
+| q-053 | 5/18 + 7/12 | 3/10 + 4/15 (LCM by multiples of the larger: 30) | 17/30 · 4 → 4 |
+| q-055 | 7/20 + 3/4 − 3/5 | 5/12 + 2/3 − 3/4 (LCM = largest denominator) | 1/3 · 4 → 4 |
+| q-054 | 3 1/4 − 7/9 | 4 1/3 − 5/7; Method 2: 5/7 a bit more than 2/3 → a bit less than 3 2/3; denominator 10 impossible | 3 13/21 · 1 → 2 |
+
+**Practice clean-up (36 → 26)**
+- Copies removed (checked against the current build): alg-extra-1 (3/6 + 1/4), -2 (3/4 − 1/6), -3 (9/7 · 14/3), -4
+  (3/4 ÷ 9/10). Each is the same exercise type as a Hebrew practice item (q-051, q-052, q-046, q-048). Also removed: q-r26-t02-25 (7/10 − 1/4,
+  the same as -2) and q-r26-t02-17 (4.5 ÷ 0.25 rope, the same divisor and idea as guided q-r26-t02-15 3.6/0.25 and the ribbon item).
+- Extra-bank warm-ups: 2 kept (-7 reciprocal of −3/5, -6 ribbon 7/2 ÷ 1/2). Removed: -5 (0.375 → 3/8, the same type as q-056).
+- September items of a type the Hebrew practice covers, removed: q-r26-t02-04 (signs in fractions), -12 (÷ before −
+  with fractions: q-048 and the Topic 1 order of operations), -13 (fraction inside a fraction: q-049, q-050).
+- Kept (types the Hebrew practice does not have): q-r26-t02-24 (fraction of a fraction of a class), -08 (fraction of the rest,
+  working back), -23 (1/a + 1/b with letters).
+- Order easy → hard: equal fractions → mixed numbers → decimals ↔ fractions → + − → × ÷ → decimals → mixed operations →
+  word problems → letters. The target was about 25. The result is 26.
+
+### 2026-10-07 (2) lesson-section questions q-061..q-080
+Function `renumber_lesson_questions` (runs last). These are the Hebrew study questions inside sections 1–4, with no solution videos.
+The recorded lessons before them only say "A guided question next, then practice", so no spoken line quotes their numbers. Same checks as above,
+including the recorded lesson examples (15/4, 2 3/5, 18/24, 3/4 · 2/5, 1 2/3 · 3/5, 2/7 + 3/7, 3/10 + 1/5, 0.36, 7/50, 1.4 · 0.6, 4.8 ÷ 0.06 …).
+q-069 is not changed: it already got new numbers on 2026-10-04 (5 3/4 − 2 1/3).
+Also: practice **q-047** (first renumbered to 1 2/3 · 6/40) used the same mixed number as the recorded lesson example 1 2/3 · 3/5.
+It is now 1 1/5 · 10/36 = 1/3 (key 3).
+
+| Id | Old (Hebrew) | New | Answer · key old → new |
+|---|---|---|---|
+| q-076 | 3/4 = ?/24 | 2/5 = ?/35 | 14 · 2 → 2 |
+| q-077 | 60/240 | 70/350 | 1/5 · 1 → 2 |
+| q-078 | 6/15 = ?/10 | 14/21 = ?/6 (reduce, then expand) | 4 · 2 → 3 |
+| q-079 | 29/6 | 33/7 (same 2×2 choice grid) | 4 5/7 · 3 → 1 |
+| q-080 | 7 2/5 | 8 3/4 | 35/4 · 1 → 2 |
+| q-071 | 6/12 · 2/8 | 5/10 · 3/9 (reduce each first) | 1/6 · 2 → 1 |
+| q-072 | 15/14 · 4 2/3 | 12/11 · 3 2/3 (the 11s cancel) | 4 · 2 → 3 |
+| q-073 | 7/12 ÷ 1/3 | 5/8 ÷ 1/2 (trap 5/16 = no flip) | 1 1/4 · 1 → 2 |
+| q-074 | (7/5)/(3/5) | (9/7)/(4/7) | 2 1/4 · 1 → 2 |
+| q-075 | 8 ÷ 3 1/5 | 10 ÷ 2 2/3 | 3 3/4 · 1 → 2 |
+| q-066 | 3/8 + 2/8 | 4/11 + 5/11 (trap 9/22) | 9/11 · 3 → 3 |
+| q-067 | 1/2 − 3/8 | 1/3 − 1/6 (trap 0 = tops and bottoms) | 1/6 · 1 → 2 |
+| q-068 | 1/3 + 1/5 | 1/4 + 1/7 (LCM 28; trap 2/11) | 11/28 · 3 → 3 |
+| q-070 | 2/5 − 1/10 + 7/10 | 3/4 − 3/8 + 5/8 | 1 · 1 → 2 |
+| q-061 | 0.45 | 0.35 | 7/20 · 2 → 4 |
+| q-062 | 18/25 | 11/25 (×4) | 0.44 · 3 → 1 |
+| q-063 | 12.3 − 4.15 | 15.4 − 6.25 (add a zero, line up the points) | 9.15 · 1 → 2 |
+| q-064 | 18/0.6 | 28/0.4 | 70 · 2 → 3 |
+| q-065 | 0.9 · 0.9 | 0.7 · 0.7 | 0.49 · 2 → 3 |
