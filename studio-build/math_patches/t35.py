@@ -2137,3 +2137,52 @@ _apply_before_no_decimal_estimates = apply
 def apply(M):
     _apply_before_no_decimal_estimates(M)
     no_decimal_estimates(M)   # 2026-10-07 no decimal estimates: runs last
+
+
+# ===================================================================================================================
+# 2026-10-07 trim added repeats. Teacher: "My only concern is places where YOU added it. Where the original (Hebrew)
+# course teaches something in multiple subjects, that's OK." Content we added that re-teaches something the student
+# already learned earlier in the study plan is trimmed (helpers: _trim_repeats.py). Recorded videos are never changed
+# (a take from before _trim_repeats.CUTOFF keeps the old video).
+def _tr_load():
+    import importlib.util, os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_trim_repeats.py')
+    spec = importlib.util.spec_from_file_location('_trim_repeats', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); return m
+
+
+def trim_added_repeats(M):
+    from dsl import T, A, D
+    R = _tr_load()
+    # r26-t35-cubefacts: the cube diagonals a√2 / a√3 and the three angles in a cube (90°, 45°, 60°) are taught in
+    # this topic's questions just before (the teacher's cube questions: Edge → body diagonal, Three angles in a
+    # cube); 1 liter = 1000 cm³ in Water Level. Angles removed, the cube diagonals become one reminder line.
+    G = 'r26-t35-cubefacts'
+    if not R.recorded(G):
+        R.drop_slide(M, G, 'Angles in a cube')
+        R.set_slide(M, G, 'Cube and Box Facts', [
+            'More cube and box facts.',
+            'None of them are on the formula page.'])
+        s = R.lines_of(M, G, 'Diagonals')
+        s = R.drop_lines(s, "'a√2 and a√3' appears")
+        s = R.replace_line(s, 'In a cube with edge a', 'In a cube you know it: a root 2 on a face, a root 3 through the inside.')
+        R.set_slide(M, G, 'Diagonals', s)
+        s = R.lines_of(M, G, 'Quick checks')
+        s = R.drop_lines(s, "'Units' appears")
+        s = R.replace_line(s, 'And compare only in the same units', 'Now a question.')
+        R.set_slide(M, G, 'Quick checks', s)
+    # r26-t35-water: 1 ml = 1 cm³ is the teacher's (Solids: Surface and Volume, Volume). Folded into the liter line.
+    G = 'r26-t35-water'
+    if not R.recorded(G):
+        s = R.lines_of(M, G, 'Liters and cm³')
+        s = R.drop_lines(s, "'1 ml = 1 cm³' appears", 'One milliliter is exactly')
+        s = R.replace_line(s, 'One liter is a thousand', 'You know one milliliter is one cubic centimeter. So one liter is a thousand — a cube, 10 by 10 by 10.')
+        R.set_slide(M, G, 'Liters and cm³', s)
+
+
+_apply_before_trim_added_repeats = apply
+
+
+def apply(M):
+    _apply_before_trim_added_repeats(M)
+    trim_added_repeats(M)   # 2026-10-07 trim added repeats: runs last

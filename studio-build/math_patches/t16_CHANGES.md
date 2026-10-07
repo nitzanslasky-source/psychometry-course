@@ -241,3 +241,10 @@ Function `spread_methods` (runs last). Went through all 46 questions (20 guided 
 - Not added: the mirror test does not fit q-465, q-466, q-467, q-485, q-491, q-r26-t16-01 (the given changes in every mirror); q-r26-t16-06 (it would only remove one choice, slower than the existing line). Tag it: the parity / divisibility questions already write the tags (q-461 b = 2k, q-483 n = 2k, q-r26-t16-03 / -09 4a + 6, q-463 8k, q-472 / q-492 count the twos); products of consecutive numbers (q-r26-t16-04, -11) are outside its use. Power count: q-458 / q-468 have letters in the choices but "consecutive even" adds numbers (b = a + 2), so the powers don't count — not used. Pick values: the consecutive-number questions already check with values.
 - Recorded videos: none in topic 16.
 `python3 math_check.py 14 15 16 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-07 trim added repeats
+
+Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
+
+- whole-numbers: added slide 'Signs of sums' removed (topic 1 Addition & Subtraction: signed numbers, bigger minus smaller). Recap line kept as the reminder. ~50 s.

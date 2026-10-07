@@ -258,3 +258,10 @@ Function `spread_methods` (runs last). Went through all 41 questions (16 guided 
 - Other new methods (power count, mirror test, pick values, ranges): no question in this topic fits them.
 - Recorded videos: none in topic 15. A build-time guard skips the slide if `solve-q-r26-t15-01` is ever recorded.
 `python3 math_check.py 14 15 16 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0; the extended video was rendered and checked.
+
+
+## 2026-10-07 trim added repeats
+
+Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
+
+- r26-t15-remainder-tools: slide 'Units digit' removed (topic 1 Last digit; topic 21 Days and last digits); one reminder line on the title slide, 'four' → 'three' tools. ~36 s.

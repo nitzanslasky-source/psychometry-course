@@ -306,3 +306,10 @@ the cutoff in `_shaded_nl.CUTOFF` is skipped (never changed); none of these was 
 - Not added: solve-q-r26-t12-02 (the teacher already draws the sign-table line by hand there, and the slide is full),
   solve-q-335 (already has a number line), recorded videos (inequalities, inequality-systems, q-322 … q-324).
 `math_check.py 12 13 17 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Renders: tmp_check/numlines/t12.png.
+
+
+## 2026-10-07 trim added repeats
+
+Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
+
+- r26-t12-signs shrunk to ONE content slide 'Reciprocals in inequalities' (same sign → flip, different signs → no flip) + one reminder line (between 0 and 1: topics 8, 3; must/could/cannot: topics 1, 21). Slides 'Between 0 and 1' and 'Must, could, cannot' removed; video renamed 'Reciprocals in Inequalities'; sidebar = the one slide. ~54 s saved.

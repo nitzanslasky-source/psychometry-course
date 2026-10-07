@@ -230,3 +230,10 @@ Checks: `python3 math_check.py 19 32` → 0 / 0 / 0; rendered new-operation, sol
 
 ## 2026-10-07 methods spread
 Every question checked against the 2026-10-06 methods; nothing added (no code). Power count does not separate the choices where letters appear (q-553: every choice has power 0; q-r26-t19-01/-07 and q-r26-t19-20 are mixed expressions; q-571 is a count, not an expression). The "flip all signs" idea is already the shortcut in q-r26-t19-05, q-564 and q-568. Nothing in topic 19 is recorded.
+
+
+## 2026-10-07 trim added repeats
+
+Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
+
+- new-operation 'Brackets on every input': the negative-input part is one line (topics 4, 8); the (x + 2) input stays. ~6 s.

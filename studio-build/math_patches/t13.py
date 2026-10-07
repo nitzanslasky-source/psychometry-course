@@ -2431,3 +2431,38 @@ _apply_before_number_lines = apply
 def apply(M):
     _apply_before_number_lines(M)
     number_lines(M)   # 2026-10-07 shaded number lines: runs last
+
+
+# ===================================================================================================================
+# 2026-10-07 trim added repeats. Teacher: "My only concern is places where YOU added it. Where the original (Hebrew)
+# course teaches something in multiple subjects, that's OK." Content we added that re-teaches something the student
+# already learned earlier in the study plan is trimmed (helpers: _trim_repeats.py). Recorded videos are never changed
+# (a take from before _trim_repeats.CUTOFF keeps the old video).
+def _tr_load():
+    import importlib.util, os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_trim_repeats.py')
+    spec = importlib.util.spec_from_file_location('_trim_repeats', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); return m
+
+
+def trim_added_repeats(M):
+    from dsl import T, A, D
+    R = _tr_load()
+    # r26-t13-tools: the root of x squared is |x| was taught in topic 9 (Roots — Fundamentals, Root of a square);
+    # the distance reading with a plus inside (x + 3 = x − (−3)) and "more than k steps" in this topic's questions
+    # just before (|x+3| < 7, 8 < |x+1|). Those parts are cut; |x|² = x², |a − b| = |b − a| and |x − a| as a
+    # distance stay.
+    G = 'r26-t13-tools'
+    if not R.recorded(G):
+        s = R.lines_of(M, G, 'Squares and bars')
+        R.set_slide(M, G, 'Squares and bars', R.drop_lines(s, r'\sqrt{x^2}=|x|', r'\sqrt9=3', 'The other way around', 'root nine is three'))
+        s = R.lines_of(M, G, 'Distance')
+        R.set_slide(M, G, 'Distance', R.drop_lines(s, 'More than four?', 'Plus inside', 'Careful with a plus inside'))
+
+
+_apply_before_trim_added_repeats = apply
+
+
+def apply(M):
+    _apply_before_trim_added_repeats(M)
+    trim_added_repeats(M)   # 2026-10-07 trim added repeats: runs last

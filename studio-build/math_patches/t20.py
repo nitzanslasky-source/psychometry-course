@@ -1192,3 +1192,37 @@ _apply_before_hebrew = apply
 def apply(M):
     _apply_before_hebrew(M)
     hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last
+
+
+# ===================================================================================================================
+# 2026-10-07 trim added repeats. Teacher: "My only concern is places where YOU added it. Where the original (Hebrew)
+# course teaches something in multiple subjects, that's OK." Content we added that re-teaches something the student
+# already learned earlier in the study plan is trimmed (helpers: _trim_repeats.py). Recorded videos are never changed
+# (a take from before _trim_repeats.CUTOFF keeps the old video).
+def _tr_load():
+    import importlib.util, os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_trim_repeats.py')
+    spec = importlib.util.spec_from_file_location('_trim_repeats', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); return m
+
+
+def trim_added_repeats(M):
+    from dsl import T, A, D
+    R = _tr_load()
+    # r26-t20-counting "From a to b": counting the integers from a to b (b − a + 1) was taught in topic 16 (Sums of
+    # Consecutive Integers, Counting integers). The slide becomes one reminder line on "Strictly between".
+    G = 'r26-t20-counting'
+    if not R.recorded(G):
+        R.drop_slide(M, G, 'From a to b')
+        s = R.lines_of(M, G, 'Strictly between')
+        R.set_slide(M, G, 'Strictly between', [
+            A("'From a to b, both included: b − a + 1' appears", T(r'From $a$ to $b$, both included: $\ b-a+1$')),
+            'From a to b, both ends in: b minus a, plus one — you know it.'] + s)
+
+
+_apply_before_trim_added_repeats = apply
+
+
+def apply(M):
+    _apply_before_trim_added_repeats(M)
+    trim_added_repeats(M)   # 2026-10-07 trim added repeats: runs last

@@ -199,3 +199,10 @@ Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate 
 - q-r26-t38-12 (written): 4√5 ≈ 8.9 -> √80 > √64 = 8.
 - geo38-core-p08 (written): perimeters ≈ 28.8 and ≈ 30.5 -> Figure 1 (6 + 6): 4√52 = √832 < √900 = 30; Figure 2 is now cut 1 + 11: 2√17 + 2√137 > 8 + 22 = 30.
 Check: `python3 math_check.py 38 32` -> 0 / 0 / 0. Rendered and looked at.
+
+
+## 2026-10-07 trim added repeats
+
+Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
+
+- geo-177 added slide 'Diagrams that can change' is now a one-line reminder (topic 30 Parallel or not?, topic 51 Can I trust figures?, topic 1 must/could/cannot). ~9 s.

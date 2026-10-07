@@ -225,3 +225,10 @@ Checks: `python3 math_check.py 20 32` → 0 / 0 / 0; rendered r26-t20-summary an
 
 ## 2026-10-07 methods spread
 Every question checked against the 2026-10-06 methods; nothing added (no code). Already shown in the explanations: signs hidden in the given (q-r26-t20-12 starts with x² < x → 0 < x < 1), given power → asked power (q-578 "y = b^(3/2)", q-r26-t20-10 from the 2026-10-06 practice pass), at most / at least (q-577, alg-extra-unit-t20-2-1, q-584 already push the others to the extreme). Mirror test does not fit (q-579: the swap p ↔ q turns choices 1 and 4 into each other, twins, not opposites). Nothing in topic 20 is recorded.
+
+
+## 2026-10-07 trim added repeats
+
+Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
+
+- r26-t20-counting: slide 'From a to b' removed (topic 16 Counting integers); one reminder line + item at the top of 'Strictly between'. ~23 s.

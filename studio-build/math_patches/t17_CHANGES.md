@@ -212,3 +212,10 @@ Function `number_lines` (runs last; figure helper `math_patches/_shaded_nl.py`).
 `_shaded_nl.CUTOFF` is skipped; it was not recorded when this was made.
 - solve-q-498 · "Method 2 · Plug in the answers": closing picture - x only between 0 and 1, open circles (+≈5 s).
 `math_check.py 12 13 17 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Render: tmp_check/numlines/t13-t17.png.
+
+
+## 2026-10-07 trim added repeats
+
+Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
+
+- r26-t17-reading-the-line shrunk to a one-line reminder (slide 'Tools you know'): times a negative, reciprocals by range and test numbers were taught in topics 1, 3, 12 and this topic's own lessons. ~130 s.

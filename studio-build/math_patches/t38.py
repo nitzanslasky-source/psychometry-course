@@ -1787,3 +1787,35 @@ _apply_before_no_decimal_estimates = apply
 def apply(M):
     _apply_before_no_decimal_estimates(M)
     no_decimal_estimates(M)   # 2026-10-07 no decimal estimates: runs last
+
+
+# ===================================================================================================================
+# 2026-10-07 trim added repeats. Teacher: "My only concern is places where YOU added it. Where the original (Hebrew)
+# course teaches something in multiple subjects, that's OK." Content we added that re-teaches something the student
+# already learned earlier in the study plan is trimmed (helpers: _trim_repeats.py). Recorded videos are never changed
+# (a take from before _trim_repeats.CUTOFF keeps the old video).
+def _tr_load():
+    import importlib.util, os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_trim_repeats.py')
+    spec = importlib.util.spec_from_file_location('_trim_repeats', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); return m
+
+
+def trim_added_repeats(M):
+    from dsl import T, A, D
+    R = _tr_load()
+    # geo-177 "Diagrams that can change" (added slide): "a drawing suggests, it doesn't prove" is topic 30 (Parallel
+    # or not?) and topic 51 (Can I trust figures?); must / could / cannot is topic 1. Now a one-line reminder.
+    G = 'geo-177'
+    if not R.recorded(G):
+        R.set_slide(M, G, 'Diagrams that can change', [
+            A("'Suggests, not proves · must / could / cannot?' appears", T(r"The drawing suggests — it doesn't prove $\cdot$ must? could? cannot?")),
+            "As always: the drawing suggests, it doesn't prove — and read the word: must, could or cannot. Let's start with a sample question."])
+
+
+_apply_before_trim_added_repeats = apply
+
+
+def apply(M):
+    _apply_before_trim_added_repeats(M)
+    trim_added_repeats(M)   # 2026-10-07 trim added repeats: runs last

@@ -2231,3 +2231,51 @@ _apply_before_number_lines = apply
 def apply(M):
     _apply_before_number_lines(M)
     number_lines(M)   # 2026-10-07 shaded number lines: runs last
+
+
+# ===================================================================================================================
+# 2026-10-07 trim added repeats. Teacher: "My only concern is places where YOU added it. Where the original (Hebrew)
+# course teaches something in multiple subjects, that's OK." Content we added that re-teaches something the student
+# already learned earlier in the study plan is trimmed (helpers: _trim_repeats.py). Recorded videos are never changed
+# (a take from before _trim_repeats.CUTOFF keeps the old video).
+def _tr_load():
+    import importlib.util, os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_trim_repeats.py')
+    spec = importlib.util.spec_from_file_location('_trim_repeats', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); return m
+
+
+def trim_added_repeats(M):
+    from dsl import T, A, D
+    R = _tr_load()
+    # r26-t12-signs: "Between 0 and 1" was taught in topic 8 (Exponent Traps) and topic 3 (x, x² or 1/x?);
+    # reciprocals in topics 1 and 2; must / could / cannot in topic 1 (Must, Could, Cannot) and topic 21.
+    # Only the reciprocal rule for an INEQUALITY is new: one short slide + a one-line reminder.
+    G = 'r26-t12-signs'
+    if not R.recorded(G):
+        R.drop_slide(M, G, 'Between 0 and 1')
+        R.drop_slide(M, G, 'Must, could, cannot')
+        R.retitle(M, G, 'Reciprocals in Inequalities')
+        R.set_slide(M, G, 'Reciprocals in Inequalities', ['One new rule before the advanced questions.'])
+        R.set_slide(M, G, 'Reciprocals', [
+            'One over both sides of an inequality — what happens to the sign?',
+            A('2 < 3 → 1/2 > 1/3 appears', T(r'$2<3\ \Rightarrow\ \frac12>\frac13$')),
+            'Two is less than three. But one half is MORE than one third. The sign flips.',
+            A('−3 < −2 → −1/3 > −1/2 appears', T(r'$-3<-2\ \Rightarrow\ -\frac13>-\frac12$')),
+            'Both negative? It still flips.',
+            A('−2 < 3 → −1/2 < 1/3 appears', T(r'$-2<3\ \Rightarrow\ -\frac12<\frac13$')),
+            'One negative and one positive? No flip. The negative one stays smaller.',
+            A('same sign → flip; different signs → no flip appears', T(r'same sign $\to$ flip; $\ $ different signs $\to$ no flip')),
+            'So: same sign — flip. Different signs — no flip.',
+            'Numbers between zero and one, and must, could and cannot, work exactly as you learned them.',
+            'Now the questions. Try each one first — then watch.'],
+            new_title='Reciprocals in inequalities')
+        R.set_sidebar_label(M, G, 'Reciprocals', 'Reciprocals in inequalities')
+
+
+_apply_before_trim_added_repeats = apply
+
+
+def apply(M):
+    _apply_before_trim_added_repeats(M)
+    trim_added_repeats(M)   # 2026-10-07 trim added repeats: runs last

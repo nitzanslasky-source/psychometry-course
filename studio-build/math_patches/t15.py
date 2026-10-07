@@ -1937,3 +1937,38 @@ _apply_before_spread_methods = apply
 def apply(M):
     _apply_before_spread_methods(M)
     spread_methods(M)   # 2026-10-07 methods spread: runs last
+
+
+# ===================================================================================================================
+# 2026-10-07 trim added repeats. Teacher: "My only concern is places where YOU added it. Where the original (Hebrew)
+# course teaches something in multiple subjects, that's OK." Content we added that re-teaches something the student
+# already learned earlier in the study plan is trimmed (helpers: _trim_repeats.py). Recorded videos are never changed
+# (a take from before _trim_repeats.CUTOFF keeps the old video).
+def _tr_load():
+    import importlib.util, os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_trim_repeats.py')
+    spec = importlib.util.spec_from_file_location('_trim_repeats', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); return m
+
+
+def trim_added_repeats(M):
+    from dsl import T, A, D
+    R = _tr_load()
+    # r26-t15-remainder-tools "Units digit": the units digit of a product is topic 1 (Multiplication & Division,
+    # Last digit); powers repeating in a cycle of four is topic 21 (Patterns & Cycles, Days and last digits).
+    # Removed; one reminder line on the title slide.
+    G = 'r26-t15-remainder-tools'
+    if not R.recorded(G):
+        R.drop_slide(M, G, 'Units digit')
+        R.set_slide(M, G, 'More Remainder Tools', [
+            'Before the advanced questions: three short tools.',
+            'Units digits work as you learned them: only the last digits count, and powers repeat in a cycle.',
+            "The other tools you'll meet inside the questions themselves."])
+
+
+_apply_before_trim_added_repeats = apply
+
+
+def apply(M):
+    _apply_before_trim_added_repeats(M)
+    trim_added_repeats(M)   # 2026-10-07 trim added repeats: runs last

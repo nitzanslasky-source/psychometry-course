@@ -1759,3 +1759,42 @@ _apply_before_number_lines = apply
 def apply(M):
     _apply_before_number_lines(M)
     number_lines(M)   # 2026-10-07 shaded number lines: runs last
+
+
+# ===================================================================================================================
+# 2026-10-07 trim added repeats. Teacher: "My only concern is places where YOU added it. Where the original (Hebrew)
+# course teaches something in multiple subjects, that's OK." Content we added that re-teaches something the student
+# already learned earlier in the study plan is trimmed (helpers: _trim_repeats.py). Recorded videos are never changed
+# (a take from before _trim_repeats.CUTOFF keeps the old video).
+def _tr_load():
+    import importlib.util, os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_trim_repeats.py')
+    spec = importlib.util.spec_from_file_location('_trim_repeats', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); return m
+
+
+def trim_added_repeats(M):
+    from dsl import T, A, D
+    R = _tr_load()
+    # r26-t17-reading-the-line: times a negative (topic 1 sign rules, topic 12 "multiply by a minus - flip", and this
+    # topic's own Mirror image / Multiply & divide), reciprocals by range (topic 3 "x, x² or 1/x?", topic 12
+    # reciprocals in inequalities, the powers arrows) and test numbers (topic 1 Must, Could, Cannot; this topic's Four
+    # ranges and borders) were all taught before. Shrunk to a one-line reminder.
+    G = 'r26-t17-reading-the-line'
+    if not R.recorded(G):
+        R.drop_slide(M, G, 'Reciprocals')
+        R.drop_slide(M, G, 'Test numbers')
+        R.set_slide(M, G, 'Reading the Number Line', ['Reading the number line — the advanced questions.'])
+        R.set_slide(M, G, 'Times a negative', [
+            A("'Tools you know' appears", T(r'Times a negative: the order flips $\cdot$ same sign: $\frac1x$ flips the order $\cdot$ test $2,\ \frac12,\ -\frac12,\ -2$ and the borders', 40)),
+            'Times a negative, reciprocals and which numbers to test work exactly as you learned them. Now the advanced questions — try each one first, then watch.'],
+            new_title='Tools you know')
+        R.set_sidebar_label(M, G, 'Times a negative', 'Tools you know')
+
+
+_apply_before_trim_added_repeats = apply
+
+
+def apply(M):
+    _apply_before_trim_added_repeats(M)
+    trim_added_repeats(M)   # 2026-10-07 trim added repeats: runs last

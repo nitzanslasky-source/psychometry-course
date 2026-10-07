@@ -263,3 +263,10 @@ before `_shaded_nl.CUTOFF` is skipped; none of these was recorded when this was 
   early hand sketch (shade 7 to 9 and −9 to −7) can go to the right of the first lines; the figure appears at the bottom.
 - solve-q-370 · "Method 1 · Two cases": x < 6 as one ray, open circle at 6 (+≈6 s).
 `math_check.py 12 13 17 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Renders: tmp_check/numlines/t13-t17.png.
+
+
+## 2026-10-07 trim added repeats
+
+Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
+
+- r26-t13-tools: √(x²) = |x| (topic 9 Roots) and the plus-inside / more-than-k distance readings (this topic's |x+3| < 7 and 8 < |x+1| questions) cut. ~31 s.

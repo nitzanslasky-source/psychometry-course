@@ -181,3 +181,10 @@ Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate 
 - solve-geo35-g128 Approach 2: 7√2 ≈ 9.8 -> 7√2 > 7.
 - Left: geo35-core-p13 / geo35-g131 trap notes (1000 ÷ 5π ≈ 63.7, 1782 ÷ 64 ≈ 27.8) only describe how the wrong choice is made.
 Check: `python3 math_check.py 35 32` -> 0 / 0 / 0. Rendered and looked at.
+
+
+## 2026-10-07 trim added repeats
+
+Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
+
+- r26-t35-cubefacts: slide 'Angles in a cube' removed (teacher's cube question, Three angles in a cube); cube diagonals a√2 / a√3 one reminder line (teacher's Edge → body diagonal); liter line removed from Quick checks (Water Level). r26-t35-water: 1 ml = 1 cm³ folded into the liter line (teacher's Volume slide). ~39 s.

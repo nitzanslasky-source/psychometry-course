@@ -1985,3 +1985,37 @@ _apply_before_hebrew = apply
 def apply(M):
     _apply_before_hebrew(M)
     hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last
+
+
+# ===================================================================================================================
+# 2026-10-07 trim added repeats. Teacher: "My only concern is places where YOU added it. Where the original (Hebrew)
+# course teaches something in multiple subjects, that's OK." Content we added that re-teaches something the student
+# already learned earlier in the study plan is trimmed (helpers: _trim_repeats.py). Recorded videos are never changed
+# (a take from before _trim_repeats.CUTOFF keeps the old video).
+def _tr_load():
+    import importlib.util, os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_trim_repeats.py')
+    spec = importlib.util.spec_from_file_location('_trim_repeats', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); return m
+
+
+def trim_added_repeats(M):
+    from dsl import T, A, D
+    R = _tr_load()
+    # new-operation "Brackets on every input": a negative number goes into brackets was taught in topic 8 (Exponent
+    # Laws, Negative bases) and topic 4. That part becomes one line; the whole-expression input (x + 2) stays.
+    G = 'new-operation'
+    if not R.recorded(G):
+        s = R.lines_of(M, G, 'Brackets on every input')
+        s = R.drop_lines(s, "Without brackets you'd write")
+        s = R.replace_line(s, 'Next to it write "= (−3)²', D('Next to it write "= (−3)² − 2 · (−3) = 15"'))
+        s = R.replace_line(s, 'Minus three, in brackets, squared', 'A negative goes in brackets — as always with powers. Nine plus six: fifteen.')
+        R.set_slide(M, G, 'Brackets on every input', s)
+
+
+_apply_before_trim_added_repeats = apply
+
+
+def apply(M):
+    _apply_before_trim_added_repeats(M)
+    trim_added_repeats(M)   # 2026-10-07 trim added repeats: runs last

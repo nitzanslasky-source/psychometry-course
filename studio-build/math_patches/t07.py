@@ -2617,3 +2617,37 @@ _apply_before_plan_order_fix = apply
 def apply(M):
     _apply_before_plan_order_fix(M)
     plan_order_fix(M)   # 2026-10-07 study-plan order: runs last
+
+
+# ===================================================================================================================
+# 2026-10-07 trim added repeats. Teacher: "My only concern is places where YOU added it. Where the original (Hebrew)
+# course teaches something in multiple subjects, that's OK." Content we added that re-teaches something the student
+# already learned earlier in the study plan is trimmed (helpers: _trim_repeats.py). Recorded videos are never changed
+# (a take from before _trim_repeats.CUTOFF keeps the old video).
+def _tr_load():
+    import importlib.util, os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_trim_repeats.py')
+    spec = importlib.util.spec_from_file_location('_trim_repeats', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); return m
+
+
+def trim_added_repeats(M):
+    from dsl import T, A, D
+    R = _tr_load()
+    # r26-t07-more-tools announced two "new" tools that were already taught: multiplying / dividing equations (topic 6,
+    # Systems of Equations, Multiply equations) and x + 1/x (topic 4, Contracted Multiplication Formulas). Now a reminder.
+    G = 'r26-t07-more-tools'
+    if not R.recorded(G):
+        R.set_slide(M, G, 'More Equation Tools', ['Two tools you already know come back in equation questions.'])
+        s = R.lines_of(M, G, "What's ahead")
+        s = R.replace_line(s, 'Equations that are products or ratios?', 'Equations that are products or ratios? Multiply or divide them — as in systems of equations.')
+        s = R.replace_line(s, 'And x plus one over x', 'And x plus one over x — square it, as you learned with the formulas.')
+        R.set_slide(M, G, "What's ahead", s)
+
+
+_apply_before_trim_added_repeats = apply
+
+
+def apply(M):
+    _apply_before_trim_added_repeats(M)
+    trim_added_repeats(M)   # 2026-10-07 trim added repeats: runs last

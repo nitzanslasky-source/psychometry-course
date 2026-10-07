@@ -239,3 +239,10 @@ All new lines verified numerically (python: power by scaling, fitting values, ch
 Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
 - "Shortcut: pick values that fit." → "Method 2 · Pick values that fit:" on q-187, q-194, q-199, q-201, q-202, q-204, q-206, q-216, q-217, q-r26-t07-15 (topic 51, day 6, teaches it before topic 7, day 15).
 `python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-07 trim added repeats
+
+Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
+
+- r26-t07-more-tools: no longer announces two 'new' tools — both were taught before (multiply/divide equations: topic 6 Systems; x + 1/x: topic 4 formulas). Title slide one line; spoken lines say where they were learned.

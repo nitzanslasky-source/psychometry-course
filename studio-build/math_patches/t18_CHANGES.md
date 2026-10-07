@@ -223,3 +223,10 @@ Function `spread_methods` (runs last; append only; a recorded video is skipped a
   q-r26-t18-01 (10A cancels → 10B = 90 → B = 9), q-533 (9A = 8B → A = 8, B = 9), q-535 (B(A + 9) = 80 → A = 7; A = 1 also fits but is not a choice), q-r26-t18-04 (20A = 80 → A = 4), alg-extra-unit-t18-3-7 (2A = 10 + B → A ≥ 5), q-526 (222A + 12 is a whole hundred → A = 4).
 - **Video solve-q-r26-t18-01** (Question 10): new last slide 4 "Method 2 · Write 10A + B and collect" — two click lines (206 + 10A + 10B + 8 = 304 + 10A; 10B = 90 → B = 9), pen only to circle choice 4. About +0.3 min.
 - Skipped (already shown): q-520, q-530, alg-extra-unit-t18-3-6 (words, no columns), q-514, q-524, q-531, q-532, q-528, q-r26-t18-02, q-523 (already algebraic). Power count / tag it: no fitting question.
+
+
+## 2026-10-07 trim added repeats
+
+Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
+
+- r26-t18-facts: slide 'Powers: ones digit' removed (topics 21 and 15); 'Three' → 'Two' facts + one reminder line. ~29 s.
