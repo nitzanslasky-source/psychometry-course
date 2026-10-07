@@ -1396,3 +1396,60 @@ _apply_before_hebrew_backcheck = apply
 def apply(M):
     _apply_before_hebrew_backcheck(M)
     hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last
+
+
+# ---------------------------------------------------------------- 2026-10-07 no trinomial factoring
+# Teacher (2026-10-07): factoring x² + bx + c ("two numbers that multiply to … and add to …") is not exam material and
+# is slow - out of topic 10. Only Question 6 (q-r26-t10-01, unrecorded) still used it: video + written explanation.
+# New methods, same trap (choice 4 "−1 or 3"), same answer (choice 3): 1) a root is never negative -> −1 and "−1 or 3"
+# out, try 1 and 3; 2) square, then check the candidates from the choices in the ORIGINAL equation (no factoring).
+def no_trinomial(M):
+    g1 = 'q-r26-t10-01'; V = 'solve-' + g1
+    assert V not in RECORDED
+    M.set_q(g1, expl=[
+        r'A root is never negative, and here $x$ equals a root, so $x\ge0$. Choices 1 ($-1$) and 4 ($-1$ or $3$) are out at once.',
+        r'Try the other two: $x=1$: $\sqrt{2+3}=\sqrt5\ne1$ ✗. $x=3$: $\sqrt{6+3}=\sqrt9=3$ ✓. So $x=3$.',
+        r'Another way: square both sides: $2x+3=x^2$. No need to solve it — check the candidates from the choices in the ORIGINAL equation.',
+        r'$x=-1$ satisfies the squared equation ($2\cdot(-1)+3=1=(-1)^2$) but not the original ($\sqrt1=1\ne-1$): a fake solution created by squaring. After squaring, always check in the original.',
+        r'Choice 4 ($-1$ or $3$) is the trap: it is what you get if you square and forget to check.'])
+    s = dict(size=36, gap=14)
+    _rn_slide(M, V, 2, room={'Write "x ≥ 0"': 140}, script=[
+        "First: a root is never negative. And here x equals a root — so x can't be negative.",
+        D('Write "x ≥ 0"'),
+        "So minus one is out right away. And choice four has minus one in it — out too.",
+        D('Cross out choices 1 and 4'),
+        "Two left: one and three. Try them.",
+        A('x = 1: √5 ≠ 1 appears', T(r'$x=1:\ \ \sqrt{2+3}=\sqrt5\ne1$', **s)),
+        "One: two plus three is five. Root five isn't one. Out.",
+        D('Cross out choice 2'),
+        A('x = 3: √9 = 3 ✓ appears', T(r'$x=3:\ \ \sqrt{6+3}=\sqrt9=3$ ✓', **s)),
+        "Three: six plus three is nine. Root nine is three. It works.",
+        D('Circle choice 3'),
+        "Choice three. And choice four — minus one or three? That's what you get if you square and forget to check.",
+    ])
+    M.slide(V, 2)['title'] = 'Method 1 · A root is never negative'
+    _rn_slide(M, V, 3, room={'Write "2x + 3 = x²"': 140}, script=[
+        "Another way: square both sides.",
+        D('Write "2x + 3 = x²"'),
+        "The square cancels the root: two x plus three equals x squared.",
+        "Don't solve it. The choices already give you the candidates — minus one and three. Check them in the ORIGINAL equation.",
+        A('x = 3: √9 = 3 ✓ appears', T(r'$x=3:\ \ \sqrt9=3$ ✓', **s)),
+        "Three: root nine is three. It works.",
+        A('x = −1: 2·(−1) + 3 = 1 = (−1)² appears', T(r'$x=-1:\ \ 2\cdot(-1)+3=1=(-1)^2$', **s)),
+        "Minus one in the squared equation: minus two plus three is one, and minus one squared is one. It works there!",
+        A('but √1 = 1 ≠ −1 ✗ appears', T(r'but $\sqrt1=1\ne-1$ ✗', **s)),
+        "But in the original: root one is one — not minus one. A fake solution. Squaring created it.",
+        D('Circle choice 3'),
+        "Only three. Choice three.",
+        A("'After squaring: check in the original' appears", T('After squaring: check in the original', size=36, gap=14)),
+        "The rule to remember: after squaring, always check in the original.",
+    ])
+    M.slide(V, 3)['title'] = 'Method 2 · Square, then check'
+
+
+_apply_before_no_trinomial = apply
+
+
+def apply(M):
+    _apply_before_no_trinomial(M)
+    no_trinomial(M)   # 2026-10-07 no trinomial factoring: runs last

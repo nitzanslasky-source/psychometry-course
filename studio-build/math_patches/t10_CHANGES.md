@@ -262,3 +262,18 @@ lesson 150/√6, 10/√2, 18/√6 (different numbers); practice q-r26-t10-10 x�
 side looks like the Hebrew x√3 = 3√x, but the equation and answer differ). Keys brute-forced (one correct choice each);
 duplicate scan over all topics: no question or lesson uses these expressions. `python3 math_check.py 8 9 10 32` → 0/0/0;
 solve-q-249 and solve-q-250 rendered and checked.
+
+## 2026-10-07 no trinomial factoring
+Teacher: factoring x² + bx + c ("two numbers that multiply to … and add to …") is not exam material and is slow — out.
+Function `no_trinomial(M)` in t10.py runs last. Scanned all of topic 10 in the built view (lesson, summary, guided,
+practice, memory card): the only place left was Question 6 (q-r26-t10-01, not recorded) — video + written explanation.
+(The old lesson slide √(x+2)=x with (x−2)(x+1) is no longer in the build; factoring a common factor, x(x−7)=0, stays.)
+Recorded and untouched: powers-techniques, solve-q-248…252.
+
+| where | was | now |
+|---|---|---|
+| solve-q-r26-t10-01 slide 2 | Method 1 · Square and check: x² − 2x − 3 = 0 → (x − 3)(x + 1) = 0 ("two numbers that multiply…") | Method 1 · A root is never negative: x ≥ 0 by hand → cross out choices 1 and 4; try 1 (√5 ≠ 1, cross out) and 3 (√9 = 3 ✓, circle); trap: "−1 or 3" = squared and forgot to check |
+| solve-q-r26-t10-01 slide 3 | Method 2 · Try the choices | Method 2 · Square, then check: 2x + 3 = x² by hand, don't solve; x = 3 ✓; x = −1 satisfies the squared equation (2·(−1)+3 = 1 = (−1)²) but √1 = 1 ≠ −1 ✗ (fake, created by squaring); circle 3; rule "After squaring: check in the original" |
+| q-r26-t10-01 explanation | square, factor (x−3)(x+1), check | same two methods in writing, no factoring; trap explained |
+
+Same answer (choice 3), same trap (choice 4). `python3 math_check.py 10 32` → 0/0/0; video rendered and checked.
