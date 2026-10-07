@@ -303,6 +303,8 @@ for x in _nw: print('  added_notes WARNING:', x)
 print('added content (vs base-v18):'); print(added_content.report(ADDED, D))
 print('  notes: %d added items / slides with new lines, %d without a note' % (sum((1 if r['added'] else 0) + (0 if r['added'] else sum(1 for x in r['slides'].values() if x['kind'] == 'new')) + len(r['lines']) for r in ADDED.values()), len(_nw)))
 out = studio_added.apply(out, ADDED, D)
+# ---------- navigation order: by topic | by the students' study plan (src/lib/planData.ts) (studio_order.py) ----------
+import studio_order; out = studio_order.apply(out, D)
 _amd = os.path.join(DOCDIR, 'Added-Content-List.md') if not TEST else os.path.splitext(OUT)[0] + '-Added-Content-List.md'
 open(_amd, 'w', encoding='utf-8').write(added_content.markdown(ADDED, D, studio_done.recorded_ids())); print('wrote', _amd)
 open(OUT, 'w', encoding='utf-8').write(out)
