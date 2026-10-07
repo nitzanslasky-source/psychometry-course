@@ -296,7 +296,11 @@ def manifest(D, B, review_ids=()):
             base_slides.setdefault(v['topic'], []).append((vid, k, tk))
 
     meth = {}
-    for vid, sl, name, kind in METHODS: meth.setdefault(vid, []).append((sl, name, kind))
+    for vid, sl, name, kind in METHODS:
+        v = D['videos'].get(vid)
+        if v and sl != '*' and sl not in [b.get('title') for b in v['beats']]:     # renamed by the method names
+            sl = next((b.get('title') for b in v['beats'] if same_slide_title(vid, sl, b.get('title'))), sl)
+        meth.setdefault(vid, []).append((sl, name, kind))
     warn = []
     for vid, ents in meth.items():
         v = D['videos'].get(vid)
@@ -324,7 +328,8 @@ def manifest(D, B, review_ids=()):
             return default, None, 'new'
 
         if t in MATH_TOPICS:
-            toks = [tokens(slide_raw(b, Q)) for b in beats]
+            ob = [dict(b, title=t) for b, t in zip(beats, old_slide_titles(vid, [b.get('title') for b in beats]))]   # compare with the base under the titles it knew
+            toks = [tokens(slide_raw(b, Q)) for b in ob]
             ref = vid if vid in btok else None
             if ref is None:                                # renamed / rebuilt copy of a base video?
                 best, bs = None, 0
@@ -343,7 +348,7 @@ def manifest(D, B, review_ids=()):
             else:
                 L = btok[ref]
                 far = [x for tt in (t - 1, t, t + 1) for x in base_slides.get(tt, [])]
-                have, match = counterparts(toks, L, [_norm_title(b.get('title')) for b in beats],
+                have, match = counterparts(toks, L, [_norm_title(b.get('title')) for b in ob],
                                     [_norm_title(b.get('title')) for b in B['videos'][ref]['beats']])
                 for k, b in enumerate(beats):
                     n = toks[k]
@@ -379,6 +384,40 @@ def manifest(D, B, review_ids=()):
                 rec['label'] = (('New exam method · ' + ', '.join(ms)) + ((' — plus: ' + ', '.join(other)) if other else '')) if ms else (other[0] if len(other) == 1 else ', '.join(other) or SEPT)
             M[vid] = rec
     return M, warn
+
+
+# ---------- method names (2026-10-07, math_patches/_method_names.py): a method slide's old and new title are one slide ----------
+_MN = []
+
+
+def _mn():
+    if not _MN:
+        import importlib.util
+        p = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'math_patches', '_method_names.py')
+        spec = importlib.util.spec_from_file_location('_method_names', p); m = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(m); _MN.append(m)
+    return _MN[0]
+
+
+def old_slide_titles(vid, titles):
+    """the titles the slides had before the method names (the base and the notes know those). Two slides may share a
+    new name: the old titles are used up in slide order."""
+    m = _mn(); names = m.MAP.get(vid, (0, {}))[1]; used = set(); out = []
+    for t in titles:
+        o = next((o for o, n in names.items() if o not in used and m.new_title(o, n) == t), None)
+        if o is None or t in names: out.append(t)
+        else: used.add(o); out.append(o)
+    return out
+
+
+def same_slide_title(vid, a, b):
+    """a == b, or a and b are the old and the new title of one method slide ("Method 2 · Plug in" / "Method 2 ·
+    Plugging in numbers"): notes and METHODS keep working whether or not the video was renamed (recorded videos are not)."""
+    a, b = a or '', b or ''
+    if a == b: return True
+    m = _mn(); names = m.MAP.get(vid, (0, {}))[1]
+    f = lambda t: m.new_title(t, names[t]) if t in names else t
+    return f(a) == f(b)
 
 
 # ---------- what each added item teaches (added_notes.json, written once from the slides' board items + spoken lines) ----------
@@ -429,9 +468,9 @@ def attach_notes(M, D, N=None):
 
     def find(tab, vid, k, title):
         e = tab.get('%s#%d' % (vid, k))
-        if e and (e.get('t') or '') == (title or ''): return e
+        if e and same_slide_title(vid, e.get('t'), title): return e
         for key, x in tab.items():                         # slides moved: same video, same title
-            if key.rsplit('#', 1)[0] == vid and (x.get('t') or '') == (title or '') and title: return x
+            if key.rsplit('#', 1)[0] == vid and same_slide_title(vid, x.get('t'), title) and title: return x
         if e and (not e.get('t') or core(e['t']) == core(title)): return e    # renamed "X" -> "Method 2 · X"
         return None
 

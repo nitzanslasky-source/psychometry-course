@@ -2651,3 +2651,22 @@ _apply_before_trim_added_repeats = apply
 def apply(M):
     _apply_before_trim_added_repeats(M)
     trim_added_repeats(M)   # 2026-10-07 trim added repeats: runs last
+
+
+# =====================================================================================
+# 2026-10-07 method names: the method slides of this topic's unrecorded videos ("Method N · X") and the written
+# solutions' "Method N · / Shortcut ·" labels use ONE short vocabulary (thinking methods of topic 51 + named
+# techniques). Data and rules: _method_names.py (a video recorded before its CUTOFF keeps its old titles).
+def _mn_load():
+    import importlib.util, os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_method_names.py')
+    spec = importlib.util.spec_from_file_location('_method_names', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); return m
+
+
+_apply_before_method_names = apply
+
+
+def apply(M):
+    _apply_before_method_names(M)
+    _mn_load().method_names(M, 7)   # 2026-10-07 method names: runs last

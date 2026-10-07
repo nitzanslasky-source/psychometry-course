@@ -1156,11 +1156,11 @@
    "d": "the zig-zag rule — angles pointing left = angles pointing right: x = 36° + 62° = 98°"
   },
   "solve-geo31-g011#1": {
-   "t": "Shortcut · Pick values that fit",
+   "t": "Shortcut · Plugging in numbers",
    "d": "pick values that fit — k isn't fixed, so take k = 60° (equilateral): m = 120°, n = 120° → 180°"
   },
   "solve-geo32-g048#2": {
-   "t": "Shortcut · Pick values that fit",
+   "t": "Shortcut · Plugging in numbers",
    "d": "pick values that fit — only α + β = 36° is fixed, so take 18° each (a rectangle): x = 72°"
   },
   "solve-geo32-g072#1": {
@@ -1208,7 +1208,7 @@
    "d": "test one number — x = 0 works, so every choice that leaves 0 out is crossed off"
   },
   "solve-q-430#1": {
-   "t": "Method 2 · Estimate",
+   "t": "Method 2 · Estimation",
    "d": "a faster estimate — 1/15 > 1/17, so more numbers divide by 15; safe only in a long range"
   },
   "solve-q-579#1": {
@@ -1216,7 +1216,7 @@
    "d": "r² = p² + q²: r > q, r > p and p + q > r always; r < 8 fails for 6, 8, 10"
   },
   "solve-wp21-g018#1": {
-   "t": "Method 2 · The most precise range",
+   "t": "Shortcut · Plugging in the answers",
    "d": "the most precise range — test a number some choices contain and others don't: 13 and 35 fail, 17 works → choice 1"
   },
   "solve-wp23-g061#2": {
@@ -1228,7 +1228,7 @@
    "d": "the flip rule — 1/9 of chess = 1/4 of robotics → chess : robotics = 9 : 4; take out the shared part → 8 : 3"
   },
   "solve-wp24-g075#0": {
-   "t": "Method 1 · Through the union",
+   "t": "Method 1 · Understanding",
    "d": "neither in a range question — go through the union: union 24 to 37, so neither = 52 − union, from 15 to 28"
   },
   "solve-wp25-g089#2": {
@@ -1236,15 +1236,15 @@
    "d": "percent shares as weights — average = cheap + (expensive share × gap): 70% at 30, 30% at 50 → 30 + 0.3·20 = 36"
   },
   "solve-wp25-g090#2": {
-   "t": "Method 3 · Extra per item",
+   "t": "Method 3 · Insight",
    "d": "extra per item — start every box at the low value, count the extra: 800 kg extra ÷ 2 per box = 400"
   },
   "solve-wp26-g093#2": {
-   "t": "Method 3 · Rate × time",
+   "t": "Method 3 · Algebra",
    "d": "rate × time — new rate 3x/y times 5y minutes = 15x; the two changes multiply, don't add"
   },
   "solve-wp26-g093#3": {
-   "t": "Method 4 · Plug in numbers",
+   "t": "Method 4 · Plugging in numbers",
    "d": "plug in numbers — x = 4, y = 2 gives 60, only 15x matches; pick numbers not 0/1 and not equal"
   },
   "solve-wp26-g098#2": {
@@ -1256,7 +1256,7 @@
    "d": "catching up — time = gap ÷ difference in rates: 30 hours behind, gains 16 − 6 = 10 a day → 3 days"
   },
   "solve-wp27-g109#1": {
-   "t": "Method 2 · Shares as weights",
+   "t": "Method 2 · Balance (averages)",
    "d": "shares as weights — same distance, so the times flip (2 : 3); 2/5 of the time at 105 → 70 + 2/5·35 = 84"
   },
   "systems#4": {
@@ -1418,7 +1418,7 @@
    "d": "recap: all shortcuts listed, and signs first with letters"
   },
   "consecutive-integers#3": {
-   "t": "Way 2 · Plug in",
+   "t": "Method 2 · Plugging in numbers",
    "d": "check the choices give different values when plugging in"
   },
   "consecutive-products#3": {
@@ -1794,11 +1794,11 @@
    "d": "pointer to the practice questions and their solution videos"
   },
   "solve-geo30-g006#1": {
-   "t": "Method 2 · Plug in numbers",
+   "t": "Method 2 · Plugging in numbers",
    "d": "plug-in rules: eliminate three answers first; check the choices come out different"
   },
   "solve-geo30-g006#2": {
-   "t": "Method 3 · A flash of insight",
+   "t": "Method 3 · Insight",
    "d": "a name for the idea: overlapping angles (add, subtract the full turn)"
   },
   "solve-geo31-g012#1": {
@@ -1818,7 +1818,7 @@
    "d": "the trap in choice two: 52 is the hypotenuse, not a height (→ 616)"
   },
   "solve-geo31-g040#1": {
-   "t": "Method 2 · Plug in answers",
+   "t": "Method 2 · Plugging in the answers",
    "d": "the 1/3 trap explained (forgetting to subtract the small side: 3b = 9a)"
   },
   "solve-geo32-g058#2": {
@@ -1834,11 +1834,11 @@
    "d": "touching circles: distance between centers = R + r outside, R − r inside"
   },
   "solve-geo33-g096#2": {
-   "t": "Method 3 · Estimate",
+   "t": "Method 3 · Estimation",
    "d": "the power count from algebra: perimeter ÷ perimeter has power 0, so no r can stay; board π > 3 → (π+2)/3 > 5/3 instead of 5.14/3 ≈ 1.7"
   },
   "solve-geo33-g102#2": {
-   "t": "Method 2 · Plug in numbers",
+   "t": "Method 2 · Plugging in numbers",
    "d": "pointer to the next lesson: more tools for the hardest circle questions"
   },
   "solve-geo34-g112#1": {
@@ -1862,7 +1862,7 @@
    "d": "the prism lies on its side: bases are front and back, height is the flat edge BE"
   },
   "solve-geo35-g126#2": {
-   "t": "Approach 3 · Estimate",
+   "t": "Method 3 · Estimation",
    "d": "the power count from algebra: volume ÷ volume has power 0; 1 − πk/4 mixes powers; π/2 > 3/2 > 1 so 1 − π/2 < 0 (no 1.57)"
   },
   "solve-geo35-g129#3": {
@@ -2154,11 +2154,11 @@
    "d": "clear the fractions first: multiply both sides by 10 (positive, no flip); shaded number line: x² < 36 → one segment from −6 to 6, open circles"
   },
   "solve-q-330#0": {
-   "t": "Method 1 · Solve it",
+   "t": "Method 1 · Algebra",
    "d": "the algebra step: multiply by 3(x + 1), get x > 2"
   },
   "solve-q-330#1": {
-   "t": "Method 2 · Spot the pattern",
+   "t": "Method 2 · Insight",
    "d": "why x/(x+1) grows toward 1 as x grows (1/2, 2/3, 3/4)"
   },
   "solve-q-332#0": {
@@ -2174,7 +2174,7 @@
    "d": "when multiplying ranges end by end works (all positive) and when to check corners"
   },
   "solve-q-337#1": {
-   "t": "Method 2 · Counterexamples",
+   "t": "Method 2 · Plugging in numbers",
    "d": "the list of numbers to try: 0, 1, −1, 1/2, a big number"
   },
   "solve-q-360#0": {
@@ -2186,19 +2186,19 @@
    "d": "a distance picture: more than 8 steps from −1, so beyond 7 or below −9; the distance picture is now a click figure: two shaded rays going outward from −9 and 7"
   },
   "solve-q-362#1": {
-   "t": "Method 2 · Replace |x|",
+   "t": "Method 2 · Algebra",
    "d": "the fact x/|x| = 1 for positive x and −1 for negative x"
   },
   "solve-q-364#0": {
-   "t": "Method 1 · Put it on the number line",
+   "t": "Method 1 · Number line",
    "d": "tip to leave choice two (two negatives compared) for the end"
   },
   "solve-q-366#0": {
-   "t": "Method 1 · Test each choice",
+   "t": "Method 1 · Understanding",
    "d": "tip to leave choice two for the end"
   },
   "solve-q-367#0": {
-   "t": "Method 1 · Full algebra",
+   "t": "Method 1 · Algebra",
    "d": "check the answer since there is a letter on the right side"
   },
   "solve-q-368#1": {
@@ -2206,7 +2206,7 @@
    "d": "why we may square: both sides with bars are ≥ 0, so the bars disappear"
   },
   "solve-q-368#2": {
-   "t": "Method 3 · Plug in",
+   "t": "Method 3 · Plugging in numbers",
    "d": "the mirror test shortcut: swapping x and y rules out choices one and four"
   },
   "solve-q-389#0": {
@@ -2230,15 +2230,15 @@
    "d": "divisors come in pairs: odd number of divisors → a perfect square"
   },
   "solve-q-423#0": {
-   "t": "Method 1 · Eliminate what can't be",
+   "t": "Method 1 · Understanding",
    "d": "the ends-in-5 check for each choice"
   },
   "solve-q-423#1": {
-   "t": "Method 2 · Build it from the smallest group",
+   "t": "Method 2 · Algebra",
    "d": "fraction of a fraction → multiply the denominators (5·3 = 15)"
   },
   "solve-q-426#1": {
-   "t": "Method 2 · Plug in",
+   "t": "Method 2 · Plugging in numbers",
    "d": "why 0 is safe here, but never in a necessarily-divisible question"
   },
   "solve-q-427#0": {
@@ -2246,7 +2246,7 @@
    "d": "build from inside: club = 10k → tennis = 3k, divisible by 3"
   },
   "solve-q-430#0": {
-   "t": "Method 1 · Count exactly",
+   "t": "Method 1 · Calculation",
    "d": "exact count with first and last multiple, plus one (60 and 43)"
   },
   "solve-q-431#0": {
@@ -2254,15 +2254,15 @@
    "d": "checking claim four with all three letters"
   },
   "solve-q-431#1": {
-   "t": "Method 2 · Plug in",
+   "t": "Method 2 · Plugging in numbers",
    "d": "one failing example proves 'not necessarily'; working examples prove nothing"
   },
   "solve-q-432#0": {
-   "t": "Method 1 · Factor it",
+   "t": "Method 1 · Common factor",
    "d": "three in a row: divisible by 3 and by 2 → by 6"
   },
   "solve-q-432#1": {
-   "t": "Method 2 · Plug in",
+   "t": "Method 2 · Plugging in numbers",
    "d": "if two choices survive, try a second value like a = 3"
   },
   "solve-q-434#0": {
@@ -2270,19 +2270,19 @@
    "d": "story intro and the trap: checking only 3, not 2"
   },
   "solve-q-435#1": {
-   "t": "Method 2 · Plug in",
+   "t": "Method 2 · Plugging in numbers",
    "d": "two working examples are not proof; method 1 proves it"
   },
   "solve-q-458#0": {
-   "t": "Way 1 · From the middle",
+   "t": "Method 1 · Algebra",
    "d": "the trap choice explained (gaps of one, but evens have gap two)"
   },
   "solve-q-458#1": {
-   "t": "Way 2 · Plug in",
+   "t": "Method 2 · Plugging in numbers",
    "d": "the plug-in arithmetic spelled out: 32 ÷ 8 = 4"
   },
   "solve-q-460#0": {
-   "t": "Way 1 · Plug in",
+   "t": "Method 1 · Plugging in numbers",
    "d": "both parity cases give even → always even, choice one"
   },
   "solve-q-462#0": {
@@ -2306,11 +2306,11 @@
    "d": "why: three in a row divisible by 6, over 3 gives 2k"
   },
   "solve-q-469#1": {
-   "t": "Method 2 · Plug in the answers",
+   "t": "Method 2 · Plugging in the answers",
    "d": "trick: x + z is twice the middle"
   },
   "solve-q-472#1": {
-   "t": "Method 2 · Plug in — carefully",
+   "t": "Method 2 · Plugging in numbers",
    "d": "the risk with b = 4 and why take the smallest numbers"
   },
   "solve-q-495#0": {
@@ -2322,11 +2322,11 @@
    "d": "necessarily true: one counter-example kills it, push values to the edges"
   },
   "solve-q-497#1": {
-   "t": "Method 2 · Plug in",
+   "t": "Method 2 · Plugging in numbers",
    "d": "ordering −1/3, −1/6, −1/12, −1/24 by closeness to zero"
   },
   "solve-q-500#1": {
-   "t": "Method 2 · A smart plug-in",
+   "t": "Method 2 · Plugging in numbers",
    "d": "warning: change only t, never the numbers in the question"
   },
   "solve-q-501#0": {
@@ -2346,7 +2346,7 @@
    "d": "the vertical layout of BCA + BC = AAA on the board"
   },
   "solve-q-517#1": {
-   "t": "Method 2 · Insight",
+   "t": "Method 2 · Units digit",
    "d": "so CA is in the twenties: C = 2"
   },
   "solve-q-519#0": {
@@ -2358,27 +2358,27 @@
    "d": "why C can't be 2 or 3: two different primes sum to at least 5"
   },
   "solve-q-520#0": {
-   "t": "Method 1 · Algebraic form",
+   "t": "Method 1 · Algebra",
    "d": "write 10T + U and collect; trying U = 1 to 4"
   },
   "solve-q-520#1": {
-   "t": "Method 2 · Plug in the choices",
+   "t": "Method 2 · Plugging in the answers",
    "d": "checking each choice: only U = 3 works"
   },
   "solve-q-549#0": {
-   "t": "Method 1 · Check each choice",
+   "t": "Method 1 · Algebra",
    "d": "it is a must-be-true question: 'not always true' means one choice breaks"
   },
   "solve-q-549#1": {
-   "t": "Method 2 · Plug in x = 1",
+   "t": "Method 2 · Plugging in numbers",
    "d": "warning: 0 or 1 can make a false rule look true; two survive → try 2"
   },
   "solve-q-552#1": {
-   "t": "Method 2 · Plug in a = 1",
+   "t": "Method 2 · Plugging in numbers",
    "d": "73 on top is a strong hint, but one more line makes it sure"
   },
   "solve-q-553#1": {
-   "t": "Method 2 · The insight",
+   "t": "Method 2 · Insight",
    "d": "the tops cancel; dividing flips the second bottom"
   },
   "solve-q-555#0": {
@@ -2386,19 +2386,19 @@
    "d": "choice two checked: 3/a · a = 3 = 3/b · b, keep it and break the others"
   },
   "solve-q-556#0": {
-   "t": "Method 1 · Plug in x = 1",
+   "t": "Method 1 · Plugging in numbers",
    "d": "definition in words? write 2–3 examples first; why plugging in 1 is safe here"
   },
   "solve-q-577#0": {
-   "t": "Method 1 · Find the maximum",
+   "t": "Method 1 · Understanding",
    "d": "general rule: n increasing integers → last ≥ first + (n − 1)"
   },
   "solve-q-577#2": {
-   "t": "Method 3 · Test the answers",
+   "t": "Method 3 · Plugging in the answers",
    "d": "hidden maximum: test the extreme choices (14, −14) first; examples for the other choices"
   },
   "solve-q-578#1": {
-   "t": "Method 2 · Scale factor k",
+   "t": "Method 2 · Algebra",
    "d": "general rule: y changes by the factor to the power 3/2 (√25 = 5, 5³ = 125)"
   },
   "solve-q-580#0": {
@@ -2406,43 +2406,43 @@
    "d": "a one-line intro: a question about a formula"
   },
   "solve-wp21-g005#0": {
-   "t": "Method 1 · Build and test",
+   "t": "Method 1 · Plugging in numbers",
    "d": "intro, plus: keep tries in order and every try passes every condition"
   },
   "solve-wp21-g009#0": {
-   "t": "Method 1 · Step by step",
+   "t": "Method 1 · Calculation",
    "d": "keep the rule's order (halve, then subtract) and apply it every day"
   },
   "solve-wp21-g010#1": {
-   "t": "Method 2 · Why not n = 1?",
+   "t": "Method 2 · Plugging in numbers",
    "d": "if two choices survive n = 3, also plug in n = 4"
   },
   "solve-wp21-g013#0": {
-   "t": "Method 1 · In order, from the minimum",
+   "t": "Method 1 · Understanding",
    "d": "only the count of 2s and 6s matters; 32 is inside the range yet impossible"
   },
   "solve-wp21-g013#1": {
-   "t": "Method 2 · The pattern",
+   "t": "Method 2 · Remainders",
    "d": "second test: subtract 14, the rest must be a multiple of 4 (18 is not)"
   },
   "solve-wp21-g017#1": {
-   "t": "Method 2 · Last digit — and its limit",
+   "t": "Method 2 · Units digit",
    "d": "the last-digit trick works only when choices end in different digits"
   },
   "solve-wp21-g018#0": {
-   "t": "Method 1 · Min front, max back",
+   "t": "Method 1 · Understanding",
    "d": "counting steps: from the 8th back to the 4th is four steps"
   },
   "solve-wp21-g021#0": {
-   "t": "Method 1 · Count the spare stickers",
+   "t": "Method 1 · Understanding",
    "d": "fill every child to the minimum, count spares: 12 spares lift at most 12 → at least 14"
   },
   "solve-wp21-g021#1": {
-   "t": "Method 2 · Only the ends?",
+   "t": "Method 2 · Insight",
    "d": "range 14–25 has no holes (moves by 1); not a general rule — the chip has holes"
   },
   "solve-wp21-g025#1": {
-   "t": "Method 2 · Common multiple",
+   "t": "Method 2 · Insight",
    "d": "items ≠ gaps: 4 departures have only 3 gaps of 80 min"
   },
   "solve-wp22-g029#0": {
@@ -2478,83 +2478,83 @@
    "d": "the age gap stays the same; the ×2 goes on the smaller side"
   },
   "solve-wp22-g043#0": {
-   "t": "Method 1 · Stage by stage",
+   "t": "Method 1 · Calculation",
    "d": "the trap answer 80 explained (both quarters taken from 160)"
   },
   "solve-wp22-g044#0": {
-   "t": "Method 1 · Ratio units",
+   "t": "Method 1 · Ratios",
    "d": "reading the ratio: five coaches for every eight trainees"
   },
   "solve-wp22-g045#0": {
-   "t": "Method 1 · Plug in, then fix it",
+   "t": "Method 1 · Plugging in numbers",
    "d": "fixing the plug-in: cafés 1 gives a fifth of a loaf, so use cafés 5, supermarkets 10"
   },
   "solve-wp22-g046#0": {
-   "t": "Method 1 · Check each option",
+   "t": "Method 1 · Two cases",
    "d": "also check the swapped option: ten vanilla, fourteen chocolate"
   },
   "solve-wp22-g046#1": {
-   "t": "Method 2 · Size estimate",
+   "t": "Method 2 · Estimation",
    "d": "the size estimate worked out: start between 24·6/5 ≈ 29 and 24·3/2 = 36 → 33"
   },
   "solve-wp22-g047#0": {
-   "t": "Method 1 · Build an equation",
+   "t": "Method 1 · Algebra",
    "d": "give the plain x to the little guy: B = x, A = 4x"
   },
   "solve-wp23-g060#1": {
-   "t": "Method 2 · Plug in 100",
+   "t": "Method 2 · Plugging in numbers",
    "d": "the trap answer explained: the 40% is of the smaller amount, not +10%"
   },
   "solve-wp23-g061#0": {
-   "t": "Method 1 · Plug in 100",
+   "t": "Method 1 · Plugging in numbers",
    "d": "the trap answer explained: the third is taken from Dana's bigger wage"
   },
   "solve-wp23-g062#0": {
-   "t": "Method 1 · Calculate",
+   "t": "Method 1 · Algebra",
    "d": "finishing the calculation: 9/200 of y = 9 → y = 200"
   },
   "solve-wp23-g064#0": {
-   "t": "Method 1 · Equal ratios",
+   "t": "Method 1 · Ratios",
    "d": "the trap answer 48 explained: that is the difference, not the factory's apples"
   },
   "solve-wp23-g065#0": {
-   "t": "Method 1 · Plug in 100%",
+   "t": "Method 1 · Plugging in numbers",
    "d": "intro, go back two days, a table row, and the trap 270 (only one day back)"
   },
   "solve-wp24-g071#1": {
-   "t": "Method 2 · The squares",
+   "t": "Method 2 · The squares method",
    "d": "a lead-in: the same answer on the strip"
   },
   "solve-wp24-g072#0": {
-   "t": "Method 1 · Boxes with x",
+   "t": "Method 1 · The squares method",
    "d": "restates the data: both is 1/9 of chess and 1/4 of robotics"
   },
   "solve-wp24-g072#1": {
-   "t": "Method 2 · Plug in",
+   "t": "Method 2 · Plugging in numbers",
    "d": "the resulting club sizes: 18 in chess, 8 in robotics"
   },
   "solve-wp24-g074#0": {
-   "t": "Method 1 · Counts",
+   "t": "Method 1 · Algebra",
    "d": "the data on the board: total 360, artist 45%, owner 70%"
   },
   "solve-wp24-g075#1": {
-   "t": "Method 2 · Complements",
+   "t": "Method 2 · Complement",
    "d": "marks the complements method as an extra for strong students"
   },
   "solve-wp24-g076#0": {
-   "t": "Method 1 · Add the fractions",
+   "t": "Method 1 · Algebra",
    "d": "why choice one is forced, and a 20-nurse example where no new nurse drives"
   },
   "solve-wp24-g076#1": {
-   "t": "Method 2 · Percent",
+   "t": "Method 2 · Plugging in numbers",
    "d": "all the fractions written as percents (nights 30, drive 75, new 25…)"
   },
   "solve-wp24-g077#1": {
-   "t": "Method 2 · People first",
+   "t": "Method 2 · Algebra",
    "d": "the people counts drawn: morning 12, evening 8, not morning 36"
   },
   "solve-wp24-g078#0": {
-   "t": "Method 1 · Read it right",
+   "t": "Method 1 · Understanding",
    "d": "explains 45 different movies = watched by at least one"
   },
   "solve-wp25-g082#0": {
@@ -2562,35 +2562,35 @@
    "d": "one value can be at most the whole sum, 84"
   },
   "solve-wp25-g084#0": {
-   "t": "Method 1 · The formula",
+   "t": "Method 1 · Algebra",
    "d": "a skip-to-method-two hint for weak students, and the six pairs listed"
   },
   "solve-wp25-g084#1": {
-   "t": "Method 2 · Plug in",
+   "t": "Method 2 · Plugging in numbers",
    "d": "warning: if two choices tie with equal numbers, try 1, 2, 3, 4"
   },
   "solve-wp25-g085#0": {
-   "t": "Method 1 · Table and formula",
+   "t": "Method 1 · Algebra",
    "d": "the trap answer 11 explained (average lead 5 = total lead 10)"
   },
   "solve-wp25-g087#1": {
-   "t": "Method 2 · Ratios",
+   "t": "Method 2 · Balance (averages)",
    "d": "heavy side gets the small part of the gap; why: weight × distance balances"
   },
   "solve-wp25-g090#0": {
-   "t": "Method 1 · The formula",
+   "t": "Method 1 · Algebra",
    "d": "explains the weights (box counts) and sets up x boxes of 5 kg"
   },
   "solve-wp26-g095#0": {
-   "t": "Method 1 · Combined rate",
+   "t": "Method 1 · Algebra",
    "d": "call the whole pond one job; the trap of forgetting the outlet (7.5 h)"
   },
   "solve-wp26-g095#1": {
-   "t": "Method 2 · Pick a pond size",
+   "t": "Method 2 · Plugging in numbers",
    "d": "the per-hour rates drawn: hoses 4/h each, outlet −3/h"
   },
   "solve-wp26-g096#1": {
-   "t": "Method 2 · Add the rates",
+   "t": "Method 2 · Algebra",
    "d": "a second way: the two-worker shortcut 6·10/(6+10) = 3.75 h"
   },
   "solve-wp26-g098#1": {
@@ -2598,15 +2598,15 @@
    "d": "how to draw the V: top-left, bottom-middle, top-right (3, 96, 5)"
   },
   "solve-wp26-g101#0": {
-   "t": "Method 1 · Build an equation",
+   "t": "Method 1 · Algebra",
    "d": "letters L and S set up, and the trap of doubling the wrong side"
   },
   "solve-wp26-g101#1": {
-   "t": "Method 2 · Plug in numbers",
+   "t": "Method 2 · Plugging in numbers",
    "d": "the chosen number: one small dishwasher washes one plate a minute"
   },
   "solve-wp26-g102#0": {
-   "t": "Method 1 · Ratios in minutes",
+   "t": "Method 1 · Ratios",
    "d": "combine only matching units — convert first"
   },
   "solve-wp27-g108#0": {
@@ -2614,59 +2614,59 @@
    "d": "counting in tenths: 8-15-17 triangle → height 0.8 km"
   },
   "solve-wp27-g109#0": {
-   "t": "Method 1 · Logic, then a table",
+   "t": "Method 1 · Plugging in numbers",
    "d": "a check for strong students: 2·105·70/175 = 84 (equal distances only)"
   },
   "solve-wp27-g116#0": {
-   "t": "Method 1 · The starting gap",
+   "t": "Method 1 · Algebra",
    "d": "dividing by a fraction: 3 ÷ 1/3 = 3 × 3 = 9"
   },
   "solve-wp27-g116#1": {
-   "t": "Method 2 · A quick check",
+   "t": "Method 2 · Insight",
    "d": "15 kph = 1/4 km a minute, so 32 minutes → 8 km"
   },
   "solve-wp27-g119#0": {
-   "t": "Method 1 · Equation",
+   "t": "Method 1 · Algebra",
    "d": "the full algebra steps: multiply by 72, x = 24"
   },
   "solve-wp27-g119#1": {
-   "t": "Method 2 · Plug in answers",
+   "t": "Method 2 · Plugging in the answers",
    "d": "why plug in answers works: start with the round, friendly choice"
   },
   "solve-wp27-g120#2": {
-   "t": "Method 3 · Estimate",
+   "t": "Method 3 · Estimation",
    "d": "finishing the estimate: 8 is out, only 7.5 left"
   },
   "solve-wp27-g121#0": {
-   "t": "Method 1 · Relative speed",
+   "t": "Method 1 · Insight",
    "d": "the unit work: one lap 0.4 km at 3 kph relative → 8 minutes"
   },
   "solve-wp28-g128#0": {
-   "t": "Method 1 · The pool stays full",
+   "t": "Method 1 · Counting in stages",
    "d": "the same idea with numbers: digits may repeat, e.g. 444"
   },
   "solve-wp28-g130#0": {
-   "t": "Method 1 · Stage by stage",
+   "t": "Method 1 · Counting in stages",
    "d": "the name factorial for the exclamation mark, and what it means"
   },
   "solve-wp28-g132#0": {
-   "t": "Method 1 · Count, then halve",
+   "t": "Method 1 · Counting in stages",
    "d": "how to spot it (handshakes, routes, games, diagonals); with roles, don't halve"
   },
   "solve-wp28-g133#0": {
-   "t": "Method 1 · Draw and count",
+   "t": "Method 1 · Listing",
    "d": "the definition of a diagonal"
   },
   "solve-wp28-g133#3": {
-   "t": "Method 4 · The formula",
+   "t": "Method 4 · Algebra",
    "d": "the trap answer 40 explained (each diagonal counted from both ends)"
   },
   "solve-wp28-g138#0": {
-   "t": "Method 1 · Choose, then divide by 5!",
+   "t": "Method 1 · Counting in stages",
    "d": "cancelling the fraction step by step, with cross-outs"
   },
   "solve-wp28-g143#2": {
-   "t": "Method 3 · A growing sequence",
+   "t": "Method 3 · Listing",
    "d": "what n means in the table: players, with 1 player → 0 matches"
   },
   "solve-wp29-g154#1": {
@@ -2678,7 +2678,7 @@
    "d": "drawn together = one after the other, without replacement"
   },
   "solve-wp29-g158#0": {
-   "t": "Method 1 · Count the boxes",
+   "t": "Method 1 · Calculation",
    "d": "a short intro line: two tries, start the simple way"
   },
   "solve-wp29-g158#1": {
@@ -2686,19 +2686,19 @@
    "d": "the two cases can't overlap so add; the 1/8 + 1/7 trap explained"
   },
   "solve-wp29-g161#1": {
-   "t": "Method 2 · Omar first",
+   "t": "Method 2 · Insight",
    "d": "both of Omar's days are also on Ella's list"
   },
   "solve-wp29-g162#0": {
-   "t": "Method 1 · Multiply",
+   "t": "Method 1 · Algebra",
    "d": "a reminder: only one envelope per round holds a prize"
   },
   "solve-wp29-g162#1": {
-   "t": "Method 2 · Plug in",
+   "t": "Method 2 · Plugging in numbers",
    "d": "a quick check: one round, one envelope → prize found for sure"
   },
   "solve-wp29-g163#0": {
-   "t": "Method 1 · Wanted over total",
+   "t": "Method 1 · Calculation",
    "d": "picture one big basket of both farms; simplify 825/900 to 11/12"
   },
   "solve-wp29-g163#1": {
@@ -2706,7 +2706,7 @@
    "d": "the final answer: not cracked = 11/12, choice 3"
   },
   "solve-wp29-g165#0": {
-   "t": "Method 1 · Multiply",
+   "t": "Method 1 · Calculation",
    "d": "the first step said aloud: first ticket blank, 7/8"
   },
   "systems#1": {
@@ -2866,7 +2866,7 @@
    "d": "estimate with 3 < π < 4 only: 9π > 27 (choice 1 negative), 18π − 18 > 36, 72 − 9π > 36, 36 − 9π between 0 and 9 — no 56.5 / 43.7 / 7.7"
   },
   "solve-geo33-g100#1": {
-   "t": "Method 2 · Estimate",
+   "t": "Method 2 · Estimation",
    "d": "2π is 6-plus, under 8 — no \"about 6.3\""
   },
   "geo-079#3": {
@@ -2894,7 +2894,7 @@
    "d": "the box (72) is just too small because π is MORE than 3"
   },
   "solve-geo35-g128#2": {
-   "t": "Approach 2 · Estimate",
+   "t": "Method 2 · Estimation",
    "d": "7√2 is more than 7 (√2 > 1) — no 9.8"
   },
   "solve-geo37-g164#3": {
@@ -2910,7 +2910,7 @@
    "d": "shaded number line: 0 < y < 1, the short segment between 0 and 1"
   },
   "solve-q-369#0": {
-   "t": "Method 1 · Two symmetric bands",
+   "t": "Method 1 · Number line",
    "d": "shaded number line: two small bands, −4 < x < −3 and 4 < x < 5"
   },
   "solve-q-370#0": {
@@ -2918,7 +2918,7 @@
    "d": "shaded number line: x < 6 as one ray going left from 6 (no stop at −6)"
   },
   "solve-q-498#1": {
-   "t": "Method 2 · Plug in the answers",
+   "t": "Method 2 · Plugging in the answers",
    "d": "shaded number line: x only between 0 and 1, open circles"
   },
   "whole-numbers#4": {
