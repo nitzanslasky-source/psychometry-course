@@ -1629,3 +1629,226 @@ _apply_before_hebrew_backcheck = apply
 def apply(M):
     _apply_before_hebrew_backcheck(M)
     hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last
+
+
+# ---------------------------------------------------------------- 2026-10-07 pen or click
+# Teacher-approved split (2026-10-04/06): lessons - content appears by click, the pen only marks (circle, cross out);
+# solution videos - setup and mechanical lines by click, by hand only the one or two key steps plus the marks on the
+# choices. Helper copied from t10.py / t07.py (same behaviour). Works on the FINAL text (after renumber_pass and
+# hebrew_backcheck). advanced-powers is recorded and has no pen cues; the tools lesson and the summary have none either.
+def _pen_or_click_slide(M, vid, n, repl, room=(), row=106):
+    """repl: pen cue text -> script entries replacing it. room: pen cues kept by hand that need their own row on the
+    board - the item above them gets a bigger gap, so the click items below leave space for the handwriting."""
+    b = M.slide(vid, n); script = []; done = set()
+    for l in b['lines']:
+        if 'say' in l: script.append(l['say'])
+        elif 'appear' in l: script.append(A(l['label'], b['items'][l['appear']]))
+        elif l['draw'] in repl: script.extend(repl[l['draw']]); done.add(l['draw'])
+        else: script.append(D(l['draw']))
+    missing = (set(repl) - done) | (set(room) - {l.get('draw') for l in b['lines']})
+    assert not missing, '%s #%d: draw cue not found: %s' % (vid, n, missing)
+    M.set_slide(vid, n, script=script)
+    b = M.slide(vid, n); last = b['pre'] - 1
+    for l in b['lines']:
+        if 'appear' in l: last = l['appear']
+        elif l.get('draw') in room: b['items'][last]['gap'] = b['items'][last].get('gap', 44) + row
+
+
+def pen_or_click(M):
+    P = _pen_or_click_slide
+    S = 40
+    # ---- Q1 q-289 - by hand: the two arrows (switch floors), circle
+    P(M, 'solve-q-289', 2, {
+        'Under q⁻⁴ write "1/q⁴"; under r⁻² write "1/r²"': [
+            A('q⁻⁴ = 1/q⁴, r⁻² = 1/r² appears', T(r'$q^{-4}=\frac1{q^4},\qquad r^{-2}=\frac1{r^2}$', size=S))],
+    })
+    # ---- Q2 q-288 - by hand: the split bottom (5 · 2 · x²)³, the cross-outs, the x = 1 substitution, circles
+    P(M, 'solve-q-288', 2, {
+        'Under (5x)⁴ write "5⁴x⁴"; under (2x)³ write "2³x³"': [
+            A('(5x)⁴ = 5⁴x⁴, (2x)³ = 2³x³ appears', T(r'$(5x)^4=5^4x^4,\qquad (2x)^3=2^3x^3$', size=S))],
+        'Write "= 5x"': [A('= 5x appears', T(r'$=5x$', size=S))],
+        'Write "5x · (1/5)x = x²" and circle choice 2': [
+            A('5x · (1/5)x = x² appears', T(r'$5x\cdot\frac15x=x^2$', size=S)), D('Circle choice 2')],
+    }, room=['Under the denominator write "(5 · 2 · x²)³ = 5³ · 2³ · x⁶"'])
+    P(M, 'solve-q-288', 3, {
+        'Next to the choices write their values: 5, 1, 1/5, 2/5': [
+            A('x = 1: choices 5, 1, 1/5, 2/5 appears', T(r'$x=1$:$\quad$(1) $5\quad$(2) $1\quad$(3) $\frac15\quad$(4) $\frac25$', size=S))],
+        'Write "= 5 · 1/5 = 1"': [A('= 5 · 1/5 = 1 appears', T(r'$=5\cdot\frac15=1$', size=S))],
+    }, room=['In the question write "5⁴ · 2³ / 10³ · 1/5"'])
+    # ---- Q3 q-293 - by hand: = 4 · 4^y (count the copies), y = 1 (method 2), circles
+    P(M, 'solve-q-293', 2, {
+        'Write "= 4¹ · 4^y = 4^(y+1)"': [A('= 4¹ · 4^y = 4^(y+1) appears', T(r'$=4^1\cdot4^y=4^{y+1}$', size=S))],
+        'Write "x = y + 1 → x − y = 1" and circle choice 3': [
+            A('x = y + 1 → x − y = 1 appears', T(r'$x=y+1 \;\to\; x-y=1$', size=S)), D('Circle choice 3')],
+    }, room=['Write "= 4 · 4^y"'])
+    P(M, 'solve-q-293', 3, {
+        'Write "4^x = 16 → x = 2"': [A('4^x = 16 → x = 2 appears', T(r'$4^x=16 \;\to\; x=2$', size=S))],
+        'Write "x − y = 2 − 1 = 1" and circle choice 3': [
+            A('x − y = 2 − 1 = 1 appears', T(r'$x-y=2-1=1$', size=S)), D('Circle choice 3')],
+    }, room=['Write "y = 1: 4^x = 4 + 4 + 4 + 4 = 16"'])
+    # ---- Q4 q-292 - by hand: (x + y)² = x² + y² + 2xy (the formula), circle
+    P(M, 'solve-q-292', 2, {
+        'Write "3^(x+y) = 3⁴"': [A('3^(x+y) = 3⁴ appears', T(r'$3^{x+y}=3^4$', size=S))],
+        'Write "x + y = 4"': [A('x + y = 4 appears', T(r'$x+y=4$', size=S))],
+        'Write "4² = x² + y² + 6"': [A('4² = x² + y² + 6 appears', T(r'$4^2=x^2+y^2+6$', size=S))],
+        'Write "x² + y² = 16 − 6 = 10" and circle choice 2': [
+            A('x² + y² = 16 − 6 = 10 appears', T(r'$x^2+y^2=16-6=10$', size=S)), D('Circle choice 2')],
+    }, room=['Write "(x + y)² = x² + y² + 2xy"'], row=56)
+    for it in M.slide('solve-q-292', 2)['items'][1:]:
+        it['size'] = 34; it['gap'] = it['gap'] if it.get('gap', 44) > 60 else 12
+    # ---- Q5 q-291 - by hand: (x²)^x = x^(x²) (substitute), x = 2 or 4 (the pattern), cross-out and circles
+    P(M, 'solve-q-291', 2, {
+        'Write "x^(2x) = x^(x²)"': [A('x^(2x) = x^(x²) appears', T(r'$x^{2x}=x^{x^2}$', size=S))],
+        'Write "2x = x²"': [A('2x = x² appears', T(r'$2x=x^2$', size=S))],
+        'Write "x = 2"': [A('x = 2 appears', T(r'$x=2$', size=S))],
+    }, room=['Write "(x²)^x = x^(x²)"'], row=70)
+    for it in M.slide('solve-q-291', 2)['items'][1:]:
+        it['size'] = 36; it['gap'] = it['gap'] if it.get('gap', 44) > 60 else 14
+    # ---- Q6 q-294 - by hand: = 5^(3/6) (root to power), the cancelling, circle
+    P(M, 'solve-q-294', 2, {
+        'Write "= 5^(1/2) = √5"': [A('= 5^(1/2) = √5 appears', T(r'$\sqrt[6]{5^3}=5^{\frac36}=5^{\frac12}=\sqrt5$', size=S))],
+        'Write "√(1/5 · 176 · 5)" over the top': [A('√(1/5 · 176 · 5) appears', T(r'top: $\sqrt{\frac15\cdot176\cdot5}$', size=S))],
+        'Cancel the 1/5 with the 5; write "= √176"': [D('Cancel the 1/5 with the 5'), A('= √176 appears', T(r'$=\sqrt{176}$', size=S))],
+        'Write "√176 / √11 = √(176/11) = √16 = 4"': [
+            A('√176 / √11 = √16 = 4 appears', T(r'$\frac{\sqrt{176}}{\sqrt{11}}=\sqrt{\frac{176}{11}}=\sqrt{16}=4$', size=S))],
+    })
+    for it in M.slide('solve-q-294', 2)['items'][1:]: it['size'] = 36; it['gap'] = 16
+    # ---- Q7 q-295 - by hand: 2√11 = √(4 · 11) = √44 (bring the 2 inside), cross-outs, circle
+    s = 34
+    P(M, 'solve-q-295', 2, {
+        'Next to 2π write "2 · 3.14 ≈ 6.28"': [A('(1) 2π ≈ 6.28 appears', T(r'(1) $2\pi\approx2\cdot3.14\approx6.28$', size=s))],
+        'Next to √41 write "√36 = 6 → 6 plus"': [A('(3) √41: √36 = 6 → 6 plus appears', T(r'(3) $\sqrt{41}$: $\ \sqrt{36}=6 \;\to\; 6$ plus', size=s))],
+        'Next to √21 + √6 write "≈ 4.6 + 2.4 ≈ 7"': [A('(4) √21 + √6 ≈ 7 appears', T(r'(4) $\sqrt{21}+\sqrt6\approx4.6+2.4\approx7$', size=s))],
+        'Next to 2√11 write "2 · 3.3 ≈ 6.6"': [A('(2) 2√11 ≈ 6.6 appears', T(r'(2) $2\sqrt{11}\approx2\cdot3.3\approx6.6$', size=s))],
+    }, room=['Below it write "= √(4 · 11) = √44"'], row=70)
+    for it in M.slide('solve-q-295', 2)['items'][1:]: it['gap'] = it.get('gap', 44) if it.get('gap', 44) > 60 else 14
+    # ---- Q8 q-296 - by hand: · √3/√3 (method 1), 6 = 2 · √3 · √3 (method 2), the common denominator 12√3 (method 3),
+    #      the cancelling, circles
+    P(M, 'solve-q-296', 2, {
+        'Next to 5/(2√3) write "· √3/√3 = 5√3/(2 · 3) = 5√3/6"': [
+            D('Next to 5/(2√3) write "· √3/√3"'),
+            A('= 5√3/(2 · 3) = 5√3/6 appears', T(r'$=\frac{5\sqrt3}{2\cdot3}=\frac{5\sqrt3}{6}$', size=S))],
+        'Write "5√3/6 + √3/6 = 6√3/6 = √3"': [
+            A('5√3/6 + √3/6 = √3 appears', T(r'$\frac{5\sqrt3}6+\frac{\sqrt3}6=\frac{6\sqrt3}6=\sqrt3$', size=S))],
+    })
+    P(M, 'solve-q-296', 3, {
+        'Cancel one √3 and write "= 1/(2√3)"': [
+            D('Cancel one √3'), A('√3/6 = 1/(2√3) appears', T(r'$\frac{\sqrt3}{6}=\frac{1}{2\sqrt3}$', size=S))],
+        'Write "5/(2√3) + 1/(2√3) = 6/(2√3) = 3/√3"': [
+            A('5/(2√3) + 1/(2√3) = 3/√3 appears', T(r'$\frac5{2\sqrt3}+\frac1{2\sqrt3}=\frac6{2\sqrt3}=\frac3{\sqrt3}$', size=S))],
+        'Write "= √3"': [A('= √3 appears', T(r'$=\sqrt3$', size=S))],
+    }, room=['Under √3/6 write "6 = 2 · 3 = 2 · √3 · √3"'])
+    P(M, 'solve-q-296', 4, {
+        'Write "5 · 6 = 30" and "√3 · 2√3 = 6"': [
+            A('5 · 6 = 30, √3 · 2√3 = 6 appears', T(r'$5\cdot6=30,\qquad \sqrt3\cdot2\sqrt3=6$', size=S))],
+        'Write "(30 + 6)/(12√3) = 36/(12√3) = 3/√3 = √3"': [
+            A('(30 + 6)/(12√3) = √3 appears', T(r'$\frac{30+6}{12\sqrt3}=\frac{36}{12\sqrt3}=\frac3{\sqrt3}=\sqrt3$', size=S))],
+    }, room=['Write "common denominator: 2√3 · 6 = 12√3"'])
+    # ---- Q9 q-297 - by hand: x² · √x = √(x⁴ · x) = √(x⁵) (bring x² inside), circles
+    P(M, 'solve-q-297', 2, {
+        'Write "√(√(x⁵)) = ⁴√(x⁵)"': [A('√(√(x⁵)) = ⁴√(x⁵) appears', T(r'$\sqrt{\sqrt{x^5}}=\sqrt[4]{x^5}$', size=S))],
+    }, room=['Write "x² · √x = √(x⁴ · x) = √(x⁵)"'])
+    P(M, 'solve-q-297', 3, {
+        'Next to the choices write: 256, 64, 32, ∛256': [
+            A('x = 16: choices 256, 64, 32, ∛256 appears', T(r'$x=16$:$\quad$(1) $256\quad$(2) $64\quad$(3) $32\quad$(4) $\sqrt[3]{256}$', size=S))],
+        'In the question write "√16 = 4 → 256 · 4 = 1024 → √1024 = 32"': [
+            A('√16 = 4 → 256 · 4 = 1024 → √1024 = 32 appears',
+              T(r'$\sqrt{16}=4 \;\to\; 256\cdot4=1024 \;\to\; \sqrt{1024}=32$', size=S))],
+    })
+    # ---- Q10 q-298 - by hand: m − n = (√m + √n)(√m − √n), the cancelling, circles
+    P(M, 'solve-q-298', 3, {
+        'Next to the choices write: 10, 0, 2, 4': [
+            A('m = 9, n = 1: choices 10, 0, 2, 4 appears', T(r'$m=9,\ n=1$:$\quad$(1) $10\quad$(2) $0\quad$(3) $2\quad$(4) $4$', size=S))],
+        'In the question write "(9 − 1)/(3 + 1) = 2"': [A('(9 − 1)/(3 + 1) = 2 appears', T(r'$\frac{9-1}{3+1}=\frac84=2$', size=S))],
+    })
+    # ---- Q11 q-r26-t11-01 - by hand: (√5 − 2)(√5 + 2) = 5 − 4 = 1 (the key product), circle
+    P(M, 'solve-q-r26-t11-01', 2, {
+        'Write "1/(√5 − 2) = (√5 + 2)/1 = √5 + 2"': [
+            A('1/(√5 − 2) = √5 + 2 appears', T(r'$\frac1{\sqrt5-2}=\frac{\sqrt5+2}1=\sqrt5+2$', size=S))],
+        'Write "1/(√5 + 2) = (√5 − 2)/1 = √5 − 2"': [
+            A('1/(√5 + 2) = √5 − 2 appears', T(r'$\frac1{\sqrt5+2}=\frac{\sqrt5-2}1=\sqrt5-2$', size=S))],
+        'Write "(√5 + 2) − (√5 − 2) = 4"': [A('(√5 + 2) − (√5 − 2) = 4 appears', T(r'$(\sqrt5+2)-(\sqrt5-2)=4$', size=S))],
+    }, room=['Write "(√5 − 2)(√5 + 2) = 5 − 4 = 1"'])
+    P(M, 'solve-q-r26-t11-01', 3, {
+        'Write "√5 ≈ 2.24"': [A('√5 ≈ 2.24 appears', T(r'$\sqrt5\approx2.24$', size=S))],
+        'Write "1/0.24 ≈ 4.2" and "1/4.24 ≈ 0.24"': [
+            A('1/0.24 ≈ 4.2, 1/4.24 ≈ 0.24 appears', T(r'$\frac1{0.24}\approx4.2,\qquad \frac1{4.24}\approx0.24$', size=S))],
+        'Write "4.2 − 0.24 ≈ 4"': [A('4.2 − 0.24 ≈ 4 appears', T(r'$4.2-0.24\approx4$', size=S))],
+    })
+    # ---- Q12 q-299 - by hand: x = 6√x (method 1), √x = 0 or √x − 6 = 0 (method 2), circles
+    P(M, 'solve-q-299', 2, {
+        'Write "√x · √x − 6√x = 0"': [A('√x · √x − 6√x = 0 appears', T(r'$\sqrt x\cdot\sqrt x-6\sqrt x=0$', size=S))],
+        'Write "x = 0: 0 = 0 ✓" and "x = 36: 36 = 6 · 6 ✓"': [
+            A('x = 0 ✓, x = 36 ✓ appears', T(r'$x=0$: $\ 0=0$ ✓$\qquad x=36$: $\ 36=6\cdot6$ ✓', size=S))],
+    }, room=['Write "x − 6√x = 0 → x = 6√x"'])
+    P(M, 'solve-q-299', 3, {
+        'Write "√x = 0 → x = 0"': [A('√x = 0 → x = 0 appears', T(r'$\sqrt x=0 \;\to\; x=0$', size=S))],
+        'Write "√x = 6 → x = 36"': [A('√x = 6 → x = 36 appears', T(r'$\sqrt x=6 \;\to\; x=36$', size=S))],
+    }, room=['Write "√x = 0  or  √x − 6 = 0"'])
+    # ---- Q13 q-300 - by hand: ≠ √225 crossed out (the trap), √180 = √36 · √5 = 6√5 (split the root), circles
+    s = 34
+    P(M, 'solve-q-300', 2, {
+        'Add the equations: write "3x = √180 + √45"': [A('3x = √180 + √45 appears', T(r'$3x=\sqrt{180}+\sqrt{45}$', size=s))],
+        'Write "√45 = √9 · √5 = 3√5"': [A('√45 = √9 · √5 = 3√5 appears', T(r'$\sqrt{45}=\sqrt9\cdot\sqrt5=3\sqrt5$', size=s))],
+        'Write "3x = 9√5 → x = 3√5"': [A('3x = 9√5 → x = 3√5 appears', T(r'$3x=9\sqrt5 \;\to\; x=3\sqrt5$', size=s))],
+        'Write "√180 = √(4 · 45) = 2√45 → 3x = 3√45 → x = √45 = 3√5"': [
+            A('√180 = 2√45 → 3x = 3√45 → x = 3√5 appears',
+              T(r'$\sqrt{180}=\sqrt{4\cdot45}=2\sqrt{45} \;\to\; 3x=3\sqrt{45} \;\to\; x=\sqrt{45}=3\sqrt5$', size=s))],
+    }, room=['Write "√180 = √36 · √5 = 6√5"'], row=52)
+    for it in M.slide('solve-q-300', 2)['items'][1:]:
+        it['size'] = 30; it['gap'] = it['gap'] if it.get('gap', 44) > 60 else 8
+    P(M, 'solve-q-300', 3, {
+        'Write "√180 ≈ 13.4" and "√45 ≈ 6.7"': [A('√180 ≈ 13.4, √45 ≈ 6.7 appears', T(r'$\sqrt{180}\approx13.4,\qquad \sqrt{45}\approx6.7$', size=S))],
+        'Write "3x ≈ 20.1 → x ≈ 6.7"': [A('3x ≈ 20.1 → x ≈ 6.7 appears', T(r'$3x\approx20.1 \;\to\; x\approx6.7$', size=S))],
+        'Next to the choices write: ≈ 20.1, ≈ 6.5, 5, ≈ 6.7': [
+            A('choices ≈ 20.1, ≈ 6.5, 5, ≈ 6.7 appears', T(r'(1) $\approx20.1\quad$(2) $\approx6.5\quad$(3) $5\quad$(4) $\approx6.7$', size=S))],
+    })
+    # ---- Q14 q-301 - by hand: 1 / x^(1/3) = 2 (flip, method 1), (x^(−1/3))^(−3) = 2^(−3) (method 2), circles
+    P(M, 'solve-q-301', 2, {
+        'Write "1/∛x = 2"': [A('1/∛x = 2 appears', T(r'$\frac1{\sqrt[3]x}=2$', size=S))],
+        'Write "1 = 2∛x → ∛x = 1/2"': [A('1 = 2∛x → ∛x = 1/2 appears', T(r'$1=2\sqrt[3]x \;\to\; \sqrt[3]x=\frac12$', size=S))],
+        'Write "x = (1/2)³ = 1/8"': [A('x = (1/2)³ = 1/8 appears', T(r'$x=\left(\frac12\right)^3=\frac18$', size=S))],
+    }, room=['Write "1 / x^(1/3) = 2"'])
+    P(M, 'solve-q-301', 3, {
+        'Write "x = 2^(−3) = 1/8"': [A('x = 2^(−3) = 1/8 appears', T(r'$x=2^{-3}=\frac18$', size=S))],
+    }, room=['Write "(x^(−1/3))^(−3) = 2^(−3)"'])
+    P(M, 'solve-q-301', 4, {
+        'Next to choice 2 write "8^(−1/3) = 1/∛8 = 1/2"': [
+            A('(2) 8^(−1/3) = 1/2 appears', T(r'(2) $8^{-\frac13}=\frac1{\sqrt[3]8}=\frac12$', size=S))],
+        'Next to choice 3 write "(1/8)^(−1/3) = 8^(1/3) = 2 ✓"': [
+            A('(3) (1/8)^(−1/3) = 2 ✓ appears', T(r'(3) $\left(\frac18\right)^{-\frac13}=8^{\frac13}=2$ ✓', size=S))],
+    })
+    # ---- Q15 q-r26-t11-02 - by hand: x√x = x¹ · x^(1/2) = x^(3/2) (roots as powers), circle
+    P(M, 'solve-q-r26-t11-02', 2, {
+        'Write "∛(x^(3/2)) = x^(3/2 · 1/3) = x^(1/2)"': [
+            A('∛(x^(3/2)) = x^(1/2) appears', T(r'$\sqrt[3]{x^{\frac32}}=x^{\frac32\cdot\frac13}=x^{\frac12}$', size=S))],
+        'Write "√x = 2 → x = 4"': [A('√x = 2 → x = 4 appears', T(r'$\sqrt x=2 \;\to\; x=4$', size=S))],
+    }, room=['Write "x√x = x¹ · x^(1/2) = x^(3/2)"'])
+    P(M, 'solve-q-r26-t11-02', 3, {
+        'Next to choice 2 write "4 · √4 = 8 → ∛8 = 2 ✓"': [
+            A('(2) 4 · √4 = 8 → ∛8 = 2 ✓ appears', T(r'(2) $x=4$: $\ 4\cdot\sqrt4=8 \;\to\; \sqrt[3]8=2$ ✓', size=S))],
+    })
+    # ---- Q16 q-r26-t11-13 - by hand: r = (3/2) ÷ (3/4) = 2 (the jump), "x — trap", circle
+    P(M, 'solve-q-r26-t11-13', 2, {
+        'Write "given: x^(3/4) = 8     asked: x^(3/2)"': [
+            A('given x^(3/4) = 8, asked x^(3/2) appears', T(r'given: $x^{\frac34}=8\qquad$ asked: $x^{\frac32}$', size=S))],
+        'Write "(x^(3/4))² = x^(3/2)  →  8² = 64"': [
+            A('(x^(3/4))² = x^(3/2) → 8² = 64 appears', T(r'$\left(x^{\frac34}\right)^2=x^{\frac32} \;\to\; 8^2=64$', size=S))],
+    }, room=['Write "r = (3/2) ÷ (3/4) = 2"'])
+    P(M, 'solve-q-r26-t11-13', 3, {
+        'Write "x = 8^(4/3) = 2⁴ = 16"': [A('x = 8^(4/3) = 2⁴ = 16 appears', T(r'$x=8^{\frac43}=2^4=16$', size=S))],
+        'Write "√(16³) = √4,096 = 64"': [A('√(16³) = √4,096 = 64 appears', T(r'$\sqrt{16^3}=\sqrt{4{,}096}=64$', size=S))],
+    })
+    # ---- Q17 q-290 - by hand: the cross-outs and circle (marks); the two surviving cases appear by click
+    P(M, 'solve-q-290', 2, {
+        'Next to the options write "m = −1" and "n = 3"': [
+            A('Left: m = −1 or n = 3 appears', T(r'Left: $m=-1$ $\ $ or $\ $ $n=3$', size=40, gap=24))],
+    })
+
+
+_apply_before_pen_or_click = apply
+
+
+def apply(M):
+    _apply_before_pen_or_click(M)
+    pen_or_click(M)   # 2026-10-07 pen or click: runs last

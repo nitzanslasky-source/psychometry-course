@@ -266,3 +266,32 @@ Videos rewritten to match: solve-q-288 (both methods), solve-q-294, solve-q-298 
 **Left on purpose (partial overlaps only):** q-300 (Hebrew √72 + √18 → 3√2; ours √180 + √45 → 3√5: same 36k/9k structure
 as base-v18, different numbers); q-292 (only the base 3 is shared: 81 / 6 / 10 vs 9 / 3 / 1); q-295 (only the choice 2π);
 q-296 (only √3); q-291 (the 2-and-4 pattern always gives 2 and 4); card 2⁴ = 4² = 16 (the fact itself). Practice: no match.
+
+## 2026-10-06 pen or click
+(Done 2026-10-07.) Function `pen_or_click(M)` in t11.py runs last (after `renumber_pass` and `hebrew_backcheck`), on the
+final text. The teacher's approved split: lessons - content by click, the pen only marks; solution videos - setup and
+mechanical lines by click, by hand only the one or two key steps plus the marks on the choices. Where a hand-written
+line comes before click lines, the board leaves an empty row for it. Spoken lines, math, questions and slide count are
+unchanged. Recorded: advanced-powers (no pen cues, untouched). The tools lesson and the summary have no pen cues.
+Topic total: 125 pen cues -> 57 by hand, 61 by click, 7 split (64 pen cues left, most of them circles / cross-outs).
+
+- solve-q-289 (4 -> 3 by hand, 1 click). By hand: the two arrows that switch floors, circle. Click: q⁻⁴ = 1/q⁴, r⁻² = 1/r².
+- solve-q-288 (10 -> 5 by hand, 4 clicks, 1 split). By hand: (5 · 2 · x²)³ = 5³ · 2³ · x⁶, the two cross-outs, the x = 1 substitution in the question, circle. Clicks: 5⁴x⁴ and 2³x³, = 5x, the choice values, = 5 · 1/5 = 1. Split: 5x · (1/5)x = x² click + circle.
+- solve-q-293 (6 -> 2 by hand, 2 clicks, 2 split). By hand: = 4 · 4^y (count the copies), y = 1: 4^x = 16. Clicks: 4^(y+1), 4^x = 16 -> x = 2. Split: the x − y lines + circles.
+- solve-q-292 (5 -> 1 by hand, 3 clicks, 1 split). By hand: (x + y)² = x² + y² + 2xy. Lines smaller (34) so the system fits.
+- solve-q-291 (8 -> 5 by hand, 3 clicks). By hand: (x²)^x = x^(x²), "x = 2 or 4", cross-out, circles. Clicks: x^(2x) = x^(x²), 2x = x², x = 2.
+- solve-q-294 (6 -> 2 by hand, 3 clicks, 1 split). By hand: = 5^(3/6) (root to power), circle. Split: cancel 1/5 with 5 by hand, = √176 click. Lines 36.
+- solve-q-295 (7 -> 3 by hand, 4 clicks). By hand: 2√11 = √(4 · 11) = √44, cross-outs, circle. Clicks: the four estimates, each labelled with its choice number.
+- solve-q-296 (12 -> 5 by hand, 5 clicks, 2 split). By hand: 6 = 2 · √3 · √3 (method 2), common denominator 12√3 (method 3), three circles. Split: "· √3/√3" by hand + "= 5√3/6" click; cancel one √3 by hand + "√3/6 = 1/(2√3)" click.
+- solve-q-297 (6 -> 3 by hand, 3 clicks). By hand: x² · √x = √(x⁴ · x) = √(x⁵), circles. Clicks: root of root, the x = 16 choice values, the question at 16.
+- solve-q-298 (6 -> 4 by hand, 2 clicks). By hand: m − n = (√m + √n)(√m − √n), the cancelling, circles. Clicks: choice values, (9 − 1)/(3 + 1) = 2.
+- solve-q-r26-t11-01 (8 -> 2 by hand, 6 clicks). By hand: (√5 − 2)(√5 + 2) = 5 − 4 = 1, circle. Method 2 (estimate) all clicks.
+- solve-q-299 (8 -> 4 by hand, 4 clicks). By hand: x = 6√x (method 1), √x = 0 or √x − 6 = 0 (method 2), circles.
+- solve-q-300 (11 -> 4 by hand, 7 clicks). By hand: "≠ √225" crossed out (the trap), √180 = √36 · √5 = 6√5, circles. Slide 2 lines 30 so the long "even faster" chain fits above the choices.
+- solve-q-301 (11 -> 5 by hand, 6 clicks). By hand: 1 / x^(1/3) = 2 (method 1), (x^(−1/3))^(−3) = 2^(−3) (method 2), circles. Method 3 tries are clicks labelled (2), (3).
+- solve-q-r26-t11-02 (5 -> 2 by hand, 3 clicks). By hand: x√x = x^(3/2), circle.
+- solve-q-r26-t11-13 (7 -> 3 by hand, 4 clicks). By hand: r = (3/2) ÷ (3/4) = 2, circle, "x — trap" next to choice 1.
+- solve-q-290 (5 -> 4 by hand, 1 click). By hand: the cross-outs and circle. Click: "Left: m = −1 or n = 3".
+
+Check: `python3 math_check.py 11 32` -> 0 problems, 0 warnings, 0 layout problems. All 17 videos rendered and checked by
+eye (tmp_check/pen11a–e.png).
