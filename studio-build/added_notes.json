@@ -1374,6 +1374,10 @@
   "solve-q-295#1": {
    "t": "Choice 4: square it",
    "d": "q-295 rewritten without decimals — square √21+√6: 27+2√126 > 27+22 = 49, so the sum is above 7 (the benchmark)"
+  },
+  "solve-q-300#1": {
+   "t": "Method 2 · Try a choice",
+   "d": "no decimal estimates: choice 4 is 3√5 = √45, so y = 0 and 2x = 2√45 = √180 ✓ (replaces the old √42 ≈ 6.5 vs 6.7 estimate)"
   }
  },
  "lines": {
@@ -2864,6 +2868,10 @@
   "solve-q-295#0": {
    "t": "Benchmark 7",
    "d": "whole-number benchmark 7 instead of decimal estimates: 2π < 7 (π < 3.5), √44 < √49, √41 < √49"
+  },
+  "solve-q-300#1": {
+   "t": "Method 2 · Try a choice",
+   "d": "try the choice that makes y simple instead of estimating roots to one decimal"
   }
  }
 }
