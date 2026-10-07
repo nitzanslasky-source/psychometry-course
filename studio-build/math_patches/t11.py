@@ -1898,7 +1898,9 @@ SPREAD_LINES = {
 
 SPREAD_SLIDES = {
     'solve-q-289': ('Method 2 · Switch floors', 'Method 3 · Power count', [
-        "One more way — count the powers. Multiplying adds them, dividing subtracts them.",
+        "One more way — count the powers.",
+        "Quick reminder of what that means: the power of a piece is how many letters are multiplied in it. p cubed is p times p times p — power three. Simplifying never changes that number, so the right answer must have the same power as the question.",
+        "And the rules: multiplying adds the powers, dividing subtracts them, a number in front doesn't count.",
         A('question power appears', T(r'$3-4+2-5=-4$', size=40)),
         "On top: three, and minus four. Underneath, r to the minus two divides — so plus two. s to the fifth divides — minus five. Total: minus four.",
         A('choice powers appear', T(r'(1) $0\quad$(2) $-14\quad$(3) $-4\quad$(4) $2$', size=40)),
