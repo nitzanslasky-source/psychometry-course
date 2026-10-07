@@ -2053,3 +2053,40 @@ _apply_before_q297_split_root = apply
 def apply(M):
     _apply_before_q297_split_root(M)
     q297_split_root(M)   # runs last
+
+
+# 2026-10-07 q-300 Method 2 without decimal estimates (teacher: students can't know √42 ≈ 6.5 vs 3√5 ≈ 6.7):
+# try the choice that makes y simple — x = 3√5 = √45 gives y = 0 and 2x = 2√45 = √180 ✓.
+def q300_try_choice(M):
+    vid = 'solve-q-300'
+    for i in range(1, len(M.D['videos'][vid]['beats']) + 1):
+        if (M.slide(vid, i).get('title') or '').startswith('Method 2'): break
+    else:
+        raise AssertionError('q-300 Method 2 slide not found')
+    b = M.slide(vid, i); q = dict(b['items'][0])
+    M.set_slide(vid, i, title='Method 2 · Try a choice', pre=[q], script=[
+        "Another way — no splitting at all. Try the choices.",
+        "Which one first? Look at choice four: three root five. That's root forty-five — the same number as in the second equation.",
+        A('x = 3√5 = √45 → y = x − √45 = 0 appears', T(r'$x=3\sqrt5=\sqrt{45}\;\to\;y=x-\sqrt{45}=0$', size=38, gap=14)),
+        "If x is root forty-five, the second equation gives y equals zero.",
+        A('2x + y = 2√45 = √(4·45) = √180 ✓ appears', T(r'$2x+y=2\sqrt{45}=\sqrt{4\cdot45}=\sqrt{180}$ ✓', size=38, gap=14)),
+        "Now the first equation: two x plus zero — two root forty-five. Bring the two inside: four times forty-five, root one-eighty. It works.",
+        D('Circle choice 4'),
+        "Choice four.",
+        "And the trap, choice three, five, is what you get from root two-twenty-five. Choice one, nine root five, is three x, not x.",
+    ])
+    for bb in M.D['videos'][vid]['beats']:
+        for l in bb['lines']:
+            if l.get('say') == 'A system of equations — with roots. Two ways: exact, then estimating.':
+                l['say'] = 'A system of equations — with roots. Two ways: exact, then trying a choice.'
+    q_ = M.q('q-300'); ex = [e for e in (q_.get('explanation') or [])]
+    ex.append('Method 2 · Try a choice: choice 4 is $3\\sqrt5=\\sqrt{45}$, so $y=x-\\sqrt{45}=0$ and $2x+y=2\\sqrt{45}=\\sqrt{4\\cdot45}=\\sqrt{180}$ ✓.')
+    M.set_q('q-300', expl=ex)
+
+
+_apply_before_q300_try_choice = apply
+
+
+def apply(M):
+    _apply_before_q300_try_choice(M)
+    q300_try_choice(M)   # runs last
