@@ -1952,3 +1952,60 @@ _apply_before_spread_methods = apply
 def apply(M):
     _apply_before_spread_methods(M)
     spread_methods(M)   # 2026-10-07 methods spread: runs last
+
+
+# =====================================================================================================================
+# 2026-10-07 q-295 whole-number benchmark (teacher: decimals like 6.28, 4.6, 2.4, 3.3 are not realistic for students).
+# Whole numbers only, benchmark 7: pi < 3.5 so 2pi < 7; 2√11 = √44 < √49; √41 < √49; (√21 + √6)² = 27 + 2√126 > 49.
+# Video: two short slides "Benchmark 7" + "Choice 4: square it". By hand only the squaring of choice 4 and the marks.
+# Skipped if solve-q-295 has a recording. Runs LAST.
+# =====================================================================================================================
+def q295_benchmark(M):
+    M.set_q('q-295', expl=[
+        'Pick one whole number that sits between the choices and compare every choice with it. Here: $7$.',
+        '(1) $\\pi$ is less than $3.5$, so $2\\pi<7$.',
+        '(2) Bring the $2$ inside the root (a number goes in squared): $2\\sqrt{11}=\\sqrt{4\\cdot11}=\\sqrt{44}<\\sqrt{49}=7$.',
+        '(3) $\\sqrt{41}<\\sqrt{49}=7$.',
+        '(4) Square it: $(\\sqrt{21}+\\sqrt6)^2=21+6+2\\sqrt{21\\cdot6}=27+2\\sqrt{126}$. '
+        'Since $\\sqrt{126}>\\sqrt{121}=11$, the square is more than $27+22=49$, so $\\sqrt{21}+\\sqrt6>7$.',
+        'Only choice 4 is more than $7$. Choices 1 and 3 are close to each other, but we don\'t need to split them.'])
+    vid = 'solve-q-295'
+    if vid in _sp_recorded(): return   # recorded: never change it
+    s = 34
+    M.set_slide(vid, 1, script=[
+        "Which one is biggest? No decimals here — we pick one whole number and compare every choice to it."])
+    b = M.slide(vid, 2); q = dict(b['items'][0]); active = b['active']
+    M.set_slide(vid, 2, title='Benchmark 7', script=[
+        "We can't work these out exactly. And we don't need to.",
+        "They all look like six or seven. So take seven, and compare each choice to seven.",
+        A('(1) π < 3.5 → 2π < 7 appears', T(r'(1) $\pi<3.5 \;\to\; 2\pi<7$', size=s, gap=14)),
+        "Choice one: two pi. Pi is three and a bit — less than three and a half. Twice that: less than seven.",
+        A('(2) 2√11 = √44 < √49 = 7 appears', T(r'(2) $2\sqrt{11}=\sqrt{4\cdot11}=\sqrt{44}<\sqrt{49}=7$', size=s, gap=14)),
+        "Choice two: two root eleven. Bring the two inside the root — a number goes in squared. Four times eleven: root forty-four.",
+        "Root forty-four is less than root forty-nine. Seven. So it's under seven.",
+        A('(3) √41 < √49 = 7 appears', T(r'(3) $\sqrt{41}<\sqrt{49}=7$', size=s, gap=14)),
+        "Choice three: root forty-one. Also less than root forty-nine. Under seven.",
+        "So one, two and three are all under seven. Is choice four above it?",
+    ])
+    M.insert_slides(vid, 2, [dict(mode='question', active=active, title='Choice 4: square it',
+                                  pre=[dict(q, gap=q.get('gap', 44) + 70)], script=[
+        "Choice four: root twenty-one plus root six. Two roots added — we can't join them. So we square it, and compare with seven squared: forty-nine.",
+        D('Write "(√21 + √6)² = 21 + 6 + 2√(21 · 6) = 27 + 2√126"'),
+        "First squared, second squared, plus twice the product. Twenty-one plus six is twenty-seven. Plus two root one twenty-six.",
+        A('√126 > √121 = 11 appears', T(r'$\sqrt{126}>\sqrt{121}=11$', size=s, gap=14)),
+        "Root one twenty-six is more than root one twenty-one. That's eleven.",
+        A('> 27 + 22 = 49 appears', T(r'$(\sqrt{21}+\sqrt6)^2>27+22=49$', size=s, gap=14)),
+        "So the square is more than twenty-seven plus twenty-two. Forty-nine.",
+        "The square is more than forty-nine — so the sum itself is more than seven.",
+        D('Cross out choices 1, 2 and 3 and circle choice 4'),
+        "Only choice four is above seven. Choice four.",
+        "Notice: choices one and three are close — and we didn't need to split them. Seven did the job.",
+    ])])
+
+
+_apply_before_q295_benchmark = apply
+
+
+def apply(M):
+    _apply_before_q295_benchmark(M)
+    q295_benchmark(M)   # 2026-10-07 q-295 whole-number benchmark: runs last

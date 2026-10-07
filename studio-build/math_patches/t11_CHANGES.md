@@ -305,3 +305,11 @@ Function `spread_methods` (runs last, after `pen_or_click`). Every topic-11 ques
 - A build-time guard skips the extra slide (and the intro edit) for any video that has a recording in ~/Documents/Course.recordings. At the time of editing only the lesson advanced-powers was recorded (unchanged; no slides go into lessons).
 - Not added: q-302, q-314 (power count already there); given power → asked power is already shown in q-301, q-307, q-319, q-r26-t11-02, q-r26-t11-13. The other questions are numbers only, have the letter in the exponent, or are determined systems.
 Check: `python3 math_check.py 11 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Both extended videos rendered and looked at.
+
+
+## 2026-10-07 q-295 whole-number benchmark
+Function `q295_benchmark` (runs last, after `spread_methods`). Teacher: decimal estimates (6.28, 4.6, 2.4, 3.3) are not realistic for students. Now whole numbers only, benchmark 7 (idea taught: pick a whole number between the choices, compare each choice to it with perfect squares).
+- Written explanation rewritten: (1) π < 3.5 → 2π < 7; (2) 2√11 = √(4 · 11) = √44 < √49 = 7 (a number goes in squared); (3) √41 < √49 = 7; (4) (√21 + √6)² = 27 + 2√126, √126 > √121 = 11 → more than 49, so the sum is more than 7. Trap note kept (1 and 3 are close, no need to split them).
+- solve-q-295: intro no longer says "Question seven". One slide → two short ones: "Benchmark 7" (choices 1–3, all by click) and "Choice 4: square it" (by hand: the squaring line, then cross out 1, 2, 3 and circle 4; √126 > 11 and > 49 by click). About the same length (16 spoken lines, was 15).
+- Guard: skipped if solve-q-295 has a recording (none at the time of editing; latest recorded solve-q-294).
+Check: `python3 math_check.py 11 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered tmp_check/q295.png and looked at.
