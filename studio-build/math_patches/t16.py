@@ -2040,8 +2040,10 @@ import glob as _sp_glob, os as _sp_os, re as _sp_re
 def _sp_recorded():
     out = set()
     for f in _sp_glob.glob(_sp_os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
-        m = _sp_re.match(r'(.+)-\d{4}-\d\d-\d\dT[\d-]+Z\.(mp4|webm)$', _sp_os.path.basename(f))
-        if m: out.add(m.group(1))
+        m = _sp_re.match(r'(.+)-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$', _sp_os.path.basename(f))
+        # only takes recorded BEFORE the spread was first built (2026-10-07 12:55 local = 09:55Z) keep the old video;
+        # later takes were recorded with the new slides, so the slides must stay
+        if m and m.group(2) < '2026-10-07T09-55-00': out.add(m.group(1))
     return out
 
 # Mirror test (topic 13), the one-letter form: a letter that appears only in an even power can flip its sign and the

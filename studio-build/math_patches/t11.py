@@ -1868,8 +1868,10 @@ import glob as _sp_glob, os as _sp_os, re as _sp_re
 def _sp_recorded():
     out = set()
     for f in _sp_glob.glob(_sp_os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
-        m = _sp_re.match(r'(.+)-\d{4}-\d\d-\d\dT[\d-]+Z\.(mp4|webm)$', _sp_os.path.basename(f))
-        if m: out.add(m.group(1))
+        m = _sp_re.match(r'(.+)-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$', _sp_os.path.basename(f))
+        # only takes recorded BEFORE the spread was first built (2026-10-07 12:55 local = 09:55Z) keep the old video;
+        # later takes were recorded with the new slides, so the slides must stay
+        if m and m.group(2) < '2026-10-07T09-55-00': out.add(m.group(1))
     return out
 
 
@@ -2009,3 +2011,45 @@ _apply_before_q295_benchmark = apply
 def apply(M):
     _apply_before_q295_benchmark(M)
     q295_benchmark(M)   # 2026-10-07 q-295 whole-number benchmark: runs last
+
+
+# 2026-10-07 q-297 plug-in without √1024: split the root (√(16²)·√(√16) = 16·2) and evaluate choice 3 as (⁴√16)⁵.
+# The teacher recorded Method 1 and stopped inside Method 2; they continue the take from Method 2, so only that slide
+# (and the written solution) changes. Method 1 and Method 3 stay exactly as recorded/built.
+def q297_split_root(M):
+    vid = 'solve-q-297'
+    for i in range(1, len(M.D['videos'][vid]['beats']) + 1):
+        if (M.slide(vid, i).get('title') or '').startswith('Method 2'): break
+    else:
+        raise AssertionError('q-297 Method 2 slide not found')
+    b = M.slide(vid, i); q = dict(b['items'][0]); active = b['active']
+    M.set_slide(vid, i, pre=[q], script=[
+        "Plug in a number. One is easy — but every choice would give one. Useless.",
+        "Four is a favorite — but here four gives root thirty-two at the end. Not clean.",
+        "So take sixteen. Its roots come out whole: root sixteen is four, and root four is two.",
+        A('x = 16: choices 256, 64, 32, ∛256 appears',
+          T(r'$x=16$:$\quad$(1) $256\quad$(2) $64\quad$(3) $(\sqrt[4]{16})^5=2^5=32\quad$(4) $\sqrt[3]{256}$', size=36, gap=14)),
+        "Choice one: sixteen squared, two hundred fifty-six. Choice two: sixteen times four, sixty-four.",
+        "Choice three: take the fourth root first — fourth root of sixteen is two. Then to the fifth: thirty-two. Choice four: cube root of two hundred fifty-six — not a whole number.",
+        A('√(16²·√16) = √(16²)·√(√16) = 16·2 = 32 appears',
+          T(r'$\sqrt{16^2\cdot\sqrt{16}}=\sqrt{16^2}\cdot\sqrt{\sqrt{16}}=16\cdot\sqrt4=16\cdot2=32$', size=36, gap=14)),
+        "Now the question. Don't multiply everything out — split the root: root of sixteen squared, times root of root sixteen.",
+        "Root of sixteen squared is just sixteen. Root sixteen is four, and root four is two. Sixteen times two: thirty-two.",
+        D('Circle choice 3'),
+        "Thirty-two — choice three.",
+        "Know both routes. Here too, plugging in is shorter for most students.",
+    ])
+    M.set_q('q-297', expl=[
+        'Bring $x^2$ into the inner root (a factor goes in squared): $x^2\\sqrt x=\\sqrt{x^4\\cdot x}=\\sqrt{x^5}$.',
+        'A root of a root: multiply the indices, $\\sqrt{\\sqrt{x^5}}=\\sqrt[4]{x^5}$. Choice 3.',
+        'Plug in $x=16$ and split the root: $\\sqrt{16^2}\\cdot\\sqrt{\\sqrt{16}}=16\\cdot2=32$; choice 3: $(\\sqrt[4]{16})^5=2^5=32$ ✓ '
+        '(choice 1: $256$, choice 2: $64$, choice 4: not a whole number).',
+        'Method 3 · Power count: $\\left(2+\\frac12\\right)\\div2=\\frac54$; the choices have powers $2,\\frac32,\\frac54,\\frac23$ → choice 3.'])
+
+
+_apply_before_q297_split_root = apply
+
+
+def apply(M):
+    _apply_before_q297_split_root(M)
+    q297_split_root(M)   # runs last
