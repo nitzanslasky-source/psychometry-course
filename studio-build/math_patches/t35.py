@@ -2026,3 +2026,114 @@ _apply_before_spread = apply
 def apply(M):
     _apply_before_spread(M)
     spread_methods(M)   # 2026-10-07 methods spread: runs last
+
+
+# ===================================================================================================================
+# 2026-10-07 no decimal estimates. Teacher: a student can't estimate roots or π to one decimal place. Estimates use
+# whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5) or another method.
+# Recorded videos are never changed (any take in ~/Documents/Course.recordings).
+import glob as _nd_glob, os as _nd_os, re as _nd_re
+
+
+def _nd_recorded(vid):
+    # only takes recorded BEFORE this change was first built (2026-10-07 12:40Z) keep the old video; takes recorded
+    # later were made with the rewritten slides, so the rewrite must stay
+    pat = _nd_re.compile(_nd_re.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in _nd_glob.glob(_nd_os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(_nd_os.path.basename(f))
+        if m and m.group(1) < '2026-10-07T12-40-00': return True
+    return False
+
+
+def _nd_n(M, vid, title):
+    ns = [i for i, b in enumerate(M.video(vid)['beats'], 1) if b['title'] == title]
+    assert len(ns) == 1, (vid, title, ns)
+    return ns[0]
+
+
+def _nd_lines(M, vid, title, subs):
+    """subs: [(kind, old, new)], kind 'say' or 'draw'; new is a str or a list of str of the same kind."""
+    n = _nd_n(M, vid, title)
+
+    def fn(ls):
+        ls = list(ls)
+        for kind, old, new in subs:
+            k = [i for i, l in enumerate(ls) if l.get(kind) == old]
+            assert len(k) == 1, (vid, title, old)
+            ls[k[0]:k[0] + 1] = [{kind: x} for x in ([new] if isinstance(new, str) else new)]
+        return ls
+    M.edit_lines(vid, n, fn)
+
+
+def _nd_item(M, vid, title, old_t, new_t, label=None):
+    n = _nd_n(M, vid, title); b = M.slide(vid, n)
+    k = [i for i, it in enumerate(b['items']) if it.get('t') == old_t]
+    assert len(k) == 1, (vid, title, old_t)
+    b['items'][k[0]]['t'] = new_t
+    if label is not None:
+        for l in b['lines']:
+            if l.get('appear') == k[0]: l['label'] = label
+    M.touched_videos.add(vid)
+
+
+def _nd_expl(M, qid, subs):
+    """subs: [(index, old_start, new)]; new None drops the paragraph."""
+    ex = list(M.q(qid)['explanation'])
+    for i, start, new in sorted(subs, key=lambda x: -x[0]):
+        assert ex[i].startswith(start), (qid, i, ex[i][:70])
+        if new is None: ex.pop(i)
+        else: ex[i] = new
+    M.set_q(qid, expl=ex)
+
+
+def no_decimal_estimates(M):
+    # solve-geo35-g121 · the water: 3 < π < 3.5 gives 72 < 24π < 84, which decides every choice (no 24 × 3.14 ≈ 75.4)
+    v = 'solve-geo35-g121'
+    if not _nd_recorded(v):
+        _nd_item(M, v, 'The water in the cone', r'$24\pi\approx24\times3.14\approx75.4$',
+                 r'$3<\pi<3.5\;\Rightarrow\;72<24\pi<84$', label='72 < 24π < 84 appears')
+        _nd_lines(M, v, 'The water in the cone', [
+            ('say', "How much is that roughly? 24 times 3.14 — 72 plus 3.36. About 75.4. Remember that number — it's the water.",
+             ["How much is that? Pi is more than 3 and less than three and a half.",
+              "24 times 3 is 72. 24 times three and a half is 84. So the water is more than 72 and less than 84. Remember those two numbers."])])
+        _nd_item(M, v, 'Go through the choices', r'Cube: $4^3=64<75.4$', r'Cube: $4^3=64<72$')
+        _nd_item(M, v, 'Go through the choices', r'Pyramid: $\frac{6^2\cdot7}{3}=84$', r'Pyramid: $\frac{6^2\cdot7}{3}=84>24\pi$')
+        _nd_lines(M, v, 'Go through the choices', [
+            ('say', "4 cubed — 64. Less than the water.", "4 cubed — 64. Less than 72 — less than the water."),
+            ('say', "84 is more than 75.4. This pyramid can hold all the water.",
+             "84. And the water is less than 84. This pyramid can hold all of it.")])
+        _nd_item(M, v, 'In the lesson: the rest', r'Box: $6\cdot4\cdot3=72<75.4$', r'Box: $6\cdot4\cdot3=72<24\pi$')
+        _nd_lines(M, v, 'In the lesson: the rest', [
+            ('say', "Careful — that one's close. If you round π to 3, the water is 72 and the box suddenly looks big enough. Use 3.14.",
+             "Careful — that one's close. Pi is MORE than 3, not equal to 3. So the water is a bit more than 72 — the box is just too small.")])
+    _nd_expl(M, 'geo35-g121', [
+        (0, 'The cone holds', 'The cone holds $\\frac{\\pi(\\sqrt6)^2\\cdot12}{3}=24\\pi$ cm³ of water. Since $3<\\pi<3.5$: '
+                              '$24\\cdot3<24\\pi<24\\cdot3.5$, so the water is more than $72$ and less than $84$.'),
+        (1, 'Check each container.', 'Check each container. The cube (choice 1): $4^3=64$, too small. The pyramid (choice 2): '
+                                     '$\\frac{6^2\\times7}{3}=84$, more than $24\\pi$: big enough. The box (choice 3): $6\\times4\\times3=72$, '
+                                     'less than $24\\pi$: too small. The cylinder (choice 4): $\\pi(\\sqrt2)^2\\times10=20\\pi$, less than $24\\pi$.'),
+        (2, 'Only the pyramid', 'Only the pyramid (84 cm³) can hold all the water. Careful with π: it is more than 3, so the water is '
+                                'more than 72, and the box (72) is just too small.')])
+    # solve-geo35-g126 · Estimate: π > 3 so π/2 > 3/2 > 1 (no 1.57)
+    v = 'solve-geo35-g126'
+    if not _nd_recorded(v):
+        _nd_item(M, v, 'Approach 3 · Estimate', r'$1-\frac{\pi}{2}\approx1-1.57<0$',
+                 r'$\frac{\pi}{2}>\frac{3}{2}>1\;\Rightarrow\;1-\frac{\pi}{2}<0$', label='π/2 > 3/2 > 1 → 1 − π/2 < 0 appears')
+        _nd_lines(M, v, 'Approach 3 · Estimate', [
+            ('say', "Choice two: pi over 2 is about 1.57. 1 minus 1.57 — negative. A part of the box can't be a negative fraction.",
+             "Choice two: pi is more than 3, so pi over 2 is more than one and a half. 1 minus that — negative. A part of the box can't be a negative fraction.")])
+    # solve-geo35-g128 · Estimate: 7√2 is more than 7 (no 9.8)
+    v = 'solve-geo35-g128'
+    if not _nd_recorded(v):
+        _nd_lines(M, v, 'Approach 2 · Estimate', [
+            ('draw', 'Cross out choice 1 (7√2 ≈ 9.8)', 'Cross out choice 1 (7√2 > 7)'),
+            ('say', "7 root 2 — root 2 is about 1.4. About 9.8. Too big. Out.",
+             "7 root 2 — root 2 is more than 1, so this is more than 7. Too big. Out.")])
+
+
+_apply_before_no_decimal_estimates = apply
+
+
+def apply(M):
+    _apply_before_no_decimal_estimates(M)
+    no_decimal_estimates(M)   # 2026-10-07 no decimal estimates: runs last

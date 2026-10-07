@@ -1081,7 +1081,7 @@
   },
   "geo-175#4": {
    "t": "Farthest apart",
-   "d": "greatest distance — polygon: a corner (diagonal); circle: the diameter; cylinder: √(h² + d²), use the diameter not the radius"
+   "d": "greatest distance — polygon: a corner (diagonal); circle: the diameter; cylinder: √(h² + d²) = √145 > √144 = 12, use the diameter not the radius"
   },
   "geo-177#1": {
    "t": "Diagrams that can change",
@@ -1839,7 +1839,7 @@
   },
   "solve-geo33-g096#2": {
    "t": "Method 3 · Estimate",
-   "d": "the power count from algebra: perimeter ÷ perimeter has power 0, so no r can stay"
+   "d": "the power count from algebra: perimeter ÷ perimeter has power 0, so no r can stay; board π > 3 → (π+2)/3 > 5/3 instead of 5.14/3 ≈ 1.7"
   },
   "solve-geo33-g102#2": {
    "t": "Method 2 · Plug in numbers",
@@ -1867,7 +1867,7 @@
   },
   "solve-geo35-g126#2": {
    "t": "Approach 3 · Estimate",
-   "d": "the power count from algebra: volume ÷ volume has power 0; 1 − πk/4 mixes powers"
+   "d": "the power count from algebra: volume ÷ volume has power 0; 1 − πk/4 mixes powers; π/2 > 3/2 > 1 so 1 − π/2 < 0 (no 1.57)"
   },
   "solve-geo35-g129#3": {
    "t": "Three angles in a cube",
@@ -1923,7 +1923,7 @@
   },
   "solve-geo38-g183#0": {
    "t": "AC against AB",
-   "d": "4 and 8 with 60° is not equilateral; at 70° AC is even longer"
+   "d": "4 and 8 with 60° is not equilateral; AC = 4√3 = √48 (no 6.9); at 70° AC is even longer"
   },
   "solve-geo38-g183#1": {
    "t": "Angle opening",
@@ -2872,6 +2872,46 @@
   "solve-q-300#1": {
    "t": "Method 2 · Try a choice",
    "d": "try the choice that makes y simple instead of estimating roots to one decimal"
+  },
+  "solve-geo33-g094#3": {
+   "t": "Estimate the size",
+   "d": "estimate with 3 < π < 4 only: 9π > 27 (choice 1 negative), 18π − 18 > 36, 72 − 9π > 36, 36 − 9π between 0 and 9 — no 56.5 / 43.7 / 7.7"
+  },
+  "solve-geo33-g100#1": {
+   "t": "Method 2 · Estimate",
+   "d": "2π is 6-plus, under 8 — no \"about 6.3\""
+  },
+  "geo-079#3": {
+   "t": "π is a number",
+   "d": "the exam fact about π: more than 3 and less than three and a half"
+  },
+  "solve-geo34-g111#2": {
+   "t": "The hexagon is the balance",
+   "d": "2πr is less than 7 radii because π < 3.5 — no \"about 6.28 radii\""
+  },
+  "solve-geo34-g112#2": {
+   "t": "Psychometric · Estimate",
+   "d": "compare each choice with 42 without decimals: divide (24√3 ÷ 6 = 4√3 = √48 < 7; 28√2 ÷ 14 = 2√2 = √8 < 3; 2√3 = √12 > 3)"
+  },
+  "solve-geo35-g121#0": {
+   "t": "The water in the cone",
+   "d": "3 < π < 3.5 gives 72 < 24π < 84 — no 24 × 3.14 ≈ 75.4"
+  },
+  "solve-geo35-g121#1": {
+   "t": "Go through the choices",
+   "d": "cube 64 < 72, pyramid 84 > 24π — decided by 72 < 24π < 84"
+  },
+  "solve-geo35-g121#2": {
+   "t": "In the lesson: the rest",
+   "d": "the box (72) is just too small because π is MORE than 3"
+  },
+  "solve-geo35-g128#2": {
+   "t": "Approach 2 · Estimate",
+   "d": "7√2 is more than 7 (√2 > 1) — no 9.8"
+  },
+  "solve-geo37-g164#3": {
+   "t": "Estimating sizes",
+   "d": "no decimals: 8√2 = √128 < 12 < 4π; 16π < 56; 32π < 128 and 64√2 < 96 are under 144"
   }
  }
 }

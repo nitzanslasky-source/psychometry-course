@@ -190,3 +190,12 @@ scan checked). No errors found, no changes made. `math_check.py 34 35 36 37 38 3
 
 ## 2026-10-07 methods spread
 - Checked every question for the 2026-10-06 methods: the written solutions already use the same ideas (two-figures test, extremes, symmetry). No change.
+
+
+## 2026-10-07 no decimal estimates
+Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
+- solve-geo38-g183 "AC against AB": 4√3 ≈ 6.9 -> 4√3 = √48 (almost √49 = 7); "longer than 6.9" -> "longer than √48".
+- geo-175 "Farthest apart": board √145 ≈ 12.04 -> √145 > √144 = 12 (spoken already said "just over 12").
+- q-r26-t38-12 (written): 4√5 ≈ 8.9 -> √80 > √64 = 8.
+- geo38-core-p08 (written): perimeters ≈ 28.8 and ≈ 30.5 -> Figure 1 (6 + 6): 4√52 = √832 < √900 = 30; Figure 2 is now cut 1 + 11: 2√17 + 2√137 > 8 + 22 = 30.
+Check: `python3 math_check.py 38 32` -> 0 / 0 / 0. Rendered and looked at.

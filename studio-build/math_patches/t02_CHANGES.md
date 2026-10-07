@@ -167,3 +167,9 @@ Function `spread_methods` (runs last; append only). 2 practice questions, phrase
 - Shortcut: shares as weights: q-r26-t02-24 (glasses, 3/5 girls). 1/4 + 2/5·(1/2 − 1/4) = 7/20; sense check: more girls → below the middle 3/8 → only 7/20.
 No slides (no unrecorded solution videos).
 All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-07 no decimal estimates
+Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
+- q-r26-t02-19 (written): "5/11 ≈ 0.45, 8/15 ≈ 0.53, 4/9 ≈ 0.44, sum about 1.43" -> two a little under ½, one a little over, so the sum stays near 1½. Video solve-q-r26-t02-19 is recorded and has no decimals.
+Check: `python3 math_check.py 2 32` -> 0 / 0 / 0.

@@ -216,3 +216,11 @@ an opening (same counting idea, ratio 1/2).
 
 ## 2026-10-07 methods spread
 - Checked every question for the 2026-10-06 methods: none is faster or new here (the plug-in questions already plug in). No change.
+
+
+## 2026-10-07 no decimal estimates
+Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
+- solve-geo34-g111 "The hexagon is the balance": "2πr — about 6.28 radii" -> π < 3.5, so less than 7 radii (one line split into two).
+- solve-geo34-g112 "Psychometric · Estimate": √3 ≈ 1.7 / 24 × 1.75 / 28 × 1.5 -> divide both sides, then a factor into the root: 24√3 ÷ 6 = 4√3 = √48 < 7; 24√2 is smaller still; 28√2 ÷ 14 = 2√2 = √8 < 3; 28√3: 2√3 = √12 > 3. Board by click, pen only for marks/cross-outs. 19 lines (was 19).
+- Left: solve-geo34-g114 / geo34-g114 "1 + 1.4 against 2" (the taught √2 ≈ 1.4).
+Check: `python3 math_check.py 34 32` -> 0 / 0 / 0. Rendered and looked at.

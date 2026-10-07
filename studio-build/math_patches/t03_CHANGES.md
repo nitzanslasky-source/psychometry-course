@@ -267,3 +267,9 @@ Function `spread_methods` (runs last; append only). 1 question:
 - Shortcut: the mirror test: q-096 (0 < m/n < 1, recorded video solve-q-096 unchanged). (m, n) → (−m, −n) keeps the given; choices 2 and 4 turn into each other's opposite → out; m = 1, n = 3 kills choice 1 → choice 3.
 Checked, not added: power count on q-093, q-094, q-082, q-098 (all choices have the question's power 0). The unrecorded video solve-q-fraction-compare (compare with ½) has no fitting method, so no slide.
 All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-07 no decimal estimates
+Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
+- q-088 (written): 7/11 ≈ 0.64 -> 7/11 < 8/10 (70 < 88). q-089: the 3-decimal check (1.083 vs 1.087) is removed; the cross-multiplying line stays. q-090: "(Decimals: 0.12, about 0.122, about 0.129)" removed. alg-extra-unit-t3-1-3: 7/3 ≈ 2.33, 7/6 ≈ 1.17 -> 2⅓ and 1⅙.
+Check: `python3 math_check.py 3 32` -> 0 / 0 / 0.

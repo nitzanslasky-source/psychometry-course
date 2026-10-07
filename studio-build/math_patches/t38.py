@@ -1696,3 +1696,94 @@ _apply_before_renumber = apply
 def apply(M):
     _apply_before_renumber(M)
     renumber_pass(M)   # 2026-10-06 renumber pass: runs last
+
+
+# ===================================================================================================================
+# 2026-10-07 no decimal estimates. Teacher: a student can't estimate roots or π to one decimal place. Estimates use
+# whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5) or another method.
+# Recorded videos are never changed (any take in ~/Documents/Course.recordings).
+import glob as _nd_glob, os as _nd_os, re as _nd_re
+
+
+def _nd_recorded(vid):
+    # only takes recorded BEFORE this change was first built (2026-10-07 12:40Z) keep the old video; takes recorded
+    # later were made with the rewritten slides, so the rewrite must stay
+    pat = _nd_re.compile(_nd_re.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in _nd_glob.glob(_nd_os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(_nd_os.path.basename(f))
+        if m and m.group(1) < '2026-10-07T12-40-00': return True
+    return False
+
+
+def _nd_n(M, vid, title):
+    ns = [i for i, b in enumerate(M.video(vid)['beats'], 1) if b['title'] == title]
+    assert len(ns) == 1, (vid, title, ns)
+    return ns[0]
+
+
+def _nd_lines(M, vid, title, subs):
+    """subs: [(kind, old, new)], kind 'say' or 'draw'; new is a str or a list of str of the same kind."""
+    n = _nd_n(M, vid, title)
+
+    def fn(ls):
+        ls = list(ls)
+        for kind, old, new in subs:
+            k = [i for i, l in enumerate(ls) if l.get(kind) == old]
+            assert len(k) == 1, (vid, title, old)
+            ls[k[0]:k[0] + 1] = [{kind: x} for x in ([new] if isinstance(new, str) else new)]
+        return ls
+    M.edit_lines(vid, n, fn)
+
+
+def _nd_item(M, vid, title, old_t, new_t, label=None):
+    n = _nd_n(M, vid, title); b = M.slide(vid, n)
+    k = [i for i, it in enumerate(b['items']) if it.get('t') == old_t]
+    assert len(k) == 1, (vid, title, old_t)
+    b['items'][k[0]]['t'] = new_t
+    if label is not None:
+        for l in b['lines']:
+            if l.get('appear') == k[0]: l['label'] = label
+    M.touched_videos.add(vid)
+
+
+def _nd_expl(M, qid, subs):
+    """subs: [(index, old_start, new)]; new None drops the paragraph."""
+    ex = list(M.q(qid)['explanation'])
+    for i, start, new in sorted(subs, key=lambda x: -x[0]):
+        assert ex[i].startswith(start), (qid, i, ex[i][:70])
+        if new is None: ex.pop(i)
+        else: ex[i] = new
+    M.set_q(qid, expl=ex)
+
+
+def no_decimal_estimates(M):
+    # solve-geo38-g183 · the 60° anchor: AC = 4√3 = √48 (no 6.9)
+    v = 'solve-geo38-g183'
+    if not _nd_recorded(v):
+        _nd_item(M, v, 'AC against AB', r'$60°$ with sides $4, 8$: a $30°$-$60°$-$90°$ triangle, $AC=4\sqrt3\approx6.9$',
+                 r'$60°$ with sides $4, 8$: a $30°$-$60°$-$90°$ triangle, $AC=4\sqrt3=\sqrt{48}$')
+        _nd_lines(M, v, 'AC against AB', [
+            ('say', "8 is twice 4. It's the 30-60-90 triangle: the right angle is at A, and AC is 4 root 3 — about 6.9.",
+             "8 is twice 4. It's the 30-60-90 triangle: the right angle is at A, and AC is 4 root 3 — root 48. Almost root 49, which is 7."),
+            ('say', "Our angle is 70 — wider than 60. The angle opened, and AC got even longer than 6.9.",
+             "Our angle is 70 — wider than 60. The angle opened, and AC got even longer than root 48.")])
+    # geo-175 · Farthest apart: √145 is just over √144 = 12 (board had 12.04)
+    v = 'geo-175'
+    if not _nd_recorded(v):
+        _nd_item(M, v, 'Farthest apart', r'Cylinder $h=9$, $r=4$: $\sqrt{9^2+8^2}=\sqrt{145}\approx12.04$',
+                 r'Cylinder $h=9$, $r=4$: $\sqrt{9^2+8^2}=\sqrt{145}>\sqrt{144}=12$')
+    _nd_expl(M, 'q-r26-t38-12', [(1, '$EB=2$',
+             '$EB=2$ and $EC=10-2=8$. $EA=\\sqrt{2^2+4^2}=\\sqrt{20}=2\\sqrt5$. $ED=\\sqrt{8^2+4^2}=\\sqrt{80}=4\\sqrt5$, more than $\\sqrt{64}=8$.')])
+    _nd_expl(M, 'geo38-core-p08', [
+        (2, 'Figure 1:', 'Figure 1: PR is cut into $6+6$. All four sides are $\\sqrt{6^2+4^2}=\\sqrt{52}$. '
+                         'Perimeter $4\\sqrt{52}=\\sqrt{16\\cdot52}=\\sqrt{832}$, less than $\\sqrt{900}=30$.'),
+        (3, 'Figure 2:', 'Figure 2: PR is cut into $1+11$. The sides are $\\sqrt{1^2+4^2}=\\sqrt{17}$ and $\\sqrt{11^2+4^2}=\\sqrt{137}$. '
+                         'Perimeter $2\\sqrt{17}+2\\sqrt{137}$, more than $2\\sqrt{16}+2\\sqrt{121}=8+22=30$.')])
+
+
+_apply_before_no_decimal_estimates = apply
+
+
+def apply(M):
+    _apply_before_no_decimal_estimates(M)
+    no_decimal_estimates(M)   # 2026-10-07 no decimal estimates: runs last

@@ -190,3 +190,9 @@ Note: g169 passes through (3, −5) and p16 through (5, −3) — different ques
 Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
 - geo37-core-p13: "Shortcut · Pick values that fit" → "Method 2 · Pick values that fit" (topic 51 is day 6).
 `python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-07 no decimal estimates
+Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
+- solve-geo37-g164 "Estimating sizes": 8√2 − 4π ≈ 11.3 − 12.6, 16π about 50, "about 92 / about 65" -> 8√2 = √128 < 12 < 4π; 16π < 56; 32π < 128 and 64√2 < 96 (√2 < 1.5), both under 144.
+Check: `python3 math_check.py 37 32` -> 0 / 0 / 0. Rendered and looked at.

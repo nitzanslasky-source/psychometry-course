@@ -1808,3 +1808,107 @@ def renumber_pass(M):
     rn_practice_questions(M)
     rn_practice(M)
     _rn_sync(M)
+
+
+# ===================================================================================================================
+# 2026-10-07 no decimal estimates. Teacher: a student can't estimate roots or π to one decimal place. Estimates use
+# whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5) or another method.
+# Recorded videos are never changed (any take in ~/Documents/Course.recordings).
+import glob as _nd_glob, os as _nd_os, re as _nd_re
+
+
+def _nd_recorded(vid):
+    # only takes recorded BEFORE this change was first built (2026-10-07 12:40Z) keep the old video; takes recorded
+    # later were made with the rewritten slides, so the rewrite must stay
+    pat = _nd_re.compile(_nd_re.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in _nd_glob.glob(_nd_os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(_nd_os.path.basename(f))
+        if m and m.group(1) < '2026-10-07T12-40-00': return True
+    return False
+
+
+def _nd_n(M, vid, title):
+    ns = [i for i, b in enumerate(M.video(vid)['beats'], 1) if b['title'] == title]
+    assert len(ns) == 1, (vid, title, ns)
+    return ns[0]
+
+
+def _nd_lines(M, vid, title, subs):
+    """subs: [(kind, old, new)], kind 'say' or 'draw'; new is a str or a list of str of the same kind."""
+    n = _nd_n(M, vid, title)
+
+    def fn(ls):
+        ls = list(ls)
+        for kind, old, new in subs:
+            k = [i for i, l in enumerate(ls) if l.get(kind) == old]
+            assert len(k) == 1, (vid, title, old)
+            ls[k[0]:k[0] + 1] = [{kind: x} for x in ([new] if isinstance(new, str) else new)]
+        return ls
+    M.edit_lines(vid, n, fn)
+
+
+def _nd_item(M, vid, title, old_t, new_t, label=None):
+    n = _nd_n(M, vid, title); b = M.slide(vid, n)
+    k = [i for i, it in enumerate(b['items']) if it.get('t') == old_t]
+    assert len(k) == 1, (vid, title, old_t)
+    b['items'][k[0]]['t'] = new_t
+    if label is not None:
+        for l in b['lines']:
+            if l.get('appear') == k[0]: l['label'] = label
+    M.touched_videos.add(vid)
+
+
+def _nd_expl(M, qid, subs):
+    """subs: [(index, old_start, new)]; new None drops the paragraph."""
+    ex = list(M.q(qid)['explanation'])
+    for i, start, new in sorted(subs, key=lambda x: -x[0]):
+        assert ex[i].startswith(start), (qid, i, ex[i][:70])
+        if new is None: ex.pop(i)
+        else: ex[i] = new
+    M.set_q(qid, expl=ex)
+
+
+def no_decimal_estimates(M):
+    # solve-geo34-g111 · the hexagon balance: 2πr is less than 7 radii (π < 3.5), not "about 6.28"
+    v = 'solve-geo34-g111'
+    if not _nd_recorded(v):
+        _nd_lines(M, v, 'The hexagon is the balance', [
+            ('say', "Go up to seven sides: seven radii. The whole circumference is 2 pi r — about 6.28 radii — and the polygon is even less. So seven radii are bigger.",
+             ["Go up to seven sides: seven radii. The whole circumference is 2 pi r. Pi is less than three and a half — so that's less than 7 radii.",
+              "And the polygon is even less. So seven radii are bigger."])])
+    # solve-geo34-g112 · Estimate: compare each choice with 42 by dividing, then a factor into the root (no 1.7 / 1.75)
+    v = 'solve-geo34-g112'
+    if not _nd_recorded(v):
+        n = _nd_n(M, v, 'Psychometric · Estimate'); b = M.slide(v, n)
+        q = dict(b['items'][0]); p42 = dict(b['items'][1]); assert p42['t'] == '$P>42$'
+        box = lambda t, y: T(t, size=34, x=1060, y=y, w=470)
+        M.set_slide(v, n, pre=[q], script=[
+            "Now the psychometric solution — estimating the size.",
+            "The hexagon's perimeter MUST be bigger than the triangle's. Why?",
+            D('Mark AF, FE and AE'),
+            "In triangle AFE: AF plus FE is greater than AE — two sides are always greater than the third.",
+            "Same in the other two corner triangles. So the hexagon's perimeter is greater than 42.",
+            A('P > 42 appears', p42),
+            "Now compare each answer with 42. No decimals: make the numbers small first.",
+            A('24√3 ÷ 6 = 4√3 = √48 < 7 appears', box(r'$\frac{24\sqrt3}{6}=4\sqrt3=\sqrt{48}<\sqrt{49}=7$', 330)),
+            "24 root 3 against 42: divide both by 6. 4 root 3 against 7.",
+            "Bring the 4 into the root: root 48. And 7 is root 49. Less — so 24 root 3 is under 42. Out.",
+            D('Cross out choice 3'),
+            "24 root 2 is even smaller than 24 root 3. Out.",
+            D('Cross out choice 1'),
+            A('28√2 ÷ 14 = 2√2 = √8 < 3 appears', box(r'$\frac{28\sqrt2}{14}=2\sqrt2=\sqrt8<\sqrt9=3$', 410)),
+            "28 root 2 against 42: divide both by 14. 2 root 2 against 3.",
+            "2 root 2 is root 8. 3 is root 9. Less — out.",
+            D('Cross out choice 4'),
+            "And 28 root 3: 2 root 3 is root 12 — more than root 9. So it's more than 42. Possible.",
+            D('Circle choice 2'),
+            "Three out — choice two.",
+        ])
+
+
+_apply_before_no_decimal_estimates = apply
+
+
+def apply(M):
+    _apply_before_no_decimal_estimates(M)
+    no_decimal_estimates(M)   # 2026-10-07 no decimal estimates: runs last

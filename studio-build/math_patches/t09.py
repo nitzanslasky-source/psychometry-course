@@ -1226,3 +1226,87 @@ _apply_before_hebrew_backcheck = apply
 def apply(M):
     _apply_before_hebrew_backcheck(M)
     hebrew_backcheck(M)   # 2026-10-06 Hebrew back-check: runs last
+
+
+# ===================================================================================================================
+# 2026-10-07 no decimal estimates. Teacher: a student can't estimate roots or π to one decimal place. Estimates use
+# whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5) or another method.
+# Recorded videos are never changed (any take in ~/Documents/Course.recordings).
+import glob as _nd_glob, os as _nd_os, re as _nd_re
+
+
+def _nd_recorded(vid):
+    # only takes recorded BEFORE this change was first built (2026-10-07 12:40Z) keep the old video; takes recorded
+    # later were made with the rewritten slides, so the rewrite must stay
+    pat = _nd_re.compile(_nd_re.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in _nd_glob.glob(_nd_os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(_nd_os.path.basename(f))
+        if m and m.group(1) < '2026-10-07T12-40-00': return True
+    return False
+
+
+def _nd_n(M, vid, title):
+    ns = [i for i, b in enumerate(M.video(vid)['beats'], 1) if b['title'] == title]
+    assert len(ns) == 1, (vid, title, ns)
+    return ns[0]
+
+
+def _nd_lines(M, vid, title, subs):
+    """subs: [(kind, old, new)], kind 'say' or 'draw'; new is a str or a list of str of the same kind."""
+    n = _nd_n(M, vid, title)
+
+    def fn(ls):
+        ls = list(ls)
+        for kind, old, new in subs:
+            k = [i for i, l in enumerate(ls) if l.get(kind) == old]
+            assert len(k) == 1, (vid, title, old)
+            ls[k[0]:k[0] + 1] = [{kind: x} for x in ([new] if isinstance(new, str) else new)]
+        return ls
+    M.edit_lines(vid, n, fn)
+
+
+def _nd_item(M, vid, title, old_t, new_t, label=None):
+    n = _nd_n(M, vid, title); b = M.slide(vid, n)
+    k = [i for i, it in enumerate(b['items']) if it.get('t') == old_t]
+    assert len(k) == 1, (vid, title, old_t)
+    b['items'][k[0]]['t'] = new_t
+    if label is not None:
+        for l in b['lines']:
+            if l.get('appear') == k[0]: l['label'] = label
+    M.touched_videos.add(vid)
+
+
+def _nd_expl(M, qid, subs):
+    """subs: [(index, old_start, new)]; new None drops the paragraph."""
+    ex = list(M.q(qid)['explanation'])
+    for i, start, new in sorted(subs, key=lambda x: -x[0]):
+        assert ex[i].startswith(start), (qid, i, ex[i][:70])
+        if new is None: ex.pop(i)
+        else: ex[i] = new
+    M.set_q(qid, expl=ex)
+
+
+def no_decimal_estimates(M):
+    _nd_expl(M, 'q-245', [
+        (0, 'Estimate each number.', 'Compare each number with $3$. $\\sqrt[3]{25}$ is less than $\\sqrt[3]{27}=3$.'),
+        (1, '$\\sqrt{10}$ is a little more', '$\\sqrt{10}$ is more than $\\sqrt9=3$. And $\\pi$ is more than $3$.'),
+        (2, 'Order:', 'Only $\\sqrt[3]{25}$ is less than $3$, so it is the smallest. Choice 2.')])
+    _nd_expl(M, 'q-246', [
+        (0, '$\\sqrt5\\approx2.24$', 'Square the choices: $2.2^2=4.84$ and $2.3^2=5.29$. $5$ is between them, so $\\sqrt5$ is between $2.2$ and $2.3$. Choices 1 and 4 are out.'),
+        (1, 'Check without the estimate:', 'Which one is closer? The middle between $2.2$ and $2.3$ is $2.25$, and $2.25^2=5.0625>5$. Therefore, $\\sqrt5<2.25$, closer to $2.2$.')])
+    _nd_expl(M, 'q-r26-t09-09', [
+        (1, '$0.5^2=0.25$', '$0.5^2=0.25<0.5$, and $\\sqrt{0.5}>\\sqrt{0.25}=0.5$. Therefore $0.5^2<0.5<\\sqrt{0.5}$.')])
+    # roots card: the "Useful estimates" row gave 2-decimal roots; keep the two the course teaches (√2 ≈ 1.4, √3 ≈ 1.7),
+    # the rest as whole-number brackets
+    c = M.card('roots')
+    t = [x for x in c['tables'] if x.get('title') == 'Useful estimates']
+    assert len(t) == 1 and t[0]['rows'][0][2] == '$\\sqrt5\\approx2.24$', 'roots card: Useful estimates row changed'
+    t[0]['rows'] = [['$\\sqrt2\\approx1.4$', '$\\sqrt3\\approx1.7$', '$2<\\sqrt5<3$', '$2<\\sqrt7<3$', '$3<\\sqrt{10}<4$']]
+
+
+_apply_before_no_decimal_estimates = apply
+
+
+def apply(M):
+    _apply_before_no_decimal_estimates(M)
+    no_decimal_estimates(M)   # 2026-10-07 no decimal estimates: runs last

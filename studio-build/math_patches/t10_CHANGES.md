@@ -290,3 +290,9 @@ All new lines verified numerically (python: power by scaling, fitting values, ch
 Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
 - q-278: "Method 2 · Power count" → self-contained "Shortcut · Power count" (topic 10, days 1–5, comes before topic 5, day 13).
 `python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-07 no decimal estimates
+Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
+- q-284 (written): 3^1.5 ≈ 5.2 -> 3^1.5 = √27 > √25 = 5, so not 4.5.
+Check: `python3 math_check.py 10 32` -> 0 / 0 / 0.

@@ -197,3 +197,9 @@ of 7 / 1), not a Hebrew number; f-p18 changed 4 × 5 → 3 × 4 so the small sid
 
 ## 2026-10-07 methods spread
 - spread_methods() runs last. Q3 (geo32-g048): a Shortcut · Pick values that fit line (α = β = 18°, a rectangle) and a new slide 4 in its video "Shortcut · Pick values that fit" (about 0.4 min). Shortcut · Pick values that fit lines in geo32-advanced-p05 (half a regular hexagon) and geo32-advanced-p13 (both triangles equilateral). Nothing recorded.
+
+
+## 2026-10-07 no decimal estimates
+Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
+- geo32-foundation-p07 (written): 11√2 ≈ 15.6 -> 11√2 = √242 < √256 = 16.
+Check: `python3 math_check.py 32` -> 0 / 0 / 0.

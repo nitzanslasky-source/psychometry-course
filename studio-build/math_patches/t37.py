@@ -2474,3 +2474,86 @@ _apply_before_plan_order_fix = apply
 def apply(M):
     _apply_before_plan_order_fix(M)
     plan_order_fix(M)   # 2026-10-07 study-plan order: runs last
+
+
+# ===================================================================================================================
+# 2026-10-07 no decimal estimates. Teacher: a student can't estimate roots or π to one decimal place. Estimates use
+# whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5) or another method.
+# Recorded videos are never changed (any take in ~/Documents/Course.recordings).
+import glob as _nd_glob, os as _nd_os, re as _nd_re
+
+
+def _nd_recorded(vid):
+    # only takes recorded BEFORE this change was first built (2026-10-07 12:40Z) keep the old video; takes recorded
+    # later were made with the rewritten slides, so the rewrite must stay
+    pat = _nd_re.compile(_nd_re.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in _nd_glob.glob(_nd_os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(_nd_os.path.basename(f))
+        if m and m.group(1) < '2026-10-07T12-40-00': return True
+    return False
+
+
+def _nd_n(M, vid, title):
+    ns = [i for i, b in enumerate(M.video(vid)['beats'], 1) if b['title'] == title]
+    assert len(ns) == 1, (vid, title, ns)
+    return ns[0]
+
+
+def _nd_lines(M, vid, title, subs):
+    """subs: [(kind, old, new)], kind 'say' or 'draw'; new is a str or a list of str of the same kind."""
+    n = _nd_n(M, vid, title)
+
+    def fn(ls):
+        ls = list(ls)
+        for kind, old, new in subs:
+            k = [i for i, l in enumerate(ls) if l.get(kind) == old]
+            assert len(k) == 1, (vid, title, old)
+            ls[k[0]:k[0] + 1] = [{kind: x} for x in ([new] if isinstance(new, str) else new)]
+        return ls
+    M.edit_lines(vid, n, fn)
+
+
+def _nd_item(M, vid, title, old_t, new_t, label=None):
+    n = _nd_n(M, vid, title); b = M.slide(vid, n)
+    k = [i for i, it in enumerate(b['items']) if it.get('t') == old_t]
+    assert len(k) == 1, (vid, title, old_t)
+    b['items'][k[0]]['t'] = new_t
+    if label is not None:
+        for l in b['lines']:
+            if l.get('appear') == k[0]: l['label'] = label
+    M.touched_videos.add(vid)
+
+
+def _nd_expl(M, qid, subs):
+    """subs: [(index, old_start, new)]; new None drops the paragraph."""
+    ex = list(M.q(qid)['explanation'])
+    for i, start, new in sorted(subs, key=lambda x: -x[0]):
+        assert ex[i].startswith(start), (qid, i, ex[i][:70])
+        if new is None: ex.pop(i)
+        else: ex[i] = new
+    M.set_q(qid, expl=ex)
+
+
+def no_decimal_estimates(M):
+    # solve-geo37-g164 · Estimating sizes: √128 < 12 < 4π, and upper bounds with π < 4, √2 < 1.5 (no 11.3 / 12.6 / 92 / 65)
+    v = 'solve-geo37-g164'
+    if not _nd_recorded(v):
+        _nd_item(M, v, 'Estimating sizes', r'$8\sqrt2-4\pi\approx11.3-12.6<0$',
+                 r'$8\sqrt2=\sqrt{128}<12<4\pi$', label='8√2 = √128 < 12 < 4π appears')
+        _nd_lines(M, v, 'Estimating sizes', [
+            ('say', "Choice one: 8 root 2 is a bit over 11. 4 pi is a bit over 12.5. So it's negative! An area can't be negative — out, with no calculating.",
+             ["Choice one: bring the 8 into the root — 8 root 2 is root 128. Less than root 144, which is 12. And 4 pi is more than 12.",
+              "So it's negative! An area can't be negative — out, with no calculating."]),
+            ('say', "You may want to compare the top shaded piece with the 8-by-8 square. That's not reliable here: the top piece is an eighth of the circle — 16 pi, about 50 — smaller than the square, 64.",
+             "You may want to compare the top shaded piece with the 8-by-8 square. That's not reliable here: the top piece is an eighth of the circle — 16 pi, less than 16 times three and a half, 56 — smaller than the square, 64."),
+            ('say', "32 pi minus 8 is about 92. 64 root 2 minus 8 pi is about 65. Both too small. Choice four.",
+             ["32 pi is less than 32 times 4 — 128. And 64 root 2 is less than 64 times one and a half — 96.",
+              "Both are under 144 — too small. Choice four."])])
+
+
+_apply_before_no_decimal_estimates = apply
+
+
+def apply(M):
+    _apply_before_no_decimal_estimates(M)
+    no_decimal_estimates(M)   # 2026-10-07 no decimal estimates: runs last

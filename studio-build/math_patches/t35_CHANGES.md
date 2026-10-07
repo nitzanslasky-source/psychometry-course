@@ -172,3 +172,12 @@ scan checked). No errors found, no changes made. `math_check.py 34 35 36 37 38 3
 
 ## 2026-10-07 methods spread
 - spread_methods() runs last. Method 2 · Compare by factors lines in Q3 (geo35-g122) and q-r26-t35-05; Method 2 · Power count lines in Q7 (geo35-g126) and geo35-core-p02. One spoken line on slide 4 of the Q7 video names the power count. No new slides (both videos already show the idea). Nothing recorded.
+
+
+## 2026-10-07 no decimal estimates
+Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
+- solve-geo35-g121 (3 slides) + written: 24π ≈ 24 × 3.14 ≈ 75.4 and "use 3.14" -> 3 < π < 3.5 gives 72 < 24π < 84: cube 64 out, box 72 out (π is MORE than 3), pyramid 84 fits, cylinder 20π < 24π.
+- solve-geo35-g126 Approach 3: π/2 ≈ 1.57 -> π > 3 so π/2 > 3/2 > 1, 1 − π/2 < 0.
+- solve-geo35-g128 Approach 2: 7√2 ≈ 9.8 -> 7√2 > 7.
+- Left: geo35-core-p13 / geo35-g131 trap notes (1000 ÷ 5π ≈ 63.7, 1782 ÷ 64 ≈ 27.8) only describe how the wrong choice is made.
+Check: `python3 math_check.py 35 32` -> 0 / 0 / 0. Rendered and looked at.

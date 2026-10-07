@@ -2972,3 +2972,124 @@ _apply_before_plan_order_fix = apply
 def apply(M):
     _apply_before_plan_order_fix(M)
     plan_order_fix(M)   # 2026-10-07 study-plan order: runs last
+
+
+# ===================================================================================================================
+# 2026-10-07 no decimal estimates. Teacher: a student can't estimate roots or π to one decimal place. Estimates use
+# whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5) or another method.
+# Recorded videos are never changed (any take in ~/Documents/Course.recordings).
+import glob as _nd_glob, os as _nd_os, re as _nd_re
+
+
+def _nd_recorded(vid):
+    # only takes recorded BEFORE this change was first built (2026-10-07 12:40Z) keep the old video; takes recorded
+    # later were made with the rewritten slides, so the rewrite must stay
+    pat = _nd_re.compile(_nd_re.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in _nd_glob.glob(_nd_os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(_nd_os.path.basename(f))
+        if m and m.group(1) < '2026-10-07T12-40-00': return True
+    return False
+
+
+def _nd_n(M, vid, title):
+    ns = [i for i, b in enumerate(M.video(vid)['beats'], 1) if b['title'] == title]
+    assert len(ns) == 1, (vid, title, ns)
+    return ns[0]
+
+
+def _nd_lines(M, vid, title, subs):
+    """subs: [(kind, old, new)], kind 'say' or 'draw'; new is a str or a list of str of the same kind."""
+    n = _nd_n(M, vid, title)
+
+    def fn(ls):
+        ls = list(ls)
+        for kind, old, new in subs:
+            k = [i for i, l in enumerate(ls) if l.get(kind) == old]
+            assert len(k) == 1, (vid, title, old)
+            ls[k[0]:k[0] + 1] = [{kind: x} for x in ([new] if isinstance(new, str) else new)]
+        return ls
+    M.edit_lines(vid, n, fn)
+
+
+def _nd_item(M, vid, title, old_t, new_t, label=None):
+    n = _nd_n(M, vid, title); b = M.slide(vid, n)
+    k = [i for i, it in enumerate(b['items']) if it.get('t') == old_t]
+    assert len(k) == 1, (vid, title, old_t)
+    b['items'][k[0]]['t'] = new_t
+    if label is not None:
+        for l in b['lines']:
+            if l.get('appear') == k[0]: l['label'] = label
+    M.touched_videos.add(vid)
+
+
+def _nd_expl(M, qid, subs):
+    """subs: [(index, old_start, new)]; new None drops the paragraph."""
+    ex = list(M.q(qid)['explanation'])
+    for i, start, new in sorted(subs, key=lambda x: -x[0]):
+        assert ex[i].startswith(start), (qid, i, ex[i][:70])
+        if new is None: ex.pop(i)
+        else: ex[i] = new
+    M.set_q(qid, expl=ex)
+
+
+def no_decimal_estimates(M):
+    # solve-geo33-g094 · Estimate the size: 3 < π < 4 instead of 56.5 / 43.7 / 7.7
+    v = 'solve-geo33-g094'
+    if not _nd_recorded(v):
+        _nd_lines(M, v, 'Estimate the size', [
+            ('draw', 'Next to choice 1 write < 0', 'Next to choice 1 write "9π > 27 → < 0"'),
+            ('say', "18 minus 9 pi — 9 pi is about 28, so this is negative. They do that a lot: hide a negative answer behind letters. An area can't be negative. Out.",
+             "18 minus 9 pi — pi is more than 3, so 9 pi is more than 27. This is negative. They do that a lot: hide a negative answer behind letters. An area can't be negative. Out."),
+            ('draw', 'Next to choice 3 write ≈ 38.5', 'Next to choice 3 write "18π > 54 → > 36"'),
+            ('say', "18 pi — pi is 3.14, so 18 pi is about 56.5. Minus 18 — about 38.5. More than the whole triangle? Impossible. Out.",
+             "18 pi minus 18 — 18 pi is more than 54. Minus 18 — still more than 36. More than the whole triangle? Impossible. Out."),
+            ('draw', 'Next to choice 4 write ≈ 43.7', 'Next to choice 4 write "9π < 36 → > 36"'),
+            ('say', "72 minus 9 pi — about 72 minus 28.3 — about 43.7. Too big. Out.",
+             "72 minus 9 pi — pi is less than 4, so 9 pi is less than 36. 72 minus less than 36 — more than 36. Too big. Out."),
+            ('draw', 'Next to choice 2 write ≈ 7.7', 'Next to choice 2 write "27 < 9π < 36 → between 0 and 9"'),
+            ('say', "36 minus 9 pi — about 7.7. The only one possible — and by eye it's about a fifth of the triangle.",
+             "36 minus 9 pi — 9 pi is between 27 and 36, so this is between 0 and 9. The only one possible — and by eye it's a small piece of the triangle."),
+        ])
+    # solve-geo33-g096 · Method 3: the board no longer shows 5.14 / 3 ≈ 1.7 (the spoken lines already say "5-plus over 3")
+    v = 'solve-geo33-g096'
+    if not _nd_recorded(v):
+        _nd_item(M, v, 'Method 3 · Estimate', r'$\frac{\pi+2}{3}\approx\frac{5.14}{3}\approx1.7$',
+                 r'$\pi>3\;\Rightarrow\;\frac{\pi+2}{3}>\frac{5}{3}$', label='π > 3 → (π+2)/3 > 5/3 appears')
+    # solve-geo33-g100 · Method 2: "2π is about 6.3" -> 6-plus, under 8
+    v = 'solve-geo33-g100'
+    if not _nd_recorded(v):
+        _nd_lines(M, v, 'Method 2 · Estimate', [
+            ('say', "Three answers out — mark the fourth with certainty. No need to even calculate it: 2 pi is about 6.3. Choice two.",
+             "Three answers out — mark the fourth with certainty. No need to even calculate it: 2 pi is 6-plus — under 8. Choice two.")])
+    _nd_expl(M, 'geo33-g100', [(3, 'Size check:',
+             'Size check: the circle is smaller than the square around it ($8\\cdot8=64$). So $8\\cdot BC<64$ and $BC<8$. '
+             '$3\\pi$, $4\\pi$ and $8\\pi$ are all more than $9$. Only $2\\pi$ (less than $2\\cdot3.5=7$) fits.')])
+    # q-r26-t33-04 · the negative trap: 3π < 12 < √243 = 9√3 instead of 9.4 and 15.6
+    v = 'solve-q-r26-t33-04'
+    if not _nd_recorded(v):
+        _nd_lines(M, v, 'The traps', [
+            ('draw', 'Next to choice 4 write "3π ≈ 9.4 < 9√3 ≈ 15.6"', 'Next to choice 4 write "3π < 12 < √243 = 9√3"'),
+            ('say', "3π minus 9 root 3 is negative. An area can't be negative.",
+             ["3π is less than 12. And 9 root 3 is root 243 — more than root 144, which is 12.",
+              "So 3π minus 9 root 3 is negative. An area can't be negative."])])
+    _nd_expl(M, 'q-r26-t33-04', [(3, 'Segment:',
+             'Segment: $6\\pi-9\\sqrt3$. ($3\\pi-9\\sqrt3$ is negative: $3\\pi<3\\cdot4=12$, and $9\\sqrt3=\\sqrt{81\\cdot3}=\\sqrt{243}>\\sqrt{144}=12$.)')])
+    # r26-t33-summary-2 · Numbers and estimates: π between 3 and 3.5, not 3.14
+    v = 'r26-t33-summary-2'
+    if not _nd_recorded(v):
+        _nd_item(M, v, 'Numbers and estimates', r'Estimate: $\pi\approx3.14$, a circle $<$ the square around it',
+                 r'Estimate: $3<\pi<3.5$, a circle $<$ the square around it')
+    # geo-079 · π is a number: the exam fact is 3 < π < 3.5
+    v = 'geo-079'
+    if not _nd_recorded(v):
+        _nd_lines(M, v, 'π is a number', [
+            ('say', "All we need to know about π: it's a bit more than 3.",
+             "All we need to know about π: it's more than 3 and less than three and a half.")])
+
+
+_apply_before_no_decimal_estimates = apply
+
+
+def apply(M):
+    _apply_before_no_decimal_estimates(M)
+    no_decimal_estimates(M)   # 2026-10-07 no decimal estimates: runs last

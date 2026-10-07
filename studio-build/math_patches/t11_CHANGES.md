@@ -313,3 +313,10 @@ Function `q295_benchmark` (runs last, after `spread_methods`). Teacher: decimal 
 - solve-q-295: intro no longer says "Question seven". One slide → two short ones: "Benchmark 7" (choices 1–3, all by click) and "Choice 4: square it" (by hand: the squaring line, then cross out 1, 2, 3 and circle 4; √126 > 11 and > 49 by click). About the same length (16 spoken lines, was 15).
 - Guard: skipped if solve-q-295 has a recording (none at the time of editing; latest recorded solve-q-294).
 Check: `python3 math_check.py 11 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered tmp_check/q295.png and looked at.
+
+
+## 2026-10-07 no decimal estimates
+Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
+- q-r26-t11-01 (written only): "√5 ≈ 2.24, 1/0.24 ≈ 4.2 ..." -> sign check: √5 is between 2 and 3, the first fraction is the bigger one, so the answer is positive (choices 1, 2 out); the 2√5 trap note kept.
+- NOT changed: video solve-q-r26-t11-01 (Method 2 · Estimate still says √5 ≈ 2.24) — recorded 2026-10-07 12:04Z. Re-record or cut Method 2 if the teacher wants it gone.
+Check: `python3 math_check.py 11 32` -> 0 / 0 / 0.

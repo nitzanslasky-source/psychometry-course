@@ -218,3 +218,12 @@ Keys brute-forced; duplicate scan over all topics clean. `python3 math_check.py 
 ## 2026-10-07 methods spread
 Nothing added. The only letter-choice item (alg-extra-root-practice-3) loses just one choice to the power count. No slides: every solution video in this topic is recorded (unchanged).
 All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-07 no decimal estimates
+Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
+- q-245 (written): ∛25 ≈ 2.9, √10 ≈ 3.16, π ≈ 3.14 -> compare with 3: ∛25 < ∛27 = 3, √10 > √9 = 3, π > 3.
+- q-246 (written): "√5 ≈ 2.24" -> square the choices (2.2² = 4.84, 2.3² = 5.29), then the middle 2.25² > 5 (already there).
+- q-r26-t09-09 (written): √0.5 ≈ 0.71 -> √0.5 > √0.25 = 0.5.
+- Card "roots", row "Useful estimates": √5 ≈ 2.24, √7 ≈ 2.65, √10 ≈ 3.16 -> 2 < √5 < 3, 2 < √7 < 3, 3 < √10 < 4; √2 ≈ 1.4 and √3 ≈ 1.7 stay (the teacher teaches them in topic 51).
+Check: `python3 math_check.py 9 32` -> 0 / 0 / 0.

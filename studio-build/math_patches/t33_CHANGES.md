@@ -248,3 +248,15 @@ Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/
 - geo33-g096: "Method 2 · Power count" → self-contained "Shortcut · Power count" (count the lengths; a ratio of perimeters cannot depend on r). geo33-advanced-p07: "(power count)" tie-break rewritten as counting lengths.
 - Video solve-geo33-g096 (not recorded) slide 4: "That's the power count from algebra…" → "Count the lengths: a perimeter is one length, so perimeter over perimeter is one length over one length — they cancel. No r can stay." Rendered, checked.
 `python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-07 no decimal estimates
+Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
+- solve-geo33-g094 "Estimate the size": 18π ≈ 56.5, 72 − 9π ≈ 43.7, 36 − 9π ≈ 7.7 -> 9π > 27 (choice 1 negative), 18π > 54 so 18π − 18 > 36, 9π < 36 so 72 − 9π > 36, 36 − 9π between 0 and 9. Same pen marks next to each choice, same count of lines.
+- solve-geo33-g096 Method 3: board (π+2)/3 ≈ 5.14/3 ≈ 1.7 -> π > 3 → (π+2)/3 > 5/3 (the spoken lines already said "5-plus over 3").
+- solve-geo33-g100 Method 2: "2π is about 6.3" -> "6-plus — under 8". Written geo33-g100 size check: 3π, 4π, 8π are more than 9; 2π < 7.
+- solve-q-r26-t33-04 "The traps" + written: 3π ≈ 9.4 < 9√3 ≈ 15.6 -> 3π < 12 < √243 = 9√3.
+- r26-t33-summary-2 "Numbers and estimates": board π ≈ 3.14 -> 3 < π < 3.5.
+- geo-079 "π is a number": "All we need to know: a bit more than 3" -> "more than 3 and less than three and a half".
+- LEFT, teacher to decide: geo33-g089 (16π between 50 and 51, trap 48–49) and geo33-advanced-p10 (64 − 8π between 38 and 39) — the question itself needs π ≈ 3.14 (π between 3 and 3.5 cannot decide). Also geo-079 still says "even 3.1 is enough for the exam", which is not enough for g089 (16 · 3.1 = 49.6).
+Check: `python3 math_check.py 33 32` -> 0 / 0 / 0. Rendered and looked at.
