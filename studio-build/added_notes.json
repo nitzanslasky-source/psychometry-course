@@ -1370,6 +1370,10 @@
   "wp-140-after#7": {
    "t": "Factorials and primes",
    "d": "divisibility of a factorial: break factors into primes and count the 2s (7! has four 2s, not three)"
+  },
+  "solve-q-295#1": {
+   "t": "Choice 4: square it",
+   "d": "q-295 rewritten without decimals — square √21+√6: 27+2√126 > 27+22 = 49, so the sum is above 7 (the benchmark)"
   }
  },
  "lines": {
@@ -2856,6 +2860,10 @@
   "wp-159#1": {
    "t": "Dice symmetry",
    "d": "why dice sums are symmetric; cards 1 to n: top sum n + 1"
+  },
+  "solve-q-295#0": {
+   "t": "Benchmark 7",
+   "d": "whole-number benchmark 7 instead of decimal estimates: 2π < 7 (π < 3.5), √44 < √49, √41 < √49"
   }
  }
 }
