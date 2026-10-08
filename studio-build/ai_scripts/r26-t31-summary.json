@@ -30,7 +30,7 @@
   [
    "The area is a side, times the altitude to that side, over two. And any side can be the base.",
    "What if the height falls outside? Well, you still use only the side itself.",
-   "In a right triangle, you can count the area twice. Say the legs are thirty and forty, and the hypotenuse is fifty. Then the altitude is twelve hundred over fifty... twenty-four.",
+   "In a right triangle, you can count the area twice. Say the legs are forty-five and sixty, and the hypotenuse is seventy-five. Then the altitude is two thousand seven hundred over seventy-five... thirty-six.",
    "Now, with two sides, a and b, the area is at most a times b, over two. And you only get that with a right angle between them.",
    "And a median splits a triangle into two equal areas. Same base, same height."
   ],
@@ -41,8 +41,8 @@
   ],
   [
    "Before you calculate anything, look for a triple.",
-   "Any multiple works too. Like six, eight, ten, or fifteen, twenty, twenty-five.",
-   "But match the positions. A hypotenuse of twelve and a leg of nine? Well, that's not nine, twelve, fifteen."
+   "Any multiple works too. Like twenty-seven, thirty-six, forty-five, or twenty-five, sixty, sixty-five.",
+   "But match the positions. A hypotenuse of thirty-six and a leg of twenty-seven? Well, that's not twenty-seven, thirty-six, forty-five."
   ],
   [
    "The golden triangle. The short leg, a, is opposite the thirty. Double it for the hypotenuse, and times the square root of three for the long leg.",

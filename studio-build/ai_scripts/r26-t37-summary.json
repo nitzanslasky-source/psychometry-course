@@ -26,7 +26,7 @@
   ],
   [
    "The area of a triangle on the plane. Is one side horizontal or vertical? Then use it as the base. The height is a straight drop.",
-   "If there's no such side, box it in, and subtract the three corner right triangles. So the box is twenty-four, the corners are fourteen... and the triangle is ten."
+   "Then subtract the three corner right triangles. So the box is twenty-four, the corners are fourteen... and the triangle is ten."
   ],
   [
    "With a circle, find the radius first. Then the area, the circumference, whatever they ask.",

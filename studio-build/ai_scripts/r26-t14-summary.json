@@ -14,7 +14,7 @@
   [
    "Now, all the other primes are odd. Odd plus odd is even. And odd minus odd is even too.",
    "So an odd sum, or an odd difference, means one of the primes is two.",
-   "Thirty-nine as a sum of two primes? Two plus thirty-seven."
+   "Seventy-three as a sum of two primes? Two plus seventy-one."
   ],
   [
    "To test a number, divide it by the primes up to its square root. No further.",

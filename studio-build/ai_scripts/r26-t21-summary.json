@@ -15,7 +15,7 @@
   [
    "Draw the story, and follow it. Can it go two ways? Then split it into two routes.",
    "And often the fastest try is to test the answer choices, one by one.",
-   "Now, keep your tries in order. No fives, one five, two fives, and so on. That way you know your list is complete.",
+   "Now, keep your tries in order. That way you know your list is complete.",
    "And every try has to pass every condition. Including the question itself."
   ],
   [
@@ -44,9 +44,9 @@
   ],
   [
    "A repeating cycle? Divide by the length of the cycle, and look at the remainder.",
-   "Days repeat every seven. So Friday plus forty days... forty is five sevens plus five, so it's Wednesday. Last digits of powers repeat too. Write the first few, and find the cycle.",
+   "Days repeat every seven. Last digits of powers repeat too. Write the first few, and find the cycle.",
    "And if the remainder is zero? Then it's the last one in the cycle.",
-   "Two things meeting again? That's a common multiple. Jump along the bigger number, fourteen, twenty-eight, forty-two, fifty-six. Fifty-six is the first one that divides by eight."
+   "Two things meeting again? That's a common multiple. Jump along the bigger number. Fifty-six is the first one that divides by eight."
   ],
   [
    "So, before you start, always ask yourself these questions.",

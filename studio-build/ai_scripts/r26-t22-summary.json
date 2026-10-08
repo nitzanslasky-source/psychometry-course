@@ -19,7 +19,7 @@
   ],
   [
    "Put the data in a ratio table. Is it a whole number across, or down? Then use that multiplier.",
-   "Not a whole number? Use the triangle value. Multiply along the diagonal, then divide by what's left. Ten times nine, over six, that's fifteen.",
+   "Not a whole number? Use the triangle value. Multiply along the diagonal, then divide by what's left.",
    "Or you can cross-multiply. Same answer.",
    "And do a sense check first. Should the answer be bigger, or smaller?"
   ],
@@ -42,19 +42,19 @@
   ],
   [
    "Something changes? Write the new amounts before you write the equation. And if things move between groups, the total stays.",
-   "One is twice the other? Give the times two to the little guy. B is x, A is two x.",
+   "One is twice the other? Then give it to the little guy.",
    "Ages: make a row for every time in the story. Or test the answers... run each choice through the story."
   ],
   [
-   "Enough, but not enough? That's two inequalities. Three B is at most thirty-six, and four B is more than thirty-six. So the answer is a range. More than nine, and at most twelve.",
-   "\"Or part of\"? Round up. Forty people, boats of nine... four people are left over, and they still need a boat. So five boats.",
+   "Enough, but not enough? That's two inequalities. So the answer is a range. More than nine, and at most twelve.",
+   "\"Or part of\"? Round up. Four people left over still need a boat.",
    "And label every number. A price per kilogram is not per gram, and a fixed fee is paid once."
   ],
   [
-   "Letters in the answers? Choose numbers, not zero and not one, and test every choice.",
+   "Letters in the answers? Choose numbers, and test every choice.",
    "Two kinds, with a known total? Pretend they're all one kind, and then fix the difference.",
    "One equation, two unknowns? Well, you can only find a multiple of it. Anything else cannot be determined.",
-   "Several stages? Write the whole exercise first. And a fixed amount plus a price per item? Compare the two cases, and see what changed."
+   "Several stages? Write the whole exercise first. And a fixed amount plus a price per item? Compare the two cases."
   ],
   [
    "So, before you start, always ask yourself these questions.",

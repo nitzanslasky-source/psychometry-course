@@ -9,16 +9,16 @@
   [
    "Work in stages. How many options at each stage? Multiply.",
    "A restriction? Start with the most restricted position. And a position that's already decided gets one.",
-   "Three shirts and five hats? That's fifteen outfits. Not eight... adding counts items, not outfits.",
+   "Five shirts and four hats? That's twenty outfits. Not nine... adding counts items, not outfits.",
    "And a short list with no pattern? Just list them, and count."
   ],
   [
-   "Can items repeat? Then the pool stays full. Eight times eight times eight. If not, it shrinks by one at each stage. Eight times seven times six.",
-   "n items in a row? That's n factorial. And with factorials, expand only until they cancel. Nine factorial over seven factorial is just nine times eight."
+   "Can items repeat? Then the pool stays full. If not, it shrinks by one at each stage.",
+   "n items in a row? That's n factorial. And with factorials, expand only until they cancel."
   ],
   [
-   "Know these by sight. Five factorial is a hundred twenty, six factorial is seven hundred twenty, seven factorial is five thousand forty. So if you see seven hundred twenty, think six factorial.",
-   "A big factorial over a small one? That's a run of neighbors. Nine factorial over six factorial is seven times eight times nine.",
+   "Know these by sight. So if you see seven hundred twenty, think six factorial.",
+   "A big factorial over a small one? That's a run of neighbors.",
    "A sum or a difference? Take out the smaller factorial. And don't forget the one.",
    "Divisible by something? Break every factor into primes, and count."
   ],
@@ -33,7 +33,7 @@
   [
    "Can't count it in one go? Split it into cases that don't overlap, and add.",
    "\"Not\", or \"at least one\"? Count all of them, and subtract the forbidden ones.",
-   "Three-digit codes with at least one seven? All one thousand, minus the seven hundred twenty-nine with no seven. That's two hundred seventy-one."
+   "Three-digit codes with at least one seven? All one thousand, minus the seven hundred twenty-nine with no seven."
   ],
   [
    "Objects into boxes? Each object chooses. Four friends, two buses... two to the fourth.",

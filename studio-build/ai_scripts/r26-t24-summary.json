@@ -7,7 +7,7 @@
    "Everything important, one idea at a time."
   ],
   [
-   "Two groups make four regions. A only, both, B only, and neither. Every person lands in exactly one of them.",
+   "Two groups make four regions. Every person lands in exactly one of them.",
    "Now be careful. \"Music students\" means the whole circle. Music only, plus both."
   ],
   [
@@ -21,9 +21,9 @@
   ],
   [
    "The smallest it must be? Ask, how far do the groups go over the total?",
-   "Nine plus six is fifteen, for eleven students. So four must be in both.",
+   "Fifteen, for eleven students. So four must be in both.",
    "And if the sum doesn't go over the total? Then nobody is forced. The minimum is zero... it's never negative.",
-   "With fractions, the whole is one. Three quarters plus a third, minus one... at least a twelfth."
+   "Three quarters plus a third, minus one... at least a twelfth."
   ],
   [
    "Asked about another region? Find the range of the overlap first.",
@@ -43,7 +43,7 @@
   ],
   [
    "Three groups? Count who misses a group. Everyone else must be in all three.",
-   "In one line: add the three groups, and subtract the total twice. Twenty-five plus twenty-four plus twenty-two, minus two times thirty... eleven.",
+   "In one line: add the three groups, and subtract the total twice.",
    "And the most in all three? That's the smallest group.",
    "They also tell you what each pair shares? Then the most in all three is the smallest pair overlap."
   ],
