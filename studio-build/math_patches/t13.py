@@ -2685,7 +2685,7 @@ def restore_and_clarify(M):
                 A("'small side → closed · big side → open — like x²' appears",
                   T(r'small side $\to$ closed $\qquad$ big side $\to$ open $\qquad$ (like $x^2$)', size=40)),
                 'Exactly like the x squared inequalities from the last topic.',
-                'An expression inside the bars? The same idea — you will see it in questions three and four.']),
+                'An expression inside the bars? The same idea — you will see it in the questions next.']),
             dict(title='Wrap-up', mode='concept', active=WR, pre=[], script=[
                 A("'expression · equation · inequality' appears", T(r'expression $\quad\cdot\quad$ equation $\quad\cdot\quad$ inequality', size=44)),
                 'So bars show up in an expression, an equation or an inequality.',
