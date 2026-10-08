@@ -19,7 +19,7 @@
   ],
   [
    "Hierarchy. A number in a higher range stays bigger, after any positive power or root.",
-   "Seven sixths is above one, and three quarters is a fraction. So don't calculate the roots.",
+   "Nine eighths is above one, and four fifths is a fraction. So don't calculate the roots.",
    "For negative numbers, it's odd powers and odd roots only.",
    "The same operation on two positive numbers? Ignore it. And weak times weak loses to strong times strong."
   ],
@@ -43,7 +43,8 @@
   [
    "Not sure? Plug in. One number from each allowed range.",
    "A root in the choices? Pick a number with a clean root.",
-   "And change only the unknown. If you change the numbers in the question, you can change the answer."
+   "And change only the unknown. If you change the numbers in the question, you can change the answer.",
+   "One exception, though. The same number in every choice? You can swap it for a small one... like plugging in."
   ],
   [
    "Read the question word. Necessarily, or could?",

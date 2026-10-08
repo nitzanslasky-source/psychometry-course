@@ -13,7 +13,7 @@
   [
    "A diagonal splits a parallelogram, and that includes a rectangle, a rhombus, a square, into two equal halves.",
    "Now, a triangle on the full base, with its tip on the opposite side, is half the shape. So the white parts are the other half.",
-   "And if it's on a third of the base? Then it's a third of a half... one sixth."
+   "And if it's on a fifth of the base? Then it's a fifth of a half... one tenth."
   ],
   [
    "Two triangles with the same height? The area ratio is the base ratio.",
@@ -23,6 +23,12 @@
    "Shaded area? Approach one: take a shape you know, and subtract the white. Like sixty minus twenty-four... thirty-six.",
    "Approach two: break the shaded area into familiar pieces, by completions or by symmetry.",
    "Now, with completions, pair only pieces that really complete each other. A guess by eye is not a method."
+  ],
+  [
+   "So when do completions work? When the sides cut squares exactly corner to corner... into two equal halves.",
+   "Here, that's four whole squares.",
+   "And four half-squares. Here the two half-squares really complete each other, so count each pair as one.",
+   "Four plus two... six squares. And base three times height two is also six. So it works."
   ],
   [
    "Angles with letters in the answers? Solve it, or plug in numbers and check every choice.",

@@ -43,11 +43,18 @@
    "Stuck? Plug in numbers. But only in an expression, and only legal numbers.",
    "Now, zero and one are lazy numbers. They often make choices tie.",
    "You're knocking out three wrong choices. A tie? New numbers, only for the tied choices.",
-   "And only numbers in the choices? Then one legal substitution is enough."
+   "And only numbers in the choices? Then one legal substitution is enough.",
+   "And plug-in isn't only for expressions... you'll use it in word problems and geometry too."
   ],
   [
    "Letters in the choices? Count the powers first. Multiplying adds, dividing subtracts, and a number in front counts as zero.",
    "The answer has the question's power. So a different power, or a mixed one, is out. And a plug-in tie? Check the powers first."
+  ],
+  [
+   "One more wording. Which expression does NOT depend on x? Or... which one has the same value for every x?",
+   "Well, simplify each choice until the x disappears.",
+   "x squared plus six x plus nine, minus x squared, minus six x. Only nine is left... no x. So that's the one.",
+   "Plug-in is slow here. One number tells you nothing, you'd need two numbers for every choice. So just use the algebra."
   ],
   [
    "Okay, before you start, always ask yourself these questions.",

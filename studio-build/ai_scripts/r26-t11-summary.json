@@ -36,7 +36,9 @@
   [
    "Now, an equation that's already a product equal to zero.",
    "Each factor can be zero. So root x is zero, or root x is five.",
-   "And never divide by root x. If you do, you lose x equals zero."
+   "And never divide by root x. If you do, you lose x equals zero.",
+   "A close relative: root x equals x. Square it, and x equals x squared. So x times, x minus one, is zero.",
+   "So only zero and one. And it's the same for x squared equals x."
   ],
   [
    "So when is a power equal to one?",
@@ -44,10 +46,19 @@
    "Now, an \"or\" claim is necessarily true if every allowed case makes one part true. To kill it, you just need one case where both parts are false."
   ],
   [
+   "Now, some choices come as: IF something, THEN something.",
+   "Treat the IF as one more given. And cross out the cases it rules out.",
+   "Then check the THEN in every case that's left. One case where it fails... and the choice is out.",
+   "Say a to the power of b equals one, and a and b are whole numbers. If a is negative, two cases are left. Base minus one with an even exponent... or exponent zero.",
+   "And zero is even too. So it's true.",
+   "Well, an IF that rules out no case proves nothing. Then the THEN has to hold in every case anyway."
+  ],
+  [
    "Every question has two routes.",
    "The laws, step by step. Or plug in numbers... or try the choices.",
    "But before you trust one number, check that the choices give different values. If two of them tie, try another number.",
-   "And pick a number whose roots come out clean. Like eighty-one."
+   "And pick a number whose roots come out clean. Like eighty-one.",
+   "Can't split a root nicely? Estimate it. Root fifty is a little over seven. Then compare with the choices."
   ],
   [
    "So, before you practice, always ask yourself:",
