@@ -248,3 +248,6 @@ Function `spread_methods` (runs last). Went through all 46 questions (20 guided 
 Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
 
 - whole-numbers: added slide 'Signs of sums' removed (topic 1 Addition & Subtraction: signed numbers, bigger minus smaller). Recap line kept as the reminder. ~50 s.
+
+## 2026-10-08 Hebrew points restored
+Audit only, no change. The 2026-10-05 cut touched only our added lesson "Sums of Consecutive Integers" (r26); the teacher's Hebrew lessons (positive/negative, consecutive numbers with its three ways, even/odd, special products) were not cut and all their points are still taught.

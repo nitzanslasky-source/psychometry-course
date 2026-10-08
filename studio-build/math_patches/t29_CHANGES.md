@@ -243,3 +243,7 @@ in the solution (count the pairs, tree, symmetry) or got a "Door:" line on 2026-
 the guided videos already show both routes where two exist. Nothing in topic 29 is recorded.
 - **Q10 `wp29-g157`** (6 green, 6 white, two drawn, different colors): Shortcut · Which door? COUNT (self-contained, because Q10 comes before the card that names the doors): 66 equally likely pairs, 36 with two colors → 6/11.
 Total: 1 written line, no slides. Recorded: none.
+
+## 2026-10-08 Hebrew points restored
+Audit only, no change. Every teaching point of the Hebrew lesson for the sections the 2026-10-05 cut shortened is still taught in the current course, at or before the place it is needed.
+- Hebrew "several events" lesson: AND → multiply, OR → add, "or" is rare and harder (And · Or lesson); coin and die (Q5); three tosses (Q6); a dice sum with a forced second die (Q7); history and the roulette (Q8, incl. "rare on the exam"); the double, "first pick doesn't matter", and the tip to work out each event on its own (Q9); without replacement (Q10); the doors, "fail first, then succeed", the driving test, rare and hard (Q11). Dice symmetry: the whole Hebrew lesson is on the kept slide (red/blue dice, don't flip 2-2, opposite faces add to 7, symmetry around 7); the "same question, different wording" line is in Q15. The cut slides ("OR with overlap", the recaps) were not in the Hebrew lesson.

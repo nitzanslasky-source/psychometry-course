@@ -194,3 +194,7 @@ No problems found, so no changes were made. Full `python3 math_check.py`: PROBLE
 Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
 - geo30-g006: "Method 3 · Mirror test" → self-contained "Shortcut · Mirror test" with the why (topic 30 is day 1; topic 13 is day 24).
 `python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-08 Hebrew points restored
+Audit only, no change. Every teaching point of the Hebrew lesson for the sections the 2026-10-05 cut shortened is still taught in the current course, at or before the place it is needed.
+- The cut only removed the overlap rule AC + BD = AD + BC (not in the Hebrew lesson, 03-Geometry lines 1–155; it is now taught in `solve-q-r26-t30-02`) and one recap item. The Hebrew lesson's points are on the unchanged slides of `geo-001`.

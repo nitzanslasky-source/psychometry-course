@@ -221,3 +221,14 @@ see-saw, which is the same picture as "shares as weights", and Q13 already has t
 Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
 - wp25-p04, wp25-p16: "Shortcut · Pick values that fit" → "Method 2 · Pick values that fit" (topic 51 is day 6).
 `python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-08 Hebrew points restored
+Function `hebrew_points_back` (runs LAST; helpers `math_patches/_hebrew_back.py`, a video recorded before its CUTOFF is left as recorded and the point goes to the written solution). Checked the teacher's Hebrew averages lessons (02-Word-Problems-Original-Subtitles.txt, theory 5175–5327, weighted average 5626–5918) against the current course, for the two lessons the 2026-10-05 cut shortened. Nothing in topic 25 is recorded.
+- "Sum from the Average" (`wp-081`): all Hebrew points still taught (sum = number × average, why 8/2 = 4 → 8 = 2 · 4 on the kept slide; "treat each as the average, you don't need the single values" and "one can be anything up to the whole sum, never more" in Q1 `solve-wp25-g082`). Nothing added.
+- "Weighted Averages" (`wp-086`): 15 Hebrew points checked; 3 were said nowhere any more:
+  - The formula itself (each value times its weight, divided by the SUM of the weights; more values: each times its own weight). → Q11 `solve-wp25-g087` slide "Method 1 · Algebra": board item with the formula + one line at the start, and after the calculation "That is the formula at work: the copies are the weights. More than two values? …". +17 s.
+  - The see-saw picture (the average is the balance point; equal weights → exactly the middle; the heavier side tips it, so the pivot slides toward the heavy side). → Q11 slide "Method 2 · Balance (averages)": the line "Now the see-saw. Weights two to one…" became three lines ending "How far? Weights two to one — so distances one to two." +20 s.
+  - "Formula or ratios — both work; ratios feel strange at first (we are used to equations), a little practice and they are much faster." → Q12 `solve-wp25-g088`, end of "Method 2 · Algebra". +14 s.
+  - Still taught (unchanged): exam just says "average"; copies → divide by 4 not 2 (Q11); balance check weight × distance (Q11); distances = weights flipped, split the gap, draw an axis with the weights below (Q11, Q12); group size = weight, reduce the weights first (Q13); midpoint check, the answer is on the bigger group's side (Q13); the average given → find a group size (Q14).
+- Q11 0.8 → 1.4 min, Q12 0.6 → 0.8 min. Net +51 s. Notes: Added-content notes for the three slides.
+`math_check.py 25 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered and looked at (formula sits above the hand-written lines).

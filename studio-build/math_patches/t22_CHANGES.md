@@ -234,3 +234,10 @@ Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/
 - wp22-p08: "Method 2 · Power count" → self-contained shortcut (topic 22, day 12, before topic 5, day 13). wp22-p27: "Method 2 · Two moves" → self-contained "Shortcut · Two moves" (topic 12 is day 20).
 - wp22-p18, wp22-p29: "Shortcut · Pick values that fit" → "Method 2 · Pick values that fit" (topic 51 is day 6).
 `python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-08 Hebrew points restored
+Function `hebrew_points_back` (runs LAST; helpers `_hebrew_back.py`; nothing in topic 22 is recorded). Every teaching point of the Hebrew lessons "יחסים זהים", "בעיות חישוב והבנה", "יחס מתמטי", "בניית משוואה או ביטוי", "תן למסכן" and the advanced intro "בעיות כלליות" was checked against the current course (about 40 points). All still taught except two, now restored:
+- **`wp-037` Build the Equation, slide "Equations everywhere"** (+≈15 s, 0.8 min): board "Tip: let x be what they ask" + "A small tip: in most cases, let x be the thing they ask for. Not always — but most questions are built that way. Then when you find x, you have the answer." (the general tip was on the cut "Choose x wisely" slide; Q10 only applies it).
+- **`solve-wp22-g030` Q2, slide "Cross-multiply"** (+≈11 s, 1.2 min): "Hasn't it sunk in yet? That's fine. We'll use it so often — in word problems, geometry and algebra — that it will." (the closing remark of the Hebrew equal-ratios lesson).
+- Left out on purpose (for the teacher): the Hebrew ratio lesson says the exam almost never uses the "the ratio between A and B is 4:7" wording (so as not to confuse dyslexic students). Real English NITE exams do use it (e.g. "the ratio between the number of nurses and the number of head nurses is 3 : 2"), and the lesson says "the exam does test this". Not restored.
+- `math_check.py 21 22 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

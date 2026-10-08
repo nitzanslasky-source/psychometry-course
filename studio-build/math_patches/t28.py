@@ -2241,3 +2241,33 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 28)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 Hebrew points restored: the 2026-10-05 cut shortened "With or Without Repetition" and "Mutual Action".
+# Two points of the teacher's Hebrew lessons were no longer said anywhere: a row of n items = n! in general (and that
+# factorial comes back later for groups), and "diagonal questions are rare but do show up". Runs LAST.
+# =====================================================================================================================
+import importlib.util as _ilu_hb, os as _os_hb
+_s_hb = _ilu_hb.spec_from_file_location('_hebrew_back', _os_hb.path.join(_os_hb.path.dirname(_os_hb.path.abspath(__file__)), '_hebrew_back.py'))
+HB = _ilu_hb.module_from_spec(_s_hb); _s_hb.loader.exec_module(HB)
+
+
+def hebrew_points_back(M):
+    # Q6 trophies in a row: the general rule n items in a row -> n!, and factorial is needed again later (groups)
+    if not HB.add_lines(M, 'solve-wp28-g130', 'Method 1 · Counting in stages', 'Seven items in a row: seven factorial ways', [
+            'Any n different items in a row: n factorial ways.',
+            "Keep factorial in mind — we'll use it again later, when we choose groups."]):
+        HB.add_expl(M, 'wp28-g130', 'In general: $n$ different items in a row can be arranged in $n!$ ways. Factorial comes back later, when we choose groups.')
+    # Q8 diagonals: exam-frequency remark from the Hebrew lesson
+    if not HB.add_lines(M, 'solve-wp28-g133', 'Counting Questions', 'Diagonals — four ways.', [
+            "A rare question type — but it does show up on the exam: the diagonals of a polygon."], where='before'):
+        HB.add_expl(M, 'wp28-g133', 'Diagonal questions are rare on the exam, but they do show up.')
+
+
+_apply_before_hebrew_points_back = apply
+
+
+def apply(M):
+    _apply_before_hebrew_points_back(M)
+    hebrew_points_back(M)   # 2026-10-08 Hebrew points restored: runs LAST

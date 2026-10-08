@@ -237,3 +237,6 @@ Function `spread_methods(M)` in t23.py runs last (after `renumber_pass`). Every 
 - **Shortcut · Percent shares as weights** (topic 25): q-r26-t23-12 (juice mix) — 60% of the liters at 20%: 10% + 0.6 · 10% = 16%. Line only (taught later).
 - Not added (checked): g060, q-r26-t23-01, g065, p07, p10, p24 (multipliers already shown — the same as the arrow map); p13, p26, p14, q-r26-t23-16, q-r26-t23-09 (method already there); q-r26-t23-05, p16, p20 (letter choices: power count leaves all four or three choices).
 - Slides: 2, about +0.85 min in total.
+
+## 2026-10-08 Hebrew points restored
+Checked only, nothing changed. The lessons the 2026-10-05 cut shortened here were our own added lessons (r26-…), not the teacher's. The teacher's Hebrew theory lessons for this topic map to lessons the cut did not touch, and the Hebrew "advanced study" part has sample questions only. Every idea on the cut slides is still said in a question video (see the 2026-10-05 follow-up above). No lost Hebrew points.

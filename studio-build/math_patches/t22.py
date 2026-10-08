@@ -2340,3 +2340,34 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 22)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 Hebrew points restored. The 2026-10-05 cut kept only short intros; two points of the teacher's Hebrew
+# lessons were no longer taught: the general tip "let x be what they ask" (Hebrew "בניית משוואה") and the closing
+# remark of "יחסים זהים" (if the triangle value hasn't sunk in yet - fine, we use it so much it will). Runs LAST.
+# Helpers: _hebrew_back.py (a video recorded before its CUTOFF is not changed). See t22_CHANGES.md.
+# =====================================================================================================================
+import importlib.util as _ilu_hb, os as _os_hb
+_s_hb = _ilu_hb.spec_from_file_location('_hebrew_back', _os_hb.path.join(_os_hb.path.dirname(_os_hb.path.abspath(__file__)), '_hebrew_back.py'))
+HB = _ilu_hb.module_from_spec(_s_hb); _s_hb.loader.exec_module(HB)
+
+
+def hebrew_points_back(M):
+    # lesson "Build the Equation" (wp-037): x = what they ask (most questions are built that way)
+    if not HB.add_lines(M, 'wp-037', 'Equations everywhere', 'The method never changes', [
+            A("'Tip: let x be what they ask' appears", T('Tip: let $x$ be what they ask', size=40)),
+            "A small tip: in most cases, let x be the thing they ask for. Not always — but most questions are built that way. Then when you find x, you have the answer."]):
+        HB.add_expl(M, 'wp22-g038', 'Tip: in most cases, let $x$ be what they ask. Most questions are built so that $x$ is then the final answer.')
+    # Q2 (g030), end of "Cross-multiply": the reassurance that closes the Hebrew equal-ratios lesson
+    if not HB.add_lines(M, 'solve-wp22-g030', 'Cross-multiply', 'Triangle value or cross-multiplying', [
+            "Hasn't it sunk in yet? That's fine. We'll use it so often — in word problems, geometry and algebra — that it will."]):
+        HB.add_expl(M, 'wp22-g030', 'The triangle value comes back all through the course — word problems, geometry and algebra.')
+
+
+_apply_before_hebrew_points_back = apply
+
+
+def apply(M):
+    _apply_before_hebrew_points_back(M)
+    hebrew_points_back(M)   # 2026-10-08 Hebrew points restored: runs LAST

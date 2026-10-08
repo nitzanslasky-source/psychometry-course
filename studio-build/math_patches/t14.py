@@ -2037,3 +2037,39 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 14)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 Hebrew points restored. The 2026-10-05 cut took the "Factor Tools" lesson down to a short intro; the
+# question videos only ANSWER the GCD / LCM questions. Points of the teacher's Hebrew lesson "המחלק הגדול ביותר" that
+# were lost come back as a few spoken lines (helpers in _hebrew_back.py; a video recorded before its CUTOFF is left as
+# recorded and gets the point in the question's written solution instead). See t14_CHANGES.md.
+# =====================================================================================================================
+import importlib.util as _ilu_hb, os as _os_hb
+_s_hb = _ilu_hb.spec_from_file_location('_hebrew_back', _os_hb.path.join(_os_hb.path.dirname(_os_hb.path.abspath(__file__)), '_hebrew_back.py'))
+HB = _ilu_hb.module_from_spec(_s_hb); _s_hb.loader.exec_module(HB)
+
+
+def hebrew_points_back(M):
+    # lesson "Factor Tools": the exam remark - these questions feel hard, but they are simple
+    if not HB.add_lines(M, 'prime-tools', 'Factor Tools', 'The greatest common divisor, the greatest guaranteed divisor', [
+            "Many students find these 'greatest divisor' questions hard. You'll see — they're a lot simpler than they look."]):
+        pass   # lesson only; no question to carry it
+    # Q (q-389): the GCD is just taking out a common factor
+    new = ["Read the word divisor as factor: the greatest common factor.",
+           "And in practice, that's just taking out a common factor. Picture x plus y — what can you take out of both, in front of brackets? That's the GCD. And that you already know how to do."]
+    if not HB.add_lines(M, 'solve-q-389', 'Lower power', 'The GCD is the biggest number that divides both', new):
+        HB.add_expl(M, 'q-389', 'Why it works: the GCD is just the common factor you would take out of $x+y$ in front of brackets.')
+    # Q (q-390): WHY you can't just multiply - numbers that share nothing vs a number hidden inside the other
+    new = ["Why not just multiply? Divisible by three and by seven — then surely by twenty-one. They share nothing.",
+           "But divisible by three and by nine? Not necessarily by twenty-seven — nine itself works. The three is already inside the nine."]
+    if not HB.add_lines(M, 'solve-q-390', 'Higher power', 'Multiply them?', new, where='before'):
+        HB.add_expl(M, 'q-390', 'Why not multiply? Divisible by $3$ and by $7$ → surely by $21$ (they share nothing). Divisible by $3$ and by $9$ → not necessarily by $27$: $9$ itself works, the $3$ is inside the $9$. A shared prime counts once.')
+
+
+_apply_before_hebrew_points_back = apply
+
+
+def apply(M):
+    _apply_before_hebrew_points_back(M)
+    hebrew_points_back(M)   # 2026-10-08 Hebrew points restored: runs LAST

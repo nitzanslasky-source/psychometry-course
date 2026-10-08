@@ -182,3 +182,6 @@ against the 2026-10-06 methods; each line was verified with numbers. Nothing in 
   self-contained "Shortcut"): 10% + 0.3 · 30% = 19% (choice 2). Written line only.
 - Checked, no fit: the other overlap questions use totals/ranges (min/max overlap, hidden total already added); Q10 is a
   "percent of what?" table question, where the method lines would not be faster.
+
+## 2026-10-08 Hebrew points restored
+Checked only, nothing changed. The lessons the 2026-10-05 cut shortened here were our own added lessons (r26-…), not the teacher's. The teacher's Hebrew theory lessons for this topic map to lessons the cut did not touch, and the Hebrew "advanced study" part has sample questions only. Every idea on the cut slides is still said in a question video (see the 2026-10-05 follow-up above). No lost Hebrew points.

@@ -2298,3 +2298,49 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 12)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 Hebrew points restored. The 2026-10-05 cut assumed the question videos teach what the lesson taught;
+# here they only answered the questions, and a few of the teacher's Hebrew lesson points were lost. Each point is put
+# back as a few spoken lines. These videos were recorded: the teacher decided (2026-10-08) to re-record / continue
+# them, so each one is listed in _rerecord.RERECORD (option 1 = re-record the whole video, option 2 = new last slide,
+# "Continue a take"). See tNN_CHANGES.md ("2026-10-08 Hebrew points restored"). Runs LAST.
+# =====================================================================================================================
+import importlib.util as _ilu_hb, os as _os_hb
+_s_hb = _ilu_hb.spec_from_file_location('_hebrew_back', _os_hb.path.join(_os_hb.path.dirname(_os_hb.path.abspath(__file__)), '_hebrew_back.py'))
+HB = _ilu_hb.module_from_spec(_s_hb); _s_hb.loader.exec_module(HB)
+
+
+def _hb_last_slide(M, vid, title, script):
+    """option 2: one new slide at the END of the video (same question on the board, same sidebar item)."""
+    b = M.video(vid)['beats'][-1]
+    HB.append_slides(M, vid, [dict(mode=b['mode'], title=title, active=b['active'],
+                                   pre=[dict(it) for it in b['items'][:b['pre']]], script=script)])
+
+
+def hebrew_points_back(M):
+    # Q6 (q-326): the Hebrew lesson's exam remark on trial-and-error inequality questions (very common, often early in
+    # the section, look easy, hard by algebra - simple by plugging in)
+    _hb_last_slide(M, 'solve-q-326', 'Trial and error', [
+        A("'Trial and error → plug in the choices or numbers' appears", T('Trial and error $\\to$ plug in the choices, or numbers', size=40)),
+        'A word about this type. Trial-and-error questions are very common in inequalities.',
+        'Often they come early in the section. They look easy — and by algebra alone they are really hard.',
+        'Plug in the choices, or numbers — and they become simple.'])
+    # Q7 (q-328): "second-degree inequalities: rare on the exam, but important to know"; the hardest part of the
+    # lesson - check it with numbers (why the range is symmetric)
+    _hb_last_slide(M, 'solve-q-328', 'Rare — but know it', [
+        'Second-degree inequalities are rare on the exam — but important to know. This is the hardest part of this topic.',
+        'Not sure yet? Test a few numbers yourself.',
+        A("'5² = 25 ✓, (−5)² = 25 ✓, (±7)² = 49 ✗' appears",
+          T('$5^2=25<36$ ✓ $\\quad (-5)^2=25<36$ ✓ $\\quad (\\pm7)^2=49$ ✗', size=40)),
+        'Five squared is twenty-five — under thirty-six, so five is in. Negative five too: its square is also twenty-five.',
+        "Seven, or negative seven? Forty-nine — too big. That's why the answer is symmetric: from negative six to six."])
+
+
+_apply_before_hebrew_points_back = apply
+
+
+def apply(M):
+    _apply_before_hebrew_points_back(M)
+    hebrew_points_back(M)   # 2026-10-08 Hebrew points restored: runs LAST

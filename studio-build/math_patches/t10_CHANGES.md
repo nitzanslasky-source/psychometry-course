@@ -296,3 +296,9 @@ Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/
 Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
 - q-284 (written): 3^1.5 ≈ 5.2 -> 3^1.5 = √27 > √25 = 5, so not 4.5.
 Check: `python3 math_check.py 10 32` -> 0 / 0 / 0.
+
+## 2026-10-08 Hebrew points restored
+Function `hebrew_points_back` (runs LAST). Checked against the Hebrew lesson "ביטויים ומשוואות עם חזקות ושורשים" (01-Algebra lines 5359-6607). 11 points checked; 9 still taught (dividing roots - two ways, a number over a root + the shortcut + its geometry use, smallest prime base, a negative exponent moves to the bottom / other way to write the answer, split so one part comes out whole, why add roots first (only products cancel), exponential equation: equal bases → equal exponents + the fraction tip + smallest base, a root equation: square both sides, x√6 = 6√x: square instead of pushing inside, step by step). 2 lost - both in Q2 `solve-q-249` (recorded; teacher re-records it - option 1, in `_rerecord.RERECORD`; 1.3 → 2.1 min, +≈48 s):
+- slide "Method 1 · Split into factors": "That works only because both are root two. Root two and root three can't be added — apples and bananas. So we split until the roots match."
+- start of slide "Method 2 · Common factor": why a second method - the right split needs trial and error (root 72: many see 9 · 8 → 3√8, which still hides a square; the best split is 36 · 2); a common factor is something most of us are good at, especially if algebra isn't your strongest side.
+- "Exponent Traps — Sums of Powers" (r26) was our own lesson - nothing Hebrew lost.

@@ -1991,3 +1991,28 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 15)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 Hebrew points restored. The 2026-10-05 cut removed the lesson slide "Algebraic form"; the questions use
+# 5x + 4, 8k + 4 ... but nowhere says WHY such a form leaves that remainder (the teacher's Hebrew lesson "שארית",
+# "הצגה אלגברית"). Back as spoken lines at its first use, the lesson slide "Change the divisor". See t15_CHANGES.md.
+# =====================================================================================================================
+import importlib.util as _ilu_hb, os as _os_hb
+_s_hb = _ilu_hb.spec_from_file_location('_hebrew_back', _os_hb.path.join(_os_hb.path.dirname(_os_hb.path.abspath(__file__)), '_hebrew_back.py'))
+HB = _ilu_hb.module_from_spec(_s_hb); _s_hb.loader.exec_module(HB)
+
+
+def hebrew_points_back(M):
+    new = ["First, a way to write it. A number that leaves four when divided by fifteen? Write it as fifteen k plus four — k is a whole number.",
+           "Why? Fifteen k is always divisible by fifteen — the four on the end is the remainder. Any whole k you try, it leaves four."]
+    if not HB.add_lines(M, 'divisibility', 'Change the divisor', 'Write "x = 15k + 4', new, where='before'):
+        HB.add_expl(M, 'q-426', 'Why $5x+4$? $x$ is a whole number, so $5x$ is always divisible by $5$; the $4$ on the end is the remainder, whatever $x$ is.')
+
+
+_apply_before_hebrew_points_back = apply
+
+
+def apply(M):
+    _apply_before_hebrew_points_back(M)
+    hebrew_points_back(M)   # 2026-10-08 Hebrew points restored: runs LAST

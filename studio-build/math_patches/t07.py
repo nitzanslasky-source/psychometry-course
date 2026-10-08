@@ -2670,3 +2670,47 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 7)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 Hebrew points restored. The 2026-10-05 cut assumed the question videos teach what the lesson taught;
+# here they only answered the questions, and a few of the teacher's Hebrew lesson points were lost. Each point is put
+# back as a few spoken lines. These videos were recorded: the teacher decided (2026-10-08) to re-record / continue
+# them, so each one is listed in _rerecord.RERECORD (option 1 = re-record the whole video, option 2 = new last slide,
+# "Continue a take"). See tNN_CHANGES.md ("2026-10-08 Hebrew points restored"). Runs LAST.
+# =====================================================================================================================
+import importlib.util as _ilu_hb, os as _os_hb
+_s_hb = _ilu_hb.spec_from_file_location('_hebrew_back', _os_hb.path.join(_os_hb.path.dirname(_os_hb.path.abspath(__file__)), '_hebrew_back.py'))
+HB = _ilu_hb.module_from_spec(_s_hb); _s_hb.loader.exec_module(HB)
+
+
+def _hb_last_slide(M, vid, title, script):
+    """option 2: one new slide at the END of the video (same question on the board, same sidebar item)."""
+    b = M.video(vid)['beats'][-1]
+    HB.append_slides(M, vid, [dict(mode=b['mode'], title=title, active=b['active'],
+                                   pre=[dict(it) for it in b['items'][:b['pre']]], script=script)])
+
+
+def hebrew_points_back(M):
+    # Q5 (q-195): the Hebrew lesson's "how did I know to add, not subtract or divide?" - not common, a matter of practice,
+    # aim for the move that gives both letters the same coefficient (taken out as a common factor).
+    _hb_last_slide(M, 'solve-q-195', 'Add or subtract?', [
+        A("'Which move? The one that gives x and y the same coefficient' appears",
+          T('Which move? The one that gives $x$ and $y$ the same coefficient', size=40)),
+        'How did I know to add — and not subtract, or divide?',
+        "Honestly, there's nothing to memorize. These questions aren't very common, and it's a matter of practice.",
+        'Ask yourself: which move gives x and y the same number in front? Then you take it out as a common factor.',
+        "After a few questions, you'll start to see the patterns."])
+    # Q7 (q-196): "a rare type, but worth knowing" + why the 2xy is written last
+    assert HB.add_lines(M, 'solve-q-196', 'Equation Questions', 'formula is hiding in here', [
+        'A rare type on the exam — but worth knowing.'])
+    assert HB.add_lines(M, 'solve-q-196', 'Hidden formula', 'Which formula has x squared plus y squared', [
+        'Look how I write it: the two x y goes LAST, not in the middle. That way x squared plus y squared stay side by side — exactly the piece the question gives us.'])
+
+
+_apply_before_hebrew_points_back = apply
+
+
+def apply(M):
+    _apply_before_hebrew_points_back(M)
+    hebrew_points_back(M)   # 2026-10-08 Hebrew points restored: runs LAST

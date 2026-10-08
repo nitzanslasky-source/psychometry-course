@@ -1667,3 +1667,43 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 18)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 Hebrew points restored. The 2026-10-05 cut shortened "Exercises with Letters" to the Hebrew intro on the
+# assumption that the questions teach the rest. Three points of the teacher's Hebrew lesson were lost (the questions only
+# answered): the leftmost digit is never zero (only on the board, never said), WHY plugging in is the core of the
+# technique (a computer would try everything; the steps only save plug-ins), and the teacher's remarks on q-514
+# (AB ± BA comes back on the exam; algebraic form = the strong students' route, plugging in is usually faster).
+# Nothing in topic 18 is recorded; HB.add_lines skips a video that has a take. See t18_CHANGES.md.
+# =====================================================================================================================
+import importlib.util as _ilu_hb, os as _os_hb
+_s_hb = _ilu_hb.spec_from_file_location('_hebrew_back', _os_hb.path.join(_os_hb.path.dirname(_os_hb.path.abspath(__file__)), '_hebrew_back.py'))
+HB = _ilu_hb.module_from_spec(_s_hb); _s_hb.loader.exec_module(HB)
+
+
+def hebrew_points_back(M):
+    # lesson "Exercises with Letters" - why plugging in is step four (and the base of the whole technique)
+    if not HB.add_lines(M, 'digit-puzzles', 'The 4 steps', 'Four: plug in numbers and see what fits', [
+            'Here\'s the truth: every letter question can be solved by plugging in. A computer would just try every option.',
+            'We\'re not computers. So steps one to three are shortcuts — they tell us what we no longer need to plug in.']):
+        HB.add_expl(M, 'q-512', 'Every letter question can be solved by plugging in numbers; the first three steps only save plug-ins.')
+    # lesson - the leftmost digit is never zero (the board shows A from 1 to 9; it was never said)
+    if not HB.add_lines(M, 'digit-puzzles', 'What letters mean', 'Circle the 1', [
+            'And the leftmost digit is never zero. Nobody writes oh-six — it\'s not a phone area code. It\'s just six.']):
+        HB.add_expl(M, 'q-512', 'A leftmost digit is never zero.')
+    # q-514: the pattern comes back on the exam
+    if not HB.add_lines(M, 'solve-q-514', 'Plug in numbers', 'And the pattern: AB plus BA', [
+            'Worth remembering — this pattern comes back on the exam.']):
+        HB.add_expl(M, 'q-514', 'Worth remembering: this pattern comes back on the exam.')
+    # q-514: which route the teacher recommends
+    if not HB.add_lines(M, 'solve-q-514', 'Algebraic form', 'Eleven times anything is divisible by eleven', [
+            'Some students who are strong in math like this route.',
+            'My advice: on the exam, two quick numbers are usually faster. The algebra just shows why it always works.']):
+        HB.add_expl(M, 'q-514', 'Strong math students may prefer the algebraic form; on the exam, plugging in two numbers is usually faster.')
+
+
+_apply_before_hebrew_points_back = apply
+def apply(M):
+    _apply_before_hebrew_points_back(M)
+    hebrew_points_back(M)   # 2026-10-08 Hebrew points restored: runs LAST

@@ -1600,3 +1600,42 @@ _apply_before_no_decimal_estimates = apply
 def apply(M):
     _apply_before_no_decimal_estimates(M)
     no_decimal_estimates(M)   # 2026-10-07 no decimal estimates: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 Hebrew points restored. The 2026-10-05 cut assumed the question videos teach what the lesson taught;
+# here they only answered the questions, and a few of the teacher's Hebrew lesson points were lost. Each point is put
+# back as a few spoken lines. These videos were recorded: the teacher decided (2026-10-08) to re-record / continue
+# them, so each one is listed in _rerecord.RERECORD (option 1 = re-record the whole video, option 2 = new last slide,
+# "Continue a take"). See tNN_CHANGES.md ("2026-10-08 Hebrew points restored"). Runs LAST.
+# =====================================================================================================================
+import importlib.util as _ilu_hb, os as _os_hb
+_s_hb = _ilu_hb.spec_from_file_location('_hebrew_back', _os_hb.path.join(_os_hb.path.dirname(_os_hb.path.abspath(__file__)), '_hebrew_back.py'))
+HB = _ilu_hb.module_from_spec(_s_hb); _s_hb.loader.exec_module(HB)
+
+
+def _hb_last_slide(M, vid, title, script):
+    """option 2: one new slide at the END of the video (same question on the board, same sidebar item)."""
+    b = M.video(vid)['beats'][-1]
+    HB.append_slides(M, vid, [dict(mode=b['mode'], title=title, active=b['active'],
+                                   pre=[dict(it) for it in b['items'][:b['pre']]], script=script)])
+
+
+def hebrew_points_back(M):
+    # Q2 (q-249): the Hebrew lesson's "apples and bananas" (only the same root can be added) and WHY there is a second
+    # method (the right split needs trial and error; a common factor is easy for everyone, esp. if algebra is weak).
+    V = 'solve-q-249'
+    assert HB.add_lines(M, V, 'Method 1 · Split into factors', 'Bottom: seven root two minus four root two', [
+        "That works only because both are root two. Root two and root three can't be added — apples and bananas. So we split until the roots match."])
+    assert HB.add_lines(M, V, 'Method 2 · Common factor', 'Now with a common factor.', [
+        'Why a second method? Splitting needs the RIGHT split — and that can take trial and error.',
+        'Root seventy-two: many people see nine times eight — three root eight. And root eight still hides a square. The best split is thirty-six times two, and not everyone spots it.',
+        "A common factor is something most of us are good at. Especially if algebra isn't your strongest side — this one's for you."], where='before')
+
+
+_apply_before_hebrew_points_back = apply
+
+
+def apply(M):
+    _apply_before_hebrew_points_back(M)
+    hebrew_points_back(M)   # 2026-10-08 Hebrew points restored: runs LAST

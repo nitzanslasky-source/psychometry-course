@@ -230,3 +230,18 @@ Function `spread_methods` (runs last; append only; a recorded video is skipped a
 Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
 
 - r26-t18-facts: slide 'Powers: ones digit' removed (topics 21 and 15); 'Three' → 'Two' facts + one reminder line. ~29 s.
+
+## 2026-10-08 Hebrew points restored
+Function `hebrew_points_back` (runs LAST; helpers `math_patches/_hebrew_back.py`, a video with a take recorded before its
+CUTOFF is left as recorded and the point goes to the written solution instead). Rule: cut repeats, never content. The
+teacher's Hebrew lesson (01-Algebra-Original-Subtitles.txt, lines 18204-18451) has 11 teaching points; 7 are still taught
+(4 steps, letters = digits / not a product / different digits, units column → 0, more digits → leading 1 + why 99 + 99,
+special digits 0 1 5 6 with the 5 and 6 facts, plug in two neighbouring numbers, minus → plus, algebraic form). The
+advanced section has no Hebrew lesson ("Number Facts for Letter Puzzles" is ours) - nothing to restore there.
+Nothing in topic 18 is recorded. Lost and restored (spoken lines only, no board change):
+- **`digit-puzzles` "The 4 steps"** (+≈19 s): every letter question can be solved by plugging in; a computer would try every option - we're not computers, so steps 1-3 are shortcuts that tell us what we no longer need to plug in.
+- **`digit-puzzles` "What letters mean"** (+≈10 s): the leftmost digit is never zero - nobody writes oh-six, it's not a phone area code (the board showed A ∈ {1…9} but it was never said; first said in the advanced lesson).
+- **`solve-q-514` "Plug in numbers"** (+≈4 s): the AB + BA / AB − BA pattern comes back on the exam - worth remembering.
+- **`solve-q-514` "Algebraic form"** (+≈13 s): the teacher's advice on the route - strong math students like the algebraic form; on the exam two quick numbers are usually faster.
+Lesson 2.4 → 2.9 min, q-514 1.0 → 1.3 min. Notes: added_notes.json "lines".
+`math_check.py 18 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered and looked at.

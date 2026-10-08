@@ -265,3 +265,9 @@ Function `spread_methods` (runs last). Went through all 41 questions (16 guided 
 Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
 
 - r26-t15-remainder-tools: slide 'Units digit' removed (topic 1 Last digit; topic 21 Days and last digits); one reminder line on the title slide, 'four' → 'three' tools. ~36 s.
+
+## 2026-10-08 Hebrew points restored
+Function `hebrew_points_back` (runs LAST; helpers in `_hebrew_back.py`). Checked the cut slides against the Hebrew lessons "סימני התחלקות" and "שארית" (01-Algebra-Original-Subtitles.txt ≈ lines 14770-15130). Lost: the "Algebraic form" WHY (cut slide; the questions use 5x + 4, 8k + 4 without saying why). Nothing in topic 15 is recorded.
+- `divisibility` slide "Change the divisor" (its first use), before the hand-written "x = 15k + 4 …": "A number that leaves four when divided by fifteen? Write it as fifteen k plus four — k is a whole number. Fifteen k is always divisible by fifteen — the four on the end is the remainder. Any whole k you try, it leaves four." (+≈22 s)
+Still taught: divisibility stories / "what could it be → eliminate" / no fraction of a kid (Q1), only the free term matters + plug in x = 0 (Q4), one fitting answer → mark and move on (Q2), remainder trap and biggest remainder (lesson). "Combine remainders" and the r26 tools lesson were our additions (not Hebrew).
+`math_check.py 15 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

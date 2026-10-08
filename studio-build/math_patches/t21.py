@@ -1840,3 +1840,35 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 21)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 Hebrew points restored. The 2026-10-05 cut kept only short intros; two points of the teacher's Hebrew
+# lessons were no longer taught anywhere: WHY school sequence formulas are useless here (+ "understanding is rare"),
+# and WHY the exam loves trial-and-error questions (school spoon-feeds, university doesn't). Runs LAST.
+# Helpers: _hebrew_back.py (a video recorded before its CUTOFF is not changed). See t21_CHANGES.md.
+# =====================================================================================================================
+import importlib.util as _ilu_hb, os as _os_hb
+_s_hb = _ilu_hb.spec_from_file_location('_hebrew_back', _os_hb.path.join(_os_hb.path.dirname(_os_hb.path.abspath(__file__)), '_hebrew_back.py'))
+HB = _ilu_hb.module_from_spec(_s_hb); _s_hb.loader.exec_module(HB)
+
+
+def hebrew_points_back(M):
+    # lesson "Patterns" (wp-008): Hebrew "חוקיות" - don't use school sequence formulas, they won't work; understanding is rare
+    if not HB.add_lines(M, 'wp-008', 'Two kinds', 'The second kind: a sequence with a formula in n', [
+            "If you remember arithmetic or geometric sequence formulas from school — leave them. These aren't the sequences you know, and those formulas won't work here.",
+            "Solving it by pure understanding is possible — but every question is different, and very few students manage it."]):
+        HB.add_expl(M, 'wp21-g010', "Don't use the school formulas for arithmetic or geometric sequences — these are not the sequences you know. Plugging in is the simple, reliable way.")
+    # lesson "Smart Trial & Error" (wp-012): Hebrew advanced intro - why the exam tests this (school vs university)
+    if not HB.add_lines(M, 'wp-012', 'Why it matters', 'Why does the exam love these questions?', [
+            "The exam is meant to predict how you'll do in your first year at university.",
+            "At school you're spoon-fed: here's the material, here are the exact questions. At university, a lot is up to you — nobody tells you exactly what to do."]):
+        HB.add_expl(M, 'wp21-g013', "Why the exam loves these questions: it predicts how you'll do at university, where nobody tells you exactly what to do. Don't stare — start trying.")
+
+
+_apply_before_hebrew_points_back = apply
+
+
+def apply(M):
+    _apply_before_hebrew_points_back(M)
+    hebrew_points_back(M)   # 2026-10-08 Hebrew points restored: runs LAST

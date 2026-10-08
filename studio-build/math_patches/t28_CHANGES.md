@@ -259,3 +259,9 @@ Total: 1 written line, no slides. Recorded: none.
 Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
 - wp28-p16: "Shortcut · Pick values that fit" → "Method 2 · Pick values that fit" (topic 51 is day 6).
 `python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-08 Hebrew points restored
+Function `hebrew_points_back` (runs LAST; helper `math_patches/_hebrew_back.py`, so a video recorded before its CUTOFF is left alone and the point goes into the written solution instead). I checked the 16 teaching points of the Hebrew lessons that the 2026-10-05 cut shortened: intro / multiply the choices / dependent choice, with or without repetition / a row = n!, and mutual action / diagonals. 14 of them are still taught: in the kept lesson slides, or in Q1–Q8, which explain the WHY (soup × bread), that the order of the stages doesn't matter, the first digit can't be 0 and the 25 trap, the pool, the doubling, the halving, and the four ways to count diagonals. Two points were lost. Nothing in topic 28 is recorded.
+- Q6 `solve-wp28-g130`, slide "Method 1 · Counting in stages", after "Seven items in a row: seven factorial ways": "Any n different items in a row: n factorial ways." + "Keep factorial in mind — we'll use it again later, when we choose groups." (+≈9 s)
+- Q8 `solve-wp28-g133`, title slide, before "Diagonals — four ways.": "A rare question type — but it does show up on the exam: the diagonals of a polygon." (+≈7 s; this was the Hebrew lesson's exam-frequency remark)
+`math_check.py 28 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Both videos were rendered and checked. Topics 29 and 30: nothing was lost (see their logs).

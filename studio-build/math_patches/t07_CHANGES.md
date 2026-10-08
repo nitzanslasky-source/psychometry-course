@@ -246,3 +246,9 @@ Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/
 Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
 
 - r26-t07-more-tools: no longer announces two 'new' tools — both were taught before (multiply/divide equations: topic 6 Systems; x + 1/x: topic 4 formulas). Title slide one line; spoken lines say where they were learned.
+
+## 2026-10-08 Hebrew points restored
+Function `hebrew_points_back` (runs LAST; helpers `_hebrew_back.py`). The 2026-10-05 cut / Hebrew intro was checked point by point against the teacher's Hebrew lesson "משוואות תאוריה" (01-Algebra-Original-Subtitles.txt ~3895-4140). 10 points checked; 8 still taught (dividing by an unknown, the m⁵ = m⁴n trap, power 2 and up → common factor → product = 0, number of solutions, an even root gives ± (and √ alone is only the positive root), one equation with two unknowns → compare, build the expression directly, break the big equation apart). 2 lost. Both videos were recorded; the teacher decided to re-record, so they are in `_rerecord.RERECORD`.
+- **Q5 `solve-q-195`** (option 2, new last slide "Add or subtract?", +≈24 s, 1.0 → 1.4 min): "How did I know to add, not subtract or divide? Not very common, a matter of practice; look for the move that gives x and y the same coefficient; after a few questions you'll see the patterns." + board item.
+- **Q7 `solve-q-196`** (option 1, re-record the whole video, 1.1 → 1.4 min, +≈18 s): title slide "A rare type on the exam — but worth knowing."; slide "Hidden formula": "I write the two x y LAST, so x² + y² stay side by side — exactly the piece the question gives."
+- No written-solution changes.

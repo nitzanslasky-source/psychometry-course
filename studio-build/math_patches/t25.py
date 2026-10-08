@@ -1643,3 +1643,52 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 25)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================
+# 2026-10-08 Hebrew points restored: the 2026-10-05 cut shortened "Weighted Averages" (wp-086) to an intro, on the
+# assumption that the question videos teach the rest. Three points of the teacher's Hebrew weighted-average lesson were
+# said nowhere any more: the formula itself (value × weight, divide by the SUM of the weights; more values - each
+# times its own weight), the see-saw picture (equal weights -> the middle; the heavy side tips it, the pivot slides
+# toward it), and "ratios feel strange at first - a little practice and they are much faster". Put back as short
+# spoken lines (+ the formula on the board) in the first question videos that use them. Helpers: _hebrew_back.py
+# (a video recorded before its CUTOFF is left as recorded; the point goes to the written solution instead).
+import importlib.util as _ilu_hb, os as _os_hb
+_s_hb = _ilu_hb.spec_from_file_location('_hebrew_back', _os_hb.path.join(_os_hb.path.dirname(_os_hb.path.abspath(__file__)), '_hebrew_back.py'))
+HB = _ilu_hb.module_from_spec(_s_hb); _s_hb.loader.exec_module(HB)
+
+
+def hebrew_points_back(M):
+    from dsl import A, T
+    # Q11 (wp25-g087), Method 1: the formula on the board first (the teacher writes under it), then what it means
+    vid, t = 'solve-wp25-g087', 'Method 1 · Algebra'
+    if not HB.recorded(vid):
+        HB.add_lines(M, vid, t, 'The written exam counts twice', [
+            A("'Weighted average formula' appears", T('$\\dfrac{\\text{value}_1\\cdot\\text{weight}_1+\\text{value}_2\\cdot\\text{weight}_2}{\\text{weight}_1+\\text{weight}_2}$', size=38)),
+            'The weighted-average formula: each value times its weight, divided by the SUM of the weights.'], where='before')
+        HB.add_lines(M, vid, t, 'Two nineteen over three', [
+            'That is the formula at work: the copies are the weights. More than two values? Each one times its own weight.'])
+    else:
+        HB.add_expl(M, 'wp25-g087', 'The formula: each value times its weight, divided by the sum of the weights: $\\frac{61\\cdot2+97\\cdot1}{2+1}=73$. More values? Each one times its own weight.', before='See-saw')
+    # Q11, Method 2: the see-saw picture (why the average moves toward the heavy side)
+    if not HB.recorded('solve-wp25-g087'):
+        t = 'Method 2 · Balance (averages)'
+        sc = HB.replace_line(HB.lines_of(M, 'solve-wp25-g087', t), 'Now the see-saw. Weights two to one', [
+            'Now the see-saw. The average is the balance point. With equal weights, it sits exactly in the middle.',
+            'Here the written exam is heavier, so the see-saw tips toward it. To balance it again, the pivot — the average — slides toward the heavy side.',
+            'How far? Weights two to one — so distances one to two.'])
+        HB.set_slide(M, 'solve-wp25-g087', t, sc)
+    else:
+        HB.add_expl(M, 'wp25-g087', 'Why closer to the written exam? The average is the balance point of a see-saw. With equal weights it is in the middle; the heavier side tips it, so the pivot slides toward the heavy side.', before='See-saw')
+    # Q12 (wp25-g088), end: ratios feel strange at first - practice them, they are much faster
+    if not HB.add_lines(M, 'solve-wp25-g088', 'Method 2 · Algebra', None, [
+            'Formula or ratios — both work. If the ratios feel strange at first — we are all used to equations — give them a little practice. They are much faster.']):
+        HB.add_expl(M, 'wp25-g088', 'Formula or ratios: both work. The ratios may feel strange at first, but with a little practice they are much faster.')
+
+
+_apply_before_hebrew_points_back = apply
+
+
+def apply(M):
+    _apply_before_hebrew_points_back(M)
+    hebrew_points_back(M)   # 2026-10-08 Hebrew points restored: runs LAST

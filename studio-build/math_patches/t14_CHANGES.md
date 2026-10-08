@@ -291,3 +291,11 @@ Went through all 45 questions (19 guided + 26 practice) for the 2026-10-06 metho
 - Power count: the letter-choice questions are GCDs (q-389, q-410) — not homogeneous expressions, so the method does not apply.
 - Test a number (ranges): q-409 could be done by testing 22 / 259 / 333, but computing the smallest and largest product is faster. Mirror test / pick values: no question fits.
 - Recorded videos: none in topic 14.
+
+## 2026-10-08 Hebrew points restored
+Function `hebrew_points_back` (runs LAST; helpers in `_hebrew_back.py`). The 2026-10-05 cut shortened "Factor Tools" on the assumption that Q5/Q6 teach the GCD/LCM ideas; they only answered the questions. Checked against the Hebrew lessons "המחלק הגדול ביותר" and "פירוק והרכבת מספרים" (01-Algebra-Original-Subtitles.txt ≈ lines 13920-14260): 12 points; 9 still taught; 3 lost, now back as spoken lines (no board changes). Nothing in topic 14 is recorded.
+- `prime-tools` slide 1 "Factor Tools": "Many students find these 'greatest divisor' questions hard. You'll see — they're a lot simpler than they look." (+≈8 s)
+- `solve-q-389` (GCD) slide "Lower power": read "divisor" as "factor"; the GCD is just taking out a common factor — picture x + y, what comes out in front of brackets (+≈21 s)
+- `solve-q-390` (greatest guaranteed divisor) slide "Higher power", before "Multiply them?": why not just multiply — divisible by 3 and 7 → by 21 (they share nothing); by 3 and 9 → not by 27, 9 itself works, the 3 is inside the 9 (+≈17 s). Same numbers as the card tip (not the Hebrew 2 & 5 / 2 & 6).
+Still taught (not touched): symmetric divisors / 3 divisors → prime squared (Q11), x² prime → x not an integer + the trap (Q10), break 100 every way + "the rest is reading comprehension" (Q8), build products (Q9), missing prime in the digits (Q7), "what can we be SURE divides it" (Q6), "the heart of the whole topic" (Break & build).
+`math_check.py 14 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
