@@ -1386,6 +1386,10 @@
   "solve-q-328#4": {
    "t": "Rare — but know it",
    "d": "restored from your Hebrew lesson: second-degree inequalities are rare but important; the hardest part - check with numbers (±5 in, ±7 out: symmetric)"
+  },
+  "absolute-value#8": {
+   "t": "Two cases",
+   "d": "restored from your Hebrew lesson (2026-10-08): |x − 2| = 6 → 8 or −4, \"the same left side, twice\"; read as distance from 2 on the number line"
   }
  },
  "lines": {
@@ -2999,7 +3003,7 @@
   },
   "absolute-value#8": {
    "t": "Two cases",
-   "d": "restored from your Hebrew lesson (2026-10-08): worked example |x − 2| = 6 → x = 8 or x = −4, the same left side twice; number line: |x − 2| as the distance from 2 (6 steps each way); a plus inside = distance from the negative number"
+   "d": "restored from your Hebrew lesson (2026-10-08): |x − 2| = 6 → 8 or −4, \"the same left side, twice\"; read as distance from 2 on the number line"
   },
   "absolute-value#9": {
    "t": "Inequalities · big side",

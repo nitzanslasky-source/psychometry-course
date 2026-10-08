@@ -305,6 +305,8 @@ print('  notes: %d added items / slides with new lines, %d without a note' % (su
 out = studio_added.apply(out, ADDED, D)
 # ---------- navigation order: by topic | by the students' study plan (src/lib/planData.ts) (studio_order.py) ----------
 import studio_order; out = studio_order.apply(out, D)
+# ---------- videos to re-record (math_patches/_rerecord.py): red ⟳ instead of green until a newer take exists (studio_rerecord.py) ----------
+import studio_rerecord; out = studio_rerecord.apply(out, D)
 _amd = os.path.join(DOCDIR, 'Added-Content-List.md') if not TEST else os.path.splitext(OUT)[0] + '-Added-Content-List.md'
 open(_amd, 'w', encoding='utf-8').write(added_content.markdown(ADDED, D, studio_done.recorded_ids())); print('wrote', _amd)
 open(OUT, 'w', encoding='utf-8').write(out)
