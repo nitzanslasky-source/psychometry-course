@@ -2702,8 +2702,8 @@ def hebrew_points_back(M):
         'Ask yourself: which move gives x and y the same number in front? Then you take it out as a common factor.',
         "After a few questions, you'll start to see the patterns."])
     # Q7 (q-196): "a rare type, but worth knowing" + why the 2xy is written last
-    assert HB.add_lines(M, 'solve-q-196', 'Equation Questions', 'formula is hiding in here', [
-        'A rare type on the exam — but worth knowing.'])
+    assert HB.add_lines(M, 'solve-q-196', 'Hidden formula', 'Which formula has x squared plus y squared', [
+        'A rare type on the exam — but worth knowing.'], where='before')
     assert HB.add_lines(M, 'solve-q-196', 'Hidden formula', 'Which formula has x squared plus y squared', [
         'Look how I write it: the two x y goes LAST, not in the middle. That way x squared plus y squared stay side by side — exactly the piece the question gives us.'])
 

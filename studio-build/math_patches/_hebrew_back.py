@@ -70,6 +70,15 @@ def add_lines(M, vid, title, anchor, new, where='after'):
         assert len(ks) == 1, ('add_lines', vid, title, anchor, ks)
         k = ks[0]
         out = sc[:k + 1] + list(new) + sc[k + 1:] if where == 'after' else sc[:k] + list(new) + sc[k:]
+    b = M.video(vid)['beats'][_TR.n_of(M, vid, title) - 1]
+    if b.get('mode') == 'title':
+        # a "Question N" title slide: M.set_slide would rebuild it as a normal slide, and the build's
+        # question-number removal would no longer recognise it — add the spoken lines in place instead
+        assert all(isinstance(x, str) for x in new), ('title slide: spoken lines only', vid)
+        b['lines'] = [({'say': x} if isinstance(x, str) else x) for x in out if isinstance(x, str)] \
+            if all(isinstance(x, str) for x in out) else b['lines'] + [{'say': x} for x in new]
+        M.touched_videos.add(vid)
+        return True
     set_slide(M, vid, title, out)
     return True
 
