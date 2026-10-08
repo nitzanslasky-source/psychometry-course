@@ -2784,3 +2784,116 @@ _apply_before_restore_and_clarify = apply
 def apply(M):
     _apply_before_restore_and_clarify(M)
     restore_and_clarify(M)   # 2026-10-08 topic 13 restored + clearer: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-08 clearer scripts. Teacher (recording topic 13): "Make the script of the slides of what I'm doing now and the
+# next topic a bit more informative. Sometimes I feel stuck and reading what you wrote isn't enough to understand."
+# Spoken lines only, in the UNRECORDED videos (any take before _clearer.CUTOFF -> untouched): say what we do and why,
+# what a result means, the rule by name, why a choice is out, and the missing middle step. Same methods, numbers, board.
+# =====================================================================================================================
+import importlib.util as _ilu_cl, os as _os_cl
+_s_cl = _ilu_cl.spec_from_file_location('_clearer', _os_cl.path.join(_os_cl.path.dirname(_os_cl.path.abspath(__file__)), '_clearer.py'))
+CL = _ilu_cl.module_from_spec(_s_cl); _s_cl.loader.exec_module(CL)
+
+
+def clearer_scripts(M):
+    E = CL.edit
+    # ---- q-369: 7 < |2x − 1| < 9
+    v = 'solve-q-369'
+    E(M, v, 'Method 1 · Number line', [
+        ('after', 'Two x minus one, in bars. If it',
+         ["Two bands, one on each side of zero. We solve each one."]),
+        ('replace', 'Add one: eight to ten. Halve',
+         "Add one to all three parts: eight, two x, ten. Then divide all three by two: x between four and five."),
+        ('replace', 'Negative nine to negative seven. Add one, halve',
+         "Negative nine to negative seven. Same two steps: add one — negative eight to negative six. Halve — x between negative four and negative three."),
+        ('replace', 'Choice three.', "That's exactly choice three — negative four to negative three."),
+        ('end', None, ["And choice four, negative five to negative four, is the same mistake on the negative side."]),
+    ])
+    E(M, v, 'Method 2 · Plugging in the answers', [
+        ('after', 'Pick a convenient number inside each range',
+         ["One number that breaks the given is enough to cross a range out."]),
+        ('replace', 'Eleven minus one — ten',
+         "Choice two: five and a half. Two times it is eleven, minus one — ten. Not less than nine. Out."),
+    ])
+    # ---- q-370: x + |x| < 12
+    v = 'solve-q-370'
+    E(M, v, 'Method 1 · Two cases', [
+        ('after', 'As usual with absolute value — two cases',
+         ["The bars act differently on each side of zero."]),
+        ('replace', 'Case one: x is positive or zero. Then the bars do nothing.',
+         "Case one: x is positive or zero. Then the bars do nothing — absolute x is just x."),
+        ('replace', 'Then the bars turn it into its opposite',
+         ["Then the bars turn it into its opposite — absolute x is minus x.",
+          "Negative four plus four — zero. Negative nine plus nine — zero. Always zero."]),
+        ('after', 'every negative number, and positives only below six',
+         ["Put the two cases together: every number below six.",
+          "\"Most precise\" means the domain holds exactly the numbers that work — no more, no less."]),
+    ])
+    E(M, v, 'Method 2 · Plugging in the answers', [
+        ('after', 'Now plug numbers into the choices',
+         ["One number that breaks a choice crosses it out."]),
+        ('replace', 'Choice four says every positive works',
+         "Choice four says every positive works. Two: two plus two, four — fine. But nine: nine plus nine, eighteen — not less than twelve. Out."),
+        ('replace', 'Choice two says only negatives',
+         "Choice two says only negatives work. But two worked, and two is positive. Out."),
+        ('after', 'The difference is the bottom',
+         ["So test a number below negative six."]),
+        ('replace', 'A smart substitution to split them',
+         "Negative eight. Negative eight plus its absolute value, eight — zero. Less than twelve. It works!"),
+        ('replace', "So x doesn't stop at negative six",
+         "So x can go below negative six — choice one misses them. Choice three."),
+    ])
+    # ---- the mirror test lesson
+    v = 'r26-t13-mirror'
+    E(M, v, 'The idea', [
+        ('replace', 'Why does that help?',
+         ["Why does that help? Any numbers that fit the given — their mirror fits it too.",
+          "Say the swap keeps the given, and x three, y five fit it. Then x five, y three fit it too.",
+          "So whatever is necessarily true stays necessarily true in the mirror."]),
+        ('after', 'both can\'t always be true. Cross it out',
+         ["For example, \"x is less than y\". Three and five say yes. Their mirror, five and three, says no. So it's not ALWAYS true."]),
+    ])
+    E(M, v, 'Flip all signs', [
+        ('after', 'Step one: is the given a mirror? Flip all signs',
+         ["Put minus a instead of a, and minus b instead of b."]),
+        ('replace', 'a turns into minus a. If a were always negative',
+         "a turns into minus a. If a were always negative, minus a would have to be always negative too. But minus a negative is positive. Both can't hold. Out."),
+        ('replace', 'b minus a turns into a minus b',
+         "b minus a turns into a minus b. a plus b turns into its minus. Each one turns into its opposite — out."),
+    ])
+    E(M, v, 'Swap the letters', [
+        ('replace', 'Here both mirrors work. Flip the signs',
+         ["Here both mirrors work. Let's check each.",
+          "Flip the signs: minus x, squared, is x squared. The given doesn't change."]),
+    ])
+    E(M, v, 'Limits', [
+        ('after', 'The same idea works for formulas',
+         ["A formula that changes in the mirror gives a different number for the mirror pair — but the answer must stay the same."]),
+    ])
+    # ---- q-r26-t13-15: a² + b² = 2ab + 9
+    v = 'solve-q-r26-t13-15'
+    E(M, v, 'Method 1 · Mirror test', [
+        ('after', 'the swapped pair fits it too',
+         ["That means: a choice that turns into its opposite can't be necessarily true."]),
+        ('replace', 'Choice three: the absolute value of a minus b',
+         ["Choice three: the absolute value of a minus b.",
+          "Swap: absolute b minus a — the same number. Flip: absolute minus a plus b — the same again. It survives."]),
+        ('replace', 'Choice three. And we didn\'t solve anything',
+         "Three choices out, one left. Choice three. And we didn't solve anything."),
+    ])
+    E(M, v, 'Method 2 · Algebra', [
+        ('before', 'Want proof? Move the two a b',
+         ["The given has a squared, b squared and two a b — the pieces of a shortcut formula."]),
+        ('after', 'a zero, b three: nine equals nine',
+         ["So a minus b is not always three. That's why choice one is not necessarily true."]),
+    ])
+
+
+_apply_before_clearer_scripts = apply
+
+
+def apply(M):
+    _apply_before_clearer_scripts(M)
+    clearer_scripts(M)   # 2026-10-08 clearer scripts: runs LAST

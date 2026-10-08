@@ -1783,11 +1783,11 @@
   },
   "prime-tools#1": {
    "t": "Break & build",
-   "d": "primes as letters: plug in 2, 3, 5, 7 and check every choice"
+   "d": "primes as letters: plug in 2, 3, 5, 7 and check every choice · clearer explanation (2026-10-08)"
   },
   "prime-tools#2": {
    "t": "Counting divisors",
-   "d": "note that counting all divisors is used in practice, not in these questions"
+   "d": "note that counting all divisors is used in practice, not in these questions · clearer explanation (2026-10-08)"
   },
   "primes#2": {
    "t": "0, 1 and 2",
@@ -2223,11 +2223,11 @@
   },
   "solve-q-389#0": {
    "t": "Lower power",
-   "d": "GCD defined: shared primes at the lower power; trap choice is the LCM · restored from your Hebrew lesson: read 'divisor' as 'factor' - the GCD is just taking out a common factor (picture x + y, what comes out in front of brackets)"
+   "d": "GCD defined: shared primes at the lower power; trap choice is the LCM · restored from your Hebrew lesson: read 'divisor' as 'factor' - the GCD is just taking out a common factor (picture x + y, what comes out in front of brackets) · clearer explanation (2026-10-08)"
   },
   "solve-q-390#0": {
    "t": "Higher power",
-   "d": "the LCM name, step-by-step solve (2·5² = 50) and GCD · LCM = a · b · restored from your Hebrew lesson: why not just multiply - divisible by 3 and 7 → by 21 (nothing shared), but by 3 and 9 → not by 27 (the 3 is inside the 9)"
+   "d": "the LCM name, step-by-step solve (2·5² = 50) and GCD · LCM = a · b · restored from your Hebrew lesson: why not just multiply - divisible by 3 and 7 → by 21 (nothing shared), but by 3 and 9 → not by 27 (the 3 is inside the 9) · clearer explanation (2026-10-08)"
   },
   "solve-q-395#0": {
    "t": "Test each statement",
@@ -2235,11 +2235,11 @@
   },
   "solve-q-399#0": {
    "t": "Break it every way",
-   "d": "the trap if you forget 10 × 10 (answer 33)"
+   "d": "the trap if you forget 10 × 10 (answer 33) · clearer explanation (2026-10-08)"
   },
   "solve-q-402#0": {
    "t": "Three divisors → prime squared",
-   "d": "divisors come in pairs: odd number of divisors → a perfect square"
+   "d": "divisors come in pairs: odd number of divisors → a perfect square · clearer explanation (2026-10-08)"
   },
   "solve-q-423#0": {
    "t": "Method 1 · Understanding",
@@ -2915,11 +2915,11 @@
   },
   "solve-q-369#0": {
    "t": "Method 1 · Number line",
-   "d": "shaded number line: two small bands, −4 < x < −3 and 4 < x < 5"
+   "d": "shaded number line: two small bands, −4 < x < −3 and 4 < x < 5 · clearer explanation (2026-10-08)"
   },
   "solve-q-370#0": {
    "t": "Method 1 · Two cases",
-   "d": "shaded number line: x < 6 as one ray going left from 6 (no stop at −6)"
+   "d": "shaded number line: x < 6 as one ray going left from 6 (no stop at −6) · clearer explanation (2026-10-08)"
   },
   "solve-q-498#1": {
    "t": "Method 2 · Plugging in the answers",
@@ -3108,6 +3108,74 @@
   "geo-159#4": {
    "t": "The length AD",
    "d": "from your Hebrew course: when a step length is a root, the answer may be simplified: 3√13 = √117 (117 = 9 × 13)"
+  },
+  "primes#7": {
+   "t": "Break it down",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "primes#8": {
+   "t": "Is it a divisor?",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "primes#4": {
+   "t": "Is it prime?",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "primes#1": {
+   "t": "What a prime is",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-369#1": {
+   "t": "Method 2 · Plugging in the answers",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-370#1": {
+   "t": "Method 2 · Plugging in the answers",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-386#0": {
+   "t": "Number line",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-387#0": {
+   "t": "Trial and error",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-388#0": {
+   "t": "The missing prime",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-391#0": {
+   "t": "The only even prime",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-393#0": {
+   "t": "Common factor, then factor pairs",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-394#0": {
+   "t": "Method 1 · Understanding",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-396#0": {
+   "t": "Build the smallest a and b",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-397#0": {
+   "t": "Method 1 · Understanding",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-398#0": {
+   "t": "Which prime is missing?",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-400#0": {
+   "t": "Build every product",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-401#0": {
+   "t": "Method 1 · Understanding",
+   "d": "clearer explanation (2026-10-08)"
   }
  }
 }

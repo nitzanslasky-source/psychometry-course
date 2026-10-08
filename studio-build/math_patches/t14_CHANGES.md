@@ -299,3 +299,29 @@ Function `hebrew_points_back` (runs LAST; helpers in `_hebrew_back.py`). The 202
 - `solve-q-390` (greatest guaranteed divisor) slide "Higher power", before "Multiply them?": why not just multiply — divisible by 3 and 7 → by 21 (they share nothing); by 3 and 9 → not by 27, 9 itself works, the 3 is inside the 9 (+≈17 s). Same numbers as the card tip (not the Hebrew 2 & 5 / 2 & 6).
 Still taught (not touched): symmetric divisors / 3 divisors → prime squared (Q11), x² prime → x not an integer + the trap (Q10), break 100 every way + "the rest is reading comprehension" (Q8), build products (Q9), missing prime in the digits (Q7), "what can we be SURE divides it" (Q6), "the heart of the whole topic" (Break & build).
 `math_check.py 14 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-08 clearer scripts
+Teacher (recording topic 13): "Make the script of the slides of what I'm doing now and the next topic a bit more informative. Sometimes I feel stuck and reading what you wrote isn't enough to understand." Function `clearer_scripts(M)` in t14.py runs LAST; helper `_clearer.py`. No topic 14 video is recorded; any take recorded before `_clearer.CUTOFF` would keep its video as recorded. Spoken lines only — board items, numbers, methods, answers and the pen/click split unchanged. AI summary (r26-t14-summary) untouched. Notes in added_notes.json ("clearer explanation (2026-10-08)").
+- Terms defined once: prime = exactly two divisors, one and itself (primes "What a prime is"); prime factorization (primes "Break it down"); LCM = least common multiple, the smallest number both divide (q-389 → q-390).
+- **primes** (822 → 897): why testing up to the root is enough (both factors can't be above the root); "it's even — two is an easy start"; a number divides 150 only if each of its primes is there, at least as many times.
+- **solve-q-387** (68 → 89): only primes are tried; "they ask for nine x, not x".
+- **solve-q-r26-t14-01** (128 → 152): a prime that divides it → a fake; nothing up to the root breaks 113.
+- **solve-q-388** (121 → 137): where the four fives come from; "a missing prime — it can't divide x".
+- **solve-q-386** (139 → 167): counting down from forty (37, 31); x must not be prime (the question says so); y after 43 and before 47; x has to be thirty.
+- **prime-tools** (216 → 279): why the smallest primes; why counting divisors works and why we multiply the options.
+- **solve-q-389** (147 → 185): why the LOWER power; why r is out; the LCM named for the next question.
+- **solve-q-390** (179 → 217): LCM meaning; why the higher power (the number holds all of ten AND all of twenty-five); why nothing above fifty is guaranteed; the GCD five = the one five they share.
+- **solve-q-398** (88 → 105): thirty always breaks into 2, 3, 5 — no digit brings a two.
+- **solve-q-399** (113 → 132): the bars → bigger minus smaller; no one times a hundred.
+- **solve-q-400** (89 → 98): pairs first, then all three.
+- **solve-q-401** (119 → 156): a whole m (e.g. three) makes m² break; prime / even / odd describe whole numbers → choices 1, 3, 4 out.
+- **solve-q-402** (106 → 150): divisors come in pairs (twelve's pairs); why the unpaired middle divisor is a prime.
+- **r26-t14-more-tools** (141 → 168): why a square's exponents are even; twelve's exponents → the three is missing a copy.
+- **solve-q-r26-t14-03** (70 → 84): 4 = 2², 27 = 3³; same number in primes → the exponents must match.
+- **solve-q-391** (206 → 226): why no other pair works (two odd primes give an even sum).
+- **solve-q-392** (239 → 257): why seven (2, 3, 5 each appear once).
+- **solve-q-393** (151 → 188): why a is the smaller factor; a = 6 gives b = 4 < a — no more options.
+- **solve-q-396** (123 → 150): smaller a and b → smaller fraction; b can't go below ten; "Eight. Choice one."
+- **solve-q-394** (327 → 347): the rule — a prime power divides z only if z has that prime at least as many times.
+- **solve-q-397** (229 → 244): why a prime squared has exactly three divisors.
+`python3 math_check.py 13 14 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered: tmp_check/clearer/t14.png (boards unchanged).

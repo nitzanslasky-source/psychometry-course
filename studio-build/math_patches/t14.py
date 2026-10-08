@@ -2073,3 +2073,216 @@ _apply_before_hebrew_points_back = apply
 def apply(M):
     _apply_before_hebrew_points_back(M)
     hebrew_points_back(M)   # 2026-10-08 Hebrew points restored: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-08 clearer scripts. Teacher (recording topic 13): "Make the script of the slides of what I'm doing now and the
+# next topic a bit more informative. Sometimes I feel stuck and reading what you wrote isn't enough to understand."
+# Spoken lines only, in the UNRECORDED videos (any take before _clearer.CUTOFF -> untouched): say what we do and why,
+# what a result means, the rule by name, why a choice is out, the missing middle step, and the terms defined once
+# (prime = exactly two divisors, prime factorization, LCM). Same methods, numbers, board items and pen/click split.
+# =====================================================================================================================
+import importlib.util as _ilu_cl, os as _os_cl
+_s_cl = _ilu_cl.spec_from_file_location('_clearer', _os_cl.path.join(_os_cl.path.dirname(_os_cl.path.abspath(__file__)), '_clearer.py'))
+CL = _ilu_cl.module_from_spec(_s_cl); _s_cl.loader.exec_module(CL)
+
+
+def clearer_scripts(M):
+    E = CL.edit
+    # ---- the lesson
+    v = 'primes'
+    E(M, v, 'What a prime is', [
+        ('after', "Sounds weird? It's what you remember from school",
+         ["In other words: a prime has exactly two divisors — one and itself."]),
+    ])
+    E(M, v, 'Is it prime?', [
+        ('replace', 'Why? If n breaks into two factors',
+         ["Why? If n breaks into two factors, they can't both be bigger than its square root — then their product would be bigger than n.",
+          "So one factor is at most the root — and we'd find it."]),
+    ])
+    E(M, v, 'Break it down', [
+        ('after', 'Start with a divisor you recognise',
+         ["It's even — so two is an easy start."]),
+        ('after', 'So one hundred fifty is two, times three, times five squared',
+         ["Writing a number as a product of primes like this is called its prime factorization."]),
+    ])
+    E(M, v, 'Is it a divisor?', [
+        ('after', 'Now: is a number a divisor? Check its ingredients',
+         ["A number divides one fifty only if each of its primes is in one fifty — at least as many times."]),
+    ])
+    # ---- q-387: x prime, x⁶ two digits
+    v = 'solve-q-387'
+    E(M, v, 'Trial and error', [
+        ('replace', 'Start with the smallest prime: two', "x is a prime — so we only try primes. Start with the smallest: two."),
+        ('after', 'So x must be two', ["But they ask for nine x, not x. So multiply by nine."]),
+    ])
+    # ---- q-r26-t14-01: which is prime
+    v = 'solve-q-r26-t14-01'
+    E(M, v, 'Test up to the root', [
+        ('after', 'Test each one: divide by the primes up to its square root',
+         ["If one of those primes divides it, the number breaks — a fake, not prime."]),
+        ('replace', 'No prime divides it. A hundred thirteen is prime',
+         "No prime up to the root divides it — so nothing breaks it. A hundred thirteen is prime. Choice three."),
+    ])
+    # ---- q-388: x = 3 · 5² · 10²
+    v = 'solve-q-388'
+    E(M, v, 'The missing prime', [
+        ('replace', 'Ten squared is two squared times five squared. So x has',
+         ["Ten squared is two squared times five squared.",
+          "Together with the five squared already there — x has two twos, a three, and four fives."]),
+        ('replace', 'Twenty-two: two times eleven',
+         "Twenty-two: two times eleven. The two is there — but there's no eleven anywhere in x. A missing prime — so it can't divide x. Choice two."),
+    ])
+    # ---- q-386: primes around 40
+    v = 'solve-q-386'
+    E(M, v, 'Number line', [
+        ('replace', 'Between x and forty: exactly two primes. So thirty-one',
+         ["Between x and forty: exactly two primes. Counting down from forty: thirty-seven, thirty-one.",
+          "So those two are in — twenty-nine must stay out."]),
+        ('replace', 'And twenty-nine is prime. Not allowed',
+         "But x must not be prime — the question says so. Twenty-nine is prime. So x is thirty."),
+        ('before', 'So y is forty-four, forty-five or forty-six',
+         ["So y must come after forty-three — and can't go past forty-seven."]),
+        ('replace', 'We want the SMALLEST product',
+         "We want the SMALLEST product. x has to be thirty. Take the smallest y: forty-four."),
+    ])
+    # ---- Factor tools lesson
+    v = 'prime-tools'
+    E(M, v, 'Break & build', [
+        ('after', 'plug in the smallest primes: two, three, five, seven',
+         ["Why the smallest? Any primes in the right order fit — and small ones are the easiest to calculate with."]),
+    ])
+    E(M, v, 'Counting divisors', [
+        ('before', 'A divisor chooses how many threes',
+         ["Why does this work? A divisor of n is built only from n's primes — threes and fives — and never more of each than n has."]),
+        ('before', 'Four times three: twelve divisors',
+         ["Any choice of threes goes with any choice of fives — so we multiply the options."]),
+    ])
+    # ---- q-389: GCD
+    v = 'solve-q-389'
+    E(M, v, 'Lower power', [
+        ('after', 'Each shared prime, at its LOWER power',
+         ["Why the lower? y has only one p — so a number with two p's can't divide y."]),
+        ('replace', 'r: only in y. Not shared. Out.', "r: only in y. x has no r — so r can't divide x. Out."),
+        ('after', "That's the LCM, not the GCD",
+         ["The LCM — the least common multiple — is the next question."]),
+    ])
+    # ---- q-390: LCM
+    v = 'solve-q-390'
+    E(M, v, 'Factor Questions', [
+        ('after', 'Its official name: the least common multiple',
+         ["It's the smallest number that both ten and twenty-five divide."]),
+    ])
+    E(M, v, 'Higher power', [
+        ('after', 'Take every prime at its HIGHER power',
+         ["The number must contain all of ten AND all of twenty-five. Twenty-five alone needs two fives."]),
+        ('replace', 'Check: fifty itself is divisible by ten and by twenty-five',
+         ["Check: fifty itself is divisible by ten and by twenty-five. So the number might be just fifty.",
+          "And a hundred doesn't divide fifty. So we can't promise more."]),
+        ('replace', 'The GCD here is five — five times fifty',
+         "A bonus fact: the GCD times the LCM equals the two numbers multiplied. The GCD here is five — the one five they share. Five times fifty is two hundred fifty."),
+    ])
+    # ---- q-398: lock code digits 1, 3, 5
+    v = 'solve-q-398'
+    E(M, v, 'Which prime is missing?', [
+        ('replace', 'Thirty: two times three times five',
+         ["Thirty: two times three times five. Two isn't one of the digits.",
+          "And thirty always breaks into the same primes — two, three, five. No digit brings a two. It can't be the product. Choice two."]),
+    ])
+    # ---- q-399: x · y = 100
+    v = 'solve-q-399'
+    E(M, v, 'Break it every way', [
+        ('after', 'A is the difference between them',
+         ["The bars make it positive: the bigger one minus the smaller one."]),
+        ('replace', 'So take a hundred and break it into every pair you can',
+         "So take a hundred and break it into every pair you can. One isn't allowed — so no one times a hundred."),
+    ])
+    # ---- q-400: products of cards
+    v = 'solve-q-400'
+    E(M, v, 'Build every product', [
+        ('after', 'Build every product', ["First every pair of cards, then all three together."]),
+    ])
+    # ---- q-401: m² prime
+    v = 'solve-q-401'
+    E(M, v, 'Method 1 · Understanding', [
+        ('replace', 'So m can\'t be a whole number — a whole m',
+         ["Suppose m were a whole number, like three. Then m squared is three times three — it breaks. Not prime.",
+          "So m can't be a whole number — a whole m makes m squared equal m times m. That breaks."]),
+        ('after', 'Zero and one? Their squares are zero and one',
+         ["Prime, even, odd — those words describe whole numbers only. So choices one, three and four are out."]),
+    ])
+    # ---- q-402: exactly 3 divisors
+    v = 'solve-q-402'
+    E(M, v, 'Three divisors → prime squared', [
+        ('replace', 'Most numbers have divisors in pairs',
+         ["Divisors come in pairs that multiply to the number. Twelve: one and twelve, two and six, three and four.",
+          "So most numbers have an even count. Three is odd."]),
+        ('after', 'So k is a prime squared',
+         ["Why? The middle one times itself is k. And anything that divides it divides k too — so it has only one and itself: a prime."]),
+    ])
+    # ---- More factor tools lesson
+    v = 'r26-t14-more-tools'
+    E(M, v, 'Perfect squares', [
+        ('after', "That's a perfect square: six times six",
+         ["Why even? Each six brings one two and one three. So every prime comes in pairs."]),
+        ('replace', 'The three is missing one copy. So k is three.',
+         ["Twelve is two squared times three. The two's exponent is even — fine. The three's is one — odd.",
+          "So the three is missing one copy. k is three."]),
+    ])
+    # ---- q-r26-t14-03: 2^a · 3^b = 108
+    v = 'solve-q-r26-t14-03'
+    E(M, v, 'Break and match', [
+        ('replace', 'A hundred eight is four times twenty-seven',
+         "A hundred eight is four times twenty-seven. Four is two squared, twenty-seven is three cubed."),
+        ('replace', 'Match prime by prime',
+         ["Both sides are the same number, written in primes — so the exponents must match.",
+          "The twos: a is two. The threes: b is three."]),
+    ])
+    # ---- q-391: p + q
+    v = 'solve-q-391'
+    E(M, v, 'The only even prime', [
+        ('after', 'Forty-nine is seven times seven — not prime',
+         ["And without a two, both primes are odd — their sum would be even, not fifty-one. So no pair works."]),
+    ])
+    # ---- q-392: a, b primes
+    v = 'solve-q-392'
+    E(M, v, 'Method 1 · Prime factorization', [
+        ('replace', 'Seven. So a equals seven.',
+         "Two is only in fourteen, three only in twenty-one, five only in five. Seven is in two of them. So a equals seven."),
+    ])
+    # ---- q-393: a(b + 4) = 48
+    v = 'solve-q-393'
+    E(M, v, 'Common factor, then factor pairs', [
+        ('after', 'not necessarily primes. a is the smaller one',
+         ["Why smaller? b is bigger than a — so b plus four is surely bigger than a."]),
+        ('after', 'Cross out choice 4',
+         ["a equals six? The bracket is eight, b is four — smaller than a. Not allowed. So no more options."]),
+    ])
+    # ---- q-396: smallest a·b/15
+    v = 'solve-q-396'
+    E(M, v, 'Build the smallest a and b', [
+        ('after', 'When a is smallest and b is smallest',
+         ["a and b are both on top of the fraction — the smaller they are, the smaller the result."]),
+        ('after', "Six isn't bigger than ten", ["And b can't get smaller than ten."]),
+        ('replace', 'Choice one.', "Eight. Choice one."),
+    ])
+    # ---- q-394: z = p^s · q^r
+    v = 'solve-q-394'
+    E(M, v, 'Method 1 · Understanding', [
+        ('after', 'First look at the choices — what can we kill fast',
+         ["The rule: a power of a prime divides z only if z has that prime at least as many times."]),
+    ])
+    # ---- q-397: exactly 3 divisors below 200
+    v = 'solve-q-397'
+    E(M, v, 'Method 1 · Understanding', [
+        ('after', 'Three divisors? A prime squared',
+         ["Why? A prime p, squared, has just one, p, and p squared — exactly three."]),
+    ])
+
+
+_apply_before_clearer_scripts = apply
+
+
+def apply(M):
+    _apply_before_clearer_scripts(M)
+    clearer_scripts(M)   # 2026-10-08 clearer scripts: runs LAST
