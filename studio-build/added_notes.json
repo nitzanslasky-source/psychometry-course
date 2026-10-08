@@ -543,7 +543,7 @@
   },
   "solve-q-r26-t13-01": {
    "t": "Given: |2x-1|=7. Which of the following gives all the possible values of x?",
-   "d": "|2x − 1| = 7, all values of x (two cases: inside = 7 or −7 → x = 4 or −3; check both)"
+   "d": "|2x − 1| = 7, all values of x (two cases: inside = 7 or −7 → x = 4 or −3; check both); restored from your Hebrew lesson (2026-10-08): the general rule for equations with bars — the left side equals the right side, or minus the right side (the same left side twice) — and the wording point: \"all the values\" needs both, \"could be\" needs only one (often only one is offered)"
   },
   "solve-q-r26-t13-02": {
    "t": "Which of the following has no solution?",
@@ -2179,11 +2179,11 @@
   },
   "solve-q-360#0": {
    "t": "Small side: closed range",
-   "d": "a distance picture: number line from −3, 7 steps each way to −10 and 4; the distance picture is now a click figure: one shaded band from −10 to 4 around −3"
+   "d": "a distance picture: number line from −3, 7 steps each way to −10 and 4; the distance picture is now a click figure: one shaded band from −10 to 4 around −3; restored from your Hebrew lesson (2026-10-08): why the small side is a closed range — the range is always symmetric, the inside without its sign must be less than 7 (6, 5 … and −6, −5 … fit, 9 and −9 fail — the minus disappears), like x² smaller than a number (board: \"inside: 6, 5, …, −5, −6 ✓ 9, −9 ✗\"; the check moved to the right of −10 < x < 4)"
   },
   "solve-q-361#0": {
    "t": "Big side: open range",
-   "d": "a distance picture: more than 8 steps from −1, so beyond 7 or below −9; the distance picture is now a click figure: two shaded rays going outward from −9 and 7"
+   "d": "a distance picture: more than 8 steps from −1, so beyond 7 or below −9; the distance picture is now a click figure: two shaded rays going outward from −9 and 7; restored from your Hebrew lesson (2026-10-08): why the big side is an open range — the inside without its sign must be more than 8 (9, 10 … and −9, −10 …), two rays like x² bigger than a number; and \"absolute value in an inequality is the harder part, and rarer on the exam\""
   },
   "solve-q-362#1": {
    "t": "Method 2 · Algebra",
@@ -2928,6 +2928,10 @@
   "whole-numbers#5": {
    "t": "Recap",
    "d": "recap: count minuses for ×/÷, sizes for sums; odd powers keep sign"
+  },
+  "solve-q-362#0": {
+   "t": "Method 1 · Plugging in numbers",
+   "d": "restored from your Hebrew lesson (2026-10-08): \"like almost every topic — trial and error works here too\""
   }
  }
 }

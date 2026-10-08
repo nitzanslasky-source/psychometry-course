@@ -2485,3 +2485,92 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 13)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 Hebrew theory restored. The 2026-10-05 cut_repeats pass removed the lesson's equations / inequalities
+# theory, assuming the question videos teach it - but they only answer the questions (teacher: "that way I am missing
+# content"). absolute-value, solve-q-358 and solve-q-359 are recorded and stay as they are; the missing teaching from
+# the Hebrew lesson goes into the next unrecorded videos, right where it is used:
+#   q-360 (small side): the range is symmetric; WHY closed (the inside, without its sign, < 7: 6, 5 … and −6, −5 … fit,
+#         9 and −9 don't - the minus disappears); like x² < k. One board item.
+#   q-361 (big side): WHY open (inside > 8: 9, 10 … and −9, −10 …), two rays, like x² > k; + "harder, rarer on the exam".
+#   q-362 (plug in): "like almost every topic, trial and error works here too".
+#   q-r26-t13-01 (next equation): the general rule "left side = right side, or minus the right side" + the "could be"
+#         wording (one value is enough there; here they ask for all).
+# A video with a take recorded before HT_CUTOFF (UTC) keeps the recorded version.
+HT_CUTOFF = '2026-10-08T07-19-30'
+HT_CHECK_XY = (1070, 410)
+
+
+def _ht_recorded(vid):
+    import glob, os
+    pat = re.compile(re.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in glob.glob(os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(os.path.basename(f))
+        if m and m.group(1) < HT_CUTOFF: return True
+    return False
+
+
+def _ht_insert(script, sub, new, before=False):
+    R = _tr_load()
+    ks = [i for i, x in enumerate(script) if sub in R._text(x)]
+    assert len(ks) == 1, ('hebrew_theory_back', sub, ks)
+    k = ks[0] + (0 if before else 1)
+    return script[:k] + new + script[k:]
+
+
+def hebrew_theory_back(M):
+    R = _tr_load()
+    # --- q-360 |x + 3| < 7: why the small side is a closed range
+    v, t = 'solve-q-360', 'Small side: closed range'
+    if not _ht_recorded(v):
+        s = R.lines_of(M, v, t)
+        s = _ht_insert(s, 'Small side means a closed range', [
+            'Why closed? With bars, the range is always symmetric — seven on one side, negative seven on the other.',
+            'The inside, without its sign, must be less than seven. Six, five, four — fine. Negative six, negative five — fine too. The minus disappears.',
+            A("'inside: 6, 5, … −5, −6 ✓ 9, −9 ✗' appears", T(r'inside: $\ 6, 5, \dots, -5, -6$ ✓ $\qquad 9,\ -9$ ✗', 34)),
+            'Nine? No. Negative nine? No — the bars turn it into nine.',
+            'So the inside is trapped in the middle. Exactly like x squared smaller than a number: small side — closed range.'])
+        R.set_slide(M, v, t, s)
+        b = M.slide(v, R.n_of(M, v, t))
+        q, it = b['items'][0], b['items'][1]
+        assert q.get('k') == 'q' and it['t'].startswith('inside'), (q, it)
+        it['gap'] = q.pop('gap')   # the empty row for the hand-written −7 < x + 3 < 7 now sits under the new item
+        ck = b['items'][3]
+        assert ck['t'].startswith('check'), ck
+        ck['x'], ck['y'] = HT_CHECK_XY   # the check goes to the right of −10 < x < 4, so the number line still fits
+    # --- q-361 8 < |x + 1|: why the big side is an open range; harder and rarer
+    v, t = 'solve-q-361', 'Big side: open range'
+    if not _ht_recorded(v):
+        s = R.lines_of(M, v, t)
+        s = _ht_insert(s, 'So the range is open', [
+            'Why? The inside, without its sign, must be more than eight. Nine, ten, eleven — fine. Negative nine, negative ten — fine too. The minus disappears.',
+            'So it runs outward on both sides — two rays. An open range — exactly like x squared bigger than a number.'])
+        s = _ht_insert(s, 'Big side: two rays going outward', [
+            'Absolute value in an inequality is the harder part of this topic. It is also rarer on the exam.'])
+        R.set_slide(M, v, t, s)
+    # --- q-362: trial and error
+    v, t = 'solve-q-362', 'Method 1 · Plugging in numbers'
+    if not _ht_recorded(v):
+        s = R.lines_of(M, v, t)
+        s = _ht_insert(s, "It's an expression. So we're allowed", [
+            'Like almost every topic — trial and error works here too.'], before=True)
+        R.set_slide(M, v, t, s)
+    # --- q-r26-t13-01: the general equation rule + the "could be" wording
+    v, t = 'solve-q-r26-t13-01', 'Two cases'
+    if not _ht_recorded(v):
+        s = R.lines_of(M, v, t)
+        s = _ht_insert(s, 'Bars equal seven. So the inside is seven', [
+            'The rule for every equation with bars: the left side equals the right side — or minus the right side. The same left side, twice.'], before=True)
+        s = _ht_insert(s, 'Four or negative three. Choice three.', [
+            'Here they ask for ALL the values — so we need both. When they ask which COULD be x, one is enough — often only one is offered.'])
+        R.set_slide(M, v, t, s)
+
+
+_apply_before_hebrew_theory_back = apply
+
+
+def apply(M):
+    _apply_before_hebrew_theory_back(M)
+    hebrew_theory_back(M)   # 2026-10-08 Hebrew theory restored: runs last
