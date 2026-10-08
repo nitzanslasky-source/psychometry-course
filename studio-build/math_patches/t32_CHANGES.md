@@ -203,3 +203,10 @@ of 7 / 1), not a Hebrew number; f-p18 changed 4 × 5 → 3 × 4 so the small sid
 Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
 - geo32-foundation-p07 (written): 11√2 ≈ 15.6 -> 11√2 = √242 < √256 = 16.
 Check: `python3 math_check.py 32` -> 0 / 0 / 0.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST in apply(); helpers from `_hebrew_back.py`, own recording guard `CF_CUTOFF` = 2026-10-08T08-47-24 UTC). Source: the Hebrew-vs-English coverage check of this topic (WEAK / MISSING points) + the teacher's decisions of 2026-10-08. No video of this topic is recorded (checked ~/Documents/Course.recordings), so everything went into the videos themselves; nothing added to `_rerecord.py`. Notes in added_notes.json. `python3 math_check.py 30 31 32 33 34 35 36 37 38` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+- **solve-geo32-g049** "Opposite sides" (+≈6 s): "Later we'll also find missing sides with similar triangles — but Pythagoras is the main tool."
+- **solve-geo32-g067** "Method 2 · Symmetry" (+≈8 s): "Easy-plus means about the fifth or sixth question of a section: the math is long — the psychometric way is short."
+- **r26-t32-summary-2**: new slide "Completions that work" after "Shaded areas" (+≈30 s): a parallelogram on a 5 × 2 grid whose sides cut squares corner to corner — 4 whole squares + 4 half-squares (pairs) = 6 = base 3 × height 2. One figure + one board item.

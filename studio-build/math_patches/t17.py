@@ -1817,3 +1817,40 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 17)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 coverage fixes. A full check compared the teacher's Hebrew course with the English course; the points
+# found WEAK / MISSING here are put back as a few short spoken lines (board items by click) in UNRECORDED videos, or -
+# when the video is recorded - in the written solution / memory card. Helpers: _cov_fix_a.py (time-gated: a take
+# recorded before its CUTOFF keeps the video as recorded). See tNN_CHANGES.md ("2026-10-08 coverage fixes"). Runs LAST.
+# =====================================================================================================================
+import importlib.util as _ilu_cf, os as _os_cf
+_s_cf = _ilu_cf.spec_from_file_location('_cov_fix_a', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_cov_fix_a.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+
+
+def coverage_fixes(M):
+    # Hebrew 18095-18113 (teacher 2026-10-08): keep the warning "change only t, never the numbers in the question" and
+    # add the teacher's trick with its limit: a number that sits in every choice may be swapped for a small one
+    # (like plugging in) - ONLY when that same number appears in every choice
+    if not CF.add_lines(M, 'solve-q-500', 'Method 2 · Plugging in numbers', 'One warning: change only t', [
+            'One exception. Here the same number, six, sits in every choice. Then you may swap it for a small one, like two — it\'s just like plugging in.',
+            A("'2t, 2/t, t², √t with t = 1/4: 1/2, 8, 1/16, 1/2' appears",
+              T('$2t,\\ \\frac2t,\\ t^2,\\ \\sqrt t$ with $t=\\frac14$:  $\\frac12,\\ 8,\\ \\frac1{16},\\ \\frac12$', size=38)),
+            'Two t, two over t, t squared, root t. With t a quarter: a half, eight, one sixteenth, a half. Eight wins — choice two again.',
+            'But only when that same number sits in every choice. If it\'s only in some of them — change only t.']):
+        pass
+    CF.add_expl(M, 'q-500', 'The same number, 6, sits in every choice, so you may swap it for a small number, like 2 - just like '
+                'plugging in: $2t$, $\\frac2t$, $t^2$, $\\sqrt t$ with $t=\\frac14$ give $\\frac12$, $8$, $\\frac1{16}$, $\\frac12$. '
+                'Only when the same number is in every choice; otherwise change only $t$, never the numbers in the question.')
+    CF.add_lines(M, 'r26-t17-summary', 'Test numbers', 'Changing the numbers in the question can change the answer', [
+        'One exception: the same number in every choice? You may swap it for a small one — like plugging in.'])
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST

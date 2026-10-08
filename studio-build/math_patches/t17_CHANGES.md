@@ -219,3 +219,12 @@ Function `number_lines` (runs last; figure helper `math_patches/_shaded_nl.py`).
 Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
 
 - r26-t17-reading-the-line shrunk to a one-line reminder (slide 'Tools you know'): times a negative, reciprocals by range and test numbers were taught in topics 1, 3, 12 and this topic's own lessons. ~130 s.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST; helpers `math_patches/_cov_fix_a.py`, time-gated: a video with a take recorded
+before its CUTOFF is left as recorded and the point goes to the written solution / card instead). Source: the full
+Hebrew-vs-English coverage check (WEAK / MISSING points). Notes: added_notes.json.
+- **`solve-q-500` "Method 2 · Plugging in numbers"** (teacher decision: KEEP the warning "change only t, never the numbers in the question" and ADD the teacher's trick with its limit; +≈30 s, not recorded): after the warning - one exception: the same number, six, sits in every choice, so you may swap it for a small one, like two - just like plugging in; click item $2t, \frac2t, t^2, \sqrt t$ with $t=\frac14$: $\frac12, 8, \frac1{16}, \frac12$ -> choice 2 again; only when that same number sits in every choice, otherwise change only t (Hebrew 18095-18113). Same paragraph added to the written solution of q-500.
+- **`r26-t17-summary` "Test numbers"** (+≈8 s): one line after the warning - the one exception (the same number in every choice may be swapped for a small one, like plugging in), so the summary does not contradict q-500.
+`math_check.py 3 5 11 17 19 20 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered and looked at.

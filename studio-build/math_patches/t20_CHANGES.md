@@ -232,3 +232,11 @@ Every question checked against the 2026-10-06 methods; nothing added (no code). 
 Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
 
 - r26-t20-counting: slide 'From a to b' removed (topic 16 Counting integers); one reminder line + item at the top of 'Strictly between'. ~23 s.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST; helpers `math_patches/_cov_fix_a.py`, time-gated: a video with a take recorded
+before its CUTOFF is left as recorded and the point goes to the written solution / card instead). Source: the full
+Hebrew-vs-English coverage check (WEAK / MISSING points). Notes: added_notes.json.
+- **`solve-q-579` "Test each choice"** (+≈10 s, not recorded): after the Pythagoras line - whole numbers that fit are called Pythagorean triples; the smallest is 3, 4, 5, so here r is at least 5 (Hebrew 20138-20148). Same sentence in the q-579 written solution. The other WEAK point (draw it as a right triangle, Hebrew 20115-20125) left as is - the report marks it optional and geometry comes later.
+`math_check.py 3 5 11 17 19 20 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered and looked at.

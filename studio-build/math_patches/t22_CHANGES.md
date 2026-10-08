@@ -241,3 +241,10 @@ Function `hebrew_points_back` (runs LAST; helpers `_hebrew_back.py`; nothing in 
 - **`solve-wp22-g030` Q2, slide "Cross-multiply"** (+≈11 s, 1.2 min): "Hasn't it sunk in yet? That's fine. We'll use it so often — in word problems, geometry and algebra — that it will." (the closing remark of the Hebrew equal-ratios lesson).
 - Left out on purpose (for the teacher): the Hebrew ratio lesson says the exam almost never uses the "the ratio between A and B is 4:7" wording (so as not to confuse dyslexic students). Real English NITE exams do use it (e.g. "the ratio between the number of nurses and the number of head nurses is 3 : 2"), and the lesson says "the exam does test this". Not restored.
 - `math_check.py 21 22 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST; helpers `_hebrew_back.py` loaded as its own copy with CUTOFF 2026-10-08T08-43-14 UTC — a take recorded before it keeps its video unchanged and the point goes into the written solution instead; nothing in topics 21–29 is recorded). Source: the Hebrew-vs-English coverage check (WEAK / MISSING points), teacher approved "go ahead". Notes in `added_notes.json` ("from your Hebrew course (2026-10-08 coverage fix): …").
+- **wp-034**, slide "A ratio is a fraction" (±0 s): teacher decision on Hebrew #46 — keep the "ratio between A and B" lesson (English exams use the wording) but drop the claim that the exam tests it as a deliberate trap: "Always match names to numbers in order. The exam does test this: swap them, and you land on a trap answer." → "The exam uses this wording — so always match the names to the numbers in order."
+- Card **mem-ratios**, tip: "… The exam tests this." → "Read in order: match the names to the numbers in order. The first name goes with the first number."
+`math_check.py 21 22 23 24 25 26 27 28 29 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

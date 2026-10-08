@@ -2038,3 +2038,40 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 19)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 coverage fixes. A full check compared the teacher's Hebrew course with the English course; the points
+# found WEAK / MISSING here are put back as a few short spoken lines (board items by click) in UNRECORDED videos, or -
+# when the video is recorded - in the written solution / memory card. Helpers: _cov_fix_a.py (time-gated: a take
+# recorded before its CUTOFF keeps the video as recorded). See tNN_CHANGES.md ("2026-10-08 coverage fixes"). Runs LAST.
+# =====================================================================================================================
+import importlib.util as _ilu_cf, os as _os_cf
+_s_cf = _ilu_cf.spec_from_file_location('_cov_fix_a', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_cov_fix_a.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+
+
+def coverage_fixes(M):
+    # Hebrew 19305-19319 (teacher 2026-10-08: two lines + a mini example, don't change the question): a 0 in the outer
+    # call makes the inner value irrelevant - anything^0 = 1, 0^positive = 0, 1^anything = 1
+    CF.replace_line(M, 'solve-q-550', 'Method 2 · Insight', 'Sometimes a zero in the outer call', [
+        'Sometimes a zero in the outer call makes the inner value irrelevant.',
+        A("'◆(◆(5, 3, 2), 0, 1) = (…)⁰ + 0^(…) + 1⁰ = 2' appears",
+          T('$\\blacklozenge(\\blacklozenge(5,3,2),\\,0,\\,1)=(\\ldots)^0+0^{(\\ldots)}+1^0=1+0+1=2$', size=36)),
+        'Say the outer call were: the inner diamond, zero, one. The inner value to the power zero: one. Zero to a positive power: zero. One to any power: one.',
+        'Two — whatever positive number sits inside. No need to calculate it.',
+        "Here there's no zero — but the two ones do something similar."])
+    CF.add_expl(M, 'q-550', 'Shortcut: look at the outer operation first. $\\blacklozenge(1, 1, z)=1^{z}+1^{z}+z^{1}=2+z$, so the '
+                'answer is $2+33=35$. A zero in the outer call can make the inner value irrelevant: '
+                '$\\blacklozenge(w, 0, 1)=w^0+0^w+1^0=2$ for every positive $w$.')
+    # Hebrew 19756-19768: 3/x = 3·x^(-1); removing a negative power flips the fraction
+    CF.add_lines(M, 'solve-q-555', 'Choice by choice', 'Dividing by a fraction is multiplying by its reciprocal', [
+        'Another way to see it: three over x is three times x to the minus one. A minus power means flip — the reciprocal.'])
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST

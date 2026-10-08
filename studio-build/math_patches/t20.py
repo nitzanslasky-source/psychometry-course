@@ -1245,3 +1245,30 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 20)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 coverage fixes. A full check compared the teacher's Hebrew course with the English course; the points
+# found WEAK / MISSING here are put back as a few short spoken lines (board items by click) in UNRECORDED videos, or -
+# when the video is recorded - in the written solution / memory card. Helpers: _cov_fix_a.py (time-gated: a take
+# recorded before its CUTOFF keeps the video as recorded). See tNN_CHANGES.md ("2026-10-08 coverage fixes"). Runs LAST.
+# =====================================================================================================================
+import importlib.util as _ilu_cf, os as _os_cf
+_s_cf = _ilu_cf.spec_from_file_location('_cov_fix_a', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_cov_fix_a.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+
+
+def coverage_fixes(M):
+    # Hebrew 20138-20148: whole numbers that fit r² = p² + q² are Pythagorean triples; the smallest is 3-4-5
+    if not CF.add_lines(M, 'solve-q-579', 'Test each choice', 'as Pythagoras', [
+            'Whole numbers that fit it are called Pythagorean triples. The smallest is three, four, five — so here r is at least five.']):
+        pass
+    CF.add_expl(M, 'q-579', 'Whole numbers that fit $r^2=p^2+q^2$ are called Pythagorean triples; the smallest is $3, 4, 5$, so $r\\ge5$.')
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST

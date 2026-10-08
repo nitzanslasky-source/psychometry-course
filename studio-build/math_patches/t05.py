@@ -1790,3 +1790,45 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 5)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 coverage fixes. A full check compared the teacher's Hebrew course with the English course; the points
+# found WEAK / MISSING here are put back as a few short spoken lines (board items by click) in UNRECORDED videos, or -
+# when the video is recorded - in the written solution / memory card. Helpers: _cov_fix_a.py (time-gated: a take
+# recorded before its CUTOFF keeps the video as recorded). See tNN_CHANGES.md ("2026-10-08 coverage fixes"). Runs LAST.
+# =====================================================================================================================
+import importlib.util as _ilu_cf, os as _os_cf
+_s_cf = _ilu_cf.spec_from_file_location('_cov_fix_a', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_cov_fix_a.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+
+
+def coverage_fixes(M):
+    vid = 'r26-t05-summary'
+    # Hebrew 2927-2932: plug-in is used in geometry and other question types too
+    if not CF.add_lines(M, vid, 'Plug in numbers', 'Only numbers in the choices?', [
+            "And plug-in isn't only for expressions — you'll use it in word problems and geometry too."]):
+        CF.add_expl(M, 'q-expression-extra-18', 'Plugging in numbers is not only for expressions: you will use it in word problems and geometry too.')
+    # Hebrew 3463-3536: "a constant that does not depend on x" - simplify each choice until the letter disappears;
+    # plug-in is long here (two values for every choice) -> prefer the algebra
+    CF.add_slide(M, vid, 'Count the powers', dict(title="Doesn't depend on x", mode='concept', pre=[], script=[
+        'One more wording: which expression does NOT depend on x? Or — has the same value for every x?',
+        A("'Same value for every x → simplify until x disappears' appears",
+          T('Same value for every $x$ $\\to$ simplify until $x$ disappears', size=44)),
+        'Simplify each choice until the x disappears.',
+        A("'(x + 3)² − x(x + 6) = 9' appears", T('$(x+3)^2-x(x+6)=x^2+6x+9-x^2-6x=9$', size=44)),
+        'x squared plus six x plus nine, minus x squared minus six x. Only nine is left — no x. That\'s the one.',
+        'Plug-in is slow here. One number tells you nothing — you\'d need two numbers for every choice. So use the algebra.']),
+        "Doesn't depend on x")
+    CF.add_expl(M, 'q-expression-extra-18',
+                '"The same value for every $x$" means the expression does not depend on $x$: simplify each choice until $x$ '
+                'disappears. Plugging in is slow here - one number tells you nothing, you would need two numbers for every choice.',
+                before='(1): ')
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST

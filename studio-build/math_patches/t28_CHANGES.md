@@ -265,3 +265,11 @@ Function `hebrew_points_back` (runs LAST; helper `math_patches/_hebrew_back.py`,
 - Q6 `solve-wp28-g130`, slide "Method 1 · Counting in stages", after "Seven items in a row: seven factorial ways": "Any n different items in a row: n factorial ways." + "Keep factorial in mind — we'll use it again later, when we choose groups." (+≈9 s)
 - Q8 `solve-wp28-g133`, title slide, before "Diagonals — four ways.": "A rare question type — but it does show up on the exam: the diagonals of a polygon." (+≈7 s; this was the Hebrew lesson's exam-frequency remark)
 `math_check.py 28 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Both videos were rendered and checked. Topics 29 and 30: nothing was lost (see their logs).
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST; helpers `_hebrew_back.py` loaded as its own copy with CUTOFF 2026-10-08T08-43-14 UTC — a take recorded before it keeps its video unchanged and the point goes into the written solution instead; nothing in topics 21–29 is recorded). Source: the Hebrew-vs-English coverage check (WEAK / MISSING points), teacher approved "go ahead". Notes in `added_notes.json` ("from your Hebrew course (2026-10-08 coverage fix): …").
+- **solve-wp28-g133**, slide "Method 1 · Listing" (+≈5 s): "Exam polygons are small, so drawing and counting is a real option on the exam." (Hebrew #24.)
+- **wp-137**, slide "Who stays out" (+≈5 s): "And this type shows up on the exam more often than the general one. Good news — it's easy." (Hebrew #44.)
+- Hebrew #33 ("fair dice" = an ordinary die): taught where "fair" first appears, topic 29 wp-146 (see t29_CHANGES.md) — topic 28's questions don't use the word.
+`math_check.py 21 22 23 24 25 26 27 28 29 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

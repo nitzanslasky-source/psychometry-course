@@ -3112,3 +3112,51 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 33)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================
+# 2026-10-08 coverage fixes (teacher approved 2026-10-08 "go ahead"): the WEAK / MISSING points of the Hebrew-vs-English
+# coverage check of this topic, plus the teacher's decisions, as 1-4 short spoken lines (or one short slide) in
+# UNRECORDED videos. A video with a take recorded before CF_CUTOFF (UTC; the time this change was finished) is left
+# exactly as recorded. Helpers (lines_of / set_slide / replace_line / add_lines) come from _hebrew_back.py.
+import importlib.util as _ilu_cf, os as _os_cf, re as _re_cf, glob as _glob_cf
+_s_cf = _ilu_cf.spec_from_file_location('_hebrew_back_cf', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_hebrew_back.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+CF_CUTOFF = '2026-10-08T08-47-24'
+
+
+def _cf_recorded(vid):
+    """True = a take of vid was recorded before CF_CUTOFF: leave the video as recorded."""
+    pat = _re_cf.compile(_re_cf.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in _glob_cf.glob(_os_cf.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(_os_cf.path.basename(f))
+        if m and m.group(1) < CF_CUTOFF: return True
+    return False
+
+
+def _cf_add(M, vid, title, anchor, new, where='after'):
+    """add script lines after/before the one line containing anchor (None = end of the slide)."""
+    if _cf_recorded(vid): return False
+    return CF.add_lines(M, vid, title, anchor, new, where)
+
+
+def _cf_replace(M, vid, title, sub, new):
+    """replace the one line containing sub by new (a line, a list of lines, or [] = drop it)."""
+    if _cf_recorded(vid): return False
+    CF.set_slide(M, vid, title, CF.replace_line(CF.lines_of(M, vid, title), sub, new))
+    return True
+
+
+def coverage_fixes(M):
+    # #127: with plugged-in numbers, one fitting answer is not enough - say WHY all four are checked
+    vid = 'solve-geo33-g102'
+    _cf_add(M, vid, M.slide(vid, 4)['title'], 'into every answer — and rule out anything', [
+        "Even if one fits early — don't mark it yet. A special case can fit more than one answer, so we check all four."])
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST

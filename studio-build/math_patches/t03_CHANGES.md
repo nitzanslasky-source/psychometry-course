@@ -273,3 +273,11 @@ All new lines verified numerically (python: power by scaling, fitting values, ch
 Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
 - q-088 (written): 7/11 ≈ 0.64 -> 7/11 < 8/10 (70 < 88). q-089: the 3-decimal check (1.083 vs 1.087) is removed; the cross-multiplying line stays. q-090: "(Decimals: 0.12, about 0.122, about 0.129)" removed. alg-extra-unit-t3-1-3: 7/3 ≈ 2.33, 7/6 ≈ 1.17 -> 2⅓ and 1⅙.
 Check: `python3 math_check.py 3 32` -> 0 / 0 / 0.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST; helpers `math_patches/_cov_fix_a.py`, time-gated: a video with a take recorded
+before its CUTOFF is left as recorded and the point goes to the written solution / card instead). Source: the full
+Hebrew-vs-English coverage check (WEAK / MISSING points). Notes: added_notes.json.
+- **Card `mem-compare`** (new tip): bigger numbers when you cross-multiply - split them ($18\cdot7=10\cdot7+8\cdot7=126$); on the exam the fractions are usually small (like 4/5 and 5/6). Hebrew 1530-1536, 1558; all topic-3 lesson videos are recorded, so card only.
+`math_check.py 3 5 11 17 19 20 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.

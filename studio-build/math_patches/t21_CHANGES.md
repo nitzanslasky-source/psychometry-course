@@ -176,3 +176,11 @@ Function `hebrew_points_back` (runs LAST; helpers `_hebrew_back.py`, a video rec
 - **`wp-008` Patterns, slide "Two kinds"** (+≈20 s, 1.0 min): "If you remember arithmetic or geometric sequence formulas from school — leave them. These aren't the sequences you know, and those formulas won't work here." + "Solving it by pure understanding is possible — but every question is different, and very few students manage it." (The WHY was only on the cut "Sequences" slide; Q5 only says "No school formulas".)
 - **`wp-012` Smart Trial & Error, slide "Why it matters"** (+≈20 s, 0.9 min): "The exam is meant to predict how you'll do in your first year at university." + "At school you're spoon-fed: here's the material, here are the exact questions. At university, a lot is up to you — nobody tells you exactly what to do." (the teacher's reason why these questions are on the exam; the lesson only kept "do you freeze, or do you start?").
 - No written-solution additions (no video recorded). `math_check.py 21 22 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST; helpers `_hebrew_back.py` loaded as its own copy with CUTOFF 2026-10-08T08-43-14 UTC — a take recorded before it keeps its video unchanged and the point goes into the written solution instead; nothing in topics 21–29 is recorded). Source: the Hebrew-vs-English coverage check (WEAK / MISSING points), teacher approved "go ahead". Notes in `added_notes.json` ("from your Hebrew course (2026-10-08 coverage fix): …").
+- **solve-wp21-g015**, slide "Plug in the answers" (+≈5 s): "Or skip it, move on, and come back at the end. Just don't sit and stare." (Hebrew #40: plug in OR move on, don't get stuck.)
+- **solve-wp21-g020**, slide "Method 2 · Understanding" (+≈5 s): "Same idea with two people: if one has more, he has more than half." (Hebrew #54.)
+- #57 (min-max range has no holes): teacher decision — keep the English (qualified rule), no change.
+`math_check.py 21 22 23 24 25 26 27 28 29 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

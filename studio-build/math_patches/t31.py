@@ -3314,3 +3314,174 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 31)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================
+# 2026-10-08 coverage fixes (teacher approved 2026-10-08 "go ahead"): the WEAK / MISSING points of the Hebrew-vs-English
+# coverage check of this topic, plus the teacher's decisions, as 1-4 short spoken lines (or one short slide) in
+# UNRECORDED videos. A video with a take recorded before CF_CUTOFF (UTC; the time this change was finished) is left
+# exactly as recorded. Helpers (lines_of / set_slide / replace_line / add_lines) come from _hebrew_back.py.
+import importlib.util as _ilu_cf, os as _os_cf, re as _re_cf, glob as _glob_cf
+_s_cf = _ilu_cf.spec_from_file_location('_hebrew_back_cf', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_hebrew_back.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+CF_CUTOFF = '2026-10-08T08-47-24'
+
+
+def _cf_recorded(vid):
+    """True = a take of vid was recorded before CF_CUTOFF: leave the video as recorded."""
+    pat = _re_cf.compile(_re_cf.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in _glob_cf.glob(_os_cf.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(_os_cf.path.basename(f))
+        if m and m.group(1) < CF_CUTOFF: return True
+    return False
+
+
+def _cf_add(M, vid, title, anchor, new, where='after'):
+    """add script lines after/before the one line containing anchor (None = end of the slide)."""
+    if _cf_recorded(vid): return False
+    return CF.add_lines(M, vid, title, anchor, new, where)
+
+
+def _cf_replace(M, vid, title, sub, new):
+    """replace the one line containing sub by new (a line, a list of lines, or [] = drop it)."""
+    if _cf_recorded(vid): return False
+    CF.set_slide(M, vid, title, CF.replace_line(CF.lines_of(M, vid, title), sub, new))
+    return True
+
+
+def fig_g025_cf():
+    """g025 rebuilt on 5-12-13 (teacher 2026-10-08): AB = 15, BC = 39 -> AC = 36; AE = 48 -> CE = 60; ED = 60."""
+    s = 4.5
+    A = (190.0, 80.0)
+    B = (A[0] - 15 * s, A[1]); Cc = (A[0], A[1] + 36 * s); E = (A[0] + 48 * s, A[1])
+    D = (E[0] + 60 * s * 0.6, E[1] + 60 * s * 0.8)
+    def rmark(c, p, q, k=12):
+        u, v = _unit(c, p), _unit(c, q)
+        a, b = (c[0] + u[0] * k, c[1] + u[1] * k), (c[0] + v[0] * k, c[1] + v[1] * k)
+        m = (a[0] + v[0] * k, a[1] + v[1] * k)
+        return _ln(a, m, TEAL, 1.7) + _ln(m, b, TEAL, 1.7)
+    G1 = ((A[0] + B[0] + Cc[0]) / 3, (A[1] + B[1] + Cc[1]) / 3)
+    G3 = ((E[0] + D[0] + Cc[0]) / 3, (E[1] + D[1] + Cc[1]) / 3)
+    return _svg('0 0 640 360', 'A chain of three right triangles', [
+        _poly(A, B, Cc), _poly(A, E, Cc), _poly(E, D, Cc),
+        rmark(A, B, Cc), rmark(A, E, Cc), rmark(E, Cc, D),
+        _tx((A[0] - 6, A[1] - 20), 'A'), _tx((B[0] - 16, B[1] - 10), 'B'), _tx((Cc[0] - 12, Cc[1] + 20), 'C'),
+        _tx((E[0], E[1] - 20), 'E'), _tx((D[0] + 16, D[1] + 8), 'D'),
+        _tx(((A[0] + B[0]) / 2, A[1] - 17), '15'), _tx(_g1_off(B, Cc, 20, G1), '39'),
+        _tx(((A[0] + E[0]) / 2, A[1] - 17), '48'), _tx(_g1_off(E, D, 20, G3), '60'),
+        _tx(_g1_off(Cc, D, 20, G3), 'x'),
+    ])
+
+
+def coverage_fixes(M):
+    # ---- (1) 8-15-17: the real exams use it ~2 times in 760 questions -> not taught as a triple to know.
+    #      geo-024: slide "8-15-17: less common" removed; "How to remember" keeps ONE line about rarer triples.
+    if not _cf_recorded(V_TRIP):
+        CF._TR.drop_slide(M, V_TRIP, '8-15-17: less common')
+        sc = CF.lines_of(M, V_TRIP, 'How to remember')
+        sc = CF.replace_line(sc, '8, 15, 17 — good to recognize too', [])
+        sc = CF.replace_line(sc, 'Know 3, 4, 5 and hamsa', [
+            'Know 3, 4, 5 and hamsa, bat mitzvah, bar mitzvah by heart.',
+            "There are other triples, much rarer — like 8, 15, 17. No need to learn them: if one comes up, the ordinary calculation works."])
+        CF.set_slide(M, V_TRIP, 'How to remember', sc)
+    card = M.card('mem-triples')
+    card['tables'][0]['rows'] = [r for r in card['tables'][0]['rows'] if '8:15:17' not in r[0]]
+    card['tips'] = card['tips'] + ['Other triples (like 8, 15, 17) are rare on the exam — no need to learn them; Pythagoras works.']
+    if not _cf_recorded('r26-t31-summary'):
+        sc = CF.lines_of(M, 'r26-t31-summary', 'Triples')
+        sc = CF.replace_line(sc, '3:4:5 · 5:12:13 · 8:15:17', A("'3:4:5 · 5:12:13' appears", T('$3:4:5$ · $5:12:13$', size=40)))
+        sc = CF.replace_line(sc, '27:36:45 · 25:60:65 · 24:45:51', A("'Multiples: 27:36:45 · 25:60:65' appears", T('Multiples: $27:36:45$ · $25:60:65$', size=40)))
+        CF.set_slide(M, 'r26-t31-summary', 'Triples', sc)
+    # practice p09 keeps its numbers (17, 8 -> 15), but the solution now calculates instead of naming the triple
+    ex = [e for e in M.q('geo31-foundation-p09')['explanation']]
+    ex[0] = 'ABD is right at D, with $BD=8$ and $AB=17$: $AD^2=17^2-8^2=289-64=225$, therefore $AD=15$.'
+    M.set_q('geo31-foundation-p09', expl=ex)
+    #      g025 rebuilt on 5-12-13 x 3 (15, 39 -> 36), then 3-4-5 x 12 (36, 48 -> 60), then 60 root 2. Same type, same method.
+    g = 'geo31-g025'
+    _rn_q(M, g, choices=['$60$', '$120$', '$60\\sqrt2$', '$36\\sqrt2$'], correct=3, expl=[
+        'ABC: $15=3\\cdot5$ and $39=3\\cdot13$, the triple 5-12-13 times $3$. Therefore $AC=3\\cdot12=36$.',
+        'ACE: legs $36=12\\cdot3$ and $48=12\\cdot4$, the triple 3-4-5 times $12$. Therefore $CE=12\\cdot5=60$.',
+        'CED: two legs of $60$. $CD^2=60^2+60^2=2\\cdot60^2$, therefore $CD=60\\sqrt2$.'], figure=fig_g025_cf())
+    vid = 'solve-' + g
+    if not _cf_recorded(vid):
+        _rn_sub(M, vid, 2, [
+            ('34 squared minus 16 squared', '39 squared minus 15 squared'),
+            ('Next to AC write 30 (8-15-17 × 2)', 'Next to AC write 36 (5-12-13 × 3)'),
+            ("16 and 34 are 8 and 17 times 2. It's 8, 15, 17 — so AC is 15 times 2: 30.",
+             "15 and 39 are 5 and 13 times 3. It's 5, 12, 13 — so AC is 12 times 3: 36."),
+            ('with legs 30 and 40.', 'with legs 36 and 48.'),
+            ('After some practice, 30 and 40 should jump out as familiar: 3 times 10, 4 times 10.',
+             'After some practice, 36 and 48 should jump out as familiar: 3 times 12, 4 times 12.'),
+            ('Next to CE write 50 (3-4-5 × 10)', 'Next to CE write 60 (3-4-5 × 12)'),
+            ("So CE is 5 times 10: 50. It's the 3, 4, 5 triple, scaled by 10.",
+             "So CE is 5 times 12: 60. It's the 3, 4, 5 triple, scaled by 12."),
+            ('No triple here — the legs are 50 and 50.', 'No triple here — the legs are 60 and 60.'),
+            ('Write CD² = 50² + 50² = 2 · 50²', 'Write CD² = 60² + 60² = 2 · 60²'),
+            ('50 squared plus 50 squared. Instead of adding to 5000, I write 2 times 50 squared',
+             '60 squared plus 60 squared. Instead of adding to 7200, I write 2 times 60 squared'),
+            ('Write CD = 50√2', 'Write CD = 60√2'),
+            ('Take the root: root 2, and the root of 50 squared is 50. So CD is 50 root 2.',
+             'Take the root: root 2, and the root of 60 squared is 60. So CD is 60 root 2.')])
+        _rn_sub(M, vid, 3, [
+            ('CD² = (34² − 16²) + 40² + 50²', 'CD² = (39² − 15²) + 48² + 60²'),
+            ('$CD^2=(34^2-16^2)+40^2+50^2$', '$CD^2=(39^2-15^2)+48^2+60^2$'),
+            ('AC squared is 34 squared minus 16 squared. Add 40 squared for CE squared. Add 50 squared for CD squared.',
+             'AC squared is 39 squared minus 15 squared. Add 48 squared for CE squared. Add 60 squared for CD squared.'),
+            ('900 plus 1600 plus 2500 — 5000. The root: 50 root 2.', '1296 plus 2304 plus 3600 — 7200. The root: 60 root 2.'),
+            ('ratio 50, 50, 50 root 2', 'ratio 60, 60, 60 root 2')])
+
+    # ---- (2) g040: the real exams never offer a ratio AND its reverse (checked: 0). Choice 4 (10/3) -> 3/8, the trap
+    #      of adding a instead of taking it off (3b + a = 9a). Key unchanged (3/10).
+    g = 'geo31-g040'
+    _rn_q(M, g, choices=['$\\frac13$', '$1$', '$\\frac3{10}$', '$\\frac38$'], correct=3)
+    ex = list(M.q(g)['explanation']) + ['Traps: $\\frac13$ forgets to take $a$ off the bottom ($3b=9a$); $\\frac38$ adds it ($3b+a=9a$).']
+    M.set_q(g, expl=ex)
+    vid = 'solve-' + g
+    if not _cf_recorded(vid):
+        t2, t3 = M.slide(vid, 2)['title'], M.slide(vid, 3)['title']
+        sc = CF.lines_of(M, vid, t2)
+        sc = CF.replace_line(sc, "you usually won't find both orders", [
+            "It's clear the ratio is 3 to 10 or 10 to 3. And on the psychometric exam, you won't find both orders among the answers."])
+        sc = CF.replace_line(sc, 'Cross out choices 1 and 2', D('Cross out choices 1, 2 and 4'))
+        sc = CF.replace_line(sc, 'So the trick eliminates one third and 1', [
+            'Only one answer is 3 to 10 or 10 to 3: 3 tenths. One third, 1 and 3 eighths are out.'])
+        sc = CF.drop_lines(sc, 'Cross out choice 4', 'Then use the given a is smaller than b')
+        CF.set_slide(M, vid, t2, sc)
+        sc = CF.lines_of(M, vid, t3)
+        sc = CF.drop_lines(sc, 'Cross out choice 4', 'Next: 10 thirds means a is 10')
+        sc = CF.replace_line(sc, 'Next to choice 3 write', [
+            D('Next to choice 4 write a = 3, b = 8: 24 − 3 = 21 ≠ 27, and cross it out'),
+            '3 eighths: a is 3, b is 8. Bold line: 24 minus 3 — 21. Three times the small perimeter: three times 9 — 27. Not equal. Eliminated.',
+            D('Next to choice 3 write a = 3, b = 10: 30 − 3 = 27 = 3 · 9 ✓')])
+        sc = CF.replace_line(sc, "And one third? That's the trap", [
+            "And the traps? One third forgets to take the small side off the bottom: 3b equals 9a. 3 eighths adds it instead: 3b plus a."])
+        CF.set_slide(M, vid, t3, sc)
+
+    # ---- (3) exterior-angle rule: kept, but "shows up a lot / core rule" -> "useful, saves time when it fits"
+    _cf_replace(M, V_TRI, 'Two routes', 'This rule shows up a lot on the exam', ["A useful rule — it saves time when it fits."])
+    if not _cf_recorded(V_TRI):
+        sc = CF.lines_of(M, V_TRI, 'Recap')
+        sc = CF.replace_line(sc, 'Underline the angle-sum line and the exterior-angle line', D('Underline the angle-sum line'))
+        sc = CF.replace_line(sc, "The angle sum and the exterior angle are the ones you'll use most", [
+            "Those are the rules. The angle sum is the one you'll use most — and the exterior angle saves time when it fits."])
+        CF.set_slide(M, V_TRI, 'Recap', sc)
+    c = M.card('mem-triangle-rules')
+    c['intro'] = 'The general triangle rules. The angle sum is the one you will use most.'
+    for r in c['tables'][0]['rows']:
+        if r[0] == 'Exterior angle': r[2] = 'useful — saves time when it fits'
+    vid = 'solve-geo31-g012'
+    if not _cf_recorded(vid):
+        t3 = M.slide(vid, 3)['title']
+        sc = CF.lines_of(M, vid, t3)
+        sc = CF.replace_line(sc, 'It comes up again and again — learn it too', [
+            'And the exterior angle equals the two interior angles not next to it. You can always go the long way — but when it fits, the rule saves time.'])
+        sc = CF.drop_lines(sc, 'You can always go the long way, but the rule saves time.')
+        CF.set_slide(M, vid, t3, sc)
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST

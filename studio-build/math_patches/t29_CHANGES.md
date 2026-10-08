@@ -247,3 +247,10 @@ Total: 1 written line, no slides. Recorded: none.
 ## 2026-10-08 Hebrew points restored
 Audit only, no change. Every teaching point of the Hebrew lesson for the sections the 2026-10-05 cut shortened is still taught in the current course, at or before the place it is needed.
 - Hebrew "several events" lesson: AND → multiply, OR → add, "or" is rare and harder (And · Or lesson); coin and die (Q5); three tosses (Q6); a dice sum with a forced second die (Q7); history and the roulette (Q8, incl. "rare on the exam"); the double, "first pick doesn't matter", and the tip to work out each event on its own (Q9); without replacement (Q10); the doors, "fail first, then succeed", the driving test, rare and hard (Q11). Dice symmetry: the whole Hebrew lesson is on the kept slide (red/blue dice, don't flip 2-2, opposite faces add to 7, symmetry around 7); the "same question, different wording" line is in Q15. The cut slides ("OR with overlap", the recaps) were not in the Hebrew lesson.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST; helpers `_hebrew_back.py` loaded as its own copy with CUTOFF 2026-10-08T08-43-14 UTC — a take recorded before it keeps its video unchanged and the point goes into the written solution instead; nothing in topics 21–29 is recorded). Source: the Hebrew-vs-English coverage check (WEAK / MISSING points), teacher approved "go ahead". Notes in `added_notes.json` ("from your Hebrew course (2026-10-08 coverage fix): …").
+- **wp-146**, slide "Wanted over possible" (+≈8 s): "That's why the exam always writes a FAIR coin or a FAIR dice. Fair means an ordinary one, not weighted: every face is equally likely." (Hebrew #7, also topic 28 #33.)
+- Card **mem-probability**: new tip ""Fair" coin or dice = an ordinary one, not weighted: every face is equally likely."
+`math_check.py 21 22 23 24 25 26 27 28 29 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

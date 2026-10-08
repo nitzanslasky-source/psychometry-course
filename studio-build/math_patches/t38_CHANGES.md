@@ -206,3 +206,9 @@ Check: `python3 math_check.py 38 32` -> 0 / 0 / 0. Rendered and looked at.
 Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
 
 - geo-177 added slide 'Diagrams that can change' is now a one-line reminder (topic 30 Parallel or not?, topic 51 Can I trust figures?, topic 1 must/could/cannot). ~9 s.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST in apply(); helpers from `_hebrew_back.py`, own recording guard `CF_CUTOFF` = 2026-10-08T08-47-24 UTC). Source: the Hebrew-vs-English coverage check of this topic (WEAK / MISSING points) + the teacher's decisions of 2026-10-08. No video of this topic is recorded (checked ~/Documents/Course.recordings), so everything went into the videos themselves; nothing added to `_rerecord.py`. Notes in added_notes.json. `python3 math_check.py 30 31 32 33 34 35 36 37 38` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+- **solve-geo38-g187** "Plugging in" (+≈8 s): "Even if an answer fits — don't mark it yet. Check all four; only when the other three are out is it safe."
+- Coverage-check "keep the English" notes: no change (teacher).

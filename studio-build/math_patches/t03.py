@@ -1356,3 +1356,31 @@ _apply_before_no_decimal_estimates = apply
 def apply(M):
     _apply_before_no_decimal_estimates(M)
     no_decimal_estimates(M)   # 2026-10-07 no decimal estimates: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 coverage fixes. A full check compared the teacher's Hebrew course with the English course; the points
+# found WEAK / MISSING here are put back as a few short spoken lines (board items by click) in UNRECORDED videos, or -
+# when the video is recorded - in the written solution / memory card. Helpers: _cov_fix_a.py (time-gated: a take
+# recorded before its CUTOFF keeps the video as recorded). See tNN_CHANGES.md ("2026-10-08 coverage fixes"). Runs LAST.
+# =====================================================================================================================
+import importlib.util as _ilu_cf, os as _os_cf
+_s_cf = _ilu_cf.spec_from_file_location('_cov_fix_a', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_cov_fix_a.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+
+
+def coverage_fixes(M):
+    # Hebrew compare lesson (lines 1530-1536, 1558): don't fear bigger numbers when you cross-multiply - split them;
+    # and the exam's fractions are usually small. All topic-3 lesson videos are recorded -> memory card tip.
+    c = M.card('mem-compare')
+    tip = ('Bigger numbers when you cross-multiply? Split them: $18\\cdot7=10\\cdot7+8\\cdot7=126$. '
+           'And on the exam the fractions are usually small, like $\\frac45$ and $\\frac56$.')
+    if tip not in c['tips']: c['tips'].append(tip)
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST

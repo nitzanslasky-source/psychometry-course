@@ -185,3 +185,9 @@ against the 2026-10-06 methods; each line was verified with numbers. Nothing in 
 
 ## 2026-10-08 Hebrew points restored
 Checked only, nothing changed. The lessons the 2026-10-05 cut shortened here were our own added lessons (r26-…), not the teacher's. The teacher's Hebrew theory lessons for this topic map to lessons the cut did not touch, and the Hebrew "advanced study" part has sample questions only. Every idea on the cut slides is still said in a question video (see the 2026-10-05 follow-up above). No lost Hebrew points.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST; helpers `_hebrew_back.py` loaded as its own copy with CUTOFF 2026-10-08T08-43-14 UTC — a take recorded before it keeps its video unchanged and the point goes into the written solution instead; nothing in topics 21–29 is recorded). Source: the Hebrew-vs-English coverage check (WEAK / MISSING points), teacher approved "go ahead". Notes in `added_notes.json` ("from your Hebrew course (2026-10-08 coverage fix): …").
+- **solve-wp24-g076**, slide "Method 2 · Plugging in numbers" (+≈8 s): "And if you get a third? Just write thirty-three. The missing bit only matters when a sum lands right next to a hundred." (Hebrew #36.)
+`math_check.py 21 22 23 24 25 26 27 28 29 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

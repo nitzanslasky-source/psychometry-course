@@ -196,3 +196,11 @@ Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/
 Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
 - solve-geo37-g164 "Estimating sizes": 8√2 − 4π ≈ 11.3 − 12.6, 16π about 50, "about 92 / about 65" -> 8√2 = √128 < 12 < 4π; 16π < 56; 32π < 128 and 64√2 < 96 (√2 < 1.5), both under 144.
 Check: `python3 math_check.py 37 32` -> 0 / 0 / 0. Rendered and looked at.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST in apply(); helpers from `_hebrew_back.py`, own recording guard `CF_CUTOFF` = 2026-10-08T08-47-24 UTC). Source: the Hebrew-vs-English coverage check of this topic (WEAK / MISSING points) + the teacher's decisions of 2026-10-08. No video of this topic is recorded (checked ~/Documents/Course.recordings), so everything went into the videos themselves; nothing added to `_rerecord.py`. Notes in added_notes.json. `python3 math_check.py 30 31 32 33 34 35 36 37 38` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+- **geo-157** "Center on an axis" (+≈10 s): "Unless the circle touches the y-axis: then the x of the center IS the radius. Center at 5, touching the y-axis — r is 5."
+- **geo-157** "Center at the origin" (+≈10 s): pen mark (tangents where the circle cuts the axes) + "tangents where the circle cuts the axes make a square around it. Its side is 2r — here 52."
+- **geo-159** "The length AD" (+≈12 s): "And if one step's length is a root? Say root 13 — three steps are 3 root 13. The answers may show it as root 117: the same number, 117 is 9 times 13."
+- #84 (estimate with the 4 × 4 square): no change (teacher; the English correction stays).

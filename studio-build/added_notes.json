@@ -47,7 +47,7 @@
   },
   "r26-t05-summary": {
    "t": "Summary: Expressions",
-   "d": "recaps expressions: expression vs equation, splitting a fraction (top only), opposite brackets = −1, main fraction bar, factoring, round numbers, given block, plugging in, power count"
+   "d": "recaps expressions: expression vs equation, splitting a fraction (top only), opposite brackets = −1, main fraction bar, factoring, round numbers, given block, plugging in, power count · from your Hebrew course (2026-10-08 coverage fix): plug-in is used in word problems and geometry too; new slide \"Doesn't depend on x\": 'same value for every x' / 'does not depend on x' → simplify each choice until x disappears ((x + 3)² − x(x + 6) = 9); plug-in is slow here (two numbers per choice), use the algebra"
   },
   "r26-t06-summary": {
    "t": "Summary: One Equation",
@@ -91,7 +91,7 @@
   },
   "r26-t11-summary": {
    "t": "Advanced Exponents & Roots: Summary",
-   "d": "recaps advanced roots and powers: prime bases, hidden formulas, root of a root, undoing a power, conjugates, product = 0, power = 1, \"or\" claims, two routes"
+   "d": "recaps advanced roots and powers: prime bases, hidden formulas, root of a root, undoing a power, conjugates, product = 0, power = 1, \"or\" claims, two routes · from your Hebrew course (2026-10-08 coverage fix): √x = x (and x² = x) only for 0 and 1 (on \"Product = 0\"); can't split a root → estimate it (√50 a little over 7) and compare with the choices (on \"Two routes\"); new slide \"IF … THEN choices\": the IF is one more given, check the THEN in every case left (a^b = 1, a < 0 → b even); an IF that rules out no case proves nothing"
   },
   "r26-t11-tools": {
    "t": "Advanced Tools — Roots & Powers",
@@ -151,7 +151,7 @@
   },
   "r26-t17-summary": {
    "t": "The Number Line: Summary",
-   "d": "recaps the four ranges, multiply/divide moves, hierarchy, exceptions, the arrows, reciprocals, test numbers, must vs could, distance and midpoint"
+   "d": "recaps the four ranges, multiply/divide moves, hierarchy, exceptions, the arrows, reciprocals, test numbers, must vs could, distance and midpoint · from your Hebrew course (2026-10-08 coverage fix): on \"Test numbers\": one exception to 'change only the unknown' - the same number in every choice may be swapped for a small one, like plugging in"
   },
   "r26-t18-facts": {
    "t": "Number Facts for Letter Puzzles",
@@ -263,7 +263,7 @@
   },
   "r26-t31-summary": {
    "t": "Summary",
-   "d": "recaps triangles: median/altitude/bisector, angle sum, exterior angle, side limits, special triangles, area, Pythagoras, triples, 30-60-90 and 45-45-90"
+   "d": "recaps triangles: median/altitude/bisector, angle sum, exterior angle, side limits, special triangles, area, Pythagoras, triples, 30-60-90 and 45-45-90 · teacher decision 2026-10-08: \"Triples\" shows only 3:4:5 and 5:12:13 (and their multiples); 8:15:17 is rare on the exam"
   },
   "r26-t31-summary-2": {
    "t": "Summary",
@@ -279,7 +279,7 @@
   },
   "r26-t32-summary-2": {
    "t": "Summary",
-   "d": "recaps advanced quadrilateral ideas: not necessarily, equal halves, area ratios, shaded areas, hidden ratios, perimeter tricks, perimeter + diagonal"
+   "d": "recaps advanced quadrilateral ideas: not necessarily, equal halves, area ratios, shaded areas, hidden ratios, perimeter tricks, perimeter + diagonal · from your Hebrew course (2026-10-08 coverage fix): new slide \"Completions that work\": a parallelogram on a grid whose sides cut squares corner to corner — 4 whole squares + 4 half-squares = 6 = base 3 × height 2"
   },
   "r26-t33-more-tools": {
    "t": "More Circle Tools",
@@ -1213,7 +1213,7 @@
   },
   "solve-q-579#1": {
    "t": "Test each choice",
-   "d": "r² = p² + q²: r > q, r > p and p + q > r always; r < 8 fails for 6, 8, 10"
+   "d": "r² = p² + q²: r > q, r > p and p + q > r always; r < 8 fails for 6, 8, 10 · from your Hebrew course (2026-10-08 coverage fix): whole numbers that fit r² = p² + q² are Pythagorean triples; the smallest is 3, 4, 5, so r is at least 5"
   },
   "solve-wp21-g018#1": {
    "t": "Shortcut · Plugging in the answers",
@@ -1256,8 +1256,8 @@
    "d": "catching up — time = gap ÷ difference in rates: 30 hours behind, gains 16 − 6 = 10 a day → 3 days"
   },
   "solve-wp27-g109#1": {
-   "t": "Method 2 · Balance (averages)",
-   "d": "shares as weights — same distance, so the times flip (2 : 3); 2/5 of the time at 105 → 70 + 2/5·35 = 84"
+   "t": "Method 2 · Algebra",
+   "d": "from your Hebrew course (2026-10-08 coverage fix): average speed only as total distance ÷ total time: call each way d, total time d/105 + d/70 = d/42, 2d ÷ d/42 = 84; the d cancels, so any distance works (replaces the weighted-average method and the 2ab/(a+b) check)"
   },
   "systems#4": {
    "t": "Add and subtract",
@@ -1390,6 +1390,10 @@
   "absolute-value#8": {
    "t": "Two cases",
    "d": "restored from your Hebrew lesson (2026-10-08): |x − 2| = 6 → 8 or −4, \"the same left side, twice\"; read as distance from 2 on the number line"
+  },
+  "solve-geo35-g125#3": {
+   "t": "No formula? Count faces",
+   "d": "from your Hebrew course: an irregular arrangement (a staircase of 6 cubes) has no formula — count faces by direction (front = back, top = bottom, right = left), including the recessed step faces: 2(6 + 3 + 3) = 24"
   }
  },
  "lines": {
@@ -1575,7 +1579,7 @@
   },
   "geo-009#13": {
    "t": "Recap",
-   "d": "the recap rule: big − small < side < sum"
+   "d": "the recap rule: big − small < side < sum · teacher decision 2026-10-08: the angle sum is the one you'll use most; the exterior angle saves time when it fits"
   },
   "geo-013#1": {
    "t": "Isosceles triangle",
@@ -1600,10 +1604,6 @@
   "geo-018-after#2": {
    "t": "Height outside",
    "d": "vertex moving on a line parallel to the base keeps the area"
-  },
-  "geo-024#5": {
-   "t": "8-15-17: less common",
-   "d": "how common 8-15-17 is, and a pointer to the next question"
   },
   "geo-026#9": {
    "t": "Using 30°-30°-120°",
@@ -1679,7 +1679,7 @@
   },
   "geo-139#12": {
    "t": "Recap",
-   "d": "recap line: parallel line — part to part ok, the segment against the whole side"
+   "d": "recap line: parallel line — part to part ok, the segment against the whole side · from your Hebrew course: about 9 in 10 similarity questions are triangles or rectangles, mostly triangles"
   },
   "geo-141#2": {
    "t": "Similar solids",
@@ -1811,7 +1811,7 @@
   },
   "solve-geo30-g006#1": {
    "t": "Method 2 · Plugging in numbers",
-   "d": "plug-in rules: eliminate three answers first; check the choices come out different"
+   "d": "plug-in rules: eliminate three answers first; check the choices come out different · from your Hebrew course: plugging in numbers is a general method (met again in the psychometric thinking lessons)"
   },
   "solve-geo30-g006#2": {
    "t": "Method 3 · Insight",
@@ -1819,7 +1819,7 @@
   },
   "solve-geo31-g012#1": {
    "t": "What to take from here",
-   "d": "the long way works, but the rule saves time"
+   "d": "the long way works, but the rule saves time · teacher decision 2026-10-08: the exterior angle is useful, it saves time when it fits (no longer \"comes up again and again\")"
   },
   "solve-geo31-g032#1": {
    "t": "Biggest angle, longest side",
@@ -1835,7 +1835,7 @@
   },
   "solve-geo31-g040#1": {
    "t": "Method 2 · Plugging in the answers",
-   "d": "the 1/3 trap explained (forgetting to subtract the small side: 3b = 9a)"
+   "d": "the 1/3 trap explained (forgetting to subtract the small side: 3b = 9a) · teacher decision 2026-10-08: choice 4 is now 3/8 (adding a instead of subtracting it: 3b + a = 9a), since the exam never offers a ratio and its reverse; the Method 1 slide eliminates 1/3, 1 and 3/8 at once"
   },
   "solve-geo32-g058#2": {
    "t": "Triangle EDC",
@@ -1855,7 +1855,7 @@
   },
   "solve-geo33-g102#2": {
    "t": "Method 2 · Plugging in numbers",
-   "d": "pointer to the next lesson: more tools for the hardest circle questions"
+   "d": "pointer to the next lesson: more tools for the hardest circle questions · from your Hebrew course: don't mark the first answer that fits — a special case can fit more than one, so check all four"
   },
   "solve-geo34-g112#1": {
    "t": "The golden triangle",
@@ -1891,7 +1891,7 @@
   },
   "solve-geo36-g144#3": {
    "t": "Psychometric · parts of sides",
-   "d": "the parallel line rule: sides cut in the same ratio, but ED against a whole side"
+   "d": "the parallel line rule: sides cut in the same ratio, but ED against a whole side · from your Hebrew course: compare across too: AE/BD = EC/DC (AE is 0.4 of BD, so EC = 0.4 × 15 = 6)"
   },
   "solve-geo36-g146#1": {
    "t": "Same-triangle ratio",
@@ -1959,7 +1959,7 @@
   },
   "solve-geo38-g187#1": {
    "t": "Plugging in",
-   "d": "a closing goodbye: good luck in the other topics"
+   "d": "a closing goodbye: good luck in the other topics · from your Hebrew course: even if an answer fits, don't mark it yet — check all four"
   },
   "solve-q-091#0": {
    "t": "Complete to one, then cancel",
@@ -2339,7 +2339,7 @@
   },
   "solve-q-500#1": {
    "t": "Method 2 · Plugging in numbers",
-   "d": "warning: change only t, never the numbers in the question"
+   "d": "warning: change only t, never the numbers in the question · from your Hebrew course (2026-10-08 coverage fix): your trick with its limit: six sits in every choice, so swap it for two (2t, 2/t, t², √t with t = 1/4 → 1/2, 8, 1/16, 1/2); only when the same number is in every choice - otherwise change only t"
   },
   "solve-q-501#0": {
    "t": "Decode, then test",
@@ -2395,7 +2395,7 @@
   },
   "solve-q-555#0": {
    "t": "Choice by choice",
-   "d": "choice two checked: 3/a · a = 3 = 3/b · b, keep it and break the others"
+   "d": "choice two checked: 3/a · a = 3 = 3/b · b, keep it and break the others · from your Hebrew course (2026-10-08 coverage fix): 3/x is 3 · x⁻¹: a minus power means flip (the reciprocal)"
   },
   "solve-q-556#0": {
    "t": "Method 1 · Plugging in numbers",
@@ -2559,7 +2559,7 @@
   },
   "solve-wp24-g076#1": {
    "t": "Method 2 · Plugging in numbers",
-   "d": "all the fractions written as percents (nights 30, drive 75, new 25…)"
+   "d": "all the fractions written as percents (nights 30, drive 75, new 25…) · from your Hebrew course (2026-10-08 coverage fix): a third? write 33 - the leftover only matters when a sum lands right next to 100"
   },
   "solve-wp24-g077#1": {
    "t": "Method 2 · Algebra",
@@ -2599,7 +2599,7 @@
   },
   "solve-wp26-g096#1": {
    "t": "Method 2 · Algebra",
-   "d": "a second way: the two-worker shortcut 6·10/(6+10) = 3.75 h"
+   "d": "a second way: the two-worker shortcut 6·10/(6+10) = 3.75 h · from your Hebrew course (2026-10-08 coverage fix): read 4/15 per hour as 4 batches in 15 hours, so one batch takes 15/4 hours"
   },
   "solve-wp26-g098#1": {
    "t": "Method 2 · The V method",
@@ -2743,7 +2743,7 @@
   },
   "wp-034#2": {
    "t": "A ratio is a fraction",
-   "d": "match names to numbers in order; swapping them is a trap answer"
+   "d": "match names to numbers in order · from your Hebrew course (2026-10-08 coverage fix): \"the ratio between A and B\" - the English exam uses this wording, so match the names to the numbers in order (no claim that it is a deliberate trap)"
   },
   "wp-039#1": {
    "t": "Where it helps",
@@ -2839,7 +2839,7 @@
   },
   "wp-137#3": {
    "t": "Who stays out",
-   "d": "a worked example (2 of 10 = 10·9/2 = 45) and: count the smaller side"
+   "d": "a worked example (2 of 10 = 10·9/2 = 45) and: count the smaller side · from your Hebrew course (2026-10-08 coverage fix): this type (n − 1 of n) shows up more often than the general group choice - and it is easy"
   },
   "wp-141-after#2": {
    "t": "Mirror digits",
@@ -2883,7 +2883,7 @@
   },
   "solve-geo34-g112#2": {
    "t": "Psychometric · Estimate",
-   "d": "compare each choice with 42 without decimals: divide (24√3 ÷ 6 = 4√3 = √48 < 7; 28√2 ÷ 14 = 2√2 = √8 < 3; 2√3 = √12 > 3)"
+   "d": "compare each choice with 42 without decimals: divide (24√3 ÷ 6 = 4√3 = √48 < 7; 28√2 ÷ 14 = 2√2 = √8 < 3; 2√3 = √12 > 3) · from your Hebrew course: a second option with decimals (teacher OK 2026-10-08, only √3 ≈ 1.7 and √2 ≈ 1.4): 28√3 ≈ 48 > 42, 28√2 ≈ 39 < 42 — but when it is close (24√3 ≈ 41) trust the roots"
   },
   "solve-geo35-g121#0": {
    "t": "The water in the cone",
@@ -2891,7 +2891,7 @@
   },
   "solve-geo35-g121#1": {
    "t": "Go through the choices",
-   "d": "cube 64 < 72, pyramid 84 > 24π — decided by 72 < 24π < 84"
+   "d": "cube 64 < 72, pyramid 84 > 24π — decided by 72 < 24π < 84 · from your Hebrew course: why edge cubed: a square is side squared, a cube is a square in 3D"
   },
   "solve-geo35-g121#2": {
    "t": "In the lesson: the rest",
@@ -2987,7 +2987,7 @@
   },
   "solve-wp28-g133#0": {
    "t": "Counting Questions",
-   "d": "restored from your Hebrew lesson: diagonal questions are rare, but they do show up on the exam"
+   "d": "restored from your Hebrew lesson: diagonal questions are rare, but they do show up on the exam · from your Hebrew course (2026-10-08 coverage fix): exam polygons are small, so drawing and counting is a real option"
   },
   "absolute-value#5": {
    "t": "When is it equal?",
@@ -3032,6 +3032,82 @@
   "solve-q-365#0": {
    "t": "Method 1 · Understanding",
    "d": "clearer explanation / number line added (2026-10-08): number line: z, y left of 0 and the band between y and −y where x can be — left or right of zero, so choice 3 is not necessarily true"
+  },
+  "solve-q-550#1": {
+   "t": "Method 2 · Insight",
+   "d": "from your Hebrew course (2026-10-08 coverage fix): a zero in the outer call makes the inner value irrelevant - mini example ◆(◆(5, 3, 2), 0, 1) = (…)⁰ + 0^(…) + 1⁰ = 1 + 0 + 1 = 2 (anything to the power 0 is 1, 0 to a positive power is 0, 1 to any power is 1)"
+  },
+  "solve-wp21-g015#0": {
+   "t": "Plug in the answers",
+   "d": "from your Hebrew course (2026-10-08 coverage fix): stuck? plug in the answers, or skip it and come back at the end - just don't sit and stare"
+  },
+  "solve-wp21-g020#1": {
+   "t": "Method 2 · Understanding",
+   "d": "from your Hebrew course (2026-10-08 coverage fix): the biggest of two different shares is more than half (of three: more than a third)"
+  },
+  "wp-052#7": {
+   "t": "The 10% method",
+   "d": "from your Hebrew course (2026-10-08 coverage fix): decimals like 4.8 are rare on the exam - the numbers usually come out round"
+  },
+  "solve-wp23-g054#1": {
+   "t": "Method 2 · Percent multipliers",
+   "d": "from your Hebrew course (2026-10-08 coverage fix): going down a branch makes that group the new 100%: 20% is of the players (a trap choice), and 80% piano could not fit inside the 65% who play"
+  },
+  "wp-053#6": {
+   "t": "Who is the 100?",
+   "d": "from your Hebrew course (2026-10-08 coverage fix): not every sentence has \"of\" or \"than\", but when one is there the whole comes right after it"
+  },
+  "solve-wp26-g103#1": {
+   "t": "Method 2 · Estimation",
+   "d": "from your Hebrew course (2026-10-08 coverage fix): hours come out as an awkward decimal (2.2 h)? switch to minutes (132)"
+  },
+  "solve-wp26-g105b#0": {
+   "t": "Method 1 · Estimation",
+   "d": "from your Hebrew course (2026-10-08 coverage fix): hidden-team questions (a supply used up by eaters) have shown up on recent exams - checked against the real exams"
+  },
+  "wp-146#1": {
+   "t": "Wanted over possible",
+   "d": "from your Hebrew course (2026-10-08 coverage fix): \"fair\" coin or dice = an ordinary one, not weighted - every face equally likely; the exam always writes fair"
+  },
+  "geo-009#8": {
+   "t": "Two routes",
+   "d": "teacher decision 2026-10-08: the exterior-angle rule is useful — it saves time when it fits (no longer \"shows up a lot / a core rule\")"
+  },
+  "geo-024#6": {
+   "t": "How to remember",
+   "d": "teacher decision 2026-10-08: learn only 3-4-5 and 5-12-13; other triples (like 8-15-17) are rare on the exam (about 2 in 760 questions) — no need to learn them"
+  },
+  "solve-geo32-g049#1": {
+   "t": "Opposite sides",
+   "d": "from your Hebrew course: later, similar triangles also find missing sides — but Pythagoras is the main tool"
+  },
+  "solve-geo32-g067#2": {
+   "t": "Method 2 · Symmetry",
+   "d": "from your Hebrew course: easy-plus means about the fifth or sixth question of a section"
+  },
+  "geo-104#6": {
+   "t": "On a circle",
+   "d": "from your Hebrew course: the circle inside and the circle around a regular polygon share the same center"
+  },
+  "solve-geo34-g111#1": {
+   "t": "Statement by statement",
+   "d": "from your Hebrew course: in a \"not true\" question, a definitely true statement AND a merely possible one are out — we want the one that can never be true"
+  },
+  "solve-geo35-g125#1": {
+   "t": "Trial and error",
+   "d": "from your Hebrew course: this type usually comes near the end of the section — if time runs short, cross out what you already can"
+  },
+  "geo-157#4": {
+   "t": "Center on an axis",
+   "d": "from your Hebrew course: center on the x-axis and the circle touches the y-axis: the center's x IS the radius"
+  },
+  "geo-157#5": {
+   "t": "Center at the origin",
+   "d": "from your Hebrew course: tangents where the circle cuts the axes make a square around it, side 2r"
+  },
+  "geo-159#4": {
+   "t": "The length AD",
+   "d": "from your Hebrew course: when a step length is a root, the answer may be simplified: 3√13 = √117 (117 = 9 × 13)"
   }
  }
 }

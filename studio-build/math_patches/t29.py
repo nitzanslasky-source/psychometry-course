@@ -1731,3 +1731,39 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 29)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 coverage fixes (teacher approved "go ahead"). A full check of the teacher's Hebrew course against this
+# topic found points that were taught only WEAKLY or were MISSING; each one goes back as one or two short spoken lines
+# in an unrecorded video (or, for a video recorded before CF.CUTOFF, into the written solution / card). Runs LAST.
+# Helpers: _hebrew_back.py loaded as its own copy with this pass's CUTOFF. See tNN_CHANGES.md "2026-10-08 coverage fixes".
+# =====================================================================================================================
+import importlib.util as _ilu_cf, os as _os_cf
+_s_cf = _ilu_cf.spec_from_file_location('_hebrew_back_cf', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_hebrew_back.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+CF.CUTOFF = '2026-10-08T08-43-14'   # UTC, when this pass finished: a take recorded before it keeps its video unchanged
+
+
+def _cf_replace(M, vid, title, sub, new):
+    """replace the one line containing sub (spoken / drawn / item) on slide `title` by new (line or list). False if recorded."""
+    if CF.recorded(vid): return False
+    CF.set_slide(M, vid, title, CF.replace_line(CF.lines_of(M, vid, title), sub, new))
+    return True
+
+
+def coverage_fixes(M):
+    # #7 (Hebrew 9835-9840; also topic 28 #33): "fair" coin / dice = an ordinary one, not weighted; the exam always says fair
+    if not CF.add_lines(M, 'wp-146', 'Wanted over possible', 'One quick condition: we count outcomes that are equally likely', [
+            "That's why the exam always writes a FAIR coin or a FAIR dice. Fair means an ordinary one, not weighted: every face is equally likely."]):
+        CF.add_expl(M, 'wp29-g152', "A fair coin or a fair dice is an ordinary one, not weighted: every face is equally likely.")
+    c = M.card('mem-probability')
+    c['tips'].append('"Fair" coin or dice = an ordinary one, not weighted: every face is equally likely.')
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST

@@ -237,3 +237,12 @@ Every question checked against the 2026-10-06 methods; nothing added (no code). 
 Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
 
 - new-operation 'Brackets on every input': the negative-input part is one line (topics 4, 8); the (x + 2) input stays. ~6 s.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST; helpers `math_patches/_cov_fix_a.py`, time-gated: a video with a take recorded
+before its CUTOFF is left as recorded and the point goes to the written solution / card instead). Source: the full
+Hebrew-vs-English coverage check (WEAK / MISSING points). Notes: added_notes.json.
+- **`solve-q-550` "Method 2 · Insight"** (teacher decision: two lines + a mini example, the question stays; +≈17 s, not recorded): the line "Sometimes a zero in the outer call..." is split around a click item $\blacklozenge(\blacklozenge(5,3,2), 0, 1)=(\ldots)^0+0^{(\ldots)}+1^0=1+0+1=2$ and two lines (anything to the power 0 is 1, 0 to a positive power is 0, 1 to any power is 1 -> two, whatever positive number is inside). Hebrew 19305-19319. q-550 written solution: new "Shortcut" paragraph (outer operation first, $\blacklozenge(1,1,z)=2+z$; the zero example).
+- **`solve-q-555` "Choice by choice"** (+≈10 s): after the reciprocal line - three over x is three times x to the minus one; a minus power means flip (Hebrew 19756-19768).
+`math_check.py 3 5 11 17 19 20 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered and looked at.

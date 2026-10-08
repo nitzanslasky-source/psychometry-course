@@ -2205,3 +2205,83 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 35)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================
+# 2026-10-08 coverage fixes (teacher approved 2026-10-08 "go ahead"): the WEAK / MISSING points of the Hebrew-vs-English
+# coverage check of this topic, plus the teacher's decisions, as 1-4 short spoken lines (or one short slide) in
+# UNRECORDED videos. A video with a take recorded before CF_CUTOFF (UTC; the time this change was finished) is left
+# exactly as recorded. Helpers (lines_of / set_slide / replace_line / add_lines) come from _hebrew_back.py.
+import importlib.util as _ilu_cf, os as _os_cf, re as _re_cf, glob as _glob_cf
+_s_cf = _ilu_cf.spec_from_file_location('_hebrew_back_cf', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_hebrew_back.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+CF_CUTOFF = '2026-10-08T08-47-24'
+
+
+def _cf_recorded(vid):
+    """True = a take of vid was recorded before CF_CUTOFF: leave the video as recorded."""
+    pat = _re_cf.compile(_re_cf.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in _glob_cf.glob(_os_cf.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(_os_cf.path.basename(f))
+        if m and m.group(1) < CF_CUTOFF: return True
+    return False
+
+
+def _cf_add(M, vid, title, anchor, new, where='after'):
+    """add script lines after/before the one line containing anchor (None = end of the slide)."""
+    if _cf_recorded(vid): return False
+    return CF.add_lines(M, vid, title, anchor, new, where)
+
+
+def _cf_replace(M, vid, title, sub, new):
+    """replace the one line containing sub by new (a line, a list of lines, or [] = drop it)."""
+    if _cf_recorded(vid): return False
+    CF.set_slide(M, vid, title, CF.replace_line(CF.lines_of(M, vid, title), sub, new))
+    return True
+
+
+def _cf_fig_stairs():
+    """6 unit cubes in a staircase one cube deep: columns of 3, 2, 1 (from the left)."""
+    f = Fig('A staircase of six unit cubes: columns of three, two and one')
+    s, x0, y0 = 70.0, 210.0, 320.0
+    dx, dy = s * 0.55, -s * 0.35
+    for c, h in enumerate([3, 2, 1]):
+        for r in range(h):
+            bx, by = x0 + c * s, y0 - r * s
+            f.poly([(bx + s, by), (bx + s + dx, by + dy), (bx + s + dx, by + dy - s), (bx + s, by - s)], fill=FILL, sw=1.7)
+            f.poly([(bx, by - s), (bx + s, by - s), (bx + s + dx, by - s + dy), (bx + dx, by - s + dy)], fill=TOP, sw=1.7)
+            f.poly([(bx, by), (bx + s, by), (bx + s, by - s), (bx, by - s)], fill=FRONT, sw=1.7)
+    return f.svg(tight=True)
+
+
+def coverage_fixes(M):
+    # #32: cube volume - the square / cube analogy at the first "edge cubed"
+    vid = 'solve-geo35-g121'
+    _cf_add(M, vid, M.slide(vid, 3)['title'], 'For a cube — just the edge cubed.', [
+        'Why cubed? A square is side squared. A cube is a square in 3D — so edge cubed.'])
+    # #54: where this type sits in the section
+    vid = 'solve-geo35-g125'
+    _cf_add(M, vid, M.slide(vid, 2)['title'], 'Out of time? You already know that much.', [
+        'This type usually comes near the end of the section — so if time runs short, cross out what you already can.'])
+    # #51 + #53: an irregular arrangement - no formula, count faces by direction, and don't miss the recessed faces
+    if not _cf_recorded(vid):
+        n = 3
+        M.insert_slides(vid, n, [dict(mode='concept', active=M.slide(vid, n)['active'], title='No formula? Count faces', script=[
+            'One more case: what if the cubes are not a box? Like this staircase of 6 cubes.',
+            A('A staircase of six cubes appears', VIS(_cf_fig_stairs(), w=1000, h=520)),
+            "There's no formula for this shape — so we count faces, direction by direction.",
+            'Front: 6. So the back is also 6.',
+            D('Mark the three top faces'),
+            'From above: 3 tops — the two steps further back count too.',
+            D('Mark the three right faces'),
+            'From the right: 3. Careful — these two faces sit further back, but they are seen from the right too. Count them.',
+            A("'2(6 + 3 + 3) = 24' appears", T('$S=2(6+3+3)=24$', size=46, x=410, y=650)),
+            'Each direction twice: 2 times 12 — 24 square centimeters.'])])
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST

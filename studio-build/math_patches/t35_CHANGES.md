@@ -188,3 +188,10 @@ Check: `python3 math_check.py 35 32` -> 0 / 0 / 0. Rendered and looked at.
 Teacher: only OUR additions that re-teach something learned earlier in the study plan are trimmed; the Hebrew course's own repeats stay. `trim_added_repeats(M)` runs last in apply(); helpers in `_trim_repeats.py` (videos with a take recorded before its CUTOFF are left as recorded). Notes updated in added_notes.json.
 
 - r26-t35-cubefacts: slide 'Angles in a cube' removed (teacher's cube question, Three angles in a cube); cube diagonals a√2 / a√3 one reminder line (teacher's Edge → body diagonal); liter line removed from Quick checks (Water Level). r26-t35-water: 1 ml = 1 cm³ folded into the liter line (teacher's Volume slide). ~39 s.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST in apply(); helpers from `_hebrew_back.py`, own recording guard `CF_CUTOFF` = 2026-10-08T08-47-24 UTC). Source: the Hebrew-vs-English coverage check of this topic (WEAK / MISSING points) + the teacher's decisions of 2026-10-08. No video of this topic is recorded (checked ~/Documents/Course.recordings), so everything went into the videos themselves; nothing added to `_rerecord.py`. Notes in added_notes.json. `python3 math_check.py 30 31 32 33 34 35 36 37 38` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+- **solve-geo35-g121** "Go through the choices" (+≈6 s): "Why cubed? A square is side squared. A cube is a square in 3D — so edge cubed."
+- **solve-geo35-g125** "Trial and error" (+≈8 s): "This type usually comes near the end of the section — so if time runs short, cross out what you already can."
+- **solve-geo35-g125**: new slide "No formula? Count faces" after "The insight: pack them tight" (+≈40 s): a staircase of 6 cubes (columns 3, 2, 1), no formula → count by direction; front 6 = back, tops 3, right 3 — "these two faces sit further back, but they are seen from the right too. Count them."; S = 2(6 + 3 + 3) = 24.

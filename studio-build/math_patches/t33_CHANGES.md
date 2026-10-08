@@ -260,3 +260,9 @@ Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate 
 - geo-079 "π is a number": "All we need to know: a bit more than 3" -> "more than 3 and less than three and a half".
 - LEFT, teacher to decide: geo33-g089 (16π between 50 and 51, trap 48–49) and geo33-advanced-p10 (64 − 8π between 38 and 39) — the question itself needs π ≈ 3.14 (π between 3 and 3.5 cannot decide). Also geo-079 still says "even 3.1 is enough for the exam", which is not enough for g089 (16 · 3.1 = 49.6).
 Check: `python3 math_check.py 33 32` -> 0 / 0 / 0. Rendered and looked at.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST in apply(); helpers from `_hebrew_back.py`, own recording guard `CF_CUTOFF` = 2026-10-08T08-47-24 UTC). Source: the Hebrew-vs-English coverage check of this topic (WEAK / MISSING points) + the teacher's decisions of 2026-10-08. No video of this topic is recorded (checked ~/Documents/Course.recordings), so everything went into the videos themselves; nothing added to `_rerecord.py`. Notes in added_notes.json. `python3 math_check.py 30 31 32 33 34 35 36 37 38` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+- **solve-geo33-g102** "Method 2 · Plugging in numbers" (+≈9 s): "Even if one fits early — don't mark it yet. A special case can fit more than one answer, so we check all four."
+- Coverage-check "keep the English" notes: no change (teacher).

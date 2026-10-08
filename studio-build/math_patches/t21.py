@@ -1872,3 +1872,42 @@ _apply_before_hebrew_points_back = apply
 def apply(M):
     _apply_before_hebrew_points_back(M)
     hebrew_points_back(M)   # 2026-10-08 Hebrew points restored: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-08 coverage fixes (teacher approved "go ahead"). A full check of the teacher's Hebrew course against this
+# topic found points that were taught only WEAKLY or were MISSING; each one goes back as one or two short spoken lines
+# in an unrecorded video (or, for a video recorded before CF.CUTOFF, into the written solution / card). Runs LAST.
+# Helpers: _hebrew_back.py loaded as its own copy with this pass's CUTOFF. See tNN_CHANGES.md "2026-10-08 coverage fixes".
+# =====================================================================================================================
+import importlib.util as _ilu_cf, os as _os_cf
+_s_cf = _ilu_cf.spec_from_file_location('_hebrew_back_cf', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_hebrew_back.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+CF.CUTOFF = '2026-10-08T08-43-14'   # UTC, when this pass finished: a take recorded before it keeps its video unchanged
+
+
+def _cf_replace(M, vid, title, sub, new):
+    """replace the one line containing sub (spoken / drawn / item) on slide `title` by new (line or list). False if recorded."""
+    if CF.recorded(vid): return False
+    CF.set_slide(M, vid, title, CF.replace_line(CF.lines_of(M, vid, title), sub, new))
+    return True
+
+
+def coverage_fixes(M):
+    # #40 (Hebrew 410, 421): don't get stuck - start plugging in, OR skip the question and move on
+    if not CF.add_lines(M, 'solve-wp21-g015', 'Plug in the answers', 'Some people try and wonder.', [
+            "Or skip it, move on, and come back at the end. Just don't sit and stare."]):
+        CF.add_expl(M, 'wp21-g015', "Stuck? Start plugging in the answers, or skip the question and come back at the end. Just don't sit and stare.")
+    # #54 (Hebrew 659-660): the biggest share is more than half of two, more than a third of three
+    if not CF.add_lines(M, 'solve-wp21-g020', 'Method 2 · Understanding', 'The biggest of three must be MORE than a third.', [
+            "Same idea with two people: if one has more, he has more than half."]):
+        CF.add_expl(M, 'wp21-g020', "The biggest of two different shares is more than half; the biggest of three is more than a third.")
+    # #57 (min-max range has no holes): the English keeps its qualified version (teacher decision 2026-10-08) - no change
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST

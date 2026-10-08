@@ -283,3 +283,13 @@ All new lines verified numerically (python: power by scaling, fitting values, ch
 Function `plan_order_fix` (runs LAST). Students follow the study plan (`src/lib/planData.ts` ORDER), not topic numbers; named methods were checked against the plan rank of their teaching topic.
 - q-130, q-r26-t05-04: "Method 2 · Power count" → self-contained "Shortcut · Power count" (+ what a power is and why simplifying keeps it): both guided questions come before the lesson r26-t05-power-count inside this topic. Their videos are recorded and unchanged.
 `python3 math_check.py 5 7 10 21 22 25 26 28 30 31 33 37 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST; helpers `math_patches/_cov_fix_a.py`, time-gated: a video with a take recorded
+before its CUTOFF is left as recorded and the point goes to the written solution / card instead). Source: the full
+Hebrew-vs-English coverage check (WEAK / MISSING points). Notes: added_notes.json.
+- **`r26-t05-summary` "Plug in numbers"** (+≈6 s, not recorded): one line - plug-in is not only for expressions, you will use it in word problems and geometry too (Hebrew 2927-2932).
+- **`r26-t05-summary` new slide "Doesn't depend on x"** (own sidebar item, before "Before you practice"; +≈30 s): the wording "does not depend on x / same value for every x" -> simplify each choice until x disappears; click items: the rule + $(x+3)^2-x(x+6)=x^2+6x+9-x^2-6x=9$; plug-in is slow here (one number tells nothing, two per choice) -> use the algebra (Hebrew 3463-3536).
+- **q-expression-extra-18** written solution: new first paragraph with the same wording rule and why plug-in is slow here.
+`math_check.py 3 5 11 17 19 20 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered and looked at.

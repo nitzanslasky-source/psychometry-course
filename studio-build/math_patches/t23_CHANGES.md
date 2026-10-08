@@ -240,3 +240,11 @@ Function `spread_methods(M)` in t23.py runs last (after `renumber_pass`). Every 
 
 ## 2026-10-08 Hebrew points restored
 Checked only, nothing changed. The lessons the 2026-10-05 cut shortened here were our own added lessons (r26-…), not the teacher's. The teacher's Hebrew theory lessons for this topic map to lessons the cut did not touch, and the Hebrew "advanced study" part has sample questions only. Every idea on the cut slides is still said in a question video (see the 2026-10-05 follow-up above). No lost Hebrew points.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST; helpers `_hebrew_back.py` loaded as its own copy with CUTOFF 2026-10-08T08-43-14 UTC — a take recorded before it keeps its video unchanged and the point goes into the written solution instead; nothing in topics 21–29 is recorded). Source: the Hebrew-vs-English coverage check (WEAK / MISSING points), teacher approved "go ahead". Notes in `added_notes.json` ("from your Hebrew course (2026-10-08 coverage fix): …").
+- **wp-052**, slide "The 10% method" (+≈7 s): "By the way, decimals like four point eight are rare on the exam. Most of the time the numbers come out round." (Hebrew #19.)
+- **solve-wp23-g054**, slide "Method 2 · Percent multipliers" (+≈10 s): "That's why twenty percent is a trap choice: it's twenty percent of the PLAYERS, not of everyone." + "It can't be of everyone: eighty percent on piano wouldn't even fit inside the sixty-five percent who play." (Hebrew #33: the branch = new 100%, the wrong answer and why.)
+- **wp-053**, slide "Who is the 100?" (+≈6 s): "Not every sentence has an "of" or a "than". But when one is there, the whole comes right after it." (Hebrew #43.)
+`math_check.py 21 22 23 24 25 26 27 28 29 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.

@@ -320,3 +320,14 @@ Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate 
 - q-r26-t11-01 (written only): "√5 ≈ 2.24, 1/0.24 ≈ 4.2 ..." -> sign check: √5 is between 2 and 3, the first fraction is the bigger one, so the answer is positive (choices 1, 2 out); the 2√5 trap note kept.
 - NOT changed: video solve-q-r26-t11-01 (Method 2 · Estimate still says √5 ≈ 2.24) — recorded 2026-10-07 12:04Z. Re-record or cut Method 2 if the teacher wants it gone.
 Check: `python3 math_check.py 11 32` -> 0 / 0 / 0.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST; helpers `math_patches/_cov_fix_a.py`, time-gated: a video with a take recorded
+before its CUTOFF is left as recorded and the point goes to the written solution / card instead). Source: the full
+Hebrew-vs-English coverage check (WEAK / MISSING points). Notes: added_notes.json.
+- **`r26-t11-summary` "Product = 0"** (+≈14 s, not recorded): click item "$\sqrt x=x$ or $x^2=x$ -> only 0 and 1" + two lines (square it: $x=x^2$, $x(x-1)=0$). Hebrew 8341-8359 (q-299 is recorded and was changed to a product = 0).
+- **`r26-t11-summary` "Two routes"** (+≈8 s): cannot split a root nicely? estimate it ($\sqrt{50}$ a little over 7) and compare with the choices (Hebrew 8441-8546).
+- **`r26-t11-summary` new slide "IF … THEN choices"** (teacher decision: q-290 is recorded - leave it; the format goes into the summary; own sidebar item "IF … THEN" after "Power = 1 and \"or\""; +≈42 s): the IF is one more given - cross out the cases it rules out, check the THEN in every case left, one failing case kills the choice; example $a^b=1$, $a$, $b$ integers: if $a<0$ then $b$ is even (base −1 with an even exponent, or exponent 0 - and 0 is even) ✓; an IF that rules out no case proves nothing (Hebrew 7103-7259).
+- **Card `mem-r26-t11-advanced`**: two rows - "$\sqrt x=x$ (or $x^2=x$): only 0 and 1" (after Product = 0) and "\"IF … THEN\" choice" (after "A or B").
+`math_check.py 3 5 11 17 19 20 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered and looked at.

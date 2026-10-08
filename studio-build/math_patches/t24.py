@@ -1670,3 +1670,37 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 24)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 coverage fixes (teacher approved "go ahead"). A full check of the teacher's Hebrew course against this
+# topic found points that were taught only WEAKLY or were MISSING; each one goes back as one or two short spoken lines
+# in an unrecorded video (or, for a video recorded before CF.CUTOFF, into the written solution / card). Runs LAST.
+# Helpers: _hebrew_back.py loaded as its own copy with this pass's CUTOFF. See tNN_CHANGES.md "2026-10-08 coverage fixes".
+# =====================================================================================================================
+import importlib.util as _ilu_cf, os as _os_cf
+_s_cf = _ilu_cf.spec_from_file_location('_hebrew_back_cf', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_hebrew_back.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+CF.CUTOFF = '2026-10-08T08-43-14'   # UTC, when this pass finished: a take recorded before it keeps its video unchanged
+
+
+def _cf_replace(M, vid, title, sub, new):
+    """replace the one line containing sub (spoken / drawn / item) on slide `title` by new (line or list). False if recorded."""
+    if CF.recorded(vid): return False
+    CF.set_slide(M, vid, title, CF.replace_line(CF.lines_of(M, vid, title), sub, new))
+    return True
+
+
+def coverage_fixes(M):
+    # #36 (Hebrew 4993-4998): a third? write 33% and ignore the leftover - it only matters when the sum is close to 100
+    if not CF.add_lines(M, 'solve-wp24-g076', 'Method 2 · Plugging in numbers', 'Nights thirty, drive seventy-five', [
+            "And if you get a third? Just write thirty-three. The missing bit only matters when a sum lands right next to a hundred."]):
+        CF.add_expl(M, 'wp24-g076', "A third? Write $33\\%$. The leftover only matters when a sum lands right next to $100$.")
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST

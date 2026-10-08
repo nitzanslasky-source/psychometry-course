@@ -214,3 +214,10 @@ type and answer, a little less "close". `math_check.py 34 35 36 37 38 32` and fu
 
 ## 2026-10-07 methods spread
 - Checked every question for the 2026-10-06 methods: scaling (compare by factors) is already the method in every written solution. Power count is not used in geo36-g145 / core-p18 because a given number there is a length, so the power count would mislead. No change.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST in apply(); helpers from `_hebrew_back.py`, own recording guard `CF_CUTOFF` = 2026-10-08T08-47-24 UTC). Source: the Hebrew-vs-English coverage check of this topic (WEAK / MISSING points) + the teacher's decisions of 2026-10-08. No video of this topic is recorded (checked ~/Documents/Course.recordings), so everything went into the videos themselves; nothing added to `_rerecord.py`. Notes in added_notes.json. `python3 math_check.py 30 31 32 33 34 35 36 37 38` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+- **geo-139** "Recap" (+≈7 s): "On the exam, about nine similarity questions in ten are triangles or rectangles — and most of them are triangles."
+- **solve-geo36-g144** "Psychometric · parts of sides" (+≈12 s): "Or compare across: AE is 4 and BD is 10 — AE is 0.4 of BD. So EC is 0.4 of DC: 0.4 times 15 — 6. Same answer."
+- #31 (trap answers in harder questions): no change (teacher).

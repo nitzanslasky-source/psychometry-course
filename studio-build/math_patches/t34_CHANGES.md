@@ -224,3 +224,11 @@ Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate 
 - solve-geo34-g112 "Psychometric · Estimate": √3 ≈ 1.7 / 24 × 1.75 / 28 × 1.5 -> divide both sides, then a factor into the root: 24√3 ÷ 6 = 4√3 = √48 < 7; 24√2 is smaller still; 28√2 ÷ 14 = 2√2 = √8 < 3; 28√3: 2√3 = √12 > 3. Board by click, pen only for marks/cross-outs. 19 lines (was 19).
 - Left: solve-geo34-g114 / geo34-g114 "1 + 1.4 against 2" (the taught √2 ≈ 1.4).
 Check: `python3 math_check.py 34 32` -> 0 / 0 / 0. Rendered and looked at.
+
+
+## 2026-10-08 coverage fixes
+Function `coverage_fixes` (runs LAST in apply(); helpers from `_hebrew_back.py`, own recording guard `CF_CUTOFF` = 2026-10-08T08-47-24 UTC). Source: the Hebrew-vs-English coverage check of this topic (WEAK / MISSING points) + the teacher's decisions of 2026-10-08. No video of this topic is recorded (checked ~/Documents/Course.recordings), so everything went into the videos themselves; nothing added to `_rerecord.py`. Notes in added_notes.json. `python3 math_check.py 30 31 32 33 34 35 36 37 38` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+- **geo-104** "On a circle" (+≈5 s): "And the circle inside and the circle around share the same center, O."
+- **solve-geo34-g111** "Statement by statement" (+≈7 s): "And anything that's just possible — out too. We want the one that can never be true."
+- **solve-geo34-g112** "Psychometric · Estimate" (+≈15 s; teacher: decimals as a SECOND option, only √3 ≈ 1.7 and √2 ≈ 1.4): "One way: make the numbers small first." … "Another way, with decimals: root 3 is about 1.7, root 2 about 1.4. 28 root 3 is about 48 — above 42. 28 root 2, about 39 — below. But when it comes out close — like 24 root 3, about 41 — trust the roots, not the decimals." (no ×1.5 benchmark)
+- Skipped (teacher): #70 "regular polygons can be trusted by eye" — on the English exam figures are not necessarily drawn to scale.

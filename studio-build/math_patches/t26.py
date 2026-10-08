@@ -1825,3 +1825,50 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 26)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 coverage fixes (teacher approved "go ahead"). A full check of the teacher's Hebrew course against this
+# topic found points that were taught only WEAKLY or were MISSING; each one goes back as one or two short spoken lines
+# in an unrecorded video (or, for a video recorded before CF.CUTOFF, into the written solution / card). Runs LAST.
+# Helpers: _hebrew_back.py loaded as its own copy with this pass's CUTOFF. See tNN_CHANGES.md "2026-10-08 coverage fixes".
+# =====================================================================================================================
+import importlib.util as _ilu_cf, os as _os_cf
+_s_cf = _ilu_cf.spec_from_file_location('_hebrew_back_cf', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_hebrew_back.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+CF.CUTOFF = '2026-10-08T08-43-14'   # UTC, when this pass finished: a take recorded before it keeps its video unchanged
+
+
+def _cf_replace(M, vid, title, sub, new):
+    """replace the one line containing sub (spoken / drawn / item) on slide `title` by new (line or list). False if recorded."""
+    if CF.recorded(vid): return False
+    CF.set_slide(M, vid, title, CF.replace_line(CF.lines_of(M, vid, title), sub, new))
+    return True
+
+
+def coverage_fixes(M):
+    # #20 (Hebrew 6138-6158): read a combined rate a/b as "a jobs in b hours", then scale to one job
+    if not _cf_replace(M, 'solve-wp26-g096', 'Method 2 · Algebra', 'Four fifteenths per hour. One batch', [
+            "Four fifteenths per hour. Read it as: four batches in fifteen hours.",
+            "So one batch takes a quarter of that: fifteen quarters of an hour — two hundred twenty-five minutes."]):
+        CF.add_expl(M, 'wp26-g096', "Read $\\frac{4}{15}$ per hour as 4 batches in 15 hours: one batch takes $\\frac{15}{4}$ hours.")
+    # #49 (Hebrew 6586-6612): hours come out as an awkward decimal - switch to minutes
+    if not _cf_replace(M, 'solve-wp26-g103', 'Method 2 · Estimation', 'A hundred ten takes it two point two hours', [
+            "A alone does fifty an hour. A hundred ten takes it two point two hours.",
+            "Hours come out as an awkward decimal? Switch to minutes: two point two hours is a hundred thirty-two minutes."]):
+        CF.add_expl(M, 'wp26-g103', "Hours come out as an awkward decimal ($2.2$ h)? Switch to minutes: $132$ minutes.")
+    # #67 (Hebrew 6977-6978): "hidden team" questions appear on recent exams - checked real_exam/quant_real.md: a supply
+    # used up by eaters/consumers (2023 spring bees and nectar, 2025 spring a pack of pencils, 2025 winter cat food)
+    if not CF.add_lines(M, 'solve-wp26-g105b', 'Advanced Work & Rate', "Hard to see who's the team", [
+            "Questions like this, where the team is hidden, have shown up on recent exams. Worth knowing."]):
+        CF.add_expl(M, 'wp26-g105b', "Questions with a hidden team (eaters using up a supply) have shown up on recent exams.")
+    # #46 (Hebrew 6493-6501, "75 or a multiple of 100? reduce by 25"): belongs to the topic-2 arithmetic card, which is
+    # outside this topic's file; topic 26's numbers no longer use 75 - not added here.
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST

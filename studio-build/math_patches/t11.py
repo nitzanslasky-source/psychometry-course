@@ -2210,3 +2210,57 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 11)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 coverage fixes. A full check compared the teacher's Hebrew course with the English course; the points
+# found WEAK / MISSING here are put back as a few short spoken lines (board items by click) in UNRECORDED videos, or -
+# when the video is recorded - in the written solution / memory card. Helpers: _cov_fix_a.py (time-gated: a take
+# recorded before its CUTOFF keeps the video as recorded). See tNN_CHANGES.md ("2026-10-08 coverage fixes"). Runs LAST.
+# =====================================================================================================================
+import importlib.util as _ilu_cf, os as _os_cf
+_s_cf = _ilu_cf.spec_from_file_location('_cov_fix_a', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_cov_fix_a.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+
+
+def coverage_fixes(M):
+    vid = 'r26-t11-summary'
+    # Hebrew 8341-8359: the "object" sqrt(x) = x has only two solutions, 0 and 1
+    CF.add_lines(M, vid, 'Product = 0', 'Never divide by root x', [
+        A("'√x = x or x² = x → only 0 and 1' appears", T('$\\sqrt x=x$ or $x^2=x$ $\\to$ only $0$ and $1$', size=44)),
+        'A close relative: root x equals x. Square it — x equals x squared. So x times x minus one is zero.',
+        'Only zero and one. The same for x squared equals x.'])
+    # Hebrew 8441-8546: can't split the root? estimate it, then compare with the choices
+    CF.add_lines(M, vid, 'Two routes', 'Pick a number whose roots come out clean', [
+        "Can't split a root nicely? Estimate it — root fifty is a little over seven. Then compare with the choices."])
+    # Hebrew 7103-7259 (teacher 2026-10-08: into r26-t11-tools or r26-t11-summary; q-290 is recorded - leave it):
+    # choices "IF condition THEN conclusion" - the IF is one more given, check the THEN in every case left
+    CF.add_slide(M, vid, 'Power = 1 and "or"', dict(title='IF … THEN choices', mode='concept', pre=[], script=[
+        'Some choices come as: IF something, THEN something.',
+        A("'IF → one more given · check THEN in every case left' appears",
+          T('IF $\\to$ one more given · check THEN in every case left', size=42)),
+        'Treat the IF as one more given. Cross out the cases it rules out.',
+        "Then check the THEN in every case that's left. One case where it fails — the choice is out.",
+        A("'a^b = 1, a and b integers: if a < 0, then b is even ✓' appears",
+          T('$a^b=1$, $a$, $b$ integers: if $a<0$, then $b$ is even ✓', size=42)),
+        'a to the b equals one, a and b whole numbers. If a is negative, two cases are left: base minus one with an even exponent — or exponent zero.',
+        'And zero is even too. So it\'s true.',
+        'An IF that rules out no case proves nothing — then the THEN must hold in every case anyway.']),
+        'IF … THEN')
+    rows = M.card('mem-r26-t11-advanced')['tables'][0]['rows']
+    k = [i for i, r in enumerate(rows) if r[0].startswith('Product')][0]
+    new = [['$\\sqrt x=x$ (or $x^2=x$)', 'only $0$ and $1$: $x^2-x=x(x-1)=0$', '$\\sqrt1=1$, $\\sqrt0=0$, but $\\sqrt4=2$'],
+           ['"IF … THEN" choice', 'add the IF to the givens; check the THEN in every case left',
+            '$a^b=1$: if $a<0$, then $b$ is even ✓']]
+    if not any(r[0] == new[0][0] for r in rows):
+        rows[k + 1:k + 1] = new[:1]
+        k = [i for i, r in enumerate(rows) if r[0].startswith('"A or B"')][0]
+        rows[k + 1:k + 1] = new[1:]
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST

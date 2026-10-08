@@ -2626,3 +2626,80 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 32)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================
+# 2026-10-08 coverage fixes (teacher approved 2026-10-08 "go ahead"): the WEAK / MISSING points of the Hebrew-vs-English
+# coverage check of this topic, plus the teacher's decisions, as 1-4 short spoken lines (or one short slide) in
+# UNRECORDED videos. A video with a take recorded before CF_CUTOFF (UTC; the time this change was finished) is left
+# exactly as recorded. Helpers (lines_of / set_slide / replace_line / add_lines) come from _hebrew_back.py.
+import importlib.util as _ilu_cf, os as _os_cf, re as _re_cf, glob as _glob_cf
+_s_cf = _ilu_cf.spec_from_file_location('_hebrew_back_cf', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_hebrew_back.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+CF_CUTOFF = '2026-10-08T08-47-24'
+
+
+def _cf_recorded(vid):
+    """True = a take of vid was recorded before CF_CUTOFF: leave the video as recorded."""
+    pat = _re_cf.compile(_re_cf.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in _glob_cf.glob(_os_cf.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(_os_cf.path.basename(f))
+        if m and m.group(1) < CF_CUTOFF: return True
+    return False
+
+
+def _cf_add(M, vid, title, anchor, new, where='after'):
+    """add script lines after/before the one line containing anchor (None = end of the slide)."""
+    if _cf_recorded(vid): return False
+    return CF.add_lines(M, vid, title, anchor, new, where)
+
+
+def _cf_replace(M, vid, title, sub, new):
+    """replace the one line containing sub by new (a line, a list of lines, or [] = drop it)."""
+    if _cf_recorded(vid): return False
+    CF.set_slide(M, vid, title, CF.replace_line(CF.lines_of(M, vid, title), sub, new))
+    return True
+
+
+def _cf_fig_halves():
+    """grid 5 x 2: a parallelogram with base 3 and height 2, sides along square diagonals (completions that work)."""
+    u, x0, y0 = 80, 120, 300            # unit, bottom-left grid corner
+    P = lambda x, y: (x0 + x * u, y0 - y * u)
+    body = ''
+    for i in range(6): body += _line(P(i, 0), P(i, 2), '#b9c6cf', 1.2)
+    for j in range(3): body += _line(P(0, j), P(5, j), '#b9c6cf', 1.2)
+    body += _poly([P(0, 0), P(3, 0), P(5, 2), P(2, 2)], fill=FILL, stroke=TEAL, w=2.5)
+    body += _t(*P(0.68, 0.3), '½', size=22) + _t(*P(3.32, 0.7), '½', size=22)
+    body += _t(*P(1.68, 1.3), '½', size=22) + _t(*P(4.32, 1.7), '½', size=22)
+    return _svg('A parallelogram on a grid: 4 whole squares and 4 half-squares', body, vb='90 110 460 220')
+
+
+def coverage_fixes(M):
+    # #33: "...and later also similarity" - a preview line on the first Pythagoras use in the parallelogram question
+    _cf_add(M, 'solve-geo32-g049', 'Opposite sides', "when we need missing sides, we use Pythagoras", [
+        "Later we'll also find missing sides with similar triangles — but Pythagoras is the main tool."])
+    # #96: where "easy-plus" sits in the section
+    vid = 'solve-geo32-g067'
+    _cf_add(M, vid, M.slide(vid, 3)['title'], 'rated easy-plus', [
+        "Easy-plus means about the fifth or sixth question of a section: the math is long — the psychometric way is short."])
+    # #110: completions - an example where two half-squares really do complete each other (the summary only warned)
+    vid = 'r26-t32-summary-2'
+    if not _cf_recorded(vid):
+        n = CF.n_of(M, vid, 'Shaded areas')
+        M.insert_slides(vid, n, [dict(mode='concept', active=M.slide(vid, n)['active'], title='Completions that work', script=[
+            A('A parallelogram on a grid appears', VIS(_cf_fig_halves(), w=1000, h=520)),
+            'When do completions work? When the sides cut squares exactly corner to corner — into two equal halves.',
+            D('Shade the 4 whole squares'),
+            'Here: 4 whole squares.',
+            D('Pair each ½ on the left with a ½ on the right'),
+            'And 4 half-squares. Here the two half-squares really complete each other — so count each pair as one.',
+            A("'4 + 2 = 6' appears", T('$4+\\frac42=6$ squares $=3\\times2$ ✓', size=44, x=410, y=650)),
+            '4 plus 2 — 6 squares. And base 3 times height 2 is also 6. It works.'])])
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST

@@ -1991,3 +1991,77 @@ _apply_before_method_names = apply
 def apply(M):
     _apply_before_method_names(M)
     _mn_load().method_names(M, 27)   # 2026-10-07 method names: runs last
+
+
+# =====================================================================================================================
+# 2026-10-08 coverage fixes (teacher approved "go ahead"). A full check of the teacher's Hebrew course against this
+# topic found points that were taught only WEAKLY or were MISSING; each one goes back as one or two short spoken lines
+# in an unrecorded video (or, for a video recorded before CF.CUTOFF, into the written solution / card). Runs LAST.
+# Helpers: _hebrew_back.py loaded as its own copy with this pass's CUTOFF. See tNN_CHANGES.md "2026-10-08 coverage fixes".
+# =====================================================================================================================
+import importlib.util as _ilu_cf, os as _os_cf
+_s_cf = _ilu_cf.spec_from_file_location('_hebrew_back_cf', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_hebrew_back.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+CF.CUTOFF = '2026-10-08T08-43-14'   # UTC, when this pass finished: a take recorded before it keeps its video unchanged
+
+
+def _cf_replace(M, vid, title, sub, new):
+    """replace the one line containing sub (spoken / drawn / item) on slide `title` by new (line or list). False if recorded."""
+    if CF.recorded(vid): return False
+    CF.set_slide(M, vid, title, CF.replace_line(CF.lines_of(M, vid, title), sub, new))
+    return True
+
+
+def _cf_expl(M, qid, start, new):
+    """replace the written-solution paragraph that starts with `start` by new (a str, or None to drop it)."""
+    ex = list(M.q(qid)['explanation'])
+    k = [i for i, e in enumerate(ex) if e.startswith(start)]
+    assert len(k) == 1, (qid, start, k)
+    ex[k[0]:k[0] + 1] = [] if new is None else [new]
+    M.set_q(qid, expl=ex)
+
+
+def coverage_fixes(M):
+    # #17 (Hebrew 7159-7163) + teacher decision 2026-10-08: as in the Hebrew, average speed is solved ONLY as total
+    # distance / total time. The weighted-average ("Balance") method and the 2ab/(a+b) check leave topic 27; the
+    # second method of the video is still total / total, with a letter for the distance (Algebra).
+    v = 'solve-wp27-g109'
+    if not CF.recorded(v):
+        sc = CF.drop_lines(CF.lines_of(M, v, 'Method 1 · Plugging in numbers'), '2 × 105 × 70', 'A check for strong students')
+        CF.set_slide(M, v, 'Method 1 · Plugging in numbers', sc)
+        CF.set_slide(M, v, 'Method 2 · Balance (averages)', [
+            "Another way — with a letter instead of a number. Call each way d.",
+            A("'Total distance = 2d' appears", T('Total distance $=2d$', size=40)),
+            "There and back: two d.",
+            A("'Total time = d/105 + d/70 = d/42' appears", T('Total time $=\\dfrac{d}{105}+\\dfrac{d}{70}=\\dfrac{2d+3d}{210}=\\dfrac{d}{42}$', size=40)),
+            "Time there: d over a hundred five. Back: d over seventy. Over two hundred ten, that's five d over two ten — d over forty-two.",
+            A("'2d ÷ d/42 = 84' appears", T('$2d\\div\\dfrac{d}{42}=2\\cdot42=84$', size=40)),
+            "Total distance over total time: two d, divided by d over forty-two. The d cancels — eighty-four.",
+            "That's also why plugging in works: pick any distance, you get the same answer.",
+            D('Circle choice 2'),
+            "Eighty-four. Choice two."], new_title='Method 2 · Algebra')
+    _cf_expl(M, 'wp27-g109', 'Check (equal distances only)', None)
+    _cf_expl(M, 'wp27-g109', 'Method 2 · Balance (averages)',
+             'Method 2 · Algebra: call each way $d$. Total distance: $2d$. Total time: $\\frac{d}{105}+\\frac{d}{70}=\\frac{2d+3d}{210}=\\frac{d}{42}$. '
+             'Average speed $=2d\\div\\frac{d}{42}=84$ kph. The $d$ cancels, which is why any distance you pick works.')
+    _cf_expl(M, 'q-r26-t27-22', 'Trap: $50=',
+             'Trap: $50=\\frac13\\cdot30+\\frac23\\cdot60$ mixes the speeds by distance. Average speed is total distance ÷ total time, nothing else.')
+    _cf_expl(M, 'q-r26-t27-22', 'Method 2 · Balance (averages)',
+             'Method 2 · Algebra: call the route $3d$. The first $d$ at $30$ kph takes $\\frac{d}{30}$ hours; the other $2d$ at $60$ kph takes $\\frac{2d}{60}=\\frac{d}{30}$ hours. '
+             'Total time $\\frac{2d}{30}=\\frac{d}{15}$, so the average speed $=3d\\div\\frac{d}{15}=45$ kph.')
+    _cf_expl(M, 'q-r26-t27-21', 'Equal times, therefore',
+             'Equal times, therefore the plain average of $70$ and $30$ is right. Trap: $42$ treats the two parts as equal distances; here the times are equal.')
+    c = M.card('mem-motion')
+    tb = [t for t in c['tables'] if t['title'] == 'Average speed']
+    assert len(tb) == 1
+    r = [r for r in tb[0]['rows'] if r[0] == 'Equal distances']
+    assert len(r) == 1 and '2ab' in r[0][1], r
+    r[0][1] = 'closer to the slower speed (more time there); still total ÷ total'
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST

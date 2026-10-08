@@ -2271,3 +2271,41 @@ _apply_before_hebrew_points_back = apply
 def apply(M):
     _apply_before_hebrew_points_back(M)
     hebrew_points_back(M)   # 2026-10-08 Hebrew points restored: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-08 coverage fixes (teacher approved "go ahead"). A full check of the teacher's Hebrew course against this
+# topic found points that were taught only WEAKLY or were MISSING; each one goes back as one or two short spoken lines
+# in an unrecorded video (or, for a video recorded before CF.CUTOFF, into the written solution / card). Runs LAST.
+# Helpers: _hebrew_back.py loaded as its own copy with this pass's CUTOFF. See tNN_CHANGES.md "2026-10-08 coverage fixes".
+# =====================================================================================================================
+import importlib.util as _ilu_cf, os as _os_cf
+_s_cf = _ilu_cf.spec_from_file_location('_hebrew_back_cf', _os_cf.path.join(_os_cf.path.dirname(_os_cf.path.abspath(__file__)), '_hebrew_back.py'))
+CF = _ilu_cf.module_from_spec(_s_cf); _s_cf.loader.exec_module(CF)
+CF.CUTOFF = '2026-10-08T08-43-14'   # UTC, when this pass finished: a take recorded before it keeps its video unchanged
+
+
+def _cf_replace(M, vid, title, sub, new):
+    """replace the one line containing sub (spoken / drawn / item) on slide `title` by new (line or list). False if recorded."""
+    if CF.recorded(vid): return False
+    CF.set_slide(M, vid, title, CF.replace_line(CF.lines_of(M, vid, title), sub, new))
+    return True
+
+
+def coverage_fixes(M):
+    # #24 (Hebrew 8758-8766): drawing and counting is legitimate - exam polygons are small
+    if not CF.add_lines(M, 'solve-wp28-g133', 'Method 1 · Listing', 'The simplest way: draw it and count.', [
+            "Exam polygons are small, so drawing and counting is a real option on the exam."]):
+        CF.add_expl(M, 'wp28-g133', "Exam polygons are small, so drawing and counting is a real option.")
+    # #44 (Hebrew 9204-9214): choosing a general group is very rare; n - 1 of n is MORE common - and simple
+    CF.add_lines(M, 'wp-137', 'Who stays out', 'The second type is simpler than it looks', [
+        "And this type shows up on the exam more often than the general one. Good news — it's easy."])
+    # #33 (Hebrew 8899-8906, "fair dice"): taught where "fair" first appears, in topic 29 (wp-146 + mem-probability)
+
+
+_apply_before_coverage_fixes = apply
+
+
+def apply(M):
+    _apply_before_coverage_fixes(M)
+    coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST
