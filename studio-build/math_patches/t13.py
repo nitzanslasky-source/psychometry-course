@@ -2574,3 +2574,213 @@ _apply_before_hebrew_theory_back = apply
 def apply(M):
     _apply_before_hebrew_theory_back(M)
     hebrew_theory_back(M)   # 2026-10-08 Hebrew theory restored: runs last
+
+
+
+# =====================================================================================================================
+# 2026-10-08 topic 13 restored + clearer. Teacher (2026-10-08): "Also fix the things I already recorded in topic 13
+# that need changes. Make the explanations clear, and when a number line helps, add it." Re-recording is OK.
+#   absolute-value (recorded -> RE-RECORD whole): the Hebrew lesson's theory back in its own order - sign clues,
+#         equations (two cases, why the minus, |x - a| as a distance), inequalities (symmetric; big side open / small
+#         side closed and WHY; like x squared), the wrap-up (expression / equation / inequality, trial and error,
+#         harder and rarer, rewind). Shaded number lines (_shaded_nl.py) on equations and inequalities.
+#         Own numbers: |x| = 5, |x - 2| = 6, |x| > 4, |x| < 4 (Hebrew: |x + 4| = 9, |x| > 5, |x| < 5).
+#   solve-q-358 (recorded -> RE-RECORD): slide "The sign clues" repeated the lesson's new slide -> one reminder line.
+#   solve-q-359 (recorded -> RE-RECORD): number line - 9 steps from -7 gives two points, 2 and -16.
+#   q-360 / q-361 / q-362 / q-r26-t13-01: the full WHY now lives in the lesson -> one-line reminders.
+#   r26-t13-tools: the distance reading is met in the lesson -> its intro line says so.
+#   q-363, q-365, r26-t13-summary: number lines added (the order n < k < m; the band x lives in; small / big side).
+# Recorded videos: only the ids in _rerecord.RERECORD change (HB.recorded). Any other video with a take recorded before
+# RS_CUTOFF (UTC) keeps its recorded version.
+# =====================================================================================================================
+RS_CUTOFF = '2026-10-08T07-50-00'
+import importlib.util as _ilu_rs, os as _os_rs
+_s_rs = _ilu_rs.spec_from_file_location('_hebrew_back', _os_rs.path.join(_os_rs.path.dirname(_os_rs.path.abspath(__file__)), '_hebrew_back.py'))
+HB = _ilu_rs.module_from_spec(_s_rs); _s_rs.loader.exec_module(HB)
+
+
+def _rs_recorded(vid):
+    if vid in HB.RERECORD: return False      # on the re-record list: changed on purpose
+    import glob, os
+    pat = re.compile(re.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in glob.glob(os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(os.path.basename(f))
+        if m and m.group(1) < RS_CUTOFF: return True
+    return False
+
+
+def _rs_vis(svg, w=900):
+    vb = [float(t) for t in re.search(r'viewBox="([^"]+)"', svg).group(1).split()]
+    return VIS(svg, w=w, h=int(round(w * vb[3] / vb[2])))
+
+
+def restore_and_clarify(M):
+    S = _snl(); fig = S.fig
+    dot = lambda v: (v, v, True, True)          # a single point on the line (closed circle)
+
+    # ---------------------------------------------------------------- the lesson
+    v = LESSON
+    if not _rs_recorded(v):
+        titles = [b['title'] for b in M.video(v)['beats']]
+        assert titles[-1] == 'When is it equal?', titles
+        HB.set_slide(M, v, titles[-1], HB.drop_lines(HB.lines_of(M, v, titles[-1]), 'Seven questions next'))   # -> Wrap-up
+        SC, EQ, IN, WR = 4, 5, 6, 7               # sidebar indexes
+        M.set_sidebar(v, ['Distance from zero', 'Plus or minus inside', 'Whole expression', 'The rules',
+                          'Sign clues', 'Equations', 'Inequalities', 'Wrap-up'])
+        f_abs5 = fig(-7, 7, [(-5, '−5'), (0, '0'), (5, '5')], [dot(-5), dot(5)], center=(0, 5),
+                     title='|x| = 5: 5 steps from 0, x = 5 or x = −5')
+        f_eq = fig(-6, 10, [(-4, '−4'), (0, '0'), (2, '2'), (8, '8')], [dot(-4), dot(8)], center=(2, 6),
+                   title='|x − 2| = 6: 6 steps from 2, x = 8 or x = −4')
+        f_big = fig(-7, 7, [(-4, '−4'), (0, '0'), (4, '4')], [(None, -4, False, False), (4, None, False, False)],
+                    center=(0, 4), title='|x| > 4: x > 4 or x < −4 (two rays, open)')
+        f_small = fig(-7, 7, [(-4, '−4'), (0, '0'), (4, '4')], [(-4, 4, False, False)], center=(0, 4),
+                      title='|x| < 4: −4 < x < 4 (one band, closed)')
+        n = len(M.video(v)['beats'])
+        M.insert_slides(v, n, [
+            dict(title='Sign clues', mode='concept', active=SC, pre=[], script=[
+                'A very useful trick: compare a number with its own absolute value. It tells you the sign.',
+                A("'|x| > x → x is negative' appears", T(r'$|x|>x \;\to\; x$ is negative', size=42)),
+                'Absolute value BIGGER than the number? The number is negative. Negative two: its absolute value, two, is bigger.',
+                A("'|x| = x → x ≥ 0' appears", T(r'$|x|=x \;\to\; x\ge0$ $\ $ (positive or zero)', size=42)),
+                "Equal? Positive — or zero. Six equals six, and zero equals zero. Don't forget the zero.",
+                A("'|x| = −x → x ≤ 0' appears", T(r'$|x|=-x \;\to\; x\le0$ $\ $ (negative or zero)', size=42)),
+                'Equal to MINUS the number? Negative — or zero.',
+                A("'x > |x| → impossible' appears", T(r'$x>|x| \;\to\;$ impossible', size=42)),
+                'The number BIGGER than its absolute value? Never. That would mean the givens contradict each other.',
+                D('Circle the "≥" and the "≤"'),
+                'This comes up on the exam again and again. It tells you at once: positive or negative.']),
+            dict(title='Equations', mode='concept', active=EQ, pre=[], script=[
+                A("'|x| = 5 → x = 5 or x = −5' appears", T(r'$|x|=5 \;\to\; x=5$ or $x=-5$', size=44)),
+                'Now equations. Bars equal five: which numbers are five steps from zero? Five — and negative five.',
+                A('Number line: 5 and −5, both 5 steps from 0, appears', _rs_vis(f_abs5)),
+                'Two points, one on each side of zero.',
+                A("'left side = right side or left side = − right side' appears",
+                  T(r'left side $=$ right side $\quad$ or $\quad$ left side $=-\,$right side', size=38)),
+                'So an equation with bars splits into two cases: the left side equals the right side — or MINUS the right side.',
+                'Why the minus? If the inside is negative five, the bars still give five.']),
+            dict(title='Two cases', mode='concept', active=EQ, pre=[], script=[
+                A("'|x − 2| = 6' appears", T(r'$|x-2|=6$', size=46)),
+                A("'x − 2 = 6 → x = 8' appears", T(r'$x-2=6 \;\to\; x=8$', size=40)),
+                'Example: x minus two, in bars, equals six. Case one: x minus two is six. x is eight.',
+                A("'x − 2 = −6 → x = −4' appears", T(r'$x-2=-6 \;\to\; x=-4$', size=40)),
+                'Case two: x minus two is negative six. x is negative four. The same left side, twice.',
+                A('Number line: 6 steps from 2 → 8 and −4 appears', _rs_vis(f_eq)),
+                'The picture: x minus two, in bars, is the distance from two. Six steps each way: eight and negative four.',
+                'With a plus inside — x plus seven — it is the distance from NEGATIVE seven.']),
+            dict(title='Inequalities · big side', mode='concept', active=IN, pre=[], script=[
+                'Inequalities are a little harder. Two situations: the bars on the BIG side, or on the SMALL side. And the range is always symmetric.',
+                A("'|x| > 4 → x > 4 or x < −4' appears", T(r'$|x|>4 \;\to\; x>4$ or $x<-4$', size=44)),
+                'Bars bigger than four: the number inside, without its sign, must be more than four.',
+                'Five, six — fine. Negative five, negative six — fine too. The bars wipe out the minus.',
+                A('Number line: x < −4 or x > 4 shaded (two rays) appears', _rs_vis(f_big)),
+                'Two rays, going outward. Open circles — four itself is not bigger than four.',
+                A("'big side → open' appears", T(r'bars on the BIG side $\;\to\;$ open range', size=40)),
+                'Big side: an OPEN range — bigger than the number, or smaller than its minus.']),
+            dict(title='Inequalities · small side', mode='concept', active=IN, pre=[], script=[
+                A("'|x| < 4 → −4 < x < 4' appears", T(r'$|x|<4 \;\to\; -4<x<4$', size=44)),
+                'Bars smaller than four: without its sign, the inside must be less than four. Three, two, one — and negative three, negative two, negative one.',
+                'Negative seven? No — the bars turn it into seven.',
+                A('Number line: −4 < x < 4 shaded (one band) appears', _rs_vis(f_small)),
+                'One band — x is trapped between negative four and four. Small side: a CLOSED range.',
+                A("'small side → closed · big side → open — like x²' appears",
+                  T(r'small side $\to$ closed $\qquad$ big side $\to$ open $\qquad$ (like $x^2$)', size=40)),
+                'Exactly like the x squared inequalities from the last topic.',
+                'An expression inside the bars? The same idea — you will see it in questions three and four.']),
+            dict(title='Wrap-up', mode='concept', active=WR, pre=[], script=[
+                A("'expression · equation · inequality' appears", T(r'expression $\quad\cdot\quad$ equation $\quad\cdot\quad$ inequality', size=44)),
+                'So bars show up in an expression, an equation or an inequality.',
+                'And like almost every topic — trial and error works here too: plug in a number.',
+                'The harder part is inequalities — and they are rarer on the exam. Not sure yet? Rewind and watch that part again.',
+                'Seven questions next — each one before its own video. Each question teaches one more tool.']),
+        ])
+
+    # ---------------------------------------------------------------- Q1 (q-358): the clues are in the lesson now
+    v = 'solve-q-358'
+    if not _rs_recorded(v):
+        M.remove_slides(v, [_snl_n(M, v, 'The sign clues')])   # same sidebar label as slide 2: sidebar unchanged
+        t = 'Decode the signs'
+        sc = HB.lines_of(M, v, t)
+        sc = HB.replace_line(sc, 'Second given: y is smaller than its own absolute value',
+                             'Second given: y is smaller than its own absolute value. The sign clue from the lesson: y is NEGATIVE.')
+        HB.set_slide(M, v, t, sc)
+
+    # ---------------------------------------------------------------- Q2 (q-359): two points on the number line
+    v = 'solve-q-359'
+    if not _rs_recorded(v):
+        S.add(M, v, _snl_n(M, v, 'Two cases'), 'Second case: x plus seven equals negative nine',
+              fig(-19, 5, [(-16, '−16'), (-7, '−7'), (0, '0'), (2, '2')], [dot(-16), dot(2)], center=(-7, 9),
+                  title='|x + 7| = 9: 9 steps from −7, x = 2 or x = −16'),
+              'Number line: 9 steps from −7 → 2 and −16 appears',
+              'The picture: x plus seven is the distance from negative seven. Nine steps right — two. Nine steps left — negative sixteen. Two points.')
+
+    # ---------------------------------------------------------------- Q3-Q6: the WHY is in the lesson -> one-line reminders
+    v, t = 'solve-q-360', 'Small side: closed range'
+    if not _rs_recorded(v):
+        sc = HB.lines_of(M, v, t)
+        sc = HB.drop_lines(sc, 'Why closed? With bars', 'The inside, without its sign, must be less than seven', 'inside:',
+                           'Nine? No. Negative nine?', 'So the inside is trapped in the middle')
+        sc = HB.replace_line(sc, 'Small side means a closed range',
+                             'As in the lesson: small side — closed range. x is trapped between two numbers.')
+        HB.set_slide(M, v, t, sc)
+        b = M.slide(v, _snl_n(M, v, t))
+        q = b['items'][0]; assert q.get('k') == 'q', q
+        q['gap'] = 114                            # the empty row for the hand-written −7 < x + 3 < 7 (as before 2026-10-08)
+        ck = [it for it in b['items'] if str(it.get('t', '')).startswith('check')][0]
+        ck.pop('x', None); ck.pop('y', None)      # the check goes back under −10 < x < 4
+    v, t = 'solve-q-361', 'Big side: open range'
+    if not _rs_recorded(v):
+        sc = HB.lines_of(M, v, t)
+        sc = HB.drop_lines(sc, 'Why? The inside, without its sign, must be more than eight', 'So it runs outward on both sides',
+                           'Absolute value in an inequality is the harder part')
+        sc = HB.replace_line(sc, 'The absolute value is on the BIG side. So the range is open',
+                             'The absolute value is on the BIG side. As in the lesson: big side — open range, two separate cases.')
+        HB.set_slide(M, v, t, sc)
+    v, t = 'solve-q-362', 'Method 1 · Plugging in numbers'
+    if not _rs_recorded(v):
+        HB.set_slide(M, v, t, HB.drop_lines(HB.lines_of(M, v, t), 'Like almost every topic'))   # the lesson's wrap-up says it
+    v, t = 'solve-q-r26-t13-01', 'Two cases'
+    if not _rs_recorded(v):
+        sc = HB.lines_of(M, v, t)
+        sc = HB.replace_line(sc, 'The rule for every equation with bars', 'As in the lesson: the same left side, twice.')
+        sc = HB.replace_line(sc, 'Here they ask for ALL the values', 'Here they ask for ALL the values — so we need both.')
+        HB.set_slide(M, v, t, sc)
+
+    # ---------------------------------------------------------------- Exam Tools: the distance reading is met in the lesson
+    v, t = TOOLS, 'Distance'
+    if not _rs_recorded(v):
+        HB.set_slide(M, v, t, HB.replace_line(HB.lines_of(M, v, t), 'Now: distance from ANY number',
+                                              'You met it in the lesson: bars around x minus a number give the distance from that number.'))
+
+    # ---------------------------------------------------------------- more number lines
+    v = 'solve-q-363'                             # n < 0 < k < m: the order IS the answer
+    if not _rs_recorded(v):
+        t = 'Method 1 · Understanding'
+        S.swap(M, v, _snl_n(M, v, t), 'Mark k between 0 and m',
+               fig(-5, 5, [(-4, 'n'), (0, '0'), (1, 'k'), (4, 'm')], [dot(-4), dot(1), dot(4)],
+                   title='n < 0 < k < m: n and m the same distance from 0'),
+               'Number line: n, 0, k, m appears', 'm is positive. So k is positive too',
+               'On the number line: n on the left, then zero, then k — and m, as far from zero as n.')
+        HB.set_slide(M, v, t, HB.drop_lines(HB.lines_of(M, v, t), 'Draw a number line: n left of 0'))
+    v = 'solve-q-365'                             # x lives in the band between y and −y
+    if not _rs_recorded(v):
+        S.add(M, v, _snl_n(M, v, 'Method 1 · Understanding'), 'Example: y negative four, z negative five',
+              fig(-8, 6, [(-6, 'z'), (-4, 'y'), (0, '0'), (4, '−y')], [(-4, 4, False, False)],
+                  title='y < x and |x| < |y|: x is between y and −y'),
+              'Number line: x in the band between y and −y appears',
+              'On the number line: x can be anywhere in the band between y and minus y — left of zero, or right of it.', w=640)
+    v = 'r26-t13-summary'                         # the two shapes side by side
+    if not _rs_recorded(v):
+        S.add(M, v, _snl_n(M, v, 'Inequalities'), 'Bars on the big side: two ranges',
+              S.two(dict(lo=0, hi=10, ticks=[(2, '2'), (5, '5'), (8, '8')], segs=[(2, 8, False, False)], center=(5, 3)),
+                    dict(lo=0, hi=10, ticks=[(2, '2'), (5, '5'), (8, '8')], segs=[(None, 2, False, False), (8, None, False, False)], center=(5, 3)),
+                    title='|x − 5| < 3: one band from 2 to 8; |x − 5| > 3: two rays, below 2 and above 8'),
+              'Number lines: one band (small side), two rays (big side) appear',
+              'On the number line: small side — one band in the middle. Big side — two rays going outward.')
+
+
+_apply_before_restore_and_clarify = apply
+
+
+def apply(M):
+    _apply_before_restore_and_clarify(M)
+    restore_and_clarify(M)   # 2026-10-08 topic 13 restored + clearer: runs LAST

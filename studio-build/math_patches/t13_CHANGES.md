@@ -278,3 +278,26 @@ Teacher: the 2026-10-05 "cut repeats" pass removed the lesson's equations / ineq
 - **solve-q-362** "Method 1 · Plugging in numbers" (+1 line, ≈ +4 s): "Like almost every topic — trial and error works here too."
 - **solve-q-r26-t13-01** "Two cases" (+2 lines, ≈ +12 s; the next equation question after the recorded q-359): the general rule "the left side equals the right side — or minus the right side; the same left side, twice"; at the end the wording point: "all the values" needs both, "could be" needs one — often only one is offered.
 `math_check.py 13 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. The four videos rendered and looked at (tmp_check/htb/).
+
+## 2026-10-08 topic 13 restored + clearer
+Teacher (2026-10-08): "Also fix the things I already recorded in topic 13 that need changes. Make the explanations clear, and when a number line helps, add it." Re-recording is OK. Function `restore_and_clarify(M)` in t13.py runs LAST. Number lines use `_shaded_nl.py` (same look as 2026-10-07). Only the three recorded videos on the re-record list (`_rerecord.py`) change; any other video recorded before `RS_CUTOFF` would stay as recorded (none is).
+
+**Re-record (topic 13): `absolute-value`, `solve-q-358`, `solve-q-359`** — option 1, re-record the whole video.
+
+- **absolute-value** (recorded → RE-RECORD; 3.2 → 6.7 min, ≈ +3.5 min). The Hebrew lesson's theory is back, in the Hebrew order, with our own numbers (Hebrew: |x + 4| = 9, |x| > 5, |x| < 5):
+  - new slide **Sign clues**: |x| > x → negative; |x| = x → zero or positive; |x| = −x → zero or negative; x > |x| → impossible (givens contradict); don't forget the zero; "comes up on the exam again and again".
+  - new slide **Equations**: |x| = 5 → 5 or −5 (number line: two points 5 from 0); the rule — left side = right side, or = minus the right side; why the minus.
+  - new slide **Two cases**: |x − 2| = 6 → x = 8 or x = −4, "the same left side, twice"; number line: |x − 2| = distance from 2; a plus inside = distance from the negative number.
+  - new slides **Inequalities · big side / small side**: harder part; big side / small side; the range is always symmetric; |x| > 4 → x > 4 or x < −4 and WHY (the bars wipe out the minus), number line with two rays (open circles) → open range; |x| < 4 → −4 < x < 4 and WHY (−7 fails: the bars turn it into 7), number line with one band → closed range; exactly like the x² inequalities.
+  - new slide **Wrap-up**: expression / equation / inequality; trial and error works here too; inequalities are harder and rarer — rewind; "Seven questions next" moved here from "When is it equal?".
+  - Sidebar: + Sign clues, Equations, Inequalities, Wrap-up.
+- **solve-q-358** (recorded → RE-RECORD; 1.8 → 1.4 min, ≈ −24 s): slide "The sign clues" repeated the lesson's new slide → removed; on "Decode the signs" the line now says "The sign clue from the lesson: y is NEGATIVE."
+- **solve-q-359** (recorded → RE-RECORD; 0.9 → 1.1 min, ≈ +11 s): number line after the second case — |x + 7| = 9 is the distance 9 from −7: two points, 2 and −16 (+1 line).
+- **solve-q-360** (≈ −9 s): today's full WHY (4 lines + the "inside: 6, 5, … ✓ 9, −9 ✗" board item) → one reminder "As in the lesson: small side — closed range. x is trapped between two numbers." The check returns under −10 < x < 4.
+- **solve-q-361** (≈ −8 s): the WHY (2 lines) and "harder, rarer" → "As in the lesson: big side — open range, two separate cases."
+- **solve-q-362** (≈ −5 s): "Like almost every topic — trial and error works here too" removed (the lesson's Wrap-up says it; the title slide already says "we may plug in").
+- **solve-q-r26-t13-01** (≈ −15 s): the general rule → "As in the lesson: the same left side, twice."; the wording line shortened to "Here they ask for ALL the values — so we need both."
+- **r26-t13-tools** (≈ +3 s): Distance slide's first line → "You met it in the lesson: bars around x minus a number give the distance from that number."
+- Number lines added where they clearly help: **solve-q-363** (the hand sketch of n, k, m becomes a click figure n, 0, k, m — the order is the answer; ≈ +10 s), **solve-q-365** (the band between y and −y where x can be, left or right of zero; ≈ +11 s), **r26-t13-summary** "Inequalities" (|x − 5| < 3 one band, |x − 5| > 3 two rays; ≈ +9 s).
+- Notes in added_notes.json updated for every touched slide.
+`python3 math_check.py 13 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. All changed videos rendered and looked at (tmp_check/rs13/).

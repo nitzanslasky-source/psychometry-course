@@ -24,9 +24,9 @@ RERECORD = {
                         added='new last slide "Rare - but know it"', minutes=0.5),
     # ---- topic 13 (2026-10-08 topic 13 restored + clearer; t13.py restore_and_clarify) ----
     'absolute-value': dict(topic=13, option=1, reason='the 2026-10-05 cut removed the Hebrew lesson theory: sign clues, equations (two cases, why the minus), inequalities (symmetric; big side open / small side closed and WHY; like x squared), the wrap-up (expression / equation / inequality, trial and error, harder and rarer, rewind)',
-                           added='6 new slides after "When is it equal?": Sign clues, Equations, Two cases, Inequalities · big side, Inequalities · small side, Wrap-up; 4 shaded number lines (|x| = 5, |x − 2| = 6, |x| > 4, |x| < 4). Re-record the whole lesson', minutes=3.6),
+                           added='6 new slides after "When is it equal?": Sign clues, Equations, Two cases, Inequalities · big side, Inequalities · small side, Wrap-up; 4 shaded number lines (|x| = 5, |x − 2| = 6, |x| > 4, |x| < 4). Re-record the whole lesson (3.2 → 6.7 min, about +3.5 min)', minutes=6.7),
     'solve-q-358': dict(topic=13, option=1, reason='slide "The sign clues" repeated the four clues the lesson now teaches',
-                        added='slide 3 removed; one line on "Decode the signs" names the sign clue from the lesson (shorter, -0.3 min). Re-record the whole video', minutes=1.5),
+                        added='slide 3 removed; one line on "Decode the signs" names the sign clue from the lesson (1.8 → 1.4 min, about −24 s). Re-record the whole video', minutes=1.4),
     'solve-q-359': dict(topic=13, option=1, reason='clearer: a number line shows |x + 7| = 9 as 9 steps from −7 - two points, 2 and −16',
-                        added='one number-line figure + one spoken line on "Two cases". Re-record the whole video', minutes=1.0),
+                        added='one number-line figure + one spoken line on "Two cases" (0.9 → 1.1 min, about +11 s). Re-record the whole video', minutes=1.1),
 }

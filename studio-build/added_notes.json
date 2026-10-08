@@ -115,11 +115,11 @@
   },
   "r26-t13-summary": {
    "t": "Absolute Value — Summary",
-   "d": "recaps absolute value: distance from zero, the rules, sign clues, equations, inequalities, negative right side, distance, plugging in"
+   "d": "recaps absolute value: distance from zero, the rules, sign clues, equations, inequalities, negative right side, distance, plugging in · 2026-10-08: number line added on \"Inequalities\" — |x − 5| < 3 one band, |x − 5| > 3 two rays"
   },
   "r26-t13-tools": {
    "t": "Absolute Value — Exam Tools",
-   "d": "absolute value tools — |x|² = x², |a−b| = |b−a|, and |x − a| as the distance between x and a (√(x²) = |x| and the plus-inside / more-than readings trimmed 2026-10-07: taught in topic 9 and this topic's questions)"
+   "d": "absolute value tools — |x|² = x², |a−b| = |b−a|, and |x − a| as the distance between x and a (√(x²) = |x| and the plus-inside / more-than readings trimmed 2026-10-07: taught in topic 9 and this topic's questions) · 2026-10-08: the distance reading is met in the lesson now — the Distance slide's intro line says so"
   },
   "r26-t14-more-tools": {
    "t": "More Factor Tools",
@@ -543,7 +543,7 @@
   },
   "solve-q-r26-t13-01": {
    "t": "Given: |2x-1|=7. Which of the following gives all the possible values of x?",
-   "d": "|2x − 1| = 7, all values of x (two cases: inside = 7 or −7 → x = 4 or −3; check both); restored from your Hebrew lesson (2026-10-08): the general rule for equations with bars — the left side equals the right side, or minus the right side (the same left side twice) — and the wording point: \"all the values\" needs both, \"could be\" needs only one (often only one is offered)"
+   "d": "|2x − 1| = 7, all values of x (two cases: inside = 7 or −7 → x = 4 or −3; check both); restored from your Hebrew lesson (2026-10-08): the general rule for equations with bars — the left side equals the right side, or minus the right side (the same left side twice) — and the wording point: \"all the values\" needs both, \"could be\" needs only one (often only one is offered) · 2026-10-08 (later): the general rule is now in the lesson → reminder \"As in the lesson: the same left side, twice\"; the wording line shortened to \"Here they ask for ALL the values — so we need both\""
   },
   "solve-q-r26-t13-02": {
    "t": "Which of the following has no solution?",
@@ -1374,6 +1374,18 @@
   "solve-q-300#1": {
    "t": "Method 2 · Try a choice",
    "d": "no decimal estimates: choice 4 is 3√5 = √45, so y = 0 and 2x = 2√45 = √180 ✓ (replaces the old √42 ≈ 6.5 vs 6.7 estimate)"
+  },
+  "solve-q-195#2": {
+   "t": "Add or subtract?",
+   "d": "restored from your Hebrew lesson: how to know whether to add or subtract the equations: not common, a matter of practice, aim for the same coefficient on x and y"
+  },
+  "solve-q-326#2": {
+   "t": "Trial and error",
+   "d": "restored from your Hebrew lesson: trial-and-error inequality questions are very common, often early in the section, hard by algebra but simple by plugging in"
+  },
+  "solve-q-328#4": {
+   "t": "Rare — but know it",
+   "d": "restored from your Hebrew lesson: second-degree inequalities are rare but important; the hardest part - check with numbers (±5 in, ±7 out: symmetric)"
   }
  },
  "lines": {
@@ -1435,11 +1447,11 @@
   },
   "digit-puzzles#1": {
    "t": "The 4 steps",
-   "d": "puzzles in words: write 10A + B and collect (B = 2A → 12, 24, 36, 48)"
+   "d": "puzzles in words: write 10A + B and collect (B = 2A → 12, 24, 36, 48) · restored from your Hebrew lesson: every letter question can be solved by plugging in - a computer would try every option; steps 1-3 are shortcuts that save plug-ins"
   },
   "digit-puzzles#2": {
    "t": "What letters mean",
-   "d": "the bar over letters means digits of one number"
+   "d": "the bar over letters means digits of one number · restored from your Hebrew lesson: the leftmost digit is never zero (nobody writes 06 - not a phone area code)"
   },
   "divisibility#4": {
    "t": "Build a divisor",
@@ -1763,7 +1775,7 @@
   },
   "prime-tools#0": {
    "t": "Factor Tools",
-   "d": "intro: GCD, guaranteed divisor and story questions, one tool per question"
+   "d": "intro: GCD, guaranteed divisor and story questions, one tool per question · restored from your Hebrew lesson: 'greatest divisor' questions feel hard to many students, but they are simpler than they look"
   },
   "prime-tools#1": {
    "t": "Break & build",
@@ -2117,10 +2129,6 @@
    "t": "Add the equations",
    "d": "build the asked expression by adding/subtracting; subtracting gives x − y trap"
   },
-  "solve-q-196#0": {
-   "t": "Hidden formula",
-   "d": "the traps: not squaring the 7 gives 39, not halving gives 36"
-  },
   "solve-q-197#0": {
    "t": "Break it apart",
    "d": "the trap 19: stopping before the last c"
@@ -2179,11 +2187,11 @@
   },
   "solve-q-360#0": {
    "t": "Small side: closed range",
-   "d": "a distance picture: number line from −3, 7 steps each way to −10 and 4; the distance picture is now a click figure: one shaded band from −10 to 4 around −3; restored from your Hebrew lesson (2026-10-08): why the small side is a closed range — the range is always symmetric, the inside without its sign must be less than 7 (6, 5 … and −6, −5 … fit, 9 and −9 fail — the minus disappears), like x² smaller than a number (board: \"inside: 6, 5, …, −5, −6 ✓ 9, −9 ✗\"; the check moved to the right of −10 < x < 4)"
+   "d": "a distance picture: number line from −3, 7 steps each way to −10 and 4; the distance picture is now a click figure: one shaded band from −10 to 4 around −3; restored from your Hebrew lesson (2026-10-08): why the small side is a closed range — the range is always symmetric, the inside without its sign must be less than 7 (6, 5 … and −6, −5 … fit, 9 and −9 fail — the minus disappears), like x² smaller than a number (board: \"inside: 6, 5, …, −5, −6 ✓ 9, −9 ✗\"; the check moved to the right of −10 < x < 4) · 2026-10-08 (later): the full WHY now lives in the lesson → one reminder line \"As in the lesson: small side — closed range\" (the \"inside: …\" board item removed)"
   },
   "solve-q-361#0": {
    "t": "Big side: open range",
-   "d": "a distance picture: more than 8 steps from −1, so beyond 7 or below −9; the distance picture is now a click figure: two shaded rays going outward from −9 and 7; restored from your Hebrew lesson (2026-10-08): why the big side is an open range — the inside without its sign must be more than 8 (9, 10 … and −9, −10 …), two rays like x² bigger than a number; and \"absolute value in an inequality is the harder part, and rarer on the exam\""
+   "d": "a distance picture: more than 8 steps from −1, so beyond 7 or below −9; the distance picture is now a click figure: two shaded rays going outward from −9 and 7; restored from your Hebrew lesson (2026-10-08): why the big side is an open range — the inside without its sign must be more than 8 (9, 10 … and −9, −10 …), two rays like x² bigger than a number; and \"absolute value in an inequality is the harder part, and rarer on the exam\" · 2026-10-08 (later): the full WHY and \"harder, rarer\" now live in the lesson → one reminder line \"As in the lesson: big side — open range\""
   },
   "solve-q-362#1": {
    "t": "Method 2 · Algebra",
@@ -2211,11 +2219,11 @@
   },
   "solve-q-389#0": {
    "t": "Lower power",
-   "d": "GCD defined: shared primes at the lower power; trap choice is the LCM"
+   "d": "GCD defined: shared primes at the lower power; trap choice is the LCM · restored from your Hebrew lesson: read 'divisor' as 'factor' - the GCD is just taking out a common factor (picture x + y, what comes out in front of brackets)"
   },
   "solve-q-390#0": {
    "t": "Higher power",
-   "d": "the LCM name, step-by-step solve (2·5² = 50) and GCD · LCM = a · b"
+   "d": "the LCM name, step-by-step solve (2·5² = 50) and GCD · LCM = a · b · restored from your Hebrew lesson: why not just multiply - divisible by 3 and 7 → by 21 (nothing shared), but by 3 and 9 → not by 27 (the 3 is inside the 9)"
   },
   "solve-q-395#0": {
    "t": "Test each statement",
@@ -2459,7 +2467,7 @@
   },
   "solve-wp22-g030#1": {
    "t": "Cross-multiply",
-   "d": "pick triangle value or cross-multiplying; the triangle skips isolating x"
+   "d": "pick triangle value or cross-multiplying; the triangle skips isolating x · restored from your Hebrew lesson: if the triangle value hasn't sunk in yet, fine — we use it so often (word problems, geometry, algebra) that it will"
   },
   "solve-wp22-g032#0": {
    "t": "Step by step",
@@ -2573,10 +2581,6 @@
    "t": "Method 1 · Algebra",
    "d": "the trap answer 11 explained (average lead 5 = total lead 10)"
   },
-  "solve-wp25-g087#1": {
-   "t": "Method 2 · Balance (averages)",
-   "d": "heavy side gets the small part of the gap; why: weight × distance balances"
-  },
   "solve-wp25-g090#0": {
    "t": "Method 1 · Algebra",
    "d": "explains the weights (box counts) and sets up x boxes of 5 kg"
@@ -2647,15 +2651,11 @@
   },
   "solve-wp28-g130#0": {
    "t": "Method 1 · Counting in stages",
-   "d": "the name factorial for the exclamation mark, and what it means"
+   "d": "the name factorial for the exclamation mark, and what it means · restored from your Hebrew lesson: n different items in a row → n! ways in general; factorial comes back later when we choose groups"
   },
   "solve-wp28-g132#0": {
    "t": "Method 1 · Counting in stages",
    "d": "how to spot it (handshakes, routes, games, diagonals); with roles, don't halve"
-  },
-  "solve-wp28-g133#0": {
-   "t": "Method 1 · Listing",
-   "d": "the definition of a diagonal"
   },
   "solve-wp28-g133#3": {
    "t": "Method 4 · Algebra",
@@ -2723,11 +2723,11 @@
   },
   "wp-008#1": {
    "t": "Two kinds",
-   "d": "intro: patterns come in two kinds, one question each"
+   "d": "intro: patterns come in two kinds, one question each · restored from your Hebrew lesson: leave the school formulas for arithmetic/geometric sequences — these aren't those sequences, they won't work; pure understanding is possible but rare"
   },
   "wp-012#1": {
    "t": "Why it matters",
-   "d": "pointer: the speed-up techniques come in the questions"
+   "d": "pointer: the speed-up techniques come in the questions · restored from your Hebrew lesson: why the exam loves trial and error — it predicts first-year university success; school spoon-feeds, at university nobody tells you exactly what to do"
   },
   "wp-016#1": {
    "t": "Three min/max rules",
@@ -2931,7 +2931,103 @@
   },
   "solve-q-362#0": {
    "t": "Method 1 · Plugging in numbers",
-   "d": "restored from your Hebrew lesson (2026-10-08): \"like almost every topic — trial and error works here too\""
+   "d": "restored from your Hebrew lesson (2026-10-08): \"like almost every topic — trial and error works here too\" · 2026-10-08 (later): line removed again — the lesson's new Wrap-up says it"
+  },
+  "solve-q-196#1": {
+   "t": "Hidden formula",
+   "d": "the traps: not squaring the 7 gives 39, not halving gives 36 · restored from your Hebrew lesson: write the 2xy LAST so x² + y² stay side by side, like in the question"
+  },
+  "solve-q-196#0": {
+   "t": "Equation Questions",
+   "d": "restored from your Hebrew lesson: the hidden-formula type is rare on the exam, but worth knowing"
+  },
+  "solve-q-249#1": {
+   "t": "Method 1 · Split into factors",
+   "d": "restored from your Hebrew lesson: only the same root can be added - root two and root three are apples and bananas"
+  },
+  "solve-q-249#2": {
+   "t": "Method 2 · Common factor",
+   "d": "restored from your Hebrew lesson: why a second method: the right split needs trial and error (72 = 36 · 2, not 9 · 8); a common factor is easy for everyone, especially if algebra is not your strong side"
+  },
+  "divisibility#10": {
+   "t": "Change the divisor",
+   "d": "restored from your Hebrew lesson: algebraic form - a number leaving 4 when divided by 15 is 15k + 4 (k whole); 15k always divides, the 4 is the remainder, for any k"
+  },
+  "solve-q-514#1": {
+   "t": "Plug in numbers",
+   "d": "restored from your Hebrew lesson: AB + BA / AB - BA pattern comes back on the exam, worth remembering"
+  },
+  "solve-q-514#2": {
+   "t": "Algebraic form",
+   "d": "restored from your Hebrew lesson: strong math students like the algebraic form; on the exam two quick numbers are usually faster"
+  },
+  "wp-037#1": {
+   "t": "Equations everywhere",
+   "d": "restored from your Hebrew lesson: tip — in most cases let x be what they ask (most questions are built that way, so x is the final answer)"
+  },
+  "solve-wp25-g087#2": {
+   "t": "Method 2 · Balance (averages)",
+   "d": "heavy side gets the small part of the gap; why: weight × distance balances · restored from your Hebrew lesson: the see-saw picture — the average is the balance point; equal weights → the middle; the heavy side tips it, so the pivot slides toward the heavy side"
+  },
+  "solve-wp25-g087#1": {
+   "t": "Method 1 · Algebra",
+   "d": "restored from your Hebrew lesson: the weighted-average formula (each value × its weight, divided by the SUM of the weights; more values — each times its own weight), board item + the copies are the weights"
+  },
+  "solve-wp25-g088#2": {
+   "t": "Method 2 · Algebra",
+   "d": "restored from your Hebrew lesson: formula or ratios — both work; ratios feel strange at first, a little practice and they are much faster"
+  },
+  "solve-wp28-g133#1": {
+   "t": "Method 1 · Listing",
+   "d": "the definition of a diagonal"
+  },
+  "solve-wp28-g133#0": {
+   "t": "Counting Questions",
+   "d": "restored from your Hebrew lesson: diagonal questions are rare, but they do show up on the exam"
+  },
+  "absolute-value#5": {
+   "t": "When is it equal?",
+   "d": "restored from your Hebrew lesson (2026-10-08): the closing line \"Seven questions next\" moved to the new last slide \"Wrap-up\""
+  },
+  "absolute-value#6": {
+   "t": "Sign clues",
+   "d": "restored from your Hebrew lesson (2026-10-08): compare a number with its absolute value to get its sign — |x| > x → negative, |x| = x → zero or positive, |x| = −x → zero or negative, x > |x| → impossible (givens contradict); don't forget the zero; comes up on the exam again and again"
+  },
+  "absolute-value#7": {
+   "t": "Equations",
+   "d": "restored from your Hebrew lesson (2026-10-08): |x| = 5 → 5 or −5 (number line: two points 5 from 0); every equation with bars splits in two: left side = right side or = minus the right side; why the minus (the bars turn −5 into 5)"
+  },
+  "absolute-value#8": {
+   "t": "Two cases",
+   "d": "restored from your Hebrew lesson (2026-10-08): worked example |x − 2| = 6 → x = 8 or x = −4, the same left side twice; number line: |x − 2| as the distance from 2 (6 steps each way); a plus inside = distance from the negative number"
+  },
+  "absolute-value#9": {
+   "t": "Inequalities · big side",
+   "d": "restored from your Hebrew lesson (2026-10-08): inequalities are harder; big side / small side; the range is always symmetric; |x| > 4 → x > 4 or x < −4, WHY (the inside without its sign must be more than 4 — the bars wipe out the minus); number line: two rays, open circles; big side → open range"
+  },
+  "absolute-value#10": {
+   "t": "Inequalities · small side",
+   "d": "restored from your Hebrew lesson (2026-10-08): |x| < 4 → −4 < x < 4, WHY (3, 2, 1 and −3, −2, −1 fit; −7 fails — the bars turn it into 7); number line: one band; small side → closed, big side → open, exactly like the x² inequalities; an expression inside — see questions 3 and 4"
+  },
+  "absolute-value#11": {
+   "t": "Wrap-up",
+   "d": "restored from your Hebrew lesson (2026-10-08): bars appear in an expression, an equation or an inequality; trial and error works here too (plug in); inequalities are the harder and rarer part — rewind and watch again"
+  },
+  "solve-q-358#0": {
+   "t": "Decode the signs",
+   "d": "clearer explanation (2026-10-08): \"y < |y|\" is named as the sign clue from the lesson; the old slide \"The sign clues\" (a repeat of the lesson's new slide) was removed"
+  },
+  "solve-q-359#0": {
+   "t": "Two cases",
+   "d": "clearer explanation / number line added (2026-10-08): |x + 7| = 9 as the distance from −7 — 9 steps each way gives two points, 2 and −16 (shaded number line)"
+  },
+  "solve-q-363#0": {
+   "t": "Method 1 · Understanding",
+   "d": "clearer explanation / number line added (2026-10-08): the hand sketch of n, k, m becomes a click figure: n, 0, k, m on a number line (n and m the same distance from 0) — the order is the answer"
+  },
+  "solve-q-365#0": {
+   "t": "Method 1 · Understanding",
+   "d": "clearer explanation / number line added (2026-10-08): number line: z, y left of 0 and the band between y and −y where x can be — left or right of zero, so choice 3 is not necessarily true"
   }
  }
 }
