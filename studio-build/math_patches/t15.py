@@ -2016,3 +2016,220 @@ _apply_before_hebrew_points_back = apply
 def apply(M):
     _apply_before_hebrew_points_back(M)
     hebrew_points_back(M)   # 2026-10-08 Hebrew points restored: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-08 clearer scripts. Teacher (recording topic 13): "Make the script of the slides of what I'm doing now and the
+# next topic a bit more informative. Sometimes I feel stuck and reading what you wrote isn't enough to understand."
+# Spoken lines only, in the UNRECORDED videos (any take before CL.CUTOFF -> untouched): say what we do and why, what a
+# result means, the rule in plain words, why a choice is out, the missing middle step, and the terms defined once
+# ("divisible by", divisor / quotient / remainder, the form ak + r). Same methods, numbers, board items, pen/click split.
+# The AI-voice summary (r26-t15-summary) is untouched.
+# =====================================================================================================================
+import importlib.util as _ilu_cl, os as _os_cl
+_s_cl = _ilu_cl.spec_from_file_location('_clearer', _os_cl.path.join(_os_cl.path.dirname(_os_cl.path.abspath(__file__)), '_clearer.py'))
+CL = _ilu_cl.module_from_spec(_s_cl); _s_cl.loader.exec_module(CL)
+CL.CUTOFF = '2026-10-08T16-15-00'   # topic 15's own cutoff (UTC, when this change was finished); own module copy, t13/t14 keep theirs
+
+
+def clearer_scripts(M):
+    E = CL.edit
+    # ---- the lesson
+    v = 'divisibility'
+    E(M, v, 'By 2, 5 and 10', [
+        ('after', 'Start with the obvious ones',
+         ["\"Divisible by\" means it divides with nothing left over. Five thirty-eight divided by two is two sixty-nine — a whole number."]),
+    ])
+    E(M, v, 'By 3 and 9', [
+        ('after', "'Divisible by 3: the digit sum is divisible by 3' appears",
+         ["The test: add up the digits, and check that small sum instead of the big number."]),
+    ])
+    E(M, v, 'By 4 and 8', [
+        ('replace', 'Why? Split it: two thousand seven hundred',
+         "Why? Split it: two thousand seven hundred, plus sixteen. A hundred is twenty-five fours — so every hundred, every thousand is divisible by four too."),
+    ])
+    E(M, v, 'Build a divisor', [
+        ('after', 'Twelve is three times four. Fifteen: three times five',
+         ["Check each part with its own sign. Divisible by both parts — divisible by the big number."]),
+    ])
+    E(M, v, 'What a remainder is', [
+        ('replace', 'Number equals divisor times quotient, plus remainder',
+         ["The number we divide by — here seven — is the divisor. How many whole times it fits — also seven here — is the quotient.",
+          "So: number equals divisor times quotient, plus remainder. Fifty-three is seven times seven, plus four.",
+          "And the remainder is always smaller than the divisor — otherwise the divisor would fit one more time."]),
+    ])
+    E(M, v, 'The remainder trap', [
+        ('after', "Five. NOT three. It's not the difference",
+         ["Eight doesn't fit into five even once. So nothing is taken away — all five are left."]),
+    ])
+    E(M, v, 'Change the divisor', [
+        ('replace', 'If the old remainder is too big, divide it again',
+         "Thirteen is bigger than five — too big to be a remainder by five. So divide it again: thirteen is two fives, plus three. Remainder three."),
+        ('replace', 'By six? Try: two leaves two',
+         ["By six? Try numbers that leave two when divided by eight: two, and ten.",
+          "Two divided by six leaves two. Ten divided by six leaves four. Two different answers — you can't know."]),
+        ('after', 'The rule: five divides fifteen, so it works',
+         ["Why? Fifteen k is made of whole fives — they drop out. Eight k isn't made of whole sixes, so it can leave anything."]),
+    ])
+    # ---- q-423: 1/5 basketball, 1/3 of those guitar
+    v = 'solve-q-423'
+    E(M, v, 'Method 1 · Understanding', [
+        ('replace', 'And a third of those play the guitar. So the basketball group is divisible by three',
+         ["And a third of those play the guitar. So the basketball group must be divisible by three too.",
+          "Two choices are left. For each: divide by five to get the basketball boys, then see if a third of them is whole."]),
+    ])
+    E(M, v, 'Method 2 · Algebra', [
+        ('after', 'Call the guitar players k',
+         ["k is a whole number of kids — so the class is always fifteen times a whole number. A multiple of fifteen."]),
+    ])
+    # ---- q-424: stamps, rows of 5 → 4 left, rows of 3 → 1 left
+    v = 'solve-q-424'
+    E(M, v, 'Method 1 · Plugging in the answers', [
+        ('after', 'We need: divided by five, remainder four',
+         ["So for each choice we check both conditions. A choice that fails one of them is out."]),
+    ])
+    E(M, v, 'Method 2 · Remainders', [
+        ('replace', 'Only thirty-four leaves four when divided by five',
+         ["Now the five: sixteen leaves one, twenty-eight leaves three, forty leaves zero.",
+          "Only thirty-four leaves four when divided by five — thirty, plus four. Choice three."]),
+    ])
+    # ---- q-425: biggest x · y
+    v = 'solve-q-425'
+    E(M, v, 'The biggest remainder', [
+        ('after', 'We want x times y as big as possible',
+         ["a and b can be any numbers — so we pick them to give the biggest remainders."]),
+        ('after', 'Dividing by eight, the biggest remainder is seven',
+         ["For example, a fifteen: one eight fits, and seven are left."]),
+    ])
+    # ---- q-426: remainder 4 by 5, which expression
+    v = 'solve-q-426'
+    E(M, v, 'Method 1 · Understanding', [
+        ('replace', 'Remainder four when divided by five — call it five x plus four',
+         ["Remainder four when divided by five — so it's a multiple of five, plus four: five x plus four.",
+          "But the choices are written differently. So in each one we split off the part that divides by five, and look at what's left."]),
+        ('replace', 'Choice four — five squared is twenty-five',
+         "Choice four: the five x part drops out again, so check five squared — twenty-five. Divisible by five, no remainder. Out."),
+    ])
+    # ---- q-r26-t15-01: remainder of a − b
+    v = 'solve-q-r26-t15-01'
+    E(M, v, 'Method 1 · Remainders', [
+        ('replace', "A remainder can't be negative. So add the divisor, seven.",
+         ["A remainder can't be negative — dividing by seven, it's zero to six.",
+          "So add the divisor, seven. Adding one more seven never changes the remainder."]),
+    ])
+    E(M, v, 'Method 3 · Tag it', [
+        ('replace', 'Subtract: sevens, minus three. Borrow one seven',
+         ["Subtract: seven k minus seven m is still sevens. And two minus five — minus three.",
+          "A remainder can't be minus three. So borrow one seven from the sevens: minus three plus seven — four. Sevens, plus four."]),
+    ])
+    # ---- the tools lesson
+    v = 'r26-t15-remainder-tools'
+    E(M, v, 'Take away the remainder', [
+        ('after', 'Take away the four: forty-nine',
+         ["Why? The remainder is the only part that doesn't divide. Take it away — only full sevens are left."]),
+    ])
+    E(M, v, 'Numbers in a row', [
+        ('replace', 'Third tool — the harder questions need it',
+         "Second tool — the harder questions need it: consecutive integers, numbers in a row."),
+        ('replace', 'a cubed minus a: take out a',
+         ["Watch for them in disguise. a cubed minus a: take out the common factor a — a times a squared minus one.",
+          "a squared minus one is the shortcut formula: a minus one, times a plus one.",
+          "So a cubed minus a is a minus one, times a, times a plus one. Three in a row."]),
+    ])
+    E(M, v, 'Tag it', [
+        ('replace', 'Fourth tool: tag it.',
+         "Third tool: tag it. Use it when they ask \"necessarily divisible by\", \"the largest number it must divide\", or \"necessarily an integer\"."),
+        ('replace', 'Divide: every factor of the bottom must be in the tags on top',
+         ["Divide: the result is whole only if every factor of the bottom is in the tags on top.",
+          "a b over fifteen: a b is sixty k m, and sixty over fifteen is four — a whole number.",
+          "a over four: four needs two twos, but six k has only one two. Three k over two — not always whole."]),
+    ])
+    # ---- q-427: 30% play tennis
+    v = 'solve-q-427'
+    E(M, v, 'Percent → fraction → divisible by 3', [
+        ('after', 'The club has ten k members',
+         ["k is a whole number of people, so three k is always a multiple of three."]),
+    ])
+    # ---- q-428: 6 1 X divisible by 2 and 3
+    v = 'solve-q-428'
+    E(M, v, 'Divisibility signs, one step at a time', [
+        ('after', 'Together with X, we need a multiple of three',
+         ["X is a single digit, zero to nine. So we look for multiples of three from seven up to sixteen."]),
+        ('after', 'Two values: two and eight',
+         ["Add three again? X would be eleven — not a digit. So that's all."]),
+    ])
+    # ---- q-429: divisible by 12
+    v = 'solve-q-429'
+    E(M, v, 'Build 12 from the table', [
+        ('after', 'Four first: look at the last two digits',
+         ["So the four can't tell them apart — the three decides."]),
+    ])
+    # ---- q-430: count multiples in the three-digit numbers
+    v = 'solve-q-430'
+    E(M, v, 'Method 1 · Calculation', [
+        ('replace', 'The first three-digit multiple of fifteen is fifteen times seven',
+         ["Three-digit numbers run from a hundred to nine ninety-nine.",
+          "Fifteen times six is ninety — still two digits. So the first is fifteen times seven, a hundred five.",
+          "Fifteen times sixty-seven is a thousand five — too big. So the last is fifteen times sixty-six, nine ninety.",
+          "So we count fifteen times seven, times eight, and so on up to times sixty-six. Sixty-six minus seven, plus one: sixty."]),
+    ])
+    E(M, v, 'Method 2 · Estimation', [
+        ('after', 'The smaller the number, the more numbers are divisible by it',
+         ["So fifteen gets more multiples than seventeen, and twenty-one more than twenty-six. Both are right — no counting."]),
+    ])
+    # ---- q-431: c = 4a, a = b/5
+    v = 'solve-q-431'
+    E(M, v, 'Method 1 · Algebra', [
+        ('replace', 'Always divisible by six — but twelve? Not necessarily.',
+         ["Always divisible by six — but twelve? Not necessarily.",
+          "a equals one gives six. Six isn't divisible by twelve — so this claim can fail."]),
+    ])
+    # ---- q-r26-t15-15: x = 6k, y = 9m
+    v = 'solve-q-r26-t15-15'
+    E(M, v, 'Method 1 · Tag it', [
+        ('after', 'Nothing bigger is certain. Six plus nine is fifteen',
+         ["One example where it fails is enough to cross a choice out."]),
+    ])
+    # ---- q-432: 5a³ − 5a
+    v = 'solve-q-432'
+    E(M, v, 'Method 1 · Common factor', [
+        ('before', 'Take out the common factor: five a',
+         ["To see what always divides x, we write it as a product."]),
+    ])
+    E(M, v, 'Method 2 · Plugging in numbers', [
+        ('after', 'Divisible by sixty? No. Forty? No.',
+         ["One value that fails a choice is enough to cross it out."]),
+    ])
+    # ---- q-433: 14a + 6 divisible by 10
+    v = 'solve-q-433'
+    E(M, v, 'Work with the units digit', [
+        ('after', 'x is divisible by ten with no remainder. So x must end in zero',
+         ["That's the sign for ten from the lesson."]),
+    ])
+    # ---- q-434: 900 − 6x points left
+    v = 'solve-q-434'
+    E(M, v, 'Build the expression, then test', [
+        ('after', 'Divisible by six means divisible by two AND three',
+         ["Two and three share no factor — so both checks together mean six."]),
+    ])
+    # ---- q-435: x leaves 4 by 8
+    v = 'solve-q-435'
+    E(M, v, 'Method 1 · Tag it', [
+        ('after', 'Sixteen k is divisible by eight, eight is divisible by eight',
+         ["Both parts divide by eight, so their sum does too."]),
+    ])
+    # ---- q-436: sum of three divisible by 6
+    v = 'solve-q-436'
+    E(M, v, 'Think in remainders', [
+        ('after', 'When you add numbers, you can just add their remainders',
+         ["The sum is divisible by six exactly when the remainders add up to zero, six, twelve — a multiple of six.",
+          "We're looking for the claim that can fail — one example where it fails is enough."]),
+    ])
+
+
+_apply_before_clearer_scripts = apply
+
+
+def apply(M):
+    _apply_before_clearer_scripts(M)
+    clearer_scripts(M)   # 2026-10-08 clearer scripts: runs LAST

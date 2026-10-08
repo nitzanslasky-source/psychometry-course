@@ -271,3 +271,21 @@ Function `hebrew_points_back` (runs LAST; helpers in `_hebrew_back.py`). Checked
 - `divisibility` slide "Change the divisor" (its first use), before the hand-written "x = 15k + 4 …": "A number that leaves four when divided by fifteen? Write it as fifteen k plus four — k is a whole number. Fifteen k is always divisible by fifteen — the four on the end is the remainder. Any whole k you try, it leaves four." (+≈22 s)
 Still taught: divisibility stories / "what could it be → eliminate" / no fraction of a kid (Q1), only the free term matters + plug in x = 0 (Q4), one fitting answer → mark and move on (Q2), remainder trap and biggest remainder (lesson). "Combine remainders" and the r26 tools lesson were our additions (not Hebrew).
 `math_check.py 15 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-08 clearer scripts
+Teacher (recording topic 13): "Make the script ... more informative. Sometimes I feel stuck and reading what you wrote isn't enough to understand." Function `clearer_scripts(M)` in t15.py runs LAST; helper `_clearer.py`, with topic 15's own cutoff `CL.CUTOFF = '2026-10-08T16-15-00'` (set on t15's own copy of the module; t13/t14 keep theirs). No topic 15 video is recorded; any take recorded before that cutoff would keep its video as recorded. Spoken lines only — board items, numbers, methods, answers and the pen/click split unchanged. AI summary (r26-t15-summary) untouched. Notes in added_notes.json ("clearer explanation (2026-10-08)"; the three fully added videos already have a video note).
+- Terms defined once: "divisible by" = divides with nothing left over (By 2, 5 and 10); divisor and quotient (What a remainder is: 53 = 7·7 + 4); the form 15k + 4 was already there (Change the divisor), now also why the rule works (15k is whole fives; 8k isn't whole sixes).
+- **divisibility** (943 → 1110): the digit-sum test in words; a hundred = 25 fours; check each part with its own sign; why the remainder < divisor; why 5 ÷ 8 leaves 5; 13 → two fives plus three; which numbers we try for "by 6" (2 and 10).
+- **solve-q-423** (170 → 209): the plan for the two choices left; k whole → always a multiple of 15.
+- **solve-q-424** (147 → 180): check both conditions per choice; the remainders by 5 of 16, 28, 40.
+- **solve-q-425** (89 → 117): a, b free → pick the biggest remainders; example a = 15.
+- **solve-q-426** (210 → 243): split off the part that divides by 5; why choice 4 is out.
+- **solve-q-r26-t15-01** (184 → 224): a remainder by 7 is 0–6; adding a 7 keeps the remainder; the Tag-it subtraction in two steps.
+- **r26-t15-remainder-tools** (458 → 521): why taking away the remainder works; a³ − a in three steps; the divide rule step by step. Spoken tool numbers fixed (were "Third"/"Fourth" after the 2026-10-07 units-digit trim → "Second"/"Third").
+- **solve-q-427** (123 → 139): 3k is always a multiple of 3.
+- **solve-q-428** (131 → 165): X is a digit → sums 7 to 16; why there's no third value.
+- **solve-q-429** (204 → 215): the four can't tell them apart — the three decides.
+- **solve-q-430** (236 → 300): where the first and last three-digit multiples of 15 come from; what the estimate concludes.
+- **solve-q-431** (227 → 236): a = 1 → 6, so claim three can fail.
+- **solve-q-r26-t15-15** (181 → 193), **solve-q-432** (153 → 177), **solve-q-433** (151 → 159), **solve-q-434** (166 → 179), **solve-q-435** (245 → 256), **solve-q-436** (221 → 258): one failing example is enough; why write it as a product; "the sign for ten"; 2 and 3 share no factor → 6; both parts divide by 8; the sum divides by 6 exactly when the remainders add to 0, 6 or 12.
+Total spoken words 4239 → 4881 (+15%), 18 videos. `python3 math_check.py 15 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered: tmp_check/clearer/t15.png (solve-q-426, -430, -r26-t15-01, r26-t15-remainder-tools; boards unchanged).

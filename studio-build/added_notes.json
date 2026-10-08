@@ -981,7 +981,7 @@
   },
   "divisibility#10": {
    "t": "Change the divisor",
-   "d": "changing the divisor — leaves 4 by 15 → leaves 4 by 5; works only if the new divisor divides the old one"
+   "d": "changing the divisor — leaves 4 by 15 → leaves 4 by 5; works only if the new divisor divides the old one · clearer explanation (2026-10-08)"
   },
   "exponents#13": {
    "t": "Adding equal powers",
@@ -1209,7 +1209,7 @@
   },
   "solve-q-430#1": {
    "t": "Method 2 · Estimation",
-   "d": "a faster estimate — 1/15 > 1/17, so more numbers divide by 15; safe only in a long range"
+   "d": "a faster estimate — 1/15 > 1/17, so more numbers divide by 15; safe only in a long range · clearer explanation (2026-10-08)"
   },
   "solve-q-579#1": {
    "t": "Test each choice",
@@ -1463,7 +1463,7 @@
   },
   "divisibility#4": {
    "t": "Build a divisor",
-   "d": "split bigger divisors into parts with no common factor (12 = 3·4)"
+   "d": "split bigger divisors into parts with no common factor (12 = 3·4) · clearer explanation (2026-10-08)"
   },
   "divisibility#5": {
    "t": "By 11",
@@ -2243,11 +2243,11 @@
   },
   "solve-q-423#0": {
    "t": "Method 1 · Understanding",
-   "d": "the ends-in-5 check for each choice"
+   "d": "the ends-in-5 check for each choice · clearer explanation (2026-10-08)"
   },
   "solve-q-423#1": {
    "t": "Method 2 · Algebra",
-   "d": "fraction of a fraction → multiply the denominators (5·3 = 15)"
+   "d": "fraction of a fraction → multiply the denominators (5·3 = 15) · clearer explanation (2026-10-08)"
   },
   "solve-q-426#1": {
    "t": "Method 2 · Plugging in numbers",
@@ -2255,15 +2255,15 @@
   },
   "solve-q-427#0": {
    "t": "Percent → fraction → divisible by 3",
-   "d": "build from inside: club = 10k → tennis = 3k, divisible by 3"
+   "d": "build from inside: club = 10k → tennis = 3k, divisible by 3 · clearer explanation (2026-10-08)"
   },
   "solve-q-430#0": {
    "t": "Method 1 · Calculation",
-   "d": "exact count with first and last multiple, plus one (60 and 43)"
+   "d": "exact count with first and last multiple, plus one (60 and 43) · clearer explanation (2026-10-08)"
   },
   "solve-q-431#0": {
    "t": "Method 1 · Algebra",
-   "d": "checking claim four with all three letters"
+   "d": "checking claim four with all three letters · clearer explanation (2026-10-08)"
   },
   "solve-q-431#1": {
    "t": "Method 2 · Plugging in numbers",
@@ -2271,15 +2271,15 @@
   },
   "solve-q-432#0": {
    "t": "Method 1 · Common factor",
-   "d": "three in a row: divisible by 3 and by 2 → by 6"
+   "d": "three in a row: divisible by 3 and by 2 → by 6 · clearer explanation (2026-10-08)"
   },
   "solve-q-432#1": {
    "t": "Method 2 · Plugging in numbers",
-   "d": "if two choices survive, try a second value like a = 3"
+   "d": "if two choices survive, try a second value like a = 3 · clearer explanation (2026-10-08)"
   },
   "solve-q-434#0": {
    "t": "Build the expression, then test",
-   "d": "story intro and the trap: checking only 3, not 2"
+   "d": "story intro and the trap: checking only 3, not 2 · clearer explanation (2026-10-08)"
   },
   "solve-q-435#1": {
    "t": "Method 2 · Plugging in numbers",
@@ -3175,6 +3175,58 @@
   },
   "solve-q-401#0": {
    "t": "Method 1 · Understanding",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "divisibility#1": {
+   "t": "By 2, 5 and 10",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "divisibility#2": {
+   "t": "By 3 and 9",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "divisibility#7": {
+   "t": "The remainder trap",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "divisibility#6": {
+   "t": "What a remainder is",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-424#0": {
+   "t": "Method 1 · Plugging in the answers",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-424#1": {
+   "t": "Method 2 · Remainders",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-425#0": {
+   "t": "The biggest remainder",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-426#0": {
+   "t": "Method 1 · Understanding",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-428#0": {
+   "t": "Divisibility signs, one step at a time",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-429#0": {
+   "t": "Build 12 from the table",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-433#0": {
+   "t": "Work with the units digit",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-435#0": {
+   "t": "Method 1 · Tag it",
+   "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-436#0": {
+   "t": "Think in remainders",
    "d": "clearer explanation (2026-10-08)"
   }
  }
