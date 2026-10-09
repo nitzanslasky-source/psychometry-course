@@ -3228,6 +3228,18 @@
   "solve-q-436#0": {
    "t": "Think in remainders",
    "d": "clearer explanation (2026-10-08)"
+  },
+  "solve-q-544#0": {
+   "t": "Method 1 · Understanding",
+   "d": "AI pilot: extra visual guidance — every step appears when said (\"Operation = a rule\", ÷2 then +5, ◆(n) = n/2 + 5), highlights, the trap 19 crossed out, 12 ticked"
+  },
+  "solve-geo33-g091#1": {
+   "t": "The sum α + β",
+   "d": "AI pilot: extra visual guidance — α / β labels highlighted as counted, α + β = 72° circled, two example pairs (30 + 42, 12 + 60)"
+  },
+  "solve-geo33-g091#2": {
+   "t": "A fifth of the circle",
+   "d": "AI pilot: extra visual guidance — sector = angle/360° of the circle, 72°/360° = 1/5 step by step, 7π circled and ticked, key idea \"Can't find each? Find the sum.\" underlined"
   }
  }
 }

@@ -265,7 +265,11 @@ window.addEventListener('keydown',e=>{if(!window.AN_RUN)return;const k=e.key;if(
 REPL = [
     # the highlight / pointer layer goes into every recorded frame (after the laser dot)
     ("ctx.fillStyle='#ee3d59';ctx.fill()}record.frame=requestAnimationFrame(draw)}draw();",
-     "ctx.fillStyle='#ee3d59';ctx.fill()}if(window.anPaint)anPaint(ctx,1.2);record.frame=requestAnimationFrame(draw)}draw();"),
+     "ctx.fillStyle='#ee3d59';ctx.fill()}if(window.anPaint)anPaint(ctx,1.2);record.lastPaint=performance.now();if(!record.inPaint)record.frame=requestAnimationFrame(draw)}"
+     # 2026-10-09: a headless take froze on its first slide for 2 minutes - requestAnimationFrame stopped firing (the page
+     # counted as hidden), so the recording canvas was never redrawn while the cues and sound went on. The recorder's
+     # 30 fps frame grab now repaints the canvas itself when the draw loop has not run for 100 ms (CutRecorder.grab).
+     "record.paint=()=>{if(!record)return;record.inPaint=1;try{draw()}finally{if(record)record.inPaint=0}};draw();"),
     # auto-narrate: AI audio instead of the microphone, no camera
     ("const useMic=$('#use-mic').checked,useCamera=$('#use-camera').checked;",
      "const useMic=window.AN_RUN?true:$('#use-mic').checked,useCamera=window.AN_RUN?false:$('#use-camera').checked;"),

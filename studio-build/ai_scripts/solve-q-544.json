@@ -8,18 +8,37 @@
     "voice": "calm",
     "pause": 0.5
    },
-   "So here's the key. An operation is JUST a rule. [short pause] You put a number in, and the rule tells you what comes out. That's it. [short pause] Now look closely. The diamond works on two x, not on x, right? So what does this operation actually do? Is it adding five? No. [short pause] It takes the number, divides it by two, and then adds five. Two x goes in, and x plus five comes out. So it's half of the number... plus five. Pretty simple, right?",
+   {
+    "say": "So here's the key. An operation is JUST a rule. [short pause] You put a number in, and the rule tells you what comes out. That's it. [short pause] Now look closely. The diamond works on two x, not on x, right? So what does this operation actually do? Is it adding five? No. [short pause] It takes the number, divides it by two, and then adds five. Two x goes in, and x plus five comes out. So it's half of the number... plus five. Pretty simple, right?",
+    "at": [
+     "<The operation diamond is defined",
+     "<And they're asking",
+     "is JUST a rule",
+     "That's it.",
+     "The diamond works on two x",
+     "So what does this operation",
+     "divides it by two",
+     "Two x goes in",
+     "x plus five comes out",
+     "half of the number",
+     "Pretty simple"
+    ]
+   },
    {
     "say": "So fourteen is not x. Fourteen is the two x. [short pause] A lot of students put fourteen straight into x plus five. They get nineteen, and nineteen is waiting for them in the choices. That's the trap.",
     "at": [
-     "They get nineteen"
+     "Fourteen is the two x",
+     "straight into x plus five",
+     "They get nineteen",
+     "That's the trap"
     ]
    },
    {
     "say": "Two x is equal to fourteen. Divide by two, and x is equal to seven.",
     "voice": "calm",
     "at": [
-     "two x is equal to fourteen"
+     "Two x is equal to fourteen",
+     "x is equal to seven"
     ]
    },
    {
@@ -29,9 +48,10 @@
      "base"
     ],
     "at": [
-     "<x is equal to seven",
-     "Now the rule",
-     "x plus five"
+     "Now the rule says",
+     "Seven plus five",
+     "is twelve",
+     "half of fourteen"
     ]
    },
    {
@@ -40,7 +60,14 @@
      "number one"
     ]
    },
-   "So whenever you see an operation like this, first ask yourself what it really does to the number. And only then, use the rule. [pause] Okay. I'll see you in the next question."
+   {
+    "say": "So whenever you see an operation like this, first ask yourself what it really does to the number. And only then, use the rule. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "an operation like this",
+     "what it really does",
+     "use the rule"
+    ]
+   }
   ]
  ]
 }

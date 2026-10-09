@@ -3178,6 +3178,17 @@ def _ai_recorded(vid):
     return False
 
 
+def _ai_visual(M, vid):
+    """2026-10-09 extra visual guidance for the AI pilot (math_patches/_ai_visual.py; same time gate as above)."""
+    import importlib.util, os, sys
+    m = sys.modules.get('_ai_visual')
+    if m is None:
+        p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_ai_visual.py')
+        spec = importlib.util.spec_from_file_location('_ai_visual', p); m = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(m); sys.modules['_ai_visual'] = m
+    m.apply(M, vid)
+
+
 def ai_pointers(M):
     from dsl import PT
     vid = 'solve-geo33-g091'
@@ -3211,6 +3222,7 @@ def ai_pointers(M):
     item(b, 1, '$\\frac{72°}{360°}\\times35\\pi=7\\pi$', '$\\hl{frac}{\\frac{72°}{360°}}\\times35\\pi=7\\pi$')
     before(b, 'Together the two sectors', PT('item 1: frac', '72 out of 360', at=0.38))
     M.touched_videos.add(vid)
+    _ai_visual(M, vid)   # 2026-10-09: extra visual guidance (replaces the cues above)
 
 
 _apply_before_ai_pointers = apply

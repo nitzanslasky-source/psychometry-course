@@ -8,36 +8,69 @@
     "voice": "calm",
     "pause": 0.5
    },
-   "Now, here's the thing. We can't find the two angles separately. And... we don't even need to.",
+   {
+    "say": "Now, here's the thing. We can't find the two angles separately. And... we don't even need to.",
+    "at": [
+     "<A circle has a radius",
+     "<alpha, then",
+     "<then beta",
+     "<One sector of each kind is shaded",
+     "<What's their total area",
+     "the two angles",
+     "separately"
+    ]
+   },
    {
     "say": "Look at the shaded part. It's one alpha and one beta, sitting side by side.",
     "at": [
      "shaded part"
     ]
    },
-   "So what do I actually need? The shaded part is just a piece of the— of the circle. So I need two things. The area of the whole circle, and how much of it is shaded.",
+   {
+    "say": "So what do I actually need? The shaded part is just a piece of the— of the circle. So I need two things. The area of the whole circle, and how much of it is shaded.",
+    "at": [
+     "The shaded part is just",
+     "So I need two things",
+     "The area of the whole circle",
+     "how much of it is shaded"
+    ]
+   },
    {
     "say": "The area of a circle is pi r squared. Here r is root thirty-five. Squaring cancels the root, so r squared is thirty-five. The whole circle is thirty-five pi.",
     "voice": "calm",
     "at": [
-     "pi r squared"
+     "pi r squared",
+     "Here r is root",
+     "Squaring cancels",
+     "The whole circle is",
+     "thirty-five pi."
     ]
    }
   ],
   [
-   "Now, how much of it is shaded? For that I need the angles, and, uh, they don't give me a single number. So what can I say about them?",
+   {
+    "say": "Now, how much of it is shaded? For that I need the angles, and, uh, they don't give me a single number. So what can I say about them?",
+    "at": [
+     "how much of it is shaded",
+     "I need the angles",
+     "they don't give me"
+    ]
+   },
    {
     "say": "Let's count. Here are the five alphas, and here are the five betas. Together, they go all the way around the circle. So five alpha plus five beta is equal to three sixty degrees.",
     "at": [
-     "five alpha plus five beta",
      "five alphas",
-     "five betas"
+     "five betas",
+     "five alpha plus five beta",
+     "three sixty degrees"
     ]
    },
    {
     "say": "Look at this side. One equation, two unknowns. So I can't get each angle on its own, right? [short pause] But I CAN get their sum!",
     "at": [
-     "this side"
+     "this side",
+     "two unknowns",
+     "their sum"
     ],
     "pause": 0.4
    },
@@ -45,25 +78,45 @@
     "say": "Divide both sides by five, and alpha plus beta is equal to seventy-two degrees.",
     "voice": "calm",
     "at": [
-     "alpha plus beta is equal"
+     "Divide both sides",
+     "alpha plus beta is equal",
+     "seventy-two degrees"
     ]
    },
-   "Okay so, could they be thirty and forty-two? Sure. Twelve and sixty? That works too. It doesn't matter... all I need is their sum."
+   {
+    "say": "Okay so, could they be thirty and forty-two? Sure. Twelve and sixty? That works too. It doesn't matter... all I need is their sum.",
+    "at": [
+     "thirty and forty-two",
+     "Twelve and sixty",
+     "all I need is their sum"
+    ]
+   }
   ],
   [
    {
     "say": "A sector takes the same part of the circle's area as its angle takes out of three sixty. Here the two shaded sectors are seventy-two out of three sixty. And seventy-two over three sixty is one fifth.",
     "voice": "calm",
     "at": [
-     null,
-     "seventy-two out of three sixty"
+     "A sector takes",
+     "the two shaded sectors",
+     "seventy-two out of three sixty",
+     "is one fifth"
     ]
    },
-   "So one fifth of thirty-five pi... that's seven pi.",
+   {
+    "say": "So one fifth of thirty-five pi... that's seven pi.",
+    "at": [
+     "one fifth of thirty-five pi",
+     "that's seven pi"
+    ]
+   },
    {
     "say": "So, um, number two is our answer. And see? We never even found the angles themselves. We only needed their sum. So when you can't find each one on its own... it's worth looking for their sum. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "number two"
+     "number two",
+     "We never even found",
+     "So when you can't find",
+     "looking for their sum"
     ]
    }
   ]

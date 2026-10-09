@@ -38,6 +38,7 @@ class CutRecorder{
  fail(e){console.error('recorder',e);if(this.err)return;this.err=e;this.onerror?.(e)}
  start(){this.state=this.holdStart?'paused':'recording';this.timer=setInterval(()=>this.grab(),1000/30);this.thumbTimer=setInterval(()=>this.thumb(),1000);if(this.track)this.readAudio()}
  grab(){if(this.state!=='recording'||this.venc.state!=='configured')return;const ts=Math.round(recClock()*1e6);if(ts<=this.lastV)return;
+  if(typeof record!=='undefined'&&record?.paint&&performance.now()-(record.lastPaint||0)>100)try{record.paint()}catch(e){}   /* the draw loop stalled (rAF stopped): repaint here */
   if(this.venc.encodeQueueSize>6&&!this.forceKey)return;let f;try{f=new VideoFrame(this.canvas,{timestamp:ts,duration:33333})}catch{return}
   const key=this.forceKey||ts-this.lastKey>=2e6;if(key){this.lastKey=ts;this.forceKey=false}this.lastV=ts;
   try{this.venc.encode(f,{keyFrame:key})}catch(e){this.fail(e)}f.close()}

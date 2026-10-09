@@ -2094,6 +2094,17 @@ def _ai_recorded(vid):
     return False
 
 
+def _ai_visual(M, vid):
+    """2026-10-09 extra visual guidance for the AI pilot (math_patches/_ai_visual.py; same time gate as above)."""
+    import importlib.util, os, sys
+    m = sys.modules.get('_ai_visual')
+    if m is None:
+        p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_ai_visual.py')
+        spec = importlib.util.spec_from_file_location('_ai_visual', p); m = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(m); sys.modules['_ai_visual'] = m
+    m.apply(M, vid)
+
+
 def ai_pilot(M):
     from dsl import A, T, PT, D
     vid, title = 'solve-q-544', 'Method 1 · Understanding'
@@ -2115,6 +2126,7 @@ def ai_pilot(M):
         PT('item 2: rule', 'the rule: x + 5', style='both'), sc[5],
         sc[6], sc[7], sc[8]])
     M.touched_videos.add(vid)
+    _ai_visual(M, vid)   # 2026-10-09: extra visual guidance (replaces the cues above)
 
 
 _apply_before_ai_pilot = apply

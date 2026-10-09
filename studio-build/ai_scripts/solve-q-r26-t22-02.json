@@ -8,50 +8,88 @@
     "voice": "calm",
     "pause": 0.5
    },
-   "Now, this one is a bit different. In a ratio table, both numbers grow together. Two notebooks cost twice as much as one notebook. [short pause] But here... it's the opposite. More workers finish the job slower— sorry, faster, so the number of days goes down. More workers, fewer days. So here, a normal ratio table just won't work.",
-   "Okay so, before calculating anything, let's think. More days, or fewer? There are fewer workers now, so the job takes longer. So it has to be more than ten days. See?",
+   {
+    "say": "Now, this one is a bit different. In a ratio table, both numbers grow together. Two notebooks cost twice as much as one notebook. [short pause] But here... it's the opposite. More workers finish the job slower— sorry, faster, so the number of days goes down. More workers, fewer days. So here, a normal ratio table just won't work.",
+    "at": [
+     "<Six workers paint a hall",
+     "<How many days would four workers",
+     "both numbers grow together",
+     "Two notebooks cost",
+     "it's the opposite",
+     "the number of days goes down",
+     "More workers, fewer days",
+     "just won't work"
+    ]
+   },
+   {
+    "say": "Okay so, before calculating anything, let's think. More days, or fewer? There are fewer workers now, so the job takes longer. So it has to be more than ten days. See?",
+    "at": [
+     "More days, or fewer",
+     "fewer workers now",
+     "it has to be more than ten days",
+     "See?"
+    ]
+   },
    {
     "say": "What can I cross out? Six and two thirds, and eight. Both are less than ten, so number one and number four are out.",
     "at": [
-     "Six and two thirds"
+     "Six and two thirds",
+     "and eight.",
+     "number one and",
+     "number four are out"
     ]
    }
   ],
   [
-   "So here's the idea. Let's measure the whole job in worker-days. One worker-day is just one worker, working for one day.",
+   {
+    "say": "So here's the idea. Let's measure the whole job in worker-days. One worker-day is just one worker, working for one day.",
+    "at": [
+     "measure the whole job",
+     "One worker-day is"
+    ]
+   },
    {
     "say": "Six workers work for ten days. Six times ten is sixty, so the job is sixty worker-days. It's like one worker working alone for sixty days. And it's the same hall, right? So the job is still sixty worker-days, no matter how many workers do it.",
     "voice": "calm",
     "at": [
-     "six times ten"
+     "Six workers work for ten days",
+     "Six times ten",
+     "the job is sixty",
+     "it's the same hall",
+     "no matter how many workers"
     ]
    },
    {
     "say": "Now we split those sixty worker-days between four workers. How many days does each one work? Four times d has to give sixty. d is equal to sixty over four. That's fifteen days.",
     "voice": "calm",
     "at": [
+     "split those sixty",
      "Four times d",
-     "those sixty worker-days"
+     "d is equal to sixty over four",
+     "That's fifteen days"
     ]
    },
    {
     "say": "So, um, number three is our answer.",
     "at": [
-     "<d is equal to sixty over four",
      "number three"
     ]
    },
    {
     "say": "Where do the other— the other choices come from? Six and two thirds is what a normal ratio table gives you, as if fewer workers meant fewer days. And twelve just adds two days for the two missing workers. They're both wrong.",
     "at": [
-     "Six and two thirds",
-     "twelve just adds"
+     "Six and two thirds is what",
+     "twelve just adds",
+     "They",
+     "both wrong"
     ]
    },
    {
     "say": "[short pause] And here's the rule to remember. When one number goes up and the other goes down... their product stays the SAME. Workers and days, or speed and time. Later in the course you'll see an even faster way to solve questions like this. It's called the V method. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "here's the rule"
+     "When one number goes up",
+     "stays the SAME",
+     "Workers and days, or speed"
     ]
    }
   ]
