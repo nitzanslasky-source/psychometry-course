@@ -43,7 +43,7 @@ class CutRecorder{
   try{this.venc.encode(f,{keyFrame:key})}catch(e){this.fail(e)}f.close()}
  thumb(){if(this.state!=='recording')return;try{const c=this.tc||(this.tc=Object.assign(document.createElement('canvas'),{width:320,height:180}));
   c.getContext('2d').drawImage(this.canvas,0,0,320,180);this.thumbs.push({t:recClock(),url:c.toDataURL('image/jpeg',.6)})}catch{}}
- async readAudio(){const reader=this.reader=new MediaStreamTrackProcessor({track:this.track}).readable.getReader();
+ async readAudio(){const reader=this.reader=new MediaStreamTrackProcessor({track:this.track,maxBufferSize:600}).readable.getReader();   /* ~6 s of 10 ms sound frames queued: a busy main thread no longer makes the processor DROP sound (it kept ~10, so a 0.1-0.4 s stall lost words and pulled the rest of the take early) */
   for(;;){let r;try{r=await reader.read()}catch{break}if(r.done)break;const d=r.value;try{if(this.state==='recording')await this.takeAudio(d)}catch(e){this.fail(e)}finally{d.close()}}}
  async ensureAenc(sr,nch){if(this.aenc)return true;const pick=await cutAudioCodec(this.vc.mux,sr,nch);if(!pick)return false;
   this.acfg={...pick.cfg,name:pick.name};this.aenc=new AudioEncoder({output:(c,m)=>{if(m?.decoderConfig&&!this.ameta)this.ameta=m;this.a.push(c)},error:e=>this.fail(e)});this.aenc.configure(pick.cfg);return true}
@@ -56,7 +56,13 @@ class CutRecorder{
   const pc=new Int16Array(n);for(let k=0;k<n;k++)pc[k]=Math.max(-1,Math.min(1,x[0][k]))*32767;this.pcm.push({t:ts/1e6,sr:R,d:pc});return Math.round(n/R*1e6)}
  async takeAudio(d){
   if(!this.aenc&&!(await this.ensureAenc(d.sampleRate,d.numberOfChannels))){this.track=null;this.reader?.cancel();toast('This browser cannot encode the microphone; the take will be silent.');return}
-  if(this.aBase===null){this.aBase=Math.max(Math.round(recClock()*1e6),this.aEnd);this.aSamples=0}
+  if(this.aBase===null){this.aBase=Math.max(Math.round(recClock()*1e6),this.aEnd);this.aSamples=0;this.aT0=d.timestamp;this.aIn=0}
+  /* sound frames that still went missing (their timestamps jump ahead): fill the hole with silence, so everything after it
+     stays in sync with the picture instead of sliding earlier */
+  const R0=this.acfg.sampleRate,gap=d.timestamp-(this.aT0+this.aIn/d.sampleRate*1e6);
+  if(gap>25000&&gap<1e7){let k=Math.round(gap/1e6*d.sampleRate);this.aIn+=k;(window.__recAudioGaps=window.__recAudioGaps||[]).push([+(this.aEnd/1e6).toFixed(2),Math.round(gap/1000)]);console.warn('recorder: sound gap',Math.round(gap/1000),'ms filled with silence');
+   while(k>0){const m=Math.min(k,4800),ts=this.aBase+Math.round(this.aSamples/R0*1e6),dur=this.encodePcm([new Float32Array(m)],d.sampleRate,ts);this.aSamples+=Math.round(dur*R0/1e6);this.aEnd=ts+dur;k-=m}}
+  this.aIn+=d.numberOfFrames;
   const n=d.numberOfFrames,ch=d.numberOfChannels,chs=[];for(let i=0;i<ch;i++){const b=new Float32Array(n);d.copyTo(b,{planeIndex:i,format:'f32-planar'});chs.push(b)}
   const R=this.acfg.sampleRate,ts=this.aBase+Math.round(this.aSamples/R*1e6),dur=this.encodePcm(chs,d.sampleRate,ts);
   this.aSamples+=Math.round(dur*R/1e6);this.aEnd=ts+dur}

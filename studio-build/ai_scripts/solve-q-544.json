@@ -1,13 +1,13 @@
 {
  "videoId": "solve-q-544",
- "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number one is our answer', the trap told BEFORE the answer as a warning, closes with a nudge + 'see you in the next question'. One entry per spoken line of the video, same order; ai_narrate.py --continuous. AI auto-narrate PILOT (algebra, 2026-10-09). PILOT v3 (2026-10-09, teacher feedback): short pause after reading the question (\"pause\"), every sentence ends with a full stop (falling tone), more explaining where the idea is new in the study plan, a short reminder where it was taught earlier, emphasis through wording and punctuation only (2026-10-09, voice eleven_v4: the teacher found the [excited] tags 'just a bit too exaggerated', so no emotion tags), numbers and symbols written as words.",
+ "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number one is our answer', the trap told BEFORE the answer as a warning, closes with a nudge + 'see you in the next question'. One entry per spoken line of the video, same order; ai_narrate.py --continuous. AI auto-narrate PILOT (algebra, 2026-10-09). PILOT v3 (2026-10-09, teacher feedback): short pause after reading the question (\"pause\"), every sentence ends with a full stop (falling tone), more explaining where the idea is new in the study plan, a short reminder where it was taught earlier, emphasis through wording and punctuation only (2026-10-09, voice eleven_v4: the teacher found the [excited] tags 'just a bit too exaggerated', so no emotion tags), numbers and symbols written as words. PILOT v4 (2026-10-09, teacher feedback on the eleven_v4 pilots): self-contained examples only (no example from another question; no words the clone may say oddly, e.g. 'vases', 'neither'), routine calculation steps said plainly and short, warmer questioning tone only for the key ideas, varied sentence starts, at most one [matter-of-fact] tag per video and [calmly] right before the closing line (calmer ending); never [excited].",
  "slides": [
   [
    {
     "say": "The operation diamond is defined for every number x, so that diamond of two x is equal to x plus five. And they're asking, what's diamond of fourteen?",
     "pause": 0.5
    },
-   "Remember, an operation is just a rule. You put a number in, and the rule tells you what comes out. Now look closely. The diamond works on two x, not on x, right? So what does this operation actually do? Is it adding five? No. It takes the number, divides it by two, and then adds five. Because two x goes in, and x plus five comes out. Half of the number, plus five.",
+   "An operation is just a rule. You put a number in, and the rule tells you what comes out. Now look closely. The diamond works on two x, not on x, right? So what does this operation actually do? Is it adding five? No. It takes the number, divides it by two, and then adds five. Two x goes in, and x plus five comes out. Half of the number, plus five.",
    {
     "say": "So fourteen is not x. Fourteen is the two x. A lot of students put fourteen straight into x plus five. They get nineteen, and nineteen is waiting for them in the choices. That's the trap.",
     "at": [
@@ -15,13 +15,13 @@
     ]
    },
    {
-    "say": "So two x is equal to fourteen. I divide by two, and x is equal to seven.",
+    "say": "Two x is equal to fourteen. Divide by two, and x is equal to seven.",
     "at": [
      "two x is equal to fourteen"
     ]
    },
    {
-    "say": "Now the rule says x plus five. So I put in seven, and seven plus five is equal to twelve. And look, that's exactly half of fourteen, plus five, just like we said.",
+    "say": "Now the rule says x plus five. [matter-of-fact] Seven plus five is twelve. And look, that's exactly half of fourteen, plus five, just like we said.",
     "at": [
      "<x is equal to seven",
      "Now the rule",
@@ -34,7 +34,7 @@
      "number one"
     ]
    },
-   "So whenever you see an operation like this, first ask yourself what it really does to the number. And only then use the rule. I'll see you in the next question."
+   "Whenever you see an operation like this, first ask what it really does to the number. Only then use the rule. [calmly] I'll see you in the next question."
   ]
  ]
 }

@@ -1,31 +1,31 @@
 {
  "videoId": "solve-q-r26-t22-02",
- "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number three is our answer', closes with the rule + 'see you in the next question'. One entry per spoken line of the video, same order; ai_narrate.py --continuous. AI auto-narrate PILOT (word problem, 2026-10-09). PILOT v3 (2026-10-09, teacher feedback): short pause after reading the question (\"pause\"), every sentence ends with a full stop (falling tone), more explaining where the idea is new in the study plan, a short reminder where it was taught earlier, emphasis through wording and punctuation only (2026-10-09, voice eleven_v4: the teacher found the [excited] tags 'just a bit too exaggerated', so no emotion tags), numbers and symbols written as words.",
+ "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number three is our answer', closes with the rule + 'see you in the next question'. One entry per spoken line of the video, same order; ai_narrate.py --continuous. AI auto-narrate PILOT (word problem, 2026-10-09). PILOT v3 (2026-10-09, teacher feedback): short pause after reading the question (\"pause\"), every sentence ends with a full stop (falling tone), more explaining where the idea is new in the study plan, a short reminder where it was taught earlier, emphasis through wording and punctuation only (2026-10-09, voice eleven_v4: the teacher found the [excited] tags 'just a bit too exaggerated', so no emotion tags), numbers and symbols written as words. PILOT v4 (2026-10-09, teacher feedback on the eleven_v4 pilots): self-contained examples only (no example from another question; no words the clone may say oddly, e.g. 'vases', 'neither'), routine calculation steps said plainly and short, warmer questioning tone only for the key ideas, varied sentence starts, at most one [matter-of-fact] tag per video and [calmly] right before the closing line (calmer ending); never [excited].",
  "slides": [
   [
    {
     "say": "Six workers paint a hall in ten days, and all the workers work at the same rate. How many days would four workers need to paint the same hall?",
     "pause": 0.5
    },
-   "Now, this one is a bit different. Remember the ratio table? There, the two numbers grow together. Twice the vases, twice the roses. But here it's the opposite. If I bring more workers, the job gets done faster, so the number of days goes down. More workers, fewer days. So a normal ratio table won't work here.",
-   "So before I calculate anything, let's think. Will it take more days, or fewer? There are fewer workers now, so the job takes longer. So it has to be more than ten days.",
+   "This one is a bit different. In a ratio table, both numbers grow together. Two notebooks cost twice as much as one notebook. Here it's the opposite. More workers finish the job faster, so the number of days goes down. More workers, fewer days. So a normal ratio table won't work here.",
+   "Before calculating anything, let's think. More days, or fewer? There are fewer workers now, so the job takes longer. It has to be more than ten days.",
    {
-    "say": "So what can I cross out? Six and two thirds, and eight. They're both less than ten, so number one and number four are out.",
+    "say": "What can I cross out? Six and two thirds, and eight. Both are less than ten, so number one and number four are out.",
     "at": [
      "Six and two thirds"
     ]
    }
   ],
   [
-   "Now here's the idea. Let's measure the whole job in worker-days. One worker-day is one worker working for one day.",
+   "Here's the idea. Let's measure the whole job in worker-days. One worker-day is one worker working for one day.",
    {
-    "say": "Six workers work for ten days. That's six times ten, so the job is sixty worker-days of work. It's like one worker working alone for sixty days. And it's the same hall, right? So the job is still sixty worker-days, no matter how many workers do it.",
+    "say": "Six workers work for ten days. [matter-of-fact] Six times ten is sixty, so the job is sixty worker-days. It's like one worker working alone for sixty days. And it's the same hall, right? So the job is still sixty worker-days, no matter how many workers do it.",
     "at": [
      "six times ten"
     ]
    },
    {
-    "say": "Now we split those sixty worker-days between four workers. How many days does each one work? Four times d has to give sixty. So d is equal to sixty over four. That's fifteen days.",
+    "say": "Now we split those sixty worker-days between four workers. How many days does each one work? Four times d has to give sixty. d is equal to sixty over four. That's fifteen days.",
     "at": [
      "Four times d",
      "those sixty worker-days"
@@ -39,14 +39,14 @@
     ]
    },
    {
-    "say": "And where do the other choices come from? Six and two thirds is what you get from a normal ratio table, as if fewer workers meant fewer days. And twelve just adds two days for the two missing workers. Neither one makes sense.",
+    "say": "Where do the other choices come from? Six and two thirds is what a normal ratio table gives you, as if fewer workers meant fewer days. And twelve just adds two days for the two missing workers. They're both wrong.",
     "at": [
      "Six and two thirds",
      "twelve just adds"
     ]
    },
    {
-    "say": "So here's the rule. When one number goes up and the other goes down, their product stays the same. Like workers and days, or speed and time. And later in the course, you'll see an even faster way to solve questions like this. It's called the V method. I'll see you in the next question.",
+    "say": "So here's the rule. When one number goes up and the other goes down, their product stays the same. Workers and days, or speed and time. Later in the course you'll see an even faster way to solve questions like this. It's called the V method. [calmly] I'll see you in the next question.",
     "at": [
      "here's the rule"
     ]

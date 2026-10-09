@@ -10,6 +10,7 @@ s = open(SRC, encoding='utf-8').read(); k = s.find('window.COURSE=') + len('wind
 D = json.JSONDecoder().raw_decode(s[k:])[0]
 ids = sys.argv[1:] or [os.path.basename(p)[:-5] for p in sorted(glob.glob(os.path.join(HERE, 'ai_scripts', '*.json'))) if not os.path.basename(p).startswith('_')]
 bad = 0
+NOTES = []
 for vid in ids:
     p = os.path.join(HERE, 'ai_scripts', vid + '.json')
     if not os.path.exists(p): print('MISSING', vid); bad += 1; continue
@@ -50,6 +51,16 @@ for vid in ids:
             if not t.strip(): probs.append('slide %d empty line' % (i + 1))
             sym = re.findall(r'[πα-ωΑ-Ω°%×÷²³√≤≥≠⇒→∠◆]', t)
             if sym: probs.append('slide %d has symbol(s) %s - write them as words: %s' % (i + 1, ''.join(sym), t[:60]))
+    # delivery tags (eleven_v4): teacher 2026-10-09 found [excited] "a bit too exaggerated" - never [excited]; mild tags
+    # ([calmly], [matter-of-fact]) at most 3 per video. Words with US/UK variants the clone may say oddly: use plain words.
+    allt = ' '.join(t['say'] if isinstance(t, dict) else t for sl in a for t in sl)
+    tags = re.findall(r'\[([a-z][a-z -]*)\]', allt)
+    tags = [x for x in tags if x not in ('pause', 'short pause', 'long pause')]
+    if 'excited' in tags: probs.append('[excited] tag - the teacher found it too exaggerated; use wording instead')
+    if len(tags) > 3: probs.append('%d delivery tags %s - at most 3 per video' % (len(tags), tags))
+    risky = re.findall(r'\b(vases?|tomato(?:es)?|routes?|either|neither|schedules?|herbs?|aluminum|aluminium|leisure|garage|privacy|vitamins?|yogurt|controversy|niche|tuna)\b', allt, re.I)
+    if risky: NOTES.append('%s %s' % (vid, sorted(set(w.lower() for w in risky))))     # a note, not a failure: swap when the line is next rewritten
     print(('OK   ' if not probs else 'FAIL ') + vid + ('' if not probs else '\n   ' + '\n   '.join(probs)))
     bad += bool(probs)
+if NOTES: print('note - words the voice may say oddly (US/UK variants; plain words are safer): ' + '; '.join(NOTES))
 sys.exit(1 if bad else 0)

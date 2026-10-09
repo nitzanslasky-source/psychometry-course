@@ -1,31 +1,31 @@
 {
  "videoId": "solve-geo33-g091",
- "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), talks to one student, reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number two is our answer', closes with a nudge + 'see you in the next question'. One entry per spoken line of the video, same order; generated with ai_narrate.py --continuous (one request, word-timed cues). AI auto-narrate PILOT v2 (2026-10-09). PILOT v3 (2026-10-09, teacher feedback): short pause after reading the question (\"pause\"), every sentence ends with a full stop (falling tone), more explaining where the idea is new in the study plan, a short reminder where it was taught earlier, emphasis through wording and punctuation only (2026-10-09, voice eleven_v4: the teacher found the [excited] tags 'just a bit too exaggerated', so no emotion tags), numbers and symbols written as words.",
+ "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), talks to one student, reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number two is our answer', closes with a nudge + 'see you in the next question'. One entry per spoken line of the video, same order; generated with ai_narrate.py --continuous (one request, word-timed cues). AI auto-narrate PILOT v2 (2026-10-09). PILOT v3 (2026-10-09, teacher feedback): short pause after reading the question (\"pause\"), every sentence ends with a full stop (falling tone), more explaining where the idea is new in the study plan, a short reminder where it was taught earlier, emphasis through wording and punctuation only (2026-10-09, voice eleven_v4: the teacher found the [excited] tags 'just a bit too exaggerated', so no emotion tags), numbers and symbols written as words. PILOT v4 (2026-10-09, teacher feedback on the eleven_v4 pilots): self-contained examples only (no example from another question; no words the clone may say oddly, e.g. 'vases', 'neither'), routine calculation steps said plainly and short, warmer questioning tone only for the key ideas, varied sentence starts, at most one [matter-of-fact] tag per video and [calmly] right before the closing line (calmer ending); never [excited].",
  "slides": [
   [
    {
     "say": "A circle has a radius of root thirty-five centimeters. Its central angles go alpha, beta, alpha, beta, five of each, like in the figure. One alpha sector and one beta sector are shaded. What's their total area?",
     "pause": 0.5
    },
-   "Now, here's the thing. We can't find alpha or beta on their own. And actually, we don't even need to.",
+   "Here's the thing. We can't find alpha or beta on their own. And we don't even need to.",
    {
-    "say": "Let's look at the shaded part. It's one alpha and one beta, sitting right next to each other, right?",
+    "say": "Look at the shaded part. It's one alpha and one beta, side by side.",
     "at": [
      "shaded part"
     ]
    },
-   "So what do I need? The shaded part is just a piece of the circle. So I need two things. First, the area of the whole circle. And second, how much of the circle is shaded.",
+   "So what do I need? The shaded part is a piece of the circle. That means two things. The area of the whole circle, and how much of it is shaded.",
    {
-    "say": "The area of a circle is pi r squared. Here r is root thirty-five, and root thirty-five squared is just thirty-five, because the square cancels the root. So the whole circle is equal to thirty-five pi.",
+    "say": "The area of a circle is pi r squared. [matter-of-fact] Here r is root thirty-five. Squaring cancels the root, so r squared is thirty-five. The whole circle is thirty-five pi.",
     "at": [
      "pi r squared"
     ]
    }
   ],
   [
-   "Now, how much of it is shaded? For that I need alpha and beta, and they don't give me a single number. So what can I say about them?",
+   "Now, how much of it is shaded? For that I need alpha and beta, and they don't give me a single number. What can I say about them?",
    {
-    "say": "Let's count them. Here are the five alphas. Now here are the five betas. And together, they go all the way around the circle. So five alpha plus five beta is equal to three hundred sixty degrees.",
+    "say": "Let's count. Here are the five alphas. Here are the five betas. Together they go all the way around the circle. So five alpha plus five beta is equal to three hundred sixty degrees.",
     "at": [
      "five alpha plus five beta",
      "five alphas",
@@ -33,31 +33,31 @@
     ]
    },
    {
-    "say": "Now look at this side. One equation, two unknowns. So I can't get alpha or beta on its own, right? But I can get their sum.",
+    "say": "Look at this side. One equation, two unknowns. I can't get alpha or beta on its own, right? But I can get their sum.",
     "at": [
      "this side"
     ],
     "pause": 0.4
    },
    {
-    "say": "I just divide both sides by five. Or take out five as a common factor, it's the same thing. So alpha plus beta is equal to seventy-two degrees.",
+    "say": "I divide both sides by five. Alpha plus beta is equal to seventy-two degrees.",
     "at": [
      "alpha plus beta is equal"
     ]
    },
-   "Could they be thirty and forty-two? Sure. Could they be twelve and sixty? Also. It doesn't matter, because all I need is their sum."
+   "Could they be thirty and forty-two? Sure. Twelve and sixty? Also fine. It doesn't matter. All I need is their sum."
   ],
   [
    {
-    "say": "Now remember, a sector takes the same part of the circle's area as its angle takes out of three hundred sixty degrees. Together, the two shaded sectors are seventy-two out of three hundred sixty degrees. And seventy-two over three hundred sixty is one fifth.",
+    "say": "A sector takes the same part of the circle's area as its angle takes out of three hundred sixty degrees. Here the two shaded sectors are seventy-two out of three hundred sixty degrees. Seventy-two over three hundred sixty is one fifth.",
     "at": [
      null,
      "seventy-two out of three hundred sixty"
     ]
    },
-   "So the shaded part is one fifth of thirty-five pi. That's seven pi.",
+   "One fifth of thirty-five pi is seven pi.",
    {
-    "say": "So number two is our answer. You see, we never found alpha or beta. We only needed their sum. So whenever you can't find each one on its own, look for their sum. I'll see you in the next question.",
+    "say": "So number two is our answer. Notice, we never found alpha or beta. We only needed their sum. Whenever you can't find each one on its own, look for their sum. [calmly] I'll see you in the next question.",
     "at": [
      "number two"
     ]
