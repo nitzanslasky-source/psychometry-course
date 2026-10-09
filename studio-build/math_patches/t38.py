@@ -1890,3 +1890,26 @@ _apply_before_spoken_labels = apply
 def apply(M):
     _apply_before_spoken_labels(M)
     _sl_load().spoken_labels(M, 38)   # 2026-10-09 spoken labels: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-09 choice order like the real exam (teacher: "if the answer can be 1 it will be in choice number 1, same with
+# 2 3 4, and also same with 1/2 1/4 1/3"): a choice 1/2/3/4 (or 1/2, 1/3, 1/4) sits in its own place; the correct
+# answer and every spoken / drawn / written choice position follow. Data and rules: _choice_order.py (a question whose
+# video was recorded before its CUTOFF keeps its old order). Runs LAST.
+# =====================================================================================================================
+def _co_load():
+    import importlib.util, os, sys
+    if '_choice_order' in sys.modules: return sys.modules['_choice_order']   # one copy: its WARN / CHANGED add up
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_choice_order.py')
+    spec = importlib.util.spec_from_file_location('_choice_order', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); sys.modules['_choice_order'] = m
+    return m
+
+
+_apply_before_choice_order = apply
+
+
+def apply(M):
+    _apply_before_choice_order(M)
+    _co_load().choice_order(M, 38)   # 2026-10-09 choice order: runs LAST

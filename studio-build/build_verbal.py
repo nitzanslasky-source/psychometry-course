@@ -36,6 +36,13 @@ if '_spoken_labels' in sys.modules:
         print('WARNING spoken labels: %d spoken line(s) in unrecorded math videos still start with a label - say it as speech '
               '(add them to math_patches/_spoken_labels.py MAP):' % len(_left))
         for _w in _left: print('    ' + _w)
+# 2026-10-09 choice order like the real exam (math_patches/_choice_order.py): a choice 1/2/3/4 (or 1/2, 1/3, 1/4) sits in
+# its own place; the full check (topics 1-38, 51, 52) runs below, once the quantitative modules are in
+if '_choice_order' in sys.modules:
+    _CO = sys.modules['_choice_order']
+    print('choice order: %d questions reordered (%d video / solution lines follow), %d kept as recorded'
+          % (len(_CO.CHANGED), sum(_CO.CHANGED.values()), len(_CO.SKIPPED)))
+    for _w in _CO.WARN: print('WARNING choice order:', _w)
 
 # ---------- Topic 50: Writing task (new topic, not in the base) ----------
 if not any(x['id'] == 50 for x in D['topics']):
@@ -290,6 +297,17 @@ print('NITE terminology (changes per rule and field type):'); print(terminology.
 
 # ---------- "x = ?" on its own line under the given (stem_lines.py); recorded videos keep their old board ----------
 import stem_lines; STEM = stem_lines.apply(D); print(stem_lines.report(STEM))
+
+# 2026-10-09 choice order check: every multiple-choice question (topics 1-38, 51, 52) of an UNRECORDED video or of
+# practice must follow the real-exam order (1, 2, 3, 4 and 1/2, 1/3, 1/4 in their own place)
+if '_choice_order' in sys.modules:
+    _left = sys.modules['_choice_order'].check_left(D)
+    _rec = sys.modules['_choice_order'].recorded(D)
+    if _left:
+        print('WARNING choice order: %d unrecorded multiple-choice question(s) break the real-exam order - put 1, 2, 3, 4 '
+              '(and 1/2, 1/3, 1/4) in their own place (math: add them to math_patches/_choice_order.py QMAP):' % len(_left))
+        for _w in _left: print('    ' + _w)
+    print('choice order: %d question(s) in recorded videos keep their old order (teacher to decide)' % len(_rec))
 
 # ---------- arrow chains reveal one part per click (studio_arrows.py); videos recorded before its CUTOFF stay frozen ----------
 import studio_arrows
