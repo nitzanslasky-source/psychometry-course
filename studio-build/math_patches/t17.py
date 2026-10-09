@@ -1854,3 +1854,26 @@ _apply_before_coverage_fixes = apply
 def apply(M):
     _apply_before_coverage_fixes(M)
     coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-09 spoken labels -> speech (teacher: "take off words like 'notice:' that seem like I'm reading"): spoken
+# lines that open with "Careful:", "Notice:", "Step one:", "The trap:"... are rewritten by hand in her spoken style, in
+# place (same line count, cues unchanged). Data and rules: _spoken_labels.py (a video recorded before its CUTOFF keeps
+# its old lines). Runs LAST.
+# =====================================================================================================================
+def _sl_load():
+    import importlib.util, os, sys
+    if '_spoken_labels' in sys.modules: return sys.modules['_spoken_labels']   # one copy: its WARN / CHANGED add up
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_spoken_labels.py')
+    spec = importlib.util.spec_from_file_location('_spoken_labels', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); sys.modules['_spoken_labels'] = m
+    return m
+
+
+_apply_before_spoken_labels = apply
+
+
+def apply(M):
+    _apply_before_spoken_labels(M)
+    _sl_load().spoken_labels(M, 17)   # 2026-10-09 spoken labels: runs LAST

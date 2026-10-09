@@ -1183,7 +1183,7 @@ def cut_repeats(M):
               "Triangle value or cross-multiplying — pick whichever feels natural. The triangle value writes the answer straight away, without isolating x.")
     # inverse examples: add the food supply (was in "Inverse proportion") -> Q3 workers
     _set_say(M, 'solve-q-r26-t22-02', 3, 'The rule: one goes up, the other goes down',
-             "The rule: one goes up, the other goes down — the product stays the same. Workers and days, speed and time, people and the days a food supply lasts.")
+             "So here's the rule. When one goes up, the other goes down — and the product stays the same. Workers and days, speed and time, people and the days a food supply lasts.")   # 2026-10-09: said as speech, no "The rule:" label
 
     # Give It to the Little Guy: title + one short intro slide (Hebrew B43: a technique for building equations)
     vid = 'wp-039'
@@ -2455,3 +2455,26 @@ _apply_before_ai_pilot = apply
 def apply(M):
     _apply_before_ai_pilot(M)
     ai_pilot(M)   # 2026-10-09 AI auto-narrate pilot: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-09 spoken labels -> speech (teacher: "take off words like 'notice:' that seem like I'm reading"): spoken
+# lines that open with "Careful:", "Notice:", "Step one:", "The trap:"... are rewritten by hand in her spoken style, in
+# place (same line count, cues unchanged). Data and rules: _spoken_labels.py (a video recorded before its CUTOFF keeps
+# its old lines). Runs LAST.
+# =====================================================================================================================
+def _sl_load():
+    import importlib.util, os, sys
+    if '_spoken_labels' in sys.modules: return sys.modules['_spoken_labels']   # one copy: its WARN / CHANGED add up
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_spoken_labels.py')
+    spec = importlib.util.spec_from_file_location('_spoken_labels', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); sys.modules['_spoken_labels'] = m
+    return m
+
+
+_apply_before_spoken_labels = apply
+
+
+def apply(M):
+    _apply_before_spoken_labels(M)
+    _sl_load().spoken_labels(M, 22)   # 2026-10-09 spoken labels: runs LAST

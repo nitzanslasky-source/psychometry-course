@@ -25,6 +25,17 @@ s = studio_patch.apply(s)
 import math_api
 MATH = math_api.apply_patches(D)
 print('math patches: %d questions, %d videos touched' % (len(MATH.touched_questions), len(MATH.touched_videos)))
+# 2026-10-09 spoken labels (math_patches/_spoken_labels.py): warn about a spoken line in an UNRECORDED math video that still
+# opens with a reading-style label ("Careful:", "Notice:", "Step one:", "The trap:" ...) - the teacher wants speech there
+if '_spoken_labels' in sys.modules:
+    _SL = sys.modules['_spoken_labels']
+    print('spoken labels: %d lines rewritten in %d videos' % (sum(_SL.CHANGED.values()), len(_SL.CHANGED)))
+    for _w in _SL.WARN: print('WARNING spoken labels:', _w)
+    _left = _SL.check_left(D)
+    if _left:
+        print('WARNING spoken labels: %d spoken line(s) in unrecorded math videos still start with a label - say it as speech '
+              '(add them to math_patches/_spoken_labels.py MAP):' % len(_left))
+        for _w in _left: print('    ' + _w)
 
 # ---------- Topic 50: Writing task (new topic, not in the base) ----------
 if not any(x['id'] == 50 for x in D['topics']):

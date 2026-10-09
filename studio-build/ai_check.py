@@ -11,6 +11,7 @@ D = json.JSONDecoder().raw_decode(s[k:])[0]
 ids = sys.argv[1:] or [os.path.basename(p)[:-5] for p in sorted(glob.glob(os.path.join(HERE, 'ai_scripts', '*.json'))) if not os.path.basename(p).startswith('_')]
 bad = 0
 NOTES = []
+MODEL = json.load(open(os.path.join(HERE, 'ai_scripts', '_voice.json'), encoding='utf-8')).get('model_id')   # tags matter only for eleven_v3 / v4
 for vid in ids:
     p = os.path.join(HERE, 'ai_scripts', vid + '.json')
     if not os.path.exists(p): print('MISSING', vid); bad += 1; continue
@@ -41,26 +42,33 @@ for vid in ids:
                     if ph[1:].lower() not in prev.lower(): probs.append('line %d: "at" phrase %r is not in the previous line' % (k + 1, ph))
                 elif ph is not None and ph.lower() not in (l.get('say') or '').lower():
                     probs.append('line %d: "at" phrase %r is not in the line' % (k + 1, ph))
+    bangs = []      # one '!' per video is allowed, at the real aha moment (teacher 2026-10-09); more reads as over-acting
     for i, sl in enumerate(a):
         for t in sl:
             t = t['say'] if isinstance(t, dict) else t
             # a short interjection ("No!") is fine (teacher 2026-10-09: "Is it adding five? No! It's dividing by two");
-            # an exclamation mark ending a normal sentence is not
-            if '!' in re.sub(r'\b(No|Yes|Exactly|Wow|Careful)!', '', t): probs.append('slide %d has "!": %s' % (i + 1, t[:60]))
+            # an exclamation mark ending a normal sentence: at most one per video (the aha moment)
+            if '!' in re.sub(r'\b(No|Yes|Exactly|Wow|Careful)!', '', t): bangs.append('slide %d: %s' % (i + 1, t[:60]))
             if re.search(r'\bso yeah\b', t, re.I): probs.append('slide %d "So yeah"' % (i + 1))
             if not t.strip(): probs.append('slide %d empty line' % (i + 1))
             sym = re.findall(r'[πα-ωΑ-Ω°%×÷²³√≤≥≠⇒→∠◆]', t)
             if sym: probs.append('slide %d has symbol(s) %s - write them as words: %s' % (i + 1, ''.join(sym), t[:60]))
-    # delivery tags (eleven_v4): teacher 2026-10-09 found [excited] "a bit too exaggerated" - never [excited]; mild tags
-    # ([calmly], [matter-of-fact]) at most 3 per video. Words with US/UK variants the clone may say oddly: use plain words.
+    if len(bangs) > 1: probs.append('%d sentences end with "!" - keep one, at the aha moment: %s' % (len(bangs), ' | '.join(bangs)))
+    # delivery tags (only eleven_v3/v4 read them; voice 6 = multilingual_v2 since 2026-10-09 reads none, ai_narrate drops
+    # them and turns [pause]/[short pause] into <break>): never [excited] (teacher 2026-10-09: "a bit too exaggerated");
+    # on v3/v4 mild tags ([calmly], [matter-of-fact]) at most 3 per video. Words with US/UK variants: use plain words.
     allt = ' '.join(t['say'] if isinstance(t, dict) else t for sl in a for t in sl)
+    # numbers like 360 / 180 are said the teacher's way: "three sixty", "one eighty" (teacher 2026-10-09)
+    if re.search(r'\b(one|two|three) hundred (and )?(twenty|forty|sixty|eighty)\b', allt, re.I): NOTES.append('%s says e.g. "three hundred sixty" (teacher: "three sixty")' % vid)
     tags = re.findall(r'\[([a-z][a-z -]*)\]', allt)
     tags = [x for x in tags if x not in ('pause', 'short pause', 'long pause')]
     if 'excited' in tags: probs.append('[excited] tag - the teacher found it too exaggerated; use wording instead')
-    if len(tags) > 3: probs.append('%d delivery tags %s - at most 3 per video' % (len(tags), tags))
+    if not re.match(r'eleven_v[34]', MODEL or ''):
+        if tags: NOTES.append('%s %s ignored by %s (dropped before sending)' % (vid, tags, MODEL))
+    elif len(tags) > 3: probs.append('%d delivery tags %s - at most 3 per video' % (len(tags), tags))
     risky = re.findall(r'\b(vases?|tomato(?:es)?|routes?|either|neither|schedules?|herbs?|aluminum|aluminium|leisure|garage|privacy|vitamins?|yogurt|controversy|niche|tuna)\b', allt, re.I)
     if risky: NOTES.append('%s %s' % (vid, sorted(set(w.lower() for w in risky))))     # a note, not a failure: swap when the line is next rewritten
     print(('OK   ' if not probs else 'FAIL ') + vid + ('' if not probs else '\n   ' + '\n   '.join(probs)))
     bad += bool(probs)
-if NOTES: print('note - words the voice may say oddly (US/UK variants; plain words are safer): ' + '; '.join(NOTES))
+if NOTES: print('notes (not failures): ' + '; '.join(NOTES))
 sys.exit(1 if bad else 0)
