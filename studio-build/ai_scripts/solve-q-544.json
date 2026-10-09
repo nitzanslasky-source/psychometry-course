@@ -1,0 +1,37 @@
+{
+ "videoId": "solve-q-544",
+ "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number one is our answer', the trap told BEFORE the answer as a warning, closes with a nudge + 'see you in the next question'. One entry per spoken line of the video, same order; ai_narrate.py --continuous. AI auto-narrate PILOT (algebra, 2026-10-09).",
+ "slides": [
+  [
+   "The operation diamond is defined for every number x, so that diamond of 2x is equal to x plus 5. And they're asking, what's diamond of 14?",
+   "Now look closely. The diamond works on 2x, not on x, right? And that's the whole question.",
+   {
+    "say": "So what does that mean? 14 is not x, 14 is 2x. A lot of students put 14 straight into x plus 5, they get 19, and 19 is waiting for them in the choices. That's the trap.",
+    "at": [
+     "they get 19"
+    ]
+   },
+   {
+    "say": "So 2x is equal to 14, and if I divide by 2, x is equal to 7.",
+    "at": [
+     "2x is equal to 14"
+    ]
+   },
+   {
+    "say": "Now the rule says x plus 5, so I put in 7, and 7 plus 5 is equal to 12.",
+    "at": [
+     "<x is equal to 7",
+     "Now the rule",
+     "x plus 5"
+    ]
+   },
+   {
+    "say": "So number one is our answer.",
+    "at": [
+     "number one"
+    ]
+   },
+   "So whenever you see an operation like this, first check what it's working on, and only then use the rule. I'll see you in the next question."
+  ]
+ ]
+}

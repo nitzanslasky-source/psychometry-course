@@ -3196,6 +3196,12 @@ def ai_pointers(M):
         b['lines'][k[0]:k[0]] = [dict(c[1]) for c in cues]
 
     b = slide('The whole circle')
+    # pilot v2 (teacher: "'Here is a sample question' should be taken off", "you didn't read out the question")
+    # (it sits on the 'Question N' title slide here; the build's no_question_numbers moves it to the first slide)
+    k = [(x, i) for x in M.video(vid)['beats'] for i, l in enumerate(x['lines']) if l.get('say') == 'A sample question — medium-plus.']
+    assert len(k) == 1, (vid, 'sample-question line', k)
+    k[0][0]['lines'][k[0][1]] = {'say': 'Read the question aloud: radius root 35, central angles α, β in turn, five of each. '
+                               'One α sector and one β sector are shaded — their total area?'}
     before(b, 'Radius root 35.', PT('fig: shaded', 'the two shaded sectors', at=0.58))
     b = slide('The sum α + β')
     item(b, 1, '$5\\alpha+5\\beta=360°$', '$\\hl{left}{5\\alpha+5\\beta}=360°$')

@@ -1,25 +1,25 @@
 {
  "videoId": "solve-geo33-g091",
- "style": "calm, natural hesitations, like explaining to a friend; one entry per spoken line of the video, same order. AI auto-narrate PILOT (2026-10-09): the video has POINT cues (studio_autonarrate.py), so the lines may say 'here' / 'this side'",
+ "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), talks to one student, reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number two is our answer', closes with a nudge + 'see you in the next question'. One entry per spoken line of the video, same order; generated with ai_narrate.py --continuous (one request, word-timed cues). AI auto-narrate PILOT v2 (2026-10-09).",
  "slides": [
   [
-   "Okay, here's a sample question. It's medium-plus.",
-   "And I'll tell you right away... we'll never find alpha or beta. And we don't need to.",
-   "So, the radius is root 35. The central angles go alpha, beta, alpha, beta... five of each. And one alpha and one beta are shaded. What's their total area?",
-   "Well, the shaded part is part of the circle's area, right? So we need two things. The whole area... and which part of it.",
-   "The area is pi r squared. So root 35, squared... the square cancels the root, and we get 35. So the whole circle is 35 pi."
+   "A circle has a radius of root 35 centimeters, and its central angles go alpha, beta, alpha, beta, five of each, like in the figure. One sector with angle alpha and one sector with angle beta are shaded, and we're asked what's their total area.",
+   "Now, I'll tell you right away, we're never going to find alpha or beta on their own, and we don't need to.",
+   {"say": "Let's look at the shaded part. It's one alpha and one beta, sitting right next to each other, right?", "at": ["shaded part"]},
+   "So what does that mean? The shaded part is just a piece of the circle, so I need two things. The area of the whole circle, and what part of it is shaded.",
+   {"say": "The whole area is pi r squared. r is root 35, and root 35 squared is 35, because the square cancels the root. So the whole circle is equal to 35 pi.", "at": ["pi r squared"]}
   ],
   [
-   "Now, which part? We need alpha and beta, and we don't have any numbers. So what can we say?",
-   "Let's count them. Here are the five alphas... and here are the five betas. All the way around, that's 360.",
-   "Okay, so look at this side. One equation, two unknowns. We can't get alpha or beta on its own... but we can get their sum.",
-   "Just divide by 5. Or take out 5 as a common factor, it's the same thing. Alpha plus beta is 72.",
-   "Could it be 30 and 42? Could be 12 and 60. It doesn't matter."
+   "Now, which part? I need alpha and beta, and they don't give me any numbers at all. So what can I say about them?",
+   {"say": "Let's count them. Here are the five alphas, and here are the five betas, and together they go all the way around the circle. So 5 alpha plus 5 beta is equal to 360.", "at": ["5 alpha plus 5 beta", "five alphas", "five betas"]},
+   {"say": "Now look at this side. I have one equation and two unknowns, so I can't get alpha or beta on its own, right? But I can get their sum.", "at": ["this side"]},
+   {"say": "I just divide both sides by 5, or take out 5 as a common factor, it's the same thing. So alpha plus beta is equal to 72.", "at": ["alpha plus beta is equal"]},
+   "Could they be 30 and 42? Sure. Could they be 12 and 60? Also. It doesn't matter, because I only need their sum."
   ],
   [
-   "So together, the two sectors are 72 out of 360. And that's a fifth of the circle.",
-   "And a fifth of 35 pi... is 7 pi.",
-   "So it's choice two. This one was a bit challenging."
+   {"say": "So together, the two shaded sectors are 72 out of 360 degrees, and 72 over 360 is one fifth of the circle.", "at": [null, "72 out of 360"]},
+   "And one fifth of 35 pi is 7 pi.",
+   {"say": "So number two is our answer. You see, we never found alpha or beta, we only needed their sum, so look for that trick whenever you can't find each one. I'll see you in the next question.", "at": ["number two"]}
   ]
  ]
 }

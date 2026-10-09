@@ -2409,3 +2409,49 @@ _apply_before_coverage_fixes = apply
 def apply(M):
     _apply_before_coverage_fixes(M)
     coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-09 AI auto-narrate pilot (word problem; teacher: "also try one word problem and one algebra"):
+# solve-q-r26-t22-02 is narrated by the AI voice (ai_scripts/solve-q-r26-t22-02.json, studio_autonarrate.py). The AI
+# cannot hand-write, so the two [DRAW: Write ...] lines become click items (APPEAR), with POINT cues where she would
+# point. A video with a take recorded before AI_CUTOFF (UTC) is left exactly as recorded.
+import glob as _glob_ai, re as _re_ai
+AI_CUTOFF = '2026-10-09T07-55-00'
+
+
+def _ai_recorded(vid):
+    pat = _re_ai.compile(_re_ai.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in _glob_ai.glob(_os_cf.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(_os_cf.path.basename(f))
+        if m and m.group(1) < AI_CUTOFF: return True
+    return False
+
+
+def ai_pilot(M):
+    from dsl import A, T, PT, D
+    vid = 'solve-q-r26-t22-02'
+    if _ai_recorded(vid): return
+    t2 = 'Workers × days'     # slide 1 ('More or less?') needs nothing: its only mark is a cross-out
+    s2 = CF.lines_of(M, vid, t2)
+    assert [x if isinstance(x, str) else x[0] for x in s2] == ['Same job. The workers times the days stays the same.', 'D',
+            'Six workers for ten days: sixty worker-days.', 'D', 'Four workers: sixty divided by four. Fifteen days.', 'D',
+            'Choice three.', s2[7], 'A', s2[9]] and s2[1] == D('Write "6 × 10 = 60 worker-days"') \
+        and s2[3] == D('Write "4 × d = 60 → d = 15"') and s2[5] == D('Circle choice 3'), (vid, s2)
+    CF.set_slide(M, vid, t2, [
+        s2[0],
+        A("'6 × 10 = 60 worker-days' appears", T('$6\\times10=\\hl{sixty}{60}$ worker-days', size=40)), s2[2],
+        A("'4 × d = 60 ⇒ d = 60/4 = 15' appears", T('$4\\times d=60\\ \\Rightarrow\\ d=\\frac{60}{4}=15$', size=40)),
+        PT('item 1: sixty', 'the same 60 worker-days', style='both'), s2[4],
+        s2[5], s2[6],
+        PT('choice 1', 'the ratio-table trap: 6⅔'), PT('choice 2', '12: two more days'), s2[7],
+        s2[8], s2[9]])
+    M.touched_videos.add(vid)
+
+
+_apply_before_ai_pilot = apply
+
+
+def apply(M):
+    _apply_before_ai_pilot(M)
+    ai_pilot(M)   # 2026-10-09 AI auto-narrate pilot: runs LAST

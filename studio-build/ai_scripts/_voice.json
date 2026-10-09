@@ -3,5 +3,6 @@
  "model_id": "eleven_multilingual_v2",
  "stability": 0.7,
  "similarity_boost": 0.8,
- "note": "Professional clone 'Nitzan PVC', eleven_multilingual_v2 — teacher picked test B (stability 0.7) on 2026-10-04: 'it sounds correct'."
+ "note": "Professional clone 'Nitzan PVC', eleven_multilingual_v2 — teacher picked test B (stability 0.7) on 2026-10-04: 'it sounds correct'. 2026-10-09: speed 0.92 (teacher: 'the speaking is a bit too fast - just a bit'; ElevenLabs default 1.0, range 0.7-1.2).",
+ "speed": 0.92
 }

@@ -2075,3 +2075,51 @@ _apply_before_coverage_fixes = apply
 def apply(M):
     _apply_before_coverage_fixes(M)
     coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-09 AI auto-narrate pilot (algebra; teacher: "also try one word problem and one algebra"): solve-q-544 is
+# narrated by the AI voice (ai_scripts/solve-q-544.json, studio_autonarrate.py). The AI cannot hand-write, so the two
+# [DRAW: Write ...] lines become click items (APPEAR), with \hl{..}{..} parts and POINT cues where she would point.
+# A video with a take recorded before AI_CUTOFF (UTC) is left exactly as recorded.
+import glob as _glob_ai, re as _re_ai
+AI_CUTOFF = '2026-10-09T07-55-00'
+
+
+def _ai_recorded(vid):
+    pat = _re_ai.compile(_re_ai.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in _glob_ai.glob(_os_cf.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(_os_cf.path.basename(f))
+        if m and m.group(1) < AI_CUTOFF: return True
+    return False
+
+
+def ai_pilot(M):
+    from dsl import A, T, PT, D
+    vid, title = 'solve-q-544', 'Method 1 · Understanding'
+    if _ai_recorded(vid): return
+    sc = CF.lines_of(M, vid, title)
+    # (the first spoken line, 'The operation works on an expression.', sits on the 'Question N' title slide here; the
+    # build's no_question_numbers moves it to the top of this slide, so the stem POINT lands on 'Look closely')
+    want = ['Look closely: the diamond works on two x — not on x.',
+            'So fourteen is not x. Fourteen is two x.', D('Write "2x = 14 → x = 7"'), 'Two x is fourteen, so x is seven.',
+            D('Write "◆(14) = x + 5 = 7 + 5 = 12"'), 'The rule says x plus five. Seven plus five: twelve.',
+            D('Circle choice 1'), 'Choice one.',
+            'Put fourteen straight into x plus five? Nineteen — and that trap is waiting in the choices.']
+    assert sc == want, (vid, sc)
+    CF.set_slide(M, vid, title, [
+        PT('stem', 'the question: ◆(2x)', at=0.0), sc[0],
+        PT('choice 2', 'the trap: 19', style='both'), sc[1],
+        A("'2x = 14 ⇒ x = 7' appears", T('$\\hl{two}{2x}=14\\ \\Rightarrow\\ x=7$', size=44)), sc[3],
+        A("'◆(14) = x + 5 = 7 + 5 = 12' appears", T('$\\blacklozenge(14)=\\hl{rule}{x+5}=7+5=12$', size=44)),
+        PT('item 2: rule', 'the rule: x + 5', style='both'), sc[5],
+        sc[6], sc[7], sc[8]])
+    M.touched_videos.add(vid)
+
+
+_apply_before_ai_pilot = apply
+
+
+def apply(M):
+    _apply_before_ai_pilot(M)
+    ai_pilot(M)   # 2026-10-09 AI auto-narrate pilot: runs LAST

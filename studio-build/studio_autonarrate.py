@@ -18,6 +18,15 @@
    (Course.recordings/_ai_audio/<id>/), firing every cue in order like the teacher: lines -> mp3, APPEAR / NEXT PART -> reveal,
    DRAW marks (circle / cross out / tick / underline a choice, or a draw line with 'mark' + 'target') -> animated pen marks,
    POINT -> highlight / pointer. Any other DRAW (hand-writing) is listed before starting and nothing is recorded.
+   CONTINUOUS mode (manifest "mode": "continuous", from ai_narrate.py --continuous; pilot v2 2026-10-09): ONE audio
+   file for the whole video, played without a break; every cue is fired on the audio clock at the time the alignment
+   gives it (slide change in the pause before the slide's first line, APPEAR just before its line or at its `at`
+   phrase, POINT / marks at their phrase) — the audio never waits for an animation, marks and highlights animate while
+   the voice goes on. Per-line mode (one mp3 per line, fixed gaps) still works for older manifests.
+   Both modes rasterise every slide state BEFORE recording (anPrerender) and measure every POINT / mark target in
+   advance, so a slide change / APPEAR during the take only swaps a ready canvas into the recorder. (Pilot v1: each
+   APPEAR decoded + painted a new SVG image mid-take -> a ~75 ms frozen frame; fixed gaps stacked up at slide changes
+   -> a 2.4 s silence.)
    It records with the normal recorder (CutRecorder; AI audio instead of the mic, no camera, faded preview off) and the
    take is kept / saved like a normal take (same folder, name, chapters -> green "recorded" mark).
 """
@@ -82,7 +91,7 @@ function anResolve(spec,v,bi,svg){const root=anRoot(svg);if(!root)return {err:'t
 
 /* ---- the highlight / pointer layer: painted into the recording (draw loop) and onto the screen (overlay canvas) ---- */
 function anRR(g,x,y,w,h,r){r=Math.min(r,w/2,h/2);g.beginPath();g.moveTo(x+r,y);g.arcTo(x+w,y,x+w,y+h,r);g.arcTo(x+w,y+h,x,y+h,r);g.arcTo(x,y+h,x,y,r);g.arcTo(x,y,x+w,y,r);g.closePath()}
-function anFire(l,v,bi,svg){const r=anResolve(l.point,v,bi,svg);if(r.err){toast('POINT: '+r.err);return 0}
+function anFire(l,v,bi,svg,pre){const r=pre||anResolve(l.point,v,bi,svg);if(r.err){toast('POINT: '+r.err);return 0}
  const style=(l.style||'hl').toLowerCase(),dur=+l.dur||(r.shapes.length>2?1.9:1.5),dot=style==='hl'?null:r.dot;
  const f={t0:performance.now(),dur,shapes:style==='dot'?[]:r.shapes,dot,lead:dot?.45:0};
  if(dot){f.from=AN.dotPos||{x:Math.min(1560,dot.x+120),y:Math.min(880,dot.y+90)};AN.dotPos=dot}
@@ -120,7 +129,7 @@ function anMarkPts(kind,B){const P=[],cx=B.x+B.w/2,cy=B.y+B.h/2;
 const anSleep=ms=>new Promise(r=>setTimeout(r,ms));
 async function anInk(pts,sec){const k=cutInkKey(),list=state.ink[k]||(state.ink[k]=[]),s={color:'#d62d48',width:5,points:[pts[0]]};list.push(s);const t0=performance.now();
  for(;;){const f=Math.min(1,(performance.now()-t0)/(sec*1000));s.points=pts.slice(0,Math.max(1,Math.round(f*pts.length)));pen.sync();if(f>=1)break;await anSleep(16)}}
-async function anMarkDo(mk,v,bi){for(const tg of mk.targets){const r=anResolve(tg,v,bi);if(r.err)throw Error(r.err);await anInk(anMarkPts(mk.kind,r.box),mk.kind==='circle'?.6:.35);await anSleep(150)}}
+async function anMarkDo(mk,v,bi,boxes){for(let i=0;i<mk.targets.length;i++){const box=boxes?.[i]||(()=>{const r=anResolve(mk.targets[i],v,bi);if(r.err)throw Error(r.err);return r.box})();await anInk(anMarkPts(mk.kind,box),mk.kind==='circle'?.6:.35);await anSleep(150)}}
 
 /* ---- the plan: check everything before recording anything ---- */
 function anPlan(v,man){const errs=[],W=[];let say=0;
@@ -153,23 +162,78 @@ function anPlay(R,buf){return new Promise(res=>{const s=R.ac.createBufferSource(
 async function anWait(R,ms){const t=performance.now();while(performance.now()-t<ms&&!R.abort)await anSleep(Math.min(40,ms))}
 async function anSettle(){await prepareSlideImage();AN.measSvg=null}
 function anGap(s){s=String(s).trim();return /\?$/.test(s)?650:/(\.\.\.|…)$/.test(s)?550:/[.!]$/.test(s)?420:320}
+/* every slide state (slide, step) rasterised once BEFORE recording: a slide change / APPEAR during the take only swaps
+   a ready 1920×1080 canvas into the recorder (no SVG decode + first-paint stall in the middle of a take) */
+async function anPrerender(v){const pre=new Map();pre.svg={};
+ for(let bi=0;bi<v.beats.length;bi++)for(let st=0;st<stepCount(v.beats[bi]);st++){const svg=pre.svg[bi+':'+st]=boardSvg(v,bi,st);if(pre.has(svg))continue;
+  const url=URL.createObjectURL(new Blob([svg],{type:'image/svg+xml'})),img=new Image();img.src=url;
+  try{await img.decode()}catch(e){URL.revokeObjectURL(url);throw Error('slide '+(bi+1)+' step '+(st+1)+' could not be drawn')}URL.revokeObjectURL(url);
+  const c=document.createElement('canvas');c.width=1920;c.height=1080;const g=c.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,1920,1080);g.drawImage(img,0,0,1920,1080);pre.set(svg,c)}
+ return pre}
+/* continuous AI audio: every cue gets a time on the audio clock (seconds from the start of audio.mp3), from the word
+   alignment in the manifest. A cue belongs to the NEXT spoken line; the AI line's `at` phrase times it, else:
+   APPEAR just before the line starts, a mark at its start, POINT at fraction `at` of the line. Slide changes sit in the
+   pause before the slide's first line. All geometry is measured now, not during the take. */
+function anTimeline(v,man){const L=man.lines,ev=[];let li=0;
+ v.beats.forEach((b,bi)=>{const ls=hyLines(v,bi),slideT=bi?(()=>{const pe=L[li-1]?.end??0,ns=L[li]?.slide===bi?L[li].start:pe+.5;return Math.max(pe+.05,Math.min(ns-.3,(pe+ns)/2))})():0;
+  if(bi)ev.push({t:slideT,k:'slide',bi});const mine=[];let pend=[],lastEnd=slideT,lastAp=slideT;
+  const place=(m)=>{pend.forEach((c,k)=>{let t=m?(m.at?.[k]??null):null;
+    if(t==null)t=!m?lastEnd+.15+.35*k:c.l.appear!=null?m.start-.12:c.l.point!=null?m.start+Math.max(0,Math.min(.95,+c.l.at||0))*(m.end-m.start):m.start+.05;
+    c.t=Math.max(slideT+.05,t);if(c.k==='appear'){c.t=Math.max(c.t,lastAp+.05);lastAp=c.t}mine.push(c)});pend=[]};
+  for(const l of ls){if(l.say!=null){const m=L[li++];if(!m)break;place(m);mine.push({t:m.start,k:'say',n:li,l});lastEnd=m.end}
+   else if(l.appear!=null)pend.push({k:'appear',l});else if(l.draw!=null)pend.push({k:'mark',l});else if(l.point!=null)pend.push({k:'point',l})}
+  place(null);
+  /* in time order: the board step at each moment, then measure what the cue points at / marks on that board */
+  mine.sort((x,y)=>x.t-y.t);let step=0;
+  for(const c of mine){c.bi=bi;if(c.k==='appear'){c.step=++step}else if(c.k==='point'){c.pre=anResolve(c.l.point,v,bi,boardSvg(v,bi,step));if(c.pre.err)throw Error('slide '+(bi+1)+': POINT '+c.l.point+' — '+c.pre.err)}
+   else if(c.k==='mark'){c.mk=anMarkOf(c.l);c.boxes=c.mk.targets.map(tg=>{const r=anResolve(tg,v,bi,boardSvg(v,bi,step));if(r.err)throw Error('slide '+(bi+1)+': '+c.l.draw+' — '+r.err);return r.box})}}
+  ev.push(...mine)});
+ ev.sort((x,y)=>x.t-y.t);return ev}
+/* during a continuous take the screen shows the same ready canvas over the board (a cheap copy) instead of re-building
+   the board / script DOM (updateSlide), whose main-thread work held recorded frames for ~0.1 s; updateSlide runs once at
+   the end */
+function anScreen(c){const bd=document.getElementById('board');if(!bd)return;let s=document.getElementById('an-screen');
+ if(!s||s.parentElement!==bd){s?.remove();s=document.createElement('canvas');s.id='an-screen';s.setAttribute('aria-hidden','true');s.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:5';bd.append(s)}
+ const r=bd.getBoundingClientRect(),dpr=window.devicePixelRatio||1,W=Math.round(r.width*dpr),H=Math.round(r.height*dpr);if(s.width!==W||s.height!==H){s.width=W;s.height=H}
+ const k=Math.min(r.width/1600,r.height/900)*dpr,g=s.getContext('2d');g.fillStyle=getComputedStyle(bd).backgroundColor||'#fff';g.fillRect(0,0,W,H);
+ g.drawImage(c,(W-1600*k)/2,(H-900*k)/2,1600*k,900*k)}
+function anShow(R,bi,step){state.beat=bi;state.step=step;
+ const v=R.v,svg=R.pre?.svg?.[bi+':'+step]??boardSvg(v,bi,step),c=R.pre?.get(svg);   /* board SVG text made before the take too (its TeX layout is not free) */
+ if(c){currentSvg=svg;++slideToken;slideImage=c;anScreen(c);pen.sync()}else{updateSlide();pen.sync()}}
+async function anRunContinuous(R,v,man,buf,lg){
+ const ev=R.ev,lead=.9,s=R.ac.createBufferSource();s.buffer=buf;s.connect(R.dest);s.connect(R.ac.destination);R.src=s;
+ let ended=false;s.onended=()=>{ended=true};const t0=R.ac.currentTime+lead;s.start(t0);lg('audio start (lead '+lead+' s)');
+ const marks=[];let i=0;const last=Math.max(buf.duration,...ev.map(e=>e.t+(e.k==='mark'?1.2:0)));
+ while(!R.abort){const now=R.ac.currentTime-t0;
+  while(i<ev.length&&ev[i].t<=now){const e=ev[i++];
+   if(e.k==='say'){anStatus('🤖 Auto-narrating · slide '+(e.bi+1)+'/'+v.beats.length+' · line '+e.n+'/'+man.lines.length);lg('say '+e.n)}
+   else if(e.k==='slide'){anShow(R,e.bi,0);lg('slide '+(e.bi+1))}
+   else if(e.k==='appear'){anShow(R,e.bi,e.step);lg('appear '+e.l.appear+(e.l.part!=null?' part '+e.l.part:''))}
+   else if(e.k==='point'){anFire(e.l,v,e.bi,null,e.pre);lg('point '+e.l.point)}
+   else if(e.k==='mark'){lg('mark '+e.l.draw);marks.push(anMarkDo(e.mk,v,e.bi,e.boxes))}}
+  if(now>=last&&(ended||now>buf.duration+.5))break;await anSleep(8)}
+ await Promise.all(marks);lg('audio end');if(!R.abort)await anWait(R,1100)}
 async function anStart(){const v=video();if(!STUDIO||!v||record||window.AN_RUN)return;
  const ac=new (window.AudioContext||window.webkitAudioContext)({sampleRate:48000});ac.resume?.();
  let audio,bufs=[];try{audio=await anLoadAudio(v.id)}catch(e){ac.close();return dialog('🤖 Auto-narrate',`<p>${esc(e.message||e)}</p>`)}
+ const cont=audio.manifest.mode==='continuous';
  const plan=anPlan(v,audio.manifest);
  if(plan.errs.length){ac.close();return dialog('🤖 Auto-narrate cannot record this video yet',`<p>Nothing was recorded. Fix these first (the AI cannot hand-write):</p><ul>${plan.errs.map(x=>'<li style="margin:6px 0">'+esc(x)+'</li>').join('')}</ul>`)}
  anStatus('🤖 Loading the AI voice…');
- try{for(const x of audio.manifest.lines)bufs.push(await ac.decodeAudioData(await audio.get(x.file)))}catch(e){anStatus();ac.close();return dialog('🤖 Auto-narrate',`<p>Could not read the AI audio: ${esc(e.message||e)}</p>`)}
+ let ev=null,pre=null;
+ try{if(cont)bufs=[await ac.decodeAudioData(await audio.get(audio.manifest.file))];else for(const x of audio.manifest.lines)bufs.push(await ac.decodeAudioData(await audio.get(x.file)))}catch(e){anStatus();ac.close();return dialog('🤖 Auto-narrate',`<p>Could not read the AI audio: ${esc(e.message||e)}</p>`)}
+ try{anStatus('🤖 Preparing the slides…');pre=await anPrerender(v);if(cont)ev=anTimeline(v,audio.manifest)}catch(e){anStatus();ac.close();return dialog('🤖 Auto-narrate',`<p>${esc(e.message||e)}</p>`)}
  const dest=ac.createMediaStreamDestination();dest.channelCount=1;
  /* keep the audio graph running between lines: the take's sound must be continuous (silence too), or the recorder closes the gaps */
  const hum=ac.createConstantSource();hum.offset.value=0;hum.connect(dest);hum.start();
- const R=window.AN_RUN={ac,dest,stream:dest.stream,abort:null,src:null,v};
- const pre='hy-'+v.id+':',inkBak={};for(const k of Object.keys(state.ink||{}))if(k.startsWith(pre)){inkBak[k]=state.ink[k];delete state.ink[k]}
+ const R=window.AN_RUN={ac,dest,stream:dest.stream,abort:null,src:null,v,pre,ev};
+ const pre0='hy-'+v.id+':',inkBak={};for(const k of Object.keys(state.ink||{}))if(k.startsWith(pre0)){inkBak[k]=state.ink[k];delete state.ink[k]}
  if(camStream)camOff();AN.fx=[];AN.dotPos=null;state.beat=0;state.step=0;updateSlide();pen.sync();await anSettle();
  window.__aiRecOk=true;try{await startRecording()}finally{window.__aiRecOk=false}
  if(!record){window.AN_RUN=null;anStatus();Object.assign(state.ink,inkBak);ac.close();return toast('Auto-narrate: the recording did not start.')}
- let li=0,err=null;const total=bufs.length,LOG=window.AN_LAST_LOG=[],lg=ev=>LOG.push([+recClock().toFixed(2),ev]);
- try{for(let bi=0;bi<v.beats.length&&!R.abort;bi++){
+ let li=0,err=null;const total=cont?audio.manifest.lines.length:bufs.length,LOG=window.AN_LAST_LOG=[],lg=ev=>LOG.push([+recClock().toFixed(2),ev]);
+ try{if(cont){lg('slide 1');await anRunContinuous(R,v,audio.manifest,bufs[0],lg)}
+  else{for(let bi=0;bi<v.beats.length&&!R.abort;bi++){
    if(bi){state.beat=bi;state.step=0;updateSlide();pen.sync();await anSettle()}lg('slide '+(bi+1));await anWait(R,bi?450:900);
    let step=0,pend=[];const ls=hyLines(v,bi);
    const firePend=async()=>{let w=0;for(const p of pend){lg('point '+p.point);w=Math.max(w,anFire(p,v,bi))}pend=[];if(w)await anWait(R,w*1000)};
@@ -181,10 +245,10 @@ async function anStart(){const v=video();if(!STUDIO||!v||record||window.AN_RUN)r
     else if(l.draw!=null){await firePend();await anWait(R,150);lg('mark '+l.draw);await anMarkDo(anMarkOf(l),v,bi);await anWait(R,350)}
     else if(l.point!=null){pend.push(l);if(!ls.slice(i+1).some(x=>x.say!=null))await firePend()}}
    await firePend();await anWait(R,650)}
-  if(!R.abort)await anWait(R,1000)}
+  if(!R.abort)await anWait(R,1000)}}
  catch(e){err=e;console.error('auto-narrate',e)}
- const why=R.abort;anStatus();try{R.src?.stop()}catch{}stopRecording();
- setTimeout(()=>{for(const k of Object.keys(state.ink))if(k.startsWith(pre))delete state.ink[k];Object.assign(state.ink,inkBak);save();pen.sync();AN.fx=[];window.AN_RUN=null;ac.close().catch(()=>{})},300);
+ const why=R.abort;anStatus();try{R.src?.stop()}catch{}stopRecording();document.getElementById('an-screen')?.remove();if(cont){updateSlide();pen.sync()}
+ setTimeout(()=>{for(const k of Object.keys(state.ink))if(k.startsWith(pre0))delete state.ink[k];Object.assign(state.ink,inkBak);save();pen.sync();AN.fx=[];window.AN_RUN=null;ac.close().catch(()=>{})},300);
  if(err)toast('Auto-narrate stopped: '+(err.message||err)+' — the take so far is offered to keep or discard.');else if(why)toast('Auto-narrate '+why+'. Keep or discard the take.');
  else toast('🤖 Done. Watch the take, then Keep to save it like a normal recording.')}
 window.anStart=anStart;window.AN_DIAG={hlTex,anResolve:(spec,bi,step)=>{const v=video();return anResolve(spec,v,bi,boardSvg(v,bi,step))},anPlan:id=>anPlan(D.videos[id],null),anMarkOf};
@@ -208,6 +272,9 @@ REPL = [
     ("if(useMic)input=await getMic();", "if(window.AN_RUN)input=window.AN_RUN.stream;else if(useMic)input=await getMic();"),
     # faded preview off while auto-narrating (screen = recording)
     ("function ghostOn(){try{", "function ghostOn(){if(window.AN_RUN)return false;try{"),
+    # auto-narrate: a slide state rasterised before the take is swapped in at once (no decode / first-paint stall)
+    ("async function prepareSlideImage(){return new Promise(resolve=>{",
+     "async function prepareSlideImage(){const anPre=window.AN_RUN?.pre?.get(currentSvg);if(anPre){++slideToken;slideImage=anPre;return anPre}return new Promise(resolve=>{"),
     # POINT lines in the script views and the script editor
     ("const hyLineText=l=>l.say!=null?l.say:", "const hyLineText=l=>l.say!=null?l.say:l.point!=null?anPointText(l):"),
     (":l.draw!=null?`<div class=\"hy-cue hy-draw\">", ":l.point!=null?anPointCue(l):l.draw!=null?`<div class=\"hy-cue hy-draw\">"),

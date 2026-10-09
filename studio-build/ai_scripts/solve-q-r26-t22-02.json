@@ -1,0 +1,53 @@
+{
+ "videoId": "solve-q-r26-t22-02",
+ "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number three is our answer', closes with the rule + 'see you in the next question'. One entry per spoken line of the video, same order; ai_narrate.py --continuous. AI auto-narrate PILOT (word problem, 2026-10-09).",
+ "slides": [
+  [
+   "Six workers paint a hall in 10 days, and all the workers work at the same rate. How many days would 4 workers need to paint the same hall?",
+   "Now careful, this is not a normal ratio table, right? Workers and days don't go up together.",
+   "So before I calculate anything, will it take more days or fewer? Fewer workers, so the job takes longer. So it has to be more than 10 days.",
+   {
+    "say": "So what can I cross out? 6 and two thirds and 8 are both less than 10, so number one and number four are out.",
+    "at": [
+     "6 and two thirds"
+    ]
+   }
+  ],
+  [
+   "Now it's the same job, so the number of workers times the number of days stays the same.",
+   {
+    "say": "6 workers for 10 days, that's 6 times 10, which is equal to 60 worker-days.",
+    "at": [
+     "6 times 10"
+    ]
+   },
+   {
+    "say": "And with 4 workers, 4 times d has to be 60 too, right? So d is equal to 60 over 4, which is 15 days.",
+    "at": [
+     "4 times d",
+     "60 too"
+    ]
+   },
+   {
+    "say": "So number three is our answer.",
+    "at": [
+     "<d is equal to 60 over 4",
+     "number three"
+    ]
+   },
+   {
+    "say": "And where do the other choices come from? 6 and two thirds is what you get from a normal ratio table, and 12 just adds 2 days for the 2 missing workers. Neither one makes sense.",
+    "at": [
+     "6 and two thirds",
+     "12 just adds"
+    ]
+   },
+   {
+    "say": "So here's the rule. When one goes up and the other goes down, the product stays the same, like workers and days, or speed and time. I'll see you in the next question.",
+    "at": [
+     "here's the rule"
+    ]
+   }
+  ]
+ ]
+}
