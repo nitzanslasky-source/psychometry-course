@@ -4,6 +4,8 @@
     python3 studio-build/ai_narrate.py vr50-a-score --preview       # ... and write one listening file to ~/Downloads
     python3 studio-build/ai_narrate.py solve-geo33-g091 --continuous          # the WHOLE video in ONE request
     python3 studio-build/ai_narrate.py solve-geo33-g091 --continuous --remap  # re-time from the saved alignment (no credits)
+    python3 studio-build/ai_narrate.py solve-q-544 --segmented               # line by line, per-line voice preset, joined
+    python3 studio-build/ai_narrate.py solve-q-544 --remap                   # (a segmented video re-times as segmented)
 
 ai_scripts/<videoId>.json = {"slides": [[line, line, ...], ...]} — one entry per spoken line of the video, in order
 (the studio's auto-narrate plays line i where the video has spoken line i). A line is a string, or
@@ -22,7 +24,11 @@ Audio goes to ~/Documents/Course.recordings/_ai_audio/<videoId>/ + manifest.json
                line becomes a <break>, other tags are dropped. Audio tags in a
                line ([excited], ...) are sent only to eleven_v3 / eleven_v4 and dropped for older models. Re-generated only
                when the text or the voice changes; --remap recomputes the timing from alignment.json for free.
-Needs ELEVENLABS_API_KEY in ~/psychometry-course/.env.local.
+  segmented:   (teacher 2026-10-09, "mix 3") one request per line / per part of a line between [pause] tags, each in
+               its line's voice preset ({"voice": "calm"}; presets in _voice.json), previous/next text as context; silence
+               trimmed, loudness evened, joined with set gaps into the same audio.mp3 + alignment.json + manifest as
+               continuous mode (+ "gen": "segmented"). Unchanged parts are reused from seg/ (no credits).
+Needs ELEVENLABS_API_KEY in ~/psychometry-course/.env.local; segmented mode needs ffmpeg + numpy.
 """
 import base64, difflib, hashlib, json, os, re, subprocess, sys, urllib.request
 
@@ -56,9 +62,12 @@ def tts(k, voice, text, prev, nxt):
     return urllib.request.urlopen(req, timeout=180).read()
 
 
-def tts_timestamps(k, voice, text):
+def tts_timestamps(k, voice, text, prev='', nxt=''):
+    body = _body(voice, text)
+    if prev: body['previous_text'] = prev
+    if nxt: body['next_text'] = nxt
     req = urllib.request.Request('https://api.elevenlabs.io/v1/text-to-speech/%s/with-timestamps?output_format=mp3_44100_128' % voice['voice_id'],
-                                 data=json.dumps(_body(voice, text)).encode(), headers={'xi-api-key': k, 'Content-Type': 'application/json'})
+                                 data=json.dumps(body).encode(), headers={'xi-api-key': k, 'Content-Type': 'application/json'})
     return json.loads(urllib.request.urlopen(req, timeout=300).read())
 
 
@@ -78,6 +87,18 @@ def load(vid):
     voice = spec.get('voice') or json.load(open(os.path.join(HERE, 'ai_scripts', '_voice.json'), encoding='utf-8'))
     voice = {k: voice[k] for k in ('voice_id', 'model_id', 'stability', 'similarity_boost', 'speed', 'style', 'use_speaker_boost') if k in voice}
     return spec, voice
+
+
+VKEYS = ('voice_id', 'model_id', 'stability', 'similarity_boost', 'speed', 'style', 'use_speaker_boost')
+
+
+def presets():
+    """named voice presets from ai_scripts/_voice.json {"presets": {"base": {...}, "calm": {...}}, "default": "base"}:
+    each preset = the top-level voice with its own settings on top. -> ({name: voice}, default name)"""
+    v = json.load(open(os.path.join(HERE, 'ai_scripts', '_voice.json'), encoding='utf-8'))
+    top = {k: v[k] for k in VKEYS if k in v}
+    ps = {n: dict(top, **{k: p[k] for k in VKEYS if k in p}) for n, p in (v.get('presets') or {'base': {}}).items()}
+    return ps, v.get('default') or next(iter(ps))
 
 
 # ---------------------------------------------------------------- continuous mode
@@ -159,13 +180,14 @@ def _at(ct, a, b, pick='start'):
     return None
 
 
-def remap(vid, spec, d, voice, h):
-    text, spans = full_text(spec, voice.get('model_id'))
+def remap(vid, spec, d, voice, h, seg=None):
+    """seg (segmented mode) = (text, spans, per-line text as placed in `text`, extra manifest fields)"""
+    text, spans = (seg[0], seg[1]) if seg else full_text(spec, voice.get('model_id'))
     al = json.load(open(os.path.join(d, 'alignment.json')))
     ct = char_times(text, al)
     lines, flat, tts_l = [], [l for sl in spec['slides'] for l in sl], []
     for (si, a, b), l in zip(spans, flat):
-        t = spoken(line_text(l), voice.get('model_id')); tt = tts_form(line_text(l), voice.get('model_id')); tts_l.append(tt)   # tt = as sent
+        t = spoken(line_text(l), voice.get('model_id')); tt = seg[2][len(lines)] if seg else tts_form(line_text(l), voice.get('model_id')); tts_l.append(tt)   # tt = as sent
         s0, e0 = _at(ct, a, b, 'start'), _at(ct, a, b, 'end')
         if s0 is None or e0 is None: sys.exit('alignment: no times for line %r' % t[:60])
         ats = []
@@ -181,9 +203,10 @@ def remap(vid, spec, d, voice, h):
         lines.append({'text': t, 'slide': si, 'start': round(s0, 3), 'end': round(e0, 3), 'at': ats})
     secs = duration(os.path.join(d, 'audio.mp3')) or (lines[-1]['end'] + 0.3)
     man = {'videoId': vid, 'mode': 'continuous', 'voice': voice, 'hash': h, 'file': 'audio.mp3', 'seconds': round(secs, 2), 'lines': lines}
+    if seg: man.update(seg[3])
     json.dump(man, open(os.path.join(d, 'manifest.json'), 'w'), indent=1, ensure_ascii=False)
     gaps = [round(y['start'] - x['end'], 2) for x, y in zip(lines, lines[1:])]
-    print('%s: %d lines, %.1f s of audio (continuous); gaps between lines: %s' % (vid, len(lines), secs, gaps))
+    print('%s: %d lines, %.1f s of audio (%s); gaps between lines: %s' % (vid, len(lines), secs, 'segmented' if seg else 'continuous', gaps))
     return man
 
 
@@ -215,6 +238,119 @@ def continuous(vid, spec, voice):
     return remap(vid, spec, d, voice, h)
 
 
+# ---------------------------------------------------------------- segmented mode
+# Teacher 2026-10-09 ("mix 3"): every line (and every part of a line between [pause] / [short pause] tags) is its own
+# request in its own voice preset - a line {"say": ..., "voice": "calm"} uses preset "calm" (the question reading, plain
+# calculation lines), else the default preset; "voice": ["calm", "base"] = one preset per part of the line. Each part: silence trimmed, loudness evened out, then joined with set gaps
+# into ONE audio.mp3 + ONE alignment.json (times shifted) -> manifest exactly like continuous mode, so the studio's
+# auto-narrate and the `at` cues work unchanged.
+GAP_LINE, GAP_QUESTION, GAP_SLIDE = 0.42, 0.5, 0.75          # after a line / a line ending in "?" / before a new slide
+GAP_TAG = {'short pause': 0.6, 'pause': 0.9, 'long pause': 1.4}
+SPLIT = re.compile(r'\s*\[(short pause|pause|long pause)\]\s*')
+FFMPEG = os.environ.get('FFMPEG') or next((p for p in (subprocess.run(['which', 'ffmpeg'], capture_output=True, text=True).stdout.strip(),
+         os.path.expanduser('~/Library/Application Support/Cisdem VideoPaw/ffmpeg')) if p and os.path.exists(p)), None)
+SR = 44100
+
+
+def seg_plan(spec, ps, default):
+    """-> segments [{text, line, voice, gap}], the joined plain text, line spans in it, per-line text"""
+    flat = [(si, l) for si, sl in enumerate(spec['slides']) for l in sl]
+    segs, forms = [], []
+    for i, (si, l) in enumerate(flat):
+        pv = (l.get('voice') if isinstance(l, dict) else None) or default      # a preset, or a list: one per part
+        parts = SPLIT.split(line_text(l).strip())          # text, tag, text, tag, ...
+        if not parts[0].strip() and len(parts) > 1:        # a line that STARTS with [pause]: a longer gap before it
+            if segs: segs[-1]['gap'] = max(segs[-1]['gap'], GAP_TAG[parts[1]])
+            parts = parts[2:]
+        pvs = pv if isinstance(pv, list) else [pv] * len(parts[0::2])
+        if len(pvs) != len(parts[0::2]): sys.exit('line %d: %d voices for %d parts (parts are split at [pause] tags)' % (i + 1, len(pvs), len(parts[0::2])))
+        for x in pvs:
+            if x not in ps: sys.exit('line %d: unknown voice preset %r (have %s)' % (i + 1, x, list(ps)))
+        texts = [say_as(spoken(x, ps[q]['model_id']), ps[q]['model_id']) for x, q in zip(parts[0::2], pvs)]
+        tags = parts[1::2] + [None]
+        keep = [(t, g, q) for t, g, q in zip(texts, tags, pvs) if t]
+        for j, (t, g, pv) in enumerate(keep):
+            last = j == len(keep) - 1
+            if not last: gap = GAP_TAG[g or 'short pause']
+            elif i == len(flat) - 1: gap = 0
+            elif flat[i + 1][0] != si: gap = GAP_SLIDE
+            elif isinstance(l, dict) and l.get('pause'): gap = max(GAP_SLIDE, l['pause'] + 0.3)
+            else: gap = GAP_QUESTION if t.endswith('?') else GAP_LINE
+            if last and g: gap = max(gap, GAP_TAG[g])       # a line ending in [pause]
+            segs.append({'text': t, 'line': i, 'voice': pv, 'gap': gap})
+        forms.append(' '.join(t for t, _, _ in keep))
+    text, spans, pos = '', [], 0
+    for (si, l), f in zip(flat, forms):
+        if text: text += ' '
+        spans.append((si, len(text), len(text) + len(f))); text += f
+    return segs, text, spans, forms
+
+
+def _pcm(path):
+    import numpy as np
+    raw = subprocess.run([FFMPEG, '-hide_banner', '-loglevel', 'error', '-i', path, '-f', 's16le', '-ac', '1', '-ar', str(SR), '-'],
+                         capture_output=True, check=True).stdout
+    return np.frombuffer(raw, dtype='<i2').astype('float32') / 32768
+
+
+def segmented(vid, spec):
+    import numpy as np
+    if not FFMPEG: sys.exit('segmented mode needs ffmpeg (set FFMPEG=/path/to/ffmpeg)')
+    ps, default = presets()
+    segs, text, spans, forms = seg_plan(spec, ps, default)
+    d = os.path.join(OUT, vid); os.makedirs(d, exist_ok=True)
+    h = hashlib.sha1(json.dumps([[(x['text'], ps[x['voice']], x['gap']) for x in segs], 'segmented-1'], sort_keys=True).encode()).hexdigest()[:16]
+    extra = {'gen': 'segmented', 'presets': ps, 'lineVoices': [], 'segments': []}
+    for x in segs:
+        while len(extra['lineVoices']) <= x['line']: extra['lineVoices'].append([])
+        extra['lineVoices'][x['line']].append(x['voice'])
+    if '--remap' in sys.argv:
+        a_hash = json.load(open(os.path.join(d, 'alignment.json'))).get('_hash')
+        if a_hash != h: sys.exit('the spoken text / voices changed since the audio was made - generate again (without --remap)')
+        extra['segments'] = json.load(open(os.path.join(d, 'manifest.json'))).get('segments', [])
+        return remap(vid, spec, d, ps[default], h, (text, spans, forms, extra))
+    sd = os.path.join(d, 'seg'); os.makedirs(sd, exist_ok=True)
+    plain = [x['text'] for x in segs]; k = None; chars = 0
+    out, chs, cst, cen, t = [], [], [], [], 0.0
+    for n, x in enumerate(segs):
+        v = ps[x['voice']]
+        sh = hashlib.sha1(json.dumps([x['text'], v], sort_keys=True).encode()).hexdigest()[:12]
+        mp, ap = os.path.join(sd, '%s.mp3' % sh), os.path.join(sd, '%s.json' % sh)
+        if not (os.path.exists(mp) and os.path.exists(ap)):
+            k = k or key()
+            r = tts_timestamps(k, v, x['text'], ' '.join(plain[:n])[-500:], ' '.join(plain[n + 1:])[:300])
+            open(mp, 'wb').write(base64.b64decode(r['audio_base64'])); json.dump(r['alignment'], open(ap, 'w'), ensure_ascii=False)
+            chars += len(x['text']); print('  generated part %d/%d [%s] (%d chars)' % (n + 1, len(segs), x['voice'], len(x['text'])))
+        al = json.load(open(ap)); y = _pcm(mp)
+        # trim silence: 10 ms frames above -45 dBFS, keep 40 ms before / 80 ms after
+        fr = 441; e = np.sqrt(np.add.reduceat(y * y, np.arange(0, len(y), fr)) / fr) if len(y) else np.zeros(1)
+        on = np.where(e > 10 ** (-45 / 20))[0]
+        a0 = max(0, on[0] * fr - int(.04 * SR)) if len(on) else 0
+        a1 = min(len(y), (on[-1] + 1) * fr + int(.08 * SR)) if len(on) else len(y)
+        y = y[a0:a1]
+        # loudness: RMS of the voiced frames -> -20 dBFS, peaks kept under -1 dBFS
+        v_on = e[e > 10 ** (-45 / 20)]; rms = float(np.sqrt(np.mean(v_on ** 2))) if len(v_on) else 0.1
+        g = min(10 ** (-20 / 20) / max(rms, 1e-4), 0.89 / max(float(np.abs(y).max()) if len(y) else 1, 1e-4))
+        y = y * g; off = t - a0 / SR; t1 = t + len(y) / SR
+        if chs: chs.append(' '); cst.append(cen[-1]); cen.append(t)          # the join = one space in the text
+        for c, s0, s1 in zip(al['characters'], al['character_start_times_seconds'], al['character_end_times_seconds']):
+            # times inside the trimmed part (the last character's end time often reaches into the trimmed tail)
+            chs.append(c); cst.append(round(min(t1, max(t, s0 + off)), 3)); cen.append(round(min(t1, max(t, s1 + off)), 3))
+        extra['segments'].append({'line': x['line'] + 1, 'voice': x['voice'], 'start': round(t, 3), 'end': round(t + len(y) / SR, 3),
+                                  'gain_db': round(20 * np.log10(g), 1), 'text': x['text']})
+        out.append(y); t += len(y) / SR
+        if x['gap']: out.append(np.zeros(int(x['gap'] * SR), dtype='float32')); t += x['gap']
+    pcm = (np.clip(np.concatenate(out), -1, 1) * 32767).astype('<i2').tobytes()
+    subprocess.run([FFMPEG, '-hide_banner', '-loglevel', 'error', '-y', '-f', 's16le', '-ar', str(SR), '-ac', '1', '-i', '-',
+                    '-c:a', 'libmp3lame', '-b:a', '128k', os.path.join(d, 'audio.mp3')], input=pcm, check=True)
+    json.dump({'_hash': h, 'text': text, 'characters': chs, 'character_start_times_seconds': cst, 'character_end_times_seconds': cen},
+              open(os.path.join(d, 'alignment.json'), 'w'), ensure_ascii=False)
+    for f in os.listdir(d):
+        if re.match(r'line-\d{3}\.mp3$', f): os.remove(os.path.join(d, f))
+    print('  %d parts, %d characters generated now' % (len(segs), chars))
+    return remap(vid, spec, d, ps[default], h, (text, spans, forms, extra))
+
+
 # ---------------------------------------------------------------- per-line mode
 def per_line(vid, spec, voice):
     lines = [tts_form(line_text(l), voice['model_id']) for s in spec['slides'] for l in s]
@@ -237,11 +373,22 @@ def per_line(vid, spec, voice):
     return d, man
 
 
+def _gen(vid):
+    p = os.path.join(OUT, vid, 'manifest.json')
+    return json.load(open(p)).get('gen') if os.path.exists(p) else None
+
+
 def main():
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
     if not args: sys.exit(__doc__)
     vid = args[0]
     spec, voice = load(vid)
+    if '--segmented' in sys.argv or ('--remap' in sys.argv and _gen(vid) == 'segmented'):
+        segmented(vid, spec)
+        if '--preview' in sys.argv:
+            dst = os.path.expanduser('~/Downloads/%s-ai-preview.mp3' % vid)
+            subprocess.run(['cp', os.path.join(OUT, vid, 'audio.mp3'), dst], check=True); print('preview:', dst)
+        return
     if '--continuous' in sys.argv or '--remap' in sys.argv:
         continuous(vid, spec, voice)
         if '--preview' in sys.argv:

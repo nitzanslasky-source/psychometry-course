@@ -1,10 +1,28 @@
 {
  "voice_id": "ytnrV8H54RUw5J2TmNG0",
  "model_id": "eleven_multilingual_v2",
- "stability": 0.7,
+ "stability": 0.5,
  "similarity_boost": 0.8,
- "style": 0.15,
+ "style": 0.45,
  "use_speaker_boost": false,
  "speed": 0.92,
- "note": "2026-10-09 teacher picked test file 6 over v4 (v4 too high/lively): Professional clone 'Nitzan PVC', eleven_multilingual_v2, stability 0.7, similarity 0.8, style 0.15, speaker boost off, speed 0.92. v2 reads no audio tags: ai_narrate.py turns [pause]/[short pause] into <break> and drops other tags; the calm ending comes from the wording ('Okay. I'll see you in the next question.') after a [pause]. 'pi' is sent as written for v2. Earlier: Professional clone 'Nitzan PVC'. 2026-10-04: multilingual_v2 stability 0.7 (test B). 2026-10-09: speed 0.92 ('a bit too fast - just a bit'). 2026-10-09 voice test A-D: teacher chose D = eleven_v4 (stability 0.5, similarity 0.8, speed 0.92): 'D was pretty good, but the excitement points were just a bit too exaggerated'. So: model eleven_v4, NO [excited] tags (emphasis through wording/punctuation only), stability nudged 0.5 -> 0.55 (ElevenLabs: higher = steadier, less emotional variation) to tone down over-acting while keeping v4's natural delivery. Pauses on v4 = [short pause]/[pause] tags (ai_narrate.py); 'pi' is sent to the TTS as 'pie'."
+ "default": "base",
+ "presets": {
+  "base": {
+   "stability": 0.5,
+   "style": 0.45,
+   "use_speaker_boost": false,
+   "similarity_boost": 0.8,
+   "speed": 0.92
+  },
+  "calm": {
+   "stability": 0.6,
+   "style": 0.3,
+   "use_speaker_boost": false,
+   "similarity_boost": 0.8,
+   "speed": 0.92
+  }
+ },
+ "mode": "segmented",
+ "note": "Teacher 2026-10-09, mix 3 (audio test 'Voice test - mix', file 3): PVC 'Nitzan PVC', eleven_multilingual_v2, made SEGMENTED (ai_narrate.py --segmented: one request per line / part of a line, previous/next text as context, silence trimmed, loudness evened, joined with 0.4-0.9 s gaps). BASE voice '3' = stability 0.5, style 0.45, speaker boost off, similarity 0.8, speed 0.92 (default). CALM voice '2' = stability 0.6, style 0.3 (rest the same) - a script line with \"voice\": \"calm\": the question reading and the plain calculation lines. Top-level settings = the base preset (used by --continuous / per-line mode). Earlier: 2026-10-09 teacher picked test file 6 over v4 (v4 too high/lively): Professional clone 'Nitzan PVC', eleven_multilingual_v2, stability 0.7, similarity 0.8, style 0.15, speaker boost off, speed 0.92. v2 reads no audio tags: ai_narrate.py turns [pause]/[short pause] into <break> and drops other tags; the calm ending comes from the wording ('Okay. I'll see you in the next question.') after a [pause]. 'pi' is sent as written for v2. Earlier: Professional clone 'Nitzan PVC'. 2026-10-04: multilingual_v2 stability 0.7 (test B). 2026-10-09: speed 0.92 ('a bit too fast - just a bit'). 2026-10-09 voice test A-D: teacher chose D = eleven_v4 (stability 0.5, similarity 0.8, speed 0.92): 'D was pretty good, but the excitement points were just a bit too exaggerated'. So: model eleven_v4, NO [excited] tags (emphasis through wording/punctuation only), stability nudged 0.5 -> 0.55 (ElevenLabs: higher = steadier, less emotional variation) to tone down over-acting while keeping v4's natural delivery. Pauses on v4 = [short pause]/[pause] tags (ai_narrate.py); 'pi' is sent to the TTS as 'pie'."
 }

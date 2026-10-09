@@ -11,6 +11,7 @@ D = json.JSONDecoder().raw_decode(s[k:])[0]
 ids = sys.argv[1:] or [os.path.basename(p)[:-5] for p in sorted(glob.glob(os.path.join(HERE, 'ai_scripts', '*.json'))) if not os.path.basename(p).startswith('_')]
 bad = 0
 NOTES = []
+_V = json.load(open(os.path.join(HERE, 'ai_scripts', '_voice.json'), encoding='utf-8')); PRESETS = list((_V.get('presets') or {'base': 0}))
 MODEL = json.load(open(os.path.join(HERE, 'ai_scripts', '_voice.json'), encoding='utf-8')).get('model_id')   # tags matter only for eleven_v3 / v4
 for vid in ids:
     p = os.path.join(HERE, 'ai_scripts', vid + '.json')
@@ -53,6 +54,15 @@ for vid in ids:
             if not t.strip(): probs.append('slide %d empty line' % (i + 1))
             sym = re.findall(r'[πα-ωΑ-Ω°%×÷²³√≤≥≠⇒→∠◆]', t)
             if sym: probs.append('slide %d has symbol(s) %s - write them as words: %s' % (i + 1, ''.join(sym), t[:60]))
+    # voice presets (segmented mode, teacher 2026-10-09 "mix 3"): "voice" names a preset in _voice.json (or a list, one per
+    # part of the line between [pause] tags). Humanizers ("the— the", "um", "uh", "okay so", "sorry, ...") are fine in the
+    # explanation, never in the question reading (the first line) - the student follows that word for word.
+    for k, l in enumerate(flat):
+        pv = l.get('voice') if isinstance(l, dict) else None
+        for x in (pv if isinstance(pv, list) else [pv] if pv else []):
+            if x not in PRESETS: probs.append('line %d: voice %r is not a preset in _voice.json (%s)' % (k + 1, x, ', '.join(PRESETS)))
+    q0 = flat[0]['say'] if flat and isinstance(flat[0], dict) else (flat[0] if flat else '')
+    if re.search(r'\b(um|uh|sorry)\b|— |\bokay so\b', q0, re.I): probs.append('line 1 (the question reading) has a humanizer - keep it clean')
     if len(bangs) > 1: probs.append('%d sentences end with "!" - keep one, at the aha moment: %s' % (len(bangs), ' | '.join(bangs)))
     # delivery tags (only eleven_v3/v4 read them; voice 6 = multilingual_v2 since 2026-10-09 reads none, ai_narrate drops
     # them and turns [pause]/[short pause] into <break>): never [excited] (teacher 2026-10-09: "a bit too exaggerated");
