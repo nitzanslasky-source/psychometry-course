@@ -63,6 +63,14 @@ for vid in ids:
             if x not in PRESETS: probs.append('line %d: voice %r is not a preset in _voice.json (%s)' % (k + 1, x, ', '.join(PRESETS)))
     q0 = flat[0]['say'] if flat and isinstance(flat[0], dict) else (flat[0] if flat else '')
     if re.search(r'\b(um|uh|sorry)\b|— |\bokay so\b', q0, re.I): probs.append('line 1 (the question reading) has a humanizer - keep it clean')
+    # stutters (teacher 2026-10-09): one repeated short word ("the— the", "a— a") sounds like a computer glitch - a restart
+    # repeats a short phrase ("of the— of the circle", "the other— the other choices"); no fake hesitation about writing
+    allt0 = ' '.join(t['say'] if isinstance(t, dict) else t for sl in a for t in sl)
+    for m in re.finditer(r"((?:[A-Za-z']+\s+)?)([A-Za-z']+)\s*[—–]\s+([A-Za-z']+)(\s+[A-Za-z']+)?", allt0):
+        w1, w2, n1, n2 = m.group(1).strip().lower(), m.group(2).lower(), m.group(3).lower(), (m.group(4) or '').strip().lower()
+        if n1 == w2 and not (w1 and n1 == w1 and n2 == w2):      # "the— the" (one word), not "of the— of the" (a phrase)
+            probs.append('single-word stutter "%s— %s" - repeat a short phrase ("of the— of the circle") or drop it' % (m.group(2), m.group(3)))
+    if re.search(r"let me write (that|it) down", allt0, re.I): probs.append('"let me write that down" - no fake hesitation about writing (teacher 2026-10-09)')
     if len(bangs) > 1: probs.append('%d sentences end with "!" - keep one, at the aha moment: %s' % (len(bangs), ' | '.join(bangs)))
     # delivery tags (only eleven_v3/v4 read them; voice 6 = multilingual_v2 since 2026-10-09 reads none, ai_narrate drops
     # them and turns [pause]/[short pause] into <break>): never [excited] (teacher 2026-10-09: "a bit too exaggerated");

@@ -62,8 +62,9 @@ def tts(k, voice, text, prev, nxt):
     return urllib.request.urlopen(req, timeout=180).read()
 
 
-def tts_timestamps(k, voice, text, prev='', nxt=''):
+def tts_timestamps(k, voice, text, prev='', nxt='', seed=None):
     body = _body(voice, text)
+    if seed is not None: body['seed'] = seed
     if prev: body['previous_text'] = prev
     if nxt: body['next_text'] = nxt
     req = urllib.request.Request('https://api.elevenlabs.io/v1/text-to-speech/%s/with-timestamps?output_format=mp3_44100_128' % voice['voice_id'],
@@ -286,6 +287,64 @@ def seg_plan(spec, ps, default):
     return segs, text, spans, forms
 
 
+# ---- falling statement endings (teacher 2026-10-09: some statement endings rose and sounded like a question).
+# For every sentence ending in "." or "!" in a part: the pitch slope over its last 0.4 s of voiced speech (semitones per
+# second) and its end level (median pitch of the last 0.15 s minus the sentence's median, semitones). RISING = slope > +5
+# and end level > -1 - her real clip (solve-q-r26-t06-02, 0:08-1:04): statement endings median slope -3.5 st/s, end level
+# -2.0 st. A part with a rising ending is made again (new seed, up to END_TRIES more takes); the take with the fewest /
+# smallest rising endings is kept. Runs with parselmouth (Praat) when installed, else a simple autocorrelation tracker.
+END_SLOPE, END_LEVEL, END_TRIES = 5.0, -1.0, 3
+
+
+def _pitch(y):
+    """-> (times, semitones) of voiced 10 ms frames, 90-400 Hz"""
+    import numpy as np
+    try:
+        import parselmouth
+        p = parselmouth.Sound(y.astype('float64'), SR).to_pitch_ac(time_step=0.01, pitch_floor=90, pitch_ceiling=400)
+        t, f = p.xs(), p.selected_array['frequency']
+    except ImportError:
+        n, hp, lo, hi = int(.04 * SR), int(.01 * SR), int(SR / 400), int(SR / 90); pk = float(np.abs(y).max() or 1); t, f = [], []
+        for i in range(0, max(0, len(y) - n), hp):
+            x = y[i:i + n] - y[i:i + n].mean(); t.append(i / SR + .02); f.append(0.0)
+            if np.sqrt(np.mean(x * x)) < pk * .03: continue
+            F = np.fft.rfft(x, 2 * n); r = np.fft.irfft(F * np.conj(F))[:n]
+            if r[0] <= 0: continue
+            k = int(np.argmax(r[lo:hi]))
+            if r[lo + k] / r[0] >= .45: f[-1] = SR / (lo + k)
+        t, f = np.array(t), np.array(f)
+    m = f > 0
+    return t[m], 12 * np.log2(f[m] / 100)
+
+
+def endings(y, al):
+    """[(word, slope st/s, end level st, rising)] for the sentences of a take that end in '.' or '!'"""
+    import numpy as np
+    ch, en = al['characters'], al['character_end_times_seconds']; T, S = _pitch(y); out = []; prev = 0.0
+    for i, c in enumerate(ch):
+        if c not in '.!?' or (i + 1 < len(ch) and ch[i + 1] != ' ') or (i and ch[i - 1] == '.') or (i + 1 < len(ch) and ch[i + 1] == '.'):
+            continue
+        j = i
+        while j > 0 and not ch[j - 1].isalnum(): j -= 1
+        k = j
+        while k > 0 and (ch[k - 1].isalnum() or ch[k - 1] in "'-"): k -= 1
+        t_end = en[j - 1] if j else 0; a = prev; prev = t_end
+        if c == '?': continue
+        sel = (T >= a) & (T <= t_end + .05); t, s = T[sel], S[sel]
+        if len(s) < 10: continue
+        ok = np.abs(s - np.median(s)) < 6; t, s = t[ok], s[ok]
+        last = t[-1]; kk = t >= last - .4; ee = t >= last - .15
+        if kk.sum() < 6: continue
+        sl = float(np.polyfit(t[kk], s[kk], 1)[0]); lv = float(np.median(s[ee]) - np.median(s))
+        out.append((''.join(ch[k:j]) + c, round(sl, 1), round(lv, 1), sl > END_SLOPE and lv > END_LEVEL))
+    return out
+
+
+def _end_score(e):
+    r = [x for x in e if x[3]]
+    return (len(r), sum(x[1] for x in r))
+
+
 def _pcm(path):
     import numpy as np
     raw = subprocess.run([FFMPEG, '-hide_banner', '-loglevel', 'error', '-i', path, '-f', 's16le', '-ac', '1', '-ar', str(SR), '-'],
@@ -316,11 +375,35 @@ def segmented(vid, spec):
         v = ps[x['voice']]
         sh = hashlib.sha1(json.dumps([x['text'], v], sort_keys=True).encode()).hexdigest()[:12]
         mp, ap = os.path.join(sd, '%s.mp3' % sh), os.path.join(sd, '%s.json' % sh)
+        ctx = (' '.join(plain[:n])[-500:], ' '.join(plain[n + 1:])[:300])
         if not (os.path.exists(mp) and os.path.exists(ap)):
             k = k or key()
-            r = tts_timestamps(k, v, x['text'], ' '.join(plain[:n])[-500:], ' '.join(plain[n + 1:])[:300])
+            r = tts_timestamps(k, v, x['text'], *ctx)
             open(mp, 'wb').write(base64.b64decode(r['audio_base64'])); json.dump(r['alignment'], open(ap, 'w'), ensure_ascii=False)
             chars += len(x['text']); print('  generated part %d/%d [%s] (%d chars)' % (n + 1, len(segs), x['voice'], len(x['text'])))
+        # falling statement endings: measure once per part (seg/<hash>.end.json); a rising one -> new takes, keep the best
+        cp = os.path.join(sd, '%s.end.json' % sh)
+        chk = json.load(open(cp)) if os.path.exists(cp) else None
+        if chk is None and '--no-endcheck' not in sys.argv:
+            e0 = endings(_pcm(mp), json.load(open(ap))); tries = [{'seed': None, 'endings': e0}]; best = (_end_score(e0), None)
+            for tn in range(END_TRIES if best[0][0] else 0):
+                seed = 1009 * (tn + 1)
+                tm, ta = os.path.join(sd, '%s.s%d.mp3' % (sh, seed)), os.path.join(sd, '%s.s%d.json' % (sh, seed))
+                if not os.path.exists(tm):
+                    k = k or key()
+                    r = tts_timestamps(k, v, x['text'], *ctx, seed=seed)
+                    open(tm, 'wb').write(base64.b64decode(r['audio_base64'])); json.dump(r['alignment'], open(ta, 'w'), ensure_ascii=False)
+                    chars += len(x['text'])
+                e = endings(_pcm(tm), json.load(open(ta))); tries.append({'seed': seed, 'endings': e})
+                if _end_score(e) < best[0]: best = (_end_score(e), seed)
+                print('  part %d/%d: rising ending, take %d (seed %d): %s' % (n + 1, len(segs), tn + 2, seed, [w for w in e if w[3]] or 'falling'))
+                if not best[0][0]: break
+            if best[1] is not None:                     # the better take becomes the part's audio (the first take is kept)
+                os.replace(mp, os.path.join(sd, '%s.s0.mp3' % sh)); os.replace(ap, os.path.join(sd, '%s.s0.json' % sh))
+                import shutil
+                shutil.copy(os.path.join(sd, '%s.s%d.mp3' % (sh, best[1])), mp); shutil.copy(os.path.join(sd, '%s.s%d.json' % (sh, best[1])), ap)
+            chk = {'chosen': best[1], 'tries': tries, 'endings': next(t['endings'] for t in tries if t['seed'] == best[1])}
+            json.dump(chk, open(cp, 'w'), ensure_ascii=False)
         al = json.load(open(ap)); y = _pcm(mp)
         # trim silence: 10 ms frames above -45 dBFS, keep 40 ms before / 80 ms after
         fr = 441; e = np.sqrt(np.add.reduceat(y * y, np.arange(0, len(y), fr)) / fr) if len(y) else np.zeros(1)
@@ -337,7 +420,8 @@ def segmented(vid, spec):
             # times inside the trimmed part (the last character's end time often reaches into the trimmed tail)
             chs.append(c); cst.append(round(min(t1, max(t, s0 + off)), 3)); cen.append(round(min(t1, max(t, s1 + off)), 3))
         extra['segments'].append({'line': x['line'] + 1, 'voice': x['voice'], 'start': round(t, 3), 'end': round(t + len(y) / SR, 3),
-                                  'gain_db': round(20 * np.log10(g), 1), 'text': x['text']})
+                                  'gain_db': round(20 * np.log10(g), 1), 'text': x['text'],
+                                  'endings': (chk or {}).get('endings'), 'take': (chk or {}).get('chosen'), 'tries': len((chk or {}).get('tries') or [0])})
         out.append(y); t += len(y) / SR
         if x['gap']: out.append(np.zeros(int(x['gap'] * SR), dtype='float32')); t += x['gap']
     pcm = (np.clip(np.concatenate(out), -1, 1) * 32767).astype('<i2').tobytes()
@@ -348,6 +432,8 @@ def segmented(vid, spec):
     for f in os.listdir(d):
         if re.match(r'line-\d{3}\.mp3$', f): os.remove(os.path.join(d, f))
     print('  %d parts, %d characters generated now' % (len(segs), chars))
+    still = [(x['line'], w) for x in extra['segments'] for w in (x['endings'] or []) if w[3]]
+    if still: print('  STILL RISING after %d takes: %s' % (END_TRIES + 1, still))
     return remap(vid, spec, d, ps[default], h, (text, spans, forms, extra))
 
 
