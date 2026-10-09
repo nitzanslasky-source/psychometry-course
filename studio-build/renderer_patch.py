@@ -1,5 +1,6 @@
 """JS additions to the studio renderer (applied to the base HTML by build_verbal.py).
 
+\\hl{name}{tex} – a named PART of a TeX formula (looks exactly like {tex}); POINT cues highlight it by name (studio_autonarrate.py).
 tq  – text-heavy question layout (verbal): stem on top, answers as full-width wrapped rows anchored at the bottom.
 psg – reading passage with numbered paragraphs, auto-fitted to the available height.
 """
@@ -9,6 +10,13 @@ HOOK_NEW = ("function hyItem(it,x,y,w){const INK=PAL.ink;\n"
             " if(it.k==='psg')return hyPassage(it,x,y,w);\n")
 
 FUNCS = r"""
+/* \hl{name}{tex} -> the tex between two empty marker tokens (same look; the part can be measured by name) */
+function hlTex(t){t=String(t);if(t.indexOf('\\hl{')<0)return t;let out='',i=0;
+ for(;;){const k=t.indexOf('\\hl{',i);if(k<0){out+=t.slice(i);break}out+=t.slice(i,k);const j=t.indexOf('}',k+4);if(j<0){out+=t.slice(k);break}
+  const name=t.slice(k+4,j).replace(/[^A-Za-z0-9_-]/g,'');let p=j+1;while(t[p]===' ')p++;
+  if(t[p]!=='{'){out+=t.slice(k,p);i=p;continue}let d=0,q=p;for(;q<t.length;q++){if(t[q]==='\\'){q++;continue}if(t[q]==='{')d++;else if(t[q]==='}'){d--;if(!d)break}}
+  out+='{\\mmlToken{mi}[class="hla-'+name+'"]{}'+hlTex(t.slice(p+1,q))+'\\mmlToken{mi}[class="hlb-'+name+'"]{}}';i=q+1}
+ return out}
 function hyTextQ(it,x,y,w){const Q=D.questions[it.qid]||{},stem=String(it.stem||Q.stemRich||'').trim(),ch=it.choices||Q.choicesRich||[];
  const bottom=876,gap=8,cw=w-78,avail=bottom-y-(it.band??70);let cz=it.csize||28,z=it.size||32,rows,tot,r;
  const lay=()=>{rows=ch.map(c=>richSvg(String(c),0,0,cw,cz));tot=rows.reduce((a,q)=>a+Math.max(52,q.height+12),0)+gap*(ch.length-1);r=richSvg(stem,x,y,w,z);return r.height+tot};
@@ -60,11 +68,17 @@ SB_NEW = ("const row=Math.min(58,(880-y)/h.sidebar.length);\n"
           "s+=`<g opacity=\"${on?1:0.5}\">`+(multi?l.t:[l.name]).map((tx,j)=>svgText(tx,42,yy+(row-10)/2+(on?8:7)+j*l.lh,multi?l.zz:(on?23:21),on?'#ffffff':'#a9b8d3',on?800:500)).join('')+'</g>';\n"
           "  yy+=row+add});")
 
+MJ_OLD = "function mathSvg(tex){if(svgCache.has(tex))"
+MJ_NEW = "function mathSvg(tex){tex=hlTex(tex);if(svgCache.has(tex))"
+
 DICE_LBL_OLD = "v.diagonal?'Matching faces':"
 DICE_LBL_NEW = "v.diagonal?(v.label||'Matching faces'):"
 
 
 def apply(html):
+    # \hl{name}{…}: expanded before MathJax (marker tokens around the part)
+    assert html.count(MJ_OLD) == 1, 'mathSvg not found'
+    html = html.replace(MJ_OLD, MJ_NEW)
     assert html.count(LABEL_OLD) == 1, 'sidebar label not found'
     # dice/spinner grid: an item may carry its own label (e.g. spinners: 'Matching sections')
     assert html.count(DICE_LBL_OLD) == 1, 'dice grid label not found'

@@ -1,6 +1,7 @@
 """Slide-writing helpers for hybrid modules (same conventions as the Algebra/Word Problems/Geometry modules).
 
-Script lines: plain string = spoken line · A(label, item) = [APPEAR] pop-in · D(text) = [DRAW] teacher annotation.
+Script lines: plain string = spoken line · A(label, item) = [APPEAR] pop-in · D(text) = [DRAW] teacher annotation ·
+PT(target, label) = [POINT] highlight / pointer (studio_autonarrate.py).
 Items: H (heading) · T (rich text, $TeX$ allowed) · Q (question, pre-loaded) · PSG (reading passage).
 """
 
@@ -14,6 +15,14 @@ def T(t, size=46, x=None, y=None, w=None, **k):
 def H(t, size=60, **k): return dict(k='h', t=t, size=size, **k)
 def A(label, item): return ('A', label, item)
 def D(text): return ('D', text)
+def PT(target, label=None, at=None, style=None, dur=None):
+    """[POINT] cue (studio_autonarrate.py): highlight / point at `target` when the NEXT spoken line starts (or at fraction
+    `at` of it). target: 'item N' · 'item N: part' (TeX part marked \\hl{part}{...}) · 'part' · 'choice N' · 'stem' ·
+    'fig: α' (figure label) · 'fig: AB' (side) · 'fig: ABC' (angle at B) · 'fig: shaded'. style: 'hl' (default) | 'dot' | 'both'."""
+    d = {'point': target}
+    for k, v in (('label', label), ('at', at), ('style', style), ('dur', dur)):
+        if v is not None: d[k] = v
+    return ('P', d)
 
 def Q(qid, **k):
     """Pre-loaded question. Verbal questions use the text layout (tq=True): stem on top, answers as wrapped full-width rows."""

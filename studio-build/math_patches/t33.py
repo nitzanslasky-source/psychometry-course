@@ -3160,3 +3160,56 @@ _apply_before_coverage_fixes = apply
 def apply(M):
     _apply_before_coverage_fixes(M)
     coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST
+
+
+# =====================================================================================
+# 2026-10-09 AI auto-narrate pilot (studio_autonarrate.py): POINT cues — the AI video points at / highlights what the
+# voice talks about (the shaded sectors, the α / β labels, the left side of the equation, the fraction). The TeX parts
+# are marked with \hl{name}{...} (renders exactly as before). A video with a take recorded before AI_CUTOFF (UTC) is
+# left exactly as recorded.
+AI_CUTOFF = '2026-10-09T07-10-00'
+
+
+def _ai_recorded(vid):
+    pat = _re_cf.compile(_re_cf.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in _glob_cf.glob(_os_cf.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(_os_cf.path.basename(f))
+        if m and m.group(1) < AI_CUTOFF: return True
+    return False
+
+
+def ai_pointers(M):
+    from dsl import PT
+    vid = 'solve-geo33-g091'
+    if _ai_recorded(vid): return
+
+    def slide(title):
+        return M.video(vid)['beats'][CF.n_of(M, vid, title) - 1]
+
+    def item(b, k, old, new):
+        assert b['items'][k]['t'] == old, (vid, b['title'], b['items'][k]['t'])
+        b['items'][k]['t'] = new
+
+    def before(b, start, *cues):
+        k = [i for i, l in enumerate(b['lines']) if (l.get('say') or '').startswith(start)]
+        assert len(k) == 1, (vid, b['title'], start, k)
+        b['lines'][k[0]:k[0]] = [dict(c[1]) for c in cues]
+
+    b = slide('The whole circle')
+    before(b, 'Radius root 35.', PT('fig: shaded', 'the two shaded sectors', at=0.58))
+    b = slide('The sum α + β')
+    item(b, 1, '$5\\alpha+5\\beta=360°$', '$\\hl{left}{5\\alpha+5\\beta}=360°$')
+    before(b, 'Count them:', PT('fig: α', 'the five alphas', at=0.15), PT('fig: β', 'the five betas', at=0.5))
+    before(b, 'One equation, two unknowns', PT('item 1: left', 'the left side: 5α + 5β', at=0.0, style='both'))
+    b = slide('A fifth of the circle')
+    item(b, 1, '$\\frac{72°}{360°}\\times35\\pi=7\\pi$', '$\\hl{frac}{\\frac{72°}{360°}}\\times35\\pi=7\\pi$')
+    before(b, 'Together the two sectors', PT('item 1: frac', '72 out of 360', at=0.38))
+    M.touched_videos.add(vid)
+
+
+_apply_before_ai_pointers = apply
+
+
+def apply(M):
+    _apply_before_ai_pointers(M)
+    ai_pointers(M)   # 2026-10-09 AI auto-narrate pilot: runs LAST

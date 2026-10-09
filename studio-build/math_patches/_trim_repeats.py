@@ -78,6 +78,7 @@ def lines_of(M, vid, title):
     for l in b['lines']:
         if 'say' in l: out.append(l['say'])
         elif 'appear' in l: out.append(A(l['label'], b['items'][l['appear']]))
+        elif 'point' in l: out.append(('P', dict(l)))     # [POINT] cue (studio_autonarrate.py)
         else: out.append(D(l['draw']))
     return out
 
@@ -85,6 +86,7 @@ def lines_of(M, vid, title):
 def _text(x):
     if isinstance(x, str): return x
     if x[0] == 'A': return x[1] + ' ' + str((x[2] or {}).get('t', ''))
+    if x[0] == 'P': return '[POINT] ' + str(x[1].get('label') or x[1].get('point'))
     return x[1]
 
 

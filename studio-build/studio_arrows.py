@@ -82,7 +82,7 @@ def cuts(s):
     return out
 
 
-_PLAIN = [(r'\\(?:Rightarrow|implies|Longrightarrow)(?![A-Za-z])', '⇒'), (r'\\(?:to|rightarrow|longrightarrow)(?![A-Za-z])', '→'),
+_PLAIN = [(r'\\hl\{[^{}]*\}', ''), (r'\\(?:Rightarrow|implies|Longrightarrow)(?![A-Za-z])', '⇒'), (r'\\(?:to|rightarrow|longrightarrow)(?![A-Za-z])', '→'),
           (r'\\xrightarrow\{([^{}]*)\}', r'→(\1)'), (r'\\xleftarrow\{([^{}]*)\}', r'←(\1)'),
           (r'\\(?:text|mathrm|textbf|mathbf|operatorname)\{([^{}]*)\}', r'\1'), (r'\\[dt]?frac\{([^{}]*)\}\{([^{}]*)\}', r' \1/\2'),
           (r'\\[dt]?frac\s*(\w)\s*(\w)', r' \1/\2'),

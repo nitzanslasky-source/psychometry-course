@@ -37,10 +37,10 @@ Memory cards
   M.card(cid)                       -> card dict (title, intro, tables=[{title, head, rows}], tips=[...]) editable in place
   M.new_card(cid, topic, section, card, after=None)
 
-Helpers:  T, H, A, D, Q, VIS (from dsl), M.find_text(regex, topics) for searching.
+Helpers:  T, H, A, D, Q, PT, VIS (from dsl; PT = [POINT] highlight cue, see studio_autonarrate.py), M.find_text(regex, topics) for searching.
 """
 import copy, html as _html, re
-from dsl import T, H, A, D, Q
+from dsl import T, H, A, D, Q, PT
 
 def VIS(svg, **k): return dict(k='vis', v={'type': 'geometry', 'svg': svg}, **k)
 
@@ -184,6 +184,7 @@ class MathCourse:
         for x in sl['script']:
             if isinstance(x, str): lines.append({'say': x})
             elif x[0] == 'A': items.append(dict(x[2])); lines.append({'appear': len(items) - 1, 'label': x[1]})
+            elif x[0] == 'P': lines.append(dict(x[1]))
             else: lines.append({'draw': x[1]})
         mode = sl.get('mode', 'concept')
         return {'title': sl.get('title', ''), 'layout': 'hybrid', 'mode': mode, 'active': sl.get('active', -1), 'items': items,
@@ -201,6 +202,7 @@ class MathCourse:
             for l in old['lines']:
                 if 'say' in l: script.append(l['say'])
                 elif 'appear' in l: script.append(A(l['label'], old['items'][l['appear']]))
+                elif 'point' in l: script.append(('P', dict(l)))
                 else: script.append(D(l['draw']))
         sl['script'] = script
         v['beats'][n - 1] = self._beat(v, sl); self.touched_videos.add(vid)

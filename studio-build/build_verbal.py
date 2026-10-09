@@ -94,6 +94,7 @@ def build_video(m):
         for x in sl['script']:
             if isinstance(x, str): lines.append({'say': x})
             elif x[0] == 'A': items.append(dict(x[2])); lines.append({'appear': len(items) - 1, 'label': x[1]})
+            elif x[0] == 'P': lines.append(dict(x[1]))
             else: lines.append({'draw': x[1]})
         # text-question slides: reserve room between the question and the answers for this slide's pop-ins
         tq = [it for it in items[:pre] if it.get('k') == 'q' and it.get('tq')]
@@ -307,6 +308,8 @@ out = studio_added.apply(out, ADDED, D)
 import studio_order; out = studio_order.apply(out, D)
 # ---------- videos to re-record (math_patches/_rerecord.py): red ⟳ instead of green until a newer take exists (studio_rerecord.py) ----------
 import studio_rerecord; out = studio_rerecord.apply(out, D)
+# ---------- AI auto-narrate + POINT cues (studio_autonarrate.py): needs AI_VIDEOS from studio_ai ----------
+import studio_autonarrate; out = studio_autonarrate.apply(out)
 _amd = os.path.join(DOCDIR, 'Added-Content-List.md') if not TEST else os.path.splitext(OUT)[0] + '-Added-Content-List.md'
 open(_amd, 'w', encoding='utf-8').write(added_content.markdown(ADDED, D, studio_done.recorded_ids())); print('wrote', _amd)
 open(OUT, 'w', encoding='utf-8').write(out)
@@ -326,6 +329,7 @@ for t in sorted(MODS):
             for n, l in enumerate(b['lines'], 1):
                 if 'say' in l: md.append('%d. %s' % (n, l['say']))
                 elif 'appear' in l: md.append('%d. **[APPEAR: %s]**' % (n, l['label']))
+                elif 'point' in l: md.append('%d. *[POINT: %s]*' % (n, l.get('label') or l['point']))
                 else: md.append('%d. *[DRAW: %s]*' % (n, l['draw']))
             md += ['', b['nextCue'], '']
     p = os.path.join(DOCDIR, 'Verbal-Hybrid-Scripts-Topic%d.md' % t)

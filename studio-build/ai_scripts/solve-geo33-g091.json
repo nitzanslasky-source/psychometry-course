@@ -1,0 +1,25 @@
+{
+ "videoId": "solve-geo33-g091",
+ "style": "calm, natural hesitations, like explaining to a friend; one entry per spoken line of the video, same order. AI auto-narrate PILOT (2026-10-09): the video has POINT cues (studio_autonarrate.py), so the lines may say 'here' / 'this side'",
+ "slides": [
+  [
+   "Okay, here's a sample question. It's medium-plus.",
+   "And I'll tell you right away... we'll never find alpha or beta. And we don't need to.",
+   "So, the radius is root 35. The central angles go alpha, beta, alpha, beta... five of each. And one alpha and one beta are shaded. What's their total area?",
+   "Well, the shaded part is part of the circle's area, right? So we need two things. The whole area... and which part of it.",
+   "The area is pi r squared. So root 35, squared... the square cancels the root, and we get 35. So the whole circle is 35 pi."
+  ],
+  [
+   "Now, which part? We need alpha and beta, and we don't have any numbers. So what can we say?",
+   "Let's count them. Here are the five alphas... and here are the five betas. All the way around, that's 360.",
+   "Okay, so look at this side. One equation, two unknowns. We can't get alpha or beta on its own... but we can get their sum.",
+   "Just divide by 5. Or take out 5 as a common factor, it's the same thing. Alpha plus beta is 72.",
+   "Could it be 30 and 42? Could be 12 and 60. It doesn't matter."
+  ],
+  [
+   "So together, the two sectors are 72 out of 360. And that's a fifth of the circle.",
+   "And a fifth of 35 pi... is 7 pi.",
+   "So it's choice two. This one was a bit challenging."
+  ]
+ ]
+}
