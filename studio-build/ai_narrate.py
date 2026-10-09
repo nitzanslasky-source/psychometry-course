@@ -18,7 +18,7 @@ Audio goes to ~/Documents/Course.recordings/_ai_audio/<videoId>/ + manifest.json
                alignment.json (character times from /with-timestamps) + manifest {"mode": "continuous",
                "lines": [{text, slide, start, end, at: [seconds|null]}]}. Slides are separated by a short
                <break time="0.6s"/> (eleven_multilingual_v2 supports break tags; v3/v4 get a [pause] tag instead). A line
-               may carry "pause": seconds (a short pause after it, e.g. after reading the question). Audio tags in a
+               may carry "pause": seconds (a short pause after it, e.g. after reading the question). SAY_AS respells words for the TTS only ("pi" -> "pie"). Audio tags in a
                line ([excited], ...) are sent only to eleven_v3 / eleven_v4 and dropped for older models. Re-generated only
                when the text or the voice changes; --remap recomputes the timing from alignment.json for free.
 Needs ELEVENLABS_API_KEY in ~/psychometry-course/.env.local.
@@ -91,6 +91,14 @@ def spoken(t, model):
     return t
 
 
+SAY_AS = [(r'\bpi\b', 'pie')]      # TTS text only (the manifest / transcript keep the written word): "pi" -> "pie", never "P I"
+
+
+def say_as(t):
+    for a, b in SAY_AS: t = re.sub(a, b, t)
+    return t
+
+
 def pause(sec, model):
     """a pause in the text: SSML break (multilingual_v2) or an audio tag (v3/v4)."""
     if expressive(model): return ' [short pause] ' if sec < 0.8 else ' [pause] '
@@ -104,7 +112,7 @@ def full_text(spec, model=None):
     for si, sl in enumerate(spec['slides']):
         for li, l in enumerate(sl):
             if text: text += pause(SLIDE_BREAK, model) if li == 0 else (gap or ' ')
-            t = spoken(line_text(l), model)
+            t = say_as(spoken(line_text(l), model))
             spans.append((si, len(text), len(text) + len(t)))
             text += t
             gap = pause(l['pause'], model) if isinstance(l, dict) and l.get('pause') else ''
@@ -138,17 +146,17 @@ def remap(vid, spec, d, voice, h):
     ct = char_times(text, al)
     lines, flat = [], [l for sl in spec['slides'] for l in sl]
     for (si, a, b), l in zip(spans, flat):
-        t = spoken(line_text(l), voice.get('model_id'))
+        t = spoken(line_text(l), voice.get('model_id')); tt = say_as(t)     # tt = as sent to the TTS
         s0, e0 = _at(ct, a, b, 'start'), _at(ct, a, b, 'end')
         if s0 is None or e0 is None: sys.exit('alignment: no times for line %r' % t[:60])
         ats = []
         for ph in (l.get('at') or []) if isinstance(l, dict) else []:
             if ph is None: ats.append(None); continue
-            sa, st_ = a, t                      # "<phrase" = a phrase near the end of the PREVIOUS spoken line
+            sa, st_ = a, tt                     # "<phrase" = a phrase near the end of the PREVIOUS spoken line
             if ph.startswith('<'):
                 if not lines: sys.exit('%s: %r - no previous line' % (vid, ph))
-                ph = ph[1:]; pi = len(lines) - 1; sa = spans[pi][1]; st_ = lines[pi]['text']
-            k = st_.lower().find(ph.lower())
+                ph = ph[1:]; pi = len(lines) - 1; sa = spans[pi][1]; st_ = say_as(lines[pi]['text'])
+            ph = say_as(ph); k = st_.lower().find(ph.lower())
             if k < 0: sys.exit('%s: phrase %r not in line %r' % (vid, ph, st_[:70]))
             ats.append(round(_at(ct, sa + k, sa + k + len(ph), 'start'), 3))
         lines.append({'text': t, 'slide': si, 'start': round(s0, 3), 'end': round(e0, 3), 'at': ats})
@@ -190,7 +198,7 @@ def continuous(vid, spec, voice):
 
 # ---------------------------------------------------------------- per-line mode
 def per_line(vid, spec, voice):
-    lines = [spoken(line_text(l), voice['model_id']) for s in spec['slides'] for l in s]
+    lines = [say_as(spoken(line_text(l), voice['model_id'])) for s in spec['slides'] for l in s]
     d = os.path.join(OUT, vid); os.makedirs(d, exist_ok=True)
     mpath = os.path.join(d, 'manifest.json')
     old = json.load(open(mpath)) if os.path.exists(mpath) else {'lines': []}

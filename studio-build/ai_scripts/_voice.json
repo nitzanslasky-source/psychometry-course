@@ -1,8 +1,8 @@
 {
  "voice_id": "ytnrV8H54RUw5J2TmNG0",
- "model_id": "eleven_multilingual_v2",
- "stability": 0.7,
+ "model_id": "eleven_v4",
+ "stability": 0.55,
  "similarity_boost": 0.8,
- "note": "Professional clone 'Nitzan PVC', eleven_multilingual_v2 — teacher picked test B (stability 0.7) on 2026-10-04: 'it sounds correct'. 2026-10-09: speed 0.92 (teacher: 'the speaking is a bit too fast - just a bit'; ElevenLabs default 1.0, range 0.7-1.2).",
+ "note": "Professional clone 'Nitzan PVC'. 2026-10-04: multilingual_v2 stability 0.7 (test B). 2026-10-09: speed 0.92 ('a bit too fast - just a bit'). 2026-10-09 voice test A-D: teacher chose D = eleven_v4 (stability 0.5, similarity 0.8, speed 0.92): 'D was pretty good, but the excitement points were just a bit too exaggerated'. So: model eleven_v4, NO [excited] tags (emphasis through wording/punctuation only), stability nudged 0.5 -> 0.55 (ElevenLabs: higher = steadier, less emotional variation) to tone down over-acting while keeping v4's natural delivery. Pauses on v4 = [short pause]/[pause] tags (ai_narrate.py); 'pi' is sent to the TTS as 'pie'.",
  "speed": 0.92
 }

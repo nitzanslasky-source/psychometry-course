@@ -1,6 +1,6 @@
 {
  "videoId": "solve-q-r26-t22-02",
- "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number three is our answer', closes with the rule + 'see you in the next question'. One entry per spoken line of the video, same order; ai_narrate.py --continuous. AI auto-narrate PILOT (word problem, 2026-10-09). PILOT v3 (2026-10-09, teacher feedback): short pause after reading the question (\"pause\"), every sentence ends with a full stop (falling tone), more explaining where the idea is new in the study plan, a short reminder where it was taught earlier, a little excitement now and then ([excited] tags: used by eleven_v3/v4, dropped automatically for multilingual_v2), numbers and symbols written as words.",
+ "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number three is our answer', closes with the rule + 'see you in the next question'. One entry per spoken line of the video, same order; ai_narrate.py --continuous. AI auto-narrate PILOT (word problem, 2026-10-09). PILOT v3 (2026-10-09, teacher feedback): short pause after reading the question (\"pause\"), every sentence ends with a full stop (falling tone), more explaining where the idea is new in the study plan, a short reminder where it was taught earlier, emphasis through wording and punctuation only (2026-10-09, voice eleven_v4: the teacher found the [excited] tags 'just a bit too exaggerated', so no emotion tags), numbers and symbols written as words.",
  "slides": [
   [
    {
@@ -8,7 +8,7 @@
     "pause": 0.5
    },
    "Now, this one is a bit different. Remember the ratio table? There, the two numbers grow together. Twice the vases, twice the roses. But here it's the opposite. If I bring more workers, the job gets done faster, so the number of days goes down. More workers, fewer days. So a normal ratio table won't work here.",
-   "So before I calculate anything, let's think. Will it take more days, or fewer? There are fewer workers now, so the job takes longer. So it has to be [excited] more than ten days.",
+   "So before I calculate anything, let's think. Will it take more days, or fewer? There are fewer workers now, so the job takes longer. So it has to be more than ten days.",
    {
     "say": "So what can I cross out? Six and two thirds, and eight. They're both less than ten, so number one and number four are out.",
     "at": [

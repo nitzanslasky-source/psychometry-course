@@ -1,6 +1,6 @@
 {
  "videoId": "solve-geo33-g091",
- "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), talks to one student, reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number two is our answer', closes with a nudge + 'see you in the next question'. One entry per spoken line of the video, same order; generated with ai_narrate.py --continuous (one request, word-timed cues). AI auto-narrate PILOT v2 (2026-10-09). PILOT v3 (2026-10-09, teacher feedback): short pause after reading the question (\"pause\"), every sentence ends with a full stop (falling tone), more explaining where the idea is new in the study plan, a short reminder where it was taught earlier, a little excitement now and then ([excited] tags: used by eleven_v3/v4, dropped automatically for multilingual_v2), numbers and symbols written as words.",
+ "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), talks to one student, reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number two is our answer', closes with a nudge + 'see you in the next question'. One entry per spoken line of the video, same order; generated with ai_narrate.py --continuous (one request, word-timed cues). AI auto-narrate PILOT v2 (2026-10-09). PILOT v3 (2026-10-09, teacher feedback): short pause after reading the question (\"pause\"), every sentence ends with a full stop (falling tone), more explaining where the idea is new in the study plan, a short reminder where it was taught earlier, emphasis through wording and punctuation only (2026-10-09, voice eleven_v4: the teacher found the [excited] tags 'just a bit too exaggerated', so no emotion tags), numbers and symbols written as words.",
  "slides": [
   [
    {
@@ -33,7 +33,7 @@
     ]
    },
    {
-    "say": "Now look at this side. One equation, two unknowns. So I can't get alpha or beta on its own, right? [excited] But I can get their sum.",
+    "say": "Now look at this side. One equation, two unknowns. So I can't get alpha or beta on its own, right? But I can get their sum.",
     "at": [
      "this side"
     ],
@@ -55,7 +55,7 @@
      "seventy-two out of three hundred sixty"
     ]
    },
-   "So the shaded part is one fifth of thirty-five pi. [excited] That's seven pi.",
+   "So the shaded part is one fifth of thirty-five pi. That's seven pi.",
    {
     "say": "So number two is our answer. You see, we never found alpha or beta. We only needed their sum. So whenever you can't find each one on its own, look for their sum. I'll see you in the next question.",
     "at": [
