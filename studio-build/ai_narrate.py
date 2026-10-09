@@ -17,7 +17,9 @@ Audio goes to ~/Documents/Course.recordings/_ai_audio/<videoId>/ + manifest.json
   continuous:  audio.mp3 (the whole video, one request -> continuous prosody, the last sentence sounds final) +
                alignment.json (character times from /with-timestamps) + manifest {"mode": "continuous",
                "lines": [{text, slide, start, end, at: [seconds|null]}]}. Slides are separated by a short
-               <break time="0.6s"/> (eleven_multilingual_v2 supports break tags; v3/v4 do not). Re-generated only
+               <break time="0.6s"/> (eleven_multilingual_v2 supports break tags; v3/v4 get a [pause] tag instead). A line
+               may carry "pause": seconds (a short pause after it, e.g. after reading the question). Audio tags in a
+               line ([excited], ...) are sent only to eleven_v3 / eleven_v4 and dropped for older models. Re-generated only
                when the text or the voice changes; --remap recomputes the timing from alignment.json for free.
 Needs ELEVENLABS_API_KEY in ~/psychometry-course/.env.local.
 """
@@ -76,15 +78,36 @@ def load(vid):
 
 
 # ---------------------------------------------------------------- continuous mode
-def full_text(spec):
-    """the text sent in one request + for every line (slide, char start, char end) in that text."""
-    text, spans = '', []
+def expressive(model):
+    """eleven_v3 / eleven_v4 read audio tags ([excited], [short pause]) but no SSML <break>; older models the reverse."""
+    return bool(re.match(r'eleven_v[34]', model or ''))
+
+
+def spoken(t, model):
+    """the line as sent to the model: audio tags like [excited] are kept for v3/v4 and dropped for older models
+    (which would read them out)."""
+    t = t.strip()
+    if not expressive(model): t = re.sub(r'\s*\[[a-z][a-z ]*\]\s*', ' ', t).strip()
+    return t
+
+
+def pause(sec, model):
+    """a pause in the text: SSML break (multilingual_v2) or an audio tag (v3/v4)."""
+    if expressive(model): return ' [short pause] ' if sec < 0.8 else ' [pause] '
+    return ' <break time="%.1fs"/> ' % sec
+
+
+def full_text(spec, model=None):
+    """the text sent in one request + for every line (slide, char start, char end) in that text.
+    A line {"say": ..., "pause": 0.5} is followed by a short pause (e.g. after reading the question aloud)."""
+    text, spans, gap = '', [], ''
     for si, sl in enumerate(spec['slides']):
         for li, l in enumerate(sl):
-            if text: text += (' <break time="%.1fs"/> ' % SLIDE_BREAK) if li == 0 else ' '
-            t = line_text(l).strip()
+            if text: text += pause(SLIDE_BREAK, model) if li == 0 else (gap or ' ')
+            t = spoken(line_text(l), model)
             spans.append((si, len(text), len(text) + len(t)))
             text += t
+            gap = pause(l['pause'], model) if isinstance(l, dict) and l.get('pause') else ''
     return text, spans
 
 
@@ -110,12 +133,12 @@ def _at(ct, a, b, pick='start'):
 
 
 def remap(vid, spec, d, voice, h):
-    text, spans = full_text(spec)
+    text, spans = full_text(spec, voice.get('model_id'))
     al = json.load(open(os.path.join(d, 'alignment.json')))
     ct = char_times(text, al)
     lines, flat = [], [l for sl in spec['slides'] for l in sl]
     for (si, a, b), l in zip(spans, flat):
-        t = line_text(l).strip()
+        t = spoken(line_text(l), voice.get('model_id'))
         s0, e0 = _at(ct, a, b, 'start'), _at(ct, a, b, 'end')
         if s0 is None or e0 is None: sys.exit('alignment: no times for line %r' % t[:60])
         ats = []
@@ -139,7 +162,7 @@ def remap(vid, spec, d, voice, h):
 
 def continuous(vid, spec, voice):
     d = os.path.join(OUT, vid); os.makedirs(d, exist_ok=True)
-    text, _ = full_text(spec)
+    text, _ = full_text(spec, voice.get('model_id'))
     h = hashlib.sha1(json.dumps([text, voice, 'continuous'], sort_keys=True).encode()).hexdigest()[:16]
     mpath = os.path.join(d, 'manifest.json')
     old = json.load(open(mpath)) if os.path.exists(mpath) else {}
@@ -167,7 +190,7 @@ def continuous(vid, spec, voice):
 
 # ---------------------------------------------------------------- per-line mode
 def per_line(vid, spec, voice):
-    lines = [line_text(l) for s in spec['slides'] for l in s]
+    lines = [spoken(line_text(l), voice['model_id']) for s in spec['slides'] for l in s]
     d = os.path.join(OUT, vid); os.makedirs(d, exist_ok=True)
     mpath = os.path.join(d, 'manifest.json')
     old = json.load(open(mpath)) if os.path.exists(mpath) else {'lines': []}

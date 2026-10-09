@@ -1,28 +1,31 @@
 {
  "videoId": "solve-q-544",
- "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number one is our answer', the trap told BEFORE the answer as a warning, closes with a nudge + 'see you in the next question'. One entry per spoken line of the video, same order; ai_narrate.py --continuous. AI auto-narrate PILOT (algebra, 2026-10-09).",
+ "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number one is our answer', the trap told BEFORE the answer as a warning, closes with a nudge + 'see you in the next question'. One entry per spoken line of the video, same order; ai_narrate.py --continuous. AI auto-narrate PILOT (algebra, 2026-10-09). PILOT v3 (2026-10-09, teacher feedback): short pause after reading the question (\"pause\"), every sentence ends with a full stop (falling tone), more explaining where the idea is new in the study plan, a short reminder where it was taught earlier, a little excitement now and then ([excited] tags: used by eleven_v3/v4, dropped automatically for multilingual_v2), numbers and symbols written as words.",
  "slides": [
   [
-   "The operation diamond is defined for every number x, so that diamond of 2x is equal to x plus 5. And they're asking, what's diamond of 14?",
-   "Now look closely. The diamond works on 2x, not on x, right? And that's the whole question.",
    {
-    "say": "So what does that mean? 14 is not x, 14 is 2x. A lot of students put 14 straight into x plus 5, they get 19, and 19 is waiting for them in the choices. That's the trap.",
+    "say": "The operation diamond is defined for every number x, so that diamond of two x is equal to x plus five. And they're asking, what's diamond of fourteen?",
+    "pause": 0.5
+   },
+   "Remember, an operation is just a rule. You put a number in, and the rule tells you what comes out. Now look closely. The diamond works on two x, not on x, right? So what does this operation actually do? Is it adding five? [excited] No! It takes the number, divides it by two, and then adds five. Because two x goes in, and x plus five comes out. Half of the number, plus five.",
+   {
+    "say": "So fourteen is not x. Fourteen is the two x. A lot of students put fourteen straight into x plus five. They get nineteen, and nineteen is waiting for them in the choices. That's the trap.",
     "at": [
-     "they get 19"
+     "They get nineteen"
     ]
    },
    {
-    "say": "So 2x is equal to 14, and if I divide by 2, x is equal to 7.",
+    "say": "So two x is equal to fourteen. I divide by two, and x is equal to seven.",
     "at": [
-     "2x is equal to 14"
+     "two x is equal to fourteen"
     ]
    },
    {
-    "say": "Now the rule says x plus 5, so I put in 7, and 7 plus 5 is equal to 12.",
+    "say": "Now the rule says x plus five. So I put in seven, and seven plus five is equal to twelve. And look, that's exactly half of fourteen, plus five, just like we said.",
     "at": [
-     "<x is equal to 7",
+     "<x is equal to seven",
      "Now the rule",
-     "x plus 5"
+     "x plus five"
     ]
    },
    {
@@ -31,7 +34,7 @@
      "number one"
     ]
    },
-   "So whenever you see an operation like this, first check what it's working on, and only then use the rule. I'll see you in the next question."
+   "So whenever you see an operation like this, first ask yourself what it really does to the number. And only then use the rule. I'll see you in the next question."
   ]
  ]
 }

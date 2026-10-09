@@ -1,49 +1,52 @@
 {
  "videoId": "solve-q-r26-t22-02",
- "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number three is our answer', closes with the rule + 'see you in the next question'. One entry per spoken line of the video, same order; ai_narrate.py --continuous. AI auto-narrate PILOT (word problem, 2026-10-09).",
+ "style": "her real voice (real_exam/TEACHER_VOICE_GUIDE.md): warm, brisk (~165 wpm), reads the question aloud first, rhetorical question then the answer, 'right?' about once per beat, 'is equal to', 'number three is our answer', closes with the rule + 'see you in the next question'. One entry per spoken line of the video, same order; ai_narrate.py --continuous. AI auto-narrate PILOT (word problem, 2026-10-09). PILOT v3 (2026-10-09, teacher feedback): short pause after reading the question (\"pause\"), every sentence ends with a full stop (falling tone), more explaining where the idea is new in the study plan, a short reminder where it was taught earlier, a little excitement now and then ([excited] tags: used by eleven_v3/v4, dropped automatically for multilingual_v2), numbers and symbols written as words.",
  "slides": [
   [
-   "Six workers paint a hall in 10 days, and all the workers work at the same rate. How many days would 4 workers need to paint the same hall?",
-   "Now careful, this is not a normal ratio table, right? Workers and days don't go up together.",
-   "So before I calculate anything, will it take more days or fewer? Fewer workers, so the job takes longer. So it has to be more than 10 days.",
    {
-    "say": "So what can I cross out? 6 and two thirds and 8 are both less than 10, so number one and number four are out.",
+    "say": "Six workers paint a hall in ten days, and all the workers work at the same rate. How many days would four workers need to paint the same hall?",
+    "pause": 0.5
+   },
+   "Now, this one is a bit different. Remember the ratio table? There, the two numbers grow together. Twice the vases, twice the roses. But here it's the opposite. If I bring more workers, the job gets done faster, so the number of days goes down. More workers, fewer days. So a normal ratio table won't work here.",
+   "So before I calculate anything, let's think. Will it take more days, or fewer? There are fewer workers now, so the job takes longer. So it has to be [excited] more than ten days.",
+   {
+    "say": "So what can I cross out? Six and two thirds, and eight. They're both less than ten, so number one and number four are out.",
     "at": [
-     "6 and two thirds"
+     "Six and two thirds"
     ]
    }
   ],
   [
-   "Now it's the same job, so the number of workers times the number of days stays the same.",
+   "Now here's the idea. Let's measure the whole job in worker-days. One worker-day is one worker working for one day.",
    {
-    "say": "6 workers for 10 days, that's 6 times 10, which is equal to 60 worker-days.",
+    "say": "Six workers work for ten days. That's six times ten, so the job is sixty worker-days of work. It's like one worker working alone for sixty days. And it's the same hall, right? So the job is still sixty worker-days, no matter how many workers do it.",
     "at": [
-     "6 times 10"
+     "six times ten"
     ]
    },
    {
-    "say": "And with 4 workers, 4 times d has to be 60 too, right? So d is equal to 60 over 4, which is 15 days.",
+    "say": "Now we split those sixty worker-days between four workers. How many days does each one work? Four times d has to give sixty. So d is equal to sixty over four. That's fifteen days.",
     "at": [
-     "4 times d",
-     "60 too"
+     "Four times d",
+     "those sixty worker-days"
     ]
    },
    {
     "say": "So number three is our answer.",
     "at": [
-     "<d is equal to 60 over 4",
+     "<d is equal to sixty over four",
      "number three"
     ]
    },
    {
-    "say": "And where do the other choices come from? 6 and two thirds is what you get from a normal ratio table, and 12 just adds 2 days for the 2 missing workers. Neither one makes sense.",
+    "say": "And where do the other choices come from? Six and two thirds is what you get from a normal ratio table, as if fewer workers meant fewer days. And twelve just adds two days for the two missing workers. Neither one makes sense.",
     "at": [
-     "6 and two thirds",
-     "12 just adds"
+     "Six and two thirds",
+     "twelve just adds"
     ]
    },
    {
-    "say": "So here's the rule. When one goes up and the other goes down, the product stays the same, like workers and days, or speed and time. I'll see you in the next question.",
+    "say": "So here's the rule. When one number goes up and the other goes down, their product stays the same. Like workers and days, or speed and time. And later in the course, you'll see an even faster way to solve questions like this. It's called the V method. I'll see you in the next question.",
     "at": [
      "here's the rule"
     ]
