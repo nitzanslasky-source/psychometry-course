@@ -18,7 +18,8 @@ Audio goes to ~/Documents/Course.recordings/_ai_audio/<videoId>/ + manifest.json
                alignment.json (character times from /with-timestamps) + manifest {"mode": "continuous",
                "lines": [{text, slide, start, end, at: [seconds|null]}]}. Slides are separated by a short
                <break time="0.6s"/> (eleven_multilingual_v2 supports break tags; v3/v4 get a [pause] tag instead). A line
-               may carry "pause": seconds (a short pause after it, e.g. after reading the question). SAY_AS respells words for the TTS only ("pi" -> "pie"). Audio tags in a
+               may carry "pause": seconds (a short pause after it, e.g. after reading the question). SAY_AS respells words for the TTS only (v4: "pi" -> "pie"). For multilingual_v2 a [pause] / [short pause] tag in a
+               line becomes a <break>, other tags are dropped. Audio tags in a
                line ([excited], ...) are sent only to eleven_v3 / eleven_v4 and dropped for older models. Re-generated only
                when the text or the voice changes; --remap recomputes the timing from alignment.json for free.
 Needs ELEVENLABS_API_KEY in ~/psychometry-course/.env.local.
@@ -41,6 +42,8 @@ def key():
 def _body(voice, text):
     vs = {'stability': voice['stability'], 'similarity_boost': voice['similarity_boost']}
     if voice.get('speed') is not None: vs['speed'] = voice['speed']      # 1.0 = default pace
+    for k in ('style', 'use_speaker_boost'):                               # optional: style exaggeration, speaker boost
+        if voice.get(k) is not None: vs[k] = voice[k]
     return {'text': text, 'model_id': voice['model_id'], 'voice_settings': vs}
 
 
@@ -73,7 +76,7 @@ def load(vid):
     spec = json.load(open(os.path.join(HERE, 'ai_scripts', vid + '.json'), encoding='utf-8'))
     # one shared voice for all videos (ai_scripts/_voice.json); a script file may override it with its own 'voice'
     voice = spec.get('voice') or json.load(open(os.path.join(HERE, 'ai_scripts', '_voice.json'), encoding='utf-8'))
-    voice = {k: voice[k] for k in ('voice_id', 'model_id', 'stability', 'similarity_boost', 'speed') if k in voice}
+    voice = {k: voice[k] for k in ('voice_id', 'model_id', 'stability', 'similarity_boost', 'speed', 'style', 'use_speaker_boost') if k in voice}
     return spec, voice
 
 
@@ -83,19 +86,35 @@ def expressive(model):
     return bool(re.match(r'eleven_v[34]', model or ''))
 
 
+TAG = r'\[[a-z][a-z -]*\]'                 # an audio tag: [calmly], [matter-of-fact], [short pause], ...
+PAUSE_TAG = {'short pause': 0.4, 'pause': 0.8, 'long pause': 1.5}
+
+
 def spoken(t, model):
-    """the line as sent to the model: audio tags like [excited] are kept for v3/v4 and dropped for older models
+    """the line as written in the manifest / transcript: audio tags are kept for v3/v4 and dropped for older models
     (which would read them out)."""
     t = t.strip()
-    if not expressive(model): t = re.sub(r'\s*\[[a-z][a-z ]*\]\s*', ' ', t).strip()
+    if not expressive(model): t = re.sub(r'\s+', ' ', re.sub(r'\s*' + TAG + r'\s*', ' ', t)).strip()
     return t
 
 
-SAY_AS = [(r'\bpi\b', 'pie')]      # TTS text only (the manifest / transcript keep the written word): "pi" -> "pie", never "P I"
+def tts_form(t, model):
+    """the line as SENT to the model: v3/v4 get the tags as they are; older models (multilingual_v2) get a pause tag as
+    an SSML <break> and every other tag dropped (nothing in brackets is ever read aloud); then SAY_AS respellings."""
+    t = t.strip()
+    if not expressive(model):
+        t = re.sub(TAG, lambda m: (' <break time="%.1fs"/> ' % PAUSE_TAG[m.group(0)[1:-1]]) if m.group(0)[1:-1] in PAUSE_TAG else ' ', t)
+        t = re.sub(r'\s+', ' ', t).strip()
+    return say_as(t, model)
 
 
-def say_as(t):
-    for a, b in SAY_AS: t = re.sub(a, b, t)
+# TTS text only (the manifest / transcript keep the written word), per model family
+SAY_AS = {'v34': [(r'\bpi\b', 'pie')],     # eleven_v4: "pi" -> "pie", never "P I"
+          'v2': []}                         # multilingual_v2 says "pi" right as written (checked 2026-10-09)
+
+
+def say_as(t, model=None):
+    for a, b in SAY_AS['v34' if expressive(model) else 'v2']: t = re.sub(a, b, t)
     return t
 
 
@@ -112,7 +131,7 @@ def full_text(spec, model=None):
     for si, sl in enumerate(spec['slides']):
         for li, l in enumerate(sl):
             if text: text += pause(SLIDE_BREAK, model) if li == 0 else (gap or ' ')
-            t = say_as(spoken(line_text(l), model))
+            t = tts_form(line_text(l), model)
             spans.append((si, len(text), len(text) + len(t)))
             text += t
             gap = pause(l['pause'], model) if isinstance(l, dict) and l.get('pause') else ''
@@ -144,9 +163,9 @@ def remap(vid, spec, d, voice, h):
     text, spans = full_text(spec, voice.get('model_id'))
     al = json.load(open(os.path.join(d, 'alignment.json')))
     ct = char_times(text, al)
-    lines, flat = [], [l for sl in spec['slides'] for l in sl]
+    lines, flat, tts_l = [], [l for sl in spec['slides'] for l in sl], []
     for (si, a, b), l in zip(spans, flat):
-        t = spoken(line_text(l), voice.get('model_id')); tt = say_as(t)     # tt = as sent to the TTS
+        t = spoken(line_text(l), voice.get('model_id')); tt = tts_form(line_text(l), voice.get('model_id')); tts_l.append(tt)   # tt = as sent
         s0, e0 = _at(ct, a, b, 'start'), _at(ct, a, b, 'end')
         if s0 is None or e0 is None: sys.exit('alignment: no times for line %r' % t[:60])
         ats = []
@@ -155,8 +174,8 @@ def remap(vid, spec, d, voice, h):
             sa, st_ = a, tt                     # "<phrase" = a phrase near the end of the PREVIOUS spoken line
             if ph.startswith('<'):
                 if not lines: sys.exit('%s: %r - no previous line' % (vid, ph))
-                ph = ph[1:]; pi = len(lines) - 1; sa = spans[pi][1]; st_ = say_as(lines[pi]['text'])
-            ph = say_as(ph); k = st_.lower().find(ph.lower())
+                ph = ph[1:]; pi = len(lines) - 1; sa = spans[pi][1]; st_ = tts_l[pi]
+            ph = say_as(ph, voice.get('model_id')); k = st_.lower().find(ph.lower())
             if k < 0: sys.exit('%s: phrase %r not in line %r' % (vid, ph, st_[:70]))
             ats.append(round(_at(ct, sa + k, sa + k + len(ph), 'start'), 3))
         lines.append({'text': t, 'slide': si, 'start': round(s0, 3), 'end': round(e0, 3), 'at': ats})
@@ -198,7 +217,7 @@ def continuous(vid, spec, voice):
 
 # ---------------------------------------------------------------- per-line mode
 def per_line(vid, spec, voice):
-    lines = [say_as(spoken(line_text(l), voice['model_id'])) for s in spec['slides'] for l in s]
+    lines = [tts_form(line_text(l), voice['model_id']) for s in spec['slides'] for l in s]
     d = os.path.join(OUT, vid); os.makedirs(d, exist_ok=True)
     mpath = os.path.join(d, 'manifest.json')
     old = json.load(open(mpath)) if os.path.exists(mpath) else {'lines': []}
