@@ -1,5 +1,8 @@
 """Videos to RE-RECORD are marked in the studio (applied by build_verbal.py LAST, after studio_order).
 
+2026-10-11: entries that are AI redo videos (math_patches/_ai_redo.py ai_redo(): redone with the AI voice) are left out
+- the teacher does not record them. The on-camera first lessons (_ai_redo.CAMERA) stay listed.
+
 The list is math_patches/_rerecord.py: RERECORD[video id] = dict(topic, option 1|2|3, reason, added, minutes, since).
 `since` (UTC) is when the change went into the course; without it the file's modification time is used.
 A take recorded AFTER `since` counts as done (the video turns green again as usual).
@@ -42,11 +45,13 @@ def load_list(path=LIST):
 
 def data(D, root=studio_done.ROOT):
     R, mtime = load_list()
+    AR = studio_done.ai_redo()
     latest = {}
-    for vid, ts in studio_done.takes(root):
+    for vid, ts in studio_done.takes(root, all=True):   # every take (also the old ones of AI-redo videos): a re-record is due until a newer one
         if vid in R and ts > latest.get(vid, ''): latest[vid] = ts
     out, warn = {}, []
     for vid, e in R.items():
+        if AR.ai_redo(vid): continue   # 2026-10-11: redone with the AI voice - nothing for the teacher to re-record
         if vid not in D['videos']:
             warn.append('%s (in _rerecord.py) is not a video in the studio' % vid); continue
         if not e.get('since'): warn.append('%s has no since - using the file time %s' % (vid, mtime))

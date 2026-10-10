@@ -362,10 +362,22 @@ def renumber_modules(D):
         if last.get(subj) != key: num[subj] = num.get(subj, 0) + 1; last[subj] = key
         hy['num'] = num[subj]
 
+def load_ai_redo():
+    """math_patches/_ai_redo.py as one shared module (sys.modules['_ai_redo'])."""
+    import importlib.util, os, sys
+    if '_ai_redo' not in sys.modules:
+        p = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'math_patches', '_ai_redo.py')
+        spec = importlib.util.spec_from_file_location('_ai_redo', p); mod = importlib.util.module_from_spec(spec)
+        sys.modules['_ai_redo'] = mod; spec.loader.exec_module(mod)
+    return sys.modules['_ai_redo']
+
 def apply_patches(D, only=None):
     """Import math_patches/tNN.py (all, or only the given topic numbers) and apply them."""
     import glob, importlib.util, os
     here = os.path.dirname(os.path.abspath(__file__))
+    # 2026-10-11 AI redo (math_patches/_ai_redo.py): takes of recorded math videos that are redone with the AI voice no
+    # longer count for any "recorded before <cutoff>" guard - they get the newest content (first lessons stay protected)
+    load_ai_redo().install()
     M = MathCourse(D)
     for f in sorted(glob.glob(os.path.join(here, 'math_patches', 't*.py'))):
         n = int(re.findall(r't(\d+)', os.path.basename(f))[0])

@@ -31,6 +31,8 @@ order (time-gated like _spoken_labels.py - never a live "skip if recorded" check
 from the old last slide - its question sits in the recorded part) is left out of QMAP on purpose. The three AI-pilot
 videos (solve-geo33-g091, solve-q-544, solve-q-r26-t22-02) are not touched (their questions already follow the rule).
 Topics 51 / 52 (modulesV51.py / modulesV52*.py, not math_patches) are not changed here - check_left lists them.
+2026-10-11 AI redo (_ai_redo.py): recorded math videos redone with the AI voice count as unrecorded; their 35 questions
+are in QMAP_AI_REDO / LINES_AI_REDO / EXPL_AI_REDO / ITEMS (board items naming a choice position).
 
 Not a patch itself (math_api only loads t*.py): each tNN.py calls choice_order(M, NN) LAST in its apply().
 check_left(D) lists every multiple-choice question of an unrecorded video / practice that still breaks the rule (build
@@ -923,6 +925,445 @@ EXPL = {
 
 
 # ---------------------------------------------------------------------------------------------------------------------
+# 2026-10-11 AI redo (_ai_redo.py): the 35 questions of RECORDED math videos that kept their old order (recorded(D) on
+# 2026-10-10) are redone with the AI voice, so they follow the rule too. Same method: order from the rule (pinned values
+# to their place; "cannot be determined" / "No value ..." to (4), or (1) when the whole number 4 needs place 4; the rest
+# keep their old relative order); every spoken / drawn / written line that names a choice position follows - generated
+# from the position map, then every line read and fixed by hand ("Choice one, three, ..." = choice + its VALUE; value
+# lists read in choice order; "(2) ..." board items of plug-in steps -> ITEMS). q-326 (option 2 entry) is in: the whole
+# video is new now. Lines are the text AFTER _spoken_labels (it runs first in each topic).
+# ---------------------------------------------------------------------------------------------------------------------
+QMAP_AI_REDO = {
+    "q-091": (3, [3, 1, 2, 4], ["$\\frac{1}{2}$", "$\\frac{1}{3}$", "$\\frac{3}{4}$", "$\\frac{5}{6}$"]),
+    "q-125": (5, [2, 1, 3, 4], ["$12$", "$1$", "$0$", "$13$"]),
+    "q-130": (5, [2, 1, 4, 3], ["$2$", "$4m$", "$4$", "$4n$"]),
+    "q-131": (8, [3, 2, 1, 4], ["$3$", "$6$", "$1$", "$18$"]),
+    "q-164": (6, [3, 2, 4, 1], ["$4$", "$2$", "$7$", "$11$"]),
+    "q-165": (6, [1, 2, 4, 3], ["$6$", "$5$", "$4$", "$20$"]),
+    "q-171": (6, [1, 2, 4, 3], ["$-1$", "$6$", "$18$", "$3$"]),
+    "q-182": (7, [2, 1, 4, 3], ["$2$", "$0$", "$4$", "$3$"]),
+    "q-183": (7, [4, 2, 1, 3], ["$0$", "$2$", "$4$", "It cannot be determined from the information given."]),
+    "q-188": (7, [4, 1, 2, 3], ["$2$", "$3$", "$4$", "$6$"]),
+    "q-193": (7, [2, 3, 4, 1], ["$0$", "$1$", "$2$", "$3$"]),
+    "q-197": (7, [2, 3, 1, 4], ["$3$", "$5$", "$7$", "$19$"]),
+    "q-250": (10, [1, 2, 4, 3], ["$1$", "$\\frac35$", "$-3$", "$3$"]),
+    "q-252": (10, [2, 1, 3, 4], ["$\\sqrt6$", "$1$", "$36$", "$6$"]),
+    "q-291": (11, [2, 3, 4, 1], ["$4$", "$8$", "$2$", "$3$"]),
+    "q-293": (11, [3, 2, 4, 1], ["$4$", "$2$", "$1$", "$0$"]),
+    "q-294": (11, [1, 3, 4, 2], ["$\\sqrt5$", "$4$", "$\\sqrt{11}$", "$16$"]),
+    "q-299": (11, [2, 3, 4, 1], ["$0$", "$1$", "$2$", "$3$"]),
+    "q-301": (11, [1, 4, 2, 3], ["$\\frac{1}{6}$", "$8$", "$\\frac{1}{8}$", "$\\frac{1}{2}$"]),
+    "q-323": (12, [4, 1, 2, 3], ["$0$", "$6$", "Any value", "$1$"]),
+    "q-326": (12, [1, 4, 2, 3], ["$-4$", "$3$", "$4$", "$-3$"]),
+    "q-367": (13, [1, 2, 4, 3], ["$-2$", "$-5$", "$5$", "$3$"]),
+    "q-r26-t01-01": (1, [1, 3, 2, 4], ["$1$", "$3$", "$6$", "$102$"]),
+    "q-r26-t02-01": (2, [1, 3, 2, 4], ["$-3$", "$3$", "$17$", "$-7$"]),
+    "q-r26-t02-19": (2, [2, 4, 1, 3], ["$\\frac{1}{2}$", "$1$", "$1\\frac{1}{2}$", "$2$"]),
+    "q-r26-t04-02": (4, [3, 1, 4, 2], ["$2$", "$4$", "$100$", "$200$"]),
+    "q-r26-t05-03": (5, [1, 3, 2, 4], ["$-3$", "$3$", "$9$", "$15$"]),
+    "q-r26-t06-01": (6, [1, 2, 4, 3], ["$0$", "$2$", "$4$", "$8$"]),
+    "q-r26-t06-02": (6, [4, 2, 1, 3], ["$-2$", "$2$", "$4$", "No value of $x$ satisfies the equation"]),
+    "q-r26-t06-04": (6, [3, 1, 4, 2], ["$2$", "$4$", "$8$", "$10$"]),
+    "q-r26-t07-05": (7, [2, 1, 3, 4], ["$-1$", "$1$", "$3$", "No number satisfies the equation."]),
+    "q-r26-t09-03": (9, [1, 3, 2, 4], ["$-2$", "$3$", "$-2$ or $3$", "$6$"]),
+    "q-r26-t10-01": (10, [2, 1, 3, 4], ["$-1$", "$1$", "$3$", "$-1$ or $3$"]),
+    "q-r26-t11-02": (11, [3, 1, 4, 2], ["$2$", "$4$", "$8$", "$64$"]),
+    "q-r26-t13-13": (13, [4, 1, 3, 2], ["$10$", "$4$", "$-4$", "It cannot be determined from the given information."]),
+}
+
+LINES_AI_REDO = {
+    "solve-q-091": [
+        ("Write \"= 3/6 = 1/2\" and circle choice 1",
+         "Write \"= 3/6 = 1/2\" and circle choice 2"),
+        ("All that's left: three on top, six on the bottom. Three sixths — one half. Choice one.",
+         "All that's left: three on top, six on the bottom. Three sixths — one half. Choice two."),
+    ],
+    "solve-q-130": [
+        ("Circle choice 3",
+         "Circle choice 4"),
+        ("Choice three.",
+         "Choice four."),
+        ("Write \"= 3 − (−1) = 4\" and circle choice 3",
+         "Write \"= 3 − (−1) = 4\" and circle choice 4"),
+        ("Three minus minus one: four. Choice three.",
+         "Three minus minus one: four. Choice four."),
+        ("Read n minus m as if it were m minus n, and you get three minus one — two. Choice one is that trap.",
+         "Read n minus m as if it were m minus n, and you get three minus one — two. Choice two is that trap."),
+        ("Cancel (m − n); write \"= 4\" and circle choice 3",
+         "Cancel (m − n); write \"= 4\" and circle choice 4"),
+        ("Four, times m minus n, over m minus n. Cancel. Four — choice three.",
+         "Four, times m minus n, over m minus n. Cancel. Four — choice four."),
+        ("Plug in. But careful: m equals one would make four m equal four, the same as choice three.",
+         "Plug in. But careful: m equals one would make four m equal four, the same as choice four."),
+        ("Circle choice 3",
+         "Circle choice 4"),
+        ("Choice three.",
+         "Choice four."),
+        ("Next to the choices write: 2, 20, 4, 12",
+         "Next to the choices write: 20, 2, 12, 4"),
+        ("Choices: two, twenty, four, twelve. All different.",
+         "Choices: twenty, two, twelve, four. All different."),
+    ],
+    "solve-q-131": [
+        ("Choice one, three, is only the bracket. Choice four, eighteen, forgets the one third.",
+         "Choice three, the number three, is only the bracket. Choice four, eighteen, forgets the one third."),
+    ],
+    "solve-q-164": [
+        ("But careful, eleven is two x plus y, not x. Stop there, and you pick choice four.",
+         "But careful, eleven is two x plus y, not x. Stop there, and you pick choice three."),
+    ],
+    "solve-q-165": [
+        ("Write \"5x = 20 → x = 4\" and circle choice 3",
+         "Write \"5x = 20 → x = 4\" and circle choice 4"),
+        ("Eight x minus three x is five x. Forty-four minus twenty-four is twenty. Five x is twenty, so x equals four. Choice three.",
+         "Eight x minus three x is five x. Forty-four minus twenty-four is twenty. Five x is twenty, so x equals four. Choice four."),
+        ("Stop at twenty, and you pick choice four. Divide by five.",
+         "Stop at twenty, and you pick choice three. Divide by five."),
+        ("And y is six. Both equations check. Choice three.",
+         "And y is six. Both equations check. Choice four."),
+    ],
+    "solve-q-171": [
+        ("Cross out choice 4",
+         "Cross out choice 3"),
+        ("Choice four, x equals three? Forbidden — it makes a denominator zero. Out.",
+         "Choice three, x equals three? Forbidden — it makes a denominator zero. Out."),
+    ],
+    "solve-q-182": [
+        ("Circle choice 3",
+         "Circle choice 4"),
+        ("Choice three.",
+         "Choice four."),
+        ("Choice one, two, is the trap: three minus one. It forgets that the signs must be opposite.",
+         "Choice two, the number two, is the trap: three minus one. It forgets that the signs must be opposite."),
+        ("Circle choice 3",
+         "Circle choice 4"),
+        ("Choice three. The full method matters, though — some coefficient questions hide a second option you must not miss.",
+         "Choice four. The full method matters, though — some coefficient questions hide a second option you must not miss."),
+    ],
+    "solve-q-183": [
+        ("Circle choice 1",
+         "Circle choice 3"),
+        ("So b is zero. Choice one.",
+         "So b is zero. Choice three."),
+        ("Why not choice four? It cannot be determined means different cases give different values of b.",
+         "Why not choice one? It cannot be determined means different cases give different values of b."),
+    ],
+    "solve-q-188": [
+        ("Circle choice 3",
+         "Circle choice 4"),
+        ("Four. Choice three.",
+         "Four. Choice four."),
+    ],
+    "solve-q-193": [
+        ("Circle choice 3",
+         "Circle choice 2"),
+        ("Two different values. Choice three.",
+         "Two different values. Choice two."),
+    ],
+    "solve-q-197": [
+        ("Circle choice 2",
+         "Circle choice 1"),
+        ("Nineteen plus c is twenty-four. c is five. Choice two.",
+         "Nineteen plus c is twenty-four. c is five. Choice one."),
+    ],
+    "solve-q-250": [
+        ("Circle choice 4",
+         "Circle choice 3"),
+        ("Move the four x across: six equals two x. x is three. Choice four.",
+         "Move the four x across: six equals two x. x is three. Choice three."),
+    ],
+    "solve-q-291": [
+        ("Circle choice 3",
+         "Circle choice 2"),
+        ("Choice three. Honestly — quite long.",
+         "Choice two. Honestly — quite long."),
+        ("Cross out choice 1",
+         "Cross out choice 4"),
+        ("Circle choice 3",
+         "Circle choice 2"),
+    ],
+    "solve-q-293": [
+        ("Circle choice 3",
+         "Circle choice 1"),
+        ("Same base on both sides: x is y plus one. So x minus y is one. Choice three.",
+         "Same base on both sides: x is y plus one. So x minus y is one. Choice one."),
+        ("And careful, four copies doesn't mean plus four. Choice one is the trap.",
+         "And careful, four copies doesn't mean plus four. Choice four is the trap."),
+        ("Circle choice 3",
+         "Circle choice 1"),
+        ("Two minus one: one. The choices are plain numbers, so one substitution is enough. Choice three.",
+         "Two minus one: one. The choices are plain numbers, so one substitution is enough. Choice one."),
+    ],
+    "solve-q-294": [
+        ("Circle choice 2",
+         "Circle choice 4"),
+        ("Four. Choice two.",
+         "Four. Choice four."),
+    ],
+    "solve-q-299": [
+        ("Circle choice 3",
+         "Circle choice 2"),
+        ("Exactly two solutions. Choice three.",
+         "Exactly two solutions. Choice two."),
+        ("Circle choice 3",
+         "Circle choice 2"),
+        ("The same two solutions. Choice three.",
+         "The same two solutions. Choice two."),
+    ],
+    "solve-q-301": [
+        ("Circle choice 3",
+         "Circle choice 4"),
+        ("Choice three.",
+         "Choice four."),
+        ("Circle choice 3",
+         "Circle choice 4"),
+        ("Straight to the answer. Choice three.",
+         "Straight to the answer. Choice four."),
+        ("Circle choice 3",
+         "Circle choice 4"),
+        ("One eighth. Choice three.",
+         "One eighth. Choice four."),
+        ("(2) 8^(−1/3) = 1/2 appears",
+         "(3) 8^(−1/3) = 1/2 appears"),
+        ("(3) (1/8)^(−1/3) = 2 ✓ appears",
+         "(4) (1/8)^(−1/3) = 2 ✓ appears"),
+    ],
+    "solve-q-323": [
+        ("Circle choice 3",
+         "Circle choice 4"),
+        ("So any value works. Choice three.",
+         "So any value works. Choice four."),
+    ],
+    "solve-q-326": [
+        ("Cross out choices 1 and 4",
+         "Cross out choices 1 and 2"),
+        ("Circle choice 3",
+         "Circle choice 4"),
+        ("Only one answer is right — so you can mark it and move on. Choice three.",
+         "Only one answer is right — so you can mark it and move on. Choice four."),
+        ("(3) x = 4: 256 < 300 < 1,024 ✓ appears",
+         "(4) x = 4: 256 < 300 < 1,024 ✓ appears"),
+        ("(2) x = 3: 81 < 300 < 243 ✗ appears",
+         "(3) x = 3: 81 < 300 < 243 ✗ appears"),
+    ],
+    "solve-q-r26-t01-01": [
+        ("Circle choice 2",
+         "Circle choice 3"),
+        ("Choice two. Choice four is the trap — that's the number itself, not the sum of its digits.",
+         "Choice three. Choice four is the trap — that's the number itself, not the sum of its digits."),
+    ],
+    "solve-q-r26-t02-01": [
+        ("Here's the trap: dividing only the minus six and forgetting the fifteen. That gives two plus fifteen — seventeen. Choice three.",
+         "Here's the trap: dividing only the minus six and forgetting the fifteen. That gives two plus fifteen — seventeen. Choice two."),
+    ],
+    "solve-q-r26-t02-19": [
+        ("Circle choice 3",
+         "Circle choice 4"),
+        ("Choice three.",
+         "Choice four."),
+    ],
+    "solve-q-r26-t04-02": [
+        ("Write \"= 2 · 100 = 200\" and circle choice 4",
+         "Write \"= 2 · 100 = 200\" and circle choice 3"),
+        ("Fifty-one minus forty-nine: two. Fifty-one plus forty-nine: one hundred. Two times one hundred: two hundred. Choice four.",
+         "Fifty-one minus forty-nine: two. Fifty-one plus forty-nine: one hundred. Two times one hundred: two hundred. Choice three."),
+        ("The trap here is choice two, four. That is fifty-one minus forty-nine, squared. A different expression.",
+         "The trap here is choice four, the number four. That is fifty-one minus forty-nine, squared. A different expression."),
+        ("Same answer, choice four. But it took a minute, and there were many chances for a mistake.",
+         "Same answer, choice three. But it took a minute, and there were many chances for a mistake."),
+    ],
+    "solve-q-r26-t06-01": [
+        ("Circle choice 3",
+         "Circle choice 4"),
+        ("Choice three.",
+         "Choice four."),
+        ("Or test the choices. Choice three, x equals four, is quick: x minus four becomes zero.",
+         "Or test the choices. Choice four, x equals four, is quick: x minus four becomes zero."),
+        ("Next to choice 3 write \"6/3 − 0/6 = 2,  4/2 = 2 ✓\"",
+         "Next to choice 4 write \"6/3 − 0/6 = 2,  4/2 = 2 ✓\""),
+        ("Circle choice 3",
+         "Circle choice 4"),
+        ("Choice three again. A choice that makes a term zero is fast to test, so try it first.",
+         "Choice four again. A choice that makes a term zero is fast to test, so try it first."),
+    ],
+    "solve-q-r26-t06-02": [
+        ("Circle choice 4",
+         "Circle choice 1"),
+        ("The algebra gave only one number, and it is forbidden. So there is no solution. Choice four.",
+         "The algebra gave only one number, and it is forbidden. So there is no solution. Choice one."),
+        ("Next to choice 1 write \"(−3)/(−4) = 3/4,  1/(−4) = −1/4 ✗\"",
+         "Next to choice 3 write \"(−3)/(−4) = 3/4,  1/(−4) = −1/4 ✗\""),
+        ("Choice one, x equals negative two. Left side: three quarters. Right side: negative one quarter. Not equal.",
+         "Choice three, x equals negative two. Left side: three quarters. Right side: negative one quarter. Not equal."),
+        ("Next to choice 3 write \"9/2 ≠ 7/2 ✗\"",
+         "Next to choice 4 write \"9/2 ≠ 7/2 ✗\""),
+        ("Choice three, x equals four. Nine halves against seven halves. No.",
+         "Choice four, x equals four. Nine halves against seven halves. No."),
+        ("Circle choice 4",
+         "Circle choice 1"),
+        ("No number works. Choice four.",
+         "No number works. Choice one."),
+    ],
+    "solve-q-r26-t06-04": [
+        ("Circle choice 3",
+         "Circle choice 1"),
+        ("x minus y is eight. Choice three.",
+         "x minus y is eight. Choice one."),
+        ("Circle choice 3",
+         "Circle choice 1"),
+        ("x is ten, and x minus y is eight. Choice three.",
+         "x is ten, and x minus y is eight. Choice one."),
+    ],
+    "solve-q-r26-t07-05": [
+        ("Circle choice 2",
+         "Circle choice 1"),
+        ("Choice two.",
+         "Choice one."),
+        ("Same answer. Choice two.",
+         "Same answer. Choice one."),
+    ],
+    "solve-q-r26-t09-03": [
+        ("Choice three says negative two or three. But negative two failed. So only three.",
+         "Choice two says negative two or three. But negative two failed. So only three."),
+        ("Circle choice 2",
+         "Circle choice 3"),
+        ("Choice two.",
+         "Choice three."),
+    ],
+    "solve-q-r26-t10-01": [
+        ("Cross out choices 1 and 4",
+         "Cross out choices 2 and 4"),
+        ("Cross out choice 2",
+         "Cross out choice 1"),
+    ],
+    "solve-q-r26-t11-02": [
+        ("Circle choice 2",
+         "Circle choice 4"),
+        ("Choice two. Choice three, eight, is the trap — that's x root x, not x.",
+         "Choice four. Choice one, eight, is the trap — that's x root x, not x."),
+        ("One choice works — that's enough. Choice two.",
+         "One choice works — that's enough. Choice four."),
+        ("(2) 4 · √4 = 8 → ∛8 = 2 ✓ appears",
+         "(4) 4 · √4 = 8 → ∛8 = 2 ✓ appears"),
+    ],
+    "solve-q-r26-t13-13": [
+        ("Circle choice 2",
+         "Circle choice 4"),
+        ("Choice two.",
+         "Choice four."),
+        ("And in both, the absolute value of a plus b is four. Choice two.",
+         "And in both, the absolute value of a plus b is four. Choice four."),
+    ],
+}
+
+EXPL_AI_REDO = {
+    "q-091": [
+        ("Choice 1.",
+         "Choice 2."),
+    ],
+    "q-130": [
+        ("Divide by $m-n$ (not zero, because $m\\ne n$): $\\frac{4(m-n)}{m-n}=4$. The answer is choice 3.",
+         "Divide by $m-n$ (not zero, because $m\\ne n$): $\\frac{4(m-n)}{m-n}=4$. The answer is choice 4."),
+        ("The trap is $2$ (choice 1): that is what you get if you read $n-m$ as $m-n$ (then $3-1=2$), or if you forget the 3.",
+         "The trap is $2$ (choice 2): that is what you get if you read $n-m$ as $m-n$ (then $3-1=2$), or if you forget the 3."),
+        ("Shortcut · Power count: the power of a piece is how many letters are multiplied in it (a number in front counts $0$), and dividing subtracts. Simplifying never changes the power, so the right answer has the question's power. Every piece on top ($3m$, $3n$, $n$, $m$) has power $1$, and the bottom $m-n$ has power $1$, so the question has power $1-1=0$. Choices 2 ($4m$) and 4 ($4n$) have power $1$, so they are out.",
+         "Shortcut · Power count: the power of a piece is how many letters are multiplied in it (a number in front counts $0$), and dividing subtracts. Simplifying never changes the power, so the right answer has the question's power. Every piece on top ($3m$, $3n$, $n$, $m$) has power $1$, and the bottom $m-n$ has power $1$, so the question has power $1-1=0$. Choices 1 ($4m$) and 4 ($4n$) have power $1$, so they are out."),
+        ("Choices 1 and 3 are plain numbers. Plug in $m=1$, $n=0$: $\\frac{3\\cdot1-(0-1)}{1}=4$. The answer is choice 3.",
+         "Choices 2 and 4 are plain numbers. Plug in $m=1$, $n=0$: $\\frac{3\\cdot1-(0-1)}{1}=4$. The answer is choice 4."),
+    ],
+    "q-165": [
+        ("Check: $y=22-16=6$, and $3\\cdot4+2\\cdot6=24$. The answer is choice 3.",
+         "Check: $y=22-16=6$, and $3\\cdot4+2\\cdot6=24$. The answer is choice 4."),
+    ],
+    "q-182": [
+        ("In both cases $|a - b| = 4$ (choice 3). Choice 1 ($2$) forgets that the signs are opposite.",
+         "In both cases $|a - b| = 4$ (choice 4). Choice 2 ($2$) forgets that the signs are opposite."),
+    ],
+    "q-183": [
+        ("Therefore $b = 0$ (and $a = 0$). The answer is choice 1.",
+         "Therefore $b = 0$ (and $a = 0$). The answer is choice 3."),
+    ],
+    "q-188": [
+        ("Therefore $x = 4$ (choice 3).",
+         "Therefore $x = 4$ (choice 4)."),
+    ],
+    "q-193": [
+        ("Therefore $x = 5$ or $x = -13$: two different values (choice 3).",
+         "Therefore $x = 5$ or $x = -13$: two different values (choice 2)."),
+    ],
+    "q-197": [
+        ("Therefore $19 + c = 24$ and $c = 5$ (choice 2).",
+         "Therefore $19 + c = 24$ and $c = 5$ (choice 1)."),
+    ],
+    "q-326": [
+        ("If $x<0$, then $x^5<0$, and a negative number cannot be greater than $300$. Choices (1) and (4) are out.",
+         "If $x<0$, then $x^5<0$, and a negative number cannot be greater than $300$. Choices (1) and (2) are out."),
+    ],
+    "q-r26-t02-01": [
+        ("Choice 3 (17) divides only the $-6$ and forgets the 15: $2+15$. The answer is choice 1.",
+         "Choice 2 (17) divides only the $-6$ and forgets the 15: $2+15$. The answer is choice 1."),
+    ],
+    "q-r26-t02-19": [
+        ("The answer is choice 3.",
+         "The answer is choice 4."),
+    ],
+    "q-r26-t04-02": [
+        ("$51^2-49^2=(51-49)(51+49)=2\\cdot100=200$ (choice 4).",
+         "$51^2-49^2=(51-49)(51+49)=2\\cdot100=200$ (choice 3)."),
+        ("The long way gives the same: $2601-2401=200$. Choice 2 ($4$) is $(51-49)^2$, a different expression.",
+         "The long way gives the same: $2601-2401=200$. Choice 4 ($4$) is $(51-49)^2$, a different expression."),
+    ],
+    "q-r26-t06-01": [
+        ("Check: $\\frac{6}{3}-\\frac{0}{6}=2$ and $\\frac{4}{2}=2$. The answer is choice 3.",
+         "Check: $\\frac{6}{3}-\\frac{0}{6}=2$ and $\\frac{4}{2}=2$. The answer is choice 4."),
+    ],
+    "q-r26-t06-02": [
+        ("But $x=2$ is forbidden (both denominators would be $0$). So no value of $x$ satisfies the equation. The answer is choice 4.",
+         "But $x=2$ is forbidden (both denominators would be $0$). So no value of $x$ satisfies the equation. The answer is choice 1."),
+    ],
+    "q-r26-t06-04": [
+        ("$x-y=10-2=8$. The answer is choice 3.",
+         "$x-y=10-2=8$. The answer is choice 1."),
+    ],
+    "q-r26-t09-03": [
+        ("$x=6$: $\\sqrt{12}\\ne6$. Not a solution. Choice 3 includes $-2$, which is not a solution.",
+         "$x=6$: $\\sqrt{12}\\ne6$. Not a solution. Choice 2 includes $-2$, which is not a solution."),
+    ],
+    "q-r26-t10-01": [
+        ("A root is never negative, and here $x$ equals a root, so $x\\ge0$. Choices 1 ($-1$) and 4 ($-1$ or $3$) are out at once.",
+         "A root is never negative, and here $x$ equals a root, so $x\\ge0$. Choices 2 ($-1$) and 4 ($-1$ or $3$) are out at once."),
+    ],
+    "q-r26-t13-13": [
+        ("Choice 1 ($10$) is the same-signs case, which the third given rules out. Choice 3 forgets that an absolute value is never negative. Choice 4 is right only if you ignore the third given.",
+         "Choice 2 ($10$) is the same-signs case, which the third given rules out. Choice 3 forgets that an absolute value is never negative. Choice 1 is right only if you ignore the third given."),
+    ],
+}
+
+# board items (text "t") that name a choice position - the matching APPEAR label is in LINES
+ITEMS = {
+    "solve-q-301": [
+        ("(2) $8^{-\\frac13}=\\frac1{\\sqrt[3]8}=\\frac12$",
+         "(3) $8^{-\\frac13}=\\frac1{\\sqrt[3]8}=\\frac12$"),
+        ("(3) $\\left(\\frac18\\right)^{-\\frac13}=8^{\\frac13}=2$ ✓",
+         "(4) $\\left(\\frac18\\right)^{-\\frac13}=8^{\\frac13}=2$ ✓"),
+    ],
+    "solve-q-326": [
+        ("(3) $x=4$: $\\ 256<300<1{,}024$ ✓",
+         "(4) $x=4$: $\\ 256<300<1{,}024$ ✓"),
+        ("(2) $x=3$: $\\ 81<300<243$ ✗",
+         "(3) $x=3$: $\\ 81<300<243$ ✗"),
+    ],
+    "solve-q-r26-t11-02": [
+        ("(2) $x=4$: $\\ 4\\cdot\\sqrt4=8 \\;\\to\\; \\sqrt[3]8=2$ ✓",
+         "(4) $x=4$: $\\ 4\\cdot\\sqrt4=8 \\;\\to\\; \\sqrt[3]8=2$ ✓"),
+    ],
+}
+for _new, _old in ((QMAP_AI_REDO, QMAP), (LINES_AI_REDO, LINES), (EXPL_AI_REDO, EXPL)):
+    assert not set(_new) & set(_old), set(_new) & set(_old)
+    _old.update(_new)
+
+
+# ---------------------------------------------------------------------------------------------------------------------
 # apply
 # ---------------------------------------------------------------------------------------------------------------------
 WARN = []          # entries that found nothing (text changed elsewhere / question changed)
@@ -990,6 +1431,11 @@ def choice_order(M, topic):
                 for k in ('say', 'draw', 'label'):
                     if hit.get(k) == a: hit[k] = b
                 lines.remove(hit); n += 1
+            items = [it for b in M.video(vid)['beats'] for it in b.get('items', [])]
+            for a, b in ITEMS.get(vid, []):
+                hit = next((it for it in items if it.get('t') == a), None)
+                if hit is None: WARN.append('%s: no board item %r' % (vid, a[:60])); continue
+                hit['t'] = b; items.remove(hit); n += 1
             M.touched_videos.add(vid)
         M.set_q(qid, choices=new, correct=order.index(q['correct'][0] + 1) + 1, expl=ex)
         CHANGED[qid] = n

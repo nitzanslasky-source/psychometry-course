@@ -323,7 +323,7 @@ body = json.dumps(D, ensure_ascii=False, separators=(',', ':'))
 s2, i2, j2, _ = load(BASE)   # positions in the base; recompute on the patched html
 k0 = s.find('window.COURSE=') + len('window.COURSE='); k1 = s.find('</script>', k0)
 out = s[:k0] + body + ';' + s[k1:]
-import slide_style, studio_ui, studio_cut, studio_edit, studio_continue, studio_ai, studio_done; out = studio_arrows.apply(studio_done.apply(studio_ai.apply(studio_continue.apply(studio_edit.apply(studio_cut.apply(studio_ui.apply(slide_style.apply(out))))))), ARW_FROZEN)   # slide look: teal theme, bold labels, panels, larger text
+import slide_style, studio_ui, studio_cut, studio_edit, studio_continue, studio_ai, studio_done; out = studio_arrows.apply(studio_done.apply(studio_ai.apply(studio_continue.apply(studio_edit.apply(studio_cut.apply(studio_ui.apply(slide_style.apply(out))))), D)), ARW_FROZEN)   # slide look: teal theme, bold labels, panels, larger text
 # ---------- added content (not from the teacher's Hebrew course) marked in the studio UI (added_content.py, studio_added.py) ----------
 import added_content, studio_added
 ADDED, _aw = added_content.manifest(D, load(BASE)[3], MATH.touched_videos)

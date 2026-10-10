@@ -13,6 +13,8 @@ _trim_repeats.py / _clearer.py / _method_names.py - never a live "skip if record
 were recorded later with the new text). Re-record list videos (_rerecord.RERECORD) may change; the only one with a
 label line (solve-q-328, option 2 = continue from the old last slide) is left out of MAP on purpose: its line sits in
 the recorded part. The three AI-pilot videos (solve-geo33-g091, solve-q-544, solve-q-r26-t22-02) are not touched.
+2026-10-11 AI redo (_ai_redo.py): recorded math videos redone with the AI voice count as unrecorded (their old takes
+are ignored); their 47 label lines are in MAP_AI_REDO (incl. solve-q-328, now a whole new video).
 
 Not a patch itself (math_api only loads t*.py): each tNN.py calls spoken_labels(M, NN) LAST in its apply().
 check_left(D) lists every spoken line of an unrecorded math video that still starts with a core label (build warning).
@@ -677,6 +679,190 @@ MAP = {
          'But careful, only the area stays. Slide the apex along the line, and the sides — the perimeter — change.'),
     ]),
 }
+
+# 2026-10-11 AI redo (_ai_redo.py): the recorded math videos that are redone with the AI voice are no longer protected,
+# so their label lines get the same treatment, written by hand in the same style (47 lines in 41 videos; the 14 label
+# lines in the 8 first lessons kept as recorded stay). solve-q-328 (option 2) is now a whole new video, so its line is in.
+MAP_AI_REDO = {
+    'add-subtract': (1, [
+        ("Remember — there's no calculator on this exam.",
+         "And remember, there's no calculator on this exam."),
+        ('Shortcut: different signs? Take the difference — fourteen minus nine is five — and the bigger one decides the sign.',
+         "Here's a little shortcut. Different signs? Take the difference — fourteen minus nine is five — and the bigger one decides the sign."),
+        ('Careful — turning it into a plus does NOT guarantee a positive answer. You still calculate.',
+         'But careful here, turning it into a plus does NOT guarantee a positive answer. You still calculate.'),
+    ]),
+    'multiply-divide': (1, [
+        ('Careful — the carried digit gets ADDED, not multiplied.',
+         'And careful, the carried digit gets ADDED, not multiplied.'),
+    ]),
+    'decimals': (2, [
+        ('Bottom line: zeros at the end? Just cross them out.',
+         'So the bottom line is, zeros at the end? Just cross them out.'),
+    ]),
+    'systems': (6, [
+        ("Tip: if they ask for x, isolate y. It disappears — and you're left with exactly the letter you want.",
+         "So here's a tip. If they ask for x, isolate y. It disappears — and you're left with exactly the letter you want."),
+        ('Check: six times two is twelve. Six over two is three.',
+         "Let's check it. Six times two is twelve. Six over two is three."),
+    ]),
+    'solve-q-096': (3, [
+        ('Remember: with negative numbers, the closer to zero, the bigger.',
+         'And remember, with negative numbers, the closer to zero, the bigger.'),
+    ]),
+    'solve-q-099': (3, [
+        ('Careful: they want the full order — biggest, middle and smallest. Not just the biggest.',
+         'Now careful, because they want the full order — biggest, middle and smallest. Not just the biggest.'),
+    ]),
+    'solve-q-134': (5, [
+        ('Only choice four is left. Check: forty-one times eight hundred six is thirty-three thousand forty-six. Choice four.',
+         "Only choice four is left. Let's check it. Forty-one times eight hundred six is thirty-three thousand forty-six. Choice four."),
+    ]),
+    'solve-q-171': (6, [
+        ("Notice: we could have jumped straight here with cross-multiplication. When fraction equals fraction, that's allowed.",
+         "And you see, we could have jumped straight here with cross-multiplication. When fraction equals fraction, that's allowed."),
+        ('Careful: multiply straight across — four times x minus two — and you get negative one. That is choice one, the trap.',
+         'But careful, if you multiply straight across — four times x minus two — you get negative one. That is choice one, the trap.'),
+    ]),
+    'solve-q-164': (6, [
+        ('Careful: eleven is two x plus y, not x. Stop there, and you pick choice four.',
+         'But careful, eleven is two x plus y, not x. Stop there, and you pick choice four.'),
+    ]),
+    'solve-q-182': (7, [
+        ('Shortcut: the right side IS the square of a difference.',
+         "Now here's a shortcut. The right side IS the square of a difference."),
+    ]),
+    'solve-q-248': (10, [
+        ('Careful — this could also show up in the choices as two cubed over three squared. The negative exponent just moves it to the bottom.',
+         'And be careful, because this could also show up in the choices as two cubed over three squared. The negative exponent just moves it to the bottom.'),
+    ]),
+    'solve-q-250': (10, [
+        ('An exponential equation. Step one: make the bases equal.',
+         'An exponential equation. So first, we make the bases equal.'),
+    ]),
+    'solve-q-252': (10, [
+        ('Check: six root six on both sides. Perfect.',
+         "Let's check it. Six root six on both sides. Perfect."),
+    ]),
+    'solve-q-291': (11, [
+        ('Careful: the pattern is only for whole numbers. With fractions there are other pairs — for example nine quarters and twenty-seven eighths.',
+         'But careful, the pattern is only for whole numbers. With fractions there are other pairs — for example nine quarters and twenty-seven eighths.'),
+    ]),
+    'solve-q-293': (11, [
+        ("Careful: four copies doesn't mean plus four. Choice one is the trap.",
+         "And careful, four copies doesn't mean plus four. Choice one is the trap."),
+    ]),
+    'solve-q-294': (11, [
+        ("Shortcut: you're allowed to cancel the root's index with the power. Divide both by three — square root of five to the one.",
+         "Here's a little shortcut. You're allowed to cancel the root's index with the power. Divide both by three — square root of five to the one."),
+    ]),
+    'solve-q-295': (11, [
+        ("Notice: choices one and three are close — and we didn't need to split them. Seven did the job.",
+         "And look, choices one and three are close — and we didn't need to split them. Seven did the job."),
+    ]),
+    'solve-q-328': (12, [
+        ('The rule: x squared on the SMALL side — x is trapped between the roots.',
+         'So the rule is, x squared on the SMALL side — x is trapped between the roots.'),
+    ]),
+    'solve-q-331': (12, [
+        ('Step one: simplify the left side. x y, squared, is x squared times y squared.',
+         'First, we simplify the left side. x y, squared, is x squared times y squared.'),
+        ("Step two: we'd like to cancel x squared from both sides. But that's dividing by an unknown.",
+         "Next, we'd like to cancel x squared from both sides. But that's dividing by an unknown."),
+    ]),
+    'solve-q-360': (13, [
+        ('Check: three plus three is six, and six is less than seven. ✓',
+         "Let's check it. Three plus three is six, and six is less than seven. ✓"),
+    ]),
+    'solve-q-361': (13, [
+        ('Check: two plus one is three — and three is not bigger than eight.',
+         "Let's check it. Two plus one is three — and three is not bigger than eight."),
+    ]),
+    'solve-q-364': (13, [
+        ('Notice: every answer uses absolute value. Absolute value means distance from zero.',
+         'And look at the answers. Every one uses absolute value. Absolute value means distance from zero.'),
+    ]),
+    'solve-q-368': (13, [
+        ('Remember: absolute value and an even power are basically the same. True with squares — true with bars.',
+         'And remember, absolute value and an even power are basically the same. True with squares — true with bars.'),
+    ]),
+    'solve-q-390': (14, [
+        ('Check: fifty itself is divisible by ten and by twenty-five. So the number might be just fifty.',
+         "Let's check it. Fifty itself is divisible by ten and by twenty-five. So the number might be just fifty."),
+    ]),
+    'solve-q-r26-t02-05': (2, [
+        ("The trap: two fifths of the WHOLE tank is ninety-six. Two hundred forty minus ninety minus ninety-six is fifty-four. That's choice one.",
+         "The trap here is taking two fifths of the WHOLE tank, ninety-six. Two hundred forty minus ninety minus ninety-six is fifty-four. That's choice one."),
+    ]),
+    'r26-t03-summary': (3, [
+        ('Careful: with two negatives, the bottom is the SMALLER number.',
+         'But careful, with two negatives, the bottom is the SMALLER number.'),
+    ]),
+    'r26-t04-formulas': (4, [
+        ("Careful: a squared PLUS b squared doesn't break apart like this. That minus is essential.",
+         "But careful, a squared PLUS b squared doesn't break apart like this. That minus is essential."),
+        ('The rule: square the sum, then subtract two a b.',
+         'So the rule is, square the sum, then subtract two a b.'),
+    ]),
+    'solve-q-r26-t04-02': (4, [
+        ('The trap: choice two, four. That is fifty-one minus forty-nine, squared. A different expression.',
+         'The trap here is choice two, four. That is fifty-one minus forty-nine, squared. A different expression.'),
+    ]),
+    'solve-q-r26-t04-04': (4, [
+        ('The trap: choice two, nine. That forgets the middle term.',
+         'The trap here is choice two, nine. That forgets the middle term.'),
+    ]),
+    'solve-q-r26-t07-02': (7, [
+        ('The trap: squaring each part and forgetting the middle term. That gives thirty-six — choice one.',
+         'The trap here is squaring each part and forgetting the middle term. That gives thirty-six — choice one.'),
+    ]),
+    'solve-q-r26-t07-05': (7, [
+        ('Check: one plus one is two, squared — four. One minus three is negative two, squared — four.',
+         "Let's check it. One plus one is two, squared — four. One minus three is negative two, squared — four."),
+    ]),
+    'r26-t08-traps': (8, [
+        ('Careful: a power makes a number smaller only between zero and one. Above one, it makes it bigger.',
+         'But careful, a power makes a number smaller only between zero and one. Above one, it makes it bigger.'),
+    ]),
+    'solve-q-r26-t09-02': (9, [
+        ('The trap: five point two looks big. But its square is only twenty-seven point zero four.',
+         'The trap here is that five point two looks big. But its square is only twenty-seven point zero four.'),
+    ]),
+    'solve-q-r26-t09-04': (9, [
+        ('The rule: between zero and one, powers make it smaller, and the root makes it bigger.',
+         'So the rule is, between zero and one, powers make it smaller, and the root makes it bigger.'),
+    ]),
+    'solve-q-r26-t09-06': (9, [
+        ("The trap: root three minus root two is NOT root one. That's choice one.",
+         "The trap here is thinking root three minus root two is root one. It's NOT. That's choice one."),
+    ]),
+    'r26-t10-power-traps': (10, [
+        ('Careful: this works only when the EXPONENTS are the same. Two cubed times two to the fifth is the other law — same base, add the exponents.',
+         'But careful, this works only when the EXPONENTS are the same. Two cubed times two to the fifth is the other law — same base, add the exponents.'),
+    ]),
+    'solve-q-r26-t10-03': (10, [
+        ('Tip: if the result is too big, try a smaller choice. Too small, try a bigger one.',
+         "So here's a tip. If the result is too big, try a smaller choice. Too small, try a bigger one."),
+    ]),
+    'solve-q-r26-t12-02': (12, [
+        ('Step one: where is each factor zero?',
+         'So first we ask, where is each factor zero?'),
+    ]),
+    'r26-t12-combining': (12, [
+        ('The trap: square the ends — four and nine. Wrong.',
+         'The trap here is to square the ends — four and nine. Wrong.'),
+    ]),
+    'solve-q-r26-t12-13': (12, [
+        ('The rule: a number that works must be inside the answer. A number that fails must be outside it.',
+         'So the rule is, a number that works must be inside the answer. A number that fails must be outside it.'),
+    ]),
+    'solve-q-r26-t14-01': (14, [
+        ('Notice: all three fakes divided by seven. Never forget to try seven.',
+         "And look, all three fakes divided by seven. So never forget to try seven."),
+    ]),
+}
+assert not set(MAP_AI_REDO) & set(MAP), set(MAP_AI_REDO) & set(MAP)
+MAP.update(MAP_AI_REDO)
 
 WARN = []          # entries that found nothing (text changed elsewhere / video missing)
 CHANGED = {}       # vid -> number of lines changed

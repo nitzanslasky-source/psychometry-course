@@ -25,8 +25,15 @@ RERECORD = {
     'solve-q-328': dict(topic=12, option=2, reason='lost Hebrew points: second-degree inequalities are rare but important; the hardest part - check it with numbers (symmetry)',
                         added='new last slide "Rare - but know it"', minutes=0.5, since='2026-10-08T07:50Z'),
     # ---- topic 13 (2026-10-08 topic 13 restored + clearer; t13.py restore_and_clarify) ----
+    # ---- 2026-10-11 AI redo (_ai_redo.py): every recorded math video except the first lessons kept as recorded gets the
+    # newest content. The non-first ones are redone with the AI voice (studio_rerecord leaves them out). The first lessons
+    # of topics 11, 13 and 14 (_ai_redo.CAMERA) changed after they were recorded: re-recorded on camera.
+    'advanced-powers': dict(topic=11, option=1, reason='2026-10-11 teacher decision: only the first lesson of each topic is on camera; this one changed after it was recorded (newer passes now apply to it). Teacher: AI or a re-record - shown as a re-record until decided',
+                            added='the newest version of the lesson (every change since the take of 2026-10-07)', minutes=0.5, since='2026-10-10T23:30Z'),
+    'primes': dict(topic=14, option=1, reason='2026-10-11 teacher decision: the first lesson of topic 14 is re-recorded on camera with the newest content',
+                   added='the newest version of the lesson (every change since the take of 2026-10-08)', minutes=6.9, since='2026-10-10T23:30Z'),
     'absolute-value': dict(topic=13, option=1, reason='the 2026-10-05 cut removed the Hebrew lesson theory: sign clues, equations (two cases, why the minus), inequalities (symmetric; big side open / small side closed and WHY; like x squared), the wrap-up (expression / equation / inequality, trial and error, harder and rarer, rewind)',
-                           added='6 new slides after "When is it equal?": Sign clues, Equations, Two cases, Inequalities · big side, Inequalities · small side, Wrap-up; 4 shaded number lines (|x| = 5, |x − 2| = 6, |x| > 4, |x| < 4). Re-record the whole lesson (3.2 → 6.7 min, about +3.5 min)', minutes=6.7, since='2026-10-08T07:58Z'),
+                           added='6 new slides after "When is it equal?": Sign clues, Equations, Two cases, Inequalities · big side, Inequalities · small side, Wrap-up; 4 shaded number lines (|x| = 5, |x − 2| = 6, |x| > 4, |x| < 4). Re-record the whole lesson (3.2 → 6.7 min, about +3.5 min). 2026-10-11: re-recorded on camera again with the newest content (teacher decision; since moved from 2026-10-08T07:58Z, so the take of 08:33 no longer counts)', minutes=6.7, since='2026-10-10T23:30Z'),
     'solve-q-358': dict(topic=13, option=1, reason='slide "The sign clues" repeated the four clues the lesson now teaches',
                         added='slide 3 removed; one line on "Decode the signs" names the sign clue from the lesson (1.8 → 1.4 min, about −24 s). Re-record the whole video', minutes=1.4, since='2026-10-08T07:58Z'),
     'solve-q-359': dict(topic=13, option=1, reason='clearer: a number line shows |x + 7| = 9 as 9 steps from −7 - two points, 2 and −16',

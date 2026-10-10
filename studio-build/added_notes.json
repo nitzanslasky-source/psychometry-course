@@ -3240,6 +3240,22 @@
   "solve-geo33-g091#2": {
    "t": "A fifth of the circle",
    "d": "AI pilot: extra visual guidance — sector = angle/360° of the circle, 72°/360° = 1/5 step by step, 7π circled and ticked, key idea \"Can't find each? Find the sum.\" underlined"
+  },
+  "solve-q-164#1": {
+   "t": "Method 2 · Divide first",
+   "d": "trap warning: eleven is 2x + y, not x (2026-10-11 AI redo: said as speech, choice number follows the new choice order)"
+  },
+  "solve-q-182#1": {
+   "t": "Method 2 · Spot the formula",
+   "d": "names the shortcut: the right side is the square of a difference (2026-10-11 AI redo: said as speech)"
+  },
+  "solve-q-131#1": {
+   "t": "Method 2 · Plug in x = 1",
+   "d": "the two traps: the bracket alone (3) and forgetting the one third (18) (2026-10-11 AI redo: choice numbers follow the new choice order)"
+  },
+  "solve-q-293#0": {
+   "t": "Method 1 · Count the copies",
+   "d": "trap warning: four copies is not plus four (2026-10-11 AI redo: said as speech, choice number follows the new choice order)"
   }
  }
 }

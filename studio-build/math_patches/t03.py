@@ -730,6 +730,9 @@ def hebrew_check(M):
 def new_numbers(M):
     # already RECORDED by the teacher with the old numbers (2026-10-02) - question and video stay exactly as recorded
     RECORDED = {'q-091', 'q-092', 'q-093', 'q-094'}
+    # 2026-10-11 AI redo (_ai_redo.py): these four solution videos are redone with the AI voice -> they get the new numbers
+    import sys as _sys_ar
+    RECORDED = {q for q in RECORDED if 'solve-' + q not in _sys_ar.modules['_ai_redo'].AI_REDO}
 
     def S(qid, **kw):
         if qid not in RECORDED: M.set_q(qid, **kw)
@@ -1384,6 +1387,28 @@ _apply_before_coverage_fixes = apply
 def apply(M):
     _apply_before_coverage_fixes(M)
     coverage_fixes(M)   # 2026-10-08 coverage fixes: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-11 spoken labels for the AI redo videos (_ai_redo.py): this topic had no unrecorded label line on 2026-10-09,
+# so it had no spoken_labels hook. Its recorded videos are now redone with the AI voice (first lesson excepted) and get
+# the same rewrite (data: _spoken_labels.py MAP_AI_REDO). Runs before choice order, as in the other topics.
+# =====================================================================================================================
+def _sl_load():
+    import importlib.util, os, sys
+    if '_spoken_labels' in sys.modules: return sys.modules['_spoken_labels']   # one copy: its WARN / CHANGED add up
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_spoken_labels.py')
+    spec = importlib.util.spec_from_file_location('_spoken_labels', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); sys.modules['_spoken_labels'] = m
+    return m
+
+
+_apply_before_spoken_labels = apply
+
+
+def apply(M):
+    _apply_before_spoken_labels(M)
+    _sl_load().spoken_labels(M, 3)   # 2026-10-11 spoken labels (AI redo videos): runs before choice order
 
 
 # =====================================================================================================================
