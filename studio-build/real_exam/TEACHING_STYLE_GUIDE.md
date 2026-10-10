@@ -37,7 +37,7 @@ Hebrew quotes give the line number in `~/Downloads/0N-*-Original-Subtitles.txt` 
 - **Duplicates in the sources:** a video pasted twice (alg 2685/2759; alg 10876/10976), and chart Q4 twice.
 - **Verbal (04-Verbal) and the writing task** were out of scope.
 
-**The Hebrew narrator is male.** He uses masculine first person, and a student addresses him as "Elad" (wp 6298, geo 5491). The teaching moves below are the method of that course. For her own spoken style, the English takes are the source.
+**Teacher decision (2026-10-11):** the Hebrew course's teaching moves are THE method to copy. In this English course the teacher is **Nitzan** — never mention any other name for the teacher. For her spoken style, the English takes are the source.
 
 ### English takes
 
@@ -424,6 +424,9 @@ She never simplifies by being vague. The general sentence is always exact.
 
 ## 12. Settle these BEFORE mass production
 
+**Decided 2026-10-11:** (1) copy the Hebrew course's moves; the teacher is Nitzan, no other name. (3) mnemonics: find cute English tricks (proposals pending approval). (4) R15 plug-in rule approved. (6) no cap on methods. Topic 51 (psychometric thinking): the teacher records ALL of it herself.
+
+
 1. **Whose method is the Hebrew course?**
    - The Hebrew narrator is male ("Elad", wp 6298).
    - Confirm that these teaching moves are the ones the AI course should copy: verdicts, "in the exam / in the lesson", humour level.
@@ -504,5 +507,5 @@ Check every AI script line by line. The numbers in brackets are evidence from §
 
 **Tone and calibration**
 - **R22. Reassure at the scary point,** not everywhere: "It looks scary, but…", "If you don't remember it, that's fine, you can plug in." Keep the single real aha moment, said in words.
-- **R23. Budget.** Expect her method to make scripts about 2x the current length: solutions about 350-450 words, lessons about 600-1,000. If a video gets too long, cut bonus tails and final checks first, never the example, the why or the trap.
+- **R23. Length.** Expect her method to make scripts about 2x the current length: solutions about 350-450 words, lessons about 600-1,000. **Never cap the number of methods** — teacher (2026-10-11): "that's how you learn for this exam — through multiple methods". If a video gets too long, cut bonus tails and repeated final checks first, never a method, the example, the why or the trap.
 - **R25. Before publishing,** run the math check on every number spoken (her takes show slips exactly where scripts were dense), and confirm no example repeats a Hebrew-course number (memory: questions-differ-from-hebrew).
