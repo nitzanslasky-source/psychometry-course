@@ -97,4 +97,7 @@ def apply(html):
     html = html.replace('<g data-sub>', '<g data-sub="">')
     k = html.find('function hyPie(')
     assert k > 0
-    return html[:k] + FUNCS.lstrip() + html[k:]
+    html = html[:k] + FUNCS.lstrip() + html[k:]
+    # 2026-10-10 hand-written board items (k 'hw', studio_handwrite.py); no effect on other items
+    import studio_handwrite
+    return studio_handwrite.apply(html)

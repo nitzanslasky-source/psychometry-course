@@ -17,6 +17,13 @@ Cue tuples:
   ('show', item, phrase)                         click item APPEARS (item = a dsl.T(...) dict; label = its text)
   ('point', target, phrase[, style[, dur]])      POINT: 'stem' · 'choice N' · 'fig: α' · 'fig: shaded' · 'item K[: part]'
   ('mark', kind, target, phrase)                 pen mark: kind circle | cross | tick | underline; target as POINT
+  ('write', item, phrase, text)                  2026-10-10 HANDWRITING TEST: like 'show', but in a handwriting video the
+                                                 item is hand-written (studio_handwrite.py `text` syntax, e.g. '{n/2}',
+                                                 '\\hl{name}{..}') and drawn stroke by stroke from the phrase; elsewhere
+                                                 it is the typed `item` (APPEAR), exactly as before
+Handwriting videos = HANDWRITE (env AI_HANDWRITE="vid,vid" or "all"; default none, so the studio keeps the approved
+typed pilots until the teacher picks handwriting). In them 'write' items are hand-written and every mark is drawn as an
+imperfect hand stroke ('hand': 1); mark kind 'arrow' (an arrow pointing at the target) is also available there.
 Items are numbered on their slide: the question is item 0, then the 'show' items in order (K below).
 """
 import json, os, re, sys
@@ -25,6 +32,19 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 SB = os.path.dirname(HERE)
 sys.path.insert(0, SB)
 from dsl import T
+import studio_handwrite as HWR
+
+HANDWRITE = {x.strip() for x in os.environ.get('AI_HANDWRITE', '').split(',') if x.strip()}
+
+
+def _hw(vid):
+    return vid in HANDWRITE or 'all' in HANDWRITE
+
+
+def HW(item, text):
+    """the hand-written twin of a typed item: same place and width; a bit larger (pen writing has no heavy strokes,
+    so at the typed size it reads smaller)"""
+    return HWR.item(text, size=round(item.get('size', 46) * 1.2), **{k: item[k] for k in ('x', 'y', 'w') if k in item})
 
 
 def R(t, y, x=1060, w=470, size=38):        # geometry: right of the figure
@@ -90,16 +110,20 @@ A4 = L('$\\hl{two}{2x}=14$', 340)
 A5 = L('$x=7$', 410)
 A6 = L('$\\blacklozenge(14)=\\hl{rule}{x+5}$', 480)
 A7 = L('$7+5=\\enspace\\hl{tw}{12}$', 550)
+# 2026-10-10 handwriting test: every calculation / key-idea line is a 'write' (typed exactly as before unless the video
+# is in HANDWRITE); the hand-written text keeps the same \hl parts the POINT / circle cues use
 VIS['solve-q-544'] = {
-    2: [('point', 'stem', '<The operation diamond is defined', 'hl', 5.0), ('point', 'stem', "<And they're asking"), ('show', A1, 'is JUST a rule'),
+    2: [('point', 'stem', '<The operation diamond is defined', 'hl', 5.0), ('point', 'stem', "<And they're asking"),
+        ('write', A1, 'is JUST a rule', 'Operation = a rule'),
         ('mark', 'underline', 'item 1', "That's it."), ('point', 'stem', 'The diamond works on two x', 'hl', 2.2),
-        ('point', 'stem', 'So what does this operation'), ('show', A2x, 'divides it by two'),
-        ('show', A2, 'Two x goes in'), ('point', 'item 3: out', 'x plus five comes out'),
-        ('show', A3, 'half of the number'), ('point', 'item 4: half', 'Pretty simple')],
+        ('point', 'stem', 'What does this operation'), ('write', A2x, 'divides it by two', '÷2, then +5'),
+        ('write', A2, 'Two x goes in', '\\hl{in}{2x} in, \\hl{out}{x+5} out'), ('point', 'item 3: out', 'x plus five comes out'),
+        ('write', A3, 'half of the number', '◆(n) = \\hl{half}{{n/2}} + 5'), ('point', 'item 4: half', 'Pretty simple')],
     3: [('point', 'item 3: in', 'Fourteen is the two x'), ('point', 'item 3: out', 'straight into x plus five'),
         ('point', 'choice 2', 'They get nineteen', 'both'), ('mark', 'cross', 'choice 2', "That's the trap")],
-    4: [('show', A4, 'Two x is equal to fourteen'), ('show', A5, 'x is equal to seven')],
-    5: [('show', A6, 'Now the rule says'), ('show', A7, 'Seven plus five'), ('mark', 'circle', 'item 8: tw', 'is twelve'),
+    4: [('write', A4, 'Two x is equal to fourteen', '\\hl{two}{2x} = 14'), ('write', A5, 'x is equal to seven', 'x = 7')],
+    5: [('write', A6, 'Now the rule says', '◆(14) = \\hl{rule}{x+5}'), ('write', A7, 'Seven plus five', '7+5 =  \\hl{tw}{12}'),
+        ('mark', 'circle', 'item 8: tw', 'is twelve'),
         ('point', 'item 4', 'half of fourteen', 'both')],
     6: [('mark', 'tick', 'choice 1', 'number one')],
     7: [('point', 'item 1', 'an operation like this'), ('point', 'item 4', 'what it really does', 'hl', 2.0),
@@ -127,7 +151,7 @@ VIS['solve-q-r26-t22-02'] = {
         ('show', W3, 'it has to be more than ten days'), ('mark', 'underline', 'item 4', 'See?')],
     4: [('point', 'choice 1', 'Six and two thirds'), ('point', 'choice 4', 'and eight.'),
         ('mark', 'cross', 'choice 1', 'number one and'), ('mark', 'cross', 'choice 4', 'number four are out')],
-    5: [('show', W4, 'measure the whole job'), ('show', W5, 'One worker-day is')],
+    5: [('show', W4, 'measure the whole job'), ('show', W5, 'So one worker-day')],
     6: [('point', 'stem', 'Six workers work for ten days'), ('show', W6, 'Six times ten'),
         ('mark', 'circle', 'item 3: sixty', 'the job is sixty'), ('point', 'stem', "it's the same hall"),
         ('point', 'item 3: sixty', 'no matter how many workers', 'both')],
@@ -154,9 +178,12 @@ def _draw(kind, target):
 def cues_of(vid):
     """-> {line: [(cue line dict or ('item', dict, label)), ...]}, {line: [phrase, ...]}"""
     lines, ats = {}, {}
+    hw = _hw(vid)
     for n, cs in VIS[vid].items():
         for c in cs:
-            if c[0] == 'show':
+            if c[0] == 'write' and hw:
+                lines.setdefault(n, []).append(('item', HW(c[1], c[3]), "'%s' is written" % re.sub(r'[{}]', '', _label(c[3])), True)); ats.setdefault(n, []).append(c[2])
+            elif c[0] in ('show', 'write'):
                 lines.setdefault(n, []).append(('item', c[1], "'%s' appears" % _label(c[1]['t']))); ats.setdefault(n, []).append(c[2])
             elif c[0] == 'point':
                 d = {'point': c[1], 'label': c[1]}
@@ -166,6 +193,7 @@ def cues_of(vid):
             else:
                 kind, target, ph = c[1], c[2], c[3]
                 d = {'draw': _draw(kind, target)} if _draw(kind, target) else {'draw': '%s %s' % (kind.capitalize(), target), 'mark': kind, 'target': target}
+                if hw: d['hand'] = 1
                 lines.setdefault(n, []).append(d); ats.setdefault(n, []).append(ph)
     return lines, ats
 
@@ -202,6 +230,7 @@ def apply(M, vid):
         for c in cues[n]:
             if isinstance(c, tuple):
                 b['items'].append(dict(c[1])); new.append({'appear': len(b['items']) - 1, 'label': c[2]})
+                if len(c) > 3 and c[3]: new[-1]['write'] = 1
             else: new.append(dict(c))
         b['lines'][i:i] = new
     # items were appended from the last line backwards: renumber so items appear in order on each slide

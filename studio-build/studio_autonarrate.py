@@ -18,6 +18,9 @@
    (Course.recordings/_ai_audio/<id>/), firing every cue in order like the teacher: lines -> mp3, APPEAR / NEXT PART -> reveal,
    DRAW marks (circle / cross out / tick / underline a choice, or a draw line with 'mark' + 'target') -> animated pen marks,
    POINT -> highlight / pointer. Any other DRAW (hand-writing) is listed before starting and nothing is recorded.
+   WRITE (2026-10-10 handwriting test): an APPEAR line with 'write': 1 on a hand-written item (k 'hw', studio_handwrite.py)
+   is drawn stroke by stroke at pen speed, timed to its cue phrase (manifest 'atEnd' = end of the phrase); marks with
+   'hand': 1 are drawn as imperfect hand strokes (anMarkHand; also 'arrow'). Without these flags nothing changes.
    CONTINUOUS mode (manifest "mode": "continuous", from ai_narrate.py --continuous; pilot v2 2026-10-09): ONE audio
    file for the whole video, played without a break; every cue is fired on the audio clock at the time the alignment
    gives it (slide change in the pause before the slide's first line, APPEAR just before its line or at its `at`
@@ -96,9 +99,9 @@ function anFire(l,v,bi,svg,pre){const r=pre||anResolve(l.point,v,bi,svg);if(r.er
  const f={t0:performance.now(),dur,shapes:style==='dot'?[]:r.shapes,dot,lead:dot?.45:0};
  if(dot){f.from=AN.dotPos||{x:Math.min(1560,dot.x+120),y:Math.min(880,dot.y+90)};AN.dotPos=dot}
  AN.fx.push(f);anLoop();return f.lead+dur}
-function anPaint(g,k){if(!AN.fx.length)return;const now=performance.now();AN.fx=AN.fx.filter(f=>now-f.t0<(f.lead+f.dur+.35)*1000);if(!AN.fx.length)return;
+function anPaint(g,k){if(!AN.fx.length)return;const now=performance.now();AN.fx=AN.fx.filter(f=>f.k==='w'?now-f.t0<(f.dur+8)*1000:now-f.t0<(f.lead+f.dur+.35)*1000);if(!AN.fx.length)return;
  g.save();g.scale(k,k);g.lineJoin='round';g.lineCap='round';
- for(const f of AN.fx){const t=(now-f.t0)/1000,th=t-f.lead*.6,a=Math.max(0,Math.min(1,th/.2,(f.lead+f.dur-t)/.4)),grow=1-Math.min(1,Math.max(0,th)/.25);
+ for(const f of AN.fx){if(f.k==='w'){anWritePaint(g,f,now);continue}const t=(now-f.t0)/1000,th=t-f.lead*.6,a=Math.max(0,Math.min(1,th/.2,(f.lead+f.dur-t)/.4)),grow=1-Math.min(1,Math.max(0,th)/.25);
   if(a>0)for(const s of f.shapes){
    if(s.k==='box'){const p=(s.pad??9)+5*grow,r=s.r??12;g.save();g.globalCompositeOperation='multiply';g.fillStyle='rgba(255,214,10,'+(.6*a)+')';anRR(g,s.x-p,s.y-p,s.w+2*p,s.h+2*p,r);g.fill();g.restore();
     g.save();g.strokeStyle='rgba(230,140,0,'+(.95*a)+')';g.lineWidth=3;anRR(g,s.x-p,s.y-p,s.w+2*p,s.h+2*p,r);g.stroke();g.restore()}
@@ -116,20 +119,64 @@ function anLoop(){if(AN.raf)return;const step=()=>{AN.raf=0;const c=anOverlay();
   if(AN.fx.length)AN.raf=requestAnimationFrame(step)};AN.raf=requestAnimationFrame(step)}
 
 /* ---- marks drawn with the pen (same ink as the teacher's): circle / cross out / tick / underline ---- */
-function anMarkOf(l){if(l.mark&&l.target)return {kind:String(l.mark).toLowerCase(),targets:[].concat(l.target)};
+function anMarkOf(l){if(l.mark&&l.target)return {kind:String(l.mark).toLowerCase(),targets:[].concat(l.target),hand:!!l.hand};
  const t=String(l.draw||'').trim().replace(/[.\s]+$/,'');const m=t.match(/^(circle|cross out|cross off|cross|strike out|strike through|tick|check|underline)\s+(?:the\s+)?(?:choices?|answers?|options?)\s+((?:\d)(?:\s*(?:,|and|&)\s*\d)*)$/i);
  if(!m)return null;const w=m[1].toLowerCase(),kind=w.startsWith('circle')?'circle':/^(cross|strike)/.test(w)?'cross':/^(tick|check)/.test(w)?'tick':'underline';
- return {kind,targets:m[2].match(/\d/g).map(n=>'choice '+n)}}
+ return {kind,targets:m[2].match(/\d/g).map(n=>'choice '+n),hand:!!l.hand}}
 function anMarkPts(kind,B){const P=[],cx=B.x+B.w/2,cy=B.y+B.h/2;
  if(kind==='circle'){const rx=B.w/2+22,ry=Math.max(30,B.h/2+14),a0=-2.3,n=72;for(let i=0;i<=n;i++){const u=i/n,a=a0+u*(2*Math.PI+.45),s=1+.035*Math.sin(3*a+1)+.05*u;P.push([cx+rx*s*Math.cos(a),cy+ry*s*Math.sin(a)])}}
  else if(kind==='cross'){const n=24;for(let i=0;i<=n;i++){const u=i/n;P.push([B.x-12+(B.w+24)*u,B.y+B.h*.8-(B.h*.6)*u+2*Math.sin(u*6)])}}
  else if(kind==='tick'){const x=B.x+B.w+16,a=[[x,cy-2],[x+13,cy+16],[x+44,cy-28]];for(let s=0;s<2;s++)for(let i=0;i<=10;i++){const u=i/10;P.push([a[s][0]+(a[s+1][0]-a[s][0])*u,a[s][1]+(a[s+1][1]-a[s][1])*u])}}
  else{const n=20,y=B.y+B.h+7;for(let i=0;i<=n;i++){const u=i/n;P.push([B.x-4+(B.w+8)*u,y+1.5*Math.sin(u*9)])}}
  return P.map(p=>[Math.max(0,Math.min(1600,p[0])),Math.max(0,Math.min(900,p[1]))])}
+/* ---- hand-drawn marks (cue 'hand': 1, handwriting videos): imperfect strokes - an oval that does not close where it
+   started, a sloped bowed underline, a curved tick, a wavy strike, an arrow (shaft + head); seeded by the target box ---- */
+function anMarkHand(kind,B){let sd=(Math.round(B.x*7+B.y*13+B.w*3)>>>0)||1;const r=()=>{sd=(Math.imul(sd,1664525)+1013904223)>>>0;return sd/4294967296},n=a=>(r()*2-1)*a,cx=B.x+B.w/2,cy=B.y+B.h/2,S=[];
+ const cl=P=>P.map(p=>[Math.max(0,Math.min(1600,p[0])),Math.max(0,Math.min(900,p[1]))]);
+ if(kind==='circle'){const rx=B.w/2+13+n(3),ry=Math.max(26,B.h/2+11)+n(3),a0=-2.2+n(.3),turn=2*Math.PI+.35+n(.15),N=80,ph=r()*6,dx=n(3),dy=n(2),P=[];
+  for(let i=0;i<=N;i++){const u=i/N,a=a0+u*turn,k=1+.035*Math.sin(2*a+ph)+.07*u;P.push([cx+dx*u+rx*k*Math.cos(a),cy+dy*u+ry*k*Math.sin(a)])}S.push({pts:P,sec:.6+n(.05)})}
+ else if(kind==='underline'){const x0=B.x-6+n(4),x1=B.x+B.w+6+n(5),y=B.y+B.h+8,sl=n(.02)-.012,bow=2+r()*2,N=Math.max(12,Math.round((x1-x0)/12)),P=[];
+  for(let i=0;i<=N;i++){const u=i/N;P.push([x0+(x1-x0)*u,y+(x1-x0)*u*sl-bow*Math.sin(Math.PI*u)+n(.4)])}S.push({pts:P,sec:Math.max(.28,(x1-x0)/950)})}
+ else if(kind==='cross'){const N=26,x0=B.x-10+n(4),x1=B.x+B.w+12+n(4),y0=B.y+B.h*(.75+n(.08)),y1=B.y+B.h*(.25+n(.08)),P=[];
+  for(let i=0;i<=N;i++){const u=i/N;P.push([x0+(x1-x0)*u,y0+(y1-y0)*u-3*Math.sin(Math.PI*u)+n(.5)])}S.push({pts:P,sec:.33})}
+ else if(kind==='tick'){const x=B.x+B.w+14,a=[x+n(2),cy-4+n(2)],b=[x+12+n(2),cy+15+n(2)],c=[x+44+n(4),cy-30+n(4)],P=[];
+  for(let i=0;i<=8;i++){const u=i/8;P.push([a[0]+(b[0]-a[0])*u,a[1]+(b[1]-a[1])*u+1.5*Math.sin(Math.PI*u)])}
+  for(let i=1;i<=14;i++){const u=i/14;P.push([b[0]+(c[0]-b[0])*u-4*Math.sin(Math.PI*u),b[1]+(c[1]-b[1])*u+2*Math.sin(Math.PI*u)])}S.push({pts:P,sec:.38})}
+ else if(kind==='arrow'){const ex=B.x-14,ey=cy,sx=ex-120+n(10),sy=ey+70+n(10),N=20,P=[];
+  for(let i=0;i<=N;i++){const u=i/N;P.push([sx+(ex-sx)*u+12*Math.sin(Math.PI*u),sy+(ey-sy)*u+n(.5)])}S.push({pts:P,sec:.4});
+  const an=Math.atan2(ey-P[N-3][1],ex-P[N-3][0]),h=18;S.push({pts:[[ex-h*Math.cos(an-.5),ey-h*Math.sin(an-.5)],[ex,ey],[ex-h*Math.cos(an+.5),ey-h*Math.sin(an+.5)]],sec:.2})}
+ else return [{pts:anMarkPts(kind,B),sec:.35}];
+ return S.map(s=>({pts:cl(s.pts),sec:s.sec}))}
+/* ---- WRITE (an APPEAR line with write: 1 on a hand-written item, studio_handwrite.py): the item's strokes are drawn
+   one by one at pen speed from its cue phrase; the writing takes the phrase's length (manifest atEnd), kept at 6-10
+   characters a second and ended before the next cue; then the ready slide state (same strokes) is swapped in ---- */
+function anWrites(mine,b){const add=[];
+ for(const c of mine){if(c.k!=='appear'||!c.l.write)continue;const it=b.items[c.l.appear]||{},n=it.hw?.n||String(it.t||'').replace(/\s/g,'').length||4;
+  let d=c.te!=null&&c.te>c.t?c.te-c.t:n/8;d=Math.max(n/10,Math.min(n/6,d));
+  const nx=mine.reduce((a,x)=>x!==c&&x.k!=='say'&&x.t>c.t+.01?Math.min(a,x.t):a,1e9),cap=nx-c.t-.12;if(d>cap)d=Math.max(cap,Math.min(d,n/14));d=Math.max(.35,d);
+  add.push({k:'write',t:c.t,dur:d,l:c.l,ap:c});c.t+=d}
+ mine.push(...add);mine.sort((x,y)=>x.t-y.t)}
+function anWritePrep(c,v,bi){const root=anRoot(boardSvg(v,bi,c.ap.step)),g=root?.querySelector(':scope > g[data-i="'+c.l.appear+'"]'),ink=g?.querySelector('g[data-hw]');
+ if(!ink)throw Error('slide '+(bi+1)+': WRITE item '+c.l.appear+' is not a hand-written item');
+ const S=[];let tot=0,prev=null;
+ for(const p of ink.querySelectorAll('path')){const d=p.getAttribute('d'),nm=(d.match(/-?[\d.]+/g)||[]).map(Number);let pts=[];
+  if(/l/.test(d))pts=[[nm[0],nm[1]],[nm[0]+nm[2],nm[1]+nm[3]]];else for(let i=0;i+1<nm.length;i+=2)pts.push([nm[i],nm[i+1]]);if(!pts.length)continue;
+  const cum=[0];for(let i=1;i<pts.length;i++)cum.push(cum[i-1]+Math.hypot(pts[i][0]-pts[i-1][0],pts[i][1]-pts[i-1][1]));
+  if(prev)tot+=7+.3*Math.hypot(pts[0][0]-prev[0],pts[0][1]-prev[1]);   /* pen lifted: moves to the next stroke */
+  const s={pts,cum,t0:tot};tot+=cum[cum.length-1]+10;s.t1=tot;S.push(s);prev=pts[pts.length-1]}
+ for(const s of S){s.t0/=tot||1;s.t1/=tot||1}
+ c.W={S,color:ink.getAttribute('stroke')||'#d62d48',width:+ink.getAttribute('stroke-width')||4}}
+function anWriteFire(e){const f={k:'w',t0:performance.now(),dur:e.dur,W:e.W};AN.fx.push(f);anLoop();return f}
+function anWritePaint(g,f,now){const T=Math.max(0,Math.min(1,(now-f.t0)/1000/f.dur));if(!T)return;
+ g.save();g.strokeStyle=f.W.color;g.lineWidth=f.W.width;g.lineCap='round';g.lineJoin='round';g.beginPath();
+ for(const s of f.W.S){if(T<=s.t0)break;let u=Math.min(1,(T-s.t0)/(s.t1-s.t0));u=.5*u+.5*(.5-.5*Math.cos(Math.PI*u));   /* a pen slows at both ends of a stroke */
+  const L=s.cum[s.cum.length-1]*u,P=s.pts;g.moveTo(P[0][0],P[0][1]);if(P.length===2&&s.cum[1]<1){g.lineTo(P[1][0],P[1][1]);continue}
+  for(let i=1;i<P.length;i++){if(s.cum[i]<=L){g.lineTo(P[i][0],P[i][1]);continue}const seg=s.cum[i]-s.cum[i-1]||1,k=(L-s.cum[i-1])/seg;g.lineTo(P[i-1][0]+(P[i][0]-P[i-1][0])*k,P[i-1][1]+(P[i][1]-P[i-1][1])*k);break}}
+ g.stroke();g.restore()}
 const anSleep=ms=>new Promise(r=>setTimeout(r,ms));
-async function anInk(pts,sec){const k=cutInkKey(),list=state.ink[k]||(state.ink[k]=[]),s={color:'#d62d48',width:5,points:[pts[0]]};list.push(s);const t0=performance.now();
+async function anInk(pts,sec,wd){const k=cutInkKey(),list=state.ink[k]||(state.ink[k]=[]),s={color:'#d62d48',width:wd||5,points:[pts[0]]};list.push(s);const t0=performance.now();
  for(;;){const f=Math.min(1,(performance.now()-t0)/(sec*1000));s.points=pts.slice(0,Math.max(1,Math.round(f*pts.length)));pen.sync();if(f>=1)break;await anSleep(16)}}
-async function anMarkDo(mk,v,bi,boxes){for(let i=0;i<mk.targets.length;i++){const box=boxes?.[i]||(()=>{const r=anResolve(mk.targets[i],v,bi);if(r.err)throw Error(r.err);return r.box})();await anInk(anMarkPts(mk.kind,box),mk.kind==='circle'?.6:.35);await anSleep(150)}}
+async function anMarkDo(mk,v,bi,boxes){for(let i=0;i<mk.targets.length;i++){const box=boxes?.[i]||(()=>{const r=anResolve(mk.targets[i],v,bi);if(r.err)throw Error(r.err);return r.box})();if(mk.hand){for(const st of anMarkHand(mk.kind,box))await anInk(st.pts,st.sec,4.2)}else await anInk(anMarkPts(mk.kind,box),mk.kind==='circle'?.6:.35);await anSleep(150)}}
 
 /* ---- the plan: check everything before recording anything ---- */
 function anPlan(v,man){const errs=[],W=[];let say=0;
@@ -177,17 +224,17 @@ async function anPrerender(v){const pre=new Map();pre.svg={};
 function anTimeline(v,man){const L=man.lines,ev=[];let li=0;
  v.beats.forEach((b,bi)=>{const ls=hyLines(v,bi),slideT=bi?(()=>{const pe=L[li-1]?.end??0,ns=L[li]?.slide===bi?L[li].start:pe+.5;return Math.max(pe+.05,Math.min(ns-.3,(pe+ns)/2))})():0;
   if(bi)ev.push({t:slideT,k:'slide',bi});const mine=[];let pend=[],lastEnd=slideT,lastAp=slideT;
-  const place=(m)=>{pend.forEach((c,k)=>{let t=m?(m.at?.[k]??null):null;
+  const place=(m)=>{pend.forEach((c,k)=>{let t=m?(m.at?.[k]??null):null;c.te=m?(m.atEnd?.[k]??null):null;
     if(t==null)t=!m?lastEnd+.15+.35*k:c.l.appear!=null?m.start-.12:c.l.point!=null?m.start+Math.max(0,Math.min(.95,+c.l.at||0))*(m.end-m.start):m.start+.05;
     c.t=Math.max(slideT+.05,t);if(c.k==='appear'){c.t=Math.max(c.t,lastAp+.05);lastAp=c.t}mine.push(c)});pend=[]};
   for(const l of ls){if(l.say!=null){const m=L[li++];if(!m)break;place(m);mine.push({t:m.start,k:'say',n:li,l});lastEnd=m.end}
    else if(l.appear!=null)pend.push({k:'appear',l});else if(l.draw!=null)pend.push({k:'mark',l});else if(l.point!=null)pend.push({k:'point',l})}
   place(null);
   /* in time order: the board step at each moment, then measure what the cue points at / marks on that board */
-  mine.sort((x,y)=>x.t-y.t);let step=0;
+  mine.sort((x,y)=>x.t-y.t);anWrites(mine,b);let step=0;
   for(const c of mine){c.bi=bi;if(c.k==='appear'){c.step=++step}else if(c.k==='point'){c.pre=anResolve(c.l.point,v,bi,boardSvg(v,bi,step));if(c.pre.err)throw Error('slide '+(bi+1)+': POINT '+c.l.point+' — '+c.pre.err)}
    else if(c.k==='mark'){c.mk=anMarkOf(c.l);c.boxes=c.mk.targets.map(tg=>{const r=anResolve(tg,v,bi,boardSvg(v,bi,step));if(r.err)throw Error('slide '+(bi+1)+': '+c.l.draw+' — '+r.err);return r.box})}}
-  ev.push(...mine)});
+  for(const c of mine)if(c.k==='write')anWritePrep(c,v,bi);ev.push(...mine)});
  ev.sort((x,y)=>x.t-y.t);return ev}
 /* during a continuous take the screen shows the same ready canvas over the board (a cheap copy) instead of re-building
    the board / script DOM (updateSlide), whose main-thread work held recorded frames for ~0.1 s; updateSlide runs once at
@@ -208,7 +255,8 @@ async function anRunContinuous(R,v,man,buf,lg){
   while(i<ev.length&&ev[i].t<=now){const e=ev[i++];
    if(e.k==='say'){anStatus('🤖 Auto-narrating · slide '+(e.bi+1)+'/'+v.beats.length+' · line '+e.n+'/'+man.lines.length);lg('say '+e.n)}
    else if(e.k==='slide'){anShow(R,e.bi,0);lg('slide '+(e.bi+1))}
-   else if(e.k==='appear'){anShow(R,e.bi,e.step);lg('appear '+e.l.appear+(e.l.part!=null?' part '+e.l.part:''))}
+   else if(e.k==='write'){e.ap.wfx=anWriteFire(e);lg('write '+e.l.appear)}
+   else if(e.k==='appear'){anShow(R,e.bi,e.step);if(e.wfx)AN.fx=AN.fx.filter(f=>f!==e.wfx);lg('appear '+e.l.appear+(e.l.part!=null?' part '+e.l.part:''))}
    else if(e.k==='point'){anFire(e.l,v,e.bi,null,e.pre);lg('point '+e.l.point)}
    else if(e.k==='mark'){lg('mark '+e.l.draw);marks.push(anMarkDo(e.mk,v,e.bi,e.boxes))}}
   if(now>=last&&(ended||now>buf.duration+.5))break;await anSleep(8)}

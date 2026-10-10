@@ -191,9 +191,9 @@ def remap(vid, spec, d, voice, h, seg=None):
         t = spoken(line_text(l), voice.get('model_id')); tt = seg[2][len(lines)] if seg else tts_form(line_text(l), voice.get('model_id')); tts_l.append(tt)   # tt = as sent
         s0, e0 = _at(ct, a, b, 'start'), _at(ct, a, b, 'end')
         if s0 is None or e0 is None: sys.exit('alignment: no times for line %r' % t[:60])
-        ats = []
+        ats, ends = [], []
         for ph in (l.get('at') or []) if isinstance(l, dict) else []:
-            if ph is None: ats.append(None); continue
+            if ph is None: ats.append(None); ends.append(None); continue
             sa, st_ = a, tt                     # "<phrase" = a phrase near the end of the PREVIOUS spoken line
             if ph.startswith('<'):
                 if not lines: sys.exit('%s: %r - no previous line' % (vid, ph))
@@ -201,7 +201,8 @@ def remap(vid, spec, d, voice, h, seg=None):
             ph = say_as(ph, voice.get('model_id')); k = st_.lower().find(ph.lower())
             if k < 0: sys.exit('%s: phrase %r not in line %r' % (vid, ph, st_[:70]))
             ats.append(round(_at(ct, sa + k, sa + k + len(ph), 'start'), 3))
-        lines.append({'text': t, 'slide': si, 'start': round(s0, 3), 'end': round(e0, 3), 'at': ats})
+            ends.append(round(_at(ct, sa + k, sa + k + len(ph), 'end'), 3))   # 2026-10-10: end of the phrase (WRITE timing)
+        lines.append({'text': t, 'slide': si, 'start': round(s0, 3), 'end': round(e0, 3), 'at': ats, 'atEnd': ends})
     secs = duration(os.path.join(d, 'audio.mp3')) or (lines[-1]['end'] + 0.3)
     man = {'videoId': vid, 'mode': 'continuous', 'voice': voice, 'hash': h, 'file': 'audio.mp3', 'seconds': round(secs, 2), 'lines': lines}
     if seg: man.update(seg[3])
@@ -251,6 +252,7 @@ SPLIT = re.compile(r'\s*\[(short pause|pause|long pause)\]\s*')
 FFMPEG = os.environ.get('FFMPEG') or next((p for p in (subprocess.run(['which', 'ffmpeg'], capture_output=True, text=True).stdout.strip(),
          os.path.expanduser('~/Library/Application Support/Cisdem VideoPaw/ffmpeg')) if p and os.path.exists(p)), None)
 SR = 44100
+TAKES = next((int(a.split('=', 1)[1]) for a in sys.argv if a.startswith('--takes=')), 1)
 
 
 def seg_plan(spec, ps, default):
@@ -294,6 +296,10 @@ def seg_plan(spec, ps, default):
 # -2.0 st. A part with a rising ending is made again (new seed, up to END_TRIES more takes); the take with the fewest /
 # smallest rising endings is kept. Runs with parselmouth (Praat) when installed, else a simple autocorrelation tracker.
 END_SLOPE, END_LEVEL, END_TRIES = 5.0, -1.0, 3
+# odd peaks (teacher 2026-10-10: "said very weirdly"): a sentence whose pitch peak (95th percentile minus its median) is
+# above PEAK_MAX semitones - her real statements: median 4.9, at most 7.6 st. --takes N makes N takes of every part that
+# is generated now and keeps the most natural one (fewest rising endings / odd peaks).
+PEAK_MAX = 7.6
 
 
 def _pitch(y):
@@ -318,7 +324,7 @@ def _pitch(y):
 
 
 def endings(y, al):
-    """[(word, slope st/s, end level st, rising)] for the sentences of a take that end in '.' or '!'"""
+    """[(word, slope st/s, end level st, rising, peak st, odd peak)] for every sentence of a take ('?' sentences: peak only)"""
     import numpy as np
     ch, en = al['characters'], al['character_end_times_seconds']; T, S = _pitch(y); out = []; prev = 0.0
     for i, c in enumerate(ch):
@@ -329,20 +335,23 @@ def endings(y, al):
         k = j
         while k > 0 and (ch[k - 1].isalnum() or ch[k - 1] in "'-"): k -= 1
         t_end = en[j - 1] if j else 0; a = prev; prev = t_end
-        if c == '?': continue
         sel = (T >= a) & (T <= t_end + .05); t, s = T[sel], S[sel]
         if len(s) < 10: continue
+        pk = float(np.percentile(s[np.abs(s - np.median(s)) < 8], 95) - np.median(s))
+        if c == '?':
+            out.append((''.join(ch[k:j]) + c, None, None, False, round(pk, 1), pk > PEAK_MAX)); continue
         ok = np.abs(s - np.median(s)) < 6; t, s = t[ok], s[ok]
         last = t[-1]; kk = t >= last - .4; ee = t >= last - .15
         if kk.sum() < 6: continue
         sl = float(np.polyfit(t[kk], s[kk], 1)[0]); lv = float(np.median(s[ee]) - np.median(s))
-        out.append((''.join(ch[k:j]) + c, round(sl, 1), round(lv, 1), sl > END_SLOPE and lv > END_LEVEL))
+        out.append((''.join(ch[k:j]) + c, round(sl, 1), round(lv, 1), sl > END_SLOPE and lv > END_LEVEL, round(pk, 1), pk > PEAK_MAX))
     return out
 
 
 def _end_score(e):
-    r = [x for x in e if x[3]]
-    return (len(r), sum(x[1] for x in r))
+    """lower = more natural: (rising endings + odd peaks, how far over the limits)"""
+    r = [x for x in e if x[3]]; p = [x for x in e if len(x) > 5 and x[5]]
+    return (len(r) + len(p), round(sum(x[1] for x in r) + sum(x[4] - PEAK_MAX for x in p), 1))
 
 
 def _pcm(path):
@@ -376,7 +385,8 @@ def segmented(vid, spec):
         sh = hashlib.sha1(json.dumps([x['text'], v], sort_keys=True).encode()).hexdigest()[:12]
         mp, ap = os.path.join(sd, '%s.mp3' % sh), os.path.join(sd, '%s.json' % sh)
         ctx = (' '.join(plain[:n])[-500:], ' '.join(plain[n + 1:])[:300])
-        if not (os.path.exists(mp) and os.path.exists(ap)):
+        fresh = not (os.path.exists(mp) and os.path.exists(ap))
+        if fresh:
             k = k or key()
             r = tts_timestamps(k, v, x['text'], *ctx)
             open(mp, 'wb').write(base64.b64decode(r['audio_base64'])); json.dump(r['alignment'], open(ap, 'w'), ensure_ascii=False)
@@ -386,7 +396,9 @@ def segmented(vid, spec):
         chk = json.load(open(cp)) if os.path.exists(cp) else None
         if chk is None and '--no-endcheck' not in sys.argv:
             e0 = endings(_pcm(mp), json.load(open(ap))); tries = [{'seed': None, 'endings': e0}]; best = (_end_score(e0), None)
-            for tn in range(END_TRIES if best[0][0] else 0):
+            if fresh and TAKES > 1: print('  part %d/%d: take 1: score %s' % (n + 1, len(segs), _end_score(e0)))
+            want = (TAKES - 1) if fresh else 0           # --takes N: N takes of a part made now
+            for tn in range(max(want, END_TRIES if best[0][0] else 0)):
                 seed = 1009 * (tn + 1)
                 tm, ta = os.path.join(sd, '%s.s%d.mp3' % (sh, seed)), os.path.join(sd, '%s.s%d.json' % (sh, seed))
                 if not os.path.exists(tm):
@@ -396,8 +408,8 @@ def segmented(vid, spec):
                     chars += len(x['text'])
                 e = endings(_pcm(tm), json.load(open(ta))); tries.append({'seed': seed, 'endings': e})
                 if _end_score(e) < best[0]: best = (_end_score(e), seed)
-                print('  part %d/%d: rising ending, take %d (seed %d): %s' % (n + 1, len(segs), tn + 2, seed, [w for w in e if w[3]] or 'falling'))
-                if not best[0][0]: break
+                print('  part %d/%d: take %d (seed %d): score %s %s' % (n + 1, len(segs), tn + 2, seed, _end_score(e), [w for w in e if w[3] or (len(w) > 5 and w[5])] or 'natural'))
+                if not best[0][0] and tn + 1 >= want: break
             if best[1] is not None:                     # the better take becomes the part's audio (the first take is kept)
                 os.replace(mp, os.path.join(sd, '%s.s0.mp3' % sh)); os.replace(ap, os.path.join(sd, '%s.s0.json' % sh))
                 import shutil
@@ -432,8 +444,8 @@ def segmented(vid, spec):
     for f in os.listdir(d):
         if re.match(r'line-\d{3}\.mp3$', f): os.remove(os.path.join(d, f))
     print('  %d parts, %d characters generated now' % (len(segs), chars))
-    still = [(x['line'], w) for x in extra['segments'] for w in (x['endings'] or []) if w[3]]
-    if still: print('  STILL RISING after %d takes: %s' % (END_TRIES + 1, still))
+    still = [(x['line'], w) for x in extra['segments'] for w in (x['endings'] or []) if w[3] or (len(w) > 5 and w[5])]
+    if still: print('  STILL RISING / ODD PEAK after %d takes: %s' % (END_TRIES + 1, still))
     return remap(vid, spec, d, ps[default], h, (text, spans, forms, extra))
 
 

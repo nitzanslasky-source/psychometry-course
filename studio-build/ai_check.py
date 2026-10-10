@@ -70,6 +70,9 @@ for vid in ids:
         w1, w2, n1, n2 = m.group(1).strip().lower(), m.group(2).lower(), m.group(3).lower(), (m.group(4) or '').strip().lower()
         if n1 == w2 and not (w1 and n1 == w1 and n2 == w2):      # "the— the" (one word), not "of the— of the" (a phrase)
             probs.append('single-word stutter "%s— %s" - repeat a short phrase ("of the— of the circle") or drop it' % (m.group(2), m.group(3)))
+    # no humanizer self-correction about the math (teacher 2026-10-10: "slower— sorry, faster" was "bad, weird and confusing")
+    for m in re.finditer(r"[A-Za-z']+\s*[—–-]+\s*sorry\b[^.?!]*", allt0, re.I):
+        probs.append('self-correction "%s" - no "X— sorry, Y" humanizers (only short phrase repeats and um/uh)' % m.group(0)[:50])
     if re.search(r"let me write (that|it) down", allt0, re.I): probs.append('"let me write that down" - no fake hesitation about writing (teacher 2026-10-09)')
     if len(bangs) > 1: probs.append('%d sentences end with "!" - keep one, at the aha moment: %s' % (len(bangs), ' | '.join(bangs)))
     # delivery tags (only eleven_v3/v4 read them; voice 6 = multilingual_v2 since 2026-10-09 reads none, ai_narrate drops
