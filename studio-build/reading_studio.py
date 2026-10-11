@@ -51,6 +51,151 @@ def plain(s):
     return s
 
 
+# =================================================================================================================
+# DISPLAY ONLY: numbers and math as figures and symbols on the teleprompter ("one thousand three hundred twenty" ->
+# "1320", "x minus two" -> "x − 2", "seven squared" -> "7²"). The script text (ai_scripts, sidecars, change detection,
+# alignment) stays in words. A small, conservative rule set:
+#   - multi-word numbers and numbers >= 10 always become digits; 0-9 only in math: next to a converted operator, after
+#     negative/minus, "number"/"choice number", "equal(s) to", "<letter> is", smaller/bigger/less/greater than,
+#     at least/most, before squared/cubed/power, in lists of 3+ numbers, fractions ("three eighths" -> 3/8);
+#   - operator words become symbols only BETWEEN two operands (a number or a single letter b-z, after powers/roots):
+#     times ×, plus +, minus −, divided by ÷, over /, is equal to / equals =;
+#   - powers (squared ², cubed ³, to the power of N), "the square root of" √, "the absolute value of x" |x| (only
+#     when no operator follows), "negative N" −N.
+# =================================================================================================================
+_UNITS = 'zero one two three four five six seven eight nine'.split()
+_TEENS = 'ten eleven twelve thirteen fourteen fifteen sixteen seventeen eighteen nineteen'.split()
+_TENS = 'twenty thirty forty fifty sixty seventy eighty ninety'.split()
+_NV = {w: i for i, w in enumerate(_UNITS)}
+_NV.update({w: 10 + i for i, w in enumerate(_TEENS)})
+_NV.update({w: 20 + 10 * i for i, w in enumerate(_TENS)})
+_SUP = str.maketrans('0123456789n', '⁰¹²³⁴⁵⁶⁷⁸⁹ⁿ')
+_FRAC = {'half': 2, 'halves': 2, 'third': 3, 'thirds': 3, 'quarter': 4, 'quarters': 4, 'fourth': 4, 'fourths': 4,
+         'fifths': 5, 'sixths': 6, 'sevenths': 7, 'eighths': 8, 'ninths': 9, 'tenths': 10}
+_TOK = re.compile(r"[A-Za-z]+|[^A-Za-z]")
+
+
+def _numbers(text):
+    """text with every number phrase replaced by \\ue000<k>\\ue001; returns (text, [(raw, value, words)])"""
+    toks = _TOK.findall(text); out = []; nums = []; i = 0
+    def word(j):
+        return toks[j].lower() if j < len(toks) and toks[j].isalpha() else None
+    while i < len(toks):
+        w = word(i); start = i; j = i; lead_a = False
+        if w == 'a' and toks[i + 1:i + 2] == [' '] and word(i + 2) in ('hundred', 'thousand'):
+            lead_a = True; j = i + 2; w = word(j)
+        if w not in _NV and not (lead_a and w in ('hundred', 'thousand')):
+            out.append(toks[i]); i += 1; continue
+        total, cur, last, nw, end = 0, (1 if lead_a else 0), ('unit' if lead_a else None), 0, j
+        while True:
+            w = word(j)
+            if w is None:
+                break
+            v = _NV.get(w); kind = None
+            if w == 'zero':
+                kind = 'zero' if last is None else None
+            elif v is not None and v < 10:
+                kind = 'unit' if last in (None, 'tens', 'hundred', 'thousand', 'and') else None
+            elif v is not None and v < 20:
+                kind = 'teen' if last in (None, 'hundred', 'thousand', 'and') else None
+            elif v is not None:
+                kind = 'tens' if last in (None, 'hundred', 'thousand', 'and') else None
+            elif w == 'hundred':
+                kind = 'hundred' if last in ('unit', 'teen') and cur < 100 else None
+            elif w == 'thousand':
+                kind = 'thousand' if last in ('unit', 'teen', 'tens', 'hundred') and total == 0 else None
+            elif w == 'and':
+                kind = 'and' if (last in ('hundred', 'thousand') and word(j + 2) in _NV and toks[j + 1:j + 2] == [' ']
+                                 and word(j + 4) not in ('hundred', 'thousand')) else None   # "a hundred and two hundred fifty" = 2 numbers
+            if kind is None:
+                break
+            if kind == 'hundred':
+                cur *= 100
+            elif kind == 'thousand':
+                total += cur * 1000; cur = 0
+            elif kind != 'and':
+                cur += v
+            last = kind; nw += kind != 'and'; end = j + 1
+            sep = toks[j + 1] if j + 1 < len(toks) else ''
+            if sep in (' ', '-') and word(j + 2) is not None:
+                j += 2
+            else:
+                break
+        if last in (None, 'and'):
+            out.append(toks[i]); i += 1; continue
+        raw = ''.join(toks[start:end]); nums.append((raw, total + cur, nw + lead_a))
+        out.append('%d' % (len(nums) - 1)); i = end
+    return ''.join(out), nums
+
+
+_N = r'\d+'
+_L = r"(?<![A-Za-z0-9'’])[b-hj-z](?![A-Za-z0-9'’])"   # a one-letter variable (not a / I)
+_ATOM = r"(?:−?(?:%s|(?<![A-Za-z0-9'’])[b-hj-z](?![A-Za-z0-9'’])|\|[^|\s]+\||√[^\s,.;:?!]+)[⁰¹²³⁴⁵⁶⁷⁸⁹ⁿ^]*)" % _N
+
+
+def math_display(text):
+    s, nums = _numbers(text)
+    mark = set(i for i, (raw, v, nw) in enumerate(nums) if nw > 1 or v >= 10)
+    def m_all(t):
+        mark.update(int(k) for k in re.findall(r'(\d+)', t)); return t
+    def num_of(t):
+        k = re.fullmatch(r'(\d+)', t)
+        return nums[int(k.group(1))][1] if k else None
+    # negative N / negative x
+    s = re.sub(r'\b[Nn]egative (%s|%s)' % (_N, _L), lambda m: '−' + m_all(m.group(1)), s)
+    # powers
+    s = re.sub(r'(%s) squared\b' % _ATOM, lambda m: m_all(m.group(1)) + '²', s)
+    s = re.sub(r'(%s) cubed\b' % _ATOM, lambda m: m_all(m.group(1)) + '³', s)
+    def pw(m):
+        base, e = m_all(m.group(1)), m.group(2); v = num_of(e)
+        return base + (str(v).translate(_SUP) if v is not None else (e.translate(_SUP) if e == 'n' else '^' + e))
+    s = re.sub(r'(%s) to the power of (%s|[a-z]\b)' % (_ATOM, _N), pw, s)
+    # roots, absolute values (a lone operand, no operator after it)
+    s = re.sub(r'\b(?:the )?square root of (%s)' % _ATOM, lambda m: '√' + (lambda o: '(%s)' % o if re.search('[⁰¹²³⁴⁵⁶⁷⁸⁹ⁿ^]', o) else o)(m_all(m.group(1))), s)
+    s = re.sub(r'\b[Tt]he absolute value of (%s)(?!,? (?:times|plus|minus|over|divided)\b)' % _ATOM,
+               lambda m: '|' + m_all(m.group(1)) + '|', s)
+    # binary operators between two operands (repeat for chains)
+    ops = [(r'times', ' × '), (r'plus', ' + '), (r'minus', ' − '), (r'divided by', ' ÷ '), (r'over', '/'),
+           (r'is equal to', ' = '), (r'equals', ' = ')]
+    s = re.sub(r"(?<![A-Za-z0-9'’])a,? (times|plus|minus) (%s)" % _L, lambda m: 'a ' + dict(times='×', plus='+', minus='−')[m.group(1)] + ' ' + m.group(2), s)
+    for _ in range(4):
+        before = s
+        for w, sym in ops:
+            s = re.sub(r'(%s),? %s (%s)' % (_ATOM, w, _ATOM), lambda m: m_all(m.group(1)) + sym + m_all(m.group(2)), s)
+        if s == before:
+            break
+    # unary minus before a number
+    s = re.sub(r'\b[Mm]inus (%s)' % _N, lambda m: '−' + m_all(m.group(1)), s)
+    # contexts that make a small number math
+    for rx in [r'\b[Nn]umber (%s)', r'\bequals? to (%s)', r'\bequals (%s)',
+               _L.replace('%', '%%') + r" is (%s)", r"[²³⁴⁵⁶⁷⁸⁹ⁿ|] is (%s)",
+               r'\b(?:smaller|bigger|less|greater|larger) than (%s)(?! of\b)', r'\bat (?:least|most) (%s)(?! of\b)',
+               r'(?:[×+÷=/]|−) ?(%s)']:
+        s = re.sub(rx % _N, lambda m: m.group(0)[:m.start(1) - m.start(0)] + m_all(m.group(1)), s)
+    # "<converted number> is N": "x + 7 is nine" -> "x + 7 is 9"
+    s = re.sub(r'(\d+) is (%s)' % _N,
+               lambda m: m.group(0) if int(m.group(1)) not in mark else m.group(0)[:m.start(2) - m.start(0)] + m_all(m.group(2)), s)
+    # "four is smaller than 7" -> "4 is smaller than 7" (the other side is already a figure); "four k = m" -> "4k = m"
+    s = re.sub(r'(%s) ((?:is )?(?:smaller|bigger|less|greater|larger) than )(\ue000(\d+)\ue001|\d|−)' % _N,
+               lambda m: (m_all(m.group(1)) if (m.group(4) is None or int(m.group(4)) in mark) else m.group(1)) + ' ' + m.group(2) + m.group(3), s)
+    s = re.sub(r'(%s) (%s)(?= [=×+−÷])' % (_N, _L), lambda m: m_all(m.group(1)) + m.group(2), s)
+    # fractions: "three eighths" -> 3/8 (number word + a plural fraction word, or one + half/third/quarter)
+    def fr(m):
+        v = num_of(m.group(1)); d = _FRAC[m.group(2).lower()]
+        if v is None or (v == 1) != (not m.group(2).endswith('s')) and m.group(2) not in ('halves',):
+            return m.group(0)
+        mark.discard(int(m.group(1)[1:-1])); return '%d/%d' % (v, d)
+    s = re.sub(r'(%s) (%s)\b' % (_N, '|'.join(_FRAC)), fr, s)
+    # lists of three or more numbers
+    item = r'−?%s' % _N
+    s = re.sub(r'%s(?:, %s)*,? (?:and|or) %s' % (item, item, item),
+               lambda m: m_all(m.group(0)) if len(re.findall(_N, m.group(0))) >= 3 else m.group(0), s)
+    def back(m):
+        k = int(m.group(1)); raw, v, nw = nums[k]
+        return str(v) if k in mark else raw
+    return re.sub(r'(\d+)', back, s)
+
+
 def paragraphs(vid):
     """[[paragraph, ...] per slide] of ai_scripts/<vid>.json"""
     d = json.load(open(os.path.join(SCRIPTS, vid + '.json'), encoding='utf-8'))
@@ -68,9 +213,11 @@ def clean_title(t):
     t = re.sub(r'^Question:\s*', '', t)
     t = re.sub(r'\\frac\{([^{}]*)\}\{([^{}]*)\}', r'\1/\2', t)
     t = re.sub(r'\\ne(?![a-z])', '≠', t)
+    t = re.sub(r'\\(?:begin|end)\{\w+\}', ' ', t).replace('&', ' ')
+    t = re.sub(r'\^\{?(\d+|n)\}?', lambda m: m.group(1).translate(_SUP), t)
     t = re.sub(r'\s*\\cdot\s*', '·', t)
     for a, b in [('\\\\', '; '), (r'\cdot', '·'), (r'\left', ''), (r'\right', ''), (r'\leq', '≤'), (r'\geq', '≥'), (r'\le', '≤'), (r'\ge', '≥'),
-                 (r'\neq', '≠'), (r'\sqrt', '√'), (r'\frac', ''), (r'\cdot', '·'), ('\\', '')]:
+                 (r'\neq', '≠'), (r'\sqrt', '√'), (r'\frac', ''), (r'\cdot', '·'), ('\\', ''), ('{', ''), ('}', '')]:
         t = t.replace(a, b)
     return re.sub(r'\s+', ' ', t).strip()
 
@@ -206,7 +353,8 @@ def build(topics=(), ids=None, out=OUT):
             sp = os.path.join(SCRIPTS, v['id'] + '.json')
             if not os.path.exists(sp):
                 sys.exit('missing script: ' + sp)
-            v['paras'] = paragraphs(v['id'])
+            v['paras'] = paragraphs(v['id'])                       # the script text (sidecars, change detection)
+            v['disp'] = [[math_display(p) for p in sl] for sl in v['paras']]   # teleprompter only: figures/symbols
             words = sum(len(p.split()) for sl in v['paras'] for p in sl)
             v['words'] = words
             if not v.get('minutes'):
@@ -476,7 +624,7 @@ function renderParas(){
   const v=V[S.cur];let k=0;
   $('#vtitle').innerHTML=esc(v.title)+'<small>'+esc(v.id)+' · about '+v.minutes.toFixed(1)+' min · '+v.words+' words</small>';
   const ch=new Set(changedList());
-  $('#paras').innerHTML=v.paras.map(sl=>'<div class="slide">'+sl.map(p=>{const kk=k++;return '<p class="p" data-k="'+kk+'">'+esc(p)+(ch.has(kk)?'<span class="chg">changed</span>':'')+'</p>'}).join('')+'</div>').join('');
+  $('#paras').innerHTML=(v.disp||v.paras).map(sl=>'<div class="slide">'+sl.map(p=>{const kk=k++;return '<p class="p" data-k="'+kk+'">'+esc(p)+(ch.has(kk)?'<span class="chg">changed</span>':'')+'</p>'}).join('')+'</div>').join('');
   $('#paras').querySelectorAll('.p').forEach(el=>el.onclick=e=>{e.stopPropagation();const kk=+el.dataset.k;if(S.rec&&!S.rec.paused)nextPara();else if(S.mode==='patch'&&!S.rec){S.sel.has(kk)?S.sel.delete(kk):S.sel.add(kk);if(S.sel.has(kk))S.para=kk;else if(!S.sel.has(S.para))S.para=order()[0]??0;paintParas()}else setPara(kk,'jump')});
   $('#prompter').scrollTop=0;paintParas();
 }
