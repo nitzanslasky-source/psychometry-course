@@ -54,10 +54,6 @@ METHODS = [
     ('inequalities', 'Ranges in two moves', 'Ranges in two moves', 'new'),
     ('solve-q-322', 'Method 2 · Two moves', 'Ranges in two moves', 'lines'),
     ('solve-q-r26-t12-13', '*', 'Ranges in two moves', 'new'),
-    # 13 · mirror test
-    ('r26-t13-mirror', '*', 'Mirror test', 'new'),
-    ('solve-q-r26-t13-15', '*', 'Mirror test', 'new'),
-    ('solve-q-368', 'Method 3 · Plug in', 'Mirror test', 'lines'),
     # 15 · tag it
     ('r26-t15-remainder-tools', 'Tag it', 'Tag it', 'new'),
     ('solve-q-r26-t15-15', '*', 'Tag it', 'new'),
@@ -429,7 +425,6 @@ GUIDE_SECTIONS = {
     'Power count': 'Topic 5 — Count the Powers',
     'Given power → asked power': 'Topics 10–11 — Given power → asked power',
     'Ranges in two moves': 'Topic 12 — 1. Ranges in two moves',
-    'Mirror test': 'Topic 13 — The Mirror Test',
     'Tag it': 'Topic 15 — Tag it (guaranteed factors)',
     'Digit ratio (10A + B equations)': 'Topic 18 — Digit word equations',
     'Flip rule': 'Topic 23 — 1. The flip rule',

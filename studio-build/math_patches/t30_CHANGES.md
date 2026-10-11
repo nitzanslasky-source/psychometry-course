@@ -203,3 +203,6 @@ Audit only, no change. Every teaching point of the Hebrew lesson for the section
 ## 2026-10-08 coverage fixes
 Function `coverage_fixes` (runs LAST in apply(); helpers from `_hebrew_back.py`, own recording guard `CF_CUTOFF` = 2026-10-08T08-47-24 UTC). Source: the Hebrew-vs-English coverage check of this topic (WEAK / MISSING points) + the teacher's decisions of 2026-10-08. No video of this topic is recorded (checked ~/Documents/Course.recordings), so everything went into the videos themselves; nothing added to `_rerecord.py`. Notes in added_notes.json. `python3 math_check.py 30 31 32 33 34 35 36 37 38` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
 - **solve-geo30-g006**, slide "Method 2 · Plugging in numbers" (+≈9 s): "Plugging in numbers is a general method — not only for angles. You'll meet it again in the psychometric thinking lessons." (Topic 30 is day 1 of the study plan, topic 51 day 6 — so a pointer forward, not "as we learned".)
+
+## 2026-10-11 mirror test removed (teacher decision)
+The "mirror test" was removed from the course (topic 13 addition, not in the Hebrew course). Function `remove_mirror(M)` (runs LAST, helper `_no_mirror.py`) drops its written method lines from geo30-g006; the remaining worked solution and plug-in lines already reach the answer.

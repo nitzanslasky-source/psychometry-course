@@ -315,3 +315,12 @@ Teacher (recording): "Make the script of the slides of what I'm doing now and th
 - Each question: the stem read aloud, all useful methods (standard first), traps at the step, "value, number N", verdict + takeaway. New slides for added methods (number line, plugging in, the split method in q-369).
 - No hand-writing: every written step is a click item ("write" cue = typed until a handwriting style is chosen).
 - Review file for the teacher: ~/Downloads/Topic-13-AI-scripts-review.md.
+
+## 2026-10-11 mirror test removed (teacher decision)
+The mirror test was a course addition (2026-10-06 `add_methods`), not in the Hebrew course; the teacher found it not simple, and plugging in numbers covers the same questions. Function `remove_mirror(M)` in t13.py runs LAST (helper `_no_mirror.py`).
+- **Removed:** lesson video `r26-t13-mirror` "The Mirror Test"; guided question **q-r26-t13-15** (a² + b² = 2ab + 9, added on 2026-10-06 only to practise the mirror test) with its solution video `solve-q-r26-t13-15`; their AI scripts and visual-plan specs (`_ai_vis_t13.py`); their notes in added_notes.json; the card row "The given does not change when you flip all signs or swap the letters → mirror test…" (Sign clues). The later guided questions move up one number (q-r26-t13-03 is now Question 13 … q-370 Question 17).
+- Kept (Hebrew questions): q-368 and q-381. Their "Method 2 · Mirror test" written lines are gone; q-368 has one plain line instead ("the given doesn't care which letter is x and which is y … choices 1 and 4 are out"), q-381 ends "The answer is choice 3."
+- **solve-q-368** (Method 3): "And the mirror test sees part of it with no numbers at all…" → "And notice, the given doesn't care which one is x and which is y. So y smaller than x can't be necessarily true, and the same goes for x smaller than y. Just swap them."
+- **r26-t13-summary** (Plug in): the line "And for a necessarily question with a balanced given, try the mirror test." and its board item are removed.
+- What q-r26-t13-15 also taught is still covered: the (a − b)² shortcut formula is used in q-368 Method 2 (topic 4 reminder); plugging in zero on purpose is in q-370 ("try zero first").
+- Other topics: the "mirror test" written lines are removed from q-096 (t03), q-r26-t08-05 (t08), q-457 and q-476 (t16) and geo30-g006 (t30). `math_check.py 13 32` and `3 8 16 30`: 0/0/0.

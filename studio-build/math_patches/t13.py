@@ -2993,3 +2993,43 @@ _apply_before_ai_redo_t13 = apply
 def apply(M):
     _apply_before_ai_redo_t13(M)
     ai_redo_t13(M)   # 2026-10-11 AI redo of topic 13: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-11 teacher decision: the MIRROR TEST is removed from the course. It was a course addition (2026-10-06
+# add_methods), not in her Hebrew course; she found it not simple, and plugging in numbers covers the same questions.
+# Removed: the lesson video r26-t13-mirror and the guided question q-r26-t13-15 (added only to practise it) with its
+# solution video; the card row; the "Method 2 · Mirror test" lines in the written solutions of q-368 and q-381 (Hebrew
+# questions - they stay). The AI specs (_ai_vis_t13.py) no longer have the two videos; the q-368 and summary scripts lost
+# their mirror lines there (q-368 keeps ONE plain symmetry sentence). Other topics: t03, t08, t16, t30 (_no_mirror.py).
+# Runs LAST.
+# =====================================================================================================================
+def remove_mirror(M):
+    import importlib.util, os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_no_mirror.py')
+    spec = importlib.util.spec_from_file_location('_no_mirror', p); NM = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(NM)
+    for ref in (MIRROR, qid(15)):          # unplace(q) also drops its solution video
+        assert any(f['ref'] == ref for f in M.D['flow']), ref
+        M.unplace(ref)
+        M.D['videos'].pop(ref, None)
+    assert 'solve-' + qid(15) not in M.D['videos'] and qid(15) not in M.D['questions']
+    # memory card "Absolute value - rules to know", Sign clues: the mirror-test row
+    n = 0
+    for t in M.card('mem-absolute-value')['tables']:
+        keep = [r for r in t['rows'] if not any('mirror' in str(c).lower() for c in r)]
+        n += len(t['rows']) - len(keep); t['rows'] = keep
+    assert n == 1, n
+    # written solutions of the Hebrew questions: the mirror method goes; q-368 keeps one plain symmetry sentence
+    NM.drop_lines(M, 'q-368', ['Method 2 · Mirror test'], replace=[
+        'Notice that the given doesn\'t care which letter is $x$ and which is $y$: swap them and it stays the same. '
+        'So $y<x$ can\'t be necessarily true, and the same goes for $x<y$. Choices 1 and 4 are out.'])
+    NM.drop_lines(M, 'q-381', ['Method 2 · Mirror test', 'Choice 1 ($s+t<0$) turns into'], replace=['The answer is choice 3.'])
+
+
+_apply_before_remove_mirror = apply
+
+
+def apply(M):
+    _apply_before_remove_mirror(M)
+    remove_mirror(M)   # 2026-10-11 mirror test removed (teacher decision): runs LAST

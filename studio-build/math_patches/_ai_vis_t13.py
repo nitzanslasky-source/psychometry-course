@@ -894,143 +894,10 @@ video('solve-q-r26-t13-13', 'solution', qid='q-r26-t13-13', slides=[
         "next question.", pt('d3_: f1', 'In both cases'), pt('d4_: f2', 'that work'), mk('tick', 'choice 4', 'Number four'))),
 ])
 
-# ------------------------------------------------------------------------------------------------ r26-t13-mirror (lesson)
-# NEW (full, a course addition): the mirror test - flip all signs / swap the letters; opposites go out, twins stay;
-# its limits.  REMINDER: "necessarily" = no exceptions (topic 1).
-i1 = I('i1', 'Flip all signs: $\\ x$ becomes $-x$, $\\ y$ becomes $-y$', size=36)
-i2 = I('i2', 'Swap the letters: $\\ x$ and $y$ trade places', size=36)
-i3 = I('i3', '$x=2,\\ y=9$ fits $\\quad$ so $\\quad x=9,\\ y=2$ fits', size=32)
-i4 = I('i4', 'A choice that turns into its opposite: out', size=34)
-i5 = I('i5', '$x<y$: $\\ 2<9$ yes, $\\ 9<2$ no', size=32)
-f0 = I('f0', 'Given: $|a+b|<|a|+|b|$. Necessarily negative?', size=34)
-f1_ = I('f1_', '$a \\qquad b-a \\qquad a\\cdot b \\qquad a+b$', size=40)
-f2_ = I('f2_', '$|-a-b|<|-a|+|-b|$: the same given', size=32)
-f3_ = I('f3_', '$a,\\ \\ b-a,\\ \\ a+b$: they flip, out', size=32)
-f4_ = I('f4_', '$(-a)(-b)=\\hl{ab}{a\\cdot b}$: it stays', size=32)
-f5_ = I('f5_', '$a=2,\\ b=-1$: $\\ |1|<2+1$, $\\ a\\cdot b=-2$', size=32)
-s0_ = I('s0_', 'Given: $x^2+y^2=13$. Necessarily true?', size=34)
-s1_ = I('s1_', '$x>0 \\qquad x<y \\qquad x+y>0 \\qquad x^2\\le13$', size=36)
-s2_ = I('s2_', 'Flip: $\\ x>0$ and $x+y>0$ turn into opposites, out', size=30)
-s3_ = I('s3_', 'Swap: $\\ x<y$ turns into $y<x$, out', size=30)
-s4_ = I('s4_', '$x^2\\le13$ turns into $y^2\\le13$: a twin, it stays', size=30)
-l1_ = I('l1_', 'The given changes in the mirror: no test', size=34)
-l2_ = I('l2_', 'Simplify first: $\\ x-y+2y=x+y$', size=34)
-l3_ = I('l3_', 'Every choice survives: plug in numbers', size=34)
-l4_ = I('l4_', 'Given unchanged: a choice that turns into its opposite is out', size=32)
-video('r26-t13-mirror', 'lesson', slides=[
-    S('The Mirror Test',
-      L("Welcome back. Now a tool for necessarily-true questions with letters. I call it the mirror test, and it can cross "
-        "out choices without solving anything.")),
-    S('The idea',
-      L("Look at the given, and change it in one of two ways. One, flip every sign, so x becomes minus x, and y becomes "
-        "minus y. Two, swap the letters, so x becomes y, and y becomes x.",
-        show(i1, 'flip every sign'), show(i2, 'swap the letters')),
-      L("If the given looks exactly the same after the change, the given is a mirror. And why does that help? Because any "
-        "numbers that fit the given, their mirror fits it too.", pt('i1', 'looks exactly the same'), pt('i2', 'their mirror')),
-      L("Let's see it in numbers. Say the swap keeps the given the same, and x two, y nine fit it. Then x nine, y two fit it "
-        "too.", show(i3, 'x two, y nine')),
-      L("Now look at a choice. If the mirror turns it into its opposite, it can't always be true. Take x smaller than y. Two "
-        "and nine say yes. Their mirror, nine and two, says no. So it's not necessarily true, and we cross it out.",
-        show(i4, 'turns it into its opposite'), show(i5, 'Take x smaller than y')),
-      L("So when do you reach for it? A necessarily question, letters, and a given that looks balanced.",
-        mk('underline', 'i4', 'when do you reach'))),
-    S('Flip all signs',
-      L("Let's try one. Given, the absolute value of a plus b is smaller than the absolute value of a plus the absolute value "
-        "of b. Which of these is necessarily negative? a, b minus a, a times b, or a plus b.",
-        show(f0, 'Given, the absolute value'), show(f1_, 'Which of these')),
-      L("First, is the given a mirror? Flip all signs. Minus a minus b has the same absolute value as a plus b. And minus a "
-        "and minus b have the same sizes as a and b. So the given doesn't change, it's a mirror.",
-        show(f2_, 'Minus a minus b')),
-      L("Now a turns into minus a. If a were always negative, minus a would have to be always negative too. But they're "
-        "opposites, so both can't hold. Out.", pt('f1_', 'Now a turns')),
-      L("b minus a turns into a minus b, and a plus b turns into minus a minus b. Each one turns into its opposite, so "
-        "they're out too.", show(f3_, 'Each one turns')),
-      L("And a times b? Minus a times minus b is a times b. It doesn't change. It's the only one left, so that's the answer.",
-        show(f4_, 'Minus a times minus b'), mk('circle', 'f4_: ab', "that's the answer")),
-      L("A quick check. a two and b negative one. Two minus one is one, and one is smaller than two plus one, three. And a "
-        "times b is negative two. Negative.", show(f5_, 'a two and b negative one'), voice='calm')),
-    S('Swap the letters',
-      L("Here's one where both mirrors work. Given, x squared plus y squared is thirteen. Which is necessarily true? x is "
-        "positive, x is smaller than y, x plus y is positive, or x squared is at most thirteen.",
-        show(s0_, 'Given, x squared'), show(s1_, 'Which is necessarily true')),
-      L("Flip the signs. Minus x, squared, is x squared, so the given doesn't change. x positive turns into x negative, and x "
-        "plus y positive turns into x plus y negative. Both out.", show(s2_, 'x positive turns')),
-      L("Now swap. y squared plus x squared is thirteen, the same given again. x smaller than y turns into y smaller than x. "
-        "Opposites, so it's out.", show(s3_, 'x smaller than y turns')),
-      L("One choice is left, x squared is at most thirteen. And it's true, because y squared is never negative, so x squared "
-        "can't pass thirteen.", pt('s1_', 'One choice is left')),
-      L("Now careful here. In the swap, it turns into y squared at most thirteen. That's a twin, not an opposite. Twins stay, "
-        "only opposites go out.", show(s4_, "That's a twin"))),
-    S('Limits',
-      L("[short pause] Now three limits. First, always check the given. If the swap changes it, like a plus b in bars bigger "
-        "than two b, which turns into bigger than two a, there's no mirror and no test.", show(l1_, 'always check the given')),
-      L("Second, simplify a choice before you mirror it. x minus y plus two y looks lopsided, but it's just x plus y.",
-        show(l2_, 'simplify a choice')),
-      L("Third, if every choice survives the mirror, the test doesn't help. Then go back to plugging in numbers.",
-        show(l3_, 'every choice survives')),
-      L("So the rule is, if the given doesn't change in the mirror, a choice that turns into its opposite is not necessarily "
-        "true. [pause] Try it on the next question. Okay. I'll see you in the next video.", show(l4_, 'So the rule is'))),
-])
+# r26-t13-mirror (lesson) and q-r26-t13-15 were REMOVED 2026-10-11 (teacher decision: the mirror test is not in her
+# Hebrew course and not simple; plugging in numbers covers the same questions). See t13.py remove_mirror().
 
-# ------------------------------------------------------------------------------------------------ q-r26-t13-15 (Q13)
-# REMINDER: the mirror test (just taught), the shortcut formula (a - b)^2 (topic 4).  NEW: plugging in b = 0 on purpose.
-m1_ = I('m1_', 'Swap: $\\ b^2+a^2=2ba+9$, the same', size=32)
-m2_ = I('m2_', '(1) $\\ b-a=3$: the opposite', size=32)
-m3_ = I('m3_', 'Flip: $\\ (-a)^2+(-b)^2=2(-a)(-b)+9$, the same', size=30)
-m4_ = I('m4_', '(4) $\\ -a-b=3$, so $a+b=-3$', size=32)
-m5_ = I('m5_', '(3) $\\ |b-a|=|a-b|$: it survives', size=32)
-g1_ = I('g1_', '$a^2-2ab+b^2=9$', hand='a^2 − 2ab + b^2 = 9')
-g2_ = I('g2_', '$(a-b)^2=9$', hand='(a−b)^2 = 9')
-g3_ = I('g3_', '$a-b=3$ $\;$ or $\;$ $a-b=-3$', hand='a−b = 3   or   a−b = −3')
-g4_ = I('g4_', '$\\hl{abs}{|a-b|=3}$', hand='\\hl{abs}{|a−b| = 3}')
-h1_ = I('h1_', '$b=0$: $\\ a^2=9$', hand='b = 0 :  a^2 = 9')
-h2_ = I('h2_', '$a=-3,\\ \\ b=0$', hand='a = −3,  b = 0')
-h3_ = I('h3_', '(1) $-3$ $\\quad$ (2) $-3>0$? $\\quad$ (3) $|-3|=3$ $\\quad$ (4) $-3$', size=30)
-video('solve-q-r26-t13-15', 'solution', qid='q-r26-t13-15', slides=[
-    S('Method 1 · Mirror test',
-      L("Given: a squared plus b squared is equal to two a b plus nine. Which of the following is necessarily true?",
-        pt('stem', 'Given', 'hl', 4.5), voice='calm', pause=0.5),
-      L("So one given, two letters, and necessarily true. And the given looks balanced, a and b play the same role. That's a "
-        "job for the mirror test we just learned, so let's start with it. [short pause] Then we'll prove it with algebra, and "
-        "check it by plugging in numbers.", pt('stem', 'the given looks balanced')),
-      L("[short pause] Our first method, the mirror test. First, is the given a mirror? Swap a and b. b squared plus a "
-        "squared is two b a plus nine. Exactly the same given.", show(m1_, 'Swap a and b')),
-      L("So any pair that fits, its swapped pair fits too. Number one, a minus b is three. Swapped, b minus a is three. "
-        "That's the opposite, so it can't always be true. Out.",
-        pt('choice 1', 'Number one'), show(m2_, 'Swapped, b minus a'), mk('cross', 'choice 1', 'Out.')),
-      L("Number two, a bigger than b. Swapped, b bigger than a. Opposites again, out.",
-        pt('choice 2', 'Number two'), mk('cross', 'choice 2', 'Opposites again')),
-      L("Now the other mirror, flip all signs. Squares don't care about the sign, and minus a times minus b is a b. The same "
-        "given again.", show(m3_, 'flip all signs')),
-      L("Number four, a plus b is three. Flipped, minus a minus b is three, so a plus b is minus three. Opposite, out.",
-        pt('choice 4', 'Number four'), show(m4_, 'Flipped, minus a minus b'), mk('cross', 'choice 4', 'Opposite, out')),
-      L("And number three, the absolute value of a minus b. Swapped, it's the absolute value of b minus a, the same number. "
-        "Flipped, minus a plus b in bars, the same again. It survives both mirrors. Number three is our answer, and we didn't "
-        "solve anything.", pt('choice 3', 'And number three'), show(m5_, 'It survives'),
-        mk('tick', 'choice 3', 'Number three is our answer'))),
-    S('Method 2 · Algebra',
-      L("[pause] Our second method, the algebra. a squared, b squared and two a b, those are the pieces of a shortcut "
-        "formula. So let's move the two a b to the left side.", pt('stem', 'the pieces'), show(g1_, 'move the two a b')),
-      L("a squared minus two a b plus b squared is a minus b, all that squared. So a minus b, squared, is nine.",
-        show(g2_, 'So a minus b, squared'), voice='calm'),
-      L("What squared gives nine? Three, or minus three. So a minus b is three, or minus three. In both cases, its absolute value "
-        "is three.", show(g3_, 'So a minus b is three'), show(g4_, 'In both cases'), mk('circle', 'g4_: abs', 'its absolute value')),
-      L("And that's exactly the trap in number one. It forgets the minus three.", pt('choice 1', 'the trap in number one'),
-        pt('g3_', 'It forgets'))),
-    S('Method 3 · Plugging in numbers',
-      L("[pause] Our third method, plugging in numbers. I need a pair that fits the given. Why b zero? Because then "
-        "everything with b disappears, and a squared is just nine. So a is three or minus three. I'll take minus three, "
-        "because a negative breaks more choices.", show(h1_, 'Why b zero'), show(h2_, "I'll take minus three")),
-      L("Number one, minus three minus zero is minus three, not three. Out. Number two, is minus three bigger than zero? No, "
-        "out. Number four, minus three plus zero is minus three, not three. Out. And number three, the absolute value of minus "
-        "three is three. It stays.", show(h3_, 'Number one'), mk('cross', 'choice 1', 'not three. Out'),
-        mk('cross', 'choice 2', 'No, out'), mk('cross', 'choice 4', 'plus zero is'), mk('tick', 'choice 3', 'It stays'), voice='calm'),
-      L("Which way is better? The mirror test found it in seconds, the algebra proves it, and plugging in is the safety net. "
-        "So with a balanced given, try the mirror first. [pause] Okay. I'll see you in the next question.",
-        pt('h3_', 'plugging in is the safety net'))),
-])
-
-# ------------------------------------------------------------------------------------------------ q-r26-t13-03 (Q14)
+# ------------------------------------------------------------------------------------------------ q-r26-t13-03 (Q13)
 # NEW (full): a letter on the right side - check every answer (why: x on both sides); the right side must be >= 0.
 # REMINDER: two cases.
 k5_ = I('k5_', '$x+4=3x$', hand='x+4 = 3x')
@@ -1070,7 +937,7 @@ video('solve-q-r26-t13-03', 'solution', qid='q-r26-t13-03', slides=[
         "equation. [pause] Okay. I'll see you in the next question.", pt('j1_', 'The right side must be'))),
 ])
 
-# ------------------------------------------------------------------------------------------------ q-367 (Q15)
+# ------------------------------------------------------------------------------------------------ q-367 (Q14)
 # NEW: subtract equations to drop |y|; "bars alone on one side"; any positive x fails |x| = 10 + x.
 # REMINDER: two options for an absolute-value equation; a letter on the right means check (q-r26-t13-03).
 p1_ = I('p1_', '$|x|+3|y|=11$', hand='|x| + 3|y| = 11')
@@ -1131,9 +998,10 @@ video('solve-q-367', 'solution', qid='q-367', slides=[
         pt('r4_', 'plugging in the answers right away'))),
 ])
 
-# ------------------------------------------------------------------------------------------------ q-368 (Q16)
+# ------------------------------------------------------------------------------------------------ q-368 (Q15)
 # NEW: equal bars = equal or opposite insides; squaring both sides of an equation with bars; the "smart plug" that
-# separates two surviving choices.  REMINDER: shortcut formula (topic 4), bars ~ even powers (q-366), mirror test.
+# separates two surviving choices; the given doesn't care which letter is x and which is y.  REMINDER: shortcut formula
+# (topic 4), bars ~ even powers (q-366).
 c1_ = I('c1_', '$x+4y=4x+y$', hand='x+4y = 4x+y')
 c2_ = I('c2_', '$3y=3x$, so $\\hl{e}{y=x}$', hand='3y = 3x,  so  \\hl{e}{y = x}')
 c3_ = I('c3_', '$x+4y=-4x-y$', hand='x+4y = −4x−y')
@@ -1185,14 +1053,14 @@ video('solve-q-368', 'solution', qid='q-368', slides=[
         "works.", pt('choice 2', 'Two and'), pt('choice 3', 'three both survive'), show(t2q, 'x two and y minus two')),
       L("So they don't have to be equal, and number two is out. Number three.",
         mk('cross', 'choice 2', "don't have to be equal"), mk('tick', 'choice 3', 'Number three.')),
-      L("And the mirror test sees part of it with no numbers at all. Swap x and y, and the given doesn't change. So y smaller "
-        "than x and x smaller than y turn into each other, and both go out.", pt('stem', 'Swap x and y'),
-        pt('choice 1', 'turn into each other'), pt('choice 4', 'both go out')),
+      L("And notice, the given doesn't care which one is x and which is y. So y smaller than x can't be necessarily true, "
+        "and the same goes for x smaller than y. Just swap them.", pt('stem', "the given doesn't care"),
+        pt('choice 1', 'So y smaller than x'), pt('choice 4', 'the same goes for')),
       L("Three approaches. The third is the hardest to spot, but it's the shortest. Pick what feels comfortable for you. "
         "[pause] Okay. I'll see you in the next question.", pt('t2q', 'The third is'))),
 ])
 
-# ------------------------------------------------------------------------------------------------ q-369 (Q17)
+# ------------------------------------------------------------------------------------------------ q-369 (Q16)
 # NEW: a double inequality with bars = two bands; minus nine goes on the left; the split method (both overlaps); where the
 # bait comes from.  REMINDER: acting on all three parts (topic 12), small / big side.
 b1q = I('b1q', '$7<2x-1<9$', size=32, hand='7 < 2x−1 < 9')
@@ -1256,7 +1124,7 @@ video('solve-q-369', 'solution', qid='q-369', slides=[
         "ranges. [pause] Okay. I'll see you in the next question.", pt('d3q', 'Plugging in was much shorter'))),
 ])
 
-# ------------------------------------------------------------------------------------------------ q-370 (Q18)
+# ------------------------------------------------------------------------------------------------ q-370 (Q17)
 # The known struggle spot: case 2 is written out exactly (|x| = -x, so x + |x| = 0 < 12, always true).
 # NEW: split at zero when x and |x| are added; "most precise"; zero kills two choices; the smart plug below -6.
 k1r = I('k1r', '$x\\ge0$: $\\ \\ x+x<12$', size=36)
@@ -1332,7 +1200,6 @@ h1s = I('h1s', '$|x-a|$ = the distance between $x$ and $a$', size=40)
 h2s = I('h2s', '$|x+6|$ = the distance from $-6$', size=40)
 j1s = I('j1s', 'An expression $=$ ? $\\ $ Plug in a number that fits', size=38)
 j2s = I('j2s', 'Check the choices come out different. Two survive? Plug in again', size=32)
-j3s = I('j3s', 'Balanced given, "necessarily": the mirror test', size=36)
 z1s = I('z1s', 'Is the letter positive, negative, or zero?', size=38)
 z2s = I('z2s', 'Did I keep both cases?', size=38)
 z3s = I('z3s', 'Is the right side negative or zero?', size=38)
@@ -1379,8 +1246,7 @@ video('r26-t13-summary', 'lesson', slides=[
       L("And careful with a plus inside. x plus six is the distance from negative six.", show(h2s, 'a plus inside'))),
     S('Plug in',
       L("Asked what an expression equals? Plug in a number that fits the conditions, and check that the choices come out "
-        "different. Two survive? Plug in again.", show(j1s, 'Plug in a number'), show(j2s, 'check that the choices')),
-      L("And for a necessarily question with a balanced given, try the mirror test.", show(j3s, 'try the mirror test'))),
+        "different. Two survive? Plug in again.", show(j1s, 'Plug in a number'), show(j2s, 'check that the choices'))),
     S('Before you practice',
       L("Before each question, ask yourself. Is the letter positive, negative, or zero? Did I keep both cases? Is the right "
         "side negative or zero?", show(z1s, 'Is the letter'), show(z2s, 'Did I keep'), show(z3s, 'Is the right side')),

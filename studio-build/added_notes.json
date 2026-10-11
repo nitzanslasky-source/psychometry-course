@@ -109,10 +109,6 @@
    "t": "Inequalities: Summary",
    "d": "recaps inequalities: the flip, x disappearing, systems, x² inequalities, testing choices, signs and fractions, combining ranges, must/could/cannot; x² rule on shaded number lines (segment / two rays)"
   },
-  "r26-t13-mirror": {
-   "t": "The Mirror Test",
-   "d": "the mirror test — if the given stays the same after flipping all signs or swapping letters, any choice that turns into its opposite is out"
-  },
   "r26-t13-summary": {
    "t": "Absolute Value — Summary",
    "d": "recaps absolute value: distance from zero, the rules, sign clues, equations, inequalities, negative right side, distance, plugging in · 2026-10-08: number line added on \"Inequalities\" — |x − 5| < 3 one band, |x − 5| > 3 two rays"
@@ -556,10 +552,6 @@
   "solve-q-r26-t13-13": {
    "t": "Given: \\begin{cases} |a|=7 \\\\ |b|=3 \\\\ |a+b|<|a-b| \\end{cases} What is |a+b|?",
    "d": "|a| = 7, |b| = 3, |a+b| < |a−b|, find |a+b| (smaller sum → opposite signs → 7 − 3 = 4; or try 4 sign cases)"
-  },
-  "solve-q-r26-t13-15": {
-   "t": "Given: a^2+b^2=2ab+9. Which of the following is necessarily true?",
-   "d": "a² + b² = 2ab + 9, necessarily true? (mirror test: swap and flip leave only |a − b| = 3; algebra: (a − b)² = 9)"
   },
   "solve-q-r26-t14-01": {
    "t": "Which of the following numbers is prime?",
@@ -2263,7 +2255,7 @@
   },
   "solve-q-368#2": {
    "t": "Method 3 · Plugging in numbers",
-   "d": "the mirror test shortcut: swapping x and y rules out choices one and four"
+   "d": "notice: the given doesn't care which letter is x and which is y, so choices one and four can't be necessarily true"
   },
   "solve-q-389#0": {
    "t": "Lower power",

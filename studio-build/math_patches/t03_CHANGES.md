@@ -281,3 +281,6 @@ before its CUTOFF is left as recorded and the point goes to the written solution
 Hebrew-vs-English coverage check (WEAK / MISSING points). Notes: added_notes.json.
 - **Card `mem-compare`** (new tip): bigger numbers when you cross-multiply - split them ($18\cdot7=10\cdot7+8\cdot7=126$); on the exam the fractions are usually small (like 4/5 and 5/6). Hebrew 1530-1536, 1558; all topic-3 lesson videos are recorded, so card only.
 `math_check.py 3 5 11 17 19 20 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-11 mirror test removed (teacher decision)
+The "mirror test" was removed from the course (topic 13 addition, not in the Hebrew course). Function `remove_mirror(M)` (runs LAST, helper `_no_mirror.py`) drops its written method lines from q-096; the remaining worked solution and plug-in lines already reach the answer.

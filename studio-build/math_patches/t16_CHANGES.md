@@ -251,3 +251,6 @@ Teacher: only OUR additions that re-teach something learned earlier in the study
 
 ## 2026-10-08 Hebrew points restored
 Audit only, no change. The 2026-10-05 cut touched only our added lesson "Sums of Consecutive Integers" (r26); the teacher's Hebrew lessons (positive/negative, consecutive numbers with its three ways, even/odd, special products) were not cut and all their points are still taught.
+
+## 2026-10-11 mirror test removed (teacher decision)
+The "mirror test" was removed from the course (topic 13 addition, not in the Hebrew course). Function `remove_mirror(M)` (runs LAST, helper `_no_mirror.py`) drops its written method lines from q-457, q-476; the remaining worked solution and plug-in lines already reach the answer.

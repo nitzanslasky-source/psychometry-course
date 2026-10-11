@@ -188,3 +188,6 @@ Function `spread_methods` (runs last; append only). 1 question:
 - Shortcut: the mirror test: q-r26-t08-05 (x³y² < 0, recorded video unchanged). y → −y keeps the given; choices 2, 3, 4 turn into their opposites → out with no numbers → choice 1.
 Checked, not added: power count on alg-extra-exponent-extra-5 and q-expression-extra-09 (cuts one choice). No slides: every solution video in this topic is recorded (unchanged).
 All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-11 mirror test removed (teacher decision)
+The "mirror test" was removed from the course (topic 13 addition, not in the Hebrew course). Function `remove_mirror(M)` (runs LAST, helper `_no_mirror.py`) drops its written method lines from q-r26-t08-05; the remaining worked solution and plug-in lines already reach the answer.

@@ -2190,3 +2190,29 @@ _apply_before_choice_order = apply
 def apply(M):
     _apply_before_choice_order(M)
     _co_load().choice_order(M, 16)   # 2026-10-09 choice order: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-11 teacher decision: the "mirror test" is removed from the course (it was a topic-13 course addition, not in
+# her Hebrew course; plugging in numbers covers the same questions). Its written method lines go. Runs LAST.
+# =====================================================================================================================
+def _nm_load():
+    import importlib.util, os
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_no_mirror.py')
+    spec = importlib.util.spec_from_file_location('_no_mirror', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m)
+    return m
+
+
+def remove_mirror(M):
+    NM = _nm_load()
+    NM.drop_lines(M, 'q-457', ['Method 2 · Mirror test', 'Choices 1 and 4 are left.'])
+    NM.drop_lines(M, 'q-476', ['Method 2 · Mirror test', 'Choices 1 and 3 are left.'], replace=['The answer is choice 1.'])
+
+
+_apply_before_remove_mirror = apply
+
+
+def apply(M):
+    _apply_before_remove_mirror(M)
+    remove_mirror(M)   # 2026-10-11 mirror test removed (teacher decision): runs LAST

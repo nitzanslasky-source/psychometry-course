@@ -166,7 +166,7 @@ MAP = {
         'Method 1 · Read the signs': 'Understanding',
         'Method 2 · Try the four sign cases': 'Plugging in numbers',
     }),
-    'solve-q-r26-t13-15': (13, {
+    'solve-q-r26-t13-15': (13, {   # removed from the course 2026-10-11 (t13.py remove_mirror); kept so the older passes still run
         'Method 1 · The mirror test': 'Mirror test',
         'Method 2 · Check with algebra': 'Algebra',
     }),

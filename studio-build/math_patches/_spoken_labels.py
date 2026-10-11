@@ -62,14 +62,6 @@ MAP = {
         ('Check: root m times root m is m. Root n times minus root n is minus n. The middle terms cancel.',
          "Let's check it. Root m times root m is m. Root n times minus root n is minus n. The middle terms cancel."),
     ]),
-    'r26-t13-mirror': (13, [
-        ('Step one: is the given a mirror? Flip all signs.',
-         'So first we ask, is the given a mirror? Flip all signs.'),
-        ("Careful: in the swap it turns into y squared at most thirteen. That's a twin — not the opposite. Twins stay. Only opposites go out.",
-         "Now careful, because in the swap it turns into y squared at most thirteen. That's a twin — not the opposite. Twins stay. Only opposites go out."),
-        ("The rule: if the given doesn't change in the mirror, a choice that turns into its opposite is not necessarily true.",
-         "So the rule is, if the given doesn't change in the mirror, a choice that turns into its opposite is not necessarily true."),
-    ]),
     'solve-q-401': (14, [
         ('Choice two. The trap: seeing "prime" and deciding m is prime too. It\'s m SQUARED that\'s prime — m is its square root.',
          'Choice two. The trap here is seeing "prime" and deciding m is prime too. It\'s m SQUARED that\'s prime — m is its square root.'),
