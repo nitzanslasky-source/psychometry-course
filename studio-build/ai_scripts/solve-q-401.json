@@ -110,16 +110,10 @@
     ]
    },
    {
-    "say": "Let's try one more prime, to see it's always like this. m squared is seven, so m is root seven. Two squared is four and three squared is nine, so root seven is between two and three. Not whole again. So choice number two. [pause] Okay. I'll see you in the next question.",
+    "say": "Three choices are out, so there's no need to try another prime. Choice number two. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "Let's try one",
-     "to see it's",
-     "m squared is seven",
-     "Two squared is",
-     "three squared is",
-     "root seven is",
-     "and three. Not",
-     "So choice number two"
+     "no need to try another",
+     "Choice number two"
     ]
    }
   ]

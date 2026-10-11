@@ -85,12 +85,15 @@
   ],
   [
    {
-    "say": "Let's see it on a bigger number, three cubed times five squared. That's twenty-seven times twenty-five, six hundred seventy-five. Listing its divisors would take a while. Threes, zero to three, that's four options. Fives, zero to two, that's three options. Four times three is twelve divisors.",
+    "say": "Let's see it on a bigger number, three cubed times five squared. Do I need to know what number that is? No. Listing its divisors would take a while, and the rule doesn't need it. Threes, zero to three, that's four options. Fives, zero to two, that's three options. Four times three is twelve divisors.",
     "at": [
      "a bigger number",
      "three cubed times five squared",
-     "That's twenty-seven times",
+     "Do I need",
+     "what number that",
      "Listing its divisors",
+     "a while, and",
+     "doesn't need it",
      "Threes, zero to three",
      "Fives, zero to",
      "Four times three"

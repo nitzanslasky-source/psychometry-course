@@ -409,23 +409,24 @@ def TREE(name, root, steps, w=330, col=1, dx=92, dy=50):
 # =================================================================================================================
 
 # ------------------------------------------------------------------------------------------------ q-387 (Q1)
-# NEW: trial and error with primes starts at the smallest prime; a bigger base gives a bigger power, so one failure
-# rules out every bigger prime; the answer is 9x, not x.  REMINDER: trial and error (topic 21), powers (topic 8).
+# NEW: test the prime next to the one the choices point at (9 x 2 = 18 is there, so: could a bigger prime work?); build
+# powers from known ones (3^3 = 27, 3^4 = 81) and stop once it passes two digits (R35); a bigger base gives a bigger
+# power, so x < 3 and x must be 2 - no need to calculate 2^6; the answer is 9x, not x.
+# REMINDER: trial and error (topic 21), powers (topic 8).
 h0 = I('h0', '$x^6$: two digits, so $x$ is small', size=30, col=1, hand='x^6 : two digits, so x is small')
-t0 = I('t0', 'Try primes: $2,\\ 3,\\ 5,\\ 7$', size=30, col=1, hand='Try primes:  2,  3,  5,  7')
-t1 = I('t1', '$2^6=\\hl{sf}{64}$ ✓ two digits', hand='2^6 = \\hl{sf}{64}   ✓  two digits')
-t2 = I('t2', '$3^3=27,\\ \\ 3^4=81,\\ \\ 3^5=243$', size=34, hand='3^3 = 27,   3^4 = 81,   3^5 = 243')
-t3 = I('t3', '$3^6=\\hl{big}{729}$ ✗ three digits', hand='3^6 = \\hl{big}{729}   ✗  three digits')
+t0 = I('t0', '$9\\cdot2=18$ is a choice. Bigger prime?', size=28, col=1, hand='9·2 = 18  is a choice.   Bigger prime ?')
+t2 = I('t2', '$3^3=27,\\ \\ 3^4=81$', hand='3^3 = 27,    3^4 = 81')
+t3 = I('t3', '$3^5$: past two digits ✗', hand='3^5 :   past two digits   ✗')
 k1 = I('k1', 'Bigger prime, bigger power', size=30, col=1)
-t4 = I('t4', 'So $\\hl{x}{x=2}$', col=1, hand='So   \\hl{x}{x = 2}')
+t4 = I('t4', '$x<3$, so $\\hl{x}{x=2}$', hand='x < 3,   so   \\hl{x}{x = 2}')
 t5 = I('t5', '$9x=9\\cdot2=\\hl{ans}{18}$', hand='9x = 9·2 = \\hl{ans}{18}')
 p0 = I('p0', '$x=\\frac{9x}{9}$', size=32, hand='x = {9x/9}')
 p1 = I('p1', '$27\\to3,\\ \\ 18\\to2,\\ \\ 63\\to7,\\ \\ 45\\to5$', size=32, hand='27→3,   18→2,   63→7,   45→5')
 p2 = I('p2', 'All four are primes', size=30, col=1)
-p3 = I('p3', '$x=3$: $\\ 3^6=729$ ✗', hand='x = 3 :   3^6 = 729   ✗')
+p3 = I('p3', '$x=3$: $\\ 3^4=81$, $\\ 3^5$ too big ✗', hand='x = 3 :   3^4 = 81,   3^5  too big   ✗')
 p4 = I('p4', '$x=5,\\ 7$: even bigger ✗', hand='x = 5, 7 :   even bigger   ✗')
-p5 = I('p5', '$x=2$: $\\ 2^6=\\hl{sf}{64}$ ✓', hand='x = 2 :   2^6 = \\hl{sf}{64}   ✓')
-k2 = I('k2', 'Few digits? Start from the smallest prime', size=28, col=1)
+p5 = I('p5', '$x=2$: the only one left ✓', hand='x = 2 :   the only one left   ✓')
+k2 = I('k2', "Past the limit? Don't finish the calculation", size=28, col=1)
 video('solve-q-387', 'solution', qid='q-387', slides=[
     S('Method 1 · Trial and error',
       L("Given: x is a prime number, and x to the power of six is a two-digit number. What is nine x?",
@@ -435,43 +436,42 @@ video('solve-q-387', 'solution', qid='q-387', slides=[
         "it two ways, trial and error first, and then plugging in the answers.",
         pt('stem', 'x is a prime'), show(h0, 'only two digits'), pt('h0', 'grows really fast'), pt('stem', 'they ask for nine x')),
       L("[short pause] Our first method, trial and error. Remember, with primes we can simply try numbers against the "
-        "conditions. And x is a prime, so we only try primes. Which one first? The smallest prime, two, because a small x "
-        "gives a small power.", show(t0, 'we only try primes'), pt('t0', 'The smallest prime, two')),
-      L("Two to the power of six. Two times two is four, times two is eight, times two is sixteen, times two is "
-        "thirty-two, and times two is sixty-four. Sixty-four has two digits, so two fits.",
-        show(t1, 'Two to the power of six'), mk('circle', 't1: sf', 'is sixty-four.'), voice='calm'),
-      L("Can I already stop? Not yet, because maybe another prime fits too. So the next prime, three. Three times three is "
-        "nine, times three is twenty-seven. That's three to the power of three, and it has two digits, but careful, we "
-        "need the power of six. Twenty-seven times three is eighty-one, and eighty-one times three is two hundred "
-        "forty-three. That's only the power of five, and it already has three digits.",
-        pt('t0', 'the next prime, three'), show(t2, 'Three times three'), pt('t2', 'we need the power of six'), pt('t2', 'two hundred')),
-      L("One more three. Two hundred forty-three times three, two hundred times three is six hundred, and forty-three times "
-        "three is a hundred twenty-nine. Together, seven hundred twenty-nine. Three digits, so three is out.",
-        show(t3, 'One more three'), mk('cross', 't3', 'so three is out'), voice='calm'),
-      L("And what does that mean for five, seven and all the bigger primes? A bigger base gives a bigger power. So if three "
-        "is already too big, every bigger prime is too big too. So x is two.",
-        pt('t0', 'for five, seven'), show(k1, 'A bigger base gives'), show(t4, 'So x is two')),
+        "conditions. Which prime do I try? Look at the choices. Nine times two is eighteen, and eighteen is right there. So "
+        "the real question is, could a bigger prime work too? Let's try the next prime, three.",
+        pt('choice 1', 'Look at the choices'), show(t0, 'Nine times two is eighteen'), pt('choice 2', 'eighteen is right there'),
+        pt('t0', 'could a bigger prime')),
+      L("I don't write out three times three times three, six times. I build it from what I know. Three to the power of "
+        "three is twenty-seven. Times three again, that's three to the power of four, eighty-one.",
+        pt('stem', "I don't write out"), show(t2, 'Three to the power of')),
+      L("And one more three? Eighty-one times three is already past two digits, and we still need one more three after "
+        "that. So I don't even need the exact number. Three is too big.",
+        show(t3, 'And one more three'), mk('cross', 't3', 'Three is too big')),
+      L("And what does that mean? A bigger base gives a bigger power. So five, seven and every bigger prime are too big too. "
+        "So x is smaller than three, and the only prime smaller than three is two.",
+        show(k1, 'A bigger base gives'), pt('k1', 'every bigger prime')),
+      L("Do I need to calculate two to the power of six? No. The question tells us there is such an x, and two is the only "
+        "prime left. So x is two.", show(t4, 'Do I need to calculate'), pt('t4', 'the only prime left')),
       L("Now careful, because x isn't the answer. A lot of students find that x is two, and go looking for two in the "
         "choices. They ask for nine x. Nine times two is eighteen, so choice number two is our answer.",
         pt('t4', "x isn't the answer"), pt('stem', 'They ask for nine x'), show(t5, 'Nine times two'),
-        mk('circle', 't5: ans', 'is eighteen'), mk('tick', 'choice 2', 'choice number two is our answer'))),
+        mk('tick', 'choice 2', 'choice number two is our answer'))),
     S('Method 2 · Plugging in the answers',
       L("[pause] Our second method, plugging in the answers. Each choice is nine x, so to get x back, I divide the choice "
         "by nine. Twenty-seven over nine is three, eighteen over nine is two, sixty-three over nine is seven, and "
         "forty-five over nine is five.",
-        pt('choice 1', 'Each choice is nine x'), show(p0, 'I divide the choice'), show(p1, 'Twenty-seven over nine'), 
+        pt('choice 1', 'Each choice is nine x'), show(p0, 'I divide the choice'), show(p1, 'Twenty-seven over nine'),
         pt('choice 2', 'eighteen over nine'), pt('choice 3', 'sixty-three over nine'), pt('choice 4', 'forty-five over nine')),
       L("Are they primes? Three, two, seven and five, yes, all four. So the prime condition doesn't rule anything out "
         "here, and the power has to decide.", show(p2, 'yes, all four'), pt('stem', 'the power has to decide')),
-      L("Choice number one gives x is three. Three, nine, twenty-seven, eighty-one, two hundred forty-three, and seven "
-        "hundred twenty-nine. That's three to the power of six, and it has three digits, so choice number one is out.",
-        pt('choice 1', 'Choice number one gives'), show(p3, 'Three, nine, twenty-seven'), mk('cross', 'choice 1', 'choice number one is out')),
+      L("Choice number one gives x is three. Three to the power of three is twenty-seven, and times three is eighty-one. One "
+        "more three already passes two digits, so choice number one is out.",
+        pt('choice 1', 'Choice number one gives'), show(p3, 'Three to the power of three'), mk('cross', 'choice 1', 'choice number one is out')),
       L("Choice numbers three and four give seven and five. They're bigger than three, so their powers are even bigger. "
         "Both out.", show(p4, 'give seven and five'), mk('cross', 'choice 3', 'even bigger'), mk('cross', 'choice 4', 'Both out')),
-      L("And choice number two gives x is two. Two to the power of six is sixty-four, two digits. It works, so choice number "
-        "two is our answer.", show(p5, 'gives x is two'), mk('circle', 'p5: sf', 'is sixty-four'), mk('tick', 'choice 2', 'It works')),
-      L("So when a power has only a few digits, start trying from the smallest prime. [pause] Okay. I'll see you in the "
-        "next question.", show(k2, 'start trying from'))),
+      L("Three choices are out, and choice number two, x is two, is the only one left. So choice number two is our answer.",
+        show(p5, 'the only one left'), mk('tick', 'choice 2', 'So choice number two is our answer')),
+      L("So once a power passes the limit, stop calculating, it's out. [pause] Okay. I'll see you in the next question.",
+        show(k2, 'once a power passes'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t14-01 (Q2)
@@ -494,7 +494,7 @@ k3 = I('k3', 'Looks prime? Try $7$ too', size=30, col=1)
 s1 = I('s1', '$\\hl{a}{91},\\ 98,\\ 105,\\ 112,\\ \\hl{b}{119},\\ 126,\\ \\hl{c}{133}$', size=30,
        hand='\\hl{a}{91},  98,  105,  112,  \\hl{b}{119},  126,  \\hl{c}{133}')
 s0 = I('s0', 'Quick tests: $2$ even, $3$ digit sum, $5$ last digit', size=26, col=1)
-s2 = I('s2', '$113$: odd, $\\ 1+1+3=5$, $\\ $ends in $3$', size=30, hand='113 :  odd,   1+1+3 = 5,   ends in 3')
+s2 = I('s2', '$113$: not on the list, the last one left ✓', size=30, hand='113 :  not on the list,  the last one left   ✓')
 video('solve-q-r26-t14-01', 'solution', qid='q-r26-t14-01', slides=[
     S('Method 1 · Test up to the root',
       L("Which of the following numbers is prime?", pt('stem', 'Which', 'hl', 2.5), voice='calm', pause=0.5),
@@ -549,9 +549,9 @@ video('solve-q-r26-t14-01', 'solution', qid='q-r26-t14-01', slides=[
         "fakes, and choice numbers one, two and four are out.",
         mk('circle', 's1: a', 'Ninety-one, a'), mk('circle', 's1: b', 'hundred nineteen and'), mk('circle', 's1: c', 'hundred thirty-three are'),
         mk('cross', 'choice 1', 'choice numbers one'), mk('cross', 'choice 2', 'two and four'), mk('cross', 'choice 4', 'are out')),
-      L("A hundred thirteen isn't on the list. And it doesn't divide by two, three or five either. It's not even, one plus "
-        "one plus three is five, and it ends in three. And seven, two, three and five are all the primes up to its root. So it's prime, choice number three. [pause] Okay. I'll see you in "
-        "the next question.", show(s2, "isn't on the list"), mk('tick', 'choice 3', "So it's prime"))),
+      L("A hundred thirteen isn't on the list, and the other three choices are out. So there's nothing left to check, it's "
+        "choice number three. [pause] Okay. I'll see you in the next question.",
+        show(s2, "isn't on the list"), mk('tick', 'choice 3', 'choice number three'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-388 (Q3)
@@ -697,7 +697,7 @@ g3 = I('g3', 'Twos: $\\ 0,\\ 1,\\ 2$ $\\ \\to\\ 3$ options', size=38, hand='Twos
 g4 = I('g4', 'Elevens: $\\ 0,\\ 1$ $\\ \\to\\ 2$ options', size=38, hand='Elevens :   0,  1   →   2 options')
 g5 = I('g5', '$3\\cdot2=6$ divisors', size=42, hand='3·2 = 6  divisors')
 g6 = I('g6', 'Each exponent plus one, then multiply', size=38)
-g7 = I('g7', '$3^3\\cdot5^2=27\\cdot25=675$', size=42, hand='3^3·5^2 = 27·25 = 675')
+g7 = I('g7', '$3^3\\cdot5^2$: $\\ $no need to work it out', size=42, hand='3^3·5^2 :   no need to work it out')
 g8 = I('g8', '$(3+1)(2+1)=4\\cdot3=12$ divisors', size=42, hand='(3+1)(2+1) = 4·3 = 12  divisors')
 g9 = I('g9', '$56=4\\cdot14$: $\\ (1+1)(1+1)=4$ ✗', size=38, hand='56 = 4·14 :   (1+1)(1+1) = 4   ✗')
 g10 = I('g10', '$56=2^3\\cdot7$: $\\ 4\\cdot2=8$ ✓', size=38, hand='56 = 2^3·7 :   4·2 = 8   ✓')
@@ -731,9 +731,9 @@ video('prime-tools', 'lesson', slides=[
         show(g6, 'take each exponent'), mk('underline', 'g6', 'add one, and multiply'), pt('g3', 'taking zero copies')),
       sb='Counting divisors'),
     S('Counting divisors',
-      L("Let's see it on a bigger number, three cubed times five squared. That's twenty-seven times twenty-five, six "
-        "hundred seventy-five. Listing its divisors would take a while. Threes, zero to three, that's four options. Fives, "
-        "zero to two, that's three options. Four times three is twelve divisors.",
+      L("Let's see it on a bigger number, three cubed times five squared. Do I need to know what number that is? No. "
+        "Listing its divisors would take a while, and the rule doesn't need it. Threes, zero to three, that's four options. "
+        "Fives, zero to two, that's three options. Four times three is twelve divisors.",
         show(g7, 'three cubed times five squared'), show(g8, 'Threes, zero to three')),
       L("Now careful, the rule works only on a real prime factorization. Fifty-six is four times fourteen, and a lot of "
         "students say one plus one, times one plus one, four divisors. But four and fourteen aren't primes.",
@@ -1046,7 +1046,7 @@ k1 = I('k1', 'Prime, even, odd: whole numbers only', size=28, col=1)
 p1 = I('p1', '$m^2=2$ $\\ \\to\\ m=\\sqrt{2}$', hand='m^2 = 2   →   m = √{2}')
 p2 = I('p2', '$1^2=1<2<4=2^2$', hand='1^2 = 1 < 2 < 4 = 2^2')
 p3 = I('p3', '$\\sqrt2$: $\\ $not prime, not even, not odd', size=32, hand='√{2} :   not prime,  not even,  not odd')
-p4 = I('p4', '$m^2=7$: $\\ m=\\sqrt7$, $\\ $between $2$ and $3$', size=32, hand='m^2 = 7 :   m = √{7},   between 2 and 3')
+p4 = I('p4', 'Three out: $\\ m$ is not an integer ✓', size=32, hand='Three out :   m  is not an integer   ✓')
 video('solve-q-401', 'solution', qid='q-401', slides=[
     S('Method 1 · Understanding',
       L("Given: m squared is a prime number. Which of the following is necessarily true?", pt('stem', 'Given', 'hl', 5.0), voice='calm', pause=0.5),
@@ -1073,9 +1073,8 @@ video('solve-q-401', 'solution', qid='q-401', slides=[
       L("So m is root two. Is root two prime? No, only whole numbers can be prime. Even? Odd? No and no. Not an integer? "
         "Yes. So choice numbers one, three and four are out.",
         show(p3, 'Is root two prime'), mk('cross', 'choice 1', 'choice numbers one'), mk('cross', 'choice 3', 'three and four'), mk('cross', 'choice 4', 'are out')),
-      L("Let's try one more prime, to see it's always like this. m squared is seven, so m is root seven. Two squared is four "
-        "and three squared is nine, so root seven is between two and three. Not whole again. So choice number two. "
-        "[pause] Okay. I'll see you in the next question.", show(p4, 'm squared is seven'), mk('tick', 'choice 2', 'So choice number two'))),
+      L("Three choices are out, so there's no need to try another prime. Choice number two. [pause] Okay. I'll see you in "
+        "the next question.", show(p4, 'no need to try another'), mk('tick', 'choice 2', 'Choice number two'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-402 (Q11)

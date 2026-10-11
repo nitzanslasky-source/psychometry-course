@@ -204,17 +204,12 @@
     ]
    },
    {
-    "say": "A hundred thirteen isn't on the list. And it doesn't divide by two, three or five either. It's not even, one plus one plus three is five, and it ends in three. And seven, two, three and five are all the primes up to its root. So it's prime, choice number three. [pause] Okay. I'll see you in the next question.",
+    "say": "A hundred thirteen isn't on the list, and the other three choices are out. So there's nothing left to check, it's choice number three. [pause] Okay. I'll see you in the next question.",
     "at": [
      "isn't on the list",
-     "two, three or",
-     "It's not even",
-     "one plus three",
-     "and it ends",
-     "And seven, two",
-     "five are all",
-     "up to its",
-     "So it's prime"
+     "out. So there's",
+     "to check, it's",
+     "choice number three"
     ]
    }
   ]

@@ -493,7 +493,7 @@ What is new compared with §9:
 - R15 is approved.
 - Topic 51 is recorded by her.
 
-## SCRIPT-WRITING CHECKLIST (R1-R34)
+## SCRIPT-WRITING CHECKLIST (R1-R35)
 
 Check every AI script line by line. The numbers in brackets are evidence from §1-9.
 
@@ -571,6 +571,12 @@ Check every AI script line by line. The numbers in brackets are evidence from §
   - Keep a per-topic list "concept → where it is first taught" (topic 13: below) and use it when writing or reviewing scripts.
 - **R33. Say every calculation aloud, in small steps** (teacher, 2026-10-11): "negative nine minus seven is negative sixteen", not only "x is negative sixteen". This applies to every arithmetic step in every method: adding to both sides, dividing, squaring, plugging a number in.
 - **R34. "Choice number N"** (teacher, 2026-10-11): when talking about an answer choice, always say "choice number three" ("choice number three is our answer", "choice number two is out", "choice numbers one and four"). Never a bare "number three", which can be heard as the number 3. This replaces the "number N" wording in R14. `ai_check.py` flags a bare "number one / two / three / four" in a solution script.
+- **R35. Don't calculate what logic already decides** (teacher, 2026-10-11, on solve-q-387: "there's no reason to check 3 if she can see that 2 times 9 is among the answers"; "don't break it down to 3·3·3·3·3·3").
+  - If a value is forced (only one option is left, or the question guarantees an answer exists), say why and skip the calculation: "x is smaller than three, and the only prime smaller than three is two. So x is two." No 2⁶ = 64.
+  - Use the choices to pick what to test: if 9·2 = 18 is a choice, test the next prime, 3, to rule out a bigger one.
+  - Build powers from the ones the student knows (3³ = 27, times 3 is 3⁴ = 81) instead of writing out long products.
+  - Stop as soon as the result is clear: "81 times 3 already passes two digits, so the exact number doesn't matter."
+  - After three choices are out, the fourth needs no check of its own (in the lesson, a check is fine only when it teaches something, R24).
 - **Recorded readings** (teacher, 2026-10-11): once she has read a script in the Reading Studio, change its paragraphs only where it matters for learning (a first-time idea not explained, a wrong or missing reason). Small wording rules (R33, R34) are not worth a re-read. Every changed paragraph is flagged "needs re-read" in the Reading Studio.
 
 ### Topic 13: where each idea is first taught (R29 / R32)

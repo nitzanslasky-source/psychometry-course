@@ -23,73 +23,68 @@
      "they ask for nine x",
      "We'll solve it",
      "trial and error",
-     "first, and"
+     "then plugging in"
     ]
    },
    {
-    "say": "[short pause] Our first method, trial and error. Remember, with primes we can simply try numbers against the conditions. And x is a prime, so we only try primes. Which one first? The smallest prime, two, because a small x gives a small power.",
+    "say": "[short pause] Our first method, trial and error. Remember, with primes we can simply try numbers against the conditions. Which prime do I try? Look at the choices. Nine times two is eighteen, and eighteen is right there. So the real question is, could a bigger prime work too? Let's try the next prime, three.",
     "at": [
      "Remember, with primes",
      "simply try numbers",
-     "conditions. And x",
-     "we only try primes",
-     "The smallest prime, two",
-     "a small x"
+     "Which prime do",
+     "Look at the choices",
+     "Nine times two is eighteen",
+     "eighteen is right there",
+     "the real question",
+     "could a bigger prime",
+     "Let's try the"
     ]
    },
    {
-    "say": "Two to the power of six. Two times two is four, times two is eight, times two is sixteen, times two is thirty-two, and times two is sixty-four. Sixty-four has two digits, so two fits.",
-    "voice": "calm",
+    "say": "I don't write out three times three times three, six times. I build it from what I know. Three to the power of three is twenty-seven. Times three again, that's three to the power of four, eighty-one.",
     "at": [
-     "Two to the power of six",
-     "four, times two",
-     "times two is sixteen",
-     "two is thirty-two",
-     "is sixty-four.",
-     "Sixty-four has two"
+     "I don't write out",
+     "times three times",
+     "I build it",
+     "Three to the power of",
+     "three is twenty-seven",
+     "Times three again",
+     "to the power of four"
     ]
    },
    {
-    "say": "Can I already stop? Not yet, because maybe another prime fits too. So the next prime, three. Three times three is nine, times three is twenty-seven. That's three to the power of three, and it has two digits, but careful, we need the power of six. Twenty-seven times three is eighty-one, and eighty-one times three is two hundred forty-three. That's only the power of five, and it already has three digits.",
+    "say": "And one more three? Eighty-one times three is already past two digits, and we still need one more three after that. So I don't even need the exact number. Three is too big.",
     "at": [
-     "Not yet, because",
-     "prime fits too",
-     "the next prime, three",
-     "Three times three",
-     "times three is twenty-seven",
-     "three to the",
-     "three, and it",
-     "digits, but careful",
-     "we need the power of six",
-     "six. Twenty-seven times",
-     "eighty-one, and eighty-one",
-     "two hundred",
-     "That's only the",
-     "five, and it"
+     "And one more three",
+     "past two digits",
+     "still need one",
+     "So I don't",
+     "the exact number",
+     "Three is too big"
     ]
    },
    {
-    "say": "One more three. Two hundred forty-three times three, two hundred times three is six hundred, and forty-three times three is a hundred twenty-nine. Together, seven hundred twenty-nine. Three digits, so three is out.",
-    "voice": "calm",
+    "say": "And what does that mean? A bigger base gives a bigger power. So five, seven and every bigger prime are too big too. So x is smaller than three, and the only prime smaller than three is two.",
     "at": [
-     "One more three",
-     "two hundred times",
-     "six hundred, and",
-     "three is a",
-     "Together, seven hundred",
-     "so three is out"
-    ]
-   },
-   {
-    "say": "And what does that mean for five, seven and all the bigger primes? A bigger base gives a bigger power. So if three is already too big, every bigger prime is too big too. So x is two.",
-    "at": [
-     "for five, seven",
-     "the bigger primes",
+     "And what does",
      "A bigger base gives",
-     "So if three",
-     "too big, every",
-     "is too big",
-     "So x is two"
+     "bigger power. So",
+     "every bigger prime",
+     "So x is",
+     "three, and the",
+     "smaller than three is"
+    ]
+   },
+   {
+    "say": "Do I need to calculate two to the power of six? No. The question tells us there is such an x, and two is the only prime left. So x is two.",
+    "at": [
+     "Do I need to calculate",
+     "two to the",
+     "six? No. The",
+     "us there is",
+     "x, and two",
+     "the only prime left",
+     "x is two"
     ]
    },
    {
@@ -130,14 +125,12 @@
     ]
    },
    {
-    "say": "Choice number one gives x is three. Three, nine, twenty-seven, eighty-one, two hundred forty-three, and seven hundred twenty-nine. That's three to the power of six, and it has three digits, so choice number one is out.",
+    "say": "Choice number one gives x is three. Three to the power of three is twenty-seven, and times three is eighty-one. One more three already passes two digits, so choice number one is out.",
     "at": [
      "Choice number one gives",
-     "Three, nine, twenty-seven",
-     "hundred forty-three, and",
-     "twenty-nine. That's three",
-     "power of six",
-     "has three digits",
+     "Three to the power of three",
+     "three is eighty-one",
+     "three already passes",
      "choice number one is out"
     ]
    },
@@ -152,21 +145,18 @@
     ]
    },
    {
-    "say": "And choice number two gives x is two. Two to the power of six is sixty-four, two digits. It works, so choice number two is our answer.",
+    "say": "Three choices are out, and choice number two, x is two, is the only one left. So choice number two is our answer.",
     "at": [
-     "number two gives",
-     "gives x is two",
-     "to the power",
-     "is sixty-four",
-     "It works",
-     "two is our"
+     "number two, x",
+     "the only one left",
+     "So choice number two is our answer"
     ]
    },
    {
-    "say": "So when a power has only a few digits, start trying from the smallest prime. [pause] Okay. I'll see you in the next question.",
+    "say": "So once a power passes the limit, stop calculating, it's out. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "has only a",
-     "start trying from"
+     "once a power passes",
+     "limit, stop calculating"
     ]
    }
   ]
