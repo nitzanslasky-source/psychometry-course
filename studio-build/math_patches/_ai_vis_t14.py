@@ -414,7 +414,7 @@ def TREE(name, root, steps, w=330, col=1, dx=92, dy=50):
 # power, so x < 3 and x must be 2 - no need to calculate 2^6; the answer is 9x, not x.
 # REMINDER: trial and error (topic 21), powers (topic 8).
 h0 = I('h0', '$x^6$: two digits, so $x$ is small', size=30, col=1, hand='x^6 : two digits, so x is small')
-t0 = I('t0', '$9\\cdot2=18$ is a choice. Bigger prime?', size=28, col=1, hand='9·2 = 18  is a choice.   Bigger prime ?')
+t0 = I('t0', 'Try $3$', size=30, col=1, hand='Try  3')
 t2 = I('t2', '$3^3=27,\\ \\ 3^4=81$', hand='3^3 = 27,    3^4 = 81')
 t3 = I('t3', '$3^5$: past two digits ✗', hand='3^5 :   past two digits   ✗')
 k1 = I('k1', 'Bigger prime, bigger power', size=30, col=1)
@@ -436,21 +436,17 @@ video('solve-q-387', 'solution', qid='q-387', slides=[
         "it two ways, trial and error first, and then plugging in the answers.",
         pt('stem', 'x is a prime'), show(h0, 'only two digits'), pt('h0', 'grows really fast'), pt('stem', 'they ask for nine x')),
       L("[short pause] Our first method, trial and error. Remember, with primes we can simply try numbers against the "
-        "conditions. Which prime do I try? Look at the choices. Nine times two is eighteen, and eighteen is right there. So "
-        "the real question is, could a bigger prime work too? Let's try the next prime, three.",
-        pt('choice 1', 'Look at the choices'), show(t0, 'Nine times two is eighteen'), pt('choice 2', 'eighteen is right there'),
-        pt('t0', 'could a bigger prime')),
+        "conditions. Let's start with three, a small prime whose powers are easy to build up.",
+        show(t0, "Let's start with three"), pt('h0', 'easy to build up')),
       L("I don't write out three times three times three, six times. I build it from what I know. Three to the power of "
         "three is twenty-seven. Times three again, that's three to the power of four, eighty-one.",
-        pt('stem', "I don't write out"), show(t2, 'Three to the power of')),
+        pt('t0', "I don't write out"), show(t2, 'Three to the power of')),
       L("And one more three? Eighty-one times three is already past two digits, and we still need one more three after "
         "that. So I don't even need the exact number. Three is too big.",
         show(t3, 'And one more three'), mk('cross', 't3', 'Three is too big')),
-      L("And what does that mean? A bigger base gives a bigger power. So five, seven and every bigger prime are too big too. "
-        "So x is smaller than three, and the only prime smaller than three is two.",
-        show(k1, 'A bigger base gives'), pt('k1', 'every bigger prime')),
-      L("Do I need to calculate two to the power of six? No. The question tells us there is such an x, and two is the only "
-        "prime left. So x is two.", show(t4, 'Do I need to calculate'), pt('t4', 'the only prime left')),
+      L("And what does that mean? A bigger base only gives a bigger power, so x has to be smaller than three. And the only "
+        "prime smaller than three is two. So x is two, and I don't even need to calculate it.",
+        show(k1, 'A bigger base only'), show(t4, 'So x is two')),
       L("Now careful, because x isn't the answer. A lot of students find that x is two, and go looking for two in the "
         "choices. They ask for nine x. Nine times two is eighteen, so choice number two is our answer.",
         pt('t4', "x isn't the answer"), pt('stem', 'They ask for nine x'), show(t5, 'Nine times two'),

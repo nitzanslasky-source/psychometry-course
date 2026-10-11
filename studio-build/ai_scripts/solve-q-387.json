@@ -27,17 +27,13 @@
     ]
    },
    {
-    "say": "[short pause] Our first method, trial and error. Remember, with primes we can simply try numbers against the conditions. Which prime do I try? Look at the choices. Nine times two is eighteen, and eighteen is right there. So the real question is, could a bigger prime work too? Let's try the next prime, three.",
+    "say": "[short pause] Our first method, trial and error. Remember, with primes we can simply try numbers against the conditions. Let's start with three, a small prime whose powers are easy to build up.",
     "at": [
      "Remember, with primes",
      "simply try numbers",
-     "Which prime do",
-     "Look at the choices",
-     "Nine times two is eighteen",
-     "eighteen is right there",
-     "the real question",
-     "could a bigger prime",
-     "Let's try the"
+     "Let's start with three",
+     "small prime whose",
+     "easy to build up"
     ]
    },
    {
@@ -64,27 +60,16 @@
     ]
    },
    {
-    "say": "And what does that mean? A bigger base gives a bigger power. So five, seven and every bigger prime are too big too. So x is smaller than three, and the only prime smaller than three is two.",
+    "say": "And what does that mean? A bigger base only gives a bigger power, so x has to be smaller than three. And the only prime smaller than three is two. So x is two, and I don't even need to calculate it.",
     "at": [
      "And what does",
-     "A bigger base gives",
-     "bigger power. So",
-     "every bigger prime",
-     "So x is",
-     "three, and the",
-     "smaller than three is"
-    ]
-   },
-   {
-    "say": "Do I need to calculate two to the power of six? No. The question tells us there is such an x, and two is the only prime left. So x is two.",
-    "at": [
-     "Do I need to calculate",
-     "two to the",
-     "six? No. The",
-     "us there is",
-     "x, and two",
-     "the only prime left",
-     "x is two"
+     "A bigger base only",
+     "a bigger power",
+     "has to be",
+     "And the only",
+     "than three is",
+     "So x is two",
+     "I don't even"
     ]
    },
    {
