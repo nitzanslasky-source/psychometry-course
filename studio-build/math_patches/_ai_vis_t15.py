@@ -1045,39 +1045,56 @@ video('solve-q-434', 'solution', qid='q-434', slides=[
 # NEW: claims about a new divisor - it must divide the old divisor to be known (8 -> 4 yes, 8 -> 12 no); one example
 # (x = 4) proves a claim wrong, examples that work prove nothing.  REMINDER: the tag 8k + 4, changing the divisor
 # (camera lesson), multiplying a remainder (q-r26-t15-01).
+u1 = I('u1', 'If the new divisor divides $8$: $\\ $only the remainder matters', size=26, col=1)
+u2 = I('u2', 'Yuval: $\\ 2\\cdot4=8$ ✓', hand='Yuval :    2 · 4 = 8   ✓')
+u3 = I('u3', 'Noga: $\\ 4$ divides $8$: $\\ 4\\div4$ ✓', hand='Noga :    4 divides 8 :    4 ÷ 4   ✓')
+u4 = I('u4', 'Itay: $\\ 12$ does not divide $8$', hand='Itay :    12  does not divide  8')
+u5 = I('u5', '$x=4$: $\\ $not by $12$ ✗', hand='x = 4 :    not by 12   ✗')
 e1 = I('e1', '$x=8k+4$', hand='x = 8k + 4')
-e2 = I('e2', 'Yuval: $\\ 2x=16k+8$ ✓', hand='Yuval :    2x = 16k + 8   ✓')
-e3 = I('e3', 'Noga: $\\ 4$ divides $8$: $\\ 4\\div4$ ✓', hand='Noga :    4 divides 8 :    4 ÷ 4   ✓')
-e4 = I('e4', 'Itay: $\\ 12$ does not divide $8$', hand='Itay :    12  does not divide  8')
-e5 = I('e5', '$x=4$: $\\ $not by $12$ ✗', hand='x = 4 :    not by 12   ✗')
-e6 = I('e6', 'The new divisor must divide the old one', size=26, col=1)
+e2 = I('e2', 'Yuval: $\\ 2x=16k+8=8(2k+1)$ ✓', size=32, hand='Yuval :    2x = 16k + 8 = 8(2k + 1)   ✓')
+e3 = I('e3', 'Noga: $\\ x=4(2k+1)$ ✓', hand='Noga :    x = 4(2k + 1)   ✓')
+e4 = I('e4', 'Itay: $\\ 4(2k+1)$, $\\ k=0$: $\\ 4$ ✗', hand='Itay :    4(2k + 1),    k = 0 :    4   ✗')
+e6 = I('e6', 'For $12$ we need a $3$ inside $2k+1$: $\\ $not always', size=26, col=1)
 f1 = I('f1', '$x=4,\\ \\ 12$', hand='x = 4,    12')
 f2 = I('f2', '$2x=8,\\ 24$ ✓ $\\quad$ by $4$: ✓ ✓ $\\quad$ by $12$: $\\ 4$ ✗', size=30, hand='2x = 8, 24  ✓      by 4 :  ✓ ✓      by 12 :   4  ✗')
 f3 = I('f3', 'Examples that work prove nothing. One that fails does', size=26, col=1)
 video('solve-q-435', 'solution', qid='q-435', slides=[
-    S('Method 1 · Tag it',
+    S('Method 1 · Understanding',
       L("When x is divided by eight, the remainder is four. Yuval claims: two x is necessarily divisible by eight. Noga "
         "claims: x is necessarily divisible by four. Itay claims: x is necessarily divisible by twelve. Which of the "
         "following is correct?", pt('stem', 'When x is', 'hl', 13.0), voice='calm', pause=0.5),
-      L("So we know the remainder by eight, and three claims about other divisors. [short pause] We'll solve it two ways, "
-        "with a tag, and then plugging in numbers.", pt('stem', 'three claims')),
-      L("[short pause] Let's start with the tag. x is full eights plus four, so x is eight k plus four.", show(e1, 'eight k plus four')),
-      L("Yuval, two x. Two times eight k is sixteen k, and two times four is eight. Sixteen k plus eight, and both parts "
-        "divide by eight. So Yuval is right.", pt('stem', 'Yuval'), show(e2, 'Two times eight k')),
-      L("Noga, divisible by four. Four divides eight, so the full eights divide by four too, and only the remainder matters. "
-        "Four over four, no remainder. Noga is right.", pt('stem', 'Noga'), show(e3, 'Four divides eight')),
-      sb='Method 1 · Tag it'),
-    S('Method 1 · Tag it',
-      L("Itay, divisible by twelve. Twelve doesn't divide eight, so from a remainder by eight we can't know the remainder by "
-        "twelve. For example, x is four, that's k zero, and four doesn't divide by twelve. Itay is wrong.",
-        pt('stem', 'Itay'), show(e4, "Twelve doesn't divide eight"), show(e5, 'x is four'), show(e6, "we can't know")),
+      L("So we know the remainder by eight, and three claims about other divisors. [short pause] We'll solve it three ways, "
+        "by understanding, with algebra, and then plugging in numbers.", pt('stem', 'three claims')),
+      L("[short pause] Let's start with understanding. x is full eights plus a remainder of four. When the new divisor "
+        "divides eight, the full eights divide by it too, so only the remainder matters.", show(u1, 'When the new divisor')),
+      L("Yuval, two x by eight. The same eight, so only the remainder counts, doubled. Two times four is eight, and eight "
+        "divides by eight. Yuval is right.", pt('stem', 'Yuval'), show(u2, 'Two times four')),
+      L("Noga, x by four. Four divides eight, so only the remainder matters. Four over four, no remainder. Noga is right.",
+        pt('stem', 'Noga'), show(u3, 'Four divides eight')),
+      sb='Method 1 · Understanding'),
+    S('Method 1 · Understanding',
+      L("Itay, x by twelve. Twelve doesn't divide eight, so from a remainder by eight we can't know the remainder by "
+        "twelve. For example, x is four. Four divided by eight leaves four, and four doesn't divide by twelve. Itay is wrong.",
+        pt('stem', 'Itay'), show(u4, "Twelve doesn't divide eight"), show(u5, 'x is four')),
       L("So only Itay is wrong, choice number two is our answer.", mk('tick', 'choice 2', 'choice number two is our answer'))),
-    S('Method 2 · Plugging in numbers',
+    S('Method 2 · Algebra',
+      L("[pause] Another way is algebra. What's different? Instead of thinking about the remainder, we write x as an "
+        "expression and take out a common factor. x is full eights plus four, so x is eight k plus four.", show(e1, 'eight k plus four')),
+      L("Yuval. Two x is sixteen k plus eight. Take out the eight, and it's eight times, in brackets, two k plus one. So it "
+        "divides by eight. Yuval is right.", show(e2, 'Two x is sixteen k')),
+      L("Noga. Take out a four from x, and it's four times, in brackets, two k plus one. So it divides by four. Noga is right.",
+        show(e3, 'Take out a four')),
+      sb='Method 2 · Algebra'),
+    S('Method 2 · Algebra',
+      L("Itay. x is four times two k plus one. For twelve, we'd need a three inside two k plus one, and it isn't always "
+        "there. With k zero, two k plus one is one, and x is four, not divisible by twelve. Itay is wrong. Choice number two.",
+        show(e4, 'With k zero'), show(e6, "we'd need a three"), mk('tick', 'choice 2', 'Itay is wrong. Choice number two'))),
+    S('Method 3 · Plugging in numbers',
       L("[pause] Now let's try plugging in numbers that leave four when divided by eight, four and twelve.", show(f1, 'four and twelve')),
       L("Two x is eight or twenty-four, both divide by eight. Four and twelve both divide by four. But four doesn't divide by "
         "twelve, so Itay is wrong.", show(f2, 'Two x is eight')),
-      L("Careful, examples that work don't prove Yuval and Noga right, the tag does. But one example that fails proves Itay "
-        "wrong. So choice number two. [pause] Okay. I'll see you in the next question.", show(f3, "examples that work don't prove"),
+      L("Careful, examples that work don't prove Yuval and Noga right, the first two ways do. But one example that fails "
+        "proves Itay wrong. So choice number two. [pause] Okay. I'll see you in the next question.", show(f3, "examples that work don't prove"),
         mk('tick', 'choice 2', 'So choice number two'))),
 ])
 

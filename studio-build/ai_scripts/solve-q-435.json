@@ -12,42 +12,44 @@
     "pause": 0.5
    },
    {
-    "say": "So we know the remainder by eight, and three claims about other divisors. [short pause] We'll solve it two ways, with a tag, and then plugging in numbers.",
+    "say": "So we know the remainder by eight, and three claims about other divisors. [short pause] We'll solve it three ways, by understanding, with algebra, and then plugging in numbers.",
     "at": [
      "remainder by eight",
      "three claims",
      "We'll solve it",
-     "with a tag",
-     "plugging in numbers"
+     "by understanding, with",
+     "then plugging in"
     ]
    },
    {
-    "say": "[short pause] Let's start with the tag. x is full eights plus four, so x is eight k plus four.",
+    "say": "[short pause] Let's start with understanding. x is full eights plus a remainder of four. When the new divisor divides eight, the full eights divide by it too, so only the remainder matters.",
     "at": [
      "Let's start",
      "x is full",
-     "four, so x",
-     "eight k plus four"
+     "a remainder of",
+     "When the new divisor",
+     "eight, the full",
+     "by it too",
+     "the remainder matters"
     ]
    },
    {
-    "say": "Yuval, two x. Two times eight k is sixteen k, and two times four is eight. Sixteen k plus eight, and both parts divide by eight. So Yuval is right.",
+    "say": "Yuval, two x by eight. The same eight, so only the remainder counts, doubled. Two times four is eight, and eight divides by eight. Yuval is right.",
     "at": [
      "Yuval",
-     "Two times eight k",
-     "four is eight",
-     "Sixteen k plus",
-     "both parts divide",
-     "So Yuval is"
+     "The same eight",
+     "the remainder counts",
+     "Two times four",
+     "and eight divides",
+     "Yuval is right"
     ]
    },
    {
-    "say": "Noga, divisible by four. Four divides eight, so the full eights divide by four too, and only the remainder matters. Four over four, no remainder. Noga is right.",
+    "say": "Noga, x by four. Four divides eight, so only the remainder matters. Four over four, no remainder. Noga is right.",
     "at": [
      "Noga",
      "Four divides eight",
-     "full eights divide",
-     "too, and only",
+     "the remainder matters",
      "Four over four",
      "Noga is right"
     ]
@@ -55,7 +57,7 @@
   ],
   [
    {
-    "say": "Itay, divisible by twelve. Twelve doesn't divide eight, so from a remainder by eight we can't know the remainder by twelve. For example, x is four, that's k zero, and four doesn't divide by twelve. Itay is wrong.",
+    "say": "Itay, x by twelve. Twelve doesn't divide eight, so from a remainder by eight we can't know the remainder by twelve. For example, x is four. Four divided by eight leaves four, and four doesn't divide by twelve. Itay is wrong.",
     "at": [
      "Itay",
      "Twelve doesn't divide eight",
@@ -63,7 +65,7 @@
      "we can't know",
      "by twelve. For",
      "x is four",
-     "zero, and four",
+     "four, and four",
      "by twelve. Itay"
     ]
    },
@@ -71,6 +73,55 @@
     "say": "So only Itay is wrong, choice number two is our answer.",
     "at": [
      "choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way is algebra. What's different? Instead of thinking about the remainder, we write x as an expression and take out a common factor. x is full eights plus four, so x is eight k plus four.",
+    "at": [
+     "Another way",
+     "Instead of thinking",
+     "remainder, we write",
+     "an expression and",
+     "a common factor",
+     "full eights plus",
+     "eight k plus four"
+    ]
+   },
+   {
+    "say": "Yuval. Two x is sixteen k plus eight. Take out the eight, and it's eight times, in brackets, two k plus one. So it divides by eight. Yuval is right.",
+    "at": [
+     "Two x is sixteen k",
+     "Take out the",
+     "it's eight times",
+     "two k plus",
+     "So it divides",
+     "Yuval is right"
+    ]
+   },
+   {
+    "say": "Noga. Take out a four from x, and it's four times, in brackets, two k plus one. So it divides by four. Noga is right.",
+    "at": [
+     "Take out a four",
+     "in brackets, two",
+     "So it divides",
+     "Noga is right"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Itay. x is four times two k plus one. For twelve, we'd need a three inside two k plus one, and it isn't always there. With k zero, two k plus one is one, and x is four, not divisible by twelve. Itay is wrong. Choice number two.",
+    "at": [
+     "times two k",
+     "we'd need a three",
+     "two k plus one, and",
+     "it isn't always",
+     "With k zero",
+     "x is four, not",
+     "Itay is wrong. Choice number two",
+     "number two"
     ]
    }
   ],
@@ -94,10 +145,11 @@
     ]
    },
    {
-    "say": "Careful, examples that work don't prove Yuval and Noga right, the tag does. But one example that fails proves Itay wrong. So choice number two. [pause] Okay. I'll see you in the next question.",
+    "say": "Careful, examples that work don't prove Yuval and Noga right, the first two ways do. But one example that fails proves Itay wrong. So choice number two. [pause] Okay. I'll see you in the next question.",
     "at": [
      "examples that work don't prove",
      "Yuval and Noga",
+     "first two ways",
      "But one example",
      "proves Itay wrong",
      "So choice number two"

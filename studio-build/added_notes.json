@@ -1559,10 +1559,6 @@
    "t": "Method 1 · What is left",
    "d": "2026-10-11 topic-15 redo (your reading): 900 − 6x = 6(150 − x): what is left is a multiple of 6; the trap of checking only 3"
   },
-  "solve-q-435#2": {
-   "t": "Method 2 · Plugging in numbers",
-   "d": "2026-10-11 topic-15 redo (your reading): x = 4 and 12; examples that work prove nothing, one that fails does"
-  },
   "solve-q-432#2": {
    "t": "Method 2 · Plugging in a number",
    "d": "2026-10-11 topic-15 redo (your reading): not a = 1 (it gives 0); a = 2 gives 30"
@@ -1602,6 +1598,18 @@
   "solve-q-466#1": {
    "t": "Method 2 · Simplify first",
    "d": "2026-10-11 topic-16 redo (your reading): your Hebrew algebra method restored: simplify each fraction, then read the signs"
+  },
+  "solve-q-435#2": {
+   "t": "Method 2 · Algebra",
+   "d": "2026-10-12 topic-15 redo (your reading): your Hebrew algebra method on its own: x = 8k + 4, 2x = 8(2k + 1), x = 4(2k + 1)"
+  },
+  "solve-q-435#3": {
+   "t": "Method 2 · Algebra",
+   "d": "2026-10-12 topic-15 redo (your reading): Itay: 12 needs a 3 inside 2k + 1, not always (k = 0 → x = 4)"
+  },
+  "solve-q-435#4": {
+   "t": "Method 3 · Plugging in numbers",
+   "d": "2026-10-12 topic-15 redo (your reading): x = 4 and 12; examples that work prove nothing, one that fails does"
   }
  },
  "lines": {
@@ -2488,10 +2496,6 @@
   "solve-q-434#0": {
    "t": "Build the expression, then test",
    "d": "story intro and the trap: checking only 3, not 2 · clearer explanation (2026-10-08)"
-  },
-  "solve-q-435#1": {
-   "t": "Method 2 · Plugging in numbers",
-   "d": "two working examples are not proof; method 1 proves it"
   },
   "solve-q-458#0": {
    "t": "Method 1 · Algebra",
@@ -3425,10 +3429,6 @@
    "t": "Method 1 · The last digit",
    "d": "2026-10-11 topic-15 redo (your reading): 14a ends in 4, so a ends in 1 or 6: no need to work out 14a (R35)"
   },
-  "solve-q-435#0": {
-   "t": "Method 1 · Tag it",
-   "d": "clearer explanation (2026-10-08)"
-  },
   "solve-q-436#0": {
    "t": "Think in remainders",
    "d": "clearer explanation (2026-10-08)"
@@ -3644,6 +3644,26 @@
   "solve-q-470#2": {
    "t": "Method 3 · Plugging in numbers",
    "d": "2026-10-11 topic-16 redo (your reading): b = 1 → 733, b = 2 → 1001, both odd"
+  },
+  "solve-q-435#0": {
+   "t": "Method 1 · Understanding",
+   "d": "2026-10-12 topic-15 redo (your reading): your Hebrew understanding method on its own: only the remainder matters when the new divisor divides 8 (2·4 = 8, 4 ÷ 4)"
+  },
+  "solve-q-435#1": {
+   "t": "Method 1 · Understanding",
+   "d": "2026-10-12 topic-15 redo (your reading): 12 does not divide 8, so it cannot be known; x = 4 fails"
+  },
+  "solve-q-435#2": {
+   "t": "Method 2 · Algebra",
+   "d": "2026-10-12 topic-15 redo (your reading): your Hebrew algebra method on its own: x = 8k + 4, 2x = 8(2k + 1), x = 4(2k + 1)"
+  },
+  "solve-q-435#3": {
+   "t": "Method 2 · Algebra",
+   "d": "2026-10-12 topic-15 redo (your reading): Itay: 12 needs a 3 inside 2k + 1, not always (k = 0 → x = 4)"
+  },
+  "solve-q-435#4": {
+   "t": "Method 3 · Plugging in numbers",
+   "d": "2026-10-12 topic-15 redo (your reading): x = 4 and 12; examples that work prove nothing, one that fails does"
   }
  }
 }
