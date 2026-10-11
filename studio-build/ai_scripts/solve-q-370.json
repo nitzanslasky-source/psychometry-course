@@ -19,7 +19,7 @@
    },
    "[short pause] Our first method, two cases. The bars act differently on each side of zero, so that's where we split.",
    {
-    "say": "Case one, x is zero or positive. Then the bars do nothing, the absolute value of x is just x. So x plus x is smaller than twelve. Two x is smaller than twelve, and x is smaller than six.",
+    "say": "Case one, x is zero or positive. Then the bars do nothing, the absolute value of x is just x. So x plus x is smaller than twelve. Two x is smaller than twelve, and twelve divided by two is six, so x is smaller than six.",
     "at": [
      "Case one",
      "Then the bars",
@@ -62,7 +62,7 @@
     ]
    },
    {
-    "say": "So x smaller than six, number three is our answer.",
+    "say": "So x smaller than six, choice number three is our answer.",
     "at": [
      "number three is our answer"
     ]
@@ -80,7 +80,7 @@
     ]
    },
    {
-    "say": "But number two says x is smaller than zero, and number four says x is bigger than zero. Both leave zero out. So one number kills two choices.",
+    "say": "But choice number two says x is smaller than zero, and choice number four says x is bigger than zero. Both leave zero out. So one number kills two choices.",
     "at": [
      "number two says",
      "number four says",
@@ -88,7 +88,7 @@
     ]
    },
    {
-    "say": "Numbers one and three both stop at six on top. The difference is the bottom, minus six, or no limit at all. So I test a number below minus six, minus eight.",
+    "say": "Choice numbers one and three both stop at six on top. The difference is the bottom, minus six, or no limit at all. So I test a number below minus six, minus eight.",
     "at": [
      "Numbers one",
      "and three both stop",
@@ -97,11 +97,11 @@
     ]
    },
    {
-    "say": "Minus eight plus its absolute value, eight, is zero. Smaller than twelve, so it works. So x can go below minus six, and number one misses those numbers. Number three.",
+    "say": "Minus eight plus its absolute value, eight, is zero. Zero is smaller than twelve, so it works. So x can go below minus six, and choice number one misses those numbers. Choice number three.",
     "voice": "calm",
     "at": [
      "Minus eight plus",
-     "Smaller than twelve",
+     "Zero is smaller",
      "number one misses",
      "Number three."
     ]

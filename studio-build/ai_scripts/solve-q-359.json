@@ -77,24 +77,33 @@
   ],
   [
    {
-    "say": "[pause] Our second method, the number line. x plus seven is x minus negative seven, so it's the distance between x and negative seven. And the bars are equal to nine, so x is exactly nine steps away from negative seven.",
+    "say": "[pause] Our second method, the number line. What are we doing here? We read the bars as a distance. Remember, the absolute value of a number is its distance from zero. And the bars around a difference give the distance between two numbers. Five minus two is three, and from two to five is exactly three steps. Why? Five minus two tells me how far five is from two, and the sign only says which way. The bars drop the sign, so what's left is the distance. Now, x plus seven is x minus negative seven, because taking away negative seven is the same as adding seven. So x plus seven, in bars, is the distance between x and negative seven. And it's equal to nine, so x is exactly nine steps away from negative seven.",
     "at": [
      "Our second",
+     "What are we doing here",
+     "We read the",
+     "Remember, the absolute",
+     "And the bars",
+     "Five minus two is three",
+     "Five minus two tells",
+     "The bars drop the sign",
      "x plus seven is x minus",
-     "x minus negative seven",
-     "the distance between",
-     "exactly nine steps"
+     "the distance between x",
+     "exactly nine"
     ]
    },
    {
-    "say": "Nine steps to the right of negative seven, that's two. Nine steps to the left, that's negative sixteen. Two isn't in the choices, but negative sixteen is, number three.",
+    "say": "So how do I read the picture? I start at negative seven, and I walk nine steps each way. Nine steps to the right, negative seven plus nine is two. Nine steps to the left, negative seven minus nine is negative sixteen. Those are the only two points that are exactly nine steps away. Two isn't in the choices, but negative sixteen is, choice number three.",
     "at": [
+     "So how do",
+     "I start at negative seven",
      "Nine steps to the right",
-     "that's two",
+     "plus nine is two",
      "Nine steps to the left",
-     "that's negative sixteen",
-     "negative sixteen is",
-     "number three"
+     "is negative sixteen",
+     "Those are the",
+     "negative sixteen is,",
+     "is, choice number"
     ]
    }
   ],

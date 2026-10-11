@@ -493,7 +493,7 @@ What is new compared with §9:
 - R15 is approved.
 - Topic 51 is recorded by her.
 
-## SCRIPT-WRITING CHECKLIST (R1-R31)
+## SCRIPT-WRITING CHECKLIST (R1-R34)
 
 Check every AI script line by line. The numbers in brackets are evidence from §1-9.
 
@@ -522,7 +522,7 @@ Check every AI script line by line. The numbers in brackets are evidence from §
   3. a first reaction from the stem or the choices ("All the answers are one term, so…")
   4. "We'll solve this two ways."
   - The standard / algebra way comes first, unless you say why not.
-- **R14. The answer line is the value plus the number, said calmly:** "So x is 6, number two is our answer." Never "choice two", and never a build-up pause before it. (She dropped the number in 85 of 154 takes. The AI must not.) Checks go **inside** the step ("let's check with a = 3"), not in a list after the answer.
+- **R14. The answer line is the value plus the number, said calmly:** "So x is 6, choice number two is our answer." (R34: always "choice number N".) Never "choice two", and never a build-up pause before it. (She dropped the number in 85 of 154 takes. The AI must not.) Checks go **inside** the step ("let's check with a = 3"), not in a list after the answer.
 - **R15. Plugging in, every time:**
   1. Say which number, where it goes (the whole, the start), and **why**, before using it. Use 100 for percents.
   2. Check that the choices come out different. Avoid 0 and 1 when they make choices tie; 3 is a good default when 1 or 2 leaves ties.
@@ -565,3 +565,50 @@ Check every AI script line by line. The numbers in brackets are evidence from §
   - Every elimination says why the choice fails, with the actual numbers ("forty is not smaller than three, so number one is out").
   - After each discovery, say what it means for the next step ("So y is negative. And therefore, for the product to be negative, x must be positive.").
   - A bare step ("Take seven off both sides, and x is two.") gets a short reason when it isn't obvious to a weak student. Keep R1's short spoken sentences and R29's brief reminders: one "because" clause, not a lecture.
+- **R32. First time means the full explanation** (teacher, 2026-10-11, after watching q-359: the number-line method was used without being explained).
+  - Before calling an idea a REMINDER (R29), check where it was really taught: the CURRENT slides of the topic's camera lesson in the built studio, and every video earlier in the study-plan order. A one-line mention ("the picture: x minus two in bars is the distance from two") does not count as taught.
+  - At its first real use, teach it fully: what we are doing, why it works, one or two number examples, and how to read the picture or result. Every later use gets a short reminder.
+  - Keep a per-topic list "concept → where it is first taught" (topic 13: below) and use it when writing or reviewing scripts.
+- **R33. Say every calculation aloud, in small steps** (teacher, 2026-10-11): "negative nine minus seven is negative sixteen", not only "x is negative sixteen". This applies to every arithmetic step in every method: adding to both sides, dividing, squaring, plugging a number in.
+- **R34. "Choice number N"** (teacher, 2026-10-11): when talking about an answer choice, always say "choice number three" ("choice number three is our answer", "choice number two is out", "choice numbers one and four"). Never a bare "number three", which can be heard as the number 3. This replaces the "number N" wording in R14. `ai_check.py` flags a bare "number one / two / three / four" in a solution script.
+- **Recorded readings** (teacher, 2026-10-11): once she has read a script in the Reading Studio, change its paragraphs only where it matters for learning (a first-time idea not explained, a wrong or missing reason). Small wording rules (R33, R34) are not worth a re-read. Every changed paragraph is flagged "needs re-read" in the Reading Studio.
+
+### Topic 13: where each idea is first taught (R29 / R32)
+
+Study-plan order before topic 13: 1, 30, 2, 4, 31, 6, 8, 32, 9, 10, 33, 51, 39, 42, 21, 3, 43, 22, 41, 5, 7, 44, 23, 11, 24, 49, 12, 45, 25, 40, 34. Topic-13 order: the camera lesson `absolute-value`, then q-358, q-359, q-360, q-361, q-362, q-r26-t13-01, q-r26-t13-02, r26-t13-tools, q-363, q-364, q-365, q-366, q-r26-t13-13, q-r26-t13-03, q-367, q-368, q-369, q-370, summary.
+
+| Idea | First taught (full) | Later (reminder) |
+|---|---|---|
+| Sign of a product: same signs positive, different signs negative | topic 1 `multiply-divide` | q-358, q-r26-t13-13 |
+| Must / could / cannot / not necessarily; one allowed example | topic 1 `r26-t01-must-could` | q-358, q-361, q-365, q-366 |
+| Plugging in numbers for an expression; choices must come out different; 0 and 1 are "lazy" | topic 51 `pt51-plug-numbers`, topic 5 `expression-strategy` | q-362, summary |
+| Plugging in the answers | topic 51, topic 31 (`solve-geo31-g040`) | q-359, q-360, q-361, q-367, q-369, q-370 |
+| Shortcut formula (a + b)² | topic 4 `r26-t04-formulas` | q-368 |
+| Systems: subtract the equations | topic 6 `systems` | q-367 |
+| √(x²) = \|x\|; squaring positive numbers keeps the order; check answers in the original equation | topic 9 `roots`, `r26-t09-traps`, `r26-t09-summary` | tools, q-366, q-r26-t13-03 |
+| x / \|x\| = 1 or −1 | topic 5 `solve-q-128` | q-362 |
+| Inequalities: sign flips with a negative; double inequality, isolate the middle; x² < 9 bands and rays | topic 12 `inequalities`, `solve-q-335`, `solve-q-328` | q-360, q-361, q-369 |
+| \|x\| = distance from zero, never negative; \|0\| = 0; letters hide their sign (\|x\| = −x for a negative x) | camera lesson, slides 1-2 | q-362, q-r26-t13-02, summary |
+| Inside first, then the bars | camera lesson, slide 3 | summary |
+| \|ab\| = \|a\|\|b\|, \|a/b\| = \|a\|/\|b\|; \|a + b\| ≤ \|a\| + \|b\| (equal with the same signs) | camera lesson, slides 4-5 | q-366, q-r26-t13-13 |
+| Sign clues: \|x\| > x negative, \|x\| = x zero or positive, \|x\| = −x zero or negative | camera lesson, slide 6 | q-358, q-365 |
+| Bars = a number: two cases | camera lesson, slides 7-8 | q-359, q-r26-t13-01, q-r26-t13-03, q-367, q-368 |
+| Bars on the big side: open range (two rays); small side: closed range (one band) | camera lesson, slides 9-10 | q-360, q-361, q-369, summary |
+| **\|x − a\| = the distance between x and a; why; x + 7 = the distance from −7; reading the picture** | **q-359 Method 2** (the lesson only names it in one line) | q-360, q-361, tools, summary |
+| Givens about signs say nothing about sizes; the tie-breaker plug (necessarily = for every pair) | q-358 | q-362, q-364, q-368 |
+| "Could be" with two answers and one offered | q-359 | — |
+| An expression inside, small side: −7 < inside < 7, then act on all three parts | q-360 | q-369 |
+| "Minus x" is positive when x is negative | q-362 | summary |
+| A number in front of x: solve the second case all the way | q-r26-t13-01 | — |
+| Negative or zero right side: never / always / one solution | q-r26-t13-02 | summary |
+| \|x\|² = x² (why); \|a − b\| = \|b − a\| | r26-t13-tools | q-366, q-368, summary |
+| m = \|n\| can't be 0 when n ≠ m; dividing a positive number keeps it positive | q-363 | — |
+| Same side of zero: you can compare distances; two extreme pictures | q-364 | q-365 |
+| Only a negative number changes under the bars | q-365 | — |
+| Possible but not necessarily; a common factor comes out of the bars | q-366 | — |
+| Flipping one sign made it bigger, so the signs are opposite | q-r26-t13-13 | summary |
+| A letter on the right side: the right side must be ≥ 0, check every answer | q-r26-t13-03 | q-367, summary |
+| Bars alone on one side, then two options | q-367 | — |
+| Equal bars: equal or opposite insides (why: the same distance from zero) | q-368 | summary |
+| Double inequality with bars: two bands; the split method | q-369 | — |
+| x + \|x\|: split at zero; on the negative side they cancel to zero | q-370 | — |

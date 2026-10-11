@@ -34,35 +34,41 @@
     ]
    },
    {
-    "say": "The positive band first. Add one to all three parts, eight, two x, ten. Divide all three by two, and x is between four and five.",
+    "say": "The positive band first. Add one to all three parts. Seven plus one is eight, and nine plus one is ten, so eight, two x, ten. Divide all three by two. Eight over two is four, and ten over two is five. So x is between four and five.",
     "voice": "calm",
     "at": [
      "The positive band",
      "Add one to all three",
-     "Divide all three"
+     "Seven plus one",
+     "Divide all three",
+     "Eight over two",
+     "So x is"
     ]
    },
    {
-    "say": "Now a lot of students take one off instead of adding it, and they get three to four. That's number one, the bait. And number four is the same mistake on the negative side.",
+    "say": "Now a lot of students take one off instead of adding it. Seven minus one is six, nine minus one is eight, and over two that's three to four. That's choice number one, the bait. And choice number four is the same mistake on the negative side.",
     "at": [
      "take one off",
-     "That's number one",
+     "Seven minus one",
+     "That's choice number one",
      "the bait",
      "number four is the same"
     ]
    },
    {
-    "say": "Four to five isn't in the choices, so on to the negative band. Add one to all three parts, minus eight, two x, minus six. Divide by two, and x is between minus four and minus three.",
+    "say": "Four to five isn't in the choices, so on to the negative band. Add one to all three parts. Minus nine plus one is minus eight, and minus seven plus one is minus six. Divide by two. Minus eight over two is minus four, and minus six over two is minus three. So x is between minus four and minus three.",
     "at": [
      "isn't in the choices",
      "Add one to all three",
-     "Divide by two"
+     "Minus nine plus",
+     "Minus eight over",
+     "So x is"
     ]
    },
    {
-    "say": "Aaand that's exactly number three. On the number line, two small bands, one on each side. Minus four to minus three, and four to five.",
+    "say": "Aaand that's exactly choice number three. On the number line, two small bands, one on each side. Minus four to minus three, and four to five.",
     "at": [
-     "that's exactly number three",
+     "that's exactly choice number three",
      "On the number line",
      "Minus four to"
     ]
@@ -70,27 +76,31 @@
   ],
   [
    {
-    "say": "[pause] Our second method, splitting it in two. The bars smaller than nine means the inside is trapped between minus nine and nine. Add one, divide by two, and x is between minus four and five.",
+    "say": "[pause] Our second method, splitting it in two. The bars smaller than nine means the inside is trapped between minus nine and nine. Add one, minus eight and ten. Divide by two, minus four and five. So x is between minus four and five.",
     "at": [
      "Our second",
      "The bars smaller than nine",
-     "Add one, divide"
-    ]
-   },
-   {
-    "say": "The bars bigger than seven means the inside is above seven, or below minus seven. So x is above four, or below minus three.",
-    "at": [
-     "The bars bigger than seven",
+     "Add one, minus",
+     "Divide by two",
      "So x is"
     ]
    },
    {
-    "say": "Both have to hold. Between minus four and five, and above four, gives four to five. Between minus four and five, and below minus three, gives minus four to minus three. And minus four to minus three is number three.",
+    "say": "The bars bigger than seven means the inside is above seven, or below minus seven. Seven plus one is eight, over two is four. Minus seven plus one is minus six, over two is minus three. So x is above four, or below minus three.",
+    "at": [
+     "The bars bigger than seven",
+     "Seven plus one",
+     "Minus seven plus",
+     "So x is"
+    ]
+   },
+   {
+    "say": "Both have to hold. Between minus four and five, and above four, gives four to five. Between minus four and five, and below minus three, gives minus four to minus three. And minus four to minus three is choice number three.",
     "at": [
      "Both have to hold",
      "Between minus four",
      "Between minus four and five, and below",
-     "is number three"
+     "is choice number three"
     ]
    },
    {
@@ -102,30 +112,30 @@
   ],
   [
    {
-    "say": "[pause] Our third method, plugging in the answers. If a range is possible, every number in it has to work. So I pick an easy number inside each range, and if it breaks the given, the range is out. Number one, three and a half. Two times it is seven, minus one, six. Six isn't bigger than seven, out.",
+    "say": "[pause] Our third method, plugging in the answers. If a range is possible, every number in it has to work. So I pick an easy number inside each range, and if it breaks the given, the range is out. Choice number one, three and a half. Two times it is seven, minus one, six. Six isn't bigger than seven, out.",
     "at": [
      "the given, the",
-     "Number one, three",
+     "number one, three",
      "three and a half",
      "Two times it",
      "seven, out"
     ]
    },
    {
-    "say": "Number two, five and a half. Two times it is eleven, minus one, ten. Ten isn't smaller than nine, out.",
+    "say": "Choice number two, five and a half. Two times it is eleven, minus one, ten. Ten isn't smaller than nine, out.",
     "voice": "calm",
     "at": [
-     "Number two, five",
+     "number two, five",
      "five and a half",
      "Two times it",
      "nine, out"
     ]
    },
    {
-    "say": "Number three, minus three and a half. Two times it is minus seven, minus one, minus eight. In bars, eight. Between seven and nine, it works.",
+    "say": "Choice number three, minus three and a half. Two times it is minus seven, minus one, minus eight. In bars, eight. Between seven and nine, it works.",
     "voice": "calm",
     "at": [
-     "Number three, minus",
+     "number three, minus",
      "minus three and a half",
      "Two times it",
      "In bars, eight",
@@ -133,7 +143,7 @@
     ]
    },
    {
-    "say": "And number four, minus four and a half. Times two is minus nine, minus one, minus ten. In bars, ten. Out.",
+    "say": "And choice number four, minus four and a half. Times two is minus nine, minus one, minus ten. In bars, ten. Out.",
     "voice": "calm",
     "at": [
      "number four, minus",

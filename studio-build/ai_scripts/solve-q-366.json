@@ -26,14 +26,16 @@
     ]
    },
    {
-    "say": "[short pause] Our first method. Number one looks like the given, with brackets instead of bars, and a square. Both sides of the given are positive, so I'm allowed to square them. Three squared is nine.",
+    "say": "[short pause] Our first method. Choice number one looks like the given, with brackets instead of bars, and a square. Both sides of the given are positive, so I'm allowed to square them. Why? Remember, with positive numbers, the bigger number also has the bigger square. Three squared, three times three, is nine.",
     "at": [
      "Number one looks",
-     "square them"
+     "square them",
+     "Remember, with positive",
+     "Three squared, three"
     ]
    },
    {
-    "say": "And x plus y in absolute value, squared, is the same as x plus y, squared. A square doesn't care about the sign. So number one is always true, and it's out.",
+    "say": "And x plus y in absolute value, squared, is the same as x plus y, squared. A square doesn't care about the sign. So choice number one is always true, and it's out.",
     "at": [
      "is the same as",
      "A square doesn't",
@@ -49,13 +51,13 @@
     ]
    },
    {
-    "say": "Number two, let's leave it for the end.",
+    "say": "Choice number two, let's leave it for the end.",
     "at": [
      "Number two"
     ]
    },
    {
-    "say": "Number three. The absolute value of x y, against the absolute value of x times the absolute value of y. Remember, you can split the bars over multiplication. So these two are always equal, never smaller. Never true, so it's out.",
+    "say": "Choice number three. The absolute value of x y, against the absolute value of x times the absolute value of y. Remember, you can split the bars over multiplication. So these two are always equal, never smaller. Never true, so it's out.",
     "at": [
      "Number three",
      "The absolute value",
@@ -65,7 +67,7 @@
     ]
    },
    {
-    "say": "Number four. Inside the bars I have five x plus five y. Take out the common factor five, and split the bars. That's five times the absolute value of x plus y.",
+    "say": "Choice number four. Inside the bars I have five x plus five y. Take out the common factor five, and it's five times x plus y. Then split the bars. That's five times the absolute value of x plus y.",
     "at": [
      "Number four",
      "Inside the bars",
@@ -83,9 +85,9 @@
     ]
    },
    {
-    "say": "Three are out, so in the exam you'd circle number two. Here, let's see why it's right. The rule from the lesson says the absolute value of a sum is smaller than or equal to the sum of the absolute values. They're equal when x and y have the same sign, and it's smaller when the signs are opposite. So sometimes true, sometimes not. Number two is our answer.",
+    "say": "Three are out, so in the exam you'd circle choice number two. Here, let's see why it's right. The rule from the lesson says the absolute value of a sum is smaller than or equal to the sum of the absolute values. They're equal when x and y have the same sign, and it's smaller when the signs are opposite. So sometimes true, sometimes not. Choice number two is our answer.",
     "at": [
-     "circle number two",
+     "circle choice number two",
      "Here, let's see",
      "The rule from the lesson",
      "They're equal when",
@@ -103,42 +105,42 @@
     ]
    },
    {
-    "say": "Number one, twenty-five is bigger than nine, true. Number two, five smaller than five? No. Number three, four smaller than four? No. Number four, five smaller than twenty-five, true.",
+    "say": "Choice number one, five squared is twenty-five, and twenty-five is bigger than nine, true. Choice number two, the absolute value of four plus one is five, and four plus one is also five. Five smaller than five? No. Choice number three, four times one is four, in bars four, and four times one is four. Four smaller than four? No. Choice number four, five times five is twenty-five, and five is smaller than twenty-five, true.",
     "voice": "calm",
     "at": [
-     "Number one, twenty-five",
-     "Number one, twenty-five",
-     "Number two, five",
-     "Number three, four",
-     "Number four, five"
+     "number one, five",
+     "five squared is twenty-five",
+     "number two, the",
+     "number three, four",
+     "number four, five"
     ]
    },
    {
-    "say": "Now opposite signs. Why x six and y negative two? Because with opposite signs they cancel, so I need one of them much bigger, to keep the sum above three. Six minus two is four, and four is bigger than three, so they fit.",
+    "say": "Now opposite signs. Why x six and y negative two? Because with opposite signs they cancel, so I need one of them much bigger, to keep the sum above three. Six plus negative two is four, and four is bigger than three, so they fit.",
     "at": [
      "Why x six",
      "Because with opposite",
-     "Six minus two"
+     "Six plus negative"
     ]
    },
    {
-    "say": "Number one, sixteen bigger than nine, true. Number two, four smaller than six plus two, that's eight. True this time. Number three, twelve smaller than twelve? No again. Number four, four smaller than twenty, true.",
+    "say": "Choice number one, four squared is sixteen, bigger than nine, true. Choice number two, the absolute value of six is six, and of negative two it's two, so six plus two is eight. Four smaller than eight? True this time. Choice number three, six times negative two is negative twelve, in bars twelve, and six times two is twelve. Twelve smaller than twelve? No again. Choice number four, five times four is twenty, and four is smaller than twenty, true.",
     "voice": "calm",
     "at": [
-     "Number one, sixteen",
-     "sixteen bigger than nine",
-     "Number two, four",
+     "number one, four",
+     "four squared is sixteen",
+     "number two, the",
      "True this",
-     "Number three, twelve",
-     "Number four, four"
+     "number three, six",
+     "number four, five"
     ]
    },
    {
-    "say": "So number two was false once and true once. That's exactly possible but not necessarily. Number three was never true, and numbers one and four were true both times. Number two.",
+    "say": "So choice number two was false once and true once. That's exactly possible but not necessarily. Choice number three was never true, and choice numbers one and four were true both times. Choice number two.",
     "at": [
      "number two was",
      "That's exactly possible",
-     "Number three was",
+     "number three was",
      "numbers one and",
      "Number two."
     ]

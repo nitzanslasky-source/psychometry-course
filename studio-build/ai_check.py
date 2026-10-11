@@ -1,7 +1,8 @@
 """ai_check.py [videoId ...] : check that ai_scripts/<videoId>.json lines up with the video in the built studio —
 same number of slides, and on every slide the same number of spoken lines as the video has (one AI line per original
 spoken line, same order). Also flags style slips the teacher rejected (exclamation marks other than a short 'No!', 'So yeah', symbols the
-TTS spells out: π α β ° % × ÷ ² √ - write them as words)."""
+TTS spells out: π α β ° % × ÷ ² √ - write them as words), and a bare "number N" for an answer choice (R34: say
+"choice number N"; a paragraph the teacher already read in the Reading Studio is only a note)."""
 import glob, json, os, re, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -10,6 +11,16 @@ s = open(SRC, encoding='utf-8').read(); k = s.find('window.COURSE=') + len('wind
 D = json.JSONDecoder().raw_decode(s[k:])[0]
 ids = sys.argv[1:] or [os.path.basename(p)[:-5] for p in sorted(glob.glob(os.path.join(HERE, 'ai_scripts', '*.json'))) if not os.path.basename(p).startswith('_')]
 bad = 0
+READING = os.path.expanduser('~/Documents/Course.recordings/_reading')
+CHOICE_N = re.compile(r'(?<![Cc]hoice )(?<![Tt]he )\b[Nn]umbers? (one|two|three|four)\b')
+
+
+def _plain(s):
+    """the Reading Studio's paragraph text (reading_studio.plain): tags dropped, spaces folded"""
+    s = re.sub(r'<[^>]*>', ' ', s); s = re.sub(r'\[[^\]]*\]', ' ', s); s = re.sub(r'\s+', ' ', s).strip()
+    return re.sub(r'\s+([,.;:?!])', r'\1', s)
+
+
 NOTES = []
 _V = json.load(open(os.path.join(HERE, 'ai_scripts', '_voice.json'), encoding='utf-8')); PRESETS = list((_V.get('presets') or {'base': 0}))
 MODEL = json.load(open(os.path.join(HERE, 'ai_scripts', '_voice.json'), encoding='utf-8')).get('model_id')   # tags matter only for eleven_v3 / v4
@@ -89,6 +100,21 @@ for vid in ids:
     elif len(tags) > 3: probs.append('%d delivery tags %s - at most 3 per video' % (len(tags), tags))
     risky = re.findall(r'\b(vases?|tomato(?:es)?|routes?|either|neither|schedules?|herbs?|aluminum|aluminium|leisure|garage|privacy|vitamins?|yogurt|controversy|niche|tuna)\b', allt, re.I)
     if risky: NOTES.append('%s %s' % (vid, sorted(set(w.lower() for w in risky))))     # a note, not a failure: swap when the line is next rewritten
+    # "choice number N" (teacher 2026-10-11, R34): in a solution script a bare "number three" can be heard as the number 3.
+    # A paragraph the teacher already read in the Reading Studio (unchanged since) is only a note: re-reading it for this
+    # wording alone is her call. Plural "choice numbers one and four" is fine; "the number one" (a value) is not flagged.
+    if vid.startswith('solve-') or (v.get('questionId')):
+        read = []
+        for f in sorted(glob.glob(os.path.join(READING, vid, '*.json'))):
+            try: read = json.load(open(f, encoding='utf-8')).get('paragraphs') or read
+            except Exception: pass
+        read = {re.sub(r'\s+', ' ', p if isinstance(p, str) else p.get('text', '')).strip() for p in read}
+        for k, l in enumerate(flat):
+            t = l['say'] if isinstance(l, dict) else l
+            hits = [m.group(0) for m in CHOICE_N.finditer(t)]
+            if not hits: continue
+            if _plain(t) in read: NOTES.append('%s line %d: bare %s (already read - her call)' % (vid, k + 1, hits))
+            else: probs.append('line %d: say "choice number N", not a bare %s (R34)' % (k + 1, ', '.join('"%s"' % h for h in hits)))
     print(('OK   ' if not probs else 'FAIL ') + vid + ('' if not probs else '\n   ' + '\n   '.join(probs)))
     bad += bool(probs)
 if NOTES: print('notes (not failures): ' + '; '.join(NOTES))

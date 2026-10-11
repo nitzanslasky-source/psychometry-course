@@ -163,10 +163,11 @@
     ]
    },
    {
-    "say": "Two choices survive. Can I already circle one and move on? I can't. I need a tie-breaker. Number three is about sizes, so this time I'll make y the bigger one in size, and keep the signs that work. y is negative six, and x is two. Negative six times two is negative twelve, so both givens still hold.",
+    "say": "Two choices survive. Can I already circle one and move on? I can't, because a necessarily true choice has to work for every pair that fits the givens. So I need a tie-breaker, a new pair that might break one of them. Choice number three is about sizes, so this time I'll make y the bigger one in size, and keep the signs that work. y is negative six, and x is two. Negative six times two is negative twelve, so both givens still hold.",
     "at": [
      "Two choices survive",
      "move on",
+     "the givens. So",
      "I need a tie-breaker",
      "the bigger one in size",
      "y is negative six",

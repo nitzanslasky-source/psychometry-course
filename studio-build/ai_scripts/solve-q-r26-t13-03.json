@@ -18,19 +18,21 @@
     ]
    },
    {
-    "say": "[short pause] Our first method. Two cases, as usual. Case one, x plus four is three x. Take x off both sides, four is two x, so x is two.",
+    "say": "[short pause] Our first method. Two cases, as usual. Case one, x plus four is three x. Take x off both sides, and four is two x. Four divided by two is two, so x is two.",
     "at": [
      "Case one",
-     "four is two x"
+     "four is two x",
+     "Four divided by"
     ]
    },
    {
-    "say": "Case two, x plus four is minus three x. Add three x to both sides and take four off. Four x is minus four, so x is minus one.",
+    "say": "Case two, x plus four is minus three x. Add three x to both sides, x plus three x is four x, so four x plus four is zero. Take four off, and four x is minus four. Minus four divided by four is minus one, so x is minus one.",
     "voice": "calm",
     "at": [
      "Case two",
      "Add three x",
-     "Four x is minus four"
+     "Four x is minus four",
+     "Minus four divided"
     ]
    },
    {
@@ -62,7 +64,7 @@
     ]
    },
    {
-    "say": "Now careful, number three keeps the fake answer, and that's the trap. A lot of students stop right after the two cases. So only two, number one is our answer.",
+    "say": "Now careful, choice number three keeps the fake answer, and that's the trap. A lot of students stop right after the two cases. So only two, choice number one is our answer.",
     "at": [
      "that's the trap",
      "A lot of",
@@ -80,7 +82,7 @@
     ]
    },
    {
-    "say": "And what does that mean for the bars? If x is zero or positive, x plus four is positive, so the bars do nothing. I can just drop them. x plus four is three x, so four is two x, and x is two.",
+    "say": "And what does that mean for the bars? If x is zero or positive, x plus four is positive, so the bars do nothing. I can just drop them. x plus four is three x, so four is two x, and four divided by two is two. x is two.",
     "at": [
      "And what does",
      "the bars do nothing",
@@ -89,13 +91,13 @@
     ]
    },
    {
-    "say": "So two is the only value. Numbers two and three have minus one in them, and x can't be negative here, so they're out. Number four says there's no such number, but two is one, so it's out too. Two only, number one.",
+    "say": "So two is the only value. Choice numbers two and three have minus one in them, and x can't be negative here, so they're out. Choice number four says there's no such number, but two is one, so it's out too. Two only, choice number one.",
     "at": [
      "So two is",
      "Numbers two",
      "and three have",
      "Number four says",
-     "Two only, number one"
+     "Two only, choice number one"
     ]
    },
    {

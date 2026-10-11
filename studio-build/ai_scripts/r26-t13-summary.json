@@ -81,11 +81,12 @@
   ],
   [
    {
-    "say": "Bars equal to a number? Two cases, plus and minus. x plus two, in bars, is ten. So x is eight, or x is minus twelve. Keep both.",
+    "say": "Bars equal to a number? Two cases, plus and minus. x plus two, in bars, is ten. So x plus two is ten, and ten minus two is eight. Or x plus two is minus ten, and minus ten minus two is minus twelve. Keep both.",
     "at": [
      "Two cases",
      "x plus two",
-     "So x is eight"
+     "ten minus two is eight",
+     "Or x plus"
     ]
    },
    {

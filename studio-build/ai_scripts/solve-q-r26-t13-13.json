@@ -19,7 +19,7 @@
     ]
    },
    {
-    "say": "[short pause] Our first method. a is seven away from zero, and b is three away. Their signs, we don't know yet. So what can a plus b be? Same signs add up, so it's ten. Opposite signs cancel, so it's seven minus three, four.",
+    "say": "[short pause] Our first method. a is seven away from zero, and b is three away. Their signs, we don't know yet. So what can a plus b be? Same signs add up, seven plus three is ten. Opposite signs cancel, seven minus three is four.",
     "at": [
      "Same signs add up",
      "Opposite signs cancel"
@@ -51,7 +51,7 @@
     ]
    },
    {
-    "say": "So four, number four is our answer. Ten is the same-signs case, and the third given throws it out. Negative four can't be, because the bars are never negative. And cannot be determined is the trap for anyone who skips the third given.",
+    "say": "So four, choice number four is our answer. Ten is the same-signs case, and the third given throws it out. Negative four can't be, because the bars are never negative. And cannot be determined is the trap for anyone who skips the third given.",
     "at": [
      "number four is our answer",
      "Ten is the same-signs",
@@ -70,39 +70,43 @@
     ]
    },
    {
-    "say": "And if a plus b, in absolute value, is smaller than the absolute value of a, then adding b made it smaller. So again they cancelled, opposite signs. For example, a five and b negative two. Three is smaller than five.",
+    "say": "And if a plus b, in absolute value, is smaller than the absolute value of a, then adding b made it smaller. So again they cancelled, opposite signs. For example, a five and b negative two. Five plus negative two is three, and three is smaller than five.",
     "at": [
      "adding b made it smaller",
      "So again they",
      "For example",
-     "Three is smaller"
+     "Five plus negative"
     ]
    }
   ],
   [
    "[pause] Our second method, trying the signs. Not sure about the reasoning? a is seven or negative seven, and b is three or negative three. So there are only four sign options, and let's try them all.",
    {
-    "say": "Both positive, seven and three. Ten against four, and ten is not smaller than four. Out. Both negative, negative ten against negative four. In bars that's ten against four again. Out.",
+    "say": "Both positive, seven and three. Seven plus three is ten, and seven minus three is four. Ten is not smaller than four, so it's out. Both negative, negative seven and negative three. Negative seven plus negative three is negative ten, and negative seven minus negative three is negative four. In bars that's ten against four again. Out.",
     "voice": "calm",
     "at": [
      "Both positive",
-     "Ten against four",
+     "Seven plus three",
+     "Ten is not",
      "Both negative",
+     "Negative seven plus",
      "In bars that's"
     ]
    },
    {
-    "say": "Seven and negative three. Four against ten, it works. Negative seven and three. Negative four against negative ten, so four against ten. It works too.",
+    "say": "Seven and negative three. Seven plus negative three is four, and seven minus negative three is ten. Four is smaller than ten, so it works. Negative seven and three. Negative seven plus three is negative four, and negative seven minus three is negative ten. In bars, four against ten. It works too.",
     "voice": "calm",
     "at": [
      "Seven and negative three",
-     "Four against ten",
+     "Seven plus negative",
+     "Four is smaller",
      "Negative seven and three",
-     "Negative four against"
+     "Negative seven plus",
+     "In bars, four"
     ]
    },
    {
-    "say": "In both cases that work, the absolute value of a plus b is four. Number four. [short pause] So when you test signs, check same signs and opposite signs, because that's where the bars change things. [pause] Okay. I'll see you in the next question.",
+    "say": "In both cases that work, the absolute value of a plus b is four. Choice number four. [short pause] So when you test signs, check same signs and opposite signs, because that's where the bars change things. [pause] Okay. I'll see you in the next question.",
     "at": [
      "In both cases",
      "that work",
