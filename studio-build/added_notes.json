@@ -3,7 +3,7 @@
  "videos": {
   "r26-t01-exam-words": {
    "t": "Exam Words",
-   "d": "the English exam words — sum, difference, product, quotient, multiple/divisor, digit, distinct, at least/at most, consecutive even/odd (steps of 2)"
+   "d": "the English exam words — sum, difference, product, quotient, multiple/divisor, digit, distinct, at least/at most, consecutive even/odd (steps of 2); at most / at least: 3 is the ceiling / the floor — you can touch it (memory trick, 2026-10-11)"
   },
   "r26-t01-must-could": {
    "t": "Must, Could, Cannot",
@@ -11,7 +11,7 @@
   },
   "r26-t01-summary": {
    "t": "Summary",
-   "d": "recap of topic 1 — number words, opposites/reciprocals, exam words, must/could/cannot, sign rules, calculating by hand, order of operations"
+   "d": "recap of topic 1 — number words, opposites/reciprocals, exam words, must/could/cannot, sign rules, calculating by hand, order of operations; opposites attract and cancel to zero, reciprocals flip upside down and make one (memory trick, 2026-10-11)"
   },
   "r26-t01-summary-fast": {
    "t": "Summary: Fast Calculation",
@@ -75,7 +75,7 @@
   },
   "r26-t09-summary": {
    "t": "Roots — Summary",
-   "d": "recaps roots: never negative, √(x²) = |x|, simplifying, multiply/divide, fractional powers, no splitting over sums, comparing, 0–1 order, conjugates, root equations"
+   "d": "recaps roots: never negative, √(x²) = |x|, simplifying, multiply/divide, fractional powers, no splitting over sums, comparing, 0–1 order, conjugates, root equations; the power is the flower, the root stays in the ground (memory trick, 2026-10-11)"
   },
   "r26-t09-traps": {
    "t": "Roots — Exam traps",
@@ -475,7 +475,7 @@
   },
   "solve-q-r26-t09-01": {
    "t": "Roots Questions",
-   "d": "⁴√(9⁶) = ? (power over index: 9^(6/4) = 9^(3/2) = 27; or write 9 = 3² → 3¹²; trap: subtracting 6 − 4)"
+   "d": "⁴√(9⁶) = ? (power over index: 9^(6/4) = 9^(3/2) = 27; or write 9 = 3² → 3¹²; trap: subtracting 6 − 4); the power is the flower (on top), the root stays in the ground (bottom) (memory trick, 2026-10-11)"
   },
   "solve-q-r26-t09-02": {
    "t": "Roots Questions",
@@ -1293,7 +1293,7 @@
   },
   "wp-053#4": {
    "t": "Up and down",
-   "d": "up and down — +20% then −20% = 0.96 (4% loss); up and down p% loses p²/100%; any two changes a + b + ab/100"
+   "d": "up and down — +20% then −20% = 0.96 (4% loss); up and down p% loses p²/100%; any two changes a + b + ab/100; same percent up and down, you never get back home (memory trick, 2026-10-11)"
   },
   "wp-053#8": {
    "t": "The arrow map",
@@ -1394,6 +1394,50 @@
   "solve-geo35-g125#3": {
    "t": "No formula? Count faces",
    "d": "from your Hebrew course: an irregular arrangement (a staircase of 6 cubes) has no formula — count faces by direction (front = back, top = bottom, right = left), including the recessed step faces: 2(6 + 3 + 3) = 24"
+  },
+  "solve-q-358#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 AI redo: a second method — plug in y = −3, x = 8 (two choices survive), then a tie-breaker y = −6, x = 2 that leaves only choice 4"
+  },
+  "solve-q-359#1": {
+   "t": "Method 2 · Number line",
+   "d": "2026-10-11 AI redo: the distance picture as its own method — 9 steps from −7 gives 2 and −16"
+  },
+  "solve-q-359#2": {
+   "t": "Method 3 · Plugging in the answers",
+   "d": "2026-10-11 AI redo: a third method — try each choice in |x + 7|; only −16 gives 9"
+  },
+  "solve-q-360#1": {
+   "t": "Method 2 · Number line",
+   "d": "2026-10-11 AI redo: the distance picture as its own method — within 7 of −3, one band from −10 to 4"
+  },
+  "solve-q-360#2": {
+   "t": "Method 3 · Plugging in the answers",
+   "d": "2026-10-11 AI redo: a third method — try each choice; only 3 gives less than 7"
+  },
+  "solve-q-361#1": {
+   "t": "Method 2 · Number line",
+   "d": "2026-10-11 AI redo: the distance picture as its own method — more than 8 from −1, two rays; 2 sits in the gap"
+  },
+  "solve-q-361#2": {
+   "t": "Method 3 · Plugging in the answers",
+   "d": "2026-10-11 AI redo: a third method — 9 works (10 > 8), 2 does not (3), so 2 cannot be x"
+  },
+  "solve-q-364#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 AI redo: a second method — two extreme pictures (negatives far / positives far) leave only choice 2"
+  },
+  "solve-q-365#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 AI redo: a second method — y = −4, z = −5, x = 2 fit the givens and break choice 3 (one example is enough for \"not necessarily\")"
+  },
+  "solve-q-366#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 AI redo: a second method — a same-sign pair (4, 1) and an opposite-sign pair (6, −2): only choice 2 is false once and true once"
+  },
+  "solve-q-369#1": {
+   "t": "Method 2 · Split it",
+   "d": "2026-10-11 AI redo: the split method Nitzan added in her take — |2x − 1| < 9 and |2x − 1| > 7 separately, then both overlaps (−4 to −3 and 4 to 5)"
   }
  },
  "lines": {
@@ -2190,12 +2234,12 @@
    "d": "the list of numbers to try: 0, 1, −1, 1/2, a big number"
   },
   "solve-q-360#0": {
-   "t": "Small side: closed range",
-   "d": "a distance picture: number line from −3, 7 steps each way to −10 and 4; the distance picture is now a click figure: one shaded band from −10 to 4 around −3; restored from your Hebrew lesson (2026-10-08): why the small side is a closed range — the range is always symmetric, the inside without its sign must be less than 7 (6, 5 … and −6, −5 … fit, 9 and −9 fail — the minus disappears), like x² smaller than a number (board: \"inside: 6, 5, …, −5, −6 ✓ 9, −9 ✗\"; the check moved to the right of −10 < x < 4) · 2026-10-08 (later): the full WHY now lives in the lesson → one reminder line \"As in the lesson: small side — closed range\" (the \"inside: …\" board item removed)"
+   "t": "Method 1 · Closed range",
+   "d": "a distance picture: number line from −3, 7 steps each way to −10 and 4; the distance picture is now a click figure: one shaded band from −10 to 4 around −3; restored from your Hebrew lesson (2026-10-08): why the small side is a closed range — the range is always symmetric, the inside without its sign must be less than 7 (6, 5 … and −6, −5 … fit, 9 and −9 fail — the minus disappears), like x² smaller than a number (board: \"inside: 6, 5, …, −5, −6 ✓ 9, −9 ✗\"; the check moved to the right of −10 < x < 4) · 2026-10-08 (later): the full WHY now lives in the lesson → one reminder line \"As in the lesson: small side — closed range\" (the \"inside: …\" board item removed) · 2026-10-11 AI redo: a closing rule in her words: \"smaller than a number: put its minus on the other side, the inside is trapped between them\""
   },
   "solve-q-361#0": {
-   "t": "Big side: open range",
-   "d": "a distance picture: more than 8 steps from −1, so beyond 7 or below −9; the distance picture is now a click figure: two shaded rays going outward from −9 and 7; restored from your Hebrew lesson (2026-10-08): why the big side is an open range — the inside without its sign must be more than 8 (9, 10 … and −9, −10 …), two rays like x² bigger than a number; and \"absolute value in an inequality is the harder part, and rarer on the exam\" · 2026-10-08 (later): the full WHY and \"harder, rarer\" now live in the lesson → one reminder line \"As in the lesson: big side — open range\""
+   "t": "Method 1 · Open range",
+   "d": "a distance picture: more than 8 steps from −1, so beyond 7 or below −9; the distance picture is now a click figure: two shaded rays going outward from −9 and 7; restored from your Hebrew lesson (2026-10-08): why the big side is an open range — the inside without its sign must be more than 8 (9, 10 … and −9, −10 …), two rays like x² bigger than a number; and \"absolute value in an inequality is the harder part, and rarer on the exam\" · 2026-10-08 (later): the full WHY and \"harder, rarer\" now live in the lesson → one reminder line \"As in the lesson: big side — open range\" · 2026-10-11 AI redo: the warning that the sign flips on the negative side (x + 1 < −8), from her take"
   },
   "solve-q-362#1": {
    "t": "Method 2 · Algebra",
@@ -2206,8 +2250,8 @@
    "d": "tip to leave choice two (two negatives compared) for the end"
   },
   "solve-q-366#0": {
-   "t": "Method 1 · Understanding",
-   "d": "tip to leave choice two for the end"
+   "t": "Method 1 · The rules",
+   "d": "tip to leave choice two for the end · 2026-10-11 AI redo: the wording decoded (never true: out; always true: out) and why choice 4 can only fail if x + y = 0, from her take"
   },
   "solve-q-367#0": {
    "t": "Method 1 · Algebra",
@@ -2511,7 +2555,7 @@
   },
   "solve-wp22-g047#0": {
    "t": "Method 1 · Algebra",
-   "d": "give the plain x to the little guy: B = x, A = 4x"
+   "d": "let the smaller one be x: B = x, A = 4x (2026-10-11: was \"give the plain x to the little guy\", which clashed with the ×2 rule)"
   },
   "solve-wp23-g060#1": {
    "t": "Method 2 · Plugging in numbers",
@@ -2607,7 +2651,7 @@
   },
   "solve-wp26-g101#0": {
    "t": "Method 1 · Algebra",
-   "d": "letters L and S set up, and the trap of doubling the wrong side"
+   "d": "letters L and S set up, and the trap of doubling the wrong side; give it to the little guy (memory trick, 2026-10-11): think of 4 and 8 — you double the 4, so the ×2 goes on the smaller side"
   },
   "solve-wp26-g101#1": {
    "t": "Method 2 · Plugging in numbers",
@@ -2914,8 +2958,8 @@
    "d": "shaded number line: 0 < y < 1, the short segment between 0 and 1"
   },
   "solve-q-369#0": {
-   "t": "Method 1 · Number line",
-   "d": "shaded number line: two small bands, −4 < x < −3 and 4 < x < 5 · clearer explanation (2026-10-08)"
+   "t": "Method 1 · Two bands",
+   "d": "shaded number line: two small bands, −4 < x < −3 and 4 < x < 5 · clearer explanation (2026-10-08) · 2026-10-11 AI redo: where the bait comes from: taking 1 off instead of adding it gives 3 < x < 4 (and −5 < x < −4 on the negative side); minus 9 goes on the left"
   },
   "solve-q-370#0": {
    "t": "Method 1 · Two cases",
@@ -3018,8 +3062,8 @@
    "d": "restored from your Hebrew lesson (2026-10-08): bars appear in an expression, an equation or an inequality; trial and error works here too (plug in); inequalities are the harder and rarer part — rewind and watch again"
   },
   "solve-q-358#0": {
-   "t": "Decode the signs",
-   "d": "clearer explanation (2026-10-08): \"y < |y|\" is named as the sign clue from the lesson; the old slide \"The sign clues\" (a repeat of the lesson's new slide) was removed"
+   "t": "Method 1 · Understanding",
+   "d": "clearer explanation (2026-10-08): \"y < |y|\" is named as the sign clue from the lesson; the old slide \"The sign clues\" (a repeat of the lesson's new slide) was removed · 2026-10-11 AI redo: the reason \"plus times minus is minus\" for opposite signs, and the warning that the givens tell signs, not sizes (choices 2 and 3)"
   },
   "solve-q-359#0": {
    "t": "Two cases",
@@ -3055,7 +3099,7 @@
   },
   "wp-053#6": {
    "t": "Who is the 100?",
-   "d": "from your Hebrew course (2026-10-08 coverage fix): not every sentence has \"of\" or \"than\", but when one is there the whole comes right after it"
+   "d": "from your Hebrew course (2026-10-08 coverage fix): not every sentence has \"of\" or \"than\", but when one is there the whole comes right after it; \"of\" and \"than\" point at the whole — what comes right after them gets the hundred (memory trick, 2026-10-11)"
   },
   "solve-wp26-g103#1": {
    "t": "Method 2 · Estimation",
@@ -3075,7 +3119,7 @@
   },
   "geo-024#6": {
    "t": "How to remember",
-   "d": "teacher decision 2026-10-08: learn only 3-4-5 and 5-12-13; other triples (like 8-15-17) are rare on the exam (about 2 in 760 questions) — no need to learn them"
+   "d": "teacher decision 2026-10-08: learn only 3-4-5 and 5-12-13; other triples (like 8-15-17) are rare on the exam (about 2 in 760 questions) — no need to learn them; 5-12-13 = high five, a dozen, and one more (memory trick, 2026-10-11), replaces hamsa / bat mitzvah / bar mitzvah"
   },
   "solve-geo32-g049#1": {
    "t": "Opposite sides",
@@ -3256,6 +3300,38 @@
   "solve-q-293#0": {
    "t": "Method 1 · Count the copies",
    "d": "trap warning: four copies is not plus four (2026-10-11 AI redo: said as speech, choice number follows the new choice order)"
+  },
+  "fraction-multiply#9": {
+   "t": "What division means",
+   "d": "times vs divided by a fraction (memory trick, 2026-10-11): times a half takes half, divided by a half asks how many halves fit — three pizzas, six halves"
+  },
+  "solve-q-289#1": {
+   "t": "Method 2 · Switch floors",
+   "d": "negative exponents (memory trick, 2026-10-11): a minus in the power is a ticket to the other floor — the letter moves, the minus stays behind"
+  },
+  "geo-027-after#1": {
+   "t": "Right and isosceles",
+   "d": "the sandwich triangle (memory trick, 2026-10-11), replaces the borekas: a square sandwich cut corner to corner; its two edges are the equal legs, the cut is the hypotenuse"
+  },
+  "solve-q-363#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 AI redo: why m = 4 (4k = m divides easily) and \"change the pick when it breaks a given\", from her take"
+  },
+  "solve-q-367#1": {
+   "t": "Method 2 · Algebra, then the answers",
+   "d": "2026-10-11 AI redo: any positive x fails |x| = 10 + x, so 3 and 5 are out (her addition)"
+  },
+  "solve-q-367#2": {
+   "t": "Method 3 · Plugging in the answers",
+   "d": "2026-10-11 AI redo: the full check of x = −5 in both equations (|y| = 2, 20 + 24 = 44)"
+  },
+  "solve-q-368#0": {
+   "t": "Method 1 · Two cases",
+   "d": "2026-10-11 AI redo: why choices 1 and 4 fail when x = y"
+  },
+  "solve-q-369#2": {
+   "t": "Method 3 · Plugging in the answers",
+   "d": "2026-10-11 AI redo: choice 4 tested too (−4.5 gives 10), and \"plugging in isn't a cheat, it's the proper way\" (her addition)"
   }
  }
 }

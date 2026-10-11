@@ -1,0 +1,155 @@
+{
+ "videoId": "solve-q-369",
+ "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+ "slides": [
+  [
+   {
+    "say": "Given: seven is smaller than two x minus one, in absolute value, which is smaller than nine. Which of the following ranges is possible for x?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A double inequality with bars, and ranges in the choices. We'll solve it three ways, two bands, splitting it in two, and plugging in the answers. [short pause] And there's a bait in the choices, so I'll show you where it comes from.",
+    "at": [
+     "A double inequality",
+     "ranges in the choices"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method, two bands. Two x minus one, in bars, is between seven and nine. So the inside is between seven and nine, or, on the negative side, between minus nine and minus seven.",
+    "at": [
+     "So the inside is",
+     "on the negative side"
+    ]
+   },
+   {
+    "say": "Careful with the negative band. Minus nine is the smaller one, so it goes on the left. Minus nine is smaller than two x minus one, which is smaller than minus seven.",
+    "at": [
+     "Careful with the",
+     "Minus nine is the smaller",
+     "Minus nine is smaller"
+    ]
+   },
+   {
+    "say": "The positive band first. Add one to all three parts, eight, two x, ten. Divide all three by two, and x is between four and five.",
+    "voice": "calm",
+    "at": [
+     "The positive band",
+     "Add one to all three",
+     "Divide all three"
+    ]
+   },
+   {
+    "say": "Now a lot of students take one off instead of adding it, and they get three to four. That's number one, the bait. And number four is the same mistake on the negative side.",
+    "at": [
+     "take one off",
+     "That's number one",
+     "the bait",
+     "number four is the same"
+    ]
+   },
+   {
+    "say": "Four to five isn't in the choices, so on to the negative band. Add one to all three parts, minus eight, two x, minus six. Divide by two, and x is between minus four and minus three.",
+    "at": [
+     "isn't in the choices",
+     "Add one to all three",
+     "Divide by two"
+    ]
+   },
+   {
+    "say": "Aaand that's exactly number three. On the number line, two small bands, one on each side. Minus four to minus three, and four to five.",
+    "at": [
+     "that's exactly number three",
+     "On the number line",
+     "Minus four to"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method, splitting it in two. The bars smaller than nine means the inside is trapped between minus nine and nine. Add one, divide by two, and x is between minus four and five.",
+    "at": [
+     "The bars smaller than nine",
+     "Add one, divide"
+    ]
+   },
+   {
+    "say": "The bars bigger than seven means the inside is above seven, or below minus seven. So x is above four, or below minus three.",
+    "at": [
+     "The bars bigger than seven",
+     "So x is"
+    ]
+   },
+   {
+    "say": "Both have to hold. Between minus four and five, and above four, gives four to five. Between minus four and five, and below minus three, gives minus four to minus three. The same two bands.",
+    "at": [
+     "Both have to hold",
+     "Between minus four",
+     "Between minus four and five, and below",
+     "The same two bands"
+    ]
+   },
+   {
+    "say": "It's longer here, but this split is super useful in other absolute-value questions.",
+    "at": [
+     "It's longer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our third method, plugging in the answers. Pick an easy number inside each range, and if it breaks the given, the range is out. Number one, three and a half. Two times it is seven, minus one, six. Six isn't bigger than seven, out.",
+    "at": [
+     "the given, the",
+     "Number one, three",
+     "three and a half",
+     "Two times it",
+     "seven, out"
+    ]
+   },
+   {
+    "say": "Number two, five and a half. Two times it is eleven, minus one, ten. Ten isn't smaller than nine, out.",
+    "voice": "calm",
+    "at": [
+     "Number two, five",
+     "five and a half",
+     "Two times it",
+     "nine, out"
+    ]
+   },
+   {
+    "say": "Number three, minus three and a half. Two times it is minus seven, minus one, minus eight. In bars, eight. Between seven and nine, it works.",
+    "voice": "calm",
+    "at": [
+     "Number three, minus",
+     "minus three and a half",
+     "Two times it",
+     "In bars, eight",
+     "it works"
+    ]
+   },
+   {
+    "say": "And number four, minus four and a half. Times two is minus nine, minus one, minus ten. In bars, ten. Out.",
+    "voice": "calm",
+    "at": [
+     "number four, minus",
+     "minus four and a half",
+     "Times two is",
+     "In bars, ten"
+    ]
+   },
+   {
+    "say": "Plugging in was much shorter here. We need to let go of the instinct to solve everything. These shortcuts aren't cheats, they're the proper way on this exam. But know the two bands too, because the choices won't always be ranges. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Plugging in was much shorter",
+     "We need to",
+     "These shortcuts aren't",
+     "But know the"
+    ]
+   }
+  ]
+ ]
+}

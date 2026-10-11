@@ -309,3 +309,9 @@ Teacher (recording): "Make the script of the slides of what I'm doing now and th
 - **r26-t13-mirror** (476 → 574): a worked mini-example of why the mirror helps (x three, y five → five, three) and why an opposite is out ("x is less than y"); what "flip all signs" means; why a can't be always negative; "let's check each"; why a changing formula can't be the answer.
 - **solve-q-r26-t13-15** (267 → 328): the mirror-test rule said where it's used; choice three's swap and flip spelled out; "three choices out, one left"; the given holds the pieces of a shortcut formula; why choice one is not necessarily true.
 `python3 math_check.py 13 14 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered: tmp_check/clearer/t13.png (boards unchanged).
+
+## 2026-10-11 AI-voice redo (the model topic for the AI narration)
+- Every topic-13 video except the camera lesson "Absolute Value" (21 videos: 17 questions, the tools lesson, the mirror lesson, the summary) is rebuilt from one spec, `math_patches/_ai_vis_t13.py`: it writes `ai_scripts/<video>.json`, the visual plan (merged into `_ai_visual.py`) and the studio slides (`t13.py` `ai_redo_t13`, runs last, time-gated by `AI13_CUTOFF`). The studio's spoken lines are the AI lines.
+- Each question: the stem read aloud, all useful methods (standard first), traps at the step, "value, number N", verdict + takeaway. New slides for added methods (number line, plugging in, the split method in q-369).
+- No hand-writing: every written step is a click item ("write" cue = typed until a handwriting style is chosen).
+- Review file for the teacher: ~/Downloads/Topic-13-AI-scripts-review.md.

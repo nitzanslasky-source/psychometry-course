@@ -1,0 +1,141 @@
+{
+ "videoId": "solve-q-367",
+ "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+ "slides": [
+  [
+   {
+    "say": "Given: four times the absolute value of x, plus twelve times the absolute value of y, is forty-four. And x plus three times the absolute value of y is one. What is x?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Two equations, two unknowns, and absolute values. It looks scary, but it's really not. [short pause] We'll solve it three ways. The full algebra, a shorter algebra that ends with the answers, and plugging in the answers right away.",
+    "at": [
+     "Two equations"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method, the algebra. Four, twelve and forty-four can all be divided by four. So the first equation becomes the absolute value of x, plus three times the absolute value of y, is eleven.",
+    "at": [
+     "can all be divided by four",
+     "So the first equation becomes"
+    ]
+   },
+   {
+    "say": "They ask for x, so I want to get rid of y. How do I do that? I subtract the second equation from the first, and three times the absolute value of y cancels.",
+    "at": [
+     "They ask for",
+     "How do I",
+     "I subtract the second"
+    ]
+   },
+   {
+    "say": "With absolute values, I want the bars alone on one side and everything else on the other. So the absolute value of x is ten plus x.",
+    "at": [
+     "With absolute values",
+     "So the absolute value of"
+    ]
+   },
+   {
+    "say": "Now two options, the sides are equal, or one is the opposite of the other. Option one, x is ten plus x. Take x off both sides, and zero is ten. That's false, so no solution here.",
+    "voice": "calm",
+    "at": [
+     "Now two options",
+     "Option one",
+     "Take x off",
+     "That's false, so"
+    ]
+   },
+   {
+    "say": "Option two, x is minus ten minus x. Add x to both sides, two x is minus ten, so x is minus five.",
+    "voice": "calm",
+    "at": [
+     "Option two",
+     "x is minus five"
+    ]
+   },
+   {
+    "say": "A letter on the right side, so let's check. Ten plus minus five is five, and the absolute value of minus five is five. It works. Minus five, number two is our answer.",
+    "at": [
+     "so let's check",
+     "Ten plus minus",
+     "number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method. The same algebra, until we get to the absolute value of x is ten plus x. And then, instead of solving it, I plug in the answers. They're all numbers.",
+    "at": [
+     "until we get to",
+     "I plug in the answers"
+    ]
+   },
+   {
+    "say": "Minus two. Its absolute value is two, and ten plus minus two is eight. Two isn't eight, out. Minus five. Its absolute value is five, and ten plus minus five is five. Yes.",
+    "voice": "calm",
+    "at": [
+     "Minus two",
+     "Its absolute value",
+     "out.",
+     "Minus five",
+     "Its absolute value is five",
+     "Yes"
+    ]
+   },
+   {
+    "say": "And any positive x would give x is ten plus x, which is impossible. So three and five are out too.",
+    "at": [
+     "And any positive",
+     "So three",
+     "and five are out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our third method, plugging in the answers from the very start. Number one, x is minus two. Into the second equation, minus two plus three times the absolute value of y is one. So the absolute value of y is one.",
+    "at": [
+     "Number one",
+     "Into the second",
+     "So the absolute"
+    ]
+   },
+   {
+    "say": "Now the first equation. Four times two is eight, twelve times one is twelve, and eight plus twelve is twenty. Not forty-four, out.",
+    "voice": "calm",
+    "at": [
+     "Four times two",
+     "forty-four, out"
+    ]
+   },
+   {
+    "say": "Number two, x is minus five. Minus five plus three times the absolute value of y is one, so three times the absolute value of y is six, and the absolute value of y is two.",
+    "at": [
+     "Number two",
+     "Number two, x",
+     "Minus five plus"
+    ]
+   },
+   {
+    "say": "First equation. Four times five is twenty, twelve times two is twenty-four, and twenty plus twenty-four is forty-four. It works.",
+    "voice": "calm",
+    "at": [
+     "Four times five",
+     "It works",
+     "It works"
+    ]
+   },
+   {
+    "say": "Which way would I pick? The shorter algebra that ends with the answers, or plugging in the answers right away. The full algebra is great to know, but here it's the longest. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "plugging in the answers right away",
+     "The full algebra"
+    ]
+   }
+  ]
+ ]
+}

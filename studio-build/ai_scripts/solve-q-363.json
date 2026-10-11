@@ -1,0 +1,115 @@
+{
+ "videoId": "solve-q-363",
+ "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+ "slides": [
+  [
+   {
+    "say": "Given: the absolute value of n is equal to m, n is not equal to m, and four k is equal to m. Which of the following is necessarily true?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So three letters, three givens, and every choice puts the letters in order. Most absolute-value questions on the exam are understanding questions, and this is one of them. [short pause] We'll solve it two ways, understanding first, and then plugging in numbers.",
+    "at": [
+     "every choice puts",
+     "the letters in order"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method. The absolute value of n is m, so n and m are the same distance from zero. But they're not equal. So what does that tell me?",
+    "at": [
+     "The absolute value of n is m",
+     "So what does"
+    ]
+   },
+   {
+    "say": "m is an absolute value, so m can't be negative. It's zero or positive. Could m be zero? Then n is zero too, and they'd be equal. Not allowed. So m is positive.",
+    "at": [
+     "m is an absolute value",
+     "Then n is",
+     "So m is positive"
+    ]
+   },
+   {
+    "say": "And n is the same distance from zero, but it's a different number. So n is the negative one, n is minus m.",
+    "at": [
+     "And n is",
+     "So n is the negative one"
+    ]
+   },
+   {
+    "say": "Now, four k is equal to m. So to get from m to k, I divide by four. And dividing a positive number by four, or by a thousand, or by a million, gets closer and closer to zero, but it never goes negative. So k is positive, and smaller than m.",
+    "at": [
+     "four k is equal to m",
+     "I divide by four",
+     "And dividing a",
+     "So k is positive"
+    ]
+   },
+   {
+    "say": "On the number line, n is on the left, then zero, then k, and m is as far from zero as n.",
+    "at": [
+     "On the number line"
+    ]
+   },
+   {
+    "say": "So n is the smallest, k is in the middle, and m is the biggest. n, k, m, that's number two.",
+    "at": [
+     "n is the smallest",
+     "that's number two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method, plugging in numbers. I need numbers that obey all three givens. Why four for m? Because four k is m, so I'll divide m by four, and four divides easily.",
+    "at": [
+     "obey all three givens",
+     "Why four for m",
+     "Because four k"
+    ]
+   },
+   {
+    "say": "Now n. Let's try n is four. The absolute value of four is four, that's m. But n has to be different from m, so this pick is bad. Let's change it.",
+    "at": [
+     "try n is four",
+     "The absolute value",
+     "this pick is bad"
+    ]
+   },
+   {
+    "say": "n is negative four. Its absolute value is four, so it's equal to m, and it's different from m. Now both givens work.",
+    "at": [
+     "n is negative four",
+     "Its absolute value"
+    ]
+   },
+   {
+    "say": "Four k is four, so k is one.",
+    "voice": "calm",
+    "at": [
+     "Four k is four"
+    ]
+   },
+   {
+    "say": "Negative four, one, four. So n, then k, then m, number two again. And all three other choices break with these numbers.",
+    "at": [
+     "Negative four, one, four",
+     "number two again",
+     "And all three"
+    ]
+   },
+   {
+    "say": "Which way is better? I prefer understanding here, it's quick. But plugging in is an excellent backup. And when your first pick breaks a given, don't give up, just change the pick. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "I prefer understanding",
+     "But plugging in",
+     "just change the pick"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,137 @@
+{
+ "videoId": "solve-q-r26-t13-15",
+ "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+ "slides": [
+  [
+   {
+    "say": "Given: a squared plus b squared is equal to two a b plus nine. Which of the following is necessarily true?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So one given, two letters, and necessarily true. And the given looks balanced, a and b play the same role. That's a job for the mirror test we just learned, so let's start with it. [short pause] Then we'll prove it with algebra, and check it by plugging in numbers.",
+    "at": [
+     "the given looks balanced"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method, the mirror test. First, is the given a mirror? Swap a and b. b squared plus a squared is two b a plus nine. Exactly the same given.",
+    "at": [
+     "the given a",
+     "Swap a and b",
+     "b squared plus"
+    ]
+   },
+   {
+    "say": "So any pair that fits, its swapped pair fits too. Number one, a minus b is three. Swapped, b minus a is three. That's the opposite, so it can't always be true. Out.",
+    "at": [
+     "So any pair",
+     "Number one",
+     "Swapped, b minus a",
+     "That's the opposite",
+     "Out."
+    ]
+   },
+   {
+    "say": "Number two, a bigger than b. Swapped, b bigger than a. Opposites again, out.",
+    "at": [
+     "Number two",
+     "Swapped, b bigger",
+     "Opposites again"
+    ]
+   },
+   {
+    "say": "Now the other mirror, flip all signs. Squares don't care about the sign, and minus a times minus b is a b. The same given again.",
+    "at": [
+     "flip all signs",
+     "Squares don't care"
+    ]
+   },
+   {
+    "say": "Number four, a plus b is three. Flipped, minus a minus b is three, so a plus b is minus three. Opposite, out.",
+    "at": [
+     "Number four",
+     "Flipped, minus a minus b",
+     "Opposite, out"
+    ]
+   },
+   {
+    "say": "And number three, the absolute value of a minus b. Swapped, it's the absolute value of b minus a, the same number. Flipped, minus a plus b in bars, the same again. It survives both mirrors. Number three is our answer, and we didn't solve anything.",
+    "at": [
+     "And number three",
+     "Swapped, it's the",
+     "Flipped, minus a",
+     "It survives",
+     "Number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method, the algebra. a squared, b squared and two a b, those are the pieces of a shortcut formula. So let's move the two a b to the left side.",
+    "at": [
+     "the pieces",
+     "move the two a b"
+    ]
+   },
+   {
+    "say": "a squared minus two a b plus b squared is a minus b, all that squared. So a minus b, squared, is nine.",
+    "voice": "calm",
+    "at": [
+     "a squared minus",
+     "So a minus b, squared"
+    ]
+   },
+   {
+    "say": "What squared gives nine? Three, or minus three. So a minus b is three, or minus three. In both cases, its absolute value is three.",
+    "at": [
+     "So a minus b is three",
+     "In both cases",
+     "its absolute value"
+    ]
+   },
+   {
+    "say": "And that's exactly the trap in number one. It forgets the minus three.",
+    "at": [
+     "the trap in number one",
+     "It forgets"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our third method, plugging in numbers. I need a pair that fits the given. Why b zero? Because then everything with b disappears, and a squared is just nine. So a is three or minus three. I'll take minus three, because a negative breaks more choices.",
+    "at": [
+     "the given. Why",
+     "Why b zero",
+     "Because then everything",
+     "So a is",
+     "I'll take minus three"
+    ]
+   },
+   {
+    "say": "Number one, minus three minus zero is minus three, not three. Out. Number two, is minus three bigger than zero? No, out. Number four, minus three plus zero is minus three, not three. Out. And number three, the absolute value of minus three is three. It stays.",
+    "voice": "calm",
+    "at": [
+     "Number one",
+     "not three. Out",
+     "Number two, is",
+     "No, out",
+     "plus zero is",
+     "number three, the",
+     "It stays"
+    ]
+   },
+   {
+    "say": "Which way is better? The mirror test found it in seconds, the algebra proves it, and plugging in is the safety net. So with a balanced given, try the mirror first. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "plugging in is the safety net",
+     "So with a"
+    ]
+   }
+  ]
+ ]
+}

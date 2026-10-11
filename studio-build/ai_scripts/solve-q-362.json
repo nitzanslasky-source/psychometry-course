@@ -1,0 +1,106 @@
+{
+ "videoId": "solve-q-362",
+ "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+ "slides": [
+  [
+   {
+    "say": "Given: x is smaller than zero. What is ten plus four x over the absolute value of x?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So they're asking what an expression is equal to, and all we know is that x is negative. And what did we say about an expression with a letter? We're allowed to plug in a number. [short pause] So we'll start with plugging in, and then we'll do the algebra.",
+    "at": [
+     "what an expression",
+     "all we know"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method, plugging in numbers. x has to be negative, so I'll take negative two. Why negative two? Before I plug in, I glance at the choices. At negative two they give fourteen, six, two and twelve, all different. So one plug-in will be enough.",
+    "at": [
+     "I'll take negative two",
+     "I glance at the choices",
+     "At negative two they give",
+     "So one plug-in"
+    ]
+   },
+   {
+    "say": "Negative six would be a bad pick, by the way. Then minus x is six, and two choices would come out the same.",
+    "at": [
+     "Negative six would",
+     "Then minus x is six",
+     "two choices"
+    ]
+   },
+   {
+    "say": "So four times negative two is negative eight. The absolute value of negative two is two. Negative eight over two is negative four, and ten minus four is six.",
+    "voice": "calm",
+    "at": [
+     "four times negative two",
+     "The absolute value",
+     "ten minus four is six"
+    ]
+   },
+   {
+    "say": "Which choice gives six at negative two? Only number two. So six, number two is our answer.",
+    "at": [
+     "Which choice gives six",
+     "Only number two",
+     "number two is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method, the algebra. x is negative, so what's its absolute value? To turn a negative number positive, I take minus x. So the absolute value of x is minus x.",
+    "at": [
+     "x is negative",
+     "So the absolute value of x is minus x"
+    ]
+   },
+   {
+    "say": "Now careful here. A lot of students see minus x and think it's negative. It isn't. x itself is negative, so minus x is positive.",
+    "at": [
+     "see minus x",
+     "so minus x"
+    ]
+   },
+   {
+    "say": "So four x over minus x. The x's cancel, and four over minus one is negative four. Ten minus four is six.",
+    "voice": "calm",
+    "at": [
+     "So four x over minus x",
+     "is negative four",
+     "Ten minus four"
+    ]
+   },
+   {
+    "say": "And remember this one from earlier in the course. x over its absolute value is always one or minus one. When x is negative, like negative eight over eight, it's minus one.",
+    "at": [
+     "And remember this",
+     "always one or minus one",
+     "like negative eight"
+    ]
+   },
+   {
+    "say": "So the answer doesn't depend on x at all. That's why numbers three and four, with an x in them, can't be right. So six again, number two.",
+    "at": [
+     "So the answer",
+     "numbers three",
+     "and four",
+     "So six again"
+    ]
+   },
+   {
+    "say": "Which way is better? Plugging in is the safety net, and it's quick. But once you know that x over its absolute value is one or minus one, the algebra takes seconds. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Plugging in is",
+     "once you know"
+    ]
+   }
+  ]
+ ]
+}

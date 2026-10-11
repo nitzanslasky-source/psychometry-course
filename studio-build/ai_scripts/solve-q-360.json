@@ -1,0 +1,97 @@
+{
+ "videoId": "solve-q-360",
+ "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+ "slides": [
+  [
+   {
+    "say": "Given: x plus three, in absolute value, is smaller than seven. Which of the following could be the value of x?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So now the bars are in an inequality, and they're on the small side. What did we say about the small side? It's a closed range. The inside is trapped between seven and negative seven. [short pause] We'll solve it three ways.",
+    "at": [
+     "on the small side",
+     "It's a closed range",
+     "The inside is"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method, the algebra. I take the seven, and I put negative seven on the other side. So negative seven is smaller than x plus three, which is smaller than seven.",
+    "at": [
+     "I take the seven",
+     "So negative seven is smaller"
+    ]
+   },
+   {
+    "say": "How do I get x alone in the middle? I take three off all three parts. Negative seven minus three is negative ten, and seven minus three is four. So x is between negative ten and four.",
+    "at": [
+     "How do I",
+     "all three parts",
+     "Negative seven minus three",
+     "is negative ten",
+     "seven minus three is four",
+     "So x is"
+    ]
+   },
+   {
+    "say": "Now the choices. Five and eleven are too big, they're above four. Negative twenty-five is too small, it's below negative ten. And three is inside the range. So three, number three is our answer.",
+    "at": [
+     "Five and",
+     "eleven are too big",
+     "Negative twenty-five",
+     "And three is",
+     "number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method, the number line. x plus three is the distance from negative three. So x is less than seven steps away from negative three.",
+    "at": [
+     "the distance from negative three",
+     "So x is"
+    ]
+   },
+   {
+    "say": "Seven steps to the left, negative ten. Seven steps to the right, four. One band in the middle, and three is inside it.",
+    "at": [
+     "Seven steps to the left",
+     "Seven steps to the right",
+     "three is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our third method, plugging in the answers. Five plus three is eight, not smaller than seven. Negative twenty-five plus three is negative twenty-two, its absolute value is twenty-two. Too big.",
+    "at": [
+     "Five plus three",
+     "not smaller than seven",
+     "Negative twenty-five plus",
+     "Too big"
+    ]
+   },
+   {
+    "say": "Three plus three is six, and six is smaller than seven. It works, so in the exam you circle it and move on.",
+    "at": [
+     "Three plus three",
+     "six is smaller",
+     "circle it"
+    ]
+   },
+   {
+    "say": "Which way is better? With numbers in the choices, plugging in is the fastest here. But the closed range is the one to make automatic. An absolute value smaller than a number? Take that number, put its minus on the other side, and the inside is trapped between them. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "plugging in is the fastest",
+     "But the closed",
+     "An absolute value smaller",
+     "Take that number"
+    ]
+   }
+  ]
+ ]
+}

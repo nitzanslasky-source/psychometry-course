@@ -1,0 +1,119 @@
+{
+ "videoId": "solve-q-365",
+ "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+ "slides": [
+  [
+   {
+    "say": "Given: z is smaller than y, which is smaller than x, and the absolute value of x is smaller than the absolute value of y. Which of the following is not necessarily true?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "This one is a hard analysis question, so let's take it slowly. And look at the wording, not necessarily true. So three choices are always true, and we're looking for the one that can fail. [short pause] Two ways, understanding first, and then plugging in numbers.",
+    "at": [
+     "not necessarily true"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method. The first given puts them in order, but we don't know any signs yet. They could all be positive, all negative, or a mix.",
+    "at": [
+     "The first given"
+    ]
+   },
+   {
+    "say": "Now the second given. Without the bars, x is bigger than y. With the bars, y suddenly jumps above x. So what does that mean? Only a negative number changes when you put bars on it. So y must be negative.",
+    "at": [
+     "Without the bars",
+     "With the bars",
+     "So what does",
+     "Only a negative",
+     "So y must be negative"
+    ]
+   },
+   {
+    "say": "Why? If y were zero or positive, x would be even bigger, and further from zero, so the bars would keep the same order.",
+    "at": [
+     "If y were zero or positive"
+    ]
+   },
+   {
+    "say": "z is even smaller than y, so z is negative too, and further from zero.",
+    "at": [
+     "z is even smaller"
+    ]
+   },
+   {
+    "say": "And x? x has to be closer to zero than y. So x lives in the band between y and minus y. It could be on the left of zero, it could be on the right, and it could even be zero.",
+    "at": [
+     "x has to",
+     "x lives in the band",
+     "it could even be zero"
+    ]
+   },
+   {
+    "say": "Now number three says x is not equal to its absolute value. That claims x must be negative. But x could be two, or zero, and then x is equal to its absolute value. So it's not necessarily true. Number three is our answer.",
+    "at": [
+     "Now number three says",
+     "That claims x",
+     "But x could",
+     "So it's not",
+     "Number three is our answer"
+    ]
+   },
+   {
+    "say": "In the exam you'd circle it and move on. Here, let's quickly see why the others are always true. z and y are both negative, and z is further left, so z is further from zero. Number one, always true.",
+    "at": [
+     "In the exam",
+     "Here, let's quickly",
+     "z and y are both",
+     "Number one, always true"
+    ]
+   },
+   {
+    "say": "z is negative, so it's not equal to its absolute value. Number two, always true. And z is further from zero than y, and y is further than x. So z is further than x. Number four, always true.",
+    "at": [
+     "z is negative",
+     "Number two, always true",
+     "And z is",
+     "So z is",
+     "Number four, always true"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method, plugging in numbers. In a not necessarily question, one allowed example that breaks a choice is enough. So I need numbers that obey the givens. y is negative four, z negative five, and x two.",
+    "at": [
+     "the givens. y",
+     "y is negative four"
+    ]
+   },
+   {
+    "say": "Check the givens. Negative five, negative four, two, they're in order. And the absolute value of two is smaller than four. Both work.",
+    "voice": "calm",
+    "at": [
+     "Check the givens",
+     "Negative five, negative",
+     "And the absolute"
+    ]
+   },
+   {
+    "say": "Number three says x is not equal to its absolute value. But two is equal to the absolute value of two. It breaks, so number three.",
+    "at": [
+     "Number three says",
+     "But two is equal",
+     "so number three"
+    ]
+   },
+   {
+    "say": "So when the bars change the order, think negative, because only a negative number changes under the bars. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "think negative"
+    ]
+   }
+  ]
+ ]
+}

@@ -8,7 +8,7 @@
 - what she repeats
 - how she runs a question video
 
-It ends with a **script-writing checklist** (R1-R28). Every new AI script should pass it.
+It ends with a **script-writing checklist** (R1-R29). Every new AI script should pass it.
 
 Hebrew quotes give the line number in `~/Downloads/0N-*-Original-Subtitles.txt` (alg = 01-Algebra, wp = 02-Word-Problems, geo = 03-Geometry, charts = `charts subtitles.rtf`). English quotes give the video id and the second in her take (`transcripts/*.json`).
 
@@ -548,3 +548,9 @@ Check every AI script line by line. The numbers in brackets are evidence from §
 - **R27. Write the exact sentence wherever she improvised.** This applies to contrasts (two parallel lines with numbers), formulas (every term on its own line, with brackets and bars said in words), sign words ("never negative", "zero or positive", "further from zero"), and rules in recaps (word for word as taught). Never let a mnemonic stand in for the rule ("the power goes on top, the root on the bottom").
 - **R28. Her words, corrected.** Use her phrase bank: "So…", "Now let's look at…", "What does that mean? It means…", "right?" (once per 3-4 lines), "Perfect.", "this whole thing", "also the top and also the bottom". Correct her slips: "equals" not "equals to", "whole number" not "full number", "the exam" not "the psychometry", "cube root", "what it looks like". Script no fillers, no "sorry", no "Good."
 - **R25. Before publishing,** run the math check on every number spoken (her takes show slips exactly where scripts were dense), and confirm no example repeats a Hebrew-course number (memory: questions-differ-from-hebrew).
+- **R29. Teach new, remind known** (teacher, 2026-10-11: "have in mind what the students should have learnt up to that stage already. It doesn't mean you don't repeat anything that was ever spoken about, but clearly a bit less than teaching it the first time.")
+  - For every idea a script uses, check whether it was taught earlier: in the study-plan order (src/lib/planData.ts ORDER) or in an earlier video of the same topic.
+  - Taught before → a SHORT reminder: one or two sentences ("Remember, absolute value is the distance from zero, so it's never negative."), at most one quick example, no new why-derivation, no full example set.
+  - Taught here for the first time → the full treatment: the rule, two examples, the why, and the trap (R3-R9).
+  - Reminders shrink as a topic goes on: later videos in a topic get shorter reminders than earlier ones.
+  - In review files, mark per video which ideas are NEW (taught fully) and which are REMINDERS (brief), so the balance can be checked.

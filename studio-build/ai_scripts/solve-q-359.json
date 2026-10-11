@@ -1,0 +1,114 @@
+{
+ "videoId": "solve-q-359",
+ "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+ "slides": [
+  [
+   {
+    "say": "Given: x plus seven, in absolute value, is equal to nine. Which of the following could be the value of x?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we have an equation with an absolute value, and all the choices are numbers. We'll solve it three ways, two cases, the number line, and plugging in the answers.",
+    "at": [
+     "an equation with",
+     "all the choices",
+     "are numbers"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method, two cases. Remember, which numbers have an absolute value of nine? Nine, and negative nine. So the inside, x plus seven, is nine, or it's negative nine.",
+    "at": [
+     "Our first method",
+     "So the inside"
+    ]
+   },
+   {
+    "say": "First case, x plus seven is nine. Take seven off both sides, and x is two.",
+    "voice": "calm",
+    "at": [
+     "First case",
+     "x is two"
+    ]
+   },
+   {
+    "say": "Second case, x plus seven is negative nine. Take seven off again, and x is negative sixteen.",
+    "voice": "calm",
+    "at": [
+     "Second case",
+     "x is negative sixteen"
+    ]
+   },
+   {
+    "say": "[short pause] Now careful with the choices. Is two there? No. But negative two is there, and that's the trap. It looks like our two, but it's a different number.",
+    "at": [
+     "Now careful with",
+     "Is two there",
+     "negative two is there",
+     "that's the trap",
+     "It looks like"
+    ]
+   },
+   {
+    "say": "Negative sixteen is there, it's number three. And look at the wording, could be. Two values work, two and negative sixteen, but they only offer one of them. So negative sixteen, number three is our answer.",
+    "at": [
+     "Negative sixteen is there",
+     "could be",
+     "Two values work",
+     "and negative sixteen",
+     "number three is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method, the number line. x plus seven is x minus negative seven, so it's the distance between x and negative seven.",
+    "at": [
+     "x plus seven is x minus",
+     "the distance between"
+    ]
+   },
+   {
+    "say": "Nine steps to the right of negative seven, that's two. Nine steps to the left, that's negative sixteen. The same two answers, one on each side.",
+    "at": [
+     "Nine steps to the right",
+     "Nine steps to the left",
+     "The same"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And our third method, plugging in the answers. The choices are numbers, so let's just try them. Sixteen plus seven is twenty-three, no. Negative two plus seven is five, no.",
+    "voice": [
+     "base"
+    ],
+    "at": [
+     "Sixteen",
+     "twenty-three",
+     "twenty-three, no",
+     "is five, no"
+    ]
+   },
+   {
+    "say": "Negative sixteen plus seven is negative nine, and its absolute value is nine. It works. In the exam you'd circle it and move on.",
+    "at": [
+     "Negative sixteen plus seven",
+     "absolute value is nine",
+     "circle it"
+    ]
+   },
+   {
+    "say": "So which way is better? The two cases are the standard way, and you'll need them in the harder questions. But when the choices are numbers, plugging in is just as fast. Bars equal to a number? Two cases, two answers. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "The two cases",
+     "plugging in is just as fast",
+     "Bars equal to"
+    ]
+   }
+  ]
+ ]
+}

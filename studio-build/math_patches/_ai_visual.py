@@ -165,6 +165,21 @@ VIS['solve-q-r26-t22-02'] = {
 }
 
 
+# 2026-10-11 per-topic AI-redo plans (topic 13 = the model for the ~800 AI videos): math_patches/_ai_vis_tNN.py builds its
+# videos' plans in this same format (from one spec that also writes ai_scripts/<vid>.json and the studio slides) - merged
+# here so apply() / write_at() / this module's __main__ serve them like the pilots.
+def _load_topic_plans():
+    import glob as _g, importlib.util as _u
+    for _p in sorted(_g.glob(os.path.join(HERE, '_ai_vis_t*.py'))):
+        _n = os.path.basename(_p)[:-3]
+        _m = sys.modules.get(_n)
+        if _m is None:
+            _s = _u.spec_from_file_location(_n, _p); _m = _u.module_from_spec(_s); sys.modules[_n] = _m; _s.loader.exec_module(_m)
+        for _vid in _m.VIDEOS: VIS[_vid] = _m.vis(_vid)
+
+
+_load_topic_plans()
+
 def _label(t):
     return re.sub(r'\s+', ' ', re.sub(r'\\hl\{[^{}]*\}', '', t.replace('$', ''))).strip()
 
@@ -184,7 +199,7 @@ def cues_of(vid):
             if c[0] == 'write' and hw:
                 lines.setdefault(n, []).append(('item', HW(c[1], c[3]), "'%s' is written" % re.sub(r'[{}]', '', _label(c[3])), True)); ats.setdefault(n, []).append(c[2])
             elif c[0] in ('show', 'write'):
-                lines.setdefault(n, []).append(('item', c[1], "'%s' appears" % _label(c[1]['t']))); ats.setdefault(n, []).append(c[2])
+                lines.setdefault(n, []).append(('item', c[1], "'%s' appears" % _label(c[1].get('t') or 'the number line'))); ats.setdefault(n, []).append(c[2])
             elif c[0] == 'point':
                 d = {'point': c[1], 'label': c[1]}
                 if len(c) > 3: d['style'] = c[3]

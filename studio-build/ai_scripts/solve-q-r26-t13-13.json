@@ -1,0 +1,115 @@
+{
+ "videoId": "solve-q-r26-t13-13",
+ "style": "her real voice, topic-13 AI redo (2026-10-11): math_patches/_ai_vis_t13.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 + NITZAN_RHYTHM_DELIVERY.md P1-P13. Segmented (mix 3): calm preset on the question reading and the plain calculation lines.",
+ "slides": [
+  [
+   {
+    "say": "Given: the absolute value of a is seven, the absolute value of b is three, and a plus b, in absolute value, is smaller than a minus b, in absolute value. What is the absolute value of a plus b?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So three givens. The first two give sizes, and the third one hides the signs. [short pause] We'll solve it two ways, understanding, and then trying all the sign options.",
+    "at": [
+     "The first two",
+     "the third one"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method. a is seven away from zero, and b is three away. Their signs, we don't know yet. So what can a plus b be? Same signs add up, so it's ten. Opposite signs cancel, so it's seven minus three, four.",
+    "at": [
+     "Same signs add up",
+     "Opposite signs cancel"
+    ]
+   },
+   {
+    "say": "Now the third given. a minus b is just a plus b with the sign of b flipped. So flipping one sign made it bigger. What does that mean? Before the flip, they were cancelling. So a and b have opposite signs.",
+    "at": [
+     "Now the third given",
+     "a minus b",
+     "So flipping one",
+     "So a and b have opposite signs"
+    ]
+   },
+   {
+    "say": "Now careful, a lot of people think this means b is negative. It doesn't. It only means b has the opposite sign of a. a could be negative seven, and b three.",
+    "at": [
+     "a lot of people",
+     "It only means",
+     "a could be"
+    ]
+   },
+   {
+    "say": "So it's the cancelling case. The bigger size minus the smaller one, seven minus three, four.",
+    "voice": "calm",
+    "at": [
+     "the cancelling case",
+     "seven minus three"
+    ]
+   },
+   {
+    "say": "So four, number four is our answer. Ten is the same-signs case, and the third given throws it out. Negative four can't be, because the bars are never negative. And cannot be determined is the trap for anyone who skips the third given.",
+    "at": [
+     "number four is our answer",
+     "Ten is the same-signs",
+     "Negative four",
+     "cannot be determined"
+    ]
+   }
+  ],
+  [
+   "[pause] The exam can say the same idea in other words, so let's see two of them.",
+   {
+    "say": "The absolute value of x plus y, equals the absolute value of x, minus the absolute value of y. The sizes subtract. That's cancelling, so x and y have opposite signs, and x is the bigger one in size.",
+    "at": [
+     "The sizes subtract",
+     "That's cancelling, so"
+    ]
+   },
+   {
+    "say": "And if a plus b, in absolute value, is smaller than the absolute value of a, then adding b made it smaller. So again they cancelled, opposite signs. For example, a five and b negative two. Three is smaller than five.",
+    "at": [
+     "adding b made it smaller",
+     "So again they",
+     "For example",
+     "Three is smaller"
+    ]
+   }
+  ],
+  [
+   "[pause] Our second method. Not sure about the reasoning? There are only four sign options, so let's try them all.",
+   {
+    "say": "Both positive, seven and three. Ten against four, and ten is not smaller than four. Out. Both negative, negative ten against negative four. In bars that's ten against four again. Out.",
+    "voice": "calm",
+    "at": [
+     "Both positive",
+     "Ten against four",
+     "Both negative",
+     "In bars that's"
+    ]
+   },
+   {
+    "say": "Seven and negative three. Four against ten, it works. Negative seven and three. Negative four against negative ten, so four against ten. It works too.",
+    "voice": "calm",
+    "at": [
+     "Seven and negative three",
+     "Four against ten",
+     "Negative seven and three",
+     "Negative four against"
+    ]
+   },
+   {
+    "say": "In both cases that work, the absolute value of a plus b is four. Number four. [short pause] So when you test signs, check same signs and opposite signs, because that's where the bars change things. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "In both cases",
+     "that work",
+     "Number four",
+     "So when you"
+    ]
+   }
+  ]
+ ]
+}
