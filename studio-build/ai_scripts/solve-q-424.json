@@ -70,7 +70,7 @@
   ],
   [
    {
-    "say": "[pause] Another way is to list the numbers that leave four in rows of five. Start at four, and hop by five. Why hop by five? One more full row of five never changes what's left over. Four, nine, fourteen, nineteen, twenty-four, twenty-nine, thirty-four, thirty-nine.",
+    "say": "[pause] Another way is to list the numbers that leave four in rows of five. Start at four, and hop by five. Why hop by five? One more full row of five never changes what's left over. Fourteen is two rows and four, and nineteen is three rows and four. Four, nine, fourteen, nineteen, twenty-four, twenty-nine, thirty-four, thirty-nine.",
     "at": [
      "Another way",
      "Another way is to list",
@@ -80,6 +80,9 @@
      "by five. Why",
      "One more full",
      "five never changes",
+     "Fourteen is two",
+     "four, and nineteen",
+     "rows and four. Four",
      "Four, nine, fourteen",
      "twenty-nine, thirty-four, thirty-nine"
     ]

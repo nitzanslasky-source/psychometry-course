@@ -45,6 +45,18 @@
     ]
    },
    {
+    "say": "Let's see it in numbers. A club of fifty members, a tenth is five, and three tenths is three times five, fifteen. A club of seventy, a tenth is seven, and three times seven is twenty-one. Fifteen and twenty-one, both multiples of three.",
+    "at": [
+     "A club of fifty",
+     "a tenth is",
+     "three tenths is",
+     "A club of seventy",
+     "tenth is seven",
+     "times seven is",
+     "Fifteen and twenty-one"
+    ]
+   },
+   {
     "say": "And remember the sign for three, the digit sum divides by three. Five thirty, five plus three plus zero is eight, and eight doesn't divide by three. Choice number one is out.",
     "at": [
      "the sign for three",

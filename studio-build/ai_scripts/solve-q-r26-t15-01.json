@@ -52,16 +52,33 @@
   ],
   [
    {
-    "say": "But a remainder can't be negative. Dividing by seven, it's zero to six. So I borrow one seven from the sevens. Negative three plus seven is four. So a minus b is full sevens, plus four, and the remainder is four, for every pair.",
+    "say": "But a remainder can't be negative. Dividing by seven, it's zero to six. So add the divisor, seven. Negative three plus seven is four. Why is that allowed? Adding a full seven never changes the remainder. Four leaves four, and eleven, four plus seven, leaves four too. So a minus b is full sevens, plus four, and the remainder is four, for every pair.",
     "at": [
      "be negative. Dividing",
      "it's zero to",
-     "I borrow one seven",
+     "So add the divisor",
      "Negative three plus",
-     "four. So a",
+     "four. Why is",
+     "Adding a full",
+     "changes the remainder",
+     "Four leaves four",
+     "four plus seven",
+     "too. So a",
      "is full sevens",
      "plus four",
      "is four, for"
+    ]
+   },
+   {
+    "say": "Let's check it with an actual division. Twenty-three leaves two, because three sevens are twenty-one. Twelve leaves five. Twenty-three minus twelve is eleven, and eleven divided by seven leaves four, because eleven is seven plus four.",
+    "at": [
+     "Let's check it",
+     "Twenty-three leaves two",
+     "sevens are twenty-one",
+     "Twenty-three minus twelve",
+     "and eleven divided",
+     "leaves four, because",
+     "seven plus four"
     ]
    },
    {
@@ -73,7 +90,7 @@
     ]
    },
    {
-    "say": "And what does that mean? Only the remainders matter. For a difference, subtract the remainders, two minus five, negative three. A negative result? Add the divisor, negative three plus seven, four. For a sum, add them. Nine leaves two and twelve leaves five, and nine plus twelve is twenty-one, three sevens. Two plus five is seven, and that leaves zero, the same.",
+    "say": "And what does that mean? Only the remainders matter. For a difference, subtract the remainders, two minus five, negative three. A negative result? Add the divisor, negative three plus seven, four. For a sum, add them. Nine leaves two and twelve leaves five, and nine plus twelve is twenty-one, three sevens. Two plus five is seven, and that leaves zero, the same. For a product, multiply them. Nine times twelve is a hundred eight, fifteen sevens and three. And two times five is ten, which also leaves three.",
     "at": [
      "And what does",
      "Only the remainders matter",
@@ -85,7 +102,11 @@
      "leaves five, and",
      "twelve is twenty-one",
      "Two plus five",
-     "and that leaves"
+     "and that leaves",
+     "For a product, multiply them",
+     "hundred eight, fifteen",
+     "And two times",
+     "ten, which also"
     ]
    },
    {

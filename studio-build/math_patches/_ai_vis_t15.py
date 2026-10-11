@@ -496,8 +496,7 @@ video('solve-q-424', 'solution', qid='q-424', slides=[
       L("Both conditions fit, and a question has one correct answer, so there's no need to check sixteen. Choice number three "
         "is our answer.", show(c5, 'one correct answer'), mk('tick', 'choice 3', 'Choice number three'))),
     S('Method 2 · List the numbers',
-      L("[pause] Another way is to list the numbers that leave four in rows of five. Start at four, and hop by five. Why hop "
-        "by five? One more full row of five never changes what's left over. Four, nine, fourteen, nineteen, twenty-four, "
+      L("[pause] Another way is to list the numbers that leave four in rows of five. Start at four, and hop by five. Why hop by five? One more full row of five never changes what's left over. Fourteen is two rows and four, and nineteen is three rows and four. Four, nine, fourteen, nineteen, twenty-four, "
         "twenty-nine, thirty-four, thirty-nine.", show(d1, 'Another way is to list'), show(P1['line'], 'list the numbers'), show(P1['hops'], 'Four, nine, fourteen')),
       L("Which choices are on the list? Twenty-eight, no. Forty, no. Thirty-four, yes. Sixteen, no. Only thirty-four is on it, "
         "so we don't even need the rows of three. Choice number three. [pause] Okay. I'll see you in the next question.",
@@ -596,13 +595,16 @@ video('solve-q-426', 'solution', qid='q-426', slides=[
 
 # ------------------------------------------------------------------------------------------------ q-r26-t15-01 (Q5)
 # NEW (full): the remainder of a sum / difference / product = the same operation on the remainders (why, from the
-# tags); a negative result -> add the divisor (borrow one seven); plugging in two pairs.  REMINDER: tags 7k + 2
+# tags; an example of each); a negative result -> add the divisor (why: a full seven never changes the remainder; checked
+# with 23 - 12 = 11); plugging in two pairs.  REMINDER: tags 7k + 2
 # (camera lesson); different letters for different numbers.
 j1 = I('j1', '$a=7k+2,\\ \\ \\ b=7m+5$', hand='a = 7k + 2,     b = 7m + 5')
 j2 = I('j2', 'Different letters: different numbers', size=28, col=1)
 j3 = I('j3', '$a-b=7k-7m+2-5$', hand='a − b = 7k − 7m + 2 − 5')
 j4 = I('j4', '$=7(k-m)-3$', hand='= 7(k−m) − 3')
 j5 = I('j5', '$=7(k-m-1)+\\hl{r}{4}$', hand='= 7(k−m−1) + \\hl{r}{4}')
+j9 = I('j9', '$23-12=11=7+\\hl{r}{4}$ ✓', size=32, hand='23 − 12 = 11 = 7 + \\hl{r}{4}   ✓')
+j10 = I('j10', 'Product: $\\ 9\\cdot12=108=105+3$, $\\ 2\\cdot5=10\\to3$', size=26, col=1, hand='Product :   9·12 = 108 = 105 + 3,    2·5 = 10 → 3')
 j6 = I('j6', 'Only the remainders matter: $\\ 2-5=-3$, $\\ -3+7=4$', size=26, col=1, hand='Only the remainders :   2 − 5 = −3,    −3 + 7 = 4')
 j7 = I('j7', 'Sum: $\\ 9+12=21$, $\\ 2+5=7\\to0$', size=26, col=1, hand='Sum :   9 + 12 = 21,    2 + 5 = 7 → 0')
 j8 = I('j8', '$5-2=3$: the wrong order ✗', size=28, col=1, hand='5 − 2 = 3 :   the wrong order   ✗')
@@ -624,15 +626,14 @@ video('solve-q-r26-t15-01', 'solution', qid='q-r26-t15-01', slides=[
         "brackets, k minus m. And two minus five is negative three.", show(j3, 'Now subtract'), show(j4, 'The sevens stay sevens')),
       sb='Method 1 · Tag it'),
     S('Method 1 · Tag it',
-      L("But a remainder can't be negative. Dividing by seven, it's zero to six. So I borrow one seven from the sevens. "
-        "Negative three plus seven is four. So a minus b is full sevens, plus four, and the remainder is four, for every "
-        "pair.", show(j5, 'I borrow one seven'), mk('circle', 'j5: r', 'plus four')),
+      L("But a remainder can't be negative. Dividing by seven, it's zero to six. So add the divisor, seven. Negative three plus seven is four. Why is that allowed? Adding a full seven never changes the remainder. Four leaves four, and eleven, four plus seven, leaves four too. So a minus b is full sevens, plus four, and the remainder is four, for every pair.", show(j5, 'So add the divisor'), mk('circle', 'j5: r', 'plus four')),
+      L("Let's check it with an actual division. Twenty-three leaves two, because three sevens are twenty-one. Twelve leaves "
+        "five. Twenty-three minus twelve is eleven, and eleven divided by seven leaves four, because eleven is seven plus four.",
+        show(j9, 'Twenty-three leaves two')),
       L("So four, choice number four is our answer. And can't be determined is out, because it's four for every pair.",
         mk('tick', 'choice 4', 'choice number four is our answer'), mk('cross', 'choice 1', "can't be determined is out")),
       L("And what does that mean? Only the remainders matter. For a difference, subtract the remainders, two minus five, "
-        "negative three. A negative result? Add the divisor, negative three plus seven, four. For a sum, add them. Nine "
-        "leaves two and twelve leaves five, and nine plus twelve is twenty-one, three sevens. Two plus five is seven, and "
-        "that leaves zero, the same.", show(j6, 'Only the remainders matter'), show(j7, 'For a sum, add them')),
+        "negative three. A negative result? Add the divisor, negative three plus seven, four. For a sum, add them. Nine leaves two and twelve leaves five, and nine plus twelve is twenty-one, three sevens. Two plus five is seven, and that leaves zero, the same. For a product, multiply them. Nine times twelve is a hundred eight, fifteen sevens and three. And two times five is ten, which also leaves three.", show(j6, 'Only the remainders matter'), show(j7, 'For a sum, add them'), show(j10, 'For a product, multiply them')),
       L("Now careful with the order. A lot of students do five minus two, three, and that's choice number three, the trap. "
         "It's a minus b, so it's two minus five.", show(j8, 'careful with the order'), mk('cross', 'choice 3', 'the trap')),
       sb='Method 1 · Tag it'),
@@ -647,63 +648,47 @@ video('solve-q-r26-t15-01', 'solution', qid='q-r26-t15-01', slides=[
 ])
 
 # ------------------------------------------------------------------------------------------------ r26-t15-remainder-tools (lesson)
-# NEW: take away the remainder (why); numbers in a row - two in a row divide by 2, three in a row by 6 (why), a^3 - a in
-# disguise, the non-example n(n + 2); tag each condition (6k, 10m, different letters), multiply / add, the LCM tag.
-# REMINDER: consecutive numbers (topic 1), the shortcut formula a^2 - 1 (topic 4), the LCM by primes (topic 14).
-l1 = I('l1', '$61=56+5$', size=44, hand='61 = 56 + 5')
-l2 = I('l2', '$61-5=56=7\\cdot8$ ✓', size=44, hand='61 − 5 = 56 = 7·8   ✓')
+# 2026-10-11 (teacher: "make sure they really understand ... enough examples"): only the two tools no question video
+# teaches stay here, each with two examples, the why and the trap - take away the remainder, and the tag for "divisible by
+# both" (the LCM). Numbers in a row moved into q-432 and "a sum keeps only the shared factor" into q-r26-t15-15, where
+# they are first used.  REMINDER: the remainder (camera lesson), the LCM by primes (topic 14).
+l1 = I('l1', '$61=56+5$ $\\ \\to\\ 61-5=56=7\\cdot8$ ✓', size=40, hand='61 = 56 + 5   →   61 − 5 = 56 = 7·8   ✓')
+l2 = I('l2', '$47=42+5$ $\\ \\to\\ 47-5=42=6\\cdot7$ ✓', size=40, hand='47 = 42 + 5   →   47 − 5 = 42 = 6·7   ✓')
 l3 = I('l3', 'Take away the remainder: what is left divides exactly', size=34)
-r1 = I('r1', 'Two in a row: one is even $\\to$ divisible by $2$', size=36)
-r2 = I('r2', '$7\\cdot8=56$', size=40, hand='7·8 = 56')
-r3 = I('r3', 'Three in a row: divisible by $3$ and by $2\\ \\to\\ 6$', size=36)
-r4 = I('r4', '$4\\cdot5\\cdot6=120=6\\cdot20$', size=40, hand='4·5·6 = 120 = 6·20')
-r5 = I('r5', '$a^3-a=a(a^2-1)=(a-1)\\,a\\,(a+1)$', size=40, hand='a^3 − a = a(a^2 − 1) = (a−1) a (a+1)')
-r6 = I('r6', '$n(n+2)$: $\\ 3\\cdot5=15$ ✗ not in a row', size=36, hand='n(n+2) :   3·5 = 15   ✗  not in a row')
-t1 = I('t1', '$a$ multiple of $6$: $\\ a=6k\\qquad b$ multiple of $10$: $\\ b=10m$', size=32, hand='a = 6k        b = 10m')
-t2 = I('t2', '$6k\\cdot10m=60km$ $\\ \\to\\ 60$', size=40, hand='6k · 10m = 60km   →   60')
-t3 = I('t3', '$6k+10m=2(3k+5m)$ $\\ \\to\\ $only $2$', size=40, hand='6k + 10m = 2(3k + 5m)   →   only 2')
-t4 = I('t4', '$3k+5m$: $\\ 8,\\ 11,\\ \\ldots$ unknown', size=34, hand='3k + 5m :   8,  11   unknown')
-t5 = I('t5', 'By $4$ and by $6$: $\\ $tag $12k$, not $24k$', size=36, hand='By 4 and by 6 :   tag  12k,  not 24k')
+l4 = I('l4', 'Leaves $3$ by $4$: $\\ x-3$ divides by $4$ $\\quad 15-3=12$', size=34, hand='Leaves 3 by 4 :   x − 3  divides by 4      15 − 3 = 12')
+t1 = I('t1', 'By $4$ and by $6$: $\\ 4=2^2,\\ \\ 6=2\\cdot3$ $\\ \\to\\ 2^2\\cdot3=12$', size=34, hand='By 4 and by 6 :    2^2 · 3 = 12')
+t2 = I('t2', '$12,\\ 24,\\ 36,\\ 48$ ✓ $\\quad 24k$ misses $12$ and $36$', size=36, hand='12,  24,  36,  48  ✓      24k  misses  12  and  36')
+t3 = I('t3', 'By $3$ and by $5$: $\\ 15k$ $\\quad 15,\\ 30,\\ 45$', size=36, hand='By 3 and by 5 :    15k      15,  30,  45')
 video('r26-t15-remainder-tools', 'lesson', slides=[
     S('More Remainder Tools',
-      L("Welcome back. Before the advanced questions, three short tools for remainders and divisibility. You'll use them "
-        "again and again in the next questions.")),
+      L("Welcome back. Before the advanced questions, two short tools. The other tools you'll learn inside the questions that "
+        "use them.")),
     S('Take away the remainder',
       L("First tool. If a number leaves a remainder, take the remainder away, and what's left divides exactly. Sixty-one "
-        "divided by eight. Seven eights are fifty-six, so it leaves five.", show(l1, 'Seven eights are fifty-six')),
-      L("Take away the five, and sixty-one minus five is fifty-six, seven times eight, no remainder. Why? The remainder is "
-        "the only part that doesn't divide. Take it away, and only full eights are left.", show(l2, 'Take away the five'),
-        show(l3, 'only full eights'))),
-    S('Numbers in a row',
-      L("Second tool, numbers in a row. Remember, consecutive numbers are integers in a row, like seven and eight. Two in a "
-        "row, and one of them is always even. Seven and eight, eight is even. So the product of two in a row always divides "
-        "by two. Seven times eight is fifty-six, even.", show(r1, 'Two in a row'), show(r2, 'Seven times eight')),
-      L("Three in a row. One of them divides by three, because every third number does, and at least one is even. Two and "
-        "three share no factor, so the product divides by six. Four, five, six. Four times five is twenty, times six is a "
-        "hundred twenty, and that's six times twenty.", show(r3, 'Three in a row'), show(r4, 'Four, five, six')),
-      L("Watch for them in disguise. a cubed minus a. Take out the common factor a, and it's a times, in brackets, a squared "
-        "minus one. And a squared minus one is the shortcut formula, a minus one, times a plus one. So a cubed minus a is a "
-        "minus one, times a, times a plus one. Three in a row.", show(r5, 'a cubed minus a'), mk('underline', 'r5', 'Three in a row')),
-      L("Now careful, only numbers in a row. n times n plus two skips a number. Three times five is fifteen, odd, so not "
-        "even divisible by two.", show(r6, 'n times n plus two'))),
-    S('Tag it',
-      L("Third tool, tag it. When they ask what a number is necessarily divisible by, write each condition as a tag. a is a "
-        "multiple of six, so a is six k. b is a multiple of ten, so b is ten m, with a different letter, because they're "
-        "different numbers. k and m can be any whole numbers, so only the numbers in front are certain.", show(t1, 'a is six k')),
-      L("Multiply, and the tags multiply. Six k times ten m is sixty k m, always divisible by sixty.", show(t2, 'Six k times ten m')),
-      L("Add, and only the shared factor comes out. Six k plus ten m is two times, in brackets, three k plus five m. Three k "
-        "plus five m can be anything. With k and m one, it's eight, and with k two and m one, it's eleven. So only the two "
-        "is certain.", show(t3, 'Six k plus ten m'), show(t4, 'can be anything')),
-      L("And a number divisible by four and by six? Remember the LCM from primes, every prime at its higher power. Two "
-        "squared times three is twelve. So the tag is twelve k, not twenty-four k, because twelve itself divides by four and "
-        "by six, and not by twenty-four. [pause] Okay. I'll see you in the next video.", show(t5, 'divisible by four and by six'))),
+        "divided by eight. Seven eights are fifty-six, so it leaves five. Sixty-one minus five is fifty-six, and that's seven "
+        "times eight, no remainder.", show(l1, 'Sixty-one divided by eight')),
+      L("Another one. Forty-seven divided by six. Seven sixes are forty-two, so it leaves five. Forty-seven minus five is "
+        "forty-two, six times seven.", show(l2, 'Forty-seven divided by six')),
+      L("Why does it work? The remainder is the only part that doesn't divide. Take it away, and only full groups are left.",
+        show(l3, 'the only part that doesn')),
+      L("So when a question says a number leaves three when divided by four, you know that the number minus three divides "
+        "by four. Fifteen leaves three, and fifteen minus three is twelve, three fours.", show(l4, 'leaves three when divided by four'))),
+    S('Divisible by both',
+      L("Second tool. A number divisible by four and by six. Is it divisible by twenty-four? Not necessarily. Remember the "
+        "LCM from primes, every prime at its higher power. Four is two squared, and six is two times three. So two squared "
+        "times three, twelve.", show(t1, 'A number divisible by four and by six')),
+      L("So the number is a multiple of twelve, twelve k. Twelve, twenty-four, thirty-six, forty-eight, all divide by four "
+        "and by six. Twenty-four k would miss twelve and thirty-six, and they do divide by both.", show(t2, 'Twelve, twenty-four, thirty-six')),
+      L("And when the two share nothing, just multiply. Divisible by three and by five is fifteen k, fifteen, thirty, "
+        "forty-five. [pause] Okay. I'll see you in the next video.", show(t3, 'Divisible by three and by five'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-427 (Q6)
-# NEW: a percent of a group -> a fraction -> build from the inside (a tenth = k, tennis = 3k) -> divisible by 3.
-# REMINDER: percent as a fraction (topic 23), the digit-sum sign for 3 (camera lesson), one correct answer (R35).
+# NEW: a percent of a group -> a fraction -> build from the inside (a tenth = k, tennis = 3k) -> divisible by 3, with two
+# examples (clubs of 50 and 70).  REMINDER: percent as a fraction (topic 23), the digit-sum sign for 3 (camera lesson).
 p1 = I('p1', '$30\\%=\\frac{30}{100}=\\frac{3}{10}$', hand='30% = {30/100} = {3/10}')
 p2 = I('p2', 'Club: $\\ 10k\\qquad$ Tennis: $\\ \\hl{t}{3k}$', hand='Club :   10k        Tennis :   \\hl{t}{3k}')
+p6 = I('p6', '$50$: $\\ \\frac{50}{10}=5$, $\\ 3\\cdot5=15\\qquad 70$: $\\ 3\\cdot7=21$', size=28, col=1, hand='50 :  3·5 = 15        70 :  3·7 = 21')
 p3 = I('p3', 'Divisible by $3$: digit sum', size=28, col=1)
 p4 = I('p4', '$530$: $\\ 5+3+0=8$ ✗', hand='530 :   5 + 3 + 0 = 8   ✗')
 p5 = I('p5', '$540$: $\\ 5+4+0=\\hl{n}{9}$ ✓', hand='540 :   5 + 4 + 0 = \\hl{n}{9}   ✓')
@@ -718,6 +703,9 @@ video('solve-q-427', 'solution', qid='q-427', slides=[
       L("Now build it from the inside. Call a tenth of the club k, a whole number of people. Then the club has ten k "
         "members, and three k of them play tennis. So the number of tennis players is always a multiple of three.",
         show(p2, 'Call a tenth of the club k'), mk('circle', 'p2: t', 'always a multiple of three')),
+      L("Let's see it in numbers. A club of fifty members, a tenth is five, and three tenths is three times five, fifteen. "
+        "A club of seventy, a tenth is seven, and three times seven is twenty-one. Fifteen and twenty-one, both multiples of "
+        "three.", show(p6, 'A club of fifty')),
       L("And remember the sign for three, the digit sum divides by three. Five thirty, five plus three plus zero is eight, "
         "and eight doesn't divide by three. Choice number one is out.", show(p3, 'the sign for three'), show(p4, 'Five thirty'),
         mk('cross', 'choice 1', 'Choice number one is out')),
@@ -767,7 +755,8 @@ video('solve-q-428', 'solution', qid='q-428', slides=[
 # NEW: a divisor with no sign - build it from parts with no common factor (12 = 3·4) and let the part that differs
 # decide; one correct answer (R35).  REMINDER: building divisors, the trap 2·6 (camera lesson), signs for 3 and 4.
 w1 = I('w1', '$12=3\\cdot4$ $\\ $(not $2\\cdot6$)', hand='12 = 3·4     (not 2·6)')
-w2 = I('w2', '$6$: by $2$ and by $6$, not by $12$', size=28, col=1, hand='6 :   by 2 and by 6,  not by 12')
+w2 = I('w2', '$6,\\ 18$: by $2$ and by $6$, not by $12$', size=28, col=1, hand='6, 18 :   by 2 and by 6,  not by 12')
+w7 = I('w7', '$36$: $\\ 36$ ✓ by $4$, $\\ 3+6=9$ ✓ $\\to\\ 36=3\\cdot12$', size=28, col=1, hand='36 :   by 4 ✓,   3 + 6 = 9 ✓   →   36 = 3·12')
 w3 = I('w3', 'Last two digits: $\\ 28,\\ 52,\\ 72,\\ 16$ ✓', hand='Last two digits :   28,  52,  72,  16   ✓')
 w4 = I('w4', 'All divide by $4$: the $3$ decides', size=28, col=1)
 w5 = I('w5', '$1428$: $\\ 1+4+2+8=15$ ✓', hand='1428 :   1 + 4 + 2 + 8 = 15   ✓')
@@ -777,8 +766,7 @@ video('solve-q-429', 'solution', qid='q-429', slides=[
       L("Which of the following numbers is not divisible by twelve?", pt('stem', 'Which', 'hl', 3.0), voice='calm', pause=0.5),
       L("Twelve has no sign of its own. We could divide each choice by twelve, but that's slow. So let's build twelve from "
         "signs we know.", pt('stem: ask', 'Twelve has no sign'), pt('choice 1', 'divide each choice')),
-      L("Remember, split it into parts with no common factor. Twelve is three times four. Why not two times six? Two and six "
-        "share a two. Six itself divides by two and by six, and not by twelve.", show(w1, 'Twelve is three times four'), show(w2, 'Six itself')),
+      L("Remember, split it into parts with no common factor. Twelve is three times four. Let's see it in numbers. Thirty-six, the last two digits are thirty-six, which divides by four, and three plus six is nine, which divides by three. And really, thirty-six is three twelves. Why not two times six? Two and six share a two. Six itself divides by two and by six, and not by twelve. Eighteen too, it divides by two and by six, and eighteen over twelve isn't whole.", show(w1, 'Twelve is three times four'), show(w7, 'Thirty-six, the last'), show(w2, 'Six itself')),
       L("Four first, the last two digits. Twenty-eight, fifty-two, seventy-two and sixteen all divide by four. So four "
         "can't tell them apart, and three decides.", show(w3, 'the last two digits'), show(w4, 'three decides')),
       L("Three, the digit sum. One plus four plus two plus eight is fifteen, and fifteen divides by three. So choice number "
@@ -790,19 +778,19 @@ video('solve-q-429', 'solution', qid='q-429', slides=[
 ])
 
 # ------------------------------------------------------------------------------------------------ q-430 (Q9)
-# NEW: counting the multiples in a range - first and last multiple, last minus first plus one (why the plus one: 3 to
-# 7 is five numbers); comparing by "one in every 15" vs "one in every 17" (the smaller divisor has more multiples).
+# NEW: counting multiples - from 1, it's a division (1 to 30, multiples of 5: 30 / 5 = 6); in a range, first and last
+# multiple, last minus first plus one (why: 3 to 7 is five numbers); comparing by "one in every 15" vs "one in every 17".
 # REMINDER: both 3 and 5 = 15 (no common factor, camera lesson).
 x1 = I('x1', 'Both: $\\ 15,\\ \\ 21,\\ \\ 26$', size=28, col=1, hand='Both :    15,   21,   26')
+x7 = I('x7', '$1$ to $30$, by $5$: $\\ 5,10,15,20,25,30$ $\\ \\to\\ \\frac{30}{5}=6$', size=28, hand='1 to 30,  by 5 :   5, 10, 15, 20, 25, 30   →   {30/5} = 6')
+x6 = I('x6', '$3$ to $7$: $\\ 3,4,5,6,7$ $\\ \\to\\ 7-3+1=5$', size=28, hand='3 to 7 :   3, 4, 5, 6, 7   →   7 − 3 + 1 = 5')
 x2 = I('x2', 'Three digits: $\\ 100$ to $999$', size=28, col=1)
-x3 = I('x3', '$15\\cdot6=90$, $\\ 15\\cdot\\hl{f}{7}=105$', size=32, hand='15·6 = 90,    15·\\hl{f}{7} = 105')
-x4 = I('x4', '$15\\cdot\\hl{l}{66}=990$, $\\ 15\\cdot67=1005$', size=32, hand='15·\\hl{l}{66} = 990,    15·67 = 1005')
-x5 = I('x5', '$66-7+1=\\hl{c}{60}$', size=32, hand='66 − 7 + 1 = \\hl{c}{60}')
-x6 = I('x6', '$3$ to $7$: $\\ 3,4,5,6,7$ $\\ \\to\\ 7-3+1=5$', size=28, col=1, hand='3 to 7 :   3, 4, 5, 6, 7   →   7 − 3 + 1 = 5')
-y1 = I('y1', '$17$: $\\ 17\\cdot6=102$ to $17\\cdot58=986$', size=30, hand='17 :   17·6 = 102   to   17·58 = 986')
-y2 = I('y2', '$58-6+1=\\hl{c}{53}$ $\\ \\to\\ 60>53$ ✓', size=30, hand='58 − 6 + 1 = \\hl{c}{53}   →   60 > 53   ✓')
-y3 = I('y3', '$21$: $\\ 21\\cdot5$ to $21\\cdot47$: $\\ 43$', size=30, hand='21 :   21·5  to  21·47 :   43')
-y4 = I('y4', '$26$: $\\ 26\\cdot4$ to $26\\cdot38$: $\\ 35$', size=30, hand='26 :   26·4  to  26·38 :   35')
+x3 = I('x3', '$15\\cdot\\hl{f}{7}=105\\qquad 15\\cdot\\hl{l}{66}=990$', size=30, hand='15·\\hl{f}{7} = 105        15·\\hl{l}{66} = 990')
+x5 = I('x5', '$66-7+1=\\hl{c}{60}$', size=30, hand='66 − 7 + 1 = \\hl{c}{60}')
+y1 = I('y1', '$17$: $\\ 17\\cdot6=102$ to $17\\cdot58=986$: $\\ 53$', size=28, hand='17 :   17·6 = 102  to  17·58 = 986 :   53')
+y3 = I('y3', '$21$: $\\ 21\\cdot5$ to $21\\cdot47$: $\\ 43$', size=28, hand='21 :   21·5  to  21·47 :   43')
+y4 = I('y4', '$26$: $\\ 26\\cdot4$ to $26\\cdot38$: $\\ 35$', size=28, hand='26 :   26·4  to  26·38 :   35')
+y5 = I('y5', '$60>53$ ✓ $\\quad 43>35$ ✓', size=30, col=1, hand='60 > 53  ✓      43 > 35  ✓')
 z1 = I('z1', 'One in every $15$ $\\ >\\ $ one in every $17$', size=30, hand='One in every 15   >   one in every 17')
 z2 = I('z2', 'One in every $21$ $\\ >\\ $ one in every $26$', size=30, hand='One in every 21   >   one in every 26')
 z3 = I('z3', 'Smaller divisor, more multiples', size=28, col=1)
@@ -813,28 +801,29 @@ video('solve-q-430', 'solution', qid='q-430', slides=[
         "divisible by seventeen. Michal claims: there are more three-digit numbers divisible by both three and seven, than "
         "three-digit numbers divisible by both two and thirteen. Which of the following is correct?",
         pt('stem', 'Yoav claims', 'hl', 15.0), voice='calm', pause=0.5),
-      L("So two claims about how many numbers divide by something. And remember, divisible by both three and five means "
-        "divisible by fifteen, because three and five share no factor. In the same way, three and seven make twenty-one, and "
-        "two and thirteen make twenty-six. [short pause] We'll solve it two ways, counting the multiples, and then "
-        "comparing without counting.", show(x1, 'divisible by fifteen'), show(x2, 'how many numbers')),
-      L("[short pause] Let's start by counting. The three-digit numbers go from a hundred to nine hundred ninety-nine. "
-        "Fifteen times six is ninety, still two digits, so the first one is fifteen times seven, a hundred five.",
-        show(x3, 'Fifteen times six')),
-      L("And the last? Fifteen times sixty is nine hundred, and fifteen times six is ninety, so fifteen times sixty-six is "
-        "nine hundred ninety. One more fifteen is a thousand five, too big. So the multiples go from fifteen times seven to "
-        "fifteen times sixty-six.", show(x4, 'Fifteen times sixty is')),
-      L("How many is that? Sixty-six minus seven, plus one. Why plus one? Both ends count. From three to seven there are "
-        "five numbers, three, four, five, six, seven, and seven minus three is only four. So sixty-six minus seven is fifty-nine, and plus one is sixty.", show(x6, 'From three to seven'), show(x5, 'sixty-six minus seven is'), mk('circle', 'x5: c', 'and plus one is sixty'))),
+      L("So two claims about how many numbers divide by something. Divisible by both three and five means divisible by "
+        "fifteen, because they share no factor. In the same way, three and seven make twenty-one, and two and thirteen make "
+        "twenty-six. [short pause] We'll solve it two ways, counting the multiples, and then comparing without counting.",
+        show(x1, 'divisible by fifteen'), pt('stem', 'how many numbers')),
+      L("[short pause] Let's start with a small count. From one to thirty, how many multiples of five? Five, ten, fifteen, "
+        "twenty, twenty-five, thirty, six of them. And that's just thirty over five, six.", show(x7, 'From one to thirty')),
+      L("But here the range doesn't start at one. So I find the first and the last multiple, and count from one to the "
+        "other. Last minus first, plus one. Why plus one? From three to seven there are five numbers, three, four, five, "
+        "six, seven, and seven minus three is only four. Both ends count.", show(x6, 'From three to seven')),
+      L("Fifteen. Fifteen times six is ninety, still two digits, so the first is fifteen times seven, a hundred five. And "
+        "fifteen times sixty-six is nine hundred ninety, the last one below a thousand. So sixty-six minus seven is "
+        "fifty-nine, and plus one is sixty.", show(x2, 'still two digits'), show(x3, 'the first is fifteen times seven'),
+        show(x5, 'sixty-six minus seven'), mk('circle', 'x5: c', 'and plus one is sixty'))),
     S('Method 1 · Count them',
-      L("Seventeen. Seventeen times six is a hundred two, the first three-digit one. And seventeen times sixty is a thousand "
-        "twenty, minus two seventeens, thirty-four, so seventeen times fifty-eight is nine hundred eighty-six. Fifty-eight "
-        "minus six is fifty-two, and plus one is fifty-three. Sixty is more than fifty-three, so Yoav is right.",
-        show(y1, 'Seventeen times six'), show(y2, 'Fifty-eight minus six')),
+      L("Seventeen, the same way. Seventeen times six is a hundred two, and seventeen times fifty-eight is nine hundred "
+        "eighty-six. Fifty-eight minus six is fifty-two, and plus one is fifty-three. Sixty is more than fifty-three, so "
+        "Yoav is right.", show(y1, 'Seventeen times six')),
       L("Michal. Twenty-one times five is a hundred five, and twenty-one times forty-seven is nine hundred eighty-seven. "
-        "Forty-seven minus five is forty-two, and plus one is forty-three.", show(y3, 'Twenty-one times five')),
-      L("Twenty-six times four is a hundred four, and twenty-six times thirty-eight is nine hundred eighty-eight. "
-        "Thirty-eight minus four is thirty-four, and plus one is thirty-five. Forty-three is more than thirty-five, so Michal is "
-        "right too. Both are right, choice number three.", show(y4, 'Twenty-six times four'), mk('tick', 'choice 3', 'choice number three')),
+        "Forty-seven minus five is forty-two, and plus one is forty-three. Twenty-six times four is a hundred four, and "
+        "twenty-six times thirty-eight is nine hundred eighty-eight. Thirty-eight minus four is thirty-four, and plus one is "
+        "thirty-five.", show(y3, 'Twenty-one times five'), show(y4, 'Twenty-six times four')),
+      L("Forty-three is more than thirty-five, so Michal is right too. Both are right, choice number three.",
+        show(y5, 'Forty-three is more'), mk('tick', 'choice 3', 'choice number three')),
       sb='Method 1 · Count them'),
     S('Method 2 · Compare without counting',
       L("[pause] Another way, without counting at all. Every fifteenth number divides by fifteen, and every seventeenth "
@@ -872,8 +861,7 @@ video('solve-q-431', 'solution', qid='q-431', slides=[
         mk('cross', 'choice 1', 'always true. Out')),
       L("a is b over five. Multiply both sides by five, and b is five a. So b always divides by five. Choice number two is "
         "out too.", pt('stem: g2', 'a is b over five'), show(k2, 'Multiply both sides by five'), mk('cross', 'choice 2', 'out too')),
-      L("Now a plus b. That's a plus five a, six a. Six a always divides by six, but by twelve? Only when a is even. If a is "
-        "one, a plus b is six, and six doesn't divide by twelve. So this claim can fail, and choice number three is our "
+      L("Now a plus b. That's a plus five a, six a. Six a always divides by six, but by twelve? Only when a is even. If a is two, a plus b is twelve, and that works. But if a is one, a plus b is six, and six doesn't divide by twelve. So this claim can fail, and choice number three is our "
         "answer.", pt('choice 3', 'Now a plus b'), show(k3, "That's a plus five a"), show(k4, 'If a is one'), mk('tick', 'choice 3', 'choice number three is our answer')),
       sb='Method 1 · One letter'),
     S('Method 1 · One letter',
@@ -890,12 +878,15 @@ video('solve-q-431', 'solution', qid='q-431', slides=[
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t15-15 (Q11)
-# NEW: the trap of equal values (x = y = 18 makes 18 look certain); with plugging in, different letters get different
-# values.  REMINDER: tag it, a sum keeps only the shared factor (the tools lesson).
+# NEW (full, moved here from the tools lesson): a sum of tags keeps only the shared factor (why; 6k + 9m and 4k + 6m; a
+# product of tags multiplies); the trap of equal values (x = y = 18); plugging in, different letters get different values.
+# REMINDER: tags like 6k (camera lesson).
 u1 = I('u1', '$x=6k,\\ \\ \\ y=9m$', hand='x = 6k,      y = 9m')
 u2 = I('u2', '$x+y=6k+9m=\\hl{t}{3}(2k+3m)$', hand='x + y = 6k + 9m = \\hl{t}{3}(2k + 3m)')
 u3 = I('u3', '$2k+3m$: $\\ 5,\\ 7$ $\\ $unknown', hand='2k + 3m :    5,   7    unknown')
 u4 = I('u4', 'A sum keeps only the shared factor', size=28, col=1)
+u5 = I('u5', '$4k+6m=2(2k+3m)$: $\\ 4+6=10$', size=28, col=1, hand='4k + 6m = 2(2k + 3m) :    4 + 6 = 10')
+u6 = I('u6', 'Multiply: $\\ 6k\\cdot9m=54km$', size=28, col=1, hand='Multiply :    6k · 9m = 54km')
 v1 = I('v1', '$6+9=15$: $\\ $not by $18$, not by $9$', size=32, hand='6 + 9 = 15 :   not by 18,  not by 9')
 v2 = I('v2', '$12+9=21$: $\\ $not by $15$', size=32, hand='12 + 9 = 21 :   not by 15')
 v3 = I('v3', 'Trap: $\\ 18+18=36$ ✗', size=30, col=1, hand='Trap :   18 + 18 = 36   ✗')
@@ -908,10 +899,12 @@ video('solve-q-r26-t15-15', 'solution', qid='q-r26-t15-15', slides=[
         "it two ways, with tags, and then plugging in numbers.", pt('stem: ask', 'the largest number that always divides')),
       L("[short pause] Let's start with the tags. x is six k, and y is nine m, different letters, because x and y are "
         "different numbers.", show(u1, 'x is six k')),
-      L("Remember, when we add, only the shared factor comes out. Six and nine share a three. So six k plus nine m is three "
-        "times, in brackets, two k plus three m.", show(u4, 'only the shared factor'), show(u2, 'Six and nine share')),
-      L("And two k plus three m? With k and m one, it's five, and with k two and m one, it's seven. It can be anything, so "
-        "only the three in front is certain. Three, choice number three is our answer.",
+      L("Now, when we add two tags, only the factor they share comes out for sure. Six and nine share a three. So six k plus nine m is three times, in brackets, two k plus three m. Why only the three? What's in the brackets changes with k and m.", show(u4, 'only the factor they share'), show(u2, 'Six and nine share')),
+      L("Let's see the rule once more, changing one thing. Multiples of four and of six. Four k plus six m, they share a two, "
+        "so two times, in brackets, two k plus three m. Only the two is certain. Four plus six is ten, and ten doesn't even "
+        "divide by four. And if we multiplied instead, the tags would multiply, six k times nine m is fifty-four k m.",
+        show(u5, 'Multiples of four and of six'), show(u6, 'if we multiplied instead')),
+      L("And two k plus three m? With k and m one, it's five, and with k two and m one, it's seven. It can be anything, so only the three in front is certain. Three, choice number three is our answer.",
         show(u3, 'With k and m one'), mk('circle', 'u2: t', 'only the three in front'), mk('tick', 'choice 3', 'choice number three is our answer'))),
     S('Method 2 · Plugging in numbers',
       L("[pause] Now let's try plugging in numbers, with a different value for each letter. x is six and y is nine. Six "
@@ -927,12 +920,17 @@ video('solve-q-r26-t15-15', 'solution', qid='q-r26-t15-15', slides=[
 ])
 
 # ------------------------------------------------------------------------------------------------ q-432 (Q12)
-# NEW: a hidden product of three in a row (5(a-1)a(a+1)) times 5 -> 30; don't plug in a = 1 (it gives 0, which every
-# choice divides).  REMINDER: numbers in a row (the tools lesson), the shortcut formula (topic 4), plugging in (topic 51).
+# NEW (full, moved here from the tools lesson): numbers in a row - two in a row divide by 2 (7·8, 4·5), three in a row by
+# 6 (why; 4·5·6, 7·8·9), the non-example 3·5; a hidden product of three in a row (5(a-1)a(a+1)) -> 30; don't plug in
+# a = 1 (it gives 0).  REMINDER: consecutive numbers (topic 1), the shortcut formula (topic 4), plugging in (topic 51).
 o1 = I('o1', '$5a^3-5a=5a(a^2-1)$', hand='5a^3 − 5a = 5a(a^2 − 1)')
 o2 = I('o2', '$=5(a-1)\\,a\\,(a+1)$', hand='= 5 (a−1) a (a+1)')
-o3 = I('o3', 'Three in a row: $\\ 6$', size=30, col=1)
-o4 = I('o4', '$5\\cdot6=\\hl{t}{30}$', hand='5·6 = \\hl{t}{30}')
+o8 = I('o8', 'Two in a row: one is even $\\to$ divisible by $2$', size=28, col=1)
+o9 = I('o9', '$7\\cdot8=56\\qquad 4\\cdot5=20$', size=32, hand='7·8 = 56        4·5 = 20')
+o10 = I('o10', 'Three in a row: by $3$ and by $2$ $\\to$ by $6$', size=28, col=1)
+o11 = I('o11', '$4\\cdot5\\cdot6=120=6\\cdot20\\qquad 7\\cdot8\\cdot9=504=6\\cdot84$', size=28, hand='4·5·6 = 120 = 6·20       7·8·9 = 504 = 6·84')
+o12 = I('o12', 'Not in a row: $\\ 3\\cdot5=15$ ✗', size=28, col=1, hand='Not in a row :   3·5 = 15   ✗')
+o4 = I('o4', '$5\\cdot6=\\hl{t}{30}$', size=32, hand='5·6 = \\hl{t}{30}')
 o5 = I('o5', '$a=1$: $\\ 5-5=0$ ✗', size=30, col=1, hand='a = 1 :   5 − 5 = 0   ✗')
 o6 = I('o6', '$a=2$: $\\ 5\\cdot8-5\\cdot2=40-10=\\hl{t}{30}$', hand='a = 2 :   5·8 − 5·2 = 40 − 10 = \\hl{t}{30}')
 o7 = I('o7', '$60$ ✗ $\\quad 40$ ✗ $\\quad 30$ ✓ $\\quad 20$ ✗', hand='60 ✗      40 ✗      30 ✓      20 ✗')
@@ -947,9 +945,20 @@ video('solve-q-432', 'solution', qid='q-432', slides=[
         "squared minus one.", show(o1, 'Five a is in both terms')),
       L("And a squared minus one is the shortcut formula, a minus one, times a plus one. So x is five, times a minus one, "
         "times a, times a plus one.", show(o2, 'the shortcut formula')),
-      L("Remember, three numbers in a row always divide by six. One of them divides by three, and at least one is even. "
-        "And there's a five in front, so x always divides by five times six, thirty. Choice number three is our answer.",
-        show(o3, 'three numbers in a row'), show(o4, 'five times six'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
+      L("a minus one, a, and a plus one are three numbers in a row. And numbers in a row have a rule we haven't met yet. "
+        "Let's build it.", pt('o2', 'three numbers in a row')),
+      sb='Method 1 · Three in a row'),
+    S('Method 1 · Three in a row',
+      L("Two numbers in a row, and one of them is always even, because even and odd take turns. Seven and eight, eight is "
+        "even, so seven times eight, fifty-six, is even. Four and five, four is even, and four times five is twenty. So two "
+        "in a row always divide by two.", show(o8, 'Two numbers in a row'), show(o9, 'Seven and eight')),
+      L("Three in a row. Every third number divides by three, so one of the three does. And at least one is even. Two and "
+        "three share no factor, so the product divides by six. Four times five times six is a hundred twenty, twenty sixes. "
+        "Seven times eight times nine is five hundred four, eighty-four sixes.", show(o10, 'Three in a row. Every third'), show(o11, 'Four times five times six')),
+      L("Now careful, only numbers in a row. Three times five skips a number, it's fifteen, and fifteen isn't even.",
+        show(o12, 'only numbers in a row')),
+      L("So x is five times three in a row, five times a multiple of six. It always divides by five times six, thirty. "
+        "Choice number three is our answer.", show(o4, 'five times six'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
     S('Method 2 · Plugging in a number',
       L("[pause] Now let's try plugging in a number. Careful, not a is one. Five minus five is zero, and zero divides by "
         "every choice, so it can't rule anything out.", show(o5, 'not a is one')),

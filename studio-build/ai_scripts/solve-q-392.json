@@ -88,9 +88,9 @@
   ],
   [
    {
-    "say": "[pause] Now let's try plugging in the answers. Each choice is a product of two primes. So I split it, and check which one could be a, and the other one b.",
+    "say": "[pause] Each choice is a product of two primes. So I split it, and check which one could be a, and the other one b.",
     "at": [
-     "Now let's",
+     "Each choice",
      "Each choice is a product",
      "of two primes",
      "So I split",

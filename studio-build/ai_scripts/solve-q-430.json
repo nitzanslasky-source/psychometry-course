@@ -12,13 +12,13 @@
     "pause": 0.5
    },
    {
-    "say": "So two claims about how many numbers divide by something. And remember, divisible by both three and five means divisible by fifteen, because three and five share no factor. In the same way, three and seven make twenty-one, and two and thirteen make twenty-six. [short pause] We'll solve it two ways, counting the multiples, and then comparing without counting.",
+    "say": "So two claims about how many numbers divide by something. Divisible by both three and five means divisible by fifteen, because they share no factor. In the same way, three and seven make twenty-one, and two and thirteen make twenty-six. [short pause] We'll solve it two ways, counting the multiples, and then comparing without counting.",
     "at": [
      "how many numbers",
-     "something. And remember",
-     "both three and",
+     "something. Divisible by",
+     "and five means",
      "divisible by fifteen",
-     "and five share",
+     "share no factor",
      "In the same",
      "and seven make",
      "two and thirteen",
@@ -28,51 +28,50 @@
     ]
    },
    {
-    "say": "[short pause] Let's start by counting. The three-digit numbers go from a hundred to nine hundred ninety-nine. Fifteen times six is ninety, still two digits, so the first one is fifteen times seven, a hundred five.",
+    "say": "[short pause] Let's start with a small count. From one to thirty, how many multiples of five? Five, ten, fifteen, twenty, twenty-five, thirty, six of them. And that's just thirty over five, six.",
     "at": [
      "Let's start",
-     "The three-digit numbers",
-     "a hundred to",
-     "Fifteen times six",
-     "still two digits",
-     "first one is",
-     "seven, a hundred"
+     "From one to thirty",
+     "Five, ten, fifteen",
+     "thirty, six of",
+     "And that's just"
     ]
    },
    {
-    "say": "And the last? Fifteen times sixty is nine hundred, and fifteen times six is ninety, so fifteen times sixty-six is nine hundred ninety. One more fifteen is a thousand five, too big. So the multiples go from fifteen times seven to fifteen times sixty-six.",
+    "say": "But here the range doesn't start at one. So I find the first and the last multiple, and count from one to the other. Last minus first, plus one. Why plus one? From three to seven there are five numbers, three, four, five, six, seven, and seven minus three is only four. Both ends count.",
     "at": [
-     "Fifteen times sixty is",
-     "hundred, and fifteen",
-     "is ninety, so",
-     "sixty-six is nine",
-     "One more fifteen",
-     "thousand five, too",
-     "So the multiples",
-     "fifteen times seven"
-    ]
-   },
-   {
-    "say": "How many is that? Sixty-six minus seven, plus one. Why plus one? Both ends count. From three to seven there are five numbers, three, four, five, six, seven, and seven minus three is only four. So sixty-six minus seven is fifty-nine, and plus one is sixty.",
-    "at": [
-     "Sixty-six minus seven",
+     "But here the",
+     "start at one",
+     "So I find",
+     "and the last",
+     "count from one",
+     "Last minus first",
      "Why plus one",
      "From three to seven",
      "five, six, seven",
      "minus three is",
-     "sixty-six minus seven is",
+     "Both ends count"
+    ]
+   },
+   {
+    "say": "Fifteen. Fifteen times six is ninety, still two digits, so the first is fifteen times seven, a hundred five. And fifteen times sixty-six is nine hundred ninety, the last one below a thousand. So sixty-six minus seven is fifty-nine, and plus one is sixty.",
+    "at": [
+     "still two digits",
+     "the first is fifteen times seven",
+     "seven, a hundred",
+     "And fifteen times",
+     "nine hundred ninety",
+     "one below a",
+     "sixty-six minus seven",
      "and plus one is sixty"
     ]
    }
   ],
   [
    {
-    "say": "Seventeen. Seventeen times six is a hundred two, the first three-digit one. And seventeen times sixty is a thousand twenty, minus two seventeens, thirty-four, so seventeen times fifty-eight is nine hundred eighty-six. Fifty-eight minus six is fifty-two, and plus one is fifty-three. Sixty is more than fifty-three, so Yoav is right.",
+    "say": "Seventeen, the same way. Seventeen times six is a hundred two, and seventeen times fifty-eight is nine hundred eighty-six. Fifty-eight minus six is fifty-two, and plus one is fifty-three. Sixty is more than fifty-three, so Yoav is right.",
     "at": [
      "Seventeen times six",
-     "And seventeen times",
-     "a thousand twenty",
-     "seventeens, thirty-four, so",
      "fifty-eight is nine",
      "Fifty-eight minus six",
      "and plus one",
@@ -81,23 +80,23 @@
     ]
    },
    {
-    "say": "Michal. Twenty-one times five is a hundred five, and twenty-one times forty-seven is nine hundred eighty-seven. Forty-seven minus five is forty-two, and plus one is forty-three.",
+    "say": "Michal. Twenty-one times five is a hundred five, and twenty-one times forty-seven is nine hundred eighty-seven. Forty-seven minus five is forty-two, and plus one is forty-three. Twenty-six times four is a hundred four, and twenty-six times thirty-eight is nine hundred eighty-eight. Thirty-eight minus four is thirty-four, and plus one is thirty-five.",
     "at": [
      "Twenty-one times five",
      "hundred five, and",
      "forty-seven is nine",
      "Forty-seven minus five",
-     "and plus one"
-    ]
-   },
-   {
-    "say": "Twenty-six times four is a hundred four, and twenty-six times thirty-eight is nine hundred eighty-eight. Thirty-eight minus four is thirty-four, and plus one is thirty-five. Forty-three is more than thirty-five, so Michal is right too. Both are right, choice number three.",
-    "at": [
+     "and plus one",
      "Twenty-six times four",
      "hundred four, and",
      "thirty-eight is nine",
      "Thirty-eight minus four",
-     "and plus one",
+     "and plus one is thirty-five"
+    ]
+   },
+   {
+    "say": "Forty-three is more than thirty-five, so Michal is right too. Both are right, choice number three.",
+    "at": [
      "Forty-three is more",
      "so Michal is",
      "Both are right",

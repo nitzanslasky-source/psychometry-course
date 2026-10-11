@@ -85,11 +85,9 @@
   ],
   [
    {
-    "say": "[pause] Now let's look at it with even and odd. All the digits are odd. And odd times odd is always odd. Three times five is fifteen, and five times five is twenty-five, odd every time. Why? An even product needs a factor of two somewhere, and odd numbers don't have a two in them.",
+    "say": "[pause] All the digits are odd. And odd times odd is always odd. Three times five is fifteen, and five times five is twenty-five, odd every time. Why? An even product needs a factor of two somewhere, and odd numbers don't have a two in them.",
     "at": [
-     "Now let's",
-     "with even and",
-     "All the digits",
+     "All the",
      "odd times odd is always odd",
      "Three times five",
      "and five times",

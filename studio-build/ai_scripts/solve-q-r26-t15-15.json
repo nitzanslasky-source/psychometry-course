@@ -32,13 +32,36 @@
     ]
    },
    {
-    "say": "Remember, when we add, only the shared factor comes out. Six and nine share a three. So six k plus nine m is three times, in brackets, two k plus three m.",
+    "say": "Now, when we add two tags, only the factor they share comes out for sure. Six and nine share a three. So six k plus nine m is three times, in brackets, two k plus three m. Why only the three? What's in the brackets changes with k and m.",
     "at": [
-     "only the shared factor",
+     "only the factor they share",
+     "comes out for",
      "Six and nine share",
      "So six k",
      "m is three",
-     "brackets, two k"
+     "brackets, two k",
+     "m. Why only",
+     "What's in the",
+     "with k and"
+    ]
+   },
+   {
+    "say": "Let's see the rule once more, changing one thing. Multiples of four and of six. Four k plus six m, they share a two, so two times, in brackets, two k plus three m. Only the two is certain. Four plus six is ten, and ten doesn't even divide by four. And if we multiplied instead, the tags would multiply, six k times nine m is fifty-four k m.",
+    "at": [
+     "Let's see the",
+     "more, changing one",
+     "Multiples of four and of six",
+     "Four k plus",
+     "they share a",
+     "two times, in",
+     "k plus three",
+     "Only the two",
+     "Four plus six",
+     "and ten doesn't",
+     "by four. And",
+     "if we multiplied instead",
+     "tags would multiply",
+     "times nine m"
     ]
    },
    {

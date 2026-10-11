@@ -74,11 +74,10 @@
   ],
   [
    {
-    "say": "[pause] Now let's try plugging in numbers. Here I don't pick m, I pick m squared, because the given is about m squared. m squared is a prime, so let's take the smallest prime, two.",
+    "say": "[pause] Here I don't pick m, I pick m squared, because the given is about m squared. m squared is a prime, so let's take the smallest prime, two.",
     "at": [
-     "Now let's",
-     "numbers. Here I",
-     "m, I pick",
+     "Here I",
+     "I pick m",
      "the given is about",
      "squared. m squared",
      "prime, so let's",

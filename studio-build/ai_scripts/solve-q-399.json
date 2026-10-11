@@ -26,10 +26,9 @@
     ]
    },
    {
-    "say": "[short pause] Let's start with every pair. I start with the smallest factor and go up. One isn't allowed, so no one times a hundred. Two times fifty, and the difference is forty-eight. Three? A hundred doesn't divide by three. Four times twenty-five, and the difference is twenty-one.",
+    "say": "[short pause] I start with the smallest factor and go up. One isn't allowed, so no one times a hundred. Two times fifty, and the difference is forty-eight. Three? A hundred doesn't divide by three. Four times twenty-five, and the difference is twenty-one.",
     "at": [
-     "Let's start",
-     "I start with",
+     "I start",
      "factor and go",
      "One isn't allowed",
      "one times a",
@@ -90,11 +89,10 @@
   ],
   [
    {
-    "say": "[pause] Another way is to think about the extremes. When is A biggest? When x and y are as far apart as possible, so one of them is as small as it can be. One isn't allowed, so the smallest is two, and the other is a hundred over two, fifty. Fifty minus two is forty-eight.",
+    "say": "[pause] When is A biggest? When x and y are as far apart as possible, so one of them is as small as it can be. One isn't allowed, so the smallest is two, and the other is a hundred over two, fifty. Fifty minus two is forty-eight.",
     "at": [
-     "Another way",
-     "about the extremes",
-     "A biggest? When",
+     "When is",
+     "x and y",
      "as far apart as possible",
      "as small as",
      "One isn't allowed",
@@ -116,14 +114,10 @@
     ]
    },
    {
-    "say": "Forty-eight minus zero, forty-eight. Choice number three. The rest of the story, the greatest A and the smallest A, is just words to make it look harder. [pause] Okay. I'll see you in the next question.",
+    "say": "Forty-eight minus zero, forty-eight. Choice number three. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Forty-eight minus zero",
-     "Choice number three",
-     "The rest of",
-     "the greatest A",
-     "smallest A, is",
-     "to make it"
+     "Choice number three"
     ]
    }
   ]

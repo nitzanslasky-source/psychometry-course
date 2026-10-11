@@ -22,14 +22,22 @@
     ]
    },
    {
-    "say": "Remember, split it into parts with no common factor. Twelve is three times four. Why not two times six? Two and six share a two. Six itself divides by two and by six, and not by twelve.",
+    "say": "Remember, split it into parts with no common factor. Twelve is three times four. Let's see it in numbers. Thirty-six, the last two digits are thirty-six, which divides by four, and three plus six is nine, which divides by three. And really, thirty-six is three twelves. Why not two times six? Two and six share a two. Six itself divides by two and by six, and not by twelve. Eighteen too, it divides by two and by six, and eighteen over twelve isn't whole.",
     "at": [
      "parts with no",
      "Twelve is three times four",
+     "Let's see it",
+     "Thirty-six, the last",
+     "are thirty-six, which",
+     "four, and three",
+     "is nine, which",
+     "And really, thirty-six",
      "Why not two",
      "Two and six",
      "Six itself",
-     "and by six"
+     "Eighteen too, it",
+     "two and by six, and eighteen",
+     "eighteen over twelve"
     ]
    },
    {

@@ -924,7 +924,7 @@ video('solve-q-398', 'solution', qid='q-398', slides=[
         "thirty, choice number two is our answer.", show(l6, 'Fifteen is three times five'), mk('cross', 'choice 4', 'Choice number four is out'),
         mk('tick', 'choice 2', 'choice number two is our answer'))),
     S('Method 2 · Even and odd',
-      L("[pause] Now let's look at it with even and odd. All the digits are odd. And odd times odd is always odd. Three times five "
+      L("[pause] All the digits are odd. And odd times odd is always odd. Three times five "
         "is fifteen, and five times five is twenty-five, odd every time. Why? An even product needs a factor of two "
         "somewhere, and odd numbers don't have a two in them.", show(o1, 'odd times odd is always odd'), show(o2, 'Three times five'),
         show(o3, 'An even product needs')),
@@ -956,7 +956,7 @@ video('solve-q-399', 'solution', qid='q-399', slides=[
         "The bars make it positive, so it's the bigger one minus the smaller one. And they want the biggest A minus the "
         "smallest A. [short pause] We'll solve it two ways, listing every pair, and then thinking about the extremes.",
         pt('stem', 'breaking a hundred into two factors'), show(i0, 'The bars make it positive'), pt('stem', 'the biggest A')),
-      L("[short pause] Let's start with every pair. I start with the smallest factor and go up. One isn't allowed, so no "
+      L("[short pause] I start with the smallest factor and go up. One isn't allowed, so no "
         "one times a hundred. Two times fifty, and the difference is forty-eight. Three? A hundred doesn't divide by three. "
         "Four times twenty-five, and the difference is twenty-one.",
         pt('stem', "One isn't allowed"), show(i1, 'Two times fifty'), show(i2, 'Four times twenty-five')),
@@ -974,13 +974,12 @@ video('solve-q-399', 'solution', qid='q-399', slides=[
         pt('i4', 'ten times ten is the pair'), show(i7, 'Without it'), mk('cross', 'choice 1', 'the trap'),
         mk('cross', 'choice 2', 'And twenty-one'), mk('cross', 'choice 4', 'and fifteen are'))),
     S('Method 2 · The extremes',
-      L("[pause] Another way is to think about the extremes. When is A biggest? When x and y are as far apart as possible, so one of "
+      L("[pause] When is A biggest? When x and y are as far apart as possible, so one of "
         "them is as small as it can be. One isn't allowed, so the smallest is two, and the other is a hundred over two, "
         "fifty. Fifty minus two is forty-eight.", pt('stem', "One isn't allowed"), show(j1, 'as far apart as possible')),
       L("When is A smallest? When they're as close as possible. Can they be equal? Only if a hundred is a perfect square, "
         "and it is, ten times ten. So the smallest A is ten minus ten, zero.", show(j2, 'as close as possible')),
-      L("Forty-eight minus zero, forty-eight. Choice number three. The rest of the story, the greatest A and the smallest A, "
-        "is just words to make it look harder. [pause] Okay. I'll see you in the next question.",
+      L("Forty-eight minus zero, forty-eight. Choice number three. [pause] Okay. I'll see you in the next question.",
         show(j3, 'Forty-eight minus zero'), mk('tick', 'choice 3', 'Choice number three'))),
 ])
 
@@ -1018,7 +1017,7 @@ video('solve-q-400', 'solution', qid='q-400', slides=[
         show(z5, 'if you forget the seventy'), mk('cross', 'choice 4', 'choice number four'), mk('cross', 'choice 2', 'And seventy'),
         mk('cross', 'choice 3', 'and fourteen'))),
     S('Method 2 · Look at the choices',
-      L("[pause] Now a quick look at the choices. One of the products is all three cards together, two times "
+      L("[pause] One of the products is all three cards together, two times "
         "five times seven, seventy. And the pairs add more on top of it. So the sum is more than seventy.",
         show(y1, 'all three cards together'), pt('y1', 'the pairs add more')),
       L("Which choices are more than seventy? Only a hundred twenty-nine. Seventy, fourteen and fifty-nine are all seventy "
@@ -1059,7 +1058,7 @@ video('solve-q-401', 'solution', qid='q-401', slides=[
         "answer.", show(k1, 'Prime, even and odd'), mk('cross', 'choice 1', 'choice numbers one'), mk('cross', 'choice 3', 'three and four'),
         mk('cross', 'choice 4', 'are out'), mk('tick', 'choice 2', 'Choice number two is our'))),
     S('Method 2 · Plugging in numbers',
-      L("[pause] Now let's try plugging in numbers. Here I don't pick m, I pick m squared, because the given is about m "
+      L("[pause] Here I don't pick m, I pick m squared, because the given is about m "
         "squared. m squared is a prime, so let's take the smallest prime, two.", pt('stem', 'the given is about'), show(p1, 'the smallest prime, two')),
       L("m squared is two, so m is the square root of two. Is that a whole number? One squared is one, and two squared is "
         "four. So root two is between one and two, and it's not whole.", show(p2, 'One squared is one')),
@@ -1091,7 +1090,7 @@ video('solve-q-402', 'solution', qid='q-402', slides=[
       L("So k has exactly three divisors, and C is its square root. That sounds very abstract, so first let's understand "
         "which numbers have exactly three divisors. [short pause] We'll solve it two ways, with divisor pairs, and then "
         "plugging in a number.", pt('stem', 'exactly three divisors'), pt('stem', 'C is its square root')),
-      L("[short pause] Let's start with divisor pairs. Divisors come in pairs that multiply to the number. Take eighteen. "
+      L("[short pause] Divisors come in pairs that multiply to the number. Take eighteen. "
         "One times eighteen, two times nine, three times six. Six divisors, in three pairs.",
         show(d1, 'Take eighteen')),
       L("So most numbers have an even number of divisors. When can the count be odd? Only when one divisor has no partner, "
@@ -1112,7 +1111,7 @@ video('solve-q-402', 'solution', qid='q-402', slides=[
         mk('tick', 'choice 2', 'choice number two is our answer')),
       sb='Method 1 · Divisor pairs'),
     S('Method 2 · Plugging in a number',
-      L("[pause] Now let's try plugging in a number. I need a k with exactly three divisors, so let's try small numbers "
+      L("[pause] I need a k with exactly three divisors, so let's try small numbers "
         "and count. Two has one and two, only two divisors. Three, the same. Four has one, two and four. Three divisors, so "
         "k is four.", show(q1, 'Two has one and two')),
       L("Then C is the square root of four, which is two. And two has two divisors, one and two.",
@@ -1203,9 +1202,9 @@ video('solve-q-r26-t14-03', 'solution', qid='q-r26-t14-03', slides=[
         "two is just a.", show(f7, 'when you swap'), mk('cross', 'choice 1', 'swap a and b'), mk('cross', 'choice 4', 'is a plus b'),
         mk('cross', 'choice 2', 'two is just a'))),
     S('Method 2 · Divide down',
-      L("[pause] Another way is to divide down. I divide by two as long as I can, and count. A hundred eight over two is "
+      L("[pause] I divide by two as long as I can, and count. A hundred eight over two is "
         "fifty-four. Fifty-four over two is twenty-seven. Twenty-seven is odd, so no more twos. Two halvings, so a is two.",
-        show(T108['root'], 'divide down'), show(T108[1], 'over two is fifty-four'), show(T108[2], 'Fifty-four over two'), pt('T108_root', 'Two halvings')),
+        show(T108['root'], 'I divide by two'), show(T108[1], 'over two is fifty-four'), show(T108[2], 'Fifty-four over two'), pt('T108_root', 'Two halvings')),
       L("Then the threes. Twenty-seven over three is nine, nine over three is three, and three over three is one. Three "
         "times, so b is three.", show(T108[3], 'Twenty-seven over three'), show(T108[4], 'nine over three'), show(f8, 'Three times'),
         show(f9, 'so b is three')),
@@ -1245,8 +1244,7 @@ video('solve-q-391', 'solution', qid='q-391', slides=[
         "is odd, its digit sum is five, it doesn't end in five, and its root is less than seven. So it's a prime, choice "
         "number four is out, and fifty-one, choice number three is our answer.",
         show(a4, 'Forty-three is two plus'), mk('cross', 'choice 4', 'choice number four is out'), mk('tick', 'choice 3', 'choice number three is our answer')),
-      L("The whole question was one fact, two is the only even prime, and the exam loves it. [pause] Okay. I'll see you in "
-        "the next question.", pt('o3', 'The whole question was one fact'))),
+      L("[pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-392 (Q14)
@@ -1284,7 +1282,7 @@ video('solve-q-392', 'solution', qid='q-392', slides=[
         "ninety-one. Choice number three is our answer. And remember ninety-one, the fake prime from the start of the "
         "topic.", show(g5, 'seven times thirteen'), mk('circle', 'g5: r', 'together ninety-one'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
     S('Method 2 · Plugging in the answers',
-      L("[pause] Now let's try plugging in the answers. Each choice is a product of two primes. So I split it, and check "
+      L("[pause] Each choice is a product of two primes. So I split it, and check "
         "which one could be a, and the other one b.", pt('choice 1', 'Each choice is a product')),
       L("Choice number one, thirty-nine, is three times thirteen. Could a be three? Only twenty-one divides by three, that's "
         "one number, not two. Could a be thirteen? None of fourteen, twenty-one and five divides by thirteen. Out.",

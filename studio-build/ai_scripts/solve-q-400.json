@@ -84,10 +84,9 @@
   ],
   [
    {
-    "say": "[pause] Now a quick look at the choices. One of the products is all three cards together, two times five times seven, seventy. And the pairs add more on top of it. So the sum is more than seventy.",
+    "say": "[pause] One of the products is all three cards together, two times five times seven, seventy. And the pairs add more on top of it. So the sum is more than seventy.",
     "at": [
-     "Now a",
-     "the choices. One",
+     "One of",
      "all three cards together",
      "times five times",
      "the pairs add more",

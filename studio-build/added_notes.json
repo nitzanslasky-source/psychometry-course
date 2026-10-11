@@ -1570,6 +1570,14 @@
   "solve-q-435#2": {
    "t": "Method 2 · Plugging in numbers",
    "d": "2026-10-11 topic-15 redo (your reading): x = 4 and 12; examples that work prove nothing, one that fails does"
+  },
+  "solve-q-432#2": {
+   "t": "Method 2 · Plugging in a number",
+   "d": "2026-10-11 topic-15 redo (your reading): not a = 1 (it gives 0); a = 2 gives 30"
+  },
+  "solve-q-432#1": {
+   "t": "Method 1 · Three in a row",
+   "d": "2026-10-11 topic-15 redo (your reading): numbers in a row taught here in full - two in a row by 2 (7·8, 4·5), three by 6 (4·5·6, 7·8·9), not 3·5"
   }
  },
  "lines": {

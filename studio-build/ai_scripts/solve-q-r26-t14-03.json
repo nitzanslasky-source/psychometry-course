@@ -86,11 +86,10 @@
   ],
   [
    {
-    "say": "[pause] Another way is to divide down. I divide by two as long as I can, and count. A hundred eight over two is fifty-four. Fifty-four over two is twenty-seven. Twenty-seven is odd, so no more twos. Two halvings, so a is two.",
+    "say": "[pause] I divide by two as long as I can, and count. A hundred eight over two is fifty-four. Fifty-four over two is twenty-seven. Twenty-seven is odd, so no more twos. Two halvings, so a is two.",
     "at": [
-     "Another way",
-     "divide down",
-     "I divide by",
+     "I divide",
+     "I divide by two",
      "long as I",
      "count. A hundred",
      "over two is fifty-four",

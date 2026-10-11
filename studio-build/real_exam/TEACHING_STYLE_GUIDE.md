@@ -503,6 +503,7 @@ Check every AI script line by line. The numbers in brackets are evidence from §
 - **R3. State each rule in one exact plain sentence.** Never vague: she simplifies the path, not the rule.
 - **R4. Every rule gets a simple-number example right after it** ("Let's see it in numbers."). Letters → numbers. No rule line without numbers (HE ≈87% of rules; EN 46 improvised additions).
 - **R5. Two examples is the norm.** The second changes exactly one thing: a negative, zero, a fraction, another position, or a **non-example** ("but 2 times 4 is 8, no 3 there"). Give 3 or more, plus an everyday story, only for counter-intuitive rules ("sounds strange, but…").
+  - **Enough examples** (teacher, 2026-10-11: "make sure they really understand from this and there are enough examples that explain the concepts"): every first-time concept gets at least 2 concrete number examples (the second changing one thing), plus a non-example when it helps. A tool is taught in full inside the question that first uses it; a short lesson only for a tool no question video uses. Reminders stay brief (R29).
 - **R6. The why comes right after the first example,** one step back to something already taught: "Why? Because…". If you skip a proof, say so in one line ("We don't need to prove it.").
 - **R7. Cut, don't add.** Drop names and school formality. Prefer one idea to a list ("it's symmetric", "it's just like an equation"). Say what can be ignored.
 - **R8. At most one everyday image per lesson,** for the hardest idea (shop, cakes, pizza, bank account). Reuse it later instead of inventing new ones. Use no new real names or culture-bound puns without an approved English version.
@@ -674,7 +675,9 @@ Topic-15 order: the camera lesson `divisibility`, then q-423, q-424, q-425, q-42
 | Listing numbers with a remainder by hopping by the divisor | q-424 | — |
 | Split off the part that divides; only the last number squared matters | q-426 | — |
 | The remainder of a sum / difference / product; a negative remainder → add the divisor | q-r26-t15-01 | q-435, q-436, summary |
-| Take away the remainder; numbers in a row (2 and 6); tag it (multiply, add, LCM tag) | r26-t15-remainder-tools (lesson) | q-431, q-r26-t15-15, q-432, q-435, summary |
+| Take away the remainder; divisible by both → the LCM tag | r26-t15-remainder-tools (lesson) | summary |
+| A sum of tags keeps only the shared factor; a product of tags multiplies | q-r26-t15-15 | summary |
+| Numbers in a row: two → 2, three → 6; a³ − a in disguise | q-432 | summary |
 | A percent → a fraction → divisibility | q-427 (percent: topic 23) | — |
 | An unknown digit: the possible digit sums | q-428 | — |
 | Counting multiples in a range: last − first + 1; one in every 15 vs one in every 17 | q-430 | summary |

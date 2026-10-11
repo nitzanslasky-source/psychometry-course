@@ -42,15 +42,61 @@
     ]
    },
    {
-    "say": "Remember, three numbers in a row always divide by six. One of them divides by three, and at least one is even. And there's a five in front, so x always divides by five times six, thirty. Choice number three is our answer.",
+    "say": "a minus one, a, and a plus one are three numbers in a row. And numbers in a row have a rule we haven't met yet. Let's build it.",
     "at": [
+     "and a plus",
      "three numbers in a row",
-     "always divide by",
-     "One of them",
-     "three, and at",
-     "is even. And",
-     "five in front",
-     "always divides by",
+     "And numbers in",
+     "have a rule",
+     "met yet. Let's"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Two numbers in a row, and one of them is always even, because even and odd take turns. Seven and eight, eight is even, so seven times eight, fifty-six, is even. Four and five, four is even, and four times five is twenty. So two in a row always divide by two.",
+    "at": [
+     "Two numbers in a row",
+     "and one of",
+     "always even, because",
+     "odd take turns",
+     "Seven and eight",
+     "even, so seven",
+     "fifty-six, is even",
+     "Four and five",
+     "even, and four",
+     "So two in",
+     "always divide by"
+    ]
+   },
+   {
+    "say": "Three in a row. Every third number divides by three, so one of the three does. And at least one is even. Two and three share no factor, so the product divides by six. Four times five times six is a hundred twenty, twenty sixes. Seven times eight times nine is five hundred four, eighty-four sixes.",
+    "at": [
+     "Three in a row. Every third",
+     "Every third number",
+     "three, so one",
+     "And at least",
+     "Two and three",
+     "factor, so the",
+     "Four times five times six",
+     "Seven times eight",
+     "is five hundred"
+    ]
+   },
+   {
+    "say": "Now careful, only numbers in a row. Three times five skips a number, it's fifteen, and fifteen isn't even.",
+    "at": [
+     "only numbers in a row",
+     "number, it's fifteen"
+    ]
+   },
+   {
+    "say": "So x is five times three in a row, five times a multiple of six. It always divides by five times six, thirty. Choice number three is our answer.",
+    "at": [
+     "So x is",
+     "three in a",
+     "times a multiple",
+     "It always divides",
      "five times six",
      "Choice number three is our answer"
     ]

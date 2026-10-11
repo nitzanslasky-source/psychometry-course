@@ -47,13 +47,16 @@
     ]
    },
    {
-    "say": "Now a plus b. That's a plus five a, six a. Six a always divides by six, but by twelve? Only when a is even. If a is one, a plus b is six, and six doesn't divide by twelve. So this claim can fail, and choice number three is our answer.",
+    "say": "Now a plus b. That's a plus five a, six a. Six a always divides by six, but by twelve? Only when a is even. If a is two, a plus b is twelve, and that works. But if a is one, a plus b is six, and six doesn't divide by twelve. So this claim can fail, and choice number three is our answer.",
     "at": [
      "Now a plus b",
      "That's a plus five a",
      "Six a always",
      "six, but by",
      "Only when a",
+     "If a is",
+     "plus b is",
+     "that works. But",
      "If a is one",
      "six doesn't divide",
      "So this claim",
