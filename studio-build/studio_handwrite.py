@@ -175,12 +175,13 @@ def _glyph(ch):
 
 
 # ------------------------------------------------------------------------------------------------ parse
-def _parse(t, i=0, stop=None):
+def _parse(t, i=0, stop=None, pos=None):
     """-> (nodes, index). nodes: ('c', ch) ('frac', num, den) ('sup', nodes) ('sqrt', nodes) ('hl', name, nodes)"""
     out = []
     while i < len(t):
         c = t[i]
         if stop and c == stop: return out, i
+        if pos is not None: pos.append(i)
         if t.startswith('\\hl{', i):
             j = t.index('}', i + 4); name = t[i + 4:j]
             assert t[j + 1] == '{', 'handwriting: \\hl{name}{...}'
@@ -210,9 +211,10 @@ class Box:
         self.asc = max(self.asc, -dy + other.asc * s); self.desc = max(self.desc, dy + other.desc * s); self.n += other.n
 
 
-def _lay(nodes, rng):
+def _lay(nodes, rng, starts=None):
     B = Box(); x = 0.0; bars = []
     for nd in nodes:
+        if starts is not None: starts.append(len(B.strokes))
         if nd[0] == 'c':
             ch = nd[1]; adv, st = _glyph(ch)
             if ch == ' ': x += adv * (1 + max(-.1, min(.15, rng.gauss(0, .07)))); continue
@@ -322,8 +324,8 @@ def write(text, seed=None):
     key = (text, seed)
     if key in _CACHE: return _CACHE[key]
     rng = random.Random(int(hashlib.md5(('%s|%s' % (text, seed)).encode()).hexdigest()[:8], 16))
-    nodes, _ = _parse(text)
-    B = _lay(nodes, rng)
+    pos = []; nodes, _ = _parse(text, pos=pos)
+    starts = []; B = _lay(nodes, rng, starts)
     # gentle baseline drift across the line (a hand never writes perfectly straight)
     ph, fr = rng.uniform(0, 6.3), rng.uniform(.012, .02)
     st = [[(x * UNIT, (y + .9 * math.sin(fr * x + ph)) * UNIT) for x, y in s] for s in B.strokes]
@@ -332,7 +334,10 @@ def write(text, seed=None):
     x0, y0 = min(xs) - 4, min(min(ys), -21 * UNIT) - 6
     out = {'s': [[round(v, 1) for p in s for v in (p[0] - x0, p[1] - y0)] for s in st],
            'w': round(max(xs) - x0 + 4, 1), 'h': round(max(max(ys), 4 * UNIT) - y0 + 6, 1), 'n': B.n,
-           'parts': B.parts}
+           'parts': B.parts,
+           # 2026-10-11: [character index in the text, first stroke] of each top-level piece - so the pen can write a
+           # line in chunks timed to her words (reading_to_video.py write chunks, studio_autonarrate anWrites)
+           'ix': [[a, b] for a, b in zip(pos, starts)]}
     _CACHE[key] = out
     return out
 

@@ -63,6 +63,17 @@ function anVerts(fig,root){const V=[];for(const el of fig.querySelectorAll('line
  const out=[];for(const p of V)if(!out.some(q=>Math.hypot(q.x-p.x,q.y-p.y)<3))out.push(p);return out}
 function anOutline(el,root){try{const L=el.getTotalLength(),n=Math.max(24,Math.min(160,Math.round(L/6))),m=anM(el,root),pts=[];for(let i=0;i<=n;i++){const p=el.getPointAtLength(L*i/n);pts.push(anPt(p.x,p.y,m))}return pts}catch{return null}}
 function anFill(el){const f=(el.getAttribute('fill')||getComputedStyle(el).fill||'').toLowerCase().replace(/\s/g,'');return f&&!/^(none|transparent|#fff|#ffffff|white|rgb\(255,255,255\)|rgba\(0,0,0,0\))$/.test(f)}
+/* 2026-10-11 (teacher: "when I talk about the second given, highlight only the second given"): the parts of a
+   question stem, from its rendered pieces (text words and formulas, in reading order): ask = the question sentence (from
+   the last Which/What/How...), given = what comes after "Given:" before it, g1 g2 g3 = each formula there (each row of a
+   cases block). POINT 'stem: g2' / 'stem: ask' / 'stem: given'. */
+function anStemParts(c){const K=[...c.children],w=el=>el.tagName.toLowerCase()==='text'?el.textContent.trim():null,isM=el=>el.tagName.toLowerCase()==='svg';
+ let ask=-1;for(let i=0;i<K.length;i++){if(!/^(Which|What|How|Find|Is|Are|Does|Can)$/.test(w(K[i])||''))continue;let j=i-1;while(j>=0&&w(K[j])==='')j--;
+  if(j<0||isM(K[j])||/[.?!:]$/.test(w(K[j])||''))ask=i}
+ const gi=K.findIndex(el=>/^Given:?$/i.test(w(el)||'')),g0=gi>=0?gi+1:0,end=ask>=0?ask:K.length,out={};
+ const G=K.slice(g0,end).filter(el=>isM(el)||/[A-Za-z0-9]/.test(w(el)||''));if(G.length)out.given=G;
+ let n=0;for(const el of G)if(isM(el)){const rows=[...el.querySelectorAll('g[data-mml-node="mtr"]')];for(const r of (rows.length?rows:[el]))out['g'+(++n)]=[r]}
+ if(ask>=0)out.ask=K.slice(ask).filter(el=>isM(el)||/\S/.test(w(el)||''));return out}
 /* spec -> {shapes:[...], box, dot} or {err} */
 function anResolve(spec,v,bi,svg){const root=anRoot(svg);if(!root)return {err:'the slide is not ready'};const b=v.beats[bi];let s=String(spec||'').trim(),m;
  const item=i=>root.querySelector(':scope > g[data-i="'+i+'"]'),subs=g=>g?[...g.children].filter(c=>c.matches('g[data-sub]')):[];
@@ -73,6 +84,8 @@ function anResolve(spec,v,bi,svg){const root=anRoot(svg);if(!root)return {err:'t
  const qi=b.items.findIndex(it=>it.k==='q'&&!it.nochoices);
  if(m=s.match(/^(?:choice|answer|option)\s*(\d)$/i)){const g=item(qi),c=subs(g)[+m[1]];if(!c||!c.querySelector('rect'))return {err:'no choice '+m[1]+' on the board'};
   return res([anUnion([...c.children].filter(x=>x.tagName.toLowerCase()!=='rect').map(boxOf))].map(x=>x&&{k:'box',...x}),'choice')}
+ if(m=s.match(/^(?:stem|question)\s*:\s*(\w+)$/i)){const c=subs(item(qi))[0];if(!c)return {err:'no question on the board'};const P=anStemParts(c),els=P[m[1].toLowerCase()];
+  if(!els||!els.length)return {err:'no part "'+m[1]+'" in the question (parts: '+Object.keys(P).join(', ')+')'};return res([anUnion(els.map(boxOf))].map(x=>x&&{k:'box',...x}),'part')}
  if(/^(stem|question)$/i.test(s)){const c=subs(item(qi))[0];return c?res([{k:'box',...boxOf(c)}],'item'):{err:'no question on the board'}}
  let scope=null;if(m=s.match(/^item\s*(\d+)\s*(?::\s*(.*))?$/i)){scope=item(+m[1]);if(!scope)return {err:'item '+m[1]+' is not on the board at this moment'};if(!m[2])return res([{k:'box',...boxOf(scope)}],'item');s=m[2].trim()}
  const groups=scope?[scope]:[...root.querySelectorAll(':scope > g[data-i]')];
@@ -94,14 +107,24 @@ function anResolve(spec,v,bi,svg){const root=anRoot(svg);if(!root)return {err:'t
 
 /* ---- the highlight / pointer layer: painted into the recording (draw loop) and onto the screen (overlay canvas) ---- */
 function anRR(g,x,y,w,h,r){r=Math.min(r,w/2,h/2);g.beginPath();g.moveTo(x+r,y);g.arcTo(x+w,y,x+w,y+h,r);g.arcTo(x+w,y+h,x,y+h,r);g.arcTo(x,y+h,x,y,r);g.arcTo(x,y,x+w,y,r);g.closePath()}
+/* 2026-10-11 teacher ("highlights feel like flashes"): in a continuous take a highlight STAYS on what she talks about
+   until the subject changes - another POINT target, a new item written / appearing, the next slide. Pointing again at
+   what is already lit does nothing (no re-pulse); a gap-filler point (style 'fill') never changes the highlight within
+   4 s of the last change. */
+function anHlOff(){const now=performance.now();for(const f of AN.fx)if(f.persist&&!f.ending)f.ending=now}
 function anFire(l,v,bi,svg,pre){const r=pre||anResolve(l.point,v,bi,svg);if(r.err){toast('POINT: '+r.err);return 0}
- const style=(l.style||'hl').toLowerCase(),dur=+l.dur||(r.shapes.length>2?1.9:1.5),dot=style==='hl'?null:r.dot;
+ if(AN.persist&&String(l.style||'hl').toLowerCase()!=='dot'){const now=performance.now(),key=r.shapes.map(x=>x.k==='box'?[x.x,x.y,x.w,x.h].map(Math.round).join(','):x.k+(x.pts||[]).length).join('|'),
+   cur=AN.fx.find(f=>f.persist&&!f.ending);
+  if(cur&&cur.key===key)return 0;
+  if(String(l.style).toLowerCase()==='fill'&&now-(AN.lastHl||0)<4000)return 0;
+  anHlOff();AN.lastHl=now;AN.fx.push({t0:now,dur:1e9,shapes:r.shapes,dot:null,lead:0,persist:1,key});anLoop();return 0}
+ const style=(l.style||'hl').toLowerCase().replace('fill','hl'),dur=+l.dur||(r.shapes.length>2?1.9:1.5),dot=style==='hl'?null:r.dot;
  const f={t0:performance.now(),dur,shapes:style==='dot'?[]:r.shapes,dot,lead:dot?.45:0};
  if(dot){f.from=AN.dotPos||{x:Math.min(1560,dot.x+120),y:Math.min(880,dot.y+90)};AN.dotPos=dot}
  AN.fx.push(f);anLoop();return f.lead+dur}
-function anPaint(g,k){if(!AN.fx.length)return;const now=performance.now();AN.fx=AN.fx.filter(f=>f.k==='w'?now-f.t0<(f.dur+8)*1000:now-f.t0<(f.lead+f.dur+.35)*1000);if(!AN.fx.length)return;
+function anPaint(g,k){if(!AN.fx.length)return;const now=performance.now();AN.fx=AN.fx.filter(f=>f.k==='w'?now-f.t0<(f.dur+8)*1000:f.persist?!(f.ending&&now-f.ending>350):now-f.t0<(f.lead+f.dur+.35)*1000);if(!AN.fx.length)return;
  g.save();g.scale(k,k);g.lineJoin='round';g.lineCap='round';
- for(const f of AN.fx){if(f.k==='w'){anWritePaint(g,f,now);continue}const t=(now-f.t0)/1000,th=t-f.lead*.6,a=Math.max(0,Math.min(1,th/.2,(f.lead+f.dur-t)/.4)),grow=1-Math.min(1,Math.max(0,th)/.25);
+ for(const f of AN.fx){if(f.k==='w'){anWritePaint(g,f,now);continue}const t=(now-f.t0)/1000,th=t-f.lead*.6,a=Math.max(0,Math.min(1,th/.2,(f.lead+f.dur-t)/.4,f.ending?1-(now-f.ending)/300:1)),grow=1-Math.min(1,Math.max(0,th)/.25);
   if(a>0)for(const s of f.shapes){
    if(s.k==='box'){const p=(s.pad??9)+5*grow,r=s.r??12;g.save();g.globalCompositeOperation='multiply';g.fillStyle='rgba(255,214,10,'+(.6*a)+')';anRR(g,s.x-p,s.y-p,s.w+2*p,s.h+2*p,r);g.fill();g.restore();
     g.save();g.strokeStyle='rgba(230,140,0,'+(.95*a)+')';g.lineWidth=3;anRR(g,s.x-p,s.y-p,s.w+2*p,s.h+2*p,r);g.stroke();g.restore()}
@@ -151,7 +174,13 @@ function anMarkHand(kind,B){let sd=(Math.round(B.x*7+B.y*13+B.w*3)>>>0)||1;const
    one by one at pen speed from its cue phrase; the writing takes the phrase's length (manifest atEnd), kept at 6-10
    characters a second and ended before the next cue; then the ready slide state (same strokes) is swapped in ---- */
 function anWrites(mine,b){const add=[];
- for(const c of mine){if(c.k!=='appear'||!c.l.write)continue;const it=b.items[c.l.appear]||{},n=it.hw?.n||String(it.t||'').replace(/\s/g,'').length||4;
+ for(const c of mine){if(c.k!=='appear'||!c.l.write)continue;
+  /* 2026-10-11 (her reading): written in chunks, each while she says it (manifest 'writes', reading_to_video.py); only
+     squeezed if the next item would appear before the writing ends */
+  if(c.wr&&c.wr.length){const t=Math.max(c.t,c.wr[0][0]);let end=c.wr[c.wr.length-1][1];
+   const nxA=mine.reduce((a,x)=>x!==c&&x.k==='appear'&&x.t>c.t+.01?Math.min(a,x.t):a,1e9),lim=nxA-.12;
+   const sc=end>lim&&lim>t+.35?(lim-t)/(end-t):1;end=t+(end-t)*sc;
+   add.push({k:'write',t,dur:Math.max(.35,end-t),l:c.l,ap:c,chunks:c.wr.map(([a,b2,s0,s1])=>({a:Math.max(0,(a-t)*sc),b:Math.max(0,(b2-t)*sc),s0,s1}))});c.t=t+Math.max(.35,end-t);continue}const it=b.items[c.l.appear]||{},n=it.hw?.n||String(it.t||'').replace(/\s/g,'').length||4;
   let d=c.te!=null&&c.te>c.t?c.te-c.t:n/8;d=Math.max(n/10,Math.min(n/6,d));
   const nx=mine.reduce((a,x)=>x!==c&&x.k!=='say'&&x.t>c.t+.01?Math.min(a,x.t):a,1e9),cap=nx-c.t-.12;if(d>cap)d=Math.max(cap,Math.min(d,n/14));d=Math.max(.35,d);
   add.push({k:'write',t:c.t,dur:d,l:c.l,ap:c});c.t+=d}
@@ -163,7 +192,9 @@ function anNotYet(mine,b){/* the board shows items 0 .. pre+step-1, step = APPEA
  const at=mine.filter(c=>c.k==='appear').map(c=>c.t).sort((x,y)=>x-y),pre=b.pre||0,apT={};for(let n=pre;n<pre+at.length;n++)apT[n]=at[n-pre];
  const idx=tg=>{const m=String(tg||'').match(/^\s*item\s*(\d+)/i);return m?+m[1]:null};let moved=0;
  for(const c of mine){if(c.k!=='point'&&c.k!=='mark')continue;const tg=c.k==='point'?[c.l.point]:(anMarkOf(c.l)?.targets||[]);
-  for(const n of tg.map(idx))if(n!=null&&apT[n]!=null&&c.t<apT[n]+.06){c.late=(c.late||0)+(apT[n]+.08-c.t);c.t=apT[n]+.08;moved++}}
+  for(const n of tg.map(idx))if(n!=null&&apT[n]!=null&&c.t<apT[n]+.06){c.late=(c.late||0)+(apT[n]+.08-c.t);c.t=apT[n]+.08;moved++}
+  if(c.k==='point'&&c.late>1)c.drop=1}   /* a POINT on the line the pen is still writing: the pen is the pointer - dropped */
+ for(let i=mine.length-1;i>=0;i--)if(mine[i].drop)mine.splice(i,1);
  if(moved){mine.sort((x,y)=>x.t-y.t);window.__anLate=(window.__anLate||0)+moved}}
 function anWritePrep(c,v,bi){const root=anRoot(boardSvg(v,bi,c.ap.step)),g=root?.querySelector(':scope > g[data-i="'+c.l.appear+'"]'),ink=g?.querySelector('g[data-hw]');
  if(!ink)throw Error('slide '+(bi+1)+': WRITE item '+c.l.appear+' is not a hand-written item');
@@ -174,9 +205,12 @@ function anWritePrep(c,v,bi){const root=anRoot(boardSvg(v,bi,c.ap.step)),g=root?
   if(prev)tot+=7+.3*Math.hypot(pts[0][0]-prev[0],pts[0][1]-prev[1]);   /* pen lifted: moves to the next stroke */
   const s={pts,cum,t0:tot};tot+=cum[cum.length-1]+10;s.t1=tot;S.push(s);prev=pts[pts.length-1]}
  for(const s of S){s.t0/=tot||1;s.t1/=tot||1}
- c.W={S,color:ink.getAttribute('stroke')||'#d62d48',width:+ink.getAttribute('stroke-width')||4}}
+ c.W={S,color:ink.getAttribute('stroke')||'#d62d48',width:+ink.getAttribute('stroke-width')||4};
+ if(c.chunks){const fr=i=>i<S.length?S[i].t0:1;c.W.ch=c.chunks.map(x=>({a:x.a,b:Math.max(x.b,x.a+.05),f0:fr(x.s0),f1:fr(x.s1)}))}}
 function anWriteFire(e){const f={k:'w',t0:performance.now(),dur:e.dur,W:e.W};AN.fx.push(f);anLoop();return f}
-function anWritePaint(g,f,now){const T=Math.max(0,Math.min(1,(now-f.t0)/1000/f.dur));if(!T)return;
+function anWritePaint(g,f,now){const el=(now-f.t0)/1000;let T=Math.max(0,Math.min(1,el/f.dur));
+ if(f.W.ch){T=0;for(const c of f.W.ch){if(el<c.a)break;T=el>=c.b?c.f1:c.f0+(c.f1-c.f0)*(el-c.a)/(c.b-c.a)}}
+ if(!T)return;
  g.save();g.strokeStyle=f.W.color;g.lineWidth=f.W.width;g.lineCap='round';g.lineJoin='round';g.beginPath();
  for(const s of f.W.S){if(T<=s.t0)break;let u=Math.min(1,(T-s.t0)/(s.t1-s.t0));u=.5*u+.5*(.5-.5*Math.cos(Math.PI*u));   /* a pen slows at both ends of a stroke */
   const L=s.cum[s.cum.length-1]*u,P=s.pts;g.moveTo(P[0][0],P[0][1]);if(P.length===2&&s.cum[1]<1){g.lineTo(P[1][0],P[1][1]);continue}
@@ -233,7 +267,7 @@ async function anPrerender(v){const pre=new Map();pre.svg={};
 function anTimeline(v,man){const L=man.lines,ev=[];let li=0;
  v.beats.forEach((b,bi)=>{const ls=hyLines(v,bi),slideT=bi?(()=>{const pe=L[li-1]?.end??0,ns=L[li]?.slide===bi?L[li].start:pe+.5;return Math.max(pe+.05,Math.min(ns-.3,(pe+ns)/2))})():0;
   if(bi)ev.push({t:slideT,k:'slide',bi});const mine=[];let pend=[],lastEnd=slideT,lastAp=slideT;
-  const place=(m)=>{pend.forEach((c,k)=>{let t=m?(m.at?.[k]??null):null;c.te=m?(m.atEnd?.[k]??null):null;if(t===-1)return;
+  const place=(m)=>{pend.forEach((c,k)=>{let t=m?(m.at?.[k]??null):null;c.te=m?(m.atEnd?.[k]??null):null;c.wr=m?(m.writes?.[k]??null):null;if(t===-1)return;
     if(t==null)t=!m?lastEnd+.15+.35*k:c.l.appear!=null?m.start-.12:c.l.point!=null?m.start+Math.max(0,Math.min(.95,+c.l.at||0))*(m.end-m.start):m.start+.05;
     c.t=Math.max(slideT+.05,t);if(c.k==='appear'){c.t=Math.max(c.t,lastAp+.05);lastAp=c.t}mine.push(c)});pend=[]};
   for(const l of ls){if(l.say!=null){const m=L[li++];if(!m)break;place(m);mine.push({t:m.start,k:'say',n:li,l});lastEnd=m.end}
@@ -259,17 +293,17 @@ function anShow(R,bi,step){state.beat=bi;state.step=step;
 async function anRunContinuous(R,v,man,buf,lg){
  const ev=R.ev,lead=.9,s=R.ac.createBufferSource();s.buffer=buf;s.connect(R.dest);s.connect(R.ac.destination);R.src=s;
  let ended=false;s.onended=()=>{ended=true};const t0=R.ac.currentTime+lead;s.start(t0);lg('audio start (lead '+lead+' s)');
- const marks=[];let i=0;const last=Math.max(buf.duration,...ev.map(e=>e.t+(e.k==='mark'?1.2:0)));
+ AN.persist=1;AN.lastHl=0;const marks=[];let i=0;const last=Math.max(buf.duration,...ev.map(e=>e.t+(e.k==='mark'?1.2:0)));
  while(!R.abort){const now=R.ac.currentTime-t0;
   while(i<ev.length&&ev[i].t<=now){const e=ev[i++];
    if(e.k==='say'){anStatus('🤖 Auto-narrating · slide '+(e.bi+1)+'/'+v.beats.length+' · line '+e.n+'/'+man.lines.length);lg('say '+e.n)}
-   else if(e.k==='slide'){anShow(R,e.bi,0);lg('slide '+(e.bi+1))}
-   else if(e.k==='write'){e.ap.wfx=anWriteFire(e);lg('write '+e.l.appear)}
-   else if(e.k==='appear'){anShow(R,e.bi,e.step);if(e.wfx)AN.fx=AN.fx.filter(f=>f!==e.wfx);lg('appear '+e.l.appear+(e.l.part!=null?' part '+e.l.part:''))}
+   else if(e.k==='slide'){anHlOff();anShow(R,e.bi,0);lg('slide '+(e.bi+1))}
+   else if(e.k==='write'){anHlOff();e.ap.wfx=anWriteFire(e);lg('write '+e.l.appear)}
+   else if(e.k==='appear'){if(!e.wfx)anHlOff();anShow(R,e.bi,e.step);if(e.wfx)AN.fx=AN.fx.filter(f=>f!==e.wfx);lg('appear '+e.l.appear+(e.l.part!=null?' part '+e.l.part:''))}
    else if(e.k==='point'){anFire(e.l,v,e.bi,null,e.pre);lg('point '+e.l.point)}
    else if(e.k==='mark'){lg('mark '+e.l.draw);marks.push(anMarkDo(e.mk,v,e.bi,e.boxes))}}
   if(now>=last&&(ended||now>buf.duration+.5))break;await anSleep(8)}
- await Promise.all(marks);lg('audio end');if(!R.abort)await anWait(R,1100)}
+ await Promise.all(marks);anHlOff();AN.persist=0;lg('audio end');if(!R.abort)await anWait(R,1100)}
 async function anStart(){const v=video();if(!STUDIO||!v||record||window.AN_RUN)return;
  const ac=new (window.AudioContext||window.webkitAudioContext)({sampleRate:48000});ac.resume?.();
  let audio,bufs=[];try{audio=await anLoadAudio(v.id)}catch(e){ac.close();return dialog('🤖 Auto-narrate',`<p>${esc(e.message||e)}</p>`)}

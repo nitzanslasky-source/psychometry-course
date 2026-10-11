@@ -234,9 +234,50 @@ def _merge_title(v):
         for i, b in enumerate(beats): b['active'] = i; b['number'] = i + 1
 
 
+AUTO_SIZE, AUTO_X, AUTO_W = 34, 1010, 540
+
+
+def auto_place(vid, cues, autos):
+    """2026-10-11 auto lines (reading_to_video.auto_lines): a scratch column on the right of the work area - below the
+    right-column items of the slide (and earlier auto lines), only where there is room above the answer choices.
+    -> each auto gets x, y (or skip=True)"""
+    o = json.load(open(os.path.join(SB, 'ai_scripts', vid + '.json'), encoding='utf-8'))
+    slide_of, n = {}, 0
+    for si, sl in enumerate(o['slides']):
+        for _ in sl: n += 1; slide_of[n] = si
+    sol = vid.startswith('solve-'); top0, limit = (100, 600) if sol else (78, 840)
+    est = lambda it: (it.get('h') or 120) if it.get('k') in ('vis', 'nl') else (it.get('size') or 46) * 1.55
+    ybot = {}
+    for n_, cs in cues.items():
+        for c in cs:
+            if isinstance(c, tuple):
+                it = c[1]
+                if (it.get('x') or 0) >= 900 and it.get('y') is not None and not it.get('over'):
+                    si = slide_of[n_]; ybot[si] = max(ybot.get(si, top0 - 16), it['y'] + est(it))
+    for au in autos:
+        si = slide_of[au['line']]; y = ybot.get(si, top0 - 16) + 16
+        if y + AUTO_SIZE * 1.55 > limit: au['skip'] = True; continue
+        au['x'], au['y'] = AUTO_X, int(y); ybot[si] = y + AUTO_SIZE * 1.55 + 6
+    return autos
+
+
+def _auto_inject(vid, cues):
+    """the auto lines of her reading (_voice_real/<vid>/auto_lines.json), hand-written videos only: an APPEAR+WRITE and a
+    highlight cue at the place reading_to_video put them in the manifest"""
+    if os.environ.get('AI_AUTOLINES', '1') == '0' or not _hw(vid): return []
+    p = os.path.join(os.path.expanduser('~/Documents/Course.recordings/_voice_real'), vid, 'auto_lines.json')
+    if not os.path.exists(p): return []
+    autos = [a for a in json.load(open(p, encoding='utf-8')) if not a.get('skip')]
+    for au in sorted(autos, key=lambda a: a['t0']):
+        it = HWR.item(au['text'], size=AUTO_SIZE, x=au['x'], y=au['y'], w=AUTO_W); it['auto'] = au['id']
+        cues.setdefault(au['line'], [])[au['k']:au['k']] = [('item', it, "'%s' is written (her own calculation)" % au['text'], True),
+                                                             {'point': 'AUTO:' + au['id'], 'label': au['text'], 'style': 'fill'}]
+    return autos
+
+
 def apply(M, vid):
     """rebuild the cue lines + click items of every slide of `vid` around its spoken lines (see the module doc)."""
-    v = M.video(vid); cues, _ = cues_of(vid)
+    v = M.video(vid); cues, _ = cues_of(vid); autos = _auto_inject(vid, cues)
     _merge_title(v)
     for b in v['beats']:                                   # keep the pre-loaded items and the spoken lines only
         b['items'] = b['items'][:b['pre']]; b['lines'] = [l for l in b['lines'] if 'say' in l]
@@ -261,6 +302,10 @@ def apply(M, vid):
         old = [l['appear'] for l in ap]; items = b['items'][:b['pre']] + [b['items'][k] for k in old]
         for j, l in enumerate(ap): l['appear'] = b['pre'] + j
         b['items'] = items
+        for l in b['lines']:                               # a highlight on an auto line: its item number, now known
+            if str(l.get('point', '')).startswith('AUTO:'):
+                k = next((j for j, it in enumerate(items) if it.get('auto') == l['point'][5:]), None)
+                l['point'] = 'item %d' % k if k is not None else 'stem'
     M.touched_videos.add(vid)
 
 

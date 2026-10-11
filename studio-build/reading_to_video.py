@@ -32,6 +32,8 @@ _argv = sys.argv[:]; sys.argv = ['x']
 import ai_narrate as A
 from reading_studio import covered as rs_covered, sentences as rs_sentences
 sys.argv = _argv
+# her-voice videos are hand-written (the write cues and their chunk timing need _ai_visual's handwriting mode)
+os.environ.setdefault('AI_HANDWRITE', 'all')
 REC = os.path.expanduser('~/Documents/Course.recordings')
 IN, OUTROOT = os.path.join(REC, '_reading'), os.path.join(REC, '_voice_real')
 SR = 48000
@@ -159,31 +161,218 @@ def back_to_start(W, Wt, a, b, t0, look=20.0):
     return best
 
 
-def mark_cuts(W, Wt, marks, words, floor=None):
+def mark_cuts(W, Wt, marks, words, floor=None, onset=None):
     """each mistake mark at t: she re-reads a sentence right after it. The repeat starts at her first word after t; the
     failed attempt is the latest earlier place (within 25 s) where she said the same first words -> cut [failed, repeat)."""
     out = []
     for t in marks:
         lo = (floor or {}).get(t, t - 25)          # never reach back before the start of the paragraph she was reading
-        r = next((j for j in range(len(W)) if Wt[j][0] >= t - .05), None)
+        # her re-read can start before the mark (she pressed M a moment late) - from her voice onset after the pause
+        o = onset(t) if onset is not None else None
+        t_r = min(t, o) if o is not None and o > t - 2.5 else t
+        r = next((j for j in range(len(W)) if Wt[j][0] >= t_r - .15 or Wt[j][1] > t + .3), None)
         if r is None or r + 2 >= len(W): continue
-        X = W[r:r + 6]; best = None
+        # whisper smears a re-read's first words back over the pause before it (r26-01: "Now" 179.5-179.5, "the"
+        # 179.5-180.8, mark at 180.05): words glued to it, starting less than 1 s before the mark, belong to the re-read
+        while r > 0 and t - Wt[r - 1][0] < 1.0 and Wt[r - 1][1] >= Wt[r][0] - .05:
+            r -= 1
+        X = W[r:r + 6]; best = None; best_hit = 0
         for p in range(r - 1, -1, -1):
             if Wt[r][0] - Wt[p][0] > 60 or Wt[p][0] < lo - 1.0: break
             if not (same(W[p], X[0]) or (len(X) > 1 and same(W[p], X[1]))): continue
             Y = W[p:min(r, p + len(X) + 2)]       # her words there, a little longer (she may add a word: "how exactly do")
             hit = sum(bl.size for bl in difflib.SequenceMatcher(None, X, Y, autojunk=False).get_matching_blocks())
-            if hit >= max(3, int(.66 * len(X))):
-                best = p
-                while best > 0 and same(W[best - 1], X[0]) and not same(W[best], X[0]): best -= 1   # "negative | 16 is there"
-                break
+            # the BEST matching earlier attempt (r26-01: "negative 3 | two times negative three..." re-read as a whole
+            # block - the nearest "negative 3" was the wrong one); a tie keeps the later one
+            if hit >= max(3, int(.66 * len(X))) and hit > best_hit:
+                best, best_hit = p, hit
+        if best is not None:
+            while best > 0 and same(W[best - 1], X[0]) and not same(W[best], X[0]): best -= 1   # "negative | 16 is there"
         if best is None:                          # no same first words: the failed attempt is the sentence she was in
             for p in range(r - 1, -1, -1):
                 if Wt[p][0] < lo - .5 or Wt[r][0] - Wt[p][0] > 20: break
                 prev_w = words[Wt[p - 1][2]]['w'] if p > 0 else '.'
                 if prev_w.rstrip().endswith(('.', '?', '!')) and Wt[p][2] != Wt[p - 1][2]: best = p; break
-        if best is not None: out.append((Wt[best][0], Wt[r][0], t))
+        # the re-read can start before whisper's first word after the mark (q-362: "Which choice gives" re-read at
+        # 98.1 s, whisper's next word "six" at 98.9 - the cut ate the re-read): end the cut at her voice onset
+        end = Wt[r][0]
+        if onset is not None:
+            o = onset(t)
+            if o is not None and t <= o < end: end = max(o - .1, t)
+        if best is not None: out.append((Wt[best][0], end, t))
     return out
+
+
+def write_chunks(text, hw):
+    """a hand-written line -> [(char start, char end, first stroke, end stroke, spoken tokens)]: a new chunk at a top-level
+    = < > ≤ ≥ ≠, and after a comma / colon or a wide gap (2+ spaces)"""
+    ix = hw.get('ix') or []; ns = len(hw.get('s') or [])
+    if not ix: return []
+    depth, cuts = 0, [0]
+    for i, c in enumerate(text):
+        if c in '{': depth += 1
+        elif c in '}': depth -= 1
+        elif depth == 0 and i > 0:
+            if c in '=<>≤≥≠' and text[i - 1] not in '=<>≤≥≠': cuts.append(i)
+            elif c != ' ' and (text[i - 1] in ',:' or text[max(0, i - 2):i] == '  '): cuts.append(i)
+    cuts = sorted(set(cuts)) + [len(text)]
+    stroke_at = lambda ci: next((b for a, b in ix if a >= ci), ns)
+    out = []
+    for a, b in zip(cuts, cuts[1:]):
+        seg = text[a:b]
+        sp = re.sub(r'\\hl\{[^}]*\}', '', seg).replace('{', ' ').replace('}', ' ').replace('/', ' over ').replace('|', ' absolute ')
+        sp = sp.replace('−', '-').replace('·', ' times ').replace('≤', ' at most ').replace('≥', ' at least ').replace('≠', ' not ')
+        toks = [t for t in norm_tokens(sp) if t not in ('the', 'of', 'value', 'equals', 'is', 'than', 'less', 'more')]
+        s0, s1 = stroke_at(a), stroke_at(b)
+        if s1 > s0: out.append((a, b, s0, s1, toks))
+    return out
+
+
+# ------------------------------------------------------------------------------------------------ auto lines
+# 2026-10-11 (teacher approved: "just make sure it's flowing"): a calculation she SAYS in her own added words ("minus
+# seven plus nine is two", "fourteen squared is one hundred ninety-six") is hand-written as she says it - left side
+# while she says it, "= result" with the result. Checked first: a wrong one is not written but flagged (a slip of
+# hers). Placed in a small scratch column on the right (_ai_visual.auto_items), at most 3 a slide, never a single
+# number, never a line that is already on the board; highlighted after it is written.
+from fractions import Fraction as _F
+_WN = {w: i for i, w in enumerate(ONES)}; _WN.update({w: 10 * i for i, w in enumerate(TENS) if w != 'x'})
+_OPS = {'plus': '+', '+': '+', 'minus': '-', '−': '-', 'times': '*', 'x': '*', '×': '*', 'over': '/', 'divided': '/'}
+_RES = {'is', 'equals', 'gives', 'makes', 'equal', '='}
+MAX_AUTO = 3
+
+
+def _calc_tokens(ws):
+    """her words -> [(kind, value, word index)]: N number, O operator, U unary minus, P power, R result, X other"""
+    out = []
+    for k, w in enumerate(ws):
+        t = w['w'].lower().strip(" ,.?!;:…'\"")
+        for part in re.findall(r"-?\d+(?:\.\d+)?|[a-z']+|[+=−×-]", t.replace('−', '-')):
+            if re.fullmatch(r'-\d+(\.\d+)?', part): out += [('U', None, k), ('N', _F(part[1:]), k)]
+            elif re.fullmatch(r'\d+(\.\d+)?', part): out.append(('N', _F(part), k))
+            elif part in _WN: out.append(('N', _F(_WN[part]), k))
+            elif part == 'hundred' and out and out[-1][0] == 'N': out[-1] = ('N', out[-1][1] * 100, out[-1][2])
+            elif part == 'negative': out.append(('U', None, k))
+            elif part in ('minus', '-'): out.append(('M', None, k))         # unary or binary, decided below
+            elif part in _OPS: out.append(('O', _OPS[part], k))
+            elif part in ('by', 'divided') and part == 'by' and out and out[-1][0] == 'O': continue
+            elif part == 'squared': out.append(('P', 2, k))
+            elif part == 'cubed': out.append(('P', 3, k))
+            elif part in _RES: out.append(('R', None, k))
+            elif part == 'be' and k > 0 and ws[k - 1]['w'].lower().strip(" ,.") == 'will': out.append(('R', None, k))
+            elif part == 'will': continue                                  # "will be" = the result word
+            elif part in ('and', 'so', 'then'): out.append(('S', None, k))
+            else: out.append(('X', part, k))
+    # numbers said with "and": "one hundred and ninety-six" is not handled - such a calc is simply not written
+    return out
+
+
+def _parse_calcs(ws):
+    T = _calc_tokens(ws); found = []; i = 0
+    def operand(j):
+        neg = False
+        if j < len(T) and T[j][0] in ('U', 'M'): neg = True; j += 1
+        if j < len(T) and T[j][0] == 'N': return (-T[j][1] if neg else T[j][1], neg, j + 1)
+        return None
+    while i < len(T):
+        o = operand(i)
+        if not o: i += 1; continue
+        terms = [(o[0], o[1])]; ops = []; j = o[2]; pw = None; start = i
+        while j < len(T):
+            if T[j][0] == 'P': pw = T[j][1]; j += 1; break
+            if T[j][0] in ('O', 'M'):
+                op = T[j][1] if T[j][0] == 'O' else '-'; o2 = operand(j + 1)
+                if not o2: break
+                ops.append(op); terms.append((o2[0], o2[1])); j = o2[2]; continue
+            break
+        if (ops or pw) and j < len(T) and T[j][0] == 'R':
+            r = operand(j + 1)
+            if r:
+                expr = ' '.join(['(%r)' % terms[0][0]] + ['%s (%r)' % (op, v) for op, (v, _) in zip(ops, terms[1:])])
+                try: val = eval(expr, {'Fraction': _F}) if not pw else terms[0][0] ** pw
+                except ZeroDivisionError: val = None
+                if pw and ops: val = None                               # "two plus three squared": too ambiguous
+                fmt = lambda v, neg, inner: ('(−%s)' % _num(-v) if inner else '−' + _num(-v)) if v < 0 else _num(v)
+                left = fmt(terms[0][0], terms[0][1], False)
+                for op, (v, ng) in zip(ops, terms[1:]):
+                    left += ' %s %s' % ({'+': '+', '-': '−', '*': '·', '/': '÷'}[op], fmt(v, ng, True))
+                if pw: left += '^%d' % pw
+                text = '%s = %s' % (left, fmt(r[0], r[1], False))
+                found.append({'text': text, 'ok': val is not None and val == r[0], 'value': None if val is None else str(val),
+                              'w0': T[start][2], 'wr': T[j][2], 'w1': T[r[2] - 1][2]})
+                i = r[2]; continue
+        i = start + 1
+    return found
+
+
+def _num(v):
+    v = _F(v)
+    return str(v.numerator) if v.denominator == 1 else '%s/%s' % (v.numerator, v.denominator)
+
+
+def _calc_key(t):
+    return re.sub(r'[\s()]', '', str(t)).replace('−', '-').replace('–', '-').replace('\\cdot', '·').replace('$', '')
+
+
+def auto_lines(vid, out, man, mp, words, extra_spans, cut, merged, newt, cue_lines, flat, rep):
+    import studio_handwrite as HWR
+    p = os.path.join(out, 'auto_lines.json'); rep['auto_lines'] = []; rep['auto_flagged'] = []
+    if os.environ.get('AI_AUTOLINES', '1') == '0':
+        os.path.exists(p) and os.remove(p); return
+    L = man['lines']; per_slide = {}; autos = []
+    # what is already on each slide (typed and hand-written text of its items), to skip duplicates
+    have = {}
+    for n, cs in cue_lines.items():
+        si = flat[n - 1][0]
+        for c in cs:
+            if isinstance(c, tuple):
+                it = c[1]; have.setdefault(si, set()).add(_calc_key(it.get('t') or ''))
+    for w0, w1, a_, b_ in extra_spans:
+        ws = words[w0:w1 + 1]
+        for c in _parse_calcs(ws):
+            kept = lambda w: not any(a <= w['s'] < b for a, b in merged)
+            W_ = ws[c['w0']:c['w1'] + 1]
+            if not all(kept(w) for w in W_): rep.setdefault('auto_skipped', []).append([c['text'], 'partly cut']); continue
+            t0 = newt(W_[0]['s']); tr = newt(ws[c['wr']]['s']); t1 = newt(W_[-1]['e'])
+            if not c['ok']:
+                rep['auto_flagged'].append({'t': round(t0, 2), 'said': ' '.join(w['w'] for w in W_), 'as': c['text'], 'true value': c['value']}); continue
+            # its line: the spoken line it is said in (the next line if it falls in the pause before that line)
+            li = next((k for k in range(len(L)) if L[k]['start'] - .05 <= t0 <= L[k]['end'] + .3), None)
+            if li is None:
+                li = next((k for k in range(len(L)) if L[k]['start'] > t0), None)
+                if li is None or (li > 0 and flat[li][0] != flat[li - 1][0]):
+                    rep.setdefault('auto_skipped', []).append([c['text'], 'said at a slide change']); continue
+            si = flat[li][0]
+            key = _calc_key(c['text'])
+            if key in have.get(si, set()) or per_slide.get(si, 0) >= MAX_AUTO:
+                rep.setdefault('auto_skipped', []).append([c['text'], 'already on the board' if key in have.get(si, set()) else '3 on this slide already']); continue
+            hw = HWR.write(c['text']); ch = write_chunks(c['text'], hw)
+            if len(ch) != 2: rep.setdefault('auto_skipped', []).append([c['text'], 'chunks']); continue
+            chunks = [[round(t0, 3), round(max(tr, t0 + .3), 3), ch[0][2], ch[0][3]], [round(max(tr, t0 + .3), 3), round(max(t1, tr + .3), 3), ch[1][2], ch[1][3]]]
+            have.setdefault(si, set()).add(key); per_slide[si] = per_slide.get(si, 0) + 1
+            autos.append({'id': 'auto%d' % (len(autos) + 1), 'line': li + 1, 'slide': si, 'text': c['text'], 't0': round(t0, 3),
+                          't1': chunks[-1][1], 'chunks': chunks, 'said': ' '.join(w['w'] for w in W_)})
+    # room on the board: the scratch column (shared rule, _ai_visual.auto_place) - no room = not written
+    import importlib.util as _u
+    AV = sys.modules['_ai_visual']; AV.auto_place(vid, cue_lines, autos)
+    rep.setdefault('auto_skipped', []).extend([a['text'], 'no room on the board'] for a in autos if a.get('skip'))
+    autos = [a for a in autos if not a.get('skip')]
+    # cue position in its line (by time among the line's planned cues) + the manifest entries (appear+write, then a
+    # highlight on it right after it is written)
+    for au in sorted(autos, key=lambda x: x['t0']):
+        ln_ = L[au['line'] - 1]; ats = ln_.get('at') or []
+        k = sum(1 for x in ats if x is not None and x != -1 and x <= au['t0'])
+        # never between a cue and the ones before it in the line that are skipped/None: after the last earlier one
+        au['k'] = k
+        for key_ in ('at', 'atEnd'):
+            arr = ln_.setdefault(key_, [None] * len(ats))
+            arr[k:k] = [au['t0'] if key_ == 'at' else au['t1'], au['t1'] + .15 if key_ == 'at' else au['t1'] + .5]
+        wr = ln_.get('writes') or {}
+        ln_['writes'] = {str(int(x) + 2 if int(x) >= k else int(x)): v for x, v in wr.items()}
+        ln_['writes'][str(k)] = au['chunks']
+    man['auto'] = len(autos)
+    json.dump(man, open(mp, 'w'), indent=1, ensure_ascii=False)
+    json.dump(autos, open(p, 'w'), indent=1, ensure_ascii=False)
+    rep['auto_lines'] = [{'line': a['line'], 'text': a['text'], 'said': a['said']} for a in autos]
 
 
 # ------------------------------------------------------------------------------------------------ audio helpers
@@ -239,8 +428,30 @@ def splice_patches(vid, base, side, y, words, lines, out):
         if t_a is None: continue
         t_b = min(nxt) if nxt else len(y) / SR
         before = [w for w in words if w['e'] <= t_a + .3]; after = [w for w in words if w['s'] >= t_b - .05]
-        a = (before[-1]['e'] + .2) if before else 0.0; b = (after[0]['s'] - .1) if after else len(y) / SR
-        py = read_wav(os.path.join(d, f)); L = len(py) / SR
+        # 2026-10-11 teacher (q-359 "is our answer" clipped at the splice): the join sits in her pause, measured on the
+        # audio - after the end of her voice (+0.15 s), before its onset (-0.1 s) - not at whisper's word times
+        dbf = frames_db(y); soft = dbf > np.percentile(dbf[dbf > -80], 90) - 32
+        def _end(t):
+            k = int(t * 100)
+            while k < len(soft) - 6 and k < int(t * 100) + 60 and soft[k:k + 6].any(): k += 1
+            return k / 100.0
+        def _on(t):
+            k = int(t * 100)
+            while k > 6 and k > int(t * 100) - 40 and soft[k - 6:k].any(): k -= 1
+            return k / 100.0
+        a = (_end(before[-1]['e']) + .15) if before else 0.0; b = (_on(after[0]['s']) - .1) if after else len(y) / SR
+        py = read_wav(os.path.join(d, f))
+        # a patch take that covers SEVERAL paragraphs: only this paragraph's part of it (from her Space press for it to
+        # the next one) - the whole take spliced in per paragraph doubled q-359's re-read (2026-10-11)
+        pst = sorted(q['t'] for q in ps_.get('paragraphStarts', []) if q['para'] == i)
+        pa = pst[-1] if pst else 0.0
+        nx_ = [q['t'] for q in ps_.get('paragraphStarts', []) if q['t'] > pa + .05 and q['para'] != i]
+        pb = min(nx_) if nx_ else len(py) / SR
+        if pa > 0 or pb < len(py) / SR:
+            pa = max(0.0, pa - .15); py = py[int(pa * SR):int(pb * SR)]
+            pw = [dict(w, s=round(w['s'] - pa, 3), e=round(w['e'] - pa, 3)) for w in pw if pa - .05 <= w['s'] < pb]
+            ps_ = dict(ps_, mistakes=[dict(m, t=m['t'] - pa) for m in ps_.get('mistakes', []) if pa <= m['t'] < pb + .5])
+        L = len(py) / SR
         y = np.concatenate([y[:int(a * SR)], np.zeros(int(.25 * SR), 'float32'), py, np.zeros(int(.25 * SR), 'float32'), y[int(b * SR):]])
         off = a + .25; delta = (off + L + .25) - b
         sh = lambda w, o: dict(w, s=round(w['s'] + o, 3), e=round(w['e'] + o, 3))
@@ -293,6 +504,7 @@ def run(vid):
         for m in re.finditer(r"\S+", t):
             for tok in norm_tokens(m.group(0)): S.append(tok); Sl.append((li, m.start(), m.end()))
     rep = {'cuts': [], 'kept_extra': [], 'missing': [], 'marks_unused': []}
+    extra_spans = []                             # her own words kept: (first word, last word, first token, end token)
     cut = []                                     # (t0, t1, why) in the original WAV
     # 1) her mistake marks FIRST: each one cuts the failed attempt before it (she knows best which take failed); those
     #    words are taken out before aligning, so the aligner cannot pick a failed attempt that happens to match better
@@ -301,7 +513,14 @@ def run(vid):
     for mk_ in side.get('mistakes', []):
         st_ = [q['t'] for q in side.get('paragraphStarts', []) if q['para'] == mk_['para'] and q['t'] <= mk_['t']]
         pstart[mk_['t']] = max(st_) if st_ else mk_['t'] - 25
-    for t0, t1, x in mark_cuts(W, Wt, marks, words, pstart):
+    _sv = db > np.percentile(db[db > -80], 90) - 32
+    def _onset_after(t):
+        k = int(t * 100)
+        while k < len(_sv) - 10:
+            if _sv[k:k + 10].all(): return k / 100.0
+            k += 1
+        return None
+    for t0, t1, x in mark_cuts(W, Wt, marks, words, pstart, _onset_after):
         cut.append((t0, t1, 'mistake mark')); used.add(x)
         rep['cuts'].append({'t': round(t0, 2), 'len': round(t1 - t0, 2), 'why': 'mistake mark (failed attempt before it)',
                             'words': ' '.join(w['w'] for w in words if t0 - .01 <= w['s'] < t1)})
@@ -321,6 +540,20 @@ def run(vid):
         if Wt[k][0] - tail_end > 3.0: break
         tail_end = Wt[k][1]
     cut.append((tail_end + .35, len(y) / SR, 'after the last words'))
+    # 2026-10-11 (verdict paragraphs removed after she read them, q-367/368/369: she reworded them, so the words did not
+    # match the removed text): when the removed sentences came BEFORE the kept ones of a line (verdict, then "Okay. I'll
+    # see you"), everything extra she said between the previous line and the kept part of that line goes
+    removed_regions = []
+    for li_ in sorted({r_[0] - 1 for r_ in removed}):
+        a_s = rs_sentences(asread[li_]); keep_s = set(rs_sentences(lines[li_]))
+        ks = [k for k, x in enumerate(a_s) if x in keep_s]; rs_ = [k for k, x in enumerate(a_s) if x not in keep_s]
+        if not ks or not rs_ or min(rs_) > min(ks): continue
+        pe_ = [Wt[jj][1] for jj, ii in matched.items() if Sl[ii][0] < li_]
+        # the kept part starts where 3+ of her words in a row match the line (a lone "the" inside her verdict can match)
+        mj = sorted(jj for jj, ii in matched.items() if Sl[ii][0] == li_)
+        qs_ = [Wt[jj][0] for k_, jj in enumerate(mj) if k_ + 2 < len(mj) and mj[k_ + 2] - jj == 2] or [Wt[jj][0] for jj in mj[-2:]]
+        if pe_ and qs_ and max(pe_) < min(qs_): removed_regions.append((max(pe_), min(qs_)))
+    rep['removed_regions'] = [[round(a, 2), round(b, 2)] for a, b in removed_regions]
     j = first_j
     while j <= last_j:
         if j in matched: j += 1; continue
@@ -338,7 +571,8 @@ def run(vid):
             restart = got >= .6 * len(toks)
         filler = all(t in FILLERS for t in toks)
         gone = False
-        if not restart and not filler and removed and len(toks) >= 3:
+        if not restart and not filler and any(r0 - .05 <= t0 and t1 <= r1 + .05 for r0, r1 in removed_regions): gone = True
+        if not gone and not restart and not filler and removed and len(toks) >= 3:
             rtoks = [t for _, _, tt in removed for t in tt]
             sm = difflib.SequenceMatcher(None, toks, rtoks, autojunk=False)
             gone = sum(bl.size for bl in sm.get_matching_blocks() if bl.size >= 2) >= .6 * len(toks)
@@ -354,8 +588,53 @@ def run(vid):
             rep['cuts'].append({'t': round(t0, 2), 'len': round(t1 - t0, 2), 'why': why, 'words': ' '.join(w['w'] for w in words[Wt[a][2]:Wt[b - 1][2] + 1])})
         else:
             rep['kept_extra'].append({'t': round(t0, 2), 'words': ' '.join(w['w'] for w in words[Wt[a][2]:Wt[b - 1][2] + 1])})
+            extra_spans.append((Wt[a][2], Wt[b - 1][2], a, b))
     for x in marks:
         if x not in used: rep['marks_unused'].append(round(x, 2))
+    # 2026-10-11 teacher ("but... but which one", "so we have two rays going outward" twice): a word or phrase said
+    # twice in a row (in what is kept) - the FIRST copy goes, the second stays. Not when the script itself repeats it.
+    stoks = ' '.join(S)
+    def kept_time(t):                              # her time with the cuts so far taken out (how close it sounds)
+        return t - sum(max(0.0, min(b, t) - a) for a, b, _w in cut)
+    for _ in range(6):
+        kk = [k for k in range(len(W)) if not any(a <= Wt[k][0] < b for a, b, _w in cut)]
+        hit = None
+        for x in range(len(kk)):
+            for n in range(8, 0, -1):              # (a) said twice in a row: "but... but", a phrase and the phrase again
+                if x + 2 * n > len(kk): continue
+                A_, B_ = kk[x:x + n], kk[x + n:x + 2 * n]
+                if not all(same(W[A_[q]], W[B_[q]]) for q in range(n)): continue
+                if n == 1 and (W[A_[0]] in ('ten', 'one') or len(W[A_[0]]) < 2): continue
+                if kept_time(Wt[B_[0]][0]) - kept_time(Wt[A_[-1]][1]) > 2.0: continue
+                # whisper can miss words: her voice between the two copies (outside cuts) = not a repeat
+                g0, g1 = int(Wt[A_[-1]][1] * 100) + 5, int(Wt[B_[0]][0] * 100) - 5
+                if g1 > g0 and sum(1 for k in range(g0, g1) if _sv[k] and not any(a <= k / 100 < b for a, b, _w in cut)) >= 25: continue
+                if ' '.join(W[q] for q in A_ + B_) in stoks: continue      # the script says it twice too
+                hit = (A_[0], B_[0], ' '.join(W[q] for q in A_)); break
+            if hit: break
+            # (b) a 5-word stretch said again within 16 words / 10 s ("so we have two rays going outward and we have
+            # a gap in the | we have two rays going outward and a gap in the middle"): the first try goes
+            if x + 5 <= len(kk):
+                G = [W[q] for q in kk[x:x + 5]]
+                if stoks.count(' '.join(G)) < 2:
+                    for yy in range(x + 5, min(len(kk) - 4, x + 5 + 40)):
+                        if kept_time(Wt[kk[yy]][0]) - kept_time(Wt[kk[x]][0]) > 20: break
+                        if all(same(G[q], W[kk[yy + q]]) for q in range(5)):
+                            # a real re-read: 7+ words the same in a row, and most of the first try said again after it
+                            # (r26-13: "if they're the same signs, so they add up..." vs a later "what if they're the
+                            # same signs but..." was cut by the 5-word rule - 11 s of real explanation lost)
+                            run_ = 5
+                            while yy + run_ < len(kk) and x + run_ < yy and same(W[kk[x + run_]], W[kk[yy + run_]]): run_ += 1
+                            first = [W[q] for q in kk[x:yy]]; again = [W[q] for q in kk[yy:yy + int(len(first) * 1.5) + 2]]
+                            sm_ = difflib.SequenceMatcher(None, first, again, autojunk=False)
+                            cov = sum(bl.size for bl in sm_.get_matching_blocks()) / max(1, len(first))
+                            if run_ >= 7 and cov >= .6:
+                                hit = (kk[x], kk[yy], ' '.join(W[q] for q in kk[x:yy])); break
+            if hit: break
+        if not hit: break
+        a_, b_, txt = hit; t0, t1 = Wt[a_][0], Wt[b_][0]
+        cut.append((t0, t1, 'repeat'))
+        rep['cuts'].append({'t': round(t0, 2), 'len': round(t1 - t0, 2), 'why': 'repeat (first copy cut)', 'words': txt})
     # script words she did not say
     said = set(i for i, j in pairs if i is not None and j is not None and eq[i, j])
     miss_runs, run_ = [], []
@@ -374,6 +653,13 @@ def run(vid):
         if b <= a: continue
         if merged and a <= merged[-1][1] + .05: merged[-1][1] = max(merged[-1][1], b)
         else: merged.append([a, b])
+    def drop_islands():
+        # a kept scrap shorter than 0.6 s between two cuts is a leftover of a failed attempt ("But" | ... | "but which")
+        k = 0
+        while k + 1 < len(merged):
+            if merged[k + 1][0] - merged[k][1] < .6: merged[k][1] = max(merged[k][1], merged[k + 1][1]); del merged[k + 1]
+            else: k += 1
+    drop_islands()
     # whisper's word starts can be late by 0.1-0.3 s: a cut starting at the failed word's start left its first syllable
     # (q-359 1:03, teacher: "it needs to cut off that second"). So a cut runs from just after her last KEPT word to just
     # before her next kept word (0.15 s of her pause kept on each side), at the quietest point there.
@@ -384,7 +670,11 @@ def run(vid):
         a, b = cr
         pe = max([e for e in ends if e <= a + .05], default=None); ns = min([s_ for s_ in starts if s_ >= b - .05], default=None)
         if pe is not None and a > 0 and pe + .15 < b: cr[0] = min(a, pe + .15) if a - pe < 4 else a
-        if ns is not None and b < len(y) / SR and ns - .15 > cr[0]: cr[1] = max(b, ns - .15)
+        # ...but never past the start of her voice: whisper can miss the first words of a re-read (q-362 "Which choice
+        # gives" before "six") - the next kept WORD is then late, her voice is not
+        if ns is not None and b < len(y) / SR and ns - .15 > cr[0]:
+            o_ = _onset_after(b - .05)
+            cr[1] = max(b, min(ns - .15, o_ - .1 if o_ is not None else ns - .15))
     # ... and whisper's times can be early too (a word "starting" in the silence before it): trim to her real voice -
     # from 0.15 s after the last loud frame before the cut to 0.15 s before the first loud frame after it
     loud = db > np.percentile(db[db > -80], 90) - 20       # her voice, not a breath or click (~ -25 dB)
@@ -398,34 +688,80 @@ def run(vid):
             k = int(b * 100)
             while k < len(loud) - 1 and not loud[k] and k / 100 - b < 2.0: k += 1
             if loud[k]: cr[1] = max(b, k / 100 - .15)
+    # 2026-10-11 teacher (q-359 "is our answer" cut mid-word, q-361 "x." lost): a cut never starts inside her last kept
+    # word or ends inside her next one - measured on the audio (a soft threshold, word tails are quiet), +0.15 s pad
+    soft = db > np.percentile(db[db > -80], 90) - 32
+    def voice_end(t):
+        k = int(t * 100)
+        while k < len(soft) - 6 and k < int(t * 100) + 60 and soft[k:k + 6].any(): k += 1
+        return k / 100.0
+    def voice_onset(t):
+        k = int(t * 100)
+        while k > 6 and k > int(t * 100) - 40 and soft[k - 6:k].any(): k -= 1
+        return k / 100.0
+    kept_ws = [w_ for w_ in words if kept_word(w_)]
+    def first_dip(t):
+        """the first clear dip in her voice after t (a word boundary inside a whisper word): 12 dB under the peak so far"""
+        k0 = int(t * 100) + 8; mx = -200.0
+        for k in range(k0, min(len(db) - 4, k0 + 50)):
+            mx = max(mx, db[k])
+            if db[k] < mx - 12 and db[k] <= db[k - 3:k + 4].min() + .01: return k / 100.0 + .005
+        return low_point(db, t, .12, .5)
+    for cr in merged:
+        a, b = cr
+        pe = max([w_ for w_ in kept_ws if w_['e'] <= a + .3 and w_['s'] < a], key=lambda w_: w_['e'], default=None)
+        if pe is not None and a > 0 and a - pe['e'] < .8:
+            if soft[min(len(soft) - 1, int(a * 100))]:
+                ve = voice_end(pe['e'])
+                # her voice runs on past a short word tail: the cut is inside one whisper "word" ("X2." = "x." + a false
+                # start "2,") - cut at the quietest point just after the kept part instead of keeping it all
+                cr[0] = max(a, min(ve + .15, b - .05)) if ve - pe['e'] <= .3 else max(a, first_dip(max(a, pe['e'])))
+        ns = min([w_ for w_ in kept_ws if w_['s'] >= b - .3 and w_['e'] > b], key=lambda w_: w_['s'], default=None)
+        if ns is not None and b < len(y) / SR and ns['s'] - b < .8:
+            on = voice_onset(ns['s'])
+            if soft[min(len(soft) - 1, int(b * 100))] or on < b: cr[1] = max(cr[0] + .05, min(b, on - .1))
+    drop_islands()
     keep, t = [], 0.0
     for a, b in merged:
         a2 = low_point(db, a, -.06, .06) if a > 0 else 0; b2 = low_point(db, b, -.06, .06) if b < len(y) / SR else len(y) / SR
         if a2 > t: keep.append([t, a2])
         t = max(t, b2)
     if t < len(y) / SR: keep.append([t, len(y) / SR])
-    # ---- silences: cap long ones (inside the kept audio)
+    # ---- silences: cap long ones, measured over the JOINED audio (2026-10-11 teacher, q-362: 3.5 s before "I'll see
+    # you" - quiet stretches with clicks in them, and quiet on both sides of a cut, were not capped). Quiet = not inside
+    # a run of 0.1 s or more of voice-level frames, so a click or a breath blip doesn't break a silence.
     speech_db = np.percentile(db[db > -80], 90)
-    quiet = db < max(np.percentile(db, 8) + 10, speech_db - 38)
-    slide_end_t = {}                           # her time of each line start, to know where a slide changes
+    vo = db > speech_db - 30; quiet = np.ones(len(db), bool); k = 0
+    while k < len(vo):
+        if vo[k]:
+            k0 = k
+            while k < len(vo) and vo[k]: k += 1
+            if k - k0 >= 10: quiet[max(0, k0 - 3):k + 3] = False
+        else: k += 1
     line_t = {}
     for i, j in pairs:
         if i is not None and j is not None and eq[i, j]:
             li = Sl[i][0]; line_t.setdefault(li, Wt[j][0])
     slide_starts = [line_t.get(li) for li in range(1, len(lines)) if flat[li][0] != flat[li - 1][0] and line_t.get(li) is not None]
-    keep2 = []
-    for a, b in keep:
-        fa, fb = int(a * 100), int(b * 100); k = fa; seg_start = a
-        while k < fb:
-            if quiet[k]:
-                s0 = k
-                while k < fb and quiet[k]: k += 1
-                L = (k - s0) / 100.0; cap = CAP_SLIDE if any(abs(s - k / 100.0) < 1.0 for s in slide_starts) else CAP
-                if L > cap and s0 > fa and k < fb:
-                    keep2.append([seg_start, s0 / 100.0 + cap / 2]); seg_start = k / 100.0 - cap / 2
+    idx = np.concatenate([np.arange(int(round(a * 100)), int(round(b * 100))) for a, b in keep if b - a > .005]); idx = idx[idx < len(quiet)]
+    q_ = quiet[idx]; drop = np.zeros(len(idx), bool); k = 0
+    while k < len(idx):
+        if q_[k]:
+            k0 = k
+            while k < len(idx) and q_[k]: k += 1
+            if k0 > 0 and k < len(idx):
+                cap = CAP_SLIDE if any(abs(s_ - idx[k] / 100.0) < 1.0 for s_ in slide_starts) else CAP
+                n_keep = int(cap * 100)
+                if k - k0 > n_keep:
+                    drop[k0 + n_keep // 2:k - (n_keep - n_keep // 2)] = True
                     rep.setdefault('silences_capped', 0); rep['silences_capped'] += 1
-            else: k += 1
-        keep2.append([seg_start, b])
+        else: k += 1
+    kept_idx = idx[~drop]; keep2 = []
+    for f_ in kept_idx:
+        if keep2 and f_ == keep2[-1][1]: keep2[-1][1] = f_ + 1
+        else: keep2.append([f_, f_ + 1])
+    keep2 = [[a / 100.0, b / 100.0] for a, b in keep2]
+    if keep2: keep2[0][0] = max(keep2[0][0], keep[0][0]); keep2[-1][1] = keep[-1][1]
     keep = [x for x in keep2 if x[1] - x[0] > .03]
     rep['cut_ranges'] = [[round(a, 2), round(b, 2)] for a, b in merged]; rep['keep_ranges'] = [[round(a, 2), round(b, 2)] for a, b in keep]
     # ---- edited audio with crossfades + the time map
@@ -556,7 +892,49 @@ def run(vid):
             if ln_['at'][k] < ln_['at'][k - 1] + step:
                 d_ = ln_['at'][k - 1] + step - ln_['at'][k]; ln_['at'][k] = round(ln_['at'][k] + d_, 3)
                 if ln_.get('atEnd') and ln_['atEnd'][k] is not None: ln_['atEnd'][k] = round(max(ln_['atEnd'][k] + d_, ln_['at'][k] + .3), 3)
+    # 2026-10-11 teacher ("a whole line of calculations is written way before I'm saying it"): a hand-written line is
+    # written in CHUNKS, each while she says it - the line split at = < > and at wide gaps / commas, each chunk found in
+    # her words of that line (numbers as words), written from the start to the end of those words (never finished
+    # before she has said it). -> manifest line 'writes': {cue index: [[t0, t1, first stroke, end stroke], ...]}
+    rep['write_chunks'] = []
+    for n in sorted(cue_lines):
+        li = n - 1; ln_ = man['lines'][li]
+        for k, c in enumerate(cue_lines[n]):
+            if not (isinstance(c, tuple) and len(c) > 3 and c[3] is True): continue
+            at_ = ln_['at'][k] if k < len(ln_['at']) else None
+            if at_ is None or at_ == -1: continue
+            it = c[1]; text = it.get('t') or ''; hw = it.get('hw') or {}
+            ch = write_chunks(text, hw)
+            if len(ch) < 2: continue
+            ph = ((flat[li][1].get('at') or [])[k] or '').lstrip('<').lower(); c0 = max(0, lines[li].lower().find(ph))
+            L = [ti for ti, (L_, a0, b0) in enumerate(Sl) if L_ == li and a0 >= c0]
+            cur, got = 0, []
+            for (ca, cb, s0, s1, toks) in ch:
+                best = None
+                for p0 in range(cur, min(len(L), cur + 25)):
+                    j, hit = p0, []
+                    for tk in toks:
+                        q = next((x for x in range(j, min(len(L), j + 4)) if same(S[L[x]], tk)), None)
+                        if q is not None: hit.append(q); j = q + 1
+                    if toks and len(hit) * 2 >= len(toks) and (best is None or len(hit) > len(best)): best = hit
+                    if best and len(best) == len(toks): break
+                if best: got.append([tt[L[best[0]]][0], tt[L[best[-1]]][1], s0, s1, len(toks)]); cur = best[-1] + 1
+                else: got.append([None, None, s0, s1, len(toks)])
+            # unmatched chunks: between their neighbours; the pen never faster than 10 glyphs a second
+            out_, prev = [], at_
+            for i_, g in enumerate(got):
+                t0_, t1_ = g[0], g[1]
+                if t0_ is None:
+                    nxt = next((h[0] for h in got[i_ + 1:] if h[0] is not None), None)
+                    t0_ = prev; t1_ = nxt if nxt is not None and nxt > prev else prev + .25 * max(1, g[4])
+                t0_ = max(t0_, prev); t1_ = max(t1_, t0_ + max(.3, (g[3] - g[2]) / 10.0 * .8))
+                dmax = max(.6, (g[3] - g[2]) / 2.5)                 # a long spoken stretch: write at the END of it
+                if t1_ - t0_ > dmax: t0_ = t1_ - dmax
+                out_.append([round(t0_, 3), round(t1_, 3), g[2], g[3]]); prev = t1_
+            ln_.setdefault('writes', {})[str(k)] = out_
+            rep['write_chunks'].append({'line': n, 'text': text, 'chunks': [[x[0], x[1], text[ch[i][0]:ch[i][1]].strip()] for i, x in enumerate(out_)]})
     json.dump(man, open(mp, 'w'), indent=1, ensure_ascii=False)
+    auto_lines(vid, out, man, mp, words, extra_spans, cut, merged, newt, cue_lines, flat, rep)
     rep['patched_paragraphs'] = {str(i + 1): f for i, f in patched.items()}
     rep['changed_not_reread'] = changed
     rep.update(vid=vid, raw_s=round(len(y) / SR, 1), clean_s=round(len(clean) / SR, 1), n_cuts=len(rep['cuts']), unplaced_cues=unplaced,

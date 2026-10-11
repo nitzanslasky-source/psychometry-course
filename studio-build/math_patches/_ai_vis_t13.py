@@ -162,7 +162,7 @@ def _layout(vid):
 
 
 def _target(vid, names, si, t):
-    if t in ('stem',) or re.fullmatch(r'choice \d', t) or t.startswith('fig:'): return t
+    if t in ('stem',) or t.startswith('stem:') or re.fullmatch(r'choice \d', t) or t.startswith('fig:'): return t
     nm, _, part = t.partition(':')
     nm = nm.strip()
     assert nm in names, (vid, 'unknown item', nm)
@@ -395,8 +395,11 @@ n1 = DIST('n1', -18, 4, -7, 9, w=760)
 b1 = I('b1', '$|16+7|=23$ $\\quad |-2+7|=5$', size=32, col=1, hand='|16+7| = 23    |−2+7| = 5')
 m0 = I('m0', '$\\hl{a}{\\text{Two cases}}\\ \\cdot\\ \\hl{b}{\\text{number line}}\\ \\cdot\\ \\hl{c}{\\text{plugging in}}$', size=28, col=1)
 r9 = I('r9', '$|9|=9,\\ \\ |-9|=9$', size=32, col=1, hand='|9| = 9,   |−9| = 9')
-d9 = I('d9', '$|5-2|=3$: from $2$ to $5$ is $3$ steps', size=28, hand='|5−2| = 3 :  from 2 to 5 is 3 steps')
-m5 = DIST('m5', -1, 7, 2, 3, w=420)
+# 2026-10-11 teacher: "it needs to be clearer that I can read |x−5| = 7 as seven steps between x and 5, and then explain
+# what that means when there is a plus" - the number line taught on |x − 5| = 7 first (its own slide), then the plus
+e1 = I('e1', '$|x-5|=7$: $x$ is $7$ steps from $5$', size=30, hand='|x−5| = 7 :  x is 7 steps from 5')
+e2 = DIST('e2', -4, 14, 5, 7, w=760)
+e3 = I('e3', '$x=12$ $\\;$ or $\\;$ $x=-2$', size=30, hand='x = 12   or   x = −2')
 d0 = I('d0', '$x+7=x-(-7)$', size=32, hand='x+7 = x − (−7)')
 w1 = I('w1', 'Two cases: the standard way', size=30)
 w2 = I('w2', 'Numbers in the choices: plug in', size=30)
@@ -426,23 +429,25 @@ video('solve-q-359', 'solution', qid='q-359', slides=[
         pt('a2: m16', 'Negative sixteen is there'), pt('choice 3', "it's number three"), pt('stem', 'could be'),
         pt('a1: two', 'Two values work'), pt('a2: m16', 'and negative sixteen'), pt('choice 3', 'only offer one'), mk('tick', 'choice 3', 'number three is our answer'))),
     S('Method 2 · Number line',
-      L("[pause] Our second method, the number line. What are we doing here? We read the bars as a distance. Remember, the "
-        "absolute value of a number is its distance from zero. And the bars around a difference give the distance between "
-        "two numbers. Five minus two is three, and from two to five is exactly three steps. Why? Five minus two tells me how "
-        "far five is from two, and the sign only says which way. The bars drop the sign, so what's left is the distance. "
-        "Now, x plus seven is x minus negative seven, because taking away negative seven is the same as adding seven. So "
-        "x plus seven, in bars, is the distance between x and negative seven. And it's equal to nine, so x is exactly nine "
-        "steps away from negative seven.",
-        pt('stem', 'What are we doing here'), show(d9, 'Five minus two is three'), show(m5['line'], 'from two to five'),
-        show(m5['right'], 'exactly three steps'), pt('d9', 'Five minus two tells'), pt('m5_line', 'which way'),
-        pt('d9', 'The bars drop the sign'),
-        show(d0, 'x plus seven is x minus'), show(n1['line'], 'the distance between x'), pt('stem', 'exactly nine')),
-      L("So how do I read the picture? I start at negative seven, and I walk nine steps each way. Nine steps to the right, "
-        "negative seven plus nine is two. Nine steps to the left, negative seven minus nine is negative sixteen. Those are "
-        "the only two points that are exactly nine steps away. Two isn't in the choices, but negative sixteen is, choice "
-        "number three.", pt('n1_line', 'I start at negative seven'), show(n1['right'], 'Nine steps to the right'),
-        mk('circle', 'fig: 2', 'plus nine is two'), show(n1['left'], 'Nine steps to the left'),
-        mk('circle', 'fig: −16', 'is negative sixteen'), pt('choice 3', 'negative sixteen is,'), mk('tick', 'choice 3', 'is, choice number')),
+      L("[pause] Our second method, the number line. Here we read the bars as a distance. Let's start with an easier one. "
+        "The absolute value of x minus five is seven. Bars around a difference give the distance between two numbers, so "
+        "this says x is seven steps away from five. Seven steps to the right, five plus seven is twelve. Seven steps to the "
+        "left, five minus seven is negative two. So x is twelve, or negative two.",
+        show(e1, 'The absolute value of x minus five'), show(e2['line'], 'x is seven steps away'),
+        show(e2['right'], 'Seven steps to the right'), mk('circle', 'fig: 12', 'five plus seven is twelve'),
+        show(e2['left'], 'Seven steps to the'), mk('circle', 'fig: −2', 'five minus seven is negative two'),
+        show(e3, 'So x is twelve'))),
+    S('Method 2 · A plus inside',
+      L("Now, what about a plus? x plus seven is x minus negative seven, because taking away negative seven is the same as "
+        "adding seven. So the absolute value of x plus seven is the distance between x and negative seven. And it's nine, "
+        "so x is nine steps away from negative seven. Nine steps to the right, negative seven plus nine is two. Nine steps "
+        "to the left, negative seven minus nine is negative sixteen. Two isn't in the choices, but negative sixteen is, "
+        "choice number three.",
+        show(d0, 'x plus seven is x minus'), pt('stem: g1', 'So the absolute value of x plus seven'),
+        show(n1['line'], 'nine steps away from'),
+        show(n1['right'], 'Nine steps to the right'), mk('circle', 'fig: 2', 'plus nine is two'),
+        show(n1['left'], 'Nine steps to the left'), mk('circle', 'fig: −16', 'is negative sixteen'),
+        pt('choice 3', 'negative sixteen is,'), mk('tick', 'choice 3', 'is, choice number')),
       sb='Method 2 · Number line'),
     S('Method 3 · Plugging in the answers',
       L("[pause] And our third method, plugging in the answers. The choices are numbers, so let's just try them. Sixteen "
@@ -1502,7 +1507,7 @@ def _follow(vid):
                     continue
                 if len(body.split()) <= 4 or _SKIP.match(body) or last is None: continue
                 ph = _unique(say, k)
-                if ph: add.append((k, pt(_base(last), ph)))
+                if ph: add.append((k, pt(_base(last), ph, 'fill')))
             if add:
                 allc = sorted(have + add, key=lambda x: x[0])
                 ln['cues'] = [c for p, c in allc]
@@ -1548,7 +1553,7 @@ def _base(name):
 # 2026-10-11 (teacher, her own voice: "no empty screen while I explain"): no stretch of more than FILL_W words without a
 # visual. A long stretch gets a POINT every ~7 words on what it talks about - the item shown last on this slide (a figure
 # layer -> its base line), else the question. Runs after the passes above, so it only fills what is still empty.
-FILL_W, FILL_STEP = 6, 5
+FILL_W, FILL_STEP = 14, 14      # 2026-10-11 teacher: highlights flashed - one soft point per ~14 words at most
 _CLOSE = re.compile(r"(Okay\.|I'll see you)", re.I)
 
 
@@ -1572,8 +1577,11 @@ def _fill(vid):
                     for k in range(FILL_STEP // 2 + 2, len(seg) - 2, FILL_STEP):
                         ph = _unique(say, seg[k])
                         tg = ctx(seg[k])
-                        if ph and (tg or V.get('qid')):              # a lesson has no question to fall back on
-                            add.append((seg[k], pt(_base(tg) if tg else 'stem', ph)))
+                        # only on the board item being talked about, and only when it is not lit already (the
+                        # studio keeps a highlight on until the subject changes); never the whole question
+                        cur = next((c[1] for p, c in reversed(have + add) if p <= seg[k] and c[0] == 'point'), None)
+                        if ph and tg and _base(tg) != cur:
+                            add.append((seg[k], pt(_base(tg), ph, 'fill')))
                 prev = b + 1
             if add:
                 ln['cues'] = [c for p, c in sorted(have + add, key=lambda x: x[0])]
@@ -1581,7 +1589,100 @@ def _fill(vid):
                 if c[0] == 'show': last = c[1]['_name']
 
 
-for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v)
+# 2026-10-11 teacher: "when I talk about the second given, highlight only the second given". A POINT on 'stem' becomes
+# the part of the question her sentence is about (studio_autonarrate anStemParts: g1 g2 g3 = each given formula / row of
+# a cases block, given = all of them, ask = the question sentence), matched on the sentence's words; the whole stem only
+# when nothing matches (and on the question reading itself).
+STEMS = {
+ "q-358": "Given:\n$\\begin{cases} x\\cdot y<0 \\\\ y<|y| \\end{cases}$\nWhich of the following is necessarily true?",
+ "q-359": "Given: $|x+7|=9$. Which of the following could be the value of $x$?",
+ "q-360": "Given: $|x+3|<7$. Which of the following could be the value of $x$?",
+ "q-361": "Given: $8<|x+1|$. Which of the following cannot be the value of $x$?",
+ "q-362": "Given: $x<0$. What is $10+\\frac{4x}{|x|}$?",
+ "q-r26-t13-01": "Given: $|2x-1|=7$. Which of the following gives all the possible values of $x$?",
+ "q-r26-t13-02": "Which of the following has no solution?",
+ "q-363": "Given:\n$\\begin{cases} |n|=m \\\\ n\\ne m \\\\ 4k=m \\end{cases}$\nWhich of the following is necessarily true?",
+ "q-364": "Given: $p<q<0<r<s$. Which of the following is necessarily true?",
+ "q-365": "Given:\n$\\begin{cases} z<y<x \\\\ |x|<|y| \\end{cases}$\nWhich of the following is not necessarily true?",
+ "q-366": "$x$ and $y$ are integers. Given: $3<|x+y|$. Which of the following is possible but not necessarily true?",
+ "q-r26-t13-13": "Given:\n$\\begin{cases} |a|=7 \\\\ |b|=3 \\\\ |a+b|<|a-b| \\end{cases}$\nWhat is $|a+b|$?",
+ "q-r26-t13-03": "Given: $|x+4|=3x$. Which of the following gives all the possible values of $x$?",
+ "q-367": "Given:\n$\\begin{cases} 4|x|+12|y|=44 \\\\ x+3|y|=1 \\end{cases}$\nWhat is $x$?",
+ "q-368": "Given: $|x+4y|=|4x+y|$. Which of the following is necessarily true?",
+ "q-369": "Given: $7<|2x-1|<9$. Which of the following ranges is possible for $x$?",
+ "q-370": "Given: $x+|x|<12$. What is the most precise domain for $x$?"
+}
+_NW = {str(i): w for i, w in enumerate('zero one two three four five six seven eight nine ten eleven twelve thirteen '
+       'fourteen fifteen sixteen seventeen eighteen nineteen twenty'.split())}
+_SYN = {'negative': 'minus', 'less': 'smaller', 'greater': 'bigger', 'more': 'bigger', 'larger': 'bigger', 'equals': 'is',
+        'equal': 'is', 'absolute': 'abs', 'bars': 'abs', 'positive': 'pos', 'negatives': 'minus', 'cdot': 'times'}
+
+
+def _words(t):
+    t = re.sub(r'(\d+)', lambda m: ' ' + _NW.get(m.group(1), m.group(1)) + ' ', t.lower())
+    return [_SYN.get(w, w) for w in re.findall(r"[a-z]+", t)]
+
+
+def _tex_words(tex):
+    t = tex.replace('\\left', '').replace('\\right', '').replace('\\cdot', ' times ').replace('\\ne', ' not equal ')
+    t = re.sub(r'\\frac\{([^}]*)\}\{([^}]*)\}', r' \1 over \2 ', t)
+    t = t.replace('|', ' absolute ').replace('<', ' smaller ').replace('>', ' bigger ').replace('=', ' is ')
+    t = t.replace('+', ' plus ').replace('-', ' minus ')
+    return _words(t)
+
+
+def _stem_part_words(stem):
+    m = re.search(r'(Which|What|How)\b[^$]*?(\$[^$]*\$[^$]*?)*[?]?\s*$', stem)
+    ask = stem[m.start():] if m else ''
+    head = stem[:m.start()] if m else stem
+    g = head.split('Given:', 1)[1] if 'Given:' in head else head
+    parts, n = {}, 0
+    for f in re.findall(r'\$([^$]*)\$', g):
+        rows = re.split(r'\\\\', re.sub(r'\\(begin|end)\{cases\}', '', f)) if 'cases' in f else [f]
+        for r in rows:
+            n += 1; parts['g%d' % n] = _tex_words(r)
+    if ask: parts['ask'] = _words(re.sub(r'\$([^$]*)\$', lambda m: ' '.join(_tex_words(m.group(1))), ask))
+    return parts
+
+
+_W8 = {'is': 0, 'the': 0, 'of': 0, 'a': 0, 'abs': 1, 'value': 0, 'smaller': 1, 'bigger': 1, 'plus': 1, 'minus': 1,
+       'times': 1, 'over': 1, 'not': 1, 'following': 0, 'which': 1, 'true': 1, 'necessarily': 2, 'could': 2,
+       'cannot': 2, 'possible': 2, 'values': 1, 'all': 1, 'precise': 2, 'domain': 2, 'what': 1, 'gives': 1}
+_ORDN = {'first': 'g1', 'second': 'g2', 'third': 'g3'}
+
+
+def _stem_target(stem, sent):
+    P = _stem_part_words(stem); sw = _words(sent); ss = set(sw)
+    m = re.search(r'\b(first|second|third) given', sent, re.I)
+    if m and _ORDN[m.group(1).lower()] in P: return _ORDN[m.group(1).lower()]
+    if re.search(r'\b(both|the) givens\b|\bgivens\b', sent, re.I) and 'given' not in ss - {'givens'}: return 'given' if any(k.startswith('g') for k in P) else None
+    if re.search(r"\b(they ask|they're asking|the question|asking)\b", sent, re.I) and 'ask' in P: return 'ask'
+    sc = {}
+    for k, ws in P.items():
+        sc[k] = sum(_W8.get(w, 2) for w in set(ws) if w in ss)
+    best = sorted(sc.items(), key=lambda x: -x[1])
+    if best and best[0][1] >= 2 and (len(best) == 1 or best[0][1] > best[1][1]): return best[0][0]
+    return None
+
+
+def _stem_parts(vid):
+    V = VIDEOS[vid]; stem = STEMS.get(V.get('qid'))
+    if not stem: return
+    for si, sl in enumerate(V['slides']):
+        for li, ln in enumerate(sl['lines']):
+            if si == 0 and li == 0: continue                      # the question reading: the whole question
+            say = ln['say']; new = []
+            for c in ln['cues']:
+                if c[0] == 'point' and c[1] == 'stem':
+                    p = say.find(c[2].lstrip('<')); a = max(say.rfind('.', 0, max(p, 0)), say.rfind('?', 0, max(p, 0))) + 1
+                    b = min([x for x in (say.find('.', p), say.find('?', p)) if x >= 0] or [len(say)])
+                    tg = _stem_target(stem, say[a:b + 1])
+                    if tg: c = ('point', 'stem: ' + tg) + tuple(c[2:])
+                new.append(c)
+            ln['cues'] = new
+
+
+for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _stem_parts(_v)
 
 
 if __name__ == '__main__':
