@@ -23,6 +23,7 @@
    {
     "say": "[short pause] Our first method, two cases. Big side means an open range, one part going to the right and one going to the left. So one option, the inside is bigger than eight, and then x is bigger than seven.",
     "at": [
+     "Our first",
      "Big side means",
      "one option, the inside is bigger"
     ]
@@ -53,6 +54,7 @@
    {
     "say": "[pause] Our second method, the number line. x plus one is the distance from negative one. More than eight steps from negative one means past seven on the right, or past negative nine on the left.",
     "at": [
+     "Our second",
      "the distance from negative one",
      "past seven"
     ]
@@ -69,6 +71,7 @@
    {
     "say": "[pause] Our third method, plugging in the answers. Nine plus one is ten, and ten is bigger than eight, so nine can be x.",
     "at": [
+     "Our third",
      "Nine plus one",
      "so nine can"
     ]

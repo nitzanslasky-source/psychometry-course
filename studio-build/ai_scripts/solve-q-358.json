@@ -4,7 +4,7 @@
  "slides": [
   [
    {
-    "say": "Given: x times y is smaller than zero, and y is smaller than the absolute value of y. Which of the following is necessarily true?",
+    "say": "Given: x times y, is smaller than zero, and y is smaller than the absolute value of y. Which of the following is necessarily true?",
     "voice": "calm",
     "at": [
      "Given"
@@ -15,18 +15,23 @@
     "say": "So here we have no numbers at all, just signs. And look at the choices, some of them talk about signs and some about sizes. [short pause] We'll solve this two ways, first by understanding the givens, and then by plugging in numbers.",
     "at": [
      "no numbers at all",
+     "look at the choices",
      "about signs",
      "some about",
      "sizes.",
-     "the givens, and"
+     "first by",
+     "understanding the givens"
     ]
    },
    {
     "say": "Let's take the givens one at a time. When is x times y negative? Only when they have opposite signs, one positive and one negative. Remember, plus times minus is minus. And if both were positive, or both negative, the product would be positive.",
     "at": [
      "one at a time",
+     "When is x",
      "Only when they have opposite signs",
+     "one positive and one",
      "plus times minus is minus",
+     "both were positive",
      "both negative"
     ]
    },
@@ -40,9 +45,10 @@
    {
     "say": "When is a number smaller than its own absolute value? Only when it's negative. If y were positive, they'd just be equal, right? Four is equal to its absolute value. But negative four is smaller than four.",
     "at": [
-     "When is a",
+     "its own absolute value",
      "Only when it",
      "If y were",
+     "just be equal",
      "Four is equal",
      "negative four is smaller"
     ]
@@ -51,6 +57,7 @@
     "say": "So y is negative, and the signs are opposite. And therefore x is the positive one.",
     "at": [
      "So y is negative",
+     "the signs are opposite",
      "And therefore x",
      "the positive one"
     ]
@@ -58,15 +65,18 @@
    {
     "say": "[short pause] Now the choices. Number one says x is negative. But we just found that x is positive, so number one is out.",
     "at": [
+     "Now the choices",
      "Number one says",
+     "we just found",
      "is out"
     ]
    },
    {
     "say": "Now careful here, because a lot of students think the negative one is also the smaller one. But the givens only tell us signs, nothing about sizes. So we can't know which absolute value is bigger, and numbers two and three don't have to be true.",
     "at": [
-     "Now careful here",
+     "a lot of students",
      "only tell us signs",
+     "nothing about sizes",
      "which absolute value",
      "numbers two and three"
     ]
@@ -75,7 +85,7 @@
     "say": "Number four says the absolute value of x is equal to x. When is a number equal to its absolute value? When it's zero or positive. And x is positive, so this is always true. So number four is our answer.",
     "at": [
      "Number four says",
-     "When is a",
+     "When is a number equal",
      "When it's zero",
      "And x is positive",
      "number four is our"
@@ -86,9 +96,12 @@
    {
     "say": "[pause] Now our second method, plugging in numbers. It's a great safety net when you're not sure. I need numbers that obey both givens, so y is negative and x is positive. Why negative three and eight? Because they're easy, and they stay away from zero, one and minus one.",
     "at": [
+     "our second",
+     "It's a great",
      "obey both givens",
+     "so y is negative and x",
      "Why negative three and eight",
-     "Because they're easy"
+     "stay away from zero"
     ]
    },
    {
@@ -102,12 +115,15 @@
     ]
    },
    {
-    "say": "Number three, negative three over eight, in absolute value, is three eighths. That's less than one, so it stays. And number four, the absolute value of eight is eight, so it stays too.",
+    "say": "Number three, negative three over eight, in absolute value, is three eighths. That's less than one, so number three stays. And number four, the absolute value of eight is eight, so it stays too.",
     "voice": "calm",
     "at": [
      "Number three, negative",
+     "in absolute value",
      "is three eighths",
-     "so it stays",
+     "number three stays",
+     "And number four",
+     "the absolute value of eight",
      "stays too"
     ]
    },
@@ -116,7 +132,8 @@
     "at": [
      "Two choices survive",
      "move on",
-     "I need a",
+     "I need a tie-breaker",
+     "the bigger one in size",
      "y is negative six"
     ]
    },
@@ -124,9 +141,10 @@
     "say": "Negative six over two is negative three, and its absolute value is three. That's not less than one, so number three is out. And the absolute value of two is still two. Aaand it's number four, again.",
     "at": [
      "Negative six over two",
+     "its absolute value is three",
      "not less than one",
      "number three is out",
-     "And the absolute",
+     "still two",
      "it's number four, again"
     ]
    },
@@ -134,8 +152,9 @@
     "say": "So which way is better? Here understanding is faster, because the signs give it all away. And the numbers are a great check. [short pause] Negative product, opposite signs. A number smaller than its absolute value, negative. [pause] Okay. I'll see you in the next question.",
     "at": [
      "which way is better",
-     "Here understanding is",
+     "the signs give it all away",
      "a great check",
+     "Negative product",
      "A number smaller"
     ]
    }

@@ -22,6 +22,7 @@
    {
     "say": "[short pause] Our first method. Let's put them on the number line. p and q are negative, and p is further to the left. r and s are positive, and s is further to the right.",
     "at": [
+     "Our first",
      "on the number line",
      "p and q",
      "r and s"
@@ -69,6 +70,9 @@
    {
     "say": "[pause] Our second method, plugging in numbers. The trick here is to try two extreme pictures. First, the negatives far from zero and the positives close to it. p is negative fifty, q negative forty, r one and s three.",
     "at": [
+     "Our second",
+     "The trick here",
+     "First, the negatives",
      "p is negative fifty"
     ]
    },

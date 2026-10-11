@@ -21,6 +21,7 @@
    {
     "say": "[short pause] Our first method, plugging in numbers. x has to be negative, so I'll take negative two. Why negative two? Before I plug in, I glance at the choices. At negative two they give fourteen, six, two and twelve, all different. So one plug-in will be enough.",
     "at": [
+     "Our first",
      "I'll take negative two",
      "I glance at the choices",
      "At negative two they give",
@@ -57,7 +58,9 @@
    {
     "say": "[pause] Our second method, the algebra. x is negative, so what's its absolute value? To turn a negative number positive, I take minus x. So the absolute value of x is minus x.",
     "at": [
+     "Our second",
      "x is negative",
+     "To turn a",
      "So the absolute value of x is minus x"
     ]
    },

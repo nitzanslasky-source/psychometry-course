@@ -21,7 +21,7 @@ Cue tuples:
                                                  item is hand-written (studio_handwrite.py `text` syntax, e.g. '{n/2}',
                                                  '\\hl{name}{..}') and drawn stroke by stroke from the phrase; elsewhere
                                                  it is the typed `item` (APPEAR), exactly as before
-Handwriting videos = HANDWRITE (env AI_HANDWRITE="vid,vid" or "all"; default none, so the studio keeps the approved
+Handwriting videos = HANDWRITE (env AI_HANDWRITE="vid,vid", "all", or "t13" = a whole topic's AI redo; default none, so the studio keeps the approved
 typed pilots until the teacher picks handwriting). In them 'write' items are hand-written and every mark is drawn as an
 imperfect hand stroke ('hand': 1); mark kind 'arrow' (an arrow pointing at the target) is also available there.
 Items are numbered on their slide: the question is item 0, then the 'show' items in order (K below).
@@ -38,7 +38,13 @@ HANDWRITE = {x.strip() for x in os.environ.get('AI_HANDWRITE', '').split(',') if
 
 
 def _hw(vid):
-    return vid in HANDWRITE or 'all' in HANDWRITE
+    """AI_HANDWRITE = "vid,vid", "all", or a whole topic's AI redo: "t13" (= every video of math_patches/_ai_vis_t13.py)"""
+    if vid in HANDWRITE or 'all' in HANDWRITE: return True
+    for x in HANDWRITE:
+        if re.fullmatch(r't\d\d', x):
+            m = sys.modules.get('_ai_vis_' + x)
+            if m is not None and vid in m.VIDEOS: return True
+    return False
 
 
 def HW(item, text):

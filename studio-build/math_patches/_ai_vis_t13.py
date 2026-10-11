@@ -53,6 +53,51 @@ def NL(name, svg, w=560, col=0):
             'h': int(round(w * vb[3] / vb[2])), 'gap': 16}
 
 
+def DIST(name, lo, hi, c, r, base=(0,), band=None, w=1060):
+    """a |x - c| number line BUILT in layers (2026-10-11, teacher: "build the number line at the spoken words"):
+    -> {'line': the line with c (and the `base` ticks), 'right': the arrow r steps right + its end, 'left': the arrow r
+    steps left + its end, 'band': the shaded band between the ends (band='open' / 'closed'; None = no band)}.
+    Each is a figure item of the same size drawn at the same place (over=1: the layer above the previous item), so they
+    must be shown in this order: line, then right/left (either order), then band. Labels are big (~ the handwriting)."""
+    L_, R_, Y_ = SNL.L, SNL.R, SNL.Y
+    X = lambda v: L_ + 30 + (v - lo) / float(hi - lo) * (R_ - L_ - 60)
+    INK, TEAL, BAND, FONT = SNL.INK, SNL.TEAL, SNL.BAND, SNL.FONT
+    top, bot = 74, 56
+    fmt = lambda v: ('−%d' % -v) if v < 0 else '%d' % v
+    def svg(body, title):
+        return ('<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 %d 640 %d" role="img" aria-label="%s"><title>%s</title>%s</svg>'
+                % (Y_ - top, top + bot, title, title, body))
+    def tick(v, bold=False):
+        return ('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="%s" stroke-width="2"/>' % (X(v), Y_ - 11, X(v), Y_ + 11, INK) +
+                '<text x="%.1f" y="%d" text-anchor="middle" fill="%s" %s font-size="27" font-weight="bold">%s</text>' % (X(v), Y_ + 42, INK, FONT, fmt(v)))
+    def dot(v):
+        closed = band != 'open'
+        return '<circle cx="%.1f" cy="%d" r="7" fill="%s" stroke="%s" stroke-width="2.5"/>' % (X(v), Y_, TEAL if closed else '#ffffff', TEAL)
+    def arrow(e):
+        d = -1 if e > c else 1
+        return ('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="%s" stroke-width="2.5"/>' % (X(c), Y_ - 36, X(e) + 4 * d, Y_ - 36, TEAL) +
+                '<path d="M %.1f %d l %d -6 l 0 12 Z" fill="%s"/>' % (X(e), Y_ - 36, 12 * d, TEAL) +
+                '<text x="%.1f" y="%d" text-anchor="middle" fill="%s" %s font-size="27" font-weight="bold">%d</text>' % ((X(c) + X(e)) / 2, Y_ - 45, TEAL, FONT, r))
+    line = ('<line x1="%d" y1="%d" x2="%d" y2="%d" stroke="%s" stroke-width="2.5"/>' % (L_ - 10, Y_, R_ + 10, Y_, INK) +
+            '<path d="M %d %d l 12 -7 l 0 14 Z" fill="%s"/>' % (L_ - 14, Y_, INK) + '<path d="M %d %d l -12 -7 l 0 14 Z" fill="%s"/>' % (R_ + 14, Y_, INK) +
+            ''.join(tick(v) for v in base if v != c) + tick(c) + '<circle cx="%.1f" cy="%d" r="6" fill="%s"/>' % (X(c), Y_, INK) +
+            '<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="%s" stroke-width="1.5" stroke-dasharray="4 4"/>' % (X(c), Y_ - 36, X(c), Y_ - 7, INK))
+    out = {'line': svg(line, 'Number line: %s marked' % fmt(c)),
+           'right': svg(arrow(c + r) + tick(c + r) + dot(c + r), '%d steps right of %s: %s' % (r, fmt(c), fmt(c + r))),
+           'left': svg(arrow(c - r) + tick(c - r) + dot(c - r), '%d steps left of %s: %s' % (r, fmt(c), fmt(c - r)))}
+    if band:
+        a, b = X(c - r), X(c + r)
+        out['band'] = svg('<rect x="%.1f" y="%d" width="%.1f" height="14" fill="%s" stroke="%s" stroke-width="2"/>' % (a, Y_ - 7, b - a, BAND, TEAL)
+                          + dot(c - r) + dot(c + r) + '<circle cx="%.1f" cy="%d" r="6" fill="%s"/>' % (X(c), Y_, INK),
+                          'between %s and %s' % (fmt(c - r), fmt(c + r)))
+    items = {}
+    for k, sv in out.items():
+        it = NL('%s_%s' % (name, k), sv, w=w)
+        if k != 'line': it['over'] = 1; it['gap'] = 0
+        items[k] = it
+    return items
+
+
 def show(item, phrase): return ('show', item, phrase)
 def pt(target, phrase, style=None, dur=None): return ('point', target, phrase, style, dur)
 def mk(kind, target, phrase): return ('mark', kind, target, phrase)
@@ -246,157 +291,184 @@ def stats(vid):
 # ------------------------------------------------------------------------------------------------ q-358 (Q1)
 # NEW: "signs only, no sizes", the tie-breaker plug.  REMINDER: product sign (topic 1), y < |y| clue (lesson).
 c1 = I('c1', '$\\hl{xy}{x\\cdot y<0}$: opposite signs', hand='\\hl{xy}{x·y < 0} : opposite signs')
-c2 = I('c2', '$(+)\\cdot(-)=(-)$', size=32, hand='(+)·(−) = (−)')
+c2 = I('c2', '$(+)\\cdot(-)=(-)$', size=32, col=1, hand='(+)·(−) = (−)')
 c3 = I('c3', '$\\hl{y}{y<|y|}$: $y$ is negative', hand='\\hl{y}{y < |y|} : y is negative')
-c4 = I('c4', 'So $\\hl{x}{x>0}$', hand='So \\hl{x}{x > 0}')
+c4 = I('c4', 'So $\\hl{x}{x>0}$', hand='So    \\hl{x}{x > 0}')
 c5 = I('c5', 'Signs only, no sizes', size=32, col=1)
+c6 = I('c6', '$|x|=x$ when $x\\ge0$', size=32, col=1, hand='|x| = x  when  x ≥ 0')
+q0 = I('q0', 'Need: $y<0,\\ \\ x>0$', size=32, hand='need:  y < 0,   x > 0')
+k1 = I('k1', 'Negative product: opposite signs', size=28, col=1)
+k2 = I('k2', 'Smaller than its absolute value: negative', size=28, col=1)
 p1 = I('p1', '$y=-3,\\ \\ x=8$', hand='y = −3,  x = 8')
-p2 = I('p2', '$\\left|\\frac{-3}{8}\\right|=\\frac{3}{8}<1$', size=32)
-p3 = I('p3', '$y=-6,\\ \\ x=2$', hand='y = −6,  x = 2')
-p4 = I('p4', '$\\left|\\frac{-6}{2}\\right|=\\hl{three}{3}$', size=32, hand='|{−6/2}| = \\hl{three}{3}')
+p2 = I('p2', '$\\left|\\frac{-3}{8}\\right|=\\frac{3}{8}<1$', size=32, hand='|{−3/8}| = {3/8} < 1')
+p3 = I('p3', '$y=-6,\\ \\ x=2$', col=1, hand='y = −6,  x = 2')
+p4 = I('p4', '$\\left|\\frac{-6}{2}\\right|=\\hl{three}{3}$', size=32, col=1, hand='|{−6/2}|  =   \\hl{three}{3}')
 video('solve-q-358', 'solution', qid='q-358', slides=[
     S('Method 1 · Understanding',
-      L("Given: x times y is smaller than zero, and y is smaller than the absolute value of y. Which of the following is "
-        "necessarily true?", pt('stem', 'Given', 'hl', 5.0), voice='calm', pause=0.5),
+      L("Given: x times y, is smaller than zero, and y is smaller than the absolute value of y. Which of the following is "
+        "necessarily true?", pt('stem', 'Given', 'hl', 9.0), voice='calm', pause=0.5),
       L("So here we have no numbers at all, just signs. And look at the choices, some of them talk about signs and some about "
         "sizes. [short pause] We'll solve this two ways, first by understanding the givens, and then by plugging in numbers.",
-        pt('stem', 'no numbers at all'), pt('choice 1', 'about signs'), pt('choice 2', 'some about'),
-        pt('choice 3', 'sizes.')),
+        pt('stem', 'no numbers at all'), pt('choice 4', 'look at the choices'), pt('choice 1', 'about signs'), pt('choice 2', 'some about'),
+        pt('choice 3', 'sizes.'), pt('stem', 'understanding the givens', 'hl', 3.0)),
       L("Let's take the givens one at a time. When is x times y negative? Only when they have opposite signs, one positive "
         "and one negative. Remember, plus times minus is minus. And if both were positive, or both negative, the product "
         "would be positive.",
-        pt('stem', 'one at a time'), show(c1, 'Only when they have opposite signs'), show(c2, 'plus times minus is minus'),
-        pt('c1: xy', 'both negative')),
+        pt('stem', 'one at a time'), show(c1, 'Only when they have opposite signs'), pt('c1', 'one positive and one'),
+        show(c2, 'plus times minus is minus'), pt('c2', 'both were positive'), pt('c1: xy', 'both negative')),
       L("But which one is the negative one? We don't know yet. So let's look at the second given.", pt('c1', 'which one')),
       L("When is a number smaller than its own absolute value? Only when it's negative. If y were positive, they'd just be "
         "equal, right? Four is equal to its absolute value. But negative four is smaller than four.",
-        show(c3, 'Only when it'), pt('c3: y', 'Four is equal'), pt('c3: y', 'negative four is smaller')),
+        pt('stem', 'its own absolute value'), show(c3, 'Only when it'), pt('c3', 'If y were'),
+        pt('c3: y', 'just be equal'), pt('c3: y', 'Four is equal'), pt('c3: y', 'negative four is smaller')),
       L("So y is negative, and the signs are opposite. And therefore x is the positive one.",
-        pt('c3', 'So y is negative'), show(c4, 'And therefore x'), mk('circle', 'c4: x', 'the positive one')),
+        pt('c3', 'So y is negative'), pt('c1', 'the signs are opposite'), show(c4, 'And therefore x'), mk('circle', 'c4: x', 'the positive one')),
       L("[short pause] Now the choices. Number one says x is negative. But we just found that x is positive, so number one "
-        "is out.", pt('choice 1', 'Number one says'), mk('cross', 'choice 1', 'is out')),
+        "is out.", pt('choice 1', 'Now the choices'), pt('c4: x', 'we just found'), mk('cross', 'choice 1', 'is out')),
       L("Now careful here, because a lot of students think the negative one is also the smaller one. But the givens only "
         "tell us signs, nothing about sizes. So we can't know which absolute value is bigger, and numbers two and three "
         "don't have to be true.",
-        show(c5, 'only tell us signs'), pt('choice 2', 'which absolute value'), pt('choice 3', 'numbers two and three')),
+        pt('choice 2', 'a lot of students', 'both', 3.5), show(c5, 'only tell us signs'),
+        mk('underline', 'c5', 'nothing about sizes'), pt('choice 2', 'which absolute value'), pt('choice 3', 'numbers two and three')),
       L("Number four says the absolute value of x is equal to x. When is a number equal to its absolute value? When it's "
         "zero or positive. And x is positive, so this is always true. So number four is our answer.",
-        pt('choice 4', 'Number four says'), pt('c4: x', 'And x is positive'), mk('tick', 'choice 4', 'number four is our'))),
+        pt('choice 4', 'Number four says', 'hl', 3.5), pt('choice 4', 'When is a number equal'),
+        show(c6, "When it's zero"), pt('c4: x', 'And x is positive'), mk('tick', 'choice 4', 'number four is our'))),
     S('Method 2 · Plugging in numbers',
       L("[pause] Now our second method, plugging in numbers. It's a great safety net when you're not sure. I need numbers "
         "that obey both givens, so y is negative and x is positive. Why negative three and eight? Because they're easy, and "
         "they stay away from zero, one and minus one.",
-        pt('stem', 'obey both givens'), show(p1, 'Why negative three and eight')),
+        pt('stem', 'obey both givens'), show(q0, 'so y is negative and x'), show(p1, 'Why negative three and eight'),
+        pt('p1', 'stay away from zero')),
       L("Number one, x is negative? Eight isn't negative, so it's out. Number two, eight is smaller than three? No, out.",
         mk('cross', 'choice 1', "so it's out"), mk('cross', 'choice 2', 'No, out'), voice='calm'),
-      L("Number three, negative three over eight, in absolute value, is three eighths. That's less than one, so it stays. And "
+      L("Number three, negative three over eight, in absolute value, is three eighths. That's less than one, so number three stays. And "
         "number four, the absolute value of eight is eight, so it stays too.",
-        show(p2, 'is three eighths'), pt('choice 3', 'so it stays'), pt('choice 4', 'stays too'), voice='calm'),
+        pt('choice 3', 'Number three, negative'), pt('p1', 'in absolute value'), show(p2, 'is three eighths'), pt('choice 3', 'number three stays'),
+        pt('choice 4', 'And number four'), pt('p1', 'the absolute value of eight'), pt('choice 4', 'stays too'), voice='calm'),
       L("Two choices survive. Can I already circle one and move on? I can't. I need a tie-breaker, so this time I'll make y "
         "the bigger one in size. y is negative six, and x is two.",
-        pt('choice 3', 'Two choices survive'), pt('choice 4', 'move on'), show(p3, 'y is negative six')),
+        pt('choice 3', 'Two choices survive'), pt('choice 4', 'move on'), pt('p2', 'I need a tie-breaker'), pt('choice 3', 'the bigger one in size'), show(p3, 'y is negative six')),
       L("Negative six over two is negative three, and its absolute value is three. That's not less than one, so number three "
         "is out. And the absolute value of two is still two. Aaand it's number four, again.",
-        show(p4, 'Negative six over two'), mk('circle', 'p4: three', 'not less than one'), mk('cross', 'choice 3', 'number three is out'),
+        show(p4, 'Negative six over two'), pt('p4: three', 'its absolute value is three'), mk('circle', 'p4: three', 'not less than one'), mk('cross', 'choice 3', 'number three is out'), pt('p3', 'still two'),
         mk('tick', 'choice 4', "it's number four, again"), voice=None),
       L("So which way is better? Here understanding is faster, because the signs give it all away. And the numbers are a great "
         "check. [short pause] Negative product, opposite signs. A number smaller than its absolute value, negative. "
         "[pause] Okay. I'll see you in the next question.",
-        pt('p1', 'which way is better'), pt('p3', 'a great check'))),
+        pt('p1', 'which way is better'), pt('stem', 'the signs give it all away'), pt('p3', 'a great check'),
+        show(k1, 'Negative product'), show(k2, 'A number smaller'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-359 (Q2)
 # NEW: "could be" with two answers and one offered; the -2 trap.  REMINDER: two cases + distance picture (lesson).
-a0 = I('a0', 'Inside $=9$ $\;$ or $\;$ inside $=-9$', size=32)
-a1 = I('a1', '$x+7=9$, so $x=\\hl{two}{2}$', hand='x+7 = 9,  so  x = \\hl{two}{2}')
-a2 = I('a2', '$x+7=-9$, so $x=\\hl{m16}{-16}$', hand='x+7 = −9,  so  x = \\hl{m16}{−16}')
-n1 = NL('n1', fig(-18, 4, [(-16, '−16'), (-7, '−7'), (0, '0'), (2, '2')], [(-16, -16, True, True), (2, 2, True, True)],
-                  center=(-7, 9), title='|x + 7| = 9: 9 steps from −7, x = 2 or x = −16'))
-b1 = I('b1', '$|16+7|=23$ $\\quad |-2+7|=5$', size=32, col=1)
-b2 = I('b2', '$|-16+7|=|-9|=\\hl{nine}{9}$', size=32, col=1, hand='|−16+7| = |−9| = \\hl{nine}{9}')
+a0 = I('a0', 'Inside $=9$ $\;$ or $\;$ inside $=-9$', size=32, hand='inside = 9   or   inside = −9')
+a1 = I('a1', '$x+7=9$, so $x=\\hl{two}{2}$', hand='x+7 = 9,  so  x  =   \\hl{two}{2}')
+a2 = I('a2', '$x+7=-9$, so $x=\\hl{m16}{-16}$', hand='x+7 = −9,  so  x  =    \\hl{m16}{−16}')
+n1 = DIST('n1', -18, 4, -7, 9)
+b1 = I('b1', '$|16+7|=23$ $\\quad |-2+7|=5$', size=32, col=1, hand='|16+7| = 23    |−2+7| = 5')
+m0 = I('m0', '$\\hl{a}{\\text{Two cases}}\\ \\cdot\\ \\hl{b}{\\text{number line}}\\ \\cdot\\ \\hl{c}{\\text{plugging in}}$', size=28, col=1)
+r9 = I('r9', '$|9|=9,\\ \\ |-9|=9$', size=32, col=1, hand='|9| = 9,   |−9| = 9')
+d0 = I('d0', '$x+7=x-(-7)$', size=32, hand='x+7 = x − (−7)')
+w1 = I('w1', 'Two cases: the standard way', size=30)
+w2 = I('w2', 'Numbers in the choices: plug in', size=30)
+w3 = I('w3', 'Bars $=$ number: two cases, two answers', size=30)
+b2 = I('b2', '$|-16+7|=|-9|=\\hl{nine}{9}$', size=32, col=1, hand='|−16+7| = |−9|  =   \\hl{nine}{9}')
 video('solve-q-359', 'solution', qid='q-359', slides=[
     S('Method 1 · Two cases',
       L("Given: x plus seven, in absolute value, is equal to nine. Which of the following could be the value of x?",
-        pt('stem', 'Given', 'hl', 4.0), voice='calm', pause=0.5),
+        pt('stem', 'Given', 'hl', 8.0), voice='calm', pause=0.5),
       L("So we have an equation with an absolute value, and all the choices are numbers. We'll solve it three ways, two "
         "cases, the number line, and plugging in the answers.", pt('stem', 'an equation with'), pt('choice 1', 'all the choices'),
-        pt('choice 4', 'are numbers')),
+        pt('choice 4', 'are numbers'), show(m0, 'three ways'), pt('m0: a', 'two cases, the'), pt('m0: b', 'the number line'),
+        pt('m0: c', 'plugging in the answers')),
       L("[short pause] Our first method, two cases. Remember, which numbers have an absolute value of nine? Nine, and "
         "negative nine. So the inside, x plus seven, is nine, or it's negative nine.",
-        pt('stem', 'Our first method'), show(a0, 'So the inside')),
-      L("First case, x plus seven is nine. Take seven off both sides, and x is two.", show(a1, 'First case'),
+        pt('stem', 'Our first method'), show(r9, 'Nine, and negative nine'), show(a0, 'So the inside'),
+        pt('stem', 'x plus seven, is nine')),
+      L("First case, x plus seven is nine. Take seven off both sides, and x is two.", show(a1, 'First case'), pt('a1', 'Take seven off'),
         mk('circle', 'a1: two', 'x is two'), voice='calm'),
       L("Second case, x plus seven is negative nine. Take seven off again, and x is negative sixteen.",
-        show(a2, 'Second case'), mk('circle', 'a2: m16', 'x is negative sixteen'), voice='calm'),
+        show(a2, 'Second case'), pt('a2', 'Take seven off again'), mk('circle', 'a2: m16', 'x is negative sixteen'), voice='calm'),
       L("[short pause] Now careful with the choices. Is two there? No. But negative two is there, and that's the trap. It "
         "looks like our two, but it's a different number.",
         pt('a1: two', 'Is two there'), pt('choice 2', 'negative two is there'), mk('cross', 'choice 2', "that's the trap")),
       L("Negative sixteen is there, it's number three. And look at the wording, could be. Two values work, two and negative "
         "sixteen, but they only offer one of them. So negative sixteen, number three is our answer.",
-        pt('choice 3', 'Negative sixteen is there'), pt('stem', 'could be'), pt('a1: two', 'Two values work'),
-        pt('a2: m16', 'and negative sixteen'), mk('tick', 'choice 3', 'number three is our answer'))),
+        pt('a2: m16', 'Negative sixteen is there'), pt('choice 3', "it's number three"), pt('stem', 'could be'),
+        pt('a1: two', 'Two values work'), pt('a2: m16', 'and negative sixteen'), pt('choice 3', 'only offer one'), mk('tick', 'choice 3', 'number three is our answer'))),
     S('Method 2 · Number line',
       L("[pause] Our second method, the number line. x plus seven is x minus negative seven, so it's the distance between x "
-        "and negative seven.", pt('stem', 'x plus seven is x minus'), show(n1, 'the distance between')),
+        "and negative seven.", pt('stem', 'x plus seven is x minus'), show(d0, 'x minus negative seven'), show(n1['line'], 'the distance between')),
       L("Nine steps to the right of negative seven, that's two. Nine steps to the left, that's negative sixteen. The same "
-        "two answers, one on each side.", pt('n1', 'Nine steps to the right'), pt('choice 3', 'The same')),
+        "two answers, one on each side.", show(n1['right'], 'Nine steps to the right'), mk('circle', 'fig: 2', "that's two"),
+        show(n1['left'], 'Nine steps to the left'), mk('circle', 'fig: −16', "that's negative sixteen"), pt('choice 3', 'The same'),
+        mk('tick', 'choice 3', 'one on each side')),
       sb='Method 2 · Number line'),
     S('Method 3 · Plugging in the answers',
       L("[pause] And our third method, plugging in the answers. The choices are numbers, so let's just try them. Sixteen "
         "plus seven is twenty-three, no. Negative two plus seven is five, no.",
         pt('choice 1', 'Sixteen'), show(b1, 'twenty-three'), mk('cross', 'choice 1', 'twenty-three, no'),
-        mk('cross', 'choice 2', 'is five, no'), voice=['base']),
+        pt('choice 2', 'Negative two plus seven'), mk('cross', 'choice 2', 'is five, no'), voice=['base']),
       L("Negative sixteen plus seven is negative nine, and its absolute value is nine. It works. In the exam you'd circle it "
         "and move on.", show(b2, 'Negative sixteen plus seven'), mk('circle', 'b2: nine', 'absolute value is nine'),
-        mk('tick', 'choice 3', 'circle it')),
+        pt('choice 3', 'It works'), mk('tick', 'choice 3', 'circle it')),
       L("So which way is better? The two cases are the standard way, and you'll need them in the harder questions. But when "
         "the choices are numbers, plugging in is just as fast. Bars equal to a number? Two cases, two answers. "
         "[pause] Okay. I'll see you in the next question.",
-        pt('b2', 'plugging in is just as fast'))),
+        show(w1, 'The two cases are'), pt('w1', "you'll need them"), show(w2, 'plugging in is just as fast'), show(w3, 'Bars equal to'), mk('underline', 'w3', 'two answers'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-360 (Q3)
 # REMINDER: small side = closed range (lesson), acting on all three parts (topic 12), distance picture.
 r0 = I('r0', 'Small side: closed range', size=32, col=1)
+r1 = I('r1', '$-7<\\text{inside}<7$', size=32, col=1, hand='−7 < inside < 7')
+v1 = I('v1', 'Numbers in the choices: plug in', size=30)
+v2 = I('v2', 'Closed range: make it automatic', size=30)
+v3 = I('v3', '$|\\text{in}|<7$: $\\ -7<\\text{in}<7$', size=32, hand='|in| < 7 :   −7 < in < 7')
 c1 = I('c1', '$-7<x+3<7$', hand='−7 < x+3 < 7')
 c2 = I('c2', '$\\hl{lo}{-10}<x<\\hl{hi}{4}$', hand='\\hl{lo}{−10} < x < \\hl{hi}{4}')
-n2 = NL('n2', fig(-13, 7, [(-10, '−10'), (-3, '−3'), (0, '0'), (4, '4')], [(-10, 4, False, False)], center=(-3, 7),
-                  title='|x + 3| < 7: within 7 of −3, between −10 and 4'))
-d1 = I('d1', '$|5+3|=8$ $\\quad |-25+3|=22$', size=32, col=1)
-d2 = I('d2', '$|3+3|=\\hl{six}{6}<7$', size=32, col=1, hand='|3+3| = \\hl{six}{6} < 7')
+n2 = DIST('n2', -13, 7, -3, 7, band='open')
+d1 = I('d1', '$|5+3|=8$ $\\quad |-25+3|=22$', size=32, col=1, hand='|5+3| = 8    |−25+3| = 22')
+d2 = I('d2', '$|3+3|=\\hl{six}{6}<7$', size=32, col=1, hand='|3+3|  =   \\hl{six}{6}   < 7')
 video('solve-q-360', 'solution', qid='q-360', slides=[
     S('Method 1 · Closed range',
       L("Given: x plus three, in absolute value, is smaller than seven. Which of the following could be the value of x?",
-        pt('stem', 'Given', 'hl', 4.0), voice='calm', pause=0.5),
+        pt('stem', 'Given', 'hl', 9.0), voice='calm', pause=0.5),
       L("So now the bars are in an inequality, and they're on the small side. What did we say about the small side? It's a "
         "closed range. The inside is trapped between seven and negative seven. [short pause] We'll solve it three ways.",
-        pt('stem', 'on the small side'), show(r0, "It's a closed range")),
+        pt('stem', 'on the small side'), show(r0, "It's a closed range"), show(r1, 'trapped between')),
       L("[short pause] Our first method, the algebra. I take the seven, and I put negative seven on the other side. So "
         "negative seven is smaller than x plus three, which is smaller than seven.",
-        pt('stem', 'I take the seven'), show(c1, 'So negative seven is smaller')),
+        pt('stem', 'I take the seven'), pt('r1', 'negative seven on the other side'), show(c1, 'So negative seven is smaller'),
+        pt('c1', 'which is smaller than seven')),
       L("How do I get x alone in the middle? I take three off all three parts. Negative seven minus three is negative ten, "
         "and seven minus three is four. So x is between negative ten and four.",
         pt('c1', 'all three parts'), show(c2, 'Negative seven minus three'), pt('c2: lo', 'is negative ten'),
         pt('c2: hi', 'seven minus three is four'), voice=None),
       L("Now the choices. Five and eleven are too big, they're above four. Negative twenty-five is too small, it's below "
         "negative ten. And three is inside the range. So three, number three is our answer.",
-        mk('cross', 'choice 1', 'Five and'), mk('cross', 'choice 4', 'eleven are too big'), mk('cross', 'choice 2', 'Negative twenty-five'),
+        pt('choice 1', 'Now the choices'), mk('cross', 'choice 1', 'Five and'), mk('cross', 'choice 4', 'eleven are too big'), mk('cross', 'choice 2', 'Negative twenty-five'), pt('c2: lo', 'below negative ten'),
         mk('tick', 'choice 3', 'number three is our answer'))),
     S('Method 2 · Number line',
       L("[pause] Our second method, the number line. x plus three is the distance from negative three. So x is less than "
-        "seven steps away from negative three.", show(n2, 'the distance from negative three')),
+        "seven steps away from negative three.", pt('stem', 'x plus three is the'), show(n2['line'], 'the distance from negative three'),
+        pt('stem', 'less than seven steps')),
       L("Seven steps to the left, negative ten. Seven steps to the right, four. One band in the middle, and three is "
-        "inside it.", pt('n2', 'Seven steps to the left'), pt('choice 3', 'three is'))),
+        "inside it.", show(n2['left'], 'Seven steps to the left'), show(n2['right'], 'Seven steps to the right'),
+        show(n2['band'], 'One band in the middle'), pt('choice 3', 'three is'), mk('tick', 'choice 3', 'inside it'))),
     S('Method 3 · Plugging in the answers',
       L("[pause] Our third method, plugging in the answers. Five plus three is eight, not smaller than seven. Negative "
         "twenty-five plus three is negative twenty-two, its absolute value is twenty-two. Too big.",
-        show(d1, 'Five plus three'), mk('cross', 'choice 1', 'not smaller than seven'), mk('cross', 'choice 2', 'Too big')),
+        show(d1, 'Five plus three'), mk('cross', 'choice 1', 'not smaller than seven'),
+        pt('d1', 'Negative twenty-five plus'), pt('choice 2', 'its absolute value is twenty-two'), mk('cross', 'choice 2', 'Too big')),
       L("Three plus three is six, and six is smaller than seven. It works, so in the exam you circle it and move on.",
-        show(d2, 'Three plus three'), mk('circle', 'd2: six', 'six is smaller'), mk('tick', 'choice 3', 'circle it')),
+        show(d2, 'Three plus three'), mk('circle', 'd2: six', 'six is smaller'), pt('choice 3', 'It works'), mk('tick', 'choice 3', 'circle it')),
       L("Which way is better? With numbers in the choices, plugging in is the fastest here. But the closed range is the one "
         "to make automatic. An absolute value smaller than a number? Take that number, put its minus on the other side, and "
         "the inside is trapped between them. [pause] Okay. I'll see you in the next question.",
-        pt('d2', 'plugging in is the fastest'), pt('stem', 'An absolute value smaller'))),
+        pt('d2', 'Which way is better'), show(v1, 'plugging in is the fastest'), show(v2, 'But the closed range'), pt('stem', 'An absolute value smaller'),
+        show(v3, 'Take that number'), mk('underline', 'v3', 'trapped between them'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-361 (Q4)
@@ -1341,7 +1413,33 @@ def _follow(vid):
                 if c[0] == 'show': last = c[1]['_name']
 
 
-for _v in ORDER: _densify(_v); _follow(_v)
+# Method headers (2026-10-11, teacher: "make it easy to follow" - a method change must be clear on the board): a solution
+# slide titled "Method N · X" gets a small header line "Method N: X" at the top of its work area, shown when the voice
+# names the method in the slide's first line ("Our second method", "first by understanding", ...).
+_ORD = r"(?:first|second|third|fourth)"
+
+
+def _method_headers(vid):
+    V = VIDEOS[vid]
+    if V['kind'] != 'solution': return
+    for si, sl in enumerate(V['slides']):
+        m = re.match(r'Method (\d) · (.+)$', sl['title'])
+        if not m: continue
+        lines = sl['lines'][1:3] if si == 0 else sl['lines'][:1]       # slide 1: the lines after the question reading
+        for ln in lines:
+            say = ln['say']; h = re.search(r"\b(?:our %s method|%s by|%s,)" % (_ORD, _ORD, _ORD), say, re.I)
+            if not h: continue
+            ph = _unique(say, h.start(), 2)
+            if not ph: continue
+            left = sum(1 for l2 in sl['lines'] for c in l2['cues'] if c[0] == 'show' and c[1]['_col'] == 0 and not c[1].get('over'))
+            if left >= 4: break        # a full left column keeps its room (the sidebar still names the method)
+            it = I('hdr%d' % si, 'Method %s: %s' % (m.group(1), m.group(2)), size=28)
+            have = [(_phrase_pos(say, c), c) for c in ln['cues']]
+            ln['cues'] = [c for p, c in sorted(have + [(h.start() - .5, show(it, ph))], key=lambda x: x[0])]
+            break
+
+
+for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v)
 
 
 if __name__ == '__main__':

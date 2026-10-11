@@ -8,9 +8,9 @@ const out=[];let slides=0,items=0;const host=document.createElement('div');host.
 for(const [id,v] of Object.entries(window.COURSE.videos)){if(!v.hybrid||!'ONLY'.split('|').some(x=>id.includes(x)))continue;v.beats.forEach((b,i)=>{const n=1+b.lines.filter(l=>l.appear!=null).length;host.innerHTML=d.boardSvg(v,i,n-1);const svg=host.querySelector('svg');
  const R=g=>{const r=g.getBoundingClientRect();return {x:r.left,y:r.top,r:r.right,b:r.bottom}};const tag=id+' #'+(i+1)+' '+b.title;slides++;
  svg.querySelectorAll(':scope > text').forEach(t=>{const r=R(t);if(r.r<340&&r.r>316)out.push(tag+' | sidebar label overflows: '+t.textContent)});
- const gs=[...svg.querySelectorAll(':scope > g[data-i]')].flatMap(g=>{const subs=[...g.querySelectorAll(':scope > g[data-sub]')];return (subs.length?subs:[g]).map((x,j)=>({i:g.dataset.i+(subs.length?'.'+j:''),grp:g.dataset.i,...R(x)}))}).filter(g=>g.r>g.x);items+=gs.length;
+ const gs=[...svg.querySelectorAll(':scope > g[data-i]')].flatMap(g=>{const subs=[...g.querySelectorAll(':scope > g[data-sub]')];return (subs.length?subs:[g]).map((x,j)=>({i:g.dataset.i+(subs.length?'.'+j:''),grp:g.dataset.i,ov:!!g.querySelector(':scope > g[data-over]'),...R(x)}))}).filter(g=>g.r>g.x);items+=gs.length;
  gs.forEach(g=>{if(g.r>1602||g.b>902)out.push(tag+' | item '+g.i+' runs off the slide ('+Math.round(g.r)+','+Math.round(g.b)+')');if(g.x<332)out.push(tag+' | item '+g.i+' enters the sidebar')});
- for(let a=0;a<gs.length;a++)for(let c=a+1;c<gs.length;c++){const A=gs[a],B=gs[c];if(A.grp===B.grp)continue;const w=Math.min(A.r,B.r)-Math.max(A.x,B.x),h=Math.min(A.b,B.b)-Math.max(A.y,B.y);if(w>6&&h>6)out.push(tag+' | items '+A.i+' and '+B.i+' overlap')}
+ for(let a=0;a<gs.length;a++)for(let c=a+1;c<gs.length;c++){const A=gs[a],B=gs[c];if(A.grp===B.grp||A.ov||B.ov)continue;   /* data-over: a figure layer drawn on its base on purpose */const w=Math.min(A.r,B.r)-Math.max(A.x,B.x),h=Math.min(A.b,B.b)-Math.max(A.y,B.y);if(w>6&&h>6)out.push(tag+' | items '+A.i+' and '+B.i+' overlap')}
 })}
 document.body.innerHTML='<pre id="res">'+out.join('\n').replace(/</g,'&lt;')+'</pre>';document.title='slides='+slides+' items='+items+' problems='+out.length})();</script></body></html>'''.replace('ONLY', only)
 open(SP + '/layout-harness-%d.html' % os.getpid(), 'w', encoding='utf-8').write(s[:k] + js)

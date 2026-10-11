@@ -17,7 +17,7 @@ own pen strokes. Deterministic (seeded by the text), so a rebuild gives the same
 
 Text syntax (write(...)):   {a/b} stacked fraction (hand-drawn bar)   ^{..} or ^c power   √{..} root
                             \hl{name}{..} a part POINT / mark cues can target ('item N: name'), like in TeX items
-Characters: A-Z a-z 0-9 space + - − × ÷ = ( ) / , . : ? ! ' < > ↑ ↓ → ← ⇒ ◆ ° π
+Characters: A-Z a-z 0-9 space + - − × ÷ = ( ) / , . : ? ! ' < > ≤ ≥ ≠ ✓ | · ↑ ↓ → ← ⇒ ◆ ° π
 Output (item['hw']): strokes in an em-100 box (size 100 -> cap height 72): {'s': [[x,y,x,y,...], ...], 'w', 'h', 'n'
 (glyph count, for the writing speed), 'parts': {name: [first stroke, end stroke]}}.
 """
@@ -152,6 +152,13 @@ CUSTOM = {
     ',': (7, [[(3.6, -1.8), (3.8, -0.2), (2.2, 3.6)]]),
     ':': (7, [[(3, -12.6), (3.3, -11.4)], [(3, -1.6), (3.3, -0.2)]]),
     '°': (10, [[(5, -21), (3, -19.5), (3.2, -17), (5.2, -16), (7.2, -17.2), (7.2, -19.8), (5, -21)]]),
+    # 2026-10-11 (topic 13: inequalities, the "it works" check): own pen strokes like the operators above
+    '≤': (19, [[(16, -19), (3, -12.5), (16, -6)], [(3, -1.5), (16, -1.5)]]),
+    '≥': (19, [[(3, -19), (16, -12.5), (3, -6)], [(3, -1.5), (16, -1.5)]]),
+    '≠': (19, [[(2.5, -11.5), (16.5, -11.5)], [(2.5, -6.2), (16.5, -6.2)], [(13, -17), (6, -0.5)]]),
+    '|': (11, [[(5.5, -23), (5.5, 4)]]),        # absolute-value bar: upright, a little air on both sides; stretched to the line (_lay)
+    '·': (8, [[(3.8, -9.6), (4.1, -8.6)]]),
+    '✓': (21, [[(2, -9), (7.5, -1.5), (19, -19)]]),
     'π': (17, [[(2, -12), (4.5, -14), (15, -14)], [(6.5, -14), (5.5, -5), (3.5, 0)], [(11.5, -14), (11.8, -3), (13.5, 0)]]),
     ' ': (11, []),
 }
@@ -203,14 +210,14 @@ class Box:
 
 
 def _lay(nodes, rng):
-    B = Box(); x = 0.0
+    B = Box(); x = 0.0; bars = []
     for nd in nodes:
         if nd[0] == 'c':
             ch = nd[1]; adv, st = _glyph(ch)
             if ch == ' ': x += adv * (1 + max(-.1, min(.15, rng.gauss(0, .07)))); continue
             op = ch in OPS; nar = 1 if (op or ch in CUSTOM) else NARROW
             sc = 1 + max(-.1, min(.1, rng.gauss(0, .045))); rot = math.radians(rng.gauss(0, 2.2))
-            dy = rng.gauss(0, .65); slant = math.tan(math.radians(7 + rng.gauss(0, 1.8)))
+            dy = rng.gauss(0, .65); slant = math.tan(math.radians((1.5 if ch == '|' else 7) + rng.gauss(0, 1.8)))
             cx, cy = adv * nar / 2, -9.0
             g = []
             for s in st:
@@ -222,6 +229,7 @@ def _lay(nodes, rng):
                     pts.append((x + px - (py + 4) * slant, py))
                 g.append(pts)
             k0 = len(B.strokes); B.strokes += g
+            if ch == '|': bars.append(k0)
             ys = [p[1] for s in g for p in s] or [0]
             B.asc = max(B.asc, -min(ys)); B.desc = max(B.desc, max(ys)); B.n += 1
             x += adv * nar * (1 + rng.gauss(0, .03)) + rng.gauss(0, .4) - (1.5 if op else 0)
@@ -241,6 +249,13 @@ def _lay(nodes, rng):
             sub = _lay(nd[1], rng); top = -max(sub.asc, 21) - 3.5
             B.strokes.append([(x, -9), (x + 3, -10.5), (x + 6.5, 1.5), (x + 11, top), (x + 15 + sub.w, top + rng.gauss(0, .4))]); B.n += 1
             B.add(sub, x + 13, 0); B.asc = max(B.asc, -top + 1); x += sub.w + 17
+    # absolute-value bars reach over everything on the line (a fraction between bars gets tall bars, like |-3/8|)
+    if bars and any(nd[0] in ('frac', 'sqrt', 'sup') for nd in nodes):
+        top, bot = -max(B.asc, 21) - 1.5, max(B.desc, 2) + 1.5
+        for k in bars:
+            (x0, y0), (x1, y1) = B.strokes[k][0], B.strokes[k][-1]
+            B.strokes[k] = [(x0 + (y0 - top) * .03, top), (x1 - (bot - y1) * .03, bot)]
+        B.asc = max(B.asc, -top); B.desc = max(B.desc, bot)
     B.w = x
     return B
 
@@ -342,7 +357,12 @@ function hwItem(it,x,y,w){const H=it.hw,W=it.w||w;let k=(it.size||46)/100;if(H.w
 """
 
 REPL = [
-    ("function hyItem(it,x,y,w){const INK=PAL.ink;", "function hyItem(it,x,y,w){const INK=PAL.ink;if(it.k==='hw')return hwItem(it,x,y,w);"),
+    ("function hyItem(it,x,y,w){const INK=PAL.ink;", "function hyItem(it,x,y,w){const INK=PAL.ink;"
+     # 2026-10-11 layered figures (a number line BUILT step by step at the spoken words): an item with over:1 is drawn at
+     # the y of the last item before it and takes no room (h 0; its gap is 0), so its layers stack exactly on the base;
+     # data-over tells the layout check that the overlap is meant
+     "if(it.over&&window.__hyBaseY!=null){const r=hyItem(Object.assign({},it,{over:0}),x,window.__hyBaseY,w);return {svg:'<g data-over=\"1\">'+r.svg+'</g>',h:0}}"
+     "window.__hyBaseY=y;if(it.k==='hw')return hwItem(it,x,y,w);"),
     # a positioned hand-written item takes part in the overlap push-down / shrink-to-fit like a text item
     ("if(it.y!=null&&it.k==='t'){const x1=it.w?", "if(it.y!=null&&(it.k==='t'||it.k==='hw')){const x1=it.w?"),
 ]

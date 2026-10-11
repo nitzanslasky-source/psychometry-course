@@ -74,6 +74,8 @@
    {
     "say": "[pause] Our second method, a shortcut. The bars are never negative, so the right side can't be negative. Three x is zero or positive, so x is zero or positive.",
     "at": [
+     "Our second",
+     "The bars are",
      "Three x is zero or positive"
     ]
    },

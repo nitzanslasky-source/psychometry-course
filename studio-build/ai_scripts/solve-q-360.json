@@ -16,14 +16,17 @@
     "at": [
      "on the small side",
      "It's a closed range",
-     "The inside is"
+     "trapped between"
     ]
    },
    {
     "say": "[short pause] Our first method, the algebra. I take the seven, and I put negative seven on the other side. So negative seven is smaller than x plus three, which is smaller than seven.",
     "at": [
+     "Our first",
      "I take the seven",
-     "So negative seven is smaller"
+     "negative seven on the other side",
+     "So negative seven is smaller",
+     "which is smaller than seven"
     ]
    },
    {
@@ -40,9 +43,11 @@
    {
     "say": "Now the choices. Five and eleven are too big, they're above four. Negative twenty-five is too small, it's below negative ten. And three is inside the range. So three, number three is our answer.",
     "at": [
+     "Now the choices",
      "Five and",
      "eleven are too big",
      "Negative twenty-five",
+     "below negative ten",
      "And three is",
      "number three is our answer"
     ]
@@ -52,8 +57,10 @@
    {
     "say": "[pause] Our second method, the number line. x plus three is the distance from negative three. So x is less than seven steps away from negative three.",
     "at": [
+     "Our second",
+     "x plus three is the",
      "the distance from negative three",
-     "So x is"
+     "less than seven steps"
     ]
    },
    {
@@ -61,7 +68,9 @@
     "at": [
      "Seven steps to the left",
      "Seven steps to the right",
-     "three is"
+     "One band in the middle",
+     "three is",
+     "inside it"
     ]
    }
   ],
@@ -69,9 +78,11 @@
    {
     "say": "[pause] Our third method, plugging in the answers. Five plus three is eight, not smaller than seven. Negative twenty-five plus three is negative twenty-two, its absolute value is twenty-two. Too big.",
     "at": [
+     "Our third",
      "Five plus three",
      "not smaller than seven",
      "Negative twenty-five plus",
+     "its absolute value is twenty-two",
      "Too big"
     ]
    },
@@ -80,16 +91,19 @@
     "at": [
      "Three plus three",
      "six is smaller",
+     "It works",
      "circle it"
     ]
    },
    {
     "say": "Which way is better? With numbers in the choices, plugging in is the fastest here. But the closed range is the one to make automatic. An absolute value smaller than a number? Take that number, put its minus on the other side, and the inside is trapped between them. [pause] Okay. I'll see you in the next question.",
     "at": [
+     "Which way is better",
      "plugging in is the fastest",
-     "But the closed",
+     "But the closed range",
      "An absolute value smaller",
-     "Take that number"
+     "Take that number",
+     "trapped between them"
     ]
    }
   ]

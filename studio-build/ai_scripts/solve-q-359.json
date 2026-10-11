@@ -16,14 +16,22 @@
     "at": [
      "an equation with",
      "all the choices",
-     "are numbers"
+     "are numbers",
+     "three ways",
+     "two cases, the",
+     "the number line",
+     "plugging in the answers"
     ]
    },
    {
     "say": "[short pause] Our first method, two cases. Remember, which numbers have an absolute value of nine? Nine, and negative nine. So the inside, x plus seven, is nine, or it's negative nine.",
     "at": [
+     "Our first",
      "Our first method",
-     "So the inside"
+     "Remember, which numbers",
+     "Nine, and negative nine",
+     "So the inside",
+     "x plus seven, is nine"
     ]
    },
    {
@@ -31,6 +39,7 @@
     "voice": "calm",
     "at": [
      "First case",
+     "Take seven off",
      "x is two"
     ]
    },
@@ -39,6 +48,7 @@
     "voice": "calm",
     "at": [
      "Second case",
+     "Take seven off again",
      "x is negative sixteen"
     ]
    },
@@ -56,9 +66,11 @@
     "say": "Negative sixteen is there, it's number three. And look at the wording, could be. Two values work, two and negative sixteen, but they only offer one of them. So negative sixteen, number three is our answer.",
     "at": [
      "Negative sixteen is there",
+     "it's number three",
      "could be",
      "Two values work",
      "and negative sixteen",
+     "only offer one",
      "number three is our answer"
     ]
    }
@@ -67,7 +79,9 @@
    {
     "say": "[pause] Our second method, the number line. x plus seven is x minus negative seven, so it's the distance between x and negative seven.",
     "at": [
+     "Our second",
      "x plus seven is x minus",
+     "x minus negative seven",
      "the distance between"
     ]
    },
@@ -75,8 +89,11 @@
     "say": "Nine steps to the right of negative seven, that's two. Nine steps to the left, that's negative sixteen. The same two answers, one on each side.",
     "at": [
      "Nine steps to the right",
+     "that's two",
      "Nine steps to the left",
-     "The same"
+     "that's negative sixteen",
+     "The same",
+     "one on each side"
     ]
    }
   ],
@@ -87,9 +104,12 @@
      "base"
     ],
     "at": [
+     "our third",
+     "The choices are",
      "Sixteen",
      "twenty-three",
      "twenty-three, no",
+     "Negative two plus seven",
      "is five, no"
     ]
    },
@@ -98,15 +118,18 @@
     "at": [
      "Negative sixteen plus seven",
      "absolute value is nine",
+     "It works",
      "circle it"
     ]
    },
    {
     "say": "So which way is better? The two cases are the standard way, and you'll need them in the harder questions. But when the choices are numbers, plugging in is just as fast. Bars equal to a number? Two cases, two answers. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "The two cases",
+     "The two cases are",
+     "you'll need them",
      "plugging in is just as fast",
-     "Bars equal to"
+     "Bars equal to",
+     "two answers"
     ]
    }
   ]

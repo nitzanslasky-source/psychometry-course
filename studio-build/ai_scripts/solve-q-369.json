@@ -72,6 +72,7 @@
    {
     "say": "[pause] Our second method, splitting it in two. The bars smaller than nine means the inside is trapped between minus nine and nine. Add one, divide by two, and x is between minus four and five.",
     "at": [
+     "Our second",
      "The bars smaller than nine",
      "Add one, divide"
     ]
