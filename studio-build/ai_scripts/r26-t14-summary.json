@@ -1,52 +1,225 @@
 {
  "videoId": "r26-t14-summary",
- "style": "calm, natural hesitations, like explaining to a friend",
+ "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "So, before you practice, here's a quick summary of primes and factors.",
-   "Everything important, in a few minutes."
+   "Before you practice, here's a quick summary of primes and factors. Everything important, in a few minutes."
   ],
   [
-   "A prime number divides only by one, and by itself.",
-   "One is not prime. Two is... and it's the only even prime.",
-   "Know them by heart. Two, three, five, seven, eleven... up to thirty-seven. And ninety-seven, the largest two-digit prime."
+   {
+    "say": "A prime has exactly two divisors, one and itself. One is not prime, and neither are zero and the negative numbers. Two is prime, and it's the only even prime.",
+    "at": [
+     "exactly two divisors",
+     "One is not prime",
+     "neither are zero",
+     "Two is prime",
+     "the only even"
+    ]
+   },
+   {
+    "say": "Know the primes up to forty by heart. Two, three, five, seven, eleven, thirteen, seventeen, nineteen, twenty-three, twenty-nine, thirty-one and thirty-seven. And ninety-seven, the largest two-digit prime.",
+    "at": [
+     "Know the primes",
+     "forty by heart",
+     "Two, three, five",
+     "thirteen, seventeen, nineteen",
+     "thirty-one and thirty-seven",
+     "And ninety-seven, the"
+    ]
+   }
   ],
   [
-   "Now, all the other primes are odd. Odd plus odd is even. And odd minus odd is even too.",
-   "So an odd sum, or an odd difference, means one of the primes is two.",
-   "Seventy-three as a sum of two primes? Two plus seventy-one."
+   {
+    "say": "All the other primes are odd. Odd plus odd is even, and odd minus odd is even too. So if two primes give an odd sum or an odd difference, one of them is two. Seventy-three as a sum of two primes? Two plus seventy-one.",
+    "at": [
+     "are odd. Odd",
+     "is even, and",
+     "odd is even too",
+     "So if two primes",
+     "an odd sum",
+     "odd difference, one",
+     "Seventy-three",
+     "two primes? Two"
+    ]
+   }
   ],
   [
-   "To test a number, divide it by the primes up to its square root. No further.",
-   "And watch out for the fakes. For three, add the digits. And never forget to try seven."
+   {
+    "say": "To test a number, divide it by the primes up to its square root, and no further. Watch out for the fakes. For three, add the digits, like sixty-nine, six plus nine is fifteen. And never forget to try seven, like seventy-seven, which is seven times eleven.",
+    "at": [
+     "To test a number",
+     "it by the",
+     "to its square",
+     "Watch out for the fakes",
+     "For three, add",
+     "like sixty-nine, six",
+     "And never forget",
+     "seven, like seventy-seven",
+     "seven times eleven"
+    ]
+   }
   ],
   [
-   "Break every number into primes. It's divisible by every combination of its prime factors.",
-   "To test a divisor, break it into primes too. And unpack bases like six, or ten squared, first.",
-   "Honestly, most questions are just this. Break a number apart, or build it... and look for the missing prime."
+   {
+    "say": "Every number that isn't prime breaks into primes, in only one way. And it's divisible by every combination of its prime factors. Forty-four is two times two times eleven, so it divides by two, four, eleven, twenty-two and forty-four.",
+    "at": [
+     "prime breaks into",
+     "only one way",
+     "divisible by every",
+     "its prime factors",
+     "Forty-four is",
+     "times eleven, so",
+     "by two, four"
+    ]
+   },
+   {
+    "say": "Is a number a divisor? Break it into primes too, and check that every prime is there, enough times. Unpack pieces like six or ten squared first.",
+    "at": [
+     "Is a number a divisor",
+     "Break it into",
+     "and check that",
+     "is there, enough",
+     "Unpack pieces like",
+     "ten squared first"
+    ]
+   },
+   {
+    "say": "Most questions just break a number apart, or build numbers from pieces, and look for the missing prime.",
+    "at": [
+     "break a number apart",
+     "build numbers from",
+     "look for the"
+    ]
+   }
   ],
   [
-   "So, forty-eight and sixty. The GCD is twelve, and the LCM is two hundred forty.",
-   "The trap is just multiplying the two numbers. That's too big when they share a prime."
+   {
+    "say": "The greatest common divisor takes each shared prime at its lower power. The greatest number that's guaranteed to divide, the LCM, takes every prime at its higher power.",
+    "at": [
+     "The greatest common divisor",
+     "each shared prime",
+     "The greatest number",
+     "to divide, the",
+     "every prime at"
+    ]
+   },
+   {
+    "say": "Forty-eight is two to the power of four times three, and sixty is two squared times three times five. The GCD is two squared times three, twelve. The LCM takes two to the power of four, three and five, and sixteen times fifteen is two hundred forty.",
+    "at": [
+     "Forty-eight is",
+     "power of four",
+     "and sixty is",
+     "times three times",
+     "The GCD is",
+     "times three, twelve",
+     "The LCM takes",
+     "the power of four, three",
+     "and five, and",
+     "fifteen is two"
+    ]
+   },
+   {
+    "say": "The trap is just multiplying the two numbers, which counts a shared prime twice. And the GCD times the LCM is the two numbers multiplied.",
+    "at": [
+     "The trap is",
+     "the two numbers",
+     "a shared prime",
+     "the GCD times the LCM",
+     "is the two"
+    ]
+   }
   ],
   [
-   "The number of divisors: add one to each exponent, and multiply.",
-   "Divisors come in pairs. Only a perfect square has one without a partner.",
-   "Exactly three divisors? That's a prime squared. Like four, or one hundred twenty-one."
+   {
+    "say": "The number of divisors? Add one to each exponent, and multiply. Two to the power of four times three has five times two, ten divisors.",
+    "at": [
+     "Add one to each exponent",
+     "Two to the",
+     "four times three",
+     "times two, ten"
+    ]
+   },
+   {
+    "say": "Divisors come in pairs, so only a perfect square has an odd number of them. And exactly three divisors means a prime squared, like four or a hundred twenty-one.",
+    "at": [
+     "Divisors come in pairs",
+     "only a perfect",
+     "an odd number",
+     "And exactly three",
+     "a prime squared",
+     "or a hundred"
+    ]
+   }
   ],
   [
-   "In a perfect square, every exponent is even.",
-   "Twenty is two squared times five, so it needs one more five. k is five.",
-   "Now, a number breaks into primes in only one way. So break it, and then match the exponents."
+   {
+    "say": "In a perfect square, every exponent is even. Twenty k a square? Twenty is two squared times five, so it needs one more five. k is five, and twenty times five is a hundred, ten squared.",
+    "at": [
+     "every exponent is even",
+     "Twenty k",
+     "Twenty is two",
+     "five, so it",
+     "k is five",
+     "times five is"
+    ]
+   },
+   {
+    "say": "And an equation in primes? Break the number, then match the exponents. Two to the power of a, times three to the power of b, is a hundred forty-four. That's sixteen times nine, two to the power of four times three squared, so a is four and b is two.",
+    "at": [
+     "an equation in primes",
+     "Break the number",
+     "Two to the",
+     "a, times three",
+     "power of b",
+     "That's sixteen times",
+     "to the power of four",
+     "times three squared",
+     "is four and"
+    ]
+   }
   ],
   [
-   "A prime can't be split between two factors. One of them holds it.",
-   "And when the primes are letters, plug in the smallest primes. Then check every choice."
+   {
+    "say": "A prime can't be split between factors, one of them holds it whole.",
+    "at": [
+     "A prime can't be split",
+     "between factors, one",
+     "holds it whole"
+    ]
+   },
+   {
+    "say": "And when the primes are letters, plug in the smallest primes in the right order, and knock out three choices before you mark one.",
+    "at": [
+     "when the primes are letters",
+     "plug in the",
+     "in the right",
+     "knock out three",
+     "you mark one"
+    ]
+   }
   ],
   [
-   "So, before each question, ask yourself:",
-   "The common traps: calling one a prime, forgetting two, and multiplying instead of taking the LCM.",
-   "Okay, that's it. Now go practice."
+   {
+    "say": "Before each question, ask yourself. Did I break every number into primes? Is it really prime, did I try up to the root, and seven? An odd sum or difference, is one of them two? GCD or LCM, lower power or higher power?",
+    "at": [
+     "Did I break",
+     "Is it really prime",
+     "I try up",
+     "root, and seven",
+     "An odd sum",
+     "is one of",
+     "GCD or LCM",
+     "or higher power"
+    ]
+   },
+   {
+    "say": "The common traps are calling one a prime, forgetting two, and multiplying instead of taking the LCM. [pause] That's it. Now go practice, and I'll see you in the next video.",
+    "at": [
+     "calling one a",
+     "forgetting two",
+     "multiplying instead"
+    ]
+   }
   ]
  ]
 }

@@ -1,0 +1,137 @@
+{
+ "videoId": "prime-tools",
+ "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Now that we can break a number into primes, we're going to use the primes as tools. The next questions ask about the greatest common divisor, the greatest number that's sure to divide, and long stories that hide a simple factor question. Many students find them hard, and you'll see they're a lot simpler than they look."
+  ],
+  [
+   {
+    "say": "Almost every question in this part does one of two things. It breaks a number apart into factors, or it builds numbers by multiplying pieces together.",
+    "at": [
+     "this part does",
+     "It breaks a number apart",
+     "into factors, or",
+     "numbers by multiplying"
+    ]
+   },
+   {
+    "say": "And then it asks something simple. Which prime is missing, or which prime is there too few times? Each of these tools, we'll learn inside the question that uses it.",
+    "at": [
+     "And then it",
+     "Which prime is missing",
+     "which prime is there",
+     "Each of these",
+     "learn inside the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "But first, one tool that none of the next questions uses, and the practice questions do. How many divisors does a number have? Let's take forty-four. Its divisors are one, two, four, eleven, twenty-two and forty-four. That's six.",
+    "at": [
+     "that none of",
+     "questions uses, and",
+     "questions do. How",
+     "does a number",
+     "Let's take forty-four",
+     "four, eleven, twenty-two"
+    ]
+   },
+   {
+    "say": "Listing them works for small numbers. But there's a faster way, from the prime factorization. Forty-four is four times eleven, so it's two squared times eleven.",
+    "at": [
+     "Listing them works",
+     "But there's a",
+     "from the prime",
+     "Forty-four is four",
+     "so it's two"
+    ]
+   },
+   {
+    "say": "Why does this help? A divisor of forty-four is built only from its primes, twos and elevens, and never more of each than forty-four has. So a divisor chooses how many twos it takes, zero, one or two. That's three options. And how many elevens, zero or one. That's two options.",
+    "at": [
+     "A divisor of",
+     "built only from its primes",
+     "twos and elevens",
+     "more of each",
+     "has. So a",
+     "how many twos",
+     "three options. And",
+     "how many elevens"
+    ]
+   },
+   {
+    "say": "Any choice of twos goes with any choice of elevens, so I multiply the options. Three times two is six, exactly the six divisors we listed.",
+    "at": [
+     "Any choice of",
+     "with any choice",
+     "so I multiply",
+     "Three times two",
+     "exactly the six"
+    ]
+   },
+   {
+    "say": "So the rule is, take each exponent, add one, and multiply. Why plus one? Because taking zero copies is also a choice. The divisor one, with no twos and no elevens, is that choice.",
+    "at": [
+     "take each exponent",
+     "add one, and multiply",
+     "plus one? Because",
+     "taking zero copies",
+     "The divisor one",
+     "twos and no"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Let's see it on a bigger number, three cubed times five squared. That's twenty-seven times twenty-five, six hundred seventy-five. Listing its divisors would take a while. Threes, zero to three, that's four options. Fives, zero to two, that's three options. Four times three is twelve divisors.",
+    "at": [
+     "a bigger number",
+     "three cubed times five squared",
+     "That's twenty-seven times",
+     "Listing its divisors",
+     "Threes, zero to three",
+     "Fives, zero to",
+     "Four times three"
+    ]
+   },
+   {
+    "say": "Now careful, the rule works only on a real prime factorization. Fifty-six is four times fourteen, and a lot of students say one plus one, times one plus one, four divisors. But four and fourteen aren't primes.",
+    "at": [
+     "Now careful, the",
+     "only on a",
+     "Fifty-six is four times fourteen",
+     "and a lot",
+     "say one plus",
+     "one plus one, four",
+     "But four and",
+     "aren't primes"
+    ]
+   },
+   {
+    "say": "Fifty-six is two cubed times seven. So it's three plus one, times one plus one, four times two, eight divisors. One, two, four, seven, eight, fourteen, twenty-eight and fifty-six.",
+    "at": [
+     "two cubed times seven",
+     "So it's three",
+     "times one plus",
+     "times two, eight",
+     "One, two, four, seven",
+     "fourteen, twenty-eight and"
+    ]
+   },
+   {
+    "say": "So, break into primes, add one to each exponent, and multiply. The factor tools card comes right after this video, and then seven questions. Try each one first, and then watch the solution. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "break into primes",
+     "to each exponent",
+     "The factor tools",
+     "right after this",
+     "then seven questions",
+     "Try each one",
+     "then watch the"
+    ]
+   }
+  ]
+ ]
+}

@@ -1,0 +1,181 @@
+{
+ "videoId": "solve-q-390",
+ "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A number is divisible without remainder by both ten and twenty-five. What is the greatest number that is guaranteed to divide it?",
+    "voice": "calm",
+    "at": [
+     "A number"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we don't know the number. All we know is that ten divides it, and twenty-five divides it. And they ask, what's the biggest number we can be sure divides it? [short pause] We'll solve it three ways, with primes, with the smallest number that fits, and with a short formula.",
+    "at": [
+     "the number. All",
+     "ten divides it",
+     "divides it. And",
+     "biggest number we can be sure",
+     "sure divides it",
+     "it three ways",
+     "with the smallest",
+     "fits, and with"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method, primes. If ten divides the number, the number contains all of ten. And if twenty-five divides it, it contains all of twenty-five. So let's break both. Ten is two times five, and twenty-five is five times five.",
+    "at": [
+     "Our first",
+     "If ten divides",
+     "the number contains",
+     "And if twenty-five",
+     "it contains all",
+     "So let's break",
+     "Ten is two times five",
+     "and twenty-five is"
+    ]
+   },
+   {
+    "say": "Now, why not just multiply ten by twenty-five? Let's see it on simpler numbers. A number that divides by three and by seven surely divides by twenty-one, because three and seven share nothing. But a number that divides by three and by nine, does it divide by twenty-seven? Not necessarily. Nine itself divides by three and by nine, and it doesn't divide by twenty-seven. Nine already has the three inside it.",
+    "at": [
+     "Now, why not",
+     "ten by twenty-five",
+     "Let's see it",
+     "numbers. A number",
+     "by three and",
+     "by seven surely divides",
+     "twenty-one, because three",
+     "share nothing. But",
+     "that divides by three and by nine",
+     "and by nine, does it",
+     "divide by twenty-seven",
+     "Nine itself",
+     "and by nine, and",
+     "doesn't divide by",
+     "Nine already has"
+    ]
+   },
+   {
+    "say": "The same thing happens here. The five in ten may be the very same five that's inside twenty-five. When there's an overlap, we don't count it twice.",
+    "at": [
+     "The same thing",
+     "The five in ten",
+     "be the very",
+     "that's inside twenty-five",
+     "we don't count it twice"
+    ]
+   },
+   {
+    "say": "So how many of each prime do I need? Twos, only ten has one, so one two. Fives, ten needs one and twenty-five needs two, and two fives cover both. So every prime at its higher power.",
+    "at": [
+     "So how many",
+     "prime do I",
+     "Twos, only ten",
+     "so one two",
+     "Fives, ten needs",
+     "twenty-five needs two",
+     "fives cover both",
+     "every prime at its higher power"
+    ]
+   },
+   {
+    "say": "Two times five squared, two times twenty-five, is fifty. So fifty, choice number three is our answer.",
+    "at": [
+     "Two times five squared",
+     "is fifty",
+     "choice number three is our answer"
+    ]
+   },
+   {
+    "say": "And now careful with two hundred fifty, the trap. That's ten times twenty-five, the five counted twice. Can we promise it? The number might be just fifty, and two hundred fifty doesn't divide fifty. So choice number four is out.",
+    "at": [
+     "two hundred fifty, the trap",
+     "That's ten times",
+     "five counted twice",
+     "The number might be just fifty",
+     "doesn't divide fifty",
+     "choice number four is out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method, the smallest number that fits. A number that's guaranteed to divide must divide every number that fits, so it must divide even the smallest one. So let's find the smallest number that both ten and twenty-five divide. Remember the common denominator from fractions, I run through the multiples of the bigger one.",
+    "at": [
+     "Our second",
+     "number that fits",
+     "that's guaranteed to",
+     "divide every number",
+     "so it must",
+     "divide even the smallest one",
+     "So let's find",
+     "both ten and",
+     "Remember the common",
+     "fractions, I run",
+     "multiples of the"
+    ]
+   },
+   {
+    "say": "Multiples of twenty-five. Twenty-five, does ten divide it? No. Fifty, does ten divide it? Yes, fifty is five tens. So fifty is the smallest number that fits.",
+    "at": [
+     "Multiples of twenty-five",
+     "Fifty, does ten",
+     "Yes, fifty is",
+     "So fifty is the smallest",
+     "number that fits"
+    ]
+   },
+   {
+    "say": "Now the choices. Twenty-five divides fifty, so it's guaranteed, but it's not the greatest. A hundred and two hundred fifty are bigger than fifty, so they can't divide it. Out. And fifty divides itself, so the greatest guaranteed divisor is fifty, choice number three.",
+    "at": [
+     "Now the choices",
+     "fifty, so it's",
+     "it's not the greatest",
+     "A hundred and",
+     "fifty are bigger",
+     "can't divide it",
+     "fifty divides itself",
+     "guaranteed divisor is fifty"
+    ]
+   },
+   {
+    "say": "And this smallest common multiple has a name you saw with fractions, the LCM, the least common multiple. So the greatest guaranteed divisor is just the LCM.",
+    "at": [
+     "multiple has a",
+     "saw with fractions",
+     "the least common multiple",
+     "So the greatest",
+     "is just the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our third method, a short formula. The GCD times the LCM equals the two numbers multiplied. Why? Multiplying ten by twenty-five counts the shared five twice. Dividing by the GCD, the part they share, takes the extra five off.",
+    "at": [
+     "Our third",
+     "The GCD times the LCM",
+     "equals the two",
+     "Why? Multiplying ten",
+     "counts the shared five twice",
+     "Dividing by the",
+     "part they share",
+     "extra five off"
+    ]
+   },
+   {
+    "say": "Ten times twenty-five is two hundred fifty. The GCD of ten and twenty-five is five, the one five they share. Two hundred fifty over five is fifty. Choice number three again. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Ten times twenty-five",
+     "The GCD of",
+     "twenty-five is five",
+     "five they share",
+     "over five is fifty",
+     "Choice number three again"
+    ]
+   }
+  ]
+ ]
+}

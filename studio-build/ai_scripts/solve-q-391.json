@@ -1,0 +1,109 @@
+{
+ "videoId": "solve-q-391",
+ "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "p and q are prime numbers. Which of the following numbers cannot be p plus q?",
+    "voice": "calm",
+    "at": [
+     "p and q"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So two primes and their sum, and one choice can't be that sum. It looks brutal. Trial and error, splitting fifteen into two primes, then twenty-one, and so on, would take forever. But on this exam there's almost always one simple idea, and once you see it, the answer falls out.",
+    "at": [
+     "their sum",
+     "can't be that",
+     "looks brutal. Trial",
+     "splitting fifteen",
+     "then twenty-one, and",
+     "would take forever",
+     "this exam there's",
+     "one simple idea",
+     "you see it"
+    ]
+   },
+   {
+    "say": "Look at the choices. Every one of them is odd. And remember from the lesson, the primes are all odd except one, two, the only even prime. Odd plus odd is even, like three plus five is eight. Even plus even is even too. Only one even and one odd give an odd sum.",
+    "at": [
+     "Every one of them is odd",
+     "Every one of them",
+     "And remember from",
+     "the primes are",
+     "except one, two",
+     "Odd plus odd is even",
+     "Even plus even",
+     "Only one even",
+     "odd give an"
+    ]
+   },
+   {
+    "say": "So if two primes have an odd sum, one of them must be two. Let's take two off each choice, and check whether what's left is a prime.",
+    "at": [
+     "have an odd",
+     "one of them must be two",
+     "Let's take two",
+     "choice, and check",
+     "left is a"
+    ]
+   },
+   {
+    "say": "Fifteen is two plus thirteen. Thirteen is a prime, so fifteen works, and choice number one is out.",
+    "at": [
+     "Fifteen is two plus thirteen",
+     "Thirteen is a",
+     "fifteen works, and",
+     "choice number one is out"
+    ]
+   },
+   {
+    "say": "Twenty-one is two plus nineteen. Nineteen is a prime, so choice number two is out.",
+    "at": [
+     "Twenty-one is two plus nineteen",
+     "Nineteen is a",
+     "choice number two is out"
+    ]
+   },
+   {
+    "say": "Fifty-one is two plus forty-nine. Is forty-nine a prime? It looks like one, but no, forty-nine is seven times seven. And without the two, both primes would be odd, and their sum would be even, not fifty-one. So no pair works, and fifty-one can't be the sum.",
+    "at": [
+     "Fifty-one is two plus",
+     "Is forty-nine a",
+     "looks like one",
+     "forty-nine is seven times",
+     "without the two",
+     "would be odd",
+     "sum would be",
+     "So no pair",
+     "fifty-one can't be"
+    ]
+   },
+   {
+    "say": "In the exam you'd circle it and move on. Here, let's check the last one. Forty-three is two plus forty-one. Forty-one is odd, its digit sum is five, it doesn't end in five, and its root is less than seven. So it's a prime, choice number four is out, and fifty-one, choice number three is our answer.",
+    "at": [
+     "In the exam",
+     "it and move",
+     "Here, let's check",
+     "Forty-three is two plus",
+     "Forty-one is odd",
+     "sum is five",
+     "end in five",
+     "root is less",
+     "So it's a",
+     "choice number four is out",
+     "choice number three is our answer"
+    ]
+   },
+   {
+    "say": "The whole question was one fact, two is the only even prime, and the exam loves it. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "The whole question was one fact",
+     "fact, two is",
+     "even prime, and"
+    ]
+   }
+  ]
+ ]
+}

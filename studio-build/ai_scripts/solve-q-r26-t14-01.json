@@ -1,0 +1,222 @@
+{
+ "videoId": "solve-q-r26-t14-01",
+ "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Which of the following numbers is prime?",
+    "voice": "calm",
+    "at": [
+     "Which"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So four numbers, all odd, and every one of them looks prime. But three of them are fakes, and only one is really prime. [short pause] We'll solve it two ways, testing each number up to its root, and then counting by sevens.",
+    "at": [
+     "four numbers",
+     "all odd",
+     "of them looks",
+     "three of them are fakes",
+     "and only one",
+     "ways, testing each",
+     "to its root",
+     "counting by sevens"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method. Remember, to test a number, I divide it by the primes up to its square root, and no further. If none of them divides it, it's prime. Let's start with ninety-one. Nine squared is eighty-one, and ten squared is a hundred. So the root of ninety-one is between nine and ten, and I only try two, three, five and seven.",
+    "at": [
+     "Our first",
+     "test a number",
+     "it by the",
+     "up to its square root",
+     "and no further",
+     "If none of",
+     "it, it's prime",
+     "start with ninety-one",
+     "Nine squared is",
+     "ten squared is",
+     "So the root",
+     "is between nine",
+     "I only try two",
+     "five and seven"
+    ]
+   },
+   {
+    "say": "Two? Ninety-one is odd, so no. Three? Here's a quick test, and it's worth knowing well. Add the digits, and if the digit sum divides by three, the whole number does too. Fifty-one, five plus one is six, and six divides by three. And really, fifty-one is three times seventeen. But fifty-two, five plus two is seven, so fifty-two doesn't divide by three. We don't need to prove this test, it simply always works.",
+    "at": [
+     "Ninety-one is odd",
+     "Here's a quick",
+     "it's worth knowing",
+     "Add the digits",
+     "the digit sum",
+     "three, the whole",
+     "Fifty-one, five plus one",
+     "six, and six",
+     "three. And really",
+     "three times seventeen",
+     "But fifty-two",
+     "is seven, so",
+     "divide by three",
+     "We don't need to prove",
+     "this test, it"
+    ]
+   },
+   {
+    "say": "So ninety-one, nine plus one is ten. Ten doesn't divide by three, so three doesn't divide ninety-one. Five? It doesn't end in zero or five, so no. And seven? Seven has no quick test, so I just divide. Seven times ten is seventy, and seven times three is twenty-one, together ninety-one. So ninety-one is seven times thirteen. It breaks, it's a fake, and choice number one is out.",
+    "at": [
+     "nine plus one is ten",
+     "so three doesn't",
+     "Five? It",
+     "It doesn't end",
+     "or five, so",
+     "Seven has no quick test",
+     "so I just",
+     "Seven times ten",
+     "and seven times",
+     "twenty-one, together ninety-one",
+     "seven times thirteen",
+     "it's a fake",
+     "choice number one is out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "A hundred nineteen. Ten squared is a hundred, and eleven squared is a hundred twenty-one, so again I try two, three, five and seven. It's odd. One plus one plus nine is eleven, not a multiple of three. It ends in nine, so not five. And seven? Seven times ten is seventy, and seven times seven is forty-nine, together a hundred nineteen. So it's seven times seventeen, a fake again, and choice number two is out.",
+    "at": [
+     "A hundred nineteen",
+     "is a hundred",
+     "squared is a hundred twenty-one",
+     "so again I",
+     "three, five and",
+     "odd. One plus",
+     "nine is eleven",
+     "multiple of three",
+     "in nine, so",
+     "And seven? Seven",
+     "is seventy, and",
+     "seven is forty-nine",
+     "together a hundred nineteen",
+     "it's seven times",
+     "fake again, and",
+     "choice number two is out"
+    ]
+   },
+   {
+    "say": "A hundred thirty-three. Eleven squared is a hundred twenty-one, and twelve squared is a hundred forty-four, so I try up to eleven. It's odd, one plus three plus three is seven, and it ends in three. Seven? Seven times twenty is a hundred forty, and one seven less is a hundred thirty-three. So it's seven times nineteen, and choice number four is out.",
+    "at": [
+     "A hundred thirty-three",
+     "Eleven squared is",
+     "twenty-one, and twelve",
+     "a hundred forty-four",
+     "try up to",
+     "It's odd, one",
+     "plus three is",
+     "it ends in",
+     "Seven times twenty",
+     "hundred forty, and",
+     "one seven less",
+     "hundred thirty-three. So",
+     "times nineteen, and",
+     "choice number four is out"
+    ]
+   },
+   {
+    "say": "In the exam you'd circle the last one and move on. Here, let's see why a hundred thirteen really is prime. Ten squared is a hundred and eleven squared is a hundred twenty-one, so I try two, three, five and seven. It's odd. One plus one plus three is five, not a multiple of three. It ends in three. And seven times sixteen, seventy plus forty-two, is a hundred twelve. So a hundred thirteen leaves a remainder of one.",
+    "at": [
+     "circle the last one",
+     "Here, let's see",
+     "hundred thirteen really",
+     "Ten squared is",
+     "and eleven squared",
+     "hundred twenty-one, so",
+     "two, three, five",
+     "It's odd. One plus one",
+     "is five, not",
+     "of three. It",
+     "seven times sixteen",
+     "forty-two, is a",
+     "So a hundred",
+     "a remainder of"
+    ]
+   },
+   {
+    "say": "Nothing up to the root divides it, so a hundred thirteen is prime. Choice number three is our answer.",
+    "at": [
+     "Nothing up to the root",
+     "divides it, so",
+     "thirteen is prime",
+     "Choice number three is our answer"
+    ]
+   },
+   {
+    "say": "And look, all three fakes broke on seven. So when a number looks prime, never forget to try seven.",
+    "at": [
+     "all three fakes",
+     "seven. So when",
+     "never forget to try seven",
+     "try seven"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method, counting by sevens. Why sevens? Because two, three and five have quick tests you can see on the number, even, the digit sum and the last digit. Seven is the one small prime with no quick test. So let's list the multiples of seven around a hundred.",
+    "at": [
+     "Our second",
+     "sevens. Why sevens",
+     "two, three and five have quick tests",
+     "quick tests you",
+     "on the number",
+     "digit sum and",
+     "Seven is the one",
+     "prime with no",
+     "So let's list",
+     "of seven around"
+    ]
+   },
+   {
+    "say": "Seven times thirteen is ninety-one. Then I add seven each time. Ninety-one plus seven is ninety-eight, plus seven is a hundred five, then a hundred twelve, a hundred nineteen, a hundred twenty-six, and a hundred thirty-three.",
+    "voice": "calm",
+    "at": [
+     "Seven times thirteen",
+     "Then I add",
+     "Ninety-one plus seven",
+     "plus seven is a",
+     "five, then a",
+     "a hundred nineteen",
+     "twenty-six, and a"
+    ]
+   },
+   {
+    "say": "Ninety-one, a hundred nineteen and a hundred thirty-three are all on the list. So they divide by seven, they're fakes, and choice numbers one, two and four are out.",
+    "at": [
+     "Ninety-one, a",
+     "hundred nineteen and",
+     "hundred thirty-three are",
+     "the list. So",
+     "by seven, they're",
+     "choice numbers one",
+     "two and four",
+     "are out"
+    ]
+   },
+   {
+    "say": "A hundred thirteen isn't on the list. And it doesn't divide by two, three or five either. It's not even, one plus one plus three is five, and it ends in three. And seven, two, three and five are all the primes up to its root. So it's prime, choice number three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "isn't on the list",
+     "two, three or",
+     "It's not even",
+     "one plus three",
+     "and it ends",
+     "And seven, two",
+     "five are all",
+     "up to its",
+     "So it's prime"
+    ]
+   }
+  ]
+ ]
+}

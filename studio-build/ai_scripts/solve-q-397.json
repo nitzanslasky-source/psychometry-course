@@ -1,0 +1,132 @@
+{
+ "videoId": "solve-q-397",
+ "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "a is an integer. Given: a is bigger than one and smaller than two hundred, and a has exactly three different divisors, including one and a. How many different values can a have?",
+    "voice": "calm",
+    "at": [
+     "a is an integer"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "The whole question hides in one given, exactly three divisors. And we've seen this one before. [short pause] We'll solve it two ways, with the rule, and then with trial and error to find the pattern.",
+    "at": [
+     "in one given",
+     "exactly three divisors",
+     "seen this one",
+     "solve it two",
+     "the rule, and",
+     "trial and error"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method. Remember, divisors come in pairs, and exactly three divisors means a prime squared. One, the prime, and the prime squared, like nine, with one, three and nine.",
+    "at": [
+     "Our first",
+     "come in pairs",
+     "means a prime squared",
+     "One, the prime",
+     "prime squared, like",
+     "one, three and"
+    ]
+   },
+   {
+    "say": "So a is a prime squared, and a is less than two hundred. How big can the prime be? Fourteen squared is a hundred ninety-six, still below two hundred. Fifteen squared is two hundred twenty-five, too big. So the prime is fourteen or less.",
+    "at": [
+     "So a is",
+     "squared, and a",
+     "than two hundred",
+     "How big can",
+     "Fourteen squared is",
+     "ninety-six, still below",
+     "Fifteen squared is",
+     "twenty-five, too big",
+     "So the prime"
+    ]
+   },
+   {
+    "say": "The primes up to fourteen are two, three, five, seven, eleven and thirteen. Six of them. Their squares are four, nine, twenty-five, forty-nine, a hundred twenty-one and a hundred sixty-nine, all below two hundred.",
+    "at": [
+     "The primes up to fourteen",
+     "eleven and thirteen",
+     "Six of them",
+     "Their squares are",
+     "twenty-five, forty-nine, a",
+     "and a hundred",
+     "below two hundred"
+    ]
+   },
+   {
+    "say": "So a has six values, and choice number three is our answer.",
+    "at": [
+     "choice number three is our answer"
+    ]
+   },
+   {
+    "say": "Now careful, a lot of students stop at the one-digit primes, two, three, five and seven, and answer four, choice number four. But eleven squared and thirteen squared are still below two hundred.",
+    "at": [
+     "stop at the one-digit primes",
+     "two, three, five",
+     "and answer four",
+     "choice number four",
+     "But eleven squared",
+     "squared are still"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method, trial and error. Don't remember the rule? Run through the numbers, count the divisors, and look for the pattern. Two and three are prime, two divisors each. Four has one, two and four. Three divisors, the first one that fits. Five is prime. Six has one, two, three and six, that's four. Seven is prime. Eight has one, two, four and eight, four again.",
+    "at": [
+     "Our second",
+     "error. Don't remember",
+     "Run through the",
+     "the divisors, and",
+     "Two and three",
+     "two divisors each",
+     "Four has one, two and four",
+     "that fits. Five",
+     "Six has one",
+     "and six, that's",
+     "Eight has one",
+     "and eight, four"
+    ]
+   },
+   {
+    "say": "Nine has one, three and nine. It fits.",
+    "at": [
+     "Nine has one",
+     "nine. It fits"
+    ]
+   },
+   {
+    "say": "Stop and look for the pattern. Four is two squared, and nine is three squared, squares of primes. But careful, not every square. Sixteen is four squared, and it has one, two, four, eight and sixteen, five divisors, because four isn't a prime.",
+    "at": [
+     "Stop and look",
+     "pattern. Four is",
+     "and nine is",
+     "squares of primes",
+     "But careful, not",
+     "Sixteen is four squared",
+     "it has one",
+     "eight and sixteen",
+     "because four isn't"
+    ]
+   },
+   {
+    "say": "So the next ones are five squared, twenty-five, seven squared, forty-nine, eleven squared, a hundred twenty-one, and thirteen squared, a hundred sixty-nine. Seventeen squared is two hundred eighty-nine, too big. Six values, choice number three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "five squared, twenty-five",
+     "forty-nine, eleven squared",
+     "twenty-one, and thirteen",
+     "Seventeen squared is",
+     "eighty-nine, too big",
+     "Six values"
+    ]
+   }
+  ]
+ ]
+}

@@ -1434,6 +1434,86 @@
   "solve-q-369#2": {
    "t": "Method 3 · Plugging in the answers",
    "d": "2026-10-11 AI redo: every range tested with one easy number inside it (why: a possible range must work for every number in it), choice 4 too (−4.5 gives 10), and \"plugging in isn't a cheat, it's the proper way\" (her addition)"
+  },
+  "solve-q-387#1": {
+   "t": "Method 2 · Plugging in the answers",
+   "d": "2026-10-11 topic-14 redo (your reading): a second method — divide each choice by 9 to get x, then check x to the power of 6"
+  },
+  "solve-q-388#1": {
+   "t": "Method 1 · Break into primes",
+   "d": "2026-10-11 topic-14 redo (your reading): the choices checked one by one against x = 2²·3·5⁴ (the slide was split so the board fits)"
+  },
+  "solve-q-388#2": {
+   "t": "Method 2 · Divide the number",
+   "d": "2026-10-11 topic-14 redo (your reading): a second method — work out x = 7500 and divide by each choice"
+  },
+  "solve-q-386#1": {
+   "t": "Number line",
+   "d": "2026-10-11 topic-14 redo (your reading): the calculation slide: x = 30, y = 44, 30·44 = 1320, and why each other choice is a trap"
+  },
+  "solve-q-389#0": {
+   "t": "Method 1 · Common factor",
+   "d": "2026-10-11 topic-14 redo (your reading): GCD in plain words (\"the biggest number that divides both\", \"what comes out of both\"), prime by prime at the lower power"
+  },
+  "solve-q-389#2": {
+   "t": "Lower power, in numbers",
+   "d": "2026-10-11 topic-14 redo (your reading): your own example from the take: 112 = 2⁴·7 with a factor tree, multiply back to check, GCD of 172 and 112 is 4"
+  },
+  "solve-q-389#3": {
+   "t": "Method 2 · Which choices divide both",
+   "d": "2026-10-11 topic-14 redo (your reading): a second method — drop the choices that do not divide both, then take the greatest"
+  },
+  "solve-q-390#1": {
+   "t": "Method 2 · The smallest number",
+   "d": "2026-10-11 topic-14 redo (your reading): a second method — the guaranteed divisor must divide the smallest number that fits: multiples of 25 → 50"
+  },
+  "solve-q-390#2": {
+   "t": "Method 3 · Product over GCD",
+   "d": "2026-10-11 topic-14 redo (your reading): a third method — GCD·LCM = a·b, with the why (the shared 5 counted twice)"
+  },
+  "solve-q-398#1": {
+   "t": "Method 2 · Even and odd",
+   "d": "2026-10-11 topic-14 redo (your reading): a second method — odd times odd is odd, so the even 30 cannot be built"
+  },
+  "solve-q-399#0": {
+   "t": "Method 1 · Every pair",
+   "d": "2026-10-11 topic-14 redo (your reading): every factor pair of 100 in order, why to stop at the square root, and the 10·10 trap"
+  },
+  "solve-q-400#1": {
+   "t": "Method 2 · Look at the choices",
+   "d": "2026-10-11 topic-14 redo (your reading): a second method — the three-card product alone is 70, so the sum is more than 70: only 129"
+  },
+  "solve-q-402#1": {
+   "t": "Method 1 · Divisor pairs",
+   "d": "2026-10-11 topic-14 redo (your reading): why exactly 3 divisors means a prime squared (the middle divisor), example 49"
+  },
+  "solve-q-402#2": {
+   "t": "Method 2 · Plugging in a number",
+   "d": "2026-10-11 topic-14 redo (your reading): a second method — k = 4 is the first number with 3 divisors, C = 2 has 2 divisors"
+  },
+  "solve-q-393#1": {
+   "t": "Method 1 · Common factor, then pairs",
+   "d": "2026-10-11 topic-14 redo (your reading): the rest of the factor pairs (4·12, 6·8 not allowed), the possible sums"
+  },
+  "solve-q-393#2": {
+   "t": "Method 2 · Plugging in the answers",
+   "d": "2026-10-11 topic-14 redo (your reading): a second method — test each sum with small values of a; 17 never gives 48"
+  },
+  "solve-q-396#1": {
+   "t": "Method 1 · Build the smallest",
+   "d": "2026-10-11 topic-14 redo (your reading): a = 12, b = 10 → 8, and the trap behind every other choice"
+  },
+  "solve-q-396#2": {
+   "t": "Method 2 · Plugging in the answers",
+   "d": "2026-10-11 topic-14 redo (your reading): a second method — start from the smallest choice: 4 needs a·b = 60 = 6·10 (b < a fails), 8 works"
+  },
+  "solve-q-395#0": {
+   "t": "Method 1 · Test each statement",
+   "d": "2026-10-11 topic-14 redo (your reading): the rule \"a prime in a product sits whole in one factor\", with its why and 42 = 2·21; 35 is not prime"
+  },
+  "solve-q-395#2": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 topic-14 redo (your reading): a second method — a = 5, b = 7, c = 1 breaks statement 2"
   }
  },
  "lines": {
@@ -2266,8 +2346,8 @@
    "d": "GCD defined: shared primes at the lower power; trap choice is the LCM · restored from your Hebrew lesson: read 'divisor' as 'factor' - the GCD is just taking out a common factor (picture x + y, what comes out in front of brackets) · clearer explanation (2026-10-08)"
   },
   "solve-q-390#0": {
-   "t": "Higher power",
-   "d": "the LCM name, step-by-step solve (2·5² = 50) and GCD · LCM = a · b · restored from your Hebrew lesson: why not just multiply - divisible by 3 and 7 → by 21 (nothing shared), but by 3 and 9 → not by 27 (the 3 is inside the 9) · clearer explanation (2026-10-08)"
+   "t": "Method 1 · Primes",
+   "d": "2026-10-11 topic-14 redo (your reading): your 3 and 7 → 21 / 3 and 9 → not 27 example, \"an overlap: count it once\""
   },
   "solve-q-395#0": {
    "t": "Test each statement",
@@ -2278,8 +2358,8 @@
    "d": "the trap if you forget 10 × 10 (answer 33) · clearer explanation (2026-10-08)"
   },
   "solve-q-402#0": {
-   "t": "Three divisors → prime squared",
-   "d": "divisors come in pairs: odd number of divisors → a perfect square · clearer explanation (2026-10-08)"
+   "t": "Method 1 · Divisor pairs",
+   "d": "2026-10-11 topic-14 redo (your reading): divisors come in pairs (18), an odd count only for a square (16)"
   },
   "solve-q-423#0": {
    "t": "Method 1 · Understanding",
@@ -3182,32 +3262,32 @@
    "d": "clearer explanation (2026-10-08)"
   },
   "solve-q-388#0": {
-   "t": "The missing prime",
-   "d": "clearer explanation (2026-10-08)"
+   "t": "Method 1 · Break into primes",
+   "d": "2026-10-11 topic-14 redo (your reading): first full explanation of unpacking 10² = 2²·5², the \"no two in x\" trap"
   },
   "solve-q-391#0": {
    "t": "The only even prime",
    "d": "clearer explanation (2026-10-08)"
   },
   "solve-q-393#0": {
-   "t": "Common factor, then factor pairs",
-   "d": "clearer explanation (2026-10-08)"
+   "t": "Method 1 · Common factor, then pairs",
+   "d": "2026-10-11 topic-14 redo (your reading): why a is the smaller factor (a < b < b + 4)"
   },
   "solve-q-394#0": {
    "t": "Method 1 · Understanding",
    "d": "clearer explanation (2026-10-08)"
   },
   "solve-q-396#0": {
-   "t": "Build the smallest a and b",
-   "d": "clearer explanation (2026-10-08)"
+   "t": "Method 1 · Build the smallest",
+   "d": "2026-10-11 topic-14 redo (your reading): \"exactly two prime factors\" = both and nothing else; grow a by its cheapest prime"
   },
   "solve-q-397#0": {
-   "t": "Method 1 · Understanding",
-   "d": "clearer explanation (2026-10-08)"
+   "t": "Method 1 · The rule",
+   "d": "2026-10-11 topic-14 redo (your reading): 14² = 196 < 200 < 225 = 15², the trap of stopping at the one-digit primes"
   },
   "solve-q-398#0": {
-   "t": "Which prime is missing?",
-   "d": "clearer explanation (2026-10-08)"
+   "t": "Method 1 · Break into primes",
+   "d": "2026-10-11 topic-14 redo (your reading): what primes the digits can bring, at most three of them"
   },
   "solve-q-400#0": {
    "t": "Build every product",
@@ -3328,6 +3408,38 @@
   "solve-q-369#2": {
    "t": "Method 3 · Plugging in the answers",
    "d": "2026-10-11 AI redo: choice 4 tested too (−4.5 gives 10), and \"plugging in isn't a cheat, it's the proper way\" (her addition)"
+  },
+  "solve-q-389#1": {
+   "t": "Lower power, in numbers",
+   "d": "2026-10-11 topic-14 redo (your reading): 172 = 2²·43 with a factor tree"
+  },
+  "solve-q-399#1": {
+   "t": "Method 2 · The extremes",
+   "d": "2026-10-11 topic-14 redo (your reading): a second method — far apart (2 and 50) and as close as possible (10 and 10)"
+  },
+  "solve-q-401#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 topic-14 redo (your reading): pick m² (not m) as a prime; √2 and √7 between whole numbers, no decimals"
+  },
+  "solve-q-392#0": {
+   "t": "Method 1 · Prime factorization",
+   "d": "2026-10-11 topic-14 redo (your reading): count in how many numbers each prime appears"
+  },
+  "solve-q-392#1": {
+   "t": "Method 2 · Plugging in the answers",
+   "d": "2026-10-11 topic-14 redo (your reading): every choice checked, also 21"
+  },
+  "solve-q-394#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 topic-14 redo (your reading): why the smallest primes in order, and knock out three before marking"
+  },
+  "solve-q-395#1": {
+   "t": "Method 1 · Test each statement",
+   "d": "2026-10-11 topic-14 redo (your reading): squaring adds no new prime (70²), never true is also not necessarily true"
+  },
+  "solve-q-397#1": {
+   "t": "Method 2 · Trial and error",
+   "d": "2026-10-11 topic-14 redo (your reading): 16 = 4² has five divisors: only squares of primes count"
   }
  }
 }

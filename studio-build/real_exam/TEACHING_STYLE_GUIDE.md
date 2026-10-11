@@ -612,3 +612,41 @@ Study-plan order before topic 13: 1, 30, 2, 4, 31, 6, 8, 32, 9, 10, 33, 51, 39, 
 | Equal bars: equal or opposite insides (why: the same distance from zero) | q-368 | summary |
 | Double inequality with bars: two bands; the split method | q-369 | — |
 | x + \|x\|: split at zero; on the negative side they cancel to zero | q-370 | — |
+
+### Topic 14: where each idea is first taught (R29 / R32)
+
+Topic-14 order: the camera lesson `primes`, then q-387, q-r26-t14-01, q-388, q-386, prime-tools, q-389, q-390, q-398, q-399, q-400, q-401, q-402, r26-t14-more-tools, q-r26-t14-03, q-391, q-392, q-393, q-396, q-394, q-395, q-397, summary. Topics 15 (divisibility) and 16 (even and odd) come after topic 14.
+
+| Idea | First taught (full) | Later (reminder) |
+|---|---|---|
+| Prime: exactly two divisors; 0, 1, negatives not prime; 2 the only even prime | topic 1 `numbers` (first taste) and the camera lesson `primes`, slides 2-3 | q-391, summary |
+| Odd sum or difference of two primes → one of them is 2 (why: odd ± odd is even) | camera lesson, slide 3 | q-391, summary |
+| The primes up to 40 by heart, and 97 | camera lesson, slide 4 | q-386, q-397, summary |
+| Is it prime? Only the primes up to √n (with the why); fake primes 51, 57, 87, 91, 119 | camera lesson, slide 5 | q-r26-t14-01, q-386, q-391, summary |
+| **The digit-sum test for 3** (the lesson says it in one line) | **q-r26-t14-01** (rule, 51 example, 52 non-example) | q-386, q-391, summary |
+| 7 has no quick test: divide; counting by sevens; "never forget 7" | q-r26-t14-01 | summary |
+| Divisor = factor; prime factors; divisible by every combination of them | camera lesson, slides 6-7 | q-388, q-389, summary |
+| Factor trees / prime factorization (150) | camera lesson, slide 8 | q-389, q-r26-t14-03, every question |
+| Is it a divisor? Its primes, enough copies (50 yes, 20 no) | camera lesson, slide 9 | q-388, q-394, summary |
+| **Unpacking a piece that isn't prime (10² = 2²·5²)** (one line in the lesson) | **q-388** | summary |
+| Trial and error | topic 21 | q-387, q-397 |
+| Primes on a number line: mark and count; "not including x" | q-386 | — |
+| Counting divisors: each exponent plus one, multiply | prime-tools (lesson) | summary |
+| GCD = what comes out of both; shared primes at the lower power | q-389 (common factor: topic 4) | summary |
+| LCM name and running through multiples | topic 2 `fraction-add` | q-390 |
+| Greatest guaranteed divisor = LCM; every prime at the higher power; overlap counted once | q-390 | summary |
+| GCD · LCM = a · b | q-390 | summary |
+| Building products: only the primes the pieces bring | q-398 | q-400, q-396 |
+| Odd times odd is odd | q-398 (topic 16 comes later) | — |
+| Factor pairs in order, stop at √n | q-399 | q-393 |
+| "Two or more" includes all; build every product in order | q-400 | — |
+| √(prime) is never whole; prime / even / odd = whole numbers only | q-401 | — |
+| Divisors come in pairs; odd count ⇔ perfect square; exactly 3 ⇔ prime squared | q-402 | q-397, summary |
+| Perfect square ⇔ every exponent even; smallest k | more-tools (lesson) | summary |
+| **A number breaks into primes in only one way → match exponents** (one line in the lesson) | **q-r26-t14-03** | summary |
+| Count how many numbers each prime divides | q-392 | — |
+| Take out a common factor → a product of factor pairs; a is the smaller factor | q-393 (common factor: topic 4) | — |
+| Build the smallest number from required primes; grow by the cheapest prime | q-396 | — |
+| An exponent letter is not a factor; letters as primes → plug in 2, 3, 5, 7 in order | q-394 | summary |
+| A prime in a product sits whole in one factor; squaring adds no new prime; never true = not necessarily true | q-395 (must/could: topic 1) | summary |
+| Bounding a prime by squares (14² < 200 < 15²) | q-397 | — |

@@ -1,0 +1,182 @@
+{
+ "videoId": "solve-q-393",
+ "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "a and b are positive integers. Given: a is smaller than b, and a times b, plus four a, is equal to forty-eight. Which of the following cannot be the value of a plus b?",
+    "voice": "calm",
+    "at": [
+     "a and b are"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Honestly, it's not obvious where to start here. So let's start with what we can do. We have an equation, and a appears in both terms on the left. [short pause] We'll solve it two ways, taking out a common factor, and then plugging in the answers.",
+    "at": [
+     "where to start",
+     "let's start with",
+     "can do. We",
+     "a appears in both terms",
+     "on the left",
+     "it two ways",
+     "a common factor",
+     "plugging in the"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method. a is in both terms, so I take it out as a common factor. a times b, plus four a, is a times, in brackets, b plus four. And that's forty-eight.",
+    "at": [
+     "Our first",
+     "in both terms",
+     "I take it out",
+     "b, plus four",
+     "in brackets, b plus four",
+     "And that's forty-eight"
+    ]
+   },
+   {
+    "say": "So now it's a product of two whole numbers that equals forty-eight. Remember breaking a number into pairs. Here we break forty-eight into two factors, and they don't have to be primes.",
+    "at": [
+     "a product of two whole numbers",
+     "numbers that equals",
+     "Remember breaking a",
+     "Here we break",
+     "two factors, and",
+     "have to be"
+    ]
+   },
+   {
+    "say": "Which factor is a? The smaller one. Why? b is bigger than a, and b plus four is even bigger. So a is the small factor, and b plus four is the big one.",
+    "at": [
+     "Which factor is a",
+     "b is bigger",
+     "and b plus",
+     "So a is",
+     "factor, and b",
+     "is the big"
+    ]
+   },
+   {
+    "say": "One times forty-eight. a is one, b plus four is forty-eight, so b is forty-four, and a plus b is forty-five.",
+    "voice": "calm",
+    "at": [
+     "One times forty-eight",
+     "a is one",
+     "four is forty-eight",
+     "is forty-four, and",
+     "b is forty-five"
+    ]
+   },
+   {
+    "say": "Two times twenty-four. b plus four is twenty-four, so b is twenty, and a plus b is twenty-two. Not a choice, keep going. Three times sixteen. b is twelve, and a plus b is fifteen.",
+    "at": [
+     "Two times twenty-four",
+     "b plus four",
+     "so b is",
+     "a plus b",
+     "Not a choice",
+     "Three times sixteen",
+     "plus b is fifteen"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Four times twelve. b is eight, still bigger than four, and a plus b is twelve.",
+    "voice": "calm",
+    "at": [
+     "Four times twelve",
+     "than four, and",
+     "b is twelve"
+    ]
+   },
+   {
+    "say": "Five doesn't divide forty-eight. Six times eight? b plus four is eight, so b is four, and that's smaller than six. Not allowed. And after that, the factors swap, and a would be the bigger one. So no more options.",
+    "at": [
+     "Six times eight",
+     "b plus four",
+     "so b is",
+     "that's smaller than",
+     "allowed. And after",
+     "the factors swap",
+     "would be the",
+     "So no more"
+    ]
+   },
+   {
+    "say": "So the sums can be forty-five, twenty-two, fifteen and twelve. Seventeen isn't one of them, so choice number three is our answer.",
+    "at": [
+     "So the sums can be",
+     "forty-five, twenty-two",
+     "fifteen and",
+     "and twelve",
+     "of them, so",
+     "choice number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method, plugging in the answers. Three choices can be the sum, and one can't. So for each sum, I try small values of a, and b is the sum minus a. Then I check a times b, plus four a.",
+    "at": [
+     "Our second",
+     "Three choices can",
+     "sum, and one",
+     "So for each",
+     "try small values",
+     "and b is",
+     "minus a. Then",
+     "a times b",
+     "plus four a"
+    ]
+   },
+   {
+    "say": "Forty-five. a is one, so b is forty-four. One times forty-four is forty-four, and four times one is four. Forty-four plus four is forty-eight. It works, out.",
+    "at": [
+     "Forty-five. a is one",
+     "One times forty-four",
+     "and four times",
+     "Forty-four plus four",
+     "It works, out"
+    ]
+   },
+   {
+    "say": "Fifteen. a is three, b is twelve. Three times twelve is thirty-six, and four times three is twelve. Thirty-six plus twelve, forty-eight. Out. Twelve. a is four, b is eight. Four times eight is thirty-two, and four times four is sixteen. Thirty-two plus sixteen, forty-eight. Out.",
+    "at": [
+     "Fifteen. a is three",
+     "Three times twelve",
+     "and four times",
+     "Thirty-six plus twelve",
+     "Twelve. a is four",
+     "Four times eight",
+     "and four times four",
+     "Thirty-two plus sixteen"
+    ]
+   },
+   {
+    "say": "Seventeen. a is one, b is sixteen, sixteen plus four is twenty. a is two, b is fifteen, thirty plus eight is thirty-eight. a is three, b is fourteen, forty-two plus twelve is fifty-four, already above forty-eight. Four and thirteen give fifty-two plus sixteen, sixty-eight, and five and twelve give sixty plus twenty, eighty. It keeps growing, so it never comes back to forty-eight.",
+    "at": [
+     "Seventeen. a is one",
+     "a is two",
+     "fifteen, thirty plus",
+     "a is three",
+     "fourteen, forty-two plus",
+     "fifty-four, already above",
+     "Four and thirteen",
+     "plus sixteen, sixty-eight",
+     "and twelve give",
+     "It keeps growing",
+     "never comes back"
+    ]
+   },
+   {
+    "say": "So seventeen can't be the sum, choice number three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "So seventeen can't be",
+     "sum, choice number"
+    ]
+   }
+  ]
+ ]
+}

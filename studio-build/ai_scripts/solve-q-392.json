@@ -1,0 +1,155 @@
+{
+ "videoId": "solve-q-392",
+ "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "a and b are prime numbers. Exactly two of the numbers fourteen, twenty-one and five are divisible by a. Exactly one of the numbers twenty-six, twenty-one and forty-two is divisible by b. What is a times b?",
+    "voice": "calm",
+    "at": [
+     "a and b are"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So a and b are primes, and the clues tell us which numbers they divide. Divisible by a prime means that prime is inside the number. So the first thing is to break every number into primes. [short pause] We'll solve it two ways, breaking the numbers into primes, and then plugging in the answers.",
+    "at": [
+     "are primes, and",
+     "which numbers they divide",
+     "by a prime",
+     "prime is inside",
+     "So the first",
+     "to break every",
+     "ways, breaking the",
+     "primes, and then"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method. The first group. Fourteen is two times seven. Twenty-one is three times seven. And five is a prime.",
+    "at": [
+     "Our first",
+     "The first group",
+     "Fourteen is two times seven",
+     "Twenty-one is three",
+     "And five is"
+    ]
+   },
+   {
+    "say": "Exactly two of them divide by a. So which prime shows up in exactly two of them? Two is only in fourteen. Three is only in twenty-one. Five is only in five. Seven is in fourteen and in twenty-one, exactly two. So a is seven.",
+    "at": [
+     "Exactly two of",
+     "by a. So",
+     "which prime shows up",
+     "exactly two of them? Two",
+     "Two is only in fourteen",
+     "Five is only",
+     "Seven is in",
+     "in twenty-one, exactly",
+     "So a is seven"
+    ]
+   },
+   {
+    "say": "The second group. Twenty-six is two times thirteen. Twenty-one is three times seven. Forty-two is six times seven, so two times three times seven.",
+    "at": [
+     "The second group",
+     "Twenty-six is two times thirteen",
+     "Twenty-one is three",
+     "Forty-two is six",
+     "so two times"
+    ]
+   },
+   {
+    "say": "Now exactly one of them divides by b. Two is in twenty-six and forty-two, that's two numbers. Three is in twenty-one and forty-two, two again. Seven is in twenty-one and forty-two, two again. Thirteen is only in twenty-six. So b is thirteen.",
+    "at": [
+     "Now exactly one",
+     "divides by b",
+     "Two is in twenty-six",
+     "forty-two, that's two",
+     "Three is in",
+     "forty-two, two again",
+     "Seven is in",
+     "forty-two, two again. Thirteen",
+     "Thirteen is only",
+     "So b is"
+    ]
+   },
+   {
+    "say": "So a times b is seven times thirteen. Seven times ten is seventy, and seven times three is twenty-one, together ninety-one. Choice number three is our answer. And remember ninety-one, the fake prime from the start of the topic.",
+    "at": [
+     "seven times thirteen",
+     "ten is seventy",
+     "times three is",
+     "together ninety-one",
+     "Choice number three is our answer",
+     "And remember ninety-one",
+     "prime from the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method, plugging in the answers. Each choice is a product of two primes. So I split it, and check which one could be a, and the other one b.",
+    "at": [
+     "Our second",
+     "Each choice is a product",
+     "of two primes",
+     "So I split",
+     "check which one",
+     "a, and the"
+    ]
+   },
+   {
+    "say": "Choice number one, thirty-nine, is three times thirteen. Could a be three? Only twenty-one divides by three, that's one number, not two. Could a be thirteen? None of fourteen, twenty-one and five divides by thirteen. Out.",
+    "at": [
+     "number one, thirty-nine",
+     "thirty-nine, is three times thirteen",
+     "Could a be",
+     "Only twenty-one divides",
+     "that's one number",
+     "Could a be thirteen",
+     "None of fourteen",
+     "five divides by",
+     "Out."
+    ]
+   },
+   {
+    "say": "Choice number two, twenty-six, is two times thirteen. Is a two? Only fourteen divides by two. Is a thirteen? None. Out.",
+    "at": [
+     "number two, twenty-six",
+     "twenty-six, is two times thirteen",
+     "Only fourteen divides",
+     "Is a thirteen",
+     "Out."
+    ]
+   },
+   {
+    "say": "Choice number three, ninety-one, is seven times thirteen. a is seven, and fourteen and twenty-one divide by seven, exactly two. Then b is thirteen, and only twenty-six divides by thirteen, exactly one. It fits.",
+    "at": [
+     "number three, ninety-one",
+     "ninety-one, is seven times thirteen",
+     "a is seven",
+     "and twenty-one divide",
+     "Then b is",
+     "only twenty-six divides",
+     "It fits"
+    ]
+   },
+   {
+    "say": "In the exam you'd circle it and move on. Here, let's check the last one too. Twenty-one is three times seven. a can't be three, because only one number divides by three. So a is seven, and b is three. But three divides twenty-one and forty-two, that's two numbers, not one. Out. So choice number three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "In the exam",
+     "it and move",
+     "Here, let's check",
+     "Twenty-one is three times seven",
+     "a can't be",
+     "only one number",
+     "So a is",
+     "b is three",
+     "divides twenty-one and",
+     "not one. Out",
+     "So choice number three"
+    ]
+   }
+  ]
+ ]
+}

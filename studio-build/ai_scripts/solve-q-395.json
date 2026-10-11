@@ -1,0 +1,188 @@
+{
+ "videoId": "solve-q-395",
+ "style": "the teacher reads it herself (Reading Studio), topic-14 redo (2026-10-11): math_patches/_ai_vis_t14.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R34 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "a, b and c are different positive integers. Given: x, which is a times b times c, is divisible by thirty-five without remainder. Which of the following statements is not necessarily true?",
+    "voice": "calm",
+    "at": [
+     "a, b and c"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A hard one, and it's usually one of the last questions in the section. Read the wording carefully. They want the statement that is not necessarily true, so the statements that must be true are out. [short pause] We'll solve it two ways, understanding each statement, and then plugging in numbers.",
+    "at": [
+     "it's usually one",
+     "last questions in",
+     "Read the wording",
+     "want the statement",
+     "not necessarily true",
+     "statements that must",
+     "two ways, understanding",
+     "and then plugging"
+    ]
+   },
+   {
+    "say": "[short pause] Our first method. First, the given. Thirty-five is five times seven. So x divides by thirty-five means x contains the prime five and the prime seven.",
+    "at": [
+     "Our first",
+     "the given. Thirty-five",
+     "Thirty-five is five times seven",
+     "So x divides",
+     "means x contains",
+     "five and the"
+    ]
+   },
+   {
+    "say": "And x is a times b times c. Here's the key rule. A prime can't be split between factors, one of them holds it whole. Why? A prime can't be broken into smaller pieces, so the seven has to sit inside one of the numbers. For example, forty-two is two times twenty-one, and its seven sits whole inside the twenty-one.",
+    "at": [
+     "And x is",
+     "b times c",
+     "A prime can't be split",
+     "between factors, one",
+     "holds it whole",
+     "A prime can't be broken",
+     "into smaller pieces",
+     "seven has to",
+     "one of the numbers",
+     "For example, forty-two",
+     "times twenty-one, and",
+     "sits whole inside"
+    ]
+   },
+   {
+    "say": "But thirty-five isn't a prime, so its five and its seven may come from different numbers. Five times seven times one is thirty-five, and none of the three is divisible by thirty-five.",
+    "at": [
+     "But thirty-five isn't",
+     "so its five",
+     "seven may come",
+     "Five times seven times",
+     "is thirty-five, and",
+     "the three is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the statements. Choice number four says at least one of them is divisible by seven. Someone had to bring the seven, so it's always true. Out.",
+    "at": [
+     "number four says",
+     "one of them",
+     "Someone had to bring",
+     "it's always true. Out"
+    ]
+   },
+   {
+    "say": "Choice number one says it's possible that exactly one of them is divisible by thirty-five. Possible needs just one example. Thirty-five, one and two. They're different, thirty-five times one times two is seventy, and seventy divides by thirty-five. And only the thirty-five divides by thirty-five. So it's possible, true, and out.",
+    "at": [
+     "number one says",
+     "that exactly one",
+     "is divisible by",
+     "Possible needs just",
+     "Thirty-five, one and two",
+     "They're different, thirty-five",
+     "times two is",
+     "seventy divides by",
+     "And only the",
+     "by thirty-five. So",
+     "true, and out"
+    ]
+   },
+   {
+    "say": "Choice number three. If b and c aren't divisible by five, who brought the five? a must have. So a is five times something. Square a, and the five appears twice, so a squared is divisible by twenty-five. For example, a is ten, b is seven, c is one. Ten squared is a hundred, and a hundred divides by twenty-five. Always true, out.",
+    "at": [
+     "number three. If",
+     "c aren't divisible",
+     "who brought the five",
+     "So a is",
+     "Square a",
+     "is divisible by",
+     "For example, a",
+     "b is seven",
+     "Ten squared is",
+     "and a hundred",
+     "Always true, out"
+    ]
+   },
+   {
+    "say": "Three statements are out, so in the exam you'd circle choice number two and move on. Here, let's learn from it. Look at the word different, the number of different prime divisors.",
+    "at": [
+     "so in the",
+     "number two and",
+     "Here, let's learn",
+     "Look at the word different",
+     "the number of"
+    ]
+   },
+   {
+    "say": "Squaring x just makes every prime appear twice as often. No new prime shows up. For example, x is seventy, two times five times seven. Seventy squared is two squared times five squared times seven squared. The same three primes. So the count stays the same, it's never greater.",
+    "at": [
+     "Squaring x just",
+     "prime appear twice",
+     "No new prime",
+     "For example, x is seventy",
+     "Seventy squared is",
+     "times five squared",
+     "squared. The same",
+     "So the count",
+     "it's never greater"
+    ]
+   },
+   {
+    "say": "And careful with the wording. Choice number two is never true. And never true is also not necessarily true, because it certainly doesn't have to be true. So choice number two is our answer.",
+    "at": [
+     "And careful with",
+     "number two is",
+     "never true is also",
+     "necessarily true, because",
+     "doesn't have to",
+     "So choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Our second method, plugging in numbers. A statement that's not necessarily true fails for at least one example. So I pick numbers that fit, and look for a statement that fails. Five, seven and one. They're different, and their product is thirty-five.",
+    "at": [
+     "Our second",
+     "A statement that's",
+     "true fails for",
+     "So I pick",
+     "fit, and look",
+     "statement that fails",
+     "Five, seven and one"
+    ]
+   },
+   {
+    "say": "Choice number two. x is thirty-five, with two different primes, five and seven. x squared is five squared times seven squared, still just five and seven. Two is not greater than two. It fails, so choice number two is not necessarily true.",
+    "at": [
+     "number two. x",
+     "x is thirty-five",
+     "different primes, five",
+     "x squared is five squared",
+     "five and seven. Two",
+     "Two is not",
+     "It fails",
+     "two is not necessarily"
+    ]
+   },
+   {
+    "say": "And the others? Choice number four, b is seven, true. Choice number three, b and c aren't divisible by five, and a is five, so a squared is twenty-five, true. And choice number one is about what's possible, and thirty-five, one and two show that it is. So only choice number two fails. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "b is seven, true",
+     "b is seven",
+     "number three, b",
+     "aren't divisible by",
+     "a is five",
+     "is twenty-five, true",
+     "number one is",
+     "possible, and thirty-five",
+     "show that it is",
+     "only choice number two fails"
+    ]
+   }
+  ]
+ ]
+}
