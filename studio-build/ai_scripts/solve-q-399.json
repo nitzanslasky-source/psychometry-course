@@ -116,10 +116,14 @@
     ]
    },
    {
-    "say": "Forty-eight minus zero, forty-eight. Choice number three. [pause] Okay. I'll see you in the next question.",
+    "say": "Forty-eight minus zero, forty-eight. Choice number three. The rest of the story, the greatest A and the smallest A, is just words to make it look harder. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Forty-eight minus zero",
-     "Choice number three"
+     "Choice number three",
+     "The rest of",
+     "the greatest A",
+     "smallest A, is",
+     "to make it"
     ]
    }
   ]

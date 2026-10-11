@@ -979,7 +979,8 @@ video('solve-q-399', 'solution', qid='q-399', slides=[
         "fifty. Fifty minus two is forty-eight.", pt('stem', "One isn't allowed"), show(j1, 'as far apart as possible')),
       L("When is A smallest? When they're as close as possible. Can they be equal? Only if a hundred is a perfect square, "
         "and it is, ten times ten. So the smallest A is ten minus ten, zero.", show(j2, 'as close as possible')),
-      L("Forty-eight minus zero, forty-eight. Choice number three. [pause] Okay. I'll see you in the next question.",
+      L("Forty-eight minus zero, forty-eight. Choice number three. The rest of the story, the greatest A and the smallest A, "
+        "is just words to make it look harder. [pause] Okay. I'll see you in the next question.",
         show(j3, 'Forty-eight minus zero'), mk('tick', 'choice 3', 'Choice number three'))),
 ])
 
@@ -1244,7 +1245,8 @@ video('solve-q-391', 'solution', qid='q-391', slides=[
         "is odd, its digit sum is five, it doesn't end in five, and its root is less than seven. So it's a prime, choice "
         "number four is out, and fifty-one, choice number three is our answer.",
         show(a4, 'Forty-three is two plus'), mk('cross', 'choice 4', 'choice number four is out'), mk('tick', 'choice 3', 'choice number three is our answer')),
-      L("[pause] Okay. I'll see you in the next question.")),
+      L("The whole question was one fact, two is the only even prime, and the exam loves it. [pause] Okay. I'll see you in "
+        "the next question.", pt('o3', 'The whole question was one fact'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-392 (Q14)
