@@ -1,0 +1,250 @@
+{
+ "videoId": "powers-on-number-line",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Last time we saw the four ranges, and what multiplying and dividing do in each one. Now, what powers do in each range. The method looks a little strange at first, but practice it a bit, and it becomes one of your fastest tools."
+  ],
+  [
+   {
+    "say": "Draw the number line with its four ranges. Below negative one, negative fractions, positive fractions, and above one. Each range gets an arrow, and the arrow shows where a number moves when the power gets bigger.",
+    "at": [
+     "Draw the number line",
+     "its four ranges",
+     "Below negative one",
+     "positive fractions, and",
+     "Each range gets",
+     "and the arrow",
+     "a number moves",
+     "power gets bigger"
+    ]
+   },
+   {
+    "say": "Above one, the arrow points right. Positive fractions, left.",
+    "at": [
+     "Above one",
+     "Positive fractions"
+    ]
+   },
+   {
+    "say": "Negative fractions, right, and below negative one, left. On the negative side, only for odd powers.",
+    "at": [
+     "Negative fractions, right",
+     "below negative one, left",
+     "On the negative",
+     "for odd powers"
+    ]
+   },
+   {
+    "say": "Right means bigger, and left means smaller. And the bigger the power, the further you go along the arrow.",
+    "at": [
+     "Right means bigger",
+     "And the bigger",
+     "the further you"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Above one, the arrow points right, so a bigger power gives a bigger number. Two, two squared is four, and two cubed is eight. Three, nine, twenty-seven. Bigger and bigger.",
+    "at": [
+     "points right, so",
+     "power gives a",
+     "Two, two squared",
+     "and two cubed",
+     "Three, nine, twenty-seven"
+    ]
+   },
+   {
+    "say": "And a square root is a power of one half, a smaller power. So it's smaller than x, but still above one. The square root of four is two, and the square root of nine is three. And exactly at one? They're all one. That's why the borders matter.",
+    "at": [
+     "a square root is a power",
+     "So it's smaller",
+     "but still above",
+     "The square root",
+     "is two, and",
+     "root of nine",
+     "And exactly at",
+     "That's why the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Positive fractions, the arrow points left, so a bigger power gives a smaller number. One half squared is one quarter, smaller. One third squared is one ninth, and cubed, one twenty-seventh.",
+    "at": [
+     "points left, so",
+     "power gives a",
+     "One half squared",
+     "One third squared",
+     "ninth, and cubed"
+    ]
+   },
+   {
+    "say": "And a less round one, three sevenths. Three sevenths squared is nine forty-ninths. Which is bigger? Don't calculate. The power went up, and the arrow points left, so the square is smaller.",
+    "at": [
+     "And a less",
+     "three sevenths squared",
+     "forty-ninths. Which is",
+     "The power went",
+     "the arrow points",
+     "the square is"
+    ]
+   },
+   {
+    "say": "The root goes the other way, it makes a positive fraction bigger. The square root of one ninth is one third. In the exam there'll be letters, not numbers, and that's exactly where the arrows save you.",
+    "at": [
+     "The root goes the other way",
+     "way, it makes",
+     "The square root",
+     "ninth is one",
+     "In the exam",
+     "letters, not numbers",
+     "exactly where the"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Negative fractions, the arrow points right, for odd powers. Negative one half, cubed, is negative one eighth. That's to the right of negative one half, closer to zero. And negative one third cubed is negative one twenty-seventh, right again.",
+    "at": [
+     "points right, for",
+     "Negative one half, cubed",
+     "That's to the",
+     "negative one half, closer",
+     "And negative one",
+     "is negative one twenty-seventh"
+    ]
+   },
+   {
+    "say": "Why odd only? An even power makes a negative number positive. It jumps to the other side, and every positive beats every negative. Negative one half squared is one quarter, positive.",
+    "at": [
+     "An even power makes",
+     "It jumps to",
+     "side, and every",
+     "Negative one half",
+     "one quarter, positive"
+    ]
+   },
+   {
+    "say": "What counts as odd? Any power that keeps the minus. Three and five, negative one and negative three, and odd roots too. A cube root is a power of one third, and a fifth root is a power of one fifth.",
+    "at": [
+     "What counts as odd",
+     "Three and five",
+     "and negative three",
+     "A cube root",
+     "power of one",
+     "a fifth root",
+     "power of one fifth"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Below negative one, the arrow points left, for odd powers. The number grows in size, but it stays negative, so it gets smaller. Negative two cubed is negative eight, and negative three cubed is negative twenty-seven.",
+    "at": [
+     "arrow points left",
+     "powers. The number",
+     "size, but it",
+     "so it gets",
+     "Negative two cubed",
+     "eight, and negative",
+     "is negative twenty-seven"
+    ]
+   },
+   {
+    "say": "And even powers jump to the positive side, so treat them on their own.",
+    "at": [
+     "even powers jump",
+     "positive side, so",
+     "on their own"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "In a question that compares powers, work in three steps. First, exceptions. A negative number to an even power turns positive, it changes sides.",
+    "at": [
+     "compares powers, work",
+     "First, exceptions",
+     "A negative number",
+     "even power turns"
+    ]
+   },
+   {
+    "say": "Second, turn roots into powers, because a root gets in the way when you compare powers. The fifth root of x is x to the one fifth.",
+    "at": [
+     "turn roots into powers",
+     "a root gets",
+     "way when you",
+     "The fifth root",
+     "is x to"
+    ]
+   },
+   {
+    "say": "Third, draw the line and its arrows, and read the answer straight off. And a negative power? With the arrows, keep it. Negative one is just a small power.",
+    "at": [
+     "draw the line and its arrows",
+     "arrows, and read",
+     "straight off. And",
+     "With the arrows",
+     "Negative one is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Sometimes it's the other way round. They give the order, and you find the range. For example, x is smaller than x to the fifth, which is smaller than x to the fourth.",
+    "at": [
+     "They give the order",
+     "you find the",
+     "For example",
+     "than x to",
+     "which is smaller",
+     "to the fourth"
+    ]
+   },
+   {
+    "say": "Take it in two parts. The left part, x is smaller than x to the fifth. The power went up, and the number went up. That's an arrow pointing right, above one or negative fractions. So below negative one and positive fractions are out.",
+    "at": [
+     "Take it in",
+     "The left part",
+     "smaller than x",
+     "The power went",
+     "the number went",
+     "That's an arrow",
+     "above one or",
+     "So below negative",
+     "are out"
+    ]
+   },
+   {
+    "say": "The right part, x to the fifth is smaller than x to the fourth. Above one, the bigger power would give the bigger number, so above one is out too. Only negative fractions are left.",
+    "at": [
+     "The right part",
+     "the fifth is",
+     "x to the fourth",
+     "one, the bigger",
+     "give the bigger",
+     "above one is out",
+     "Only negative fractions"
+    ]
+   },
+   {
+    "say": "Why? x to the fourth is the exception, an even power, so it's positive, and it beats the negative x to the fifth. Questions like this are rarer, but they come up. You can always plug in numbers, but it takes time, and understanding each range solves these in seconds. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "x to the",
+     "the exception, an",
+     "so it's positive",
+     "beats the negative",
+     "Questions like this",
+     "but they come",
+     "You can always",
+     "numbers, but it",
+     "and understanding each",
+     "these in seconds"
+    ]
+   }
+  ]
+ ]
+}

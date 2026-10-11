@@ -1,64 +1,190 @@
 {
  "videoId": "r26-t17-summary",
- "style": "calm, natural hesitations, like explaining to a friend",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "So, before you practice, let's go over the whole number line in a few minutes.",
-   "Every rule, every trap. Short, and quick."
+   "Before you practice, here's a quick summary of the topic. Ranges, powers, and reading the line."
   ],
   [
-   "It all starts with four ranges.",
-   "Below minus one, negative fractions, positive fractions, and above one. Every number in a range behaves the same way.",
-   "Watch the borders. And if they only say x is positive... well, it could be below one, or above one.",
-   "The negative side is a mirror. So look at the positive side, and then mirror the picture."
+   {
+    "say": "It all starts with four ranges. Below negative one, negative fractions, positive fractions, and above one. Every number in a range behaves the same way.",
+    "at": [
+     "four ranges",
+     "Below negative one",
+     "positive fractions, and",
+     "Every number in",
+     "behaves the same"
+    ]
+   },
+   {
+    "say": "Watch the borders, negative one, zero and one. If they only say x is positive, it could be a fraction or above one. And the negative side is a mirror of the positive side.",
+    "at": [
+     "Watch the borders",
+     "zero and one",
+     "If they only",
+     "is positive, it",
+     "a fraction or",
+     "And the negative",
+     "a mirror of"
+    ]
+   }
   ],
   [
-   "So what do multiplying and dividing do? One is the dividing line.",
-   "Now, that's for positive numbers. A negative number makes the same moves... away from zero, or toward zero.",
-   "And times a NEGATIVE number? You jump to the other side of zero, and the order flips."
+   {
+    "say": "Times a number above one, or divided by a fraction, a positive number gets bigger. Twelve divided by one third is thirty-six. Divided by a number above one, or times a fraction, it gets smaller. Twelve times one third is four.",
+    "at": [
+     "Times a number above one",
+     "or divided by",
+     "a positive number",
+     "Twelve divided by",
+     "Divided by a number above one",
+     "one, or times",
+     "it gets smaller",
+     "Twelve times one"
+    ]
+   },
+   {
+    "say": "A negative number makes the same moves, away from zero or toward zero. And times a negative, you jump to the other side, and the order flips. Four is smaller than nine, but negative four is bigger than negative nine.",
+    "at": [
+     "A negative number",
+     "same moves, away",
+     "or toward zero",
+     "times a negative",
+     "to the other",
+     "the order flips",
+     "Four is smaller",
+     "but negative four",
+     "than negative nine"
+    ]
+   }
   ],
   [
-   "Hierarchy. A number in a higher range stays bigger, after any positive power or root.",
-   "Nine eighths is above one, and four fifths is a fraction. So don't calculate the roots.",
-   "For negative numbers, it's odd powers and odd roots only.",
-   "The same operation on two positive numbers? Ignore it. And weak times weak loses to strong times strong."
+   {
+    "say": "A number in a higher range stays bigger, after any positive power or root. Six fifths is above one, and two thirds is a fraction. So the cube root of six fifths is bigger, no calculating. On the negative side, odd powers and odd roots only.",
+    "at": [
+     "A number in a higher range",
+     "range stays bigger",
+     "positive power or",
+     "Six fifths is",
+     "and two thirds",
+     "So the cube",
+     "six fifths is bigger",
+     "On the negative",
+     "powers and odd"
+    ]
+   },
+   {
+    "say": "The same operation on two positive numbers? Ignore it. And strong on strong, weak times weak loses to strong times strong.",
+    "at": [
+     "The same operation",
+     "positive numbers? Ignore",
+     "And strong on",
+     "times weak loses"
+    ]
+   }
   ],
   [
-   "Exceptional powers move a number into another range. So handle them first.",
-   "An even power of a negative number turns positive. But read the brackets. Without them, minus four squared is minus sixteen.",
-   "A negative exponent? To compare ranges, flip it first. Here a fraction became a number above one."
+   {
+    "say": "Exceptions move a number to another range, so handle them first. An even power of a negative number is positive. Negative three, squared, is nine. And read the brackets. Without them, it's minus, three squared, minus nine. A negative power flips the number. Two thirds to the power of negative two is three halves, squared, above one.",
+    "at": [
+     "to another range",
+     "An even power of a negative",
+     "negative number is",
+     "Negative three, squared",
+     "And read the",
+     "Without them, it's",
+     "squared, minus nine",
+     "A negative power",
+     "Two thirds to",
+     "of negative two",
+     "halves, squared, above"
+    ]
+   }
   ],
   [
-   "The arrows show what a bigger power does in each range.",
-   "Right means bigger, left means smaller. And on the negative side, odd powers only.",
-   "A positive fraction: a bigger power gives a smaller number. And the root goes the other way.",
-   "So, three steps. Exceptions, roots into powers, and then the arrows. With the arrows, you can keep a negative exponent.",
-   "And if they give the order and ask for the range? Use the arrows backwards... or plug in."
+   {
+    "say": "The arrows show what a bigger power does. Above one, right. Positive fractions, left. Negative fractions, right, and below negative one, left, odd powers only. Right means bigger.",
+    "at": [
+     "The arrows show",
+     "bigger power does",
+     "right. Positive fractions",
+     "Negative fractions, right",
+     "negative one, left",
+     "only. Right means"
+    ]
+   },
+   {
+    "say": "Three steps. Exceptions, roots into powers, then the arrows, and with the arrows you may keep a negative power. They give the order and ask for the range? Use the arrows backwards, or plug in.",
+    "at": [
+     "Three steps",
+     "Exceptions, roots into",
+     "the arrows, and",
+     "arrows you may",
+     "They give the",
+     "ask for the",
+     "Use the arrows"
+    ]
+   }
   ],
   [
-   "The reciprocal, one over x, keeps the sign. Big and small swap.",
-   "A quarter becomes four. Four becomes a quarter. And the negative side is the mirror.",
-   "For numbers with the same sign, the reciprocal flips the order."
+   {
+    "say": "One over x keeps the sign, and for numbers with the same sign, it flips the order. Three is smaller than five, but one third is bigger than one fifth.",
+    "at": [
+     "One over x keeps the sign",
+     "sign, and for",
+     "the same sign",
+     "Three is smaller",
+     "but one third",
+     "than one fifth"
+    ]
+   },
+   {
+    "say": "Not sure? Plug in one number from each allowed range, like two, one half, negative one half, and negative two. A root in the choices? Pick a number with a clean root, like one ninth for a square root, or negative one eighth for a cube root. And change only the letters. Unless the same number sits in every choice, then you may swap it for a small one.",
+    "at": [
+     "Plug in one number",
+     "each allowed range",
+     "one half, negative",
+     "and negative two",
+     "A root in",
+     "Pick a number",
+     "clean root, like",
+     "for a square",
+     "negative one eighth",
+     "And change only",
+     "Unless the same",
+     "in every choice",
+     "may swap it"
+    ]
+   }
   ],
   [
-   "Not sure? Plug in. One number from each allowed range.",
-   "A root in the choices? Pick a number with a clean root.",
-   "And change only the unknown. If you change the numbers in the question, you can change the answer.",
-   "One exception, though. The same number in every choice? You can swap it for a small one... like plugging in."
-  ],
-  [
-   "Read the question word. Necessarily, or could?",
-   "To find a counter-example, push the values to the edges of their ranges.",
-   "A picture of the line? Write the range under each letter. It's not drawn to scale, so trust the order, not the distances."
-  ],
-  [
-   "And last, distance and midpoint.",
-   "The midpoint is the average. A third of the way? Take a third of the distance, and walk it from the start."
-  ],
-  [
-   "So, before you practice, always ask yourself:",
-   "The common traps: ignoring an operation on negative numbers, forgetting that a positive x can be a fraction, and trusting the distances in a picture.",
-   "Well... you know all of this. Go practice."
+   {
+    "say": "Necessarily true? One example where it fails knocks it out, so push the numbers to the edges of their ranges. A picture of the line? Write the range of each letter, and trust only the order, not the distances.",
+    "at": [
+     "Necessarily true",
+     "One example where",
+     "knocks it out",
+     "the numbers to",
+     "of their ranges",
+     "A picture of",
+     "Write the range",
+     "letter, and trust",
+     "order, not the"
+    ]
+   },
+   {
+    "say": "And distance on the line is bigger minus smaller. A third of the way? Take a third of the distance, and walk it from the start. The midpoint is the average of the two ends. [pause] That's it. Now go practice, and I'll see you in the next video.",
+    "at": [
+     "distance on the line",
+     "bigger minus smaller",
+     "A third of",
+     "Take a third",
+     "distance, and walk",
+     "The midpoint is",
+     "of the two",
+     "it. Now go"
+    ]
+   }
   ]
  ]
 }

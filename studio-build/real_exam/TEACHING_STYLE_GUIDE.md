@@ -710,3 +710,23 @@ Topic-16 order: the camera lesson `whole-numbers`, then q-457, q-r26-t16-01, con
 | Start with the choice that pins one case | q-467 | — |
 | Don't divide by an unknown that may be 0 | topic 6 (reminder in q-469) | — |
 | An odd product: every factor odd; 2k + 1 is odd for every k | parity (lesson) / q-471 | — |
+
+### Topic 17: where each idea is first taught (R29 / R32)
+
+Topic-17 order: the camera lesson `number-line`, then q-493, powers-on-number-line, q-494, r26-t17-reading-the-line, q-495 to q-501, q-r26-t17-01 to 05, summary. Topic 36 comes after topic 17 in the study plan.
+
+| Idea | First taught (full) | Later (reminder) |
+|---|---|---|
+| The four ranges, borders, the mirror image; × and ÷ by a number above 1 or a fraction; the hierarchy; exceptional powers; same operation; strong on strong | camera lesson `number-line` | q-493, q-495 to q-497, q-500, q-501, summary |
+| The arrows for powers in each range; a root is a smaller power; what counts as odd; the three steps (keep a negative power); finding the range | powers-on-number-line (lesson) | q-494, q-498 to q-500, q-r26-t17-02, summary |
+| Times a negative: the other side of zero, the order flips | r26-t17-reading-the-line (lesson) | summary |
+| The smallest product = the smallest factors; one plug-in for "the smallest" | q-495 | — |
+| Place the givens on the line; a difference is a distance; one win each = no decision | q-496 | q-501 |
+| × a fraction pulls toward 0 on both sides (on the negative side: bigger) | q-496, q-497 | q-501, summary |
+| A smart plug-in with a clean root; the powers of a correct chain keep one direction | q-499 | q-500, summary |
+| Swap a number that is in every choice (only then) | q-500 | summary |
+| Decode a chain; possible but not necessarily | q-501 | — |
+| A picture of the line: ranges, trust the order | q-r26-t17-01 | summary |
+| The reciprocal flips the order (same sign) | q-r26-t17-03 | summary |
+| Push to the edges to break "necessarily" | q-r26-t17-04 | summary |
+| Distance, a third of the way, the midpoint | q-r26-t17-05 | summary |

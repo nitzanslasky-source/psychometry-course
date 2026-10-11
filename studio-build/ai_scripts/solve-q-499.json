@@ -1,0 +1,149 @@
+{
+ "videoId": "solve-q-499",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: negative one is smaller than y, which is smaller than zero. Which of the following orders of y to the power of seven, y, the cube root of y, and y to the power of negative seven is correct?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So y is a negative fraction, and we have to put four powers in order. [short pause] We'll solve it three ways, with the arrows, plugging in numbers, and a sharp shortcut.",
+    "at": [
+     "y is a negative fraction",
+     "and we have",
+     "four powers in",
+     "solve it three",
+     "the arrows, plugging",
+     "and a sharp"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start with the arrows. They're all powers, the cube root is a power of one third. y is a negative fraction, and there the arrow points right, as long as the powers are odd. Seven is odd, y is y to the one, odd, the cube root is an odd root, and negative seven is odd. So it works.",
+    "at": [
+     "They're all powers",
+     "one third. y",
+     "negative fraction, and",
+     "the arrow points right",
+     "as long as the powers are odd",
+     "Seven is odd",
+     "y to the",
+     "the cube root is an",
+     "odd root, and",
+     "is odd. So"
+    ]
+   },
+   {
+    "say": "Right means bigger. So the biggest power, seven, gives the biggest number, and y to the seventh must come last. Choice number one ends with y to the negative seven, and choice number two ends with y. Both out.",
+    "at": [
+     "the biggest power, seven",
+     "the biggest number",
+     "to the seventh",
+     "last. Choice number",
+     "ends with y to the negative seven",
+     "negative seven, and",
+     "number two ends",
+     "Both out"
+    ]
+   },
+   {
+    "say": "And the smallest power, negative seven, gives the smallest number, so it comes first. Choice number four starts with the root. Out. Choice number three starts with y to the negative seven, and it's our answer.",
+    "at": [
+     "the smallest power",
+     "gives the smallest",
+     "it comes first",
+     "starts with the root. Out",
+     "Choice number three",
+     "y to the",
+     "and it's our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in. Usually negative one half is a good pick, but not here. The cube root of negative one half, with no calculator? So we pick a negative fraction with a clean cube root, negative one eighth.",
+    "at": [
+     "Now let's",
+     "Usually negative one",
+     "a good pick",
+     "The cube root",
+     "one half, with",
+     "So we pick",
+     "fraction with a",
+     "negative one eighth"
+    ]
+   },
+   {
+    "say": "y to the seventh is a negative number with a huge denominator, so it's tiny, very close to zero. No need to calculate it. y is negative one eighth, and its cube root is negative one half. And y to the negative seven flips it, negative eight, to the seventh, a huge negative number.",
+    "at": [
+     "y to the seventh is",
+     "huge denominator, so",
+     "very close to",
+     "No need to",
+     "y is negative",
+     "and its cube",
+     "negative one half",
+     "And y to",
+     "seven flips it",
+     "to the seventh, a"
+    ]
+   },
+   {
+    "say": "So y to the negative seven is by far the smallest, and it comes first. Only choice number three starts with it. Choice number three.",
+    "at": [
+     "negative seven is",
+     "by far the smallest",
+     "it comes first",
+     "Only choice number three",
+     "with it. Choice"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] And a sharp shortcut. What's different? We don't place anything, we only read the powers. With no even power of a negative number, the powers in a correct chain keep one direction, all up or all down. Write y as y to the one, and the root as y to the one third.",
+    "at": [
+     "And a",
+     "We don't place",
+     "only read the",
+     "no even power",
+     "negative number, the",
+     "a correct chain",
+     "keep one direction",
+     "or all down",
+     "Write y as",
+     "the one, and",
+     "as y to the one third"
+    ]
+   },
+   {
+    "say": "Choice number one, one, one third, seven, negative seven. Down, up, down. Impossible. Choice number two, seven, negative seven, one third, one. Down, then up. Impossible.",
+    "at": [
+     "Choice number one, one",
+     "number one, one",
+     "seven, negative seven",
+     "Down, up, down",
+     "number two, seven",
+     "one third, one",
+     "Down, then up. Impossible."
+    ]
+   },
+   {
+    "say": "Choice number four, one third, negative seven, one, seven. Down, then up again. Impossible. Choice number three, negative seven, one third, one, seven. Always up. Choice number three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Choice number four, one third",
+     "number four, one",
+     "seven, one, seven",
+     "then up again",
+     "number three, negative",
+     "third, one, seven",
+     "Always up"
+    ]
+   }
+  ]
+ ]
+}

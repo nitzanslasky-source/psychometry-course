@@ -1,0 +1,116 @@
+{
+ "videoId": "solve-q-501",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: p squared is smaller than p, which is smaller than r times q, which is smaller than q, which is smaller than r. Which of the following statements is possible but not necessarily true?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A long chain of letters. So before the choices, let's decode it. [short pause] Start with p squared smaller than p. Can p be negative? No. Its square would be positive, and bigger than p. So p is positive, and squaring made it smaller. That happens only to positive fractions.",
+    "at": [
+     "A long chain",
+     "So before the",
+     "Start with p squared",
+     "than p. Can",
+     "Its square would",
+     "and bigger than",
+     "So p is",
+     "squaring made it",
+     "That happens only"
+    ]
+   },
+   {
+    "say": "p is positive, so everything bigger in the chain is positive too. Now r q is smaller than q. q is positive, so divide both sides by q, and r is smaller than one.",
+    "at": [
+     "p is positive",
+     "bigger in the",
+     "Now r q is smaller",
+     "q is positive",
+     "both sides by",
+     "r is smaller"
+    ]
+   },
+   {
+    "say": "So all of them are positive fractions, p the smallest, and r the biggest.",
+    "at": [
+     "So all of them",
+     "p the smallest"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now the question. Possible but not necessarily true. So anything always true is out, and anything never true is out too.",
+    "at": [
+     "the question. Possible",
+     "necessarily true. So",
+     "anything always true",
+     "and anything never"
+    ]
+   },
+   {
+    "say": "Choice number three, p q against p plus q. Multiplying by a fraction pulls toward zero, so p q is smaller than p. Adding q makes p bigger. So the product is smaller than the sum, always. Out.",
+    "at": [
+     "number three, p",
+     "p q against p plus q",
+     "toward zero, so",
+     "is smaller than",
+     "Adding q makes",
+     "So the product",
+     "smaller than the sum, always"
+    ]
+   },
+   {
+    "say": "Choice number one. Divide both sides by p, which is positive, and it's p q against r. p q is smaller than q, and q is smaller than r. Always true. Out. Or strong on strong. p squared against p, p wins, and q against r, r wins. The right side wins twice.",
+    "at": [
+     "number one. Divide",
+     "Divide both sides by p",
+     "p q against",
+     "p q is",
+     "q, and q",
+     "Always true. Out",
+     "p squared against",
+     "wins, and q",
+     "The right side"
+    ]
+   },
+   {
+    "say": "Choice number two, p q bigger than one. A product of two positive fractions is always below one. Never true. Out.",
+    "at": [
+     "number two, p",
+     "A product of two positive fractions",
+     "fractions is always",
+     "Never true. Out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Choice number four, p plus r smaller than one. Two fractions. Small ones add up to less than one, big ones to more. p is one tenth, q two fifths, and r one half. The chain holds, and p plus r is three fifths, smaller than one. But p one quarter, q three quarters, and r seven eighths. The chain still holds, and p plus r is nine eighths, more than one. Sometimes true, sometimes not. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "number four, p",
+     "smaller than one",
+     "Small ones add",
+     "less than one",
+     "p is one tenth",
+     "The chain holds",
+     "plus r is",
+     "smaller than one. But",
+     "But p one",
+     "three quarters, and",
+     "The chain still",
+     "p plus r is nine",
+     "eighths, more than",
+     "true, sometimes not",
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

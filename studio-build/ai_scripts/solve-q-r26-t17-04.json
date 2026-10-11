@@ -1,0 +1,78 @@
+{
+ "videoId": "solve-q-r26-t17-04",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: x is smaller than negative one, which is smaller than y, which is smaller than zero. Which of the following is necessarily true?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So x is below negative one, and y is a negative fraction. [short pause] We'll solve it two ways, by understanding, and then plugging in numbers at the edges.",
+    "at": [
+     "x is below negative one",
+     "and y is",
+     "ways, by understanding",
+     "plugging in numbers"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start with understanding. Choice number one, x times y. Negative times negative is positive. But how big? y can be close to zero, so the product can be small. x is negative two, and y is negative one quarter. The product is one half, not bigger than one. Not necessarily. Out.",
+    "at": [
+     "Let's start",
+     "number one, x",
+     "Negative times negative",
+     "But how big",
+     "y can be",
+     "zero, so the",
+     "x is negative two, and y",
+     "The product is",
+     "not bigger than",
+     "Not necessarily. Out"
+    ]
+   },
+   {
+    "say": "Choice number two, x plus y. x is already below negative one, and adding a negative y moves it further left. So x plus y is always below negative one. Choice number two is our answer.",
+    "at": [
+     "number two, x",
+     "x is already below",
+     "one, and adding",
+     "y moves it",
+     "So x plus",
+     "always below negative",
+     "Choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in. To break a statement, push the numbers to the edges of their ranges. x is negative two, and y is negative one half.",
+    "at": [
+     "Now let's",
+     "To break a",
+     "push the numbers",
+     "x is negative",
+     "y is negative"
+    ]
+   },
+   {
+    "say": "Choice number one, x times y is one, and one isn't bigger than one. Out. Choice number three, x squared is four, y squared is one quarter, and four isn't smaller. Out. Choice number four, x over y is four, not smaller than one. Out. So choice number two. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "x times y is one",
+     "isn't bigger than one",
+     "Choice number three",
+     "is four, y",
+     "one quarter, and",
+     "four isn't smaller",
+     "number four, x",
+     "not smaller than one",
+     "So choice number two"
+    ]
+   }
+  ]
+ ]
+}

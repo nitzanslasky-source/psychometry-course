@@ -1,0 +1,78 @@
+{
+ "videoId": "solve-q-494",
+ "style": "the teacher reads it herself (Reading Studio), topic-17 redo (2026-10-12): math_patches/_ai_vis_t17.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: negative one is smaller than m, which is smaller than zero. Which of the following expressions is the smallest?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So m is a negative fraction, and the choices are powers and a root. [short pause] We'll solve it with the three steps, exceptions, roots into powers, and the arrows.",
+    "at": [
+     "m is a negative fraction",
+     "and the choices",
+     "and a root",
+     "it with the",
+     "exceptions, roots into"
+    ]
+   },
+   {
+    "say": "[short pause] First, exceptions. Is there a negative number to an even power? Yes, m to the eighth. It turns positive, and the others stay negative. We want the smallest, so a positive one is out.",
+    "at": [
+     "a negative number",
+     "even power? Yes",
+     "m to the eighth",
+     "It turns positive",
+     "others stay negative",
+     "the smallest, so",
+     "a positive one is out"
+    ]
+   },
+   {
+    "say": "Second, roots into powers. The fifth root of m is m to the one fifth.",
+    "at": [
+     "The fifth root of m",
+     "is m to"
+    ]
+   },
+   {
+    "say": "Third, the line. m is a negative fraction, and there the arrow points right. A bigger power, a bigger number. So the smallest number has the smallest power.",
+    "at": [
+     "Third, the line",
+     "a negative fraction",
+     "the arrow points right",
+     "A bigger power",
+     "So the smallest",
+     "the smallest power"
+    ]
+   },
+   {
+    "say": "The powers are three, negative three, and one fifth. The smallest is negative three. And notice, the arrows already handle a negative power, no need to flip it. So m to the negative three, choice number two is our answer.",
+    "at": [
+     "The powers are",
+     "three, and one",
+     "The smallest is",
+     "And notice, the",
+     "handle a negative",
+     "need to flip",
+     "m to the",
+     "choice number two is our answer"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. m is negative one half. m to the negative three flips it, negative two, cubed, negative eight. Far below the others, which are all between negative one and zero. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "m is negative one half",
+     "flips it, negative",
+     "Far below the",
+     "are all between"
+    ]
+   }
+  ]
+ ]
+}

@@ -1610,6 +1610,14 @@
   "solve-q-435#4": {
    "t": "Method 3 · Plugging in numbers",
    "d": "2026-10-12 topic-15 redo (your reading): x = 4 and 12; examples that work prove nothing, one that fails does"
+  },
+  "solve-q-493#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-12 topic-17 redo (your reading): p = 2, q = 3, r = 4, s = 5: (1) 6 < 16, (2) 3 < 10, (3) 8 < 3 fails"
+  },
+  "solve-q-496#2": {
+   "t": "Method 2 · Algebra",
+   "d": "2026-10-12 topic-17 redo (your reading): your Hebrew algebra side on its own: c < c/a → a < 1, bd < d → b < 1, c + a < d + b (strong on strong)"
   }
  },
  "lines": {
@@ -2542,16 +2550,16 @@
    "d": "spotting the two choices that both have two a's"
   },
   "solve-q-496#0": {
-   "t": "Place them, then test",
-   "d": "necessarily true: one counter-example kills it, push values to the edges"
+   "t": "Method 1 · Understanding",
+   "d": "2026-10-12 topic-17 redo (your reading): place the givens on the line; ÷ a fraction → bigger (2 ÷ 1/3 = 6), × a fraction → smaller (6 · 1/2 = 3)"
   },
   "solve-q-497#1": {
    "t": "Method 2 · Plugging in numbers",
    "d": "ordering −1/3, −1/6, −1/12, −1/24 by closeness to zero"
   },
   "solve-q-500#1": {
-   "t": "Method 2 · Plugging in numbers",
-   "d": "warning: change only t, never the numbers in the question · from your Hebrew course (2026-10-08 coverage fix): your trick with its limit: six sits in every choice, so swap it for two (2t, 2/t, t², √t with t = 1/4 → 1/2, 8, 1/16, 1/2); only when the same number is in every choice - otherwise change only t"
+   "t": "Method 2 · Plugging in with a swap",
+   "d": "2026-10-12 topic-17 redo (your reading): your Hebrew swap (every 6 → 2) with its limit; t = 1/9"
   },
   "solve-q-501#0": {
    "t": "Decode, then test",
@@ -3664,6 +3672,70 @@
   "solve-q-435#4": {
    "t": "Method 3 · Plugging in numbers",
    "d": "2026-10-12 topic-15 redo (your reading): x = 4 and 12; examples that work prove nothing, one that fails does"
+  },
+  "solve-q-493#0": {
+   "t": "Method 1 · Strong on strong",
+   "d": "2026-10-12 topic-17 redo (your reading): strong on strong with a number example (2·3 vs 4·5); stops at choice 3 (R35)"
+  },
+  "powers-on-number-line#0": {
+   "t": "Powers on the Number Line",
+   "d": "2026-10-12 topic-17 redo (your reading): short intro: what powers do in each range"
+  },
+  "powers-on-number-line#2": {
+   "t": "Above one",
+   "d": "2026-10-12 topic-17 redo (your reading): two examples (2, 4, 8; 3, 9, 27); the square root as a smaller power (√4, √9); the border 1"
+  },
+  "powers-on-number-line#3": {
+   "t": "Positive fractions",
+   "d": "2026-10-12 topic-17 redo (your reading): 1/2 → 1/4; 1/3, 1/9, 1/27; three sevenths squared without calculating; the root goes the other way"
+  },
+  "powers-on-number-line#5": {
+   "t": "Below negative one",
+   "d": "2026-10-12 topic-17 redo (your reading): (−2)³ = −8, (−3)³ = −27; even powers on their own"
+  },
+  "powers-on-number-line#7": {
+   "t": "Finding the range",
+   "d": "2026-10-12 topic-17 redo (your reading): x < x⁵ < x⁴ in two parts on the line; plugging in takes time, understanding takes seconds"
+  },
+  "solve-q-494#0": {
+   "t": "Three steps",
+   "d": "2026-10-12 topic-17 redo (your reading): the three steps; the arrows keep a negative power; a check with m = −1/2"
+  },
+  "solve-q-495#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-12 topic-17 redo (your reading): \"the smallest\": one plug-in is enough; a = 2, b = 3, c = 5"
+  },
+  "solve-q-496#1": {
+   "t": "Method 1 · Understanding",
+   "d": "2026-10-12 topic-17 redo (your reading): distances; strong on strong one win each = no decision; fails with a = 1/4, b = 3/4, c = 2, d = 2¼"
+  },
+  "solve-q-497#0": {
+   "t": "Method 1 · Understanding",
+   "d": "2026-10-12 topic-17 redo (your reading): signs first; × a fraction pulls toward 0 - on the negative side that is bigger"
+  },
+  "solve-q-498#0": {
+   "t": "Method 1 · The arrows",
+   "d": "2026-10-12 topic-17 redo (your reading): a negative x is out at once (x⁸ > 0 > x⁷); the arrows on the positive side"
+  },
+  "solve-q-499#0": {
+   "t": "Method 1 · The arrows",
+   "d": "2026-10-12 topic-17 redo (your reading): all four powers odd; biggest power last, smallest first"
+  },
+  "solve-q-499#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-12 topic-17 redo (your reading): a smart pick with a clean cube root, y = −1/8"
+  },
+  "solve-q-499#2": {
+   "t": "Method 3 · A sharp shortcut",
+   "d": "2026-10-12 topic-17 redo (your reading): your Hebrew insight method: the powers must keep one direction"
+  },
+  "solve-q-500#0": {
+   "t": "Method 1 · Understanding",
+   "d": "2026-10-12 topic-17 redo (your reading): t⁶ between 0 and t, the root between t and 1, 6t < 6, 6/t > 6"
+  },
+  "solve-q-501#1": {
+   "t": "Then the choices",
+   "d": "2026-10-12 topic-17 redo (your reading): possible but not necessarily: drop the always and the never; strong on strong as a second look at choice 1"
   }
  }
 }
