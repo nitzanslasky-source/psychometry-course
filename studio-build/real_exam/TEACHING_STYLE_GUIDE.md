@@ -529,7 +529,7 @@ Check every AI script line by line. The numbers in brackets are evidence from §
   3. Give different letters different numbers.
   4. Rule out 3 choices; don't stop at the first match. If two survive, use a tie-breaker number.
   5. Call it "a safety net".
-- **R16. No "which way is better" paragraph.** End after the answer, with a takeaway only if it teaches something new (a sentence that works on the next question, e.g. "whenever you see a percent of a percent, ask: of what?"), not a recap of what was just shown. Then "[pause] Okay. I'll see you in the next question."
+- **R16. No verdict and no closing takeaway.** No "which way is better" paragraph, and no takeaway line after the answer (teacher, 2026-10-11: she skipped the closing takeaway in every topic-13 video she read). A solution ends right after the answer: "... choice number three is our answer. [pause] Okay. I'll see you in the next question." A rule worth keeping is said at the step where it is used. Lessons keep their end recap only when it is the lesson's actual summary content.
 - **R17. Teach the idea where it is used.** If a question needs a tool that wasn't taught, teach it there ("I want to use this question to show you…"), with R4-R6. Lesson scripts stay short.
 - **R24. Exam vs lesson.** Say once: "In the exam you'd circle it and move on. Here, let's check the others too." Then check the remaining choices briefly, in order.
 

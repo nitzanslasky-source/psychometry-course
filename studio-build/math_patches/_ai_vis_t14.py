@@ -426,7 +426,6 @@ p2 = I('p2', 'All four are primes', size=30, col=1)
 p3 = I('p3', '$x=3$: $\\ 3^4=81$, $\\ 3^5$ too big ✗', hand='x = 3 :   3^4 = 81,   3^5  too big   ✗')
 p4 = I('p4', '$x=5,\\ 7$: even bigger ✗', hand='x = 5, 7 :   even bigger   ✗')
 p5 = I('p5', '$x=2$: the only one left ✓', hand='x = 2 :   the only one left   ✓')
-k2 = I('k2', "Past the limit? Don't finish the calculation", size=28, col=1)
 video('solve-q-387', 'solution', qid='q-387', slides=[
     S('Method 1 · Trial and error',
       L("Given: x is a prime number, and x to the power of six is a two-digit number. What is nine x?",
@@ -466,8 +465,7 @@ video('solve-q-387', 'solution', qid='q-387', slides=[
         "Both out.", show(p4, 'give seven and five'), mk('cross', 'choice 3', 'even bigger'), mk('cross', 'choice 4', 'Both out')),
       L("Three choices are out, and choice number two, x is two, is the only one left. So choice number two is our answer.",
         show(p5, 'the only one left'), mk('tick', 'choice 2', 'So choice number two is our answer')),
-      L("So once a power passes the limit, stop calculating, it's out. [pause] Okay. I'll see you in the next question.",
-        show(k2, 'once a power passes'))),
+      L("[pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t14-01 (Q2)
@@ -677,8 +675,7 @@ video('solve-q-386', 'solution', qid='q-386', slides=[
         "hundred, but y has to be above forty. And thirty times forty-six is one thousand three hundred eighty, the largest "
         "product, not the smallest.", show(q5, 'each one is a trap'), mk('cross', 'choice 2', 'which is prime'),
         mk('cross', 'choice 1', 'above forty'), mk('cross', 'choice 4', 'the largest')),
-      L("So when a question counts primes, write the numbers out, mark the primes, and count. [pause] Okay. I'll see you in "
-        "the next question.", pt('q4', 'mark the primes'))),
+      L("[pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ prime-tools (lesson)
@@ -982,8 +979,7 @@ video('solve-q-399', 'solution', qid='q-399', slides=[
         "fifty. Fifty minus two is forty-eight.", pt('stem', "One isn't allowed"), show(j1, 'as far apart as possible')),
       L("When is A smallest? When they're as close as possible. Can they be equal? Only if a hundred is a perfect square, "
         "and it is, ten times ten. So the smallest A is ten minus ten, zero.", show(j2, 'as close as possible')),
-      L("Forty-eight minus zero, forty-eight. Choice number three. The rest of the story, the greatest A and the smallest A, "
-        "is just words to make it look harder. [pause] Okay. I'll see you in the next question.",
+      L("Forty-eight minus zero, forty-eight. Choice number three. [pause] Okay. I'll see you in the next question.",
         show(j3, 'Forty-eight minus zero'), mk('tick', 'choice 3', 'Choice number three'))),
 ])
 
@@ -1248,8 +1244,7 @@ video('solve-q-391', 'solution', qid='q-391', slides=[
         "is odd, its digit sum is five, it doesn't end in five, and its root is less than seven. So it's a prime, choice "
         "number four is out, and fifty-one, choice number three is our answer.",
         show(a4, 'Forty-three is two plus'), mk('cross', 'choice 4', 'choice number four is out'), mk('tick', 'choice 3', 'choice number three is our answer')),
-      L("The whole question was one fact, two is the only even prime, and the exam loves it. [pause] Okay. I'll see you in "
-        "the next question.", pt('o3', 'The whole question was one fact'))),
+      L("[pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-392 (Q14)

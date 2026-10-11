@@ -96,14 +96,7 @@
      "choice number three is our answer"
     ]
    },
-   {
-    "say": "The whole question was one fact, two is the only even prime, and the exam loves it. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "The whole question was one fact",
-     "fact, two is",
-     "even prime, and"
-    ]
-   }
+   "[pause] Okay. I'll see you in the next question."
   ]
  ]
 }

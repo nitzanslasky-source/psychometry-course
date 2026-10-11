@@ -137,13 +137,7 @@
      "So choice number two is our answer"
     ]
    },
-   {
-    "say": "So once a power passes the limit, stop calculating, it's out. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "once a power passes",
-     "limit, stop calculating"
-    ]
-   }
+   "[pause] Okay. I'll see you in the next question."
   ]
  ]
 }
