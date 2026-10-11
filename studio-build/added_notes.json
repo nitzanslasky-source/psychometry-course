@@ -1598,6 +1598,10 @@
   "solve-q-471#1": {
    "t": "Method 2 · Plugging in numbers",
    "d": "2026-10-11 topic-16 redo (your reading): a = 1, b = 0, c = 6 gives k = 0: k, b, c even, so only a is necessarily odd"
+  },
+  "solve-q-466#1": {
+   "t": "Method 2 · Simplify first",
+   "d": "2026-10-11 topic-16 redo (your reading): your Hebrew algebra method restored: simplify each fraction, then read the signs"
   }
  },
  "lines": {
@@ -3583,11 +3587,11 @@
   },
   "solve-q-466#0": {
    "t": "Method 1 · Read the signs",
-   "d": "2026-10-11 topic-16 redo (your reading): xy < 0 and x > y → y < 0 < x; choice 1 out, choice 2 positive (the Hebrew's simplify-each-fraction method not included)"
+   "d": "2026-10-11 topic-16 redo (your reading): xy < 0 and x > y → y < 0 < x; choice 1 out, choice 2 positive"
   },
   "solve-q-466#1": {
-   "t": "Method 2 · Plugging in numbers",
-   "d": "2026-10-11 topic-16 redo (your reading): x = 1, y = −1; zero is not positive"
+   "t": "Method 2 · Simplify first",
+   "d": "2026-10-11 topic-16 redo (your reading): your Hebrew algebra method: simplify each fraction, then read the signs: x²/y − 1 < 0, x + y unknown, x/y < 0"
   },
   "solve-q-467#0": {
    "t": "Method 1 · Start smart",
@@ -3610,12 +3614,12 @@
    "d": "2026-10-11 topic-16 redo (your reading): y² = 4y; don't divide by y (y = 0 works too); the trap 12"
   },
   "solve-q-470#0": {
-   "t": "Method 1 · Drop the powers",
-   "d": "2026-10-11 topic-16 redo (your reading): 2b + 5 → odd; why: the brackets are 11 apart, different parities (the Hebrew's understanding and insight methods in one)"
+   "t": "Method 1 · Different parities",
+   "d": "2026-10-11 topic-16 redo (your reading): your Hebrew understanding method: b − 3 → b + 8 is a jump of 11, odd (2 → 13, 5 → 16), so one even and one odd; powers keep parity → y odd"
   },
   "solve-q-470#1": {
-   "t": "Method 2 · Plugging in numbers",
-   "d": "2026-10-11 topic-16 redo (your reading): b = 1 → 733, b = 2 → 1001, both odd"
+   "t": "Method 2 · Drop the powers",
+   "d": "2026-10-11 topic-16 redo (your reading): your Hebrew insight method: (b − 3) + (b + 8) = 2b + 5 → odd; only in parity questions"
   },
   "solve-q-471#0": {
    "t": "Method 1 · An odd product",
@@ -3628,6 +3632,18 @@
   "solve-q-472#2": {
    "t": "Method 2 · Plugging in the smallest",
    "d": "2026-10-11 topic-16 redo (your reading): a = 1, b = 2 → 3, 1, 1, 1/2; why the smallest (b = 4 hides it)"
+  },
+  "solve-q-466#2": {
+   "t": "Method 2 · Simplify first",
+   "d": "2026-10-11 topic-16 redo (your reading): continued: 1 − x/y = 1 + (+) > 0 → choice 2"
+  },
+  "solve-q-466#3": {
+   "t": "Method 3 · Plugging in numbers",
+   "d": "2026-10-11 topic-16 redo (your reading): x = 1, y = −1; zero is not positive"
+  },
+  "solve-q-470#2": {
+   "t": "Method 3 · Plugging in numbers",
+   "d": "2026-10-11 topic-16 redo (your reading): b = 1 → 733, b = 2 → 1001, both odd"
   }
  }
 }

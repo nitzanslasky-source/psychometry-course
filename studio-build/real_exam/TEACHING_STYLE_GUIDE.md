@@ -490,6 +490,7 @@ What is new compared with §9:
 **Unchanged decisions (2026-10-11):**
 - The teacher is Nitzan.
 - No cap on methods.
+- **Never drop or merge a Hebrew method** (teacher, 2026-10-11). Every method of her Hebrew solution gets its own method in the English script, even when it overlaps another (change the numbers if needed). Each stands on its own from the givens (R30), is explained clearly and kept tight; where it overlaps another method, one sentence says what is different about it. Extra methods may be added, never fewer.
 - R15 is approved.
 - Topic 51 is recorded by her.
 
@@ -686,3 +687,26 @@ Topic-15 order: the camera lesson `divisibility`, then q-423, q-424, q-425, q-42
 | Don't plug in values that give 0 | q-432 (plugging in: topic 51) | summary |
 | Divisible by 10 → the last digit; the last digit of a product | q-433 (last digits: topic 1) | — |
 | Take out the common factor of what's left (900 − 6x = 6(150 − x)) | q-434 | — |
+
+### Topic 16: where each idea is first taught (R29 / R32)
+
+Topic-16 order: the camera lesson `whole-numbers`, then q-457, q-r26-t16-01, consecutive-integers, q-458, q-459, r26-t16-consecutive-sums, q-r26-t16-02, q-r26-t16-03, parity, q-460, q-461, q-462, consecutive-products, q-463, q-464, q-r26-t16-04, q-465 to q-472, summary. Topic 17 (the number line) comes after topic 16.
+
+| Idea | First taught (full) | Later (reminder) |
+|---|---|---|
+| Sign rules for × and ÷; count the minuses; mixed-sign sums; even powers and \|x\| ≥ 0; −x for a negative x | camera lesson `whole-numbers` | q-457, q-r26-t16-01, q-465, q-466, summary |
+| Find the surely positive pieces; the piece that's left decides the sign | q-457 | q-466 |
+| Mixed signs: the bigger size wins (−2 + 5, −5 + 2) | q-r26-t16-01 | summary |
+| Three ways into numbers in a row: one letter around the middle, the smallest legal numbers (check the choices differ), differences with their signs | consecutive-integers (lesson) | q-458, q-459, q-468, q-469 |
+| Counting evens / odds in a range; squares of neighbours b² − a² = a + b | r26-t16-consecutive-sums (lesson) | summary |
+| Sum of numbers in a row = count × middle | q-r26-t16-02 | summary |
+| Four in a row: the sum is 4a + 6, never divisible by 4; odd count → divisible by the count | q-r26-t16-03 | — |
+| Count the odd terms; one even factor; the four division cases; powers keep parity; one plug-in per case, three close ones for ÷ | parity (lesson) | q-460 to q-462, q-470 to q-472, summary |
+| Cancel first, then judge parity | q-461 | — |
+| An even difference = the same parity | q-462 | — |
+| Four in a row → 24; two evens → 4; consecutive evens → 8; count the twos; x² − 1 with x odd → 8 | consecutive-products (lesson) | q-463, q-472, summary |
+| The smallest case is only a candidate; a second case that avoids the factor | q-r26-t16-04 | summary |
+| Bigger minus smaller is positive, even for negatives | q-465 | summary |
+| Start with the choice that pins one case | q-467 | — |
+| Don't divide by an unknown that may be 0 | topic 6 (reminder in q-469) | — |
+| An odd product: every factor odd; 2k + 1 is odd for every k | parity (lesson) / q-471 | — |

@@ -12,43 +12,69 @@
     "pause": 0.5
    },
    {
-    "say": "So all the choices are about even and odd. [short pause] We'll solve it two ways, dropping the powers, and then plugging in numbers.",
+    "say": "So all the choices are about even and odd. [short pause] We'll solve it three ways, with the two brackets, dropping the powers, and then plugging in numbers.",
     "at": [
      "about even and odd",
-     "solve it two",
-     "the powers, and"
+     "solve it three",
+     "the two brackets",
+     "powers, and then"
     ]
    },
    {
-    "say": "[short pause] Let's start by dropping the powers. Remember, a power doesn't change parity. So in a parity question I may drop it, and I'd never do that in a regular equation. b minus three plus b plus eight is two b plus five.",
+    "say": "[short pause] Let's start with the two brackets. Both are built from the same b. From b minus three up to b plus eight is a jump of eleven, an odd jump.",
     "at": [
      "Let's start",
-     "Remember, a power",
-     "parity. So in",
-     "question I may",
-     "never do that in a regular equation",
-     "b minus three plus b plus eight"
+     "Both are built",
+     "From b minus three",
+     "a jump of"
     ]
    },
    {
-    "say": "Two b is always even, whatever b is, and even plus five is odd. So y is always odd. Choice number four is our answer.",
+    "say": "And an odd jump always switches between even and odd. From two, a jump of eleven lands on thirteen, and from five, on sixteen. So one bracket is even, and the other is odd.",
     "at": [
-     "Two b is always even",
-     "whatever b is",
-     "plus five is",
+     "And an odd",
+     "switches between even",
+     "From two, a jump",
+     "from five, on",
+     "So one bracket",
+     "and the other"
+    ]
+   },
+   {
+    "say": "A power doesn't change parity, so after the powers, still one even and one odd. Odd plus even is odd. So y is always odd. Choice number four is our answer.",
+    "at": [
+     "A power doesn't change",
+     "one even and",
+     "Odd plus even",
      "So y is",
      "Choice number four is our answer"
     ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way, and it's the shortest. It uses the same rule, powers don't change parity, but instead of thinking about the brackets, we just drop the powers. In a parity question that's allowed, and I'd never do that in a regular equation.",
+    "at": [
+     "Another way",
+     "It uses the",
+     "powers don't change",
+     "instead of thinking",
+     "brackets, we just",
+     "powers. In a",
+     "that's allowed, and",
+     "never do that in a regular equation"
+    ]
    },
    {
-    "say": "And here's why, without letters. b plus eight and b minus three are eleven apart, an odd gap, so one is even and the other is odd. Odd plus even is odd.",
+    "say": "Without the powers, b minus three plus b plus eight is two b plus five. Two b is always even, whatever b is, and even plus five is odd. So y is always odd. Choice number four.",
     "at": [
-     "And here's why",
-     "b plus eight",
-     "minus three are",
-     "eleven apart",
-     "the other is",
-     "Odd plus even"
+     "Without the powers",
+     "is two b",
+     "Two b is always even",
+     "whatever b is",
+     "plus five is",
+     "So y is always odd. Choice number four",
+     "number four"
     ]
    }
   ],

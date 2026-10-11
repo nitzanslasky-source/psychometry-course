@@ -1021,6 +1021,11 @@ n1 = I('n1', '$xy<0$: $\\ $opposite signs', size=28, col=1, hand='xy < 0 :    op
 n2 = I('n2', '$x>y$: $\\ \\hl{s}{y<0<x}$', size=30, col=1, hand='x > y :    \\hl{s}{y < 0 < x}')
 n3 = I('n3', '(1) $\\frac{x^2-y}{y}=\\frac{(+)}{(-)}<0$ ✗', size=30, hand='(1)   {x^2 − y/y} = {(+)/(−)} < 0   ✗')
 n4 = I('n4', '(2) $\\frac{y-x}{y}=\\frac{(-)}{(-)}>0$ ✓', size=30, hand='(2)   {y − x/y} = {(−)/(−)} > 0   ✓')
+p1 = I('p1', 'From the givens: $\\ y<0<x$', size=28, col=1, hand='From the givens :    y < 0 < x')
+p2 = I('p2', '(1) $\\frac{x^2}{y}-1$: $\\ (-)-1<0$ ✗', size=30, hand='(1)   {x^2/y} − 1 :    (−) − 1 < 0   ✗')
+p3 = I('p3', '(3) $\\frac{(x-y)(x+y)}{x-y}=x+y$: $\\ $? ✗', size=30, hand='(3)   {(x − y)(x + y)/x − y} = x + y :    ?   ✗')
+p4 = I('p4', '(4) $\\frac{x^2y}{xy^2}=\\frac{x}{y}<0$ ✗', size=30, hand='(4)   {x^2 y/x y^2} = {x/y} < 0   ✗')
+p5 = I('p5', '(2) $1-\\frac{x}{y}=1+(+)>0$ ✓', size=30, hand='(2)   1 − {x/y} = 1 + (+) > 0   ✓')
 o1 = I('o1', '$x=1,\\ y=-1$', hand='x = 1,    y = −1')
 o2 = I('o2', '(1) $\\frac{2}{-1}=-2$ ✗ $\\quad$ (2) $\\frac{-2}{-1}=2$ ✓', size=30, hand='(1)   {2/−1} = −2  ✗      (2)   {−2/−1} = 2  ✓')
 o3 = I('o3', '(3) $\\frac{0}{2}=0$ ✗ $\\quad$ (4) $\\frac{-1}{1}=-1$ ✗', size=30, hand='(3)   {0/2} = 0  ✗      (4)   {−1/1} = −1  ✗')
@@ -1030,7 +1035,7 @@ video('solve-q-466', 'solution', qid='q-466', slides=[
       L("Given: x is bigger than y, and x times y is smaller than zero. Which of the following expressions is necessarily "
         "positive?", pt('stem', 'Given', 'hl', 7.0), voice='calm', pause=0.5),
       L("So two givens, and fractions in the choices. First let's find the signs of x and y. [short pause] We'll solve it "
-        "two ways, reading the signs, and then plugging in numbers.", pt('stem: given', 'two givens')),
+        "three ways, reading the signs, simplifying each fraction, and then plugging in numbers.", pt('stem: given', 'two givens')),
       L("[short pause] Let's start with the signs. x times y is negative, so x and y have opposite signs, one positive and "
         "one negative. And x is bigger than y. Can the negative one be bigger? No. So y is negative, and x is positive.",
         pt('stem: g2', 'x times y is negative'), show(n1, 'opposite signs'), pt('stem: g1', 'x is bigger than y'), show(n2, 'So y is negative')),
@@ -1038,7 +1043,23 @@ video('solve-q-466', 'solution', qid='q-466', slides=[
         "the bottom, y, is negative. Positive over negative is negative. Out.", show(n3, 'x squared is positive'), mk('cross', 'choice 1', 'Out.')),
       L("Choice number two. y minus x is negative minus positive, negative. And over y, a negative. Negative over negative "
         "is positive. So choice number two is our answer.", show(n4, 'y minus x is'), mk('tick', 'choice 2', 'choice number two is our answer'))),
-    S('Method 2 · Plugging in numbers',
+    S('Method 2 · Simplify first',
+      L("[pause] Another way is to simplify each fraction first, and only then read the signs. What's different? Before, we "
+        "read the sign of the whole top and the whole bottom. Here we first break each fraction into simpler pieces. From "
+        "the givens, as before, y is negative and x is positive.", show(p1, 'From the givens')),
+      L("Choice number one. Divide each term on top by y, and it's x squared over y, minus one. x squared over y is positive "
+        "over negative, negative, and minus one makes it even smaller. Negative. Out.", show(p2, 'x squared over y, minus one'),
+        mk('cross', 'choice 1', 'smaller. Negative. Out')),
+      L("Choice number three. The top is the third shortcut formula, x minus y, times x plus y. Cancel x minus y, and x plus y "
+        "is left. A positive plus a negative, and it depends on which is bigger in size. So not necessarily positive. Out.",
+        show(p3, 'The top is the third'), mk('cross', 'choice 3', 'not necessarily positive. Out'))),
+    S('Method 2 · Simplify first',
+      L("Choice number four. Cancel x times y, and x over y is left. Positive over negative, negative. Out.",
+        show(p4, 'Cancel x times y'), mk('cross', 'choice 4', 'negative. Out')),
+      L("Choice number two. y over y is one, minus x over y. x over y is negative, so one minus a negative is one plus "
+        "something positive. Always positive. Choice number two.", show(p5, 'y over y is one'), mk('tick', 'choice 2', 'Always positive. Choice number two')),
+      sb='Method 2 · Simplify first'),
+    S('Method 3 · Plugging in numbers',
       L("[pause] Now let's try plugging in. x is positive and y is negative, so x is one and y is negative one.", show(o1, 'x is one and y is')),
       L("Choice number one. The top is one plus one, which is two, and two over negative one is negative two. Choice number two. The top is negative one minus one, which is negative two, and negative two over negative one is two.", show(o2, 'The top is one plus one')),
       L("Choice number three, one minus one is zero on top, so zero, and zero is not positive. Choice number four, negative "
@@ -1166,27 +1187,35 @@ video('solve-q-469', 'solution', qid='q-469', slides=[
 # ------------------------------------------------------------------------------------------------ q-470 (Q18)
 # NEW: in a parity question you may drop the powers (never in a regular equation); shifting b by an odd number vs an
 # even number gives brackets of different parity.  REMINDER: powers keep parity, count the odd terms (parity lesson).
+w4 = I('w4', 'From $b-3$ to $b+8$: $\\ $a jump of $11$, odd', size=30, hand='From  b − 3  to  b + 8 :    a jump of 11,  odd')
+w5 = I('w5', '$2 \\to 13 \\quad 5 \\to 16$: $\\ $one even, one odd', size=28, col=1, hand='2 → 13      5 → 16 :    one even,  one odd')
+w6 = I('w6', 'Powers keep parity: $\\ $odd $+$ even $=$ \\hl{o}{odd}', size=30, hand='Powers keep parity :    odd + even  =  \\hl{o}{odd}')
 w1 = I('w1', 'Drop the powers: $\\ (b-3)+(b+8)=2b+5$', size=32, hand='Drop the powers :    (b − 3) + (b + 8) = 2b + 5')
-w2 = I('w2', '$2b$ even $+\\ 5$ $=$ \\hl{o}{odd}', hand='2b  even  + 5  =  \\hl{o}{odd}')
+w2 = I('w2', '$2b$ even $+\\ 5$ $=$ \\hl{p}{odd}', hand='2b  even  + 5  =  \\hl{p}{odd}')
 w3 = I('w3', 'Only in parity questions, never in equations', size=26, col=1)
-w4 = I('w4', '$b+8$ and $b-3$ differ by $11$: $\\ $odd $+$ even', size=28, col=1, hand='b + 8  and  b − 3  differ by 11 :   odd + even')
 x1 = I('x1', '$b=1$: $\\ (-2)^2+9^3=4+729=733$', size=32, hand='b = 1 :    (−2)^2 + 9^3 = 4 + 729 = 733')
 x2 = I('x2', '$b=2$: $\\ (-1)^2+10^3=1+1000=1001$', size=32, hand='b = 2 :    (−1)^2 + 10^3 = 1 + 1000 = 1001')
 x3 = I('x3', '$b$ odd or even, $\\ y$ odd both times', size=28, col=1)
 video('solve-q-470', 'solution', qid='q-470', slides=[
-    S('Method 1 · Drop the powers',
+    S('Method 1 · Different parities',
       L("b and y are integers. Given: y is equal to b minus three, squared, plus b plus eight, cubed. Which of the following "
         "statements is necessarily true?", pt('stem', 'b and y are', 'hl', 8.0), voice='calm', pause=0.5),
-      L("So all the choices are about even and odd. [short pause] We'll solve it two ways, dropping the powers, and then "
-        "plugging in numbers.", pt('choice 1', 'about even and odd')),
-      L("[short pause] Let's start by dropping the powers. Remember, a power doesn't change parity. So in a parity question I "
-        "may drop it, and I'd never do that in a regular equation. b minus three plus b plus eight is two b plus five.",
-        show(w3, "never do that in a regular equation"), show(w1, 'b minus three plus b plus eight')),
-      L("Two b is always even, whatever b is, and even plus five is odd. So y is always odd. Choice number four is our "
-        "answer.", show(w2, 'Two b is always even'), mk('tick', 'choice 4', 'Choice number four is our answer')),
-      L("And here's why, without letters. b plus eight and b minus three are eleven apart, an odd gap, so one is even and the "
-        "other is odd. Odd plus even is odd.", show(w4, 'eleven apart'))),
-    S('Method 2 · Plugging in numbers',
+      L("So all the choices are about even and odd. [short pause] We'll solve it three ways, with the two brackets, "
+        "dropping the powers, and then plugging in numbers.", pt('choice 1', 'about even and odd')),
+      L("[short pause] Let's start with the two brackets. Both are built from the same b. From b minus three up to b plus "
+        "eight is a jump of eleven, an odd jump.", show(w4, 'From b minus three')),
+      L("And an odd jump always switches between even and odd. From two, a jump of eleven lands on thirteen, and from five, "
+        "on sixteen. So one bracket is even, and the other is odd.", show(w5, 'From two, a jump')),
+      L("A power doesn't change parity, so after the powers, still one even and one odd. Odd plus even is odd. So y is "
+        "always odd. Choice number four is our answer.", show(w6, "A power doesn't change"), mk('tick', 'choice 4', 'Choice number four is our answer'))),
+    S('Method 2 · Drop the powers',
+      L("[pause] Another way, and it's the shortest. It uses the same rule, powers don't change parity, but instead of "
+        "thinking about the brackets, we just drop the powers. In a parity question that's allowed, and I'd never do that in "
+        "a regular equation.", show(w3, 'never do that in a regular equation')),
+      L("Without the powers, b minus three plus b plus eight is two b plus five. Two b is always even, whatever b is, and "
+        "even plus five is odd. So y is always odd. Choice number four.", show(w1, 'Without the powers'),
+        show(w2, 'Two b is always even'), mk('tick', 'choice 4', 'So y is always odd. Choice number four'))),
+    S('Method 3 · Plugging in numbers',
       L("[pause] Now let's try plugging in. It's easier to choose b than y. b is one. One minus three is negative two, and "
         "squared is four. One plus eight is nine, and nine cubed is seven twenty-nine. Four plus seven "
         "twenty-nine is seven thirty-three, odd.", show(x1, 'b is one')),

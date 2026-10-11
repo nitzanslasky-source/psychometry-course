@@ -12,13 +12,13 @@
     "pause": 0.5
    },
    {
-    "say": "So two givens, and fractions in the choices. First let's find the signs of x and y. [short pause] We'll solve it two ways, reading the signs, and then plugging in numbers.",
+    "say": "So two givens, and fractions in the choices. First let's find the signs of x and y. [short pause] We'll solve it three ways, reading the signs, simplifying each fraction, and then plugging in numbers.",
     "at": [
      "two givens",
      "the choices. First",
      "the signs of",
      "ways, reading the",
-     "then plugging in"
+     "each fraction, and"
     ]
    },
    {
@@ -55,6 +55,70 @@
      "And over y",
      "Negative over negative",
      "choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way is to simplify each fraction first, and only then read the signs. What's different? Before, we read the sign of the whole top and the whole bottom. Here we first break each fraction into simpler pieces. From the givens, as before, y is negative and x is positive.",
+    "at": [
+     "Another way",
+     "each fraction first",
+     "then read the",
+     "different? Before, we",
+     "sign of the",
+     "and the whole",
+     "Here we first",
+     "fraction into simpler",
+     "From the givens",
+     "y is negative"
+    ]
+   },
+   {
+    "say": "Choice number one. Divide each term on top by y, and it's x squared over y, minus one. x squared over y is positive over negative, negative, and minus one makes it even smaller. Negative. Out.",
+    "at": [
+     "number one. Divide",
+     "on top by",
+     "x squared over y, minus one",
+     "is positive over",
+     "and minus one",
+     "smaller. Negative. Out"
+    ]
+   },
+   {
+    "say": "Choice number three. The top is the third shortcut formula, x minus y, times x plus y. Cancel x minus y, and x plus y is left. A positive plus a negative, and it depends on which is bigger in size. So not necessarily positive. Out.",
+    "at": [
+     "number three. The",
+     "The top is the third",
+     "times x plus",
+     "Cancel x minus",
+     "x plus y is",
+     "A positive plus",
+     "and it depends",
+     "is bigger in",
+     "not necessarily positive. Out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Choice number four. Cancel x times y, and x over y is left. Positive over negative, negative. Out.",
+    "at": [
+     "number four. Cancel",
+     "Cancel x times y",
+     "Positive over negative",
+     "negative. Out"
+    ]
+   },
+   {
+    "say": "Choice number two. y over y is one, minus x over y. x over y is negative, so one minus a negative is one plus something positive. Always positive. Choice number two.",
+    "at": [
+     "number two. y",
+     "y over y is one",
+     "x over y is",
+     "so one minus",
+     "is one plus",
+     "Always positive. Choice number two"
     ]
    }
   ],
