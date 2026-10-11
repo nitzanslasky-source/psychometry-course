@@ -119,6 +119,16 @@ def stamp(f):
     return (PATCH.match(f) or TAKE.match(f)).group(2)
 
 
+def patch_read_texts(side):
+    """texts of the paragraphs a patch take really covers: only those she REACHED (their start was logged), not every
+    selected one. 'read' = the indexes reached (since 2026-10-11); older patch sidecars: the paragraphStarts entries."""
+    text = {p['i']: p['text'] for p in side.get('paragraphs', []) if isinstance(p, dict) and 'i' in p}
+    read = side.get('read')
+    if read is None:
+        read = [e.get('para') for e in side.get('paragraphStarts', [])]
+    return [text[i] for i in read if i in text]
+
+
 def changed_paragraphs(current, full_side, patch_sides):
     """indexes of the current paragraphs that her takes do not cover: the text is not among the paragraphs of her
     last full take's sidecar, nor of a patch take made after it (new or edited paragraphs). None = no sidecar."""
@@ -126,7 +136,7 @@ def changed_paragraphs(current, full_side, patch_sides):
         return None
     known = {norm(p['text'] if isinstance(p, dict) else p) for p in full_side['paragraphs']}
     for ps in patch_sides:
-        known |= {norm(p['text'] if isinstance(p, dict) else p) for p in ps.get('paragraphs', [])}
+        known |= {norm(t) for t in patch_read_texts(ps)}
     return [i for i, t in enumerate(current) if norm(t) not in known]
 
 
@@ -285,6 +295,7 @@ kbd{font:11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line);border
 .pbar{display:none;margin:0 22px 8px;padding:8px 12px;border-radius:10px;background:var(--warn-soft);font-size:13.5px;align-items:center;gap:10px;flex-wrap:wrap}
 .patch .pbar{display:flex}
 .pbar button{padding:4px 10px;font-size:13px}
+.pbar #pNext{margin-left:auto;padding:8px 18px;font-size:15px;background:var(--accent);border-color:var(--accent);color:#fff}
 .patch .p{padding-left:2.1em}
 .patch .p::before{content:"";position:absolute;left:.6em;top:.62em;width:.62em;height:.62em;border:2px solid var(--faint);border-radius:4px}
 .patch .p.sel{color:var(--ink)}
@@ -345,7 +356,7 @@ kbd{font:11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line);border
       <span class="state" id="state">Ready.</span>
       <span class="keys"><kbd>Space</kbd> / click next paragraph · <kbd>←</kbd> back · <kbd>M</kbd> mistake · <kbd>P</kbd> pause</span>
     </div>
-    <div class="pbar" id="pbar"><span id="pinfo"></span><button id="pChanged">Select changed</button><button id="pClear">Clear</button></div>
+    <div class="pbar" id="pbar"><span id="pinfo"></span><button id="pChanged">Select changed</button><button id="pClear">Clear</button><button id="pNext" class="big" hidden>Next ▸</button></div>
     <div class="prompter" id="prompter" tabindex="-1"><div class="inner" id="paras"></div></div>
     <div class="foot">
       <span class="lbl" id="playLbl">Last take</span>
@@ -403,9 +414,12 @@ $('#bFolder').onclick=async()=>{
     await scanAll()}catch(e){if(e&&e.name!=='AbortError')console.warn(e)}
 };
 async function readJson(d,n){try{return JSON.parse(await (await (await d.getFileHandle(n)).getFile()).text())}catch{return null}}
+function patchReadTexts(side){/* only the paragraphs she REACHED count: 'read', or for older sidecars the paragraphStarts */
+  const text={};for(const p of (side.paragraphs||[]))if(p&&p.i!=null)text[p.i]=p.text;
+  const read=side.read||(side.paragraphStarts||[]).map(e=>e.para);return read.filter(i=>i in text).map(i=>text[i])}
 function changedOf(id,full,patches){/* same rule as the generator: current paragraphs not in the last full take's sidecar nor in a later patch */
   if(!full||!full.paragraphs)return null;const known=new Set(full.paragraphs.map(p=>norm(p.text!=null?p.text:p)));
-  for(const ps of patches)for(const p of (ps.paragraphs||[]))known.add(norm(p.text!=null?p.text:p));
+  for(const ps of patches)for(const t of patchReadTexts(ps))known.add(norm(t));
   return flat(BYID[id]).map((t,i)=>known.has(norm(t))?-1:i).filter(i=>i>=0)}
 async function scanVideo(id){
   try{const d=await videoDir(id,false);if(!d)return;const names=[];for await(const [n,h] of d.entries())if(h.kind==='file'&&TAKE_RE.test(n))names.push(n);
@@ -452,7 +466,8 @@ function paintParas(){
   document.querySelectorAll('#paras .p').forEach(el=>{const k=+el.dataset.k;el.classList.toggle('cur',k===S.para&&(!patch||sel.has(k)));el.classList.toggle('done',!patch&&k<S.para);
     el.classList.toggle('sel',patch&&sel.has(k));el.classList.toggle('ctx',patching&&!sel.has(k)&&(sel.has(k-1)||sel.has(k+1)))});
   document.querySelectorAll('#paras .slide').forEach(sd=>sd.classList.toggle('empty',patching&&!sd.querySelector('.p.sel,.p.ctx')));
-  if(patch){const nc=[...sel].filter(k=>ch.includes(k)).length;$('#pinfo').innerHTML=patching?'<b>Re-reading '+sel.size+' paragraph'+(sel.size===1?'':'s')+'</b> (greyed lines are context: do not read them)':
+  if(patch){const nc=[...sel].filter(k=>ch.includes(k)).length;const o=order(),pos=o.indexOf(S.para)+1;$('#pNext').hidden=!patching||pos>=o.length;
+  $('#pinfo').innerHTML=patching?(pos<o.length?'<b>Paragraph '+pos+' of '+o.length+'</b> — press <kbd>Space</kbd> (or Next ▸) for the next paragraph':'<b>Paragraph '+pos+' of '+o.length+'</b> — the last one. Press Stop &amp; save when you finish')+' <span style="color:var(--muted)">· greyed lines are context, do not read them</span>':
     'Re-read mode: click paragraphs to select them. <b>'+sel.size+' selected</b>'+(ch.length?' · '+ch.length+' changed since your last take'+(nc?' ('+nc+' selected)':''):' · no changed paragraphs');$('#pChanged').hidden=patching||!ch.length;$('#pClear').hidden=patching}
   if($('#auto').checked){const el=document.querySelector('#paras .p.cur');if(el){const pr=$('#prompter');const top=el.offsetTop-pr.offsetTop-pr.clientHeight*.3;pr.scrollTo({top:Math.max(0,top),behavior:'smooth'})}}
 }
@@ -465,6 +480,7 @@ function setMode(m){if(S.rec){toast('Stop the recording first.');return}S.mode=m
 $('#mFull').onclick=()=>setMode('full');$('#mPatch').onclick=()=>setMode('patch');
 $('#pChanged').onclick=()=>{S.sel=new Set(changedList());const o=order();if(o.length)S.para=o[0];paintParas()};
 $('#pClear').onclick=()=>{S.sel.clear();paintParas()};
+$('#pNext').onclick=e=>{e.currentTarget.blur();if(S.rec&&!S.rec.paused)nextPara()};
 $('#prompter').onclick=()=>{if(S.rec&&!S.rec.paused)nextPara()};
 function fontSize(d){let f=LS.get('font',30);f=Math.max(18,Math.min(48,f+d));LS.set('font',f);document.documentElement.style.setProperty('--prompt',f+'px')}
 $('#aMinus').onclick=()=>fontSize(-2);$('#aPlus').onclick=()=>fontSize(2);
@@ -549,23 +565,26 @@ async function stopRec(){
   const name=r.video+(r.patch?'-patch-':'-')+r.started.toISOString().replace(/[:.]/g,'-')+'.wav';
   const wav=encodeWav(r.chunks,r.samples,sr);
   const ps=flat(v);const starts=[];for(const e of r.events)if(e.type!=='mistake')starts.push({para:e.para,t:+e.t.toFixed(3),how:e.type});
+  const reached=new Set(starts.map(e=>e.para)),read=(r.patch?r.sel:ps.map((_,i)=>i)).filter(i=>reached.has(i)),unread=r.patch?r.sel.filter(i=>!reached.has(i)):[];
   const side={file:name,videoId:r.video,kind:r.patch?'patch':'full',recordedAt:r.started.toISOString(),duration:+dur.toFixed(3),sampleRate:sr,channels:1,bitsPerSample:16,format:'WAV PCM 16-bit mono',
     mic:{label:MIC.label,deviceId:(MIC.settings||{}).deviceId||'',settings:MIC.settings,engine:MIC.engine},
     constraints:{echoCancellation:false,noiseSuppression:false,autoGainControl:false},clipped:!!r.clipped,
     paragraphStarts:starts,mistakes:r.events.filter(e=>e.type==='mistake').map(e=>({t:+e.t.toFixed(3),para:e.para,text:ps[e.para]})),
-    pauses:r.pauses,paragraphs:(r.patch?r.sel:ps.map((_,i)=>i)).map(i=>({i,text:ps[i]})),scriptParagraphs:ps.length,
-    note:(r.patch?'PATCH take: only the paragraphs listed in "paragraphs" (i = index in the current script) were re-read; they replace those paragraphs of the full take. ':'')+'Times are seconds in this WAV (pauses removed). paragraphStarts: when each paragraph was reached (Space/click; back/jump also listed). mistakes: "I stumbled; I repeat this sentence" - cut the take of that sentence before the mark.',
+    pauses:r.pauses,paragraphs:(r.patch?r.sel:ps.map((_,i)=>i)).map(i=>({i,text:ps[i]})),read,scriptParagraphs:ps.length,
+    note:(r.patch?'PATCH take: only the paragraphs listed in "paragraphs" (i = index in the current script) were re-read; they replace those paragraphs of the full take. ':'')+'Times are seconds in this WAV (pauses removed). read: the paragraph indexes she reached (only these count as re-read). paragraphStarts: when each paragraph was reached (Space/click; back/jump also listed). mistakes: "I stumbled; I repeat this sentence" - cut the take of that sentence before the mark.',
     tool:'reading_studio.py v1'};
   const json=new Blob([JSON.stringify(side,null,1)],{type:'application/json'});
   setLastTake(wav,name);
   const where=await saveFiles(r.video,[[name,wav],[name.replace(/\.wav$/,'.json'),json]]);
   const st=S.status[r.video]||{takes:0,patches:0,changed:null};
-  if(r.patch){const done=new Set(r.sel.map(i=>norm(ps[i])));S.status[r.video]={...st,patches:(st.patches||0)+1,changed:st.changed?st.changed.filter(i=>!done.has(norm(ps[i]))):st.changed}}
+  if(r.patch){const done=new Set(read.map(i=>norm(ps[i])));S.status[r.video]={...st,patches:(st.patches||0)+1,changed:st.changed?st.changed.filter(i=>!done.has(norm(ps[i]))):st.changed}}
   else S.status[r.video]={takes:(st.takes||0)+1,latest:name,seconds:dur,patches:0,changed:[]};
   if(where)await scanVideo(r.video);renderList();
   if(V[S.cur].id===r.video){const keep=S.para;S.sel=new Set([...S.sel].filter(i=>changedList().includes(i)));renderParas();S.para=keep;paintParas()}
   $('#state').textContent=where?'Saved '+fmt(dur)+' → '+where:'Downloaded '+name+' (and its .json). Move both to Course.recordings/_reading/'+r.video+'/';
   toast(where?'Saved ('+fmt(dur)+').':'Downloaded to your Downloads folder.',4000);
+  if(unread.length){const msg=unread.map(i=>'Paragraph '+(i+1)+' (“'+ps[i].split(' ').slice(0,5).join(' ')+'…”)').join(', ')+(unread.length>1?' weren\'t':' wasn\'t')+' read yet. '+(unread.length>1?'They stay':'It stays')+' marked “needs re-read”.';
+    $('#state').textContent+=' · '+msg;toast(msg,9000)}
   if(r.clipped)toast('Some peaks were too loud (clipping). Move back a little or lower the mic gain.',6000);
 }
 async function saveFiles(id,files){
