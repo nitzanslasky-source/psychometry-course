@@ -1,0 +1,127 @@
+{
+ "videoId": "consecutive-products",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Products of numbers in a row, and of even numbers, follow some very handy rules. Let's build them."
+  ],
+  [
+   {
+    "say": "Remember, two numbers in a row always divide by two, and three in a row by six.",
+    "at": [
+     "two numbers in a row",
+     "three in a"
+    ]
+   },
+   {
+    "say": "Four in a row. One of them divides by four, and another one is even, so that's eight. And one of them divides by three. Eight and three share nothing, so the product divides by eight times three, twenty-four.",
+    "at": [
+     "Four in a row",
+     "four, and another",
+     "even, so that's",
+     "And one of",
+     "Eight and three",
+     "so the product",
+     "eight times three"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. One times two times three times four is twenty-four. Two times three times four times five is a hundred twenty, five twenty-fours.",
+    "at": [
+     "One times two times three",
+     "Two times three times four times",
+     "times five is",
+     "twenty, five twenty-fours"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Now even numbers. Each even number is two times something, so two evens together are four times something. Two times six is twelve, and four times ten is forty, both divide by four.",
+    "at": [
+     "Each even number is two times",
+     "together are four",
+     "Two times six",
+     "and four times",
+     "forty, both divide"
+    ]
+   },
+   {
+    "say": "Two consecutive even numbers are even better. One of them always divides by four, and the other by two, so the product divides by eight. Two times four is eight, six times eight is forty-eight, and ten times twelve is a hundred twenty, fifteen eights.",
+    "at": [
+     "Two consecutive even numbers",
+     "One of them",
+     "by four, and",
+     "by two, so",
+     "divides by eight",
+     "Two times four",
+     "six times eight",
+     "and ten times",
+     "a hundred twenty"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Is a fraction a whole number? Count the twos. m is even and n is odd. m squared over eight, times n plus one. m is even, so m squared has at least two twos. n is odd, so n plus one is even, one more two. Three twos on top, and eight is two times two times two. It cancels, always whole.",
+    "at": [
+     "Count the twos",
+     "m squared over",
+     "n plus one",
+     "m is even, so",
+     "squared has at",
+     "n is odd, so",
+     "plus one is",
+     "Three twos on",
+     "eight is two",
+     "times two. It"
+    ]
+   },
+   {
+    "say": "Let's check. m is two and n is one, four times two over eight is one. m is two and n is three, four times four over eight is two.",
+    "at": [
+     "m is two and n is one",
+     "over eight is",
+     "m is two and n is three",
+     "is three, four",
+     "over eight is two"
+    ]
+   },
+   {
+    "say": "But m times n plus one, over eight, has only two twos for sure. With m two and n one, two times two over eight is a half. Not whole.",
+    "at": [
+     "plus one, over",
+     "only two twos for sure",
+     "one, two times",
+     "eight is a"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "On the exam, the products hide inside expressions. x squared minus one is x minus one, times x plus one, the neighbors of x. If x is odd, they're two consecutive even numbers, so x squared minus one divides by eight. x is five, twenty-five minus one is twenty-four. x is seven, forty-nine minus one is forty-eight.",
+    "at": [
+     "products hide inside",
+     "x squared minus one",
+     "plus one, the",
+     "If x is",
+     "two consecutive even",
+     "x squared minus one divides",
+     "x is five",
+     "one is twenty-four",
+     "x is seven",
+     "one is forty-eight"
+    ]
+   },
+   {
+    "say": "And x cubed minus x is three in a row, as you saw. You'll meet both in the next questions. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "And x cubed",
+     "is three in",
+     "as you saw",
+     "You'll meet both"
+    ]
+   }
+  ]
+ ]
+}

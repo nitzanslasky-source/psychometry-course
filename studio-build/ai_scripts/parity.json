@@ -1,0 +1,166 @@
+{
+ "videoId": "parity",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Now even and odd, and how each operation decides whether the result is even or odd."
+  ],
+  [
+   {
+    "say": "Remember, an even number is an integer that divides by two, like five seventy-two, or nine thousand one fifty, and zero is even too. An odd number is an integer that isn't even.",
+    "at": [
+     "is an integer",
+     "by two, like",
+     "five seventy-two",
+     "one fifty, and",
+     "An odd number",
+     "integer that isn't"
+    ]
+   },
+   {
+    "say": "And remember adding. Even plus even is even, eight plus twelve is twenty. Odd plus odd is even, seven plus eleven is eighteen. Even plus odd is odd, eight plus seven is fifteen. Subtracting works the same.",
+    "at": [
+     "plus even is",
+     "eight plus twelve",
+     "Odd plus odd",
+     "seven plus eleven",
+     "Even plus odd",
+     "eight plus seven",
+     "Subtracting works the"
+    ]
+   },
+   {
+    "say": "So in a long sum, the even numbers don't matter at all, and only the odd ones count. Eight plus five minus two plus eleven plus three. The odd ones are five, eleven and three, three of them. Two of them pair up into an even, and one is left over, so the total is odd. And really, it's twenty-five.",
+    "at": [
+     "So in a",
+     "the even numbers",
+     "at all, and",
+     "odd ones count",
+     "Eight plus five minus two",
+     "The odd ones are",
+     "eleven and three",
+     "Two of them",
+     "into an even",
+     "is left over",
+     "total is odd"
+    ]
+   },
+   {
+    "say": "Four plus seven minus ten plus nine. Only two odd ones, seven and nine, and they pair up, so the total is even. It's ten.",
+    "at": [
+     "Four plus seven minus ten",
+     "Only two odd",
+     "and nine, and",
+     "up, so the",
+     "even. It's ten"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Multiplying. One even factor is enough to make the whole product even, because it brings a two in. Four times fifteen is sixty, and nine times eight is seventy-two.",
+    "at": [
+     "One even factor",
+     "to make the",
+     "even, because it",
+     "Four times fifteen",
+     "and nine times"
+    ]
+   },
+   {
+    "say": "So a product is odd only when every factor is odd. Seven times three is twenty-one, odd.",
+    "at": [
+     "odd only when",
+     "every factor is odd",
+     "Seven times three"
+    ]
+   },
+   {
+    "say": "Careful with brackets. Two times, in brackets, x plus seven, is even, because the two multiplies everything. But two x plus seven is odd. With x one, the first is sixteen, and the second is nine.",
+    "at": [
+     "Careful with brackets",
+     "plus seven, is",
+     "the two multiplies",
+     "But two x",
+     "With x one",
+     "is sixteen, and"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Dividing is different, because you can almost always get a fraction. Odd over odd is odd, or a fraction. Twenty-one over seven is three, and seven over three is a fraction.",
+    "at": [
+     "you can almost",
+     "Odd over odd",
+     "Twenty-one over seven",
+     "and seven over"
+    ]
+   },
+   {
+    "say": "Even over odd is even, or a fraction. Twelve over three is four, and eight over three is a fraction.",
+    "at": [
+     "Even over odd",
+     "Twelve over three",
+     "and eight over"
+    ]
+   },
+   {
+    "say": "Odd over even is always a fraction. Seven over two, nine over four. Why? An even number has a two inside, and an odd number has no two to cancel it.",
+    "at": [
+     "Odd over even",
+     "An even number",
+     "two inside, and",
+     "number has no"
+    ]
+   },
+   {
+    "say": "And even over even can be anything. Eighteen over six is three, odd. Twelve over two is six, even. Six over four is a fraction.",
+    "at": [
+     "even over even",
+     "Twelve over two",
+     "Six over four"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Powers don't change parity. Two squared is four, two cubed is eight, even. Three squared is nine, three cubed is twenty-seven, odd. A power just multiplies the same number again and again. So in a parity question, you may drop the powers.",
+    "at": [
+     "Two squared is four",
+     "Three squared is",
+     "cubed is twenty-seven",
+     "A power just",
+     "same number again",
+     "So in a",
+     "you may drop"
+    ]
+   },
+   {
+    "say": "And plugging in. For adding and multiplying, the parity of the result depends only on the parities you put in. So one plug-in for each case settles it. Two times three is six, and even times odd is always even.",
+    "at": [
+     "For adding and",
+     "parity of the",
+     "only on the",
+     "put in. So",
+     "one plug-in for each case",
+     "Two times three",
+     "and even times"
+    ]
+   },
+   {
+    "say": "For dividing, plug in three times, with close numbers, because different results can come out. Six over two is three, eight over two is four, and ten over four is a fraction. And remember, an example that works proves nothing, but one that fails knocks out always. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "plug in three times",
+     "can come out",
+     "Six over two",
+     "eight over two",
+     "and ten over",
+     "And remember, an",
+     "works proves nothing",
+     "that fails knocks"
+    ]
+   }
+  ]
+ ]
+}

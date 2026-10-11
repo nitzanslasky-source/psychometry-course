@@ -1,0 +1,132 @@
+{
+ "videoId": "solve-q-472",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "a is an odd positive number, and b is an even positive number. Which of the following expressions is not necessarily an integer?",
+    "voice": "calm",
+    "at": [
+     "a is an odd"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So every choice is over eight, and eight is three twos. Three choices always have enough twos on top, and one doesn't. [short pause] We'll solve it two ways, counting the twos, and then plugging in the smallest numbers.",
+    "at": [
+     "every choice is over eight",
+     "and eight is",
+     "Three choices always",
+     "twos on top",
+     "ways, counting the",
+     "then plugging in"
+    ]
+   },
+   {
+    "say": "[short pause] Let's count the twos. b is even, so b is two k.",
+    "at": [
+     "Let's count",
+     "is even, so",
+     "b is two k"
+    ]
+   },
+   {
+    "say": "Choice number one, b cubed is two k, cubed, eight k cubed. The whole eight is there, always whole. Out.",
+    "at": [
+     "number one, b",
+     "b cubed is",
+     "cubed, eight k",
+     "whole eight is",
+     "always whole. Out"
+    ]
+   },
+   {
+    "say": "Choice number two. a is odd, so a plus one and a plus three are two consecutive even numbers, and they always divide by eight. Out.",
+    "at": [
+     "number two. a",
+     "a plus one and a plus three",
+     "even numbers, and",
+     "divide by eight. Out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Choice number three. Open both squares. The two a b terms cancel, and two a squared plus two b squared, minus two a squared, leaves two b squared. That's two times four k squared, eight k squared. Out.",
+    "at": [
+     "number three. Open",
+     "Open both squares",
+     "cancel, and two",
+     "plus two b",
+     "two a squared, leaves",
+     "b squared. That's",
+     "four k squared",
+     "eight k squared. Out"
+    ]
+   },
+   {
+    "say": "Choice number four, a times b squared. b squared is four k squared, two twos, and a is odd, no twos at all. Only two twos, and eight needs three. A third two can come from k by luck, but not necessarily. Choice number four is our answer.",
+    "at": [
+     "number four, a",
+     "a times b squared",
+     "squared, two twos",
+     "is odd, no",
+     "Only two twos",
+     "A third two",
+     "from k by",
+     "Choice number four is our answer"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. a is one and b is two, four over eight is a half. But a is one and b is four, sixteen over eight is two. Whole by luck.",
+    "at": [
+     "a is one and b is two",
+     "is a half",
+     "But a is",
+     "b is four",
+     "eight is two"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in. Which numbers? The smallest, a is one and b is two, so no extra two sneaks in.",
+    "at": [
+     "Now let's",
+     "The smallest",
+     "no extra two"
+    ]
+   },
+   {
+    "say": "Choice number one, two cubed is eight, times three is twenty-four, over eight is three. Choice number two, two times four is eight, over eight is one.",
+    "at": [
+     "number one, two",
+     "two cubed is eight",
+     "is three. Choice",
+     "number two, two",
+     "is eight, over"
+    ]
+   },
+   {
+    "say": "Choice number three, nine plus one minus two is eight, over eight is one. Choice number four, one times four is four, over eight is a half. Not whole, so choice number four.",
+    "at": [
+     "number three, nine",
+     "nine plus one minus two",
+     "number four, one",
+     "is four, over",
+     "Not whole, so choice number four"
+    ]
+   },
+   {
+    "say": "And see why the smallest. With b four, choice number four gives sixteen over eight, two, and it would hide the answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "And see why",
+     "With b four",
+     "number four gives",
+     "eight, two, and",
+     "hide the answer"
+    ]
+   }
+  ]
+ ]
+}

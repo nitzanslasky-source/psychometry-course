@@ -1578,6 +1578,26 @@
   "solve-q-393#2": {
    "t": "Method 2 · Check the sum 17",
    "d": "2026-10-11 rewritten after your feedback (\"isn't clear enough\"): a complete check: a divides 48 and a < b, so a = 1, 2, 3, 4, 6, 8 - none gives 48"
+  },
+  "solve-q-457#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 topic-16 redo (your reading): a = 1 makes the fraction positive, so a is negative; a = −1, b = 1 works, so b need not be negative"
+  },
+  "consecutive-integers#1": {
+   "t": "Three ways in",
+   "d": "2026-10-11 topic-16 redo (your reading): one letter around the middle (b = 8 → 7, 8, 9; evens 6, 8, 10), the smallest legal numbers (check the choices differ), differences with signs (8 − 7 = 1, 7 − 8 = −1); \"bigger than zero\" doesn't mean starting at 1"
+  },
+  "solve-q-458#0": {
+   "t": "Method 1 · One letter",
+   "d": "2026-10-11 topic-16 redo (your reading): q − 2, q, q + 2; r² − p² = (r − p)(r + p) = 4·2q → 4; the trap 2 (a gap of one)"
+  },
+  "parity#4": {
+   "t": "Powers and plugging in",
+   "d": "2026-10-11 topic-16 redo (your reading): powers keep parity (2², 2³; 3², 3³), so drop them; one plug-in per case for + and ×, three close ones for ÷ (6/2, 8/2, 10/4)"
+  },
+  "solve-q-471#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 topic-16 redo (your reading): a = 1, b = 0, c = 6 gives k = 0: k, b, c even, so only a is necessarily odd"
   }
  },
  "lines": {
@@ -2478,36 +2498,36 @@
    "d": "the plug-in arithmetic spelled out: 32 ÷ 8 = 4"
   },
   "solve-q-460#0": {
-   "t": "Method 1 · Plugging in numbers",
-   "d": "both parity cases give even → always even, choice one"
+   "t": "Method 1 · Drop the powers",
+   "d": "2026-10-11 topic-16 redo (your reading): m + n odd → one even, one odd; drop the powers: (m + n) + 9 + 4n → odd + odd = even"
   },
   "solve-q-462#0": {
-   "t": "Plug in",
-   "d": "why plug in odd numbers: evens make every choice even"
+   "t": "Method 1 · Same parity",
+   "d": "2026-10-11 topic-16 redo (your reading): an even difference = the same parity (8 − 2, 9 − 3); b² + ab = b(b + a) → even"
   },
   "solve-q-463#0": {
-   "t": "Plug in three times",
-   "d": "results 2, 20, 56 point to choice one; proof follows"
+   "t": "Method 1 · Plugging in three times",
+   "d": "2026-10-11 topic-16 redo (your reading): n = 1, 3, 5 → 2, 20, 56; plug-ins point, they don't prove"
   },
   "solve-q-463#1": {
-   "t": "The math way",
-   "d": "exam tip: plug in 1, 3, 5; two consecutive evens divisible by 8"
+   "t": "Method 2 · The shortcut formula",
+   "d": "2026-10-11 topic-16 redo (your reading): (3n − 1)(3n + 1): consecutive evens → 8k, over 4 → 2k"
   },
   "solve-q-464#0": {
-   "t": "Plug in three times",
-   "d": "plug-ins n = 1 and n = 2 worked out → always even"
+   "t": "Method 1 · Plugging in",
+   "d": "2026-10-11 topic-16 redo (your reading): not n = 1 (zero rules nothing out); n = 2, 3, 4 → −2, −8, −20"
   },
   "solve-q-464#1": {
-   "t": "The math way",
-   "d": "why: three in a row divisible by 6, over 3 gives 2k"
+   "t": "Method 2 · Three in a row",
+   "d": "2026-10-11 topic-16 redo (your reading): n − n³ = −(n − 1)n(n + 1) → 6k, over 3 → 2k; the minus changes nothing"
   },
   "solve-q-469#1": {
    "t": "Method 2 · Plugging in the answers",
    "d": "trick: x + z is twice the middle"
   },
   "solve-q-472#1": {
-   "t": "Method 2 · Plugging in numbers",
-   "d": "the risk with b = 4 and why take the smallest numbers"
+   "t": "Method 1 · Count the twos",
+   "d": "2026-10-11 topic-16 redo (your reading): choice 3 → 8k²; choice 4 has two twos for sure, a third only by luck (b = 4)"
   },
   "solve-q-495#0": {
    "t": "Method 1 · Understanding",
@@ -3516,6 +3536,98 @@
   "solve-q-393#0": {
    "t": "Method 1 · Common factor, then pairs",
    "d": "2026-10-11 rewritten after your feedback (\"isn't clear enough\"): a clear opener (take out a, get a product equal to 48) and why a is the smaller factor, with numbers"
+  },
+  "solve-q-457#0": {
+   "t": "Method 1 · Positive pieces first",
+   "d": "2026-10-11 topic-16 redo (your reading): find the surely positive pieces first; examples (−2)³·4/2 and (−2)²·4/2; why a ≠ 0; the trap \"b < 0\""
+  },
+  "solve-q-459#0": {
+   "t": "Method 1 · Plugging in numbers",
+   "d": "2026-10-11 topic-16 redo (your reading): 1, 2, 3, 4: 2 − (−2) = 4; each fraction first; the trap 0"
+  },
+  "solve-q-459#1": {
+   "t": "Method 2 · The differences",
+   "d": "2026-10-11 topic-16 redo (your reading): differences with their signs: r − p = 2, s − r = 1, q − s = −2, r − q = 1"
+  },
+  "solve-q-460#1": {
+   "t": "Method 2 · Plugging in both cases",
+   "d": "2026-10-11 topic-16 redo (your reading): m = 1, n = 2 → 20; m = 2, n = 1 → 16; both even"
+  },
+  "solve-q-461#0": {
+   "t": "Method 1 · Cancel first",
+   "d": "2026-10-11 topic-16 redo (your reading): the trap \"even over even = anything\"; b = 2k: 3a/2k², odd over even → always a fraction"
+  },
+  "solve-q-461#1": {
+   "t": "Method 2 · Plugging in three times",
+   "d": "2026-10-11 topic-16 redo (your reading): 6/4, 18/4, 18/16: a fraction every time"
+  },
+  "solve-q-462#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 topic-16 redo (your reading): why odd numbers (two evens make every choice even); a = 7, b = 1"
+  },
+  "consecutive-products#1": {
+   "t": "Four in a row",
+   "d": "2026-10-11 topic-16 redo (your reading): four in a row → 8·3 = 24 (why); 1·2·3·4 = 24, 2·3·4·5 = 120"
+  },
+  "consecutive-products#4": {
+   "t": "Hidden products",
+   "d": "2026-10-11 topic-16 redo (your reading): x² − 1 = (x − 1)(x + 1), x odd → consecutive evens → 8 (24, 48); x³ − x = three in a row"
+  },
+  "solve-q-465#0": {
+   "t": "Method 1 · Read the signs",
+   "d": "2026-10-11 topic-16 redo (your reading): bigger minus smaller is positive even for negatives (5 − 3, −3 − (−5), 3 − 5); stops at choice 1 (R35)"
+  },
+  "solve-q-465#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 topic-16 redo (your reading): −2, −1, 1, 2; knock out three before marking"
+  },
+  "solve-q-466#0": {
+   "t": "Method 1 · Read the signs",
+   "d": "2026-10-11 topic-16 redo (your reading): xy < 0 and x > y → y < 0 < x; choice 1 out, choice 2 positive (the Hebrew's simplify-each-fraction method not included)"
+  },
+  "solve-q-466#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 topic-16 redo (your reading): x = 1, y = −1; zero is not positive"
+  },
+  "solve-q-467#0": {
+   "t": "Method 1 · Start smart",
+   "d": "2026-10-11 topic-16 redo (your reading): start with the choice that pins one case (q > 0 → p > 0 → r < 0); example p = 3, q = 2"
+  },
+  "solve-q-467#1": {
+   "t": "Method 2 · Knock out the others",
+   "d": "2026-10-11 topic-16 redo (your reading): a positive r that fits: (−1, −2, 1) and (1, −10, 1)"
+  },
+  "solve-q-468#0": {
+   "t": "Method 1 · The shortcut formula",
+   "d": "2026-10-11 topic-16 redo (your reading): b² − a² = 4a + 4 (6² − 4² = 20); get rid of b and d; the trap 2"
+  },
+  "solve-q-468#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 topic-16 redo (your reading): check the choices differ first (a = c = 2 ties); a = 2, c = 8 → 48/12 = 4"
+  },
+  "solve-q-469#0": {
+   "t": "Method 1 · One letter",
+   "d": "2026-10-11 topic-16 redo (your reading): y² = 4y; don't divide by y (y = 0 works too); the trap 12"
+  },
+  "solve-q-470#0": {
+   "t": "Method 1 · Drop the powers",
+   "d": "2026-10-11 topic-16 redo (your reading): 2b + 5 → odd; why: the brackets are 11 apart, different parities (the Hebrew's understanding and insight methods in one)"
+  },
+  "solve-q-470#1": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 topic-16 redo (your reading): b = 1 → 733, b = 2 → 1001, both odd"
+  },
+  "solve-q-471#0": {
+   "t": "Method 1 · An odd product",
+   "d": "2026-10-11 topic-16 redo (your reading): 2k + 1 odd for every k (5, 7); an odd product → every factor odd: a odd, b even, c even"
+  },
+  "solve-q-472#0": {
+   "t": "Method 1 · Count the twos",
+   "d": "2026-10-11 topic-16 redo (your reading): eight is three twos; b = 2k; choices 1 and 2 have the whole eight"
+  },
+  "solve-q-472#2": {
+   "t": "Method 2 · Plugging in the smallest",
+   "d": "2026-10-11 topic-16 redo (your reading): a = 1, b = 2 → 3, 1, 1, 1/2; why the smallest (b = 4 hides it)"
   }
  }
 }

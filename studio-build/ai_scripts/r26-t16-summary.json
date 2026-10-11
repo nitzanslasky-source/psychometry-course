@@ -1,56 +1,116 @@
 {
  "videoId": "r26-t16-summary",
- "style": "calm, natural hesitations, like explaining to a friend",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "So, before you practice, here's a quick review of the whole topic.",
-   "Signs, consecutive numbers, even and odd... and the traps."
+   "Before you practice, here's a quick summary of the topic. Signs, numbers in a row, and even and odd."
   ],
   [
-   "Multiplying and dividing follow the same rules.",
-   "Only the minuses matter. Every two of them cancel.",
-   "And a positive product doesn't mean both are positive."
+   {
+    "say": "Multiplying and dividing, same signs give plus, and different signs give minus. Negative two times negative five is ten, and negative two times five is negative ten. With many factors, count the minuses.",
+    "at": [
+     "same signs give plus",
+     "different signs give",
+     "Negative two times",
+     "is ten, and",
+     "times five is",
+     "With many factors",
+     "count the minuses"
+    ]
+   },
+   {
+    "say": "Adding with mixed signs, the bigger size wins. Negative nine plus four is negative five. And bigger minus smaller is positive, even with negatives. Negative three minus negative eight is five.",
+    "at": [
+     "the bigger size wins",
+     "Negative nine plus",
+     "negative five. And",
+     "bigger minus smaller",
+     "even with negatives",
+     "Negative three minus"
+    ]
+   },
+   {
+    "say": "An even power is never negative, an odd power keeps the sign, and minus x is positive when x is negative.",
+    "at": [
+     "An even power",
+     "negative, an odd",
+     "the sign, and",
+     "is positive when"
+    ]
+   }
   ],
   [
-   "Now, adding has its own rules.",
-   "Bigger minus smaller is positive. Even when both are negative."
+   {
+    "say": "Numbers in a row? One letter, around the middle. Evens or odds go up by two.",
+    "at": [
+     "One letter",
+     "Evens or odds"
+    ]
+   },
+   {
+    "say": "The sum is the count times the middle. Sixteen to twenty is five numbers, and five times eighteen is ninety.",
+    "at": [
+     "the count times the middle",
+     "Sixteen to twenty",
+     "numbers, and five"
+    ]
+   },
+   {
+    "say": "From a to b there are b minus a plus one integers. And for neighbors, b squared minus a squared is a plus b.",
+    "at": [
+     "From a to b",
+     "are b minus",
+     "And for neighbors",
+     "minus a squared"
+    ]
+   }
   ],
   [
-   "Find the pieces that are surely positive.",
-   "Minus x means the opposite of x... it's not necessarily a negative number. And zero is neither positive nor negative."
+   {
+    "say": "In a sum, only the odd terms count. In a product, one even factor makes it even.",
+    "at": [
+     "only the odd terms count",
+     "In a product",
+     "factor makes it"
+    ]
+   },
+   {
+    "say": "Odd over even is always a fraction, and powers never change parity, so you may drop them.",
+    "at": [
+     "Odd over even",
+     "a fraction, and",
+     "change parity, so"
+    ]
+   },
+   {
+    "say": "Plugging in? One number for each case, and for division, three close ones.",
+    "at": [
+     "One number for each case",
+     "and for division"
+    ]
+   }
   ],
   [
-   "Consecutive numbers... there are three ways in.",
-   "If you plug in, make sure the choices give different values.",
-   "Even or odd numbers in a row? The gap is two.",
-   "And \"greater than zero\" doesn't mean the list starts at one."
-  ],
-  [
-   "Okay, adding numbers in a row.",
-   "Four to twelve is nine numbers, not eight. You add one."
-  ],
-  [
-   "First of all, zero is even.",
-   "And odd divided by even is always a fraction."
-  ],
-  [
-   "Parity questions? Plug in. Two for even, one or three for odd.",
-   "One example that fails kills \"always\". But examples that work prove nothing."
-  ],
-  [
-   "These rules are proven. So you can trust them.",
-   "Watch for them hidden inside an expression.",
-   "x is odd? Then x squared minus one is two consecutive evens. So it's divisible by eight."
-  ],
-  [
-   "Anything else? Well, the smallest case is only a candidate.",
-   "Cross out, and then test a second case that avoids the factor.",
-   "m even, n odd. Three twos from m cubed, and one from n plus one. That's enough for sixteen."
-  ],
-  [
-   "So, before each question, always ask yourself:",
-   "And the traps. Zero is even, zero is divisible by everything, and minus x isn't always negative.",
-   "Well... you know all of this. Go practice."
+   {
+    "say": "Two in a row divide by two, three by six, and four by twenty-four. Two consecutive evens divide by eight.",
+    "at": [
+     "Two in a row",
+     "by two, three",
+     "and four by",
+     "Two consecutive evens"
+    ]
+   },
+   {
+    "say": "Is it a whole number? Count the twos. And the smallest case is only a candidate, so test a second case that avoids the factor. [pause] That's it. Now go practice, and I'll see you in the next video.",
+    "at": [
+     "Is it a",
+     "Count the twos",
+     "And the smallest",
+     "only a candidate",
+     "a second case",
+     "go practice, and"
+    ]
+   }
   ]
  ]
 }

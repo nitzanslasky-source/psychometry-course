@@ -1,0 +1,90 @@
+{
+ "videoId": "solve-q-464",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "n is an integer. The expression n minus n cubed, over three, is always:",
+    "voice": "calm",
+    "at": [
+     "n is an integer"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So an expression with any integer n, and what's always true about it. [short pause] We'll solve it two ways, plugging in, and then factoring.",
+    "at": [
+     "any integer n",
+     "always true about",
+     "solve it two",
+     "in, and then"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start by plugging in. Careful, not n is one. One minus one is zero, and zero divides by everything, so it can't rule anything out.",
+    "at": [
+     "Let's start",
+     "not n is one",
+     "and zero divides",
+     "so it can't"
+    ]
+   },
+   {
+    "say": "n is two. Two cubed is eight, two minus eight is negative six, and over three is negative two. n is three. Three cubed is twenty-seven, three minus twenty-seven is negative twenty-four, and over three is negative eight.",
+    "at": [
+     "n is two",
+     "minus eight is",
+     "and over three",
+     "n is three",
+     "minus twenty-seven is",
+     "and over three is negative eight"
+    ]
+   },
+   {
+    "say": "Division, so a third one. n is four. Four cubed is sixty-four, four minus sixty-four is negative sixty, and over three is negative twenty.",
+    "at": [
+     "Division, so a",
+     "n is four",
+     "minus sixty-four is",
+     "and over three"
+    ]
+   },
+   {
+    "say": "Negative two doesn't divide by four, so choice number one is out. None of them is a fraction or odd, so choice numbers two and four are out. Choice number three, even.",
+    "at": [
+     "Negative two doesn't divide",
+     "choice number one is out",
+     "None of them",
+     "fraction or odd",
+     "choice numbers two",
+     "and four are out",
+     "Choice number three, even"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way, factoring. n minus n cubed is minus, in brackets, n cubed minus n. And n cubed minus n is n minus one, times n, times n plus one, three in a row.",
+    "at": [
+     "Another way",
+     "n minus n cubed is minus",
+     "And n cubed",
+     "is n minus",
+     "n, times n",
+     "three in a"
+    ]
+   },
+   {
+    "say": "Remember, three in a row divide by six, and the minus in front doesn't change that. So the top is six k, and over three, two k. Always even. Choice number three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "three in a row divide by six",
+     "in front doesn't",
+     "So the top",
+     "k, and over",
+     "k. Always even",
+     "Choice number three"
+    ]
+   }
+  ]
+ ]
+}

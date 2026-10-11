@@ -1,0 +1,102 @@
+{
+ "videoId": "solve-q-r26-t16-03",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The sum of four consecutive integers is always:",
+    "voice": "calm",
+    "at": [
+     "The sum"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So any four numbers in a row, and what's always true about their sum. [short pause] We'll solve it two ways, with one letter, and then plugging in numbers.",
+    "at": [
+     "in a row",
+     "what's always true",
+     "ways, with one",
+     "then plugging in"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start with one letter. Four in a row are a, a plus one, a plus two and a plus three. Add them, four a, and one plus two plus three is six. Four a plus six.",
+    "at": [
+     "Let's start",
+     "Four in a row are",
+     "plus two and",
+     "Add them, four",
+     "one plus two",
+     "is six. Four"
+    ]
+   },
+   {
+    "say": "Take out a two, two times, in brackets, two a plus three. So the sum is always even, and choice number two, odd, is out.",
+    "at": [
+     "Take out a two",
+     "plus three. So",
+     "is always even",
+     "number two, odd",
+     "is out"
+    ]
+   },
+   {
+    "say": "And four? Four a plus six is four a plus four, plus two, four times a plus one, plus two. So it always leaves two when divided by four, and never divides by four. Choice number one is out.",
+    "at": [
+     "plus six is",
+     "four a plus four",
+     "one, plus two",
+     "So it always",
+     "when divided by",
+     "never divides by",
+     "Choice number one is out"
+    ]
+   },
+   {
+    "say": "Let's see it in numbers. One to four is ten, and two to five is fourteen. Both are even, and they don't divide by four. So even, but not divisible by four, choice number three is our answer.",
+    "at": [
+     "One to four is ten",
+     "Both are even",
+     "don't divide by",
+     "even, but not",
+     "choice number three is our answer"
+    ]
+   },
+   {
+    "say": "And here's the pattern behind it. With an odd count in a row, the sum divides by the count, like four plus five plus six, fifteen, three fives. With an even count, it never does.",
+    "at": [
+     "the pattern behind it",
+     "an odd count",
+     "row, the sum",
+     "like four plus five",
+     "six, fifteen, three",
+     "With an even"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in numbers, one, two, three and four. They add up to ten.",
+    "at": [
+     "Now let's",
+     "numbers, one, two",
+     "They add up to ten"
+    ]
+   },
+   {
+    "say": "Ten doesn't divide by four, so choice number one is out. Ten isn't odd, so choice number two is out. Ten doesn't divide by three, so choice number four is out. Three are out, so choice number three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Ten doesn't divide by four",
+     "choice number one is out",
+     "Ten isn't odd",
+     "choice number two is out",
+     "Ten doesn't divide by three",
+     "choice number four is out",
+     "Three are out",
+     "so choice number three"
+    ]
+   }
+  ]
+ ]
+}

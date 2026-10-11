@@ -1,0 +1,89 @@
+{
+ "videoId": "solve-q-471",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "k, a, b and c are integers. Given: two k plus one is equal to a cubed, times b plus one, squared, times c minus five, to the power of four. Which of the numbers k, a, b, c is necessarily odd?",
+    "voice": "calm",
+    "at": [
+     "k, a, b and c"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "It looks scary, but it's one rule about odd products. [short pause] We'll solve it two ways, with that rule, and then plugging in numbers.",
+    "at": [
+     "It looks scary",
+     "one rule about",
+     "We'll solve it",
+     "with that rule",
+     "plugging in numbers"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start with the left side, two k plus one. Two k is always even, and plus one makes it odd. k is two gives five, and k is three gives seven, both odd. So k can be anything, and the left side is odd.",
+    "at": [
+     "Let's start",
+     "side, two k",
+     "Two k is always even",
+     "k is two",
+     "and k is",
+     "seven, both odd",
+     "So k can",
+     "and the left"
+    ]
+   },
+   {
+    "say": "So the right side is odd too. And a product is odd only when every factor is odd, because one even factor brings a two in. The powers don't matter, so let's go factor by factor.",
+    "at": [
+     "So the right",
+     "odd too. And",
+     "is odd only",
+     "every factor is odd",
+     "one even factor",
+     "The powers don't",
+     "let's go factor"
+    ]
+   },
+   {
+    "say": "a cubed is odd, so a is odd. b plus one is odd, so b is even. c minus five is odd, so c is even. Only a is necessarily odd, choice number two is our answer.",
+    "at": [
+     "a cubed is odd",
+     "so b is",
+     "c minus five",
+     "so c is",
+     "a is necessarily",
+     "choice number two is our answer"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in, and look for an example where k, b and c are even. a is one, b is zero, and c is six. One cubed is one, zero plus one is one, and six minus five is one. So the right side is one.",
+    "at": [
+     "Now let's",
+     "and look for",
+     "where k, b",
+     "a is one, b is zero",
+     "One cubed is",
+     "plus one is",
+     "six minus five",
+     "So the right"
+    ]
+   },
+   {
+    "say": "Two k plus one is one, so k is zero. And k, b and c are all even here, so choice numbers one, three and four are out. Choice number two. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Two k plus one is one",
+     "And k, b",
+     "are all even",
+     "choice numbers one",
+     "three and four",
+     "are out",
+     "Choice number two"
+    ]
+   }
+  ]
+ ]
+}

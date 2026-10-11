@@ -55,7 +55,7 @@ METHODS = [
     ('solve-q-322', 'Method 2 · Two moves', 'Ranges in two moves', 'lines'),
     ('solve-q-r26-t12-13', '*', 'Ranges in two moves', 'new'),
     # 15 · tag it
-    ('r26-t15-remainder-tools', 'Tag it', 'Tag it', 'new'),
+    # (2026-10-11 topic-15 redo: the tools lesson no longer has a "Tag it" slide; tags are taught in solve-q-r26-t15-15)
     ('solve-q-r26-t15-15', '*', 'Tag it', 'new'),
     # 18 · digit word equations (digit ratio)
     ('digit-puzzles', 'The 4 steps', 'Digit ratio (10A + B equations)', 'lines'),
