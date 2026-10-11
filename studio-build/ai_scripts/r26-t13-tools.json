@@ -9,9 +9,6 @@
    {
     "say": "First, a square and the bars do the same thing to the sign. They both remove it. So the absolute value of x, squared, is just x squared.",
     "at": [
-     "the bars do",
-     "thing to the",
-     "both remove it",
      "So the absolute value of x",
      "x, squared, is"
     ]
@@ -85,7 +82,6 @@
    {
     "say": "[short pause] Now the distance. Remember from the lesson, the absolute value of x minus a number is the distance between x and that number. Nine minus two in bars is seven, and from two to nine is exactly seven steps.",
     "at": [
-     "from the lesson",
      "the absolute value of x minus a number",
      "minus a number",
      "distance between x",

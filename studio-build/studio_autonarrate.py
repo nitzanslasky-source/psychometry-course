@@ -156,6 +156,15 @@ function anWrites(mine,b){const add=[];
   const nx=mine.reduce((a,x)=>x!==c&&x.k!=='say'&&x.t>c.t+.01?Math.min(a,x.t):a,1e9),cap=nx-c.t-.12;if(d>cap)d=Math.max(cap,Math.min(d,n/14));d=Math.max(.35,d);
   add.push({k:'write',t:c.t,dur:d,l:c.l,ap:c});c.t+=d}
  mine.push(...add);mine.sort((x,y)=>x.t-y.t)}
+/* 2026-10-11 guard (every topic, AI or her real reading timings): a POINT / mark on an item that is not on the board yet -
+   the pen is still writing it (its APPEAR moves to the end of the writing, anWrites) or her words came a little early -
+   would stop the run ("item N is not on the board at this moment"). It waits until just after that item appears. */
+function anNotYet(mine,b){/* the board shows items 0 .. pre+step-1, step = APPEARs so far in time order: item n is on it from the (n-pre+1)th APPEAR */
+ const at=mine.filter(c=>c.k==='appear').map(c=>c.t).sort((x,y)=>x-y),pre=b.pre||0,apT={};for(let n=pre;n<pre+at.length;n++)apT[n]=at[n-pre];
+ const idx=tg=>{const m=String(tg||'').match(/^\s*item\s*(\d+)/i);return m?+m[1]:null};let moved=0;
+ for(const c of mine){if(c.k!=='point'&&c.k!=='mark')continue;const tg=c.k==='point'?[c.l.point]:(anMarkOf(c.l)?.targets||[]);
+  for(const n of tg.map(idx))if(n!=null&&apT[n]!=null&&c.t<apT[n]+.06){c.late=(c.late||0)+(apT[n]+.08-c.t);c.t=apT[n]+.08;moved++}}
+ if(moved){mine.sort((x,y)=>x.t-y.t);window.__anLate=(window.__anLate||0)+moved}}
 function anWritePrep(c,v,bi){const root=anRoot(boardSvg(v,bi,c.ap.step)),g=root?.querySelector(':scope > g[data-i="'+c.l.appear+'"]'),ink=g?.querySelector('g[data-hw]');
  if(!ink)throw Error('slide '+(bi+1)+': WRITE item '+c.l.appear+' is not a hand-written item');
  const S=[];let tot=0,prev=null;
@@ -231,7 +240,7 @@ function anTimeline(v,man){const L=man.lines,ev=[];let li=0;
    else if(l.appear!=null)pend.push({k:'appear',l});else if(l.draw!=null)pend.push({k:'mark',l});else if(l.point!=null)pend.push({k:'point',l})}
   place(null);
   /* in time order: the board step at each moment, then measure what the cue points at / marks on that board */
-  mine.sort((x,y)=>x.t-y.t);anWrites(mine,b);let step=0;
+  mine.sort((x,y)=>x.t-y.t);anWrites(mine,b);anNotYet(mine,b);let step=0;
   for(const c of mine){c.bi=bi;if(c.k==='appear'){c.step=++step}else if(c.k==='point'){c.pre=anResolve(c.l.point,v,bi,boardSvg(v,bi,step));if(c.pre.err)throw Error('slide '+(bi+1)+': POINT '+c.l.point+' — '+c.pre.err)}
    else if(c.k==='mark'){c.mk=anMarkOf(c.l);c.boxes=c.mk.targets.map(tg=>{const r=anResolve(tg,v,bi,boardSvg(v,bi,step));if(r.err)throw Error('slide '+(bi+1)+': '+c.l.draw+' — '+r.err);return r.box})}}
   for(const c of mine)if(c.k==='write')anWritePrep(c,v,bi);ev.push(...mine)});

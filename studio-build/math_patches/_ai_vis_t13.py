@@ -1572,7 +1572,8 @@ def _fill(vid):
                     for k in range(FILL_STEP // 2 + 2, len(seg) - 2, FILL_STEP):
                         ph = _unique(say, seg[k])
                         tg = ctx(seg[k])
-                        if ph: add.append((seg[k], pt(_base(tg) if tg else 'stem', ph)))
+                        if ph and (tg or V.get('qid')):              # a lesson has no question to fall back on
+                            add.append((seg[k], pt(_base(tg) if tg else 'stem', ph)))
                 prev = b + 1
             if add:
                 ln['cues'] = [c for p, c in sorted(have + add, key=lambda x: x[0])]

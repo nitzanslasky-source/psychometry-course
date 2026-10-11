@@ -151,7 +151,6 @@
    {
     "say": "Look at the right side before any algebra. Bars smaller than a negative number? Never, no solution.",
     "at": [
-     "side before any",
      "Bars smaller than",
      "number? Never, no"
     ]
@@ -176,7 +175,6 @@
    {
     "say": "The absolute value of x minus a is the distance between x and a.",
     "at": [
-     "x minus a",
      "the distance between"
     ]
    },
