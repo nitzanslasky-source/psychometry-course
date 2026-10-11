@@ -166,3 +166,10 @@ or with base-v18, and nothing taken from the Hebrew subtitles. None of them equa
 ## 2026-10-07 methods spread
 Nothing added. Checked all 65 questions against every new method: no letter-expression questions (power count), the must/could/cannot items already plug in or use the tag form (q-r26-t01-06 writes q = 2k, q-r26-t01-19 uses 6k), and the mirror test cuts only one choice in q-r26-t01-09. The one unrecorded solution video (solve-q-r26-t01-11, brackets) has no fitting method, so no slide.
 All new lines verified numerically (python: power by scaling, fitting values, choice values, mirror values). `math_check.py 1 2 3 4 5 6 7 8 9 10 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-11 memory tricks
+
+Teacher approved ~/Downloads/Memory-Tricks-Proposal.md ("they aren't super important" - light changes). Done in `_mnemonics.py` (runs last in apply()); spoken lines change in place, cues unchanged.
+
+- r26-t01-exam-words, "Distinct · at least": at least 3 = "3 is the floor, you can stand on it"; at most 3 = "3 is the ceiling, you can touch it, you just can't go through it". Card mem-r26-t01-exam-words: floor / ceiling added.
+- r26-t01-summary, "Opposites · reciprocals": "Opposites attract, so they cancel out to zero. Reciprocals flip upside down, and together they make one." (also in ai_scripts/r26-t01-summary.json). The numbers lesson (KEEP) is not changed.

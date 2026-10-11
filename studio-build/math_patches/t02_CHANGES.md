@@ -173,3 +173,10 @@ All new lines verified numerically (python: power by scaling, fitting values, ch
 Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate roots or π to one decimal place; estimates use whole-number benchmarks only (perfect squares, squaring, a factor into the root, 3 < π < 3.5). Videos with a recording are skipped by a build-time guard.
 - q-r26-t02-19 (written): "5/11 ≈ 0.45, 8/15 ≈ 0.53, 4/9 ≈ 0.44, sum about 1.43" -> two a little under ½, one a little over, so the sum stays near 1½. Video solve-q-r26-t02-19 is recorded and has no decimals.
 Check: `python3 math_check.py 2 32` -> 0 / 0 / 0.
+
+## 2026-10-11 memory tricks
+
+Teacher approved ~/Downloads/Memory-Tricks-Proposal.md ("they aren't super important" - light changes). Done in `_mnemonics.py` (runs last in apply()); spoken lines change in place, cues unchanged.
+
+- fraction-multiply, "Use the reciprocal": the "Remember the name: multiply by the reciprocal..." line is dropped (it repeated keep, change, flip).
+- fraction-multiply, "What division means": "Times a half, you take half. Divided by a half, you ask how many halves fit. In three pizzas? Six halves." Card mem-r26-t02-multiply tip: same words.

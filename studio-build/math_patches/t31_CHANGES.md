@@ -255,3 +255,10 @@ Function `coverage_fixes` (runs LAST in apply(); helpers from `_hebrew_back.py`,
 - **Teacher decision (2) geo31-g040**: choice 4 10/3 → 3/8 (the trap of adding a: 3b + a = 9a); key 3/10 unchanged. Video: "Method 1" now says the exam never offers both orders and crosses out 1, 2 and 4 at once (the a < b step dropped); "Method 2" checks 3/8 (a = 3, b = 8: 21 ≠ 27) and names both traps. Written solution: one traps line.
 - **Teacher decision (3) exterior angle**: kept, toned down — `geo-009` "Two routes": "A useful rule — it saves time when it fits."; "Recap": "The angle sum is the one you'll use most — and the exterior angle saves time when it fits." (underline only the angle-sum line); card `mem-triangle-rules`: intro and row ("useful — saves time when it fits"); `solve-geo31-g012` "What to take from here": one line instead of two.
 - Not changed: 8-15-17 in other topics' renumbered questions (t32 g049/g051/g062, t34, t35, t37, t38) — teacher: fine as questions.
+
+## 2026-10-11 memory tricks
+
+Teacher approved ~/Downloads/Memory-Tricks-Proposal.md ("they aren't super important" - light changes). Done in `_mnemonics.py` (runs last in apply()); spoken lines change in place, cues unchanged.
+
+- geo-024, "How to remember": hamsa / bat mitzvah / bar mitzvah -> "High five, a dozen, and one more" (spoken lines and the drawn note). Card mem-triples: same.
+- geo-027-after: "borekas triangle" -> "the sandwich triangle" (a square sandwich cut corner to corner; its edges are the equal legs, the cut is the hypotenuse).

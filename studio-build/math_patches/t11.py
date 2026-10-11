@@ -2310,3 +2310,26 @@ _apply_before_choice_order = apply
 def apply(M):
     _apply_before_choice_order(M)
     _co_load().choice_order(M, 11)   # 2026-10-09 choice order: runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-11 memory tricks (teacher approved ~/Downloads/Memory-Tricks-Proposal.md: "they aren't super important" - light
+# changes): Hebrew-only hooks replaced, tricks made consistent, the NEW tricks where their slip happens. Spoken lines,
+# drawn notes, board text and memory cards change in place. Data and rules: _mnemonics.py (a video recorded before its
+# CUTOFF keeps its old lines; KEEP first lessons and topic 13 are never touched). Runs LAST.
+# =====================================================================================================================
+def _mnem_load():
+    import importlib.util, os, sys
+    if '_mnemonics' in sys.modules: return sys.modules['_mnemonics']   # one copy: its WARN / CHANGED add up
+    p = os.path.join(os.path.dirname(os.path.abspath(__file__)), '_mnemonics.py')
+    spec = importlib.util.spec_from_file_location('_mnemonics', p); m = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(m); sys.modules['_mnemonics'] = m
+    return m
+
+
+_apply_before_mnemonics = apply
+
+
+def apply(M):
+    _apply_before_mnemonics(M)
+    _mnem_load().mnemonics(M, 11)   # 2026-10-11 memory tricks: runs LAST

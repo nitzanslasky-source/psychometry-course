@@ -248,3 +248,10 @@ Function `coverage_fixes` (runs LAST; helpers `_hebrew_back.py` loaded as its ow
 - **solve-wp23-g054**, slide "Method 2 · Percent multipliers" (+≈10 s): "That's why twenty percent is a trap choice: it's twenty percent of the PLAYERS, not of everyone." + "It can't be of everyone: eighty percent on piano wouldn't even fit inside the sixty-five percent who play." (Hebrew #33: the branch = new 100%, the wrong answer and why.)
 - **wp-053**, slide "Who is the 100?" (+≈6 s): "Not every sentence has an "of" or a "than". But when one is there, the whole comes right after it." (Hebrew #43.)
 `math_check.py 21 22 23 24 25 26 27 28 29 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-11 memory tricks
+
+Teacher approved ~/Downloads/Memory-Tricks-Proposal.md ("they aren't super important" - light changes). Done in `_mnemonics.py` (runs last in apply()); spoken lines change in place, cues unchanged.
+
+- wp-053, "Who is the 100?": "'of' and 'than' point at the whole. Whatever comes right after them gets the hundred." (not called "arrows": the arrow map later in the lesson draws arrows that START at the whole).
+- wp-053, "Up and down": "Same percent up and down, in any order, and you never get back home." Card mem-percent: both tips updated.

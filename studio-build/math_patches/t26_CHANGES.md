@@ -242,3 +242,11 @@ Function `coverage_fixes` (runs LAST; helpers `_hebrew_back.py` loaded as its ow
 - **solve-wp26-g105b**, title slide (moves to the first slide in the build) (+≈5 s): "Questions like this, where the team is hidden, have shown up on recent exams. Worth knowing." (Hebrew #67. Checked first in real_exam/quant_real.md: supply-used-up questions with a hidden team — 2023 spring bees and nectar, 2025 spring a pack of pencils lasting days, 2025 winter cat/kitten food.)
 - Hebrew #46 ("75 or a multiple of 100? reduce by 25"): not added — it belongs to the topic-2 arithmetic card (not this topic's file) and topic 26's numbers no longer use 75.
 `math_check.py 21 22 23 24 25 26 27 28 29 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-11 memory tricks
+
+Teacher approved ~/Downloads/Memory-Tricks-Proposal.md ("they aren't super important" - light changes). Done in `_mnemonics.py` (runs last in apply()); spoken lines change in place, cues unchanged.
+
+- wp-097, "The table": "How do I remember the order? Teamwork takes time. Team, work, time..." Card mem-work-rate: ("teamwork takes time").
+- solve-wp26-g101: "Rule: the times two goes on the SMALLER side" -> "But think of four and eight... So give it to the little guy: the times two goes on the SMALLER side." Written solution: (give it to the little guy).
+- solve-wp26-g104: "Omar-Priya" -> one blended name "Omarpriya" (spoken lines and drawn notes).

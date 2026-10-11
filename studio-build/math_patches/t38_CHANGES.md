@@ -212,3 +212,9 @@ Teacher: only OUR additions that re-teach something learned earlier in the study
 Function `coverage_fixes` (runs LAST in apply(); helpers from `_hebrew_back.py`, own recording guard `CF_CUTOFF` = 2026-10-08T08-47-24 UTC). Source: the Hebrew-vs-English coverage check of this topic (WEAK / MISSING points) + the teacher's decisions of 2026-10-08. No video of this topic is recorded (checked ~/Documents/Course.recordings), so everything went into the videos themselves; nothing added to `_rerecord.py`. Notes in added_notes.json. `python3 math_check.py 30 31 32 33 34 35 36 37 38` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
 - **solve-geo38-g187** "Plugging in" (+≈8 s): "Even if an answer fits — don't mark it yet. Check all four; only when the other three are out is it safe."
 - Coverage-check "keep the English" notes: no change (teacher).
+
+## 2026-10-11 memory tricks
+
+Teacher approved ~/Downloads/Memory-Tricks-Proposal.md ("they aren't super important" - light changes). Done in `_mnemonics.py` (runs last in apply()); spoken lines change in place, cues unchanged.
+
+- solve-geo38-g181: crosswalk kept, "The more you lean, the longer the walk. Lean means long."

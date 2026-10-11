@@ -227,3 +227,9 @@ Function `no_decimal_estimates` (runs last). Teacher: a student cannot estimate 
 - q-r26-t09-09 (written): √0.5 ≈ 0.71 -> √0.5 > √0.25 = 0.5.
 - Card "roots", row "Useful estimates": √5 ≈ 2.24, √7 ≈ 2.65, √10 ≈ 3.16 -> 2 < √5 < 3, 2 < √7 < 3, 3 < √10 < 4; √2 ≈ 1.4 and √3 ≈ 1.7 stay (the teacher teaches them in topic 51).
 Check: `python3 math_check.py 9 32` -> 0 / 0 / 0.
+
+## 2026-10-11 memory tricks
+
+Teacher approved ~/Downloads/Memory-Tricks-Proposal.md ("they aren't super important" - light changes). Done in `_mnemonics.py` (runs last in apply()); spoken lines change in place, cues unchanged.
+
+- "The power is the flower, the root stays in the ground": the roots lesson is KEEP (recorded), so the trick is taught in solve-q-r26-t09-01 (first AI-redo video of topic 9 with fraction powers), and repeated in r26-t09-summary (also ai_scripts/r26-t09-summary.json) and the roots card.

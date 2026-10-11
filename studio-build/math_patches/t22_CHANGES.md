@@ -248,3 +248,10 @@ Function `coverage_fixes` (runs LAST; helpers `_hebrew_back.py` loaded as its ow
 - **wp-034**, slide "A ratio is a fraction" (±0 s): teacher decision on Hebrew #46 — keep the "ratio between A and B" lesson (English exams use the wording) but drop the claim that the exam tests it as a deliberate trap: "Always match names to numbers in order. The exam does test this: swap them, and you land on a trap answer." → "The exam uses this wording — so always match the names to the numbers in order."
 - Card **mem-ratios**, tip: "… The exam tests this." → "Read in order: match the names to the numbers in order. The first name goes with the first number."
 `math_check.py 21 22 23 24 25 26 27 28 29 32` → PROBLEMS 0, WARNINGS 0, LAYOUT 0.
+
+## 2026-10-11 memory tricks
+
+Teacher approved ~/Downloads/Memory-Tricks-Proposal.md ("they aren't super important" - light changes). Done in `_mnemonics.py` (runs last in apply()); spoken lines change in place, cues unchanged.
+
+- solve-wp22-g047 and solve-q-r26-t22-20: "Give the plain x to the little guy" -> "Let the smaller one be x" (it pointed the other way from "give it to the little guy" = the x2 goes on the smaller side).
+- Card mem-general-advanced: "the x2 goes on the smaller side: B=x, A=2x" (contradicting example) -> "Give it to the little guy: the x2 goes on the smaller side. A is twice B: A=2B."
