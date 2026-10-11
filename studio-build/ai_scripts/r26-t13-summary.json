@@ -11,21 +11,27 @@
     "at": [
      "the distance from zero",
      "So it's zero",
-     "The absolute value of three"
+     "The absolute value of three",
+     "is three, of",
+     "it's ten, and"
     ]
    },
    {
     "say": "With a plain number, the minus just drops off. But a letter hides its sign. If x is negative seven, its absolute value is seven, and that's minus x.",
     "at": [
      "With a plain",
+     "minus just drops",
      "a letter hides its sign",
-     "If x is"
+     "If x is",
+     "its absolute value",
+     "and that's minus"
     ]
    },
    {
     "say": "And with an expression inside, calculate the whole inside first, and only then the bars.",
     "at": [
-     "calculate the whole inside"
+     "calculate the whole inside",
+     "and only then"
     ]
    }
   ],
@@ -43,15 +49,21 @@
      "A sum is different",
      "Same signs, the",
      "Opposite signs, they",
-     "And read it"
+     "the result is",
+     "And read it",
+     "the sizes cancelled"
     ]
    },
    {
     "say": "A square and the bars both remove the sign. The square root of x squared is the absolute value of x, not x. And the order inside the bars doesn't matter.",
     "at": [
      "A square and the bars",
+     "both remove the",
      "The square root",
-     "And the order"
+     "squared is the",
+     "of x, not",
+     "And the order",
+     "bars doesn't matter"
     ]
    }
   ],
@@ -60,22 +72,29 @@
     "say": "Compare a number with its absolute value, and you know its sign. A bigger absolute value means the number is negative. Equal means zero or positive. Equal to minus the number means zero or negative.",
     "at": [
      "Compare a number",
+     "absolute value, and",
      "A bigger absolute",
+     "the number is",
      "Equal means zero",
-     "Equal to minus the number"
+     "Equal to minus the number",
+     "means zero or negative"
     ]
    },
    {
     "say": "Don't forget the zero, it's the favorite trap.",
     "at": [
-     "Don't forget the zero"
+     "Don't forget the zero",
+     "the favorite trap"
     ]
    },
    {
     "say": "A positive product means same signs, and a negative product means opposite signs. And x over its absolute value is one, or minus one.",
     "at": [
      "A positive product",
-     "And x over"
+     "signs, and a",
+     "means opposite signs",
+     "And x over",
+     "value is one"
     ]
    }
   ],
@@ -85,22 +104,29 @@
     "at": [
      "Two cases",
      "x plus two",
+     "is ten. So",
+     "two is ten",
      "ten minus two is eight",
-     "Or x plus"
+     "Or x plus",
+     "minus ten, and",
+     "minus two is minus"
     ]
    },
    {
     "say": "A letter on the right side? The right side must be zero or positive, and check every answer in the original equation.",
     "at": [
      "A letter on the right side",
-     "The right side must"
+     "The right side must",
+     "zero or positive",
+     "every answer in"
     ]
    },
    {
     "say": "Bars on both sides? Both sides are zero or positive, so you're allowed to square them.",
     "at": [
      "Bars on both sides",
-     "Both sides are"
+     "Both sides are",
+     "positive, so you're"
     ]
    }
   ],
@@ -108,7 +134,9 @@
    {
     "say": "Bars on the small side, the inside is trapped in the middle. One band.",
     "at": [
-     "Bars on the small side"
+     "Bars on the small side",
+     "the inside is",
+     "the middle. One"
     ]
    },
    {
@@ -123,20 +151,24 @@
    {
     "say": "Look at the right side before any algebra. Bars smaller than a negative number? Never, no solution.",
     "at": [
-     "Bars smaller than"
+     "side before any",
+     "Bars smaller than",
+     "number? Never, no"
     ]
    },
    {
     "say": "Bars bigger than a negative number? Always, every x works.",
     "at": [
-     "Bars bigger than"
+     "Bars bigger than",
+     "number? Always, every"
     ]
    },
    {
     "say": "And bars at most zero? The inside must be zero, so there's one solution.",
     "at": [
      "bars at most zero",
-     "The inside must"
+     "The inside must",
+     "so there's one"
     ]
    }
   ],
@@ -144,6 +176,7 @@
    {
     "say": "The absolute value of x minus a is the distance between x and a.",
     "at": [
+     "x minus a",
      "the distance between"
     ]
    },
@@ -151,7 +184,8 @@
     "say": "And careful with a plus inside. x plus six is the distance from negative six.",
     "at": [
      "a plus inside",
-     "x plus six"
+     "x plus six",
+     "distance from negative"
     ]
    }
   ],
@@ -160,7 +194,9 @@
     "say": "Asked what an expression equals? Plug in a number that fits the conditions, and check that the choices come out different. Two survive? Plug in again.",
     "at": [
      "Plug in a number",
-     "check that the choices"
+     "fits the conditions",
+     "check that the choices",
+     "out different. Two"
     ]
    }
   ],
@@ -177,7 +213,10 @@
     "say": "Did I check every answer when there's a letter on the right? And what exactly are they asking, must, could, cannot, or not necessarily?",
     "at": [
      "Did I check",
-     "what exactly"
+     "when there's a",
+     "the right? And",
+     "what exactly",
+     "must, could, cannot"
     ]
    },
    {
@@ -185,7 +224,8 @@
     "at": [
      "forgetting the zero",
      "losing the second case",
-     "keeping a fake answer"
+     "keeping a fake answer",
+     "it. Now go"
     ]
    }
   ]

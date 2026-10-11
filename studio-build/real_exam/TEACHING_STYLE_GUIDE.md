@@ -74,7 +74,7 @@ The per-batch logs are `scratchpad/tstyle/eng_E*.md`. Counts in this guide marke
 5. **Question videos solve the problem 2-4 ways.** (HE) 187 of 298 question units (63%) show 2 or more methods:
    - the standard/algebra way first, in almost every case
    - then the "psychometric" way (plugging in numbers or answers, estimation, the choices, a shortcut)
-   - then a **verdict**: which way to use, and for whom
+   - then a **verdict**: which way to use, and for whom. (Our course does NOT copy this: no "which way is better" paragraph, see R16.)
    - Our unrecorded solution scripts have 2 or more method beats in 190 of 472 (40%).
 6. **She opens a question with a first reaction, not a method.** She reads the stem, restates what is really being asked, and says what makes it hard or what the choices hint at. (EN) a stem/method/first-reaction addition in about 140 of 154 solution takes. (HE) the difficulty is stated in nearly every question unit.
 7. **She thinks out loud in questions she answers herself.**
@@ -84,7 +84,7 @@ The per-batch logs are `scratchpad/tstyle/eng_E*.md`. Counts in this guide marke
    - drops names ("a pretentious name")
    - drops school formality
    - replaces a list of rules with one idea ("it's symmetric", "it's exactly like an equation", "if you don't remember the rule, just plug in")
-9. **Questions teach new tools**, «אני רוצה לנצל את השאלה הזאת» ("I want to use this question to…"). About 40 Hebrew question units introduce an idea that appears nowhere else. Lessons end with a recap of the rules (about 85% of lessons). Questions end with a takeaway or verdict (about 60%).
+9. **Questions teach new tools**, «אני רוצה לנצל את השאלה הזאת» ("I want to use this question to…"). About 40 Hebrew question units introduce an idea that appears nowhere else. Lessons end with a recap of the rules (about 85% of lessons). Questions end with a takeaway or verdict (about 60%); ours end with the answer, plus a takeaway only if it is new (R16).
 10. **Our scripts are compressed lists. She unpacks them, and that is where she makes mistakes.**
     - (EN) her takes run a median 2.9x the script's words in solutions and 2.5x in lessons, at 167 words per minute.
     - Where she improvises past a dense line, real math slips appear: t06-02 says "2 times minus 2 is 4"; exam-words says "at most 3 … so less than 3"; t08-traps says "with a negative fraction it's the opposite"; the negative case in q-370.
@@ -303,7 +303,7 @@ She never simplifies by being vague. The general sentence is always exact.
 | Order | rule → example → why | example → technique → why it's good → verdict |
 | Mistakes | the misconception behind a rule | process mistakes: marking early, a wrong substitution, the wrong whole |
 | Voice | chatty, jokes (about 1-2 per lesson), personal ("as you know me") | tighter, almost a formula: «נתון... שואלים... נפתור בשתי גישות... תשובה X... בואו נראה עוד שאלה» ("given… they ask… we'll solve it two ways… answer X… let's see another question") |
-| Ends with | a recap of the rules + "I'll see you in the next video" | a verdict + a takeaway + "let's see another question" |
+| Ends with | a recap of the rules + "I'll see you in the next video" | a verdict + a takeaway + "let's see another question" (ours: the answer, a takeaway only if new, no verdict, R16) |
 | Exam strategy | frequency, importance, what to skip | time, "mark it and move on", the question's place in the section, NITE habits |
 
 **Note for the AI course.** The teacher has said ideas should be taught inside the question video that uses them (memory: teach-in-question-videos). The Hebrew does the same: about 40 question units introduce a tool. So lessons stay short, and question scripts carry the "lesson" moves (example, why, trap) at the point of use.
@@ -356,7 +356,7 @@ She never simplifies by being vague. The general sentence is always exact.
 4. The reason for each plug-in number, said **before** it is used.
 5. Mental math spelled out (scripts give bare results such as "Thirty times forty-four: 1,320").
 6. Traps as warnings **before** or **at** the step, with the gut feeling behind them.
-7. A verdict ("for most students…") and a one-line takeaway.
+7. A one-line takeaway, only when it teaches something new (no verdict, R16).
 8. Plain language in place of formal terms (LCM, "lower power", "most precise").
 9. Contrasts split into separate short lines. Her factual slips cluster in packed contrasts: primes "20 needs TWO twos, 150 has only one"; "at least / at most"; root ↔ power both ways.
 
@@ -376,7 +376,7 @@ She never simplifies by being vague. The general sentence is always exact.
 | סתם לידע / נדיר (rarity) | "This is rare on the exam, so just so you know…" |
 | לא לפחד / זה לא נורא (reassurance) | "It looks scary, but it's really not." / "If you don't remember it, that's fine, you can plug in." |
 | נפתור בשתי גישות (announces methods) | "We'll solve this two ways." |
-| איזו גישה עדיפה? (verdict) | "So which way is better? For most students…" |
+| איזו גישה עדיפה? (verdict) | Not used: no "which way is better" paragraph (R16). |
 | במבחן מסמנים וממשיכים (exam vs lesson) | "In the exam you'd circle it and move on. Here, let's check the rest too." |
 | אני רוצה לנצל את השאלה הזאת (teach through the question) | "I want to use this question to show you something." |
 | אז שוב, מה עשינו? (recap) | "So again, what did we do?" |
@@ -429,7 +429,7 @@ She never simplifies by being vague. The general sentence is always exact.
 
 1. **Whose method is the Hebrew course?**
    - The Hebrew narrator is male ("Elad", wp 6298).
-   - Confirm that these teaching moves are the ones the AI course should copy: verdicts, "in the exam / in the lesson", humour level.
+   - Confirm that these teaching moves are the ones the AI course should copy: "in the exam / in the lesson", humour level. (Verdicts: decided, not copied, R16.)
    - Confirm that the AI voice should still sound like her English takes.
 2. **Content with no Hebrew source:**
    - topic 9 (Roots fundamentals: no subtitles)
@@ -442,7 +442,7 @@ She never simplifies by being vague. The general sentence is always exact.
    Scripts for these have nothing to be checked against. Verify them against real NITE exams first (memory: verify-before-adding-content).
 3. **One English version of each Hebrew mnemonic** (list in §10): hamsa/bar-mitzvah 5-12-13, the folk-dance area count, «חזקיהו בשמיים», «בורקס», «תן למסכן», «אחרי המ' בא השלם», «האלכסון הוא אסון», «אביבתיה». Decide: translate, replace, or drop. Then use the same version everywhere.
 4. **One plug-in policy.** The Hebrew gives three different defaults ("0 or 1", "avoid 0 and 1", "plug in 3"). R15 proposes one rule; approve it or change it.
-5. **Official method verdicts per topic.** Her takes soften the script's recommendations ("both are fine") and sometimes reverse them: the ears method, plugging in, multiplying an inequality by a minus, "the math is recommended". The AI should say the same thing every time. Decide per topic family which method is "for most students".
+5. **Official method verdicts per topic.** DECIDED: no verdict paragraph at all (R16). Her takes soften the script's recommendations ("both are fine") and sometimes reverse them: the ears method, plugging in, multiplying an inequality by a minus, "the math is recommended". The AI should say the same thing every time. Decide per topic family which method is "for most students".
 6. **Length and budget.** Following the checklist roughly doubles a script: solutions about 400 words, lessons 600-1,000. That is about 800 videos × about 3 minutes of audio. Check ElevenLabs credits (Starter plan), and decide the cap: at most 2 methods per question? Check all four choices or only "mark it and move on"?
 7. **Mechanical clean-up of the 667 unrecorded scripts before narration:**
    - 64 trap-after-answer lines
@@ -529,7 +529,7 @@ Check every AI script line by line. The numbers in brackets are evidence from §
   3. Give different letters different numbers.
   4. Rule out 3 choices; don't stop at the first match. If two survive, use a tie-breaker number.
   5. Call it "a safety net".
-- **R16. End a question with a verdict and a transfer line.** "Which way is better? For most students…" plus one sentence that works on the next question ("whenever you see a percent of a percent, ask: of what?").
+- **R16. No "which way is better" paragraph.** End after the answer, with a takeaway only if it teaches something new (a sentence that works on the next question, e.g. "whenever you see a percent of a percent, ask: of what?"), not a recap of what was just shown. Then "[pause] Okay. I'll see you in the next question."
 - **R17. Teach the idea where it is used.** If a question needs a tool that wasn't taught, teach it there ("I want to use this question to show you…"), with R4-R6. Lesson scripts stay short.
 - **R24. Exam vs lesson.** Say once: "In the exam you'd circle it and move on. Here, let's check the others too." Then check the remaining choices briefly, in order.
 

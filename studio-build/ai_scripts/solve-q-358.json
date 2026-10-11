@@ -16,11 +16,13 @@
     "at": [
      "no numbers at all",
      "look at the choices",
+     "of them talk",
      "about signs",
      "some about",
      "sizes.",
      "first by",
-     "understanding the givens"
+     "understanding the givens",
+     "by plugging in"
     ]
    },
    {
@@ -39,6 +41,7 @@
     "say": "But which one is the negative one? We don't know yet. So let's look at the second given.",
     "at": [
      "which one",
+     "one? We don't",
      "So let's look"
     ]
    },
@@ -50,6 +53,7 @@
      "If y were",
      "just be equal",
      "Four is equal",
+     "absolute value. But",
      "negative four is smaller"
     ]
    },
@@ -68,6 +72,7 @@
      "Now the choices",
      "Number one says",
      "we just found",
+     "is positive, so",
      "is out"
     ]
    },
@@ -75,19 +80,25 @@
     "say": "Now careful here, because a lot of students think the negative one is also the smaller one. But the givens only tell us signs, nothing about sizes. So we can't know which absolute value is bigger, and numbers two and three don't have to be true.",
     "at": [
      "a lot of students",
+     "the negative one",
+     "the smaller one",
      "only tell us signs",
      "nothing about sizes",
      "which absolute value",
-     "numbers two and three"
+     "numbers two and three",
+     "have to be"
     ]
    },
    {
     "say": "Number four says the absolute value of x is equal to x. When is a number equal to its absolute value? When it's zero or positive. And x is positive, so this is always true. So number four is our answer.",
     "at": [
      "Number four says",
+     "value of x",
      "When is a number equal",
+     "to its absolute",
      "When it's zero",
      "And x is positive",
+     "this is always",
      "number four is our"
     ]
    }
@@ -96,18 +107,30 @@
    {
     "say": "[pause] Now our second method, plugging in numbers. It's a great safety net when you're not sure. I need numbers that obey both givens, and I'll find them by trying. Let's start with y, because the second given has only y in it.",
     "at": [
+     "plugging in numbers",
+     "great safety net",
+     "not sure. I",
      "obey both givens",
+     "find them by",
+     "start with y",
+     "second given has",
      "only y in it"
     ]
    },
    {
     "say": "Why do I try a positive y first? Because it's the most natural guess, so let's see if it works. y is three. Is three smaller than the absolute value of three? No, they're equal. And zero is equal to its absolute value too. So y can't be positive, and it can't be zero.",
     "at": [
+     "a positive y",
+     "it's the most",
+     "so let's see",
      "y is three",
      "Is three smaller",
+     "absolute value of",
      "No, they're equal",
      "And zero is",
-     "So y can't"
+     "its absolute value",
+     "So y can't",
+     "and it can't"
     ]
    },
    {
@@ -115,7 +138,9 @@
     "at": [
      "a negative y",
      "Is negative three",
-     "now I know"
+     "three? Yes. So",
+     "now I know",
+     "to be negative"
     ]
    },
    {
@@ -123,8 +148,12 @@
     "at": [
      "What does that",
      "The first given says",
+     "times y is",
+     "try a negative",
      "negative eight. Why",
      "So x and",
+     "different numbers, and",
+     "away from zero",
      "Negative three times",
      "That's positive"
     ]
@@ -134,7 +163,9 @@
     "at": [
      "make x positive",
      "Negative three times",
-     "Now both givens work"
+     "negative twenty-four, and",
+     "Now both givens work",
+     "y is negative"
     ]
    },
    {
@@ -142,9 +173,13 @@
     "voice": "calm",
     "at": [
      "Number one, x",
+     "Eight isn't negative",
      "so it's out",
      "Number two says",
+     "value of x",
      "The absolute value of eight",
+     "is eight, and",
+     "three it's three",
      "Is eight smaller",
      "No, out"
     ]
@@ -156,9 +191,11 @@
      "Number three, negative",
      "in absolute value",
      "is three eighths",
+     "than one, so",
      "number three stays",
      "And number four",
      "the absolute value of eight",
+     "is eight, so",
      "stays too"
     ]
    },
@@ -166,35 +203,38 @@
     "say": "Two choices survive. Can I already circle one and move on? I can't, because a necessarily true choice has to work for every pair that fits the givens. So I need a tie-breaker, a new pair that might break one of them. Choice number three is about sizes, so this time I'll make y the bigger one in size, and keep the signs that work. y is negative six, and x is two. Negative six times two is negative twelve, so both givens still hold.",
     "at": [
      "Two choices survive",
+     "already circle one",
      "move on",
-     "the givens. So",
+     "a necessarily true choice",
+     "to work for",
+     "that fits the",
      "I need a tie-breaker",
+     "new pair that",
+     "one of them",
+     "three is about",
+     "this time I'll",
      "the bigger one in size",
+     "and keep the",
      "y is negative six",
-     "Negative six times"
+     "x is two",
+     "Negative six times",
+     "negative twelve, so"
     ]
    },
    {
     "say": "Negative six over two is negative three, and its absolute value is three. That's not less than one, so number three is out. And the absolute value of two is still two. Aaand it's number four, again.",
     "at": [
      "Negative six over two",
+     "negative three, and",
      "its absolute value is three",
      "not less than one",
      "number three is out",
+     "the absolute value",
      "still two",
      "it's number four, again"
     ]
    },
-   {
-    "say": "So which way is better? Here understanding is faster, because the signs give it all away. And the numbers are a great check. [short pause] Negative product, opposite signs. A number smaller than its absolute value, negative. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "which way is better",
-     "the signs give it all away",
-     "a great check",
-     "Negative product",
-     "A number smaller"
-    ]
-   }
+   "[pause] Okay. I'll see you in the next question."
   ]
  ]
 }

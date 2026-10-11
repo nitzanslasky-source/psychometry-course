@@ -14,32 +14,58 @@
    {
     "say": "Two equations, two unknowns, and absolute values. It looks scary, but it's really not. [short pause] We'll solve it three ways. The full algebra, a shorter algebra that ends with the answers, and plugging in the answers right away.",
     "at": [
-     "Two equations"
+     "Two equations",
+     "absolute values. It",
+     "but it's really",
+     "solve it three",
+     "full algebra, a",
+     "that ends with",
+     "and plugging in"
     ]
    },
    {
     "say": "[short pause] Our first method, the algebra. Four, twelve and forty-four can all be divided by four. Four over four is one, twelve over four is three, and forty-four over four is eleven. So the first equation becomes the absolute value of x, plus three times the absolute value of y, is eleven.",
     "at": [
+     "algebra. Four, twelve",
      "can all be divided by four",
-     "So the first equation becomes"
+     "four. Four over",
+     "one, twelve over",
+     "three, and forty-four",
+     "So the first equation becomes",
+     "the absolute value",
+     "plus three times",
+     "value of y"
     ]
    },
    {
     "say": "They ask for x, so I want to get rid of y. How do I do that? I subtract the second equation from the first. Three times the absolute value of y cancels, and eleven minus one is ten. So the absolute value of x, minus x, is ten.",
     "at": [
      "They ask for",
+     "I want to",
      "How do I",
      "I subtract the second",
+     "from the first",
      "Three times the",
-     "So the absolute"
+     "of y cancels",
+     "minus one is",
+     "So the absolute",
+     "x, minus x"
     ]
    },
    {
     "say": "With absolute values, I want the bars alone on one side and everything else on the other. Why? Because then I can open the bars into two options, just like bars equal to a number. So I add x to both sides, and the absolute value of x is ten plus x.",
     "at": [
      "With absolute values",
+     "the bars alone",
+     "side and everything",
+     "the other. Why",
      "Because then I",
-     "the absolute value of x is ten plus x"
+     "the bars into",
+     "just like bars",
+     "a number. So",
+     "x to both",
+     "the absolute value of x is ten plus x",
+     "is ten plus"
     ]
    },
    {
@@ -47,8 +73,12 @@
     "voice": "calm",
     "at": [
      "Now two options",
+     "are equal, or",
+     "the opposite of",
      "Option one",
      "Take x off",
+     "x minus x",
+     "so zero is",
      "That's false, so"
     ]
    },
@@ -57,7 +87,12 @@
     "voice": "calm",
     "at": [
      "Option two",
+     "ten minus x",
      "Add x to",
+     "x plus x",
+     "x, so two",
+     "minus ten. Minus",
+     "by two is",
      "x is minus five"
     ]
    },
@@ -66,6 +101,9 @@
     "at": [
      "so let's check",
      "Ten plus minus",
+     "five, and the",
+     "of minus five",
+     "It works. Minus",
      "number two is our answer"
     ]
    }
@@ -76,7 +114,11 @@
     "at": [
      "Our second",
      "until we get to",
-     "I plug in the answers"
+     "absolute value of",
+     "ten plus x",
+     "instead of solving",
+     "I plug in the answers",
+     "They're all numbers"
     ]
    },
    {
@@ -85,9 +127,12 @@
     "at": [
      "Minus two",
      "Its absolute value",
+     "and ten plus",
+     "is eight. Two",
      "out.",
      "Minus five",
      "Its absolute value is five",
+     "and ten plus minus five",
      "Yes"
     ]
    },
@@ -96,7 +141,10 @@
     "at": [
      "numbers three and",
      "For a positive",
+     "bars do nothing",
+     "absolute value of",
      "Then x is",
+     "x, and that's",
      "So choice numbers three",
      "and four are out"
     ]
@@ -106,10 +154,18 @@
    {
     "say": "[pause] Our third method, plugging in the answers from the very start. Choice number one, x is minus two. Into the second equation, minus two plus three times the absolute value of y is one. Add two to both sides, one plus two is three, so three times the absolute value of y is three. Three divided by three is one, so the absolute value of y is one.",
     "at": [
+     "Our third",
+     "the answers from",
      "Number one",
      "Into the second",
+     "two plus three",
+     "absolute value of",
      "Add two to",
-     "Three divided by"
+     "one plus two",
+     "so three times",
+     "value of y is three",
+     "Three divided by",
+     "one, so the"
     ]
    },
    {
@@ -117,6 +173,8 @@
     "voice": "calm",
     "at": [
      "Four times two",
+     "twelve times one",
+     "and eight plus",
      "forty-four, out"
     ]
    },
@@ -126,8 +184,14 @@
      "Number two",
      "number two, x",
      "Minus five plus",
+     "the absolute value",
      "Add five to",
-     "Six divided by"
+     "one plus five",
+     "so three times",
+     "value of y is six",
+     "Six divided by",
+     "two, so the",
+     "of y is two"
     ]
    },
    {
@@ -135,6 +199,8 @@
     "voice": "calm",
     "at": [
      "Four times five",
+     "twelve times two",
+     "and twenty plus",
      "It works",
      "It works"
     ]
@@ -143,19 +209,21 @@
     "say": "In the exam you'd circle it and move on. Here, let's quickly see three and five. x is three. Three plus three times the absolute value of y is one, so take three off, one minus three is negative two. But an absolute value can't be negative, so it's out. x is five, one minus five is negative four, negative again. Out.",
     "at": [
      "In the exam",
+     "it and move",
      "Here, let's quickly",
+     "and five. x",
      "Three plus three",
+     "absolute value of",
+     "one, so take",
+     "one minus three",
+     "two. But an",
+     "can't be negative",
      "so it's out",
+     "five, one minus",
      "negative again. Out"
     ]
    },
-   {
-    "say": "Which way would I pick? The shorter algebra that ends with the answers, or plugging in the answers right away. The full algebra is great to know, but here it's the longest. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "plugging in the answers right away",
-     "The full algebra"
-    ]
-   }
+   "[pause] Okay. I'll see you in the next question."
   ]
  ]
 }

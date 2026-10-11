@@ -14,7 +14,9 @@
    {
     "say": "So now the bars are in an inequality, and they're on the small side. What did we say about the small side? It's a closed range. The inside is trapped between seven and negative seven. [short pause] We'll solve it three ways.",
     "at": [
+     "are in an",
      "on the small side",
+     "did we say",
      "It's a closed range",
      "trapped between"
     ]
@@ -23,9 +25,11 @@
     "say": "[short pause] Our first method, the algebra. The inside is trapped, so I take the seven, and I put negative seven on the other side. So negative seven is smaller than x plus three, which is smaller than seven.",
     "at": [
      "Our first",
+     "The inside is",
      "I take the seven",
      "negative seven on the other side",
      "So negative seven is smaller",
+     "than x plus",
      "which is smaller than seven"
     ]
    },
@@ -33,11 +37,14 @@
     "say": "How do I get x alone in the middle? I take three off all three parts. Negative seven minus three is negative ten, and seven minus three is four. So x is between negative ten and four.",
     "at": [
      "How do I",
+     "alone in the",
+     "take three off",
      "all three parts",
      "Negative seven minus three",
      "is negative ten",
      "seven minus three is four",
-     "So x is"
+     "So x is",
+     "ten and four"
     ]
    },
    {
@@ -49,6 +56,7 @@
      "Negative twenty-five",
      "below negative ten",
      "And three is",
+     "range. So three",
      "number three is our answer"
     ]
    }
@@ -60,6 +68,7 @@
      "Our second",
      "x plus three is the",
      "the distance from negative three",
+     "So x is",
      "less than seven steps"
     ]
    },
@@ -69,10 +78,12 @@
      "Seven steps to the left",
      "Seven steps to the right",
      "One band in the middle",
+     "from negative ten",
      "Three is inside",
      "Five and",
      "eleven are past",
      "negative twenty-five is way",
+     "negative ten, so",
      "Three, number three"
     ]
    }
@@ -98,17 +109,7 @@
      "circle it"
     ]
    },
-   {
-    "say": "Which way is better? With numbers in the choices, plugging in is the fastest here. But the closed range is the one to make automatic. An absolute value smaller than a number? Take that number, put its minus on the other side, and the inside is trapped between them. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "Which way is better",
-     "plugging in is the fastest",
-     "But the closed range",
-     "An absolute value smaller",
-     "Take that number",
-     "trapped between them"
-    ]
-   }
+   "[pause] Okay. I'll see you in the next question."
   ]
  ]
 }

@@ -29,9 +29,11 @@
      "Our first",
      "Our first method",
      "Remember, which numbers",
+     "absolute value of",
      "Nine, and negative nine",
      "So the inside",
-     "x plus seven, is nine"
+     "x plus seven, is nine",
+     "or it's negative"
     ]
    },
    {
@@ -39,6 +41,7 @@
     "voice": "calm",
     "at": [
      "First case",
+     "is nine. To",
      "take seven off",
      "x is two"
     ]
@@ -48,6 +51,7 @@
     "voice": "calm",
     "at": [
      "Second case",
+     "is negative nine",
      "Take seven off again",
      "x is negative sixteen"
     ]
@@ -59,7 +63,8 @@
      "Is two there",
      "negative two is there",
      "that's the trap",
-     "It looks like"
+     "It looks like",
+     "but it's a"
     ]
    },
    {
@@ -67,10 +72,12 @@
     "at": [
      "Negative sixteen is there",
      "it's number three",
+     "at the wording",
      "could be",
      "Two values work",
      "and negative sixteen",
      "only offer one",
+     "So negative sixteen",
      "number three is our answer"
     ]
    }
@@ -79,16 +86,30 @@
    {
     "say": "[pause] Our second method, the number line. What are we doing here? We read the bars as a distance. Remember, the absolute value of a number is its distance from zero. And the bars around a difference give the distance between two numbers. Five minus two is three, and from two to five is exactly three steps. Why? Five minus two tells me how far five is from two, and the sign only says which way. The bars drop the sign, so what's left is the distance. Now, x plus seven is x minus negative seven, because taking away negative seven is the same as adding seven. So x plus seven, in bars, is the distance between x and negative seven. And it's equal to nine, so x is exactly nine steps away from negative seven.",
     "at": [
-     "Our second",
      "What are we doing here",
      "We read the",
-     "Remember, the absolute",
-     "And the bars",
+     "a distance. Remember",
+     "value of a",
+     "its distance from",
+     "the bars around",
+     "give the distance",
      "Five minus two is three",
+     "from two to five",
+     "exactly three steps",
      "Five minus two tells",
+     "how far five",
+     "two, and the",
+     "which way",
      "The bars drop the sign",
+     "so what's left",
      "x plus seven is x minus",
+     "minus negative seven",
+     "away negative seven",
+     "same as adding",
+     "x plus seven, in",
      "the distance between x",
+     "negative seven. And",
+     "to nine, so",
      "exactly nine"
     ]
    },
@@ -97,11 +118,16 @@
     "at": [
      "So how do",
      "I start at negative seven",
+     "and I walk",
      "Nine steps to the right",
      "plus nine is two",
      "Nine steps to the left",
+     "negative seven minus",
      "is negative sixteen",
      "Those are the",
+     "points that are",
+     "steps away. Two",
+     "the choices, but",
      "negative sixteen is,",
      "is, choice number"
     ]
@@ -116,10 +142,12 @@
     "at": [
      "our third",
      "The choices are",
+     "let's just try",
      "Sixteen",
      "twenty-three",
      "twenty-three isn't nine",
      "Negative two plus seven",
+     "five, and five",
      "so no again"
     ]
    },
@@ -127,21 +155,13 @@
     "say": "Negative sixteen plus seven is negative nine, and its absolute value is nine. It works. In the exam you'd circle it and move on.",
     "at": [
      "Negative sixteen plus seven",
+     "negative nine, and",
      "absolute value is nine",
      "It works",
      "circle it"
     ]
    },
-   {
-    "say": "So which way is better? The two cases are the standard way, and you'll need them in the harder questions. But when the choices are numbers, plugging in is just as fast. Bars equal to a number? Two cases, two answers. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "The two cases are",
-     "you'll need them",
-     "plugging in is just as fast",
-     "Bars equal to",
-     "two answers"
-    ]
-   }
+   "[pause] Okay. I'll see you in the next question."
   ]
  ]
 }

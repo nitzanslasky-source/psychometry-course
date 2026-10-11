@@ -218,13 +218,13 @@ async function anPrerender(v){const pre=new Map();pre.svg={};
   const c=document.createElement('canvas');c.width=1920;c.height=1080;const g=c.getContext('2d');g.fillStyle='#fff';g.fillRect(0,0,1920,1080);g.drawImage(img,0,0,1920,1080);pre.set(svg,c)}
  return pre}
 /* continuous AI audio: every cue gets a time on the audio clock (seconds from the start of audio.mp3), from the word
-   alignment in the manifest. A cue belongs to the NEXT spoken line; the AI line's `at` phrase times it, else:
+   alignment in the manifest (2026-10-11: at = -1 = the reader skipped those words, the cue is not fired at all). A cue belongs to the NEXT spoken line; the AI line's `at` phrase times it, else:
    APPEAR just before the line starts, a mark at its start, POINT at fraction `at` of the line. Slide changes sit in the
    pause before the slide's first line. All geometry is measured now, not during the take. */
 function anTimeline(v,man){const L=man.lines,ev=[];let li=0;
  v.beats.forEach((b,bi)=>{const ls=hyLines(v,bi),slideT=bi?(()=>{const pe=L[li-1]?.end??0,ns=L[li]?.slide===bi?L[li].start:pe+.5;return Math.max(pe+.05,Math.min(ns-.3,(pe+ns)/2))})():0;
   if(bi)ev.push({t:slideT,k:'slide',bi});const mine=[];let pend=[],lastEnd=slideT,lastAp=slideT;
-  const place=(m)=>{pend.forEach((c,k)=>{let t=m?(m.at?.[k]??null):null;c.te=m?(m.atEnd?.[k]??null):null;
+  const place=(m)=>{pend.forEach((c,k)=>{let t=m?(m.at?.[k]??null):null;c.te=m?(m.atEnd?.[k]??null):null;if(t===-1)return;
     if(t==null)t=!m?lastEnd+.15+.35*k:c.l.appear!=null?m.start-.12:c.l.point!=null?m.start+Math.max(0,Math.min(.95,+c.l.at||0))*(m.end-m.start):m.start+.05;
     c.t=Math.max(slideT+.05,t);if(c.k==='appear'){c.t=Math.max(c.t,lastAp+.05);lastAp=c.t}mine.push(c)});pend=[]};
   for(const l of ls){if(l.say!=null){const m=L[li++];if(!m)break;place(m);mine.push({t:m.start,k:'say',n:li,l});lastEnd=m.end}

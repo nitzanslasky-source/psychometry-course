@@ -14,13 +14,24 @@
    {
     "say": "One equation, two unknowns, and bars on both sides. [short pause] We'll solve it three ways, two cases, squaring both sides, and plugging in numbers.",
     "at": [
-     "bars on both sides"
+     "bars on both sides",
+     "solve it three",
+     "cases, squaring both",
+     "plugging in numbers"
     ]
    },
    {
     "say": "[short pause] Our first method, two cases. Two absolute values are equal when the insides are equal, or when one is the opposite of the other. Why? Equal absolute values mean the same distance from zero. So the insides are the same number, like five and five, or opposites, like five and negative five.",
     "at": [
-     "Two absolute values are equal"
+     "Two absolute values are equal",
+     "when the insides",
+     "or when one",
+     "opposite of the",
+     "Equal absolute values",
+     "same distance from",
+     "the insides are the",
+     "number, like five",
+     "or opposites, like"
     ]
    },
    {
@@ -29,15 +40,21 @@
     "at": [
      "Option one",
      "x plus four",
+     "four x plus",
      "Take x and",
      "Four y minus",
-     "Three y is three x"
+     "three y, and",
+     "minus x is",
+     "Three y is three x",
+     "and dividing both",
+     "y is x"
     ]
    },
    {
     "say": "Option two, they're opposites. x plus four y is minus, open bracket, four x plus y. That's minus four x minus y.",
     "at": [
      "x plus four",
+     "minus, open bracket",
      "That's minus four x"
     ]
    },
@@ -47,8 +64,12 @@
     "at": [
      "Move everything to",
      "x plus four",
+     "five x, and",
+     "plus y is",
      "five x plus five y",
-     "Divide by five"
+     "Divide by five",
+     "y is zero, so",
+     "is minus y"
     ]
    },
    {
@@ -56,9 +77,15 @@
     "at": [
      "So x is y",
      "or x is minus y",
+     "Choice number two",
      "only half the story",
+     "x could be",
      "number three, the",
+     "of x equals",
+     "value of y",
      "Equal or opposite",
+     "same size in",
+     "Always true. Choice",
      "Number three is our answer"
     ]
    },
@@ -67,7 +94,9 @@
     "at": [
      "numbers one",
      "and four",
-     "When x is"
+     "When x is",
+     "isn't smaller than",
+     "y isn't smaller"
     ]
    }
   ],
@@ -75,7 +104,12 @@
    {
     "say": "[pause] Our second method, squaring both sides. Bars on both sides, and both sides are zero or positive. So I'm allowed to square them, and after squaring, the bars are gone.",
     "at": [
-     "allowed to square them"
+     "Our second",
+     "Bars on both",
+     "both sides are",
+     "positive. So I'm",
+     "allowed to square them",
+     "after squaring, the"
     ]
    },
    {
@@ -84,7 +118,11 @@
     "at": [
      "Open both",
      "On the left",
-     "On the right"
+     "plus eight x",
+     "sixteen y squared",
+     "On the right",
+     "squared plus eight x y plus y",
+     "plus y squared"
     ]
    },
    {
@@ -93,15 +131,23 @@
     "at": [
      "Eight x y",
      "so it cancels",
+     "the terms. Sixteen",
+     "minus y squared",
      "fifteen y squared",
+     "x squared minus",
+     "is fifteen x",
      "So fifteen y",
-     "Divide by fifteen"
+     "fifteen x squared. Divide",
+     "Divide by fifteen",
+     "squared is x"
     ]
    },
    {
     "say": "And remember, bars and even powers act alike. If the squares are equal, the absolute values are equal. Choice number three.",
     "at": [
      "And remember, bars",
+     "powers act alike",
+     "squares are equal",
      "the absolute values are equal",
      "Number three"
     ]
@@ -113,11 +159,15 @@
     "at": [
      "Our third",
      "It's not so",
+     "but it's the",
      "the given. If",
      "If x and",
+     "equal, both sides",
      "So x two and y two",
      "Two plus four",
+     "is two plus",
      "And four times",
+     "two is ten",
      "Ten on both"
     ]
    },
@@ -134,11 +184,15 @@
     "at": [
      "Two and",
      "three both survive",
+     "answers give us",
      "Equal, or equal",
      "So the tie-breaker",
      "x two and y minus two",
      "Four times minus",
+     "minus eight, and",
+     "eight is minus",
      "Four times two",
+     "and eight minus",
      "Six and six"
     ]
    },
@@ -146,6 +200,7 @@
     "say": "So they don't have to be equal, and choice number two is out. Choice number three.",
     "at": [
      "don't have to be equal",
+     "and choice number",
      "Number three."
     ]
    },
@@ -153,17 +208,14 @@
     "say": "And notice, the given doesn't care which one is x and which is y. So y smaller than x can't be necessarily true, and the same goes for x smaller than y. Just swap them.",
     "at": [
      "the given doesn't care",
+     "one is x",
      "So y smaller than x",
-     "the same goes for"
+     "can't be necessarily",
+     "the same goes for",
+     "smaller than y"
     ]
    },
-   {
-    "say": "Three approaches. The third is the hardest to spot, but it's the shortest. Pick what feels comfortable for you. [pause] Okay. I'll see you in the next question.",
-    "at": [
-     "The third is",
-     "Pick what feels"
-    ]
-   }
+   "[pause] Okay. I'll see you in the next question."
   ]
  ]
 }

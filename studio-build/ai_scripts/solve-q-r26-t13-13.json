@@ -15,14 +15,23 @@
     "say": "So three givens. The first two give sizes, and the third one hides the signs. [short pause] We'll solve it two ways, understanding, and then trying all the sign options.",
     "at": [
      "The first two",
-     "the third one"
+     "the third one",
+     "ways, understanding, and",
+     "all the sign"
     ]
    },
    {
     "say": "[short pause] Our first method. a is seven away from zero, and b is three away. Their signs, we don't know yet. So what can a plus b be? Same signs add up, seven plus three is ten. Opposite signs cancel, seven minus three is four.",
     "at": [
+     "Our first",
+     "a is seven",
+     "zero, and b",
+     "Their signs, we",
+     "So what can",
      "Same signs add up",
-     "Opposite signs cancel"
+     "plus three is",
+     "Opposite signs cancel",
+     "three is four"
     ]
    },
    {
@@ -30,7 +39,11 @@
     "at": [
      "Now the third given",
      "a minus b",
+     "a plus b",
+     "sign of b",
      "So flipping one",
+     "it bigger. What",
+     "mean? Before the",
      "So a and b have opposite signs"
     ]
    },
@@ -38,8 +51,11 @@
     "say": "Now careful, a lot of people think this means b is negative. It doesn't. It only means b has the opposite sign of a. a could be negative seven, and b three.",
     "at": [
      "a lot of people",
+     "this means b",
      "It only means",
-     "a could be"
+     "the opposite sign",
+     "a could be",
+     "and b three"
     ]
    },
    {
@@ -47,6 +63,7 @@
     "voice": "calm",
     "at": [
      "the cancelling case",
+     "size minus the",
      "seven minus three"
     ]
    },
@@ -55,42 +72,77 @@
     "at": [
      "number four is our answer",
      "Ten is the same-signs",
+     "and the third",
      "Negative four",
-     "cannot be determined"
+     "the bars are",
+     "cannot be determined",
+     "trap for anyone"
     ]
    }
   ],
   [
-   "[pause] The exam can say the same idea in other words, so let's see two of them.",
+   {
+    "say": "[pause] The exam can say the same idea in other words, so let's see two of them.",
+    "at": [
+     "the same idea",
+     "words, so let's"
+    ]
+   },
    {
     "say": "The absolute value of x plus y, equals the absolute value of x, minus the absolute value of y. The sizes subtract. That's cancelling, so x and y have opposite signs, and x is the bigger one in size.",
     "at": [
+     "x plus y",
+     "absolute value of x, minus",
+     "the absolute value of y",
      "The sizes subtract",
-     "That's cancelling, so"
+     "That's cancelling, so",
+     "y have opposite",
+     "x is the"
     ]
    },
    {
     "say": "And if a plus b, in absolute value, is smaller than the absolute value of a, then adding b made it smaller. So again they cancelled, opposite signs. For example, a five and b negative two. Five plus negative two is three, and three is smaller than five.",
     "at": [
+     "b, in absolute",
+     "smaller than the",
+     "of a, then",
      "adding b made it smaller",
      "So again they",
      "For example",
-     "Five plus negative"
+     "b negative two",
+     "Five plus negative",
+     "three, and three"
     ]
    }
   ],
   [
-   "[pause] Our second method, trying the signs. Not sure about the reasoning? a is seven or negative seven, and b is three or negative three. So there are only four sign options, and let's try them all.",
+   {
+    "say": "[pause] Our second method, trying the signs. Not sure about the reasoning? a is seven or negative seven, and b is three or negative three. So there are only four sign options, and let's try them all.",
+    "at": [
+     "Our second",
+     "Not sure about",
+     "a is seven",
+     "seven, and b",
+     "or negative three",
+     "So there are",
+     "sign options, and"
+    ]
+   },
    {
     "say": "Both positive, seven and three. Seven plus three is ten, and seven minus three is four. Ten is not smaller than four, so it's out. Both negative, negative seven and negative three. Negative seven plus negative three is negative ten, and negative seven minus negative three is negative four. In bars that's ten against four again. Out.",
     "voice": "calm",
     "at": [
      "Both positive",
      "Seven plus three",
+     "and seven minus",
      "Ten is not",
+     "four, so it's",
      "Both negative",
      "Negative seven plus",
-     "In bars that's"
+     "is negative ten",
+     "seven minus negative",
+     "In bars that's",
+     "four again. Out"
     ]
    },
    {
@@ -99,10 +151,16 @@
     "at": [
      "Seven and negative three",
      "Seven plus negative",
+     "four, and seven",
+     "three is ten",
      "Four is smaller",
+     "so it works",
      "Negative seven and three",
      "Negative seven plus",
-     "In bars, four"
+     "negative four, and",
+     "minus three is",
+     "In bars, four",
+     "It works too"
     ]
    },
    {
@@ -110,8 +168,12 @@
     "at": [
      "In both cases",
      "that work",
+     "of a plus",
      "Number four",
-     "So when you"
+     "So when you",
+     "check same signs",
+     "signs, because that's",
+     "bars change things"
     ]
    }
   ]

@@ -15,13 +15,21 @@
     "say": "So this time there's a number in front of x. And they ask for all the values, so we'll need both cases. [short pause] Two ways, two cases first, and then plugging in the answers.",
     "at": [
      "a number in front of x",
-     "all the values"
+     "x. And they",
+     "all the values",
+     "need both cases",
+     "two cases first",
+     "plugging in the"
     ]
    },
    {
     "say": "[short pause] Our first method, two cases. Which numbers have an absolute value of seven? Seven and negative seven. So the inside is seven, or the inside is negative seven.",
     "at": [
-     "the inside is seven"
+     "cases. Which numbers",
+     "absolute value of",
+     "and negative seven",
+     "the inside is seven",
+     "the inside is negative"
     ]
    },
    {
@@ -29,13 +37,17 @@
     "voice": "calm",
     "at": [
      "Two x minus one is seven",
+     "seven. To get",
+     "add one, and",
      "two x is eight",
+     "by two, and",
      "x is four"
     ]
    },
    {
     "say": "x is four, so I can already cross out number four. It doesn't have a four in it.",
     "at": [
+     "I can already",
      "cross out number four",
      "It doesn't have"
     ]
@@ -44,7 +56,10 @@
     "say": "Now careful. A lot of students just flip the sign here and say negative four. But there's a minus one inside the bars, so let's really solve the second case.",
     "at": [
      "just flip the sign",
-     "a minus one inside"
+     "and say negative",
+     "a minus one inside",
+     "bars, so let's",
+     "the second case"
     ]
    },
    {
@@ -52,7 +67,9 @@
     "voice": "calm",
     "at": [
      "Two x minus one is negative seven",
+     "negative seven. Add",
      "two x is negative six",
+     "Divide by two",
      "x is negative three"
     ]
    },
@@ -61,6 +78,7 @@
     "at": [
      "number three is our answer",
      "Number one forgets",
+     "case, and number",
      "the flipped sign"
     ]
    }
@@ -71,8 +89,12 @@
     "at": [
      "Our second",
      "Three of the choices",
+     "four in them",
+     "test four first",
      "Two times four",
-     "Its absolute value"
+     "minus one, seven",
+     "Its absolute value",
+     "so four works"
     ]
    },
    {
@@ -80,6 +102,8 @@
     "at": [
      "And what does",
      "Number four is three",
+     "negative four, so",
+     "out four, a",
      "Number four is out"
     ]
    },
@@ -87,7 +111,9 @@
     "say": "Now the other numbers. Negative four. Two times negative four is negative eight, minus one, negative nine. Its absolute value is nine, not seven. So number two is out.",
     "at": [
      "Two times negative four",
+     "negative eight, minus",
      "Its absolute value",
+     "not seven. So",
      "number two is out"
     ]
    },
@@ -95,8 +121,12 @@
     "say": "Negative three. Two times negative three is negative six, minus one, negative seven. Its absolute value is seven, so it works too. So number one, four only, misses negative three. It's four or negative three, number three.",
     "at": [
      "Two times negative three",
+     "negative six, minus",
      "Its absolute value is seven",
+     "so it works",
+     "number one, four",
      "misses negative three",
+     "or negative three",
      "number three"
     ]
    },
@@ -104,7 +134,10 @@
     "say": "So two cases, two answers, and don't assume they're opposites. When there's a number in front of x, or a number added inside, solve the second case all the way. [pause] Okay. I'll see you in the next question.",
     "at": [
      "don't assume",
-     "When there's a"
+     "When there's a",
+     "front of x",
+     "number added inside",
+     "second case all"
     ]
    }
   ]

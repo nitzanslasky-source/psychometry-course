@@ -33,8 +33,9 @@ T_NEW = (r"if(it.k==='t'){const t0=String(it.t),"
 HY_OLD = ("const shown=(b.pre||0)+Math.max(0,step|0);let yL=HY.top;\n"
           " const placed=[];let ctop=900;b.items.forEach((it,i)=>{")
 HY_NEW = ("const shown=(b.pre||0)+Math.max(0,step|0);\n"
-          " const _lay=sc=>{let yL=HY.top,o='',bot=0;const placed=[];let ctop=900;b.items.forEach((it0,i)=>{"
-          "let it=sc===1?it0:Object.assign({},it0,{size:(it0.size||(it0.k==='h'?60:46))*sc,y:it0.y!=null?HY.top+(it0.y-HY.top)*sc:it0.y,gap:(it0.gap??44)*sc});")
+          " const _lay=sc=>{let yL=HY.top,o='',bot=0,bot2=0;const placed=[];let ctop=900;b.items.forEach((it0,i)=>{"
+          # 2026-10-11: the question item (stem + choices) is never scaled; a figure scales by its width
+          "let it=sc===1||it0.k==='q'?it0:Object.assign({},it0,{size:(it0.size||(it0.k==='h'?60:46))*sc,y:it0.y!=null?HY.top+(it0.y-HY.top)*sc:it0.y,gap:(it0.gap??44)*sc},it0.k==='vis'&&it0.w?{w:it0.w*sc,h:it0.h?it0.h*sc:it0.h}:{});")
 # keep the camera's corner free: text that starts in the camera's rows wraps before it (camera on, top right only)
 HY_ZONE_OLD = "const x=it.x??HY.x,W=HY.w-(x-HY.x);let y=it.y??yL,r=hyItem(it,x,y,W);"
 HY_ZONE_NEW = ("const x=it.x??HY.x;let W=HY.w-(x-HY.x);let y=it.y??yL,r=hyItem(it,x,y,W);{const z=camZone();if(z&&y<z.y&&z.x-x>300&&!CAM_SKIP.includes(v.id)){"
@@ -44,8 +45,11 @@ CAM_ZONE_FN = ("const CAM_SKIP=['solve-pt-q16','solve-vo-44-005','solve-wp26-g10
                "return {x:r.x-24,y:r.y+r.d+16}}catch(e){return null}}\n")
 
 HY_OLD_END = "if(it.y==null)yL=y+r.h+(it.gap??44);if(i<shown)out+=`<g data-i=\"${i}\">${r.svg}</g>`});\n return out+'</svg>'}"
-HY_NEW_END = ("if(it.y==null)yL=y+r.h+(it.gap??44);bot=Math.max(bot,y+r.h);if(i<shown)o+=`<g data-i=\"${i}\">${r.svg}</g>`});return {o,bot}};\n"
+HY_NEW_END = ("if(it.y==null)yL=y+r.h+(it.gap??44);bot=Math.max(bot,y+r.h);if(it.k!=='q')bot2=Math.max(bot2,y+r.h);if(i<shown)o+=`<g data-i=\"${i}\">${r.svg}</g>`});return {o,bot,bot2,ctop}};\n"
               " let best=_lay(1);if(b.items.length&&b.items.every(it=>it.k==='t'||it.k==='h'))for(const sc of [1.25,1.15,1.08]){const t=_lay(sc);if(t.bot<=820){best=t;break}}\n"
+              # 2026-10-11: board items that would run into the answer choices (a long hand-written solution) are drawn
+              # a little smaller, step by step, until they fit above the choices (layout is the same for every step)
+              " if(best.bot2>best.ctop-8)for(const sc of [.93,.86,.8,.74]){const t=_lay(sc);best=t;if(t.bot2<=t.ctop-8)break}\n"
               " return out+best.o+'</svg>'}")
 
 

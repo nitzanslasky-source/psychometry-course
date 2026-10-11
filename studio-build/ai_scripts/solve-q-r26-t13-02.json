@@ -14,6 +14,9 @@
    {
     "say": "So we're looking for the one that no number can satisfy. And before any algebra, look at the right sides. Two of them are negative, and one is zero. That's our hint.",
     "at": [
+     "the one that",
+     "can satisfy. And",
+     "algebra, look at",
      "Two of",
      "them are negative",
      "one is zero"
@@ -23,7 +26,9 @@
     "say": "Remember, an absolute value is never negative. It can be zero, it can be positive, but it can never go below zero.",
     "at": [
      "never negative",
-     "It can be"
+     "It can be",
+     "can be positive",
+     "can never go"
     ]
    },
    {
@@ -31,8 +36,11 @@
     "at": [
      "Number one",
      "The bars are",
+     "zero. Can that",
      "Yes, when the",
      "x minus three is zero",
+     "so x is",
+     "has a solution",
      "so it's out"
     ]
    },
@@ -41,7 +49,9 @@
     "at": [
      "Number two",
      "The bars are",
+     "negative one. But",
      "never negative, so",
+     "never be below",
      "No number works"
     ]
    },
@@ -49,8 +59,11 @@
     "say": "Number three looks almost the same, but the sign goes the other way. The bars are bigger than negative one. And that's always true, because the bars are zero or more. Every x works, so it's out.",
     "at": [
      "Number three looks",
+     "same, but the",
+     "the other way",
      "The bars are",
      "And that's always",
+     "the bars are zero",
      "Every x works",
      "so it's out"
     ]
@@ -60,7 +73,10 @@
     "at": [
      "Number four",
      "The absolute value",
+     "is at most",
      "Zero works",
+     "at most one. So",
+     "has a solution",
      "and it's out"
     ]
    },
@@ -68,6 +84,8 @@
     "say": "So x plus two, in absolute value, smaller than negative one has no solution. Number two is our answer.",
     "at": [
      "So x plus",
+     "absolute value, smaller",
+     "one has no",
      "Number two is our answer"
     ]
    }
@@ -78,6 +96,7 @@
     "at": [
      "numbers two",
      "and three again",
+     "numbers, and a",
      "never true",
      "always true"
     ]
@@ -86,7 +105,10 @@
     "say": "And it works the same way for equations. Bars equal to a negative number, like bars equal to negative five, have no solution at all.",
     "at": [
      "And it works",
-     "Bars equal to a negative number"
+     "way for equations",
+     "Bars equal to a negative number",
+     "number, like bars",
+     "negative five, have"
     ]
    },
    {
@@ -94,8 +116,10 @@
     "at": [
      "Is there a",
      "Sure, try to",
+     "solution for each",
      "Number one, try three",
-     "Three minus three"
+     "Three minus three",
+     "so three works"
     ]
    },
    {
@@ -103,13 +127,19 @@
     "at": [
      "Number three, try zero",
      "Zero plus two",
-     "Number four, zero"
+     "and two is",
+     "negative one, so",
+     "Number four, zero",
+     "zero is at"
     ]
    },
    {
     "say": "Number two, whatever x I try, x plus two in bars comes out zero or more. Try zero, it's two. Try negative two, it's zero. It never gets below negative one. So no solution, number two.",
     "at": [
      "Number two, whatever",
+     "try, x plus",
+     "bars comes out",
+     "more. Try zero",
      "Try negative two",
      "It never gets",
      "So no solution"
@@ -119,7 +149,8 @@
     "say": "So always look at the right side first. A negative number or a zero there is a gift. [pause] Okay. I'll see you in the next question.",
     "at": [
      "look at the right side",
-     "A negative number"
+     "A negative number",
+     "zero there is"
     ]
    }
   ]

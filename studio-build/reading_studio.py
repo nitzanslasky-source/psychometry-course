@@ -137,7 +137,24 @@ def changed_paragraphs(current, full_side, patch_sides):
     known = {norm(p['text'] if isinstance(p, dict) else p) for p in full_side['paragraphs']}
     for ps in patch_sides:
         known |= {norm(t) for t in patch_read_texts(ps)}
-    return [i for i, t in enumerate(current) if norm(t) not in known]
+    return [i for i, t in enumerate(current) if not covered(t, known)]
+
+
+def sentences(t):
+    return [x for x in re.split(r'(?<=[.?!])\s+', norm(t)) if x]
+
+
+def covered(t, known):
+    """read already: the same text, or the text with whole sentences REMOVED (each remaining sentence word for word,
+    in order, from one read paragraph - e.g. a verdict paragraph cut, 2026-10-11). Any added or edited sentence = changed."""
+    if norm(t) in known:
+        return True
+    want = sentences(t)
+    for k in known:
+        it = iter(sentences(k))
+        if want and all(any(w == x for x in it) for w in want):
+            return True
+    return False
 
 
 def scan_recorded(videos):
@@ -420,7 +437,12 @@ function patchReadTexts(side){/* only the paragraphs she REACHED count: 'read', 
 function changedOf(id,full,patches){/* same rule as the generator: current paragraphs not in the last full take's sidecar nor in a later patch */
   if(!full||!full.paragraphs)return null;const known=new Set(full.paragraphs.map(p=>norm(p.text!=null?p.text:p)));
   for(const ps of patches)for(const t of patchReadTexts(ps))known.add(norm(t));
-  return flat(BYID[id]).map((t,i)=>known.has(norm(t))?-1:i).filter(i=>i>=0)}
+  return flat(BYID[id]).map((t,i)=>coveredBy(t,known)?-1:i).filter(i=>i>=0)}
+const sentencesOf=t=>norm(t).split(/(?<=[.?!])\s+/).filter(Boolean);
+function coveredBy(t,known){/* same as covered() in the generator: same text, or only whole sentences removed */
+  if(known.has(norm(t)))return true;const want=sentencesOf(t);if(!want.length)return false;
+  for(const k of known){const have=sentencesOf(k);let j=0;let ok=true;for(const w of want){while(j<have.length&&have[j]!==w)j++;if(j>=have.length){ok=false;break}j++}if(ok)return true}
+  return false}
 async function scanVideo(id){
   try{const d=await videoDir(id,false);if(!d)return;const names=[];for await(const [n,h] of d.entries())if(h.kind==='file'&&TAKE_RE.test(n))names.push(n);
     const patches=names.filter(n=>PATCH_RE.test(n)).sort(),fulls=names.filter(n=>!PATCH_RE.test(n)).sort();

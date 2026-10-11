@@ -105,8 +105,8 @@ for vid in ids:
     # wording alone is her call. Plural "choice numbers one and four" is fine; "the number one" (a value) is not flagged.
     if vid.startswith('solve-') or (v.get('questionId')):
         read = []
-        for f in sorted(glob.glob(os.path.join(READING, vid, '*.json'))):
-            try: read = json.load(open(f, encoding='utf-8')).get('paragraphs') or read
+        for f in sorted(glob.glob(os.path.join(READING, vid, '*.json'))):     # the full take AND every patch take
+            try: read += json.load(open(f, encoding='utf-8')).get('paragraphs') or []
             except Exception: pass
         read = {re.sub(r'\s+', ' ', p if isinstance(p, str) else p.get('text', '')).strip() for p in read}
         for k, l in enumerate(flat):

@@ -17,7 +17,7 @@ own pen strokes. Deterministic (seeded by the text), so a rebuild gives the same
 
 Text syntax (write(...)):   {a/b} stacked fraction (hand-drawn bar)   ^{..} or ^c power   √{..} root
                             \hl{name}{..} a part POINT / mark cues can target ('item N: name'), like in TeX items
-Characters: A-Z a-z 0-9 space + - − × ÷ = ( ) / , . : ? ! ' < > ≤ ≥ ≠ ✓ | · ↑ ↓ → ← ⇒ ◆ ° π
+Characters: A-Z a-z 0-9 space + - − × ÷ = ( ) / , . : ? ! ' < > ≤ ≥ ≠ ✓ ✗ | · ↑ ↓ → ← ⇒ ◆ ° π
 Output (item['hw']): strokes in an em-100 box (size 100 -> cap height 72): {'s': [[x,y,x,y,...], ...], 'w', 'h', 'n'
 (glyph count, for the writing speed), 'parts': {name: [first stroke, end stroke]}}.
 """
@@ -158,6 +158,7 @@ CUSTOM = {
     '≠': (19, [[(2.5, -11.5), (16.5, -11.5)], [(2.5, -6.2), (16.5, -6.2)], [(13, -17), (6, -0.5)]]),
     '|': (11, [[(5.5, -23), (5.5, 4)]]),        # absolute-value bar: upright, a little air on both sides; stretched to the line (_lay)
     '·': (8, [[(3.8, -9.6), (4.1, -8.6)]]),
+    '✗': (19, [[(3, -17), (16, -1)], [(16, -17), (3, -1)]]),
     '✓': (21, [[(2, -9), (7.5, -1.5), (19, -19)]]),
     'π': (17, [[(2, -12), (4.5, -14), (15, -14)], [(6.5, -14), (5.5, -5), (3.5, 0)], [(11.5, -14), (11.8, -3), (13.5, 0)]]),
     ' ': (11, []),
@@ -365,6 +366,10 @@ REPL = [
      "window.__hyBaseY=y;if(it.k==='hw')return hwItem(it,x,y,w);"),
     # a positioned hand-written item takes part in the overlap push-down / shrink-to-fit like a text item
     ("if(it.y!=null&&it.k==='t'){const x1=it.w?", "if(it.y!=null&&(it.k==='t'||it.k==='hw')){const x1=it.w?"),
+    # 2026-10-11: a math question item reports where its answer choices start (ctop), so board items that would run
+    # into the choices can be fitted above them (slide_style.py shrink-to-fit; before, only text-layout questions did)
+    ("svgText('Figure not necessarily drawn to scale.',x+w,top-6,15,PAL.muted,400,'end')}\n  return {svg:s,h:r.height}}",
+     "svgText('Figure not necessarily drawn to scale.',x+w,top-6,15,PAL.muted,400,'end')}\n  return {svg:s,h:r.height,ctop:ch.length?top:900}}"),
 ]
 
 

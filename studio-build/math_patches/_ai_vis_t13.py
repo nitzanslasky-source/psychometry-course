@@ -10,7 +10,7 @@ ONE spec per video drives all three sides, so they cannot drift apart:
                     click items around them.
 
 Every video: the stem read aloud (calm voice), first reaction, all the useful methods (standard first), traps at the
-step, the answer as "value, number N", a verdict + a reusable takeaway, "Okay. I'll see you in the next question."
+step, the answer as "value, number N", a reusable takeaway only if it teaches something new (no "which way is better" verdict, R16), "Okay. I'll see you in the next question."
 Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R29 (R29: ideas taught earlier in the study plan / earlier in topic 13 get a
 SHORT reminder, new ideas the full rule-examples-why-trap treatment), NITZAN_RHYTHM_DELIVERY.md P1-P13.
 
@@ -53,7 +53,7 @@ def NL(name, svg, w=560, col=0):
             'h': int(round(w * vb[3] / vb[2])), 'gap': 16}
 
 
-def DIST(name, lo, hi, c, r, base=(0,), band=None, w=1060):
+def DIST(name, lo, hi, c, r, base=(0,), band=None, w=1060, col=0):
     """a |x - c| number line BUILT in layers (2026-10-11, teacher: "build the number line at the spoken words"):
     -> {'line': the line with c (and the `base` ticks), 'right': the arrow r steps right + its end, 'left': the arrow r
     steps left + its end, 'band': the shaded band between the ends (band='open' / 'closed'; None = no band)}.
@@ -71,7 +71,7 @@ def DIST(name, lo, hi, c, r, base=(0,), band=None, w=1060):
         return ('<line x1="%.1f" y1="%d" x2="%.1f" y2="%d" stroke="%s" stroke-width="2"/>' % (X(v), Y_ - 11, X(v), Y_ + 11, INK) +
                 '<text x="%.1f" y="%d" text-anchor="middle" fill="%s" %s font-size="27" font-weight="bold">%s</text>' % (X(v), Y_ + 42, INK, FONT, fmt(v)))
     def dot(v):
-        closed = band != 'open'
+        closed = band not in ('open', 'rays')
         return '<circle cx="%.1f" cy="%d" r="7" fill="%s" stroke="%s" stroke-width="2.5"/>' % (X(v), Y_, TEAL if closed else '#ffffff', TEAL)
     def arrow(e):
         d = -1 if e > c else 1
@@ -85,14 +85,20 @@ def DIST(name, lo, hi, c, r, base=(0,), band=None, w=1060):
     out = {'line': svg(line, 'Number line: %s marked' % fmt(c)),
            'right': svg(arrow(c + r) + tick(c + r) + dot(c + r), '%d steps right of %s: %s' % (r, fmt(c), fmt(c + r))),
            'left': svg(arrow(c - r) + tick(c - r) + dot(c - r), '%d steps left of %s: %s' % (r, fmt(c), fmt(c - r)))}
-    if band:
+    if band == 'rays':                         # |x - c| > r: two rays going outward from the open ends, a gap between
+        a, b = X(c - r), X(c + r)
+        out['band'] = svg('<rect x="%.1f" y="%d" width="%.1f" height="14" fill="%s" stroke="%s" stroke-width="2"/>' % (L_ - 2, Y_ - 7, a - L_ + 2, BAND, TEAL)
+                          + '<rect x="%.1f" y="%d" width="%.1f" height="14" fill="%s" stroke="%s" stroke-width="2"/>' % (b, Y_ - 7, R_ + 2 - b, BAND, TEAL)
+                          + '<path d="M %d %d l 12 -7 l 0 14 Z" fill="%s"/>' % (L_ - 14, Y_, TEAL) + '<path d="M %d %d l -12 -7 l 0 14 Z" fill="%s"/>' % (R_ + 14, Y_, TEAL)
+                          + dot(c - r) + dot(c + r), 'below %s or above %s' % (fmt(c - r), fmt(c + r)))
+    elif band:
         a, b = X(c - r), X(c + r)
         out['band'] = svg('<rect x="%.1f" y="%d" width="%.1f" height="14" fill="%s" stroke="%s" stroke-width="2"/>' % (a, Y_ - 7, b - a, BAND, TEAL)
                           + dot(c - r) + dot(c + r) + '<circle cx="%.1f" cy="%d" r="6" fill="%s"/>' % (X(c), Y_, INK),
                           'between %s and %s' % (fmt(c - r), fmt(c + r)))
     items = {}
     for k, sv in out.items():
-        it = NL('%s_%s' % (name, k), sv, w=w)
+        it = NL('%s_%s' % (name, k), sv, w=w, col=col)
         if k != 'line': it['over'] = 1; it['gap'] = 0
         items[k] = it
     return items
@@ -139,11 +145,15 @@ def _layout(vid):
                     names[it['_name']] = (si, pre + len(items)); items.append(it)
         right = any(it['_col'] == 1 for it in items)
         solo = right and not any(it['_col'] == 0 for it in items)   # only right-column items: use the left column
-        out = []
+        out = []; ycol = 100 if V['kind'] == 'solution' else 78
         for it in items:
             d = {k: v for k, v in it.items() if not k.startswith('_')}
             if it['_col'] == 1 and not solo:
-                d.update(x=1010, w=540, y=100 if V['kind'] == 'solution' else 78)
+                if d['k'] == 'vis':
+                    d['w'] = min(d.get('w', 540), 540); d['h'] = int(round(d['h'] * d['w'] / it['w']))
+                y_here = ycol
+                if not d.get('over'): ycol += (d['h'] if d['k'] == 'vis' else int(d.get('size', 36) * 1.55)) + 16
+                d.update(x=1010, w=d['w'] if d['k'] == 'vis' else 540, y=y_here)
             elif right and d['k'] == 't':
                 d['w'] = 560
             out.append((it, d))
@@ -301,9 +311,10 @@ t1 = I('t1', '$y=3$: $\\ 3<|3|$? ✗', size=30, hand='y = 3 :   3 < |3| ?  ✗')
 t2 = I('t2', '$y=-3$: $\\ -3<3$ ✓', size=30, hand='y = −3 :   −3 < 3  ✓')
 t3 = I('t3', '$x=-8$: $\\ (-3)(-8)=24>0$ ✗', size=30, hand='x = −8 :   (−3)(−8) = 24 > 0  ✗')
 k1 = I('k1', 'Negative product: opposite signs', size=28, col=1)
+k0 = I('k0', 'Necessarily: true for every pair', size=28)
 k2 = I('k2', 'Smaller than its absolute value: negative', size=28, col=1)
 p1 = I('p1', '$y=-3,\\ \\ x=8$: $\\ -24<0$ ✓', size=30, hand='y = −3,  x = 8 :   −24 < 0  ✓')
-p2 = I('p2', '$\\left|\\frac{-3}{8}\\right|=\\frac{3}{8}<1$', size=32, hand='|{−3/8}| = {3/8} < 1')
+p2 = I('p2', '$\\left|\\frac{-3}{8}\\right|=\\frac{3}{8}<1$', size=32, col=1, hand='|{−3/8}| = {3/8} < 1')
 p3 = I('p3', '$y=-6,\\ \\ x=2$', col=1, hand='y = −6,  x = 2')
 p4 = I('p4', '$\\left|\\frac{-6}{2}\\right|=\\hl{three}{3}$', size=32, col=1, hand='|{−6/2}|  =   \\hl{three}{3}')
 video('solve-q-358', 'solution', qid='q-358', slides=[
@@ -365,16 +376,12 @@ video('solve-q-358', 'solution', qid='q-358', slides=[
         "for every pair that fits the givens. So I need a tie-breaker, a new pair that might break one of them. Choice number three is about "
         "sizes, so this time I'll make y the bigger one in size, and keep the signs that work. y is negative six, and x is "
         "two. Negative six times two is negative twelve, so both givens still hold.",
-        pt('choice 3', 'Two choices survive'), pt('choice 4', 'move on'), pt('p2', 'I need a tie-breaker'), pt('choice 3', 'the bigger one in size'), show(p3, 'y is negative six')),
+        pt('choice 3', 'Two choices survive'), pt('choice 4', 'move on'), show(k0, 'a necessarily true choice'), pt('p2', 'I need a tie-breaker'), pt('choice 3', 'the bigger one in size'), show(p3, 'y is negative six')),
       L("Negative six over two is negative three, and its absolute value is three. That's not less than one, so number three "
         "is out. And the absolute value of two is still two. Aaand it's number four, again.",
         show(p4, 'Negative six over two'), pt('p4: three', 'its absolute value is three'), mk('circle', 'p4: three', 'not less than one'), mk('cross', 'choice 3', 'number three is out'), pt('p3', 'still two'),
         mk('tick', 'choice 4', "it's number four, again"), voice=None),
-      L("So which way is better? Here understanding is faster, because the signs give it all away. And the numbers are a great "
-        "check. [short pause] Negative product, opposite signs. A number smaller than its absolute value, negative. "
-        "[pause] Okay. I'll see you in the next question.",
-        pt('p1', 'which way is better'), pt('stem', 'the signs give it all away'), pt('p3', 'a great check'),
-        show(k1, 'Negative product'), show(k2, 'A number smaller'))),
+      L("[pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-359 (Q2)
@@ -384,11 +391,12 @@ video('solve-q-358', 'solution', qid='q-358', slides=[
 a0 = I('a0', 'Inside $=9$ $\;$ or $\;$ inside $=-9$', size=32, hand='inside = 9   or   inside = −9')
 a1 = I('a1', '$x+7=9$, so $x=\\hl{two}{2}$', hand='x+7 = 9,  so  x  =   \\hl{two}{2}')
 a2 = I('a2', '$x+7=-9$, so $x=\\hl{m16}{-16}$', hand='x+7 = −9,  so  x  =    \\hl{m16}{−16}')
-n1 = DIST('n1', -18, 4, -7, 9)
+n1 = DIST('n1', -18, 4, -7, 9, w=760)
 b1 = I('b1', '$|16+7|=23$ $\\quad |-2+7|=5$', size=32, col=1, hand='|16+7| = 23    |−2+7| = 5')
 m0 = I('m0', '$\\hl{a}{\\text{Two cases}}\\ \\cdot\\ \\hl{b}{\\text{number line}}\\ \\cdot\\ \\hl{c}{\\text{plugging in}}$', size=28, col=1)
 r9 = I('r9', '$|9|=9,\\ \\ |-9|=9$', size=32, col=1, hand='|9| = 9,   |−9| = 9')
-d9 = I('d9', '$|5-2|=3$: from $2$ to $5$ is $3$ steps', size=30, hand='|5−2| = 3 :  from 2 to 5 is 3 steps')
+d9 = I('d9', '$|5-2|=3$: from $2$ to $5$ is $3$ steps', size=28, hand='|5−2| = 3 :  from 2 to 5 is 3 steps')
+m5 = DIST('m5', -1, 7, 2, 3, w=420)
 d0 = I('d0', '$x+7=x-(-7)$', size=32, hand='x+7 = x − (−7)')
 w1 = I('w1', 'Two cases: the standard way', size=30)
 w2 = I('w2', 'Numbers in the choices: plug in', size=30)
@@ -425,7 +433,9 @@ video('solve-q-359', 'solution', qid='q-359', slides=[
         "Now, x plus seven is x minus negative seven, because taking away negative seven is the same as adding seven. So "
         "x plus seven, in bars, is the distance between x and negative seven. And it's equal to nine, so x is exactly nine "
         "steps away from negative seven.",
-        pt('stem', 'What are we doing here'), show(d9, 'Five minus two is three'), pt('d9', 'The bars drop the sign'),
+        pt('stem', 'What are we doing here'), show(d9, 'Five minus two is three'), show(m5['line'], 'from two to five'),
+        show(m5['right'], 'exactly three steps'), pt('d9', 'Five minus two tells'), pt('m5_line', 'which way'),
+        pt('d9', 'The bars drop the sign'),
         show(d0, 'x plus seven is x minus'), show(n1['line'], 'the distance between x'), pt('stem', 'exactly nine')),
       L("So how do I read the picture? I start at negative seven, and I walk nine steps each way. Nine steps to the right, "
         "negative seven plus nine is two. Nine steps to the left, negative seven minus nine is negative sixteen. Those are "
@@ -443,10 +453,7 @@ video('solve-q-359', 'solution', qid='q-359', slides=[
       L("Negative sixteen plus seven is negative nine, and its absolute value is nine. It works. In the exam you'd circle it "
         "and move on.", show(b2, 'Negative sixteen plus seven'), mk('circle', 'b2: nine', 'absolute value is nine'),
         pt('choice 3', 'It works'), mk('tick', 'choice 3', 'circle it')),
-      L("So which way is better? The two cases are the standard way, and you'll need them in the harder questions. But when "
-        "the choices are numbers, plugging in is just as fast. Bars equal to a number? Two cases, two answers. "
-        "[pause] Okay. I'll see you in the next question.",
-        show(w1, 'The two cases are'), pt('w1', "you'll need them"), show(w2, 'plugging in is just as fast'), show(w3, 'Bars equal to'), mk('underline', 'w3', 'two answers'))),
+      L("[pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-360 (Q3)
@@ -496,11 +503,7 @@ video('solve-q-360', 'solution', qid='q-360', slides=[
         pt('d1', 'Negative twenty-five plus'), pt('choice 2', 'its absolute value is twenty-two'), mk('cross', 'choice 2', 'Too big')),
       L("Three plus three is six, and six is smaller than seven. It works, so in the exam you circle it and move on.",
         show(d2, 'Three plus three'), mk('circle', 'd2: six', 'six is smaller'), pt('choice 3', 'It works'), mk('tick', 'choice 3', 'circle it')),
-      L("Which way is better? With numbers in the choices, plugging in is the fastest here. But the closed range is the one "
-        "to make automatic. An absolute value smaller than a number? Take that number, put its minus on the other side, and "
-        "the inside is trapped between them. [pause] Okay. I'll see you in the next question.",
-        pt('d2', 'Which way is better'), show(v1, 'plugging in is the fastest'), show(v2, 'But the closed range'), pt('stem', 'An absolute value smaller'),
-        show(v3, 'Take that number'), mk('underline', 'v3', 'trapped between them'))),
+      L("[pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-361 (Q4)
@@ -508,9 +511,8 @@ video('solve-q-360', 'solution', qid='q-360', slides=[
 r1 = I('r1', 'Big side: open range', size=32, col=1)
 e1 = I('e1', '$x+1>8$, so $\\hl{r}{x>7}$', hand='x+1 > 8,  so  \\hl{r}{x > 7}')
 e2 = I('e2', '$x+1<-8$, so $\\hl{l}{x<-9}$', hand='x+1 < −8,  so  \\hl{l}{x < −9}')
-n3 = NL('n3', fig(-13, 11, [(-9, '−9'), (-1, '−1'), (2, '2'), (7, '7')], [(None, -9, False, False), (7, None, False, False)],
-                  center=(-1, 8), title='|x + 1| > 8: more than 8 from −1, x < −9 or x > 7'))
-f1 = I('f1', '$|9+1|=10>8$', size=32, col=1)
+n3 = DIST('n3', -13, 11, -1, 8, base=(2,), band='rays')
+f1 = I('f1', '$|9+1|=10>8$', size=32, col=1, hand='|9+1| = 10 > 8')
 f2 = I('f2', '$|2+1|=\\hl{three}{3}$, not $>8$', size=32, col=1, hand='|2+1| = \\hl{three}{3}')
 video('solve-q-361', 'solution', qid='q-361', slides=[
     S('Method 1 · Open range',
@@ -535,33 +537,31 @@ video('solve-q-361', 'solution', qid='q-361', slides=[
     S('Method 2 · Number line',
       L("[pause] Our second method, the number line. x plus one is the distance from negative one. More than eight steps from "
         "negative one means past seven on the right, or past negative nine on the left.",
-        show(n3, 'the distance from negative one'), pt('n3', 'past seven')),
+        show(n3['line'], 'the distance from negative one'), show(n3['right'], 'past seven'), show(n3['left'], 'past negative nine')),
       L("Two rays going outward, and a gap in the middle. Two is only three steps from negative one, and three isn't more "
         "than eight. So two sits in the gap, and it cannot be x. Number two.",
-        pt('n3', 'a gap in the middle'), pt('choice 2', 'Two is only'), mk('tick', 'choice 2', 'it cannot be x'))),
+        show(n3['band'], 'Two rays going outward'), pt('n3_line', 'a gap in the middle'), pt('choice 2', 'Two is only'),
+        mk('circle', 'fig: 2', 'three steps from'), mk('tick', 'choice 2', 'it cannot be x'))),
     S('Method 3 · Plugging in the answers',
       L("[pause] Our third method, plugging in the answers. Nine plus one is ten, and ten is bigger than eight, so nine can "
         "be x.", show(f1, 'Nine plus one'), pt('choice 1', 'so nine can')),
       L("Two plus one is three, and three is not bigger than eight. So two doesn't work. And in a cannot question, the one "
         "that doesn't work is the answer. In the exam you'd circle it and move on.", show(f2, 'Two plus one'),
         mk('circle', 'f2: three', 'not bigger than eight'), mk('tick', 'choice 2', 'the one that')),
-      L("So which way? Here plugging in is really fast, because the choices are numbers. But you'll need the open range when "
-        "the choices are ranges. Big side, two rays going outward. Small side, one band in the middle. "
-        "[pause] Okay. I'll see you in the next question.",
-        pt('f2', 'plugging in is really fast'), pt('stem', 'Big side, two rays'))),
+      L("[pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-362 (Q5)
 # NEW: "minus x is not negative here"; an answer can't contain x if x cancels; R15 tie check (why -2, not -6).
 # REMINDER: an expression means you may plug in (topic 51); |x| = -x for a negative x (lesson); x/|x| = 1 or -1 (topic 5).
 g0 = I('g0', '$x=-2$', hand='x = −2')
-g1 = I('g1', 'choices at $x=-2$: $\\ 14,\\ 6,\\ 2,\\ 12$', size=30, col=1)
+g1 = I('g1', 'choices at $x=-2$: $\\ 14,\\ 6,\\ 2,\\ 12$', size=30, col=1, hand='choices at x = −2 :  14,  6,  2,  12')
 g2 = I('g2', '$10+\\frac{4(-2)}{|-2|}=10+\\frac{-8}{2}=10-4=\\hl{six}{6}$', size=34, hand='10 + {4(−2)/|−2|} = 10 + {−8/2} = \\hl{six}{6}')
 h1 = I('h1', '$x<0$, so $|x|=\\hl{mx}{-x}$', hand='x < 0,  so  |x| = \\hl{mx}{−x}')
 h2 = I('h2', '$\\frac{4x}{-x}=\\hl{m4}{-4}$', hand='{4x/−x} = \\hl{m4}{−4}')
 h3 = I('h3', '$10-4=6$', hand='10 − 4 = 6')
 h4 = I('h4', '$\\frac{x}{|x|}=1$ $\;$ or $\;$ $-1$', size=34, col=1, hand='{x/|x|} = 1  or  −1')
-h5 = I('h5', '$\\frac{-8}{8}=-1$', size=30, col=1)
+h5 = I('h5', '$\\frac{-8}{8}=-1$', size=30, col=1, hand='{−8/8} = −1')
 video('solve-q-362', 'solution', qid='q-362', slides=[
     S('Method 1 · Plugging in numbers',
       L("Given: x is smaller than zero. What is ten plus four x over the absolute value of x?",
@@ -593,22 +593,20 @@ video('solve-q-362', 'solution', qid='q-362', slides=[
       L("So the answer doesn't depend on x at all. That's why numbers three and four, with an x in them, can't be right. "
         "So six again, number two.",
         mk('cross', 'choice 3', 'numbers three'), mk('cross', 'choice 4', 'and four'), mk('tick', 'choice 2', 'So six again')),
-      L("Which way is better? Plugging in is the safety net, and it's quick. But once you know that x over its absolute value "
-        "is one or minus one, the algebra takes seconds. [pause] Okay. I'll see you in the next question.",
-        pt('h4', 'once you know'))),
+      L("[pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t13-01 (Q6)
 # NEW: a number in front of x breaks the "opposites" symmetry; "all the values" needs both cases.
 # REMINDER (short): two cases.
-k0 = I('k0', 'Inside $=7$ $\;$ or $\;$ inside $=-7$', size=32)
+k0 = I('k0', 'Inside $=7$ $\;$ or $\;$ inside $=-7$', size=32, hand='inside = 7   or   inside = −7')
 k1 = I('k1', '$2x-1=7$', hand='2x−1 = 7')
 k2 = I('k2', '$2x=8$, so $x=\\hl{four}{4}$', hand='2x = 8,  so  x = \\hl{four}{4}')
 k3 = I('k3', '$2x-1=-7$', hand='2x−1 = −7')
 k4 = I('k4', '$2x=-6$, so $x=\\hl{m3}{-3}$', hand='2x = −6,  so  x = \\hl{m3}{−3}')
-m0_ = I('m0_', '$x=4$: $\\ |2\\cdot4-1|=|7|=7$', size=32, col=1)
-m1 = I('m1', '$x=-4$: $\\ |2(-4)-1|=|-9|=9$', size=32, col=1)
-m2 = I('m2', '$x=-3$: $\\ |2(-3)-1|=|-7|=\\hl{seven}{7}$', size=32, col=1)
+m0_ = I('m0_', '$x=4$: $\\ |2\\cdot4-1|=|7|=7$', size=32, col=1, hand='x = 4 :   |2·4−1| = |7| = 7')
+m1 = I('m1', '$x=-4$: $\\ |2(-4)-1|=|-9|=9$', size=32, col=1, hand='x = −4 :   |2(−4)−1| = |−9| = 9')
+m2 = I('m2', '$x=-3$: $\\ |2(-3)-1|=|-7|=\\hl{seven}{7}$', size=32, col=1, hand='x = −3 :   |2(−3)−1| = |−7|  =   \\hl{seven}{7}')
 video('solve-q-r26-t13-01', 'solution', qid='q-r26-t13-01', slides=[
     S('Method 1 · Two cases',
       L("Given: two x minus one, in absolute value, is equal to seven. Which of the following gives all the possible values "
@@ -797,9 +795,8 @@ video('solve-q-363', 'solution', qid='q-363', slides=[
         "one says four is smaller than one, no. Number three also puts four below one, no. Number four says one is smaller "
         "than negative four, no.", show(w5, 'Negative four, one, four'), mk('tick', 'choice 2', "that's number two"),
         mk('cross', 'choice 1', 'Number one says'), mk('cross', 'choice 3', 'Number three also'), mk('cross', 'choice 4', 'Number four says')),
-      L("Which way is better? I prefer understanding here, it's quick. But plugging in is an excellent backup. And when your "
-        "first pick breaks a given, don't give up, just change the pick. [pause] Okay. I'll see you in the next question.",
-        pt('w5', 'I prefer understanding'), pt('w3', 'just change the pick'))),
+      L("And when your first pick breaks a given, don't give up, just change the pick. [pause] Okay. I'll see you in the "
+        "next question.", pt('w3', 'just change the pick'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-364 (Q9)
@@ -982,9 +979,7 @@ video('solve-q-366', 'solution', qid='q-366', slides=[
         show(b4_, 'four squared is sixteen'), pt('b4_: two', 'True this'), voice='calm'),
       L("So choice number two was false once and true once. That's exactly possible but not necessarily. Choice number "
         "three was never true, and choice numbers one and four were true both times. Choice number two.", mk('tick', 'choice 2', 'Number two.')),
-      L("Which way is better? If you know the rules, you can mark this one in seconds. If not, two pairs, same sign and "
-        "opposite signs, will get you there. [pause] Okay. I'll see you in the next question.",
-        pt('b1_', 'same sign and'), pt('b3_', 'opposite signs, will'))),
+      L("[pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t13-13 (Q12)
@@ -1164,9 +1159,7 @@ video('solve-q-367', 'solution', qid='q-367', slides=[
       L("In the exam you'd circle it and move on. Here, let's quickly see three and five. x is three. Three plus three "
         "times the absolute value of y is one, so take three off, one minus three is negative two. But an absolute value "
         "can't be negative, so it's out. x is five, one minus five is negative four, negative again. Out.", mk('cross', 'choice 3', "so it's out"), mk('cross', 'choice 4', 'negative again. Out')),
-      L("Which way would I pick? The shorter algebra that ends with the answers, or plugging in the answers right away. The "
-        "full algebra is great to know, but here it's the longest. [pause] Okay. I'll see you in the next question.",
-        pt('r4_', 'plugging in the answers right away'))),
+      L("[pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-368 (Q15)
@@ -1232,8 +1225,7 @@ video('solve-q-368', 'solution', qid='q-368', slides=[
       L("And notice, the given doesn't care which one is x and which is y. So y smaller than x can't be necessarily true, "
         "and the same goes for x smaller than y. Just swap them.", pt('stem', "the given doesn't care"),
         pt('choice 1', 'So y smaller than x'), pt('choice 4', 'the same goes for')),
-      L("Three approaches. The third is the hardest to spot, but it's the shortest. Pick what feels comfortable for you. "
-        "[pause] Okay. I'll see you in the next question.", pt('t2q', 'The third is'))),
+      L("[pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-369 (Q16)
@@ -1300,9 +1292,7 @@ video('solve-q-369', 'solution', qid='q-369', slides=[
         mk('tick', 'choice 3', 'it works'), voice='calm'),
       L("And choice number four, minus four and a half. Times two is minus nine, minus one, minus ten. In bars, ten. Out.",
         show(d4q, 'minus four and a half'), mk('cross', 'choice 4', 'In bars, ten'), voice='calm'),
-      L("Plugging in was much shorter here. We need to let go of the instinct to solve everything. These shortcuts aren't "
-        "cheats, they're the proper way on this exam. But know the two bands too, because the choices won't always be "
-        "ranges. [pause] Okay. I'll see you in the next question.", pt('d3q', 'Plugging in was much shorter'))),
+      L("[pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-370 (Q17)
@@ -1348,9 +1338,7 @@ video('solve-q-370', 'solution', qid='q-370', slides=[
       L("Minus eight plus its absolute value, eight, is zero. Zero is smaller than twelve, so it works. So x can go below "
         "minus six, and choice number one misses those numbers. Choice number three.", mk('cross', 'choice 1', 'number one misses'),
         mk('tick', 'choice 3', 'Number three.'), voice='calm'),
-      L("Both approaches are excellent, pick what's comfortable for you. And when x and its absolute value are added, split at "
-        "zero. On the negative side, they cancel to zero. [pause] Okay. I'll see you in the next question.",
-        pt('m2r', 'On the negative side'))),
+      L("[pause] Okay. I'll see you in the next question.")),
 ])
 
 # ------------------------------------------------------------------------------------------------ r26-t13-summary
@@ -1458,7 +1446,7 @@ def _unique(say, k, n=3):
     ends = [m.end() for m in words]
     for j in range(min(n, len(ends)) - 1, len(ends)):
         ph = say[k:k + ends[j]].rstrip('.,?!')
-        if '[' in ph: return None
+        if '[' in ph or ']' in ph: return None
         if say.lower().find(ph.lower()) == k: return ph
     return None
 
@@ -1514,7 +1502,7 @@ def _follow(vid):
                     continue
                 if len(body.split()) <= 4 or _SKIP.match(body) or last is None: continue
                 ph = _unique(say, k)
-                if ph: add.append((k, pt(last, ph)))
+                if ph: add.append((k, pt(_base(last), ph)))
             if add:
                 allc = sorted(have + add, key=lambda x: x[0])
                 ln['cues'] = [c for p, c in allc]
@@ -1526,6 +1514,9 @@ def _follow(vid):
 # slide titled "Method N · X" gets a small header line "Method N: X" at the top of its work area, shown when the voice
 # names the method in the slide's first line ("Our second method", "first by understanding", ...).
 _ORD = r"(?:first|second|third|fourth)"
+
+
+HDR_ROOM = 330          # px of left-column steps (estimated) above which a slide has no room for the method header
 
 
 def _method_headers(vid):
@@ -1540,15 +1531,56 @@ def _method_headers(vid):
             if not h: continue
             ph = _unique(say, h.start(), 2)
             if not ph: continue
-            left = sum(1 for l2 in sl['lines'] for c in l2['cues'] if c[0] == 'show' and c[1]['_col'] == 0 and not c[1].get('over'))
-            if left >= 4: break        # a full left column keeps its room (the sidebar still names the method)
+            col0 = [c[1] for l2 in sl['lines'] for c in l2['cues'] if c[0] == 'show' and c[1]['_col'] == 0 and not c[1].get('over')]
+            est = sum((it['h'] if it['k'] == 'vis' else it.get('size', 36) * 1.55) + 16 for it in col0)
+            if est + 45 > HDR_ROOM: break     # a full left column keeps its room (the sidebar still names the method)
             it = I('hdr%d' % si, 'Method %s: %s' % (m.group(1), m.group(2)), size=28)
             have = [(_phrase_pos(say, c), c) for c in ln['cues']]
             ln['cues'] = [c for p, c in sorted(have + [(h.start() - .5, show(it, ph))], key=lambda x: x[0])]
             break
 
 
-for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v)
+def _base(name):
+    """a number-line layer ('n1_left') -> its base line ('n1_line'): a POINT on a layer lit nothing visible (q-359)"""
+    return re.sub(r'_(left|right|band)$', '_line', name)
+
+
+# 2026-10-11 (teacher, her own voice: "no empty screen while I explain"): no stretch of more than FILL_W words without a
+# visual. A long stretch gets a POINT every ~7 words on what it talks about - the item shown last on this slide (a figure
+# layer -> its base line), else the question. Runs after the passes above, so it only fills what is still empty.
+FILL_W, FILL_STEP = 6, 5
+_CLOSE = re.compile(r"(Okay\.|I'll see you)", re.I)
+
+
+def _fill(vid):
+    V = VIDEOS[vid]
+    for si, sl in enumerate(V['slides']):
+        last = None
+        for li, ln in enumerate(sl['lines']):
+            if si == 0 and li == 0: 
+                continue                                     # the question reading: the question is lit already
+            say = ln['say']; have = sorted([(_phrase_pos(say, c), c) for c in ln['cues']], key=lambda x: x[0])
+            masked = TAG.sub(lambda m: ' ' * len(m.group(0)), say)            # no word inside a [pause] tag
+            words = [m.start() for m in re.finditer(r'\S+', masked)]
+            cut_at = (_CLOSE.search(say).start() if _CLOSE.search(say) else len(say))
+            marks_ = [p for p, c in have if p >= 0] + [cut_at]
+            add, prev, idx = [], 0, 0
+            ctx = lambda pos: next((c[1]['_name'] for p, c in reversed(have) if p <= pos and c[0] == 'show'), last)
+            for b in marks_:
+                seg = [w for w in words if prev <= w < b]
+                if len(seg) > FILL_W:
+                    for k in range(FILL_STEP // 2 + 2, len(seg) - 2, FILL_STEP):
+                        ph = _unique(say, seg[k])
+                        tg = ctx(seg[k])
+                        if ph: add.append((seg[k], pt(_base(tg) if tg else 'stem', ph)))
+                prev = b + 1
+            if add:
+                ln['cues'] = [c for p, c in sorted(have + add, key=lambda x: x[0])]
+            for p, c in have:
+                if c[0] == 'show': last = c[1]['_name']
+
+
+for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v)
 
 
 if __name__ == '__main__':
