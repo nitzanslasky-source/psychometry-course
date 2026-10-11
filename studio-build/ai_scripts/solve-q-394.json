@@ -22,10 +22,9 @@
     ]
    },
    {
-    "say": "[short pause] Our first method. z is p to the power of s, times q to the power of r. So z contains the prime p, s times, and the prime q, r times. And nothing else.",
+    "say": "[short pause] z is p to the power of s, times q to the power of r. So z contains the prime p, s times, and the prime q, r times. And nothing else.",
     "at": [
-     "Our first",
-     "z is p",
+     "z is",
      "power of s",
      "to the power of r",
      "So z contains the prime p",
@@ -97,10 +96,11 @@
   ],
   [
    {
-    "say": "[pause] Our second method, plugging in numbers. When the primes are letters, plug in the smallest primes, in the right order. Why the smallest? Any primes in that order fit the givens, and small ones are the easiest to work with. So p is two, q is three, r is five, and s is seven.",
+    "say": "[pause] Now let's do the same with numbers, by plugging them in. When the primes are letters, plug in the smallest primes, in the right order. Why the smallest? Any primes in that order fit the givens, and small ones are the easiest to work with. So p is two, q is three, r is five, and s is seven.",
     "at": [
-     "Our second",
-     "numbers. When the",
+     "Now let's",
+     "with numbers, by",
+     "in. When the",
      "letters, plug in",
      "in the right order",
      "the smallest? Any",

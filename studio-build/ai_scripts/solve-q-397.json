@@ -23,10 +23,10 @@
     ]
    },
    {
-    "say": "[short pause] Our first method. Remember, divisors come in pairs, and exactly three divisors means a prime squared. One, the prime, and the prime squared, like nine, with one, three and nine.",
+    "say": "[short pause] Remember, divisors come in pairs, and exactly three divisors means a prime squared. One, the prime, and the prime squared, like nine, with one, three and nine.",
     "at": [
-     "Our first",
-     "come in pairs",
+     "Remember, divisors",
+     "and exactly three",
      "means a prime squared",
      "One, the prime",
      "prime squared, like",
@@ -79,9 +79,9 @@
   ],
   [
    {
-    "say": "[pause] Our second method, trial and error. Don't remember the rule? Run through the numbers, count the divisors, and look for the pattern. Two and three are prime, two divisors each. Four has one, two and four. Three divisors, the first one that fits. Five is prime. Six has one, two, three and six, that's four. Seven is prime. Eight has one, two, four and eight, four again.",
+    "say": "[pause] Another way is trial and error. Don't remember the rule? Run through the numbers, count the divisors, and look for the pattern. Two and three are prime, two divisors each. Four has one, two and four. Three divisors, the first one that fits. Five is prime. Six has one, two, three and six, that's four. Seven is prime. Eight has one, two, four and eight, four again.",
     "at": [
-     "Our second",
+     "Another way",
      "error. Don't remember",
      "Run through the",
      "the divisors, and",

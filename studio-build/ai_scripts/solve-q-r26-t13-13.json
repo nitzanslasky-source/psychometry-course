@@ -15,9 +15,7 @@
     "say": "So three givens. The first two give sizes, and the third one hides the signs. [short pause] We'll solve it two ways, understanding, and then trying all the sign options.",
     "at": [
      "The first two",
-     "the third one",
-     "ways, understanding, and",
-     "all the sign"
+     "the third one"
     ]
    },
    {
@@ -25,13 +23,10 @@
     "at": [
      "Our first",
      "a is seven",
-     "zero, and b",
      "Their signs, we",
      "So what can",
      "Same signs add up",
-     "plus three is",
-     "Opposite signs cancel",
-     "three is four"
+     "Opposite signs cancel"
     ]
    },
    {
@@ -39,11 +34,7 @@
     "at": [
      "Now the third given",
      "a minus b",
-     "a plus b",
-     "sign of b",
      "So flipping one",
-     "it bigger. What",
-     "mean? Before the",
      "So a and b have opposite signs"
     ]
    },
@@ -51,11 +42,8 @@
     "say": "Now careful, a lot of people think this means b is negative. It doesn't. It only means b has the opposite sign of a. a could be negative seven, and b three.",
     "at": [
      "a lot of people",
-     "this means b",
      "It only means",
-     "the opposite sign",
-     "a could be",
-     "and b three"
+     "a could be"
     ]
    },
    {
@@ -63,7 +51,6 @@
     "voice": "calm",
     "at": [
      "the cancelling case",
-     "size minus the",
      "seven minus three"
     ]
    },
@@ -72,46 +59,28 @@
     "at": [
      "number four is our answer",
      "Ten is the same-signs",
-     "and the third",
      "Negative four",
-     "the bars are",
-     "cannot be determined",
-     "trap for anyone"
+     "cannot be determined"
     ]
    }
   ],
   [
-   {
-    "say": "[pause] The exam can say the same idea in other words, so let's see two of them.",
-    "at": [
-     "the same idea",
-     "words, so let's"
-    ]
-   },
+   "[pause] The exam can say the same idea in other words, so let's see two of them.",
    {
     "say": "The absolute value of x plus y, equals the absolute value of x, minus the absolute value of y. The sizes subtract. That's cancelling, so x and y have opposite signs, and x is the bigger one in size.",
     "at": [
-     "x plus y",
-     "absolute value of x, minus",
-     "the absolute value of y",
      "The sizes subtract",
-     "That's cancelling, so",
-     "y have opposite",
-     "x is the"
+     "That's cancelling, so"
     ]
    },
    {
     "say": "And if a plus b, in absolute value, is smaller than the absolute value of a, then adding b made it smaller. So again they cancelled, opposite signs. For example, a five and b negative two. Five plus negative two is three, and three is smaller than five.",
     "at": [
-     "b, in absolute",
      "smaller than the",
-     "of a, then",
      "adding b made it smaller",
      "So again they",
      "For example",
-     "b negative two",
-     "Five plus negative",
-     "three, and three"
+     "Five plus negative"
     ]
    }
   ],
@@ -122,10 +91,7 @@
      "Our second",
      "Not sure about",
      "a is seven",
-     "seven, and b",
-     "or negative three",
-     "So there are",
-     "sign options, and"
+     "So there are"
     ]
    },
    {
@@ -134,15 +100,10 @@
     "at": [
      "Both positive",
      "Seven plus three",
-     "and seven minus",
      "Ten is not",
-     "four, so it's",
      "Both negative",
      "Negative seven plus",
-     "is negative ten",
-     "seven minus negative",
-     "In bars that's",
-     "four again. Out"
+     "In bars that's"
     ]
    },
    {
@@ -151,16 +112,10 @@
     "at": [
      "Seven and negative three",
      "Seven plus negative",
-     "four, and seven",
-     "three is ten",
      "Four is smaller",
-     "so it works",
      "Negative seven and three",
      "Negative seven plus",
-     "negative four, and",
-     "minus three is",
-     "In bars, four",
-     "It works too"
+     "In bars, four"
     ]
    },
    {
@@ -168,12 +123,8 @@
     "at": [
      "In both cases",
      "that work",
-     "of a plus",
      "Number four",
-     "So when you",
-     "check same signs",
-     "signs, because that's",
-     "bars change things"
+     "So when you"
     ]
    }
   ]

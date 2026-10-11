@@ -25,10 +25,9 @@
     ]
    },
    {
-    "say": "[short pause] Our first method. When is a times b over fifteen smallest? a and b are both on top of the fraction, so the smaller they are, the smaller the result. So let's build each one as small as possible.",
+    "say": "[short pause] When is a times b over fifteen smallest? a and b are both on top of the fraction, so the smaller they are, the smaller the result. So let's build each one as small as possible.",
     "at": [
-     "Our first",
-     "a times b",
+     "When is",
      "over fifteen smallest",
      "a and b",
      "on top of",
@@ -112,9 +111,9 @@
   ],
   [
    {
-    "say": "[pause] Our second method, plugging in the answers. They ask for the smallest, so I start from the smallest choice, four. If the result is four, then a times b is four times fifteen, sixty.",
+    "say": "[pause] Now let's try plugging in the answers. They ask for the smallest, so I start from the smallest choice, four. If the result is four, then a times b is four times fifteen, sixty.",
     "at": [
-     "Our second",
+     "Now let's",
      "the answers. They",
      "the smallest, so",
      "the smallest choice",

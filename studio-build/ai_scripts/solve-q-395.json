@@ -25,10 +25,9 @@
     ]
    },
    {
-    "say": "[short pause] Our first method. First, the given. Thirty-five is five times seven. So x divides by thirty-five means x contains the prime five and the prime seven.",
+    "say": "[short pause] First, the given. Thirty-five is five times seven. So x divides by thirty-five means x contains the prime five and the prime seven.",
     "at": [
-     "Our first",
-     "the given. Thirty-five",
+     "First, the",
      "Thirty-five is five times seven",
      "So x divides",
      "means x contains",
@@ -144,9 +143,9 @@
   ],
   [
    {
-    "say": "[pause] Our second method, plugging in numbers. A statement that's not necessarily true fails for at least one example. So I pick numbers that fit, and look for a statement that fails. Five, seven and one. They're different, and their product is thirty-five.",
+    "say": "[pause] Now let's try plugging in numbers. A statement that's not necessarily true fails for at least one example. So I pick numbers that fit, and look for a statement that fails. Five, seven and one. They're different, and their product is thirty-five.",
     "at": [
-     "Our second",
+     "Now let's",
      "A statement that's",
      "true fails for",
      "So I pick",

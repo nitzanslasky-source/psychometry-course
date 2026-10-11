@@ -30,10 +30,9 @@
     ]
    },
    {
-    "say": "[short pause] Our first method. You already know how to take out a common factor. Picture x plus y, and ask what I can take out of both, in front of the brackets. Whatever comes out of both, divides both. And the biggest thing that comes out is the GCD.",
+    "say": "[short pause] You already know how to take out a common factor. Picture x plus y, and ask what I can take out of both, in front of the brackets. Whatever comes out of both, divides both. And the biggest thing that comes out is the GCD.",
     "at": [
-     "Our first",
-     "You already know",
+     "You already",
      "take out a",
      "Picture x plus y",
      "ask what I",
@@ -172,10 +171,10 @@
   ],
   [
    {
-    "say": "[pause] Our second method, going through the choices. The GCD has to divide both x and y. So first, I throw out every choice that doesn't divide both, and then, from what's left, I take the biggest.",
+    "say": "[pause] Now let's go through the choices. The GCD has to divide both x and y. So first, I throw out every choice that doesn't divide both, and then, from what's left, I take the biggest.",
     "at": [
-     "Our second",
-     "going through the choices",
+     "Now let's",
+     "go through the choices",
      "The GCD has",
      "both x and",
      "So first, I",

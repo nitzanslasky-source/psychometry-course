@@ -24,10 +24,9 @@
     ]
    },
    {
-    "say": "[short pause] Our first method. Why does matching work? A number breaks into primes in only one way. Wherever you start the factor tree, you end with the same primes. For example, eighteen. Two times nine breaks into two, three, three, and three times six breaks into three, two, three. The same primes, just in another order.",
+    "say": "[short pause] Why does matching work? A number breaks into primes in only one way. Wherever you start the factor tree, you end with the same primes. For example, eighteen. Two times nine breaks into two, three, three, and three times six breaks into three, two, three. The same primes, just in another order.",
     "at": [
-     "does matching work",
-     "breaks into primes",
+     "A number breaks",
      "in only one way",
      "Wherever you start",
      "tree, you end",
@@ -87,10 +86,10 @@
   ],
   [
    {
-    "say": "[pause] Our second method, dividing down. I divide by two as long as I can, and count. A hundred eight over two is fifty-four. Fifty-four over two is twenty-seven. Twenty-seven is odd, so no more twos. Two halvings, so a is two.",
+    "say": "[pause] Another way is to divide down. I divide by two as long as I can, and count. A hundred eight over two is fifty-four. Fifty-four over two is twenty-seven. Twenty-seven is odd, so no more twos. Two halvings, so a is two.",
     "at": [
-     "Our second",
-     "dividing down",
+     "Another way",
+     "divide down",
      "I divide by",
      "long as I",
      "count. A hundred",

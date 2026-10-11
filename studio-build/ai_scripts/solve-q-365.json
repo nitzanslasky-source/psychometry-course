@@ -14,36 +14,22 @@
    {
     "say": "This one is a hard analysis question, so let's take it slowly. And look at the wording, not necessarily true. So three choices are always true, and we're looking for the one that can fail. [short pause] Two ways, understanding first, and then plugging in numbers.",
     "at": [
-     "hard analysis question",
-     "take it slowly",
-     "at the wording",
-     "not necessarily true",
-     "choices are always",
-     "we're looking for",
-     "that can fail",
-     "understanding first, and"
+     "not necessarily true"
     ]
    },
    {
     "say": "[short pause] Our first method. The first given puts them in order, but we don't know any signs yet. They could all be positive, all negative, or a mix.",
     "at": [
-     "The first given",
-     "in order, but",
-     "know any signs",
-     "could all be",
-     "negative, or a"
+     "The first given"
     ]
    },
    {
     "say": "Now the second given. Without the bars, x is bigger than y. With the bars, y suddenly jumps above x. So what does that mean? Only a negative number changes when you put bars on it. So y must be negative.",
     "at": [
      "Without the bars",
-     "bigger than y",
      "With the bars",
-     "jumps above x",
      "So what does",
      "Only a negative",
-     "when you put",
      "So y must be negative"
     ]
    },
@@ -51,30 +37,21 @@
     "say": "Why? If y were zero or positive, x would be even bigger, and further from zero, so the bars would keep the same order.",
     "at": [
      "If y were zero or positive",
-     "positive, x would",
-     "bigger, and further",
-     "so the bars",
-     "the same order"
+     "bigger, and further"
     ]
    },
    {
     "say": "z is even smaller than y, so z is negative too, and further from zero.",
     "at": [
-     "z is even smaller",
-     "y, so z",
-     "too, and further"
+     "z is even smaller"
     ]
    },
    {
     "say": "And x? x has to be closer to zero than y. So x lives in the band between y and minus y. It could be on the left of zero, it could be on the right, and it could even be zero.",
     "at": [
      "x has to",
-     "to zero than",
      "x lives in the band",
-     "between y and",
      "It could be",
-     "left of zero",
-     "be on the right",
      "it could even be zero"
     ]
    },
@@ -82,11 +59,8 @@
     "say": "Now number three says x is not equal to its absolute value. That claims x must be negative. But x could be two, or zero, and then x is equal to its absolute value. So it's not necessarily true. Number three is our answer.",
     "at": [
      "Now number three says",
-     "is not equal",
      "That claims x",
      "But x could",
-     "or zero, and",
-     "is equal to",
      "So it's not",
      "Number three is our answer"
     ]
@@ -95,11 +69,8 @@
     "say": "In the exam you'd circle it and move on. Here, let's quickly see why the others are always true. z and y are both negative, and z is further left, so z is further from zero. Number one, always true.",
     "at": [
      "In the exam",
-     "it and move",
      "Here, let's quickly",
-     "the others are",
      "z and y are both",
-     "negative, and z",
      "left, so z",
      "Number one, always true"
     ]
@@ -108,37 +79,20 @@
     "say": "z is negative, so it's not equal to its absolute value. Number two, always true. And z is further from zero than y, and y is further than x. So z is further than x. Number four, always true.",
     "at": [
      "z is negative",
-     "not equal to",
      "Number two, always true",
      "And z is",
-     "zero than y",
-     "is further than",
      "So z is",
      "Number four, always true"
     ]
    }
   ],
   [
-   {
-    "say": "[pause] Our second method, plugging in numbers. In a not necessarily question, one allowed example that breaks a choice is enough. So I need numbers that obey both givens, and I'll find them by trying.",
-    "at": [
-     "in numbers. In",
-     "necessarily question, one",
-     "that breaks a",
-     "enough. So I",
-     "that obey both",
-     "I'll find them"
-    ]
-   },
+   "[pause] Our second method, plugging in numbers. In a not necessarily question, one allowed example that breaks a choice is enough. So I need numbers that obey both givens, and I'll find them by trying.",
    {
     "say": "Why start with positive numbers? Because they're the most natural guess. z is one, y is two, x is three. They're in order. But is the absolute value of three smaller than the absolute value of two? No. So that try fails.",
     "at": [
-     "numbers? Because they're",
      "z is one",
-     "two, x is",
      "But is the",
-     "of three smaller",
-     "absolute value of two",
      "So that try fails"
     ]
    },
@@ -147,25 +101,17 @@
     "at": [
      "What went wrong",
      "x has to",
-     "than y, but",
      "If y is",
-     "positive, a bigger",
-     "always further from",
      "So y has",
-     "negative, and far",
-     "y is negative four",
-     "z is even"
+     "y is negative four"
     ]
    },
    {
     "say": "Now x. It has to be bigger than negative four, but closer to zero than four. Which one do I pick? Number three is about the sign of x, so a positive x is where something might break. x is two.",
     "at": [
      "It has to",
-     "than negative four",
-     "to zero than",
      "Which one do",
      "Number three is",
-     "sign of x",
      "positive x is",
      "x is two"
     ]
@@ -176,18 +122,14 @@
     "at": [
      "Check the givens",
      "Negative five, negative",
-     "they're in order",
-     "And the absolute",
-     "two is smaller"
+     "And the absolute"
     ]
    },
    {
     "say": "Number three says x is not equal to its absolute value. But two is equal to the absolute value of two. It breaks, so number three.",
     "at": [
      "Number three says",
-     "not equal to",
      "But two is equal",
-     "the absolute value",
      "so number three"
     ]
    },
@@ -205,9 +147,7 @@
    {
     "say": "So when the bars change the order, think negative, because only a negative number changes under the bars. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "change the order",
-     "think negative",
-     "negative number changes"
+     "think negative"
     ]
    }
   ]

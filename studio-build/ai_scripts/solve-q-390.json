@@ -25,9 +25,9 @@
     ]
    },
    {
-    "say": "[short pause] Our first method, primes. If ten divides the number, the number contains all of ten. And if twenty-five divides it, it contains all of twenty-five. So let's break both. Ten is two times five, and twenty-five is five times five.",
+    "say": "[short pause] Let's start with primes. If ten divides the number, the number contains all of ten. And if twenty-five divides it, it contains all of twenty-five. So let's break both. Ten is two times five, and twenty-five is five times five.",
     "at": [
-     "Our first",
+     "Let's start",
      "If ten divides",
      "the number contains",
      "And if twenty-five",
@@ -102,13 +102,13 @@
   ],
   [
    {
-    "say": "[pause] Our second method, the smallest number that fits. A number that's guaranteed to divide must divide every number that fits, so it must divide even the smallest one. So let's find the smallest number that both ten and twenty-five divide. Remember the common denominator from fractions, I run through the multiples of the bigger one.",
+    "say": "[pause] Another way is to look at the smallest number that fits. A number that's guaranteed to divide must divide every number that fits, so it must divide even the smallest one. So let's find the smallest number that both ten and twenty-five divide. Remember the common denominator from fractions, I run through the multiples of the bigger one.",
     "at": [
-     "Our second",
-     "number that fits",
-     "that's guaranteed to",
-     "divide every number",
-     "so it must",
+     "Another way",
+     "at the smallest",
+     "fits. A number",
+     "to divide must",
+     "number that fits, so",
      "divide even the smallest one",
      "So let's find",
      "both ten and",
@@ -153,9 +153,9 @@
   ],
   [
    {
-    "say": "[pause] Our third method, a short formula. The GCD times the LCM equals the two numbers multiplied. Why? Multiplying ten by twenty-five counts the shared five twice. Dividing by the GCD, the part they share, takes the extra five off.",
+    "say": "[pause] And there's a short formula too. The GCD times the LCM equals the two numbers multiplied. Why? Multiplying ten by twenty-five counts the shared five twice. Dividing by the GCD, the part they share, takes the extra five off.",
     "at": [
-     "Our third",
+     "And there's",
      "The GCD times the LCM",
      "equals the two",
      "Why? Multiplying ten",

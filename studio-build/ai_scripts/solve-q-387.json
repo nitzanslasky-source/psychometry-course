@@ -27,7 +27,7 @@
     ]
    },
    {
-    "say": "[short pause] Our first method, trial and error. Remember, with primes we can simply try numbers against the conditions. Let's start with three, a small prime whose powers are easy to build up.",
+    "say": "[short pause] Remember, with primes we can simply try numbers against the conditions. Let's start with three, a small prime whose powers are easy to build up.",
     "at": [
      "Remember, with primes",
      "simply try numbers",
@@ -87,9 +87,8 @@
   ],
   [
    {
-    "say": "[pause] Our second method, plugging in the answers. Each choice is nine x, so to get x back, I divide the choice by nine. Twenty-seven over nine is three, eighteen over nine is two, sixty-three over nine is seven, and forty-five over nine is five.",
+    "say": "[pause] Each choice is nine x, so to get x back, I divide the choice by nine. Twenty-seven over nine is three, eighteen over nine is two, sixty-three over nine is seven, and forty-five over nine is five.",
     "at": [
-     "in the answers",
      "Each choice is nine x",
      "so to get",
      "I divide the choice",

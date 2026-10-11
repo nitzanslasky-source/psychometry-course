@@ -15,21 +15,14 @@
     "say": "So three letters, three givens, and every choice puts the letters in order. Most absolute-value questions on the exam are understanding questions, and this is one of them. [short pause] We'll solve it two ways, understanding first, and then plugging in numbers.",
     "at": [
      "every choice puts",
-     "the letters in order",
-     "absolute-value questions on",
-     "are understanding questions",
-     "is one of",
-     "solve it two",
-     "first, and then"
+     "the letters in order"
     ]
    },
    {
     "say": "[short pause] Our first method. The absolute value of n is m, so n and m are the same distance from zero. But they're not equal. So what does that tell me?",
     "at": [
      "The absolute value of n is m",
-     "is m, so",
      "m are the",
-     "from zero. But",
      "So what does"
     ]
    },
@@ -37,11 +30,7 @@
     "say": "m is an absolute value, so m can't be negative. It's zero or positive. Could m be zero? Then n is zero too, and they'd be equal. Not allowed. So m is positive.",
     "at": [
      "m is an absolute value",
-     "so m can't",
-     "It's zero or",
-     "m be zero",
      "Then n is",
-     "and they'd be",
      "So m is positive"
     ]
    },
@@ -49,43 +38,29 @@
     "say": "And n is the same distance from zero, but it's a different number. So n is the negative one, n is minus m.",
     "at": [
      "And n is",
-     "distance from zero",
-     "a different number",
-     "So n is the negative one",
-     "one, n is"
+     "So n is the negative one"
     ]
    },
    {
     "say": "Now, four k is equal to m. So to get from m to k, I divide by four. And dividing a positive number by four, or by a thousand, or by a million, gets closer and closer to zero, but it never goes negative. So k is positive, and smaller than m.",
     "at": [
      "four k is equal to m",
-     "m. So to",
-     "m to k",
      "I divide by four",
      "And dividing a",
-     "by four, or",
-     "thousand, or by",
-     "gets closer and",
-     "zero, but it",
-     "So k is positive",
-     "smaller than m"
+     "So k is positive"
     ]
    },
    {
     "say": "On the number line, n is on the left, then zero, then k, and m is as far from zero as n.",
     "at": [
      "On the number line",
-     "is on the",
-     "zero, then k",
-     "is as far"
+     "zero, then k"
     ]
    },
    {
     "say": "So n is the smallest, k is in the middle, and m is the biggest. n, k, m, that's number two.",
     "at": [
      "n is the smallest",
-     "is in the",
-     "m is the",
      "that's number two"
     ]
    }
@@ -94,15 +69,9 @@
    {
     "say": "[pause] Our second method, plugging in numbers. I need numbers that obey all three givens. Let's start with m. m is equal to an absolute value, so it can't be negative. Why four for m? Because four k is m, so I'll divide m by four, and four divides easily.",
     "at": [
-     "in numbers. I",
      "obey all three givens",
-     "start with m",
-     "equal to an",
-     "so it can't",
      "Why four for m",
-     "Because four k",
-     "so I'll divide",
-     "four, and four"
+     "Because four k"
     ]
    },
    {
@@ -110,9 +79,6 @@
     "at": [
      "try n is four",
      "The absolute value",
-     "is four, that's",
-     "n has to",
-     "from m, so",
      "this pick is bad"
     ]
    },
@@ -120,10 +86,7 @@
     "say": "n is negative four. Its absolute value is four, so it's equal to m, and it's different from m. Now both givens work.",
     "at": [
      "n is negative four",
-     "Its absolute value",
-     "so it's equal",
-     "and it's different",
-     "Now both givens"
+     "Its absolute value"
     ]
    },
    {
@@ -131,30 +94,23 @@
     "voice": "calm",
     "at": [
      "Four k is",
-     "m is four",
-     "four k is four",
-     "k is one"
+     "four k is four"
     ]
    },
    {
     "say": "Negative four, one, four. So n, then k, then m, that's number two. And the others break with these numbers. Number one says four is smaller than one, no. Number three also puts four below one, no. Number four says one is smaller than negative four, no.",
     "at": [
      "Negative four, one, four",
-     "n, then k",
      "that's number two",
      "And the others",
      "Number one says",
-     "smaller than one",
      "Number three also",
-     "below one, no",
-     "Number four says",
-     "smaller than negative"
+     "Number four says"
     ]
    },
    {
     "say": "And when your first pick breaks a given, don't give up, just change the pick. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "pick breaks a",
      "just change the pick"
     ]
    }

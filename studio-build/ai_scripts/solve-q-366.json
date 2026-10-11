@@ -14,8 +14,6 @@
    {
     "say": "Unlike the last few questions, this is a technique question. And before we start, let's understand the wording. Possible, but not necessarily true.",
     "at": [
-     "questions, this is",
-     "question. And before",
      "the wording"
     ]
    },
@@ -23,38 +21,25 @@
     "say": "So anything that's never true is not possible, and it's out. And anything that's always true is necessarily true, so it's out too. We want the one that's sometimes true and sometimes not. [short pause] Two ways, the rules first, and then plugging in numbers.",
     "at": [
      "never true",
-     "and it's out",
      "always true",
-     "so it's out",
-     "We want the",
-     "sometimes true and",
-     "Two ways, the",
-     "and then plugging"
+     "We want the"
     ]
    },
    {
     "say": "[short pause] Our first method. Choice number one looks like the given, with brackets instead of bars, and a square. Both sides of the given are positive, so I'm allowed to square them. Why? Remember, with positive numbers, the bigger number also has the bigger square. Three squared, three times three, is nine.",
     "at": [
      "Number one looks",
-     "given, with brackets",
      "bars, and a",
-     "sides of the",
-     "positive, so I'm",
      "square them",
      "Remember, with positive",
-     "bigger number also",
      "Three squared, three"
     ]
    },
    {
     "say": "And x plus y in absolute value, squared, is the same as x plus y, squared. A square doesn't care about the sign. So choice number one is always true, and it's out.",
     "at": [
-     "in absolute value",
      "is the same as",
-     "plus y, squared",
      "A square doesn't",
-     "the sign. So",
-     "one is always",
      "and it's out"
     ]
    },
@@ -62,18 +47,14 @@
     "say": "And there's a much simpler way to see it. Bars and an even power behave the same way. What's true with bars is true with a square.",
     "at": [
      "And there's a",
-     "way to see",
      "Bars and an even power",
-     "behave the same",
-     "What's true with",
-     "true with a"
+     "What's true with"
     ]
    },
    {
     "say": "Choice number two, let's leave it for the end.",
     "at": [
-     "Number two",
-     "for the end"
+     "Number two"
     ]
    },
    {
@@ -81,12 +62,8 @@
     "at": [
      "Number three",
      "The absolute value",
-     "y, against the",
-     "of x times",
-     "value of y",
      "you can split the bars",
      "So these two",
-     "equal, never smaller",
      "Never true, so it's out"
     ]
    },
@@ -95,12 +72,9 @@
     "at": [
      "Number four",
      "Inside the bars",
-     "five x plus",
      "Take out the common factor",
-     "five, and it's",
      "x plus y",
-     "That's five times",
-     "value of x"
+     "That's five times"
     ]
    },
    {
@@ -108,28 +82,18 @@
     "at": [
      "smaller than five times itself",
      "That's true for",
-     "number. Could it",
-     "if x plus",
      "the given says",
-     "than three in",
      "always true, out"
     ]
    },
    {
     "say": "Three are out, so in the exam you'd circle choice number two. Here, let's see why it's right. The rule from the lesson says the absolute value of a sum is smaller than or equal to the sum of the absolute values. They're equal when x and y have the same sign, and it's smaller when the signs are opposite. So sometimes true, sometimes not. Choice number two is our answer.",
     "at": [
-     "in the exam",
      "circle choice number two",
      "Here, let's see",
      "The rule from the lesson",
-     "says the absolute",
      "a sum is",
-     "or equal to",
-     "of the absolute",
      "They're equal when",
-     "y have the",
-     "and it's smaller",
-     "signs are opposite",
      "So sometimes true",
      "Number two is our answer"
     ]
@@ -141,14 +105,8 @@
     "at": [
      "Our second",
      "I'll try one",
-     "the same sign",
-     "with opposite signs",
-     "are what the",
      "First, x four",
-     "one, small and",
      "plus one is",
-     "five is bigger",
-     "so they fit",
      "the given"
     ]
    },
@@ -158,19 +116,10 @@
     "at": [
      "number one, five",
      "five squared is twenty-five",
-     "twenty-five is bigger",
      "number two, the",
-     "of four plus",
      "five, and four",
-     "is also five",
-     "than five? No",
      "number three, four",
-     "is four, in",
-     "and four times",
-     "four. Four smaller",
-     "number four, five",
-     "is twenty-five, and five",
-     "smaller than twenty-five"
+     "number four, five"
     ]
    },
    {
@@ -178,12 +127,7 @@
     "at": [
      "Why x six",
      "Because with opposite",
-     "cancel, so I",
-     "of them much",
-     "keep the sum",
-     "Six plus negative",
-     "four, and four",
-     "than three, so"
+     "Six plus negative"
     ]
    },
    {
@@ -192,32 +136,20 @@
     "at": [
      "number one, four",
      "four squared is sixteen",
-     "than nine, true",
      "number two, the",
-     "of six is",
      "of negative two",
-     "so six plus",
-     "eight. Four smaller",
      "True this",
      "number three, six",
-     "two is negative",
-     "bars twelve, and",
-     "two is twelve",
-     "than twelve? No",
-     "number four, five",
-     "is twenty, and",
-     "smaller than twenty"
+     "number four, five"
     ]
    },
    {
     "say": "So choice number two was false once and true once. That's exactly possible but not necessarily. Choice number three was never true, and choice numbers one and four were true both times. Choice number two.",
     "at": [
      "number two was",
-     "and true once",
      "That's exactly possible",
      "number three was",
      "numbers one and",
-     "true both times",
      "Number two."
     ]
    },

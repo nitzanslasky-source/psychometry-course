@@ -15,25 +15,16 @@
     "say": "So they're asking what an expression is equal to, and all we know is that x is negative. And what did we say about an expression with a letter? We're allowed to plug in a number. [short pause] So we'll start with plugging in, and then we'll do the algebra.",
     "at": [
      "what an expression",
-     "all we know",
-     "x is negative",
-     "did we say",
-     "expression with a",
-     "allowed to plug",
-     "plugging in, and",
-     "do the algebra"
+     "all we know"
     ]
    },
    {
     "say": "[short pause] Our first method, plugging in numbers. x has to be negative, so I'll take negative two. Why negative two? Before I plug in, I glance at the choices. At negative two they give fourteen, six, two and twelve, all different. So one plug-in will be enough.",
     "at": [
      "Our first",
-     "numbers. x has",
      "I'll take negative two",
-     "negative two? Before",
      "I glance at the choices",
      "At negative two they give",
-     "fourteen, six, two",
      "So one plug-in"
     ]
    },
@@ -41,7 +32,6 @@
     "say": "Negative six would be a bad pick, by the way. Then minus x is six, and two choices would come out the same.",
     "at": [
      "Negative six would",
-     "bad pick, by",
      "Then minus x is six",
      "two choices"
     ]
@@ -52,8 +42,6 @@
     "at": [
      "four times negative two",
      "The absolute value",
-     "two is two",
-     "over two is",
      "ten minus four is six"
     ]
    },
@@ -72,20 +60,14 @@
     "at": [
      "Our second",
      "x is negative",
-     "its absolute value",
      "To turn a",
-     "positive, I take",
-     "So the absolute value of x is minus x",
-     "x is minus"
+     "So the absolute value of x is minus x"
     ]
    },
    {
     "say": "Now careful here. A lot of students see minus x and think it's negative. It isn't. x itself is negative, so minus x is positive.",
     "at": [
-     "lot of students",
      "see minus x",
-     "it's negative. It",
-     "itself is negative",
      "so minus x"
     ]
    },
@@ -94,8 +76,6 @@
     "voice": "calm",
     "at": [
      "So four x over minus x",
-     "x. The x's",
-     "four over minus",
      "is negative four",
      "Ten minus four"
     ]
@@ -104,22 +84,16 @@
     "say": "And remember this one from earlier in the course. x over its absolute value is always one or minus one. When x is negative, like negative eight over eight, it's minus one.",
     "at": [
      "And remember this",
-     "earlier in the",
-     "over its absolute",
      "always one or minus one",
-     "When x is",
-     "like negative eight",
-     "it's minus one"
+     "like negative eight"
     ]
    },
    {
     "say": "So the answer doesn't depend on x at all. That's why numbers three and four, with an x in them, can't be right. So six again, number two.",
     "at": [
      "So the answer",
-     "on x at",
      "numbers three",
      "and four",
-     "in them, can't",
      "So six again"
     ]
    },

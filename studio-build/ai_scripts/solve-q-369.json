@@ -15,24 +15,14 @@
     "say": "A double inequality with bars, and ranges in the choices. We'll solve it three ways, two bands, splitting it in two, and plugging in the answers. [short pause] And there's a bait in the choices, so I'll show you where it comes from.",
     "at": [
      "A double inequality",
-     "ranges in the choices",
-     "solve it three",
-     "bands, splitting it",
-     "and plugging in",
-     "And there's a",
-     "the choices, so",
-     "you where it"
+     "ranges in the choices"
     ]
    },
    {
     "say": "[short pause] Our first method, two bands. Two x minus one, in bars, is between seven and nine. So the inside is between seven and nine, or, on the negative side, between minus nine and minus seven.",
     "at": [
-     "bands. Two x",
-     "in bars, is",
      "So the inside is",
-     "seven and nine, or",
-     "on the negative side",
-     "minus nine and"
+     "on the negative side"
     ]
    },
    {
@@ -40,10 +30,7 @@
     "at": [
      "Careful with the",
      "Minus nine is the smaller",
-     "one, so it",
-     "Minus nine is smaller",
-     "two x minus",
-     "is smaller than minus"
+     "Minus nine is smaller"
     ]
    },
    {
@@ -53,11 +40,8 @@
      "The positive band",
      "Add one to all three",
      "Seven plus one",
-     "and nine plus",
-     "ten, so eight",
      "Divide all three",
      "Eight over two",
-     "and ten over",
      "So x is"
     ]
    },
@@ -66,29 +50,19 @@
     "at": [
      "take one off",
      "Seven minus one",
-     "nine minus one",
-     "and over two",
      "That's choice number one",
      "the bait",
-     "number four is the same",
-     "mistake on the"
+     "number four is the same"
     ]
    },
    {
     "say": "Four to five isn't in the choices, so on to the negative band. Add one to all three parts. Minus nine plus one is minus eight, and minus seven plus one is minus six. Divide by two. Minus eight over two is minus four, and minus six over two is minus three. So x is between minus four and minus three.",
     "at": [
      "isn't in the choices",
-     "on to the",
      "Add one to all three",
      "Minus nine plus",
-     "minus eight, and",
-     "plus one is minus six",
-     "Divide by two",
      "Minus eight over",
-     "minus four, and",
-     "over two is minus three",
-     "So x is",
-     "four and minus"
+     "So x is"
     ]
    },
    {
@@ -96,9 +70,7 @@
     "at": [
      "that's exactly choice number three",
      "On the number line",
-     "small bands, one",
-     "Minus four to",
-     "and four to"
+     "Minus four to"
     ]
    }
   ],
@@ -108,8 +80,6 @@
     "at": [
      "Our second",
      "The bars smaller than nine",
-     "means the inside",
-     "between minus nine",
      "Add one, minus",
      "Divide by two",
      "So x is"
@@ -119,14 +89,9 @@
     "say": "The bars bigger than seven means the inside is above seven, or below minus seven. Seven plus one is eight, over two is four. Minus seven plus one is minus six, over two is minus three. So x is above four, or below minus three.",
     "at": [
      "The bars bigger than seven",
-     "means the inside",
-     "seven, or below",
      "Seven plus one",
-     "over two is",
      "Minus seven plus",
-     "minus six, over",
-     "So x is",
-     "or below minus three"
+     "So x is"
     ]
    },
    {
@@ -134,20 +99,14 @@
     "at": [
      "Both have to hold",
      "Between minus four",
-     "and above four",
      "Between minus four and five, and below",
-     "and below minus",
-     "minus four to",
-     "And minus four",
      "is choice number three"
     ]
    },
    {
     "say": "It's longer here, but this split is super useful in other absolute-value questions.",
     "at": [
-     "It's longer",
-     "split is super",
-     "other absolute-value questions"
+     "It's longer"
     ]
    }
   ],
@@ -157,15 +116,10 @@
     "at": [
      "Our third",
      "If a range",
-     "every number in",
-     "to work. So",
-     "an easy number",
-     "range, and if",
      "the given, the",
      "number one, three",
      "three and a half",
      "Two times it",
-     "minus one, six",
      "seven, out"
     ]
    },
@@ -176,7 +130,6 @@
      "number two, five",
      "five and a half",
      "Two times it",
-     "minus one, ten",
      "nine, out"
     ]
    },
@@ -187,7 +140,6 @@
      "number three, minus",
      "minus three and a half",
      "Two times it",
-     "seven, minus one",
      "In bars, eight",
      "it works"
     ]
@@ -199,7 +151,6 @@
      "number four, minus",
      "minus four and a half",
      "Times two is",
-     "minus one, minus",
      "In bars, ten"
     ]
    },

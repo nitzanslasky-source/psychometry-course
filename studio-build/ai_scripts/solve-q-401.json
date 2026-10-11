@@ -20,13 +20,13 @@
      "decide that m is prime too",
      "it's m squared that's prime",
      "two ways, understanding",
-     "first, and"
+     "then plugging in"
     ]
    },
    {
-    "say": "[short pause] Our first method. Remember, a prime can't be broken into two smaller whole numbers. So what if m were a whole number? Then m squared is m times m. Let's see it in numbers. Three squared is nine, three times three, so it breaks, not prime. Four squared is sixteen, four times four, it breaks too.",
+    "say": "[short pause] Remember, a prime can't be broken into two smaller whole numbers. So what if m were a whole number? Then m squared is m times m. Let's see it in numbers. Three squared is nine, three times three, so it breaks, not prime. Four squared is sixteen, four times four, it breaks too.",
     "at": [
-     "Remember, a prime",
+     "Remember, a",
      "broken into two",
      "what if m were",
      "Then m squared",
@@ -74,9 +74,9 @@
   ],
   [
    {
-    "say": "[pause] Our second method, plugging in numbers. Here I don't pick m, I pick m squared, because the given is about m squared. m squared is a prime, so let's take the smallest prime, two.",
+    "say": "[pause] Now let's try plugging in numbers. Here I don't pick m, I pick m squared, because the given is about m squared. m squared is a prime, so let's take the smallest prime, two.",
     "at": [
-     "Our second",
+     "Now let's",
      "numbers. Here I",
      "m, I pick",
      "the given is about",

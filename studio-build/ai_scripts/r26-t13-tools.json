@@ -9,8 +9,7 @@
    {
     "say": "First, a square and the bars do the same thing to the sign. They both remove it. So the absolute value of x, squared, is just x squared.",
     "at": [
-     "So the absolute value of x",
-     "x, squared, is"
+     "So the absolute value of x"
     ]
    },
    {
@@ -18,46 +17,31 @@
     "at": [
      "Take negative six",
      "Bars first, the",
-     "of negative six",
-     "and six squared",
-     "Without the bars",
-     "squared is also"
+     "Without the bars"
     ]
    },
    {
     "say": "Why does this work? Squaring kills the sign, and so do the bars. So once you square, it doesn't matter if the bars are there or not.",
     "at": [
      "Squaring kills the sign",
-     "so do the",
-     "So once you",
-     "doesn't matter if",
-     "are there or"
+     "So once you"
     ]
    },
    {
     "say": "And you saw the other direction with roots. The square root of x squared is the absolute value of x, not x. The root of negative six squared is the root of thirty-six, and that's six.",
     "at": [
      "And you saw",
-     "direction with roots",
      "The square root of x squared",
-     "squared is the",
-     "of x, not",
-     "The root of",
-     "squared is the root",
-     "thirty-six, and that's"
+     "The root of"
     ]
    },
    {
     "say": "[short pause] Second, the order inside the bars doesn't matter. a minus b and b minus a are always opposites. Opposites attract, so together they cancel out to zero. But each one alone is the same distance from zero.",
     "at": [
      "the order inside the bars",
-     "doesn't matter. a",
-     "and b minus",
      "always opposites",
      "Opposites attract, so",
-     "cancel out to",
-     "But each one",
-     "the same distance"
+     "But each one"
     ]
    },
    {
@@ -65,7 +49,6 @@
     "voice": "calm",
     "at": [
      "Two minus nine",
-     "seven, and its",
      "Nine minus two"
     ]
    },
@@ -73,8 +56,7 @@
     "say": "So inside the bars, I can switch the order. a minus b, or b minus a, it's the same thing.",
     "at": [
      "I can switch the order",
-     "a minus b",
-     "minus a, it's"
+     "a minus b"
     ]
    }
   ],
@@ -83,18 +65,14 @@
     "say": "[short pause] Now the distance. Remember from the lesson, the absolute value of x minus a number is the distance between x and that number. Nine minus two in bars is seven, and from two to nine is exactly seven steps.",
     "at": [
      "the absolute value of x minus a number",
-     "minus a number",
      "distance between x",
-     "Nine minus two",
-     "is seven, and",
-     "to nine is"
+     "Nine minus two"
     ]
    },
    {
     "say": "So how do I read the absolute value of x minus three, smaller than four? x is less than four steps away from three.",
     "at": [
      "So how do I read",
-     "the absolute value",
      "minus three, smaller",
      "less than four steps"
     ]
@@ -104,29 +82,21 @@
     "at": [
      "Start at three",
      "Four steps to",
-     "is negative one",
-     "steps to the right",
-     "So x is anywhere",
-     "negative one and"
+     "So x is anywhere"
     ]
    },
    {
     "say": "And careful with a plus inside. x plus five is x minus negative five, so it's the distance from negative five.",
     "at": [
      "a plus inside",
-     "x plus five",
-     "minus negative five",
-     "the distance from"
+     "x plus five"
     ]
    },
    {
     "say": "So two tools. Squares and bars both remove the sign, and the order inside the bars doesn't matter. And bars around x minus a number mean distance. [pause] Okay. I'll see you in the next video.",
     "at": [
      "Squares and bars",
-     "the sign, and",
-     "inside the bars",
-     "And bars around",
-     "a number mean"
+     "And bars around"
     ]
    }
   ]

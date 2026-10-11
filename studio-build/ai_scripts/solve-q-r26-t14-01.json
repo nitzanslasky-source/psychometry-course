@@ -25,11 +25,10 @@
     ]
    },
    {
-    "say": "[short pause] Our first method. Remember, to test a number, I divide it by the primes up to its square root, and no further. If none of them divides it, it's prime. Let's start with ninety-one. Nine squared is eighty-one, and ten squared is a hundred. So the root of ninety-one is between nine and ten, and I only try two, three, five and seven.",
+    "say": "[short pause] Remember, to test a number, I divide it by the primes up to its square root, and no further. If none of them divides it, it's prime. Let's start with ninety-one. Nine squared is eighty-one, and ten squared is a hundred. So the root of ninety-one is between nine and ten, and I only try two, three, five and seven.",
     "at": [
-     "Our first",
-     "test a number",
-     "it by the",
+     "Remember, to",
+     "I divide it",
      "up to its square root",
      "and no further",
      "If none of",

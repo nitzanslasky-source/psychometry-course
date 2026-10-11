@@ -14,15 +14,9 @@
    {
     "say": "So we know the order of four numbers. And look at the answers, every one of them uses absolute value. And what's absolute value? Distance from zero. So the question is really, who is further from zero? [short pause] Two ways, the number line, and then plugging in numbers.",
     "at": [
-     "order of four",
      "look at the answers",
      "every one of them",
-     "absolute value. And",
-     "value? Distance from",
-     "the question is",
-     "is further from",
-     "ways, the number",
-     "then plugging in"
+     "the question is"
     ]
    },
    {
@@ -31,23 +25,16 @@
      "Our first",
      "on the number line",
      "p and q",
-     "and p is",
-     "r and s",
-     "and s is"
+     "r and s"
     ]
    },
    {
     "say": "There are two things we can promise. s is always further from zero than r, both on the right. And p is always further from zero than q, both on the left. We don't know by how much, but always.",
     "at": [
      "two things we can promise",
-     "s is always",
-     "zero than r",
      "both on the right",
      "And p is",
-     "from zero than q",
-     "on the left",
-     "We don't know",
-     "much, but always"
+     "We don't know"
     ]
    },
    {
@@ -55,37 +42,26 @@
     "at": [
      "a negative against a positive",
      "The negatives could",
-     "one and negative",
-     "the positives a",
      "Or the other",
-     "We only know",
-     "not the numbers"
+     "We only know"
     ]
    },
    {
     "say": "So number one compares r and p, a positive and a negative. Not necessarily, out. Number three, p and s, different sides again, out. Number four, q and s, different sides, out.",
     "at": [
      "number one compares",
-     "p, a positive",
      "Not necessarily, out",
-     "p and s",
      "sides again, out",
-     "q and s",
      "different sides, out"
     ]
    },
    {
     "say": "Three are out, so in the exam you'd circle number two and move on. Here, let's see why it's right. q and p are both negative, and p is further from zero. So the absolute value of q is smaller than the absolute value of p. Number two is our answer.",
     "at": [
-     "in the exam",
      "circle number two",
      "Here, let's see",
-     "right. q and",
      "both negative",
-     "further from zero",
      "So the absolute",
-     "q is smaller",
-     "absolute value of p",
      "Number two is our answer"
     ]
    }
@@ -96,15 +72,10 @@
     "at": [
      "Our second",
      "The givens only",
-     "order, not the",
      "So the trick",
-     "try two extreme",
      "First, the negatives",
-     "zero and the",
      "p is negative fifty",
-     "negative forty, r",
-     "They're in order",
-     "obey the given"
+     "They're in order"
     ]
    },
    {
@@ -112,9 +83,7 @@
     "voice": "calm",
     "at": [
      "Number one, one",
-     "fifty? Yes, it",
      "Number two, forty",
-     "fifty? Yes, it stays. Number three",
      "Number three, fifty",
      "No, out",
      "forty smaller than three"
@@ -124,10 +93,7 @@
     "say": "Now the opposite picture, the negatives close to zero and the positives far. p is negative three, q negative one, r forty and s fifty.",
     "at": [
      "Now the opposite",
-     "negatives close to",
-     "the positives far",
-     "p is negative three",
-     "negative one, r"
+     "p is negative three"
     ]
    },
    {
@@ -138,19 +104,15 @@
      "No, out",
      "Number two, one",
      "Yes, and it",
-     "the first picture",
      "survives both"
     ]
    },
    {
     "say": "So when the letters sit on both sides of zero, try one picture with the negatives far away, and one with the positives far away. Same side, you can compare. Different sides, you can't. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "sit on both",
-     "zero, try one",
      "the negatives far away",
      "the positives far away",
-     "Same side, you",
-     "Different sides, you"
+     "Same side, you"
     ]
    }
   ]

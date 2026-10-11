@@ -25,9 +25,9 @@
     ]
    },
    {
-    "say": "[short pause] Our first method, divisor pairs. Divisors come in pairs that multiply to the number. Take eighteen. One times eighteen, two times nine, three times six. Six divisors, in three pairs.",
+    "say": "[short pause] Let's start with divisor pairs. Divisors come in pairs that multiply to the number. Take eighteen. One times eighteen, two times nine, three times six. Six divisors, in three pairs.",
     "at": [
-     "Our first",
+     "Let's start",
      "Divisors come in",
      "multiply to the",
      "Take eighteen",
@@ -104,9 +104,9 @@
   ],
   [
    {
-    "say": "[pause] Our second method, plugging in a number. I need a k with exactly three divisors, so let's try small numbers and count. Two has one and two, only two divisors. Three, the same. Four has one, two and four. Three divisors, so k is four.",
+    "say": "[pause] Now let's try plugging in a number. I need a k with exactly three divisors, so let's try small numbers and count. Two has one and two, only two divisors. Three, the same. Four has one, two and four. Three divisors, so k is four.",
     "at": [
-     "Our second",
+     "Now let's",
      "I need a",
      "exactly three divisors",
      "try small numbers",

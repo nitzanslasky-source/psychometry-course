@@ -522,6 +522,7 @@ Check every AI script line by line. The numbers in brackets are evidence from §
   3. a first reaction from the stem or the choices ("All the answers are one term, so…")
   4. "We'll solve this two ways."
   - The standard / algebra way comes first, unless you say why not.
+  - No "Our first method / Our second method / And our third method" lines (teacher, 2026-10-11: she skips them, and the on-screen method title already names the method; "just make sure it's flowing"). Announce the methods once, at the start ("We'll solve this two ways, …"). At each switch, use a natural spoken transition in her style: "Let's start with the divisor pairs.", "Now let's try plugging in the answers.", "Another way is to think about the extremes.", "And there's a short formula too." Never an abrupt jump into the next method.
 - **R14. The answer line is the value plus the number, said calmly:** "So x is 6, choice number two is our answer." (R34: always "choice number N".) Never "choice two", and never a build-up pause before it. (She dropped the number in 85 of 154 takes. The AI must not.) Checks go **inside** the step ("let's check with a = 3"), not in a list after the answer.
 - **R15. Plugging in, every time:**
   1. Say which number, where it goes (the whole, the start), and **why**, before using it. Use 100 for percents.

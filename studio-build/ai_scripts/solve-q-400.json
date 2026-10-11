@@ -24,10 +24,10 @@
     ]
    },
    {
-    "say": "[short pause] Our first method. So I don't miss any, I go in order, first every pair of cards, and then all three together. Does the order of the cards matter? No, two times five and five times two are the same product, so each pair counts once.",
+    "say": "[short pause] So I don't miss any, I go in order, first every pair of cards, and then all three together. Does the order of the cards matter? No, two times five and five times two are the same product, so each pair counts once.",
     "at": [
-     "Our first",
-     "don't miss any",
+     "So I",
+     "I go in",
      "first every pair",
      "and then all",
      "Does the order",
@@ -84,11 +84,10 @@
   ],
   [
    {
-    "say": "[pause] Our second method, a quick look at the choices. One of the products is all three cards together, two times five times seven, seventy. And the pairs add more on top of it. So the sum is more than seventy.",
+    "say": "[pause] Now a quick look at the choices. One of the products is all three cards together, two times five times seven, seventy. And the pairs add more on top of it. So the sum is more than seventy.",
     "at": [
-     "Our second",
-     "look at the",
-     "of the products",
+     "Now a",
+     "the choices. One",
      "all three cards together",
      "times five times",
      "the pairs add more",

@@ -434,7 +434,7 @@ video('solve-q-387', 'solution', qid='q-387', slides=[
         "fast, so x must be a small number. And look, they don't ask for x, they ask for nine x. [short pause] We'll solve "
         "it two ways, trial and error first, and then plugging in the answers.",
         pt('stem', 'x is a prime'), show(h0, 'only two digits'), pt('h0', 'grows really fast'), pt('stem', 'they ask for nine x')),
-      L("[short pause] Our first method, trial and error. Remember, with primes we can simply try numbers against the "
+      L("[short pause] Remember, with primes we can simply try numbers against the "
         "conditions. Let's start with three, a small prime whose powers are easy to build up.",
         show(t0, "Let's start with three"), pt('h0', 'easy to build up')),
       L("I don't write out three times three times three, six times. I build it from what I know. Three to the power of "
@@ -451,7 +451,7 @@ video('solve-q-387', 'solution', qid='q-387', slides=[
         pt('t4', "x isn't the answer"), pt('stem', 'They ask for nine x'), show(t5, 'Nine times two'),
         mk('tick', 'choice 2', 'choice number two is our answer'))),
     S('Method 2 · Plugging in the answers',
-      L("[pause] Our second method, plugging in the answers. Each choice is nine x, so to get x back, I divide the choice "
+      L("[pause] Each choice is nine x, so to get x back, I divide the choice "
         "by nine. Twenty-seven over nine is three, eighteen over nine is two, sixty-three over nine is seven, and "
         "forty-five over nine is five.",
         pt('choice 1', 'Each choice is nine x'), show(p0, 'I divide the choice'), show(p1, 'Twenty-seven over nine'),
@@ -495,7 +495,7 @@ video('solve-q-r26-t14-01', 'solution', qid='q-r26-t14-01', slides=[
       L("So four numbers, all odd, and every one of them looks prime. But three of them are fakes, and only one is really "
         "prime. [short pause] We'll solve it two ways, testing each number up to its root, and then counting by sevens.",
         pt('choice 1', 'four numbers'), pt('choice 4', 'all odd'), show(f0, 'three of them are fakes')),
-      L("[short pause] Our first method. Remember, to test a number, I divide it by the primes up to its square root, and no "
+      L("[short pause] Remember, to test a number, I divide it by the primes up to its square root, and no "
         "further. If none of them divides it, it's prime. Let's start with ninety-one. Nine squared is eighty-one, and ten "
         "squared is a hundred. So the root of ninety-one is between nine and ten, and I only try two, three, five and "
         "seven.", show(r0, 'up to its square root'), pt('choice 1', "start with ninety-one"), show(a1, 'Nine squared is'),
@@ -576,7 +576,7 @@ video('solve-q-388', 'solution', qid='q-388', slides=[
         "they're asking which choice is not a factor of x, which one you can't build out of x. And careful, one of the "
         "pieces, ten, isn't a prime. [short pause] We'll solve it two ways, breaking everything into primes, and then "
         "dividing the real number.", pt('stem', 'already broken into pieces'), pt('stem', 'does not divide'), pt('stem', 'one of the pieces')),
-      L("[short pause] Our first method. Remember the check from the lesson. A number divides x only if every prime it "
+      L("[short pause] Remember the check from the lesson. A number divides x only if every prime it "
         "needs is in x, at least as many times. So first, every piece of x has to be a prime. Three is a prime, and five is "
         "a prime, but ten isn't.", show(r1, 'every prime it needs'), show(u0, "but ten isn't")),
       L("So how do I unpack ten squared? Ten squared is ten times ten. And each ten is two times five. So ten squared is two "
@@ -772,7 +772,7 @@ video('solve-q-389', 'solution', qid='q-389', slides=[
         "number that divides both. And divisor means factor, so it's really the greatest common factor. [short pause] "
         "We'll solve it two ways, taking out a common factor, and then checking which choices divide both.",
         pt('stem', 'already written in primes'), show(g0, 'the biggest number that divides both'), pt('g0', 'divisor means factor')),
-      L("[short pause] Our first method. You already know how to take out a common factor. Picture x plus y, and ask what I "
+      L("[short pause] You already know how to take out a common factor. Picture x plus y, and ask what I "
         "can take out of both, in front of the brackets. Whatever comes out of both, divides both. And the biggest thing "
         "that comes out is the GCD.", show(g1, 'Whatever comes out of both'), pt('stem', 'Picture x plus y')),
       L("So let's go prime by prime. p. x has p to the power of three, three p's, and y has just one p. How many p's are in "
@@ -808,8 +808,8 @@ video('solve-q-389', 'solution', qid='q-389', slides=[
         pt('w1b', 'Only twos'), show(w3, 'So the GCD is two squared'), mk('circle', 'w3: f', 'just four')),
       sb='Method 1 · Common factor'),
     S('Method 2 · Which choices divide both',
-      L("[pause] Our second method, going through the choices. The GCD has to divide both x and y. So first, I throw out "
-        "every choice that doesn't divide both, and then, from what's left, I take the biggest.", pt('choice 1', 'going through the choices')),
+      L("[pause] Now let's go through the choices. The GCD has to divide both x and y. So first, I throw out "
+        "every choice that doesn't divide both, and then, from what's left, I take the biggest.", pt('choice 1', 'go through the choices')),
       L("Choice number one has an r. x has no r at all, so it can't divide x. Out.",
         show(n1, 'Choice number one has an r'), mk('cross', 'choice 1', 'Out.')),
       L("Choice number two has p cubed. y has only one p, so p cubed can't divide y. Out.",
@@ -847,7 +847,7 @@ video('solve-q-390', 'solution', qid='q-390', slides=[
       L("So we don't know the number. All we know is that ten divides it, and twenty-five divides it. And they ask, what's "
         "the biggest number we can be sure divides it? [short pause] We'll solve it three ways, with primes, with the "
         "smallest number that fits, and with a short formula.", pt('stem', 'ten divides it'), pt('stem', 'biggest number we can be sure')),
-      L("[short pause] Our first method, primes. If ten divides the number, the number contains all of ten. And if "
+      L("[short pause] Let's start with primes. If ten divides the number, the number contains all of ten. And if "
         "twenty-five divides it, it contains all of twenty-five. So let's break both. Ten is two times five, and "
         "twenty-five is five times five.", show(e1, 'Ten is two times five')),
       L("Now, why not just multiply ten by twenty-five? Let's see it on simpler numbers. A number that divides by three and "
@@ -866,7 +866,7 @@ video('solve-q-390', 'solution', qid='q-390', slides=[
         "promise it? The number might be just fifty, and two hundred fifty doesn't divide fifty. So choice number four is "
         "out.", pt('choice 4', 'two hundred fifty, the trap'), show(e7, 'The number might be just fifty'), mk('cross', 'choice 4', 'choice number four is out'))),
     S('Method 2 · The smallest number',
-      L("[pause] Our second method, the smallest number that fits. A number that's guaranteed to divide must divide every "
+      L("[pause] Another way is to look at the smallest number that fits. A number that's guaranteed to divide must divide every "
         "number that fits, so it must divide even the smallest one. So let's find the smallest number that both ten and "
         "twenty-five divide. Remember the common denominator from fractions, I run through the multiples of the bigger "
         "one.", show(f0, 'divide even the smallest one'), pt('stem', 'both ten and')),
@@ -880,7 +880,7 @@ video('solve-q-390', 'solution', qid='q-390', slides=[
       L("And this smallest common multiple has a name you saw with fractions, the LCM, the least common multiple. So the "
         "greatest guaranteed divisor is just the LCM.", show(f3, 'the least common multiple'))),
     S('Method 3 · Product over GCD',
-      L("[pause] Our third method, a short formula. The GCD times the LCM equals the two numbers multiplied. Why? "
+      L("[pause] And there's a short formula too. The GCD times the LCM equals the two numbers multiplied. Why? "
         "Multiplying ten by twenty-five counts the shared five twice. Dividing by the GCD, the part they share, takes the "
         "extra five off.", show(h1, 'The GCD times the LCM'), pt('h1', 'counts the shared five twice')),
       L("Ten times twenty-five is two hundred fifty. The GCD of ten and twenty-five is five, the one five they share. Two "
@@ -909,7 +909,7 @@ video('solve-q-398', 'solution', qid='q-398', slides=[
       L("So we build a product out of three digits, and every digit is one, three or five. The question is which number "
         "can't be built, and that's really a question about a missing prime. [short pause] We'll solve it two ways, "
         "breaking each choice into primes, and then even and odd.", pt('stem', 'every digit is one, three or five'), pt('stem', "which number can't be built")),
-      L("[short pause] Our first method. What primes can the digits bring? One brings nothing, it doesn't change a product. "
+      L("[short pause] What primes can the digits bring? One brings nothing, it doesn't change a product. "
         "Three brings a three, and five brings a five. So any product we build has only threes and fives in it, and at most "
         "three of them, because there are three digits.", show(l1, 'only threes and fives'), show(l2, 'at most three of them')),
       L("Forty-five. Forty-five is nine times five, and nine is three times three. So three, three, five. Exactly three "
@@ -924,7 +924,7 @@ video('solve-q-398', 'solution', qid='q-398', slides=[
         "thirty, choice number two is our answer.", show(l6, 'Fifteen is three times five'), mk('cross', 'choice 4', 'Choice number four is out'),
         mk('tick', 'choice 2', 'choice number two is our answer'))),
     S('Method 2 · Even and odd',
-      L("[pause] Our second method, even and odd. All the digits are odd. And odd times odd is always odd. Three times five "
+      L("[pause] Now let's look at it with even and odd. All the digits are odd. And odd times odd is always odd. Three times five "
         "is fifteen, and five times five is twenty-five, odd every time. Why? An even product needs a factor of two "
         "somewhere, and odd numbers don't have a two in them.", show(o1, 'odd times odd is always odd'), show(o2, 'Three times five'),
         show(o3, 'An even product needs')),
@@ -956,7 +956,7 @@ video('solve-q-399', 'solution', qid='q-399', slides=[
         "The bars make it positive, so it's the bigger one minus the smaller one. And they want the biggest A minus the "
         "smallest A. [short pause] We'll solve it two ways, listing every pair, and then thinking about the extremes.",
         pt('stem', 'breaking a hundred into two factors'), show(i0, 'The bars make it positive'), pt('stem', 'the biggest A')),
-      L("[short pause] Our first method, every pair. I start with the smallest factor and go up. One isn't allowed, so no "
+      L("[short pause] Let's start with every pair. I start with the smallest factor and go up. One isn't allowed, so no "
         "one times a hundred. Two times fifty, and the difference is forty-eight. Three? A hundred doesn't divide by three. "
         "Four times twenty-five, and the difference is twenty-one.",
         pt('stem', "One isn't allowed"), show(i1, 'Two times fifty'), show(i2, 'Four times twenty-five')),
@@ -974,7 +974,7 @@ video('solve-q-399', 'solution', qid='q-399', slides=[
         pt('i4', 'ten times ten is the pair'), show(i7, 'Without it'), mk('cross', 'choice 1', 'the trap'),
         mk('cross', 'choice 2', 'And twenty-one'), mk('cross', 'choice 4', 'and fifteen are'))),
     S('Method 2 · The extremes',
-      L("[pause] Our second method, the extremes. When is A biggest? When x and y are as far apart as possible, so one of "
+      L("[pause] Another way is to think about the extremes. When is A biggest? When x and y are as far apart as possible, so one of "
         "them is as small as it can be. One isn't allowed, so the smallest is two, and the other is a hundred over two, "
         "fifty. Fifty minus two is forty-eight.", pt('stem', "One isn't allowed"), show(j1, 'as far apart as possible')),
       L("When is A smallest? When they're as close as possible. Can they be equal? Only if a hundred is a perfect square, "
@@ -1001,7 +1001,7 @@ video('solve-q-400', 'solution', qid='q-400', slides=[
       L("So this time we don't break a number, we build numbers. Two or more cards, multiplied, and then we add up all the "
         "products. [short pause] We'll solve it two ways, building every product, and then a quick look at the choices.",
         pt('stem', 'Two or more cards, multiplied'), pt('stem', 'add up all the')),
-      L("[short pause] Our first method. So I don't miss any, I go in order, first every pair of cards, and then all three "
+      L("[short pause] So I don't miss any, I go in order, first every pair of cards, and then all three "
         "together. Does the order of the cards matter? No, two times five and five times two are the same product, so each "
         "pair counts once.", show(z1, 'first every pair')),
       L("Pairs. Two times five is ten. Two times seven is fourteen. Five times seven is thirty-five.",
@@ -1018,7 +1018,7 @@ video('solve-q-400', 'solution', qid='q-400', slides=[
         show(z5, 'if you forget the seventy'), mk('cross', 'choice 4', 'choice number four'), mk('cross', 'choice 2', 'And seventy'),
         mk('cross', 'choice 3', 'and fourteen'))),
     S('Method 2 · Look at the choices',
-      L("[pause] Our second method, a quick look at the choices. One of the products is all three cards together, two times "
+      L("[pause] Now a quick look at the choices. One of the products is all three cards together, two times "
         "five times seven, seventy. And the pairs add more on top of it. So the sum is more than seventy.",
         show(y1, 'all three cards together'), pt('y1', 'the pairs add more')),
       L("Which choices are more than seventy? Only a hundred twenty-nine. Seventy, fourteen and fifty-nine are all seventy "
@@ -1046,7 +1046,7 @@ video('solve-q-401', 'solution', qid='q-401', slides=[
       L("A confusing one, and a lot of students fall for the trap here. They see prime, and decide that m is prime too. But "
         "it's m squared that's prime, not m. [short pause] We'll solve it two ways, understanding first, and then plugging "
         "in numbers.", pt('choice 1', 'decide that m is prime too'), pt('stem', "it's m squared that's prime")),
-      L("[short pause] Our first method. Remember, a prime can't be broken into two smaller whole numbers. So what if m were "
+      L("[short pause] Remember, a prime can't be broken into two smaller whole numbers. So what if m were "
         "a whole number? Then m squared is m times m. Let's see it in numbers. Three squared is nine, three times three, so "
         "it breaks, not prime. Four squared is sixteen, four times four, it breaks too.",
         show(n1, 'what if m were'), show(n2, 'Three squared is nine')),
@@ -1059,7 +1059,7 @@ video('solve-q-401', 'solution', qid='q-401', slides=[
         "answer.", show(k1, 'Prime, even and odd'), mk('cross', 'choice 1', 'choice numbers one'), mk('cross', 'choice 3', 'three and four'),
         mk('cross', 'choice 4', 'are out'), mk('tick', 'choice 2', 'Choice number two is our'))),
     S('Method 2 · Plugging in numbers',
-      L("[pause] Our second method, plugging in numbers. Here I don't pick m, I pick m squared, because the given is about m "
+      L("[pause] Now let's try plugging in numbers. Here I don't pick m, I pick m squared, because the given is about m "
         "squared. m squared is a prime, so let's take the smallest prime, two.", pt('stem', 'the given is about'), show(p1, 'the smallest prime, two')),
       L("m squared is two, so m is the square root of two. Is that a whole number? One squared is one, and two squared is "
         "four. So root two is between one and two, and it's not whole.", show(p2, 'One squared is one')),
@@ -1091,7 +1091,7 @@ video('solve-q-402', 'solution', qid='q-402', slides=[
       L("So k has exactly three divisors, and C is its square root. That sounds very abstract, so first let's understand "
         "which numbers have exactly three divisors. [short pause] We'll solve it two ways, with divisor pairs, and then "
         "plugging in a number.", pt('stem', 'exactly three divisors'), pt('stem', 'C is its square root')),
-      L("[short pause] Our first method, divisor pairs. Divisors come in pairs that multiply to the number. Take eighteen. "
+      L("[short pause] Let's start with divisor pairs. Divisors come in pairs that multiply to the number. Take eighteen. "
         "One times eighteen, two times nine, three times six. Six divisors, in three pairs.",
         show(d1, 'Take eighteen')),
       L("So most numbers have an even number of divisors. When can the count be odd? Only when one divisor has no partner, "
@@ -1112,7 +1112,7 @@ video('solve-q-402', 'solution', qid='q-402', slides=[
         mk('tick', 'choice 2', 'choice number two is our answer')),
       sb='Method 1 · Divisor pairs'),
     S('Method 2 · Plugging in a number',
-      L("[pause] Our second method, plugging in a number. I need a k with exactly three divisors, so let's try small numbers "
+      L("[pause] Now let's try plugging in a number. I need a k with exactly three divisors, so let's try small numbers "
         "and count. Two has one and two, only two divisors. Three, the same. Four has one, two and four. Three divisors, so "
         "k is four.", show(q1, 'Two has one and two')),
       L("Then C is the square root of four, which is two. And two has two divisors, one and two.",
@@ -1187,7 +1187,7 @@ video('solve-q-r26-t14-03', 'solution', qid='q-r26-t14-03', slides=[
       L("So the left side is written in primes, and the right side is a plain number. The idea is to write a hundred eight "
         "in primes too, and match. [short pause] We'll solve it two ways, breaking and matching, and then dividing down.",
         pt('stem', 'written in primes'), pt('stem', 'a plain number')),
-      L("[short pause] Our first method. Why does matching work? A number breaks into primes in only one way. Wherever you "
+      L("[short pause] Why does matching work? A number breaks into primes in only one way. Wherever you "
         "start the factor tree, you end with the same primes. For example, eighteen. Two times nine breaks into two, three, "
         "three, and three times six breaks into three, two, three. The same primes, just in another order.",
         show(f1, 'in only one way'), show(f2, 'For example, eighteen')),
@@ -1203,9 +1203,9 @@ video('solve-q-r26-t14-03', 'solution', qid='q-r26-t14-03', slides=[
         "two is just a.", show(f7, 'when you swap'), mk('cross', 'choice 1', 'swap a and b'), mk('cross', 'choice 4', 'is a plus b'),
         mk('cross', 'choice 2', 'two is just a'))),
     S('Method 2 · Divide down',
-      L("[pause] Our second method, dividing down. I divide by two as long as I can, and count. A hundred eight over two is "
+      L("[pause] Another way is to divide down. I divide by two as long as I can, and count. A hundred eight over two is "
         "fifty-four. Fifty-four over two is twenty-seven. Twenty-seven is odd, so no more twos. Two halvings, so a is two.",
-        show(T108['root'], 'dividing down'), show(T108[1], 'over two is fifty-four'), show(T108[2], 'Fifty-four over two'), pt('T108_root', 'Two halvings')),
+        show(T108['root'], 'divide down'), show(T108[1], 'over two is fifty-four'), show(T108[2], 'Fifty-four over two'), pt('T108_root', 'Two halvings')),
       L("Then the threes. Twenty-seven over three is nine, nine over three is three, and three over three is one. Three "
         "times, so b is three.", show(T108[3], 'Twenty-seven over three'), show(T108[4], 'nine over three'), show(f8, 'Three times'),
         show(f9, 'so b is three')),
@@ -1270,7 +1270,7 @@ video('solve-q-392', 'solution', qid='q-392', slides=[
       L("So a and b are primes, and the clues tell us which numbers they divide. Divisible by a prime means that prime is "
         "inside the number. So the first thing is to break every number into primes. [short pause] We'll solve it two ways, "
         "breaking the numbers into primes, and then plugging in the answers.", pt('stem', 'which numbers they divide')),
-      L("[short pause] Our first method. The first group. Fourteen is two times seven. Twenty-one is three times seven. And "
+      L("[short pause] The first group. Fourteen is two times seven. Twenty-one is three times seven. And "
         "five is a prime.", pt('stem', 'The first group'), show(g1, 'Fourteen is two times seven')),
       L("Exactly two of them divide by a. So which prime shows up in exactly two of them? Two is only in fourteen. Three is "
         "only in twenty-one. Five is only in five. Seven is in fourteen and in twenty-one, exactly two. So a is seven.",
@@ -1284,7 +1284,7 @@ video('solve-q-392', 'solution', qid='q-392', slides=[
         "ninety-one. Choice number three is our answer. And remember ninety-one, the fake prime from the start of the "
         "topic.", show(g5, 'seven times thirteen'), mk('circle', 'g5: r', 'together ninety-one'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
     S('Method 2 · Plugging in the answers',
-      L("[pause] Our second method, plugging in the answers. Each choice is a product of two primes. So I split it, and check "
+      L("[pause] Now let's try plugging in the answers. Each choice is a product of two primes. So I split it, and check "
         "which one could be a, and the other one b.", pt('choice 1', 'Each choice is a product')),
       L("Choice number one, thirty-nine, is three times thirteen. Could a be three? Only twenty-one divides by three, that's "
         "one number, not two. Could a be thirteen? None of fourteen, twenty-one and five divides by thirteen. Out.",
@@ -1323,7 +1323,7 @@ video('solve-q-393', 'solution', qid='q-393', slides=[
       L("Honestly, it's not obvious where to start here. So let's start with what we can do. We have an equation, and a "
         "appears in both terms on the left. [short pause] We'll solve it two ways, taking out a common factor, and then "
         "plugging in the answers.", pt('stem', 'a appears in both terms')),
-      L("[short pause] Our first method. a is in both terms, so I take it out as a common factor. a times b, plus four a, "
+      L("[short pause] a is in both terms, so I take it out as a common factor. a times b, plus four a, "
         "is a times, in brackets, b plus four. And that's forty-eight.", show(e1, 'I take it out'), mk('circle', 'e1: f', 'in brackets, b plus four')),
       L("So now it's a product of two whole numbers that equals forty-eight. Remember breaking a number into pairs. Here we "
         "break forty-eight into two factors, and they don't have to be primes.", pt('e1', 'a product of two whole numbers')),
@@ -1343,7 +1343,7 @@ video('solve-q-393', 'solution', qid='q-393', slides=[
         mk('cross', 'choice 4', 'and twelve'), mk('tick', 'choice 3', 'choice number three')),
       sb='Method 1 · Common factor, then pairs'),
     S('Method 2 · Plugging in the answers',
-      L("[pause] Our second method, plugging in the answers. Three choices can be the sum, and one can't. So for each sum, I "
+      L("[pause] Now let's try plugging in the answers. Three choices can be the sum, and one can't. So for each sum, I "
         "try small values of a, and b is the sum minus a. Then I check a times b, plus four a.", pt('stem', 'plus four a')),
       L("Forty-five. a is one, so b is forty-four. One times forty-four is forty-four, and four times one is four. "
         "Forty-four plus four is forty-eight. It works, out.", show(x1, 'Forty-five. a is one'), mk('cross', 'choice 1', 'It works, out')),
@@ -1380,7 +1380,7 @@ video('solve-q-396', 'solution', qid='q-396', slides=[
       L("A minimum question, with primes. a is built from twos and threes, and b from twos and fives. And b has to be smaller "
         "than a. [short pause] We'll solve it two ways, building the smallest a and b, and then plugging in the answers, "
         "starting from the smallest.", pt('stem', 'built from twos and threes'), pt('stem', 'b has to be smaller')),
-      L("[short pause] Our first method. When is a times b over fifteen smallest? a and b are both on top of the fraction, "
+      L("[short pause] When is a times b over fifteen smallest? a and b are both on top of the fraction, "
         "so the smaller they are, the smaller the result. So let's build each one as small as possible.", pt('stem', 'over fifteen smallest')),
       L("a has exactly the prime factors two and three. Exactly means both of them must be there, and nothing else. The "
         "smallest is one two and one three, two times three, six. And b has two and five, so the smallest is two times "
@@ -1401,7 +1401,7 @@ video('solve-q-396', 'solution', qid='q-396', slides=[
         mk('cross', 'choice 2', 'grows b instead')),
       sb='Method 1 · Build the smallest'),
     S('Method 2 · Plugging in the answers',
-      L("[pause] Our second method, plugging in the answers. They ask for the smallest, so I start from the smallest choice, "
+      L("[pause] Now let's try plugging in the answers. They ask for the smallest, so I start from the smallest choice, "
         "four. If the result is four, then a times b is four times fifteen, sixty.", pt('choice 4', 'the smallest choice')),
       L("a is made of twos and threes, both of them, so a is six, twelve, eighteen, twenty-four and so on. And b is ten, "
         "twenty, forty, fifty and so on. Which pair multiplies to sixty? Only six times ten. But then b isn't smaller than "
@@ -1432,7 +1432,7 @@ video('solve-q-394', 'solution', qid='q-394', slides=[
         pt('stem', 'p, q, r', 'hl', 12.0), voice='calm', pause=0.5),
       L("A hard one, all letters. But underneath, it's a factor question. What is z built from? [short pause] We'll solve it "
         "two ways, understanding with the letters, and then the same idea with numbers.", pt('stem', 'What is z built from')),
-      L("[short pause] Our first method. z is p to the power of s, times q to the power of r. So z contains the prime p, s "
+      L("[short pause] z is p to the power of s, times q to the power of r. So z contains the prime p, s "
         "times, and the prime q, r times. And nothing else.", show(u1, 'So z contains the prime p')),
       L("Now careful, a lot of students see r and s in z, and think they're factors of z. They're not. They're only "
         "exponents, they count how many times p and q appear. The primes r and s themselves aren't inside z at all.",
@@ -1447,7 +1447,7 @@ video('solve-q-394', 'solution', qid='q-394', slides=[
         "copies of q. z has r of them, and q is smaller than r, so enough again. So choice number two is our answer.",
         show(u5, 'p to the power of r'), mk('tick', 'choice 2', 'So choice number two is our answer'))),
     S('Method 2 · Plugging in numbers',
-      L("[pause] Our second method, plugging in numbers. When the primes are letters, plug in the smallest primes, in the "
+      L("[pause] Now let's do the same with numbers, by plugging them in. When the primes are letters, plug in the smallest primes, in the "
         "right order. Why the smallest? Any primes in that order fit the givens, and small ones are the easiest to work "
         "with. So p is two, q is three, r is five, and s is seven.", pt('stem', 'in the right order'), show(v1, 'So p is two')),
       L("Then z is two to the power of seven, times three to the power of five. Seven twos and five threes.", show(v2, 'Then z is two')),
@@ -1487,7 +1487,7 @@ video('solve-q-395', 'solution', qid='q-395', slides=[
       L("A hard one, and it's usually one of the last questions in the section. Read the wording carefully. They want the "
         "statement that is not necessarily true, so the statements that must be true are out. [short pause] We'll solve "
         "it two ways, understanding each statement, and then plugging in numbers.", pt('stem', 'not necessarily true')),
-      L("[short pause] Our first method. First, the given. Thirty-five is five times seven. So x divides by thirty-five "
+      L("[short pause] First, the given. Thirty-five is five times seven. So x divides by thirty-five "
         "means x contains the prime five and the prime seven.", show(r1, 'Thirty-five is five times seven')),
       L("And x is a times b times c. Here's the key rule. A prime can't be split between factors, one of them holds it "
         "whole. Why? A prime can't be broken into smaller pieces, so the seven has to sit inside one of the numbers. For "
@@ -1516,7 +1516,7 @@ video('solve-q-395', 'solution', qid='q-395', slides=[
         show(r10, 'never true is also'), mk('tick', 'choice 2', 'So choice number two is our answer')),
       sb='Method 1 · Test each statement'),
     S('Method 2 · Plugging in numbers',
-      L("[pause] Our second method, plugging in numbers. A statement that's not necessarily true fails for at least one "
+      L("[pause] Now let's try plugging in numbers. A statement that's not necessarily true fails for at least one "
         "example. So I pick numbers that fit, and look for a statement that fails. Five, seven and one. They're different, "
         "and their product is thirty-five.", show(w1, 'Five, seven and one')),
       L("Choice number two. x is thirty-five, with two different primes, five and seven. x squared is five squared times "
@@ -1549,7 +1549,7 @@ video('solve-q-397', 'solution', qid='q-397', slides=[
         "divisors, including one and a. How many different values can a have?", pt('stem', 'a is an integer', 'hl', 9.0), voice='calm', pause=0.5),
       L("The whole question hides in one given, exactly three divisors. And we've seen this one before. [short pause] We'll "
         "solve it two ways, with the rule, and then with trial and error to find the pattern.", pt('stem', 'exactly three divisors')),
-      L("[short pause] Our first method. Remember, divisors come in pairs, and exactly three divisors means a prime squared. "
+      L("[short pause] Remember, divisors come in pairs, and exactly three divisors means a prime squared. "
         "One, the prime, and the prime squared, like nine, with one, three and nine.", show(v1, 'means a prime squared')),
       L("So a is a prime squared, and a is less than two hundred. How big can the prime be? Fourteen squared is a hundred "
         "ninety-six, still below two hundred. Fifteen squared is two hundred twenty-five, too big. So the prime is fourteen "
@@ -1562,7 +1562,7 @@ video('solve-q-397', 'solution', qid='q-397', slides=[
         "number four. But eleven squared and thirteen squared are still below two hundred.",
         show(v5, 'stop at the one-digit primes'), mk('cross', 'choice 4', 'choice number four'))),
     S('Method 2 · Trial and error',
-      L("[pause] Our second method, trial and error. Don't remember the rule? Run through the numbers, count the divisors, "
+      L("[pause] Another way is trial and error. Don't remember the rule? Run through the numbers, count the divisors, "
         "and look for the pattern. Two and three are prime, two divisors each. Four has one, two and four. Three divisors, "
         "the first one that fits. Five is prime. Six has one, two, three and six, that's four. Seven is prime. Eight has "
         "one, two, four and eight, four again.", show(t1, 'Four has one, two and four')),
@@ -1754,9 +1754,13 @@ def _method_headers(vid):
     for si, sl in enumerate(V['slides']):
         m = re.match(r'Method (\d) · (.+)$', sl['title'])
         if not m: continue
-        lines = sl['lines'][1:3] if si == 0 else sl['lines'][:1]       # slide 1: the lines after the question reading
+        # 2026-10-11 (teacher): no "Our first / second method" lines any more - the header comes with the first words of
+        # the method's first line (slide 1: the line after the first reaction); a continuation slide of the same method
+        # gets no second header
+        if si and V['slides'][si - 1]['sb'] == sl['sb']: continue
+        lines = sl['lines'][2:3] if si == 0 else sl['lines'][:1]
         for ln in lines:
-            say = ln['say']; h = re.search(r"\b(?:our %s method|%s by|%s,)" % (_ORD, _ORD, _ORD), say, re.I)
+            say = ln['say']; h = re.search(r"[A-Za-z]", TAG.sub(lambda q: ' ' * len(q.group(0)), say))
             if not h: continue
             ph = _unique(say, h.start(), 2)
             if not ph: continue

@@ -26,9 +26,9 @@
     ]
    },
    {
-    "say": "[short pause] Our first method, every pair. I start with the smallest factor and go up. One isn't allowed, so no one times a hundred. Two times fifty, and the difference is forty-eight. Three? A hundred doesn't divide by three. Four times twenty-five, and the difference is twenty-one.",
+    "say": "[short pause] Let's start with every pair. I start with the smallest factor and go up. One isn't allowed, so no one times a hundred. Two times fifty, and the difference is forty-eight. Three? A hundred doesn't divide by three. Four times twenty-five, and the difference is twenty-one.",
     "at": [
-     "Our first",
+     "Let's start",
      "I start with",
      "factor and go",
      "One isn't allowed",
@@ -90,11 +90,11 @@
   ],
   [
    {
-    "say": "[pause] Our second method, the extremes. When is A biggest? When x and y are as far apart as possible, so one of them is as small as it can be. One isn't allowed, so the smallest is two, and the other is a hundred over two, fifty. Fifty minus two is forty-eight.",
+    "say": "[pause] Another way is to think about the extremes. When is A biggest? When x and y are as far apart as possible, so one of them is as small as it can be. One isn't allowed, so the smallest is two, and the other is a hundred over two, fifty. Fifty minus two is forty-eight.",
     "at": [
-     "Our second",
-     "When is A",
-     "x and y",
+     "Another way",
+     "about the extremes",
+     "A biggest? When",
      "as far apart as possible",
      "as small as",
      "One isn't allowed",

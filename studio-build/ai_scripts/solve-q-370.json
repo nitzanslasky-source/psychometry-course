@@ -14,49 +14,27 @@
    {
     "say": "So first, what does most precise mean? The domain has to hold exactly the numbers that work, no more and no less. [short pause] We'll solve it two ways, two cases, and plugging in the answers.",
     "at": [
-     "most precise",
-     "has to hold",
-     "numbers that work",
-     "and no less",
-     "it two ways",
-     "and plugging in"
+     "most precise"
     ]
    },
-   {
-    "say": "[short pause] Our first method, two cases. The bars act differently on each side of zero, so that's where we split.",
-    "at": [
-     "cases. The bars",
-     "on each side",
-     "so that's where"
-    ]
-   },
+   "[short pause] Our first method, two cases. The bars act differently on each side of zero, so that's where we split.",
    {
     "say": "Case one, x is zero or positive. Then the bars do nothing, the absolute value of x is just x. So x plus x is smaller than twelve. Two x is smaller than twelve, and twelve divided by two is six, so x is smaller than six.",
     "at": [
      "Case one",
      "Then the bars",
-     "the absolute value",
-     "is just x",
      "So x plus",
-     "smaller than twelve",
      "Two x is smaller",
-     "twelve, and twelve",
-     "two is six",
-     "is smaller than six"
+     "two is six"
     ]
    },
    {
     "say": "Now case two, and careful here, because this is the case people lose. x is negative. Then the bars turn x into its opposite, so the absolute value of x is minus x. And x plus minus x? Opposites attract, so they cancel out to zero.",
     "at": [
      "Now case two",
-     "here, because this",
-     "case people lose",
      "x is negative",
      "Then the bars",
-     "into its opposite",
-     "absolute value of",
      "And x plus",
-     "Opposites attract, so",
      "cancel out to zero"
     ]
    },
@@ -65,15 +43,13 @@
     "voice": "calm",
     "at": [
      "Minus four plus four",
-     "Minus nine plus",
-     "zero. Always zero"
+     "Minus nine plus"
     ]
    },
    {
     "say": "And is zero smaller than twelve? Yes, every time. So every negative number works.",
     "at": [
      "And is zero",
-     "twelve? Yes, every",
      "every negative number"
     ]
    },
@@ -81,13 +57,10 @@
     "say": "Put the two cases together. Every negative number, and the positives below six. That's every number below six. On the number line, one ray going left from six, an open circle at six, and no stop at minus six.",
     "at": [
      "Put the two",
-     "Every negative number",
      "the positives below six",
      "That's every number",
      "On the number line",
-     "ray going left",
-     "an open circle",
-     "and no stop"
+     "an open circle"
     ]
    },
    {
@@ -103,22 +76,16 @@
     "at": [
      "Our second",
      "One number that",
-     "choice crosses it",
      "Let's try zero",
      "Because the choices",
-     "zero, two of",
-     "it and two",
-     "Zero plus zero",
-     "smaller than twelve"
+     "Zero plus zero"
     ]
    },
    {
     "say": "But choice number two says x is smaller than zero, and choice number four says x is bigger than zero. Both leave zero out. So one number kills two choices.",
     "at": [
      "number two says",
-     "smaller than zero",
      "number four says",
-     "bigger than zero",
      "So one number"
     ]
    },
@@ -127,11 +94,7 @@
     "at": [
      "Numbers one",
      "and three both stop",
-     "six on top",
      "The difference is",
-     "minus six, or",
-     "at all. So",
-     "a number below",
      "minus eight"
     ]
    },
@@ -140,10 +103,7 @@
     "voice": "calm",
     "at": [
      "Minus eight plus",
-     "value, eight, is",
      "Zero is smaller",
-     "so it works",
-     "can go below",
      "number one misses",
      "Number three."
     ]

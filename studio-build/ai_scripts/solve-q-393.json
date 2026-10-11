@@ -25,10 +25,9 @@
     ]
    },
    {
-    "say": "[short pause] Our first method. a is in both terms, so I take it out as a common factor. a times b, plus four a, is a times, in brackets, b plus four. And that's forty-eight.",
+    "say": "[short pause] a is in both terms, so I take it out as a common factor. a times b, plus four a, is a times, in brackets, b plus four. And that's forty-eight.",
     "at": [
-     "Our first",
-     "in both terms",
+     "a is",
      "I take it out",
      "b, plus four",
      "in brackets, b plus four",
@@ -118,9 +117,9 @@
   ],
   [
    {
-    "say": "[pause] Our second method, plugging in the answers. Three choices can be the sum, and one can't. So for each sum, I try small values of a, and b is the sum minus a. Then I check a times b, plus four a.",
+    "say": "[pause] Now let's try plugging in the answers. Three choices can be the sum, and one can't. So for each sum, I try small values of a, and b is the sum minus a. Then I check a times b, plus four a.",
     "at": [
-     "Our second",
+     "Now let's",
      "Three choices can",
      "sum, and one",
      "So for each",

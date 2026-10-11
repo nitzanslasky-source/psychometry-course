@@ -30,10 +30,9 @@
     ]
    },
    {
-    "say": "[short pause] Our first method. Remember the check from the lesson. A number divides x only if every prime it needs is in x, at least as many times. So first, every piece of x has to be a prime. Three is a prime, and five is a prime, but ten isn't.",
+    "say": "[short pause] Remember the check from the lesson. A number divides x only if every prime it needs is in x, at least as many times. So first, every piece of x has to be a prime. Three is a prime, and five is a prime, but ten isn't.",
     "at": [
-     "Our first",
-     "Remember the check",
+     "Remember the",
      "lesson. A number",
      "every prime it needs",
      "in x, at",
