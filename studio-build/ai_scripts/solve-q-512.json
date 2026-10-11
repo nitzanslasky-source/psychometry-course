@@ -1,0 +1,96 @@
+{
+ "videoId": "solve-q-512",
+ "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A, B, C and D represent digits. Given: B A, plus D A, is equal to C C A. B plus C plus D is equal to what?",
+    "voice": "calm",
+    "at": [
+     "A, B, C"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So an addition in letters, and each letter is a digit. [short pause] We'll solve it with our four steps.",
+    "at": [
+     "an addition in letters",
+     "each letter is",
+     "We'll solve it"
+    ]
+   },
+   {
+    "say": "[short pause] Step one, write it vertically. Now the columns line up, and we can see things.",
+    "at": [
+     "write it vertically",
+     "Now the columns",
+     "and we can"
+    ]
+   },
+   {
+    "say": "Step two, the ones column. A plus A ends in A. Add something to A and land back on A? Nothing carries into the ones column, so that something must be zero. Five plus zero is five, eight plus zero is eight. So A is zero.",
+    "at": [
+     "Step two, the",
+     "A plus A ends in A",
+     "land back on",
+     "Nothing carries into",
+     "column, so that",
+     "Five plus zero",
+     "eight plus zero",
+     "So A is"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Step three, the leftmost digit. We added two two-digit numbers and got three digits. When you add two numbers and the sum has more digits, the new leading digit is one. So C is one.",
+    "at": [
+     "digit. We added",
+     "numbers and got",
+     "When you add",
+     "and the sum",
+     "the new leading digit"
+    ]
+   },
+   {
+    "say": "Why one? Even the biggest, ninety-nine plus ninety-nine, is one ninety-eight. And ninety plus ninety is one eighty. You can never reach two hundred. But careful, only for two numbers. Three or four numbers can start with two or more.",
+    "at": [
+     "ninety-nine plus ninety-nine",
+     "And ninety plus",
+     "You can never",
+     "But careful, only",
+     "Three or four",
+     "start with two"
+    ]
+   },
+   {
+    "say": "Now the tens. B plus D gives C C, which is eleven, because A is zero and nothing carries from the ones. So B plus D is eleven. Three and eight, or four and seven, and we don't need to know which.",
+    "at": [
+     "B plus D",
+     "C, which is",
+     "A is zero",
+     "carries from the",
+     "So B plus D",
+     "Three and eight",
+     "and seven, and",
+     "need to know"
+    ]
+   },
+   {
+    "say": "B plus C plus D is eleven plus one, twelve. Choice number four is our answer.",
+    "at": [
+     "eleven plus one",
+     "Choice number four is our answer"
+    ]
+   },
+   {
+    "say": "And to see it's real, thirty plus eighty is one ten, and forty plus seventy is one ten too. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "thirty plus eighty",
+     "ten, and forty",
+     "is one ten too"
+    ]
+   }
+  ]
+ ]
+}

@@ -59,8 +59,8 @@ METHODS = [
     ('solve-q-r26-t15-15', '*', 'Tag it', 'new'),
     # 18 · digit word equations (digit ratio)
     ('digit-puzzles', 'The 4 steps', 'Digit ratio (10A + B equations)', 'lines'),
-    ('r26-t18-summary', 'The 4 steps', 'Digit ratio (10A + B equations)', 'lines'),
-    ('solve-q-520', 'Method 1 · Algebraic form', 'Digit ratio (10A + B equations)', 'lines'),
+    ('r26-t18-summary', 'The four steps', 'Digit ratio (10A + B equations)', 'lines'),   # 2026-10-12 topic-18 redo: slide renamed
+    ('solve-q-520', 'Method 1 · The algebraic form', 'Digit ratio (10A + B equations)', 'lines'),   # 2026-10-12 topic-18 redo: slide renamed
     # 23 · flip rule, arrow map
     ('wp-052', 'Same part: flip', 'Flip rule', 'new'),
     ('wp-052', 'Same whole: keep', 'Flip rule', 'new'),

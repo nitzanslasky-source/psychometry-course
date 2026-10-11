@@ -731,3 +731,22 @@ Topic-17 order: the camera lesson `number-line`, then q-493, powers-on-number-li
 | The reciprocal flips the order (same sign) | q-r26-t17-03 | summary |
 | Push to the edges to break "necessarily" | q-r26-t17-04 | summary |
 | Distance, a third of the way, the midpoint | q-r26-t17-05 | summary |
+
+### Topic 18: where each idea is first taught (R29 / R32)
+
+Topic-18 order: the camera lesson `digit-puzzles`, then q-512, q-513, q-514, r26-t18-facts, q-515 to q-520, q-r26-t18-01 to 03, summary. Topic 28 (after the charts units 11-15) comes after topic 18 in the study plan.
+
+| Idea | First taught (full) | Later (reminder) |
+|---|---|---|
+| What the letters mean; the four steps; a puzzle in words → 10A + B and collect | camera lesson `digit-puzzles` | q-512, q-515, q-520, summary |
+| The ones column (nothing carries in); two numbers, more digits → leading digit 1 | q-512 | q-515, q-516, summary |
+| The special digits 0, 1, 5, 6; 5 × even / odd; 6 × even | q-513 | q-517, q-518, summary |
+| Plug in when there is nothing to read; the algebraic form; AB ± BA | q-514 | q-520, q-r26-t18-01, q-r26-t18-02, summary |
+| One repeated digit; largest / smallest with a digit sum | r26-t18-facts (lesson) | summary |
+| Flip a subtraction into an addition (her AA − BB = BB) | q-516 | summary |
+| Estimate the size; start from the choices | q-517 | q-r26-t18-03, summary |
+| Flip a division into a multiplication | q-518 | summary |
+| Take inventory; plug in the choices | q-519 | summary |
+| A middle column: 0 or 9 and the carry | q-r26-t18-01 | summary |
+| ABC − CBA = 99(A − C) | q-r26-t18-02 | summary |
+| The units digit and the size of a product | q-r26-t18-03 | summary |

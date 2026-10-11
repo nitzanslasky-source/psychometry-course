@@ -1,0 +1,77 @@
+{
+ "videoId": "solve-q-519",
+ "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A, B, C and D represent different digits, and each of them is a prime number. Given: A B plus B C is equal to C D. C is equal to what?",
+    "voice": "calm",
+    "at": [
+     "A, B, C and D"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Prime digits only. [short pause] We'll solve it by plugging in the choices, organized trial and error. First, vertically, and an inventory. The prime digits are two, three, five and seven. Four letters, four different primes, so every one of them is used.",
+    "at": [
+     "Prime digits only",
+     "it by plugging",
+     "choices, organized trial",
+     "vertically",
+     "The prime digits",
+     "three, five and",
+     "Four letters, four",
+     "so every one"
+    ]
+   },
+   {
+    "say": "C is two or three? In the tens, A plus B, maybe with a carry, has to give C. But two different primes add up to at least two plus three, five. So choice numbers two and three are out.",
+    "at": [
+     "C is two or three",
+     "B, maybe with",
+     "has to give",
+     "But two different",
+     "up to at",
+     "plus three, five",
+     "So choice numbers two",
+     "and three are out"
+    ]
+   },
+   {
+    "say": "C is seven? Then the ones are B plus seven. B two gives nine, and B three gives ten, and nine and zero aren't prime. B five gives twelve, so D is two and one carries. Then the tens, A plus five plus one is seven, so A is one. Not a prime. Out.",
+    "at": [
+     "C is seven",
+     "B two gives",
+     "B three gives",
+     "nine and zero",
+     "B five gives",
+     "D is two",
+     "Then the tens",
+     "five plus one",
+     "so A is",
+     "Not a prime. Out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "C is five. The tens, A plus B is five, so they're two and three. The ones, B plus five is D. B two gives seven, the prime that's left. So A is three, B is two, and D is seven.",
+    "at": [
+     "C is five",
+     "The ones, B",
+     "B two gives",
+     "prime that's left",
+     "So A is",
+     "is two, and"
+    ]
+   },
+   {
+    "say": "Thirty-two plus twenty-five is fifty-seven. It works. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Thirty-two plus twenty-five",
+     "Choice number four is our answer"
+    ]
+   }
+  ]
+ ]
+}

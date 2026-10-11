@@ -1,0 +1,97 @@
+{
+ "videoId": "solve-q-r26-t18-01",
+ "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "A and B represent digits. Given: two A six, plus B eight, is equal to three A four. B is equal to what?",
+    "voice": "calm",
+    "at": [
+     "A and B"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "Two numbers with a letter in the middle. [short pause] We'll solve it two ways, with the columns, and then with the algebraic form.",
+    "at": [
+     "a letter in the middle",
+     "We'll solve it",
+     "with the columns",
+     "with the algebraic"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start with the columns. The ones, six plus eight is fourteen. Write four, it matches, and carry one.",
+    "at": [
+     "Let's start",
+     "start with the columns",
+     "six plus eight",
+     "Write four, it"
+    ]
+   },
+   {
+    "say": "The tens, A plus B plus the one ends in A. Now careful, a lot of students say ends in A, so B is zero. But there's a carry. A plus zero plus one ends in A plus one, not A. So choice number two is the trap.",
+    "at": [
+     "The tens, A",
+     "plus the one",
+     "Now careful, a",
+     "students say ends",
+     "so B is",
+     "there's a carry",
+     "A plus zero",
+     "ends in A plus",
+     "not A. So",
+     "is the trap"
+    ]
+   },
+   {
+    "say": "So B plus one has to be ten. B is nine, and one carries again. The hundreds, two plus one is three. It fits. Choice number four is our answer.",
+    "at": [
+     "B plus one has to be ten",
+     "The hundreds, two",
+     "is three. It",
+     "Choice number four is our answer"
+    ]
+   },
+   {
+    "say": "With any A. Take five, two fifty-six plus ninety-eight is three fifty-four. So in a middle column, ends in the same digit means zero or nine, depending on the carry. And a carry from two numbers is at most one. Three or four numbers can carry two or three.",
+    "at": [
+     "two fifty-six",
+     "three fifty-four. So",
+     "in a middle column",
+     "in the same",
+     "zero or nine",
+     "And a carry",
+     "numbers is at",
+     "Three or four",
+     "carry two or"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way, with no columns at all. What's different? Each number is written by its digits, so no carry can be forgotten. Two hundred six plus ten A, plus ten B plus eight, equals three hundred four plus ten A.",
+    "at": [
+     "Another way",
+     "at all. What's",
+     "Each number is",
+     "its digits, so",
+     "can be forgotten",
+     "Two hundred six plus ten A",
+     "eight, equals three"
+    ]
+   },
+   {
+    "say": "Ten A is on both sides, it cancels, and that's why A can be any digit. Ten B is three hundred four minus two hundred fourteen, which is ninety. So B is nine. Choice number four. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Ten A is",
+     "sides, it cancels",
+     "why A can",
+     "Ten B is",
+     "which is ninety",
+     "So B is nine"
+    ]
+   }
+  ]
+ ]
+}

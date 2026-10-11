@@ -1,61 +1,130 @@
 {
  "videoId": "r26-t18-summary",
- "style": "calm, natural hesitations, like explaining to a friend",
+ "style": "the teacher reads it herself (Reading Studio), topic-18 redo (2026-10-12): math_patches/_ai_vis_t18.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "So, before you practice, let's go over all of letter puzzles in a few minutes.",
-   "Every rule, every trap. Short, and quick."
+   "Before you practice, here's a quick summary of the topic. What the letters mean, the four steps, and the number facts."
   ],
   [
-   "First, what do the letters mean?",
-   "A bar on top means these are the digits of ONE number. A B is not A times B.",
-   "The same letter is always the same digit. Different letters? Only if the question says so.",
-   "And the leftmost digit is never zero."
+   {
+    "say": "A bar on top means the letters are the digits of one number. A B is ten A plus B, not A times B. And A B C is a hundred A, plus ten B, plus C.",
+    "at": [
+     "A bar on top",
+     "the letters are",
+     "of one number",
+     "A B is",
+     "plus B, not",
+     "And A B",
+     "a hundred A",
+     "B, plus C"
+    ]
+   },
+   {
+    "say": "The same letter is always the same digit, and a leading digit is never zero. Different letters? Only if the question says so.",
+    "at": [
+     "The same letter",
+     "the same digit",
+     "leading digit is",
+     "Only if the"
+    ]
+   }
   ],
   [
-   "Now, the technique. Four steps, every time.",
-   "Write it vertically. Check the units digit. Check the leftmost digit, and the size. And then plug in.",
-   "Words, and no columns? Then write ten A plus B, and collect it into a digit ratio."
+   {
+    "say": "Write it vertically, check the units digit, check the leftmost digit and the size, and then plug in. One letter asked? Plug in the choices.",
+    "at": [
+     "Write it vertically",
+     "units digit, check",
+     "digit and the",
+     "then plug in",
+     "asked? Plug in"
+    ]
+   },
+   {
+    "say": "A puzzle in words, with no columns? Write the number as ten A plus B, and collect the letters on each side. Ten A plus B equals three times A plus B gives seven A equals two B, so the number is twenty-seven.",
+    "at": [
+     "A puzzle in words",
+     "Write the number",
+     "A plus B",
+     "the letters on",
+     "Ten A plus B equals",
+     "three times A",
+     "gives seven A",
+     "B, so the"
+    ]
+   },
+   {
+    "say": "In the ones column nothing carries in, so X plus Y ends in X means Y is zero. In any other column there may be a carry, so it's zero or nine.",
+    "at": [
+     "In the ones column",
+     "carries in, so",
+     "Y ends in",
+     "Y is zero",
+     "In any other",
+     "may be a",
+     "it's zero or"
+    ]
+   },
+   {
+    "say": "Two numbers, and the sum has more digits? The leading digit is one. Seventy-six plus fifty-eight is one thirty-four. Only for two numbers.",
+    "at": [
+     "the sum has more digits",
+     "The leading digit",
+     "Seventy-six plus fifty-eight",
+     "thirty-four. Only for"
+    ]
+   }
   ],
   [
-   "The ones column is special. Nothing carries into it.",
-   "But in any other column, there may be a carry. Then Y can be nine. Two X nine, plus Y four... Y is nine.",
-   "Two numbers carry zero or one. Three or four numbers can carry more. Seven plus seven plus nine is twenty-three... so you carry two."
+   {
+    "say": "The special digits, zero, one, five and six, keep their units digit when multiplied by themselves. Fifteen times fifteen is two twenty-five, and sixteen times sixteen is two fifty-six.",
+    "at": [
+     "The special digits",
+     "five and six",
+     "units digit when",
+     "Fifteen times fifteen",
+     "twenty-five, and sixteen",
+     "is two fifty-six"
+    ]
+   },
+   {
+    "say": "A subtraction? Flip it into an addition. A division? Flip it into a multiplication.",
+    "at": [
+     "Flip it into an addition",
+     "Flip it into a multiplication"
+    ]
+   },
+   {
+    "say": "A number plus its reversal divides by eleven, minus its reversal by nine, and with three digits, by ninety-nine.",
+    "at": [
+     "plus its reversal",
+     "eleven, minus its",
+     "nine, and with"
+    ]
+   }
   ],
   [
-   "Now, the leftmost digit.",
-   "You add TWO numbers and get more digits? Then the leading digit is one.",
-   "But that's only for two numbers. Three numbers can start with two.",
-   "And estimate the size. It throws out choices fast."
-  ],
-  [
-   "The special digits are zero, one, five and six.",
-   "Multiply one of them by itself, and the units digit stays. No other digit does that.",
-   "Five times an even number ends in zero, and times an odd number it ends in five. Six times an even number keeps its units digit. Six times twelve, seventy-two."
-  ],
-  [
-   "Every letter question can be solved by plugging in.",
-   "Two choices survive? Try a third number.",
-   "And flip a subtraction into an addition, and a division into a multiplication. It's easier to see."
-  ],
-  [
-   "The algebraic form gives you facts that come back again and again.",
-   "A number minus its reversal is divisible by nine. With three digits, it's divisible by ninety-nine... and the middle digit is nine.",
-   "Triple digits are divisible by three and by thirty-seven. And B B B B over B B is always one hundred one."
-  ],
-  [
-   "Now, products and powers.",
-   "Two-digit times two-digit gives four digits... or three.",
-   "The units digits of powers repeat in a cycle. So find where you land in the cycle."
-  ],
-  [
-   "Largest or smallest, with a given digit sum.",
-   "For the largest, big digits on the left. For the smallest, one first, then zeros, and the big digits on the right."
-  ],
-  [
-   "So, before you practice, always ask yourself:",
-   "The common traps: forgetting the carry, a leading zero, and using the leading-digit-one rule with more than two numbers.",
-   "And a matching last digit is not a full proof. Check the size too. Okay... go practice."
+   {
+    "say": "A A A is a hundred eleven times A, so it divides by three and by thirty-seven. Four forty-four is thirty-seven times twelve.",
+    "at": [
+     "A A A is a hundred eleven",
+     "hundred eleven times",
+     "it divides by",
+     "Four forty-four is"
+    ]
+   },
+   {
+    "say": "Largest with a given digit sum, big digits on the left. Smallest, one first, then zeros, and the big digits on the right. Digit sum ten, nine ten and one oh nine. [pause] That's it. Now go practice, and I'll see you in the next video.",
+    "at": [
+     "Largest with a given digit sum",
+     "sum, big digits",
+     "Smallest, one first",
+     "and the big",
+     "Digit sum ten",
+     "and one oh",
+     "it. Now go"
+    ]
+   }
   ]
  ]
 }

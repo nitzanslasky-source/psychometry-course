@@ -1618,6 +1618,18 @@
   "solve-q-496#2": {
    "t": "Method 2 · Algebra",
    "d": "2026-10-12 topic-17 redo (your reading): your Hebrew algebra side on its own: c < c/a → a < 1, bd < d → b < 1, c + a < d + b (strong on strong)"
+  },
+  "solve-q-512#1": {
+   "t": "The four steps",
+   "d": "2026-10-12 topic-18 redo (your reading): the leading-digit rule with why (99 + 99 = 198, 90 + 90 = 180) and its limit (two numbers only); B + D = 11 is enough (30 + 80, 40 + 70)"
+  },
+  "solve-q-514#1": {
+   "t": "Method 2 · The algebraic form",
+   "d": "2026-10-12 topic-18 redo (your reading): your Hebrew algebraic form (47, 538), AB + BA = 11(A + B) and AB − BA = 9(A − B) (62 − 26 = 36)"
+  },
+  "solve-q-516#0": {
+   "t": "Flip it into an addition",
+   "d": "2026-10-12 topic-18 redo (your reading): your Hebrew tip: flip a subtraction into an addition, with your example AA − BB = BB → BB + BB = AA, B ≤ 4 (55 + 55 too big)"
   }
  },
  "lines": {
@@ -2566,32 +2578,32 @@
    "d": "pointer to five more questions (pictures, reciprocals, distances)"
   },
   "solve-q-512#0": {
-   "t": "Four steps",
-   "d": "the vertical layout of BA + DA = CCA on the board"
+   "t": "The four steps",
+   "d": "2026-10-12 topic-18 redo (your reading): the four steps in full on the first question; the ones column: nothing carries in, so A + A ends in A → A = 0 (5 + 0, 8 + 0)"
   },
   "solve-q-513#0": {
    "t": "Special digits",
    "d": "5 × even ends in 0, × odd in 5; 6 × even keeps its units digit"
   },
   "solve-q-515#0": {
-   "t": "Units digit",
-   "d": "the vertical layout of BCA + BC = AAA on the board"
+   "t": "The four steps",
+   "d": "2026-10-12 topic-18 redo (your reading): no new digit → no free one; the ones column gives C = 0; 303 + 30, 404 + 40"
   },
   "solve-q-517#1": {
-   "t": "Method 2 · Units digit",
-   "d": "so CA is in the twenties: C = 2"
+   "t": "Method 2 · Start from the choices",
+   "d": "2026-10-12 topic-18 redo (your reading): your insight: A is a special digit, the choices rule out the rest (6, 5, 2), 26² = 676"
   },
   "solve-q-519#0": {
-   "t": "Plug in the choices",
-   "d": "plug in choices from the middle; tens reasoning gives A, B = 2, 3"
+   "t": "Plugging in the choices",
+   "d": "2026-10-12 topic-18 redo (your reading): inventory of the prime digits; your check of every choice, the wrong ones first so the video ends on the answer"
   },
   "solve-q-519#1": {
    "t": "Why not the others",
    "d": "why C can't be 2 or 3: two different primes sum to at least 5"
   },
   "solve-q-520#0": {
-   "t": "Method 1 · Algebra",
-   "d": "write 10T + U and collect; trying U = 1 to 4"
+   "t": "Method 1 · The algebraic form",
+   "d": "2026-10-12 topic-18 redo (your reading): 10T + U = U³ + 4(T + U) → 6T = U³ + 3U; a size bound (6T ≤ 54)"
   },
   "solve-q-520#1": {
    "t": "Method 2 · Plugging in the answers",
@@ -3736,6 +3748,22 @@
   "solve-q-501#1": {
    "t": "Then the choices",
    "d": "2026-10-12 topic-17 redo (your reading): possible but not necessarily: drop the always and the never; strong on strong as a second look at choice 1"
+  },
+  "solve-q-514#0": {
+   "t": "Method 1 · Plugging in numbers",
+   "d": "2026-10-12 topic-18 redo (your reading): no result to read → plug in two numbers (71 + 17 = 88, 72 + 27 = 99)"
+  },
+  "solve-q-516#1": {
+   "t": "Flip it into an addition",
+   "d": "2026-10-12 topic-18 redo (your reading): A = 1, then just calculate (111 − 46 = 65); the digit-by-digit way is correct but slow (your remark)"
+  },
+  "solve-q-517#0": {
+   "t": "Method 1 · The size first",
+   "d": "2026-10-12 topic-18 redo (your reading): your full math: 20² and 30² give C = 2; 24² to 27²; \"could be\": one option is enough"
+  },
+  "solve-q-518#0": {
+   "t": "Flip it into a multiplication",
+   "d": "2026-10-12 topic-18 redo (your reading): 7A ends in A → A = 0 or 5, not 0 (a leading digit); 55·17 in easy pieces"
   }
  }
 }
