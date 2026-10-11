@@ -490,6 +490,7 @@ What is new compared with §9:
 **Unchanged decisions (2026-10-11):**
 - The teacher is Nitzan.
 - No cap on methods.
+- **Exact decimals are fine** (teacher, 2026-10-12): counterexamples like 1.1, 0.9 and 0.2 are her style. Only decimal ESTIMATES of roots and π (√42 ≈ 6.5, π ≈ 3.1) are banned; use whole-number benchmarks for those.
 - **Never drop or merge a Hebrew method** (teacher, 2026-10-11). Every method of her Hebrew solution gets its own method in the English script, even when it overlaps another (change the numbers if needed). Each stands on its own from the givens (R30), is explained clearly and kept tight; where it overlaps another method, one sentence says what is different about it. Extra methods may be added, never fewer.
 - R15 is approved.
 - Topic 51 is recorded by her.

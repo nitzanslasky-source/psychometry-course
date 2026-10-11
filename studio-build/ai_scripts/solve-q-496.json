@@ -85,17 +85,16 @@
     ]
    },
    {
-    "say": "So make it fail. c close to d, and b much bigger than a. a is one quarter, b is three quarters, c is two, and d is two and a quarter. c plus b is two and three quarters, and d plus a is two and a half. Two and three quarters isn't smaller. Not necessarily true, choice number two is our answer.",
+    "say": "So make it fail. c close to d, and b much bigger than a. a is zero point two, b is zero point eight, c is one point two, and d is one point three. c plus b is two, and d plus a is one point five. Two isn't smaller. Not necessarily true, choice number two is our answer.",
     "at": [
      "c close to",
      "b much bigger",
-     "a is one quarter",
-     "two, and d",
-     "and a quarter",
+     "a is zero point two",
+     "c is one",
+     "and d is",
      "c plus b",
-     "and three quarters",
-     "plus a is",
-     "Two and three quarters isn't",
+     "and d plus",
+     "one point five",
      "smaller. Not necessarily",
      "choice number two is our answer"
     ]

@@ -219,7 +219,8 @@ def check(vid):
         for n, ln in enumerate(flat, 1):
             for m in CHOICE_N.finditer(ln['say']): probs.append('line %d: bare "%s" - say "choice number N" (R34)' % (n, m.group(0)))
     if VERDICT.search(allt): probs.append('a "which way is better" verdict - the teacher dropped it (2026-10-11)')
-    if re.search(r'\b(point|dot) (zero|one|two|three|four|five|six|seven|eight|nine)\b|\d\.\d', allt): probs.append('a decimal - no decimal estimates')
+    # exact decimals (0.9, one point two) are fine (teacher, 2026-10-12); only decimal ESTIMATES (of roots, pi) are banned
+    if re.search(r'(about|roughly|approximately|almost|≈)\s+\S*\s*(\d\.\d|\b(zero|one|two|three|four|five|six|seven|eight|nine) point\b)', allt, re.I): probs.append('a decimal estimate - use whole-number benchmarks')
     for sl in V['slides']:
         for ln in sl['lines']:
             for c in ln['cues']:
@@ -600,7 +601,7 @@ n1 = I('n1', '(1) $\\div$ a fraction: bigger $\\quad 2\\div\\frac13=6$', size=30
 n2 = I('n2', '(3) $\\times$ a fraction: smaller $\\quad 6\\cdot\\frac12=3$', size=30, hand='(3)   × fraction ⇒ smaller :    6 · {1/2} = 3')
 n3 = I('n3', '(4) $d-a$: longer on both ends', size=30, hand='(4)   d − a :    longer on both ends')
 n4 = I('n4', '(2) $d>c$ right, $\\ b>a$ left: $\\ $no decision', size=30, hand='(2)   d > c  right,    b > a  left :    no decision')
-n5 = I('n5', '$a=\\frac14,\\ b=\\frac34,\\ c=2,\\ d=2\\frac14$: $\\ 2\\frac34>2\\frac12$ ✗', size=30, hand='a = {1/4},   b = {3/4},   c = 2,   d = 2{1/4} :    2{3/4} > 2{1/2}   ✗')
+n5 = I('n5', '$a=0.2,\\ b=0.8,\\ c=1.2,\\ d=1.3$: $\\ 2>1.5$ ✗', size=30, hand='a = 0.2,   b = 0.8,   c = 1.2,   d = 1.3 :    2 > 1.5   ✗')
 o1 = I('o1', '(1) $c<\\frac ca \\ \\Rightarrow\\ a<1$ ✓', hand='(1)   c < {c/a}    ⇒    a < 1   ✓')
 o2 = I('o2', '(3) $bd<d \\ \\Rightarrow\\ b<1$ ✓', hand='(3)   bd < d    ⇒    b < 1   ✓')
 o3 = I('o3', '(4) $c+a<d+b$: $\\ d>c,\\ b>a$ ✓', hand='(4)   c + a < d + b :    d > c,   b > a   ✓')
@@ -626,9 +627,9 @@ video('solve-q-496', 'solution', qid='q-496', slides=[
       L("Three are out, so it's choice number two. In the exam you'd mark it and move on. Here, let's see why it can fail. "
         "c plus b against d plus a, strong on strong. The strong ones, d beats c, a win for the right side. The weak ones, "
         "b beats a, a win for the left side. One win each, so no decision.", show(n4, 'The strong ones')),
-      L("So make it fail. c close to d, and b much bigger than a. a is one quarter, b is three quarters, c is two, and d is "
-        "two and a quarter. c plus b is two and three quarters, and d plus a is two and a half. Two and three quarters isn't "
-        "smaller. Not necessarily true, choice number two is our answer.", show(n5, 'a is one quarter'),
+      L("So make it fail. c close to d, and b much bigger than a. a is zero point two, b is zero point eight, c is one "
+        "point two, and d is one point three. c plus b is two, and d plus a is one point five. Two isn't smaller. Not "
+        "necessarily true, choice number two is our answer.", show(n5, 'a is zero point two'),
         mk('tick', 'choice 2', 'choice number two is our answer')),
       sb='Method 1 · Understanding'),
     S('Method 2 · Algebra',
@@ -826,7 +827,7 @@ z3 = I('z3', 'Always true ✗ $\\quad$ never true ✗', size=28, col=1)
 z4 = I('z4', '(3) $pq<p<p+q$: $\\ $always ✗', hand='(3)   pq < p < p + q :    always   ✗')
 z5 = I('z5', '(1) $\\div p$: $\\ pq<q<r$: $\\ $always ✗', hand='(1)   ÷ p :    pq < q < r :    always   ✗')
 z6 = I('z6', '(2) $pq<1$: $\\ $never ✗', hand='(2)   pq < 1 :    never   ✗')
-z7 = I('z7', '(4) $\\frac1{10}+\\frac12=\\frac35<1$ $\\quad \\frac14+\\frac78=\\frac98>1$', size=32, hand='(4)   {1/10} + {1/2} = {3/5} < 1        {1/4} + {7/8} = {9/8} > 1')
+z7 = I('z7', '(4) $0.1+0.6=0.7<1$ $\\quad 0.3+0.9=1.2>1$', size=32, hand='(4)   0.1 + 0.6 = 0.7 < 1        0.3 + 0.9 = 1.2 > 1')
 video('solve-q-501', 'solution', qid='q-501', slides=[
     S('Decode the chain',
       L("Given: p squared is smaller than p, which is smaller than r times q, which is smaller than q, which is smaller than "
@@ -851,10 +852,10 @@ video('solve-q-501', 'solution', qid='q-501', slides=[
         show(z6, 'A product of two positive fractions'), mk('cross', 'choice 2', 'Never true. Out'))),
     S('Then the choices',
       L("Choice number four, p plus r smaller than one. Two fractions. Small ones add up to less than one, big ones to more. "
-        "p is one tenth, q two fifths, and r one half. The chain holds, and p plus r is three fifths, smaller than one. But p "
-        "one quarter, q three quarters, and r seven eighths. The chain still holds, and p plus r is nine eighths, more than "
-        "one. Sometimes true, sometimes not. Choice number four is our answer. [pause] Okay. I'll see "
-        "you in the next question.", show(z7, 'p is one tenth'), mk('tick', 'choice 4', 'Choice number four is our answer')),
+        "p is zero point one, q zero point five, and r zero point six. The chain holds, and p plus r is zero point seven, "
+        "smaller than one. But p zero point three, q zero point eight, and r zero point nine. The chain still holds, and p "
+        "plus r is one point two, more than one. Sometimes true, sometimes not. Choice number four is our answer. [pause] Okay. I'll see "
+        "you in the next question.", show(z7, 'p is zero point one'), mk('tick', 'choice 4', 'Choice number four is our answer')),
       sb='Then the choices'),
 ])
 

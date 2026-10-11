@@ -92,22 +92,24 @@
   ],
   [
    {
-    "say": "Choice number four, p plus r smaller than one. Two fractions. Small ones add up to less than one, big ones to more. p is one tenth, q two fifths, and r one half. The chain holds, and p plus r is three fifths, smaller than one. But p one quarter, q three quarters, and r seven eighths. The chain still holds, and p plus r is nine eighths, more than one. Sometimes true, sometimes not. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
+    "say": "Choice number four, p plus r smaller than one. Two fractions. Small ones add up to less than one, big ones to more. p is zero point one, q zero point five, and r zero point six. The chain holds, and p plus r is zero point seven, smaller than one. But p zero point three, q zero point eight, and r zero point nine. The chain still holds, and p plus r is one point two, more than one. Sometimes true, sometimes not. Choice number four is our answer. [pause] Okay. I'll see you in the next question.",
     "at": [
      "number four, p",
      "smaller than one",
      "Small ones add",
      "less than one",
-     "p is one tenth",
+     "p is zero point one",
+     "r zero point",
      "The chain holds",
      "plus r is",
-     "smaller than one. But",
-     "But p one",
-     "three quarters, and",
+     "seven, smaller than",
+     "But p zero",
+     "q zero point eight",
+     "r zero point nine",
      "The chain still",
-     "p plus r is nine",
-     "eighths, more than",
-     "true, sometimes not",
+     "p plus r is one",
+     "point two, more",
+     "Sometimes true, sometimes",
      "Choice number four is our answer"
     ]
    }
