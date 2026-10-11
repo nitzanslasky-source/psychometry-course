@@ -22,6 +22,13 @@ Takes go to  Course.recordings/_reading/<videoId>/<videoId>-<ISO time>.wav  + a 
 start times, mistake marks, mic, sample rate). The '_' folder is skipped by studio_done.takes()/recorded_ids(), so
 these never count as camera takes. Every take is kept; the newest wins. Without the API (Safari/Firefox) both files
 are downloaded instead.
+
+Re-read (patch) mode: when a script paragraph changes after a take, she selects just those paragraphs (the changed ones
+are pre-selected) and records a patch take <videoId>-patch-<ISO time>.wav + .json ("kind": "patch", "paragraphs":
+[{i, text}] = index in the current script and its text). The teleprompter then shows only those paragraphs, with the
+neighbouring paragraphs greyed as context. Change detection (generator and page, same rule): a current paragraph whose
+text is not among the paragraphs of her last FULL take's sidecar, nor of a patch take made after it, is "changed"; the
+list shows "needs re-read: N paragraphs".
 """
 import argparse, glob, html, json, os, re, sys
 
@@ -32,6 +39,7 @@ READING_ROOT = os.path.expanduser('~/Documents/Course.recordings/_reading')
 OUT = os.path.join(DOWNLOADS, 'Reading-Studio.html')
 WPM = 150          # her reading pace estimate when the review file gives no length
 TAKE = re.compile(r'^(.+)-(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z)\.wav$')
+PATCH = re.compile(r'^(.+)-patch-(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z)\.wav$')   # re-read of a few paragraphs
 
 
 def plain(s):
@@ -96,25 +104,62 @@ def from_course(topic):
     return T.get('title', ''), out
 
 
-def scan_recorded(vids):
-    """{id: {takes, latest, seconds}} from ~/Documents/Course.recordings/_reading (build-time fallback for the status)"""
+def norm(t):
+    return re.sub(r'\s+', ' ', str(t)).strip()
+
+
+def take_files(names):
+    """(full takes, patch takes) among file names, each sorted oldest -> newest"""
+    patches = sorted(f for f in names if PATCH.match(f))
+    fulls = sorted(f for f in names if TAKE.match(f) and not PATCH.match(f))
+    return fulls, patches
+
+
+def stamp(f):
+    return (PATCH.match(f) or TAKE.match(f)).group(2)
+
+
+def changed_paragraphs(current, full_side, patch_sides):
+    """indexes of the current paragraphs that her takes do not cover: the text is not among the paragraphs of her
+    last full take's sidecar, nor of a patch take made after it (new or edited paragraphs). None = no sidecar."""
+    if not full_side or not full_side.get('paragraphs'):
+        return None
+    known = {norm(p['text'] if isinstance(p, dict) else p) for p in full_side['paragraphs']}
+    for ps in patch_sides:
+        known |= {norm(p['text'] if isinstance(p, dict) else p) for p in ps.get('paragraphs', [])}
+    return [i for i, t in enumerate(current) if norm(t) not in known]
+
+
+def scan_recorded(videos):
+    """{id: {takes, latest, seconds, patches, changed}} from ~/Documents/Course.recordings/_reading (build-time
+    status; the page re-scans the folder live when it has permission, with the same rules)"""
     rec = {}
-    for vid in vids:
-        d = os.path.join(READING_ROOT, vid)
+    for v in videos:
+        vid = v['id']; d = os.path.join(READING_ROOT, vid)
         if not os.path.isdir(d):
             continue
-        wavs = sorted(f for f in os.listdir(d) if TAKE.match(f))
-        if not wavs:
+        fulls, patches = take_files(os.listdir(d))
+        if not fulls:
             continue
-        last = wavs[-1]; secs = None
+        last = fulls[-1]; secs = None; side = None
         try:
-            secs = json.load(open(os.path.join(d, last[:-4] + '.json'))).get('duration')
+            side = json.load(open(os.path.join(d, last[:-4] + '.json'), encoding='utf-8'))
+            secs = side.get('duration')
         except Exception:
             try:
                 secs = (os.path.getsize(os.path.join(d, last)) - 44) / (48000 * 2)
             except Exception:
                 pass
-        rec[vid] = dict(takes=len(wavs), latest=last, seconds=secs)
+        later = []
+        for f in patches:
+            if stamp(f) > stamp(last):
+                try:
+                    later.append(json.load(open(os.path.join(d, f[:-4] + '.json'), encoding='utf-8')))
+                except Exception:
+                    pass
+        cur = [p for sl in v['paras'] for p in sl]
+        rec[vid] = dict(takes=len(fulls), latest=last, seconds=secs, patches=len(later),
+                        changed=changed_paragraphs(cur, side, later))
     return rec
 
 
@@ -144,7 +189,7 @@ def build(topics=(), ids=None, out=OUT):
             v['group'] = g['topic']
             allv.append(v)
     data = dict(groups=[dict(topic=g['topic'], title=g['title'], ids=[v['id'] for v in g['videos']]) for g in groups],
-                videos=allv, recorded=scan_recorded([v['id'] for v in allv]))
+                videos=allv, recorded=scan_recorded(allv))
     js = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
     label = ', '.join(('Topic %d' % g['topic']) + (' · ' + g['title'] if g['title'] else '') if g['topic'] else 'Videos'
                       for g in groups)
@@ -234,6 +279,22 @@ kbd{font:11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line);border
 .p.cur{background:var(--hl);border-left-color:var(--hl-line);color:var(--ink)}
 .p .mk{position:absolute;right:8px;top:6px;font:700 12px ui-sans-serif,sans-serif;color:var(--mist)}
 .p.flash{animation:fl .6s}
+.mode{display:inline-flex;border:1px solid var(--line);border-radius:9px;overflow:hidden}
+.mode button{border:0;border-radius:0;padding:6px 11px;background:var(--panel)}
+.mode button.on{background:var(--accent);color:#fff}
+.pbar{display:none;margin:0 22px 8px;padding:8px 12px;border-radius:10px;background:var(--warn-soft);font-size:13.5px;align-items:center;gap:10px;flex-wrap:wrap}
+.patch .pbar{display:flex}
+.pbar button{padding:4px 10px;font-size:13px}
+.patch .p{padding-left:2.1em}
+.patch .p::before{content:"";position:absolute;left:.6em;top:.62em;width:.62em;height:.62em;border:2px solid var(--faint);border-radius:4px}
+.patch .p.sel{color:var(--ink)}
+.patch .p.sel::before{background:var(--accent);border-color:var(--accent)}
+.p .chg{font:700 11px ui-sans-serif,sans-serif;color:var(--warn);background:var(--warn-soft);border-radius:999px;padding:1px 7px;margin-left:8px;vertical-align:4px}
+.patching .p:not(.sel):not(.ctx){display:none}
+.patching .slide.empty{display:none}
+.patching .p.ctx{opacity:.45;font-size:.8em;cursor:default}
+.patching .p::before{display:none}
+.pill.chg{background:var(--warn-soft);color:var(--warn)}
 @keyframes fl{0%{background:color-mix(in srgb,var(--mist) 25%,transparent)}100%{}}
 .foot{display:flex;gap:12px;align-items:center;padding:10px 22px;border-top:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
 .foot audio{height:34px;flex:1;min-width:240px;max-width:520px}
@@ -270,6 +331,7 @@ kbd{font:11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line);border
     </div>
     <div class="head"><h1 id="vtitle"></h1>
       <div class="opts">
+        <span class="mode" title="Full read = the whole script. Re-read = only the paragraphs you select (a patch take)."><button id="mFull" class="on">Full read</button><button id="mPatch">Re-read paragraphs</button></span>
         <label><input type="checkbox" id="auto" checked> Auto-scroll</label>
         <button id="aMinus" title="Smaller text">A−</button><button id="aPlus" title="Bigger text">A+</button>
       </div>
@@ -283,6 +345,7 @@ kbd{font:11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line);border
       <span class="state" id="state">Ready.</span>
       <span class="keys"><kbd>Space</kbd> / click next paragraph · <kbd>←</kbd> back · <kbd>M</kbd> mistake · <kbd>P</kbd> pause</span>
     </div>
+    <div class="pbar" id="pbar"><span id="pinfo"></span><button id="pChanged">Select changed</button><button id="pClear">Clear</button></div>
     <div class="prompter" id="prompter" tabindex="-1"><div class="inner" id="paras"></div></div>
     <div class="foot">
       <span class="lbl" id="playLbl">Last take</span>
@@ -297,14 +360,15 @@ const DATA=__DATA__;
 const $=s=>document.querySelector(s);
 const V=DATA.videos, BYID=Object.fromEntries(V.map(v=>[v.id,v]));
 const SR=48000;
-const TAKE_RE=/^(.+)-(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z)\.wav$/;
+const TAKE_RE=/^(.+)-(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z)\.wav$/,PATCH_RE=/^(.+)-patch-(\d{4}-\d{2}-\d{2}T\d{2}-\d{2}-\d{2}-\d{3}Z)\.wav$/;
+const norm=t=>String(t).replace(/\s+/g,' ').trim();
 const LS={get(k,d){try{const v=localStorage.getItem('reading-studio-'+k);return v==null?d:JSON.parse(v)}catch{return d}},set(k,v){try{localStorage.setItem('reading-studio-'+k,JSON.stringify(v))}catch{}}};
 function toast(m,ms=3200){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),ms)}
 function fmt(s,tenths){s=Math.max(0,s);const m=Math.floor(s/60),r=s-m*60;return m+':'+(tenths?r.toFixed(1).padStart(4,'0'):String(Math.floor(r)).padStart(2,'0'))}
 function esc(s){return String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
 
 /* ---------------- state ---------------- */
-const S={cur:0,para:0,status:{},rec:null,lastUrl:null};
+const S={cur:0,para:0,status:{},rec:null,lastUrl:null,mode:'full',sel:new Set()};
 for(const [id,r] of Object.entries(DATA.recorded||{}))S.status[id]=r;
 const flat=v=>v.paras.flat();
 
@@ -338,11 +402,18 @@ $('#bFolder').onclick=async()=>{
     if(h.name!=='Course.recordings'&&h.name!=='_reading')toast('Saving in "'+h.name+'/_reading". The usual folder is Documents/Course.recordings.',6000);else toast('Takes will be saved in '+rootLabel()+'/<video>/');
     await scanAll()}catch(e){if(e&&e.name!=='AbortError')console.warn(e)}
 };
+async function readJson(d,n){try{return JSON.parse(await (await (await d.getFileHandle(n)).getFile()).text())}catch{return null}}
+function changedOf(id,full,patches){/* same rule as the generator: current paragraphs not in the last full take's sidecar nor in a later patch */
+  if(!full||!full.paragraphs)return null;const known=new Set(full.paragraphs.map(p=>norm(p.text!=null?p.text:p)));
+  for(const ps of patches)for(const p of (ps.paragraphs||[]))known.add(norm(p.text!=null?p.text:p));
+  return flat(BYID[id]).map((t,i)=>known.has(norm(t))?-1:i).filter(i=>i>=0)}
 async function scanVideo(id){
   try{const d=await videoDir(id,false);if(!d)return;const names=[];for await(const [n,h] of d.entries())if(h.kind==='file'&&TAKE_RE.test(n))names.push(n);
-    if(!names.length){delete S.status[id];return}names.sort();const last=names[names.length-1];let secs=null;
-    try{const j=JSON.parse(await (await (await d.getFileHandle(last.replace(/\.wav$/,'.json'))).getFile()).text());secs=j.duration}catch{try{const f=await (await d.getFileHandle(last)).getFile();secs=(f.size-44)/(SR*2)}catch{}}
-    S.status[id]={takes:names.length,latest:last,seconds:secs}}catch(e){/* no folder for this video yet */}
+    const patches=names.filter(n=>PATCH_RE.test(n)).sort(),fulls=names.filter(n=>!PATCH_RE.test(n)).sort();
+    if(!fulls.length){delete S.status[id];return}const last=fulls[fulls.length-1],lastT=last.match(TAKE_RE)[2];let secs=null;
+    const side=await readJson(d,last.replace(/\.wav$/,'.json'));if(side)secs=side.duration;else{try{const f=await (await d.getFileHandle(last)).getFile();secs=(f.size-44)/(SR*2)}catch{}}
+    const later=[];for(const n of patches)if(n.match(PATCH_RE)[2]>lastT){const j=await readJson(d,n.replace(/\.wav$/,'.json'));if(j)later.push(j)}
+    S.status[id]={takes:fulls.length,latest:last,seconds:secs,patches:later.length,changed:changedOf(id,side,later)}}catch(e){/* no folder for this video yet */}
 }
 async function scanAll(){if(RF.perm!=='granted')return;try{await readingDir(false)}catch{renderList();return}await Promise.all(V.map(v=>scanVideo(v.id)));renderList();loadLatestTake()}
 
@@ -353,13 +424,13 @@ function renderList(){
     h+='<div class="grp"><span>'+esc(g.topic?('Topic '+g.topic+(g.title?' · '+g.title:'')):g.title)+'</span><span>'+done+'/'+g.ids.length+'</span></div>';
     for(const id of g.ids){const v=BYID[id],i=V.indexOf(v),st=S.status[id];n++;
       h+='<div class="vid'+(i===S.cur?' cur':'')+'" data-i="'+i+'"><span class="n">'+(i+1)+'</span><span class="t" title="'+esc(v.title)+'">'+esc(v.title)+'</span><span class="m">'+v.minutes.toFixed(1)+' min</span>'+
-        '<span class="id">'+esc(id)+'</span><span class="st">'+(st?'<span class="pill yes">recorded ✓'+(st.seconds?' · '+fmt(st.seconds):'')+(st.takes>1?' · '+st.takes+' takes':'')+'</span>':'<span class="pill no">not recorded</span>')+'</span></div>'}}
+        '<span class="id">'+esc(id)+'</span><span class="st">'+(st?'<span class="pill yes">recorded ✓'+(st.seconds?' · '+fmt(st.seconds):'')+(st.takes>1?' · '+st.takes+' takes':'')+(st.patches?' · '+st.patches+' patch'+(st.patches>1?'es':''):'')+'</span>'+(st.changed&&st.changed.length?' <span class="pill chg">needs re-read: '+st.changed.length+' paragraph'+(st.changed.length>1?'s':'')+'</span>':''):'<span class="pill no">not recorded</span>')+'</span></div>'}}
   L.innerHTML=h;
   L.querySelectorAll('.vid').forEach(el=>el.onclick=()=>selectVideo(+el.dataset.i));
 }
 function selectVideo(i){
   if(S.rec){toast('Stop the recording first.');return}
-  S.cur=Math.max(0,Math.min(V.length-1,i));S.para=0;LS.set('cur',V[S.cur].id);
+  S.cur=Math.max(0,Math.min(V.length-1,i));S.para=0;LS.set('cur',V[S.cur].id);S.sel=new Set(changedList());
   renderList();renderParas();paintFolder();loadLatestTake();
   const el=$('#list .vid.cur');if(el)el.scrollIntoView({block:'nearest'});
 }
@@ -368,17 +439,32 @@ function selectVideo(i){
 function renderParas(){
   const v=V[S.cur];let k=0;
   $('#vtitle').innerHTML=esc(v.title)+'<small>'+esc(v.id)+' · about '+v.minutes.toFixed(1)+' min · '+v.words+' words</small>';
-  $('#paras').innerHTML=v.paras.map(sl=>'<div class="slide">'+sl.map(p=>'<p class="p" data-k="'+(k++)+'">'+esc(p)+'</p>').join('')+'</div>').join('');
-  $('#paras').querySelectorAll('.p').forEach(el=>el.onclick=e=>{e.stopPropagation();if(S.rec&&!S.rec.paused)nextPara();else setPara(+el.dataset.k,'jump')});
+  const ch=new Set(changedList());
+  $('#paras').innerHTML=v.paras.map(sl=>'<div class="slide">'+sl.map(p=>{const kk=k++;return '<p class="p" data-k="'+kk+'">'+esc(p)+(ch.has(kk)?'<span class="chg">changed</span>':'')+'</p>'}).join('')+'</div>').join('');
+  $('#paras').querySelectorAll('.p').forEach(el=>el.onclick=e=>{e.stopPropagation();const kk=+el.dataset.k;if(S.rec&&!S.rec.paused)nextPara();else if(S.mode==='patch'&&!S.rec){S.sel.has(kk)?S.sel.delete(kk):S.sel.add(kk);if(S.sel.has(kk))S.para=kk;else if(!S.sel.has(S.para))S.para=order()[0]??0;paintParas()}else setPara(kk,'jump')});
   $('#prompter').scrollTop=0;paintParas();
 }
+function changedList(){const st=S.status[V[S.cur].id];return st&&st.changed?st.changed.slice():[]}
+function order(){const n=flat(V[S.cur]).length;return S.mode==='patch'?[...S.sel].sort((a,b)=>a-b):[...Array(n).keys()]}
 function paintParas(){
-  document.querySelectorAll('#paras .p').forEach(el=>{const k=+el.dataset.k;el.classList.toggle('cur',k===S.para);el.classList.toggle('done',k<S.para)});
+  const patch=S.mode==='patch',patching=patch&&!!S.rec,sel=S.sel,ch=changedList();
+  document.body.classList.toggle('patch',patch);$('#paras').classList.toggle('patching',patching);
+  document.querySelectorAll('#paras .p').forEach(el=>{const k=+el.dataset.k;el.classList.toggle('cur',k===S.para&&(!patch||sel.has(k)));el.classList.toggle('done',!patch&&k<S.para);
+    el.classList.toggle('sel',patch&&sel.has(k));el.classList.toggle('ctx',patching&&!sel.has(k)&&(sel.has(k-1)||sel.has(k+1)))});
+  document.querySelectorAll('#paras .slide').forEach(sd=>sd.classList.toggle('empty',patching&&!sd.querySelector('.p.sel,.p.ctx')));
+  if(patch){const nc=[...sel].filter(k=>ch.includes(k)).length;$('#pinfo').innerHTML=patching?'<b>Re-reading '+sel.size+' paragraph'+(sel.size===1?'':'s')+'</b> (greyed lines are context: do not read them)':
+    'Re-read mode: click paragraphs to select them. <b>'+sel.size+' selected</b>'+(ch.length?' · '+ch.length+' changed since your last take'+(nc?' ('+nc+' selected)':''):' · no changed paragraphs');$('#pChanged').hidden=patching||!ch.length;$('#pClear').hidden=patching}
   if($('#auto').checked){const el=document.querySelector('#paras .p.cur');if(el){const pr=$('#prompter');const top=el.offsetTop-pr.offsetTop-pr.clientHeight*.3;pr.scrollTo({top:Math.max(0,top),behavior:'smooth'})}}
 }
+function step(d){const o=order();if(!o.length)return;let i=o.indexOf(S.para);if(i<0)i=d>0?-1:o.length;const j=i+d;if(j<0||j>=o.length){if(d>0&&S.rec)toast('Last paragraph. Press Stop & save when you finish.');return}setPara(o[j],d>0?'next':'back')}
 function setPara(k,why){const n=flat(V[S.cur]).length;k=Math.max(0,Math.min(n-1,k));if(k===S.para&&why!=='start')return;S.para=k;
   if(S.rec)S.rec.events.push({type:why==='back'?'back':why==='jump'?'jump':'para',para:k,t:recTime()});paintParas()}
-function nextPara(){const n=flat(V[S.cur]).length;if(S.para>=n-1){if(S.rec)toast('Last paragraph. Press Stop & save when you finish.');return}setPara(S.para+1,'next')}
+function nextPara(){step(1)}
+function setMode(m){if(S.rec){toast('Stop the recording first.');return}S.mode=m;$('#mFull').classList.toggle('on',m==='full');$('#mPatch').classList.toggle('on',m==='patch');
+  if(m==='patch'){if(!S.sel.size)S.sel=new Set(changedList());const o=order();if(o.length&&!S.sel.has(S.para))S.para=o[0]}paintParas()}
+$('#mFull').onclick=()=>setMode('full');$('#mPatch').onclick=()=>setMode('patch');
+$('#pChanged').onclick=()=>{S.sel=new Set(changedList());const o=order();if(o.length)S.para=o[0];paintParas()};
+$('#pClear').onclick=()=>{S.sel.clear();paintParas()};
 $('#prompter').onclick=()=>{if(S.rec&&!S.rec.paused)nextPara()};
 function fontSize(d){let f=LS.get('font',30);f=Math.max(18,Math.min(48,f+d));LS.set('font',f);document.documentElement.style.setProperty('--prompt',f+'px')}
 $('#aMinus').onclick=()=>fontSize(-2);$('#aPlus').onclick=()=>fontSize(2);
@@ -439,11 +525,13 @@ async function startRec(){
   if(MIC.ctx.state!=='running')try{await MIC.ctx.resume()}catch{}
   if(window.showDirectoryPicker&&RF.handle&&RF.perm!=='granted'){RF.perm=await rfPerm(true);paintFolder();if(RF.perm==='granted')scanAll()}
   if(window.showDirectoryPicker&&!RF.handle)toast('No folder chosen: this take will go to Downloads. Choose Course.recordings to save it in place.',6000);
-  const v=V[S.cur];
-  S.rec={video:v.id,started:new Date(),chunks:[],samples:0,paused:false,clipped:false,events:[],pauses:[],
+  const v=V[S.cur],patch=S.mode==='patch';
+  if(patch&&!S.sel.size){toast('Select the paragraphs to re-read first (click them).');return}
+  if(patch)S.para=order()[0];   // a patch take always starts at the first selected paragraph
+  S.rec={video:v.id,patch,sel:patch?order():null,started:new Date(),chunks:[],samples:0,paused:false,clipped:false,events:[],pauses:[],
     push(c){this.chunks.push(c);this.samples+=c.length}};
   S.rec.events.push({type:'start',para:S.para,t:0});
-  MIC.ctl('start');setUI();tick();toast('Recording. Space = next paragraph, M = mistake.');
+  MIC.ctl('start');setUI();paintParas();tick();toast((patch?'Recording a re-read of '+S.sel.size+' paragraph'+(S.sel.size>1?'s':'')+'. ':'Recording. ')+'Space = next paragraph, M = mistake.');
 }
 function togglePause(){const r=S.rec;if(!r)return;
   if(!r.paused){MIC.ctl('pause');r.paused=true;r.pauses.push({at:+recTime().toFixed(3)})}
@@ -455,23 +543,27 @@ function mistake(){const r=S.rec;if(!r||r.paused)return;const t=recTime();r.even
 async function stopRec(){
   const r=S.rec;if(!r||r.stopping)return;r.stopping=true;
   await new Promise(ok=>{MIC._flushed=ok;MIC.ctl('flush');setTimeout(ok,800)});MIC._flushed=null;
-  S.rec=null;setUI();
+  S.rec=null;setUI();paintParas();
   if(!r.samples){toast('The recording was empty. Nothing saved.');return}
   const sr=MIC.ctx.sampleRate,dur=r.samples/sr,v=BYID[r.video];
-  const name=r.video+'-'+r.started.toISOString().replace(/[:.]/g,'-')+'.wav';
+  const name=r.video+(r.patch?'-patch-':'-')+r.started.toISOString().replace(/[:.]/g,'-')+'.wav';
   const wav=encodeWav(r.chunks,r.samples,sr);
   const ps=flat(v);const starts=[];for(const e of r.events)if(e.type!=='mistake')starts.push({para:e.para,t:+e.t.toFixed(3),how:e.type});
-  const side={file:name,videoId:r.video,recordedAt:r.started.toISOString(),duration:+dur.toFixed(3),sampleRate:sr,channels:1,bitsPerSample:16,format:'WAV PCM 16-bit mono',
+  const side={file:name,videoId:r.video,kind:r.patch?'patch':'full',recordedAt:r.started.toISOString(),duration:+dur.toFixed(3),sampleRate:sr,channels:1,bitsPerSample:16,format:'WAV PCM 16-bit mono',
     mic:{label:MIC.label,deviceId:(MIC.settings||{}).deviceId||'',settings:MIC.settings,engine:MIC.engine},
     constraints:{echoCancellation:false,noiseSuppression:false,autoGainControl:false},clipped:!!r.clipped,
     paragraphStarts:starts,mistakes:r.events.filter(e=>e.type==='mistake').map(e=>({t:+e.t.toFixed(3),para:e.para,text:ps[e.para]})),
-    pauses:r.pauses,paragraphs:ps.map((text,i)=>({i,text})),
-    note:'Times are seconds in this WAV (pauses removed). paragraphStarts: when each paragraph was reached (Space/click; back/jump also listed). mistakes: "I stumbled; I repeat this sentence" - cut the take of that sentence before the mark.',
+    pauses:r.pauses,paragraphs:(r.patch?r.sel:ps.map((_,i)=>i)).map(i=>({i,text:ps[i]})),scriptParagraphs:ps.length,
+    note:(r.patch?'PATCH take: only the paragraphs listed in "paragraphs" (i = index in the current script) were re-read; they replace those paragraphs of the full take. ':'')+'Times are seconds in this WAV (pauses removed). paragraphStarts: when each paragraph was reached (Space/click; back/jump also listed). mistakes: "I stumbled; I repeat this sentence" - cut the take of that sentence before the mark.',
     tool:'reading_studio.py v1'};
   const json=new Blob([JSON.stringify(side,null,1)],{type:'application/json'});
   setLastTake(wav,name);
   const where=await saveFiles(r.video,[[name,wav],[name.replace(/\.wav$/,'.json'),json]]);
-  const st=S.status[r.video]||{takes:0};S.status[r.video]={takes:(where?st.takes:0)+1,latest:name,seconds:dur};renderList();
+  const st=S.status[r.video]||{takes:0,patches:0,changed:null};
+  if(r.patch){const done=new Set(r.sel.map(i=>norm(ps[i])));S.status[r.video]={...st,patches:(st.patches||0)+1,changed:st.changed?st.changed.filter(i=>!done.has(norm(ps[i]))):st.changed}}
+  else S.status[r.video]={takes:(st.takes||0)+1,latest:name,seconds:dur,patches:0,changed:[]};
+  if(where)await scanVideo(r.video);renderList();
+  if(V[S.cur].id===r.video){const keep=S.para;S.sel=new Set([...S.sel].filter(i=>changedList().includes(i)));renderParas();S.para=keep;paintParas()}
   $('#state').textContent=where?'Saved '+fmt(dur)+' → '+where:'Downloaded '+name+' (and its .json). Move both to Course.recordings/_reading/'+r.video+'/';
   toast(where?'Saved ('+fmt(dur)+').':'Downloaded to your Downloads folder.',4000);
   if(r.clipped)toast('Some peaks were too loud (clipping). Move back a little or lower the mic gain.',6000);
@@ -504,7 +596,7 @@ document.addEventListener('keydown',e=>{
   if(e.target.closest&&e.target.closest('select,input,textarea'))return;if(e.metaKey||e.ctrlKey||e.altKey)return;
   const k=e.key;
   if(k===' '||k==='ArrowRight'||k==='ArrowDown'||k==='PageDown'){e.preventDefault();if(document.activeElement&&document.activeElement.blur)document.activeElement.blur();if(!S.rec||!S.rec.paused)nextPara()}
-  else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'){e.preventDefault();setPara(S.para-1,'back')}
+  else if(k==='ArrowLeft'||k==='ArrowUp'||k==='PageUp'){e.preventDefault();step(-1)}
   else if(k==='m'||k==='M'){e.preventDefault();mistake()}
   else if(k==='p'||k==='P'){e.preventDefault();togglePause()}
 });
