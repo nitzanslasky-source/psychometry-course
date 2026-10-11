@@ -21,11 +21,12 @@
     ]
    },
    {
-    "say": "[short pause] Our first method, two cases. Big side means an open range, one part going to the right and one going to the left. So one option, the inside is bigger than eight, and then x is bigger than seven.",
+    "say": "[short pause] Our first method, two cases. Big side means an open range, one part going to the right and one going to the left. So one option, the inside is bigger than eight. Take one off both sides, and x is bigger than seven.",
     "at": [
      "Our first",
      "Big side means",
-     "one option, the inside is bigger"
+     "one option, the inside is bigger",
+     "Take one off"
     ]
    },
    {
@@ -34,6 +35,14 @@
      "the inside is smaller than negative eight",
      "Now careful, the",
      "so x is smaller"
+    ]
+   },
+   {
+    "say": "So what does that leave? x can be above seven, or below negative nine, but not in between.",
+    "at": [
+     "So what does",
+     "above seven",
+     "below negative nine"
     ]
    },
    {
@@ -60,10 +69,12 @@
     ]
    },
    {
-    "say": "Two rays going outward, and a gap in the middle. Two is only three steps from negative one, so it sits in the gap.",
+    "say": "Two rays going outward, and a gap in the middle. Two is only three steps from negative one, and three isn't more than eight. So two sits in the gap, and it cannot be x. Number two.",
     "at": [
      "a gap in the middle",
-     "Two is only"
+     "Two is only",
+     "it cannot be x",
+     "Number two"
     ]
    }
   ],
@@ -77,11 +88,12 @@
     ]
    },
    {
-    "say": "Two plus one is three, and three is not bigger than eight. So two doesn't work. And in a cannot question, the one that doesn't work is the answer.",
+    "say": "Two plus one is three, and three is not bigger than eight. So two doesn't work. And in a cannot question, the one that doesn't work is the answer. In the exam you'd circle it and move on.",
     "at": [
      "Two plus one",
      "not bigger than eight",
-     "the one that"
+     "the one that",
+     "In the exam"
     ]
    },
    {

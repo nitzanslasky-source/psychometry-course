@@ -20,7 +20,7 @@
     ]
    },
    {
-    "say": "[short pause] Our first method, the algebra. I take the seven, and I put negative seven on the other side. So negative seven is smaller than x plus three, which is smaller than seven.",
+    "say": "[short pause] Our first method, the algebra. The inside is trapped, so I take the seven, and I put negative seven on the other side. So negative seven is smaller than x plus three, which is smaller than seven.",
     "at": [
      "Our first",
      "I take the seven",
@@ -64,13 +64,16 @@
     ]
    },
    {
-    "say": "Seven steps to the left, negative ten. Seven steps to the right, four. One band in the middle, and three is inside it.",
+    "say": "Seven steps to the left, negative ten. Seven steps to the right, four. One band in the middle, from negative ten to four. Three is inside it. Five and eleven are past four, and negative twenty-five is way past negative ten, so they're outside. Three, number three.",
     "at": [
      "Seven steps to the left",
      "Seven steps to the right",
      "One band in the middle",
-     "three is",
-     "inside it"
+     "Three is inside",
+     "Five and",
+     "eleven are past",
+     "negative twenty-five is way",
+     "Three, number three"
     ]
    }
   ],

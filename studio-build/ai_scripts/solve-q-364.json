@@ -68,21 +68,25 @@
   ],
   [
    {
-    "say": "[pause] Our second method, plugging in numbers. The trick here is to try two extreme pictures. First, the negatives far from zero and the positives close to it. p is negative fifty, q negative forty, r one and s three.",
+    "say": "[pause] Our second method, plugging in numbers. The givens only fix the order, not the sizes. So the trick is to try two extreme pictures. First, the negatives far from zero and the positives close to it. p is negative fifty, q negative forty, r one and s three. They're in order, so they obey the given.",
     "at": [
      "Our second",
-     "The trick here",
+     "The givens only",
+     "So the trick",
      "First, the negatives",
-     "p is negative fifty"
+     "p is negative fifty",
+     "They're in order"
     ]
    },
    {
-    "say": "Number three, fifty smaller than three? No, out. Number four, forty smaller than three? No, out.",
+    "say": "Number one, one smaller than fifty? Yes, it stays. Number two, forty smaller than fifty? Yes, it stays. Number three, fifty smaller than three? No, out. Number four, forty smaller than three? No, out.",
     "voice": "calm",
     "at": [
+     "Number one, one",
+     "Number two, forty",
      "Number three, fifty",
      "No, out",
-     "forty smaller"
+     "forty smaller than three"
     ]
    },
    {
@@ -93,13 +97,14 @@
     ]
    },
    {
-    "say": "Number one, forty smaller than three? No, out. Number two, one smaller than three? Yes, and it worked in the first picture too. Number two.",
+    "say": "Number one, forty smaller than three? No, out. Number two, one smaller than three? Yes, and it worked in the first picture too. So number two survives both pictures. Number two.",
     "voice": "calm",
     "at": [
      "Number one, forty",
      "No, out",
      "Number two, one",
-     "Yes, and"
+     "Yes, and it",
+     "survives both"
     ]
    },
    {

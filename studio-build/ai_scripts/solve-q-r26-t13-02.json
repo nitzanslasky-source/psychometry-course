@@ -56,12 +56,12 @@
     ]
    },
    {
-    "say": "Number four. The absolute value of x is at most one. Zero works, and a half works too. So it's out.",
+    "say": "Number four. The absolute value of x is at most one. Zero works, because zero is at most one. So it has a solution, and it's out.",
     "at": [
      "Number four",
      "The absolute value",
      "Zero works",
-     "So it's out"
+     "and it's out"
     ]
    },
    {
@@ -90,13 +90,29 @@
     ]
    },
    {
-    "say": "Is there a second way? Sure, look for one solution for each choice. Three works for number one, and zero works for numbers three and four. For number two you can't find any, and now we know why.",
+    "say": "Is there a second way? Sure, try to find one solution for each choice. Number one, try three. Three minus three is zero, so three works.",
     "at": [
      "Is there a",
-     "Sure, look for",
-     "Three works",
-     "zero works",
-     "For number two"
+     "Sure, try to",
+     "Number one, try three",
+     "Three minus three"
+    ]
+   },
+   {
+    "say": "Number three, try zero. Zero plus two is two, and two is bigger than negative one, so zero works. Number four, zero again, and zero is at most one. Works.",
+    "at": [
+     "Number three, try zero",
+     "Zero plus two",
+     "Number four, zero"
+    ]
+   },
+   {
+    "say": "Number two, whatever x I try, x plus two in bars comes out zero or more. Try zero, it's two. Try negative two, it's zero. It never gets below negative one. So no solution, number two.",
+    "at": [
+     "Number two, whatever",
+     "Try negative two",
+     "It never gets",
+     "So no solution"
     ]
    },
    {

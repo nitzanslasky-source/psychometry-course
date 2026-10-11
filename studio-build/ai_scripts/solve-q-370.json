@@ -70,11 +70,12 @@
   ],
   [
    {
-    "say": "[pause] Our second method, plugging in the answers. One number that breaks a choice crosses it out. Let's try zero first. Zero plus zero is zero, smaller than twelve, so zero works.",
+    "say": "[pause] Our second method, plugging in the answers. One number that breaks a choice crosses it out. Let's try zero first. Why zero? Because the choices disagree about zero, two of them include it and two leave it out. Zero plus zero is zero, smaller than twelve, so zero works.",
     "at": [
      "Our second",
      "One number that",
      "Let's try zero",
+     "Because the choices",
      "Zero plus zero"
     ]
    },

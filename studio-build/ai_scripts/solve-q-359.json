@@ -35,11 +35,11 @@
     ]
    },
    {
-    "say": "First case, x plus seven is nine. Take seven off both sides, and x is two.",
+    "say": "First case, x plus seven is nine. To get x alone, I take seven off both sides, and x is two.",
     "voice": "calm",
     "at": [
      "First case",
-     "Take seven off",
+     "take seven off",
      "x is two"
     ]
    },
@@ -77,29 +77,30 @@
   ],
   [
    {
-    "say": "[pause] Our second method, the number line. x plus seven is x minus negative seven, so it's the distance between x and negative seven.",
+    "say": "[pause] Our second method, the number line. x plus seven is x minus negative seven, so it's the distance between x and negative seven. And the bars are equal to nine, so x is exactly nine steps away from negative seven.",
     "at": [
      "Our second",
      "x plus seven is x minus",
      "x minus negative seven",
-     "the distance between"
+     "the distance between",
+     "exactly nine steps"
     ]
    },
    {
-    "say": "Nine steps to the right of negative seven, that's two. Nine steps to the left, that's negative sixteen. The same two answers, one on each side.",
+    "say": "Nine steps to the right of negative seven, that's two. Nine steps to the left, that's negative sixteen. Two isn't in the choices, but negative sixteen is, number three.",
     "at": [
      "Nine steps to the right",
      "that's two",
      "Nine steps to the left",
      "that's negative sixteen",
-     "The same",
-     "one on each side"
+     "negative sixteen is",
+     "number three"
     ]
    }
   ],
   [
    {
-    "say": "[pause] And our third method, plugging in the answers. The choices are numbers, so let's just try them. Sixteen plus seven is twenty-three, no. Negative two plus seven is five, no.",
+    "say": "[pause] And our third method, plugging in the answers. The choices are numbers, so let's just try them. Sixteen plus seven is twenty-three, and twenty-three isn't nine, so no. Negative two plus seven is five, and five isn't nine, so no again.",
     "voice": [
      "base"
     ],
@@ -108,9 +109,9 @@
      "The choices are",
      "Sixteen",
      "twenty-three",
-     "twenty-three, no",
+     "twenty-three isn't nine",
      "Negative two plus seven",
-     "is five, no"
+     "so no again"
     ]
    },
    {

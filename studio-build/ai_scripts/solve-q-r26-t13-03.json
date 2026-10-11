@@ -72,7 +72,7 @@
   ],
   [
    {
-    "say": "[pause] Our second method, a shortcut. The bars are never negative, so the right side can't be negative. Three x is zero or positive, so x is zero or positive.",
+    "say": "[pause] Our second method, a shortcut that starts from the right side. The bars are never negative, so the right side can't be negative. Three x is zero or positive, so x is zero or positive.",
     "at": [
      "Our second",
      "The bars are",
@@ -80,18 +80,22 @@
     ]
    },
    {
-    "say": "So minus one is out straight away, and numbers two and three go with it.",
+    "say": "And what does that mean for the bars? If x is zero or positive, x plus four is positive, so the bars do nothing. I can just drop them. x plus four is three x, so four is two x, and x is two.",
     "at": [
-     "numbers two",
-     "and three go"
+     "And what does",
+     "the bars do nothing",
+     "I can just drop them",
+     "x plus four is three"
     ]
    },
    {
-    "say": "Now I just check two. Six equals six, so there is a solution, and number four is out too. Number one.",
+    "say": "So two is the only value. Numbers two and three have minus one in them, and x can't be negative here, so they're out. Number four says there's no such number, but two is one, so it's out too. Two only, number one.",
     "at": [
-     "Now I just",
-     "number four is out",
-     "Number one."
+     "So two is",
+     "Numbers two",
+     "and three have",
+     "Number four says",
+     "Two only, number one"
     ]
    },
    {

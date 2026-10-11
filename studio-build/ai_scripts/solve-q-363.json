@@ -65,7 +65,7 @@
   ],
   [
    {
-    "say": "[pause] Our second method, plugging in numbers. I need numbers that obey all three givens. Why four for m? Because four k is m, so I'll divide m by four, and four divides easily.",
+    "say": "[pause] Our second method, plugging in numbers. I need numbers that obey all three givens. Let's start with m. m is equal to an absolute value, so it can't be negative. Why four for m? Because four k is m, so I'll divide m by four, and four divides easily.",
     "at": [
      "obey all three givens",
      "Why four for m",
@@ -88,18 +88,22 @@
     ]
    },
    {
-    "say": "Four k is four, so k is one.",
+    "say": "And k? Four k is m, and m is four. So four k is four, and k is one.",
     "voice": "calm",
     "at": [
-     "Four k is four"
+     "Four k is",
+     "four k is four"
     ]
    },
    {
-    "say": "Negative four, one, four. So n, then k, then m, number two again. And all three other choices break with these numbers.",
+    "say": "Negative four, one, four. So n, then k, then m, that's number two. And the others break with these numbers. Number one says four is smaller than one, no. Number three also puts four below one, no. Number four says one is smaller than negative four, no.",
     "at": [
      "Negative four, one, four",
-     "number two again",
-     "And all three"
+     "that's number two",
+     "And the others",
+     "Number one says",
+     "Number three also",
+     "Number four says"
     ]
    },
    {

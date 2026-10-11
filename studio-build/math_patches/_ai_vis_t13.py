@@ -289,17 +289,20 @@ def stats(vid):
 # =================================================================================================================
 
 # ------------------------------------------------------------------------------------------------ q-358 (Q1)
-# NEW: "signs only, no sizes", the tie-breaker plug.  REMINDER: product sign (topic 1), y < |y| clue (lesson).
+# NEW: "signs only, no sizes", the tie-breaker plug; plugging in finds the signs by trying (y = 3 fails, x = -8 fails) -
+# R30, each method stands on its own.  REMINDER: product sign (topic 1), y < |y| clue (lesson).
 c1 = I('c1', '$\\hl{xy}{x\\cdot y<0}$: opposite signs', hand='\\hl{xy}{x·y < 0} : opposite signs')
 c2 = I('c2', '$(+)\\cdot(-)=(-)$', size=32, col=1, hand='(+)·(−) = (−)')
 c3 = I('c3', '$\\hl{y}{y<|y|}$: $y$ is negative', hand='\\hl{y}{y < |y|} : y is negative')
 c4 = I('c4', 'So $\\hl{x}{x>0}$', hand='So    \\hl{x}{x > 0}')
 c5 = I('c5', 'Signs only, no sizes', size=32, col=1)
 c6 = I('c6', '$|x|=x$ when $x\\ge0$', size=32, col=1, hand='|x| = x  when  x ≥ 0')
-q0 = I('q0', 'Need: $y<0,\\ \\ x>0$', size=32, hand='need:  y < 0,   x > 0')
+t1 = I('t1', '$y=3$: $\\ 3<|3|$? ✗', size=30, hand='y = 3 :   3 < |3| ?  ✗')
+t2 = I('t2', '$y=-3$: $\\ -3<3$ ✓', size=30, hand='y = −3 :   −3 < 3  ✓')
+t3 = I('t3', '$x=-8$: $\\ (-3)(-8)=24>0$ ✗', size=30, hand='x = −8 :   (−3)(−8) = 24 > 0  ✗')
 k1 = I('k1', 'Negative product: opposite signs', size=28, col=1)
 k2 = I('k2', 'Smaller than its absolute value: negative', size=28, col=1)
-p1 = I('p1', '$y=-3,\\ \\ x=8$', hand='y = −3,  x = 8')
+p1 = I('p1', '$y=-3,\\ \\ x=8$: $\\ -24<0$ ✓', size=30, hand='y = −3,  x = 8 :   −24 < 0  ✓')
 p2 = I('p2', '$\\left|\\frac{-3}{8}\\right|=\\frac{3}{8}<1$', size=32, hand='|{−3/8}| = {3/8} < 1')
 p3 = I('p3', '$y=-6,\\ \\ x=2$', col=1, hand='y = −6,  x = 2')
 p4 = I('p4', '$\\left|\\frac{-6}{2}\\right|=\\hl{three}{3}$', size=32, col=1, hand='|{−6/2}|  =   \\hl{three}{3}')
@@ -336,18 +339,31 @@ video('solve-q-358', 'solution', qid='q-358', slides=[
         show(c6, "When it's zero"), pt('c4: x', 'And x is positive'), mk('tick', 'choice 4', 'number four is our'))),
     S('Method 2 · Plugging in numbers',
       L("[pause] Now our second method, plugging in numbers. It's a great safety net when you're not sure. I need numbers "
-        "that obey both givens, so y is negative and x is positive. Why negative three and eight? Because they're easy, and "
-        "they stay away from zero, one and minus one.",
-        pt('stem', 'obey both givens'), show(q0, 'so y is negative and x'), show(p1, 'Why negative three and eight'),
-        pt('p1', 'stay away from zero')),
-      L("Number one, x is negative? Eight isn't negative, so it's out. Number two, eight is smaller than three? No, out.",
-        mk('cross', 'choice 1', "so it's out"), mk('cross', 'choice 2', 'No, out'), voice='calm'),
+        "that obey both givens, and I'll find them by trying. Let's start with y, because the second given has only y in it.",
+        pt('stem', 'obey both givens'), pt('stem', 'only y in it')),
+      L("Why do I try a positive y first? Because it's the most natural guess, so let's see if it works. y is three. Is "
+        "three smaller than the absolute value of three? No, they're equal. And zero is equal to its absolute value too. So "
+        "y can't be positive, and it can't be zero.",
+        show(t1, 'y is three'), mk('cross', 't1', "No, they're equal")),
+      L("So let's try a negative y, negative three. Is negative three smaller than three? Yes. So negative three works, and "
+        "now I know y has to be negative.", show(t2, 'a negative y'), pt('t2', 'now I know')),
+      L("Now x. What does that mean for x? The first given says x times y is negative. Let's try a negative x too, negative "
+        "eight. Why eight? So x and y are different numbers, and both stay away from zero and one. Negative three times "
+        "negative eight is twenty-four. That's positive, so it breaks the first given.",
+        pt('stem', 'The first given says'), show(t3, 'negative eight. Why'), mk('cross', 't3', "That's positive")),
+      L("So I adjust, and make x positive, x is eight. Negative three times eight is negative twenty-four, and that's "
+        "smaller than zero. Now both givens work, so y is negative three and x is eight.",
+        show(p1, 'make x positive'), pt('p1', 'Now both givens work')),
+      L("Number one, x is negative? Eight isn't negative, so it's out. Number two says the absolute value of x is smaller. "
+        "The absolute value of eight is eight, and of negative three it's three. Is eight smaller than three? No, out.",
+        mk('cross', 'choice 1', "so it's out"), pt('choice 2', 'Number two says'), mk('cross', 'choice 2', 'No, out'), voice='calm'),
       L("Number three, negative three over eight, in absolute value, is three eighths. That's less than one, so number three stays. And "
         "number four, the absolute value of eight is eight, so it stays too.",
         pt('choice 3', 'Number three, negative'), pt('p1', 'in absolute value'), show(p2, 'is three eighths'), pt('choice 3', 'number three stays'),
         pt('choice 4', 'And number four'), pt('p1', 'the absolute value of eight'), pt('choice 4', 'stays too'), voice='calm'),
-      L("Two choices survive. Can I already circle one and move on? I can't. I need a tie-breaker, so this time I'll make y "
-        "the bigger one in size. y is negative six, and x is two.",
+      L("Two choices survive. Can I already circle one and move on? I can't. I need a tie-breaker. Number three is about "
+        "sizes, so this time I'll make y the bigger one in size, and keep the signs that work. y is negative six, and x is "
+        "two. Negative six times two is negative twelve, so both givens still hold.",
         pt('choice 3', 'Two choices survive'), pt('choice 4', 'move on'), pt('p2', 'I need a tie-breaker'), pt('choice 3', 'the bigger one in size'), show(p3, 'y is negative six')),
       L("Negative six over two is negative three, and its absolute value is three. That's not less than one, so number three "
         "is out. And the absolute value of two is still two. Aaand it's number four, again.",
@@ -386,7 +402,7 @@ video('solve-q-359', 'solution', qid='q-359', slides=[
         "negative nine. So the inside, x plus seven, is nine, or it's negative nine.",
         pt('stem', 'Our first method'), show(r9, 'Nine, and negative nine'), show(a0, 'So the inside'),
         pt('stem', 'x plus seven, is nine')),
-      L("First case, x plus seven is nine. Take seven off both sides, and x is two.", show(a1, 'First case'), pt('a1', 'Take seven off'),
+      L("First case, x plus seven is nine. To get x alone, I take seven off both sides, and x is two.", show(a1, 'First case'), pt('a1', 'take seven off'),
         mk('circle', 'a1: two', 'x is two'), voice='calm'),
       L("Second case, x plus seven is negative nine. Take seven off again, and x is negative sixteen.",
         show(a2, 'Second case'), pt('a2', 'Take seven off again'), mk('circle', 'a2: m16', 'x is negative sixteen'), voice='calm'),
@@ -399,17 +415,20 @@ video('solve-q-359', 'solution', qid='q-359', slides=[
         pt('a1: two', 'Two values work'), pt('a2: m16', 'and negative sixteen'), pt('choice 3', 'only offer one'), mk('tick', 'choice 3', 'number three is our answer'))),
     S('Method 2 · Number line',
       L("[pause] Our second method, the number line. x plus seven is x minus negative seven, so it's the distance between x "
-        "and negative seven.", pt('stem', 'x plus seven is x minus'), show(d0, 'x minus negative seven'), show(n1['line'], 'the distance between')),
-      L("Nine steps to the right of negative seven, that's two. Nine steps to the left, that's negative sixteen. The same "
-        "two answers, one on each side.", show(n1['right'], 'Nine steps to the right'), mk('circle', 'fig: 2', "that's two"),
-        show(n1['left'], 'Nine steps to the left'), mk('circle', 'fig: −16', "that's negative sixteen"), pt('choice 3', 'The same'),
-        mk('tick', 'choice 3', 'one on each side')),
+        "and negative seven. And the bars are equal to nine, so x is exactly nine steps away from negative seven.",
+        pt('stem', 'x plus seven is x minus'), show(d0, 'x minus negative seven'), show(n1['line'], 'the distance between'),
+        pt('stem', 'exactly nine steps')),
+      L("Nine steps to the right of negative seven, that's two. Nine steps to the left, that's negative sixteen. Two "
+        "isn't in the choices, but negative sixteen is, number three.", show(n1['right'], 'Nine steps to the right'), mk('circle', 'fig: 2', "that's two"),
+        show(n1['left'], 'Nine steps to the left'), mk('circle', 'fig: −16', "that's negative sixteen"), pt('choice 3', 'negative sixteen is'),
+        mk('tick', 'choice 3', 'number three')),
       sb='Method 2 · Number line'),
     S('Method 3 · Plugging in the answers',
       L("[pause] And our third method, plugging in the answers. The choices are numbers, so let's just try them. Sixteen "
-        "plus seven is twenty-three, no. Negative two plus seven is five, no.",
-        pt('choice 1', 'Sixteen'), show(b1, 'twenty-three'), mk('cross', 'choice 1', 'twenty-three, no'),
-        pt('choice 2', 'Negative two plus seven'), mk('cross', 'choice 2', 'is five, no'), voice=['base']),
+        "plus seven is twenty-three, and twenty-three isn't nine, so no. Negative two plus seven is five, and five "
+        "isn't nine, so no again.",
+        pt('choice 1', 'Sixteen'), show(b1, 'twenty-three'), mk('cross', 'choice 1', "twenty-three isn't nine"),
+        pt('choice 2', 'Negative two plus seven'), mk('cross', 'choice 2', 'so no again'), voice=['base']),
       L("Negative sixteen plus seven is negative nine, and its absolute value is nine. It works. In the exam you'd circle it "
         "and move on.", show(b2, 'Negative sixteen plus seven'), mk('circle', 'b2: nine', 'absolute value is nine'),
         pt('choice 3', 'It works'), mk('tick', 'choice 3', 'circle it')),
@@ -438,8 +457,8 @@ video('solve-q-360', 'solution', qid='q-360', slides=[
       L("So now the bars are in an inequality, and they're on the small side. What did we say about the small side? It's a "
         "closed range. The inside is trapped between seven and negative seven. [short pause] We'll solve it three ways.",
         pt('stem', 'on the small side'), show(r0, "It's a closed range"), show(r1, 'trapped between')),
-      L("[short pause] Our first method, the algebra. I take the seven, and I put negative seven on the other side. So "
-        "negative seven is smaller than x plus three, which is smaller than seven.",
+      L("[short pause] Our first method, the algebra. The inside is trapped, so I take the seven, and I put negative seven "
+        "on the other side. So negative seven is smaller than x plus three, which is smaller than seven.",
         pt('stem', 'I take the seven'), pt('r1', 'negative seven on the other side'), show(c1, 'So negative seven is smaller'),
         pt('c1', 'which is smaller than seven')),
       L("How do I get x alone in the middle? I take three off all three parts. Negative seven minus three is negative ten, "
@@ -454,9 +473,11 @@ video('solve-q-360', 'solution', qid='q-360', slides=[
       L("[pause] Our second method, the number line. x plus three is the distance from negative three. So x is less than "
         "seven steps away from negative three.", pt('stem', 'x plus three is the'), show(n2['line'], 'the distance from negative three'),
         pt('stem', 'less than seven steps')),
-      L("Seven steps to the left, negative ten. Seven steps to the right, four. One band in the middle, and three is "
-        "inside it.", show(n2['left'], 'Seven steps to the left'), show(n2['right'], 'Seven steps to the right'),
-        show(n2['band'], 'One band in the middle'), pt('choice 3', 'three is'), mk('tick', 'choice 3', 'inside it'))),
+      L("Seven steps to the left, negative ten. Seven steps to the right, four. One band in the middle, from negative ten "
+        "to four. Three is inside it. Five and eleven are past four, and negative twenty-five is way past negative ten, so "
+        "they're outside. Three, number three.", show(n2['left'], 'Seven steps to the left'), show(n2['right'], 'Seven steps to the right'),
+        show(n2['band'], 'One band in the middle'), pt('choice 3', 'Three is inside'), mk('cross', 'choice 1', 'Five and'),
+        mk('cross', 'choice 4', 'eleven are past'), mk('cross', 'choice 2', 'negative twenty-five is way'), mk('tick', 'choice 3', 'Three, number three'))),
     S('Method 3 · Plugging in the answers',
       L("[pause] Our third method, plugging in the answers. Five plus three is eight, not smaller than seven. Negative "
         "twenty-five plus three is negative twenty-two, its absolute value is twenty-two. Too big.",
@@ -488,11 +509,13 @@ video('solve-q-361', 'solution', qid='q-361', slides=[
         "big side. And look at the word cannot. We're looking for the one number that doesn't work. [short pause] We'll do "
         "it three ways.", pt('stem', 'the other way round'), show(r1, "They're on the"), pt('stem', 'the word cannot')),
       L("[short pause] Our first method, two cases. Big side means an open range, one part going to the right and one going "
-        "to the left. So one option, the inside is bigger than eight, and then x is bigger than seven.",
+        "to the left. So one option, the inside is bigger than eight. Take one off both sides, and x is bigger than seven.",
         pt('r1', 'Big side means'), show(e1, 'one option, the inside is bigger')),
       L("Or, the other option, the inside is smaller than negative eight. Now careful, the sign flips too, because now we're on the negative "
         "side. x plus one is smaller than negative eight, so x is smaller than negative nine.",
         show(e2, 'the inside is smaller than negative eight'), pt('e2: l', 'so x is smaller')),
+      L("So what does that leave? x can be above seven, or below negative nine, but not in between.", pt('e1: r', 'above seven'),
+        pt('e2: l', 'below negative nine')),
       L("Nine and eleven are bigger than seven, so they can be x. Negative ten is smaller than negative nine, so it can be x "
         "too. And two? It's not above seven, and it's not below negative nine. It's stuck in the middle, so x cannot be two. "
         "Number two is our answer.",
@@ -502,14 +525,15 @@ video('solve-q-361', 'solution', qid='q-361', slides=[
       L("[pause] Our second method, the number line. x plus one is the distance from negative one. More than eight steps from "
         "negative one means past seven on the right, or past negative nine on the left.",
         show(n3, 'the distance from negative one'), pt('n3', 'past seven')),
-      L("Two rays going outward, and a gap in the middle. Two is only three steps from negative one, so it sits in the gap.",
-        pt('n3', 'a gap in the middle'), pt('choice 2', 'Two is only'))),
+      L("Two rays going outward, and a gap in the middle. Two is only three steps from negative one, and three isn't more "
+        "than eight. So two sits in the gap, and it cannot be x. Number two.",
+        pt('n3', 'a gap in the middle'), pt('choice 2', 'Two is only'), mk('tick', 'choice 2', 'it cannot be x'))),
     S('Method 3 · Plugging in the answers',
       L("[pause] Our third method, plugging in the answers. Nine plus one is ten, and ten is bigger than eight, so nine can "
         "be x.", show(f1, 'Nine plus one'), pt('choice 1', 'so nine can')),
       L("Two plus one is three, and three is not bigger than eight. So two doesn't work. And in a cannot question, the one "
-        "that doesn't work is the answer.", show(f2, 'Two plus one'), mk('circle', 'f2: three', 'not bigger than eight'),
-        mk('tick', 'choice 2', 'the one that')),
+        "that doesn't work is the answer. In the exam you'd circle it and move on.", show(f2, 'Two plus one'),
+        mk('circle', 'f2: three', 'not bigger than eight'), mk('tick', 'choice 2', 'the one that')),
       L("So which way? Here plugging in is really fast, because the choices are numbers. But you'll need the open range when "
         "the choices are ranges. Big side, two rays going outward. Small side, one band in the middle. "
         "[pause] Okay. I'll see you in the next question.",
@@ -571,6 +595,7 @@ k1 = I('k1', '$2x-1=7$', hand='2x−1 = 7')
 k2 = I('k2', '$2x=8$, so $x=\\hl{four}{4}$', hand='2x = 8,  so  x = \\hl{four}{4}')
 k3 = I('k3', '$2x-1=-7$', hand='2x−1 = −7')
 k4 = I('k4', '$2x=-6$, so $x=\\hl{m3}{-3}$', hand='2x = −6,  so  x = \\hl{m3}{−3}')
+m0_ = I('m0_', '$x=4$: $\\ |2\\cdot4-1|=|7|=7$', size=32, col=1)
 m1 = I('m1', '$x=-4$: $\\ |2(-4)-1|=|-9|=9$', size=32, col=1)
 m2 = I('m2', '$x=-3$: $\\ |2(-3)-1|=|-7|=\\hl{seven}{7}$', size=32, col=1)
 video('solve-q-r26-t13-01', 'solution', qid='q-r26-t13-01', slides=[
@@ -580,9 +605,10 @@ video('solve-q-r26-t13-01', 'solution', qid='q-r26-t13-01', slides=[
       L("So this time there's a number in front of x. And they ask for all the values, so we'll need both cases. "
         "[short pause] Two ways, two cases first, and then plugging in the answers.",
         pt('stem', 'a number in front of x'), pt('stem', 'all the values')),
-      L("[short pause] Our first method. Just like before, the inside is seven, or the inside is negative seven.",
+      L("[short pause] Our first method, two cases. Which numbers have an absolute value of seven? Seven and negative "
+        "seven. So the inside is seven, or the inside is negative seven.",
         show(k0, 'the inside is seven')),
-      L("First case. Two x minus one is seven. Add one, and two x is eight. Divide by two, and x is four.",
+      L("First case. Two x minus one is seven. To get x alone, add one, and two x is eight. Divide by two, and x is four.",
         show(k1, 'Two x minus one is seven'), show(k2, 'two x is eight'), mk('circle', 'k2: four', 'x is four'), voice='calm'),
       L("x is four, so I can already cross out number four. It doesn't have a four in it.",
         pt('choice 4', 'cross out number four'), mk('cross', 'choice 4', "It doesn't have")),
@@ -595,13 +621,18 @@ video('solve-q-r26-t13-01', 'solution', qid='q-r26-t13-01', slides=[
         "flipped sign.", mk('tick', 'choice 3', 'number three is our answer'), mk('cross', 'choice 1', 'Number one forgets'),
         mk('cross', 'choice 2', 'the flipped sign'))),
     S('Method 2 · Plugging in the answers',
-      L("[pause] Our second method, plugging in the answers. Three of the choices have four in them, so I only need to test "
-        "the second number. Negative four first. Two times negative four is negative eight, minus one, negative nine. Its "
-        "absolute value is nine, not seven. Out.",
-        pt('choice 1', 'Three of the choices'), show(m1, 'Two times negative four'), mk('cross', 'choice 2', 'not seven. Out')),
-      L("Negative three. Two times negative three is negative six, minus one, negative seven. Its absolute value is seven. "
-        "It works, so it's four or negative three. Number three.",
-        show(m2, 'Two times negative three'), mk('circle', 'm2: seven', 'Its absolute value is seven'), mk('tick', 'choice 3', 'Number three')),
+      L("[pause] Our second method, plugging in the answers. Three of the choices have four in them, so let's test four "
+        "first. Two times four is eight, minus one, seven. Its absolute value is seven, so four works.",
+        pt('choice 1', 'Three of the choices'), show(m0_, 'Two times four')),
+      L("And what does that tell us? Number four is three or negative four, so it leaves out four, a value that works. "
+        "Number four is out.", pt('choice 4', 'Number four is three'), mk('cross', 'choice 4', 'Number four is out')),
+      L("Now the other numbers. Negative four. Two times negative four is negative eight, minus one, negative nine. Its "
+        "absolute value is nine, not seven. So number two is out.",
+        show(m1, 'Two times negative four'), mk('cross', 'choice 2', 'number two is out')),
+      L("Negative three. Two times negative three is negative six, minus one, negative seven. Its absolute value is seven, "
+        "so it works too. So number one, four only, misses negative three. It's four or negative three, number three.",
+        show(m2, 'Two times negative three'), mk('circle', 'm2: seven', 'Its absolute value is seven'),
+        mk('cross', 'choice 1', 'misses negative three'), mk('tick', 'choice 3', 'number three')),
       L("So two cases, two answers, and don't assume they're opposites. When there's a number in front of x, or a number "
         "added inside, solve the second case all the way. [pause] Okay. I'll see you in the next question.",
         pt('m2', "don't assume"))),
@@ -634,8 +665,9 @@ video('solve-q-r26-t13-02', 'solution', qid='q-r26-t13-02', slides=[
       L("Number three looks almost the same, but the sign goes the other way. The bars are bigger than negative one. And "
         "that's always true, because the bars are zero or more. Every x works, so it's out.",
         pt('choice 3', 'Number three looks'), show(s4, 'Every x works'), mk('cross', 'choice 3', "so it's out")),
-      L("Number four. The absolute value of x is at most one. Zero works, and a half works too. So it's out.",
-        pt('choice 4', 'Number four'), show(s5, 'Zero works'), mk('cross', 'choice 4', "So it's out")),
+      L("Number four. The absolute value of x is at most one. Zero works, because zero is at most one. So it has a solution, "
+        "and it's out.",
+        pt('choice 4', 'Number four'), show(s5, 'Zero works'), mk('cross', 'choice 4', "and it's out")),
       L("So x plus two, in absolute value, smaller than negative one has no solution. Number two is our answer.",
         mk('tick', 'choice 2', 'Number two is our answer'))),
     S('The rule',
@@ -644,9 +676,13 @@ video('solve-q-r26-t13-02', 'solution', qid='q-r26-t13-02', slides=[
         pt('choice 2', 'numbers two'), pt('choice 3', 'and three again'), show(s6, 'never true'), show(s7, 'always true')),
       L("And it works the same way for equations. Bars equal to a negative number, like bars equal to negative five, have no "
         "solution at all.", show(s8, 'Bars equal to a negative number')),
-      L("Is there a second way? Sure, look for one solution for each choice. Three works for number one, and zero works for "
-        "numbers three and four. For number two you can't find any, and now we know why.",
-        pt('choice 1', 'Three works'), pt('choice 3', 'zero works'), pt('choice 2', 'For number two')),
+      L("Is there a second way? Sure, try to find one solution for each choice. Number one, try three. Three minus three is "
+        "zero, so three works.", pt('choice 1', 'Number one, try three')),
+      L("Number three, try zero. Zero plus two is two, and two is bigger than negative one, so zero works. Number four, zero "
+        "again, and zero is at most one. Works.", pt('choice 3', 'Number three, try zero'), pt('choice 4', 'Number four, zero')),
+      L("Number two, whatever x I try, x plus two in bars comes out zero or more. Try zero, it's two. Try negative two, it's "
+        "zero. It never gets below negative one. So no solution, number two.",
+        pt('choice 2', 'Number two, whatever'), mk('tick', 'choice 2', 'So no solution')),
       L("So always look at the right side first. A negative number or a zero there is a gift. "
         "[pause] Okay. I'll see you in the next question.", pt('s6', 'look at the right side')),
       sb='Method 1 · Look at the right side'),
@@ -737,16 +773,19 @@ video('solve-q-363', 'solution', qid='q-363', slides=[
       L("So n is the smallest, k is in the middle, and m is the biggest. n, k, m, that's number two.",
         pt('n5', 'n is the smallest'), mk('tick', 'choice 2', "that's number two"))),
     S('Method 2 · Plugging in numbers',
-      L("[pause] Our second method, plugging in numbers. I need numbers that obey all three givens. Why four for m? Because "
-        "four k is m, so I'll divide m by four, and four divides easily.",
+      L("[pause] Our second method, plugging in numbers. I need numbers that obey all three givens. Let's start with m. m is "
+        "equal to an absolute value, so it can't be negative. Why four for m? Because four k is m, so I'll divide m by four, "
+        "and four divides easily.",
         pt('stem', 'obey all three givens'), show(w1, 'Why four for m')),
       L("Now n. Let's try n is four. The absolute value of four is four, that's m. But n has to be different from m, so "
         "this pick is bad. Let's change it.", show(w2, "try n is four"), mk('cross', 'w2', 'this pick is bad')),
       L("n is negative four. Its absolute value is four, so it's equal to m, and it's different from m. Now both givens "
         "work.", show(w3, 'n is negative four')),
-      L("Four k is four, so k is one.", show(w4, 'Four k is four'), voice='calm'),
-      L("Negative four, one, four. So n, then k, then m, number two again. And all three other choices break with these "
-        "numbers.", show(w5, 'Negative four, one, four'), mk('tick', 'choice 2', 'number two again')),
+      L("And k? Four k is m, and m is four. So four k is four, and k is one.", show(w4, 'four k is four'), voice='calm'),
+      L("Negative four, one, four. So n, then k, then m, that's number two. And the others break with these numbers. Number "
+        "one says four is smaller than one, no. Number three also puts four below one, no. Number four says one is smaller "
+        "than negative four, no.", show(w5, 'Negative four, one, four'), mk('tick', 'choice 2', "that's number two"),
+        mk('cross', 'choice 1', 'Number one says'), mk('cross', 'choice 3', 'Number three also'), mk('cross', 'choice 4', 'Number four says')),
       L("Which way is better? I prefer understanding here, it's quick. But plugging in is an excellent backup. And when your "
         "first pick breaks a given, don't give up, just change the pick. [pause] Okay. I'll see you in the next question.",
         pt('w5', 'I prefer understanding'), pt('w3', 'just change the pick'))),
@@ -783,15 +822,18 @@ video('solve-q-364', 'solution', qid='q-364', slides=[
         "Number two is our answer.", pt('choice 2', 'circle number two'), pt('x1', 'both negative'),
         mk('tick', 'choice 2', 'Number two is our answer'))),
     S('Method 2 · Plugging in numbers',
-      L("[pause] Our second method, plugging in numbers. The trick here is to try two extreme pictures. First, the "
-        "negatives far from zero and the positives close to it. p is negative fifty, q negative forty, r one and s three.",
+      L("[pause] Our second method, plugging in numbers. The givens only fix the order, not the sizes. So the trick is to "
+        "try two extreme pictures. First, the negatives far from zero and the positives close to it. p is negative fifty, q "
+        "negative forty, r one and s three. They're in order, so they obey the given.",
         show(y1, 'p is negative fifty')),
-      L("Number three, fifty smaller than three? No, out. Number four, forty smaller than three? No, out.",
-        mk('cross', 'choice 3', 'No, out'), mk('cross', 'choice 4', 'forty smaller'), voice='calm'),
+      L("Number one, one smaller than fifty? Yes, it stays. Number two, forty smaller than fifty? Yes, it stays. Number "
+        "three, fifty smaller than three? No, out. Number four, forty smaller than three? No, out.",
+        pt('choice 1', 'Number one, one'), pt('choice 2', 'Number two, forty'),
+        mk('cross', 'choice 3', 'No, out'), mk('cross', 'choice 4', 'forty smaller than three'), voice='calm'),
       L("Now the opposite picture, the negatives close to zero and the positives far. p is negative three, q negative one, "
         "r forty and s fifty.", show(y2, 'p is negative three')),
       L("Number one, forty smaller than three? No, out. Number two, one smaller than three? Yes, and it worked in the first "
-        "picture too. Number two.", mk('cross', 'choice 1', 'No, out'), mk('tick', 'choice 2', 'Yes, and'), voice='calm'),
+        "picture too. So number two survives both pictures. Number two.", mk('cross', 'choice 1', 'No, out'), mk('tick', 'choice 2', 'survives both'), voice='calm'),
       L("So when the letters sit on both sides of zero, try one picture with the negatives far away, and one with the "
         "positives far away. Same side, you can compare. Different sides, you can't. [pause] Okay. I'll see you in the next "
         "question.", pt('y1', 'the negatives far away'), pt('y2', 'the positives far away'))),
@@ -799,15 +841,19 @@ video('solve-q-364', 'solution', qid='q-364', slides=[
 
 # ------------------------------------------------------------------------------------------------ q-365 (Q10)
 # NEW: "only a negative number changes under the bars" (y jumps above x); x lives in the band between y and -y, zero too;
-# a "not necessarily" answer is proved by ONE allowed example.  REMINDER: same side of zero = compare distances (q-364).
+# a "not necessarily" answer is proved by ONE allowed example; plugging in finds the signs by trying (all positive fails) -
+# R30.  REMINDER: same side of zero = compare distances (q-364).
 z1 = I('z1', '$y<x$ $\;$ but $\;$ $|y|>|x|$', hand='y < x   but   |y| > |x|')
 z2 = I('z2', 'So $\\hl{y}{y<0}$', hand='So  \\hl{y}{y < 0}')
 z3 = I('z3', '$z<y<0$, so $z<0$', hand='z < y < 0,  so  z < 0')
 n7 = NL('n7', fig(-6, 6, [(-5, 'z'), (-4, 'y'), (0, '0'), (4, '−y')], [(-4, 4, False, False)],
                   title='x is somewhere between y and −y'))
-q1 = I('q1', '$y=-4,\\ \\ z=-5,\\ \\ x=2$', hand='y = −4,  z = −5,  x = 2')
+q0 = I('q0', '$z=1,\\ y=2,\\ x=3$: $\\ |3|<|2|$? ✗', size=30, hand='z = 1,  y = 2,  x = 3 :   |3| < |2| ?  ✗')
+q1 = I('q1', '$y=-4,\\ \\ z=-5$', size=32, hand='y = −4,  z = −5')
+q1x = I('q1x', '$x=2$', size=32, hand='x = 2')
 q2 = I('q2', '$-5<-4<2 \\qquad |2|<|-4|$', size=34)
 q3 = I('q3', '$x=2=|2|$', hand='x = 2 = |2|')
+q4 = I('q4', '(1) $4<5$ $\\quad$ (2) $-5\\ne5$ $\\quad$ (4) $2<5$', size=28, col=1)
 video('solve-q-365', 'solution', qid='q-365', slides=[
     S('Method 1 · Understanding',
       L("Given: z is smaller than y, which is smaller than x, and the absolute value of x is smaller than the absolute "
@@ -836,12 +882,22 @@ video('solve-q-365', 'solution', qid='q-365', slides=[
         mk('cross', 'choice 2', 'Number two, always true'), mk('cross', 'choice 4', 'Number four, always true'))),
     S('Method 2 · Plugging in numbers',
       L("[pause] Our second method, plugging in numbers. In a not necessarily question, one allowed example that breaks a "
-        "choice is enough. So I need numbers that obey the givens. y is negative four, z negative five, and x two.",
-        show(q1, 'y is negative four')),
+        "choice is enough. So I need numbers that obey both givens, and I'll find them by trying."),
+      L("Why start with positive numbers? Because they're the most natural guess. z is one, y is two, x is three. They're in "
+        "order. But is the absolute value of three smaller than the absolute value of two? No. So that try fails.",
+        show(q0, 'z is one'), mk('cross', 'q0', 'So that try fails')),
+      L("What went wrong? x has to be bigger than y, but closer to zero. If y is zero or positive, a bigger x is always "
+        "further from zero. So y has to be negative, and far from zero. y is negative four, and z is even smaller, negative "
+        "five.", pt('q0', 'What went wrong'), show(q1, 'y is negative four')),
+      L("Now x. It has to be bigger than negative four, but closer to zero than four. Which one do I pick? Number three is "
+        "about the sign of x, so a positive x is where something might break. x is two.",
+        pt('choice 3', 'Number three is'), show(q1x, 'x is two')),
       L("Check the givens. Negative five, negative four, two, they're in order. And the absolute value of two is smaller "
         "than four. Both work.", show(q2, 'Check the givens'), voice='calm'),
       L("Number three says x is not equal to its absolute value. But two is equal to the absolute value of two. It breaks, "
         "so number three.", show(q3, 'But two is equal'), mk('tick', 'choice 3', 'so number three')),
+      L("And the others hold with these numbers. Number one, four smaller than five, true. Number two, negative five isn't "
+        "five, true. Number four, two smaller than five, true.", show(q4, 'Number one, four'), voice='calm'),
       L("So when the bars change the order, think negative, because only a negative number changes under the bars. "
         "[pause] Okay. I'll see you in the next question.", pt('q3', 'think negative'))),
 ])
@@ -893,13 +949,15 @@ video('solve-q-366', 'solution', qid='q-366', slides=[
         mk('tick', 'choice 2', 'Number two is our answer'))),
     S('Method 2 · Plugging in numbers',
       L("[pause] Our second method, plugging in numbers. I'll try one pair with the same sign and one with opposite signs, "
-        "because signs are what the bars care about. First, x four and y one. Five is bigger than three, so they fit.",
+        "because signs are what the bars care about. First, x four and y one, small and easy. Four plus one is five, and "
+        "five is bigger than three, so they fit the given.",
         show(b1_, 'First, x four')),
       L("Number one, twenty-five is bigger than nine, true. Number two, five smaller than five? No. Number three, four "
         "smaller than four? No. Number four, five smaller than twenty-five, true.", show(b2_, 'Number one, twenty-five'),
         voice='calm'),
-      L("Now x six and y negative two. Six minus two is four, and four is bigger than three, so they fit.",
-        show(b3_, 'Now x six')),
+      L("Now opposite signs. Why x six and y negative two? Because with opposite signs they cancel, so I need one of "
+        "them much bigger, to keep the sum above three. Six minus two is four, and four is bigger than three, so they fit.",
+        show(b3_, 'Why x six')),
       L("Number one, sixteen bigger than nine, true. Number two, four smaller than six plus two, that's eight. True this "
         "time. Number three, twelve smaller than twelve? No again. Number four, four smaller than twenty, true.",
         show(b4_, 'sixteen bigger than nine'), pt('b4_: two', 'True this'), voice='calm'),
@@ -954,7 +1012,8 @@ video('solve-q-r26-t13-13', 'solution', qid='q-r26-t13-13', slides=[
         "they cancelled, opposite signs. For example, a five and b negative two. Three is smaller than five.",
         show(o2, 'adding b made it smaller'), show(o3, 'For example'))),
     S('Method 2 · Plugging in numbers',
-      L("[pause] Our second method. Not sure about the reasoning? There are only four sign options, so let's try them all."),
+      L("[pause] Our second method, trying the signs. Not sure about the reasoning? a is seven or negative seven, and b is "
+        "three or negative three. So there are only four sign options, and let's try them all."),
       L("Both positive, seven and three. Ten against four, and ten is not smaller than four. Out. Both negative, negative ten "
         "against negative four. In bars that's ten against four again. Out.",
         show(d1_, 'Both positive'), show(d2_, 'Both negative'), voice='calm'),
@@ -979,6 +1038,7 @@ k8_ = I('k8_', '$4x=-4$, so $x=-1$', hand='4x = −4,  so  x = −1')
 k9_ = I('k9_', '$x=2$: $\\ |6|=6=3\\cdot2$', size=34, col=1)
 k10 = I('k10', '$x=-1$: $\\ |3|=3$, but $3\\cdot(-1)=\\hl{fake}{-3}$', size=32, col=1)
 j1_ = I('j1_', '$3x\\ge0$, so $x\\ge0$', size=38)
+j2_ = I('j2_', '$x+4>0$: $\\ x+4=3x$, so $x=2$', size=34, hand='x+4 > 0 :   x+4 = 3x,  so  x = 2')
 video('solve-q-r26-t13-03', 'solution', qid='q-r26-t13-03', slides=[
     S('Method 1 · Two cases and a check',
       L("Given: x plus four, in absolute value, is equal to three x. Which of the following gives all the possible values of "
@@ -999,12 +1059,15 @@ video('solve-q-r26-t13-03', 'solution', qid='q-r26-t13-03', slides=[
         "cases. So only two, number one is our answer.", mk('cross', 'choice 3', "that's the trap"),
         mk('tick', 'choice 1', 'number one is our answer'))),
     S('Method 2 · Understanding',
-      L("[pause] Our second method, a shortcut. The bars are never negative, so the right side can't be negative. "
-        "Three x is zero or positive, so x is zero or positive.", show(j1_, 'Three x is zero or positive')),
-      L("So minus one is out straight away, and numbers two and three go with it.",
-        mk('cross', 'choice 2', 'numbers two'), mk('cross', 'choice 3', 'and three go')),
-      L("Now I just check two. Six equals six, so there is a solution, and number four is out too. Number one.",
-        mk('cross', 'choice 4', 'number four is out'), mk('tick', 'choice 1', 'Number one.')),
+      L("[pause] Our second method, a shortcut that starts from the right side. The bars are never negative, so the right "
+        "side can't be negative. Three x is zero or positive, so x is zero or positive.", show(j1_, 'Three x is zero or positive')),
+      L("And what does that mean for the bars? If x is zero or positive, x plus four is positive, so the bars do nothing. "
+        "I can just drop them. x plus four is three x, so four is two x, and x is two.",
+        pt('stem', 'the bars do nothing'), show(j2_, 'I can just drop them')),
+      L("So two is the only value. Numbers two and three have minus one in them, and x can't be negative here, so they're "
+        "out. Number four says there's no such number, but two is one, so it's out too. Two only, number one.",
+        mk('cross', 'choice 2', 'Numbers two'), mk('cross', 'choice 3', 'and three have'), mk('cross', 'choice 4', 'Number four says'),
+        mk('tick', 'choice 1', 'Two only, number one')),
       L("So a letter on the right side? The right side must be zero or positive, and check every answer in the original "
         "equation. [pause] Okay. I'll see you in the next question.", pt('j1_', 'The right side must be'))),
 ])
@@ -1052,7 +1115,8 @@ video('solve-q-367', 'solution', qid='q-367', slides=[
       L("Minus two. Its absolute value is two, and ten plus minus two is eight. Two isn't eight, out. Minus five. Its "
         "absolute value is five, and ten plus minus five is five. Yes.", show(q2_, 'Minus two'), mk('cross', 'choice 1', 'out.'),
         show(q3_, 'Minus five'), mk('tick', 'choice 2', 'Yes'), voice='calm'),
-      L("And any positive x would give x is ten plus x, which is impossible. So three and five are out too.",
+      L("And three or five? For a positive x the bars do nothing, so the absolute value of x is just x. Then x is ten plus x, "
+        "and that's impossible. So three and five are out too.",
         mk('cross', 'choice 3', 'So three'), mk('cross', 'choice 4', 'and five are out'))),
     S('Method 3 · Plugging in the answers',
       L("[pause] Our third method, plugging in the answers from the very start. Number one, x is minus two. Into the second "
@@ -1065,6 +1129,9 @@ video('solve-q-367', 'solution', qid='q-367', slides=[
       L("First equation. Four times five is twenty, twelve times two is twenty-four, and twenty plus twenty-four is "
         "forty-four. It works.", show(r4_, 'Four times five'), mk('circle', 'r4_: ok', 'It works'),
         mk('tick', 'choice 2', 'It works'), voice='calm'),
+      L("In the exam you'd circle it and move on. Here, let's quickly see three and five. Three plus three times the absolute "
+        "value of y is one, so three times the absolute value of y is negative two. But an absolute value can't be negative. "
+        "Out. And five is the same story, out.", mk('cross', 'choice 3', 'Out. And five'), mk('cross', 'choice 4', 'the same story, out')),
       L("Which way would I pick? The shorter algebra that ends with the answers, or plugging in the answers right away. The "
         "full algebra is great to know, but here it's the longest. [pause] Okay. I'll see you in the next question.",
         pt('r4_', 'plugging in the answers right away'))),
@@ -1177,12 +1244,12 @@ video('solve-q-369', 'solution', qid='q-369', slides=[
       L("The bars bigger than seven means the inside is above seven, or below minus seven. So x is above four, or below minus "
         "three.", show(sp2, 'The bars bigger than seven')),
       L("Both have to hold. Between minus four and five, and above four, gives four to five. Between minus four and five, and "
-        "below minus three, gives minus four to minus three. The same two bands.", show(sp3, 'Both have to hold'),
-        mk('tick', 'choice 3', 'The same two bands')),
+        "below minus three, gives minus four to minus three. And minus four to minus three is number three.", show(sp3, 'Both have to hold'),
+        mk('tick', 'choice 3', 'is number three')),
       L("It's longer here, but this split is super useful in other absolute-value questions.", pt('sp1', "It's longer"))),
     S('Method 3 · Plugging in the answers',
-      L("[pause] Our third method, plugging in the answers. Pick an easy number inside each range, and if it breaks the "
-        "given, the range is out. Number one, three and a half. Two times it is seven, minus one, six. Six isn't bigger than "
+      L("[pause] Our third method, plugging in the answers. If a range is possible, every number in it has to work. So I "
+        "pick an easy number inside each range, and if it breaks the given, the range is out. Number one, three and a half. Two times it is seven, minus one, six. Six isn't bigger than "
         "seven, out.", show(d1q, 'three and a half'), mk('cross', 'choice 1', 'seven, out')),
       L("Number two, five and a half. Two times it is eleven, minus one, ten. Ten isn't smaller than nine, out.",
         show(d2q, 'five and a half'), mk('cross', 'choice 2', 'nine, out'), voice='calm'),
@@ -1230,7 +1297,7 @@ video('solve-q-370', 'solution', qid='q-370', slides=[
       L("So x smaller than six, number three is our answer.", mk('tick', 'choice 3', 'number three is our answer'))),
     S('Method 2 · Plugging in the answers',
       L("[pause] Our second method, plugging in the answers. One number that breaks a choice crosses it out. Let's try zero "
-        "first. Zero plus zero is zero, smaller than twelve, so zero works.", show(m1r, "Let's try zero")),
+        "first. Why zero? Because the choices disagree about zero, two of them include it and two leave it out. Zero plus zero is zero, smaller than twelve, so zero works.", show(m1r, "Let's try zero")),
       L("But number two says x is smaller than zero, and number four says x is bigger than zero. Both leave zero out. So one "
         "number kills two choices.", mk('cross', 'choice 2', 'number two says'), mk('cross', 'choice 4', 'number four says')),
       L("Numbers one and three both stop at six on top. The difference is the bottom, minus six, or no limit at all. So I test "

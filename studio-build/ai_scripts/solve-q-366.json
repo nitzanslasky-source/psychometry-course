@@ -96,10 +96,10 @@
   ],
   [
    {
-    "say": "[pause] Our second method, plugging in numbers. I'll try one pair with the same sign and one with opposite signs, because signs are what the bars care about. First, x four and y one. Five is bigger than three, so they fit.",
+    "say": "[pause] Our second method, plugging in numbers. I'll try one pair with the same sign and one with opposite signs, because signs are what the bars care about. First, x four and y one, small and easy. Four plus one is five, and five is bigger than three, so they fit the given.",
     "at": [
      "First, x four",
-     "Five is bigger"
+     "the given"
     ]
    },
    {
@@ -114,9 +114,10 @@
     ]
    },
    {
-    "say": "Now x six and y negative two. Six minus two is four, and four is bigger than three, so they fit.",
+    "say": "Now opposite signs. Why x six and y negative two? Because with opposite signs they cancel, so I need one of them much bigger, to keep the sum above three. Six minus two is four, and four is bigger than three, so they fit.",
     "at": [
-     "Now x six",
+     "Why x six",
+     "Because with opposite",
      "Six minus two"
     ]
    },

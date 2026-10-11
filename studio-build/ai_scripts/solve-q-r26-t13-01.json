@@ -19,13 +19,13 @@
     ]
    },
    {
-    "say": "[short pause] Our first method. Just like before, the inside is seven, or the inside is negative seven.",
+    "say": "[short pause] Our first method, two cases. Which numbers have an absolute value of seven? Seven and negative seven. So the inside is seven, or the inside is negative seven.",
     "at": [
      "the inside is seven"
     ]
    },
    {
-    "say": "First case. Two x minus one is seven. Add one, and two x is eight. Divide by two, and x is four.",
+    "say": "First case. Two x minus one is seven. To get x alone, add one, and two x is eight. Divide by two, and x is four.",
     "voice": "calm",
     "at": [
      "Two x minus one is seven",
@@ -67,21 +67,37 @@
   ],
   [
    {
-    "say": "[pause] Our second method, plugging in the answers. Three of the choices have four in them, so I only need to test the second number. Negative four first. Two times negative four is negative eight, minus one, negative nine. Its absolute value is nine, not seven. Out.",
+    "say": "[pause] Our second method, plugging in the answers. Three of the choices have four in them, so let's test four first. Two times four is eight, minus one, seven. Its absolute value is seven, so four works.",
     "at": [
      "Our second",
      "Three of the choices",
-     "Two times negative four",
-     "not seven. Out"
+     "Two times four",
+     "Its absolute value"
     ]
    },
    {
-    "say": "Negative three. Two times negative three is negative six, minus one, negative seven. Its absolute value is seven. It works, so it's four or negative three. Number three.",
+    "say": "And what does that tell us? Number four is three or negative four, so it leaves out four, a value that works. Number four is out.",
+    "at": [
+     "And what does",
+     "Number four is three",
+     "Number four is out"
+    ]
+   },
+   {
+    "say": "Now the other numbers. Negative four. Two times negative four is negative eight, minus one, negative nine. Its absolute value is nine, not seven. So number two is out.",
+    "at": [
+     "Two times negative four",
+     "Its absolute value",
+     "number two is out"
+    ]
+   },
+   {
+    "say": "Negative three. Two times negative three is negative six, minus one, negative seven. Its absolute value is seven, so it works too. So number one, four only, misses negative three. It's four or negative three, number three.",
     "at": [
      "Two times negative three",
      "Its absolute value is seven",
-     "It works, so",
-     "Number three"
+     "misses negative three",
+     "number three"
     ]
    },
    {

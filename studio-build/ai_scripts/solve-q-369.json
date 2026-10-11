@@ -85,12 +85,12 @@
     ]
    },
    {
-    "say": "Both have to hold. Between minus four and five, and above four, gives four to five. Between minus four and five, and below minus three, gives minus four to minus three. The same two bands.",
+    "say": "Both have to hold. Between minus four and five, and above four, gives four to five. Between minus four and five, and below minus three, gives minus four to minus three. And minus four to minus three is number three.",
     "at": [
      "Both have to hold",
      "Between minus four",
      "Between minus four and five, and below",
-     "The same two bands"
+     "is number three"
     ]
    },
    {
@@ -102,7 +102,7 @@
   ],
   [
    {
-    "say": "[pause] Our third method, plugging in the answers. Pick an easy number inside each range, and if it breaks the given, the range is out. Number one, three and a half. Two times it is seven, minus one, six. Six isn't bigger than seven, out.",
+    "say": "[pause] Our third method, plugging in the answers. If a range is possible, every number in it has to work. So I pick an easy number inside each range, and if it breaks the given, the range is out. Number one, three and a half. Two times it is seven, minus one, six. Six isn't bigger than seven, out.",
     "at": [
      "the given, the",
      "Number one, three",

@@ -493,7 +493,7 @@ What is new compared with §9:
 - R15 is approved.
 - Topic 51 is recorded by her.
 
-## SCRIPT-WRITING CHECKLIST (R1-R28)
+## SCRIPT-WRITING CHECKLIST (R1-R31)
 
 Check every AI script line by line. The numbers in brackets are evidence from §1-9.
 
@@ -554,3 +554,14 @@ Check every AI script line by line. The numbers in brackets are evidence from §
   - Taught here for the first time → the full treatment: the rule, two examples, the why, and the trap (R3-R9).
   - Reminders shrink as a topic goes on: later videos in a topic get shorter reminders than earlier ones.
   - In review files, mark per video which ideas are NEW (taught fully) and which are REMINDERS (brief), so the balance can be checked.
+- **R30. Every method stands on its own** (teacher, 2026-10-11, on solve-q-358: Method 2 said "I need numbers that obey both givens, so y is negative and x is positive", but that was the conclusion of Method 1).
+  - Never use a result that was found by another method. Start each method from the givens.
+  - Let plugging in discover facts by trying numbers, including a failed try when it teaches something ("Let's try a positive y, y is three. Is three smaller than the absolute value of three? No, they're equal. So y can't be positive.").
+  - A short "same first step as before" is allowed only when the steps really are identical (e.g. the same algebra up to a point, then a different finish).
+  - Comparing at the end is fine ("the same two answers", "six again"); using the earlier answer to pick numbers, cross out choices or skip a check is not.
+- **R31. Explain every step: what, why, and what it means for the next step** (teacher, 2026-10-11: "it has to be very explanatory").
+  - Every step says WHY, not only what: "Why do I try a positive y first? Because it's the most natural guess, so let's see if it works."
+  - Every number chosen gets a reason (easy to compute, keeps the choices apart, fits a given, tests the one thing two choices disagree on).
+  - Every elimination says why the choice fails, with the actual numbers ("forty is not smaller than three, so number one is out").
+  - After each discovery, say what it means for the next step ("So y is negative. And therefore, for the product to be negative, x must be positive.").
+  - A bare step ("Take seven off both sides, and x is two.") gets a short reason when it isn't obvious to a weak student. Keep R1's short spoken sentences and R29's brief reminders: one "because" clause, not a lecture.

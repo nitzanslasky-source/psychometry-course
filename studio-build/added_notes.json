@@ -1430,6 +1430,10 @@
   "solve-q-369#1": {
    "t": "Method 2 · Split it",
    "d": "2026-10-11 AI redo: the split method Nitzan added in her take — |2x − 1| < 9 and |2x − 1| > 7 separately, then both overlaps (−4 to −3 and 4 to 5)"
+  },
+  "solve-q-369#2": {
+   "t": "Method 3 · Plugging in the answers",
+   "d": "2026-10-11 AI redo: every range tested with one easy number inside it (why: a possible range must work for every number in it), choice 4 too (−4.5 gives 10), and \"plugging in isn't a cheat, it's the proper way\" (her addition)"
   }
  },
  "lines": {
@@ -3162,8 +3166,8 @@
    "d": "clearer explanation (2026-10-08)"
   },
   "solve-q-369#1": {
-   "t": "Method 2 · Plugging in the answers",
-   "d": "clearer explanation (2026-10-08)"
+   "t": "Method 2 · Split it",
+   "d": "2026-10-11 AI redo: the split method Nitzan added in her take — |2x − 1| < 9 and |2x − 1| > 7 separately, then both overlaps (−4 to −3 and 4 to 5); each method now ends with its own answer (R30)"
   },
   "solve-q-370#1": {
    "t": "Method 2 · Plugging in the answers",

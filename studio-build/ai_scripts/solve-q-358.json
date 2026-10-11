@@ -94,23 +94,58 @@
   ],
   [
    {
-    "say": "[pause] Now our second method, plugging in numbers. It's a great safety net when you're not sure. I need numbers that obey both givens, so y is negative and x is positive. Why negative three and eight? Because they're easy, and they stay away from zero, one and minus one.",
+    "say": "[pause] Now our second method, plugging in numbers. It's a great safety net when you're not sure. I need numbers that obey both givens, and I'll find them by trying. Let's start with y, because the second given has only y in it.",
     "at": [
-     "our second",
-     "It's a great",
      "obey both givens",
-     "so y is negative and x",
-     "Why negative three and eight",
-     "stay away from zero"
+     "only y in it"
     ]
    },
    {
-    "say": "Number one, x is negative? Eight isn't negative, so it's out. Number two, eight is smaller than three? No, out.",
+    "say": "Why do I try a positive y first? Because it's the most natural guess, so let's see if it works. y is three. Is three smaller than the absolute value of three? No, they're equal. And zero is equal to its absolute value too. So y can't be positive, and it can't be zero.",
+    "at": [
+     "y is three",
+     "Is three smaller",
+     "No, they're equal",
+     "And zero is",
+     "So y can't"
+    ]
+   },
+   {
+    "say": "So let's try a negative y, negative three. Is negative three smaller than three? Yes. So negative three works, and now I know y has to be negative.",
+    "at": [
+     "a negative y",
+     "Is negative three",
+     "now I know"
+    ]
+   },
+   {
+    "say": "Now x. What does that mean for x? The first given says x times y is negative. Let's try a negative x too, negative eight. Why eight? So x and y are different numbers, and both stay away from zero and one. Negative three times negative eight is twenty-four. That's positive, so it breaks the first given.",
+    "at": [
+     "What does that",
+     "The first given says",
+     "negative eight. Why",
+     "So x and",
+     "Negative three times",
+     "That's positive"
+    ]
+   },
+   {
+    "say": "So I adjust, and make x positive, x is eight. Negative three times eight is negative twenty-four, and that's smaller than zero. Now both givens work, so y is negative three and x is eight.",
+    "at": [
+     "make x positive",
+     "Negative three times",
+     "Now both givens work"
+    ]
+   },
+   {
+    "say": "Number one, x is negative? Eight isn't negative, so it's out. Number two says the absolute value of x is smaller. The absolute value of eight is eight, and of negative three it's three. Is eight smaller than three? No, out.",
     "voice": "calm",
     "at": [
      "Number one, x",
      "so it's out",
-     "Number two, eight",
+     "Number two says",
+     "The absolute value of eight",
+     "Is eight smaller",
      "No, out"
     ]
    },
@@ -128,13 +163,14 @@
     ]
    },
    {
-    "say": "Two choices survive. Can I already circle one and move on? I can't. I need a tie-breaker, so this time I'll make y the bigger one in size. y is negative six, and x is two.",
+    "say": "Two choices survive. Can I already circle one and move on? I can't. I need a tie-breaker. Number three is about sizes, so this time I'll make y the bigger one in size, and keep the signs that work. y is negative six, and x is two. Negative six times two is negative twelve, so both givens still hold.",
     "at": [
      "Two choices survive",
      "move on",
      "I need a tie-breaker",
      "the bigger one in size",
-     "y is negative six"
+     "y is negative six",
+     "Negative six times"
     ]
    },
    {

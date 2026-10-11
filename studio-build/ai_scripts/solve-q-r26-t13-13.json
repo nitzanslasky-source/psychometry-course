@@ -80,7 +80,7 @@
    }
   ],
   [
-   "[pause] Our second method. Not sure about the reasoning? There are only four sign options, so let's try them all.",
+   "[pause] Our second method, trying the signs. Not sure about the reasoning? a is seven or negative seven, and b is three or negative three. So there are only four sign options, and let's try them all.",
    {
     "say": "Both positive, seven and three. Ten against four, and ten is not smaller than four. Out. Both negative, negative ten against negative four. In bars that's ten against four again. Out.",
     "voice": "calm",

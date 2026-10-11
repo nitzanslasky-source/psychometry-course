@@ -84,13 +84,32 @@
    }
   ],
   [
+   "[pause] Our second method, plugging in numbers. In a not necessarily question, one allowed example that breaks a choice is enough. So I need numbers that obey both givens, and I'll find them by trying.",
    {
-    "say": "[pause] Our second method, plugging in numbers. In a not necessarily question, one allowed example that breaks a choice is enough. So I need numbers that obey the givens. y is negative four, z negative five, and x two.",
+    "say": "Why start with positive numbers? Because they're the most natural guess. z is one, y is two, x is three. They're in order. But is the absolute value of three smaller than the absolute value of two? No. So that try fails.",
     "at": [
-     "Our second",
-     "In a not",
-     "the givens. y",
+     "z is one",
+     "But is the",
+     "So that try fails"
+    ]
+   },
+   {
+    "say": "What went wrong? x has to be bigger than y, but closer to zero. If y is zero or positive, a bigger x is always further from zero. So y has to be negative, and far from zero. y is negative four, and z is even smaller, negative five.",
+    "at": [
+     "What went wrong",
+     "x has to",
+     "If y is",
+     "So y has",
      "y is negative four"
+    ]
+   },
+   {
+    "say": "Now x. It has to be bigger than negative four, but closer to zero than four. Which one do I pick? Number three is about the sign of x, so a positive x is where something might break. x is two.",
+    "at": [
+     "It has to",
+     "Which one do",
+     "Number three is",
+     "x is two"
     ]
    },
    {
@@ -108,6 +127,17 @@
      "Number three says",
      "But two is equal",
      "so number three"
+    ]
+   },
+   {
+    "say": "And the others hold with these numbers. Number one, four smaller than five, true. Number two, negative five isn't five, true. Number four, two smaller than five, true.",
+    "voice": "calm",
+    "at": [
+     "And the others",
+     "Number one, four",
+     "Number one, four",
+     "Number two, negative",
+     "Number four, two"
     ]
    },
    {

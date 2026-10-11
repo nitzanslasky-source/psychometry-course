@@ -88,9 +88,10 @@
     ]
    },
    {
-    "say": "And any positive x would give x is ten plus x, which is impossible. So three and five are out too.",
+    "say": "And three or five? For a positive x the bars do nothing, so the absolute value of x is just x. Then x is ten plus x, and that's impossible. So three and five are out too.",
     "at": [
-     "And any positive",
+     "For a positive",
+     "Then x is",
      "So three",
      "and five are out"
     ]
@@ -128,6 +129,17 @@
      "Four times five",
      "It works",
      "It works"
+    ]
+   },
+   {
+    "say": "In the exam you'd circle it and move on. Here, let's quickly see three and five. Three plus three times the absolute value of y is one, so three times the absolute value of y is negative two. But an absolute value can't be negative. Out. And five is the same story, out.",
+    "at": [
+     "In the exam",
+     "Here, let's quickly",
+     "Three plus three",
+     "But an absolute",
+     "Out. And five",
+     "the same story, out"
     ]
    },
    {
