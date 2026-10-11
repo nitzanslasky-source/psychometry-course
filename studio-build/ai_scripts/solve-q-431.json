@@ -47,10 +47,11 @@
     ]
    },
    {
-    "say": "Now a plus b. That's a plus five a, six a. Six a always divides by six, but by twelve? Only when a is even. If a is two, a plus b is twelve, and that works. But if a is one, a plus b is six, and six doesn't divide by twelve. So this claim can fail, and choice number three is our answer.",
+    "say": "Now a plus b. That's a plus five a, which is six a. Six a always divides by six, but by twelve? Only when a is even. If a is two, a plus b is twelve, and that works. But if a is one, a plus b is six, and six doesn't divide by twelve. So this claim can fail, and choice number three is our answer.",
     "at": [
      "Now a plus b",
      "That's a plus five a",
+     "which is six",
      "Six a always",
      "six, but by",
      "Only when a",
@@ -66,7 +67,7 @@
   ],
   [
    {
-    "say": "In the exam you'd circle it and move on. Here, the last one is a nice check of the idea. a plus b plus c is a plus five a plus four a, ten a. Always divisible by ten.",
+    "say": "In the exam you'd circle it and move on. Here, the last one is a nice check of the idea. a plus b plus c is a plus five a plus four a, which is ten a. Always divisible by ten.",
     "at": [
      "circle it and",
      "Here, the last",
@@ -79,7 +80,7 @@
   ],
   [
    {
-    "say": "[pause] Now let's try plugging in numbers. Start with the tricky condition, b over five has to be a whole number. So b divides by five, and the easiest is b is five. Then a is one, and c is four times one, four.",
+    "say": "[pause] Now let's try plugging in numbers. Start with the tricky condition, b over five has to be a whole number. So b divides by five, and the easiest is b is five. Then a is one, and c is four times one, which is four.",
     "at": [
      "Now let's",
      "numbers. Start with",
@@ -88,15 +89,17 @@
      "b divides by",
      "the easiest is",
      "b is five",
-     "c is four"
+     "c is four",
+     "which is four"
     ]
    },
    {
-    "say": "c is four, divisible by four. b is five, divisible by five. a plus b is one plus five, six, not divisible by twelve. And a plus b plus c is ten, divisible by ten.",
+    "say": "c is four, divisible by four. b is five, divisible by five. a plus b is one plus five, which is six, not divisible by twelve. And a plus b plus c is ten, divisible by ten.",
     "at": [
      "c is four, divisible",
      "b is five",
      "a plus b is one plus five",
+     "not divisible by",
      "And a plus",
      "c is ten"
     ]

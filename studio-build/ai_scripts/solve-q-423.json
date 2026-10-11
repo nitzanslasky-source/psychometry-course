@@ -77,7 +77,7 @@
   ],
   [
    {
-    "say": "[pause] Another way is to build the class from the inside, from the smallest group out. Call the guitar players k, a whole number of kids. They're a third of the basketball boys, so there are three k basketball boys. And the basketball boys are a fifth of the class, so the class is five times three k, fifteen k.",
+    "say": "[pause] Another way is to build the class from the inside, from the smallest group out. Call the guitar players k, a whole number of kids. They're a third of the basketball boys, so there are three k basketball boys. And the basketball boys are a fifth of the class, so the class is five times three k, which is fifteen k.",
     "at": [
      "build the class",
      "inside, from the",
@@ -89,6 +89,7 @@
      "the basketball boys are",
      "fifth of the",
      "the class is five times",
+     "three k, which",
      "fifteen k"
     ]
    },

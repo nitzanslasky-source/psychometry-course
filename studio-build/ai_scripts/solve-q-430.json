@@ -28,13 +28,14 @@
     ]
    },
    {
-    "say": "[short pause] Let's start with a small count. From one to thirty, how many multiples of five? Five, ten, fifteen, twenty, twenty-five, thirty, six of them. And that's just thirty over five, six.",
+    "say": "[short pause] Let's start with a small count. From one to thirty, how many multiples of five? Five, ten, fifteen, twenty, twenty-five, thirty, six of them. And that's just thirty over five, which is six.",
     "at": [
      "Let's start",
      "From one to thirty",
      "Five, ten, fifteen",
      "thirty, six of",
-     "And that's just"
+     "And that's just",
+     "five, which is"
     ]
    },
    {
@@ -54,11 +55,11 @@
     ]
    },
    {
-    "say": "Fifteen. Fifteen times six is ninety, still two digits, so the first is fifteen times seven, a hundred five. And fifteen times sixty-six is nine hundred ninety, the last one below a thousand. So sixty-six minus seven is fifty-nine, and plus one is sixty.",
+    "say": "Fifteen. Fifteen times six is ninety, still two digits, so the first is fifteen times seven, which is a hundred five. And fifteen times sixty-six is nine hundred ninety, the last one below a thousand. So sixty-six minus seven is fifty-nine, and plus one is sixty.",
     "at": [
      "still two digits",
      "the first is fifteen times seven",
-     "seven, a hundred",
+     "seven, which is",
      "And fifteen times",
      "nine hundred ninety",
      "one below a",

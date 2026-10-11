@@ -1,0 +1,86 @@
+{
+ "videoId": "solve-q-r26-t16-01",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Given: x is smaller than zero, which is smaller than y, and x plus y is bigger than zero. Which of the following is necessarily true?",
+    "voice": "calm",
+    "at": [
+     "Given"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So x is negative and y is positive, mixed signs. And their sum is positive. [short pause] We'll solve it two ways, with the sizes, and then plugging in numbers.",
+    "at": [
+     "x is negative and y is positive",
+     "is positive, mixed",
+     "their sum is positive",
+     "solve it two",
+     "the sizes, and"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start with the sizes. When you add a negative and a positive, they fight, and the one that's bigger in size wins. Negative two plus five is three, positive, because five is bigger in size. Negative five plus two is negative three.",
+    "at": [
+     "Let's start",
+     "When you add",
+     "and a positive",
+     "the one that's bigger in size wins",
+     "Negative two plus five",
+     "three, positive, because",
+     "bigger in size. Negative",
+     "Negative five plus"
+    ]
+   },
+   {
+    "say": "Here the sum is positive, so the positive one won. y is bigger in size than x. Choice number two is our answer. And choice number one is the opposite.",
+    "at": [
+     "the positive one won",
+     "Choice number two is our answer",
+     "answer. And choice",
+     "is the opposite"
+    ]
+   },
+   {
+    "say": "In the exam you'd circle it and move on. Here, the other two read the signs. x times y, a negative times a positive, is negative. Out. x minus y, the smaller minus the bigger, is negative too. Out.",
+    "at": [
+     "In the exam",
+     "it and move",
+     "Here, the other",
+     "x times y",
+     "times a positive",
+     "is negative. Out",
+     "x minus y",
+     "negative too. Out"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Now let's try plugging in numbers that fit. x is negative one and y is three. Negative one plus three is two, positive, so they fit.",
+    "at": [
+     "Now let's",
+     "numbers that fit",
+     "x is negative one",
+     "Negative one plus",
+     "two, positive, so"
+    ]
+   },
+   {
+    "say": "Choice number one, one bigger than three? No. Choice number three, negative one times three is negative three, bigger than zero? No. Choice number four, negative one minus three is negative four. No. Three are out, so choice number two. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Choice number one, one bigger",
+     "than three? No",
+     "three, negative one",
+     "is negative three",
+     "zero? No",
+     "negative one minus",
+     "negative four. No",
+     "so choice number two"
+    ]
+   }
+  ]
+ ]
+}

@@ -78,20 +78,22 @@
     ]
    },
    {
-    "say": "Fifteen left means nine hundred minus fifteen, eight hundred eighty-five paid. It's odd, so it doesn't divide by six. Out.",
+    "say": "Fifteen left means she paid nine hundred minus fifteen, which is eight hundred eighty-five. It's odd, so it doesn't divide by six. Out.",
     "at": [
      "Fifteen left means",
-     "minus fifteen, eight",
+     "nine hundred minus",
+     "is eight hundred",
      "It's odd, so",
      "divide by six",
      "Out."
     ]
    },
    {
-    "say": "Twenty-four left means nine hundred minus twenty-four, eight hundred seventy-six paid. It's even, and eight plus seven plus six is twenty-one, which divides by three. So it divides by six, and choice number two. [pause] Okay. I'll see you in the next question.",
+    "say": "Twenty-four left means she paid nine hundred minus twenty-four, which is eight hundred seventy-six. It's even, and eight plus seven plus six is twenty-one, which divides by three. So it divides by six, and choice number two. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Twenty-four left means",
-     "minus twenty-four, eight",
+     "nine hundred minus",
+     "is eight hundred",
      "It's even, and",
      "seven plus six",
      "which divides by",

@@ -2216,3 +2216,53 @@ _apply_before_remove_mirror = apply
 def apply(M):
     _apply_before_remove_mirror(M)
     remove_mirror(M)   # 2026-10-11 mirror test removed (teacher decision): runs LAST
+
+
+# =====================================================================================================================
+# 2026-10-11 REDO of topic 16 for the teacher's own-voice reading, built like topic 13 (t13.py ai_redo_t13). Every
+# topic-16 video EXCEPT the camera lesson 'whole-numbers' (re-recorded on camera, never touched here) is read aloud by the
+# teacher in the Reading Studio: the recorded ones (math_patches/_ai_redo.py AI_REDO; their old takes no longer count)
+# and the planned ones. ONE spec per video in _ai_vis_t16.py drives the script (ai_scripts/<vid>.json), the visual plan
+# (_ai_visual.py format, merged into its VIS) and the slides: here each video is rebuilt from the spec - its spoken lines
+# ARE the script lines (tags dropped), one studio line per script line, so ai_check lines up - and _ai_visual.apply()
+# adds the click items, POINT highlights and pen marks around them. A video with a camera take recorded before
+# AI16_CUTOFF (UTC; obsolete AI_REDO takes are already hidden) keeps that version. Runs LAST.
+# =====================================================================================================================
+AI16_CUTOFF = '2026-10-12T06-00-00'
+AI16_CAMERA = 'whole-numbers'
+
+
+def _ai16_recorded(vid):
+    import glob, os, re
+    pat = re.compile(re.escape(vid) + r'-(\d{4}-\d\d-\d\dT\d\d-\d\d-\d\d)[\d-]*Z\.(mp4|webm)$')
+    for f in glob.glob(os.path.expanduser('~/Documents/Course.recordings/**/*'), recursive=True):
+        m = pat.match(os.path.basename(f))
+        if m and m.group(1) < AI16_CUTOFF: return True
+    return False
+
+
+def _ai16_mod(name):
+    import importlib.util, os, sys
+    if name not in sys.modules:
+        p = os.path.join(os.path.dirname(os.path.abspath(__file__)), name + '.py')
+        spec = importlib.util.spec_from_file_location(name, p); m = importlib.util.module_from_spec(spec)
+        sys.modules[name] = m; spec.loader.exec_module(m)
+    return sys.modules[name]
+
+
+def ai_redo_t16(M):
+    S = _ai16_mod('_ai_vis_t16'); AV = _ai16_mod('_ai_visual')
+    for vid in S.ORDER:
+        assert vid != AI16_CAMERA, 'the camera lesson stays as it is'
+        if vid not in M.D['videos'] or _ai16_recorded(vid): continue
+        S.rebuild(M, vid)
+        AV.VIS[vid] = S.vis(vid)
+        AV.apply(M, vid)
+
+
+_apply_before_ai_redo_t16 = apply
+
+
+def apply(M):
+    _apply_before_ai_redo_t16(M)
+    ai_redo_t16(M)   # 2026-10-11 redo of topic 16 for the teacher's reading: runs LAST

@@ -90,14 +90,13 @@
     ]
    },
    {
-    "say": "And what does that mean? Only the remainders matter. For a difference, subtract the remainders, two minus five, negative three. A negative result? Add the divisor, negative three plus seven, four. For a sum, add them. Nine leaves two and twelve leaves five, and nine plus twelve is twenty-one, three sevens. Two plus five is seven, and that leaves zero, the same. For a product, multiply them. Nine times twelve is a hundred eight, fifteen sevens and three. And two times five is ten, which also leaves three.",
+    "say": "And what does that mean? Only the remainders matter. For a difference, subtract the remainders, two minus five, negative three. A negative result? Add the divisor. Negative three plus seven is four. For a sum, add them. Nine leaves two and twelve leaves five, and nine plus twelve is twenty-one, three sevens. Two plus five is seven, and that leaves zero, the same. For a product, multiply them. Nine times twelve is a hundred eight, fifteen sevens and three. And two times five is ten, which also leaves three.",
     "at": [
      "And what does",
      "Only the remainders matter",
      "remainders, two minus",
      "three. A negative",
-     "Add the divisor",
-     "plus seven, four",
+     "Negative three plus",
      "For a sum, add them",
      "leaves five, and",
      "twelve is twenty-one",
@@ -110,11 +109,11 @@
     ]
    },
    {
-    "say": "Now careful with the order. A lot of students do five minus two, three, and that's choice number three, the trap. It's a minus b, so it's two minus five.",
+    "say": "Now careful with the order. A lot of students do five minus two, which is three, and that's choice number three, the trap. It's a minus b, so it's two minus five.",
     "at": [
      "careful with the order",
-     "minus two, three",
-     "choice number three",
+     "minus two, which",
+     "and that's choice",
      "the trap",
      "It's a minus",
      "it's two minus"

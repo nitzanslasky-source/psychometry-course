@@ -22,10 +22,11 @@
     ]
    },
    {
-    "say": "[short pause] Let's start with the tag. x is full eights plus four, eight k plus four.",
+    "say": "[short pause] Let's start with the tag. x is full eights plus four, so x is eight k plus four.",
     "at": [
      "Let's start",
      "x is full",
+     "four, so x",
      "eight k plus four"
     ]
    },

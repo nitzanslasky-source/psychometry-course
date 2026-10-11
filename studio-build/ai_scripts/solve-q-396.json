@@ -38,18 +38,18 @@
     ]
    },
    {
-    "say": "a has exactly the prime factors two and three. Exactly means both of them must be there, and nothing else. The smallest is one two and one three, two times three, six. And b has two and five, so the smallest is two times five, ten.",
+    "say": "a has exactly the prime factors two and three. Exactly means both of them must be there, and nothing else. The smallest is one two and one three. Two times three is six. And b has two and five, so the smallest is two times five, which is ten.",
     "at": [
      "a has exactly",
      "factors two and",
      "Exactly means both",
      "must be there",
-     "else. The smallest",
-     "two and one",
-     "two times three, six",
-     "b has two",
-     "so the smallest",
-     "two times five, ten"
+     "The smallest is",
+     "and one three",
+     "Two times three is six",
+     "And b has",
+     "five, so the",
+     "two times five, which is ten"
     ]
    },
    {
@@ -111,7 +111,7 @@
   ],
   [
    {
-    "say": "[pause] Now let's try plugging in the answers. They ask for the smallest, so I start from the smallest choice, four. If the result is four, then a times b is four times fifteen, sixty.",
+    "say": "[pause] Now let's try plugging in the answers. They ask for the smallest, so I start from the smallest choice, four. If the result is four, then a times b is four times fifteen, which is sixty.",
     "at": [
      "Now let's",
      "the answers. They",
@@ -136,10 +136,10 @@
     ]
    },
    {
-    "say": "Next, eight. a times b is eight times fifteen, a hundred twenty. Twelve times ten is a hundred twenty, and ten is smaller than twelve. It works. So the smallest possible value is eight, choice number one. [pause] Okay. I'll see you in the next question.",
+    "say": "Next, eight. a times b is eight times fifteen, which is a hundred twenty. Twelve times ten is a hundred twenty, and ten is smaller than twelve. It works. So the smallest possible value is eight, choice number one. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Next, eight",
-     "times fifteen, a",
+     "times fifteen, which",
      "Twelve times ten",
      "hundred twenty, and",
      "smaller than twelve",

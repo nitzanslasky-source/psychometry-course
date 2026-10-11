@@ -1,0 +1,76 @@
+{
+ "videoId": "consecutive-integers",
+ "style": "the teacher reads it herself (Reading Studio), topic-16 redo (2026-10-11): math_patches/_ai_vis_t16.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Now consecutive numbers. Questions about them usually have more than one way in, so we'll learn three, and you pick the one that's easiest for you."
+  ],
+  [
+   {
+    "say": "Remember, consecutive numbers are integers in a row, each one more than the one before. Five, six, seven. Negatives count too, negative three, negative two, negative one. And consecutive even numbers, or odd numbers, go up by two, four, six, eight.",
+    "at": [
+     "integers in a",
+     "one more than",
+     "Five, six, seven",
+     "negative two, negative",
+     "And consecutive even",
+     "odd numbers, go",
+     "two, four, six"
+    ]
+   },
+   {
+    "say": "The first way, one letter. Write all of them with one letter, and the middle one is usually the neatest. Three in a row are b minus one, b, and b plus one. If b is eight, that's seven, eight, nine, and if b is twenty, nineteen, twenty, twenty-one. For evens or odds, b minus two, b, and b plus two, so with b eight, six, eight, ten.",
+    "at": [
+     "The first way",
+     "Write all of",
+     "one letter, and",
+     "one is usually",
+     "Three in a row are",
+     "b plus one",
+     "If b is",
+     "seven, eight, nine",
+     "b is twenty",
+     "For evens or odds",
+     "plus two, so",
+     "eight, six, eight"
+    ]
+   },
+   {
+    "say": "The second way, plugging in numbers. Take the smallest legal numbers, like one, two, three, because they're the easiest to work with. But first check that the choices come out different with them. If two choices tie, take other numbers.",
+    "at": [
+     "The second way",
+     "the smallest legal numbers",
+     "the easiest to",
+     "But first check",
+     "choices come out",
+     "If two choices"
+    ]
+   },
+   {
+    "say": "The third way, the differences. Bigger minus smaller is one, and smaller minus bigger is negative one. Eight minus seven is one, but seven minus eight is negative one. And two steps apart, nine minus seven is two, and seven minus nine is negative two. The size is the same, but the sign isn't, so watch the sign.",
+    "at": [
+     "The third way",
+     "Bigger minus smaller",
+     "and smaller minus",
+     "Eight minus seven",
+     "but seven minus",
+     "And two steps",
+     "minus seven is two",
+     "seven minus nine",
+     "The size is",
+     "but the sign",
+     "watch the sign"
+    ]
+   },
+   {
+    "say": "And one trap. If they say the numbers are bigger than zero, it doesn't mean they start at one. They could be twenty-three, twenty-four, twenty-five. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "they say the",
+     "bigger than zero",
+     "mean they start",
+     "They could be"
+    ]
+   }
+  ]
+ ]
+}

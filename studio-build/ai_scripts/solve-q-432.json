@@ -54,7 +54,7 @@
   ],
   [
    {
-    "say": "Two numbers in a row, and one of them is always even, because even and odd take turns. Seven and eight, eight is even, so seven times eight, fifty-six, is even. Four and five, four is even, and four times five is twenty. So two in a row always divide by two.",
+    "say": "Two numbers in a row, and one of them is always even, because even and odd take turns. Seven and eight, eight is even, so seven times eight, which is fifty-six, is even. Four and five, four is even, and four times five is twenty. So two in a row always divide by two.",
     "at": [
      "Two numbers in a row",
      "and one of",
@@ -62,7 +62,7 @@
      "odd take turns",
      "Seven and eight",
      "even, so seven",
-     "fifty-six, is even",
+     "which is fifty-six",
      "Four and five",
      "even, and four",
      "So two in",
@@ -91,7 +91,7 @@
     ]
    },
    {
-    "say": "So x is five times three in a row, five times a multiple of six. It always divides by five times six, thirty. Choice number three is our answer.",
+    "say": "So x is five times three in a row, five times a multiple of six. It always divides by five times six, which is thirty. Choice number three is our answer.",
     "at": [
      "So x is",
      "three in a",

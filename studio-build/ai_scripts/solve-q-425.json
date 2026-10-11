@@ -61,7 +61,7 @@
     ]
    },
    {
-    "say": "So x times y is at most seven times two, fourteen. Choice number three is our answer.",
+    "say": "So x times y is at most seven times two, which is fourteen. Choice number three is our answer.",
     "at": [
      "is at most",
      "seven times two",

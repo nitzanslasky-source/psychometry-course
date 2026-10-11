@@ -363,12 +363,14 @@ def build(topics=(), ids=None, out=OUT):
                 v['title'] = re.split(r'(?<=[.?!])\s', v['paras'][0][0])[0][:110]
             v['group'] = g['topic']
             allv.append(v)
+    import datetime as _dt
+    now = _dt.datetime.now().astimezone()
     data = dict(groups=[dict(topic=g['topic'], title=g['title'], ids=[v['id'] for v in g['videos']]) for g in groups],
-                videos=allv, recorded=scan_recorded(allv))
+                videos=allv, recorded=scan_recorded(allv), builtAt=now.isoformat(timespec='seconds'))
     js = json.dumps(data, ensure_ascii=False).replace('</', '<\\/')
     label = ', '.join(('Topic %d' % g['topic']) + (' · ' + g['title'] if g['title'] else '') if g['topic'] else 'Videos'
                       for g in groups)
-    page = PAGE.replace('__DATA__', js).replace('__LABEL__', html.escape(label))
+    page = PAGE.replace('__DATA__', js).replace('__LABEL__', html.escape(label)).replace('__UPDATED__', now.strftime('%a %d %b, %H:%M'))
     with open(out, 'w', encoding='utf-8') as f:
         f.write(page)
     return out, allv
@@ -398,6 +400,8 @@ button:hover:not(:disabled){border-color:var(--faint)}
 button:disabled{opacity:.45;cursor:default}
 button:focus-visible,select:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .top{display:flex;align-items:center;gap:14px;padding:10px 18px;border-bottom:1px solid var(--line);background:var(--panel);flex-wrap:wrap}
+.updated{font:700 14px system-ui;background:#fef3c7;color:#78350f;border:1.5px solid #f59e0b;border-radius:10px;padding:5px 10px;white-space:nowrap}
+.updated.old{background:#fee2e2;color:#7f1d1d;border-color:#ef4444}
 .brand{font-weight:700;letter-spacing:.01em}.brand small{font-weight:500;color:var(--muted);margin-left:8px}
 .tips{flex:1 1 420px;display:flex;flex-wrap:wrap;gap:6px 16px;color:var(--muted);font-size:13px}
 .tips span::before{content:"•";margin-right:6px;color:var(--faint)}
@@ -485,6 +489,7 @@ kbd{font:11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line);border
 <body>
 <div class="top">
   <div class="brand">Reading Studio<small>__LABEL__</small></div>
+  <div class="updated" id="updated" title="When this page was made. If the scripts were changed after this, reload the newest Reading-Studio.html.">Updated: __UPDATED__</div>
   <div class="tips">
     <span><b>Quiet room</b>, no fan or AC</span>
     <span><b>Same mic, same distance</b> every time (about a hand-span)</span>
@@ -533,6 +538,12 @@ kbd{font:11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line);border
 <div id="toast"></div>
 <script>
 const DATA=__DATA__;
+/* 2026-10-11: how old is this page? (she sometimes reads from a page opened hours earlier) */
+function pageAge(){const el=document.getElementById('updated');if(!el||!DATA.builtAt)return;const h=(Date.now()-new Date(DATA.builtAt))/36e5;
+ const t=h<1?Math.max(1,Math.round(h*60))+' min ago':h<48?Math.round(h)+' h ago':Math.round(h/24)+' days ago';
+ el.textContent='Updated: '+new Date(DATA.builtAt).toLocaleString([], {weekday:'short',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'})+' · '+t+(h>=3?' · reload the newest page before reading':'');
+ el.classList.toggle('old',h>=3)}
+setTimeout(pageAge,0);setInterval(pageAge,60000);
 const $=s=>document.querySelector(s);
 const V=DATA.videos, BYID=Object.fromEntries(V.map(v=>[v.id,v]));
 const SR=48000;
@@ -736,7 +747,7 @@ async function stopRec(){
   const wav=encodeWav(r.chunks,r.samples,sr);
   const ps=flat(v);const starts=[];for(const e of r.events)if(e.type!=='mistake')starts.push({para:e.para,t:+e.t.toFixed(3),how:e.type});
   const reached=new Set(starts.map(e=>e.para)),read=(r.patch?r.sel:ps.map((_,i)=>i)).filter(i=>reached.has(i)),unread=r.patch?r.sel.filter(i=>!reached.has(i)):[];
-  const side={file:name,videoId:r.video,kind:r.patch?'patch':'full',recordedAt:r.started.toISOString(),duration:+dur.toFixed(3),sampleRate:sr,channels:1,bitsPerSample:16,format:'WAV PCM 16-bit mono',
+  const side={file:name,pageBuiltAt:DATA.builtAt||null,videoId:r.video,kind:r.patch?'patch':'full',recordedAt:r.started.toISOString(),duration:+dur.toFixed(3),sampleRate:sr,channels:1,bitsPerSample:16,format:'WAV PCM 16-bit mono',
     mic:{label:MIC.label,deviceId:(MIC.settings||{}).deviceId||'',settings:MIC.settings,engine:MIC.engine},
     constraints:{echoCancellation:false,noiseSuppression:false,autoGainControl:false},clipped:!!r.clipped,
     paragraphStarts:starts,mistakes:r.events.filter(e=>e.type==='mistake').map(e=>({t:+e.t.toFixed(3),para:e.para,text:ps[e.para]})),

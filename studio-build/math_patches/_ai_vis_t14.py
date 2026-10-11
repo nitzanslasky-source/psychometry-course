@@ -1299,62 +1299,63 @@ video('solve-q-392', 'solution', qid='q-392', slides=[
 ])
 
 # ------------------------------------------------------------------------------------------------ q-393 (Q15)
-# NEW: take out a common factor to get a product, then factor pairs that aren't necessarily prime; why a is the smaller
-# factor (a < b < b + 4); stop when b drops below a; plugging in the sums.  REMINDER: common factor (topic 4), listing
-# factor pairs in order (q-399).
-e1 = I('e1', '$a\\cdot b+4a=\\hl{f}{a(b+4)}=48$', hand='a·b + 4a = \\hl{f}{a(b+4)} = 48')
-e2 = I('e2', '$a<b<b+4$: $\\ a$ is the small factor', size=28, col=1, hand='a < b < b+4 :   a is the small factor')
-e3 = I('e3', '$1\\cdot48$: $\\ b=44,\\ \\ a+b=45$', size=32, hand='1·48 :   b = 44,    a+b = 45')
-e4 = I('e4', '$2\\cdot24$: $\\ b=20,\\ \\ a+b=22$', size=32, hand='2·24 :   b = 20,    a+b = 22')
-e5 = I('e5', '$3\\cdot16$: $\\ b=12,\\ \\ a+b=15$', size=32, hand='3·16 :   b = 12,    a+b = 15')
-e6 = I('e6', '$4\\cdot12$: $\\ b=8,\\ \\ a+b=12$', size=32, hand='4·12 :   b = 8,    a+b = 12')
-e7 = I('e7', '$6\\cdot8$: $\\ b=4<6$ ✗', size=30, col=1, hand='6·8 :   b = 4 < 6   ✗')
-e8 = I('e8', 'Sums: $45,\\ 22,\\ 15,\\ 12$', size=30, col=1, hand='Sums :   45,  22,  15,  12')
-x1 = I('x1', '$45$: $\\ a=1,\\ b=44$: $\\ 44+4=48$ ✓', size=30, hand='45 :   a = 1,  b = 44 :   44 + 4 = 48   ✓')
-x2 = I('x2', '$15$: $\\ a=3,\\ b=12$: $\\ 36+12=48$ ✓', size=30, hand='15 :   a = 3,  b = 12 :   36 + 12 = 48   ✓')
-x3 = I('x3', '$12$: $\\ a=4,\\ b=8$: $\\ 32+16=48$ ✓', size=30, hand='12 :   a = 4,  b = 8 :   32 + 16 = 48   ✓')
-x4 = I('x4', '$17$: $\\ 20,\\ 38,\\ 54,\\ 68,\\ 80$ $\\ $never $48$ ✗', size=30, hand='17 :   20,  38,  54,  68,  80   never 48   ✗')
+# 2026-10-11 REWRITTEN (teacher: "isn't clear enough"): a clear opener, why a is the smaller factor with numbers, the
+# factor pairs of 48 as a table built row by row (a | b + 4 | b | a + b), every calculation said briefly; method 2 is a
+# complete check of the sum 17 (a divides 48 and a < b, so a = 1, 2, 3, 4, 6, 8 - none gives 48).
+# REMINDER: taking out a common factor (topic 4), listing factor pairs in order (q-399).
+e1 = I('e1', '$a\\cdot b+4a=\\hl{f}{a(b+4)}=48$', hand='a·b + 4a = \\hl{f}{a(b + 4)} = 48')
+e2 = I('e2', '$a<b<b+4$: $\\ a$ is the small factor', size=28, col=1, hand='a < b < b + 4 :   a is the small factor')
+e9 = I('e9', '$a=3,\\ b=5$: $\\ b+4=9$', size=28, col=1, hand='a = 3,  b = 5 :   b + 4 = 9')
+eh = I('eh', '$a\\ \\mid\\ b+4\\ \\mid\\ b\\ \\mid\\ a+b$', size=26, hand='a    |    b + 4    |    b    |    a + b')
+e3 = I('e3', '$1\\ \\mid\\ 48\\ \\mid\\ 44\\ \\mid\\ 45$', size=26, hand='1    |    48    |    44    |    45')
+e4 = I('e4', '$2\\ \\mid\\ 24\\ \\mid\\ 20\\ \\mid\\ 22$', size=26, hand='2    |    24    |    20    |    22')
+e5 = I('e5', '$3\\ \\mid\\ 16\\ \\mid\\ 12\\ \\mid\\ 15$', size=26, hand='3    |    16    |    12    |    15')
+e6 = I('e6', '$4\\ \\mid\\ 12\\ \\mid\\ 8\\ \\mid\\ 12$', size=26, hand='4    |    12    |    8    |    12')
+e7 = I('e7', '$6\\ \\mid\\ 8\\ \\mid\\ 4$ $\\ \\ 4<6$ ✗', size=26, col=1, hand='6    |    8    |    4      4 < 6   ✗')
+e8 = I('e8', 'Sums: $\\ 45,\\ 22,\\ 15,\\ 12$ $\\quad 17$? ✗', size=30, col=1, hand='Sums :   45,  22,  15,  12      17 ?  ✗')
+x1 = I('x1', 'Sum $17$: $\\ b=17-a$, $\\ b+4=21-a$', size=30, hand='Sum 17 :    b = 17 − a,    b + 4 = 21 − a')
+x2 = I('x2', '$a$ divides $48$, $\\ a<b$: $\\ a=1,2,3,4,6,8$', size=30, hand='a divides 48,   a < b :    a = 1, 2, 3, 4, 6, 8')
+x3 = I('x3', '$1\\cdot20=20\\quad 2\\cdot19=38\\quad 3\\cdot18=54$', size=30, hand='1·20 = 20      2·19 = 38      3·18 = 54')
+x4 = I('x4', '$4\\cdot17=68\\quad 6\\cdot15=90\\quad 8\\cdot13=104$', size=30, hand='4·17 = 68      6·15 = 90      8·13 = 104')
+x5 = I('x5', 'Never $48$: $\\ 17$ is impossible', size=28, col=1, hand='Never 48 :    17 is impossible')
 video('solve-q-393', 'solution', qid='q-393', slides=[
     S('Method 1 · Common factor, then pairs',
       L("a and b are positive integers. Given: a is smaller than b, and a times b, plus four a, is equal to forty-eight. "
         "Which of the following cannot be the value of a plus b?", pt('stem', 'a and b are', 'hl', 9.0), voice='calm', pause=0.5),
-      L("Honestly, it's not obvious where to start here. So let's start with what we can do. We have an equation, and a "
-        "appears in both terms on the left. [short pause] We'll solve it two ways, taking out a common factor, and then "
-        "plugging in the answers.", pt('stem', 'a appears in both terms')),
-      L("[short pause] a is in both terms, so I take it out as a common factor. a times b, plus four a, "
-        "is a times, in brackets, b plus four. And that's forty-eight.", show(e1, 'I take it out'), mk('circle', 'e1: f', 'in brackets, b plus four')),
-      L("So now it's a product of two whole numbers that equals forty-eight. Remember breaking a number into pairs. Here we "
-        "break forty-eight into two factors, and they don't have to be primes.", pt('e1', 'a product of two whole numbers')),
-      L("Which factor is a? The smaller one. Why? b is bigger than a, and b plus four is even bigger. So a is the small "
-        "factor, and b plus four is the big one.", show(e2, 'Which factor is a')),
-      L("One times forty-eight. a is one, b plus four is forty-eight, so b is forty-four, and a plus b is forty-five.",
-        show(e3, 'One times forty-eight'), voice='calm'),
-      L("Two times twenty-four. b plus four is twenty-four, so b is twenty, and a plus b is twenty-two. Not a choice, keep "
-        "going. Three times sixteen. b is twelve, and a plus b is fifteen.", show(e4, 'Two times twenty-four'), show(e5, 'Three times sixteen'))),
+      L("Look at the equation. a appears in both terms on the left. So we can take it out, and we get a product that is "
+        "equal to forty-eight. [short pause] We'll solve it two ways, taking out a and listing the pairs, and then checking "
+        "the sum seventeen directly.", pt('stem', 'a appears in both terms')),
+      L("[short pause] Take out a. a times b, plus four a, is a times, in brackets, b plus four. And that's forty-eight.",
+        show(e1, 'Take out a'), mk('circle', 'e1: f', 'in brackets, b plus four')),
+      L("So two whole numbers multiply to forty-eight. a is one of them, and b plus four is the other. They don't have to be "
+        "primes.", pt('e1', 'two whole numbers multiply')),
+      L("Which one is a? The smaller one. Why? b is bigger than a, so b plus four is even bigger. For example, if a is "
+        "three and b is five, b plus four is nine, bigger than three.", show(e2, 'Which one is a'), show(e9, 'if a is three'))),
     S('Method 1 · Common factor, then pairs',
-      L("Four times twelve. b is eight, still bigger than four, and a plus b is twelve.", show(e6, 'Four times twelve'), voice='calm'),
-      L("Five doesn't divide forty-eight. Six times eight? b plus four is eight, so b is four, and that's smaller than six. "
-        "Not allowed. And after that, the factors swap, and a would be the bigger one. So no more options.",
-        show(e7, 'Six times eight'), pt('e7', 'the factors swap')),
-      L("So the sums can be forty-five, twenty-two, fifteen and twelve. Seventeen isn't one of them, so choice number three "
-        "is our answer.", show(e8, 'So the sums can be'), mk('cross', 'choice 1', 'forty-five, twenty-two'), mk('cross', 'choice 2', 'fifteen and'),
-        mk('cross', 'choice 4', 'and twelve'), mk('tick', 'choice 3', 'choice number three')),
+      L("So let's list the pairs that make forty-eight, the small number first. I'll write a, then b plus four, then b, then "
+        "a plus b.", show(eh, 'list the pairs')),
+      L("One times forty-eight. So b plus four is forty-eight, and b is forty-four. One plus forty-four is forty-five.",
+        show(e3, 'One times forty-eight'), voice='calm'),
+      L("Two times twenty-four. b is twenty. Two plus twenty is twenty-two.", show(e4, 'Two times twenty-four'), voice='calm'),
+      L("Three times sixteen. b is twelve. Three plus twelve is fifteen.", show(e5, 'Three times sixteen'), voice='calm'),
+      L("Four times twelve. b is eight. Four plus eight is twelve.", show(e6, 'Four times twelve'), voice='calm'),
+      L("Five doesn't divide forty-eight. Six times eight. b plus four is eight, so b is four. But b has to be bigger than a, "
+        "and four is smaller than six. Not allowed. After that the pairs swap, so we're done.", show(e7, 'Six times eight')),
+      L("So the sum can be forty-five, twenty-two, fifteen or twelve. Seventeen is not on the list. Choice number three is "
+        "our answer.", show(e8, 'So the sum can be'), mk('cross', 'choice 1', 'forty-five, twenty-two'), mk('cross', 'choice 2', 'fifteen or'),
+        mk('cross', 'choice 4', 'or twelve'), mk('tick', 'choice 3', 'Choice number three is')),
       sb='Method 1 · Common factor, then pairs'),
-    S('Method 2 · Plugging in the answers',
-      L("[pause] Now let's try plugging in the answers. Three choices can be the sum, and one can't. So for each sum, I "
-        "try small values of a, and b is the sum minus a. Then I check a times b, plus four a.", pt('stem', 'plus four a')),
-      L("Forty-five. a is one, so b is forty-four. One times forty-four is forty-four, and four times one is four. "
-        "Forty-four plus four is forty-eight. It works, out.", show(x1, 'Forty-five. a is one'), mk('cross', 'choice 1', 'It works, out')),
-      L("Fifteen. a is three, b is twelve. Three times twelve is thirty-six, and four times three is twelve. "
-        "Thirty-six plus twelve, forty-eight. Out. Twelve. a is four, b is eight. Four times eight is thirty-two, and four "
-        "times four is sixteen. Thirty-two plus sixteen, forty-eight. Out.",
-        show(x2, 'Fifteen. a is three'), mk('cross', 'choice 2', 'Thirty-six plus twelve'), show(x3, 'Twelve. a is four'), mk('cross', 'choice 4', 'Thirty-two plus sixteen')),
-      L("Seventeen. a is one, b is sixteen, sixteen plus four is twenty. a is two, b is fifteen, thirty plus eight is "
-        "thirty-eight. a is three, b is fourteen, forty-two plus twelve is fifty-four, already above forty-eight. Four and "
-        "thirteen give fifty-two plus sixteen, sixty-eight, and five and twelve give sixty plus twenty, eighty. It keeps "
-        "growing, so it never comes back to forty-eight.", show(x4, 'Seventeen. a is one')),
-      L("So seventeen can't be the sum, choice number three. [pause] Okay. I'll see you in the next question.",
-        mk('tick', 'choice 3', "So seventeen can't be"))),
+    S('Method 2 · Check the sum 17',
+      L("[pause] Another way is to check seventeen directly. If a plus b is seventeen, then b is seventeen minus a. So b plus "
+        "four is twenty-one minus a.", show(x1, 'b is seventeen minus a')),
+      L("And a times b plus four is forty-eight, so a divides forty-eight. Also a is smaller than b, so a is at most eight. "
+        "The numbers up to eight that divide forty-eight are one, two, three, four, six and eight.", show(x2, 'a divides forty-eight')),
+      L("Let's try each. a is one: one times twenty is twenty. a is two: two times nineteen is thirty-eight. a is three: "
+        "three times eighteen is fifty-four.", show(x3, 'a is one')),
+      L("a is four: four times seventeen is sixty-eight. a is six: six times fifteen is ninety. a is eight: eight times "
+        "thirteen is a hundred four.", show(x4, 'a is four')),
+      L("None of them is forty-eight. So the sum can't be seventeen. Choice number three. [pause] Okay. I'll see you in the "
+        "next question.", show(x5, 'None of them'), mk('tick', 'choice 3', 'Choice number three'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-396 (Q16)
@@ -1381,8 +1382,7 @@ video('solve-q-396', 'solution', qid='q-396', slides=[
       L("[short pause] When is a times b over fifteen smallest? a and b are both on top of the fraction, "
         "so the smaller they are, the smaller the result. So let's build each one as small as possible.", pt('stem', 'over fifteen smallest')),
       L("a has exactly the prime factors two and three. Exactly means both of them must be there, and nothing else. The "
-        "smallest is one two and one three, two times three, six. And b has two and five, so the smallest is two times "
-        "five, ten.", show(b1, 'two times three, six'), show(b2, 'two times five, ten')),
+        "smallest is one two and one three. Two times three is six. And b has two and five, so the smallest is two times five, which is ten.", show(b1, 'Two times three is six'), show(b2, 'two times five, which is ten')),
       L("But wait, b has to be smaller than a, and ten isn't smaller than six. Can b get smaller than ten? No, it needs a two "
         "and a five. So we have to grow a.", show(b3, 'b has to be smaller than a'), pt('b2', 'Can b get smaller')),
       L("By how much? a can only contain twos and threes, so I can multiply it by two, or by three. Six times two is twelve, "
@@ -1400,11 +1400,11 @@ video('solve-q-396', 'solution', qid='q-396', slides=[
       sb='Method 1 · Build the smallest'),
     S('Method 2 · Plugging in the answers',
       L("[pause] Now let's try plugging in the answers. They ask for the smallest, so I start from the smallest choice, "
-        "four. If the result is four, then a times b is four times fifteen, sixty.", pt('choice 4', 'the smallest choice')),
+        "four. If the result is four, then a times b is four times fifteen, which is sixty.", pt('choice 4', 'the smallest choice')),
       L("a is made of twos and threes, both of them, so a is six, twelve, eighteen, twenty-four and so on. And b is ten, "
         "twenty, forty, fifty and so on. Which pair multiplies to sixty? Only six times ten. But then b isn't smaller than "
         "a. So four is out.", show(y1, 'so a is six'), show(y2, 'Which pair multiplies to sixty'), mk('cross', 'choice 4', 'So four is out')),
-      L("Next, eight. a times b is eight times fifteen, a hundred twenty. Twelve times ten is a hundred twenty, and ten is "
+      L("Next, eight. a times b is eight times fifteen, which is a hundred twenty. Twelve times ten is a hundred twenty, and ten is "
         "smaller than twelve. It works. So the smallest possible value is eight, choice number one. [pause] Okay. I'll see "
         "you in the next question.", show(y3, 'Next, eight'), mk('tick', 'choice 1', 'choice number one'))),
 ])
@@ -1626,21 +1626,19 @@ video('r26-t14-summary', 'lesson', slides=[
     S('GCD and LCM',
       L("The greatest common divisor takes each shared prime at its lower power. The greatest number that's guaranteed to "
         "divide, the LCM, takes every prime at its higher power.", show(g1s, 'The greatest common divisor')),
-      L("Forty-eight is two to the power of four times three, and sixty is two squared times three times five. The GCD is "
-        "two squared times three, twelve. The LCM takes two to the power of four, three and five, and sixteen times fifteen is two hundred forty.",
+      L("Forty-eight is two to the power of four times three, and sixty is two squared times three times five. The GCD is two squared times three, which is twelve. The LCM takes two to the power of four, three and five, and sixteen times fifteen is two hundred forty.",
         show(g2s, 'Forty-eight is')),
       L("The trap is just multiplying the two numbers, which counts a shared prime twice. And the GCD times the LCM is the "
         "two numbers multiplied.", show(g3s, 'the GCD times the LCM'))),
     S('Counting divisors',
-      L("The number of divisors? Add one to each exponent, and multiply. Two to the power of four times three has five times "
-        "two, ten divisors.", show(d1s, 'Add one to each exponent')),
+      L("The number of divisors? Add one to each exponent, and multiply. Two to the power of four times three has five times two, which is ten divisors.", show(d1s, 'Add one to each exponent')),
       L("Divisors come in pairs, so only a perfect square has an odd number of them. And exactly three divisors means a "
         "prime squared, like four or a hundred twenty-one.", show(d2s, 'Divisors come in pairs'))),
     S('Squares and equations',
       L("In a perfect square, every exponent is even. Twenty k a square? Twenty is two squared times five, so it needs one "
         "more five. k is five, and twenty times five is a hundred, ten squared.", show(s1s, 'every exponent is even'), show(s2s, 'Twenty k')),
       L("And an equation in primes? Break the number, then match the exponents. Two to the power of a, times three to the "
-        "power of b, is a hundred forty-four. That's sixteen times nine, two to the power of four times three squared, so a "
+        "power of b, is a hundred forty-four. That's sixteen times nine, which is two to the power of four times three squared, so a "
         "is four and b is two.", show(s3s, 'an equation in primes'))),
     S('A prime in a product',
       L("A prime can't be split between factors, one of them holds it whole.", show(m1s, "A prime can't be split")),

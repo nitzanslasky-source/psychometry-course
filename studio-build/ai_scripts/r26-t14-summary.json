@@ -104,14 +104,14 @@
     ]
    },
    {
-    "say": "Forty-eight is two to the power of four times three, and sixty is two squared times three times five. The GCD is two squared times three, twelve. The LCM takes two to the power of four, three and five, and sixteen times fifteen is two hundred forty.",
+    "say": "Forty-eight is two to the power of four times three, and sixty is two squared times three times five. The GCD is two squared times three, which is twelve. The LCM takes two to the power of four, three and five, and sixteen times fifteen is two hundred forty.",
     "at": [
      "Forty-eight is",
      "power of four",
      "and sixty is",
      "times three times",
      "The GCD is",
-     "times three, twelve",
+     "times three, which",
      "The LCM takes",
      "the power of four, three",
      "and five, and",
@@ -131,12 +131,12 @@
   ],
   [
    {
-    "say": "The number of divisors? Add one to each exponent, and multiply. Two to the power of four times three has five times two, ten divisors.",
+    "say": "The number of divisors? Add one to each exponent, and multiply. Two to the power of four times three has five times two, which is ten divisors.",
     "at": [
      "Add one to each exponent",
      "Two to the",
      "four times three",
-     "times two, ten"
+     "times two, which"
     ]
    },
    {
@@ -164,7 +164,7 @@
     ]
    },
    {
-    "say": "And an equation in primes? Break the number, then match the exponents. Two to the power of a, times three to the power of b, is a hundred forty-four. That's sixteen times nine, two to the power of four times three squared, so a is four and b is two.",
+    "say": "And an equation in primes? Break the number, then match the exponents. Two to the power of a, times three to the power of b, is a hundred forty-four. That's sixteen times nine, which is two to the power of four times three squared, so a is four and b is two.",
     "at": [
      "an equation in primes",
      "Break the number",
@@ -172,9 +172,10 @@
      "a, times three",
      "power of b",
      "That's sixteen times",
-     "to the power of four",
-     "times three squared",
-     "is four and"
+     "is two to",
+     "of four times",
+     "so a is",
+     "b is two"
     ]
    }
   ],

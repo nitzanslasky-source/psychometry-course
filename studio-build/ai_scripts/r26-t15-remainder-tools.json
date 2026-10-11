@@ -51,7 +51,7 @@
   ],
   [
    {
-    "say": "Second tool. A number divisible by four and by six. Is it divisible by twenty-four? Not necessarily. Remember the LCM from primes, every prime at its higher power. Four is two squared, and six is two times three. So two squared times three, twelve.",
+    "say": "Second tool. A number divisible by four and by six. Is it divisible by twenty-four? Not necessarily. Remember the LCM from primes, every prime at its higher power. Four is two squared, and six is two times three. So two squared times three, which is twelve.",
     "at": [
      "A number divisible by four and by six",
      "and by six",
@@ -60,7 +60,8 @@
      "every prime at",
      "Four is two",
      "six is two",
-     "So two squared"
+     "So two squared",
+     "which is twelve"
     ]
    },
    {

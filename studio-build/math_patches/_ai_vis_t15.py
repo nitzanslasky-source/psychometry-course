@@ -448,7 +448,7 @@ video('solve-q-423', 'solution', qid='q-423', slides=[
     S('Method 2 · Build from the inside',
       L("[pause] Another way is to build the class from the inside, from the smallest group out. Call the guitar players k, "
         "a whole number of kids. They're a third of the basketball boys, so there are three k basketball boys. And the "
-        "basketball boys are a fifth of the class, so the class is five times three k, fifteen k.",
+        "basketball boys are a fifth of the class, so the class is five times three k, which is fifteen k.",
         show(b1, 'Call the guitar players k'), show(b2, 'three k basketball boys'), show(b3, 'the class is five times'),
         mk('circle', 'b3: c', 'fifteen k')),
       L("k is a whole number, so the class is always a multiple of fifteen. That's the rule. A fraction of a fraction, "
@@ -530,7 +530,7 @@ video('solve-q-425', 'solution', qid='q-425', slides=[
         show(e2, 'a is twenty-three'), mk('circle', 'e2: s', 'leaves seven')),
       L("Dividing by three, the biggest remainder is two. For example, b is eleven. Three threes are nine, and eleven minus "
         "nine leaves two.", show(e3, 'Dividing by three'), mk('circle', 'e3: t', 'leaves two')),
-      L("So x times y is at most seven times two, fourteen. Choice number three is our answer.", show(e4, 'seven times two'),
+      L("So x times y is at most seven times two, which is fourteen. Choice number three is our answer.", show(e4, 'seven times two'),
         mk('tick', 'choice 3', 'Choice number three is our answer')),
       L("Now careful, twenty-four is the trap. That's eight times three, the divisors themselves, and a remainder never "
         "reaches the divisor. And seven and two are each just one of the remainders, not the product.",
@@ -633,8 +633,8 @@ video('solve-q-r26-t15-01', 'solution', qid='q-r26-t15-01', slides=[
       L("So four, choice number four is our answer. And can't be determined is out, because it's four for every pair.",
         mk('tick', 'choice 4', 'choice number four is our answer'), mk('cross', 'choice 1', "can't be determined is out")),
       L("And what does that mean? Only the remainders matter. For a difference, subtract the remainders, two minus five, "
-        "negative three. A negative result? Add the divisor, negative three plus seven, four. For a sum, add them. Nine leaves two and twelve leaves five, and nine plus twelve is twenty-one, three sevens. Two plus five is seven, and that leaves zero, the same. For a product, multiply them. Nine times twelve is a hundred eight, fifteen sevens and three. And two times five is ten, which also leaves three.", show(j6, 'Only the remainders matter'), show(j7, 'For a sum, add them'), show(j10, 'For a product, multiply them')),
-      L("Now careful with the order. A lot of students do five minus two, three, and that's choice number three, the trap. "
+        "negative three. A negative result? Add the divisor. Negative three plus seven is four. For a sum, add them. Nine leaves two and twelve leaves five, and nine plus twelve is twenty-one, three sevens. Two plus five is seven, and that leaves zero, the same. For a product, multiply them. Nine times twelve is a hundred eight, fifteen sevens and three. And two times five is ten, which also leaves three.", show(j6, 'Only the remainders matter'), show(j7, 'For a sum, add them'), show(j10, 'For a product, multiply them')),
+      L("Now careful with the order. A lot of students do five minus two, which is three, and that's choice number three, the trap. "
         "It's a minus b, so it's two minus five.", show(j8, 'careful with the order'), mk('cross', 'choice 3', 'the trap')),
       sb='Method 1 · Tag it'),
     S('Method 2 · Plugging in numbers',
@@ -675,8 +675,7 @@ video('r26-t15-remainder-tools', 'lesson', slides=[
         "by four. Fifteen leaves three, and fifteen minus three is twelve, three fours.", show(l4, 'leaves three when divided by four'))),
     S('Divisible by both',
       L("Second tool. A number divisible by four and by six. Is it divisible by twenty-four? Not necessarily. Remember the "
-        "LCM from primes, every prime at its higher power. Four is two squared, and six is two times three. So two squared "
-        "times three, twelve.", show(t1, 'A number divisible by four and by six')),
+        "LCM from primes, every prime at its higher power. Four is two squared, and six is two times three. So two squared times three, which is twelve.", show(t1, 'A number divisible by four and by six')),
       L("So the number is a multiple of twelve, twelve k. Twelve, twenty-four, thirty-six, forty-eight, all divide by four "
         "and by six. Twenty-four k would miss twelve and thirty-six, and they do divide by both.", show(t2, 'Twelve, twenty-four, thirty-six')),
       L("And when the two share nothing, just multiply. Divisible by three and by five is fifteen k, fifteen, thirty, "
@@ -703,7 +702,7 @@ video('solve-q-427', 'solution', qid='q-427', slides=[
       L("Now build it from the inside. Call a tenth of the club k, a whole number of people. Then the club has ten k "
         "members, and three k of them play tennis. So the number of tennis players is always a multiple of three.",
         show(p2, 'Call a tenth of the club k'), mk('circle', 'p2: t', 'always a multiple of three')),
-      L("Let's see it in numbers. A club of fifty members, a tenth is five, and three tenths is three times five, fifteen. "
+      L("Let's see it in numbers. A club of fifty members, a tenth is five, and three tenths is three times five, which is fifteen. "
         "A club of seventy, a tenth is seven, and three times seven is twenty-one. Fifteen and twenty-one, both multiples of "
         "three.", show(p6, 'A club of fifty')),
       L("And remember the sign for three, the digit sum divides by three. Five thirty, five plus three plus zero is eight, "
@@ -806,11 +805,11 @@ video('solve-q-430', 'solution', qid='q-430', slides=[
         "twenty-six. [short pause] We'll solve it two ways, counting the multiples, and then comparing without counting.",
         show(x1, 'divisible by fifteen'), pt('stem', 'how many numbers')),
       L("[short pause] Let's start with a small count. From one to thirty, how many multiples of five? Five, ten, fifteen, "
-        "twenty, twenty-five, thirty, six of them. And that's just thirty over five, six.", show(x7, 'From one to thirty')),
+        "twenty, twenty-five, thirty, six of them. And that's just thirty over five, which is six.", show(x7, 'From one to thirty')),
       L("But here the range doesn't start at one. So I find the first and the last multiple, and count from one to the "
         "other. Last minus first, plus one. Why plus one? From three to seven there are five numbers, three, four, five, "
         "six, seven, and seven minus three is only four. Both ends count.", show(x6, 'From three to seven')),
-      L("Fifteen. Fifteen times six is ninety, still two digits, so the first is fifteen times seven, a hundred five. And "
+      L("Fifteen. Fifteen times six is ninety, still two digits, so the first is fifteen times seven, which is a hundred five. And "
         "fifteen times sixty-six is nine hundred ninety, the last one below a thousand. So sixty-six minus seven is "
         "fifty-nine, and plus one is sixty.", show(x2, 'still two digits'), show(x3, 'the first is fifteen times seven'),
         show(x5, 'sixty-six minus seven'), mk('circle', 'x5: c', 'and plus one is sixty'))),
@@ -861,17 +860,16 @@ video('solve-q-431', 'solution', qid='q-431', slides=[
         mk('cross', 'choice 1', 'always true. Out')),
       L("a is b over five. Multiply both sides by five, and b is five a. So b always divides by five. Choice number two is "
         "out too.", pt('stem: g2', 'a is b over five'), show(k2, 'Multiply both sides by five'), mk('cross', 'choice 2', 'out too')),
-      L("Now a plus b. That's a plus five a, six a. Six a always divides by six, but by twelve? Only when a is even. If a is two, a plus b is twelve, and that works. But if a is one, a plus b is six, and six doesn't divide by twelve. So this claim can fail, and choice number three is our "
+      L("Now a plus b. That's a plus five a, which is six a. Six a always divides by six, but by twelve? Only when a is even. If a is two, a plus b is twelve, and that works. But if a is one, a plus b is six, and six doesn't divide by twelve. So this claim can fail, and choice number three is our "
         "answer.", pt('choice 3', 'Now a plus b'), show(k3, "That's a plus five a"), show(k4, 'If a is one'), mk('tick', 'choice 3', 'choice number three is our answer')),
       sb='Method 1 · One letter'),
     S('Method 1 · One letter',
-      L("In the exam you'd circle it and move on. Here, the last one is a nice check of the idea. a plus b plus c is a plus "
-        "five a plus four a, ten a. Always divisible by ten.", show(k5, 'a plus b plus c is'), mk('cross', 'choice 4', 'Always divisible by ten'))),
+      L("In the exam you'd circle it and move on. Here, the last one is a nice check of the idea. a plus b plus c is a plus five a plus four a, which is ten a. Always divisible by ten.", show(k5, 'a plus b plus c is'), mk('cross', 'choice 4', 'Always divisible by ten'))),
     S('Method 2 · Plugging in numbers',
       L("[pause] Now let's try plugging in numbers. Start with the tricky condition, b over five has to be a whole number. "
-        "So b divides by five, and the easiest is b is five. Then a is one, and c is four times one, four.",
+        "So b divides by five, and the easiest is b is five. Then a is one, and c is four times one, which is four.",
         pt('stem: g2', 'b over five has to be'), show(m1, 'b is five')),
-      L("c is four, divisible by four. b is five, divisible by five. a plus b is one plus five, six, not divisible by twelve. "
+      L("c is four, divisible by four. b is five, divisible by five. a plus b is one plus five, which is six, not divisible by twelve. "
         "And a plus b plus c is ten, divisible by ten.", show(m2, 'c is four, divisible'), show(m4, 'a plus b is one plus five')),
       L("So the third claim fails with these numbers, and one failing example is all we need. Choice number three. [pause] "
         "Okay. I'll see you in the next question.", show(m3, 'one failing example'), mk('tick', 'choice 3', 'Choice number three'))),
@@ -950,14 +948,14 @@ video('solve-q-432', 'solution', qid='q-432', slides=[
       sb='Method 1 · Three in a row'),
     S('Method 1 · Three in a row',
       L("Two numbers in a row, and one of them is always even, because even and odd take turns. Seven and eight, eight is "
-        "even, so seven times eight, fifty-six, is even. Four and five, four is even, and four times five is twenty. So two "
+        "even, so seven times eight, which is fifty-six, is even. Four and five, four is even, and four times five is twenty. So two "
         "in a row always divide by two.", show(o8, 'Two numbers in a row'), show(o9, 'Seven and eight')),
       L("Three in a row. Every third number divides by three, so one of the three does. And at least one is even. Two and "
         "three share no factor, so the product divides by six. Four times five times six is a hundred twenty, twenty sixes. "
         "Seven times eight times nine is five hundred four, eighty-four sixes.", show(o10, 'Three in a row. Every third'), show(o11, 'Four times five times six')),
       L("Now careful, only numbers in a row. Three times five skips a number, it's fifteen, and fifteen isn't even.",
         show(o12, 'only numbers in a row')),
-      L("So x is five times three in a row, five times a multiple of six. It always divides by five times six, thirty. "
+      L("So x is five times three in a row, five times a multiple of six. It always divides by five times six, which is thirty. "
         "Choice number three is our answer.", show(o4, 'five times six'), mk('tick', 'choice 3', 'Choice number three is our answer'))),
     S('Method 2 · Plugging in a number',
       L("[pause] Now let's try plugging in a number. Careful, not a is one. Five minus five is zero, and zero divides by "
@@ -1036,9 +1034,9 @@ video('solve-q-434', 'solution', qid='q-434', slides=[
     S('Method 2 · What she paid',
       L("[pause] Another way is to complete each choice to nine hundred, and ask how much she paid. She paid six x, so the "
         "paid part has to divide by six.", show(c1, 'complete each choice')),
-      L("Fifteen left means nine hundred minus fifteen, eight hundred eighty-five paid. It's odd, so it doesn't divide by "
+      L("Fifteen left means she paid nine hundred minus fifteen, which is eight hundred eighty-five. It's odd, so it doesn't divide by "
         "six. Out.", show(c2, 'Fifteen left means'), mk('cross', 'choice 1', 'Out.')),
-      L("Twenty-four left means nine hundred minus twenty-four, eight hundred seventy-six paid. It's even, and eight plus "
+      L("Twenty-four left means she paid nine hundred minus twenty-four, which is eight hundred seventy-six. It's even, and eight plus "
         "seven plus six is twenty-one, which divides by three. So it divides by six, and choice number two. [pause] Okay. "
         "I'll see you in the next question.", show(c3, 'Twenty-four left means'), mk('tick', 'choice 2', 'and choice number two'))),
 ])
@@ -1063,7 +1061,7 @@ video('solve-q-435', 'solution', qid='q-435', slides=[
         "following is correct?", pt('stem', 'When x is', 'hl', 13.0), voice='calm', pause=0.5),
       L("So we know the remainder by eight, and three claims about other divisors. [short pause] We'll solve it two ways, "
         "with a tag, and then plugging in numbers.", pt('stem', 'three claims')),
-      L("[short pause] Let's start with the tag. x is full eights plus four, eight k plus four.", show(e1, 'eight k plus four')),
+      L("[short pause] Let's start with the tag. x is full eights plus four, so x is eight k plus four.", show(e1, 'eight k plus four')),
       L("Yuval, two x. Two times eight k is sixteen k, and two times four is eight. Sixteen k plus eight, and both parts "
         "divide by eight. So Yuval is right.", pt('stem', 'Yuval'), show(e2, 'Two times eight k')),
       L("Noga, divisible by four. Four divides eight, so the full eights divide by four too, and only the remainder matters. "

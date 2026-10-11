@@ -1495,14 +1495,6 @@
    "t": "Method 2 · Plugging in a number",
    "d": "2026-10-11 topic-14 redo (your reading): a second method — k = 4 is the first number with 3 divisors, C = 2 has 2 divisors"
   },
-  "solve-q-393#1": {
-   "t": "Method 1 · Common factor, then pairs",
-   "d": "2026-10-11 topic-14 redo (your reading): the rest of the factor pairs (4·12, 6·8 not allowed), the possible sums"
-  },
-  "solve-q-393#2": {
-   "t": "Method 2 · Plugging in the answers",
-   "d": "2026-10-11 topic-14 redo (your reading): a second method — test each sum with small values of a; 17 never gives 48"
-  },
   "solve-q-396#1": {
    "t": "Method 1 · Build the smallest",
    "d": "2026-10-11 topic-14 redo (your reading): a = 12, b = 10 → 8, and the trap behind every other choice"
@@ -1578,6 +1570,14 @@
   "solve-q-432#1": {
    "t": "Method 1 · Three in a row",
    "d": "2026-10-11 topic-15 redo (your reading): numbers in a row taught here in full - two in a row by 2 (7·8, 4·5), three by 6 (4·5·6, 7·8·9), not 3·5"
+  },
+  "solve-q-393#1": {
+   "t": "Method 1 · Common factor, then pairs",
+   "d": "2026-10-11 rewritten after your feedback (\"isn't clear enough\"): the factor pairs of 48 as a table built row by row: a | b + 4 | b | a + b"
+  },
+  "solve-q-393#2": {
+   "t": "Method 2 · Check the sum 17",
+   "d": "2026-10-11 rewritten after your feedback (\"isn't clear enough\"): a complete check: a divides 48 and a < b, so a = 1, 2, 3, 4, 6, 8 - none gives 48"
   }
  },
  "lines": {
@@ -3333,10 +3333,6 @@
    "t": "The only even prime",
    "d": "clearer explanation (2026-10-08)"
   },
-  "solve-q-393#0": {
-   "t": "Method 1 · Common factor, then pairs",
-   "d": "2026-10-11 topic-14 redo (your reading): why a is the smaller factor (a < b < b + 4)"
-  },
   "solve-q-394#0": {
    "t": "Method 1 · Understanding",
    "d": "clearer explanation (2026-10-08)"
@@ -3516,6 +3512,10 @@
   "solve-q-431#2": {
    "t": "Method 2 · Plugging in numbers",
    "d": "2026-10-11 topic-15 redo (your reading): b = 5, a = 1, c = 4; the third claim fails, and one failing example is enough"
+  },
+  "solve-q-393#0": {
+   "t": "Method 1 · Common factor, then pairs",
+   "d": "2026-10-11 rewritten after your feedback (\"isn't clear enough\"): a clear opener (take out a, get a product equal to 48) and why a is the smaller factor, with numbers"
   }
  }
 }

@@ -12,168 +12,167 @@
     "pause": 0.5
    },
    {
-    "say": "Honestly, it's not obvious where to start here. So let's start with what we can do. We have an equation, and a appears in both terms on the left. [short pause] We'll solve it two ways, taking out a common factor, and then plugging in the answers.",
+    "say": "Look at the equation. a appears in both terms on the left. So we can take it out, and we get a product that is equal to forty-eight. [short pause] We'll solve it two ways, taking out a and listing the pairs, and then checking the sum seventeen directly.",
     "at": [
-     "where to start",
-     "let's start with",
-     "can do. We",
      "a appears in both terms",
      "on the left",
-     "it two ways",
-     "a common factor",
-     "plugging in the"
+     "can take it",
+     "we get a",
+     "is equal to",
+     "solve it two",
+     "out a and",
+     "pairs, and then",
+     "sum seventeen directly"
     ]
    },
    {
-    "say": "[short pause] a is in both terms, so I take it out as a common factor. a times b, plus four a, is a times, in brackets, b plus four. And that's forty-eight.",
+    "say": "[short pause] Take out a. a times b, plus four a, is a times, in brackets, b plus four. And that's forty-eight.",
     "at": [
-     "a is",
-     "I take it out",
-     "b, plus four",
+     "Take out",
+     "Take out a",
      "in brackets, b plus four",
      "And that's forty-eight"
     ]
    },
    {
-    "say": "So now it's a product of two whole numbers that equals forty-eight. Remember breaking a number into pairs. Here we break forty-eight into two factors, and they don't have to be primes.",
+    "say": "So two whole numbers multiply to forty-eight. a is one of them, and b plus four is the other. They don't have to be primes.",
     "at": [
-     "a product of two whole numbers",
-     "numbers that equals",
-     "Remember breaking a",
-     "Here we break",
-     "two factors, and",
-     "have to be"
-    ]
-   },
-   {
-    "say": "Which factor is a? The smaller one. Why? b is bigger than a, and b plus four is even bigger. So a is the small factor, and b plus four is the big one.",
-    "at": [
-     "Which factor is a",
-     "b is bigger",
-     "and b plus",
-     "So a is",
-     "factor, and b",
-     "is the big"
-    ]
-   },
-   {
-    "say": "One times forty-eight. a is one, b plus four is forty-eight, so b is forty-four, and a plus b is forty-five.",
-    "voice": "calm",
-    "at": [
-     "One times forty-eight",
+     "two whole numbers multiply",
      "a is one",
-     "four is forty-eight",
-     "is forty-four, and",
-     "b is forty-five"
+     "and b plus",
+     "They don't have"
     ]
    },
    {
-    "say": "Two times twenty-four. b plus four is twenty-four, so b is twenty, and a plus b is twenty-two. Not a choice, keep going. Three times sixteen. b is twelve, and a plus b is fifteen.",
+    "say": "Which one is a? The smaller one. Why? b is bigger than a, so b plus four is even bigger. For example, if a is three and b is five, b plus four is nine, bigger than three.",
     "at": [
-     "Two times twenty-four",
-     "b plus four",
-     "so b is",
-     "a plus b",
-     "Not a choice",
-     "Three times sixteen",
-     "plus b is fifteen"
+     "Which one is a",
+     "b is bigger",
+     "so b plus",
+     "even bigger. For",
+     "if a is three",
+     "four is nine"
     ]
    }
   ],
   [
    {
-    "say": "Four times twelve. b is eight, still bigger than four, and a plus b is twelve.",
-    "voice": "calm",
+    "say": "So let's list the pairs that make forty-eight, the small number first. I'll write a, then b plus four, then b, then a plus b.",
     "at": [
-     "Four times twelve",
-     "than four, and",
-     "b is twelve"
+     "list the pairs",
+     "forty-eight, the small",
+     "I'll write a",
+     "plus four, then",
+     "a plus b"
     ]
    },
    {
-    "say": "Five doesn't divide forty-eight. Six times eight? b plus four is eight, so b is four, and that's smaller than six. Not allowed. And after that, the factors swap, and a would be the bigger one. So no more options.",
+    "say": "One times forty-eight. So b plus four is forty-eight, and b is forty-four. One plus forty-four is forty-five.",
+    "voice": "calm",
+    "at": [
+     "One times forty-eight",
+     "So b plus",
+     "forty-eight, and b",
+     "One plus forty-four"
+    ]
+   },
+   {
+    "say": "Two times twenty-four. b is twenty. Two plus twenty is twenty-two.",
+    "voice": "calm",
+    "at": [
+     "Two times twenty-four",
+     "Two plus twenty"
+    ]
+   },
+   {
+    "say": "Three times sixteen. b is twelve. Three plus twelve is fifteen.",
+    "voice": "calm",
+    "at": [
+     "Three times sixteen",
+     "Three plus twelve"
+    ]
+   },
+   {
+    "say": "Four times twelve. b is eight. Four plus eight is twelve.",
+    "voice": "calm",
+    "at": [
+     "Four times twelve",
+     "Four plus eight"
+    ]
+   },
+   {
+    "say": "Five doesn't divide forty-eight. Six times eight. b plus four is eight, so b is four. But b has to be bigger than a, and four is smaller than six. Not allowed. After that the pairs swap, so we're done.",
     "at": [
      "Six times eight",
      "b plus four",
      "so b is",
-     "that's smaller than",
-     "allowed. And after",
-     "the factors swap",
-     "would be the",
-     "So no more"
+     "But b has",
+     "bigger than a",
+     "is smaller than",
+     "After that the",
+     "so we're done"
     ]
    },
    {
-    "say": "So the sums can be forty-five, twenty-two, fifteen and twelve. Seventeen isn't one of them, so choice number three is our answer.",
+    "say": "So the sum can be forty-five, twenty-two, fifteen or twelve. Seventeen is not on the list. Choice number three is our answer.",
     "at": [
-     "So the sums can be",
+     "So the sum can be",
      "forty-five, twenty-two",
-     "fifteen and",
-     "and twelve",
-     "of them, so",
-     "choice number three"
+     "fifteen or",
+     "or twelve",
+     "Seventeen is not",
+     "Choice number three is"
     ]
    }
   ],
   [
    {
-    "say": "[pause] Now let's try plugging in the answers. Three choices can be the sum, and one can't. So for each sum, I try small values of a, and b is the sum minus a. Then I check a times b, plus four a.",
+    "say": "[pause] Another way is to check seventeen directly. If a plus b is seventeen, then b is seventeen minus a. So b plus four is twenty-one minus a.",
     "at": [
-     "Now let's",
-     "Three choices can",
-     "sum, and one",
-     "So for each",
-     "try small values",
-     "and b is",
-     "minus a. Then",
-     "a times b",
-     "plus four a"
+     "Another way",
+     "seventeen directly. If",
+     "b is seventeen",
+     "b is seventeen minus a",
+     "twenty-one minus a"
     ]
    },
    {
-    "say": "Forty-five. a is one, so b is forty-four. One times forty-four is forty-four, and four times one is four. Forty-four plus four is forty-eight. It works, out.",
+    "say": "And a times b plus four is forty-eight, so a divides forty-eight. Also a is smaller than b, so a is at most eight. The numbers up to eight that divide forty-eight are one, two, three, four, six and eight.",
     "at": [
-     "Forty-five. a is one",
-     "One times forty-four",
-     "and four times",
-     "Forty-four plus four",
-     "It works, out"
+     "plus four is",
+     "a divides forty-eight",
+     "b, so a",
+     "The numbers up",
+     "that divide forty-eight",
+     "two, three, four"
     ]
    },
    {
-    "say": "Fifteen. a is three, b is twelve. Three times twelve is thirty-six, and four times three is twelve. Thirty-six plus twelve, forty-eight. Out. Twelve. a is four, b is eight. Four times eight is thirty-two, and four times four is sixteen. Thirty-two plus sixteen, forty-eight. Out.",
+    "say": "Let's try each. a is one: one times twenty is twenty. a is two: two times nineteen is thirty-eight. a is three: three times eighteen is fifty-four.",
     "at": [
-     "Fifteen. a is three",
-     "Three times twelve",
-     "and four times",
-     "Thirty-six plus twelve",
-     "Twelve. a is four",
-     "Four times eight",
-     "and four times four",
-     "Thirty-two plus sixteen"
+     "a is one",
+     "a is two:",
+     "nineteen is thirty-eight",
+     "a is three:",
+     "eighteen is fifty-four"
     ]
    },
    {
-    "say": "Seventeen. a is one, b is sixteen, sixteen plus four is twenty. a is two, b is fifteen, thirty plus eight is thirty-eight. a is three, b is fourteen, forty-two plus twelve is fifty-four, already above forty-eight. Four and thirteen give fifty-two plus sixteen, sixty-eight, and five and twelve give sixty plus twenty, eighty. It keeps growing, so it never comes back to forty-eight.",
+    "say": "a is four: four times seventeen is sixty-eight. a is six: six times fifteen is ninety. a is eight: eight times thirteen is a hundred four.",
     "at": [
-     "Seventeen. a is one",
-     "a is two",
-     "fifteen, thirty plus",
-     "a is three",
-     "fourteen, forty-two plus",
-     "fifty-four, already above",
-     "Four and thirteen",
-     "plus sixteen, sixty-eight",
-     "and twelve give",
-     "It keeps growing",
-     "never comes back"
+     "a is four",
+     "a is six:",
+     "fifteen is ninety",
+     "a is eight:",
+     "thirteen is a"
     ]
    },
    {
-    "say": "So seventeen can't be the sum, choice number three. [pause] Okay. I'll see you in the next question.",
+    "say": "None of them is forty-eight. So the sum can't be seventeen. Choice number three. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "So seventeen can't be",
-     "sum, choice number"
+     "None of them",
+     "So the sum",
+     "Choice number three"
     ]
    }
   ]
