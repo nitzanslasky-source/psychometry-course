@@ -1,53 +1,153 @@
 {
  "videoId": "r26-t15-summary",
- "style": "calm, natural hesitations, like explaining to a friend",
+ "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
  "slides": [
   [
-   "So, before you practice, here's a quick review of the whole topic.",
-   "The signs, the remainder rules, the tools... and the traps."
+   "Before you practice, here's a quick summary of division and remainders. Everything important, in a few minutes."
   ],
   [
-   "You want to know when a number divides... without actually dividing.",
-   "Now, eleven. You alternate plus and minus, digit by digit."
+   {
+    "say": "Two, five and ten, look at the last digit. Three and nine, the digit sum. Four, the last two digits, and eight, the last three.",
+    "at": [
+     "Two, five and ten",
+     "at the last",
+     "Three and nine",
+     "Four, the last two",
+     "and eight, the"
+    ]
+   },
+   {
+    "say": "Eleven, go plus, minus, plus, minus, digit by digit. Nine thirteen, nine minus one plus three is eleven, so it divides by eleven.",
+    "at": [
+     "Eleven, go plus",
+     "minus, digit by",
+     "Nine thirteen, nine",
+     "plus three is",
+     "it divides by"
+    ]
+   },
+   {
+    "say": "A bigger divisor? Split it into parts with no common factor. Thirty-six is four times nine, not six times six.",
+    "at": [
+     "A bigger divisor",
+     "Split it into",
+     "no common factor",
+     "Thirty-six is four",
+     "not six times"
+    ]
+   }
   ],
   [
-   "A bigger divisor? Split it into parts with no common factor.",
-   "Four and six share a two. So that check proves nothing."
+   {
+    "say": "A number is the divisor times the quotient, plus the remainder, and the remainder is always smaller than the divisor. So the biggest remainder is the divisor minus one. And five divided by eight leaves five, not three.",
+    "at": [
+     "the divisor times the quotient",
+     "plus the remainder",
+     "remainder is always",
+     "the divisor. So",
+     "the biggest remainder",
+     "divisor minus one",
+     "And five divided",
+     "leaves five, not"
+    ]
+   },
+   {
+    "say": "Dividing by three or nine, the remainder is the same as the digit sum's. Four thousand eight hundred twenty-six, the digit sum is twenty, and twenty divided by nine leaves two.",
+    "at": [
+     "Dividing by three or nine",
+     "the remainder is",
+     "as the digit",
+     "Four thousand eight",
+     "the digit sum is",
+     "and twenty divided"
+    ]
+   }
   ],
   [
-   "A fraction of a fraction? Build it from the inside.",
-   "Multiply the denominators. So the number is divisible by eighteen.",
-   "Because, well... there's no such thing as a third of a student."
+   {
+    "say": "Only the remainders matter. a leaves five and b leaves seven, dividing by eight. a plus b, five plus seven is twelve, so it leaves four. a times b, five times seven is thirty-five, so it leaves three. a minus b, five minus seven is negative two, so add eight, six.",
+    "at": [
+     "a leaves five",
+     "leaves seven, dividing",
+     "a plus b",
+     "seven is twelve",
+     "a times b",
+     "seven is thirty-five",
+     "a minus b",
+     "seven is negative",
+     "add eight, six"
+    ]
+   },
+   {
+    "say": "Take away the remainder, and what's left divides exactly.",
+    "at": [
+     "Take away the remainder",
+     "what's left divides"
+    ]
+   },
+   {
+    "say": "A new divisor? It must divide the old one. Leaves eleven by twelve? By four, eleven leaves three. But from ten to four, you can't know.",
+    "at": [
+     "A new divisor",
+     "It must divide",
+     "one. Leaves eleven",
+     "By four, eleven",
+     "But from ten",
+     "you can't know"
+    ]
+   }
   ],
   [
-   "The remainder is always smaller than the divisor.",
-   "So dividing by nine? The remainder is at most eight.",
-   "Four thousand eight hundred twenty-six. The digit sum is twenty, so it leaves two when you divide by nine."
+   {
+    "say": "A fraction of a fraction? Multiply the denominators. How many multiples in a range? The last minus the first, plus one, because both ends count.",
+    "at": [
+     "A fraction of a fraction",
+     "Multiply the denominators",
+     "How many multiples",
+     "The last minus",
+     "plus one, because"
+    ]
+   },
+   {
+    "say": "Two in a row always divide by two, and three in a row by six. And a cubed minus a is three in a row in disguise.",
+    "at": [
+     "Two in a row",
+     "divide by two",
+     "in a row by",
+     "And a cubed",
+     "is three in"
+    ]
+   },
+   {
+    "say": "Necessarily divisible? Tag each condition, and read the number in front. And when you plug in, give different letters different values, avoid values that give zero, and remember that one failing example knocks a choice out.",
+    "at": [
+     "Tag each condition",
+     "the number in",
+     "when you plug in",
+     "different letters different",
+     "values that give",
+     "remember that one",
+     "knocks a choice"
+    ]
+   }
   ],
   [
-   "Only the leftovers matter.",
-   "Add, multiply, or subtract the remainders. If you get a negative? Add the divisor.",
-   "And if you take away the remainder, what's left divides exactly."
-  ],
-  [
-   "A new divisor? Check that it divides the old one.",
-   "Four divides twelve. So keep the remainder... and divide it again if it's too big.",
-   "But four doesn't divide ten. You get two answers, so you can't know."
-  ],
-  [
-   "How many multiples? Look at the first and the last.",
-   "And don't forget the plus one. Both ends count.",
-   "Now, powers repeat every four steps."
-  ],
-  [
-   "Numbers in a row hide everywhere.",
-   "But only IN A ROW. n times n plus two is not.",
-   "One value that fails knocks out a choice. But values that work prove nothing."
-  ],
-  [
-   "So, before each question, always ask yourself:",
-   "And the traps. Twenty-four is not four times six, and counting forgets the plus one.",
-   "Well... you know all of this. Go practice."
+   {
+    "say": "Before each question, ask yourself. Parts with no common factor? Is my remainder smaller than the divisor? A negative remainder? Add the divisor. And does the new divisor divide the old one?",
+    "at": [
+     "Parts with no",
+     "Is my remainder",
+     "A negative remainder",
+     "does the new divisor",
+     "the old one"
+    ]
+   },
+   {
+    "say": "That's it. Now go practice, and I'll see you in the next video.",
+    "at": [
+     "go practice"
+    ]
+   }
   ]
  ]
 }

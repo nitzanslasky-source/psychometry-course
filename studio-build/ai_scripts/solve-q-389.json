@@ -171,10 +171,10 @@
   ],
   [
    {
-    "say": "[pause] Now let's go through the choices. The GCD has to divide both x and y. So first, I throw out every choice that doesn't divide both, and then, from what's left, I take the biggest.",
+    "say": "[pause] Our second method, going through the choices. The GCD has to divide both x and y. So first, I throw out every choice that doesn't divide both, and then, from what's left, I take the biggest.",
     "at": [
-     "Now let's",
-     "go through the choices",
+     "Our second",
+     "going through the choices",
      "The GCD has",
      "both x and",
      "So first, I",

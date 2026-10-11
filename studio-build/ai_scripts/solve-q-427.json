@@ -1,0 +1,72 @@
+{
+ "videoId": "solve-q-427",
+ "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Thirty percent of the members of a sports club play tennis. Which of the following numbers could be the number of members who play tennis?",
+    "voice": "calm",
+    "at": [
+     "Thirty percent"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "A percent question that's really a divisibility question. We don't know the size of the club, but the tennis players are a part of it, and a part of a group has to be a whole number of people. So first, let's turn the percent into a fraction.",
+    "at": [
+     "divisibility question",
+     "the size of",
+     "but the tennis",
+     "a part of",
+     "a part of a group",
+     "has to be",
+     "number of people",
+     "let's turn the"
+    ]
+   },
+   {
+    "say": "Thirty percent is thirty over a hundred, and that's three tenths.",
+    "voice": "calm",
+    "at": [
+     "thirty over a hundred",
+     "that's three tenths"
+    ]
+   },
+   {
+    "say": "Now build it from the inside. Call a tenth of the club k, a whole number of people. Then the club has ten k members, and three k of them play tennis. So the number of tennis players is always a multiple of three.",
+    "at": [
+     "Now build it",
+     "Call a tenth of the club k",
+     "Then the club",
+     "k members, and",
+     "of them play",
+     "the number of",
+     "always a multiple of three"
+    ]
+   },
+   {
+    "say": "And remember the sign for three, the digit sum divides by three. Five thirty, five plus three plus zero is eight, and eight doesn't divide by three. Choice number one is out.",
+    "at": [
+     "the sign for three",
+     "digit sum divides",
+     "Five thirty",
+     "plus zero is",
+     "eight doesn't divide",
+     "Choice number one is out"
+    ]
+   },
+   {
+    "say": "Five forty, five plus four plus zero is nine, and nine divides by three. And a question has one correct answer, so there's no need to check the other two. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Five forty",
+     "plus zero is",
+     "nine divides by",
+     "And a question",
+     "correct answer, so",
+     "need to check",
+     "Choice number two is our answer"
+    ]
+   }
+  ]
+ ]
+}

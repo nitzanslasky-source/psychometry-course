@@ -1,0 +1,142 @@
+{
+ "videoId": "r26-t15-remainder-tools",
+ "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   "Welcome back. Before the advanced questions, three short tools for remainders and divisibility. You'll use them again and again in the next questions."
+  ],
+  [
+   {
+    "say": "First tool. If a number leaves a remainder, take the remainder away, and what's left divides exactly. Sixty-one divided by eight. Seven eights are fifty-six, so it leaves five.",
+    "at": [
+     "number leaves a",
+     "the remainder away",
+     "left divides exactly",
+     "Seven eights are fifty-six",
+     "it leaves five"
+    ]
+   },
+   {
+    "say": "Take away the five, and sixty-one minus five is fifty-six, seven times eight, no remainder. Why? The remainder is the only part that doesn't divide. Take it away, and only full eights are left.",
+    "at": [
+     "Take away the five",
+     "sixty-one minus five",
+     "seven times eight",
+     "The remainder is",
+     "part that doesn't",
+     "it away, and",
+     "only full eights"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Second tool, numbers in a row. Remember, consecutive numbers are integers in a row, like seven and eight. Two in a row, and one of them is always even. Seven and eight, eight is even. So the product of two in a row always divides by two. Seven times eight is fifty-six, even.",
+    "at": [
+     "a row. Remember",
+     "are integers in",
+     "like seven and",
+     "Two in a row",
+     "one of them",
+     "Seven and eight, eight",
+     "So the product",
+     "in a row always",
+     "Seven times eight"
+    ]
+   },
+   {
+    "say": "Three in a row. One of them divides by three, because every third number does, and at least one is even. Two and three share no factor, so the product divides by six. Four, five, six. Four times five is twenty, times six is a hundred twenty, and that's six times twenty.",
+    "at": [
+     "Three in a row",
+     "One of them",
+     "three, because every",
+     "does, and at",
+     "Two and three",
+     "factor, so the",
+     "Four, five, six",
+     "times six is",
+     "twenty, and that's"
+    ]
+   },
+   {
+    "say": "Watch for them in disguise. a cubed minus a. Take out the common factor a, and it's a times, in brackets, a squared minus one. And a squared minus one is the shortcut formula, a minus one, times a plus one. So a cubed minus a is a minus one, times a, times a plus one. Three in a row.",
+    "at": [
+     "Watch for them",
+     "a cubed minus a",
+     "a, and it's",
+     "in brackets, a",
+     "And a squared",
+     "is the shortcut",
+     "minus one, times",
+     "So a cubed",
+     "is a minus",
+     "a, times a",
+     "Three in a row"
+    ]
+   },
+   {
+    "say": "Now careful, only numbers in a row. n times n plus two skips a number. Three times five is fifteen, odd, so not even divisible by two.",
+    "at": [
+     "Now careful, only",
+     "n times n plus two",
+     "Three times five",
+     "odd, so not"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "Third tool, tag it. When they ask what a number is necessarily divisible by, write each condition as a tag. a is a multiple of six, so a is six k. b is a multiple of ten, so b is ten m, with a different letter, because they're different numbers. k and m can be any whole numbers, so only the numbers in front are certain.",
+    "at": [
+     "When they ask",
+     "number is necessarily",
+     "write each condition",
+     "tag. a is",
+     "of six, so",
+     "a is six k",
+     "ten, so b",
+     "m, with a",
+     "because they're different",
+     "k and m",
+     "any whole numbers",
+     "the numbers in"
+    ]
+   },
+   {
+    "say": "Multiply, and the tags multiply. Six k times ten m is sixty k m, always divisible by sixty.",
+    "at": [
+     "Multiply, and the",
+     "Six k times ten m",
+     "divisible by sixty"
+    ]
+   },
+   {
+    "say": "Add, and only the shared factor comes out. Six k plus ten m is two times, in brackets, three k plus five m. Three k plus five m can be anything. With k and m one, it's eight, and with k two and m one, it's eleven. So only the two is certain.",
+    "at": [
+     "Add, and only",
+     "factor comes out",
+     "Six k plus ten m",
+     "three k plus",
+     "Three k plus five m can",
+     "can be anything",
+     "it's eight, and",
+     "two and m",
+     "So only the"
+    ]
+   },
+   {
+    "say": "And a number divisible by four and by six? Remember the LCM from primes, every prime at its higher power. Two squared times three is twelve. So the tag is twelve k, not twenty-four k, because twelve itself divides by four and by six, and not by twenty-four. [pause] Okay. I'll see you in the next video.",
+    "at": [
+     "divisible by four and by six",
+     "Remember the LCM",
+     "every prime at",
+     "Two squared times",
+     "So the tag",
+     "k, not twenty-four",
+     "twelve itself divides",
+     "and by six, and"
+    ]
+   }
+  ]
+ ]
+}

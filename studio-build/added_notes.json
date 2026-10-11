@@ -1200,8 +1200,8 @@
    "d": "test one number — x = 0 works, so every choice that leaves 0 out is crossed off"
   },
   "solve-q-430#1": {
-   "t": "Method 2 · Estimation",
-   "d": "a faster estimate — 1/15 > 1/17, so more numbers divide by 15; safe only in a long range · clearer explanation (2026-10-08)"
+   "t": "Method 1 · Count them",
+   "d": "2026-10-11 topic-15 redo (your reading): 17, 21 and 26 counted the same way (first and last multiple, plus one)"
   },
   "solve-q-579#1": {
    "t": "Test each choice",
@@ -1393,9 +1393,13 @@
   },
   "solve-q-359#1": {
    "t": "Method 2 · Number line",
-   "d": "2026-10-11 AI redo: the distance picture as its own method — 9 steps from −7 gives 2 and −16"
+   "d": "2026-10-11 AI redo: the distance picture as its own method — taught first on |x − 5| = 7 (x is 7 steps from 5: 12 or −2, on a number line built step by step), then the plus on the next slide"
   },
   "solve-q-359#2": {
+   "t": "Method 2 · A plus inside",
+   "d": "2026-10-11 (teacher: the number line must be clearer): the plus — x + 7 = x − (−7), so |x + 7| is the distance from −7; 9 steps each way gives 2 and −16"
+  },
+  "solve-q-359#3": {
    "t": "Method 3 · Plugging in the answers",
    "d": "2026-10-11 AI redo: a third method — try each choice in |x + 7|; only −16 gives 9"
   },
@@ -1514,6 +1518,58 @@
   "solve-q-395#2": {
    "t": "Method 2 · Plugging in numbers",
    "d": "2026-10-11 topic-14 redo (your reading): a second method — a = 5, b = 7, c = 1 breaks statement 2"
+  },
+  "solve-q-387#0": {
+   "t": "Method 1 · Trial and error",
+   "d": "2026-10-11 topic-14 redo (your reading): your flow (R35): try 3 (27, 81, then past two digits), so x is smaller than 3, so x is 2 with no calculation; the answer is 9x"
+  },
+  "prime-tools#3": {
+   "t": "Counting divisors",
+   "d": "2026-10-11 topic-14 redo (your reading): a bigger number, 3³·5², counted without working it out (R35), and the trap 56 = 4·14"
+  },
+  "solve-q-423#0": {
+   "t": "Method 1 · Step by step",
+   "d": "2026-10-11 topic-15 redo (your reading): \"what could it be\" = rule out what it can't be; divisible by 5, then a third of the group"
+  },
+  "solve-q-425#1": {
+   "t": "Method 2 · List the remainders",
+   "d": "2026-10-11 topic-15 redo (your reading): a second method: try numbers and watch the remainders go round 0 to 7 and 0 to 2"
+  },
+  "solve-q-426#2": {
+   "t": "Method 2 · Plugging in a number",
+   "d": "2026-10-11 topic-15 redo (your reading): x = 0, with the reason (the 5x part never changes the remainder)"
+  },
+  "solve-q-427#0": {
+   "t": "A percent is a fraction",
+   "d": "2026-10-11 topic-15 redo (your reading): 30% = 3/10, build from the inside (club 10k, tennis 3k), digit sum, stop at the answer (R35)"
+  },
+  "solve-q-428#1": {
+   "t": "Method 1 · Divisible by 3 first",
+   "d": "2026-10-11 topic-15 redo (your reading): the check for 2 (612, 615, 618) and the trap 3"
+  },
+  "solve-q-428#2": {
+   "t": "Method 2 · Even first",
+   "d": "2026-10-11 topic-15 redo (your reading): a second method: even X first, then the digit sums"
+  },
+  "solve-q-430#2": {
+   "t": "Method 2 · Compare without counting",
+   "d": "2026-10-11 topic-15 redo (your reading): one in every 15 vs one in every 17, and why it is safe in a long range"
+  },
+  "solve-q-431#0": {
+   "t": "Method 1 · One letter",
+   "d": "2026-10-11 topic-15 redo (your reading): b = 5a, c = 4a; a + b = 6a fails for 12 when a = 1"
+  },
+  "solve-q-433#1": {
+   "t": "Method 2 · Test the choices",
+   "d": "2026-10-11 topic-15 redo (your reading): a second method: last digits of each choice"
+  },
+  "solve-q-434#0": {
+   "t": "Method 1 · What is left",
+   "d": "2026-10-11 topic-15 redo (your reading): 900 − 6x = 6(150 − x): what is left is a multiple of 6; the trap of checking only 3"
+  },
+  "solve-q-435#2": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 topic-15 redo (your reading): x = 4 and 12; examples that work prove nothing, one that fails does"
   }
  },
  "lines": {
@@ -2366,36 +2422,36 @@
    "d": "the ends-in-5 check for each choice · clearer explanation (2026-10-08)"
   },
   "solve-q-423#1": {
-   "t": "Method 2 · Algebra",
-   "d": "fraction of a fraction → multiply the denominators (5·3 = 15) · clearer explanation (2026-10-08)"
+   "t": "Method 2 · Build from the inside",
+   "d": "2026-10-11 topic-15 redo (your reading): k → 3k → 15k, \"a fraction of a fraction: multiply the denominators\" with half of a quarter → 8"
   },
   "solve-q-426#1": {
-   "t": "Method 2 · Plugging in numbers",
-   "d": "why 0 is safe here, but never in a necessarily-divisible question"
+   "t": "Method 1 · Split off the fives",
+   "d": "2026-10-11 topic-15 redo (your reading): the other two choices with the shortcut"
   },
   "solve-q-427#0": {
    "t": "Percent → fraction → divisible by 3",
    "d": "build from inside: club = 10k → tennis = 3k, divisible by 3 · clearer explanation (2026-10-08)"
   },
   "solve-q-430#0": {
-   "t": "Method 1 · Calculation",
-   "d": "exact count with first and last multiple, plus one (60 and 43) · clearer explanation (2026-10-08)"
+   "t": "Method 1 · Count them",
+   "d": "2026-10-11 topic-15 redo (your reading): both 3 and 5 = 15; first and last multiple; why plus one (3 to 7 is five numbers)"
   },
   "solve-q-431#0": {
    "t": "Method 1 · Algebra",
    "d": "checking claim four with all three letters · clearer explanation (2026-10-08)"
   },
   "solve-q-431#1": {
-   "t": "Method 2 · Plugging in numbers",
-   "d": "one failing example proves 'not necessarily'; working examples prove nothing"
+   "t": "Method 1 · One letter",
+   "d": "2026-10-11 topic-15 redo (your reading): a + b + c = 10a as a check of the idea"
   },
   "solve-q-432#0": {
-   "t": "Method 1 · Common factor",
-   "d": "three in a row: divisible by 3 and by 2 → by 6 · clearer explanation (2026-10-08)"
+   "t": "Method 1 · Three in a row",
+   "d": "2026-10-11 topic-15 redo (your reading): 5(a−1)a(a+1): three in a row → 6, times 5 → 30"
   },
   "solve-q-432#1": {
-   "t": "Method 2 · Plugging in numbers",
-   "d": "if two choices survive, try a second value like a = 3 · clearer explanation (2026-10-08)"
+   "t": "Method 2 · Plugging in a number",
+   "d": "2026-10-11 topic-15 redo (your reading): not a = 1 (it gives 0); a = 2 gives 30"
   },
   "solve-q-434#0": {
    "t": "Build the expression, then test",
@@ -3318,28 +3374,28 @@
    "d": "clearer explanation (2026-10-08)"
   },
   "solve-q-424#1": {
-   "t": "Method 2 · Remainders",
-   "d": "clearer explanation (2026-10-08)"
+   "t": "Method 2 · List the numbers",
+   "d": "2026-10-11 topic-15 redo (your reading): hop by 5 from 4 on a number line (why: a full row never changes the leftover); only 34 is on it"
   },
   "solve-q-425#0": {
    "t": "The biggest remainder",
    "d": "clearer explanation (2026-10-08)"
   },
   "solve-q-426#0": {
-   "t": "Method 1 · Understanding",
-   "d": "clearer explanation (2026-10-08)"
+   "t": "Method 1 · Split off the fives",
+   "d": "2026-10-11 topic-15 redo (your reading): split off the part that divides by 5; (5x+2)² opened; the shortcut \"only the last number squared\""
   },
   "solve-q-428#0": {
-   "t": "Divisibility signs, one step at a time",
-   "d": "clearer explanation (2026-10-08)"
+   "t": "Method 1 · Divisible by 3 first",
+   "d": "2026-10-11 topic-15 redo (your reading): 7 + X between 7 and 16: X = 2, 5, 8"
   },
   "solve-q-429#0": {
-   "t": "Build 12 from the table",
-   "d": "clearer explanation (2026-10-08)"
+   "t": "Build 12 from 3 and 4",
+   "d": "2026-10-11 topic-15 redo (your reading): why not 2·6; 4 cannot tell them apart, 3 decides; stop at the answer (R35)"
   },
   "solve-q-433#0": {
-   "t": "Work with the units digit",
-   "d": "clearer explanation (2026-10-08)"
+   "t": "Method 1 · The last digit",
+   "d": "2026-10-11 topic-15 redo (your reading): 14a ends in 4, so a ends in 1 or 6: no need to work out 14a (R35)"
   },
   "solve-q-435#0": {
    "t": "Method 1 · Tag it",
@@ -3440,6 +3496,18 @@
   "solve-q-397#1": {
    "t": "Method 2 · Trial and error",
    "d": "2026-10-11 topic-14 redo (your reading): 16 = 4² has five divisors: only squares of primes count"
+  },
+  "solve-q-359#2": {
+   "t": "Method 2 · A plus inside",
+   "d": "2026-10-11 (teacher: the number line must be clearer): after |x − 5| = 7, the plus — x + 7 = x − (−7), so |x + 7| is the distance from −7; 9 steps each way gives 2 and −16"
+  },
+  "solve-q-434#1": {
+   "t": "Method 2 · What she paid",
+   "d": "2026-10-11 topic-15 redo (your reading): complete to 900: 885 odd, 876 divides by 6"
+  },
+  "solve-q-431#2": {
+   "t": "Method 2 · Plugging in numbers",
+   "d": "2026-10-11 topic-15 redo (your reading): b = 5, a = 1, c = 4; the third claim fails, and one failing example is enough"
   }
  }
 }

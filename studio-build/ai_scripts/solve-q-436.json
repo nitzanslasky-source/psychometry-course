@@ -1,0 +1,89 @@
+{
+ "videoId": "solve-q-436",
+ "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "The sum of three integers is divisible by six. Which of the following statements is not necessarily true?",
+    "voice": "calm",
+    "at": [
+     "The sum"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So we look for the statement that can fail, and one example where it fails is enough. And remember, when we add numbers, we can add their remainders. So the sum divides by six exactly when the remainders add up to zero, six, twelve, a multiple of six.",
+    "at": [
+     "the statement that can fail",
+     "and one example",
+     "fails is enough",
+     "when we add",
+     "add their remainders",
+     "So the sum",
+     "six exactly when",
+     "add up to",
+     "twelve, a multiple"
+    ]
+   },
+   {
+    "say": "Choice number one, the greatest remainder by six is five. Always true, because the biggest remainder is one less than the divisor. Out.",
+    "at": [
+     "number one, the",
+     "the greatest remainder",
+     "Always true, because",
+     "remainder is one",
+     "Out."
+    ]
+   },
+   {
+    "say": "Choice number two, if one of the numbers divides by six, then the other two do too. Let's try twelve, five and seven. Twelve plus five is seventeen, plus seven is twenty-four, and twenty-four divides by six. Twelve divides by six, but five and seven don't. Their remainders, five and one, add up to six, and that's enough.",
+    "at": [
+     "number two, if",
+     "the numbers divides",
+     "then the other",
+     "too. Let's try",
+     "twelve, five and seven",
+     "Twelve plus five",
+     "plus seven is",
+     "twenty-four divides by",
+     "Twelve divides by",
+     "five and seven don't",
+     "Their remainders",
+     "add up to"
+    ]
+   },
+   {
+    "say": "So this statement can fail, and choice number two is our answer.",
+    "at": [
+     "choice number two is our answer"
+    ]
+   },
+   {
+    "say": "In the exam you'd circle it and move on. Here, the other two show the remainder idea. Choice number three, all three leave four. Four plus four plus four is twelve, a multiple of six, so it's possible. Ten, sixteen and twenty-two, and they add up to forty-eight. Out.",
+    "at": [
+     "In the exam",
+     "it and move",
+     "Here, the other",
+     "the remainder idea",
+     "number three, all",
+     "Four plus four plus four",
+     "six, so it's",
+     "sixteen and twenty-two",
+     "add up to",
+     "forty-eight. Out"
+    ]
+   },
+   {
+    "say": "Choice number four, two of them divide by six. They bring no remainder, and the sum has none, so the third can't bring one either. Always true, out. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "number four, two",
+     "divide by six",
+     "They bring no remainder",
+     "the sum has",
+     "the third can't",
+     "Always true, out"
+    ]
+   }
+  ]
+ ]
+}

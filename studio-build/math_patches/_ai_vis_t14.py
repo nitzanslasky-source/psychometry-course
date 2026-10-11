@@ -808,8 +808,8 @@ video('solve-q-389', 'solution', qid='q-389', slides=[
         pt('w1b', 'Only twos'), show(w3, 'So the GCD is two squared'), mk('circle', 'w3: f', 'just four')),
       sb='Method 1 · Common factor'),
     S('Method 2 · Which choices divide both',
-      L("[pause] Now let's go through the choices. The GCD has to divide both x and y. So first, I throw out "
-        "every choice that doesn't divide both, and then, from what's left, I take the biggest.", pt('choice 1', 'go through the choices')),
+      L("[pause] Our second method, going through the choices. The GCD has to divide both x and y. So first, I throw out "
+        "every choice that doesn't divide both, and then, from what's left, I take the biggest.", pt('choice 1', 'going through the choices')),
       L("Choice number one has an r. x has no r at all, so it can't divide x. Out.",
         show(n1, 'Choice number one has an r'), mk('cross', 'choice 1', 'Out.')),
       L("Choice number two has p cubed. y has only one p, so p cubed can't divide y. Out.",
@@ -847,7 +847,7 @@ video('solve-q-390', 'solution', qid='q-390', slides=[
       L("So we don't know the number. All we know is that ten divides it, and twenty-five divides it. And they ask, what's "
         "the biggest number we can be sure divides it? [short pause] We'll solve it three ways, with primes, with the "
         "smallest number that fits, and with a short formula.", pt('stem', 'ten divides it'), pt('stem', 'biggest number we can be sure')),
-      L("[short pause] Let's start with primes. If ten divides the number, the number contains all of ten. And if "
+      L("[short pause] If ten divides the number, the number contains all of ten. And if "
         "twenty-five divides it, it contains all of twenty-five. So let's break both. Ten is two times five, and "
         "twenty-five is five times five.", show(e1, 'Ten is two times five')),
       L("Now, why not just multiply ten by twenty-five? Let's see it on simpler numbers. A number that divides by three and "
@@ -866,7 +866,7 @@ video('solve-q-390', 'solution', qid='q-390', slides=[
         "promise it? The number might be just fifty, and two hundred fifty doesn't divide fifty. So choice number four is "
         "out.", pt('choice 4', 'two hundred fifty, the trap'), show(e7, 'The number might be just fifty'), mk('cross', 'choice 4', 'choice number four is out'))),
     S('Method 2 · The smallest number',
-      L("[pause] Another way is to look at the smallest number that fits. A number that's guaranteed to divide must divide every "
+      L("[pause] Our second method, the smallest number that fits. A number that's guaranteed to divide must divide every "
         "number that fits, so it must divide even the smallest one. So let's find the smallest number that both ten and "
         "twenty-five divide. Remember the common denominator from fractions, I run through the multiples of the bigger "
         "one.", show(f0, 'divide even the smallest one'), pt('stem', 'both ten and')),
@@ -880,7 +880,7 @@ video('solve-q-390', 'solution', qid='q-390', slides=[
       L("And this smallest common multiple has a name you saw with fractions, the LCM, the least common multiple. So the "
         "greatest guaranteed divisor is just the LCM.", show(f3, 'the least common multiple'))),
     S('Method 3 · Product over GCD',
-      L("[pause] And there's a short formula too. The GCD times the LCM equals the two numbers multiplied. Why? "
+      L("[pause] Our third method, a short formula. The GCD times the LCM equals the two numbers multiplied. Why? "
         "Multiplying ten by twenty-five counts the shared five twice. Dividing by the GCD, the part they share, takes the "
         "extra five off.", show(h1, 'The GCD times the LCM'), pt('h1', 'counts the shared five twice')),
       L("Ten times twenty-five is two hundred fifty. The GCD of ten and twenty-five is five, the one five they share. Two "

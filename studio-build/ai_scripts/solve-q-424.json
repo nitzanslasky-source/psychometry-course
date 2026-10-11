@@ -1,0 +1,103 @@
+{
+ "videoId": "solve-q-424",
+ "style": "the teacher reads it herself (Reading Studio), topic-15 redo (2026-10-11): math_patches/_ai_vis_t15.py is the source - edit there and re-run it. Rules: real_exam/TEACHING_STYLE_GUIDE.md R1-R35 (no 'which way is better' verdict) + NITZAN_RHYTHM_DELIVERY.md P1-P13. Calm preset on the question reading and plain calculations.",
+ "slides": [
+  [
+   {
+    "say": "Tamar is putting her stamps into an album. If she arranges them in rows of five, with an equal number in each row, four stamps are left over. If she arranges them in rows of three, with an equal number in each row, one stamp is left over. What could be the number of stamps Tamar has?",
+    "voice": "calm",
+    "at": [
+     "Tamar is"
+    ],
+    "pause": 0.5
+   },
+   {
+    "say": "So two leftover conditions. Rows of five leave four stamps, and rows of three leave one. Those leftovers are just remainders. And they ask what the number could be, so we can test the choices. [short pause] We'll solve it two ways, testing the choices, and then listing the numbers that fit.",
+    "at": [
+     "Rows of five leave four",
+     "rows of three leave one",
+     "Those leftovers are",
+     "And they ask",
+     "what the number could be",
+     "so we can",
+     "ways, testing the",
+     "then listing the"
+    ]
+   },
+   {
+    "say": "[short pause] Let's start by testing the choices, rows of five first. Remember, the remainder is what's left after as many full rows as possible. Twenty-eight. Five rows of five are twenty-five, and twenty-eight minus twenty-five leaves three. We need four, so choice number one is out.",
+    "at": [
+     "the choices, rows",
+     "first. Remember, the",
+     "what's left after",
+     "full rows as",
+     "Twenty-eight.",
+     "Five rows of five",
+     "twenty-five, and twenty-eight",
+     "leaves three. We",
+     "choice number one is out"
+    ]
+   },
+   {
+    "say": "Forty. Eight rows of five are exactly forty, so nothing is left. Out.",
+    "at": [
+     "Eight rows of five",
+     "exactly forty, so",
+     "Out."
+    ]
+   },
+   {
+    "say": "Thirty-four. Six rows of five are thirty, and thirty-four minus thirty leaves four. That fits. Now rows of three. Eleven rows of three are thirty-three, and thirty-four minus thirty-three leaves one. That fits too.",
+    "at": [
+     "Six rows of five",
+     "thirty, and thirty-four",
+     "leaves four. That",
+     "rows of three",
+     "Eleven rows of three",
+     "thirty-three, and thirty-four",
+     "leaves one. That"
+    ]
+   },
+   {
+    "say": "Both conditions fit, and a question has one correct answer, so there's no need to check sixteen. Choice number three is our answer.",
+    "at": [
+     "a question has",
+     "one correct answer",
+     "no need to",
+     "Choice number three"
+    ]
+   }
+  ],
+  [
+   {
+    "say": "[pause] Another way is to list the numbers that leave four in rows of five. Start at four, and hop by five. Why hop by five? One more full row of five never changes what's left over. Four, nine, fourteen, nineteen, twenty-four, twenty-nine, thirty-four, thirty-nine.",
+    "at": [
+     "Another way",
+     "Another way is to list",
+     "list the numbers",
+     "four in rows",
+     "Start at four",
+     "by five. Why",
+     "One more full",
+     "five never changes",
+     "Four, nine, fourteen",
+     "twenty-nine, thirty-four, thirty-nine"
+    ]
+   },
+   {
+    "say": "Which choices are on the list? Twenty-eight, no. Forty, no. Thirty-four, yes. Sixteen, no. Only thirty-four is on it, so we don't even need the rows of three. Choice number three. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "Which choices are",
+     "Twenty-eight, no",
+     "Forty, no",
+     "Thirty-four, yes",
+     "Sixteen, no",
+     "Only thirty-four is on it",
+     "so we don't",
+     "the rows of",
+     "Choice number three"
+    ]
+   }
+  ]
+ ]
+}

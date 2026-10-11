@@ -657,3 +657,29 @@ Topic-14 order: the camera lesson `primes`, then q-387, q-r26-t14-01, q-388, q-3
 | An exponent letter is not a factor; letters as primes → plug in 2, 3, 5, 7 in order | q-394 | summary |
 | A prime in a product sits whole in one factor; squaring adds no new prime; never true = not necessarily true | q-395 (must/could: topic 1) | summary |
 | Bounding a prime by squares (14² < 200 < 15²) | q-397 | — |
+
+### Topic 15: where each idea is first taught (R29 / R32)
+
+Topic-15 order: the camera lesson `divisibility`, then q-423, q-424, q-425, q-426, q-r26-t15-01, r26-t15-remainder-tools, q-427, q-428, q-429, q-430, q-431, q-r26-t15-15, q-432, q-433, q-434, q-435, q-436, summary. Topic 16 (consecutive numbers, even and odd) comes after topic 15.
+
+| Idea | First taught (full) | Later (reminder) |
+|---|---|---|
+| Divisibility signs for 2, 5, 10, 3, 9, 4, 8 (with the why for 4 and 8) and 11 | camera lesson `divisibility`, slides 2-4 and 6 | q-423, q-427, q-428, q-429, q-433, q-434, summary |
+| A bigger divisor: parts with no common factor (12 = 3·4, the trap 2·6) | camera lesson, slide 5 | q-429, q-430, q-434, summary |
+| Remainder: N = divisor × quotient + remainder, remainder < divisor; 5 ÷ 8 leaves 5 (the trap) | camera lesson, slides 7-8 | q-424, q-425, summary |
+| The biggest remainder is the divisor minus one | camera lesson, slide 9 | q-425, q-436, summary |
+| Dividing by 3 or 9: the same remainder as the digit sum | camera lesson, slide 10 | summary |
+| A number with remainder 4 by 15 is 15k + 4; changing the divisor (only if it divides the old one), with the why | camera lesson, slide 11 | q-426, q-r26-t15-01, q-435, summary |
+| "What could it be" = rule out what it can't be; a fraction of a fraction: build from the inside, multiply the denominators | q-423 | q-427, summary |
+| Listing numbers with a remainder by hopping by the divisor | q-424 | — |
+| Split off the part that divides; only the last number squared matters | q-426 | — |
+| The remainder of a sum / difference / product; a negative remainder → add the divisor | q-r26-t15-01 | q-435, q-436, summary |
+| Take away the remainder; numbers in a row (2 and 6); tag it (multiply, add, LCM tag) | r26-t15-remainder-tools (lesson) | q-431, q-r26-t15-15, q-432, q-435, summary |
+| A percent → a fraction → divisibility | q-427 (percent: topic 23) | — |
+| An unknown digit: the possible digit sums | q-428 | — |
+| Counting multiples in a range: last − first + 1; one in every 15 vs one in every 17 | q-430 | summary |
+| Write every letter with one letter; one failing example is enough | q-431 | q-r26-t15-15, q-435, q-436 |
+| Equal values hide the trap: different letters, different values | q-r26-t15-15 | summary |
+| Don't plug in values that give 0 | q-432 (plugging in: topic 51) | summary |
+| Divisible by 10 → the last digit; the last digit of a product | q-433 (last digits: topic 1) | — |
+| Take out the common factor of what's left (900 − 6x = 6(150 − x)) | q-434 | — |
