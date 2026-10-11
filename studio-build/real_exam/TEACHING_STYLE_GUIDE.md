@@ -8,7 +8,7 @@
 - what she repeats
 - how she runs a question video
 
-It ends with a **script-writing checklist** (R1-R25). Every new AI script should pass it.
+It ends with a **script-writing checklist** (R1-R28). Every new AI script should pass it.
 
 Hebrew quotes give the line number in `~/Downloads/0N-*-Original-Subtitles.txt` (alg = 01-Algebra, wp = 02-Word-Problems, geo = 03-Geometry, charts = `charts subtitles.rtf`). English quotes give the video id and the second in her take (`transcripts/*.json`).
 
@@ -458,12 +458,47 @@ She never simplifies by being vague. The general sentence is always exact.
 10. **Voice settings.** `ai_scripts/_voice.json` says multilingual_v2 (PVC, segmented, mix 3), while the memory notes mention eleven_v4 and other stability values. Confirm the final settings once and update the memory note.
 11. **"Pause and try."** Neither she nor the Hebrew does it. Decide whether the AI course should have none (default) or one per lesson.
 
-## SCRIPT-WRITING CHECKLIST (R1-R25)
+## 13. Deeper pass on her English takes (2026-10-11)
+
+All 189 takes were re-read in full, against their scripts. They were also re-transcribed with word timestamps and measured for pauses and pitch with parselmouth. Full results are in four places:
+- `NITZAN_PHRASE_BANK.md`: her phrases by function, with counts, and slips vs flavour.
+- `NITZAN_RHYTHM_DELIVERY.md`: pace, pauses, pitch, and the punctuation / [pause] rules P1-P13.
+- `NITZAN_TAKES_LESSONS.md`: where she struggled, and the passages that flowed best.
+- `scratchpad/tstyle/added_by_nitzan.json`: what she added in every video, cleaned and math-checked.
+
+What is new compared with §9:
+1. **Her additions must travel into the AI re-voice.** There are 849 additions. **444 are rated keep**, in **163 of 189** videos: 187 in lessons and 257 in solutions. The largest groups are explanations (94), reasons (90), examples (54), warnings (43) and alternative methods (39). Each one has a cleaned, math-checked line in her words. 174 slips are flagged, and their clean lines are corrected.
+2. **She speaks in questions.** 29% of her sentences end in "?". Of those, 12% are "right?" and 17% are real questions she answers at once: 1,128 of them, a median 0.36 s later. Her joints are "So" (a quarter of all sentences), "Now" (new step), "because" and "and therefore".
+3. **She names the answer by its value.** 85 of 154 solution takes never say a choice number. She says the verdict calmly and low (about 1.7 semitones below her median), with no pause for effect.
+4. **She stresses logic words, not numbers.** "always", "only", "not", "can't", "still", "every" and "also" carry the pitch peaks: about +1.6 st and +2.5 dB over other words. Numbers get length (about 40% longer per syllable), not pitch. The key idea is held by an extra example or reason, never by slowing down: key-idea sentences run at the same pace and have the same pauses as other sentences.
+5. **Pace by section.** Explanation runs at about 201 wpm and recap the same. Calculation is 22% slower and stem reading 18% slower. 27% of every take is silence, mostly board-writing that the AI won't need. Her sentence-end pause (median 0.41 s) equals the pipeline's 0.42 s line gap.
+6. **Struggles.** There are 378 struggle spots in 163 takes. The top 10 most-struggled takes are all lessons. They cluster in four places:
+   - signs and "bigger/smaller" for negatives
+   - formulas and brackets read aloud
+   - roots ↔ powers ("the root is on top": her mnemonic flips the rule)
+   - improvised examples
+   
+   75 are real math slips said aloud, nearly all where the script gave a headline instead of an exact sentence.
+7. **Models to imitate** (101 marked):
+   - a self-question chain with one-sentence answers
+   - side-by-side numbers that change one thing
+   - plain-word meaning ("99 copies of 41")
+   - one image, then the rule
+   - a parallel 6-10-word capsule at the end ("False means no x. True means every x.")
+8. **No fillers to copy.** Her hesitation is a stretched "iiis / aaand" before a value, about 2.9 per minute, never "um". The AI should not script fillers, "sorry", or "..." (344 in ai_scripts today). Her Hebrew-shaped structures ("also the top and also the bottom", "I have here") stay. Her word slips ("equals to", "full number", "the psychometry", "cubed root", "how would it look like") are corrected.
+
+**Unchanged decisions (2026-10-11):**
+- The teacher is Nitzan.
+- No cap on methods.
+- R15 is approved.
+- Topic 51 is recorded by her.
+
+## SCRIPT-WRITING CHECKLIST (R1-R28)
 
 Check every AI script line by line. The numbers in brackets are evidence from §1-9.
 
 **Every rule or idea**
-- **R1. Full spoken sentences.** 8-15 words, joined with so / because / and. No colons, em-dashes or "X? Y." fragments.
+- **R1. Full spoken sentences.** 6-14 words (her median is 9), joined with so / because / and. No colons, em-dashes, "..." or "X? Y." fragments. A self-question and its answer stay on one line ("How do I get rid of the root? I multiply by root 2."). Pauses follow `NITZAN_RHYTHM_DELIVERY.md` P1-P13.
 - **R2. Define a new term with instances.** "Numbers in a row, like 7 and 8." Plain word first, the official term second.
 - **R3. State each rule in one exact plain sentence.** Never vague: she simplifies the path, not the rule.
 - **R4. Every rule gets a simple-number example right after it** ("Let's see it in numbers."). Letters → numbers. No rule line without numbers (HE ≈87% of rules; EN 46 improvised additions).
@@ -476,6 +511,7 @@ Check every AI script line by line. The numbers in brackets are evidence from §
   - Teacher-read scripts: no CAPS, no "!".
   - AI scripts follow the ai_scripts rules: at most one CAPITALISED word and one "!" per video, at the real aha moment.
   - Split contrasts: each side of a contrast gets its own short line with its numbers.
+  - The one CAPS word goes on a logic word she naturally stresses (always / only / not / can't / still / every / both), early in a short line. Never on a number or the answer.
 - **R11. Say the mental math in easy pieces.** "10 times 44 is 440, times 3 is 1,320." Never a bare result. Every number must be one a student knows by heart or gets in one step: no decimal estimates.
 - **R12. Ask and answer.** About one question per step ("How do I get rid of y?", "40% of what?"), answered in the next sentence. No "pause and try" (she never does it in Hebrew), except at most one in a lesson, at a real key step.
 
@@ -486,7 +522,7 @@ Check every AI script line by line. The numbers in brackets are evidence from §
   3. a first reaction from the stem or the choices ("All the answers are one term, so…")
   4. "We'll solve this two ways."
   - The standard / algebra way comes first, unless you say why not.
-- **R14. The answer line is "number two is our answer."** Never "choice two". Checks go **inside** the step ("let's check with a = 3"), not in a list after the answer.
+- **R14. The answer line is the value plus the number, said calmly:** "So x is 6, number two is our answer." Never "choice two", and never a build-up pause before it. (She dropped the number in 85 of 154 takes. The AI must not.) Checks go **inside** the step ("let's check with a = 3"), not in a list after the answer.
 - **R15. Plugging in, every time:**
   1. Say which number, where it goes (the whole, the start), and **why**, before using it. Use 100 for percents.
   2. Check that the choices come out different. Avoid 0 and 1 when they make choices tie; 3 is a good default when 1 or 2 leaves ties.
@@ -508,4 +544,7 @@ Check every AI script line by line. The numbers in brackets are evidence from §
 **Tone and calibration**
 - **R22. Reassure at the scary point,** not everywhere: "It looks scary, but…", "If you don't remember it, that's fine, you can plug in." Keep the single real aha moment, said in words.
 - **R23. Length.** Expect her method to make scripts about 2x the current length: solutions about 350-450 words, lessons about 600-1,000. **Never cap the number of methods** — teacher (2026-10-11): "that's how you learn for this exam — through multiple methods". If a video gets too long, cut bonus tails and repeated final checks first, never a method, the example, the why or the trap.
+- **R26. Re-voicing a recorded video:** first paste in her keep=yes additions from `scratchpad/tstyle/added_by_nitzan.json`, using their `clean` lines (in her words, already math-checked). Then fix every `struggles` spot with the exact sentence its `script_fix` asks for. Re-fit the numbers in old-version takes (q-095, q-096, q-097, q-099, parts of roots) to the current board. Keep the trap lines and choice numbers she dropped.
+- **R27. Write the exact sentence wherever she improvised.** This applies to contrasts (two parallel lines with numbers), formulas (every term on its own line, with brackets and bars said in words), sign words ("never negative", "zero or positive", "further from zero"), and rules in recaps (word for word as taught). Never let a mnemonic stand in for the rule ("the power goes on top, the root on the bottom").
+- **R28. Her words, corrected.** Use her phrase bank: "So…", "Now let's look at…", "What does that mean? It means…", "right?" (once per 3-4 lines), "Perfect.", "this whole thing", "also the top and also the bottom". Correct her slips: "equals" not "equals to", "whole number" not "full number", "the exam" not "the psychometry", "cube root", "what it looks like". Script no fillers, no "sorry", no "Good."
 - **R25. Before publishing,** run the math check on every number spoken (her takes show slips exactly where scripts were dense), and confirm no example repeats a Hebrew-course number (memory: questions-differ-from-hebrew).
