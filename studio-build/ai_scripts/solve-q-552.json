@@ -4,7 +4,7 @@
  "slides": [
   [
    {
-    "say": "For every two numbers x and y, diamond of x, y is the square root of eight x squared plus y squared. Given: a is bigger than zero. Diamond of diamond of a, a, and a, over diamond of a, and diamond of a, a, is equal to what?",
+    "say": "For every two numbers x and y, diamond of x, y is the square root of the whole sum, eight x squared plus y squared. Given: a is bigger than zero. Diamond of diamond of a, a, and a, over diamond of a, and diamond of a, a, is equal to what?",
     "voice": "calm",
     "at": [
      "For every two numbers"
@@ -82,14 +82,14 @@
   ],
   [
    {
-    "say": "[pause] Now let's plug in a number. All the choices are plain numbers, with no a. So whatever positive a we choose, the answer comes out the same, and one plug-in is enough. Let's take a is one, the easiest positive number. Diamond of one and one is the root of eight plus one, root nine, which is three.",
+    "say": "[pause] Now let's plug in a number. In the full math, the a's cancelled, so the answer doesn't depend on a. So we can use an easy allowed value. Let's take a is one, the easiest positive number. Diamond of one and one is the root of eight plus one, root nine, which is three.",
     "at": [
      "Now let's",
-     "All the choices",
-     "numbers, with no",
-     "So whatever positive",
-     "choose, the answer",
-     "the same, and",
+     "In the full",
+     "a's cancelled, so",
+     "doesn't depend on",
+     "So we can",
+     "easy allowed value",
      "Let's take a",
      "the easiest positive",
      "Diamond of one and one",
@@ -110,18 +110,23 @@
     ]
    },
    {
-    "say": "Some students stop right here, because only choice number three has seventy-three on top. Why is that enough? The bottom has the inputs in the other order, so the eight multiplies one instead of nine, and the bottom is smaller. Let's finish anyway. Eight times one plus three squared is eight plus nine, seventeen. Root seventy-three over root seventeen, choice number three. [pause] Okay. I'll see you in the next question.",
+    "say": "Careful, the top alone doesn't give the answer. The answer is the whole fraction, top over bottom, so we need the bottom too. The bottom is diamond of one and three. Now three is in the second slot, so eight times one squared is eight, plus three squared, nine, which makes seventeen. So the bottom is root seventeen, and the fraction is root seventy-three over root seventeen, the root of seventy-three over seventeen. That's choice number three. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "only choice number three",
-     "seventy-three on top",
-     "The bottom has",
-     "in the other",
-     "the eight multiplies",
-     "of nine, and",
-     "Let's finish anyway",
-     "squared is eight",
-     "seventeen. Root seventy-three",
-     "seventeen, choice number three"
+     "Careful, the top",
+     "give the answer",
+     "The answer is",
+     "fraction, top over",
+     "we need the",
+     "The bottom is diamond of one and three",
+     "Now three is",
+     "second slot, so",
+     "one squared is",
+     "three squared, nine",
+     "So the bottom",
+     "seventeen, and the",
+     "root seventy-three over",
+     "the root of",
+     "That's choice number three"
     ]
    }
   ]

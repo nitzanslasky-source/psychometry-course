@@ -55,8 +55,13 @@
     ]
    },
    {
-    "say": "Now the hash of sixteen and one. Sixteen squared is two hundred fifty-six. Two times sixteen times one is thirty-two. One squared is one. Two hundred fifty-six plus thirty-two is two hundred eighty-eight, plus one is two hundred eighty-nine. Choice number two is our answer.",
+    "say": "So the left diamond gives sixteen, and the right diamond gives one. These two results are the two inputs of the hash, sixteen first and one second. Now the hash of sixteen and one. Sixteen squared is two hundred fifty-six. Two times sixteen times one is thirty-two. One squared is one. Two hundred fifty-six plus thirty-two is two hundred eighty-eight, plus one is two hundred eighty-nine. Choice number two is our answer.",
     "at": [
+     "So the left",
+     "sixteen, and the",
+     "These two results",
+     "two inputs of",
+     "sixteen first and",
      "Now the hash",
      "Sixteen squared is",
      "Two times sixteen",

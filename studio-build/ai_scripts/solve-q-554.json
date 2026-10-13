@@ -79,31 +79,40 @@
   ],
   [
    {
-    "say": "[pause] Another way is to think instead of calculating. Every choice uses the same three digits, one, two and four. The biggest power, the fourth power, is on the hundreds digit. To keep the result small, the smallest digit should get the biggest power. So the hundreds digit should be one. Choice numbers one and three start with two and four, so they're out.",
+    "say": "[pause] Another way is to think about the powers. Every choice uses the same three digits, one, two and four. One stays one at any power, so giving it the biggest power costs nothing. But four grows a lot. Four squared is sixteen, and four to the power of four is two hundred fifty-six. So the fourth power, on the hundreds digit, should go to the one. Choice numbers one and three start with two and four, so they're out.",
     "at": [
      "Another way",
-     "instead of calculating",
+     "about the powers",
      "Every choice uses",
      "three digits, one",
-     "The biggest power",
-     "power, is on",
-     "To keep the",
-     "the smallest digit",
-     "the biggest power. So",
-     "So the hundreds",
+     "One stays one",
+     "power, so giving",
+     "biggest power costs",
+     "But four grows",
+     "Four squared is",
+     "four to the",
+     "four is two",
+     "So the fourth",
+     "the hundreds digit",
+     "should go to the one",
      "Choice numbers one and three",
      "start with two",
      "so they're out"
     ]
    },
    {
-    "say": "Between one four two and one two four, look at the next power, the cube, on the tens digit. The smaller digit should be there, so two, not four. One two four, choice number four. [pause] Okay. I'll see you in the next question.",
+    "say": "Between one four two and one two four, look at the next power, the cube, on the tens digit. Four cubed is sixty-four, but four squared is only sixteen. Two changes much less, from eight to four. So the four should get the square, and the two goes in the tens. One two four, choice number four. [pause] Okay. I'll see you in the next question.",
     "at": [
      "and one two",
      "look at the next power",
      "the cube, on",
-     "The smaller digit",
-     "there, so two",
+     "Four cubed is",
+     "four squared is",
+     "Two changes much",
+     "eight to four",
+     "So the four",
+     "the square, and",
+     "goes in the",
      "One two four, choice number four"
     ]
    }

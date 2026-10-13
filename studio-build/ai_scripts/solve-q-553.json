@@ -12,15 +12,14 @@
     "pause": 0.5
    },
    {
-    "say": "This is a hard one. The same two letters go into the diamond on the top and at the bottom, only in a different order. [short pause] We'll solve it three ways, the full math, a sharp insight, and plugging in numbers.",
+    "say": "The same two letters go into the diamond on the top and at the bottom, only in a different order. [short pause] We'll solve it three ways, the full math, reading the definition first, and plugging in numbers.",
     "at": [
-     "one. The same",
      "go into the",
      "the top and",
      "only in a different",
      "We'll solve it",
      "the full math",
-     "insight, and plugging"
+     "definition first, and"
     ]
    },
    {
@@ -40,7 +39,7 @@
     ]
    },
    {
-    "say": "To divide by a fraction, we multiply by its reciprocal. So we flip the bottom fraction and multiply. And a tip, don't open the squared brackets yet, because they might cancel. And they do. a minus b and b minus a are opposites, and opposites have the same square. So the squared parts cancel.",
+    "say": "To divide by a fraction, we multiply by its reciprocal. So we flip the bottom fraction and multiply. And a tip, don't open the squared brackets yet, because they might cancel. And they do. a minus b and b minus a are opposites, and opposites have the same square. And a and b are different, so that square is not zero. So the squared parts cancel.",
     "at": [
      "To divide by",
      "we multiply by",
@@ -51,6 +50,8 @@
      "a minus b",
      "minus a are",
      "opposites have the",
+     "And a and",
+     "different, so that",
      "So the squared"
     ]
    },
@@ -72,7 +73,7 @@
   ],
   [
    {
-    "say": "[pause] Another way is to read the definition before calculating. The top and the bottom use the same two numbers, just swapped. The squared part is x minus y. Swapping x and y gives the opposite number inside, but the square is the same. So the squared parts are equal, and they cancel.",
+    "say": "[pause] Another way is to read the definition before calculating. The top and the bottom use the same two numbers, just swapped. The squared part is x minus y. Swapping x and y gives the opposite number inside, but the square is the same. So both fractions have the same top. When we divide one fraction by another with the same nonzero top, that top cancels.",
     "at": [
      "Another way",
      "the definition before",
@@ -82,21 +83,26 @@
      "minus y. Swapping",
      "y gives the",
      "but the square is the same",
-     "So the squared",
-     "equal, and they"
+     "So both fractions",
+     "When we divide",
+     "by another with",
+     "nonzero top, that"
     ]
    },
    {
-    "say": "Only the parts under them are left, a b cubed and b a cubed. They're not equal, because the second input gets the power of three. Dividing by the second diamond flips its part to the top, so we get b a cubed over a b cubed. One a and one b cancel, and we get a squared over b squared. Choice number three.",
+    "say": "So only the two denominators matter. The first fraction has a times b cubed, where b, its second input, is cubed. The second has b times a cubed, where a is cubed. These are not always equal, so they don't cancel. When we divide by the second fraction, its denominator, b a cubed, goes to the top. So we get b a cubed over a b cubed. One a and one b cancel, and we get a squared over b squared. Choice number three.",
     "at": [
-     "Only the parts",
-     "are left, a",
-     "and b a",
-     "They're not equal",
-     "second input gets",
-     "of three. Dividing",
-     "second diamond flips",
-     "to the top",
+     "So only the",
+     "The first fraction",
+     "times b cubed",
+     "its second input",
+     "The second has",
+     "a cubed, where",
+     "These are not",
+     "so they don't",
+     "When we divide",
+     "second fraction, its",
+     "a cubed, goes",
      "so we get b a cubed",
      "One a and",
      "cancel, and we",

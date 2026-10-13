@@ -966,7 +966,8 @@ video('solve-q-551', 'solution', qid='q-551', slides=[
       L("The right diamond is diamond of five and four. Five squared is twenty-five. Two times five times four is forty, "
         "subtracted. Four squared is sixteen. Twenty-five minus forty is negative fifteen, plus sixteen is one.",
         show(c551['r2'], 'Five squared is twenty-five')),
-      L("Now the hash of sixteen and one. Sixteen squared is two hundred fifty-six. Two times sixteen times one is "
+      L("So the left diamond gives sixteen, and the right diamond gives one. These two results are the two inputs of the "
+        "hash, sixteen first and one second. Now the hash of sixteen and one. Sixteen squared is two hundred fifty-six. Two times sixteen times one is "
         "thirty-two. One squared is one. Two hundred fifty-six plus thirty-two is two hundred eighty-eight, plus one is two "
         "hundred eighty-nine. Choice number two is our answer.", show(c551['r3'], 'Sixteen squared is'),
         mk('tick', 'choice 2', 'Choice number two is our answer'))),
@@ -1017,11 +1018,12 @@ video('solve-q-r26-t19-05', 'solution', qid='q-r26-t19-05', slides=[
         "power gives the same value for two and for negative two. The plain number, minus seven, is also the same. So in "
         "the subtraction, all of these cancel.", show(z4, 'An even power gives')),
       L("An odd power changes only its sign. For example, two cubed is eight, and negative two cubed is negative eight. "
-        "Eight minus negative eight is sixteen, which is twice eight. So every odd term counts twice.",
+        "Eight minus negative eight is sixteen, which is twice eight. So every term with an odd power of x counts twice its "
+        "value at two.",
         show(z5, 'An odd power changes')),
-      L("So we keep only the odd terms at two, and double them. The odd terms are x to the power of five, minus two x "
-        "cubed, and four x. At two, that's thirty-two minus sixteen plus eight, which is twenty-four. Twice twenty-four is "
-        "forty-eight. Choice number three. [pause] Okay. I'll see you in the next question.", show(z6, 'keep only the odd terms'),
+      L("So we keep only the terms with an odd power of x, and double their values at two. Those terms are x to the power "
+        "of five, minus two x cubed, and four x, which has x to the power of one. Their coefficients stay. At two, that's thirty-two minus sixteen plus eight, which is twenty-four. Twice twenty-four is "
+        "forty-eight. Choice number three. [pause] Okay. I'll see you in the next question.", show(z6, 'keep only the terms'),
         mk('tick', 'choice 3', 'Choice number three.'))),
 ])
 
@@ -1039,7 +1041,7 @@ b6 = IH('b6', 'Top: $\\ \\blacklozenge(3,1)=\\sqrt{72+1}=\\sqrt{73}$', size=30)
 b7 = IH('b7', 'Bottom: $\\ \\blacklozenge(1,3)=\\sqrt{8+9}=\\sqrt{17}$', size=30)
 video('solve-q-552', 'solution', qid='q-552', slides=[
     S('Method 1 · The full math',
-      L("For every two numbers x and y, diamond of x, y is the square root of eight x squared plus y squared. Given: a is "
+      L("For every two numbers x and y, diamond of x, y is the square root of the whole sum, eight x squared plus y squared. Given: a is "
         "bigger than zero. Diamond of diamond of a, a, and a, over diamond of a, and diamond of a, a, is equal to what?",
         pt('stem', 'For every two numbers', 'hl', 10.0), voice='calm', pause=0.5),
       L("This time there are unknowns inside the operation. And the order of the inputs matters, because only the first one "
@@ -1060,17 +1062,18 @@ video('solve-q-552', 'solution', qid='q-552', slides=[
         show(a8, 'The a\'s cancel'), mk('tick', 'choice 3', 'Choice number three is our answer')),
       sb='Method 1 · The full math'),
     S('Method 2 · Plugging in a number',
-      L("[pause] Now let's plug in a number. All the choices are plain numbers, with no a. So whatever positive a we choose, "
-        "the answer comes out the same, and one plug-in is enough. Let's take a is one, the easiest positive number. "
+      L("[pause] Now let's plug in a number. In the full math, the a's cancelled, so the answer doesn't depend on a. So we "
+        "can use an easy allowed value. Let's take a is one, the easiest positive number. "
         "Diamond of one and one is the root of eight plus one, root nine, which is three.", show(b5, 'Diamond of one and one')),
       L("The top is diamond of three and one. Three is in the first slot, so eight times three squared. Three squared is "
         "nine, and eight times nine is seventy-two. Plus one squared, one, makes seventy-three. So the top is root "
         "seventy-three.", show(b6, 'The top is diamond of three')),
-      L("Some students stop right here, because only choice number three has seventy-three on top. Why is that enough? The "
-        "bottom has the inputs in the other order, so the eight multiplies one instead of nine, and the bottom is smaller. "
-        "Let's finish anyway. Eight times one plus three squared is eight plus nine, seventeen. Root seventy-three over root "
-        "seventeen, choice number three. [pause] Okay. I'll see you in the next question.",
-        pt('choice 3', 'only choice number three'), show(b7, "Let's finish anyway"), mk('tick', 'choice 3', 'seventeen, choice number three'))),
+      L("Careful, the top alone doesn't give the answer. The answer is the whole fraction, top over bottom, so we need the "
+        "bottom too. The bottom is diamond of one and three. Now three is in the second slot, so eight times one squared is "
+        "eight, plus three squared, nine, which makes seventeen. So the bottom is root seventeen, and the fraction is root "
+        "seventy-three over root seventeen, the root of seventy-three over seventeen. That's choice number three. [pause] "
+        "Okay. I'll see you in the next question.", show(b7, 'The bottom is diamond of one and three'),
+        mk('tick', 'choice 3', "That's choice number three"))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-553 (Hebrew Q4)
@@ -1090,24 +1093,27 @@ video('solve-q-553', 'solution', qid='q-553', slides=[
       L("For every two numbers x and y that are not zero, diamond of x, y is x minus y, squared, over x times y cubed. Given: "
         "a and b are two different numbers, and neither of them is zero. Diamond of a, b over diamond of b, a is equal to "
         "what?", pt('stem', 'For every two numbers', 'hl', 11.0), voice='calm', pause=0.5),
-      L("This is a hard one. The same two letters go into the diamond on the top and at the bottom, only in a different "
-        "order. [short pause] We'll solve it three ways, the full math, a sharp insight, and plugging in numbers.",
+      L("The same two letters go into the diamond on the top and at the bottom, only in a different order. [short pause] "
+        "We'll solve it three ways, the full math, reading the definition first, and plugging in numbers.",
         pt('stem', 'only in a different')),
       L("[short pause] The top is diamond of a, b, so x is a and y is b. That's a minus b, squared, over a times b cubed. "
         "The bottom is diamond of b, a, so now x is b and y is a. That's b minus a, squared, over b times a cubed.",
         show(c5a, 'The top is diamond of a, b'), show(c5b, 'The bottom is diamond of b, a')),
       L("To divide by a fraction, we multiply by its reciprocal. So we flip the bottom fraction and multiply. And a tip, "
         "don't open the squared brackets yet, because they might cancel. And they do. a minus b and b minus a are "
-        "opposites, and opposites have the same square. So the squared parts cancel.", show(c5, 'So we flip the bottom')),
+        "opposites, and opposites have the same square. And a and b are different, so that square is not zero. So the "
+        "squared parts cancel.", show(c5, 'So we flip the bottom')),
       L("We're left with b times a cubed, over a times b cubed. One a cancels from a cubed, which leaves a squared on top. "
         "One b cancels from b cubed, which leaves b squared at the bottom. So the answer is a squared over b squared. Choice "
         "number three is our answer.", show(c6, "We're left with"), mk('tick', 'choice 3', 'Choice number three is our answer'))),
-    S('Method 2 · A sharp insight',
+    S('Method 2 · Read the definition first',
       L("[pause] Another way is to read the definition before calculating. The top and the bottom use the same two numbers, "
         "just swapped. The squared part is x minus y. Swapping x and y gives the opposite number inside, but the square is "
-        "the same. So the squared parts are equal, and they cancel.", show(d5, 'but the square is the same')),
-      L("Only the parts under them are left, a b cubed and b a cubed. They're not equal, because the second input gets the "
-        "power of three. Dividing by the second diamond flips its part to the top, so we get b a cubed over a b cubed. One "
+        "the same. So both fractions have the same top. When we divide one fraction by another with the same nonzero top, "
+        "that top cancels.", show(d5, 'but the square is the same')),
+      L("So only the two denominators matter. The first fraction has a times b cubed, where b, its second input, is "
+        "cubed. The second has b times a cubed, where a is cubed. These are not always equal, so they don't cancel. When "
+        "we divide by the second fraction, its denominator, b a cubed, goes to the top. So we get b a cubed over a b cubed. One "
         "a and one b cancel, and we get a squared over b squared. Choice number three.", show(d6, 'so we get b a cubed'),
         mk('tick', 'choice 3', 'a squared over b squared. Choice'))),
     S('Method 3 · Plugging in numbers',
@@ -1153,13 +1159,15 @@ video('solve-q-554', 'solution', qid='q-554', slides=[
         "is out too, and choice number four is our answer.", show(f8, 'One plus eight plus sixteen'),
         mk('cross', 'choice 1', 'so choice number one'), mk('tick', 'choice 4', 'and choice number four is our answer'))),
     S('Method 2 · Think about the powers',
-      L("[pause] Another way is to think instead of calculating. Every choice uses the same three digits, one, two and "
-        "four. The biggest power, the fourth power, is on the hundreds digit. To keep the result small, the smallest digit "
-        "should get the biggest power. So the hundreds digit should be one. Choice numbers one and three start with two and "
-        "four, so they're out.", show(g5, 'The biggest power'), mk('cross', 'choice 1', 'Choice numbers one and three'),
+      L("[pause] Another way is to think about the powers. Every choice uses the same three digits, one, two and four. "
+        "One stays one at any power, so giving it the biggest power costs nothing. But four grows a lot. Four squared is "
+        "sixteen, and four to the power of four is two hundred fifty-six. So the fourth power, on the hundreds digit, "
+        "should go to the one. Choice numbers one and three start with two and four, so they're out.",
+        show(g5, 'should go to the one'), mk('cross', 'choice 1', 'Choice numbers one and three'),
         mk('cross', 'choice 3', "so they're out")),
-      L("Between one four two and one two four, look at the next power, the cube, on the tens digit. The smaller digit "
-        "should be there, so two, not four. One two four, choice number four. [pause] Okay. I'll see you in the next "
+      L("Between one four two and one two four, look at the next power, the cube, on the tens digit. Four cubed is "
+        "sixty-four, but four squared is only sixteen. Two changes much less, from eight to four. So the four should get "
+        "the square, and the two goes in the tens. One two four, choice number four. [pause] Okay. I'll see you in the next "
         "question.", show(g6, 'look at the next power'), mk('tick', 'choice 4', 'One two four, choice number four'))),
 ])
 

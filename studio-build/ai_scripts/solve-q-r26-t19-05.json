@@ -93,7 +93,7 @@
     ]
    },
    {
-    "say": "An odd power changes only its sign. For example, two cubed is eight, and negative two cubed is negative eight. Eight minus negative eight is sixteen, which is twice eight. So every odd term counts twice.",
+    "say": "An odd power changes only its sign. For example, two cubed is eight, and negative two cubed is negative eight. Eight minus negative eight is sixteen, which is twice eight. So every term with an odd power of x counts twice its value at two.",
     "at": [
      "An odd power changes",
      "For example, two",
@@ -101,16 +101,21 @@
      "is negative eight",
      "Eight minus negative",
      "sixteen, which is",
-     "So every odd"
+     "So every term",
+     "odd power of",
+     "twice its value"
     ]
    },
    {
-    "say": "So we keep only the odd terms at two, and double them. The odd terms are x to the power of five, minus two x cubed, and four x. At two, that's thirty-two minus sixteen plus eight, which is twenty-four. Twice twenty-four is forty-eight. Choice number three. [pause] Okay. I'll see you in the next question.",
+    "say": "So we keep only the terms with an odd power of x, and double their values at two. Those terms are x to the power of five, minus two x cubed, and four x, which has x to the power of one. Their coefficients stay. At two, that's thirty-two minus sixteen plus eight, which is twenty-four. Twice twenty-four is forty-eight. Choice number three. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "keep only the odd terms",
-     "The odd terms are",
-     "to the power",
-     "minus two x",
+     "keep only the terms",
+     "and double their",
+     "Those terms are",
+     "the power of",
+     "two x cubed",
+     "x, which has",
+     "the power of one",
      "At two, that's",
      "sixteen plus eight",
      "twenty-four. Twice twenty-four",

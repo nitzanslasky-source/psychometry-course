@@ -5126,6 +5126,78 @@
           ]
         ]
       }
+    },
+    "solve-q-551": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.5": [
+          [
+            "Two hundred fifty-six plus thirty-two is two hundred eighty-eight, plus one is two hundred eighty-nine",
+            "256 + 32 = 288, and 288 + 1 = 289"
+          ]
+        ]
+      }
+    },
+    "solve-q-r26-t19-05": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.2": [
+          [
+            "Eight minus negative eight",
+            "8 − (−8)"
+          ]
+        ]
+      }
+    },
+    "solve-q-552": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "the square root of the whole sum, eight x squared plus y squared",
+            "√(8x² + y²)"
+          ]
+        ],
+        "3.3": [
+          [
+            "so eight times one squared is eight, plus three squared, nine, which makes seventeen",
+            "so 8 × 1² = 8, plus 3² = 9, which makes 17"
+          ],
+          [
+            "root seventy-three over root seventeen, the root of seventy-three over seventeen",
+            "√73/√17, which is √(73/17)"
+          ]
+        ]
+      }
+    },
+    "solve-q-553": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.4": [
+          [
+            "a minus b and b minus a are",
+            "a − b and b − a are"
+          ]
+        ],
+        "2.2": [
+          [
+            "So we get b a cubed over a b cubed",
+            "So we get (b × a³)/(a × b³)"
+          ],
+          [
+            "One a and one b cancel",
+            "One factor a and one factor b cancel"
+          ]
+        ]
+      }
     }
   }
 }
