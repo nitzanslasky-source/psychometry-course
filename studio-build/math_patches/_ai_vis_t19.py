@@ -606,7 +606,7 @@ video('solve-q-r26-t19-02', 'solution', qid='q-r26-t19-02', slides=[
 # NEW: the inverse operation - read the steps, undo them in reverse order (socks and shoes), check with a number, the
 # trap (the same order); two examples (2x + 3, 3x - 4).  Only the practice has this type.
 h1 = I('h1', '$\\blacklozenge(x)=2x+3$: $\\ \\times2$, then $+3$', size=36)
-h2 = I('h2', 'Undo: $\\ -3$, then $\\div2$: $\\ \\frac{y-3}{2}$', size=36)
+h2 = I('h2', 'Undo $y$: $\\ -3$, then $\\div2$: $\\ \\frac{y-3}{2}$', size=36)
 h3 = IH('h3', '$4$ in, $11$ out: $\\ \\frac{11-3}{2}=\\frac82=4$ ✓', size=36)
 h4 = I('h4', 'Wrong order: $\\ \\frac{11}{2}-3=2.5$ ✗', size=34)
 h5 = I('h5', '$\\blacklozenge(x)=3x-4$: $\\ $undo $\\ \\frac{y+4}{3}$: $\\ \\frac{11+4}{3}=5$ ✓', size=34)
@@ -618,16 +618,19 @@ video('operation-patterns', 'lesson', slides=[
       L("The inverse operation undoes the diamond. You put in the result, and you get the original x back. Let's take "
         "diamond of x equals two x plus three. First, read its steps in order. It multiplies x by two, and then it adds "
         "three.", show(h1, 'The inverse operation undoes')),
-      L("To undo it, we go backwards, like taking off your shoes before your socks. The last step comes off first. So first "
-        "we subtract three, and then we divide by two. The inverse is y minus three, over two.", show(h2, 'The last step comes off first')),
+      L("Let's call the result y. That's the number that came out of the diamond, and the inverse should give us back the "
+        "original x. To undo it, we go backwards. The last step comes off first, like taking off your shoes before your "
+        "socks. So first we subtract three from y, and then we divide the whole y minus three by two. The inverse is the "
+        "whole bracket, y minus three, over two.", show(h2, 'The last step comes off first')),
       L("Let's check it with a number. Four goes into the diamond. Two times four is eight, and eight plus three is eleven. "
         "Now undo it. Eleven minus three is eight, and eight over two is four. We're back at four, so the inverse works.",
         show(h3, 'Four goes into the diamond')),
       L("Here's the trap. A lot of students undo the steps in the same order, not backwards. First divide by two, then "
         "subtract three. That's y over two, minus three. With eleven, eleven over two is five point five, and five point "
         "five minus three is two point five. That's not four, so the order matters.", show(h4, "Here's the trap")),
-      L("One more example. Diamond of x is three x minus four. Its steps are times three, then minus four. So the inverse is "
-        "plus four first, then divide by three. y plus four, over three. Let's check with five. Three times five is "
+      L("One more example. Diamond of x is three x minus four. Its steps are times three, then minus four. Again, y is "
+        "the result we want to undo. So the inverse adds four first, and then divides the whole y plus four by three. "
+        "That's the whole bracket, y plus four, over three. Let's check with five. Three times five is "
         "fifteen, and fifteen minus four is eleven. Eleven plus four is fifteen, and fifteen over three is five. Back to "
         "five.", show(h5, 'One more example')),
       L("So to undo an operation, read its steps, and undo them in reverse order, the last step first. [pause] Okay. I'll "
@@ -648,16 +651,14 @@ video('solve-q-544', 'solution', qid='q-544', slides=[
       L("Look closely at the rule. The diamond works on two x, not on x. So this is an operation on an expression. [short "
         "pause] We'll solve it two ways, matching the input, and then rewriting the rule for any input.",
         pt('stem', 'The diamond works on two x')),
-      L("[short pause] In the rule, the input slot holds two x. In the question, fourteen sits in that same slot. So "
-        "fourteen is not x. Fourteen is two x.", show(s544['line'], 'the input slot holds two x'),
-        show(s544['in'], 'fourteen sits in that same slot')),
-      L("Careful, this is the trap. A lot of students put fourteen straight into x plus five. Fourteen plus five is "
-        "nineteen, and it's waiting in the choices, choice number two. But fourteen is two x, not x.",
-        mk('cross', 'choice 2', 'choice number two')),
-      L("So two x is fourteen. To find x, divide fourteen by two, which is seven.", show(s544['x'], 'So two x is fourteen')),
+      L("[short pause] In the rule, the input slot holds two x. In the question, fourteen sits in that same slot. So two x "
+        "is fourteen, and x is fourteen divided by two, which is seven.", show(s544['line'], 'the input slot holds two x'),
+        show(s544['in'], 'fourteen sits in that same slot'), show(s544['x'], 'So two x is fourteen')),
       L("Now the rule says the output is x plus five. x is seven, so seven plus five is twelve. Diamond of fourteen is "
         "twelve, and choice number one is our answer.", show(s544['calc'], 'seven plus five is twelve'),
-        mk('tick', 'choice 1', 'choice number one is our answer'))),
+        mk('tick', 'choice 1', 'choice number one is our answer')),
+      L("Careful, if you put fourteen straight into x plus five, you get nineteen, choice number two. That treats fourteen "
+        "as x, but fourteen took the place of two x.", mk('cross', 'choice 2', 'you get nineteen, choice number two'))),
     S('Method 2 · Rewrite the rule',
       L("[pause] Another way is to rewrite the rule so it works on any input. Two x goes in, and x plus five comes out. "
         "What does the diamond do to its input? x is half of two x. So the diamond takes half of its input, and then adds "
@@ -720,9 +721,10 @@ video('solve-q-r26-t19-03', 'solution', qid='q-r26-t19-03', slides=[
         mk('cross', 'choice 1', 'so eight is out')),
       L("Choice number two is six. Six is even, so again the even rule. Six squared is thirty-six, and thirty-six minus "
         "twelve is twenty-four. It works.", show(m2, 'Six is even')),
-      L("Eight is out, so choice number three, six or eight, is out too. And six works, so choice number four, no such x, is "
-        "out. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
-        mk('cross', 'choice 3', 'is out too'), mk('cross', 'choice 4', 'no such x, is'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
+      L("Choice number three says six or eight, so it claims that both values work. Eight doesn't work, so the whole choice "
+        "is wrong, even though six works. And six works, so choice number four, no such x, is out. Choice number two is our "
+        "answer. [pause] Okay. I'll see you in the next question.",
+        mk('cross', 'choice 3', 'so the whole choice'), mk('cross', 'choice 4', 'no such x, is'), mk('tick', 'choice 2', 'Choice number two is our answer'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-546 (Hebrew: lesson 2)
@@ -734,14 +736,14 @@ o1 = I('o1', '$x$: $\\ \\ 0,\\ \\ 2,\\ \\ 4,\\ \\ 6,\\ \\ 8$', size=34)
 o2 = I('o2', '$\\blacklozenge$: $\\ \\ 2,\\ \\ 7,\\ \\ 2,\\ \\ 7,\\ \\ 2$', size=34)
 video('solve-q-546', 'solution', qid='q-546', slides=[
     S('Method 1 · Down, then back up',
-      L("The operation diamond is defined for every even integer x that's zero or more. Diamond of x is two when x is zero, "
-        "and nine minus diamond of x minus two when x is two or more. Diamond of six is equal to what?",
+      L("The operation diamond is defined for every even integer x that's zero or more. Diamond of x is two when x is zero. "
+        "When x is two or more, diamond of x is nine minus diamond of, in brackets, x minus two. Diamond of six is equal to what?",
         pt('stem', 'The operation diamond', 'hl', 9.0), voice='calm', pause=0.5),
-      L("This is a circular rule. The diamond appears inside its own definition, so it keeps calling itself. [short pause] "
-        "We'll solve it two ways, going down to the start value and back up, and then with the pattern.",
-        pt('stem', 'This is a circular rule')),
-      L("[short pause] Six is two or more, so we use the second rule. Diamond of six is nine minus diamond of six minus two, "
-        "which is diamond of four. But we don't know diamond of four yet, so we keep going down.",
+      L("This rule uses itself. To find the diamond of a number, we need the diamond of the number two below it. We keep "
+        "going down until we reach the given start value, diamond of zero. [short pause] We'll solve it two ways, going down "
+        "to the start value and back up, and then with the pattern.", pt('stem', 'This rule uses itself')),
+      L("[short pause] Six is two or more, so we use the second rule. The input of the inner diamond is x minus two, so "
+        "first six minus two, which is four. So diamond of six is nine minus diamond of four. But we don't know diamond of four yet, so we keep going down.",
         show(c546['line'], 'Diamond of six is nine minus')),
       L("Diamond of four is nine minus diamond of two. And diamond of two is nine minus diamond of zero.",
         show(c546['a'], 'Diamond of four is'), show(c546['b'], 'And diamond of two is')),
@@ -756,7 +758,9 @@ video('solve-q-546', 'solution', qid='q-546', slides=[
         "next value is nine minus the one before it. Nine minus two is seven. Nine minus seven is two. So the values go "
         "two, seven, two, seven.", show(o1, 'list the values'), show(o2, 'So the values go')),
       L("So zero, four and eight give two, and two and six give seven. Six gives seven, choice number four. And the pattern "
-        "also gives big inputs at once. A hundred is like zero, four and eight, so diamond of a hundred is two. [pause] "
+        "also gives big inputs at once. The values come back to two every two steps, and each step adds two to the input. So the value is two again every "
+        "time the input grows by four. A hundred is a multiple of four, like zero, four and eight, so diamond of a hundred "
+        "is two. [pause] "
         "Okay. I'll see you in the next question.", mk('tick', 'choice 4', 'Six gives seven'))),
 ])
 

@@ -85,11 +85,14 @@
     ]
    },
    {
-    "say": "Eight is out, so choice number three, six or eight, is out too. And six works, so choice number four, no such x, is out. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
+    "say": "Choice number three says six or eight, so it claims that both values work. Eight doesn't work, so the whole choice is wrong, even though six works. And six works, so choice number four, no such x, is out. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "choice number three",
-     "is out too",
-     "works, so choice",
+     "number three says",
+     "eight, so it",
+     "both values work",
+     "so the whole choice",
+     "wrong, even though",
+     "And six works",
      "no such x, is",
      "Choice number two is our answer"
     ]

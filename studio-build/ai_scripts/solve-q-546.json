@@ -4,7 +4,7 @@
  "slides": [
   [
    {
-    "say": "The operation diamond is defined for every even integer x that's zero or more. Diamond of x is two when x is zero, and nine minus diamond of x minus two when x is two or more. Diamond of six is equal to what?",
+    "say": "The operation diamond is defined for every even integer x that's zero or more. Diamond of x is two when x is zero. When x is two or more, diamond of x is nine minus diamond of, in brackets, x minus two. Diamond of six is equal to what?",
     "voice": "calm",
     "at": [
      "The operation diamond"
@@ -12,24 +12,30 @@
     "pause": 0.5
    },
    {
-    "say": "This is a circular rule. The diamond appears inside its own definition, so it keeps calling itself. [short pause] We'll solve it two ways, going down to the start value and back up, and then with the pattern.",
+    "say": "This rule uses itself. To find the diamond of a number, we need the diamond of the number two below it. We keep going down until we reach the given start value, diamond of zero. [short pause] We'll solve it two ways, going down to the start value and back up, and then with the pattern.",
     "at": [
-     "This is a circular rule",
-     "The diamond appears",
-     "own definition, so",
+     "This rule uses itself",
+     "find the diamond",
+     "number, we need",
+     "number two below",
+     "keep going down",
+     "the given start",
      "two ways, going",
      "the start value",
      "up, and then"
     ]
    },
    {
-    "say": "[short pause] Six is two or more, so we use the second rule. Diamond of six is nine minus diamond of six minus two, which is diamond of four. But we don't know diamond of four yet, so we keep going down.",
+    "say": "[short pause] Six is two or more, so we use the second rule. The input of the inner diamond is x minus two, so first six minus two, which is four. So diamond of six is nine minus diamond of four. But we don't know diamond of four yet, so we keep going down.",
     "at": [
      "Six is",
      "so we use",
+     "The input of",
+     "diamond is x",
+     "so first six",
+     "which is four",
      "Diamond of six is nine minus",
      "minus diamond of",
-     "two, which is",
      "But we don't",
      "of four yet",
      "keep going down"
@@ -84,7 +90,7 @@
     ]
    },
    {
-    "say": "So zero, four and eight give two, and two and six give seven. Six gives seven, choice number four. And the pattern also gives big inputs at once. A hundred is like zero, four and eight, so diamond of a hundred is two. [pause] Okay. I'll see you in the next question.",
+    "say": "So zero, four and eight give two, and two and six give seven. Six gives seven, choice number four. And the pattern also gives big inputs at once. The values come back to two every two steps, and each step adds two to the input. So the value is two again every time the input grows by four. A hundred is a multiple of four, like zero, four and eight, so diamond of a hundred is two. [pause] Okay. I'll see you in the next question.",
     "at": [
      "So zero, four",
      "give two, and",
@@ -92,9 +98,16 @@
      "Six gives seven",
      "And the pattern",
      "big inputs at",
+     "The values come",
+     "two every two",
+     "each step adds",
+     "So the value",
+     "again every time",
+     "grows by four",
      "A hundred is",
-     "four and eight, so",
-     "of a hundred"
+     "of four, like",
+     "and eight, so",
+     "a hundred is two"
     ]
    }
   ]

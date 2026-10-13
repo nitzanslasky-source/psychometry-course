@@ -23,33 +23,14 @@
     ]
    },
    {
-    "say": "[short pause] In the rule, the input slot holds two x. In the question, fourteen sits in that same slot. So fourteen is not x. Fourteen is two x.",
+    "say": "[short pause] In the rule, the input slot holds two x. In the question, fourteen sits in that same slot. So two x is fourteen, and x is fourteen divided by two, which is seven.",
     "at": [
      "In the",
      "the input slot holds two x",
      "x. In the",
      "fourteen sits in that same slot",
-     "So fourteen is",
-     "Fourteen is two"
-    ]
-   },
-   {
-    "say": "Careful, this is the trap. A lot of students put fourteen straight into x plus five. Fourteen plus five is nineteen, and it's waiting in the choices, choice number two. But fourteen is two x, not x.",
-    "at": [
-     "Careful, this is",
-     "A lot of",
-     "fourteen straight into",
-     "five. Fourteen plus",
-     "nineteen, and it's",
-     "choice number two",
-     "But fourteen is"
-    ]
-   },
-   {
-    "say": "So two x is fourteen. To find x, divide fourteen by two, which is seven.",
-    "at": [
      "So two x is fourteen",
-     "To find x",
+     "and x is",
      "by two, which"
     ]
    },
@@ -62,6 +43,16 @@
      "seven plus five is twelve",
      "Diamond of fourteen",
      "choice number one is our answer"
+    ]
+   },
+   {
+    "say": "Careful, if you put fourteen straight into x plus five, you get nineteen, choice number two. That treats fourteen as x, but fourteen took the place of two x.",
+    "at": [
+     "fourteen straight into",
+     "you get nineteen, choice number two",
+     "That treats fourteen",
+     "but fourteen took",
+     "of two x"
     ]
    }
   ],

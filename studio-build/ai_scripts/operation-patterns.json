@@ -20,16 +20,23 @@
     ]
    },
    {
-    "say": "To undo it, we go backwards, like taking off your shoes before your socks. The last step comes off first. So first we subtract three, and then we divide by two. The inverse is y minus three, over two.",
+    "say": "Let's call the result y. That's the number that came out of the diamond, and the inverse should give us back the original x. To undo it, we go backwards. The last step comes off first, like taking off your shoes before your socks. So first we subtract three from y, and then we divide the whole y minus three by two. The inverse is the whole bracket, y minus three, over two.",
     "at": [
+     "Let's call the",
+     "That's the number",
+     "out of the",
+     "the inverse should",
+     "back the original",
      "To undo it",
-     "backwards, like taking",
-     "shoes before your",
      "The last step comes off first",
+     "first, like taking",
+     "shoes before your",
      "So first we",
-     "and then we",
+     "from y, and",
+     "divide the whole",
+     "three by two",
      "The inverse is",
-     "three, over two"
+     "bracket, y minus"
     ]
    },
    {
@@ -63,17 +70,21 @@
     ]
    },
    {
-    "say": "One more example. Diamond of x is three x minus four. Its steps are times three, then minus four. So the inverse is plus four first, then divide by three. y plus four, over three. Let's check with five. Three times five is fifteen, and fifteen minus four is eleven. Eleven plus four is fifteen, and fifteen over three is five. Back to five.",
+    "say": "One more example. Diamond of x is three x minus four. Its steps are times three, then minus four. Again, y is the result we want to undo. So the inverse adds four first, and then divides the whole y plus four by three. That's the whole bracket, y plus four, over three. Let's check with five. Three times five is fifteen, and fifteen minus four is eleven. Eleven plus four is fifteen, and fifteen over three is five. Back to five.",
     "at": [
      "One more example",
      "Diamond of x",
      "x minus four",
      "Its steps are",
      "then minus four",
+     "Again, y is",
+     "we want to",
      "So the inverse",
-     "four first, then",
-     "y plus four",
-     "Let's check with",
+     "first, and then",
+     "whole y plus",
+     "That's the whole",
+     "plus four, over",
+     "check with five",
      "Three times five",
      "and fifteen minus",
      "Eleven plus four",

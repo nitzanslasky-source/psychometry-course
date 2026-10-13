@@ -4985,6 +4985,52 @@
           ]
         ]
       }
+    },
+    "operation-patterns": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "2.2": [
+          [
+            "the whole bracket, y minus three, over two",
+            "(y − 3)/2"
+          ],
+          [
+            "divide the whole y minus three by two",
+            "divide the whole y − 3 by 2"
+          ]
+        ],
+        "2.4": [
+          [
+            "five point five minus three",
+            "5.5 − 3"
+          ]
+        ],
+        "2.5": [
+          [
+            "the whole bracket, y plus four, over three",
+            "(y + 4)/3"
+          ],
+          [
+            "divides the whole y plus four by three",
+            "divides the whole y + 4 by 3"
+          ]
+        ]
+      }
+    },
+    "solve-q-546": {
+      "paras": [],
+      "disp": [],
+      "recorded_when_published": false,
+      "scope_replacements": {
+        "1.1": [
+          [
+            "When x is two or more, diamond of x is nine minus diamond of, in brackets, x minus two",
+            "When x ≥ 2, diamond of x = 9 − diamond of (x − 2)"
+          ]
+        ]
+      }
     }
   }
 }
