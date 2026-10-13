@@ -72,7 +72,7 @@
     ]
    },
    {
-    "say": "B cancels in the subtraction, so use an easy digit, two. That gives six hundred twenty-one and its reversal, a hundred twenty-six. A is six and C is one, so A is greater than C and C is not zero. Six hundred twenty-one minus a hundred twenty-six is four hundred ninety-five. It fits every given, so choice number three is our answer. We can stop without trying more digit pairs. Okay. I'll see you in the next question.",
+    "say": "B cancels in the subtraction, so use an easy digit, two. That gives six hundred twenty-one and its reversal, a hundred twenty-six. A is six and C is one, so A is greater than C and C is not zero. Six hundred twenty-one minus a hundred twenty-six: taking away a hundred twenty-one leaves five hundred, and five more leaves four hundred ninety-five. It fits every given, so choice number three is our answer. We can stop without trying more digit pairs. Okay. I'll see you in the next question.",
     "at": [
      "That gives six hundred twenty-one",
      "choice number three is our answer"

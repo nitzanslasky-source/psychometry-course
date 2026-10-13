@@ -495,7 +495,7 @@ What is new compared with §9:
 - R15 is approved.
 - Topic 51 is recorded by her.
 
-## SCRIPT-WRITING CHECKLIST (R1-R35)
+## SCRIPT-WRITING CHECKLIST (R1-R36)
 
 Check every AI script line by line. The numbers in brackets are evidence from §1-9.
 
@@ -581,6 +581,14 @@ Check every AI script line by line. The numbers in brackets are evidence from §
   - Build powers from the ones the student knows (3³ = 27, times 3 is 3⁴ = 81) instead of writing out long products.
   - Stop as soon as the result is clear: "81 times 3 already passes two digits, so the exact number doesn't matter."
   - After three choices are out, the fourth needs no check of its own (in the lesson, a check is fine only when it teaches something, R24).
+- **R36. Exam-level mental math only; anything bigger gets a fast way said aloud, or is avoided** (teacher, 2026-10-13, on solve-q-517: "sometimes you expect students to know big calculations that aren't really expected in the exam, like 26 squared ... So either show how you calculate it fast, or change the numbers so we won't have to calculate something so big, or change the method and show a way to rule out the rest").
+  - **Exam-level = what a student may use with no explanation:** times tables to 10 (12 × 12 at most); multiplying by 10, 100 and halving; squares to 15, plus the round ones (20² = 400, 25² = 625, 30² = 900 ...) and 16² = 256 = 2⁸; powers of 2 to 2¹⁰ = 1024, 3⁴ = 81, 5³ = 125; small cubes (to 5³, 6³ = 216 when needed); simple fractions and percents (½, ⅓, ¼, ⅕, 10%, 25%, 50%).
+  - **Evidence.** Real NITE exams 2019–2026 (`real_exam/quant_real.md`): the digit puzzles use 11² = 121 (2026 spring, A1 × A1 = 1BB), "aᵃ is a two-digit number" is 3³ = 27 against 4⁴ = 256, and 35A × 4B = 15CC5 (2019 spring) is meant for parity / the last digit, never to be multiplied out. Her Hebrew course: "the numbers here are not too big ... we even need to know 15² and 14² by heart" (01-Algebra subtitles 2948-2954), and in the same question, "if we don't know 15², we all need to know that the result ends in 5" (units digit instead of the square). In the letters lesson's sample question (AB × AB = 2CB, lines 18535-18596) she lists 15², 16², 17² as known, adds at once "and if not, we need to estimate the size: 20² is already 400", and her insight method finds the digit "without having calculated" (18593). Bigger products she splits aloud: 15 × 55 = 10 × 55 + 5 × 55, "and 5 × 55 is exactly half of 10 × 55" (18624-18630). Geometry: "instead of 13² minus 5² and calculating, notice the triple 5, 12, 13" (03-Geometry 1029).
+  - **Anything beyond** (two 2-digit numbers multiplied, a non-round square above 16, a 3-digit multiplication or division, a big power, a long sum), in this order of preference:
+    - (a) **avoid it with the method**, when the Hebrew does that kind of thing: rule choices out by the last digit, by parity, by a size estimate with round numbers (10 · 10 = 100, 20² = 400, 30² = 900), or by logic (R35);
+    - (b) **show a fast way, said aloud with its steps**: split into tens and units (26 · 26 = 26 · 20 + 26 · 6; 55 · 17 = 55 · 10 + 55 · 7); a number ending in 5, squared (25²: 2 · 3 = 6, then 25, so 625); the next square from a known one (26² = 25² + 25 + 26 = 676); times 11 = times 10 plus the number (63 · 11 = 630 + 63); near a round number (29 · 44 = 30 · 44 − 44; 621 − 126 = 621 − 121 − 5);
+    - (c) **change the numbers**: same question type and trap with smaller numbers, still different from the Hebrew numbers (memory: questions differ from the Hebrew), the answer-choice order kept (`_choice_order.py`), and the stem, choices, written solution and visuals changed together.
+  - A calculation that is already shown with a fast way (e.g. 23 · 37 = 23 · 30 + 23 · 7) is fine. In a video she has already read, a missing fast way is listed for the teacher to decide on a re-read, not changed silently (see Recorded readings).
 - **Recorded readings** (teacher, 2026-10-11): once she has read a script in the Reading Studio, change its paragraphs only where it matters for learning (a first-time idea not explained, a wrong or missing reason). Small wording rules (R33, R34) are not worth a re-read. Every changed paragraph is flagged "needs re-read" in the Reading Studio.
 
 ### Topic 13: where each idea is first taught (R29 / R32)

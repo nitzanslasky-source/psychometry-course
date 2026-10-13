@@ -245,3 +245,12 @@ Nothing in topic 18 is recorded. Lost and restored (spoken lines only, no board 
 - **`solve-q-514` "Algebraic form"** (+≈13 s): the teacher's advice on the route - strong math students like the algebraic form; on the exam two quick numbers are usually faster.
 Lesson 2.4 → 2.9 min, q-514 1.0 → 1.3 min. Notes: added_notes.json "lines".
 `math_check.py 18 32`: PROBLEMS 0, WARNINGS 0, LAYOUT 0. Rendered and looked at.
+
+## 2026-10-13 R36 big-calculation pass (exam-level mental math)
+Teacher: "you expect students to know big calculations that aren't really expected in the exam, like 26 squared". Rule R36 in
+TEACHING_STYLE_GUIDE.md. Unrecorded videos only (spoken text in `_codex_script_clarity_20261012.json` revised texts; cue anchors kept):
+- solve-q-r26-t18-03 p4: 13·17 = 221 → size estimate "13·17 is more than 10·10 = 100" (board item r2 in `_ai_vis_t18.py` → `13·17 > 10·10 = 100`).
+- solve-q-518 p5: 7·55 = 385 now said in pieces (7·50 = 350, 7·5 = 35), like the Hebrew 15·55 = 10·55 + half.
+- solve-q-r26-t18-02 slide 2 p2: 621 − 126 said as 621 − 121 = 500, 5 less = 495.
+- r26-t18-summary slide 5 p1: 444 = 4·111 = 4·3·37 = 37·12.
+- solve-q-517 is recorded (2026-10-13): NOT changed; proposed re-read text is in the R36 report.

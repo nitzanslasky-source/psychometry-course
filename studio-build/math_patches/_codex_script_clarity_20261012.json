@@ -7968,7 +7968,7 @@
         "slide": 0,
         "paragraph": 4,
         "original": "Which case? I want to test five, so I choose three odd numbers with no five inside, seven, nine and eleven. Seven times nine is sixty-three, and times eleven is six ninety-three.",
-        "revised": "Let's test whether the product must divide by five. Choose three odd numbers in a row that do not include a multiple of five: seven, nine and eleven. Seven times nine is sixty-three, and sixty-three times eleven is six hundred ninety-three.",
+        "revised": "Let's test whether the product must divide by five. Choose three odd numbers in a row that do not include a multiple of five: seven, nine and eleven. Seven times nine is sixty-three, and sixty-three times eleven is six hundred ninety-three: ten times sixty-three is six hundred thirty, plus one more sixty-three.",
         "cue_anchors": [
           {
             "index": 0,
@@ -8168,7 +8168,7 @@
         "slide": 0,
         "paragraph": 6,
         "original": "Now careful, the trap. Three, five and seven, a hundred five, or five, seven and nine, three fifteen, both divide by fifteen, because each has a five inside. So choose the second case on purpose, avoiding the factor you test.",
-        "revised": "Now careful with your choice of numbers. Three times five times seven is a hundred five. Five times seven times nine is three hundred fifteen. Both divide by fifteen because they include a five in the multiplication. They would not rule out fifteen. That's why we chose seven, nine and eleven for the second test.",
+        "revised": "Now careful with your choice of numbers. Three times five times seven is a hundred five. Five times seven times nine is thirty-five times nine. Ten times thirty-five is three hundred fifty, and one thirty-five less is three hundred fifteen. Both divide by fifteen because they include a five in the multiplication. They would not rule out fifteen. That's why we chose seven, nine and eleven for the second test.",
         "cue_anchors": [
           {
             "index": 0,
@@ -16550,7 +16550,7 @@
         "slide": 0,
         "paragraph": 4,
         "original": "Now just multiply, fifty-five times seventeen, in easy pieces. Ten times fifty-five is five fifty, and seven times fifty-five is three eighty-five. Together, nine thirty-five. And it really ends in five.",
-        "revised": "Now A A is fifty-five. Multiply the whole number by seventeen. Ten times fifty-five is five hundred fifty. Seven times fifty-five is three hundred eighty-five. Add them to get nine hundred thirty-five, which ends in five as required.",
+        "revised": "Now A A is fifty-five. Multiply the whole number by seventeen. Ten times fifty-five is five hundred fifty. Seven times fifty-five is three hundred eighty-five: seven times fifty is three hundred fifty, and seven times five is thirty-five. Add them to get nine hundred thirty-five, which ends in five as required.",
         "cue_anchors": [
           {
             "index": 0,
@@ -17491,7 +17491,7 @@
         "slide": 1,
         "paragraph": 1,
         "original": "And four ninety-five can really happen. With A minus C five, six twenty-one minus one twenty-six is four ninety-five. Choice number three. [pause] Okay. I'll see you in the next question.",
-        "revised": "B cancels in the subtraction, so use an easy digit, two. That gives six hundred twenty-one and its reversal, a hundred twenty-six. A is six and C is one, so A is greater than C and C is not zero. Six hundred twenty-one minus a hundred twenty-six is four hundred ninety-five. It fits every given, so choice number three is our answer. We can stop without trying more digit pairs. Okay. I'll see you in the next question.",
+        "revised": "B cancels in the subtraction, so use an easy digit, two. That gives six hundred twenty-one and its reversal, a hundred twenty-six. A is six and C is one, so A is greater than C and C is not zero. Six hundred twenty-one minus a hundred twenty-six: taking away a hundred twenty-one leaves five hundred, and five more leaves four hundred ninety-five. It fits every given, so choice number three is our answer. We can stop without trying more digit pairs. Okay. I'll see you in the next question.",
         "original_cues": [
           [
             "point",
@@ -17633,7 +17633,7 @@
         "slide": 0,
         "paragraph": 3,
         "original": "Fact two, the size. The smallest is thirteen times seventeen, two twenty-one. So ninety-one is too small. Out.",
-        "revised": "Now check the smallest possible product. The numbers are two-digit numbers, so the smallest they can be are thirteen and seventeen. Thirteen times seventeen is two hundred twenty-one. Ninety-one is smaller than that, so it cannot be the product. This choice is out.",
+        "revised": "Now check the smallest possible product. The numbers are two-digit numbers, so the smallest they can be are thirteen and seventeen. We don't need the exact product: thirteen times seventeen is more than ten times ten, which is a hundred. Ninety-one is smaller than that, so it cannot be the product. This choice is out.",
         "cue_anchors": [
           {
             "index": 0,
@@ -17980,7 +17980,7 @@
         "slide": 4,
         "paragraph": 0,
         "original": "A A A is a hundred eleven times A, so it divides by three and by thirty-seven. Four forty-four is thirty-seven times twelve.",
-        "revised": "The repeated-digit number A A A is a hundred eleven times A. So it is divisible by three and thirty-seven. Four hundred forty-four is thirty-seven times twelve.",
+        "revised": "The repeated-digit number A A A is a hundred eleven times A. So it is divisible by three and thirty-seven. Four hundred forty-four is four times a hundred eleven, so it's four times three times thirty-seven, which is thirty-seven times twelve.",
         "cue_anchors": [
           {
             "index": 2,

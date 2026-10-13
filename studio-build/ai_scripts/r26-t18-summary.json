@@ -105,7 +105,7 @@
   ],
   [
    {
-    "say": "The repeated-digit number A A A is a hundred eleven times A. So it is divisible by three and thirty-seven. Four hundred forty-four is thirty-seven times twelve.",
+    "say": "The repeated-digit number A A A is a hundred eleven times A. So it is divisible by three and thirty-seven. Four hundred forty-four is four times a hundred eleven, so it's four times three times thirty-seven, which is thirty-seven times twelve.",
     "at": [
      "A A A is a hundred eleven",
      "hundred eleven times",

@@ -33,7 +33,7 @@
     ]
    },
    {
-    "say": "Now check the smallest possible product. The numbers are two-digit numbers, so the smallest they can be are thirteen and seventeen. Thirteen times seventeen is two hundred twenty-one. Ninety-one is smaller than that, so it cannot be the product. This choice is out.",
+    "say": "Now check the smallest possible product. The numbers are two-digit numbers, so the smallest they can be are thirteen and seventeen. We don't need the exact product: thirteen times seventeen is more than ten times ten, which is a hundred. Ninety-one is smaller than that, so it cannot be the product. This choice is out.",
     "at": [
      "the smallest they",
      "thirteen times seventeen",

@@ -254,3 +254,6 @@ Audit only, no change. The 2026-10-05 cut touched only our added lesson "Sums of
 
 ## 2026-10-11 mirror test removed (teacher decision)
 The "mirror test" was removed from the course (topic 13 addition, not in the Hebrew course). Function `remove_mirror(M)` (runs LAST, helper `_no_mirror.py`) drops its written method lines from q-457, q-476; the remaining worked solution and plug-in lines already reach the answer.
+
+## 2026-10-13 R36 big-calculation pass
+solve-q-r26-t16-04 (unrecorded), overlay revised texts: p5 63·11 = 693 said as 630 + 63; p7 5·7·9 = 35·9 = 350 − 35 = 315.

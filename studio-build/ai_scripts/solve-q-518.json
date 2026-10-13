@@ -45,7 +45,7 @@
     ]
    },
    {
-    "say": "Now A A is fifty-five. Multiply the whole number by seventeen. Ten times fifty-five is five hundred fifty. Seven times fifty-five is three hundred eighty-five. Add them to get nine hundred thirty-five, which ends in five as required.",
+    "say": "Now A A is fifty-five. Multiply the whole number by seventeen. Ten times fifty-five is five hundred fifty. Seven times fifty-five is three hundred eighty-five: seven times fifty is three hundred fifty, and seven times five is thirty-five. Add them to get nine hundred thirty-five, which ends in five as required.",
     "at": [
      "by seventeen. Ten",
      "Ten times fifty-five",

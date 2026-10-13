@@ -801,7 +801,7 @@ video('solve-q-r26-t18-02', 'solution', qid='q-r26-t18-02', slides=[
 # NEW: only the units digits decide the units digit of a product (3·7 = 21 -> 1); the size of a product (13·17 = 221 to
 # 93·97, about 9,000).  Method: units digit and size (with a real example).
 r1 = I('r1', '$3\\cdot7=21$: $\\ $ends in $1$', hand='3·7 = 21 :    ends in 1')
-r2 = I('r2', 'Smallest: $\\ 13\\cdot17=221$', hand='Smallest :    13·17 = 221')
+r2 = I('r2', 'Smallest: $\\ 13\\cdot17>10\\cdot10=100$', size=32, hand='Smallest :    13·17 > 10·10 = 100')
 r3 = I('r3', 'Largest: $\\ 93\\cdot97<100\\cdot100=10{,}000$', size=32, hand='Largest :    93·97 < 100·100 = 10000')
 r4 = I('r4', '$23\\cdot37=690+161=851$ ✓', hand='23·37 = 690 + 161 = 851   ✓')
 video('solve-q-r26-t18-03', 'solution', qid='q-r26-t18-03', slides=[
