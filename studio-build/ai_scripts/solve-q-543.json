@@ -43,13 +43,22 @@
     ]
    },
    {
-    "say": "Choice number three, five x plus five. Five times three is fifteen, and fifteen plus five is twenty. Twenty is not twenty-one. So this rule cannot turn three into twenty-one, and it cannot be the definition. Choice number three is our answer. That one failure is all the question asks for, so we can stop here without checking choice number four. [pause] Okay. I'll see you in the next question.",
+    "say": "Choice number three, five x plus five. Five times three is fifteen, and fifteen plus five is twenty. Twenty is not twenty-one. So this rule cannot turn three into twenty-one, and it cannot be the definition. Choice number three is our answer.",
     "at": [
      "number three, five",
      "Five times three is fifteen",
      "and fifteen plus",
-     "Choice number three is our answer",
-     "the question asks"
+     "Choice number three is our answer"
+    ]
+   },
+   {
+    "say": "In the exam, you'd stop here, because we already found the one that fails. But to learn, let's check the last one too. Choice number four, eight x minus three. Eight times three is twenty-four, and twenty-four minus three is twenty-one. So it could be the rule, and only choice number three can't. [pause] Okay. I'll see you in the next question.",
+    "at": [
+     "number four, eight",
+     "Eight times three is twenty-four",
+     "and twenty-four minus",
+     "So it could be the rule",
+     "number three can't"
     ]
    }
   ]

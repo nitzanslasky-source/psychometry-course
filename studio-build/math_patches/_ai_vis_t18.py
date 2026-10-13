@@ -674,14 +674,16 @@ video('solve-q-519', 'solution', qid='q-519', slides=[
 ])
 
 # ------------------------------------------------------------------------------------------------ q-520 (Hebrew Q6)
-# NEW: a digit puzzle in words: write x = 10T + U and collect (6T = U³ + 3U); a size bound (6T <= 54 -> U small).
-# REMINDER: 10A + B (camera lesson, q-514).  Hebrew: the math, plugging in the answers.
+# NEW: a digit puzzle in words: write x = 10T + U and collect (6T = U³ + 3U); a size bound (6T <= 54) and why U = 0 and
+# U >= 4 are out (the value only grows).  REMINDER: 10A + B (camera lesson, q-514).  Hebrew: the math, plugging in the
+# answers.  2026-10-13 full rewrite to the Codex review standard (the teacher re-records the whole video).
 l1 = I('l1', '$x=10T+U$', hand='x = 10T + U')
-l2 = I('l2', '$10T+U=U^3+4(T+U)$', hand='10T + U = U^3 + 4(T + U)')
-l3 = I('l3', '$6T=U^3+3U$', hand='6T = U^3 + 3U')
+l2 = I('l2', '$x=U^3+4(T+U)$', hand='x = U^3 + 4(T + U)')
+l3 = I('l3', '$10T+U=U^3+4T+4U$', hand='10T + U = U^3 + 4T + 4U')
+l3b = I('l3b', '$6T=U^3+3U$', hand='6T = U^3 + 3U')
 l4 = I('l4', '$U=1,2,3,4$: $\\ 4,\\ 14,\\ \\hl{u}{36},\\ 76$', hand='U = 1, 2, 3, 4 :    4,   14,   \\hl{u}{36},   76')
 l5 = I('l5', '$6T=36$: $\\ T=6$', hand='6T = 36 :    T = 6')
-m1 = I('m1', '$T=7$: $\\ 70+U=U^3+28+4U$: $\\ U^3+3U=42$ ✗', size=30, hand='T = 7 :    70 + U = U^3 + 28 + 4U :    U^3 + 3U = 42   ✗')
+m1 = I('m1', '$T=7$: $\\ U^3+3U=42$ ✗', size=30, hand='T = 7 :    U^3 + 3U = 42   ✗')
 m2 = I('m2', '$T=5$: $\\ 30$ ✗ $\\quad T=4$: $\\ 24$ ✗', size=30, hand='T = 5 :   30  ✗      T = 4 :   24  ✗')
 m3 = I('m3', '$T=6$: $\\ U^3+3U=36$: $\\ U=3$, $\\ 63$', size=30, hand='T = 6 :    U^3 + 3U = 36 :    U = 3,    63')
 m4 = I('m4', '$27+4\\cdot9=63$ ✓', hand='27 + 4·9 = 63   ✓')
@@ -689,27 +691,44 @@ video('solve-q-520', 'solution', qid='q-520', slides=[
     S('Method 1 · The algebraic form',
       L("x is a two-digit number. x is equal to the cube of its units digit, plus four times the sum of its digits. What is "
         "the tens digit of x?", pt('stem', 'x is a two-digit', 'hl', 7.0), voice='calm', pause=0.5),
-      L("A digit puzzle in words, with no columns. [short pause] We'll solve it two ways, with the algebraic form, and then "
-        "plugging in the answers.", pt('stem', 'A digit puzzle in words')),
-      L("[short pause] Let's start with the algebraic form. The tens digit is T and the units digit is U, so x is ten T plus "
-        "U. And the condition, x equals U cubed, plus four times T plus U.", show(l1, 'x is ten T plus U'), show(l2, 'And the condition')),
-      L("Open the bracket, four T plus four U. Take four T and one U away from both sides. Six T equals U cubed plus three U.",
-        show(l3, 'Six T equals')),
-      L("Six T is at most six times nine, fifty-four, so U is small. U one gives one plus three, four. U two, eight plus six, "
-        "fourteen. U three, twenty-seven plus nine, thirty-six. U four, sixty-four plus twelve, seventy-six, too big. Only "
-        "thirty-six is six times a digit.", show(l4, 'U one gives')),
-      L("Six T is thirty-six, so T is six. Choice number three is our answer.", show(l5, 'Six T is thirty-six'),
-        mk('tick', 'choice 3', 'Choice number three is our answer'))),
-    S('Method 2 · Plugging in the answers',
-      L("[pause] Another way, plugging in the answers. What's different? We start from each tens digit they offer. Seven? "
-        "Then x is seventy plus U, and the condition is U cubed, plus twenty-eight, plus four U. Take twenty-eight and U "
-        "away, U cubed plus three U is forty-two. U three gives thirty-six, U four gives seventy-six. No digit works. Out.",
-        show(m1, 'Seven? Then x'), mk('cross', 'choice 1', 'No digit works. Out')),
-      L("The same way, five needs thirty, and four needs twenty-four. No digit gives those. Out.", show(m2, 'five needs thirty'),
-        mk('cross', 'choice 2', 'five needs thirty'), mk('cross', 'choice 4', 'and four needs')),
-      L("Six needs thirty-six, and U three gives exactly that. So x is sixty-three. Three cubed is twenty-seven, and four "
-        "times nine is thirty-six. Twenty-seven plus thirty-six is sixty-three. Choice number three. [pause] Okay. I'll see you in the next question.",
-        show(m3, 'Six needs thirty-six'), show(m4, 'Three cubed is'), mk('tick', 'choice 3', 'thirty-six is sixty-three'))),
+      L("This digit puzzle is written in words, so first we turn the words into an equation. We need the tens digit of x. "
+        "[short pause] We'll solve it two ways, writing the number with its digits, and then testing the answer choices.",
+        pt('stem', 'This digit puzzle is written in words')),
+      L("[short pause] Let's call the tens digit T and the ones digit U. A two-digit number is ten times its tens digit, "
+        "plus its ones digit, so x is ten T plus U. The sum of its digits is T plus U.", show(l1, 'so x is ten T plus U')),
+      L("Now the words of the question. The cube of the units digit is U cubed. Four times the sum of the digits is four "
+        "times the whole bracket, T plus U. So x equals U cubed, plus four times the bracket T plus U. The four multiplies "
+        "both digits, not just T.", show(l2, 'So x equals U cubed')),
+      L("Both expressions equal x, so we set them equal. Ten T plus U equals U cubed plus four T plus four U. Now subtract "
+        "four T and U from both sides. On the left, ten T minus four T leaves six T. On the right, four U minus U leaves "
+        "three U. So six T equals U cubed plus three U.", show(l3, 'so we set them equal'), show(l3b, 'So six T equals'))),
+    S('Method 1 · The algebraic form',
+      L("T is a digit, so it's at most nine, and six T is at most fifty-four. U can't be zero, because then U cubed plus "
+        "three U is zero, so six T is zero and T is zero, and a two-digit number can't start with zero. So we test U from "
+        "one."),
+      L("U is one gives one plus three, which is four. U is two gives eight plus six, which is fourteen. U is three gives "
+        "twenty-seven plus nine, which is thirty-six. U is four gives sixty-four plus twelve, which is seventy-six, already "
+        "more than fifty-four. A bigger U only makes U cubed plus three U bigger, so we can stop.", show(l4, 'U is one gives')),
+      L("Four and fourteen are not six times a digit, but thirty-six is. Six T is thirty-six, so T is six. Choice number "
+        "three is our answer.", show(l5, 'Six T is thirty-six'), mk('tick', 'choice 3', 'Choice number three is our answer')),
+      sb='Method 1 · The algebraic form'),
+    S('Method 2 · Testing the answers',
+      L("[pause] Now let's test the answer choices. Each choice gives a possible tens digit T, and then we need a digit U "
+        "that fits the words of the question. Start with choice number one, seven. Then x is seventy plus U, and its digit "
+        "sum is seven plus U. So seventy plus U must equal U cubed plus twenty-eight plus four U. Subtract twenty-eight and "
+        "U from both sides, and U cubed plus three U must be forty-two.", show(m1, 'U cubed plus three U must be forty-two')),
+      L("U is three gives twenty-seven plus nine, which is thirty-six, and U is four gives sixty-four plus twelve, which is "
+        "seventy-six. As U grows, U cubed plus three U only grows, so it jumps from thirty-six straight to seventy-six. "
+        "Forty-two is in between, so no digit U works, and choice number one is out.", mk('cross', 'choice 1', 'and choice number one is out')),
+      L("The other tens digits work the same way. T is five needs U cubed plus three U to be thirty, and T is four needs it "
+        "to be twenty-four. U is two gives only fourteen, and U is three already gives thirty-six. Thirty and twenty-four "
+        "are in between, so no digit works, and choice numbers two and four are out.", show(m2, 'T is five needs'),
+        mk('cross', 'choice 2', 'Thirty and twenty-four'), mk('cross', 'choice 4', 'choice numbers two and four are out')),
+      L("T is six needs thirty-six, and U is three gives exactly that. So x is sixty-three. Let's check it in the words of "
+        "the question. The units digit is three, and three cubed is twenty-seven. The digit sum is nine, and four times "
+        "nine is thirty-six. Twenty-seven plus thirty-six is sixty-three. It fits, so choice number three is our answer. "
+        "[pause] Okay. I'll see you in the next question.", show(m3, 'T is six needs thirty-six'),
+        show(m4, "Let's check it in the words"), mk('tick', 'choice 3', 'It fits, so choice number three'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t18-01 (added)

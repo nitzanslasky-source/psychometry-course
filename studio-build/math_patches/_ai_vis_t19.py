@@ -500,6 +500,7 @@ c1 = I('c1', 'For example $\\ \\blacklozenge(x)=7x$: $\\ 7\\cdot3=21$', size=28,
 c2 = IH('c2', '(1) $3^3-6=27-6=21$ ✓', size=30)
 c3 = IH('c3', '(2) $3\\cdot(3+4)=3\\cdot7=21$ ✓', size=30)
 c4 = IH('c4', '(3) $5\\cdot3+5=15+5=20$ ✗', size=30)
+c5 = IH('c5', '(4) $8\\cdot3-3=24-3=21$ ✓', size=30)
 video('solve-q-543', 'solution', qid='q-543', slides=[
     S('Plugging in the answers',
       L("Given: diamond of three is equal to twenty-one. Which of the following cannot be the definition of the operation "
@@ -517,9 +518,11 @@ video('solve-q-543', 'solution', qid='q-543', slides=[
         mk('cross', 'choice 2', 'so choice number two is out')),
       L("Choice number three, five x plus five. Five times three is fifteen, and fifteen plus five is twenty. Twenty is not "
         "twenty-one. So this rule cannot turn three into twenty-one, and it cannot be the definition. Choice number three is "
-        "our answer. That one failure is all the question asks for, so we can stop here without checking choice number "
-        "four. [pause] Okay. I'll see you in the next question.", show(c4, 'Five times three is fifteen'),
-        mk('tick', 'choice 3', 'Choice number three is our answer'))),
+        "our answer.", show(c4, 'Five times three is fifteen'), mk('tick', 'choice 3', 'Choice number three is our answer')),
+      L("In the exam, you'd stop here, because we already found the one that fails. But to learn, let's check the last one "
+        "too. Choice number four, eight x minus three. Eight times three is twenty-four, and twenty-four minus three is "
+        "twenty-one. So it could be the rule, and only choice number three can't. [pause] Okay. I'll see you in the next "
+        "question.", show(c5, 'Eight times three is twenty-four'), mk('cross', 'choice 4', 'So it could be the rule'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ q-r26-t19-01 (added)
