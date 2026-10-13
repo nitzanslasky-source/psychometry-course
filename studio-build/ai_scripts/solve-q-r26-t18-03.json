@@ -11,31 +11,18 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "We multiply two two-digit numbers with some unknown digits. We do not need to find A and B separately. [short pause] We'll use the product's last digit and its possible size.",
-    "at": [
-     "two two-digit numbers",
-     "find A and B",
-     "We'll use the",
-     "product's last digit",
-     "its possible size"
-    ]
-   },
+   "We multiply two two-digit numbers with some unknown digits. We do not need to find A and B separately. [short pause] We'll use the product's last digit and its possible size.",
    {
     "say": "[short pause] A three ends in three, and B seven ends in seven. Only those ones digits decide the product's last digit. Three times seven is twenty-one, so the product must end in one. Eight hundred fifty-seven ends in seven, so that choice is out.",
     "at": [
-     "ones digits decide",
-     "digit. Three times",
      "Three times seven",
      "so the product",
-     "one. Eight hundred",
      "ends in seven, so"
     ]
    },
    {
     "say": "Now check the smallest possible product. The numbers are two-digit numbers, so the smallest they can be are thirteen and seventeen. We don't need the exact product: thirteen times seventeen is more than ten times ten, which is a hundred. Ninety-one is smaller than that, so it cannot be the product. This choice is out.",
     "at": [
-     "the smallest they",
      "thirteen times seventeen",
      "Ninety-one is",
      "smaller than that"
@@ -46,8 +33,6 @@
     "at": [
      "ninety-three and",
      "a hundred times",
-     "ten thousand. So",
-     "and one is",
      "too large. That"
     ]
    },

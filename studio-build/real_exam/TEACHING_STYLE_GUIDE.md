@@ -878,3 +878,44 @@ Z for parallel lines (30; geo 109-124) · gold 30-60-90 and silver "borekas" 45-
 - Topic 18: every column layout (q-512, q-513, q-515, q-516 both layouts, q-518, q-519, q-r26-t18-01) is the COLS figure: a fixed grid in the slide's math font (MathJax outlines, `_mathjax_glyphs.json`), ones under ones, the operator in its own cell, the bar above the result; built rows → bar → result at the words, the column being discussed boxed (each layer is a full snapshot, so the box moves), carries small above the column, the digits found so far in teal under the figure; continuation slides show the figure again with what was found. Renderer (studio_handwrite.py): a positioned figure is pushed below the question and fitted above the choices, and a layer with `of` is drawn at its own figure even when other items come in between.
 - Topic 19: written with SLOT / CHAIN from the start.
 - Carry-over boxes: 25 slides in topics 13-18 (list `CARRY` in `_method_visuals.py`), e.g. q-428 keeps "X = 2, 5, 8" while it checks divisibility by 2.
+
+## Codex review standard (2026-10-13)
+
+Source: Codex's script review of studio lessons 111-138 (…/Codex/2026-10-11/…/outputs/Claude-script-review-2026-10-13.txt), applied to lessons 112-138 on 2026-10-13. Follow it from the FIRST draft of every new topic, together with R1-R36, the Clarity style and the Method visuals library above.
+
+1. Connect the relevant given to the next action. Explain what the number or letter represents, what we are checking, and why that check answers the question. A student should not have to infer which group, expression, fraction, or input you mean. The students already see and attempt the question before the video, so the explanation does not need a second full retelling of the story.
+
+2. Explain the real reasoning, not an abstract label. Avoid unexplained phrases such as tags, factor inventory, selected factors fit inside, pull it out, or flip its part. Write a concrete mathematical sentence instead: "Both terms are multiples of 3, so their sum is also a multiple of 3." If using a normal mathematical term, explain what it means in this calculation. Do not replace one vague phrase with a longer vague phrase.
+
+3. Add clarity, not padding. Do not put a two-sentence roadmap before a paragraph that immediately gives the same roadmap and calculation. Introduce a method once. Explain a trap at the relevant step, not three times before and after it. Read each changed paragraph WITH its neighbors; a paragraph that sounds clear alone may still repeat the surrounding video.
+
+4. Keep the exam strategy efficient. Start with one easy allowed value or pair. Check the choices immediately. Cross out failed claims immediately. Only choose another simple example if the remaining choices need it. Do not require two or three examples merely because the expression includes division. Do not choose obscure, magically perfect numbers just to eliminate every distractor. Ordinary small values are fine even when they initially eliminate only one or two choices.
+
+5. Use the question's exact logical request.
+   - Always / necessarily / must: a failing allowed example rules out a claim. Working examples alone do not establish a universal rule. In a single-answer multiple-choice question, eliminating all other choices can settle the answer.
+   - Not always / not necessarily: stop when an allowed counterexample makes the relevant claim fail. No need to test the remaining choices afterward, unless an explicitly separate teaching explanation genuinely adds something.
+   - Could be: one fully checked working case is sufficient for a proposed answer; a pattern that is only necessary is not automatically sufficient.
+   - Most precise description: if several choices all permit the observed result, another identical type of result may not distinguish them. Use the existing rule to decide which other outcomes are impossible.
+   - A choice listing multiple possible solutions must be correct as a whole; one working value does not validate extra values that fail.
+
+6. Keep legitimate shortcuts. Do not calculate a large power if parity, units digits, or an already-established size bound decides the issue. But state the comparison that makes the shortcut valid. A heuristic that merely sounds plausible is not a replacement for the needed calculation.
+
+7. Respect the givens at every step: positive, integer, nonzero, unequal, leading digit, range, and operation domain. Different letters do not automatically mean unequal values. Conversely, if the question requires equality, do not tell students never to choose equal values. Every nested operation's intermediate input must lie in its domain.
+
+8. Use natural spoken English. No title fragments such as "Michal." No "a hard one," "technically," "a sharp insight," "lazy number," or unexplained software metaphors. These labels do not help the student know what to do. Natural transitions like "Now let's check the other condition" are fine. Use complete sentences where the reasoning needs explaining, not compressed notes.
+
+9. Show math as math in the prompter. Preserve the distinction between spoken narration and display text. Use (x+1)², 9−◆(x−2), 3/(a+1), (9n²−1)/4, and √(8x²+y²), with grouping that matches the speech. Check counts versus digit descriptions: "60 three-digit numbers" is not "a 63-digit number." Never silently change spoken values while formatting. Fractions and negative bases need explicit brackets where appropriate.
+
+10. Keep the original fonts and established design. Match graphics to the actual explanation. Use the SLOT picture when replacing inputs and the CHAIN picture when a result becomes the next input; reveal only the step being explained. Make highlights target the particular given or expression being discussed and hold them steadily, rather than flashing the whole question repeatedly. Preserve the current original styling. Do not add a new signature method graphic for a technique the script does not teach.
+
+11. Preserve every useful existing method. Do not invent an extra method just to have two, or convert a shortcut into an unnecessarily formal proof. A second method can be shorter, but it must still make sense when heard after the first. If it reuses a computed value, say that clearly instead of pretending it starts independently.
+
+### Next topics
+
+Apply this standard at first draft, not as a blanket sentence-prefix pass afterward. Start from the question's decision: what do students need to notice to choose the answer quickly? Explain that decision fully, then show the computation or check. Keep earlier-topic reminders short, teach only the reasoning needed here, and use the topic's established signature visual where relevant. If a paragraph does not resolve a genuine ambiguity or teach a useful decision, do not add it.
+
+### Practical notes from applying it (2026-10-13)
+
+- Prompter display (standard 9): the teleprompter formatter does not know the scope of a spoken bracket such as "the bracket x plus one, squared". Read every changed paragraph's display and add a `scope_replacements` entry in math_patches/_codex_reading_display_20261012.json (key "slide.paragraph", 1-based) whenever grouping is wrong: (x + 1)², (a − b)² + a, (y − 3)/2, √(8x² + y²), 3/(a + 1), 8 − (−8).
+- Highlights (standard 10): the densify pass adds many POINTs; `_method_visuals.calm()` thins them (no header points, no re-points of the lit target, ≥4 s between changes unless she names a choice / a part of the question / a just-written item). Add a new topic's unrecorded lessons to CALM_IDS.
+- Topic-18 lessons are edited through the clarity overlay (original/revised + cue_anchors or reviewed_cues); topic 19+ through the spec itself.

@@ -11,64 +11,29 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "Two operations in one question, the diamond and the hash. [short pause] We'll solve it two ways, the standard way, and then with the shortcut formulas.",
-    "at": [
-     "Two operations in one question",
-     "the diamond and",
-     "We'll solve it",
-     "the standard way",
-     "with the shortcut"
-    ]
-   },
+   "Two operations in one question, the diamond and the hash. [short pause] We'll solve it two ways, the standard way, and then with the shortcut formulas.",
    {
     "say": "[short pause] Inside the hash there are two diamonds. So we calculate both diamonds first, and then the hash works on the two results. That's three calculations. The left diamond is diamond of ten and six, so x is ten and y is six. Ten squared is a hundred. Two times ten times six is a hundred twenty, and it's subtracted. Six squared is thirty-six. A hundred minus a hundred twenty is negative twenty, plus thirty-six is sixteen.",
     "at": [
      "Inside the",
      "Inside the hash there are",
      "So we calculate",
-     "first, and then",
-     "works on the",
-     "That's three calculations",
-     "The left diamond",
-     "of ten and",
-     "x is ten",
      "Ten squared is a hundred",
-     "Two times ten",
-     "is a hundred twenty",
-     "it's subtracted. Six",
-     "A hundred minus",
-     "twenty is negative",
-     "thirty-six is sixteen"
+     "Two times ten"
     ]
    },
    {
     "say": "The right diamond is diamond of five and four. Five squared is twenty-five. Two times five times four is forty, subtracted. Four squared is sixteen. Twenty-five minus forty is negative fifteen, plus sixteen is one.",
     "at": [
-     "The right diamond",
-     "of five and",
      "Five squared is twenty-five",
-     "Two times five",
-     "is forty, subtracted",
-     "Twenty-five minus forty",
-     "fifteen, plus sixteen"
+     "Two times five"
     ]
    },
    {
     "say": "So the left diamond gives sixteen, and the right diamond gives one. These two results are the two inputs of the hash, sixteen first and one second. Now the hash of sixteen and one. Sixteen squared is two hundred fifty-six. Two times sixteen times one is thirty-two. One squared is one. Two hundred fifty-six plus thirty-two is two hundred eighty-eight, plus one is two hundred eighty-nine. Choice number two is our answer.",
     "at": [
-     "So the left",
-     "sixteen, and the",
-     "These two results",
-     "two inputs of",
-     "sixteen first and",
-     "Now the hash",
      "Sixteen squared is",
      "Two times sixteen",
-     "is thirty-two. One",
-     "Two hundred fifty-six plus",
-     "is two hundred eighty-eight",
-     "one is two",
      "Choice number two is our answer"
     ]
    }
@@ -78,35 +43,22 @@
     "say": "[pause] Another way is to recognize the shortcut formulas inside the definitions. x squared minus two x y plus y squared is the formula for x minus y, all squared. And x squared plus two x y plus y squared is x plus y, all squared.",
     "at": [
      "Another way",
-     "the shortcut formulas",
-     "definitions. x squared",
-     "x y plus",
      "is the formula for",
-     "minus y, all",
-     "And x squared",
-     "x y plus y squared is x",
-     "is x plus"
+     "minus y, all"
     ]
    },
    {
     "say": "So diamond of ten and six is ten minus six, which is four, squared, sixteen. Diamond of five and four is five minus four, which is one, squared, one.",
     "at": [
      "is ten minus six",
-     "Diamond of five",
-     "is five minus",
-     "is one, squared"
+     "Diamond of five"
     ]
    },
    {
     "say": "And the hash of sixteen and one is sixteen plus one, which is seventeen, squared. Seventeen squared is seventeen times seventeen. Seventeen times ten is a hundred seventy, and seventeen times seven is a hundred nineteen. Together, two hundred eighty-nine. Choice number two. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "sixteen and one",
      "sixteen plus one",
      "Seventeen squared is",
-     "Seventeen times ten",
-     "hundred seventy, and",
-     "seven is a",
-     "Together, two hundred",
      "Choice number two."
     ]
    }

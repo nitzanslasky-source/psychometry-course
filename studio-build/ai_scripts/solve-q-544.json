@@ -11,17 +11,7 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "Look closely at the rule. The diamond works on two x, not on x. So this is an operation on an expression. [short pause] We'll solve it two ways, matching the input, and then rewriting the rule for any input.",
-    "at": [
-     "The diamond works on two x",
-     "x, not on",
-     "this is an",
-     "two ways, matching",
-     "and then rewriting",
-     "for any input"
-    ]
-   },
+   "Look closely at the rule. The diamond works on two x, not on x. So this is an operation on an expression. [short pause] We'll solve it two ways, matching the input, and then rewriting the rule for any input.",
    {
     "say": "[short pause] In the rule, the input slot holds two x. In the question, fourteen sits in that same slot. So two x is fourteen, and x is fourteen divided by two, which is seven.",
     "at": [
@@ -30,16 +20,12 @@
      "x. In the",
      "fourteen sits in that same slot",
      "So two x is fourteen",
-     "and x is",
-     "by two, which"
+     "and x is"
     ]
    },
    {
     "say": "Now the rule says the output is x plus five. x is seven, so seven plus five is twelve. Diamond of fourteen is twelve, and choice number one is our answer.",
     "at": [
-     "Now the rule",
-     "output is x",
-     "x is seven",
      "seven plus five is twelve",
      "Diamond of fourteen",
      "choice number one is our answer"
@@ -48,11 +34,7 @@
    {
     "say": "Careful, if you put fourteen straight into x plus five, you get nineteen, choice number two. That treats fourteen as x, but fourteen took the place of two x.",
     "at": [
-     "fourteen straight into",
-     "you get nineteen, choice number two",
-     "That treats fourteen",
-     "but fourteen took",
-     "of two x"
+     "you get nineteen, choice number two"
     ]
    }
   ],
@@ -61,14 +43,6 @@
     "say": "[pause] Another way is to rewrite the rule so it works on any input. Two x goes in, and x plus five comes out. What does the diamond do to its input? x is half of two x. So the diamond takes half of its input, and then adds five.",
     "at": [
      "Another way",
-     "the rule so",
-     "on any input",
-     "Two x goes",
-     "x plus five",
-     "What does the",
-     "to its input",
-     "x is half",
-     "x. So the",
      "takes half of its input",
      "and then adds"
     ]
@@ -76,14 +50,8 @@
    {
     "say": "Let's check this with a number we know. If x is three, the input is six, and the rule gives three plus five, eight. Half of six is three, and three plus five is eight. It matches.",
     "at": [
-     "Let's check this",
-     "number we know",
-     "If x is",
-     "input is six",
-     "rule gives three",
      "Half of six is three",
-     "and three plus",
-     "eight. It matches"
+     "and three plus"
     ]
    },
    {

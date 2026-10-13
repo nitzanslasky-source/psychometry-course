@@ -716,9 +716,54 @@ def _fix_t13(ns):
 FIXES = {13: _fix_t13, 14: _fix_t14, 17: _fix_t17, 18: _fix_t18}
 
 
+# 2026-10-13 steady highlights (teacher: highlights "feel like flashes because they change so often"; Codex review
+# standard 10). Visual only - no spoken text changes. For the lessons listed here (studio lessons 113-138, unrecorded
+# when this pass was made; recorded lessons keep their plans), the auto-added POINT cues are thinned:
+#   - the method header (hdr*) is never pointed at;
+#   - a POINT on what is already highlighted is dropped (the highlight holds until the subject changes);
+#   - a POINT on a board item comes at least CALM_GAP seconds after the last highlight change, unless that item was just
+#     written / shown (a new thing) - POINTs on 'choice N' and on a part of the question (she names them) always stay.
+# Shows, marks, slides and their phrases are untouched. Timing is estimated at her reading pace (14 characters a second).
+CALM_IDS = ['solve-q-r26-t18-02', 'solve-q-r26-t18-03', 'r26-t18-summary', 'solve-q-541', 'solve-q-542', 'solve-q-543',
+            'solve-q-r26-t19-01', 'solve-q-r26-t19-02', 'operation-patterns', 'solve-q-544', 'solve-q-545',
+            'solve-q-r26-t19-03', 'solve-q-546', 'solve-q-547', 'solve-q-548', 'solve-q-549', 'solve-q-r26-t19-18',
+            'solve-q-550', 'solve-q-551', 'solve-q-r26-t19-05', 'solve-q-552', 'solve-q-553', 'solve-q-554', 'solve-q-555',
+            'solve-q-556', 'r26-t19-summary']
+CALM_GAP = 4.0
+_CPS = 14.0
+
+
+def calm(ns, ids=CALM_IDS):
+    tag = _re.compile(r'\[[a-z ]+\]')
+    for vid in ids:
+        V = ns.VIDEOS.get(vid)
+        if not V: continue
+        for sl in V['slides']:
+            cur = None; last_change = -1e9; fresh = set(); t0 = 0.0
+            for ln in sl['lines']:
+                say = ln['say']; keep = []
+                for c in ln['cues']:
+                    ph = c[3] if c[0] == 'mark' else c[2]
+                    k = 0 if ph.startswith('<') else max(0, say.lower().find(ph.lower()))
+                    t = t0 + len(tag.sub('', say[:k])) / _CPS
+                    if c[0] == 'show':
+                        fresh.add(c[1]['_name']); cur = None; keep.append(c); continue
+                    if c[0] != 'point':
+                        keep.append(c); continue
+                    tg = c[1]; base = tg.split(':')[0].strip()
+                    if base.startswith('hdr'): continue
+                    if tg == cur: continue
+                    named = tg.startswith('choice') or tg.startswith('stem') or base in fresh
+                    if not named and t - last_change < CALM_GAP: continue
+                    fresh.discard(base); cur = tg; last_change = t; keep.append(c)
+                ln['cues'] = keep
+                t0 += len(tag.sub('', say)) / _CPS + 0.3
+
+
 def post(ns, topic):
     """called last in _ai_vis_tNN.py: post(types.SimpleNamespace(**globals()), NN)"""
     if topic in FIXES: FIXES[topic](ns)
     carry(ns, {v: CARRY[v] for v in CARRY if v in ns.VIDEOS})
+    calm(ns)
     probs = [(v, p) for v in ns.ORDER for p in check_layers(ns.VIDEOS[v])]
     if probs: raise AssertionError('figure layers out of order: %s' % probs)

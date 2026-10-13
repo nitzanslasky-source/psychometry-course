@@ -11,41 +11,20 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "This time it's backwards. They give us the result, twenty-four, and we need the input. And we don't know if x is odd or even. [short pause] We'll solve it two ways, trying both rules, and then plugging in the answers.",
-    "at": [
-     "They give us the result",
-     "twenty-four, and we",
-     "input. And we",
-     "if x is",
-     "ways, trying both",
-     "then plugging in"
-    ]
-   },
+   "This time it's backwards. They give us the result, twenty-four, and we need the input. And we don't know if x is odd or even. [short pause] We'll solve it two ways, trying both rules, and then plugging in the answers.",
    {
     "say": "[short pause] Let's try both rules. First the odd rule. Three x is twenty-four, so x is twenty-four divided by three, which is eight. But wait. Eight is even, and an even number never uses the odd rule. So eight doesn't fit the rule it came from, and we throw it out.",
     "at": [
      "Let's try",
      "First the odd rule",
-     "x is twenty-four divided",
-     "three, which is",
-     "Eight is even",
-     "even number never",
-     "So eight doesn't",
-     "rule it came",
-     "we throw it"
+     "x is twenty-four divided"
     ]
    },
    {
     "say": "Now the even rule. x squared minus twelve is twenty-four. Add twelve to both sides, so x squared is thirty-six. x is positive, so x is six. And six is even, so it really uses the even rule. It fits.",
     "at": [
      "Now the even rule",
-     "Add twelve to",
-     "so x squared",
-     "x is positive",
-     "And six is",
-     "it really uses",
-     "rule. It fits"
+     "Add twelve to"
     ]
    },
    {
@@ -53,8 +32,7 @@
     "at": [
      "choice number two is our answer",
      "Choice numbers one",
-     "and three keep the eight",
-     "which came from"
+     "and three keep the eight"
     ]
    }
   ],
@@ -63,15 +41,9 @@
     "say": "[pause] Now let's plug in the answers. Each choice tells us x, so we first check if it's odd or even, and then use the right rule. Choice number one is eight. Eight is even, so the even rule. Eight squared is sixty-four, and sixty-four minus twelve is fifty-two. That's not twenty-four, so eight is out.",
     "at": [
      "Now let's",
-     "Each choice tells",
-     "so we first",
-     "it's odd or",
-     "then use the",
      "number one is",
      "Eight is even",
      "Eight squared is",
-     "sixty-four minus twelve",
-     "That's not twenty-four",
      "so eight is out"
     ]
    },
@@ -80,19 +52,15 @@
     "at": [
      "number two is",
      "Six is even",
-     "Six squared is",
-     "thirty-six minus twelve"
+     "Six squared is"
     ]
    },
    {
     "say": "Choice number three says six or eight, so it claims that both values work. Eight doesn't work, so the whole choice is wrong, even though six works. And six works, so choice number four, no such x, is out. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
     "at": [
      "number three says",
-     "eight, so it",
-     "both values work",
      "so the whole choice",
      "wrong, even though",
-     "And six works",
      "no such x, is",
      "Choice number two is our answer"
     ]

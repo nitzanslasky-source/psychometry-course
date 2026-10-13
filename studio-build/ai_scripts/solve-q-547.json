@@ -11,25 +11,12 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "This rule uses itself too, like in the last question. [short pause] So we go down to the start value, the same way as before.",
-    "at": [
-     "This rule uses itself too",
-     "like in the",
-     "So we go",
-     "the start value",
-     "way as before"
-    ]
-   },
+   "This rule uses itself too, like in the last question. [short pause] So we go down to the start value, the same way as before.",
    {
     "say": "[short pause] Seven is bigger than one, so we use the second rule. Its input is seven minus one, which is six. So diamond of seven is diamond of six. Six is bigger than one too, so diamond of six is diamond of five. Each step just passes the question down to the number below.",
     "at": [
-     "one, so we",
-     "second rule. Its",
-     "seven minus one",
      "so diamond of seven is",
      "diamond of six",
-     "bigger than one too",
      "so diamond of six is diamond of five",
      "diamond of five",
      "the question down"
@@ -38,14 +25,9 @@
    {
     "say": "We keep going down until we reach diamond of one. Two is still bigger than one, so diamond of two is diamond of one. But one is not bigger than one, so now the first rule works. Diamond of one is nine.",
     "at": [
-     "We keep going",
      "we reach diamond",
-     "Two is still",
      "so diamond of two is",
      "diamond of one. But",
-     "But one is",
-     "than one, so now",
-     "first rule works",
      "Diamond of one is nine"
     ]
    },
@@ -53,18 +35,8 @@
     "say": "On the way down, the rule never adds or subtracts anything from the result. It only says that the diamond of a number equals the diamond of the number below it. So every diamond on the chain is nine. Diamond of seven is nine, and choice number four is our answer. Careful, choice number one is a trap. One is the input where the chain stops, not its value. [pause] Okay. I'll see you in the next question.",
     "at": [
      "On the way",
-     "rule never adds",
-     "anything from the",
-     "It only says",
-     "diamond of a",
-     "the diamond of the",
-     "So every diamond",
-     "chain is nine",
-     "seven is nine",
      "choice number four is our answer",
-     "choice number one is a trap",
-     "One is the",
-     "the chain stops"
+     "choice number one is a trap"
     ]
    }
   ]

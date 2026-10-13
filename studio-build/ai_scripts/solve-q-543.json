@@ -14,26 +14,14 @@
    {
     "say": "This time they don't give us the rule. They only tell us one result. Someone took three, used the diamond, and got twenty-one. [short pause] We'll put three into the choices, one by one, until one of them doesn't give twenty-one.",
     "at": [
-     "give us the",
-     "only tell us",
-     "Someone took three",
-     "diamond, and got",
-     "put three into",
-     "one by one",
-     "of them doesn't"
+     "Someone took three"
     ]
    },
    {
     "say": "[short pause] Many different rules could turn three into twenty-one. Seven x is one example, because seven times three is twenty-one. So a choice that gives twenty-one could be the rule, and we can't rule it out. We're looking for the one choice that does not give twenty-one.",
     "at": [
-     "turn three into",
      "Seven x is one example",
-     "because seven times",
-     "So a choice",
-     "twenty-one could be",
-     "and we can't",
-     "We're looking for",
-     "choice that does"
+     "because seven times"
     ]
    },
    {
@@ -42,8 +30,6 @@
      "number one, x",
      "Three cubed is",
      "twenty-seven minus six",
-     "It gives twenty-one",
-     "could be the",
      "Choice number one is out"
     ]
    },
@@ -51,10 +37,8 @@
     "say": "Choice number two, x times, in brackets, x plus four. Three plus four is seven, and three times seven is twenty-one. It could be the rule too, so choice number two is out.",
     "at": [
      "number two, x",
-     "brackets, x plus",
      "Three plus four is seven",
      "and three times",
-     "twenty-one. It could",
      "so choice number two is out"
     ]
    },
@@ -64,15 +48,8 @@
      "number three, five",
      "Five times three is fifteen",
      "and fifteen plus",
-     "twenty. Twenty is",
-     "So this rule",
-     "three into twenty-one",
-     "cannot be the",
      "Choice number three is our answer",
-     "answer. That one",
-     "the question asks",
-     "we can stop",
-     "checking choice number"
+     "the question asks"
     ]
    }
   ]

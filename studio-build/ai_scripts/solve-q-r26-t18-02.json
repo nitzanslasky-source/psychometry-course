@@ -11,39 +11,25 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "We take the three-digit number A B C and subtract C B A, the same digits in reverse order. [short pause] We'll solve it two ways, writing their place values, and then trying numbers.",
-    "at": [
-     "subtract C B A",
-     "it two ways",
-     "place values, and"
-    ]
-   },
+   "We take the three-digit number A B C and subtract C B A, the same digits in reverse order. [short pause] We'll solve it two ways, writing their place values, and then trying numbers.",
    {
     "say": "[short pause] Let's start with the place values. A B C is a hundred A plus ten B plus C. C B A is a hundred C plus ten B plus A. Subtract the second from the first. The ten B parts cancel because B is in the same place in both numbers. The A parts leave ninety-nine A, and the C parts leave minus ninety-nine C.",
     "at": [
      "Let's start",
      "A B C is a hundred A",
-     "C B A",
-     "hundred C plus",
-     "Subtract the second",
-     "ninety-nine A"
+     "C B A"
     ]
    },
    {
     "say": "So the result is ninety-nine times the whole bracket, A minus C. It must be a multiple of ninety-nine.",
     "at": [
      "ninety-nine times",
-     "It must be",
-     "a multiple of"
+     "It must be"
     ]
    },
    {
     "say": "Now check the answer choices as possible results. Three-digit multiples of ninety-nine have nine in the middle, and their first and last digits add to nine. A hundred ninety-eight, two hundred ninety-seven, and three hundred ninety-six follow that pattern. Four hundred fifty-nine has five in the middle, so it's out. Four hundred eighty-four has eight in the middle, so it's out. Five hundred forty has four in the middle, so it's out too.",
     "at": [
-     "Three-digit multiples of",
-     "nine in the",
-     "their first and",
      "A hundred ninety",
      "ninety-six follow",
      "five in the",
@@ -54,9 +40,6 @@
    {
     "say": "Four hundred ninety-five has nine in the middle, and four plus five is nine. It is ninety-nine times five. It's the only choice left, so choice number three is our answer.",
     "at": [
-     "Four hundred ninety",
-     "the middle, and",
-     "five is nine",
      "It is ninety",
      "choice number three is our answer"
     ]

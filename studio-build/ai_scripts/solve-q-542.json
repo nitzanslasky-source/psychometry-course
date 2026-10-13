@@ -11,24 +11,13 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "So a diamond inside a diamond. The question is which one we do first. [short pause] We'll solve it two ways, from the inside out, and then with the rule itself.",
-    "at": [
-     "a diamond inside a diamond",
-     "The question is",
-     "we do first",
-     "it two ways",
-     "inside out, and",
-     "the rule itself"
-    ]
-   },
+   "So a diamond inside a diamond. The question is which one we do first. [short pause] We'll solve it two ways, from the inside out, and then with the rule itself.",
    {
     "say": "[short pause] Just like brackets inside brackets, we start with the inner one. The inner one is diamond of five. The diamond squares its input, so diamond of five is five squared, which is twenty-five.",
     "at": [
      "Just like",
      "we start with the inner one",
      "The inner one is",
-     "of five. The",
      "so diamond of five is",
      "five squared, which"
     ]
@@ -36,25 +25,13 @@
    {
     "say": "Now twenty-five takes the place of the whole inner diamond. So the outer diamond works on twenty-five. Twenty-five squared is twenty-five times twenty-five. Twenty times twenty-five is five hundred, and five times twenty-five is a hundred twenty-five. Together, six hundred twenty-five.",
     "at": [
-     "Now twenty-five takes",
-     "of the whole",
      "So the outer diamond works",
-     "Twenty-five squared is",
-     "Twenty times twenty-five",
-     "hundred, and five",
-     "is a hundred",
-     "six hundred twenty-five"
+     "Twenty-five squared is"
     ]
    },
    {
     "say": "Careful, a lot of students stop after the inner diamond and mark twenty-five. But twenty-five is only halfway, because the outer diamond still has to work on it. So choice number one is the trap, and choice number three is our answer.",
     "at": [
-     "Careful, a lot",
-     "stop after the",
-     "and mark twenty-five",
-     "But twenty-five is",
-     "because the outer",
-     "has to work",
      "choice number one is the trap",
      "choice number three is"
     ]
@@ -65,12 +42,8 @@
     "say": "[pause] Another way is to write the same two squarings with a power. The first diamond squares the number. The second diamond squares the result again. So we get x squared, all squared. x squared times x squared is x to the power of four.",
     "at": [
      "Another way",
-     "the same two",
-     "The first diamond",
-     "The second diamond",
      "So we get x squared",
-     "x squared times",
-     "is x to"
+     "x squared times"
     ]
    },
    {
@@ -78,7 +51,6 @@
     "at": [
      "five to the power of four",
      "Five squared is",
-     "twenty-five squared is",
      "Choice number three again"
     ]
    }

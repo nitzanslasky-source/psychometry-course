@@ -14,39 +14,19 @@
    {
     "say": "Look at the choices. The diamond appears in every choice, two or three times. But each diamond here only squares something, so the work is short, and we solve it now. A tip for the exam: if a question would take a lot of calculating, you can skip it, solve the rest of the section, and come back at the end. Decide by the work it needs, not by how many symbols you see. [short pause] We'll solve it two ways, with algebra, and then by plugging in a number.",
     "at": [
-     "The diamond appears",
      "in every choice",
      "three times. But",
-     "here only squares",
-     "the work is",
-     "we solve it",
-     "tip for the",
-     "a question would",
-     "lot of calculating",
      "you can skip it",
-     "the rest of",
-     "and come back",
-     "Decide by the",
-     "needs, not by",
-     "symbols you see",
-     "it two ways",
-     "and then by"
+     "the rest of"
     ]
    },
    {
     "say": "[short pause] With algebra, we write what the diamond does on each side. The diamond squares whatever goes in. Choice number one. On the left, six x goes in, so we get six x, squared. That's six squared times x squared, thirty-six x squared. On the right, thirty-six times x squared. Both sides are equal for every x, so this one is always true, and it's out.",
     "at": [
      "With algebra",
-     "the diamond does",
-     "The diamond squares",
      "number one. On",
      "six x goes in",
      "That's six squared",
-     "squared, thirty-six x",
-     "On the right",
-     "x squared. Both",
-     "equal for every",
-     "this one is",
      "and it's out"
     ]
    },
@@ -56,9 +36,6 @@
      "number two. Diamond",
      "Diamond of root x",
      "So the left",
-     "x times x",
-     "The right side",
-     "of x, x",
      "Always true, so it's out"
     ]
    },
@@ -68,25 +45,15 @@
      "number three. On",
      "five x, squared",
      "On the right",
-     "x squared is",
-     "These are equal",
-     "x is zero",
-     "For any other",
-     "different. So this",
-     "not always true",
      "and choice number three is our answer"
     ]
    },
    {
     "say": "In the exam you'd circle it and move on. But choice number four teaches something useful. x minus seven and seven minus x are opposites, and opposites have the same square. So the two sides are always equal.",
     "at": [
-     "In the exam",
-     "it and move",
      "number four teaches",
-     "x minus seven",
      "are opposites",
      "the same square",
-     "two sides are",
      "always equal"
     ]
    }
@@ -96,22 +63,12 @@
     "say": "[pause] Now let's plug in a number. It's usually faster, because we don't open anything. Let's take x is one, a small nonzero value. Zero is allowed too, but with zero, choice number three gives zero on both sides, so it can't show the failure. Choice number one. Diamond of six is thirty-six, and thirty-six times diamond of one is thirty-six times one, thirty-six. Equal. Choice number two. Diamond of one is one, and one times one is one. Diamond of one is one too. Equal.",
     "at": [
      "Now let's",
-     "It's usually faster",
-     "don't open anything",
      "take x is one",
      "small nonzero value",
-     "allowed too, but",
      "number three gives",
-     "both sides, so",
-     "show the failure",
      "number one. Diamond",
-     "Diamond of six",
-     "and thirty-six times",
      "one is thirty-six",
-     "thirty-six. Equal. Choice",
      "number two. Diamond",
-     "Diamond of one is one",
-     "and one times",
      "Diamond of one is one too"
     ]
    },
@@ -121,18 +78,13 @@
      "number three. Diamond",
      "Diamond of five is twenty-five",
      "but five times",
-     "one is five",
-     "which is five",
-     "not five, so",
      "number three fails"
     ]
    },
    {
     "say": "One allowed example where a choice fails proves it's not always true, so we can stop here without checking choice number four. Choice number three is the one that broke. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "a choice fails",
      "not always true",
-     "can stop here",
      "number four. Choice",
      "is the one that broke"
     ]

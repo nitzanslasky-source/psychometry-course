@@ -11,29 +11,12 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "Diamond of x appears on both sides of the equation. [short pause] We'll treat diamond of x like an unknown, and isolate it.",
-    "at": [
-     "appears on both sides",
-     "of x like",
-     "and isolate it"
-    ]
-   },
+   "Diamond of x appears on both sides of the equation. [short pause] We'll treat diamond of x like an unknown, and isolate it.",
    {
     "say": "[short pause] Think of diamond of x as one unknown, like a box. On the left there are five boxes, and on the right there are four boxes. To get all the boxes on one side, we subtract four boxes from both sides. On the right, the four boxes are gone, and eight is left. On the left, we have five boxes minus four boxes, minus three x.",
     "at": [
-     "x as one",
-     "a box. On",
-     "there are five",
-     "on the right",
-     "four boxes. To",
-     "the boxes on",
      "subtract four boxes from both sides",
-     "On the right, the",
-     "boxes are gone",
-     "On the left, we",
-     "five boxes minus",
-     "minus three x"
+     "On the right, the"
     ]
    },
    {
@@ -41,12 +24,8 @@
     "at": [
      "Five boxes minus four boxes",
      "is one box",
-     "So diamond of",
-     "three x is",
      "Now add three x",
-     "both sides, and",
-     "x is three",
-     "Now it's an"
+     "both sides, and"
     ]
    },
    {

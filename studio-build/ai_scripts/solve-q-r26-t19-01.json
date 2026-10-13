@@ -11,50 +11,27 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "This time the input is not a number. It's a whole expression, x plus one. [short pause] We'll solve it two ways, with algebra, and then by plugging in numbers.",
-    "at": [
-     "is not a",
-     "a whole expression",
-     "ways, with algebra",
-     "by plugging in"
-    ]
-   },
+   "This time the input is not a number. It's a whole expression, x plus one. [short pause] We'll solve it two ways, with algebra, and then by plugging in numbers.",
    {
     "say": "[short pause] Remember, whatever goes in takes the place of x, and an expression goes in brackets. So we write the same template, with the whole x plus one, in brackets, in both spots. Diamond of x plus one is the bracket x plus one, squared, minus two times the bracket x plus one.",
     "at": [
      "Remember, whatever",
      "whatever goes in takes the place",
      "place of x",
-     "expression goes in",
-     "we write the",
      "with the whole x plus one",
-     "one, in brackets",
-     "Diamond of x",
-     "is the bracket",
-     "one, squared, minus"
+     "one, in brackets"
     ]
    },
    {
     "say": "Now open the brackets. The bracket x plus one, squared, is x squared plus two x plus one. And minus two times the bracket x plus one is minus two x minus two. Careful, the minus goes to both parts inside the brackets.",
     "at": [
      "Now open the brackets",
-     "The bracket x",
-     "squared, is x",
-     "two x plus",
-     "And minus two",
-     "bracket x plus one is",
-     "minus two x",
-     "Careful, the minus",
-     "both parts inside"
+     "The bracket x"
     ]
    },
    {
     "say": "Now collect. Two x minus two x is zero, so the x terms cancel. One minus two is negative one. So we get x squared minus one, and choice number two is our answer.",
     "at": [
-     "Two x minus",
-     "is zero, so",
-     "One minus two",
      "So we get x squared",
      "minus one, and",
      "choice number two is our answer"
@@ -66,16 +43,8 @@
     "say": "[pause] Now let's try plugging in numbers. There are letters in the choices, so I can pick a value for x and compare. The easiest value is x is zero. Then the input is zero plus one, which is one. Diamond of one is one squared minus two times one, so one minus two, which is negative one.",
     "at": [
      "Now let's",
-     "There are letters",
-     "choices, so I",
-     "a value for",
      "The easiest value",
-     "Then the input",
-     "plus one, which",
-     "Diamond of one",
-     "squared minus two",
-     "so one minus",
-     "is negative one"
+     "Then the input"
     ]
    },
    {
@@ -86,7 +55,6 @@
      "number one gives",
      "number two gives",
      "number three gives",
-     "too. And choice",
      "number four gives",
      "So choice numbers one",
      "and four are out"
@@ -96,16 +64,8 @@
     "say": "Zero was an easy first test, and it already ruled out two choices. But the two choices that are left both give negative one at zero, so zero can't tell them apart. So we try the next easy value, x is two. Then the input is three. Diamond of three is nine minus six, which is three.",
     "at": [
      "Zero was an",
-     "test, and it",
-     "out two choices",
-     "But the two",
-     "are left both",
-     "one at zero",
-     "can't tell them",
-     "we try the",
      "x is two",
-     "Diamond of three",
-     "minus six, which"
+     "Diamond of three"
     ]
    },
    {
@@ -115,7 +75,6 @@
      "gives four minus one",
      "is three. Choice",
      "number three gives",
-     "four minus one, which is negative",
      "So choice number three is out",
      "and choice number two is our answer"
     ]

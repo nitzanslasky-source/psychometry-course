@@ -1595,6 +1595,7 @@ for _v in ORDER: _method_headers(_v); _densify(_v); _follow(_v); _fill(_v); _ste
 # 2026-10-13 carry-over boxes (V2) and the layer-order check (V1): after the visual passes, like topics 13-18
 import types as _types
 MV.carry(_types.SimpleNamespace(**globals()), CARRY19)
+MV.calm(_types.SimpleNamespace(**globals()))     # 2026-10-13 steady highlights (visual only)
 _lp = [(v, p) for v in ORDER for p in MV.check_layers(VIDEOS[v])]
 assert not _lp, ('figure layers out of order', _lp)
 

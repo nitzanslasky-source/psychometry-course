@@ -11,26 +11,13 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "This question mixes a new operation with prime factors. [short pause] We'll solve it two ways, plugging in a number, and then by understanding.",
-    "at": [
-     "mixes a new operation",
-     "two ways, plugging",
-     "number, and then"
-    ]
-   },
+   "This question mixes a new operation with prime factors. [short pause] We'll solve it two ways, plugging in a number, and then by understanding.",
    {
     "say": "[short pause] A definition in words is easy to misread, so let's see it in numbers first. Fifty is two times five times five, so it has two fives. Seventy-five is three times five times five, two fives as well. And seven has no fives at all, so its count is zero.",
     "at": [
      "A definition",
-     "easy to misread",
      "let's see it in numbers",
-     "Fifty is two",
-     "times five, so",
-     "Seventy-five is three",
-     "times five, two",
-     "And seven has",
-     "at all, so"
+     "Fifty is two"
     ]
    },
    {
@@ -38,24 +25,13 @@
     "at": [
      "plug in the simplest value",
      "x is one",
-     "One has no",
-     "its count is",
      "number one. Five",
-     "Five times one",
-     "which has one",
      "One squared is",
-     "no fives. One",
      "so choice number one is",
      "number two. One",
-     "One plus five",
-     "and six is",
-     "three, no fives",
      "On the right",
-     "one is one",
      "Zero is not one, out",
      "number three. Five",
-     "Five has one",
-     "five times zero",
      "not zero, out"
     ]
    },
@@ -65,7 +41,6 @@
      "number four. Five",
      "zero plus one is one. One equals",
      "One equals one",
-     "are out, so",
      "number four is our answer"
     ]
    }
@@ -75,35 +50,16 @@
     "say": "[pause] Now let's see why it's always true. When we multiply x by five, we add exactly one more five to its prime factors, whatever x is. So the count of fives goes up by exactly one. That's choice number four, for every x. For example, fifty has two fives, and two hundred fifty has three.",
     "at": [
      "Now let's",
-     "always true. When",
-     "x by five",
      "we add exactly one more five",
      "five to its",
-     "whatever x is",
-     "So the count",
-     "goes up by",
-     "That's choice number four",
-     "For example, fifty",
-     "fives, and two"
+     "That's choice number four"
     ]
    },
    {
     "say": "The others don't always work. Adding five doesn't necessarily add one factor of five. Squaring doubles the count of fives, and doubling is not the same as adding one. And multiplying the count by five is not the same as adding one either. In the example of x is a hundred twenty-five, which is five cubed, with three fives, five x has four fives, but five times three is fifteen. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "The others don't",
-     "Adding five doesn't",
-     "one factor of",
-     "Squaring doubles the",
-     "fives, and doubling",
-     "the same as",
-     "And multiplying the",
-     "five is not",
-     "as adding one either",
      "In the example of x is a hundred twenty-five",
-     "is a hundred",
-     "is five cubed",
-     "fives, five x",
-     "fives, but five"
+     "is a hundred"
     ]
    }
   ]

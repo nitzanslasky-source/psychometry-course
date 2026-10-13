@@ -11,29 +11,12 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "So they ask when the order of the two inputs doesn't matter, for every a and b. [short pause] We'll solve it two ways, plugging in numbers to knock out choices, and then algebra to prove the one that's left.",
-    "at": [
-     "the order of the two inputs",
-     "inputs doesn't matter",
-     "a and b",
-     "it two ways",
-     "numbers to knock",
-     "and then algebra",
-     "the one that's"
-    ]
-   },
+   "So they ask when the order of the two inputs doesn't matter, for every a and b. [short pause] We'll solve it two ways, plugging in numbers to knock out choices, and then algebra to prove the one that's left.",
    {
     "say": "[short pause] To show that a rule doesn't always work, one example where it fails is enough. Let's take a is one and b is two. Why not two equal numbers? Because with equal numbers, swapping them changes nothing, in every rule. So they can't knock anything out.",
     "at": [
-     "rule doesn't always",
-     "example where it",
-     "enough. Let's take",
      "a is one",
-     "Why not two",
-     "Because with equal",
-     "them changes nothing",
-     "So they can't"
+     "Why not two"
     ]
    },
    {
@@ -42,9 +25,6 @@
      "number one, a",
      "One star two is one squared",
      "squared times two",
-     "Two star one",
-     "squared times one",
-     "four. Two is",
      "so choice number one is out"
     ]
    },
@@ -52,23 +32,12 @@
     "say": "Choice number two, a times, in brackets, a plus b. One star two is one times three, which is three. Two star one is two times three, which is six. Out. Choice number four, the bracket a minus b, squared, plus a. One star two: one minus two is negative one, and negative one squared is one. Then we add a, which is one, so one plus one is two. Two star one: two minus one is one, and one squared is one. Now a is two, so one plus two is three. Out.",
     "at": [
      "number two, a",
-     "brackets, a plus",
      "is one times three",
      "is three. Two",
-     "is two times",
      "which is six. Out",
      "Choice number four, the bracket",
      "number four, the",
      "minus b, squared",
-     "One star two:",
-     "two is negative",
-     "negative one squared",
-     "Then we add",
-     "is one, so",
-     "one is two. Two",
-     "Two star one:",
-     "one is one",
-     "squared is one. Now",
      "so one plus two is three"
     ]
    },
@@ -76,13 +45,8 @@
     "say": "Choice number three, a b plus a plus b. One star two is two plus one plus two, which is five. Two star one is two plus two plus one, which is five too. It stays. Three choices are out, so choice number three is our answer.",
     "at": [
      "number three, a",
-     "a plus b",
      "is two plus one plus two",
      "two, which is",
-     "Two star one",
-     "plus two plus",
-     "is five too",
-     "Three choices are",
      "so choice number three is our answer"
     ]
    }
@@ -92,13 +56,7 @@
     "say": "[pause] Ruling out the other three already answers the question. Now let's see why choice number three works for every a and b. One example can't show that, so we swap the letters in the rule itself. b star a means b times a, plus b, plus a.",
     "at": [
      "Ruling out",
-     "already answers the",
-     "let's see why",
      "number three works",
-     "a and b",
-     "One example can't",
-     "so we swap",
-     "in the rule",
      "b star a means",
      "times a, plus"
     ]
@@ -106,15 +64,9 @@
    {
     "say": "b times a is the same as a times b, and b plus a is the same as a plus b. So b star a is a b plus a plus b, which is exactly a star b, for every a and b. Choice number three. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "b times a",
-     "same as a",
-     "and b plus",
-     "the same as a plus",
      "So b star a is",
      "a b plus",
-     "b, which is",
-     "exactly a star b",
-     "every a and"
+     "exactly a star b"
     ]
    }
   ]

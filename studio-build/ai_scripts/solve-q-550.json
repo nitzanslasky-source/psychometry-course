@@ -11,27 +11,13 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "A new operation of three numbers, but there are only numbers here, no unknowns. [short pause] We'll solve it two ways, the standard way, and then by simplifying the outer diamond first.",
-    "at": [
-     "three numbers, but",
-     "only numbers here",
-     "We'll solve it",
-     "the standard way",
-     "by simplifying the"
-    ]
-   },
+   "A new operation of three numbers, but there are only numbers here, no unknowns. [short pause] We'll solve it two ways, the standard way, and then by simplifying the outer diamond first.",
    {
     "say": "[short pause] There are two diamonds, so we work from the inside out, like with brackets. The inner one is diamond of two, one, four. So x is two, y is one, and z is four. Let's write the same template, with these numbers in their slots.",
     "at": [
      "There are",
-     "we work from",
-     "out, like with",
      "The inner one is diamond",
      "of two, one",
-     "So x is",
-     "is one, and",
-     "four. Let's write",
      "with these numbers in"
     ]
    },
@@ -39,20 +25,6 @@
     "say": "Each number goes to the power of the product of the other two. For the first part, the power is one times four, which is four. So two to the power of four, sixteen. For the second part, the power is two times four, which is eight, and one to any power is one. For the third part, the power is two times one, which is two. So four squared, sixteen. Sixteen plus one plus sixteen is thirty-three.",
     "at": [
      "Each number goes",
-     "power of the",
-     "the other two",
-     "For the first",
-     "power is one",
-     "which is four",
-     "So two to",
-     "of four, sixteen",
-     "For the second",
-     "power is two",
-     "which is eight",
-     "to any power",
-     "For the third",
-     "power is two times one",
-     "which is two",
      "Sixteen plus one plus sixteen"
     ]
    },
@@ -63,12 +35,6 @@
      "waiting as choice number one",
      "Now the outer diamond",
      "of one, one",
-     "One to any",
-     "one, and that",
-     "And thirty-three goes",
-     "power of one",
-     "which is one",
-     "One plus one",
      "Choice number three is our answer"
     ]
    }
@@ -78,28 +44,13 @@
     "say": "[pause] Another way is to simplify the outer diamond first. We still need the inner value, but the outer step becomes easy. Its first two numbers are one and one. One to any power is one, so the first two parts are one and one, whatever the inner value is. And the last part is z to the power of one times one, which is just z. So the outer diamond is always two plus z.",
     "at": [
      "Another way",
-     "the outer diamond",
-     "We still need",
-     "value, but the",
      "Its first two numbers",
-     "one and one",
-     "One to any",
-     "one, so the",
-     "parts are one",
-     "whatever the inner",
-     "And the last",
-     "z to the",
-     "one times one",
-     "So the outer",
-     "always two plus"
+     "one and one"
     ]
    },
    {
     "say": "So we only need the inner value, thirty-three, from the first method's calculation. Two plus thirty-three is thirty-five, choice number three.",
     "at": [
-     "So we only",
-     "inner value, thirty-three",
-     "first method's calculation",
      "Two plus thirty-three",
      "thirty-five, choice number three"
     ]
@@ -108,15 +59,8 @@
     "say": "Sometimes the outer slots make the inner value not matter at all. For example, diamond of z, zero, one, for a positive z. z to the power of zero is one, zero to a positive power is zero, and one to any power is one. That's two, whatever z is. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Sometimes the outer",
-     "the inner value",
-     "at all. For",
      "diamond of z, zero, one",
-     "for a positive",
-     "z to the",
-     "zero is one",
-     "a positive power",
-     "and one to",
-     "That's two, whatever"
+     "for a positive"
     ]
    }
   ]

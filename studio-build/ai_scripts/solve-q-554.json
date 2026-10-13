@@ -11,31 +11,14 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "Two topics in one question, digits and a new operation. And the diamond is in every choice, so we have to work out the choices. [short pause] We'll solve it two ways, calculating each choice, and then a shortcut that thinks about where the biggest power goes.",
-    "at": [
-     "Two topics in one question",
-     "digits and a",
-     "And the diamond",
-     "every choice, so",
-     "to work out",
-     "We'll solve it",
-     "calculating each choice",
-     "a shortcut that",
-     "where the biggest"
-    ]
-   },
+   "Two topics in one question, digits and a new operation. And the diamond is in every choice, so we have to work out the choices. [short pause] We'll solve it two ways, calculating each choice, and then a shortcut that thinks about where the biggest power goes.",
    {
     "say": "[short pause] The hundreds digit goes to the power of four, the tens digit is cubed, and the units digit is squared. Choice number one, two one four. Two to the power of four is sixteen. One cubed is one. Four squared is sixteen. Sixteen plus one plus sixteen is thirty-three.",
     "at": [
      "The hundreds digit goes",
      "the power of",
-     "tens digit is",
-     "the units digit",
      "Choice number one, two one four",
      "number one, two",
-     "Two to the",
-     "four is sixteen",
      "is one. Four",
      "Sixteen plus one plus sixteen"
     ]
@@ -44,8 +27,6 @@
     "say": "Choice number two, one four two. One to the power of four is one. Four cubed is sixty-four. Two squared is four. One plus sixty-four plus four is sixty-nine. That's bigger than thirty-three, so choice number two is out.",
     "at": [
      "number two, one",
-     "One to the",
-     "four is one",
      "is sixty-four. Two",
      "One plus sixty-four",
      "is sixty-nine. That's",
@@ -58,8 +39,6 @@
      "number three, four",
      "Four to the power of four",
      "four is two",
-     "That's already much",
-     "thirty-three, so we",
      "the rest. Out"
     ]
    },
@@ -67,8 +46,6 @@
     "say": "Choice number four, one two four. One to the power of four is one, two cubed is eight, and four squared is sixteen. One plus eight plus sixteen is twenty-five. Twenty-five is smaller than thirty-three, so choice number one is out too, and choice number four is our answer.",
     "at": [
      "number four, one",
-     "One to the",
-     "four is one",
      "is eight, and",
      "One plus eight plus sixteen",
      "is twenty-five. Twenty-five",
@@ -82,18 +59,6 @@
     "say": "[pause] Another way is to think about the powers. Every choice uses the same three digits, one, two and four. One stays one at any power, so giving it the biggest power costs nothing. But four grows a lot. Four squared is sixteen, and four to the power of four is two hundred fifty-six. So the fourth power, on the hundreds digit, should go to the one. Choice numbers one and three start with two and four, so they're out.",
     "at": [
      "Another way",
-     "about the powers",
-     "Every choice uses",
-     "three digits, one",
-     "One stays one",
-     "power, so giving",
-     "biggest power costs",
-     "But four grows",
-     "Four squared is",
-     "four to the",
-     "four is two",
-     "So the fourth",
-     "the hundreds digit",
      "should go to the one",
      "Choice numbers one and three",
      "start with two",
@@ -103,16 +68,8 @@
    {
     "say": "Between one four two and one two four, look at the next power, the cube, on the tens digit. Four cubed is sixty-four, but four squared is only sixteen. Two changes much less, from eight to four. So the four should get the square, and the two goes in the tens. One two four, choice number four. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "and one two",
      "look at the next power",
      "the cube, on",
-     "Four cubed is",
-     "four squared is",
-     "Two changes much",
-     "eight to four",
-     "So the four",
-     "the square, and",
-     "goes in the",
      "One two four, choice number four"
     ]
    }

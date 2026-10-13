@@ -11,28 +11,13 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "So we have a rule, and we need to use it on the number six. [short pause] We'll solve it two ways, first by putting six straight into the rule, and then by simplifying the rule before we use it.",
-    "at": [
-     "rule, and we",
-     "use it on the number six",
-     "ways, first by",
-     "straight into the",
-     "then by simplifying",
-     "before we use"
-    ]
-   },
+   "So we have a rule, and we need to use it on the number six. [short pause] We'll solve it two ways, first by putting six straight into the rule, and then by simplifying the rule before we use it.",
    {
     "say": "[short pause] Remember what the rule means. Whatever goes into the diamond takes the place of a, in every spot where a appears. Here a appears in two spots, in a squared and in four a. So we write the same template again, and put six in both spots.",
     "at": [
      "Remember what",
      "Whatever goes into the diamond",
      "takes the place",
-     "in every spot",
-     "Here a appears in",
-     "spots, in a",
-     "in four a",
-     "write the same",
      "put six in both spots"
     ]
    },
@@ -40,9 +25,6 @@
     "say": "So diamond of six is six squared minus four times six. Six squared is thirty-six. Four times six is twenty-four. Thirty-six minus twenty-four is twelve.",
     "at": [
      "So diamond of",
-     "six squared minus",
-     "six. Six squared",
-     "Four times six is",
      "Thirty-six minus twenty-four"
     ]
    },
@@ -52,9 +34,7 @@
      "is twelve, and",
      "choice number two is our answer",
      "thirty-six, choice number one",
-     "what you get",
-     "only into a squared",
-     "forget the four"
+     "only into a squared"
     ]
    }
   ],
@@ -63,21 +43,8 @@
     "say": "[pause] Another way is to simplify the rule first, and only then put the number in. Both parts of a squared minus four a have an a in them: a squared is a times a, and four a is a times four. So we can write the whole expression as a times something. a squared minus four a is a times, in brackets, a minus four. Let's check it. a times a is a squared, and a times negative four is negative four a.",
     "at": [
      "Another way",
-     "the rule first",
-     "then put the",
-     "Both parts of",
-     "minus four a",
-     "a in them:",
-     "is a times",
-     "four a is",
-     "So we can",
-     "whole expression as",
      "a squared minus four a is a times",
-     "is a times, in",
-     "a minus four",
-     "a times a is",
-     "squared, and a",
-     "four is negative"
+     "is a times, in"
     ]
    },
    {
@@ -85,7 +52,6 @@
     "at": [
      "Now put six in",
      "Six minus four is",
-     "and six times",
      "Again twelve"
     ]
    }

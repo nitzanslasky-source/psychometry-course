@@ -11,66 +11,25 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "A long rule, and we need its value at two minus its value at negative two. [short pause] We'll solve it two ways, calculating both values, and then a shortcut with even and odd powers.",
-    "at": [
-     "A long rule",
-     "need its value",
-     "minus its value",
-     "ways, calculating both",
-     "then a shortcut",
-     "and odd powers"
-    ]
-   },
+   "A long rule, and we need its value at two minus its value at negative two. [short pause] We'll solve it two ways, calculating both values, and then a shortcut with even and odd powers.",
    {
     "say": "[short pause] Diamond of two first. Two to the power of five is thirty-two. Two to the power of four is sixteen, and three times sixteen is forty-eight. Two cubed is eight, and two times eight is sixteen, with a minus. Two squared is four. Four times two is eight. And minus seven. Now add them step by step. Thirty-two plus forty-eight is eighty. Eighty minus sixteen is sixty-four. Sixty-four plus four is sixty-eight. Sixty-eight plus eight is seventy-six. Seventy-six minus seven is sixty-nine.",
     "at": [
      "Diamond of",
      "Diamond of two first",
-     "five is thirty-two",
-     "Two to the power of four",
-     "four is sixteen",
-     "times sixteen is",
-     "Two cubed is",
-     "two times eight",
-     "with a minus",
-     "Four times two",
-     "And minus seven",
-     "Now add them",
-     "Thirty-two plus forty-eight",
-     "Eighty minus sixteen",
-     "Sixty-four plus four",
-     "Sixty-eight plus eight",
-     "Seventy-six minus seven"
+     "five is thirty-two"
     ]
    },
    {
     "say": "Now diamond of negative two. An odd power of a negative number stays negative, and an even power becomes positive. So negative two to the power of five is negative thirty-two. Negative two to the power of four is sixteen, and three times sixteen is forty-eight. Negative two cubed is negative eight, and minus two times negative eight is plus sixteen. Negative two squared is four. Four times negative two is negative eight. And minus seven.",
     "at": [
      "Now diamond of negative two",
-     "negative number stays",
-     "an even power",
-     "So negative two",
-     "power of five",
-     "Negative two to the power of four",
-     "of four is",
-     "three times sixteen",
-     "Negative two cubed",
-     "eight, and minus",
-     "negative eight is",
-     "Negative two squared",
-     "Four times negative",
-     "negative eight. And"
+     "negative number stays"
     ]
    },
    {
     "say": "Negative thirty-two plus forty-eight is sixteen. Sixteen plus sixteen is thirty-two. Thirty-two plus four is thirty-six. Thirty-six minus eight is twenty-eight. Twenty-eight minus seven is twenty-one. So sixty-nine minus twenty-one is forty-eight. Choice number three is our answer.",
     "at": [
-     "Negative thirty-two plus",
-     "Sixteen plus sixteen",
-     "Thirty-two plus four",
-     "Thirty-six minus eight",
-     "Twenty-eight minus seven",
      "So sixty-nine minus",
      "Choice number three is our answer"
     ]
@@ -81,29 +40,15 @@
     "say": "[pause] Another way is to compare each term at two and at negative two, instead of calculating everything. An even power gives the same value for two and for negative two. The plain number, minus seven, is also the same. So in the subtraction, all of these cancel.",
     "at": [
      "Another way",
-     "each term at",
-     "at negative two",
      "An even power gives",
-     "same value for",
-     "for negative two",
-     "The plain number",
-     "is also the",
-     "So in the",
-     "of these cancel"
+     "same value for"
     ]
    },
    {
     "say": "An odd power changes only its sign. For example, two cubed is eight, and negative two cubed is negative eight. Eight minus negative eight is sixteen, which is twice eight. So every term with an odd power of x counts twice its value at two.",
     "at": [
      "An odd power changes",
-     "For example, two",
-     "eight, and negative",
-     "is negative eight",
-     "Eight minus negative",
-     "sixteen, which is",
-     "So every term",
-     "odd power of",
-     "twice its value"
+     "For example, two"
     ]
    },
    {
@@ -111,14 +56,6 @@
     "at": [
      "keep only the terms",
      "and double their",
-     "Those terms are",
-     "the power of",
-     "two x cubed",
-     "x, which has",
-     "the power of one",
-     "At two, that's",
-     "sixteen plus eight",
-     "twenty-four. Twice twenty-four",
      "Choice number three."
     ]
    }

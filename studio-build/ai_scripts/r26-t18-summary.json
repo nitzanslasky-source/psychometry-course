@@ -10,22 +10,14 @@
     "say": "A bar above the letters means they are digits of one number. The two-digit number A B means ten A plus B, not A times B. The three-digit number A B C means a hundred A plus ten B plus C.",
     "at": [
      "A bar above",
-     "the letters means",
-     "of one number",
-     "A B means",
-     "plus B, not",
-     "The three-digit",
-     "a hundred A",
-     "B plus C"
+     "the letters means"
     ]
    },
    {
     "say": "Use the same digit every time the same letter appears. A leading digit cannot be zero. Different letters do not have to be different digits unless the question says they are different.",
     "at": [
      "The same letter",
-     "appears. A leading",
-     "leading digit cannot",
-     "do not have"
+     "appears. A leading"
     ]
    }
   ],
@@ -34,44 +26,28 @@
     "say": "Here are the four steps. Use the ones that help in the question, not every step every time. We can write the calculation vertically, check the ones column, check the leading digit and the size, and try numbers when that's needed. If the question asks for one letter, try the answer choices for that letter.",
     "at": [
      "write the calculation",
-     "ones column, check",
-     "digit and the",
-     "try numbers when",
-     "try the answer"
+     "ones column, check"
     ]
    },
    {
     "say": "For a puzzle written in words, write each number using its digits. A two-digit number is ten A plus B. For example, if ten A plus B equals three times the whole bracket, A plus B, open the bracket and collect the A parts and B parts. We get seven A equals two B. A is a leading digit, so it's not zero. Two B is at most eighteen, so seven A is at most eighteen. That leaves A is one or A is two. If A is one, seven A is seven, and seven is not two times a digit. If A is two, seven A is fourteen, so B is seven. The number is twenty-seven.",
     "at": [
      "a puzzle written",
-     "write each number",
-     "A plus B",
-     "For example, if",
-     "Ten A plus B equals",
-     "three times the",
-     "open the bracket",
-     "If A is two"
+     "write each number"
     ]
    },
    {
     "say": "If X plus Y ends in X in the ones column, Y must be zero. Nothing carries into that column. In another column, check the carry too. Without an incoming carry, the added digit is zero. With a carried one, it is nine, because nine plus that one makes ten and keeps the last digit unchanged.",
     "at": [
      "In the ones column",
-     "in the ones",
-     "in the ones",
-     "Y must be",
-     "With a carried",
-     "With a carried",
-     "one, it is"
+     "in the ones"
     ]
    },
    {
     "say": "When we add two numbers with the same number of digits, and the sum has an extra digit, its new leading digit is one. Seventy-six plus fifty-eight is a hundred thirty-four. This rule is for adding two numbers, not three or more.",
     "at": [
      "the sum has",
-     "new leading digit",
-     "Seventy-six plus fifty-eight",
-     "thirty-four. This"
+     "new leading digit"
     ]
    }
   ],
@@ -80,11 +56,7 @@
     "say": "The special digits are zero, one, five and six. Squaring one of these keeps the same last digit. Fifteen times fifteen is two hundred twenty-five, still ending in five. Sixteen times sixteen is two hundred fifty-six, still ending in six.",
     "at": [
      "The special digits",
-     "five and six",
-     "last digit. Fifteen",
-     "Fifteen times fifteen",
-     "twenty-five, still",
-     "is two hundred fifty"
+     "five and six"
     ]
    },
    {
@@ -98,8 +70,7 @@
     "say": "For reversal questions, keep the same digits and reverse their positions. A two-digit number plus its reversal is divisible by eleven. A two-digit number minus its reversal is divisible by nine. And a three-digit number minus its reversal is divisible by ninety-nine.",
     "at": [
      "plus its reversal",
-     "number minus its reversal is divisible by nine",
-     "a three-digit number minus"
+     "number minus its reversal is divisible by nine"
     ]
    }
   ],
@@ -108,25 +79,14 @@
     "say": "The repeated-digit number A A A is a hundred eleven times A. So it is divisible by three and thirty-seven. Four hundred forty-four is four times a hundred eleven, so it's four times three times thirty-seven, which is thirty-seven times twelve.",
     "at": [
      "A A A is a hundred eleven",
-     "hundred eleven times",
-     "it is divisible",
-     "Four hundred forty"
+     "hundred eleven times"
     ]
    },
    {
     "say": "For the largest number with a given digit sum, put as much as possible in the left-hand places. For the smallest, keep the left-hand digits as small as possible, while leaving room for the remaining sum on the right. The first digit cannot be zero, and each digit is at most nine. With a digit sum of ten, the largest three-digit number is nine hundred ten, and the smallest is a hundred nine. [pause] That's it. Now go practice, and I'll see you in the next video.",
     "at": [
      "largest number with",
-     "sum, put as",
-     "hand places. For",
-     "keep the left",
-     "leaving room for",
-     "remaining sum on",
-     "The first digit",
-     "and each digit",
-     "digit sum of",
-     "is nine hundred",
-     "the smallest is"
+     "sum, put as"
     ]
    }
   ]

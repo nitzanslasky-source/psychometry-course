@@ -11,28 +11,12 @@
     ],
     "pause": 0.5
    },
-   {
-    "say": "There's no rule here, only a property. Doing the diamond twice brings us back to x. [short pause] We'll solve it two ways, testing each rule with a number, and then by understanding which rules undo themselves.",
-    "at": [
-     "only a property",
-     "diamond twice brings",
-     "two ways, testing",
-     "with a number",
-     "by understanding which"
-    ]
-   },
+   "There's no rule here, only a property. Doing the diamond twice brings us back to x. [short pause] We'll solve it two ways, testing each rule with a number, and then by understanding which rules undo themselves.",
    {
     "say": "[short pause] For each choice, let's apply the rule twice and see if we get back to where we started. Let's take x is two. Why two? It's easy to calculate, and it isn't one, because one can stay one under some rules and fool us.",
     "at": [
      "For each",
-     "apply the rule twice",
-     "see if we",
-     "to where we",
-     "Let's take x",
-     "It's easy to",
-     "it isn't one",
-     "can stay one",
-     "rules and fool"
+     "apply the rule twice"
     ]
    },
    {
@@ -41,12 +25,10 @@
      "number one, six",
      "Two goes to twelve",
      "twelve goes to",
-     "is not two",
      "so choice number one is out",
      "Choice number two, x plus six",
      "number two, x",
      "Two goes to eight",
-     "eight goes to",
      "Not two, out"
     ]
    },
@@ -56,21 +38,15 @@
      "number three, x",
      "Two goes to two sixths",
      "which is one",
-     "one third over",
      "eighteenth. Not two, out",
      "Choice number four, six over x",
      "number four, six",
-     "Two goes to six",
-     "two, which is",
-     "And three goes",
-     "over three, which",
-     "We're back at"
+     "Two goes to six"
     ]
    },
    {
     "say": "One example can't prove always, but the other three are out, so choice number four is our answer.",
     "at": [
-     "always, but the",
      "so choice number four is our answer"
     ]
    }
@@ -80,47 +56,21 @@
     "say": "[pause] Another way is to know which kind of rule undoes itself. Six over x turns a number into six divided by it. Do it again, and we divide six by six over x. Dividing by a fraction is multiplying by its reciprocal. So six times x over six, which is x. It always comes back.",
     "at": [
      "Another way",
-     "which kind of",
-     "Six over x",
-     "number into six",
      "Do it again",
-     "divide six by",
-     "Dividing by a",
-     "multiplying by its",
-     "So six times",
-     "six, which is",
-     "always comes back"
+     "divide six by"
     ]
    },
    {
     "say": "A rule like ten minus x also comes back when both steps are allowed. Ten minus x, and then ten minus that, is ten minus ten plus x, which is x. But here the diamond is defined only for positive numbers. With x is twenty, ten minus twenty is negative ten, and the diamond can't take that. So ten minus x would not work for every positive x.",
     "at": [
-     "A rule like",
-     "x also comes",
-     "both steps are",
      "Ten minus x, and then",
-     "ten minus that",
-     "minus ten plus",
-     "But here the",
-     "defined only for",
-     "With x is",
-     "minus twenty is",
-     "and the diamond",
-     "So ten minus",
-     "not work for"
+     "ten minus that"
     ]
    },
    {
     "say": "But six x, x plus six and x over six all keep moving the same way. Times six makes a number bigger, and doing it again makes it even bigger. So they never come back. Choice number four. [pause] Okay. I'll see you in the next question.",
     "at": [
-     "But six x",
-     "six and x",
-     "all keep moving",
-     "Times six makes",
-     "bigger, and doing",
-     "makes it even",
-     "So they never come back",
-     "Choice number four"
+     "So they never come back"
     ]
    }
   ]
