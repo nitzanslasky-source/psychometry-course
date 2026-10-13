@@ -198,38 +198,80 @@ def _plain(m):
 
 
 # ------------------------------------------------------------------------------------------------ topic 18: COLS
-def COLS(rows, op='+', size=46, marks=(), title='Written in columns'):
-    """stacked digit columns (Hebrew topic 18: «נכתוב את זה במאונך», write it vertically - the columns line up), built
-    column by column. rows = the numbers as strings, right-aligned (letters or digits, e.g. ['BA', 'DA']); op = the sign
-    in front of the last row; the result row is the LAST string of `rows` (under the line).
-    marks = [(key, column, kind)] layers drawn on top, in order: column = 0 for the ones, 1 for the tens ...;
-    kind 'ring' (a teal box around the whole column), 'carry:1' (a small carry digit above the column),
-    'digit:R:x' (write x under row R of that column, teal).  -> [('line', the frame), (key, layer) ...]"""
-    cw = size * .78; n = max(len(r) for r in rows); x_right = 40 + cw * (n + 1); gap = size * 1.22; top = size * 1.6
-    W = int(x_right + 30); H = int(top + gap * len(rows) + size * .5)
-    X = lambda c: x_right - cw * (c + .5)
-    body = ''
-    for i, r in enumerate(rows):
-        y = top + gap * i + (size * .25 if i == len(rows) - 1 else 0)
-        for c, ch in enumerate(reversed(r)):
-            body += _text(X(c), y, ch, size)
-        if i == len(rows) - 2:
-            body += _text(X(n) + 4, y, op, size)
-            yl = y + size * .32
-            body += '<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="%s" stroke-width="3"/>' % (X(n) - cw * .4, yl, x_right, yl, INK)
-    out = [('line', _svg(W, H, body, title))]
-    for key, c, kind in marks:
-        if kind == 'ring':
-            b = '<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="10" fill="none" stroke="%s" stroke-width="3"/>' % (X(c) - cw * .48, top - size * .95, cw * .96, gap * (len(rows) - 1) + size * 1.45, TEAL)
-        elif kind.startswith('carry:'):
-            b = _text(X(c), top - size * .95, kind[6:], int(size * .55), TEAL)
-        elif kind.startswith('digit:'):
-            _, r, x = kind.split(':', 2)
-            y = top + gap * int(r) + (size * .25 if int(r) == len(rows) - 1 else 0) + size * .62
-            b = _text(X(c), y, x, int(size * .5), TEAL)
-        else:
-            continue
-        out.append((key, _svg(W, H, b, '%s column %d' % (kind, c))))
+_GLY = None
+
+
+def _glyphs():
+    global _GLY
+    if _GLY is None:
+        import json as _json, os as _os
+        _GLY = _json.load(open(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '_mathjax_glyphs.json'), encoding='utf-8'))['glyphs']
+    return _GLY
+
+
+def _glyph(ch, cx, y, size, col=INK, anchor='middle'):
+    """one character in the slide's math font (MathJax outlines), centred on cx (or starting at cx), baseline y
+    -> (svg, advance)"""
+    g = _glyphs()[ch]; s = size / 1000.0; adv = g['adv'] * s
+    x0 = cx - adv / 2 if anchor == 'middle' else cx
+    return ('<path transform="translate(%.1f %.1f) scale(%.4f %.4f)" d="%s" fill="%s"/>' % (x0, y, s, -s, g['d'], col), adv)
+
+
+def _gtext(t, x, y, size, col=INK):
+    """a short string (letters A-D, X, Y, digits, + − × ÷ =, spaces, commas) in the math font, from x"""
+    out = ''
+    for ch in t:
+        if ch == ' ': x += size * .3; continue
+        if ch == ',': out += '<circle cx="%.1f" cy="%.1f" r="%.1f" fill="%s"/>' % (x + size * .08, y + size * .02, size * .07, col); x += size * .35; continue
+        sv, adv = _glyph(ch, x, y, size, col, 'start'); out += sv; x += adv + size * .06
+    return out
+
+
+def COLS(rows, op, steps, size=50, title='Written in columns'):
+    """stacked digit columns, the Hebrew column method (alg 18215-18219 «בשלב הראשון אנחנו כותבים את התרגיל במאונך... ספרת
+    האחדות... הספרות השמאליות», alg 269-275 the grid: one digit per square, the carry small above the column): every
+    digit / letter in a fixed-width cell, right-aligned (ones under ones), the operator in its own cell left of the
+    second row, the bar above the result row, in the slide's math font.
+      rows   the numbers as strings, the LAST one is the result, e.g. ['BA', 'DA', 'CCA'];  op '+', '−' or '×'
+      steps  [(key, change), ...] the states to show in order (the first key must be 'line'). change (dict) updates the
+             state: n = how many rows above the bar are shown, bar, res (True/False), hl = the column boxed now (0 =
+             ones, 1 = tens ...; None = none), carry = {column: '1'} (small, above), notes = 'A=0, C=1' (teal, under the
+             figure: what is found so far)
+    Every layer is a FULL snapshot of the figure (opaque white), so the box moves from column to column.
+    -> [(key, svg), ...]"""
+    em = size; cw = em * 1.08; n = max(len(r) for r in rows) + 1; pad = em * .3
+    top = em * .8; gap = em * 1.32; nrow = len(rows)
+    ns = em * .62                                  # the notes' size (what is found so far)
+    def tw(t): return sum(ns * .3 if c == ' ' else ns * .35 if c == ',' else _glyphs()[c]['adv'] * ns / 1000 + ns * .06 for c in t)
+    nw = max([tw(c.get('notes', '')) for _, c in steps] + [0])
+    gw = cw * n + 2 * pad; W = int(max(gw, nw + 2 * pad)); xoff = W - gw
+    yres = top + em * .78 + gap * (nrow - 1) + em * .22
+    H = int(yres + em * 1.45)
+    X = lambda c: W - pad - cw * (c + .5)
+    Y = lambda r: top + em * .78 + gap * r + (em * .22 if r == nrow - 1 else 0)
+    st = dict(n=nrow - 1, bar=True, res=True, hl=None, carry={}, notes='')
+    out = []
+    for k, (key, ch) in enumerate(steps):
+        st = dict(st, **{a: b for a, b in ch.items() if a != 'carry'}); st['carry'] = dict(st['carry']); st['carry'].update(ch.get('carry', {}))
+        body = '<rect x="0" y="0" width="%d" height="%d" fill="#ffffff"/>' % (W, H) if k else ''
+        if st['hl'] is not None:
+            c = st['hl']
+            body += ('<rect x="%.1f" y="%.1f" width="%.1f" height="%.1f" rx="10" fill="%s" stroke="%s" stroke-width="3"/>'
+                     % (X(c) - cw * .46, top - em * .62, cw * .92, yres - top + em * .9, BAND, TEAL))
+        for r, num in enumerate(rows):
+            if (r < nrow - 1 and r >= st['n']) or (r == nrow - 1 and not st['res']): continue
+            for c, chr_ in enumerate(reversed(num)):
+                body += _glyph(chr_, X(c), Y(r), em)[0]
+        if st['n'] >= 2:
+            body += _glyph(op, X(n - 1), Y(1), em)[0]
+        if st['bar']:
+            yb = Y(nrow - 2) + em * .38
+            body += '<line x1="%.1f" y1="%.1f" x2="%.1f" y2="%.1f" stroke="%s" stroke-width="%.1f"/>' % (X(n - 1) - cw * .45, yb, W - pad * .5, yb, INK, em * .06)
+        for c, v in st['carry'].items():
+            body += _glyph(v, X(c), top - em * .1, em * .5, TEAL)[0]
+        if st['notes']:
+            body += _gtext(st['notes'], W - pad - tw(st['notes']), H - em * .3, ns, TEAL)
+        out.append((key, _svg(W, H, body, '%s: %s' % (title, ' / '.join(rows)) if not k else '%s %s' % (key, st['notes']))))
     return out
 
 
@@ -429,14 +471,19 @@ def TRI(top, left, right, title='Formula triangle'):
 
 
 # ------------------------------------------------------------------------------------------- items for a topic file
-def items(layers_fn, name, out, w=None, col=0, fit=None):
+def items(layers_fn, name, out, w=None, col=0, fit=None, own=False):
     """[(key, svg)] -> {key: item} through the topic file's own _layers(name, out, w, col); w defaults to the 1:1 width
     (the viewBox width), capped at 1060 (left column) / 540 (right column)."""
     import re as _re
     if w is None:
         vb = [float(t) for t in _re.search(r'viewBox="([^"]+)"', out[0][1]).group(1).split()]
         w = int(min(vb[2], 1060 if col == 0 else 540))
-    return layers_fn(name, out, w, col)
+    its = layers_fn(name, out, w, col)
+    if own:                      # each layer finds its own base (renderer `fig` / `of`), even with items shown in between
+        for k, it in its.items():
+            if it.get('over'): it['of'] = name
+            else: it['fig'] = name
+    return its
 
 
 # =====================================================================================================================
@@ -504,7 +551,7 @@ def check_layers(V):
     for si, sl in enumerate(V['slides']):
         shown = [c[1] for ln in sl['lines'] for c in ln['cues'] if c[0] == 'show']
         for k, it in enumerate(shown):
-            if it.get('over'):
+            if it.get('over') and not it.get('of'):
                 prev = shown[k - 1] if k else None
                 fam = lambda n: _re.sub(r'_[^_]+$', '', n)
                 ok = prev is not None and (prev.get('over') or prev['k'] == 'vis') and (
@@ -561,38 +608,77 @@ CARRY = {
     'solve-q-496': {1: ['$0<a<b<1<c<d$', '(1), (3) out']},
     'solve-q-501': {1: ['$0<p<1$, $\\ r<1$'], 2: ['$0<p<1$, $\\ r<1$', '(1), (2), (3) out']},
     # topic 18
-    'solve-q-512': {1: ['$A=0$']},
-    'solve-q-516': {1: ['$\\overline{BC}+46=\\overline{AAA}$']},
     'solve-q-519': {1: ['(1), (2), (3) out']},
     'solve-q-r26-t18-01': {1: ['$B=9$']},
 }
 
 
-def _cols(ns, name, rows, op, size=36, ring=False):
-    """a typed column layout -> COLS built in layers: the two numbers and the line, then the result row, then (ring) the
-    ones column boxed"""
-    frame = COLS(rows[:-1] + [''], op, size=size)[0][1]
-    full = COLS(rows, op, size=size, marks=[('ring', 0, 'ring')] if ring else ())
-    vb = _re.search(r'viewBox="([^"]+)"', frame).group(1).split(); W, H = int(float(vb[2])), int(float(vb[3]))
-    cw = size * .78; n = max(len(r) for r in rows); x_right = 40 + cw * (n + 1); gap = size * 1.22; top = size * 1.6
-    y = top + gap * (len(rows) - 1) + size * .25
-    body = ''.join(_text(x_right - cw * (c + .5), y, ch, size) for c, ch in enumerate(reversed(rows[-1])))
-    layers = [('line', frame), ('res', _svg(W, H, body, 'the result row ' + rows[-1]))]
-    if ring: layers.append(full[1])
-    return items(ns._layers, name, layers, col=0)
+def _cols(ns, name, rows, op, steps, size=50, col=1):
+    return items(ns._layers, name, COLS(rows, op, steps, size=size), col=col, own=True)
+
+
+# topic 18: every column layout is the COLS figure, built at the words (rows, bar, result), the box on the column being
+# discussed, the found digits noted under it; a continuation slide shows the figure again with what was found.
+# [(vid, old typed item or None, slide, rows, op, [(key, change, phrase, line)])] - a None old item = a new figure (its
+# 'line' step is shown at its phrase on that slide)
+T18 = [
+ ('solve-q-512', 'a1', 0, ['BA', 'DA', 'CCA'], '+', [
+    ('line', dict(n=2, bar=False, res=False), None, 2), ('bar', dict(bar=True), 'with the ones digits in one column', 2),
+    ('res', dict(res=True), 'Now we can check each column', 2), ('o', dict(hl=0), 'Step two, the ones column', 3),
+    ('a0', dict(notes='A=0'), 'So A is zero', 3)]),
+ ('solve-q-512', None, 1, ['BA', 'DA', 'CCA'], '+', [
+    ('line', dict(notes='A=0'), 'Step three, the leftmost digit', 0), ('h', dict(hl=2), 'That new hundreds digit', 0),
+    ('c1', dict(notes='A=0, C=1'), 'so C is one', 0), ('t', dict(hl=1), 'Now check the tens column', 2),
+    ('bd', dict(notes='A=0, C=1, B+D=11'), 'That means B plus D is eleven', 2)]),
+ ('solve-q-513', 'b1', 0, ['CB', 'B', 'ACB'], '×', [
+    ('line', dict(n=2, bar=False, res=False), None, 1), ('res', dict(bar=True, res=True), 'check the ones column', 1),
+    ('o', dict(hl=0), 'In the ones column, we multiply', 2), ('b5', dict(notes='B=5'), 'So B is five', 6)]),
+ ('solve-q-515', 'f1', 0, ['BCA', 'BC', 'AAA'], '+', [
+    ('line', dict(n=2, bar=False, res=False), None, 1), ('res', dict(bar=True, res=True), 'lining up the ones digits', 1),
+    ('l', dict(hl=2), 'Can the leftmost digit help', 2), ('o', dict(hl=0), 'Now check the ones column', 3),
+    ('c0', dict(notes='C=0'), 'So C is zero', 3), ('t', dict(hl=1, notes='C=0, B=A'), 'The tens column then gives', 4)]),
+ ('solve-q-516', 'g1', 0, ['AAA', '46', 'BC'], '−', [
+    ('line', dict(n=2, bar=False, res=False), None, 2), ('res', dict(bar=True, res=True), 'minus forty-six is B C', 2)]),
+ ('solve-q-516', 'g2', 0, ['BC', '46', 'AAA'], '+', [
+    ('line', dict(n=2, bar=False, res=False), None, 2), ('res', dict(bar=True, res=True), 'six is A A A', 2)]),
+ ('solve-q-516', None, 1, ['BC', '46', 'AAA'], '+', [
+    ('line', dict(), 'Back to our question', 0), ('h', dict(hl=2), 'so the hundreds digit must be one', 0),
+    ('a1', dict(notes='A=1'), 'So A is one', 0), ('o', dict(hl=0, carry={1: '1'}), 'C plus six ends in one', 1),
+    ('c5', dict(notes='A=1, C=5'), 'so C is five and we carry one', 1), ('b6', dict(hl=None, notes='A=1, B=6, C=5'), 'So B is six', 1)]),
+ ('solve-q-518', 'j1', 0, ['AA', '17', 'CBA'], '×', [
+    ('line', dict(n=2, bar=False, res=False), None, 1), ('res', dict(bar=True, res=True), 'That lets us check', 1),
+    ('o', dict(hl=0), 'In the ones column, A times seven', 2), ('a5', dict(notes='A=5'), 'So A is five', 3),
+    ('all', dict(hl=None, notes='C=9, B=3, A=5'), 'C is nine, B is three', 5)]),
+ ('solve-q-519', 'k1', 0, ['AB', 'BC', 'CD'], '+', [
+    ('line', dict(n=2, bar=False, res=False), None, 1), ('res', dict(bar=True, res=True), 'Now list the prime digits', 1),
+    ('t', dict(hl=1), 'We add A and B in the tens column', 2), ('o', dict(hl=0), 'In the ones column, we add B plus seven', 3)]),
+ ('solve-q-519', None, 1, ['AB', 'BC', 'CD'], '+', [
+    ('line', dict(notes='C=5'), 'That leaves five', 0), ('t', dict(hl=1), 'In the tens column, A and B', 0),
+    ('o', dict(hl=0), 'the ones column gives', 0), ('all', dict(hl=None, notes='A=3, B=2, C=5, D=7'), 'So A is three', 0)]),
+ ('solve-q-r26-t18-01', 'n1', 0, ['2A6', 'B8', '3A4'], '+', [
+    ('line', dict(n=2, bar=False, res=False), None, 2), ('res', dict(bar=True, res=True), 'with the ones digits lined up', 2),
+    ('o', dict(hl=0), 'Six plus eight is fourteen', 2), ('c', dict(carry={1: '1'}), 'carry one to the tens column', 2),
+    ('t', dict(hl=1), 'In the tens column, we add', 3), ('b9', dict(notes='B=9'), 'which means B is nine', 4),
+    ('h', dict(hl=2, carry={2: '1'}), 'We carry one to the hundreds column', 4)]),
+]
 
 
 def _fix_t18(ns):
     V = ns.VIDEOS
-    plan = [('solve-q-512', 'a1', ['BA', 'DA', 'CCA'], '+', [('res', 'Now we can check', 0), ('ring', 'Step two, the ones', 1)]),
-            ('solve-q-515', 'f1', ['BCA', 'BC', 'AAA'], '+', [('res', 'lining up the ones', 0)]),
-            ]   # (q-513, q-516, q-518, q-519, q-r26-t18-01: their left columns are full - with the handwriting on, a
-    #               built layout runs into the choices - so the typed layout stays there)
-    small = {'solve-q-518': 28, 'solve-q-r26-t18-01': 28}          # a full left column: a smaller layout
-    for vid, old, rows, op, steps in plan:
+    for vid, old, si, rows, op, steps in T18:
         if vid not in V: continue
-        fig = _cols(ns, old + 'c', rows, op, size=small.get(vid, 36), ring=any(k == 'ring' for k, _, _ in steps))
-        replace_with_figure(ns, V[vid], old, fig, steps)
+        name = (old or 'cf%d' % si) + 'c'
+        col = 0 if (vid, old) == ('solve-q-516', 'g2') else 1     # two layouts on one slide: the second one on the left
+        fig = _cols(ns, name, rows, op, [(k, ch) for k, ch, _, _ in steps], size=44 if col == 0 else 50, col=col)
+        if old:
+            s0, l0, c0 = _find_show(V[vid], old)
+            assert s0 == si and l0 == steps[0][3], (vid, old, s0, l0)
+            replace_with_figure(ns, V[vid], old, fig, [])
+            base = fig['line']
+        else:
+            _insert(ns, V[vid]['slides'][si]['lines'][steps[0][3]], ('show', fig['line'], steps[0][2]))
+        for key, ch, ph, li in steps[1:]:
+            _insert(ns, V[vid]['slides'][si]['lines'][li], ('show', fig[key], ph))
 
 
 def _fix_t17(ns):

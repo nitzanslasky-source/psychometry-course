@@ -27,8 +27,10 @@
      "A A A",
      "A A A",
      "A A minus",
+     "minus forty-six is B C",
      "B C. Add",
-     "B C plus forty-six"
+     "B C plus forty-six",
+     "six is A A A"
     ]
    },
    {
@@ -49,10 +51,12 @@
    {
     "say": "Back to our question: B C plus forty-six is A A A. We add two two-digit numbers and get a three-digit result, so the hundreds digit must be one. That digit is A. So A is one, and A A A is a hundred eleven.",
     "at": [
-     "Back to",
+     "Back to our question",
      "Two two-digit numbers",
      "a three-digit",
      "so the hundreds",
+     "so the hundreds digit must be one",
+     "So A is one",
      "A is one",
      "A A is"
     ]
@@ -63,11 +67,14 @@
      "continue column by",
      "by column: C",
      "C plus six",
+     "C plus six ends in one",
      "one, so C",
+     "so C is five and we carry one",
      "carry one. But",
      "But we can",
      "hundred eleven minus",
      "So B is",
+     "So B is six",
      "is five, and",
      "sum is eleven"
     ]

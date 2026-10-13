@@ -18,6 +18,7 @@
      "it by testing",
      "choices for C",
      "vertically",
+     "Now list the prime digits",
      "The prime digits",
      "three, five and",
      "four letters, so",
@@ -27,6 +28,7 @@
    {
     "say": "C is the tens digit of the sum. We add A and B in the tens column, and there may also be a carried one. Could C be two or three? The smallest sum of two different prime digits is two plus three, which is five. A carry would only add more. So C cannot be two or three. Choice numbers two and three are out.",
     "at": [
+     "We add A and B in the tens column",
      "C be two",
      "smallest sum of",
      "sum of two",
@@ -41,6 +43,7 @@
     "say": "Now test C is seven. In the ones column, we add B plus seven to get the last digit D. If B is two, we get nine, which is not prime. If B is three, we get ten, ending in zero, which is not prime either. So B would have to be five. Five plus seven is twelve, giving D is two and a carried one. The tens column then says A plus five plus one is seven. That would make A one, but one is not prime. So C cannot be seven. This choice is out.",
     "at": [
      "C is seven",
+     "In the ones column, we add B plus seven",
      "B is two",
      "B is three",
      "ending in zero",
@@ -58,11 +61,15 @@
     "say": "That leaves five as the only possible value of C. In the tens column, A and B can be two and three, adding to five. Check which goes in B. With B is two, the ones column gives two plus five is seven. That is the remaining prime digit for D, and there is no carry. So A is three, B is two, and D is seven.",
     "at": [
      "That leaves",
+     "That leaves five",
      "In the tens",
+     "In the tens column, A and B",
      "the ones column",
+     "the ones column gives",
      "and there is",
      "is no carry",
      "So A is",
+     "So A is three",
      "is two, and"
     ]
    },

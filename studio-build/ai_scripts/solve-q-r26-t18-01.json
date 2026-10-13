@@ -25,13 +25,17 @@
     "at": [
      "Let's start",
      "start with the columns",
+     "with the ones digits lined up",
      "six plus eight",
-     "Write four in"
+     "Six plus eight is fourteen",
+     "Write four in",
+     "carry one to the tens column"
     ]
    },
    {
     "say": "In the tens column, we add A plus B plus that carried one. The result must end in A. Careful, this does not mean B is zero. If B were zero, we would still add the carried one, giving A plus one, not the same last digit A. So choice number two is the trap.",
     "at": [
+     "In the tens column, we add",
      "Careful, this does",
      "Careful, this does",
      "Careful, this does",
@@ -48,6 +52,8 @@
     "say": "To get back to the same last digit A, the extra amount we add must be ten. That extra amount is B plus the carried one. So B plus one is ten, which means B is nine. We carry one to the hundreds column, where two plus one is three. It all fits. Choice number four is our answer.",
     "at": [
      "B plus one",
+     "which means B is nine",
+     "We carry one to the hundreds column",
      "the hundreds column",
      "is three. It",
      "Choice number four is our answer"

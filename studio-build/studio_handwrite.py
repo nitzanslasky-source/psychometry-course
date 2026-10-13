@@ -367,10 +367,22 @@ REPL = [
      # 2026-10-11 layered figures (a number line BUILT step by step at the spoken words): an item with over:1 is drawn at
      # the y of the last item before it and takes no room (h 0; its gap is 0), so its layers stack exactly on the base;
      # data-over tells the layout check that the overlap is meant
-     "if(it.over&&window.__hyBaseY!=null){const r=hyItem(Object.assign({},it,{over:0}),x,window.__hyBaseY,w);return {svg:'<g data-over=\"1\">'+r.svg+'</g>',h:0}}"
-     "window.__hyBaseY=y;if(it.k==='hw')return hwItem(it,x,y,w);"),
+     # 2026-10-13: a layer with `of` (its figure's id; the base has the same `fig`) is drawn at its OWN figure's place and
+     # scale, even when other items were shown in between (e.g. the topic-18 column figures, built at the words)
+     "if(it.over&&(window.__hyBaseY!=null||it.of)){const F=it.of&&window.__hyFig&&window.__hyFig[it.of],sv=window.__hyBaseY,sc=F?F.s:(window.__hyBaseScale||1);"
+     "const o=Object.assign({},it,{over:0,fig:null});if(sc!==1&&o.w){o.w=Math.round(o.w*sc);o.h=Math.round((o.h||300)*sc)}"
+     "const r=hyItem(o,F?F.x:x,F?F.y:window.__hyBaseY,w);window.__hyBaseY=sv;return {svg:'<g data-over=\"1\">'+r.svg+'</g>',h:0}}"
+     "window.__hyBaseY=y;window.__hyBaseScale=1;if(it.fig)(window.__hyFig=window.__hyFig||{})[it.fig]={x:x,y:y,s:1};if(it.k==='hw')return hwItem(it,x,y,w);"),
     # a positioned hand-written item takes part in the overlap push-down / shrink-to-fit like a text item
     ("if(it.y!=null&&it.k==='t'){const x1=it.w?", "if(it.y!=null&&(it.k==='t'||it.k==='hw')){const x1=it.w?"),
+    # 2026-10-13: a positioned figure (k 'vis', e.g. a right-column column layout) is pushed below what is already placed
+    # (the question, earlier items) and scaled down to fit above the answer choices, like a positioned text item; its
+    # layers follow its place and scale (`of` above)
+    ("placed.push({x0:x,x1,y0:y,y1:y+r.h})}if(it.k==='q')",
+     "placed.push({x0:x,x1,y0:y,y1:y+r.h})}else if(it.y!=null&&it.k==='vis'&&!it.over){const iw=it.w||W,ih=it.h||300;let mv=false;"
+     "for(const p of placed)if(x<p.x1&&x+iw>p.x0&&y<p.y1+10&&y+ih>p.y0){y=p.y1+14;mv=true}let sc=1;while(y+ih*sc>ctop-10&&sc>.5)sc-=.05;"
+     "if(mv||sc<1){r=hyItem(Object.assign({},it,{w:Math.round(iw*sc),h:Math.round(ih*sc)}),x,y,W);window.__hyBaseScale=sc;if(it.fig&&window.__hyFig)window.__hyFig[it.fig].s=sc}"
+     "placed.push({x0:x,x1:x+iw*sc,y0:y,y1:y+ih*sc})}if(it.k==='q')"),
     # 2026-10-11: a math question item reports where its answer choices start (ctop), so board items that would run
     # into the choices can be fitted above them (slide_style.py shrink-to-fit; before, only text-layout questions did)
     ("svgText('Figure not necessarily drawn to scale.',x+w,top-6,15,PAL.muted,400,'end')}\n  return {svg:s,h:r.height}}",

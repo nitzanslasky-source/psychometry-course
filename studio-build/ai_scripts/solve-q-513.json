@@ -16,12 +16,14 @@
     "at": [
      "short pause] vertically",
      "vertically and check",
-     "check the ones"
+     "check the ones",
+     "check the ones column"
     ]
    },
    {
     "say": "In the ones column, we multiply B by B, and the result must end in B. We only need its last digit, not the whole product. Which digits keep the same last digit when squared? Zero, one, five and six. Zero times zero is zero. One times one is one. Five times five is twenty-five, ending in five. Six times six is thirty-six, ending in six.",
     "at": [
+     "In the ones column, we multiply",
      "digits keep the",
      "last digit when",
      "when squared? Zero",
@@ -69,6 +71,7 @@
     "say": "So B is five. It fits: twenty-five times five is a hundred twenty-five. C B is twenty-five, B is five, and A C B is a hundred twenty-five. Choice number two is our answer. [pause] Okay. I'll see you in the next question.",
     "at": [
      "So B is",
+     "So B is five",
      "It fits: twenty",
      "Twenty-five times five",
      "Choice number two is our answer"

@@ -19,12 +19,14 @@
      "same equality as",
      "equality as multiplication",
      "A A times seventeen",
-     "C B A. That"
+     "C B A. That",
+     "That lets us check"
     ]
    },
    {
     "say": "In the ones column, A times seven must end in A. Subtract A from that product, and six times A must end in zero. The only digit values for A that do that are zero and five. Check five: seven times five is thirty-five, ending in five.",
     "at": [
+     "In the ones column, A times seven",
      "seven must end",
      "must end in zero",
      "The only digit",
@@ -38,6 +40,7 @@
      "Zero? Then A A",
      "start with zero",
      "start with zero",
+     "So A is five",
      "A is five"
     ]
    },
@@ -55,6 +58,7 @@
     "say": "Read the digits of nine hundred thirty-five: C is nine, B is three, and A is five. Their sum is nine plus three plus five, which is seventeen. Choice number one is our answer. [pause] Okay. I'll see you in the next question.",
     "at": [
      "Read the digits",
+     "C is nine, B is three",
      "is three, and",
      "Nine plus three plus five",
      "Choice number one is our answer"

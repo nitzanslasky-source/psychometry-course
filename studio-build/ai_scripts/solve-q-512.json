@@ -23,8 +23,9 @@
     "say": "[short pause] Step one, write the addition vertically, with the ones digits in one column and the tens digits in the next. Now we can check each column.",
     "at": [
      "write the addition",
+     "with the ones digits in one column",
      "Now we can",
-     "Now we can check",
+     "Now we can check each column",
      "we can check"
     ]
    },
@@ -32,14 +33,15 @@
     "say": "Step two, the ones column. We add A plus A, and the result must end in A again. So adding another A does not change the last digit. A is a single digit, and nothing carries into the ones column. The only digit we can add without changing that last digit is zero. Five plus zero ends in five, and eight plus zero ends in eight. So A is zero.",
     "at": [
      "Step two, the",
-     "Step two, the ones",
+     "Step two, the ones column",
      "A plus A",
      "nothing carries into",
      "Nothing carries into",
      "column. The only",
      "Five plus zero",
      "eight plus zero",
-     "So A is"
+     "So A is",
+     "So A is zero"
     ]
    }
   ],
@@ -47,12 +49,14 @@
    {
     "say": "Step three, the leftmost digit. We added two two-digit numbers and got a three-digit number. That new hundreds digit can only be one. Here that digit is C, so C is one.",
     "at": [
-     "Step three",
+     "Step three, the leftmost digit",
      "digit. We added",
      "numbers and got",
      "digit number. That",
      "number. That new",
-     "That new hundreds"
+     "That new hundreds",
+     "That new hundreds digit",
+     "so C is one"
     ]
    },
    {
@@ -69,6 +73,8 @@
    {
     "say": "Now check the tens column. A is zero, so zero plus zero carries nothing into this column. C is one, so the result has one in both its tens and hundreds places. That means B plus D is eleven. B and D could be three and eight, or four and seven. We do not need to find them separately.",
     "at": [
+     "Now check the tens column",
+     "That means B plus D is eleven",
      "B plus D",
      "B plus D",
      "B plus D",

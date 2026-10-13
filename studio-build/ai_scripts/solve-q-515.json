@@ -17,12 +17,13 @@
      "C. Use the",
      "Use the four",
      "First write the",
-     "lining up the ones"
+     "lining up the ones digits"
     ]
    },
    {
     "say": "Can the leftmost digit help? A three-digit number plus a two-digit number gives a three-digit sum here. There is no new digit on the left. So we cannot use the rule that a new leading digit must be one.",
     "at": [
+     "Can the leftmost digit help",
      "A three-digit number",
      "two-digit number",
      "here. There is",
@@ -32,8 +33,10 @@
    {
     "say": "Now check the ones column. The ones digits we add are A and C, and the result ends in A. So A plus C must end in A again. Nothing carries into this column. The only single digit we can add without changing the last digit is zero. So C is zero. Choice number two is our answer.",
     "at": [
+     "Now check the ones column",
      "A plus C",
      "So C is",
+     "So C is zero",
      "C is zero",
      "Choice number two is our answer"
     ]
@@ -42,6 +45,7 @@
     "say": "Let's check that it can work. With C is zero, there is no carry from the ones column. The tens column then gives B is A. Three hundred three plus thirty is three hundred thirty-three. Four hundred four plus forty is four hundred forty-four. Both fit. [pause] Okay. I'll see you in the next question.",
     "at": [
      "With C is",
+     "The tens column then gives",
      "column then gives",
      "Three hundred three",
      "is three hundred",
