@@ -12,20 +12,22 @@
     "pause": 0.5
    },
    {
-    "say": "A hard one. Must be true means true for every positive a and b. So for each choice, we try to show it can fail. [short pause] We'll solve it two ways, technically, by working with each inequality or equation, and then by understanding what the diamond does.",
+    "say": "Must be true means true for every positive a and b. So for each choice, we test whether it works for every positive a and b, and one allowed pair where it fails rules it out. [short pause] We'll solve it two ways, with algebra on each inequality or equation, and then by understanding what the diamond does.",
     "at": [
-     "must be true",
+     "Must be true means",
      "for every positive",
      "b. So for",
-     "we try to",
-     "two ways, technically",
-     "with each inequality",
-     "and then by",
-     "the diamond does"
+     "we test whether",
+     "for every positive a and b, and",
+     "b, and one",
+     "where it fails",
+     "ways, with algebra",
+     "inequality or equation",
+     "by understanding what"
     ]
    },
    {
-    "say": "[short pause] Let's start technically. Choice number one says three over a is smaller than three. a is positive, so we can multiply both sides by a without flipping the sign. We get three is smaller than three a. Divide both sides by three, and one is smaller than a. That's true only when a is bigger than one. But a could be one half. Then three over one half is six, and six is not smaller than three. So choice number one is out.",
+    "say": "[short pause] Let's start with algebra. Choice number one says three over a is smaller than three. a is positive, so we can multiply both sides by a without flipping the sign. We get three is smaller than three a. Divide both sides by three, and one is smaller than a. That's true only when a is bigger than one. But a could be one half. Then three over one half is six, and six is not smaller than three. So choice number one is out.",
     "at": [
      "Let's start",
      "Choice number one says",
@@ -48,7 +50,7 @@
     ]
    },
    {
-    "say": "Choice number three. Three over a, divided by three over b. To divide by a fraction, multiply by its reciprocal. Three over a times b over three. The threes cancel, and we get b over a, not a over b. So choice number three is out.",
+    "say": "Choice number three. Three over a, divided by three over b. To divide by a fraction, multiply by its reciprocal. Three over a times b over three. The threes cancel, and we get b over a. The choice says a over b, and b over a equals a over b only when a and b are equal. So it's not true for every positive a and b, and choice number three is out.",
     "at": [
      "Choice number three. Three over a",
      "number three. Three",
@@ -59,29 +61,36 @@
      "Three over a times",
      "The threes cancel",
      "get b over",
-     "a over b",
-     "So choice number three is"
+     "The choice says",
+     "b, and b",
+     "equals a over",
+     "when a and",
+     "equal. So it's",
+     "for every positive",
+     "and choice number three is out"
     ]
    }
   ],
   [
    {
-    "say": "Choice number four says three over a is smaller than three over a plus one. Both bottoms are positive, so we can multiply both sides by a and by a plus one without flipping. We get three times, in brackets, a plus one, is smaller than three a. Divide by three, and a plus one is smaller than a. Take a off both sides, and one is smaller than zero. That's never true. So choice number four is out.",
+    "say": "Choice number four says three over a is smaller than three over, in brackets, a plus one. The whole a plus one is the bottom of that fraction. Both bottoms are positive, so we can multiply both sides by a and by a plus one without flipping. We get three times, in brackets, a plus one, is smaller than three a. Divide by three, and a plus one is smaller than a. Take a off both sides, and one is smaller than zero. That's never true. So choice number four is out.",
     "at": [
      "Choice number",
      "Choice number four says",
      "number four says",
      "a is smaller",
-     "over a plus",
+     "over, in brackets",
+     "The whole a",
+     "is the bottom",
      "Both bottoms are",
      "we can multiply",
      "by a and",
      "plus one without",
      "We get three",
-     "brackets, a plus",
+     "brackets, a plus one, is",
      "smaller than three a",
      "Divide by three",
-     "plus one is",
+     "plus one is smaller",
      "Take a off",
      "and one is",
      "zero. That's never",
@@ -123,7 +132,7 @@
     ]
    },
    {
-    "say": "Choice number three. Dividing by three over b is like multiplying by b over three. So the a ends up at the bottom and the b on top, b over a. Not a over b.",
+    "say": "Choice number three. Dividing by three over b is like multiplying by b over three. So the a ends up at the bottom and the b on top, b over a. That's a over b only when a equals b, so not always.",
     "at": [
      "number three. Dividing",
      "Dividing by three over b",
@@ -131,18 +140,22 @@
      "So the a",
      "at the bottom",
      "b on top",
-     "a. Not a"
+     "That's a over",
+     "when a equals"
     ]
    },
    {
-    "say": "Choice number four. A bigger denominator makes a smaller fraction. a plus one is bigger than a, so three over a plus one is smaller than three over a. That's the opposite of what the choice says, so it's never true.",
+    "say": "Choice number four. Both fractions have the same positive top, three, and positive bottoms. With the same positive top, a bigger denominator makes a smaller fraction. a plus one is bigger than a, so three over the whole a plus one is smaller than three over a. That's the opposite of what the choice says, so it's never true.",
     "at": [
-     "number four. A",
+     "number four. Both",
+     "Both fractions have",
+     "positive top, three",
+     "bottoms. With the",
      "A bigger denominator",
      "a plus one",
      "than a, so",
-     "a plus one is smaller",
-     "than three over",
+     "the whole a",
+     "is smaller than",
      "That's the opposite",
      "the choice says"
     ]

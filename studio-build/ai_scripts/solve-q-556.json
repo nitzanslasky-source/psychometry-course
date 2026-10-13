@@ -88,18 +88,22 @@
     ]
    },
    {
-    "say": "The others don't always work. Adding five says nothing about the factors. Squaring doubles the count of fives, it doesn't add one. And multiplying the count by five is far too much. For example, x is a hundred twenty-five, which is five cubed, with three fives. Five x has four fives, but five times three is fifteen. [pause] Okay. I'll see you in the next question.",
+    "say": "The others don't always work. Adding five doesn't necessarily add one factor of five. Squaring doubles the count of fives, and doubling is not the same as adding one. And multiplying the count by five is not the same as adding one either. In the example of x is a hundred twenty-five, which is five cubed, with three fives, five x has four fives, but five times three is fifteen. [pause] Okay. I'll see you in the next question.",
     "at": [
      "The others don't",
-     "Adding five says",
+     "Adding five doesn't",
+     "one factor of",
      "Squaring doubles the",
-     "fives, it doesn't",
+     "fives, and doubling",
+     "the same as",
      "And multiplying the",
-     "five is far",
-     "x is a hundred twenty-five",
-     "which is five",
-     "Five x has",
-     "but five times"
+     "five is not",
+     "as adding one either",
+     "In the example of x is a hundred twenty-five",
+     "is a hundred",
+     "is five cubed",
+     "fives, five x",
+     "fives, but five"
     ]
    }
   ]

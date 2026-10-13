@@ -1172,7 +1172,7 @@ video('solve-q-554', 'solution', qid='q-554', slides=[
 ])
 
 # ------------------------------------------------------------------------------------------------ q-555 (Hebrew Q6)
-# NEW: "must be true for all positive a, b" - break each choice; technically (multiply by a positive: no flip) and by
+# NEW: "must be true for all positive a, b" - break each choice; with algebra (multiply by a positive: no flip) and by
 # understanding (3/x = 3 times the reciprocal; a bigger denominator, a smaller fraction).  Hebrew: both, choice by
 # choice -> two methods here; the wrong choices first, so each method ends on the answer.
 h6 = IH('h6', '(1) $\\frac3a<3\\ \\to\\ 1<a$: $\\ a=\\frac12$: $\\ 6$ ✗', size=30)
@@ -1184,22 +1184,24 @@ i7 = I('i7', '(3) $\\div\\frac3b=\\times\\frac b3$: $\\ \\frac ba$ ✗', size=28
 i8 = I('i8', '(4) bigger denominator, smaller fraction ✗', size=28)
 i9 = I('i9', '(2) a number times its reciprocal is $1$: $\\ 3\\cdot1=3$ ✓', size=28)
 video('solve-q-555', 'solution', qid='q-555', slides=[
-    S('Method 1 · Technically',
+    S('Method 1 · Algebra',
       L("For every number x that's not zero, diamond of x is three over x. Which of the following must be true for all "
         "positive a and b?", pt('stem', 'For every number x', 'hl', 6.0), voice='calm', pause=0.5),
-      L("A hard one. Must be true means true for every positive a and b. So for each choice, we try to show it can fail. "
-        "[short pause] We'll solve it two ways, technically, by working with each inequality or equation, and then by "
-        "understanding what the diamond does.", pt('stem', 'must be true')),
-      L("[short pause] Let's start technically. Choice number one says three over a is smaller than three. a is positive, "
+      L("Must be true means true for every positive a and b. So for each choice, we test whether it works for every "
+        "positive a and b, and one allowed pair where it fails rules it out. [short pause] We'll solve it two ways, with "
+        "algebra on each inequality or equation, and then by understanding what the diamond does.", pt('stem', 'Must be true means')),
+      L("[short pause] Let's start with algebra. Choice number one says three over a is smaller than three. a is positive, "
         "so we can multiply both sides by a without flipping the sign. We get three is smaller than three a. Divide both "
         "sides by three, and one is smaller than a. That's true only when a is bigger than one. But a could be one half. "
         "Then three over one half is six, and six is not smaller than three. So choice number one is out.",
         show(h6, 'Choice number one says'), mk('cross', 'choice 1', 'So choice number one is out')),
       L("Choice number three. Three over a, divided by three over b. To divide by a fraction, multiply by its reciprocal. "
-        "Three over a times b over three. The threes cancel, and we get b over a, not a over b. So choice number three is "
-        "out.", show(h7, 'Choice number three. Three over a'), mk('cross', 'choice 3', 'So choice number three is'))),
-    S('Method 1 · Technically',
-      L("Choice number four says three over a is smaller than three over a plus one. Both bottoms are positive, so we can "
+        "Three over a times b over three. The threes cancel, and we get b over a. The choice says a over b, and b over a "
+        "equals a over b only when a and b are equal. So it's not true for every positive a and b, and choice number three "
+        "is out.", show(h7, 'Choice number three. Three over a'), mk('cross', 'choice 3', 'and choice number three is out'))),
+    S('Method 1 · Algebra',
+      L("Choice number four says three over a is smaller than three over, in brackets, a plus one. The whole a plus one "
+        "is the bottom of that fraction. Both bottoms are positive, so we can "
         "multiply both sides by a and by a plus one without flipping. We get three times, in brackets, a plus one, is "
         "smaller than three a. Divide by three, and a plus one is smaller than a. Take a off both sides, and one is smaller "
         "than zero. That's never true. So choice number four is out.", show(h8, 'Choice number four says'),
@@ -1207,15 +1209,16 @@ video('solve-q-555', 'solution', qid='q-555', slides=[
       L("Choice number two. Three over a, times a. The a cancels, and we get three. And three over b, times b, is three "
         "too. Three equals three for every a and b. So choice number two must be true, and it's our answer.",
         show(h9, 'Choice number two. Three over a'), mk('tick', 'choice 2', "and it's our answer")),
-      sb='Method 1 · Technically'),
+      sb='Method 1 · Algebra'),
     S('Method 2 · By understanding',
       L("[pause] Now by understanding. Three over x means three divided by x. Choice number one. For a bigger than one it "
         "works. Three over two is smaller than three. But for a equal to one, we get three, which isn't smaller than three. "
         "And for a fraction like one half, we get six. So not always.", show(i6, 'For a bigger than one')),
       L("Choice number three. Dividing by three over b is like multiplying by b over three. So the a ends up at the bottom "
-        "and the b on top, b over a. Not a over b.", show(i7, 'Dividing by three over b')),
-      L("Choice number four. A bigger denominator makes a smaller fraction. a plus one is bigger than a, so three over a "
-        "plus one is smaller than three over a. That's the opposite of what the choice says, so it's never true.",
+        "and the b on top, b over a. That's a over b only when a equals b, so not always.", show(i7, 'Dividing by three over b')),
+      L("Choice number four. Both fractions have the same positive top, three, and positive bottoms. With the same "
+        "positive top, a bigger denominator makes a smaller fraction. a plus one is bigger than a, so three over the whole "
+        "a plus one is smaller than three over a. That's the opposite of what the choice says, so it's never true.",
         show(i8, 'A bigger denominator')),
       L("Choice number two. Three over a is three times one over a, and one over a is the reciprocal of a. A number times "
         "its reciprocal is one. So three over a, times a, is three times one, three, for every a. The same for b. So it's "
@@ -1255,10 +1258,11 @@ video('solve-q-556', 'solution', qid='q-556', slides=[
         "factors, whatever x is. So the count of fives goes up by exactly one. That's choice number four, for every x. For "
         "example, fifty has two fives, and two hundred fifty has three.", show(k5, 'we add exactly one more five'),
         mk('tick', 'choice 4', "That's choice number four")),
-      L("The others don't always work. Adding five says nothing about the factors. Squaring doubles the count of fives, it "
-        "doesn't add one. And multiplying the count by five is far too much. For example, x is a hundred twenty-five, which "
-        "is five cubed, with three fives. Five x has four fives, but five times three is fifteen. [pause] Okay. I'll see "
-        "you in the next question.", show(k6, 'x is a hundred twenty-five'))),
+      L("The others don't always work. Adding five doesn't necessarily add one factor of five. Squaring doubles the count "
+        "of fives, and doubling is not the same as adding one. And multiplying the count by five is not the same as adding "
+        "one either. In the example of x is a hundred twenty-five, which is five cubed, with three fives, five x has four "
+        "fives, but five times three is fifteen. [pause] Okay. I'll see "
+        "you in the next question.", show(k6, 'In the example of x is a hundred twenty-five'))),
 ])
 
 # ------------------------------------------------------------------------------------------------ r26-t19-summary
@@ -1267,11 +1271,11 @@ s1s = SLOT('s1s', '◆([[x]]) = [[x]]^2 − 5·[[x]]', [('in', '◆({{−2}}) = 
 s2s = I('s2s', '$a\\heartsuit b=3(a+b)$: $\\ 4\\heartsuit2=18$ $\\quad 2\\star5\\ne5\\star2$?', size=30)
 s3s = I('s3s', 'Operation first $\\quad$ nested: inside out', size=30)
 s4s = I('s4s', '$F(4t)=t+3$: $\\ F(20)$: $\\ 4t=20$, $\\ t=5$, $\\ 8$', size=30)
-s5s = I('s5s', 'No definition? Test each choice $\\quad$ unknown input? An equation', size=28)
+s5s = I('s5s', 'Rule missing: test each candidate (twice for a property) $\\quad$ unknown input: an equation', size=26)
 s6s = I('s6s', 'Conditions: which rule, at every step $\\quad$ backwards: does it fit?', size=28)
-s7s = I('s7s', 'Circular: down to the start, back up $\\quad$ both sides: isolate', size=28)
-s8s = I('s8s', 'Not always: one example $\\quad$ always: swap the letters', size=28)
-s9s = I('s9s', 'Undo themselves: $\\ c-x,\\ \\frac cx$ $\\quad$ inverse: reverse order', size=28)
+s7s = I('s7s', 'Uses itself: down to the start, back up $\\quad$ both sides: isolate', size=28)
+s8s = I('s8s', 'Not always: one failing example $\\quad$ always: algebra (order: swap the letters)', size=26)
+s9s = I('s9s', 'Undo themselves where defined: $\\ \\frac cx,\\ c-x$ $\\quad$ inverse: reverse order', size=28)
 s10s = I('s10s', '$\\blacklozenge(k)-\\blacklozenge(-k)$: $\\ $odd powers, doubled $\\quad$ shortcut formulas', size=28)
 video('r26-t19-summary', 'lesson', slides=[
     S('Defining a New Operation: Summary',
@@ -1288,21 +1292,28 @@ video('r26-t19-summary', 'lesson', slides=[
       L("Inside a longer exercise, turn each operation into a number first. And nested operations go from the inside out. "
         "The inner result becomes the outer input, so don't stop halfway.", show(s3s, 'turn each operation'))),
     S('The types',
-      L("The operation works on an expression? Match the whole input first. F of four t is t plus three. For F of twenty, "
+      L("When the operation works on an expression, match the whole input first. F of four t is t plus three. For F of twenty, "
         "four t is twenty, so t is five, and the answer is five plus three, eight.", show(s4s, 'Match the whole input')),
-      L("No definition? Put the input into each choice. An unknown input? Write the definition, and it's an ordinary "
-        "equation.", show(s5s, 'No definition')),
-      L("Conditions? Check which rule to use at every step, because the input changes. Backwards? Try every rule, and keep "
-        "an answer only if it fits the rule it came from.", show(s6s, 'Conditions?')),
-      L("Circular? Go down to the start value, then climb back up. The operation on both sides? Isolate it like an "
-        "unknown.", show(s7s, 'Circular?'))),
+      L("When an input and its result are given but the rule is missing, put that input into each candidate rule. When "
+        "only a property is given, like doing the diamond twice brings back x, apply each candidate twice. And when the "
+        "input is unknown, write the definition, and it's an ordinary equation.", show(s5s, 'the rule is missing')),
+      L("When the rule has conditions, check which rule to use at every step, because the input changes. When we go "
+        "backwards, from the result to the input, try every rule, and keep an answer only if it fits the rule it came "
+        "from.", show(s6s, 'When the rule has conditions')),
+      L("When the rule uses itself, go down to the start value, then climb back up. When the operation is on both sides of "
+        "an equation, treat it as one unknown and isolate it.", show(s7s, 'When the rule uses itself'))),
     S('Always, must, shortcuts',
-      L("Not always? One example where it fails is enough. Always? Swap the letters, or use algebra. Must be true? Plug in, "
-        "but not equal values, and try a second number if two choices survive. And when the operation is in every choice, "
-        "skip the question and come back to it at the end.", show(s8s, 'Not always?')),
-      L("Two kinds of rules undo themselves, a number minus x, and a number over x. And an inverse operation undoes the "
-        "steps in reverse order.", show(s9s, 'Two kinds of rules')),
-      L("A value minus its value at the opposite number? The even powers cancel, and the odd powers double. And look for "
+      L("When the question asks what is not always true, one allowed example where a choice fails is enough. When it asks "
+        "what must be true, a failing example rules a choice out, and when all the other choices are out, the one that's "
+        "left is the answer. So plug in an easy allowed value, check the "
+        "choices right away, and use another value only if more than one choice is left. To see why a rule always works, "
+        "use algebra, and when the question is about the order of the inputs, swap the letters. And skip a question only if "
+        "its calculation would really take long.", show(s8s, 'what is not always true')),
+      L("Some rules undo themselves, as long as every step stays where the operation is defined. Six over x does, for "
+        "positive x. Ten minus x comes back too, but not for every positive x, because ten minus twenty is negative. And an "
+        "inverse operation undoes the steps in reverse order.", show(s9s, 'Some rules undo themselves')),
+      L("A value minus its value at the opposite number? The terms with even powers of x and the plain number cancel, and "
+        "the terms with odd powers of x double. And look for "
         "the shortcut formulas inside a definition. [pause] That's it. Now go practice, and I'll see you in the next video.",
         show(s10s, 'A value minus its value'))),
 ])

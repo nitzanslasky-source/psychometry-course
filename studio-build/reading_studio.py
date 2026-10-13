@@ -282,7 +282,15 @@ def paragraphs(vid):
 def clean_title(t):
     t = t.strip()
     t = re.sub(r'^Question:\s*', '', t)
-    t = re.sub(r'\\frac\{([^{}]*)\}\{([^{}]*)\}', r'\1/\2', t)
+    # 2026-10-13 (Codex review standard 9, display only): keep the fraction slash in \frac3x, and group a numerator /
+    # denominator / root that holds more than one term: (x-y)²/(xy³), √(8x²+y²)
+    t = re.sub(r'\\frac(\d)([A-Za-z\d])', r'\1/\2', t)
+    _atom = lambda x: bool(re.fullmatch(r'[\\\w◆#]*\((?:[^()]|\([^()]*\))*\)(?:\^\{?\w+\}?)?', x))
+    _multi = lambda x: not _atom(x) and bool(re.search(r'[-+−·\s]', x))
+    _den = lambda x: _multi(x) or not (_atom(x) or x.isdigit() or re.fullmatch(r'\|[^|]*\|', x)) and len(re.sub(r'\^\{?\w+\}?', '', x)) > 1
+    t = re.sub(r'\\frac\{([^{}]*)\}\{([^{}]*)\}', lambda m: ('(%s)' % m.group(1) if _multi(m.group(1)) else m.group(1)) + '/' +
+               ('(%s)' % m.group(2) if _den(m.group(2)) else m.group(2)), t)
+    t = re.sub(r'\\sqrt\{([^{}]*)\}', lambda m: '√(%s)' % m.group(1) if _multi(m.group(1)) else '√' + m.group(1), t)
     t = re.sub(r'\\ne(?![a-z])', '≠', t)
     t = re.sub(r'\\(?:begin|end)\{\w+\}', ' ', t).replace('&', ' ')
     t = re.sub(r'\^\{?(\d+|n)\}?', lambda m: m.group(1).translate(_SUP), t)

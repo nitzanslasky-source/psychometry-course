@@ -49,8 +49,9 @@
   ],
   [
    {
-    "say": "The operation works on an expression? Match the whole input first. F of four t is t plus three. For F of twenty, four t is twenty, so t is five, and the answer is five plus three, eight.",
+    "say": "When the operation works on an expression, match the whole input first. F of four t is t plus three. For F of twenty, four t is twenty, so t is five, and the answer is five plus three, eight.",
     "at": [
+     "on an expression",
      "Match the whole input",
      "F of four",
      "t plus three",
@@ -61,73 +62,97 @@
     ]
    },
    {
-    "say": "No definition? Put the input into each choice. An unknown input? Write the definition, and it's an ordinary equation.",
+    "say": "When an input and its result are given but the rule is missing, put that input into each candidate rule. When only a property is given, like doing the diamond twice brings back x, apply each candidate twice. And when the input is unknown, write the definition, and it's an ordinary equation.",
     "at": [
-     "No definition",
-     "Put the input",
-     "choice. An unknown",
-     "Write the definition",
-     "an ordinary equation"
+     "its result are",
+     "the rule is missing",
+     "that input into",
+     "When only a",
+     "given, like doing",
+     "twice brings back",
+     "each candidate twice",
+     "And when the",
+     "unknown, write the",
+     "it's an ordinary"
     ]
    },
    {
-    "say": "Conditions? Check which rule to use at every step, because the input changes. Backwards? Try every rule, and keep an answer only if it fits the rule it came from.",
+    "say": "When the rule has conditions, check which rule to use at every step, because the input changes. When we go backwards, from the result to the input, try every rule, and keep an answer only if it fits the rule it came from.",
     "at": [
-     "Conditions?",
-     "Check which rule",
+     "When the rule has conditions",
+     "check which rule",
      "at every step",
-     "input changes. Backwards",
-     "Try every rule",
+     "When we go",
+     "the result to",
+     "try every rule",
      "an answer only",
      "fits the rule"
     ]
    },
    {
-    "say": "Circular? Go down to the start value, then climb back up. The operation on both sides? Isolate it like an unknown.",
+    "say": "When the rule uses itself, go down to the start value, then climb back up. When the operation is on both sides of an equation, treat it as one unknown and isolate it.",
     "at": [
-     "Circular?",
-     "Go down to",
+     "When the rule uses itself",
+     "go down to",
      "value, then climb",
-     "The operation on",
-     "Isolate it like"
+     "When the operation",
+     "both sides of",
+     "treat it as",
+     "and isolate it"
     ]
    }
   ],
   [
    {
-    "say": "Not always? One example where it fails is enough. Always? Swap the letters, or use algebra. Must be true? Plug in, but not equal values, and try a second number if two choices survive. And when the operation is in every choice, skip the question and come back to it at the end.",
+    "say": "When the question asks what is not always true, one allowed example where a choice fails is enough. When it asks what must be true, a failing example rules a choice out, and when all the other choices are out, the one that's left is the answer. So plug in an easy allowed value, check the choices right away, and use another value only if more than one choice is left. To see why a rule always works, use algebra, and when the question is about the order of the inputs, swap the letters. And skip a question only if its calculation would really take long.",
     "at": [
-     "Not always?",
-     "One example where",
-     "is enough. Always",
-     "Swap the letters",
-     "algebra. Must be",
-     "Plug in, but",
-     "values, and try",
-     "number if two",
-     "And when the",
-     "in every choice",
-     "question and come",
-     "it at the"
+     "what is not always true",
+     "one allowed example",
+     "choice fails is",
+     "When it asks",
+     "be true, a",
+     "rules a choice",
+     "when all the",
+     "are out, the",
+     "left is the",
+     "So plug in",
+     "allowed value, check",
+     "right away, and",
+     "value only if",
+     "one choice is",
+     "To see why",
+     "always works, use",
+     "when the question is",
+     "the order of",
+     "swap the letters",
+     "And skip a",
+     "if its calculation"
     ]
    },
    {
-    "say": "Two kinds of rules undo themselves, a number minus x, and a number over x. And an inverse operation undoes the steps in reverse order.",
+    "say": "Some rules undo themselves, as long as every step stays where the operation is defined. Six over x does, for positive x. Ten minus x comes back too, but not for every positive x, because ten minus twenty is negative. And an inverse operation undoes the steps in reverse order.",
     "at": [
-     "Two kinds of rules",
-     "themselves, a number",
-     "and a number",
+     "Some rules undo themselves",
+     "long as every",
+     "where the operation",
+     "Six over x",
+     "Ten minus x",
+     "too, but not",
+     "positive x, because",
+     "twenty is negative",
      "And an inverse",
      "the steps in"
     ]
    },
    {
-    "say": "A value minus its value at the opposite number? The even powers cancel, and the odd powers double. And look for the shortcut formulas inside a definition. [pause] That's it. Now go practice, and I'll see you in the next video.",
+    "say": "A value minus its value at the opposite number? The terms with even powers of x and the plain number cancel, and the terms with odd powers of x double. And look for the shortcut formulas inside a definition. [pause] That's it. Now go practice, and I'll see you in the next video.",
     "at": [
      "A value minus its value",
      "at the opposite",
-     "The even powers",
-     "the odd powers",
+     "The terms with",
+     "of x and",
+     "number cancel, and",
+     "with odd powers",
      "And look for",
      "formulas inside a",
      "it. Now go"
