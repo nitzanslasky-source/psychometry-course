@@ -22,6 +22,13 @@ What this does (run it with the Python that has faster-whisper + numpy, e.g. the
      ai_narrate.remap() turns ai_scripts/<videoId>.json's `at` phrases into the manifest the studio's auto-narrate plays
      -> ~/Documents/Course.recordings/_voice_real/<videoId>/ audio.mp3, alignment.json, manifest.json, clean.wav,
      report.json (the AI-voice files in _ai_audio/ are not touched). Record with run_an.py and AUD_ROOT pointing there.
+  5. CAMERA LESSONS (2026-10-13; reading_studio.py camera mode): when her latest full take has a camera video, the same
+     cuts / silence caps / patch splices are applied to it (WAV -> camera time measured by matching the camera file's own
+     audio to the WAV) -> camera.mp4 (round bubble | alpha, clean timeline) + camera.json; report.json['camera'] has the
+     sync check. Then, after the board video is rendered:
+        reading_to_video.py --composite <videoId> [board.mp4] [out.mp4] [--corner tr|br|bl|tl]
+     overlays her face bubble like the studio's (top right unless the board uses that corner) -> '<board> - camera.mp4'.
+     READING_CAMERA=0 skips step 5; READING_IN / READING_OUT redirect the _reading / _voice_real folders (tests).
 """
 import difflib, json, os, re, subprocess, sys, wave
 import numpy as np
@@ -36,6 +43,7 @@ sys.argv = _argv
 os.environ.setdefault('AI_HANDWRITE', 'all')
 REC = os.path.expanduser('~/Documents/Course.recordings')
 IN, OUTROOT = os.path.join(REC, '_reading'), os.path.join(REC, '_voice_real')
+IN, OUTROOT = os.environ.get('READING_IN') or IN, os.environ.get('READING_OUT') or OUTROOT     # tests: a scratch folder
 SR = 48000
 CAP, CAP_SLIDE, FADE = 0.7, 0.9, 0.015
 FILLERS = {'um', 'uh', 'er', 'erm', 'hmm', 'mm', 'ah', 'eh'}
@@ -423,6 +431,7 @@ def splice_patches(vid, base, side, y, words, lines, out):
             got = sum(bl.size for bl in sm.get_matching_blocks())
             if got >= .6 * len(st): newest[p['i']] = (f, ps_, pw)       # she read it (mostly) in this take
     if not newest: return y, words, side, {}
+    srcmap = side.get('_srcmap') or [[0.0, len(y) / SR, base + '.wav', 0.0, '']]     # camera: [y0, y1, wav, src0, kind]
     # paragraph regions of the full take, from her Space presses (the last time she reached each paragraph)
     starts = side.get('paragraphStarts', [])
     def reached(i):
@@ -459,6 +468,11 @@ def splice_patches(vid, base, side, y, words, lines, out):
             pw = [dict(w, s=round(w['s'] - pa, 3), e=round(w['e'] - pa, 3)) for w in pw if pa - .05 <= w['s'] < pb]
             ps_ = dict(ps_, mistakes=[dict(m, t=m['t'] - pa) for m in ps_.get('mistakes', []) if pa <= m['t'] < pb + .5])
         L = len(py) / SR
+        pa_src = pa                                  # where py starts in the patch WAV (0 when the whole take is used)
+        pf = os.path.join(d, f)
+        srcmap = _clip_map(srcmap, 0, a) + [[a, a + .25, pf, pa_src - .25, 'gap'], [a + .25, a + .25 + L, pf, pa_src, ''],
+                                             [a + .25 + L, a + .5 + L, pf, pa_src + L, 'gap']] \
+            + [[s0 + (a + .5 + L - b), s1 + (a + .5 + L - b), f_, src, k_] for s0, s1, f_, src, k_ in _clip_map(srcmap, b, 1e9)]
         y = np.concatenate([y[:int(a * SR)], np.zeros(int(.25 * SR), 'float32'), py, np.zeros(int(.25 * SR), 'float32'), y[int(b * SR):]])
         off = a + .25; delta = (off + L + .25) - b
         sh = lambda w, o: dict(w, s=round(w['s'] + o, 3), e=round(w['e'] + o, 3))
@@ -466,9 +480,18 @@ def splice_patches(vid, base, side, y, words, lines, out):
         mk = [m for m in side.get('mistakes', []) if m['t'] <= a] + [dict(m, t=m['t'] + off, para=i) for m in ps_.get('mistakes', [])] \
             + [dict(m, t=m['t'] + delta) for m in side.get('mistakes', []) if m['t'] >= b]
         st2 = [q for q in starts if q['t'] <= a] + [{'para': i, 't': off, 'how': 'patch'}] + [dict(q, t=q['t'] + delta) for q in starts if q['t'] >= b]
-        side = dict(side, mistakes=mk, paragraphStarts=st2); starts = st2
+        side = dict(side, mistakes=mk, paragraphStarts=st2, _srcmap=srcmap); starts = st2
         patched[i] = f
     return y, words, side, patched
+
+
+def _clip_map(m, lo, hi):
+    """the part [lo, hi) of a source map [[y0, y1, wav, src0, kind], ...]"""
+    out = []
+    for s0, s1, f, src, k in m:
+        a, b = max(s0, lo), min(s1, hi)
+        if b > a: out.append([a, b, f, src + (a - s0), k])
+    return out
 
 
 # ------------------------------------------------------------------------------------------------ main per video
@@ -808,6 +831,14 @@ def run(vid):
     subprocess.run([FF, '-hide_banner', '-loglevel', 'error', '-y', '-i', os.path.join(out, 'clean.wav'), '-c:a', 'libmp3lame', '-b:a', '160k',
                     os.path.join(out, 'audio.mp3')], check=True)
     os.remove(raw)
+    # ---- camera lessons: her face video, cut exactly like the audio (camera.mp4 + camera.json; composite() adds it)
+    if os.environ.get('READING_CAMERA', '1') != '0':
+        try:
+            rep['camera'] = camera_track(vid, out, base, side, tmap, len(clean) / SR)
+        except Exception as e:                      # the audio is ready either way; the report says why there is no face
+            import traceback; traceback.print_exc()
+            rep['camera'] = {'error': '%s: %s' % (type(e).__name__, e)}
+        if rep['camera']: print('%s camera: %s' % (vid, json.dumps({k: v for k, v in rep['camera'].items() if k in ('file', 'sync_check', 'hidden', 'error')})))
     # ---- word times for every script token (her time on the clean audio)
     tt = [None] * len(S)
     for i, j in pairs:
@@ -965,6 +996,331 @@ def run(vid):
     return json.load(open(os.path.join(out, 'report.json')))
 
 
+# ------------------------------------------------------------------------------------------------ camera lessons
+# 2026-10-13: camera lessons (the first lesson of a topic, topic 51) are read with her camera on. A take then has
+# <name>.mp4|webm next to <name>.wav, and the sidecar "camera": {file, startOffset, fps, w, h, ...} (reading_studio.py).
+# The camera file also holds the same mic (compressed): its audio is matched to the WAV in windows along the take, so
+# the WAV -> camera time map is exact (to the sample) and follows every pause (P pauses both; their joins can differ by
+# a few ms) and any clock drift. The browser's startOffset is only the starting guess.
+#   camera_track(): every frame of the clean timeline -> the same moment of her face: clean time -> (tmap) spliced time
+#     -> (source map: full take / patch take, splice_patches) -> WAV time -> camera time. A patch take without a camera
+#     (or a lost camera): the bubble fades out (0.3 s) for that stretch and back in - a frozen face looks broken.
+#     -> camera.mp4: 30 fps, 1200x600 = the round bubble (mirrored, white ring) on the left, its alpha mask on the right
+#        ("stacked alpha"; H.264 has no alpha; the mask is stored in video range 16-235: expand it to 0-255 before use),
+#        with the clean audio; camera.json: the map, sync, hidden stretches.
+#     Sync check: the camera file's own audio is cut with the same map and matched to clean.wav in windows (report).
+#   composite(): overlays the bubble on the rendered board video (studio auto-narrate render / Codex render), lined up
+#     by matching the board video's audio to clean.wav; corner and size as the studio's camera bubble.
+# Bubble = the studio's (slide_style.py / camRect, drawCam): round, mirrored, centre-square crop, diameter 250 of the
+# 1600x900 board (300 px at 1920x1080), 6 board-px from the edges, top right; 6 px white ring (at 1080p), no shadow.
+CAM_FPS, CAM_PX = 30, 600                     # camera.mp4 frame rate; bubble size in camera.mp4 (scaled down later)
+BUBBLE_D, BUBBLE_M = 250 / 900, 6 / 1600       # bubble diameter / height, margin / width (studio camRect, size 'm')
+RING = 6 / 300                                 # ring width / bubble diameter (drawCam: lineWidth 6 at d = 300)
+FADE_S = .3
+
+
+def _ff():
+    return A.FFMPEG
+
+
+def _audio16(path, t0=None, dur=None):
+    """any file's audio -> 16 kHz mono float32, its time 0 = the file's time 0 (a late first audio packet is padded)"""
+    cmd = [_ff(), '-hide_banner', '-loglevel', 'error']
+    if t0: cmd += ['-ss', '%.3f' % t0]
+    cmd += ['-i', path]
+    if dur: cmd += ['-t', '%.3f' % dur]
+    cmd += ['-vn', '-ac', '1', '-af', 'aresample=16000:async=1:first_pts=0', '-f', 'f32le', '-']
+    r = subprocess.run(cmd, capture_output=True, check=True)
+    return np.frombuffer(r.stdout, dtype='<f4').copy()
+
+
+def _media_info(path):
+    """(w, h, fps, duration) from ffmpeg's header print"""
+    err = subprocess.run([_ff(), '-hide_banner', '-i', path], capture_output=True, text=True).stderr
+    m = re.search(r'Video:.*?(\d{2,5})x(\d{2,5})', err); f = re.search(r'([\d.]+) fps', err) or re.search(r'([\d.]+) tbr', err)
+    d = re.search(r'Duration: (\d+):(\d+):([\d.]+)', err)
+    dur = int(d.group(1)) * 3600 + int(d.group(2)) * 60 + float(d.group(3)) if d else None
+    return (int(m.group(1)), int(m.group(2))) if m else (None, None), float(f.group(1)) if f else None, dur
+
+
+def _xcorr(x, y):
+    """normalised cross-correlation of the short x against every position of the longer y -> array len(y)-len(x)+1"""
+    n = len(x); x = x - x.mean(); L = 1 << int(np.ceil(np.log2(len(y) + n)))
+    c = np.fft.irfft(np.fft.rfft(y, L) * np.conj(np.fft.rfft(x, L)), L)[:len(y) - n + 1]
+    cs = np.concatenate([[0.0], np.cumsum(y.astype('float64'))]); cs2 = np.concatenate([[0.0], np.cumsum(y.astype('float64') ** 2)])
+    sy = cs[n:] - cs[:-n]; sy2 = cs2[n:] - cs2[:-n]
+    den = np.sqrt(np.maximum(sy2 - sy * sy / n, 1e-12) * max(float((x * x).sum()), 1e-12))
+    return c / den
+
+
+def _peak(r):
+    k = int(np.argmax(r)); off = 0.0
+    if 0 < k < len(r) - 1:
+        a, b, c = r[k - 1], r[k], r[k + 1]; d = a - 2 * b + c
+        if d < 0: off = .5 * (a - c) / d
+    return k + off, float(r[k])
+
+
+def match_lag(ref, sig, sr, t_ref, win, guess, span):
+    """where ref[t_ref : t_ref+win] (s) is in sig, searched at lag guess +- span (lag = sig time - ref time)
+    -> (lag s, score) or None"""
+    a, n = int(t_ref * sr), int(win * sr)
+    x = ref[a:a + n]
+    if len(x) < n or np.sqrt(np.mean(x ** 2)) < 1e-3: return None              # silence: nothing to match
+    lo = max(0, int((t_ref + guess - span) * sr)); hi = min(len(sig), int((t_ref + guess + span + win) * sr))
+    if hi - lo < n + 2: return None
+    k, q = _peak(_xcorr(x, sig[lo:hi]))
+    return (lo + k) / sr - t_ref, q
+
+
+def measure_sync(wav, cam, side):
+    """the WAV -> camera time map of one take, from her voice in both files: windows of 6 s every 3 s, per stretch
+    between pauses a robust line lag(t) = camera time - WAV time. -> {'segments': [[t0, t1, lag at t0, slope]], ...}"""
+    sr = 16000
+    a = _audio16(wav); c = _audio16(cam)
+    T = len(a) / sr
+    cuts = [0.0] + sorted(float(p['at']) for p in side.get('pauses', []) if 'at' in p) + [T]
+    guess = -float((side.get('camera') or {}).get('startOffset') or 0.0)
+    segs, wins = [], []
+    for s0, s1 in zip(cuts, cuts[1:]):
+        if s1 - s0 < .05: continue
+        pts = []
+        for t in np.arange(s0, max(s0, s1 - 6.0) + 1e-6, 3.0):
+            w = min(6.0, s1 - t)
+            if w < 2.0: continue
+            r = match_lag(a, c, sr, t, w, guess, 2.0 if not segs else 1.0)
+            if r and r[1] >= .6: pts.append((t + w / 2, r[0], r[1]))
+        wins += [[round(t, 2), round(l, 4), round(q, 3)] for t, l, q in pts]
+        if pts:
+            ls = np.array([p[1] for p in pts]); med = float(np.median(ls))
+            inl = [p for p in pts if abs(p[1] - med) < .008]
+            if len(inl) >= 4 and inl[-1][0] - inl[0][0] > 30:
+                tt = np.array([p[0] for p in inl]); ll = np.array([p[1] for p in inl])
+                slope, icpt = np.polyfit(tt, ll, 1); lag0 = float(icpt + slope * s0)
+            else:
+                slope, lag0 = 0.0, float(np.median([p[1] for p in inl] or [med]))
+            guess = lag0 + slope * (s1 - s0)
+            segs.append([round(s0, 4), round(s1, 4), round(lag0, 5), float(slope), len(inl), 'measured'])
+        else:
+            segs.append([round(s0, 4), round(s1, 4), round(guess, 5), 0.0, 0, 'no voice to match: lag of the stretch before'])
+    return {'segments': segs, 'windows': wins, 'browser_guess': round(-float((side.get('camera') or {}).get('startOffset') or 0), 4)}
+
+
+def _lag_at(sync, t):
+    for s0, s1, lag0, slope, *_ in sync['segments']:
+        if t < s1 + 1e-6: return lag0 + slope * (max(t, s0) - s0)
+    s0, s1, lag0, slope = sync['segments'][-1][:4]
+    return lag0 + slope * (t - s0)
+
+
+class _Frames:
+    """the camera file as square, mirrored CAM_PX frames at CAM_FPS (frame j = time j / CAM_FPS of the file); read
+    forward (re-opened with a seek when asked for an earlier frame)"""
+    def __init__(self, path):
+        self.path, self.p, self.j, self.last, self.eof = path, None, 0, None, False
+
+    def _open(self, j):
+        if self.p: self.p.kill()
+        t = j / CAM_FPS
+        vf = 'fps=%d:start_time=0,crop=min(iw\\,ih):min(iw\\,ih),scale=%d:%d:flags=lanczos,hflip' % (CAM_FPS, CAM_PX, CAM_PX)
+        cmd = [_ff(), '-hide_banner', '-loglevel', 'error'] + (['-ss', '%.4f' % t] if t > 0 else []) + \
+              ['-i', self.path, '-an', '-vf', vf, '-pix_fmt', 'rgb24', '-f', 'rawvideo', '-']
+        self.p = subprocess.Popen(cmd, stdout=subprocess.PIPE, stderr=subprocess.DEVNULL); self.j = j; self.eof = False
+
+    def get(self, j):
+        j = max(0, j)
+        if self.p is None or j < self.j - 1 or j > self.j + 10 * CAM_FPS: self._open(j)
+        if j == self.j - 1 and self.last is not None: return self.last
+        n = CAM_PX * CAM_PX * 3
+        while self.j <= j and not self.eof:
+            b = self.p.stdout.read(n)
+            if len(b) < n: self.eof = True; break
+            self.last = np.frombuffer(b, np.uint8).reshape(CAM_PX, CAM_PX, 3); self.j += 1
+        return self.last
+
+    def close(self):
+        if self.p: self.p.kill()
+
+
+def _bubble_masks(px):
+    yy, xx = np.mgrid[0:px, 0:px]; r = np.hypot(xx - (px - 1) / 2, yy - (px - 1) / 2); R = px / 2
+    disc = np.clip(R - r + .5, 0, 1)                                   # anti-aliased circle
+    ring = np.clip(r - (R - RING * px) + .5, 0, 1) * disc               # the white ring at the edge
+    return disc.astype('float32'), ring.astype('float32')
+
+
+def camera_track(vid, out, base, side, tmap, clean_len):
+    """camera.mp4 + camera.json for the clean audio of this video (None: the take has no camera)"""
+    def cam_of(wav):
+        try: sc = json.load(open(wav[:-4] + '.json')).get('camera') or {}
+        except Exception: return None
+        f = sc.get('file'); p = os.path.join(os.path.dirname(wav), f) if f else None
+        return (p, json.load(open(wav[:-4] + '.json'))) if p and os.path.exists(p) else None
+    srcmap = side.get('_srcmap') or [[0.0, None, base + '.wav', 0.0, '']]
+    if not cam_of(base + '.wav'):
+        for f_ in (out + '/camera.mp4', out + '/camera.json'):
+            os.path.exists(f_) and os.remove(f_)
+        return None
+    srcs = {}
+    for _, _, wav, _, _ in srcmap:
+        if wav in srcs: continue
+        ci = cam_of(wav)
+        srcs[wav] = None if not ci else dict(path=ci[0], sync=measure_sync(wav, ci[0], ci[1]), reader=_Frames(ci[0]),
+                                             dur=_media_info(ci[0])[2] or 1e9)
+    # ---- every output frame: (source wav, camera time) or hidden
+    tm = sorted(tmap, key=lambda x: x[2]); starts = [x[2] for x in tm]
+    import bisect
+    N = int(np.ceil(clean_len * CAM_FPS)); plan = []
+    def where(c):
+        k = max(0, bisect.bisect_right(starts, c) - 1); a, b, n0 = tm[k]
+        yt = min(b, a + (c - n0))
+        for s0, s1, wav, src, kind in srcmap:
+            if s1 is None or yt < s1 + 1e-9: return wav, src + (yt - s0)
+        s0, s1, wav, src, kind = srcmap[-1]; return wav, src + (yt - s0)
+    for k in range(N):
+        wav, st = where(k / CAM_FPS)
+        S_ = srcs.get(wav)
+        ct = st + _lag_at(S_['sync'], st) if S_ else None
+        # no camera at that moment (its recorder started a moment after the WAV, or stopped before it): hold the
+        # nearest frame for up to 1 s, else hide the bubble
+        plan.append((wav, min(max(0.0, ct), S_['dur'] - .5 / CAM_FPS)) if S_ and -1.0 < ct < S_['dur'] + 1.0 else None)
+    vis = np.array([p is not None for p in plan], float)
+    # fades: a hidden stretch fades out / in over FADE_S
+    nf = int(FADE_S * CAM_FPS); alpha = vis.copy()
+    if not vis.all():
+        dp, dn = np.full(N, 1e9), np.full(N, 1e9)          # frames since the last / until the next hidden frame
+        for i in range(N): dp[i] = 0 if not vis[i] else (dp[i - 1] + 1 if i else 1e9)
+        for i in range(N - 1, -1, -1): dn[i] = 0 if not vis[i] else (dn[i + 1] + 1 if i < N - 1 else 1e9)
+        alpha = np.clip(np.minimum(dp, dn) / max(1, nf), 0, 1)
+    hidden = []
+    for i in range(N):
+        if vis[i] == 0 and (i == 0 or vis[i - 1] == 1): hidden.append([round(i / CAM_FPS, 3), None])
+        if vis[i] == 0 and (i == N - 1 or vis[i + 1] == 1): hidden[-1][1] = round((i + 1) / CAM_FPS, 3)
+    # ---- frames -> camera.mp4 (bubble | alpha), with the clean audio
+    disc, ring = _bubble_masks(CAM_PX); ring3 = ring[..., None]
+    mp = os.path.join(out, 'camera.mp4'); tmp = mp + '.part.mp4'
+    enc = subprocess.Popen([_ff(), '-hide_banner', '-loglevel', 'error', '-y', '-f', 'rawvideo', '-pix_fmt', 'rgb24', '-s', '%dx%d' % (2 * CAM_PX, CAM_PX),
+                            '-r', str(CAM_FPS), '-i', '-', '-i', os.path.join(out, 'clean.wav'), '-map', '0:v', '-map', '1:a',
+                            '-c:v', 'libx264', '-preset', 'medium', '-crf', '17', '-pix_fmt', 'yuv420p', '-c:a', 'aac', '-b:a', '160k',
+                            '-movflags', '+faststart', tmp], stdin=subprocess.PIPE)
+    last = np.zeros((CAM_PX, CAM_PX, 3), np.uint8); buf = np.zeros((CAM_PX, 2 * CAM_PX, 3), np.uint8)
+    for k, p in enumerate(plan):
+        if p is not None:
+            fr = srcs[p[0]]['reader'].get(int(round(p[1] * CAM_FPS)))
+            if fr is not None: last = fr
+        col = (last.astype('float32') * (1 - ring3) + 255 * ring3)
+        buf[:, :CAM_PX] = col.astype(np.uint8)
+        buf[:, CAM_PX:] = (disc * alpha[k] * 255 + .5).astype(np.uint8)[..., None]
+        enc.stdin.write(buf.tobytes())
+    enc.stdin.close(); enc.wait()
+    for S_ in srcs.values():
+        if S_: S_['reader'].close()
+    assert enc.returncode == 0, 'camera.mp4 encoding failed'
+    os.replace(tmp, mp)
+    # ---- sync check: the camera files' own audio, cut with the same map, against clean.wav
+    check = _sync_check(out, plan, srcs, N)
+    info = {'file': 'camera.mp4', 'fps': CAM_FPS, 'layout': 'stacked alpha: left %dx%d = the bubble (mirrored, ring), right = its alpha mask' % (CAM_PX, CAM_PX),
+            'duration': round(N / CAM_FPS, 3), 'clean_duration': round(clean_len, 3),
+            'sources': {os.path.basename(w): (None if not S_ else {'camera': os.path.basename(S_['path']), 'segments': S_['sync']['segments'],
+                         'browser_guess_lag': S_['sync']['browser_guess'], 'windows_matched': len(S_['sync']['windows'])}) for w, S_ in srcs.items()},
+            'keep_map': [[round(n0, 5), round(n0 + (b - a), 5), round(a, 5)] for a, b, n0 in tm],
+            'source_map': [[round(s0, 5), None if s1 is None else round(s1, 5), os.path.basename(w), round(src, 5), k_] for s0, s1, w, src, k_ in srcmap],
+            'hidden': hidden, 'hidden_rule': 'stretches from a take without a camera: the bubble fades out (%.1f s) and back in' % FADE_S,
+            'sync_check': check,
+            'bubble': {'shape': 'circle, mirrored, centre-square crop of the camera', 'diameter_of_height': round(BUBBLE_D, 5),
+                       'margin_of_width': round(BUBBLE_M, 5), 'ring_of_diameter': RING, 'corner': 'top right (composite() picks a free corner)'}}
+    json.dump(info, open(os.path.join(out, 'camera.json'), 'w'), indent=1)
+    return {k: info[k] for k in ('file', 'duration', 'hidden', 'sync_check', 'sources')}
+
+
+def _sync_check(out, plan, srcs, N):
+    """cut the camera files' audio exactly as the frames were picked (each frame's 1/30 s of audio from the same camera
+    time) and match it to clean.wav in 4 s windows: the lag left after all cuts / splices (0 = in sync). The frames
+    themselves are the nearest frame to that time (at most half a frame, 17 ms, off)."""
+    sr = 16000; aud = {w: _audio16(S_['path']) for w, S_ in srcs.items() if S_}
+    outa = np.zeros(int(np.ceil(N * sr / CAM_FPS)) + 1, 'float32')
+    for k, p in enumerate(plan):
+        if p is None: continue
+        o0, o1 = int(round(k * sr / CAM_FPS)), int(round((k + 1) * sr / CAM_FPS))
+        a = aud[p[0]]; i = int(round(p[1] * sr))
+        seg = a[i:i + o1 - o0]; outa[o0:o0 + len(seg)] = seg
+    clean = _audio16(os.path.join(out, 'clean.wav'))
+    lags = []
+    for t in np.arange(0, len(clean) / sr - 4, 2.0):
+        r = match_lag(clean, outa, sr, t, 4.0, 0.0, .25)
+        if r and r[1] >= .5: lags.append((round(float(t), 1), round(r[0] * 1000, 1)))
+    if not lags: return {'windows': 0}
+    ab = [abs(l) for _, l in lags]
+    return {'windows': len(lags), 'median_ms': float(np.median([l for _, l in lags])), 'max_abs_ms': max(ab),
+            'over_20ms': [x for x in lags if abs(x[1]) > 20][:20], 'frame_rounding_ms': round(500 / CAM_FPS, 1)}
+
+
+def _board_corners(board, W, H, D, m):
+    """how much of each candidate bubble corner is covered by board content (text, figures, sidebar items) over the
+    video: sampled every 2 s at 1/4 size; a pixel is content when it differs from that corner's own background"""
+    sw, sh = W // 4, H // 4
+    r = subprocess.run([_ff(), '-hide_banner', '-loglevel', 'error', '-i', board, '-an', '-vf', 'fps=1/2,scale=%d:%d,format=gray' % (sw, sh),
+                        '-f', 'rawvideo', '-'], capture_output=True, check=True)
+    fr = np.frombuffer(r.stdout, np.uint8).reshape(-1, sh, sw)
+    d, mm = D // 4 + 2, m // 4
+    boxes = {'tr': (mm, sw - mm - d), 'br': (sh - mm - d, sw - mm - d), 'bl': (sh - mm - d, mm), 'tl': (mm, mm)}
+    yy, xx = np.mgrid[0:d, 0:d]; circ = np.hypot(xx - d / 2, yy - d / 2) <= d / 2 + 3        # the bubble + a margin
+    out = {}
+    for name, (y0, x0) in boxes.items():
+        reg = fr[:, y0:y0 + d, x0:x0 + d][:, circ].astype(int)
+        bg = np.median(reg, axis=1, keepdims=True)
+        cov = (np.abs(reg - bg) > 40).mean(axis=1)
+        out[name] = {'max': round(float(cov.max()), 4), 'mean': round(float(cov.mean()), 4), 'frames_hit': int((cov > .003).sum()), 'frames': len(cov)}
+    return out
+
+
+def composite(vid, board, dest=None, corner=None):
+    """the rendered board video of a camera lesson + her face bubble -> <dest> (default: next to the board video,
+    '<name> - camera.mp4'). The board video's audio must be her clean audio (any lead-in is found by matching)."""
+    out = os.path.join(OUTROOT, vid); cj = json.load(open(os.path.join(out, 'camera.json')))
+    cam = os.path.join(out, cj['file'])
+    (W, H), fps, dur = _media_info(board)
+    D = int(round(BUBBLE_D * H)); m = int(round(BUBBLE_M * W))
+    # board time of clean time 0: match the first 40 s of the clean audio in the board audio (lead-in up to 60 s)
+    sr = 16000; ba = _audio16(board, dur=180); ca = _audio16(os.path.join(out, 'clean.wav'), dur=60)
+    best = None
+    for t in (2.0, 10.0, 20.0):
+        r = match_lag(ca, ba, sr, t, 8.0, 30.0, 30.0)
+        if r and (best is None or r[1] > best[1]): best = r
+    if not best or best[1] < .6: raise SystemExit('composite: the board video audio does not match clean.wav of ' + vid)
+    lead = best[0]
+    cov = _board_corners(board, W, H, D, m)
+    if not corner:
+        # the studio's corner (top right) when the board leaves it free; else the freest of the other corners
+        order = ['tr', 'br', 'bl', 'tl']
+        free = [c for c in order if cov[c]['max'] < .01]
+        corner = free[0] if free else min(order, key=lambda c: (cov[c]['frames_hit'], cov[c]['mean']))
+    x = W - m - D if corner in ('tr', 'br') else m; y = m if corner in ('tr', 'tl') else H - m - D
+    dest = dest or os.path.splitext(board)[0] + ' - camera.mp4'
+    fc = ('[1:v]split[a][b];[a]crop=%d:%d:0:0[c];[b]crop=%d:%d:%d:0,format=gray,lut=c0=clip((val-16)*255/219\\,0\\,255)[k];[c][k]alphamerge,scale=%d:%d:flags=lanczos[bub];'
+          '[0:v][bub]overlay=%d:%d:eof_action=pass:format=auto,format=yuv420p[v]') % (CAM_PX, CAM_PX, CAM_PX, CAM_PX, CAM_PX, D, D, x, y)
+    subprocess.run([_ff(), '-hide_banner', '-loglevel', 'error', '-y', '-i', board, '-itsoffset', '%.4f' % lead, '-i', cam,
+                    '-filter_complex', fc, '-map', '[v]', '-map', '0:a?', '-c:v', 'libx264', '-preset', 'medium', '-crf', '18',
+                    '-r', '%g' % (fps or 30), '-c:a', 'copy', '-movflags', '+faststart', dest], check=True)
+    rep = {'board': board, 'out': dest, 'lead_s': round(lead, 4), 'lead_match': round(best[1], 3), 'corner': corner,
+           'bubble_px': [x, y, D], 'corner_cover': cov}
+    json.dump(rep, open(os.path.join(out, 'composite.json'), 'w'), indent=1)
+    print('%s composite: %s (corner %s, bubble %d px at %d,%d, board lead %.3f s)' % (vid, dest, corner, D, x, y, lead))
+    return rep
+
+
+def newest_board(vid):
+    """the newest studio take of this video (auto-narrate render) in Course.recordings, outside the '_' folders"""
+    best = None
+    for root, dirs, files in os.walk(REC):
+        dirs[:] = [d for d in dirs if not d.startswith('_')]
+        for f in files:
+            if re.match(re.escape(vid) + r'-\d{4}-.*\.(mp4|webm)$', f) and ' - camera' not in f:
+                p = os.path.join(root, f)
+                if best is None or os.path.getmtime(p) > os.path.getmtime(best): best = p
+    return best
+
+
 def verify(vid):
     """transcribe the CLEAN audio again and check it against the script: every sentence once, in order; no filler or
     leftover restart. -> report.json['verify']"""
@@ -1022,6 +1378,13 @@ def verify(vid):
 
 if __name__ == '__main__':
     args = sys.argv[1:]                      # (run() resets sys.argv for ai_narrate)
+    if args and args[0] == '--composite':    # reading_to_video.py --composite <vid> [board.mp4] [out.mp4] [--corner tr|br|bl|tl]
+        c_ = args[args.index('--corner') + 1] if '--corner' in args else None
+        pos = [a for a in args[1:] if not a.startswith('--') and a != c_]
+        board_ = pos[1] if len(pos) > 1 else newest_board(pos[0])
+        assert board_, 'no rendered board video of %s found in %s - pass its path' % (pos[0], REC)
+        composite(pos[0], board_, pos[2] if len(pos) > 2 else None, c_)
+        sys.exit(0)
     ids = [a for a in args if not a.startswith('--')] or sorted(os.listdir(IN))
     for v in ids:
         if '--verify-only' not in args: run(v)

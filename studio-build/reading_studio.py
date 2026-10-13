@@ -26,7 +26,17 @@ are downloaded instead.
 Re-read (patch) mode: when a script paragraph changes after a take, she selects just those paragraphs (the changed ones
 are pre-selected) and records a patch take <videoId>-patch-<ISO time>.wav + .json ("kind": "patch", "paragraphs":
 [{i, text}] = index in the current script and its text). The teleprompter then shows only those paragraphs, with the
-neighbouring paragraphs greyed as context. Change detection (generator and page, same rule): a current paragraph whose
+neighbouring paragraphs greyed as context.
+
+Camera mode (2026-10-13): camera lessons (camera_ids(): the first lesson of every math topic + all of topic 51) are read
+with her camera on. A per-video "Camera on" toggle (default on for camera lessons, remembered per video), camera choice
+and a live round self-preview. With it on, every take (full or patch) also records <same name>.mp4 (H.264, Chrome) or
+.webm (VP9/VP8) with MediaRecorder at up to 1920x1080 / 30 fps, started, paused and stopped together with the WAV; the
+file also carries the same mic (compressed), used only to sync it to the WAV exactly. The sidecar gets
+"camera": {file, startOffset (camera start - WAV start, s), fps, w, h, mime, t0/cameraStartMs/wavStartMs, pauses, ...}.
+With the camera off nothing changes. reading_to_video.py cuts the camera video like the audio and composites the bubble.
+
+Change detection (generator and page, same rule): a current paragraph whose
 text is not among the paragraphs of her last FULL take's sidecar, nor of a patch take made after it, is "changed"; the
 list shows "needs re-read: N paragraphs".
 """
@@ -301,6 +311,46 @@ def clean_title(t):
     return re.sub(r'\s+', ' ', t).strip()
 
 
+# =================================================================================================================
+# CAMERA LESSONS (2026-10-13): the FIRST lesson video of every math topic (course order) and every video of topic 51
+# (Psychometric Thinking) are recorded with her camera on (face bubble in the final video). Derived from the exported
+# course order (~/psychometry-course/content/full-course: outline.json + topics/t<N>.json; the first video step that is
+# not a solve-/summary video); the fallback list below is the same derivation as of 2026-10-13. Add/remove single ids
+# with CAMERA_EXTRA / CAMERA_SKIP. On the page "Camera on" defaults to on for these and can be switched per video.
+# =================================================================================================================
+CAMERA_SUBJECTS = ('algebra', 'word-problems', 'geometry', 'charts')     # the math subjects
+CAMERA_ALL_TOPICS = (51,)                                                   # every video of these topics
+CAMERA_EXTRA, CAMERA_SKIP = set(), set()
+CAMERA_FALLBACK = (
+    'numbers fraction-basics compare-fractions expression-basics expression-strategy linear-equations equation-strategy '
+    'exponents roots powers-techniques advanced-powers inequalities absolute-value primes divisibility whole-numbers '
+    'number-line digit-puzzles new-operation algebraic-understanding wp-001 wp-027 wp-052 wp-067 wp-080 wp-092 wp-106 '
+    'wp-123 wp-146 geo-001 geo-009 geo-042 geo-074 geo-104 geo-119 geo-134 geo-154 geo-172 ch52-intro').split()
+FULL_COURSE = os.path.join(os.path.dirname(HERE), 'content', 'full-course')
+
+
+def camera_ids():
+    """the video ids recorded with the camera on (see CAMERA LESSONS above)"""
+    ids = set()
+    try:
+        outline = json.load(open(os.path.join(FULL_COURSE, 'outline.json'), encoding='utf-8'))
+        for s in outline['subjects']:
+            for t in s['topics']:
+                T = json.load(open(os.path.join(FULL_COURSE, 'topics', 't%d.json' % t['id']), encoding='utf-8'))
+                vids = [st['id'] for sec in T['sections'] for st in sec['steps'] if st.get('kind') == 'video']
+                if t['id'] in CAMERA_ALL_TOPICS:
+                    ids.update(vids)
+                elif s.get('key') in CAMERA_SUBJECTS:
+                    first = next((v for v in vids if not v.startswith('solve-') and 'summary' not in v), None)
+                    if first:
+                        ids.add(first)
+    except Exception:
+        ids = set()
+    if not ids:
+        ids = set(CAMERA_FALLBACK)
+    return (ids | CAMERA_EXTRA) - CAMERA_SKIP
+
+
 def from_review(topic):
     """[(id, title, minutes)] from ~/Downloads/Topic-<N>-AI-scripts-review.md (its order), or None"""
     p = os.path.join(DOWNLOADS, 'Topic-%d-AI-scripts-review.md' % topic)
@@ -427,6 +477,7 @@ def build(topics=(), ids=None, out=OUT):
             sys.exit('topic %d: no videos found (no review file, no ai_scripts in course18.json) - use --ids' % t)
         groups.append(dict(topic=t, title=title, videos=vids))
     allv = []
+    cams = camera_ids()
     for g in groups:
         for v in g['videos']:
             sp = os.path.join(SCRIPTS, v['id'] + '.json')
@@ -441,6 +492,7 @@ def build(topics=(), ids=None, out=OUT):
             if v['title'] == v['id']:   # no title known: the first sentence
                 v['title'] = re.split(r'(?<=[.?!])\s', v['paras'][0][0])[0][:110]
             v['group'] = g['topic']
+            v['camera'] = v['id'] in cams                          # camera lesson: "Camera on" by default
             allv.append(v)
     import datetime as _dt
     now = _dt.datetime.now().astimezone()
@@ -514,6 +566,15 @@ aside{width:300px;flex:none;border-right:1px solid var(--line);background:var(--
 .db.clip{color:var(--rec);font-weight:700}
 .micinfo{font-size:12px;color:var(--muted);flex-basis:100%}
 .micinfo .bad{color:var(--rec);font-weight:600}
+.cam{display:flex;gap:6px 10px;align-items:center;font-size:13px;flex:1 1 100%;flex-wrap:wrap}
+.cam label{display:flex;gap:6px;align-items:center;cursor:pointer;font-weight:600}
+.cam select{max-width:240px;padding:6px;border:1px solid var(--line);border-radius:8px;background:var(--panel)}
+.cam video{width:84px;height:84px;border-radius:50%;object-fit:cover;transform:scaleX(-1);border:3px solid #fff;box-shadow:0 2px 8px #0004;background:#17233c;flex:none}
+.cam .caminfo{color:var(--muted);font-size:12px}
+.cam .caminfo .bad{color:var(--rec);font-weight:600}
+.cam.on label{color:var(--accent)}
+.pill.cam{background:var(--accent-soft);color:var(--accent)}
+.recdot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--rec);margin-right:5px;vertical-align:1px}
 .head{display:flex;gap:18px;align-items:center;padding:14px 22px 10px}
 .head h1{font-size:18px;margin:0;font-weight:650;flex:1;min-width:0}
 .head h1 small{display:block;font-size:12.5px;font-weight:500;color:var(--muted);font-family:ui-monospace,Menlo,monospace;margin-top:2px}
@@ -587,6 +648,12 @@ kbd{font:11.5px ui-monospace,Menlo,monospace;border:1px solid var(--line);border
         <div class="meter" title="Input level. Aim for peaks in the dashed zone (about −12 to −6 dB)."><span class="z"></span><i id="lvl"></i><b id="peak"></b></div>
         <span class="db" id="db">— dB</span>
         <div class="micinfo" id="micinfo">Microphone is off.</div>
+      </div>
+      <div class="cam" id="camBox" title="Camera lessons (the first lesson of a topic) are recorded with your face too. The WAV stays the narration.">
+        <label><input type="checkbox" id="camOn"> Camera on</label>
+        <select id="camSel" title="Camera" hidden></select>
+        <video id="camPrev" muted playsinline hidden></video>
+        <span class="caminfo" id="caminfo">Camera is off for this video (audio only).</span>
       </div>
     </div>
     <div class="head"><h1 id="vtitle"></h1>
@@ -698,14 +765,14 @@ function renderList(){
     h+='<div class="grp"><span>'+esc(g.topic?('Topic '+g.topic+(g.title?' · '+g.title:'')):g.title)+'</span><span>'+done+'/'+g.ids.length+'</span></div>';
     for(const id of g.ids){const v=BYID[id],i=V.indexOf(v),st=S.status[id];n++;
       h+='<div class="vid'+(i===S.cur?' cur':'')+'" data-i="'+i+'"><span class="n">'+(i+1)+'</span><span class="t" title="'+esc(v.title)+'">'+esc(v.title)+'</span><span class="m">'+v.minutes.toFixed(1)+' min</span>'+
-        '<span class="id">'+esc(id)+'</span><span class="st">'+(st?'<span class="pill yes">recorded ✓'+(st.seconds?' · '+fmt(st.seconds):'')+(st.takes>1?' · '+st.takes+' takes':'')+(st.patches?' · '+st.patches+' patch'+(st.patches>1?'es':''):'')+'</span>'+(st.changed&&st.changed.length?' <span class="pill chg">needs re-read: '+st.changed.length+' paragraph'+(st.changed.length>1?'s':'')+'</span>':''):'<span class="pill no">not recorded</span>')+'</span></div>'}}
+        '<span class="id">'+esc(id)+'</span><span class="st">'+(st?'<span class="pill yes">recorded ✓'+(st.seconds?' · '+fmt(st.seconds):'')+(st.takes>1?' · '+st.takes+' takes':'')+(st.patches?' · '+st.patches+' patch'+(st.patches>1?'es':''):'')+'</span>'+(st.changed&&st.changed.length?' <span class="pill chg">needs re-read: '+st.changed.length+' paragraph'+(st.changed.length>1?'s':'')+'</span>':''):'<span class="pill no">not recorded</span>')+(camWanted(v)?' <span class="pill cam" title="Recorded with the camera on">camera</span>':'')+'</span></div>'}}
   L.innerHTML=h;
   L.querySelectorAll('.vid').forEach(el=>el.onclick=()=>selectVideo(+el.dataset.i));
 }
 function selectVideo(i){
   if(S.rec){toast('Stop the recording first.');return}
   S.cur=Math.max(0,Math.min(V.length-1,i));S.para=0;LS.set('cur',V[S.cur].id);S.sel=new Set(changedList());
-  renderList();renderParas();paintFolder();loadLatestTake();
+  renderList();renderParas();paintFolder();loadLatestTake();syncCam(false);
   const el=$('#list .vid.cur');if(el)el.scrollIntoView({block:'nearest'});
 }
 
@@ -749,9 +816,9 @@ $('#auto').checked=LS.get('auto',true);$('#auto').onchange=()=>{LS.set('auto',$(
 /* ---------------- microphone: processing OFF, mono, 48 kHz ---------------- */
 const MIC={stream:null,ctx:null,src:null,an:null,node:null,engine:null,settings:null,label:'',peakHold:0,peakT:0};
 const WORKLET=`class Tap extends AudioWorkletProcessor{constructor(){super();this.on=false;this.buf=new Float32Array(4096);this.n=0;
- this.port.onmessage=e=>{const m=e.data;if(m==='start'){this.on=true}else if(m==='pause'){this.on=false;this.flush()}else if(m==='flush'){this.on=false;this.flush();this.port.postMessage('flushed')}}}
+ this.mark=false;this.port.onmessage=e=>{const m=e.data;if(m==='start'){this.on=true;this.mark=true}else if(m==='pause'){this.on=false;this.flush()}else if(m==='flush'){this.on=false;this.flush();this.port.postMessage('flushed')}}}
  flush(){if(this.n){this.port.postMessage(this.buf.slice(0,this.n));this.n=0}}
- process(inputs){const ch=inputs[0]&&inputs[0][0];if(this.on&&ch){let i=0;while(i<ch.length){const k=Math.min(ch.length-i,this.buf.length-this.n);this.buf.set(ch.subarray(i,i+k),this.n);this.n+=k;i+=k;if(this.n===this.buf.length){this.port.postMessage(this.buf.slice(0));this.n=0}}}return true}}
+ process(inputs){const ch=inputs[0]&&inputs[0][0];if(this.on&&ch&&this.mark){this.mark=false;this.port.postMessage({started:currentFrame,time:currentTime})}if(this.on&&ch){let i=0;while(i<ch.length){const k=Math.min(ch.length-i,this.buf.length-this.n);this.buf.set(ch.subarray(i,i+k),this.n);this.n+=k;i+=k;if(this.n===this.buf.length){this.port.postMessage(this.buf.slice(0));this.n=0}}}return true}}
 registerProcessor('rs-tap',Tap)`;
 async function openMic(deviceId){
   closeMic();
@@ -763,9 +830,10 @@ async function openMic(deviceId){
   MIC.ctx=new AudioContext({sampleRate:SR,latencyHint:'interactive'});if(MIC.ctx.state==='suspended')try{await MIC.ctx.resume()}catch{}
   MIC.src=MIC.ctx.createMediaStreamSource(stream);MIC.an=MIC.ctx.createAnalyser();MIC.an.fftSize=2048;MIC.src.connect(MIC.an);
   const sink=MIC.ctx.createGain();sink.gain.value=0;sink.connect(MIC.ctx.destination);
-  try{let ok=false;for(const url of [URL.createObjectURL(new Blob([WORKLET],{type:'application/javascript'})),'data:application/javascript;base64,'+btoa(WORKLET)]){try{await MIC.ctx.audioWorklet.addModule(url);ok=true;break}catch(e){console.info('worklet module via '+url.slice(0,5)+' failed: '+e)}}if(!ok)throw new Error('no AudioWorklet module');
+  try{let ok=false;const wu=[URL.createObjectURL(new Blob([WORKLET],{type:'application/javascript'})),'data:application/javascript;base64,'+btoa(WORKLET)];if(location.protocol==='file:')wu.reverse();/* a file:// page refuses blob: worklets (console error) */
+    for(const url of wu){try{await MIC.ctx.audioWorklet.addModule(url);ok=true;break}catch(e){console.info('worklet module via '+url.slice(0,5)+' failed: '+e)}}if(!ok)throw new Error('no AudioWorklet module');
     MIC.node=new AudioWorkletNode(MIC.ctx,'rs-tap',{numberOfInputs:1,numberOfOutputs:1,outputChannelCount:[1]});MIC.engine='AudioWorklet';
-    MIC.node.port.onmessage=e=>{if(e.data==='flushed'){MIC._flushed&&MIC._flushed()}else if(S.rec)S.rec.push(e.data)};
+    MIC.node.port.onmessage=e=>{if(e.data==='flushed'){MIC._flushed&&MIC._flushed()}else if(e.data&&e.data.started!=null){if(S.rec)S.rec.audioMark(e.data)}else if(S.rec)S.rec.push(e.data)};
     MIC.ctl=m=>MIC.node.port.postMessage(m);
   }catch(e){console.warn('AudioWorklet unavailable, using ScriptProcessor',e);
     MIC.node=MIC.ctx.createScriptProcessor(4096,1,1);MIC.engine='ScriptProcessor';let on=false;
@@ -793,6 +861,55 @@ function meterLoop(){cancelAnimationFrame(meterRaf);const buf=new Float32Array(2
     meterRaf=requestAnimationFrame(tick)};tick()}
 document.addEventListener('pointerdown',()=>{if(MIC.ctx&&MIC.ctx.state==='suspended')MIC.ctx.resume()},{capture:true});
 
+
+/* ---------------- camera (camera lessons, 2026-10-13): webcam VIDEO recorded in parallel with the WAV ----------------
+   Camera lessons (DATA video .camera = the first lesson of a topic, and topic 51) default to "Camera on"; any video can
+   be switched (remembered per video). The WAV stays the narration; the camera file <id>-<time>.mp4|webm also carries
+   the same microphone (compressed) only so the video can be synced to the WAV exactly (reading_to_video.py matches the
+   two audio tracks). Both recorders start, pause and stop together; the sidecar "camera" block keeps both start times. */
+const CAM={stream:null,label:'',settings:null,err:''};
+function camWanted(v){const o=LS.get('cam:'+v.id,null);return o==null?!!v.camera:!!o}
+const CAM_TYPES=['video/mp4;codecs=avc1.640028,mp4a.40.2','video/mp4;codecs=avc1.4d0028,mp4a.40.2','video/mp4;codecs=avc1,mp4a.40.2','video/mp4;codecs=avc1,opus','video/mp4',
+  'video/webm;codecs=vp9,opus','video/webm;codecs=vp8,opus','video/webm'];
+function camMime(){if(!window.MediaRecorder)return '';for(const m of CAM_TYPES)try{if(MediaRecorder.isTypeSupported(m))return m}catch{}return ''}
+async function openCam(deviceId){
+  closeCam();CAM.err='';
+  const c={width:{ideal:1920},height:{ideal:1080},frameRate:{ideal:30}};if(deviceId)c.deviceId={exact:deviceId};
+  let stream;try{stream=await navigator.mediaDevices.getUserMedia({video:c,audio:false})}
+  catch(e){if(deviceId&&(e.name==='OverconstrainedError'||e.name==='NotFoundError')){LS.set('cam','');return openCam('')}CAM.err=e.name||'error';paintCam();throw e}
+  CAM.stream=stream;const tr=stream.getVideoTracks()[0];CAM.label=tr.label;CAM.settings=tr.getSettings?tr.getSettings():{};
+  tr.onended=()=>{CAM.stream=null;CAM.err='disconnected';paintCam();if(S.rec&&S.rec.cam){S.rec.cam.lost=true;toast('The camera was disconnected. The audio goes on recording.',6000)}};
+  const pv=$('#camPrev');pv.srcObject=stream;pv.hidden=false;pv.play().catch(()=>{});
+  await fillCams(CAM.settings.deviceId||deviceId);paintCam();
+}
+function closeCam(){if(CAM.stream)CAM.stream.getTracks().forEach(t=>t.stop());CAM.stream=null;const pv=$('#camPrev');pv.srcObject=null;pv.hidden=true}
+async function fillCams(cur){const sel=$('#camSel');const ds=(await navigator.mediaDevices.enumerateDevices()).filter(d=>d.kind==='videoinput');
+  sel.innerHTML=ds.map(d=>'<option value="'+esc(d.deviceId)+'"'+(d.deviceId===cur?' selected':'')+'>'+esc(d.label||'Camera')+'</option>').join('');sel.hidden=!ds.length}
+function camFmt(){const m=camMime();return m.startsWith('video/mp4')?'MP4 (H.264)':m?'WebM ('+(m.includes('vp9')?'VP9':'VP8')+')':'no video recorder'}
+function paintCam(){
+  const v=V[S.cur],want=camWanted(v),box=$('#camBox'),info=$('#caminfo');$('#camOn').checked=want;box.classList.toggle('on',want);
+  if(!want){info.textContent=(v.camera?'Camera lesson, but camera switched off: ':'')+'audio only for this video.';$('#camSel').hidden=true;$('#camPrev').hidden=true;return}
+  if(CAM.stream){const s=CAM.settings||{};info.innerHTML=esc(CAM.label||'Camera')+' · '+(s.width||'?')+'×'+(s.height||'?')+' · '+Math.round(s.frameRate||0)+' fps · '+camFmt()+(s.height&&s.height<720?' · <span class="bad">low resolution</span>':'')+' · recorded with every take of this video';return}
+  info.innerHTML=CAM.err?'<span class="bad">Camera '+(CAM.err==='NotAllowedError'?'blocked: allow it in the address bar':CAM.err==='disconnected'?'disconnected':'not available ('+esc(CAM.err)+')')+'.</span> Click “Camera on” again to retry, or untick it to record audio only.':
+    (v.camera?'Camera lesson: ':'')+'the camera starts when you press Record (or click “Camera on”).'}
+async function syncCam(ask){const v=V[S.cur],want=camWanted(v);
+  if(!want){if(CAM.stream&&!S.rec)closeCam();paintCam();return}
+  if(!CAM.stream){let ok=ask;if(!ok)try{ok=(await navigator.permissions.query({name:'camera'})).state==='granted'}catch{}
+    if(ok)try{await openCam(LS.get('cam',''))}catch{}}
+  paintCam()}
+$('#camOn').onchange=async e=>{if(S.rec){e.target.checked=!e.target.checked;toast('Stop the recording first.');return}const v=V[S.cur];LS.set('cam:'+v.id,e.target.checked);renderList();await syncCam(true)};
+$('#camSel').onchange=async()=>{if(S.rec){toast('Stop the recording first.');return}const id=$('#camSel').value;LS.set('cam',id);try{await openCam(id);toast('Camera: '+CAM.label)}catch{}};
+function camRecorder(r){
+  const mime=camMime();if(!mime)throw new Error('This browser cannot record video (MediaRecorder).');
+  const s=CAM.settings||{},tracks=[...CAM.stream.getVideoTracks(),...(MIC.stream?MIC.stream.getAudioTracks():[])];
+  const mr=new MediaRecorder(new MediaStream(tracks),{mimeType:mime,videoBitsPerSecond:(s.height||720)>=1000?8000000:5000000,audioBitsPerSecond:128000});
+  const c={mr,mime,ext:mime.startsWith('video/mp4')?'mp4':'webm',chunks:[],startPerf:null,stopPerf:null,pauses:[],lost:false,w:s.width||null,h:s.height||null,fps:s.frameRate||null,label:CAM.label,deviceId:s.deviceId||''};
+  mr.ondataavailable=e=>{if(e.data&&e.data.size)c.chunks.push(e.data)};
+  mr.addEventListener('start',()=>{c.startPerf=performance.now()});
+  mr.onerror=e=>{console.warn('camera recorder error',e.error||e);c.lost=true;toast('The camera recording failed. The audio goes on recording.',6000)};
+  return c}
+function camStop(c){return new Promise(ok=>{if(!c||c.mr.state==='inactive')return ok();c.mr.onstop=()=>{c.stopPerf=performance.now();ok()};try{c.mr.stop()}catch{ok()}setTimeout(ok,4000)})}
+
 /* ---------------- recording ---------------- */
 function recTime(){return S.rec?S.rec.samples/MIC.ctx.sampleRate:0}
 async function startRec(){
@@ -803,22 +920,30 @@ async function startRec(){
   if(window.showDirectoryPicker&&!RF.handle)toast('No folder chosen: this take will go to Downloads. Choose Course.recordings to save it in place.',6000);
   const v=V[S.cur],patch=S.mode==='patch';
   if(patch&&!S.sel.size){toast('Select the paragraphs to re-read first (click them).');return}
+  const useCam=camWanted(v);
+  if(useCam&&!CAM.stream){try{await openCam(LS.get('cam',''))}catch{toast('“Camera on” is ticked, but the camera is not available. Allow it, or untick “Camera on” to record audio only.',7000);return}}
   if(patch)S.para=order()[0];   // a patch take always starts at the first selected paragraph
   S.rec={video:v.id,patch,sel:patch?order():null,started:new Date(),chunks:[],samples:0,paused:false,clipped:false,events:[],pauses:[],
-    push(c){this.chunks.push(c);this.samples+=c.length}};
+    push(c){this.chunks.push(c);this.samples+=c.length},audioMarks:[],audioMark(m){this.audioMarks.push({frame:m.started,time:m.time,perf:performance.now()})}};
   S.rec.events.push({type:'start',para:S.para,t:0});
-  MIC.ctl('start');setUI();paintParas();tick();toast((patch?'Recording a re-read of '+S.sel.size+' paragraph'+(S.sel.size>1?'s':'')+'. ':'Recording. ')+'Space = next paragraph, M = mistake.');
+  if(useCam){try{S.rec.cam=camRecorder(S.rec)}catch(e){S.rec=null;toast(String(e.message||e),7000);return}}
+  /* one shared start (performance.now t0): the camera recorder and the WAV tap are started in the same task, both start
+     times kept. The WAV never waits for the camera (its encoder can take a moment to start; no word may be lost) */
+  S.rec.t0=performance.now();if(S.rec.cam)S.rec.cam.mr.start(1000);MIC.ctl('start');S.rec.audioCall=performance.now();
+  setUI();paintParas();tick();toast((patch?'Recording a re-read of '+S.sel.size+' paragraph'+(S.sel.size>1?'s':'')+'. ':'Recording. ')+'Space = next paragraph, M = mistake.');
 }
 function togglePause(){const r=S.rec;if(!r)return;
-  if(!r.paused){MIC.ctl('pause');r.paused=true;r.pauses.push({at:+recTime().toFixed(3)})}
-  else{MIC.ctl('start');r.paused=false}
+  if(!r.paused){MIC.ctl('pause');if(r.cam&&r.cam.mr.state==='recording'){r.cam.mr.pause();r.cam.pauses.push({pause:performance.now()})}r.paused=true;r.pauses.push({at:+recTime().toFixed(3)})}
+  else{if(r.cam&&r.cam.mr.state==='paused'){r.cam.mr.resume();r.cam.pauses.push({resume:performance.now()})}MIC.ctl('start');r.paused=false}
   setUI()}
 function mistake(){const r=S.rec;if(!r||r.paused)return;const t=recTime();r.events.push({type:'mistake',para:S.para,t});
   const el=document.querySelector('#paras .p.cur');if(el){el.classList.remove('flash');void el.offsetWidth;el.classList.add('flash');let mk=el.querySelector('.mk');if(!mk){mk=document.createElement('span');mk.className='mk';el.appendChild(mk)}mk.dataset.n=(+(mk.dataset.n||0))+1;mk.textContent='✕ '+mk.dataset.n}
   toast('Mistake marked at '+fmt(t,true)+'. Repeat the sentence.',2200)}
 async function stopRec(){
   const r=S.rec;if(!r||r.stopping)return;r.stopping=true;
+  const camDone=r.cam?camStop(r.cam):null;
   await new Promise(ok=>{MIC._flushed=ok;MIC.ctl('flush');setTimeout(ok,800)});MIC._flushed=null;
+  if(camDone){$('#state').textContent='Saving the camera video…';await camDone}
   S.rec=null;setUI();paintParas();
   if(!r.samples){toast('The recording was empty. Nothing saved.');return}
   const sr=MIC.ctx.sampleRate,dur=r.samples/sr,v=BYID[r.video];
@@ -833,20 +958,39 @@ async function stopRec(){
     pauses:r.pauses,paragraphs:(r.patch?r.sel:ps.map((_,i)=>i)).map(i=>({i,text:ps[i]})),read,scriptParagraphs:ps.length,
     note:(r.patch?'PATCH take: only the paragraphs listed in "paragraphs" (i = index in the current script) were re-read; they replace those paragraphs of the full take. ':'')+'Times are seconds in this WAV (pauses removed). read: the paragraph indexes she reached (only these count as re-read). paragraphStarts: when each paragraph was reached (Space/click; back/jump also listed). mistakes: "I stumbled; I repeat this sentence" - cut the take of that sentence before the mark.',
     tool:'reading_studio.py v1'};
+  const files=[[name,wav]];
+  if(r.cam&&r.cam.chunks.length){const c=r.cam,camName=name.replace(/\.wav$/,'.'+c.ext),blob=new Blob(c.chunks,{type:c.mime.split(';')[0]});
+    side.camera=camSide(r,c,camName,sr,dur,blob.size);side.tool='reading_studio.py v2 (camera)';files.push([camName,blob])}
+  else if(r.cam){side.camera={file:null,error:'no video data was recorded'};toast('The camera recorded nothing. The audio is saved.',7000)}
   const json=new Blob([JSON.stringify(side,null,1)],{type:'application/json'});
   setLastTake(wav,name);
-  const where=await saveFiles(r.video,[[name,wav],[name.replace(/\.wav$/,'.json'),json]]);
+  files.push([name.replace(/\.wav$/,'.json'),json]);
+  const where=await saveFiles(r.video,files);
   const st=S.status[r.video]||{takes:0,patches:0,changed:null};
   if(r.patch){const done=new Set(read.map(i=>norm(ps[i])));S.status[r.video]={...st,patches:(st.patches||0)+1,changed:st.changed?st.changed.filter(i=>!done.has(norm(ps[i]))):st.changed}}
   else S.status[r.video]={takes:(st.takes||0)+1,latest:name,seconds:dur,patches:0,changed:[]};
   if(where)await scanVideo(r.video);renderList();
   if(V[S.cur].id===r.video){const keep=S.para;S.sel=new Set([...S.sel].filter(i=>changedList().includes(i)));renderParas();S.para=keep;paintParas()}
-  $('#state').textContent=where?'Saved '+fmt(dur)+' → '+where:'Downloaded '+name+' (and its .json). Move both to Course.recordings/_reading/'+r.video+'/';
+  $('#state').textContent=where?'Saved '+fmt(dur)+' → '+where:'Downloaded '+name+(files.length>2?' (and its camera video and .json). Move all three':' (and its .json). Move both')+' to Course.recordings/_reading/'+r.video+'/';
   toast(where?'Saved ('+fmt(dur)+').':'Downloaded to your Downloads folder.',4000);
   if(unread.length){const msg=unread.map(i=>'Paragraph '+(i+1)+' (“'+ps[i].split(' ').slice(0,5).join(' ')+'…”)').join(', ')+(unread.length>1?' weren\'t':' wasn\'t')+' read yet. '+(unread.length>1?'They stay':'It stays')+' marked “needs re-read”.';
     $('#state').textContent+=' · '+msg;toast(msg,9000)}
   if(r.clipped)toast('Some peaks were too loud (clipping). Move back a little or lower the mic gain.',6000);
 }
+function camSide(r,c,file,sr,dur,size){
+  /* WAV t=0 = the first recorded audio frame (worklet mark: context time -> performance.now via getOutputTimestamp, minus
+     the output + input latency); camera t=0 = MediaRecorder 'start'. startOffset = camera start - WAV start (s):
+     a moment at WAV time t is at camera time t - startOffset. */
+  let aPerf=r.audioCall,how='start call (ScriptProcessor)';const m=r.audioMarks[0];
+  if(m&&MIC.ctx.getOutputTimestamp){try{const ts=MIC.ctx.getOutputTimestamp(),lat=(MIC.ctx.outputLatency||MIC.ctx.baseLatency||0)+((MIC.settings||{}).latency||0);
+    if(ts.performanceTime>0){aPerf=ts.performanceTime+(m.time-ts.contextTime)*1000-lat*1000;how='worklet frame '+m.frame+' via getOutputTimestamp, latency '+(lat*1000).toFixed(1)+' ms'}else{aPerf=m.perf;how='worklet message arrival'}}catch{aPerf=m.perf;how='worklet message arrival'}}
+  const cPerf=c.startPerf!=null?c.startPerf:r.t0;let paused=0,ps=null;for(const p of c.pauses){if(p.pause!=null)ps=p.pause;else if(ps!=null){paused+=p.resume-ps;ps=null}}
+  return {file,startOffset:+((cPerf-aPerf)/1000).toFixed(4),fps:c.fps,w:c.w,h:c.h,mime:c.mime,bytes:size,
+    camera:{label:c.label,deviceId:c.deviceId},audioInFile:'the same microphone, compressed - for the sync check only; the WAV is the narration',
+    clock:'performance.now() ms, from the shared start t0',t0:+r.t0.toFixed(3),cameraStartMs:+(cPerf-r.t0).toFixed(3),wavStartMs:+(aPerf-r.t0).toFixed(3),wavStartFrom:how,
+    approxDuration:c.stopPerf?+((c.stopPerf-cPerf-paused)/1000).toFixed(3):null,wavDuration:+dur.toFixed(3),
+    pauses:c.pauses.map(p=>p.pause!=null?{pauseMs:+(p.pause-r.t0).toFixed(1)}:{resumeMs:+(p.resume-r.t0).toFixed(1)}),lost:!!c.lost,
+    note:'Paused together with the WAV (pauses are removed from both files). startOffset is the browser estimate; reading_to_video.py measures the exact offset (along the take) by matching this file\'s audio to the WAV.'}}
 async function saveFiles(id,files){
   if(RF.handle){try{let p=await rfPerm(true);RF.perm=p;paintFolder();
     if(p==='granted'){const d=await videoDir(id,true);for(const [n,b] of files){const fh=await d.getFileHandle(n,{create:true}),w=await fh.createWritable();await w.write(b);await w.close()}
@@ -864,10 +1008,10 @@ async function loadLatestTake(){const v=V[S.cur],st=S.status[v.id];
 let tickRaf=0;
 function tick(){cancelAnimationFrame(tickRaf);const f=()=>{if(!S.rec){return}$('#timer').textContent=fmt(recTime(),true);tickRaf=requestAnimationFrame(f)};f()}
 function setUI(){const r=S.rec,t=$('#timer');
-  $('#bRec').disabled=!!r;$('#bPause').disabled=!r;$('#bStop').disabled=!r;$('#bMist').disabled=!r||r.paused;$('#bNext').disabled=!!r;$('#micSel').disabled=!!r;
+  $('#bRec').disabled=!!r;$('#bPause').disabled=!r;$('#bStop').disabled=!r;$('#bMist').disabled=!r||r.paused;$('#bNext').disabled=!!r;$('#micSel').disabled=!!r;$('#camOn').disabled=!!r;$('#camSel').disabled=!!r;
   $('#bPause').textContent=r&&r.paused?'Resume':'Pause';
   t.classList.toggle('on',!!r&&!r.paused);t.classList.toggle('paused',!!r&&r.paused);
-  const s=$('#state');s.classList.toggle('rec',!!r);s.textContent=!r?'Ready.':r.paused?'Paused (not recording).':'● Recording';
+  const s=$('#state');s.classList.toggle('rec',!!r);s.textContent=!r?'Ready.':r.paused?'Paused (not recording).':'● Recording'+(r.cam?' (camera + audio)':'');
   if(!r)t.textContent=fmt(0,true)}
 $('#bRec').onclick=startRec;$('#bPause').onclick=togglePause;$('#bStop').onclick=stopRec;$('#bMist').onclick=mistake;
 $('#bNext').onclick=()=>selectVideo(S.cur+1);
@@ -888,6 +1032,7 @@ window.addEventListener('beforeunload',e=>{if(S.rec){e.preventDefault();e.return
   renderList();renderParas();paintFolder();setUI();
   await initFolder();loadLatestTake();
   try{const p=await navigator.permissions.query({name:'microphone'});if(p.state==='granted')await openMic(LS.get('mic',''))}catch{}
+  await syncCam(false);
 })();
 </script>
 </body>
